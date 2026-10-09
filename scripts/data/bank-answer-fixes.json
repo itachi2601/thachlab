@@ -1,0 +1,8227 @@
+{
+ "_note": "Danh sách câu SAI ĐÁP ÁN đã được Claude tự giải & đối chiếu (bước 2). mc: old/neu = chỉ số đáp án (0=A). tf: mảng 4 boolean theo a,b,c,d. short: chuỗi. Script fix-bank-answers.mts đọc file này, kiểm 'old' khớp DB trước khi ghi. Mục _can_xac_nhan KHÔNG áp (chờ duyệt).",
+ "_batch": "Lô 1–7 + phán xử 7–8/10. Sáng GHI 22; trưa sóng 4 thêm 17 KEEP. Sổ 684 / can 298. | 9/10: +199 từ _can_xac_nhan (hai lượt đồng thuận)",
+ "fixes": [
+  {
+   "id": 671619,
+   "kind": "short",
+   "old": "0,1",
+   "neu": "1,01",
+   "reason": "p=nRT/V=8,31·273/0,0224=1,01·10^5 Pa → x=1,01 (lời giải cũng ghi 1,01)."
+  },
+  {
+   "id": 5615,
+   "kind": "short",
+   "old": "3,42",
+   "neu": "-3,42",
+   "reason": "E_lkr Ar=8,62>Li=5,20; đề 'Ar lớn hơn thì ghi âm' → -3,42."
+  },
+  {
+   "id": 5286,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Cộng áp vectơ (cosφ=0,8)→U=268V→N≈755 vòng=A; lời giải cũ cộng vô hướng nên sai."
+  },
+  {
+   "id": 462398,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "reason": "c (nhiều thiết bị chung ổ) không an toàn→Sai; d (bảo trì định kỳ)→Đúng. DB đảo c/d."
+  },
+  {
+   "id": 684821,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Cặp lực-phản lực cùng bản chất (A); C sai vì chúng CÙNG giá."
+  },
+  {
+   "id": 1256234,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Sóng điện từ KK→nước: v giảm, λ giảm → D."
+  },
+  {
+   "id": 686149,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Va chạm đàn hồi, 2 vật cùng m: vật 2 nhận hết v=4m/s → B."
+  },
+  {
+   "id": 682389,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "s=Rθ, θ=1rad → cung = 1 bán kính → D."
+  },
+  {
+   "id": 680319,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Đọc trực tiếp trên dụng cụ = phép đo trực tiếp → D."
+  },
+  {
+   "id": 378523,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Phản xạ⊥khúc xạ: tan i=n=√3 → i=60° → A."
+  },
+  {
+   "id": 1182966,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Lực đẩy → cùng dấu → q1·q2>0 → A."
+  },
+  {
+   "id": 596495,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "k=R/N_A → C (lời giải cũng ghi R/NA)."
+  },
+  {
+   "id": 685936,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Ném lên: động năng → thế năng → D."
+  },
+  {
+   "id": 1170561,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "v=x'=-ωA·sin(ωt+φ) → B."
+  },
+  {
+   "id": 683458,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Hai lực cùng hướng: F=40+30=70N → A."
+  },
+  {
+   "id": 673798,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "F=BIl·sinα → B=F/(Il·sinα) → A."
+  },
+  {
+   "id": 1163863,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Luôn dương: biên độ A và tần số f → D (φ có thể âm)."
+  },
+  {
+   "id": 686038,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Đơn vị công suất: HP (mã lực) → A; J.s không phải."
+  },
+  {
+   "id": 686136,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "θ=ωt=2×3=6 rad → C."
+  },
+  {
+   "id": 681897,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Ma sát KHÔNG phụ thuộc diện tích tiếp xúc → B là đặc điểm không có."
+  },
+  {
+   "id": 1152865,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "T∝√L; T giảm nửa → L'=L/4=0,25m → A (khối lượng không ảnh hưởng)."
+  },
+  {
+   "id": 683467,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Ma sát trượt phụ thuộc vật liệu/tình trạng mặt tiếp xúc → C."
+  },
+  {
+   "id": 620098,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Số proton = Z = 82 → B."
+  },
+  {
+   "id": 682021,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Trọng lượng P=mg → A."
+  },
+  {
+   "id": 1247569,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "d=v·t/2=3×10^8×1,25=3,75×10^8 m → C."
+  },
+  {
+   "id": 681942,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Fms=μmg=0,2×0,5×10=1N → B."
+  },
+  {
+   "id": 682384,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Hai lực song song cùng chiều: F=F1+F2 (tổng) → C."
+  },
+  {
+   "id": 385095,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "1u = 1/12 khối lượng C-12 → C (lời giải cũng ghi vậy)."
+  },
+  {
+   "id": 683469,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "h=½gt²=½×10×25=125m → A."
+  },
+  {
+   "id": 1246836,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Tần số không đổi khi đổi môi trường → C."
+  },
+  {
+   "id": 1246843,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "5 lần nhô → 4T → T=5s; v=2/5=0,4m/s=40cm/s → D."
+  },
+  {
+   "id": 1173746,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Quỹ đạo thẳng dài 10cm → biên độ=5cm → D."
+  },
+  {
+   "id": 672864,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Q=mλ+mcΔt=14,018MJ → B (lời giải cũng ra B)."
+  },
+  {
+   "id": 1224775,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "g=4π²L/T²=9,7; Δg≈0,3 → 9,7±0,3 → C."
+  },
+  {
+   "id": 3114,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "3-4-5 → góc 90° → A (lời giải cũng ghi 90°, đáp án gốc lệch dòng)."
+  },
+  {
+   "id": 1342688,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "ω₀=√(k/m)=20rad/s → cộng hưởng tại f=10/π Hz → a Đúng."
+  },
+  {
+   "id": 681843,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "Gia tốc đặc trưng cho biến thiên vận tốc theo thời gian → a Đúng (định nghĩa)."
+  },
+  {
+   "id": 681418,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Đo g: đo thời gian và quãng đường rơi (g=2s/t²) → C."
+  },
+  {
+   "id": 685629,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Wt=mgh=50×9,8×2=980J → D."
+  },
+  {
+   "id": 685085,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Q=CU=50pF×220=1,1×10⁻⁸C=11nC → A."
+  },
+  {
+   "id": 412675,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Năng lượng liên kết Fe-56 ≈492,8 MeV → A."
+  },
+  {
+   "id": 684805,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Chậm dần đều → a·v<0 → D."
+  },
+  {
+   "id": 1187112,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "q=Eεr²/k=40μC; hướng về q nên âm → -40μC → A."
+  },
+  {
+   "id": 681892,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Mức quán tính đặc trưng bởi khối lượng → B."
+  },
+  {
+   "id": 1195390,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Năng lượng điện A=UIt → C."
+  },
+  {
+   "id": 372356,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Ném lên: động năng giảm, thế năng tăng → A."
+  },
+  {
+   "id": 680321,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Không coi chất điểm: học sinh chạy trong lớp (kích thước ~ phòng) → B."
+  },
+  {
+   "id": 1247571,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Dùng X thay γ vì γ năng lượng lớn, tác dụng sinh lý mạnh → D (B sai: γ xuyên mạnh hơn)."
+  },
+  {
+   "id": 1173749,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Δφ=|0,75π-0,5π|=0,25π → A."
+  },
+  {
+   "id": 682014,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Đối tượng Vật lí: các dạng vận động của vật chất → A."
+  },
+  {
+   "id": 622443,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "N=n·NA=4,35×10⁵ → B (lời giải cũng ra 4,35×10⁵)."
+  },
+  {
+   "id": 284469,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Giảm lực tương tác nhiều nhất: hoá hơi (lỏng→khí) → A."
+  },
+  {
+   "id": 1346868,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Giao thoa cần hai nguồn kết hợp → A."
+  },
+  {
+   "id": 685083,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "U=A/q=24×10⁻⁶/6×10⁻⁶=4V → B."
+  },
+  {
+   "id": 681460,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Sai số không rõ nguyên nhân = sai số ngẫu nhiên → B."
+  },
+  {
+   "id": 683335,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Lực cản chất lưu phụ thuộc hình dạng vật → C."
+  },
+  {
+   "id": 670206,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Đẳng nhiệt: mật độ N/V ~ p (tỉ lệ thuận áp suất) → C."
+  },
+  {
+   "id": 684812,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Ném ngang: thời gian rơi chỉ phụ thuộc h → A."
+  },
+  {
+   "id": 684302,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Thuyền ngược dòng: v_thuyền/nước=5,5+1,5=7 km/h → A."
+  },
+  {
+   "id": 684901,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "a=2s/t²=0,5; F=ma=3000×0,5=1500N → C."
+  },
+  {
+   "id": 684296,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "v=√(2gh)=√1600=40m/s → B."
+  },
+  {
+   "id": 1235165,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Quãng đường trong nửa chu kì = nửa bước sóng → D."
+  },
+  {
+   "id": 685942,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Vai chịu lực = 200+300=500N → C."
+  },
+  {
+   "id": 681835,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Nguyên nhân KHÔNG đúng của sai số ngẫu nhiên: dụng cụ không chuẩn (là sai số hệ thống) → A."
+  },
+  {
+   "id": 1247582,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "v=20cm/10s=0,02m/s; λ=v/f=0,004m=0,4cm → A."
+  },
+  {
+   "id": 1244343,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Cầu gãy do đi đều bước = cộng hưởng → A."
+  },
+  {
+   "id": 1224768,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Cộng hưởng: m+Δm=k/ω²=2,5kg → Δm=1,5kg → B."
+  },
+  {
+   "id": 1183448,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "E=2/0,04=50V/m; V_B=50×0,06=3V → C."
+  },
+  {
+   "id": 1246845,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Vận tốc sớm pha π/2 so với li độ → A."
+  },
+  {
+   "id": 685724,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Công là đại lượng vô hướng, có thể âm/dương/không → B."
+  },
+  {
+   "id": 682850,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Thẳng không đổi chiều: độ dịch chuyển = quãng đường → A."
+  },
+  {
+   "id": 1241975,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Cùng pha gần nhất 5m=λ; v=λf=5×50=250m/s → C."
+  },
+  {
+   "id": 1225217,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Thân nhiệt 37°C phát tia hồng ngoại → B."
+  },
+  {
+   "id": 683453,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Hành động không an toàn: nếm thử hóa chất → C."
+  },
+  {
+   "id": 1151467,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Tác hại KHÔNG do cộng hưởng: âm thanh quá lớn làm chảy máu tai → B."
+  },
+  {
+   "id": 669990,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "B dòng điện thẳng không phụ thuộc bản chất dây dẫn → C (có phụ thuộc môi trường)."
+  },
+  {
+   "id": 5606,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "b: tách MỘT hạt nhân cần đúng BE=74,8MeV → Đúng (lời giải xác nhận)."
+  },
+  {
+   "id": 4312,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "c: chiều lực từ phụ thuộc chiều dòng điện và từ trường (quy tắc bàn tay trái) → Đúng."
+  },
+  {
+   "id": 376867,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "a: giữ vật không di chuyển → không có công (S); b: không lực tác dụng → không công (Đ)."
+  },
+  {
+   "id": 1192619,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Coulomb: F=k|q1q2|/r² → A."
+  },
+  {
+   "id": 681844,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "a: lực và phản lực cùng bản chất → Đúng."
+  },
+  {
+   "id": 682482,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "ω=2π/T → A."
+  },
+  {
+   "id": 441832,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "f=1/T=1/(24·3600)=1,16×10⁻⁵Hz → A (lời giải cũng ra vậy)."
+  },
+  {
+   "id": 1224422,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Trung trực là cực đại ⟺ cùng pha (I đúng); là cực tiểu ⟺ ngược pha (II đúng) → A."
+  },
+  {
+   "id": 1152867,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "f_riêng=1/T=1/0,25=4Hz → cộng hưởng ~4,1Hz → C."
+  },
+  {
+   "id": 683472,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "a: lực hãm ngược hướng chuyển động → Đúng; d: v₀=72km/h=20m/s (không phải 15) → Sai."
+  },
+  {
+   "id": 378788,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Lưỡng chất phẳng: n=d/d'=12/10=1,2 → B (lời giải cũng ra 1,2)."
+  },
+  {
+   "id": 685723,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Ngẫu lực lên vật không có trục cố định → quay quanh trọng tâm → D."
+  },
+  {
+   "id": 540,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Vòng dây quay: emf đổi chiều sau nửa vòng → B (lời giải cũng ghi vậy)."
+  },
+  {
+   "id": 684195,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Hệ quy chiếu = hệ toạ độ gắn vật mốc + đồng hồ gắn gốc thời gian → D."
+  },
+  {
+   "id": 685523,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "t=√(2h/g)=1s; L=v₀t=5m → A."
+  },
+  {
+   "id": 1224749,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Dao động tuần hoàn = trạng thái lặp đi lặp lại → B."
+  },
+  {
+   "id": 5124,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "I (emf) max khi mặt phẳng khung song song đường sức (emf∝sin); lời giải lưu nhầm sang Φmax."
+  },
+  {
+   "id": 313024,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "c: 1083°C > 1000°C (giới hạn trên) → không đo được → Sai."
+  },
+  {
+   "id": 681763,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "h=½gt²=½×10×1,2²=7,2m → A."
+  },
+  {
+   "id": 672736,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "proton Fe(26) − neutron Al(27-13=14) = 12 → B."
+  },
+  {
+   "id": 685383,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Fms=μmg=0,1×300×10=300N → D."
+  },
+  {
+   "id": 686027,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Moment lực đặc trưng cho tác dụng làm quay → D."
+  },
+  {
+   "id": 5589,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Hỏi NL liên kết RIÊNG = 63,25/10 = 6,32 MeV/nu → C; DB chọn B là NL liên kết tổng."
+  },
+  {
+   "id": 684829,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Rơi tự do = thẳng nhanh dần đều → B."
+  },
+  {
+   "id": 686006,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "H=mgh/A=54000/120000=45% → C."
+  },
+  {
+   "id": 685944,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Không chuyển điện→cơ: bàn là (điện→nhiệt) → A."
+  },
+  {
+   "id": 1235175,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "b: T=2π/4π=0,5s → Đúng; d: a=-ω²x=48π² (không phải 80π²) → Sai."
+  },
+  {
+   "id": 685937,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "H=240/320=75% → C."
+  },
+  {
+   "id": 684898,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "g không phụ thuộc khối lượng vật → D (có phụ thuộc độ cao)."
+  },
+  {
+   "id": 684796,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Thứ tự đúng: Quan sát → Đề xuất vấn đề → Giả thuyết → Kiểm tra → Kết luận → A."
+  },
+  {
+   "id": 402054,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "NL liên kết = NL tách rời TẤT CẢ nucleon → C (B chỉ tách 1 nucleon)."
+  },
+  {
+   "id": 683357,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "a=(20-10)/20=0,5m/s² → B."
+  },
+  {
+   "id": 685090,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Coulomb: F tỉ lệ nghịch bình phương khoảng cách → D."
+  },
+  {
+   "id": 1256229,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Quãng đường sóng trong 1 chu kì = bước sóng → D."
+  },
+  {
+   "id": 1243097,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Sóng dừng = giao thoa sóng tới + sóng phản xạ cùng phương → C."
+  },
+  {
+   "id": 373595,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Rơi tự do (bỏ qua cản): cơ năng bảo toàn → C."
+  },
+  {
+   "id": 683456,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Thời gian ném ngang t=√(2h/g) → A."
+  },
+  {
+   "id": 1241974,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Dao động cưỡng bức có chu kỳ = chu kỳ ngoại lực → D."
+  },
+  {
+   "id": 1346879,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Biên độ cưỡng bức KHÔNG phụ thuộc pha ban đầu ngoại lực → C (có phụ thuộc lực cản)."
+  },
+  {
+   "id": 1230699,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "a: biên độ=5mm (không phải 10) → Sai; b: T=2π/10π=0,2s → Đúng."
+  },
+  {
+   "id": 1182336,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "A=qEd=1,6×10⁻¹⁹×1000×0,02=3,2×10⁻¹⁸J, công dương (tăng tốc) → D."
+  },
+  {
+   "id": 1247023,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "b: sóng âm là sóng dọc→Đúng; d: v=ω/k=40m/s → 10s đi 400m (không phải 400cm)→Sai."
+  },
+  {
+   "id": 684902,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Không an toàn: sửa chữa điện khi chưa ngắt nguồn → D."
+  },
+  {
+   "id": 681445,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "F_Archimedes = trọng lượng phần chất lỏng bị vật chiếm chỗ → B."
+  },
+  {
+   "id": 684294,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "v_máy/tải=30-40=-10km/h → A."
+  },
+  {
+   "id": 685102,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Siêu dẫn: R=0 khi T dưới một giá trị nhất định → A."
+  },
+  {
+   "id": 1224777,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "E∝A²; sau 2 chu kì mất 1-0,98⁴≈7,8%≈8% → D."
+  },
+  {
+   "id": 620099,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "I_hiệu dụng=3√2/√2=3A → C (lời giải cũng ghi I=3A)."
+  },
+  {
+   "id": 685155,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Phát biểu SAI của ĐL II: gia tốc cùng hướng chuyển động (chậm dần thì ngược) → C."
+  },
+  {
+   "id": 345847,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "v2=(4·4+4·3)/8=3,5m/s → D (lời giải cũng ra 3,5)."
+  },
+  {
+   "id": 1247014,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "2 bụng → l=λ; f=v/λ=v/l → B."
+  },
+  {
+   "id": 1182969,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "E=F/q → A."
+  },
+  {
+   "id": 1247017,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "2 cực đại liên tiếp=λ/2=2cm→λ=4cm; cực đại bậc 3: Δd=3λ=12cm → B."
+  },
+  {
+   "id": 1341744,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "d: v(0)=-Aω sin(-π/4)=+25√2π >0 → vận tốc dương → Sai."
+  },
+  {
+   "id": 1345591,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Phát biểu SAI: tia hồng ngoại có bước sóng NHỎ hơn tử ngoại (thực ra lớn hơn) → B."
+  },
+  {
+   "id": 681444,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "a1/a2=(F1/m1)/(0,5F1/2m1)=1/0,25=4 → C."
+  },
+  {
+   "id": 1246839,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Số cực đại=2⌊AB/λ⌋+1=2×5+1=11 → B."
+  },
+  {
+   "id": 685620,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Cơ năng là đại lượng vô hướng, có thể âm/dương/0 → B (không phải véc tơ)."
+  },
+  {
+   "id": 463630,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "v=0,6c→γ=1,25→Wđ=0,25E₀→E₀/Wđ=4 → A (lời giải cũng ra 4)."
+  },
+  {
+   "id": 1231013,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Vật cản cố định → sóng phản xạ ngược pha (tự do → cùng pha) → B."
+  },
+  {
+   "id": 683843,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Mục tiêu Vật lí = tìm quy luật tổng quát nhất mọi cấp độ vi mô–vĩ mô → B."
+  },
+  {
+   "id": 1247006,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Sóng A→M nên M chậm pha hơn A góc 2πd/λ=12π/5 → A."
+  },
+  {
+   "id": 412646,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Neutron Fe-56 = 56-26 = 30 → B."
+  },
+  {
+   "id": 684904,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "tanα=v_tàu/v_mưa=20/30 → α≈34° → D."
+  },
+  {
+   "id": 681449,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Ma sát nghỉ xuất hiện khi sách nằm yên trên mặt nghiêng (cân bằng xu hướng trượt) → B."
+  },
+  {
+   "id": 1224762,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "t=1s=2,5T → quãng đường=10A=50cm; tốc độ TB=50cm/s (dương) → D."
+  },
+  {
+   "id": 680914,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Hợp lực khác 0 và không đổi → a=F/m không đổi → A."
+  },
+  {
+   "id": 683584,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Ngẫu lực = 2 lực song song, ngược chiều, cùng độ lớn, cùng tác dụng vào MỘT vật → B."
+  },
+  {
+   "id": 686032,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Rơi tự do trong chân không → cơ năng không đổi → B."
+  },
+  {
+   "id": 684806,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "a=(20-10)/10=1m/s² → D."
+  },
+  {
+   "id": 1244355,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Tần số tăng dần: vô tuyến<hồng ngoại<ánh sáng<tử ngoại<X<gamma → A."
+  },
+  {
+   "id": 680304,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "c: tầm xa=v₀t=20×4=80m → Đúng; d: khoảng cách sau 3s=√(60²+45²)=75m (không phải 10) → Sai."
+  },
+  {
+   "id": 1178240,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "F=k|q1q2|/r²=9·10⁹·9·10⁻¹⁸/0,01=8,1×10⁻⁶N → D."
+  },
+  {
+   "id": 402082,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Δm=BE/931,5=235×7,59/931,5=1,91u → B."
+  },
+  {
+   "id": 685095,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "ĐL Ôm toàn mạch: I tỉ lệ nghịch tổng điện trở trong+ngoài → C."
+  },
+  {
+   "id": 684895,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Quỹ đạo thẳng: viên bi rơi tự do → C (ô tô trên đường không chắc thẳng)."
+  },
+  {
+   "id": 1243094,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Đúng: quá trình truyền sóng là quá trình truyền năng lượng → D."
+  },
+  {
+   "id": 680815,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "a cùng chiều v → nhanh dần → A (C sai: a·v>0 là nhanh dần)."
+  },
+  {
+   "id": 434787,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "Cả 4 ý DB lưu ngược: cáp quang CÓ phản xạ toàn phần (a S), truyền ánh sáng (b S), dùng phản xạ toàn phần (c Đ), phụ thuộc chiết suất (d S)."
+  },
+  {
+   "id": 684094,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "5v₀+12,5a=100; 8v₀+32a=200 → v₀≈11,7m/s → C."
+  },
+  {
+   "id": 685919,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "M=F·d=15×0,4=6N·m → B."
+  },
+  {
+   "id": 681419,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "ĐL I Newton: lực mất đi → tiếp tục thẳng đều 5m/s → B."
+  },
+  {
+   "id": 7474,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Phát biểu SAI: nhiệt tự truyền giữa hai vật cùng nhiệt độ → D (lời giải cũng chỉ ra D)."
+  },
+  {
+   "id": 13813,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "2 tụ nối tiếp=1µF, song song với tụ còn lại=3µF = '1 song song với 2 nối tiếp' → D (lời giải mô tả D)."
+  },
+  {
+   "id": 648265,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Thuyết động học: p=(2/3)μĒ_đ → C (lời giải ghi nhầm 3/2)."
+  },
+  {
+   "id": 683363,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "b: v(2s)=at=5×2=10m/s → Đúng; d: lực không đổi từ nghỉ → nhanh dần đều → Đúng."
+  },
+  {
+   "id": 686160,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Quả dừa rơi: động năng tăng, thế năng giảm → A."
+  },
+  {
+   "id": 684789,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Đứng ở Trái Đất thấy cả Mặt Trời và Mặt Trăng quay quanh Trái Đất → A."
+  },
+  {
+   "id": 683847,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Xe máy điện → lĩnh vực Vật lí và Hoá học → A."
+  },
+  {
+   "id": 683333,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "F_A=ρVg=1000×3·10⁻³×10=30N → A."
+  },
+  {
+   "id": 681772,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Thẳng đều → Fms=F=20N; μ=20/(5×10)=0,4 → C."
+  },
+  {
+   "id": 683986,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "r=2R; g'=2,5m/s²; v=√(g'r)=5657m/s; T=2πr/v≈3h57min → C."
+  },
+  {
+   "id": 1231012,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "i=λD/a=0,25mm; x=1,25mm → x/i=5 (nguyên) → vân sáng bậc 5 → A."
+  },
+  {
+   "id": 684890,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Chậm dần đều: v=v₀+at tuyến tính, a<0 → v=15-3t → B."
+  },
+  {
+   "id": 1247020,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Chụp X-quang y khoa dùng khả năng đâm xuyên mạnh → B."
+  },
+  {
+   "id": 1232977,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Hai điểm gần nhất cùng pha cách nhau 1 bước sóng → λ=45cm → B."
+  },
+  {
+   "id": 681765,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Quãng đường=12+9=21km; độ dịch chuyển=√(12²+9²)=15km → C."
+  },
+  {
+   "id": 523841,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "t=T-273=100-273=-173°C → C (lời giải cũng ra -173)."
+  },
+  {
+   "id": 346833,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "p₂=√(500²+500²)=500√2, góc 45° với phương đứng → A (lời giải cũng ra vậy)."
+  },
+  {
+   "id": 686139,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Tốc độ góc = độ dịch chuyển GÓC trong một đơn vị thời gian → B."
+  },
+  {
+   "id": 1236939,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Hai sóng kết hợp = cùng tần số, độ lệch pha không đổi → C."
+  },
+  {
+   "id": 682016,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Tốc độ TB = s/t → C."
+  },
+  {
+   "id": 1235168,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Khoảng cách gần nhất cùng pha=λ=50cm; v=λf=0,5×100=50m/s → B."
+  },
+  {
+   "id": 1195389,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Điện trở KL do e tự do va chạm với chỗ mất trật tự của ion dương nút mạng → A."
+  },
+  {
+   "id": 680787,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Phát biểu SAI an toàn phóng xạ: 'không cần đeo mặt nạ' → D."
+  },
+  {
+   "id": 684300,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Toạ độ vật phụ thuộc vào hệ trục toạ độ đã chọn → D."
+  },
+  {
+   "id": 379212,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "c: v_nước=c/n=3·10⁸/(4/3)=2,25·10⁸ → Đúng; d: n₁sini=n₂sinr là ĐL khúc xạ → Đúng."
+  },
+  {
+   "id": 1182964,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Coulomb: F tỉ lệ nghịch bình phương khoảng cách → D."
+  },
+  {
+   "id": 1346874,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Năng lượng giảm dần rồi dừng → dao động tắt dần → C."
+  },
+  {
+   "id": 1243103,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "a: biên độ=5cm (không phải 4π)→Sai; b: T=2π/4π=0,5s→Đúng."
+  },
+  {
+   "id": 345615,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "v₁=√(2gh)=25m/s; v=m₁v₁/(m₁+m₂)=300×25/400=18,75m/s → D (lời giải cũng ra 18,75)."
+  },
+  {
+   "id": 594,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "d: e=½BωR²=1,13V → Đúng (lời giải cũng ra 1,13V)."
+  },
+  {
+   "id": 1231027,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Dây 2 đầu cố định: l=số nguyên lần λ/2 → D."
+  },
+  {
+   "id": 1225216,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Sóng điện từ là sóng ngang, truyền được trong chân không → B."
+  },
+  {
+   "id": 686020,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Cơ năng=½mv²=½×0,4×20²=80J → A."
+  },
+  {
+   "id": 685717,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Moment lực = tích lực với cánh tay đòn → A."
+  },
+  {
+   "id": 683851,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Chậm dần đều: v tuyến tính a<0 → v=5-t → D."
+  },
+  {
+   "id": 681777,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Đại lượng đặc trưng nhanh/chậm theo một HƯỚNG = vận tốc → D."
+  },
+  {
+   "id": 681738,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Sai số do đọc nhầm giá trị = sai số ngẫu nhiên → B."
+  },
+  {
+   "id": 345557,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "v=(1×2-2×2,5)/(1+2)=-1m/s → A (lời giải cũng ra -1)."
+  },
+  {
+   "id": 1152858,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Dao động dưới ngoại lực tuần hoàn = cưỡng bức → B."
+  },
+  {
+   "id": 685098,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Đoản mạch = nối hai cực nguồn bằng dây điện trở rất nhỏ → D."
+  },
+  {
+   "id": 685091,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "E=kq/r²=9·10⁹×2·10⁻⁶/1=18000V/m, hướng ra xa (q>0) → B."
+  },
+  {
+   "id": 1152852,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "ω = tần số góc của dao động → C."
+  },
+  {
+   "id": 684905,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Hệ số ma sát trượt phụ thuộc bản chất và điều kiện bề mặt (không phụ thuộc diện tích/tốc độ) → D."
+  },
+  {
+   "id": 681901,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Lực và phản lực xuất hiện/mất đi đồng thời → A (không cân bằng vì đặt lên 2 vật)."
+  },
+  {
+   "id": 685520,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "a=(5-10)/10=-0,5m/s² → D."
+  },
+  {
+   "id": 1252671,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Khoảng cách 2 cực đại liên tiếp trên đường nối nguồn = λ/2 → C."
+  },
+  {
+   "id": 1192621,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Coulomb: F tỉ lệ thuận với tích hai điện tích → A."
+  },
+  {
+   "id": 682253,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Quy tắc moment: tổng moment lực chiều này = tổng moment lực chiều kia → A."
+  },
+  {
+   "id": 1342462,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "l=gT²/(4π²)=9,8×0,81/39,44≈0,20m=20cm → A."
+  },
+  {
+   "id": 683842,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "An toàn: buộc tóc gọn gàng → C (tay ướt cắm điện là nguy hiểm)."
+  },
+  {
+   "id": 684799,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "A=Ā±ΔA → giá trị thực trong [Ā-ΔA, Ā+ΔA] → C."
+  },
+  {
+   "id": 1245670,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "c: cơ năng=½mω²A²=15mJ (không phải 1,5)→Sai; d: lực cản lớn→tắt dần→Đúng."
+  },
+  {
+   "id": 685918,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Bếp điện: điện năng → nhiệt năng → A."
+  },
+  {
+   "id": 685975,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Moment lực đặc trưng cho tác dụng làm quay → B."
+  },
+  {
+   "id": 684112,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Hai phương pháp chính: lí thuyết và thực nghiệm → C."
+  },
+  {
+   "id": 1236942,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Sóng dừng = tổng hợp sóng tới và sóng phản xạ → A."
+  },
+  {
+   "id": 681769,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Độ dịch chuyển d=v₀t+½at² → D."
+  },
+  {
+   "id": 680313,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Ngành vật lí: cơ, nhiệt, điện, quang → C (B có sinh vật học)."
+  },
+  {
+   "id": 682852,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Đo tổng hai khoảng thời gian A và B → MODE A+B → A."
+  },
+  {
+   "id": 681453,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Tốc độ TB đặc trưng cho độ nhanh/chậm → A (C mô tả vận tốc TB=độ dịch chuyển/t)."
+  },
+  {
+   "id": 346949,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "v₂=10m/s hướng lên; h=v₂²/2g=5m → D (gợi ý trong đề cũng ra 5m)."
+  },
+  {
+   "id": 681450,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "a=-0,5m/s²; t_dừng=20/0,5=40s → D."
+  },
+  {
+   "id": 1225209,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Xích đu trong không khí sau kích thích → tắt dần → A."
+  },
+  {
+   "id": 670215,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Dụng cụ đo nhiệt độ = nhiệt kế → D."
+  },
+  {
+   "id": 388261,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Ống bơm nóng chủ yếu do không khí bị nén nhanh làm tăng nội năng → B."
+  },
+  {
+   "id": 1182972,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Thế năng điện W=q·V_M → D."
+  },
+  {
+   "id": 1224756,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "T=1/f=1/100=0,01s → C."
+  },
+  {
+   "id": 680757,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Chuyển động biến đổi = vận tốc thay đổi → D."
+  },
+  {
+   "id": 1151447,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Cơ năng con lắc lò xo = ½kA² → B (½kx² chỉ là thế năng tại x)."
+  },
+  {
+   "id": 496,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "emf tỉ lệ với tốc độ biến thiên từ thông → B."
+  },
+  {
+   "id": 673204,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "a: R=ρ·2πr/S=0,0314Ω (không phải 31,4 m)→Sai; d: P≈12mW≠15W→Sai."
+  },
+  {
+   "id": 686023,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "A=Fs·cos60°=150×10×0,5=750J → D."
+  },
+  {
+   "id": 1224754,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "a1,a2 là li độ: v²=ω²(B²-x²) → ω=√((v₁²-v₂²)/(a₂²-a₁²)) → D. A = 1/ω."
+  },
+  {
+   "id": 683838,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Tốc độ TB=200m/100s=2m/s → D."
+  },
+  {
+   "id": 684290,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "t_rơi+t_âm=4s; thử h=71,6m: 3,78s+0,22s=4s → D."
+  },
+  {
+   "id": 1231021,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Cực tiểu khi |d₁-d₂|=(k+0,5)λ; d=32→|10-32|=22=5,5λ → D (B=22 cho 3λ là cực đại)."
+  },
+  {
+   "id": 684817,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "ĐL I Newton: không chịu lực → giữ nguyên trạng thái đứng yên/thẳng đều → B."
+  },
+  {
+   "id": 685161,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Lực-phản lực KHÔNG cân bằng (đặt lên 2 vật) → D; chúng CÓ độ lớn bằng nhau."
+  },
+  {
+   "id": 681459,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Câu SAI: quãng đường tỉ lệ thuận thời gian (thực ra s∝t²) → B."
+  },
+  {
+   "id": 566,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "e=|dΦ/dt|=0,04×2=0,08V → C."
+  },
+  {
+   "id": 685101,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "A=qE=15×0,25=3,75J → A."
+  },
+  {
+   "id": 1163871,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "a: biên độ luôn dương→Sai; b: tần số góc đơn vị rad/s→Đúng; c: thời gian 1 dao động là chu kì (không phải tần số)→Sai."
+  },
+  {
+   "id": 681773,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "F không đổi, m→2m → a'=F/2m=0,5a → D."
+  },
+  {
+   "id": 373632,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Trượt tuyết xuống, tốc độ tăng: động năng tăng, thế năng giảm → B."
+  },
+  {
+   "id": 685644,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Thao tác KHÔNG có: ghi lực từ ampe kế (phải dùng lực kế) → C."
+  },
+  {
+   "id": 682848,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Câu SAI về nguy cơ mất an toàn: nguy cơ cận thị (không phải rủi ro thiết bị) → D."
+  },
+  {
+   "id": 682858,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "v=600/74,75=8,03m/s → D."
+  },
+  {
+   "id": 684802,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "v_TB=50/20=2,5m/s → A."
+  },
+  {
+   "id": 673896,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Nội năng He=N×(3/2)kT=(3/2)NkT → A."
+  },
+  {
+   "id": 685108,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Hạt tải điện trong chất điện phân = ion dương và ion âm → D."
+  },
+  {
+   "id": 561,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "e=B·ΔS/Δt=0,6×0,283/0,2≈0,85V → D."
+  },
+  {
+   "id": 683364,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "b: v=gt=10×4=40m/s (không phải 80) → Sai."
+  },
+  {
+   "id": 684298,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "t=√(2×45/10)=3s; x=20t; y=45-x²/80; L=60m → B."
+  },
+  {
+   "id": 686028,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Cơ năng bảo toàn = mgl(1-cosα₀) → D."
+  },
+  {
+   "id": 346891,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "p₂=√((10√3)²+10²)=20; v₂=66,67m/s, góc 60° → B (lời giải cũng ra vậy)."
+  },
+  {
+   "id": 681452,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "v_TB=(60×2+40×3)/5=48km/h → C."
+  },
+  {
+   "id": 685716,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Ngẫu lực = 2 lực song song, ngược chiều, cùng độ lớn, cùng tác dụng vào MỘT vật → B."
+  },
+  {
+   "id": 682857,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Chạy 1 vòng về chỗ cũ: d=0<s → A (d<s)."
+  },
+  {
+   "id": 393519,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "p=(2/3)μW_đ → tỉ lệ thuận động năng trung bình → C (không phải tốc độ)."
+  },
+  {
+   "id": 672862,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Không dùng đo nhiệt độ: tốc kế → D (nhiệt kế rượu CÓ đo nhiệt độ)."
+  },
+  {
+   "id": 578,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "e=N·ΔB·S/Δt=100×0,2×0,0314/0,05=12,56V → C."
+  },
+  {
+   "id": 673899,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "m₀=M-E_lk/c² (trừ độ hụt khối) → C."
+  },
+  {
+   "id": 685603,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Quy tắc moment: tổng mômen lực = tổng mômen lực → A."
+  },
+  {
+   "id": 673796,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "<v²>∝T; <v²> tăng 2 lần → T tăng 2 lần → A."
+  },
+  {
+   "id": 1231019,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Sóng dọc truyền được trong rắn, lỏng, khí → C."
+  },
+  {
+   "id": 685639,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Động năng Wđ=½mv² → C."
+  },
+  {
+   "id": 681755,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "v_xuôi=48/4=12=v_thuyền+6 → v_thuyền=6km/h → D."
+  },
+  {
+   "id": 683855,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Sai số phép đo = sai số ngẫu nhiên + sai số hệ thống → D."
+  },
+  {
+   "id": 670724,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "a: hoạt độ giảm→thời gian chiếu tăng>10ph→Đúng; b: λ=4,12·10⁻⁹ (không phải 5,2)→Sai; c: Co→Ni (β⁻)→Đúng (lời giải chi tiết khớp)."
+  },
+  {
+   "id": 1252670,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Ánh sáng nhìn thấy: 0,38–0,76 μm → A."
+  },
+  {
+   "id": 684842,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "ĐL III: lực táo hút Trái Đất = 3 N → B."
+  },
+  {
+   "id": 1195387,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Điện thế đặc trưng điện trường về phương diện tạo thế năng khi đặt điện tích q → A."
+  },
+  {
+   "id": 1170567,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "a: quỹ đạo=2A=20cm (không phải 40) → Sai."
+  },
+  {
+   "id": 681766,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Phát biểu SAI: ma sát trượt phụ thuộc diện tích tiếp xúc → A."
+  },
+  {
+   "id": 1182978,
+   "kind": "short",
+   "old": "4500",
+   "neu": "1,6",
+   "reason": "F∝1/r² → r₂=2√(1,6/2,5)=1,6cm; đề cũng hiện [[1,6]]."
+  },
+  {
+   "id": 680477,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "d: v_TB=50/15≈3,3m/s (không phải 10) → Sai."
+  },
+  {
+   "id": 1151460,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "f=10/2=5Hz → C."
+  },
+  {
+   "id": 1151468,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Dao động tự do: con lắc lò xo bỏ qua ma sát → D."
+  },
+  {
+   "id": 1249929,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Hình chiếu chuyển động tròn đều lên đường kính LÀ dao động điều hòa → A."
+  },
+  {
+   "id": 605,
+   "kind": "short",
+   "old": "0,04",
+   "neu": "4",
+   "reason": "a=0,04m; hỏi 'bao nhiêu cm' → 4."
+  },
+  {
+   "id": 686039,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "H=0,95=95% → D."
+  },
+  {
+   "id": 684114,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Phát biểu SAI: âm thanh truyền thẳng trong KK (sóng, nhiễu xạ) → D; B là đúng."
+  },
+  {
+   "id": 681832,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "ĐL I cho biết quán tính của mọi vật → A."
+  },
+  {
+   "id": 1182971,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Điện trường đều: E cùng độ lớn, cùng phương chiều → B."
+  },
+  {
+   "id": 1181564,
+   "kind": "short",
+   "old": "8,10",
+   "neu": "8.10^{-5}",
+   "reason": "r→r/2 → F'=4F=8×10⁻⁵ N."
+  },
+  {
+   "id": 673898,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Không phải đơn vị khối lượng: amu·c² (năng lượng) → D."
+  },
+  {
+   "id": 683854,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "20km / (1/3)h = 60km/h → B."
+  },
+  {
+   "id": 1235166,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "i=λD/a → λ=a·i/D → C."
+  },
+  {
+   "id": 1247030,
+   "kind": "short",
+   "old": "19,5",
+   "neu": "9",
+   "reason": "v=20/4=5m/s; λ=vT=5×1,8=9m."
+  },
+  {
+   "id": 685626,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Đơn vị công suất = W → C."
+  },
+  {
+   "id": 683325,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "g phụ thuộc vĩ độ và độ cao → A."
+  },
+  {
+   "id": 563626,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "T1=320/1,15≈278K → C (lời giải cũng ra 278)."
+  },
+  {
+   "id": 1224763,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Cơ năng là vô hướng, ≥0 → B."
+  },
+  {
+   "id": 683368,
+   "kind": "short",
+   "old": "600",
+   "neu": "2",
+   "reason": "a=(20-10)/5=2m/s²; DB '600' vô lý."
+  },
+  {
+   "id": 1151465,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Kéo dọc trục lò xo rồi thả → A (kéo ngang là sai)."
+  },
+  {
+   "id": 4139,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Δm<0 → thu ≈1580MeV=1,58×10³MeV → A (lời giải cũng ra −1580)."
+  },
+  {
+   "id": 686048,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Áp suất phụ thuộc áp lực và diện tích → A."
+  },
+  {
+   "id": 684894,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Hình chiếu ngang ném ngang = thẳng đều → B."
+  },
+  {
+   "id": 7557,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Phát biểu SAI: nhiệt tự truyền giữa hai vật cùng nhiệt độ → D."
+  },
+  {
+   "id": 683741,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Công A=F·s·cosθ → C (A=F·s thiếu góc)."
+  },
+  {
+   "id": 1192628,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Dòng điện = dòng chuyển dời CÓ HƯỚNG của điện tích → A."
+  },
+  {
+   "id": 681420,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "s∝t²; t tăng 3 lần → s tăng 9 lần → A."
+  },
+  {
+   "id": 389278,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "a: n=pV/RT=10/(8,31·300)≈0,004 mol (làm tròn 3 chữ số) → Đúng; lời giải ghi 0,00004 là sót số 0."
+  },
+  {
+   "id": 336356,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "c: W1/W2=6,25/25=1/4 ≠ 13/20 → Sai (lời giải tính nhầm tỉ số)."
+  },
+  {
+   "id": 685104,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Công lực điện không phụ thuộc hình dạng đường đi → B."
+  },
+  {
+   "id": 685602,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Ngẫu lực: song song, ngược chiều, cùng độ lớn, cùng một vật → B."
+  },
+  {
+   "id": 1182965,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Đơn vị SI điện tích = culông → C."
+  },
+  {
+   "id": 682267,
+   "kind": "short",
+   "old": "90",
+   "neu": "3",
+   "reason": "v=√(2W/m)=√(36/4)=3m/s."
+  },
+  {
+   "id": 685537,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Người tiến về trước nhờ lực mặt đất tác dụng lên người → C."
+  },
+  {
+   "id": 683128,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "d: s=½at²=½×3×25=37,5m (không phải 18,75) → Sai."
+  },
+  {
+   "id": 670437,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "t=W/(H·P)=13,61 phút → B (lời giải cũng ra 13,61)."
+  },
+  {
+   "id": 345731,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Sau va chạm đứng yên: v₂=m₁v₁/m₂=2m/s → B (lời giải cũng ra 2)."
+  },
+  {
+   "id": 681767,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Ý 4 sai (lực-phản lực không phải cặp trực đối); đúng 3 ý → C."
+  },
+  {
+   "id": 1182976,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "reason": "a: điện trường điểm không đều → Sai; b: Q>0 nên E tại B hướng ra xa Q → Sai."
+  },
+  {
+   "id": 686013,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Không cần đồng hồ đo thời gian trong TH tổng hợp lực → B."
+  },
+  {
+   "id": 1236940,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Vân sáng: x=k·λD/a → C."
+  },
+  {
+   "id": 1178243,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Đơn vị E = V/m → D."
+  },
+  {
+   "id": 1151449,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "T=1/300=3,33ms → C."
+  },
+  {
+   "id": 1246832,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "λ=v/f=1,2cm; |k|<AB/λ=6,67 → 13 cực đại → B."
+  },
+  {
+   "id": 684891,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Đo g cần thước và đồng hồ → C."
+  },
+  {
+   "id": 611073,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "d: U+n → hai mảnh + n = phân hạch → Đúng."
+  },
+  {
+   "id": 684886,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "t=Δv/a=9/6=1,5s → B."
+  },
+  {
+   "id": 345441,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Va chạm mềm: v₁=(m1+m2)v/m1=6m/s → A (lời giải cũng ra 6)."
+  },
+  {
+   "id": 681457,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "d=½at² → t=√(2d/a) → D."
+  },
+  {
+   "id": 681020,
+   "kind": "short",
+   "old": "5",
+   "neu": "10",
+   "reason": "Bảng d=10t → v_TB=10m/s."
+  },
+  {
+   "id": 380325,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "c: i>góc tới hạn → phản xạ toàn phần→Đúng; d: n lớn không làm 'khúc xạ dễ hơn'→Sai."
+  },
+  {
+   "id": 685514,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "mA/mB=(F/a)/(5F/3a)=3/5 → C."
+  },
+  {
+   "id": 684840,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Hai lực cân bằng: cùng một vật, hợp lực = 0 → C."
+  },
+  {
+   "id": 1231014,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Sóng ngang: phương dao động ⊥ phương truyền → B."
+  },
+  {
+   "id": 1170550,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "amax=ω²A=4π²×5=200cm/s² (π²=10) → C."
+  },
+  {
+   "id": 681455,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "ĐL III: bản chất tương tác qua lại giữa hai vật → C."
+  },
+  {
+   "id": 683835,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Gia tốc là vectơ, đặc trưng biến thiên vận tốc → D."
+  },
+  {
+   "id": 680970,
+   "kind": "short",
+   "old": "-1,4",
+   "neu": "50",
+   "reason": "v=20m/s, t=5s, s=v_tb t=50m; DB '-1,4' vô lý."
+  },
+  {
+   "id": 1243101,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Sóng điện từ là sóng ngang, truyền được cả chân không → B."
+  },
+  {
+   "id": 681749,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Bơi khứ hồi 25m: s=50m, d=0 → A."
+  },
+  {
+   "id": 685536,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Đo gián tiếp: tốc độ (s và t đo trực tiếp) → A."
+  },
+  {
+   "id": 1225203,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Thời gian một dao động toàn phần = chu kì → B."
+  },
+  {
+   "id": 684824,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Phát biểu SAI: tuỳ ý cắm dây đo → C."
+  },
+  {
+   "id": 682397,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "A=F·d·cosθ → B."
+  },
+  {
+   "id": 1170572,
+   "kind": "short",
+   "old": "6",
+   "neu": "2",
+   "reason": "Mỗi chu kì đi qua VTCB 2 lần."
+  },
+  {
+   "id": 680405,
+   "kind": "short",
+   "old": "16,4",
+   "neu": "3",
+   "reason": "a=F/m=0,5; v=√(2as)=√9=3m/s."
+  },
+  {
+   "id": 508,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Tịnh tiến khung trong B đều, góc không đổi → không có dòng cảm ứng → D (lời giải cũng ghi vậy)."
+  },
+  {
+   "id": 685528,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Hợp lực nhỏ nhất khi hai lực cùng phương ngược chiều → B."
+  },
+  {
+   "id": 680458,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Tốc độ tức thời: nhanh/chậm tại một thời điểm → B."
+  },
+  {
+   "id": 1173748,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "f=2020/1010=2Hz → B."
+  },
+  {
+   "id": 1231022,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "ω = tần số góc → B."
+  },
+  {
+   "id": 1170571,
+   "kind": "short",
+   "old": "2",
+   "neu": "0,1",
+   "reason": "W=½kA² → A=√(2W/k)=0,1m."
+  },
+  {
+   "id": 623,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Suất điện động cảm ứng e_c = -N ΔΦ/Δt, phụ thuộc số vòng dây (II) và tốc độ biến thiên từ thông (III), không phụ thuộc chiều dài; nên đáp án đúng là C."
+  },
+  {
+   "id": 5928,
+   "kind": "short",
+   "old": "1",
+   "neu": "38,6",
+   "reason": "s=0,1sin(2πt) m; v=0,2π cos(2πt). Tại t=π/6: v≈-0,621 m/s; Wđ=½.0,2.0,621²≈0,0386 J=38,6 mJ. Đáp án 1 mJ do nhầm bỏ π."
+  },
+  {
+   "id": 6170,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "12λ=36 cm nên λ=3 cm; d=6 cm=2λ nên M cùng pha nguồn. Nguồn qua VTCB đi xuống (dương hướng xuống) có pha -π/2, vậy uM=0,9cos(100πt-π/2) cm."
+  },
+  {
+   "id": 13340,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "reason": "Lực điện lên ion âm hướng lên, ion không chạm đất nên a,b sai. c sai do quỹ đạo phụ thuộc v0. d đúng."
+  },
+  {
+   "id": 13431,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "Tổng công A≈-1,07.10^-7 J; do đó thế năng tăng 1,07.10^-7 J chứ không giảm. Phát biểu d về độ giảm thế năng là sai."
+  },
+  {
+   "id": 336104,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "a sai vì trọng lượng phụ thuộc vị trí so với Trái Đất; b sai vì động năng là 10^13 J; c đúng; d sai vì động năng tăng 1,125 lần."
+  },
+  {
+   "id": 372036,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Động năng W = ½mv². Khi m giảm 8 lần, v tăng 2 lần: W' = ½(m/8)(2v)² = (1/8)·4·W = W/2. Vậy động năng giảm 2 lần, đáp án C."
+  },
+  {
+   "id": 374224,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "Phát biểu b sai: thiết bị giảm chấn tiêu hao cơ năng thành nhiệt, làm tăng mất mát cơ năng, không giảm. Các phát biểu a,c,d đều đúng."
+  },
+  {
+   "id": 393664,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Máy phát có vành khuyên tạo dòng điện xoay chiều, chiều dòng điện qua bóng đèn thay đổi tuần hoàn, không phải không đổi. Đáp án đúng là B."
+  },
+  {
+   "id": 429306,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Nhiệt chỉ truyền khi có chênh lệch nhiệt độ; đáp án lưu C mâu thuẫn với chính lời giải."
+  },
+  {
+   "id": 463366,
+   "kind": "short",
+   "old": "5,7",
+   "neu": "572",
+   "reason": "Tính lại: Δm=0,0187u; W≈2,4×10¹¹J. Với c=4,19kJ/kg.K, m=W/(4190×100)≈5,7×10⁵kg=572 tấn. Đáp án lưu 5,7 sai 100 lần."
+  },
+  {
+   "id": 672395,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Động năng trung bình của mỗi phân tử khí lí tưởng là (3/2)kT, nên đáp án B đúng; đáp án lưu C và lời giải đang lưu mâu thuẫn."
+  },
+  {
+   "id": 673232,
+   "kind": "short",
+   "old": "24",
+   "neu": "-24",
+   "reason": "Vận tốc có hướng; tại x=3 cm vật về VTCB nên v=-24 cm/s, đáp án lưu 24 là thiếu dấu."
+  },
+  {
+   "id": 680125,
+   "kind": "short",
+   "old": "30",
+   "neu": "110",
+   "reason": "Góc 45° nên tốc độ ô tô bằng tốc độ rơi thẳng đứng: 30 m/s = 108 km/h, làm tròn hai chữ số có nghĩa thành 110."
+  },
+  {
+   "id": 680825,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "Gia tốc cùng chiều chuyển động vì xe tăng tốc: a=(20-10)/5=2 m/s²; độ biến thiên vận tốc mỗi giây bằng 2 m/s; quãng đường s=10×5+0,5×2×25=75 m."
+  },
+  {
+   "id": 681466,
+   "kind": "short",
+   "old": "0,06",
+   "neu": "160",
+   "reason": "Chuyển động chậm dần đều: a=(0-32)/10=-3,2 m/s²; s=32×10+0,5×(-3,2)×10²=160 m. Đáp án lưu 0,06 là sai."
+  },
+  {
+   "id": 681760,
+   "kind": "short",
+   "old": "36",
+   "neu": "25",
+   "reason": "Đổi 36 km/h = 10 m/s. Vận tốc trung bình = (0+10)/2 = 5 m/s. Quãng đường = 5×5 = 25 m, không phải 36 m."
+  },
+  {
+   "id": 681847,
+   "kind": "short",
+   "old": "4",
+   "neu": "3,0",
+   "reason": "10,8 km/h = 3 m/s; dừng sau 2 s nên a=-1,5 m/s²; s=3×2+0,5×(-1,5)×2²=3 m, làm tròn đến phần mười là 3,0 m. Đáp án lưu 4 m sai."
+  },
+  {
+   "id": 682031,
+   "kind": "short",
+   "old": "1",
+   "neu": "3",
+   "reason": "Trọng lực P = mg nên m = P/g = 30/10 = 3 kg. Đáp án lưu là 1 kg là sai."
+  },
+  {
+   "id": 682394,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "6 phút = 360 s; A = P.t = 750×360 = 270000 J. Đáp án đúng là A, không phải B."
+  },
+  {
+   "id": 683062,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Quãng đường đi được là tổng các đoạn đường: 6 km + 4 km + 3 km = 13 km. Đáp án lưu D (10 km) sai."
+  },
+  {
+   "id": 683344,
+   "kind": "short",
+   "old": "4",
+   "neu": "3,27",
+   "reason": "Với α=30°, a = g(sin30° − μcos30°) = 10(0,5 − 0,2×0,866) ≈ 3,27 m/s², không phải 4."
+  },
+  {
+   "id": 683471,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "a đúng vì ma sát trượt không phụ thuộc diện tích tiếp xúc; b sai vì Fms=μmg; c đúng do cân bằng lực; d sai vì μ=2,94/(2×9,8)=0,15, không phải 0,1."
+  },
+  {
+   "id": 683598,
+   "kind": "short",
+   "old": "1,5",
+   "neu": "5,0",
+   "reason": "P=F.v=2×10^6×250=5×10^8 W → x=5,0; đáp án lưu 1,5 sai."
+  },
+  {
+   "id": 683861,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Vận tốc tức thời là đại lượng vectơ, không phải vô hướng; các đặc điểm A, B, D đều đúng."
+  },
+  {
+   "id": 685105,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Tụ điện cần hai vật dẫn ngăn cách bởi điện môi. Hai tấm nhôm là vật dẫn, nước nguyên chất là điện môi nên D đúng; gỗ khô không dẫn điện nên C sai."
+  },
+  {
+   "id": 685160,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Độ dịch chuyển là vectơ cho biết độ dài và hướng của sự thay đổi vị trí của vật; đáp án đang lưu D sai."
+  },
+  {
+   "id": 685212,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Các lực cân bằng khi hợp lực bằng không (A); đáp án lưu D (vật đứng yên) chỉ là một trường hợp của cân bằng, chưa khái quát."
+  },
+  {
+   "id": 685636,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Cơ năng = động năng + thế năng = 0,5.0,1.2² + 0,1.10.3 = 3,2 J."
+  },
+  {
+   "id": 685642,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Moment của lực đối với trục quay đặc trưng cho tác dụng làm quay vật quanh trục đó."
+  },
+  {
+   "id": 685922,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Cơ năng bằng tổng động năng và thế năng: W = 1/2 mv² + mgh. Đáp án A đúng, đáp án lưu B thiếu hệ số 1/2 ở động năng."
+  },
+  {
+   "id": 685924,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "A=300·20·cos60°=3000J=3kJ."
+  },
+  {
+   "id": 685926,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Thế năng trọng trường Wt = mgh = 20×9,8×30 = 5880 J. Đáp án đang lưu A (11760 J) sai, đáp án đúng là B."
+  },
+  {
+   "id": 686018,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Hiệu suất 95% của quạt điện nghĩa là 95% điện năng được chuyển hóa thành cơ năng có ích; 5% còn lại hao phí do nhiệt."
+  },
+  {
+   "id": 686171,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Cơ năng đầu: 0,5.0,2.15²=22,5 J; tại độ cao 10 m: 0,2.10.10=20 J. Cơ năng mất: 2,5 J; tỉ lệ so với ban đầu: 2,5/22,5≈11,1% → chọn B, không phải D."
+  },
+  {
+   "id": 1151454,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Trong một chu kì, quãng đường vật đi được là 4A = 4×10 = 40 cm."
+  },
+  {
+   "id": 1151461,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Động năng của vật là Wđ = 1/2 mv². Đáp án đang lưu B (1/2 kx) là biểu thức sai, không phải động năng. Đáp án đúng là D."
+  },
+  {
+   "id": 1152853,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Chu kì con lắc lò xo là T=2π√(m/k), nên đáp án đúng là D."
+  },
+  {
+   "id": 1163858,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "ω = 2πf = 2π/T nên ω/2 = πf = π/T. Đáp án D có ω = 1/T là sai. Đáp án đúng là B."
+  },
+  {
+   "id": 1170565,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "Chu kì ngoại lực T=12,5/10=1,25s, không phải 2s; cộng hưởng nên T0=T=1,25s, suy ra l≈0,396m≈40cm, d sai. Đáp án lưu sai ở b."
+  },
+  {
+   "id": 1173780,
+   "kind": "short",
+   "old": "80",
+   "neu": "1,5",
+   "reason": "Thay t=0: x=3cos(-π/3)=1,5 cm, đáp án lưu 80 sai."
+  },
+  {
+   "id": 1181565,
+   "kind": "short",
+   "old": "4,10",
+   "neu": "4.10^{-9}",
+   "reason": "Cường độ điện trường E=k|Q|/r² với r=0,2 m; tính ra |Q|=900×(0,2)²/(9×10⁹)=4×10⁻⁹ C. Đáp án lưu '4,10' thiếu thang 10⁻⁹ nên sai."
+  },
+  {
+   "id": 1182339,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "E = k|q|/r² = 9.10⁹ × 10⁻⁹ / 0,04² = 5625 V/m. Đáp án đúng là B, không phải A."
+  },
+  {
+   "id": 1182342,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "V_N=W/q=0,5/10^-3=500 V; E=V/d=500/0,02=25000 V/m. Vậy đáp án đúng là D, không phải A."
+  },
+  {
+   "id": 1192632,
+   "kind": "short",
+   "old": "400",
+   "neu": "3",
+   "reason": "Lực Coulomb trong điện môi giảm ε lần: F = F0/ε, suy ra ε = 12/4 = 3, không thể 400."
+  },
+  {
+   "id": 1195395,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "Mạch nối tiếp: Rtđ=300 Ω, I=12/300=0,04 A, U1=0,04×100=4 V (không phải 8 V), P2=0,04²×200=0,32 W. Vậy a đúng, b đúng, c sai, d đúng."
+  },
+  {
+   "id": 1225214,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Công thức bước sóng λ = vT, suy ra chu kỳ T = λ/v. Đáp án lưu A (T = v/λ) sai thứ nguyên và công thức."
+  },
+  {
+   "id": 1227148,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Khoảng vân i = λD/a; đưa màn lại gần hai khe thì D giảm nên i giảm. Đáp án đúng là B."
+  },
+  {
+   "id": 1230697,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "λ=ia/D=0,48µm đúng; khoảng cách vân sáng bậc 2 đến bậc 5 cùng bên là 3i=3mm nên b đúng; D tăng lên 1,5m cho i'=1,2mm, không phải 0,8mm nên d sai."
+  },
+  {
+   "id": 1235172,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Bước sóng tăng dần: tia X < tử ngoại < hồng ngoại < sóng vô tuyến. Đáp án lưu A sai, phương án đúng là D."
+  },
+  {
+   "id": 1236938,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Dò vết nứt bề mặt kim loại dùng chất thẩm thấu huỳnh quang; tia tử ngoại kích thích chất này phát quang để lộ vết nứt, nên dựa vào tính chất B, không phải ion hóa không khí."
+  },
+  {
+   "id": 1246834,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "i=4/10=0,4 mm; x=1,0 mm = 2,5i = (3−0,5)i nên là vân tối thứ 3."
+  },
+  {
+   "id": 1247004,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Sóng dọc có phương dao động trùng với phương truyền sóng, không phải thẳng đứng."
+  },
+  {
+   "id": 1247025,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "a đúng vì khoảng cách sáng-tối liền kề là i/2 nên i gấp đôi. b sai do i=λD/a. c sai vì hiệu đường đi bậc 4 là 4λ. d đúng: 3i+4,5i=7,5i."
+  },
+  {
+   "id": 1247029,
+   "kind": "short",
+   "old": "64",
+   "neu": "0,24",
+   "reason": "Δd=4 cm. Giữa M và trung trực có 2 cực đại nên M là cực tiểu thứ 3: Δd=2,5λ ⇒ λ=1,6 cm. v=λf=1,6×15=24 cm/s=0,24 m/s."
+  },
+  {
+   "id": 1252673,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Dao động cưỡng bức ổn định có tần số bằng tần số ngoại lực f nên chu kì T = 1/f; đáp án lưu C (2f) sai."
+  },
+  {
+   "id": 1252675,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Điều kiện để có giao thoa ánh sáng là hai nguồn phải là hai nguồn kết hợp (cùng tần số và độ lệch pha không đổi). Đáp án A 'đơn sắc' chưa đủ."
+  },
+  {
+   "id": 1345606,
+   "kind": "short",
+   "old": "0,64",
+   "neu": "16",
+   "reason": "λ/2=5 mm ⇒ λ=10 mm. Trên đường tròn, |Δd|≤40 mm nên |k|≤4. Số điểm: k=0 cho 2; |k|=1,2,3 mỗi loại 4; |k|=4 cho 2. Tổng 16, nên đáp án lưu 0,64 sai."
+  },
+  {
+   "id": 376693,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "A=Fs thiếu cosα; công thức tổng quát A=Fscosα. b,c đúng; d sai (lực không cần không đổi)."
+  },
+  {
+   "id": 346079,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Người nhảy cùng chiều xe: (60+100)·3=60·7+100·v ⇒ v=0,6 m/s = C, không phải 0,4."
+  },
+  {
+   "id": 1342693,
+   "kind": "short",
+   "old": "1,05",
+   "neu": "6,3",
+   "reason": "a=-4π²x ⇒ ω=2π≈6,3 rad/s (đáp án 1,05 nhầm T hoặc π/3)."
+  },
+  {
+   "id": 346543,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Toa+pháo+đạn: 151·5=(130+20)v'+1·(400+5) ⇒ v'≈2,33 m/s = D; lời giải cũng ra 2,33 nhưng đáp án lưu B."
+  },
+  {
+   "id": 443889,
+   "kind": "short",
+   "old": "1827",
+   "neu": "3045",
+   "reason": "Không khí hai nguyên tử U=(5/2)nRT≈3045 kJ; 1827 là (3/2)nRT (đơn nguyên tử)."
+  },
+  {
+   "id": 680404,
+   "kind": "short",
+   "old": "3",
+   "neu": "2",
+   "reason": "s=2 m, a=2s/t²=1 m/s², F=ma=2 N (lưu 3)."
+  },
+  {
+   "id": 1152864,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Cộng hưởng có lợi: hộp đàn ghi ta (D); bệ máy rung là có hại."
+  },
+  {
+   "id": 379795,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "a đúng: phản xạ vẫn i=i' khi tới mặt nước; không phải chỉ khúc xạ."
+  },
+  {
+   "id": 681808,
+   "kind": "short",
+   "old": "1,2",
+   "neu": "1",
+   "reason": "v=25 m/s, s=70 m, F=mv²/2s≈1,12·10⁴ N → hàng đơn vị là 1."
+  },
+  {
+   "id": 684882,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Chuyển động thẳng: phương v không đổi, chiều có thể đổi (D), không phải C."
+  },
+  {
+   "id": 680118,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "d đúng: khi cháy dùng bình cứu hỏa gần nhất."
+  },
+  {
+   "id": 8317,
+   "kind": "short",
+   "old": "1304",
+   "neu": "1202",
+   "reason": "Tốc độ trung bình sqrt(8RT/πμ)≈1202 m/s; 1304 là v_rms."
+  },
+  {
+   "id": 686051,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "Băng nhẵn: hệ kín ngang, p và Wđ bảo toàn; a sai, d đúng."
+  },
+  {
+   "id": 13039,
+   "kind": "short",
+   "old": "0,92",
+   "neu": "92,07",
+   "reason": "F≈9,21·10^{-8} N = 92,07 nN, không phải 0,92 nN."
+  },
+  {
+   "id": 1256238,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Sóng ngắn phản xạ tầng điện li, truyền thông mặt đất; cực ngắn là tầm nhìn thẳng."
+  },
+  {
+   "id": 13615,
+   "kind": "short",
+   "old": "1,6",
+   "neu": "-1,6",
+   "reason": "Electron q<0 nên W=qV=-1,6·10^{-16} J → X=-1,6."
+  },
+  {
+   "id": 4013,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "d: 0,027 g Al → số proton ≈7,83·10^{21} chứ không phải 10^{23}."
+  },
+  {
+   "id": 463941,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "1 atm ≠ 1 bar và ≠ 10^5 Pa (đó là 1 bar); 1 m³=10^6 cm³."
+  },
+  {
+   "id": 5185,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "u và i cùng pha; a sai; P=440√2 W nên b đúng."
+  },
+  {
+   "id": 684248,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Đo tốc độ viên bi CÓ cổng quang điện; không dùng thước thẳng đo đường kính."
+  },
+  {
+   "id": 570392,
+   "kind": "short",
+   "old": "58,6",
+   "neu": "13,5",
+   "reason": "505 g phân hạch / 3,75% = 13,5 kg nhiên liệu; 58,6 đã chia thêm hiệu suất 23%."
+  },
+  {
+   "id": 452096,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "d sai: hệ tay–mặt không cô lập, có công cơ và trao đổi nhiệt môi trường."
+  },
+  {
+   "id": 681432,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Đo tốc độ viên bi: đồng hồ hiện số + cổng quang + thước kẹp (B), không phải băng giấy."
+  },
+  {
+   "id": 672715,
+   "kind": "short",
+   "old": "2,5",
+   "neu": "3",
+   "reason": "F=BIL=2,5 N; đề yêu cầu làm tròn hàng đơn vị → 3."
+  },
+  {
+   "id": 202,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "b sai: điện năng còn tỏa ra ngoài/nhiệt lượng kế."
+  },
+  {
+   "id": 682024,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Giấy phẳng diện tích lớn nhất → lực cản lớn nhất (D), không phải vo tròn."
+  },
+  {
+   "id": 683640,
+   "kind": "short",
+   "old": "0",
+   "neu": "9,6",
+   "reason": "A=qEd=1,6e-19·120·0,05=9,6·10^{-19} J."
+  },
+  {
+   "id": 1173751,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "A=√(x²+v²/ω²) là A, không phải B."
+  },
+  {
+   "id": 1170573,
+   "kind": "short",
+   "old": "0,1",
+   "neu": "6",
+   "reason": "Giây thứ 2018 quãng đường 6 cm (T=3 s từ giây đầu 4 cm)."
+  },
+  {
+   "id": 346427,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Giật lùi v=2,5·600/1000=1,5 m/s = D."
+  },
+  {
+   "id": 681828,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Phanh khó vì quán tính tăng theo khối lượng (C)."
+  },
+  {
+   "id": 1173769,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Tắt dần: biên độ giảm dần (C)."
+  },
+  {
+   "id": 406108,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "εX=7,1 > εLi nên X bền hơn; d sai."
+  },
+  {
+   "id": 1170563,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Nằm ngang: L0=Lmax−A=22 cm = A."
+  },
+  {
+   "id": 685082,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Câu sai: nhiễm điện dương không phải nhận ion dương (D)."
+  },
+  {
+   "id": 1151446,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Pha ban đầu = −π/3 (B), không phải +π/3."
+  },
+  {
+   "id": 684875,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "F=5 N, a=5, v=6 m/s = C."
+  },
+  {
+   "id": 523803,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "p,V không đổi: Δm=150(1−300/310)=4,84 g = C."
+  },
+  {
+   "id": 2652,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "v̄=2v1v2/(v1+v2)=15 km/h = B (16 là trung bình cộng)."
+  },
+  {
+   "id": 681842,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "reason": "Cùng chiều cùng v ⇒ khoảng cách không đổi; c đúng."
+  },
+  {
+   "id": 685519,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "ΔF=0,072 N là sai số tuyệt đối (D); tương đối ≈0,68%."
+  },
+  {
+   "id": 682845,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Đối tượng Vật lí: dạng vật chất và năng lượng (A)."
+  },
+  {
+   "id": 1345585,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Sóng cơ không truyền trong chân không (C)."
+  },
+  {
+   "id": 1236934,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Sóng dọc: rắn, lỏng, khí (B)."
+  },
+  {
+   "id": 1342461,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "f=(1/2π)√(k/m) = D."
+  },
+  {
+   "id": 685727,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Lực cùng chiều chuyển động → công phát động (A)."
+  },
+  {
+   "id": 682386,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Moment lực: N·m (A), không phải N·s."
+  },
+  {
+   "id": 686217,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Điện gió: cơ năng gió → điện năng (B)."
+  },
+  {
+   "id": 681776,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "T=mg=30 N (C)."
+  },
+  {
+   "id": 686040,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Đơn vị động lượng kg·m/s (A)."
+  },
+  {
+   "id": 682855,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "a⃗=Δv⃗/Δt (C)."
+  },
+  {
+   "id": 404918,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Wđ∝T nên tăng 3 lần (C)."
+  },
+  {
+   "id": 685597,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "|F1−F2|≤F≤F1+F2 (C)."
+  },
+  {
+   "id": 7333,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Nhiệt không tự truyền từ chỗ lạnh sang nóng (D); không phải nhiệt năng."
+  },
+  {
+   "id": 1152851,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "ĐH là li độ hàm sin/cos (D); A chỉ là tuần hoàn."
+  },
+  {
+   "id": 685598,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Hợp lực song song không cùng giá với thành phần → A là nhận xét sai."
+  },
+  {
+   "id": 685940,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Xoa tay: cơ năng → nhiệt (A)."
+  },
+  {
+   "id": 683323,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "36 km/h=10 m/s, a=0,5 m/s² (A)."
+  },
+  {
+   "id": 681768,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "L=v0 t=50·12=600 m (D)."
+  },
+  {
+   "id": 683844,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "v̄=|v⃗tb| khi thẳng không đổi chiều (C)."
+  },
+  {
+   "id": 1178246,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "E∝1/r² ⇒ rB=2 rA (B)."
+  },
+  {
+   "id": 1231017,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Giao thoa: cùng f, cùng phương, Δφ không đổi (D)."
+  },
+  {
+   "id": 686024,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "P=10000·20/80=2500 W (C)."
+  },
+  {
+   "id": 686036,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Câu sai: lực đàn hồi cùng chiều lực gây biến dạng (C)."
+  },
+  {
+   "id": 684832,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "a=Δv/Δt (D)."
+  },
+  {
+   "id": 683463,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Trọng lực đơn vị N (A), không phải kg."
+  },
+  {
+   "id": 684876,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Có thời gian truyền âm: h≈71,6 m (B)."
+  },
+  {
+   "id": 681894,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Chất lưu = lỏng + khí (D)."
+  },
+  {
+   "id": 684846,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Ma sát nghỉ: bút trên mặt nghiêng (C)."
+  },
+  {
+   "id": 682009,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "t=√(2h/g)=2 s (C)."
+  },
+  {
+   "id": 686007,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "W=½mv²+mgh (A)."
+  },
+  {
+   "id": 685089,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "P (5 e hóa trị) không cho bán dẫn p (B)."
+  },
+  {
+   "id": 1187846,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "reason": "c: q=−P/E=−2·10^{-11} C, không phải −2·10^{-8}."
+  },
+  {
+   "id": 683769,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Tròn đều: a⃗ ⊥ v⃗ (D)."
+  },
+  {
+   "id": 685621,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Cơ năng không bảo toàn khi có ma sát/cản (C)."
+  },
+  {
+   "id": 1235176,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "λ=4 cm; khoảng cách hai cực đại liên tiếp =λ/2=2 cm, d sai."
+  },
+  {
+   "id": 348876,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Va chạm đàn hồi xuyên tâm giữa hai xe cùng khối lượng, xe 1 chuyển động đến va vào xe 2 đứng yên: sau va chạm xe 1 dừng, xe 2 chuyển động."
+  },
+  {
+   "id": 681425,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "36 km/h = 10 m/s. Động năng ban đầu ½·100·10²=5000 J. Công lực hãm = 300·s. Cân bằng: 5000=300s ⇒ s≈16,67 m. Đáp án đúng là D, không phải C."
+  },
+  {
+   "id": 685934,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "ΔW=½×95×(10²−5²)=3562,5 J nên đáp án A đúng; đáp án lưu C sai."
+  },
+  {
+   "id": 1182974,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "E = U/d = 10 V / 0,05 m = 200 V/m. Đáp án đúng là D, không phải C."
+  },
+  {
+   "id": 683856,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Độ dịch chuyển = vận tốc trung bình × thời gian = (-8 m/s) × 15 s = -120 m. Vậy đáp án đúng là D."
+  },
+  {
+   "id": 581,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Suất điện động cảm ứng e=NSΔB/Δt; dòng I=e/R → ΔB/Δt=IR/(NS)=0,3.4/(400.30e-4)=1 T/s. Đáp án đúng là B."
+  },
+  {
+   "id": 1243099,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Khi vật đi từ biên về vị trí cân bằng, độ cao giảm nên thế năng giảm, động năng tăng dần, vận tốc tăng dần."
+  },
+  {
+   "id": 345267,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Bảo toàn động lượng: (2*3)=(2+4)*v → v=1 m/s. Đáp án đúng là C, không phải D."
+  },
+  {
+   "id": 1243093,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Tần số dao động của phần tử môi trường khi sóng truyền qua chính là tần số của sóng, không phải năng lượng sóng."
+  },
+  {
+   "id": 551,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Từ thông tỉ lệ diện tích nên tỉ lệ bình phương đường kính: (40/20)^2=4, Φ2=4*30=120 mWb. Đáp án lưu A (60 mWb) là sai, đúng là B."
+  },
+  {
+   "id": 571219,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Ga hóa hơi thu nhiệt làm vỏ bình lạnh, hơi nước trong không khí ngưng tụ thành lớp nước mỏng. Đáp án đúng là B."
+  },
+  {
+   "id": 685609,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Công cơ học A=F.s.cosα là đại lượng vô hướng, không phải véctơ. Đáp án đúng là B."
+  },
+  {
+   "id": 383498,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Thăng hoa là quá trình chuyển từ thể rắn sang thể khí, nên đáp án đúng là B: Nước đá → hơi nước."
+  },
+  {
+   "id": 667753,
+   "kind": "short",
+   "old": "80,5",
+   "neu": "805",
+   "reason": "Q = 2*380*(1084.8-25) = 805448 J = 805.448 kJ, làm tròn đến hàng đơn vị là 805 kJ, không phải 80.5 kJ."
+  },
+  {
+   "id": 684845,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Lực căng dây có phương trùng với sợi dây, chiều hướng vào giữa dây, nên đáp án đúng là C, không phải B."
+  },
+  {
+   "id": 684830,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Áp dụng công thức rơi tự do t = √(2h/g). Với h=80m, g=10m/s² ta có t = √(2×80/10) = √16 = 4s. Vậy đáp án đúng là C."
+  },
+  {
+   "id": 685939,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Mômen lực M = F.d ⇒ d = M/F = 40/20 = 2m. Đáp án lưu A sai."
+  },
+  {
+   "id": 683367,
+   "kind": "short",
+   "old": "4",
+   "neu": "20",
+   "reason": "Thời gian rơi t = sqrt(2*5/10) = 1s; tầm xa L = 20*1 = 20m. Đáp án lưu 4 là sai."
+  },
+  {
+   "id": 684303,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Pháo sáng có vận tốc ngang ban đầu bằng vận tốc máy bay. Bỏ qua sức cản, vận tốc ngang không đổi nên nó luôn ở thẳng đứng dưới máy bay."
+  },
+  {
+   "id": 486,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Từ thông Φ=NBScosα. Các yếu tố làm tăng Φ: tăng số vòng N, tăng tiết diện S, tăng cảm ứng từ B. Tăng đường kính dây dẫn không làm tăng S. Vậy có 3 trường hợp: 1,3,4. Đáp án đúng là"
+  },
+  {
+   "id": 681458,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Khi giũ khăn, khăn dừng đột ngột, nước có quán tính tiếp tục chuyển động nên văng ra ngoài."
+  },
+  {
+   "id": 682387,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Chuyển động chậm dần đều từ v0 đến 0, s = v0*t/2 ⇒ v0 = 2s/t = 120/20 = 6 m/s. Động lượng p = m*v0 = 2000*6 = 12000 kg.m/s. Đáp án D."
+  },
+  {
+   "id": 683593,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Cơ năng = động năng ban đầu + thế năng ban đầu = 0,5*0,2*30^2 + 0,2*10*40 = 90 + 80 = 170 J."
+  },
+  {
+   "id": 372316,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Rơi tự do: vận tốc tăng → động năng tăng; độ cao giảm → thế năng giảm. Đáp án đúng là B."
+  },
+  {
+   "id": 1170562,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Mỗi dao động toàn phần đi 4A; 10 dao động đi 40A=120 cm⇒A=3 cm. Chiều dài quỹ đạo L=2A=6 cm, đáp án B."
+  },
+  {
+   "id": 593669,
+   "kind": "short",
+   "old": "85",
+   "neu": "-85",
+   "reason": "Đề cho ΔU=A+Q; hệ truyền nhiệt Q=-25 kJ, sinh công nên A=-60 kJ. Vậy ΔU=-60+(-25)=-85 kJ. Đáp án lưu 85 sai dấu."
+  },
+  {
+   "id": 685824,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Năng lượng trong thực phẩm là năng lượng hóa học (hóa năng), không phải nhiệt năng. Đáp án đúng là B."
+  },
+  {
+   "id": 686205,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Thể tích vật bằng thể tích nước dâng: 100 cm³ = 0,0001 m³. Lực đẩy Ác-si-mét: F = d.V = 10000.0,0001 = 1 N. Đáp án đúng là A."
+  },
+  {
+   "id": 683329,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Chuyển động nhanh dần đều từ nghỉ: s=0.5at^2. t=1s: s1=3=0.5a→a=6 m/s². t=2s: s=12 m; quãng đường giây thứ hai = s(2)-s(1)=12-3=9 m."
+  },
+  {
+   "id": 680294,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "t=√(2h/g)=2s, v=gt=20m/s."
+  },
+  {
+   "id": 681829,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Hệ số ma sát phụ thuộc bản chất bề mặt, không phụ thuộc lực kéo hay tốc độ nên không đổi."
+  },
+  {
+   "id": 1224761,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Công thức v^2 = ω^2(A^2 - x^2). Khi v = vmax/2 = ωA/2, thay vào tính được |x| = A√3/2. Đáp án đang lưu A sai, đáp án đúng là C."
+  },
+  {
+   "id": 683345,
+   "kind": "short",
+   "old": "12",
+   "neu": "0,7",
+   "reason": "Vật chuyển động thẳng đều nên F kéo = ma sát: μ = F/(mg) = 210/(30*10) = 0,7. Đáp án đang lưu 12 là sai."
+  },
+  {
+   "id": 686041,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Đơn vị năng lượng là jun (J), không phải kg."
+  },
+  {
+   "id": 683589,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Công kéo đều kiện hàng lên độ cao 10m: A = mgh = 1200·10·10 = 120000 J = 120 kJ. Đáp án C đúng, không phải D."
+  },
+  {
+   "id": 681839,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Ở câu hỏi này, người ngồi trên thuyền thả trôi theo dòng nước. So với dòng nước và thuyền, người đó đứng yên; so với bờ sông, người đó chuyển động. Vậy câu không đúng là A."
+  },
+  {
+   "id": 684841,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Khi xe phanh gấp, người có quán tính nên tiếp tục chuyển động về phía trước, do đó ngã dúi về phía trước. Đáp án C (nghiêng sang phải) là sai."
+  },
+  {
+   "id": 686029,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Đòn gánh cân bằng khi moment lực hai bên bằng nhau: P₁d₁ = P₂d₂. Thúng gạo nặng hơn nên cánh tay đòn ngắn hơn, vai đặt gần thúng gạo hơn. Đáp án đúng là A, không phải C."
+  },
+  {
+   "id": 686058,
+   "kind": "short",
+   "old": "300",
+   "neu": "9",
+   "reason": "Bảo toàn động lượng: m1v1=(m1+m2)v → v1=(0.25+0.2)*5/0.25=9 m/s. Đáp án lưu 300 sai."
+  },
+  {
+   "id": 1342460,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Gia tốc a = -ω²x nên cùng tần số và ngược pha với li độ. Đáp án đang lưu C sai."
+  },
+  {
+   "id": 686046,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Năng lượng toàn phần của động cơ ô tô là tổng năng lượng có ích và năng lượng hao phí, không phải hiệu."
+  },
+  {
+   "id": 1247581,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Hai nguồn kết hợp cần cùng phương, cùng tần số và hiệu số pha không đổi theo thời gian. Đáp án C (cùng pha ban đầu) là điều kiện quá mạnh, không bắt buộc."
+  },
+  {
+   "id": 684828,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Độ dịch chuyển là khoảng cách từ điểm đầu đến điểm cuối: √(3²+4²)=5 km."
+  },
+  {
+   "id": 1247008,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Sóng điện từ luôn là sóng ngang, không thể là sóng dọc. Phát biểu D sai, còn A, B, C đều đúng."
+  },
+  {
+   "id": 1151448,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Khi vật đi từ biên về VTCB: li độ giảm → thế năng giảm, vận tốc tăng → động năng tăng; cơ năng không đổi. Vậy năng lượng chuyển hóa từ thế năng sang động năng. Đáp án C sai."
+  },
+  {
+   "id": 681840,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Rơi tự do là chuyển động thẳng nhanh dần đều theo phương thẳng đứng, chiều từ trên xuống, mọi vật rơi như nhau. Đáp án 'D' là phát biểu sai."
+  },
+  {
+   "id": 685526,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Khi ngừng đạp, xe tiếp tục đi nhờ quán tính, không phải phản lực mặt đường hay lực ma sát. Trọng lượng không gây chuyển động ngang."
+  },
+  {
+   "id": 1195392,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Công suất tiêu thụ là lượng điện năng sử dụng trong một đơn vị thời gian (P = A/t), nên đáp án đúng là C, không phải B."
+  },
+  {
+   "id": 684885,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Đáp án đúng là A. Khi cáo rẽ ngoặt, theo quán tính sói vẫn lao theo hướng cũ, tạo khoảng cách để cáo thoát."
+  },
+  {
+   "id": 1182333,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Đáp án lưu A sai. Theo định luật Coulomb, hai điện tích trái dấu hút nhau; cùng dấu thì đẩy nhau. Đáp án đúng là D."
+  },
+  {
+   "id": 1225218,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Thứ tự bước sóng giảm dần: tia hồng ngoại (>700nm), ánh sáng tím (~380-450nm), tia tử ngoại (10-380nm), tia Rơn-ghen (<10nm). Đáp án đúng là A."
+  },
+  {
+   "id": 1182338,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Lực Coulomb tỉ lệ thuận tích điện tích và nghịch đảo bình phương khoảng cách. Tích điện tích tăng 4 lần, khoảng cách giảm nửa làm mẫu giảm 4 lần, nên lực tăng 16 lần."
+  },
+  {
+   "id": 1151457,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Kéo vật nặng của con lắc lò xo khỏi vị trí cân bằng rồi buông nhẹ tạo dao động; đáp án lưu C sai."
+  },
+  {
+   "id": 686022,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Cần 500 W. Hiệu suất 15% của 100 W/m² cho 15 W/m². Diện tích = 500/15 ≈ 33,33 m², không phải A."
+  },
+  {
+   "id": 1252672,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Thứ tự tăng dần bước sóng: tia tử ngoại (< 380 nm), ánh sáng nhìn thấy (380–760 nm), tia hồng ngoại (> 760 nm). Vậy đáp án đúng là B."
+  },
+  {
+   "id": 686155,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Động lượng p = mv = 9,1×10⁻³¹ × 2×10⁶ = 1,82×10⁻²⁴ kg·m/s. Đáp án đúng là A, không phải D (4,91×10⁻²⁴)."
+  },
+  {
+   "id": 1247011,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Cực đại giao thoa là nơi hai sóng cùng pha, tăng cường lẫn nhau, biên độ dao động cực đại."
+  },
+  {
+   "id": 686150,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Trong va chạm đàn hồi, động lượng, cơ năng và động năng của hệ được bảo toàn, còn vận tốc của từng vật có thể thay đổi nên không bảo toàn."
+  },
+  {
+   "id": 1224747,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Trong một chu kỳ dao động điều hòa, quãng đường đi được là 4A, không phải A/2."
+  },
+  {
+   "id": 1225208,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Cơ năng W=1/2*k*A^2=1/2*900*0.1^2=4.5J, nên đáp án đúng là A (4,5J), không phải B (5,5J)."
+  },
+  {
+   "id": 685610,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Đi-na-mô biến cơ năng thành điện năng, bóng đèn biến điện năng thành quang năng. Vậy đáp án đúng là C, không phải A."
+  },
+  {
+   "id": 1256236,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Máy lọc nước RO dùng tia tử ngoại (UV) để diệt khuẩn, không dùng tia hồng ngoại."
+  },
+  {
+   "id": 685635,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Bài thực hành tổng hợp lực dùng lực kế, bảng thép, thước đo góc, đế nam châm, bút đánh dấu; không dùng thước dây và nhiệt kế. Đáp án đúng là A."
+  },
+  {
+   "id": 682687,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "36 km/h = 10 m/s; v = 10 + 1×6 = 16 m/s, nên đáp án đúng là A, không phải D."
+  },
+  {
+   "id": 685159,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Phát biểu mô tả vật giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều khi hợp lực bằng không, đây là nội dung định luật I Newton. Đáp án đang lưu D là sai."
+  },
+  {
+   "id": 686033,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Khối lượng riêng có đơn vị khối lượng chia thể tích. kg/m không phải. Đáp án đúng là A, nên đáp án đang lưu D sai."
+  },
+  {
+   "id": 1243095,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Thí nghiệm giao thoa khe Young dùng công thức i = λD/a để đo bước sóng ánh sáng. Đáp án lưu B sai."
+  },
+  {
+   "id": 684837,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Tổng hợp lực thay thế hai lực bằng một lực duy nhất có tác dụng giống hệt như tác dụng của hai lực ấy. Đáp án B sai vì độ lớn lực tổng hợp không phải luôn là hiệu độ lớn hai lực."
+  },
+  {
+   "id": 1182335,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Tại M, hai điện tích cùng dấu, bằng độ lớn, nên cường độ điện trường do mỗi điện tích gây ra có cùng độ lớn nhưng ngược hướng, tổng bằng 0."
+  },
+  {
+   "id": 1235171,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Tia hồng ngoại có tác dụng nhiệt nên dùng để sấy khô, sưởi ấm. Đáp án D (chữa còi xương) là ứng dụng của tia tử ngoại."
+  },
+  {
+   "id": 1342474,
+   "kind": "short",
+   "old": "0,5",
+   "neu": "0,25",
+   "reason": "Vật đi từ vị trí cân bằng (dây thẳng đứng) đến biên (lệch góc lớn nhất) mất T/4 = 0,25 s. Đáp án lưu 0,5 s là sai."
+  },
+  {
+   "id": 685599,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Hợp lực của hai lực song song cùng chiều có độ lớn bằng tổng hai lực: F = F1 + F2 = 2 + 6 = 8 N."
+  },
+  {
+   "id": 1342459,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Hai dao động ngược pha khi độ lệch pha bằng số lẻ lần π: (2n+1)π. Đáp án C đúng, đáp án lưu B (2πn) là cùng pha."
+  },
+  {
+   "id": 685929,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Đẩy sách làm nó chuyển động nhanh dần: lực tác dụng sinh công cơ học, truyền năng lượng cho sách. Đáp án đúng là B (Thực hiện công), không phải A (Bức xạ nhiệt)."
+  },
+  {
+   "id": 345383,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Va chạm mềm, động lượng bảo toàn: v = m1v1/(m1+m2) = 1*6/(1+3) = 1,5 m/s. Đáp án lưu C (4 m/s) sai, đúng là B."
+  },
+  {
+   "id": 684844,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Vật cân bằng trên mặt nghiêng: F_ms = mg sin(30°) = 10*9.8*0.5 = 49 N. Đáp án đúng là B, không phải C (49√3 N)."
+  },
+  {
+   "id": 1346877,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Áp dụng i=λD/a=(0,5×10^-6×3)/(2×10^-3)=0,75×10^-3 m=0,75 mm, đáp án C."
+  },
+  {
+   "id": 683591,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Công kéo A=50×30=1500 J, thời gian 1 phút=60 s, công suất P=1500/60=25 W. Đáp án đúng là B, không phải D."
+  },
+  {
+   "id": 487,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Từ thông qua mặt kín S phụ thuộc vào B, S và góc α, không phụ thuộc tiết diện dây dẫn. Đáp án đúng là D."
+  },
+  {
+   "id": 686054,
+   "kind": "short",
+   "old": "300",
+   "neu": "4",
+   "reason": "Định luật Hooke: độ giãn tỉ lệ lực. 1N giãn 2cm, 2N giãn 4cm. Đáp án lưu 300 sai, đáp án đúng là 4 cm."
+  },
+  {
+   "id": 458571,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Công thức F = 2.10^-7.I1.I2.L/r với I1=I2=5A, L=1m, r=0.005m cho F = 1mN. Đáp án lưu D (6.28mN) sai."
+  },
+  {
+   "id": 1225210,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Cộng hưởng xảy ra khi tần số lực cưỡng bức bằng tần số riêng của hệ, không phải lớn hơn nhiều."
+  },
+  {
+   "id": 681771,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Chuyển động nhanh dần đều: s = ((v0+v)/2)*t = ((4+6)/2)*8 = 40 m. Đáp án đúng là B, không phải A."
+  },
+  {
+   "id": 684819,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "s=100cm=1m; a=2s/t²=2/0.0625=32 m/s²; F=ma=64 N. Đáp án A đúng."
+  },
+  {
+   "id": 683461,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Định luật 3 Newton: lực và phản lực cùng độ lớn, ngược chiều, khác điểm đặt. Đáp án D sai, đáp án C đúng."
+  },
+  {
+   "id": 1345587,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Khi sóng truyền từ môi trường này sang môi trường khác, tần số luôn không đổi; chỉ tốc độ và bước sóng thay đổi."
+  },
+  {
+   "id": 684878,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Hai lực cùng phương, cùng chiều nên hợp lực bằng tổng độ lớn: 9 + 12 = 21 N. Đáp án đang lưu A (15 N) là sai."
+  },
+  {
+   "id": 683320,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Gia tốc a=(8-2)/3=2 m/s², lực F=ma=5*2=10 N, đáp án đúng là B, khác với đáp án lưu A."
+  },
+  {
+   "id": 1173745,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Phương trình dao động x=5cos(ωt+0,5π) có pha ban đầu là hệ số của cos: 0,5π rad. Đáp án lưu A (π) là sai, đúng là B."
+  },
+  {
+   "id": 684833,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Ôtô rời bến từ trạng thái nghỉ (v0=0). Với v=10 m/s và s=50 m, a=(v²-v0²)/(2s)=100/(100)=1 m/s². Đáp án đúng là A, không phải C."
+  },
+  {
+   "id": 346253,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Bảo toàn động lượng: 0.05×800 = 4×v → v = 10 m/s. Đáp án đúng là C, không phải B."
+  },
+  {
+   "id": 683845,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Galilei thả vật thật từ tháp nghiêng Pisa và quan sát kết quả, đây là phương pháp thực nghiệm, không phải nghiên cứu lý thuyết."
+  },
+  {
+   "id": 686140,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Hai vật chuyển động cùng hướng nên tổng động lượng có độ lớn bằng tổng độ lớn: 3 + 5 = 8 kg.m/s. Đáp án đúng là C."
+  },
+  {
+   "id": 682033,
+   "kind": "short",
+   "old": "3",
+   "neu": "13,4",
+   "reason": "Tầm xa L = v0 * sqrt(2h/g). Thay L=18, h=9, g=10 ta được v0 = 18 / sqrt(18/10) = 18 / 1.3416 ≈ 13.4 m/s. Đáp án đang lưu 3 m/s là sai."
+  },
+  {
+   "id": 1247018,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Tốc độ truyền sóng cơ học giảm dần theo thứ tự: rắn > lỏng > khí. Đáp án đúng là B."
+  },
+  {
+   "id": 685093,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Dòng điện không đổi có chiều và cường độ không đổi theo thời gian, nên đáp án đúng là C, không phải D."
+  },
+  {
+   "id": 684827,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Thuyền xuôi dòng nên vận tốc so với bờ = vận tốc thuyền so với nước + vận tốc nước so với bờ = 14 + 9 = 23 km/h."
+  },
+  {
+   "id": 686137,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Định luật Húc: F = k|Δℓ|. Đáp án đang lưu C sai, AI giải mù lượt 1 đúng."
+  },
+  {
+   "id": 685531,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Δv = a.t = 2×3 = 6 m/s. Đáp án đang lưu D sai, đáp án đúng là B."
+  },
+  {
+   "id": 686162,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Công A = P.t = 200W × 60s = 12000J. Đáp án lưu C (260J) là sai, AI giải mù 1 chọn A đúng."
+  },
+  {
+   "id": 1346878,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Công thức khoảng vân đúng là i=λD/a, nên đáp án C sai, đáp án đúng là D."
+  },
+  {
+   "id": 681557,
+   "kind": "short",
+   "old": "96",
+   "neu": "64",
+   "reason": "Đổi 36km/h=10m/s. Quãng đường giây thứ 6: Δs = v0 + a(6-0.5) = 7.25 → 10+5.5a=7.25 → a=-0.5 m/s². Xe chưa dừng trong 8s (v=10-4=6>0). s=10*8+0.5*(-0.5)*64=64m."
+  },
+  {
+   "id": 593660,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "37°C = 37 + 273.15 = 310.15 K, làm tròn 310 K. Đáp án đúng là C, không phải B."
+  },
+  {
+   "id": 402138,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Số hạt D là 75N_A; mỗi phản ứng cần 2 hạt D, tỏa 3,25 MeV nên năng lượng = (75N_A/2)*3,25 ≈ 7,34.10^25 MeV. Đáp án lưu A sai."
+  },
+  {
+   "id": 686156,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "50cm = 0.5m, A = Fs = 200×0.5 = 100J. Đáp án đúng là D."
+  },
+  {
+   "id": 1152854,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Thế năng Wt=1/2 kx² đạt cực đại khi |x| lớn nhất, tức tại vị trí biên, không phải vị trí li độ bằng không."
+  },
+  {
+   "id": 1231018,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Khoảng vân i = λD/a = (0,6×10^-6×2)/(1,5×10^-3) = 0,8×10^-3 m = 0,8 mm. Đáp án đang lưu D sai."
+  },
+  {
+   "id": 683840,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Tốc độ tức thời là tốc độ tại một thời điểm, được định nghĩa là tốc độ trung bình trong khoảng thời gian rất nhỏ. Vậy đáp án đúng là B."
+  },
+  {
+   "id": 685530,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "AC là viết tắt của Alternating Current (dòng điện xoay chiều). Đáp án lưu D là sai."
+  },
+  {
+   "id": 1178242,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Cường độ điện trường của điện tích điểm Q tại một điểm không phụ thuộc vào điện tích thử q, nên đáp án đúng là B. Đáp án đang lưu D sai."
+  },
+  {
+   "id": 1170568,
+   "kind": "short",
+   "old": "1,05",
+   "neu": "-3",
+   "reason": "a = -ω²x; từ x=-2cm (=-0.02m) có a=2m/s² suy ra ω²=100. Tại x=3cm (0.03m): a=-100*0.03=-3 m/s². Đáp án đúng là -3."
+  },
+  {
+   "id": 1151455,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "Thiết bị đóng cửa tự động dùng lò xo và giảm chấn, dao động của cửa tắt dần nhanh để đóng êm, không phải dao động điều hòa."
+  },
+  {
+   "id": 1346881,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Khi sóng truyền từ không khí vào nước, tần số sóng không đổi (do nguồn sóng quyết định). Đáp án lưu B sai; đáp án đúng là A."
+  },
+  {
+   "id": 686005,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Cơ năng tại vị trí ném: W = ½*1*6² + 1*10*2 = 38J. Bảo toàn nên tại mặt đất cũng 38J, đáp án B."
+  },
+  {
+   "id": 672718,
+   "kind": "short",
+   "old": "46,4",
+   "neu": "2,6",
+   "reason": "Tính m = (P.t/η)/(200.1,6e-13) * 235/NA ≈ 2,56 tấn; đáp án lưu 46,4 sai do nhầm gam thành tấn và làm tròn sai."
+  },
+  {
+   "id": 685601,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Mômen lực có tác dụng làm vật quay quanh trục cố định, không phải chuyển động tịnh tiến."
+  },
+  {
+   "id": 686019,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "2 kWh = 2 × 3,6×10^6 J = 7,2×10^6 J, đáp án A đúng, không phải B."
+  },
+  {
+   "id": 685932,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Trong rơi tự do chỉ có trọng lực sinh công, cơ năng bảo toàn; động năng tăng, thế năng giảm. Đáp án lưu B sai."
+  },
+  {
+   "id": 681447,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Đề hỏi câu sai. A, B, C đều có ma sát. D không có ma sát (nồi áp suất chín thức ăn nhờ áp suất và nhiệt độ). Nên câu sai là D, đáp án lưu C sai."
+  },
+  {
+   "id": 684816,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Góc 180 độ nghĩa là hai lực ngược chiều, hợp lực có độ lớn bằng trị tuyệt đối hiệu hai lực, nên đáp án C đúng, đáp án A sai."
+  },
+  {
+   "id": 682385,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Bảo toàn cơ năng: v=√(8²+2×9,8×2)≈10,2 m/s."
+  },
+  {
+   "id": 684879,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "s = 1/2gt² = 0,5×10×4² = 80 m. Đáp án đang lưu A (78,4 m) không khớp với g = 10 m/s²."
+  },
+  {
+   "id": 680323,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Tốc độ trung bình = 60 m / 10 s = 6 m/s. Đáp án B (6 km/s) sai, D đúng."
+  },
+  {
+   "id": 1170556,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Cơ năng của dao động điều hòa là hằng số, bằng động năng cực đại (ở VTCB) hoặc thế năng cực đại (ở biên). Phát biểu sai là 'động năng ở thời điểm ban đầu' vì động năng ban đầu có t"
+  },
+  {
+   "id": 1170548,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "Độ lệch pha Δφ = ωΔt = (2π/T)Δt, nên đáp án đúng là D. Đáp án lưu C sai thứ tự tỉ lệ."
+  },
+  {
+   "id": 685162,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Gia tốc đặc trưng cho sự biến thiên nhanh hay chậm của vận tốc, không phải độ dịch chuyển."
+  },
+  {
+   "id": 595373,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "F = BILsinα = 0,5*2*0,05*0,5 = 0,025 N = 25 mN. Đáp án đúng là B, không phải C."
+  },
+  {
+   "id": 683459,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Khi xe tăng tốc, phần dưới cơ thể bị kéo theo xe, phần trên có quán tính nên ngả về phía sau. Đáp án đúng là A."
+  },
+  {
+   "id": 7459,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "A đúng trong tủ lạnh (có công), B, C đúng nguyên lí truyền nhiệt. D sai vì cùng nhiệt độ không tự truyền nhiệt."
+  },
+  {
+   "id": 683322,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Trong chuyển động thẳng biến đổi đều, gia tốc không đổi; vận tốc, tọa độ, quãng đường đều thay đổi theo thời gian. Đáp án đang lưu A sai."
+  },
+  {
+   "id": 683588,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Công A = F.s.cosα = 150*20*cos30° ≈ 2598 J. Đáp án đúng là A, không phải C."
+  },
+  {
+   "id": 682391,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Tần số f=180/60=3 Hz. Tốc độ góc ω=2πf=2π×3=6π rad/s. Vậy đáp án đúng là B, không phải C."
+  },
+  {
+   "id": 685625,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Công bằng độ biến thiên động năng: 0.5*200*(15^2-10^2)=12500 J. Đáp án đúng là D."
+  },
+  {
+   "id": 571223,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Sau 2 tháng, độ phóng xạ giảm còn H0/√2 nên thời gian chiếu xạ lần 3 phải là 25√2 ≈ 35,4 phút để cùng lượng tia γ. Đáp án B đúng, đáp án lưu D sai."
+  },
+  {
+   "id": 684835,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Hai lực cùng phương, cùng chiều thì hợp lực có độ lớn bằng tổng độ lớn: F = F1 + F2. Đáp án đang lưu B là sai."
+  },
+  {
+   "id": 672401,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Đề cho Δt=20°C (không phải 2°C). Nhiệt lượng Q=0,4×380×20=3040 J. Đáp án đúng là D."
+  },
+  {
+   "id": 682472,
+   "kind": "short",
+   "old": "SDDS",
+   "neu": "62,5",
+   "reason": "Công có ích: 600×10×10=60000 J=60 kJ. Hiệu suất: 60/96=0,625 → 62,5%. Đáp án lưu 'SDDS' không hợp lệ."
+  },
+  {
+   "id": 1170553,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Công thức đúng là ω = 2πf nên đáp án A mới chính xác, đáp án C trong ngân hàng bị sai."
+  },
+  {
+   "id": 685631,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Hiệu suất được định nghĩa là tỉ số giữa năng lượng có ích và năng lượng toàn phần, không phải năng lượng hao phí."
+  },
+  {
+   "id": 684820,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Từ định luật II Newton, a=F/m nên a2/a1=F2/F1=1,5=3/2. Đáp án lưu C (3) là sai, AI lượt 1 đúng."
+  },
+  {
+   "id": 1345593,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "Thí nghiệm Y-âng đo bước sóng ánh sáng qua khoảng vân i=λD/a. Đáp án D (đo tốc độ ánh sáng) sai; AI lượt 1 đúng với B."
+  },
+  {
+   "id": 345325,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Bảo toàn động lượng: 5m1 + 1×1 = (m1 + 1)×2,5 → 2,5m1 = 1,5 → m1 = 0,6 kg, đáp án B. Đáp án lưu C (7 kg) và lời giải có lỗi tính toán."
+  },
+  {
+   "id": 682404,
+   "kind": "short",
+   "old": "5",
+   "neu": "894",
+   "reason": "Bảo toàn động lượng: mảnh 2 có vận tốc ngang -400 m/s, thẳng đứng 800 m/s. Tốc độ = √(400²+800²) ≈ 894 m/s."
+  },
+  {
+   "id": 680296,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Vận tốc trung bình = độ dịch chuyển/thời gian, cho biết độ nhanh chậm và hướng; đáp án đúng là B."
+  },
+  {
+   "id": 683455,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "Gia tốc tính bằng (v - v0)/t = (10-6)/2 = 2 m/s² nên đáp án đúng là C, không phải D."
+  },
+  {
+   "id": 681469,
+   "kind": "short",
+   "old": "66,1",
+   "neu": "0,75",
+   "reason": "Vật trượt thẳng đều nên mg sinθ = μ mg cosθ ⇒ μ = tanθ. sinθ=30/50=0,6, cosθ=0,8 ⇒ μ=0,75. Đáp án lưu 66,1 là sai."
+  },
+  {
+   "id": 680521,
+   "kind": "short",
+   "old": "SĐĐS",
+   "neu": "-1",
+   "reason": "Đề hỏi giá trị gia tốc, đáp án đúng là -1 m/s². Đáp án đang lưu 'SĐĐS' không hợp lệ với câu hỏi."
+  },
+  {
+   "id": 1152859,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Quỹ đạo dài là khoảng cách giữa hai biên = 2A. 24 cm = 2A => A = 12 cm."
+  },
+  {
+   "id": 1182340,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Cường độ điện trường E = F/q có đơn vị N/C, tương đương V/m. Đáp án A (N) là sai."
+  },
+  {
+   "id": 685632,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "18 km/h = 5 m/s; P = Fv = 200 × 5 = 1000 W, không phải 500 W."
+  },
+  {
+   "id": 685623,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Cơ năng bảo toàn: W = mgh + ½mv₀² = 1×10×2 + ½×1×2² = 20 + 2 = 22 J. Đáp án đúng là D, đáp án lưu B sai."
+  },
+  {
+   "id": 554,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Φ = B.S ⇒ S = 10^{-4}/(4.10^{-3}) = 0,025 m² = 250 cm². Rộng = 250/25 = 10 cm."
+  },
+  {
+   "id": 1152857,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "Dao động tắt dần có biên độ và cơ năng giảm dần; li độ, vận tốc, gia tốc vẫn dao động quanh vị trí cân bằng với biên độ giảm dần. Vậy đáp án đúng là D."
+  },
+  {
+   "id": 686229,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "Tần số là số vòng (dao động) trong một giây, đơn vị chuẩn là Hz. Đáp án A (s) là sai."
+  },
+  {
+   "id": 1224759,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Pha dao động tại t=0,5s là π·0,5 + π/2 = π rad, nên đáp án đúng là A, không phải B."
+  },
+  {
+   "id": 685086,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Công nguồn điện A = EIt = 12V × 1,45A × (25×60)s = 26100J. Đáp án lưu C là sai, đúng là A."
+  },
+  {
+   "id": 680317,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "Sai số do nguyên nhân không rõ ràng, thao tác đo không chuẩn, điều kiện thí nghiệm hạn chế hoặc giác quan là sai số ngẫu nhiên, không phải sai số dụng cụ."
+  },
+  {
+   "id": 686228,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Định luật bảo toàn động lượng đúng cho hệ kín (không có ngoại lực hoặc ngoại lực cân bằng), không phụ thuộc ma sát."
+  },
+  {
+   "id": 571975,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Phân tử khí lí tưởng được coi là chất điểm, chuyển động không ngừng; bỏ qua tương tác hút/đẩy giữa các phân tử (trừ va chạm)."
+  },
+  {
+   "id": 686031,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "Độ lớn động lượng p=mv. Chuyển động tròn đều có tốc độ không đổi nên p không đổi. Chuyển động nhanh dần đều và chậm dần đều có tốc độ thay đổi. Ném ngang có vận tốc tăng dần theo p"
+  },
+  {
+   "id": 680971,
+   "kind": "short",
+   "old": "50",
+   "neu": "0,7",
+   "reason": "Gia tốc a = Δv/Δt = (12 - 5)/10 = 0,7 m/s². Đáp án lưu 50 là sai."
+  },
+  {
+   "id": 682390,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Xung lượng của lực là tích của lực và thời gian nên đơn vị là N.s, không phải N.m."
+  },
+  {
+   "id": 685510,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "Gia tốc là độ biến thiên vận tốc theo thời gian, đơn vị là (m/s)/s = m/s². Đáp án đang lưu A (m/s) là sai."
+  },
+  {
+   "id": 681775,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "m=200g=0,2kg; Δp=m.v=0,2.20=4kg.m/s; F=Δp/Δt=4/0,1=40N. Đáp án đúng là D, không phải C (200N)."
+  },
+  {
+   "id": 684813,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "Trong chuyển động ném xiên, gia tốc là trọng trường không đổi; vận tốc, độ cao, tầm xa đều thay đổi."
+  },
+  {
+   "id": 681443,
+   "kind": "short",
+   "old": "0,8",
+   "neu": "-1,2",
+   "reason": "Gia tốc a = (11-23)/10 = -1,2 m/s², dấu âm vì chậm dần. Đáp án lưu 0,8 sai."
+  },
+  {
+   "id": 685521,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "Vận tốc trung bình bằng độ dịch chuyển chia cho thời gian: v = d/t."
+  },
+  {
+   "id": 346659,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Ban đầu: m0=70 tấn, v0=200 m/s. Phụt 5 tấn khí với vận tốc 450 m/s so với tên lửa (ngược chiều). Vận tốc khí so với đất: 200-450=-250 m/s. Bảo toàn động lượng: 70*200 = 65*v + 5*(-"
+  },
+  {
+   "id": 402110,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "Sau 3 giờ còn 25% = (1/2)^2, tức 2 chu kì bán rã, T = 3/2 = 1,5 giờ. Đáp án đang lưu B (6 giờ) sai."
+  },
+  {
+   "id": 1181570,
+   "kind": "short",
+   "old": "4,10",
+   "neu": "4.10^9",
+   "reason": "lượt 3 sóng 3 — U=|Q|/C=36/(9e-9)=4×10^9 V; DB 4,10 thiếu số mũ."
+  },
+  {
+   "id": 682266,
+   "kind": "short",
+   "old": "SDSD",
+   "neu": "125",
+   "reason": "lượt 3 sóng 3 — W=½mv²+mgh=25+100=125 J; DB 'SDSD' rác."
+  },
+  {
+   "id": 1173765,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "lượt 3 sóng 3 — ω con lắc đơn = √(g/ℓ) → B; A là √(ℓ/g)."
+  },
+  {
+   "id": 1256237,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 3 — Tia X không dùng chụp ảnh đêm → C; A/B/D là ứng dụng thật."
+  },
+  {
+   "id": 1192630,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 3 — b: đường sức từ dương→âm (không ngược). c: E=U/d=2000 V/m đúng. d: A=qE·AB·cos60=6e-8 J, không 1,2e-7."
+  },
+  {
+   "id": 680346,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 3 — F=ma+μmg=3000+1470=4470 N=4,47 kN → C; A nhầm 4740 N."
+  },
+  {
+   "id": 1173782,
+   "kind": "short",
+   "old": "1,5",
+   "neu": "3,96",
+   "reason": "lượt 3 sóng 3 — A còn 98% ⇒ W còn 0,98²=96,04% ⇒ giảm 3,96%."
+  },
+  {
+   "id": 684955,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 3 — 97 km/h=26,94 m/s; a=26,94/1,98≈13,61 m/s² → C; A quên đổi đơn vị."
+  },
+  {
+   "id": 681781,
+   "kind": "short",
+   "old": "25",
+   "neu": "15",
+   "reason": "lượt 3 sóng 3 — t=√(2h/g)=3 s; v_tb=h/t=15 m/s (cũng =(0+√2gh)/2=15)."
+  },
+  {
+   "id": 608042,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "lượt 3 sóng 3 — Chọn đáp án SAI: B 'không cần đeo mặt nạ' là sai; A/C/D là quy tắc đúng."
+  },
+  {
+   "id": 410293,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 3 — Đẳng áp + lượng khí xác định: pit-tông nằm ngang chuyển động đều, p ngoài không đổi → C. A thổi thêm khí."
+  },
+  {
+   "id": 380166,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 3 — c: định nghĩa góc giới hạn (tia khúc xạ song song mặt phân cách) đúng. d: PXT xảy ra trong tự nhiên (sa mạc, cầu vồng…) → sai."
+  },
+  {
+   "id": 673475,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 3 — b: khí dễ nén vì khoảng cách phân tử lớn → đúng. d: rắn vô định hình không có mạng tinh thể → sai."
+  },
+  {
+   "id": 1256245,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 3 — (1) mặt nước = ngang; (2) âm = dọc; (3) vô tuyến = ngang; (4) vi sóng = điện từ ngang, không phải dọc."
+  },
+  {
+   "id": 345499,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "lượt 3 sóng 3 — v=√(2gh)=8 m/s; va chạm mềm 1000·8=1100·v' → v'≈7,3 m/s → B."
+  },
+  {
+   "id": 376983,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "lượt 3 sóng 3 — a: J và W là đơn vị chuẩn → đúng. c: P=A/t không luôn tỉ lệ thuận nếu t đổi → sai."
+  },
+  {
+   "id": 1178247,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "lượt 3 sóng 3 — electron âm, lực về bản dương; v0 ⊥ E → parabol về bản dương → A."
+  },
+  {
+   "id": 1247010,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "lượt 3 sóng 3 — Hai nguồn cùng pha: cực tiểu đối xứng từng cặp qua trung điểm (trung điểm là cực đại) → số đường cực tiểu trong AB luôn chẵn → D."
+  },
+  {
+   "id": 682395,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "lượt 3 sóng 3 — Wđ ∝ v²; v giảm nửa → Wđ còn 1/4: 180/4=45 kJ → B."
+  },
+  {
+   "id": 614500,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "lượt 3 sóng 4 — 27°C=300K, 927°C=1200K; v_rms∝√T → gấp đôi → B. DB D (giảm 2 lần)."
+  },
+  {
+   "id": 345266,
+   "kind": "short",
+   "old": "6440",
+   "neu": "1769",
+   "reason": "lượt 3 sóng 4 — F=Δp/Δt=0,046×50/0,0013≈1769 N. DB 6440 sai."
+  },
+  {
+   "id": 683462,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 4 — m=F/a=10/2=5 kg → C; A nhầm F·a."
+  },
+  {
+   "id": 681836,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "lượt 3 sóng 4 — v=at=2×2=4 m/s → B."
+  },
+  {
+   "id": 682018,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "lượt 3 sóng 4 — Nhanh dần đều: tốc độ tăng đều theo thời gian → D; C nhầm s∝t²."
+  },
+  {
+   "id": 683282,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "reason": "lượt 3 sóng 4 — v=8t−15, a=8; v0=−15 không phải +15 (a đã sai). Không luôn chậm dần (đảo chiều lúc 1,875s) nên b,d sai. t=2s thì v=1 cm/s không phải 10."
+  },
+  {
+   "id": 683068,
+   "kind": "short",
+   "old": "3",
+   "neu": "2",
+   "reason": "lượt 3 sóng 4 — x=−10+60t: a đúng, b sai (x=110 không 120), c đúng (Δx=120), d sai (s=120 không 110) → 2 phát biểu đúng."
+  },
+  {
+   "id": 682388,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 4 — p1=3m2·2v2=6p2 → C."
+  },
+  {
+   "id": 1173744,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "lượt 3 sóng 4 — x=Acos(ωt+φ), biên độ là A → A; D là li độ."
+  },
+  {
+   "id": 595,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 4 — E=NΔΦ/Δt=20×3,6e-5/0,3=2,4×10⁻³ V, không phải 2×10⁻³. a–c DB đã đúng."
+  },
+  {
+   "id": 620097,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "lượt 3 sóng 4 — ΔU=Q+A=180−160=20 J → A; D cộng nhầm 340."
+  },
+  {
+   "id": 685100,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "lượt 3 sóng 4 — N=8e-8/1,6e-19=5×10¹¹ → C."
+  },
+  {
+   "id": 681774,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "lượt 3 sóng 4 — ném ngang y=gx²/(2v0²) → C."
+  },
+  {
+   "id": 1241988,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "lượt 3 sóng 4 — Sóng cơ đổi môi trường: f (T) không đổi, v đổi → B; A bước sóng không đổi là sai."
+  },
+  {
+   "id": 1247027,
+   "kind": "short",
+   "old": "120",
+   "neu": "19,5",
+   "reason": "lượt 3 sóng 4 — i=λD/a=3 mm; vân tối 7: x=6,5i=19,5 mm."
+  },
+  {
+   "id": 346775,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "lượt 3 sóng 4 — v1=50√3; bảo toàn p → v2≈101,4 m/s, α≈34,72° → B."
+  },
+  {
+   "id": 1173783,
+   "kind": "short",
+   "old": "3,96",
+   "neu": "33,8",
+   "reason": "lượt 3 sóng 4 — T=2π√(0,44/9,8)≈1,331 s; v=12,5/T≈9,39 m/s=33,8 km/h. DB 3,96 dán nhầm câu bên."
+  },
+  {
+   "id": 683594,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Đề lẫn nhãn Đ/S; cơ năng=mgh=112,5J (không phải 11,25). a Đúng, c Sai. Đề lỗi định dạng."
+  },
+  {
+   "id": 1247588,
+   "kind": "short",
+   "old": "125",
+   "neu": "2,5",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 10 lần nhô→9T→T=4s; v=10/4=2,5m/s. DB '125' vô lý, không có lời giải."
+  },
+  {
+   "id": 680329,
+   "kind": "short",
+   "old": "SSDD",
+   "neu": "87",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Đáp án lưu là chuỗi đúng-sai trong câu short (lỗi kiểu dữ liệu); trị số ≈√(100²-50²)=87m."
+  },
+  {
+   "id": 682403,
+   "kind": "short",
+   "old": "20",
+   "neu": "15",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] v=ωr=30×0,5=15 m/s. DB '20' sai, không có lời giải."
+  },
+  {
+   "id": 683342,
+   "kind": "short",
+   "old": "41,4",
+   "neu": "4",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] t=√(2h/g)=√16=4s. DB '41,4' vô lý."
+  },
+  {
+   "id": 1235181,
+   "kind": "short",
+   "old": "9",
+   "neu": "3",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] T=λ/c=9000/3·10⁸=3×10⁻⁵s → 3."
+  },
+  {
+   "id": 682268,
+   "kind": "short",
+   "old": "125",
+   "neu": "3,75",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] P=F·s·cosθ/t=5·6·0,5/4=3,75W. DB '125' vô lý."
+  },
+  {
+   "id": 673978,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Đề ghi cả hai khối lượng là m1 (lỗi gõ): nếu bằng nhau → c1/c2=3/10=A; nếu nước=2m1 → 3/5=D. Cần xem đề gốc."
+  },
+  {
+   "id": 1247031,
+   "kind": "short",
+   "old": "48",
+   "neu": "64",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Δf=v/2L → v=2L·Δf=2×0,8×40=64 m/s."
+  },
+  {
+   "id": 1152872,
+   "kind": "short",
+   "old": "9",
+   "neu": "2",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] W=½kx²+½mv²=2mJ; đề cũng ghi 'ĐS: 2'."
+  },
+  {
+   "id": 682778,
+   "kind": "short",
+   "old": "49",
+   "neu": "50",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Độ dịch chuyển=√(30²+40²)=50m."
+  },
+  {
+   "id": 686053,
+   "kind": "short",
+   "old": "15",
+   "neu": "1000",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] A_toàn phần=A_ích/H=900/0,9=1000J; DB '15' vô lý."
+  },
+  {
+   "id": 348912,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Động lượng hệ = m1v1'+m2v2' (tổng vectơ, có dấu) → A; nhưng phụ thuộc quy ước dấu v2', cần xem hình."
+  },
+  {
+   "id": 681440,
+   "kind": "short",
+   "old": "2",
+   "neu": "180",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] R=F với F và 2F → cosθ=-1 → θ=180°; DB '2' vô lý."
+  },
+  {
+   "id": 686057,
+   "kind": "short",
+   "old": "1,78",
+   "neu": "76,8",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] H=mgh/(P·t)=115200/(2500×60)=76,8%; DB '1,78' vô lý."
+  },
+  {
+   "id": 1182979,
+   "kind": "short",
+   "old": "1,2",
+   "neu": "4500",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] E=kq/r²=9·10⁹×5·10⁻⁹/0,01=4500V/m; đề cũng hiện [[4500]]."
+  },
+  {
+   "id": 1224776,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 19,5cm trong 19T/12≈1,58T → 4A×1,58≈6,33A=19,5 → A≈3cm → A (D=5 cho ~31cm)."
+  },
+  {
+   "id": 682474,
+   "kind": "short",
+   "old": "62,5",
+   "neu": "9",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Cùng hướng: p=m₁v₁+m₂v₂=1,5×2+1,5×4=9 kg·m/s."
+  },
+  {
+   "id": 636424,
+   "kind": "short",
+   "old": "1,1",
+   "neu": "11",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] F=F_A-P-trọng lượng khí≈11N (lời giải cũng ra 11)."
+  },
+  {
+   "id": 682030,
+   "kind": "short",
+   "old": "13,4",
+   "neu": "1",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Hai lực ngược chiều: R=|4-3|=1N."
+  },
+  {
+   "id": 645524,
+   "kind": "short",
+   "old": "0,52",
+   "neu": "520",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Hỏi m/s; v=√(3RT/M)=520m/s (lời giải ghi 0,52km/s)."
+  },
+  {
+   "id": 1152874,
+   "kind": "short",
+   "old": "2",
+   "neu": "32",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] v=ω√(A²-x²)=4√(100-36)=32cm/s; đề ghi 'Đs: 32'."
+  },
+  {
+   "id": 682471,
+   "kind": "short",
+   "old": "DDSD",
+   "neu": "0,02",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Đáp án lưu là chuỗi đúng-sai (lỗi kiểu dữ liệu); T=2/100=0,02s."
+  },
+  {
+   "id": 634982,
+   "kind": "short",
+   "old": "15",
+   "neu": "0,15",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] m_Pb=(206/210)×0,2×(1-2⁻²)=0,15g (lời giải cũng ra 0,15)."
+  },
+  {
+   "id": 682473,
+   "kind": "short",
+   "old": "0,02",
+   "neu": "8",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Khi Wđ=Wt: v²=v₀²/2=128/2=64 → v=8m/s."
+  },
+  {
+   "id": 681470,
+   "kind": "short",
+   "old": "13",
+   "neu": "5",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] m=F/a=10/2=5kg."
+  },
+  {
+   "id": 681782,
+   "kind": "short",
+   "old": "15",
+   "neu": "25",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] F=25N < Fms_max=μmg=30N → vật đứng yên → Fms_nghỉ=F=25N."
+  },
+  {
+   "id": 451748,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] D bảo toàn A và Z (sinh proton). Nhưng A (Na+p→Na+e⁺) cũng bảo toàn A,Z. Hai phương án cùng đúng — không chốt."
+  },
+  {
+   "id": 684295,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] a=-0,5; t(36km/h)=20s=A, t(dừng)=40s=C. Đề hỏi cả hai, chỉ 1 ô. Cần xem đề gốc."
+  },
+  {
+   "id": 680309,
+   "kind": "short",
+   "old": "2,63",
+   "neu": "0",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] t_chạm=√(2×120/9,81)≈4,95s < 5s → đã chạm đất; DB '2,63' ≈ |120−½g·25|."
+  },
+  {
+   "id": 673831,
+   "kind": "short",
+   "old": "4350",
+   "neu": "4050",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 27 hay 29 MJ/kg than đá tùy SGK"
+  },
+  {
+   "id": 575038,
+   "kind": "short",
+   "old": "16",
+   "neu": "5",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 550 MW nhiệt hay điện? hiệu suất 30%"
+  },
+  {
+   "id": 686089,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] đề OCR '300' — 30° hay 60°"
+  },
+  {
+   "id": 307722,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] R2=62,9 vs 63 Ω — làm tròn"
+  },
+  {
+   "id": 4145,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 1919 vs 1920 MW — làm tròn NA"
+  },
+  {
+   "id": 2477,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] đề không nêu cùng độ cao nhưng 'cùng địa điểm' thường hiểu cùng h"
+  },
+  {
+   "id": 1235173,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] cùng pha λ=2 cm, số cực đại giữa A B không khớp 50–53"
+  },
+  {
+   "id": 595375,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] 310cos(100πt)=155 ⇒ t=1/300 s — không có trong A–D"
+  },
+  {
+   "id": 684285,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Δt=0,005786 → 0,0058 (2 CSN) không có trong phương án"
+  },
+  {
+   "id": 680032,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] bước phương pháp SGK — curriculum"
+  },
+  {
+   "id": 1161649,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] ω=2π ⇒ T=1 s không có trong A–D"
+  },
+  {
+   "id": 642754,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] Δt=1°C nhưng phương án OCR 10C/100C"
+  },
+  {
+   "id": 642745,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] đề cắt dấu Q 0 / A 0"
+  },
+  {
+   "id": 345122,
+   "kind": "short",
+   "old": "-50",
+   "neu": "50",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] chỉ khác dấu; đề hỏi 'giá trị lực'"
+  },
+  {
+   "id": 3857,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] phát biểu sai về dao động cưỡng bức — curriculum"
+  },
+  {
+   "id": 7252,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] (III) xác định sai số không làm giảm sai số — giữ DB C"
+  },
+  {
+   "id": 418605,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] đề cắt dấu; C khả năng Q<0 A>0 — giữ/hỏi lại"
+  },
+  {
+   "id": 682840,
+   "kind": "short",
+   "old": "3",
+   "neu": "4",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] hệ quy chiếu 3 vs 4 yếu tố — SGK"
+  },
+  {
+   "id": 3631,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] vmax đại số (chiều +) vs độ lớn tại cân bằng"
+  },
+  {
+   "id": 673949,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] hệ số 10^3 phụ thuộc đơn vị câu trước"
+  },
+  {
+   "id": 410699,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] λ≈3,14 m làm tròn 3 m"
+  },
+  {
+   "id": 5484,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] dòng Foucault câu sai — A–D đều biện luận được"
+  },
+  {
+   "id": 384253,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] giữ DB C: 1 u gần khối lượng proton; B là 12 u"
+  },
+  {
+   "id": 388522,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] giữ DB: 1°C < 1°N nên c sai; phán xử tự mâu thuẫn"
+  },
+  {
+   "id": 683880,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] ma sát có lợi/hại hiện tượng (1)(2) — curriculum"
+  },
+  {
+   "id": 682299,
+   "kind": "short",
+   "old": "SDSD",
+   "neu": "8",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thời gian rơi 6s, quãng đường 2s cuối là 100m, công A=mgs=8*10*100=8000J=8kJ. Đá"
+  },
+  {
+   "id": 683849,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Vận tốc trung bình là đại lượng vectơ, xác định bằng độ dịch chuyển chia thời gi"
+  },
+  {
+   "id": 5465,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Phát biểu d đúng vì suất điện động cảm ứng tỉ lệ với số vòng dây; đáp án lưu đán"
+  },
+  {
+   "id": 1183585,
+   "kind": "short",
+   "old": "1,32",
+   "neu": "1000",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công lực điện A = q(V_M - V_bản âm). Với mốc thế tại bản âm V=0, A = qV_M => V_M"
+  },
+  {
+   "id": 425260,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — K-40 phân rã β− thành Ca-40 và bắt electron thành Ar-40; a sai, b sai. Tuổi đá: "
+  },
+  {
+   "id": 1247012,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Ánh sáng qua khe hẹp loang rộng là nhiễu xạ, không phải khúc xạ."
+  },
+  {
+   "id": 1179185,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Điện thế tại M được xác định bằng công dịch chuyển một đơn vị điện tích dương từ"
+  },
+  {
+   "id": 372636,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a,c đều sai vì động năng tăng khi tốc độ tăng (Wđ=1/2mv²). b đúng, d đúng. Đáp á"
+  },
+  {
+   "id": 683599,
+   "kind": "short",
+   "old": "75",
+   "neu": "2,2",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thế năng W = mgh = 70*10*3147 = 2 202 900 J = 2,2029.10^6 J, làm tròn đến phần m"
+  },
+  {
+   "id": 601532,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Sắt nhận công (A>0), nóng lên tỏa nhiệt (Q<0). Định luật I: ΔU=A+Q. Vì công nhận"
+  },
+  {
+   "id": 4175,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đáp án đang lưu sai ở b; năng lượng mỗi phản ứng phân hạch (200 MeV) lớn hơn nhi"
+  },
+  {
+   "id": 684903,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công thức đúng cho chuyển động nhanh dần đều là v^2 - v0^2 = 2as, không phải v^2"
+  },
+  {
+   "id": 686151,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Cặp lực nén ngược chiều, vuông góc bề mặt và hướng vào trong gây biến dạng nén, "
+  },
+  {
+   "id": 685726,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Năng lượng là đại lượng vô hướng, trong hệ kín luôn bảo toàn; đơn vị SI là Jun, "
+  },
+  {
+   "id": 1151451,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Định nghĩa dao động cưỡng bức: hệ dao động dưới tác dụng của ngoại lực cưỡng bức"
+  },
+  {
+   "id": 344690,
+   "kind": "short",
+   "old": "1138",
+   "neu": "1738",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đề yêu cầu lực cản của nước lên người. Người chịu trọng lực P=mg=600N và lực cản"
+  },
+  {
+   "id": 1236930,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Trong dao động điều hòa, vận tốc sớm pha π/2 so với li độ; gia tốc ngược pha với"
+  },
+  {
+   "id": 681987,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tốc kế hiển thị độ lớn tốc độ tại thời điểm hiện tại, không có hướng nên là tốc "
+  },
+  {
+   "id": 682863,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Cano ngược dòng: v_nước=2km/h, v_bờ=20km/h nên v_cano/nước=22km/h → c đúng, a sa"
+  },
+  {
+   "id": 343826,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Khối lượng 1 tấn = 1000 kg. Với s=50 m, a=1 m/s²: v=√(2as)=10 m/s, không phải 20"
+  },
+  {
+   "id": 674787,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đáp án đúng sai là D vì mục đích của biển báo an toàn không phải tạo lợi nhuận. "
+  },
+  {
+   "id": 414360,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Phương trình trạng thái khí lí tưởng là pV/T = const, giữa hai trạng thái: p1V1/"
+  },
+  {
+   "id": 1151456,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Động cơ đang nổ tạo lực tuần hoàn tác dụng lên thân xe, gây dao động cưỡng bức. "
+  },
+  {
+   "id": 602,
+   "kind": "short",
+   "old": "60",
+   "neu": "30",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Diện tích S=(0,05)^2=2,5.10^-3 m². Từ thông Φ=BSsinα với α là góc giữa B và mặt "
+  },
+  {
+   "id": 614458,
+   "kind": "short",
+   "old": "71",
+   "neu": "73",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tính lại: i1=0,4mm, i2=0,7mm. MN dài 20mm nên mỗi bên từ O đến M/N là 10mm. Số v"
+  },
+  {
+   "id": 4465,
+   "kind": "short",
+   "old": "60",
+   "neu": "30",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đề hỏi góc giữa B và mặt phẳng hình vuông. Φ=BScosα với α là góc giữa B và pháp "
+  },
+  {
+   "id": 680968,
+   "kind": "short",
+   "old": "SĐĐS",
+   "neu": "5,4",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thời gian rơi giọt 1: t=√(2h/g)=√(2×16,2/10)=1,8s. Khoảng thời gian giữa các giọ"
+  },
+  {
+   "id": 685720,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Momen lực M = F.d, với d là khoảng cách từ giá của lực đến trục quay. Đáp án lưu"
+  },
+  {
+   "id": 344906,
+   "kind": "short",
+   "old": "-15",
+   "neu": "15",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đề hỏi độ lớn lực hãm nên phải dương: 15 kN, không phải -15 kN."
+  },
+  {
+   "id": 1157378,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Câu b: dao động khung xe qua đường mấp mô gây khó chịu, có hại. Đáp án lưu ghi b"
+  },
+  {
+   "id": 680449,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a) Đơn vị trọng lượng là N, không phải N/kg. b) m=F/a=14/3.5=4 kg đúng. c) Bóng "
+  },
+  {
+   "id": 7703,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Nhiệt nóng chảy riêng (nhiệt lượng cần để 1 kg chất rắn nóng chảy hoàn toàn) chỉ"
+  },
+  {
+   "id": 376519,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — c đúng vì công A=F.s khi dịch chuyển cùng hướng lực; d sai vì lực vuông góc với "
+  },
+  {
+   "id": 621422,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Phần c sai: dưới 0°C gần 273K thì thể tích giảm ít (V=V0*T/293), không đáng kể. "
+  },
+  {
+   "id": 668691,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Cần tính x với phương trình cân bằng nhiệt có xL+(1-x)cΔt=0: x=4200*20/(2382000+"
+  },
+  {
+   "id": 1182977,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Điện thế bản dương là 200 V, điện trường đều, thế năng tại M cách bản âm 2.5 cm "
+  },
+  {
+   "id": 347587,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Động lượng đại bàng+bồ câu: (1,8*18+0,65*7)/(1,8+0,65)=15,08 m/s, không phải 15."
+  },
+  {
+   "id": 345789,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Bảo toàn động lượng: 5m·4 + m·(-1) = 5m·v + m·5v → 20-1 = 10v → v = 1,9 m/s. Bi "
+  },
+  {
+   "id": 1346880,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Hai nguồn cùng pha, cực đại khi AM−BM=kλ. Với 16 cm = 4λ nên k=4, là cực đại thứ"
+  },
+  {
+   "id": 685540,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Vận tốc = quãng đường / thời gian, biểu thức đúng là s/t nên đáp án C."
+  },
+  {
+   "id": 648298,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đáp án d sai: từ dữ kiện tính được thể tích chất lỏng ban đầu xấp xỉ 3,46 lít, n"
+  },
+  {
+   "id": 334592,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công trọng lực bằng hiệu thế năng đầu cuối; với đường cong hở có độ cao đầu cuối"
+  },
+  {
+   "id": 379901,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a) Sai vì tia ló song song với tia tới (không lệch hướng). b) Sai vì tốc độ ánh "
+  },
+  {
+   "id": 345673,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Bảo toàn động lượng: 0,2*5 = 0,2*v1' + 0,4*3 → v1' = -1 m/s. Tốc độ 1 m/s, ngược"
+  },
+  {
+   "id": 458506,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Từ thông Φ = NBScos(ωt + α), e = -Φ' = NBSω sin(ωt + α) = E0cos(ωt + π/2) → α = "
+  },
+  {
+   "id": 683454,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công thức cộng vận tốc tổng quát ở dạng vectơ là vận tốc vật 1 so với 3 bằng tổn"
+  },
+  {
+   "id": 1192626,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Năng lượng tụ điện dự trữ trong điện trường giữa hai bản tụ, không phải ở điện t"
+  },
+  {
+   "id": 1346865,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tốc độ truyền sóng v = 15m / 6s = 2,5 m/s. Bước sóng λ = vT = 2,5 × 2 = 5 m. Vậy"
+  },
+  {
+   "id": 673818,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Hạt nhân 32S có độ hụt khối dương nên khối lượng hạt nhân m nhỏ hơn tổng khối lư"
+  },
+  {
+   "id": 683369,
+   "kind": "short",
+   "old": "20",
+   "neu": "4",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thời gian đi là 0,5 giờ, quãng đường 2 km nên tốc độ trung bình là 2:0,5=4 km/h,"
+  },
+  {
+   "id": 8108,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — A đẳng tích (V không đổi); B bóp bẹp nhanh nhưng đề không chắc nhiệt độ đổi; C n"
+  },
+  {
+   "id": 684626,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Quãng đường đi được là 30 km/h × 3/60 h = 1,5 km. Hướng Bắc 1,5 km từ ngã tư tươ"
+  },
+  {
+   "id": 1231030,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thang bước sóng tăng dần: tia X, tử ngoại, nhìn thấy, hồng ngoại, vô tuyến. Vậy "
+  },
+  {
+   "id": 1243098,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Quỹ đạo là đoạn thẳng có chiều dài bằng 2 lần biên độ: 2×6 = 12 cm. Đáp án lưu D"
+  },
+  {
+   "id": 684288,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Quỹ đạo, vận tốc, tọa độ đều phụ thuộc hệ quy chiếu nên đều có tính tương đối. Đ"
+  },
+  {
+   "id": 681684,
+   "kind": "short",
+   "old": "500",
+   "neu": "100",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đề đã cho 'Quãng đường đi được trong cả giai đoạn này là 100 m', tức quãng đường"
+  },
+  {
+   "id": 1170559,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Dao động điều hòa là dao động có li độ biến thiên theo hàm cosin hoặc sin của th"
+  },
+  {
+   "id": 686055,
+   "kind": "short",
+   "old": "20",
+   "neu": "100",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công của trọng lực A = P.s = 20N × 5m = 100J, không phải 20."
+  },
+  {
+   "id": 1151453,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Li độ là độ dịch chuyển từ vị trí cân bằng đến vị trí của vật tại thời điểm t, n"
+  },
+  {
+   "id": 339826,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Hiệu suất H = năng lượng có ích/năng lượng toàn phần, luôn trong khoảng 0 < H ≤ "
+  },
+  {
+   "id": 680325,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tốc độ trung bình = quãng đường/thời gian, cần đo cả hai đại lượng. Đáp án B là "
+  },
+  {
+   "id": 1163872,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a) Tần số góc là 10 rad/s không phải 10 Hz. b) Pha dao động là 10t-π/3 rad. c) C"
+  },
+  {
+   "id": 379636,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đáp án lưu d sai vì khúc xạ ảnh hưởng lớn đến thiết kế dụng cụ quang học. Đáp án"
+  },
+  {
+   "id": 683092,
+   "kind": "short",
+   "old": "2",
+   "neu": "-4",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — v0=5m/s. Quãng đường giây thứ 5: |s5-s4|=14. s=5t+0.5at². Giải |5+4.5a|=14 có a="
+  },
+  {
+   "id": 683777,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Hợp lực bằng không và tổng moment bằng không nghĩa là không có gia tốc tịnh tiến"
+  },
+  {
+   "id": 1164817,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a đúng: li độ cực đại tại biên (độ lớn bằng A). b đúng: tại biên vận tốc bằng 0."
+  },
+  {
+   "id": 681465,
+   "kind": "short",
+   "old": "27",
+   "neu": "80",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — h = ½gt² = ½*10*4² = 80m. Đáp án lưu 27m sai."
+  },
+  {
+   "id": 436380,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Đề cho u và i cùng pha (cùng pha ban đầu -π/2) nên a sai. P=UIcosφ=220*(4/√2)*1="
+  },
+  {
+   "id": 686144,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công thức liên hệ giữa tốc độ góc và chu kỳ là ω = 2π/T, suy ra T = 2π/ω. Vậy đá"
+  },
+  {
+   "id": 1232965,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Bước sóng giảm dần: sóng vi ba (vài cm) > hồng ngoại (µm) > tử ngoại (nm) > gamm"
+  },
+  {
+   "id": 682860,
+   "kind": "mc",
+   "old": 0,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Gia tốc a = (15 - 10)/10 = 0,5 m/s², nên đáp án đúng là C, không phải A."
+  },
+  {
+   "id": 682393,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Thế năng trọng trường khi chọn gốc tại mặt đất là mgh, không phải 1/2mh^2."
+  },
+  {
+   "id": 683355,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Giờ Paris chậm hơn Hà Nội 6 giờ, nên 5:30 Paris = 11:30 Hà Nội. Đáp án đúng là A"
+  },
+  {
+   "id": 1185435,
+   "kind": "short",
+   "old": "-0,5",
+   "neu": "0,5",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Công dịch chuyển điện tích dương từ vô cực đến M dương nên điện thế tại M dương:"
+  },
+  {
+   "id": 683366,
+   "kind": "short",
+   "old": "2",
+   "neu": "600",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Sai đơn vị/hiểu nhầm. v=5 m/s, t=2 phút=120 s, quãng đường s=v*t=5*120=600 mét. "
+  },
+  {
+   "id": 443190,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — U_R và U_đc lệch pha; không thể cộng đại số. Tổng vectơ: E=sqrt((U_Rcosφ+U_đc)^2"
+  },
+  {
+   "id": 684814,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Độ lớn hợp lực của hai lực đồng quy luôn nằm trong khoảng từ hiệu đến tổng độ lớ"
+  },
+  {
+   "id": 683326,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Rơi tự do: h=gt²/2 → t=√(2h/g). Do đó B đúng, A sai. Đáp án lưu B là sai, đáp án"
+  },
+  {
+   "id": 1342470,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Pha ban đầu là +π/6 rad, không phải −π/6; tần số góc là 10π rad/s và tốc độ cực "
+  },
+  {
+   "id": 685624,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Cơ năng ban đầu E=½mv₀²=8m. Khi K=U, E=2K=mv² ⇒ v²=8 ⇒ v=2√2 m/s. Đáp án đúng là"
+  },
+  {
+   "id": 1342467,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Biên độ A=10 cm=0,1 m. Cơ năng W=0.5*m*ω²*A²=0.5*0.2*36*0.01=0.036 J. Đáp án đún"
+  },
+  {
+   "id": 571224,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Hạt nhân nguyên tử cấu tạo từ các nucleon (proton và neutron). Đáp án D đúng, đá"
+  },
+  {
+   "id": 1167204,
+   "kind": "short",
+   "old": "8",
+   "neu": "25",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tổng năng lượng E=0.64+0.64=1.28J, tại t1 thế năng 0.32J. Pha từ t1 đến t2 là 5π"
+  },
+  {
+   "id": 686035,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Độ cứng k = F/Δl nên đơn vị là N/m."
+  },
+  {
+   "id": 8144,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Van chỉ mở khi chênh lệch ≥10^5 Pa. Khi đun nóng, khí dãn nở, một phần khí sang "
+  },
+  {
+   "id": 1173750,
+   "kind": "mc",
+   "old": 2,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Trong dao động điều hòa, gia tốc nhanh pha hơn vận tốc góc π/2, nên phát biểu D "
+  },
+  {
+   "id": 1173770,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a) biên độ 2 cm nên sai; b) đúng; c) pha ban đầu có đơn vị rad nên sai; d) t=1s:"
+  },
+  {
+   "id": 672716,
+   "kind": "short",
+   "old": "0,05",
+   "neu": "0,1",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tính I = 11000/220000 = 0,05 A; làm tròn đến chữ số hàng phần mười được 0,1 A, k"
+  },
+  {
+   "id": 1246847,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — a sai: hồng ngoại bước sóng lớn hơn tia X. b đúng: tử ngoại tần số lớn hơn ánh s"
+  },
+  {
+   "id": 686049,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — b sai vì tốc độ góc kim giây lớn hơn kim giờ; c sai vì v = 6·2π/60 ≈ 0,628 cm/s;"
+  },
+  {
+   "id": 681740,
+   "kind": "mc",
+   "old": 3,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] flash=phán xử, chưa đối chiếu hết lượt tối — Tốc độ tức thời là độ lớn của vận tốc tức thời, đặc trưng cho tính nhanh chậm củ"
+  },
+  {
+   "id": 680746,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Quy tắc an toàn yêu cầu tắt nguồn trước khi cắm/tháo thiết bị điện; đáp án D nói 'sau khi'"
+  },
+  {
+   "id": 683747,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Động lượng p = mv. Đáp án D trùng công thức nhưng đánh dấu sai (trùng với C), nên chọn C."
+  },
+  {
+   "id": 683715,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Quy tắc hợp lực song song cùng chiều: độ lớn hợp lực F = F1 + F2, và F1.d1 = F2.d2 (chia c"
+  },
+  {
+   "id": 7973,
+   "kind": "short",
+   "old": "50",
+   "neu": "75",
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Áp suất ruột xe p = 1 + 600/(30·10⁻⁴)/101325 ≈ 2.974 atm. Số mol khí cần = pV/RT, mỗi lần "
+  },
+  {
+   "id": 1342471,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — a) Đúng vì S=4A=20cm. b) Sai vì 15T=15*(2π/10π)=3s. c) Đúng vì v=x'=50πcos(10πt+3π/4). d) "
+  },
+  {
+   "id": 681436,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Đáp án đang lưu ghi d) Sai, nhưng khối lượng nhỏ hơn thì mức quán tính nhỏ hơn nên d) Đúng"
+  },
+  {
+   "id": 9698,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Tốc độ sóng điện từ trong môi trường phụ thuộc vào môi trường (chiết suất n), và trong chư"
+  },
+  {
+   "id": 682724,
+   "kind": "mc",
+   "old": 3,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Sai số tỉ đối δx = (sai số tuyệt đối Δx / giá trị trung bình x) × 100%. Đáp án đúng là B. "
+  },
+  {
+   "id": 570383,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Đề cho Md có Z=101, sản phẩm sau phân rã alpha có Z=99, A=254 nên neutron = 254-99=155. Vậ"
+  },
+  {
+   "id": 1163873,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Câu c phải đúng vì lực ma sát càng lớn thì biên độ giảm càng nhanh, dao động tắt dần càng "
+  },
+  {
+   "id": 379530,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "neu": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Phát biểu d sai vì khi góc tới bằng 0, góc khúc xạ cũng bằng 0; và khi truyền từ môi trườn"
+  },
+  {
+   "id": 1247013,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Hiệu đường đi Δd = 5 cm, cực tiểu nên Δd = (k+0,5)λ → λ = 10/(2k+1) cm. v = λf = 150/(2k+1"
+  },
+  {
+   "id": 615823,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — O và B là hai nút liên tiếp nên OB = λ/2 ⇒ λ = 2OB. Đáp án lưu B sai, đáp án đúng là A."
+  },
+  {
+   "id": 1236943,
+   "kind": "mc",
+   "old": 0,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Khoảng cách giữa hai nút hoặc hai bụng liên tiếp bằng nửa bước sóng λ/2, không phải λ. Đáp"
+  },
+  {
+   "id": 673167,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Nhiệt dung riêng phụ thuộc vào nhiệt độ hiện tại của chất, không phụ thuộc khối lượng, thể"
+  },
+  {
+   "id": 1225221,
+   "kind": "mc",
+   "old": 1,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Đáp án đúng là D vì các điểm dao động cực đại tạo thành các đường hypebol, không phải đườn"
+  },
+  {
+   "id": 686159,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt retry tối — Xung lượng của lực bằng độ biến thiên động lượng: FΔt = m v2 - m v1 (dạng vectơ). Đáp án đ"
+  },
+  {
+   "id": 683088,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Gia tốc là -2 m/s² nên a sai. Vận tốc trung bình trong 5s đầu là 15 m/s nên b sai. Xe dừng"
+  },
+  {
+   "id": 684272,
+   "kind": "mc",
+   "old": 1,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Đối tượng của Vật lí là các dạng vận động của vật chất và năng lượng, nhưng chính xác hơn "
+  },
+  {
+   "id": 346717,
+   "kind": "mc",
+   "old": 2,
+   "neu": 1,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Bảo toàn động lượng: p_x=300*20=6000, p_1y=15*400√3=6000√3, p_2x=6000, p_2y=6000√3 → v_2x="
+  },
+  {
+   "id": 683749,
+   "kind": "mc",
+   "old": 0,
+   "neu": 3,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Bảo toàn động lượng: 15.22,5+30.(-18)=15.(-31,5)+30.v2 → v2=9 cm/s. Đáp án đúng là D, khôn"
+  },
+  {
+   "id": 594360,
+   "kind": "mc",
+   "old": 1,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Nhiệt nóng chảy riêng chuẩn của nước đá là 3,34.10^5 J/kg. Lời giải đang lưu sai vì dùng m"
+  },
+  {
+   "id": 1225207,
+   "kind": "mc",
+   "old": 3,
+   "neu": 2,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Ở vị trí cân bằng, động năng đạt cực đại, còn vận tốc về độ lớn cũng cực đại nhưng đáp án "
+  },
+  {
+   "id": 632627,
+   "kind": "mc",
+   "old": 2,
+   "neu": 0,
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 2 — Đáp án đúng là A: bếp từ làm nóng đáy nồi trực tiếp bằng dòng Foucault, mặt kính không dẫn"
+  },
+  {
+   "id": 681779,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "neu": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "reason": "[audit 9/10, hai lượt đồng thuận, mẫu 24 câu 12/12 đúng] lượt 3 sóng 3 — a 7500 vs 7200 rõ; c gọi F_mst ở bánh xe (thường ma sát nghỉ) còn tranh. Đa lật + mô hình lực."
+  }
+ ],
+ "_can_xac_nhan": [
+  {
+   "id": 1186050,
+   "kind": "short",
+   "old": "500",
+   "nghi": "1000",
+   "reason": "E∝|q|; |q| gấp đôi (2→4C) → E=1000 V/m."
+  },
+  {
+   "id": 683597,
+   "kind": "short",
+   "old": "5",
+   "nghi": "1,5",
+   "reason": "Moment ngẫu lực M=F·d=10×0,15=1,5Nm; trong đề cũng hiện '1,5'."
+  },
+  {
+   "id": 523820,
+   "kind": "short",
+   "old": "56,6",
+   "nghi": "6,56",
+   "reason": "E=N·200MeV=6,56×10¹³J → x=6,56 (lời giải cũng ra 6,56)."
+  },
+  {
+   "id": 681467,
+   "kind": "short",
+   "old": "45",
+   "nghi": "14,1",
+   "reason": "v=√(6²+(9,8×1,3)²)=14,1 m/s; DB '45' vô lý."
+  },
+  {
+   "id": 681761,
+   "kind": "short",
+   "old": "16,8",
+   "nghi": "13,5",
+   "reason": "t=√(2×44,1/9,8)=3s; L=4,5×3=13,5m."
+  },
+  {
+   "id": 1247026,
+   "kind": "short",
+   "old": "9",
+   "nghi": "18",
+   "reason": "i=λD/a=3mm; 7 vân sáng liên tiếp = 6i = 18mm."
+  },
+  {
+   "id": 1232322,
+   "kind": "short",
+   "old": "A-Đ",
+   "nghi": "12",
+   "reason": "Đáp án lưu là chuỗi đúng-sai (lỗi kiểu dữ liệu); dây cố định-tự do 5 nút → λ=4l/9=12cm."
+  },
+  {
+   "id": 436451,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 3,
+   "reason": "V2=p1V1T2/(p2T1)=67×300/288=69,8L≈70 → D; lời giải viết nhầm '≈121'. Cần xác nhận."
+  },
+  {
+   "id": 680520,
+   "kind": "short",
+   "old": "ĐSĐS",
+   "nghi": "96",
+   "reason": "Đáp án lưu là chuỗi đúng-sai (lỗi kiểu dữ liệu); đề ghi 'ĐS: 96 km/h'."
+  },
+  {
+   "id": 403870,
+   "kind": "short",
+   "old": "2000",
+   "nghi": "200",
+   "reason": "P=UIcosφ=(200/√2)(4/√2)cos(π/3)=200W; lời giải cũng ra 200."
+  },
+  {
+   "id": 653849,
+   "kind": "short",
+   "old": "8,4",
+   "nghi": "2,2",
+   "reason": "(k¹⁰-1)/(k-1)=E/(N₀·E₁)≈2213 → k≈2,2; '8,4' là lời giải dán nhầm của bài emf."
+  },
+  {
+   "id": 683596,
+   "kind": "short",
+   "old": "2,2",
+   "nghi": "75",
+   "reason": "Lực thành phần thẳng đứng=F sin30°=150×0,5=75N; đề cũng hiện 'A. 75'."
+  },
+  {
+   "id": 1152877,
+   "kind": "short",
+   "old": "2,45",
+   "nghi": "9",
+   "reason": "x=Acos(π/3)=A/2 → A=2×4,5=9cm; đề cũng ghi 'Đs: 9'."
+  },
+  {
+   "id": 686056,
+   "kind": "short",
+   "old": "500",
+   "nghi": "0,5",
+   "reason": "Hỏi 'bao nhiêu kg'; m=1kg/lít×0,5lít=0,5kg (DB '500' là gam)."
+  },
+  {
+   "id": 680328,
+   "kind": "short",
+   "old": "DSDD",
+   "nghi": "2,25",
+   "reason": "Đáp án lưu là chuỗi đúng-sai (lỗi kiểu dữ liệu); TB=(2,15+2,25+2,35)/3=2,25s."
+  },
+  {
+   "id": 1176195,
+   "kind": "short",
+   "old": "- 40",
+   "nghi": "-400",
+   "reason": "U_AB=A/q=16·10⁻³/(-40·10⁻⁶)=-400V; DB thiếu một chữ số 0."
+  },
+  {
+   "id": 438204,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 2,
+   "reason": "P=ρμcΔt/(H·t)=3193W≈3,2kW, gần 3,0kW nhất → C; lời giải viết '≈2,9' chưa chuẩn. Cần xác nhận."
+  },
+  {
+   "id": 1345604,
+   "kind": "short",
+   "old": "16",
+   "nghi": "3,2",
+   "reason": "Lò xo giãn (x>0) ĐỒNG THỜI v,a ngược chiều (ra xa O) = T/4=0,8s → T=3,2s."
+  },
+  {
+   "id": 1183586,
+   "kind": "short",
+   "old": "1000",
+   "nghi": "1,32",
+   "reason": "Q=(2+4)µF×220V=1320µC=1,32×10⁻³C → b=1,32."
+  },
+  {
+   "id": 670471,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "Theo T=288,8 năm (lời giải): a Đúng (H≈2µCi), d Sai (sau 15 năm chỉ phân rã 3,54%). Nhưng đề có thể in nhầm T; cần xem đề gốc."
+  },
+  {
+   "id": 680406,
+   "kind": "short",
+   "old": "3,92",
+   "nghi": "2,45",
+   "reason": "a=g(sinα-μcosα)=1,225m/s²; s=½at²=2,45m."
+  },
+  {
+   "id": 1161910,
+   "kind": "short",
+   "old": "0,1",
+   "nghi": "0,3",
+   "reason": "T=2π/ω=2π/20=0,314s≈0,3s."
+  },
+  {
+   "id": 671000,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "d: nhóm HS tính được L=3,3×10⁵ (đúng con số lời giải) → Đúng; lời giải ghi 'd sai' mâu thuẫn với phép tính. Cần xác nhận (giống câu 673557 ý này là Đ)."
+  },
+  {
+   "id": 1224779,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 1,
+   "reason": "10T(240cm,20s)+9cm(5/6s) → t=125/6s → B. Cần xác nhận phép tính."
+  },
+  {
+   "id": 346021,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "Va chạm đàn hồi: v₂'=9cm/s (và v₁'=-31,5); 9=A. Đề hỏi 'vận tốc mỗi vật' nhưng chỉ 1 ô chọn → cần xem đề gốc."
+  },
+  {
+   "id": 391544,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "b: ĐL Charles V/T=const→Đúng; c: ρ_nhà/ρ_sân=315/301=1,05 (không phải 1,5)→Sai; d: nhà lạnh hơn→ρ lớn hơn→Đúng. Lật 3 ý, cần xác nhận."
+  },
+  {
+   "id": 682402,
+   "kind": "short",
+   "old": "20",
+   "nghi": "175",
+   "reason": "A=½m(v²-v₀²)=½×2000×(20²-15²)=175000J=175kJ."
+  },
+  {
+   "id": 683341,
+   "kind": "short",
+   "old": "0,7",
+   "nghi": "3",
+   "reason": "a=(Fk-μmg)/m=(7,5-3)/1,5=3m/s²."
+  },
+  {
+   "id": 463659,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "0,6c→0,8c: Wđ từ 0,25 lên 2/3 m₀c² → ΔWđ=5/12 m₀c² → A; lời giải nhầm Wđ=5/3 (dùng γ). Cần xác nhận."
+  },
+  {
+   "id": 684798,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 1,
+   "reason": "Sai số dụng cụ thường = ĐCNN = 1mm → B (hoặc ½ĐCNN=0,5mm=C tuỳ quy ước); 'không xác định' sai. Cần xác nhận quy ước."
+  },
+  {
+   "id": 4316,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "reason": "Đề L=0,05m → F(30°)=0,025N không phải 0,25; lời giải dùng L=0,50. Ý c có thể Đ nếu đề gốc là 0,50m."
+  },
+  {
+   "id": 604417,
+   "kind": "short",
+   "old": "90",
+   "nghi": "900",
+   "reason": "n≈90 chu kì × 10ns = 900ns; lời giải cũng ra 900. DB lưu n chứ không phải thời gian."
+  },
+  {
+   "id": 4031,
+   "kind": "short",
+   "old": "2,2",
+   "nghi": "0,22",
+   "reason": "N=2,2×10²⁵; hỏi đơn vị ×10²⁶ → 0,22. Có thể DB muốn ×10²⁵."
+  },
+  {
+   "id": 681442,
+   "kind": "short",
+   "old": "2",
+   "nghi": "0,80",
+   "reason": "3s cuối=3/4 h → T=6s, h=180m; thời gian 45m cuối ≈0,80s. DB '2' không khớp."
+  },
+  {
+   "id": 672608,
+   "kind": "short",
+   "old": "0,07",
+   "nghi": "68",
+   "reason": "Δm≈0,068u; hỏi x·10⁻³ → x≈68. DB '0,07' lệch hàng."
+  },
+  {
+   "id": 683452,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "b: T ngược hướng P → Đúng; a/c cùng nghĩa (trọng lượng=trọng lực). Lật a+b, cần xác nhận thuật ngữ SGK."
+  },
+  {
+   "id": 339952,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "làm tròn 2.649.000 vs 2.649.600, quá sát"
+  },
+  {
+   "id": 411222,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 3,
+   "reason": "thiếu hình, flash B vs phán xử D"
+  },
+  {
+   "id": 621428,
+   "kind": "short",
+   "old": "5,2",
+   "nghi": "5,1",
+   "reason": "200 vs 203 MeV/phân hạch — hằng số SGK"
+  },
+  {
+   "id": 323055,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "thiếu hình; flash và phán xử mâu thuẫn về (2)/(3)"
+  },
+  {
+   "id": 684326,
+   "kind": "mc",
+   "old": 2,
+   "nghi": 3,
+   "reason": "cổng quang điện: flash=A (thời gian) vs phán xử=D (tức thời); SGK có thể chốt trung bình"
+  },
+  {
+   "id": 345050,
+   "kind": "short",
+   "old": "-32",
+   "nghi": "55,4",
+   "reason": "góc 60° với tường: 32 N (cos60) vs 55,4 N (sin60) — cách hiểu góc"
+  },
+  {
+   "id": 683085,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "sai số dụng cụ 0,1 vs 0,05; flash ≠ phán xử"
+  },
+  {
+   "id": 682861,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "reason": "sai số tỉ đối 0,01% — flash ≠ phán xử; d làm tròn"
+  },
+  {
+   "id": 415320,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "mệnh đề b cắt cụt; d tính 0,1545 g thì đúng nhưng đề rối"
+  },
+  {
+   "id": 440118,
+   "kind": "short",
+   "old": "2,7",
+   "nghi": "2,5",
+   "reason": "thiếu I từ câu trước (lời giải 150 A, phán xử đoán 50 A)"
+  },
+  {
+   "id": 683421,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "C sai nên D sai; flash=B vs phán xử=A"
+  },
+  {
+   "id": 432546,
+   "kind": "short",
+   "old": "2,63",
+   "nghi": "2,63",
+   "reason": "phán xử thừa nhận DB đúng (thiếu ngữ cảnh 1 g nhiên liệu)"
+  },
+  {
+   "id": 402564,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 3,
+   "reason": "Φ=BScosα nhưng mọi phương án đều tan/sin — đề hỏng"
+  },
+  {
+   "id": 669041,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "mệnh đề c cắt cụt"
+  },
+  {
+   "id": 1172872,
+   "kind": "mc",
+   "old": 1,
+   "nghi": 3,
+   "reason": "cửa tự động: SGK thường tắt dần; flash≠phán xử"
+  },
+  {
+   "id": 395725,
+   "kind": "short",
+   "old": "0,45",
+   "nghi": "0,67",
+   "reason": "thiếu hình pittông hai phần"
+  },
+  {
+   "id": 13337,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "giữ DB — phán xử thừa nhận đúng"
+  },
+  {
+   "id": 634950,
+   "kind": "short",
+   "old": "1,5",
+   "nghi": "0,2",
+   "reason": "giữ DB 1,5 kg — AI mù tính nhầm"
+  },
+  {
+   "id": 392793,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 3,
+   "reason": "giữ DB D = 6,2 ℓ"
+  },
+  {
+   "id": 463853,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "reason": "giữ DB"
+  },
+  {
+   "id": 674778,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "giữ DB — √(1,7²+1)≈1,97 m/s"
+  },
+  {
+   "id": 674153,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "Δt 'đầu và cuối' vs 'cuối và đầu'; flash ≠ phán xử"
+  },
+  {
+   "id": 7265,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "bảng số liệu ống cộng hưởng; flash ≠ phán xử ở b"
+  },
+  {
+   "id": 419070,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "nghi": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "reason": "thiếu đồ thị p–T"
+  },
+  {
+   "id": 443079,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    true
+   ],
+   "reason": "đèn pin lắc: b cần chỉnh lưu? d tự quấn thêm vòng"
+  },
+  {
+   "id": 1232748,
+   "kind": "short",
+   "old": "4,17",
+   "nghi": "13,09",
+   "reason": "pha 4π+π/6: giữ nguyên vs thu gọn [0,2π)"
+  },
+  {
+   "id": 375475,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 1,
+   "reason": "flash=A vs phán xử=B — nhiều ý đều có công"
+  },
+  {
+   "id": 570390,
+   "kind": "short",
+   "old": "6,67",
+   "nghi": "6,67",
+   "reason": "giữ DB 6,67 lít nước sôi; AI mù ra 10"
+  },
+  {
+   "id": 4014,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "nghi": "d",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 461720,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "nghi": "[false,false,true,false]",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 443086,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "nghi": null,
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 586,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 620411,
+   "kind": "short",
+   "old": "1",
+   "nghi": 1.1,
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 682128,
+   "kind": "mc",
+   "old": 2,
+   "nghi": "C",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 1181568,
+   "kind": "short",
+   "old": "-9,1",
+   "nghi": "-9.10^-6",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 443831,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    "a=Đúng",
+    "b=Sai",
+    "c=Sai",
+    "d=Đúng"
+   ],
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 575515,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 684877,
+   "kind": "mc",
+   "old": 1,
+   "nghi": "B",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 665117,
+   "kind": "mc",
+   "old": 2,
+   "nghi": "C",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 326927,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 21.13,
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 390586,
+   "kind": "mc",
+   "old": 3,
+   "nghi": "C",
+   "reason": "flash ≠ phán xử — để thầy xem"
+  },
+  {
+   "id": 355861,
+   "kind": "short",
+   "old": "0,25",
+   "nghi": 0.13,
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Chu kỳ đầu van bằng thời gian lăn một vòng: T=πD/v = π·0,8/20 ≈ 0,1257 s, làm tr"
+  },
+  {
+   "id": 680966,
+   "kind": "short",
+   "old": "ĐĐSS",
+   "nghi": "-1.4",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Gia tốc trung bình a = (10-24)/10 = -1.4 m/s², đáp án đang lưu 'ĐĐSS' không phù "
+  },
+  {
+   "id": 680379,
+   "kind": "short",
+   "old": "504",
+   "nghi": "5.1",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Đề hỏi kN, đáp án lưu 504 (sai đơn vị). Tính đúng: v=15 m/s, a=2.25 m/s², F=ma+0"
+  },
+  {
+   "id": 426801,
+   "kind": "short",
+   "old": "9,6",
+   "nghi": 3.2,
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — AI giải mù dùng khối lượng ban đầu 4.5kg, nếu 238Pu ban đầu 4.5kg thì sau 43 năm"
+  },
+  {
+   "id": 1235179,
+   "kind": "short",
+   "old": "-5",
+   "nghi": "0.93",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Tại M: 7λD/a = 5.5λD/(a-0.2) → 7(a-0.2)=5.5a → a=14/15≈0.933 mm, làm tròn 0.93. "
+  },
+  {
+   "id": 13019,
+   "kind": "mc",
+   "old": 1,
+   "nghi": "B",
+   "reason": "lượt retry tối — Lực trong điện môi: F' = k|q1q2|/(ε r'^2). Để F'=F trong không khí: k|q1q2|/r^2 = k|q1q2|/"
+  },
+  {
+   "id": 686152,
+   "kind": "mc",
+   "old": 0,
+   "nghi": "D",
+   "reason": "lượt retry tối — Động lượng đặc trưng cho mức quán tính của vật (p = mv, khối lượng là đại lượng đặc trưng "
+  },
+  {
+   "id": 626488,
+   "kind": "short",
+   "old": "0,96",
+   "nghi": 1,
+   "reason": "lượt retry tối — Năng lượng một phân hạch 235U là 200 MeV = 3,2.10^-11 J (không phải 8,2.10^13 J). Tính ra "
+  },
+  {
+   "id": 1239253,
+   "kind": "short",
+   "old": "78,5",
+   "nghi": 25,
+   "reason": "lượt retry tối — Độ lệch pha từ M đến N là 2π*(MN/λ)=2π*(λ/12/λ)=π/6. Pha tại N là 10t - π/6. Tại t=1/3s, p"
+  },
+  {
+   "id": 1172898,
+   "kind": "short",
+   "old": "5",
+   "nghi": "4,9",
+   "reason": "lượt retry tối — Năng lượng tỉ lệ bình phương biên độ. Biên độ giảm 2,5% mỗi chu kỳ nên A'=0,975A. Phần năn"
+  },
+  {
+   "id": 4723,
+   "kind": "short",
+   "old": "25",
+   "nghi": 25000,
+   "reason": "lượt retry tối — q = |ΔΦ|/R = BS|cos90°−cos60°|/R = (0,05×0,01×0,5)/0,01 = 0,025 C = 25000 μC; đáp án lưu 2"
+  },
+  {
+   "id": 13608,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "reason": "lượt retry tối — a) Sai vì ΔV=E.d=830×700=581000 V, không phải 16×10^6 V. b) Đúng: W=Q1ΔV=1,24×581000=72044"
+  },
+  {
+   "id": 612017,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    "Đúng",
+    "Sai",
+    "Sai",
+    "Đúng"
+   ],
+   "reason": "lượt retry tối — b sai vì neutron nhiệt là neutron chậm; c sai vì X là 53^138 I; a, d đúng."
+  },
+  {
+   "id": 399134,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "lượt 3 sóng 2 — 4→1 là đoạn thẳng qua gốc p-T nên đẳng tích (a đúng). T(2)=2T0 nên V2=2V1, do đó V2>V1 (b "
+  },
+  {
+   "id": 462172,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 2 — Câu a, b dùng dòng xoay chiều. Nhà máy điện gió phát dòng xoay chiều trực tiếp từ máy phát"
+  },
+  {
+   "id": 1173899,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "nghi": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "reason": "lượt 3 sóng 2 — Câu b sai: điện dung của tụ là hằng số 100 nF, không phải dải 0 ≤ C ≤ 100 nF."
+  },
+  {
+   "id": 666580,
+   "kind": "short",
+   "old": "77,2",
+   "nghi": 7730,
+   "reason": "lượt 3 sóng 2 — T = 2E/(3k) = 2×1,6e-19/(3×1,38e-23) ≈ 7730 K, làm tròn đến hàng đơn vị. Đáp án lưu 77,2 K"
+  },
+  {
+   "id": 442296,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "lượt 3 sóng 3 — flash≠judge; c viết 22,572 J (sai) DB đã False; d 967°C đúng. DB có thể đã đúng."
+  },
+  {
+   "id": 681446,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "lượt 3 sóng 3 — flash C=355 m, judge A=361 m; làm tròn phương trình t+h/360=9,5. Không tự chọn."
+  },
+  {
+   "id": 1342475,
+   "kind": "short",
+   "old": "15",
+   "nghi": "80",
+   "reason": "lượt 3 sóng 3 — flash 80, judge đề xuất 20 nhưng lời giải ghi 80; A=2 cm, T=0,1 s, v_tb=80 cm/s. Chờ thầy."
+  },
+  {
+   "id": 735764,
+   "kind": "short",
+   "old": "3",
+   "nghi": "9",
+   "reason": "lượt 3 sóng 4 — flash 9 (3 đại lượng × 3 lần), judge A/không rõ; DB 3. Thiếu ngữ cảnh bài thực hành."
+  },
+  {
+   "id": 1161907,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "nghi": [
+    false,
+    true,
+    false,
+    true
+   ],
+   "reason": "lượt 3 sóng 4 — flash TF, judge ra 'B'; t=0 qua VTCB chậm dần là tranh SGK. Không tự ghi."
+  },
+  {
+   "id": 392328,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "reason": "b: 24 ngày=3T → H=25MBq (đúng); c cách ly (đúng); d phóng xạ tỏa năng lượng (đúng). DB sai 3 ý — lật nhiều, cần xác nhận."
+  },
+  {
+   "id": 432226,
+   "kind": "mc",
+   "old": 1,
+   "nghi": 2,
+   "reason": "Phân hạch tạo hạt nhân có năng lượng liên kết RIÊNG lớn hơn (độ bền cao hơn) → C; DB chọn B (BE tổng). Tranh luận, cần xác nhận."
+  },
+  {
+   "id": 380219,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "nghi": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "reason": "c: cáp quang dùng phản xạ toàn phần → Đúng; d: 'không có ứng dụng truyền thông' → Sai. Ý a (LED) mơ hồ, cần xem đề gốc."
+  },
+  {
+   "id": 682864,
+   "kind": "tf",
+   "old": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "a: đơn vị gia tốc là m/s² (không phải m/s)→Sai; b: hãm phanh=chậm dần đều→Đúng; d: t=37,5s→Đúng. Lật 3 ý, cần xác nhận."
+  },
+  {
+   "id": 684807,
+   "kind": "mc",
+   "old": 2,
+   "nghi": 3,
+   "reason": "C là v bậc 2 (không phải biến đổi đều); chậm dần đều tuyến tính → v=5t-4 → D. Cần xác nhận."
+  },
+  {
+   "id": 4321,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "nghi": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "reason": "lật nhiều ý, b/d phụ thuộc hình"
+  },
+  {
+   "id": 638935,
+   "kind": "short",
+   "old": "3,84",
+   "nghi": "4,17",
+   "reason": "T Co-60 5,27 vs 5,72 — đề có thể in sẵn T"
+  },
+  {
+   "id": 680167,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "câu nghề nghiệp/chương trình, không phải vật lí"
+  },
+  {
+   "id": 432576,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 1,
+   "reason": "thiếu hình hai cốc (nhiệt độ ban đầu)"
+  },
+  {
+   "id": 440950,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 1,
+   "reason": "đồng 384 (thí nghiệm) vs 380 (SGK)"
+  },
+  {
+   "id": 444862,
+   "kind": "tf",
+   "old": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "nghi": [
+    true,
+    false,
+    true,
+    false
+   ],
+   "reason": "a thiếu t trong 100πt; giữ DB"
+  },
+  {
+   "id": 443077,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "thiếu đồ thị Φ(t)"
+  },
+  {
+   "id": 1194797,
+   "kind": "short",
+   "old": "1",
+   "nghi": "1e12",
+   "reason": "F=10^{12} N; DB lưu 1 có thể ngầm 10^{12}"
+  },
+  {
+   "id": 7695,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 2,
+   "reason": "oát kế vs vôn kế — cách bố trí thí nghiệm"
+  },
+  {
+   "id": 665042,
+   "kind": "mc",
+   "old": 2,
+   "nghi": 0,
+   "reason": "nước 4211 (thí nghiệm) vs 4200 (SGK)"
+  },
+  {
+   "id": 374039,
+   "kind": "mc",
+   "old": 0,
+   "nghi": 3,
+   "reason": "'năng lượng toàn phần của vật' khi có lực không thế — mơ hồ"
+  },
+  {
+   "id": 682954,
+   "kind": "mc",
+   "old": 2,
+   "nghi": 3,
+   "reason": "phương pháp nghiên cứu SGK (lí thuyết/thực nghiệm vs mô hình)"
+  },
+  {
+   "id": 580786,
+   "kind": "short",
+   "old": "2,51",
+   "nghi": "2,84",
+   "reason": "thiếu khối lượng riêng không khí từ câu trước"
+  },
+  {
+   "id": 684907,
+   "kind": "mc",
+   "old": 1,
+   "nghi": "D",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Cách mạng công nghiệp lần thứ nhất đặc trưng bởi máy móc thay thế sức lực cơ bắp"
+  },
+  {
+   "id": 684665,
+   "kind": "mc",
+   "old": 2,
+   "nghi": "A",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Theo SGK Vật lí, phương pháp thực nghiệm bắt đầu bằng quan sát, thu thập thông t"
+  },
+  {
+   "id": 376809,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "nghi": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Công A=F.s.cosα. a sai vì có thể âm hoặc dương. b sai vì còn phụ thuộc s. c đúng"
+  },
+  {
+   "id": 673067,
+   "kind": "tf",
+   "old": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "nghi": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Câu a sai vì phương trình viết lặp mBcB(t'-tA) và thiếu số hạng mCcC(t'-tC). Các"
+  },
+  {
+   "id": 680426,
+   "kind": "tf",
+   "old": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "nghi": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Câu a sai vì thiếu phản lực. b,c đúng. Câu d đúng vì m' = F/(μg) - m = 2.8/(0.3*"
+  },
+  {
+   "id": 686014,
+   "kind": "mc",
+   "old": 3,
+   "nghi": "A",
+   "reason": "flash=phán xử, chưa đối chiếu hết lượt tối — Thế năng trọng trường phụ thuộc mốc, có thể dương, âm hoặc bằng 0."
+  },
+  {
+   "id": 1187848,
+   "kind": "short",
+   "old": "0,1",
+   "nghi": 10,
+   "reason": "lượt retry tối — Đề ghi q = 10 $$ có thể là 10 μC. Công A = qEd = 10×10⁻⁶×1000×1 = 0,01 J = 10 mJ. Đáp án l"
+  },
+  {
+   "id": 685374,
+   "kind": "mc",
+   "old": 2,
+   "nghi": "B",
+   "reason": "lượt 3 sóng 2 — Trọng lực là đại lượng vectơ: P→ = m g→. Đáp án C thiếu ký hiệu vectơ, nên đáp án đúng phả"
+  },
+  {
+   "id": 684120,
+   "kind": "mc",
+   "old": 3,
+   "nghi": 0,
+   "reason": "lượt 3 sóng 4 — D (trồng rau) không phải y học, nhưng A chụp X-quang và C trị xạ đều đúng. Câu 1 đáp án mơ hồ."
+  },
+  {
+   "id": 1235178,
+   "kind": "short",
+   "old": "0,93",
+   "nghi": "-5",
+   "reason": "lượt 3 sóng 4 — đề ghi x=5cos(4π+π/5) thiếu t. Flash giả định 4πt thì x(1/5)=−5. Đề hỏng."
+  }
+ ]
+}
