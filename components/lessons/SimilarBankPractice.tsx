@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ContentHtml from "@/components/exams/ContentHtml";
 import QuestionCard from "@/components/exams/QuestionCard";
 import Button from "@/components/ui/Button";
 import { getSupabase } from "@/services/supabase";
@@ -27,11 +28,19 @@ export default function SimilarBankPractice({
   topicId,
   form,
   color = "#8B5CF6",
+  stepTitles,
+  defaultStep,
+  onGoRoi,
 }: {
   topicId: number;
   form?: string;
   color?: string;
+  /** Gỡ rối (9/10/2026): làm sai → hỏi "em tính đến bước nào?" theo các bước của dạng mẫu rồi gọi onGoRoi(idx). */
+  stepTitles?: string[];
+  defaultStep?: number;
+  onGoRoi?: (stepIdx: number) => void;
 }) {
+  const [goRoi, setGoRoi] = useState(false);
   const [phase, setPhase] = useState<Phase>("idle");
   const [rows, setRows] = useState<SimilarRow[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
@@ -112,13 +121,39 @@ export default function SimilarBankPractice({
               Chấm {answered}/{questions.length} câu
             </Button>
           ) : (
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-sm font-semibold text-white">
-                Đúng {summary?.correctCount ?? 0}/{questions.length} câu
-              </p>
-              <Button variant="outline" onClick={() => void load(seen)}>
-                Làm {COUNT} câu khác
-              </Button>
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-sm font-semibold text-white">
+                  Đúng {summary?.correctCount ?? 0}/{questions.length} câu
+                </p>
+                <Button variant="outline" onClick={() => { setGoRoi(false); void load(seen); }}>
+                  Làm {COUNT} câu khác
+                </Button>
+                {stepTitles && onGoRoi && (summary?.correctCount ?? 0) < questions.length && !goRoi && (
+                  <Button variant="outline" onClick={() => setGoRoi(true)}>
+                    Xem lại chỗ kẹt
+                  </Button>
+                )}
+              </div>
+              {goRoi && stepTitles && onGoRoi && (
+                <div className="rounded-lg border border-white/10 p-3" role="region" aria-label="Gỡ rối">
+                  <p className="mb-2 text-sm text-slate-300">Em tính đến bước nào thì kẹt? Chọn để mở lại đúng bước đó trong bài mẫu.</p>
+                  <div className="grid gap-2">
+                    {stepTitles.map((t, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="lesson-btn-ghost bt-goroi-btn"
+                        style={i === defaultStep ? { borderColor: color } : undefined}
+                        onClick={() => onGoRoi(i)}
+                      >
+                        <span className="mr-2 text-slate-400">{i + 1}.</span>
+                        <ContentHtml html={t} className="inline" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </>

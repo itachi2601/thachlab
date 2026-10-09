@@ -33,17 +33,34 @@ Dựng bằng `scripts/hinh.py` (`ngang_geom`, `xien_geom`, `dim`, `arc`, `axes`
 ### Lời giải ngắt dòng (thầy chốt 7/10/2026)
 Lời giải viết liền khó đọc → mỗi lời giải dựng bằng `sol()` trong `build-hinh-57.py` theo `docs/QUY-TAC-THIET-KE.md` C1/C4/H5/B3/N7: khung "Kiến thức cần gọi lại" (≤ 5 dòng, mỗi dòng một ý) → **mỗi bước một khối** `bt-step` (số + tiêu đề đậm, 1 câu dẫn ≤ 1 dòng, **mỗi công thức một dòng `$$…$$`**, tách "công thức chữ" / "thế số" / "kết quả" thành 3 dòng, kết quả trong ô nền nhạt `bt-ans`) → ô **Đáp số** mỗi ý một dòng → dòng "Nhận dạng" nhỏ, mờ. Khoảng cách trong bước (6–10px) < giữa các bước (22px). CSS ở cuối `app/globals.css` (`.bt-*`). Không viết `<ol class="tl-steps">` liền nhiều công thức trong một dòng nữa. Đã xem ở 375px: không tràn ngang, công thức dài tự cuộn trong dòng.
 
-## Bản nháp do Gemini viết (thầy chốt 8/10/2026) — Claude vẫn kiểm, dựng, đăng
+## Học sinh tự giải từng bước trước khi xem (thầy chốt 9/10/2026) — 5 quy tắc mới
 
-Phần chữ (đề, số liệu, lời giải nháp) có thể giao Gemini ngoài Claude. Bản nháp theo **hệ bắc cầu 4 cấp** (thầy chốt 8/10/2026): đúng 4 dạng = Áp dụng trực tiếp → Có điều kiện/bẫy → Kết hợp nhiều bước → Tình huống mới; mỗi dạng dùng lại cách làm dạng trước và thêm một độ khó (xem prompt). Định nghĩa 4 cấp nằm ở prompt, sửa ở đó nếu thầy đổi; mọi thứ còn lại vẫn của skill này:
-1. Thầy gửi Gemini prompt ở `references/PROMPT-GEMINI-BAI-TAP-MAU.md` kèm `theory.html`; lưu `content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json` (quy trình trọn gói: skill `cap-nhat-bai-hoc-theo-gemini`).
-2. **Kiểm máy trước**: `python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py <file> --lesson-id <id>` (tính lại `kiem_tinh`, trích đề, từ cấm, `<`/`>`, YCCĐ). Có ✗ thì sửa số/đề trước khi làm tiếp; mục `dieu_ban_khong_chac` tự giải lại trước tiên.
-3. **Không đăng nguyên văn**: tự viết lại lời giải theo "Phong cách" ở trên (khung kiến thức, bước đánh số, ⚠ điều kiện, nhận dạng), dựng mô phỏng + bảng phân tích bằng `hinh.py`, khớp `topic` với `question-topics.json`, rồi đi tiếp từ bước 4 của "Quy trình" (kiểm chéo độc lập bằng `kiem-code`, validate, đăng).
-4. Dữ liệu định danh học sinh không đi qua Gemini (AGENTS.md).
+Mục tiêu: học sinh làm việc ở lúc tự nghĩ, không chỉ đọc lời giải có sẵn (retrieval, AI-TUTOR 9.3). Áp cho mọi dạng soạn mới; bài đã đăng (10, 49–55) soạn lại dần khi đụng tới. UI đã có (`components/lessons/StepwiseSolution.tsx` + `WorkedQuestionsGrid.tsx` + `SimilarBankPractice.tsx`, bài 57 là mẫu, 9/10/2026); validator trong `scripts/lib.ts` (`validateSteps`). **Xem thử trước khi đăng, không cần DB**: `npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --xem-thu` → mở `http://localhost:3000/dev/btm` (thêm `?mock=1` để giả RPC bài tương tự, xem được luồng chấm + gỡ rối khi chưa đăng nhập).
+
+1. **Lời giải mặc định đóng, mở theo bước.** Mỗi bước `bt-step` có câu hỏi `hoi` + ô trả lời (số có đơn vị → `dap_so` ± `sai_so`; chọn → `lua_chon`). Đúng → mở bước đó và hiện câu hỏi bước kế. Sai → hiện `loi_hay_gap` của bước (lỗi + vì sao sai), cho làm lại 1 lần, rồi mới cho "Xem bước này". Luôn có nút "Xem cả lời giải" nhưng đặt nhỏ, dưới cùng.
+2. **Ví dụ mờ dần theo cấp** (`fading`, mặc định theo cấp, cùng cấp được tăng thêm, **không giảm** theo thứ tự dạng): `mo_het` (cấp 1) → `giau_buoc_cuoi` (giấu bước cuối **có câu hỏi**; bước "Kiểm tra" không hỏi thì không tính) → `giau_tu_buoc_2` → `giau_het` (chỉ đề + bảng phân tích, mọi bước tự làm). Bước không có `hoi` không bao giờ bị giấu. "Làm bài tương tự" chỉ hiện khi đã mở hết các bước.
+3. **Chọn bước kế trước khi xem** (`chon_buoc_ke`): trước mỗi bước (trừ bước 1) hỏi "Bước tiếp theo là gì?" với **3 lựa chọn** — 1 đúng, 2 là cách làm sai học sinh hay chọn (bỏ qua điều kiện, dùng công thức của dạng trước, đổi đơn vị sai…). Chọn sai → 1 dòng giải thích vì sao sai rồi cho chọn lại. Không dùng lựa chọn vô nghĩa cho đủ 3.
+4. **Câu nhận dạng** (`nhan_dang`, bắt buộc mỗi dạng, 1 câu ≤ 25 chữ): "Thấy **…** trong đề → nghĩ tới **…**". Hiện ở đầu dạng (trước đề, dạng thẻ nhỏ) **và** cuối lời giải. Từ khoá in đậm là chữ sẽ gặp trong đề thi, không phải tên định luật.
+5. **Bài tương tự có thang gỡ rối** (`go_roi`): học sinh sai bài tương tự → không chỉ báo sai, mà hỏi 1 câu chẩn đoán ("Em tính đến bước nào?" chọn trong danh sách bước) rồi nhảy về đúng bước đó của dạng mẫu, mở đúng bước ấy. Mỗi dạng ghi `go_roi.buoc_hay_sai` = chỉ số bước hay gây lỗi nhất (từ `loi_hay_gap`), dùng làm mặc định khi học sinh không chọn.
+
+Khi soạn: viết `buoc[]` cùng lúc với `sol()` trong `build-hinh-<id>.py` (helper `buoc()` trong `dung.py`, truyền `STEPS` làm tham số thứ 5 của `inject()`); số bước phải khớp 1-1 với `.bt-step` của lời giải. `loi_hay_gap` và lựa chọn sai lấy từ câu học sinh hay sai trong ngân hàng cùng chủ đề — kiểm chéo `kiem-code` phải xác nhận lựa chọn sai **thật sự sai** và đáp số bước **tính lại khớp**. **Không lộ đáp số của bước trong `tieu_de`/`hoi`/lựa chọn** (validator chặn với đáp số ≥ 2 chữ số; `loi_hay_gap` cũng không nêu số suy ra được đáp số, như góc phụ). Validator kiểm: `nhan_dang` (≤ 25 chữ), ≥ 2 bước khớp số `.bt-step`, bước có `hoi` phải có `dap_so`+`sai_so` hoặc `lua_chon` và `loi_hay_gap`, `chon_buoc_ke` đúng 3 mục/1 đúng/mục sai có `vi_sao`, `cap_do` 1–4 và `fading` không giảm, `go_roi.buoc_hay_sai` trong phạm vi.
+
+## Bước 0 — quét số dạng và tên dạng TRƯỚC khi nháp (thầy chốt 9/10/2026)
+Số dạng không cố định 4 (thường 2–6). Không viết nháp khi chưa có danh sách dạng đã quét.
+- **Dạng lấy từ lý thuyết của bài và ngân hàng câu hỏi cùng chủ đề** (`question_topics` + `question_bank`, lọc `archived = false`). Dạng không có câu tương ứng thì bỏ.
+- **Cấp độ 1–4**, không giảm khi đi xuống danh sách; cùng cấp có thể nhiều dạng.
+- **Model: Sonnet 5.5, effort medium.** Chạy trong phiên Claude Code (subagent Sonnet) hoặc batch `--che-do quet-dang` (mặc định Sonnet, medium).
+- **Prompt:** `references/PROMPT-SONNET-QUET-DANG.md`. Đầu ra JSON: `dang` (tên, cấp, `nguon_chu_de`, `so_cau_ngan_hang`, `yccd`, `ly_do`, `cau_noi`), `khong_dua_vao`, `ghi_chu`.
+- **Kết quả:** `scripts/logs/batch-ra-soat/ket-qua/<id>.quet-dang.json`. Nháp và viết lại đọc đúng các dạng trong file này.
+- **Kiểm trước khi đi tiếp:** 2–6 dạng, cấp 1–4 không giảm, không trùng tên, dạng không có chủ đề nguồn phải có ghi chú; bài chưa có YCCĐ thì `yccd` rỗng và ghi chú lại.
+
+## Nháp do Claude viết (Gemini đã bỏ — thầy chốt 9/10/2026)
+Nháp theo **hệ bắc cầu cấp độ 1–4** (Áp dụng trực tiếp → Có điều kiện/bẫy → Kết hợp nhiều bước → Tình huống mới; số dạng theo bước 0). Nháp phải đi đủ: kiểm máy → tự viết lại theo "Phong cách" → kiểm chéo độc lập (`kiem-code`) → validate → đăng. Không còn đường dán tay qua Gemini; file `PROMPT-GEMINI-BAI-TAP-MAU.md` và `kiem-ban-nhap-gemini.py` không còn là bước của quy trình.
 
 ## Hàng loạt qua Batch API (thầy chốt 8/10/2026 — credit API, không cần Gemini, không duyệt trước)
 Ba chế độ nối nhau trong `scripts/batch-ra-soat-bai.mts` (chạy trong tab terminal của thầy; bài phải có dòng trong `content/gemini/hang-doi.md`):
-1. `--che-do bai-tap-mau --gui --lop 12` → `--nhan --cho`: nháp 4 dạng + kiểm máy → `scripts/logs/batch-ra-soat/ket-qua/<id>.bai-tap-mau.nhap.json`.
+0. `--che-do quet-dang --gui --lop 12` → `--nhan --cho` (hoặc quét trong phiên Claude Code): danh sách dạng, phải xong trước bước 1.
+1. `--che-do bai-tap-mau --gui --lop 12` → `--nhan --cho`: nháp theo danh sách quét + kiểm máy → `scripts/logs/batch-ra-soat/ket-qua/<id>.bai-tap-mau.nhap.json`.
 2. `--che-do viet-bai-tap-mau --gui …` → `--nhan --cho`: API viết hoàn chỉnh (HTML + SVG mô phỏng + bảng phân tích + lời giải theo
    `references/PROMPT-CLAUDE-VIET-BAI-TAP-MAU.md`, system prompt nhúng AI-TUTOR mục 9 + dạng 2 bài 10 làm mẫu) → ghi
    `scripts/data/bai-tap-mau/<id>.json` (`review.checked=false`, bản cũ sao lưu `old/<id>.truoc-api-*.json`), chạy `validate.mts`, chụp
@@ -76,8 +93,22 @@ Mỗi bài một subagent theo `references/huong-dan-nhan-ra.md` (mẫu = bài 5
     "topic": "<tên YCCĐ con, nguyên văn>", "form": "bai_tap",
     "problem_html": "<p>…</p>",
     "analysis_html": "<figure …hình dữ kiện…></figure><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\">…</table></div>",
-    "solution_html": "<div class=\"tl-box\">…Kiến thức cần gọi lại…</div><ol class=\"tl-steps\">…</ol><p>Nhận dạng: …</p>" } ] }
+    "solution_html": "<div class=\"tl-box\">…Kiến thức cần gọi lại…</div><ol class=\"tl-steps\">…</ol><p>Nhận dạng: …</p>",
+    "cap_do": 2, "fading": "giau_buoc_cuoi",
+    "nhan_dang": "Thấy <b>ném ngang từ độ cao h</b> → nghĩ tới <b>t = √(2h/g)</b>, tầm xa = v₀·t",
+    "buoc": [ {
+      "tieu_de": "Tìm thời gian bay", "hoi": "Thời gian bay t bằng bao nhiêu?",
+      "dap_so": 2.0, "don_vi": "s", "sai_so": 0.05,
+      "loi_hay_gap": "Dùng h = v₀t (coi rơi đều) — sai vì theo phương thẳng đứng vật rơi tự do, h = ½gt²." },
+    { "tieu_de": "Tìm tầm xa", "hoi": "Tầm xa L bằng bao nhiêu?",
+      "dap_so": 30, "don_vi": "m", "sai_so": 0.5,
+      "chon_buoc_ke": [ { "text": "L = v₀·t", "dung": true },
+        { "text": "L = ½·v₀·t", "dung": false, "vi_sao": "Theo phương ngang vật chuyển động đều, không có ½." },
+        { "text": "L = √(2h/g)", "dung": false, "vi_sao": "Đó là công thức thời gian, chưa nhân với v₀." } ],
+      "loi_hay_gap": "Lấy L = v₀·t nhưng thế t sai đơn vị (ms thay vì s)." } ],
+    "go_roi": { "buoc_hay_sai": 0 } } ] }
 ```
+`cap_do` 1–4 theo bước 0; `fading` ∈ `mo_het` · `giau_buoc_cuoi` · `giau_tu_buoc_2` · `giau_het` (bài 57: dạng 1–6 = mo_het, giau_buoc_cuoi, giau_buoc_cuoi, giau_tu_buoc_2, giau_tu_buoc_2, giau_het). `chon_buoc_ke` chỉ có ở bước ≥ 2 (UI chỉ hỏi khi bước đó bị giấu). Câu định tính dùng `lua_chon` (mảng như `chon_buoc_ke`) thay `dap_so`. Bước phụ ("Kiểm tra") không có `hoi`.
 Hình trong `problem_html`/`analysis_html` do `build-hinh-<id>.py` chèn. `topic_id` và `body_html` (gộp để chỗ cũ đọc được) do script đăng sinh — không tự điền. Dùng linh kiện `.tl-*` có sẵn (`tl-box`, `tl-steps`, `tl-table--data`) cho khớp bài lý thuyết.
 
 ## Đăng (Mac)
@@ -119,3 +150,9 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-08 · Nháp 4 dạng có thể sinh hàng loạt bằng `scripts/batch-ra-soat-bai.mts --che-do bai-tap-mau` (Claude qua Batch API, credit API) — vẫn là BẢN NHÁP, đi đủ kiểm máy → viết lại → kiem-code → đăng (từ 8/10/2026 thầy không duyệt trước; trợ giảng rà trên web).
 - 2026-10-08 · Thầy chốt: nháp BTM không cần Gemini, đi thẳng batch Claude (`--che-do bai-tap-mau`); Claude viết lại, kiểm chéo rồi đăng luôn, trợ giảng người thật rà trên web. Bài 10 đã có `scripts/data/bai-tap-mau/10.json` (4 dạng, review.checked) từ 7/10 và DB nay đã có mục `bai_tap_mau` ("Các dạng bài tập") → chỉ cần publish.
 - 2026-10-08 · Viết hai chế độ batch `viet-bai-tap-mau` + `kiem-cheo` để API làm trọn phần chữ + SVG, Claude Code chỉ xem ảnh/sửa hình. CHƯA chạy thật — sau bài đầu ghi: tỉ lệ validate sạch, chất lượng SVG do API vẽ (nhãn cắt mép? lộ đáp số?), tỉ lệ kiem-cheo đạt.
+- 2026-10-09 · Số dạng không cố định 4: bước 0 quét dạng (Sonnet, effort medium) trước khi nháp; `viet-bai-tap-mau` và prompt nháp đọc số dạng từ `ket-qua/<id>.quet-dang.json`, không còn `SO_DANG = 4`. Batch `bai-tap-mau` từ chối bài chưa quét. → Bài có nháp cũ 4 dạng mà quét ra số khác (bài 17: 4 → 5) phải nháp lại, không dùng lại.
+- 2026-10-09 · Lỗi tự gây: ghi "bài chưa có danh mục YCCĐ" dựa trên file lý thuyết, nhưng danh mục thật lấy từ chủ đề ngân hàng (`danhMucYccd`). → Trước khi ghi "không có YCCĐ", chạy `kiem-ban-nhap-gemini.py` để xem danh mục thật.
+- 2026-10-09 · Subagent soạn nháp (Opus) làm lệch công thức ngoài bài (E = P·t ở Dạng 5, không có trong lý thuyết) và sai một câu bẫy (Δm). → Kiểm chéo bằng Sonnet độc lập bắt được cả hai; luôn kiểm chéo trước khi đánh dấu `review.checked`.
+- 2026-10-09 · Kiểm chéo đã tự giải trước rồi mới mở lời giải; chỉ kiểm lại đúng dạng bị sửa, không chạy lại cả bài.
+- 2026-10-09 · Dựng UI + validator tự giải từng bước trên bài 57 (6 dạng, 26 bước, kiem-code tự giải 20/20 đáp số khớp). Bắt được: lựa chọn "bước kế" của dạng 6 ghi thẳng "α≈24,3°" = đáp số của bước → validator thêm kiểm lộ đáp số; `loi_hay_gap` nêu "37,4°" cũng suy ra 52,6° (góc phụ) → bỏ số. Fading "giấu bước cuối" ban đầu giấu bước "Kiểm tra" (không có câu hỏi) nên không giấu gì → "bước cuối" = bước cuối có `hoi`. Trang `/dev/btm` + `--xem-thu` + `?mock=1` tiết kiệm nhiều lần đăng thử lên DB; RPC bài tương tự trả 401 khi chưa đăng nhập nên phải mock.
+- 2026-10-09 · Thầy bỏ đường nháp Gemini (mục đã gỡ khỏi quy trình, file prompt/kiem-ban-nhap-gemini.py còn nhưng không còn là bước) và chốt 5 quy tắc "tự giải từng bước": lời giải đóng mở theo bước, ví dụ mờ dần theo cấp, chọn bước kế, câu nhận dạng, bài tương tự gỡ rối về đúng bước → JSON thêm `buoc[]`/`nhan_dang`/`fading`/`go_roi`. CHƯA có UI, validator, prompt viết bài tương ứng — làm trên bài 57 trước rồi mới nhân ra.

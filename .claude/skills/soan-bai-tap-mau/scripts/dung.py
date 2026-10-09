@@ -50,8 +50,23 @@ def strip(html):
     return re.sub(r'<figure class="fig"[^>]*data-bt="[^"]*".*?</figure>', "", html, flags=re.S)
 
 
-def inject(json_path, build, analysis, sols):
-    """build[i](k): k=0 hình mô phỏng dưới đề; k=2 hình dữ kiện tĩnh cho phần phân tích. Idempotent (xoá figure[data-bt] cũ)."""
+def buoc(tieu_de, hoi=None, dap_so=None, don_vi=None, sai_so=None, loi=None, ke=None, lua_chon=None):
+    """Một bước tự giải (9/10/2026). `ke` = chon_buoc_ke: [(text, True), (text, "vì sao sai"), …] — 3 mục, đúng 1 cái True.
+    `lua_chon` cùng dạng (≥ 2 mục) cho câu định tính. Không có `hoi` → bước phụ, tự mở sau bước trước."""
+    def choices(xs): return [{"text": t, "dung": True} if v is True else {"text": t, "dung": False, "vi_sao": v} for t, v in xs]
+    s = {"tieu_de": tieu_de}
+    if hoi: s["hoi"] = hoi
+    if dap_so is not None: s.update(dap_so=dap_so, sai_so=sai_so if sai_so is not None else 0)
+    if don_vi: s["don_vi"] = don_vi
+    if lua_chon: s["lua_chon"] = choices(lua_chon)
+    if loi: s["loi_hay_gap"] = loi
+    if ke: s["chon_buoc_ke"] = choices(ke)
+    return s
+
+
+def inject(json_path, build, analysis, sols, steps=None):
+    """build[i](k): k=0 hình mô phỏng dưới đề; k=2 hình dữ kiện tĩnh cho phần phân tích. Idempotent (xoá figure[data-bt] cũ).
+    steps[i] = dict(nhan_dang, cap_do, fading, go_roi, buoc=[buoc(...), …]) — tự giải từng bước; số bước phải bằng số bước trong sol()."""
     d = json.load(open(json_path))
     for i, fn in enumerate(build):
         q = d["dang_bai"][i]
@@ -59,6 +74,8 @@ def inject(json_path, build, analysis, sols):
         q["analysis_html"] = fn(2) + tbl(analysis[i])             # hình dữ kiện + bảng Câu trong đề | Dữ liệu | Kiến thức
         q.pop("hints_html", None)
         q["solution_html"] = sols[i]
+        if steps:
+            q.update(steps[i])
     json.dump(d, open(json_path, "w"), ensure_ascii=False, indent=1)
     print("ok", len(d["dang_bai"]))
 

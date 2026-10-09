@@ -13,7 +13,50 @@
    "form": "bai_tap",
    "problem_html": "<p>Máy bay cứu hộ bay ngang ở độ cao $h=490\\ \\text{m}$ với vận tốc $v_0=60\\ \\text{m/s}$ rồi thả một gói hàng. Bỏ qua lực cản của không khí, lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Sau bao lâu gói hàng chạm đất?</li><li>Phi công phải thả gói khi máy bay còn cách điểm cần rơi trúng bao xa theo phương ngang?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"198.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;4.3 0;8.6 0;12.9 0;17.1 0;21.4 0;25.7 0;30.0 0;34.3 0;38.6 0;42.9 0;47.1 0;51.4 0;55.7 0;60.0 0;64.3 0;68.6 0;72.9 0;77.1 0;81.4 0;85.7 0;90.0 0;94.3 0;98.6 0;102.9 0;107.1 0;111.4 0;115.7 0;120.0 0;124.3 0;128.6 0;132.9 0;137.1 0;141.4 0;145.7 0;150.0 0;154.3 0;158.6 0;162.9 0;167.1 0;171.4 0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"81\" y=\"44\" width=\"46\" height=\"11\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M87,44 L81,34 L81,44 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"107.0\" y1=\"55.0\" x2=\"99.0\" y2=\"64.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"104\" y1=\"58\" x2=\"154\" y2=\"58\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d10-r)\"/><text x=\"78\" y=\"32\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₀ = 60 m/s</text></g><circle cx=\"104.0\" cy=\"58.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">máy bay</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\" points=\"104.0,58.0 108.3,58.1 112.6,58.4 116.9,58.8 121.1,59.4 125.4,60.2 129.7,61.1 134.0,62.3 138.3,63.6 142.6,65.1 146.9,66.8 151.1,68.6 155.4,70.6 159.7,72.8 164.0,75.2 168.3,77.7 172.6,80.4 176.9,83.3 181.1,86.3 185.4,89.6 189.7,93.0 194.0,96.6 198.3,100.3 202.6,104.3 206.9,108.4 211.1,112.7 215.4,117.2 219.7,121.8 224.0,126.6 228.3,131.6 232.6,136.8 236.9,142.1 241.1,147.6 245.4,153.3 249.7,159.2 254.0,165.2 258.3,171.4 262.6,177.8 266.9,184.4 271.1,191.1 275.4,198.0\"/><circle cx=\"275.4\" cy=\"198.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"44\" y1=\"58\" x2=\"44\" y2=\"198.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d10-o)\"/><line x1=\"44\" y1=\"198.0\" x2=\"44\" y2=\"58\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d10-o)\"/><text x=\"52\" y=\"132.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 490 m</text><line x1=\"104\" y1=\"218.0\" x2=\"275.42857142857144\" y2=\"218.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><line x1=\"275.42857142857144\" y1=\"218.0\" x2=\"104\" y2=\"218.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><text x=\"171.7\" y=\"236.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = ?</text><text x=\"174\" y=\"128\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = ?</text><circle cx=\"104.0\" cy=\"58.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"104.0;108.3;112.6;116.9;121.1;125.4;129.7;134.0;138.3;142.6;146.9;151.1;155.4;159.7;164.0;168.3;172.6;176.9;181.1;185.4;189.7;194.0;198.3;202.6;206.9;211.1;215.4;219.7;224.0;228.3;232.6;236.9;241.1;245.4;249.7;254.0;258.3;262.6;266.9;271.1;275.4\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"58.0;58.1;58.4;58.8;59.4;60.2;61.1;62.3;63.6;65.1;66.8;68.6;70.6;72.8;75.2;77.7;80.4;83.3;86.3;89.6;93.0;96.6;100.3;104.3;108.4;112.7;117.2;121.8;126.6;131.6;136.8;142.1;147.6;153.3;159.2;165.2;171.4;177.8;184.4;191.1;198.0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: máy bay giữ vận tốc ngang v₀, gói hàng luôn ở ngay dưới máy bay (đúng thời gian thật, 10 s; bấm Chạy mô phỏng). Quỹ đạo tính theo công thức.</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang, $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập.</li><li>Ox thẳng đều: $x=v_0t$ · $v_x=v_0$</li><li>Oy rơi tự do: $y=\\dfrac{1}{2}gt^2$ · $v_y=gt$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thời gian rơi (phương đứng)</span></p><p>Chạm đất khi $y=h$:</p>$$h=\\dfrac{1}{2}gt^2$$$$t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot490}{9{,}8}}=\\sqrt{100}$$<div class=\"bt-ans\">$$t=10\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tầm xa (phương ngang)</span></p><p>Ox thẳng đều:</p>$$L=v_0t=60\\cdot10$$<div class=\"bt-ans\">$$L=600\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>$t$ không phụ thuộc $v_0$; $v_0$ chỉ làm đổi $L$.</p><p>Đơn vị: m/s · s = m ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t=10\\ \\text{s}$</p><p>b) $L=600\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>độ cao</strong> và <strong>vận tốc ném ngang</strong> → tìm $t$ từ phương đứng trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hệ trục Oxy gốc tại chỗ thả, Oy hướng xuống; khi chạm đất y bằng h\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"198.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"81\" y=\"44\" width=\"46\" height=\"11\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M87,44 L81,34 L81,44 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"107.0\" y1=\"55.0\" x2=\"99.0\" y2=\"64.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"104.0\" cy=\"58.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">máy bay</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"104.0,58.0 108.3,58.1 112.6,58.4 116.9,58.8 121.1,59.4 125.4,60.2 129.7,61.1 134.0,62.3 138.3,63.6 142.6,65.1 146.9,66.8 151.1,68.6 155.4,70.6 159.7,72.8 164.0,75.2 168.3,77.7 172.6,80.4 176.9,83.3 181.1,86.3 185.4,89.6 189.7,93.0 194.0,96.6 198.3,100.3 202.6,104.3 206.9,108.4 211.1,112.7 215.4,117.2 219.7,121.8 224.0,126.6 228.3,131.6 232.6,136.8 236.9,142.1 241.1,147.6 245.4,153.3 249.7,159.2 254.0,165.2 258.3,171.4 262.6,177.8 266.9,184.4 271.1,191.1 275.4,198.0\"/><circle cx=\"275.4\" cy=\"198.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"104\" y1=\"58\" x2=\"154\" y2=\"58\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d12-g)\"/><text x=\"158\" y=\"63\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"104\" y1=\"58\" x2=\"104\" y2=\"108\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d12-g)\"/><text x=\"110\" y=\"120\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"104.0\" cy=\"58.0\" r=\"4\" fill=\"currentColor\"/><text x=\"90\" y=\"52\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"44\" y1=\"58\" x2=\"44\" y2=\"198.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><line x1=\"44\" y1=\"198.0\" x2=\"44\" y2=\"58\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><text x=\"52\" y=\"132.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h</text><text x=\"269.4\" y=\"186.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chạm đất: y = h</text><line x1=\"104\" y1=\"58\" x2=\"166\" y2=\"58\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d12-r)\"/><text x=\"128\" y=\"50\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀</text><text x=\"250\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đề cho: h, v₀</text><text x=\"250\" y=\"46\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hỏi: t, L</text></svg><figcaption>Dữ kiện: chọn gốc O, Oy xuống; chạm đất thì y = h. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bay ngang … thả một gói hàng\"</td><td>$\\vec v_0$ nằm ngang, $v_0=60$ m/s</td><td>Ném ngang: tách hai phương độc lập</td></tr><tr><td>\"độ cao $h=490$ m\"</td><td>$h=490$ m</td><td>Chạm đất khi $y=h$: $h=\\dfrac{1}{2}gt^2$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"sau bao lâu chạm đất?\"</td><td>Cần $t$</td><td>$t$ chỉ phụ thuộc $h$ và $g$, không phụ thuộc $v_0$</td></tr><tr><td>\"còn cách … bao xa theo phương ngang\"</td><td>Cần tầm xa $L$</td><td>$L=v_0t$ (Ox thẳng đều)</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hệ trục Oxy gốc tại chỗ thả, Oy hướng xuống; khi chạm đất y bằng h\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"198.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"81\" y=\"44\" width=\"46\" height=\"11\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M87,44 L81,34 L81,44 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"107.0\" y1=\"55.0\" x2=\"99.0\" y2=\"64.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"104.0\" cy=\"58.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">máy bay</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"104.0,58.0 108.3,58.1 112.6,58.4 116.9,58.8 121.1,59.4 125.4,60.2 129.7,61.1 134.0,62.3 138.3,63.6 142.6,65.1 146.9,66.8 151.1,68.6 155.4,70.6 159.7,72.8 164.0,75.2 168.3,77.7 172.6,80.4 176.9,83.3 181.1,86.3 185.4,89.6 189.7,93.0 194.0,96.6 198.3,100.3 202.6,104.3 206.9,108.4 211.1,112.7 215.4,117.2 219.7,121.8 224.0,126.6 228.3,131.6 232.6,136.8 236.9,142.1 241.1,147.6 245.4,153.3 249.7,159.2 254.0,165.2 258.3,171.4 262.6,177.8 266.9,184.4 271.1,191.1 275.4,198.0\"/><circle cx=\"275.4\" cy=\"198.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"104\" y1=\"58\" x2=\"154\" y2=\"58\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d12-g)\"/><text x=\"158\" y=\"63\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"104\" y1=\"58\" x2=\"104\" y2=\"108\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d12-g)\"/><text x=\"110\" y=\"120\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"104.0\" cy=\"58.0\" r=\"4\" fill=\"currentColor\"/><text x=\"90\" y=\"52\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"44\" y1=\"58\" x2=\"44\" y2=\"198.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><line x1=\"44\" y1=\"198.0\" x2=\"44\" y2=\"58\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><text x=\"52\" y=\"132.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h</text><text x=\"269.4\" y=\"186.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chạm đất: y = h</text><line x1=\"104\" y1=\"58\" x2=\"166\" y2=\"58\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d12-r)\"/><text x=\"128\" y=\"50\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀</text><text x=\"250\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đề cho: h, v₀</text><text x=\"250\" y=\"46\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hỏi: t, L</text></svg><figcaption>Dữ kiện: chọn gốc O, Oy xuống; chạm đất thì y = h. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bay ngang … thả một gói hàng\"</td><td>$\\vec v_0$ nằm ngang, $v_0=60$ m/s</td><td>Ném ngang: tách hai phương độc lập</td></tr><tr><td>\"độ cao $h=490$ m\"</td><td>$h=490$ m</td><td>Chạm đất khi $y=h$: $h=\\dfrac{1}{2}gt^2$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"sau bao lâu chạm đất?\"</td><td>Cần $t$</td><td>$t$ chỉ phụ thuộc $h$ và $g$, không phụ thuộc $v_0$</td></tr><tr><td>\"còn cách … bao xa theo phương ngang\"</td><td>Cần tầm xa $L$</td><td>$L=v_0t$ (Ox thẳng đều)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>độ cao</b> và <b>vận tốc ném ngang</b> → tính $t$ từ phương đứng trước, rồi $L=v_0t$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thời gian rơi (phương đứng)",
+     "hoi": "Gói hàng chạm đất sau bao lâu?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "s",
+     "loi_hay_gap": "Hay lấy $t=\\dfrac{h}{v_0}$ — nhưng $v_0$ nằm ngang, không liên quan tới rơi; phương đứng là rơi tự do $h=\\dfrac{1}{2}gt^2$."
+    },
+    {
+     "tieu_de": "Tầm xa (phương ngang)",
+     "hoi": "Phải thả khi còn cách điểm rơi bao xa theo phương ngang?",
+     "dap_so": 600,
+     "sai_so": 5,
+     "don_vi": "m",
+     "loi_hay_gap": "Tầm xa chỉ là $v_0\\cdot t$; nếu ra số khác thì thế $t$ sai hoặc nhân thêm $t$ lần nữa.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tầm xa $L=v_0t$ vì phương ngang thẳng đều",
+       "dung": true
+      },
+      {
+       "text": "$L=\\dfrac{1}{2}v_0t$",
+       "dung": false,
+       "vi_sao": "Phương ngang không có gia tốc nên không có $\\dfrac{1}{2}$; hệ số ấy chỉ có ở phương đứng."
+      },
+      {
+       "text": "$L=\\sqrt{\\dfrac{2h}{g}}$",
+       "dung": false,
+       "vi_sao": "Đó là thời gian rơi, chưa nhân với $v_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
   },
   {
    "label": "Dạng 2 · Dễ · Ném ngang: vận tốc khi chạm đất và góc so với phương ngang",
@@ -21,7 +64,98 @@
    "form": "bai_tap",
    "problem_html": "<p>Từ mép một vách đá cao $h=78{,}4\\ \\text{m}$, một hòn đá được ném ngang với $v_0=30\\ \\text{m/s}$. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$. Tại lúc hòn đá chạm đất, tính:</p><ol type=\"a\"><li>độ lớn vận tốc;</li><li>góc hợp bởi vectơ vận tốc và phương ngang.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hòn đá ném ngang từ mép vách đá cao 78,4 m, cần tìm vận tốc và góc lúc chạm đất\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"206.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"56\" width=\"48\" height=\"150.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"64.0\" cy=\"56.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\" points=\"64.0,56.0 69.7,56.1 75.5,56.4 81.2,56.8 87.0,57.5 92.7,58.3 98.4,59.4 104.2,60.6 109.9,62.0 115.7,63.6 121.4,65.4 127.1,67.3 132.9,69.5 138.6,71.8 144.4,74.4 150.1,77.1 155.8,80.0 161.6,83.1 167.3,86.4 173.1,89.8 178.8,93.5 184.5,97.3 190.3,101.4 196.0,105.6 201.8,110.0 207.5,114.6 213.2,119.4 219.0,124.3 224.7,129.5 230.5,134.8 236.2,140.4 241.9,146.1 247.7,152.0 253.4,158.1 259.2,164.4 264.9,170.8 270.6,177.5 276.4,184.3 282.1,191.4 287.9,198.6 293.6,206.0\"/><circle cx=\"293.6\" cy=\"206.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"64\" y1=\"56\" x2=\"122\" y2=\"56\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d20-r)\"/><text x=\"76\" y=\"48\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = 30 m/s</text><line x1=\"74\" y1=\"60\" x2=\"74\" y2=\"206.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d20-o)\"/><line x1=\"74\" y1=\"206.0\" x2=\"74\" y2=\"60\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d20-o)\"/><text x=\"82\" y=\"135.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 78,4 m</text><line x1=\"270.49730469344615\" y1=\"175.82314479943636\" x2=\"293.59183673469386\" y2=\"204.0\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d20-r)\"/><text x=\"285.6\" y=\"160.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v = ?  α = ?</text><circle cx=\"64.0\" cy=\"56.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"64.0;69.7;75.5;81.2;87.0;92.7;98.4;104.2;109.9;115.7;121.4;127.1;132.9;138.6;144.4;150.1;155.8;161.6;167.3;173.1;178.8;184.5;190.3;196.0;201.8;207.5;213.2;219.0;224.7;230.5;236.2;241.9;247.7;253.4;259.2;264.9;270.6;276.4;282.1;287.9;293.6\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"56.0;56.1;56.4;56.8;57.5;58.3;59.4;60.6;62.0;63.6;65.4;67.3;69.5;71.8;74.4;77.1;80.0;83.1;86.4;89.8;93.5;97.3;101.4;105.6;110.0;114.6;119.4;124.3;129.5;134.8;140.4;146.1;152.0;158.1;164.4;170.8;177.5;184.3;191.4;198.6;206.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hòn đá ném ngang (đúng thời gian thật, 4 s). Quỹ đạo tính theo công thức.</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang, $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập.</li><li>Ox thẳng đều: $x=v_0t$ · $v_x=v_0$</li><li>Oy rơi tự do: $y=\\dfrac{1}{2}gt^2$ · $v_y=gt$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li><li>Tổng hợp: $v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$ · $\\tan\\alpha=\\dfrac{v_y}{v_x}$</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thời gian rơi</span></p>$$t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot78{,}4}{9{,}8}}=\\sqrt{16}$$<div class=\"bt-ans\">$$t=4\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hai thành phần lúc chạm đất</span></p>$$v_x=v_0=30\\ \\text{m/s}$$$$v_y=gt=9{,}8\\cdot4=39{,}2\\ \\text{m/s}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn vận tốc</span></p><p>$v_x\\perp v_y$ nên:</p>$$v=\\sqrt{v_x^2+v_y^2}=\\sqrt{30^2+39{,}2^2}=\\sqrt{2436{,}64}$$<div class=\"bt-ans\">$$v\\approx49{,}4\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc so với phương ngang</span></p>$$\\tan\\alpha=\\dfrac{v_y}{v_x}=\\dfrac{39{,}2}{30}\\approx1{,}307$$<div class=\"bt-ans\">$$\\alpha\\approx52{,}6^\\circ$$</div><p>(hướng xuống)</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$v\\gt v_0$ vì có thêm $v_y$.</p><p>$\\alpha\\lt90^\\circ$ vì $v_x$ vẫn còn.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v\\approx49{,}4\\ \\text{m/s}$</p><p>b) $\\alpha\\approx52{,}6^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>vận tốc / góc</strong> tại một điểm → tìm $t$, rồi tổng hợp $v_x$ và $v_y$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Chọn gốc tại mép vách; thời gian rơi tìm từ độ cao còn vận tốc ngang đã biết\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"206.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"56\" width=\"48\" height=\"150.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"64.0\" cy=\"56.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"64.0,56.0 69.7,56.1 75.5,56.4 81.2,56.8 87.0,57.5 92.7,58.3 98.4,59.4 104.2,60.6 109.9,62.0 115.7,63.6 121.4,65.4 127.1,67.3 132.9,69.5 138.6,71.8 144.4,74.4 150.1,77.1 155.8,80.0 161.6,83.1 167.3,86.4 173.1,89.8 178.8,93.5 184.5,97.3 190.3,101.4 196.0,105.6 201.8,110.0 207.5,114.6 213.2,119.4 219.0,124.3 224.7,129.5 230.5,134.8 236.2,140.4 241.9,146.1 247.7,152.0 253.4,158.1 259.2,164.4 264.9,170.8 270.6,177.5 276.4,184.3 282.1,191.4 287.9,198.6 293.6,206.0\"/><circle cx=\"293.6\" cy=\"206.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"64\" y1=\"56\" x2=\"110\" y2=\"56\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d22-g)\"/><text x=\"114\" y=\"61\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"64\" y1=\"56\" x2=\"64\" y2=\"102\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d22-g)\"/><text x=\"70\" y=\"114\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"64.0\" cy=\"56.0\" r=\"4\" fill=\"currentColor\"/><text x=\"50\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"80\" y1=\"60\" x2=\"80\" y2=\"206.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d22-o)\"/><line x1=\"80\" y1=\"206.0\" x2=\"80\" y2=\"60\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d22-o)\"/><text x=\"88\" y=\"135.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = ? (từ h)</text><line x1=\"64\" y1=\"56\" x2=\"122\" y2=\"56\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d22-b)\"/><text x=\"128\" y=\"48\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vₓ = v₀ = 30 (đã biết)</text><text x=\"200\" y=\"232\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">① tìm t từ h  ② v_y = g·t</text></svg><figcaption>Dữ kiện: tìm t từ h trước, vₓ đã biết ngay. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ném ngang … $v_0=30$ m/s\"</td><td>$v_0=30$ m/s; $v_x=v_0$</td><td>Ném ngang: $v_x$ không đổi</td></tr><tr><td>\"vách đá cao $h=78{,}4$ m\"</td><td>$h=78{,}4$ m</td><td>Chạm đất khi $y=h$ → tìm $t$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"tại lúc chạm đất\"</td><td>Thời điểm $t$ vừa tìm</td><td>$v_y=gt$ tại đúng thời điểm đó</td></tr><tr><td>\"độ lớn vận tốc\"</td><td>Cần $v$</td><td>$v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$</td></tr><tr><td>\"góc hợp bởi vận tốc và phương ngang\"</td><td>Cần $\\alpha$</td><td>$\\tan\\alpha=\\dfrac{v_y}{v_x}$</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Chọn gốc tại mép vách; thời gian rơi tìm từ độ cao còn vận tốc ngang đã biết\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"206.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"56\" width=\"48\" height=\"150.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"64.0\" cy=\"56.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"64.0,56.0 69.7,56.1 75.5,56.4 81.2,56.8 87.0,57.5 92.7,58.3 98.4,59.4 104.2,60.6 109.9,62.0 115.7,63.6 121.4,65.4 127.1,67.3 132.9,69.5 138.6,71.8 144.4,74.4 150.1,77.1 155.8,80.0 161.6,83.1 167.3,86.4 173.1,89.8 178.8,93.5 184.5,97.3 190.3,101.4 196.0,105.6 201.8,110.0 207.5,114.6 213.2,119.4 219.0,124.3 224.7,129.5 230.5,134.8 236.2,140.4 241.9,146.1 247.7,152.0 253.4,158.1 259.2,164.4 264.9,170.8 270.6,177.5 276.4,184.3 282.1,191.4 287.9,198.6 293.6,206.0\"/><circle cx=\"293.6\" cy=\"206.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"64\" y1=\"56\" x2=\"110\" y2=\"56\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d22-g)\"/><text x=\"114\" y=\"61\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"64\" y1=\"56\" x2=\"64\" y2=\"102\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d22-g)\"/><text x=\"70\" y=\"114\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"64.0\" cy=\"56.0\" r=\"4\" fill=\"currentColor\"/><text x=\"50\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"80\" y1=\"60\" x2=\"80\" y2=\"206.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d22-o)\"/><line x1=\"80\" y1=\"206.0\" x2=\"80\" y2=\"60\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d22-o)\"/><text x=\"88\" y=\"135.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = ? (từ h)</text><line x1=\"64\" y1=\"56\" x2=\"122\" y2=\"56\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d22-b)\"/><text x=\"128\" y=\"48\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vₓ = v₀ = 30 (đã biết)</text><text x=\"200\" y=\"232\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">① tìm t từ h  ② v_y = g·t</text></svg><figcaption>Dữ kiện: tìm t từ h trước, vₓ đã biết ngay. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ném ngang … $v_0=30$ m/s\"</td><td>$v_0=30$ m/s; $v_x=v_0$</td><td>Ném ngang: $v_x$ không đổi</td></tr><tr><td>\"vách đá cao $h=78{,}4$ m\"</td><td>$h=78{,}4$ m</td><td>Chạm đất khi $y=h$ → tìm $t$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"tại lúc chạm đất\"</td><td>Thời điểm $t$ vừa tìm</td><td>$v_y=gt$ tại đúng thời điểm đó</td></tr><tr><td>\"độ lớn vận tốc\"</td><td>Cần $v$</td><td>$v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$</td></tr><tr><td>\"góc hợp bởi vận tốc và phương ngang\"</td><td>Cần $\\alpha$</td><td>$\\tan\\alpha=\\dfrac{v_y}{v_x}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề hỏi <b>vận tốc</b> hay <b>góc</b> lúc chạm đất → tìm $t$, rồi tổng hợp $v_x$ và $v_y$.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thời gian rơi",
+     "hoi": "Thời gian rơi $t$ bằng bao nhiêu?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "s",
+     "loi_hay_gap": "Thế nhầm $h$ hoặc quên nhân 2 trong $t=\\sqrt{2h/g}$."
+    },
+    {
+     "tieu_de": "Hai thành phần lúc chạm đất",
+     "hoi": "Thành phần thẳng đứng $v_y$ lúc chạm đất bằng bao nhiêu?",
+     "dap_so": 39.2,
+     "sai_so": 0.3,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay lấy $v_y=\\dfrac{1}{2}gt^2$ — đó là quãng đường rơi, không phải vận tốc; $v_y=gt$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $v_x=v_0$ và $v_y=gt$ tại lúc chạm đất",
+       "dung": true
+      },
+      {
+       "text": "Lấy $v=gt$ làm vận tốc chạm đất",
+       "dung": false,
+       "vi_sao": "Đó mới là thành phần đứng; vận tốc còn thành phần ngang $v_0$."
+      },
+      {
+       "text": "Lấy $v=v_0$ vì $v_x$ không đổi",
+       "dung": false,
+       "vi_sao": "$v_x$ không đổi nhưng $v_y$ tăng dần, nên vận tốc chạm đất lớn hơn $v_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn vận tốc",
+     "hoi": "Độ lớn vận tốc $v$ khi chạm đất?",
+     "dap_so": 49.4,
+     "sai_so": 0.4,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cộng thẳng $v_x+v_y$ hoặc quên bình phương; hai thành phần vuông góc nên $v=\\sqrt{v_x^2+v_y^2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\sqrt{v_x^2+v_y^2}$ vì hai thành phần vuông góc",
+       "dung": true
+      },
+      {
+       "text": "$v=v_x+v_y$",
+       "dung": false,
+       "vi_sao": "Hai vectơ vuông góc, không cộng độ lớn."
+      },
+      {
+       "text": "$v=\\sqrt{v_x^2-v_y^2}$",
+       "dung": false,
+       "vi_sao": "Dấu trừ sai: $v$ là cạnh huyền, lớn hơn cả hai thành phần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc so với phương ngang",
+     "hoi": "Góc $\\alpha$ so với phương ngang (độ)?",
+     "dap_so": 52.6,
+     "sai_so": 0.6,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy $\\tan\\alpha=\\dfrac{v_x}{v_y}$ sẽ ra góc với phương thẳng đứng; góc với phương ngang có đối là $v_y$, kề là $v_x$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\tan\\alpha=\\dfrac{v_y}{v_x}$",
+       "dung": true
+      },
+      {
+       "text": "$\\tan\\alpha=\\dfrac{v_x}{v_y}$",
+       "dung": false,
+       "vi_sao": "Góc so với phương ngang: cạnh đối là $v_y$, cạnh kề là $v_x$. Lật lại sẽ ra góc với phương đứng."
+      },
+      {
+       "text": "$\\sin\\alpha=\\dfrac{v_y}{v_0}$",
+       "dung": false,
+       "vi_sao": "Mẫu phải là $v$ (cạnh huyền), không phải $v_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
   },
   {
    "label": "Dạng 3 · Trung bình · Ném ngang, bài ngược: biết tầm xa, tìm vận tốc ném, kiểm tra vật cản",
@@ -29,7 +163,132 @@
    "form": "bai_tap",
    "problem_html": "<p>Từ mép mái một ngôi nhà, ở độ cao $h=19{,}6\\ \\text{m}$ so với mặt đất, một người ném ngang một hòn đá (coi là chất điểm). Hòn đá chạm đất cách chân nhà $15\\ \\text{m}$ theo phương ngang. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính vận tốc ném $v_0$.</li><li>Trên đường bay của hòn đá, cách chân nhà $10\\ \\text{m}$ có một cây cao $10\\ \\text{m}$ mọc trên mặt đất bằng phẳng. Hòn đá có bay qua ngọn cây không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Hòn đá ném ngang từ mép mái nhà cao 19,6 m, rơi cách chân nhà 15 m, trên đường bay có một cây cao 10 m cách nhà 10 m\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"209.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"44\" width=\"54\" height=\"165.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"154.2\" y1=\"209.0\" x2=\"154.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"145.2\" y1=\"124.8\" x2=\"163.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"44.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\" points=\"70.0,44.0 73.2,44.1 76.3,44.4 79.5,44.9 82.6,45.6 85.8,46.6 88.9,47.7 92.1,49.1 95.3,50.6 98.4,52.4 101.6,54.3 104.7,56.5 107.9,58.9 111.0,61.4 114.2,64.2 117.4,67.2 120.5,70.4 123.7,73.8 126.8,77.4 130.0,81.2 133.1,85.2 136.3,89.5 139.5,93.9 142.6,98.6 145.8,103.4 148.9,108.5 152.1,113.7 155.2,119.2 158.4,124.8 161.5,130.7 164.7,136.8 167.9,143.1 171.0,149.6 174.2,156.3 177.3,163.2 180.5,170.3 183.6,177.7 186.8,185.2 190.0,192.9 193.1,200.9 196.3,209.0\"/><circle cx=\"196.3\" cy=\"209.0\" r=\"4.5\" fill=\"#34d399\"/><text x=\"146.2\" y=\"201.0\" fill=\"#4ade80\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">cây 10 m</text><line x1=\"70\" y1=\"44\" x2=\"120\" y2=\"44\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d30-r)\"/><text x=\"74\" y=\"34\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = ?</text><line x1=\"82\" y1=\"48\" x2=\"82\" y2=\"209.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d30-o)\"/><line x1=\"82\" y1=\"209.0\" x2=\"82\" y2=\"48\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d30-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"88\" y=\"122.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h =</text><text x=\"88\" y=\"138.5\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">19,6 m</text><line x1=\"70\" y1=\"229.0\" x2=\"196.27551020408163\" y2=\"229.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d30-b)\"/><line x1=\"196.27551020408163\" y1=\"229.0\" x2=\"70\" y2=\"229.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d30-b)\"/><text x=\"109.1\" y=\"247.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = 15 m</text><text x=\"250\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Ném từ mép mái nhà</text><text x=\"250\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Cây cách chân nhà 10 m</text><circle cx=\"70.0\" cy=\"44.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"70.0;73.2;76.3;79.5;82.6;85.8;88.9;92.1;95.3;98.4;101.6;104.7;107.9;111.0;114.2;117.4;120.5;123.7;126.8;130.0;133.1;136.3;139.5;142.6;145.8;148.9;152.1;155.2;158.4;161.5;164.7;167.9;171.0;174.2;177.3;180.5;183.6;186.8;190.0;193.1;196.3\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"44.0;44.1;44.4;44.9;45.6;46.6;47.7;49.1;50.6;52.4;54.3;56.5;58.9;61.4;64.2;67.2;70.4;73.8;77.4;81.2;85.2;89.5;93.9;98.6;103.4;108.5;113.7;119.2;124.8;130.7;136.8;143.1;149.6;156.3;163.2;170.3;177.7;185.2;192.9;200.9;209.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hòn đá ném từ mái nhà (chạy chậm 2 lần). Quỹ đạo tính theo công thức.</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang, $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập.</li><li>Ox thẳng đều: $x=v_0t$ · $v_x=v_0$</li><li>Oy rơi tự do: $y=\\dfrac{1}{2}gt^2$ · $v_y=gt$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thời gian bay</span></p>$$t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot19{,}6}{9{,}8}}$$<div class=\"bt-ans\">$$t=2\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vận tốc ném</span></p><p>Ox thẳng đều, tầm xa $L=15$ m:</p>$$v_0=\\dfrac{L}{t}=\\dfrac{15}{2}$$<div class=\"bt-ans\">$$v_0=7{,}5\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lúc đá tới chỗ cây</span></p><p>Cây ở $x=10$ m:</p>$$t_1=\\dfrac{x}{v_0}=\\dfrac{10}{7{,}5}=\\dfrac{4}{3}\\ \\text{s}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao còn lại</span></p>$$y_1=\\dfrac{1}{2}gt_1^2=4{,}9\\cdot\\dfrac{16}{9}\\approx8{,}7\\ \\text{m}$$<p>Còn cách mặt đất:</p>$$19{,}6-8{,}7\\approx10{,}9\\ \\text{m}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>So với ngọn cây</span></p>$$10{,}9\\gt10$$<div class=\"bt-ans\"><p>Hòn đá <strong>bay qua</strong> ngọn cây, cao hơn khoảng $0{,}9\\ \\text{m}$ (khá sát).</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_0=7{,}5\\ \\text{m/s}$</p><p>b) Có, cao hơn ngọn cây khoảng $0{,}9\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi ngược $v_0$ hoặc một điểm trên đường đi → $t$ nối hai phương.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Tại vị trí cây, tìm hòn đá đã rơi xuống bao nhiêu rồi so với ngọn cây\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"209.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"44\" width=\"54\" height=\"165.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"154.2\" y1=\"209.0\" x2=\"154.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"145.2\" y1=\"124.8\" x2=\"163.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"44.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"70.0,44.0 73.2,44.1 76.3,44.4 79.5,44.9 82.6,45.6 85.8,46.6 88.9,47.7 92.1,49.1 95.3,50.6 98.4,52.4 101.6,54.3 104.7,56.5 107.9,58.9 111.0,61.4 114.2,64.2 117.4,67.2 120.5,70.4 123.7,73.8 126.8,77.4 130.0,81.2 133.1,85.2 136.3,89.5 139.5,93.9 142.6,98.6 145.8,103.4 148.9,108.5 152.1,113.7 155.2,119.2 158.4,124.8 161.5,130.7 164.7,136.8 167.9,143.1 171.0,149.6 174.2,156.3 177.3,163.2 180.5,170.3 183.6,177.7 186.8,185.2 190.0,192.9 193.1,200.9 196.3,209.0\"/><circle cx=\"196.3\" cy=\"209.0\" r=\"4.5\" fill=\"#34d399\"/><text x=\"146.2\" y=\"201.0\" fill=\"#4ade80\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">cây 10 m</text><circle cx=\"154.2\" cy=\"117.3\" r=\"5\" fill=\"#fb923c\"/><line x1=\"70.0\" y1=\"117.3\" x2=\"154.2\" y2=\"117.3\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"154.2\" y1=\"117.3\" x2=\"154.2\" y2=\"44.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"166.18367346938774\" y1=\"44\" x2=\"166.18367346938774\" y2=\"117.33333333333333\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d32-o)\"/><line x1=\"166.18367346938774\" y1=\"117.33333333333333\" x2=\"166.18367346938774\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d32-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"172.2\" y=\"84.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">y₁ = đã rơi</text><text x=\"172.2\" y=\"145.1\" fill=\"#4ade80\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">so với ngọn cây?</text><text x=\"154.2\" y=\"229.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x = 10 m</text></svg><figcaption>Dữ kiện: tìm lúc đá tới x = 10 m, rồi độ cao còn lại. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mép mái … cao $h=19{,}6$ m\"</td><td>$h=19{,}6$ m</td><td>Chạm đất khi $y=h$ → tìm $t$</td></tr><tr><td>\"ném ngang\"</td><td>$v_0$ chưa biết</td><td>Ném ngang: $x=v_0t$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"chạm đất cách chân nhà 15 m\"</td><td>$L=15$ m</td><td>$L=v_0t$ → $v_0=L/t$ ($t$ nối hai phương)</td></tr><tr><td>\"cách chân nhà 10 m có một cây cao 10 m\"</td><td>$x=10$ m; ngọn cây cao $10$ m</td><td>Tới $x$ lúc $t_1=x/v_0$; đã rơi $y_1=\\dfrac{1}{2}gt_1^2$</td></tr><tr><td>\"có bay qua ngọn cây không?\"</td><td>So sánh $h-y_1$ với $10$ m</td><td>Còn cao hơn $10$ m thì bay qua</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Tại vị trí cây, tìm hòn đá đã rơi xuống bao nhiêu rồi so với ngọn cây\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"209.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"44\" width=\"54\" height=\"165.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"154.2\" y1=\"209.0\" x2=\"154.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"145.2\" y1=\"124.8\" x2=\"163.2\" y2=\"124.8\" stroke=\"#4ade80\" stroke-width=\"4\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"44.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"70.0,44.0 73.2,44.1 76.3,44.4 79.5,44.9 82.6,45.6 85.8,46.6 88.9,47.7 92.1,49.1 95.3,50.6 98.4,52.4 101.6,54.3 104.7,56.5 107.9,58.9 111.0,61.4 114.2,64.2 117.4,67.2 120.5,70.4 123.7,73.8 126.8,77.4 130.0,81.2 133.1,85.2 136.3,89.5 139.5,93.9 142.6,98.6 145.8,103.4 148.9,108.5 152.1,113.7 155.2,119.2 158.4,124.8 161.5,130.7 164.7,136.8 167.9,143.1 171.0,149.6 174.2,156.3 177.3,163.2 180.5,170.3 183.6,177.7 186.8,185.2 190.0,192.9 193.1,200.9 196.3,209.0\"/><circle cx=\"196.3\" cy=\"209.0\" r=\"4.5\" fill=\"#34d399\"/><text x=\"146.2\" y=\"201.0\" fill=\"#4ade80\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">cây 10 m</text><circle cx=\"154.2\" cy=\"117.3\" r=\"5\" fill=\"#fb923c\"/><line x1=\"70.0\" y1=\"117.3\" x2=\"154.2\" y2=\"117.3\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"154.2\" y1=\"117.3\" x2=\"154.2\" y2=\"44.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"166.18367346938774\" y1=\"44\" x2=\"166.18367346938774\" y2=\"117.33333333333333\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d32-o)\"/><line x1=\"166.18367346938774\" y1=\"117.33333333333333\" x2=\"166.18367346938774\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d32-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"172.2\" y=\"84.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">y₁ = đã rơi</text><text x=\"172.2\" y=\"145.1\" fill=\"#4ade80\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">so với ngọn cây?</text><text x=\"154.2\" y=\"229.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x = 10 m</text></svg><figcaption>Dữ kiện: tìm lúc đá tới x = 10 m, rồi độ cao còn lại. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mép mái … cao $h=19{,}6$ m\"</td><td>$h=19{,}6$ m</td><td>Chạm đất khi $y=h$ → tìm $t$</td></tr><tr><td>\"ném ngang\"</td><td>$v_0$ chưa biết</td><td>Ném ngang: $x=v_0t$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)</td></tr><tr><td>\"chạm đất cách chân nhà 15 m\"</td><td>$L=15$ m</td><td>$L=v_0t$ → $v_0=L/t$ ($t$ nối hai phương)</td></tr><tr><td>\"cách chân nhà 10 m có một cây cao 10 m\"</td><td>$x=10$ m; ngọn cây cao $10$ m</td><td>Tới $x$ lúc $t_1=x/v_0$; đã rơi $y_1=\\dfrac{1}{2}gt_1^2$</td></tr><tr><td>\"có bay qua ngọn cây không?\"</td><td>So sánh $h-y_1$ với $10$ m</td><td>Còn cao hơn $10$ m thì bay qua</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề cho <b>tầm xa</b> rồi hỏi ngược $v_0$ hoặc <b>có vượt vật cản</b> → $t$ nối hai phương, so độ cao tại chỗ vật cản.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thời gian bay",
+     "hoi": "Thời gian bay $t$ bằng bao nhiêu?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "s",
+     "loi_hay_gap": "Không tính được $t$ từ tầm xa vì chưa biết $v_0$; $t$ chỉ phụ thuộc $h$: $t=\\sqrt{2h/g}$."
+    },
+    {
+     "tieu_de": "Vận tốc ném",
+     "hoi": "Vận tốc ném $v_0$ bằng bao nhiêu?",
+     "dap_so": 7.5,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Chia ngược ($t/L$) hoặc lấy $v_0=\\sqrt{2gh}$ (đó là vận tốc rơi theo phương đứng).",
+     "chon_buoc_ke": [
+      {
+       "text": "$v_0=\\dfrac{L}{t}$ vì phương ngang thẳng đều",
+       "dung": true
+      },
+      {
+       "text": "$v_0=L\\cdot t$",
+       "dung": false,
+       "vi_sao": "Ngược rồi: $L=v_0t$ nên $v_0=L/t$."
+      },
+      {
+       "text": "$v_0=\\sqrt{2gh}$",
+       "dung": false,
+       "vi_sao": "Đó là vận tốc rơi tự do theo phương đứng, không phải $v_0$ nằm ngang."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lúc đá tới chỗ cây",
+     "hoi": "Sau bao lâu hòn đá tới phía trên cây (s)?",
+     "dap_so": 1.333,
+     "sai_so": 0.02,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy $t_1$ theo tầm xa 15 m thay vì vị trí cây 10 m; hoặc coi 10 m là độ cao rơi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t_1=\\dfrac{x}{v_0}$ với $x=10$ m là vị trí cây",
+       "dung": true
+      },
+      {
+       "text": "$t_1=\\sqrt{\\dfrac{2\\cdot10}{g}}$",
+       "dung": false,
+       "vi_sao": "10 m là khoảng cách ngang tới cây, không phải độ cao rơi."
+      },
+      {
+       "text": "So $L=15\\gt10$ rồi kết luận bay qua cây",
+       "dung": false,
+       "vi_sao": "Tầm xa lớn hơn chưa đủ: khi tới chỗ cây, đá có thể đã rơi thấp hơn ngọn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao còn lại",
+     "hoi": "Khi tới chỗ cây, hòn đá còn cách mặt đất bao nhiêu m?",
+     "dap_so": 10.9,
+     "sai_so": 0.2,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên trừ: $y_1=\\dfrac{1}{2}gt_1^2$ là quãng đã rơi, độ cao còn lại là $h-y_1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính quãng đã rơi $y_1=\\dfrac{1}{2}gt_1^2$ rồi lấy $h-y_1$",
+       "dung": true
+      },
+      {
+       "text": "$y_1=\\dfrac{1}{2}gt_1^2$ chính là độ cao so với đất",
+       "dung": false,
+       "vi_sao": "$y_1$ tính từ điểm ném xuống; so với đất phải lấy $h-y_1$."
+      },
+      {
+       "text": "$y_1=v_0t_1$",
+       "dung": false,
+       "vi_sao": "Đó là quãng đường ngang, bằng đúng 10 m."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So với ngọn cây",
+     "hoi": "Hòn đá có bay qua ngọn cây không?",
+     "lua_chon": [
+      {
+       "text": "Bay qua, cao hơn ngọn cây khoảng $0{,}9$ m",
+       "dung": true
+      },
+      {
+       "text": "Đập vào thân cây",
+       "dung": false,
+       "vi_sao": "$10{,}9\\gt10$ nên khi đi qua, đá ở trên ngọn cây."
+      },
+      {
+       "text": "Chưa đủ dữ kiện",
+       "dung": false,
+       "vi_sao": "Đã có độ cao của đá tại $x=10$ m; so với 10 m là đủ."
+      }
+     ],
+     "loi_hay_gap": "So nhầm quãng đã rơi ($8{,}7$ m) với $10$ m rồi kết luận đập cây.",
+     "chon_buoc_ke": [
+      {
+       "text": "So độ cao còn lại với chiều cao cây",
+       "dung": true
+      },
+      {
+       "text": "So tầm xa với vị trí cây",
+       "dung": false,
+       "vi_sao": "Tầm xa chỉ cho biết điểm rơi, không nói đá cao bao nhiêu lúc qua cây."
+      },
+      {
+       "text": "So $v_0$ với một ngưỡng",
+       "dung": false,
+       "vi_sao": "Không có ngưỡng vận tốc nào ở đây; phải so độ cao."
+      }
+     ]
+    }
+   ]
   },
   {
    "label": "Dạng 4 · Trung bình · Ném xiên từ mặt đất: tầm cao, thời gian bay, tầm xa",
@@ -37,7 +296,95 @@
    "form": "bai_tap",
    "problem_html": "<p>Một vận động viên nhảy xa bật khỏi mặt đất với vận tốc $v_0=9{,}8\\ \\text{m/s}$ theo phương hợp với phương ngang góc $\\alpha=30^\\circ$. Coi người là chất điểm, bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$ (điểm tiếp đất cùng độ cao điểm bật). Tính:</p><ol type=\"a\"><li>các thành phần $v_{0x}$ và $v_{0y}$;</li><li>thời gian từ lúc bật đến lúc lên tới điểm cao nhất, và tầm cao $H$;</li><li>thời gian bay và tầm xa $L$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Vận động viên bật nhảy từ mặt đất với vận tốc 9,8 m/s hợp phương ngang 30 độ, cần tìm tầm cao, thời gian bay và tầm xa\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"112.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\" points=\"90.0,112.0 95.0,109.2 100.0,106.4 105.0,103.8 110.0,101.2 115.0,98.8 120.0,96.4 125.0,94.2 130.0,92.0 135.0,89.9 140.0,87.9 145.0,86.1 150.0,84.3 155.0,82.6 160.0,81.0 165.0,79.5 170.0,78.1 175.0,76.8 180.0,75.6 185.0,74.5 190.0,73.5 195.0,72.6 200.0,71.8 205.0,71.1 210.0,70.4 215.0,69.9 220.0,69.5 225.0,69.1 230.0,68.9 235.0,68.7 240.0,68.7 245.0,68.7 250.0,68.9 255.0,69.1 260.0,69.5 265.0,69.9 270.0,70.4 275.0,71.1 280.0,71.8 285.0,72.6 290.0,73.5 295.0,74.5 300.0,75.6 305.0,76.8 310.0,78.1 315.0,79.5 320.0,81.0 325.0,82.6 330.0,84.3 335.0,86.1 340.0,87.9 345.0,89.9 350.0,92.0 355.0,94.2 360.0,96.4 365.0,98.8 370.0,101.2 375.0,103.8 380.0,106.4 385.0,109.2 390.0,112.0\"/><circle cx=\"90.0\" cy=\"112.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"390.0\" cy=\"112.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"90\" y1=\"112\" x2=\"141.96152422706632\" y2=\"82.0\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d40-r)\"/><text x=\"74\" y=\"56\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = 9,8 m/s</text><path d=\"M118.0,112.0 A28,28 0 0 0 114.2,98.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"122\" y=\"106\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">α = 30°</text><line x1=\"240.0\" y1=\"70.69872981077808\" x2=\"240.0\" y2=\"112\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d40-o)\"/><line x1=\"240.0\" y1=\"112\" x2=\"240.0\" y2=\"70.69872981077808\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d40-o)\"/><text x=\"246.0\" y=\"96.3\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">H = ?</text><line x1=\"90\" y1=\"134\" x2=\"390.0\" y2=\"134\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d40-b)\"/><line x1=\"390.0\" y1=\"134\" x2=\"90\" y2=\"134\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d40-b)\"/><text x=\"222.0\" y=\"152\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = ?</text><text x=\"250\" y=\"30\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t bay = ?</text><circle cx=\"90.0\" cy=\"112.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"90.0;95.0;100.0;105.0;110.0;115.0;120.0;125.0;130.0;135.0;140.0;145.0;150.0;155.0;160.0;165.0;170.0;175.0;180.0;185.0;190.0;195.0;200.0;205.0;210.0;215.0;220.0;225.0;230.0;235.0;240.0;245.0;250.0;255.0;260.0;265.0;270.0;275.0;280.0;285.0;290.0;295.0;300.0;305.0;310.0;315.0;320.0;325.0;330.0;335.0;340.0;345.0;350.0;355.0;360.0;365.0;370.0;375.0;380.0;385.0;390.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"112.0;109.2;106.4;103.8;101.2;98.8;96.4;94.2;92.0;89.9;87.9;86.1;84.3;82.6;81.0;79.5;78.1;76.8;75.6;74.5;73.5;72.6;71.8;71.1;70.4;69.9;69.5;69.1;68.9;68.7;68.7;68.7;68.9;69.1;69.5;69.9;70.4;71.1;71.8;72.6;73.5;74.5;75.6;76.8;78.1;79.5;81.0;82.6;84.3;86.1;87.9;89.9;92.0;94.2;96.4;98.8;101.2;103.8;106.4;109.2;112.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ném xiên từ mặt đất (chạy chậm 4 lần). Quỹ đạo tính theo công thức.</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném xiên, $\\vec v_0$ hợp phương ngang góc $\\alpha$ (hướng lên).</li><li><strong>Định luật:</strong> hai phương độc lập; Oy lên là dương, gia tốc $-g$.</li><li>Tách vận tốc đầu: $v_{0x}=v_0\\cos\\alpha$ · $v_{0y}=v_0\\sin\\alpha$</li><li>Ox đều: $x=v_{0x}t$ · Oy: $y=v_{0y}t-\\dfrac{1}{2}gt^2$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hai thành phần của $\\vec v_0$</span></p>$$v_{0x}=9{,}8\\cos30^\\circ\\approx8{,}49\\ \\text{m/s}$$$$v_{0y}=9{,}8\\sin30^\\circ=4{,}9\\ \\text{m/s}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lên tới điểm cao nhất</span></p><p>Tại đỉnh $v_y=0$:</p>$$t_1=\\dfrac{v_{0y}}{g}=\\dfrac{4{,}9}{9{,}8}$$<div class=\"bt-ans\">$$t_1=0{,}5\\ \\text{s}$$</div>$$H=\\dfrac{v_{0y}^2}{2g}=\\dfrac{4{,}9^2}{2\\cdot9{,}8}$$<div class=\"bt-ans\">$$H\\approx1{,}23\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian bay</span></p><p>Rơi cùng độ cao nên lên và xuống đối xứng:</p>$$t=2t_1$$<div class=\"bt-ans\">$$t=1\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tầm xa</span></p>$$L=v_{0x}t=8{,}49\\cdot1$$<div class=\"bt-ans\">$$L\\approx8{,}49\\ \\text{m}$$</div><p>Kiểm tra bằng công thức tầm xa:</p>$$L=\\dfrac{v_0^2\\sin2\\alpha}{g}=\\dfrac{9{,}8^2\\sin60^\\circ}{9{,}8}\\approx8{,}49\\ \\text{m}$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{0x}\\approx8{,}49$ và $v_{0y}=4{,}9\\ \\text{m/s}$</p><p>b) $t_1=0{,}5\\ \\text{s}$ · $H\\approx1{,}23\\ \\text{m}$</p><p>c) $t=1\\ \\text{s}$ · $L\\approx8{,}49\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vận tốc và góc ném</strong> từ mặt đất → tách $v_{0x},v_{0y}$, dùng $v_y=0$ tại đỉnh.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Quỹ đạo đối xứng qua đỉnh: thời gian đi lên bằng thời gian đi xuống vì điểm rơi cùng độ cao điểm bật\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"112.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"90.0,112.0 95.0,109.2 100.0,106.4 105.0,103.8 110.0,101.2 115.0,98.8 120.0,96.4 125.0,94.2 130.0,92.0 135.0,89.9 140.0,87.9 145.0,86.1 150.0,84.3 155.0,82.6 160.0,81.0 165.0,79.5 170.0,78.1 175.0,76.8 180.0,75.6 185.0,74.5 190.0,73.5 195.0,72.6 200.0,71.8 205.0,71.1 210.0,70.4 215.0,69.9 220.0,69.5 225.0,69.1 230.0,68.9 235.0,68.7 240.0,68.7 245.0,68.7 250.0,68.9 255.0,69.1 260.0,69.5 265.0,69.9 270.0,70.4 275.0,71.1 280.0,71.8 285.0,72.6 290.0,73.5 295.0,74.5 300.0,75.6 305.0,76.8 310.0,78.1 315.0,79.5 320.0,81.0 325.0,82.6 330.0,84.3 335.0,86.1 340.0,87.9 345.0,89.9 350.0,92.0 355.0,94.2 360.0,96.4 365.0,98.8 370.0,101.2 375.0,103.8 380.0,106.4 385.0,109.2 390.0,112.0\"/><circle cx=\"90.0\" cy=\"112.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"390.0\" cy=\"112.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"240.0\" y1=\"68.7\" x2=\"240.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"90\" y1=\"50.698729810778076\" x2=\"240.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"240.0\" y1=\"50.698729810778076\" x2=\"90\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"114\" y=\"44.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lên: t₁</text><line x1=\"240.0\" y1=\"50.698729810778076\" x2=\"390.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"390.0\" y1=\"50.698729810778076\" x2=\"240.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"270.0\" y=\"44.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xuống: t₁</text><circle cx=\"240.0\" cy=\"68.7\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"246.0\" y=\"86.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v_y = 0</text><text x=\"360\" y=\"100\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">cùng độ cao → xuống = lên</text></svg><figcaption>Dữ kiện: tại đỉnh v_y = 0; lên và xuống đối xứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bật khỏi mặt đất, $v_0=9{,}8$ m/s, góc $30^\\circ$\"</td><td>$v_0$, $\\alpha=30^\\circ$</td><td>Ném xiên: $v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$ (hướng lên)</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox thẳng đều; Oy có gia tốc $-g$ (lên là dương)</td></tr><tr><td>\"điểm tiếp đất cùng độ cao điểm bật\"</td><td>Cùng độ cao</td><td>⚠ Điều kiện để lên và xuống đối xứng: $t=2t_1$</td></tr><tr><td>\"các thành phần $v_{0x}$ và $v_{0y}$\"</td><td>Cần $v_{0x}$, $v_{0y}$</td><td>Hai thành phần của $\\vec v_0$</td></tr><tr><td>\"lên tới điểm cao nhất, tầm cao $H$\"</td><td>Cần $t_1$, $H$</td><td>Tại đỉnh $v_y=0$: $t_1=\\dfrac{v_{0y}}{g}$; $H=\\dfrac{v_{0y}^2}{2g}$</td></tr><tr><td>\"thời gian bay và tầm xa $L$\"</td><td>Cần $t$, $L$</td><td>$t=2t_1$; $L=v_{0x}t$</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Quỹ đạo đối xứng qua đỉnh: thời gian đi lên bằng thời gian đi xuống vì điểm rơi cùng độ cao điểm bật\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"112.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"90.0,112.0 95.0,109.2 100.0,106.4 105.0,103.8 110.0,101.2 115.0,98.8 120.0,96.4 125.0,94.2 130.0,92.0 135.0,89.9 140.0,87.9 145.0,86.1 150.0,84.3 155.0,82.6 160.0,81.0 165.0,79.5 170.0,78.1 175.0,76.8 180.0,75.6 185.0,74.5 190.0,73.5 195.0,72.6 200.0,71.8 205.0,71.1 210.0,70.4 215.0,69.9 220.0,69.5 225.0,69.1 230.0,68.9 235.0,68.7 240.0,68.7 245.0,68.7 250.0,68.9 255.0,69.1 260.0,69.5 265.0,69.9 270.0,70.4 275.0,71.1 280.0,71.8 285.0,72.6 290.0,73.5 295.0,74.5 300.0,75.6 305.0,76.8 310.0,78.1 315.0,79.5 320.0,81.0 325.0,82.6 330.0,84.3 335.0,86.1 340.0,87.9 345.0,89.9 350.0,92.0 355.0,94.2 360.0,96.4 365.0,98.8 370.0,101.2 375.0,103.8 380.0,106.4 385.0,109.2 390.0,112.0\"/><circle cx=\"90.0\" cy=\"112.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"390.0\" cy=\"112.0\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"240.0\" y1=\"68.7\" x2=\"240.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"90\" y1=\"50.698729810778076\" x2=\"240.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"240.0\" y1=\"50.698729810778076\" x2=\"90\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"114\" y=\"44.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lên: t₁</text><line x1=\"240.0\" y1=\"50.698729810778076\" x2=\"390.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"390.0\" y1=\"50.698729810778076\" x2=\"240.0\" y2=\"50.698729810778076\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"270.0\" y=\"44.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xuống: t₁</text><circle cx=\"240.0\" cy=\"68.7\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"246.0\" y=\"86.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v_y = 0</text><text x=\"360\" y=\"100\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">cùng độ cao → xuống = lên</text></svg><figcaption>Dữ kiện: tại đỉnh v_y = 0; lên và xuống đối xứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bật khỏi mặt đất, $v_0=9{,}8$ m/s, góc $30^\\circ$\"</td><td>$v_0$, $\\alpha=30^\\circ$</td><td>Ném xiên: $v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$ (hướng lên)</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox thẳng đều; Oy có gia tốc $-g$ (lên là dương)</td></tr><tr><td>\"điểm tiếp đất cùng độ cao điểm bật\"</td><td>Cùng độ cao</td><td>⚠ Điều kiện để lên và xuống đối xứng: $t=2t_1$</td></tr><tr><td>\"các thành phần $v_{0x}$ và $v_{0y}$\"</td><td>Cần $v_{0x}$, $v_{0y}$</td><td>Hai thành phần của $\\vec v_0$</td></tr><tr><td>\"lên tới điểm cao nhất, tầm cao $H$\"</td><td>Cần $t_1$, $H$</td><td>Tại đỉnh $v_y=0$: $t_1=\\dfrac{v_{0y}}{g}$; $H=\\dfrac{v_{0y}^2}{2g}$</td></tr><tr><td>\"thời gian bay và tầm xa $L$\"</td><td>Cần $t$, $L$</td><td>$t=2t_1$; $L=v_{0x}t$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vận tốc và góc ném</b> từ mặt đất → tách $v_{0x},v_{0y}$; ở đỉnh $v_y=0$; cùng độ cao thì $t=2t_1$.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hai thành phần của $\\vec v_0$",
+     "hoi": "Thành phần thẳng đứng $v_{0y}$ bằng bao nhiêu?",
+     "dap_so": 4.9,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhầm sin/cos: thành phần đứng đi với $\\sin\\alpha$."
+    },
+    {
+     "tieu_de": "Lên tới điểm cao nhất",
+     "hoi": "Độ cao lớn nhất $H$ bằng bao nhiêu?",
+     "dap_so": 1.23,
+     "sai_so": 0.03,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng $v_0$ thay $v_{0y}$ sẽ ra $4{,}9$ m; chỉ thành phần đứng quyết định độ cao.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ở đỉnh $v_y=0$: $t_1=\\dfrac{v_{0y}}{g}$, $H=\\dfrac{v_{0y}^2}{2g}$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{v_0^2}{2g}$",
+       "dung": false,
+       "vi_sao": "Chỉ thành phần đứng $v_{0y}$ quyết định độ cao."
+      },
+      {
+       "text": "Ở đỉnh $v=0$ nên dùng $v^2-v_0^2=-2gH$",
+       "dung": false,
+       "vi_sao": "Ở đỉnh chỉ $v_y=0$, vật vẫn đi ngang với $v_x$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bay",
+     "hoi": "Thời gian bay $t$ bằng bao nhiêu?",
+     "dap_so": 1,
+     "sai_so": 0.02,
+     "don_vi": "s",
+     "loi_hay_gap": "Quên nhân đôi: $t_1$ chỉ là thời gian lên đỉnh.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=2t_1$ vì lên và xuống đối xứng (rơi về cùng độ cao)",
+       "dung": true
+      },
+      {
+       "text": "$t=t_1$",
+       "dung": false,
+       "vi_sao": "$t_1$ là thời gian lên đỉnh, còn nửa đường xuống."
+      },
+      {
+       "text": "$t=\\sqrt{\\dfrac{2H}{g}}$",
+       "dung": false,
+       "vi_sao": "Đó là thời gian rơi từ đỉnh xuống, bằng $t_1$, chưa cộng thời gian lên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tầm xa",
+     "hoi": "Tầm xa $L$ bằng bao nhiêu?",
+     "dap_so": 8.49,
+     "sai_so": 0.1,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng $v_0$ thay $v_{0x}$ sẽ ra $9{,}8$ m.",
+     "chon_buoc_ke": [
+      {
+       "text": "$L=v_{0x}\\,t$",
+       "dung": true
+      },
+      {
+       "text": "$L=v_0t$",
+       "dung": false,
+       "vi_sao": "Phải dùng thành phần ngang $v_{0x}=v_0\\cos\\alpha$."
+      },
+      {
+       "text": "$L=v_{0x}t_1$",
+       "dung": false,
+       "vi_sao": "Tầm xa tính cho cả thời gian bay $t=2t_1$."
+      }
+     ]
+    }
+   ]
   },
   {
    "label": "Dạng 5 · Khó · Ném xiên từ độ cao: ném và rơi không cùng độ cao",
@@ -45,7 +392,119 @@
    "form": "bai_tap",
    "problem_html": "<p>Từ mép một vách đá thẳng đứng cao $h=22{,}05\\ \\text{m}$ so với mặt đất, một hòn đá được ném lên với $v_0=14{,}7\\ \\text{m/s}$, hợp phương ngang góc $30^\\circ$. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$. Tính:</p><ol type=\"a\"><li>thời gian từ lúc ném đến lúc chạm đất;</li><li>tầm xa (theo phương ngang, tính từ chân vách);</li><li>độ cao lớn nhất của hòn đá so với mặt đất;</li><li>độ lớn vận tốc khi chạm đất.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 261\" role=\"img\" aria-label=\"Hòn đá ném lên từ mép vách cao 22,05 m với vận tốc 14,7 m/s hợp phương ngang 30 độ rồi rơi xuống chân vách\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"221.2\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"48\" width=\"76\" height=\"173.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\" points=\"92.0,48.0 97.0,45.2 102.0,42.6 107.0,40.2 112.0,38.0 117.0,36.0 122.0,34.1 127.0,32.5 132.0,31.1 137.0,29.8 142.0,28.8 147.0,27.9 152.0,27.2 157.0,26.7 162.0,26.4 167.0,26.3 172.0,26.4 177.0,26.7 182.0,27.2 187.0,27.9 192.0,28.8 197.0,29.8 202.0,31.1 207.0,32.5 212.0,34.1 217.0,36.0 222.0,38.0 227.0,40.2 232.0,42.6 237.0,45.2 242.0,48.0 247.0,51.0 252.0,54.2 257.0,57.5 262.0,61.1 267.0,64.8 272.0,68.8 277.0,72.9 282.0,77.3 287.0,81.8 292.0,86.5 297.0,91.4 302.0,96.5 307.0,101.8 312.0,107.3 317.0,113.0 322.0,118.8 327.0,124.9 332.0,131.1 337.0,137.6 342.0,144.2 347.0,151.1 352.0,158.1 357.0,165.3 362.0,172.7 367.0,180.3 372.0,188.1 377.0,196.1 382.0,204.3 387.0,212.6 392.0,221.2\"/><circle cx=\"92.0\" cy=\"48.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"392.0\" cy=\"221.2\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"92\" y1=\"48\" x2=\"140.49742261192858\" y2=\"20.000000000000004\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d50-r)\"/><text x=\"154\" y=\"12\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = 14,7 m/s</text><path d=\"M118.0,48.0 A26,26 0 0 0 114.5,35.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"122\" y=\"62\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">α = 30°</text><text x=\"20\" y=\"88\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h =</text><text x=\"20\" y=\"106\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">22,05 m</text><line x1=\"92\" y1=\"241.20508075688772\" x2=\"391.99999999999994\" y2=\"241.20508075688772\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d50-b)\"/><line x1=\"391.99999999999994\" y1=\"241.20508075688772\" x2=\"92\" y2=\"241.20508075688772\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d50-b)\"/><text x=\"224.0\" y=\"259.2\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = ?</text><text x=\"236\" y=\"24\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">H_max (so với đất) = ?</text><text x=\"300\" y=\"100\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t bay = ?</text><circle cx=\"92.0\" cy=\"48.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"92.0;97.0;102.0;107.0;112.0;117.0;122.0;127.0;132.0;137.0;142.0;147.0;152.0;157.0;162.0;167.0;172.0;177.0;182.0;187.0;192.0;197.0;202.0;207.0;212.0;217.0;222.0;227.0;232.0;237.0;242.0;247.0;252.0;257.0;262.0;267.0;272.0;277.0;282.0;287.0;292.0;297.0;302.0;307.0;312.0;317.0;322.0;327.0;332.0;337.0;342.0;347.0;352.0;357.0;362.0;367.0;372.0;377.0;382.0;387.0;392.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"48.0;45.2;42.6;40.2;38.0;36.0;34.1;32.5;31.1;29.8;28.8;27.9;27.2;26.7;26.4;26.3;26.4;26.7;27.2;27.9;28.8;29.8;31.1;32.5;34.1;36.0;38.0;40.2;42.6;45.2;48.0;51.0;54.2;57.5;61.1;64.8;68.8;72.9;77.3;81.8;86.5;91.4;96.5;101.8;107.3;113.0;118.8;124.9;131.1;137.6;144.2;151.1;158.1;165.3;172.7;180.3;188.1;196.1;204.3;212.6;221.2\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ném xiên từ mép vách (chạy chậm 1,5 lần). Quỹ đạo tính theo công thức.</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném xiên, $\\vec v_0$ hợp phương ngang góc $\\alpha$ (hướng lên).</li><li><strong>Định luật:</strong> hai phương độc lập; Oy lên là dương, gia tốc $-g$.</li><li>Tách vận tốc đầu: $v_{0x}=v_0\\cos\\alpha$ · $v_{0y}=v_0\\sin\\alpha$</li><li>Ox đều: $x=v_{0x}t$ · Oy: $y=v_{0y}t-\\dfrac{1}{2}gt^2$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hai thành phần của $\\vec v_0$</span></p>$$v_{0x}=14{,}7\\cos30^\\circ\\approx12{,}73\\ \\text{m/s}$$$$v_{0y}=14{,}7\\sin30^\\circ=7{,}35\\ \\text{m/s}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thời gian chạm đất</span></p><p>Chạm đất thấp hơn điểm ném $h$ nên $y=-h$ (Oy lên):</p>$$-h=v_{0y}t-\\dfrac{1}{2}gt^2$$$$-22{,}05=7{,}35t-4{,}9t^2$$$$t^2-1{,}5t-4{,}5=0$$<p>Nghiệm $t=3$ s hoặc $t=-1{,}5$ s (loại).</p><div class=\"bt-ans\">$$t=3\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tầm xa</span></p>$$L=v_{0x}t=12{,}73\\cdot3$$<div class=\"bt-ans\">$$L\\approx38{,}2\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao lớn nhất</span></p><p>Cao hơn điểm ném:</p>$$\\dfrac{v_{0y}^2}{2g}=\\dfrac{7{,}35^2}{19{,}6}\\approx2{,}76\\ \\text{m}$$<p>So với mặt đất:</p>$$22{,}05+2{,}76$$<div class=\"bt-ans\">$$H_{max}\\approx24{,}8\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vận tốc khi chạm đất</span></p>$$v_y=v_{0y}-gt=7{,}35-9{,}8\\cdot3=-22{,}05\\ \\text{m/s}$$$$v=\\sqrt{v_x^2+v_y^2}=\\sqrt{12{,}73^2+22{,}05^2}$$<div class=\"bt-ans\">$$v\\approx25{,}5\\ \\text{m/s}$$</div><p>Kiểm tra:</p>$$v=\\sqrt{v_0^2+2gh}=\\sqrt{14{,}7^2+2\\cdot9{,}8\\cdot22{,}05}\\approx25{,}5\\ \\text{m/s}$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t=3\\ \\text{s}$</p><p>b) $L\\approx38{,}2\\ \\text{m}$</p><p>c) $H_{max}\\approx24{,}8\\ \\text{m}$</p><p>d) $v\\approx25{,}5\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: ném xiên mà <strong>điểm rơi khác độ cao điểm ném</strong> → lập $y(t)$ với $y=-h$, giải bậc hai.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 261\" role=\"img\" aria-label=\"Hệ trục gốc tại mép vách, Oy hướng lên; mặt đất nằm dưới gốc toạ độ một đoạn bằng độ cao vách\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"221.2\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"48\" width=\"76\" height=\"173.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"92.0,48.0 97.0,45.2 102.0,42.6 107.0,40.2 112.0,38.0 117.0,36.0 122.0,34.1 127.0,32.5 132.0,31.1 137.0,29.8 142.0,28.8 147.0,27.9 152.0,27.2 157.0,26.7 162.0,26.4 167.0,26.3 172.0,26.4 177.0,26.7 182.0,27.2 187.0,27.9 192.0,28.8 197.0,29.8 202.0,31.1 207.0,32.5 212.0,34.1 217.0,36.0 222.0,38.0 227.0,40.2 232.0,42.6 237.0,45.2 242.0,48.0 247.0,51.0 252.0,54.2 257.0,57.5 262.0,61.1 267.0,64.8 272.0,68.8 277.0,72.9 282.0,77.3 287.0,81.8 292.0,86.5 297.0,91.4 302.0,96.5 307.0,101.8 312.0,107.3 317.0,113.0 322.0,118.8 327.0,124.9 332.0,131.1 337.0,137.6 342.0,144.2 347.0,151.1 352.0,158.1 357.0,165.3 362.0,172.7 367.0,180.3 372.0,188.1 377.0,196.1 382.0,204.3 387.0,212.6 392.0,221.2\"/><circle cx=\"92.0\" cy=\"48.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"392.0\" cy=\"221.2\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"92\" y1=\"48\" x2=\"128\" y2=\"48\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d52-g)\"/><text x=\"132\" y=\"53\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"92\" y1=\"48\" x2=\"92\" y2=\"12\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d52-g)\"/><text x=\"98\" y=\"16\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"92.0\" cy=\"48.0\" r=\"4\" fill=\"currentColor\"/><text x=\"78\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"102\" y1=\"52\" x2=\"102\" y2=\"221.20508075688772\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d52-o)\"/><line x1=\"102\" y1=\"221.20508075688772\" x2=\"102\" y2=\"52\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d52-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"108\" y=\"140.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vị trí đất so với O?</text><text x=\"398.0\" y=\"245.2\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chạm đất</text><text x=\"250\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">→ phương trình theo t</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">→ nghiệm nào nhận?</text></svg><figcaption>Dữ kiện: đặt trục Oy lên; mặt đất ở dưới O. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vách đá thẳng đứng cao $h=22{,}05$ m\"</td><td>$h=22{,}05$ m</td><td>Điểm ném cao hơn mặt đất $h$</td></tr><tr><td>\"ném lên $v_0=14{,}7$ m/s, góc $30^\\circ$\"</td><td>$v_0$, $\\alpha=30^\\circ$</td><td>$v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox đều; Oy gia tốc $-g$</td></tr><tr><td>\"chạm đất\" (thấp hơn điểm ném)</td><td>Lúc đó $y=-h$</td><td>⚠ Không dùng công thức cùng độ cao; lập $y(t)$ rồi giải: $-h=v_{0y}t-\\dfrac{1}{2}gt^2$</td></tr><tr><td>\"thời gian từ lúc ném đến lúc chạm đất\"</td><td>Cần $t$</td><td>Nghiệm bậc hai: nhận nghiệm dương</td></tr><tr><td>\"tầm xa tính từ chân vách\"</td><td>Cần $L$</td><td>$L=v_{0x}t$</td></tr><tr><td>\"độ cao lớn nhất so với mặt đất\"</td><td>Cần $H_{max}$</td><td>Cao hơn điểm ném $\\dfrac{v_{0y}^2}{2g}$, rồi cộng $h$</td></tr><tr><td>\"độ lớn vận tốc khi chạm đất\"</td><td>Cần $v$</td><td>$v=\\sqrt{v_x^2+v_y^2}$ với $v_y=v_{0y}-gt$</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 261\" role=\"img\" aria-label=\"Hệ trục gốc tại mép vách, Oy hướng lên; mặt đất nằm dưới gốc toạ độ một đoạn bằng độ cao vách\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"221.2\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"16\" y=\"48\" width=\"76\" height=\"173.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"92.0,48.0 97.0,45.2 102.0,42.6 107.0,40.2 112.0,38.0 117.0,36.0 122.0,34.1 127.0,32.5 132.0,31.1 137.0,29.8 142.0,28.8 147.0,27.9 152.0,27.2 157.0,26.7 162.0,26.4 167.0,26.3 172.0,26.4 177.0,26.7 182.0,27.2 187.0,27.9 192.0,28.8 197.0,29.8 202.0,31.1 207.0,32.5 212.0,34.1 217.0,36.0 222.0,38.0 227.0,40.2 232.0,42.6 237.0,45.2 242.0,48.0 247.0,51.0 252.0,54.2 257.0,57.5 262.0,61.1 267.0,64.8 272.0,68.8 277.0,72.9 282.0,77.3 287.0,81.8 292.0,86.5 297.0,91.4 302.0,96.5 307.0,101.8 312.0,107.3 317.0,113.0 322.0,118.8 327.0,124.9 332.0,131.1 337.0,137.6 342.0,144.2 347.0,151.1 352.0,158.1 357.0,165.3 362.0,172.7 367.0,180.3 372.0,188.1 377.0,196.1 382.0,204.3 387.0,212.6 392.0,221.2\"/><circle cx=\"92.0\" cy=\"48.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"392.0\" cy=\"221.2\" r=\"4.5\" fill=\"#34d399\"/><line x1=\"92\" y1=\"48\" x2=\"128\" y2=\"48\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d52-g)\"/><text x=\"132\" y=\"53\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">x</text><line x1=\"92\" y1=\"48\" x2=\"92\" y2=\"12\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d52-g)\"/><text x=\"98\" y=\"16\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">y</text><circle cx=\"92.0\" cy=\"48.0\" r=\"4\" fill=\"currentColor\"/><text x=\"78\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"102\" y1=\"52\" x2=\"102\" y2=\"221.20508075688772\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d52-o)\"/><line x1=\"102\" y1=\"221.20508075688772\" x2=\"102\" y2=\"52\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d52-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"108\" y=\"140.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vị trí đất so với O?</text><text x=\"398.0\" y=\"245.2\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chạm đất</text><text x=\"250\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">→ phương trình theo t</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">→ nghiệm nào nhận?</text></svg><figcaption>Dữ kiện: đặt trục Oy lên; mặt đất ở dưới O. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vách đá thẳng đứng cao $h=22{,}05$ m\"</td><td>$h=22{,}05$ m</td><td>Điểm ném cao hơn mặt đất $h$</td></tr><tr><td>\"ném lên $v_0=14{,}7$ m/s, góc $30^\\circ$\"</td><td>$v_0$, $\\alpha=30^\\circ$</td><td>$v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox đều; Oy gia tốc $-g$</td></tr><tr><td>\"chạm đất\" (thấp hơn điểm ném)</td><td>Lúc đó $y=-h$</td><td>⚠ Không dùng công thức cùng độ cao; lập $y(t)$ rồi giải: $-h=v_{0y}t-\\dfrac{1}{2}gt^2$</td></tr><tr><td>\"thời gian từ lúc ném đến lúc chạm đất\"</td><td>Cần $t$</td><td>Nghiệm bậc hai: nhận nghiệm dương</td></tr><tr><td>\"tầm xa tính từ chân vách\"</td><td>Cần $L$</td><td>$L=v_{0x}t$</td></tr><tr><td>\"độ cao lớn nhất so với mặt đất\"</td><td>Cần $H_{max}$</td><td>Cao hơn điểm ném $\\dfrac{v_{0y}^2}{2g}$, rồi cộng $h$</td></tr><tr><td>\"độ lớn vận tốc khi chạm đất\"</td><td>Cần $v$</td><td>$v=\\sqrt{v_x^2+v_y^2}$ với $v_y=v_{0y}-gt$</td></tr></tbody></table></div>",
+   "nhan_dang": "Ném xiên mà <b>điểm rơi khác độ cao điểm ném</b> → lập $y(t)$ với $y=-h$, giải bậc hai.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hai thành phần của $\\vec v_0$",
+     "hoi": "Thành phần ngang $v_{0x}$ bằng bao nhiêu?",
+     "dap_so": 12.73,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhầm sin/cos: thành phần ngang đi với $\\cos\\alpha$."
+    },
+    {
+     "tieu_de": "Thời gian chạm đất",
+     "hoi": "Thời gian chạm đất $t$ bằng bao nhiêu?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng $t=\\dfrac{2v_{0y}}{g}=1{,}5$ s (chỉ đúng khi rơi về cùng độ cao) hoặc quên dấu trừ ở $y=-h$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập $y(t)=v_{0y}t-\\dfrac{1}{2}gt^2$, cho $y=-h$, giải bậc hai",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{2v_{0y}}{g}$ như ném từ mặt đất",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi rơi về cùng độ cao ném; ở đây rơi thấp hơn $h$."
+      },
+      {
+       "text": "$t=\\sqrt{\\dfrac{2h}{g}}$ như ném ngang",
+       "dung": false,
+       "vi_sao": "Có $v_{0y}$ hướng lên nên vật bay lâu hơn rơi tự do."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tầm xa",
+     "hoi": "Tầm xa $L$ bằng bao nhiêu?",
+     "dap_so": 38.2,
+     "sai_so": 0.3,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng công thức tầm xa cùng độ cao $\\dfrac{v_0^2\\sin2\\alpha}{g}$ sẽ ra $19{,}1$ m — sai vì điểm rơi thấp hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$L=v_{0x}t$ với $t$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$L=\\dfrac{v_0^2\\sin2\\alpha}{g}$",
+       "dung": false,
+       "vi_sao": "Công thức đó chỉ đúng khi rơi về cùng độ cao."
+      },
+      {
+       "text": "$L=v_0t$",
+       "dung": false,
+       "vi_sao": "Phải dùng thành phần ngang $v_{0x}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao lớn nhất",
+     "hoi": "Độ cao lớn nhất so với mặt đất $H_{max}$?",
+     "dap_so": 24.8,
+     "sai_so": 0.2,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên cộng $h$: $\\dfrac{v_{0y}^2}{2g}=2{,}76$ m chỉ là độ cao trên điểm ném.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\dfrac{v_{0y}^2}{2g}$ rồi cộng $h$",
+       "dung": true
+      },
+      {
+       "text": "$H_{max}=\\dfrac{v_{0y}^2}{2g}$",
+       "dung": false,
+       "vi_sao": "Đó là độ cao trên điểm ném; đề hỏi so với mặt đất nên cộng $h$."
+      },
+      {
+       "text": "$H_{max}=\\dfrac{v_0^2}{2g}+h$",
+       "dung": false,
+       "vi_sao": "Chỉ $v_{0y}$ quyết định độ cao, không phải $v_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc khi chạm đất",
+     "hoi": "Độ lớn vận tốc khi chạm đất?",
+     "dap_so": 25.5,
+     "sai_so": 0.3,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Lấy $v_y=gt$ (quên $v_{0y}$) ra $29{,}4$ m/s rồi $v\\approx32$ m/s; đúng là $v_y=v_{0y}-gt$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $v_y=v_{0y}-gt$ rồi $v=\\sqrt{v_x^2+v_y^2}$",
+       "dung": true
+      },
+      {
+       "text": "$v=v_0+gt$",
+       "dung": false,
+       "vi_sao": "Không cộng đại số: $v_x$ nằm ngang, $v_y$ thẳng đứng."
+      },
+      {
+       "text": "$v=gt$",
+       "dung": false,
+       "vi_sao": "Thiếu thành phần ngang $v_x$ và bỏ qua $v_{0y}$."
+      }
+     ]
+    }
+   ]
   },
   {
    "label": "Dạng 6 · Khó · Ném xiên, bài ngược: biết tầm xa, tìm góc ném (có hai nghiệm)",
@@ -53,7 +512,94 @@
    "form": "bai_tap",
    "problem_html": "<p>Một khẩu pháo trên bờ bắn đạn lên với tốc độ $v_0=14\\ \\text{m/s}$, nòng nghiêng góc $\\alpha$ so với phương ngang; đạn rơi xuống mặt phẳng ngang cùng độ cao nòng pháo. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Cần nghiêng nòng pháo góc bao nhiêu để đạn rơi cách pháo $15\\ \\text{m}$?</li><li>Tính thời gian bay trong từng trường hợp.</li><li>Tầm xa lớn nhất của khẩu pháo là bao nhiêu, đạt ở góc nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Pháo ở mặt đất bắn đạn với tốc độ 14 m/s, cần chọn góc nghiêng để đạn rơi trúng cờ cách 15 m\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"212.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40.0\" cy=\"212.0\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"40\" y1=\"212\" x2=\"85.25483399593904\" y2=\"166.74516600406096\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d60-r)\"/><text x=\"91.3\" y=\"166.7\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = 14 m/s</text><path d=\"M70.0,212.0 A30,30 0 0 0 61.2,190.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"74\" y=\"204\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = ?</text><line x1=\"295.0\" y1=\"212.0\" x2=\"295.0\" y2=\"186.0\" stroke=\"#4ade80\" stroke-width=\"3\" opacity=\"1\"/><polygon points=\"295.0,186 311.0,192 295.0,198\" fill=\"#4ade80\"/><line x1=\"40\" y1=\"236\" x2=\"295\" y2=\"236\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d60-b)\"/><line x1=\"295\" y1=\"236\" x2=\"40\" y2=\"236\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d60-b)\"/><text x=\"143.5\" y=\"254\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = 15 m</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"6 4\" opacity=\"0.9\" points=\"40.0,212.0 45.7,206.4 51.3,201.0 57.0,195.8 62.7,190.8 68.3,186.0 74.0,181.4 79.7,177.0 85.3,172.7 91.0,168.7 96.7,164.8 102.3,161.1 108.0,157.6 113.7,154.3 119.3,151.2 125.0,148.3 130.7,145.5 136.3,143.0 142.0,140.6 147.7,138.4 153.3,136.4 159.0,134.7 164.7,133.0 170.3,131.6 176.0,130.4 181.7,129.4 187.3,128.5 193.0,127.9 198.7,127.4 204.3,127.1 210.0,127.0 215.7,127.1 221.3,127.4 227.0,127.9 232.7,128.5 238.3,129.4 244.0,130.4 249.7,131.6 255.3,133.0 261.0,134.7 266.7,136.4 272.3,138.4 278.0,140.6 283.7,143.0 289.3,145.5 295.0,148.3 300.7,151.2 306.3,154.3 312.0,157.6 317.7,161.1 323.3,164.8 329.0,168.7 334.7,172.7 340.3,177.0 346.0,181.4 351.7,186.0 357.3,190.8 363.0,195.9 368.7,201.0 374.3,206.4 380.0,212.0\"/><circle cx=\"40.0\" cy=\"212.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"40.0;45.7;51.3;57.0;62.7;68.3;74.0;79.7;85.3;91.0;96.7;102.3;108.0;113.7;119.3;125.0;130.7;136.3;142.0;147.7;153.3;159.0;164.7;170.3;176.0;181.7;187.3;193.0;198.7;204.3;210.0;215.7;221.3;227.0;232.7;238.3;244.0;249.7;255.3;261.0;266.7;272.3;278.0;283.7;289.3;295.0;300.7;306.3;312.0;317.7;323.3;329.0;334.7;340.3;346.0;351.7;357.3;363.0;368.7;374.3;380.0\" dur=\"4.04s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"212.0;206.4;201.0;195.8;190.8;186.0;181.4;177.0;172.7;168.7;164.8;161.1;157.6;154.3;151.2;148.3;145.5;143.0;140.6;138.4;136.4;134.7;133.0;131.6;130.4;129.4;128.5;127.9;127.4;127.1;127.0;127.1;127.4;127.9;128.5;129.4;130.4;131.6;133.0;134.7;136.4;138.4;140.6;143.0;145.5;148.3;151.2;154.3;157.6;161.1;164.8;168.7;172.7;177.0;181.4;186.0;190.8;195.9;201.0;206.4;212.0\" dur=\"4.04s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: một lần bắn thử ở góc 45° rơi quá cờ; cần chỉnh góc để rơi đúng 15 m (chạy chậm 2 lần).</figcaption></figure>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném xiên, $\\vec v_0$ hợp phương ngang góc $\\alpha$ (hướng lên).</li><li><strong>Định luật:</strong> hai phương độc lập; Oy lên là dương, gia tốc $-g$.</li><li>Tách vận tốc đầu: $v_{0x}=v_0\\cos\\alpha$ · $v_{0y}=v_0\\sin\\alpha$</li><li>Ox đều: $x=v_{0x}t$ · Oy: $y=v_{0y}t-\\dfrac{1}{2}gt^2$</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực.</li><li>Cùng độ cao: $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$ · $t=\\dfrac{2v_0\\sin\\alpha}{g}$</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Rút $\\sin2\\alpha$ từ tầm xa</span></p>$$L=\\dfrac{v_0^2\\sin2\\alpha}{g}$$$$\\sin2\\alpha=\\dfrac{gL}{v_0^2}=\\dfrac{9{,}8\\cdot15}{14^2}=0{,}75$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hai góc ném</span></p>$$2\\alpha\\approx48{,}6^\\circ\\ \\ \\text{hoặc}\\ \\ 2\\alpha\\approx131{,}4^\\circ$$<div class=\"bt-ans\">$$\\alpha_1\\approx24{,}3^\\circ\\ \\ ;\\ \\ \\alpha_2\\approx65{,}7^\\circ$$</div><p>Hai góc phụ nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian bay mỗi trường hợp</span></p>$$t=\\dfrac{2v_0\\sin\\alpha}{g}$$$$t_1\\approx1{,}18\\ \\text{s}\\ \\ ;\\ \\ t_2\\approx2{,}60\\ \\text{s}$$<p>Góc lớn bay lâu hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tầm xa lớn nhất</span></p><p>$\\sin2\\alpha\\le1$ nên:</p>$$L_{max}=\\dfrac{v_0^2}{g}=\\dfrac{14^2}{9{,}8}$$<div class=\"bt-ans\">$$L_{max}=20\\ \\text{m}\\ \\ (\\alpha=45^\\circ)$$</div><p>Kiểm tra: $15\\lt20$ nên có nghiệm.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\alpha\\approx24{,}3^\\circ$ hoặc $\\alpha\\approx65{,}7^\\circ$</p><p>b) $t\\approx1{,}18\\ \\text{s}$ và $t\\approx2{,}60\\ \\text{s}$</p><p>c) $L_{max}=20\\ \\text{m}$ ở $45^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi <strong>góc</strong> → rút $\\sin2\\alpha$, nhớ có hai góc phụ nhau.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Quỹ đạo ném góc 45 độ đi xa nhất; hai góc phụ nhau cho cùng tầm xa\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"212.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40.0\" cy=\"212.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,212.0 44.2,210.1 48.5,208.3 52.8,206.5 57.0,204.8 61.2,203.2 65.5,201.6 69.8,200.1 74.0,198.7 78.2,197.3 82.5,196.0 86.8,194.8 91.0,193.6 95.2,192.5 99.5,191.4 103.8,190.4 108.0,189.5 112.2,188.6 116.5,187.8 120.8,187.1 125.0,186.4 129.2,185.8 133.5,185.3 137.8,184.8 142.0,184.4 146.2,184.0 150.5,183.7 154.8,183.5 159.0,183.4 163.2,183.3 167.5,183.2 171.8,183.3 176.0,183.4 180.2,183.5 184.5,183.7 188.8,184.0 193.0,184.4 197.2,184.8 201.5,185.3 205.8,185.8 210.0,186.4 214.2,187.1 218.5,187.8 222.8,188.6 227.0,189.5 231.2,190.4 235.5,191.4 239.8,192.5 244.0,193.6 248.2,194.8 252.5,196.0 256.8,197.3 261.0,198.7 265.2,200.1 269.5,201.6 273.8,203.2 278.0,204.8 282.2,206.5 286.5,208.3 290.8,210.1 295.0,212.0\"/><polyline fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,212.0 44.2,202.7 48.5,193.8 52.8,185.2 57.0,176.9 61.2,168.8 65.5,161.2 69.8,153.8 74.0,146.7 78.2,140.0 82.5,133.5 86.8,127.4 91.0,121.6 95.2,116.1 99.5,110.9 103.8,106.1 108.0,101.5 112.3,97.3 116.5,93.4 120.8,89.8 125.0,86.5 129.2,83.5 133.5,80.8 137.8,78.5 142.0,76.4 146.2,74.7 150.5,73.3 154.8,72.2 159.0,71.4 163.2,70.9 167.5,70.8 171.8,70.9 176.0,71.4 180.3,72.2 184.5,73.3 188.8,74.7 193.0,76.4 197.3,78.5 201.5,80.8 205.8,83.5 210.0,86.5 214.3,89.8 218.5,93.4 222.8,97.3 227.0,101.5 231.3,106.1 235.5,110.9 239.8,116.1 244.0,121.6 248.3,127.4 252.5,133.5 256.8,140.0 261.0,146.7 265.2,153.8 269.5,161.2 273.8,168.8 278.0,176.9 282.2,185.2 286.5,193.8 290.8,202.7 295.0,212.0\"/><line x1=\"295.0\" y1=\"212.0\" x2=\"295.0\" y2=\"186.0\" stroke=\"#4ade80\" stroke-width=\"3\" opacity=\"1\"/><polygon points=\"295.0,186 311.0,192 295.0,198\" fill=\"#4ade80\"/><circle cx=\"295.0\" cy=\"212.0\" r=\"4.5\" fill=\"#34d399\"/><circle cx=\"295.0\" cy=\"212.0\" r=\"4.5\" fill=\"#a78bfa\"/><path d=\"M74.0,212.0 A34,34 0 0 0 71.0,198.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M86.0,212.0 A46,46 0 0 0 58.9,170.1\" fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"1.8\"/><text x=\"78\" y=\"207\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₁</text><text x=\"52\" y=\"160\" fill=\"#a78bfa\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₂</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"6 4\" opacity=\"0.9\" points=\"40.0,212.0 45.7,206.4 51.3,201.0 57.0,195.8 62.7,190.8 68.3,186.0 74.0,181.4 79.7,177.0 85.3,172.7 91.0,168.7 96.7,164.8 102.3,161.1 108.0,157.6 113.7,154.3 119.3,151.2 125.0,148.3 130.7,145.5 136.3,143.0 142.0,140.6 147.7,138.4 153.3,136.4 159.0,134.7 164.7,133.0 170.3,131.6 176.0,130.4 181.7,129.4 187.3,128.5 193.0,127.9 198.7,127.4 204.3,127.1 210.0,127.0 215.7,127.1 221.3,127.4 227.0,127.9 232.7,128.5 238.3,129.4 244.0,130.4 249.7,131.6 255.3,133.0 261.0,134.7 266.7,136.4 272.3,138.4 278.0,140.6 283.7,143.0 289.3,145.5 295.0,148.3 300.7,151.2 306.3,154.3 312.0,157.6 317.7,161.1 323.3,164.8 329.0,168.7 334.7,172.7 340.3,177.0 346.0,181.4 351.7,186.0 357.3,190.8 363.0,195.9 368.7,201.0 374.3,206.4 380.0,212.0\"/><circle cx=\"380.0\" cy=\"212.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"380.0\" y=\"176\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">45°: xa nhất</text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₁ + α₂ = 90°</text></svg><figcaption>Dữ kiện: góc 45° xa nhất, hai góc phụ nhau trùng tầm xa. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bắn đạn lên, $v_0=14$ m/s, nòng nghiêng góc $\\alpha$\"</td><td>$v_0=14$ m/s; $\\alpha$ chưa biết</td><td>Ném xiên: $L$ phụ thuộc $v_0$ và $\\alpha$</td></tr><tr><td>\"rơi xuống mặt phẳng ngang cùng độ cao nòng pháo\"</td><td>Cùng độ cao</td><td>⚠ Điều kiện dùng $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox đều; Oy gia tốc $-g$</td></tr><tr><td>\"đạn rơi cách pháo 15 m\"</td><td>$L=15$ m</td><td>$\\sin2\\alpha=\\dfrac{gL}{v_0^2}$</td></tr><tr><td>\"góc nghiêng bao nhiêu\"</td><td>Cần $\\alpha$</td><td>$\\sin2\\alpha$ cho hai góc $2\\alpha$ → hai góc phụ nhau ($\\alpha$ và $90^\\circ-\\alpha$)</td></tr><tr><td>\"thời gian bay trong từng trường hợp\"</td><td>Cần $t$ cho mỗi góc</td><td>$t=\\dfrac{2v_0\\sin\\alpha}{g}$</td></tr><tr><td>\"tầm xa lớn nhất\"</td><td>Cần $L_{max}$</td><td>$\\sin2\\alpha\\le1$: $L_{max}=\\dfrac{v_0^2}{g}$ khi $\\alpha=45^\\circ$</td></tr></tbody></table></div>"
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Quỹ đạo ném góc 45 độ đi xa nhất; hai góc phụ nhau cho cùng tầm xa\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"212.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40.0\" cy=\"212.0\" r=\"4.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,212.0 44.2,210.1 48.5,208.3 52.8,206.5 57.0,204.8 61.2,203.2 65.5,201.6 69.8,200.1 74.0,198.7 78.2,197.3 82.5,196.0 86.8,194.8 91.0,193.6 95.2,192.5 99.5,191.4 103.8,190.4 108.0,189.5 112.2,188.6 116.5,187.8 120.8,187.1 125.0,186.4 129.2,185.8 133.5,185.3 137.8,184.8 142.0,184.4 146.2,184.0 150.5,183.7 154.8,183.5 159.0,183.4 163.2,183.3 167.5,183.2 171.8,183.3 176.0,183.4 180.2,183.5 184.5,183.7 188.8,184.0 193.0,184.4 197.2,184.8 201.5,185.3 205.8,185.8 210.0,186.4 214.2,187.1 218.5,187.8 222.8,188.6 227.0,189.5 231.2,190.4 235.5,191.4 239.8,192.5 244.0,193.6 248.2,194.8 252.5,196.0 256.8,197.3 261.0,198.7 265.2,200.1 269.5,201.6 273.8,203.2 278.0,204.8 282.2,206.5 286.5,208.3 290.8,210.1 295.0,212.0\"/><polyline fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,212.0 44.2,202.7 48.5,193.8 52.8,185.2 57.0,176.9 61.2,168.8 65.5,161.2 69.8,153.8 74.0,146.7 78.2,140.0 82.5,133.5 86.8,127.4 91.0,121.6 95.2,116.1 99.5,110.9 103.8,106.1 108.0,101.5 112.3,97.3 116.5,93.4 120.8,89.8 125.0,86.5 129.2,83.5 133.5,80.8 137.8,78.5 142.0,76.4 146.2,74.7 150.5,73.3 154.8,72.2 159.0,71.4 163.2,70.9 167.5,70.8 171.8,70.9 176.0,71.4 180.3,72.2 184.5,73.3 188.8,74.7 193.0,76.4 197.3,78.5 201.5,80.8 205.8,83.5 210.0,86.5 214.3,89.8 218.5,93.4 222.8,97.3 227.0,101.5 231.3,106.1 235.5,110.9 239.8,116.1 244.0,121.6 248.3,127.4 252.5,133.5 256.8,140.0 261.0,146.7 265.2,153.8 269.5,161.2 273.8,168.8 278.0,176.9 282.2,185.2 286.5,193.8 290.8,202.7 295.0,212.0\"/><line x1=\"295.0\" y1=\"212.0\" x2=\"295.0\" y2=\"186.0\" stroke=\"#4ade80\" stroke-width=\"3\" opacity=\"1\"/><polygon points=\"295.0,186 311.0,192 295.0,198\" fill=\"#4ade80\"/><circle cx=\"295.0\" cy=\"212.0\" r=\"4.5\" fill=\"#34d399\"/><circle cx=\"295.0\" cy=\"212.0\" r=\"4.5\" fill=\"#a78bfa\"/><path d=\"M74.0,212.0 A34,34 0 0 0 71.0,198.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M86.0,212.0 A46,46 0 0 0 58.9,170.1\" fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"1.8\"/><text x=\"78\" y=\"207\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₁</text><text x=\"52\" y=\"160\" fill=\"#a78bfa\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₂</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"6 4\" opacity=\"0.9\" points=\"40.0,212.0 45.7,206.4 51.3,201.0 57.0,195.8 62.7,190.8 68.3,186.0 74.0,181.4 79.7,177.0 85.3,172.7 91.0,168.7 96.7,164.8 102.3,161.1 108.0,157.6 113.7,154.3 119.3,151.2 125.0,148.3 130.7,145.5 136.3,143.0 142.0,140.6 147.7,138.4 153.3,136.4 159.0,134.7 164.7,133.0 170.3,131.6 176.0,130.4 181.7,129.4 187.3,128.5 193.0,127.9 198.7,127.4 204.3,127.1 210.0,127.0 215.7,127.1 221.3,127.4 227.0,127.9 232.7,128.5 238.3,129.4 244.0,130.4 249.7,131.6 255.3,133.0 261.0,134.7 266.7,136.4 272.3,138.4 278.0,140.6 283.7,143.0 289.3,145.5 295.0,148.3 300.7,151.2 306.3,154.3 312.0,157.6 317.7,161.1 323.3,164.8 329.0,168.7 334.7,172.7 340.3,177.0 346.0,181.4 351.7,186.0 357.3,190.8 363.0,195.9 368.7,201.0 374.3,206.4 380.0,212.0\"/><circle cx=\"380.0\" cy=\"212.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"380.0\" y=\"176\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">45°: xa nhất</text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α₁ + α₂ = 90°</text></svg><figcaption>Dữ kiện: góc 45° xa nhất, hai góc phụ nhau trùng tầm xa. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bắn đạn lên, $v_0=14$ m/s, nòng nghiêng góc $\\alpha$\"</td><td>$v_0=14$ m/s; $\\alpha$ chưa biết</td><td>Ném xiên: $L$ phụ thuộc $v_0$ và $\\alpha$</td></tr><tr><td>\"rơi xuống mặt phẳng ngang cùng độ cao nòng pháo\"</td><td>Cùng độ cao</td><td>⚠ Điều kiện dùng $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$</td></tr><tr><td>\"bỏ qua lực cản\"</td><td>Chỉ có trọng lực</td><td>⚠ Ox đều; Oy gia tốc $-g$</td></tr><tr><td>\"đạn rơi cách pháo 15 m\"</td><td>$L=15$ m</td><td>$\\sin2\\alpha=\\dfrac{gL}{v_0^2}$</td></tr><tr><td>\"góc nghiêng bao nhiêu\"</td><td>Cần $\\alpha$</td><td>$\\sin2\\alpha$ cho hai góc $2\\alpha$ → hai góc phụ nhau ($\\alpha$ và $90^\\circ-\\alpha$)</td></tr><tr><td>\"thời gian bay trong từng trường hợp\"</td><td>Cần $t$ cho mỗi góc</td><td>$t=\\dfrac{2v_0\\sin\\alpha}{g}$</td></tr><tr><td>\"tầm xa lớn nhất\"</td><td>Cần $L_{max}$</td><td>$\\sin2\\alpha\\le1$: $L_{max}=\\dfrac{v_0^2}{g}$ khi $\\alpha=45^\\circ$</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề cho <b>tầm xa</b> rồi hỏi <b>góc ném</b> → rút $\\sin2\\alpha$; nhớ có hai góc phụ nhau.",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Rút $\\sin2\\alpha$ từ tầm xa",
+     "hoi": "$\\sin2\\alpha$ bằng bao nhiêu?",
+     "dap_so": 0.75,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Quên bình phương $v_0$, hoặc rút $\\sin\\alpha$ thay vì $\\sin2\\alpha$."
+    },
+    {
+     "tieu_de": "Hai góc ném",
+     "hoi": "Góc ném nhỏ hơn bằng bao nhiêu độ?",
+     "dap_so": 24.3,
+     "sai_so": 0.4,
+     "don_vi": "°",
+     "loi_hay_gap": "Quên chia đôi ($48{,}6^\\circ$ là $2\\alpha$) hoặc bỏ sót góc thứ hai.",
+     "chon_buoc_ke": [
+      {
+       "text": "$2\\alpha=\\arcsin0{,}75$ hoặc $180^\\circ-\\arcsin0{,}75$, rồi chia đôi",
+       "dung": true
+      },
+      {
+       "text": "$\\alpha=\\arcsin0{,}75\\approx48{,}6^\\circ$",
+       "dung": false,
+       "vi_sao": "$48{,}6^\\circ$ là $2\\alpha$, phải chia đôi."
+      },
+      {
+       "text": "Chỉ có một góc ném thoả mãn, lấy $2\\alpha=\\arcsin0{,}75$",
+       "dung": false,
+       "vi_sao": "$\\sin$ có hai nghiệm trong $0$–$180^\\circ$: còn $2\\alpha=180^\\circ-\\arcsin0{,}75$, tức hai góc phụ nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bay mỗi trường hợp",
+     "hoi": "Thời gian bay với góc lớn hơn (s)?",
+     "dap_so": 2.6,
+     "sai_so": 0.05,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng $t=\\dfrac{v_0\\sin\\alpha}{g}$ (mới là thời gian lên đỉnh) ra $1{,}3$ s.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{2v_0\\sin\\alpha}{g}$ cho từng góc",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{L}{v_0}$",
+       "dung": false,
+       "vi_sao": "Phải chia cho $v_{0x}=v_0\\cos\\alpha$, không phải $v_0$."
+      },
+      {
+       "text": "$t=\\dfrac{v_0\\sin\\alpha}{g}$",
+       "dung": false,
+       "vi_sao": "Đó là thời gian lên đỉnh; thời gian bay gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tầm xa lớn nhất",
+     "hoi": "Tầm xa lớn nhất $L_{max}$ bằng bao nhiêu?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy $\\alpha=90^\\circ$ (ném thẳng đứng, tầm xa 0) hoặc thừa hệ số 2.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin2\\alpha=1$ ($\\alpha=45^\\circ$): $L_{max}=\\dfrac{v_0^2}{g}$",
+       "dung": true
+      },
+      {
+       "text": "$\\alpha=90^\\circ$ bay cao nhất nên xa nhất",
+       "dung": false,
+       "vi_sao": "$90^\\circ$ là ném thẳng đứng, tầm xa bằng 0."
+      },
+      {
+       "text": "$L_{max}=\\dfrac{2v_0^2}{g}$",
+       "dung": false,
+       "vi_sao": "Thừa hệ số 2: $\\sin2\\alpha$ tối đa bằng 1."
+      }
+     ]
+    }
+   ]
   }
  ],
  "tu_luan": {

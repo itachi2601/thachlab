@@ -120,6 +120,41 @@ export interface LessonWorkedQuestion {
   topic?: string;
   topic_id?: number;
   form?: string;
+  /** Tự giải từng bước (skill soan-bai-tap-mau, thầy chốt 9/10/2026). Mỗi phần tử ứng với một `.bt-step` trong solution_html, cùng thứ tự. */
+  buoc?: WorkedStep[];
+  /** "Thấy … trong đề → nghĩ tới …" — hiện đầu dạng và cuối lời giải. */
+  nhan_dang?: string;
+  /** Cấp bắc cầu 1–4 (Áp dụng trực tiếp → Có điều kiện/bẫy → Kết hợp → Tình huống mới). */
+  cap_do?: number;
+  /** Ví dụ mờ dần: bước nào giấu để em tự làm. Thiếu = mo_het. */
+  fading?: WorkedFading;
+  /** Bài tương tự sai → hỏi "em tính đến bước nào", mặc định nhảy về bước này (chỉ số 0-based). */
+  go_roi?: { buoc_hay_sai: number };
+}
+
+export type WorkedFading = "mo_het" | "giau_buoc_cuoi" | "giau_tu_buoc_2" | "giau_het";
+
+export interface WorkedChoice {
+  text: string;
+  dung?: boolean;
+  /** Vì sao lựa chọn này sai (bắt buộc với lựa chọn sai). */
+  vi_sao?: string;
+}
+
+export interface WorkedStep {
+  tieu_de: string;
+  /** Câu hỏi của bước. Không có → bước phụ (kiểm tra…), tự mở ngay sau bước trước. */
+  hoi?: string;
+  /** Đáp số bằng số + sai số tuyệt đối chấp nhận. */
+  dap_so?: number;
+  don_vi?: string;
+  sai_so?: number;
+  /** Câu định tính: chọn 1 trong nhiều, thay cho dap_so. */
+  lua_chon?: WorkedChoice[];
+  /** Lỗi hay gặp ở bước này — hiện khi em trả lời sai. */
+  loi_hay_gap?: string;
+  /** "Bước tiếp theo là gì?" — 3 lựa chọn (1 đúng, 2 là cách làm sai hay chọn). Chỉ ở bước ≥ 2. */
+  chon_buoc_ke?: WorkedChoice[];
 }
 
 export interface LessonItem {

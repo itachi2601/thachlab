@@ -43,10 +43,19 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   topic: d.topic,
   topic_id: topics?.find((t) => t.name.trim() === d.topic.trim())?.id,
   form: d.form ?? "bai_tap",
+  // tự giải từng bước (9/10/2026) — bỏ qua khi dạng chưa có
+  ...(d.buoc ? { buoc: d.buoc, nhan_dang: d.nhan_dang, cap_do: d.cap_do, fading: d.fading, go_roi: d.go_roi } : {}),
 }));
 if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối
 console.log(`Bài ${lessonId} "${data.lesson_title ?? ""}": ${questions.length} dạng → chỉ ghi lesson_items.questions (kind=bai_tap_mau)`);
 questions.forEach((q, i) => console.log(`  ${i + 1}. ${q.label} · topic_id=${q.topic_id ?? "?"} · form=${q.form}`));
+if (argv.includes("--xem-thu")) { // xem UI ở http://localhost:3000/dev/btm trước khi đăng (không kết nối DB)
+  const out = path.join(root, "public/xem-thu/btm.json");
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, JSON.stringify({ lesson_id: lessonId, lesson_title: data.lesson_title, questions }));
+  console.log(`[XEM-THU] đã ghi ${path.relative(root, out)} → mở /dev/btm trên dev server.`);
+  process.exit(0);
+}
 if (dry) { console.log("[DRY-RUN] chưa ghi gì."); process.exit(0); }
 
 const url = env("NEXT_PUBLIC_SUPABASE_URL"), key = env("SUPABASE_SERVICE_ROLE_KEY");

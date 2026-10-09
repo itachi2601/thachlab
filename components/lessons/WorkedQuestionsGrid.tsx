@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
+import StepwiseSolution from "@/components/lessons/StepwiseSolution";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
 /** Dạng có cấu trúc: đề + mô phỏng → (HS chọn) phân tích đề → (HS chọn) lời giải đầy đủ → làm bài tương tự.
@@ -13,9 +14,18 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
   const [shown, setShown] = useState(0);
   const [analysed, setAnalysed] = useState(false);
   const [solved, setSolved] = useState(false);
+  const [jump, setJump] = useState<{ idx: number; n: number } | null>(null);
+  const [allOpen, setAllOpen] = useState(false); // tự giải từng bước: bài tương tự chỉ hiện khi đã mở hết các bước
+  const markAllOpen = useCallback(() => setAllOpen(true), []);
   const hasAnalysis = !!q.analysis_html;
+  const stepwise = !!q.buoc?.length; // tự giải từng bước (9/10/2026)
   return (
     <div className="space-y-3">
+      {q.nhan_dang && (
+        <p className="bt-nhan-dang" style={{ borderColor: color }}>
+          <ContentHtml html={q.nhan_dang} className="inline" />
+        </p>
+      )}
       <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
       <p className="text-xs text-slate-400">
         {hasAnalysis ? "Tự thử giải trên giấy trước, kẹt thì mở phân tích đề." : "Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý."}
@@ -50,14 +60,27 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
         )}
         {!solved && (
           <button type="button" className="lesson-btn-ghost" onClick={() => setSolved(true)}>
-            Xem lời giải đầy đủ
+            {stepwise ? "Giải từng bước" : "Xem lời giải đầy đủ"}
           </button>
         )}
       </div>
       {solved && (
         <>
-          <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
-          {q.topic_id ? <SimilarBankPractice topicId={q.topic_id} form={q.form} color={color} /> : null}
+          {stepwise ? (
+            <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} />
+          ) : (
+            <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
+          )}
+          {q.topic_id && (allOpen || !stepwise) ? (
+            <SimilarBankPractice
+              topicId={q.topic_id}
+              form={q.form}
+              color={color}
+              stepTitles={stepwise ? q.buoc!.map((b) => b.tieu_de) : undefined}
+              defaultStep={q.go_roi?.buoc_hay_sai}
+              onGoRoi={(idx) => setJump((j) => ({ idx, n: (j?.n ?? 0) + 1 }))}
+            />
+          ) : null}
         </>
       )}
     </div>
