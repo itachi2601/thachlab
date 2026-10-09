@@ -32,3 +32,54 @@
 | l10-su-roi-tu-do | 55 | da-dang | Ch2 L10 Bài 10: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
 | l10-thuc-hanh-do-g | 56 | da-dang | Ch2 L10 Bài 11: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
 | l10-chuyen-dong-nem | 57 | da-dang | Ch2 L10 Bài 12: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l11-dao-dong-dieu-hoa | 20 | chua-lam | Bài 1. Dao động điều hoà (5 mục DB, chưa chạy batch). |
+| l11-mo-ta-dao-dong | 21 | chua-lam | Bài 2. Mô tả dao động điều hoà (2 mục DB, chưa chạy batch). |
+| l11-van-toc-gia-toc | 22 | chua-lam | Bài 3. Vận tốc, gia tốc trong dao động điều hoà (2 mục DB, chưa chạy batch). |
+| l11-co-nang-dao-dong | 24 | chua-lam | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà (2 mục DB, chưa chạy batch). |
+| l11-tat-dan-cuong-buc | 25 | chua-lam | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng (2 mục DB, chưa chạy batch). |
+| l11-mo-ta-song | 27 | chua-lam | Bài 8. Mô tả sóng (3 mục DB, chưa chạy batch). |
+| l11-giao-thoa-song | 31 | chua-lam | Bài 12. Giao thoa sóng (3 mục DB, chưa chạy batch). |
+| l11-song-dung | 32 | chua-lam | Bài 13. Sóng dừng (2 mục DB, chưa chạy batch). |
+| l11-bai-tap-song | 33 | chua-lam | Bài 14. Bài tập về sóng (3 mục DB, chưa chạy batch). |
+| l11-luc-coulomb | 35 | chua-lam | Bài 16. Lực tương tác giữa hai điện tích (3 mục DB, chưa chạy batch). |
+| l11-khai-niem-dien-truong | 36 | chua-lam | Bài 17. Khái niệm điện trường (3 mục DB, chưa chạy batch). |
+| l11-dien-truong-deu | 37 | chua-lam | Bài 18. Điện trường đều (3 mục DB, chưa chạy batch). |
+| l11-the-nang-dien | 38 | chua-lam | Bài 19. Thế năng điện (3 mục DB, chưa chạy batch). |
+| l11-dien-the | 39 | chua-lam | Bài 20. Điện thế (3 mục DB, chưa chạy batch). |
+| l11-tu-dien | 40 | chua-lam | Bài 21. Tụ điện (3 mục DB, chưa chạy batch). |
+| l11-cuong-do-dong-dien | 41 | chua-lam | Bài 22. Cường độ dòng điện (3 mục DB, chưa chạy batch). |
+| l11-dien-tro-dinh-luat-ohm | 42 | chua-lam | Bài 23. Điện trở. Định luật Ohm (3 mục DB, chưa chạy batch). |
+| l11-nguon-dien | 43 | chua-lam | Bài 24. Nguồn điện (3 mục DB, chưa chạy batch). |
+| l11-nang-luong-cong-suat-dien | 44 | chua-lam | Bài 25. Năng lượng điện và công suất điện (3 mục DB, chưa chạy batch). |
+| l11-thuc-hanh-do-sdd-pin | 45 | chua-lam | Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá (3 mục DB, chưa chạy batch). |
+| l10-lam-quen-voi-vat-li | 46 | chua-lam | Bài 1. Làm quen với Vật lí (3 mục DB, chưa chạy batch). |
+| l10-an-toan-phong-thuc-hanh | 47 | chua-lam | Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí (3 mục DB, chưa chạy batch). |
+| l10-thuc-hanh-sai-so | 48 | chua-lam | Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo (3 mục DB, chưa chạy batch). |
+| l10-tong-hop-phan-tich-luc | 58 | chua-lam | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực (3 mục DB, chưa chạy batch). |
+| l10-dinh-luat-1-newton | 59 | chua-lam | Bài 14. Định luật 1 Newton (3 mục DB, chưa chạy batch). |
+| l10-dinh-luat-2-newton | 60 | chua-lam | Bài 15. Định luật 2 Newton (3 mục DB, chưa chạy batch). |
+| l10-dinh-luat-3-newton | 61 | chua-lam | Bài 16. Định luật 3 Newton (3 mục DB, chưa chạy batch). |
+| l10-trong-luc-luc-cang | 62 | chua-lam | Bài 17. Trọng lực và lực căng (3 mục DB, chưa chạy batch). |
+| l10-luc-ma-sat | 63 | chua-lam | Bài 18. Lực ma sát (3 mục DB, chưa chạy batch). |
+| l10-luc-can-luc-nang | 64 | chua-lam | Bài 19. Lực cản và lực nâng (3 mục DB, chưa chạy batch). |
+| l10-giai-bai-toan-dong-luc-hoc | 65 | chua-lam | Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. |
+| l10-moment-luc | 66 | chua-lam | Bài 21. Moment lực. Cân bằng của vật rắn (3 mục DB, chưa chạy batch). |
+| l10-thuc-hanh-tong-hop-luc | 67 | chua-lam | Bài 22. Thực hành: Tổng hợp lực (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. |
+| l10-nang-luong-cong-co-hoc | 68 | chua-lam | Bài 23. Năng lượng. Công cơ học (2 mục DB, chưa chạy batch). |
+| l10-cong-suat | 69 | chua-lam | Bài 24. Công suất (2 mục DB, chưa chạy batch). |
+| l10-dong-nang-the-nang | 70 | chua-lam | Bài 25. Động năng, thế năng (3 mục DB, chưa chạy batch). |
+| l10-co-nang-bao-toan | 71 | chua-lam | Bài 26. Cơ năng và định luật bảo toàn cơ năng (3 mục DB, chưa chạy batch). |
+| l10-hieu-suat | 72 | chua-lam | Bài 27. Hiệu suất (2 mục DB, chưa chạy batch). |
+| l10-dong-luong | 73 | chua-lam | Bài 28. Động lượng (3 mục DB, chưa chạy batch). |
+| l10-bao-toan-dong-luong | 74 | chua-lam | Bài 29. Định luật bảo toàn động lượng (3 mục DB, chưa chạy batch). |
+| l10-thuc-hanh-dong-luong | 75 | chua-lam | Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm (3 mục DB, chưa chạy batch). |
+| l10-chuyen-dong-tron-deu | 76 | chua-lam | Bài 31. Động học của chuyển động tròn đều (3 mục DB, chưa chạy batch). |
+| l10-luc-huong-tam | 77 | chua-lam | Bài 32. Lực hướng tâm và gia tốc hướng tâm (3 mục DB, chưa chạy batch). |
+| l10-bien-dang-vat-ran | 78 | chua-lam | Bài 33. Biến dạng của vật rắn (2 mục DB, chưa chạy batch). |
+| l10-khoi-luong-rieng-ap-suat | 79 | chua-lam | Bài 34. Khối lượng riêng. Áp suất chất lỏng (3 mục DB, chưa chạy batch). |
+| l9-khuc-xa-anh-sang | 83 | chua-lam | Bài 5. Khúc xạ ánh sáng (3 mục DB, chưa chạy batch). |
+| l9-phan-xa-toan-phan | 84 | chua-lam | Bài 6. Phản xạ toàn phần (3 mục DB, chưa chạy batch). |
+| l9-lang-kinh-tan-sac | 85 | chua-lam | Bài 7. Lăng kính (1 mục DB, chưa chạy batch). |
+| l9-thau-kinh | 86 | chua-lam | Bài 8. Thấu kính (1 mục DB, chưa chạy batch). |
+| l9-thuc-hanh-tieu-cu | 87 | chua-lam | Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ (1 mục DB, chưa chạy batch). |
+| l9-kinh-lup-bai-tap-thau-kinh | 88 | chua-lam | Bài 10. Kính lúp. Bài tập thấu kính (1 mục DB, chưa chạy batch). |
