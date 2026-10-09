@@ -1,0 +1,420 @@
+{
+ "lesson_id": 30,
+ "lesson_title": "Bài 11. Sóng điện từ",
+ "generated_at": "2026-10-07",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo | kiem-code tự giải 9/10/2026: đáp số+buoc[] khớp, đã sửa góp ý"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tính bước sóng hoặc tần số (λ = c/f)",
+   "topic": "Đặc điểm và thang sóng điện từ",
+   "problem_html": "<p>Bộ đàm của đội cứu hộ phát sóng điện từ có tần số $150\\ \\text{MHz}$. Một trạm 4G phát sóng điện từ có bước sóng $15\\ \\text{cm}$. Coi hai sóng truyền trong không khí như trong chân không, lấy $c=3\\cdot10^{8}\\ \\text{m/s}$.</p><p>a) Tính bước sóng của sóng bộ đàm.</p><p>b) Tính tần số của sóng trạm 4G.</p><p>c) Sóng nào có bước sóng dài hơn và dài gấp mấy lần?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Hai sóng điện từ cùng lan truyền sang phải với tốc độ c; sóng bộ đàm có bước sóng dài, sóng 4G có bước sóng ngắn\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><clipPath id=\"c30a\"><rect x=\"40\" y=\"52\" width=\"360\" height=\"170\"/></clipPath><g clip-path=\"url(#c30a)\"><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;180 0\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><polyline fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\" points=\"-140.0,72.0 -138.0,70.6 -136.0,69.2 -134.0,67.9 -132.0,66.7 -130.0,65.6 -128.0,64.6 -126.0,63.6 -124.0,62.8 -122.0,62.1 -120.0,61.4 -118.0,60.9 -116.0,60.5 -114.0,60.2 -112.0,60.1 -110.0,60.0 -108.0,60.1 -106.0,60.2 -104.0,60.5 -102.0,60.9 -100.0,61.4 -98.0,62.1 -96.0,62.8 -94.0,63.6 -92.0,64.6 -90.0,65.6 -88.0,66.7 -86.0,67.9 -84.0,69.2 -82.0,70.6 -80.0,72.0 -78.0,73.5 -76.0,75.0 -74.0,76.6 -72.0,78.2 -70.0,79.8 -68.0,81.5 -66.0,83.2 -64.0,84.8 -62.0,86.5 -60.0,88.2 -58.0,89.8 -56.0,91.4 -54.0,93.0 -52.0,94.5 -50.0,96.0 -48.0,97.4 -46.0,98.8 -44.0,100.1 -42.0,101.3 -40.0,102.4 -38.0,103.4 -36.0,104.4 -34.0,105.2 -32.0,105.9 -30.0,106.6 -28.0,107.1 -26.0,107.5 -24.0,107.8 -22.0,107.9 -20.0,108.0 -18.0,107.9 -16.0,107.8 -14.0,107.5 -12.0,107.1 -10.0,106.6 -8.0,105.9 -6.0,105.2 -4.0,104.4 -2.0,103.4 0.0,102.4 2.0,101.3 4.0,100.1 6.0,98.8 8.0,97.4 10.0,96.0 12.0,94.5 14.0,93.0 16.0,91.4 18.0,89.8 20.0,88.2 22.0,86.5 24.0,84.8 26.0,83.2 28.0,81.5 30.0,79.8 32.0,78.2 34.0,76.6 36.0,75.0 38.0,73.5 40.0,72.0 42.0,70.6 44.0,69.2 46.0,67.9 48.0,66.7 50.0,65.6 52.0,64.6 54.0,63.6 56.0,62.8 58.0,62.1 60.0,61.4 62.0,60.9 64.0,60.5 66.0,60.2 68.0,60.1 70.0,60.0 72.0,60.1 74.0,60.2 76.0,60.5 78.0,60.9 80.0,61.4 82.0,62.1 84.0,62.8 86.0,63.6 88.0,64.6 90.0,65.6 92.0,66.7 94.0,67.9 96.0,69.2 98.0,70.6 100.0,72.0 102.0,73.5 104.0,75.0 106.0,76.6 108.0,78.2 110.0,79.8 112.0,81.5 114.0,83.2 116.0,84.8 118.0,86.5 120.0,88.2 122.0,89.8 124.0,91.4 126.0,93.0 128.0,94.5 130.0,96.0 132.0,97.4 134.0,98.8 136.0,100.1 138.0,101.3 140.0,102.4 142.0,103.4 144.0,104.4 146.0,105.2 148.0,105.9 150.0,106.6 152.0,107.1 154.0,107.5 156.0,107.8 158.0,107.9 160.0,108.0 162.0,107.9 164.0,107.8 166.0,107.5 168.0,107.1 170.0,106.6 172.0,105.9 174.0,105.2 176.0,104.4 178.0,103.4 180.0,102.4 182.0,101.3 184.0,100.1 186.0,98.8 188.0,97.4 190.0,96.0 192.0,94.5 194.0,93.0 196.0,91.4 198.0,89.8 200.0,88.2 202.0,86.5 204.0,84.8 206.0,83.2 208.0,81.5 210.0,79.8 212.0,78.2 214.0,76.6 216.0,75.0 218.0,73.5 220.0,72.0 222.0,70.6 224.0,69.2 226.0,67.9 228.0,66.7 230.0,65.6 232.0,64.6 234.0,63.6 236.0,62.8 238.0,62.1 240.0,61.4 242.0,60.9 244.0,60.5 246.0,60.2 248.0,60.1 250.0,60.0 252.0,60.1 254.0,60.2 256.0,60.5 258.0,60.9 260.0,61.4 262.0,62.1 264.0,62.8 266.0,63.6 268.0,64.6 270.0,65.6 272.0,66.7 274.0,67.9 276.0,69.2 278.0,70.6 280.0,72.0 282.0,73.5 284.0,75.0 286.0,76.6 288.0,78.2 290.0,79.8 292.0,81.5 294.0,83.2 296.0,84.8 298.0,86.5 300.0,88.2 302.0,89.8 304.0,91.4 306.0,93.0 308.0,94.5 310.0,96.0 312.0,97.4 314.0,98.8 316.0,100.1 318.0,101.3 320.0,102.4 322.0,103.4 324.0,104.4 326.0,105.2 328.0,105.9 330.0,106.6 332.0,107.1 334.0,107.5 336.0,107.8 338.0,107.9 340.0,108.0 342.0,107.9 344.0,107.8 346.0,107.5 348.0,107.1 350.0,106.6 352.0,105.9 354.0,105.2 356.0,104.4 358.0,103.4 360.0,102.4 362.0,101.3 364.0,100.1 366.0,98.8 368.0,97.4 370.0,96.0 372.0,94.5 374.0,93.0 376.0,91.4 378.0,89.8 380.0,88.2 382.0,86.5 384.0,84.8 386.0,83.2 388.0,81.5 390.0,79.8 392.0,78.2 394.0,76.6 396.0,75.0 398.0,73.5 400.0,72.0\"/></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;180 0\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><polyline fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\" points=\"-140.0,180.5 -138.7,180.7 -137.3,177.5 -135.9,172.3 -134.6,167.0 -133.2,163.5 -131.9,163.3 -130.6,166.5 -129.2,171.7 -127.8,177.0 -126.5,180.5 -125.2,180.7 -123.8,177.5 -122.5,172.3 -121.1,167.0 -119.8,163.5 -118.4,163.3 -117.0,166.5 -115.7,171.7 -114.3,177.0 -113.0,180.5 -111.7,180.7 -110.3,177.5 -109.0,172.3 -107.6,167.0 -106.2,163.5 -104.9,163.3 -103.5,166.5 -102.2,171.7 -100.8,177.0 -99.5,180.5 -98.2,180.7 -96.8,177.5 -95.4,172.3 -94.1,167.0 -92.8,163.5 -91.4,163.3 -90.0,166.5 -88.7,171.7 -87.3,177.0 -86.0,180.5 -84.7,180.7 -83.3,177.5 -81.9,172.3 -80.6,167.0 -79.2,163.5 -77.9,163.3 -76.5,166.5 -75.2,171.7 -73.8,177.0 -72.5,180.5 -71.1,180.7 -69.8,177.5 -68.4,172.3 -67.1,167.0 -65.8,163.5 -64.4,163.3 -63.0,166.5 -61.7,171.7 -60.3,177.0 -59.0,180.5 -57.6,180.7 -56.3,177.5 -54.9,172.3 -53.6,167.0 -52.2,163.5 -50.9,163.3 -49.5,166.5 -48.2,171.7 -46.8,177.0 -45.5,180.5 -44.1,180.7 -42.8,177.5 -41.4,172.3 -40.1,167.0 -38.8,163.5 -37.4,163.3 -36.0,166.5 -34.7,171.7 -33.3,177.0 -32.0,180.5 -30.6,180.7 -29.3,177.5 -27.9,172.3 -26.6,167.0 -25.2,163.5 -23.9,163.3 -22.5,166.5 -21.2,171.7 -19.8,177.0 -18.5,180.5 -17.1,180.7 -15.8,177.5 -14.4,172.3 -13.1,167.0 -11.8,163.5 -10.4,163.3 -9.0,166.5 -7.7,171.7 -6.3,177.0 -5.0,180.5 -3.6,180.7 -2.3,177.5 -0.9,172.3 0.4,167.0 1.8,163.5 3.1,163.3 4.5,166.5 5.8,171.7 7.2,177.0 8.5,180.5 9.9,180.7 11.2,177.5 12.6,172.3 13.9,167.0 15.2,163.5 16.6,163.3 18.0,166.5 19.3,171.7 20.7,177.0 22.0,180.5 23.4,180.7 24.7,177.5 26.1,172.3 27.4,167.0 28.8,163.5 30.1,163.3 31.5,166.5 32.8,171.7 34.2,177.0 35.5,180.5 36.9,180.7 38.2,177.5 39.6,172.3 40.9,167.0 42.2,163.5 43.6,163.3 45.0,166.5 46.3,171.7 47.7,177.0 49.0,180.5 50.4,180.7 51.7,177.5 53.1,172.3 54.4,167.0 55.8,163.5 57.1,163.3 58.5,166.5 59.8,171.7 61.2,177.0 62.5,180.5 63.9,180.7 65.2,177.5 66.6,172.3 67.9,167.0 69.2,163.5 70.6,163.3 72.0,166.5 73.3,171.7 74.7,177.0 76.0,180.5 77.4,180.7 78.7,177.5 80.1,172.3 81.4,167.0 82.8,163.5 84.1,163.3 85.5,166.5 86.8,171.7 88.2,177.0 89.5,180.5 90.9,180.7 92.2,177.5 93.6,172.3 94.9,167.0 96.3,163.5 97.6,163.3 99.0,166.5 100.3,171.7 101.7,177.0 103.0,180.5 104.4,180.7 105.7,177.5 107.1,172.3 108.4,167.0 109.8,163.5 111.1,163.3 112.5,166.5 113.8,171.7 115.2,177.0 116.5,180.5 117.9,180.7 119.2,177.5 120.6,172.3 121.9,167.0 123.2,163.5 124.6,163.3 126.0,166.5 127.3,171.7 128.7,177.0 130.0,180.5 131.4,180.7 132.7,177.5 134.1,172.3 135.4,167.0 136.8,163.5 138.1,163.3 139.5,166.5 140.8,171.7 142.2,177.0 143.5,180.5 144.9,180.7 146.2,177.5 147.6,172.3 148.9,167.0 150.2,163.5 151.6,163.3 153.0,166.5 154.3,171.7 155.7,177.0 157.0,180.5 158.4,180.7 159.7,177.5 161.1,172.3 162.4,167.0 163.8,163.5 165.1,163.3 166.5,166.5 167.8,171.7 169.2,177.0 170.5,180.5 171.9,180.7 173.2,177.5 174.6,172.3 175.9,167.0 177.2,163.5 178.6,163.3 180.0,166.5 181.3,171.7 182.7,177.0 184.0,180.5 185.4,180.7 186.7,177.5 188.1,172.3 189.4,167.0 190.8,163.5 192.1,163.3 193.5,166.5 194.8,171.7 196.2,177.0 197.5,180.5 198.9,180.7 200.2,177.5 201.6,172.3 202.9,167.0 204.2,163.5 205.6,163.3 207.0,166.5 208.3,171.7 209.7,177.0 211.0,180.5 212.4,180.7 213.7,177.5 215.1,172.3 216.4,167.0 217.8,163.5 219.1,163.3 220.5,166.5 221.8,171.7 223.2,177.0 224.5,180.5 225.9,180.7 227.2,177.5 228.6,172.3 229.9,167.0 231.2,163.5 232.6,163.3 234.0,166.5 235.3,171.7 236.7,177.0 238.0,180.5 239.4,180.7 240.7,177.5 242.1,172.3 243.4,167.0 244.8,163.5 246.1,163.3 247.5,166.5 248.8,171.7 250.2,177.0 251.5,180.5 252.9,180.7 254.2,177.5 255.6,172.3 256.9,167.0 258.2,163.5 259.6,163.3 261.0,166.5 262.3,171.7 263.7,177.0 265.0,180.5 266.4,180.7 267.7,177.5 269.1,172.3 270.4,167.0 271.8,163.5 273.1,163.3 274.5,166.5 275.8,171.7 277.2,177.0 278.5,180.5 279.9,180.7 281.2,177.5 282.6,172.3 283.9,167.0 285.2,163.5 286.6,163.3 288.0,166.5 289.3,171.7 290.7,177.0 292.0,180.5 293.4,180.7 294.7,177.5 296.1,172.3 297.4,167.0 298.8,163.5 300.1,163.3 301.5,166.5 302.8,171.7 304.2,177.0 305.5,180.5 306.9,180.7 308.2,177.5 309.6,172.3 310.9,167.0 312.3,163.5 313.6,163.3 315.0,166.5 316.3,171.7 317.7,177.0 319.0,180.5 320.4,180.7 321.7,177.5 323.1,172.3 324.4,167.0 325.8,163.5 327.1,163.3 328.5,166.5 329.8,171.7 331.2,177.0 332.5,180.5 333.9,180.7 335.2,177.5 336.6,172.3 337.9,167.0 339.3,163.5 340.6,163.3 342.0,166.5 343.3,171.7 344.7,177.0 346.0,180.5 347.4,180.7 348.7,177.5 350.1,172.3 351.4,167.0 352.8,163.5 354.1,163.3 355.5,166.5 356.8,171.7 358.2,177.0 359.5,180.5 360.9,180.7 362.2,177.5 363.6,172.3 364.9,167.0 366.3,163.5 367.6,163.3 369.0,166.5 370.3,171.7 371.7,177.0 373.0,180.5 374.4,180.7 375.7,177.5 377.1,172.3 378.4,167.0 379.8,163.5 381.1,163.3 382.5,166.5 383.8,171.7 385.2,177.0 386.5,180.5 387.9,180.7 389.2,177.5 390.6,172.3 391.9,167.0 393.2,163.5 394.6,163.3 396.0,166.5 397.3,171.7 398.7,177.0 400.0,180.5\"/></g></g><text x=\"40\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Bộ đàm: f = 150 MHz</text><line x1=\"70\" y1=\"42\" x2=\"250\" y2=\"42\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><line x1=\"250\" y1=\"42\" x2=\"70\" y2=\"42\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"138.0\" y=\"36\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ = ?</text><text x=\"40\" y=\"134\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trạm 4G: λ = 15 cm</text><text x=\"250\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = ?</text><line x1=\"40\" y1=\"212\" x2=\"130\" y2=\"212\" stroke=\"#34d399\" stroke-width=\"2.4\" marker-end=\"url(#d10-g)\"/><text x=\"138\" y=\"217\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cùng tốc độ c</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sau một chu kì của sóng bộ đàm, cả hai sóng cùng dịch một đoạn bằng c·T (chạy chậm hàng tỉ lần). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> bước sóng $\\lambda$ là quãng đường sóng đi được trong một chu kì.</li><li><strong>Định luật:</strong> trong chân không mọi sóng điện từ cùng tốc độ $c=3\\cdot10^{8}$ m/s.</li><li>$\\lambda=\\dfrac{c}{f}=cT$ · $f=\\dfrac{c}{\\lambda}$</li><li>Đổi: $1\\ \\text{MHz}=10^{6}$ Hz · $1\\ \\text{GHz}=10^{9}$ Hz · $1\\ \\text{cm}=10^{-2}$ m</li><li>⚠ <strong>Điều kiện:</strong> $c$ là tốc độ trong chân không (không khí coi như chân không); đổi mọi đại lượng về Hz, m, m/s.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng của sóng bộ đàm</span></p><p>Đổi tần số ra Hz: $f=150\\ \\text{MHz}=1{,}5\\cdot10^{8}\\ \\text{Hz}$.</p>$$\\lambda=\\dfrac{c}{f}=\\dfrac{3\\cdot10^{8}}{1{,}5\\cdot10^{8}}$$<div class=\"bt-ans\">$$\\lambda=2\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tần số của sóng trạm 4G</span></p><p>Đổi bước sóng ra mét: $\\lambda=15\\ \\text{cm}=0{,}15\\ \\text{m}$.</p>$$f=\\dfrac{c}{\\lambda}=\\dfrac{3\\cdot10^{8}}{0{,}15}=2\\cdot10^{9}\\ \\text{Hz}$$<div class=\"bt-ans\">$$f=2\\ \\text{GHz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So hai bước sóng</span></p><p>Hai bước sóng cùng đơn vị mét, chia số lớn cho số nhỏ:</p>$$\\dfrac{2}{0{,}15}\\approx13{,}3$$<div class=\"bt-ans\"><p>Sóng bộ đàm có bước sóng dài hơn, gấp khoảng $13{,}3$ lần.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Tích $\\lambda f$ của cả hai sóng bằng $3\\cdot10^{8}$ m/s ✓.</p><p>Bước sóng dài hơn ứng với tần số nhỏ hơn: $150\\ \\text{MHz}\\lt2\\ \\text{GHz}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\lambda=2\\ \\text{m}$</p><p>b) $f=2\\ \\text{GHz}$</p><p>c) Sóng bộ đàm dài hơn, gấp khoảng $13{,}3$ lần</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tần số</strong> hoặc <strong>bước sóng</strong> của sóng điện từ → $\\lambda=\\dfrac{c}{f}$, đổi về Hz và m trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 170\" role=\"img\" aria-label=\"Hai cách dùng công thức bước sóng và các đổi đơn vị cần làm trước\"><text x=\"40\" y=\"34\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Đề cho f</text><text x=\"170\" y=\"34\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">▸  tìm λ = c / f</text><text x=\"40\" y=\"62\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Đề cho λ</text><text x=\"170\" y=\"62\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">▸  tìm f = c / λ</text><text x=\"40\" y=\"90\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">MHz → Hz</text><text x=\"170\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">▸  nhân 10⁶</text><text x=\"40\" y=\"118\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">GHz → Hz</text><text x=\"170\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">▸  nhân 10⁹</text><text x=\"40\" y=\"146\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">cm → m</text><text x=\"170\" y=\"146\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">▸  nhân 10⁻²</text></svg><figcaption>Dữ kiện: đổi về Hz, m rồi mới thế vào công thức. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"sóng điện từ có tần số $150\\ \\text{MHz}$\"</td><td>$f=150$ MHz</td><td>Cho $f$ thì tìm $\\lambda=\\dfrac{c}{f}$; đổi MHz ra Hz</td></tr><tr><td>\"trạm 4G … bước sóng $15\\ \\text{cm}$\"</td><td>$\\lambda=15$ cm</td><td>Cho $\\lambda$ thì tìm $f=\\dfrac{c}{\\lambda}$; đổi cm ra m</td></tr><tr><td>\"như trong chân không, $c=3\\cdot10^{8}\\ \\text{m/s}$\"</td><td>$c=3\\cdot10^{8}$ m/s</td><td>⚠ $\\lambda=\\dfrac{c}{f}$ dùng với $c$ trong chân không; $f$ (Hz), $\\lambda$ (m)</td></tr><tr><td>\"sóng nào có bước sóng dài hơn, gấp mấy lần\"</td><td>So hai bước sóng</td><td>Chia hai bước sóng cùng đơn vị</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tần số</b> hoặc <b>bước sóng</b> của sóng điện từ → dùng $\\lambda=\\dfrac{c}{f}$, đổi về Hz và m trước.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng của sóng bộ đàm",
+     "hoi": "Bước sóng của sóng bộ đàm bằng bao nhiêu mét?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên đổi MHz ra Hz (thế $150$ thay vì $1{,}5\\cdot10^{8}$) hoặc lật ngược thành $\\dfrac{f}{c}$."
+    },
+    {
+     "tieu_de": "Tần số của sóng trạm 4G",
+     "hoi": "Tần số của sóng trạm 4G bằng bao nhiêu GHz?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "GHz",
+     "loi_hay_gap": "Chia $c$ cho $15$ (quên đổi cm ra m) ra $2\\cdot10^{7}$ Hz; hoặc nhân $c\\cdot\\lambda$ thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $f=\\dfrac{c}{\\lambda}$ với $\\lambda$ đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "$f=c\\cdot\\lambda$",
+       "dung": false,
+       "vi_sao": "Đơn vị không hợp: $c\\lambda$ có đơn vị m²/s, không phải Hz; công thức đúng là $f=\\dfrac{c}{\\lambda}$."
+      },
+      {
+       "text": "$f=\\dfrac{c}{\\lambda}$ với $\\lambda=15$ (giữ nguyên cm)",
+       "dung": false,
+       "vi_sao": "Phải đổi cm ra m ($0{,}15$ m) vì $c$ tính bằng m/s."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So hai bước sóng",
+     "hoi": "Bước sóng của bộ đàm gấp mấy lần bước sóng của trạm 4G?",
+     "dap_so": 13.3,
+     "sai_so": 0.2,
+     "loi_hay_gap": "Chia $2$ cho $15$ khi chưa cùng đơn vị, hoặc chia ngược lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi cùng đơn vị rồi chia bước sóng lớn cho bước sóng nhỏ",
+       "dung": true
+      },
+      {
+       "text": "Lấy hiệu hai bước sóng",
+       "dung": false,
+       "vi_sao": "Hỏi \"gấp mấy lần\" là phép chia, không phải phép trừ."
+      },
+      {
+       "text": "Chia ngay $2\\ \\text{m}$ cho $15\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Chưa cùng đơn vị nên tỉ số sai; phải đổi cả hai về mét hoặc cả hai về cm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Xác định vùng của bức xạ trên thang sóng điện từ",
+   "topic": "Đặc điểm và thang sóng điện từ",
+   "problem_html": "<p>Một nguồn phát ra hai bức xạ điện từ trong chân không, có tần số $f_1=6{,}0\\cdot10^{14}\\ \\text{Hz}$ và $f_2=3{,}0\\cdot10^{12}\\ \\text{Hz}$. Lấy $c=3\\cdot10^{8}\\ \\text{m/s}$. Mắt người nhìn thấy ánh sáng có bước sóng từ $380\\ \\text{nm}$ đến $760\\ \\text{nm}$.</p><p>a) Tính bước sóng của mỗi bức xạ.</p><p>b) Mỗi bức xạ thuộc vùng nào của thang sóng điện từ?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Thang sóng điện từ chia theo luỹ thừa của 10 từ bước sóng 1 km đến 1 pm, có kim quét từ sóng dài sang sóng ngắn\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"102.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#818cf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"174.0\" y=\"100\" width=\"74.9\" height=\"26\" fill=\"#fb923c\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"248.9\" y=\"100\" width=\"7.2\" height=\"26\" fill=\"#4ade80\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"256.1\" y=\"100\" width=\"37.9\" height=\"26\" fill=\"#a78bfa\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"294.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#f87171\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"366.0\" y=\"100\" width=\"24.0\" height=\"26\" fill=\"#fbbf24\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"66.0\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">vô tuyến</text><text x=\"138.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">vi sóng</text><text x=\"211.4\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hồng ngoại</text><text x=\"252.5\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nhìn thấy</text><text x=\"275.0\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tử ngoại</text><text x=\"330.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tia X</text><text x=\"378.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tia γ</text><line x1=\"30.0\" y1=\"126.0\" x2=\"30.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"30\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 km</text><line x1=\"102.0\" y1=\"126.0\" x2=\"102.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"102\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 m</text><line x1=\"174.0\" y1=\"126.0\" x2=\"174.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"174\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 mm</text><line x1=\"246.0\" y1=\"126.0\" x2=\"246.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"246\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 μm</text><line x1=\"318.0\" y1=\"126.0\" x2=\"318.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"318\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 nm</text><line x1=\"390.0\" y1=\"126.0\" x2=\"390.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"390\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 pm</text><line x1=\"60\" y1=\"58\" x2=\"360\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"2.4\" marker-end=\"url(#d20-b)\"/><text x=\"60\" y=\"48\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bước sóng λ giảm dần, tần số f tăng dần</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;360 0\" dur=\"6s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"30.0\" y2=\"130.0\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\"/><polygon points=\"24,64 36,64 30,74\" fill=\"#fb923c\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim quét qua thang từ bước sóng dài đến ngắn (chạy 6 s). Trục chia theo luỹ thừa 10; vùng nhìn thấy là dải rất hẹp.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thang sóng điện từ xếp các vùng theo bước sóng giảm dần (tần số tăng dần).</li><li><strong>Định luật:</strong> mọi vùng cùng bản chất, khác $\\lambda$; trong chân không $\\lambda=\\dfrac{c}{f}$.</li><li>Thứ tự: vô tuyến → vi sóng → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.</li><li>Mốc: nhìn thấy $380$–$760$ nm · hồng ngoại $760\\ \\text{nm}$–$1\\ \\text{mm}$ · vi sóng $1\\ \\text{mm}$–$1\\ \\text{m}$</li><li>⚠ <strong>Điều kiện:</strong> so $\\lambda$ với mốc phải cùng đơn vị; $1\\ \\text{nm}=10^{-9}$ m, $1\\ \\mu\\text{m}=10^{-6}$ m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng của bức xạ thứ nhất</span></p>$$\\lambda_1=\\dfrac{c}{f_1}=\\dfrac{3\\cdot10^{8}}{6\\cdot10^{14}}=5\\cdot10^{-7}\\ \\text{m}$$<div class=\"bt-ans\">$$\\lambda_1=500\\ \\text{nm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bước sóng của bức xạ thứ hai</span></p>$$\\lambda_2=\\dfrac{c}{f_2}=\\dfrac{3\\cdot10^{8}}{3\\cdot10^{12}}=10^{-4}\\ \\text{m}$$<div class=\"bt-ans\">$$\\lambda_2=100\\ \\mu\\text{m}=0{,}1\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Xếp vào thang sóng điện từ</span></p><p>$500\\ \\text{nm}$ nằm trong khoảng $380$–$760$ nm: <strong>ánh sáng nhìn thấy</strong>.</p><p>$0{,}1\\ \\text{mm}$ nằm trong khoảng $760\\ \\text{nm}$–$1\\ \\text{mm}$: <strong>hồng ngoại</strong>.</p><div class=\"bt-ans\"><p>Mắt chỉ nhìn thấy bức xạ thứ nhất.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$f_1\\gt f_2$ nên $\\lambda_1\\lt\\lambda_2$ ✓.</p><p>Hồng ngoại có bước sóng dài hơn ánh sáng nhìn thấy ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\lambda_1=500\\ \\text{nm}$ · $\\lambda_2=100\\ \\mu\\text{m}$</p><p>b) Bức xạ 1: ánh sáng nhìn thấy · bức xạ 2: hồng ngoại</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tần số</strong> rồi hỏi <strong>vùng</strong> của bức xạ → tính $\\lambda=\\dfrac{c}{f}$, đổi đơn vị rồi so với mốc của thang.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Cần tính hai bước sóng, đổi sang nm và μm rồi so với các mốc của thang sóng điện từ\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"102.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#818cf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"174.0\" y=\"100\" width=\"74.9\" height=\"26\" fill=\"#fb923c\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"248.9\" y=\"100\" width=\"7.2\" height=\"26\" fill=\"#4ade80\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"256.1\" y=\"100\" width=\"37.9\" height=\"26\" fill=\"#a78bfa\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"294.0\" y=\"100\" width=\"72.0\" height=\"26\" fill=\"#f87171\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"366.0\" y=\"100\" width=\"24.0\" height=\"26\" fill=\"#fbbf24\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"66.0\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">vô tuyến</text><text x=\"138.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">vi sóng</text><text x=\"211.4\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hồng ngoại</text><text x=\"252.5\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nhìn thấy</text><text x=\"275.0\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tử ngoại</text><text x=\"330.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tia X</text><text x=\"378.0\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">tia γ</text><line x1=\"30.0\" y1=\"126.0\" x2=\"30.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"30\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 km</text><line x1=\"102.0\" y1=\"126.0\" x2=\"102.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"102\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 m</text><line x1=\"174.0\" y1=\"126.0\" x2=\"174.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"174\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 mm</text><line x1=\"246.0\" y1=\"126.0\" x2=\"246.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"246\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 μm</text><line x1=\"318.0\" y1=\"126.0\" x2=\"318.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"318\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 nm</text><line x1=\"390.0\" y1=\"126.0\" x2=\"390.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"390\" y=\"172\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 pm</text><text x=\"30\" y=\"28\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₁ = ?  (đổi ra nm)</text><text x=\"30\" y=\"48\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₂ = ?  (đổi ra μm)</text><text x=\"240\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1 nm = 10⁻⁹ m</text><text x=\"240\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1 μm = 10⁻⁶ m</text></svg><figcaption>Dữ kiện: so λ với mốc phải cùng đơn vị. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$f_1=6{,}0\\cdot10^{14}\\ \\text{Hz}$ và $f_2=3{,}0\\cdot10^{12}\\ \\text{Hz}$\"</td><td>$f_1$, $f_2$ (Hz)</td><td>Cho $f$ thì tìm $\\lambda=\\dfrac{c}{f}$</td></tr><tr><td>\"trong chân không, $c=3\\cdot10^{8}\\ \\text{m/s}$\"</td><td>$c$</td><td>⚠ $\\lambda=\\dfrac{c}{f}$ là bước sóng trong chân không; các mốc của thang cũng tính trong chân không</td></tr><tr><td>\"tính bước sóng của mỗi bức xạ\"</td><td>Cần $\\lambda_1$, $\\lambda_2$</td><td>Giữ đơn vị mét rồi đổi: $1\\ \\text{nm}=10^{-9}$ m; $1\\ \\mu\\text{m}=10^{-6}$ m</td></tr><tr><td>\"nhìn thấy … từ $380\\ \\text{nm}$ đến $760\\ \\text{nm}$\"</td><td>Dải $380$–$760$ nm</td><td>Một mốc của thang sóng điện từ</td></tr><tr><td>\"thuộc vùng nào của thang\"</td><td>Cần vùng</td><td>So $\\lambda$ với mốc các vùng (cùng đơn vị): vô tuyến, vi sóng, hồng ngoại, nhìn thấy, tử ngoại, tia X, tia gamma</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề cho <b>tần số</b> rồi hỏi <b>vùng</b> của bức xạ → tính $\\lambda=\\dfrac{c}{f}$, đổi đơn vị rồi so với mốc của thang.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng của bức xạ thứ nhất",
+     "hoi": "Bước sóng $\\lambda_1$ bằng bao nhiêu nm?",
+     "dap_so": 500,
+     "sai_so": 5,
+     "don_vi": "nm",
+     "loi_hay_gap": "Đọc $5\\cdot10^{-7}$ m thành $5$ nm hoặc $500\\ \\mu\\text{m}$ vì nhầm $10^{-9}$ với $10^{-6}$."
+    },
+    {
+     "tieu_de": "Bước sóng của bức xạ thứ hai",
+     "hoi": "Bước sóng $\\lambda_2$ bằng bao nhiêu μm?",
+     "dap_so": 100,
+     "sai_so": 2,
+     "don_vi": "μm",
+     "loi_hay_gap": "Đổi $10^{-4}$ m ra μm sai luỹ thừa (ra $0{,}1\\ \\mu\\text{m}$ hoặc $10^{-4}\\ \\mu\\text{m}$).",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $\\lambda_2=\\dfrac{c}{f_2}$ rồi đổi mét sang μm",
+       "dung": true
+      },
+      {
+       "text": "$\\lambda_2=\\lambda_1\\dfrac{f_2}{f_1}$",
+       "dung": false,
+       "vi_sao": "Ngược tỉ lệ: $\\lambda$ tỉ lệ nghịch với $f$, nên phải là $\\lambda_1\\dfrac{f_1}{f_2}$."
+      },
+      {
+       "text": "$\\lambda_2=\\dfrac{f_2}{c}$",
+       "dung": false,
+       "vi_sao": "Lật ngược công thức; đơn vị hai vế không khớp."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Xếp vào thang sóng điện từ",
+     "hoi": "Mỗi bức xạ thuộc vùng nào của thang sóng điện từ?",
+     "lua_chon": [
+      {
+       "text": "Bức xạ 1 là ánh sáng nhìn thấy; bức xạ 2 là hồng ngoại",
+       "dung": true
+      },
+      {
+       "text": "Bức xạ 1 là tử ngoại; bức xạ 2 là vi sóng",
+       "dung": false,
+       "vi_sao": "$\\lambda_1$ nằm trong khoảng $380$–$760$ nm của ánh sáng nhìn thấy (tử ngoại ngắn hơn $380$ nm); $\\lambda_2\\lt1$ mm nên là hồng ngoại, vi sóng dài hơn $1$ mm."
+      },
+      {
+       "text": "Bức xạ 1 là hồng ngoại; bức xạ 2 là sóng vô tuyến",
+       "dung": false,
+       "vi_sao": "Hồng ngoại dài hơn $760$ nm mà $\\lambda_1$ nằm trong dải nhìn thấy; sóng vô tuyến dài hơn $1$ m còn $\\lambda_2$ chỉ cỡ $0{,}1$ mm."
+      }
+     ],
+     "loi_hay_gap": "Quên đổi đơn vị trước khi so mốc, ví dụ so số của μm với mốc ghi bằng nm.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $\\lambda$ (cùng đơn vị) với các mốc của thang",
+       "dung": true
+      },
+      {
+       "text": "So $f$ với $c$",
+       "dung": false,
+       "vi_sao": "$c$ là tốc độ, không phải mốc phân vùng; vùng được phân theo $\\lambda$ (hay tần số tương ứng)."
+      },
+      {
+       "text": "Chọn vùng theo tên nghe quen (tử ngoại, tia X)",
+       "dung": false,
+       "vi_sao": "Không có phép tính thì không phân biệt được; phải có $\\lambda$ để so với mốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Chọn nhận định đúng về sóng điện từ",
+   "topic": "Đặc điểm và thang sóng điện từ",
+   "problem_html": "<p>Một sóng điện từ truyền thẳng đứng từ vệ tinh xuống mặt đất. Cho biết mỗi nhận định sau đúng hay sai.</p><p>a) Sóng này cần có không khí làm môi trường truyền.</p><p>b) Tại mỗi điểm, vectơ cường độ điện trường $\\vec E$ và vectơ cảm ứng từ $\\vec B$ vuông góc với nhau và cùng vuông góc với phương truyền.</p><p>c) Khi sóng đi từ không khí vào thuỷ tinh, tần số của sóng giảm còn tốc độ truyền không đổi.</p><p>d) Trong chân không, ánh sáng đỏ và ánh sáng tím truyền với cùng một tốc độ.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Vệ tinh phát sóng điện từ, các mặt sóng lan ra xa dần về phía chảo thu trên mặt đất\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><clipPath id=\"c30b\"><rect x=\"12\" y=\"62\" width=\"396\" height=\"170\"/></clipPath><g clip-path=\"url(#c30b)\"><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;180\" keyTimes=\"0;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;0;158\" keyTimes=\"0;0.125;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;0;135\" keyTimes=\"0;0.250;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;0;112\" keyTimes=\"0;0.375;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;0;90\" keyTimes=\"0;0.500;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"52\" r=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"><animate attributeName=\"r\" values=\"0;0;68\" keyTimes=\"0;0.625;1\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle></g><rect x=\"200\" y=\"40\" width=\"20\" height=\"22\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"170\" y=\"47\" width=\"26\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"224\" y=\"47\" width=\"26\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M190,206 Q210,232 230,206 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"210.0\" y1=\"219.0\" x2=\"210.0\" y2=\"230.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"260\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ăng ten phát (vệ tinh)</text><text x=\"240\" y=\"224\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chảo thu</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: các mặt sóng từ ăng ten lan ra với tốc độ không đổi (chạy 4 s). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> sóng điện từ là điện từ trường biến thiên lan truyền, không cần phần tử môi trường.</li><li><strong>Định luật:</strong> $\\vec E\\perp\\vec B\\perp$ phương truyền, cùng pha: sóng ngang.</li><li>Chân không: mọi sóng điện từ cùng tốc độ $c$, $c=\\lambda f$.</li><li>Đổi môi trường: $f$, $T$ giữ nguyên; $v$ và $\\lambda=\\dfrac{v}{f}$ đổi.</li><li>⚠ <strong>Điều kiện:</strong> xét đúng phạm vi của từng tính chất (chân không hay môi trường vật chất).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận định a</span></p><p>Sóng điện từ không cần phần tử môi trường: ánh sáng Mặt Trời tới Trái Đất qua chân không.</p><div class=\"bt-ans\"><p>Nhận định a) <strong>sai</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhận định b</span></p><p>Tại mỗi điểm $\\vec E\\perp\\vec B$, cả hai vuông góc phương truyền: sóng điện từ là sóng ngang.</p><div class=\"bt-ans\"><p>Nhận định b) <strong>đúng</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhận định c</span></p><p>Tần số do nguồn quyết định nên giữ nguyên khi đổi môi trường; tốc độ và bước sóng đổi.</p>$$\\lambda=\\dfrac{v}{f}$$<div class=\"bt-ans\"><p>Nhận định c) <strong>sai</strong>: tần số không đổi, tốc độ giảm.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhận định d</span></p><p>Trong chân không mọi sóng điện từ có cùng tốc độ $c$, kể cả ánh sáng đỏ và tím.</p>$$c=\\lambda f$$<p>$f$ tăng thì $\\lambda$ giảm đúng tỉ lệ, tích vẫn bằng $c$.</p><div class=\"bt-ans\"><p>Nhận định d) <strong>đúng</strong>.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Sai</p><p>b) Đúng</p><p>c) Sai</p><p>d) Đúng</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều nhận định</strong> về sóng điện từ → xét từng ý theo môi trường truyền, hướng $\\vec E$, $\\vec B$, đại lượng đổi hay không khi đổi môi trường.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Mỗi nhận định ứng với một khái niệm cần nhớ lại\"><text x=\"26\" y=\"36\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">a</text><text x=\"48\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">▸  môi trường truyền: sóng cơ hay sóng điện từ?</text><text x=\"26\" y=\"66\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">b</text><text x=\"48\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">▸  hướng của E, B và phương truyền</text><text x=\"26\" y=\"96\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">c</text><text x=\"48\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">▸  f, v, λ: đại lượng nào đổi khi đổi môi trường?</text><text x=\"26\" y=\"126\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">d</text><text x=\"48\" y=\"126\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">▸  tốc độ trong chân không phụ thuộc vào gì?</text></svg><figcaption>Dữ kiện: mỗi nhận định kiểm tra một ý riêng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cần có không khí làm môi trường truyền\"</td><td>Nhận định a</td><td>⚠ Mỗi tính chất chỉ đúng trong phạm vi của nó: chân không hay môi trường vật chất, sóng cơ hay sóng điện từ</td></tr><tr><td>\"$\\vec E$ và $\\vec B$ … phương truyền\"</td><td>Nhận định b</td><td>Hướng của $\\vec E$, $\\vec B$ so với nhau và so với phương truyền</td></tr><tr><td>\"từ không khí vào thuỷ tinh\"</td><td>Nhận định c</td><td>Đại lượng do nguồn quyết định ($f$, $T$) và đại lượng do môi trường quyết định ($v$, $\\lambda=\\dfrac{v}{f}$)</td></tr><tr><td>\"ánh sáng đỏ và ánh sáng tím … trong chân không\"</td><td>Nhận định d</td><td>Tốc độ sóng điện từ trong chân không và quan hệ $c=\\lambda f$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều nhận định</b> về sóng điện từ → xét từng ý: môi trường truyền, hướng $\\vec E$, $\\vec B$, đại lượng đổi hay không.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận định a",
+     "hoi": "Nhận định a) đúng hay sai?",
+     "lua_chon": [
+      {
+       "text": "Sai: sóng điện từ truyền được cả khi không có môi trường vật chất",
+       "dung": true
+      },
+      {
+       "text": "Đúng: sóng nào cũng phải có phần tử môi trường để dao động",
+       "dung": false,
+       "vi_sao": "Đó là sóng cơ. Sóng điện từ là điện từ trường biến thiên lan truyền nên đi được qua chân không."
+      },
+      {
+       "text": "Sai: sóng điện từ chỉ truyền được trong chất rắn",
+       "dung": false,
+       "vi_sao": "Sóng điện từ truyền được trong rắn, lỏng, khí và cả chân không."
+      }
+     ],
+     "loi_hay_gap": "Gán tính chất của sóng âm cho sóng điện từ."
+    },
+    {
+     "tieu_de": "Nhận định b",
+     "hoi": "Nhận định b) đúng hay sai?",
+     "lua_chon": [
+      {
+       "text": "Đúng: $\\vec E$, $\\vec B$ và phương truyền đôi một vuông góc",
+       "dung": true
+      },
+      {
+       "text": "Sai: $\\vec E$ và $\\vec B$ cùng phương nhưng ngược chiều",
+       "dung": false,
+       "vi_sao": "Hai vectơ vuông góc với nhau; \"cùng pha\" nói về thời điểm đạt cực đại, không nói về phương."
+      },
+      {
+       "text": "Sai: $\\vec B$ nằm dọc theo phương truyền",
+       "dung": false,
+       "vi_sao": "Nếu có thành phần dọc thì thành sóng dọc; sóng điện từ là sóng ngang."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng $\\vec E$ và $\\vec B$ cùng phương vì \"cùng pha\".",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét hướng của $\\vec E$, $\\vec B$ so với nhau và so với phương truyền",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\lambda=\\dfrac{c}{f}$ để kiểm tra",
+       "dung": false,
+       "vi_sao": "Nhận định này nói về hướng của các vectơ, không cần tính bước sóng."
+      },
+      {
+       "text": "Xét xem sóng có cần môi trường không",
+       "dung": false,
+       "vi_sao": "Đó là nội dung nhận định a; nhận định b nói về hướng của $\\vec E$, $\\vec B$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhận định c",
+     "hoi": "Nhận định c) đúng hay sai?",
+     "lua_chon": [
+      {
+       "text": "Sai: tần số giữ nguyên, còn tốc độ và bước sóng giảm",
+       "dung": true
+      },
+      {
+       "text": "Đúng: sóng vào thuỷ tinh thì tần số giảm",
+       "dung": false,
+       "vi_sao": "Tần số do nguồn quyết định nên không đổi khi sóng đổi môi trường."
+      },
+      {
+       "text": "Sai: tần số tăng, tốc độ không đổi",
+       "dung": false,
+       "vi_sao": "Tần số không đổi; tốc độ trong thuỷ tinh nhỏ hơn trong không khí."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng tần số đổi theo môi trường, hoặc tốc độ không đổi khi sóng đổi môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "Phân biệt đại lượng do nguồn quyết định ($f$) và do môi trường quyết định ($v$, $\\lambda$)",
+       "dung": true
+      },
+      {
+       "text": "Dùng $c=3\\cdot10^{8}$ m/s cho cả hai môi trường",
+       "dung": false,
+       "vi_sao": "$c$ là tốc độ trong chân không; trong thuỷ tinh sóng chậm hơn."
+      },
+      {
+       "text": "Xét xem $\\vec E$ có vuông góc $\\vec B$ không",
+       "dung": false,
+       "vi_sao": "Đó là nội dung nhận định b, không liên quan đến việc đổi môi trường."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhận định d",
+     "hoi": "Nhận định d) đúng hay sai?",
+     "lua_chon": [
+      {
+       "text": "Đúng: mọi sóng điện từ có cùng tốc độ $c$ trong chân không",
+       "dung": true
+      },
+      {
+       "text": "Sai: ánh sáng tím có $f$ lớn hơn nên nhanh hơn",
+       "dung": false,
+       "vi_sao": "$c=\\lambda f$ không đổi: $f$ lớn thì $\\lambda$ nhỏ đúng tỉ lệ, tốc độ vẫn là $c$."
+      },
+      {
+       "text": "Sai: ánh sáng đỏ có $\\lambda$ dài hơn nên nhanh hơn",
+       "dung": false,
+       "vi_sao": "Bước sóng dài đi với tần số nhỏ; tích $\\lambda f$ vẫn bằng $c$."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng tần số lớn thì truyền nhanh hơn trong chân không.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $c=\\lambda f$: tích $\\lambda f$ là hằng số trong chân không",
+       "dung": true
+      },
+      {
+       "text": "So tần số: tần số lớn hơn thì nhanh hơn",
+       "dung": false,
+       "vi_sao": "Tốc độ trong chân không không phụ thuộc tần số."
+      },
+      {
+       "text": "So khả năng đâm xuyên của hai ánh sáng",
+       "dung": false,
+       "vi_sao": "Đâm xuyên là tương tác với vật chất, không quyết định tốc độ truyền trong chân không."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Thời gian truyền tín hiệu và đo khoảng cách bằng ra-đa",
+   "topic": "Ứng dụng sóng điện từ trong truyền thông",
+   "problem_html": "<p>Một ra-đa phát xung sóng điện từ về phía một chiếc drone đang bay thẳng ra xa nó. Xung phản xạ thu lại sau $t_1=160\\ \\mu\\text{s}$ kể từ lúc phát. Sau $30\\ \\text{s}$, ra-đa đo lần hai và thu xung phản xạ sau $t_2=164\\ \\mu\\text{s}$. Coi sóng truyền trong không khí với tốc độ $c=3\\cdot10^{8}\\ \\text{m/s}$.</p><p>a) Tính khoảng cách từ ra-đa tới drone ở mỗi lần đo.</p><p>b) Tính tốc độ trung bình của drone.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Ra-đa phát xung tới drone, thu xung phản xạ; 30 giây sau drone đã ra xa hơn và ra-đa đo lần hai\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><path d=\"M52,112 Q70,128 52,144\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"50.0\" y1=\"128.0\" x2=\"36.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"36.0\" y1=\"120.0\" x2=\"36.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.5 0;1.9 0;3.2 0;4.5 0;5.9 0;7.2 0;8.5 0;9.9 0;11.2 0;12.5 0;13.9 0;15.2 0;16.5 0;17.9 0;19.2 0;20.5 0;21.9 0;23.2 0;24.5 0;25.9 0;27.2 0;28.5 0;29.9 0;31.2 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0;32.0 0\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"238\" y=\"124\" width=\"24\" height=\"9\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"228.0\" y1=\"119.0\" x2=\"246.0\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"254.0\" y1=\"119.0\" x2=\"272.0\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"237.0\" y1=\"119.0\" x2=\"237.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"263.0\" y1=\"119.0\" x2=\"263.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/></g><circle cx=\"52.0\" cy=\"128\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"52.0;62.0;72.0;82.0;92.0;102.0;112.0;122.0;132.0;142.0;152.0;162.0;172.0;182.0;192.0;202.0;212.0;222.0;232.0;242.0;248.0;238.0;228.0;218.0;208.0;198.0;188.0;178.0;168.0;158.0;148.0;138.0;128.0;118.0;108.0;98.0;88.0;78.0;68.0;58.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;52.0;56.0;66.0;76.0;86.0;96.0;106.0;116.0;126.0;136.0;146.0;156.0;166.0;176.0;186.0;196.0;206.0;216.0;226.0;236.0;246.0;256.0;266.0;276.0;278.0;268.0;258.0;248.0;238.0;228.0;218.0;208.0;198.0;188.0;178.0;168.0;158.0;148.0;138.0;128.0;118.0;108.0;98.0;88.0;78.0;68.0;58.0;48.0\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"52\" y1=\"172\" x2=\"250\" y2=\"172\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d40-g)\"/><line x1=\"250\" y1=\"172\" x2=\"52\" y2=\"172\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d40-g)\"/><text x=\"131.0\" y=\"190\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d₁ = ?</text><line x1=\"52\" y1=\"202\" x2=\"282\" y2=\"202\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d40-g)\"/><line x1=\"282\" y1=\"202\" x2=\"52\" y2=\"202\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d40-g)\"/><text x=\"147.0\" y=\"220\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d₂ = ?</text><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lần 1: t₁ = 160 μs</text><text x=\"30\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lần 2 (sau 30 s): t₂ = 164 μs</text><text x=\"250\" y=\"26\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = ?</text><text x=\"42\" y=\"102\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">ra-đa</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xung đi tới drone rồi về, lặp lại sau khi drone bay ra xa (chạy chậm; khoảng dịch của drone vẽ phóng đại).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ra-đa đo khoảng cách bằng thời gian sóng đi tới vật rồi phản xạ về.</li><li><strong>Định luật:</strong> sóng điện từ truyền thẳng đều với tốc độ $c$.</li><li>Quãng đường đi - về: $s=ct$ · tốc độ trung bình: $v=\\dfrac{\\Delta d}{\\Delta t}$</li><li>Đổi: $1\\ \\mu\\text{s}=10^{-6}$ s</li><li>⚠ <strong>Điều kiện:</strong> sóng đi thẳng tới vật rồi phản xạ về đúng đường cũ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Quãng đường sóng đi - về, lần 1</span></p><p>Đổi: $t_1=160\\ \\mu\\text{s}=1{,}6\\cdot10^{-4}\\ \\text{s}$.</p>$$s_1=ct_1=3\\cdot10^{8}\\cdot1{,}6\\cdot10^{-4}$$<div class=\"bt-ans\">$$s_1=4{,}8\\cdot10^{4}\\ \\text{m}=48\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khoảng cách lần 1</span></p><p>Sóng đi tới drone rồi quay về nên quãng đường gồm hai lần khoảng cách:</p>$$d_1=\\dfrac{s_1}{2}=\\dfrac{48}{2}$$<div class=\"bt-ans\">$$d_1=24\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khoảng cách lần 2</span></p><p>Làm tương tự với $t_2=164\\ \\mu\\text{s}=1{,}64\\cdot10^{-4}\\ \\text{s}$:</p>$$d_2=\\dfrac{ct_2}{2}=\\dfrac{3\\cdot10^{8}\\cdot1{,}64\\cdot10^{-4}}{2}$$<div class=\"bt-ans\">$$d_2=2{,}46\\cdot10^{4}\\ \\text{m}=24{,}6\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ trung bình của drone</span></p>$$\\Delta d=d_2-d_1=24{,}6-24=0{,}6\\ \\text{km}=600\\ \\text{m}$$<p>Thời gian giữa hai lần đo là $\\Delta t=30$ s:</p>$$v=\\dfrac{\\Delta d}{\\Delta t}=\\dfrac{600}{30}$$<div class=\"bt-ans\">$$v=20\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$20\\ \\text{m/s}=72\\ \\text{km/h}$: hợp lí với một chiếc drone ✓.</p><p>$t_2\\gt t_1$ nên $d_2\\gt d_1$: drone bay ra xa ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d_1=24\\ \\text{km}$ · $d_2=24{,}6\\ \\text{km}$</p><p>b) $v=20\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>thời gian từ lúc phát đến lúc thu</strong> sóng phản xạ → $d=\\dfrac{ct}{2}$; hai lần đo → $v=\\dfrac{\\Delta d}{\\Delta t}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 220\" role=\"img\" aria-label=\"Xung sóng đi từ ra-đa tới drone rồi phản xạ về; khoảng cách d khác quãng đường đi và về\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><path d=\"M52,112 Q70,128 52,144\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"50.0\" y1=\"128.0\" x2=\"36.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"36.0\" y1=\"120.0\" x2=\"36.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><rect x=\"238\" y=\"124\" width=\"24\" height=\"9\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"228.0\" y1=\"119.0\" x2=\"246.0\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"254.0\" y1=\"119.0\" x2=\"272.0\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"237.0\" y1=\"119.0\" x2=\"237.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"263.0\" y1=\"119.0\" x2=\"263.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"76\" y1=\"116\" x2=\"220\" y2=\"116\" stroke=\"#fb923c\" stroke-width=\"2.4\" marker-end=\"url(#d42-o)\"/><text x=\"143.0\" y=\"108\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đi</text><line x1=\"220\" y1=\"140\" x2=\"76\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"2.4\" marker-end=\"url(#d42-b)\"/><text x=\"143.0\" y=\"158\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">về</text><line x1=\"52\" y1=\"182\" x2=\"250\" y2=\"182\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"250\" y1=\"182\" x2=\"52\" y2=\"182\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"131.0\" y=\"200\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = ?</text><text x=\"30\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">s = c · t là quãng đường cả đi lẫn về</text><text x=\"30\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hai lần đo cách nhau Δt → tốc độ</text></svg><figcaption>Dữ kiện: phân biệt quãng đường sóng đi với khoảng cách tới vật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ra-đa phát xung … thu lại sau $t_1=160\\ \\mu\\text{s}$\"</td><td>$t_1=160\\ \\mu$s</td><td>Thời gian đi - về của sóng; đổi $\\mu$s ra s</td></tr><tr><td>\"tốc độ $c=3\\cdot10^{8}\\ \\text{m/s}$\"</td><td>$c$</td><td>⚠ Sóng truyền thẳng đều với tốc độ $c$: $s=ct$ là quãng đường sóng đi được</td></tr><tr><td>\"sau $30\\ \\text{s}$ … $t_2=164\\ \\mu\\text{s}$\"</td><td>$\\Delta t=30$ s; $t_2$</td><td>Mỗi lần đo cho một khoảng cách; tốc độ lấy từ hiệu hai khoảng cách</td></tr><tr><td>\"khoảng cách từ ra-đa tới drone ở mỗi lần đo\"</td><td>Cần $d_1$, $d_2$</td><td>Từ $s=ct$ và quan hệ giữa $s$ với $d$</td></tr><tr><td>\"tốc độ trung bình của drone\"</td><td>Cần $v$</td><td>$v=\\dfrac{\\Delta d}{\\Delta t}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thời gian từ lúc phát đến lúc thu</b> sóng phản xạ → khoảng cách $d=\\dfrac{ct}{2}$; hai lần đo → $v=\\dfrac{\\Delta d}{\\Delta t}$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Quãng đường sóng đi - về, lần 1",
+     "hoi": "Quãng đường sóng đi và về trong lần đo thứ nhất bằng bao nhiêu km?",
+     "dap_so": 48,
+     "sai_so": 0.5,
+     "don_vi": "km",
+     "loi_hay_gap": "Quên đổi μs ra s (thế $160$ thay cho $1{,}6\\cdot10^{-4}$) hoặc đổi sai luỹ thừa $10^{-6}$."
+    },
+    {
+     "tieu_de": "Khoảng cách lần 1",
+     "hoi": "Khoảng cách từ ra-đa tới drone lúc đo lần 1 bằng bao nhiêu km?",
+     "dap_so": 24,
+     "sai_so": 0.3,
+     "don_vi": "km",
+     "loi_hay_gap": "Lấy luôn quãng đường đi - về làm khoảng cách, quên rằng sóng đã đi tới vật rồi quay về.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia đôi quãng đường vì sóng đi tới vật rồi quay về",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d=ct$ vì sóng truyền với tốc độ $c$",
+       "dung": false,
+       "vi_sao": "$ct$ là quãng đường đi - về; khoảng cách tới vật chỉ bằng một nửa."
+      },
+      {
+       "text": "Nhân đôi quãng đường vì có hai chiều",
+       "dung": false,
+       "vi_sao": "Quãng đường đi - về đã gồm cả hai chiều; khoảng cách chỉ là một chiều nên phải chia đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách lần 2",
+     "hoi": "Khoảng cách lúc đo lần 2 bằng bao nhiêu km?",
+     "dap_so": 24.6,
+     "sai_so": 0.05,
+     "don_vi": "km",
+     "loi_hay_gap": "Dùng lại $t_1$, hoặc cộng thêm $\\Delta t$ vào $t_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Làm như lần 1 với $t_2$: $d_2=\\dfrac{ct_2}{2}$",
+       "dung": true
+      },
+      {
+       "text": "Cộng $30\\ \\text{s}$ vào $t_2$ rồi tính",
+       "dung": false,
+       "vi_sao": "$30\\ \\text{s}$ là khoảng giữa hai lần đo, không phải thời gian sóng đi - về."
+      },
+      {
+       "text": "$d_2=d_1+ct_2$",
+       "dung": false,
+       "vi_sao": "Mỗi lần đo cho khoảng cách tính từ ra-đa, không cộng dồn với lần trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ trung bình của drone",
+     "hoi": "Tốc độ trung bình của drone bằng bao nhiêu m/s?",
+     "dap_so": 20,
+     "sai_so": 0.3,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Lấy $\\Delta d$ theo km chia cho giây (ra $0{,}02$), hoặc chia cho $t_2-t_1$ thay vì $30$ s.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{d_2-d_1}{\\Delta t}$ với $\\Delta t=30$ s, $\\Delta d$ đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{d_2-d_1}{t_2-t_1}$",
+       "dung": false,
+       "vi_sao": "$t_2-t_1$ chỉ là hiệu thời gian sóng đi - về; thời gian drone bay là $30$ s giữa hai lần đo."
+      },
+      {
+       "text": "$v=\\dfrac{d_2}{t_2}$",
+       "dung": false,
+       "vi_sao": "Đó là $\\dfrac{c}{2}$, tốc độ liên quan đến sóng, không phải tốc độ của drone."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

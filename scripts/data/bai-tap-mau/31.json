@@ -1,0 +1,498 @@
+{
+ "lesson_id": 31,
+ "lesson_title": "Bài 12. Giao thoa sóng",
+ "generated_at": "2026-10-07",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo | kiem-code tự giải 9/10/2026: đáp số + buoc[] khớp, đã sửa các góp ý"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Xét điểm là cực đại hay cực tiểu giao thoa",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "problem_html": "<p>Trên mặt nước có hai nguồn A, B dao động cùng pha, cùng tần số $f=25\\ \\text{Hz}$, $AB=20\\ \\text{cm}$. Tốc độ truyền sóng trên mặt nước là $v=50\\ \\text{cm/s}$. Điểm M cách A $16\\ \\text{cm}$ và cách B $21\\ \\text{cm}$; điểm N cách A $18\\ \\text{cm}$ và cách B $24\\ \\text{cm}$.</p><ol type=\"a\"><li>M là cực đại hay cực tiểu giao thoa?</li><li>N là cực đại hay cực tiểu giao thoa?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hai nguồn A và B cùng pha phát sóng tròn trên mặt nước, hai điểm M và N nằm phía trên đoạn AB\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><defs><clipPath id=\"d10c\"><rect x=\"16\" y=\"14\" width=\"260\" height=\"182\"/></clipPath></defs><g clip-path=\"url(#d10c)\"><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;275.40\" keyTimes=\"0.0000;0.0000;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;257.40\" keyTimes=\"0.0000;0.0654;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;239.40\" keyTimes=\"0.0000;0.1307;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;221.40\" keyTimes=\"0.0000;0.1961;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;203.40\" keyTimes=\"0.0000;0.2614;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;185.40\" keyTimes=\"0.0000;0.3268;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;167.40\" keyTimes=\"0.0000;0.3922;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;149.40\" keyTimes=\"0.0000;0.4575;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;131.40\" keyTimes=\"0.0000;0.5229;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;113.40\" keyTimes=\"0.0000;0.5882;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;95.40\" keyTimes=\"0.0000;0.6536;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;77.40\" keyTimes=\"0.0000;0.7190;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;59.40\" keyTimes=\"0.0000;0.7843;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;41.40\" keyTimes=\"0.0000;0.8497;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;23.40\" keyTimes=\"0.0000;0.9150;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;5.40\" keyTimes=\"0.0000;0.9804;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;275.40\" keyTimes=\"0.0000;0.0000;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;257.40\" keyTimes=\"0.0000;0.0654;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;239.40\" keyTimes=\"0.0000;0.1307;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;221.40\" keyTimes=\"0.0000;0.1961;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;203.40\" keyTimes=\"0.0000;0.2614;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;185.40\" keyTimes=\"0.0000;0.3268;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;167.40\" keyTimes=\"0.0000;0.3922;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;149.40\" keyTimes=\"0.0000;0.4575;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;131.40\" keyTimes=\"0.0000;0.5229;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;113.40\" keyTimes=\"0.0000;0.5882;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;95.40\" keyTimes=\"0.0000;0.6536;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;77.40\" keyTimes=\"0.0000;0.7190;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;59.40\" keyTimes=\"0.0000;0.7843;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;41.40\" keyTimes=\"0.0000;0.8497;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;23.40\" keyTimes=\"0.0000;0.9150;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"196\" r=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.3\" opacity=\".55\"><animate attributeName=\"r\" values=\"0.00;0.00;5.40\" keyTimes=\"0.0000;0.9804;1.0000\" dur=\"3.06s\" begin=\"indefinite\" fill=\"freeze\"/></circle></g><line x1=\"50.0\" y1=\"196.0\" x2=\"230.0\" y2=\"196.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><circle cx=\"50.0\" cy=\"196.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"230.0\" cy=\"196.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"98.4\" cy=\"60.4\" r=\"5\" fill=\"#fb923c\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"83.3\" cy=\"37.5\" r=\"5\" fill=\"#34d399\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"50\" y=\"216\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"230.0\" y=\"216\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"107.4\" y=\"64.4\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"74.3\" y=\"41.5\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">N</text><line x1=\"50\" y1=\"228\" x2=\"230.0\" y2=\"228\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><line x1=\"230.0\" y1=\"228\" x2=\"50\" y2=\"228\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d10-b)\"/><text x=\"104.0\" y=\"246\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 20 cm</text><text x=\"286\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A, B cùng pha</text><text x=\"286\" y=\"68\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = 25 Hz</text><text x=\"286\" y=\"92\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 50 cm/s</text><text x=\"286\" y=\"132\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M, N là cực đại</text><text x=\"286\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hay cực tiểu?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sóng tròn lan ra từ hai nguồn (chạy chậm 5 lần), ảnh dừng lại là mặt nước lúc sóng đã lan xa. Chỉ vẽ nửa mặt nước phía trên AB.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> giao thoa, hai sóng gặp nhau tạo điểm mạnh và điểm yếu cố định.</li><li><strong>Định luật:</strong> hiệu đường đi $d_2-d_1$ quyết định hai sóng tới M cùng pha hay ngược pha.</li><li>Cực đại: $d_2-d_1=k\\lambda$ · Cực tiểu: $d_2-d_1=(k+\\tfrac12)\\lambda$ ($k$ nguyên)</li><li>Bước sóng: $\\lambda=\\dfrac{v}{f}$</li><li>⚠ <strong>Điều kiện:</strong> hai nguồn kết hợp và <strong>cùng pha</strong>.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng</span></p>$$\\lambda=\\dfrac{v}{f}=\\dfrac{50}{25}$$<div class=\"bt-ans\">$$\\lambda=2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điểm M</span></p><p>Hiệu đường đi:</p>$$d_2-d_1=21-16=5\\ \\text{cm}$$<p>Chia cho $\\lambda$:</p>$$\\dfrac{d_2-d_1}{\\lambda}=\\dfrac{5}{2}=2{,}5=2+\\tfrac12$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điểm N</span></p>$$d_2-d_1=24-18=6\\ \\text{cm}$$$$\\dfrac{d_2-d_1}{\\lambda}=\\dfrac{6}{2}=3$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kết luận</span></p><p>M: nguyên cộng $\\tfrac12$ nên hai sóng ngược pha.</p><p>N: số nguyên nên hai sóng cùng pha.</p><div class=\"bt-ans\"><p>M là <strong>cực tiểu</strong> ($k=2$); N là <strong>cực đại</strong> ($k=3$).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hiệu đường đi tính bằng cm là $5$ và $6$ đều nguyên, nhưng điều kiện nguyên hay nửa nguyên là theo $\\lambda$, nên phải chia cho $\\lambda$.</p><p>$\\dfrac{d_2-d_1}{\\lambda}$ không có đơn vị ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) M là cực tiểu ($k=2$)</p><p>b) N là cực đại ($k=3$)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai khoảng cách tới hai nguồn cùng pha</strong> và hỏi <strong>cực đại hay cực tiểu</strong> → lấy $d_2-d_1$ chia cho $\\lambda$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Hai tam giác MAB và NAB với khoảng cách từ M và N tới hai nguồn\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"30.0\" y1=\"160.0\" x2=\"140.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"160.0\" x2=\"59.6\" y2=\"77.1\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"140.0\" y1=\"160.0\" x2=\"59.6\" y2=\"77.1\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"30.0\" cy=\"160.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"140.0\" cy=\"160.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"59.6\" cy=\"77.1\" r=\"5\" fill=\"#fb923c\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"30\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"140.0\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"68.6\" y=\"73.1\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"39.8\" y=\"122.6\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">16 cm</text><text x=\"108.8\" y=\"122.6\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">21 cm</text><text x=\"85.0\" y=\"198\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">AB = 20 cm</text><line x1=\"250.0\" y1=\"160.0\" x2=\"360.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"250.0\" y1=\"160.0\" x2=\"270.4\" y2=\"63.1\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"160.0\" x2=\"270.4\" y2=\"63.1\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"250.0\" cy=\"160.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"360.0\" cy=\"160.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"270.4\" cy=\"63.1\" r=\"5\" fill=\"#34d399\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"250\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"360.0\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"279.4\" y=\"59.1\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><text x=\"255.2\" y=\"115.6\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">18 cm</text><text x=\"324.2\" y=\"115.6\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">24 cm</text><text x=\"305.0\" y=\"198\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">AB = 20 cm</text><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d₂ − d₁ = ?  rồi chia cho λ</text></svg><figcaption>Dữ kiện: đỏ là d₁ = khoảng cách tới A, xanh là d₂ = khoảng cách tới B. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai nguồn A, B dao động cùng pha\"</td><td>Độ lệch pha hai nguồn bằng 0</td><td>⚠ Điều kiện dùng $d_2-d_1=k\\lambda$ (cực đại) và $(k+\\tfrac12)\\lambda$ (cực tiểu)</td></tr><tr><td>\"$f=25$ Hz\" và \"$v=50$ cm/s\"</td><td>$f=25$ Hz; $v=50$ cm/s</td><td>Bước sóng $\\lambda=\\dfrac{v}{f}$</td></tr><tr><td>\"$AB=20$ cm\"</td><td>$AB=20$ cm</td><td>Không dùng để tính ở câu này</td></tr><tr><td>\"M cách A 16 cm và cách B 21 cm\"</td><td>$d_1=16$ cm; $d_2=21$ cm</td><td>Hiệu đường đi $d_2-d_1$</td></tr><tr><td>\"N cách A 18 cm và cách B 24 cm\"</td><td>$d_1=18$ cm; $d_2=24$ cm</td><td>Hiệu đường đi $d_2-d_1$</td></tr><tr><td>\"cực đại hay cực tiểu\"</td><td>Cần xét $\\dfrac{d_2-d_1}{\\lambda}$</td><td>Nguyên → cực đại; nguyên + ½ → cực tiểu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai nguồn cùng pha</b> hỏi <b>cực đại hay cực tiểu</b> → lấy $\\dfrac{d_2-d_1}{\\lambda}$: nguyên là cực đại, nguyên + ½ là cực tiểu.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu cm?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $\\lambda=\\dfrac{f}{v}$ (lật tỉ số) hoặc quên đơn vị cm/s của $v$."
+    },
+    {
+     "tieu_de": "Điểm M",
+     "hoi": "Tỉ số $\\dfrac{d_2-d_1}{\\lambda}$ của điểm M bằng bao nhiêu?",
+     "dap_so": 2.5,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Chia nhầm $d_2$ hoặc $d_1$ cho $\\lambda$ thay vì hiệu $d_2-d_1$; hoặc thấy hiệu đường đi là số nguyên (cm) rồi kết luận cực đại mà chưa chia cho $\\lambda$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu $d_2-d_1$ rồi chia cho $\\lambda$",
+       "dung": true
+      },
+      {
+       "text": "Lấy tổng $d_1+d_2$ rồi chia cho $\\lambda$",
+       "dung": false,
+       "vi_sao": "Điều kiện giao thoa dùng hiệu đường đi; tổng không cho biết hai sóng cùng pha hay ngược pha."
+      },
+      {
+       "text": "Chỉ xét hiệu $d_2-d_1$ là số nguyên hay không",
+       "dung": false,
+       "vi_sao": "Hiệu tính bằng cm, còn nguyên hay nửa nguyên là so với $\\lambda$; phải chia cho $\\lambda$ trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điểm N",
+     "hoi": "Tỉ số $\\dfrac{d_2-d_1}{\\lambda}$ của điểm N bằng bao nhiêu?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Lấy $d_2-d_1=24+18$ (cộng thay vì trừ)."
+    },
+    {
+     "tieu_de": "Kết luận",
+     "hoi": "M và N là cực đại hay cực tiểu?",
+     "lua_chon": [
+      {
+       "text": "M là cực tiểu, N là cực đại",
+       "dung": true
+      },
+      {
+       "text": "M là cực đại, N là cực tiểu",
+       "dung": false,
+       "vi_sao": "Tỉ số của M là nguyên cộng $\\tfrac12$ nên cực tiểu; tỉ số của N là số nguyên nên cực đại. Đảo lại là lẫn hai điều kiện."
+      },
+      {
+       "text": "Cả hai là cực đại vì hiệu đường đi tính bằng cm đều là số nguyên",
+       "dung": false,
+       "vi_sao": "Phải so với $\\lambda$: hiệu đường đi của M bằng nguyên lần $\\lambda$ cộng $\\tfrac12\\lambda$, không phải nguyên lần $\\lambda$."
+      }
+     ],
+     "loi_hay_gap": "Lẫn hai điều kiện: số nguyên mới là cực đại, nguyên cộng $\\tfrac12$ là cực tiểu."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Đếm số cực đại, cực tiểu trên đoạn AB",
+   "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
+   "problem_html": "<p>Trên mặt nước có hai nguồn kết hợp A, B dao động cùng pha, tần số $f=20\\ \\text{Hz}$, cách nhau $AB=12\\ \\text{cm}$. Tốc độ truyền sóng là $v=40\\ \\text{cm/s}$. Trên đoạn thẳng AB có bao nhiêu điểm:</p><ol type=\"a\"><li>dao động với biên độ cực đại?</li><li>đứng yên (cực tiểu)?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 182\" role=\"img\" aria-label=\"Đoạn AB giữa hai nguồn cùng pha, các điểm cực đại và cực tiểu xuất hiện xen kẽ, cách nhau một phần tư bước sóng\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"93.0\" y1=\"100.0\" x2=\"327.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.0600;0.1200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"192.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1240;0.1840;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"228.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1880;0.2480;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"174.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2520;0.3120;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"246.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3160;0.3760;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"156.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3800;0.4400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"264.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4440;0.5040;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"138.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5080;0.5680;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"282.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5720;0.6320;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"120.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6360;0.6960;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"300.0\" cy=\"100.0\" r=\"4.8\" fill=\"#38bdf8\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7000;0.7600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"102.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7640;0.8240;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"318.0\" cy=\"100.0\" r=\"4.8\" fill=\"#f87171\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.8280;0.8880;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"93.0\" cy=\"100.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"327.0\" cy=\"100.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"93\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"327.0\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"210.0\" y=\"128\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">trung điểm</text><line x1=\"210.0\" y1=\"76\" x2=\"246.0\" y2=\"76\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d20-g)\"/><line x1=\"246.0\" y1=\"76\" x2=\"210.0\" y2=\"76\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d20-g)\"/><text x=\"218.0\" y=\"66\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ/2</text><circle cx=\"34.0\" cy=\"24.0\" r=\"6\" fill=\"#f87171\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"46\" y=\"29\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cực đại</text><circle cx=\"150.0\" cy=\"24.0\" r=\"6\" fill=\"#38bdf8\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"162\" y=\"29\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cực tiểu</text><text x=\"210.0\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Hình mẫu AB = 3,25λ (số khác đề): 7 cực đại, 6 cực tiểu</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng hình mẫu với AB = 3,25λ (khác số của đề): các điểm cực đại, cực tiểu hiện lần lượt từ trung điểm ra hai bên. Vị trí tính từ hiệu đường đi.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên AB hai sóng truyền ngược chiều, cực đại và cực tiểu nằm xen kẽ.</li><li>Cực đại: $d_2-d_1=k\\lambda$ · Cực tiểu: $d_2-d_1=(k+\\tfrac12)\\lambda$</li><li>M trên AB nên $|d_2-d_1|\\lt AB$ (hiệu hai cạnh nhỏ hơn cạnh thứ ba)</li><li>Đếm: $-\\dfrac{AB}{\\lambda}\\lt k\\lt\\dfrac{AB}{\\lambda}$ (cực đại) · $-\\dfrac{AB}{\\lambda}-\\dfrac12\\lt k\\lt\\dfrac{AB}{\\lambda}-\\dfrac12$ (cực tiểu)</li><li>⚠ <strong>Điều kiện:</strong> hai nguồn cùng pha; $k$ nguyên; <strong>không lấy hai đầu A, B</strong>.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng</span></p>$$\\lambda=\\dfrac{v}{f}=\\dfrac{40}{20}$$<div class=\"bt-ans\">$$\\lambda=2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tỉ số $\\dfrac{AB}{\\lambda}$</span></p>$$\\dfrac{AB}{\\lambda}=\\dfrac{12}{2}$$<div class=\"bt-ans\">$$\\dfrac{AB}{\\lambda}=6$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số cực đại</span></p>$$-6\\lt k\\lt6$$<p>$k$ nguyên, bỏ $k=\\pm6$ (ứng với đúng hai nguồn A, B):</p>$$k=-5,-4,\\dots,4,5$$<div class=\"bt-ans\"><p>Có <strong>11 cực đại</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số cực tiểu</span></p>$$-6-\\dfrac12\\lt k\\lt6-\\dfrac12$$$$-6{,}5\\lt k\\lt5{,}5$$$$k=-6,-5,\\dots,4,5$$<div class=\"bt-ans\"><p>Có <strong>12 cực tiểu</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>11 cực đại có 10 khoảng, mỗi khoảng $\\dfrac{\\lambda}{2}=1\\ \\text{cm}$, tổng $10\\ \\text{cm}\\lt12\\ \\text{cm}$.</p><p>Mỗi đầu còn dư $1\\ \\text{cm}=\\dfrac{\\lambda}{2}$: cực đại kế tiếp trùng đúng nguồn A, B nên bị loại.</p><p>Giữa 11 cực đại có 10 cực tiểu, cộng 2 cực tiểu ở hai đầu: $10+2=12$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) 11 điểm cực đại</p><p>b) 12 điểm cực tiểu</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>số điểm cực đại, cực tiểu trên đoạn nối hai nguồn</strong> → tính $\\dfrac{AB}{\\lambda}$, đếm $k$ nguyên, bỏ hai đầu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Điểm M bất kì trên đoạn AB, hai đoạn d1 và d2 cộng lại bằng AB\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"98.0\" x2=\"300.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"40.0\" cy=\"98.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"140.0\" cy=\"98.0\" r=\"5\" fill=\"#fb923c\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"300.0\" cy=\"98.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"40\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"300\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"140\" y=\"80\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><line x1=\"40\" y1=\"120\" x2=\"140\" y2=\"120\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d22-r)\"/><line x1=\"140\" y1=\"120\" x2=\"40\" y2=\"120\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d22-r)\"/><text x=\"84.0\" y=\"138\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d₁</text><line x1=\"140\" y1=\"120\" x2=\"300\" y2=\"120\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><line x1=\"300\" y1=\"120\" x2=\"140\" y2=\"120\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><text x=\"214.0\" y=\"138\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d₂</text><line x1=\"40\" y1=\"52\" x2=\"300\" y2=\"52\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d22-g)\"/><line x1=\"300\" y1=\"52\" x2=\"40\" y2=\"52\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d22-g)\"/><text x=\"134.0\" y=\"42\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 12 cm</text><text x=\"40\" y=\"164\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M trên AB: d₁ + d₂ = AB, nên |d₂ − d₁| &lt; AB</text><text x=\"40\" y=\"184\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A, B là hai nguồn: không tính hai đầu</text></svg><figcaption>Dữ kiện: M nằm trên AB nên d₁ + d₂ = AB. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai nguồn kết hợp A, B dao động cùng pha\"</td><td>Độ lệch pha hai nguồn bằng 0</td><td>⚠ Điều kiện dùng $d_2-d_1=k\\lambda$ (cực đại), $(k+\\tfrac12)\\lambda$ (cực tiểu)</td></tr><tr><td>\"$f=20$ Hz\" và \"$v=40$ cm/s\"</td><td>$f=20$ Hz; $v=40$ cm/s</td><td>Bước sóng $\\lambda=\\dfrac{v}{f}$</td></tr><tr><td>\"$AB=12$ cm\"</td><td>$AB=12$ cm</td><td>Điểm trên AB: $|d_2-d_1|\\lt AB$ nên $|k|\\lt\\dfrac{AB}{\\lambda}$</td></tr><tr><td>\"trên đoạn thẳng AB\"</td><td>A, B là hai nguồn</td><td>⚠ Hai đầu A, B không phải điểm giao thoa: giữ dấu $\\lt$ chặt</td></tr><tr><td>\"bao nhiêu điểm … cực đại\"</td><td>Cần đếm số $k$ nguyên</td><td>$-\\dfrac{AB}{\\lambda}\\lt k\\lt\\dfrac{AB}{\\lambda}$</td></tr><tr><td>\"bao nhiêu điểm … cực tiểu\"</td><td>Cần đếm số $k$ nguyên</td><td>$-\\dfrac{AB}{\\lambda}-\\tfrac12\\lt k\\lt\\dfrac{AB}{\\lambda}-\\tfrac12$</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề hỏi <b>số điểm cực đại, cực tiểu trên AB</b> → tính $\\dfrac{AB}{\\lambda}$, đếm $k$ nguyên, <b>bỏ hai đầu</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu cm?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $\\lambda=\\dfrac{f}{v}$ (lật tỉ số)."
+    },
+    {
+     "tieu_de": "Tỉ số $\\dfrac{AB}{\\lambda}$",
+     "hoi": "Tỉ số $\\dfrac{AB}{\\lambda}$ bằng bao nhiêu?",
+     "dap_so": 6,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Lật tỉ số thành $\\dfrac{\\lambda}{AB}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\dfrac{AB}{\\lambda}$ để lập khoảng giá trị của $k$",
+       "dung": true
+      },
+      {
+       "text": "Tính $AB\\cdot\\lambda$",
+       "dung": false,
+       "vi_sao": "Khoảng của $k$ lập từ $\\dfrac{AB}{\\lambda}$, không phải tích."
+      },
+      {
+       "text": "Tính hiệu đường đi tại trung điểm",
+       "dung": false,
+       "vi_sao": "Trung điểm có $d_2-d_1=0$, không cho giới hạn của $k$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số cực đại",
+     "hoi": "Có bao nhiêu điểm cực đại trên đoạn AB?",
+     "dap_so": 11,
+     "sai_so": 0,
+     "don_vi": "điểm",
+     "loi_hay_gap": "Dùng dấu $\\le$, lấy cả $k=\\pm6$ ra 13 điểm; hai giá trị đó ứng với đúng vị trí hai nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $-\\dfrac{AB}{\\lambda}\\lt k\\lt\\dfrac{AB}{\\lambda}$, bỏ hai đầu (dấu $\\lt$ chặt)",
+       "dung": true
+      },
+      {
+       "text": "Giải $-\\dfrac{AB}{\\lambda}\\le k\\le\\dfrac{AB}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "A và B là chính các nguồn, không phải điểm giao thoa trên đoạn; khi $\\dfrac{AB}{\\lambda}$ nguyên thì $k=\\pm\\dfrac{AB}{\\lambda}$ rơi đúng A, B nên phải loại."
+      },
+      {
+       "text": "Lấy số cực đại bằng $\\dfrac{AB}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "Đó chỉ là số bước sóng nằm trên AB; các cực đại cách nhau $\\dfrac{\\lambda}{2}$ và nằm cả hai phía trung điểm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số cực tiểu",
+     "hoi": "Có bao nhiêu điểm cực tiểu trên đoạn AB?",
+     "dap_so": 12,
+     "sai_so": 0,
+     "don_vi": "điểm",
+     "loi_hay_gap": "Dùng lại khoảng của cực đại nên ra cùng số với cực đại; quên khoảng của $k$ lệch đi $\\tfrac12$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $-\\dfrac{AB}{\\lambda}-\\dfrac{1}{2}\\lt k\\lt\\dfrac{AB}{\\lambda}-\\dfrac{1}{2}$",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại $-\\dfrac{AB}{\\lambda}\\lt k\\lt\\dfrac{AB}{\\lambda}$ của cực đại",
+       "dung": false,
+       "vi_sao": "Cực tiểu có hiệu đường đi $(k+\\tfrac12)\\lambda$ nên khoảng của $k$ lệch đi $\\tfrac12$."
+      },
+      {
+       "text": "Số cực tiểu luôn bằng số cực đại",
+       "dung": false,
+       "vi_sao": "Hai khoảng của $k$ không trùng nhau nên số nguyên $k$ trong hai khoảng có thể khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Biết số dãy cực đại giữa M và trung trực, tìm bước sóng và tốc độ",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "problem_html": "<p>Trên mặt nước có hai nguồn A, B dao động cùng pha, cùng tần số $f=10\\ \\text{Hz}$, $AB=24\\ \\text{cm}$. Điểm M cách A $14\\ \\text{cm}$ và cách B $26\\ \\text{cm}$ dao động với biên độ cực đại. Giữa M và đường trung trực của AB còn có $3$ dãy cực đại khác (không kể đường trung trực).</p><ol type=\"a\"><li>M thuộc dãy cực đại bậc mấy?</li><li>Tính bước sóng.</li><li>Tính tốc độ truyền sóng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 268\" role=\"img\" aria-label=\"Các dãy cực đại dạng hypebol giữa hai nguồn cùng pha, đánh số bậc từ đường trung trực ra hai phía, điểm M nằm trên một dãy\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><path d=\"M200.0,214.0 L200.0,207.0 L200.0,200.0 L200.0,193.0 L200.0,186.0 L200.0,179.0 L200.0,172.0 L200.0,165.0 L200.0,158.0 L200.0,151.0 L200.0,144.0 L200.0,137.0 L200.0,130.0 L200.0,123.0 L200.0,116.0 L200.0,109.0 L200.0,102.0 L200.0,95.0 L200.0,88.0 L200.0,81.0 L200.0,74.0 L200.0,67.0 L200.0,60.0 L200.0,53.0 L200.0,46.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.0600;0.1800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M180.0,214.0 L180.0,207.0 L179.9,200.0 L179.8,193.0 L179.6,186.0 L179.4,179.0 L179.1,172.0 L178.8,165.0 L178.4,158.0 L178.0,151.0 L177.6,144.0 L177.1,137.0 L176.6,130.0 L176.1,123.0 L175.5,116.0 L174.9,109.0 L174.3,102.0 L173.6,95.0 L173.0,88.0 L172.3,81.0 L171.6,74.0 L170.8,67.0 L170.1,60.0 L169.3,53.0 L168.6,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2400;0.3600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M220.0,214.0 L220.0,207.0 L220.1,200.0 L220.2,193.0 L220.4,186.0 L220.6,179.0 L220.9,172.0 L221.2,165.0 L221.6,158.0 L222.0,151.0 L222.4,144.0 L222.9,137.0 L223.4,130.0 L223.9,123.0 L224.5,116.0 L225.1,109.0 L225.7,102.0 L226.4,95.0 L227.0,88.0 L227.7,81.0 L228.4,74.0 L229.2,67.0 L229.9,60.0 L230.7,53.0 L231.4,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2400;0.3600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M160.0,214.0 L159.9,207.0 L159.8,200.0 L159.5,193.0 L159.1,186.0 L158.7,179.0 L158.1,172.0 L157.4,165.0 L156.7,158.0 L155.8,151.0 L154.9,144.0 L153.9,137.0 L152.8,130.0 L151.7,123.0 L150.5,116.0 L149.2,109.0 L147.9,102.0 L146.5,95.0 L145.1,88.0 L143.7,81.0 L142.2,74.0 L140.7,67.0 L139.1,60.0 L137.5,53.0 L135.9,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4200;0.5400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M240.0,214.0 L240.1,207.0 L240.2,200.0 L240.5,193.0 L240.9,186.0 L241.3,179.0 L241.9,172.0 L242.6,165.0 L243.3,158.0 L244.2,151.0 L245.1,144.0 L246.1,137.0 L247.2,130.0 L248.3,123.0 L249.5,116.0 L250.8,109.0 L252.1,102.0 L253.5,95.0 L254.9,88.0 L256.3,81.0 L257.8,74.0 L259.3,67.0 L260.9,60.0 L262.5,53.0 L264.1,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4200;0.5400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M140.0,214.0 L139.9,207.0 L139.6,200.0 L139.2,193.0 L138.5,186.0 L137.7,179.0 L136.8,172.0 L135.7,165.0 L134.4,158.0 L133.0,151.0 L131.4,144.0 L129.8,137.0 L128.0,130.0 L126.1,123.0 L124.1,116.0 L122.0,109.0 L119.9,102.0 L117.6,95.0 L115.3,88.0 L112.9,81.0 L110.5,74.0 L108.0,67.0 L105.5,60.0 L102.9,53.0 L100.2,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6000;0.7200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M260.0,214.0 L260.1,207.0 L260.4,200.0 L260.8,193.0 L261.5,186.0 L262.3,179.0 L263.2,172.0 L264.3,165.0 L265.6,158.0 L267.0,151.0 L268.6,144.0 L270.2,137.0 L272.0,130.0 L273.9,123.0 L275.9,116.0 L278.0,109.0 L280.1,102.0 L282.4,95.0 L284.7,88.0 L287.1,81.0 L289.5,74.0 L292.0,67.0 L294.5,60.0 L297.1,53.0 L299.8,46.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\".28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6000;0.7200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><circle cx=\"120.5\" cy=\"104.0\" r=\"6\" fill=\"#fb923c\" opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7800;0.8800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"60.0\" y1=\"214.0\" x2=\"340.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><circle cx=\"60.0\" cy=\"214.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"340.0\" cy=\"214.0\" r=\"5\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"60.0\" y=\"234\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"340.0\" y=\"234\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"110.5\" y=\"108\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M</text><text x=\"200\" y=\"38\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">k = 0</text><text x=\"168.6\" y=\"38\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">k = 1</text><text x=\"135.9\" y=\"38\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">k = 2</text><text x=\"100.2\" y=\"38\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">k = 3</text><text x=\"200\" y=\"258\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Hình mẫu (số liệu khác đề): M ở một dãy cực đại</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng hình mẫu (số khác đề): các dãy cực đại tính từ d₂ − d₁ = kλ hiện lần lượt từ trung trực ra ngoài; M nằm trên dãy bậc 3.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> dãy cực đại bậc $k$ gồm các điểm có $d_2-d_1=k\\lambda$; đường trung trực là $k=0$.</li><li><strong>Định luật:</strong> hai nguồn cùng pha thì cực đại khi hai sóng tới M cùng pha.</li><li>Cực đại: $d_2-d_1=k\\lambda$ · tốc độ sóng: $v=\\lambda f$</li><li>Các dãy cực đại kế tiếp là $k=1,2,3,\\dots$ tính từ đường trung trực ra.</li><li>⚠ <strong>Điều kiện:</strong> hai nguồn cùng pha; điểm M tồn tại khi $|d_2-d_1|\\lt AB$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bậc của dãy cực đại qua M</span></p><p>Trung trực là $k=0$. Giữa M và trung trực còn 3 dãy: $k=1,2,3$.</p><p>Dãy qua M là dãy kế tiếp:</p><div class=\"bt-ans\">$$k=4$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hiệu đường đi</span></p>$$d_2-d_1=MB-MA=26-14$$<div class=\"bt-ans\">$$d_2-d_1=12\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Bước sóng</span></p><p>M là cực đại bậc $k$:</p>$$d_2-d_1=k\\lambda$$$$\\lambda=\\dfrac{d_2-d_1}{k}=\\dfrac{12}{4}$$<div class=\"bt-ans\">$$\\lambda=3\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ truyền sóng</span></p>$$v=\\lambda f=3\\cdot10$$<div class=\"bt-ans\">$$v=30\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$d_2-d_1=12\\ \\text{cm}\\lt AB=24\\ \\text{cm}$ nên M tồn tại.</p><p>$\\dfrac{AB}{\\lambda}=8\\gt k=4$ nên dãy bậc 4 cắt được đoạn AB.</p><p>Đơn vị: cm · Hz = cm/s ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $k=4$</p><p>b) $\\lambda=3\\ \\text{cm}$</p><p>c) $v=30\\ \\text{cm/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số dãy cực đại giữa M và trung trực</strong> → tính bậc, rồi dùng $d_2-d_1=k\\lambda$ để tìm $\\lambda$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Điểm M cách A 14 cm, cách B 26 cm, đường trung trực của AB vẽ nét đứt\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"190.0\" x2=\"256.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"190.0\" x2=\"58.0\" y2=\"65.3\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"256.0\" y1=\"190.0\" x2=\"58.0\" y2=\"65.3\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"148.0\" y1=\"190.0\" x2=\"148.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"0.8\"/><circle cx=\"40.0\" cy=\"190.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"256.0\" cy=\"190.0\" r=\"4\" fill=\"currentColor\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><circle cx=\"58.0\" cy=\"65.3\" r=\"5\" fill=\"#fb923c\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.2\"></circle><text x=\"40\" y=\"208\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"256.0\" y=\"208\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"49.0\" y=\"69.3\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M</text><text x=\"43.0\" y=\"131.6\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">14 cm</text><text x=\"179.0\" y=\"117.6\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">26 cm</text><text x=\"154.0\" y=\"46\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">trung trực (k = 0)</text><text x=\"148.0\" y=\"226\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">AB = 24 cm</text><text x=\"296\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Giữa M và trung trực</text><text x=\"296\" y=\"98\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">còn 3 dãy cực đại</text><text x=\"296\" y=\"130\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M thuộc bậc k = ?</text></svg><figcaption>Dữ kiện: M không nằm trên đoạn AB, gần A hơn nên d₂ − d₁ dương. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai nguồn A, B dao động cùng pha\"</td><td>Độ lệch pha hai nguồn bằng 0</td><td>⚠ Điều kiện dùng cực đại $d_2-d_1=k\\lambda$ ($k$ nguyên)</td></tr><tr><td>\"tần số $f=10$ Hz\"</td><td>$f=10$ Hz</td><td>$v=\\lambda f$</td></tr><tr><td>\"$AB=24$ cm\"</td><td>$AB=24$ cm</td><td>Kiểm tra M tồn tại: $|d_2-d_1|\\lt AB$</td></tr><tr><td>\"M cách A 14 cm và cách B 26 cm\"</td><td>$d_1=14$ cm; $d_2=26$ cm</td><td>Hiệu đường đi $d_2-d_1$</td></tr><tr><td>\"M dao động với biên độ cực đại\"</td><td>M nằm trên một dãy cực đại</td><td>$d_2-d_1=k\\lambda$, $k$ là bậc của dãy</td></tr><tr><td>\"giữa M và đường trung trực còn 3 dãy cực đại khác\"</td><td>3 dãy ở giữa; trung trực là $k=0$</td><td>Các dãy kế tiếp là $k=1,2,\\dots$ tính từ trung trực</td></tr><tr><td>\"M thuộc dãy cực đại bậc mấy?\"</td><td>Cần $k$</td><td>Đếm từ trung trực $k=0$ ra tới dãy qua M</td></tr><tr><td>\"tính bước sóng\" và \"tốc độ truyền sóng\"</td><td>Cần $\\lambda$, $v$</td><td>$\\lambda$ từ $d_2-d_1=k\\lambda$; $v=\\lambda f$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>còn n dãy cực đại giữa M và trung trực</b> → bậc của dãy qua M, rồi $d_2-d_1=k\\lambda$ để tìm $\\lambda$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bậc của dãy cực đại qua M",
+     "hoi": "Dãy cực đại qua M có bậc $k$ bằng bao nhiêu?",
+     "dap_so": 4,
+     "sai_so": 0,
+     "loi_hay_gap": "Đếm đủ 3 dãy ở giữa rồi dừng, quên chính dãy qua M; hoặc tính cả đường trung trực vào số dãy ở giữa."
+    },
+    {
+     "tieu_de": "Hiệu đường đi",
+     "hoi": "Hiệu đường đi $d_2-d_1$ của M bằng bao nhiêu cm?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d_2-d_1=AB$ hoặc cộng $14+26$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $d_2-d_1=MB-MA$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d_1+d_2$",
+       "dung": false,
+       "vi_sao": "Tổng hai đoạn không cho độ lệch pha; điều kiện cực đại dùng hiệu."
+      },
+      {
+       "text": "Lấy $d_2-d_1=AB$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi M thẳng hàng với A, B và nằm ngoài đoạn AB; M ở vị trí tổng quát thì $d_2-d_1\\lt AB$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu cm?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $\\lambda=d_2-d_1$ (chỉ đúng với dãy bậc 1) hoặc dùng $k+\\tfrac12$ của cực tiểu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\lambda=\\dfrac{d_2-d_1}{k}$ với $k$ là bậc của dãy cực đại",
+       "dung": true
+      },
+      {
+       "text": "$\\lambda=d_2-d_1$ vì M là cực đại",
+       "dung": false,
+       "vi_sao": "Chỉ đúng với dãy bậc 1; M ở bậc $k$ nên $d_2-d_1=k\\lambda$."
+      },
+      {
+       "text": "$\\lambda=\\dfrac{d_2-d_1}{k+\\tfrac12}$",
+       "dung": false,
+       "vi_sao": "Đó là điều kiện của cực tiểu; M là cực đại nên là $k\\lambda$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ truyền sóng",
+     "hoi": "Tốc độ truyền sóng $v$ bằng bao nhiêu cm/s?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Lấy $v=\\dfrac{\\lambda}{f}$ (ra đơn vị cm·s, không phải cm/s).",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\lambda f$",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{\\lambda}{f}$",
+       "dung": false,
+       "vi_sao": "Đơn vị ra cm·s, không phải cm/s; đúng là $v=\\lambda f$."
+      },
+      {
+       "text": "$v=\\dfrac{d_2-d_1}{f}$",
+       "dung": false,
+       "vi_sao": "Hiệu đường đi chưa phải bước sóng; phải qua $\\lambda=\\dfrac{d_2-d_1}{k}$ trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Khe Young: khoảng vân, bước sóng và vân sáng hay tối tại một điểm",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "problem_html": "<p>Trong thí nghiệm Young về giao thoa ánh sáng đơn sắc, hai khe cách nhau $a=0{,}8\\ \\text{mm}$, màn quan sát cách hai khe $D=1{,}6\\ \\text{m}$. Khoảng cách giữa $7$ vân sáng liên tiếp đo được là $6{,}0\\ \\text{mm}$. Điểm M và điểm N ở cùng một phía của vân trung tâm, cách vân trung tâm lần lượt $4{,}5\\ \\text{mm}$ và $7{,}0\\ \\text{mm}$.</p><ol type=\"a\"><li>Tính khoảng vân $i$ và bước sóng $\\lambda$ của ánh sáng.</li><li>M và N là vân sáng hay vân tối?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Chùm laser đi qua hai khe hẹp rồi tạo các vân sáng tối xen kẽ trên màn\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16.0\" y=\"100.0\" width=\"44.0\" height=\"20.0\" fill=\"none\" opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"></rect><line x1=\"60.0\" y1=\"110.0\" x2=\"150.0\" y2=\"110.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><polygon points=\"150,110 330,24 330,196\" fill=\"#f87171\" opacity=\".0\"><animate attributeName=\"opacity\" values=\"0.00;0.14\" keyTimes=\"0.0000;1.0000\" dur=\"1.00s\" begin=\"indefinite\" fill=\"freeze\"/></polygon><line x1=\"150.0\" y1=\"30.0\" x2=\"150.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"107.0\" x2=\"150.0\" y2=\"113.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"116.0\" x2=\"150.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"24.0\" x2=\"330.0\" y2=\"196.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"332.0\" y=\"106.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1905;0.2619;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"92.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2429;0.3143;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"120.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2952;0.3667;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"78.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3476;0.4190;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"134.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4000;0.4714;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"64.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4524;0.5238;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"148.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5048;0.5762;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"50.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5571;0.6286;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"162.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6095;0.6810;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"36.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6619;0.7333;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"176.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7143;0.7857;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"22.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7667;0.8381;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"332.0\" y=\"190.5\" width=\"22.0\" height=\"7.0\" fill=\"#f87171\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.8190;0.8905;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"16\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">laser</text><text x=\"16\" y=\"140\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ = ?</text><text x=\"150\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">hai khe  a = 0,8 mm</text><line x1=\"150\" y1=\"214\" x2=\"330\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d40-b)\"/><line x1=\"330\" y1=\"214\" x2=\"150\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d40-b)\"/><text x=\"206\" y=\"228\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">D = 1,6 m</text><text x=\"326\" y=\"14\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">màn</text><text x=\"326\" y=\"124\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">vân trung tâm</text><line x1=\"328.0\" y1=\"110.0\" x2=\"332.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"358\" y=\"59\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">vân sáng</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ánh sáng qua hai khe, các vân sáng hiện lần lượt từ vân trung tâm ra hai bên (vân vẽ theo i = λD/a của đề; khoảng cách a, D không vẽ đúng tỉ lệ).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai khe cho hai chùm kết hợp; trên màn có vân sáng, vân tối xen kẽ.</li><li><strong>Công thức:</strong> khoảng vân $i=\\dfrac{\\lambda D}{a}$</li><li>Vân sáng: $x=k\\,i$ · Vân tối: $x=(k+\\tfrac12)\\,i$ (đo từ vân trung tâm)</li><li>⚠ <strong>Điều kiện:</strong> ánh sáng đơn sắc (một hệ vân); $a$, $D$, $\\lambda$, $i$ đổi về cùng hệ đơn vị.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khoảng vân</span></p><p>$7$ vân sáng liên tiếp có $6$ khoảng vân:</p>$$i=\\dfrac{L}{n-1}=\\dfrac{6{,}0}{7-1}$$<div class=\"bt-ans\">$$i=1{,}0\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bước sóng</span></p><p>Từ $i=\\dfrac{\\lambda D}{a}$:</p>$$\\lambda=\\dfrac{ia}{D}=\\dfrac{1{,}0\\cdot10^{-3}\\cdot0{,}8\\cdot10^{-3}}{1{,}6}$$<div class=\"bt-ans\">$$\\lambda=5\\cdot10^{-7}\\ \\text{m}=0{,}5\\ \\mu\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí hai điểm so với khoảng vân</span></p>$$\\dfrac{x_M}{i}=\\dfrac{4{,}5}{1{,}0}=4{,}5=4+\\tfrac12$$$$\\dfrac{x_N}{i}=\\dfrac{7{,}0}{1{,}0}=7$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kết luận</span></p><p>M: nguyên cộng $\\tfrac12$ nên là vân tối.</p><p>N: số nguyên nên là vân sáng.</p><div class=\"bt-ans\"><p>M là <strong>vân tối</strong> ($k=4$); N là <strong>vân sáng bậc 7</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$\\lambda=0{,}5\\ \\mu\\text{m}$ nằm trong vùng ánh sáng nhìn thấy ($0{,}38$ đến $0{,}76\\ \\mu\\text{m}$) ✓</p><p>Chia cho $7$ thay vì $6$ sẽ ra $i\\approx0{,}86\\ \\text{mm}$ và $\\lambda\\approx0{,}43\\ \\mu\\text{m}$, vẫn nhìn thấy được nên chỉ kiểm vùng nhìn thấy chưa phát hiện được lỗi đếm khoảng vân.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=1{,}0\\ \\text{mm}$; $\\lambda=0{,}5\\ \\mu\\text{m}$</p><p>b) M là vân tối ($k=4$); N là vân sáng bậc 7</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>n vân sáng liên tiếp</strong> và <strong>điểm cách vân trung tâm</strong> → $i=\\dfrac{L}{n-1}$, rồi xét $\\dfrac{x}{i}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Hàng trên: bảy vân sáng liên tiếp, hàng dưới: vị trí hai điểm M và N đo từ vân trung tâm O\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"46.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"96.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"146.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"196.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"246.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"296.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><rect x=\"346.0\" y=\"36.0\" width=\"8.0\" height=\"30.0\" fill=\"#f87171\" opacity=\"1\"></rect><text x=\"50\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"50\" y1=\"84\" x2=\"350\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d42-b)\"/><line x1=\"350\" y1=\"84\" x2=\"50\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d42-b)\"/><text x=\"166.0\" y=\"102\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = 6,0 mm</text><text x=\"200.0\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">n vân liên tiếp → (n − 1) khoảng vân i</text><text x=\"75\" y=\"30\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i</text><line x1=\"50.0\" y1=\"168.0\" x2=\"386.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"50.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"50.0\" y=\"154\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"230.0\" y1=\"160.0\" x2=\"230.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"230.0\" y=\"154\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><line x1=\"330.0\" y1=\"160.0\" x2=\"330.0\" y2=\"176.0\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"330.0\" y=\"154\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><line x1=\"50\" y1=\"188\" x2=\"230.0\" y2=\"188\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d42-o)\"/><line x1=\"230.0\" y1=\"188\" x2=\"50\" y2=\"188\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d42-o)\"/><text x=\"104.0\" y=\"206\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">OM = 4,5 mm</text><line x1=\"50\" y1=\"216\" x2=\"330.0\" y2=\"216\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><line x1=\"330.0\" y1=\"216\" x2=\"50\" y2=\"216\" stroke=\"#34d399\" stroke-width=\"1.8\" marker-end=\"url(#d42-g)\"/><text x=\"154.0\" y=\"234\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ON = 7,0 mm</text></svg><figcaption>Dữ kiện: hàng trên cho L và số vân; hàng dưới cho OM, ON (hai hàng khác thang). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ánh sáng đơn sắc\"</td><td>Một bước sóng $\\lambda$, một hệ vân</td><td>⚠ Khoảng vân $i=\\dfrac{\\lambda D}{a}$ chỉ dùng cho một bức xạ</td></tr><tr><td>\"hai khe cách nhau $a=0{,}8$ mm\"</td><td>$a=0{,}8$ mm</td><td>$a$ là khoảng cách hai khe</td></tr><tr><td>\"màn cách hai khe $D=1{,}6$ m\"</td><td>$D=1{,}6$ m</td><td>$D$ là khoảng cách từ khe đến màn</td></tr><tr><td>\"khoảng cách giữa 7 vân sáng liên tiếp là 6,0 mm\"</td><td>$n=7$ vân; $L=6{,}0$ mm</td><td>⚠ $n$ vân sáng liên tiếp chỉ có $(n-1)$ khoảng vân $i$</td></tr><tr><td>\"M và N … cách vân trung tâm 4,5 mm và 7,0 mm\"</td><td>$x_M=4{,}5$ mm; $x_N=7{,}0$ mm</td><td>Vân sáng $x=k\\,i$; vân tối $x=(k+\\tfrac12)\\,i$</td></tr><tr><td>\"tính khoảng vân $i$ và bước sóng $\\lambda$\"</td><td>Cần $i$, $\\lambda$</td><td>$i$ từ $L$ và $n$; $\\lambda=\\dfrac{ia}{D}$</td></tr><tr><td>\"M và N là vân sáng hay vân tối?\"</td><td>Cần $\\dfrac{x}{i}$</td><td>Nguyên → vân sáng; nguyên + ½ → vân tối</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>n vân liên tiếp</b> và <b>điểm cách vân trung tâm</b> → $i=\\dfrac{L}{n-1}$, rồi xét $\\dfrac{x}{i}$ nguyên hay nửa nguyên.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khoảng vân",
+     "hoi": "Khoảng vân $i$ bằng bao nhiêu mm?",
+     "dap_so": 1,
+     "sai_so": 0.02,
+     "don_vi": "mm",
+     "loi_hay_gap": "Chia cho số vân (7) thay vì số khoảng vân; $n$ vân liên tiếp chỉ có $n-1$ khoảng."
+    },
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu $\\mu$m?",
+     "dap_so": 0.5,
+     "sai_so": 0.01,
+     "don_vi": "μm",
+     "loi_hay_gap": "Lật công thức thành $\\lambda=\\dfrac{iD}{a}$ hoặc quên đổi mm, m sang cùng đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $i=\\dfrac{\\lambda D}{a}$ suy ra $\\lambda=\\dfrac{ia}{D}$",
+       "dung": true
+      },
+      {
+       "text": "$\\lambda=\\dfrac{iD}{a}$",
+       "dung": false,
+       "vi_sao": "Lật tử mẫu: $\\lambda$ tỉ lệ thuận với $i$ và $a$, tỉ lệ nghịch với $D$."
+      },
+      {
+       "text": "$\\lambda=\\dfrac{aD}{i}$",
+       "dung": false,
+       "vi_sao": "Sai chiều phụ thuộc: $i$ tăng thì $\\lambda$ phải tăng, không giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí hai điểm so với khoảng vân",
+     "hoi": "Tỉ số $\\dfrac{x_M}{i}$ của điểm M bằng bao nhiêu?",
+     "dap_so": 4.5,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Chia vị trí cho $\\lambda$ hoặc cho $a$ thay vì khoảng vân $i$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia vị trí $x$ cho khoảng vân $i$ rồi xét nguyên hay nửa nguyên",
+       "dung": true
+      },
+      {
+       "text": "Chia $x$ cho $a$",
+       "dung": false,
+       "vi_sao": "$a$ là khoảng cách hai khe; vị trí vân tính theo khoảng vân $i$."
+      },
+      {
+       "text": "Chia $x$ cho $\\lambda$",
+       "dung": false,
+       "vi_sao": "Vân sáng, vân tối quyết định bởi $\\dfrac{x}{i}$; $\\lambda$ chỉ dùng để tính $i$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kết luận",
+     "hoi": "M và N là vân sáng hay vân tối?",
+     "lua_chon": [
+      {
+       "text": "M là vân tối, N là vân sáng bậc 7",
+       "dung": true
+      },
+      {
+       "text": "M là vân sáng, N là vân tối",
+       "dung": false,
+       "vi_sao": "Tỉ số của M là nguyên cộng $\\tfrac12$ nên vân tối; tỉ số của N là số nguyên nên vân sáng."
+      },
+      {
+       "text": "Cả hai là vân sáng vì cùng nằm một phía vân trung tâm",
+       "dung": false,
+       "vi_sao": "Vân sáng hay tối phụ thuộc $\\dfrac{x}{i}$, không phụ thuộc phía của điểm."
+      }
+     ],
+     "loi_hay_gap": "Thấy số lẻ ở M (4,5) mà vẫn gọi là vân sáng, hoặc gọi số nguyên là vân tối.",
+     "chon_buoc_ke": [
+      {
+       "text": "So tỉ số $\\dfrac{x}{i}$ với số nguyên và nửa nguyên",
+       "dung": true
+      },
+      {
+       "text": "So $x$ với $\\lambda$",
+       "dung": false,
+       "vi_sao": "$x$ đo bằng mm, $\\lambda$ bằng $\\mu$m: không so sánh trực tiếp được."
+      },
+      {
+       "text": "So $x$ với $D$",
+       "dung": false,
+       "vi_sao": "$D$ là khoảng cách tới màn, không quyết định vân sáng hay tối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Khe Young với hai bức xạ: vân sáng trùng nhau",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "problem_html": "<p>Trong thí nghiệm Young, hai khe cách nhau $a=1{,}2\\ \\text{mm}$, màn cách hai khe $D=2\\ \\text{m}$. Chiếu đồng thời hai bức xạ đơn sắc $\\lambda_1=0{,}60\\ \\mu\\text{m}$ và $\\lambda_2=0{,}45\\ \\mu\\text{m}$. Vân sáng trung tâm của hai bức xạ trùng nhau.</p><ol type=\"a\"><li>Tính khoảng vân $i_1$ và $i_2$.</li><li>Tìm khoảng cách từ vân trung tâm đến vân sáng gần nhất có màu giống vân trung tâm (vân sáng của hai bức xạ trùng nhau).</li><li>Giữa hai vân trùng liên tiếp có bao nhiêu vân sáng của riêng bức xạ $\\lambda_2$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai hệ vân sáng của hai bức xạ chồng lên nhau, có những vị trí hai vân sáng trùng nhau\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"57.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.0600;0.1100;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"79.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1133;0.1633;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"101.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1667;0.2167;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"123.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2200;0.2700;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"145.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2733;0.3233;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"167.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3267;0.3767;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"189.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3800;0.4300;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"211.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4333;0.4833;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"233.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4867;0.5367;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"255.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5400;0.5900;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"277.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5933;0.6433;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"299.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6467;0.6967;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"321.5\" y=\"50.0\" width=\"5.0\" height=\"28.0\" fill=\"#34d399\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"57.5\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.0600;0.1100;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"83.9\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1240;0.1740;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"110.3\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.1880;0.2380;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"136.7\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.2520;0.3020;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"163.1\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3160;0.3660;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"189.5\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.3800;0.4300;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"215.9\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.4440;0.4940;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"242.3\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5080;0.5580;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"268.7\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.5720;0.6220;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"295.1\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.6360;0.6860;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"321.5\" y=\"100.0\" width=\"5.0\" height=\"28.0\" fill=\"#fb923c\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"60.0\" y1=\"36\" x2=\"60.0\" y2=\"186\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\" opacity=\".15\"><animate attributeName=\"opacity\" values=\"0.15;0.15;1;1\" keyTimes=\"0.0000;0.7200;0.8200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><rect x=\"56.0\" y=\"150.0\" width=\"8.0\" height=\"28.0\" fill=\"currentColor\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7200;0.8200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"192.0\" y1=\"36\" x2=\"192.0\" y2=\"186\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\" opacity=\".15\"><animate attributeName=\"opacity\" values=\"0.15;0.15;1;1\" keyTimes=\"0.0000;0.7800;0.8800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><rect x=\"188.0\" y=\"150.0\" width=\"8.0\" height=\"28.0\" fill=\"currentColor\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.7800;0.8800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"324.0\" y1=\"36\" x2=\"324.0\" y2=\"186\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\" opacity=\".15\"><animate attributeName=\"opacity\" values=\"0.15;0.15;1;1\" keyTimes=\"0.0000;0.8400;0.9400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><rect x=\"320.0\" y=\"150.0\" width=\"8.0\" height=\"28.0\" fill=\"currentColor\" opacity=\"0.28\"><animate attributeName=\"opacity\" values=\"0.28;0.28;1;1\" keyTimes=\"0.0000;0.8400;0.9400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"16\" y=\"69\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₁</text><text x=\"16\" y=\"119\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₂</text><text x=\"16\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">trùng</text><text x=\"60.0\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><text x=\"250\" y=\"24\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Hình mẫu: λ₁ = 0,50 μm, λ₂ = 0,60 μm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng hình mẫu (số khác đề): hai hệ vân hiện từ vân trung tâm ra xa, vị trí trùng nhau đánh dấu ở hàng dưới cùng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai bức xạ cho hai hệ vân $i_1$, $i_2$ chồng lên nhau, cùng gốc ở vân trung tâm.</li><li><strong>Công thức:</strong> $i_1=\\dfrac{\\lambda_1D}{a}$ · $i_2=\\dfrac{\\lambda_2D}{a}$</li><li>Trùng nhau khi $k_1i_1=k_2i_2$, tức $k_1\\lambda_1=k_2\\lambda_2$</li><li>$\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{p}{q}$ (tối giản) nên $i_{tr}=p\\,i_1=q\\,i_2$</li><li>⚠ <strong>Điều kiện:</strong> hai bức xạ đơn sắc, vân trung tâm trùng nhau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khoảng vân của từng bức xạ</span></p>$$i_1=\\dfrac{\\lambda_1D}{a}=\\dfrac{0{,}60\\cdot10^{-6}\\cdot2}{1{,}2\\cdot10^{-3}}$$<div class=\"bt-ans\">$$i_1=1{,}0\\ \\text{mm}$$</div>$$i_2=\\dfrac{\\lambda_2D}{a}=\\dfrac{0{,}45\\cdot10^{-6}\\cdot2}{1{,}2\\cdot10^{-3}}$$<div class=\"bt-ans\">$$i_2=0{,}75\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điều kiện hai vân sáng trùng</span></p><p>Trùng khi cùng vị trí:</p>$$k_1i_1=k_2i_2$$$$\\dfrac{k_1}{k_2}=\\dfrac{i_2}{i_1}=\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{0{,}45}{0{,}60}=\\dfrac{3}{4}$$<p>Phân số tối giản, $k_1$ và $k_2$ nhỏ nhất khác $0$:</p><div class=\"bt-ans\">$$k_1=3\\ ;\\ k_2=4$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khoảng cách tới vân trùng gần nhất</span></p>$$i_{tr}=k_1i_1=3\\cdot1{,}0$$<div class=\"bt-ans\">$$i_{tr}=3{,}0\\ \\text{mm}$$</div><p>Kiểm tra bằng bức xạ thứ hai:</p>$$k_2i_2=4\\cdot0{,}75=3{,}0\\ \\text{mm}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vân sáng riêng giữa hai vân trùng</span></p><p>Hai vân trùng liên tiếp ứng với $k_2=0$ và $k_2=4$. Giữa hai vân đó:</p>$$k_2=1,2,3$$<div class=\"bt-ans\"><p>Có <strong>3 vân sáng</strong> của $\\lambda_2$ (và 2 vân sáng của $\\lambda_1$ với $k_1=1,2$).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Giữa $0$ và $3{,}0\\ \\text{mm}$: $\\lambda_1$ có vân ở $1{,}0$ và $2{,}0\\ \\text{mm}$; $\\lambda_2$ có vân ở $0{,}75$; $1{,}5$ và $2{,}25\\ \\text{mm}$.</p><p>Không vị trí nào trùng nhau, đúng với phân số $\\dfrac{3}{4}$ đã tối giản ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i_1=1{,}0\\ \\text{mm}$; $i_2=0{,}75\\ \\text{mm}$</p><p>b) $3{,}0\\ \\text{mm}$ ($k_1=3$, $k_2=4$)</p><p>c) 3 vân sáng của riêng $\\lambda_2$</p></div><p class=\"bt-note\">Nhận dạng: đề chiếu <strong>hai bức xạ cùng lúc</strong> và hỏi <strong>vân trùng</strong> → $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$ tối giản, $i_{tr}=p\\,i_1$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Hai hàng vân sáng của hai bức xạ cùng xuất phát từ vân trung tâm O, vị trí trùng gần nhất cần tìm\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"47.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"91.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"135.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"179.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"223.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"267.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"311.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"355.0\" y=\"40.0\" width=\"6.0\" height=\"26.0\" fill=\"#34d399\" opacity=\"1\"></rect><rect x=\"47.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"81.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"115.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"149.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"183.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"217.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"251.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"285.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"319.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><rect x=\"353.0\" y=\"84.0\" width=\"6.0\" height=\"26.0\" fill=\"#fb923c\" opacity=\"1\"></rect><line x1=\"50.0\" y1=\"30.0\" x2=\"50.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"50\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">O (trùng)</text><text x=\"16\" y=\"58\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₁</text><text x=\"16\" y=\"102\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">λ₂</text><text x=\"72\" y=\"36\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">i₁</text><text x=\"67\" y=\"126\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">i₂</text><line x1=\"50\" y1=\"146\" x2=\"150\" y2=\"146\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d52-r)\"/><line x1=\"150\" y1=\"146\" x2=\"50\" y2=\"146\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d52-r)\"/><text x=\"74\" y=\"164\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x = ?</text><text x=\"190\" y=\"152\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vân trùng: k₁·i₁ = k₂·i₂</text></svg><figcaption>Dữ kiện: hai hệ vân có khoảng vân i₁, i₂ khác nhau, cùng gốc O. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai khe cách nhau $a=1{,}2$ mm, màn cách hai khe $D=2$ m\"</td><td>$a=1{,}2$ mm; $D=2$ m</td><td>Mỗi bức xạ có $i=\\dfrac{\\lambda D}{a}$</td></tr><tr><td>\"đồng thời hai bức xạ $\\lambda_1=0{,}60\\ \\mu$m và $\\lambda_2=0{,}45\\ \\mu$m\"</td><td>$\\lambda_1$, $\\lambda_2$</td><td>⚠ Hai hệ vân chồng lên nhau, mỗi hệ có khoảng vân $i_1$, $i_2$ riêng</td></tr><tr><td>\"vân sáng trung tâm của hai bức xạ trùng nhau\"</td><td>Cùng gốc $x=0$</td><td>⚠ Cả hai hệ vân cùng tính từ vân trung tâm</td></tr><tr><td>\"tính khoảng vân $i_1$ và $i_2$\"</td><td>Cần $i_1$, $i_2$</td><td>$i_1=\\dfrac{\\lambda_1D}{a}$ · $i_2=\\dfrac{\\lambda_2D}{a}$</td></tr><tr><td>\"vân sáng gần nhất có màu giống vân trung tâm\"</td><td>Vân trùng: $k_1i_1=k_2i_2$</td><td>$\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{p}{q}$ (tối giản); $i_{tr}=p\\,i_1=q\\,i_2$</td></tr><tr><td>\"giữa hai vân trùng liên tiếp … vân sáng của riêng $\\lambda_2$\"</td><td>Hai vân trùng cách nhau $i_{tr}$</td><td>Đếm các bậc $k_2$ nằm giữa, không kể hai vân trùng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai bức xạ cùng lúc</b> và hỏi <b>vân trùng</b> → $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$ tối giản, $i_{tr}=p\\,i_1$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khoảng vân của từng bức xạ",
+     "hoi": "Khoảng vân $i_2$ của bức xạ $\\lambda_2$ bằng bao nhiêu mm?",
+     "dap_so": 0.75,
+     "sai_so": 0.01,
+     "don_vi": "mm",
+     "loi_hay_gap": "Đổi sai đơn vị ($\\mu$m sang m, mm sang m) nên lệch lũy thừa 10."
+    },
+    {
+     "tieu_de": "Điều kiện hai vân sáng trùng",
+     "hoi": "Giá trị nhỏ nhất khác $0$ của $k_1$ để hai vân sáng trùng nhau là bao nhiêu?",
+     "dap_so": 3,
+     "sai_so": 0,
+     "loi_hay_gap": "Lật tỉ số thành $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_1}{\\lambda_2}$ (ra $k_1=4$), hoặc không rút gọn phân số.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vân trùng khi $k_1i_1=k_2i_2$ nên $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$, rồi rút gọn",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_1}{\\lambda_2}$",
+       "dung": false,
+       "vi_sao": "Lật tỉ số: từ $k_1\\lambda_1=k_2\\lambda_2$ suy ra $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$; bước sóng nhỏ hơn thì cần bậc cao hơn."
+      },
+      {
+       "text": "Khoảng vân trùng bằng $i_1+i_2$",
+       "dung": false,
+       "vi_sao": "Hai hệ vân lặp lại theo bội của từng khoảng vân; chỗ trùng là bội chung, không phải tổng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách tới vân trùng gần nhất",
+     "hoi": "Khoảng cách từ vân trung tâm đến vân trùng gần nhất bằng bao nhiêu mm?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "mm",
+     "loi_hay_gap": "Lấy $i_{tr}=k_2i_1$ (nhân nhầm bậc) hoặc lấy trung bình cộng của $i_1$, $i_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$i_{tr}=p\\,i_1=q\\,i_2$ với $\\dfrac{p}{q}$ là phân số tối giản",
+       "dung": true
+      },
+      {
+       "text": "$i_{tr}=\\dfrac{i_1+i_2}{2}$",
+       "dung": false,
+       "vi_sao": "Vân trùng ứng với $k$ nguyên của cả hai bức xạ; trung bình cộng không đảm bảo điều đó."
+      },
+      {
+       "text": "Lấy vân sáng bậc 1 của bức xạ thứ hai",
+       "dung": false,
+       "vi_sao": "Vân bậc 1 của bức xạ thứ hai không nằm đúng trên vân sáng nào của bức xạ thứ nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vân sáng riêng giữa hai vân trùng",
+     "hoi": "Giữa hai vân trùng liên tiếp có bao nhiêu vân sáng của riêng $\\lambda_2$?",
+     "dap_so": 3,
+     "sai_so": 0,
+     "don_vi": "vân",
+     "loi_hay_gap": "Đếm cả vân trùng ở hai đầu (ra 4 hoặc 5), hoặc lấy số khoảng vân thay vì số vân nằm giữa.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đếm các bậc $k_2=1,2,\\dots,q-1$ nằm giữa hai vân trùng",
+       "dung": true
+      },
+      {
+       "text": "Đếm cả bậc $k_2=q$",
+       "dung": false,
+       "vi_sao": "Bậc $q$ của $\\lambda_2$ trùng với vân sáng của $\\lambda_1$: đó là vân trùng, không phải vân riêng."
+      },
+      {
+       "text": "Lấy $\\dfrac{i_{tr}}{i_2}$ làm số vân",
+       "dung": false,
+       "vi_sao": "Tỉ số cho số khoảng vân; số vân nằm giữa ít hơn số khoảng một đơn vị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 1.</strong> Trong thí nghiệm về giao thoa sóng nước, tốc độ truyền sóng trên mặt nước là 1,5 m/s, cần rung có tần số 40 Hz. Khoảng cách giữa hai điểm cực đại giao thoa cạnh nhau trên đoạn thẳng $S_1S_2$ là bao nhiêu?</p>\n<details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Bước sóng $\\lambda=\\dfrac{v}{f}=\\dfrac{1,5}{40}=0,0375$ m. Hai cực đại cạnh nhau cách nhau $\\dfrac{\\lambda}{2}=0,01875$ m $\\approx 1,88$ cm.</p>\n</details><h4>Bài 2 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 2.</strong> Trong thí nghiệm Young, $a=2$ mm, $D=1$ m. Dùng bức xạ đơn sắc bước sóng $\\lambda$ chiếu vào hai khe, đo được khoảng vân $i=0,2$ mm. Tính tần số của bức xạ.</p>\n<details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> $\\lambda=\\dfrac{ai}{D}=\\dfrac{2.10^{-3}.0,2.10^{-3}}{1}=0,4.10^{-6}$ m $=0,4\\ \\mu m$. $f=\\dfrac{c}{\\lambda}=\\dfrac{3.10^{8}}{0,4.10^{-6}}=7,5.10^{14}$ Hz.</p>\n</details><h4>Bài 3 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 3.</strong> Hai khe Young chiếu bằng ánh sáng đơn sắc $\\lambda=0,6\\ \\mu m$. Khoảng cách hai khe 1 mm, khoảng cách từ hai khe đến màn 2,5 m, bề rộng miền giao thoa 1,25 cm. Tính tổng số vân sáng và vân tối trong miền giao thoa.</p>\n<details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> $i=\\dfrac{\\lambda D}{a}=1,5$ mm. $N=\\dfrac{L}{2i}=\\dfrac{12,5}{3}\\approx 4,2$. Số vân sáng $N_s=2.4+1=9$; số vân tối $N_t=2.4=8$ (phần thập phân của N nhỏ hơn 0,5). Tổng cộng $N_s+N_t=17$ vân.</p>\n</details>"
+ }
+}

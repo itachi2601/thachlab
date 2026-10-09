@@ -1,0 +1,653 @@
+{
+ "lesson_id": 27,
+ "lesson_title": "Bài 8. Mô tả sóng",
+ "generated_at": "2026-10-09",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo | kiem-code tự giải 9/10/2026: đáp số+buoc[] khớp, đã sửa góp ý"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Đếm ngọn sóng: tìm chu kì, tần số và tốc độ truyền sóng",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "problem_html": "<p>Một chiếc phao nổi trên mặt hồ. Sóng lan truyền trên mặt hồ; người quan sát đếm được phao nhô lên $9$ lần (tính từ lần nhô lên đầu tiên đến lần thứ chín) trong khoảng thời gian $20\\ \\text{s}$, và đo được khoảng cách giữa hai ngọn sóng liên tiếp là $4{,}5\\ \\text{m}$.</p><ol type=\"a\"><li>Tính chu kì và tần số của sóng.</li><li>Tính tốc độ truyền sóng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Sóng chạy trên mặt hồ, chiếc phao chỉ nhô lên hạ xuống tại chỗ\"><defs><marker id=\"w27a0-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27a0-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27a0-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27a0-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"98.0\" x2=\"404.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><clipPath id=\"cpw27a\"><rect x=\"16\" y=\"24\" width=\"388\" height=\"150\"></rect></clipPath><g clip-path=\"url(#cpw27a)\"><g><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" points=\"-74.0,84.6 -70.0,79.6 -66.0,76.1 -62.0,74.2 -58.0,74.2 -54.0,76.1 -50.0,79.6 -46.0,84.6 -42.0,90.6 -38.0,97.2 -34.0,103.8 -30.0,110.0 -26.0,115.3 -22.0,119.2 -18.0,121.5 -14.0,121.9 -10.0,120.6 -6.0,117.4 -2.0,112.8 2.0,107.0 6.0,100.5 10.0,93.8 14.0,87.5 18.0,81.9 22.0,77.6 26.0,74.9 30.0,74.0 34.0,74.9 38.0,77.6 42.0,81.9 46.0,87.5 50.0,93.8 54.0,100.5 58.0,107.0 62.0,112.8 66.0,117.4 70.0,120.6 74.0,121.9 78.0,121.5 82.0,119.2 86.0,115.3 90.0,110.0 94.0,103.8 98.0,97.2 102.0,90.6 106.0,84.6 110.0,79.6 114.0,76.1 118.0,74.2 122.0,74.2 126.0,76.1 130.0,79.6 134.0,84.6 138.0,90.6 142.0,97.2 146.0,103.8 150.0,110.0 154.0,115.3 158.0,119.2 162.0,121.5 166.0,121.9 170.0,120.6 174.0,117.4 178.0,112.8 182.0,107.0 186.0,100.5 190.0,93.8 194.0,87.5 198.0,81.9 202.0,77.6 206.0,74.9 210.0,74.0 214.0,74.9 218.0,77.6 222.0,81.9 226.0,87.5 230.0,93.8 234.0,100.5 238.0,107.0 242.0,112.8 246.0,117.4 250.0,120.6 254.0,121.9 258.0,121.5 262.0,119.2 266.0,115.3 270.0,110.0 274.0,103.8 278.0,97.2 282.0,90.6 286.0,84.6 290.0,79.6 294.0,76.1 298.0,74.2 302.0,74.2 306.0,76.1 310.0,79.6 314.0,84.6 318.0,90.6 322.0,97.2 326.0,103.8 330.0,110.0 334.0,115.3 338.0,119.2 342.0,121.5 346.0,121.9 350.0,120.6 354.0,117.4 358.0,112.8 362.0,107.0 366.0,100.5 370.0,93.8 374.0,87.5 378.0,81.9 382.0,77.6 386.0,74.9 390.0,74.0 394.0,74.9 398.0,77.6 402.0,81.9\"/><animateTransform attributeName=\"transform\" type=\"translate\" from=\"0 0\" to=\"90.0 0\" dur=\"1.25s\" repeatCount=\"8\" begin=\"indefinite\" fill=\"freeze\"/></g></g><circle cx=\"210.0\" cy=\"74.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"74.0;74.8;77.2;81.0;86.0;91.8;98.0;104.2;110.0;115.0;118.8;121.2;122.0;121.2;118.8;115.0;110.0;104.2;98.0;91.8;86.0;81.0;77.2;74.8;74.0\" dur=\"1.25s\" repeatCount=\"8\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"210\" y=\"58\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">phao</text><line x1=\"20\" y1=\"30\" x2=\"70\" y2=\"30\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#w27a0-b)\"/><text x=\"76\" y=\"35\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">sóng truyền</text><text x=\"404\" y=\"35\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">T = ?    v = ?</text><text x=\"16\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Hai ngọn sóng liên tiếp cách nhau 4,5 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sóng chạy sang phải, phao chỉ nhô lên hạ xuống tại chỗ; chạy nhanh 2 lần (10 s thay cho 20 s). Sóng tính theo công thức.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chu kì $T$ là thời gian một dao động toàn phần; bước sóng $\\lambda$ là khoảng cách hai ngọn sóng liên tiếp.</li><li><strong>Công thức:</strong> $f=\\dfrac{1}{T}$ · $v=\\dfrac{\\lambda}{T}=\\lambda f$.</li><li>⚠ <strong>Điều kiện đếm:</strong> $n$ lần nhô lên (từ lần đầu đến lần cuối) chỉ có $(n-1)$ chu kì.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chu kì</span></p><p>Phao nhô lên $9$ lần nên có $9-1=8$ chu kì trong $20$ s:</p>$$T=\\dfrac{\\Delta t}{n-1}=\\dfrac{20}{8}$$<div class=\"bt-ans\">$$T=2{,}5\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tần số</span></p>$$f=\\dfrac{1}{T}=\\dfrac{1}{2{,}5}$$<div class=\"bt-ans\">$$f=0{,}4\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ truyền sóng</span></p><p>Hai ngọn sóng liên tiếp cách nhau một bước sóng: $\\lambda=4{,}5$ m.</p>$$v=\\dfrac{\\lambda}{T}=\\dfrac{4{,}5}{2{,}5}$$<div class=\"bt-ans\">$$v=1{,}8\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cách khác: $v=\\lambda f=4{,}5\\cdot0{,}4=1{,}8$ m/s ✓</p><p>Trong $20$ s sóng đi được $1{,}8\\cdot20=36$ m; phao chỉ nhô lên hạ xuống tại chỗ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=2{,}5\\ \\text{s}$ · $f=0{,}4\\ \\text{Hz}$</p><p>b) $v=1{,}8\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số lần nhô lên</strong> trong một khoảng thời gian → có $(n-1)$ chu kì, rồi $v=\\dfrac{\\lambda}{T}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Hai ngọn sóng liên tiếp cách nhau một bước sóng, chín lần nhô lên ứng với tám chu kì\"><defs><marker id=\"w27a2-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27a2-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27a2-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27a2-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"98.0\" x2=\"404.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"-74.0,84.6 -70.0,79.6 -66.0,76.1 -62.0,74.2 -58.0,74.2 -54.0,76.1 -50.0,79.6 -46.0,84.6 -42.0,90.6 -38.0,97.2 -34.0,103.8 -30.0,110.0 -26.0,115.3 -22.0,119.2 -18.0,121.5 -14.0,121.9 -10.0,120.6 -6.0,117.4 -2.0,112.8 2.0,107.0 6.0,100.5 10.0,93.8 14.0,87.5 18.0,81.9 22.0,77.6 26.0,74.9 30.0,74.0 34.0,74.9 38.0,77.6 42.0,81.9 46.0,87.5 50.0,93.8 54.0,100.5 58.0,107.0 62.0,112.8 66.0,117.4 70.0,120.6 74.0,121.9 78.0,121.5 82.0,119.2 86.0,115.3 90.0,110.0 94.0,103.8 98.0,97.2 102.0,90.6 106.0,84.6 110.0,79.6 114.0,76.1 118.0,74.2 122.0,74.2 126.0,76.1 130.0,79.6 134.0,84.6 138.0,90.6 142.0,97.2 146.0,103.8 150.0,110.0 154.0,115.3 158.0,119.2 162.0,121.5 166.0,121.9 170.0,120.6 174.0,117.4 178.0,112.8 182.0,107.0 186.0,100.5 190.0,93.8 194.0,87.5 198.0,81.9 202.0,77.6 206.0,74.9 210.0,74.0 214.0,74.9 218.0,77.6 222.0,81.9 226.0,87.5 230.0,93.8 234.0,100.5 238.0,107.0 242.0,112.8 246.0,117.4 250.0,120.6 254.0,121.9 258.0,121.5 262.0,119.2 266.0,115.3 270.0,110.0 274.0,103.8 278.0,97.2 282.0,90.6 286.0,84.6 290.0,79.6 294.0,76.1 298.0,74.2 302.0,74.2 306.0,76.1 310.0,79.6 314.0,84.6 318.0,90.6 322.0,97.2 326.0,103.8 330.0,110.0 334.0,115.3 338.0,119.2 342.0,121.5 346.0,121.9 350.0,120.6 354.0,117.4 358.0,112.8 362.0,107.0 366.0,100.5 370.0,93.8 374.0,87.5 378.0,81.9 382.0,77.6 386.0,74.9 390.0,74.0 394.0,74.9 398.0,77.6 402.0,81.9\"/><circle cx=\"210.0\" cy=\"74.0\" r=\"5.5\" fill=\"#fb923c\"/><text x=\"198\" y=\"70\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">phao</text><circle cx=\"300.0\" cy=\"74.0\" r=\"4\" fill=\"#34d399\"/><line x1=\"210\" y1=\"52\" x2=\"300\" y2=\"52\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27a2-b)\"/><line x1=\"300\" y1=\"52\" x2=\"210\" y2=\"52\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27a2-b)\"/><text x=\"255.0\" y=\"44\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">λ = 4,5 m</text><text x=\"16\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">9 lần nhô lên → 8 chu kì (không phải 9)</text><text x=\"16\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Δt = 20 s ứng với 8 chu kì</text></svg><figcaption>Dữ kiện: bước sóng và số chu kì. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"nhô lên $9$ lần … trong $20$ s\"</td><td>$n=9$ lần nhô lên; $\\Delta t=20$ s</td><td>⚠ Đếm từ lần đầu đến lần cuối: $n$ lần nhô lên chỉ có $(n-1)$ chu kì</td></tr><tr><td>\"khoảng cách giữa hai ngọn sóng liên tiếp là $4{,}5$ m\"</td><td>$\\lambda=4{,}5$ m</td><td>Bước sóng = khoảng cách hai ngọn sóng liên tiếp</td></tr><tr><td>\"chu kì và tần số\"</td><td>Cần $T$, $f$</td><td>$T=\\dfrac{\\Delta t}{n-1}$; $f=\\dfrac{1}{T}$</td></tr><tr><td>\"tốc độ truyền sóng\"</td><td>Cần $v$</td><td>$v=\\dfrac{\\lambda}{T}=\\lambda f$ (sóng đi một bước sóng trong một chu kì)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>phao nhô lên n lần trong t giây</b> → có $(n-1)$ chu kì; rồi $v=\\dfrac{\\lambda}{T}$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ của sóng bằng bao nhiêu?",
+     "dap_so": 2.5,
+     "sai_so": 0.05,
+     "don_vi": "s",
+     "loi_hay_gap": "Chia $20$ s cho số lần nhô lên: $9$ lần từ lần đầu đến lần cuối chỉ có $8$ khoảng, tức $8$ chu kì."
+    },
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ của sóng bằng bao nhiêu?",
+     "dap_so": 0.4,
+     "sai_so": 0.01,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Lấy $f=T$: hai đại lượng này nghịch đảo nhau, $f=\\dfrac{1}{T}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$f=\\dfrac{1}{T}$",
+       "dung": true
+      },
+      {
+       "text": "$f=T$",
+       "dung": false,
+       "vi_sao": "Tần số (Hz) và chu kì (s) là hai đại lượng nghịch đảo, không bằng nhau."
+      },
+      {
+       "text": "$f=\\dfrac{n}{\\Delta t}$ với $n=9$",
+       "dung": false,
+       "vi_sao": "Số lần nhô lên là $9$ nhưng chỉ có $8$ chu kì: phải dùng $\\dfrac{n-1}{\\Delta t}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ truyền sóng",
+     "hoi": "Tốc độ truyền sóng $v$ bằng bao nhiêu?",
+     "dap_so": 1.8,
+     "sai_so": 0.02,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhân $\\lambda$ với $T$ thay vì chia, hoặc lấy $\\lambda$ chia cho cả $20$ s.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{\\lambda}{T}$ (sóng đi một bước sóng trong một chu kì)",
+       "dung": true
+      },
+      {
+       "text": "$v=\\lambda\\cdot T$",
+       "dung": false,
+       "vi_sao": "Nhân cho đơn vị m·s, không phải m/s; sóng đi $\\lambda$ trong thời gian $T$ nên phải chia."
+      },
+      {
+       "text": "$v=\\dfrac{\\lambda}{20}$ (chia cho cả khoảng thời gian đếm)",
+       "dung": false,
+       "vi_sao": "$20$ s là thời gian của $8$ chu kì, không phải của một bước sóng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Hai điểm trên phương truyền: độ lệch pha và khoảng cách",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "problem_html": "<p>Sóng ngang truyền trên một sợi dây dài, theo chiều từ M đến N, với tốc độ $v=1{,}2\\ \\text{m/s}$ và tần số $f=20\\ \\text{Hz}$. Hai điểm M, N trên dây cách nhau $10{,}5\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính bước sóng.</li><li>Tính độ lệch pha giữa dao động của M và N. M và N dao động cùng pha, ngược pha hay vuông pha?</li><li>Điểm P trên dây, gần M nhất và dao động ngược pha với M, cách M bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Sóng ngang chạy trên dây, năm phần tử dây dao động tại chỗ với pha lệch dần\"><defs><marker id=\"w27b0-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27b0-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27b0-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27b0-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"98.0\" x2=\"404.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><clipPath id=\"cpw27b\"><rect x=\"16\" y=\"24\" width=\"388\" height=\"150\"></rect></clipPath><g clip-path=\"url(#cpw27b)\"><g><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" points=\"-80.0,82.2 -76.0,77.4 -72.0,74.0 -68.0,72.2 -64.0,72.2 -60.0,74.0 -56.0,77.4 -52.0,82.2 -48.0,88.1 -44.0,94.6 -40.0,101.4 -36.0,107.9 -32.0,113.8 -28.0,118.6 -24.0,122.0 -20.0,123.8 -16.0,123.8 -12.0,122.0 -8.0,118.6 -4.0,113.8 0.0,107.9 4.0,101.4 8.0,94.6 12.0,88.1 16.0,82.2 20.0,77.4 24.0,74.0 28.0,72.2 32.0,72.2 36.0,74.0 40.0,77.4 44.0,82.2 48.0,88.1 52.0,94.6 56.0,101.4 60.0,107.9 64.0,113.8 68.0,118.6 72.0,122.0 76.0,123.8 80.0,123.8 84.0,122.0 88.0,118.6 92.0,113.8 96.0,107.9 100.0,101.4 104.0,94.6 108.0,88.1 112.0,82.2 116.0,77.4 120.0,74.0 124.0,72.2 128.0,72.2 132.0,74.0 136.0,77.4 140.0,82.2 144.0,88.1 148.0,94.6 152.0,101.4 156.0,107.9 160.0,113.8 164.0,118.6 168.0,122.0 172.0,123.8 176.0,123.8 180.0,122.0 184.0,118.6 188.0,113.8 192.0,107.9 196.0,101.4 200.0,94.6 204.0,88.1 208.0,82.2 212.0,77.4 216.0,74.0 220.0,72.2 224.0,72.2 228.0,74.0 232.0,77.4 236.0,82.2 240.0,88.1 244.0,94.6 248.0,101.4 252.0,107.9 256.0,113.8 260.0,118.6 264.0,122.0 268.0,123.8 272.0,123.8 276.0,122.0 280.0,118.6 284.0,113.8 288.0,107.9 292.0,101.4 296.0,94.6 300.0,88.1 304.0,82.2 308.0,77.4 312.0,74.0 316.0,72.2 320.0,72.2 324.0,74.0 328.0,77.4 332.0,82.2 336.0,88.1 340.0,94.6 344.0,101.4 348.0,107.9 352.0,113.8 356.0,118.6 360.0,122.0 364.0,123.8 368.0,123.8 372.0,122.0 376.0,118.6 380.0,113.8 384.0,107.9 388.0,101.4 392.0,94.6 396.0,88.1 400.0,82.2 404.0,77.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" from=\"0 0\" to=\"96.0 0\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></g></g><circle cx=\"130.0\" cy=\"72.9\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"72.9;72.0;72.9;75.5;79.6;85.0;91.3;98.0;104.7;111.0;116.4;120.5;123.1;124.0;123.1;120.5;116.4;111.0;104.7;98.0;91.3;85.0;79.6;75.5;72.9\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"154.0\" cy=\"104.7\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"104.7;98.0;91.3;85.0;79.6;75.5;72.9;72.0;72.9;75.5;79.6;85.0;91.3;98.0;104.7;111.0;116.4;120.5;123.1;124.0;123.1;120.5;116.4;111.0;104.7\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"178.0\" cy=\"123.1\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"123.1;124.0;123.1;120.5;116.4;111.0;104.7;98.0;91.3;85.0;79.6;75.5;72.9;72.0;72.9;75.5;79.6;85.0;91.3;98.0;104.7;111.0;116.4;120.5;123.1\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"202.0\" cy=\"91.3\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"91.3;98.0;104.7;111.0;116.4;120.5;123.1;124.0;123.1;120.5;116.4;111.0;104.7;98.0;91.3;85.0;79.6;75.5;72.9;72.0;72.9;75.5;79.6;85.0;91.3\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"226.0\" cy=\"72.9\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"72.9;72.0;72.9;75.5;79.6;85.0;91.3;98.0;104.7;111.0;116.4;120.5;123.1;124.0;123.1;120.5;116.4;111.0;104.7;98.0;91.3;85.0;79.6;75.5;72.9\" dur=\"1.50s\" repeatCount=\"4\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"20\" y1=\"30\" x2=\"70\" y2=\"30\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#w27b0-b)\"/><text x=\"76\" y=\"35\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">sóng truyền</text><text x=\"16\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Các chấm cam: phần tử dây, chỉ dao động tại chỗ</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sóng chạy trên dây; mỗi chấm dao động tại chỗ, chấm càng xa nguồn càng trễ pha. Sóng tính theo công thức; bấm Chạy mô phỏng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai điểm trên cùng phương truyền cách nhau $d$ thì dao động lệch pha nhau.</li><li><strong>Công thức:</strong> $\\lambda=\\dfrac{v}{f}$ · $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.</li><li>Cùng pha: $k2\\pi$ · ngược pha: $(2k+1)\\pi$ · vuông pha: $(2k+1)\\dfrac{\\pi}{2}$.</li><li>⚠ <strong>Điều kiện:</strong> hai điểm cùng nằm trên một phương truyền sóng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng</span></p><p>Đổi $v=1{,}2$ m/s $=120$ cm/s:</p>$$\\lambda=\\dfrac{v}{f}=\\dfrac{120}{20}$$<div class=\"bt-ans\">$$\\lambda=6\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tỉ số $\\dfrac{d}{\\lambda}$</span></p>$$\\dfrac{d}{\\lambda}=\\dfrac{10{,}5}{6}$$<div class=\"bt-ans\">$$\\dfrac{d}{\\lambda}=1{,}75$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lệch pha</span></p>$$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}=2\\pi\\cdot1{,}75$$<div class=\"bt-ans\">$$\\Delta\\varphi=3{,}5\\pi\\ \\text{rad}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Gọi tên độ lệch pha</span></p>$$\\Delta\\varphi=3{,}5\\pi=7\\cdot\\dfrac{\\pi}{2}=(2k+1)\\dfrac{\\pi}{2}\\ \\ (k=3)$$<div class=\"bt-ans\"><p>M và N <strong>vuông pha</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điểm ngược pha gần nhất</span></p><p>Ngược pha gần nhất: $\\Delta\\varphi=\\pi$.</p>$$\\pi=\\dfrac{2\\pi d_{min}}{\\lambda}\\Rightarrow d_{min}=\\dfrac{\\lambda}{2}=\\dfrac{6}{2}$$<div class=\"bt-ans\">$$d_{min}=3\\ \\text{cm}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\lambda=6\\ \\text{cm}$</p><p>b) $\\Delta\\varphi=3{,}5\\pi\\ \\text{rad}$: M và N vuông pha</p><p>c) $d_{min}=3\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khoảng cách hai điểm</strong> và hỏi <strong>cùng, ngược hay vuông pha</strong> → lập $\\dfrac{d}{\\lambda}$ rồi tính $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Hai điểm M, N trên cùng phương truyền sóng cách nhau 10,5 cm\"><defs><marker id=\"w27b2-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27b2-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27b2-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27b2-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"24\" y1=\"96\" x2=\"396\" y2=\"96\" stroke=\"#34d399\" stroke-width=\"2.4\" marker-end=\"url(#w27b2-g)\"/><text x=\"398\" y=\"88\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">x</text><circle cx=\"100.0\" cy=\"96.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"300.0\" cy=\"96.0\" r=\"6\" fill=\"#fb923c\"/><text x=\"100\" y=\"120\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"300\" y=\"120\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N</text><line x1=\"100\" y1=\"62\" x2=\"300\" y2=\"62\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27b2-b)\"/><line x1=\"300\" y1=\"62\" x2=\"100\" y2=\"62\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27b2-b)\"/><text x=\"200\" y=\"52\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 10,5 cm</text><line x1=\"150\" y1=\"140\" x2=\"250\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#w27b2-r)\"/><text x=\"200\" y=\"162\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">sóng truyền M → N</text><text x=\"24\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Cùng một phương truyền</text><text x=\"396\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">λ = ?   Δφ = ?</text></svg><figcaption>Dữ kiện: hai điểm cùng phương truyền, khoảng cách d. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tốc độ $v=1{,}2$ m/s … tần số $f=20$ Hz\"</td><td>$v=1{,}2$ m/s; $f=20$ Hz</td><td>$\\lambda=\\dfrac{v}{f}$ (đổi về cùng hệ đơn vị)</td></tr><tr><td>\"hai điểm M, N cách nhau $10{,}5$ cm\"</td><td>$d=10{,}5$ cm</td><td>$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$; lập tỉ số $\\dfrac{d}{\\lambda}$</td></tr><tr><td>\"hai điểm M, N trên dây\"</td><td>Cùng một phương truyền</td><td>⚠ $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$ chỉ dùng cho hai điểm cùng nằm trên một phương truyền sóng</td></tr><tr><td>\"cùng pha, ngược pha hay vuông pha?\"</td><td>Cần gọi tên $\\Delta\\varphi$</td><td>Cùng pha $k2\\pi$ · ngược pha $(2k+1)\\pi$ · vuông pha $(2k+1)\\dfrac{\\pi}{2}$</td></tr><tr><td>\"gần M nhất và dao động ngược pha\"</td><td>Ngược pha, gần nhất</td><td>$\\Delta\\varphi=\\pi$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khoảng cách hai điểm</b> và hỏi <b>cùng, ngược hay vuông pha</b> → lập $\\dfrac{d}{\\lambda}$, tính $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia $1{,}2$ cho $20$ mà không đổi đơn vị: $v$ tính bằng m/s nên $\\lambda$ ra mét, phải đổi sang cm."
+    },
+    {
+     "tieu_de": "Tỉ số $\\dfrac{d}{\\lambda}$",
+     "hoi": "Tỉ số $\\dfrac{d}{\\lambda}$ bằng bao nhiêu?",
+     "dap_so": 1.75,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Lấy $\\dfrac{\\lambda}{d}$ (ngược) hoặc chia $d$ cho bước sóng đã tính sai đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập $\\dfrac{d}{\\lambda}$ để biết $d$ chứa bao nhiêu bước sóng",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d\\cdot\\lambda$",
+       "dung": false,
+       "vi_sao": "Tích hai độ dài không cho biết số bước sóng; phải lập tỉ số."
+      },
+      {
+       "text": "Lấy $\\dfrac{d}{v}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{d}{v}$ là thời gian sóng đi từ M tới N, không phải số bước sóng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lệch pha",
+     "hoi": "Độ lệch pha $\\Delta\\varphi$ bằng bao nhiêu lần $\\pi$ (rad)?",
+     "dap_so": 3.5,
+     "sai_so": 0.02,
+     "don_vi": "π rad",
+     "loi_hay_gap": "Dùng $\\Delta\\varphi=\\pi\\dfrac{d}{\\lambda}$ (thiếu hệ số $2$) hoặc $2\\pi\\dfrac{\\lambda}{d}$ (ngược).",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta\\varphi=2\\pi\\dfrac{d}{\\lambda}$ (mỗi bước sóng ứng với $2\\pi$)",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta\\varphi=\\pi\\dfrac{d}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "Một bước sóng ứng với $2\\pi$; $\\pi$ chỉ ứng với nửa bước sóng."
+      },
+      {
+       "text": "$\\Delta\\varphi=2\\pi\\dfrac{\\lambda}{d}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi: đi càng xa thì trễ pha càng nhiều, nên $d$ nằm ở tử số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gọi tên độ lệch pha",
+     "hoi": "M và N dao động thế nào với nhau?",
+     "lua_chon": [
+      {
+       "text": "Vuông pha",
+       "dung": true
+      },
+      {
+       "text": "Ngược pha",
+       "dung": false,
+       "vi_sao": "Ngược pha cần $\\Delta\\varphi$ là số lẻ lần $\\pi$; ở đây $\\Delta\\varphi$ là số lẻ lần $\\dfrac{\\pi}{2}$."
+      },
+      {
+       "text": "Cùng pha",
+       "dung": false,
+       "vi_sao": "Cùng pha cần $\\Delta\\varphi$ là số chẵn lần $\\pi$ (nguyên lần $2\\pi$)."
+      }
+     ],
+     "loi_hay_gap": "Thấy phần lẻ của $\\dfrac{d}{\\lambda}$ khác $0{,}25$ rồi kết luận không vuông pha; cứ cộng thêm vòng $2\\pi$ trọn vẹn hoặc nửa vòng thì vẫn vuông pha.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $\\Delta\\varphi$ dưới dạng số lẻ lần $\\dfrac{\\pi}{2}$ hay số lẻ lần $\\pi$",
+       "dung": true
+      },
+      {
+       "text": "Chỉ xét phần nguyên của $\\dfrac{d}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "Phần nguyên chỉ là các vòng $2\\pi$ trọn vẹn; phần lẻ mới quyết định cùng, ngược hay vuông pha."
+      },
+      {
+       "text": "Xét dấu của $\\Delta\\varphi$",
+       "dung": false,
+       "vi_sao": "Dấu chỉ cho biết ai trễ pha hơn, không cho biết cùng, ngược hay vuông pha."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điểm ngược pha gần nhất",
+     "hoi": "Điểm ngược pha với M gần nhất cách M bao nhiêu?",
+     "dap_so": 3,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d=\\lambda$ (đó là điểm cùng pha gần nhất) hoặc $d=\\dfrac{\\lambda}{4}$ (vuông pha).",
+     "chon_buoc_ke": [
+      {
+       "text": "Ngược pha gần nhất ứng với $\\Delta\\varphi=\\pi$, tức $d=\\dfrac{\\lambda}{2}$",
+       "dung": true
+      },
+      {
+       "text": "$d=\\lambda$",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách cùng pha gần nhất."
+      },
+      {
+       "text": "$d=\\dfrac{\\lambda}{4}$",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách vuông pha gần nhất ($\\Delta\\varphi=\\dfrac{\\pi}{2}$)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đọc phương trình sóng: biên độ, tần số, bước sóng, tốc độ",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "problem_html": "<p>Một sóng cơ lan truyền trên một sợi dây dài theo phương Ox với phương trình $u=5\\cos(8\\pi t-0{,}2\\pi x)$ (cm), trong đó $x$ đo bằng cm, $t$ đo bằng giây.</p><ol type=\"a\"><li>Tìm biên độ, chu kì và tần số của sóng.</li><li>Tìm bước sóng và tốc độ truyền sóng (đơn vị m/s).</li><li>Tìm tốc độ dao động cực đại của một phần tử dây và cho biết nó lớn hơn hay nhỏ hơn tốc độ truyền sóng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Sóng chạy trên dây từ đầu O, đầu O dao động tại chỗ\"><defs><marker id=\"w27c0-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27c0-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27c0-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27c0-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"98.0\" x2=\"404.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><clipPath id=\"cpw27c\"><rect x=\"40\" y=\"24\" width=\"364\" height=\"150\"></rect></clipPath><g clip-path=\"url(#cpw27c)\"><g><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" points=\"-60.0,68.0 -56.0,68.9 -52.0,71.7 -48.0,76.1 -44.0,81.9 -40.0,88.7 -36.0,96.1 -32.0,103.6 -28.0,110.8 -24.0,117.1 -20.0,122.3 -16.0,125.9 -12.0,127.8 -8.0,127.8 -4.0,125.9 0.0,122.3 4.0,117.1 8.0,110.8 12.0,103.6 16.0,96.1 20.0,88.7 24.0,81.9 28.0,76.1 32.0,71.7 36.0,68.9 40.0,68.0 44.0,68.9 48.0,71.7 52.0,76.1 56.0,81.9 60.0,88.7 64.0,96.1 68.0,103.6 72.0,110.8 76.0,117.1 80.0,122.3 84.0,125.9 88.0,127.8 92.0,127.8 96.0,125.9 100.0,122.3 104.0,117.1 108.0,110.8 112.0,103.6 116.0,96.1 120.0,88.7 124.0,81.9 128.0,76.1 132.0,71.7 136.0,68.9 140.0,68.0 144.0,68.9 148.0,71.7 152.0,76.1 156.0,81.9 160.0,88.7 164.0,96.1 168.0,103.6 172.0,110.8 176.0,117.1 180.0,122.3 184.0,125.9 188.0,127.8 192.0,127.8 196.0,125.9 200.0,122.3 204.0,117.1 208.0,110.8 212.0,103.6 216.0,96.1 220.0,88.7 224.0,81.9 228.0,76.1 232.0,71.7 236.0,68.9 240.0,68.0 244.0,68.9 248.0,71.7 252.0,76.1 256.0,81.9 260.0,88.7 264.0,96.1 268.0,103.6 272.0,110.8 276.0,117.1 280.0,122.3 284.0,125.9 288.0,127.8 292.0,127.8 296.0,125.9 300.0,122.3 304.0,117.1 308.0,110.8 312.0,103.6 316.0,96.1 320.0,88.7 324.0,81.9 328.0,76.1 332.0,71.7 336.0,68.9 340.0,68.0 344.0,68.9 348.0,71.7 352.0,76.1 356.0,81.9 360.0,88.7 364.0,96.1 368.0,103.6 372.0,110.8 376.0,117.1 380.0,122.3 384.0,125.9 388.0,127.8 392.0,127.8 396.0,125.9 400.0,122.3 404.0,117.1\"/><animateTransform attributeName=\"transform\" type=\"translate\" from=\"0 0\" to=\"100.0 0\" dur=\"1.00s\" repeatCount=\"5\" begin=\"indefinite\" fill=\"freeze\"/></g></g><circle cx=\"40.0\" cy=\"68.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"68.0;69.0;72.0;76.8;83.0;90.2;98.0;105.8;113.0;119.2;124.0;127.0;128.0;127.0;124.0;119.2;113.0;105.8;98.0;90.2;83.0;76.8;72.0;69.0;68.0\" dur=\"1.00s\" repeatCount=\"5\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"32\" y=\"122\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"70\" y1=\"30\" x2=\"120\" y2=\"30\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#w27c0-b)\"/><text x=\"126\" y=\"35\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">sóng truyền</text><text x=\"16\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u = 5cos(8πt − 0,2πx) cm  (x: cm, t: s)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sóng chạy trên dây từ O (chạy chậm 4 lần). Sóng tính theo công thức; bấm Chạy mô phỏng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phương trình sóng cho li độ của điểm có toạ độ $x$ tại thời điểm $t$.</li><li><strong>Dạng chuẩn:</strong> $u=A\\cos\\left(\\omega t-\\dfrac{2\\pi x}{\\lambda}\\right)$ (sóng truyền theo $+Ox$).</li><li><strong>Công thức:</strong> $\\omega=2\\pi f$ · $T=\\dfrac{1}{f}$ · $v=\\lambda f$ · $v_{max}=\\omega A$.</li><li>⚠ <strong>Điều kiện:</strong> $\\lambda$ cùng đơn vị với $x$; đổi sang m khi đề hỏi m/s.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Biên độ, chu kì, tần số</span></p><p>Đối chiếu dạng chuẩn: $A=5$ cm; $\\omega=8\\pi$ rad/s.</p>$$f=\\dfrac{\\omega}{2\\pi}=\\dfrac{8\\pi}{2\\pi}$$<div class=\"bt-ans\">$$f=4\\ \\text{Hz}$$</div>$$T=\\dfrac{1}{f}=0{,}25\\ \\text{s}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bước sóng</span></p><p>Hệ số của $x$ bằng $\\dfrac{2\\pi}{\\lambda}$:</p>$$\\dfrac{2\\pi}{\\lambda}=0{,}2\\pi$$$$\\lambda=\\dfrac{2\\pi}{0{,}2\\pi}$$<div class=\"bt-ans\">$$\\lambda=10\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ truyền sóng</span></p>$$v=\\lambda f=10\\cdot4=40\\ \\text{cm/s}$$<p>Đổi sang m/s:</p><div class=\"bt-ans\">$$v=0{,}4\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ dao động cực đại</span></p>$$v_{max}=\\omega A=8\\pi\\cdot5$$<div class=\"bt-ans\">$$v_{max}=40\\pi\\approx125{,}7\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>So sánh hai tốc độ</span></p>$$\\dfrac{v_{max}}{v}=\\dfrac{40\\pi}{40}=\\pi\\approx3{,}14$$<div class=\"bt-ans\"><p>$v_{max}$ <strong>lớn hơn</strong> $v$ khoảng $3{,}14$ lần.</p></div><p>Không mâu thuẫn: $v$ do môi trường quyết định, $v_{max}$ do nguồn quyết định.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=5\\ \\text{cm}$ · $T=0{,}25\\ \\text{s}$ · $f=4\\ \\text{Hz}$</p><p>b) $\\lambda=10\\ \\text{cm}$ · $v=0{,}4\\ \\text{m/s}$</p><p>c) $v_{max}\\approx125{,}7\\ \\text{cm/s}$, lớn hơn $v$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>phương trình sóng</strong> có cả $t$ và $x$ → đối chiếu hệ số với dạng chuẩn, nhớ đổi đơn vị.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Ghép phương trình của đề với dạng chuẩn theo từng màu\"><defs><marker id=\"w27c2-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27c2-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27c2-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27c2-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"24\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Phương trình của đề:</text><text x=\"24\" y=\"72\" font-size=\"20\" font-weight=\"700\" fill=\"currentColor\">u = <tspan fill=\"#f87171\">5</tspan> cos( <tspan fill=\"#38bdf8\">8π</tspan> t − <tspan fill=\"#fb923c\">0,2π</tspan> x )</text><text x=\"24\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Dạng chuẩn:</text><text x=\"24\" y=\"142\" font-size=\"20\" font-weight=\"700\" fill=\"currentColor\">u = <tspan fill=\"#f87171\">A</tspan> cos( <tspan fill=\"#38bdf8\">ω</tspan> t − <tspan fill=\"#fb923c\">(2π/λ)</tspan> x )</text><text x=\"24\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Ghép từng màu: A ↔ 5 · ω ↔ hệ số của t · 2π/λ ↔ hệ số của x</text></svg><figcaption>Dữ kiện: so từng hệ số với dạng chuẩn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$u=5\\cos(8\\pi t-0{,}2\\pi x)$\"</td><td>$A=5$ cm; hệ số của $t$: $8\\pi$; của $x$: $0{,}2\\pi$</td><td>Đối chiếu $u=A\\cos\\left(\\omega t-\\dfrac{2\\pi x}{\\lambda}\\right)$</td></tr><tr><td>\"$x$ đo bằng cm, $t$ đo bằng giây\"</td><td>$x$: cm; $t$: s</td><td>⚠ Đơn vị: $\\lambda$ ra cm (cùng đơn vị với $x$); đổi sang m khi đề hỏi m/s</td></tr><tr><td>\"chu kì và tần số\"</td><td>Cần $T$, $f$</td><td>$\\omega=2\\pi f$; $T=\\dfrac{1}{f}$</td></tr><tr><td>\"bước sóng và tốc độ truyền sóng\"</td><td>Cần $\\lambda$, $v$</td><td>Hệ số của $x$ bằng $\\dfrac{2\\pi}{\\lambda}$; $v=\\lambda f$</td></tr><tr><td>\"tốc độ dao động cực đại\"</td><td>Cần $v_{max}$</td><td>$v_{max}=\\omega A$ (do nguồn quyết định, khác $v$ do môi trường)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>phương trình sóng có cả $t$ và $x$</b> → đối chiếu dạng chuẩn: hệ số của $t$ là $\\omega$, của $x$ là $\\dfrac{2\\pi}{\\lambda}$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Biên độ, chu kì, tần số",
+     "hoi": "Tần số $f$ của sóng bằng bao nhiêu?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Lấy $f=8\\pi$ hoặc $f=8$: hệ số của $t$ là $\\omega=2\\pi f$, không phải $f$."
+    },
+    {
+     "tieu_de": "Bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $\\lambda=\\dfrac{1}{0{,}2}$ (bỏ sót $\\pi$ và hệ số $2$) hoặc coi hệ số của $x$ chính là $\\lambda$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hệ số của $x$ bằng $\\dfrac{2\\pi}{\\lambda}$",
+       "dung": true
+      },
+      {
+       "text": "Hệ số của $x$ chính là $\\lambda$",
+       "dung": false,
+       "vi_sao": "Số hạng của đề là $\\dfrac{2\\pi x}{\\lambda}$, nên hệ số của $x$ là $\\dfrac{2\\pi}{\\lambda}$."
+      },
+      {
+       "text": "Hệ số của $x$ bằng $\\dfrac{1}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "Thiếu $2\\pi$: pha trễ là $\\dfrac{2\\pi x}{\\lambda}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ truyền sóng",
+     "hoi": "Tốc độ truyền sóng $v$ bằng bao nhiêu?",
+     "dap_so": 0.4,
+     "sai_so": 0.01,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Tính ra số đúng theo cm/s nhưng quên đổi sang m/s theo yêu cầu của đề.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\lambda f$, rồi đổi đơn vị sang m/s",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{\\lambda}{f}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{\\lambda}{f}$ có đơn vị cm·s; $v=\\dfrac{\\lambda}{T}=\\lambda f$."
+      },
+      {
+       "text": "$v=\\omega A$",
+       "dung": false,
+       "vi_sao": "$\\omega A$ là tốc độ dao động cực đại của phần tử, không phải tốc độ truyền sóng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ dao động cực đại",
+     "hoi": "Tốc độ dao động cực đại $v_{max}$ của phần tử dây bằng bao nhiêu?",
+     "dap_so": 125.7,
+     "sai_so": 1,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Quên nhân biên độ (lấy $\\omega$) hoặc nhầm với tốc độ truyền sóng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v_{max}=\\omega A$ (lấy đạo hàm của $u$ theo $t$)",
+       "dung": true
+      },
+      {
+       "text": "$v_{max}=\\lambda f$",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ truyền sóng, không phải tốc độ dao động của phần tử."
+      },
+      {
+       "text": "$v_{max}=\\omega$",
+       "dung": false,
+       "vi_sao": "Thiếu biên độ: li độ cực đại là $A$ nên $v_{max}=\\omega A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai tốc độ",
+     "hoi": "So sánh $v_{max}$ với tốc độ truyền sóng $v$?",
+     "lua_chon": [
+      {
+       "text": "$v_{max}$ lớn hơn $v$; hai đại lượng khác nhau nên không mâu thuẫn",
+       "dung": true
+      },
+      {
+       "text": "Vô lí, phần tử không thể chạy nhanh hơn sóng",
+       "dung": false,
+       "vi_sao": "Sóng truyền pha, còn phần tử dao động tại chỗ; hai tốc độ do hai yếu tố khác nhau quyết định."
+      },
+      {
+       "text": "$v_{max}$ luôn bằng $v$",
+       "dung": false,
+       "vi_sao": "Không có quy luật bằng nhau: $v$ do môi trường, $v_{max}=\\omega A$ do nguồn."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng hai tốc độ phải bằng nhau hoặc cái này luôn nhỏ hơn cái kia vì cùng ký hiệu $v$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính tỉ số $\\dfrac{v_{max}}{v}$ với cùng đơn vị rồi kết luận",
+       "dung": true
+      },
+      {
+       "text": "Kết luận ngay vì sóng truyền nhanh hơn phần tử",
+       "dung": false,
+       "vi_sao": "Không có quy luật định sẵn; phải so số liệu của từng đề."
+      },
+      {
+       "text": "So $v_{max}$ với $\\lambda$",
+       "dung": false,
+       "vi_sao": "Hai đại lượng khác thứ nguyên (cm/s và cm), không so sánh được."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Viết phương trình dao động tại M, li độ và chiều chuyển động",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "problem_html": "<p>Nguồn O trên một sợi dây rất dài dao động theo phương trình $u_O=4\\cos\\left(20\\pi t-\\dfrac{\\pi}{2}\\right)$ (cm), tạo ra sóng truyền theo chiều dương trục Ox với tốc độ $1{,}5\\ \\text{m/s}$. Biên độ sóng không đổi, nguồn O bắt đầu dao động tại $t=0$. Điểm M trên dây cách O một đoạn $20\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính chu kì và bước sóng.</li><li>Viết phương trình dao động của M.</li><li>Tại thời điểm $t=0{,}15\\ \\text{s}$, M có li độ bao nhiêu và đang chuyển động theo chiều nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Nguồn O bắt đầu dao động, sóng lan dần ra xa trên dây\"><defs><marker id=\"w27d0-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27d0-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27d0-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27d0-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"50.0\" y1=\"98.0\" x2=\"404.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><clipPath id=\"cpw27d\"><rect x=\"50\" y=\"24\" width=\"0\" height=\"150\"><animate attributeName=\"width\" from=\"0\" to=\"300.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect></clipPath><g clip-path=\"url(#cpw27d)\"><g><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" points=\"-10.0,98.0 -6.0,109.4 -2.0,118.8 2.0,124.6 6.0,125.8 10.0,122.2 14.0,114.5 18.0,103.8 22.0,92.2 26.0,81.5 30.0,73.8 34.0,70.2 38.0,71.4 42.0,77.2 46.0,86.6 50.0,98.0 54.0,109.4 58.0,118.8 62.0,124.6 66.0,125.8 70.0,122.2 74.0,114.5 78.0,103.8 82.0,92.2 86.0,81.5 90.0,73.8 94.0,70.2 98.0,71.4 102.0,77.2 106.0,86.6 110.0,98.0 114.0,109.4 118.0,118.8 122.0,124.6 126.0,125.8 130.0,122.2 134.0,114.5 138.0,103.8 142.0,92.2 146.0,81.5 150.0,73.8 154.0,70.2 158.0,71.4 162.0,77.2 166.0,86.6 170.0,98.0 174.0,109.4 178.0,118.8 182.0,124.6 186.0,125.8 190.0,122.2 194.0,114.5 198.0,103.8 202.0,92.2 206.0,81.5 210.0,73.8 214.0,70.2 218.0,71.4 222.0,77.2 226.0,86.6 230.0,98.0 234.0,109.4 238.0,118.8 242.0,124.6 246.0,125.8 250.0,122.2 254.0,114.5 258.0,103.8 262.0,92.2 266.0,81.5 270.0,73.8 274.0,70.2 278.0,71.4 282.0,77.2 286.0,86.6 290.0,98.0 294.0,109.4 298.0,118.8 302.0,124.6 306.0,125.8 310.0,122.2 314.0,114.5 318.0,103.8 322.0,92.2 326.0,81.5 330.0,73.8 334.0,70.2 338.0,71.4 342.0,77.2 346.0,86.6 350.0,98.0 354.0,109.4 358.0,118.8 362.0,124.6 366.0,125.8 370.0,122.2 374.0,114.5 378.0,103.8 382.0,92.2 386.0,81.5 390.0,73.8 394.0,70.2 398.0,71.4 402.0,77.2\"/><animateTransform attributeName=\"transform\" type=\"translate\" from=\"0 0\" to=\"60.0 0\" dur=\"1.00s\" repeatCount=\"5\" begin=\"indefinite\" fill=\"freeze\"/></g></g><circle cx=\"50.0\" cy=\"98.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"98.0;90.8;84.0;78.2;73.8;71.0;70.0;71.0;73.8;78.2;84.0;90.8;98.0;105.2;112.0;117.8;122.2;125.0;126.0;125.0;122.2;117.8;112.0;105.2;98.0\" dur=\"1.00s\" repeatCount=\"5\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"42\" y=\"122\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"90\" y1=\"30\" x2=\"140\" y2=\"30\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#w27d0-b)\"/><text x=\"146\" y=\"35\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">sóng truyền</text><text x=\"16\" y=\"178\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Nguồn O bắt đầu dao động tại t = 0; sóng lan dần sang phải</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đầu sóng chạy cùng tốc độ truyền sóng (chạy chậm 10 lần). Sóng tính theo công thức; bấm Chạy mô phỏng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> M dao động giống O nhưng trễ pha $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$ (sóng đi mất $\\dfrac{d}{v}$).</li><li><strong>Định luật:</strong> sóng tới sau thì trừ pha: $u_M=A\\cos\\left(\\omega t+\\varphi_0-\\dfrac{2\\pi d}{\\lambda}\\right)$.</li><li><strong>Công thức:</strong> $\\lambda=\\dfrac{v}{f}$ · $v_M=u_M'=-\\omega A\\sin(\\text{pha})$.</li><li>⚠ <strong>Điều kiện:</strong> biên độ không đổi; $u_M$ chỉ đúng khi $t\\ge\\dfrac{d}{v}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chu kì và bước sóng</span></p>$$\\omega=20\\pi\\Rightarrow f=10\\ \\text{Hz},\\ \\ T=0{,}1\\ \\text{s}$$<p>Đổi $v=1{,}5$ m/s $=150$ cm/s:</p>$$\\lambda=\\dfrac{v}{f}=\\dfrac{150}{10}$$<div class=\"bt-ans\">$$\\lambda=15\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phương trình dao động của M</span></p>$$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}=\\dfrac{2\\pi\\cdot20}{15}=\\dfrac{8\\pi}{3}$$<p>Pha của M bằng pha của O trừ $\\Delta\\varphi$:</p>$$u_M=4\\cos\\left(20\\pi t-\\dfrac{\\pi}{2}-\\dfrac{8\\pi}{3}\\right)$$<div class=\"bt-ans\">$$u_M=4\\cos\\left(20\\pi t-\\dfrac{19\\pi}{6}\\right)\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Sóng đã tới M chưa</span></p>$$t_0=\\dfrac{d}{v}=\\dfrac{20}{150}\\approx0{,}133\\ \\text{s}$$<p>$t=0{,}15\\ \\text{s}\\gt t_0$: M đã dao động, dùng được $u_M$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Li độ tại $t=0{,}15$ s</span></p>$$u_M=4\\cos\\left(20\\pi\\cdot0{,}15-\\dfrac{19\\pi}{6}\\right)=4\\cos\\left(3\\pi-\\dfrac{19\\pi}{6}\\right)$$$$=4\\cos\\left(-\\dfrac{\\pi}{6}\\right)$$<div class=\"bt-ans\">$$u_M=2\\sqrt3\\approx3{,}46\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chiều chuyển động</span></p>$$v_M=u_M'=-80\\pi\\sin\\left(-\\dfrac{\\pi}{6}\\right)$$$$v_M=+40\\pi\\approx125{,}7\\ \\text{cm/s}\\gt0$$<div class=\"bt-ans\"><p>M đang đi <strong>lên</strong> (chiều dương).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Từ lúc sóng tới M: $t-t_0\\approx0{,}0167\\ \\text{s}=\\dfrac{T}{6}$.</p><p>O xuất phát từ vị trí cân bằng đi lên nên M cũng vậy: $u_M=4\\sin\\dfrac{\\pi}{3}\\approx3{,}46$ cm ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=0{,}1\\ \\text{s}$ · $\\lambda=15\\ \\text{cm}$</p><p>b) $u_M=4\\cos\\left(20\\pi t-\\dfrac{19\\pi}{6}\\right)\\ \\text{cm}$</p><p>c) $u_M\\approx3{,}46\\ \\text{cm}$, đang đi lên</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>phương trình nguồn</strong> và hỏi <strong>M cách nguồn $d$</strong> → trừ độ trễ pha $\\dfrac{2\\pi d}{\\lambda}$, kiểm $t\\ge\\dfrac{d}{v}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 198\" role=\"img\" aria-label=\"Nguồn O, điểm M cách O 20 cm, sóng truyền sang phải với tốc độ 1,5 m/s\"><defs><marker id=\"w27d2-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27d2-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27d2-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27d2-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"24\" y1=\"88\" x2=\"396\" y2=\"88\" stroke=\"#34d399\" stroke-width=\"2.4\" marker-end=\"url(#w27d2-g)\"/><text x=\"398\" y=\"80\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">x</text><circle cx=\"60.0\" cy=\"88.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"320.0\" cy=\"88.0\" r=\"6\" fill=\"#fb923c\"/><text x=\"60\" y=\"112\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O</text><text x=\"320\" y=\"112\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">M</text><line x1=\"60\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27d2-b)\"/><line x1=\"320\" y1=\"58\" x2=\"60\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27d2-b)\"/><text x=\"190\" y=\"48\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 20 cm</text><line x1=\"120\" y1=\"126\" x2=\"220\" y2=\"126\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#w27d2-r)\"/><text x=\"230\" y=\"131\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 1,5 m/s</text><text x=\"24\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u_O = 4cos(20πt − π/2) cm</text><text x=\"24\" y=\"164\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">⚠ u_M chỉ đúng khi sóng đã tới M</text><text x=\"24\" y=\"186\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">So t = 0,15 s với thời gian sóng đi từ O tới M</text></svg><figcaption>Dữ kiện: khoảng cách d, tốc độ v, thời điểm cần xét. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"nguồn O … $u_O=4\\cos\\left(20\\pi t-\\dfrac{\\pi}{2}\\right)$\"</td><td>$A=4$ cm; $\\omega=20\\pi$; $\\varphi_0=-\\pi/2$</td><td>$\\omega=2\\pi f$; $T=\\dfrac{1}{f}$</td></tr><tr><td>\"chiều dương trục Ox … tốc độ $1{,}5$ m/s\"</td><td>$v=1{,}5$ m/s; chiều $+Ox$</td><td>Sóng tới sau thì trừ pha; $\\lambda=\\dfrac{v}{f}$</td></tr><tr><td>\"M cách O $20$ cm\"</td><td>$d=20$ cm</td><td>$u_M=A\\cos\\left(\\omega t+\\varphi_0-\\dfrac{2\\pi d}{\\lambda}\\right)$</td></tr><tr><td>\"tại thời điểm $t=0{,}15$ s\"</td><td>$t=0{,}15$ s</td><td>⚠ $u_M$ chỉ đúng khi $t\\ge\\dfrac{d}{v}$ (sóng đã tới M): kiểm tra trước khi thay</td></tr><tr><td>\"li độ … và chiều chuyển động\"</td><td>Cần $u_M$ và dấu của $v_M$</td><td>$v_M=u_M'=-\\omega A\\sin(\\text{pha})$; $v_M\\gt0$ là đi lên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>phương trình nguồn</b> và <b>M cách nguồn đoạn $d$</b> → trừ độ trễ pha $\\dfrac{2\\pi d}{\\lambda}$; kiểm $t\\ge\\dfrac{d}{v}$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chu kì và bước sóng",
+     "hoi": "Bước sóng $\\lambda$ bằng bao nhiêu?",
+     "dap_so": 15,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Quên đổi $v$ sang cm/s trước khi chia cho $f$, hoặc lấy $f=20$ thay vì $f=10$ Hz (hệ số của $t$ là $\\omega=2\\pi f$)."
+    },
+    {
+     "tieu_de": "Phương trình dao động của M",
+     "hoi": "Phương trình dao động của M là?",
+     "lua_chon": [
+      {
+       "text": "$u_M=4\\cos\\left(20\\pi t-\\dfrac{19\\pi}{6}\\right)$ cm",
+       "dung": true
+      },
+      {
+       "text": "$u_M=4\\cos\\left(20\\pi t-\\dfrac{8\\pi}{3}\\right)$ cm",
+       "dung": false,
+       "vi_sao": "Quên pha ban đầu $-\\dfrac{\\pi}{2}$ của O: pha của M là pha của O trừ thêm độ trễ $\\dfrac{8\\pi}{3}$."
+      },
+      {
+       "text": "$u_M=4\\cos\\left(20\\pi t-\\dfrac{\\pi}{2}+\\dfrac{8\\pi}{3}\\right)$ cm",
+       "dung": false,
+       "vi_sao": "Sai dấu: sóng truyền theo $+Ox$, M nhận sóng sau O nên pha phải trừ (trễ), không cộng."
+      }
+     ],
+     "loi_hay_gap": "Cộng độ trễ pha thay vì trừ, hoặc bỏ quên pha ban đầu của nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$ rồi trừ vào pha của O",
+       "dung": true
+      },
+      {
+       "text": "Cộng $\\Delta\\varphi$ vào pha của O",
+       "dung": false,
+       "vi_sao": "Sóng truyền theo $+Ox$: M nhận sóng sau nên trễ pha, phải trừ."
+      },
+      {
+       "text": "Dùng $\\Delta\\varphi=\\dfrac{2\\pi\\lambda}{d}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi: $d$ ở tử số, đi càng xa thì trễ pha càng nhiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Sóng đã tới M chưa",
+     "hoi": "Sóng truyền từ O tới M mất bao lâu?",
+     "dap_so": 0.1333,
+     "sai_so": 0.003,
+     "don_vi": "s",
+     "loi_hay_gap": "Đổi sai đơn vị ($d$ theo cm chia cho $v$ theo m/s), hoặc bỏ qua bước này vì tưởng $u_M$ đúng với mọi $t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $t_0=\\dfrac{d}{v}$ rồi so với $t$ đề cho",
+       "dung": true
+      },
+      {
+       "text": "Thay $t$ vào $u_M$ ngay vì $u_M$ luôn đúng",
+       "dung": false,
+       "vi_sao": "$u_M$ chỉ đúng khi $t\\ge\\dfrac{d}{v}$; trước đó sóng chưa tới nên M còn đứng yên."
+      },
+      {
+       "text": "So $t$ với chu kì $T$",
+       "dung": false,
+       "vi_sao": "Chu kì không cho biết sóng đã tới M chưa; cần thời gian truyền $\\dfrac{d}{v}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Li độ",
+     "hoi": "Li độ $u_M$ của M tại $t=0{,}15$ s bằng bao nhiêu?",
+     "dap_so": 3.46,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Bấm máy ở chế độ độ (DEG) thay vì radian, hoặc thay $t$ vào $u_O$ thay vì $u_M$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thay $t$ vào $u_M$, tính pha bằng radian",
+       "dung": true
+      },
+      {
+       "text": "Thay $t$ vào $u_O$",
+       "dung": false,
+       "vi_sao": "$u_O$ là li độ của nguồn; M dao động trễ pha hơn O."
+      },
+      {
+       "text": "Thay $t-\\dfrac{d}{v}$ vào $u_M$",
+       "dung": false,
+       "vi_sao": "Độ trễ $\\dfrac{d}{v}$ đã nằm trong pha $-\\dfrac{2\\pi d}{\\lambda}$ của $u_M$; trừ thêm là trừ hai lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều chuyển động",
+     "hoi": "M đang chuyển động theo chiều nào?",
+     "lua_chon": [
+      {
+       "text": "Đi lên (chiều dương)",
+       "dung": true
+      },
+      {
+       "text": "Đi xuống (chiều âm)",
+       "dung": false,
+       "vi_sao": "Dấu của $v_M=-\\omega A\\sin(\\text{pha})$: ở đây $\\sin(\\text{pha})$ âm nên $v_M\\gt0$."
+      },
+      {
+       "text": "Đang dừng ở biên",
+       "dung": false,
+       "vi_sao": "Ở biên li độ bằng $\\pm A$; li độ vừa tính nhỏ hơn biên độ nên M chưa tới biên."
+      }
+     ],
+     "loi_hay_gap": "Thấy li độ dương rồi kết luận đi lên (hoặc đi xuống) mà không xét dấu của $v_M$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu $v_M=u_M'=-\\omega A\\sin(\\text{pha})$",
+       "dung": true
+      },
+      {
+       "text": "Xét dấu của $u_M$: dương thì đi lên",
+       "dung": false,
+       "vi_sao": "Dấu li độ chỉ cho biết M ở phía nào của vị trí cân bằng, không cho biết chiều chuyển động."
+      },
+      {
+       "text": "Xét dấu của pha: pha âm thì đi xuống",
+       "dung": false,
+       "vi_sao": "Pha âm hay dương không quyết định; phải xét $\\sin(\\text{pha})$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Đọc hai đồ thị u–x và u–t, viết phương trình dao động",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "problem_html": "<p>Một sóng cơ hình sin truyền trên một sợi dây dài theo chiều dương trục Ox. Hình (a) là đồ thị li độ theo toạ độ $x$ của các điểm trên dây tại thời điểm $t=0$. Hình (b) là đồ thị li độ theo thời gian $t$ của điểm M trên dây có toạ độ $x_M=6\\ \\text{cm}$.</p><figure class=\"fig\" data-tl=\"1\"><svg viewBox=\"0 0 420 330\" role=\"img\" aria-label=\"Hai đồ thị: li độ theo toạ độ x tại t bằng 0 và li độ theo thời gian của điểm M\"><defs><marker id=\"w27e-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27e-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27e-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27e-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"52.0\" y1=\"34.0\" x2=\"52.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"52.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"106.0\" y1=\"34.0\" x2=\"106.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"106.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"160.0\" y1=\"34.0\" x2=\"160.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"160.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">12</text><line x1=\"214.0\" y1=\"34.0\" x2=\"214.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"214.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">18</text><line x1=\"268.0\" y1=\"34.0\" x2=\"268.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"268.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">24</text><line x1=\"322.0\" y1=\"34.0\" x2=\"322.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"322.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><line x1=\"376.0\" y1=\"34.0\" x2=\"376.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"376.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">36</text><line x1=\"52.0\" y1=\"194.0\" x2=\"52.0\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"52.0\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"134.4\" y1=\"194.0\" x2=\"134.4\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"134.4\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"216.8\" y1=\"194.0\" x2=\"216.8\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"216.8\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"299.2\" y1=\"194.0\" x2=\"299.2\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"299.2\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,6</text><line x1=\"381.6\" y1=\"194.0\" x2=\"381.6\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"381.6\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,8</text><line x1=\"52.0\" y1=\"41.0\" x2=\"382.0\" y2=\"41.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"45.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"52.0\" y1=\"131.0\" x2=\"382.0\" y2=\"131.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"135.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"44\" y1=\"86\" x2=\"398\" y2=\"86\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e-g)\"/><line x1=\"52\" y1=\"140\" x2=\"52\" y2=\"28\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e-g)\"/><text x=\"58\" y=\"20\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">u (cm)</text><line x1=\"52.0\" y1=\"201.0\" x2=\"382.0\" y2=\"201.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"205.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"52.0\" y1=\"291.0\" x2=\"382.0\" y2=\"291.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"295.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"44\" y1=\"246\" x2=\"398\" y2=\"246\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e-g)\"/><line x1=\"52\" y1=\"300\" x2=\"52\" y2=\"188\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e-g)\"/><text x=\"58\" y=\"180\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">u (cm)</text><text x=\"414\" y=\"108\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">x (cm)</text><text x=\"414\" y=\"268\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"52.0,86.0 56.5,80.1 61.0,74.4 65.5,68.8 70.0,63.5 74.5,58.6 79.0,54.2 83.5,50.3 88.0,47.0 92.5,44.4 97.0,42.5 101.5,41.4 106.0,41.0 110.5,41.4 115.0,42.5 119.5,44.4 124.0,47.0 128.5,50.3 133.0,54.2 137.5,58.6 142.0,63.5 146.5,68.8 151.0,74.4 155.5,80.1 160.0,86.0 164.5,91.9 169.0,97.6 173.5,103.2 178.0,108.5 182.5,113.4 187.0,117.8 191.5,121.7 196.0,125.0 200.5,127.6 205.0,129.5 209.5,130.6 214.0,131.0 218.5,130.6 223.0,129.5 227.5,127.6 232.0,125.0 236.5,121.7 241.0,117.8 245.5,113.4 250.0,108.5 254.5,103.2 259.0,97.6 263.5,91.9 268.0,86.0 272.5,80.1 277.0,74.4 281.5,68.8 286.0,63.5 290.5,58.6 295.0,54.2 299.5,50.3 304.0,47.0 308.5,44.4 313.0,42.5 317.5,41.4 322.0,41.0 326.5,41.4 331.0,42.5 335.5,44.4 340.0,47.0 344.5,50.3 349.0,54.2 353.5,58.6 358.0,63.5 362.5,68.8 367.0,74.4 371.5,80.1 376.0,86.0\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"52.0,201.0 56.1,201.6 60.2,203.2 64.4,205.9 68.5,209.6 72.6,214.2 76.7,219.5 80.8,225.6 85.0,232.1 89.1,239.0 93.2,246.0 97.3,253.0 101.4,259.9 105.6,266.4 109.7,272.5 113.8,277.8 117.9,282.4 122.0,286.1 126.2,288.8 130.3,290.4 134.4,291.0 138.5,290.4 142.6,288.8 146.8,286.1 150.9,282.4 155.0,277.8 159.1,272.5 163.2,266.4 167.4,259.9 171.5,253.0 175.6,246.0 179.7,239.0 183.8,232.1 188.0,225.6 192.1,219.5 196.2,214.2 200.3,209.6 204.4,205.9 208.6,203.2 212.7,201.6 216.8,201.0 220.9,201.6 225.0,203.2 229.2,205.9 233.3,209.6 237.4,214.2 241.5,219.5 245.6,225.6 249.8,232.1 253.9,239.0 258.0,246.0 262.1,253.0 266.2,259.9 270.4,266.4 274.5,272.5 278.6,277.8 282.7,282.4 286.8,286.1 291.0,288.8 295.1,290.4 299.2,291.0 303.3,290.4 307.4,288.8 311.6,286.1 315.7,282.4 319.8,277.8 323.9,272.5 328.0,266.4 332.2,259.9 336.3,253.0 340.4,246.0 344.5,239.0 348.6,232.1 352.8,225.6 356.9,219.5 361.0,214.2 365.1,209.6 369.2,205.9 373.4,203.2 377.5,201.6 381.6,201.0\"/><text x=\"414\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">(a) li độ theo x, tại t = 0</text><text x=\"414\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">(b) li độ theo t, điểm M (x = 6 cm)</text></svg><figcaption>Hình (a): đồ thị u – x. Hình (b): đồ thị u – t của điểm M.</figcaption></figure><ol type=\"a\"><li>Đọc đồ thị, tìm biên độ, bước sóng và chu kì của sóng.</li><li>Tính tốc độ truyền sóng.</li><li>Viết phương trình dao động của M.</li><li>Điểm N trên dây cách M $9\\ \\text{cm}$ theo chiều truyền sóng. Viết phương trình dao động của N.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Sóng chạy trên dây và đồ thị li độ theo thời gian của điểm M được vẽ dần\"><defs><marker id=\"w27e0-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27e0-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27e0-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27e0-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"52.0\" y1=\"70.0\" x2=\"382.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"44\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">dây</text><clipPath id=\"cpw27e\"><rect x=\"52\" y=\"22\" width=\"330\" height=\"100\"></rect></clipPath><g clip-path=\"url(#cpw27e)\"><g><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" points=\"-164.0,70.0 -160.0,64.8 -156.0,59.6 -152.0,54.6 -148.0,49.8 -144.0,45.3 -140.0,41.1 -136.0,37.3 -132.0,33.9 -128.0,31.0 -124.0,28.7 -120.0,26.9 -116.0,25.7 -112.0,25.1 -108.0,25.1 -104.0,25.7 -100.0,26.9 -96.0,28.7 -92.0,31.0 -88.0,33.9 -84.0,37.3 -80.0,41.1 -76.0,45.3 -72.0,49.8 -68.0,54.6 -64.0,59.6 -60.0,64.8 -56.0,70.0 -52.0,75.2 -48.0,80.4 -44.0,85.4 -40.0,90.2 -36.0,94.7 -32.0,98.9 -28.0,102.7 -24.0,106.1 -20.0,109.0 -16.0,111.3 -12.0,113.1 -8.0,114.3 -4.0,114.9 0.0,114.9 4.0,114.3 8.0,113.1 12.0,111.3 16.0,109.0 20.0,106.1 24.0,102.7 28.0,98.9 32.0,94.7 36.0,90.2 40.0,85.4 44.0,80.4 48.0,75.2 52.0,70.0 56.0,64.8 60.0,59.6 64.0,54.6 68.0,49.8 72.0,45.3 76.0,41.1 80.0,37.3 84.0,33.9 88.0,31.0 92.0,28.7 96.0,26.9 100.0,25.7 104.0,25.1 108.0,25.1 112.0,25.7 116.0,26.9 120.0,28.7 124.0,31.0 128.0,33.9 132.0,37.3 136.0,41.1 140.0,45.3 144.0,49.8 148.0,54.6 152.0,59.6 156.0,64.8 160.0,70.0 164.0,75.2 168.0,80.4 172.0,85.4 176.0,90.2 180.0,94.7 184.0,98.9 188.0,102.7 192.0,106.1 196.0,109.0 200.0,111.3 204.0,113.1 208.0,114.3 212.0,114.9 216.0,114.9 220.0,114.3 224.0,113.1 228.0,111.3 232.0,109.0 236.0,106.1 240.0,102.7 244.0,98.9 248.0,94.7 252.0,90.2 256.0,85.4 260.0,80.4 264.0,75.2 268.0,70.0 272.0,64.8 276.0,59.6 280.0,54.6 284.0,49.8 288.0,45.3 292.0,41.1 296.0,37.3 300.0,33.9 304.0,31.0 308.0,28.7 312.0,26.9 316.0,25.7 320.0,25.1 324.0,25.1 328.0,25.7 332.0,26.9 336.0,28.7 340.0,31.0 344.0,33.9 348.0,37.3 352.0,41.1 356.0,45.3 360.0,49.8 364.0,54.6 368.0,59.6 372.0,64.8 376.0,70.0 380.0,75.2\"/><animateTransform attributeName=\"transform\" type=\"translate\" from=\"0 0\" to=\"216.0 0\" dur=\"2.00s\" repeatCount=\"2\" begin=\"indefinite\" fill=\"freeze\"/></g></g><line x1=\"106.0\" y1=\"15.0\" x2=\"106.0\" y2=\"125.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\" opacity=\"0.8\"/><text x=\"106.0\" y=\"11.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"106.0\" cy=\"25.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"25.0;26.5;31.0;38.2;47.5;58.4;70.0;81.6;92.5;101.8;109.0;113.5;115.0;113.5;109.0;101.8;92.5;81.6;70.0;58.4;47.5;38.2;31.0;26.5;25.0\" dur=\"2.00s\" repeatCount=\"2\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"44\" y1=\"190\" x2=\"426\" y2=\"190\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e0-g)\"/><line x1=\"52\" y1=\"230\" x2=\"52\" y2=\"146\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e0-g)\"/><text x=\"62\" y=\"146\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">u của M</text><text x=\"414\" y=\"208\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\" pathLength=\"1\" stroke-dasharray=\"1\" stroke-dashoffset=\"1\" points=\"52.0,145.0 55.8,145.4 59.5,146.5 63.2,148.4 67.0,151.0 70.8,154.3 74.5,158.2 78.2,162.6 82.0,167.5 85.8,172.8 89.5,178.4 93.2,184.1 97.0,190.0 100.8,195.9 104.5,201.6 108.2,207.2 112.0,212.5 115.8,217.4 119.5,221.8 123.2,225.7 127.0,229.0 130.8,231.6 134.5,233.5 138.2,234.6 142.0,235.0 145.8,234.6 149.5,233.5 153.2,231.6 157.0,229.0 160.8,225.7 164.5,221.8 168.2,217.4 172.0,212.5 175.8,207.2 179.5,201.6 183.2,195.9 187.0,190.0 190.8,184.1 194.5,178.4 198.2,172.8 202.0,167.5 205.8,162.6 209.5,158.2 213.2,154.3 217.0,151.0 220.8,148.4 224.5,146.5 228.2,145.4 232.0,145.0 235.8,145.4 239.5,146.5 243.2,148.4 247.0,151.0 250.8,154.3 254.5,158.2 258.2,162.6 262.0,167.5 265.8,172.8 269.5,178.4 273.2,184.1 277.0,190.0 280.8,195.9 284.5,201.6 288.2,207.2 292.0,212.5 295.8,217.4 299.5,221.8 303.2,225.7 307.0,229.0 310.8,231.6 314.5,233.5 318.2,234.6 322.0,235.0 325.8,234.6 329.5,233.5 333.2,231.6 337.0,229.0 340.8,225.7 344.5,221.8 348.2,217.4 352.0,212.5 355.8,207.2 359.5,201.6 363.2,195.9 367.0,190.0 370.8,184.1 374.5,178.4 378.2,172.8 382.0,167.5 385.8,162.6 389.5,158.2 393.2,154.3 397.0,151.0 400.8,148.4 404.5,146.5 408.2,145.4 412.0,145.0\"><animate attributeName=\"stroke-dashoffset\" from=\"1\" to=\"0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline><circle cx=\"52\" cy=\"145.0\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" from=\"52\" to=\"412\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"145.0;146.5;151.0;158.2;167.5;178.4;190.0;201.6;212.5;221.8;229.0;233.5;235.0;233.5;229.0;221.8;212.5;201.6;190.0;178.4;167.5;158.2;151.0;146.5;145.0;146.5;151.0;158.2;167.5;178.4;190.0;201.6;212.5;221.8;229.0;233.5;235.0;233.5;229.0;221.8;212.5;201.6;190.0;178.4;167.5;158.2;151.0;146.5;145.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sóng chạy trên dây, chấm cam là điểm M; đường dưới là đồ thị u – t của M được vẽ dần (chạy chậm 5 lần). Sóng tính theo công thức; bấm Chạy mô phỏng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đồ thị $u-x$ (một lúc): hai đỉnh liên tiếp cách nhau $\\lambda$. Đồ thị $u-t$ (một điểm): hai đỉnh liên tiếp cách nhau $T$.</li><li><strong>Công thức:</strong> $v=\\dfrac{\\lambda}{T}$ · $\\omega=\\dfrac{2\\pi}{T}$ · $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.</li><li>Sóng tới sau thì trừ pha: $u_N=A\\cos\\left(\\omega t+\\varphi_0-\\dfrac{2\\pi d}{\\lambda}\\right)$.</li><li>⚠ <strong>Điều kiện:</strong> đọc nhãn trục hoành trước: $x$ cho $\\lambda$, $t$ cho $T$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bước sóng từ đồ thị (a)</span></p><p>Trục hoành là $x$ (cm). Hai đỉnh liên tiếp ở $x=6$ cm và $x=30$ cm:</p>$$\\lambda=30-6$$<div class=\"bt-ans\">$$\\lambda=24\\ \\text{cm}$$</div><p>Đỉnh cao $3$ cm nên biên độ $A=3$ cm.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chu kì từ đồ thị (b)</span></p><p>Trục hoành là $t$ (s). Hai đỉnh liên tiếp ở $t=0$ và $t=0{,}4$ s:</p><div class=\"bt-ans\">$$T=0{,}4\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ truyền sóng</span></p>$$v=\\dfrac{\\lambda}{T}=\\dfrac{24}{0{,}4}$$<div class=\"bt-ans\">$$v=60\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phương trình của M</span></p>$$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{0{,}4}=5\\pi\\ \\text{rad/s}$$<p>Lúc $t=0$, M ở biên dương ($u_M=3$ cm) nên $\\varphi_0=0$:</p><div class=\"bt-ans\">$$u_M=3\\cos(5\\pi t)\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Phương trình của N</span></p>$$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}=\\dfrac{2\\pi\\cdot9}{24}=\\dfrac{3\\pi}{4}$$<p>N nhận sóng sau M nên trễ pha:</p><div class=\"bt-ans\">$$u_N=3\\cos\\left(5\\pi t-\\dfrac{3\\pi}{4}\\right)\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$\\lambda=vT=60\\cdot0{,}4=24$ cm ✓ (khớp hình (a)).</p><p>Lúc $t=0$: $u_N=3\\cos\\dfrac{3\\pi}{4}\\approx-2{,}12$ cm; hình (a) ở $x=15$ cm: $3\\sin\\dfrac{15\\pi}{12}\\approx-2{,}12$ cm ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=3\\ \\text{cm}$ · $\\lambda=24\\ \\text{cm}$ · $T=0{,}4\\ \\text{s}$</p><p>b) $v=60\\ \\text{cm/s}$</p><p>c) $u_M=3\\cos(5\\pi t)\\ \\text{cm}$</p><p>d) $u_N=3\\cos\\left(5\\pi t-\\dfrac{3\\pi}{4}\\right)\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai đồ thị</strong> → đọc nhãn trục hoành: $x$ cho $\\lambda$, $t$ cho $T$, rồi $v=\\dfrac{\\lambda}{T}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 330\" role=\"img\" aria-label=\"Hai đồ thị đã đánh dấu: bước sóng đo trên đồ thị u – x, chu kì đo trên đồ thị u – t, điểm M và điểm N\"><defs><marker id=\"w27e2-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"w27e2-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"w27e2-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"w27e2-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"52.0\" y1=\"34.0\" x2=\"52.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"52.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"106.0\" y1=\"34.0\" x2=\"106.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"106.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"160.0\" y1=\"34.0\" x2=\"160.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"160.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">12</text><line x1=\"214.0\" y1=\"34.0\" x2=\"214.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"214.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">18</text><line x1=\"268.0\" y1=\"34.0\" x2=\"268.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"268.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">24</text><line x1=\"322.0\" y1=\"34.0\" x2=\"322.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"322.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><line x1=\"376.0\" y1=\"34.0\" x2=\"376.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"376.0\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">36</text><line x1=\"52.0\" y1=\"194.0\" x2=\"52.0\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"52.0\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"134.4\" y1=\"194.0\" x2=\"134.4\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"134.4\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"216.8\" y1=\"194.0\" x2=\"216.8\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"216.8\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"299.2\" y1=\"194.0\" x2=\"299.2\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"299.2\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,6</text><line x1=\"381.6\" y1=\"194.0\" x2=\"381.6\" y2=\"298.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"381.6\" y=\"316\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,8</text><line x1=\"52.0\" y1=\"41.0\" x2=\"382.0\" y2=\"41.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"45.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"52.0\" y1=\"131.0\" x2=\"382.0\" y2=\"131.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"135.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"44\" y1=\"86\" x2=\"398\" y2=\"86\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e2-g)\"/><line x1=\"52\" y1=\"140\" x2=\"52\" y2=\"28\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e2-g)\"/><text x=\"58\" y=\"20\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">u (cm)</text><line x1=\"52.0\" y1=\"201.0\" x2=\"382.0\" y2=\"201.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"205.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"52.0\" y1=\"291.0\" x2=\"382.0\" y2=\"291.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"2 4\" opacity=\"0.22\"/><text x=\"44\" y=\"295.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"44\" y1=\"246\" x2=\"398\" y2=\"246\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e2-g)\"/><line x1=\"52\" y1=\"300\" x2=\"52\" y2=\"188\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#w27e2-g)\"/><text x=\"58\" y=\"180\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">u (cm)</text><text x=\"414\" y=\"108\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">x (cm)</text><text x=\"414\" y=\"268\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"52.0,86.0 56.5,80.1 61.0,74.4 65.5,68.8 70.0,63.5 74.5,58.6 79.0,54.2 83.5,50.3 88.0,47.0 92.5,44.4 97.0,42.5 101.5,41.4 106.0,41.0 110.5,41.4 115.0,42.5 119.5,44.4 124.0,47.0 128.5,50.3 133.0,54.2 137.5,58.6 142.0,63.5 146.5,68.8 151.0,74.4 155.5,80.1 160.0,86.0 164.5,91.9 169.0,97.6 173.5,103.2 178.0,108.5 182.5,113.4 187.0,117.8 191.5,121.7 196.0,125.0 200.5,127.6 205.0,129.5 209.5,130.6 214.0,131.0 218.5,130.6 223.0,129.5 227.5,127.6 232.0,125.0 236.5,121.7 241.0,117.8 245.5,113.4 250.0,108.5 254.5,103.2 259.0,97.6 263.5,91.9 268.0,86.0 272.5,80.1 277.0,74.4 281.5,68.8 286.0,63.5 290.5,58.6 295.0,54.2 299.5,50.3 304.0,47.0 308.5,44.4 313.0,42.5 317.5,41.4 322.0,41.0 326.5,41.4 331.0,42.5 335.5,44.4 340.0,47.0 344.5,50.3 349.0,54.2 353.5,58.6 358.0,63.5 362.5,68.8 367.0,74.4 371.5,80.1 376.0,86.0\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"52.0,201.0 56.1,201.6 60.2,203.2 64.4,205.9 68.5,209.6 72.6,214.2 76.7,219.5 80.8,225.6 85.0,232.1 89.1,239.0 93.2,246.0 97.3,253.0 101.4,259.9 105.6,266.4 109.7,272.5 113.8,277.8 117.9,282.4 122.0,286.1 126.2,288.8 130.3,290.4 134.4,291.0 138.5,290.4 142.6,288.8 146.8,286.1 150.9,282.4 155.0,277.8 159.1,272.5 163.2,266.4 167.4,259.9 171.5,253.0 175.6,246.0 179.7,239.0 183.8,232.1 188.0,225.6 192.1,219.5 196.2,214.2 200.3,209.6 204.4,205.9 208.6,203.2 212.7,201.6 216.8,201.0 220.9,201.6 225.0,203.2 229.2,205.9 233.3,209.6 237.4,214.2 241.5,219.5 245.6,225.6 249.8,232.1 253.9,239.0 258.0,246.0 262.1,253.0 266.2,259.9 270.4,266.4 274.5,272.5 278.6,277.8 282.7,282.4 286.8,286.1 291.0,288.8 295.1,290.4 299.2,291.0 303.3,290.4 307.4,288.8 311.6,286.1 315.7,282.4 319.8,277.8 323.9,272.5 328.0,266.4 332.2,259.9 336.3,253.0 340.4,246.0 344.5,239.0 348.6,232.1 352.8,225.6 356.9,219.5 361.0,214.2 365.1,209.6 369.2,205.9 373.4,203.2 377.5,201.6 381.6,201.0\"/><text x=\"414\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">(a) li độ theo x, tại t = 0</text><text x=\"414\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">(b) li độ theo t, điểm M (x = 6 cm)</text><line x1=\"106.0\" y1=\"29.0\" x2=\"322.0\" y2=\"29.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27e2-b)\"/><line x1=\"322.0\" y1=\"29.0\" x2=\"106.0\" y2=\"29.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27e2-b)\"/><text x=\"214.0\" y=\"21.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">λ = ?</text><circle cx=\"106.0\" cy=\"41.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"98.0\" y=\"59.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M</text><circle cx=\"187.0\" cy=\"117.8\" r=\"5\" fill=\"#f87171\"/><text x=\"177.0\" y=\"135.8\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">N (cách M 9 cm)</text><line x1=\"54\" y1=\"189.0\" x2=\"216.8\" y2=\"189.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27e2-b)\"/><line x1=\"216.8\" y1=\"189.0\" x2=\"54\" y2=\"189.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#w27e2-b)\"/><text x=\"134.4\" y=\"181.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">T = ?</text></svg><figcaption>Dữ kiện: trục hoành x cho bước sóng, trục hoành t cho chu kì. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hình (a): li độ theo toạ độ $x$ … tại $t=0$\"</td><td>Trục hoành là $x$ (cm)</td><td>⚠ Đọc nhãn trục hoành trước: đồ thị $u-x$ có hai đỉnh liên tiếp cách nhau $\\lambda$</td></tr><tr><td>\"hình (b): li độ theo thời gian $t$ của điểm M\"</td><td>Trục hoành là $t$ (s)</td><td>Đồ thị $u-t$: hai đỉnh liên tiếp cách nhau $T$; $\\omega=\\dfrac{2\\pi}{T}$</td></tr><tr><td>\"tính tốc độ truyền sóng\"</td><td>Cần $v$</td><td>$v=\\dfrac{\\lambda}{T}$ ($\\lambda$ từ hình (a), $T$ từ hình (b))</td></tr><tr><td>\"viết phương trình dao động của M\"</td><td>Cần $A$, $\\omega$, $\\varphi_0$</td><td>$u_M=A\\cos(\\omega t+\\varphi_0)$; hình (b) cho biết $u_M$ lúc $t=0$</td></tr><tr><td>\"N cách M $9$ cm theo chiều truyền sóng\"</td><td>$d=9$ cm</td><td>N nhận sóng sau M nên trễ pha: $u_N=A\\cos\\left(\\omega t+\\varphi_0-\\dfrac{2\\pi d}{\\lambda}\\right)$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đồ thị sóng</b> → đọc nhãn trục hoành: $x$ cho $\\lambda$, $t$ cho $T$; rồi $v=\\dfrac{\\lambda}{T}$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bước sóng từ đồ thị (a)",
+     "hoi": "Bước sóng $\\lambda$ đọc từ đồ thị bằng bao nhiêu?",
+     "dap_so": 24,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Đọc khoảng từ đỉnh tới vị trí cân bằng kế tiếp (một phần tư) hoặc từ đỉnh tới đáy (một nửa) thay vì hai đỉnh liên tiếp."
+    },
+    {
+     "tieu_de": "Chu kì từ đồ thị (b)",
+     "hoi": "Chu kì $T$ đọc từ đồ thị bằng bao nhiêu?",
+     "dap_so": 0.4,
+     "sai_so": 0.01,
+     "don_vi": "s",
+     "loi_hay_gap": "Lẫn hai đồ thị: lấy khoảng giữa hai đỉnh ở hình (a) làm chu kì (đó là bước sóng) vì không đọc nhãn trục hoành.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hai đỉnh liên tiếp trên trục thời gian của hình (b) cách nhau $T$",
+       "dung": true
+      },
+      {
+       "text": "Lấy khoảng giữa hai đỉnh ở hình (a) làm $T$",
+       "dung": false,
+       "vi_sao": "Trục hoành hình (a) là $x$, nên khoảng đó là bước sóng chứ không phải chu kì."
+      },
+      {
+       "text": "Lấy thời gian từ đỉnh tới vị trí cân bằng kế tiếp làm $T$",
+       "dung": false,
+       "vi_sao": "Đó chỉ là $\\dfrac{T}{4}$; chu kì là khoảng giữa hai đỉnh liên tiếp."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ truyền sóng",
+     "hoi": "Tốc độ truyền sóng $v$ bằng bao nhiêu?",
+     "dap_so": 60,
+     "sai_so": 1,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Chia ngược ($\\dfrac{T}{\\lambda}$), hoặc dùng biên độ thay cho bước sóng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{\\lambda}{T}$ với $\\lambda$ từ hình (a), $T$ từ hình (b)",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{A}{T}$",
+       "dung": false,
+       "vi_sao": "Biên độ không phải quãng đường sóng truyền; sóng đi một $\\lambda$ trong một $T$."
+      },
+      {
+       "text": "$v=\\lambda\\cdot T$",
+       "dung": false,
+       "vi_sao": "Nhân cho đơn vị cm·s; tốc độ phải là $\\lambda$ chia cho $T$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phương trình của M",
+     "hoi": "Phương trình dao động của M là?",
+     "lua_chon": [
+      {
+       "text": "$u_M=3\\cos(5\\pi t)$ cm",
+       "dung": true
+      },
+      {
+       "text": "$u_M=3\\cos(0{,}4t)$ cm",
+       "dung": false,
+       "vi_sao": "Hệ số của $t$ là $\\omega=\\dfrac{2\\pi}{T}$, không phải $T$."
+      },
+      {
+       "text": "$u_M=3\\cos\\left(5\\pi t+\\dfrac{\\pi}{2}\\right)$ cm",
+       "dung": false,
+       "vi_sao": "Hình (b) có đỉnh ngay tại $t=0$ nên pha ban đầu bằng $0$; $\\dfrac{\\pi}{2}$ ứng với M đang ở vị trí cân bằng."
+      }
+     ],
+     "loi_hay_gap": "Lấy $\\omega$ bằng $T$ thay vì $\\dfrac{2\\pi}{T}$, hoặc đoán pha ban đầu mà không nhìn li độ lúc $t=0$ trên hình (b).",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $\\omega=\\dfrac{2\\pi}{T}$ và $\\varphi_0$ từ li độ lúc $t=0$ trên hình (b)",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\omega$ và $\\varphi_0$ từ hình (a)",
+       "dung": false,
+       "vi_sao": "Hình (a) có trục hoành là $x$: không cho biết tần số hay pha theo thời gian của M."
+      },
+      {
+       "text": "Lấy $\\omega=\\dfrac{2\\pi}{\\lambda}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{2\\pi}{\\lambda}$ là hệ số của $x$; $\\omega$ gắn với chu kì $T$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phương trình của N",
+     "hoi": "Phương trình dao động của N là?",
+     "lua_chon": [
+      {
+       "text": "$u_N=3\\cos\\left(5\\pi t-\\dfrac{3\\pi}{4}\\right)$ cm",
+       "dung": true
+      },
+      {
+       "text": "$u_N=3\\cos\\left(5\\pi t+\\dfrac{3\\pi}{4}\\right)$ cm",
+       "dung": false,
+       "vi_sao": "N ở phía sóng tới sau M nên trễ pha: phải trừ."
+      },
+      {
+       "text": "$u_N=3\\cos\\left(5\\pi t-\\dfrac{3\\pi}{2}\\right)$ cm",
+       "dung": false,
+       "vi_sao": "Dùng $\\lambda=12$ cm (một nửa) thay vì bước sóng đọc được ở hình (a): $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$."
+      }
+     ],
+     "loi_hay_gap": "Cộng thay vì trừ độ trễ pha, hoặc dùng sai bước sóng khi tính $\\dfrac{2\\pi d}{\\lambda}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$ rồi trừ vào pha của M",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\Delta\\varphi=\\dfrac{2\\pi d}{v}$",
+       "dung": false,
+       "vi_sao": "Mẫu số phải là bước sóng $\\lambda$; $\\dfrac{d}{v}$ là thời gian trễ, không phải số bước sóng."
+      },
+      {
+       "text": "Dùng $\\Delta\\varphi=2\\pi\\dfrac{d}{T}$",
+       "dung": false,
+       "vi_sao": "$d$ là độ dài (cm), $T$ là thời gian (s): không chia được cho nhau; phải chia $d$ cho $\\lambda$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\">[KNTT] Hình 8.4 là đồ thị $(u - t)$ của một sóng âm trên màn hình của một dao động kí. Biết mỗi cạnh của ô vuông theo phương ngang trên hình tương ứng với 1 ms. Tính tần số của sóng.</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/27/1789726850229-fig10-hinh-8-4.jpg\" alt=\"Hình 8.4 — đồ thị (u − t) của sóng âm trên dao động kí\"></p><p class=\"text-base leading-relaxed my-2\"><em class=\"italic\"></em></p><p class=\"text-base leading-relaxed my-2\">Từ đồ thị ta thấy 1 chu kì sóng tương ứng với 3 ô vuông. Suy ra $T = 3$ ms.</p><p class=\"text-base leading-relaxed my-2\">Tần số $f = \\dfrac{1}{T} = \\dfrac{1}{3 \\cdot 10^{-3}} = \\dfrac{1000}{3}$ Hz.</p><h4>Bài 2 · Dễ</h4><p class=\"text-base leading-relaxed my-2\">Một người ngồi ở bờ biển quan sát thấy khoảng cách giữa hai ngọn sóng liên tiếp bằng 10 m. Ngoài ra người đó đếm được 20 ngọn sóng đi qua trước mặt trong 76 s.</p><p class=\"text-base leading-relaxed my-2\">a. Tính chu kỳ dao động của nước biển.</p><p class=\"text-base leading-relaxed my-2\">b. Tính vận tốc truyền của nước biển.</p><p class=\"text-base leading-relaxed my-2\"><em class=\"italic\"></em></p><p class=\"text-base leading-relaxed my-2\">a. Khi người đó quan sát được 20 ngọn sóng đi qua thì sóng đã thực hiện được quãng đường là $19\\lambda$. Thời gian tương ứng để sóng lan truyền được quãng đường trên là $19T$.</p><p class=\"text-base leading-relaxed my-2\">Theo bài ta có $19T = 76 \\Rightarrow T = 4$ s.</p><p class=\"text-base leading-relaxed my-2\">b. Khoảng cách giữa hai ngọn sóng liên tiếp chính là bước sóng, khi đó $\\lambda = 10$ m.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ truyền sóng được tính theo công thức $v = \\dfrac{\\lambda}{T} = \\dfrac{10}{4} = 2,5$ m/s.</p><h4>Bài 3 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">[KNTT] Trên mặt hồ yên lặng, một người làm cho con thuyền dao động tạo ra sóng trên mặt nước. Thuyền thực hiện được 24 dao động trong 40 s, mỗi dao động tạo ra một ngọn sóng cao 12 cm so với mặt hồ yên lặng và ngọn sóng tới bờ cách thuyền 10 m sau 5 s. Với số liệu này, hãy xác định:</p><p class=\"text-base leading-relaxed my-2\">a. Chu kì dao động của thuyền.</p><p class=\"text-base leading-relaxed my-2\">b. Tốc độ lan truyền của sóng.</p><p class=\"text-base leading-relaxed my-2\">c. Bước sóng.</p><p class=\"text-base leading-relaxed my-2\">d. Biên độ sóng.</p><p class=\"text-base leading-relaxed my-2\"><em class=\"italic\"></em></p><p class=\"text-base leading-relaxed my-2\">a. Chu kì dao động của thuyền $T = \\dfrac{\\Delta t}{N} = \\dfrac{40}{24} \\approx 1,7$ s.</p><p class=\"text-base leading-relaxed my-2\">b. Tốc độ lan truyền của sóng $v = \\dfrac{d}{t} = \\dfrac{10}{5} = 2$ m/s.</p><p class=\"text-base leading-relaxed my-2\">c. Bước sóng $\\lambda = vT = 2 \\cdot \\dfrac{40}{24} \\approx 3,3$ m.</p><p class=\"text-base leading-relaxed my-2\">d. Biên độ sóng bằng độ cao của ngọn sóng so với mặt hồ yên lặng, ta có $A = 12$ cm.</p><h4>Bài 4 · Khó</h4><p class=\"text-base leading-relaxed my-2\">[CTST] Hai điểm gần nhất trên cùng phương truyền sóng dao động lệch pha nhau một góc $\\dfrac{\\pi}{2}$ cách nhau 60 cm. Biết tốc độ truyền sóng là 330 m/s. Tìm độ lệch pha:</p><p class=\"text-base leading-relaxed my-2\">a. giữa hai điểm trên cùng phương truyền sóng, cách nhau 360 cm tại cùng một thời điểm.</p><p class=\"text-base leading-relaxed my-2\">b. tại cùng một điểm trên phương truyền sóng sau một khoảng thời gian là 0,1 s.</p><p class=\"text-base leading-relaxed my-2\"><em class=\"italic\"></em></p><p class=\"text-base leading-relaxed my-2\">Độ lệch pha giữa hai điểm trên phương truyền sóng cách nhau một khoảng $d$ là</p><p class=\"text-base leading-relaxed my-2\">$$\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} \\Leftrightarrow \\dfrac{\\pi}{2} = \\dfrac{2\\pi \\cdot 0,6}{\\lambda} \\Rightarrow \\lambda = 2,4 \\text{ m}.$$</p><p class=\"text-base leading-relaxed my-2\">Chu kì $T = \\dfrac{\\lambda}{v} = \\dfrac{2,4}{330} = \\dfrac{2}{275}$ s.</p><p class=\"text-base leading-relaxed my-2\">a. Độ lệch pha giữa hai điểm trên cùng phương truyền sóng, cách nhau 360 cm tại cùng một thời điểm</p><p class=\"text-base leading-relaxed my-2\">$$\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} = \\dfrac{2\\pi \\cdot 3,6}{2,4} = 3\\pi \\text{ rad}$$</p><p class=\"text-base leading-relaxed my-2\">Vậy hai điểm này dao động ngược pha.</p><p class=\"text-base leading-relaxed my-2\">b. Độ lệch pha tại cùng một điểm trên phương truyền sóng sau một khoảng thời gian là 0,1 s là</p><p class=\"text-base leading-relaxed my-2\">$$\\Delta\\varphi = \\dfrac{2\\pi \\cdot \\Delta t}{T} = \\dfrac{2\\pi \\cdot 0,1}{\\dfrac{2}{275}} = 27,5\\pi = 26\\pi + \\dfrac{3\\pi}{2}$$</p><p class=\"text-base leading-relaxed my-2\">Cùng một điểm nhưng ở hai thời điểm khác nhau nó dao động vuông pha.</p><h4>Bài 5 · Nâng cao</h4><p class=\"text-base leading-relaxed my-2\">[CTST] Biết cường độ ánh sáng của Mặt Trời đo được tại Trái Đất là $1,37 \\cdot 10^{3}$ W/m$^2$ và khoảng cách từ Mặt Trời đến Trái Đất là $1,50 \\cdot 10^{11}$ m. Hãy tính công suất bức xạ sóng ánh sáng của Mặt Trời.</p><p class=\"text-base leading-relaxed my-2\"><em class=\"italic\"></em></p><p class=\"text-base leading-relaxed my-2\">Công suất bức xạ sóng ánh sáng của Mặt Trời</p><p class=\"text-base leading-relaxed my-2\">$$P = I.S = I.4\\pi r^2 = 1,37 \\cdot 10^{3} \\cdot 4\\pi \\cdot \\left(1,50 \\cdot 10^{11}\\right)^2 = 3,87 \\cdot 10^{26} \\text{ W}.$$\n</p>"
+ }
+}
