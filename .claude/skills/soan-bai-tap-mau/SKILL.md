@@ -61,11 +61,11 @@ Nháp theo **hệ bắc cầu cấp độ 1–4** (Áp dụng trực tiếp → 
 Ba chế độ nối nhau trong `scripts/batch-ra-soat-bai.mts` (chạy trong tab terminal của thầy; bài phải có dòng trong `content/gemini/hang-doi.md`):
 0. `--che-do quet-dang --gui --lop 12` → `--nhan --cho` (hoặc quét trong phiên Claude Code): danh sách dạng, phải xong trước bước 1.
 1. `--che-do bai-tap-mau --gui --lop 12` → `--nhan --cho`: nháp theo danh sách quét + kiểm máy → `scripts/logs/batch-ra-soat/ket-qua/<id>.bai-tap-mau.nhap.json`.
-2. `--che-do viet-bai-tap-mau --gui …` → `--nhan --cho`: API viết hoàn chỉnh (HTML + SVG mô phỏng + bảng phân tích + lời giải theo
+2. `--che-do viet-bai-tap-mau --gui …` → `--nhan --cho`: API viết hoàn chỉnh (HTML + SVG mô phỏng + bảng phân tích + lời giải + `buoc[]`/`nhan_dang`/`cap_do`/`fading`/`go_roi` tự giải từng bước — từ 9/10/2026, dạng mẫu trong system prompt là bài 57 dạng 2) theo
    `references/PROMPT-CLAUDE-VIET-BAI-TAP-MAU.md`, system prompt nhúng AI-TUTOR mục 9 + dạng 2 bài 10 làm mẫu) → ghi
    `scripts/data/bai-tap-mau/<id>.json` (`review.checked=false`, bản cũ sao lưu `old/<id>.truoc-api-*.json`), chạy `validate.mts`, chụp
    `scripts/logs/batch-ra-soat/xem-thu/<id>/dang-N.png`.
-3. `--che-do kiem-cheo --gui …` → `--nhan --cho`: request khác tự giải độc lập (`references/PROMPT-CLAUDE-KIEM-CHEO.md`); cả 4 "dung" →
+3. `--che-do kiem-cheo --gui …` → `--nhan --cho`: request khác tự giải độc lập (`references/PROMPT-CLAUDE-KIEM-CHEO.md`, kiểm cả `buoc[]`: đáp số bước, lựa chọn sai thật, không lộ đáp số); cả 4 "dung" →
    `review.checked=true`. Có "sai"/"nghi_ngo" → ghi vào `review.kiem_cheo`, Claude Code sửa tay rồi chạy lại kiem-cheo cho bài đó.
 4. Xem ảnh `dang-N.png` bằng mắt (subagent, không đọc ảnh ở phiên chính), sửa hình hỏng, rồi đăng `publish-bai-tap-mau.mts --lesson <id> --yes`
    (`--giu-cu` nếu bài có dạng cũ). Báo cáo gộp: `--tong-hop` → `BAO-CAO-VIET-BTM.md`.
@@ -154,5 +154,6 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-09 · Lỗi tự gây: ghi "bài chưa có danh mục YCCĐ" dựa trên file lý thuyết, nhưng danh mục thật lấy từ chủ đề ngân hàng (`danhMucYccd`). → Trước khi ghi "không có YCCĐ", chạy `kiem-ban-nhap-gemini.py` để xem danh mục thật.
 - 2026-10-09 · Subagent soạn nháp (Opus) làm lệch công thức ngoài bài (E = P·t ở Dạng 5, không có trong lý thuyết) và sai một câu bẫy (Δm). → Kiểm chéo bằng Sonnet độc lập bắt được cả hai; luôn kiểm chéo trước khi đánh dấu `review.checked`.
 - 2026-10-09 · Kiểm chéo đã tự giải trước rồi mới mở lời giải; chỉ kiểm lại đúng dạng bị sửa, không chạy lại cả bài.
+- 2026-10-09 · Prompt `viet-bai-tap-mau` + schema batch sinh luôn `buoc[]` (trường trống = null/[] vì schema strict; `gonBuoc` bỏ null trước khi ghi); kiem-cheo kiểm cả bước. CHƯA chạy thật — bài đầu tiên chạy xong ghi: tỉ lệ validator bắt lộ đáp số, chất lượng lựa chọn sai, số bước API chia có khớp `.bt-step` không.
 - 2026-10-09 · Dựng UI + validator tự giải từng bước trên bài 57 (6 dạng, 26 bước, kiem-code tự giải 20/20 đáp số khớp). Bắt được: lựa chọn "bước kế" của dạng 6 ghi thẳng "α≈24,3°" = đáp số của bước → validator thêm kiểm lộ đáp số; `loi_hay_gap` nêu "37,4°" cũng suy ra 52,6° (góc phụ) → bỏ số. Fading "giấu bước cuối" ban đầu giấu bước "Kiểm tra" (không có câu hỏi) nên không giấu gì → "bước cuối" = bước cuối có `hoi`. Trang `/dev/btm` + `--xem-thu` + `?mock=1` tiết kiệm nhiều lần đăng thử lên DB; RPC bài tương tự trả 401 khi chưa đăng nhập nên phải mock.
 - 2026-10-09 · Thầy bỏ đường nháp Gemini (mục đã gỡ khỏi quy trình, file prompt/kiem-ban-nhap-gemini.py còn nhưng không còn là bước) và chốt 5 quy tắc "tự giải từng bước": lời giải đóng mở theo bước, ví dụ mờ dần theo cấp, chọn bước kế, câu nhận dạng, bài tương tự gỡ rối về đúng bước → JSON thêm `buoc[]`/`nhan_dang`/`fading`/`go_roi`. CHƯA có UI, validator, prompt viết bài tương ứng — làm trên bài 57 trước rồi mới nhân ra.

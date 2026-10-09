@@ -7,6 +7,10 @@
 //                       tự chạy kiem-ban-nhap-gemini.py để kiểm số học/phạm vi. Bản nháp KHÔNG đăng nguyên văn —
 //                       Claude viết lại theo skill soan-bai-tap-mau (chế độ 2B của skill Gemini).
 //
+//   --che-do quet-dang   Sonnet 5.5 (effort medium) QUÉT số dạng + tên dạng bài tập mẫu từ lý thuyết và ngân hàng câu hỏi
+//                       (bước 0 skill cap-nhat-bai-hoc-theo-gemini, prompt .../soan-bai-tap-mau/references/PROMPT-SONNET-QUET-DANG.md)
+//                       → ket-qua/<id>.quet-dang.json; chưa viết nháp. Đọc question_topics + question_bank (chỉ đọc).
+//
 // CHỈ ĐỌC DB (lesson_items.kind='ly_thuyet'), KHÔNG ghi gì vào Supabase. Chỉ ghi file trong
 // scripts/logs/batch-ra-soat/ và (nếu bài có thư mục trong content/lesson-samples theo content/gemini/hang-doi.md)
 // gemini/nhan/hoc-sinh-trung-binh-claude.json hoặc gemini/nhan/bai-tap-mau.json để chế độ /gemini-nhan đọc tiếp
@@ -49,15 +53,17 @@ function arg(name: string): string | undefined {
   return i >= 0 && !process.argv[i + 1]?.startsWith("--") ? process.argv[i + 1] : undefined;
 }
 const flag = (n: string) => process.argv.includes(`--${n}`);
-const MODEL = arg("model") ?? "claude-opus-5-5";
-const EFFORT = (arg("effort") ?? "high") as "low" | "medium" | "high" | "xhigh" | "max";
+// quet-dang mặc định Sonnet 5.5 + effort medium (phân công model, thầy chốt 9/10/2026); các chế độ khác giữ Opus + high.
+const QUET = arg("che-do") === "quet-dang";
+const MODEL = arg("model") ?? (QUET ? "claude-sonnet-5-5" : "claude-opus-5-5");
+const EFFORT = (arg("effort") ?? (QUET ? "medium" : "high")) as "low" | "medium" | "high" | "xhigh" | "max";
 const VAI = arg("vai") ?? "trung-binh";
-type CheDo = "hoc-sinh" | "bai-tap-mau" | "sua-ly-thuyet" | "viet-bai-tap-mau" | "kiem-cheo";
-const CAC_CHE_DO: CheDo[] = ["hoc-sinh", "bai-tap-mau", "sua-ly-thuyet", "viet-bai-tap-mau", "kiem-cheo"];
+type CheDo = "hoc-sinh" | "bai-tap-mau" | "sua-ly-thuyet" | "viet-bai-tap-mau" | "kiem-cheo" | "quet-dang";
+const CAC_CHE_DO: CheDo[] = ["hoc-sinh", "bai-tap-mau", "sua-ly-thuyet", "viet-bai-tap-mau", "kiem-cheo", "quet-dang"];
 const CHE_DO = (arg("che-do") ?? "hoc-sinh") as CheDo;
 if (!CAC_CHE_DO.includes(CHE_DO)) fail(`--che-do phải là ${CAC_CHE_DO.join(" | ")}`);
-const PREFIX_CUA: Record<string, string> = { "hoc-sinh": "lesson-", "bai-tap-mau": "btm-", "sua-ly-thuyet": "sua-", "viet-bai-tap-mau": "viet-", "kiem-cheo": "kc-" };
-const SUFFIX_CUA: Record<string, string> = { "hoc-sinh": ".json", "bai-tap-mau": ".bai-tap-mau.json", "sua-ly-thuyet": ".sua.json", "viet-bai-tap-mau": ".viet.json", "kiem-cheo": ".kiem-cheo.json" };
+const PREFIX_CUA: Record<string, string> = { "hoc-sinh": "lesson-", "bai-tap-mau": "btm-", "sua-ly-thuyet": "sua-", "viet-bai-tap-mau": "viet-", "kiem-cheo": "kc-", "quet-dang": "quet-" };
+const SUFFIX_CUA: Record<string, string> = { "hoc-sinh": ".json", "bai-tap-mau": ".bai-tap-mau.json", "sua-ly-thuyet": ".sua.json", "viet-bai-tap-mau": ".viet.json", "kiem-cheo": ".kiem-cheo.json", "quet-dang": ".quet-dang.json" };
 const prefixCua = (c: string) => PREFIX_CUA[c] ?? "lesson-";
 const suffixCua = (c: string) => SUFFIX_CUA[c] ?? ".json";
 const PREFIX = prefixCua(CHE_DO);
@@ -142,16 +148,20 @@ function loadPromptViet(): string {
   // System prompt = quy tắc + phong cách thầy (AI-TUTOR mục 9) + một dạng mẫu đã đăng (bài 10, dạng 2) — cache được cho cả batch.
   const tutor = fs.readFileSync(path.join(root, "docs/AI-TUTOR.md"), "utf8");
   const muc9 = tutor.split("\n## 9.")[1]?.split("\n## ")[0] ?? "";
-  const mauP = path.join(root, "scripts/data/bai-tap-mau/10.json");
+  // Dạng mẫu = bài 57 dạng 2 (có buoc[] tự giải từng bước, 9/10/2026); SVG mô phỏng rút gọn để không phình system prompt.
+  const mauP = path.join(root, "scripts/data/bai-tap-mau/57.json");
   const mau = fs.existsSync(mauP) ? JSON.parse(fs.readFileSync(mauP, "utf8")).dang_bai[1] : null;
-  const mauTxt = mau ? JSON.stringify({ label: mau.label, topic: mau.topic, form: mau.form, problem_html: mau.problem_html, analysis_html: mau.analysis_html, solution_html: mau.solution_html }, null, 1) : "(không có dạng mẫu)";
-  return [docPrompt(VIET_PROMPT_FILE), "", "## 9." + muc9.trim(), "", "## DẠNG MẪU ĐÃ ĐĂNG (bài 10, dạng 2) — bám đúng HTML này", "```json", mauTxt, "```"].join("\n");
+  const rutSvg = (h: string) => h.replace(/<svg[\s\S]*?<\/svg>/g, "<svg>…(SVG như quy tắc ở trên)…</svg>");
+  const mauTxt = mau ? JSON.stringify({ label: mau.label, topic: mau.topic, form: mau.form, cap_do: mau.cap_do, fading: mau.fading, nhan_dang: mau.nhan_dang, problem_html: rutSvg(mau.problem_html), analysis_html: rutSvg(mau.analysis_html), solution_html: mau.solution_html, buoc: mau.buoc, go_roi: mau.go_roi }, null, 1) : "(không có dạng mẫu)";
+  return [docPrompt(VIET_PROMPT_FILE), "", "## 9." + muc9.trim(), "", "## DẠNG MẪU ĐÃ ĐĂNG (bài 57, dạng 2) — bám đúng HTML và cấu trúc buoc[] này", "```json", mauTxt, "```"].join("\n");
 }
+const QUET_PROMPT_FILE = ".claude/skills/soan-bai-tap-mau/references/PROMPT-SONNET-QUET-DANG.md";
 const SYSTEM =
   CHE_DO === "bai-tap-mau" ? loadPromptBtm()
   : CHE_DO === "sua-ly-thuyet" ? loadPromptSua()
   : CHE_DO === "viet-bai-tap-mau" ? loadPromptViet()
   : CHE_DO === "kiem-cheo" ? docPrompt(KC_PROMPT_FILE, "\n---\n")
+  : CHE_DO === "quet-dang" ? docPrompt(QUET_PROMPT_FILE, "\n---\n")
   : loadPrompt();
 
 // JSON schema khớp đầu ra trong prompt — structured output để khỏi vỡ JSON.
@@ -253,14 +263,23 @@ const SCHEMA_VIET = obj({
   luu_y_tro_giang: ARR_S,
 });
 // viet-bai-tap-mau gửi MỖI DẠNG một request (4 dạng/bài): một lần trả cả 4 dạng kèm SVG vượt 64k token (bài 13, 8/10/2026).
+// Tự giải từng bước (9/10/2026): buoc[] khớp 1-1 với .bt-step của solution_html. Trường không dùng → null / mảng rỗng (schema strict đòi đủ khoá); xuLyViet bỏ null.
+const SN = { type: ["string", "null"] }, NN = { type: ["number", "null"] };
+const CHOICE = obj({ text: S, dung: { type: "boolean" }, vi_sao: SN });
+const BUOC = obj({ tieu_de: S, hoi: SN, dap_so: NN, don_vi: SN, sai_so: NN, lua_chon: { type: "array", items: CHOICE }, loi_hay_gap: SN, chon_buoc_ke: { type: "array", items: CHOICE } });
 const SCHEMA_VIET_1 = obj({
   dang: obj({
     label: S,
     topic: S,
     form: { type: "string", enum: ["bai_tap", "ly_thuyet"] },
+    cap_do: { type: "integer" },
+    fading: { type: "string", enum: ["mo_het", "giau_buoc_cuoi", "giau_tu_buoc_2", "giau_het"] },
+    nhan_dang: S,
     problem_html: S,
     analysis_html: S,
     solution_html: S,
+    buoc: { type: "array", items: BUOC },
+    go_roi: obj({ buoc_hay_sai: { type: "integer" } }),
     dap_so: ARR_S,
     ghi_chu_kiem: ARR_S,
   }),
@@ -270,8 +289,36 @@ const SCHEMA_KC = obj({
   dang: { type: "array", items: obj({ label: S, ket_luan: { type: "string", enum: ["dung", "sai", "nghi_ngo"] }, dap_so_doc_lap: ARR_S, ly_do: S, sua_de_xuat: S }) },
   tong_ket: S,
 });
+// quet-dang: chỉ quét số dạng + tên dạng (không lời giải). 0 = không có chủ đề nguồn, "" = không có YCCĐ.
+const SCHEMA_QUET = obj({
+  lesson_title: S,
+  so_dang: { type: "integer" },
+  dang: { type: "array", items: obj({ ten: S, cap_do: { type: "integer" }, nguon_chu_de: { type: "integer" }, so_cau_ngan_hang: { type: "integer" }, yccd: S, ly_do: S, cau_noi: S }) },
+  khong_dua_vao: { type: "array", items: obj({ ten: S, ly_do: S }) },
+  ghi_chu: ARR_S,
+});
+type KetQuaQuet = {
+  lesson_title: string; so_dang: number;
+  dang: { ten: string; cap_do: number; nguon_chu_de: number; so_cau_ngan_hang: number; yccd: string; ly_do: string; cau_noi: string }[];
+  khong_dua_vao: { ten: string; ly_do: string }[]; ghi_chu: string[];
+};
+// Kiểm máy kết quả quét: 2–6 dạng, cấp 1–4 không giảm, không trùng tên, dạng không có chủ đề phải có ghi chú.
+function kiemQuet(q: KetQuaQuet): string[] {
+  const loi: string[] = [];
+  if (q.so_dang !== q.dang.length) loi.push(`so_dang ${q.so_dang} ≠ số dạng thực ${q.dang.length}`);
+  if (q.dang.length < 2 || q.dang.length > 6) loi.push(`số dạng ${q.dang.length} ngoài 2–6`);
+  const caps = q.dang.map((d) => d.cap_do);
+  if (caps.some((c) => c < 1 || c > 4) || caps.some((c, i) => i > 0 && c < caps[i - 1])) loi.push(`cấp độ [${caps.join(",")}] sai hoặc giảm dần`);
+  const seen = new Set<string>();
+  for (const d of q.dang) {
+    if (seen.has(d.ten)) loi.push(`trùng tên dạng: ${d.ten}`);
+    seen.add(d.ten);
+    if (d.nguon_chu_de === 0 && !q.ghi_chu.some((g) => g.includes(d.ten))) loi.push(`"${d.ten}" không có chủ đề nguồn và không có ghi chú`);
+  }
+  return loi;
+}
 const SCHEMA_CUA = (c: string) =>
-  c === "bai-tap-mau" ? SCHEMA_BTM : c === "sua-ly-thuyet" ? SCHEMA_SUA : c === "viet-bai-tap-mau" ? SCHEMA_VIET_1 : c === "kiem-cheo" ? SCHEMA_KC : SCHEMA;
+  c === "bai-tap-mau" ? SCHEMA_BTM : c === "sua-ly-thuyet" ? SCHEMA_SUA : c === "viet-bai-tap-mau" ? SCHEMA_VIET_1 : c === "kiem-cheo" ? SCHEMA_KC : c === "quet-dang" ? SCHEMA_QUET : SCHEMA;
 
 // ── nội dung bài ──────────────────────────────────────────────────────────────
 // Giữ HTML (tên mục, lớp tl-ok lộ đáp án đúng — prompt dựa vào đó), bỏ phần nặng vô nghĩa với model.
@@ -302,6 +349,8 @@ interface Bai {
   lessonId: number; itemId: number; ten: string; lop: string; chuong: string; html: string; nguon: "repo" | "db";
   // chỉ sua-ly-thuyet: thư mục bài, theory.src.html nguyên văn, JSON góp ý các lượt, sổ quyết định vòng trước
   dir?: string; src?: string; gopY?: string; quyetDinhCu?: string; lintLoi?: string;
+  // chỉ viet-bai-tap-mau: số dạng theo danh sách quét (quet-dang.json), không cố định 4
+  soDang?: number;
   // viet-bai-tap-mau: bản nháp + log kiểm máy; kiem-cheo: file bài tập mẫu đã viết
   nhap?: string; kiemLog?: string; btm?: string;
 }
@@ -379,6 +428,10 @@ async function layBai(): Promise<Bai[]> {
       const nhapP = fs.existsSync(nhapBatch) ? nhapBatch : nhapGemini && fs.existsSync(nhapGemini) ? nhapGemini : "";
       if (!nhapP) { console.warn(`  bỏ ${l.id} ${l.title}: chưa có bản nháp (chạy --che-do bai-tap-mau trước)`); continue; }
       b.nhap = fs.readFileSync(nhapP, "utf8");
+      b.soDang = soDangCua(l.id);
+      if (!b.soDang) { console.warn(`  bỏ ${l.id} ${l.title}: chưa quét dạng (chạy --che-do quet-dang trước)`); continue; }
+      const soDangNhap = (JSON.parse(b.nhap).dang_bai as unknown[] | undefined)?.length ?? 0;
+      if (soDangNhap !== b.soDang) { console.warn(`  bỏ ${l.id} ${l.title}: nháp ${soDangNhap} dạng nhưng quét ra ${b.soDang} — nháp lại`); continue; }
       const kqBtm = path.join(KQ_DIR, `${l.id}.bai-tap-mau.json`);
       if (fs.existsSync(kqBtm)) { try { b.kiemLog = (JSON.parse(fs.readFileSync(kqBtm, "utf8")).kiem?.log ?? "").slice(-3000); } catch { /* bỏ */ } }
     }
@@ -386,7 +439,7 @@ async function layBai(): Promise<Bai[]> {
       const btmP = path.join(BTM_DATA_DIR, `${l.id}.json`);
       if (!fs.existsSync(btmP)) { console.warn(`  bỏ ${l.id} ${l.title}: chưa có scripts/data/bai-tap-mau/${l.id}.json`); continue; }
       const d = JSON.parse(fs.readFileSync(btmP, "utf8"));
-      b.btm = JSON.stringify({ lesson_title: d.lesson_title, dang_bai: (d.dang_bai as Record<string, string>[]).map((x) => ({ label: x.label, topic: x.topic, problem_html: boHinh(x.problem_html), analysis_html: boHinh(x.analysis_html), solution_html: x.solution_html })) }, null, 1);
+      b.btm = JSON.stringify({ lesson_title: d.lesson_title, dang_bai: (d.dang_bai as Record<string, unknown>[]).map((x) => ({ label: x.label, topic: x.topic, problem_html: boHinh(x.problem_html as string), analysis_html: boHinh(x.analysis_html as string), solution_html: x.solution_html, nhan_dang: x.nhan_dang, buoc: x.buoc })) }, null, 1);
     }
     out.push(b);
   }
@@ -412,11 +465,16 @@ function userMessageSua(b: Bai): string {
   ].join("\n");
 }
 
-const SO_DANG = 4;
+// Số dạng của bài = số dạng trong danh sách quét (quet-dang.json); 0 nếu chưa quét.
+function soDangCua(lessonId: number): number {
+  const q = path.join(KQ_DIR, `${lessonId}.quet-dang.json`);
+  if (!fs.existsSync(q)) return 0;
+  return (JSON.parse(fs.readFileSync(q, "utf8")).data?.dang?.length as number | undefined) ?? 0;
+}
 function userMessageViet(b: Bai, dang = 1): string {
   return [
     `Lớp: ${b.lop}`, `Chương: ${b.chuong}`, `Bài: ${b.ten}`, `lesson_id: ${b.lessonId}`, ``,
-    `CHỈ VIẾT DẠNG ${dang} (trong ${SO_DANG} dạng của bản nháp). Vẫn đọc cả ${SO_DANG} nháp để giữ hệ bắc cầu (dạng sau dùng lại cách làm dạng trước), nhưng đầu ra chỉ gồm dạng ${dang}. Tiền tố id marker SVG: d${dang}0- và d${dang}2-.`, ``,
+    `CHỈ VIẾT DẠNG ${dang} (trong ${b.soDang} dạng của bản nháp). Vẫn đọc cả ${b.soDang} nháp để giữ hệ bắc cầu (dạng sau dùng lại cách làm dạng trước), nhưng đầu ra chỉ gồm dạng ${dang}. Tiền tố id marker SVG: d${dang}0- và d${dang}2-.`, ``,
     `<ban_nhap>`, b.nhap ?? "", `</ban_nhap>`, ``,
     `<kiem_may>`, b.kiemLog || "(không có log)", `</kiem_may>`, ``,
     `<yccd>`, danhMucYccdDayDu(b.lessonId), `</yccd>`, ``,
@@ -435,7 +493,44 @@ function danhMucYccdDayDu(lessonId: number): string {
   return mine.length ? mine.map((t) => `- ${t.name}${t.parent_id === null ? "   (chủ đề cha)" : "   (YCCĐ con — ưu tiên)"}`).join("\n") : "(không có danh mục)";
 }
 
+// Ngữ cảnh quét dạng: chủ đề ngân hàng + số câu + 3 câu mẫu của từng chủ đề (chỉ đọc DB). Lưu theo lesson_id cho userMessage.
+const QUET_CONTEXT = new Map<number, string>();
+async function layNganHangQuet(bais: Bai[]): Promise<void> {
+  const url = envVar("NEXT_PUBLIC_SUPABASE_URL") ?? fail("thiếu NEXT_PUBLIC_SUPABASE_URL");
+  const key = envVar("SUPABASE_SERVICE_ROLE_KEY") ?? fail("thiếu SUPABASE_SERVICE_ROLE_KEY");
+  const sb = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } });
+  const tp = await sb.from("question_topics").select("id,lesson_id,name,parent_id").in("lesson_id", bais.map((b) => b.lessonId));
+  if (tp.error) fail(`Supabase question_topics: ${tp.error.message}`);
+  for (const b of bais) {
+    const topics = tp.data!.filter((t) => t.lesson_id === b.lessonId);
+    const chuDe: string[] = [];
+    const cauHoi: string[] = [];
+    for (const t of topics) {
+      chuDe.push(`- id=${t.id} · ${t.name} · chủ đề cha=${t.parent_id ?? "—"}`);
+      const cnt = await sb.from("question_bank").select("id", { count: "exact", head: true }).eq("topic_id", t.id).eq("archived", false);
+      if (cnt.error) fail(`Supabase question_bank: ${cnt.error.message}`);
+      const mau = await sb.from("question_bank").select("question").eq("topic_id", t.id).eq("archived", false).limit(3);
+      cauHoi.push(`- chủ đề id=${t.id}: ${cnt.count ?? 0} câu`);
+      for (const q of mau.data ?? []) cauHoi.push(`    câu mẫu: ${JSON.stringify(q.question).slice(0, 240)}`);
+    }
+    QUET_CONTEXT.set(b.lessonId, [
+      `Lớp: ${b.lop}`,
+      `Chương: ${b.chuong}`,
+      `Tên bài: ${b.ten}`,
+      ``,
+      `<yccd>\n${danhMucYccd(b.lessonId)}\n</yccd>`,
+      ``,
+      `<bai_hoc>\n${b.html}\n</bai_hoc>`,
+      ``,
+      `<chu_de>\n${chuDe.join("\n") || "(bài chưa gắn chủ đề ngân hàng — ghi vào ghi_chu, không tự tạo dạng)"}\n</chu_de>`,
+      ``,
+      `<cau_hoi>\n${cauHoi.join("\n") || "(không có câu nào)"}\n</cau_hoi>`,
+    ].join("\n"));
+  }
+}
+
 function userMessage(b: Bai, dang = 1): string {
+  if (CHE_DO === "quet-dang") return QUET_CONTEXT.get(b.lessonId) ?? "";
   if (CHE_DO === "sua-ly-thuyet") return userMessageSua(b);
   if (CHE_DO === "viet-bai-tap-mau") return userMessageViet(b, dang);
   if (CHE_DO === "kiem-cheo") return userMessageKc(b);
@@ -454,7 +549,7 @@ function params(b: Bai, dang = 1): Anthropic.MessageCreateParamsNonStreaming {
   return {
     model: MODEL,
     // Suy nghĩ (effort high) tính chung vào trần này; 16000 từng cắt JSON bài 10 ở góp ý 19 (8/10/2026).
-    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" || CHE_DO === "viet-bai-tap-mau" ? 64000 : 32000, // sua: cả file HTML; viet: 1 dạng/request vẫn chạm 32k (dạng 4 bài 13) vì suy nghĩ dài
+    max_tokens: CHE_DO === "quet-dang" ? 16000 : CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" || CHE_DO === "viet-bai-tap-mau" ? 64000 : 32000, // sua: cả file HTML; viet: 1 dạng/request vẫn chạm 32k (dạng 4 bài 13) vì suy nghĩ dài
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: userMessage(b, dang) }],
     output_config: { effort: EFFORT, format: { type: "json_schema", schema: SCHEMA_CUA(CHE_DO) } },
@@ -486,6 +581,7 @@ const client = new Anthropic({
 async function duToan() {
   const bai = await layBai();
   if (!bai.length) fail("không có bài nào khớp bộ lọc");
+  if (CHE_DO === "quet-dang") await layNganHangQuet(bai); // đếm token cần nội dung thật (chỉ đọc DB)
   let tongIn = 0;
   const p = PRICE[MODEL];
   console.log(`Chế độ ${CHE_DO} · model ${MODEL} · effort ${EFFORT} · ${bai.length} bài\n`);
@@ -494,7 +590,7 @@ async function duToan() {
     tongIn += c.input_tokens;
     console.log(`  ${String(b.lessonId).padStart(4)} L${b.lop} ${b.ten.slice(0, 50).padEnd(50)} ${c.input_tokens.toLocaleString()} tok · ${b.nguon}`);
   }
-  const uocOut = bai.length * ({ "bai-tap-mau": 24000, "sua-ly-thuyet": 26000, "viet-bai-tap-mau": 4 * 9000, "kiem-cheo": 8000 }[CHE_DO as string] ?? 14000); // token ra/bài (JSON + thinking high) — đo thật bài 10: 14,5k (8/10/2026)
+  const uocOut = CHE_DO === "viet-bai-tap-mau" ? bai.reduce((s, b) => s + soDangCua(b.lessonId), 0) * 9000 : bai.length * ({ "quet-dang": 3000, "bai-tap-mau": 24000, "sua-ly-thuyet": 26000, "viet-bai-tap-mau": 4 * 9000, "kiem-cheo": 8000 }[CHE_DO as string] ?? 14000); // token ra/bài (JSON + thinking high) — đo thật bài 10: 14,5k (8/10/2026)
   if (p) {
     const usd = ((tongIn * p.input + uocOut * p.output) / 1e6) * 0.5;
     console.log(`\nTổng vào ${tongIn.toLocaleString()} tok · ra ước ${uocOut.toLocaleString()} tok → ≈ $${usd.toFixed(2)} (giá batch ½, chưa trừ cache system prompt)`);
@@ -502,11 +598,19 @@ async function duToan() {
 }
 
 async function gui() {
-  const bai = await layBai();
+  let bai = await layBai();
   if (!bai.length) fail("không có bài nào khớp bộ lọc");
+  if (CHE_DO === "quet-dang") await layNganHangQuet(bai);
+  if (CHE_DO === "bai-tap-mau") {
+    // Bước 0 trước nháp (9/10/2026): bài chưa có danh sách dạng đã quét thì không nháp.
+    const thieu = bai.filter((b) => !fs.existsSync(path.join(KQ_DIR, `${b.lessonId}.quet-dang.json`)));
+    for (const b of thieu) console.warn(`  bỏ ${b.lessonId} ${b.ten}: chưa quét dạng (chạy --che-do quet-dang trước)`);
+    bai = bai.filter((b) => !thieu.includes(b));
+    if (!bai.length) fail("không bài nào đã quét dạng — chạy --che-do quet-dang trước");
+  }
   const requests = bai.flatMap((b) =>
     CHE_DO === "viet-bai-tap-mau"
-      ? Array.from({ length: SO_DANG }, (_, i) => i + 1)
+      ? Array.from({ length: b.soDang ?? 0 }, (_, i) => i + 1)
           .filter((n) => !arg("dang") || arg("dang")!.split(",").map(Number).includes(n)) // --dang 4: gửi lại riêng dạng hỏng
           .map((n) => ({ custom_id: `${PREFIX}${b.lessonId}-${n}`, params: params(b, n) }))
       : [{ custom_id: `${PREFIX}${b.lessonId}`, params: params(b) }],
@@ -539,7 +643,21 @@ function manifestMoiNhat(): string | undefined {
 interface KetQuaHS { gop_y: { muc: string; loai: string }[]; du_doan_loi_sai: { bai_da_nhan_manh: boolean }[] }
 interface KetQuaBTM { lesson_title: string; dang_bai: { label: string; cap_do: number; yccd_de_xuat: string; dieu_ban_khong_chac: string[] }[] }
 interface KetQuaSua { html: string; quyet_dinh: { id: string; quyet_dinh: string; ghi_chu: string }[]; doi_noi_dung: string[]; so_tu_them: number }
-interface KetQuaViet { lesson_title: string; dang_bai: { label: string; topic: string; form: string; problem_html: string; analysis_html: string; solution_html: string; dap_so: string[]; ghi_chu_kiem: string[] }[]; luu_y_tro_giang: string[] }
+type Choice = { text: string; dung: boolean; vi_sao: string | null };
+type Buoc = { tieu_de: string; hoi: string | null; dap_so: number | null; don_vi: string | null; sai_so: number | null; lua_chon: Choice[]; loi_hay_gap: string | null; chon_buoc_ke: Choice[] };
+interface KetQuaViet { lesson_title: string; dang_bai: { label: string; topic: string; form: string; cap_do: number; fading: string; nhan_dang: string; problem_html: string; analysis_html: string; solution_html: string; buoc: Buoc[]; go_roi: { buoc_hay_sai: number }; dap_so: string[]; ghi_chu_kiem: string[] }[]; luu_y_tro_giang: string[] }
+// Bỏ null/mảng rỗng mà schema strict bắt điền, để file khớp đúng dạng validator/UI đọc.
+function gonBuoc(b: Buoc) {
+  const gonChoice = (c: Choice) => ({ text: c.text, ...(c.dung ? { dung: true } : { vi_sao: c.vi_sao ?? "" }) });
+  const o: Record<string, unknown> = { tieu_de: b.tieu_de };
+  if (b.hoi) o.hoi = b.hoi;
+  if (b.dap_so !== null) { o.dap_so = b.dap_so; o.sai_so = b.sai_so ?? 0; }
+  if (b.don_vi) o.don_vi = b.don_vi;
+  if (b.lua_chon?.length) o.lua_chon = b.lua_chon.map(gonChoice);
+  if (b.loi_hay_gap) o.loi_hay_gap = b.loi_hay_gap;
+  if (b.chon_buoc_ke?.length) o.chon_buoc_ke = b.chon_buoc_ke.map(gonChoice);
+  return o;
+}
 interface KetQuaKc { dang: { label: string; ket_luan: "dung" | "sai" | "nghi_ngo"; dap_so_doc_lap: string[]; ly_do: string; sua_de_xuat: string }[]; tong_ket: string }
 interface KetQua<T = KetQuaHS | KetQuaBTM | KetQuaSua | KetQuaViet | KetQuaKc> {
   lesson_id: number; ten: string; lop: string; chuong: string; batch_id: string; che_do: string; model: string;
@@ -569,7 +687,7 @@ function xuLyViet(lessonId: number, data: KetQuaViet, ten: string): NonNullable<
     nguon: `claude-batch ${MODEL}`,
     review: { checked: false, notes: "API viết từ nháp; CHƯA kiểm chéo — chạy --che-do kiem-cheo" },
     luu_y_tro_giang: data.luu_y_tro_giang,
-    dang_bai: data.dang_bai.map((d) => ({ label: d.label, topic: d.topic, form: d.form, problem_html: d.problem_html, analysis_html: d.analysis_html, solution_html: d.solution_html, dap_so: d.dap_so, ghi_chu_kiem: d.ghi_chu_kiem })),
+    dang_bai: data.dang_bai.map((d) => ({ label: d.label, topic: d.topic, form: d.form, cap_do: d.cap_do, fading: d.fading, nhan_dang: d.nhan_dang, problem_html: d.problem_html, analysis_html: d.analysis_html, solution_html: d.solution_html, buoc: (d.buoc ?? []).map(gonBuoc), go_roi: d.go_roi, dap_so: d.dap_so, ghi_chu_kiem: d.ghi_chu_kiem })),
   };
   fs.writeFileSync(f, JSON.stringify(out, null, 1));
   r.ghi_vao = path.relative(root, f);
@@ -742,6 +860,16 @@ async function nhan() {
     nSucc++;
     const kq: KetQua = { lesson_id: lessonId, ten: m.ten, lop: m.lop, chuong: m.chuong, batch_id: id, che_do: cheDo, model: manifest.model, usage: msg.usage, cost_usd: usd, data };
     const kqPath = path.join(KQ_DIR, `${lessonId}${suffix}`);
+    if (cheDo === "quet-dang") {
+      // Chỉ ghi kết quả quét; không ghi vào gemini/nhan (bước sau mới đọc danh sách này).
+      const q = data as unknown as KetQuaQuet;
+      const loiQuet = kiemQuet(q);
+      fs.writeFileSync(kqPath, JSON.stringify({ ...kq, quet: { loi: loiQuet } }, null, 2));
+      const tomTat = q.dang.map((d) => `${d.ten} (cấp ${d.cap_do}, ${d.so_cau_ngan_hang} câu)`).join(" · ");
+      console.log(`  ${loiQuet.length ? "!" : "✓"} ${String(lessonId).padStart(4)} ${m.ten.slice(0, 40).padEnd(40)} ${q.dang.length} dạng · ${tomTat}`);
+      for (const l of loiQuet) console.log(`      ✗ ${l}`);
+      continue;
+    }
     // Bài có thư mục nguồn → ghi đúng chỗ chế độ /gemini-nhan đọc (không ghi đè bản đã có).
     const dir = thuMuc.get(lessonId);
     const destName = cheDo === "bai-tap-mau" ? "bai-tap-mau.json" : `hoc-sinh-${manifest.vai ?? VAI}-claude.json`;
@@ -758,11 +886,13 @@ async function nhan() {
       daGhiNhan = true;
     }
     if (cheDo === "viet-bai-tap-mau") {
-      // Lưu từng dạng; đủ SO_DANG phần mới ghép thành file bài và kiểm.
+      // Lưu từng dạng; đủ đúng số dạng của danh sách quét thì ghép thành file bài và kiểm.
       const partData = data as unknown as { dang: KetQuaViet["dang_bai"][number]; luu_y_tro_giang: string[] };
       fs.writeFileSync(path.join(KQ_DIR, `${lessonId}.viet.part${part}.json`), JSON.stringify({ part, usage: msg.usage, cost_usd: usd, ...partData }, null, 1));
-      const parts = Array.from({ length: SO_DANG }, (_, i) => path.join(KQ_DIR, `${lessonId}.viet.part${i + 1}.json`));
-      if (!parts.every((pp) => fs.existsSync(pp))) { console.log(`  · ${String(lessonId).padStart(4)} dạng ${part}/${SO_DANG} đã về (${partData.dang.label.slice(0, 50)}) · $${(usd ?? 0).toFixed(3)}`); continue; }
+      const soDang = soDangCua(lessonId);
+      if (!soDang) { loi.push(`${lessonId}: chưa quét dạng, không ghép được`); continue; }
+      const parts = Array.from({ length: soDang }, (_, i) => path.join(KQ_DIR, `${lessonId}.viet.part${i + 1}.json`));
+      if (!parts.every((pp) => fs.existsSync(pp))) { console.log(`  · ${String(lessonId).padStart(4)} dạng ${part}/${soDang} đã về (${partData.dang.label.slice(0, 50)}) · $${(usd ?? 0).toFixed(3)}`); continue; }
       const ps = parts.map((pp) => JSON.parse(fs.readFileSync(pp, "utf8")) as { usage: Anthropic.Usage; cost_usd: number | null; dang: KetQuaViet["dang_bai"][number]; luu_y_tro_giang: string[] });
       const data4: KetQuaViet = { lesson_title: m.ten, dang_bai: ps.map((x) => x.dang), luu_y_tro_giang: ps.flatMap((x) => x.luu_y_tro_giang) };
       kq.cost_usd = ps.reduce((sum, x) => sum + (x.cost_usd ?? 0), 0);
