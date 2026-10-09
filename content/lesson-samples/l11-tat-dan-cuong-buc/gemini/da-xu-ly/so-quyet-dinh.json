@@ -1,0 +1,155 @@
+{
+  "bai": "l11-tat-dan-cuong-buc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ $t = 2$ s và hệ số tắt dần $\\beta$ càng lớn khi càng nhớt."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Chu kì riêng khi chưa có cản gần đúng 1 s\" để không mâu thuẫn với ý tắt dần không có chu kì xác định."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: trong dầu con lắc qua lại chừng một nhịp rồi gần như đứng yên ở cân bằng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Hại khi cần dao động lâu: khắc phục bằng cách giảm ma sát\", đồng thời bỏ dòng ứng dụng lặp ý để bù chữ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa chu kì riêng $T_0$ ngay trong dòng đầu mục duy trì."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Vế so sánh cố ý chuẩn bị cho mục 3 ngay sau và quiz 3 dựa vào nó, nên chỉ là ý thích diễn đạt."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu nói $F_0$ là biên độ lực và $\\omega = 2\\pi f$ là tần số góc của lực, đồng thời bỏ dòng so sánh duy trì lặp ý."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển câu mà bỏ $b$ và $A_r$ khỏi mục 4, định nghĩa chúng sau công thức ở mục 5 và đưa tham số đường cản lớn vào details."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"trục f tuyến tính\" thành \"trục f chia đều\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ tên Lorentz (ngoài chương trình), chỉ ghi công thức đối xứng quanh $f_0$."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đúng vật lí nên đổi ngưỡng phân biệt hai số đọc thành $2 \\times 0{,}2 = 0{,}4$ cm, sửa nhất quán ở các câu so hiệu."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"bảng A\" thành \"bảng quét tần số ở trên\"."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án B q7 đổi thành \"Vẫn có tần số xác định, như dao động điều hoà\" và chỉnh phản hồi B cho khớp."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ lò vi sóng và địa chấn khỏi đáp án câu 6 vì bài chưa giải thích (lò vi sóng còn dễ hiểu sai), giữ vị trí câu vì chuyển là đổi cấu trúc."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: làm bài theo SGK thì coi đây là ví dụ cộng hưởng, phần nghiên cứu sau chỉ để tham khảo."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề ⭐⭐ ghi rõ tần số lực hai lần, cùng $F_0$ và lực cản, đồng thời bỏ số biên độ cho sẵn."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án D q1 đổi thành \"Nhún đổi chu kì của đu, nhờ vậy đu giữ độ cao\" và sửa phản hồi D."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng mẹo \"bù một nhịp, không đẩy suốt\" nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ý ma sát quá lớn thì về cân bằng rồi dừng, và T ≈ 1 s nay đã ghi là chu kì riêng."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ý chỉ một phần chu kì, không đẩy suốt như lực cưỡng bức."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $f_{\\text{vật}} = f_{\\text{lực}}$ ở mục 3."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước quiz bằng câu \"Có ngoại lực nên là cưỡng bức. Chưa đủ\"."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn vật dao động theo tần số lực."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn không có chu kì xác định."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước q8: $|f - f_0|$ chỉ là độ lệch để xét biên độ, không phải tần số dao động."
+      }
+    ],
+    "doi_noi_dung": [
+      "Ngưỡng kết luận hai số đọc khác nhau đổi từ 0,2 cm thành 2 × 0,2 = 0,4 cm: câu hiệu đỉnh mục 5, phản hồi đúng/sai q4, ô bảng phân tích đề, lời giải bước 2 và 4, bài điền bước (kết luận không đổi vì các hiệu 1,8 cm, 2,6 cm và 4,0 cm đều vượt 0,4 cm).",
+      "Thí nghiệm ba môi trường: \"T gần đúng 1 s\" ghi lại thành chu kì riêng khi chưa có cản.",
+      "Bảng tắt dần: ghi rõ số 2 trong mũ là t = 2 s và β là hệ số tắt dần (số liệu không đổi).",
+      "Mục 4: bỏ b = 1,2 Hz, A_r = 2,5 cm khỏi câu văn, các tham số này chuyển vào details mục 5; định nghĩa A_r (biên độ đỉnh) và b (độ rộng đỉnh) đặt sau công thức A(f).",
+      "Mục 3: thêm F_0 là biên độ lực, ω = 2πf là tần số góc của lực; bỏ dòng so sánh duy trì và dòng ứng dụng (đã có ở mục 6, Bẫy 1, mục VI).",
+      "Mục 1: bỏ dòng ứng dụng lặp ý; sửa dòng lợi/hại thành giảm ma sát là cách khắc phục.",
+      "q1: phương án nhiễu D đổi thành \"Nhún đổi chu kì của đu…\" (vẫn tl-no), phản hồi D sửa theo.",
+      "q7: phương án nhiễu B đổi thành \"Vẫn có tần số xác định, như dao động điều hoà\" (vẫn tl-no).",
+      "Trả bài câu 6: bỏ lò vi sóng và địa chấn khỏi danh sách lợi của cộng hưởng.",
+      "Thử thách ⭐⭐: đề ghi tần số lực hai lần là 5 Hz và 8 Hz, bỏ biên độ 8 cm và 2 cm (lời giải giữ nguyên).",
+      "Tacoma: thêm câu khi làm bài theo SGK thì coi là cộng hưởng, nghiên cứu sau (rung tự kích do gió) chỉ để tham khảo.",
+      "Mở bài: bỏ đoạn câu hỏi trùng nguyên văn với câu dự đoán q1."
+    ],
+    "so_tu_them": 20,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-tat-dan-cuong-buc/gemini/da-xu-ly/theory.src.202610091139.html"
+  }
+}

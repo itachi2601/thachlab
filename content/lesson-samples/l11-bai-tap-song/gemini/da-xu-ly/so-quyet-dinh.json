@@ -1,0 +1,136 @@
+{
+  "bai": "l11-bai-tap-song",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 6 thêm câu: M cách hai nguồn S₁, S₂ lần lượt d₁, d₂."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 8 ghi rõ S₁S₂ (tức AB) là khoảng cách hai nguồn."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 7 ghi A là biên độ sóng mỗi nguồn gửi tới M, Dạng 15 ghi A là biên độ sóng tới."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ký hiệu đoạn 6 vân sáng thành ℓ (cả bảng, lời giải và đề Câu 2) để khác bề rộng trường L."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai viết lại: sai số tuyệt đối của i bằng sai số thước chia 5 nên sai số tương đối của i nhỏ đi."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ ±0,5 mm là sai số lấy thô bằng nửa độ chia thước milimét."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 13 ghi n lấy từ L=(2n+1)λ/4 trước khi nói n+1 bụng, n+1 nút."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 3 thêm định nghĩa: một bó là đoạn giữa hai nút liền kề, chứa một bụng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm của thí nghiệm ống nhựa thêm tốc độ âm trong không khí v=340 m/s."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 4 ghi x là khoảng cách từ M tới nguồn và ω=2πf."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"miền giá trị trên đoạn nối hai nguồn vẫn là từ … tới …\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm câu: sáo là ống hở hai đầu, hai đầu là bụng nên cũng cho f=v/2L."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: 3π=π+2π, bỏ đi một vòng 2π còn π, tức là ngược pha."
+      },
+      {
+        "id": "q-cau0 (Dự đoán)",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn rõ 5 ngọn chỉ có 4 khoảng nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu đúng lỗi đổi 1,5λ thành 3π/2."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói i không đổi dù đo cách nào."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: số lần λ/4 trong L là 2n+1, chưa phải số bụng."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lấy phần nguyên, không làm tròn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và phản hồi đã nhấn 5 nút tạo 4 khoảng."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 của Bẫy 2 đã nhấn cực đại và cực tiểu đổi chỗ."
+      },
+      {
+        "id": "q-Điền bước còn thiếu (AB = 21 cm, cực tiểu)",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và lời giải đã nhấn dấu < và việc loại hai giá trị tại A, B."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm khe Young + đề Câu 2: ký hiệu L (6 vân sáng) đổi thành ℓ, L̄ thành ℓ̄ (bảng và Rút ra), số liệu giữ nguyên (ℓ̄=9,74 mm, i=1,95 mm, λ=0,65 μm).",
+      "Thí nghiệm khe Young: bỏ câu \"Vì một khoảng vân quá nhỏ để đo chính xác\" (để cắt độ dài, lý do này đã là nội dung Câu 2).",
+      "Dạng 4: thêm x là khoảng cách từ M tới nguồn và ω=2πf.",
+      "Dạng 6: thêm M cách nguồn S₁, S₂ lần lượt d₁, d₂.",
+      "Dạng 7: A là biên độ sóng mỗi nguồn gửi tới M.",
+      "Dạng 8: S₁S₂ (tức AB) là khoảng cách hai nguồn.",
+      "Dạng 13: n lấy từ L=(2n+1)λ/4 cho trường hợp một đầu cố định, một đầu tự do.",
+      "Dạng 15: A là biên độ sóng tới.",
+      "Thí nghiệm ống nhựa: thêm dữ kiện v=340 m/s (tốc độ âm trong không khí), kết quả 500 Hz không đổi.",
+      "Câu 2 phản hồi đúng: ±0,5 mm ghi là sai số lấy thô bằng nửa độ chia thước milimét.",
+      "Câu 2 phản hồi sai: nối sai số tuyệt đối của i (chia 5) với sai số tương đối nhỏ đi.",
+      "Câu 3: thêm dòng ⚠ \"số lần λ/4 trong L là 2n+1, chưa phải số bụng\".",
+      "Bẫy 2: câu Dạng 8 sửa thành \"miền giá trị trên đoạn nối hai nguồn vẫn là từ −S₁S₂/λ tới S₁S₂/λ\".",
+      "Bẫy 3: thêm định nghĩa bó (đoạn giữa hai nút liền kề, chứa một bụng).",
+      "Mục VI (details): sáo là ống hở hai đầu, hai đầu là bụng, f=v/2L."
+    ],
+    "so_tu_them": 80,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-song/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

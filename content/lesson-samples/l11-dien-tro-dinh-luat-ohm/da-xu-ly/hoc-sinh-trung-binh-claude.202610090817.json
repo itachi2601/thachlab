@@ -1,0 +1,164 @@
+{
+  "bai": "Bài 23. Điện trở. Định luật Ohm",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Điện trở là gì",
+      "trich_nguyen_van": "Bội số: $1\\ \\text{k}\\Omega = 1000\\ \\Omega$; $1\\ \\text{M}\\Omega = 10^{6}\\ \\Omega$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Mục tiêu hứa \"đổi đúng kΩ, mA\" nhưng trước câu tl42-q2 chỉ có kΩ, MΩ. Ngay sau đó các phương án lại ghi 5 mA, 24,2 mA. Em tính ra 0,005 A nhưng không chắc nó bằng 5 mA hay 0,5 mA, nên dễ chọn A (5 A) vì đơn vị quen hơn.",
+      "de_xuat": "Thêm vào dòng Bội số: \"Ước số: 1 mA = 10⁻³ A = 0,001 A\" trước câu tự kiểm tra."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Đo thật: đường đặc trưng vôn – ampe của điện trở",
+      "trich_nguyen_van": "Muốn tính $R$ chính xác nhất từ một hàng, chọn hàng nào?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bảng hàng nào cũng ra đúng 10 Ω, chưa có câu nào nói sai số dụng cụ ảnh hưởng thế nào. Em không có căn cứ để chọn D. Ý \"sai số tương đối\" chỉ xuất hiện trong phản hồi và trong hộp \"Sai số đến từ đâu?\" nằm sau câu hỏi.",
+      "de_xuat": "Trước câu hỏi, thêm một câu dẫn: sai số dụng cụ cố định (±0,1 V; ±0,01 A), nên số đo nhỏ thì phần lệch chiếm tỉ lệ lớn. Hoặc chuyển hộp \"Sai số đến từ đâu?\" lên trước câu hỏi."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Đo thật: đường đặc trưng vôn – ampe của điện trở",
+      "trich_nguyen_van": "A — ở 1,0 V, lệch $\\pm 0{,}1$ V đã là 10 % của số đo, tệ nhất bảng.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Phản hồi đúng ghi \"20 % ở hàng đầu\", phản hồi sai lại ghi \"10 %\" cho cùng hàng 1,0 V. Em không biết con số nào là sai số của R.",
+      "de_xuat": "Sửa thành \"lệch ±0,1 V là 10 % của U, cộng 10 % từ ampe kế thành 20 % cho R, tệ nhất bảng\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Đo thật: đường đặc trưng vôn – ampe của điện trở",
+      "trich_nguyen_van": "mắc điện trở công suất 10 Ω vào nguồn điều chỉnh được",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Điện trở công suất\" nghe như một loại điện trở có R thay đổi theo công suất, khác với điện trở thường.",
+      "de_xuat": "Thêm chú thích ngắn: \"(loại chịu được dòng lớn mà không nóng lên đáng kể, nên R gần như không đổi)\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Định luật Ohm",
+      "trich_nguyen_van": "Chỉ đúng khi $R$ không đổi; dây tóc nóng dần thì hết tỉ lệ thuận (phần 5).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là không được dùng I = U/R cho bóng đèn. Đến bài mẫu câu c lại thấy bảng ghi \"Định luật Ohm với R₀\" cho chính dây tóc, nên em lẫn điều kiện áp dụng.",
+      "de_xuat": "Nói rõ: với đèn vẫn tính được I = U/R tại từng trạng thái, dùng R ở nhiệt độ lúc đó; chỉ quan hệ \"I tỉ lệ thuận U\" (đồ thị thẳng) là không còn đúng."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "đoạn mạch chỉ có điện trở, $R$ không đổi (nhiệt độ ổn định)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm đèn cũng \"chờ ổn định rồi ghi\", tức nhiệt độ cũng ổn định ở mỗi lần đo. Vậy em nghĩ đèn cũng thoả điều kiện định luật Ohm.",
+      "de_xuat": "Đổi \"(nhiệt độ ổn định)\" thành \"(nhiệt độ vật dẫn không đổi khi U thay đổi)\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Vì sao kim loại có điện trở",
+      "trich_nguyen_van": "Nóng hơn → ion rung mạnh hơn → va chạm nhiều → $v$ giảm → $R$ tăng.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bước từ \"v giảm\" sang \"R tăng\" không được giải thích. Em không thấy tốc độ electron liên quan gì tới U/I.",
+      "de_xuat": "Chèn mắt xích: \"v giảm → cùng U thì I nhỏ hơn → R = U/I lớn hơn\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "5. Điện trở phụ thuộc nhiệt độ",
+      "trich_nguyen_van": "$\\alpha$: hệ số nhiệt điện trở (K⁻¹)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đơn vị ghi K⁻¹ nhưng t trong công thức tính bằng °C. Em có thể đổi t sang kelvin (+273) trước khi thế số.",
+      "de_xuat": "Thêm: \"t − t₀ tính bằng °C hay K đều cho cùng con số, không cần cộng 273\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Điện trở phụ thuộc nhiệt độ",
+      "trich_nguyen_van": "Điốt cũng không thẳng: một chiều dòng gần bằng không, chiều kia tăng vọt.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Điốt chưa được giới thiệu, cũng không có hình đường đặc trưng, nhưng câu Trả bài 3 lại yêu cầu nhớ ý này.",
+      "de_xuat": "Thêm một câu \"điốt là linh kiện bán dẫn chỉ cho dòng qua theo một chiều\" kèm hình phác đường V–A, hoặc bỏ điốt khỏi câu Trả bài 3."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "6. NTC khác kim loại ở chỗ nào? Siêu dẫn là gì?",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Siêu dẫn chỉ nằm trong hộp \"Xem thêm\" có thể bỏ qua, nhưng mục tiêu lại nói em phải tự trả lời được cả 6 câu. Em bỏ hộp đó thì bí câu 6 và nghĩ mình học sót.",
+      "de_xuat": "Hoặc đưa định nghĩa siêu dẫn (dưới T_c, R = 0) ra phần chính, hoặc bỏ \"Siêu dẫn là gì?\" khỏi câu Trả bài 6."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: dây tóc lúc nguội và lúc sáng",
+      "trich_nguyen_van": "$t - 20 = \\dfrac{11}{4{,}5\\cdot10^{-3}} \\approx 2444$ → $t \\approx 2{,}5\\cdot10^{3}$ °C (khoảng 2 460 °C)",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Số 11 xuất hiện mà không ghi bước 12 − 1. Lại có hai đáp số (2,5·10³ và 2 460), em không biết ghi số nào vào bài.",
+      "de_xuat": "Thêm bước \"α(t − 20) = 12 − 1 = 11\" và chỉ giữ một đáp số: t ≈ 2 460 °C."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "tl42-q1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Cho rằng dòng chỉ phụ thuộc hiệu điện thế; cùng 220 V thì dòng như nhau, quên rằng R thay đổi theo nhiệt độ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "gấp $3{,}0/0{,}25 = 12$ lần dòng bình thường"
+    },
+    {
+      "cau": "tl42-q2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thế thẳng 2,2 (kΩ) vào công thức không đổi ra Ω, lại thấy \"5\" khớp với đơn vị A quen thuộc; chưa được dạy 1 mA = 10⁻³ A.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "tl42-q3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy mọi hàng đều ra đúng 10 Ω nên nghĩ độ tin cậy như nhau; chưa có khái niệm sai số tương đối trước câu hỏi.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "tl42-q4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đọc R = U/I như quan hệ nhân quả: U lớn thì R lớn, thay vì coi nhiệt độ là nguyên nhân.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Rút ra: R dây tóc tăng theo nhiệt độ; đường đặc trưng của đèn không thẳng."
+    },
+    {
+      "cau": "tl42-q5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp R = U/I với I giữ nguyên, cho rằng U gấp đôi thì R gấp đôi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$I$ từ 0,60 A lên 1,20 A, $U/I$ vẫn 5 Ω"
+    },
+    {
+      "cau": "tl42-q6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Khái quát quy tắc của kim loại (nóng thì R tăng) cho mọi vật dẫn, nhầm điều kiện áp dụng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đúng với kim loại, sai với NTC."
+    },
+    {
+      "cau": "tl42-q7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen trực giác \"dốc hơn là lớn hơn\", gán độ dốc của đồ thị I–U là R thay vì 1/R.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dốc hơn là $R$ nhỏ hơn: đường 10 Ω dốc gấp đôi đường 20 Ω."
+    },
+    {
+      "cau": "tl42-q8",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chỉ tính phần tăng R₀·αΔt, quên số \"1 +\" trong ngoặc.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỗ hay sai: quên số \"1 +\" (ra 18 Ω)"
+    }
+  ]
+}

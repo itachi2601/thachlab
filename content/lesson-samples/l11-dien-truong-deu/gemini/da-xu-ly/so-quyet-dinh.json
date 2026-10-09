@@ -1,0 +1,118 @@
+{
+  "bai": "l11-dien-truong-deu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng dưới bảng: cột V/x tính với x đổi ra mét, ví dụ 1,5/0,010 = 150 V/m."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung ngoặc ngắn: hiệu điện thế 1 V nghĩa là lực điện sinh công 1 J khi dời 1 C."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đổi tên đại lượng phải sửa bảng, thí nghiệm, details và quiz (quá 2 câu), cột đã ghi rõ \"$V$ (V)\" phân biệt đại lượng và đơn vị."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ dạng gộp ±q dễ gây trừ dấu hai lần, thay bằng câu \"Độ lớn luôn tính bằng |q|\" vì chiều lệch đã có quy tắc ngay trên."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: gốc O tại điểm hạt bắt đầu vào trường, Oy cùng chiều lực điện."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi q4 sửa thành \"vuông góc vận tốc ban đầu\", thống nhất với q1."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cột \"Ra khỏi hai bản\" (lực bằng 0, đường thẳng, v_x và v_y giữ nguyên) và cắt câu lặp ý ở phản hồi q7 để bù độ dài mục III."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong lời giải ghi rõ d/2 = 1,0 cm = 10 mm trước khi so với 2,5 mm."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong details lí do: tanα = aL/v0², y = (L/2)tanα nên đường thẳng kéo ngược cắt trục tại L/2."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong details: không phải đại lượng nào gấp đôi cũng làm y gấp đôi, y tỉ lệ nghịch với v0²."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q1 đã nhấn \"bay vuông góc đường sức không có nghĩa là không có lực\"."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q2 đã chỉ ra lối nghĩ theo điện tích điểm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Details \"Sai số đến từ đâu?\" và đề câu hỏi đã nhấn sai số cố định ±0,1 V."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu q > 0 lệch về bản âm ngay trước quiz."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn chiều đường sức là chiều lực lên điện tích dương."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn, ý này đã được xử lí bằng cột \"Ra khỏi hai bản\" của c7 nên không thêm ⚠ trùng."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và dòng 🔑 đã nhấn đổi d ra mét."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz q8: v0 đổi thì t đổi, mà y tỉ lệ với t² chứ không với t."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.2 dưới bảng dò điện thế: thêm ghi chú cột V/x tính với x (m), ví dụ 1,5/0,010 = 150 V/m.",
+      "II.2 đơn vị: thêm giải thích 1 V = 1 J/C (lực điện sinh công 1 J khi dời 1 C).",
+      "II.2 thí nghiệm đo: bỏ câu \"Vôn kế đọc tới 0,1 V, sai số ±0,1 V\" ở bước Làm (sai số vẫn ghi ở đề q3 và details).",
+      "II.3: bỏ công thức gộp y = ±qU/(2mdv0²)x², thay bằng \"Độ lớn luôn tính bằng |q|\".",
+      "II.3: thêm quy ước gốc O tại điểm vào trường, Oy cùng chiều lực điện.",
+      "Phản hồi q4 (phương án D): \"vuông góc vận tốc ban đầu\".",
+      "Bẫy 2: bảng thêm cột \"Ra khỏi hai bản\" (lực = 0, đường thẳng, v_x và v_y giữ nguyên).",
+      "Bài mẫu, lời giải câu c: thêm bước d/2 = 1,0 cm = 10 mm.",
+      "Details bước điền (U = 182 V): thêm y tỉ lệ nghịch với v0².",
+      "Quiz q8: thêm dòng ⚠ về y tỉ lệ với t².",
+      "Thử thách ⭐⭐⭐: thêm chứng minh y = (L/2)tanα (25·0,10 = 2,5 mm) giải thích đường kéo ngược qua trung điểm.",
+      "Cắt câu lặp ý ở phản hồi q2 (đúng), q3 (sai) và q7 (sai) để bù độ dài, không đổi nội dung vật lí."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-truong-deu/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

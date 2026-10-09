@@ -1,0 +1,172 @@
+{
+  "bai": "l11-van-toc-gia-toc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"quỹ đạo con lắc\" thành \"quỹ đạo ghế xích đu\" ở câu dẫn và câu hỏi dự đoán cho khớp các phương án cao/thấp."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(xem mục 2)\" sau $|a|=\\omega^2|x|$ trong khối details, không dời khối."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Quan sát ghi rõ các số là tính bằng công thức mục 1, 2, 4, bước Rút ra bỏ $a=-\\omega^2x$ để hết vòng tròn."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi phần do thước ≈ 0,79 cm/s và thêm trong details một dòng giải thích hệ số 2 do $T$ nằm trong bình phương."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: đỉnh $v$ lúc $3T/4$ đến trước đỉnh kế tiếp của $x$ lúc $T$ đúng $T/4$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: dấu ± của $v$ theo chiều chuyển động, không theo dấu $x$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 3 nói rõ $v_{max}$, $a_{max}$ ở danh sách chỉ là độ lớn $|v|_{max}$, $|a|_{max}$; bẫy 3 và phản hồi câu 7 đổi sang $|v|_{max}$."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi khoảng cụ thể cùng dương $T/2\\to3T/4$, cùng âm $0\\to T/4$, kèm ý đó là hai quãng về O."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"với $\\theta=\\omega t+\\varphi$\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng mẫu trước bảng: O tới $A/2$ quét $\\pi/6$ nên $\\Delta t=T/12$."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 4 viết lại: O ứng $|\\theta|=\\pi/2$, mốc $A\\sqrt2/2$ ứng $\\pi/4$, quét 1/8 vòng là $T/8$."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng ghi \"(chương 2)\" và giải thích tốc độ truyền là tốc độ dao động lan đi, khác tốc độ từng phần tử."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ nhắc đổi $\\omega=2\\pi f$ trước câu 7, không thay phương án."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng vào bảng dữ liệu bài mẫu: xuất phát ở biên, $T/4-T/12=T/6$."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Cột Dữ liệu ghi $A\\cos\\varphi=A\\Rightarrow\\varphi=0$."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"kim đồng hồ\" thành \"quả lắc đồng hồ\"."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"dốc xuống (hệ số $-\\omega^2$)\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn biên có tốc độ bằng 0, bỏ qua."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ giữ dấu trừ trong $v=-A\\omega\\sin$, dấu $v$ cho biết chiều qua O."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chỗ lẫn $a_{max}$ với $|a|_{max}$."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ vị trí mốc $A\\sqrt2/2$ giữa hai mốc kia."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và dòng 🔑 đã nhấn $v$ có dấu."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 2 và bảng bẫy 2 đã nhấn ra biên thì ngược chiều."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ đổi $\\omega=2\\pi f$ trước khi nhân $A$ (gộp với c13)."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 đã làm mẫu $x=A/2$ cho $|v|=A\\omega\\sqrt3/2$."
+      },
+      {
+        "id": "q-Bài toán mẫu c)",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng mới trong bảng dữ liệu nhấn mốc xuất phát là biên, ra $T/6$ (gộp với c14)."
+      },
+      {
+        "id": "q-Điền bước còn thiếu",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ xét chiều trước khi ghi dấu, và trong lời giải nêu lý do $v$ âm."
+      },
+      {
+        "id": "q-Trả bài 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $a_{max}$ ở biên âm nhiều chỗ."
+      },
+      {
+        "id": "q-Thử thách ⭐⭐",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 đã nhấn $a$ trái dấu $x$."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm: ghi rõ $v_{max}$, tốc độ và $a$ tại $x=2,0$ cm, tại biên là tính từ công thức mục 1, 2, 4. Bước Rút ra bỏ $a=-\\omega^2x$.",
+      "Thí nghiệm: thêm phần sai số do thước $0,025\\times31,42\\approx0,79$ cm/s. Details giải thích hệ số 2 ở $\\Delta a$.",
+      "Mục 2: đỉnh $v$ lúc $3T/4$ đến trước đỉnh $x$ lúc $T$ một khoảng $T/4$.",
+      "Mục 3: $v_{max}$, $a_{max}$ trong danh sách là độ lớn. Dấu ± của $v$ theo chiều chuyển động.",
+      "Details mục 3: cùng dương $T/2\\to3T/4$, cùng âm $0\\to T/4$.",
+      "Mục 5: thêm cách suy $T/12$ từ góc quét $\\pi/6$. Phản hồi đúng câu 4 viết lại theo góc quét $\\pi/4$.",
+      "Bẫy 3: bảng và phản hồi câu 7 dùng $|v|_{max}$, thêm ⚠ $\\omega=2\\pi f$, chú thích sóng học ở chương 2.",
+      "Bài mẫu: $\\varphi=0$ suy từ $A\\cos\\varphi=A$. Thêm dòng từ biên tới $A/2$ là $T/6$.",
+      "Điền bước: thêm lý do $v=-20\\sqrt2$ cm/s (về O từ biên dương là chiều âm).",
+      "Đời sống: kim đồng hồ đổi thành quả lắc đồng hồ. Đồ thị $a$–$x$ phải dốc xuống, hệ số $-\\omega^2$.",
+      "Cắt để bù độ dài: mẹo \"biên thì dừng\", hai gạch đầu dòng về khoảng biến thiên của $v$ và $a$, câu \"Đồ thị a–t ngược pha...\", câu \"Càng xa vị trí cân bằng...\", câu \"Đoạn −A/2 đến A/2 có đi qua O\", câu \"Đoạn T/24 chỉ khoảng 0,033 s\"."
+    ],
+    "so_tu_them": 55,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-van-toc-gia-toc/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

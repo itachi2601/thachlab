@@ -1,0 +1,437 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu vì sao cần <strong>nguồn điện</strong> và lực lạ làm gì trong nguồn.</li>
+<li>Phân biệt suất điện động $\mathcal{E} = A/q$ với hiệu điện thế hai cực $U = \mathcal{E} - Ir$.</li>
+<li>Giải mạch kín bằng $I = \mathcal{E}/(R + r)$; nhận ra đoản mạch, ghép nguồn.</li>
+</ul>
+<p>Cuối bài em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 16 phút · 7 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: đèn pha tối đi lúc bấm đề</h3>
+
+<p>Sáng sớm, bật khoá xe máy: đèn pha sáng rõ. Bấm nút đề, đèn <strong>tối hẳn</strong> trong một giây, máy nổ rồi đèn mới sáng lại.</p>
+
+<p>Vẫn bình đó, dây đó, chỉ thêm mô tơ đề "ăn" một dòng rất lớn. Vì sao đèn tối đi?</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Đèn pha nối thẳng hai cực ắc quy. Điều gì làm đèn tối đi lúc đề?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q1" id="tl43-q1a"><label for="tl43-q1a" class="tl-opt tl-no">A. Nút đề cắt bớt điện của đèn, dồn cho mô tơ</label>
+<input type="radio" name="tl43-q1" id="tl43-q1b"><label for="tl43-q1b" class="tl-opt tl-no">B. Ắc quy hết điện trong tích tắc rồi tự nạp lại</label>
+<input type="radio" name="tl43-q1" id="tl43-q1c"><label for="tl43-q1c" class="tl-opt tl-ok">C. Dòng đề rất lớn qua điện trở trong, hai cực ắc quy tụt áp</label>
+<input type="radio" name="tl43-q1" id="tl43-q1d"><label for="tl43-q1d" class="tl-opt tl-no">D. Dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Bên trong ắc quy có một điện trở nhỏ gọi là <em>điện trở trong</em>. Dòng càng lớn, phần hiệu điện thế "rơi" trên điện trở ấy càng nhiều, hai cực chỉ còn lại ít hơn — đèn tối đi. Cuối bài em sẽ tính được tụt bao nhiêu vôn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — không có mạch nào "dồn" điện: đèn vẫn nối trực tiếp hai cực ắc quy, chỉ có hiệu điện thế ở hai cực thay đổi. B — năng lượng hoá học không biến mất rồi hồi lại trong một giây. D — dây đồng chưa kịp nóng trong một giây, mà đèn tối ngay lúc mới bấm. Nghĩ xem: cái gì bên trong ắc quy làm hiệu điện thế hai cực giảm khi dòng tăng?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu</h3>
+
+<h4>1. Nguồn điện duy trì hiệu điện thế</h4>
+
+<p><strong>🔑 Tạo và duy trì hiệu điện thế · dòng chạy mãi</strong></p>
+
+<ul>
+<li>Quả cầu A tích điện $+q$, B tích điện $-q$: $V_A \gt V_B$.</li>
+<li>Nối dây: lực điện kéo electron B → A, dòng điện chiều A → B.</li>
+<li>Chỉ một lát, hai quả cầu trung hoà, $V_A = V_B$: dòng ngừng.</li>
+<li>Muốn dòng chạy mãi, phải giữ $U_{AB} = V_A - V_B \ne 0$.</li>
+</ul>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Nguồn điện</p>
+<p>Thiết bị <strong>tạo ra và duy trì</strong> hiệu điện thế giữa hai cực (+) và (−), nhờ đó duy trì dòng điện trong mạch kín.</p>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nguon-dien-01">
+<p class="tl-label">🔬 Thí nghiệm: tụ điện "giả làm" nguồn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nạp siêu tụ $1{,}0$ F tới $2{,}7$ V rồi cho xả qua điện trở $100\ \Omega$, vôn kế đo hai đầu điện trở, đọc mỗi $20$ s. Bên cạnh: hai pin tiểu nối tiếp ($3{,}0$ V) nuôi điện trở $100\ \Omega$ giống hệt.</li>
+<li><strong>Quan sát:</strong> vôn kế của tụ tụt dần $2{,}7$ → $2{,}2$ → $1{,}8$ → $1{,}5$ V sau $60$ s, qua $5$ phút chỉ còn $0{,}1$ V. Vôn kế của pin đứng ở $3{,}0$ V suốt buổi.</li>
+<li><strong>Rút ra:</strong> tụ chỉ <em>chứa</em> sẵn điện tích, xả dần là hết; pin <em>duy trì</em> được hiệu điện thế — đó mới là nguồn.</li>
+</ol>
+</div>
+
+<h4>2. Lực lạ và suất điện động</h4>
+
+<p><strong>🔑 Lực lạ đẩy ngược điện trường · suất điện động = công trên mỗi coulomb</strong></p>
+
+<ul>
+<li>Mạch ngoài: lực điện đưa electron từ (−) tới (+); dòng điện chạy từ (+) về (−).</li>
+<li>Trong nguồn: điện tích dương phải đi <strong>ngược chiều điện trường</strong>, từ (−) sang (+) — lực điện không làm nổi.</li>
+<li>Cần <strong>lực lạ</strong>, khác bản chất: hoá học trong pin, điện từ trong máy phát.</li>
+<li>Công của lực lạ ($A_{\text{l}}$) thắng công cản của lực điện ($A_{\text{đ}}$): $A_{\text{l}} \gt A_{\text{đ}}$.</li>
+</ul>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Suất điện động</p>
+<p>Đặc trưng cho <strong>khả năng thực hiện công</strong> của nguồn điện:</p>
+<p>$$\mathcal{E} = \dfrac{A}{q}$$</p>
+<ul>
+<li>$A$: công của lực lạ (J) đưa điện tích dương $q$ (C) từ (−) sang (+) trong nguồn.</li>
+<li>$\mathcal{E}$: đơn vị <strong>vôn</strong> (V), vì J/C = V.</li>
+</ul>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Vỏ pin ghi "1,5 V". Câu nào nói đúng ý nghĩa của con số này?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q2" id="tl43-q2a"><label for="tl43-q2a" class="tl-opt tl-no">A. $U$ hai cực pin luôn là $1{,}5$ V, dù mạch kín hay mạch hở</label>
+<input type="radio" name="tl43-q2" id="tl43-q2b"><label for="tl43-q2b" class="tl-opt tl-no">B. Lực điện luôn làm công $1{,}5$ J khi $1$ C qua mạch ngoài</label>
+<input type="radio" name="tl43-q2" id="tl43-q2c"><label for="tl43-q2c" class="tl-opt tl-no">C. Mỗi giây pin đẩy $1{,}5$ C điện tích qua mạch</label>
+<input type="radio" name="tl43-q2" id="tl43-q2d"><label for="tl43-q2d" class="tl-opt tl-ok">D. Lực lạ làm công $1{,}5$ J đưa $1$ C qua nguồn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đó là $\mathcal{E} = A/q$ nói bằng lời: $1{,}5$ V = $1{,}5$ J cho mỗi coulomb. Con số trên vỏ pin là suất điện động, không phải hiệu điện thế lúc đang dùng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — khi có dòng, hiệu điện thế hai cực nhỏ hơn $1{,}5$ V (mục 3 sẽ đo thấy). B — công của lực điện ở mạch ngoài là $Uq$, mà $U$ chỉ bằng $1{,}5$ V khi chưa có dòng. C — "mỗi giây … coulomb" là cường độ dòng điện (ampe), không phải vôn. Nhớ: vôn = jun trên coulomb.</p></div>
+</div>
+</div>
+
+<h4>3. Điện trở trong và hiệu điện thế hai cực</h4>
+
+<p><strong>🔑 Nguồn có điện trở trong $r$ · $U = \mathcal{E} - Ir$ · dòng tăng, $U$ tụt</strong></p>
+
+<ul>
+<li>Điện tích đi trong nguồn bị cản (va chạm với vật chất của nguồn): nguồn có <strong>điện trở trong</strong> $r$ ($\Omega$).</li>
+<li>Mạch kín: hiệu điện thế hai cực $U$ luôn <strong>nhỏ hơn</strong> $\mathcal{E}$.</li>
+<li>Hở mạch ($I = 0$): $U = \mathcal{E}$.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nguon-dien-02">
+<p class="tl-label">🔬 Thí nghiệm đo: U hai cực tụt khi dòng tăng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> pin tiểu đã dùng, hộp điện trở $R$, ampe kế nối tiếp; vôn kế mắc vào hai cực pin (đều đọc tới $0{,}01$). Hở mạch: $1{,}50$ V. Đặt $R$ = $14$; $9$; $4$; $2$; $1{,}5\ \Omega$, ghi $I$, $U$.</li>
+<li><strong>Quan sát:</strong> $R$ giảm, $I$ tăng, $U$ tụt từ $1{,}40$ V xuống $0{,}90$ V.</li>
+<li><strong>Rút ra:</strong> hiệu $\mathcal{E} - U$ tăng đúng tỉ lệ với $I$: $\mathcal{E} - U = Ir$.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$R$ ($\Omega$)</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead>
+<tbody>
+<tr><td>$14$</td><td>$0{,}10$</td><td>$1{,}40$</td></tr>
+<tr><td>$9$</td><td>$0{,}15$</td><td>$1{,}35$</td></tr>
+<tr><td>$4$</td><td>$0{,}30$</td><td>$1{,}20$</td></tr>
+<tr><td>$2$</td><td>$0{,}50$</td><td>$1{,}00$</td></tr>
+<tr><td>$1{,}5$</td><td>$0{,}60$</td><td>$0{,}90$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG3-->
+
+<p>Độ dốc đường thẳng $= -r$.</p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Hiệu điện thế hai cực</p>
+<p>$$U = \mathcal{E} - Ir$$</p>
+<p>$Ir$: độ giảm thế trên $r$, mạch ngoài không nhận được.</p>
+</div>
+
+<details class="tl-details">
+<summary>👀 Sai số đến từ đâu?</summary>
+<p>Tính $r$ từ hai hàng xa nhau nhất: $r = \dfrac{1{,}40 - 0{,}90}{0{,}60 - 0{,}10} = 1{,}0\ \Omega$. Mỗi số đọc lệch $\pm 0{,}01$ nên tử và mẫu đều có thể lệch $\pm 0{,}02$: $r$ lệch tới $\pm 0{,}08\ \Omega$ (8 %). Lấy hai hàng gần nhau thì hiệu nhỏ, sai số tương đối còn lớn hơn. Ngoài ra pin nóng lên và yếu đi khi dòng $0{,}6$ A chạy lâu, nên đọc nhanh rồi ngắt.</p>
+</details>
+
+<p>Từ bảng trên, $r$ của pin bằng bao nhiêu?</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl43-sure3" value="chac"> Chắc</label> <label><input type="radio" name="tl43-sure3" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q3" id="tl43-q3a"><label for="tl43-q3a" class="tl-opt tl-no">A. $0{,}5\ \Omega$</label>
+<input type="radio" name="tl43-q3" id="tl43-q3b"><label for="tl43-q3b" class="tl-opt tl-ok">B. $1{,}0\ \Omega$</label>
+<input type="radio" name="tl43-q3" id="tl43-q3c"><label for="tl43-q3c" class="tl-opt tl-no">C. $1{,}5\ \Omega$</label>
+<input type="radio" name="tl43-q3" id="tl43-q3d"><label for="tl43-q3d" class="tl-opt tl-no">D. $14\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $r = \dfrac{\Delta U}{\Delta I} = \dfrac{0{,}50}{0{,}50} = 1{,}0\ \Omega$, hoặc lấy một hàng: $r = \dfrac{\mathcal{E} - U}{I} = \dfrac{1{,}50 - 1{,}00}{0{,}50} = 1{,}0\ \Omega$. Em giải thích được cho bạn ngồi cạnh vì sao không lấy $U/I$ chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $0{,}50$ là $\Delta U$ (vôn), chưa chia cho $\Delta I$. C — $U/I = 0{,}90/0{,}60 = 1{,}5$ là điện trở <em>mạch ngoài</em> $R$ ở hàng cuối, không phải $r$. D — $1{,}40/0{,}10 = 14$ cũng là $R$ (hàng đầu). Điện trở trong nằm ở phần <em>bị mất</em>: $r = (\mathcal{E} - U)/I$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>4. Định luật Ohm cho toàn mạch và đoản mạch</h4>
+
+<p><strong>🔑 $I = \mathcal{E}/(R + r)$ · $R$ về $0$ là đoản mạch</strong></p>
+
+<p>Bảo toàn năng lượng trong mạch kín: công của nguồn $\mathcal{E}It$ bằng nhiệt toả ở $R$ và $r$, suy ra $\mathcal{E} = I(R + r)$.</p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Định luật Ohm cho toàn mạch</p>
+<p>$$I = \dfrac{\mathcal{E}}{R + r}$$</p>
+<p>Với $U = IR$: $U = \mathcal{E} - Ir$, hai công thức là một.</p>
+</div>
+
+<ul>
+<li><strong>Đoản mạch:</strong> $R \to 0$, dòng lớn nhất $I_{\text{đm}} = \mathcal{E}/r$.</li>
+<li>Pin tiểu mới ($r = 0{,}3\ \Omega$): $5$ A; ắc quy xe máy ($12{,}6$ V, $r = 0{,}02\ \Omega$): $630$ A, dây đỏ lên.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nguon-dien-03">
+<p class="tl-label">🔬 Thí nghiệm: nối tắt pin tiểu</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dây đồng mảnh $10$ cm nối thẳng hai cực pin tiểu mới bằng kẹp cách điện, đúng $3$ giây rồi tháo; không cầm dây, đeo kính. Cấm làm với ắc quy, pin lithium.</li>
+<li><strong>Quan sát:</strong> dây nóng rõ (pin chỉ ấm lên nếu giữ lâu hơn); ampe kế chỉ cỡ vài ampe, gấp hàng trăm lần dòng qua một LED.</li>
+<li><strong>Rút ra:</strong> $R \approx 0$, chỉ còn $r$ giữ dòng: $I = \mathcal{E}/r$; $r$ càng nhỏ, đoản mạch càng nguy hiểm.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Nguồn $\mathcal{E} = 6{,}0$ V, $r = 0{,}50\ \Omega$ nối với $R = 2{,}5\ \Omega$. Cường độ dòng điện là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q4" id="tl43-q4a"><label for="tl43-q4a" class="tl-opt tl-ok">A. $2{,}0$ A</label>
+<input type="radio" name="tl43-q4" id="tl43-q4b"><label for="tl43-q4b" class="tl-opt tl-no">B. $2{,}4$ A</label>
+<input type="radio" name="tl43-q4" id="tl43-q4c"><label for="tl43-q4c" class="tl-opt tl-no">C. $12$ A</label>
+<input type="radio" name="tl43-q4" id="tl43-q4d"><label for="tl43-q4d" class="tl-opt tl-no">D. $3{,}0$ A</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $I = \dfrac{6{,}0}{2{,}5 + 0{,}50} = 2{,}0$ A. Kiểm lại: $U = IR = 5{,}0$ V và $\mathcal{E} - Ir = 6{,}0 - 1{,}0 = 5{,}0$ V, khớp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — $6{,}0/2{,}5 = 2{,}4$ là quên cộng $r$ vào mẫu. C — $6{,}0/0{,}50 = 12$ là dòng đoản mạch, chỉ đúng khi $R = 0$. D — $6{,}0/2{,}0$ là lấy $R - r$, phải là $R + r$ vì hai điện trở nối tiếp nhau trong mạch kín.</p></div>
+</div>
+</div>
+
+<h4>5. Ghép nguồn thành bộ</h4>
+
+<p><strong>🔑 Nối tiếp cộng $\mathcal{E},$ cộng $r$ · song song giữ $\mathcal{E},$ chia $r$</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Cách ghép</th><th>Bộ nguồn tương đương</th></tr></thead>
+<tbody>
+<tr><td>Nối tiếp (cực − nguồn này nối cực + nguồn kia)</td><td>$\mathcal{E}_b = \sum \mathcal{E}_i$<br>$r_b = \sum r_i$</td></tr>
+<tr><td>Song song $n$ nguồn giống nhau</td><td>$\mathcal{E}_b = \mathcal{E}$<br>$r_b = r/n$</td></tr>
+<tr><td>Xung đối (cực cùng dấu nối nhau), $\mathcal{E}_1 \gt \mathcal{E}_2$</td><td>$\mathcal{E}_b = \mathcal{E}_1 - \mathcal{E}_2$<br>$r_b = r_1 + r_2$</td></tr>
+<tr><td>Hỗn hợp đối xứng: $n$ dãy × $m$ nguồn nối tiếp</td><td>$\mathcal{E}_b = m\mathcal{E}$<br>$r_b = mr/n$</td></tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>Điều khiển TV: hai pin nối tiếp → $3{,}0$ V; lắp ngược một pin là xung đối, $\mathcal{E}_b = 0$.</li>
+</ul>
+
+<details class="tl-details">
+<summary>👀 Xem thêm: vì sao song song lại giảm r?</summary>
+<p>$n$ nguồn giống nhau song song chia nhau dòng tổng: mỗi nguồn chỉ chịu $I/n$, độ giảm thế trong mỗi nguồn là $Ir/n$. Bộ nguồn ứng xử như một nguồn có $r_b = r/n$. Ghép pin khác $\mathcal{E}$ song song thì dòng chạy quẩn giữa các pin, không nên làm.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "Suất điện động là hiệu điện thế hai cực"</h4>
+
+<p>Khác nhau ở ba điểm:</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Suất điện động $\mathcal{E}$</th><th>Hiệu điện thế hai cực $U$</th></tr></thead>
+<tbody>
+<tr><td>Công của <strong>lực lạ</strong> trong nguồn</td><td>Công của <strong>lực điện</strong> ở mạch ngoài</td></tr>
+<tr><td>Hằng số, ghi trên vỏ</td><td>Đổi theo dòng: $U = \mathcal{E} - Ir$</td></tr>
+<tr><td>Vôn kế đo khi <strong>hở mạch</strong></td><td>Đo khi mạch kín, luôn $\lt \mathcal{E}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Pin $\mathcal{E} = 1{,}5$ V, $r = 0{,}5\ \Omega$. Vôn kế lí tưởng mắc vào hai cực pin khi hở mạch, rồi khi nối $R = 2{,}5\ \Omega$. Hai số chỉ là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl43-sure5" value="chac"> Chắc</label> <label><input type="radio" name="tl43-sure5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q5" id="tl43-q5a"><label for="tl43-q5a" class="tl-opt tl-no">A. $1{,}5$ V và $1{,}5$ V</label>
+<input type="radio" name="tl43-q5" id="tl43-q5b"><label for="tl43-q5b" class="tl-opt tl-no">B. $0$ V và $1{,}25$ V</label>
+<input type="radio" name="tl43-q5" id="tl43-q5c"><label for="tl43-q5c" class="tl-opt tl-no">C. $1{,}25$ V và $1{,}25$ V</label>
+<input type="radio" name="tl43-q5" id="tl43-q5d"><label for="tl43-q5d" class="tl-opt tl-ok">D. $1{,}5$ V và $1{,}25$ V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hở mạch: $I = 0$, $U = \mathcal{E} = 1{,}5$ V. Mạch kín: $I = \dfrac{1{,}5}{2{,}5 + 0{,}5} = 0{,}5$ A, $U = 1{,}5 - 0{,}5\cdot0{,}5 = 1{,}25$ V. Cùng một pin, hai số chỉ khác nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — khi có dòng $0{,}5$ A, pin mất $Ir = 0{,}25$ V bên trong, hai cực không còn đủ $1{,}5$ V. B — hở mạch vẫn có hiệu điện thế giữa hai cực (vôn kế lí tưởng không lấy dòng), và nó bằng $\mathcal{E}$. C — $1{,}25$ V chỉ đúng khi có dòng; hở mạch thì $Ir = 0$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: "Trong nguồn dòng cũng chạy từ (+) sang (−)"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Mạch ngoài</th><th>Bên trong nguồn</th></tr></thead>
+<tbody>
+<tr><td>Dòng từ cực (+) về cực (−)</td><td>Dòng từ cực (−) lên cực (+)</td></tr>
+<tr><td>Lực điện làm việc, đi xuôi điện trường</td><td>Lực lạ làm việc, đi ngược điện trường</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Trong mạch kín, chiều dòng điện (quy ước) bên trong nguồn là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q6" id="tl43-q6a"><label for="tl43-q6a" class="tl-opt tl-no">A. Từ (+) sang (−), như ở mạch ngoài</label>
+<input type="radio" name="tl43-q6" id="tl43-q6b"><label for="tl43-q6b" class="tl-opt tl-ok">B. Từ (−) sang (+), nhờ lực lạ</label>
+<input type="radio" name="tl43-q6" id="tl43-q6c"><label for="tl43-q6c" class="tl-opt tl-no">C. Không có dòng trong nguồn, chỉ ở mạch ngoài</label>
+<input type="radio" name="tl43-q6" id="tl43-q6d"><label for="tl43-q6d" class="tl-opt tl-no">D. Tuỳ cách mắc điện trở $R$ vào mạch</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dòng chạy thành vòng: ra ở cực (+), qua $R$, vào cực (−), rồi lực lạ "bơm" ngược lên cực (+) để đi tiếp. Nếu trong nguồn dòng cũng đi (+) → (−) thì không thành vòng kín.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — nếu vậy điện tích dương tụ hết ở cực âm, hai cực trung hoà và dòng tắt như hai quả cầu A, B. C — dòng điện trong mạch kín phải liên tục; điện tích vào cực (−) rồi phải đi tiếp qua nguồn. D — chiều dòng do nguồn quyết định (cực nào là dương), không do cách mắc $R$. Hình dung máy bơm nước đưa nước từ bể thấp lên bể cao.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "Vôn kế vẫn chỉ 1,5 V thì pin còn tốt"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Pin mới<br>($r = 0{,}3\ \Omega$)</th><th>Pin gần hết<br>($r = 3\ \Omega$)</th></tr></thead>
+<tbody>
+<tr><td>Hở mạch: vôn kế $1{,}5$ V</td><td>Hở mạch: vôn kế vẫn $1{,}5$ V</td></tr>
+<tr><td>Nối $R = 3\ \Omega$: $U = 1{,}36$ V, máy chạy</td><td>Nối $R = 3\ \Omega$: $U = 0{,}75$ V, máy không chạy</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>✍️ Tự kiểm tra: pin còn tốt không, đo thế nào?</summary>
+<p>Đo $U$ <strong>khi có tải</strong> (mắc pin với một điện trở hoặc bóng đèn rồi đo), hoặc đo cả $U$ và $I$ để tính $r = (\mathcal{E} - U)/I$. Thợ sửa xe cũng thử ắc quy bằng cách đo điện áp lúc đang bấm đề, không chỉ đo lúc nghỉ.</p>
+</details>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Nói trước, rồi mới bấm xem.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Thiết bị <strong>tạo và duy trì</strong> hiệu điện thế giữa hai cực · duy trì dòng điện trong mạch kín. Hai quả cầu: trung hoà sau một lát, $V_A = V_B$, dòng tắt — không duy trì được.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Lực lạ là gì, làm việc ở đâu, theo chiều nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Lực khác bản chất lực điện (hoá học, điện từ) · bên trong nguồn · đưa điện tích dương từ cực (−) sang cực (+), ngược chiều điện trường · $A_{\text{l}} \gt A_{\text{đ}}$.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Định nghĩa, công thức và đơn vị suất điện động. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đặc trưng khả năng thực hiện công của nguồn · $\mathcal{E} = A/q$ · $A$ công lực lạ (J), $q$ điện tích dương dịch chuyển (C) · $\mathcal{E}$ đo bằng vôn.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Điện trở trong là gì? $U$ theo $\mathcal{E}$, $I$, $r$? Khi nào $U = \mathcal{E}$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Sự cản trở điện tích đi trong nguồn · $r$ ($\Omega$) · $U = \mathcal{E} - Ir$ · $U = \mathcal{E}$ khi hở mạch ($I = 0$).</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Định luật Ohm cho toàn mạch suy ra từ đâu? Đoản mạch là gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Bảo toàn năng lượng: $\mathcal{E}It = RI^2t + rI^2t$ · $I = \dfrac{\mathcal{E}}{R + r}$ · đoản mạch: $R \to 0$, $I_{\text{đm}} = \mathcal{E}/r$ rất lớn.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. So sánh $\mathcal{E}$ và $U$; ghép nối tiếp, song song. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Giống: đều là công trên mỗi coulomb (vôn). Khác: $\mathcal{E}$ — công lực lạ (nguồn); $U$ — công lực điện (mạch ngoài). Nối tiếp: cộng $\mathcal{E}$, cộng $r$. Song song $n$ nguồn giống nhau: giữ $\mathcal{E}$, $r_b = r/n$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: nguồn nuôi một điện trở</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Nguồn điện có suất điện động $\mathcal{E} = 9{,}0$ V, điện trở trong $r = 1{,}0\ \Omega$, nối với điện trở $R = 8{,}0\ \Omega$ thành mạch kín.</p>
+<p>a) Tính cường độ dòng điện.</p>
+<p>b) Tính hiệu điện thế hai cực nguồn.</p>
+<p>c) Thay $R$ bằng $R' = 2{,}0\ \Omega$: $U$ còn bao nhiêu?</p>
+<p>d) Nối tắt hai cực nguồn: dòng điện bao nhiêu?</p>
+</div>
+
+<!--FIG4-->
+
+<p>Với mỗi cụm, tự hỏi: <strong>dữ liệu gì</strong>, <strong>kiến thức nào</strong>?</p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"suất điện động $9{,}0$ V"</td><td>$\mathcal{E}$ → không phải $U$ hai cực</td></tr>
+<tr><td>"điện trở trong $1{,}0\ \Omega$"</td><td>$r$ → của nguồn, cộng vào mẫu</td></tr>
+<tr><td>"nối với $R = 8{,}0\,\Omega$"</td><td>$R$ → mạch ngoài</td></tr>
+<tr><td>"hiệu điện thế giữa hai cực"</td><td>cần tìm $U = IR = \mathcal{E} - Ir$</td></tr>
+<tr><td>"nối tắt hai cực"</td><td>$R = 0$ → đoản mạch, $I = \mathcal{E}/r$</td></tr>
+<tr><td>(ngầm) "mạch kín"</td><td>$I$ qua cả $r$ → $r$ nối tiếp $R$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>a) $I = \dfrac{\mathcal{E}}{R + r} = \dfrac{9{,}0}{8{,}0 + 1{,}0} = 1{,}0$ A.</li>
+<li>b) $U = IR = 1{,}0\cdot8{,}0 = 8{,}0$ V.</li>
+<li>Kiểm tra bằng công thức kia: $U = \mathcal{E} - Ir = 9{,}0 - 1{,}0\cdot1{,}0 = 8{,}0$ V. Khớp. Nguồn "mất" $1{,}0$ V bên trong.</li>
+<li>c) $I' = \dfrac{9{,}0}{2{,}0 + 1{,}0} = 3{,}0$ A; $U' = \mathcal{E} - I'r = 9{,}0 - 3{,}0 = 6{,}0$ V. Dòng gấp ba, phần mất bên trong gấp ba.</li>
+<li>d) $I_{\text{đm}} = \dfrac{\mathcal{E}}{r} = \dfrac{9{,}0}{1{,}0} = 9{,}0$ A, gấp 9 lần dòng ở câu a. Lúc này $U = 0$: toàn bộ $\mathcal{E}$ rơi trên $r$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, chỉ đổi $r = 2{,}0\ \Omega$.</p>
+<ol class="tl-steps">
+<li>$R + r = 8{,}0 + 2{,}0 = 10{,}0\ \Omega$.</li>
+<li><strong>Em điền:</strong> $I = \;?$ — gợi ý: $\mathcal{E}$ chia tổng điện trở.</li>
+<li><strong>Em điền:</strong> $U = \;?$ — tính bằng cả hai cách rồi so.</li>
+<li>So với bài mẫu: $r$ tăng thì $I$ và $U$ tăng hay giảm?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2–4</summary>
+<p>$I = 9{,}0/10{,}0 = 0{,}90$ A. $U = IR = 0{,}90\cdot8{,}0 = 7{,}2$ V; cách kia: $9{,}0 - 0{,}90\cdot2{,}0 = 7{,}2$ V. $r$ tăng thì cả $I$ lẫn $U$ đều giảm: nguồn cũ "đuối" hơn dù $\mathcal{E}$ không đổi.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>Nguồn $\mathcal{E} = 12$ V, $r = 0{,}5\ \Omega$ nối với $R = 5{,}5\ \Omega$. $U$ hai cực nguồn là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl43-sure7" value="chac"> Chắc</label> <label><input type="radio" name="tl43-sure7" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl43-q7" id="tl43-q7a"><label for="tl43-q7a" class="tl-opt tl-no">A. $12$ V</label>
+<input type="radio" name="tl43-q7" id="tl43-q7b"><label for="tl43-q7b" class="tl-opt tl-no">B. $1{,}0$ V</label>
+<input type="radio" name="tl43-q7" id="tl43-q7c"><label for="tl43-q7c" class="tl-opt tl-ok">C. $11$ V</label>
+<input type="radio" name="tl43-q7" id="tl43-q7d"><label for="tl43-q7d" class="tl-opt tl-no">D. $13$ V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $I = \dfrac{12}{5{,}5 + 0{,}5} = 2{,}0$ A; $U = 12 - 2{,}0\cdot0{,}5 = 11$ V (hoặc $U = IR = 2{,}0\cdot5{,}5 = 11$ V). Em giải thích được cho bạn ngồi cạnh vì sao không phải $12$ V chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $12$ V là $\mathcal{E}$, chỉ bằng $U$ khi không có dòng. B — $1{,}0$ V là $Ir$, phần <em>bị mất</em>, không phải phần còn lại. D — cộng $Ir$ vào $\mathcal{E}$ là ngược dấu: điện trở trong làm $U$ <em>nhỏ hơn</em> $\mathcal{E}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🔄 Thử sức: thêm một nguồn giống hệt nối tiếp vào bài mẫu</summary>
+<p>$\mathcal{E}_b = 18$ V, $r_b = 2{,}0\ \Omega$, $R = 8{,}0\ \Omega$. $I = \dfrac{18}{8{,}0 + 2{,}0} = 1{,}8$ A, $U = IR = 14{,}4$ V. Dòng không gấp đôi (chỉ $1{,}8$ lần) vì $r$ cũng tăng gấp đôi.</p>
+</details>
+
+<h3>VI. Nguồn điện trong đời sống</h3>
+
+<ul>
+<li><strong>Ắc quy xe máy:</strong> $r$ vài phần trăm ôm để đề được hàng chục ampe; già thì $r$ tăng, đề yếu.</li>
+<li><strong>Pin xe điện:</strong> cell nối tiếp lấy $\mathcal{E}$, song song hạ $r_b$.</li>
+<li><strong>Cầu chì:</strong> chặn dòng đoản mạch trước khi dây cháy.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Pin $\mathcal{E} = 1{,}5$ V, $r = 0{,}5\ \Omega$ nối với $R = 2{,}5\ \Omega$. Tính $I$ và $U$.</summary>
+<p>$I = \dfrac{1{,}5}{2{,}5 + 0{,}5} = 0{,}50$ A; $U = IR = 1{,}25$ V. Nhớ: $U \lt \mathcal{E}$.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Nguồn nối $R_1 = 4\ \Omega$ thì $I_1 = 1{,}0$ A; nối $R_2 = 9\ \Omega$ thì $I_2 = 0{,}5$ A. Tìm $\mathcal{E}$, $r$.</summary>
+<p>$\mathcal{E} = I_1(R_1 + r) = I_2(R_2 + r)$: $1{,}0(4 + r) = 0{,}5(9 + r)$, suy ra $4 + r = 4{,}5 + 0{,}5r$, nên $r = 1{,}0\ \Omega$ và $\mathcal{E} = 1{,}0\cdot(4 + 1) = 5{,}0$ V. Kiểm: $0{,}5\cdot(9 + 1) = 5{,}0$ V, khớp.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Xe máy: ắc quy $\mathcal{E} = 12{,}6$ V, mô tơ đề lấy $60$ A. Đèn pha còn sáng rõ khi $U \ge 9{,}0$ V. Điện trở trong tối đa là bao nhiêu? Ắc quy mới ($r = 0{,}02\ \Omega$) và ắc quy đã yếu ($r = 0{,}05\ \Omega$), cái nào đạt?</summary>
+<p>$U = \mathcal{E} - Ir \ge 9{,}0$ V nên $r \le \dfrac{12{,}6 - 9{,}0}{60} = 0{,}06\ \Omega$. Ắc quy mới: $U = 12{,}6 - 60\cdot0{,}02 = 11{,}4$ V, đèn chỉ hơi tối. Ắc quy yếu: $U = 12{,}6 - 60\cdot0{,}05 = 9{,}6$ V, vừa đủ — đèn tối rõ như ở mở bài. Yếu thêm tới $r = 0{,}10\ \Omega$: $U = 6{,}6$ V, đèn gần tắt, đề không nổi. Máy nổ, mô tơ ngắt, $I$ về vài ampe, $U$ lên lại gần $\mathcal{E}$.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Nguồn điện:</strong> tạo và duy trì hiệu điện thế.</li>
+<li><strong>Lực lạ:</strong> trong nguồn · đẩy điện tích dương (−) → (+) · ngược điện trường.</li>
+<li><strong>Suất điện động:</strong> $\mathcal{E} = A/q$ · công lực lạ mỗi coulomb · vôn.</li>
+<li><strong>Điện trở trong:</strong> $U = \mathcal{E} - Ir$ · hở mạch $U = \mathcal{E}$ · dòng tăng, $U$ tụt.</li>
+<li><strong>Toàn mạch:</strong> $I = \mathcal{E}/(R + r)$ · đoản mạch $I = \mathcal{E}/r$.</li>
+<li><strong>Ghép nguồn:</strong> nối tiếp cộng $\mathcal{E}$, cộng $r$ · song song giữ $\mathcal{E}$, $r/n$.</li>
+<li><strong>Đọc đề:</strong> "suất điện động" không phải $U$; "điện trở trong" cộng vào mẫu.</li>
+</ul>
+</div>

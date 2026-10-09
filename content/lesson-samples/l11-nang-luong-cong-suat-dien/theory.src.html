@@ -53,7 +53,7 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-01">
 <p class="tl-label">🔬 Ví dụ: đọc công tơ khi đun ấm nước</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> tắt mọi thiết bị, chỉ cắm ấm siêu tốc $1800$ W. Ghi chỉ số công tơ lúc bật ($1234{,}5$ kWh) và lúc tắt sau đúng $10$ phút (đổ thêm nước lạnh nếu ấm tự ngắt).</li>
+<li><strong>Làm:</strong> tắt mọi thiết bị, chỉ cắm ấm siêu tốc $1800$ W. Ghi chỉ số công tơ lúc bật ($1234{,}5$ kWh) và lúc tắt sau đúng $10$ phút (nếu nước sôi làm ấm tự ngắt, đổ thêm nước lạnh để ấm chạy liên tục ở $1800$ W đủ $10$ phút).</li>
 <li><strong>Quan sát:</strong> chỉ số thành $1234{,}8$ kWh, tăng $0{,}3$ kWh — công tơ đọc tới $0{,}1$ kWh nên chỉ chắc tới $\pm 0{,}1$.</li>
 <li><strong>Rút ra:</strong> $A = Pt = 1{,}8\ \text{kW} \cdot \tfrac{1}{6}\ \text{h} = 0{,}3$ kWh, khớp công tơ. Đổi ra jun: $0{,}3 \cdot 3{,}6\cdot10^{6} = 1{,}08\cdot10^{6}$ J.</li>
 </ol>
@@ -87,10 +87,11 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> nối đèn hậu xe máy với nguồn chỉnh được, ampe kế nối tiếp, vôn kế song song với đèn. Đặt $12{,}0$ V, rồi thử $9{,}0$ V và $6{,}0$ V.</li>
 <li><strong>Quan sát:</strong> $12{,}0$ V: $1{,}75$ A, sáng bình thường; $9{,}0$ V: $1{,}55$ A; $6{,}0$ V: $1{,}30$ A, đỏ mờ.</li>
-<li><strong>Rút ra:</strong> $P = UI = 12{,}0 \cdot 1{,}75 = 21$ W, đúng nhãn. Điện trở dây tóc khi sáng: $R = 12/1{,}75 \approx 6{,}9\ \Omega$.</li>
+<li><strong>Rút ra:</strong> $P = UI = 12{,}0 \cdot 1{,}75 = 21$ W, đúng nhãn. Dây tóc khi sáng có $R = 12/1{,}75 \approx 6{,}9\ \Omega$, khi đỏ mờ chỉ còn $6{,}0/1{,}30 \approx 4{,}6\ \Omega$ vì dây nguội hơn. Bài tập ghi "coi $R$ không đổi" là phép gần đúng.</li>
 </ol>
 </div>
 
+<p>⚠ Coi $R$ không đổi thì $P = U^2/R$ tỉ lệ với $U^2$, không tỉ lệ với $U$.</p>
 <p>Đèn 220 V – 100 W mắc vào $110$ V, coi $R$ không đổi. Công suất thực của đèn là:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl44-sure3" value="chac"> Chắc</label> <label><input type="radio" name="tl44-sure3" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -123,7 +124,7 @@
 <p>$$H = \dfrac{A_{\text{ích}}}{A_{\text{tp}}} = \dfrac{UIt}{\mathcal{E}It} = \dfrac{U}{\mathcal{E}}$$</p>
 
 <ul>
-<li>Mạch ngoài thuần điện trở, $R$ là điện trở tương đương: $U = IR$, $\mathcal{E} = I(R + r)$ nên $H = \dfrac{R}{R + r}$. Có động cơ hay máy thu: chỉ dùng $H = U/\mathcal{E}$.</li>
+<li>Mạch ngoài thuần điện trở, $R$ là điện trở tương đương: $U = IR$, $\mathcal{E} = I(R + r)$ nên $H = \dfrac{R}{R + r}$. Mạch ngoài có quạt, động cơ hay pin đang sạc (không chỉ là điện trở): chỉ dùng $H = U/\mathcal{E}$.</li>
 <li>$R$ càng lớn so với $r$, $H$ càng gần $100\ \%$.</li>
 </ul>
 
@@ -132,7 +133,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> hai pin AA nối tiếp ($\mathcal{E} = 3{,}0$ V, $r = 1{,}0\ \Omega$) nối với hộp điện trở $R$, ampe kế nối tiếp, vôn kế song song với $R$. Đặt lần lượt $R = 1{,}0$; $2{,}0$; $4{,}0$; $9{,}0\ \Omega$, đọc $U$ và $I$.</li>
 <li><strong>Quan sát:</strong> $R$ tăng thì $I$ giảm ($1{,}50 \to 0{,}30$ A) nhưng $U$ tăng dần về phía $3{,}0$ V.</li>
-<li><strong>Rút ra:</strong> $H = U/\mathcal{E}$ tăng theo $R$, khớp $R/(R + r)$.</li>
+<li><strong>Rút ra:</strong> $H = U/\mathcal{E}$ tăng theo $R$.</li>
 </ol>
 </div>
 
@@ -173,14 +174,15 @@
 
 <ul>
 <li><strong>Đoản mạch</strong> (ngắn mạch): hai cực nguồn nối thẳng, $R \to 0$, dòng $I = \mathcal{E}/r$ rất lớn vì $r$ nhỏ.</li>
-<li>Nhiệt $I^2r$ trong nguồn và $I^2R_{\text{dây}}$ tăng vọt → cháy. Pin cũ ($r$ lớn) thì cùng một dòng điện, nhiệt $I^2r$ hao ngay trong nguồn nhiều hơn.</li>
-<li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$ bị chiếc chìa khoá chạm hai cực: $I = 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W — chìa khoá đỏ rực, ắc quy có thể nổ.</li>
+<li>Nhiệt $I^2r$ trong nguồn và $I^2R_{\text{dây}}$ tăng vọt → cháy. Riêng khi làm việc bình thường (không đoản mạch) với cùng dòng $I$, pin cũ ($r$ lớn) hao $I^2r$ trong nguồn nhiều hơn.</li>
+<li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$ bị chiếc chìa khoá chạm hai cực: $I \approx 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W. Chìa khoá có $R$ nhỏ nhưng khác 0, với $600$ A thì $I^2R$ trong nó vẫn rất lớn: chìa đỏ rực, ắc quy có thể nổ.</li>
 <li>Bảo vệ: <strong>cầu chì / aptomat</strong> đúng dòng định mức, đứt trước khi dây nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
 </ul>
 
 <details class="tl-details">
 <summary>👀 Xem thêm: chọn cầu chì thế nào?</summary>
 <p>Dòng định mức của cầu chì lấy hơi lớn hơn dòng làm việc của mạch. Ấm 220 V – 1800 W có $I = 1800/220 \approx 8{,}2$ A: dùng cầu chì $10$ A. Chọn $30$ A thì dây đã cháy mà cầu chì chưa đứt; chọn $5$ A thì vừa bật ấm đã đứt.</p>
+<p>Aptomat làm cùng việc: tự ngắt khi dòng quá lớn, gạt lên là dùng lại, không phải thay như cầu chì.</p>
 </details>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
@@ -194,7 +196,6 @@
 <tr><td>Trên nhãn máy: "2,2 kW"</td><td>Trên hoá đơn: "312 kWh"</td></tr>
 <tr><td>Tốc độ tiêu thụ, mỗi giây</td><td>Tổng tiêu thụ sau một thời gian</td></tr>
 <tr><td>$1$ kW $= 1000$ J/s</td><td>$1$ kWh $= 3{,}6\cdot10^{6}$ J</td></tr>
-<tr><td>Không phụ thuộc dùng bao lâu</td><td>$=$ kW $\times$ số giờ</td></tr>
 </tbody>
 </table>
 </div>
@@ -241,7 +242,7 @@
 <tbody>
 <tr><td>Dùng $P = I^2R$</td><td>Dùng $P = U^2/R$</td></tr>
 <tr><td>$R$ lớn nhận nhiều hơn</td><td>$R$ nhỏ nhận nhiều hơn</td></tr>
-<tr><td>$R$ lớn toả nhiệt nhiều hơn (10 Ω và 100 Ω nối tiếp)</td><td>$R$ nhỏ toả nhiệt nhiều hơn (10 Ω và 100 Ω song song)</td></tr>
+<tr><td>$10\ \Omega$ và $100\ \Omega$ nối tiếp vào $110$ V: $I = 1$ A, nhận $10$ W và $100$ W</td><td>$10\ \Omega$ và $100\ \Omega$ song song vào $10$ V: nhận $10$ W và $1$ W</td></tr>
 </tbody>
 </table>
 </div>
@@ -329,7 +330,7 @@
 <li>Mạch ngoài: $P_R = UI = 10 \cdot 2{,}0 = 20$ W.</li>
 <li>Trong nguồn: $P_r = I^2r = 2{,}0^2 \cdot 1{,}0 = 4{,}0$ W. Kiểm: $20 + 4{,}0 = 24$ W.</li>
 <li>c) $H = \dfrac{U}{\mathcal{E}} = \dfrac{10}{12} \approx 83{,}3\ \%$. Kiểm: $\dfrac{R}{R + r} = \dfrac{5}{6}$. Khớp.</li>
-<li>d) $A_R = P_R t = 20 \cdot 600 = 12\,000$ J $= 12$ kJ (chỉ $\dfrac{1}{300}$ kWh, pin không "ăn" nổi một số điện).</li>
+<li>d) $A_R = P_R t = 20 \cdot 600 = 12\,000$ J $= 12$ kJ (bộ sấy chỉ nhận $\dfrac{1}{300}$ kWh, chưa tới một số điện).</li>
 </ol>
 </details>
 
@@ -350,6 +351,7 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>⚠ Tử số của $H$ là $R$ (phần có ích), không phải $r$.</p>
 <p>Giữ $\mathcal{E} = 12$ V, nhưng nguồn cũ hơn: $r = 2{,}0\ \Omega$, và $R = 4{,}0\ \Omega$. Hiệu suất nguồn là:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl44-sure8" value="chac"> Chắc</label> <label><input type="radio" name="tl44-sure8" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -372,7 +374,7 @@
 <p><strong>🔑 Tiền điện = số kWh nhân giá</strong> (giá giả định, số tròn: $2500$ đồng/kWh).</p>
 
 <ul>
-<li><strong>Nồi cơm điện</strong> $700$ W, $1$ giờ/ngày, $30$ ngày: $0{,}7 \cdot 30 = 21$ kWh, khoảng $52\,500$ đồng.</li>
+<li><strong>Nồi cơm điện</strong> $700$ W, $1$ giờ/ngày, $30$ ngày: $0{,}7 \cdot 1 \cdot 30 = 21$ kWh, khoảng $52\,500$ đồng.</li>
 <li><strong>Lò nướng điện</strong> $2{,}2$ kW, bật $8$ giờ: $17{,}6$ kWh, khoảng $44\,000$ đồng.</li>
 </ul>
 
@@ -386,6 +388,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐ Ấm 220 V – 1800 W đun $1{,}0$ kg nước từ $25\ °\text{C}$ lên $100\ °\text{C}$ hết $200$ s. Hiệu suất của ấm? ($c = 4200$ J/kg·K)</summary>
+<p>Hiệu suất thiết bị = năng lượng có ích chia điện năng tiêu thụ, khác $H = U/\mathcal{E}$ của nguồn.</p>
 <p>Nhiệt có ích: $Q = mc\Delta T = 1{,}0 \cdot 4200 \cdot 75 = 315\,000$ J. Điện năng: $A = Pt = 1800 \cdot 200 = 360\,000$ J. $H = 315\,000/360\,000 = 87{,}5\ \%$. Phần còn lại làm nóng vỏ ấm và bay ra không khí.</p>
 </details>
 
@@ -407,6 +410,6 @@
 <li>kW là tốc độ · kWh là tổng.</li>
 <li>Nối tiếp: $I^2R$ · song song: $U^2/R$.</li>
 <li>Đoản mạch: $I = \mathcal{E}/r$ · cầu chì đứt trước dây.</li>
-<li>Đọc đề: gặp "nguồn" hỏi $\mathcal{E}I$; gặp "mạch ngoài", "thiết bị" hỏi $UI$; gặp "phút, giờ" đổi ra giây trước.</li>
+<li>Đọc đề: gặp "nguồn" hỏi $\mathcal{E}I$.<br>Gặp "mạch ngoài", "thiết bị" hỏi $UI$.<br>Cần kết quả ra jun: đổi phút, giờ ra giây.<br>Cần kết quả ra kWh: giữ kW và giờ, không đổi ra giây.</li>
 </ul>
 </div>

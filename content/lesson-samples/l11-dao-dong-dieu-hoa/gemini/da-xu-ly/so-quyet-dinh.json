@@ -1,0 +1,130 @@
+{
+  "bai": "l11-dao-dong-dieu-hoa",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng định nghĩa li độ x (vị trí so với VTCB, có thể âm) ngay đầu mục 3; rút gọn ô x ở bảng mục 4 để bù chữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay dòng từ khoá bằng câu định nghĩa đầy đủ và thêm details về trường hợp đu qua chỗ cũ nhưng ngược chiều thì chưa lặp lại."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "T sửa thành thời gian ngắn nhất để vật về chỗ cũ theo hướng cũ, gắn với T = 3 s của cái đu."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm details ở mục 3: hình sin là tên chung cho đồ thị hàm sin và côsin, hai đồ thị chỉ lệch nhau theo trục thời gian (mục sát trần)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô pha đổi thành cho biết vị trí và chiều chuyển động lúc t, dòng Bẫy cũng đổi tương ứng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ω = 2π/T vào ô tần số góc; bỏ ví dụ số vì mục II sát trần."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm: tăng φ thì đồ thị dịch trái, φ = π/2 lệch trái T/4 so với φ = 0."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành chiếu đèn song song với mặt bánh xe để bóng van in lên tường."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: lúc t = 0, OM hợp với trục Ox góc φ; Q là hình chiếu của M lên trục Ox."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay gợi ý bằng: đưa dấu trừ vào pha rồi mới đọc A."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm details ở mục 5: Q ở biên khi M ở hai đầu đường kính trên Ox, biên sang biên mất T/2."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay R bằng bán kính = A cho thống nhất với mục 5."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích trong ngoặc: trục khuỷu là trục có tay quay mà đầu tay quay chạy vòng tròn."
+      },
+      {
+        "id": "q-tl1-p1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học và phản hồi đã nhấn nhanh hay chậm không quan trọng, nên không thêm ⚠."
+      },
+      {
+        "id": "q-tl1-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy ngay trước quiz đã nhấn x có thể âm."
+      },
+      {
+        "id": "q-tl1-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy đã nhấn A > 0, dấu trừ nằm ở pha, phản hồi sai cũng đã sửa theo c11."
+      },
+      {
+        "id": "q-tl1-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng dữ liệu bài mẫu đã nhấn chế độ radian, phản hồi sai cũng nhắc đơn vị rad."
+      },
+      {
+        "id": "q-thu_thach",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Thử thách: biên này sang biên kia chưa phải trọn một chu kì."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2: dòng từ khoá thay bằng câu định nghĩa dao động tuần hoàn.",
+      "Mục 2: thêm details nói đu qua chỗ cũ theo chiều ngược lại thì chưa lặp lại.",
+      "Mục 3: thêm định nghĩa li độ x (vị trí so với VTCB, có thể âm).",
+      "Mục 3: định nghĩa T là thời gian ngắn nhất về chỗ cũ theo hướng cũ, ví dụ cái đu có T = 3 s.",
+      "Mục 3: thêm details nói hình sin là tên chung cho đồ thị hàm sin và côsin.",
+      "Mục 4: bảng thêm ω = 2π/T.",
+      "Mục 4: ô pha đổi thành cho biết vị trí và chiều chuyển động lúc t.",
+      "Mục 4: ô x rút gọn còn 'có thể âm'.",
+      "Mục 4 (details): tăng φ thì đồ thị dịch trái, φ = π/2 lệch trái T/4 so với φ = 0.",
+      "Mục 5: thí nghiệm đổi thành chiếu đèn song song với mặt bánh xe.",
+      "Mục 5: thêm φ là góc giữa OM và Ox lúc t = 0, Q là hình chiếu của M lên Ox.",
+      "Mục 5 (details mới): Q ở biên khi M ở hai đầu đường kính trên Ox, biên sang biên mất T/2.",
+      "Bẫy hay gặp: hết một chu kì vật về đúng vị trí cũ, theo chiều cũ.",
+      "Quiz tl1-q2: phản hồi sai đổi gợi ý thành đưa dấu trừ vào pha rồi mới đọc A.",
+      "Mục VI: R đổi thành bán kính = A.",
+      "Mục VI: thêm chú thích trục khuỷu.",
+      "Mục VI: thêm dòng ⚠ trước Thử thách.",
+      "Cắt để bù hạn mức: bỏ dòng ví dụ dao động cơ ở mục 1 (lặp với mục VI).",
+      "Cắt để bù hạn mức: bỏ '(hoặc đặt ngang)' và rút gọn câu thí nghiệm vẽ đồ thị."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dao-dong-dieu-hoa/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

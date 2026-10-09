@@ -1,0 +1,218 @@
+{
+  "bai": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Dao động tắt dần",
+      "trich_nguyen_van": "Bảng: $A = 5{,}0\\,e^{-\\beta \\cdot 2}$ cm. Chỉ đổi $\\beta$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "β là một con số lạ gắn với từng môi trường. Em không biết β lớn nghĩa là cản lớn, cũng không biết số 2 trong mũ là t = 2 s, nên không tự kiểm lại bảng được.",
+      "de_xuat": "Thêm một câu: \"β là hệ số tắt dần, môi trường càng nhớt thì β càng lớn; số 2 là thời gian t = 2 s\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Dao động tắt dần",
+      "trich_nguyen_van": "$T$ gần đúng $1$ s.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Thí nghiệm gán chu kì T cho con lắc tắt dần. Ngay trên đó bài lại ghi \"Không có chu kì hay tần số xác định\", và Bẫy 3 cũng nhấn ý này. Em không biết tin câu nào.",
+      "de_xuat": "Ghi rõ \"chu kì riêng khi chưa có cản là T ≈ 1 s\" và nói thêm rằng khoảng thời gian giữa các nhịp chỉ là gần đúng, không phải chu kì đúng nghĩa."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Dao động tắt dần",
+      "trich_nguyen_van": "Dầu còn một nhịp rồi áp vào trục.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu \"áp vào trục\" là gì: con lắc dính vào trục hay dừng ở vị trí cân bằng?",
+      "de_xuat": "Đổi thành \"Trong dầu, con lắc chỉ qua lại khoảng một nhịp rồi gần như đứng yên ở vị trí cân bằng\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "1. Dao động tắt dần",
+      "trich_nguyen_van": "Hại khi muốn kéo dài: hạn chế ma sát.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em đọc thành \"hạn chế ma sát là một cái hại\", trong khi ý bài là cách khắc phục cái hại.",
+      "de_xuat": "Viết lại: \"Có hại khi cần dao động kéo dài (đồng hồ, xích đu); cách khắc phục là giảm ma sát\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Dao động duy trì",
+      "trich_nguyen_van": "Tắt dần được bù năng lượng, không đổi chu kì riêng.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài dùng \"chu kì riêng\" mà chưa định nghĩa. Em không phân biệt được chu kì riêng với chu kì đang dao động, nên về sau dễ lẫn f₀ với f vật.",
+      "de_xuat": "Thêm ngay trước mục: \"Chu kì riêng T₀ (tần số riêng f₀) là chu kì hệ tự dao động khi không có ngoại lực và bỏ qua ma sát\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Dao động duy trì",
+      "trich_nguyen_van": "không đẩy suốt như lực cưỡng bức",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài dùng \"lực cưỡng bức\" để so sánh khi mục 3 chưa học tới, nên em chưa có gì để so.",
+      "de_xuat": "Tạm bỏ vế so sánh ở đây, hoặc ghi \"(xem mục 3)\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Dao động cưỡng bức",
+      "trich_nguyen_van": "Ngoại lực tuần hoàn tác dụng liên tục: $F = F_0\\cos(\\omega t + \\varphi_0)$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Công thức dùng ω, phần còn lại dùng f, bài toán mẫu lại viết 2πf. Bài không nhắc ω = 2πf, cũng không nói F₀ là biên độ lực, nên em không biết ω này là của lực hay của vật.",
+      "de_xuat": "Thêm: \"F₀ là biên độ lực; ω = 2πf là tần số góc của lực (không phải ω₀ của vật)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Cộng hưởng",
+      "trich_nguyen_van": "Cản lớn ($b = 1{,}2$ Hz, $A_r = 2{,}5$ cm): $2{,}5$ cm, thoải hơn.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "b và A_r xuất hiện trước công thức ở mục 5 và không được gọi tên ở đâu cả. Em không biết b lớn nghĩa là cản lớn, cũng không hiểu vì sao số 2,5 cm lặp hai lần.",
+      "de_xuat": "Chuyển câu này xuống sau công thức A(f), và định nghĩa: \"A_r là biên độ tại đỉnh; b là độ rộng đỉnh, cản càng lớn thì b càng lớn\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Cộng hưởng",
+      "trich_nguyen_van": "Đồ thị: trục $f$ tuyến tính.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Tuyến tính\" làm em tưởng đồ thị A theo f là đường thẳng.",
+      "de_xuat": "Viết \"trục f chia đều (mỗi ô cùng số Hz)\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Thí nghiệm: quét tần số lực cưỡng bức",
+      "trich_nguyen_van": "Dạng Lorentz đối xứng quanh $f_0$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Lorentz\" là tên lạ, em sợ phải nhớ thêm.",
+      "de_xuat": "Bỏ tên riêng, chỉ ghi \"Công thức này đối xứng quanh f₀\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "5. Thí nghiệm: quét tần số lực cưỡng bức",
+      "trich_nguyen_van": "Em chỉ được nói \"bằng nhau\" khi hiệu nhỏ hơn sai số",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em sẽ áp ngưỡng 0,2 cm cho mọi phép so sánh hai số đọc. Nhưng mỗi số đều có ±0,2 cm, nên hai số đọc có thể lệch tới 0,4 cm mà vẫn không phân biệt được.",
+      "de_xuat": "Nói rõ: hai số đọc đều có ±0,2 cm, nên hiệu phải lớn hơn 0,4 cm mới chắc chắn khác nhau (ở bài này 1,8 cm vẫn vượt xa)."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "5. Thí nghiệm: quét tần số lực cưỡng bức",
+      "trich_nguyen_van": "Theo bảng A, kết luận nào đúng?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em đi tìm một bảng tên \"bảng A\" nhưng không có. Bài có hai bảng số, em không chắc câu hỏi nói bảng nào.",
+      "de_xuat": "Đổi thành \"Theo bảng quét tần số (f từ 1,0 đến 3,0 Hz) ở trên, kết luận nào đúng?\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "Bẫy 3: tưởng tắt dần vẫn có chu kì riêng không đổi",
+      "trich_nguyen_van": "B. $T$ giữa hai lần qua cân bằng không đổi mãi, tần số xác định",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Phương án gộp hai ý. Thêm nữa, khoảng giữa hai lần qua cân bằng chỉ là nửa chu kì, và thí nghiệm trước đó lại gán T ≈ 1 s. Em thấy ý đầu có vẻ đúng nên phân vân giữa B và D.",
+      "de_xuat": "Rút gọn B thành \"Vẫn có chu kì và tần số xác định như dao động điều hoà\" để chỉ còn một ý sai rõ ràng."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "Lợi: hộp đàn, lò vi sóng, địa chấn, MRI, máy thu thanh.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Câu 6 hỏi lợi và hại của cộng hưởng, nhưng phần này chỉ được dạy ở mục VI, phía sau. Lò vi sóng và địa chấn thì không có ở đâu trong bài, nên em không thể tự nói trước rồi mới bấm.",
+      "de_xuat": "Chuyển câu 6 xuống sau mục VI, và chỉ liệt kê các ví dụ bài đã giải thích (hộp đàn, MRI, máy thu thanh)."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "1. Dùng tắt dần, né cộng hưởng",
+      "trich_nguyen_van": "SGK giải thích là cộng hưởng; nghiên cứu sau cho rằng chủ yếu là rung tự kích do khí động.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết khi làm bài kiểm tra nên ghi đây là cộng hưởng hay không. \"Rung tự kích do khí động\" cũng là từ lạ.",
+      "de_xuat": "Thêm một câu: \"Khi làm bài theo SGK, em cứ coi đây là ví dụ cộng hưởng; phần nghiên cứu sau chỉ để tham khảo\"."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "🎯 Thử thách phân tầng",
+      "trich_nguyen_van": "$f_0 = 5$ Hz, $A = 8$ cm; $f = 8$ Hz, $A = 2$ cm.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Lần một không ghi tần số lực, em tưởng A = 8 cm là biên độ ở f₀. Câu hỏi \"A nào lớn hơn?\" thì đã có sẵn đáp án trong đề (8 > 2), nên câu không còn kiểm tra được gì.",
+      "de_xuat": "Viết rõ: \"f₀ = 5 Hz. Lần 1 lực có f = 5 Hz; lần 2 lực có f = 8 Hz. Lần nào biên độ lớn hơn, vì sao?\" và bỏ các số biên độ."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "I. Mở bài: xích đu tắt, giảm xóc nuốt rung",
+      "trich_nguyen_van": "D. Giảm xóc làm chu kì xe dài ra nên hết rung",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi là về xích đu, còn D nói về giảm xóc. Em loại D vì lạc đề chứ không phải vì hiểu sai.",
+      "de_xuat": "Đổi D thành một ý sai về xích đu, ví dụ \"Nhún làm tăng tần số riêng của đu\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ cứ nhún (có lực) là đẩy liên tục, và lực nào cũng làm đu cao lên, chưa phân biệt được bù một phần nhịp với đẩy suốt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mẹo: bù một nhịp, không đẩy suốt."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thí nghiệm đã gán T ≈ 1 s và nhắc \"dầu làm chu kì đổi\", nên em suy ra dầu đặc chỉ làm chu kì dài hơn mà vẫn điều hoà.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ma sát quá lớn: về cân bằng rồi dừng, không kịp qua lại."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy đồng hồ chạy nhờ cơ cấu bù năng lượng nên cho rằng nó đẩy quả lắc liên tục, giống lực cưỡng bức.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ngoại lực cùng chiều, chỉ một phần chu kì — không đẩy suốt như lực cưỡng bức."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Lẫn tần số riêng f₀ = 2,0 Hz với tần số dao động của vật, nghĩ vật lúc nào cũng dao động ở f₀.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Khi ổn định, $f_{\\text{vật}} = f_{\\text{lực}}$, có thể khác $f_0$."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn \"ngoại lực\" với riêng cưỡng bức, nên nghĩ dao động duy trì thì không có ngoại lực.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "\"Có ngoại lực nên là cưỡng bức.\" Chưa đủ: lực có mặt lúc nào, chu kì theo ai?"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Biết là không cộng hưởng nhưng vẫn nghĩ vật giữ tần số riêng 10 Hz, quên rằng lúc ổn định vật theo tần số lực.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Vật vẫn dao động, tần số bằng tần số lực, $A$ không cực đại"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thí nghiệm đã dùng T ≈ 1 s cho con lắc tắt dần, và nhìn thấy khoảng giữa các lần qua cân bằng gần đều, nên em tin là có tần số xác định.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Không tuần hoàn, không có chu kì xác định"
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Ngay trước đó bài liên tục tính |f − f₀| (2 Hz, 4 Hz), nên em lấy độ lệch 6 Hz làm tần số dao động.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

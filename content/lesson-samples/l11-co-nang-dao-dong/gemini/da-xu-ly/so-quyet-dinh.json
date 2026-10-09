@@ -1,0 +1,114 @@
+{
+  "bai": "l11-co-nang-dao-dong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"Vì $v=-\\omega A\\sin(\\omega t+\\varphi)$, bình phương thì mất dấu trừ\" ngay trước công thức $\\sin^2$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"Dùng $\\sin^2=1-\\cos^2$ và $x=A\\cos(\\omega t+\\varphi)$\" trước công thức $E_d=\\frac12 m\\omega^2(A^2-x^2)$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung \"với $v_{\\max}=\\omega A$\" ở lần dùng $v_{\\max}$ đầu tiên (mục 2)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"tức $x^2=A^2-x^2$\" để thấy ngay vì sao cắt tại $\\pm A/\\sqrt{2}$ (không dùng $W$ vì mục 4 mới định nghĩa)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"với con lắc lò xo, $W$ không phụ thuộc $m$ (nhưng $T$ thì có)\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ chữ \"Giữ vật\", ghi rõ \"Không đo $E_d$, chỉ tính kiểm tra tại năm vạch\" và \"Năm hàng tính ra đều cho\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ $k=\\frac{0{,}200\\times 9{,}8}{0{,}049}=40$ N/m với số đã đổi sang SI."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở câu bằng \"Ở bước đo $k$ (lò xo treo đứng), nếu…\" trong phần Sai số."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C đổi thành: đếm thừa, chỉ có hai li độ $\\pm A/\\sqrt{2}$, mỗi li độ qua hai lần, nên 4 lần."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"năng lượng va chạm\" bằng \"cơ năng dao động $W$\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán mở bài, phản hồi đã giải thích vận tốc bằng không không phải năng lượng bằng không."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 \"Mốc ở VTCB · Lớn ở biên\"."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 \"Đếm lần qua · Không chỉ đếm chỗ\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mẹo mục 4 và bảng bẫy III.1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng bảng và dòng 🔑 \"Năng lượng nhanh gấp đôi\"."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mẹo mục 5 và bảng bẫy III.3."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 7: \"$v_{\\max}=\\omega A$ tỉ lệ với $A$, còn $W$ mới tỉ lệ với $A^2$\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2: thêm dòng $v=-\\omega A\\sin(\\omega t+\\varphi)$ (bình phương mất dấu trừ) trước công thức $E_d$ theo $\\sin^2$.",
+      "Mục II.2: thêm dòng dùng $\\sin^2=1-\\cos^2$ và $x=A\\cos(\\omega t+\\varphi)$ để ra $E_d=\\frac12 m\\omega^2(A^2-x^2)$.",
+      "Mục II.2: bổ sung $v_{\\max}=\\omega A$ cạnh $E_{d,\\max}$.",
+      "Mục II.3: thêm $x^2=A^2-x^2$ giải thích giao điểm $\\pm A/\\sqrt{2}$.",
+      "Mục II.4: bỏ câu lặp \"$E_t(t)$ và $E_d(t)$ đổi chỗ, chu kì $T/2$\" (đã có ở mục 3).",
+      "Mục tiêu: sửa thành $W$ không phụ thuộc $m$ nhưng $T$ thì có.",
+      "Thí nghiệm mục II.6: ghi rõ phép thế $k=\\frac{0{,}200\\times 9{,}8}{0{,}049}=40$ N/m (số không đổi).",
+      "Thí nghiệm mục II.6: ghi rõ $E_d$ được tính kiểm tra, không đo; kết quả $W=0{,}128$ J không đổi.",
+      "Chú thích làm tròn $5{,}66$ cm và $6{,}93$ cm chuyển vào trong details Sai số (nội dung giữ nguyên).",
+      "Details Sai số: nói rõ tình huống treo đứng là ở bước đo $k$; giá trị $0{,}04802$ J không đổi.",
+      "Quiz 3: phản hồi phương án C giải thích đếm thừa (2 li độ × 2 lần = 4).",
+      "Quiz 7: thêm dòng ⚠ $v_{\\max}=\\omega A$ tỉ lệ $A$, $W$ tỉ lệ $A^2$.",
+      "Mục VI: \"năng lượng va chạm\" đổi thành \"cơ năng dao động $W$\" tăng theo $A^2$."
+    ],
+    "so_tu_them": -4,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-co-nang-dao-dong/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "bai": "l11-khai-niem-dien-truong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích ngay sau công thức: đổi Δm ra kg, g ≈ 9,8 m/s² là gia tốc trọng trường."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'số liệu minh hoạ, có kèm sai số đọc cân' để giữ chủ ý lần 4 lệch (0,12 g so với 0,115 g lý thuyết), khớp với hộp sai số."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu 5 đổi thành 'điện tích nguồn +Q, −Q' ở đề và cả hai phản hồi."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm mắt xích: E₁ nằm trên AM, E₂ nằm trên MB nên E₁ ⊥ E₂; bỏ cụm '(dữ kiện ngầm)' để bù độ dài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra ghi rõ điều kiện 'hai vectơ vuông góc nên…'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ 'theo đường sức', còn 'nhiễm điện cùng dấu nên đẩy nhau và xoè ra'."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích ngắn trong phản hồi Câu 0: phía giấy gần thước có điện tích trái dấu nên bị hút mạnh hơn phía xa bị đẩy."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(đường thẳng chứa vectơ)' sau chữ 'giá'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C đổi thành 'nhân với 3 thay vì chia cho 9: vừa quên bình phương, vừa quên xa hơn thì yếu đi'."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ E₁ = E₂, giản ước k, (r₁/r₂)² = q₁/q₂ = 4 trong lời giải ⭐⭐."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ '1 câu dự đoán và 6 câu tự kiểm tra'."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi ('Không có gió nào…'), không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn quy tắc q < 0 thì F ngược chiều E ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo r gấp đôi/gấp ba đã đặt ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu rõ đường sức đi ra từ điện tích dương và chữ 'sai' trong đề đã in đậm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước câu hỏi đã nhấn E có sẵn, không phụ thuộc q."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 ngay trước câu hỏi đã nhấn lỗi cộng số có dấu."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'phụ thuộc góc giữa hai vectơ', đề in đậm 'trung điểm', phản hồi C giải thích rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3, thí nghiệm cân: thêm 'đổi Δm ra kg, g ≈ 9,8 m/s²'; số liệu ghi 'có kèm sai số đọc cân' (bảng giữ nguyên, lần 4 lý thuyết 0,115 g).",
+      "Câu 2, phản hồi sai: phương án C (1,08·10⁵) giải thích là nhân với 3 thay vì chia cho 9.",
+      "Câu 5: đổi điện tích nguồn +q, −q thành +Q, −Q ở đề và phản hồi (đáp án C không đổi).",
+      "Mục V, bảng đọc đề: thêm lập luận E₁ trên AM, E₂ trên MB nên góc giữa hai vectơ là góc AMB = 90°.",
+      "Mục V, lời giải bước kiểm tra: ghi rõ điều kiện hai vectơ vuông góc.",
+      "Mục VI, tóc dựng: bỏ 'đẩy nhau theo đường sức'.",
+      "Câu 0, phản hồi đúng: giải thích nhiễm điện hưởng ứng của giấy.",
+      "Thử thách ⭐⭐: viết rõ E₁ = E₂, (r₁/r₂)² = q₁/q₂ = 4 (kết quả r₁ = 6 cm, r₂ = 3 cm không đổi).",
+      "Mục tiêu: '7 câu tự kiểm tra' thành '1 câu dự đoán và 6 câu tự kiểm tra'."
+    ],
+    "so_tu_them": 33,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-khai-niem-dien-truong/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

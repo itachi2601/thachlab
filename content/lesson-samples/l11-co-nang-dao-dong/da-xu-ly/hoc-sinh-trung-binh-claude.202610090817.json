@@ -1,0 +1,148 @@
+{
+  "bai": "Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Động năng — lớn ở giữa",
+      "trich_nguyen_van": "$$E_d=\\dfrac{1}{2}m\\omega^2 A^2\\sin^2(\\omega t+\\varphi)$$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Từ $E_d=\\frac12 mv^2$ sang ngay $\\sin^2$ mà bài không nhắc $v=-\\omega A\\sin(\\omega t+\\varphi)$. Học sinh không biết $\\sin^2$ từ đâu ra, cũng không biết vì sao dấu trừ biến mất.",
+      "de_xuat": "Chèn một dòng ngay trước: \"Vì $v=-\\omega A\\sin(\\omega t+\\varphi)$ nên $v^2=\\omega^2A^2\\sin^2(\\omega t+\\varphi)$\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Động năng — lớn ở giữa",
+      "trich_nguyen_van": "$$E_d=\\dfrac{1}{2}m\\omega^2(A^2-x^2)$$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Hệ thức $v^2=\\omega^2(A^2-x^2)$ đến mục 5 mới xuất hiện, lại nằm trong phần ẩn. Ở đây học sinh phải chấp nhận công thức mà không biết vì sao.",
+      "de_xuat": "Ghi ngay cạnh công thức: \"dùng $\\sin^2=1-\\cos^2$, hay $v^2=\\omega^2(A^2-x^2)$\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Động năng — lớn ở giữa",
+      "trich_nguyen_van": "$E_{d,\\max}=\\dfrac{1}{2}m v_{\\max}^2=\\dfrac{1}{2}m\\omega^2 A^2$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "$v_{\\max}$ được dùng mà chưa nói $v_{\\max}=\\omega A$. Hệ thức này chỉ hiện ra ở phản hồi câu 7. Học sinh không tự nối hai vế của đẳng thức này được.",
+      "de_xuat": "Thêm \"($v_{\\max}=\\omega A$)\" ngay sau $v_{\\max}$ ở lần dùng đầu tiên."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Hai cái đổi chỗ — đồ thị theo li độ",
+      "trich_nguyen_van": "Hai đường cắt nhau tại $x=\\pm\\dfrac{A}{\\sqrt{2}}$, nơi $E_t=E_d$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Kết quả được nêu trước, mục 5 mới giải thích. Học sinh đọc đến đây chỉ học thuộc mà không biết lí do.",
+      "de_xuat": "Thêm nửa câu: \"vì $E_t=E_d=W/2$ nên $x^2=A^2/2$\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Biết $W=\\dfrac{1}{2}kA^2$ không đổi; con lắc lò xo không phụ thuộc $m$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu này dễ bị hiểu là \"con lắc lò xo (mọi đại lượng) không phụ thuộc $m$\". Sang mục 6 thì gặp $T=2\\pi\\sqrt{m/k}$ phụ thuộc $m$, học sinh sẽ thấy mâu thuẫn.",
+      "de_xuat": "Sửa thành \"với con lắc lò xo, $W$ không phụ thuộc $m$ (nhưng $T$ thì có)\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "kéo tới $A=8{,}0$ cm rồi thả. Giữ vật tại đúng năm vạch",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Vừa \"thả\" lại vừa \"giữ vật\" tại các vạch, học sinh không biết thí nghiệm làm thế nào. Hơn nữa $E_d$ được tính bằng công thức chứ không đo, nên mục \"Quan sát: năm hàng đều cho 0,128 J\" là tính vòng. Học sinh có thể tưởng đã kiểm chứng bằng đo đạc.",
+      "de_xuat": "Ghi rõ đây là bước tính kiểm tra tại năm vị trí, không phải đo $E_d$; hoặc chỉ ra cách đo $v$ để có $E_d$ thật."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "đo độ dãn thêm $\\Delta\\ell=4{,}9$ cm. Tính $k=mg/\\Delta\\ell=40$ N/m.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không thấy bước đổi $4{,}9$ cm thành $0{,}049$ m và $200$ g thành $0{,}2$ kg. Học sinh thế thẳng số sẽ ra $0{,}4$ hoặc $400$.",
+      "de_xuat": "Viết $k=\\dfrac{0{,}200\\times 9{,}8}{0{,}049}=40$ N/m."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "Nếu treo đứng mà đặt mốc $x=0$ tại chỗ lò xo chưa dãn",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm đang làm nằm ngang, đoạn này đột ngột chuyển sang treo đứng. Học sinh khó nhận ra đây là tình huống khác.",
+      "de_xuat": "Mở đầu bằng \"Ở bước đo $k$ (lò xo treo đứng), nếu…\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Năm chỗ trên một chu kì",
+      "trich_nguyen_van": "C không gắn với phương trình $E_d=E_t$.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi cho phương án C quá chung chung. Học sinh chọn 8 không hiểu mình đã đếm thừa ở đâu.",
+      "de_xuat": "Nói rõ: \"chỉ có 2 li độ, mỗi li độ qua 2 lần, nên 4 lần; không phải 8\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Đời sống và mang về",
+      "trich_nguyen_van": "biên độ càng lớn, năng lượng va chạm càng tăng theo $A^2$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa định nghĩa \"năng lượng va chạm\", học sinh không rõ nó có phải là $W$ hay không.",
+      "de_xuat": "Thay bằng \"cơ năng dao động $W$ tăng theo $A^2$\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất vận tốc bằng không với năng lượng bằng không.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Năng lượng không mất: nó đang nằm hết ở $E_t$."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhầm thế năng với động năng, nghĩ chỗ chuyển động mạnh nhất thì năng lượng nào cũng lớn nhất.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mốc ở VTCB · Lớn ở biên"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đếm số nghiệm li độ mà quên mỗi vị trí được đi qua hai lần trong một chu kì.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đếm lần qua · Không chỉ đếm chỗ"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy $m$ trong $\\frac12 mv^2$ nên cho rằng $W$ tăng theo $m$, quên rằng $v_{\\max}$ giảm khi $m$ tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\omega^2=k/m$ nên $m$ bị triệt. Còn lại $\\dfrac{1}{2}kA^2$."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng năng lượng có cùng chu kì với li độ, không để ý $E_t$ cực đại ở cả hai biên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Năng lượng nhanh gấp đôi"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ \"chia đôi năng lượng\" tương ứng với \"chia đôi biên độ\", quên rằng năng lượng tỉ lệ với $x^2$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỗ $E_d=E_t$ là chia căn hai, không phải một nửa biên độ."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Ngay trước câu này học sinh vừa tính $W$ tỉ lệ $A^2$, nên áp luôn tỉ lệ bình phương cho vận tốc. Bài chưa nêu $v_{\\max}=\\omega A$ trong phần lí thuyết.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

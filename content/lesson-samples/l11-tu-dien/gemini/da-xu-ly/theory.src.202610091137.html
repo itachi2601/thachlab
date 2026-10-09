@@ -1,0 +1,355 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nói được <strong>tụ điện là gì</strong>, cách tích điện và vì sao nó chặn dòng một chiều.</li>
+<li>Dùng <strong>C = Q/U</strong>, đổi đơn vị μF, nF, pF; biết C chỉ do <strong>cấu tạo</strong> quyết định.</li>
+<li>Tính <strong>năng lượng</strong> của tụ và giải bài <strong>ghép nối tiếp, song song</strong>.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 17 phút.</p>
+</div>
+
+<h3>I. Mở bài: chiếc đèn flash và cục pin 3 vôn</h3>
+<p>Đèn flash rời của máy ảnh chạy bằng hai cục pin tiểu, tổng chỉ 3 V. Vậy mà nó loé sáng chói trong khoảng một phần nghìn giây.</p>
+<p>Bấm chụp xong, đèn kêu "píííp" vài giây rồi đèn báo mới sáng lại. Câu hỏi để nghĩ: <em>trong vài giây đó, đèn đang làm gì?</em></p>
+<!--FIG1-->
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Năng lượng cho cú loé chói trong tích tắc đến từ đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q0" id="tl40-q0a"><label for="tl40-q0a" class="tl-opt tl-no">A. Pin đẩy thẳng điện vào bóng đúng lúc bấm chụp</label>
+<input type="radio" name="tl40-q0" id="tl40-q0b"><label for="tl40-q0b" class="tl-opt tl-ok">B. Một linh kiện gom điện tích từ pin trong vài giây, rồi xả hết một lần</label>
+<input type="radio" name="tl40-q0" id="tl40-q0c"><label for="tl40-q0c" class="tl-opt tl-no">C. Bóng đèn tự sinh năng lượng khi có ánh sáng chiếu vào</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng rồi!</strong> Linh kiện đó là <strong>tụ điện</strong>. Pin nạp chậm (tiếng "píííp"), tụ xả nhanh. Gom lâu, xả một lần, nên cú loé rất mạnh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu pin cấp thẳng thì đâu cần chờ vài giây sau mỗi lần chụp. Còn bóng đèn không tự sinh năng lượng. Thứ gì đã được "nạp" trong lúc chờ?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: tụ điện gom điện tích</h3>
+
+<h4>1. Tụ điện là gì</h4>
+<p><strong>🔑 Hai vật dẫn · lớp điện môi · tích và phóng điện</strong></p>
+<ul>
+<li><strong>Cấu tạo:</strong> hai vật dẫn (hai <strong>bản</strong>) đặt gần nhau, ngăn cách bằng lớp <strong>điện môi</strong> (chất cách điện).</li>
+<li><strong>Tác dụng:</strong> tích trữ điện tích; trong mạch xoay chiều, mạch vô tuyến thì tích và phóng điện liên tục.</li>
+<li><strong>Tích điện:</strong> nối hai bản với hai cực nguồn. Bản nối cực dương tích $+Q$, bản kia tích $-Q$.</li>
+<li><strong>Điện tích của tụ</strong> là độ lớn $Q$ trên <em>mỗi</em> bản (không cộng hai bản).</li>
+<li><strong>Tụ phẳng:</strong> hai bản kim loại phẳng, song song. Kí hiệu trong sơ đồ: hai vạch song song (Hình 1).</li>
+<li><strong>Loại tụ:</strong> theo điện môi có tụ không khí, giấy, mica, sứ, gốm; điện môi hay dùng: nhựa, cao su, thuỷ tinh, mica, sứ.</li>
+</ul>
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tudien-01">
+<p class="tl-label">🔬 Thí nghiệm: tụ nạp rồi tự xả qua đèn LED</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc nối tiếp pin 9 V, tụ 1000 μF và một đèn LED (có điện trở bảo vệ). Sau đó tháo pin, nối hai đầu tụ qua LED nhưng <strong>đảo chiều LED</strong> so với lúc nạp (dòng phóng ngược chiều dòng nạp).</li>
+<li><strong>Quan sát:</strong> lúc vừa nối pin, LED loé rồi tắt hẳn dù pin còn nối. Tháo pin, nối tụ với LED: LED lại loé rồi mờ dần.</li>
+</ol>
+</div>
+<p>Vì sao LED tắt hẳn dù pin vẫn còn nối?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q1" id="tl40-q1a"><label for="tl40-q1a" class="tl-opt tl-no">A. Pin hết điện ngay sau cú loé</label>
+<input type="radio" name="tl40-q1" id="tl40-q1b"><label for="tl40-q1b" class="tl-opt tl-no">B. Điện tích xuyên qua điện môi rồi mất</label>
+<input type="radio" name="tl40-q1" id="tl40-q1c"><label for="tl40-q1c" class="tl-opt tl-no">C. Đèn LED cháy vì dòng quá lớn</label>
+<input type="radio" name="tl40-q1" id="tl40-q1d"><label for="tl40-q1d" class="tl-opt tl-ok">D. Tụ nạp đầy nên dòng ngừng hẳn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dòng chỉ chạy trong lúc tụ đang nạp. Nạp đầy thì hết dòng: tụ chặn dòng một chiều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Pin vẫn tốt và LED vẫn loé lại được khi tụ phóng, nên A và C không đúng. B sai vì điện môi không cho điện tích đi qua. Câu hỏi đúng là: tụ đầy thì còn chỗ cho điện tích chạy tiếp không?</p></div>
+</div>
+<details class="tl-details">
+<summary>👀 Bấm xem: rút ra từ thí nghiệm</summary>
+<p>Tụ <strong>nạp</strong> điện tích rồi giữ lại, sau đó <strong>phóng</strong> ra được. Dòng một chiều <strong>không đi qua</strong> tụ: giữa hai bản là chất cách điện.</p>
+</details>
+
+<h4>2. Điện dung C = Q/U</h4>
+<p><strong>🔑 C = Q/U · khả năng tích điện · đơn vị fara</strong></p>
+<ul>
+<li><strong>Điện dung</strong> đặc trưng cho khả năng tích điện của tụ khi đặt hiệu điện thế $U$:</li>
+</ul>
+<p>$$C=\dfrac{Q}{U}\quad\Rightarrow\quad Q=CU$$</p>
+<p>$Q$: điện tích (C) · $U$: hiệu điện thế giữa hai bản (V) · $C$: điện dung (F, fara).</p>
+<ul>
+<li><strong>1 F</strong> là điện dung của tụ tích được 1 C khi đặt vào 1 V. Đơn vị này rất lớn.</li>
+<li>Tụ thường gặp có C từ $10^{-12}$ đến $10^{-3}$ F, nên dùng ước số:</li>
+</ul>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Ước số</th><th>Quy đổi</th></tr></thead>
+<tbody>
+<tr><td>1 mF (milifara)</td><td>$10^{-3}$ F</td></tr>
+<tr><td>1 μF (micrôfara)</td><td>$10^{-6}$ F</td></tr>
+<tr><td>1 nF (nanôfara)</td><td>$10^{-9}$ F</td></tr>
+<tr><td>1 pF (picôfara)</td><td>$10^{-12}$ F</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Vỏ tụ ghi hai số:</strong> điện dung và hiệu điện thế tối đa. Ví dụ "1000 μF – 10 V", "0,1 μF – 10 V". Vượt số vôn đó, tụ có thể bị <strong>đánh thủng</strong>.</li>
+<li><strong>Tụ xoay:</strong> điện dung đổi được khi xoay núm (dò đài radio).</li>
+</ul>
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tudien-02">
+<p class="tl-label">🔬 Thí nghiệm đo: Q theo U của một tụ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tụ ghi "470 μF – 16 V". Nạp tụ bằng nguồn chỉnh được ở 5 mức: 2, 4, 6, 8, 10 V. Mỗi lần cho tụ phóng qua cảm biến điện tích của bộ thí nghiệm số để đọc $Q$.</li>
+<li><strong>Quan sát:</strong> bảng dưới; cột cuối là $Q/U$ tính ra.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>U (V)</th><th>Q (μC)</th><th>Q/U (μF)</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>980</td><td>490</td></tr>
+<tr><td>4</td><td>1900</td><td>475</td></tr>
+<tr><td>6</td><td>2890</td><td>482</td></tr>
+<tr><td>8</td><td>3820</td><td>478</td></tr>
+<tr><td>10</td><td>4800</td><td>480</td></tr>
+</tbody>
+</table></div>
+</div>
+<p>Từ bảng: nên báo điện dung của tụ là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q2" id="tl40-q2a"><label for="tl40-q2a" class="tl-opt tl-no">A. 490 μF, lấy theo lần đo đầu tiên</label>
+<input type="radio" name="tl40-q2" id="tl40-q2b"><label for="tl40-q2b" class="tl-opt tl-no">B. 470 μF, vì trên vỏ ghi như vậy</label>
+<input type="radio" name="tl40-q2" id="tl40-q2c"><label for="tl40-q2c" class="tl-opt tl-ok">C. Khoảng 480 μF, trung bình năm lần đo</label>
+<input type="radio" name="tl40-q2" id="tl40-q2d"><label for="tl40-q2d" class="tl-opt tl-no">D. 4800 μF, lấy Q lớn nhất trong bảng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trung bình năm giá trị $Q/U$ là $\approx 481$ μF. Lần đo ở 2 V lệch nhiều nhất (490) vì $Q$ nhỏ nên sai số đọc chiếm tỉ lệ lớn. Lệch 470 → 480 là bình thường: tụ hoá thường có sai số chế tạo tới ±20%.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A dựa vào đúng lần đo kém tin cậy nhất ($Q$ nhỏ, sai số tương đối lớn). B là số danh định, không phải số đo. D nhầm điện tích (μC) thành điện dung. Hãy lấy trung bình cột $Q/U$.</p></div>
+</div>
+<details class="tl-details">
+<summary>👀 Bấm xem: rút ra từ bảng</summary>
+<p>$Q$ tỉ lệ thuận với $U$; tỉ số $Q/U$ gần như không đổi, đó là $C$ của tụ.</p>
+</details>
+<!--FIG2-->
+
+<h4>3. C do cấu tạo quyết định</h4>
+<p><strong>🔑 S lớn · d nhỏ · ε lớn → C lớn</strong></p>
+<ul>
+<li>C <strong>chỉ phụ thuộc cấu tạo</strong> (hình dạng, kích thước, điện môi), <strong>không</strong> phụ thuộc $Q$ hay $U$.</li>
+<li>Tụ phẳng:</li>
+</ul>
+<p>$$C=\dfrac{\varepsilon S}{9\cdot10^{9}\cdot4\pi d}$$</p>
+<p>$S$: diện tích <strong>phần đối diện</strong> (m²; tăng cỡ bản mà phần chồng lên nhau không đổi thì $C$ không đổi) · $d$: khoảng cách hai bản (m) · $\varepsilon$: hằng số điện môi (không khí $\varepsilon = 1$).</p>
+<ul>
+<li>Điện trường giữa hai bản là đều, hướng từ bản + sang bản −: $E=\dfrac{U}{d}$.</li>
+<li>Điện môi chỉ chịu được $E_{\max}$, nên $U_{\max}=E_{\max}\,d$. Quá mức là <strong>đánh thủng</strong>: tụ hỏng, thành vật dẫn.</li>
+</ul>
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tudien-03">
+<p class="tl-label">🔬 Thí nghiệm: tụ tự chế từ hai tấm nhôm</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hai tấm nhôm 20 cm × 20 cm, kê cách nhau 1 mm bằng hạt nhựa nhỏ; đo C bằng đồng hồ vạn năng thang đo điện dung. Mỗi lần chỉ đổi một yếu tố, các lần khác trả về $d$ = 1 mm và tấm đủ 0,04 m²: tăng $d$ lên 2 mm; trượt lệch một nửa tấm; chèn tấm nhựa dày 1 mm kín khe.</li>
+<li><strong>Quan sát:</strong> khoảng 350 pF lúc đầu. Tăng $d$ gấp đôi hoặc trượt lệch một nửa: còn khoảng 180 pF. Chèn nhựa: C tăng vài lần.</li>
+<li><strong>Rút ra:</strong> $C$ tỉ lệ thuận với $S$ đối diện và $\varepsilon$, tỉ lệ nghịch với $d$. Không cần nối nguồn: C có sẵn từ cấu tạo.</li>
+</ol>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: tính lại số 350 pF</summary>
+<p>$S = 0{,}2\cdot0{,}2 = 0{,}04$ m², $d = 10^{-3}$ m, $\varepsilon = 1$:</p>
+<p>$$C=\dfrac{0{,}04}{9\cdot10^{9}\cdot4\pi\cdot10^{-3}}$$</p>
+<p>$C\approx3{,}5\cdot10^{-10}$ F $\approx 354$ pF. Thêm nhựa $\varepsilon\approx3$: khoảng 1060 pF.</p>
+</details>
+
+<h4>4. Năng lượng của tụ</h4>
+<p><strong>🔑 Năng lượng nằm trong điện trường · nhớ ½QU</strong></p>
+<ul>
+<li>Tụ tích điện thì giữa hai bản có điện trường. Điện trường này dự trữ <strong>năng lượng điện trường</strong>.</li>
+</ul>
+<p>$$W=\dfrac12 QU=\dfrac12 CU^2=\dfrac{Q^2}{2C}$$</p>
+<ul>
+<li>Mẹo: nhớ một dạng <strong>½QU</strong>, thay $Q = CU$ là ra hai dạng còn lại.</li>
+<li>Vì sao có ½? Lúc nạp, $U$ tăng dần từ 0. Năng lượng là diện tích tam giác dưới đường $Q$–$U$ (Hình 2).</li>
+<li>Ví dụ: tụ flash 150 μF nạp tới 300 V: $W=\tfrac12\cdot150\cdot10^{-6}\cdot300^2\approx 6{,}75$ J, xả trong 1 ms. Trong đèn có mạch tăng áp đưa 3 V lên cỡ 300 V rồi mới nạp cho tụ.</li>
+</ul>
+<p>Cùng một tụ, nạp ở hiệu điện thế gấp đôi thì năng lượng của tụ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q3" id="tl40-q3a"><label for="tl40-q3a" class="tl-opt tl-ok">A. Tăng 4 lần</label>
+<input type="radio" name="tl40-q3" id="tl40-q3b"><label for="tl40-q3b" class="tl-opt tl-no">B. Tăng 2 lần</label>
+<input type="radio" name="tl40-q3" id="tl40-q3c"><label for="tl40-q3c" class="tl-opt tl-no">C. Không đổi</label>
+<input type="radio" name="tl40-q3" id="tl40-q3d"><label for="tl40-q3d" class="tl-opt tl-no">D. Giảm 2 lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $C$ không đổi, $W=\tfrac12 CU^2$ nên $U$ gấp 2 thì $W$ gấp $2^2 = 4$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra "2 lần" là quên rằng $Q$ cũng tăng theo $U$ (dùng ½QU mà giữ $Q$). C là tưởng $W$ không phụ thuộc $U$; D là nhầm chiều tăng–giảm. Viết $W=\tfrac12 CU^2$ với $C$ cố định rồi thử lại.</p></div>
+</div>
+
+<h4>5. Ghép tụ: nối tiếp và song song</h4>
+<p><strong>🔑 Nối tiếp: Q chung · Song song: U chung</strong></p>
+<!--FIG3-->
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Ghép</th><th>Nối tiếp</th><th>Song song</th></tr></thead>
+<tbody>
+<tr><td>Mắc</td><td>Nối đuôi nhau</td><td>Chung hai đầu</td></tr>
+<tr><td>$Q$</td><td>$Q=Q_1=Q_2$</td><td>$Q=Q_1+Q_2$</td></tr>
+<tr><td>$U$</td><td>$U=U_1+U_2$</td><td>$U=U_1=U_2$</td></tr>
+<tr><td>$C$ bộ</td><td>$\dfrac1{C}=\dfrac1{C_1}+\dfrac1{C_2}$</td><td>$C=C_1+C_2$</td></tr>
+<tr><td>So sánh</td><td>Nhỏ hơn tụ nhỏ nhất</td><td>Lớn hơn tụ lớn nhất</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li>Hai tụ nối tiếp: $C=\dfrac{C_1C_2}{C_1+C_2}$. Nhiều tụ thì cộng tiếp từng số hạng.</li>
+<li>Mẹo: <strong>ghép tụ "ngược" ghép điện trở</strong> — song song thì cộng thẳng, nối tiếp thì cộng nghịch đảo.</li>
+<li>Các công thức trên đúng khi các tụ <strong>chưa tích điện</strong> trước lúc ghép. Tụ đã tích sẵn thì dùng <strong>bảo toàn điện tích</strong>.</li>
+</ul>
+<details class="tl-details">
+<summary>👀 Bấm xem thêm: ghép tụ đã tích điện sẵn</summary>
+<p>Tụ $C_1 = 2$ μF đã tích 20 μC, nối song song (bản dương với bản dương) với tụ $C_2 = 3$ μF chưa tích. Tổng điện tích giữ nguyên 20 μC, chia theo $U$ chung: $U=\dfrac{20}{2+3}=4$ V; $Q_1 = 8$ μC, $Q_2 = 12$ μC.</p>
+</details>
+
+<h3>III. Ba cái bẫy</h3>
+
+<h4>Bẫy 1: "C = Q/U nên tăng U thì C giảm"</h4>
+<p><strong>🔑 Q/U để đo · cấu tạo quyết định</strong></p>
+<p>Công thức $C = Q/U$ là cách <strong>tính</strong> C, không phải cái <strong>làm ra</strong> C. Tăng $S$ thì $C$ tăng; còn $Q$ và $W$ theo $C$ và $U$ mà đổi.</p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đại lượng</th><th>Phụ thuộc vào</th><th>Khi $S$ gấp đôi, $U$ giữ nguyên</th></tr></thead>
+<tbody>
+<tr><td>$C$</td><td>$S$, $d$, $\varepsilon$</td><td>Gấp đôi</td></tr>
+<tr><td>$Q = CU$</td><td>$C$ và $U$</td><td>Gấp đôi</td></tr>
+<tr><td>$W$</td><td>$C$ và $U$</td><td>Gấp đôi</td></tr>
+</tbody>
+</table></div>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl40-q4-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="tl40-q4-chac" value="khong"> Không chắc</label></p>
+<p>Một tụ đang nối nguồn 6 V. Đổi sang nguồn 12 V thì điện dung của tụ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q4" id="tl40-q4a"><label for="tl40-q4a" class="tl-opt tl-no">A. Giảm một nửa</label>
+<input type="radio" name="tl40-q4" id="tl40-q4b"><label for="tl40-q4b" class="tl-opt tl-ok">B. Không đổi</label>
+<input type="radio" name="tl40-q4" id="tl40-q4c"><label for="tl40-q4c" class="tl-opt tl-no">C. Tăng gấp đôi</label>
+<input type="radio" name="tl40-q4" id="tl40-q4d"><label for="tl40-q4d" class="tl-opt tl-no">D. Tăng gấp bốn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cấu tạo không đổi nên $C$ không đổi; chỉ $Q$ gấp đôi. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là đọc $C=Q/U$ mà giữ $Q$ cố định. C, D là gán sự thay đổi của $Q$ hoặc $W$ cho $C$. Hai bản, khoảng cách, điện môi có đổi đâu? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: nhầm nối tiếp với song song</h4>
+<p><strong>🔑 Nối tiếp: Q bằng nhau · tụ nhỏ gánh U lớn</strong></p>
+<p>Nhiều em nghĩ nối tiếp thì "U chia đều" hoặc C bộ lớn hơn. Sai cả hai. Nối tiếp thì $Q$ bằng nhau, nên $U_i = Q/C_i$: <strong>tụ nhỏ chịu hiệu điện thế lớn</strong>.</p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Ghép</th><th>Đại lượng chung</th><th>Chia nhau theo</th></tr></thead>
+<tbody>
+<tr><td>Nối tiếp</td><td>$Q$</td><td>$U$ tỉ lệ nghịch với $C$</td></tr>
+<tr><td>Song song</td><td>$U$</td><td>$Q$ tỉ lệ thuận với $C$</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Hiệu điện thế giới hạn của bộ:</strong> song song thì lấy số nhỏ nhất của các tụ; nối tiếp thì phải tính để <strong>không tụ nào</strong> vượt giới hạn ($Q_{\max}$ là số nhỏ nhất của $C_iU_{i,\max}$, rồi $U=Q/C_{\text{bộ}}$).</li>
+</ul>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl40-q5-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="tl40-q5-chac" value="khong"> Không chắc</label></p>
+<p>Hai tụ 4 μF và 12 μF ghép nối tiếp. Điện dung của bộ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q5" id="tl40-q5a"><label for="tl40-q5a" class="tl-opt tl-no">A. 16 μF</label>
+<input type="radio" name="tl40-q5" id="tl40-q5b"><label for="tl40-q5b" class="tl-opt tl-no">B. 8 μF</label>
+<input type="radio" name="tl40-q5" id="tl40-q5c"><label for="tl40-q5c" class="tl-opt tl-no">C. 4 μF</label>
+<input type="radio" name="tl40-q5" id="tl40-q5d"><label for="tl40-q5d" class="tl-opt tl-ok">D. 3 μF</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $C=\dfrac{4\cdot12}{4+12}=3$ μF, nhỏ hơn cả tụ 4 μF.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là cộng thẳng (công thức song song). B là lấy trung bình. C là tưởng bộ bằng tụ nhỏ nhất, nhưng nối tiếp phải <em>nhỏ hơn</em> tụ nhỏ nhất. Dùng $\dfrac{C_1C_2}{C_1+C_2}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 3: còn nối nguồn hay đã ngắt nguồn</h4>
+<p><strong>🔑 Nối nguồn: U giữ · Ngắt nguồn: Q giữ</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Tình huống</th><th>Không đổi</th><th>Chèn điện môi ($C$ tăng)</th></tr></thead>
+<tbody>
+<tr><td>Vẫn nối nguồn</td><td>$U$</td><td>$Q = CU$ tăng</td></tr>
+<tr><td>Đã ngắt nguồn</td><td>$Q$</td><td>$U = Q/C$ giảm</td></tr>
+</tbody>
+</table></div>
+<p>Tụ phẳng nạp xong thì <strong>ngắt khỏi nguồn</strong>, rồi kéo hai bản ra xa gấp đôi. Hiệu điện thế giữa hai bản:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q6" id="tl40-q6a"><label for="tl40-q6a" class="tl-opt tl-ok">A. Tăng gấp đôi</label>
+<input type="radio" name="tl40-q6" id="tl40-q6b"><label for="tl40-q6b" class="tl-opt tl-no">B. Không đổi</label>
+<input type="radio" name="tl40-q6" id="tl40-q6c"><label for="tl40-q6c" class="tl-opt tl-no">C. Giảm một nửa</label>
+<input type="radio" name="tl40-q6" id="tl40-q6d"><label for="tl40-q6d" class="tl-opt tl-no">D. Tăng gấp bốn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ngắt nguồn nên $Q$ giữ; $d$ gấp đôi thì $C$ giảm một nửa, $U = Q/C$ gấp đôi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là coi như vẫn nối nguồn. C là cho $U$ đổi cùng chiều với $C$. D là bình phương nhầm. Bước đầu tiên: hỏi "cái gì giữ nguyên?" — ngắt nguồn thì $Q$ giữ.</p></div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
+<details class="tl-details"><summary>1. Tụ điện là gì? Tích điện cho tụ thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Hai vật dẫn · gần nhau · ngăn bằng điện môi. Nối hai bản với hai cực nguồn: bản nối cực dương tích $+Q$.</p></details>
+<details class="tl-details"><summary>2. Định nghĩa điện dung, đơn vị, ước số? <small>(nói trước, rồi bấm)</small></summary>
+<p>$C = Q/U$ · fara (F) · 1 μF = $10^{-6}$ F, 1 nF = $10^{-9}$ F, 1 pF = $10^{-12}$ F.</p></details>
+<details class="tl-details"><summary>3. C phụ thuộc vào gì? Tụ phẳng thì sao? <small>(nói trước, rồi bấm)</small></summary>
+<p>Chỉ cấu tạo · không phụ thuộc $Q$, $U$ · $C=\dfrac{\varepsilon S}{9\cdot10^{9}\cdot4\pi d}$.</p></details>
+<details class="tl-details"><summary>4. Ba dạng công thức năng lượng của tụ? <small>(nói trước, rồi bấm)</small></summary>
+<p>$W=\tfrac12QU=\tfrac12CU^2=\dfrac{Q^2}{2C}$ · năng lượng điện trường.</p></details>
+<details class="tl-details"><summary>5. Nối tiếp và song song: cái gì chung, C bộ tính sao? <small>(nói trước, rồi bấm)</small></summary>
+<p>Nối tiếp: $Q$ chung · $\dfrac1C=\sum\dfrac1{C_i}$. Song song: $U$ chung · $C=\sum C_i$.</p></details>
+<details class="tl-details"><summary>6. Vỏ tụ ghi "1000 μF – 10 V" nghĩa là gì? Quá 10 V thì sao? <small>(nói trước, rồi bấm)</small></summary>
+<p>Điện dung 1000 μF · hiệu điện thế tối đa 10 V · vượt quá: đánh thủng, tụ thành vật dẫn.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó</h3>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Hai tụ điện chưa tích điện, $C_1 = 3$ μF và $C_2 = 6$ μF, ghép nối tiếp rồi nối vào nguồn $U = 12$ V.</p>
+<p>a) Tính điện dung của bộ và điện tích của mỗi tụ.</p>
+<p>b) Tính hiệu điện thế trên mỗi tụ và năng lượng của bộ tụ.</p>
+</div>
+<p>Với mỗi câu của đề, tự hỏi hai điều: <strong>cho dữ liệu gì?</strong> và <strong>gọi ra kiến thức nào?</strong></p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"chưa tích điện"</td><td>Ban đầu $Q = 0$</td><td>Dùng được công thức ghép thông thường</td></tr>
+<tr><td>"$C_1 = 3$ μF, $C_2 = 6$ μF"</td><td>Đổi ra F nếu tính năng lượng</td><td>1 μF = $10^{-6}$ F</td></tr>
+<tr><td>"ghép nối tiếp"</td><td>$Q_1 = Q_2 = Q$</td><td>Cộng nghịch đảo các $C$</td></tr>
+<tr><td>"nối vào nguồn $U = 12$ V"</td><td>$U$ của cả bộ</td><td>$Q = CU$; $U = U_1 + U_2$</td></tr>
+<tr><td>"năng lượng của bộ"</td><td>Cần $C$ bộ và $U$</td><td>$W = \tfrac12CU^2$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Điện dung bộ: $C=\dfrac{C_1C_2}{C_1+C_2}=\dfrac{3\cdot6}{3+6}=2$ μF.</li>
+<li>Điện tích: $Q = CU = 2\cdot12 = 24$ μC. Nối tiếp nên $Q_1 = Q_2 = 24$ μC.</li>
+<li>Hiệu điện thế: $U_1=\dfrac{Q}{C_1}=\dfrac{24}{3}=8$ V; $U_2=\dfrac{24}{6}=4$ V.</li>
+<li>Năng lượng: $W=\tfrac12CU^2=\tfrac12\cdot2\cdot10^{-6}\cdot12^2=1{,}44\cdot10^{-4}$ J $=144$ μJ.</li>
+<li><strong>Kiểm tra:</strong> $U_1 + U_2 = 8 + 4 = 12$ V, khớp nguồn. Tụ nhỏ (3 μF) chịu $U$ lớn hơn: đúng bẫy 2. Cộng năng lượng từng tụ: $\tfrac12\cdot3\cdot8^2+\tfrac12\cdot6\cdot4^2=96+48=144$ μJ. Khớp.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — cùng hai tụ, nhưng ghép <strong>song song</strong> vào nguồn 12 V.</p>
+<ol class="tl-steps">
+<li>$C = C_1 + C_2 = 9$ μF; $U_1 = U_2 = 12$ V.</li>
+<li>$Q_1 = C_1U = 36$ μC; <strong>em điền:</strong> $Q_2 = \;?$</li>
+<li><strong>Em điền:</strong> $W$ của bộ $= \;?$ — gợi ý: dùng $C = 9$ μF.</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary><p>$Q_2 = 6\cdot12 = 72$ μC (tổng $Q = 108$ μC $= 9\cdot12$, khớp). $W=\tfrac12\cdot9\cdot10^{-6}\cdot12^2=6{,}48\cdot10^{-4}$ J $= 648$ μJ.</p></details>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>Hai tụ $C_1 = 2$ μF và $C_2 = 6$ μF ghép nối tiếp vào nguồn 16 V. Hiệu điện thế trên tụ $C_1$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl40-q7" id="tl40-q7a"><label for="tl40-q7a" class="tl-opt tl-no">A. 4 V</label>
+<input type="radio" name="tl40-q7" id="tl40-q7b"><label for="tl40-q7b" class="tl-opt tl-no">B. 8 V</label>
+<input type="radio" name="tl40-q7" id="tl40-q7c"><label for="tl40-q7c" class="tl-opt tl-ok">C. 12 V</label>
+<input type="radio" name="tl40-q7" id="tl40-q7d"><label for="tl40-q7d" class="tl-opt tl-no">D. 16 V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $C = \dfrac{2\cdot6}{8} = 1{,}5$ μF, $Q = 24$ μC, $U_1 = 24/2 = 12$ V, $U_2 = 4$ V. Tổng 16 V.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là $U$ của tụ 6 μF (nhầm tụ). B là chia đều. D là coi như song song. Tính $C$ bộ → $Q$ chung → $U_1 = Q/C_1$.</p></div>
+</div>
+</div>
+
+<h3>VI. Tụ điện trong đời sống</h3>
+<ul>
+<li><strong>Đèn flash:</strong> pin nạp tụ vài giây, tụ xả vài jun trong khoảng 1 ms.</li>
+<li><strong>Màn hình cảm ứng điện dung:</strong> ngón tay dẫn điện chạm vào làm đổi điện dung tại điểm chạm; mạch đo chỗ đổi để biết em chạm đâu. Đeo găng len thì màn "không nhận".</li>
+<li><strong>Máy khử rung tim:</strong> tụ cỡ 100 μF nạp tới khoảng 2000 V, tích $\tfrac12CU^2 \approx 200$ J, xả qua lồng ngực để tim đập lại đúng nhịp.</li>
+<li><strong>Bộ nguồn tivi, nồi cơm điện:</strong> tụ lớn còn giữ điện sau khi rút phích. Chờ một lúc rồi mới mở vỏ sửa.</li>
+</ul>
+<details class="tl-details">
+<summary>⭐ Thử thách cơ bản</summary>
+<p>Tụ 20 μF nối vào nguồn 10 V. Tính $Q$ và $W$. <strong>Đáp số:</strong> $Q = 200$ μC; $W = \tfrac12\cdot20\cdot10^{-6}\cdot10^2 = 10^{-3}$ J.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách khá</summary>
+<p>Tụ 2 μF và tụ 4 μF, mỗi tụ chịu tối đa 50 V, ghép nối tiếp. Bộ chịu được tối đa bao nhiêu vôn? <strong>Gợi ý:</strong> $Q$ chung nên $U_1 = 2U_2$. Tụ 2 μF chạm 50 V trước, khi đó $U_2 = 25$ V. Bộ chịu tối đa <strong>75 V</strong>, không phải 100 V.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách thách đấu</summary>
+<p>Tụ phẳng nạp xong rồi ngắt nguồn. Kéo hai bản ra xa gấp đôi. Năng lượng tụ tăng hay giảm, phần chênh đến từ đâu? <strong>Gợi ý:</strong> $Q$ giữ, $C$ giảm một nửa, $W = \dfrac{Q^2}{2C}$ gấp đôi. Hai bản trái dấu hút nhau, tay em phải tốn công kéo chúng ra: công đó thành năng lượng điện trường.</p>
+</details>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tụ điện:</strong> hai vật dẫn · điện môi · tích và phóng · chặn dòng một chiều.</li>
+<li><strong>Điện dung:</strong> $C = Q/U$ · fara · μF, nF, pF.</li>
+<li><strong>C do cấu tạo:</strong> S lớn · d nhỏ · ε lớn → C lớn.</li>
+<li><strong>Năng lượng:</strong> nhớ ½QU · thay $Q = CU$.</li>
+<li><strong>Ghép:</strong> nối tiếp Q chung · song song U chung.</li>
+<li><strong>Nguồn:</strong> còn nối U giữ · ngắt ra Q giữ.</li>
+<li><strong>Đọc đề:</strong> tìm chữ "nối tiếp/song song", "ngắt nguồn" trước khi tính.</li>
+</ul>
+</div>

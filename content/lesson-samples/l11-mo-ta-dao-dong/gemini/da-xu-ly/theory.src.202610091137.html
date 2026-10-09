@@ -1,0 +1,484 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Viết $x = A\cos(\omega t+\varphi)$ và gọi tên $x$, $A$, pha, $\varphi$.</li>
+<li>Tính $T$, $f$, $\omega$; biết đại lượng nào không đổi với một vật.</li>
+<li>Đọc $\varphi$: lúc $t = 0$ vật ở đâu, sắp đi đâu; so sớm, trễ, đồng, ngược pha.</li>
+<li>Đọc đồ thị $x$–$t$: lấy biên độ và chu kì từ đỉnh.</li>
+</ul>
+<p>Đọc khoảng 16,8 phút. Cuối bài, em tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: con lắc đồng hồ</h3>
+
+<p>Quả lắc đồng hồ đung đưa trong một khoảng cố định. Em nhìn lúc nó ở đầu bên phải, sắp quay vào. Bạn nhìn chậm hơn, lúc nó đang qua giữa.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Cùng một con lắc, hai người bắt đầu nhìn ở hai lúc khác nhau. Cái gì đổi?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q1" id="tl21-q1a"><label for="tl21-q1a" class="tl-opt tl-no">A. Biên độ và chu kì đều đổi</label>
+<input type="radio" name="tl21-q1" id="tl21-q1b"><label for="tl21-q1b" class="tl-opt tl-ok">B. Chỉ pha ban đầu đổi; $A$, $T$, $f$, $\omega$ không đổi</label>
+<input type="radio" name="tl21-q1" id="tl21-q1c"><label for="tl21-q1c" class="tl-opt tl-no">C. Tần số đổi vì người sau đếm ít nhịp hơn</label>
+<input type="radio" name="tl21-q1" id="tl21-q1d"><label for="tl21-q1d" class="tl-opt tl-no">D. Mọi đại lượng trong phương trình đều đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đổi lúc bấm giờ thì chỉ <strong>pha ban đầu</strong> đổi. Biên độ, chu kì, tần số và tần số góc là của con lắc, không phụ thuộc lúc em bắt đầu nhìn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A gán cho biên độ và chu kì cái mà chúng không có: chúng không phụ thuộc lúc nhìn. C nhầm nhịp đếm của người xem với tần số của con lắc. D tưởng cả phương trình đổi, trong khi $A$, $T$, $f$, $\omega$ giữ nguyên.</p></div>
+</div>
+</div>
+
+<!--FIG1-->
+
+<h3>II. Kiến thức: li độ, pha và đồ thị</h3>
+
+<h4>1. Li độ và biên độ</h4>
+
+<p><strong>🔑 Li độ lệch · biên độ cực đại</strong></p>
+
+<p>Dao động mô tả bởi phương trình sau được gọi là <strong>dao động điều hoà</strong>. Vật chuyển động theo phương trình đó là vật dao động điều hoà.</p>
+
+$$x = A\cos(\omega t+\varphi)$$
+
+<ul>
+<li>$x$: li độ, lệch khỏi vị trí cân bằng (m, cm).</li>
+<li>$A$: biên độ, cực đại của li độ (m, cm).</li>
+<li>Vật luôn nằm trong đoạn $[-A;A]$.</li>
+<li>$A$ phụ thuộc cách kích thích: kéo xa thì lớn.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-motadddh-01">
+<p class="tl-label">🔬 Thí nghiệm: vật không ra khỏi đoạn [−A, A]</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lò xo ngang, đánh dấu O. Kéo lệch 4 cm rồi thả. Ghi bốn lần, lúc $t = 0$ rồi cứ thêm $T/4$, với $T = 2$ s.</li>
+<li><strong>Quan sát:</strong> vật qua O, tới đầu âm, rồi quay lại. Không vượt hai đầu.</li>
+<li><strong>Rút ra:</strong> li độ trong $[-4;4]$ cm. $A = 4$ cm do cách kéo.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$t$ (s)</th><th>$x$ (cm)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>4</td></tr>
+<tr><td>0,5</td><td>0</td></tr>
+<tr><td>1,0</td><td>−4</td></tr>
+<tr><td>1,5</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Bốn số tính từ $x = 4\cos(\pi t)$ cm. Hai lần $x = 0$ là hai chiều đi ngược nhau.</p>
+
+<details class="tl-details">
+<summary>Vì sao lúc qua O, li độ bằng 0 mà vật không đứng yên?</summary>
+<p>Li độ bằng 0 chỉ nói vật đang ở vị trí cân bằng. Muốn biết sắp đi đâu, phải xem pha, hoặc xem li độ ở ngay sau đó tăng hay giảm. Hai lần $x = 0$ trong bảng là hai trạng thái khác nhau.</p>
+</details>
+
+<h4>2. Chu kì, tần số, tần số góc</h4>
+
+<p><strong>🔑 Nhịp theo cấu tạo hệ</strong></p>
+
+<ul>
+<li>$T$: thời gian một dao động toàn phần (s).</li>
+<li>$f$: số dao động trong một giây (Hz).</li>
+<li>$\omega$: tần số góc, luôn dương (rad/s).</li>
+<li>$\omega$ phụ thuộc cấu tạo của hệ.</li>
+</ul>
+
+$$f = \dfrac{1}{T}$$
+
+$$\omega = 2\pi f = \dfrac{2\pi}{T}$$
+
+<p>Mẹo: <strong>một vòng pha $2\pi$ kéo dài đúng $T$</strong>. Với một vật, $A$, $T$, $f$, $\omega$ không đổi theo lúc nhìn — đó là đại lượng đặc trưng. Vật khác thì có thể khác. $\varphi$ không thuộc bộ bốn này.</p>
+
+<p>Ví dụ: đếm 20 dao động hết 16 s. Khi đó $T = 16/20 = 0{,}8$ s, $f = 1{,}25$ Hz, $\omega = 2{,}5\pi$ rad/s.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Tần số góc $\omega = 10\pi$ rad/s. Chu kì bằng bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q2" id="tl21-q2a"><label for="tl21-q2a" class="tl-opt tl-no">A. $10\pi$ s</label>
+<input type="radio" name="tl21-q2" id="tl21-q2b"><label for="tl21-q2b" class="tl-opt tl-no">B. $5$ s</label>
+<input type="radio" name="tl21-q2" id="tl21-q2c"><label for="tl21-q2c" class="tl-opt tl-no">C. $0{,}1$ s</label>
+<input type="radio" name="tl21-q2" id="tl21-q2d"><label for="tl21-q2d" class="tl-opt tl-ok">D. $0{,}2$ s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $T = 2\pi/\omega = 2\pi/(10\pi) = 0{,}2$ s. Tần số là $f = 5$ Hz, đừng ghi nhầm $f$ vào chỗ của $T$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy $\omega$ làm chu kì. B ra 5 là đã tính $f = \omega/(2\pi)$ rồi gọi nhầm thành $T$. C thiếu số 2 trong $T = 2\pi/\omega$, ra $\pi/\omega = 0{,}1$ s.</p></div>
+</div>
+</div>
+
+<h4>3. Pha ban đầu</h4>
+
+<p><strong>🔑 Lúc $t = 0$ ở đâu, đi đâu</strong></p>
+
+<ul>
+<li>Pha $\omega t+\varphi$ cho biết trạng thái lúc $t$.</li>
+<li>$\varphi$ là pha lúc $t = 0$.</li>
+<li>$\varphi$ phụ thuộc cách kích thích.</li>
+<li>$\varphi$ nằm trong $(-\pi;\pi]$.</li>
+<li>Đổi lúc nhìn thì $\varphi$ đổi.</li>
+</ul>
+
+<p>Quy ước lấy $\pi$, không lấy $-\pi$: cùng một trạng thái biên âm. Trên vòng tròn, <strong>$\varphi_0$ là góc giữa bán kính lúc $t = 0$ và trục Ox.</strong> Hình chiếu của điểm đó lên Ox là li độ.</p>
+
+<!--FIG2-->
+
+<p>Mẹo chiều: <strong>tăng $t$ một chút</strong>. $x$ giảm thì đi về phía âm; $x$ tăng thì đi về phía dương.</p>
+
+<details class="tl-details">
+<summary>Vì sao đổi lúc nhìn thì pha ban đầu đổi?</summary>
+<p>Bắt đầu quan sát muộn một khoảng $\tau$ thì thời gian mới là $t' = t-\tau$. Phương trình thành $x = A\cos(\omega t'+\varphi+\omega\tau)$. Pha ban đầu mới là $\varphi+\omega\tau$. Cùng một vật, chỉ đổi mốc đồng hồ.</p>
+</details>
+
+<h4>4. Độ lệch pha</h4>
+
+<p><strong>🔑 Lệch pha không đổi theo lúc nhìn</strong></p>
+
+<p>Hai vật cùng chu kì, cùng biên độ, khác pha ban đầu:</p>
+
+$$x_1 = A\cos(\omega t)$$
+
+<p>$\varphi_1 = 0$: lúc $t = 0$ ở biên dương, sắp về vị trí cân bằng.</p>
+
+$$x_2 = A\cos\left(\omega t-\dfrac{\pi}{2}\right)$$
+
+<p>$\varphi_2 = -\dfrac{\pi}{2}$: lúc $t = 0$ ở vị trí cân bằng, sắp sang phía $x \gt 0$.</p>
+
+<p>Dao động 1 đạt cực đại sớm hơn dao động 2 một khoảng $T/4$. Độ lệch pha luôn bằng $\pi/2$: cùng $\omega$ nên hiệu pha không phụ thuộc $t$.</p>
+
+<!--FIG3-->
+
+$$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{T}{4}$$
+
+<ul>
+<li>$\varphi_1 \gt \varphi_2$: dao động 1 sớm pha.</li>
+<li>$\varphi_1 \lt \varphi_2$: dao động 1 trễ pha.</li>
+<li>$\varphi_1 = \varphi_2$: hai dao động đồng pha.</li>
+<li>$\varphi_1 = \varphi_2\pm\pi$: hai dao động ngược pha.</li>
+</ul>
+
+<p>Mẹo: <strong>sớm pha thì đỉnh đến trước</strong>. Trễ pha thì đỉnh đến sau.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Đồng pha</th><th>Ngược pha</th></tr></thead>
+<tbody>
+<tr><td>cùng lên, cùng xuống</td><td>lệch nhau $\pi$</td></tr>
+<tr><td>cùng qua O một hướng</td><td>cùng $A$: đối xứng qua trục $t$</td></tr>
+<tr><td>không cần cùng biên độ</td><td>vật 1 ở $+A$ thì vật 2 ở $-A$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Độ lệch pha quan trọng hơn pha</strong> vì không đổi theo lúc quan sát: đổi mốc thì cả hai pha cộng thêm cùng một lượng.</p>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q3conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q3conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Vật dao động theo $x = A\cos\left(\omega t-\dfrac{\pi}{2}\right)$. Lúc $t = 0$ vật ở đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q3" id="tl21-q3a"><label for="tl21-q3a" class="tl-opt tl-ok">A. Ở vị trí cân bằng, sắp sang phía $x$ dương</label>
+<input type="radio" name="tl21-q3" id="tl21-q3b"><label for="tl21-q3b" class="tl-opt tl-no">B. Ở biên dương, sắp về vị trí cân bằng</label>
+<input type="radio" name="tl21-q3" id="tl21-q3c"><label for="tl21-q3c" class="tl-opt tl-no">C. Ở vị trí cân bằng, sắp sang phía $x$ âm</label>
+<input type="radio" name="tl21-q3" id="tl21-q3d"><label for="tl21-q3d" class="tl-opt tl-no">D. Ở biên âm, sắp về vị trí cân bằng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\cos(-\pi/2) = 0$, nên đang ở O. Pha tăng một chút thì góc tiến về 0, côsin thành dương, $x$ tăng. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là trường hợp $\varphi = 0$. C là $\varphi = \pi/2$: cũng ở O nhưng sắp sang phía âm. D là $\varphi = \pi$, đang ở biên âm. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>5. Đọc đồ thị li độ – thời gian</h4>
+
+<p><strong>🔑 Đọc đỉnh ra $A$ và $T$</strong></p>
+
+<ul>
+<li>Đỉnh dương: độ cao là biên độ $A$.</li>
+<li>Hai đỉnh dương liên tiếp: cách nhau $T$.</li>
+<li>Trục hoành là thời gian, không phải quãng đường.</li>
+<li>Dốc xuống: về phía âm. Dốc lên: về phía dương.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Lúc $t = 0$</th><th>$\varphi$</th></tr></thead>
+<tbody>
+<tr><td>đỉnh dương, sắp xuống</td><td>$0$</td></tr>
+<tr><td>ở O, sắp sang dương</td><td>$-\pi/2$</td></tr>
+<tr><td>đỉnh âm, sắp lên</td><td>$\pi$</td></tr>
+<tr><td>ở O, sắp sang âm</td><td>$\pi/2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-motadddh-02">
+<p class="tl-label">🔬 Thí nghiệm đo: năm lần đọc li độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> $A = 5{,}0$ cm, $T = 1{,}00$ s và $\varphi = 0$. Đọc thước tại $0$, rồi $0{,}10$, $0{,}20$, $0{,}30$ và $0{,}40$ s.</li>
+<li><strong>Quan sát:</strong> cột tính từ $x = 5\cos(2\pi t)$ cm, làm tròn $0{,}001$ cm. Cột đọc làm tròn $0{,}1$ cm.</li>
+<li><strong>Rút ra:</strong> năm chấm nằm trên đường côsin. Lệch cột đọc vì thước chỉ tới $0{,}1$ cm.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$t$ (s)</th><th>$x$ tính (cm)</th><th>$x$ đọc (cm)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>5,000</td><td>5,0</td></tr>
+<tr><td>0,10</td><td>4,045</td><td>4,0</td></tr>
+<tr><td>0,20</td><td>1,545</td><td>1,5</td></tr>
+<tr><td>0,30</td><td>−1,545</td><td>−1,5</td></tr>
+<tr><td>0,40</td><td>−4,045</td><td>−4,0</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Câu hỏi sai số: ở $t = 0{,}10$ s, đọc $4{,}0$ cm nhưng tính được $4{,}045$ cm. Sai số tuyệt đối bằng bao nhiêu? Vì sao đọc ra $4{,}0$ chứ không phải $4{,}045$?</p>
+
+<details class="tl-details">
+<summary>Bấm xem: sai số 0,045 cm đến từ đâu</summary>
+<p>Sai số tuyệt đối $|4{,}045-4{,}0| = 0{,}045$ cm. Làm tròn tới $0{,}1$ cm: $4{,}045 \to 4{,}0$; $1{,}545 \to 1{,}5$; $-1{,}545 \to -1{,}5$; $-4{,}045 \to -4{,}0$. Số đọc trên đồ thị chỉ ghi tới $0{,}1$ cm nên phần lẻ bị làm tròn đi, đó là nguồn của sai số. Lúc $t = 0$, số tính đã là $5{,}000$ nên đọc đúng $5{,}0$.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Trên đồ thị $x$–$t$, hai đỉnh dương liên tiếp cách $0{,}4$ s và đỉnh cao $3$ cm. Kết luận nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q4" id="tl21-q4a"><label for="tl21-q4a" class="tl-opt tl-no">A. Bước sóng bằng $0{,}4$ m</label>
+<input type="radio" name="tl21-q4" id="tl21-q4b"><label for="tl21-q4b" class="tl-opt tl-no">B. Tần số bằng $0{,}4$ Hz</label>
+<input type="radio" name="tl21-q4" id="tl21-q4c"><label for="tl21-q4c" class="tl-opt tl-ok">C. Chu kì bằng $0{,}4$ s và biên độ bằng $3$ cm</label>
+<input type="radio" name="tl21-q4" id="tl21-q4d"><label for="tl21-q4d" class="tl-opt tl-no">D. Biên độ bằng $0{,}4$ cm và chu kì bằng $3$ s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khoảng cách hai đỉnh dương là $T = 0{,}4$ s. Độ cao đỉnh là $A = 3$ cm. Tần số là $1/0{,}4 = 2{,}5$ Hz, không ghi trên trục.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đọc thành bước sóng: đồ thị này là $x$ theo $t$, không có bước sóng. B lấy $0{,}4$ làm tần số; đó là chu kì, tần số bằng $2{,}5$ Hz. D đảo biên độ với chu kì.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1. Li độ không phải quãng đường</h4>
+
+<p>Bạn nói: “Về giữa rồi, sao li độ bằng 0?” Li độ là lệch khỏi O, có dấu. Quãng đường là độ dài đã đi, luôn dương, có thể lớn hơn $A$.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Li độ $x$</th><th>Quãng đường</th></tr></thead>
+<tbody>
+<tr><td>có dấu, trong $[-A;A]$</td><td>luôn dương</td></tr>
+<tr><td>tại O thì bằng 0</td><td>vẫn cộng dồn</td></tr>
+<tr><td>một vị trí</td><td>một độ dài đã đi</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>Câu 4.</strong> Vật đi từ biên dương về đúng vị trí cân bằng. Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q5" id="tl21-q5a"><label for="tl21-q5a" class="tl-opt tl-no">A. Li độ bằng $A$, quãng đường bằng 0</label>
+<input type="radio" name="tl21-q5" id="tl21-q5b"><label for="tl21-q5b" class="tl-opt tl-ok">B. Li độ bằng 0, quãng đường bằng $A$</label>
+<input type="radio" name="tl21-q5" id="tl21-q5c"><label for="tl21-q5c" class="tl-opt tl-no">C. Cả li độ và quãng đường đều bằng $A$</label>
+<input type="radio" name="tl21-q5" id="tl21-q5d"><label for="tl21-q5d" class="tl-opt tl-no">D. Cả li độ và quãng đường đều bằng 0</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đang ở O nên $x = 0$. Quãng đường từ biên về O bằng $A$, và không bị xoá.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và C gán li độ bằng $A$ dù vật đã về O. D cho quãng đường bằng 0, quên đoạn đường đã đi từ biên về giữa.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2. Biên độ không phải li độ lúc này</h4>
+
+<p>Li độ đổi từng lúc. Biên độ của một vật thì không. Thấy $x = 2$ cm, đừng sửa $A$ thành 2 cm.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Li độ</th><th>Biên độ</th></tr></thead>
+<tbody>
+<tr><td>đổi theo thời gian</td><td>không đổi theo lúc nhìn</td></tr>
+<tr><td>có thể âm hoặc bằng 0</td><td>là cực đại, lấy dương</td></tr>
+<tr><td>một thời điểm</td><td>do cách kích thích</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>Câu 5.</strong> Tại thời điểm đang xét, $x = 2$ cm và $A = 5$ cm. Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q6" id="tl21-q6a"><label for="tl21-q6a" class="tl-opt tl-no">A. Biên độ bằng 2 cm vì đó là li độ hiện tại</label>
+<input type="radio" name="tl21-q6" id="tl21-q6b"><label for="tl21-q6b" class="tl-opt tl-no">B. Li độ bằng 5 cm vì biên độ chính là li độ</label>
+<input type="radio" name="tl21-q6" id="tl21-q6c"><label for="tl21-q6c" class="tl-opt tl-no">C. Biên độ đang giảm từ 5 cm xuống 2 cm</label>
+<input type="radio" name="tl21-q6" id="tl21-q6d"><label for="tl21-q6d" class="tl-opt tl-ok">D. Li độ bằng 2 cm; biên độ vẫn là 5 cm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $x$ là vị trí lúc này. $A$ là cực đại của cả dao động, không bị thay bởi một lần đọc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy li độ hiện tại làm biên độ. B lấy biên độ làm li độ. C tưởng biên độ đổi theo thời điểm; với một vật, $A$ không đổi.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3. Pha không phải độ lệch pha</h4>
+
+<p>Pha ban đầu đổi khi đổi lúc bấm giờ. Độ lệch pha của hai dao động cùng chu kì thì không. Cùng biên độ chưa phải đồng pha.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Pha ban đầu</th><th>Độ lệch pha</th></tr></thead>
+<tbody>
+<tr><td>của một vật</td><td>của hai vật cùng $T$</td></tr>
+<tr><td>đổi khi đổi lúc nhìn</td><td>không đổi khi đổi lúc nhìn</td></tr>
+<tr><td>cho biết $t = 0$ ở đâu</td><td>cho biết ai sớm, ai trễ</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q7conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q7conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p><strong>Câu 6.</strong> Hai dao động cùng chu kì. Em đổi mốc $t = 0$. Điều nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q7" id="tl21-q7a"><label for="tl21-q7a" class="tl-opt tl-ok">A. Pha ban đầu mỗi vật đổi; độ lệch pha không đổi</label>
+<input type="radio" name="tl21-q7" id="tl21-q7b"><label for="tl21-q7b" class="tl-opt tl-no">B. Độ lệch pha đổi; pha ban đầu không đổi</label>
+<input type="radio" name="tl21-q7" id="tl21-q7c"><label for="tl21-q7c" class="tl-opt tl-no">C. Cả pha ban đầu và độ lệch pha đều đổi</label>
+<input type="radio" name="tl21-q7" id="tl21-q7d"><label for="tl21-q7d" class="tl-opt tl-no">D. Không đại lượng nào đổi, vì cùng chu kì</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi pha cộng thêm cùng $\omega\tau$, nên hiệu hai pha giữ nguyên. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B đảo chiều: chính pha ban đầu mới đổi. C tưởng cả hai cùng đổi. D tưởng cùng chu kì thì không gì đổi, nhưng pha ban đầu vẫn đổi khi đổi mốc. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải</h3>
+
+<p>Nói trước, rồi mới bấm xem.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Thế nào là dao động điều hoà? Viết phương trình. <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>$x = A\cos(\omega t+\varphi)$. Vật chuyển động theo phương trình đó gọi là vật dao động điều hoà.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. $x$ và $A$ khác nhau thế nào? Vật nằm trong đoạn nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>$x$: lệch khỏi vị trí cân bằng, đổi theo $t$. $A$: cực đại của li độ, theo cách kích thích. $-A \le x \le A$.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Viết $f$ và $\omega$ theo $T$. Cái nào theo cấu tạo? Cái nào không đổi với một vật? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>$f = 1/T$. $\omega = 2\pi/T \gt 0$, theo cấu tạo. Với một vật, $A$, $T$, $f$, $\omega$ không đổi theo lúc nhìn. Vật khác thì có thể khác.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. $\varphi$ cho biết gì? Nằm trong khoảng nào? Trên vòng tròn, $\varphi_0$ là góc nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>Lúc $t = 0$ vật ở đâu và sắp đi đâu. Khoảng $(-\pi;\pi]$. $\varphi_0$: góc giữa bán kính lúc $t = 0$ và trục Ox.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. $x_1 = A\cos(\omega t)$ và $x_2 = A\cos(\omega t-\pi/2)$. Ai sớm pha? Lệch bao nhiêu? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>$\varphi_1 = 0$, $\varphi_2 = -\pi/2$. Dao động 1 sớm hơn, đỉnh đến trước $T/4$. Độ lệch pha luôn $\pi/2$.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Khi nào sớm, trễ, đồng, ngược pha? Đọc $A$ và $T$ trên đồ thị $x$–$t$ thế nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
+<p>Sớm: $\varphi_1 \gt \varphi_2$. Trễ: $\varphi_1 \lt \varphi_2$. Đồng: $\varphi_1 = \varphi_2$. Ngược: $\varphi_1 = \varphi_2\pm\pi$. Đỉnh dương cho $A$; hai đỉnh dương liên tiếp cách $T$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
+
+<p>Với mỗi cụm của đề, tự hỏi: <strong>cho dữ liệu gì?</strong> và <strong>gọi kiến thức nào?</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một vật dao động điều hoà trên trục Ox:</p>
+$$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
+<p>$t$ tính bằng giây. a) Xác định $A$, $\omega$, $\varphi$, rồi tính $T$ và $f$. b) Lúc $t = 0$, vật ở đâu và sắp đi chiều nào? c) Viết phương trình một dao động cùng $A$, cùng $\omega$, trễ pha $\pi/2$ so với dao động này.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức</th></tr></thead>
+<tbody>
+<tr><td>“$x = 6\cos(\pi t+\pi/3)$ cm”</td><td>$A = 6$ cm; $\omega = \pi$; $\varphi = \pi/3$</td><td>tách $A$, $\omega$, $\varphi$ trước</td></tr>
+<tr><td>“tính $T$ và $f$”</td><td>đã có $\omega$</td><td>$T = 2\pi/\omega$; $f = 1/T$</td></tr>
+<tr><td>“lúc $t = 0$”</td><td>$t = 0$</td><td>$x = A\cos\varphi$; tăng $t$ một chút</td></tr>
+<tr><td>“trễ pha $\pi/2$”</td><td>cùng $A$, cùng $\omega$</td><td>$\varphi' = \varphi-\pi/2$</td></tr>
+<tr><td>đơn vị cm, s</td><td>đề ngầm</td><td>đáp án kèm đơn vị; $\varphi$ trong $(-\pi;\pi]$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>$A = 6$ cm, $\omega = \pi$ rad/s, $\varphi = \pi/3$ rad. $\varphi$ nằm trong $(-\pi;\pi]$.</li>
+<li>$T = 2\pi/\omega = 2\pi/\pi = 2$ s. $f = 1/T = 0{,}5$ Hz.</li>
+<li>Lúc $t = 0$: $x = 6\cos(\pi/3) = 3$ cm. Góc $\pi/3$ tăng thêm thì côsin giảm, nên $x$ giảm: chiều âm, về phía O.</li>
+<li>Trễ pha $\pi/2$: $\varphi' = \pi/3-\pi/2 = -\pi/6$. Phương trình $x' = 6\cos(\pi t-\pi/6)$ cm.</li>
+<li>Vì $\varphi \gt \varphi'$, dao động gốc sớm pha $\pi/2$. Lệch thời gian $\Delta t = (\pi/2)/\omega = 0{,}5$ s $= T/4$.</li>
+<li>Kiểm tra: $x = 3$ cm nằm trong $[-6;6]$ cm. $\varphi' = -\pi/6$ cũng nằm trong $(-\pi;\pi]$. $T \gt 0$. Đỉnh của dao động trễ đến sau đúng $0{,}5$ s.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng kiểu đề, đổi thành $x = 6\cos(\pi t)$ cm.</p>
+<ol class="tl-steps">
+<li>$A = 6$ cm, $\omega = \pi$ rad/s, $\varphi = 0$.</li>
+<li><strong>Em điền:</strong> $T = 2\pi/\omega = \;?$</li>
+<li><strong>Em điền:</strong> dao động trễ pha $\pi/2$ có $\varphi' = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2 và 3</summary>
+<ol class="tl-steps">
+<li>$T = 2\pi/\pi = 2$ s. Lúc $t = 0$, vật ở biên dương $x = 6$ cm, sắp về O.</li>
+<li>$\varphi' = 0-\pi/2 = -\pi/2$. Đừng viết $+\pi/2$: dấu cộng là sớm pha, không phải trễ. Phương trình $x' = 6\cos(\pi t-\pi/2)$ cm.</li>
+</ol>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p><strong>Câu 7.</strong> So sánh $x_2 = 4\cos\left(2\pi t-\dfrac{\pi}{2}\right)$ cm với $x_1 = 4\cos(2\pi t)$ cm. Dao động 2 so với dao động 1 là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q8conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q8conf" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl21-q8" id="tl21-q8a"><label for="tl21-q8a" class="tl-opt tl-no">A. Sớm pha $\pi/2$</label>
+<input type="radio" name="tl21-q8" id="tl21-q8b"><label for="tl21-q8b" class="tl-opt tl-no">B. Đồng pha, vì cùng biên độ</label>
+<input type="radio" name="tl21-q8" id="tl21-q8c"><label for="tl21-q8c" class="tl-opt tl-ok">C. Trễ pha $\pi/2$</label>
+<input type="radio" name="tl21-q8" id="tl21-q8d"><label for="tl21-q8d" class="tl-opt tl-no">D. Ngược pha</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\varphi_2 = -\pi/2 \lt \varphi_1 = 0$, nên dao động 2 trễ pha $\pi/2$. Cùng $A$ không suy ra đồng pha. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đảo sớm với trễ: $\varphi_2$ nhỏ hơn $\varphi_1$ nên dao động 2 trễ, không sớm. B tưởng cùng biên độ là đồng pha. D là lệch $\pi$; ở đây lệch $\pi/2$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Đồng hồ quả lắc:</strong> $T$ theo cấu tạo để đếm giờ; kéo khác nhau thì chỉ đổi $A$.</li>
+<li><strong>Xích đu:</strong> đẩy mạnh thì $A$ lớn; dây dài mới quyết định nhịp.</li>
+<li><strong>Máy giặt:</strong> cảm biến rung đọc li độ của thùng vắt. $A$ lớn là rung mạnh; nhịp theo kết cấu máy.</li>
+<li><strong>Máy đếm nhịp:</strong> mỗi tiếng cách một chu kì. Đổi lúc bấm giờ không đổi nhịp.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: $A = 5$ cm, $T = 2$ s, $\varphi = 0$. Tính $f$ và $\omega$.</summary>
+<p>$f = 1/T = 0{,}5$ Hz. $\omega = 2\pi/T = \pi$ rad/s.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Khá: $x = 3\cos(4\pi t+\pi/6)$ cm. Lúc $t = 0$, li độ và chiều?</summary>
+<p>$x = 3\cos(\pi/6) = 3\sqrt{3}/2$ cm. Góc $\pi/6$ tăng thì côsin giảm, nên chiều âm, về phía O.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thách đấu: $\varphi_1 = \pi/3$, $\varphi_2 = -\pi/6$, $T = 2$ s. Ai sớm pha? Lệch bao nhiêu? Đổi mốc sang $t = 0{,}5$ s thì độ lệch pha còn đúng không?</summary>
+<p>$\varphi_1 \gt \varphi_2$ nên dao động 1 sớm pha. $\Delta\varphi = \pi/3-(-\pi/6) = \pi/2$. $\omega = \pi$ rad/s, $\Delta t = (\pi/2)/\pi = 0{,}5$ s. Đổi mốc thì cả hai pha cộng thêm cùng một lượng, độ lệch pha vẫn $\pi/2$.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Phương trình:</strong> $x = A\cos(\omega t+\varphi)$.</li>
+<li><strong>Li độ:</strong> lệch O, trong $[-A;A]$.</li>
+<li><strong>Biên độ:</strong> cực đại, theo cách kích thích.</li>
+<li><strong>Pha:</strong> trạng thái lúc $t$. $\varphi$: lúc $t = 0$ ở đâu, sắp đi đâu.</li>
+<li><strong>Nhịp:</strong> $f = 1/T$, $\omega = 2\pi/T \gt 0$, theo cấu tạo.</li>
+<li><strong>Một vật:</strong> $A$, $T$, $f$, $\omega$ không đổi theo lúc nhìn.</li>
+<li><strong>Lệch pha:</strong> sớm / trễ / đồng / ngược; không đổi theo lúc nhìn.</li>
+<li><strong>Đọc đề:</strong> tách $A$, $\omega$, $\varphi$ trước, rồi mới tính $T$, $f$, chiều.</li>
+<li><strong>Đọc đồ thị:</strong> đỉnh cho $A$, hai đỉnh cho $T$.</li>
+</ul>
+</div>

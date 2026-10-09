@@ -1,0 +1,121 @@
+{
+  "bai": "l11-nang-luong-cong-suat-dien",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục Rút ra thêm R ≈ 4,6 Ω ở 6,0 V (dây tóc nguội) và nói rõ \"coi R không đổi\" chỉ là gần đúng."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách dòng Đọc đề thành từng ý một dòng: ra jun thì đổi ra giây, ra kWh thì giữ kW và giờ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại thành \"khi làm việc bình thường (không đoản mạch) với cùng dòng I, pin cũ hao I²r nhiều hơn\" để không lẫn với I = ℰ/r khi đoản mạch."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: chìa khoá có R nhỏ nhưng khác 0, với 600 A thì I²R trong nó vẫn rất lớn nên đỏ rực; ghi I ≈ 600 A."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"máy thu\" bằng ví dụ cụ thể: quạt, động cơ, pin đang sạc (mạch ngoài không chỉ là điện trở)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong details cầu chì: aptomat tự ngắt khi quá dòng, gạt lên dùng lại, không phải thay."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng đầu lời giải ⭐⭐: hiệu suất thiết bị = năng lượng có ích chia điện năng tiêu thụ, khác H của nguồn."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết đủ thừa số giờ: 0,7 · 1 · 30 = 21 kWh."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"bộ sấy chỉ nhận 1/300 kWh, chưa tới một số điện\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay dòng lặp ý bằng số: 10 Ω, 100 Ω nối tiếp vào 110 V nhận 10 W và 100 W; song song vào 10 V nhận 10 W và 1 W."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi lý do: đổ thêm nước lạnh để ấm chạy liên tục ở 1800 W đủ 10 phút."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn Wh ≠ kWh, và đây là câu dự đoán nên không gợi trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn t tính bằng giây ngay trong mục 1 trước quiz."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: coi R không đổi thì P tỉ lệ với U², không tỉ lệ với U."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phần Quan sát của thí nghiệm: I giảm nhưng U tăng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước quiz đã phân biệt kW và kWh."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 trước quiz đã nhấn ℰI là toàn phần, UI chỉ phần có ích."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (có dấu lược …); bảng Bẫy 3 vốn đã nhấn nối tiếp dùng I²R."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu hỏi: tử số của H là R (phần có ích), không phải r."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.2 thí nghiệm đèn 12 V – 21 W: thêm R ≈ 6,0/1,30 ≈ 4,6 Ω ở 6,0 V (so với 6,9 Ω khi sáng) và ghi \"coi R không đổi\" là gần đúng.",
+      "II.4: điều kiện chỉ dùng H = U/ℰ đổi từ \"động cơ hay máy thu\" thành \"quạt, động cơ, pin đang sạc\".",
+      "II.4 thí nghiệm pin AA: bỏ cụm \"khớp R/(R + r)\" ở bước Rút ra (dòng So với công thức ngay sau vẫn kiểm).",
+      "II.5: câu pin cũ nay chỉ nói cho chế độ làm việc bình thường cùng dòng I (không áp cho đoản mạch).",
+      "II.5 ví dụ ắc quy: I ≈ 600 A; thêm giải thích chìa khoá đỏ rực do I²R_khoá với R nhỏ nhưng khác 0.",
+      "III Bẫy 1: bỏ dòng bảng \"Không phụ thuộc dùng bao lâu / = kW × số giờ\" để bù độ dài.",
+      "III Bẫy 3: ví dụ mới 10 Ω và 100 Ω nối tiếp vào 110 V (I = 1 A, 10 W và 100 W) và song song vào 10 V (10 W và 1 W).",
+      "V lời giải d): đổi thành \"bộ sấy chỉ nhận 1/300 kWh\" (số liệu không đổi).",
+      "VI nồi cơm: viết đủ 0,7 · 1 · 30 = 21 kWh (kết quả không đổi).",
+      "Mang về: tính ra jun thì đổi ra giây, tính ra kWh thì giữ kW và giờ."
+    ],
+    "so_tu_them": 90,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-nang-luong-cong-suat-dien/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

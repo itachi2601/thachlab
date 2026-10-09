@@ -3,7 +3,7 @@
 <ul>
 <li>Viết $E_t$, $E_d$, $W$ và chỉ đúng chỗ cực đại, cực tiểu.</li>
 <li>Thấy $E_t$ và $E_d$ đổi chỗ cho nhau, chu kì $T/2$, ngược pha.</li>
-<li>Biết $W=\dfrac{1}{2}kA^2$ không đổi; con lắc lò xo không phụ thuộc $m$.</li>
+<li>Biết $W=\dfrac{1}{2}kA^2$ không đổi; với con lắc lò xo, $W$ không phụ thuộc $m$ (nhưng $T$ thì có).</li>
 <li>Cuối bài tự trả lời được 6 câu ở mục Trả bài. Đọc khoảng 15 phút.</li>
 </ul>
 </div>
@@ -55,10 +55,12 @@
 <li>Ví dụ: xích đu nhanh nhất ở chỗ thấp, gần VTCB.</li>
 </ul>
 <p>$$E_d=\dfrac{1}{2}mv^2$$</p>
+<p>Vì $v=-\omega A\sin(\omega t+\varphi)$, bình phương thì mất dấu trừ:</p>
 <p>$$E_d=\dfrac{1}{2}m\omega^2 A^2\sin^2(\omega t+\varphi)$$</p>
+<p>Dùng $\sin^2=1-\cos^2$ và $x=A\cos(\omega t+\varphi)$:</p>
 <p>$$E_d=\dfrac{1}{2}m\omega^2(A^2-x^2)$$</p>
 <ul>
-<li>$E_{d,\max}=\dfrac{1}{2}m v_{\max}^2=\dfrac{1}{2}m\omega^2 A^2$ tại VTCB ($x=0$, $v=\pm v_{\max}$).</li>
+<li>$E_{d,\max}=\dfrac{1}{2}m v_{\max}^2=\dfrac{1}{2}m\omega^2 A^2$ tại VTCB ($x=0$, $v=\pm v_{\max}$ với $v_{\max}=\omega A$).</li>
 <li>$E_{d,\min}=0$ tại hai biên ($v=0$).</li>
 <li>Vì $k=m\omega^2$ nên $E_d=\dfrac{1}{2}k(A^2-x^2)$.</li>
 </ul>
@@ -82,7 +84,7 @@
 <li>$E_t$ và $E_d$ <strong>không bao giờ cùng tăng hoặc cùng giảm</strong>.</li>
 <li>Đồ thị $E_t(x)$ là parabol <strong>lõm lên</strong> (đáy ở VTCB).</li>
 <li>Đồ thị $E_d(x)$ là parabol <strong>lõm xuống</strong> (đỉnh ở VTCB).</li>
-<li>Hai đường cắt nhau tại $x=\pm\dfrac{A}{\sqrt{2}}$, nơi $E_t=E_d$.</li>
+<li>Hai đường cắt nhau tại $x=\pm\dfrac{A}{\sqrt{2}}$, nơi $E_t=E_d$, tức $x^2=A^2-x^2$.</li>
 </ul>
 <!--FIG2-->
 <p>$E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $T/2$, và <strong>ngược pha</strong> nhau.</p>
@@ -111,7 +113,7 @@
 <ul>
 <li>$W$ tỉ lệ với <strong>bình phương biên độ</strong>.</li>
 <li>Con lắc lò xo: $W$ phụ thuộc $k$ và $A$, <strong>không phụ thuộc $m$</strong>.</li>
-<li>Đồ thị $W(t)$ là đường <strong>nằm ngang</strong>. $E_t(t)$ và $E_d(t)$ đổi chỗ, chu kì $T/2$.</li>
+<li>Đồ thị $W(t)$ là đường <strong>nằm ngang</strong>.</li>
 </ul>
 <p>Mẹo: trong $\dfrac{1}{2}m\omega^2 A^2$ có $m$, nhưng $\omega^2=k/m$ nên $m$ bị triệt. Còn lại $\dfrac{1}{2}kA^2$.</p>
 <!--FIG3-->
@@ -142,7 +144,7 @@
 <input type="radio" name="tl24-q3" id="tl24-q3c"><label for="tl24-q3c" class="tl-opt tl-no">C. 8 lần, vì vận tốc đổi chiều liên tục</label>
 <input type="radio" name="tl24-q3" id="tl24-q3d"><label for="tl24-q3d" class="tl-opt tl-ok">D. 4 lần</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Có hai li độ $\pm A/\sqrt{2}$, mỗi li độ vật đi qua hai lần (đi và về). $2\times 2=4$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lúc $E_d$ cực đại, không phải lúc bằng $E_t$. B đếm số nghiệm mà quên mỗi chỗ đi qua hai lần. C không gắn với phương trình $E_d=E_t$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lúc $E_d$ cực đại, không phải lúc bằng $E_t$. B đếm số nghiệm mà quên mỗi chỗ đi qua hai lần. C đếm thừa: chỉ có hai li độ $\pm A/\sqrt{2}$, mỗi li độ qua hai lần, nên 4 lần.</p></div>
 </div>
 </div>
 
@@ -158,8 +160,8 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l11-conangdddh-01">
 <p class="tl-label">🔬 Thí nghiệm: đo $k$, rồi tính $E_t$, $E_d$, $W$</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> Treo quả $m=200$ g, lấy $g=9{,}8$ m/s², đo độ dãn thêm $\Delta\ell=4{,}9$ cm. Tính $k=mg/\Delta\ell=40$ N/m. Đặt lò xo nằm ngang, đánh dấu VTCB, kéo tới $A=8{,}0$ cm rồi thả. Giữ vật tại đúng năm vạch: $x=0$; $A/2=4{,}0$ cm; $A/\sqrt{2}$; $A\sqrt{3}/2$; $A=8{,}0$ cm. Với mỗi vạch tính $E_t=\dfrac{1}{2}kx^2$ và $E_d=\dfrac{1}{2}k(A^2-x^2)$.</li>
-<li><strong>Quan sát:</strong> Năm hàng đều cho $W=0{,}128$ J. Tại $4{,}0$ cm thì $E_d=3E_t$. Tại $A/\sqrt{2}$ thì $E_d=E_t$. Ở biên, $E_d=0$ và $E_t=W$.</li>
+<li><strong>Làm:</strong> Treo quả $m=200$ g, lấy $g=9{,}8$ m/s², đo độ dãn thêm $\Delta\ell=4{,}9$ cm. Tính $k=mg/\Delta\ell=\dfrac{0{,}200\times 9{,}8}{0{,}049}=40$ N/m. Đặt lò xo nằm ngang, đánh dấu VTCB, kéo tới $A=8{,}0$ cm rồi thả. Không đo $E_d$, chỉ tính kiểm tra tại năm vạch: $x=0$; $A/2=4{,}0$ cm; $A/\sqrt{2}$; $A\sqrt{3}/2$; $A=8{,}0$ cm. Với mỗi vạch tính $E_t=\dfrac{1}{2}kx^2$ và $E_d=\dfrac{1}{2}k(A^2-x^2)$.</li>
+<li><strong>Quan sát:</strong> Năm hàng tính ra đều cho $W=0{,}128$ J. Tại $4{,}0$ cm thì $E_d=3E_t$. Tại $A/\sqrt{2}$ thì $E_d=E_t$. Ở biên, $E_d=0$ và $E_t=W$.</li>
 <li><strong>Rút ra:</strong> Bỏ ma sát thì cơ năng không đổi; $E_t$ và $E_d$ chỉ đổi chỗ cho nhau. Tính ra $W=\dfrac{1}{2}kA^2$ không chứa $m$, nên đổi $m$ thì $W$ vẫn $0{,}128$ J.</li>
 </ol>
 </div>
@@ -173,18 +175,18 @@
 <tr><td>$A=8{,}0$ cm</td><td>$0{,}128$ · $0$ · $0{,}128$</td></tr>
 </tbody>
 </table>
-<p>Nhãn $5{,}66$ cm và $6{,}93$ cm là số làm tròn. Năng lượng trong bảng tính theo đúng $A/\sqrt{2}$ và $A\sqrt{3}/2$, không theo milimét đã làm tròn.</p>
 <p>$\omega=\sqrt{200}\approx 14{,}1$ rad/s.</p>
 <p>$T\approx 0{,}444$ s và $f\approx 2{,}25$ Hz. Kéo $A=4$ cm hay $A=8$ cm, chu kì không đổi.</p>
 <details class="tl-details">
 <summary>🤏 Sai số: đọc $5{,}7$ cm, hoặc đặt nhầm mốc thế năng</summary>
+<p>Nhãn $5{,}66$ cm và $6{,}93$ cm là số làm tròn. Năng lượng trong bảng tính theo đúng $A/\sqrt{2}$ và $A\sqrt{3}/2$, không theo milimét đã làm tròn.</p>
 <p>Thước chỉ tới milimét nên vạch $A/\sqrt{2}\approx 5{,}66$ cm dễ bị đọc thành $5{,}7$ cm.</p>
 <p>Với $\dfrac{1}{2}k=20$:</p>
 <p>$$E_t=20\times(0{,}057)^2=0{,}06498\ \text{J}$$</p>
 <p>$$E_d=20\times(0{,}0064-0{,}003249)$$</p>
 <p>$$E_d=0{,}06302\ \text{J}$$</p>
 <p>Tổng vẫn $0{,}128$ J nhưng $E_t$ không còn bằng $E_d$.</p>
-<p>Nếu treo đứng mà đặt mốc $x=0$ tại chỗ lò xo chưa dãn (cách VTCB đúng $\Delta\ell=4{,}9$ cm) rồi tính $\dfrac{1}{2}k(\Delta\ell)^2$ tại VTCB, em ra $0{,}04802$ J thay vì $0$. Mốc thế năng phải ở VTCB.</p>
+<p>Ở bước đo $k$ (lò xo treo đứng), nếu đặt mốc $x=0$ tại chỗ lò xo chưa dãn (cách VTCB đúng $\Delta\ell=4{,}9$ cm) rồi tính $\dfrac{1}{2}k(\Delta\ell)^2$ tại VTCB, sẽ ra $0{,}04802$ J thay vì $0$. Mốc thế năng phải ở VTCB.</p>
 </details>
 
 <h3>III. Ba cái bẫy hay sập</h3>
@@ -206,7 +208,7 @@
 <input type="radio" name="tl24-q4" id="tl24-q4b"><label for="tl24-q4b" class="tl-opt tl-no">B. Tăng nếu $m$ tăng, vì $W=\dfrac{1}{2}mv^2$</label>
 <input type="radio" name="tl24-q4" id="tl24-q4c"><label for="tl24-q4c" class="tl-opt tl-no">C. Giảm nếu $m$ tăng, vì dao động chậm hơn</label>
 <input type="radio" name="tl24-q4" id="tl24-q4d"><label for="tl24-q4d" class="tl-opt tl-no">D. Bằng không cho đến khi thả tay</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k$ và $A$ giữ nguyên thì $W$ giữ nguyên. Vật nặng hơn thì $\omega$ nhỏ hơn, $v_{\max}$ nhỏ hơn, nhưng tích $m v_{\max}^2$ không đổi. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k$ và $A$ giữ nguyên thì $W$ giữ nguyên. Vật nặng hơn thì $\omega$ nhỏ hơn, $v_{\max}$ nhỏ hơn, nhưng tích $m v_{\max}^2$ không đổi.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B quên rằng $v_{\max}$ cũng giảm khi $m$ tăng. C thấy dao động chậm hơn nhưng chậm không có nghĩa là $W$ nhỏ. D: kéo tới biên độ $A$ là đã nạp $W$, dù tay còn giữ.</p></div>
 </div>
 </div>
@@ -247,7 +249,7 @@
 <input type="radio" name="tl24-q6" id="tl24-q6b"><label for="tl24-q6b" class="tl-opt tl-no">B. $x=0$</label>
 <input type="radio" name="tl24-q6" id="tl24-q6c"><label for="tl24-q6c" class="tl-opt tl-ok">C. $x=\pm A/\sqrt{2}$</label>
 <input type="radio" name="tl24-q6" id="tl24-q6d"><label for="tl24-q6d" class="tl-opt tl-no">D. $x=\pm A$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $E_t=E_d$ nghĩa là mỗi bên bằng $W/2$, nên $x^2=A^2/2$. Chỗ $x=\pm A/2$ lại là $E_d=3E_t$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $E_t=E_d$ nghĩa là mỗi bên bằng $W/2$, nên $x^2=A^2/2$. Chỗ $x=\pm A/2$ lại là $E_d=3E_t$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là chỗ $E_d=3E_t$. B là chỗ $E_d$ cực đại. D là chỗ $E_t$ cực đại và $E_d=0$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
@@ -325,6 +327,7 @@
 <div class="tl-box tl-box--think">
 <p class="tl-label">💪 Thử sức — đổi biên độ</p>
 <p>Cùng $k$, cùng $m$. Biên độ từ $8{,}0$ cm giảm còn $6{,}0$ cm. Vận tốc cực đại mới bằng vận tốc cực đại cũ nhân với:</p>
+<p>⚠ $v_{\max}=\omega A$ tỉ lệ với $A$, còn $W$ mới tỉ lệ với $A^2$.</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl24-c7" value="chac"> Chắc</label> <label><input type="radio" name="tl24-c7" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
 <input type="radio" name="tl24-q7" id="tl24-q7a"><label for="tl24-q7a" class="tl-opt tl-no">A. $(6/8)^2=0{,}5625$, vì năng lượng tỉ lệ $A^2$</label>
@@ -342,7 +345,7 @@
 <li><strong>Xích đu:</strong> trên cao thì chậm ($E_t$ lớn), dưới thấp thì nhanh ($E_d$ lớn).</li>
 <li><strong>Lò xo cửa:</strong> kéo cửa là nạp thế năng; buông tay thì thế năng thành động năng, cửa sập.</li>
 <li><strong>Nam châm cửa tủ:</strong> kéo cánh ra tốn công; thả thì cánh đóng rầm. Cùng kiểu đổi năng lượng, dù không dao động điều hoà mãi.</li>
-<li><strong>Lò xo gá trên máy:</strong> biên độ càng lớn, năng lượng va chạm càng tăng theo $A^2$. Muốn đỡ sốc thì phải giữ biên độ nhỏ.</li>
+<li><strong>Lò xo gá trên máy:</strong> biên độ càng lớn, cơ năng dao động $W$ càng tăng theo $A^2$. Muốn đỡ sốc thì phải giữ biên độ nhỏ.</li>
 </ul>
 <details class="tl-details">
 <summary>⭐ Cơ bản — $E_t$ cực đại ở đâu?</summary>

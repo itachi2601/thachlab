@@ -1,0 +1,436 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Chỉ ra <strong>cái gì truyền đi</strong>, <strong>cái gì ở nguyên tại chỗ</strong>.</li>
+<li>Dùng thành thạo chuỗi công thức $\lambda = vT = \dfrac{v}{f}$; $v = \lambda f$; $T = \dfrac{1}{f}$.</li>
+<li>Viết phương trình dao động tại M cách nguồn đoạn $d$; tính trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$.</li>
+<li>Phân biệt <strong>đồ thị $u - t$</strong> (một điểm, theo thời gian) với <strong>đồ thị $u - x$</strong> (một lúc, theo không gian).</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: làn sóng người trên khán đài</h3>
+
+<p>Trận bóng tối qua, cả khán đài đứng lên rồi ngồi xuống theo một làn sóng chạy vòng quanh sân. Để ý kỹ: <strong>không ai rời chỗ ngồi cả</strong>. Người ở ghế A đứng lên rồi ngồi xuống; người ghế B làm y hệt, chỉ chậm hơn một nhịp.</p>
+
+<p>Thử ngay tại lớp: tổ 1 giơ tay, tổ 2 giơ tay chậm hơn nửa nhịp, đến tổ cuối. Tay ai vẫn ở nguyên trên vai người đó, nhưng mắt em thấy một làn sóng tay chạy hết lớp.</p>
+
+<p>Câu hỏi để nghĩ trước khi đọc tiếp: <em>vậy cái gì đã chạy hết khán đài, còn cái gì ở nguyên tại chỗ?</em></p>
+
+<!--FIG1-->
+
+
+
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thực tế: khán đài làm sóng người</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/hq387m0PRac?rel=0&start=15&end=24" title="khán đài làm sóng người" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Nhịp lên xuống của làn sóng: nó chạy nhanh hay chậm, từ đầu nào sang đầu nào?</p>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Khi làn sóng người chạy hết khán đài, thứ gì đã "đi" từ đầu này sang đầu kia?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q1" id="tl8-q1a"><label for="tl8-q1a" class="tl-opt tl-no">A. Mọi khán giả đi sang khán đài bên kia rồi quay về</label>
+<input type="radio" name="tl8-q1" id="tl8-q1b"><label for="tl8-q1b" class="tl-opt tl-ok">B. Chỉ <em>trạng thái đứng lên – ngồi xuống</em> truyền đi; mỗi người vẫn ở ghế của mình</label>
+<input type="radio" name="tl8-q1" id="tl8-q1c"><label for="tl8-q1c" class="tl-opt tl-no">C. Không khí trong sân chuyển động thành một dòng chảy</label>
+<input type="radio" name="tl8-q1" id="tl8-q1d"><label for="tl8-q1d" class="tl-opt tl-no">D. Cả khán đài rung lên rồi dừng lại</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Thứ truyền đi là <strong>nhịp</strong> đứng lên – ngồi xuống, tức là <strong>pha dao động</strong>. Mỗi người chỉ dao động tại chỗ quanh vị trí cân bằng là chiếc ghế của mình. Đây là câu trả lời cho <em>mọi</em> loại sóng: <strong>sóng truyền pha và năng lượng, không truyền vật chất</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em có thấy ai rời ghế không? Nếu không ai rời ghế mà "sóng" vẫn chạy hết khán đài, thì cái chạy phải là <em>trạng thái đứng lên</em>, không phải con người. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: sóng truyền pha, không truyền vật chất</h3>
+
+<h4>1. Sóng cơ và sự truyền sóng</h4>
+
+<p><strong>🔑 Nguồn dao động · lực liên kết · pha lan đi</strong></p>
+
+<ul>
+<li><strong>Sóng cơ</strong> là dao động cơ lan truyền trong một môi trường.</li>
+<li>Muốn có sóng cơ phải đủ hai thứ: <strong>nguồn dao động</strong> tác dụng vào môi trường, và <strong>lực liên kết</strong> giữa các phần tử môi trường.</li>
+<li>Sóng cơ <strong>không truyền được trong chân không</strong>: ở đó không có phần tử để liên kết.</li>
+<li>Phần tử môi trường chỉ dao động quanh vị trí cân bằng; thứ lan ra xa là pha và năng lượng.</li>
+</ul>
+
+<p>Ví dụ: gõ nhẹ một đầu thước kẻ trên bàn, đầu kia nghe tiếng; mẩu tẩy trên thước chỉ rung tại chỗ, không chạy ra xa.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-motasong-01">
+<p class="tl-label">🔬 Thí nghiệm: khay nước và miếng xốp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đổ nước vào khay, thả miếng xốp nhỏ C lên mặt nước, chấm đầu một vật nhọn O xuống nước theo nhịp đều tay.</li>
+<li><strong>Quan sát:</strong> gợn tròn lan ra từ O; miếng xốp C chỉ nhấp nhô tại chỗ, <strong>không trôi ra xa</strong>. Ngừng chấm, gợn vẫn lan tiếp rồi yếu dần.</li>
+<li><strong>Rút ra:</strong> thứ lan ra xa là <strong>pha dao động</strong>, không phải nước.</li>
+</ol>
+</div>
+<!--video:tn-l11-motasong-01-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: bóng nổi tại chỗ</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/RRvgdqqcrcE?rel=0" title="bóng nổi tại chỗ" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Bóng có trôi ra xa khi sóng chạy qua không?</p>
+</div>
+
+
+
+
+<!--FIG2-->
+
+<h4>2. Năm đại lượng đặc trưng (bảng tra nhanh)</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đại lượng</th><th>Ký hiệu, đơn vị và nghĩa</th></tr>
+</thead>
+<tbody>
+<tr><td>Biên độ sóng $A$ (m, cm)</td><td>độ lệch lớn nhất khỏi vị trí cân bằng</td></tr>
+<tr><td>Chu kì sóng $T$ (s)</td><td>thời gian một phần tử làm xong một dao động toàn phần: $T = \dfrac{1}{f}$</td></tr>
+<tr><td>Tần số sóng $f$ (Hz)</td><td>số dao động toàn phần trong một giây</td></tr>
+<tr><td>Bước sóng $\lambda$ (m, cm)</td><td>quãng đường sóng truyền trong một chu kì, cũng là khoảng cách hai điểm gần nhau nhất cùng pha: $\lambda = vT$</td></tr>
+<tr><td>Tốc độ truyền sóng $v$ (m/s)</td><td>tốc độ lan truyền pha; mỗi môi trường cho $v$ một giá trị xác định</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 $T = \dfrac{1}{f}$ · $\lambda = vT = \dfrac{v}{f}$ · $v = \lambda f$</strong></p>
+
+<p>Mẹo nhớ: <strong>"Một chu kì — một bước sóng"</strong> — hết một chu kì thì sóng đi đúng một bước sóng.</p>
+
+<details class="tl-details">
+<summary>📐 Bấm xem: hai điểm lệch pha bao nhiêu thì cách nhau bao xa</summary>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Hai điểm trên cùng phương truyền</th><th>Khoảng cách</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng pha, gần nhau nhất</td><td>$d = \lambda$</td></tr>
+<tr><td>Ngược pha, gần nhau nhất</td><td>$d = \dfrac{\lambda}{2}$</td></tr>
+<tr><td>Vuông pha, gần nhau nhất</td><td>$d = \dfrac{\lambda}{4}$</td></tr>
+<tr><td>$n$ đỉnh sóng liên tiếp</td><td>$d = (n-1)\lambda$</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<details class="tl-details">
+<summary>🌊 Bấm xem: sóng đổi môi trường thì đại lượng nào đổi, vì sao</summary>
+<p><strong>🔑 $f$ và $T$ giữ nguyên · $v$ và $\lambda$ thay đổi</strong></p>
+<p>Môi trường quyết định <em>tốc độ</em> lan truyền; nguồn quyết định <em>nhịp</em> dao động. Nguồn không đổi thì $f$, $T$ không đổi, nên $\lambda = \dfrac{v}{f}$ đổi theo $v$.</p>
+<p>Tốc độ truyền: chất rắn nhanh nhất, rồi chất lỏng, chất khí chậm nhất. Ví dụ: áp tai vào đường ray, em nghe tiếng tàu sớm hơn khi nghe qua không khí — vẫn sóng âm đó, nhưng $v_{rắn} \gt v_{khí}$.</p>
+</details>
+
+<p>Ví dụ: sóng biển đập vào bờ cách nhau 5 s → $T = 5$ s; hai đỉnh liên tiếp cách nhau 12 m → $\lambda = 12$ m, nên $v = \dfrac{\lambda}{T} = 2{,}4$ m/s.</p>
+
+<details class="tl-details">
+<summary>🔬 Bấm xem: thí nghiệm đo bước sóng trên dây lò xo (làm được ở lớp)</summary>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> căng một lò xo mềm trên sàn, một bạn giữ chặt một đầu, một bạn gảy nhẹ đầu kia theo nhịp đều tay và quay chậm (240 fps). Đo khoảng cách hai đỉnh liên tiếp để được $\lambda$; đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$.</li>
+<li><strong>Quan sát:</strong> sóng chạy từ đầu gảy sang đầu giữ, biên độ giảm dần. Kéo căng dây hơn thì $\lambda$ tăng.</li>
+<li><strong>Rút ra:</strong> $v = \dfrac{\lambda}{T}$; sức căng đổi làm $v$ và $\lambda$ đổi, còn $T$ gần như không đổi.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Một sóng cơ có chu kì $T = 0{,}4$ s lan truyền với tốc độ $v = 2{,}5$ m/s. Bước sóng của sóng này là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q2" id="tl8-q2a"><label for="tl8-q2a" class="tl-opt tl-no">A. $0{,}16$ m</label>
+<input type="radio" name="tl8-q2" id="tl8-q2b"><label for="tl8-q2b" class="tl-opt tl-ok">B. $1$ m</label>
+<input type="radio" name="tl8-q2" id="tl8-q2c"><label for="tl8-q2c" class="tl-opt tl-no">C. $6{,}25$ m</label>
+<input type="radio" name="tl8-q2" id="tl8-q2d"><label for="tl8-q2d" class="tl-opt tl-no">D. $0{,}4$ m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = vT = 2{,}5 \times 0{,}4 = 1$ m. Nhớ kiểm đơn vị: (m/s) nhân (s) ra mét.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức cần dùng là $\lambda = vT$, không phải $\dfrac{v}{T}$. Em nào ra $6{,}25$ là đã chia nhầm. Thử lại nhé.</p></div>
+</div>
+</div>
+
+<h4>3. Độ trễ pha và phương trình sóng</h4>
+
+<p>Nguồn O dao động $u_O = A\cos(\omega t)$, sóng truyền theo chiều dương với tốc độ $v$; điểm M cách O đoạn $d$.</p>
+
+<p>Sóng mất thêm $t_0 = \dfrac{d}{v}$ mới tới M, nên M dao động "chậm" hơn O đúng khoảng đó:</p>
+
+$$u_M = A\cos\left[\omega\left(t - \dfrac{d}{v}\right)\right]$$
+
+<p>Thay $\omega = \dfrac{2\pi}{T}$ và $v = \dfrac{\lambda}{T}$ vào, ta được dạng hay dùng nhất:</p>
+
+$$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
+
+<p><strong>🔑 Xa nguồn $d$ · trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$ · theo chiều truyền thì trừ pha</strong></p>
+
+<ul>
+<li>Đi thêm một bước sóng thì pha trễ thêm $2\pi$ — coi như quay lại từ đầu.</li>
+<li>Đi thêm $\dfrac{\lambda}{2}$ thì trễ pha $\pi$: hai điểm ngược pha nhau.</li>
+</ul>
+
+<p>Mẹo nhớ: <strong>"Xa nguồn bao nhiêu bước sóng, trễ pha bấy nhiêu vòng."</strong> Tỉ số $\dfrac{d}{\lambda}$ chính là số vòng pha bị trễ.</p>
+
+<!--FIG3-->
+
+<details class="tl-details">
+<summary>👀 Bấm xem thêm: sóng truyền ngược chiều, hoặc nguồn đã có pha ban đầu</summary>
+<ul>
+<li>Sóng truyền ngược chiều dương (từ phải sang trái) thì M <em>sớm</em> pha hơn nguồn: $u_M = A\cos\left(\omega t + \dfrac{2\pi d}{\lambda}\right)$.</li>
+<li>Nguồn có pha ban đầu $\varphi_0$: $u_M = A\cos\left(\omega t + \varphi_0 - \dfrac{2\pi d}{\lambda}\right)$.</li>
+<li>Cách nhớ dấu: điểm nào sóng tới <strong>sau</strong> thì bị <strong>trừ</strong> pha.</li>
+</ul>
+</details>
+
+<h4>4. Đồ thị sóng: hai loại, đừng lẫn</h4>
+
+<p>Cùng một sóng hình sin, vẽ theo hai trục hoành khác nhau cho hai loại thông tin:</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Loại đồ thị</th><th>Đọc được gì</th></tr>
+</thead>
+<tbody>
+<tr><td>$u - t$ (tại MỘT điểm)</td><td>trục hoành là thời gian $t$ (s); hai đỉnh liên tiếp cách nhau $T$. Cho biết chu kì, tần số, biên độ và một điểm đang đi lên hay đi xuống</td></tr>
+<tr><td>$u - x$ (tại MỘT lúc)</td><td>trục hoành là khoảng cách $x$ (cm, m); hai đỉnh liên tiếp cách nhau $\lambda$. Cho biết bước sóng, hình dạng sợi dây và chiều truyền sóng</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 $u-t$: một bước = $T$ · $u-x$: một bước = $\lambda$</strong></p>
+
+<p>Không đọc nhãn trục hoành là lỗi mất điểm phổ biến nhất của bài này.</p>
+
+<!--FIG4-->
+
+<details class="tl-details">
+<summary>⚡ Bấm xem thêm (bài 28 học sâu): sóng mang năng lượng, cường độ sóng $I = \dfrac{P}{S}$</summary>
+<p>Sóng mang năng lượng từ nguồn ra xa. Càng xa nguồn, năng lượng càng trải trên diện tích lớn nên sóng càng yếu: cường độ $I = \dfrac{P}{S}$ (W/m²), với $S$ là diện tích vuông góc với phương truyền. Sóng lan đều mọi hướng ở khoảng cách $r$ có $S = 4\pi r^2$, nên $I = \dfrac{P}{4\pi r^2}$: xa gấp đôi thì cường độ chỉ còn một phần tư.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "sóng đến thì vật trôi theo sóng"</h4>
+
+<p>Sai. Sóng tới đâu, phần tử môi trường chỉ dao động tại chỗ tới đó. Sóng biển đánh vào bờ mang năng lượng và gây xói lở, nhưng một chiếc lá trên mặt nước chỉ nhấp nhô lên xuống.</p>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q3c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q3c" value="khong"> Không chắc</label></p>
+<p>Sóng lan tới, chiếc lá sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q3" id="tl8-q3a"><label for="tl8-q3a" class="tl-opt tl-no">A. Trôi ra xa theo chiều sóng truyền</label>
+<input type="radio" name="tl8-q3" id="tl8-q3b"><label for="tl8-q3b" class="tl-opt tl-ok">B. Nhấp nhô tại chỗ, gần như không dịch chuyển theo sóng</label>
+<input type="radio" name="tl8-q3" id="tl8-q3c"><label for="tl8-q3c" class="tl-opt tl-no">C. Đứng yên tuyệt đối vì lá rất nhẹ</label>
+<input type="radio" name="tl8-q3" id="tl8-q3d"><label for="tl8-q3d" class="tl-opt tl-no">D. Bị sóng kéo chìm xuống đáy hồ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sóng truyền pha và năng lượng; chiếc lá dao động tại chỗ quanh vị trí cân bằng của nó.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Để ý: nước ở chỗ chiếc lá <em>không chảy ra xa</em>. Nếu nước chảy ra xa thì cả hồ sẽ dồn về một phía. Vậy cái gì đã lan truyền? Chọn lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: lẫn tốc độ truyền sóng với tốc độ dao động của phần tử</h4>
+
+<p>Hai đại lượng hoàn toàn khác nhau, chỉ tình cờ cùng được ký hiệu là $v$:</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Hai tốc độ khác nhau</th><th>Là gì và phụ thuộc vào đâu</th></tr>
+</thead>
+<tbody>
+<tr><td>Tốc độ truyền sóng $v$</td><td>tốc độ lan truyền pha trong môi trường; do môi trường (và nhiệt độ) quyết định</td></tr>
+<tr><td>Tốc độ dao động cực đại $v_{max} = \omega A$</td><td>tốc độ lớn nhất của một phần tử khi đi qua vị trí cân bằng; do biên độ $A$ và tần số $f$ của nguồn quyết định</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 $v$ theo môi trường · $v_{max} = \omega A$ theo nguồn · không có quy luật "cái nào lớn hơn"</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q4c" value="khong"> Không chắc</label></p>
+<p>Sóng có $A = 2$ cm, $f = 50$ Hz, tốc độ truyền sóng $v = 2$ m/s. Phát biểu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q4" id="tl8-q4a"><label for="tl8-q4a" class="tl-opt tl-no">A. Hai tốc độ này bằng nhau vì cùng ký hiệu $v$</label>
+<input type="radio" name="tl8-q4" id="tl8-q4b"><label for="tl8-q4b" class="tl-opt tl-ok">B. $v_{max} = \omega A \approx 6{,}28$ m/s, khác với $v = 2$ m/s</label>
+<input type="radio" name="tl8-q4" id="tl8-q4c"><label for="tl8-q4c" class="tl-opt tl-no">C. Tốc độ dao động cực đại luôn nhỏ hơn tốc độ truyền sóng</label>
+<input type="radio" name="tl8-q4" id="tl8-q4d"><label for="tl8-q4d" class="tl-opt tl-no">D. Hai đại lượng này chỉ khác nhau về đơn vị đo</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\omega = 2\pi f = 100\pi$ rad/s và $A = 0{,}02$ m, nên $v_{max} = 100\pi \times 0{,}02 = 2\pi \approx 6{,}28$ m/s.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhớ $\omega = 2\pi f$ và đổi $A$ ra mét trước khi nhân. Hai đại lượng này đo hai chuyện khác nhau nên không có chuyện "luôn lớn hơn" hay "luôn nhỏ hơn". Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 3: nhìn đồ thị mà không đọc nhãn trục hoành</h4>
+
+<p>Đường sin thì giống nhau, nhưng trục hoành ghi $t$ hay ghi $x$ lại cho hai kết luận khác nhau.</p>
+
+<p>Một đồ thị sin có hai đỉnh liên tiếp cách nhau 4 (đơn vị trên trục hoành), nhưng chưa thấy nhãn trục. Có thể kết luận gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q5" id="tl8-q5a"><label for="tl8-q5a" class="tl-opt tl-no">A. Bước sóng bằng 4 cm</label>
+<input type="radio" name="tl8-q5" id="tl8-q5b"><label for="tl8-q5b" class="tl-opt tl-no">B. Chu kì bằng 4 s</label>
+<input type="radio" name="tl8-q5" id="tl8-q5c"><label for="tl8-q5c" class="tl-opt tl-ok">C. Chưa kết luận được: nếu trục hoành là $x$ thì đó là bước sóng, nếu là $t$ thì đó là chu kì</label>
+<input type="radio" name="tl8-q5" id="tl8-q5d"><label for="tl8-q5d" class="tl-opt tl-no">D. Cả bước sóng và chu kì đều bằng 4</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Việc đầu tiên khi gặp một đồ thị sóng là đọc nhãn trục hoành và đơn vị trên trục.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hỏi lại: trục hoành của đồ thị đó ghi gì? Chưa biết trục hoành thì chưa kết luận được gì. Chọn lại nhé.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>🧨 Bẫy phụ: tưởng rằng đổi môi trường thì tần số đổi</summary>
+<p>Sóng âm truyền từ nước ra không khí: nguồn vẫn dao động đúng nhịp cũ nên $f$ và $T$ không đổi; nhưng $v$ giảm nên $\lambda = \dfrac{v}{f}$ giảm theo. Đề cho "đổi môi trường" thì phải hỏi ngay: <strong>đại lượng nào bị khoá?</strong> Trả lời: $f$, $T$ bị khoá theo nguồn.</p>
+</details>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Em đọc to câu trả lời trước, rồi mới bấm xem đáp án.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Sóng cơ là gì? Cần những điều kiện nào để có sóng cơ? Vì sao sóng cơ không truyền được trong chân không? <small>(nói trước rồi mới bấm)</small></summary>
+<p>Sóng cơ là dao động cơ lan truyền trong một môi trường. Cần <strong>nguồn dao động</strong> và <strong>lực liên kết</strong> giữa các phần tử môi trường. Chân không không có phần tử nên không có lực liên kết, do đó không truyền được sóng cơ.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Viết các công thức liên hệ giữa bước sóng, chu kì, tần số, tốc độ truyền sóng và nêu đơn vị. <small>(nói trước rồi mới bấm)</small></summary>
+<p>$\lambda = vT = \dfrac{v}{f}$; $v = \lambda f = \dfrac{\lambda}{T}$; $T = \dfrac{1}{f}$. Đơn vị: $\lambda$ (m, cm), $v$ (m/s), $T$ (s), $f$ (Hz).</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Phát biểu hai định nghĩa của bước sóng. <small>(nói trước rồi mới bấm)</small></summary>
+<p><em>Định nghĩa 1:</em> bước sóng là quãng đường sóng truyền được trong một chu kì. <em>Định nghĩa 2:</em> bước sóng là khoảng cách giữa hai điểm gần nhau nhất trên cùng một phương truyền dao động cùng pha.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Điểm M cách nguồn O đoạn $d$ theo chiều truyền thì trễ pha bao nhiêu? Viết phương trình dao động tại M. <small>(nói trước rồi mới bấm)</small></summary>
+<p>Trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$; phương trình $u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$ (nguồn $u_O = A\cos(\omega t)$).</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Sóng truyền từ môi trường này sang môi trường khác: đại lượng nào không đổi, đại lượng nào đổi? Vì sao? <small>(nói trước rồi mới bấm)</small></summary>
+<p>$f$ và $T$ <strong>không đổi</strong> vì do nguồn quyết định. $v$ <strong>đổi</strong> vì do môi trường quyết định, kéo theo $\lambda = \dfrac{v}{f}$ cũng đổi.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Đồ thị $u - t$ và đồ thị $u - x$ khác nhau ở đâu? Mỗi đồ thị cho em biết gì? <small>(nói trước rồi mới bấm)</small></summary>
+<p>Khác ở trục hoành: $t$ và $x$. Hai đỉnh liên tiếp cách nhau $T$ (đồ thị $u-t$) và $\lambda$ (đồ thị $u-x$). $u-t$ cho chu kì, biên độ và chiều chuyển động của một điểm; $u-x$ cho bước sóng, hình dạng sợi dây và chiều truyền sóng.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Sóng cơ lan truyền trên mặt nước từ nguồn O theo chiều dương trục Ox với tốc độ $v = 60$ cm/s. Nguồn O dao động điều hoà theo phương trình $u_O = 2\cos(40\pi t)$ cm.</p>
+<p>a) Tính chu kì, tần số và bước sóng.</p>
+<p>b) Viết phương trình dao động của điểm M trên mặt nước, cách O 9 cm.</p>
+<p>c) Tại $t = \dfrac{T}{4}$, phần tử nước tại M có li độ nào và chuyển động theo chiều nào?</p>
+<p>d) So sánh tốc độ truyền sóng với tốc độ dao động cực đại của phần tử nước.</p>
+</div>
+
+<p>Mỗi câu của đề, tự hỏi: <strong>cho dữ liệu gì?</strong> và <strong>gọi ra kiến thức nào?</strong></p>
+
+<details class="tl-details">
+<summary>🔍 Bấm xem: bảng đọc đề từng câu</summary>
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"từ nguồn O theo chiều dương trục Ox"</td><td>chiều truyền $+Ox$</td><td>sóng tới sau thì trừ pha: dùng dấu $-$</td></tr>
+<tr><td>"tốc độ $v = 60$ cm/s"</td><td>$v = 60$ cm/s</td><td>$\lambda = \dfrac{v}{f}$</td></tr>
+<tr><td>"$u_O = 2\cos(40\pi t)$ cm"</td><td>$A = 2$ cm, $\omega = 40\pi$ rad/s</td><td>$\omega = 2\pi f$; $T = \dfrac{1}{f}$</td></tr>
+<tr><td>"M cách O 9 cm"</td><td>$d = 9$ cm</td><td>độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$; so $\dfrac{d}{\lambda}$</td></tr>
+<tr><td>"tại thời điểm $t = \dfrac{T}{4}$"</td><td>$t = 0{,}0125$ s</td><td>thay $t$ vào $u_M$; xét dấu $v_M = u_M'$</td></tr>
+<tr><td>"so sánh hai tốc độ"</td><td>cần tính $v$ và $\omega A$</td><td>hai đại lượng khác nhau, không so sánh "hơn kém"</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Tần số: $\omega = 2\pi f \Rightarrow f = \dfrac{40\pi}{2\pi} = 20$ Hz. Chu kì: $T = \dfrac{1}{f} = 0{,}05$ s.</li>
+<li>Bước sóng: $\lambda = \dfrac{v}{f} = \dfrac{60}{20} = 3$ cm.</li>
+<li>Câu b: $u_M = 2\cos\left(40\pi t - \dfrac{2\pi \cdot 9}{3}\right) = 2\cos(40\pi t - 6\pi) = 2\cos(40\pi t)$ cm. Vì $d = 9$ cm $= 3\lambda$ nên M <strong>cùng pha</strong> với O.</li>
+<li>Câu c: $t = \dfrac{T}{4} = 0{,}0125$ s. Li độ $u_M = 2\cos(40\pi \cdot 0{,}0125) = 2\cos\dfrac{\pi}{2} = 0$: M đang ở vị trí cân bằng.</li>
+<li>Chiều chuyển động: $v_M = u_M' = -80\pi\sin(40\pi t)$. Tại $t = 0{,}0125$ s: $v_M = -80\pi \lt 0$, vậy M đang đi theo <strong>chiều âm</strong> (đi xuống).</li>
+<li>Câu d: $v_{max} = \omega A = 40\pi \cdot 2 = 80\pi \approx 251$ cm/s, lớn hơn $v = 60$ cm/s. Không có gì vô lí: đây là hai đại lượng khác nhau, $v$ do môi trường quyết định còn $v_{max}$ do nguồn quyết định.</li>
+<li>Kiểm tra: $\lambda = 3$ cm nên 9 cm đúng bằng $3\lambda$ → M cùng pha O, khớp với kết quả câu b. Đơn vị của $u_M$ là cm, của $v_M$ là cm/s: hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Cùng kiểu đề: $v = 80$ cm/s, $f = 20$ Hz, N cách O $9$ cm. N lệch pha bao nhiêu so với O?</p>
+<ol class="tl-steps">
+<li>Bước sóng: $\lambda = \dfrac{v}{f} = \dfrac{80}{20} = 4$ cm.</li>
+<li><strong>Em điền:</strong> độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda} = \;?$ (gợi ý: $d$ bằng bao nhiêu lần $\lambda$?)</li>
+<li><strong>Em điền:</strong> bỏ các vòng $2\pi$ trọn vẹn rồi gọi tên độ lệch pha?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2 và 3</summary>
+<ol class="tl-steps">
+<li>$\Delta\varphi = \dfrac{2\pi \cdot 9}{4} = \dfrac{9\pi}{2}$.</li>
+<li>$\dfrac{9\pi}{2} = 4\pi + \dfrac{\pi}{2}$, bỏ $4\pi$ (hai vòng trọn) còn $\dfrac{\pi}{2}$: N <strong>vuông pha</strong> với O. Cách nhìn nhanh: $d = 2{,}25\lambda$, phần lẻ $0{,}25\lambda$ ứng với $\dfrac{\pi}{2}$.</li>
+</ol>
+<p>Em sai ở bước nào: chia $d$ cho $\lambda$, hay quên bỏ vòng trọn? Ghi lại bước đó rồi mới làm câu biến thể bên dưới.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số, đổi chiều</p>
+
+<p><strong>Câu 2.</strong> Một sóng cơ truyền với tốc độ $v = 40$ cm/s và tần số $f = 20$ Hz. Điểm M cách nguồn O đoạn $5$ cm. Dao động của M so với O là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q6c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q6" id="tl8-q6a"><label for="tl8-q6a" class="tl-opt tl-no">A. Cùng pha</label>
+<input type="radio" name="tl8-q6" id="tl8-q6b"><label for="tl8-q6b" class="tl-opt tl-ok">B. Ngược pha</label>
+<input type="radio" name="tl8-q6" id="tl8-q6c"><label for="tl8-q6c" class="tl-opt tl-no">C. Vuông pha</label>
+<input type="radio" name="tl8-q6" id="tl8-q6d"><label for="tl8-q6d" class="tl-opt tl-no">D. Không xác định được vì thiếu biên độ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = \dfrac{v}{f} = \dfrac{40}{20} = 2$ cm. Tỉ số $\dfrac{d}{\lambda} = \dfrac{5}{2} = 2{,}5$ — nguyên cộng $\dfrac{1}{2}$, tức trễ pha $5\pi$, nên M <strong>ngược pha</strong> với O. Độ lệch pha không phụ thuộc biên độ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\lambda$ trước, rồi lấy $\dfrac{d}{\lambda}$. Nguyên → cùng pha; nguyên cộng $\dfrac{1}{2}$ → ngược pha; nguyên cộng $\dfrac{1}{4}$ → vuông pha. Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<p><strong>Câu 3.</strong> Sóng truyền trên dây từ trái sang phải; tại một thời điểm, điểm P ở <strong>sườn bên phải</strong> của một đỉnh sóng (phía trước theo chiều truyền). Ngay sau đó P sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q7" id="tl8-q7a"><label for="tl8-q7a" class="tl-opt tl-ok">A. Đi lên</label>
+<input type="radio" name="tl8-q7" id="tl8-q7b"><label for="tl8-q7b" class="tl-opt tl-no">B. Đi xuống</label>
+<input type="radio" name="tl8-q7" id="tl8-q7c"><label for="tl8-q7c" class="tl-opt tl-no">C. Đứng yên vì đang ở sườn dốc</label>
+<input type="radio" name="tl8-q7" id="tl8-q7d"><label for="tl8-q7d" class="tl-opt tl-no">D. Chạy sang phải cùng với đỉnh sóng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sóng truyền sang phải thì đỉnh sóng dịch sang phải. Điểm P nằm ngay trước đỉnh nên bị "đẩy" lên. Quy tắc nhớ: <strong>sườn trước đi lên, sườn sau đi xuống</strong> (với sóng truyền sang phải).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo hình dạng. Hãy tưởng tượng nửa chu kì sau: đỉnh sóng dịch sang phải một đoạn, và dạng dây bị kéo theo. Điểm nằm trước đỉnh sẽ bị nâng lên. Thử lại nhé.</p></div>
+</div>
+</div>
+
+<h3>VI. Sóng trong đời sống, thử thách phân tầng và mang về</h3>
+
+<ul>
+<li><strong>Cảnh báo sóng thần:</strong> trạm đo áp suất dưới đáy biển phát hiện sóng lan qua cả nghìn km; sóng mang năng lượng khổng lồ tới bờ.</li>
+<li><strong>Siêu âm y tế:</strong> đo thời gian xung siêu âm dội về để tính khoảng cách tới khối u, thai nhi — nhờ $v$ xác định trong mô.</li>
+<li><strong>Dây đàn:</strong> lên dây căng hơn làm $v$ tăng; bấm phím cho dây ngắn lại làm $\lambda$ giảm nên nốt cao hơn.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: một sóng có $T = 0{,}4$ s và $\lambda = 2$ m. Tính tốc độ truyền sóng.</summary>
+<p>$v = \dfrac{\lambda}{T} = \dfrac{2}{0{,}4} = 5$ m/s.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Khá: hai điểm M, N trên cùng phương truyền cách nhau $\dfrac{3\lambda}{4}$. Chúng lệch pha bao nhiêu?</summary>
+<p>$\Delta\varphi = \dfrac{2\pi d}{\lambda} = 2\pi \cdot \dfrac{3}{4} = \dfrac{3\pi}{2}$, tức lệch pha vuông pha (một phần tư vòng pha).</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thách đấu: sóng truyền sang phải, điểm P ở sườn bên trái của một đỉnh sóng (phía sau theo chiều truyền) — P đi lên hay đi xuống? Vì sao?</summary>
+<p>P <strong>đi xuống</strong>. Lập luận: nửa chu kì sau, đỉnh sóng dịch sang phải, phần dây phía sau đỉnh bị hạ xuống để "nhường" đỉnh cho vị trí mới. Quy tắc gọn: <strong>sườn trước đi lên, sườn sau đi xuống</strong> khi sóng truyền sang phải (đổi chiều truyền thì đảo lại).</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Truyền gì:</strong> pha + năng lượng, <strong>không</strong> vật chất.</li>
+<li><strong>Cần gì:</strong> nguồn dao động · lực liên kết · không chân không.</li>
+<li><strong>Công thức:</strong> $\lambda = vT = \dfrac{v}{f}$ · $v = \lambda f$ · $T = \dfrac{1}{f}$.</li>
+<li><strong>Trễ pha:</strong> $\Delta\varphi = \dfrac{2\pi d}{\lambda}$ · theo chiều truyền trừ pha.</li>
+<li><strong>Đổi môi trường:</strong> $f$, $T$ giữ nguyên · $v$, $\lambda$ đổi.</li>
+<li><strong>Đọc đồ thị:</strong> nhãn trục hoành trước — $u-t$ một bước $T$, $u-x$ một bước $\lambda$.</li>
+<li><strong>Hai chữ $v$:</strong> $v$ theo môi trường · $v_{max} = \omega A$ theo nguồn.</li>
+</ul>
+</div>

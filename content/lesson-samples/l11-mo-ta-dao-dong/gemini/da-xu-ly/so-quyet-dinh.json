@@ -1,0 +1,132 @@
+{
+  "bai": "l11-mo-ta-dao-dong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích chu kì (xem mục 2) trong bước Làm và ghi ω = 2π/T = π rad/s ngay sau bảng."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu dẫn: điểm chạy đều trên vòng tròn bán kính A, ngược chiều kim đồng hồ với tốc độ góc ω, hình chiếu lên Ox là li độ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi φ₀ thành φ và nói rõ góc có hướng từ Ox tới bán kính (dương ngược chiều kim đồng hồ), sửa cả câu Trả bài 4."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: vì cos π = cos(−π) = −1, hai góc cùng chỉ biên âm, nên quy ước lấy π."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước thay t = t'+τ vào phương trình trong khung details."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa Δφ = |φ₁−φ₂| = π/2 trước công thức và thêm bước (π/2)/(2π/T)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm khung details nêu điều kiện |φ₁−φ₂| ≤ π và cách đưa hiệu về [−π;π] kèm ví dụ 5π/6, −5π/6."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích hình không có trong HTML bài)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất nguồn đọc là thước và nhắc định nghĩa sai số tuyệt đối trong khung lời giải."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay nhiễu A \"bước sóng\" bằng \"Chu kì 0,2 s và biên độ 3 cm\" (lỗi lấy nửa khoảng hai đỉnh), sửa phản hồi sai."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách rõ T, f, ω do cấu tạo hệ, A do cách kích thích, cả bốn không đổi theo lúc nhìn."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng trong bảng: nếu φ' ≤ −π thì cộng 2π, ví dụ −7π/6 → 5π/6."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi tiêu đề thành \"Xem đáp án hai chỗ Em điền\" để khỏi lệch số bước."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở câu mục 2 và phản hồi quiz, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: lấy ω/(2π) được f, chưa phải T."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục 4 (φ₂ = −π/2 sắp sang phía x dương) và mẹo tăng t."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn hai đỉnh dương cách T và f = 1/T."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 1 ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 2 ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: đổi mốc thì cả hai pha cộng cùng một lượng."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua mẹo sớm pha thì đỉnh đến trước và bảng quy tắc so φ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: thí nghiệm lò xo ghi rõ ω = 2π/T = π rad/s cho x = 4cos(πt) cm.",
+      "Mục 2: tách T, f, ω do cấu tạo hệ và A do cách kích thích.",
+      "Mục 3: φ (thay φ₀) là góc có hướng từ Ox tới bán kính lúc t = 0, dương khi quay ngược chiều kim đồng hồ; mô tả điểm chạy đều trên vòng tròn bán kính A, tốc độ góc ω.",
+      "Mục 3: giải thích quy ước lấy π vì cos π = cos(−π) = −1.",
+      "Mục 3 (details): thêm bước thay t = t'+τ.",
+      "Mục 4: định nghĩa Δφ = |φ₁−φ₂| = π/2 và bước Δt = (π/2)/(2π/T) = T/4.",
+      "Mục 4 (details mới): quy tắc so φ chỉ áp dụng khi |φ₁−φ₂| ≤ π; ví dụ φ₁ = 5π/6, φ₂ = −5π/6 thì dao động 1 trễ pha π/3.",
+      "Mục 5 (details sai số): thống nhất số đọc từ thước, nêu sai số tuyệt đối = |giá trị tính − giá trị đọc|.",
+      "Câu 3 (tl21-q4): phương án A đổi thành \"Chu kì bằng 0,2 s và biên độ bằng 3 cm\", phản hồi sai sửa tương ứng.",
+      "Bài toán mẫu: thêm quy tắc nếu φ' ≤ −π thì cộng 2π (−7π/6 → 5π/6).",
+      "Khung Mục tiêu: thời gian đọc 16,8 → 17,3 phút."
+    ],
+    "so_tu_them": 65,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-mo-ta-dao-dong/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

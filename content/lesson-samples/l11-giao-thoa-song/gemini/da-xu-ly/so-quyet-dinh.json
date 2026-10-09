@@ -1,0 +1,106 @@
+{
+  "bai": "l11-giao-thoa-song",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng dưới bảng mục 2: a là biên độ của mỗi sóng tới M (coi hai biên độ bằng nhau)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu theo SGK, tách chú thích thành từng dòng và ghi rõ a ở khe Young khác biên độ a ở mục 2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài, chỉ là chú thích hình)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước trung gian −6,67−0,5 < k < 6,67−0,5 trước khi ra −7,17 < k < 6,17."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'vân sáng bậc |k|' và dòng 'x đo từ vân sáng trung tâm (k=0)'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details viết rõ −AB < (k+½)λ < AB, chia cả ba vế cho λ rồi trừ ½."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay lập luận tam giác bằng: M nằm giữa A, B nên d1+d2=AB với d1, d2 > 0, suy ra |d2−d1| < AB."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi '(chỉ khi hai nguồn cùng pha)' vào mẹo, không nêu luật ngược pha để khỏi lộ đáp án phần thử thách."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi D thành 'Dao động yếu, biên độ nhỏ hơn của một sóng' cho rõ nghĩa, giữ B là đáp án đúng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gợi ý sửa thành 'trung điểm cách đều hai nguồn nên hiệu đường đi bằng 0'."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu không có trong bài)."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai của câu dự đoán đã nhấn chỗ to chỗ nhỏ, không cần thêm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: 'to lên' khi bịt loa là so với lúc triệt tiêu, chưa chắc to bằng cực đại."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhắc chia cho λ trước khi kết luận."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhắc tính cả k=0."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn nguyên + ½ là vân tối, còn khái niệm 'bậc' đã bổ sung qua c5."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2: định nghĩa a là biên độ của mỗi sóng thành phần tại M (coi bằng nhau).",
+      "Mục II.4: chú thích a (khoảng cách hai khe, khác biên độ a) và D tách thành từng dòng.",
+      "Mục II.4: thêm 'vân sáng bậc |k|' và 'x đo từ vân sáng trung tâm (k=0)'.",
+      "Mục II.2: mẹo xét (d2−d1)/λ ghi rõ chỉ áp dụng khi hai nguồn cùng pha.",
+      "Details mục II.3: chứng minh |d2−d1| < AB bằng d1+d2=AB thay cho bất đẳng thức tam giác, thêm phép biến đổi cho cực tiểu.",
+      "Lời giải bài mẫu câu b: thêm bước −6,67−0,5 < k < 6,67−0,5 (kết quả 14 cực tiểu không đổi).",
+      "Câu 1: phương án nhiễu D đổi thành 'Dao động yếu, biên độ nhỏ hơn của một sóng' (đáp án B không đổi).",
+      "Mục III: thêm dòng ⚠ trước Câu 1 về 'to lên' không đồng nghĩa với biên độ cực đại.",
+      "Thử thách mục VI: gợi ý viết lại thành 'trung điểm cách đều hai nguồn, hiệu đường đi bằng 0'.",
+      "Rút gọn câu 'Nhìn vào' của video sóng nước hai nguồn và video khe Young để bù số chữ."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-giao-thoa-song/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

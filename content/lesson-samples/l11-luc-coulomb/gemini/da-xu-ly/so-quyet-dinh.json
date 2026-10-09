@@ -1,0 +1,133 @@
+{
+  "bai": "l11-luc-coulomb",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào bước Quan sát: số cân đổi ra kg, r đổi ra m, kèm phép tính mẫu hàng đầu ra 3,61·10⁻⁶ N·m²."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details nói rõ độ lệch của bảng mô hình chỉ do làm tròn, tách rò điện tích và hiệu ứng r nhỏ thành sai số khi đo thật (mỗi ý một dòng)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng ghi rõ α là góc giữa F₁ và F₂ đặt chung gốc tại q₀."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'so với phương thẳng đứng' sau 'Mỗi dây lệch α = 45°'."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trích khớp nội dung (chỉ khác thẻ in đậm); thêm vào ý cùng dấu/trái dấu: r₁ + r₂ = AB và |r₁ − r₂| = AB."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 2 lời giải (trong details) mô tả tam giác lực vuông: cạnh đối F, cạnh kề P với góc α giữa dây và phương thẳng đứng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng giải nghĩa 'hệ cô lập' và 'tổng đại số' (mỗi ý một dòng) ngay dưới dòng 🔑."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung lí do: đầu gần ở gần thước hơn, lực điện giảm khi khoảng cách tăng (xem mục 2)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 6 nói rõ gia tốc phụ thuộc khối lượng mỗi quả, không phụ thuộc điện tích."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: lực hút, đẩy giữa các điện tích đứng yên gọi là lực tĩnh điện (lực Coulomb)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng hưởng ứng sửa thành 'hai đầu trái dấu nhau, đầu gần ngược dấu vật kia'."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích điện môi là môi trường cách điện như dầu, thuỷ tinh, nước nguyên chất."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu rõ vì sao A sai, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 và phản hồi đã nhấn nhận electron thì âm, không thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lực giảm ε lần ngay mục 2, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc 'gần điện tích nhỏ hơn' đã in đậm trước quiz, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 'Đổi SI trước' và bảng đổi đơn vị đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 'Xét lại dấu' và bảng Bẫy 2 đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và câu về cặp lực–phản lực đã nhấn, không thêm."
+      },
+      {
+        "id": "q-dien_khuyet",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bước 1 đã ghi rõ mỗi dây lệch 30°, không thêm."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 7: F tỉ lệ q² nên q tỉ lệ √F, không tỉ lệ thuận với khối lượng; bỏ câu lặp ý trong phản hồi sai."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3, bước Quan sát: thêm đổi số cân ra kg, r ra m và phép tính mẫu 0,92·10⁻³·9,8·(0,02)² ≈ 3,61·10⁻⁶ N·m² (khớp bảng).",
+      "Mục 3, details: độ lệch bảng mô hình chỉ do làm tròn; rò điện tích và r nhỏ chuyển thành sai số khi đo thật.",
+      "Mục 4, bảng hợp lực: α định nghĩa là góc giữa F₁ và F₂ chung gốc tại q₀.",
+      "Mục 5: thêm r₁ + r₂ = AB (cùng dấu) và |r₁ − r₂| = AB (trái dấu).",
+      "Mục 1: thêm định nghĩa hệ cô lập và tổng đại số; bảng hưởng ứng sửa 'đầu gần ngược dấu vật kia'; thí nghiệm lon nhôm thêm lí do lực giảm theo khoảng cách.",
+      "Mục 1: bỏ câu lặp 'Thừa electron là nhiễm điện âm, thiếu là dương', bỏ ngoặc '(thước chưa cọ thì không hút)' và câu 'Đưa thước ra xa, lon trung hoà lại'.",
+      "Mục 2: lực tĩnh điện định nghĩa là lực giữa các điện tích đứng yên (lực Coulomb); điện môi chú thích là môi trường cách điện (dầu, thuỷ tinh, nước nguyên chất).",
+      "Mục V: góc lệch α = 45° ghi rõ so với phương thẳng đứng; lời giải bước 2 giải thích tan α = F/P từ tam giác lực vuông.",
+      "Bẫy 3, phản hồi câu 6: gia tốc phụ thuộc khối lượng, không phụ thuộc điện tích.",
+      "Mục V: thêm dòng ⚠ trước câu 7 (q tỉ lệ √F); bỏ câu 'F tỉ lệ q², lực gấp 4 thì điện tích gấp 2' trong phản hồi sai câu 7."
+    ],
+    "so_tu_them": 50,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-luc-coulomb/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

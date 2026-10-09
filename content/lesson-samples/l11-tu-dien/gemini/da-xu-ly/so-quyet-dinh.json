@@ -1,0 +1,112 @@
+{
+  "bai": "l11-tu-dien",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ngoặc đơn ở thí nghiệm 1 thành \"(LED chỉ cho dòng đi một chiều, mà dòng phóng ngược chiều dòng nạp)\"."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thí nghiệm đo ghi rõ \"tụ hoá ghi 470 μF – 16 V\" để khớp với phản hồi quiz."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: điện môi chịu được cường độ điện trường lớn nhất $E_{\\max}$, kèm \"(vì thế vỏ tụ ghi số vôn tối đa)\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Trước mỗi lần đổi, đưa tụ về trạng thái gốc (d = 1 mm, chồng kín 0,04 m²) rồi chỉ đổi một yếu tố\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách chú thích công thức tụ phẳng thành từng dòng, thêm dòng 9·10⁹ là hằng số k của định luật Coulomb (N·m²/C²), bỏ ghi chú dài về cỡ bản để bù chữ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục II đã vượt trần nên đặt giải thích công $U\\,\\Delta Q$ từng dải cộng thành tam giác ½QU vào một khối <details> mới ngay trước quiz năng lượng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong gợi ý Thử thách khá thêm cách 2 theo quy tắc bẫy 2: Q_max = 100 μC, C_bộ = 4/3 μF, U = 75 V."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm cột vì sẽ lộ đáp án quiz, thay bằng dòng ⚠ trước câu hỏi nhắc rằng kéo bản ra xa thì C giảm, phải xét lại chiều đổi."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra ghi rõ \"giữ C bằng μF thì W ra μJ, vì μF·V² = μJ\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn chỗ phải chờ vài giây, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn rằng pin vẫn tốt, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã phân biệt số danh định với số đo."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn rằng Q cũng tăng theo U."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn C = Q/U chỉ là cách tính."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo \"ghép tụ ngược ghép điện trở\" đã nhấn lỗi này."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng ⚠ trước quiz: bảng chỉ xét chèn điện môi, kéo bản ra xa thì C giảm."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn \"tụ nhỏ chịu hiệu điện thế lớn\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm 1: thêm lí do đảo LED (LED chỉ cho dòng một chiều, dòng phóng ngược chiều dòng nạp).",
+      "Mục 1: bỏ danh sách \"điện môi hay dùng: nhựa, cao su, thuỷ tinh, mica, sứ\" (trùng ý với dòng loại tụ) để bù độ dài.",
+      "Thí nghiệm đo Q–U: tụ 470 μF – 16 V được ghi là tụ hoá.",
+      "Mục 3: E_max được gọi là cường độ điện trường lớn nhất điện môi chịu được, có nối với số vôn tối đa ghi trên vỏ tụ.",
+      "Mục 3: chú thích công thức tụ phẳng tách thành từng dòng, thêm 9·10⁹ = k Coulomb (N·m²/C²), bỏ ghi chú về tăng cỡ bản.",
+      "Thí nghiệm tụ nhôm: diễn đạt lại thành mỗi lần đưa về gốc (d = 1 mm, 0,04 m²) rồi chỉ đổi một yếu tố, số liệu giữ nguyên.",
+      "Mục 4: thêm khối <details> giải thích hệ số ½ qua công U·ΔQ cộng thành diện tích tam giác.",
+      "Bẫy 1: bỏ câu \"Tăng S thì C tăng; còn Q và W theo C và U mà đổi\" (bảng ngay dưới đã nói) để bù độ dài.",
+      "Bẫy 3: thêm dòng ⚠ trước quiz q6 về trường hợp kéo bản ra xa (C giảm).",
+      "Bài toán mẫu, bước kiểm tra: ghi rõ giữ μF thì W ra μJ, kết quả 144 μJ không đổi.",
+      "Thử thách khá: thêm cách 2 với Q_max = 100 μC, C_bộ = 4/3 μF, U = 75 V, khớp đáp số cũ."
+    ],
+    "so_tu_them": 12,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-tu-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

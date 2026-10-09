@@ -95,7 +95,7 @@
 
 <p><strong>🔑 $T = \dfrac{1}{f}$ · $\lambda = vT = \dfrac{v}{f}$ · $v = \lambda f$</strong></p>
 
-<p>Mẹo nhớ: <strong>"Một chu kì — một bước sóng"</strong> — hết một chu kì thì sóng đi đúng một bước sóng.</p>
+<p>Mẹo nhớ: <strong>"Một chu kì — một bước sóng"</strong>.</p>
 
 <details class="tl-details">
 <summary>📐 Bấm xem: hai điểm lệch pha bao nhiêu thì cách nhau bao xa</summary>
@@ -126,7 +126,7 @@
 <details class="tl-details">
 <summary>🔬 Bấm xem: thí nghiệm đo bước sóng trên dây lò xo (làm được ở lớp)</summary>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> căng một lò xo mềm trên sàn, một bạn giữ chặt một đầu, một bạn gảy nhẹ đầu kia theo nhịp đều tay và quay chậm (240 fps). Đo khoảng cách hai đỉnh liên tiếp để được $\lambda$; đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$.</li>
+<li><strong>Làm:</strong> căng một lò xo mềm trên sàn, một bạn giữ chặt một đầu, một bạn gảy nhẹ đầu kia theo nhịp đều tay và quay chậm (240 fps). Đo khoảng cách hai đỉnh liên tiếp để được $\lambda$; đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$. Quay 240 fps là 240 khung hình mỗi giây, nên $T = \dfrac{N}{240}$ s với $N$ là số khung hình đếm được.</li>
 <li><strong>Quan sát:</strong> sóng chạy từ đầu gảy sang đầu giữ, biên độ giảm dần. Kéo căng dây hơn thì $\lambda$ tăng.</li>
 <li><strong>Rút ra:</strong> $v = \dfrac{\lambda}{T}$; sức căng đổi làm $v$ và $\lambda$ đổi, còn $T$ gần như không đổi.</li>
 </ol>
@@ -141,7 +141,7 @@
 <input type="radio" name="tl8-q2" id="tl8-q2c"><label for="tl8-q2c" class="tl-opt tl-no">C. $6{,}25$ m</label>
 <input type="radio" name="tl8-q2" id="tl8-q2d"><label for="tl8-q2d" class="tl-opt tl-no">D. $0{,}4$ m</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = vT = 2{,}5 \times 0{,}4 = 1$ m. Nhớ kiểm đơn vị: (m/s) nhân (s) ra mét.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức cần dùng là $\lambda = vT$, không phải $\dfrac{v}{T}$. Em nào ra $6{,}25$ là đã chia nhầm. Thử lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức cần dùng là $\lambda = vT$, không phải $\dfrac{v}{T}$.<br>Ra $6{,}25$ là đã lấy $\dfrac{v}{T}$.<br>Ra $0{,}16$ là đã lấy $\dfrac{T}{v}$.<br>Thử lại nhé.</p></div>
 </div>
 </div>
 
@@ -149,11 +149,11 @@
 
 <p>Nguồn O dao động $u_O = A\cos(\omega t)$, sóng truyền theo chiều dương với tốc độ $v$; điểm M cách O đoạn $d$.</p>
 
-<p>Sóng mất thêm $t_0 = \dfrac{d}{v}$ mới tới M, nên M dao động "chậm" hơn O đúng khoảng đó:</p>
+<p>Sóng mất thêm $t_0 = \dfrac{d}{v}$ mới tới M (trước lúc đó M còn đứng yên), nên M dao động "chậm" hơn O đúng khoảng đó:</p>
 
 $$u_M = A\cos\left[\omega\left(t - \dfrac{d}{v}\right)\right]$$
 
-<p>Thay $\omega = \dfrac{2\pi}{T}$ và $v = \dfrac{\lambda}{T}$ vào, ta được dạng hay dùng nhất:</p>
+<p>Thay $\omega = \dfrac{2\pi}{T}$ và $v = \dfrac{\lambda}{T}$: $\omega\dfrac{d}{v} = \dfrac{2\pi}{T}\cdot\dfrac{dT}{\lambda} = \dfrac{2\pi d}{\lambda}$, ta được dạng hay dùng nhất:</p>
 
 $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
@@ -171,7 +171,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <details class="tl-details">
 <summary>👀 Bấm xem thêm: sóng truyền ngược chiều, hoặc nguồn đã có pha ban đầu</summary>
 <ul>
-<li>Sóng truyền ngược chiều dương (từ phải sang trái) thì M <em>sớm</em> pha hơn nguồn: $u_M = A\cos\left(\omega t + \dfrac{2\pi d}{\lambda}\right)$.</li>
+<li>Sóng truyền ngược chiều dương (từ phải sang trái), viết theo toạ độ $x$ của M: $u_M = A\cos\left(\omega t + \dfrac{2\pi x}{\lambda}\right)$. Điểm có $x \gt 0$ nhận sóng trước O nên sớm pha hơn O. Còn tính theo khoảng cách $d$ tới nguồn thì luôn trừ pha.</li>
 <li>Nguồn có pha ban đầu $\varphi_0$: $u_M = A\cos\left(\omega t + \varphi_0 - \dfrac{2\pi d}{\lambda}\right)$.</li>
 <li>Cách nhớ dấu: điểm nào sóng tới <strong>sau</strong> thì bị <strong>trừ</strong> pha.</li>
 </ul>
@@ -179,7 +179,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
 <h4>4. Đồ thị sóng: hai loại, đừng lẫn</h4>
 
-<p>Cùng một sóng hình sin, vẽ theo hai trục hoành khác nhau cho hai loại thông tin:</p>
+<p>Cùng một đường sin, đổi trục hoành là đổi thông tin:</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -188,20 +188,20 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 </thead>
 <tbody>
 <tr><td>$u - t$ (tại MỘT điểm)</td><td>trục hoành là thời gian $t$ (s); hai đỉnh liên tiếp cách nhau $T$. Cho biết chu kì, tần số, biên độ và một điểm đang đi lên hay đi xuống</td></tr>
-<tr><td>$u - x$ (tại MỘT lúc)</td><td>trục hoành là khoảng cách $x$ (cm, m); hai đỉnh liên tiếp cách nhau $\lambda$. Cho biết bước sóng, hình dạng sợi dây và chiều truyền sóng</td></tr>
+<tr><td>$u - x$ (tại MỘT lúc)</td><td>trục hoành là khoảng cách $x$ (cm, m); hai đỉnh liên tiếp cách nhau $\lambda$. Cho biết bước sóng, hình dạng sợi dây. Chiều truyền sóng: cần biết thêm một điểm đang lên hay xuống</td></tr>
 </tbody>
 </table>
 </div>
 
 <p><strong>🔑 $u-t$: một bước = $T$ · $u-x$: một bước = $\lambda$</strong></p>
 
-<p>Không đọc nhãn trục hoành là lỗi mất điểm phổ biến nhất của bài này.</p>
+<p>Luôn đọc nhãn trục hoành trước.</p>
 
 <!--FIG4-->
 
 <details class="tl-details">
 <summary>⚡ Bấm xem thêm (bài 28 học sâu): sóng mang năng lượng, cường độ sóng $I = \dfrac{P}{S}$</summary>
-<p>Sóng mang năng lượng từ nguồn ra xa. Càng xa nguồn, năng lượng càng trải trên diện tích lớn nên sóng càng yếu: cường độ $I = \dfrac{P}{S}$ (W/m²), với $S$ là diện tích vuông góc với phương truyền. Sóng lan đều mọi hướng ở khoảng cách $r$ có $S = 4\pi r^2$, nên $I = \dfrac{P}{4\pi r^2}$: xa gấp đôi thì cường độ chỉ còn một phần tư.</p>
+<p>Sóng mang năng lượng từ nguồn ra xa. Càng xa nguồn, năng lượng càng trải trên diện tích lớn nên sóng càng yếu: cường độ $I = \dfrac{P}{S}$ (W/m²), với $P$ là công suất của nguồn (W), $S$ là diện tích vuông góc với phương truyền. Sóng lan đều mọi hướng ở khoảng cách $r$ có $S = 4\pi r^2$, nên $I = \dfrac{P}{4\pi r^2}$: xa gấp đôi thì cường độ chỉ còn một phần tư.</p>
 </details>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
@@ -303,7 +303,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
 <details class="tl-details">
 <summary>6. Đồ thị $u - t$ và đồ thị $u - x$ khác nhau ở đâu? Mỗi đồ thị cho em biết gì? <small>(nói trước rồi mới bấm)</small></summary>
-<p>Khác ở trục hoành: $t$ và $x$. Hai đỉnh liên tiếp cách nhau $T$ (đồ thị $u-t$) và $\lambda$ (đồ thị $u-x$). $u-t$ cho chu kì, biên độ và chiều chuyển động của một điểm; $u-x$ cho bước sóng, hình dạng sợi dây và chiều truyền sóng.</p>
+<p>Khác ở trục hoành: $t$ và $x$.<br>Đồ thị $u-t$: hai đỉnh liên tiếp cách nhau $T$, cho chu kì, biên độ và chiều chuyển động của một điểm.<br>Đồ thị $u-x$: hai đỉnh liên tiếp cách nhau $\lambda$, cho bước sóng và hình dạng sợi dây.<br>Biết thêm chiều chuyển động của một điểm trên đồ thị $u-x$ thì suy ra được chiều truyền sóng.</p>
 </details>
 </div>
 
@@ -314,7 +314,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <p>Sóng cơ lan truyền trên mặt nước từ nguồn O theo chiều dương trục Ox với tốc độ $v = 60$ cm/s. Nguồn O dao động điều hoà theo phương trình $u_O = 2\cos(40\pi t)$ cm.</p>
 <p>a) Tính chu kì, tần số và bước sóng.</p>
 <p>b) Viết phương trình dao động của điểm M trên mặt nước, cách O 9 cm.</p>
-<p>c) Tại $t = \dfrac{T}{4}$, phần tử nước tại M có li độ nào và chuyển động theo chiều nào?</p>
+<p>c) Tại $t = 0{,}1625$ s, phần tử nước tại M có li độ nào và chuyển động theo chiều nào?</p>
 <p>d) So sánh tốc độ truyền sóng với tốc độ dao động cực đại của phần tử nước.</p>
 </div>
 
@@ -332,8 +332,8 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <tr><td>"tốc độ $v = 60$ cm/s"</td><td>$v = 60$ cm/s</td><td>$\lambda = \dfrac{v}{f}$</td></tr>
 <tr><td>"$u_O = 2\cos(40\pi t)$ cm"</td><td>$A = 2$ cm, $\omega = 40\pi$ rad/s</td><td>$\omega = 2\pi f$; $T = \dfrac{1}{f}$</td></tr>
 <tr><td>"M cách O 9 cm"</td><td>$d = 9$ cm</td><td>độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$; so $\dfrac{d}{\lambda}$</td></tr>
-<tr><td>"tại thời điểm $t = \dfrac{T}{4}$"</td><td>$t = 0{,}0125$ s</td><td>thay $t$ vào $u_M$; xét dấu $v_M = u_M'$</td></tr>
-<tr><td>"so sánh hai tốc độ"</td><td>cần tính $v$ và $\omega A$</td><td>hai đại lượng khác nhau, không so sánh "hơn kém"</td></tr>
+<tr><td>"tại $t = 0{,}1625$ s"</td><td>$t = 3T + \dfrac{T}{4}$</td><td>kiểm sóng đã tới M chưa: $t \ge \dfrac{d}{v} = 0{,}15$ s<br>thay $t$ vào $u_M$<br>xét dấu vận tốc dao động $v_M$</td></tr>
+<tr><td>"so sánh hai tốc độ"</td><td>cần tính $v$ và $\omega A$</td><td>tính cả hai rồi so số<br>không có quy luật chung cái nào luôn lớn hơn</td></tr>
 </tbody>
 </table>
 </div>
@@ -345,8 +345,8 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <li>Tần số: $\omega = 2\pi f \Rightarrow f = \dfrac{40\pi}{2\pi} = 20$ Hz. Chu kì: $T = \dfrac{1}{f} = 0{,}05$ s.</li>
 <li>Bước sóng: $\lambda = \dfrac{v}{f} = \dfrac{60}{20} = 3$ cm.</li>
 <li>Câu b: $u_M = 2\cos\left(40\pi t - \dfrac{2\pi \cdot 9}{3}\right) = 2\cos(40\pi t - 6\pi) = 2\cos(40\pi t)$ cm. Vì $d = 9$ cm $= 3\lambda$ nên M <strong>cùng pha</strong> với O.</li>
-<li>Câu c: $t = \dfrac{T}{4} = 0{,}0125$ s. Li độ $u_M = 2\cos(40\pi \cdot 0{,}0125) = 2\cos\dfrac{\pi}{2} = 0$: M đang ở vị trí cân bằng.</li>
-<li>Chiều chuyển động: $v_M = u_M' = -80\pi\sin(40\pi t)$. Tại $t = 0{,}0125$ s: $v_M = -80\pi \lt 0$, vậy M đang đi theo <strong>chiều âm</strong> (đi xuống).</li>
+<li>Câu c: sóng tới M lúc $\dfrac{d}{v} = \dfrac{9}{60} = 0{,}15$ s $= 3T$, nên $u_M$ chỉ dùng khi $t \ge 0{,}15$ s. Tại $t = 0{,}1625$ s $= 3T + \dfrac{T}{4}$: li độ $u_M = 2\cos(40\pi \cdot 0{,}1625) = 2\cos(6{,}5\pi) = 2\cos\dfrac{\pi}{2} = 0$: M đang ở vị trí cân bằng.</li>
+<li>Chiều chuyển động: vận tốc dao động của phần tử (không phải tốc độ truyền sóng) là $v_M = -\omega A\sin(40\pi t - 6\pi) = -80\pi\sin(40\pi t)$ cm/s. Tại $t = 0{,}1625$ s: $\sin(6{,}5\pi) = 1$ nên $v_M = -80\pi \lt 0$, vậy M đang đi theo <strong>chiều âm</strong> (đi xuống).</li>
 <li>Câu d: $v_{max} = \omega A = 40\pi \cdot 2 = 80\pi \approx 251$ cm/s, lớn hơn $v = 60$ cm/s. Không có gì vô lí: đây là hai đại lượng khác nhau, $v$ do môi trường quyết định còn $v_{max}$ do nguồn quyết định.</li>
 <li>Kiểm tra: $\lambda = 3$ cm nên 9 cm đúng bằng $3\lambda$ → M cùng pha O, khớp với kết quả câu b. Đơn vị của $u_M$ là cm, của $v_M$ là cm/s: hợp lí.</li>
 </ol>
@@ -381,17 +381,18 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <input type="radio" name="tl8-q6" id="tl8-q6c"><label for="tl8-q6c" class="tl-opt tl-no">C. Vuông pha</label>
 <input type="radio" name="tl8-q6" id="tl8-q6d"><label for="tl8-q6d" class="tl-opt tl-no">D. Không xác định được vì thiếu biên độ</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = \dfrac{v}{f} = \dfrac{40}{20} = 2$ cm. Tỉ số $\dfrac{d}{\lambda} = \dfrac{5}{2} = 2{,}5$ — nguyên cộng $\dfrac{1}{2}$, tức trễ pha $5\pi$, nên M <strong>ngược pha</strong> với O. Độ lệch pha không phụ thuộc biên độ.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\lambda$ trước, rồi lấy $\dfrac{d}{\lambda}$. Nguyên → cùng pha; nguyên cộng $\dfrac{1}{2}$ → ngược pha; nguyên cộng $\dfrac{1}{4}$ → vuông pha. Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\lambda$ trước, rồi lấy $\dfrac{d}{\lambda}$:<br>nguyên → cùng pha<br>nguyên cộng $\dfrac{1}{2}$ → ngược pha<br>nguyên cộng $\dfrac{1}{4}$ hoặc $\dfrac{3}{4}$ → vuông pha.<br>Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <p><strong>Câu 3.</strong> Sóng truyền trên dây từ trái sang phải; tại một thời điểm, điểm P ở <strong>sườn bên phải</strong> của một đỉnh sóng (phía trước theo chiều truyền). Ngay sau đó P sẽ:</p>
+<p>⚠ Đừng đoán theo độ dốc của sườn: hình dung đỉnh sóng dịch sang phải một chút rồi xem P bị nâng lên hay hạ xuống.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q7" id="tl8-q7a"><label for="tl8-q7a" class="tl-opt tl-ok">A. Đi lên</label>
 <input type="radio" name="tl8-q7" id="tl8-q7b"><label for="tl8-q7b" class="tl-opt tl-no">B. Đi xuống</label>
 <input type="radio" name="tl8-q7" id="tl8-q7c"><label for="tl8-q7c" class="tl-opt tl-no">C. Đứng yên vì đang ở sườn dốc</label>
 <input type="radio" name="tl8-q7" id="tl8-q7d"><label for="tl8-q7d" class="tl-opt tl-no">D. Chạy sang phải cùng với đỉnh sóng</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sóng truyền sang phải thì đỉnh sóng dịch sang phải. Điểm P nằm ngay trước đỉnh nên bị "đẩy" lên. Quy tắc nhớ: <strong>sườn trước đi lên, sườn sau đi xuống</strong> (với sóng truyền sang phải).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo hình dạng. Hãy tưởng tượng nửa chu kì sau: đỉnh sóng dịch sang phải một đoạn, và dạng dây bị kéo theo. Điểm nằm trước đỉnh sẽ bị nâng lên. Thử lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo hình dạng. Hãy tưởng tượng một thoáng rất ngắn sau: đỉnh sóng dịch sang phải một chút, và dạng dây bị kéo theo. Điểm nằm trước đỉnh sẽ bị nâng lên. Thử lại nhé.</p></div>
 </div>
 </div>
 
@@ -400,7 +401,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <ul>
 <li><strong>Cảnh báo sóng thần:</strong> trạm đo áp suất dưới đáy biển phát hiện sóng lan qua cả nghìn km; sóng mang năng lượng khổng lồ tới bờ.</li>
 <li><strong>Siêu âm y tế:</strong> đo thời gian xung siêu âm dội về để tính khoảng cách tới khối u, thai nhi — nhờ $v$ xác định trong mô.</li>
-<li><strong>Dây đàn:</strong> lên dây căng hơn làm $v$ tăng; bấm phím cho dây ngắn lại làm $\lambda$ giảm nên nốt cao hơn.</li>
+<li><strong>Dây đàn:</strong> chiều dài dây quy định $\lambda$. Lên dây căng hơn làm $v$ tăng, bấm phím cho dây ngắn lại làm $\lambda$ giảm, cả hai đều làm $f = \dfrac{v}{\lambda}$ tăng nên nốt cao hơn.</li>
 </ul>
 
 <div class="tl-box tl-box--think">
@@ -413,12 +414,12 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
 <details class="tl-details">
 <summary>⭐⭐ Khá: hai điểm M, N trên cùng phương truyền cách nhau $\dfrac{3\lambda}{4}$. Chúng lệch pha bao nhiêu?</summary>
-<p>$\Delta\varphi = \dfrac{2\pi d}{\lambda} = 2\pi \cdot \dfrac{3}{4} = \dfrac{3\pi}{2}$, tức lệch pha vuông pha (một phần tư vòng pha).</p>
+<p>$\Delta\varphi = \dfrac{2\pi d}{\lambda} = 2\pi \cdot \dfrac{3}{4} = \dfrac{3\pi}{2}$ (ba phần tư vòng pha).<br>Đây vẫn là vuông pha vì $\dfrac{3\pi}{2}$ là số lẻ lần $\dfrac{\pi}{2}$.</p>
 </details>
 
 <details class="tl-details">
 <summary>⭐⭐⭐ Thách đấu: sóng truyền sang phải, điểm P ở sườn bên trái của một đỉnh sóng (phía sau theo chiều truyền) — P đi lên hay đi xuống? Vì sao?</summary>
-<p>P <strong>đi xuống</strong>. Lập luận: nửa chu kì sau, đỉnh sóng dịch sang phải, phần dây phía sau đỉnh bị hạ xuống để "nhường" đỉnh cho vị trí mới. Quy tắc gọn: <strong>sườn trước đi lên, sườn sau đi xuống</strong> khi sóng truyền sang phải (đổi chiều truyền thì đảo lại).</p>
+<p>P <strong>đi xuống</strong>. Lập luận: một thoáng rất ngắn sau, đỉnh sóng dịch sang phải một chút, phần dây phía sau đỉnh bị hạ xuống để "nhường" đỉnh cho vị trí mới. Quy tắc gọn: <strong>sườn trước đi lên, sườn sau đi xuống</strong> khi sóng truyền sang phải (đổi chiều truyền thì đảo lại).</p>
 </details>
 </div>
 

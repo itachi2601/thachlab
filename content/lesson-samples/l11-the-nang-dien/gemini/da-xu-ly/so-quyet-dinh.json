@@ -1,0 +1,136 @@
+{
+  "bai": "l11-the-nang-dien",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Khoảng 18 phút với 1 câu dự đoán và 7 câu tự kiểm tra\"."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích \"($V_M$: điện thế tại M, học ở mục 6)\" ngay sau công thức."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa lại $d$ là hình chiếu có dấu từ M tới mốc, mốc ở bản âm thì $d$ bằng khoảng cách và dương; không thêm dòng mẫu riêng để giữ hạn mức."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: $m$ luôn dương còn $q$ có dấu, với $q \\lt 0$ càng xa mốc thế năng càng âm."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng 🔑 thành \"Với $q \\gt 0$: xa bản âm, thế năng lớn\" và bước Rút ra ghi rõ \"1 C dương\"; giữ tiêu đề mục."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu \"vôn kế đo công của lực điện trên mỗi culông (mục 6 gọi là hiệu điện thế)\" trước kết luận; Hình 3 không sửa được trong HTML."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề cột thành \"$V/x$ (V/m, $x$ đổi ra m)\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nêu rõ điện tích tự đi theo hướng lực nên $A = qEd \\gt 0$ và viết $v = \\sqrt{2A/m}$."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"động năng tăng, tốc độ đạt cỡ $10^8$ m/s\" và bỏ cụm \"tính tương đối\" (ngoài chương trình)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi $-\\Delta W_t$ thành $-\\Delta W$ cho thống nhất ký hiệu."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng bảng Bẫy 1 \"MN dài $s$ hợp góc $\\alpha$: nhầm $s$ hoặc $s\\sin\\alpha$, đúng $s\\cos\\alpha$\"; không thêm hình vì luật cấm thêm ảnh."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi tên điểm A thành O; không chuyển 🔑 và bảng lên trước Câu 5 vì bảng chốt sau khi tự thử, đặt trước sẽ lộ đáp án."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng dữ liệu ghi \"N cách $1 + 2 = 3$ cm (MP nằm ngang)\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi lấy quãng đường như lực ma sát."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi chỉ lấy một dấu âm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi quên dấu electron, mẹo mgh đã được sửa theo c4."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi lật dấu $W_N - W_M$."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp với c11: dòng bảng Bẫy 1 ngay trước Câu 4 đã nêu $d = s\\cos\\alpha$ và lỗi nhầm $s\\sin\\alpha$, nên không thêm dòng ⚠ trùng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 5 đã nhấn lỗi coi thế năng tại một điểm là cố định."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi quên dấu âm của electron."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 7 \"Đổi mốc thì $d$ đo từ M tới mốc mới và có dấu\" và bỏ câu nhắc trùng ở phản hồi sai."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3: $d$ trong $W_M = qEd$ định nghĩa lại là hình chiếu có dấu từ M tới mốc (mốc bản âm thì bằng khoảng cách, dương).",
+      "Mục II.3: thêm $V_M$ là điện thế tại M (học ở mục 6).",
+      "Mục II.3: mẹo \"qEd như mgh\" thêm lưu ý $q$ có dấu, $q \\lt 0$ thì càng xa mốc thế năng càng âm.",
+      "Mục II.4: dòng 🔑 giới hạn cho $q \\gt 0$; bước Rút ra nói vôn kế đo công trên mỗi culông, cho 1 C dương.",
+      "Mục II.4: tiêu đề cột bảng thành \"$V/x$ (V/m, $x$ đổi ra m)\".",
+      "Mục II.5: $-\\Delta W_t$ đổi thành $-\\Delta W$.",
+      "Mục II.5: công thức tốc độ đổi thành $A = qEd \\gt 0$ (đi theo hướng lực), $v = \\sqrt{2A/m}$ thay cho $\\sqrt{2qEd/m}$.",
+      "Mục II.5 ví dụ tia X: sửa \"động năng tăng tới $10^8$ m/s\" thành \"tốc độ đạt cỡ $10^8$ m/s\", bỏ \"tính tương đối\" và \"làm anôt nóng lên\".",
+      "Cắt để bù độ dài: bullet \"công tỉ lệ với $q$\" (II.1), câu \"Dùng 3 cm, không phải 5 cm\" (II.1), so sánh trượt băng (II.2).",
+      "Bẫy 1: thêm dòng bảng $d = s\\cos\\alpha$ (nhầm $s$ hoặc $s\\sin\\alpha$).",
+      "Bẫy 3: bảng đổi tên điểm mốc A thành O, số liệu giữ nguyên.",
+      "Bài toán mẫu: bảng dữ liệu ghi N cách bản âm $1 + 2 = 3$ cm.",
+      "Mục V: thêm dòng ⚠ trước Câu 7 về $d$ có dấu tới mốc mới; bỏ câu cuối phản hồi sai Câu 7."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-the-nang-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

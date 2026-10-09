@@ -1,0 +1,119 @@
+{
+  "bai": "l11-dien-tro-dinh-luat-ohm",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng riêng \"Ước số của ampe: 1 mA = 10⁻³ A = 0,001 A\" ngay sau dòng Bội số, trước câu q2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng ⚠ trước câu q3: sai số dụng cụ (±0,1 V, ±0,01 A) cố định dù số đo lớn hay nhỏ, không chuyển hộp details."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi A sửa thành 10 % của U cộng 10 % từ ampe kế thành 20 % cho R, khớp phản hồi đúng và hộp details."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích \"(loại chịu dòng lớn, ít nóng nên R gần như không đổi)\" sau \"điện trở công suất 10 Ω\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng điều kiện: tỉ lệ thuận chỉ đúng khi R không đổi, còn với dây tóc I = U/R vẫn dùng ở từng trạng thái với R lúc đó; bỏ dòng mẹo tam giác để bù độ dài."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"(nhiệt độ vật dẫn không đổi khi U thay đổi)\" và thêm ý với đèn I không tỉ lệ thuận U; các đáp án Trả bài tách mỗi ý một dòng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn mắt xích \"cùng U thì I nhỏ hơn → R = U/I tăng\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: t − t₀ tính bằng °C hay K đều ra cùng số, không cần cộng 273."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(linh kiện bán dẫn)\" và nói rõ chiều nghịch/chiều thuận; không thêm hình vì luật cấm thêm ảnh."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ \"Siêu dẫn là gì?\" khỏi câu Trả bài 6 (siêu dẫn chỉ ở hộp Xem thêm), đổi thành câu NTC/PTC so với kim loại."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước α(t − 20) = 12 − 1 = 11 và chỉ giữ một đáp số t ≈ 2,5·10³ °C (2 chữ số có nghĩa)."
+      },
+      {
+        "id": "q-tl42-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán mở bài, phản hồi đã giải thích C và bài mẫu nhấn lại; không gợi ý trước."
+      },
+      {
+        "id": "q-tl42-q2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: thế thẳng số kΩ vào I = U/R, quên đổi ra Ω; bỏ câu lặp ý trong phản hồi đúng."
+      },
+      {
+        "id": "q-tl42-q3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dùng chung dòng ⚠ của c2: cùng ra 10 Ω chưa chắc tin cậy như nhau."
+      },
+      {
+        "id": "q-tl42-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở thí nghiệm đèn và Bẫy 1, không cần thêm ⚠."
+      },
+      {
+        "id": "q-tl42-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn đúng lỗi này ngay trước quiz."
+      },
+      {
+        "id": "q-tl42-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn \"Đúng với kim loại, sai với NTC\" ngay trước quiz."
+      },
+      {
+        "id": "q-tl42-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và mục 2 đã nhấn độ dốc I–U là 1/R."
+      },
+      {
+        "id": "q-tl42-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài tập điền bước ngay trước đã nhấn lỗi quên số \"1 +\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: thêm định nghĩa 1 mA = 10⁻³ A = 0,001 A trước câu q2 (cũng thêm vào đáp án Trả bài 1).",
+      "Quiz q3, phản hồi sai A: 10 % (vôn kế) + 10 % (ampe kế) = 20 % sai số của R ở hàng 1,0 V, khớp hộp \"Sai số đến từ đâu?\".",
+      "Mục II.3: điều kiện áp dụng viết lại thành \"I tỉ lệ thuận U chỉ đúng khi R không đổi\" và với dây tóc vẫn tính I = U/R bằng R ở nhiệt độ lúc đó; Trả bài 2 sửa tương ứng.",
+      "Mục II.4: thêm mắt xích v giảm → cùng U thì I nhỏ hơn → R = U/I tăng.",
+      "Mục II.5: thêm ghi chú t − t₀ tính theo °C hay K cho cùng số.",
+      "Mục II.5: điốt ghi rõ là linh kiện bán dẫn, chiều nghịch dòng ≈ 0, chiều thuận dòng tăng vọt.",
+      "Trả bài 6: bỏ siêu dẫn, thay bằng so sánh NTC/PTC với kim loại.",
+      "Bài toán mẫu b: thêm bước α(t − 20) = 12 − 1 = 11, đáp số duy nhất t ≈ 2,5·10³ °C (bỏ \"khoảng 2 460 °C\")."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/gemini/da-xu-ly/theory.src.202610091138.html"
+  }
+}

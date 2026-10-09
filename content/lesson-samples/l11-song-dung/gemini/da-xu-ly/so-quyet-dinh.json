@@ -1,0 +1,121 @@
+{
+  "bai": "l11-song-dung",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu \"vẫn một bó sóng nhưng bước sóng giảm một nửa…\" không có trong bài."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 3 ghi thêm $l=(2k+1)\\lambda/4$ ($k$ bó + nửa bó) để tách nghĩa của $k$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phép tính 12,5 Hz, 6,25 Hz, 18,75 Hz và lí do 25 Hz mất sóng dừng vào hộp details ngay sau thí nghiệm, mỗi ý một dòng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gán tên đầu A (máy rung) và B (buộc giá) ở thí nghiệm mục 4; ở mục 5 nêu thấy thêm một nút trên dây nên dây dài 3λ/4."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Ở tần số nhỏ nhất, dây hai đầu cố định có l=λ/2…\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng mục 3 thêm dạng tổng quát f=k·v/(2l) và f=(2k+1)·v/(4l), vẫn giữ f0."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cột λ=2l/k vào bảng đo, bỏ dãy λ trong lời văn để bù độ dài."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Dây vẫn nhận năng lượng, nhưng năng lượng không truyền qua nút mà nằm lại trong từng bó\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"ngược pha (lệch nhau nửa chu kì)\" cho khớp thuật ngữ cả bài."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm hộp details thay số x=λ/4 cho 2A và x=λ/12 cho A, không tăng chữ hiện ngay."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa dòng tóm tắt thành \"tổng hợp của hai sóng cùng biên độ, cùng bước sóng, truyền ngược chiều nhau\", bỏ từ \"giao thoa\" chưa giới thiệu."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn v không đổi nên f tăng, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã tách rõ λ/2 (nút–nút) với λ/4 (nút–bụng)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đúng lỗi lấy l/3."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ngay trước câu hỏi đã có \"đừng lẫn với biên độ 2A\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn cả hai sóng đều tới nút."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn đếm số đầu cố định trước khi chọn công thức."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn k bó có k+1 nút."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi lẫn số bó với số nút."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3, bảng điều kiện: thêm f=k·v/(2l) (hai đầu cố định) và f=(2k+1)·v/(4l) (một đầu tự do).",
+      "Mục 4, thí nghiệm đo: đặt đầu A gắn máy rung và đầu B buộc giá.",
+      "Mục 4, bảng đo: thêm cột λ=2l/k = 0,80; 0,53; 0,40; 0,32 m, v giữ nguyên.",
+      "Mục 5, thí nghiệm đầu tự do: nêu thêm một nút trên dây (ngoài đầu A) làm căn cứ cho l=3λ/4.",
+      "Mục 5, details: thêm tính số với l=0,80 m, v≈20 m/s: f0=12,5 Hz, f0=6,25 Hz, 3×6,25=18,75 Hz, 25 Hz=4×6,25 nên mất sóng dừng.",
+      "Mục 5, details: \"cần l=λ/2\" sửa thành \"ở tần số nhỏ nhất có l=λ/2\".",
+      "Mục 6: thêm details thay số x=λ/4 cho A_M=2A và x=λ/12 cho A_M=A.",
+      "Bẫy 1, bảng: sửa ý năng lượng thành dây vẫn nhận năng lượng nhưng không truyền qua nút.",
+      "Bẫy 3, bảng: dòng một đầu tự do ghi rõ l=(2k+1)λ/4, k bó + nửa bó.",
+      "Mang về: định nghĩa sóng dừng bổ sung \"cùng bước sóng\" và bỏ từ \"giao thoa\"."
+    ],
+    "so_tu_them": 17,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-song-dung/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

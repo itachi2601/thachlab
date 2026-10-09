@@ -24,8 +24,8 @@
 <input type="radio" name="tl45-q1" id="tl45-q1b"><label for="tl45-q1b" class="tl-opt tl-no">B. Động cơ "hút" bớt suất điện động của viên pin</label>
 <input type="radio" name="tl45-q1" id="tl45-q1c"><label for="tl45-q1c" class="tl-opt tl-ok">C. Có dòng thì pin sụt áp $Ir$ bên trong, pin cũ sụt nhiều</label>
 <input type="radio" name="tl45-q1" id="tl45-q1d"><label for="tl45-q1d" class="tl-opt tl-no">D. Pin hết năng lượng nên chỉ còn "điện áp ảo" ở hai cực</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Lúc hở mạch $I = 0$, vôn kế đọc đúng $\mathcal{E} = 1{,}50$ V. Khi động cơ kéo dòng $I \approx 0{,}53$ A, hai đầu pin chỉ còn $U = \mathcal{E} - Ir$. Pin cũ có $r$ cỡ $0{,}8\ \Omega$ nên mất cỡ $0{,}44$ V ngay trong lòng pin. Bài này đo chính $\mathcal{E}$ và $r$ đó.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — đồng hồ đo đúng cả hai lần; chính hai số đo khác nhau mới là hiện tượng cần giải thích. B — suất điện động là đặc tính hoá học của pin, động cơ không "hút" được; thứ bị mất là $Ir$ bên trong pin. D — pin vẫn đẩy được dòng $0{,}53$ A, nghĩa là vẫn có năng lượng, chỉ là năng lượng hao một phần trên $r$. Nhớ lại bài Nguồn điện: $U = \mathcal{E} - Ir$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Lúc hở mạch $I = 0$, vôn kế đọc đúng $\mathcal{E} = 1{,}50$ V. Khi động cơ kéo dòng $I \approx 0{,}53$ A, hai đầu pin chỉ còn $U = \mathcal{E} - Ir$. Pin cũ mất $Ir = 1{,}50 - 1{,}06 = 0{,}44$ V ngay trong lòng pin, ứng với $r \approx 0{,}44/0{,}53 \approx 0{,}8\ \Omega$. Bài này đo chính $\mathcal{E}$ và $r$ đó.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — đồng hồ đo đúng cả hai lần; chính hai số đo khác nhau mới là hiện tượng cần giải thích. B — suất điện động là đặc tính hoá học của pin, động cơ không "hút" được; thứ bị mất là $Ir$ bên trong pin. D — pin vẫn đẩy được dòng $0{,}53$ A, nghĩa là vẫn có năng lượng, chỉ là năng lượng hao một phần trên $r$. Nhớ lại Bài 24 (Nguồn điện): $U = \mathcal{E} - Ir$.</p></div>
 </div>
 </div>
 
@@ -35,23 +35,29 @@
 
 <p><strong>🔑 Dốc xuống · cắt trục U tại $\mathcal{E}$ · hệ số góc $-r$</strong></p>
 
-<p>Bài 24 đã có định luật Ohm toàn mạch. Mạch ngoài gồm điện trở $R_0$ đã biết nối tiếp biến trở $R_x$:</p>
+<p>Bài 24 (Nguồn điện) đã có định luật Ohm toàn mạch. Mạch ngoài gồm điện trở $R_0$ đã biết nối tiếp biến trở $R_x$:</p>
 
 <p>$$I = \dfrac{\mathcal{E}}{R_0 + R_x + r}$$
+$$\Rightarrow\; \mathcal{E} = I(R_0 + R_x) + Ir$$
 $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 
 <ul>
-<li>$U$: hai cực pin (V), vôn kế đọc · $I$: dòng mạch (A), ampe kế đọc.</li>
+<li>$U$: hai cực pin, cũng là hai đầu mạch ngoài (V), vôn kế đọc.</li>
+<li>$I$: dòng mạch (A), ampe kế đọc.</li>
+<li>$\mathcal{E}$: suất điện động của pin (V).</li>
+<li>$r$: điện trở trong của pin ($\Omega$).</li>
 <li>Vẽ $U$ theo $I$: <strong>đường thẳng</strong> dốc xuống.</li>
 <li>Cắt trục $U$ ($I = 0$, mạch hở) tại $\mathcal{E}$.</li>
 <li>Hệ số góc $-r$: thêm $1$ A thì $U$ tụt thêm $r$ vôn.</li>
 </ul>
 
-<p>Hai điểm $(I_1, U_1)$, $(I_2, U_2)$ trên đường thẳng, trừ hai phương trình cho nhau:</p>
+<p>Hai điểm trên đường: $U_1 = \mathcal{E} - I_1 r$ và $U_2 = \mathcal{E} - I_2 r$. Trừ vế: $U_1 - U_2 = (I_2 - I_1)\,r$, nên:</p>
 
 <p>$$r = \dfrac{U_1 - U_2}{I_2 - I_1}$$</p>
 
-<p>Mẹo nhớ: <strong>"Vôn tụt chia ampe tăng"</strong> — thương đó là $r$.</p>
+<p>Mẹo nhớ: <strong>"Vôn tụt chia ampe tăng"</strong>.</p>
+
+<p>⚠ Đừng lấy $U/I$ của một điểm: đó là điện trở mạch ngoài, không phải $r$.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -61,7 +67,7 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <input type="radio" name="tl45-q2" id="tl45-q2b"><label for="tl45-q2b" class="tl-opt tl-no">B. $2{,}2\ \Omega$</label>
 <input type="radio" name="tl45-q2" id="tl45-q2c"><label for="tl45-q2c" class="tl-opt tl-no">C. $3{,}0\ \Omega$</label>
 <input type="radio" name="tl45-q2" id="tl45-q2d"><label for="tl45-q2d" class="tl-opt tl-no">D. $1{,}25\ \Omega$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giao trục $U$ là điểm $(0;\ 1{,}50)$. $r = \dfrac{1{,}50 - 1{,}10}{0{,}50 - 0} = 0{,}8\ \Omega$. Vôn tụt $0{,}40$ V chia ampe tăng $0{,}50$ A.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giao trục $U$ là điểm $(0;\ 1{,}50)$. $r = \dfrac{1{,}50 - 1{,}10}{0{,}50 - 0} = 0{,}8\ \Omega$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — $1{,}10/0{,}50 = 2{,}2$ là $U/I$, tức điện trở <em>mạch ngoài</em>, không phải $r$. C — $1{,}50/0{,}50 = 3{,}0$ lấy $\mathcal{E}$ chia $I$: đó là điện trở toàn mạch $R + r$. D — $0{,}50/0{,}40 = 1{,}25$ là chia ngược. Hệ số góc là $\Delta U$ chia $\Delta I$, lấy dấu dương cho $r$.</p></div>
 </div>
 </div>
@@ -137,8 +143,10 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <details class="tl-details">
 <summary>👀 Sai số đến từ đâu?</summary>
 <ul>
-<li><strong>Dụng cụ:</strong> vôn kế $\pm 0{,}01$ V, ampe kế $\pm 0{,}002$ A; dây nối, chuôi cắm, ampe kế đều có điện trở riêng — phần này đưa vào $\Delta r$.</li>
-<li><strong>Chuôi cắm, khoá K lỏng; đọc – ghi nhầm</strong> (mA với A, nhầm cột): số nhảy, bảng sai.</li>
+<li><strong>Dụng cụ:</strong> vôn kế $\pm 0{,}01$ V, ampe kế $\pm 0{,}002$ A.<br>Sai số này lấy theo cấp chính xác ghi trên đồng hồ, có thể lớn hơn chữ số cuối hiển thị ($0{,}001$ A).</li>
+<li><strong>Điện trở tiếp xúc:</strong> chuôi cắm, dây nối giữa pin và chỗ kẹp vôn kế cộng thêm vào $r$ đo được (ra lớn hơn thật một chút).<br>Ampe kế nằm ở mạch ngoài nên không làm lệch $r$.</li>
+<li><strong>Chuôi cắm, khoá K lỏng:</strong> số nhảy.</li>
+<li><strong>Đọc – ghi nhầm</strong> (mA với A, nhầm cột): bảng sai.</li>
 <li><strong>Thang đo quá lớn:</strong> mất chữ số lẻ.</li>
 <li><strong>Đóng K lâu:</strong> pin nóng, $\mathcal{E}$ và $r$ trôi giữa các lần đo.</li>
 </ul>
@@ -152,7 +160,7 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <input type="radio" name="tl45-q4" id="tl45-q4b"><label for="tl45-q4b" class="tl-opt tl-no">B. Lần 3 và 4, nằm giữa bảng, tránh hai đầu</label>
 <input type="radio" name="tl45-q4" id="tl45-q4c"><label for="tl45-q4c" class="tl-opt tl-no">C. Cặp nào cũng như nhau, mọi điểm đều trên một đường thẳng</label>
 <input type="radio" name="tl45-q4" id="tl45-q4d"><label for="tl45-q4d" class="tl-opt tl-ok">D. Lần 1 và 6, hai điểm xa nhau nhất</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sai số $\pm 0{,}01$ V của mỗi số đo là cố định. Lần 1 và 6: $U_1 - U_6 = 0{,}42$ V, sai số $0{,}02$ V chỉ chiếm 5 %. Lần 2 và 3: hiệu chỉ $0{,}04$ V, sai số $0{,}02$ V chiếm tới 50 % — $r$ tính ra có thể lệch gấp đôi. Khi đã vẽ đường thẳng thì lấy hai điểm trên đường, cũng xa nhau. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sai số $\pm 0{,}01$ V của mỗi số đo là cố định. Lần 1 và 6: $U_1 - U_6 = 0{,}42$ V, sai số $0{,}02$ V chỉ chiếm 5 %. Lần 2 và 3: hiệu chỉ $0{,}04$ V, sai số $0{,}02$ V chiếm tới 50 % — $r$ tính ra có thể rơi vào bất kì đâu từ $0{,}4$ đến $1{,}2\ \Omega$. Khi đã vẽ đường thẳng thì lấy hai điểm trên đường, cũng xa nhau.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — hai điểm gần nhau thì hiệu $U_2 - U_3 = 0{,}04$ V chỉ gấp đôi sai số $0{,}02$ V, tỉ lệ sai số của $r$ lên tới 50 %. B — "ở giữa" không làm số đo chính xác hơn; cái quyết định là hiệu $\Delta U$, $\Delta I$ lớn so với sai số. C — các điểm chỉ <em>gần</em> đường thẳng, mỗi điểm lệch $\pm 0{,}01$ V, nên cặp xa nhau mới bù được độ lệch đó. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
@@ -172,6 +180,8 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 </tbody>
 </table>
 </div>
+
+<p>⚠ $Ir$ là phần mất ngay trong pin, tải chỉ nhận phần còn lại $U = \mathcal{E} - Ir$.</p>
 
 <p>Pin $\mathcal{E} = 1{,}50$ V, $r = 0{,}8\ \Omega$ nối động cơ kéo dòng $0{,}50$ A. Hiệu điện thế hai đầu động cơ là:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl45-sure5" value="chac"> Chắc</label> <label><input type="radio" name="tl45-sure5" value="khong"> Không chắc</label></p>
@@ -206,9 +216,9 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <input type="radio" name="tl45-q6" id="tl45-q6a"><label for="tl45-q6a" class="tl-opt tl-ok">A. Ampe kế nối tắt hai cực: dòng rất lớn, pin nóng, ampe kế quá tải</label>
 <input type="radio" name="tl45-q6" id="tl45-q6b"><label for="tl45-q6b" class="tl-opt tl-no">B. Ampe kế chỉ $0$, vì không có dòng nào đi qua nó</label>
 <input type="radio" name="tl45-q6" id="tl45-q6c"><label for="tl45-q6c" class="tl-opt tl-no">C. Ampe kế đọc đúng dòng qua biến trở nên không sao</label>
-<input type="radio" name="tl45-q6" id="tl45-q6d"><label for="tl45-q6d" class="tl-opt tl-no">D. Vôn kế chỉ $\mathcal{E}$ chính xác hơn khi không có $R_0$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện trở ampe kế gần $0$ nên nó nối tắt hai cực pin: $I = \mathcal{E}/r \approx 1{,}9$ A chạy qua ampe kế — sát thang 2 A, pin nóng nhanh. Đây đúng là tình huống đoản mạch mà phần an toàn cảnh báo.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — chỉ $0$ là chuyện của <em>vôn kế mắc nhầm chỗ ampe kế</em> (điện trở lớn chặn dòng); ampe kế thì ngược lại, dẫn gần như dây. C — ampe kế đo dòng qua chính nó, mà nó đang là đường tắt, không còn liên quan tới biến trở. D — khi đoản mạch, $U$ hai cực tụt gần $0$, vôn kế đọc càng xa $\mathcal{E}$. Nhớ: nhỏ thì nối tiếp, lớn thì song song.</p></div>
+<input type="radio" name="tl45-q6" id="tl45-q6d"><label for="tl45-q6d" class="tl-opt tl-no">D. Ampe kế làm việc như vôn kế, chỉ đúng $\mathcal{E}$ của pin</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện trở ampe kế gần $0$ nên nó nối tắt hai cực pin: $I = \mathcal{E}/r \approx 1{,}9$ A chạy qua ampe kế — sát thang 2 A, pin nóng nhanh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — chỉ $0$ là chuyện của <em>vôn kế mắc nhầm chỗ ampe kế</em> (điện trở lớn chặn dòng); ampe kế thì ngược lại, dẫn gần như dây. C — ampe kế đo dòng qua chính nó, mà nó đang là đường tắt, không còn liên quan tới biến trở. D — ampe kế chỉ đo dòng qua nó; nối tắt hai cực thì $U$ tụt gần $0$, chẳng còn số nào bằng $\mathcal{E}$. Nhớ: nhỏ thì nối tiếp, lớn thì song song.</p></div>
 </div>
 </div>
 
@@ -269,7 +279,11 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 
 <details class="tl-details">
 <summary>5. Các nguyên nhân sai số và cách khắc phục?</summary>
-<p>Chuôi cắm, khoá K lỏng → thay · thang đo không hợp → chọn thang 2 V, 2 A · đóng K lâu, pin nóng → đọc nhanh, ngắt ngay · dây, đồng hồ có điện trở → dây ngắn, tính vào $\Delta r$ · đọc – ghi nhầm → đọc lại đơn vị mA/A, ghi ngay vào đúng cột.</p>
+<p>Chuôi cắm, khoá K lỏng → thay.<br>
+Thang đo không hợp → chọn thang 2 V, 2 A.<br>
+Đóng K lâu, pin nóng → đọc nhanh, ngắt ngay.<br>
+Chuôi cắm, dây giữa pin và vôn kế có điện trở → dây ngắn, kẹp vôn kế sát cực pin.<br>
+Đọc – ghi nhầm → đọc lại đơn vị mA/A, ghi ngay vào đúng cột.</p>
 </details>
 
 <details class="tl-details">
@@ -306,7 +320,7 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <details class="tl-details">
 <summary>🧮 Bấm xem: lời giải câu a, b</summary>
 <ol class="tl-steps">
-<li><strong>Câu a:</strong> trục ngang $I$ từ $0$ đến $0{,}6$ A, trục dọc $U$ từ $1{,}0$ đến $1{,}7$ V. Chấm 6 điểm, kẻ đường thẳng sao cho các điểm nằm đều hai bên (hình 3); máy khớp bình phương tối thiểu cho $U = 1{,}496 - 0{,}806\,I$.</li>
+<li><strong>Câu a:</strong> trục ngang $I$ từ $0$ đến $0{,}6$ A, trục dọc $U$ từ $1{,}0$ đến $1{,}7$ V. Chấm 6 điểm, kẻ đường thẳng sao cho các điểm nằm đều hai bên (hình 3). Phần mềm (nếu có) tự kẻ đường gần các điểm nhất, cho $U = 1{,}496 - 0{,}806\,I$; làm tay chỉ cần kẻ bằng thước.</li>
 <li><strong>Câu b:</strong> kéo dài đường thẳng cắt trục $U$ tại $U_0 = 1{,}50$ V $\Rightarrow \mathcal{E} = 1{,}50$ V.</li>
 <li><strong>Câu b (tiếp):</strong> chọn hai điểm <strong>trên đường thẳng</strong>, xa nhau: A$(0;\ 1{,}50)$ và B$(0{,}500;\ 1{,}09)$.
 $$r = \dfrac{U_A - U_B}{I_B - I_A}$$
@@ -317,12 +331,15 @@ $$= \dfrac{1{,}50 - 1{,}09}{0{,}500 - 0} = 0{,}82\ \Omega$$</li>
 <details class="tl-details">
 <summary>🧮 Bấm xem: câu c và kiểm tra</summary>
 <ol class="tl-steps">
-<li><strong>Câu c:</strong> mỗi $U$ đọc lệch $\pm 0{,}01$ V, mỗi $I$ lệch $\pm 0{,}002$ A. Sai số tỉ đối của $r$:
+<li><strong>Câu c:</strong> mỗi $U$ đọc lệch $\pm 0{,}01$ V, mỗi $I$ lệch $\pm 0{,}002$ A. Đây là ước lượng thô: A, B đọc trên đường, coi mỗi điểm lệch cỡ sai số dụng cụ.<br>
+$r$ là thương $(U_A - U_B)/(I_B - I_A)$ nên sai số tỉ đối của $r$ bằng tổng sai số tỉ đối của tử và mẫu. Tử, mẫu đều là hiệu hai số đọc nên sai số cộng lại: $0{,}01 + 0{,}01$ V trên $U_A - U_B = 1{,}50 - 1{,}09 = 0{,}41$ V, và $0{,}002 + 0{,}002$ A trên $0{,}500$ A.
 $$\dfrac{\Delta r}{r} = \dfrac{0{,}01 + 0{,}01}{0{,}41}$$
 $$+ \dfrac{0{,}002 + 0{,}002}{0{,}500} \approx 0{,}057$$
-$\Delta r \approx 0{,}82 \cdot 0{,}057 \approx 0{,}05\ \Omega$. Với $\mathcal{E}$ đọc thẳng từ giao điểm: $\Delta\mathcal{E} \approx 0{,}01$ V. Cách bằng đồ thị: kẻ thêm hai đường thẳng lệch nhất mà vẫn đi qua vùng sai số của các điểm; độ chênh hệ số góc cho $\Delta r$, độ chênh giao trục $U$ cho $\Delta\mathcal{E}$.</li>
+$\Delta r \approx 0{,}82 \cdot 0{,}057 \approx 0{,}05\ \Omega$.<br>
+Với $\mathcal{E}$ đọc thẳng từ giao điểm: $\Delta\mathcal{E} \approx 0{,}01$ V, lấy bằng sai số vôn kế vì giao điểm rất gần lần đo 1 ($I = 0{,}014$ A), đoạn kéo dài rất ngắn.<br>
+Cách bằng đồ thị (chặt hơn): quanh mỗi điểm vẽ hình chữ nhật sai số cao $\pm 0{,}01$ V, rộng $\pm 0{,}002$ A, rồi kẻ đường dốc nhất và thoải nhất vẫn cắt qua mọi hình chữ nhật. Với bảng này, hai đường đó có hệ số góc cỡ $-0{,}85$ và $-0{,}78$ (nửa hiệu $\approx 0{,}04\ \Omega$, không vượt ước lượng thô) và cắt trục $U$ trong khoảng $1{,}49$–$1{,}50$ V.</li>
 <li><strong>Kết quả:</strong> $\mathcal{E} = 1{,}50 \pm 0{,}01$ V; $r = 0{,}82 \pm 0{,}05\ \Omega$.</li>
-<li><strong>Kiểm tra:</strong> thế lần đo 6: $U = 1{,}50 - 0{,}534 \cdot 0{,}82 = 1{,}06$ V, khớp bảng; máy khớp cho $r = 0{,}81\ \Omega$, lệch $0{,}01\ \Omega \lt \Delta r$.</li>
+<li><strong>Kiểm tra:</strong> thế lần đo 6: $U = 1{,}50 - 0{,}534 \cdot 0{,}82 = 1{,}06$ V, khớp bảng. Phần mềm cho hệ số góc $0{,}806 \approx 0{,}81\ \Omega$, còn $0{,}82$ ở câu b lệch do làm tròn khi đọc A, B trên đồ thị: chênh $0{,}01\ \Omega \lt \Delta r$ nên cả hai cùng đúng trong sai số.</li>
 </ol>
 </details>
 
@@ -383,7 +400,7 @@ $\Delta r \approx 0{,}82 \cdot 0{,}057 \approx 0{,}05\ \Omega$. Với $\mathcal{
 
 <details class="tl-details">
 <summary>⭐⭐ Pin cũ ($\mathcal{E} = 1{,}50$ V, $r = 0{,}82\ \Omega$) cấp dòng $0{,}50$ A. Tính công suất hao phí trong pin và tỉ lệ so với công suất pin phát.</summary>
-<p>Hao phí: $P_r = I^2 r = 0{,}25 \cdot 0{,}82 = 0{,}205$ W. Pin phát: $P = \mathcal{E} I = 0{,}75$ W. Tỉ lệ $0{,}205/0{,}75 \approx 27\ \%$: hơn một phần tư năng lượng biến thành nhiệt ngay trong pin. Với pin mới ($r = 0{,}26\ \Omega$) chỉ $0{,}065$ W, khoảng $9\ \%$.</p>
+<p>Hao phí: $P_r = I^2 r = 0{,}25 \cdot 0{,}82 = 0{,}205$ W. Pin phát: $P = \mathcal{E} I = 0{,}75$ W. Tỉ lệ $0{,}205/0{,}75 \approx 27\ \%$: hơn một phần tư năng lượng biến thành nhiệt ngay trong pin. Với pin mới ($\mathcal{E} = 1{,}58$ V, $r = 0{,}26\ \Omega$): hao phí chỉ $0{,}065$ W trên $P = 1{,}58 \cdot 0{,}50 = 0{,}79$ W, khoảng $8\ \%$.</p>
 </details>
 
 <details class="tl-details">

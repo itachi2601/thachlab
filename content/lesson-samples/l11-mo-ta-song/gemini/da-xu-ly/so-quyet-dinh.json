@@ -1,0 +1,128 @@
+{
+  "bai": "l11-mo-ta-song",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sóng tới M lúc 0,15 s = 3T nên đổi thời điểm câu c thành t = 0,1625 s = 3T + T/4, tính lại (kết quả vẫn u_M = 0, đi theo chiều âm), thêm ở mục 3 'trước lúc t0 M còn đứng yên'."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay u_M' bằng công thức vận tốc dao động v = -ωA sin(...) và ghi rõ đây là vận tốc dao động của phần tử, không phải tốc độ truyền sóng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đọc đề đổi thành 'tính cả hai rồi so số' và 'không có quy luật chung cái nào luôn lớn hơn'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 3π/2 là ba phần tư vòng pha, vẫn vuông pha vì là số lẻ lần π/2."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 ghi 'nguyên cộng 1/4 hoặc 3/4 → vuông pha', tách mỗi quy tắc một dòng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'nửa chu kì sau' thành 'một thoáng rất ngắn sau' ở phản hồi Câu 3 và câu ⭐⭐⭐."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết công thức sóng ngược chiều theo toạ độ x, giải thích điểm x > 0 nhận sóng trước O nên sớm pha, còn tính theo khoảng cách d tới nguồn thì luôn trừ pha."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước ω·d/v = (2π/T)·(dT/λ) = 2πd/λ vào câu dẫn, bù bằng cách cắt phần giải thích lặp của mẹo 'Một chu kì — một bước sóng'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô u−x và đáp án Trả bài 6 ghi rõ phải biết thêm chiều chuyển động của một điểm mới suy ra chiều truyền sóng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng dây đàn: chiều dài quy định λ, căng hơn làm v tăng hoặc dây ngắn làm λ giảm đều khiến f = v/λ tăng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm giải thích 240 fps = 240 khung hình/giây, nên T = N/240 s."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 1 giải thích riêng từng nhiễu: 6,25 = v/T và 0,16 = T/v, mỗi ý một dòng, bỏ vai 'em'."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ P là công suất của nguồn (W)."
+      },
+      {
+        "id": "q-tl8-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mở bài 'chỉ chậm hơn một nhịp', không thêm ⚠."
+      },
+      {
+        "id": "q-tl8-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi v/T trong phản hồi, không thêm ⚠."
+      },
+      {
+        "id": "q-tl8-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn Bẫy 1 ngay trước câu hỏi đã nhấn lá chỉ nhấp nhô tại chỗ."
+      },
+      {
+        "id": "q-tl8-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 ngay trước câu hỏi đã nhấn 'không có quy luật cái nào lớn hơn'."
+      },
+      {
+        "id": "q-tl8-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề và đoạn dẫn Bẫy 3 đã nhấn việc đọc nhãn trục hoành."
+      },
+      {
+        "id": "q-tl8-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 và bài điền bước ngay trước đã nhấn 'bỏ vòng 2π trọn' và λ/2 ứng với ngược pha."
+      },
+      {
+        "id": "q-tl8-q7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Quy tắc sườn chỉ xuất hiện sau khi trả lời, nên thêm dòng ⚠ trước quiz: đừng đoán theo độ dốc, hình dung đỉnh dịch sang phải một chút."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bài toán mẫu câu c: thời điểm t = T/4 đổi thành t = 0,1625 s = 3T + T/4 (sóng tới M lúc d/v = 0,15 s); u_M = 2cos(6,5π) = 0 và v_M = −80π cm/s, kết quả không đổi; đề, bảng đọc đề và lời giải đã cập nhật.",
+      "Lời giải câu c: vận tốc dao động viết v_M = −ωA sin(40πt − 6π) thay cho đạo hàm u_M', nêu rõ khác tốc độ truyền sóng.",
+      "Mục 3: thêm 'trước lúc t0 = d/v M còn đứng yên' và bước trung gian ω·d/v = 2πd/λ.",
+      "Mục 3 (details): sóng truyền ngược chiều dương viết u_M = A cos(ωt + 2πx/λ) theo toạ độ x, kèm ghi chú tính theo khoảng cách d thì luôn trừ pha.",
+      "Mục 4 bảng đồ thị và Trả bài 6: đồ thị u−x chỉ cho chiều truyền khi biết thêm chiều chuyển động của một điểm.",
+      "Câu 2 phản hồi: nguyên cộng 1/4 hoặc 3/4 → vuông pha.",
+      "Câu ⭐⭐: 3π/2 là ba phần tư vòng pha (trước ghi một phần tư), vẫn vuông pha.",
+      "Câu 3 phản hồi và câu ⭐⭐⭐: lập luận 'nửa chu kì sau' đổi thành 'một thoáng rất ngắn sau'.",
+      "Dây đàn: chiều dài quy định λ, f = v/λ tăng khi v tăng hoặc λ giảm.",
+      "Thí nghiệm lò xo: T = N/240 s với N là số khung hình.",
+      "Cường độ sóng: ghi rõ P là công suất nguồn (W).",
+      "Câu 1 phản hồi: giải thích nhiễu A (0,16 = T/v) và nhiễu C (6,25 = v/T)."
+    ],
+    "so_tu_them": 32,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-mo-ta-song/gemini/da-xu-ly/theory.src.202610091140.html"
+  }
+}

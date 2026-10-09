@@ -1,0 +1,127 @@
+{
+  "bai": "l11-nguon-dien",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển hộp 'Sai số đến từ đâu?' xuống ngay sau quiz câu 3 để không lộ đáp số r = 1,0 Ω."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ đồ thị U = 𝓔 − rI có độ dốc −r nên r = −ΔU/ΔI, và sửa phản hồi đúng câu 3 theo dấu trừ này."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết đủ A = 𝓔q = 𝓔It, nhiệt toả RI²t + rI²t, rồi chia hai vế cho It."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích '(đm: đoản mạch)' ở lần đầu xuất hiện I_đm."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm thêm ampe kế (thang 10 A) mắc nối tiếp dây, Quan sát ghi dòng LED cỡ 20 mA; cắt cụm 'pin chỉ ấm lên…' để bù chữ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cụm 'chiều quy ước là chiều dịch chuyển của điện tích dương' vào gạch đầu dòng mạch ngoài."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B sửa thành: khi có dòng U nhỏ hơn 1,5 V nên lực điện làm công nhỏ hơn 1,5 J mỗi coulomb; bỏ câu 'Nhớ: vôn = jun trên coulomb' lặp ý."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hai ô bảng Bẫy 1 thêm 'trên mỗi coulomb' cho khớp 𝓔 = A/q."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 'n dãy, mỗi dãy m nguồn' trong bảng và thêm ví dụ 2 dãy × 3 pin (4,5 V; 0,9 Ω) vào hộp Xem thêm; không thêm câu trắc nghiệm vì không được đổi số quiz."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Kết luận rõ cả hai ắc quy đều đạt, ắc quy yếu sát ngưỡng nên đèn tối hơn hẳn ắc quy mới."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Cột 𝓔 − U bằng đúng I sẽ lộ ngay r = 1,0 Ω trước quiz câu 3; bước Rút ra đã nêu quan hệ này."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng đọc đề trích đúng nguyên văn 'hiệu điện thế hai cực nguồn' và 'thành mạch kín', bỏ chữ '(ngầm)'."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C viết lại thành 'bị chính ắc quy cản bên trong' để chưa cần thuật ngữ điện trở trong; phản hồi đúng vẫn giới thiệu thuật ngữ này."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi 'dồn điện' trong phản hồi, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn số trên vỏ pin là suất điện động, không phải U lúc đang dùng."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn U/I là R mạch ngoài, lại thêm câu r = −ΔU/ΔI trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi quên cộng r ở phản hồi và ở bảng đọc đề."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước quiz đã nhấn hở mạch và mạch kín khác nhau."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn chiều dòng trong nguồn, và 'quy ước' nay đã được định nghĩa ở mục 2."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn U nhỏ hơn 𝓔 nhiều lần, phản hồi cũng nêu rõ cả A lẫn B."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3: hộp 'Sai số đến từ đâu?' được chuyển xuống sau quiz câu 3 (nội dung giữ nguyên).",
+      "Mục II.3: thêm câu đồ thị U = 𝓔 − rI, độ dốc −r, r = −ΔU/ΔI.",
+      "Quiz 3: phản hồi đúng đổi thành r = −(0,90 − 1,40)/(0,60 − 0,10) = 1,0 Ω.",
+      "Quiz 3: phản hồi A đổi '0,50 là ΔU' thành 'độ tụt của U'.",
+      "Mục II.4: dẫn đủ bước A = 𝓔It = RI²t + rI²t, chia cho It ra 𝓔 = I(R + r).",
+      "Thí nghiệm nối tắt: thêm ampe kế thang 10 A mắc nối tiếp dây đồng, dòng LED cỡ 20 mA.",
+      "Thí nghiệm nối tắt: bỏ cụm 'pin chỉ ấm lên nếu giữ lâu hơn'.",
+      "Mục II.5: thêm ví dụ hỗn hợp 2 dãy × 3 pin (1,5 V; 0,6 Ω) cho 𝓔_b = 4,5 V và r_b = 0,9 Ω (trong details).",
+      "Quiz 2: phản hồi B nay nói khi có dòng U < 1,5 V nên lực điện làm công < 1,5 J mỗi coulomb.",
+      "Bảng Bẫy 1: 𝓔 và U được ghi là công trên mỗi coulomb.",
+      "Thử thách ⭐⭐⭐: kết luận cả hai ắc quy đều đạt (r ≤ 0,06 Ω), ắc quy r = 0,05 Ω sát ngưỡng (U = 9,6 V)."
+    ],
+    "so_tu_them": 35,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-nguon-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

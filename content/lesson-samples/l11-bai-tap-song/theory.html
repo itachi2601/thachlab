@@ -37,7 +37,7 @@
 <li><strong>Dạng 1 (đặc trưng):</strong> $f=\dfrac{1}{T}$, $\lambda=vT=\dfrac{v}{f}$.</li>
 <li><strong>Dạng 2 (cường độ):</strong> $I=\dfrac{P}{S}$; sóng cầu $S=4\pi R^2$, nên $I\sim\dfrac{1}{R^2}$.</li>
 <li><strong>Dạng 3 (lệch pha):</strong> $\Delta\varphi=\dfrac{2\pi d}{\lambda}$; $d=k\lambda$ cùng pha, $d=(k+\tfrac12)\lambda$ ngược pha, $d=(2k+1)\tfrac{\lambda}{4}$ vuông pha.</li>
-<li><strong>Dạng 4 (phương trình):</strong> $u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$; M trễ pha hơn nguồn $\dfrac{2\pi x}{\lambda}$.</li>
+<li><strong>Dạng 4 (phương trình):</strong> $u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$ với $x$ là khoảng cách từ M tới nguồn và $\omega=2\pi f$. M trễ pha hơn nguồn $\dfrac{2\pi x}{\lambda}$.</li>
 <li><strong>Dạng 5 (điện từ):</strong> $f=\dfrac{c}{\lambda}$, $c=3\cdot10^8\ \text{m/s}$, rồi đối chiếu thang sóng.</li>
 </ul>
 
@@ -59,7 +59,7 @@
 
 
 
-<p>Ví dụ ngắn cho Dạng 5: đài FM 100 MHz có $\lambda=\dfrac{c}{f}=\dfrac{3\cdot10^8}{10^8}=3\ \text{m}$. Dạng 2: đứng xa nguồn gấp đôi thì $R$ gấp đôi, $I$ giảm 4 lần.</p>
+<p>Ví dụ ngắn cho Dạng 5: đài FM 100 MHz có $\lambda=\dfrac{c}{f}=\dfrac{3\cdot10^8}{10^8}=3\ \text{m}$. Dạng 2: xa nguồn gấp đôi thì $I$ giảm 4 lần.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -69,7 +69,7 @@
 <input type="radio" name="tl14-q1" id="tl14-q1b"><label for="tl14-q1b" class="tl-opt tl-ok">B. ngược pha</label>
 <input type="radio" name="tl14-q1" id="tl14-q1c"><label for="tl14-q1c" class="tl-opt tl-no">C. vuông pha</label>
 <input type="radio" name="tl14-q1" id="tl14-q1d"><label for="tl14-q1d" class="tl-opt tl-no">D. lệch pha $\dfrac{3\pi}{2}$ nên không đặc biệt</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta\varphi=\dfrac{2\pi\cdot1{,}5\lambda}{\lambda}=3\pi$, $3\pi=\pi+2\pi$ nên hơn kém $\pi$ đúng một chu kỳ $2\pi$, tức là ngược pha. Cách nhanh: $d=(k+\tfrac12)\lambda$ với $k=1$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta\varphi=\dfrac{2\pi\cdot1{,}5\lambda}{\lambda}=3\pi=\pi+2\pi$, bỏ đi một vòng $2\pi$ còn $\pi$, tức là ngược pha. Cách nhanh: $d=(k+\tfrac12)\lambda$ với $k=1$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\Delta\varphi=\dfrac{2\pi d}{\lambda}$ rồi so với $\pi$, $2\pi$, $\dfrac{\pi}{2}$ cộng thêm các chu kỳ $2\pi$. Chỗ nhầm hay gặp là đổi $1{,}5\lambda$ thành "$\dfrac{3\pi}{2}$".</p></div>
 </div>
 </div>
@@ -79,15 +79,15 @@
 <p><strong>🔑 Cùng pha: cực đại $d_2-d_1=k\lambda$ · cực tiểu $(k+\tfrac12)\lambda$</strong></p>
 
 <ul>
-<li><strong>Dạng 6 (điều kiện):</strong> hai nguồn cùng pha, cực đại $d_2-d_1=k\lambda$; cực tiểu $d_2-d_1=(k+\tfrac12)\lambda$.</li>
-<li><strong>Dạng 7 (biên độ):</strong> $A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$.</li>
-<li><strong>Dạng 8 (đếm):</strong> đếm số $k$ nguyên thoả $-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$ cho cực đại; với cực tiểu thay $k$ bằng $k+\tfrac12$.</li>
+<li><strong>Dạng 6 (điều kiện):</strong> M cách hai nguồn $S_1$, $S_2$ lần lượt $d_1$, $d_2$. Hai nguồn cùng pha: cực đại $d_2-d_1=k\lambda$; cực tiểu $d_2-d_1=(k+\tfrac12)\lambda$.</li>
+<li><strong>Dạng 7 (biên độ):</strong> $A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$, với $A$ là biên độ sóng mỗi nguồn gửi tới M.</li>
+<li><strong>Dạng 8 (đếm):</strong> với $S_1S_2$ (tức AB) là khoảng cách hai nguồn, đếm số $k$ nguyên thoả $-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$ cho cực đại; với cực tiểu thay $k$ bằng $k+\tfrac12$.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-02">
 <p class="tl-label">🔬 Ví dụ: hai loa cùng phát một nốt</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz (cùng pha, $v=340\ \text{m/s}$ nên $\lambda=1\ \text{m}$). Đi ngang trước hai loa, tai nghe to nhỏ thay đổi.</li>
+<li><strong>Làm:</strong> đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz (cùng pha, $v=340\ \text{m/s}$ nên $\lambda=1\ \text{m}$). Đi ngang trước hai loa.</li>
 <li><strong>Quan sát:</strong> tại điểm cách loa 1 là $4{,}0\ \text{m}$ và cách loa 2 là $4{,}5\ \text{m}$, âm gần như tắt; tại điểm cách đều hai loa, âm to nhất.</li>
 <li><strong>Rút ra:</strong> hiệu đường $0{,}5\ \text{m}$ $=\tfrac12\lambda$ nên là cực tiểu; hiệu đường $0=0\cdot\lambda$ nên là cực đại.</li>
 </ol>
@@ -118,13 +118,13 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-03">
 <p class="tl-label">🔬 Thí nghiệm đo: bước sóng laser bằng khe Young</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> chiếu laser đỏ qua hai khe cách nhau $a=0{,}50\ \text{mm}$; màn cách khe $D=1{,}50\ \text{m}$. Vì một khoảng vân quá nhỏ để đo chính xác, đo khoảng cách $L$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân), đo 5 lần.</li>
+<li><strong>Làm:</strong> chiếu laser đỏ qua hai khe cách nhau $a=0{,}50\ \text{mm}$; màn cách khe $D=1{,}50\ \text{m}$. Đo khoảng cách $\ell$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân), đo 5 lần.</li>
 <li><strong>Quan sát:</strong> bảng dưới.</li>
-<li><strong>Rút ra:</strong> $\bar L=9{,}74\ \text{mm}$; $i=\dfrac{\bar L}{5}=1{,}95\ \text{mm}$; $\lambda=\dfrac{ia}{D}=0{,}65\ \mu\text{m}$, đúng vùng đỏ.</li>
+<li><strong>Rút ra:</strong> $\bar\ell=9{,}74\ \text{mm}$; $i=\dfrac{\bar\ell}{5}=1{,}95\ \text{mm}$; $\lambda=\dfrac{ia}{D}=0{,}65\ \mu\text{m}$, đúng vùng đỏ.</li>
 </ol>
 <table class="tl-table">
 <thead><tr><th>Lần đo</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
-<tbody><tr><td>$L$ (mm)</td><td>9,6</td><td>9,8</td><td>9,7</td><td>9,9</td><td>9,7</td></tr></tbody>
+<tbody><tr><td>$\ell$ (mm)</td><td>9,6</td><td>9,8</td><td>9,7</td><td>9,9</td><td>9,7</td></tr></tbody>
 </table>
 </div>
 <!--video:tn-l11-baitapsong-03-->
@@ -140,14 +140,14 @@
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl14-q2c" value="chac"> Chắc</label>
 <label><input type="radio" name="tl14-q2c" value="khong"> Không chắc</label></p>
-<p><strong>Câu 2.</strong> Vì sao đo $L$ của 5 khoảng vân rồi chia 5, thay vì đo thẳng một khoảng vân?</p>
+<p><strong>Câu 2.</strong> Vì sao đo $\ell$ của 5 khoảng vân rồi chia 5, thay vì đo thẳng một khoảng vân?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q2" id="tl14-q2a"><label for="tl14-q2a" class="tl-opt tl-no">A. Để $i$ lớn hơn thật sự</label>
 <input type="radio" name="tl14-q2" id="tl14-q2b"><label for="tl14-q2b" class="tl-opt tl-ok">B. Sai số tuyệt đối của thước chia cho 5, nên $i$ chính xác hơn</label>
 <input type="radio" name="tl14-q2" id="tl14-q2c"><label for="tl14-q2c" class="tl-opt tl-no">C. Vì công thức chỉ đúng cho 5 khoảng vân</label>
 <input type="radio" name="tl14-q2" id="tl14-q2d"><label for="tl14-q2d" class="tl-opt tl-no">D. Để bỏ qua sai số của $D$ và $a$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thước sai chừng $\pm0{,}5\ \text{mm}$ cho mỗi lần đọc; đo cả đoạn 9,7 mm thì sai số chia cho 5 khi tính $i$ (cỡ $\pm0{,}1\ \text{mm}$). Đo riêng một khoảng vân 1,95 mm thì cùng mức sai số ấy chiếm tới gần một phần tư giá trị.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $i$ không đổi dù đo cách nào. Cái đổi là <em>sai số tương đối</em> của phép đọc thước. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lấy thô sai số mỗi lần đọc thước milimét là nửa độ chia, $\pm0{,}5\ \text{mm}$; đo cả đoạn 9,7 mm thì sai số chia cho 5 khi tính $i$ (cỡ $\pm0{,}1\ \text{mm}$). Đo riêng một khoảng vân 1,95 mm thì cùng mức sai số ấy chiếm tới gần một phần tư giá trị.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $i$ không đổi dù đo cách nào. Cái giảm là sai số: sai số tuyệt đối của $i$ chỉ bằng sai số thước chia 5, nên <em>sai số tương đối</em> của $i$ nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>4. Họ D: sóng dừng (Dạng 13–15)</h4>
@@ -155,15 +155,15 @@
 <p><strong>🔑 Hai đầu cố định $L=n\dfrac{\lambda}{2}$ · cố định + tự do $L=(2n+1)\dfrac{\lambda}{4}$</strong></p>
 
 <ul>
-<li><strong>Dạng 13 (đếm nút, bụng):</strong> hai đầu cố định, $n$ bụng thì có $n+1$ nút. Một đầu cố định, một đầu tự do: $n+1$ bụng và $n+1$ nút.</li>
+<li><strong>Dạng 13 (đếm nút, bụng):</strong> hai đầu cố định, $n$ bụng thì có $n+1$ nút. Một đầu cố định, một đầu tự do, với $n$ lấy từ $L=(2n+1)\dfrac{\lambda}{4}$: có $n+1$ bụng và $n+1$ nút.</li>
 <li><strong>Dạng 14 (dây đàn, cột khí):</strong> hai đầu nút $f_n=nf_1$, $f_1=\dfrac{v}{2L}$. Một đầu nút một đầu bụng: $f_m=mf_1$ với $m$ lẻ, $f_1=\dfrac{v}{4L}$.</li>
-<li><strong>Dạng 15 (biên độ):</strong> $A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$, $x$ là khoảng cách từ M tới nút gần nhất.</li>
+<li><strong>Dạng 15 (biên độ):</strong> $A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$, $x$ là khoảng cách từ M tới nút gần nhất và $A$ là biên độ sóng tới.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-04">
 <p class="tl-label">🔬 Thí nghiệm: thổi vào ống nhựa</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> bịt kín một đầu ống nhựa dài $0{,}17\ \text{m}$, thổi ngang miệng đầu còn lại.</li>
+<li><strong>Làm:</strong> bịt kín một đầu ống nhựa dài $0{,}17\ \text{m}$, thổi ngang miệng đầu còn lại. Tốc độ âm trong không khí $v=340\ \text{m/s}$.</li>
 <li><strong>Quan sát:</strong> ống kêu một nốt trầm ổn định; nối thêm ống cho dài hơn thì nốt thấp xuống.</li>
 <li><strong>Rút ra:</strong> đầu kín là nút, miệng hở là bụng nên $f_1=\dfrac{v}{4L}=\dfrac{340}{4\cdot0{,}17}=500\ \text{Hz}$; $L$ tăng thì $f_1$ giảm.</li>
 </ol>
@@ -183,6 +183,7 @@
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Dây dài $0{,}9\ \text{m}$, một đầu cố định, một đầu tự do, sóng có $\lambda=1{,}2\ \text{m}$. Trên dây có mấy bụng sóng?</p>
+<p>⚠ Số lần $\dfrac{\lambda}{4}$ trong $L$ là $2n+1$, chưa phải số bụng.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q3" id="tl14-q3a"><label for="tl14-q3a" class="tl-opt tl-no">A. 1</label>
 <input type="radio" name="tl14-q3" id="tl14-q3b"><label for="tl14-q3b" class="tl-opt tl-ok">B. 2</label>
@@ -230,7 +231,7 @@
 </tbody>
 </table>
 
-<p>Ở Dạng 8, đoạn nối hai nguồn vẫn chạy $-\dfrac{S_1S_2}{\lambda}$ tới $\dfrac{S_1S_2}{\lambda}$, nhưng với nguồn ngược pha thì <strong>cực đại lấy $k+\tfrac12$</strong>, cực tiểu lấy $k$. Hai nguồn S₁, S₂ <strong>không tính</strong> vào số điểm đếm, nên dấu là $\lt$ chứ không phải $\le$.</p>
+<p>Ở Dạng 8, miền giá trị trên đoạn nối hai nguồn vẫn là từ $-\dfrac{S_1S_2}{\lambda}$ tới $\dfrac{S_1S_2}{\lambda}$, nhưng với nguồn ngược pha thì <strong>cực đại lấy $k+\tfrac12$</strong>, cực tiểu lấy $k$. Hai nguồn S₁, S₂ <strong>không tính</strong> vào số điểm đếm, nên dấu là $\lt$ chứ không phải $\le$.</p>
 
 <details class="tl-details">
 <summary>👀 Bấm xem: vì sao ngược pha thì đổi chỗ?</summary>
@@ -241,7 +242,7 @@
 
 <p><strong>🔑 $n$ bó → $n+1$ nút · đầu cố định là nút · đầu tự do là bụng</strong></p>
 
-<p>Dây hai đầu cố định có $n$ bó thì có $n+1$ nút (hai đầu cũng là nút) và $n$ bụng. Nhầm hay gặp: đếm nút giữa dây rồi quên hai đầu, hoặc coi đầu tự do là nút.</p>
+<p>Dây hai đầu cố định có $n$ bó (một bó là đoạn giữa hai nút liền kề, chứa một bụng) thì có $n+1$ nút (hai đầu cũng là nút) và $n$ bụng. Nhầm hay gặp: đếm nút giữa dây rồi quên hai đầu, hoặc coi đầu tự do là nút.</p>
 
 <p><strong>Câu 5.</strong> Dây hai đầu cố định có sóng dừng với <strong>5 nút</strong> (kể cả hai đầu). Số bụng sóng là:</p>
 <div class="tl-quiz">
@@ -322,7 +323,7 @@
 <details class="tl-details">
 <summary>🌍 Bấm xem: 3 chỗ gặp lại bốn họ</summary>
 <ul>
-<li><strong>Dây đàn ghi-ta, sáo (họ D):</strong> đổi chiều dài thì đổi $f=\dfrac{v}{2L}$, đổi nốt.</li>
+<li><strong>Dây đàn ghi-ta, sáo (họ D):</strong> đổi chiều dài thì đổi $f=\dfrac{v}{2L}$, đổi nốt. Sáo là ống hở hai đầu nên hai đầu đều là bụng, cũng cho $f=\dfrac{v}{2L}$.</li>
 <li><strong>Loa cùng phát (họ B):</strong> chỗ nghe to nhỏ khác nhau trong phòng vì có điểm cực đại, cực tiểu.</li>
 <li><strong>Sóng FM, Wi-Fi (họ A):</strong> $f=\dfrac{c}{\lambda}$ cho biết kích thước ăng-ten cần dùng.</li>
 </ul>

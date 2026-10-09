@@ -1,0 +1,148 @@
+{
+  "bai": "l11-thuc-hanh-do-sdd-pin",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách danh sách ký hiệu mỗi ý một dòng, thêm dòng ℰ (suất điện động, V) và r (điện trở trong, Ω)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn dòng trung gian ℰ = I(R0+Rx) + Ir và ghi U hai cực pin cũng là hai đầu mạch ngoài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết ra U1 = ℰ − I1r, U2 = ℰ − I2r và bước trừ vế trước công thức r."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất tham chiếu thành \"Bài 24 (Nguồn điện)\" ở cả câu 1 và mục II.1."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành Ir = 1,50 − 1,06 = 0,44 V, ứng với r ≈ 0,44/0,53 ≈ 0,8 Ω để số tự kiểm được."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào hộp \"Sai số đến từ đâu?\" rằng ±0,002 A lấy theo cấp chính xác, lớn hơn chữ số cuối hiển thị 0,001 A."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa vật lí: điện trở chuôi/dây giữa pin và chỗ kẹp vôn kế cộng vào r đo được, ampe kế ở mạch ngoài không làm lệch r (sửa cả Trả bài câu 5)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"lệch gấp đôi\" bằng khoảng cụ thể r từ 0,4 đến 1,2 Ω, khớp với 50 %."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ thuật ngữ bình phương tối thiểu, ghi phần mềm tự kẻ đường gần các điểm nhất, làm tay chỉ cần kẻ bằng thước."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phần Kiểm tra nói rõ 0,806 ≈ 0,81 là của phần mềm, 0,82 do làm tròn khi đọc A, B, chênh nằm trong Δr."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm hai câu giải thích quy tắc sai số tỉ đối của thương, vì sao cộng 0,01 + 0,01 và 0,41 = 1,50 − 1,09."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ đây là ước lượng thô, coi điểm đọc trên đường lệch cỡ sai số dụng cụ, cách chặt hơn là hai đường lệch nhất."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lý do Δℰ ≈ 0,01 V: giao điểm rất gần lần đo 1 nên đoạn kéo dài ngắn."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mô tả hình chữ nhật sai số ±0,01 V × ±0,002 A và ví dụ hai đường lệch nhất có hệ số góc cỡ −0,85 và −0,78."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tính lại cho pin mới: P = 1,58·0,50 = 0,79 W, tỉ lệ hao phí khoảng 8 % thay vì 9 %."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay phương án D bằng nhiễu cùng chủ đề \"ampe kế làm việc như vôn kế, chỉ đúng ℰ\" và sửa phản hồi D."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu 1 và thí nghiệm pin mới (pin \"hết\" do r tăng, không mất ℰ)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 2: U/I của một điểm là điện trở mạch ngoài, không phải r."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu R0 chỉ để chặn dòng khi Rx = 0, phản hồi D cũng giải thích rõ."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn các điểm chỉ nằm gần đường thẳng ở thí nghiệm và phản hồi C."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 5: Ir là phần mất trong pin, tải chỉ nhận U = ℰ − Ir."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã ghi ampe kế mắc song song pin là đoản mạch."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn U/I là điện trở mạch ngoài R0 + Rx."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và bảng phép tính đã nhấn cần ℰ hoặc cặp số thứ hai."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục I, phản hồi đúng câu 1: sụt áp tính từ số đo Ir = 1,50 − 1,06 = 0,44 V, r ≈ 0,44/0,53 ≈ 0,8 Ω (thay câu \"r cỡ 0,8 Ω nên mất cỡ 0,44 V\").",
+      "Mục II.1: thêm dòng ℰ = I(R0+Rx) + Ir và hai phương trình U1 = ℰ − I1r, U2 = ℰ − I2r trước công thức r.",
+      "Mục II.1: thêm dòng ⚠ trước câu 2 (U/I không phải r).",
+      "Câu 4, phản hồi đúng: cặp lần 2–3 cho r trong khoảng 0,4–1,2 Ω (thay \"lệch gấp đôi\").",
+      "Hộp \"Sai số đến từ đâu?\": ampe kế ±0,002 A theo cấp chính xác, điện trở chuôi/dây giữa pin và vôn kế làm r đo lớn hơn, ampe kế không làm lệch r.",
+      "Trả bài câu 5: khắc phục điện trở dây bằng dây ngắn, kẹp vôn kế sát cực pin.",
+      "Mục III: thêm dòng ⚠ trước câu 5 (Ir là phần mất trong pin).",
+      "Câu 6: phương án D mới \"Ampe kế làm việc như vôn kế, chỉ đúng ℰ của pin\" và phản hồi D tương ứng.",
+      "Mục V câu a: bỏ \"bình phương tối thiểu\", giữ U = 1,496 − 0,806 I là của phần mềm.",
+      "Mục V câu c: thêm giải thích sai số tỉ đối (0,02/0,41 + 0,004/0,500 ≈ 0,057), lý do Δℰ ≈ 0,01 V, ví dụ hai đường lệch nhất hệ số góc cỡ −0,85 và −0,78 (nửa hiệu ≈ 0,04 Ω), giao trục 1,49–1,50 V; kết quả giữ ℰ = 1,50 ± 0,01 V, r = 0,82 ± 0,05 Ω.",
+      "Mục V Kiểm tra: giải thích 0,82 (đọc đồ thị) so với 0,806 ≈ 0,81 (phần mềm).",
+      "Mục VI ⭐⭐: pin mới P = 1,58·0,50 = 0,79 W, tỉ lệ hao phí ≈ 8 % (trước ghi 9 %)."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-sdd-pin/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

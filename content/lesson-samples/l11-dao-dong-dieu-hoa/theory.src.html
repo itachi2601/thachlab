@@ -17,14 +17,12 @@
 <h4>1. Dao động cơ</h4>
 <p><strong>Qua lại · Quanh vị trí cân bằng</strong></p>
 <ul>
-<li>Vật chuyển động <strong>qua lại</strong>.</li>
-<li>Quanh một <strong>vị trí cân bằng</strong> (VTCB).</li>
-<li>Ví dụ: dây đàn ghi-ta, pít-tông trong xi lanh, cái đu.</li>
+<li>Vật chuyển động <strong>qua lại</strong> quanh một <strong>vị trí cân bằng</strong> (VTCB).</li>
 </ul>
 <div class="tl-box tl-box--exp" data-exp="tn-l11-daodongdieuhoa-01">
 <p class="tl-label">🔬 Thí nghiệm: con lắc lò xo</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> treo (hoặc đặt ngang) một vật vào lò xo, vật đứng yên. Kéo vật lệch ra rồi thả tay.</li>
+<li><strong>Làm:</strong> treo một vật vào lò xo, vật đứng yên. Kéo vật lệch ra rồi thả tay.</li>
 <li><strong>Quan sát:</strong> vật đi qua lại hai bên chỗ đứng yên ban đầu.</li>
 <li><strong>Rút ra:</strong> chỗ đứng yên ban đầu là <strong>vị trí cân bằng</strong>; vật dao động quanh nó.</li>
 </ol>
@@ -32,7 +30,7 @@
 {{FIG1}}
 
 <h4>2. Dao động tuần hoàn</h4>
-<p><strong>Cùng khoảng thời gian · Về chỗ cũ · Cùng hướng cũ</strong></p>
+<p><strong>Sau những khoảng thời gian bằng nhau, vật về đúng chỗ cũ, theo hướng cũ.</strong></p>
 <table class="tl-table">
 <thead><tr><th>Loại</th><th>Ví dụ</th><th>Vì sao</th></tr></thead>
 <tbody>
@@ -44,6 +42,10 @@
 <summary>Đoán thử: cái đu đẩy mạnh dần rồi yếu dần có tuần hoàn không?</summary>
 <p>Không, vì chuyển động không lặp lại đều đặn.</p>
 </details>
+<details class="tl-details">
+<summary>Đoán thử: đu qua chỗ cũ nhưng đi ngược chiều thì đã lặp lại chưa?</summary>
+<p>Chưa. Phải đợi lần kế tiếp đu qua chỗ đó theo đúng chiều cũ mới tính là lặp lại.</p>
+</details>
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Dao động điều hoà</p>
 <p><strong>Dao động tuần hoàn đơn giản nhất</strong>, mô tả bằng hàm côsin.</p>
@@ -51,19 +53,25 @@
 
 <h4>3. Đồ thị li độ – thời gian</h4>
 <p><strong>Đường hình sin · Biên độ A · Chu kì T</strong></p>
+<p>$x$ (li độ): vị trí của vật so với VTCB, có thể âm.</p>
 <div class="tl-box tl-box--exp" data-exp="tn-l11-daodongdieuhoa-02">
 <p class="tl-label">🔬 Thí nghiệm: vật tự vẽ đồ thị</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> gắn một cây bút lên vật dao động, kéo tờ giấy dài chạy đều ngang qua đầu bút.</li>
-<li><strong>Quan sát:</strong> nét bút vẽ ra một đường lượn sóng đều đặn.</li>
+<li><strong>Làm:</strong> gắn bút lên vật dao động, kéo tờ giấy chạy đều qua đầu bút.</li>
+<li><strong>Quan sát:</strong> nét bút vẽ ra đường lượn sóng đều đặn.</li>
 <li><strong>Rút ra:</strong> đồ thị li độ theo thời gian có dạng <strong>hình sin</strong>.</li>
 </ol>
 </div>
 {{FIG2}}
 <ul>
 <li>$A$: giá trị lớn nhất của li độ.</li>
-<li>$T$: khoảng thời gian để vật lặp lại một dao động.</li>
+<li>$T$: thời gian ngắn nhất để vật về chỗ cũ theo hướng cũ (đu ở Mở bài: $T = 3$ s).</li>
 </ul>
+<details class="tl-details">
+<summary>Đoán thử: đồ thị là hình sin, sao phương trình lại dùng côsin?</summary>
+<p>Đường hình sin là tên chung cho đồ thị của cả hàm sin lẫn hàm côsin.</p>
+<p>Hai đồ thị chỉ lệch nhau theo trục thời gian.</p>
+</details>
 
 <h4>4. Phương trình dao động điều hoà</h4>
 <p><strong>Hàm côsin · A · ω · φ</strong></p>
@@ -74,10 +82,10 @@
 <table class="tl-table">
 <thead><tr><th>Ký hiệu</th><th>Tên</th><th>Ghi nhớ</th></tr></thead>
 <tbody>
-<tr><td>$x$</td><td>li độ</td><td>vị trí so với VTCB, có thể âm</td></tr>
+<tr><td>$x$</td><td>li độ</td><td>có thể âm</td></tr>
 <tr><td>$A$</td><td>biên độ</td><td>$A \gt 0$, không đổi</td></tr>
-<tr><td>$\omega$</td><td>tần số góc</td><td>đơn vị rad/s</td></tr>
-<tr><td>$\omega t + \varphi$</td><td>pha</td><td>cho biết trạng thái lúc $t$</td></tr>
+<tr><td>$\omega$</td><td>tần số góc</td><td>đơn vị rad/s<br>$\omega = \dfrac{2\pi}{T}$</td></tr>
+<tr><td>$\omega t + \varphi$</td><td>pha</td><td>cho biết vị trí và chiều chuyển động lúc $t$</td></tr>
 <tr><td>$\varphi$</td><td>pha ban đầu</td><td>pha lúc $t = 0$</td></tr>
 </tbody>
 </table>
@@ -85,6 +93,8 @@
 <details class="tl-details">
 <summary>Đoán thử: đổi $\varphi$ thì đồ thị đổi thế nào?</summary>
 <p>Đồ thị giữ nguyên hình dạng, chỉ dịch sang trái hoặc phải.</p>
+<p>Tăng $\varphi$ thì đồ thị dịch sang <strong>trái</strong>.</p>
+<p>Ví dụ: đồ thị ứng với $\varphi = \dfrac{\pi}{2}$ lệch sang trái $\dfrac{T}{4}$ so với đồ thị ứng với $\varphi = 0$.</p>
 </details>
 
 <h4>5. Liên hệ với chuyển động tròn đều</h4>
@@ -92,16 +102,22 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l11-daodongdieuhoa-03">
 <p class="tl-label">🔬 Ví dụ: cái bóng của van xe đạp</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> dựng bánh xe đạp thẳng đứng, quay đều. Chiếu đèn pin từ phía trước để van xe in bóng lên tường.</li>
-<li><strong>Quan sát:</strong> van xe chạy vòng tròn, còn <strong>cái bóng của nó chạy qua lại</strong> theo một đường thẳng.</li>
+<li><strong>Làm:</strong> dựng bánh xe đạp thẳng đứng, quay đều. Chiếu đèn pin song song với mặt bánh xe để bóng van xe in lên tường.</li>
+<li><strong>Quan sát:</strong> van xe chạy vòng tròn, còn <strong>bóng của nó chạy qua lại</strong> theo một đường thẳng.</li>
 <li><strong>Rút ra:</strong> hình chiếu của chuyển động tròn đều lên một đường thẳng là <strong>dao động điều hoà</strong>.</li>
 </ol>
 </div>
 {{FIG3}}
 <ul>
 <li>$M$ quay đều tốc độ góc $\omega$, bán kính $OM = A$.</li>
-<li>Hình chiếu $Q$ dao động điều hoà: $x = A\cos(\omega t + \varphi)$.</li>
+<li>Lúc $t = 0$, $OM$ hợp với trục $Ox$ góc $\varphi$.</li>
+<li>Hình chiếu $Q$ của $M$ lên trục $Ox$: $x = A\cos(\omega t + \varphi)$.</li>
 </ul>
+<details class="tl-details">
+<summary>Đoán thử: $Q$ ở biên khi $M$ ở đâu?</summary>
+<p>Khi $M$ ở hai đầu đường kính nằm trên trục $Ox$.</p>
+<p>Từ biên này sang biên kia, $M$ quay nửa vòng, mất $\dfrac{T}{2}$.</p>
+</details>
 
 <h3>III. Bẫy hay gặp</h3>
 <table class="tl-table">
@@ -109,7 +125,7 @@
 <tbody>
 <tr><td>Li độ $x$ là quãng đường đã đi</td><td>$x$ là vị trí so với VTCB, có thể âm</td></tr>
 <tr><td>Biên độ có thể âm</td><td>$A \gt 0$; dấu trừ nằm ở pha</td></tr>
-<tr><td>Hết một chu kì thì $x$ bằng 0</td><td>hết một chu kì vật trở về đúng trạng thái cũ</td></tr>
+<tr><td>Hết một chu kì thì $x$ bằng 0</td><td>hết một chu kì vật về đúng vị trí cũ, theo chiều cũ</td></tr>
 </tbody>
 </table>
 <div class="tl-box tl-box--think">
@@ -133,7 +149,7 @@
 <input type="radio" name="tl1-q2" id="tl1-q2c"><label for="tl1-q2c" class="tl-opt tl-no">C. $6$ cm</label>
 <input type="radio" name="tl1-q2" id="tl1-q2d"><label for="tl1-q2d" class="tl-opt tl-no">D. $2$ cm</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Biên độ luôn dương. Dấu trừ có thể viết lại thành pha: $-\cos\alpha = \cos(\alpha + \pi)$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Biên độ là giá trị lớn nhất của li độ, nên nó có thể âm không? Con số đứng trước côsin cho em gợi ý.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Biên độ là giá trị lớn nhất của li độ, nên nó có thể âm không? Đưa dấu trừ vào pha ($-\cos\alpha = \cos(\alpha + \pi)$) rồi mới đọc $A$.</p></div>
 </div>
 </div>
 
@@ -152,9 +168,11 @@
 <summary>Viết phương trình dao động điều hoà, nêu tên từng ký hiệu.</summary>
 <p>$x = A\cos(\omega t + \varphi)$</p>
 <ul>
-<li>$x$: li độ · $A$: biên độ</li>
+<li>$x$: li độ</li>
+<li>$A$: biên độ</li>
 <li>$\omega$: tần số góc (rad/s)</li>
-<li>$\omega t + \varphi$: pha · $\varphi$: pha ban đầu</li>
+<li>$\omega t + \varphi$: pha</li>
+<li>$\varphi$: pha ban đầu</li>
 </ul>
 </details>
 <details class="tl-details">
@@ -207,8 +225,9 @@
 <ul>
 <li><strong>Con lắc đồng hồ:</strong> dao động tuần hoàn, lặp đều để đếm giờ.</li>
 <li><strong>Dây đàn ghi-ta:</strong> dao động nhanh, cho ta nghe âm.</li>
-<li><strong>Pít-tông động cơ:</strong> chạy lên xuống nhờ trục khuỷu quay, gần giống cái bóng của van xe.</li>
+<li><strong>Pít-tông động cơ:</strong> chạy lên xuống nhờ trục khuỷu quay (trục có tay quay mà đầu tay quay chạy vòng tròn), nên gần giống cái bóng của van xe.</li>
 </ul>
+<p>⚠ Đi từ biên này sang biên kia chưa phải trọn một chu kì.</p>
 <details class="tl-details">
 <summary>🧩 Thử thách</summary>
 <p>Điểm $M$ quay đều một vòng hết 2 s, bán kính $A = 10$ cm. Hình chiếu $Q$ mất bao lâu để đi từ biên này sang biên kia?</p>
@@ -221,6 +240,6 @@
 <li>Tuần hoàn: <strong>lặp sau khoảng thời gian bằng nhau</strong>.</li>
 <li>Điều hoà: $x = A\cos(\omega t + \varphi)$.</li>
 <li>Đồ thị: <strong>hình sin</strong>.</li>
-<li>Hình chiếu của chuyển động tròn đều: <strong>$R = A$, tốc độ góc $= \omega$</strong>.</li>
+<li>Hình chiếu của chuyển động tròn đều: <strong>bán kính $= A$</strong> và <strong>tốc độ góc $= \omega$</strong>.</li>
 </ul>
 </div>

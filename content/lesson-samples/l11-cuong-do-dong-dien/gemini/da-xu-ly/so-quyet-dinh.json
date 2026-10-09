@@ -1,0 +1,158 @@
+{
+  "bai": "l11-cuong-do-dong-dien",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Rút ra của TN2 ghi rõ điều kiện: dòng không đổi ($I$ giữ nguyên theo thời gian, xem mục 3) thì mới có $\\Delta q = I\\Delta t$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển nguyên khung 'Sai số đến từ đâu?' xuống ngay sau câu tự kiểm tra 3, không đổi nội dung khung."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ 1 mAh = 10⁻³ A·3600 s = 3,6 C, tách thành dòng riêng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có câu 'độ dốc là I'."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Rút ra TN1 thêm: dấu − chỉ báo chiều dòng đảo theo cực nguồn, độ lớn vẫn 0,30 A."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục tiêu ghi 'mật độ hạt tải n' và dòng $j$ ở II.4 thêm đối chiếu đơn vị A/m² với m⁻³ của $n$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước mỗi hạt đi được $v\\Delta t$ và thể tích trụ $Sv\\Delta t$, ghi $N$ = mật độ nhân thể tích."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có câu 'Phải: dòng một chiều sau chỉnh lưu...'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm hàng vào bảng 2 cột không đổi/một chiều mà thêm dòng ⚠ định nghĩa xoay chiều (chiều đổi qua lại, đồ thị cắt trục t) ngay trước câu 6."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi câu 5 ghi rõ số liệu lấy từ dây 1,5 mm² ở mục II.4."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ví dụ trong bảng Bẫy 3 thành 90 mC trong 1 phút để không trùng số liệu câu 7."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B câu 7 sửa thành: 300/120 = 2,5 mC/s tức 2,5 mA, lỗi là gắn đơn vị A."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 3 giải thích bằng lời: ampe kế gần như không cản dòng, nối thẳng vào pin thì dòng rất lớn, hỏng pin và ampe kế."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mang về thống nhất 'dây điện thường dưới 1 mm/s', tách ý tín hiệu sang dòng riêng."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ cụm 'va chạm trong mỗi đơn vị tiết diện', nói mỗi mm² dây chở nhiều dòng hơn nên nóng hơn, giải thích sâu để bài điện trở."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở bài sửa thành kim nhảy lên 9 rồi giảm dần về 4, ví dụ ở II.1 trả lời 9 A là 9 C mỗi giây so với 4 C."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi đã tách rõ tốc độ lan điện trường với tốc độ trôi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ 'Đổi phút ra giây trước khi nhân.' trước câu 2."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Việc đổi phút ra giây đã nhấn ở ⚠ câu 2 cùng mục, thêm ⚠ riêng sẽ lộ cách ra 12 C."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ 'Cùng I chưa chắc cùng v: S nằm ở mẫu' trước câu 4."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'Tăng I trong cùng dây là tăng v, không phải n'."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đáp án sai A đã được nhấn bằng định nghĩa và bảng Bẫy 2."
+      },
+      {
+        "id": "q-cau6-C",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ định nghĩa xoay chiều trước câu 6 (gộp với c9)."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 (số mới) vẫn nhấn việc đổi mC ra C và phút ra s."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 4 và phản hồi của nó đã nhấn S gấp đôi thì v giảm một nửa."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục I: 'kim nhảy từ 4 lên 9' → 'kim nhảy lên 9, vài giờ sau giảm dần về 4'.",
+      "II.1 ví dụ: thay 2 A, 2 C/s, 1,25·10¹⁹ electron bằng 9 A, 9 C/s, cỡ 5,6·10¹⁹ electron (9/1,6·10⁻¹⁹), lúc 4 A là 4 C.",
+      "II.1: bỏ dòng 'Mẹo nhớ: Ampe là cu-lông mỗi giây' vì trùng dòng 1 A = 1 C/s.",
+      "TN1 Rút ra: dấu − chỉ báo chiều đảo, độ lớn vẫn 0,30 A.",
+      "Câu 2 phản hồi đúng: 'cường độ dòng điện chỉ cần I và thời gian' → 'điện lượng chỉ cần I và thời gian'.",
+      "TN2 Rút ra: thêm điều kiện dòng không đổi và 1 mAh = 10⁻³ A·3600 s = 3,6 C.",
+      "Khung 'Sai số đến từ đâu?' chuyển xuống sau câu 3, nội dung giữ nguyên.",
+      "II.3: bỏ dòng 🔑 thứ hai 'Không đổi = chiều và cường độ đều không đổi' vì lặp ý gạch đầu dòng ngay dưới.",
+      "II.4: thêm quãng đi $v\\Delta t$ và thể tích trụ $Sv\\Delta t$, dòng $j$ thêm đối chiếu với $n$ (m⁻³).",
+      "Thêm dòng ⚠ trước các câu 2, 4 và 6.",
+      "Bẫy 1: bỏ hàng thứ ba của bảng vì lặp ý hàng một.",
+      "Câu 5 phản hồi đúng: ghi rõ 0,049 → 0,098 mm/s là của dây 1,5 mm² ở II.4.",
+      "Bẫy 3 bảng: ví dụ 300 mC/2 phút đổi thành 90 mC/1 phút ($I = 0{,}090/60$).",
+      "Bẫy 3 bảng hàng 3: giải thích bằng 'gần như không cản dòng, dòng rất lớn' thay cho 'điện trở rất nhỏ, đoản mạch'.",
+      "Câu 7 phản hồi B: 2,5 mC/s = 2,5 mA, lỗi là gắn đơn vị A.",
+      "VI Nghĩ nhanh: giải thích dây nóng bằng $j$ lớn (mỗi mm² chở nhiều dòng hơn), bỏ cụm 'va chạm trong mỗi đơn vị tiết diện'.",
+      "Mang về: tốc độ trôi 'cỡ phần mười đến vài mm/s' → 'dây điện thường dưới 1 mm/s'."
+    ],
+    "so_tu_them": 50,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-cuong-do-dong-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  }
+}

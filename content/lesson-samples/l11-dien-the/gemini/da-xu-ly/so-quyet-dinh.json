@@ -1,0 +1,116 @@
+{
+  "bai": "l11-dien-the",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ vế mơ hồ $q=A/V$, chỉ giữ $W_M=qV_M$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào dòng Mốc: chọn mốc khác (ví dụ một bản cực) thì thay $A_{M\\infty}$ bằng công đưa q từ M tới mốc, và sửa đáp án Trả bài 2 cho khớp."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đưa định nghĩa 1 eV = 1,6·10⁻¹⁹ J ra danh sách hiện ngay dưới khung hiệu điện thế, bỏ khỏi ô ẩn."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4 ghi d là hình chiếu có dấu (dương khi N lệch theo chiều đường sức) và U là $U_{MN}$, thống nhất với mục 1."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm $d=MN\\cos\\alpha$ với α là góc giữa MN và đường sức ngay trong đoạn Bẫy 2; ví dụ số đã có ở Câu 5 nên không thêm."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu 'đường sức hướng từ bản dương sang bản âm' vào bước b của lời giải (trong details) thay vì thêm dòng bảng, để không tăng chữ hiện ngay."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Xoá ghi chú nội bộ; số liệu bugi (khe ~0,8 mm, hàng chục kV, cỡ 10⁷ V/m) đúng bậc độ lớn."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 viết rõ $A=qU$, giải thích $e\\cdot1$ V = 1 eV, rồi đổi ra J trên dòng riêng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 7 ghi rõ $U_{+-}=V_+-V_-$, phản hồi C nói −120 V là do đảo thứ tự hai điểm."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn, và thêm ⚠ trước câu dự đoán sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn (dòng 🔑 và ví dụ cầu thang) nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: electron có q = −e, giữ đủ dấu của q và $U_{MN}$."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã ghi d tính bằng mét và mục sát trần nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (thiếu thẻ strong), và bài vốn đã nhấn ở Bẫy 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 5 nhắc dùng cos α, không phải sin α (kèm sửa c5)."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua tiêu đề 'đổi điểm đầu' và bước c lời giải."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 'Đổi mốc: mọi V đổi, U giữ nguyên'."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2: bỏ công thức mơ hồ $q=A/V$, chỉ giữ $W_M=qV_M$.",
+      "Mục II.2 dòng Mốc: thêm ý mốc tuỳ chọn, $V_M$ = công đưa q từ M tới mốc chia q (thay cho $A_{M\\infty}$); Trả bài 2 sửa theo.",
+      "Mục II.3: định nghĩa 1 eV = 1,6·10⁻¹⁹ J chuyển từ details ra danh sách hiện ngay.",
+      "Thêm dòng ⚠ trước Câu 2: electron q = −e, giữ đủ dấu của q và $U_{MN}$.",
+      "Mục II.4: U là $U_{MN}$, d là hình chiếu có dấu (dương khi N lệch theo chiều đường sức, âm khi ngược lại).",
+      "Bẫy 2: thêm $d=MN\\cos\\alpha$ (α là góc giữa MN và đường sức), thêm dòng ⚠ cos không phải sin trước Câu 5.",
+      "Lời giải mẫu bước b: nêu đường sức hướng từ bản dương sang bản âm.",
+      "Bước 3 bài điền khuyết: $A=(-e)(0-200\\ \\text{V})=200$ eV vì $e\\cdot1$ V = 1 eV, đổi ra $3{,}2\\cdot10^{-17}$ J (số không đổi).",
+      "Câu 7: đề ghi rõ $U_{+-}=V_+-V_-$, phản hồi C chẩn đoán −120 V là do đảo thứ tự $V_--V_+$.",
+      "Mục VI: xoá ghi chú '(số cỡ, chưa kiểm nguồn)' ở bugi, giữ nguyên số liệu."
+    ],
+    "so_tu_them": -4,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-the/gemini/da-xu-ly/theory.src.202610091140.html"
+  }
+}
