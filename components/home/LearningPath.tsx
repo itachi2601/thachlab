@@ -47,6 +47,17 @@ const stages = [
     checkpoints: ["Giải bài nhiệt, khí", "Hiểu từ trường", "Luyện đề theo cấu trúc thi"],
     image: "/images/learning-path/vat-ly-12.jpg",
   },
+  {
+    grade: "Luyện thi chuyên & HSG",
+    classHref: "/lop-hoc/khtn-9?subject=hsg-vat-ly",
+    articleHref: "/blog/lo-trinh-hoc-khtn-9-phan-vat-ly-thi-chuyen",
+    focus: "Vật lí lớp 9 nâng cao: vào lớp 10 chuyên, học sinh giỏi",
+    detail:
+      "Các chuyên đề theo đề cương HSG KHTN 9: lý thuyết nâng cao, bài tập mẫu từng dạng có hướng dẫn từng bước, rồi luyện đề.",
+    topics: ["Công – cơ năng", "Điện", "Quang học", "Nhiệt", "Điện từ"],
+    checkpoints: ["Nắm chuyên đề nâng cao", "Làm được từng dạng", "Luyện đề thi chuyên, HSG"],
+    image: "/images/learning-path/khtn-9-vat-ly.webp",
+  },
 ];
 
 export default function LearningPath() {
@@ -54,7 +65,7 @@ export default function LearningPath() {
     <section id="learning-path" className="scroll-mt-20 border-t border-line py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Lộ trình lớp 9–12</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Lộ trình lớp 9–12 và thi chuyên</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Mỗi lớp học gì?
           </h2>
@@ -117,7 +128,7 @@ export default function LearningPath() {
                       href={s.classHref}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
                     >
-                      Vào lớp {s.grade.replace(/^Lớp /, "")} <ArrowRight size={16} />
+                      {s.classHref.includes("subject=") ? "Vào khoá" : `Vào lớp ${s.grade.replace(/^Lớp /, "")}`} <ArrowRight size={16} />
                     </Link>
                     <Link
                       href={s.articleHref}

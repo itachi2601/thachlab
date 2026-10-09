@@ -7,9 +7,13 @@ export const ACADEMIC_SUBJECTS = [
 
 export type AcademicSubjectCode = (typeof ACADEMIC_SUBJECTS)[number]["code"];
 
+// Khoá HSG & chuyên có lối vào riêng (thẻ ở /lop-hoc + menu trên cùng) nên không nằm trong hàng tab môn của KHTN 9.
+export const HSG_SUBJECT_CODE = "hsg-vat-ly";
+export const HSG_HREF = `/lop-hoc/khtn-9?subject=${HSG_SUBJECT_CODE}`;
+
 export function subjectsForGrade(grade: string) {
   void grade; // điểm mở rộng để giới hạn môn theo khối khi có cấu hình riêng
-  return ACADEMIC_SUBJECTS;
+  return ACADEMIC_SUBJECTS.filter((subject) => subject.code !== HSG_SUBJECT_CODE);
 }
 
 export function academicSubject(code: string | null | undefined) {

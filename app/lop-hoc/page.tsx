@@ -42,7 +42,7 @@ import {
 } from "@/services/content";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
-import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
+import { HSG_HREF, HSG_SUBJECT_CODE, academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
 import { fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
 import dynamic from "next/dynamic";
@@ -116,6 +116,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [chapterMastery, setChapterMastery] = useState<Map<number, Map<number, MasteryLevel>>>(new Map());
   const chapterMasteryFetching = useRef<Set<number>>(new Set());
 
+  // ?subject= đổi được khi bấm menu trên cùng trong cùng trang (KHTN 9 ↔ Luyện thi chuyên & HSG)
+  const subjectParam = searchParams.get("subject");
+  useEffect(() => {
+    setActiveSubjectCode(["hoa-hoc", "sinh-hoc", HSG_SUBJECT_CODE].includes(subjectParam ?? "") ? subjectParam! : "vat-ly");
+    setCollapsedChapters(new Set());
+  }, [subjectParam]);
+
   // link cũ /lop-hoc?tab=cttc → luồng CTTC riêng
   useEffect(() => {
     if (searchParams.get("tab") === "cttc") router.replace("/lop-hoc/cttc");
@@ -125,9 +132,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const savedLessonId = Number(window.localStorage.getItem(LAST_LESSON_KEY));
     if (savedLessonId > 0) setLastLessonId(savedLessonId);
     const requestedSubject = new URLSearchParams(window.location.search).get("subject");
-    if (["vat-ly", "hoa-hoc", "sinh-hoc"].includes(requestedSubject ?? "")) {
-      setActiveSubjectCode(requestedSubject!);
-    }
     const chapterParam = Number(new URLSearchParams(window.location.search).get("chapter"));
     if (chapterParam > 0) setRequestedChapterId(chapterParam);
 
@@ -224,7 +228,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const subjectCode = classGrade(active?.name ?? "") === "9" ? activeSubjectCode : "vat-ly";
   const activeDisplayName = active
     ? classGrade(active.name) === "9"
-      ? `KHTN 9 · ${academicSubject(subjectCode).label}`
+      ? subjectCode === HSG_SUBJECT_CODE
+        ? academicSubject(subjectCode).label
+        : `KHTN 9 · ${academicSubject(subjectCode).label}`
       : `Vật lý ${classGrade(active.name) ?? active.name}`
     : undefined;
   const displayClasses = classes ? displayClassesByGrade(classes) : [];
@@ -653,7 +659,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       {grade && GRADE_DESCRIPTIONS[grade] && (
                         <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
                       )}
-                      {grade === "9" && (
+                      {grade === "9" && activeSubjectCode === HSG_SUBJECT_CODE && (
+                        <p className="lesson-lead">
+                          <Link href="/lop-hoc/khtn-9" className="lesson-link">
+                            <ArrowLeft size={14} /> Về KHTN 9
+                          </Link>
+                        </p>
+                      )}
+                      {grade === "9" && activeSubjectCode !== HSG_SUBJECT_CODE && (
                         <div className="class-subjects" role="tablist" aria-label="Môn học">
                           {subjectsForGrade("9").map((subject) => (
                             <button
@@ -829,6 +842,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     </Link>
                   );
                 })}
+                <Link href={HSG_HREF} className="hub-card">
+                  <span className="hub-tile">🏆</span>
+                  <span className="hub-card-body">
+                    <span className="hub-card-title">Luyện thi chuyên & HSG</span>
+                    <span className="hub-card-desc">Vật lí lớp 9: ôn thi vào lớp 10 chuyên, học sinh giỏi</span>
+                  </span>
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             )}
             <p className="hub-switch">

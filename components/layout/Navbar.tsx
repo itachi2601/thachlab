@@ -19,6 +19,7 @@ type NavLink = { label: string; href: string; audience?: "guest-student" };
 
 const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
+  { label: "Thi chuyên & HSG", href: "/lop-hoc/khtn-9?subject=hsg-vat-ly" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
@@ -39,6 +40,7 @@ const THPT_QUICK_LINKS = [
   { label: "Vật lý 10", href: "/lop-hoc/lop-10" },
   { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
   { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
+  { label: "Thi chuyên & HSG", href: "/lop-hoc/khtn-9?subject=hsg-vat-ly" },
   { label: "Bảng xếp hạng", href: "/lop-hoc/xep-hang" },
 ];
 
