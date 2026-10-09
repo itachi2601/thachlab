@@ -7,7 +7,7 @@ description: Tìm, kiểm chứng và đăng TIN TỨC Vật lí / học thuật
 
 Đầu ra: file `scripts/data/tin-tuc/<yyyy-mm-dd>-<slug>.json` (mẫu: `_mau.json.txt`). Đăng bằng `scripts/dang-tin-tuc.mts` → bảng `posts` (RPC `create_post_with_targets`, như trang `/quan-tri/bai-dang`) → hiện ở `/tin-tuc`. **Trang `/tin-tuc` đọc Supabase lúc chạy nên đăng xong là thấy, không cần `deploy.sh`.**
 
-Tin ≠ Blog: tin ngắn (80–200 chữ, hiển thị thẳng trong thẻ). Muốn phân tích sâu → viết bài `content/blog/*.md`, không dùng skill này.
+Tin ≠ Blog: tin ngắn (80–200 chữ, hiển thị thẳng trong thẻ). Muốn phân tích sâu → viết bài `content/blog/*.md`, không dùng skill này; bài giải thích hiện tượng đời sống cho HS → skill `vat-ly-quanh-ta`.
 
 ## Quy trình
 
