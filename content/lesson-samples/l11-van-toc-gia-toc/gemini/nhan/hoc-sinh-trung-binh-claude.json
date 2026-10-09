@@ -1,0 +1,246 @@
+{
+  "bai": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: xích đu, con lắc, cửa trượt",
+      "trich_nguyen_van": "trên quỹ đạo con lắc, chỗ nào tốc độ lớn nhất?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi nói 'con lắc', ngay trước đó là con lắc lò xo trên bàn, nhưng phương án lại nói 'điểm cao nhất', 'chỗ thấp nhất'. Con lắc lò xo nằm ngang không có cao thấp nên em không biết đang hỏi vật nào.",
+      "de_xuat": "Ghi rõ 'trên quỹ đạo ghế xích đu (con lắc đơn)', hoặc thêm 'chỗ thấp nhất ứng với vị trí cân bằng O'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Vận tốc",
+      "trich_nguyen_van": "$|a|=\\omega^{2}|x|$ đổi theo chỗ đứng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức gia tốc xuất hiện trước mục 2. Gia tốc nên em chưa biết nó từ đâu ra.",
+      "de_xuat": "Chuyển khối 'Vì sao không có nhanh dần đều' xuống sau mục 2, hoặc ghi '(xem mục 2)'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Vận tốc",
+      "trich_nguyen_van": "Tại $x=2{,}0$ cm: tốc độ $27{,}21$ cm/s, $a=-123{,}4$ cm/s².",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Số này nằm ở bước 'Quan sát' nên em tưởng đo được. Thực ra nó tính bằng hệ thức mục 4 và $a=-\\omega^{2}x$ mục 2, đều chưa học. Vì vậy bước 'Rút ra' $a=-\\omega^{2}x$ thành vòng tròn.",
+      "de_xuat": "Ghi rõ 'tính từ $|v|=\\omega\\sqrt{A^2-x^2}$ và $a=-\\omega^2x$ (học ở mục 2, 4)', và đổi 'Rút ra' thành 'Kiểm tra'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "1. Vận tốc",
+      "trich_nguyen_van": "Lệch $v_{max}$ giữa lần 3 và lần 4 chỉ $0{,}55$ cm/s — nhỏ hơn phần do thước.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không ghi 'phần do thước' bằng bao nhiêu (≈0,79 cm/s) nên em không so sánh được. Trong phần xem thêm cũng không giải thích vì sao với $a$ phải lấy $2\\Delta T/T$.",
+      "de_xuat": "Thêm 'phần do thước $=0{,}025\\times31{,}42\\approx0{,}79$ cm/s' và một câu 'T bình phương trong $\\omega^2$ nên nhân 2'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Gia tốc",
+      "trich_nguyen_van": "Đỉnh của $v$ lệch trước đỉnh của $x$ đúng một phần tư chu kì.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng ngay trên ghi $x$ đạt đỉnh lúc $t=0$ còn $v=+A\\omega$ lúc $3T/4$. Em đọc thành đỉnh $v$ đến SAU đỉnh $x$ ba phần tư chu kì, mâu thuẫn với 'sớm'.",
+      "de_xuat": "Nói rõ đỉnh $v$ gần nhất trước $t=0$ là ở $t=-T/4$, tức là $3T/4$ của chu kì trước."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Quan hệ pha và vị trí đặc biệt",
+      "trich_nguyen_van": "Dấu $\\mp$ ở gia tốc nghĩa là $a$ trái dấu với $x$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ giải thích dấu ∓ của $a$. Em sẽ hiểu dấu ± của $v$ đi theo dấu $x$, tức tại $+A/2$ thì $v=+v_{max}\\sqrt3/2$.",
+      "de_xuat": "Thêm câu 'Dấu ± của $v$ không theo dấu $x$ mà theo chiều chuyển động: đi chiều dương thì $v>0$'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Quan hệ pha và vị trí đặc biệt",
+      "trich_nguyen_van": "$v_{max}$ dưới đây là $A\\omega$, $a_{max}$ là $A\\omega^{2}$.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục 1 và bẫy 1 dạy $v_{max}=+A\\omega$ chỉ khi qua O theo chiều dương, khác với $|v|_{max}$. Ở đây và ở bẫy 3, câu 7 lại dùng $v_{max}$ như độ lớn. Em không biết lúc nào $v_{max}$ có dấu.",
+      "de_xuat": "Ở mục 3 và bẫy 3 dùng $|v|_{max}$, $|a|_{max}$ cho thống nhất với bảng 'Lẫn v với tốc độ'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Quan hệ pha và vị trí đặc biệt",
+      "trich_nguyen_van": "Cùng dương: $T/4$. Cùng âm: thêm $T/4$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không chỉ khoảng nào $v$ và $a$ cùng âm. Em phải tự ghép $(0;T/2)$ với $(0;T/4)\\cup(3T/4;T)$ mới ra.",
+      "de_xuat": "Ghi khoảng cụ thể: cùng dương $T/2\\to3T/4$, cùng âm $0\\to T/4$, kèm ý 'cùng dấu = đang về O'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Hệ thức độc lập với thời gian",
+      "trich_nguyen_van": "$x=A\\cos\\theta$, $v=-A\\omega\\sin\\theta$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu $\\theta$ xuất hiện mà không nói là gì. Em không biết nó có liên quan tới $\\omega t+\\varphi$ không.",
+      "de_xuat": "Thêm 'với $\\theta=\\omega t+\\varphi$'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Thời gian tới vị trí đặc biệt",
+      "trich_nguyen_van": "Thời gian ngắn nhất từ $x=0$ tới các mốc (vòng tròn lượng giác):",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bảng thời gian đưa ra luôn, không có bước đổi vị trí ra góc quét rồi ra thời gian. Bảng góc đặt sau và không nối với bảng trên, nên em chỉ học thuộc mà không tự suy được mốc khác.",
+      "de_xuat": "Thêm một dòng mẫu: 'O tới $A/2$: góc quét $\\pi/6$, $\\Delta t=\\frac{\\pi/6}{2\\pi}T=T/12$' trước bảng."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "5. Thời gian tới vị trí đặc biệt",
+      "trich_nguyen_van": "$\\cos\\theta=\\sqrt{2}/2$ lệch khỏi góc vuông một góc $\\pi/4$, tức $T/8$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu vì sao 'góc vuông' lại ứng với O, và vì sao góc lệch $\\pi/4$ thì ra $T/8$.",
+      "de_xuat": "Viết: 'O ứng với pha $\\pi/2$; $\\sqrt2/2$ ứng với pha $\\pi/4$; quét $\\pi/4$ là $1/8$ vòng, tức $T/8$'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "3. Lẫn v_max với tốc độ truyền",
+      "trich_nguyen_van": "Tốc độ truyền sóng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chương 1 chưa học sóng nên em không biết 'tốc độ truyền' là gì và bẫy này lẫn với cái gì.",
+      "de_xuat": "Thêm một câu: 'sóng (học ở chương sau) là dao động lan đi; tốc độ lan khác tốc độ của từng phần tử'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "3. Lẫn v_max với tốc độ truyền",
+      "trich_nguyen_van": "Con lắc có $A=2$ cm, $f=5$ Hz. Tốc độ cực đại của vật là bao nhiêu?",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề bẫy là lẫn với tốc độ truyền, nhưng không phương án nào kiểm tra lỗi đó. Câu hỏi thực chất kiểm tra $\\omega=2\\pi f$, mà công thức này chỉ xuất hiện trong phản hồi.",
+      "de_xuat": "Nhắc $\\omega=2\\pi f$ trong bảng trên câu hỏi, hoặc thêm một phương án nhiễu kiểu 'tốc độ truyền sóng'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "c) Thời gian từ biên dương tới $x=2$ cm.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bảng mục 5 chỉ có 'Từ O tới'. Em tra $A/2$ ra ngay $T/12$ mà không biết phải lấy từ biên.",
+      "de_xuat": "Thêm vào mục 5 một dòng 'Từ biên tới $A/2$: $T/4-T/12=T/6$' và cảnh báo phân biệt mốc xuất phát từ O hay từ biên."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$t=0$ ở biên dương",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi thẳng $\\varphi=0$, em không thấy bước $A\\cos\\varphi=A$ nên $\\cos\\varphi=1$. Vì thế em không tự làm được câu 'Thử sức' với $\\varphi=\\pi$.",
+      "de_xuat": "Ghi '$x(0)=A\\cos\\varphi=A\\Rightarrow\\varphi=0$' trong cột Dữ liệu."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Piston, kim đồng hồ: $|a|$ lớn nhất ở hai biên hành trình.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Kim đồng hồ quay tròn, không có biên. Em không biết 'biên hành trình' của kim đồng hồ ở đâu.",
+      "de_xuat": "Đổi 'kim đồng hồ' thành 'quả lắc đồng hồ'."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "nếu là đoạn thẳng qua gốc thì dao động đang điều hoà",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu này thiếu điều kiện độ dốc, nên em nghĩ đường thẳng dốc lên qua gốc cũng là điều hoà.",
+      "de_xuat": "Ghi 'đoạn thẳng qua gốc, dốc xuống (hệ số $-\\omega^2$)'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất 'chỗ cao, tích được đà' với tốc độ lớn, lẫn độ cao với tốc độ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai đầu cao là biên, tốc độ bằng 0 rồi mới đổi chiều."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên dấu trừ trong $v=-A\\omega\\sin$, hoặc nghĩ qua O thì $v=+A\\omega$ mà không xét chiều.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ $x$ lớn nhất thì $a$ lớn nhất, lẫn $a_{max}$ với $|a|_{max}$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đừng lẫn $a_{max}$ với $|a|_{max}$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ dãy 12·8·6·4 nhưng ghép nhầm $\\sqrt2$ với $\\sqrt3$, vì hai mốc gần giống nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mốc $A\\sqrt{2}/2$ nằm giữa $A/2$ và $A\\sqrt{3}/2$."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Coi 'lớn nhất' luôn là số dương, bỏ chiều chuyển động.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "v có dấu · |v| không âm"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ được chữ 'không đều' nhưng vẫn nghĩ gia tốc cùng chiều chuyển động.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra biên: $\\vec v$ và $\\vec a$ ngược chiều, chậm dần."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dùng $f$ thay cho $\\omega$, tính $A\\cdot f$; bài chưa nhắc $\\omega=2\\pi f$ trước câu hỏi.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Suy tuyến tính: $x=A/2$ thì $|v|=v_{max}/2$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thế $x=A/2$ thì $(1/2)^{2}+(v/A\\omega)^{2}=1$, nên $|v|=A\\omega\\sqrt{3}/2$."
+    },
+    {
+      "cau": "Bài toán mẫu c)",
+      "dap_an_sai_hap_dan": "T/12",
+      "loi_tu_duy": "Tra bảng 'Từ O tới $\\pm A/2$' trong khi mốc xuất phát là biên.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Điền bước còn thiếu",
+      "dap_an_sai_hap_dan": "v = +20√2 cm/s",
+      "loi_tu_duy": "Không đổi 'đi về O từ biên dương' thành chiều âm; lời giải chỉ ghi kết quả, không nói vì sao dấu âm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Trả bài 3",
+      "dap_an_sai_hap_dan": "a_max tại biên dương",
+      "loi_tu_duy": "Ghép 'max' với $x=+A$, lẫn $a_{max}$ với $|a|_{max}$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$a_{min}=-A\\omega^{2}$ tại biên dương. $a_{max}=+A\\omega^{2}$ tại biên âm."
+    },
+    {
+      "cau": "Thử thách ⭐⭐",
+      "dap_an_sai_hap_dan": "a = −200√3 cm/s²",
+      "loi_tu_duy": "Giữ dấu âm như mẫu ở biên dương, quên $a$ trái dấu $x$ khi $x<0$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dấu $\\mp$ ở gia tốc nghĩa là $a$ trái dấu với $x$."
+    }
+  ]
+}

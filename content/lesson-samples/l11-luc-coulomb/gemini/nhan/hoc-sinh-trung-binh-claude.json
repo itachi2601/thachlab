@@ -1,0 +1,180 @@
+{
+  "bai": "Bài 16. Lực tương tác giữa hai điện tích",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Số liệu minh hoạ: lực giảm theo $r^2$",
+      "trich_nguyen_van": "Lực đẩy $F = (\\text{số cân})\\cdot g$, $g = 9{,}8\\ \\text{m/s}^2$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Lấy thẳng 0,92 × 9,8 ≈ 9 N, rồi nhân với r tính bằng cm. Kết quả không khớp cột F·r² (10⁻⁶ N·m²), và em không biết mình sai ở đâu.",
+      "de_xuat": "Ghi rõ: đổi số cân từ g sang kg (×10⁻³) và r từ cm sang m. Làm mẫu một hàng: 0,92·10⁻³·9,8·(0,02)² ≈ 3,61·10⁻⁶ N·m²."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Số liệu minh hoạ: lực giảm theo $r^2$",
+      "trich_nguyen_van": "Ngoài ra điện tích rò dần qua không khí ẩm, và ở $r$ nhỏ quả cầu không còn là điện tích điểm.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi là số liệu 'tính từ mô hình', và hàng r = 2 cm khớp lí thuyết. Vậy em không rõ hiệu ứng ở r nhỏ có thật trong bảng không, hay bảng là đo thật.",
+      "de_xuat": "Tách riêng hai ý. Độ lệch trong bảng chỉ do làm tròn số cân. Rò điện tích và ở r nhỏ không còn là điện tích điểm là các sai số sẽ gặp khi đo thật."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Tổng hợp lực điện",
+      "trich_nguyen_van": "Góc $\\alpha$ bất kì",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Không rõ α là góc nào: góc giữa hai vectơ lực, góc giữa các đường nối điện tích, hay góc trong tam giác hình bình hành. Mục V lại dùng α cho góc lệch của dây.",
+      "de_xuat": "Thêm ngay dưới bảng: α là góc giữa hai vectơ F₁ và F₂ khi đặt chung gốc tại q₀."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Mỗi dây lệch $\\alpha = 45^\\circ$ → $\\tan\\alpha = \\dfrac{F}{P}$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "α ở đây trùng ký hiệu với góc giữa hai lực ở mục 4. Bài cũng không nói 'lệch' là so với phương nào, nên dễ lẫn 45° với góc giữa hai dây 90°.",
+      "de_xuat": "Viết 'mỗi dây lệch α = 45° so với phương thẳng đứng' và nhắc rằng α này khác góc giữa hai lực ở mục 4."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Cân bằng của điện tích chịu nhiều lực",
+      "trich_nguyen_van": "tức $\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$. Kết quả không phụ thuộc dấu và độ lớn của $q_0$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Có tỉ số rồi nhưng không biết ghép với phương trình nào. Quiz dùng r₁ + r₂ = 8, còn bài ⭐⭐⭐ lại dùng r₂ − r₁ = 12. Em không biết khi nào cộng, khi nào trừ.",
+      "de_xuat": "Thêm một dòng: cùng dấu thì r₁ + r₂ = AB; trái dấu thì |r₁ − r₂| = AB."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Từ tam giác lực: $\\tan\\alpha = \\dfrac{F}{P}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không thấy vì sao lại là tan và vì sao F nằm ở tử số. Em cũng không rõ góc α nằm ở đâu trong tam giác lực.",
+      "de_xuat": "Thêm nửa câu: trong tam giác vuông tạo bởi P (cạnh đứng) và F (cạnh ngang), góc giữa dây và phương thẳng đứng là α, cạnh đối là F, cạnh kề là P."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "1. Nhiễm điện và thuyết electron",
+      "trich_nguyen_van": "Hệ cô lập · tổng đại số điện tích không đổi",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không chắc 'hệ cô lập' là gì và 'tổng đại số' khác 'tổng' thế nào. Ý cộng có dấu chỉ hiểu ra sau khi xem Bẫy 2.",
+      "de_xuat": "Giải thích ngắn: hệ cô lập là hệ không trao đổi điện tích với bên ngoài; tổng đại số nghĩa là cộng giữ nguyên dấu + và −."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "1. Nhiễm điện và thuyết electron",
+      "trich_nguyen_van": "đầu gần trái dấu nên bị hút mạnh hơn đầu xa bị đẩy",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ vì sao lực hút lại mạnh hơn lực đẩy. Lí do là lực giảm theo khoảng cách, nhưng định luật Coulomb chỉ được học ở mục sau.",
+      "de_xuat": "Thêm: 'vì đầu gần ở gần thước hơn, mà lực điện giảm khi khoảng cách tăng (xem mục 2)'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 3: \"điện tích lớn hơn đẩy mạnh hơn\"",
+      "trich_nguyen_van": "Quả nhẹ hơn chỉ <em>chuyển động</em> mạnh hơn (gia tốc lớn hơn), không phải chịu lực lớn hơn.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề chỉ cho điện tích, không cho khối lượng. Em có thể nghĩ quả có điện tích nhỏ hơn là 'quả nhẹ hơn'.",
+      "de_xuat": "Nói rõ: gia tốc phụ thuộc khối lượng của từng quả, không phụ thuộc điện tích; hai quả có thể nặng bằng nhau."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "2. Định luật Coulomb",
+      "trich_nguyen_van": "Lực này gọi là <strong>lực tĩnh điện</strong>.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Lực này' xuất hiện ngay sau định nghĩa điện tích điểm, khi chưa nói lực nào. Em không rõ là lực giữa điện tích điểm hay mọi lực điện.",
+      "de_xuat": "Viết: 'Lực hút hoặc đẩy giữa hai điện tích đứng yên gọi là lực tĩnh điện (lực Coulomb)'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "1. Nhiễm điện và thuyết electron",
+      "trich_nguyen_van": "Hai đầu trái dấu, đầu gần trái dấu vật kia",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đọc 'hai đầu trái dấu' có thể hiểu nhầm thành cả hai đầu đều trái dấu với vật kia.",
+      "de_xuat": "Viết: 'Hai đầu vật nhiễm điện trái dấu nhau; đầu gần vật kích thích mang dấu ngược với vật đó'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "2. Định luật Coulomb",
+      "trich_nguyen_van": "Trong điện môi lực <strong>giảm $\\varepsilon$ lần</strong>.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không biết 'điện môi' là môi trường gì (dầu, nước, không khí?). Bài chỉ định nghĩa 'hằng số điện môi'.",
+      "de_xuat": "Thêm: 'điện môi là môi trường cách điện như dầu, thuỷ tinh, nước nguyên chất'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ điện luôn phải đến từ một nguồn có sẵn (sàn, ổ điện) chứ không do electron dời chỗ khi cọ xát.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A sai vì sàn nhà bình thường trung hoà, không có sẵn điện để truyền."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ 'nhận thêm' tức là được cộng thêm điện tích dương, quên rằng electron mang điện âm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thừa electron: âm · Thiếu electron: dương"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ xử lí thay đổi khoảng cách (×4) mà quên chia cho ε khi đưa vào dầu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Trong điện môi lực giảm $\\varepsilon$ lần."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính được tỉ số 3 nhưng gán r₁ = 2, r₂ = 6 theo trực giác, đặt C gần điện tích lớn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C nằm trên đường thẳng AB, gần điện tích có độ lớn nhỏ hơn."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thay thẳng r = 3 (cm) vào công thức, không đổi sang mét.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi SI trước · Bình phương $r$ sau"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính đúng độ lớn (giảm 3 lần) nhưng giữ nguyên kết luận 'hút' như ban đầu, không xét lại dấu sau khi chia đều.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cộng đại số · Chia đều · Xét lại dấu"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cho rằng điện tích lớn hơn tác dụng lực mạnh hơn lên điện tích nhỏ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công thức chứa tích $|q_1q_2|$, đối xứng hai điện tích: đây là cặp lực–phản lực"
+    },
+    {
+      "cau": "dien_khuyet",
+      "dap_an_sai_hap_dan": "F = P·tan60° ≈ 1,73·10⁻³ N",
+      "loi_tu_duy": "Dùng luôn góc giữa hai dây (60°) thay vì góc lệch mỗi dây (30°).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mỗi dây lệch $\\alpha = 30^\\circ$; $P = 10^{-3}$ N."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho q tỉ lệ thuận với khối lượng (×4), quên rằng F tỉ lệ q² nên q chỉ tăng √4 = 2 lần.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

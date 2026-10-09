@@ -1,0 +1,143 @@
+{
+  "bai": "Bài 12. Giao thoa sóng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Cực đại và cực tiểu (hai nguồn cùng pha)",
+      "trich_nguyen_van": "Lớn nhất, $2a$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Không biết a là gì. Bài chưa hề nói a là biên độ của mỗi sóng thành phần tại M. Câu 1 lại dùng 'biên độ $a$' mà không giải thích.",
+      "de_xuat": "Thêm câu ngay dưới bảng: 'mỗi sóng tới M có biên độ a (coi như bằng nhau)'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Giao thoa ánh sáng: khe Young",
+      "trich_nguyen_van": "Ký hiệu: $a$ là khoảng cách hai khe",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục 2 vừa dùng a cho biên độ, giờ a lại là khoảng cách hai khe. Trong hộp 'Mang về' có cả '$2a$' lẫn '$i=\\dfrac{\\lambda D}{a}$', nên em dễ lẫn hai đại lượng.",
+      "de_xuat": "Đổi ký hiệu biên độ sóng thành A₀ (hoặc ghi rõ 'a ở mục 2 khác a ở khe Young')."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Giao thoa và hai nguồn kết hợp",
+      "trich_nguyen_van": "Đường trung trực của AB là cực đại k = 0.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hình 2 nằm cuối mục 1 nhưng đã dùng 'cực đại', 'cực tiểu', 'k = 0' và λ. Các khái niệm này đến mục 2 mới định nghĩa, nên em chưa hiểu k là gì.",
+      "de_xuat": "Chuyển Hình 2 xuống sau bảng điều kiện cực đại, cực tiểu ở mục 2 (hoặc sang mục 3)."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Cực tiểu: $-7{,}17\\lt k\\lt 6{,}17$, nên $k=-7,\\dots,6$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không thấy −7,17 và 6,17 từ đâu ra. Em không biết đó là 6,67 trừ 0,5 và −6,67 trừ 0,5.",
+      "de_xuat": "Viết rõ: $-6{,}67-0{,}5\\lt k\\lt 6{,}67-0{,}5$ ⇒ $-7{,}17\\lt k\\lt 6{,}17$."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Giao thoa ánh sáng: khe Young",
+      "trich_nguyen_van": "Vân sáng: $x_s=k\\,i$. Vân tối: $x_t=(k+\\tfrac12)\\,i$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài không nói x đo từ đâu. 'Vân trung tâm' và 'vân sáng bậc k' chỉ xuất hiện ở Câu 4 mà chưa định nghĩa, nên em không nối được k với 'bậc'.",
+      "de_xuat": "Thêm: 'x là khoảng cách từ vân sáng trung tâm (k = 0) đến vân; |k| là bậc của vân sáng'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Trên đoạn nối hai nguồn AB",
+      "trich_nguyen_van": "Cực tiểu làm tương tự với $(k+\\tfrac12)\\lambda$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không tự ra được vì sao hai vế đều bị trừ ½. Em có thể chép nhầm thành cộng ½.",
+      "de_xuat": "Viết thêm một dòng: $-AB\\lt(k+\\tfrac12)\\lambda\\lt AB$ ⇒ chia λ rồi trừ ½ cả ba vế."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Trên đoạn nối hai nguồn AB",
+      "trich_nguyen_van": "(hiệu hai cạnh nhỏ hơn cạnh thứ ba)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "M nằm trên đoạn AB thì không có tam giác nào, nên em không hiểu 'cạnh thứ ba' ở đâu.",
+      "de_xuat": "Thay bằng: 'M nằm giữa A và B nên $d_1+d_2=AB$, suy ra $|d_2-d_1|\\lt AB$'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "2. Cực đại và cực tiểu (hai nguồn cùng pha)",
+      "trich_nguyen_van": "Mẹo: tính $\\dfrac{d_2-d_1}{\\lambda}$. Ra số nguyên là cực đại, ra số nguyên cộng ½ là cực tiểu.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mẹo không nhắc lại điều kiện 'hai nguồn cùng pha', nên em sẽ áp dụng cả khi hai nguồn ngược pha.",
+      "de_xuat": "Ghi thêm vào mẹo: '(chỉ đúng khi hai nguồn cùng pha; ngược pha thì đổi ngược lại)'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "III. Cái bẫy: \"cực tiểu là chỗ không có sóng tới\"",
+      "trich_nguyen_van": "D. Chuyển thành cực đại của sóng còn lại",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Khi chỉ còn một sóng thì 'cực đại giao thoa' không còn nghĩa, nên em không hiểu phương án này nói gì. Em có thể chọn D vì nó nghe giống B ('dao động').",
+      "de_xuat": "Đổi D thành phương án rõ nghĩa, ví dụ 'Dao động với biên độ lớn hơn 2a'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Giao thoa trong đời sống",
+      "trich_nguyen_van": "đường đi tới hai nguồn bằng nhau",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Sóng đi từ nguồn tới điểm, nhưng câu lại nói 'đường đi tới hai nguồn', nên em không rõ là đường đi nào.",
+      "de_xuat": "Sửa thành: 'trung điểm cách đều hai nguồn, nên hiệu đường đi bằng 0'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Cực đại (đỏ) và cực tiểu (xanh) cách đều nhau λ/4",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Cách đều nhau λ/4' dễ hiểu thành mọi điểm, kể cả hai cực đại liền nhau, đều cách λ/4. Ngoài ra Hình 3 dùng đỏ/xanh cho hai sóng thành phần chứ không phải cực đại/cực tiểu, nên màu dễ lẫn.",
+      "de_xuat": "Viết: 'Cực đại và cực tiểu liền kề cách nhau λ/4; hai cực đại liên tiếp cách λ/2'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ rằng hai nguồn thì năng lượng cộng lại nên chỗ nào cũng to hơn, chưa nghĩ tới pha.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nếu mọi điểm đều như nhau thì em đâu nghe thấy chỗ to chỗ nhỏ khi đi dọc hàng ghế."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thí nghiệm bịt loa vừa nói 'tiếng to lên', nên em nghĩ to lên tức là biên độ 2a như cực đại, quên rằng chỉ còn một sóng biên độ a.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "MA = 12, MB = 15 giống hệt bài mẫu (đã ra cực đại), nên em chép kết luận cũ mà không chia cho λ mới = 2 cm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đừng nhìn hiệu đường đi 3 cm rồi kết luận. Chia cho $\\lambda$ trước"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đếm k = 1…4 cho mỗi bên được 8 mà quên giá trị k = 0 ở trung điểm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "(nhớ $k=0$)"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Làm tròn x/i = 2,5 lên 3 rồi gọi là vân sáng bậc 3, không nhận ra 'nguyên + ½' là vân tối. Bài cũng chưa định nghĩa 'bậc'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Kết quả nguyên là vân sáng, nguyên cộng ½ là vân tối."
+    }
+  ]
+}

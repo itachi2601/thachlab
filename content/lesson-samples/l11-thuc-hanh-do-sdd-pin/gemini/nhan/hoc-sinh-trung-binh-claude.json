@@ -1,0 +1,209 @@
+{
+  "bai": "Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Nhắc lại: $U = \\mathcal{E} - Ir$ là một đường thẳng",
+      "trich_nguyen_van": "$U$: hai cực pin (V), vôn kế đọc · $I$: dòng mạch (A), ampe kế đọc.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Danh sách chỉ giải thích U và I. Học sinh hay quên phải tự nhớ $\\mathcal{E}$ là suất điện động, $r$ là điện trở trong. Hai ký hiệu này đã xuất hiện từ câu 1 (\"sụt áp $Ir$\"). Mục này cũng không ghi đơn vị của chúng.",
+      "de_xuat": "Thêm vào danh sách: \"$\\mathcal{E}$: suất điện động (V) · $r$: điện trở trong của pin (Ω)\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Nhắc lại: $U = \\mathcal{E} - Ir$ là một đường thẳng",
+      "trich_nguyen_van": "$$\\Rightarrow\\; U = I(R_0 + R_x) = \\mathcal{E} - Ir$$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy vì sao $I(R_0+R_x)$ lại bằng $\\mathcal{E} - Ir$. Học sinh cũng không thấy vì sao vôn kế kẹp ở hai cực pin lại đo đúng $I(R_0+R_x)$.",
+      "de_xuat": "Chèn một dòng trung gian: \"$\\mathcal{E} = I(R_0+R_x) + Ir \\Rightarrow I(R_0+R_x) = \\mathcal{E} - Ir$, và $I(R_0+R_x)$ chính là $U$ hai cực pin\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Nhắc lại: $U = \\mathcal{E} - Ir$ là một đường thẳng",
+      "trich_nguyen_van": "Hai điểm $(I_1, U_1)$, $(I_2, U_2)$ trên đường thẳng, trừ hai phương trình cho nhau:",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết \"hai phương trình\" là hai phương trình nào. Vì vậy công thức $r$ trông như phải học thuộc.",
+      "de_xuat": "Viết ra $U_1 = \\mathcal{E} - I_1 r$ và $U_2 = \\mathcal{E} - I_2 r$, trừ vế được $U_1 - U_2 = (I_2 - I_1)r$."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "1. Nhắc lại: $U = \\mathcal{E} - Ir$ là một đường thẳng",
+      "trich_nguyen_van": "Bài 24 đã có định luật Ohm toàn mạch.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 1 bảo \"Nhớ lại bài Nguồn điện\", còn đây lại dẫn Bài 24. Học sinh không biết nên mở lại bài nào để ôn $U = \\mathcal{E} - Ir$.",
+      "de_xuat": "Thống nhất một tham chiếu, ví dụ \"bài Nguồn điện (Bài 24)\", ở cả hai chỗ."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "I. Mở bài: pin \"còn 1,5 V\" mà xe không chạy",
+      "trich_nguyen_van": "Pin cũ có $r$ cỡ $0{,}8\\ \\Omega$ nên mất cỡ $0{,}44$ V ngay trong lòng pin.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Nếu tự nhân $0{,}53 \\cdot 0{,}8$ thì được $0{,}42$ V chứ không phải $0{,}44$ V. Học sinh sẽ nghi mình tính sai.",
+      "de_xuat": "Ghi \"$Ir \\approx 0{,}53 \\cdot 0{,}8 \\approx 0{,}42$ V, cỡ $0{,}44$ V đo được\" hoặc dùng $r \\approx 0{,}83\\ \\Omega$."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Bảng số liệu mẫu và sai số",
+      "trich_nguyen_van": "Vôn kế $\\pm 0{,}01$ V, ampe kế $\\pm 0{,}002$ A.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục II.2 ghi ampe kế đọc \"tới $0{,}001$ A\", sang đây sai số lại là $\\pm 0{,}002$ A. Học sinh không biết vì sao sai số không bằng độ chia nhỏ nhất, hay hai chỗ đang mâu thuẫn.",
+      "de_xuat": "Thêm một câu: sai số dụng cụ lấy theo cấp chính xác ghi trên đồng hồ, có thể lớn hơn độ phân giải hiển thị."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Bảng số liệu mẫu và sai số",
+      "trich_nguyen_van": "dây nối, chuôi cắm, ampe kế đều có điện trở riêng — phần này đưa vào $\\Delta r$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết \"đưa vào $\\Delta r$\" là cộng thêm bao nhiêu, cộng thế nào. Học sinh cũng không rõ vì sao ampe kế, vốn nằm ở mạch ngoài, lại ảnh hưởng tới $r$.",
+      "de_xuat": "Nói rõ điện trở dây hay ampe kế làm lệch $r$ theo hướng nào, hoặc ghi \"chỉ ước lượng định tính, không tính số\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Bảng số liệu mẫu và sai số",
+      "trich_nguyen_van": "$r$ tính ra có thể lệch gấp đôi",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh dễ hiểu là $r$ có thể ra $1{,}6\\ \\Omega$. Câu ngay trước lại nói sai số chiếm 50 %, nên học sinh không biết \"gấp đôi\" liên quan thế nào tới 50 %.",
+      "de_xuat": "Đổi thành \"$r$ có thể lệch tới ±50 %, tức từ khoảng $0{,}4$ đến $1{,}2\\ \\Omega$\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "máy khớp bình phương tối thiểu cho $U = 1{,}496 - 0{,}806\\,I$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết \"bình phương tối thiểu\" là gì. Học sinh cũng không biết mình có cần làm bước này hay không.",
+      "de_xuat": "Thêm chú thích: \"(phần mềm tự kẻ đường đi gần các điểm nhất; em chỉ cần kẻ bằng thước)\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "A$(0;\\ 1{,}50)$ và B$(0{,}500;\\ 1{,}09)$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phương trình khớp cho giao trục là $1{,}496$ và hệ số góc $0{,}806$. Lời giải lại lấy A ở $1{,}50$ nên ra $r = 0{,}82$. Phần kiểm tra ghi máy cho $0{,}81$. Học sinh thấy ba giá trị $0{,}82$, $0{,}81$, $0{,}806$ cho cùng một $r$ mà không biết số nào đúng.",
+      "de_xuat": "Nói rõ $0{,}82$ có được do làm tròn khi đọc đồ thị, còn $0{,}806 \\approx 0{,}81$ là của máy; chênh lệch nằm trong $\\Delta r$."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "$$\\dfrac{\\Delta r}{r} = \\dfrac{0{,}01 + 0{,}01}{0{,}41}$$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh không biết quy tắc \"sai số tỉ đối của thương bằng tổng sai số tỉ đối\". Học sinh không hiểu vì sao tử số cộng hai lần $0{,}01$. Học sinh cũng không biết $0{,}41$ lấy từ đâu (là $1{,}50 - 1{,}09$).",
+      "de_xuat": "Thêm hai dòng: \"$r = \\Delta U/\\Delta I$ nên $\\Delta r/r = \\delta(\\Delta U)/\\Delta U + \\delta(\\Delta I)/\\Delta I$; hiệu hai số đo thì sai số cộng lại: $0{,}01+0{,}01$; $\\Delta U = 1{,}50-1{,}09 = 0{,}41$\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "mỗi $U$ đọc lệch $\\pm 0{,}01$ V, mỗi $I$ lệch $\\pm 0{,}002$ A.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng phân tích đề vừa nói A, B \"không phải điểm đo\". Thế mà ở đây A, B lại mang sai số của vôn kế, ampe kế. Riêng A có $I = 0$ cũng bị tính lệch $0{,}002$ A. Học sinh sẽ hỏi: điểm đọc trên đường thì sai số lấy từ đâu?",
+      "de_xuat": "Nói rõ đây là cách ước lượng thô, coi sai số của điểm trên đường cỡ sai số dụng cụ; còn cách chặt chẽ hơn là kẻ hai đường lệch nhất."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "Với $\\mathcal{E}$ đọc thẳng từ giao điểm: $\\Delta\\mathcal{E} \\approx 0{,}01$ V.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không có lý do nào cho con số $0{,}01$. Học sinh đoán là cứ lấy sai số vôn kế, dù $\\mathcal{E}$ có được do ngoại suy đường thẳng chứ không đo trực tiếp.",
+      "de_xuat": "Thêm \"lấy bằng sai số vôn kế vì điểm giao gần lần đo 1 ($I$ rất nhỏ)\" hoặc lý do tương đương."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: xử lý bảng số liệu",
+      "trich_nguyen_van": "kẻ thêm hai đường thẳng lệch nhất mà vẫn đi qua vùng sai số của các điểm",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết \"vùng sai số\" của một điểm trông như thế nào. Học sinh cũng không biết kẻ đường \"lệch nhất\" cụ thể ra sao. Bài không có số hay hình minh hoạ.",
+      "de_xuat": "Ghi rõ vùng sai số là hình chữ nhật $\\pm 0{,}01$ V × $\\pm 0{,}002$ A quanh mỗi điểm, kèm hai hệ số góc mẫu và hiệu của chúng."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "VI. Điện trở trong trong đời sống",
+      "trich_nguyen_van": "Với pin mới ($r = 0{,}26\\ \\Omega$) chỉ $0{,}065$ W, khoảng $9\\ \\%$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Pin mới có $\\mathcal{E} = 1{,}58$ V nên $P = 0{,}79$ W, tỉ lệ khoảng 8 %. Con số 9 % chỉ ra được nếu vẫn dùng $0{,}75$ W của pin cũ. Học sinh tính lại sẽ không khớp.",
+      "de_xuat": "Ghi \"$P = 1{,}58 \\cdot 0{,}5 = 0{,}79$ W, tỉ lệ $\\approx 8\\ \\%$\"."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "Bẫy 2: mắc nhầm chỗ ampe kế và vôn kế",
+      "trich_nguyen_van": "D. Vôn kế chỉ $\\mathcal{E}$ chính xác hơn khi không có $R_0$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi là chuyện gì xảy ra với ampe kế. Phương án D lại nói về vôn kế và $R_0$, lạc khỏi tình huống nên học sinh khó hiểu nó đang so sánh gì.",
+      "de_xuat": "Thay D bằng một nhiễu cùng chủ đề, ví dụ \"Ampe kế đọc đúng dòng qua pin nhưng số nhỏ hơn bình thường\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Đồng nhất \"pin yếu\" với \"pin hết năng lượng\", không nghĩ tới sụt áp trong pin do $r$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "pin \"hết\" là do $r$ tăng, không phải mất $\\mathcal{E}$."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy một cặp số rồi chia $U/I$ theo phản xạ $R = U/I$, quên rằng $r$ cần hiệu hai $U$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Mục II.1 đưa $R_0$ vào ngay trong phần dẫn ra đường thẳng, nên học sinh tưởng $R_0$ là điều kiện để đồ thị thẳng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$ đã biết: chặn dòng quá lớn khi $R_x = 0$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lý thuyết nói $U$–$I$ là đường thẳng, nên học sinh nghĩ mọi điểm đo đều nằm đúng trên đường và cặp nào cũng cho cùng $r$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "các điểm $(I, U)$ nằm gần một đường thẳng."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Tính được $Ir = 0{,}40$ V rồi dừng, nhầm phần sụt trong pin với hiệu điện thế hai đầu động cơ.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đảo vai ampe kế và vôn kế: nhớ \"mắc sai chỗ thì chỉ 0\" nhưng gán nhầm cho ampe kế.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mắc song song pin: đoản mạch"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tin rằng $R = U/I$ luôn cho điện trở cần tìm, không để ý vôn kế đang đo đoạn mạch nào.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$U/I$ là điện trở <strong>mạch ngoài</strong> $R_0 + R_x$, không phải $r$."
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gặp số liệu mới thì quay lại thói quen chia $U/I$ của điểm đã cho, bỏ qua giao trục $U$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Muốn ra $r$ cần $\\mathcal{E}$ hoặc cặp số thứ hai."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "bai": "Bài 17. Khái niệm điện trường",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Điện trường của một điện tích điểm",
+      "trich_nguyen_van": "lực điện $F=\\Delta m\\cdot g$, rồi tính $E=F/q$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Cột bảng ghi Δm theo đơn vị g (gam), công thức lại có g. Học sinh dễ lẫn g là gam hay gia tốc trọng trường. Nếu không đổi gam sang kg, em tính F = 0,41·9,8 ≈ 4 N rồi E = 4·10^8 V/m, lệch 1000 lần so với bảng.",
+      "de_xuat": "Ghi rõ g ≈ 9,8 m/s² là gia tốc trọng trường và làm mẫu lần đo 1: 0,41 g = 4,1·10⁻⁴ kg → F ≈ 4,0·10⁻³ N → E = 4,0·10⁻³/10⁻⁸ = 4,0·10⁵ V/m."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Điện trường của một điện tích điểm",
+      "trich_nguyen_van": "bốn số chỉ ở bảng dưới (số liệu minh hoạ tính từ mô hình)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự tính lần 4 theo mô hình: F = kqQ/r² = 1,125·10⁻³ N, suy ra Δm ≈ 0,115 g, làm tròn là 0,11 chứ không phải 0,12. Ba lần đo đầu khớp mô hình, riêng lần 4 lệch, nên học sinh không rõ đây là số 'tính từ mô hình' hay 'số đo có sai số'.",
+      "de_xuat": "Ghi 'số liệu minh hoạ, có thêm sai số đọc cân' để chênh 0,12 so với 0,11 là chủ ý; hoặc sửa lần 4 thành 0,11 g."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "Bẫy 2: cộng độ lớn thay vì cộng vectơ",
+      "trich_nguyen_van": "Đặt $+q$ tại A và $-q$ tại B.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ở mục 2–3, q là điện tích thử còn Q là điện tích nguồn. Đến đây q lại là điện tích nguồn gây ra điện trường (mục 5 cũng dùng q₁, q₂ cho nguồn). Học sinh có thể nghĩ +q, −q là điện tích thử chịu lực.",
+      "de_xuat": "Dùng $+Q$, $-Q$ cho điện tích nguồn, hoặc ghi một câu ở mục 5: 'từ đây q₁, q₂ là các điện tích nguồn'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "V. Bài toán mẫu: hai điện tích và một góc vuông ẩn",
+      "trich_nguyen_van": "$3^2+4^2=5^2$ (dữ kiện ngầm) → Tam giác vuông tại M: $\\vec E_1\\perp\\vec E_2$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ thuộc lòng kiểu 'thấy bộ 3–4–5 là vuông góc'. Bài bỏ qua mắt xích: E₁ nằm trên đường AM, E₂ nằm trên đường MB, nên góc giữa hai vectơ chính là góc AMB. Không có mắt xích này, em dễ áp dụng sai cho điểm khác.",
+      "de_xuat": "Thêm một bước: '$\\vec E_1$ nằm trên đường AM, $\\vec E_2$ nằm trên đường MB, nên góc giữa chúng bằng góc $\\widehat{AMB}=90^\\circ$'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "V. Bài toán mẫu: hai điện tích và một góc vuông ẩn",
+      "trich_nguyen_van": "Kiểm tra: $E$ phải lớn hơn mỗi thành phần ($1{,}2\\cdot10^5$)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu này đọc như một quy tắc chung: tổng hợp luôn lớn hơn từng thành phần. Thực ra khi hai vectơ ngược chiều hoặc hợp góc tù, tổng có thể nhỏ hơn thành phần (như phương án A của Câu 6).",
+      "de_xuat": "Viết thành 'Vì hai vectơ vuông góc nên E phải lớn hơn mỗi thành phần và nhỏ hơn E₁ + E₂'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "các sợi tóc nhiễm điện cùng dấu, đẩy nhau theo đường sức nên xoè ra",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm 'đẩy nhau theo đường sức' khiến học sinh hiểu tóc chuyển động dọc theo đường sức. Điều này đi ngược với Bẫy 3 ('đường sức là đường điện tích chạy theo' là sai).",
+      "de_xuat": "Bỏ cụm 'theo đường sức', chỉ giữ 'các sợi tóc nhiễm điện cùng dấu nên đẩy nhau và xoè ra'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "I. Mở bài: cây thước nhựa và mẩu giấy vụn",
+      "trich_nguyen_van": "giấy nhiễm điện hưởng ứng nên bị hút",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh thắc mắc vì sao giấy không mang điện mà vẫn bị hút. Từ 'nhiễm điện hưởng ứng' xuất hiện không có giải thích, và bài cũng không nhắc lại ở chỗ nào khác.",
+      "de_xuat": "Thêm nửa câu: 'phía giấy gần thước xuất hiện điện tích trái dấu với thước nên bị hút mạnh hơn phía xa bị đẩy'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Đường sức điện",
+      "trich_nguyen_van": "đường mà tiếp tuyến tại mỗi điểm là giá của $\\vec E$ tại điểm đó",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh có thể quên 'giá' của vectơ là gì (đường thẳng chứa vectơ), nên không hiểu rằng tiếp tuyến chỉ cho phương, còn chiều do mũi tên đường sức quy định.",
+      "de_xuat": "Thêm chú thích '(giá: đường thẳng chứa vectơ)' ngay sau chữ 'giá'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Điện trường của một điện tích điểm",
+      "trich_nguyen_van": "Ra C là nhân thay vì chia: xa hơn thì điện trường phải yếu đi.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phương án C bằng 3,6·10⁴ × 3, tức vừa nhân thay vì chia vừa quên bình phương. Học sinh nhân với 9 sẽ được 3,24·10⁵, không có trong phương án, nên đọc phản hồi xong vẫn không biết mình sai ở bước nào.",
+      "de_xuat": "Sửa thành 'Ra C là nhân với 3 thay vì chia cho 9: vừa đảo chiều tỉ lệ, vừa quên bình phương'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Cần $\\dfrac{q_1}{r_1^2}=\\dfrac{q_2}{r_2^2}$ nên $\\dfrac{r_1}{r_2}=\\sqrt{4}=2$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy điều kiện E₁ = E₂ được viết ra, cũng không thấy k bị giản ước. Phân số q/r² xuất hiện đột ngột, và √4 đến từ √(q₁/q₂) cũng không được chỉ rõ.",
+      "de_xuat": "Thêm bước: 'E = 0 khi E₁ = E₂ ⇔ kq₁/r₁² = kq₂/r₂² ⇒ (r₁/r₂)² = q₁/q₂ = 4'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "I. Mở bài: cây thước nhựa và mẩu giấy vụn",
+      "trich_nguyen_van": "Khoảng 18 phút · 7 câu tự kiểm tra.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh chỉ đếm được Câu 1 đến Câu 6 có đánh số, nên không rõ câu thứ 7 là câu Dự đoán hay câu hỏi electron trong Bẫy 3.",
+      "de_xuat": "Ghi rõ '1 câu dự đoán + 6 câu tự kiểm tra', hoặc sửa thành '6 câu tự kiểm tra'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ tương tác không tiếp xúc phải qua trung gian thấy được (không khí, gió).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Không có gió nào khi em giữ thước đứng yên"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp dụng 'lực cùng chiều E' mà quên electron mang điện âm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$q\\lt 0$: $\\vec F$ <strong>ngược chiều</strong> $\\vec E$."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Coi E tỉ lệ nghịch với r thay vì với r², nên chỉ chia cho 3.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mẹo: $r$ <strong>gấp đôi</strong> thì $E$ còn <strong>một phần tư</strong>"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhớ rằng đường sức có thể bắt đầu từ vô cực, nên cho 'đi ra từ điện tích dương' là chưa đủ, tức là sai. Đồng thời đọc lướt chữ 'sai' trong đề.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "đi ra từ điện tích dương, kết thúc ở điện tích âm"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lẫn điện tích thử với điện tích nguồn, cho rằng điện tích đặt vào lớn hơn thì điện trường nơi đó mạnh hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Có sẵn, kể cả khi chưa đặt $q$"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cộng hai số có dấu (+E₁ và −E₁ bằng 0) thay vì vẽ hai vectơ tại M.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lấy dấu của $Q$ để cộng trừ"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Giữ thói quen dùng √(E₁² + E₂²) từ bài mẫu mà không xét lại góc giữa hai vectơ khi M nằm trên AB.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "<strong>Đọc đề:</strong> tìm góc giữa hai vectơ trước"
+    }
+  ]
+}
