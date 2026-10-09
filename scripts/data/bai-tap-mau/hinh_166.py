@@ -1,4 +1,4 @@
-"""Hình + mô phỏng cho bài tạm 9002 (Chuyên đề 02 · Động năng, thế năng, cơ năng) — HSG KHTN 9.
+"""Hình + mô phỏng cho bài tạm 166 (Chuyên đề 02 · Động năng, thế năng, cơ năng) — HSG KHTN 9.
 Mọi chuyển động TÍNH THẬT từ công thức (g = 10 m/s²), mẫu cách đều thời gian, nội suy tuyến tính (SMIL, chạy MỘT lần khi bấm).
 Màu năng lượng: Wđ đỏ · Wt cam · nhiệt xanh lá. Không ghi đáp số lên hình."""
 import math, os, sys

@@ -41,3 +41,6 @@ Thiếu (đã đặt chỗ trong khung, bài ẩn, "đang soạn"): **CĐ10 Lự
 1. Lý thuyết nâng cao: từ mục A + B (+ H) của docx, rút gọn theo `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`; ghi bằng `bash scripts/cap-nhat-ly-thuyet.sh content/hsg9/<cd>/theory.html <lesson_id>`.
 2. Bài tập mẫu: theo skill `soan-bai-tap-mau` (dạng lấy từ mục C + D của docx, `topic` = YCCĐ ở bảng trên); E + G đưa vào tự luận có lời giải; ghi bằng `publish-bai-tap-mau.mts`.
 3. Đề luyện + đề thật: thầy cung cấp sau, gắn vào mục `luyen_tap`.
+
+## lesson_id đã tạo (migration chạy 10/10/2026)
+CĐ00=160 · CĐ01=161 · CĐ02=166 · CĐ03=159 · CĐ04=157 · CĐ05=165 · CĐ06=151 · CĐ07=156 · CĐ08=152 · CĐ09=163 · CĐ10=155 · CĐ11=154 · CĐ12=153 · CĐ13=162 · CĐ14=158 · CĐ15=150 · CĐ16=164. Bài tập mẫu: `scripts/data/bai-tap-mau/<lesson_id>.json` (161, 166).

@@ -1,4 +1,4 @@
-"""Hình cho bài tập mẫu Chuyên đề 01 (HSG KHTN 9: Công và công suất), lesson_id tạm 9001.
+"""Hình cho bài tập mẫu Chuyên đề 01 (HSG KHTN 9: Công và công suất), lesson_id tạm 161.
 Mỗi dạng d<k>(kk): kk=0 mô phỏng chạy MỘT lần khi bấm (đặt dưới đề); kk=2 hình dữ kiện tĩnh cho phần phân tích.
 Mọi chuyển động tính từ số liệu của đề (tỉ lệ quãng đường/thời gian đúng), không để lộ đáp số."""
 import math, os, sys

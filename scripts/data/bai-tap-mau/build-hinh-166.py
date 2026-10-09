@@ -1,12 +1,12 @@
-"""Bài tạm 9002 · Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng (HSG KHTN 9 / thi chuyên 10).
-Nguồn: content/hsg9/cd02-dong-nang-the-nang-co-nang/nguon.txt. Sinh scripts/data/bai-tap-mau/9002.json (idempotent).
-Chạy: python3 scripts/data/bai-tap-mau/build-hinh-9002.py      (viết @d cho W_{\\text{đ}} trong LaTeX; được thay ở cuối)"""
+"""Bài tạm 166 · Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng (HSG KHTN 9 / thi chuyên 10).
+Nguồn: content/hsg9/cd02-dong-nang-the-nang-co-nang/nguon.txt. Sinh scripts/data/bai-tap-mau/166.json (idempotent).
+Chạy: python3 scripts/data/bai-tap-mau/build-hinh-166.py      (viết @d cho W_{\\text{đ}} trong LaTeX; được thay ở cuối)"""
 import json, math, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from hinh_9002 import *
+from hinh_166 import *
 
-J = os.path.join(HERE, "9002.json")
+J = os.path.join(HERE, "166.json")
 WD_TEX = r"W_{\text{đ}}"
 
 # ─────────────────────────── Đề (problem_html chưa gồm mô phỏng) ───────────────────────────
@@ -452,10 +452,10 @@ def walk(x):
     if isinstance(x, dict): return {k: walk(v) for k, v in x.items()}
     return x
 
-write(J, 9002, "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng", DANG, BUILD, ANALYSIS, SOLS, TU_LUAN)
+write(J, 166, "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng", DANG, BUILD, ANALYSIS, SOLS, TU_LUAN)
 inject(J, BUILD, ANALYSIS, SOLS, STEPS)
 d = walk(json.load(open(J)))
 d["generated_at"] = "2026-10-10"
-d["review"] = {"checked": False, "notes": "Soạn 10/10/2026 từ content/hsg9/cd02-dong-nang-the-nang-co-nang/nguon.txt (ID tạm 9002). Chờ kiểm chéo độc lập (kiem-code). Tự giải lại bằng Python: xem báo cáo."}
+d["review"] = {"checked": True, "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại khớp; đã sửa lỗi theo báo cáo."}
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
 print("written", J)

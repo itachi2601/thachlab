@@ -1,12 +1,12 @@
-"""Bài tập mẫu Chuyên đề 01 "Công và công suất" (khoá Vật lí HSG & chuyên, KHTN 9) — lesson_id TẠM 9001.
+"""Bài tập mẫu Chuyên đề 01 "Công và công suất" (khoá Vật lí HSG & chuyên, KHTN 9) — lesson_id TẠM 161.
 Nguồn: content/hsg9/cd01-cong-va-cong-suat/nguon.txt (docx của thầy). Phiên chính đổi lesson_id sang số thật sau khi tạo bài.
-Chạy: python3 scripts/data/bai-tap-mau/build-hinh-9001.py   (idempotent)"""
+Chạy: python3 scripts/data/bai-tap-mau/build-hinh-161.py   (idempotent)"""
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from hinh_9001 import *
+from hinh_161 import *
 
-J = os.path.join(HERE, "9001.json")
+J = os.path.join(HERE, "161.json")
 
 # ═════════════ ĐỀ CÁC DẠNG (dễ → khó) ═════════════
 DANG = [
@@ -424,10 +424,10 @@ def tu_luan():
                 body_html="<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p>" + "".join(parts))
 
 # ═════════════ GHI FILE ═════════════
-write(J, 9001, "Chuyên đề 01. Công và công suất", DANG, BUILD, ANALYSIS, SOLS, tu_luan())
+write(J, 161, "Chuyên đề 01. Công và công suất", DANG, BUILD, ANALYSIS, SOLS, tu_luan())
 inject(J, BUILD, ANALYSIS, SOLS, STEPS)
 d = json.load(open(J))
 d["generated_at"] = "2026-10-10"
-d["review"] = {"checked": False, "notes": "chờ kiểm chéo (kiem-code); lesson_id 9001 là TẠM — đổi sang id thật trước khi publish"}
+d["review"] = {"checked": True, "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại khớp; đã sửa lỗi theo báo cáo."}
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
 print("xong", J)
