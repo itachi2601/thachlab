@@ -1,0 +1,473 @@
+{
+ "lesson_id": 41,
+ "lesson_title": "Bài 22. Cường độ dòng điện",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Khái niệm: cách mắc ampe kế, chiều electron, dòng một chiều và dòng không đổi",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "problem_html": "<p>Bộ sạc ắc quy xe máy gồm nguồn một chiều, dây đồng, ampe kế kim và ắc quy cần nạp. Khi nạp, kim ampe kế dao động trong khoảng $2$ A đến $6$ A nhưng luôn nằm ở một phía của vạch $0$, không lùi về phía âm.</p><ol type=\"a\"><li>Ampe kế cần mắc thế nào với ắc quy để đo cường độ dòng nạp?</li><li>Trong dây đồng, các electron tự do trôi theo chiều nào so với chiều dòng điện quy ước?</li><li>Dòng nạp này là dòng không đổi, dòng một chiều hay cả hai?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Ampe kế kim dao động trong khoảng 2 A đến 6 A, không qua vạch 0\"><path d=\"M38,150 A92,92 0 0 1 222,150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"38.0\" y1=\"150.0\" x2=\"48.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"62.0\" y=\"154.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"45.0\" y1=\"114.8\" x2=\"54.2\" y2=\"118.6\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.9\" y1=\"84.9\" x2=\"72.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"81.9\" y=\"105.9\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"94.8\" y1=\"65.0\" x2=\"98.6\" y2=\"74.2\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"58.0\" x2=\"130.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"130.0\" y=\"86.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"165.2\" y1=\"65.0\" x2=\"161.4\" y2=\"74.2\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"195.1\" y1=\"84.9\" x2=\"188.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"178.1\" y=\"105.9\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"215.0\" y1=\"114.8\" x2=\"205.8\" y2=\"118.6\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"222.0\" y1=\"150.0\" x2=\"212.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"198.0\" y=\"154.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">8</text><line x1=\"130\" y1=\"150\" x2=\"52\" y2=\"150\" stroke=\"#f87171\" stroke-width=\"3\" transform=\"rotate(45.0 130 150)\"><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"45.0 130 150;135.0 130 150;67.5 130 150;123.8 130 150;56.2 130 150;135.0 130 150;90.0 130 150\" dur=\"7s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"130.0\" cy=\"150.0\" r=\"6\" fill=\"currentColor\"/><text x=\"130\" y=\"180\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"130\" y=\"200\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">ampe kế kim (A)</text><text x=\"262\" y=\"70\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Kim dao động</text><text x=\"262\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">trong khoảng 2 A đến 6 A</text><text x=\"262\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Không lùi về phía</text><text x=\"262\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">âm của vạch 0</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim ampe kế khi nạp ắc quy, dao động trong khoảng đề cho. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Ampe kế đo dòng chạy qua nó ; mắc <strong>nối tiếp</strong> với đoạn mạch cần đo.</li><li>Chiều dòng điện quy ước là chiều chuyển động của hạt mang điện <strong>dương</strong> ; electron mang điện âm.</li><li>Dòng <strong>một chiều</strong>: chiều không đổi. Dòng <strong>không đổi</strong>: chiều <strong>và</strong> cường độ đều không đổi.</li><li>⚠ Mọi dòng không đổi là dòng một chiều, ngược lại không đúng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cách mắc ampe kế</span></p><p>Ampe kế đo dòng điện chạy qua chính nó, nên dòng cần đo phải đi vào ampe kế.</p><div class=\"bt-ans\"><p>Mắc ampe kế <strong>nối tiếp</strong> với ắc quy trong mạch nạp.</p></div><p>Mắc song song hoặc nối thẳng hai cực nguồn thì ampe kế (điện trở rất nhỏ) gần như nối tắt nguồn, dòng rất lớn, hỏng dụng cụ.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều chuyển động của electron</span></p><p>Chiều quy ước là chiều chuyển động của hạt mang điện dương.</p><p>Electron mang điện âm nên bị lực điện kéo ngược chiều điện trường trong dây.</p><div class=\"bt-ans\"><p>Electron trôi <strong>ngược chiều</strong> dòng điện quy ước.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phân loại dòng nạp</span></p><p>Xét hai điều kiện riêng. Chiều: không đổi (kim luôn ở một phía vạch $0$).</p><p>Cường độ: không đổi hay không (kim dao động từ $2$ A đến $6$ A).</p><div class=\"bt-ans\"><p>Đây là <strong>dòng một chiều</strong>, <strong>không phải</strong> dòng không đổi.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Dòng không đổi thì chắc chắn là dòng một chiều, nên không thể gọi dòng này là cả hai.</p><p>Dòng nạp ắc quy có cường độ thay đổi nhưng chiều giữ nguyên : đúng với dòng một chiều.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Mắc nối tiếp với ắc quy</p><p>b) Electron trôi ngược chiều dòng điện quy ước</p><p>c) Dòng một chiều, không phải dòng không đổi</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>cách mắc, chiều electron hoặc loại dòng</strong> → nhớ nối tiếp, chiều quy ước là chiều điện tích dương, và kiểm riêng điều kiện chiều với điều kiện cường độ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Đồ thị cường độ dòng nạp theo thời gian dao động trong khoảng 2 A đến 6 A, nằm trên trục thời gian\"><line x1=\"70\" y1=\"160\" x2=\"390\" y2=\"160\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M382.4,155.6 L390.0,160.0 L382.4,164.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70\" y1=\"160\" x2=\"70\" y2=\"20\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M65.6,27.6 L70.0,20.0 L74.4,27.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"165\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">t</text><text x=\"76\" y=\"22\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">I (A)</text><line x1=\"66.0\" y1=\"120.0\" x2=\"74.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"62\" y=\"124\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">2</text><line x1=\"66.0\" y1=\"80.0\" x2=\"74.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"62\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">4</text><line x1=\"66.0\" y1=\"40.0\" x2=\"74.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"62\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">6</text><text x=\"62\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">0</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\" points=\"80.0,57.4 85.5,47.9 91.0,42.4 96.5,41.4 102.0,45.0 107.5,52.3 113.0,62.3 118.5,73.5 124.0,84.4 129.5,93.8 135.0,100.8 140.5,104.8 146.0,106.0 151.5,104.4 157.0,100.5 162.5,94.7 168.0,87.6 173.5,79.7 179.0,71.5 184.5,63.8 190.0,57.2 195.5,52.6 201.0,50.7 206.5,52.0 212.0,56.9 217.5,65.2 223.0,76.0 228.5,88.2 234.0,100.2 239.5,110.5 245.0,117.4 250.5,120.0 256.0,117.8 261.5,111.2 267.0,101.1 272.5,89.0 278.0,76.4 283.5,65.1 289.0,56.4 294.5,51.1 300.0,49.4 305.5,51.3 311.0,56.1 316.5,62.9 322.0,70.9 327.5,79.3 333.0,87.3 338.5,94.4 344.0,100.0 349.5,103.7 355.0,105.2 360.5,104.1 366.0,100.2 371.5,93.6 377.0,84.7 382.5,74.2 388.0,63.4 393.5,53.6 399.0,46.1 404.5,42.3 410.0,42.8\"/><text x=\"220\" y=\"184\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">thời gian nạp</text></svg><figcaption>Dữ kiện: cường độ dòng nạp theo thời gian, luôn nằm một phía của trục t. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ampe kế … để đo cường độ dòng nạp\"</td><td>Cần: cách mắc ampe kế</td><td>⚠ Ampe kế đo dòng chạy qua chính nó, nên vị trí mắc trong mạch quyết định chỉ số</td></tr><tr><td>\"dây đồng … electron tự do\"</td><td>Hạt tải trong kim loại là electron</td><td>Chiều dòng điện quy ước ; dấu điện tích của electron</td></tr><tr><td>\"dao động trong khoảng $2$ A đến $6$ A\"</td><td>$I$ thay đổi giữa hai giá trị</td><td>Cường độ có đổi theo thời gian hay không</td></tr><tr><td>\"luôn nằm ở một phía của vạch $0$\"</td><td>Dấu của số chỉ không đổi</td><td>Chiều dòng có đổi hay không</td></tr><tr><td>\"dòng không đổi, dòng một chiều hay cả hai\"</td><td>Cần: phân loại dòng</td><td>⚠ Hai khái niệm khác nhau ở số điều kiện phải thoả, kiểm từng điều kiện</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ampe kế</b>, <b>chiều electron</b> hoặc <b>dòng một chiều</b> → nghĩ tới <b>cách mắc, chiều quy ước, điều kiện dòng không đổi</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cách mắc ampe kế",
+     "hoi": "Để đo dòng nạp, ampe kế được mắc thế nào so với ắc quy?",
+     "lua_chon": [
+      {
+       "text": "Song song với ắc quy",
+       "dung": false,
+       "vi_sao": "Mắc song song thì dòng không đi qua ampe kế, chỉ số sai, và ampe kế gần như nối tắt hai cực."
+      },
+      {
+       "text": "Nối tiếp với ắc quy trong mạch nạp",
+       "dung": true
+      },
+      {
+       "text": "Nối thẳng vào hai cực của nguồn",
+       "dung": false,
+       "vi_sao": "Ampe kế gần như không cản dòng, nối thẳng vào nguồn tạo dòng rất lớn, hỏng cả nguồn và ampe kế."
+      }
+     ],
+     "loi_hay_gap": "Mắc song song vì thấy hai đầu ampe kế đều nối vào mạch. Ampe kế đo dòng chạy QUA nó, chỉ vôn kế mới mắc song song."
+    },
+    {
+     "tieu_de": "Chiều chuyển động của electron",
+     "hoi": "Electron tự do trong dây đồng trôi theo chiều nào so với chiều dòng điện quy ước?",
+     "lua_chon": [
+      {
+       "text": "Cùng chiều dòng điện quy ước",
+       "dung": false,
+       "vi_sao": "Chiều quy ước là chiều của hạt mang điện dương ; electron mang điện âm nên ngược lại."
+      },
+      {
+       "text": "Không có chiều xác định vì chỉ chuyển động hỗn loạn",
+       "dung": false,
+       "vi_sao": "Ngoài chuyển động nhiệt hỗn loạn, electron còn trôi có hướng ; chính chuyển động có hướng đó tạo ra dòng điện."
+      },
+      {
+       "text": "Ngược chiều dòng điện quy ước",
+       "dung": true
+      }
+     ],
+     "loi_hay_gap": "Coi electron trôi cùng chiều dòng điện vì quên rằng chiều quy ước là chiều của điện tích dương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chiều quy ước là chiều hạt dương, electron âm nên đi ngược lại",
+       "dung": true
+      },
+      {
+       "text": "Electron là hạt tải nên đi cùng chiều dòng điện",
+       "dung": false,
+       "vi_sao": "Electron là hạt tải thật nhưng mang điện âm ; chiều quy ước lấy theo hạt dương nên hai chiều ngược nhau."
+      },
+      {
+       "text": "Lấy chiều từ cực âm sang cực dương của nguồn trong mạch ngoài làm chiều dòng điện",
+       "dung": false,
+       "vi_sao": "Ngoài nguồn, dòng điện quy ước đi từ cực dương qua mạch ngoài về cực âm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phân loại dòng nạp",
+     "hoi": "Dòng nạp này thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Dòng không đổi, vì chiều không đổi",
+       "dung": false,
+       "vi_sao": "Dòng không đổi cần cả chiều và cường độ đều không đổi ; ở đây cường độ thay đổi."
+      },
+      {
+       "text": "Dòng xoay chiều, vì cường độ thay đổi",
+       "dung": false,
+       "vi_sao": "Xoay chiều là chiều đổi qua lại, còn ở đây kim luôn ở một phía vạch $0$."
+      },
+      {
+       "text": "Dòng một chiều nhưng không phải dòng không đổi",
+       "dung": true
+      }
+     ],
+     "loi_hay_gap": "Thấy chiều không đổi thì kết luận ngay là dòng không đổi, bỏ qua điều kiện cường độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Kiểm riêng điều kiện chiều và điều kiện cường độ",
+       "dung": true
+      },
+      {
+       "text": "Chỉ cần kiểm điều kiện chiều",
+       "dung": false,
+       "vi_sao": "Dòng không đổi đòi cả hai điều kiện ; chỉ xét chiều sẽ nhầm hai loại dòng."
+      },
+      {
+       "text": "Chỉ cần kiểm điều kiện cường độ",
+       "dung": false,
+       "vi_sao": "Cường độ thay đổi không đủ để kết luận xoay chiều ; chiều còn quyết định loại dòng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Tính điện lượng, số electron và thời gian từ cường độ dòng không đổi",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "problem_html": "<p>Một quạt mini USB đang chạy. Ampe kế mắc nối tiếp chỉ $0{,}40$ A và giữ không đổi. Lấy $e=1{,}6\\cdot10^{-19}$ C.</p><ol type=\"a\"><li>Trong $50$ s, điện lượng chuyển qua tiết diện thẳng của dây là bao nhiêu?</li><li>Trong khoảng thời gian đó có bao nhiêu electron chuyển qua tiết diện?</li><li>Cần bao lâu để có $32$ C chuyển qua tiết diện đó?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Các electron trôi dọc dây qua tiết diện thẳng, ampe kế chỉ 0,40 A\"><line x1=\"62.0\" y1=\"75.0\" x2=\"404.0\" y2=\"75.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"62.0\" y1=\"145.0\" x2=\"404.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"40\" cy=\"110\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"40\" y=\"116\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"210.0\" y1=\"67.0\" x2=\"210.0\" y2=\"153.0\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"210\" y=\"171.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">tiết diện thẳng</text><line x1=\"270\" y1=\"40\" x2=\"330\" y2=\"40\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M321.2,34.9 L330.0,40.0 L321.2,45.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"45\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I</text><text x=\"338\" y=\"45\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chiều dòng</text><text x=\"40\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I = 0,40 A</text><circle cx=\"130.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"130.0;70.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"130.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"130.0;70.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"166.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"166.0;106.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"202.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"202.0;142.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"202.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"202.0;142.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"238.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"238.0;178.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"274.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"274.0;214.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"274.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"274.0;214.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"310.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"310.0;250.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"346.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"346.0;286.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"346.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"346.0;286.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"382.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"382.0;322.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"300\" y=\"196\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">electron trôi ngược chiều dòng điện</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: electron trôi qua tiết diện thẳng khi dòng không đổi. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$I=\\dfrac{\\Delta q}{\\Delta t}$ ; $1\\ \\text{A}=1\\ \\text{C/s}$.</li><li>Điện lượng bằng số hạt nhân điện tích mỗi hạt : $\\Delta q=Ne$.</li><li>⚠ Dòng không đổi: $I$ giữ nguyên nên dùng được cho mọi khoảng thời gian.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện lượng trong 50 s</span></p><p>Từ định nghĩa, rút điện lượng:</p>$$\\Delta q=I\\,\\Delta t$$$$\\Delta q=0{,}40\\cdot50$$<div class=\"bt-ans\">$$\\Delta q=20\\ \\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số electron</span></p><p>Điện lượng bằng số electron nhân điện tích mỗi electron:</p>$$N=\\dfrac{\\Delta q}{e}$$$$N=\\dfrac{20}{1{,}6\\cdot10^{-19}}$$<div class=\"bt-ans\">$$N=1{,}25\\cdot10^{20}\\ \\text{electron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian để có 32 C</span></p><p>Dòng không đổi như câu a, rút thời gian từ định nghĩa:</p>$$\\Delta t'=\\dfrac{\\Delta q'}{I}$$$$\\Delta t'=\\dfrac{32}{0{,}40}$$<div class=\"bt-ans\">$$\\Delta t'=80\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{A}\\cdot\\text{s}=\\text{C}$ ; $\\text{C}/\\text{A}=\\text{s}$ ✓.</p><p>Điện lượng $32$ C lớn hơn $20$ C nên thời gian cũng lớn hơn $50$ s ✓.</p><p>Số electron cỡ $10^{20}$ vì mỗi electron mang điện tích rất nhỏ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Delta q=20$ C</p><p>b) $N=1{,}25\\cdot10^{20}$ electron</p><p>c) $\\Delta t'=80$ s</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>dòng không đổi</strong> kèm một trong ba đại lượng điện lượng, thời gian hoặc số electron → nối ba đại lượng bằng $I=\\Delta q/\\Delta t$ và $\\Delta q=Ne$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Dây dẫn có dòng 0,40 A; các đại lượng cần tìm là điện lượng, số electron và thời gian\"><line x1=\"62.0\" y1=\"75.0\" x2=\"404.0\" y2=\"75.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"62.0\" y1=\"145.0\" x2=\"404.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"40\" cy=\"110\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"40\" y=\"116\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"210.0\" y1=\"67.0\" x2=\"210.0\" y2=\"153.0\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"210\" y=\"171.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">tiết diện thẳng</text><line x1=\"270\" y1=\"40\" x2=\"330\" y2=\"40\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M321.2,34.9 L330.0,40.0 L321.2,45.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"45\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I</text><text x=\"338\" y=\"45\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chiều dòng</text><text x=\"40\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I = 0,40 A</text><circle cx=\"130.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"130.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"166.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"202.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"202.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"238.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"274.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"274.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"310.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"346.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"346.0\" cy=\"130.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"382.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><text x=\"140\" y=\"26\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = 50 s ; Δq = ? ; N = ?</text><text x=\"210\" y=\"196\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Câu c: Δq' = 32 C ; Δt' = ?</text></svg><figcaption>Dữ kiện: dòng không đổi 0,40 A ; các đại lượng cần tìm ghi bằng dấu ?. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ampe kế mắc nối tiếp chỉ $0{,}40$ A, giữ không đổi\"</td><td>$I=0{,}40$ A, không đổi</td><td>⚠ Dòng không đổi thì cường độ như một hằng số trong mọi khoảng thời gian</td></tr><tr><td>\"trong $50$ s\"</td><td>$\\Delta t=50$ s</td><td>Thời gian đã tính bằng giây</td></tr><tr><td>\"điện lượng chuyển qua tiết diện thẳng\"</td><td>Cần: $\\Delta q$</td><td>Định nghĩa cường độ dòng điện</td></tr><tr><td>\"bao nhiêu electron\" ; $e=1{,}6\\cdot10^{-19}$ C</td><td>Cần: $N$ ; $e=1{,}6\\cdot10^{-19}$ C</td><td>Liên hệ giữa điện lượng, số hạt và điện tích mỗi hạt</td></tr><tr><td>\"$32$ C … bao lâu\"</td><td>$\\Delta q'=32$ C ; cần: $\\Delta t'$</td><td>Cùng dòng không đổi như câu a, dùng định nghĩa theo chiều ngược lại</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>điện lượng</b>, <b>thời gian</b> hoặc <b>số electron</b> với dòng không đổi → nghĩ tới <b>Δq = I·Δt</b> và <b>Δq = N·e</b>.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện lượng trong 50 s",
+     "hoi": "Điện lượng chuyển qua tiết diện trong $50$ s bằng bao nhiêu?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "C",
+     "loi_hay_gap": "Chia thay vì nhân ($I/\\Delta t$) : đơn vị A/s không phải cu-lông."
+    },
+    {
+     "tieu_de": "Số electron",
+     "hoi": "Số electron chuyển qua tiết diện, theo đơn vị $10^{20}$ electron?",
+     "dap_so": 1.25,
+     "sai_so": 0.02,
+     "don_vi": "×10²⁰ electron",
+     "loi_hay_gap": "Nhân điện lượng với $e$ thay vì chia, ra số cỡ $10^{-18}$ : số hạt không thể nhỏ hơn $1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia điện lượng cho điện tích mỗi electron",
+       "dung": true
+      },
+      {
+       "text": "Nhân điện lượng với điện tích mỗi electron",
+       "dung": false,
+       "vi_sao": "Phép nhân cho số cỡ $10^{-18}$ ; số hạt không thể nhỏ hơn $1$."
+      },
+      {
+       "text": "Chia điện lượng cho cường độ dòng điện",
+       "dung": false,
+       "vi_sao": "Phép chia này cho một thời gian, không phải số hạt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian để có 32 C",
+     "hoi": "Thời gian để $32$ C chuyển qua tiết diện bằng bao nhiêu giây?",
+     "dap_so": 80,
+     "sai_so": 0.8,
+     "don_vi": "s",
+     "loi_hay_gap": "Nhân điện lượng với cường độ thay vì chia, ra đơn vị $\\text{C}\\cdot\\text{A}$, không phải giây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Rút $\\Delta t$ từ định nghĩa : chia điện lượng cho cường độ",
+       "dung": true
+      },
+      {
+       "text": "Nhân điện lượng với cường độ",
+       "dung": false,
+       "vi_sao": "Phép nhân cho đơn vị $\\text{C}\\cdot\\text{A}$, không phải giây."
+      },
+      {
+       "text": "Chia điện lượng cho điện tích mỗi electron",
+       "dung": false,
+       "vi_sao": "Đó là số hạt, không phải thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đổi đơn vị mA, phút, mAh khi tính điện lượng",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "problem_html": "<p>Bộ sạc đồng hồ thông minh ghi đầu ra $5$ V. Khi sạc, nó cấp cho đồng hồ dòng điện không đổi $150$ mA trong $36$ phút. Pin của đồng hồ có dung lượng $300$ mAh.</p><ol type=\"a\"><li>Tính điện lượng chuyển qua dây sạc trong $36$ phút, theo đơn vị cu-lông (C).</li><li>Đổi điện lượng đó ra mAh. Biết $1$ mAh $=3{,}6$ C.</li><li>Sau lần sạc này, pin được nạp thêm bao nhiêu phần trăm dung lượng của nó?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Kim phút của đồng hồ bấm giờ quay đến vạch 36 trong khi đồng hồ USB chỉ 150 mA\"><circle cx=\"105\" cy=\"105\" r=\"70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"105.0\" y1=\"44.0\" x2=\"105.0\" y2=\"35.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"105.0\" y=\"25.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"135.5\" y1=\"52.2\" x2=\"140.0\" y2=\"44.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"157.8\" y1=\"74.5\" x2=\"165.6\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"166.0\" y1=\"105.0\" x2=\"175.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"189.0\" y=\"109.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">15</text><line x1=\"157.8\" y1=\"135.5\" x2=\"165.6\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"135.5\" y1=\"157.8\" x2=\"140.0\" y2=\"165.6\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"105.0\" y1=\"166.0\" x2=\"105.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"105.0\" y=\"193.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">30</text><line x1=\"74.5\" y1=\"157.8\" x2=\"70.0\" y2=\"165.6\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"52.2\" y1=\"135.5\" x2=\"44.4\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"44.0\" y1=\"105.0\" x2=\"35.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"21.0\" y=\"109.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">45</text><line x1=\"52.2\" y1=\"74.5\" x2=\"44.4\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"74.5\" y1=\"52.2\" x2=\"70.0\" y2=\"44.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"105\" y1=\"105\" x2=\"105\" y2=\"47\" stroke=\"#f87171\" stroke-width=\"3.2\" transform=\"rotate(0 105 105)\"><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 105 105;216 105 105\" dur=\"6s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"105.0\" cy=\"105.0\" r=\"5\" fill=\"currentColor\"/><text x=\"105\" y=\"141\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">phút</text><rect x=\"232.0\" y=\"52.0\" width=\"160.0\" height=\"78.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"312\" y=\"90\" fill=\"currentColor\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">150 mA</text><text x=\"312\" y=\"112\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">dòng không đổi</text><text x=\"312\" y=\"44\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">đồng hồ USB</text><text x=\"312\" y=\"152\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">đầu ra 5 V</text><text x=\"312\" y=\"182\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Δq = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim phút quay từ vạch 0 đến hết thời gian sạc ; chạy nhanh hơn thực tế nhiều lần. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$I=\\dfrac{\\Delta q}{\\Delta t}$, nên $\\Delta q=I\\,\\Delta t$ khi $I$ không đổi.</li><li>⚠ Dùng đơn vị SI: $I$ theo A, $\\Delta t$ theo s, $\\Delta q$ theo C.</li><li>$1\\ \\text{mA}=10^{-3}\\ \\text{A}$ ; $1$ phút $=60$ s ; $1\\ \\text{mAh}=3{,}6$ C.</li><li>Điện áp $U$ không có mặt trong định nghĩa cường độ dòng điện.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị về SI</span></p><p>Đưa cường độ và thời gian về đơn vị SI:</p>$$I=150\\ \\text{mA}=0{,}150\\ \\text{A}$$$$\\Delta t=36\\cdot60$$<div class=\"bt-ans\">$$\\Delta t=2160\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện lượng theo cu-lông</span></p><p>Dòng không đổi nên điện lượng bằng cường độ nhân thời gian (bỏ qua $U=5$ V, không liên quan):</p>$$\\Delta q=I\\,\\Delta t$$$$\\Delta q=0{,}150\\cdot2160$$<div class=\"bt-ans\">$$\\Delta q=324\\ \\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi điện lượng ra mAh</span></p><p>$1$ mAh ứng với $3{,}6$ C, nên số mAh nhỏ hơn số cu-lông:</p>$$q_{\\text{mAh}}=\\dfrac{\\Delta q}{3{,}6}$$$$q_{\\text{mAh}}=\\dfrac{324}{3{,}6}$$<div class=\"bt-ans\">$$q_{\\text{mAh}}=90\\ \\text{mAh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phần trăm dung lượng pin</span></p><p>Phần trăm là số mAh vừa nạp so với dung lượng, cùng đơn vị mAh:</p>$$\\dfrac{90}{300}\\cdot100\\%$$<div class=\"bt-ans\">$$30\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cách khác: $150\\ \\text{mA}\\cdot\\dfrac{36}{60}\\ \\text{h}=90$ mAh ✓ khớp.</p><p>Nếu quên đổi phút, $0{,}150\\cdot36=5{,}4$ C, nhỏ vô lí cho một lần sạc.</p><p>Số vôn $5$ V không dùng tới ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Delta q=324$ C</p><p>b) $90$ mAh</p><p>c) $30\\ \\%$ dung lượng pin</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>mA, phút hoặc mAh</strong> kèm dòng không đổi → đổi hết về A, s, C rồi mới nhân ; số vôn là dữ kiện thừa.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Đồ thị cường độ dòng 150 mA không đổi trong 36 phút, phần diện tích dưới đồ thị là điện lượng\"><line x1=\"70\" y1=\"150\" x2=\"350\" y2=\"150\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M342.4,145.6 L350.0,150.0 L342.4,154.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70\" y1=\"150\" x2=\"70\" y2=\"24\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M65.6,31.6 L70.0,24.0 L74.4,31.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"356\" y=\"155\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">t (phút)</text><text x=\"76\" y=\"24\" fill=\"#34d399\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">I (mA)</text><rect x=\"70.0\" y=\"50.0\" width=\"210.0\" height=\"100.0\" rx=\"0\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0.18\"/><line x1=\"70.0\" y1=\"50.0\" x2=\"280.0\" y2=\"50.0\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"280.0\" y1=\"50.0\" x2=\"280.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"4 4\" opacity=\"1\"/><text x=\"62\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">150</text><text x=\"280\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">36</text><text x=\"62\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">0</text><text x=\"175.0\" y=\"105.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Δq = ?</text><text x=\"292\" y=\"54\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">đầu ra 5 V</text></svg><figcaption>Dữ kiện: dòng không đổi 150 mA trong 36 phút ; phần tô là điện lượng cần tìm. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đầu ra $5$ V\"</td><td>$U=5$ V</td><td>⚠ Xét xem đại lượng này có trong định nghĩa cường độ dòng điện hay không</td></tr><tr><td>\"dòng điện không đổi $150$ mA\"</td><td>$I=150$ mA ; không đổi</td><td>⚠ Điều kiện: dòng không đổi mới coi cường độ là hằng số trong cả khoảng thời gian. Đơn vị SI của $I$</td></tr><tr><td>\"trong $36$ phút\"</td><td>$\\Delta t=36$ phút</td><td>Đơn vị thời gian trong hệ SI</td></tr><tr><td>\"điện lượng … theo đơn vị cu-lông\"</td><td>Cần: $\\Delta q$ (C)</td><td>Định nghĩa cường độ dòng điện</td></tr><tr><td>\"đổi ra mAh. Biết $1$ mAh $=3{,}6$ C\"</td><td>Hệ số đổi cho trước</td><td>mAh là đơn vị điện lượng, tích của cường độ (mA) và thời gian (giờ)</td></tr><tr><td>\"pin … $300$ mAh … bao nhiêu phần trăm\"</td><td>Dung lượng $300$ mAh ; cần: tỉ lệ</td><td>Tỉ lệ phần trăm là phần so với toàn bộ, hai số phải cùng đơn vị</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>mA</b>, <b>phút</b> hoặc <b>mAh</b> trong đề → nghĩ tới <b>đổi về A, s, C</b> rồi mới nhân với cường độ.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị về SI",
+     "hoi": "$36$ phút bằng bao nhiêu giây?",
+     "dap_so": 2160,
+     "sai_so": 1,
+     "don_vi": "s",
+     "loi_hay_gap": "Quên đổi phút ra giây, hoặc đổi mA ra A theo hệ số sai ($10^{-2}$ thay vì $10^{-3}$)."
+    },
+    {
+     "tieu_de": "Điện lượng theo cu-lông",
+     "hoi": "Điện lượng chuyển qua dây sạc trong $36$ phút bằng bao nhiêu cu-lông?",
+     "dap_so": 324,
+     "sai_so": 3,
+     "don_vi": "C",
+     "loi_hay_gap": "Nhân thêm $5$ V vào điện lượng, hoặc nhân $150$ với $36$ mà chưa đổi đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân cường độ (A) với thời gian (s)",
+       "dung": true
+      },
+      {
+       "text": "Nhân $5$ V với thời gian vì đề cho điện áp",
+       "dung": false,
+       "vi_sao": "Điện áp không có trong định nghĩa cường độ dòng điện ; điện lượng chỉ cần cường độ và thời gian."
+      },
+      {
+       "text": "Nhân $150$ với $36$ rồi ghi đơn vị C",
+       "dung": false,
+       "vi_sao": "Chưa đổi mA ra A và phút ra giây nên kết quả không phải số cu-lông."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi điện lượng ra mAh",
+     "hoi": "Điện lượng đó bằng bao nhiêu mAh?",
+     "dap_so": 90,
+     "sai_so": 1,
+     "don_vi": "mAh",
+     "loi_hay_gap": "Nhân với $3{,}6$ thay vì chia : $1$ mAh lớn hơn $1$ C nên số mAh phải nhỏ hơn số cu-lông.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia số cu-lông cho $3{,}6$",
+       "dung": true
+      },
+      {
+       "text": "Nhân số cu-lông với $3{,}6$",
+       "dung": false,
+       "vi_sao": "$1$ mAh $=3{,}6$ C nên một lượng cho trước tính bằng mAh phải nhỏ hơn số cu-lông."
+      },
+      {
+       "text": "Chia số cu-lông cho $3600$ rồi ghi luôn đơn vị mAh",
+       "dung": false,
+       "vi_sao": "Chia cho $3600$ được A·h, còn phải nhân $1000$ mới ra mAh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm dung lượng pin",
+     "hoi": "Phần trăm dung lượng pin được nạp thêm?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Lấy số cu-lông chia cho dung lượng của pin (mAh) vì quên hai đại lượng khác đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy số mAh vừa nạp chia cho dung lượng của pin",
+       "dung": true
+      },
+      {
+       "text": "Lấy số cu-lông chia cho dung lượng của pin (mAh)",
+       "dung": false,
+       "vi_sao": "Hai số khác đơn vị (C và mAh), không so sánh trực tiếp được."
+      },
+      {
+       "text": "Lấy dung lượng của pin trừ số mAh vừa nạp",
+       "dung": false,
+       "vi_sao": "Đó là phần dung lượng còn thiếu, không phải phần đã nạp thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Tốc độ trôi của electron từ $I=Snve$ khi đổi tiết diện",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "problem_html": "<p>Dây điện nối bình nước nóng có lõi đồng tiết diện $2{,}5\\ \\text{mm}^2$, mang dòng điện không đổi $10$ A. Mật độ electron tự do của đồng $n=8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$ ; $e=1{,}6\\cdot10^{-19}$ C.</p><ol type=\"a\"><li>Tính tốc độ trôi của electron trong lõi dây, theo mm/s.</li><li>Nối nối tiếp thêm một đoạn dây lõi đồng tiết diện $1{,}0\\ \\text{mm}^2$ vào cùng mạch, dòng vẫn là $10$ A. Tính tốc độ trôi của electron trong đoạn dây này, theo mm/s.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Hai đoạn dây đồng tiết diện khác nhau nối tiếp, electron trôi trong mỗi đoạn\"><line x1=\"26.0\" y1=\"68.0\" x2=\"212.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"26.0\" y1=\"132.0\" x2=\"212.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"79.0\" x2=\"396.0\" y2=\"79.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"121.0\" x2=\"396.0\" y2=\"121.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"68.0\" x2=\"212.0\" y2=\"79.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"132.0\" x2=\"212.0\" y2=\"121.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"120.0\" y1=\"62.0\" x2=\"120.0\" y2=\"138.0\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"304.0\" y1=\"73.0\" x2=\"304.0\" y2=\"127.0\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"120\" y=\"156.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S₁ = 2,5 mm²</text><text x=\"304\" y=\"145.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S₂ = 1,0 mm²</text><line x1=\"150\" y1=\"28\" x2=\"240\" y2=\"28\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M231.2,22.9 L240.0,28.0 L231.2,33.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"144\" y=\"33\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I = 10 A</text><text x=\"250\" y=\"33\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">cùng một dòng</text><circle cx=\"44.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"44.0;20.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"44.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"44.0;20.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"74.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"74.0;50.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"104.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"104.0;80.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"104.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"104.0;80.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"134.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"134.0;110.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"164.0;140.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"164.0;140.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"194.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"194.0;170.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"292.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"292.0;236.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"320.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"320.0;264.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"348.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"348.0;292.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"210\" y=\"190\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">electron trôi ngược chiều dòng điện</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai đoạn dây nối tiếp, cùng dòng, electron trôi nhanh hơn ở đoạn dây nhỏ, chỉ so sánh định tính. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$I=S\\,n\\,v\\,e$ ; $S$ (m²), $n$ (m⁻³), $v$ (m/s), $e$ (C).</li><li>Rút ra $v=\\dfrac{I}{S\\,n\\,e}$.</li><li>⚠ Đổi $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$ ; $v$ là tốc độ trôi trung bình có hướng.</li><li>Mạch nối tiếp: cường độ như nhau ở mọi tiết diện.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tích S·n·e của lõi 2,5 mm²</span></p><p>Đổi tiết diện sang mét vuông, rồi nhân với $n$ và $e$:</p>$$S_1=2{,}5\\ \\text{mm}^2=2{,}5\\cdot10^{-6}\\ \\text{m}^2$$$$S_1\\,n\\,e=2{,}5\\cdot10^{-6}\\cdot8{,}5\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}$$<div class=\"bt-ans\">$$S_1\\,n\\,e=3{,}4\\cdot10^{4}\\ \\text{C/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ trôi v₁</span></p><p>Rút $v$ từ $I=S\\,n\\,v\\,e$:</p>$$v_1=\\dfrac{I}{S_1\\,n\\,e}$$$$v_1=\\dfrac{10}{3{,}4\\cdot10^{4}}\\approx2{,}94\\cdot10^{-4}\\ \\text{m/s}$$<div class=\"bt-ans\">$$v_1\\approx0{,}294\\ \\text{mm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ trôi v₂ ở đoạn 1,0 mm²</span></p><p>Nối tiếp nên $I=10$ A vẫn như cũ ; chỉ đổi tiết diện:</p>$$S_2\\,n\\,e=1{,}0\\cdot10^{-6}\\cdot8{,}5\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}=1{,}36\\cdot10^{4}\\ \\text{C/m}$$$$v_2=\\dfrac{I}{S_2\\,n\\,e}=\\dfrac{10}{1{,}36\\cdot10^{4}}\\approx7{,}35\\cdot10^{-4}\\ \\text{m/s}$$<div class=\"bt-ans\">$$v_2\\approx0{,}735\\ \\text{mm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cùng $I$, $n$, $e$ nên $v$ tỉ lệ nghịch với $S$:</p>$$\\dfrac{v_2}{v_1}=\\dfrac{0{,}735}{0{,}294}\\approx2{,}5=\\dfrac{S_1}{S_2}\\ ✓$$<p>Dây nhỏ hơn thì electron trôi nhanh hơn, giống nước chảy nhanh hơn ở đoạn ống hẹp.</p><p>Cả hai đều dưới $1$ mm/s, cùng cỡ với ví dụ trong bài ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_1\\approx0{,}294$ mm/s</p><p>b) $v_2\\approx0{,}735$ mm/s</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>tốc độ trôi</strong> hoặc đổi <strong>tiết diện</strong> với $n$ cho trước → dùng $v=\\dfrac{I}{Sne}$, nhớ đổi mm² sang m².</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Hai đoạn dây đồng nối tiếp mang cùng dòng 10 A, tốc độ trôi trong mỗi đoạn cần tìm\"><line x1=\"26.0\" y1=\"68.0\" x2=\"212.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"26.0\" y1=\"132.0\" x2=\"212.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"79.0\" x2=\"396.0\" y2=\"79.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"121.0\" x2=\"396.0\" y2=\"121.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"68.0\" x2=\"212.0\" y2=\"79.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"212.0\" y1=\"132.0\" x2=\"212.0\" y2=\"121.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"120.0\" y1=\"62.0\" x2=\"120.0\" y2=\"138.0\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"304.0\" y1=\"73.0\" x2=\"304.0\" y2=\"127.0\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"120\" y=\"156.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S₁ = 2,5 mm²</text><text x=\"304\" y=\"145.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S₂ = 1,0 mm²</text><line x1=\"150\" y1=\"28\" x2=\"240\" y2=\"28\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M231.2,22.9 L240.0,28.0 L231.2,33.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"144\" y=\"33\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I = 10 A</text><text x=\"250\" y=\"33\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">cùng một dòng</text><circle cx=\"44.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"44.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"44.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"74.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"74.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"74.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"104.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"104.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"104.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"134.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"134.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"134.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"164.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"164.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"164.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"194.0\" cy=\"82.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"194.0\" cy=\"100.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"194.0\" cy=\"118.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"292.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"292.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"320.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"320.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"348.0\" cy=\"90.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><circle cx=\"348.0\" cy=\"110.0\" r=\"4.5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"/><text x=\"120\" y=\"60\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">v₁ = ?</text><text x=\"304\" y=\"60\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">v₂ = ?</text></svg><figcaption>Dữ kiện: hai đoạn dây nối tiếp, cùng dòng 10 A ; tốc độ trôi mỗi đoạn là đại lượng cần tìm. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lõi đồng tiết diện $2{,}5\\ \\text{mm}^2$\"</td><td>$S=2{,}5\\ \\text{mm}^2$</td><td>⚠ Đổi $\\text{mm}^2$ sang $\\text{m}^2$ trước khi thế vào ; dây đồng chất, tiết diện đều</td></tr><tr><td>\"dòng điện không đổi $10$ A\"</td><td>$I=10$ A</td><td>Liên hệ cường độ dòng điện với chuyển động hạt tải điện</td></tr><tr><td>\"$n=8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$ ; $e=1{,}6\\cdot10^{-19}$ C\"</td><td>$n$ ; $e$</td><td>Mật độ hạt tải ; độ lớn điện tích mỗi hạt</td></tr><tr><td>\"tốc độ trôi của electron … mm/s\"</td><td>Cần: $v_1$ (mm/s)</td><td>⚠ $v$ là tốc độ trôi trung bình có hướng, khác tốc độ chuyển động nhiệt</td></tr><tr><td>\"nối tiếp thêm … $1{,}0\\ \\text{mm}^2$ … dòng vẫn là $10$ A\"</td><td>$S_2=1{,}0\\ \\text{mm}^2$ ; $I$ như cũ</td><td>Mạch nối tiếp thì dòng ở mọi tiết diện như nhau</td></tr><tr><td>\"tốc độ trôi … đoạn dây này\"</td><td>Cần: $v_2$ (mm/s)</td><td>Cùng $n$, $e$, $I$ : đại lượng nào thay đổi</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tốc độ trôi</b>, <b>tiết diện</b> hoặc <b>mật độ electron</b> trong đề → nghĩ tới <b>I = S·n·v·e</b>, rút <b>v = I/(S·n·e)</b>.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tích S·n·e của lõi 2,5 mm²",
+     "hoi": "Tích $S\\,n\\,e$ của lõi dây $2{,}5\\ \\text{mm}^2$ bằng bao nhiêu, theo đơn vị $10^{4}$ C/m?",
+     "dap_so": 3.4,
+     "sai_so": 0.05,
+     "don_vi": "×10⁴ C/m",
+     "loi_hay_gap": "Thế thẳng $2{,}5$ vào mà chưa đổi $\\text{mm}^2$ sang $\\text{m}^2$, kết quả lớn hơn $10^{6}$ lần."
+    },
+    {
+     "tieu_de": "Tốc độ trôi v₁",
+     "hoi": "Tốc độ trôi $v_1$ trong lõi dây bằng bao nhiêu mm/s?",
+     "dap_so": 0.294,
+     "sai_so": 0.005,
+     "don_vi": "mm/s",
+     "loi_hay_gap": "Đổi m/s sang mm/s sai hệ số (nhân $100$ hoặc chia $1000$ thay vì nhân $1000$).",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia cường độ cho tích $S\\,n\\,e$",
+       "dung": true
+      },
+      {
+       "text": "Nhân cường độ với tích $S\\,n\\,e$",
+       "dung": false,
+       "vi_sao": "Từ $I=S\\,n\\,v\\,e$ phải chia hai vế cho $S\\,n\\,e$ ; nhân sẽ cho đơn vị không phải m/s."
+      },
+      {
+       "text": "Chia tích $S\\,n\\,e$ cho cường độ",
+       "dung": false,
+       "vi_sao": "Đó là nghịch đảo : cùng $S$ mà dòng lớn hơn thì $v$ phải lớn hơn, không nhỏ đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ trôi v₂ ở đoạn 1,0 mm²",
+     "hoi": "Tốc độ trôi $v_2$ ở đoạn dây $1{,}0\\ \\text{mm}^2$ bằng bao nhiêu mm/s?",
+     "dap_so": 0.735,
+     "sai_so": 0.01,
+     "don_vi": "mm/s",
+     "loi_hay_gap": "Cho rằng dây nhỏ hơn thì electron trôi chậm hơn, hoặc giữ nguyên $v_1$ vì dòng vẫn như cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Làm lại với $S=1{,}0\\ \\text{mm}^2$, giữ nguyên $I$, $n$, $e$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $v_1$ vì dòng vẫn như cũ",
+       "dung": false,
+       "vi_sao": "Cùng dòng nhưng tiết diện khác thì $v$ khác : $S$ nằm ở mẫu của $v$."
+      },
+      {
+       "text": "Giảm dòng đi vì dây nhỏ hơn rồi tính lại",
+       "dung": false,
+       "vi_sao": "Hai đoạn nối tiếp nên dòng ở mọi tiết diện như nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Bài tổng hợp: cường độ, số electron, tốc độ trôi và mật độ dòng điện",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "problem_html": "<p>Dây đồng dẫn điện cho một bếp từ có tiết diện $6{,}0\\ \\text{mm}^2$. Khi nấu, dòng điện không đổi : trong $1{,}5$ phút có $2700$ C điện lượng chuyển qua tiết diện thẳng của dây. Mật độ electron tự do của đồng $n=8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$ ; $e=1{,}6\\cdot10^{-19}$ C.</p><ol type=\"a\"><li>Tính cường độ dòng điện trong dây.</li><li>Có bao nhiêu electron chuyển qua tiết diện đó trong thời gian trên?</li><li>Tính tốc độ trôi của electron trong dây, theo mm/s.</li><li>Tính mật độ dòng điện trong dây, theo A/mm².</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Các electron tự do chuyển động nhiệt hỗn loạn giữa các ion dương trong dây đồng\"><line x1=\"30.0\" y1=\"40.0\" x2=\"400.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"60\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"60\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"60\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><line x1=\"150\" y1=\"26\" x2=\"240\" y2=\"26\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M231.2,20.9 L240.0,26.0 L231.2,31.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"31\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I</text><text x=\"250\" y=\"31\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chiều dòng điện</text><text x=\"210\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S = 6,0 mm²</text><circle cx=\"310.0\" cy=\"80.0\" r=\"5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"310.0;307.0;300.0;300.5;300.6;303.9;308.0;313.2;306.1;309.3;311.1;302.3;293.0;298.2;301.4;293.8;286.1;288.6;279.7;280.9;274.3;279.6;272.4;269.8;268.8\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"80.0;75.2;82.6;86.0;83.9;85.3;88.2;87.1;80.8;74.8;77.0;82.1;88.7;83.6;87.8;90.9;98.3;106.9;103.7;105.6;112.6;109.0;112.0;115.0;113.1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"114.0\" r=\"5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"230.0;220.5;218.8;216.6;216.4;218.3;210.9;201.7;207.6;199.6;192.0;193.9;195.0;200.4;194.8;198.1;195.6;203.1;197.0;192.1;188.1;185.0;188.6;182.6;173.3\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"114.0;107.4;111.5;115.9;122.8;119.6;111.8;118.3;122.8;125.7;132.7;137.2;135.7;144.0;142.9;146.1;145.2;141.2;144.6;150.0;150.0;150.0;150.0;144.0;138.2\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150.0\" cy=\"88.0\" r=\"5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"150.0;152.1;146.5;139.4;133.6;125.8;126.7;126.7;134.3;139.2;139.9;141.5;143.3;146.5;137.9;138.7;141.1;147.5;140.3;141.4;147.2;147.8;152.3;146.7;147.5\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"88.0;80.2;81.4;78.3;81.5;90.4;94.2;94.2;101.3;92.8;100.8;101.0;95.2;100.3;100.5;97.8;105.4;102.0;108.3;114.3;110.3;106.7;110.2;110.2;105.4\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"95.0\" cy=\"126.0\" r=\"5\" fill=\"#38bdf8\" fill-opacity=\".85\" stroke=\"#38bdf8\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"95.0;88.4;79.8;86.8;77.9;80.9;71.5;65.1;61.0;54.2;48.3;47.6;49.5;44.0;44.0;47.9;44.9;44.5;47.0;47.4;44.0;44.0;48.6;46.6;44.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"126.0;125.5;125.4;131.3;137.2;140.9;145.6;150.0;147.6;150.0;150.0;143.7;144.2;150.0;141.4;145.5;139.9;141.4;141.2;145.2;139.5;144.0;150.0;150.0;148.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"210\" y=\"196\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">rung nhiệt hỗn loạn + trôi có hướng rất chậm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: electron dao động hỗn loạn, chỉ lệch dần theo một hướng. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$I=\\dfrac{\\Delta q}{\\Delta t}$ ; $\\Delta q=Ne$ ; $I=S\\,n\\,v\\,e$.</li><li>Mật độ dòng điện $j=\\dfrac{I}{S}=n\\,v\\,e$ (A/m²).</li><li>⚠ Dòng không đổi mới dùng $I=\\Delta q/\\Delta t$ cho cả khoảng thời gian ; $v$ là tốc độ trôi, không phải tốc độ nhiệt.</li><li>Đổi sang SI: phút → s ; mm² → m².</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ dòng điện</span></p><p>Đổi thời gian ra giây, rồi chia điện lượng cho thời gian:</p>$$\\Delta t=1{,}5\\cdot60=90\\ \\text{s}$$$$I=\\dfrac{\\Delta q}{\\Delta t}=\\dfrac{2700}{90}$$<div class=\"bt-ans\">$$I=30\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số electron</span></p><p>Chia điện lượng cho điện tích mỗi electron:</p>$$N=\\dfrac{\\Delta q}{e}=\\dfrac{2700}{1{,}6\\cdot10^{-19}}$$<div class=\"bt-ans\">$$N\\approx1{,}69\\cdot10^{22}\\ \\text{electron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ trôi</span></p><p>Đổi tiết diện sang m², rồi rút $v$ từ $I=S\\,n\\,v\\,e$:</p>$$S=6{,}0\\cdot10^{-6}\\ \\text{m}^2$$$$v=\\dfrac{I}{S\\,n\\,e}=\\dfrac{30}{6{,}0\\cdot10^{-6}\\cdot8{,}5\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}}\\approx3{,}68\\cdot10^{-4}\\ \\text{m/s}$$<div class=\"bt-ans\">$$v\\approx0{,}368\\ \\text{mm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Mật độ dòng điện</span></p><p>Mật độ dòng điện là cường độ trên một đơn vị tiết diện ($1\\ \\text{mm}^2$):</p>$$j=\\dfrac{I}{S}=\\dfrac{30}{6{,}0}$$<div class=\"bt-ans\">$$j=5{,}0\\ \\text{A/mm}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Kiểm lại bằng $j=nve$:</p>$$8{,}5\\cdot10^{28}\\cdot3{,}68\\cdot10^{-4}\\cdot1{,}6\\cdot10^{-19}\\approx5{,}0\\cdot10^{6}\\ \\text{A/m}^2=5{,}0\\ \\text{A/mm}^2\\ ✓$$<p>Quên đổi phút ra giây sẽ ra cường độ lớn gấp $60$ lần, vô lí cho một dây dẫn ✓.</p><p>Tốc độ trôi dưới $1$ mm/s, cùng cỡ với các ví dụ trong bài ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I=30$ A</p><p>b) $N\\approx1{,}69\\cdot10^{22}$ electron</p><p>c) $v\\approx0{,}368$ mm/s</p><p>d) $j=5{,}0$ A/mm²</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>điện lượng, thời gian, tiết diện</strong> rồi hỏi <strong>số electron, tốc độ trôi, mật độ dòng</strong> → đi theo chuỗi $I$ → $N$ → $v$ → $j$, mỗi bước dùng lại kết quả trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Dây đồng tiết diện 6,0 mm² có 2700 C chuyển qua trong 1,5 phút; cần tìm I, N, v và j\"><line x1=\"30.0\" y1=\"40.0\" x2=\"400.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"60\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"60\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"60\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"106\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"152\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"198\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"244\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"290\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"336\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"68\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"104\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"382\" y=\"140\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><line x1=\"150\" y1=\"26\" x2=\"240\" y2=\"26\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M231.2,20.9 L240.0,26.0 L231.2,31.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"31\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I</text><text x=\"250\" y=\"31\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chiều dòng điện</text><text x=\"210\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S = 6,0 mm²</text><line x1=\"210.0\" y1=\"34.0\" x2=\"210.0\" y2=\"166.0\" stroke=\"#34d399\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"60\" y=\"66\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">2700 C trong 1,5 phút</text><text x=\"60\" y=\"90\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">I = ?   N = ?</text><text x=\"60\" y=\"114\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = ?   j = ?</text></svg><figcaption>Dữ kiện: điện lượng và thời gian cho trước ; các đại lượng cần tìm ghi bằng dấu ?. Hình minh hoạ định tính, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tiết diện $6{,}0\\ \\text{mm}^2$\"</td><td>$S=6{,}0\\ \\text{mm}^2$</td><td>Đổi sang $\\text{m}^2$ trong hệ SI</td></tr><tr><td>\"dòng điện không đổi\"</td><td>Dòng không đổi</td><td>⚠ Dòng không đổi mới tính $I$ được từ điện lượng và thời gian ; $v$ là tốc độ trôi trung bình, khác chuyển động nhiệt hỗn loạn</td></tr><tr><td>\"trong $1{,}5$ phút có $2700$ C\"</td><td>$\\Delta t=1{,}5$ phút ; $\\Delta q=2700$ C</td><td>Định nghĩa cường độ dòng điện ; đơn vị thời gian trong hệ SI</td></tr><tr><td>\"$n=8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$ ; $e=1{,}6\\cdot10^{-19}$ C\"</td><td>$n$ ; $e$</td><td>Hạt tải trong kim loại</td></tr><tr><td>\"bao nhiêu electron\"</td><td>Cần: $N$</td><td>Liên hệ giữa điện lượng, số hạt và điện tích mỗi hạt</td></tr><tr><td>\"tốc độ trôi của electron … mm/s\"</td><td>Cần: $v$ (mm/s)</td><td>Liên hệ cường độ dòng điện với $S$, $n$, $v$, $e$</td></tr><tr><td>\"mật độ dòng điện … A/mm²\"</td><td>Cần: $j$ (A/mm²)</td><td>Mật độ dòng điện là cường độ trên một đơn vị tiết diện ; liên hệ với hạt tải</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bao nhiêu electron</b>, <b>tốc độ trôi</b> và <b>mật độ dòng điện</b> cùng lúc → nghĩ tới chuỗi <b>I, N, v, j</b>.",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện trong dây bằng bao nhiêu ampe?",
+     "dap_so": 30,
+     "sai_so": 0.3,
+     "don_vi": "A",
+     "loi_hay_gap": "Quên đổi phút ra giây : chia $2700$ cho $1{,}5$ ra $1800$ A, quá lớn cho một dây dân dụng."
+    },
+    {
+     "tieu_de": "Số electron",
+     "hoi": "Số electron chuyển qua tiết diện, theo đơn vị $10^{22}$ electron?",
+     "dap_so": 1.69,
+     "sai_so": 0.02,
+     "don_vi": "×10²² electron",
+     "loi_hay_gap": "Nhân điện lượng với $e$ thay vì chia, hoặc dùng cường độ thay điện lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia điện lượng cho điện tích mỗi electron",
+       "dung": true
+      },
+      {
+       "text": "Chia cường độ dòng điện cho điện tích mỗi electron",
+       "dung": false,
+       "vi_sao": "Đó là số electron qua tiết diện trong mỗi giây, không phải trong cả $1{,}5$ phút."
+      },
+      {
+       "text": "Nhân điện lượng với điện tích mỗi electron",
+       "dung": false,
+       "vi_sao": "Phép nhân cho số cỡ $10^{-16}$ ; số hạt không thể nhỏ hơn $1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ trôi",
+     "hoi": "Tốc độ trôi của electron trong dây bằng bao nhiêu mm/s?",
+     "dap_so": 0.368,
+     "sai_so": 0.005,
+     "don_vi": "mm/s",
+     "loi_hay_gap": "Chưa đổi $\\text{mm}^2$ sang $\\text{m}^2$, hoặc dùng $I=\\Delta q/\\Delta t$ rồi nhầm với $v$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Rút $v$ từ $I=S\\,n\\,v\\,e$ với $I$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Lấy $v=\\dfrac{\\Delta q}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Đó là cường độ dòng điện (C/s), không phải tốc độ trôi (m/s)."
+      },
+      {
+       "text": "Lấy $v=\\dfrac{N}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Đó là số electron qua tiết diện mỗi giây, đơn vị 1/s không phải m/s."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mật độ dòng điện",
+     "hoi": "Mật độ dòng điện trong dây bằng bao nhiêu A/mm²?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "A/mm²",
+     "loi_hay_gap": "Chia cường độ cho tiết diện đã đổi sang $\\text{m}^2$ nhưng vẫn ghi đơn vị $\\text{A/mm}^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia cường độ dòng điện cho tiết diện",
+       "dung": true
+      },
+      {
+       "text": "Nhân cường độ dòng điện với tiết diện",
+       "dung": false,
+       "vi_sao": "Mật độ dòng là cường độ trên một đơn vị tiết diện, nên phải chia."
+      },
+      {
+       "text": "Chia điện lượng cho tiết diện",
+       "dung": false,
+       "vi_sao": "Điện lượng chia diện tích không cho đại lượng nào của dòng điện đang cần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

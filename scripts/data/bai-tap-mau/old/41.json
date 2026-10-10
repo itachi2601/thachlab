@@ -1,0 +1,14 @@
+{
+ "lesson_id": 41,
+ "item_id": 205,
+ "questions": [
+  {
+   "label": "Dạng 1: Xác định cường độ dòng điện",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Sử dụng công thức:</strong> $I=\\dfrac{\\Delta q}{\\Delta t}$, $N=\\dfrac{\\Delta q}{e}$ (N là số hạt điện tích dịch chuyển qua tiết diện thẳng của dây dẫn, $e$ là điện tích nguyên tố).</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 1:</strong> Trong một tia sét, một lượng điện tích âm có độ lớn $\\Delta q = 2{,}5\\,C$ được phóng xuống đất trong khoảng thời gian $\\Delta t = 1{,}0\\times 10^{-4}\\,s$. Coi dòng điện do tia sét này tạo ra là dòng điện không đổi thì cường độ $I$ của dòng điện này bằng bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> $I=\\dfrac{\\Delta q}{\\Delta t}=\\dfrac{2{,}5}{1{,}0\\times 10^{-4}}=2{,}5\\times 10^{4}\\,A = 25\\,kA$.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 2:</strong> Trong một dây dẫn điện có dòng điện không đổi với cường độ $I=80\\,mA$, có bao nhiêu electron chạy qua tiết diện thẳng của dây trong $\\Delta t = 10$ phút?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Điện lượng chuyển qua tiết diện thẳng của dây dẫn trong $\\Delta t=10$ phút là $\\Delta q = I.\\Delta t = 80\\times 10^{-3}\\times 10\\times 60 = 48\\,C$. Số electron chuyển qua tiết diện thẳng của dây dẫn là $N=\\dfrac{\\Delta q}{e}=\\dfrac{48}{1{,}6\\times 10^{-19}}=3{,}0\\times 10^{20}$.</p>"
+  },
+  {
+   "label": "Dạng 2: Liên hệ giữa cường độ dòng điện và tốc độ của các hạt mang điện",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Sử dụng công thức:</strong> $I = Snve$.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 3:</strong> Một dây dẫn bằng kim loại, tiết diện tròn, có đường kính tiết diện thẳng là $d=2{,}0\\,mm$, có dòng điện không đổi cường độ $I=2{,}0\\,A$ chạy qua. Cho biết mật độ electron tự do trong dây dẫn là $n=8{,}5\\times 10^{28}\\,m^{-3}$. Lấy $e=1{,}6\\times 10^{-19}\\,C$. Hãy tính tốc độ dịch chuyển có hướng $v$ của các electron tự do trong dây dẫn.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Diện tích tiết diện thẳng của dây dẫn: $S=\\pi\\left(\\dfrac{d}{2}\\right)^{2}=\\pi\\dfrac{d^{2}}{4}$. Từ $I=Snve$ suy ra $v=\\dfrac{I}{Sne}=\\dfrac{4I}{\\pi d^{2}ne}=\\dfrac{4\\times 2{,}0}{\\pi\\times(2{,}0\\times 10^{-3})^{2}\\times 8{,}5\\times 10^{28}\\times 1{,}6\\times 10^{-19}}\\approx 4{,}7\\times 10^{-5}\\,m/s = 4{,}7\\,\\mu m/s$.</p>"
+  }
+ ]
+}

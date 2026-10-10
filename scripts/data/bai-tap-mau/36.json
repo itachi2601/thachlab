@@ -1,0 +1,632 @@
+{
+ "lesson_id": 36,
+ "lesson_title": "Bài 17. Khái niệm điện trường",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Từ lực đo được trên điện tích thử tìm E, rồi đổi điện tích thử",
+   "topic": "Cường độ điện trường của điện tích điểm",
+   "problem_html": "<p>Tại điểm M trong một điện trường, đặt điện tích thử $q_1=-4$ nC thì nó chịu lực điện $6\\cdot10^{-4}$ N hướng về phía bắc.</p>\n<p>a) Tính độ lớn và nêu hướng của cường độ điện trường tại M.</p>\n<p>b) Bỏ $q_1$ đi, đặt đúng vào M điện tích thử $q_2=+2$ nC. Tính lực điện lên $q_2$ và nêu hướng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Điện tích thử âm rời điểm M mang theo vectơ lực hướng bắc, điện tích thử dương tiến vào đúng điểm M\"><line x1=\"40.0\" y1=\"128.0\" x2=\"380.0\" y2=\"128.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"28.0\" x2=\"210.0\" y2=\"228.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"1\"/><text x=\"210\" y=\"22\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Bắc</text><text x=\"210\" y=\"242\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Nam</text><text x=\"386\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">Đông</text><text x=\"34\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">Tây</text><circle cx=\"210.0\" cy=\"128.0\" r=\"2.5\" fill=\"currentColor\"/><text x=\"194\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-120 0\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"210\" cy=\"128\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"210\" y=\"133\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"210\" y1=\"114\" x2=\"210.0\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M204.2,64.0 L210.0,54.0 L215.8,64.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220\" y=\"88\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"></tspan></text><text x=\"210\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">q<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = −4 nC</tspan></text></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-140 0\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"350\" cy=\"128\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"350\" y=\"133\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"350\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">q<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = +2 nC</tspan></text></g><text x=\"210\" y=\"212\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Tại M:  E = ?    F<tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: bỏ q₁ đi, đặt q₂ vào đúng M (chạy 3 s). Lực đã đo trên q₁ vẽ theo thang 1 N ứng với 100 000 px; vẽ ngắn hơn so với thật. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cường độ điện trường $\\vec E$ đặc trưng cho điện trường về tác dụng lực tại một điểm.</li><li><strong>Định nghĩa:</strong> $\\vec E=\\dfrac{\\vec F}{q}$</li><li>độ lớn $E=\\dfrac{F}{|q|}$</li><li>$F=|q|E$.</li><li>$q\\gt0$ : $\\vec F$ cùng chiều $\\vec E$</li><li>$q\\lt0$ : $\\vec F$ ngược chiều $\\vec E$.</li><li>⚠ <strong>Điều kiện:</strong> $\\vec E$ tại M do nguồn quyết định, không đổi khi thay điện tích thử</li><li>đổi nC sang C trước khi thế.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ lớn của E tại M</span></p><p>Đổi $|q_1|=4\\ \\text{nC}=4\\cdot10^{-9}\\ \\text{C}$ rồi dùng định nghĩa:</p>$$E=\\dfrac{F_1}{|q_1|}$$$$E=\\dfrac{6\\cdot10^{-4}}{4\\cdot10^{-9}}$$<div class=\"bt-ans\">$$E=1{,}5\\cdot10^{5}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hướng của E tại M</span></p><p>$q_1\\lt0$ nên $\\vec F_1$ ngược chiều $\\vec E$.</p><p>$\\vec F_1$ hướng bắc, vậy:</p><div class=\"bt-ans\"><p>$\\vec E$ tại M hướng về phía <strong>nam</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực điện lên q₂</span></p><p>$\\vec E$ tại M không đổi khi đổi điện tích thử. Đổi $q_2=2\\cdot10^{-9}\\ \\text{C}$:</p>$$F_2=|q_2|\\,E$$$$F_2=2\\cdot10^{-9}\\cdot1{,}5\\cdot10^{5}$$<div class=\"bt-ans\">$$F_2=3\\cdot10^{-4}\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hướng của lực lên q₂</span></p><p>$q_2\\gt0$ nên $\\vec F_2$ cùng chiều $\\vec E$.</p><div class=\"bt-ans\"><p>$\\vec F_2$ hướng về phía <strong>nam</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$|q_2|=\\dfrac12|q_1|$ nên $F_2=\\dfrac12F_1$ ✓.</p><p>Đơn vị $\\text{N/C}=\\text{V/m}$ ✓.</p><p>Hai điện tích trái dấu đặt cùng chỗ chịu lực ngược chiều nhau ✓ ($\\vec F_1$ bắc, $\\vec F_2$ nam).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=1{,}5\\cdot10^{5}$ V/m, hướng nam</p><p>b) $F_2=3\\cdot10^{-4}$ N, hướng nam</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực đo được trên một điện tích thử</strong> rồi hỏi $E$ hoặc lực khi đổi điện tích thử → $E=\\dfrac{F}{|q|}$, chiều theo dấu $q$, $\\vec E$ giữ nguyên.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Điện tích thử q1 âm tại M chịu lực hướng bắc; cần tìm cường độ điện trường tại M\"><line x1=\"40.0\" y1=\"128.0\" x2=\"380.0\" y2=\"128.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"28.0\" x2=\"210.0\" y2=\"228.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"1\"/><text x=\"210\" y=\"22\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Bắc</text><text x=\"210\" y=\"242\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Nam</text><text x=\"386\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">Đông</text><text x=\"34\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">Tây</text><circle cx=\"210.0\" cy=\"128.0\" r=\"2.5\" fill=\"currentColor\"/><text x=\"194\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M</text><circle cx=\"210\" cy=\"128\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"210\" y=\"133\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"210\" y1=\"114\" x2=\"210.0\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M204.2,64.0 L210.0,54.0 L215.8,64.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220\" y=\"88\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"></tspan></text><text x=\"210\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">q<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = −4 nC</tspan></text><text x=\"210\" y=\"212\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Tại M:  E = ?</text></svg><figcaption>Dữ kiện: q₁ = −4 nC tại M, chịu lực F₁ = 6·10⁻⁴ N hướng bắc (vẽ theo tỉ lệ độ dài lực). Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện tích thử $q_1=-4$ nC\"</td><td>$q_1=-4$ nC (điện tích âm)</td><td>Đổi nC sang C<br>dấu của $q$ liên quan thế nào tới chiều lực ?</td></tr><tr><td>\"chịu lực điện $6\\cdot10^{-4}$ N hướng về phía bắc\"</td><td>$F_1=6\\cdot10^{-4}$ N ; hướng bắc</td><td>Định nghĩa cường độ điện trường qua lực lên điện tích thử</td></tr><tr><td>\"Tính độ lớn và nêu hướng của cường độ điện trường tại M\"</td><td>Cần: $E$ (độ lớn), hướng của $\\vec E$</td><td>Liên hệ giữa $E$, $F$, $q$<br>quan hệ chiều của $\\vec F$ và $\\vec E$ theo dấu $q$</td></tr><tr><td>\"Bỏ $q_1$ đi, đặt đúng vào M điện tích thử $q_2=+2$ nC\"</td><td>$q_2=+2$ nC (điện tích dương), vẫn là điểm M</td><td>⚠ Điện trường tại M do đâu mà có, và điện tích thử cần thoả điều kiện gì ?</td></tr><tr><td>\"Tính lực điện lên $q_2$ và nêu hướng\"</td><td>Cần: $F_2$ (độ lớn), hướng</td><td>Lực điện lên điện tích đặt trong điện trường<br>chiều lực theo dấu $q_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực đo được trên điện tích thử</b> rồi <b>đổi điện tích thử</b> → <b>E = F/|q|</b>, chiều theo dấu q, E giữ nguyên.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ lớn của E tại M",
+     "hoi": "Cường độ điện trường tại M bằng bao nhiêu (theo đơn vị $10^{5}\\ \\text{V/m}$)?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "×10⁵ V/m",
+     "loi_hay_gap": "Quên đổi nC sang C nên $E$ sai $10^{9}$ lần, hoặc nhân $F$ với $|q|$ thay vì chia."
+    },
+    {
+     "tieu_de": "Hướng của E tại M",
+     "hoi": "Hướng của $\\vec E$ tại M so với hướng của $\\vec F_1$ là gì?",
+     "lua_chon": [
+      {
+       "text": "Ngược hướng $\\vec F_1$ (hướng nam), vì $q_1\\lt0$",
+       "dung": true
+      },
+      {
+       "text": "Cùng hướng $\\vec F_1$ (hướng bắc)",
+       "dung": false,
+       "vi_sao": "Chỉ đúng với điện tích thử dương ; $q_1$ âm nên lực ngược chiều $\\vec E$."
+      },
+      {
+       "text": "Vuông góc với $\\vec F_1$",
+       "dung": false,
+       "vi_sao": "Từ $\\vec F=q\\vec E$, lực luôn cùng phương với $\\vec E$."
+      }
+     ],
+     "loi_hay_gap": "Lấy $\\vec E$ cùng hướng với lực, quên rằng $q_1$ âm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu của $q_1$ để biết $\\vec E$ cùng hay ngược chiều $\\vec F_1$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\vec E$ cùng chiều $\\vec F_1$ vì lực và cường độ điện trường luôn cùng hướng",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi điện tích thử dương."
+      },
+      {
+       "text": "Coi $\\vec E$ vuông góc $\\vec F_1$ vì là hai đại lượng khác nhau",
+       "dung": false,
+       "vi_sao": "$\\vec F=q\\vec E$ nên hai vectơ luôn cùng phương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực điện lên q₂",
+     "hoi": "Lực điện lên $q_2$ bằng bao nhiêu (theo đơn vị $10^{-4}\\ \\text{N}$)?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁴ N",
+     "loi_hay_gap": "Cho rằng $E$ đổi theo điện tích thử, hoặc lấy luôn lực mới bằng lực cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $E$ tại M, tính $F_2=|q_2|E$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $F_2=F_1$ vì cùng điểm M",
+       "dung": false,
+       "vi_sao": "Cùng điểm thì $E$ bằng nhau, còn lực tỉ lệ với $|q|$ mà $|q_2|$ khác $|q_1|$."
+      },
+      {
+       "text": "Tính lại $E$ bằng $F/|q_2|$ rồi mới tìm lực",
+       "dung": false,
+       "vi_sao": "Chưa biết $F_2$ nên không tính được ; $E$ tại M do nguồn quyết định, không đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng của lực lên q₂",
+     "hoi": "Lực điện lên $q_2$ hướng thế nào so với $\\vec E$ tại M?",
+     "lua_chon": [
+      {
+       "text": "Cùng hướng $\\vec E$ (hướng nam), vì $q_2\\gt0$",
+       "dung": true
+      },
+      {
+       "text": "Cùng hướng $\\vec F_1$ (hướng bắc)",
+       "dung": false,
+       "vi_sao": "$\\vec F_1$ tác dụng lên điện tích âm ; điện tích dương chịu lực ngược chiều với nó."
+      },
+      {
+       "text": "Ngược hướng $\\vec E$",
+       "dung": false,
+       "vi_sao": "Chỉ điện tích âm chịu lực ngược chiều $\\vec E$."
+      }
+     ],
+     "loi_hay_gap": "Lấy hướng lực lên $q_2$ trùng hướng $\\vec F_1$ vì cùng một điểm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu $q_2$ để so chiều $\\vec F_2$ với $\\vec E$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\vec F_2$ cùng chiều $\\vec F_1$ vì cùng điểm M",
+       "dung": false,
+       "vi_sao": "Lực phụ thuộc dấu điện tích thử, không chỉ vào điểm đặt."
+      },
+      {
+       "text": "Không cần xét, vì độ lớn đã đủ",
+       "dung": false,
+       "vi_sao": "Đề hỏi cả hướng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Điện trường của một điện tích điểm: độ lớn, chiều theo dấu Q, lực lên điện tích thử",
+   "topic": "Cường độ điện trường của điện tích điểm",
+   "problem_html": "<p>Một điện tích điểm $Q=-6$ nC đặt cố định trong không khí. Điểm M cách Q một đoạn 3 cm.</p>\n<p>a) Tính cường độ điện trường tại M và nêu hướng.</p>\n<p>b) Đặt tại M một điện tích thử $q=+2$ nC. Tính lực điện lên $q$ và nêu hướng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 255\" role=\"img\" aria-label=\"Mặt sóng điện trường lan ra từ điện tích điểm Q tới điểm M cách Q 3 cm\"><circle cx=\"140\" cy=\"130\" r=\"10\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\"><animate attributeName=\"r\" values=\"10;120\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"140\" cy=\"130\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"140\" y=\"135\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"140\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = −6 nC</text><circle cx=\"260.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"268\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"300\" y=\"90\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">r = QM = 3 cm</text><text x=\"404\" y=\"30\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"400\" text-anchor=\"end\">không khí</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện trường của Q lan ra tới M (vòng nét đứt mở rộng, chạy 3 s). Vòng chỉ cho thấy khoảng cách, chưa cho biết chiều. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện tích điểm $Q$ gây ra điện trường quanh nó</li><li>$\\vec E$ tại một điểm có phương là đường nối điểm đó với $Q$.</li><li><strong>Công thức:</strong> $E=k\\dfrac{|Q|}{\\varepsilon r^2}$ với $k=9\\cdot10^{9}\\ \\text{N·m}^2/\\text{C}^2$</li><li>$F=|q|E$.</li><li><strong>Chiều:</strong> $Q\\gt0$ hướng ra xa $Q$</li><li>$Q\\lt0$ hướng về phía $Q$</li><li>điện tích thử dương chịu lực cùng chiều $\\vec E$.</li><li>⚠ <strong>Điều kiện:</strong> $r$ tính bằng m</li><li>thế $|Q|$ vào công thức, dấu của $Q$ chỉ dùng để chọn chiều.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ lớn của E tại M</span></p><p>Đổi $r=3\\ \\text{cm}=0{,}03\\ \\text{m}$ ; $|Q|=6\\cdot10^{-9}\\ \\text{C}$ ; không khí $\\varepsilon\\approx1$.</p>$$E=k\\dfrac{|Q|}{\\varepsilon r^2}$$$$E=9\\cdot10^{9}\\cdot\\dfrac{6\\cdot10^{-9}}{1\\cdot0{,}03^2}$$<div class=\"bt-ans\">$$E=6\\cdot10^{4}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hướng của E tại M</span></p><p>$Q\\lt0$ nên $\\vec E$ nằm trên đường nối M với Q và hướng về phía $Q$.</p><div class=\"bt-ans\"><p>$\\vec E_M$ hướng <strong>từ M về Q</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực điện lên điện tích thử</span></p><p>Đổi $q=2\\cdot10^{-9}\\ \\text{C}$ ; dùng $E$ vừa tính:</p>$$F=|q|\\,E$$$$F=2\\cdot10^{-9}\\cdot6\\cdot10^{4}$$<div class=\"bt-ans\">$$F=1{,}2\\cdot10^{-4}\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hướng của lực</span></p><p>$q\\gt0$ nên $\\vec F$ cùng chiều $\\vec E$.</p><div class=\"bt-ans\"><p>$\\vec F$ hướng <strong>về phía Q</strong> (hai điện tích trái dấu hút nhau).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Kiểm bằng định luật Culông : $F=k\\dfrac{|Q||q|}{r^2}=9\\cdot10^{9}\\cdot\\dfrac{6\\cdot10^{-9}\\cdot2\\cdot10^{-9}}{0{,}03^2}=1{,}2\\cdot10^{-4}\\ \\text{N}$ ✓.</p><p>Nếu thế $r=3$ (cm) vào công thức sẽ ra $E$ sai $10^{4}$ lần : luôn đổi sang m.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=6\\cdot10^{4}$ V/m, hướng từ M về Q</p><p>b) $F=1{,}2\\cdot10^{-4}$ N, hướng về phía Q</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>điện tích điểm Q và khoảng cách r</strong> → $E=k\\dfrac{|Q|}{\\varepsilon r^2}$ ; chiều theo dấu $Q$ (dương ra, âm vào).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 255\" role=\"img\" aria-label=\"Điện tích điểm Q âm trong không khí, điểm M cách Q 3 cm; cần tìm cường độ điện trường tại M và lực lên điện tích thử\"><circle cx=\"140\" cy=\"130\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"140\" y=\"135\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"140\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = −6 nC</text><circle cx=\"260.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"268\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><line x1=\"140\" y1=\"215\" x2=\"260\" y2=\"215\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M253.0,210.9 L260.0,215.0 L253.0,219.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"215\" x2=\"140\" y2=\"215\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M147.0,219.1 L140.0,215.0 L147.0,210.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"176.0\" y=\"238\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 3 cm</text><line x1=\"140.0\" y1=\"210.0\" x2=\"140.0\" y2=\"220.0\" stroke=\"#fb923c\" stroke-width=\"1.5\" opacity=\"1\"/><line x1=\"260.0\" y1=\"210.0\" x2=\"260.0\" y2=\"220.0\" stroke=\"#fb923c\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"404\" y=\"30\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"400\" text-anchor=\"end\">không khí</text><text x=\"300\" y=\"90\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tại M:  E = ?</text><text x=\"300\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Đặt q = +2 nC tại M:</text><text x=\"300\" y=\"134\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></svg><figcaption>Dữ kiện: Q = −6 nC, r = QM = 3 cm. Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện tích điểm $Q=-6$ nC … trong không khí\"</td><td>$Q=-6$ nC (âm) ; $\\varepsilon\\approx1$</td><td>Điểm đặt, phương, chiều, độ lớn của $\\vec E$ do điện tích điểm gây ra<br>chiều phụ thuộc dấu của $Q$</td></tr><tr><td>\"Điểm M cách Q một đoạn 3 cm\"</td><td>$r=3$ cm</td><td>⚠ $r$ là khoảng cách từ điện tích nguồn tới điểm xét, tính bằng m</td></tr><tr><td>\"Tính cường độ điện trường tại M và nêu hướng\"</td><td>Cần: $E_M$, hướng của $\\vec E_M$</td><td>Công thức độ lớn $E$ của điện tích điểm<br>quy ước chiều theo dấu $Q$</td></tr><tr><td>\"Đặt tại M một điện tích thử $q=+2$ nC\"</td><td>$q=+2$ nC (điện tích dương)</td><td>Lực điện lên điện tích đặt tại điểm đã biết $\\vec E$</td></tr><tr><td>\"Tính lực điện lên $q$ và nêu hướng\"</td><td>Cần: $F$, hướng của $\\vec F$</td><td>Liên hệ $F$ với $E$ và $|q|$<br>chiều lực theo dấu $q$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>điện tích điểm Q và khoảng cách r</b> → <b>E = k|Q|/(εr²)</b>, chiều ra (Q dương) hoặc vào (Q âm).",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ lớn của E tại M",
+     "hoi": "Cường độ điện trường tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Thế $r=3$ (cm) thay vì $0{,}03$ m, hoặc thế $Q$ âm vào công thức rồi ra $E$ âm."
+    },
+    {
+     "tieu_de": "Hướng của E tại M",
+     "hoi": "$\\vec E$ tại M hướng thế nào?",
+     "lua_chon": [
+      {
+       "text": "Hướng về phía Q, vì $Q\\lt0$",
+       "dung": true
+      },
+      {
+       "text": "Hướng ra xa Q",
+       "dung": false,
+       "vi_sao": "Chỉ đúng với điện tích nguồn dương."
+      },
+      {
+       "text": "Vuông góc với đường nối M và Q",
+       "dung": false,
+       "vi_sao": "$\\vec E$ của điện tích điểm nằm trên đường nối điểm đó với $Q$."
+      }
+     ],
+     "loi_hay_gap": "Vẽ $\\vec E$ hướng ra xa $Q$ vì quên rằng $Q$ âm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu của $Q$ : âm thì hướng vào, dương thì hướng ra",
+       "dung": true
+      },
+      {
+       "text": "Lấy dấu của $Q$ đưa vào công thức để $E$ mang dấu",
+       "dung": false,
+       "vi_sao": "Công thức cho độ lớn ; dấu của $Q$ chỉ dùng để chọn chiều."
+      },
+      {
+       "text": "Cho $\\vec E$ luôn hướng ra xa điện tích nguồn",
+       "dung": false,
+       "vi_sao": "Chỉ đúng với $Q$ dương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực điện lên điện tích thử",
+     "hoi": "Lực điện lên $q$ bằng bao nhiêu (theo đơn vị $10^{-4}\\ \\text{N}$)?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "×10⁻⁴ N",
+     "loi_hay_gap": "Thế điện tích nguồn $Q$ thay cho $q$ khi nhân với $E$, hoặc chia thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $E$ vừa tính : $F=|q|E$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $F=\\dfrac{E}{|q|}$",
+       "dung": false,
+       "vi_sao": "Đó là $E=\\dfrac{F}{|q|}$ lật ngược ; lực bằng $|q|E$."
+      },
+      {
+       "text": "Lấy $F=|Q|\\,E$",
+       "dung": false,
+       "vi_sao": "$Q$ đã nằm trong $E$ rồi ; lực lên $q$ phải nhân với chính điện tích $q$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng của lực",
+     "hoi": "Lực điện lên $q$ hướng thế nào?",
+     "lua_chon": [
+      {
+       "text": "Về phía Q, cùng chiều $\\vec E$ vì $q\\gt0$",
+       "dung": true
+      },
+      {
+       "text": "Ra xa Q",
+       "dung": false,
+       "vi_sao": "$q\\gt0$ chịu lực cùng chiều $\\vec E$, mà $\\vec E$ hướng vào Q nên lực cũng hướng vào."
+      },
+      {
+       "text": "Không có lực vì M chưa có điện tích thử",
+       "dung": false,
+       "vi_sao": "Điện trường có ở M dù chưa đặt gì ; đặt $q$ vào là có lực."
+      }
+     ],
+     "loi_hay_gap": "Cho lực hướng ra xa $Q$, quên rằng $\\vec E$ ở đây hướng vào.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy chiều của $\\vec E$ vừa tìm rồi xét dấu $q$",
+       "dung": true
+      },
+      {
+       "text": "Lấy chiều ra xa $Q$ cho mọi trường hợp",
+       "dung": false,
+       "vi_sao": "Chiều lực phụ thuộc dấu của cả $Q$ và $q$."
+      },
+      {
+       "text": "Bỏ qua chiều vì độ lớn là đủ",
+       "dung": false,
+       "vi_sao": "Đề hỏi cả hướng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Điện trường trong điện môi: đổi đơn vị, tỉ lệ theo khoảng cách",
+   "topic": "Cường độ điện trường của điện tích điểm",
+   "problem_html": "<p>Một điện tích điểm $Q=+8$ nC đặt cố định trong dầu có hằng số điện môi $\\varepsilon=2$. Điểm M cách Q 4 cm, điểm N nằm trên tia QM và cách Q 12 cm.</p>\n<p>a) Tính cường độ điện trường tại M.</p>\n<p>b) Tính cường độ điện trường tại N.</p>\n<p>c) Điểm P nằm trên tia QM có cường độ điện trường $900$ V/m. Tính khoảng cách từ P đến Q.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 260\" role=\"img\" aria-label=\"Mặt sóng điện trường lan ra từ điện tích điểm Q trong dầu, đi qua M rồi N\"><rect x=\"16\" y=\"8\" width=\"388\" height=\"244\" rx=\"10\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"396\" y=\"30\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"600\" text-anchor=\"end\">dầu, ε = 2</text><circle cx=\"140\" cy=\"130\" r=\"10\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\"><animate attributeName=\"r\" values=\"10;120\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"140\" cy=\"130\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"140\" y=\"135\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"140\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = +8 nC</text><circle cx=\"180.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"180\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"260.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"260\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><text x=\"284\" y=\"56\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">QM = 4 cm</text><text x=\"284\" y=\"78\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">QN = 12 cm</text><text x=\"284\" y=\"104\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">E<tspan dy=\"4\" font-size=\"11\">M</tspan><tspan dy=\"-4\"> = ?   E</tspan><tspan dy=\"4\" font-size=\"11\">N</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"284\" y=\"128\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P: E<tspan dy=\"4\" font-size=\"11\">P</tspan><tspan dy=\"-4\"> = 900 V/m</tspan></text><text x=\"284\" y=\"150\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">QP = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện trường của Q lan ra qua M rồi tới N (chạy 3 s); khoảng cách vẽ đúng tỉ lệ 1 cm : 10 px. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức:</strong> $E=k\\dfrac{|Q|}{\\varepsilon r^2}$</li><li>cùng $Q$ và cùng môi trường thì $E$ tỉ lệ $\\dfrac{1}{r^2}$.</li><li><strong>Mẹo:</strong> $r$ gấp $n$ lần thì $E$ giảm $n^2$ lần.</li><li>⚠ <strong>Điều kiện:</strong> $\\varepsilon$ nằm ở mẫu số</li><li>đổi cm sang m trước khi thế</li><li>khi so sánh hai điểm phải cùng $Q$ và cùng $\\varepsilon$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ điện trường tại M</span></p><p>Đổi $r_M=4\\ \\text{cm}=0{,}04\\ \\text{m}$ ; $|Q|=8\\cdot10^{-9}\\ \\text{C}$ ; $\\varepsilon=2$.</p>$$E_M=k\\dfrac{|Q|}{\\varepsilon r_M^2}$$$$E_M=9\\cdot10^{9}\\cdot\\dfrac{8\\cdot10^{-9}}{2\\cdot0{,}04^2}$$<div class=\"bt-ans\">$$E_M=2{,}25\\cdot10^{4}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ điện trường tại N</span></p><p>Cùng $Q$, cùng môi trường ; $r_N=12\\ \\text{cm}=3r_M$ nên $E$ giảm $3^2$ lần:</p>$$\\dfrac{E_N}{E_M}=\\left(\\dfrac{r_M}{r_N}\\right)^2=\\dfrac{1}{9}$$$$E_N=\\dfrac{2{,}25\\cdot10^{4}}{9}$$<div class=\"bt-ans\">$$E_N=2{,}5\\cdot10^{3}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khoảng cách từ P đến Q</span></p><p>Cùng $Q$, cùng môi trường ; so sánh P với M :</p>$$\\dfrac{E_M}{E_P}=\\left(\\dfrac{r_P}{r_M}\\right)^2$$$$\\dfrac{r_P}{r_M}=\\sqrt{\\dfrac{2{,}25\\cdot10^{4}}{900}}=5$$$$r_P=5\\cdot4\\ \\text{cm}$$<div class=\"bt-ans\">$$r_P=20\\ \\text{cm}=0{,}20\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Tính trực tiếp : $E_N=9\\cdot10^{9}\\cdot\\dfrac{8\\cdot10^{-9}}{2\\cdot0{,}12^2}=2{,}5\\cdot10^{3}\\ \\text{V/m}$ ✓.</p><p>Từ $E_P$ : $r_P=\\sqrt{\\dfrac{k|Q|}{\\varepsilon E_P}}=\\sqrt{\\dfrac{72}{2\\cdot900}}=0{,}20\\ \\text{m}$ ✓.</p><p>$E_P\\lt E_N$ nên P phải xa Q hơn N ($20\\ \\text{cm}\\gt12\\ \\text{cm}$) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E_M=2{,}25\\cdot10^{4}$ V/m</p><p>b) $E_N=2{,}5\\cdot10^{3}$ V/m</p><p>c) $r_P=20$ cm</p></div><p class=\"bt-note\">Nhận dạng: đề <strong>so sánh E ở hai khoảng cách</strong> hoặc cho $E$ rồi hỏi $r$ → dùng tỉ lệ $E\\sim\\dfrac{1}{r^2}$ cùng nguồn, cùng môi trường.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 260\" role=\"img\" aria-label=\"Điện tích điểm Q trong dầu, hai điểm M và N trên cùng một tia cách Q 4 cm và 12 cm; cần tìm E tại M, N và khoảng cách tới điểm P\"><rect x=\"16\" y=\"8\" width=\"388\" height=\"244\" rx=\"10\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"396\" y=\"30\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"600\" text-anchor=\"end\">dầu, ε = 2</text><circle cx=\"140\" cy=\"130\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"140\" y=\"135\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"140\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = +8 nC</text><circle cx=\"180.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"180\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"260.0\" cy=\"130.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"260\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><line x1=\"140\" y1=\"178\" x2=\"180\" y2=\"178\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M173.0,173.9 L180.0,178.0 L173.0,182.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"180\" y1=\"178\" x2=\"140\" y2=\"178\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M147.0,182.1 L140.0,178.0 L147.0,173.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"146.0\" y=\"198\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">4 cm</text><line x1=\"140\" y1=\"215\" x2=\"260\" y2=\"215\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M253.0,210.9 L260.0,215.0 L253.0,219.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"215\" x2=\"140\" y2=\"215\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M147.0,219.1 L140.0,215.0 L147.0,210.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"182.0\" y=\"236\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">12 cm</text><text x=\"236\" y=\"52\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  E<tspan dy=\"4\" font-size=\"11\">M</tspan><tspan dy=\"-4\"> ,  E</tspan><tspan dy=\"4\" font-size=\"11\">N</tspan><tspan dy=\"-4\"></tspan></text><text x=\"236\" y=\"76\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Điểm P: E<tspan dy=\"4\" font-size=\"10\">P</tspan><tspan dy=\"-4\"> = 900 V/m</tspan></text><text x=\"236\" y=\"100\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">QP = ?</text></svg><figcaption>Dữ kiện: Q = +8 nC, ε = 2 ; QM = 4 cm, QN = 12 cm ; khoảng cách vẽ đúng tỉ lệ 1 cm : 10 px. Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$Q=+8$ nC … trong dầu có hằng số điện môi $\\varepsilon=2$\"</td><td>$Q=+8$ nC ; $\\varepsilon=2$</td><td>⚠ Môi trường không phải chân không : hằng số điện môi có mặt trong công thức $E$ của điện tích điểm</td></tr><tr><td>\"Điểm M cách Q 4 cm\"</td><td>$r_M=4$ cm</td><td>Đổi cm sang m trước khi thế vào công thức</td></tr><tr><td>\"điểm N nằm trên tia QM và cách Q 12 cm\"</td><td>$r_N=12$ cm</td><td>$E$ tại N so với $E$ tại M thế nào, khi cùng nguồn và cùng môi trường ?</td></tr><tr><td>\"Tính cường độ điện trường tại M\" ; \"tại N\"</td><td>Cần: $E_M$, $E_N$</td><td>Công thức độ lớn $E$<br>cách $E$ phụ thuộc khoảng cách $r$</td></tr><tr><td>\"Điểm P … có cường độ điện trường $900$ V/m\"</td><td>$E_P=900$ V/m</td><td>Từ $E$ cho trước suy ra khoảng cách : cùng nguồn, cùng môi trường như M</td></tr><tr><td>\"Tính khoảng cách từ P đến Q\"</td><td>Cần: $r_P$</td><td>Cách $E$ phụ thuộc $r$, dùng ngược chiều từ $E$ ra $r$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>so sánh E ở hai khoảng cách</b> hoặc <b>cho E, hỏi r</b> → nghĩ tới <b>E tỉ lệ 1/r²</b> cùng nguồn, cùng môi trường.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ điện trường tại M",
+     "hoi": "Cường độ điện trường tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 2.25,
+     "sai_so": 0.03,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Quên chia cho $\\varepsilon$, thế $r$ theo cm, hoặc quên bình phương $r$."
+    },
+    {
+     "tieu_de": "Cường độ điện trường tại N",
+     "hoi": "Cường độ điện trường tại N bằng bao nhiêu (theo đơn vị $10^{3}\\ \\text{V/m}$)?",
+     "dap_so": 2.5,
+     "sai_so": 0.05,
+     "don_vi": "×10³ V/m",
+     "loi_hay_gap": "Áp dụng sai quy luật phụ thuộc của $E$ theo $r$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$r$ gấp 3 lần nên $E$ giảm $3^2$ lần",
+       "dung": true
+      },
+      {
+       "text": "$r$ gấp 3 lần nên $E$ giảm 3 lần",
+       "dung": false,
+       "vi_sao": "$E$ tỉ lệ $\\dfrac{1}{r^2}$ chứ không phải $\\dfrac{1}{r}$."
+      },
+      {
+       "text": "N ở xa hơn nên nhân $E_M$ với 3",
+       "dung": false,
+       "vi_sao": "Xa điện tích hơn thì điện trường yếu đi, không mạnh lên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách từ P đến Q",
+     "hoi": "Khoảng cách từ P đến Q bằng bao nhiêu (theo đơn vị cm)?",
+     "dap_so": 20,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Suy tỉ số $r$ từ tỉ số $E$ sai cách.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập $\\dfrac{E_M}{E_P}=\\left(\\dfrac{r_P}{r_M}\\right)^2$ rồi lấy căn",
+       "dung": true
+      },
+      {
+       "text": "Lập $\\dfrac{E_M}{E_P}=\\dfrac{r_P}{r_M}$ (tỉ số thẳng)",
+       "dung": false,
+       "vi_sao": "$E$ tỉ lệ nghịch với bình phương $r$, nên tỉ số $E$ bằng bình phương tỉ số $r$."
+      },
+      {
+       "text": "Lập $\\dfrac{r_P}{r_M}=\\left(\\dfrac{E_P}{E_M}\\right)^2$ (đảo tỉ số)",
+       "dung": false,
+       "vi_sao": "$E_P$ nhỏ hơn $E_M$ nên P phải xa Q hơn M ; cách này cho P gần hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Chồng chất điện trường của hai điện tích: hai vectơ cùng phương",
+   "topic": "Nguyên lí chồng chất điện trường",
+   "problem_html": "<p>Trong không khí, đặt $q_1=+9$ nC tại A và $q_2=-4$ nC tại B, với $AB=4$ cm.</p>\n<p>a) Điểm M nằm trên đường thẳng AB, ngoài đoạn AB, về phía B và cách B 2 cm. Tính cường độ điện trường tổng hợp tại M và nêu hướng.</p>\n<p>b) Tính cường độ điện trường tổng hợp tại trung điểm I của AB.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 270\" role=\"img\" aria-label=\"Điện trường của hai điện tích điểm A và B lan ra cùng tới điểm M ngoài đoạn AB\"><circle cx=\"150\" cy=\"135\" r=\"10\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-dasharray=\"6 4\"><animate attributeName=\"r\" values=\"10;120\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230\" cy=\"135\" r=\"10\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-dasharray=\"6 4\"><animate attributeName=\"r\" values=\"10;40\" dur=\"1.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"30.0\" y1=\"135.0\" x2=\"370.0\" y2=\"135.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><circle cx=\"150\" cy=\"135\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"140\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"150\" y=\"113\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><circle cx=\"230\" cy=\"135\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230\" y=\"140\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"230\" y=\"113\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><circle cx=\"270.0\" cy=\"135.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"278\" y=\"125\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"296\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A: q<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = +9 nC</tspan></text><text x=\"296\" y=\"58\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B: q<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = −4 nC</tspan></text><text x=\"296\" y=\"84\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 4 cm</text><text x=\"296\" y=\"106\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">BM = 2 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện trường của A (vòng đỏ) và của B (vòng xanh) cùng lan tới M (chạy 3 s); hai vòng tới M cùng lúc. Vòng không có chiều. Khoảng cách vẽ đúng tỉ lệ 1 cm : 20 px. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nguyên lí chồng chất:</strong> $\\vec E=\\vec E_1+\\vec E_2$ (cộng vectơ).</li><li><strong>Mỗi điện tích:</strong> $E_i=k\\dfrac{|q_i|}{r_i^2}$</li><li>$q_i\\gt0$ hướng ra xa, $q_i\\lt0$ hướng về phía điện tích.</li><li><strong>Hai vectơ cùng phương:</strong> cùng chiều thì $E=E_1+E_2$</li><li>ngược chiều thì $E=|E_1-E_2|$.</li><li>⚠ <strong>Điều kiện:</strong> $r_i$ là khoảng cách từ <em>chính điện tích đó</em> tới điểm xét</li><li>phải xét chiều từng vectơ trước khi cộng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trường do q₁ tại M</span></p><p>M cách A : $AM=AB+BM=6\\ \\text{cm}=0{,}06\\ \\text{m}$.</p>$$E_1=k\\dfrac{|q_1|}{AM^2}=9\\cdot10^{9}\\cdot\\dfrac{9\\cdot10^{-9}}{0{,}06^2}$$<div class=\"bt-ans\">$$E_1=2{,}25\\cdot10^{4}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trường do q₂ tại M</span></p><p>M cách B : $BM=2\\ \\text{cm}=0{,}02\\ \\text{m}$.</p>$$E_2=k\\dfrac{|q_2|}{BM^2}=9\\cdot10^{9}\\cdot\\dfrac{4\\cdot10^{-9}}{0{,}02^2}$$<div class=\"bt-ans\">$$E_2=9\\cdot10^{4}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều hai vectơ tại M</span></p><p>$q_1\\gt0$ : $\\vec E_1$ hướng ra xa A, tức hướng từ A về phía M.</p><p>$q_2\\lt0$ : $\\vec E_2$ hướng về B, tức hướng từ M về phía A.</p><div class=\"bt-ans\"><p>Hai vectơ nằm trên đường thẳng AB và <strong>ngược chiều</strong> nhau.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tổng hợp tại M</span></p><p>Ngược chiều nên lấy hiệu hai độ lớn, chiều theo vectơ lớn hơn ($\\vec E_2$):</p>$$E_M=E_2-E_1=9\\cdot10^{4}-2{,}25\\cdot10^{4}$$<div class=\"bt-ans\">$$E_M=6{,}75\\cdot10^{4}\\ \\text{V/m}$$</div><div class=\"bt-ans\"><p>Hướng <strong>từ M về B</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tổng hợp tại trung điểm I</span></p><p>$AI=IB=0{,}02\\ \\text{m}$ :</p>$$E_1=9\\cdot10^{9}\\cdot\\dfrac{9\\cdot10^{-9}}{0{,}02^2}=2{,}025\\cdot10^{5}\\ \\text{V/m}$$$$E_2=9\\cdot10^{9}\\cdot\\dfrac{4\\cdot10^{-9}}{0{,}02^2}=9\\cdot10^{4}\\ \\text{V/m}$$<p>I nằm giữa hai điện tích trái dấu : $\\vec E_1$ (ra xa A) và $\\vec E_2$ (về B) cùng hướng từ A sang B, nên cộng độ lớn:</p>$$E_I=E_1+E_2$$<div class=\"bt-ans\">$$E_I=2{,}925\\cdot10^{5}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Ở M (ngoài đoạn) hai vectơ ngược chiều, $E_M$ nhỏ hơn $E_2$ ✓ ; ở I (giữa) cùng chiều, $E_I$ lớn hơn từng thành phần ✓.</p><p>Cộng số có dấu $E_1+(-E_2)$ mà không vẽ hình dễ đảo kết quả giữa hai trường hợp này.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E_M=6{,}75\\cdot10^{4}$ V/m, hướng từ M về B</p><p>b) $E_I=2{,}925\\cdot10^{5}$ V/m, hướng từ A sang B</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai điện tích và một điểm trên đường nối</strong> → tính từng $E_i$, vẽ chiều, rồi cộng (cùng chiều) hay trừ (ngược chiều).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 270\" role=\"img\" aria-label=\"Hai điện tích điểm A dương và B âm cách nhau 4 cm, điểm M ngoài đoạn AB cách B 2 cm và trung điểm I của AB\"><line x1=\"30.0\" y1=\"135.0\" x2=\"370.0\" y2=\"135.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><circle cx=\"150\" cy=\"135\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"140\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"150\" y=\"113\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A: q<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = +9 nC</tspan></text><circle cx=\"230\" cy=\"135\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230\" y=\"140\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"240\" y=\"85\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B: q<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = −4 nC</tspan></text><circle cx=\"270.0\" cy=\"135.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"278\" y=\"125\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"190.0\" cy=\"135.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"190.0\" y=\"125\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I</text><line x1=\"150\" y1=\"235\" x2=\"230\" y2=\"235\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M223.0,230.9 L230.0,235.0 L223.0,239.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"230\" y1=\"235\" x2=\"150\" y2=\"235\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M157.0,239.1 L150.0,235.0 L157.0,230.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"160.0\" y=\"257\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 4 cm</text><line x1=\"230\" y1=\"197\" x2=\"270\" y2=\"197\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M263.0,192.9 L270.0,197.0 L263.0,201.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"197\" x2=\"230\" y2=\"197\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M237.0,201.1 L230.0,197.0 L237.0,192.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"240\" y=\"219\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">BM = 2 cm</text><text x=\"310\" y=\"40\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tại M:  E = ?</text><text x=\"310\" y=\"62\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tại I:  E = ?</text></svg><figcaption>Dữ kiện: q₁ = +9 nC tại A, q₂ = −4 nC tại B ; AB = 4 cm, BM = 2 cm ; I là trung điểm AB. Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$q_1=+9$ nC tại A và $q_2=-4$ nC tại B, với $AB=4$ cm\"</td><td>$q_1=+9$ nC ; $q_2=-4$ nC ; $AB=4$ cm</td><td>⚠ Mỗi điện tích gây ra một vectơ $\\vec E$ riêng<br>chiều của từng vectơ theo dấu điện tích gây ra nó</td></tr><tr><td>\"M … ngoài đoạn AB, về phía B và cách B 2 cm\"</td><td>$BM=2$ cm ; M nằm trên đường thẳng AB</td><td>Khoảng cách từ M tới mỗi điện tích tính từ đúng điện tích đó, không lấy chung một giá trị</td></tr><tr><td>\"cường độ điện trường tổng hợp tại M và nêu hướng\"</td><td>Cần: $E_M$, hướng</td><td>Nguyên lí chồng chất điện trường</td></tr><tr><td>\"trung điểm I của AB\"</td><td>$AI=IB=2$ cm</td><td>Khoảng cách từ I tới mỗi điện tích</td></tr><tr><td>\"cường độ điện trường tổng hợp tại trung điểm I\"</td><td>Cần: $E_I$</td><td>Nguyên lí chồng chất điện trường</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai điện tích và điểm trên đường nối chúng</b> → tính từng <b>E</b>, xét <b>chiều</b>, rồi cộng hoặc trừ.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trường do q₁ tại M",
+     "hoi": "Điện trường do $q_1$ gây ra tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 2.25,
+     "sai_so": 0.03,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Lấy $r=AB=4$ cm thay vì khoảng cách từ A tới M."
+    },
+    {
+     "tieu_de": "Điện trường do q₂ tại M",
+     "hoi": "Điện trường do $q_2$ gây ra tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 9,
+     "sai_so": 0.1,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Dùng nhầm $r=AM$ cho cả hai điện tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính riêng với khoảng cách từ B tới M",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn khoảng cách từ A tới M cho cả hai",
+       "dung": false,
+       "vi_sao": "Mỗi điện tích có khoảng cách riêng tới M ; $q_2$ ở B nên dùng $BM$."
+      },
+      {
+       "text": "Cộng $q_1$ và $q_2$ rồi tính một lần",
+       "dung": false,
+       "vi_sao": "Điện trường tổng không bằng điện trường của tổng điện tích ; phải tính riêng từng vectơ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều hai vectơ tại M",
+     "hoi": "Hai vectơ $\\vec E_1$ và $\\vec E_2$ tại M có chiều thế nào với nhau?",
+     "lua_chon": [
+      {
+       "text": "Ngược chiều nhau",
+       "dung": true
+      },
+      {
+       "text": "Cùng chiều, vì hai điện tích trái dấu",
+       "dung": false,
+       "vi_sao": "Hai điện tích trái dấu chỉ cho hai vectơ cùng chiều khi điểm xét nằm giữa chúng ; M nằm ngoài đoạn AB."
+      },
+      {
+       "text": "Vuông góc với nhau",
+       "dung": false,
+       "vi_sao": "M nằm trên đường thẳng AB nên cả hai vectơ đều nằm trên đường thẳng ấy."
+      }
+     ],
+     "loi_hay_gap": "Suy chiều chỉ từ dấu hai điện tích, bỏ qua vị trí của M.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vẽ chiều từng vectơ theo dấu điện tích gây ra nó",
+       "dung": true
+      },
+      {
+       "text": "Cộng ngay hai độ lớn",
+       "dung": false,
+       "vi_sao": "Chỉ cộng độ lớn khi hai vectơ cùng chiều ; chưa xét chiều thì chưa biết."
+      },
+      {
+       "text": "Lấy chiều theo dấu của điện tích lớn hơn",
+       "dung": false,
+       "vi_sao": "Mỗi vectơ có chiều theo dấu điện tích gây ra nó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng hợp tại M",
+     "hoi": "Cường độ điện trường tổng hợp tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 6.75,
+     "sai_so": 0.08,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Cộng hai độ lớn bất kể chiều, hoặc lấy hiệu rồi nêu sai hướng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hai vectơ ngược chiều : lấy hiệu độ lớn, chiều theo vectơ lớn hơn",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ lớn",
+       "dung": false,
+       "vi_sao": "Chỉ cộng khi cùng chiều."
+      },
+      {
+       "text": "Lấy $\\sqrt{E_1^2+E_2^2}$",
+       "dung": false,
+       "vi_sao": "Công thức này chỉ dùng khi hai vectơ vuông góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng hợp tại trung điểm I",
+     "hoi": "Cường độ điện trường tổng hợp tại I bằng bao nhiêu (theo đơn vị $10^{5}\\ \\text{V/m}$)?",
+     "dap_so": 2.925,
+     "sai_so": 0.03,
+     "don_vi": "×10⁵ V/m",
+     "loi_hay_gap": "Dùng lại cách tổng hợp ở câu a mà không xét lại chiều ở I.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $E_1$, $E_2$ với khoảng cách mới, xét chiều rồi cộng",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại kết quả ở M vì cùng nằm trên AB",
+       "dung": false,
+       "vi_sao": "$E$ phụ thuộc khoảng cách tới từng điện tích nên mỗi điểm một giá trị."
+      },
+      {
+       "text": "Lấy hiệu hai độ lớn như ở M",
+       "dung": false,
+       "vi_sao": "I nằm giữa hai điện tích trái dấu nên hai vectơ cùng chiều, không ngược chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Hai điện tích bằng nhau, điểm trên trung trực: tìm góc, tổng hợp, tính lực",
+   "topic": "Nguyên lí chồng chất điện trường",
+   "problem_html": "<p>Trong không khí, hai quả cầu nhỏ cùng tích điện $Q=+5$ nC được giữ cố định tại A và B, $AB=8$ cm. Điểm M nằm trên đường trung trực của AB, cách trung điểm H của AB một đoạn 3 cm (A, B, H, M cùng nằm trong một mặt phẳng).</p>\n<p>a) Tính cường độ điện trường tổng hợp tại M và nêu hướng.</p>\n<p>b) Đặt tại M một quả cầu nhỏ tích điện $q=-2$ nC. Tính lực điện lên quả cầu này và nêu hướng.</p>\n<p>c) Nếu quả cầu $q$ nằm đúng ở H thì lực điện tổng hợp lên nó bằng bao nhiêu?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 275\" role=\"img\" aria-label=\"Điện trường của hai quả cầu cùng dấu cùng lan tới điểm M trên đường trung trực của AB\"><line x1=\"210.0\" y1=\"190.0\" x2=\"210.0\" y2=\"38.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"122.0\" y1=\"190.0\" x2=\"298.0\" y2=\"190.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><defs><clipPath id=\"d5c\"><rect x=\"0\" y=\"0\" width=\"420\" height=\"190\"/></clipPath></defs><circle cx=\"122\" cy=\"190\" r=\"10\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\" clip-path=\"url(#d5c)\"><animate attributeName=\"r\" values=\"10;110\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"298\" cy=\"190\" r=\"10\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\" clip-path=\"url(#d5c)\"><animate attributeName=\"r\" values=\"10;110\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"122\" cy=\"190\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"122\" y=\"195\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"122\" y=\"222\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A: +5 nC</text><circle cx=\"298\" cy=\"190\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"298\" y=\"195\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"298\" y=\"222\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B: +5 nC</text><circle cx=\"210.0\" cy=\"124.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"220\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"210.0\" cy=\"190.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"218\" y=\"182\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">H</text><line x1=\"122\" y1=\"245\" x2=\"298\" y2=\"245\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M291.0,240.9 L298.0,245.0 L291.0,249.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"298\" y1=\"245\" x2=\"122\" y2=\"245\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M129.0,249.1 L122.0,245.0 L129.0,240.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"178\" y=\"266\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 8 cm</text><line x1=\"174\" y1=\"190\" x2=\"174\" y2=\"124\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M169.9,131.0 L174.0,124.0 L178.1,131.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"174\" y1=\"124\" x2=\"174\" y2=\"190\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M178.1,183.0 L174.0,190.0 L169.9,183.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"166\" y=\"161.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">MH = 3 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện trường của A và của B cùng lan tới M (hai nửa vòng phía trên AB, chạy 3 s); vòng không có chiều. Hình không theo tỉ lệ. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nguyên lí chồng chất:</strong> $\\vec E=\\vec E_1+\\vec E_2$</li><li>$E_i=k\\dfrac{|Q_i|}{r_i^2}$.</li><li><strong>Hai vectơ bằng nhau, hợp góc $\\alpha$:</strong> $E=2E_1\\cos\\dfrac{\\alpha}{2}$.</li><li><strong>Lực điện:</strong> $F=|q|E$</li><li>$q\\lt0$ thì $\\vec F$ ngược chiều $\\vec E$.</li><li>⚠ <strong>Điều kiện:</strong> $r_i$ là khoảng cách từ quả cầu tới M, không phải $MH$ hay $AB$</li><li>chỉ khi biết góc giữa hai vectơ mới cộng được, bộ ba cạnh 3–4–5 không tự cho góc vuông ở M.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khoảng cách từ M đến mỗi quả cầu</span></p><p>Tam giác MHA vuông tại H, $AH=\\dfrac{AB}{2}=4\\ \\text{cm}$, $MH=3\\ \\text{cm}$ :</p>$$MA=\\sqrt{AH^2+MH^2}=\\sqrt{4^2+3^2}$$<div class=\"bt-ans\">$$MA=MB=5\\ \\text{cm}=0{,}05\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trường do mỗi quả cầu tại M</span></p><p>Hai quả cầu cùng $Q$, cùng khoảng cách tới M nên $E_1=E_2$ :</p>$$E_1=k\\dfrac{Q}{MA^2}=9\\cdot10^{9}\\cdot\\dfrac{5\\cdot10^{-9}}{0{,}05^2}$$<div class=\"bt-ans\">$$E_1=E_2=1{,}8\\cdot10^{4}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc giữa hai vectơ</span></p><p>$\\vec E_1$ hướng ra xa A, $\\vec E_2$ hướng ra xa B. Đường phân giác của góc giữa chúng là đường trung trực HM.</p><p>Nửa góc $\\dfrac{\\alpha}{2}$ bằng góc $\\widehat{AMH}$ (đối đỉnh), cạnh kề là $MH$ :</p>$$\\cos\\dfrac{\\alpha}{2}=\\dfrac{MH}{MA}=\\dfrac{3}{5}$$$$\\dfrac{\\alpha}{2}=\\arccos0{,}6\\approx53{,}13^\\circ$$<div class=\"bt-ans\">$$\\alpha\\approx106{,}3^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện trường tổng hợp tại M</span></p><p>Hai vectơ bằng nhau, hợp góc $\\alpha$ :</p>$$E=2E_1\\cos\\dfrac{\\alpha}{2}$$$$E=2\\cdot1{,}8\\cdot10^{4}\\cdot\\cos53{,}13^\\circ=2\\cdot1{,}8\\cdot10^{4}\\cdot0{,}6$$<div class=\"bt-ans\">$$E=2{,}16\\cdot10^{4}\\ \\text{V/m}$$</div><div class=\"bt-ans\"><p>$\\vec E$ nằm trên đường trung trực, hướng <strong>từ H ra M</strong> (ra xa AB).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lực điện lên quả cầu q tại M</span></p><p>Đổi $|q|=2\\cdot10^{-9}\\ \\text{C}$ :</p>$$F=|q|\\,E=2\\cdot10^{-9}\\cdot2{,}16\\cdot10^{4}$$<div class=\"bt-ans\">$$F=4{,}32\\cdot10^{-5}\\ \\text{N}$$</div><p>$q\\lt0$ nên $\\vec F$ ngược chiều $\\vec E$ :</p><div class=\"bt-ans\"><p>$\\vec F$ hướng <strong>từ M về H</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Lực điện khi quả cầu ở H</span></p><p>H cách A và B cùng $4\\ \\text{cm}$ nên hai vectơ bằng nhau về độ lớn ; H nằm giữa hai điện tích dương nên hai vectơ ngược chiều.</p>$$\\vec E_H=\\vec E_1+\\vec E_2=\\vec 0$$<div class=\"bt-ans\">$$F_H=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Kiểm bằng toạ độ : A$(-4;0)$, B$(4;0)$, M$(0;3)$ cm ; hai thành phần ngang của $\\vec E_1,\\vec E_2$ triệt tiêu, còn lại thành phần dọc $2\\cdot1{,}8\\cdot10^{4}\\cdot0{,}6$ ✓.</p><p>Nếu coi $\\vec E_1\\perp\\vec E_2$ sẽ ra $E=\\sqrt{2}E_1\\approx2{,}55\\cdot10^{4}$ V/m — sai, vì góc vuông của bộ 3–4–5 nằm ở H, không ở M.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=2{,}16\\cdot10^{4}$ V/m, hướng từ H ra M (ra xa AB)</p><p>b) $F=4{,}32\\cdot10^{-5}$ N, hướng từ M về H</p><p>c) $F_H=0$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai điện tích bằng nhau và điểm trên đường trung trực</strong> → tự tìm góc từ hình học, $E=2E_1\\cos\\dfrac{\\alpha}{2}$, rồi $F=|q|E$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 275\" role=\"img\" aria-label=\"Hai quả cầu cùng dấu tại A và B, điểm M trên đường trung trực của AB cách trung điểm H 3 cm; cần tìm E tại M và lực lên điện tích đặt tại M\"><line x1=\"210.0\" y1=\"190.0\" x2=\"210.0\" y2=\"38.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"122.0\" y1=\"190.0\" x2=\"298.0\" y2=\"190.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><circle cx=\"122\" cy=\"190\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"122\" y=\"195\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"122\" y=\"222\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A: +5 nC</text><circle cx=\"298\" cy=\"190\" r=\"12\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"298\" y=\"195\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"298\" y=\"222\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B: +5 nC</text><circle cx=\"210.0\" cy=\"124.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"220\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"210.0\" cy=\"190.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"218\" y=\"182\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">H</text><line x1=\"122\" y1=\"245\" x2=\"298\" y2=\"245\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M291.0,240.9 L298.0,245.0 L291.0,249.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"298\" y1=\"245\" x2=\"122\" y2=\"245\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M129.0,249.1 L122.0,245.0 L129.0,240.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"178\" y=\"266\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 8 cm</text><line x1=\"174\" y1=\"190\" x2=\"174\" y2=\"124\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M169.9,131.0 L174.0,124.0 L178.1,131.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"174\" y1=\"124\" x2=\"174\" y2=\"190\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M178.1,183.0 L174.0,190.0 L169.9,183.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"166\" y=\"161.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">MH = 3 cm</text><circle cx=\"266\" cy=\"124\" r=\"9\" fill=\"currentColor\" fill-opacity=\".10\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"266\" y=\"129\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"284\" y=\"129\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">q = −2 nC (câu b)</text><text x=\"226\" y=\"100\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">E = ?</text></svg><figcaption>Dữ kiện: Q = +5 nC tại A và tại B ; AB = 8 cm ; M trên đường trung trực của AB, MH = 3 cm. Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai quả cầu nhỏ cùng tích điện $Q=+5$ nC … tại A và B\"</td><td>$Q=+5$ nC mỗi quả ; hai quả cầu coi là điện tích điểm</td><td>⚠ Điện tích điểm đứng yên trong không khí<br>mỗi quả cầu gây ra một vectơ $\\vec E$ riêng tại M</td></tr><tr><td>\"$AB=8$ cm\"</td><td>$AB=8$ cm</td><td>Khoảng cách giữa hai quả cầu khác khoảng cách từ mỗi quả cầu tới M</td></tr><tr><td>\"M nằm trên đường trung trực của AB, cách trung điểm H … 3 cm\"</td><td>$MH=3$ cm ; $MH\\perp AB$ tại H</td><td>Tính chất đường trung trực</td></tr><tr><td>\"cường độ điện trường tổng hợp tại M và nêu hướng\"</td><td>Cần: $E_M$, hướng</td><td>Nguyên lí chồng chất<br>cộng hai vectơ hợp góc bất kì</td></tr><tr><td>\"quả cầu nhỏ tích điện $q=-2$ nC … lực điện\"</td><td>$q=-2$ nC (âm) ; cần: $F$, hướng</td><td>Lực điện lên điện tích trong điện trường tổng hợp<br>chiều lực theo dấu $q$</td></tr><tr><td>\"nếu quả cầu $q$ nằm đúng ở H\"</td><td>H là trung điểm AB</td><td>Điện trường tổng hợp tại H</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai điện tích bằng nhau</b>, điểm trên <b>đường trung trực</b> → tìm <b>góc</b>, <b>E = 2E₁cos(α/2)</b>, rồi <b>F = |q|E</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khoảng cách từ M đến mỗi quả cầu",
+     "hoi": "Khoảng cách MA bằng bao nhiêu (theo đơn vị cm)?",
+     "dap_so": 5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $r=MH$ hoặc $r=AH$, tức khoảng cách tới điểm sai."
+    },
+    {
+     "tieu_de": "Điện trường do mỗi quả cầu tại M",
+     "hoi": "Điện trường do một quả cầu gây ra tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 1.8,
+     "sai_so": 0.02,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Thế khoảng cách tới H hoặc độ dài AB thay vì khoảng cách từ quả cầu tới M.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế khoảng cách từ quả cầu tới M vừa tìm vào $E=k\\dfrac{|Q|}{r^2}$",
+       "dung": true
+      },
+      {
+       "text": "Thế $r=MH$ vì M gần H nhất",
+       "dung": false,
+       "vi_sao": "$r$ là khoảng cách từ điện tích nguồn tới điểm xét, tức từ quả cầu tới M."
+      },
+      {
+       "text": "Thế $r=AB$",
+       "dung": false,
+       "vi_sao": "$AB$ là khoảng cách giữa hai quả cầu, không phải khoảng cách từ quả cầu tới M."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc giữa hai vectơ",
+     "hoi": "Góc $\\alpha$ giữa $\\vec E_1$ và $\\vec E_2$ bằng bao nhiêu độ?",
+     "dap_so": 106.3,
+     "sai_so": 0.3,
+     "don_vi": "độ",
+     "loi_hay_gap": "Coi $\\alpha=90^\\circ$ vì thấy bộ ba cạnh quen thuộc, hoặc lấy $\\alpha$ bằng nửa góc cần tìm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vẽ hai vectơ ; nửa góc giữa chúng là $\\widehat{AMH}$ trong tam giác vuông MHA",
+       "dung": true
+      },
+      {
+       "text": "Coi $\\alpha=90^\\circ$ vì bộ ba cạnh quen thuộc",
+       "dung": false,
+       "vi_sao": "Góc vuông của bộ ba cạnh nằm ở H trong tam giác MHA ; góc AMB không vuông."
+      },
+      {
+       "text": "Lấy $\\alpha$ bằng góc $\\widehat{AMH}$",
+       "dung": false,
+       "vi_sao": "Đường trung trực chia đôi góc giữa hai vectơ, nên $\\alpha$ gấp đôi $\\widehat{AMH}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trường tổng hợp tại M",
+     "hoi": "Cường độ điện trường tổng hợp tại M bằng bao nhiêu (theo đơn vị $10^{4}\\ \\text{V/m}$)?",
+     "dap_so": 2.16,
+     "sai_so": 0.03,
+     "don_vi": "×10⁴ V/m",
+     "loi_hay_gap": "Cộng thẳng hai độ lớn, hoặc dùng $\\sqrt{E_1^2+E_2^2}$ như khi hai vectơ vuông góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hai vectơ bằng nhau : $E=2E_1\\cos\\dfrac{\\alpha}{2}$",
+       "dung": true
+      },
+      {
+       "text": "Hai vectơ bằng nhau : $E=2E_1\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Dùng nguyên góc $\\alpha$ thay cho nửa góc ; với $\\alpha\\gt90^\\circ$ còn cho $E$ âm."
+      },
+      {
+       "text": "Hai vectơ bằng nhau : $E=2E_1\\sin\\dfrac{\\alpha}{2}$",
+       "dung": false,
+       "vi_sao": "Nhầm $\\cos$ với $\\sin$ : nửa góc kề với phân giác nên dùng $\\cos$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực điện lên quả cầu q tại M",
+     "hoi": "Lực điện lên quả cầu $q$ bằng bao nhiêu (theo đơn vị $10^{-5}\\ \\text{N}$)?",
+     "dap_so": 4.32,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁵ N",
+     "loi_hay_gap": "Dùng điện trường của một quả cầu thay vì điện trường tổng hợp, hoặc cho lực cùng chiều $\\vec E$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $E$ tổng hợp : $F=|q|E$, chiều ngược $\\vec E$ vì $q\\lt0$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $F=k\\dfrac{|Q||q|}{MH^2}$ với một quả cầu",
+       "dung": false,
+       "vi_sao": "Hai quả cầu cùng tác dụng lực và khoảng cách tới M là $MA$, không phải $MH$."
+      },
+      {
+       "text": "Dùng $F=|q|E$ nhưng lấy cùng chiều $\\vec E$",
+       "dung": false,
+       "vi_sao": "$q$ âm chịu lực ngược chiều $\\vec E$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực điện khi quả cầu ở H",
+     "hoi": "Lực điện tổng hợp lên quả cầu $q$ khi nó ở đúng H là gì?",
+     "lua_chon": [
+      {
+       "text": "Bằng 0, vì hai vectơ triệt tiêu",
+       "dung": true
+      },
+      {
+       "text": "Lớn nhất, vì H gần cả hai quả cầu",
+       "dung": false,
+       "vi_sao": "Gần hơn thì từng vectơ lớn hơn, nhưng hai vectơ ngược chiều và bằng nhau nên triệt tiêu."
+      },
+      {
+       "text": "Bằng $2|q|E_1$, vì hai vectơ cộng lại",
+       "dung": false,
+       "vi_sao": "Tại H hai vectơ ngược chiều (H nằm giữa hai điện tích cùng dấu) nên không cộng."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng H gần cả hai quả cầu nên lực lớn nhất, quên xét chiều hai vectơ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét độ lớn và chiều của hai vectơ tại H",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại góc $\\alpha$ ở M",
+       "dung": false,
+       "vi_sao": "Vị trí H khác M nên góc giữa hai vectơ khác."
+      },
+      {
+       "text": "Dùng lại kết quả của M vì cùng trên trung trực",
+       "dung": false,
+       "vi_sao": "$E$ phụ thuộc vị trí điểm xét ; mỗi điểm một giá trị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

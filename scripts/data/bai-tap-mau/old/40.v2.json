@@ -1,0 +1,604 @@
+{
+ "lesson_id": 40,
+ "lesson_title": "Bài 21. Tụ điện",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": false,
+  "notes": "chờ kiểm chéo độc lập (kiem-code) — nháp Opus chỉ dùng làm tham khảo, đã viết lại theo quét dạng 5 cấp 1,1,2,2,3"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Số ghi trên vỏ tụ và điện tích: Q = CU, đổi μF ra F",
+   "topic": "Điện dung, ghép tụ nối tiếp và song song",
+   "problem_html": "<p>Trên vỏ một tụ hoá có ghi “330 μF – 25 V”. Nối tụ vào nguồn điện một chiều có hiệu điện thế $U=12$ V cho tới khi nạp xong.</p><ol type=\"a\"><li>Tính điện tích của tụ.</li><li>Tính điện tích lớn nhất mà tụ có thể tích được mà không bị đánh thủng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Tụ hoá nối với nguồn qua khoá K: đóng K thì hai bản tích điện, thanh hiệu điện thế đầy dần tới vạch 12 V\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,40.0 130.0,40.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"170.0,40.0 300.0,40.0 300.0,100.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"300.0,116.0 300.0,190.0 50.0,190.0 50.0,110.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,40.0 50.0,98.0\"/><line x1=\"36.0\" y1=\"98.0\" x2=\"64.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"42.0\" y1=\"110.0\" x2=\"58.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"66\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 12 V</text><line x1=\"280.0\" y1=\"100.0\" x2=\"320.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"280.0\" y1=\"116.0\" x2=\"320.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"130\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"170\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><line x1=\"130\" y1=\"40\" x2=\"166\" y2=\"22\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"166.0;166.0;170.0;170.0\" keyTimes=\"0.0000;0.0800;0.1800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"22.0;22.0;40.0;40.0\" keyTimes=\"0.0000;0.0800;0.1800;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><text x=\"150\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">K</text><text x=\"332\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">330 μF – 25 V</text><text x=\"332\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Q = ?</text><text x=\"284.0\" y=\"98.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2000;0.3600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"316.0\" y=\"98.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2000;0.3600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"284.0\" y=\"136.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.3600;0.5200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"316.0\" y=\"136.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.3600;0.5200;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"50\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hiệu điện thế giữa hai bản</text><rect x=\"50.0\" y=\"212.0\" width=\"330.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.7\"/><rect x=\"50\" y=\"212\" width=\"0\" height=\"12\" fill=\"#38bdf8\" fill-opacity=\".45\"><animate attributeName=\"width\" values=\"0.0;0.0;132.0;132.0\" keyTimes=\"0.0000;0.2000;0.6000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"182.0\" y1=\"224.0\" x2=\"182.0\" y2=\"234.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"182.0\" y=\"250\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">12 V</text><line x1=\"325.0\" y1=\"208.0\" x2=\"325.0\" y2=\"234.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"325.0\" y=\"250\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">25 V (giới hạn)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đóng khoá K, hai bản của tụ tích điện trái dấu và thanh hiệu điện thế dừng ở giá trị của nguồn. Tốc độ phát chỉ để minh hoạ, thực tế tụ nạp xong rất nhanh. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện dung $C=\\dfrac{Q}{U}$, với $Q$ là độ lớn điện tích trên mỗi bản.</li><li><strong>Công thức:</strong> $Q=CU$ ; đổi ước số $1\\ \\mu\\text{F}=10^{-6}\\ \\text{F}$.</li><li>Vỏ tụ ghi điện dung và hiệu điện thế tối đa $U_{\\max}$.</li><li>⚠ <strong>Điều kiện:</strong> hiệu điện thế đặt vào không vượt $U_{\\max}$, nếu không tụ bị đánh thủng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đọc số ghi trên vỏ tụ</span></p><p>Số có đơn vị fara là điện dung, số có đơn vị vôn là hiệu điện thế tối đa:</p>$$C=330\\ \\mu\\text{F}=330\\cdot10^{-6}\\ \\text{F}=3{,}30\\cdot10^{-4}\\ \\text{F}$$$$U_{\\max}=25\\ \\text{V}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện tích ở 12 V</span></p><p>Nạp xong thì hiệu điện thế giữa hai bản bằng hiệu điện thế của nguồn:</p>$$Q=CU$$$$Q=3{,}30\\cdot10^{-4}\\cdot12$$<div class=\"bt-ans\">$$Q\\approx3{,}96\\cdot10^{-3}\\ \\text{C}=3{,}96\\ \\text{mC}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện tích lớn nhất</span></p><p>Tụ chịu được hiệu điện thế tối đa $25$ V nên điện tích lớn nhất ứng với $U_{\\max}$:</p>$$Q_{\\max}=CU_{\\max}$$$$Q_{\\max}=3{,}30\\cdot10^{-4}\\cdot25$$<div class=\"bt-ans\">$$Q_{\\max}\\approx8{,}25\\cdot10^{-3}\\ \\text{C}=8{,}25\\ \\text{mC}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$12\\ \\text{V}\\lt25\\ \\text{V}$ nên tụ không bị đánh thủng ✓.</p><p>$Q_{\\max}\\gt Q$ vì $U_{\\max}\\gt U$ ✓.</p><p>Điện dung cỡ $10^{-4}$ F nằm trong khoảng $10^{-12}$ đến $10^{-3}$ F của tụ thường gặp ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q\\approx3{,}96\\ \\text{mC}$</p><p>b) $Q_{\\max}\\approx8{,}25\\ \\text{mC}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số ghi trên vỏ tụ</strong> và hỏi <strong>điện tích</strong> → đổi $\\mu$F ra F rồi dùng $Q=CU$ ; hỏi <strong>lớn nhất</strong> thì thế $U_{\\max}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Tụ hoá ghi 330 μF – 25 V nối với nguồn 12 V, điện tích cần tìm\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,40.0 130.0,40.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"170.0,40.0 300.0,40.0 300.0,100.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"300.0,116.0 300.0,190.0 50.0,190.0 50.0,110.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,40.0 50.0,98.0\"/><line x1=\"36.0\" y1=\"98.0\" x2=\"64.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"42.0\" y1=\"110.0\" x2=\"58.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"66\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 12 V</text><line x1=\"280.0\" y1=\"100.0\" x2=\"320.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"280.0\" y1=\"116.0\" x2=\"320.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"130\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"170\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><line x1=\"130.0\" y1=\"40.0\" x2=\"170.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"150\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">K</text><text x=\"332\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">330 μF – 25 V</text><text x=\"332\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Q = ?</text><text x=\"50\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hiệu điện thế giữa hai bản</text><rect x=\"50.0\" y=\"212.0\" width=\"330.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.7\"/><rect x=\"50\" y=\"212\" width=\"132.0\" height=\"12\" fill=\"#38bdf8\" fill-opacity=\".45\"/><line x1=\"182.0\" y1=\"224.0\" x2=\"182.0\" y2=\"234.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"182.0\" y=\"250\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">12 V</text><line x1=\"325.0\" y1=\"208.0\" x2=\"325.0\" y2=\"234.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"325.0\" y=\"250\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">25 V (giới hạn)</text></svg><figcaption>Dữ kiện: hai số ghi trên vỏ tụ và hiệu điện thế nguồn; điện tích của tụ cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vỏ một tụ hoá có ghi 330 μF – 25 V\"</td><td>$330\\ \\mu\\text{F}$ ; $25$ V</td><td>⚠ Hai số trên vỏ có vai trò khác nhau: một số là đặc trưng của tụ, một số là giới hạn không được vượt</td></tr><tr><td>\"nối tụ vào nguồn một chiều $U=12$ V\"</td><td>$U=12$ V</td><td>Tụ chịu hiệu điện thế của nguồn ; so với giới hạn ghi trên vỏ</td></tr><tr><td>\"cho tới khi nạp xong\"</td><td>Tụ đã tích đầy điện</td><td>Hiệu điện thế giữa hai bản khi đó so với nguồn</td></tr><tr><td>\"tính điện tích của tụ\"</td><td>Cần: $Q$</td><td>Quan hệ giữa điện tích, điện dung và hiệu điện thế ; ước số của fara</td></tr><tr><td>\"điện tích lớn nhất … không bị đánh thủng\"</td><td>Cần: $Q_{\\max}$</td><td>Hiệu điện thế lớn nhất tụ chịu được ; đánh thủng là gì</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số ghi trên vỏ tụ</b> và hỏi <b>điện tích</b> → đổi μF ra F rồi dùng <b>Q = CU</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đọc số ghi trên vỏ tụ",
+     "hoi": "Hai số $330\\ \\mu\\text{F}$ và $25$ V ghi trên vỏ tụ cho biết gì?",
+     "lua_chon": [
+      {
+       "text": "Điện dung của tụ và hiệu điện thế tối đa được đặt vào",
+       "dung": true
+      },
+      {
+       "text": "Điện tích của tụ và hiệu điện thế luôn đặt vào tụ",
+       "dung": false,
+       "vi_sao": "Số có đơn vị μF là điện dung, không phải điện tích ; còn số vôn là giới hạn chứ không phải giá trị đang đặt vào."
+      },
+      {
+       "text": "Hiệu điện thế của tụ và điện tích tối đa",
+       "dung": false,
+       "vi_sao": "Fara đo điện dung, vôn đo hiệu điện thế ; điện tích đo bằng culông, vỏ tụ không ghi."
+      }
+     ],
+     "loi_hay_gap": "Lấy số vôn ghi trên vỏ làm hiệu điện thế đang đặt vào tụ ở câu a."
+    },
+    {
+     "tieu_de": "Điện tích ở 12 V",
+     "hoi": "Điện tích của tụ khi nối nguồn $12$ V, theo đơn vị mC ($10^{-3}$ C)?",
+     "dap_so": 3.96,
+     "sai_so": 0.04,
+     "don_vi": "mC",
+     "loi_hay_gap": "Quên đổi μF ra F (ra điện tích cỡ nghìn culông), hoặc thế 25 V thay cho hiệu điện thế của nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi μF ra F rồi dùng $Q=CU$ với $U$ là hiệu điện thế của nguồn",
+       "dung": true
+      },
+      {
+       "text": "Dùng $Q=CU$ với $U$ là số vôn ghi trên vỏ",
+       "dung": false,
+       "vi_sao": "Số vôn trên vỏ là giới hạn chịu được ; hiệu điện thế đặt vào tụ ở câu a là của nguồn."
+      },
+      {
+       "text": "Dùng $C=\\dfrac QU$ để tìm điện dung",
+       "dung": false,
+       "vi_sao": "Điện dung đã cho trên vỏ tụ ; đại lượng cần tìm là điện tích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện tích lớn nhất",
+     "hoi": "Điện tích lớn nhất của tụ không bị đánh thủng, theo đơn vị mC?",
+     "dap_so": 8.25,
+     "sai_so": 0.08,
+     "don_vi": "mC",
+     "loi_hay_gap": "Dùng cùng một hiệu điện thế cho cả hai câu, hoặc cộng điện tích của hai bản (nhân đôi).",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt hiệu điện thế lớn nhất tụ chịu được vào $Q=CU$",
+       "dung": true
+      },
+      {
+       "text": "Nhân đôi điện tích ở câu a vì tụ có hai bản",
+       "dung": false,
+       "vi_sao": "Điện tích của tụ là độ lớn trên một bản, không cộng hai bản."
+      },
+      {
+       "text": "Lấy $Q_{\\max}=\\dfrac{U_{\\max}}{C}$",
+       "dung": false,
+       "vi_sao": "Quan hệ là $Q=CU$ ; phép chia như vậy sai đơn vị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Năng lượng của tụ khi đổi hiệu điện thế nạp",
+   "topic": "Năng lượng của tụ điện",
+   "problem_html": "<p>Tụ điện của một đèn flash rời có điện dung $200\\ \\mu\\text{F}$. Mạch tăng áp nạp tụ tới hiệu điện thế $300$ V, rồi tụ phóng điện qua bóng đèn khi chụp.</p><ol type=\"a\"><li>Tính điện tích và năng lượng của tụ sau khi nạp xong.</li><li>Khi pin yếu, mạch chỉ nạp được tụ tới $150$ V. Tính năng lượng của tụ lúc đó và cho biết năng lượng giảm bao nhiêu lần so với câu a.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Đồ thị Q theo U của tụ 200 μF, điểm đỏ chạy từ gốc tới 300 V và vùng dưới đường được tô dần\"><clipPath id=\"d20c\"><rect x=\"60\" y=\"30\" width=\"0\" height=\"180\"><animate attributeName=\"width\" values=\"0.0;0.0;270.0;270.0\" keyTimes=\"0.0000;0.0833;0.8333;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect></clipPath><g clip-path=\"url(#d20c)\"><polygon points=\"60,200 330.0,200 330.0,70.0\" fill=\"#38bdf8\" fill-opacity=\".28\"/></g><line x1=\"60\" y1=\"200\" x2=\"392\" y2=\"200\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M384.4,195.6 L392.0,200.0 L384.4,204.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60\" y1=\"200\" x2=\"60\" y2=\"28\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M55.6,35.6 L60.0,28.0 L64.4,35.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"386\" y=\"222\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U (V)</text><text x=\"70\" y=\"40\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Q</text><line x1=\"195.0\" y1=\"200.0\" x2=\"195.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"195.0\" y=\"224\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">150 V</text><line x1=\"330.0\" y1=\"200.0\" x2=\"330.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"330.0\" y=\"224\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">300 V</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"60.0,200.0 330.0,70.0\"/><text x=\"338.0\" y=\"74\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Q = ?</text><circle cx=\"60\" cy=\"200\" r=\"5.5\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"60.0;60.0;330.0;330.0\" keyTimes=\"0.0000;0.0833;0.8333;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"200.0;200.0;70;70\" keyTimes=\"0.0000;0.0833;0.8333;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"86.0\" y=\"54.0\" width=\"14.0\" height=\"12.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"0.35\"/><text x=\"106\" y=\"65\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vùng tô: W = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nạp tụ tới 300 V, điểm đỏ chạy dọc đường Q–U và vùng tô lớn dần. Tốc độ phát chỉ để minh hoạ, không phải thời gian nạp thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> tụ tích điện thì có điện trường giữa hai bản, điện trường đó dự trữ năng lượng.</li><li><strong>Công thức:</strong> $W=\\tfrac12QU=\\tfrac12CU^2=\\dfrac{Q^2}{2C}$ ; $Q=CU$.</li><li>Biết $C$ và $U$ thì dùng $\\tfrac12CU^2$.</li><li>⚠ <strong>Điều kiện:</strong> $C$ do cấu tạo quyết định nên không đổi khi đổi hiệu điện thế nạp.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện tích ở 300 V</span></p><p>Đổi $200\\ \\mu\\text{F}=2{,}00\\cdot10^{-4}\\ \\text{F}$ rồi dùng $Q=CU$:</p>$$Q=2{,}00\\cdot10^{-4}\\cdot300$$<div class=\"bt-ans\">$$Q=0{,}060\\ \\text{C}=60\\ \\text{mC}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Năng lượng ở 300 V</span></p><p>Đã biết $Q$ và $U$ nên dùng dạng $\\tfrac12QU$:</p>$$W=\\tfrac12QU$$$$W=\\tfrac12\\cdot0{,}060\\cdot300$$<div class=\"bt-ans\">$$W=9{,}0\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Năng lượng ở 150 V</span></p><p>$C$ không đổi, chỉ $U$ đổi nên dùng $\\tfrac12CU'^2$:</p>$$W'=\\tfrac12CU'^2$$$$W'=\\tfrac12\\cdot2{,}00\\cdot10^{-4}\\cdot150^2$$<div class=\"bt-ans\">$$W'=2{,}25\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số lần giảm</span></p><p>So sánh hai năng lượng bằng tỉ số:</p>$$\\dfrac{W}{W'}=\\dfrac{9{,}0}{2{,}25}$$<div class=\"bt-ans\">$$\\dfrac{W}{W'}=4$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Dạng khác: $\\tfrac12CU^2=\\tfrac12\\cdot2{,}00\\cdot10^{-4}\\cdot300^2=9{,}0\\ \\text{J}$ ✓ khớp $\\tfrac12QU$.</p><p>$U$ giảm $2$ lần mà $W\\propto U^2$ nên $W$ giảm $2^2=4$ lần ✓, không phải $2$ lần.</p><p>Cỡ vài jun đến chục jun hợp với tụ đèn flash (ví dụ trong bài: $6{,}75$ J) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q=60\\ \\text{mC}$ ; $W=9{,}0\\ \\text{J}$</p><p>b) $W'=2{,}25\\ \\text{J}$ ; giảm $4$ lần</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>C không đổi, đổi hiệu điện thế nạp</strong> và hỏi <strong>năng lượng</strong> → $W=\\tfrac12CU^2$, $W$ tỉ lệ $U^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Tụ điện dung 200 μF nạp tới 300 V rồi chỉ nạp tới 150 V, cần tìm điện tích và năng lượng\"><rect x=\"14.0\" y=\"16.0\" width=\"130.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"79.0\" y=\"43.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">C = 200 μF</text><line x1=\"144\" y1=\"38\" x2=\"188\" y2=\"38\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><path d=\"M179.8,33.3 L188.0,38.0 L179.8,42.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"188.0\" y=\"16.0\" width=\"218.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"297.0\" y=\"43.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">nạp tới U = 300 V</text><rect x=\"188.0\" y=\"84.0\" width=\"218.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"297.0\" y=\"111.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">pin yếu: U′ = 150 V</text><line x1=\"297\" y1=\"60\" x2=\"297\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><path d=\"M301.7,75.8 L297.0,84.0 L292.3,75.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"14\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:</text><text x=\"14\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Q = ?   W = ?   W′ = ?</text><text x=\"14\" y=\"210\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">W giảm bao nhiêu lần ?</text></svg><figcaption>Dữ kiện: điện dung và hai mức hiệu điện thế nạp; điện tích, năng lượng và số lần giảm cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tụ điện … điện dung $200\\ \\mu\\text{F}$\"</td><td>$C=200\\ \\mu\\text{F}$</td><td>⚠ Điện dung do cấu tạo tụ quyết định, không đổi khi đổi hiệu điện thế nạp</td></tr><tr><td>\"nạp tụ tới hiệu điện thế $300$ V\"</td><td>$U=300$ V</td><td>Quan hệ giữa $Q$, $C$, $U$</td></tr><tr><td>\"tính điện tích và năng lượng của tụ\"</td><td>Cần: $Q$, $W$</td><td>Năng lượng của tụ nằm ở đâu ; các dạng công thức của năng lượng</td></tr><tr><td>\"chỉ nạp được tụ tới $150$ V\"</td><td>$U'=150$ V</td><td>$C$ giữ nguyên, hiệu điện thế nạp đổi: các đại lượng khác đổi thế nào</td></tr><tr><td>\"giảm bao nhiêu lần so với câu a\"</td><td>Cần: tỉ số hai năng lượng</td><td>So sánh bằng tỉ số, không bằng hiệu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>C không đổi, đổi hiệu điện thế nạp</b> và hỏi <b>năng lượng</b> → dùng <b>W = ½CU²</b>, W tỉ lệ U².",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện tích ở 300 V",
+     "hoi": "Điện tích của tụ sau khi nạp tới $300$ V, theo đơn vị mC?",
+     "dap_so": 60,
+     "sai_so": 0.6,
+     "don_vi": "mC",
+     "loi_hay_gap": "Quên đổi μF ra F, hoặc nhân với 150 V (hiệu điện thế của câu b)."
+    },
+    {
+     "tieu_de": "Năng lượng ở 300 V",
+     "hoi": "Năng lượng của tụ sau khi nạp tới $300$ V, theo jun?",
+     "dap_so": 9.0,
+     "sai_so": 0.1,
+     "don_vi": "J",
+     "loi_hay_gap": "Quên hệ số một nửa (tính $QU$), hoặc dùng $\\tfrac12CU$ thiếu bình phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Biết $Q$ và $U$ nên dùng $W=\\tfrac12QU$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $W=QU$ vì $Q$ và $U$ đã biết",
+       "dung": false,
+       "vi_sao": "Lúc nạp $U$ tăng dần từ 0, năng lượng là diện tích tam giác dưới đường $Q$–$U$ nên có hệ số một nửa."
+      },
+      {
+       "text": "Dùng $W=\\tfrac12CU$ với $C$ và $U$ đã biết",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương: $\\tfrac12CU$ có đơn vị culông, không phải jun ; phải là $\\tfrac12CU^2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng ở 150 V",
+     "hoi": "Năng lượng của tụ khi chỉ nạp tới $150$ V, theo jun?",
+     "dap_so": 2.25,
+     "sai_so": 0.03,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên điện tích như ở câu a, hoặc chia năng lượng cho 2 vì hiệu điện thế giảm một nửa.",
+     "chon_buoc_ke": [
+      {
+       "text": "$C$ không đổi, thế $U'$ vào $W'=\\tfrac12CU'^2$",
+       "dung": true
+      },
+      {
+       "text": "Giữ $Q$ như câu a, thế vào $W'=\\tfrac12QU'$",
+       "dung": false,
+       "vi_sao": "$Q=CU$ nên khi $U$ giảm thì $Q$ cũng giảm ; $Q$ không còn như trước."
+      },
+      {
+       "text": "Chia năng lượng ở câu a cho 2 vì $U$ giảm một nửa",
+       "dung": false,
+       "vi_sao": "$W$ tỉ lệ $U^2$ nên không giảm theo tỉ lệ của $U$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số lần giảm",
+     "hoi": "Năng lượng của tụ giảm bao nhiêu lần so với câu a?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Kết luận năng lượng giảm 2 lần như hiệu điện thế, quên rằng $W$ tỉ lệ $U^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy năng lượng ở câu a chia năng lượng lúc pin yếu",
+       "dung": true
+      },
+      {
+       "text": "Lấy tỉ số hai hiệu điện thế",
+       "dung": false,
+       "vi_sao": "Đó là tỉ số hiệu điện thế, không phải tỉ số năng lượng."
+      },
+      {
+       "text": "Lấy hiệu hai năng lượng",
+       "dung": false,
+       "vi_sao": "Hiệu cho biết lượng giảm bằng jun, không phải giảm bao nhiêu lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Tụ phẳng: điện dung theo cấu tạo và hiệu điện thế không đánh thủng",
+   "topic": "Điện dung, ghép tụ nối tiếp và song song",
+   "problem_html": "<p>Một tụ phẳng gồm hai bản kim loại hình vuông cạnh $30$ cm, đặt đối diện nhau và cách nhau $2{,}0$ mm trong không khí ($\\varepsilon=1$). Điện trường lớn nhất mà không khí chịu được là $E_{\\max}=3\\cdot10^{6}$ V/m.</p><ol type=\"a\"><li>Tính điện dung của tụ.</li><li>Lấp đầy khoảng giữa hai bản bằng một tấm điện môi có $\\varepsilon=4$. Tính điện dung của tụ lúc này.</li><li>Tính hiệu điện thế lớn nhất có thể đặt vào tụ không khí ban đầu mà không bị đánh thủng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Tấm điện môi trượt vào khe giữa hai bản của tụ phẳng\"><rect x=\"100.0\" y=\"70.0\" width=\"220.0\" height=\"8.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"100.0\" y=\"130.0\" width=\"220.0\" height=\"8.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"80\" y1=\"79\" x2=\"80\" y2=\"129\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M84.1,122.0 L80.0,129.0 L75.9,122.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"80\" y1=\"129\" x2=\"80\" y2=\"79\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M75.9,86.0 L80.0,79.0 L84.1,86.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"72\" y=\"108\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">d = 2,0 mm</text><text x=\"210\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bản vuông, cạnh 30 cm</text><g transform=\"translate(250 0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"250 0;250 0;0 0;0 0\" keyTimes=\"0.0000;0.0833;0.7500;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"101.0\" y=\"80.0\" width=\"218.0\" height=\"48.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"0.22\"/><text x=\"210\" y=\"109\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">điện môi ε = 4</text></g><text x=\"210\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">ban đầu: không khí (ε = 1)</text><text x=\"210\" y=\"192\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">C = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: tấm điện môi trượt vào, lấp đầy khe giữa hai bản (S và d giữ nguyên). Tốc độ phát chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện dung của tụ phẳng do cấu tạo quyết định ($S$, $d$, $\\varepsilon$), không phụ thuộc $Q$ và $U$.</li><li><strong>Công thức:</strong> $C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}$ ; điện trường giữa hai bản là đều: $E=\\dfrac{U}{d}$.</li><li>$S$ là diện tích phần đối diện của hai bản (m²) ; $d$ là khoảng cách hai bản (m).</li><li>⚠ <strong>Điều kiện:</strong> không bị đánh thủng khi $E\\le E_{\\max}$, tức $U\\le E_{\\max}\\,d$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị, tính diện tích S</span></p><p>Đổi cạnh và khoảng cách ra mét:</p>$$a=30\\ \\text{cm}=0{,}30\\ \\text{m}$$$$d=2{,}0\\ \\text{mm}=2{,}0\\cdot10^{-3}\\ \\text{m}$$<p>Bản hình vuông nên $S=a^2$:</p>$$S=0{,}30^2$$<div class=\"bt-ans\">$$S=0{,}090\\ \\text{m}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện dung tụ không khí</span></p>$$C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}$$$$C=\\dfrac{1\\cdot0{,}090}{9\\cdot10^{9}\\cdot4\\pi\\cdot2{,}0\\cdot10^{-3}}$$<div class=\"bt-ans\">$$C\\approx3{,}98\\cdot10^{-10}\\ \\text{F}=398\\ \\text{pF}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện dung khi lấp điện môi</span></p><p>$S$ và $d$ giữ nguyên, chỉ $\\varepsilon$ đổi từ $1$ lên $4$:</p>$$C'=\\dfrac{4\\cdot0{,}090}{9\\cdot10^{9}\\cdot4\\pi\\cdot2{,}0\\cdot10^{-3}}$$<div class=\"bt-ans\">$$C'\\approx1{,}59\\cdot10^{-9}\\ \\text{F}=1{,}59\\ \\text{nF}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế tối đa</span></p><p>Điện trường đều $E=\\dfrac Ud$. Không bị đánh thủng khi $E\\le E_{\\max}$:</p>$$U_{\\max}=E_{\\max}\\,d$$$$U_{\\max}=3\\cdot10^{6}\\cdot2{,}0\\cdot10^{-3}$$<div class=\"bt-ans\">$$U_{\\max}=6{,}0\\cdot10^{3}\\ \\text{V}=6{,}0\\ \\text{kV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$\\dfrac{C'}{C}=\\dfrac{1{,}59\\ \\text{nF}}{0{,}398\\ \\text{nF}}=4=\\varepsilon$ ✓.</p><p>So với tụ trong bài ($S=0{,}04\\ \\text{m}^2$, $d=1$ mm cho $354$ pF): $S$ gấp $2{,}25$ lần, $d$ gấp $2$ lần nên $C\\approx354\\cdot\\dfrac{2{,}25}{2}\\approx398$ pF ✓.</p><p>$C$ không phụ thuộc $Q$ và $U$: đổi nguồn không làm $C$ đổi ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $C\\approx398\\ \\text{pF}$</p><p>b) $C'\\approx1{,}59\\ \\text{nF}$</p><p>c) $U_{\\max}=6{,}0\\ \\text{kV}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>kích thước bản, khoảng cách, điện môi</strong> → $C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}$ ; hỏi <strong>không bị đánh thủng</strong> → $U_{\\max}=E_{\\max}d$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Tụ phẳng hai bản vuông cạnh 30 cm cách nhau 2,0 mm trong không khí, cần tìm điện dung và hiệu điện thế tối đa\"><rect x=\"100.0\" y=\"70.0\" width=\"220.0\" height=\"8.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"100.0\" y=\"130.0\" width=\"220.0\" height=\"8.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"80\" y1=\"79\" x2=\"80\" y2=\"129\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M84.1,122.0 L80.0,129.0 L75.9,122.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"80\" y1=\"129\" x2=\"80\" y2=\"79\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M75.9,86.0 L80.0,79.0 L84.1,86.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"72\" y=\"108\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">d = 2,0 mm</text><text x=\"210\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bản vuông, cạnh 30 cm</text><text x=\"210\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">giữa hai bản: không khí (ε = 1)</text><text x=\"14\" y=\"186\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">E<tspan dy=\"4\" font-size=\"9\">max</tspan><tspan dy=\"-4\"> = 3·10⁶ V/m (không khí)</tspan></text><text x=\"14\" y=\"206\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: C ; C′ khi ε = 4 ; U<tspan dy=\"4\" font-size=\"10\">max</tspan></text></svg><figcaption>Dữ kiện: cạnh bản, khoảng cách, điện môi và điện trường giới hạn của không khí; ba đại lượng cần tìm ghi dưới hình. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai bản … hình vuông cạnh $30$ cm\"</td><td>$a=30$ cm</td><td>Diện tích phần đối diện của hai bản ; đổi cm sang m</td></tr><tr><td>\"cách nhau $2{,}0$ mm trong không khí ($\\varepsilon=1$)\"</td><td>$d=2{,}0$ mm ; $\\varepsilon=1$</td><td>⚠ Công thức tụ phẳng dùng khoảng cách tính bằng mét</td></tr><tr><td>\"điện trường lớn nhất … $E_{\\max}=3\\cdot10^{6}$ V/m\"</td><td>$E_{\\max}=3\\cdot10^{6}$ V/m</td><td>⚠ Điện trường vượt giá trị này thì không khí bị đánh thủng ; điện trường giữa hai bản là đều</td></tr><tr><td>\"tính điện dung của tụ\"</td><td>Cần: $C$</td><td>Điện dung phụ thuộc những yếu tố cấu tạo nào</td></tr><tr><td>\"lấp đầy … tấm điện môi có $\\varepsilon=4$\"</td><td>$\\varepsilon=4$ ; $S$, $d$ giữ nguyên</td><td>Điện môi ảnh hưởng thế nào tới điện dung</td></tr><tr><td>\"hiệu điện thế lớn nhất … không bị đánh thủng\"</td><td>Cần: $U_{\\max}$</td><td>Liên hệ giữa điện trường đều, hiệu điện thế và khoảng cách hai bản</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>S, d, ε</b> hoặc <b>không bị đánh thủng</b> → dùng <b>C = εS/(9·10⁹·4πd)</b> và <b>U_max = E_max·d</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị, tính diện tích S",
+     "hoi": "Diện tích $S$ của mỗi bản theo đơn vị m²?",
+     "dap_so": 0.09,
+     "sai_so": 0.001,
+     "don_vi": "m²",
+     "loi_hay_gap": "Lấy cạnh làm diện tích, hoặc bình phương 30 mà không đổi cm sang m."
+    },
+    {
+     "tieu_de": "Điện dung tụ không khí",
+     "hoi": "Điện dung của tụ không khí theo đơn vị pF?",
+     "dap_so": 398,
+     "sai_so": 4,
+     "don_vi": "pF",
+     "loi_hay_gap": "Để khoảng cách theo mm trong công thức (sai một nghìn lần), hoặc tìm $C$ bằng $\\dfrac QU$ trong khi đề không cho $Q$, $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $S$, $d$ đã đổi ra mét và $\\varepsilon=1$ vào công thức tụ phẳng",
+       "dung": true
+      },
+      {
+       "text": "Dùng $C=\\dfrac QU$",
+       "dung": false,
+       "vi_sao": "Đề không cho $Q$ hay $U$, và $C$ do cấu tạo quyết định nên dùng công thức theo $S$, $d$, $\\varepsilon$."
+      },
+      {
+       "text": "Thế $d$ theo mm vào công thức mà không đổi ra mét",
+       "dung": false,
+       "vi_sao": "Công thức cần $d$ tính bằng mét ; để mm thì kết quả sai một nghìn lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện dung khi lấp điện môi",
+     "hoi": "Điện dung của tụ khi lấp đầy điện môi theo đơn vị nF?",
+     "dap_so": 1.59,
+     "sai_so": 0.02,
+     "don_vi": "nF",
+     "loi_hay_gap": "Cho rằng $C$ không đổi vì $C$ không phụ thuộc $Q$, $U$ (quên $C$ có phụ thuộc $\\varepsilon$), hoặc chia cho $\\varepsilon$ thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "$S$, $d$ giữ nguyên, chỉ $\\varepsilon$ đổi: tính lại $C$ theo công thức tụ phẳng",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $C$ vì $C$ không phụ thuộc $Q$ và $U$",
+       "dung": false,
+       "vi_sao": "$C$ đúng là không phụ thuộc $Q$, $U$, nhưng có phụ thuộc $\\varepsilon$ của điện môi."
+      },
+      {
+       "text": "Chia $C$ cho $\\varepsilon$ vì điện môi cản điện trường",
+       "dung": false,
+       "vi_sao": "$\\varepsilon$ nằm ở tử số của công thức: $\\varepsilon$ lớn thì $C$ lớn, không giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế tối đa",
+     "hoi": "Hiệu điện thế lớn nhất đặt vào tụ không khí mà không bị đánh thủng, theo đơn vị kV?",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "kV",
+     "loi_hay_gap": "Lấy $E_{\\max}$ chia cho $d$, hoặc coi $E_{\\max}$ chính là hiệu điện thế tối đa.",
+     "chon_buoc_ke": [
+      {
+       "text": "Điện trường đều $E=\\dfrac Ud$, không đánh thủng khi $E\\le E_{\\max}$: $U_{\\max}=E_{\\max}d$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $U_{\\max}=\\dfrac{E_{\\max}}{d}$",
+       "dung": false,
+       "vi_sao": "$E=\\dfrac Ud$ suy ra $U=Ed$ ; phép chia này không ra đơn vị vôn."
+      },
+      {
+       "text": "Coi $E_{\\max}$ là hiệu điện thế tối đa",
+       "dung": false,
+       "vi_sao": "$E_{\\max}$ đo bằng V/m là cường độ điện trường, phải nhân với $d$ mới ra vôn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Bộ tụ ghép hỗn hợp nối tiếp và song song",
+   "topic": "Điện dung, ghép tụ nối tiếp và song song",
+   "problem_html": "<p>Ba tụ điện chưa tích điện có $C_1=5\\ \\mu\\text{F}$, $C_2=20\\ \\mu\\text{F}$ và $C_3=6\\ \\mu\\text{F}$. Tụ $C_1$ ghép nối tiếp với tụ $C_2$ thành một nhánh, nhánh này ghép song song với tụ $C_3$. Hai đầu bộ tụ được nối vào nguồn có $U=15$ V.</p><ol type=\"a\"><li>Tính điện dung của bộ tụ.</li><li>Tính điện tích và hiệu điện thế của từng tụ.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Nạp bộ tụ gồm hai nhánh song song, các tụ lần lượt tích điện trái dấu trên hai bản\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,40.0 310.0,40.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,200.0 310.0,200.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,40.0 40.0,100.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,112.0 40.0,200.0\"/><line x1=\"26.0\" y1=\"100.0\" x2=\"54.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"32.0\" y1=\"112.0\" x2=\"48.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"56\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 15 V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,40.0 150.0,71.0\"/><line x1=\"134.0\" y1=\"71.0\" x2=\"166.0\" y2=\"71.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"134.0\" y1=\"81.0\" x2=\"166.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,81.0 150.0,113.0\"/><line x1=\"134.0\" y1=\"113.0\" x2=\"166.0\" y2=\"113.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"134.0\" y1=\"123.0\" x2=\"166.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,123.0 150.0,200.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"310.0,40.0 310.0,108.0\"/><line x1=\"294.0\" y1=\"108.0\" x2=\"326.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"294.0\" y1=\"118.0\" x2=\"326.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"310.0,118.0 310.0,200.0\"/><circle cx=\"150\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"150\" cy=\"200\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"310\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"310\" cy=\"200\" r=\"3.2\" fill=\"currentColor\"/><text x=\"172\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 5 μF</tspan></text><text x=\"172\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 20 μF</tspan></text><text x=\"332\" y=\"117\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">3</tspan><tspan dy=\"-4\"> = 6 μF</tspan></text><text x=\"130.0\" y=\"66.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2000;0.3400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"130.0\" y=\"96.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2000;0.3400;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"130.0\" y=\"111.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.3600;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"130.0\" y=\"141.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.3600;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"292.0\" y=\"103.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.5200;0.6600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"292.0\" y=\"133.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.5200;0.6600;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: các tụ trong bộ lần lượt tích điện, dấu + và − hiện ở hai bản mỗi tụ. Tốc độ phát chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nối tiếp:</strong> $Q$ chung ; $U=U_1+U_2$ ; $\\dfrac1C=\\dfrac1{C_1}+\\dfrac1{C_2}$.</li><li><strong>Song song:</strong> $U$ chung ; $Q=Q_1+Q_2$ ; $C=C_1+C_2$.</li><li><strong>Công thức:</strong> $Q=CU$ cho từng tụ hoặc từng nhánh.</li><li>⚠ <strong>Điều kiện:</strong> các tụ chưa tích điện trước lúc ghép.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện dung nhánh nối tiếp</span></p><p>$C_1$ nối tiếp $C_2$ nên cộng nghịch đảo:</p>$$\\dfrac1{C_{12}}=\\dfrac1{C_1}+\\dfrac1{C_2}$$$$C_{12}=\\dfrac{C_1C_2}{C_1+C_2}=\\dfrac{5\\cdot20}{5+20}$$<div class=\"bt-ans\">$$C_{12}=4\\ \\mu\\text{F}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện dung cả bộ</span></p><p>Nhánh $C_{12}$ song song với $C_3$ nên cộng thẳng:</p>$$C=C_{12}+C_3=4+6$$<div class=\"bt-ans\">$$C=10\\ \\mu\\text{F}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện tích tụ C₁</span></p><p>Nhánh nối tiếp mắc trực tiếp vào hai đầu nguồn nên chịu cả $15$ V:</p>$$Q_{12}=C_{12}U=4\\cdot15$$<p>Nối tiếp thì $Q$ chung:</p><div class=\"bt-ans\">$$Q_1=Q_2=60\\ \\mu\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế trong nhánh</span></p><p>Với mỗi tụ dùng $U=\\dfrac QC$:</p>$$U_1=\\dfrac{Q_1}{C_1}=\\dfrac{60}{5}$$$$U_2=\\dfrac{Q_2}{C_2}=\\dfrac{60}{20}$$<div class=\"bt-ans\">$$U_1=12\\ \\text{V}\\ ;\\ U_2=3\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tụ C₃</span></p><p>$C_3$ chung hai đầu bộ nên chịu cả $15$ V:</p>$$U_3=U=15\\ \\text{V}$$$$Q_3=C_3U_3=6\\cdot15$$<div class=\"bt-ans\">$$Q_3=90\\ \\mu\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$U_1+U_2=12+3=15\\ \\text{V}=U$ ✓.</p><p>$Q_{12}+Q_3=60+90=150\\ \\mu\\text{C}=C\\,U=10\\cdot15$ ✓.</p><p>Tụ nhỏ hơn ($5\\ \\mu\\text{F}$) chịu hiệu điện thế lớn hơn ($12$ V so với $3$ V) ✓ đúng với nối tiếp.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $C=10\\ \\mu\\text{F}$</p><p>b) $Q_1=Q_2=60\\ \\mu\\text{C}$ ; $U_1=12$ V ; $U_2=3$ V</p><p>$Q_3=90\\ \\mu\\text{C}$ ; $U_3=15$ V</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nối tiếp và song song</strong>, hỏi <strong>Q, U từng tụ</strong> → tính $C$ bộ từ trong ra ngoài, rồi đi ngược lại, chia theo $Q$ chung hoặc $U$ chung.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Tụ C₁ nối tiếp C₂ thành một nhánh, nhánh đó song song với C₃, nối vào nguồn 15 V\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,40.0 310.0,40.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,200.0 310.0,200.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,40.0 40.0,100.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"40.0,112.0 40.0,200.0\"/><line x1=\"26.0\" y1=\"100.0\" x2=\"54.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"32.0\" y1=\"112.0\" x2=\"48.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"56\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 15 V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,40.0 150.0,71.0\"/><line x1=\"134.0\" y1=\"71.0\" x2=\"166.0\" y2=\"71.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"134.0\" y1=\"81.0\" x2=\"166.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,81.0 150.0,113.0\"/><line x1=\"134.0\" y1=\"113.0\" x2=\"166.0\" y2=\"113.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"134.0\" y1=\"123.0\" x2=\"166.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"150.0,123.0 150.0,200.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"310.0,40.0 310.0,108.0\"/><line x1=\"294.0\" y1=\"108.0\" x2=\"326.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"294.0\" y1=\"118.0\" x2=\"326.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"310.0,118.0 310.0,200.0\"/><circle cx=\"150\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"150\" cy=\"200\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"310\" cy=\"40\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"310\" cy=\"200\" r=\"3.2\" fill=\"currentColor\"/><text x=\"172\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 5 μF</tspan></text><text x=\"172\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 20 μF</tspan></text><text x=\"332\" y=\"117\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C<tspan dy=\"4\" font-size=\"10\">3</tspan><tspan dy=\"-4\"> = 6 μF</tspan></text><text x=\"40\" y=\"226\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: C bộ ; Q và U của từng tụ</text></svg><figcaption>Dữ kiện: ba điện dung và hiệu điện thế nguồn; điện dung bộ, điện tích và hiệu điện thế từng tụ cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ba tụ điện chưa tích điện … $5$, $20$, $6\\ \\mu\\text{F}$\"</td><td>$C_1=5\\ \\mu\\text{F}$ ; $C_2=20\\ \\mu\\text{F}$ ; $C_3=6\\ \\mu\\text{F}$ ; $Q_0=0$</td><td>⚠ Công thức ghép tụ dùng được khi các tụ chưa tích điện trước lúc ghép</td></tr><tr><td>\"$C_1$ ghép nối tiếp với $C_2$ thành một nhánh\"</td><td>Nhánh gồm $C_1$ và $C_2$</td><td>Đại lượng chung của các tụ nối tiếp ; cách tính điện dung của nhánh</td></tr><tr><td>\"nhánh này ghép song song với $C_3$\"</td><td>Nhánh $\\parallel$ $C_3$</td><td>Đại lượng chung của hai nhánh song song ; cách tính điện dung khi song song</td></tr><tr><td>\"hai đầu bộ tụ nối vào nguồn $U=15$ V\"</td><td>$U=15$ V đặt vào cả bộ</td><td>Hiệu điện thế đặt vào mỗi nhánh song song</td></tr><tr><td>\"tính điện dung của bộ tụ\"</td><td>Cần: $C_{\\text{bộ}}$</td><td>Hai bước ghép: trong nhánh trước, rồi giữa hai nhánh</td></tr><tr><td>\"điện tích và hiệu điện thế của từng tụ\"</td><td>Cần: $Q_1,Q_2,Q_3$ ; $U_1,U_2,U_3$</td><td>Cách chia điện tích và hiệu điện thế trong từng kiểu ghép</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nối tiếp, song song</b> và hỏi <b>Q, U từng tụ</b> → tính <b>C bộ</b> trước, rồi chia theo <b>Q chung / U chung</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện dung nhánh nối tiếp",
+     "hoi": "Điện dung của nhánh gồm $C_1$ nối tiếp $C_2$ theo đơn vị μF?",
+     "dap_so": 4,
+     "sai_so": 0.04,
+     "don_vi": "μF",
+     "loi_hay_gap": "Cộng thẳng hai điện dung (công thức của song song), ra số lớn hơn cả hai tụ."
+    },
+    {
+     "tieu_de": "Điện dung cả bộ",
+     "hoi": "Điện dung của cả bộ tụ theo đơn vị μF?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "μF",
+     "loi_hay_gap": "Coi nhánh nối tiếp với $C_3$ (cộng nghịch đảo) thay vì song song.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhánh song song với $C_3$ nên cộng thẳng điện dung nhánh với $C_3$",
+       "dung": true
+      },
+      {
+       "text": "Nối tiếp nhánh với $C_3$ nên cộng nghịch đảo",
+       "dung": false,
+       "vi_sao": "Đề nói nhánh ghép song song với $C_3$, nên không cộng nghịch đảo."
+      },
+      {
+       "text": "Cộng nghịch đảo cả ba tụ như nối tiếp",
+       "dung": false,
+       "vi_sao": "Chỉ $C_1$ và $C_2$ nối tiếp ; $C_3$ nằm ở nhánh song song."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện tích tụ C₁",
+     "hoi": "Điện tích của tụ $C_1$ theo đơn vị μC?",
+     "dap_so": 60,
+     "sai_so": 0.6,
+     "don_vi": "μC",
+     "loi_hay_gap": "Lấy điện tích của cả bộ gán cho $C_1$, hoặc chia đôi hiệu điện thế nguồn cho hai nhánh.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhánh và $C_3$ chung hai đầu bộ nên cả nhánh chịu $U$ của nguồn: lấy $Q=C_{12}U$ rồi áp cho $C_1$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $Q=C_{\\text{bộ}}U$ của cả bộ rồi gán cho $C_1$",
+       "dung": false,
+       "vi_sao": "$C_{\\text{bộ}}U$ là tổng điện tích của cả bộ, gồm cả phần của $C_3$."
+      },
+      {
+       "text": "Chia đôi hiệu điện thế nguồn cho hai nhánh",
+       "dung": false,
+       "vi_sao": "Hai nhánh song song nên mỗi nhánh chịu trọn hiệu điện thế nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế trong nhánh",
+     "hoi": "Hiệu điện thế trên tụ $C_2$ theo đơn vị V?",
+     "dap_so": 3,
+     "sai_so": 0.03,
+     "don_vi": "V",
+     "loi_hay_gap": "Chia đều hiệu điện thế nguồn cho hai tụ nối tiếp, hoặc cho $U_2$ bằng cả hiệu điện thế nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$C_1$ và $C_2$ nối tiếp nên $Q$ chung: $U_2=\\dfrac{Q}{C_2}$",
+       "dung": true
+      },
+      {
+       "text": "Chia đều hiệu điện thế nguồn cho hai tụ",
+       "dung": false,
+       "vi_sao": "Nối tiếp thì $Q$ chung, $U$ chia theo nghịch đảo $C$ chứ không chia đều."
+      },
+      {
+       "text": "Cho $U_2$ bằng hiệu điện thế nguồn vì song song với nguồn",
+       "dung": false,
+       "vi_sao": "Chỉ cả nhánh chịu hiệu điện thế nguồn ; hai tụ trong nhánh nối tiếp chia nhau hiệu điện thế ấy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tụ C₃",
+     "hoi": "Điện tích của tụ $C_3$ theo đơn vị μC?",
+     "dap_so": 90,
+     "sai_so": 0.9,
+     "don_vi": "μC",
+     "loi_hay_gap": "Cho $Q_3$ bằng $Q_1$ vì cùng nằm trong bộ, hoặc lấy $U_3$ bằng hiệu của nguồn và $U_1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$C_3$ chung hai đầu bộ nên $U_3=U$, rồi $Q_3=C_3U_3$",
+       "dung": true
+      },
+      {
+       "text": "Cho $Q_3$ bằng $Q_1$ vì cùng nằm trong bộ",
+       "dung": false,
+       "vi_sao": "$Q$ chung chỉ với tụ nối tiếp ; $C_3$ ở nhánh song song nên có điện tích riêng."
+      },
+      {
+       "text": "Lấy $U_3=U-U_1$",
+       "dung": false,
+       "vi_sao": "Phép trừ chỉ dùng trong nhánh nối tiếp ; $C_3$ song song nên $U_3$ bằng $U$ của nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Bộ tụ nối tiếp: ngắt nguồn hay còn nối nguồn khi đổi điện dung",
+   "topic": "Năng lượng của tụ điện",
+   "problem_html": "<p>Hai tụ chưa tích điện có $C_1=600\\ \\text{pF}$ (tụ phẳng, giữa hai bản là không khí) và $C_2=1200\\ \\text{pF}$ ghép nối tiếp rồi nối vào nguồn có $U=300$ V cho tới khi nạp xong.</p><ol type=\"a\"><li>Tính điện dung của bộ và điện tích của mỗi tụ.</li></ol><p>Sau đó ngắt bộ tụ khỏi nguồn, rồi lấp đầy khoảng giữa hai bản của $C_1$ bằng điện môi có $\\varepsilon=2$.</p><ol type=\"a\" start=\"2\"><li>Tính hiệu điện thế giữa hai đầu bộ tụ và năng lượng của bộ tụ lúc này.</li><li>Nếu lấp điện môi vào $C_1$ mà bộ tụ vẫn nối với nguồn $300$ V thì năng lượng của bộ tụ là bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Bộ hai tụ nối tiếp được nạp, ngắt khỏi nguồn, rồi tấm điện môi trượt vào giữa hai bản của tụ C₁\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,50.0 140.0,50.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"160.0,50.0 260.0,50.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"280.0,50.0 370.0,50.0 370.0,190.0 230.0,190.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"180.0,190.0 50.0,190.0 50.0,122.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,50.0 50.0,98.0\"/><line x1=\"36.0\" y1=\"104.0\" x2=\"64.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"42.0\" y1=\"116.0\" x2=\"58.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"58\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 300 V</text><line x1=\"140.0\" y1=\"28.0\" x2=\"140.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"160.0\" y1=\"28.0\" x2=\"160.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"260.0\" y1=\"28.0\" x2=\"260.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"280.0\" y1=\"28.0\" x2=\"280.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"180\" cy=\"190\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"230\" cy=\"190\" r=\"3.2\" fill=\"currentColor\"/><line x1=\"180\" y1=\"190\" x2=\"226\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"226.0;226.0;230.0;230.0;226.0;226.0\" keyTimes=\"0.0000;0.0556;0.1111;0.4444;0.5111;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"170.0;170.0;190.0;190.0;170.0;170.0\" keyTimes=\"0.0000;0.0556;0.1111;0.4444;0.5111;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><text x=\"205\" y=\"214\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">K</text><text x=\"131.0\" y=\"32.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.1333;0.2222;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"170.0\" y=\"32.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.1333;0.2222;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"251.0\" y=\"32.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">+<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.1333;0.2222;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"290.0\" y=\"32.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" opacity=\"0\">−<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.1333;0.2222;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><g transform=\"translate(0 -80)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 -80;0 -80;0 0;0 0\" keyTimes=\"0.0000;0.6111;0.8333;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"141.0\" y=\"29.0\" width=\"18.0\" height=\"42.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"0.3\"/><text x=\"150\" y=\"20\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">ε = 2</text></g><text x=\"205\" y=\"238\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\" fill=\"currentColor\" opacity=\"0\">còn nối nguồn<animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0.0000;0.1111;0.1556;0.4222;0.4667;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"205\" y=\"238\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#fb923c\" opacity=\"0\">đã ngắt nguồn<animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.5111;0.5556;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"150\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 600 pF</tspan></text><text x=\"150\" y=\"124\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">(không khí)</text><text x=\"270\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 1200 pF</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nạp bộ tụ, mở khoá K ngắt nguồn, rồi tấm điện môi trượt vào khe của C₁. Tốc độ phát chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nối tiếp:</strong> $Q$ chung ; $\\dfrac1C=\\dfrac1{C_1}+\\dfrac1{C_2}$ ; $Q=CU$.</li><li>Lấp điện môi $\\varepsilon$ vào một tụ phẳng làm điện dung của riêng tụ đó gấp $\\varepsilon$ lần.</li><li><strong>Năng lượng:</strong> $W=\\tfrac12CU^2=\\dfrac{Q^2}{2C}$.</li><li>⚠ <strong>Điều kiện:</strong> còn nối nguồn thì $U$ giữ nguyên ; đã ngắt nguồn thì $Q$ giữ nguyên, $U=\\dfrac QC$ đổi theo $C$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện dung của bộ</span></p>$$C=\\dfrac{C_1C_2}{C_1+C_2}=\\dfrac{600\\cdot1200}{600+1200}$$<div class=\"bt-ans\">$$C=400\\ \\text{pF}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện tích mỗi tụ</span></p><p>Nối tiếp nên điện tích hai tụ bằng nhau và bằng điện tích của cả bộ:</p>$$Q=CU=400\\cdot10^{-12}\\cdot300$$<div class=\"bt-ans\">$$Q_1=Q_2=1{,}20\\cdot10^{-7}\\ \\text{C}=120\\ \\text{nC}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đại lượng giữ nguyên khi ngắt nguồn</span></p><p>Ngắt nguồn thì hai bản ngoài cùng của bộ bị cô lập, không còn điện tích nào đi vào hay đi ra:</p><div class=\"bt-ans\"><p>Điện tích $Q=120$ nC giữ nguyên. Hiệu điện thế hai đầu bộ không còn bị nguồn giữ, nó đổi theo điện dung: $U'=\\dfrac{Q}{C'}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện dung mới của bộ</span></p><p>Chỉ $C_1$ có điện môi nên chỉ $C_1$ gấp $\\varepsilon$ lần:</p>$$C_1'=\\varepsilon C_1=2\\cdot600=1200\\ \\text{pF}$$<p>Hai tụ vẫn nối tiếp:</p>$$C'=\\dfrac{C_1'C_2}{C_1'+C_2}=\\dfrac{1200\\cdot1200}{1200+1200}$$<div class=\"bt-ans\">$$C'=600\\ \\text{pF}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hiệu điện thế sau khi lấp điện môi</span></p><p>$Q$ giữ nguyên, điện dung đổi thành $C'$:</p>$$U'=\\dfrac{Q}{C'}=\\dfrac{1{,}20\\cdot10^{-7}}{600\\cdot10^{-12}}$$<div class=\"bt-ans\">$$U'=200\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Năng lượng sau khi lấp điện môi</span></p><p>Biết $Q$ và $C'$ nên dùng dạng $\\dfrac{Q^2}{2C'}$:</p>$$W'=\\dfrac{Q^2}{2C'}=\\dfrac{(1{,}20\\cdot10^{-7})^2}{2\\cdot600\\cdot10^{-12}}$$<div class=\"bt-ans\">$$W'=1{,}2\\cdot10^{-5}\\ \\text{J}=12\\ \\mu\\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Lấp điện môi khi vẫn nối nguồn</span></p><p>Nguồn giữ hiệu điện thế hai đầu bộ ở $300$ V, điện dung mới vẫn là $C'$:</p>$$W''=\\tfrac12C'U^2=\\tfrac12\\cdot600\\cdot10^{-12}\\cdot300^2$$<div class=\"bt-ans\">$$W''=2{,}7\\cdot10^{-5}\\ \\text{J}=27\\ \\mu\\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Năng lượng ban đầu: $\\tfrac12CU^2=\\tfrac12\\cdot400\\cdot10^{-12}\\cdot300^2=18\\ \\mu\\text{J}$.</p><p>Ngắt nguồn: $W'=12\\ \\mu\\text{J}\\lt18\\ \\mu\\text{J}$ ✓ điện trường kéo tấm điện môi vào nên năng lượng giảm.</p><p>Còn nối nguồn: $W''=27\\ \\mu\\text{J}\\gt18\\ \\mu\\text{J}$ ✓ nguồn bơm thêm điện tích nên năng lượng tăng.</p><p>Sau lấp điện môi: $\\dfrac{Q}{C_1'}+\\dfrac{Q}{C_2}=100+100=200\\ \\text{V}=U'$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $C=400\\ \\text{pF}$ ; $Q_1=Q_2=120\\ \\text{nC}$</p><p>b) $U'=200\\ \\text{V}$ ; $W'=12\\ \\mu\\text{J}$</p><p>c) $W''=27\\ \\mu\\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>ngắt nguồn</strong> hoặc <strong>vẫn nối nguồn</strong> khi đổi tụ → xác định $Q$ giữ hay $U$ giữ trước, rồi chọn công thức năng lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Hai tụ C₁ = 600 pF và C₂ = 1200 pF nối tiếp vào nguồn 300 V, cần tìm điện dung, điện tích, hiệu điện thế và năng lượng\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,50.0 140.0,50.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"160.0,50.0 260.0,50.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"280.0,50.0 370.0,50.0 370.0,190.0 230.0,190.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"180.0,190.0 50.0,190.0 50.0,122.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\" points=\"50.0,50.0 50.0,98.0\"/><line x1=\"36.0\" y1=\"104.0\" x2=\"64.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"42.0\" y1=\"116.0\" x2=\"58.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><text x=\"58\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 300 V</text><line x1=\"140.0\" y1=\"28.0\" x2=\"140.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"160.0\" y1=\"28.0\" x2=\"160.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"260.0\" y1=\"28.0\" x2=\"260.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"280.0\" y1=\"28.0\" x2=\"280.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"180\" cy=\"190\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"230\" cy=\"190\" r=\"3.2\" fill=\"currentColor\"/><line x1=\"180.0\" y1=\"190.0\" x2=\"230.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"205\" y=\"214\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">K</text><text x=\"150\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 600 pF</tspan></text><text x=\"150\" y=\"124\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">(không khí)</text><text x=\"270\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 1200 pF</tspan></text><text x=\"50\" y=\"238\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: C bộ ; Q mỗi tụ ; U′ ; W′ ; W″</text></svg><figcaption>Dữ kiện: hai điện dung, hiệu điện thế nguồn và hằng số điện môi lấp vào C₁; các đại lượng cần tìm ghi dưới hình. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai tụ chưa tích điện … $C_1=600$ pF (tụ phẳng, không khí) và $C_2=1200$ pF\"</td><td>$C_1=600$ pF ; $C_2=1200$ pF ; $Q_0=0$</td><td>⚠ Công thức ghép tụ dùng được khi các tụ chưa tích điện trước lúc ghép</td></tr><tr><td>\"ghép nối tiếp rồi nối vào nguồn $U=300$ V … nạp xong\"</td><td>$U=300$ V đặt vào cả bộ</td><td>Đại lượng chung của các tụ nối tiếp ; các tụ chia nhau hiệu điện thế nguồn</td></tr><tr><td>\"điện dung của bộ và điện tích của mỗi tụ\"</td><td>Cần: $C_{\\text{bộ}}$, $Q_1$, $Q_2$</td><td>Cách tính điện dung khi nối tiếp ; quan hệ giữa $Q$, $C$, $U$</td></tr><tr><td>\"ngắt bộ tụ khỏi nguồn\"</td><td>Bộ tụ bị cô lập</td><td>⚠ Đại lượng nào còn bị nguồn giữ cố định, đại lượng nào không còn</td></tr><tr><td>\"lấp đầy khoảng giữa hai bản của $C_1$ … $\\varepsilon=2$\"</td><td>$\\varepsilon=2$, chỉ ở $C_1$</td><td>Điện môi làm đổi điện dung của tụ nào ; điện dung bộ đổi theo thế nào</td></tr><tr><td>\"hiệu điện thế giữa hai đầu bộ tụ và năng lượng\"</td><td>Cần: $U'$, $W'$</td><td>Các dạng công thức của năng lượng ; chọn dạng theo đại lượng đã biết</td></tr><tr><td>\"bộ tụ vẫn nối với nguồn $300$ V … năng lượng\"</td><td>$U$ do nguồn giữ ; cần: $W''$</td><td>Khi còn nối nguồn thì đại lượng nào giữ nguyên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ngắt nguồn</b> hay <b>vẫn nối nguồn</b> → xét <b>Q giữ</b> hay <b>U giữ</b> trước, rồi chọn công thức năng lượng.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện dung của bộ",
+     "hoi": "Điện dung của bộ hai tụ nối tiếp theo đơn vị pF?",
+     "dap_so": 400,
+     "sai_so": 4,
+     "don_vi": "pF",
+     "loi_hay_gap": "Cộng thẳng hai điện dung (công thức của song song)."
+    },
+    {
+     "tieu_de": "Điện tích mỗi tụ",
+     "hoi": "Điện tích của mỗi tụ khi nối nguồn, theo đơn vị nC?",
+     "dap_so": 120,
+     "sai_so": 1.2,
+     "don_vi": "nC",
+     "loi_hay_gap": "Cho mỗi tụ chịu trọn hiệu điện thế nguồn, hoặc chia điện tích của bộ làm đôi cho hai tụ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nối tiếp nên $Q$ chung và bằng $Q$ của bộ: $Q=C_{\\text{bộ}}U$",
+       "dung": true
+      },
+      {
+       "text": "Tính $Q_1=C_1U$ và $Q_2=C_2U$ vì mỗi tụ chịu cả hiệu điện thế nguồn",
+       "dung": false,
+       "vi_sao": "Nối tiếp thì hai tụ chia nhau hiệu điện thế nguồn, mỗi tụ không chịu trọn $U$."
+      },
+      {
+       "text": "Chia điện tích của bộ làm đôi cho hai tụ",
+       "dung": false,
+       "vi_sao": "Nối tiếp thì $Q$ bằng nhau trên mỗi tụ, không chia nhỏ ra."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đại lượng giữ nguyên khi ngắt nguồn",
+     "hoi": "Sau khi ngắt khỏi nguồn rồi lấp điện môi, đại lượng nào của bộ giữ nguyên?",
+     "lua_chon": [
+      {
+       "text": "Điện tích $Q$ trên mỗi bản",
+       "dung": true
+      },
+      {
+       "text": "Hiệu điện thế hai đầu bộ",
+       "dung": false,
+       "vi_sao": "Không còn nguồn giữ hiệu điện thế ; điện dung đổi thì $U=\\dfrac QC$ đổi theo."
+      },
+      {
+       "text": "Điện dung của bộ",
+       "dung": false,
+       "vi_sao": "Lấp điện môi vào $C_1$ làm điện dung của $C_1$ và của bộ đổi."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng hiệu điện thế vẫn bằng hiệu điện thế nguồn dù đã ngắt nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hỏi trước: đã ngắt nguồn thì đại lượng nào không còn đổi được",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn hiệu điện thế của nguồn cho bộ",
+       "dung": false,
+       "vi_sao": "Đã ngắt nguồn thì hiệu điện thế hai đầu bộ không còn bị nguồn giữ."
+      },
+      {
+       "text": "Tính ngay năng lượng với điện dung cũ",
+       "dung": false,
+       "vi_sao": "Điện dung đã đổi vì $C_1$ thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện dung mới của bộ",
+     "hoi": "Điện dung của bộ sau khi lấp điện môi vào $C_1$, theo đơn vị pF?",
+     "dap_so": 600,
+     "sai_so": 6,
+     "don_vi": "pF",
+     "loi_hay_gap": "Nhân cả điện dung bộ với ε (quên chỉ C₁ có điện môi), hoặc cộng thẳng hai điện dung.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chỉ $C_1$ gấp $\\varepsilon$ lần, rồi tính lại ghép nối tiếp",
+       "dung": true
+      },
+      {
+       "text": "Nhân điện dung bộ cũ với $\\varepsilon$",
+       "dung": false,
+       "vi_sao": "Chỉ $C_1$ có điện môi, $C_2$ không đổi nên điện dung bộ không gấp $\\varepsilon$ lần."
+      },
+      {
+       "text": "Cộng thẳng $C_1'$ và $C_2$",
+       "dung": false,
+       "vi_sao": "Hai tụ vẫn nối tiếp, phải cộng nghịch đảo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế sau khi lấp điện môi",
+     "hoi": "Hiệu điện thế giữa hai đầu bộ sau khi lấp điện môi, theo đơn vị V?",
+     "dap_so": 200,
+     "sai_so": 2,
+     "don_vi": "V",
+     "loi_hay_gap": "Giữ hiệu điện thế bằng của nguồn, hoặc chia $Q$ cho điện dung cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q$ giữ nguyên nên $U'=\\dfrac{Q}{C'}$ với $C'$ mới",
+       "dung": true
+      },
+      {
+       "text": "Cho $U'$ bằng hiệu điện thế của nguồn",
+       "dung": false,
+       "vi_sao": "Đã ngắt nguồn nên $U'$ không còn bị nguồn giữ."
+      },
+      {
+       "text": "Tính $U'=\\dfrac QC$ với $C$ cũ",
+       "dung": false,
+       "vi_sao": "Phải dùng điện dung mới sau khi lấp điện môi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng sau khi lấp điện môi",
+     "hoi": "Năng lượng của bộ sau khi lấp điện môi (đã ngắt nguồn), theo đơn vị μJ?",
+     "dap_so": 12,
+     "sai_so": 0.12,
+     "don_vi": "μJ",
+     "loi_hay_gap": "Dùng hiệu điện thế của nguồn trong công thức năng lượng, hoặc cho rằng năng lượng không đổi vì Q không đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Biết $Q$ và $C'$ nên dùng $W'=\\dfrac{Q^2}{2C'}$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $W'=\\dfrac{C'U^2}{2}$ với $U$ là hiệu điện thế nguồn",
+       "dung": false,
+       "vi_sao": "Hiệu điện thế hai đầu bộ lúc này là $U'$, không phải của nguồn."
+      },
+      {
+       "text": "Giữ $W'=W$ vì $Q$ không đổi",
+       "dung": false,
+       "vi_sao": "$Q$ không đổi nhưng $C$ đổi nên $W=\\dfrac{Q^2}{2C}$ đổi theo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lấp điện môi khi vẫn nối nguồn",
+     "hoi": "Năng lượng của bộ khi lấp điện môi mà vẫn nối nguồn, theo đơn vị μJ?",
+     "dap_so": 27,
+     "sai_so": 0.3,
+     "don_vi": "μJ",
+     "loi_hay_gap": "Dùng lại cách của câu b (giữ Q) dù bộ vẫn nối nguồn, hoặc quên đổi sang điện dung mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vẫn nối nguồn nên $U$ giữ nguyên: $W''=\\tfrac12C'U^2$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $Q$ cũ: $W''=\\dfrac{Q^2}{2C'}$ như câu b",
+       "dung": false,
+       "vi_sao": "Còn nối nguồn thì nguồn bơm thêm điện tích ; $Q$ không còn giữ nguyên, $U$ mới là đại lượng giữ."
+      },
+      {
+       "text": "Dùng điện dung cũ: $W''=\\tfrac12C\\,U^2$",
+       "dung": false,
+       "vi_sao": "Điện môi đã làm điện dung đổi ; phải dùng $C'$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,602 @@
+{
+ "lesson_id": 44,
+ "lesson_title": "Bài 25. Năng lượng điện và công suất điện",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Điện năng tiêu thụ và đổi jun sang kWh",
+   "topic": "Năng lượng điện. Công suất điện",
+   "problem_html": "<p>Một bình nóng lạnh ghi $220\\ \\text{V} - 2000\\ \\text{W}$. Mỗi tối gia đình bật bình đúng hiệu điện thế định mức trong $45$ phút.</p><ol type=\"a\"><li>Tính điện năng bình tiêu thụ mỗi tối, theo jun.</li><li>Đổi điện năng đó ra kWh.</li><li>Tính số điện (kWh) bình tiêu thụ trong $30$ ngày.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Kim phút quay 45 phút trong khi cột công tơ điện dâng dần\"><rect x=\"22.0\" y=\"62.0\" width=\"78.0\" height=\"104.0\" rx=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"61\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">220 V</text><text x=\"61\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">2000 W</text><text x=\"61\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">bình nóng lạnh</text><circle cx=\"205.0\" cy=\"112.0\" r=\"50\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"205.0\" y1=\"70.0\" x2=\"205.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"226.0\" y1=\"75.6\" x2=\"230.0\" y2=\"68.7\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"241.4\" y1=\"91.0\" x2=\"248.3\" y2=\"87.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"247.0\" y1=\"112.0\" x2=\"255.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"241.4\" y1=\"133.0\" x2=\"248.3\" y2=\"137.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"226.0\" y1=\"148.4\" x2=\"230.0\" y2=\"155.3\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"205.0\" y1=\"154.0\" x2=\"205.0\" y2=\"162.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"184.0\" y1=\"148.4\" x2=\"180.0\" y2=\"155.3\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"168.6\" y1=\"133.0\" x2=\"161.7\" y2=\"137.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"163.0\" y1=\"112.0\" x2=\"155.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"168.6\" y1=\"91.0\" x2=\"161.7\" y2=\"87.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"184.0\" y1=\"75.6\" x2=\"180.0\" y2=\"68.7\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"205\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">kim phút</text><line x1=\"205\" y1=\"112\" x2=\"205\" y2=\"72\" stroke=\"#fb923c\" stroke-width=\"3\" stroke-linecap=\"round\"><animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 205 112\" to=\"270 205 112\" dur=\"6s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"205.0\" cy=\"112.0\" r=\"4\" fill=\"currentColor\"/><text x=\"205\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">t: 0 → 45 phút</text><rect x=\"300.0\" y=\"62.0\" width=\"80.0\" height=\"104.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"304\" y=\"166\" width=\"72\" height=\"0\" fill=\"#38bdf8\" fill-opacity=\".45\"><animate attributeName=\"y\" values=\"162.0;66.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;96.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"340\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">công tơ</text><text x=\"340\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = ?</text><line x1=\"106\" y1=\"114\" x2=\"148\" y2=\"114\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M140.4,109.6 L148.0,114.0 L140.4,118.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim phút quay trọn 45 phút trong 6 giây (1 giây tương ứng khoảng 7,5 phút) trong lúc cột công tơ dâng dần. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện năng tiêu thụ là năng lượng thiết bị nhận từ dòng điện<br>công suất là điện năng mỗi giây.</li><li><strong>Công thức:</strong> $A=Pt$ (với $P=UI$)<br>$1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$.</li><li>Ra jun : $P$ tính bằng W, $t$ bằng giây. Ra kWh : $P$ bằng kW, $t$ bằng giờ.</li><li>⚠ <strong>Điều kiện:</strong> dùng đúng $U_{\\text{đm}}$ thì $P=P_{\\text{đm}}$ và không đổi suốt lúc bật.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi thời gian</span></p><p>Ra jun thì thời gian phải tính bằng giây :</p>$$t=45\\cdot60$$<div class=\"bt-ans\">$$t=2700\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện năng mỗi tối theo jun</span></p><p>Bình dùng đúng hiệu điện thế định mức nên công suất bằng công suất ghi trên nhãn :</p>$$A=Pt$$$$A=2000\\cdot2700$$<div class=\"bt-ans\">$$A=5{,}4\\cdot10^{6}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi ra kWh</span></p><p>$1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$ nên chia số jun cho hệ số này :</p>$$A=\\dfrac{5{,}4\\cdot10^{6}}{3{,}6\\cdot10^{6}}$$<div class=\"bt-ans\">$$A=1{,}5\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện năng trong 30 ngày</span></p><p>Mỗi ngày dùng như nhau nên nhân với số ngày :</p>$$A_{30}=30\\cdot1{,}5$$<div class=\"bt-ans\">$$A_{30}=45\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cách khác : $2{,}0\\ \\text{kW}\\cdot0{,}75\\ \\text{h}=1{,}5\\ \\text{kWh}$ ✓ khớp.</p><p>Đơn vị : W·s = J<br>kW·h = kWh ✓.</p><p>$45$ số mỗi tháng cho một bình nóng lạnh : hợp lí so với hoá đơn vài trăm số.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=5{,}4\\cdot10^{6}\\ \\text{J}$</p><p>b) $A=1{,}5\\ \\text{kWh}$</p><p>c) $A_{30}=45\\ \\text{kWh}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất và thời gian dùng</strong>, hỏi <strong>điện năng, jun hay số điện</strong> → $A=Pt$ ; ra jun dùng W–giây, ra kWh dùng kW–giờ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 184\" role=\"img\" aria-label=\"Bình nóng lạnh ghi 220 V – 2000 W, dùng 45 phút mỗi tối trong 30 ngày\"><rect x=\"30.0\" y=\"50.0\" width=\"100.0\" height=\"86.0\" rx=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"80\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">220 V</text><text x=\"80\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">2000 W</text><text x=\"80\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">bình nóng lạnh</text><text x=\"160\" y=\"78\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dùng đúng 220 V</text><text x=\"160\" y=\"100\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 45 phút mỗi tối</text><text x=\"160\" y=\"122\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">trong 30 ngày</text><text x=\"30\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  A một tối (J và kWh) · A trong 30 ngày (kWh)</text></svg><figcaption>Dữ kiện: nhãn bình, thời gian dùng mỗi tối và số ngày; điện năng cần tìm ghi bằng dấu hỏi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ghi $220\\ \\text{V}-2000\\ \\text{W}$\"</td><td>$U_{\\text{đm}}=220$ V ; $P_{\\text{đm}}=2000$ W</td><td>⚠ Công suất ghi trên nhãn chỉ có khi dùng đúng hiệu điện thế định mức ; công suất không đổi suốt lúc bật</td></tr><tr><td>\"bật đúng hiệu điện thế định mức\"</td><td>$U=U_{\\text{đm}}$</td><td>Công suất thực lúc này so với công suất ghi trên nhãn</td></tr><tr><td>\"trong $45$ phút\"</td><td>$t=45$ phút</td><td>Ra jun thì $t$ tính bằng đơn vị nào ? Ra kWh thì $P$ và $t$ tính bằng đơn vị nào ?</td></tr><tr><td>\"trong $30$ ngày\"</td><td>$30$ ngày, mỗi ngày dùng như nhau</td><td>Điện năng của nhiều ngày : cộng dồn</td></tr><tr><td>\"điện năng … theo jun\", \"đổi ra kWh\"</td><td>Cần tìm : $A$ (J) ; $A$ (kWh)</td><td>Điện năng theo công suất và thời gian ; liên hệ giữa kWh và jun</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất, thời gian dùng</b>, hỏi <b>jun hay số điện</b> → <b>A = Pt</b>, đổi <b>kWh</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi thời gian",
+     "hoi": "Thời gian dùng mỗi tối là bao nhiêu giây?",
+     "dap_so": 2700,
+     "sai_so": 1,
+     "don_vi": "s",
+     "loi_hay_gap": "Để nguyên số phút rồi nhân với công suất, hoặc đổi nhầm $1$ phút thành $100$ giây."
+    },
+    {
+     "tieu_de": "Điện năng mỗi tối theo jun",
+     "hoi": "Điện năng mỗi tối là bao nhiêu triệu jun (MJ)?",
+     "dap_so": 5.4,
+     "sai_so": 0.05,
+     "don_vi": "MJ",
+     "loi_hay_gap": "Nhân công suất với thời gian tính bằng phút, kết quả nhỏ đi $60$ lần ; hoặc nhân hiệu điện thế $220\\ \\text{V}$ với thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân công suất với thời gian tính bằng giây : $A=Pt$",
+       "dung": true
+      },
+      {
+       "text": "Nhân công suất với thời gian tính bằng phút",
+       "dung": false,
+       "vi_sao": "Ra jun thì $t$ phải là giây ; dùng phút thì kết quả nhỏ đi $60$ lần."
+      },
+      {
+       "text": "Nhân hiệu điện thế $220\\ \\text{V}$ với thời gian",
+       "dung": false,
+       "vi_sao": "$U\\cdot t$ không phải điện năng ; còn thiếu cường độ dòng điện."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi ra kWh",
+     "hoi": "Điện năng mỗi tối là bao nhiêu kWh?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Chia số jun cho $1000$ (ra kJ) rồi gọi là kWh.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia số jun cho $3{,}6\\cdot10^{6}$",
+       "dung": true
+      },
+      {
+       "text": "Chia số jun cho $1000$",
+       "dung": false,
+       "vi_sao": "Chia $1000$ chỉ ra kJ ; $1\\ \\text{kWh}=1000\\ \\text{W}\\cdot3600\\ \\text{s}$."
+      },
+      {
+       "text": "Nhân số jun với $3{,}6\\cdot10^{6}$",
+       "dung": false,
+       "vi_sao": "$1$ kWh lớn hơn $1$ J rất nhiều nên số kWh phải nhỏ hơn số jun."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng trong 30 ngày",
+     "hoi": "Trong $30$ ngày bình tiêu thụ bao nhiêu kWh?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Nhân $30$ với số jun nhưng vẫn ghi đơn vị kWh, hoặc nhân $30$ với công suất mà chưa nhân thời gian dùng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân điện năng một tối (kWh) với $30$",
+       "dung": true
+      },
+      {
+       "text": "Nhân số jun với $30$ rồi ghi đơn vị kWh",
+       "dung": false,
+       "vi_sao": "Số jun nhân $30$ vẫn là jun ; phải đổi sang kWh trước."
+      },
+      {
+       "text": "Nhân công suất $2000\\ \\text{W}$ với $30$",
+       "dung": false,
+       "vi_sao": "Mới nhân công suất với số ngày, chưa nhân với thời gian dùng mỗi ngày."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Thiết bị dùng ở hiệu điện thế khác định mức",
+   "topic": "Năng lượng điện. Công suất điện",
+   "problem_html": "<p>Một bàn là ghi $220\\ \\text{V} - 1100\\ \\text{W}$. Ở khu vực xa trạm điện, ổ cắm chỉ có hiệu điện thế $176\\ \\text{V}$. Coi điện trở của bàn là không đổi.</p><ol type=\"a\"><li>Tính điện trở của bàn là.</li><li>Tính cường độ dòng điện và công suất thực của bàn là khi cắm vào ổ cắm đó.</li><li>Bàn là chạy liên tục $30$ phút ở hiệu điện thế này. Tính điện năng tiêu thụ theo kWh.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hiệu điện thế ở ổ cắm giảm dần trong khi đế bàn là sáng nhạt đi\"><path d=\"M27,146 A78,78 0 0 1 183,146\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"27.0\" y1=\"146.0\" x2=\"36.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"41.9\" y1=\"100.2\" x2=\"49.2\" y2=\"105.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"80.9\" y1=\"71.8\" x2=\"83.7\" y2=\"80.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"129.1\" y1=\"71.8\" x2=\"126.3\" y2=\"80.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"168.1\" y1=\"100.2\" x2=\"160.8\" y2=\"105.4\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"183.0\" y1=\"146.0\" x2=\"174.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"13.0\" y=\"150.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"76.6\" y=\"62.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">100</text><text x=\"179.4\" y=\"95.9\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">200</text><line x1=\"181.2\" y1=\"115.8\" x2=\"166.4\" y2=\"121.7\" stroke=\"#f87171\" stroke-width=\"3\" opacity=\"1\"/><text x=\"187.2\" y=\"109.8\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">220 (định mức)</text><line x1=\"105\" y1=\"146\" x2=\"164.5\" y2=\"122.4\" stroke=\"#fb923c\" stroke-width=\"3\" stroke-linecap=\"round\"><animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 105 146\" to=\"-31.7 105 146\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"105.0\" cy=\"146.0\" r=\"5\" fill=\"currentColor\"/><text x=\"105\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">U (V) ở ổ cắm</text><path d=\"M262,150 L392,150 L392,128 Q342,98 298,110 L262,136 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M306,110 Q340,84 374,114\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"262\" y=\"150\" width=\"130\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"262\" y=\"150\" width=\"130\" height=\"9\" fill=\"#fb923c\" stroke=\"none\"><animate attributeName=\"opacity\" values=\"1.0;0.5\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"327\" y=\"186\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">220 V – 1100 W</text><text x=\"327\" y=\"204\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">coi R không đổi</text><line x1=\"191.0\" y1=\"136.0\" x2=\"258.0\" y2=\"130.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim vôn kế tụt từ vạch định mức xuống hiệu điện thế thực trong 4 giây, đế bàn là nhạt dần. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhãn $U_{\\text{đm}}-P_{\\text{đm}}$ cho công suất khi dùng đúng $U_{\\text{đm}}$<br>từ nhãn suy ra điện trở của thiết bị.</li><li><strong>Công thức:</strong> $R=\\dfrac{U_{\\text{đm}}^{2}}{P_{\\text{đm}}}$<br>$I=\\dfrac{U}{R}$<br>$P=UI=\\dfrac{U^{2}}{R}$<br>$A=Pt$.</li><li>⚠ <strong>Điều kiện:</strong> bàn là chỉ toả nhiệt, coi $R$ không đổi khi $U$ thay đổi<br>công suất thực tỉ lệ với $U^{2}$ chứ không tỉ lệ với $U$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở của bàn là từ nhãn</span></p><p>Bàn là chỉ toả nhiệt, công suất định mức ứng với hiệu điện thế định mức :</p>$$R=\\dfrac{U_{\\text{đm}}^{2}}{P_{\\text{đm}}}$$$$R=\\dfrac{220^{2}}{1100}$$<div class=\"bt-ans\">$$R=44\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ dòng điện thực</span></p><p>Coi $R$ không đổi, dùng hiệu điện thế thực $176\\ \\text{V}$ :</p>$$I=\\dfrac{U}{R}$$$$I=\\dfrac{176}{44}$$<div class=\"bt-ans\">$$I=4{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất thực</span></p>$$P=UI$$$$P=176\\cdot4{,}0$$<div class=\"bt-ans\">$$P=704\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện năng trong 30 phút</span></p><p>Ra kWh thì $P$ tính bằng kW, $t$ bằng giờ : $P=0{,}704\\ \\text{kW}$, $t=0{,}5\\ \\text{h}$.</p>$$A=Pt$$$$A=0{,}704\\cdot0{,}5$$<div class=\"bt-ans\">$$A=0{,}352\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cách khác : $P=\\dfrac{U^{2}}{R}=\\left(\\dfrac{176}{220}\\right)^{2}\\cdot1100$ ✓ khớp.</p><p>$U$ giảm thì $P$ giảm, và giảm nhiều hơn $U$ : $P$ tỉ lệ với $U^{2}$ ✓.</p><p>Điện năng nhỏ hơn $1{,}1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}=0{,}55\\ \\text{kWh}$ khi dùng đúng định mức ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=44\\ \\Omega$</p><p>b) $I=4{,}0\\ \\text{A}$ ; $P=704\\ \\text{W}$</p><p>c) $A=0{,}352\\ \\text{kWh}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhãn định mức</strong> nhưng thiết bị dùng ở <strong>hiệu điện thế khác</strong>, kèm <strong>coi R không đổi</strong> → tìm $R$ từ nhãn, rồi tính $I$, $P$ theo $U$ thực.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Bàn là ghi 220 V – 1100 W cắm vào ổ cắm chỉ có 176 V\"><path d=\"M34,120 L164,120 L164,98 Q114,68 70,80 L34,106 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M78,80 Q112,54 146,84\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"34\" y=\"120\" width=\"130\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"99\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">220 V – 1100 W</text><text x=\"190\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ổ cắm: U = 176 V</text><text x=\"190\" y=\"84\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R không đổi</text><text x=\"190\" y=\"116\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:</text><text x=\"190\" y=\"136\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R · I · P thực</text><text x=\"190\" y=\"156\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A trong 30 phút (kWh)</text></svg><figcaption>Dữ kiện: nhãn bàn là, hiệu điện thế thực ở ổ cắm; các đại lượng cần tìm ghi bằng dấu hỏi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ghi $220\\ \\text{V}-1100\\ \\text{W}$\"</td><td>$U_{\\text{đm}}=220$ V ; $P_{\\text{đm}}=1100$ W</td><td>⚠ Công suất trên nhãn ứng với hiệu điện thế định mức ; từ nhãn suy ra được điện trở của bàn là</td></tr><tr><td>\"ổ cắm chỉ có $176\\ \\text{V}$\"</td><td>$U=176$ V</td><td>So với $U_{\\text{đm}}$ : công suất thực còn bằng công suất ghi trên nhãn không ?</td></tr><tr><td>\"coi điện trở của bàn là không đổi\"</td><td>$R$ không đổi</td><td>Điều kiện cho phép dùng điện trở tính từ nhãn ở hiệu điện thế mới</td></tr><tr><td>\"điện trở\", \"cường độ dòng điện và công suất thực\"</td><td>Cần tìm : $R$ ; $I$ ; $P$</td><td>Điện trở từ nhãn ; định luật Ôm ; công suất theo $U$ và $I$</td></tr><tr><td>\"chạy liên tục $30$ phút … theo kWh\"</td><td>$t=30$ phút</td><td>Điện năng theo công suất thực và thời gian ; ra kWh thì $P$, $t$ ở đơn vị nào ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhãn định mức</b>, dùng ở <b>U khác</b>, <b>coi R không đổi</b> → <b>R từ nhãn</b>, tính với <b>U thực</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở của bàn là từ nhãn",
+     "hoi": "Điện trở của bàn là bằng bao nhiêu?",
+     "dap_so": 44,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Dùng $R=\\dfrac{P}{U^{2}}$ hoặc $R=\\dfrac{U}{P}$ : đảo vị trí các đại lượng, sai đơn vị ôm."
+    },
+    {
+     "tieu_de": "Cường độ dòng điện thực",
+     "hoi": "Cường độ dòng điện chạy qua bàn là khi cắm vào ổ cắm đó?",
+     "dap_so": 4.0,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Lấy $I=\\dfrac{P_{\\text{đm}}}{U_{\\text{đm}}}$ : đó là dòng định mức, chỉ đúng khi dùng đúng $220\\ \\text{V}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng định luật Ôm với hiệu điện thế thực : $I=\\dfrac{U}{R}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy dòng định mức $I=\\dfrac{P_{\\text{đm}}}{U_{\\text{đm}}}$",
+       "dung": false,
+       "vi_sao": "Đó là dòng khi dùng đúng $220\\ \\text{V}$ ; ổ cắm chỉ có $176\\ \\text{V}$ nên dòng khác."
+      },
+      {
+       "text": "Lấy $I=\\dfrac{U_{\\text{đm}}}{R}$",
+       "dung": false,
+       "vi_sao": "Vẫn dùng hiệu điện thế định mức thay vì hiệu điện thế thực của ổ cắm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất thực",
+     "hoi": "Công suất thực của bàn là ở ổ cắm đó?",
+     "dap_so": 704,
+     "sai_so": 5,
+     "don_vi": "W",
+     "loi_hay_gap": "Coi công suất tỉ lệ với hiệu điện thế : lấy $80\\ \\%$ công suất ghi trên nhãn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân hiệu điện thế thực với dòng điện thực : $P=UI$",
+       "dung": true
+      },
+      {
+       "text": "Giảm công suất tỉ lệ với hiệu điện thế",
+       "dung": false,
+       "vi_sao": "$P=\\dfrac{U^{2}}{R}$ tỉ lệ với $U^{2}$ chứ không tỉ lệ với $U$."
+      },
+      {
+       "text": "Giữ nguyên công suất ghi trên nhãn",
+       "dung": false,
+       "vi_sao": "Công suất trên nhãn chỉ có khi dùng đúng $220\\ \\text{V}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng trong 30 phút",
+     "hoi": "Điện năng bàn là tiêu thụ trong $30$ phút, theo kWh?",
+     "dap_so": 0.352,
+     "sai_so": 0.005,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Dùng công suất ghi trên nhãn thay cho công suất thực, hoặc nhân công suất (kW) với số phút mà không đổi ra giờ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân công suất thực (kW) với thời gian (h)",
+       "dung": true
+      },
+      {
+       "text": "Nhân công suất ghi trên nhãn với thời gian",
+       "dung": false,
+       "vi_sao": "Bàn là đang chạy với công suất thực, nhỏ hơn công suất ghi trên nhãn."
+      },
+      {
+       "text": "Nhân công suất thực (kW) với $30$ phút",
+       "dung": false,
+       "vi_sao": "Ra kWh thì thời gian phải đổi sang giờ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Công suất của nguồn, mạch ngoài và nhiệt trong nguồn",
+   "topic": "Công và công suất của nguồn điện",
+   "problem_html": "<p>Một bộ pin có suất điện động $\\mathcal{E} = 6{,}0\\ \\text{V}$, điện trở trong $r = 0{,}40\\ \\Omega$ được nối kín với một điện trở $R = 2{,}6\\ \\Omega$ của mạch sưởi nhỏ. Bỏ qua điện trở dây nối.</p><ol type=\"a\"><li>Tính cường độ dòng điện trong mạch.</li><li>Tính công suất của nguồn, công suất mạch ngoài nhận được và công suất toả nhiệt trong nguồn.</li><li>Tính công của nguồn trong $5$ phút.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Các điện tích chạy vòng quanh mạch kín gồm nguồn có điện trở trong và điện trở ngoài\"><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"350.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"44.0\" x2=\"350.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"136.0\" x2=\"350.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"176.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"138.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"92.0\" y1=\"86.0\" x2=\"128.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"100.0\" y1=\"96.0\" x2=\"120.0\" y2=\"96.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"96.0\" x2=\"110.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"101.0\" y=\"112.0\" width=\"18.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"80.0\" y=\"76.0\" width=\"60.0\" height=\"70.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"134\" y=\"84\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"72\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">ε = 6,0 V</text><text x=\"72\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">r = 0,40 Ω</text><rect x=\"338.0\" y=\"84.0\" width=\"24.0\" height=\"52.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"312\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">R = 2,6 Ω</text><circle cx=\"110.0\" cy=\"86.0\" r=\"4.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"110.0;110.0;110.0;110.0;110.0;119.7;130.0;140.3;150.7;161.0;171.3;181.7;192.0;202.3;212.7;223.0;233.3;243.7;254.0;264.3;274.7;285.0;295.3;305.7;316.0;326.3;336.7;347.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"86.0;75.7;65.3;55.0;44.7;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;51.3;61.7;72.0;82.3;92.7;103.0;113.3;123.7;134.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"316.0\" cy=\"44.0\" r=\"4.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"316.0;326.3;336.7;347.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;340.3;330.0;319.7;309.3;299.0;288.7;278.3;268.0;257.7;247.3;237.0;226.7;216.3;206.0;195.7;185.3;175.0;164.7;154.3;144.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"44.0;44.0;44.0;44.0;51.3;61.7;72.0;82.3;92.7;103.0;113.3;123.7;134.0;144.3;154.7;165.0;175.3;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"268.0\" cy=\"176.0\" r=\"4.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"268.0;257.7;247.3;237.0;226.7;216.3;206.0;195.7;185.3;175.0;164.7;154.3;144.0;133.7;123.3;113.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;119.7;130.0;140.3;150.7;161.0;171.3;181.7;192.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;176.0;168.7;158.3;148.0;137.7;127.3;117.0;106.7;96.3;86.0;75.7;65.3;55.0;44.7;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"180\" y1=\"44\" x2=\"224\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M215.2,38.9 L224.0,44.0 L215.2,49.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"202\" y=\"34\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện tích chạy nửa vòng mạch trong 5 giây, chiều từ cực dương qua mạch ngoài. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nguồn đẩy điện tích qua cả mạch kín<br>điện trở trong $r$ cũng toả nhiệt.</li><li><strong>Định luật:</strong> $I=\\dfrac{\\mathcal{E}}{R+r}$<br>$U=IR=\\mathcal{E}-Ir$.</li><li><strong>Công thức:</strong> $P_{ng}=\\mathcal{E}I$<br>$P_R=UI$<br>$P_r=I^{2}r$<br>$A_{ng}=P_{ng}t$.</li><li>⚠ <strong>Điều kiện:</strong> mạch kín một nguồn, mạch ngoài chỉ có điện trở<br>$t$ tính bằng giây để ra jun.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ dòng điện</span></p><p>Mạch kín có cả điện trở trong :</p>$$I=\\dfrac{\\mathcal{E}}{R+r}$$$$I=\\dfrac{6{,}0}{2{,}6+0{,}40}$$<div class=\"bt-ans\">$$I=2{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hiệu điện thế mạch ngoài</span></p>$$U=IR=2{,}0\\cdot2{,}6$$<div class=\"bt-ans\">$$U=5{,}2\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất của nguồn</span></p><p>Nguồn đẩy dòng điện qua cả mạch kín, nên dùng suất điện động :</p>$$P_{ng}=\\mathcal{E}I$$$$P_{ng}=6{,}0\\cdot2{,}0$$<div class=\"bt-ans\">$$P_{ng}=12\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất mạch ngoài nhận</span></p><p>Mạch ngoài nhận công suất theo hiệu điện thế hai cực :</p>$$P_R=UI$$$$P_R=5{,}2\\cdot2{,}0$$<div class=\"bt-ans\">$$P_R=10{,}4\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công suất toả nhiệt trong nguồn</span></p>$$P_r=I^{2}r$$$$P_r=2{,}0^{2}\\cdot0{,}40$$<div class=\"bt-ans\">$$P_r=1{,}6\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Công của nguồn trong 5 phút</span></p><p>$t=5\\cdot60=300\\ \\text{s}$ để ra jun :</p>$$A_{ng}=P_{ng}t$$$$A_{ng}=12\\cdot300$$<div class=\"bt-ans\">$$A_{ng}=3600\\ \\text{J}=3{,}6\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Cân bằng : $P_R+P_r=10{,}4+1{,}6=12\\ \\text{W}=P_{ng}$ ✓.</p><p>Cách khác : $U=\\mathcal{E}-Ir=6{,}0-2{,}0\\cdot0{,}40=5{,}2\\ \\text{V}$ ✓.</p><p>$I=2{,}0\\ \\text{A}$ nhỏ hơn $\\mathcal{E}/R\\approx2{,}3\\ \\text{A}$ vì còn $r$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I=2{,}0\\ \\text{A}$</p><p>b) $P_{ng}=12\\ \\text{W}$ ; $P_R=10{,}4\\ \\text{W}$ ; $P_r=1{,}6\\ \\text{W}$</p><p>c) $A_{ng}=3600\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>$\\mathcal{E}$, $r$, $R$</strong> và hỏi riêng công suất <strong>của nguồn, mạch ngoài, trong nguồn</strong> → tìm $I$ trước, rồi mỗi công suất một công thức riêng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Mạch kín gồm nguồn 6,0 V có điện trở trong 0,40 ôm nối với điện trở 2,6 ôm\"><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"350.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"44.0\" x2=\"350.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"136.0\" x2=\"350.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"176.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"138.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"92.0\" y1=\"86.0\" x2=\"128.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"100.0\" y1=\"96.0\" x2=\"120.0\" y2=\"96.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"96.0\" x2=\"110.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"101.0\" y=\"112.0\" width=\"18.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"80.0\" y=\"76.0\" width=\"60.0\" height=\"70.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"134\" y=\"84\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"72\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">ε = 6,0 V</text><text x=\"72\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">r = 0,40 Ω</text><rect x=\"338.0\" y=\"84.0\" width=\"24.0\" height=\"52.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"312\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">R = 2,6 Ω</text><text x=\"20\" y=\"200\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  I · công suất của nguồn · công suất mạch ngoài</text><text x=\"20\" y=\"220\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">công suất toả nhiệt trong nguồn · công của nguồn trong 5 phút</text></svg><figcaption>Dữ kiện: suất điện động, điện trở trong và điện trở ngoài; các đại lượng cần tìm ghi bên dưới. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"suất điện động $6{,}0$ V, điện trở trong $0{,}40\\ \\Omega$\"</td><td>$\\mathcal{E}=6{,}0$ V ; $r=0{,}40\\ \\Omega$</td><td>⚠ Mạch kín một nguồn, mạch ngoài chỉ có điện trở, bỏ qua dây nối ; $\\mathcal{E}$ và $r$ không đổi</td></tr><tr><td>\"điện trở $R=2{,}6\\ \\Omega$\"</td><td>$R=2{,}6\\ \\Omega$</td><td>Mạch ngoài chỉ toả nhiệt : hiệu điện thế hai đầu $R$ liên hệ với $I$ thế nào ?</td></tr><tr><td>\"cường độ dòng điện trong mạch\"</td><td>Cần tìm : $I$</td><td>Định luật Ôm cho toàn mạch (mạch có cả điện trở trong)</td></tr><tr><td>\"công suất của nguồn\"</td><td>Cần tìm : $P_{ng}$</td><td>Công suất của nguồn theo suất điện động và dòng điện</td></tr><tr><td>\"công suất mạch ngoài nhận được\"</td><td>Cần tìm : $P_R$</td><td>Công suất của mạch ngoài theo hiệu điện thế hai cực và dòng điện</td></tr><tr><td>\"công suất toả nhiệt trong nguồn\"</td><td>Cần tìm : $P_r$</td><td>Nhiệt toả ra ở điện trở trong theo dòng điện và $r$</td></tr><tr><td>\"công của nguồn trong $5$ phút\"</td><td>$t=5$ phút</td><td>Công theo công suất và thời gian ; $t$ ra đơn vị nào để được jun ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ε, r, R</b> và hỏi công suất <b>của nguồn, mạch ngoài, trong nguồn</b> → tìm <b>I</b> trước, mỗi công suất một công thức.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện trong mạch bằng bao nhiêu?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Bỏ qua điện trở trong : chia suất điện động cho riêng $R$."
+    },
+    {
+     "tieu_de": "Hiệu điện thế mạch ngoài",
+     "hoi": "Hiệu điện thế giữa hai cực của bộ pin bằng bao nhiêu?",
+     "dap_so": 5.2,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Coi hiệu điện thế hai cực bằng suất điện động ; điều đó chỉ đúng khi không có dòng điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân dòng điện với điện trở mạch ngoài : $U=IR$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $U=\\mathcal{E}$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi $I=0$ ; có dòng điện thì một phần suất điện động mất trên điện trở trong."
+      },
+      {
+       "text": "Nhân dòng điện với điện trở trong : $U=Ir$",
+       "dung": false,
+       "vi_sao": "Đó là hiệu điện thế rơi trên điện trở trong, không phải giữa hai cực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất của nguồn",
+     "hoi": "Công suất của nguồn bằng bao nhiêu?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy công suất mạch ngoài $UI$ làm công suất của nguồn, bỏ sót phần nhiệt trong nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân suất điện động với dòng điện : $P_{ng}=\\mathcal{E}I$",
+       "dung": true
+      },
+      {
+       "text": "Nhân hiệu điện thế hai cực với dòng điện : $UI$",
+       "dung": false,
+       "vi_sao": "$UI$ là công suất của mạch ngoài, chưa tính phần toả nhiệt trong nguồn."
+      },
+      {
+       "text": "Tính $I^{2}R$",
+       "dung": false,
+       "vi_sao": "$I^{2}R$ cũng chỉ là công suất mạch ngoài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất mạch ngoài nhận",
+     "hoi": "Công suất mạch ngoài nhận được bằng bao nhiêu?",
+     "dap_so": 10.4,
+     "sai_so": 0.1,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy εI (công suất cả nguồn) làm công suất mạch ngoài, hoặc lấy công suất toả nhiệt trong nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân hiệu điện thế hai cực với dòng điện : $P_R=UI$",
+       "dung": true
+      },
+      {
+       "text": "Nhân suất điện động với dòng điện",
+       "dung": false,
+       "vi_sao": "Đó là công suất của nguồn, gồm cả phần toả nhiệt trong nguồn."
+      },
+      {
+       "text": "Tính $I^{2}r$",
+       "dung": false,
+       "vi_sao": "Đó là nhiệt toả trong nguồn, không phải phần mạch ngoài nhận."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất toả nhiệt trong nguồn",
+     "hoi": "Công suất toả nhiệt trong bộ pin bằng bao nhiêu?",
+     "dap_so": 1.6,
+     "sai_so": 0.05,
+     "don_vi": "W",
+     "loi_hay_gap": "Dùng $I^{2}R$ với điện trở mạch ngoài thay cho điện trở trong.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $P_r=I^{2}r$ với điện trở trong",
+       "dung": true
+      },
+      {
+       "text": "Tính $I^{2}R$ với điện trở mạch ngoài",
+       "dung": false,
+       "vi_sao": "$R$ là mạch ngoài ; nhiệt trong nguồn toả trên điện trở trong $r$."
+      },
+      {
+       "text": "Tính $\\mathcal{E}I$",
+       "dung": false,
+       "vi_sao": "Đó là công suất cả nguồn, không riêng phần toả nhiệt trong nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của nguồn trong 5 phút",
+     "hoi": "Công của nguồn trong $5$ phút là bao nhiêu kilôjun?",
+     "dap_so": 3.6,
+     "sai_so": 0.05,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Dùng $t=5$ thay vì $300$ giây, hoặc nhân công suất mạch ngoài với thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân công suất của nguồn với $300\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân công suất của nguồn với $5$",
+       "dung": false,
+       "vi_sao": "Ra jun thì thời gian phải tính bằng giây."
+      },
+      {
+       "text": "Nhân công suất mạch ngoài với $300\\ \\text{s}$",
+       "dung": false,
+       "vi_sao": "Đó là năng lượng mạch ngoài nhận, không phải công của nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Hiệu suất nguồn điện và năng lượng có ích, hao phí",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "problem_html": "<p>Một bộ pin dự phòng có suất điện động $\\mathcal{E} = 12\\ \\text{V}$, điện trở trong $r = 0{,}75\\ \\Omega$ được nối kín với một biến trở $R$ cấp điện cho thiết bị sưởi. Người ta chỉnh $R$ sao cho hiệu suất của nguồn bằng $80\\ \\%$. Bỏ qua điện trở dây nối.</p><ol type=\"a\"><li>Tính giá trị của biến trở $R$.</li><li>Tính cường độ dòng điện trong mạch và hiệu điện thế giữa hai cực của bộ pin.</li><li>Trong $10$ phút, mạch ngoài nhận bao nhiêu năng lượng có ích, bao nhiêu năng lượng toả ra trong bộ pin?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Thanh năng lượng của nguồn dài dần, chia thành phần có ích và phần hao phí\"><rect x=\"30.0\" y=\"84.0\" width=\"360.0\" height=\"40.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"30\" y=\"84\" width=\"0\" height=\"40\" fill=\"#34d399\" fill-opacity=\".55\"><animate attributeName=\"width\" values=\"0.0;288.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"30\" y=\"84\" width=\"0\" height=\"40\" fill=\"#f87171\" fill-opacity=\".55\"><animate attributeName=\"x\" values=\"30.0;318.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"width\" values=\"0.0;72.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"30\" y=\"70\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">năng lượng nguồn phát ra  →</text><circle cx=\"40.0\" cy=\"160.0\" r=\"6\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.6\"/><text x=\"52\" y=\"165\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">phần mạch ngoài nhận (có ích)</text><circle cx=\"40.0\" cy=\"184.0\" r=\"6\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"1.6\"/><text x=\"52\" y=\"189\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">phần toả ra trong nguồn (hao phí)</text><text x=\"210\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t: 0 → 10 phút</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: trong 10 phút, thanh năng lượng nguồn phát ra dài dần, chia theo tỉ lệ đề cho (hiệu suất 80 %). 10 phút chạy trong 6 giây. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hiệu suất nguồn là phần năng lượng nguồn phát ra mà mạch ngoài nhận được.</li><li><strong>Công thức:</strong> $H=\\dfrac{U}{\\mathcal{E}}=\\dfrac{R}{R+r}$<br>$I=\\dfrac{\\mathcal{E}}{R+r}$<br>$A_{\\text{ích}}=UIt$<br>$A_{\\text{hp}}=I^{2}rt$.</li><li>⚠ <strong>Điều kiện:</strong> $H=\\dfrac{R}{R+r}$ chỉ dùng khi mạch ngoài thuần điện trở<br>$t$ ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tìm R từ hiệu suất</span></p><p>Mạch ngoài chỉ có biến trở nên $H=\\dfrac{R}{R+r}$ :</p>$$0{,}80=\\dfrac{R}{R+0{,}75}$$$$0{,}80R+0{,}60=R$$$$R=\\dfrac{0{,}60}{0{,}20}$$<div class=\"bt-ans\">$$R=3{,}0\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ dòng điện</span></p>$$I=\\dfrac{\\mathcal{E}}{R+r}$$$$I=\\dfrac{12}{3{,}0+0{,}75}$$<div class=\"bt-ans\">$$I=3{,}2\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hiệu điện thế hai cực</span></p>$$U=IR=3{,}2\\cdot3{,}0$$<div class=\"bt-ans\">$$U=9{,}6\\ \\text{V}$$</div><p>Kiểm bằng hiệu suất : $U=H\\mathcal{E}=0{,}80\\cdot12=9{,}6\\ \\text{V}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Năng lượng có ích trong 10 phút</span></p><p>$t=10\\cdot60=600\\ \\text{s}$ :</p>$$A_{\\text{ích}}=UIt$$$$A_{\\text{ích}}=9{,}6\\cdot3{,}2\\cdot600$$<div class=\"bt-ans\">$$A_{\\text{ích}}\\approx1{,}84\\cdot10^{4}\\ \\text{J}\\approx18{,}4\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Năng lượng toả ra trong bộ pin</span></p>$$A_{\\text{hp}}=I^{2}rt$$$$A_{\\text{hp}}=3{,}2^{2}\\cdot0{,}75\\cdot600$$<div class=\"bt-ans\">$$A_{\\text{hp}}\\approx4{,}61\\cdot10^{3}\\ \\text{J}\\approx4{,}61\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$A_{\\text{tp}}=\\mathcal{E}It=12\\cdot3{,}2\\cdot600=23\\,040\\ \\text{J}$$<p>$A_{\\text{ích}}+A_{\\text{hp}}=18\\,432+4608=23\\,040\\ \\text{J}$ ✓.</p><p>$\\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}}=\\dfrac{18\\,432}{23\\,040}=0{,}80$ ✓ khớp hiệu suất đề cho.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=3{,}0\\ \\Omega$</p><p>b) $I=3{,}2\\ \\text{A}$ ; $U=9{,}6\\ \\text{V}$</p><p>c) $A_{\\text{ích}}\\approx18{,}4\\ \\text{kJ}$ ; $A_{\\text{hp}}\\approx4{,}61\\ \\text{kJ}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hiệu suất nguồn</strong> và hỏi <strong>R, dòng điện, năng lượng có ích hay hao phí</strong> → $H=\\dfrac{R}{R+r}$ giải ngược tìm $R$, rồi $I=\\dfrac{\\mathcal{E}}{R+r}$ và tách $A_{\\text{ích}}$, $A_{\\text{hp}}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Nguồn 12 V có điện trở trong 0,75 ôm nối với biến trở R, hiệu suất 80 %\"><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"350.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"44.0\" x2=\"350.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"136.0\" x2=\"350.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"176.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"138.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"92.0\" y1=\"86.0\" x2=\"128.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"100.0\" y1=\"96.0\" x2=\"120.0\" y2=\"96.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"96.0\" x2=\"110.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"101.0\" y=\"112.0\" width=\"18.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"80.0\" y=\"76.0\" width=\"60.0\" height=\"70.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"134\" y=\"84\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"72\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">ε = 12 V</text><text x=\"72\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">r = 0,75 Ω</text><rect x=\"338.0\" y=\"84.0\" width=\"24.0\" height=\"52.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"320\" y1=\"142\" x2=\"378\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M368.9,82.8 L378.0,80.0 L375.9,89.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"312\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">R = ?</text><text x=\"20\" y=\"200\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  R để H = 80 % · I · U · A có ích và A hao phí trong 10 phút</text></svg><figcaption>Dữ kiện: suất điện động, điện trở trong, hiệu suất nguồn; biến trở R và các đại lượng cần tìm ghi bằng dấu hỏi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"suất điện động $12$ V, điện trở trong $0{,}75\\ \\Omega$\"</td><td>$\\mathcal{E}=12$ V ; $r=0{,}75\\ \\Omega$</td><td>⚠ Mạch ngoài chỉ có biến trở (thuần điện trở), bỏ qua dây nối : mới dùng được hiệu suất theo $R$ và $r$</td></tr><tr><td>\"hiệu suất của nguồn bằng $80\\ \\%$\"</td><td>$H=0{,}80$</td><td>Hiệu suất nguồn : phần có ích chia phần toàn phần, viết theo $R$ và $r$</td></tr><tr><td>\"giá trị của biến trở $R$\"</td><td>Cần tìm : $R$</td><td>Giải ngược từ hiệu suất ; $R$ cùng đơn vị với $r$</td></tr><tr><td>\"cường độ dòng điện … hiệu điện thế giữa hai cực\"</td><td>Cần tìm : $I$ ; $U$</td><td>Định luật Ôm toàn mạch ; hiệu điện thế mạch ngoài</td></tr><tr><td>\"trong $10$ phút … năng lượng có ích\"</td><td>$t=10$ phút</td><td>Phần mạch ngoài nhận : theo $U$, $I$, $t$ ; $t$ ra giây</td></tr><tr><td>\"năng lượng toả ra trong bộ pin\"</td><td>Cần tìm : $A_{\\text{hp}}$</td><td>Nhiệt toả ra ở điện trở trong theo $I$, $r$, $t$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hiệu suất nguồn</b>, hỏi <b>R, dòng điện, năng lượng có ích</b> → <b>H = R/(R + r)</b>, giải ngược.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tìm R từ hiệu suất",
+     "hoi": "Biến trở $R$ phải đặt bằng bao nhiêu để $H=80\\ \\%$?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Dùng $H=\\dfrac{r}{R+r}$ (đó là tỉ lệ hao phí, không phải hiệu suất) hoặc coi $R=H\\cdot r$."
+    },
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện trong mạch bằng bao nhiêu?",
+     "dap_so": 3.2,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Bỏ qua điện trở trong : chia suất điện động cho riêng $R$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng định luật Ôm cho toàn mạch : $I=\\dfrac{\\mathcal{E}}{R+r}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{R}$",
+       "dung": false,
+       "vi_sao": "Bỏ sót điện trở trong, dòng tính ra lớn hơn thực tế."
+      },
+      {
+       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{r}$",
+       "dung": false,
+       "vi_sao": "Đó là dòng khi đoản mạch ($R\\to0$), không phải mạch đang xét."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế hai cực",
+     "hoi": "Hiệu điện thế giữa hai cực của bộ pin bằng bao nhiêu?",
+     "dap_so": 9.6,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $U=\\mathcal{E}-IR$ (trừ nhầm điện trở ngoài) thay cho $\\mathcal{E}-Ir$, hoặc lấy $U=Ir$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân dòng điện với điện trở mạch ngoài : $U=IR$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $U=\\mathcal{E}-IR$",
+       "dung": false,
+       "vi_sao": "Trừ nhầm : phần mất đi trong nguồn là $Ir$ chứ không phải $IR$."
+      },
+      {
+       "text": "Lấy $U=Ir$",
+       "dung": false,
+       "vi_sao": "Đó là hiệu điện thế rơi trên điện trở trong."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng có ích trong 10 phút",
+     "hoi": "Năng lượng có ích mạch ngoài nhận trong $10$ phút là bao nhiêu kilôjun?",
+     "dap_so": 18.4,
+     "sai_so": 0.1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Dùng $\\mathcal{E}It$ (toàn phần) thay cho $UIt$, hoặc để $t=10$ thay vì $600$ giây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $UIt$ với $t=600\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\mathcal{E}It$",
+       "dung": false,
+       "vi_sao": "Đó là năng lượng toàn phần của nguồn, gồm cả phần hao phí."
+      },
+      {
+       "text": "Tính $UIt$ với $t=10$",
+       "dung": false,
+       "vi_sao": "Ra jun thì thời gian phải tính bằng giây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng toả ra trong bộ pin",
+     "hoi": "Năng lượng toả ra trong bộ pin trong $10$ phút là bao nhiêu kilôjun?",
+     "dap_so": 4.61,
+     "sai_so": 0.05,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Dùng $I^{2}Rt$ (điện trở ngoài) thay cho $I^{2}rt$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $I^{2}rt$ với điện trở trong",
+       "dung": true
+      },
+      {
+       "text": "Tính $I^{2}Rt$ với điện trở mạch ngoài",
+       "dung": false,
+       "vi_sao": "$R$ là mạch ngoài ; nhiệt trong bộ pin toả trên điện trở trong $r$."
+      },
+      {
+       "text": "Lấy $80\\ \\%$ năng lượng có ích",
+       "dung": false,
+       "vi_sao": "Cố định : $80\\ \\%$ là tỉ lệ có ích so với toàn phần ; hao phí là $20\\ \\%$ toàn phần (bằng $25\\ \\%$ phần có ích), không phải $80\\ \\%$ phần có ích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 5 · Khó · Đoản mạch và chọn cầu chì",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "problem_html": "<p>Ắc quy xe máy có suất điện động $\\mathcal{E} = 12\\ \\text{V}$, điện trở trong $r = 0{,}030\\ \\Omega$. Mạch đèn gồm một bộ đèn có điện trở $2{,}37\\ \\Omega$ khi sáng và một cầu chì nối tiếp; có ba loại cầu chì với dòng định mức $3\\ \\text{A}$, $7{,}5\\ \\text{A}$ và $30\\ \\text{A}$. Bỏ qua điện trở dây nối.</p><ol type=\"a\"><li>Tính cường độ dòng điện khi đèn sáng bình thường và chọn loại cầu chì phù hợp.</li><li>Dây dẫn bị chập làm bộ đèn bị nối tắt, điện trở mạch ngoài chỉ còn $0{,}010\\ \\Omega$. Tính cường độ dòng điện và công suất toả nhiệt trong ắc quy lúc đó.</li><li>Dòng điện lúc chập gấp bao nhiêu lần dòng định mức của cầu chì đã chọn? Cầu chì có đứt không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Chiếc chìa khoá rơi xuống chạm vào hai cực của ắc quy\"><rect x=\"100.0\" y=\"100.0\" width=\"200.0\" height=\"76.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"130.0\" y=\"82.0\" width=\"30.0\" height=\"18.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"240.0\" y=\"82.0\" width=\"30.0\" height=\"18.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"145\" y=\"76\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"255\" y=\"76\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"200\" y=\"132\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ắc quy: ε = 12 V</text><text x=\"200\" y=\"154\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r = 0,030 Ω</text><g><rect x=\"120.0\" y=\"62.0\" width=\"160.0\" height=\"12.0\" rx=\"3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><circle cx=\"108.0\" cy=\"68.0\" r=\"12\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 -46;0 0\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.0000;0.8500;1.0000\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"139.8\" y1=\"79.0\" x2=\"127.7\" y2=\"72.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"142.9\" y1=\"76.4\" x2=\"138.2\" y2=\"63.2\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"147.1\" y1=\"76.4\" x2=\"151.8\" y2=\"63.2\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.2\" y1=\"79.0\" x2=\"162.3\" y2=\"72.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"145.0\" cy=\"82.0\" r=\"9\" fill=\"#fb923c\" fill-opacity=\".5\" stroke=\"#fb923c\" stroke-width=\"0\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.0000;0.8500;1.0000\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"249.8\" y1=\"79.0\" x2=\"237.7\" y2=\"72.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"252.9\" y1=\"76.4\" x2=\"248.2\" y2=\"63.2\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"257.1\" y1=\"76.4\" x2=\"261.8\" y2=\"63.2\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"260.2\" y1=\"79.0\" x2=\"272.3\" y2=\"72.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"255.0\" cy=\"82.0\" r=\"9\" fill=\"#fb923c\" fill-opacity=\".5\" stroke=\"#fb923c\" stroke-width=\"0\"/></g><text x=\"210\" y=\"198\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">chìa khoá rơi chạm hai cực, điện trở chỗ chạm 0,010 Ω</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chìa khoá rơi nối thẳng hai cực ắc quy trong 3 giây, tia lửa xuất hiện ở hai chỗ chạm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đoản mạch là hai cực nguồn nối gần như thẳng, $R\\to0$<br>cầu chì phải đứt trước khi dây quá nóng.</li><li><strong>Định luật:</strong> $I=\\dfrac{\\mathcal{E}}{R+r}$<br>nhiệt trong nguồn $P_r=I^{2}r$.</li><li>Chọn cầu chì : dòng định mức lớn hơn dòng làm việc một chút.</li><li>⚠ <strong>Điều kiện:</strong> điện trở trong $r$ vẫn nằm trong mạch khi đoản mạch<br>cầu chì nối tiếp thì cùng dòng điện với mạch.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng điện khi đèn sáng</span></p><p>Cầu chì nối tiếp với đèn nên cùng một dòng điện :</p>$$I=\\dfrac{\\mathcal{E}}{R_{\\text{đèn}}+r}$$$$I=\\dfrac{12}{2{,}37+0{,}030}$$<div class=\"bt-ans\">$$I=5{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chọn cầu chì</span></p><p>Loại $3\\ \\text{A}$ nhỏ hơn dòng làm việc nên đứt ngay khi bật đèn.</p><p>Loại $30\\ \\text{A}$ quá lớn : dây đã nóng cháy mà cầu chì chưa đứt.</p><p>Cần loại lớn hơn dòng làm việc một chút :</p><div class=\"bt-ans\"><p>Chọn cầu chì <strong>$7{,}5\\ \\text{A}$</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện khi đoản mạch</span></p><p>Điện trở trong vẫn nằm trong mạch :</p>$$I_{\\text{cố}}=\\dfrac{\\mathcal{E}}{R_{\\text{ngoài}}+r}$$$$I_{\\text{cố}}=\\dfrac{12}{0{,}010+0{,}030}$$<div class=\"bt-ans\">$$I_{\\text{cố}}=300\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt toả ra trong ắc quy</span></p>$$P_r=I_{\\text{cố}}^{2}r$$$$P_r=300^{2}\\cdot0{,}030$$<div class=\"bt-ans\">$$P_r=2700\\ \\text{W}=2{,}7\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>So với dòng định mức của cầu chì</span></p>$$\\dfrac{I_{\\text{cố}}}{I_{\\text{đm}}}=\\dfrac{300}{7{,}5}$$<div class=\"bt-ans\">$$\\dfrac{I_{\\text{cố}}}{I_{\\text{đm}}}=40$$</div><div class=\"bt-ans\"><p>Dòng lúc chập gấp <strong>40 lần</strong> định mức nên cầu chì <strong>đứt</strong>, ngắt mạch trước khi dây và ắc quy quá nóng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Dòng đoản mạch $300\\ \\text{A}$ lớn hơn dòng làm việc $5{,}0\\ \\text{A}$ gấp $60$ lần : đúng với đoản mạch.</p><p>Nếu bỏ qua $r$ sẽ ra $1200\\ \\text{A}$ : sai, vì $r$ vẫn nằm trong mạch.</p><p>Công suất $2{,}7\\ \\text{kW}$ toả ngay trong ắc quy nhỏ : cháy, nổ nếu không có cầu chì.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I=5{,}0\\ \\text{A}$ ; chọn cầu chì $7{,}5\\ \\text{A}$</p><p>b) $I_{\\text{cố}}=300\\ \\text{A}$ ; $P_r=2{,}7\\ \\text{kW}$</p><p>c) Gấp $40$ lần ; cầu chì đứt</p></div><p class=\"bt-note\">Nhận dạng: đề nói <strong>chập, đoản mạch, nối thẳng hai cực</strong> → $R\\to0$, $I=\\dfrac{\\mathcal{E}}{R+r}$ rất lớn ; so với <strong>dòng định mức</strong> để biết cầu chì có đứt.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Mạch đèn của ắc quy 12 V có cầu chì, đèn có điện trở 2,37 ôm\"><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"350.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"44.0\" x2=\"350.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"136.0\" x2=\"350.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"176.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"138.0\" x2=\"110.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"92.0\" y1=\"86.0\" x2=\"128.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"100.0\" y1=\"96.0\" x2=\"120.0\" y2=\"96.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"96.0\" x2=\"110.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"101.0\" y=\"112.0\" width=\"18.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"80.0\" y=\"76.0\" width=\"60.0\" height=\"70.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"134\" y=\"84\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"72\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">ε = 12 V</text><text x=\"72\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">r = 0,030 Ω</text><circle cx=\"350.0\" cy=\"110.0\" r=\"26\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"332.0\" y1=\"92.0\" x2=\"368.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"332.0\" y1=\"128.0\" x2=\"368.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"84.0\" x2=\"350.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"312\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">đèn 2,37 Ω</text><rect x=\"210.0\" y=\"37.0\" width=\"40.0\" height=\"14.0\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230\" y=\"30\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">cầu chì</text><text x=\"20\" y=\"200\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  dòng làm việc · cầu chì phù hợp (3 A, 7,5 A hay 30 A)</text><text x=\"20\" y=\"220\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dòng khi đoản mạch · nhiệt trong ắc quy · cầu chì có đứt không</text></svg><figcaption>Dữ kiện: ắc quy, bộ đèn và cầu chì trong mạch; các đại lượng cần tìm ghi bên dưới. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"suất điện động $12$ V, điện trở trong $0{,}030\\ \\Omega$\"</td><td>$\\mathcal{E}=12$ V ; $r=0{,}030\\ \\Omega$</td><td>⚠ Dòng điện trong mạch phụ thuộc cả điện trở mạch ngoài lẫn điện trở trong ; dây dẫn bỏ qua điện trở</td></tr><tr><td>\"bộ đèn có điện trở $2{,}37\\ \\Omega$ … cầu chì nối tiếp\"</td><td>$R_{\\text{đèn}}=2{,}37\\ \\Omega$</td><td>Cầu chì nối tiếp thì cùng dòng điện với mạch</td></tr><tr><td>\"ba loại cầu chì $3$ A, $7{,}5$ A, $30$ A\"</td><td>Dòng định mức : $3$ A ; $7{,}5$ A ; $30$ A</td><td>Cầu chì phải chịu được dòng làm việc, nhưng đứt trước khi dây quá nóng : chọn loại nào so với dòng làm việc ?</td></tr><tr><td>\"dây dẫn bị chập … điện trở mạch ngoài chỉ còn $0{,}010\\ \\Omega$\"</td><td>$R_{\\text{ngoài}}=0{,}010\\ \\Omega$</td><td>Đoản mạch : điện trở mạch ngoài rất nhỏ ; điện trở trong vẫn còn trong mạch</td></tr><tr><td>\"cường độ dòng điện và công suất toả nhiệt trong ắc quy\"</td><td>Cần tìm : $I_{\\text{cố}}$ ; $P_r$</td><td>Định luật Ôm toàn mạch ; nhiệt ở điện trở trong</td></tr><tr><td>\"gấp bao nhiêu lần … cầu chì có đứt không\"</td><td>Cần tìm : $I_{\\text{cố}}/I_{\\text{đm}}$</td><td>So dòng thực tế với dòng định mức của cầu chì</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chập, đoản mạch</b> hay <b>chọn cầu chì</b> → <b>I = ε/(R + r)</b> với R rất nhỏ, so với <b>dòng định mức</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Dòng điện khi đèn sáng",
+     "hoi": "Cường độ dòng điện khi đèn sáng bình thường bằng bao nhiêu?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Bỏ qua điện trở trong : chia suất điện động cho riêng điện trở đèn."
+    },
+    {
+     "tieu_de": "Chọn cầu chì",
+     "hoi": "Dòng định mức của cầu chì nên chọn là bao nhiêu (trong ba loại đề cho)?",
+     "dap_so": 7.5,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Chọn loại lớn nhất để cầu chì không bao giờ đứt : khi chập, dây đã nóng cháy mà cầu chì chưa kịp đứt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn loại có dòng định mức lớn hơn dòng làm việc một chút",
+       "dung": true
+      },
+      {
+       "text": "Chọn loại lớn nhất cho an toàn",
+       "dung": false,
+       "vi_sao": "Cầu chì quá lớn không đứt khi dòng đã vượt mức dây chịu được ; cháy dây trước khi cầu chì đứt."
+      },
+      {
+       "text": "Chọn loại nhỏ hơn dòng làm việc",
+       "dung": false,
+       "vi_sao": "Cầu chì sẽ đứt ngay khi bật đèn bình thường."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện khi đoản mạch",
+     "hoi": "Cường độ dòng điện lúc dây chập bằng bao nhiêu?",
+     "dap_so": 300,
+     "sai_so": 3,
+     "don_vi": "A",
+     "loi_hay_gap": "Bỏ qua điện trở trong : chia suất điện động cho riêng điện trở chỗ chập, được số lớn hơn thực tế nhiều lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng định luật Ôm toàn mạch với điện trở mạch ngoài còn $0{,}010\\ \\Omega$",
+       "dung": true
+      },
+      {
+       "text": "Chia suất điện động cho riêng $0{,}010\\ \\Omega$",
+       "dung": false,
+       "vi_sao": "Điện trở trong $0{,}030\\ \\Omega$ vẫn nằm trong mạch, lớn hơn cả điện trở chỗ chập."
+      },
+      {
+       "text": "Chia suất điện động cho điện trở đèn cộng điện trở trong",
+       "dung": false,
+       "vi_sao": "Đèn đã bị nối tắt nên không còn nằm trong mạch ngoài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt toả ra trong ắc quy",
+     "hoi": "Công suất toả nhiệt trong ắc quy lúc chập là bao nhiêu kilôoát?",
+     "dap_so": 2.7,
+     "sai_so": 0.05,
+     "don_vi": "kW",
+     "loi_hay_gap": "Tính nhiệt trên điện trở chỗ chập thay vì trên điện trở trong của ắc quy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $I^{2}r$ với điện trở trong của ắc quy",
+       "dung": true
+      },
+      {
+       "text": "Tính $I^{2}$ nhân điện trở chỗ chập",
+       "dung": false,
+       "vi_sao": "Đó là nhiệt toả ở chỗ chập, câu hỏi hỏi nhiệt trong ắc quy."
+      },
+      {
+       "text": "Tính $\\mathcal{E}I$",
+       "dung": false,
+       "vi_sao": "Đó là công suất cả nguồn, gồm cả phần toả ở chỗ chập."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So với dòng định mức của cầu chì",
+     "hoi": "Dòng lúc chập gấp bao nhiêu lần dòng định mức của cầu chì đã chọn?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "lần",
+     "loi_hay_gap": "Chia ngược (dòng định mức chia dòng chập), được tỉ số nhỏ hơn $1$ nên không nhận ra cầu chì đứt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia dòng lúc chập cho dòng định mức của cầu chì",
+       "dung": true
+      },
+      {
+       "text": "Chia dòng định mức của cầu chì cho dòng lúc chập",
+       "dung": false,
+       "vi_sao": "Được tỉ số nhỏ hơn $1$ ; không cho biết dòng đã vượt định mức bao nhiêu lần."
+      },
+      {
+       "text": "Cộng dòng lúc chập với dòng làm việc rồi chia",
+       "dung": false,
+       "vi_sao": "Đèn đã bị nối tắt nên không còn dòng làm việc cộng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

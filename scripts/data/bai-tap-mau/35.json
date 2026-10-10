@@ -1,0 +1,582 @@
+{
+ "lesson_id": 35,
+ "lesson_title": "Bài 16. Lực tương tác giữa hai điện tích",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Hai quả cầu giống nhau chạm rồi tách: điện tích mỗi quả và số êlectron chuyển",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "problem_html": "<p>Hai quả cầu kim loại nhỏ giống hệt nhau, đặt trên mặt bàn cách điện, mang điện tích $q_1=-8{,}0$ nC và $q_2=+2{,}0$ nC. Cho hai quả chạm nhau rồi tách ra. Bỏ qua điện tích mất đi vào không khí. Lấy $|e|=1{,}6\\cdot10^{-19}$ C.</p><ol type=\"a\"><li>Tính điện tích của mỗi quả sau khi tách.</li><li>Êlectron đã chuyển từ quả nào sang quả nào? Tính số êlectron chuyển.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Hai quả cầu giống nhau chạm vào nhau rồi tách ra, trở lại vị trí cũ\"><line x1=\"30\" y1=\"143\" x2=\"390\" y2=\"143\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"210\" y=\"190\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">mặt bàn cách điện</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.0 0.0;-108.0 0.0;-108.0 0.0;0.0 0.0;0.0 0.0\" keyTimes=\"0.0000;0.1000;0.4000;0.5500;0.8500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"80\" cy=\"118\" r=\"22\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"><animate attributeName=\"fill\" values=\"#38bdf8;#38bdf8;#94a3b8;#94a3b8\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"stroke\" values=\"#38bdf8;#38bdf8;#94a3b8;#94a3b8\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><g><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"80\" y=\"124.5\" fill=\"#38bdf8\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">−</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.8500;0.9000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"80\" y=\"124\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">?</text></g></g><g><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"80\" y=\"62\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = −8,0 nC</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.8500;0.9000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"80\" y=\"62\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q′ = ?</text></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.0 0.0;108.0 0.0;108.0 0.0;0.0 0.0;0.0 0.0\" keyTimes=\"0.0000;0.1000;0.4000;0.5500;0.8500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"340\" cy=\"118\" r=\"22\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"><animate attributeName=\"fill\" values=\"#f87171;#f87171;#94a3b8;#94a3b8\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"stroke\" values=\"#f87171;#f87171;#94a3b8;#94a3b8\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><g><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"340\" y=\"124.5\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.8500;0.9000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"340\" y=\"124\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">?</text></g></g><g><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0.0000;0.3500;0.4000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"340\" y=\"62\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = +2,0 nC</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.8500;0.9000;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"340\" y=\"62\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q′ = ?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai quả cầu chạm nhau rồi tách ra, đặt lại chỗ cũ (7 s). Màu quả cầu cho biết dấu điện tích lúc đầu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hệ cô lập là hệ không trao đổi điện tích với bên ngoài ; tổng đại số điện tích của hệ không đổi.</li><li><strong>Định luật:</strong> hai quả cầu giống hệt nhau chạm nhau rồi tách ra thì điện tích chia đều.</li><li><strong>Công thức:</strong> $q'=\\dfrac{q_1+q_2}{2}$ (cộng có dấu) ; $|q|=n|e|$, $|e|=1{,}6\\cdot10^{-19}$ C.</li><li>⚠ <strong>Điều kiện:</strong> hai quả giống hệt nhau và hệ cô lập ; cộng đại số (giữ dấu), không cộng độ lớn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tổng đại số điện tích</span></p><p>Hệ cô lập nên tổng đại số điện tích không đổi sau khi tách. Cộng có dấu:</p>$$q_1+q_2=(-8{,}0)+(+2{,}0)$$<div class=\"bt-ans\">$$q_1+q_2=-6{,}0\\ \\text{nC}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chia đều cho hai quả</span></p><p>Hai quả giống hệt nhau nên mỗi quả mang một nửa tổng:</p>$$q'=\\dfrac{q_1+q_2}{2}=\\dfrac{-6{,}0}{2}$$<div class=\"bt-ans\">$$q'=-3{,}0\\ \\text{nC (mỗi quả)}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện tích dịch chuyển</span></p><p>Quả 1 đi từ $-8{,}0$ nC đến $-3{,}0$ nC ; quả 2 đi từ $+2{,}0$ nC đến $-3{,}0$ nC. Độ biến thiên của mỗi quả:</p>$$|\\Delta q|=|q'-q_1|=|-3{,}0-(-8{,}0)|$$<div class=\"bt-ans\">$$|\\Delta q|=5{,}0\\ \\text{nC}$$</div><p>Quả 1 giảm lượng điện âm nên mất êlectron ; quả 2 nhận đúng lượng đó. Êlectron chuyển từ quả 1 sang quả 2.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số êlectron chuyển</span></p><p>Điện tích dịch chuyển là bội của $|e|$:</p>$$n=\\dfrac{|\\Delta q|}{|e|}$$$$n=\\dfrac{5{,}0\\cdot10^{-9}}{1{,}6\\cdot10^{-19}}$$<div class=\"bt-ans\">$$n\\approx3{,}1\\cdot10^{10}\\ \\text{êlectron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Tổng sau khi tách $2\\cdot(-3{,}0)=-6{,}0$ nC bằng tổng ban đầu ✓.</p><p>Hai quả cùng dấu âm sau khi tách, nên nếu đặt gần nhau sẽ đẩy nhau.</p><p>Cộng độ lớn $8{,}0+2{,}0$ rồi chia đôi sẽ cho điện tích có độ lớn lớn hơn mọi quả ban đầu — vô lí vì hệ cô lập.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $q'=-3{,}0$ nC (mỗi quả)</p><p>b) êlectron chuyển từ quả 1 sang quả 2 ; $n\\approx3{,}1\\cdot10^{10}$ hạt</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai quả cầu giống hệt nhau chạm nhau rồi tách</strong> → cộng đại số hai điện tích rồi chia đôi ; số êlectron chuyển = $|\\Delta q|/|e|$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai quả cầu giống nhau mang q₁ và q₂, chạm nhau rồi tách ra\"><circle cx=\"100.0\" cy=\"80.0\" r=\"26\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"100\" y=\"87.9\" fill=\"#38bdf8\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">−</text><circle cx=\"320.0\" cy=\"80.0\" r=\"26\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"320\" y=\"87.9\" fill=\"#f87171\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"100\" y=\"38\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = −8,0 nC</text><text x=\"320\" y=\"38\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = +2,0 nC</text><line x1=\"140\" y1=\"80\" x2=\"180\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M171.8,75.3 L180.0,80.0 L171.8,84.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"280\" y1=\"80\" x2=\"240\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M248.2,84.7 L240.0,80.0 L248.2,75.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">chạm nhau</text><text x=\"210\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">rồi tách ra</text><text x=\"210\" y=\"150\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Sau khi tách: q′ = ? (mỗi quả)</text><text x=\"210\" y=\"176\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Êlectron đã chuyển: n = ? hạt</text></svg><figcaption>Dữ kiện của đề; dấu “?” là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai quả cầu kim loại nhỏ giống hệt nhau\"</td><td>Hai quả giống hệt nhau</td><td>⚠ Điều kiện chỉ áp dụng khi hệ cô lập và hai quả giống hệt nhau (cùng kích thước, cùng chất)</td></tr><tr><td>\"$q_1=-8{,}0$ nC và $q_2=+2{,}0$ nC\"</td><td>$q_1=-8{,}0\\cdot10^{-9}$ C ; $q_2=+2{,}0\\cdot10^{-9}$ C</td><td>Điện tích là đại lượng có dấu ; đổi nC sang C</td></tr><tr><td>\"chạm nhau rồi tách ra\"</td><td>Hai quả tiếp xúc rồi tách</td><td>Định luật bảo toàn điện tích : đại lượng nào của hệ không đổi ? Điện tích phân bố lại thế nào giữa hai quả giống hệt nhau ?</td></tr><tr><td>\"bỏ qua điện tích mất đi vào không khí\"</td><td>Hệ cô lập</td><td>Hệ cô lập là hệ không trao đổi điện tích với bên ngoài</td></tr><tr><td>\"tính điện tích của mỗi quả sau khi tách\"</td><td>Cần: $q'$ của mỗi quả</td><td>Cách tính điện tích mỗi quả từ $q_1$ và $q_2$</td></tr><tr><td>\"êlectron đã chuyển từ quả nào sang quả nào … số êlectron\"</td><td>$|e|=1{,}6\\cdot10^{-19}$ C ; cần: số êlectron</td><td>Điện tích của một vật liên hệ thế nào với số êlectron thừa hoặc thiếu ; êlectron dịch chuyển làm điện tích mỗi quả thay đổi bao nhiêu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai quả cầu giống hệt nhau chạm nhau rồi tách</b> → nghĩ tới <b>cộng đại số rồi chia đôi</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tổng đại số điện tích",
+     "hoi": "Tổng đại số $q_1+q_2$ bằng bao nhiêu nC?",
+     "dap_so": -6.0,
+     "sai_so": 0.05,
+     "don_vi": "nC",
+     "loi_hay_gap": "Cộng độ lớn của hai điện tích, bỏ qua dấu âm của $q_1$, hoặc trừ hai điện tích cho nhau."
+    },
+    {
+     "tieu_de": "Chia đều cho hai quả",
+     "hoi": "Điện tích $q'$ của mỗi quả sau khi tách bằng bao nhiêu nC?",
+     "dap_so": -3.0,
+     "sai_so": 0.05,
+     "don_vi": "nC",
+     "loi_hay_gap": "Coi mỗi quả giữ nguyên điện tích cũ, hoặc chia đôi tổng độ lớn rồi gắn dấu của quả lớn hơn mà không cộng có dấu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia đôi tổng đại số vì hai quả giống hệt nhau",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên điện tích mỗi quả vì hệ cô lập",
+       "dung": false,
+       "vi_sao": "Hệ cô lập chỉ giữ tổng điện tích không đổi ; khi chạm, điện tích phân bố lại đều giữa hai quả giống hệt nhau."
+      },
+      {
+       "text": "Lấy hiệu hai điện tích rồi chia đôi",
+       "dung": false,
+       "vi_sao": "Điện tích được bảo toàn khi cộng có dấu, không phải khi trừ ; hiệu không phải đại lượng bảo toàn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện tích dịch chuyển",
+     "hoi": "Điện tích của quả 1 đã thay đổi một lượng $|\\Delta q|$ bằng bao nhiêu nC?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "nC",
+     "loi_hay_gap": "Dùng tổng điện tích của hệ, hoặc dùng điện tích còn lại của một quả, thay cho độ biến thiên của quả đó.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy độ chênh giữa điện tích sau và trước của quả 1",
+       "dung": true
+      },
+      {
+       "text": "Lấy tổng đại số của hệ làm lượng điện tích chuyển",
+       "dung": false,
+       "vi_sao": "Tổng của hệ không đổi trước và sau, nó không cho biết lượng đã chuyển qua."
+      },
+      {
+       "text": "Lấy điện tích còn lại $q'$ của mỗi quả",
+       "dung": false,
+       "vi_sao": "$q'$ là điện tích sau khi tách, không phải phần đã dịch chuyển."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số êlectron chuyển",
+     "hoi": "Số êlectron chuyển, theo đơn vị $10^{10}$ hạt, là bao nhiêu?",
+     "dap_so": 3.125,
+     "sai_so": 0.03,
+     "don_vi": "×10¹⁰ hạt",
+     "loi_hay_gap": "Nhân $|\\Delta q|$ với $|e|$ thay vì chia, hoặc để nguyên đơn vị nC khi chia cho $|e|$ tính bằng C.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia $|\\Delta q|$ (đổi ra C) cho $|e|$",
+       "dung": true
+      },
+      {
+       "text": "Nhân $|\\Delta q|$ với $|e|$",
+       "dung": false,
+       "vi_sao": "$|q|=n|e|$ nên $n$ là thương của hai số, không phải tích."
+      },
+      {
+       "text": "Chia điện tích còn lại $|q'|$ cho $|e|$",
+       "dung": false,
+       "vi_sao": "Đó là số êlectron thừa còn lại trên quả, không phải số đã chuyển qua."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Định luật Coulomb: tính lực, xét hút hay đẩy, tìm điện tích từ lực",
+   "topic": "Định luật Coulomb",
+   "problem_html": "<p>Trong không khí, hai điện tích điểm $q_1=+3{,}0\\ \\mu$C và $q_2=-5{,}0\\ \\mu$C có tâm cách nhau $30$ cm.</p><ol type=\"a\"><li>Tính độ lớn lực tương tác giữa hai điện tích. Hai điện tích hút hay đẩy nhau?</li><li>Một cặp điện tích điểm khác, hai điện tích có độ lớn bằng nhau, đặt trong không khí cách nhau $10$ cm, đẩy nhau với lực $0{,}90$ N. Tính độ lớn mỗi điện tích.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Quả cầu thứ hai được đặt cách quả thứ nhất 30 cm trên thước\"><line x1=\"100\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"100.0\" y1=\"145\" x2=\"100.0\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"100.0\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"166.7\" y1=\"145\" x2=\"166.7\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"166.7\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><line x1=\"233.3\" y1=\"145\" x2=\"233.3\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"233.3\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><line x1=\"300.0\" y1=\"145\" x2=\"300.0\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"300.0\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><text x=\"314\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cm</text><text x=\"100\" y=\"46\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = +3,0 μC</text><text x=\"300\" y=\"46\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = −5,0 μC</text><circle cx=\"100.0\" cy=\"92.0\" r=\"20\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"100\" y=\"98.5\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"90.0 0.0;90.0 0.0;0.0 0.0\" keyTimes=\"0.0000;0.1000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"300.0\" cy=\"92.0\" r=\"20\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"300\" y=\"98.5\" fill=\"#38bdf8\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">−</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.0000;0.8500;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"200.0\" y=\"98\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">F = ?</text></g><text x=\"100\" y=\"190\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">r = 30 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đặt quả cầu thứ hai cách quả thứ nhất 30 cm, đo giữa hai tâm trên thước (4 s). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hút hay đẩy giữa hai điện tích điểm đứng yên gọi là lực Coulomb ; cùng dấu thì đẩy, trái dấu thì hút.</li><li><strong>Định luật:</strong> lực tỉ lệ thuận với $|q_1q_2|$, tỉ lệ nghịch với $r^2$.</li><li><strong>Công thức:</strong> $F=k\\dfrac{|q_1q_2|}{r^2}$ trong không khí, $k=9\\cdot10^9\\ \\text{N·m}^2/\\text{C}^2$.</li><li>⚠ <strong>Điều kiện:</strong> điện tích điểm đứng yên ; $q$ tính bằng C, $r$ tính bằng m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi sang đơn vị SI</span></p><p>Đổi điện tích sang C và khoảng cách sang m:</p>$$q_1=3{,}0\\cdot10^{-6}\\ \\text{C},\\quad q_2=-5{,}0\\cdot10^{-6}\\ \\text{C},\\quad r=0{,}30\\ \\text{m}$$$$r^2=(0{,}30)^2$$<div class=\"bt-ans\">$$r^2=0{,}090\\ \\text{m}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ lớn lực</span></p><p>Dùng công thức Coulomb với độ lớn của tích hai điện tích:</p>$$F=k\\dfrac{|q_1q_2|}{r^2}$$$$F=9\\cdot10^{9}\\cdot\\dfrac{3{,}0\\cdot10^{-6}\\cdot5{,}0\\cdot10^{-6}}{0{,}090}$$<div class=\"bt-ans\">$$F=1{,}5\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hút hay đẩy</span></p><p>Dấu quyết định loại lực, không phụ thuộc điện tích nào lớn hơn:</p>$$q_1q_2\\lt0$$<div class=\"bt-ans\"><p>Hai điện tích <strong>hút</strong> nhau (trái dấu).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tìm điện tích từ lực</span></p><p>Hai điện tích bằng nhau nên $|q_1q_2|=q^2$. Rút $|q|$ từ công thức Coulomb:</p>$$F=k\\dfrac{q^2}{r^2}\\ \\Rightarrow\\ |q|=r\\sqrt{\\dfrac{F}{k}}$$$$|q|=0{,}10\\cdot\\sqrt{\\dfrac{0{,}90}{9\\cdot10^{9}}}=0{,}10\\cdot\\sqrt{10^{-10}}$$<div class=\"bt-ans\">$$|q|=1{,}0\\cdot10^{-6}\\ \\text{C}=1{,}0\\ \\mu\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Lực $1{,}5$ N ở khoảng cách $30$ cm với điện tích cỡ $\\mu$C : hợp lí (cỡ mấy N).</p><p>Thế ngược ý b : $9\\cdot10^{9}\\cdot\\dfrac{(10^{-6})^2}{0{,}10^2}=0{,}90$ N ✓ khớp đề.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=1{,}5$ N ; hút</p><p>b) $|q|=1{,}0\\ \\mu$C</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>độ lớn lực giữa hai điện tích</strong> hoặc <strong>tìm điện tích từ lực</strong> → $F=k|q_1q_2|/r^2$ sau khi đổi sang SI ; dấu chỉ để biết hút hay đẩy.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai điện tích điểm đặt cách nhau 30 cm trong không khí\"><circle cx=\"100.0\" cy=\"92.0\" r=\"20\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"100\" y=\"98.5\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"300.0\" cy=\"92.0\" r=\"20\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"300\" y=\"98.5\" fill=\"#38bdf8\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"100\" y=\"46\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = +3,0 μC</text><text x=\"300\" y=\"46\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = −5,0 μC</text><line x1=\"100\" y1=\"140\" x2=\"300\" y2=\"140\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M293.0,135.9 L300.0,140.0 L293.0,144.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"300\" y1=\"140\" x2=\"100\" y2=\"140\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M107.0,144.1 L100.0,140.0 L107.0,135.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"132\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r = 30 cm</text><text x=\"210\" y=\"98\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">F = ?</text><text x=\"210\" y=\"182\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Ý b: hai điện tích bằng nhau, r = 10 cm, F = 0,90 N, |q| = ?</text></svg><figcaption>Dữ kiện của đề ý a; dấu “?” là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"không khí\"</td><td>$\\varepsilon\\approx1$</td><td>⚠ Công thức dùng cho điện tích điểm đứng yên ; $q$ tính bằng C, $r$ tính bằng m</td></tr><tr><td>\"$q_1=+3{,}0\\ \\mu$C và $q_2=-5{,}0\\ \\mu$C\"</td><td>$q_1=+3{,}0\\cdot10^{-6}$ C ; $q_2=-5{,}0\\cdot10^{-6}$ C</td><td>Đổi $\\mu$C sang C ; dấu hai điện tích cho biết hút hay đẩy</td></tr><tr><td>\"tâm cách nhau $30$ cm\"</td><td>$r=0{,}30$ m</td><td>Đổi cm sang m rồi mới bình phương</td></tr><tr><td>\"tính độ lớn lực tương tác\"</td><td>Cần: $F$</td><td>Định luật Coulomb : lực phụ thuộc điện tích và khoảng cách thế nào</td></tr><tr><td>\"hút hay đẩy nhau\"</td><td>Cần: loại lực</td><td>Quan hệ giữa dấu hai điện tích và loại lực</td></tr><tr><td>\"hai điện tích có độ lớn bằng nhau … cách nhau $10$ cm … đẩy nhau với lực $0{,}90$ N\"</td><td>$|q|$ giống nhau ; $r=0{,}10$ m ; $F=0{,}90$ N</td><td>Hai điện tích có độ lớn như nhau thì tích $|q_1q_2|$ viết lại thế nào</td></tr><tr><td>\"tính độ lớn mỗi điện tích\"</td><td>Cần: $|q|$</td><td>Biến đổi công thức Coulomb để tìm điện tích</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>độ lớn lực giữa hai điện tích</b> hoặc <b>tìm điện tích từ lực</b> → nghĩ tới <b>F = k|q₁q₂|/r²</b> sau khi đổi SI.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi sang đơn vị SI",
+     "hoi": "Bình phương khoảng cách $r^2$ bằng bao nhiêu $\\text{m}^2$?",
+     "dap_so": 0.09,
+     "sai_so": 0.001,
+     "don_vi": "m²",
+     "loi_hay_gap": "Thế luôn $r=30$ (cm) vào công thức, hoặc quên bình phương sau khi đổi sang m."
+    },
+    {
+     "tieu_de": "Độ lớn lực",
+     "hoi": "Độ lớn lực tương tác giữa hai điện tích bằng bao nhiêu N?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "N",
+     "loi_hay_gap": "Thế $q$ theo $\\mu$C thay vì C, hoặc dùng tổng $q_1+q_2$ thay cho tích $q_1q_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F=k\\dfrac{|q_1q_2|}{r^2}$ với $q$, $r$ đã đổi sang SI",
+       "dung": true
+      },
+      {
+       "text": "Dùng $F=k\\dfrac{|q_1+q_2|}{r^2}$",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ với tích $|q_1q_2|$, không phải với tổng hai điện tích."
+      },
+      {
+       "text": "Dùng $F=k\\dfrac{|q_1q_2|}{r}$",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với $r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hút hay đẩy",
+     "hoi": "Hai điện tích hút hay đẩy nhau?",
+     "lua_chon": [
+      {
+       "text": "Hút, vì $q_1q_2\\lt0$ (trái dấu)",
+       "dung": true
+      },
+      {
+       "text": "Đẩy, vì $|q_2|\\gt|q_1|$",
+       "dung": false,
+       "vi_sao": "Loại lực không phụ thuộc điện tích nào lớn hơn, chỉ phụ thuộc hai điện tích cùng dấu hay trái dấu."
+      },
+      {
+       "text": "Hút, vì hai điện tích có độ lớn khác nhau",
+       "dung": false,
+       "vi_sao": "Hai điện tích khác độ lớn mà cùng dấu vẫn đẩy nhau ; chỉ dấu mới quyết định loại lực."
+      }
+     ],
+     "loi_hay_gap": "Dựa vào điện tích nào có độ lớn lớn hơn để kết luận, trong khi loại lực chỉ phụ thuộc dấu của hai điện tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu của tích $q_1q_2$",
+       "dung": true
+      },
+      {
+       "text": "So sánh $|q_1|$ với $|q_2|$",
+       "dung": false,
+       "vi_sao": "Độ lớn các điện tích chỉ ảnh hưởng độ lớn lực, không quyết định hút hay đẩy."
+      },
+      {
+       "text": "Tính lại lực với $r$ khác",
+       "dung": false,
+       "vi_sao": "Đổi $r$ chỉ đổi độ lớn lực, loại lực vẫn vậy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tìm điện tích từ lực",
+     "hoi": "Độ lớn mỗi điện tích ở ý b, theo $\\mu$C, bằng bao nhiêu?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "μC",
+     "loi_hay_gap": "Quên lấy căn bậc hai vì tích hai điện tích bằng nhau là $q^2$, hoặc dùng $r=10$ cm không đổi sang m.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $F=k\\dfrac{q^2}{r^2}$ rồi rút $|q|=r\\sqrt{F/k}$",
+       "dung": true
+      },
+      {
+       "text": "Rút $|q|=\\dfrac{F r^2}{k}$, không lấy căn",
+       "dung": false,
+       "vi_sao": "Hai điện tích bằng nhau nên tích là $q^2$ ; muốn có $|q|$ phải lấy căn bậc hai."
+      },
+      {
+       "text": "Rút $|q|=\\dfrac{k r^2}{F}$",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ thuận với $q^2$ nên $F$ nằm ở tử số của $q^2$, không phải ở mẫu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Lực Coulomb khi đổi môi trường, khoảng cách, điện tích",
+   "topic": "Định luật Coulomb",
+   "problem_html": "<p>Hai điện tích điểm đặt trong không khí, cách nhau $6{,}0$ cm, hút nhau với lực $F_0=4{,}0$ mN.</p><ol type=\"a\"><li>Nhúng cả hai vào dầu có hằng số điện môi $\\varepsilon=4{,}0$, giữ nguyên khoảng cách $6{,}0$ cm. Tính lực tương tác khi đó.</li><li>Vẫn trong dầu, phải đặt hai điện tích cách nhau bao nhiêu để lực lại bằng $4{,}0$ mN?</li><li>Quay về tình huống ban đầu (không khí, các điện tích ban đầu), tăng độ lớn $q_1$ lên $3$ lần và giảm khoảng cách xuống $3{,}0$ cm. Tính lực tương tác khi đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Dầu dâng lên ngập cả hai quả cầu, khoảng cách giữa chúng không đổi\"><rect x=\"24.0\" y=\"44.0\" width=\"372.0\" height=\"140.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"26\" y=\"182\" width=\"368\" height=\"0\" fill=\"#38bdf8\" fill-opacity=\".22\"><animate attributeName=\"y\" values=\"182;182;64;64\" keyTimes=\"0.0000;0.1000;0.8000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0;0;118;118\" keyTimes=\"0.0000;0.1000;0.8000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"110\" y1=\"158\" x2=\"110\" y2=\"184\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"110.0\" cy=\"140.0\" r=\"18\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"110\" y=\"146.1\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">+</text><line x1=\"310\" y1=\"158\" x2=\"310\" y2=\"184\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"310.0\" cy=\"140.0\" r=\"18\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"310\" y=\"146.1\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"110\" y1=\"206\" x2=\"310\" y2=\"206\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M303.0,201.9 L310.0,206.0 L303.0,210.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"310\" y1=\"206\" x2=\"110\" y2=\"206\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M117.0,210.1 L110.0,206.0 L117.0,201.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"224\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r = 6,0 cm</text><g><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0.0000;0.7500;0.8500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"210\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">không khí: F₀ = 4,0 mN</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.7500;0.8500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"210\" y=\"30\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">trong dầu (ε = 4,0): F′ = ?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đổ dầu vào bể đến khi ngập cả hai quả cầu, khoảng cách không đổi (5 s). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện môi làm lực giảm $\\varepsilon$ lần so với chân không (không khí) ở cùng khoảng cách.</li><li><strong>Công thức:</strong> $F=k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$ : $F\\sim|q_1q_2|$, $F\\sim\\dfrac{1}{r^2}$, $F\\sim\\dfrac{1}{\\varepsilon}$.</li><li>Gặp bài đổi nhiều đại lượng : lập tỉ số với tình huống mốc, không cần tính lại từ đầu.</li><li>⚠ <strong>Điều kiện:</strong> điện tích điểm đứng yên ; mỗi bước chỉ đổi những đại lượng đề nêu, giữ nguyên phần còn lại.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi môi trường</span></p><p>Điện môi làm lực giảm $\\varepsilon$ lần, $r$ và điện tích không đổi:</p>$$F'=\\dfrac{F_0}{\\varepsilon}=\\dfrac{4{,}0}{4{,}0}$$<div class=\"bt-ans\">$$F'=1{,}0\\ \\text{mN}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bù lại bằng khoảng cách</span></p><p>Trong dầu cần lực bằng $F_0$. Lực tỉ lệ nghịch với $\\varepsilon r'^2$ nên:</p>$$\\dfrac{k|q_1q_2|}{\\varepsilon r'^2}=\\dfrac{k|q_1q_2|}{r_0^2}\\ \\Rightarrow\\ \\varepsilon r'^2=r_0^2$$$$r'=\\dfrac{r_0}{\\sqrt{\\varepsilon}}=\\dfrac{6{,}0}{\\sqrt{4{,}0}}$$<div class=\"bt-ans\">$$r'=3{,}0\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi điện tích và khoảng cách</span></p><p>Lập tỉ số với tình huống mốc (không khí, $F_0$, $r_0$):</p>$$\\dfrac{F''}{F_0}=\\dfrac{|q_1''q_2|}{|q_1q_2|}\\cdot\\dfrac{r_0^2}{r''^2}=3\\cdot\\left(\\dfrac{6{,}0}{3{,}0}\\right)^2$$$$F''=4{,}0\\cdot3\\cdot4$$<div class=\"bt-ans\">$$F''=48\\ \\text{mN}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Ý a : lực giảm khi có điện môi ✓.</p><p>Ý b : trong dầu phải lại gần mới đủ lực ✓.</p><p>Ý c : $q$ tăng, $r$ giảm thì lực tăng ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F'=1{,}0$ mN</p><p>b) $r'=3{,}0$ cm</p><p>c) $F''=48$ mN</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đổi môi trường, điện tích hoặc khoảng cách</strong> → lập tỉ số với tình huống mốc : $F\\sim|q_1q_2|/(\\varepsilon r^2)$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Hai điện tích điểm cách nhau 6,0 cm trong không khí hút nhau với lực 4,0 mN\"><circle cx=\"110.0\" cy=\"62.0\" r=\"18\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"110\" y=\"68.1\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"310.0\" cy=\"62.0\" r=\"18\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"310\" y=\"68.1\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"110\" y1=\"98\" x2=\"310\" y2=\"98\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M303.0,93.9 L310.0,98.0 L303.0,102.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"310\" y1=\"98\" x2=\"110\" y2=\"98\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M117.0,102.1 L110.0,98.0 L117.0,93.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"92\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r = 6,0 cm</text><text x=\"210\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">không khí: F₀ = 4,0 mN</text><text x=\"24\" y=\"140\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a) dầu ε = 4,0, giữ r = 6,0 cm: F′ = ?</text><text x=\"24\" y=\"164\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">b) trong dầu, F = 4,0 mN: r′ = ?</text><text x=\"24\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">c) không khí, q₁ gấp 3, r = 3,0 cm: F″ = ?</text></svg><figcaption>Dữ kiện của đề; dấu “?” là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai điện tích điểm … trong không khí\"</td><td>Điện tích điểm ; $\\varepsilon\\approx1$</td><td>⚠ Mỗi lần chỉ đổi những đại lượng đề nêu ; các đại lượng còn lại giữ nguyên</td></tr><tr><td>\"cách nhau $6{,}0$ cm … hút nhau với lực $F_0=4{,}0$ mN\"</td><td>$r_0=0{,}060$ m ; $F_0=4{,}0\\cdot10^{-3}$ N</td><td>Tình huống mốc để so sánh</td></tr><tr><td>\"nhúng … vào dầu có $\\varepsilon=4{,}0$, giữ nguyên khoảng cách\"</td><td>$\\varepsilon=4{,}0$ ; $r$ không đổi</td><td>Hằng số điện môi ảnh hưởng đến lực thế nào</td></tr><tr><td>\"phải đặt cách nhau bao nhiêu để lực lại bằng $4{,}0$ mN\"</td><td>Cần: $r'$ ; $F'=F_0$</td><td>Lực phụ thuộc $r$ theo quy luật nào ; điều gì bù lại ảnh hưởng của $\\varepsilon$</td></tr><tr><td>\"tăng độ lớn $q_1$ lên $3$ lần\"</td><td>$q_1''=3q_1$</td><td>Lực phụ thuộc tích $|q_1q_2|$ thế nào</td></tr><tr><td>\"giảm khoảng cách xuống $3{,}0$ cm\"</td><td>$r''=0{,}030$ m ; môi trường: không khí</td><td>Lực phụ thuộc $r$ thế nào ; so sánh với tình huống mốc ($r_0=6{,}0$ cm)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhúng vào dầu</b>, <b>đổi khoảng cách</b> hay <b>tăng điện tích</b> → nghĩ tới <b>so sánh tỉ lệ</b> F ∝ |q₁q₂|/(εr²).",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi môi trường",
+     "hoi": "Lực khi nhúng vào dầu, giữ nguyên khoảng cách, bằng bao nhiêu mN?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "mN",
+     "loi_hay_gap": "Nhân lực với $\\varepsilon$ (hiểu ngược), hoặc quên rằng điện môi làm lực giảm."
+    },
+    {
+     "tieu_de": "Bù lại bằng khoảng cách",
+     "hoi": "Để lực trong dầu bằng $4{,}0$ mN, hai điện tích phải cách nhau bao nhiêu cm?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia thẳng $r$ cho $\\varepsilon$ mà không lập phương trình lực, quên rằng $r$ nằm trong bình phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho lực trong dầu bằng $F_0$ rồi giải $\\dfrac{k|q_1q_2|}{\\varepsilon r'^2}=F_0$ tìm $r'$",
+       "dung": true
+      },
+      {
+       "text": "Chia $r$ cho $\\varepsilon$ : $r'=r/\\varepsilon$",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ nghịch với $r^2$ chứ không phải $r$ ; phải lập phương trình lực rồi giải, không chia thẳng."
+      },
+      {
+       "text": "Nhân $r$ với $\\varepsilon$ để lực tăng lại",
+       "dung": false,
+       "vi_sao": "Tăng $r$ làm lực giảm thêm ; muốn lực tăng lại phải đưa hai điện tích lại gần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi điện tích và khoảng cách",
+     "hoi": "Lực ở ý c bằng bao nhiêu mN?",
+     "dap_so": 48,
+     "sai_so": 0.5,
+     "don_vi": "mN",
+     "loi_hay_gap": "Coi lực tỉ lệ nghịch với $r$ thay vì $r^2$, hoặc lấy lực trong dầu (đã tính ở ý a) làm mốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập tỉ số với tình huống ban đầu : $F\\sim|q_1q_2|/r^2$",
+       "dung": true
+      },
+      {
+       "text": "Nhân lực với 3 rồi với 2, vì $r$ giảm một nửa",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với khoảng cách."
+      },
+      {
+       "text": "Lấy lực trong dầu làm mốc rồi đổi tiếp",
+       "dung": false,
+       "vi_sao": "Đề đã đưa về không khí nên mốc là $F_0$ ban đầu, không còn $\\varepsilon$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Tìm vị trí để điện tích nằm cân bằng trên đường nối hai điện tích",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "problem_html": "<p>Trên một thanh nhựa thẳng nằm ngang, đủ dài về hai phía, trong không khí, gắn cố định hai hạt tích điện $q_1=+36$ nC tại A và $q_2=-4{,}0$ nC tại B, với $AB=9{,}0$ cm. Một hạt nhỏ mang điện tích $q_0=+2{,}0$ nC xâu vào thanh, trượt được không ma sát dọc thanh.</p><ol type=\"a\"><li>Đặt $q_0$ ở điểm C nào trên thanh để hợp lực điện lên nó bằng $0$? Tìm $CA$ và $CB$.</li><li>Tính lực do $q_1$ và lực do $q_2$ tác dụng lên $q_0$ tại C, để kiểm tra kết quả.</li><li>Thay $q_0$ bằng hạt mang điện tích $-2{,}0$ nC. Vị trí cân bằng có thay đổi không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hạt q₀ thả ở trung điểm của AB trượt dọc thanh theo lực điện\"><line x1=\"14\" y1=\"118\" x2=\"406\" y2=\"118\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"40.0\" cy=\"118.0\" r=\"13\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"40\" y=\"124.1\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"202.0\" cy=\"118.0\" r=\"11\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"202.0\" y=\"124.1\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"50\" y=\"66\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = +36 nC</text><text x=\"212.0\" y=\"66\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = −4,0 nC</text><text x=\"40\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"202.0\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;0.1 0;0.3 0;0.6 0;1.1 0;1.7 0;2.4 0;3.3 0;4.3 0;5.4 0;6.6 0;8.0 0;9.4 0;11.0 0;12.7 0;14.5 0;16.4 0;18.4 0;20.6 0;22.8 0;25.1 0;27.5 0;30.0 0;32.7 0;35.4 0;38.2 0;41.1 0;44.2 0;47.3 0;50.6 0;54.0 0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"121.0\" cy=\"118.0\" r=\"8\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"121.0\" y=\"122.7\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"121.0\" y=\"98\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">q₀ = +2,0 nC</text></g><line x1=\"40\" y1=\"162\" x2=\"202.0\" y2=\"162\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M195.0,157.9 L202.0,162.0 L195.0,166.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"202.0\" y1=\"162\" x2=\"40\" y2=\"162\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,166.1 L40.0,162.0 L47.0,157.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"121.0\" y=\"184\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">AB = 9,0 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thả q₀ ở trung điểm AB (chỉ là một vị trí thử, không phải vị trí cần tìm); q₀ trượt dọc thanh theo lực điện thật, khối lượng giả định 0,10 g. Chạy chậm 23 lần. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $q_0$ cân bằng khi hợp lực lên nó bằng $0$ : $\\vec F_{10}+\\vec F_{20}=\\vec 0$.</li><li><strong>Định luật:</strong> hai lực cùng phương, ngược chiều, bằng độ lớn. Cùng dấu : C ở giữa A và B. Trái dấu : C ngoài đoạn AB, gần điện tích nhỏ hơn.</li><li><strong>Công thức:</strong> $\\dfrac{r_1}{r_2}=\\sqrt{\\dfrac{|q_1|}{|q_2|}}$ ; ở giữa : $r_1+r_2=AB$ ; ở ngoài : $|r_1-r_2|=AB$ ; $F=k\\dfrac{|q_1q_0|}{r^2}$.</li><li>⚠ <strong>Điều kiện:</strong> $q_1$, $q_2$ cố định ; vị trí cân bằng không phụ thuộc dấu và độ lớn của $q_0$ ($q_0\\neq0$).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn miền chứa C</span></p><p>Xét lực của $q_1$ và $q_2$ lên $q_0$ ở ba miền của đường thẳng AB.</p><p>Giữa A và B : $q_1$ đẩy $q_0$, $q_2$ hút $q_0$, hai lực cùng chiều nên không triệt tiêu.</p><p>Ngoài, phía A : gần $q_1$ có độ lớn lớn hơn nên $F_{10}\\gt F_{20}$ ở mọi điểm.</p><div class=\"bt-ans\"><p>Chỉ còn miền <strong>ngoài đoạn AB, phía B</strong> (gần điện tích nhỏ hơn).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lập tỉ số khoảng cách</span></p><p>Hợp lực bằng $0$ thì hai lực bằng độ lớn. Đặt $r_1=CA$, $r_2=CB$:</p>$$k\\dfrac{|q_1q_0|}{r_1^2}=k\\dfrac{|q_2q_0|}{r_2^2}\\ \\Rightarrow\\ \\dfrac{r_1}{r_2}=\\sqrt{\\dfrac{|q_1|}{|q_2|}}$$$$\\dfrac{r_1}{r_2}=\\sqrt{\\dfrac{36}{4{,}0}}$$<div class=\"bt-ans\">$$\\dfrac{r_1}{r_2}=3{,}0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tính khoảng cách</span></p><p>C ngoài đoạn AB, phía B nên $r_1-r_2=AB$:</p>$$3{,}0\\,r_2-r_2=9{,}0$$<div class=\"bt-ans\">$$CB=r_2=4{,}5\\ \\text{cm}$$</div><div class=\"bt-ans\">$$CA=r_1=13{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra bằng lực</span></p><p>Tính lực do $q_1$ tại C ($r_1=0{,}135$ m):</p>$$F_{10}=9\\cdot10^{9}\\cdot\\dfrac{36\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{0{,}135^2}$$<div class=\"bt-ans\">$$F_{10}\\approx3{,}56\\cdot10^{-5}\\ \\text{N}$$</div><p>Lực do $q_2$ ($r_2=0{,}045$ m):</p>$$F_{20}=9\\cdot10^{9}\\cdot\\dfrac{4{,}0\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{0{,}045^2}$$<div class=\"bt-ans\">$$F_{20}\\approx3{,}56\\cdot10^{-5}\\ \\text{N}$$</div><p>Hai lực bằng nhau ; $q_1$ đẩy ra xa A, $q_2$ hút về B nên ngược chiều ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Đổi dấu của $q_0$</span></p><p>Đổi dấu $q_0$ thì cả hai lực đổi chiều cùng lúc, vẫn ngược chiều và bằng độ lớn. $q_0$ chỉ xuất hiện ở hai vế và giản ước :</p><div class=\"bt-ans\"><p>Vị trí cân bằng <strong>không đổi</strong> (CB = 4,5 cm).</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) C ngoài đoạn AB, phía B : $CB=4{,}5$ cm, $CA=13{,}5$ cm</p><p>b) $F_{10}=F_{20}\\approx3{,}56\\cdot10^{-5}$ N</p><p>c) không đổi</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>vị trí để điện tích đứng yên</strong> hoặc <strong>hợp lực bằng 0</strong> → $F_1=F_2$, ngược chiều ; cùng dấu : giữa, trái dấu : ngoài, gần điện tích nhỏ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai điện tích cố định A và B trên một thanh thẳng, hạt q₀ trượt được dọc thanh\"><line x1=\"14\" y1=\"118\" x2=\"406\" y2=\"118\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"40.0\" cy=\"118.0\" r=\"13\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"40\" y=\"124.1\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"202.0\" cy=\"118.0\" r=\"11\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"202.0\" y=\"124.1\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"50\" y=\"66\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₁ = +36 nC</text><text x=\"212.0\" y=\"66\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">q₂ = −4,0 nC</text><text x=\"40\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"202.0\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"40\" y1=\"162\" x2=\"202.0\" y2=\"162\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M195.0,157.9 L202.0,162.0 L195.0,166.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"202.0\" y1=\"162\" x2=\"40\" y2=\"162\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,166.1 L40.0,162.0 L47.0,157.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"121.0\" y=\"184\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">AB = 9,0 cm</text><text x=\"300\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">q₀ = +2,0 nC (trượt được)</text><text x=\"210\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Cần tìm: vị trí C để hợp lực lên q₀ bằng 0</text></svg><figcaption>Dữ kiện của đề; vị trí C là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"gắn cố định hai hạt tích điện … $q_1=+36$ nC tại A, $q_2=-4{,}0$ nC tại B\"</td><td>$q_1=+36\\cdot10^{-9}$ C ; $q_2=-4{,}0\\cdot10^{-9}$ C</td><td>⚠ $q_1$, $q_2$ cố định ; mỗi điện tích tác dụng lên $q_0$ một lực riêng, lực do hai điện tích cộng lại</td></tr><tr><td>\"$AB=9{,}0$ cm\"</td><td>$AB=0{,}090$ m</td><td>Khoảng cách giữa hai điện tích cố định</td></tr><tr><td>\"hạt nhỏ $q_0=+2{,}0$ nC … trượt được không ma sát dọc thanh\"</td><td>$q_0=+2{,}0\\cdot10^{-9}$ C</td><td>Hai lực điện lên $q_0$ nằm trên cùng một đường thẳng (thanh)</td></tr><tr><td>\"hợp lực điện lên nó bằng $0$\"</td><td>Điều kiện cân bằng</td><td>Hai lực thành phần phải thoả những điều kiện nào về phương, chiều, độ lớn</td></tr><tr><td>\"đặt $q_0$ ở điểm C nào … tìm $CA$ và $CB$\"</td><td>Cần: $CA=r_1$, $CB=r_2$</td><td>Quan hệ giữa dấu hai điện tích và miền chứa C ; quan hệ giữa $r_1$, $r_2$ và $AB$</td></tr><tr><td>\"tính lực do $q_1$ và lực do $q_2$ … để kiểm tra\"</td><td>Cần: $F_{10}$, $F_{20}$</td><td>Công thức Coulomb với khoảng cách từ mỗi điện tích đến $q_0$</td></tr><tr><td>\"thay $q_0$ bằng hạt mang điện tích $-2{,}0$ nC\"</td><td>$q_0'=-2{,}0\\cdot10^{-9}$ C</td><td>Vị trí cân bằng có phụ thuộc dấu và độ lớn của $q_0$ không</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vị trí để điện tích đứng yên</b> hoặc <b>hợp lực bằng 0</b> → nghĩ tới <b>F₁ = F₂ ngược chiều</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chọn miền chứa C",
+     "hoi": "C nằm ở miền nào của đường thẳng AB?",
+     "lua_chon": [
+      {
+       "text": "Giữa A và B",
+       "dung": false,
+       "vi_sao": "Ở giữa, $q_1$ đẩy $q_0$ còn $q_2$ hút $q_0$ cùng về một phía, hai lực cùng chiều nên không triệt tiêu."
+      },
+      {
+       "text": "Ngoài đoạn AB, phía A",
+       "dung": false,
+       "vi_sao": "Phía A gần điện tích có độ lớn lớn hơn nên lực của $q_1$ luôn trội hơn lực của $q_2$."
+      },
+      {
+       "text": "Ngoài đoạn AB, phía B",
+       "dung": true
+      }
+     ],
+     "loi_hay_gap": "Đặt C giữa A và B vì thấy hai điện tích ở hai đầu, hoặc đặt gần điện tích có độ lớn lớn hơn."
+    },
+    {
+     "tieu_de": "Lập tỉ số khoảng cách",
+     "hoi": "Tỉ số $r_1/r_2$ (với $r_1=CA$, $r_2=CB$) bằng bao nhiêu?",
+     "dap_so": 3.0,
+     "sai_so": 0.03,
+     "loi_hay_gap": "Lấy luôn tỉ số hai điện tích làm tỉ số khoảng cách, quên lấy căn bậc hai.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho $F_{10}=F_{20}$ : $\\dfrac{|q_1|}{r_1^2}=\\dfrac{|q_2|}{r_2^2}$",
+       "dung": true
+      },
+      {
+       "text": "Cho $\\dfrac{|q_1|}{r_1}=\\dfrac{|q_2|}{r_2}$",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với khoảng cách."
+      },
+      {
+       "text": "Cho $|q_1|r_1^2=|q_2|r_2^2$",
+       "dung": false,
+       "vi_sao": "Điện tích lớn hơn phải ở xa hơn, tức $|q|/r^2$ bằng nhau, không phải $|q|r^2$ bằng nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tính khoảng cách",
+     "hoi": "Khoảng cách $CB$ bằng bao nhiêu cm?",
+     "dap_so": 4.5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng $r_1+r_2=AB$ (điều kiện của C nằm giữa) cho trường hợp C ở ngoài đoạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $r_1-r_2=AB$ vì C ở ngoài đoạn, phía B",
+       "dung": true
+      },
+      {
+       "text": "Dùng $r_1+r_2=AB$",
+       "dung": false,
+       "vi_sao": "Đó là điều kiện khi C nằm giữa A và B, mà C đã được xác định ở ngoài đoạn."
+      },
+      {
+       "text": "Dùng $r_1-r_2=AB$ nhưng thay tỉ số khoảng cách bằng tỉ số điện tích",
+       "dung": false,
+       "vi_sao": "Tỉ số khoảng cách phải lấy từ bước trước ; tỉ số điện tích là một đại lượng khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra bằng lực",
+     "hoi": "Lực do $q_1$ tác dụng lên $q_0$ tại C, theo đơn vị $10^{-5}$ N, bằng bao nhiêu?",
+     "dap_so": 3.56,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁵ N",
+     "loi_hay_gap": "Lấy $r=AB$ thay vì khoảng cách $CA$ từ $q_1$ đến $q_0$, hoặc để $r$ bằng cm khi thế vào công thức.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F_{10}=k\\dfrac{|q_1q_0|}{CA^2}$ với $CA$ đổi ra m",
+       "dung": true
+      },
+      {
+       "text": "Dùng $AB$ làm khoảng cách",
+       "dung": false,
+       "vi_sao": "$AB$ là khoảng cách giữa hai điện tích cố định, không phải từ $q_1$ đến $q_0$."
+      },
+      {
+       "text": "Dùng $CB$ làm khoảng cách",
+       "dung": false,
+       "vi_sao": "$CB$ là khoảng cách từ $q_2$ đến $q_0$, không phải từ $q_1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi dấu của $q_0$",
+     "hoi": "Thay $q_0$ bằng $-2{,}0$ nC thì vị trí cân bằng thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Không đổi, vì cả hai lực cùng đổi chiều, vẫn ngược chiều và bằng độ lớn",
+       "dung": true
+      },
+      {
+       "text": "Chuyển sang phía A",
+       "dung": false,
+       "vi_sao": "Đổi dấu $q_0$ đảo cả hai lực cùng lúc, nên quan hệ ngược chiều và bằng độ lớn vẫn giữ nguyên."
+      },
+      {
+       "text": "Không còn vị trí cân bằng",
+       "dung": false,
+       "vi_sao": "$q_0$ giản ước khỏi điều kiện $F_{10}=F_{20}$, nên vị trí vẫn tồn tại."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng đổi dấu $q_0$ thì hai lực đổi chỗ cho nhau, hoặc rằng dấu của $q_0$ quyết định vị trí.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét xem $q_0$ có còn trong điều kiện $F_{10}=F_{20}$ sau khi giản ước không",
+       "dung": true
+      },
+      {
+       "text": "Tính lại từ đầu với $q_0=-2{,}0$ nC",
+       "dung": false,
+       "vi_sao": "Không cần : $q_0$ xuất hiện ở cả hai vế nên đổi dấu hay độ lớn đều không ảnh hưởng."
+      },
+      {
+       "text": "Đổi chỗ vai trò của $q_1$ và $q_2$",
+       "dung": false,
+       "vi_sao": "$q_1$, $q_2$ là hai điện tích cố định, không đổi vai trò khi đổi dấu $q_0$."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Tổng hợp lực điện của hai điện tích lên một điện tích: độ lớn và hướng",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "problem_html": "<p>Trong không khí, ba điện tích điểm đặt tại ba điểm A, B, C: $q_1=+4{,}0$ nC tại A, $q_2=-12$ nC tại B, $q_0=+2{,}0$ nC tại C. Biết $CA=3{,}0$ cm, $CB=6{,}0$ cm và $CA$ vuông góc với $CB$.</p><ol type=\"a\"><li>Tính độ lớn lực $F_1$ do $q_1$ và lực $F_2$ do $q_2$ tác dụng lên $q_0$.</li><li>Tính độ lớn hợp lực tác dụng lên $q_0$.</li><li>Tính góc giữa hợp lực và lực $\\vec F_1$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Hạt q₀ được đưa tới điểm C, nơi CA vuông góc CB\"><line x1=\"170\" y1=\"150\" x2=\"170\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><line x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M170.0,139.0 L181.0,139.0 L181.0,150.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"170.0\" cy=\"90.0\" r=\"12\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"170\" y=\"95.8\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"290.0\" cy=\"150.0\" r=\"12\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"290\" y=\"155.8\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"170\" y=\"62\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A: q₁ = +4,0 nC</text><text x=\"304\" y=\"155\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B: q₂ = −12 nC</text><text x=\"178\" y=\"125\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">3,0 cm</text><text x=\"230\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6,0 cm</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"-100.0 48.0;-100.0 48.0;0.0 0.0\" keyTimes=\"0.0000;0.1000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"170.0\" cy=\"150.0\" r=\"9\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"170\" y=\"155.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">+</text></g><text x=\"158\" y=\"176\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">C: q₀ = +2,0 nC</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đưa q₀ tới điểm C bằng giá cách điện (4 s); CA vuông góc CB. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực điện là vectơ ; chiều theo dấu : cùng dấu đẩy, trái dấu hút.</li><li><strong>Định luật:</strong> $\\vec F=\\vec F_1+\\vec F_2$ (hình bình hành) ; $F_1=k\\dfrac{|q_1q_0|}{r_1^2}$, $F_2=k\\dfrac{|q_2q_0|}{r_2^2}$.</li><li><strong>Công thức:</strong> hai lực vuông góc : $F=\\sqrt{F_1^2+F_2^2}$ ; góc $\\varphi$ giữa $\\vec F$ và $\\vec F_1$ : $\\tan\\varphi=\\dfrac{F_2}{F_1}$.</li><li>⚠ <strong>Điều kiện:</strong> chọn công thức hợp lực theo góc giữa hai <em>lực</em> (xét chiều từng lực), không đoán theo hình.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực do $q_1$</span></p><p>$q_1$ và $q_0$ cùng dấu nên $q_1$ đẩy $q_0$ ra xa A, dọc đường AC. Độ lớn ($r_1=0{,}030$ m):</p>$$F_1=k\\dfrac{|q_1q_0|}{r_1^2}$$$$F_1=9\\cdot10^{9}\\cdot\\dfrac{4{,}0\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{0{,}030^2}$$<div class=\"bt-ans\">$$F_1=8{,}0\\cdot10^{-5}\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực do $q_2$</span></p><p>$q_2$ và $q_0$ trái dấu nên $q_2$ hút $q_0$ về B, dọc đường CB. Độ lớn ($r_2=0{,}060$ m):</p>$$F_2=9\\cdot10^{9}\\cdot\\dfrac{12\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{0{,}060^2}$$<div class=\"bt-ans\">$$F_2=6{,}0\\cdot10^{-5}\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc giữa hai lực</span></p><p>$\\vec F_1$ nằm trên đường AC, $\\vec F_2$ nằm trên đường CB. Hai đường vuông góc, dù mỗi lực hướng về phía nào:</p><div class=\"bt-ans\"><p>Góc giữa $\\vec F_1$ và $\\vec F_2$ bằng <strong>$90^\\circ$</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ lớn hợp lực</span></p><p>Hai lực vuông góc nên:</p>$$F=\\sqrt{F_1^2+F_2^2}$$$$F=\\sqrt{(8{,}0\\cdot10^{-5})^2+(6{,}0\\cdot10^{-5})^2}$$<div class=\"bt-ans\">$$F=1{,}0\\cdot10^{-4}\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hướng của hợp lực</span></p><p>Gọi $\\varphi$ là góc giữa $\\vec F$ và $\\vec F_1$. Trong tam giác lực vuông, $F_2$ là cạnh đối, $F_1$ là cạnh kề:</p>$$\\tan\\varphi=\\dfrac{F_2}{F_1}=\\dfrac{6{,}0}{8{,}0}=0{,}75$$<div class=\"bt-ans\">$$\\varphi\\approx37^\\circ$$</div><p>Hợp lực lệch khỏi phương xa A về phía B.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$F=1{,}0\\cdot10^{-4}$ N lớn hơn từng lực thành phần và nhỏ hơn tổng $F_1+F_2=1{,}4\\cdot10^{-4}$ N ✓.</p><p>Thử lại: $\\cos\\varphi=F_1/F=0{,}80$ ứng với $\\varphi\\approx37^\\circ$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F_1=8{,}0\\cdot10^{-5}$ N ; $F_2=6{,}0\\cdot10^{-5}$ N</p><p>b) $F=1{,}0\\cdot10^{-4}$ N</p><p>c) $\\varphi\\approx37^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>hợp lực của hai điện tích lên một điện tích</strong> → tính từng lực bằng Coulomb, xác định chiều theo dấu, rồi cộng vectơ theo góc giữa hai lực.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Ba điện tích đặt ở A, B, C với CA vuông góc CB\"><line x1=\"170\" y1=\"150\" x2=\"170\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><line x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M170.0,139.0 L181.0,139.0 L181.0,150.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"170.0\" cy=\"90.0\" r=\"12\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"170\" y=\"95.8\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">+</text><circle cx=\"290.0\" cy=\"150.0\" r=\"12\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"290\" y=\"155.8\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"170\" y=\"62\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A: q₁ = +4,0 nC</text><text x=\"304\" y=\"155\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B: q₂ = −12 nC</text><text x=\"178\" y=\"125\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">3,0 cm</text><text x=\"230\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6,0 cm</text><circle cx=\"170.0\" cy=\"150.0\" r=\"9\" fill=\"#f87171\" fill-opacity=\".35\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"170\" y=\"155.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"158\" y=\"176\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">C: q₀ = +2,0 nC</text><text x=\"360\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">lực lên q₀: ?</text></svg><figcaption>Dữ kiện của đề; dấu “?” là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ba điện tích điểm … trong không khí\"</td><td>Điện tích điểm ; $\\varepsilon\\approx1$</td><td>⚠ Điện tích điểm đứng yên ; lực điện là đại lượng có hướng</td></tr><tr><td>\"$q_1=+4{,}0$ nC tại A, $q_2=-12$ nC tại B, $q_0=+2{,}0$ nC tại C\"</td><td>$q_1=4{,}0\\cdot10^{-9}$ C ; $q_2=-12\\cdot10^{-9}$ C ; $q_0=2{,}0\\cdot10^{-9}$ C</td><td>Đổi nC sang C ; dấu cho biết hút hay đẩy</td></tr><tr><td>\"$CA=3{,}0$ cm, $CB=6{,}0$ cm\"</td><td>$r_1=0{,}030$ m ; $r_2=0{,}060$ m</td><td>Khoảng cách từ mỗi điện tích đến $q_0$ ; đổi cm sang m</td></tr><tr><td>\"$CA$ vuông góc với $CB$\"</td><td>Hai đường thẳng CA, CB vuông góc</td><td>Hai đường CA, CB vuông góc : hai lực lên $q_0$ có phương thế nào</td></tr><tr><td>\"tính độ lớn lực $F_1$ do $q_1$ và lực $F_2$ do $q_2$\"</td><td>Cần: $F_1$, $F_2$</td><td>Lực mỗi điện tích tác dụng lên $q_0$ phụ thuộc những đại lượng nào</td></tr><tr><td>\"tính độ lớn hợp lực\"</td><td>Cần: $F$</td><td>Hai điện tích cùng tác dụng lên $q_0$ thì lực tổng cộng được xác định thế nào</td></tr><tr><td>\"tính góc giữa hợp lực và lực $\\vec F_1$\"</td><td>Cần: góc $\\varphi$</td><td>Hợp lực và hai lực thành phần tạo thành hình gì ; góc cần tìm nằm ở đâu trong hình đó</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hợp lực của hai điện tích lên một điện tích</b> → nghĩ tới <b>tính từng lực Coulomb, xét chiều</b>, rồi cộng vectơ.",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực do $q_1$",
+     "hoi": "Độ lớn $F_1$ do $q_1$ tác dụng lên $q_0$, theo đơn vị $10^{-5}$ N?",
+     "dap_so": 8.0,
+     "sai_so": 0.1,
+     "don_vi": "×10⁻⁵ N",
+     "loi_hay_gap": "Dùng khoảng cách $AB$ thay cho $CA$, hoặc để $r$ bằng cm khi thế vào công thức."
+    },
+    {
+     "tieu_de": "Lực do $q_2$",
+     "hoi": "Độ lớn $F_2$ do $q_2$ tác dụng lên $q_0$, theo đơn vị $10^{-5}$ N?",
+     "dap_so": 6.0,
+     "sai_so": 0.1,
+     "don_vi": "×10⁻⁵ N",
+     "loi_hay_gap": "Dùng khoảng cách $CA$ cho cả hai lực, hoặc bỏ dấu âm của $q_2$ làm đảo luôn cả chiều lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F_2=k\\dfrac{|q_2q_0|}{CB^2}$ với $CB$ đổi ra m",
+       "dung": true
+      },
+      {
+       "text": "Dùng $F_2=k\\dfrac{|q_2q_0|}{CA^2}$",
+       "dung": false,
+       "vi_sao": "Mỗi lực dùng khoảng cách từ chính điện tích đó đến $q_0$ ; $q_2$ ở B nên dùng $CB$."
+      },
+      {
+       "text": "Dùng $F_2=k\\dfrac{q_2q_0}{CB^2}$ rồi coi kết quả âm là lực nhỏ hơn",
+       "dung": false,
+       "vi_sao": "Dấu của $q_2q_0$ chỉ cho biết hút hay đẩy, độ lớn lực luôn dương : dùng $|q_2q_0|$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc giữa hai lực",
+     "hoi": "Góc giữa $\\vec F_1$ và $\\vec F_2$ bằng bao nhiêu?",
+     "lua_chon": [
+      {
+       "text": "$90^\\circ$, vì hai lực nằm trên hai đường thẳng CA và CB vuông góc",
+       "dung": true
+      },
+      {
+       "text": "$180^\\circ$, vì $q_1$ và $q_2$ trái dấu",
+       "dung": false,
+       "vi_sao": "Dấu chỉ cho biết chiều của mỗi lực dọc đường nối nó với $q_0$ ; hai đường nối này vẫn vuông góc."
+      },
+      {
+       "text": "$0^\\circ$, vì $q_1$ và $q_0$ cùng dấu",
+       "dung": false,
+       "vi_sao": "Một lực đẩy, một lực hút, và chúng nằm trên hai đường vuông góc nên không cùng chiều."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng $q_1$ và $q_2$ trái dấu nên hai lực ngược chiều, hoặc cộng độ lớn $F_1+F_2$ mà không xét góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xác định phương của mỗi lực rồi xét góc giữa chúng",
+       "dung": true
+      },
+      {
+       "text": "Cộng ngay hai độ lớn $F_1+F_2$",
+       "dung": false,
+       "vi_sao": "Chỉ cộng độ lớn được khi hai lực cùng chiều ; ở đây hai lực lệch nhau một góc."
+      },
+      {
+       "text": "Trừ hai độ lớn $|F_1-F_2|$",
+       "dung": false,
+       "vi_sao": "Chỉ trừ được khi hai lực ngược chiều ; chưa biết góc thì chưa chọn được công thức."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn hợp lực",
+     "hoi": "Độ lớn hợp lực, theo đơn vị $10^{-4}$ N, bằng bao nhiêu?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "×10⁻⁴ N",
+     "loi_hay_gap": "Cộng thẳng hai độ lớn, hoặc lấy hiệu hai độ lớn, thay vì dùng căn của tổng bình phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F=\\sqrt{F_1^2+F_2^2}$ vì hai lực vuông góc",
+       "dung": true
+      },
+      {
+       "text": "Dùng $F=F_1+F_2$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi hai lực cùng chiều ; ở đây chúng vuông góc nên hợp lực nhỏ hơn tổng độ lớn."
+      },
+      {
+       "text": "Dùng $F=|F_1-F_2|$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi hai lực ngược chiều ; hai lực vuông góc thì không triệt tiêu một phần như vậy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng của hợp lực",
+     "hoi": "Góc $\\varphi$ giữa hợp lực và $\\vec F_1$ bằng bao nhiêu độ?",
+     "dap_so": 36.9,
+     "sai_so": 0.5,
+     "don_vi": "độ",
+     "loi_hay_gap": "Lấy tỉ số ngược $F_1/F_2$ nên ra góc với $\\vec F_2$, hoặc dùng $\\cos\\varphi=F_2/F_1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $\\tan\\varphi=\\dfrac{F_2}{F_1}$ vì $F_2$ là cạnh đối của $\\varphi$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\tan\\varphi=\\dfrac{F_1}{F_2}$",
+       "dung": false,
+       "vi_sao": "Tỉ số này cho góc giữa hợp lực và $\\vec F_2$, không phải $\\vec F_1$."
+      },
+      {
+       "text": "Dùng $\\cos\\varphi=\\dfrac{F_2}{F_1}$",
+       "dung": false,
+       "vi_sao": "$\\cos\\varphi=F_1/F$ (cạnh kề trên cạnh huyền) ; $F_2$ là cạnh đối nên không đi với cosin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Phương pháp:</strong> Nếu hai điện tích có độ lớn bằng nhau thì $\\left|q_{1}\\right|=\\left|q_{2}\\right|=\\sqrt{\\dfrac{\\varepsilon Fr^{2}}{k}}.$ Nếu biết tổng $S=q_{1}+q_{2}$ và tích $P=q_{1}q_{2}$ (suy ra từ $F=k\\dfrac{\\left|q_{1}q_{2}\\right|}{r^{2}}$, chú ý dấu của $P$ theo hút/đẩy) thì $q_{1},q_{2}$ là hai nghiệm của phương trình $q^{2}-Sq+P=0.$</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Hai điện tích điểm bằng nhau đặt trong chân không cách nhau $r_{1}=2cm.$ Lực đẩy giữa chúng là $F_{1}=1{,}6.10^{-4}N.$ Tìm độ lớn của các điện tích đó.</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> $F_{1}=\\dfrac{kq^{2}}{r_{1}^{2}}\\Rightarrow \\left|q\\right|=\\sqrt{\\dfrac{F_{1}r_{1}^{2}}{k}}=\\sqrt{\\dfrac{1{,}6.10^{-4}.0{,}02^{2}}{9.10^{9}}}\\approx 2{,}67.10^{-9}C.$</p><h4>Bài 2 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Phương pháp:</strong> Điện tích $q_{0}$ cân bằng khi $\\vec{F_{10}}+\\vec{F_{20}}=\\vec{0}$, tức $\\vec{F_{10}}\\uparrow\\downarrow\\vec{F_{20}}$ và $F_{10}=F_{20}.$ Nếu $q_{1}q_{2}\\gt 0$ thì $q_{0}$ nằm giữa hai điện tích; nếu $q_{1}q_{2}\\lt 0$ thì $q_{0}$ nằm ngoài đoạn nối hai điện tích, về phía điện tích có độ lớn nhỏ hơn. Kết hợp $\\dfrac{r_{2}}{r_{1}}=\\sqrt{\\dfrac{\\left|q_{2}\\right|}{\\left|q_{1}\\right|}}$ với hệ thức khoảng cách để giải ra $r_{1},r_{2}.$</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Hai điện tích điểm $q_{1}=q_{2}=-4.10^{-6}C$ đặt tại $A,B$ cách nhau $10cm$ trong không khí. Phải đặt điện tích $q_{3}$ tại đâu để $q_{3}$ nằm cân bằng?</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Vì $q_{1}q_{2}\\gt 0$ nên $q_{3}$ phải nằm giữa $A$ và $B$. Do $\\left|q_{1}\\right|=\\left|q_{2}\\right|$ nên $\\dfrac{r_{2}}{r_{1}}=1\\Rightarrow r_{1}=r_{2}=\\dfrac{AB}{2}=5cm.$ Vậy $q_{3}$ nằm tại trung điểm $AB$.</p><h4>Bài 3 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Phương pháp:</strong> Tính riêng từng lực $F_{1},F_{2},...$ do mỗi điện tích gây ra tại điểm đang xét bằng định luật Coulomb, xác định phương chiều của từng vector, rồi tổng hợp theo nguyên lí chồng chất (dùng bảng các trường hợp góc giữa hai vector ở phần lý thuyết).</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Hai điện tích điểm $q_{1}=3.10^{-8}C,q_{2}=2.10^{-8}C$ đặt tại $A,B$ trong chân không cách nhau $AB=5cm.$ Một điện tích $q_{0}=-2.10^{-8}C$ đặt tại $M$ với $MA=4cm,MB=3cm.$ Xác định lực điện tổng hợp tác dụng lên $q_{0}$ tại $M.$</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Vì $AB^{2}=AM^{2}+MB^{2}$ nên tam giác $AMB$ vuông tại $M$, tức $\\vec{F_{1}}\\perp\\vec{F_{2}}.$</p>\n<p class=\"text-base leading-relaxed my-2\">$F_{1}=k\\dfrac{\\left|q_{1}q_{0}\\right|}{MA^{2}}=9.10^{9}\\dfrac{\\left|3.10^{-8}.\\left(-2.10^{-8}\\right)\\right|}{0{,}04^{2}}=3{,}375.10^{-3}N.$</p>\n<p class=\"text-base leading-relaxed my-2\">$F_{2}=k\\dfrac{\\left|q_{2}q_{0}\\right|}{MB^{2}}=9.10^{9}\\dfrac{\\left|2.10^{-8}.\\left(-2.10^{-8}\\right)\\right|}{0{,}03^{2}}=4.10^{-3}N.$</p>\n<p class=\"text-base leading-relaxed my-2\">Vì $\\vec{F_{1}}\\perp\\vec{F_{2}}$ nên $F=\\sqrt{F_{1}^{2}+F_{2}^{2}}\\approx 5{,}23.10^{-3}N.$</p>"
+ }
+}

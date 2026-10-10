@@ -1,0 +1,582 @@
+{
+ "lesson_id": 39,
+ "lesson_title": "Bài 20. Điện thế",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công của lực điện và độ giảm thế năng trong điện trường đều",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Một điện tích $q=+2{,}0\\ \\mu\\text{C}$ dịch chuyển trong điện trường đều có cường độ $E=3000\\ \\text{V/m}$, đường sức nằm ngang hướng sang phải. Điện tích đi từ M đến N theo một đường cong bất kì. Hình chiếu của đoạn MN lên đường sức dài $4{,}0\\ \\text{cm}$, N lệch theo chiều đường sức so với M.</p><ol type=\"a\"><li>Tính công $A_{MN}$ của lực điện.</li><li>Thế năng điện của $q$ tăng hay giảm, và một lượng bằng bao nhiêu?</li><li>Điện tích đi ngược về từ N đến M theo một đường thẳng. Tính công $A_{NM}$ của lực điện.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Điện tích dương đi từ M đến N theo một đường cong trong điện trường đều\"><g opacity=\"0.6\"><line x1=\"16\" y1=\"30\" x2=\"404\" y2=\"30\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,24.5 L404.0,30.0 L394.5,35.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"75\" x2=\"404\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,69.5 L404.0,75.0 L394.5,80.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"120\" x2=\"404\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,114.5 L404.0,120.0 L394.5,125.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"165\" x2=\"404\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,159.5 L404.0,165.0 L394.5,170.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"16\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Điện trường đều</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"4 4\" opacity=\"0.8\" points=\"70.0,150.0 73.8,143.5 77.6,137.7 81.4,132.6 85.2,128.1 89.1,124.3 93.0,121.0 96.9,118.3 100.9,116.1 104.9,114.4 108.9,113.2 112.9,112.4 117.0,112.0 121.1,111.9 125.3,112.2 129.5,112.8 133.7,113.7 138.0,114.8 142.2,116.2 146.6,117.7 150.9,119.3 155.3,121.1 159.8,123.0 164.2,124.9 168.8,126.9 173.3,128.8 177.9,130.7 182.5,132.6 187.2,134.3 191.9,135.9 196.7,137.4 201.5,138.6 206.3,139.6 211.2,140.4 216.1,140.9 221.1,141.0 226.1,140.9 231.2,140.3 236.3,139.3 241.4,137.9 246.6,136.0 251.9,133.6 257.2,130.7 262.5,127.1 267.9,123.0 273.4,118.3 278.9,112.9 284.4,106.8 290.0,100.0\"/><line x1=\"70.0\" y1=\"158.0\" x2=\"70.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"290.0\" y1=\"108.0\" x2=\"290.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"70\" y1=\"214\" x2=\"290\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M283.0,209.9 L290.0,214.0 L283.0,218.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"290\" y1=\"214\" x2=\"70\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M77.0,218.1 L70.0,214.0 L77.0,209.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"180\" y=\"207\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 4,0 cm</text><circle cx=\"70.0\" cy=\"150.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"48\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><circle cx=\"290.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"300\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"316\" y=\"143\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">E = 3000 V/m</text><text x=\"316\" y=\"159\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q = +2,0 μC</text><text x=\"316.0\" y=\"106.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"10\">MN</tspan><tspan dy=\"-4\"> = ?</tspan></text><circle cx=\"70.0\" cy=\"150.0\" r=\"8\" fill=\"#f87171\" fill-opacity=\".3\" stroke=\"#f87171\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"70.0;73.8;77.6;81.4;85.2;89.1;93.0;96.9;100.9;104.9;108.9;112.9;117.0;121.1;125.3;129.5;133.7;138.0;142.2;146.6;150.9;155.3;159.8;164.2;168.8;173.3;177.9;182.5;187.2;191.9;196.7;201.5;206.3;211.2;216.1;221.1;226.1;231.2;236.3;241.4;246.6;251.9;257.2;262.5;267.9;273.4;278.9;284.4;290.0\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"150.0;143.5;137.7;132.6;128.1;124.3;121.0;118.3;116.1;114.4;113.2;112.4;112.0;111.9;112.2;112.8;113.7;114.8;116.2;117.7;119.3;121.1;123.0;124.9;126.9;128.8;130.7;132.6;134.3;135.9;137.4;138.6;139.6;140.4;140.9;141.0;140.9;140.3;139.3;137.9;136.0;133.6;130.7;127.1;123.0;118.3;112.9;106.8;100.0\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"70.0\" y=\"154.5\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+<animate attributeName=\"x\" values=\"70.0;73.8;77.6;81.4;85.2;89.1;93.0;96.9;100.9;104.9;108.9;112.9;117.0;121.1;125.3;129.5;133.7;138.0;142.2;146.6;150.9;155.3;159.8;164.2;168.8;173.3;177.9;182.5;187.2;191.9;196.7;201.5;206.3;211.2;216.1;221.1;226.1;231.2;236.3;241.4;246.6;251.9;257.2;262.5;267.9;273.4;278.9;284.4;290.0\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"154.5;148.0;142.2;137.1;132.6;128.8;125.5;122.8;120.6;118.9;117.7;116.9;116.5;116.4;116.7;117.3;118.2;119.3;120.7;122.2;123.8;125.6;127.5;129.4;131.4;133.3;135.2;137.1;138.8;140.4;141.9;143.1;144.1;144.9;145.4;145.5;145.4;144.8;143.8;142.4;140.5;138.1;135.2;131.6;127.5;122.8;117.4;111.3;104.5\" dur=\"5.50s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện tích dương dịch chuyển từ M đến N theo một đường cong minh hoạ; tốc độ chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công của lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu và điểm cuối.</li><li><strong>Công thức:</strong> điện trường đều $A_{MN}=qEd$, $d$ là hình chiếu có dấu của MN lên chiều đường sức.</li><li><strong>Công thức:</strong> $A_{MN}=W_M-W_N$ (công bằng độ giảm thế năng).</li><li>⚠ <strong>Điều kiện:</strong> $d \\gt 0$ khi N lệch theo chiều đường sức so với M ; đổi $\\mu\\text{C}$, cm ra C, m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn d cho đường đi cong</span></p><p>Công không phụ thuộc đường đi nên bỏ qua đường cong ; chỉ lấy hình chiếu của MN lên đường sức.</p>$$d=+4{,}0\\ \\text{cm}=+0{,}040\\ \\text{m}$$<p>N lệch theo chiều đường sức nên $d \\gt 0$. Đổi điện tích:</p>$$q=2{,}0\\ \\mu\\text{C}=2{,}0\\cdot10^{-6}\\ \\text{C}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công A_MN</span></p><p>Điện trường đều:</p>$$A_{MN}=qEd$$$$A_{MN}=2{,}0\\cdot10^{-6}\\cdot3000\\cdot0{,}040$$<div class=\"bt-ans\">$$A_{MN}=2{,}4\\cdot10^{-4}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Biến thiên thế năng</span></p><p>Công bằng độ giảm thế năng:</p>$$W_M-W_N=A_{MN}=2{,}4\\cdot10^{-4}\\ \\text{J}$$<div class=\"bt-ans\"><p>Thế năng <strong>giảm</strong> một lượng $2{,}4\\cdot10^{-4}\\ \\text{J}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đi ngược lại từ N về M</span></p><p>Đổi điểm đầu và điểm cuối thì $d$ đổi dấu ; đường đi thẳng hay cong không ảnh hưởng:</p>$$d_{NM}=-0{,}040\\ \\text{m}$$$$A_{NM}=qEd_{NM}=2{,}0\\cdot10^{-6}\\cdot3000\\cdot(-0{,}040)$$<div class=\"bt-ans\">$$A_{NM}=-2{,}4\\cdot10^{-4}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{C}\\cdot\\text{V/m}\\cdot\\text{m}=\\text{C}\\cdot\\text{V}=\\text{J}$ ✓.</p><p>Điện tích dương đi theo chiều $\\vec E$, lực điện cùng chiều dịch chuyển nên $A_{MN} \\gt 0$ ✓.</p><p>$A_{MN}+A_{NM}=0$ ✓ : đi một vòng kín thì công bằng $0$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{MN}=2{,}4\\cdot10^{-4}\\ \\text{J}$</p><p>b) Thế năng giảm $2{,}4\\cdot10^{-4}\\ \\text{J}$</p><p>c) $A_{NM}=-2{,}4\\cdot10^{-4}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>điện trường đều</strong> và <strong>hình chiếu dọc đường sức</strong> → $A=qEd$ với $d$ có dấu, rồi $A_{MN}=W_M-W_N$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Điện tích dương, điện trường đều, hình chiếu của MN lên đường sức và đại lượng cần tìm\"><g opacity=\"0.6\"><line x1=\"16\" y1=\"30\" x2=\"404\" y2=\"30\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,24.5 L404.0,30.0 L394.5,35.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"75\" x2=\"404\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,69.5 L404.0,75.0 L394.5,80.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"120\" x2=\"404\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,114.5 L404.0,120.0 L394.5,125.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16\" y1=\"165\" x2=\"404\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M394.5,159.5 L404.0,165.0 L394.5,170.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"16\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Điện trường đều</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"4 4\" opacity=\"0.8\" points=\"70.0,150.0 73.8,143.5 77.6,137.7 81.4,132.6 85.2,128.1 89.1,124.3 93.0,121.0 96.9,118.3 100.9,116.1 104.9,114.4 108.9,113.2 112.9,112.4 117.0,112.0 121.1,111.9 125.3,112.2 129.5,112.8 133.7,113.7 138.0,114.8 142.2,116.2 146.6,117.7 150.9,119.3 155.3,121.1 159.8,123.0 164.2,124.9 168.8,126.9 173.3,128.8 177.9,130.7 182.5,132.6 187.2,134.3 191.9,135.9 196.7,137.4 201.5,138.6 206.3,139.6 211.2,140.4 216.1,140.9 221.1,141.0 226.1,140.9 231.2,140.3 236.3,139.3 241.4,137.9 246.6,136.0 251.9,133.6 257.2,130.7 262.5,127.1 267.9,123.0 273.4,118.3 278.9,112.9 284.4,106.8 290.0,100.0\"/><line x1=\"70.0\" y1=\"158.0\" x2=\"70.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"290.0\" y1=\"108.0\" x2=\"290.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"70\" y1=\"214\" x2=\"290\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M283.0,209.9 L290.0,214.0 L283.0,218.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"290\" y1=\"214\" x2=\"70\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M77.0,218.1 L70.0,214.0 L77.0,209.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"180\" y=\"207\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 4,0 cm</text><circle cx=\"70.0\" cy=\"150.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"48\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><circle cx=\"290.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"300\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"316\" y=\"143\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">E = 3000 V/m</text><text x=\"316\" y=\"159\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q = +2,0 μC</text><text x=\"316.0\" y=\"106.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"10\">MN</tspan><tspan dy=\"-4\"> = ?</tspan></text><circle cx=\"70.0\" cy=\"150.0\" r=\"8\" fill=\"#f87171\" fill-opacity=\".3\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"70.0\" y=\"154.5\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text></svg><figcaption>Dữ kiện: E, q và hình chiếu d đã cho; đường cong chỉ là một trong vô số đường đi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trường đều có cường độ $E=3000$ V/m\"</td><td>$E=3000$ V/m</td><td>⚠ Công thức công cho điện trường đều chỉ dùng khi điện trường đều trên cả đường điện tích đi qua</td></tr><tr><td>\"$q=+2{,}0\\ \\mu\\text{C}$\"</td><td>$q=2{,}0\\cdot10^{-6}$ C</td><td>Đổi đơn vị trước khi thế số</td></tr><tr><td>\"theo một đường cong bất kì\"</td><td>Không cho dạng đường đi</td><td>Công của lực điện phụ thuộc những yếu tố nào</td></tr><tr><td>\"hình chiếu của MN lên đường sức dài $4{,}0$ cm\"</td><td>$|d|=4{,}0$ cm</td><td>Ý nghĩa của $d$ trong công thức công ; đổi cm ra m</td></tr><tr><td>\"N lệch theo chiều đường sức so với M\"</td><td>Chiều dịch chuyển so với $\\vec E$</td><td>Dấu của $d$</td></tr><tr><td>\"tính công $A_{MN}$\"</td><td>Cần: $A_{MN}$</td><td>Công thức công trong điện trường đều</td></tr><tr><td>\"thế năng tăng hay giảm, bao nhiêu\"</td><td>Cần: biến thiên thế năng</td><td>Liên hệ giữa công của lực điện và thế năng</td></tr><tr><td>\"đi ngược về từ N đến M theo đường thẳng\"</td><td>Điểm đầu N, điểm cuối M</td><td>Đổi điểm đầu và điểm cuối thì đại lượng nào đổi dấu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>điện trường đều</b> và <b>hình chiếu dọc đường sức</b> → nghĩ tới <b>A = qEd</b>, rồi <b>A = W_M − W_N</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chọn d cho đường đi cong",
+     "hoi": "Đường đi cong thì $d$ trong $A=qEd$ lấy thế nào?",
+     "lua_chon": [
+      {
+       "text": "Chiều dài của đường cong từ M đến N",
+       "dung": false,
+       "vi_sao": "Công của lực điện không phụ thuộc hình dạng đường đi nên không cần độ dài đường cong."
+      },
+      {
+       "text": "Hình chiếu có dấu của MN lên chiều đường sức",
+       "dung": true
+      },
+      {
+       "text": "Độ dài đoạn thẳng nối M với N",
+       "dung": false,
+       "vi_sao": "Chỉ thành phần dọc đường sức mới góp vào công, không phải cả đoạn MN."
+      }
+     ],
+     "loi_hay_gap": "Đi đo chiều dài đường cong rồi nhân với $E$, trong khi công không phụ thuộc đường đi."
+    },
+    {
+     "tieu_de": "Công A_MN",
+     "hoi": "Công $A_{MN}$ của lực điện theo đơn vị $10^{-4}\\ \\text{J}$?",
+     "dap_so": 2.4,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁴ J",
+     "loi_hay_gap": "Quên đổi cm ra m hoặc $\\mu\\text{C}$ ra C nên kết quả lệch nhiều bậc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế số vào công thức công của điện trường đều với $d$ đã đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "Tìm độ dài đường cong rồi nhân với lực điện",
+       "dung": false,
+       "vi_sao": "Công của lực điện không phụ thuộc đường đi, nên không cần độ dài đường cong."
+      },
+      {
+       "text": "Lấy $q$ nhân $E$ rồi dừng lại",
+       "dung": false,
+       "vi_sao": "Tích $qE$ mới là lực ; muốn có công phải nhân thêm quãng dịch chuyển dọc đường sức."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Biến thiên thế năng",
+     "hoi": "Thế năng điện của $q$ thay đổi thế nào khi đi từ M đến N?",
+     "lua_chon": [
+      {
+       "text": "Giảm một lượng đúng bằng công $A_{MN}$",
+       "dung": true
+      },
+      {
+       "text": "Tăng một lượng bằng công $A_{MN}$",
+       "dung": false,
+       "vi_sao": "Công dương nghĩa là lực điện sinh công, thế năng phải giảm, giống vật trượt xuống dốc."
+      },
+      {
+       "text": "Không đổi, vì công không phụ thuộc đường đi",
+       "dung": false,
+       "vi_sao": "Công không phụ thuộc đường đi nhưng vẫn phụ thuộc điểm đầu, điểm cuối ; M và N khác thế năng nên thế năng vẫn đổi."
+      }
+     ],
+     "loi_hay_gap": "Nhầm dấu : tưởng công dương thì thế năng tăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $A_{MN}=W_M-W_N$ rồi xét dấu của công",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A_{MN}=W_N-W_M$",
+       "dung": false,
+       "vi_sao": "Công bằng thế năng đầu trừ thế năng cuối, không phải ngược lại."
+      },
+      {
+       "text": "Lấy thế năng tại N bằng $qEd$",
+       "dung": false,
+       "vi_sao": "Thế năng chỉ có nghĩa khi đã chọn mốc ; $qEd$ là công giữa hai điểm, không phải thế năng tại một điểm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đi ngược lại từ N về M",
+     "hoi": "Công $A_{NM}$ theo đơn vị $10^{-4}\\ \\text{J}$ (kể cả dấu)?",
+     "dap_so": -2.4,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁴ J",
+     "loi_hay_gap": "Cho rằng đi theo đường thẳng thì công khác, hoặc quên đổi dấu khi đổi chiều đi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi điểm đầu và điểm cuối rồi xét lại dấu của $d$",
+       "dung": true
+      },
+      {
+       "text": "Đường thẳng ngắn hơn đường cong nên công nhỏ hơn",
+       "dung": false,
+       "vi_sao": "Công không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu và điểm cuối."
+      },
+      {
+       "text": "Lực điện vẫn cùng chiều $\\vec E$ nên công vẫn dương",
+       "dung": false,
+       "vi_sao": "Lực điện cùng chiều $\\vec E$ nhưng lần này dịch chuyển ngược chiều $\\vec E$ nên $d \\lt 0$ và công mang dấu khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Điện thế của một điểm, đổi điện tích đặt vào, thế năng",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "problem_html": "<p>Quanh một quả cầu tích điện, chọn mốc điện thế ở vô cực. Điện tích thử $q_1=+2{,}0\\ \\text{nC}$ đặt tại điểm M có thế năng điện $3{,}0\\cdot10^{-7}\\ \\text{J}$. Điện thế tại điểm N là $60\\ \\text{V}$.</p><ol type=\"a\"><li>Tính điện thế $V_M$ tại M.</li><li>Quả cầu tích điện dương hay âm?</li><li>Bỏ $q_1$, đặt điện tích $q_2=-4{,}0\\ \\text{nC}$ vào M. Tính thế năng của $q_2$ tại M.</li><li>Tính thế năng của $q_2$ khi đặt tại N.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 228\" role=\"img\" aria-label=\"Điện tích q1 tại M được thay bằng điện tích q2, điện thế tại M chưa biết\"><circle cx=\"115\" cy=\"120\" r=\"44\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"115\" cy=\"120\" r=\"98\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"115\" cy=\"120\" r=\"17\" fill=\"currentColor\" fill-opacity=\".12\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"115\" y=\"125\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Q</text><circle cx=\"149.7\" cy=\"92.9\" r=\"4.5\" fill=\"currentColor\"/><text x=\"158.7\" y=\"84.9\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><circle cx=\"208.2\" cy=\"150.3\" r=\"4.5\" fill=\"currentColor\"/><text x=\"217.2\" y=\"166.3\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"145.7\" y=\"70.9\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">V<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"206.2\" y=\"182.3\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">V<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = 60 V</tspan></text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Mốc: V = 0 ở vô cực</text><text x=\"250\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q₁ = +2,0 nC</text><text x=\"250\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">đặt tại M</text><text x=\"250\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thế năng 3,0·10⁻⁷ J</text><text x=\"250\" y=\"140\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q₂ = −4,0 nC</text><text x=\"250\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thay q₁ tại M</text><g opacity=\"1\"><circle cx=\"149.7\" cy=\"92.9\" r=\"8\" fill=\"#f87171\" fill-opacity=\".3\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"149.7\" y=\"97.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.4;0.5;1\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"149.7\" cy=\"92.9\" r=\"8\" fill=\"#38bdf8\" fill-opacity=\".3\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"149.7\" y=\"97.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.5;0.6;1\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: q₁ đặt tại M rồi được thay bằng q₂; vòng nét đứt là mặt đẳng thế qua M và qua N. Chạy trong 6 s, không đúng tỉ lệ. </figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện thế $V_M=\\dfrac{W_M}{q}$ là đại lượng của điểm, không phụ thuộc điện tích đặt vào.</li><li><strong>Công thức:</strong> $W=qV$ (thế năng đổi theo $q$) ; $1\\ \\text{V}=1\\ \\text{J/C}$.</li><li>Mốc ở vô cực : $Q \\gt 0$ cho $V \\gt 0$, $Q \\lt 0$ cho $V \\lt 0$.</li><li>⚠ <strong>Điều kiện:</strong> giữ dấu của $q$ khi thế số ; đổi nC ra C.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện thế tại M</span></p><p>Thế năng của điện tích thử chia cho điện tích đó:</p>$$V_M=\\dfrac{W_M}{q_1}=\\dfrac{3{,}0\\cdot10^{-7}}{2{,}0\\cdot10^{-9}}$$<div class=\"bt-ans\">$$V_M=150\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Dấu của điện tích quả cầu</span></p><p>Mốc ở vô cực và $V_M \\gt 0$ nên điện tích nguồn dương.</p><div class=\"bt-ans\"><p>Quả cầu tích điện <strong>dương</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thế năng của q₂ tại M</span></p><p>Điện thế của M không phụ thuộc điện tích đặt vào, nên vẫn $V_M=150\\ \\text{V}$.</p>$$W_M'=q_2V_M=(-4{,}0\\cdot10^{-9})\\cdot150$$<div class=\"bt-ans\">$$W_M'=-6{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thế năng của q₂ tại N</span></p><p>Dùng điện thế của chính điểm N:</p>$$W_N'=q_2V_N=(-4{,}0\\cdot10^{-9})\\cdot60$$<div class=\"bt-ans\">$$W_N'=-2{,}4\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{C}\\cdot\\text{V}=\\text{J}$ ✓.</p><p>$q_2 \\lt 0$, $V \\gt 0$ nên thế năng âm ✓.</p><p>$V_N \\lt V_M$ nên $|W_N'| \\lt |W_M'|$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V_M=150\\ \\text{V}$</p><p>b) Quả cầu tích điện dương</p><p>c) $V_M$ vẫn $150\\ \\text{V}$ ; $W=-6{,}0\\cdot10^{-7}\\ \\text{J}$</p><p>d) $W=-2{,}4\\cdot10^{-7}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>thế năng của điện tích thử</strong> rồi <strong>đổi điện tích khác</strong> → $V=\\dfrac{W}{q}$ trước, giữ nguyên $V$, rồi $W=qV$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 228\" role=\"img\" aria-label=\"Quả cầu tích điện, mặt đẳng thế qua M và N, các dữ kiện và đại lượng cần tìm\"><circle cx=\"115\" cy=\"120\" r=\"44\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"115\" cy=\"120\" r=\"98\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"115\" cy=\"120\" r=\"17\" fill=\"currentColor\" fill-opacity=\".12\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"115\" y=\"125\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Q</text><circle cx=\"149.7\" cy=\"92.9\" r=\"4.5\" fill=\"currentColor\"/><text x=\"158.7\" y=\"84.9\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><circle cx=\"208.2\" cy=\"150.3\" r=\"4.5\" fill=\"currentColor\"/><text x=\"217.2\" y=\"166.3\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"145.7\" y=\"70.9\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">V<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"206.2\" y=\"182.3\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">V<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = 60 V</tspan></text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Mốc: V = 0 ở vô cực</text><text x=\"250\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q₁ = +2,0 nC</text><text x=\"250\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">đặt tại M</text><text x=\"250\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thế năng 3,0·10⁻⁷ J</text><text x=\"250\" y=\"140\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q₂ = −4,0 nC</text><text x=\"250\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thay q₁ tại M</text><circle cx=\"149.7\" cy=\"92.9\" r=\"8\" fill=\"#f87171\" fill-opacity=\".3\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"149.7\" y=\"97.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text></svg><figcaption>Dữ kiện: mốc ở vô cực, q₁ tại M và điện thế tại N; quả cầu chưa ghi dấu điện tích. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chọn mốc điện thế ở vô cực\"</td><td>$V_\\infty=0$</td><td>⚠ Điện thế của một điểm luôn đo so với mốc đã chọn</td></tr><tr><td>\"$q_1=+2{,}0$ nC đặt tại M … thế năng $3{,}0\\cdot10^{-7}$ J\"</td><td>$q_1=2{,}0\\cdot10^{-9}$ C ; $W_M=3{,}0\\cdot10^{-7}$ J</td><td>Định nghĩa điện thế ; đổi nC ra C</td></tr><tr><td>\"tính điện thế $V_M$\"</td><td>Cần: $V_M$</td><td>Liên hệ điện thế với thế năng và điện tích thử</td></tr><tr><td>\"quả cầu tích điện dương hay âm\"</td><td>Cần: dấu của $Q$</td><td>Dấu của điện thế khi mốc ở vô cực</td></tr><tr><td>\"đặt $q_2=-4{,}0$ nC vào M\"</td><td>$q_2=-4{,}0\\cdot10^{-9}$ C</td><td>Điện thế của M có phụ thuộc điện tích đặt vào không</td></tr><tr><td>\"thế năng của $q_2$ tại M\"</td><td>Cần: $W$ của $q_2$ tại M</td><td>Liên hệ giữa thế năng, điện tích và điện thế</td></tr><tr><td>\"điện thế tại điểm N là $60$ V\"</td><td>$V_N=60$ V</td><td>Điện thế đã cho riêng cho N</td></tr><tr><td>\"thế năng của $q_2$ khi đặt tại N\"</td><td>Cần: $W$ của $q_2$ tại N</td><td>Liên hệ giữa thế năng, điện tích và điện thế</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thế năng điện tích thử</b> rồi <b>đổi điện tích</b> → tính <b>V = W/q</b>, giữ V, dùng <b>W = qV</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện thế tại M",
+     "hoi": "Điện thế $V_M$ bằng bao nhiêu vôn?",
+     "dap_so": 150,
+     "sai_so": 1.5,
+     "don_vi": "V",
+     "loi_hay_gap": "Nhân $W$ với $q$ thay vì chia, hoặc quên đổi nC ra C nên lệch nhiều bậc."
+    },
+    {
+     "tieu_de": "Dấu của điện tích quả cầu",
+     "hoi": "Quả cầu tích điện dấu gì?",
+     "lua_chon": [
+      {
+       "text": "Dương",
+       "dung": true
+      },
+      {
+       "text": "Âm",
+       "dung": false,
+       "vi_sao": "Mốc ở vô cực thì điện tích nguồn âm cho điện thế âm ; điện thế tìm được ở bước trước mang dấu ngược lại."
+      },
+      {
+       "text": "Không xác định được",
+       "dung": false,
+       "vi_sao": "Khi mốc ở vô cực, dấu của điện thế so với $0$ cho biết dấu của điện tích nguồn."
+      }
+     ],
+     "loi_hay_gap": "Dựa vào dấu của điện tích thử $q_1$ để kết luận dấu của quả cầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đối chiếu dấu của $V_M$ với quy tắc về mốc ở vô cực",
+       "dung": true
+      },
+      {
+       "text": "Dựa vào dấu của $q_1$",
+       "dung": false,
+       "vi_sao": "$q_1$ chỉ là điện tích thử ; dấu của nó không quyết định dấu điện thế."
+      },
+      {
+       "text": "So độ lớn của $V_M$ với $V_N$",
+       "dung": false,
+       "vi_sao": "Độ lớn không cho biết dấu của $Q$ ; dấu của $V$ so với mốc mới cho biết."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thế năng của q₂ tại M",
+     "hoi": "Thế năng của $q_2$ tại M theo đơn vị $10^{-7}\\ \\text{J}$ (kể cả dấu)?",
+     "dap_so": -6.0,
+     "sai_so": 0.1,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Giữ nguyên thế năng của $q_1$ khi đổi sang $q_2$, hoặc cho rằng điện thế của M đổi dấu theo $q_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $V_M$ rồi nhân với $q_2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $V=\\dfrac{W}{q_2}$ để tìm điện thế mới",
+       "dung": false,
+       "vi_sao": "$W$ của $q_2$ chưa biết ; điện thế của M không phụ thuộc điện tích đặt vào nên giữ nguyên."
+      },
+      {
+       "text": "Giữ nguyên thế năng của $q_1$ vì M không đổi",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc điện tích đặt vào : $W=qV$ đổi khi $q$ đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thế năng của q₂ tại N",
+     "hoi": "Thế năng của $q_2$ tại N theo đơn vị $10^{-7}\\ \\text{J}$ (kể cả dấu)?",
+     "dap_so": -2.4,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Dùng nhầm điện thế của M cho điểm N.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $q_2$ với điện thế của chính điểm N",
+       "dung": true
+      },
+      {
+       "text": "Nhân $q_2$ với điện thế của M",
+       "dung": false,
+       "vi_sao": "N là điểm khác ; điện thế tại N đã cho riêng."
+      },
+      {
+       "text": "Nhân $q_2$ với hiệu hai điện thế M và N",
+       "dung": false,
+       "vi_sao": "Tích đó là công khi đi từ M đến N, không phải thế năng tại N."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Hiệu điện thế và công A = qU với electron, proton; đơn vị eV",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "problem_html": "<p>Trong một điện trường tĩnh, chọn mốc điện thế ở Trái Đất. Điện thế tại điểm A là $+45\\ \\text{V}$ và tại điểm B là $+15\\ \\text{V}$. Lấy $e=1{,}6\\cdot10^{-19}\\ \\text{C}$, $1\\ \\text{eV}=1{,}6\\cdot10^{-19}\\ \\text{J}$.</p><ol type=\"a\"><li>Tính hiệu điện thế $U_{AB}$.</li><li>Một electron đi từ A đến B. Tính công của lực điện, theo J và theo eV.</li><li>Một proton cũng đi từ A đến B. Tính công của lực điện, theo eV.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Electron đi từ điểm A có điện thế 45 V đến điểm B có điện thế 15 V\"><line x1=\"90.0\" y1=\"36.0\" x2=\"90.0\" y2=\"172.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"330.0\" y1=\"36.0\" x2=\"330.0\" y2=\"172.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"90.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> = +45 V</tspan></text><text x=\"330.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">B</tspan><tspan dy=\"-4\"> = +15 V</tspan></text><circle cx=\"90.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"68\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">A</text><circle cx=\"330.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"340\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">B</text><line x1=\"90\" y1=\"150\" x2=\"330\" y2=\"150\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M322.4,145.6 L330.0,150.0 L322.4,154.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"330\" y1=\"150\" x2=\"90\" y2=\"150\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M97.6,154.4 L90.0,150.0 L97.6,145.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210.0\" y=\"142.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U<tspan dy=\"4\" font-size=\"10\">AB</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Mốc điện thế: Trái Đất (0 V)</text><circle cx=\"104.0\" cy=\"100.0\" r=\"8\" fill=\"#38bdf8\" fill-opacity=\".3\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"104.0;109.2;114.3;119.5;124.6;129.8;134.9;140.1;145.2;150.3;155.5;160.7;165.8;170.9;176.1;181.2;186.4;191.6;196.7;201.8;207.0;212.2;217.3;222.4;227.6;232.8;237.9;243.1;248.2;253.3;258.5;263.6;268.8;273.9;279.1;284.2;289.4;294.6;299.7;304.9;310.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0;100.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"104.0\" y=\"104.5\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−<animate attributeName=\"x\" values=\"104.0;109.2;114.3;119.5;124.6;129.8;134.9;140.1;145.2;150.3;155.5;160.7;165.8;170.9;176.1;181.2;186.4;191.6;196.7;201.8;207.0;212.2;217.3;222.4;227.6;232.8;237.9;243.1;248.2;253.3;258.5;263.6;268.8;273.9;279.1;284.2;289.4;294.6;299.7;304.9;310.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5;104.5\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: electron đi từ A đến B; tốc độ trên hình không thể hiện lực điện tăng hay giảm tốc electron. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hiệu điện thế $U_{AB}=V_A-V_B=\\dfrac{A_{AB}}{q}$ ; đổi thứ tự hai điểm thì đổi dấu.</li><li><strong>Công thức:</strong> $A_{AB}=qU_{AB}$ ; $1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J.</li><li>Electron $q=-e$ ; proton $q=+e$.</li><li>⚠ <strong>Điều kiện:</strong> giữ đủ dấu của $q$ và của $U$ ; điểm đầu viết trước trong $U_{AB}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hiệu điện thế U_AB</span></p><p>Điện thế điểm đầu trừ điện thế điểm cuối:</p>$$U_{AB}=V_A-V_B=45-15$$<div class=\"bt-ans\">$$U_{AB}=30\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của lực điện lên electron (J)</span></p><p>Electron có $q=-e$ ; giữ cả dấu của $q$:</p>$$A_{AB}=qU_{AB}=(-1{,}6\\cdot10^{-19})\\cdot30$$<div class=\"bt-ans\">$$A_{AB}=-4{,}8\\cdot10^{-18}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi sang eV</span></p><p>$1\\ \\text{eV}=1{,}6\\cdot10^{-19}\\ \\text{J}$ nên chia cho hệ số này:</p>$$A_{AB}=\\dfrac{-4{,}8\\cdot10^{-18}}{1{,}6\\cdot10^{-19}}$$<div class=\"bt-ans\">$$A_{AB}=-30\\ \\text{eV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của lực điện lên proton</span></p><p>Proton có $q=+e$, cùng điểm đầu A và điểm cuối B:</p>$$A_{AB}=eU_{AB}=(+1)\\,e\\cdot30\\ \\text{V}$$<div class=\"bt-ans\">$$A_{AB}=+30\\ \\text{eV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cùng đường đi A → B, hai công đối nhau vì $q$ đối dấu ✓.</p><p>Công của electron theo eV có cùng độ lớn với $U_{AB}$ tính bằng vôn ✓.</p><p>Đổi thứ tự điểm cho kết quả ngược dấu ; đề hỏi đi từ A đến B nên dùng $U_{AB}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $U_{AB}=30\\ \\text{V}$</p><p>b) $A=-4{,}8\\cdot10^{-18}\\ \\text{J}=-30\\ \\text{eV}$</p><p>c) $A=+30\\ \\text{eV}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>điện thế hai điểm</strong> và <strong>electron hoặc proton đi từ điểm này đến điểm kia</strong> → $U=V_{\\text{đầu}}-V_{\\text{cuối}}$, rồi $A=qU$ giữ đủ dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Hai điểm A và B với điện thế đã cho và hiệu điện thế cần tìm\"><line x1=\"90.0\" y1=\"36.0\" x2=\"90.0\" y2=\"172.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"330.0\" y1=\"36.0\" x2=\"330.0\" y2=\"172.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"90.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> = +45 V</tspan></text><text x=\"330.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">B</tspan><tspan dy=\"-4\"> = +15 V</tspan></text><circle cx=\"90.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"68\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">A</text><circle cx=\"330.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"340\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">B</text><line x1=\"90\" y1=\"150\" x2=\"330\" y2=\"150\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M322.4,145.6 L330.0,150.0 L322.4,154.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"330\" y1=\"150\" x2=\"90\" y2=\"150\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M97.6,154.4 L90.0,150.0 L97.6,145.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210.0\" y=\"142.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U<tspan dy=\"4\" font-size=\"10\">AB</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Mốc điện thế: Trái Đất (0 V)</text><circle cx=\"104.0\" cy=\"100.0\" r=\"8\" fill=\"#38bdf8\" fill-opacity=\".3\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"104.0\" y=\"104.5\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"210\" y=\"70\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">electron: q = −e</text><text x=\"210\" y=\"92\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">proton: q = +e</text></svg><figcaption>Dữ kiện: điện thế tại A, B; electron và proton đều đi từ A đến B. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chọn mốc điện thế ở Trái Đất\"</td><td>$V_{\\text{đất}}=0$</td><td>⚠ Hiệu điện thế không phụ thuộc mốc ; điện thế thì có</td></tr><tr><td>\"điện thế tại A là $+45$ V, tại B là $+15$ V\"</td><td>$V_A=45$ V ; $V_B=15$ V</td><td>Định nghĩa hiệu điện thế giữa hai điểm</td></tr><tr><td>\"tính hiệu điện thế $U_{AB}$\"</td><td>Cần: $U_{AB}$</td><td>Thứ tự hai điểm trong kí hiệu $U_{AB}$</td></tr><tr><td>\"một electron đi từ A đến B\"</td><td>$q=-e=-1{,}6\\cdot10^{-19}$ C ; đầu A, cuối B</td><td>Công của lực điện và hiệu điện thế ; dấu của $q$</td></tr><tr><td>\"theo J và theo eV\"</td><td>$1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J</td><td>Đổi đơn vị năng lượng</td></tr><tr><td>\"một proton cũng đi từ A đến B\"</td><td>$q=+e$ ; cùng điểm đầu, điểm cuối</td><td>Dấu của $q$ ảnh hưởng thế nào đến công</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>điện thế hai điểm</b> và <b>electron đi từ A đến B</b> → <b>U = V_đầu − V_cuối</b>, rồi <b>A = qU</b> đủ dấu.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hiệu điện thế U_AB",
+     "hoi": "Hiệu điện thế $U_{AB}$ bằng bao nhiêu vôn?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $V_B-V_A$ (đảo thứ tự), hoặc cộng hai điện thế."
+    },
+    {
+     "tieu_de": "Công của lực điện lên electron (J)",
+     "hoi": "Công của lực điện lên electron theo đơn vị $10^{-18}\\ \\text{J}$ (kể cả dấu)?",
+     "dap_so": -4.8,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻¹⁸ J",
+     "loi_hay_gap": "Dùng độ lớn $e$ mà bỏ dấu âm của electron nên công sai dấu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $A=qU_{AB}$ với $q=-e$ và giữ cả hai dấu",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A=eU_{AB}$ vì chỉ cần độ lớn điện tích",
+       "dung": false,
+       "vi_sao": "Electron mang điện âm ; bỏ dấu của $q$ làm sai dấu của công."
+      },
+      {
+       "text": "Dùng $A=q(V_A+V_B)$",
+       "dung": false,
+       "vi_sao": "Công của lực điện phụ thuộc hiệu hai điện thế, không phải tổng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi sang eV",
+     "hoi": "Công đó bằng bao nhiêu eV (kể cả dấu)?",
+     "dap_so": -30,
+     "sai_so": 0.5,
+     "don_vi": "eV",
+     "loi_hay_gap": "Nhân thay vì chia cho $1{,}6\\cdot10^{-19}$, hoặc giữ nguyên số vì cho rằng J và eV như nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia công theo J cho $1{,}6\\cdot10^{-19}\\ \\text{J}$ ứng với mỗi eV",
+       "dung": true
+      },
+      {
+       "text": "Nhân công theo J với $1{,}6\\cdot10^{-19}$",
+       "dung": false,
+       "vi_sao": "$1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J, nên từ J sang eV phải chia ; nhân cho số rất nhỏ."
+      },
+      {
+       "text": "Giữ nguyên số vì eV và J cùng là đơn vị năng lượng",
+       "dung": false,
+       "vi_sao": "eV nhỏ hơn J rất nhiều nên con số phải đổi theo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực điện lên proton",
+     "hoi": "Công của lực điện lên proton đi từ A đến B theo eV (kể cả dấu)?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "eV",
+     "loi_hay_gap": "Lấy lại kết quả của electron mà không đổi dấu theo điện tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $q=+e$ rồi dùng $A=qU_{AB}$ với cùng $U_{AB}$",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại kết quả của electron",
+       "dung": false,
+       "vi_sao": "Proton mang điện dương, dấu của $q$ đổi nên dấu của công đổi."
+      },
+      {
+       "text": "Dùng $U_{BA}$ cho proton",
+       "dung": false,
+       "vi_sao": "Đề cho đi từ A đến B nên dùng $U_{AB}$ ; thứ tự phải theo điểm đầu và điểm cuối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Liên hệ U = Ed: hình chiếu dọc đường sức và bài ngược",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "problem_html": "<p>Hai bản kim loại phẳng song song cách nhau $6{,}0\\ \\text{cm}$, hiệu điện thế giữa hai bản là $240\\ \\text{V}$. Coi điện trường giữa hai bản là đều, đường sức vuông góc với các bản. Ba điểm M, N, P nằm giữa hai bản: MP song song với đường sức và cùng chiều đường sức khi đi từ M đến P; tam giác MNP vuông tại P, $MN=5{,}0\\ \\text{cm}$, $NP=4{,}0\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính hiệu điện thế $U_{MN}$.</li><li>Tìm khoảng cách từ M đến mặt đẳng thế nằm về phía bản âm, sao cho hiệu điện thế giữa M và mặt đó bằng $60\\ \\text{V}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Một điểm chạy từ M đến N, bóng của nó trên đường sức chạy từ M đến P\"><rect x=\"28\" y=\"24\" width=\"10\" height=\"190\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><rect x=\"382\" y=\"24\" width=\"10\" height=\"190\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><text x=\"33\" y=\"18\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"387\" y=\"18\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><g opacity=\"0.6\"><line x1=\"44\" y1=\"58\" x2=\"374\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,52.5 L374.0,58.0 L364.5,63.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"44\" y1=\"100\" x2=\"374\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,94.5 L374.0,100.0 L364.5,105.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"44\" y1=\"205\" x2=\"374\" y2=\"205\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,199.5 L374.0,205.0 L364.5,210.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"210\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 240 V</text><line x1=\"38\" y1=\"230\" x2=\"382\" y2=\"230\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M375.0,225.9 L382.0,230.0 L375.0,234.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"382\" y1=\"230\" x2=\"38\" y2=\"230\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M45.0,234.1 L38.0,230.0 L45.0,225.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"224\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 6,0 cm</text><line x1=\"130.0\" y1=\"100.0\" x2=\"200.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"200.0\" y1=\"100.0\" x2=\"200.0\" y2=\"185.0\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"130.0\" y1=\"100.0\" x2=\"200.0\" y2=\"185.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M190,100 L190,110 L200,110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"130.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"185.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"116\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><text x=\"208\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">P</text><text x=\"210\" y=\"201\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"122\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">MN = 5,0 cm</text><text x=\"212\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">NP = 4,0 cm</text><text x=\"175\" y=\"78\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">hình chiếu ?</text><line x1=\"130\" y1=\"100\" x2=\"130\" y2=\"100\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"><animate attributeName=\"x1\" values=\"130.0;131.8;133.5;135.2;137.0;138.8;140.5;142.2;144.0;145.8;147.5;149.2;151.0;152.8;154.5;156.2;158.0;159.8;161.5;163.2;165.0;166.8;168.5;170.2;172.0;173.8;175.5;177.2;179.0;180.8;182.5;184.2;186.0;187.8;189.5;191.2;193.0;194.8;196.5;198.2;200.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"130.0;131.8;133.5;135.2;137.0;138.8;140.5;142.2;144.0;145.8;147.5;149.2;151.0;152.8;154.5;156.2;158.0;159.8;161.5;163.2;165.0;166.8;168.5;170.2;172.0;173.8;175.5;177.2;179.0;180.8;182.5;184.2;186.0;187.8;189.5;191.2;193.0;194.8;196.5;198.2;200.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"100.0;102.1;104.2;106.4;108.5;110.6;112.8;114.9;117.0;119.1;121.2;123.4;125.5;127.6;129.8;131.9;134.0;136.1;138.2;140.4;142.5;144.6;146.8;148.9;151.0;153.1;155.2;157.4;159.5;161.6;163.8;165.9;168.0;170.1;172.2;174.4;176.5;178.6;180.8;182.9;185.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"130\" cy=\"100\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"130.0;131.8;133.5;135.2;137.0;138.8;140.5;142.2;144.0;145.8;147.5;149.2;151.0;152.8;154.5;156.2;158.0;159.8;161.5;163.2;165.0;166.8;168.5;170.2;172.0;173.8;175.5;177.2;179.0;180.8;182.5;184.2;186.0;187.8;189.5;191.2;193.0;194.8;196.5;198.2;200.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"130\" cy=\"100\" r=\"6.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"130.0;131.8;133.5;135.2;137.0;138.8;140.5;142.2;144.0;145.8;147.5;149.2;151.0;152.8;154.5;156.2;158.0;159.8;161.5;163.2;165.0;166.8;168.5;170.2;172.0;173.8;175.5;177.2;179.0;180.8;182.5;184.2;186.0;187.8;189.5;191.2;193.0;194.8;196.5;198.2;200.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"100.0;102.1;104.2;106.4;108.5;110.6;112.8;114.9;117.0;119.1;121.2;123.4;125.5;127.6;129.8;131.9;134.0;136.1;138.2;140.4;142.5;144.6;146.8;148.9;151.0;153.1;155.2;157.4;159.5;161.6;163.8;165.9;168.0;170.1;172.2;174.4;176.5;178.6;180.8;182.9;185.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm xanh chạy từ M đến N, chấm cam là hình chiếu của nó lên đường sức. Tốc độ chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trường đều giữa hai bản ; điện thế giảm theo chiều đường sức ; đoạn vuông góc đường sức cùng điện thế.</li><li><strong>Công thức:</strong> $E=\\dfrac{U}{d}$ ; $U_{MN}=Ed_{MN}$, $d_{MN}$ là hình chiếu có dấu của MN lên đường sức.</li><li>⚠ <strong>Điều kiện:</strong> $d$ đo dọc đường sức, không đo theo đoạn xiên ; đổi cm ra m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ điện trường</span></p><p>Đổi khoảng cách hai bản ra mét:</p>$$E=\\dfrac{U}{d}=\\dfrac{240}{0{,}060}$$<div class=\"bt-ans\">$$E=4{,}0\\cdot10^{3}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hình chiếu của MN lên đường sức</span></p><p>NP vuông góc đường sức, MP dọc đường sức. Tam giác MNP vuông tại P:</p>$$MP=\\sqrt{MN^2-NP^2}=\\sqrt{5{,}0^2-4{,}0^2}$$<div class=\"bt-ans\">$$d_{MN}=MP=3{,}0\\ \\text{cm}=0{,}030\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hiệu điện thế U_MN</span></p><p>Chỉ phần dọc đường sức góp vào hiệu điện thế:</p>$$U_{MN}=Ed_{MN}=4{,}0\\cdot10^{3}\\cdot0{,}030$$<div class=\"bt-ans\">$$U_{MN}=120\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khoảng cách ứng với 60 V</span></p><p>Rút $d$ từ hệ thức $U=Ed$:</p>$$d=\\dfrac{U}{E}=\\dfrac{60}{4{,}0\\cdot10^{3}}$$<div class=\"bt-ans\">$$d=0{,}015\\ \\text{m}=1{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Dùng cả đoạn xiên $MN=5{,}0$ cm sẽ ra $200\\ \\text{V}$, lớn hơn kết quả vì MN dài hơn hình chiếu ✓.</p><p>$U_{MN}=120$ V bằng nửa $240$ V, ứng với $3{,}0$ cm bằng nửa $6{,}0$ cm ✓.</p><p>$60$ V bằng nửa $120$ V, ứng với $1{,}5$ cm bằng nửa $3{,}0$ cm ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=4{,}0\\cdot10^{3}\\ \\text{V/m}$</p><p>b) $U_{MN}=120\\ \\text{V}$</p><p>c) $d=1{,}5\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai bản song song</strong> hoặc <strong>đoạn xiên so với đường sức</strong> → $E=\\dfrac{U}{d}$, rồi $U=Ed$ với $d$ là hình chiếu dọc đường sức.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hai bản song song, tam giác MNP vuông tại P với MP dọc đường sức và NP vuông góc đường sức\"><rect x=\"28\" y=\"24\" width=\"10\" height=\"190\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><rect x=\"382\" y=\"24\" width=\"10\" height=\"190\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><text x=\"33\" y=\"18\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"387\" y=\"18\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><g opacity=\"0.6\"><line x1=\"44\" y1=\"58\" x2=\"374\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,52.5 L374.0,58.0 L364.5,63.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"44\" y1=\"100\" x2=\"374\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,94.5 L374.0,100.0 L364.5,105.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"44\" y1=\"205\" x2=\"374\" y2=\"205\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M364.5,199.5 L374.0,205.0 L364.5,210.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"210\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 240 V</text><line x1=\"38\" y1=\"230\" x2=\"382\" y2=\"230\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M375.0,225.9 L382.0,230.0 L375.0,234.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"382\" y1=\"230\" x2=\"38\" y2=\"230\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M45.0,234.1 L38.0,230.0 L45.0,225.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"224\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 6,0 cm</text><line x1=\"130.0\" y1=\"100.0\" x2=\"200.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"200.0\" y1=\"100.0\" x2=\"200.0\" y2=\"185.0\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"130.0\" y1=\"100.0\" x2=\"200.0\" y2=\"185.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M190,100 L190,110 L200,110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"130.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"185.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"116\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><text x=\"208\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">P</text><text x=\"210\" y=\"201\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N</text><text x=\"122\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">MN = 5,0 cm</text><text x=\"212\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">NP = 4,0 cm</text><text x=\"175\" y=\"78\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">hình chiếu ?</text></svg><figcaption>Dữ kiện: hai bản, hiệu điện thế và hai cạnh MN, NP; độ dài MP và hình chiếu cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cách nhau $6{,}0$ cm, hiệu điện thế $240$ V\"</td><td>$d=6{,}0$ cm ; $U=240$ V</td><td>⚠ Hệ thức giữa $E$ và $U$ chỉ dùng trong điện trường đều, $d$ đo dọc đường sức ; đổi cm ra m</td></tr><tr><td>\"coi điện trường giữa hai bản là đều … tính cường độ điện trường\"</td><td>Điện trường đều ; cần: $E$</td><td>Hệ thức giữa cường độ điện trường và hiệu điện thế</td></tr><tr><td>\"MP song song và cùng chiều đường sức\"</td><td>MP dọc đường sức, từ M đến P</td><td>Đoạn dọc đường sức dùng làm $d$</td></tr><tr><td>\"tam giác MNP vuông tại P, $MN=5{,}0$ cm, $NP=4{,}0$ cm\"</td><td>$MN=5{,}0$ cm ; $NP=4{,}0$ cm ; NP vuông góc MP</td><td>Quan hệ giữa các cạnh tam giác vuông ; NP nằm vuông góc với đường sức</td></tr><tr><td>\"tính hiệu điện thế $U_{MN}$\"</td><td>Cần: $U_{MN}$</td><td>Cách chọn $d$ khi MN xiên so với đường sức</td></tr><tr><td>\"cách M … hiệu điện thế giữa M và mặt đó bằng $60$ V\"</td><td>$U=60$ V ; cần: khoảng cách</td><td>Đặt ẩn là $d$ trong hệ thức giữa $E$ và $U$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai bản song song</b> hoặc <b>đoạn xiên</b> → <b>E = U/d</b>, rồi <b>U = Ed</b> với <b>d dọc đường sức</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường giữa hai bản theo đơn vị $10^{3}\\ \\text{V/m}$?",
+     "dap_so": 4.0,
+     "sai_so": 0.05,
+     "don_vi": "×10³ V/m",
+     "loi_hay_gap": "Dùng khoảng cách tính bằng cm trực tiếp nên $E$ lệch $100$ lần."
+    },
+    {
+     "tieu_de": "Hình chiếu của MN lên đường sức",
+     "hoi": "Hình chiếu của MN lên phương đường sức dài bao nhiêu cm?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy luôn độ dài MN, hoặc lấy cạnh NP làm hình chiếu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy cạnh MP song song đường sức, tính từ hai cạnh còn lại của tam giác vuông",
+       "dung": true
+      },
+      {
+       "text": "Lấy luôn độ dài MN vì M và N là hai điểm cần xét",
+       "dung": false,
+       "vi_sao": "MN xiên so với đường sức ; chỉ phần dọc đường sức góp vào hiệu điện thế."
+      },
+      {
+       "text": "Lấy cạnh NP",
+       "dung": false,
+       "vi_sao": "NP vuông góc đường sức, nằm trên một mặt đẳng thế nên không góp vào hiệu điện thế."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế U_MN",
+     "hoi": "Hiệu điện thế $U_{MN}$ bằng bao nhiêu vôn?",
+     "dap_so": 120,
+     "sai_so": 1.5,
+     "don_vi": "V",
+     "loi_hay_gap": "Nhân $E$ với độ dài MN, hoặc để hình chiếu ở đơn vị cm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $E$ với hình chiếu vừa tìm, đã đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "Nhân $E$ với độ dài MN",
+       "dung": false,
+       "vi_sao": "MN là đoạn xiên ; $U=Ed$ chỉ đúng với $d$ đo dọc đường sức."
+      },
+      {
+       "text": "Nhân $E$ với cạnh NP",
+       "dung": false,
+       "vi_sao": "NP vuông góc đường sức nên hiệu điện thế giữa N và P bằng $0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách ứng với 60 V",
+     "hoi": "Khoảng cách từ M đến mặt đẳng thế đó bằng bao nhiêu cm?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia ngược $\\dfrac{E}{U}$, hoặc cộng $60$ V với hiệu điện thế vừa tìm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Rút $d$ từ $U=Ed$ với $U=60$ V",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d=U\\cdot E$",
+       "dung": false,
+       "vi_sao": "Tích $U\\cdot E$ có đơn vị $\\text{V}^2/\\text{m}$, không phải mét."
+      },
+      {
+       "text": "Cộng $60$ V với $U_{MN}$ rồi chia cho $E$",
+       "dung": false,
+       "vi_sao": "$60$ V là hiệu điện thế tính từ M đến mặt cần tìm, không cộng thêm $U_{MN}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Hai bản song song: điện thế tại một điểm, công lên electron, đổi mốc",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "problem_html": "<p>Hai bản kim loại phẳng song song cách nhau $5{,}0\\ \\text{cm}$, nối với nguồn $150\\ \\text{V}$: bản A nối cực dương, bản B nối cực âm. Điểm M nằm giữa hai bản, cách bản B một đoạn $1{,}5\\ \\text{cm}$. Chọn mốc điện thế ở bản A. Lấy $e=1{,}6\\cdot10^{-19}\\ \\text{C}$.</p><ol type=\"a\"><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính điện thế tại M.</li><li>Một electron đi từ bản B đến M. Tính công của lực điện, theo eV và theo J.</li><li>Chọn lại mốc điện thế ở bản B. Điện thế tại M bằng bao nhiêu? Công ở câu c) có thay đổi không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Electron đi từ bản âm B đến điểm M giữa hai bản\"><rect x=\"34\" y=\"30\" width=\"10\" height=\"160\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><rect x=\"380\" y=\"30\" width=\"10\" height=\"160\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><text x=\"39\" y=\"24\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"385\" y=\"24\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"39\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"385\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><g opacity=\"0.6\"><line x1=\"52\" y1=\"50\" x2=\"370\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M360.5,44.5 L370.0,50.0 L360.5,55.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"52\" y1=\"170\" x2=\"370\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M360.5,164.5 L370.0,170.0 L360.5,175.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"210\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 150 V</text><circle cx=\"279.0\" cy=\"110.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"261\" y=\"134\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><text x=\"279.0\" y=\"96.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"279\" y1=\"140\" x2=\"380\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M373.0,135.9 L380.0,140.0 L373.0,144.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"380\" y1=\"140\" x2=\"279\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M286.0,144.1 L279.0,140.0 L286.0,135.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"330\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">1,5 cm</text><line x1=\"44\" y1=\"218\" x2=\"380\" y2=\"218\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M373.0,213.9 L380.0,218.0 L373.0,222.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"380\" y1=\"218\" x2=\"44\" y2=\"218\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M51.0,222.1 L44.0,218.0 L51.0,213.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"212\" y=\"212\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 5,0 cm</text><text x=\"16\" y=\"242\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Mốc V = 0 ở bản A</text><circle cx=\"366.0\" cy=\"110.0\" r=\"8\" fill=\"#38bdf8\" fill-opacity=\".3\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"366.0;364.3;362.6;360.8;359.1;357.4;355.6;353.9;352.2;350.5;348.8;347.0;345.3;343.6;341.9;340.1;338.4;336.7;334.9;333.2;331.5;329.8;328.1;326.3;324.6;322.9;321.1;319.4;317.7;316.0;314.2;312.5;310.8;309.1;307.4;305.6;303.9;302.2;300.4;298.7;297.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"366.0\" y=\"114.5\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−<animate attributeName=\"x\" values=\"366.0;364.3;362.6;360.8;359.1;357.4;355.6;353.9;352.2;350.5;348.8;347.0;345.3;343.6;341.9;340.1;338.4;336.7;334.9;333.2;331.5;329.8;328.1;326.3;324.6;322.9;321.1;319.4;317.7;316.0;314.2;312.5;310.8;309.1;307.4;305.6;303.9;302.2;300.4;298.7;297.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5;114.5\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: electron đi từ bản B đến M; tốc độ trên hình không thể hiện lực điện tăng hay giảm tốc electron. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện thế đo so với mốc ; điện thế giảm theo chiều đường sức ; đổi mốc thì mọi $V$ đổi, $U$ giữ nguyên.</li><li><strong>Công thức:</strong> $E=\\dfrac{U}{d}$ ; $U_{MN}=V_M-V_N$ ; $A_{MN}=qU_{MN}$.</li><li>Electron $q=-e$ ; $1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J.</li><li>⚠ <strong>Điều kiện:</strong> khoảng cách tính từ điểm đến đúng bản làm mốc ; điểm đầu viết trước trong $U$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ điện trường</span></p>$$E=\\dfrac{U}{d}=\\dfrac{150}{0{,}050}$$<div class=\"bt-ans\">$$E=3{,}0\\cdot10^{3}\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện thế tại M (mốc ở bản A)</span></p><p>Đường sức đi từ A sang B, mốc ở A nên điện thế giảm dần từ $0$. Khoảng cách từ M đến bản mốc A:</p>$$AM=5{,}0-1{,}5=3{,}5\\ \\text{cm}=0{,}035\\ \\text{m}$$$$V_M=V_A-E\\cdot AM=0-3{,}0\\cdot10^{3}\\cdot0{,}035$$<div class=\"bt-ans\">$$V_M=-105\\ \\text{V}$$</div><p>Bản B có $V_B=-150\\ \\text{V}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực điện lên electron (B → M)</span></p><p>Điểm đầu là bản B, điểm cuối là M:</p>$$U_{BM}=V_B-V_M=-150-(-105)=-45\\ \\text{V}$$$$A_{BM}=qU_{BM}=(-e)\\cdot(-45\\ \\text{V})$$<div class=\"bt-ans\">$$A_{BM}=+45\\ \\text{eV}=45\\cdot1{,}6\\cdot10^{-19}=7{,}2\\cdot10^{-18}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện thế tại M khi mốc ở bản B</span></p><p>Mốc mới ở B ; M cách B là $0{,}015$ m và nằm về phía có điện thế cao hơn B:</p>$$V_M'=V_B'+E\\cdot BM=0+3{,}0\\cdot10^{3}\\cdot0{,}015$$<div class=\"bt-ans\">$$V_M'=+45\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công khi đổi mốc</span></p>$$U_{BM}=V_B'-V_M'=0-45=-45\\ \\text{V}$$<div class=\"bt-ans\"><p>Điện thế đổi theo mốc ; $U_{BM}$ giữ nguyên nên công vẫn là <strong>$+45$ eV</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$-105\\ \\text{V}$ nằm giữa $0$ và $-150\\ \\text{V}$ ✓.</p><p>Mốc dời từ A sang B làm mọi điện thế tăng cùng $150\\ \\text{V}$ : $-105+150=45$ ✓.</p><p>Electron đi về phía điện thế cao hơn nên lực điện sinh công dương ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=3{,}0\\cdot10^{3}\\ \\text{V/m}$</p><p>b) $V_M=-105\\ \\text{V}$</p><p>c) $A=+45\\ \\text{eV}=7{,}2\\cdot10^{-18}\\ \\text{J}$</p><p>d) $V_M=+45\\ \\text{V}$ ; công không đổi</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai bản song song</strong>, <strong>chọn mốc</strong> hoặc <strong>đổi mốc</strong> → điện thế từ khoảng cách tới bản mốc ; công từ $A=qU$ không phụ thuộc mốc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hai bản song song nối nguồn 150 V, điểm M cách bản B 1,5 cm, mốc điện thế ở bản A\"><rect x=\"34\" y=\"30\" width=\"10\" height=\"160\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><rect x=\"380\" y=\"30\" width=\"10\" height=\"160\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.15\"/><text x=\"39\" y=\"24\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"385\" y=\"24\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"39\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"385\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><g opacity=\"0.6\"><line x1=\"52\" y1=\"50\" x2=\"370\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M360.5,44.5 L370.0,50.0 L360.5,55.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"52\" y1=\"170\" x2=\"370\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M360.5,164.5 L370.0,170.0 L360.5,175.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"210\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 150 V</text><circle cx=\"279.0\" cy=\"110.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"261\" y=\"134\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M</text><text x=\"279.0\" y=\"96.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"279\" y1=\"140\" x2=\"380\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M373.0,135.9 L380.0,140.0 L373.0,144.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"380\" y1=\"140\" x2=\"279\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M286.0,144.1 L279.0,140.0 L286.0,135.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"330\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">1,5 cm</text><line x1=\"44\" y1=\"218\" x2=\"380\" y2=\"218\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M373.0,213.9 L380.0,218.0 L373.0,222.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"380\" y1=\"218\" x2=\"44\" y2=\"218\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M51.0,222.1 L44.0,218.0 L51.0,213.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"212\" y=\"212\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 5,0 cm</text><text x=\"16\" y=\"242\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Mốc V = 0 ở bản A</text></svg><figcaption>Dữ kiện: hiệu điện thế, khoảng cách hai bản, vị trí M tính từ bản B, mốc ở bản A. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cách nhau $5{,}0$ cm, nối với nguồn $150$ V\"</td><td>$d=5{,}0$ cm ; $U=150$ V</td><td>⚠ Điện thế của mỗi điểm tính từ đúng bản được chọn làm mốc ; đổi cm ra m</td></tr><tr><td>\"bản A nối cực dương, bản B nối cực âm\"</td><td>Chiều đường sức: từ A sang B</td><td>Điện thế thay đổi thế nào dọc theo đường sức</td></tr><tr><td>\"M cách bản B một đoạn $1{,}5$ cm\"</td><td>$BM=1{,}5$ cm</td><td>Khoảng cách từ M đến bản mốc là bao nhiêu</td></tr><tr><td>\"chọn mốc điện thế ở bản A\"</td><td>$V_A=0$</td><td>Điện thế tại điểm bất kì so với mốc</td></tr><tr><td>\"tính cường độ điện trường … điện thế tại M\"</td><td>Cần: $E$ ; $V_M$</td><td>Hệ thức giữa $E$ và $U$ ; điện thế tại điểm từ khoảng cách tới mốc</td></tr><tr><td>\"electron đi từ bản B đến M\"</td><td>$q=-e$ ; đầu B, cuối M</td><td>Công của lực điện và hiệu điện thế ; đổi eV ra J</td></tr><tr><td>\"chọn lại mốc ở bản B\"</td><td>$V_B=0$</td><td>Mốc đổi thì đại lượng nào đổi, đại lượng nào giữ nguyên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chọn mốc</b> và <b>đổi mốc</b> → điện thế từ <b>khoảng cách tới bản mốc</b> ; công <b>A = qU</b> không đổi.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường giữa hai bản theo đơn vị $10^{3}\\ \\text{V/m}$?",
+     "dap_so": 3.0,
+     "sai_so": 0.03,
+     "don_vi": "×10³ V/m",
+     "loi_hay_gap": "Dùng khoảng cách tính bằng cm trực tiếp nên $E$ lệch $100$ lần."
+    },
+    {
+     "tieu_de": "Điện thế tại M (mốc ở bản A)",
+     "hoi": "Điện thế tại M bằng bao nhiêu vôn (kể cả dấu)?",
+     "dap_so": -105,
+     "sai_so": 1.5,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy khoảng cách từ M đến bản B thay vì đến bản mốc A, hoặc quên rằng điện thế giảm dần từ mốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm khoảng cách từ M đến bản làm mốc rồi xét điện thế giảm dọc đường sức",
+       "dung": true
+      },
+      {
+       "text": "Lấy khoảng cách $1{,}5$ cm từ M đến bản B",
+       "dung": false,
+       "vi_sao": "Mốc ở bản A nên khoảng cách phải tính từ M đến bản A, không phải đến bản B."
+      },
+      {
+       "text": "Lấy $V_M$ bằng hiệu điện thế hai bản",
+       "dung": false,
+       "vi_sao": "Hiệu điện thế hai bản là $U$ ; điện thế tại M chỉ là một phần của nó, tính so với mốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực điện lên electron (B → M)",
+     "hoi": "Công của lực điện lên electron đi từ B đến M theo eV (kể cả dấu)?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "eV",
+     "loi_hay_gap": "Dùng $A=qV_M$ thay vì hiệu hai điện thế, hoặc đảo thứ tự hai điểm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $A=qU_{BM}$ với điểm đầu là bản B",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A=qV_M$ vì M là điểm cuối",
+       "dung": false,
+       "vi_sao": "Công phụ thuộc hiệu hai điện thế ; riêng $V_M$ còn thay đổi theo mốc."
+      },
+      {
+       "text": "Dùng $A=qU_{MB}$",
+       "dung": false,
+       "vi_sao": "Điểm đầu là bản B nên phải viết B trước rồi đến M."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện thế tại M khi mốc ở bản B",
+     "hoi": "Khi mốc ở bản B, điện thế tại M bằng bao nhiêu vôn (kể cả dấu)?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "V",
+     "loi_hay_gap": "Giữ nguyên điện thế cũ, hoặc chỉ đổi dấu điện thế cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại từ khoảng cách tới mốc mới và xét M cao hay thấp hơn mốc",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $V_M$ vì M không di chuyển",
+       "dung": false,
+       "vi_sao": "Điện thế đo so với mốc nên đổi mốc là đổi giá trị."
+      },
+      {
+       "text": "Chỉ đổi dấu điện thế cũ",
+       "dung": false,
+       "vi_sao": "Đổi mốc không đơn giản là đổi dấu ; giá trị mới tính lại từ khoảng cách tới mốc mới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công khi đổi mốc",
+     "hoi": "Khi đổi mốc sang bản B, công ở câu c) thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Không đổi, vì công phụ thuộc hiệu điện thế giữa hai điểm",
+       "dung": true
+      },
+      {
+       "text": "Đổi theo điện thế mới của M",
+       "dung": false,
+       "vi_sao": "Điện thế đổi theo mốc nhưng hiệu điện thế giữa hai điểm giữ nguyên nên công không đổi."
+      },
+      {
+       "text": "Đổi dấu, vì điện thế đổi dấu",
+       "dung": false,
+       "vi_sao": "Hiệu điện thế $U_{BM}$ không đổi dấu khi đổi mốc ; công giữ nguyên."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng đổi mốc thì công cũng đổi theo điện thế.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại hiệu điện thế giữa hai điểm với mốc mới rồi so sánh",
+       "dung": true
+      },
+      {
+       "text": "Thế điện thế mới của M vào $A=qV$",
+       "dung": false,
+       "vi_sao": "Công cần hiệu hai điện thế, không cần điện thế riêng lẻ."
+      },
+      {
+       "text": "Giữ nguyên mọi điện thế cũ",
+       "dung": false,
+       "vi_sao": "Đổi mốc là đổi điện thế các điểm ; phải xét xem hiệu của chúng có đổi không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

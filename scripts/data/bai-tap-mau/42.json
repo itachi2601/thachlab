@@ -1,0 +1,556 @@
+{
+ "lesson_id": 42,
+ "lesson_title": "Bài 23. Điện trở. Định luật Ohm",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) — đã tự giải lại bằng Python 10/10/2026 kiem-code tự giải độc lập 10/10/2026: đạt sau sửa."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tính điện trở và dòng điện, có đổi mA sang A",
+   "topic": "Điện trở. Định luật Ohm",
+   "problem_html": "<p>Một điện trở được mắc vào nguồn điều chỉnh được, nhiệt độ của nó giữ ổn định. Khi hiệu điện thế hai đầu điện trở là $6{,}0$ V, ampe kế chỉ $24$ mA.</p><ol type=\"a\"><li>Tính điện trở $R$ theo đơn vị ôm.</li><li>Tăng hiệu điện thế của nguồn lên $15$ V. Tính cường độ dòng điện qua điện trở theo đơn vị mA.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 192\" role=\"img\" aria-label=\"Mạch gồm nguồn, điện trở và các êlectron tự do chuyển động qua điện trở\"><line x1=\"70.0\" y1=\"50.0\" x2=\"196.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"224.0\" y1=\"50.0\" x2=\"350.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"50.0\" x2=\"70.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"108.0\" x2=\"70.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"160.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"50.0\" x2=\"350.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"130.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"84.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"62.0\" y1=\"108.0\" x2=\"78.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"94\" y=\"92\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"94\" y=\"117\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"338.0\" y=\"80.0\" width=\"24.0\" height=\"50.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"210.0\" cy=\"50.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"350.0\" y1=\"66.0\" x2=\"388.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"66.0\" x2=\"388.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"119.0\" x2=\"388.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"144.0\" x2=\"350.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"350.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"144.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"388.0\" cy=\"105.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"388\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"326\" y=\"110\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R ?</text><text x=\"70\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nguồn điều chỉnh được</text><circle cx=\"70.0\" cy=\"160.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"70.0;265.0\" keyTimes=\"0.0000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160;160\" keyTimes=\"0.0000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"167.5\" cy=\"160.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"167.5;350;350\" keyTimes=\"0.0000;0.9359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160;160;147.5\" keyTimes=\"0.0000;0.9359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"265.0\" cy=\"160.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"265.0;350;350\" keyTimes=\"0.0000;0.4359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160;160;50.0\" keyTimes=\"0.0000;0.4359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"350.0\" cy=\"147.5\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"350;350;252.5\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"147.5;50;50\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"350.0\" cy=\"50.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"350;155.0\" keyTimes=\"0.0000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"50.0;50\" keyTimes=\"0.0000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"252.5\" cy=\"50.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"252.5;70;70\" keyTimes=\"0.0000;0.9359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"50;50;62.5\" keyTimes=\"0.0000;0.9359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"155.0\" cy=\"50.0\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"155.0;70;70.0\" keyTimes=\"0.0000;0.4359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"50;50;160\" keyTimes=\"0.0000;0.4359;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"70.0\" cy=\"62.5\" r=\"3.8\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"70;70;167.5\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"62.5;160;160\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: êlectron tự do (chấm xanh) đi từ cực âm của nguồn, qua điện trở, về cực dương; chạy chậm hơn nhiều lần so với thật. Chiều dòng điện quy ước ngược chiều êlectron. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trở đo mức cản dòng của vật dẫn<br>đơn vị ôm, $1\\ \\Omega=1$ V/A.</li><li><strong>Công thức:</strong> $R=\\dfrac{U}{I}$<br>định luật Ohm $I=\\dfrac{U}{R}$.</li><li>Đổi đơn vị: $1\\ \\text{mA}=10^{-3}\\ \\text{A}$<br>$1\\ \\text{k}\\Omega=10^{3}\\ \\Omega$.</li><li>⚠ <strong>Điều kiện:</strong> nhiệt độ ổn định thì $R$ không đổi<br>thế $U$ (V), $I$ (A) rồi mới tính.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi mA sang A</span></p><p>Công thức dùng ampe nên đổi trước khi thế số:</p>$$I=24\\ \\text{mA}=24\\cdot10^{-3}\\ \\text{A}$$<div class=\"bt-ans\">$$I=0{,}024\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính điện trở</span></p><p>Điện trở bằng hiệu điện thế chia cường độ dòng điện:</p>$$R=\\dfrac{U}{I}$$$$R=\\dfrac{6{,}0}{0{,}024}$$<div class=\"bt-ans\">$$R=250\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện khi hiệu điện thế là 15 V</span></p><p>Nhiệt độ ổn định nên $R$ giữ nguyên giá trị vừa tìm:</p>$$I'=\\dfrac{U'}{R}$$$$I'=\\dfrac{15}{250}$$<div class=\"bt-ans\">$$I'=0{,}060\\ \\text{A}=60\\ \\text{mA}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$\\dfrac{U'}{U}=\\dfrac{15}{6{,}0}=2{,}5$ và $\\dfrac{I'}{I}=\\dfrac{60}{24}=2{,}5$ ✓ dòng điện tỉ lệ thuận với hiệu điện thế.</p><p>Đơn vị: V/A = Ω ✓.</p><p>$250\\ \\Omega$ cỡ điện trở thông dụng ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=250\\ \\Omega$ ($=0{,}25\\ \\text{k}\\Omega$)</p><p>b) $I'=60\\ \\text{mA}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số chỉ mA hoặc kΩ</strong> và hỏi <strong>$R$ hoặc $I$</strong> → đổi về A, Ω rồi dùng $R=U/I$ ; $R$ không đổi khi nhiệt độ ổn định.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Mạch có ampe kế chỉ 24 mA, vôn kế chỉ 6,0 V và điện trở chưa biết\"><line x1=\"70.0\" y1=\"50.0\" x2=\"196.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"224.0\" y1=\"50.0\" x2=\"350.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"50.0\" x2=\"70.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"108.0\" x2=\"70.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"160.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"50.0\" x2=\"350.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"130.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"84.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"62.0\" y1=\"108.0\" x2=\"78.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"94\" y=\"92\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"94\" y=\"117\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"338.0\" y=\"80.0\" width=\"24.0\" height=\"50.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"210.0\" cy=\"50.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"350.0\" y1=\"66.0\" x2=\"388.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"66.0\" x2=\"388.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"119.0\" x2=\"388.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"144.0\" x2=\"350.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"350.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"144.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"388.0\" cy=\"105.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"388\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"326\" y=\"110\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R = ?</text><text x=\"210\" y=\"28\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">24 mA</text><text x=\"388\" y=\"44\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">6,0 V</text><text x=\"70\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nguồn điều chỉnh được</text><text x=\"16\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Sau đó tăng hiệu điện thế của nguồn lên 15 V</text><text x=\"16\" y=\"224\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: R (ôm) ; I′ (mA)</text></svg><figcaption>Dữ kiện: số chỉ của ampe kế và vôn kế; điện trở R và dòng điện I′ ở hiệu điện thế mới là ẩn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"nhiệt độ của nó giữ ổn định\"</td><td>Nhiệt độ không đổi</td><td>⚠ Điều kiện: điện trở chỉ giữ nguyên giá trị khi nhiệt độ ổn định</td></tr><tr><td>\"hiệu điện thế hai đầu điện trở là $6{,}0$ V\"</td><td>$U=6{,}0$ V</td><td>Hiệu điện thế hai đầu vật dẫn</td></tr><tr><td>\"ampe kế chỉ $24$ mA\"</td><td>$I=24$ mA</td><td>Đơn vị của cường độ dòng điện dùng trong công thức</td></tr><tr><td>\"tính điện trở $R$ theo đơn vị ôm\"</td><td>Cần: $R$ (Ω)</td><td>Định nghĩa điện trở</td></tr><tr><td>\"tăng hiệu điện thế … lên $15$ V\"</td><td>$U'=15$ V</td><td>Quan hệ giữa dòng điện, hiệu điện thế và điện trở</td></tr><tr><td>\"tính cường độ dòng điện … theo đơn vị mA\"</td><td>Cần: $I'$ (mA)</td><td>Định luật Ohm<br>đơn vị của đáp số</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>mA hoặc kΩ</b> trong đề, hỏi <b>R hoặc I</b> → đổi về <b>A, Ω</b> rồi dùng <b>R = U/I</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi mA sang A",
+     "hoi": "Cường độ dòng điện của ampe kế, đổi ra đơn vị ampe, bằng bao nhiêu?",
+     "dap_so": 0.024,
+     "sai_so": 0.0005,
+     "don_vi": "A",
+     "loi_hay_gap": "Thế thẳng số mA vào công thức mà không đổi ra ampe, kết quả lệch đi một nghìn lần."
+    },
+    {
+     "tieu_de": "Tính điện trở",
+     "hoi": "Điện trở $R$ bằng bao nhiêu ôm?",
+     "dap_so": 250,
+     "sai_so": 2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $I$ chia $U$ (ra $1/R$, đơn vị A/V), hoặc nhân $U$ với $I$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu điện thế chia cường độ dòng điện đã đổi ra ampe",
+       "dung": true
+      },
+      {
+       "text": "Lấy cường độ dòng điện chia hiệu điện thế",
+       "dung": false,
+       "vi_sao": "Phép chia này cho $1/R$, đơn vị A/V, không phải ôm."
+      },
+      {
+       "text": "Lấy hiệu điện thế nhân cường độ dòng điện",
+       "dung": false,
+       "vi_sao": "Tích $U\\cdot I$ có đơn vị V·A, không phải V/A của ôm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện khi hiệu điện thế là 15 V",
+     "hoi": "Cường độ dòng điện khi hiệu điện thế là $15$ V, theo đơn vị mA?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "mA",
+     "loi_hay_gap": "Cho rằng điện trở tăng cùng hiệu điện thế, hoặc nhân dòng cũ với số vôn mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $R$ vừa tìm, lấy hiệu điện thế mới chia $R$",
+       "dung": true
+      },
+      {
+       "text": "Tính lại $R$ theo hiệu điện thế mới, coi $R$ tăng cùng $U$",
+       "dung": false,
+       "vi_sao": "$R$ do vật liệu, kích thước và nhiệt độ quyết định ; nhiệt độ ổn định thì $R$ không đổi."
+      },
+      {
+       "text": "Lấy dòng điện cũ nhân với số vôn mới",
+       "dung": false,
+       "vi_sao": "$I$ tỉ lệ thuận với $U$, tức nhân với tỉ số hai hiệu điện thế, không nhân với số vôn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Nhận biết đường đặc trưng của điện trở thuần và của điện trở nhiệt",
+   "topic": "Đường đặc trưng vôn – ampe",
+   "problem_html": "<p>Hai linh kiện X và Y: một là điện trở thuần, một là điện trở nhiệt NTC. Mắc lần lượt từng linh kiện vào nguồn điều chỉnh được; mỗi lần đổi hiệu điện thế $U$, chờ ổn định rồi ghi cường độ dòng điện $I$.</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Linh kiện</th><th>$U$ (V)</th><th>$I$ (mA)</th></tr></thead><tbody><tr><td>X</td><td>$2{,}0$</td><td>$2{,}0$</td></tr><tr><td>X</td><td>$4{,}0$</td><td>$4{,}0$</td></tr><tr><td>X</td><td>$6{,}0$</td><td>$6{,}0$</td></tr><tr><td>Y</td><td>$1{,}0$</td><td>$0{,}50$</td></tr><tr><td>Y</td><td>$3{,}0$</td><td>$2{,}0$</td></tr><tr><td>Y</td><td>$6{,}0$</td><td>$6{,}6$</td></tr></tbody></table></div><ol type=\"a\"><li>Tính $U/I$ ở mỗi lần đo của từng linh kiện, theo kΩ.</li><li>Linh kiện nào có đường đặc trưng vôn – ampe là đường thẳng đi qua gốc toạ độ?</li><li>Giải thích vì sao đường đặc trưng của linh kiện còn lại không có dạng đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Sáu điểm đo của hai linh kiện X và Y lần lượt hiện trên hệ trục I (mA) theo U (V)\"><line x1=\"64.0\" y1=\"190.0\" x2=\"404.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M395.3,185.0 L404.0,190.0 L395.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"190.0\" x2=\"64.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M59.0,30.7 L64.0,22.0 L69.0,30.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"164.0\" y1=\"190.0\" x2=\"164.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"164\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"264.0\" y1=\"190.0\" x2=\"264.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"264\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"364.0\" y1=\"190.0\" x2=\"364.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"364\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"59.0\" y1=\"150.0\" x2=\"64.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"59.0\" y1=\"110.0\" x2=\"64.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">4</text><line x1=\"59.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">6</text><line x1=\"59.0\" y1=\"30.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"34\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">8</text><text x=\"400\" y=\"224\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U (V)</text><text x=\"72\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">I (mA)</text><g><rect x=\"109.0\" y=\"175.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.0667;0.1500;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"164.0\" cy=\"150.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2083;0.2917;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><rect x=\"209.0\" y=\"145.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.3500;0.4333;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"264.0\" cy=\"110.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.4917;0.5750;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"364.0\" cy=\"70.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.6333;0.7167;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><rect x=\"359.0\" y=\"53.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.7750;0.8583;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"262.0\" cy=\"26.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"272\" y=\"30\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">X</text><rect x=\"313.0\" y=\"21.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"328\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Y</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: các điểm đo (U; I) trong bảng của đề lần lượt hiện lên theo thứ tự U tăng dần, nhanh hơn nhiều so với lúc đo thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đường đặc trưng vôn – ampe là đồ thị $I$ theo $U$ của linh kiện.</li><li><strong>Công thức:</strong> $R=\\dfrac{U}{I}$ tính ở từng lần đo.</li><li>Điện trở thuần: $U/I$ không đổi, đồ thị là đường thẳng qua gốc.</li><li>NTC: nóng lên thì $R$ giảm, đồ thị cong.</li><li>⚠ <strong>Điều kiện:</strong> $I$ tăng theo $U$ chưa đủ để kết luận là đường thẳng, phải xét $U/I$ có đổi không.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tính U/I của X</span></p><p>Mỗi lần đo lấy hiệu điện thế chia cường độ dòng điện (V/mA = kΩ):</p>$$R_X=\\dfrac{2{,}0}{2{,}0}=1{,}0\\ \\text{k}\\Omega$$$$R_X=\\dfrac{4{,}0}{4{,}0}=1{,}0\\ \\text{k}\\Omega$$$$R_X=\\dfrac{6{,}0}{6{,}0}=1{,}0\\ \\text{k}\\Omega$$<div class=\"bt-ans\"><p>$U/I$ của X bằng $1{,}0\\ \\text{k}\\Omega$ ở cả ba lần đo.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính U/I của Y</span></p><p>Làm tương tự cho ba lần đo của Y:</p>$$R_Y=\\dfrac{1{,}0}{0{,}50}=2{,}0\\ \\text{k}\\Omega$$$$R_Y=\\dfrac{3{,}0}{2{,}0}=1{,}5\\ \\text{k}\\Omega$$$$R_Y=\\dfrac{6{,}0}{6{,}6}\\approx0{,}91\\ \\text{k}\\Omega$$<div class=\"bt-ans\"><p>$U/I$ của Y giảm dần, lần đầu gấp $\\dfrac{2{,}0}{0{,}91}\\approx2{,}2$ lần lần cuối.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dạng đường đặc trưng</span></p><p>$U/I$ không đổi thì $I$ tỉ lệ thuận với $U$: đồ thị là đường thẳng qua gốc toạ độ.</p><div class=\"bt-ans\"><p>Linh kiện <strong>X</strong> có đường đặc trưng là đường thẳng qua gốc.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vì sao đường của Y không thẳng</span></p><p>Dòng điện chạy qua làm Y nóng dần lên.</p><p>Y là NTC: nóng lên thì điện trở giảm, nên $U/I$ giảm khi $U$ tăng.</p><div class=\"bt-ans\"><p>Đường của <strong>Y</strong> cong, độ dốc tăng dần.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>X: $\\dfrac{I}{U}=1{,}0\\ \\text{mA/V}$ ở cả ba lần đo ✓ độ dốc không đổi.</p><p>Y: $\\dfrac{I}{U}$ tăng từ $0{,}50$ lên $1{,}1\\ \\text{mA/V}$ ✓ độ dốc tăng, khớp $R$ giảm.</p><p>Y: $R$ lần cuối nhỏ hơn lần đầu ✓ cùng chiều với NTC nóng lên.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) X: $1{,}0\\ \\text{k}\\Omega$ ở cả ba lần<br>Y: $2{,}0\\ \\text{k}\\Omega$, $1{,}5\\ \\text{k}\\Omega$, $0{,}91\\ \\text{k}\\Omega$</p><p>b) Linh kiện X</p><p>c) Y là NTC, nóng dần khi dòng chạy qua nên $R$ giảm, $I$ không tỉ lệ thuận với $U$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>bảng $U$, $I$</strong> và hỏi <strong>dạng đồ thị</strong> → tính $U/I$ từng lần: không đổi thì thẳng qua gốc, đổi thì cong.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Hệ trục I (mA) theo U (V) để vẽ các điểm đo của X và Y\"><line x1=\"64.0\" y1=\"190.0\" x2=\"404.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M395.3,185.0 L404.0,190.0 L395.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"190.0\" x2=\"64.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M59.0,30.7 L64.0,22.0 L69.0,30.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"164.0\" y1=\"190.0\" x2=\"164.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"164\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"264.0\" y1=\"190.0\" x2=\"264.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"264\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"364.0\" y1=\"190.0\" x2=\"364.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"364\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"59.0\" y1=\"150.0\" x2=\"64.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"59.0\" y1=\"110.0\" x2=\"64.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">4</text><line x1=\"59.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">6</text><line x1=\"59.0\" y1=\"30.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"34\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">8</text><text x=\"400\" y=\"224\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U (V)</text><text x=\"72\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">I (mA)</text><text x=\"120\" y=\"60\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần xác định: dạng đường đi qua</text><text x=\"120\" y=\"78\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">các điểm đo của X và của Y</text></svg><figcaption>Dữ kiện: hệ trục cho các điểm đo trong bảng của đề; dạng đường của mỗi linh kiện là điều cần xác định. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"một là điện trở thuần, một là điện trở nhiệt NTC\"</td><td>Hai loại linh kiện</td><td>⚠ Điều kiện: kết luận về dạng đường chỉ rút ra khi so các lần đo của cùng một linh kiện</td></tr><tr><td>\"mỗi lần đổi $U$, chờ ổn định rồi ghi $I$\"</td><td>Nhiều lần đo, mỗi lần chờ ổn định</td><td>Trạng thái của linh kiện lúc ghi số</td></tr><tr><td>\"X: $(2{,}0;\\,2{,}0)$, $(4{,}0;\\,4{,}0)$, $(6{,}0;\\,6{,}0)$\"</td><td>Ba cặp $(U;\\,I)$ của X</td><td>Điện trở tính từ một cặp số đo</td></tr><tr><td>\"Y: $(1{,}0;\\,0{,}50)$, $(3{,}0;\\,2{,}0)$, $(6{,}0;\\,6{,}6)$\"</td><td>Ba cặp $(U;\\,I)$ của Y</td><td>Điện trở tính từ một cặp số đo</td></tr><tr><td>\"đường thẳng đi qua gốc toạ độ\"</td><td>Cần: nhận dạng đồ thị</td><td>Điều kiện để đồ thị $I$ theo $U$ là đường thẳng qua gốc</td></tr><tr><td>\"vì sao … không có dạng đó\"</td><td>Cần: nguyên nhân</td><td>Đặc điểm của điện trở nhiệt</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bảng U, I của một linh kiện</b>, hỏi <b>dạng đồ thị</b> → tính <b>U/I từng lần</b>: không đổi là thẳng qua gốc.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tính U/I của X",
+     "hoi": "Điện trở của X ở lần đo $U=4{,}0$ V là bao nhiêu kΩ?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "kΩ",
+     "loi_hay_gap": "Lấy $I$ chia $U$ (ra $1/R$), hoặc quên rằng V chia mA cho kết quả theo kΩ."
+    },
+    {
+     "tieu_de": "Tính U/I của Y",
+     "hoi": "Điện trở của Y ở $U=1{,}0$ V lớn gấp bao nhiêu lần ở $U=6{,}0$ V?",
+     "dap_so": 2.2,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Chỉ tính một lần đo của Y rồi cho rằng $R$ giữ nguyên ở các lần còn lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $U/I$ ở lần đo đầu và lần đo cuối của Y rồi so hai kết quả",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy lần đo cuối, coi $R$ không đổi",
+       "dung": false,
+       "vi_sao": "Muốn biết $R$ có đổi không phải so các lần đo với nhau."
+      },
+      {
+       "text": "Cộng các cường độ dòng điện của Y lại",
+       "dung": false,
+       "vi_sao": "Tổng dòng điện không cho biết $R$ ; $R$ tính từ từng cặp $U$, $I$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dạng đường đặc trưng",
+     "hoi": "Linh kiện nào có đường đặc trưng vôn – ampe là đường thẳng qua gốc toạ độ?",
+     "lua_chon": [
+      {
+       "text": "Chỉ X",
+       "dung": true
+      },
+      {
+       "text": "Chỉ Y",
+       "dung": false,
+       "vi_sao": "$U/I$ của Y thay đổi giữa các lần đo nên đường của Y không thẳng qua gốc."
+      },
+      {
+       "text": "Cả X và Y, vì $I$ của cả hai đều tăng khi $U$ tăng",
+       "dung": false,
+       "vi_sao": "$I$ tăng theo $U$ chưa đủ: thẳng qua gốc đòi $U/I$ không đổi."
+      }
+     ],
+     "loi_hay_gap": "Thấy $I$ của cả hai đều tăng khi $U$ tăng liền cho rằng cả hai thẳng qua gốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $U/I$ của từng linh kiện giữa các lần đo, rồi kết luận",
+       "dung": true
+      },
+      {
+       "text": "Chọn linh kiện có $I$ lớn nhất",
+       "dung": false,
+       "vi_sao": "Độ lớn của $I$ không quyết định dạng đường ; dạng đường do $U/I$ có đổi hay không."
+      },
+      {
+       "text": "Chọn linh kiện có hiệu điện thế lớn nhất trong bảng",
+       "dung": false,
+       "vi_sao": "Số lần đo không liên quan dạng đường."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vì sao đường của Y không thẳng",
+     "hoi": "Điện trở của Y đổi như vậy khi $U$ tăng cho biết điều gì về Y?",
+     "lua_chon": [
+      {
+       "text": "Dòng điện làm Y nóng lên và điện trở của Y giảm khi nóng",
+       "dung": true
+      },
+      {
+       "text": "Dòng điện làm Y nóng lên và điện trở của Y tăng khi nóng",
+       "dung": false,
+       "vi_sao": "Đó là tính chất của kim loại ; điện trở nhiệt NTC có hệ số nhiệt âm."
+      },
+      {
+       "text": "Hiệu điện thế lớn hơn nên điện trở nhỏ hơn ở mọi vật dẫn",
+       "dung": false,
+       "vi_sao": "X vẫn giữ nguyên điện trở dù hiệu điện thế đổi, nên $U$ lớn không tự làm $R$ nhỏ đi."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng $U$ lớn hơn làm $R$ đổi theo công thức $R=U/I$: công thức chỉ là cách tính, không phải nguyên nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm yếu tố làm điện trở của Y đổi giữa các lần đo",
+       "dung": true
+      },
+      {
+       "text": "Cho rằng dụng cụ đo sai",
+       "dung": false,
+       "vi_sao": "Sai số dụng cụ không làm $U/I$ giảm đều theo $U$ như vậy."
+      },
+      {
+       "text": "Cho rằng Y chỉ có một điện trở cố định",
+       "dung": false,
+       "vi_sao": "Bảng đo cho thấy $U/I$ đổi, nên điện trở không cố định."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · So sánh hai đường đặc trưng, trục I tính bằng mA",
+   "topic": "Đường đặc trưng vôn – ampe",
+   "problem_html": "<p>Trên cùng một hệ trục (trục ngang $U$ tính bằng V, trục đứng $I$ tính bằng mA), đường đặc trưng vôn – ampe của hai điện trở $R_1$, $R_2$ là hai đường thẳng đi qua gốc toạ độ; nhiệt độ mỗi điện trở ổn định.</p><p>Đường (1) đi qua điểm $(6{,}0\\ \\text{V};\\ 3{,}0\\ \\text{mA})$.</p><p>Đường (2) đi qua điểm $(6{,}0\\ \\text{V};\\ 1{,}2\\ \\text{mA})$.</p><ol type=\"a\"><li>Tính $R_1$ và $R_2$ theo đơn vị kΩ.</li><li>Đường nào dốc hơn? Điện trở ứng với đường đó lớn hơn hay nhỏ hơn?</li><li>Đặt hiệu điện thế $9{,}0$ V vào hai đầu $R_2$. Tính cường độ dòng điện qua nó theo đơn vị mA.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Hai điểm đo của hai điện trở tại hiệu điện thế 6,0 V trên hệ trục I (mA) theo U (V)\"><line x1=\"64.0\" y1=\"190.0\" x2=\"400.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M391.3,185.0 L400.0,190.0 L391.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"190.0\" x2=\"64.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M59.0,30.7 L64.0,22.0 L69.0,30.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"144.0\" y1=\"190.0\" x2=\"144.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"144\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"224.0\" y1=\"190.0\" x2=\"224.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"224\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"304.0\" y1=\"190.0\" x2=\"304.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"304\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"384.0\" y1=\"190.0\" x2=\"384.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"384\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8</text><line x1=\"59.0\" y1=\"150.0\" x2=\"64.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">1</text><line x1=\"59.0\" y1=\"110.0\" x2=\"64.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"59.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"59.0\" y1=\"30.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"34\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">4</text><text x=\"396\" y=\"224\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U (V)</text><text x=\"72\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">I (mA)</text><line x1=\"304.0\" y1=\"190\" x2=\"304.0\" y2=\"190\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"><animate attributeName=\"y2\" values=\"190;70.0\" keyTimes=\"0.0000;1.0000\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><circle cx=\"304.0\" cy=\"70.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"316.0\" y=\"74.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(1): 3,0 mA</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.4000;0.6000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><rect x=\"299.0\" y=\"137.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"316.0\" y=\"146.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(2): 1,2 mA</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.6000;0.8000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kẻ đường dóng tại U = 6,0 V rồi hai điểm của đường (1) và (2) hiện lên; đường (1), (2) đi qua gốc O và điểm tương ứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trở nhiệt độ ổn định cho đường $I$ theo $U$ là đường thẳng qua gốc.</li><li><strong>Công thức:</strong> $R=\\dfrac{U}{I}$<br>độ dốc của đường $I$ theo $U$ là $\\dfrac{I}{U}=\\dfrac{1}{R}$.</li><li>Đổi đơn vị: $1\\ \\text{mA}=10^{-3}\\ \\text{A}$<br>$1\\ \\text{k}\\Omega=10^{3}\\ \\Omega$<br>V/kΩ cho kết quả mA.</li><li>⚠ <strong>Điều kiện:</strong> trục đứng là $I$ thì độ dốc là $1/R$<br>chỉ khi trục đứng là $U$ độ dốc mới là $R$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở R₁</span></p><p>Đổi $3{,}0$ mA ra ampe rồi lấy $U$ chia $I$:</p>$$R_1=\\dfrac{U}{I_1}=\\dfrac{6{,}0}{3{,}0\\cdot10^{-3}}$$$$R_1=2000\\ \\Omega$$<div class=\"bt-ans\">$$R_1=2{,}0\\ \\text{k}\\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở R₂</span></p><p>Làm tương tự với đường (2):</p>$$R_2=\\dfrac{U}{I_2}=\\dfrac{6{,}0}{1{,}2\\cdot10^{-3}}$$$$R_2=5000\\ \\Omega$$<div class=\"bt-ans\">$$R_2=5{,}0\\ \\text{k}\\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh độ dốc</span></p><p>Trục đứng là $I$ nên độ dốc của mỗi đường là $\\dfrac{I}{U}=\\dfrac{1}{R}$:</p>$$\\dfrac{I_1}{U}=\\dfrac{3{,}0}{6{,}0}=0{,}50\\ \\text{mA/V}$$$$\\dfrac{I_2}{U}=\\dfrac{1{,}2}{6{,}0}=0{,}20\\ \\text{mA/V}$$<div class=\"bt-ans\"><p>Đường (1) dốc hơn và ứng với điện trở <strong>nhỏ hơn</strong> ($2{,}0\\ \\text{k}\\Omega\\lt5{,}0\\ \\text{k}\\Omega$).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện qua R₂ khi U = 9,0 V</span></p><p>$R_2$ không đổi (nhiệt độ ổn định). Với V và kΩ, kết quả ra mA:</p>$$I=\\dfrac{U'}{R_2}=\\dfrac{9{,}0}{5{,}0}$$<div class=\"bt-ans\">$$I=1{,}8\\ \\text{mA}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$\\dfrac{U'}{U}=\\dfrac{9{,}0}{6{,}0}=1{,}5$ và $\\dfrac{1{,}8}{1{,}2}=1{,}5$ ✓ tỉ lệ thuận.</p><p>Cùng $U=6{,}0$ V, đường có $I$ lớn hơn thì $R$ nhỏ hơn ✓ khớp kết quả.</p><p>Đơn vị: V/kΩ = mA ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_1=2{,}0\\ \\text{k}\\Omega$<br>$R_2=5{,}0\\ \\text{k}\\Omega$</p><p>b) Đường (1) dốc hơn<br>điện trở ứng với nó nhỏ hơn</p><p>c) $I=1{,}8\\ \\text{mA}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai đường $I$ theo $U$, trục mA</strong> và hỏi <strong>đường nào dốc hơn, $R$ lớn hơn</strong> → đổi mA ra A, tính $R=U/I$ từng điểm ; dốc hơn là $R$ nhỏ hơn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Hai điểm đo của hai điện trở tại hiệu điện thế 6,0 V, cường độ dòng điện tính bằng mA\"><line x1=\"64.0\" y1=\"190.0\" x2=\"400.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M391.3,185.0 L400.0,190.0 L391.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"190.0\" x2=\"64.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M59.0,30.7 L64.0,22.0 L69.0,30.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"144.0\" y1=\"190.0\" x2=\"144.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"144\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"224.0\" y1=\"190.0\" x2=\"224.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"224\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"304.0\" y1=\"190.0\" x2=\"304.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"304\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"384.0\" y1=\"190.0\" x2=\"384.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"384\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8</text><line x1=\"59.0\" y1=\"150.0\" x2=\"64.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">1</text><line x1=\"59.0\" y1=\"110.0\" x2=\"64.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"59.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"59.0\" y1=\"30.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"55\" y=\"34\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">4</text><text x=\"396\" y=\"224\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U (V)</text><text x=\"72\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">I (mA)</text><line x1=\"304.0\" y1=\"190.0\" x2=\"304.0\" y2=\"70.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"304.0\" cy=\"70.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"316.0\" y=\"74.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(1): 3,0 mA</text><rect x=\"299.0\" y=\"137.0\" width=\"10\" height=\"10\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"316.0\" y=\"146.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(2): 1,2 mA</text><text x=\"110\" y=\"52\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: R₁, R₂ (kΩ)</text><text x=\"110\" y=\"70\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Đường nào dốc hơn?</text></svg><figcaption>Dữ kiện: mỗi đường đi qua gốc O và điểm đã cho; trục đứng tính bằng mA. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai đường thẳng đi qua gốc toạ độ<br>nhiệt độ ổn định\"</td><td>Đồ thị $I$ theo $U$, thẳng qua gốc</td><td>⚠ Điều kiện: điện trở không đổi nên đọc được từ một điểm trên đường</td></tr><tr><td>\"trục ngang $U$ (V), trục đứng $I$ (mA)\"</td><td>$U$ ở trục ngang<br>$I$ ở trục đứng</td><td>Độ dốc của đồ thị gắn với đại lượng nào</td></tr><tr><td>\"Đường (1) đi qua $(6{,}0\\ \\text{V};\\ 3{,}0\\ \\text{mA})$\"</td><td>$U=6{,}0$ V<br>$I_1=3{,}0$ mA</td><td>Đơn vị mA trong công thức điện trở</td></tr><tr><td>\"Đường (2) đi qua $(6{,}0\\ \\text{V};\\ 1{,}2\\ \\text{mA})$\"</td><td>$U=6{,}0$ V<br>$I_2=1{,}2$ mA</td><td>Đơn vị mA trong công thức điện trở</td></tr><tr><td>\"tính $R_1$ và $R_2$ theo đơn vị kΩ\"</td><td>Cần: $R_1$, $R_2$ (kΩ)</td><td>Định nghĩa điện trở<br>bội số của ôm</td></tr><tr><td>\"đường nào dốc hơn\"</td><td>Cần: so sánh hai đường</td><td>Độ dốc của đường thẳng qua gốc ứng với đại lượng nào</td></tr><tr><td>\"đặt hiệu điện thế $9{,}0$ V vào hai đầu $R_2$\"</td><td>$U'=9{,}0$ V</td><td>Định luật Ohm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai đường I theo U</b>, hỏi <b>đường nào dốc hơn</b> → đổi <b>mA ra A</b>, dốc hơn là <b>R nhỏ hơn</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở R₁",
+     "hoi": "Điện trở $R_1$ bằng bao nhiêu kΩ?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "kΩ",
+     "loi_hay_gap": "Thế thẳng số mA vào công thức mà chưa đổi ra ampe, kết quả lệch đi một nghìn lần."
+    },
+    {
+     "tieu_de": "Điện trở R₂",
+     "hoi": "Điện trở $R_2$ bằng bao nhiêu kΩ?",
+     "dap_so": 5.0,
+     "sai_so": 0.1,
+     "don_vi": "kΩ",
+     "loi_hay_gap": "Cho rằng $R_2=R_1$ vì cùng $U$, hoặc nhân tỉ số dòng điện thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Làm như bước trước với đường (2), đổi mA ra ampe trước",
+       "dung": true
+      },
+      {
+       "text": "Lấy $R_2$ bằng $R_1$ vì cùng $U=6{,}0$ V",
+       "dung": false,
+       "vi_sao": "Cùng $U$ mà $I$ khác thì $R$ khác ; $R=U/I$ phải tính riêng cho từng đường."
+      },
+      {
+       "text": "Lấy $R_2=R_1\\cdot\\dfrac{1{,}2}{3{,}0}$",
+       "dung": false,
+       "vi_sao": "Cùng $U$ thì $R$ tỉ lệ nghịch với $I$ ; nhân với tỉ số dòng là thuận chiều, sai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh độ dốc",
+     "hoi": "Đường nào dốc hơn, và điện trở ứng với đường đó lớn hơn hay nhỏ hơn?",
+     "lua_chon": [
+      {
+       "text": "Đường (1) dốc hơn ; điện trở ứng với nó nhỏ hơn",
+       "dung": true
+      },
+      {
+       "text": "Đường (1) dốc hơn ; điện trở ứng với nó lớn hơn",
+       "dung": false,
+       "vi_sao": "Trục đứng là $I$ nên độ dốc là $1/R$: dốc hơn nghĩa là $R$ nhỏ hơn."
+      },
+      {
+       "text": "Đường (2) dốc hơn ; điện trở ứng với nó lớn hơn",
+       "dung": false,
+       "vi_sao": "Cùng $U$, đường (1) có $I$ lớn hơn nên đường (1) mới là đường dốc hơn."
+      }
+     ],
+     "loi_hay_gap": "Áp nhầm quy tắc của đồ thị $U$ theo $I$ cho đồ thị $I$ theo $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So độ dốc của hai đường, nhớ độ dốc ứng với đại lượng nào của đồ thị $I$ theo $U$",
+       "dung": true
+      },
+      {
+       "text": "Áp quy tắc của đồ thị $U$ theo $I$: dốc hơn thì $R$ lớn hơn",
+       "dung": false,
+       "vi_sao": "Quy tắc đó chỉ đúng khi trục đứng là $U$ ; ở đây trục đứng là $I$."
+      },
+      {
+       "text": "So điểm cắt trục tung của hai đường",
+       "dung": false,
+       "vi_sao": "Cả hai đi qua gốc nên điểm cắt giống nhau, không phân biệt được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện qua R₂ khi U = 9,0 V",
+     "hoi": "Cường độ dòng điện qua $R_2$ khi đặt $9{,}0$ V là bao nhiêu mA?",
+     "dap_so": 1.8,
+     "sai_so": 0.03,
+     "don_vi": "mA",
+     "loi_hay_gap": "Giữ nguyên $I$ cũ vì quên rằng $U$ đã đổi, hoặc dùng $R_1$ thay cho $R_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $R_2$ vừa tìm với hiệu điện thế mới: $I=U'/R_2$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $R_1$ vì hai điện trở cùng loại",
+       "dung": false,
+       "vi_sao": "Đề hỏi dòng qua $R_2$ ; $R_1$ là điện trở khác."
+      },
+      {
+       "text": "Giữ nguyên $I=1{,}2$ mA vì $R_2$ không đổi",
+       "dung": false,
+       "vi_sao": "$R_2$ không đổi nhưng $U$ đổi từ $6{,}0$ V sang $9{,}0$ V nên $I$ phải đổi theo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Dây kim loại: từ U, I tìm nhiệt độ; so với NTC",
+   "topic": "Điện trở phụ thuộc nhiệt độ",
+   "problem_html": "<p>Một nhiệt kế điện trở dùng dây platin có điện trở $R_0=100\\ \\Omega$ ở $t_0=0\\ ^\\circ\\text{C}$; hệ số nhiệt điện trở của platin là $\\alpha=3{,}9\\cdot10^{-3}\\ \\text{K}^{-1}$. Đưa dây vào một lò nhỏ, đặt vào hai đầu dây hiệu điện thế $0{,}89$ V thì ampe kế chỉ $5{,}0$ mA.</p><ol type=\"a\"><li>Tính điện trở của dây khi ở trong lò.</li><li>Tính nhiệt độ của lò.</li><li>Nếu thay dây platin bằng một điện trở nhiệt NTC thì khi nhiệt độ tăng, điện trở của nó tăng hay giảm?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 208\" role=\"img\" aria-label=\"Kim loại nóng dần: các ion dao động mạnh dần và êlectron bị va chạm nhiều hơn\"><circle cx=\"130\" cy=\"62\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"130.0;130.9;131.4;130.9;129.6;128.3;127.9;129.0;131.1;132.7;132.6;130.7;128.0;126.4;127.2;130.0;133.1;134.4;132.7;129.0;125.7;125.1;127.8;132.3;135.5;135.2;131.3;126.2;123.4;124.9;130.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"194\" cy=\"62\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"194.8;195.2;194.8;193.6;192.4;192.1;193.2;195.1;196.5;196.3;194.4;192.0;190.6;191.5;194.2;197.1;198.1;196.4;192.8;189.7;189.4;192.2;196.5;199.4;198.8;194.9;190.1;187.6;189.4;194.4;199.5\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"258\" cy=\"62\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"259.0;258.6;257.5;256.5;256.4;257.4;259.1;260.4;260.1;258.2;255.9;254.8;255.8;258.4;261.1;261.9;260.0;256.6;253.8;253.7;256.5;260.7;263.3;262.5;258.5;253.9;251.8;253.8;258.8;263.6;264.8\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"322\" cy=\"62\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"322.4;321.5;320.7;320.6;321.6;323.1;324.2;323.8;322.1;320.0;319.0;320.1;322.6;325.1;325.6;323.7;320.4;317.8;318.0;320.9;324.8;327.2;326.1;322.1;317.8;316.0;318.2;323.2;327.6;328.5;325.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"130\" cy=\"128\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"129.6;128.8;128.8;129.7;131.1;132.0;131.6;129.9;128.0;127.2;128.3;130.8;133.0;133.4;131.4;128.2;126.0;126.3;129.2;133.0;135.0;133.7;129.8;125.7;124.3;126.7;131.5;135.7;136.2;132.5;126.9\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"194\" cy=\"128\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"193.0;193.0;193.8;195.1;195.8;195.3;193.8;192.1;191.5;192.6;194.9;196.9;197.1;195.1;192.1;190.1;190.6;193.5;197.1;198.8;197.4;193.5;189.6;188.5;191.1;195.8;199.7;199.9;196.1;190.6;187.2\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"258\" cy=\"128\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"257.2;257.9;259.0;259.6;259.1;257.7;256.1;255.7;256.8;259.0;260.8;260.8;258.9;256.0;254.2;254.9;257.8;261.1;262.6;261.0;257.2;253.6;252.8;255.5;260.1;263.6;263.5;259.6;254.4;251.3;252.6\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"322\" cy=\"128\" r=\"9\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"322.0;322.9;323.4;322.9;321.6;320.3;319.9;321.1;323.1;324.7;324.6;322.6;320.0;318.4;319.2;322.1;325.2;326.4;324.6;320.9;317.6;317.1;319.9;324.4;327.5;327.1;323.2;318.2;315.4;317.0;322.1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"96.0\" cy=\"95.0\" r=\"4.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1\"><animate attributeName=\"cx\" values=\"96.0;101.6;107.2;112.8;118.3;123.9;129.5;135.1;140.7;146.2;151.8;157.4;163.0;168.6;174.2;179.8;185.3;190.9;196.5;202.1;207.7;213.2;218.8;224.4;230.0;235.6;241.2;246.8;252.3;257.9;263.5;269.1;274.7;280.2;285.8;291.4;297.0;302.6;308.2;313.8;319.3;324.9;330.5;336.1;341.7;347.2;352.8;358.4;364.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;101.0;107.0;112.3;116.0;116.9;114.4;108.2;98.8;88.1;78.6;73.4;74.7;83.0;96.2;109.4;116.7;113.9;101.4;85.0;74.0;75.9;90.5;108.6;117.0;108.2;88.2;73.8;78.8;99.6;116.1;110.3;87.5;73.1;85.1;109.7;115.3;93.3;73.5;85.1;111.9;112.3;84.6;74.3;99.8;116.8;93.8;73.0;95.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"36.0\" y=\"30.0\" width=\"16.0\" height=\"130.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"39\" y=\"150\" width=\"10\" height=\"10\" rx=\"4\" fill=\"#fb923c\"><animate attributeName=\"y\" values=\"150.0;52.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"10.0;108.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"44\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nhiệt độ</text><text x=\"44\" y=\"180\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nóng dần</text><circle cx=\"116.0\" cy=\"196.0\" r=\"5\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"126\" y=\"200\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">ion nút mạng</text><circle cx=\"256.0\" cy=\"196.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"266\" y=\"200\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">êlectron tự do</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim loại nóng dần (cột bên trái); ion dao động ngày càng mạnh, êlectron đi qua bị lệch nhiều hơn. Chạy chậm, vị trí và biên độ chỉ để minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> kim loại nóng lên, ion nút mạng dao động mạnh hơn, êlectron va chạm nhiều hơn nên $R$ tăng.</li><li><strong>Công thức:</strong> $R=\\dfrac{U}{I}$<br>$R=R_0\\,[1+\\alpha\\,(t-t_0)]$.</li><li>NTC là điện trở nhiệt có hệ số nhiệt âm.</li><li>⚠ <strong>Điều kiện:</strong> $R_0$ ứng với $t_0$ nào thì thế đúng $t_0$ đó<br>đổi mA ra A trước khi tính.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở của dây</span></p><p>Đổi $5{,}0$ mA ra ampe rồi lấy $U$ chia $I$:</p>$$R=\\dfrac{U}{I}=\\dfrac{0{,}89}{5{,}0\\cdot10^{-3}}$$<div class=\"bt-ans\">$$R=178\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tỉ số R/R₀</span></p><p>So $R$ với điện trở $R_0$ ở nhiệt độ $t_0$ của đề:</p>$$\\dfrac{R}{R_0}=\\dfrac{178}{100}$$<div class=\"bt-ans\">$$\\dfrac{R}{R_0}=1{,}78$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt độ của lò</span></p><p>Từ $R=R_0\\,[1+\\alpha\\,(t-t_0)]$ rút ra:</p>$$\\dfrac{R}{R_0}-1=\\alpha\\,(t-t_0)$$$$t-t_0=\\dfrac{1{,}78-1}{3{,}9\\cdot10^{-3}}=200\\ \\text{K}$$$$t=t_0+200=0+200$$<div class=\"bt-ans\">$$t=200\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện trở nhiệt NTC</span></p><p>NTC có hệ số nhiệt âm, ngược với kim loại.</p><div class=\"bt-ans\"><p>Nhiệt độ tăng thì điện trở của NTC <strong>giảm</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thế ngược: $R=100\\,[1+3{,}9\\cdot10^{-3}\\cdot200]$</p>$$R=178\\ \\Omega$$<p>✓ khớp $R=178\\ \\Omega$ tính từ $U$ và $I$.</p><p>Đây là nguyên lí nhiệt kế điện trở: đo $R$ rồi suy ra nhiệt độ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=178\\ \\Omega$</p><p>b) $t=200\\ ^\\circ\\text{C}$</p><p>c) Điện trở của NTC giảm khi nhiệt độ tăng</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>$R_0$ ở $t_0$, $\\alpha$</strong> và <strong>$U$, $I$ lúc nóng</strong> → $R=U/I$, rồi $(R/R_0-1)/\\alpha$ ra $t-t_0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Mạch đo điện trở dây platin trong lò: ampe kế chỉ 5,0 mA, vôn kế chỉ 0,89 V\"><line x1=\"70.0\" y1=\"50.0\" x2=\"196.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"224.0\" y1=\"50.0\" x2=\"350.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"50.0\" x2=\"70.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"108.0\" x2=\"70.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"160.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"50.0\" x2=\"350.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"130.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"84.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"62.0\" y1=\"108.0\" x2=\"78.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"94\" y=\"92\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"94\" y=\"117\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"338.0\" y=\"80.0\" width=\"24.0\" height=\"50.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"210.0\" cy=\"50.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"350.0\" y1=\"66.0\" x2=\"388.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"66.0\" x2=\"388.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"119.0\" x2=\"388.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"144.0\" x2=\"350.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"350.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"144.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"388.0\" cy=\"105.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"388\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"326\" y=\"110\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R = ?</text><text x=\"210\" y=\"28\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">5,0 mA</text><text x=\"388\" y=\"44\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">0,89 V</text><text x=\"70\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nguồn</text><text x=\"16\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Dây platin: R₀ = 100 Ω ở t₀ = 0 °C ; α = 3,9·10⁻³ K⁻¹</text><text x=\"16\" y=\"224\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: R ; nhiệt độ t của lò</text></svg><figcaption>Dữ kiện: số chỉ hai đồng hồ, R₀ và α của platin; điện trở của dây và nhiệt độ lò là ẩn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$R_0=100\\ \\Omega$ ở $t_0=0\\ ^\\circ\\text{C}$\"</td><td>$R_0=100\\ \\Omega$<br>$t_0=0\\ ^\\circ\\text{C}$</td><td>⚠ Điều kiện: $t_0$ là nhiệt độ ứng với $R_0$, đọc từ đề, không mặc định $20\\ ^\\circ\\text{C}$</td></tr><tr><td>\"$\\alpha=3{,}9\\cdot10^{-3}\\ \\text{K}^{-1}$\"</td><td>$\\alpha$ của platin</td><td>Hệ số nhiệt điện trở của kim loại</td></tr><tr><td>\"hiệu điện thế $0{,}89$ V\"</td><td>$U=0{,}89$ V</td><td>Điện trở xác định từ hiệu điện thế và dòng điện</td></tr><tr><td>\"ampe kế chỉ $5{,}0$ mA\"</td><td>$I=5{,}0$ mA</td><td>Đơn vị ampe trong công thức</td></tr><tr><td>\"tính điện trở của dây khi ở trong lò\"</td><td>Cần: $R$</td><td>Định nghĩa điện trở</td></tr><tr><td>\"tính nhiệt độ của lò\"</td><td>Cần: $t$</td><td>Điện trở của kim loại phụ thuộc nhiệt độ</td></tr><tr><td>\"điện trở nhiệt NTC … tăng hay giảm\"</td><td>NTC</td><td>Hệ số nhiệt của điện trở nhiệt so với kim loại</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>R₀ ở t₀, α</b> và <b>U, I lúc nóng</b> → tính <b>R = U/I</b>, rồi <b>(R/R₀ − 1)/α</b> ra <b>t − t₀</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở của dây",
+     "hoi": "Điện trở của dây khi ở trong lò bằng bao nhiêu ôm?",
+     "dap_so": 178,
+     "sai_so": 2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Thế thẳng số mA như số ampe, kết quả nhỏ đi một nghìn lần."
+    },
+    {
+     "tieu_de": "Tỉ số R/R₀",
+     "hoi": "Tỉ số $R/R_0$ bằng bao nhiêu?",
+     "dap_so": 1.78,
+     "sai_so": 0.02,
+     "loi_hay_gap": "Lấy $R_0/R$ (ngược), hoặc lấy hiệu $R-R_0$ rồi dừng lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập tỉ số $R$ với $R_0$ ở nhiệt độ $t_0$ của đề",
+       "dung": true
+      },
+      {
+       "text": "Lấy $R$ cộng $R_0$",
+       "dung": false,
+       "vi_sao": "Cộng hai điện trở không có ý nghĩa ở đây ; công thức so $R$ với $R_0$ bằng phép chia."
+      },
+      {
+       "text": "Lấy $R_0$ chia $R$",
+       "dung": false,
+       "vi_sao": "Ngược chiều : công thức có $R$ ở tử số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ của lò",
+     "hoi": "Nhiệt độ của lò bằng bao nhiêu °C?",
+     "dap_so": 200,
+     "sai_so": 2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Quên trừ $1$ ở tỉ số $R/R_0$, hoặc thế $t_0$ theo thói quen thay vì đọc $t_0$ trong đề.",
+     "chon_buoc_ke": [
+      {
+       "text": "Rút $t-t_0$ từ công thức theo nhiệt độ, rồi cộng $t_0$ của đề",
+       "dung": true
+      },
+      {
+       "text": "Lấy $R/R_0$ chia $\\alpha$",
+       "dung": false,
+       "vi_sao": "Quên số $1$ trong ngoặc: $R/R_0=1+\\alpha(t-t_0)$ chứ không phải $\\alpha(t-t_0)$."
+      },
+      {
+       "text": "Lấy $(R-R_0)$ nhân $\\alpha$",
+       "dung": false,
+       "vi_sao": "Nhân thay vì chia: $\\alpha(t-t_0)=\\dfrac{R-R_0}{R_0}$, phải chia cho $\\alpha$ để tìm $t-t_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở nhiệt NTC",
+     "hoi": "Điện trở nhiệt NTC: nhiệt độ tăng thì điện trở thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Giảm",
+       "dung": true
+      },
+      {
+       "text": "Tăng, như kim loại",
+       "dung": false,
+       "vi_sao": "Kim loại mới tăng ; NTC có hệ số nhiệt âm."
+      },
+      {
+       "text": "Không đổi",
+       "dung": false,
+       "vi_sao": "Điện trở nhiệt được chế tạo để $R$ đổi rất mạnh theo nhiệt độ."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng mọi vật dẫn nóng lên đều tăng điện trở như kim loại.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhớ dấu hệ số nhiệt của NTC, so với kim loại",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn công thức bậc nhất với $\\alpha\\gt0$",
+       "dung": false,
+       "vi_sao": "Công thức đó với $\\alpha\\gt0$ là của kim loại ; NTC có hệ số nhiệt âm."
+      },
+      {
+       "text": "Đo lại $U$ và $I$ của dây",
+       "dung": false,
+       "vi_sao": "Câu hỏi là tính chất của NTC, không cần số liệu của dây platin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Dây nung nicrom của bàn là: điện trở khi nóng, dòng lúc cắm điện, điện trở suất",
+   "topic": "Điện trở phụ thuộc nhiệt độ",
+   "problem_html": "<p>Dây nung của một bàn là bằng nicrom. Ở $20\\ ^\\circ\\text{C}$, dây có điện trở $R_0=40{,}0\\ \\Omega$ và điện trở suất $\\rho_0=1{,}10\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$; hệ số nhiệt điện trở của nicrom là $\\alpha=0{,}40\\cdot10^{-3}\\ \\text{K}^{-1}$. Bàn là cắm vào mạng điện $220$ V; khi nóng ổn định, dây nung ở $270\\ ^\\circ\\text{C}$.</p><ol type=\"a\"><li>Tính điện trở của dây nung khi nóng ổn định.</li><li>Tính cường độ dòng điện qua dây khi đó.</li><li>Lúc vừa cắm điện, dây còn $20\\ ^\\circ\\text{C}$. Tính dòng điện lúc đó; gấp bao nhiêu lần dòng khi nóng ổn định?</li><li>Tính điện trở suất của dây nung khi nóng ổn định.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 166\" role=\"img\" aria-label=\"Dây nung của bàn là nguội nóng dần lên\"><polyline fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"3.2\" stroke-linejoin=\"round\" points=\"110,90 120,66 135,114 150,66 165,114 180,66 195,114 210,66 225,114 240,66 255,114 270,66 285,114 300,66 310,90\"><animate attributeName=\"stroke\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0.0000;0.6000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline><text x=\"210\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">dây nung nicrom của bàn là</text><text x=\"210\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">220 V</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dây nung nguội (màu xám) nóng dần lên (màu cam) sau khi cắm điện; màu chỉ để minh hoạ, không phải thang nhiệt độ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> kim loại nóng lên thì $R$ và $\\rho$ tăng, nicrom tăng rất ít vì $\\alpha$ nhỏ.</li><li><strong>Công thức:</strong> $R=R_0\\,[1+\\alpha\\,(t-t_0)]$ và $\\rho=\\rho_0\\,[1+\\alpha\\,(t-t_0)]$.</li><li>Định luật Ohm cho từng trạng thái: $I=\\dfrac{U}{R}$ với $R$ ở nhiệt độ lúc đó.</li><li>⚠ <strong>Điều kiện:</strong> $R_0$, $\\rho_0$ ứng với $t_0=20\\ ^\\circ\\text{C}$.</li><li>⚠ Mỗi trạng thái (nguội, nóng) dùng điện trở của chính trạng thái ấy.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hệ số nhiệt của điện trở</span></p><p>Độ chênh nhiệt độ lấy so với $t_0=20\\ ^\\circ\\text{C}$:</p>$$t-t_0=270-20=250\\ \\text{K}$$$$1+\\alpha\\,(t-t_0)=1+0{,}40\\cdot10^{-3}\\cdot250$$<div class=\"bt-ans\">$$1+\\alpha\\,(t-t_0)=1{,}10$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở khi nóng</span></p><p>Nhân $R_0$ với hệ số vừa tìm:</p>$$R=R_0\\,[1+\\alpha\\,(t-t_0)]=40{,}0\\cdot1{,}10$$<div class=\"bt-ans\">$$R=44{,}0\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện khi nóng</span></p><p>Dùng điện trở lúc nóng:</p>$$I=\\dfrac{U}{R}=\\dfrac{220}{44{,}0}$$<div class=\"bt-ans\">$$I=5{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện lúc vừa cắm</span></p><p>Dây còn $20\\ ^\\circ\\text{C}$ nên điện trở là $R_0$, hiệu điện thế vẫn $220$ V:</p>$$I_0=\\dfrac{U}{R_0}=\\dfrac{220}{40{,}0}$$<div class=\"bt-ans\">$$I_0=5{,}5\\ \\text{A}$$</div><p>So với dòng khi nóng ổn định:</p>$$\\dfrac{I_0}{I}=\\dfrac{5{,}5}{5{,}0}=1{,}1$$<div class=\"bt-ans\"><p>Dòng lúc vừa cắm chỉ gấp <strong>1,1 lần</strong> dòng khi nóng, vì $\\alpha$ của nicrom nhỏ.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện trở suất khi nóng</span></p><p>$\\rho$ đổi theo nhiệt độ cùng quy luật với $R$, nhân với cùng hệ số:</p>$$\\rho=\\rho_0\\,[1+\\alpha\\,(t-t_0)]=1{,}10\\cdot10^{-6}\\cdot1{,}10$$<div class=\"bt-ans\">$$\\rho=1{,}21\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$\\dfrac{R}{R_0}=\\dfrac{44{,}0}{40{,}0}=1{,}10=\\dfrac{\\rho}{\\rho_0}$ ✓ cùng hệ số nhân.</p><p>$R$ lúc nguội nhỏ hơn nên $I_0\\gt I$ ✓.</p><p>Dòng $5{,}0$ A với $220$ V cho công suất cỡ nghìn oát, hợp lí với bàn là ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=44{,}0\\ \\Omega$</p><p>b) $I=5{,}0\\ \\text{A}$</p><p>c) $I_0=5{,}5\\ \\text{A}$, gấp $1{,}1$ lần dòng khi nóng</p><p>d) $\\rho=1{,}21\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiệt độ dây nung</strong> và hỏi <strong>dòng lúc vừa cắm điện</strong> → tính $R$ ở nhiệt độ đó, lúc nguội dùng $R_0$ với cùng $U$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Mạch bàn là: vôn kế chỉ 220 V, điện trở và cường độ dòng điện khi nóng chưa biết\"><line x1=\"70.0\" y1=\"50.0\" x2=\"196.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"224.0\" y1=\"50.0\" x2=\"350.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"50.0\" x2=\"70.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"108.0\" x2=\"70.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"160.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"50.0\" x2=\"350.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"350.0\" y1=\"130.0\" x2=\"350.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"84.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"62.0\" y1=\"108.0\" x2=\"78.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"94\" y=\"92\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"94\" y=\"117\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"338.0\" y=\"80.0\" width=\"24.0\" height=\"50.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"210.0\" cy=\"50.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"350.0\" y1=\"66.0\" x2=\"388.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"66.0\" x2=\"388.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"119.0\" x2=\"388.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"388.0\" y1=\"144.0\" x2=\"350.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"350.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"144.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"388.0\" cy=\"105.0\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"388\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"326\" y=\"110\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R = ?</text><text x=\"210\" y=\"28\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text><text x=\"388\" y=\"44\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">220 V</text><text x=\"70\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">mạng điện</text><text x=\"16\" y=\"204\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Nicrom ở 20 °C: R₀ = 40,0 Ω ; ρ₀ = 1,10·10⁻⁶ Ω·m</text><text x=\"16\" y=\"222\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">α = 0,40·10⁻³ K⁻¹ ; dây nóng ổn định ở 270 °C</text><text x=\"16\" y=\"240\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: R, I khi nóng ; I lúc vừa cắm ; ρ</text></svg><figcaption>Dữ kiện: hiệu điện thế 220 V, các giá trị ở 20 °C và nhiệt độ khi nóng ổn định; điện trở, dòng điện và điện trở suất là ẩn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ở $20\\ ^\\circ\\text{C}$ … $R_0=40{,}0\\ \\Omega$ và $\\rho_0=1{,}10\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$\"</td><td>$R_0$, $\\rho_0$<br>$t_0=20\\ ^\\circ\\text{C}$</td><td>⚠ Điều kiện: $R_0$, $\\rho_0$ chỉ đúng ở $t_0$<br>ở nhiệt độ khác điện trở của dây khác</td></tr><tr><td>\"$\\alpha=0{,}40\\cdot10^{-3}\\ \\text{K}^{-1}$\"</td><td>$\\alpha$ của nicrom</td><td>Hệ số nhiệt điện trở của kim loại</td></tr><tr><td>\"mạng điện $220$ V\"</td><td>$U=220$ V</td><td>Cường độ dòng điện từ hiệu điện thế và điện trở</td></tr><tr><td>\"nóng ổn định, dây nung ở $270\\ ^\\circ\\text{C}$\"</td><td>$t=270\\ ^\\circ\\text{C}$</td><td>Điện trở kim loại phụ thuộc nhiệt độ</td></tr><tr><td>\"tính điện trở … cường độ dòng điện qua dây khi đó\"</td><td>Cần: $R$<br>$I$</td><td>Điện trở ở nhiệt độ $t$<br>định luật Ohm</td></tr><tr><td>\"lúc vừa cắm điện, dây còn $20\\ ^\\circ\\text{C}$\"</td><td>$t=t_0$</td><td>Điện trở của dây ở nhiệt độ $t_0$</td></tr><tr><td>\"gấp bao nhiêu lần dòng khi nóng ổn định\"</td><td>Cần: tỉ số hai dòng điện</td><td>So sánh hai dòng điện cùng hiệu điện thế</td></tr><tr><td>\"điện trở suất … khi nóng ổn định\"</td><td>Cần: $\\rho$</td><td>Điện trở suất của kim loại theo nhiệt độ</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiệt độ dây nung</b>, hỏi <b>dòng lúc vừa cắm điện</b> → tính <b>R ở nhiệt độ đó</b>; lúc nguội dùng <b>R₀</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hệ số nhiệt của điện trở",
+     "hoi": "Hệ số $1+\\alpha\\,(t-t_0)$ bằng bao nhiêu?",
+     "dap_so": 1.1,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Thế $t$ thay cho độ chênh $t-t_0$, hoặc cộng $273$ vào $t$ mà không cộng vào $t_0$."
+    },
+    {
+     "tieu_de": "Điện trở khi nóng",
+     "hoi": "Điện trở của dây nung khi nóng ổn định bằng bao nhiêu ôm?",
+     "dap_so": 44.0,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Cộng $R_0$ với hệ số thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $R_0$ với hệ số vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Cộng $R_0$ với hệ số vừa tìm",
+       "dung": false,
+       "vi_sao": "$R_0$ (ôm) và hệ số (không đơn vị) khác bản chất ; công thức nhân $R_0$ với cả ngoặc."
+      },
+      {
+       "text": "Lấy $R_0$ chia hệ số",
+       "dung": false,
+       "vi_sao": "Dây nóng lên thì $R$ phải tăng, phép chia làm $R$ giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện khi nóng",
+     "hoi": "Cường độ dòng điện qua dây khi nóng ổn định bằng bao nhiêu ampe?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $R_0$ thay cho điện trở lúc nóng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu điện thế chia điện trở lúc nóng",
+       "dung": true
+      },
+      {
+       "text": "Lấy hiệu điện thế chia $R_0$",
+       "dung": false,
+       "vi_sao": "$R_0$ là điện trở ở $20\\ ^\\circ\\text{C}$, không phải lúc dây đã nóng."
+      },
+      {
+       "text": "Lấy điện trở chia hiệu điện thế",
+       "dung": false,
+       "vi_sao": "Phép chia này cho $1/I$, đơn vị Ω/V, không phải ampe."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện lúc vừa cắm",
+     "hoi": "Dòng điện lúc vừa cắm điện, khi dây còn $20\\ ^\\circ\\text{C}$, bằng bao nhiêu ampe?",
+     "dap_so": 5.5,
+     "sai_so": 0.06,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng điện trở lúc nóng cho cả lúc nguội, ra dòng cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dây còn $20\\ ^\\circ\\text{C}$: dùng $R_0$ với cùng hiệu điện thế",
+       "dung": true
+      },
+      {
+       "text": "Dùng điện trở lúc nóng, vì cùng một bàn là",
+       "dung": false,
+       "vi_sao": "Điện trở đổi theo nhiệt độ ; lúc nguội điện trở là $R_0$, không phải điện trở lúc nóng."
+      },
+      {
+       "text": "Cho rằng dòng lúc cắm phải gấp nhiều lần dòng khi nóng",
+       "dung": false,
+       "vi_sao": "Mức gấp bao nhiêu do $R/R_0$ quyết định, phải tính từ số liệu chứ không áp từ ví dụ khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở suất khi nóng",
+     "hoi": "Điện trở suất của dây khi nóng, theo đơn vị $10^{-6}\\ \\Omega\\cdot\\text{m}$?",
+     "dap_so": 1.21,
+     "sai_so": 0.01,
+     "don_vi": "×10⁻⁶ Ω·m",
+     "loi_hay_gap": "Giữ $\\rho=\\rho_0$ vì coi điện trở suất là hằng số của nicrom.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $\\rho_0$ với cùng hệ số $1+\\alpha(t-t_0)$ của điện trở",
+       "dung": true
+      },
+      {
+       "text": "Giữ $\\rho=\\rho_0$ vì điện trở suất là hằng số của nicrom",
+       "dung": false,
+       "vi_sao": "$\\rho$ cũng phụ thuộc nhiệt độ, cùng quy luật với $R$."
+      },
+      {
+       "text": "Tính $\\rho=\\dfrac{RS}{l}$ từ dữ liệu của đề",
+       "dung": false,
+       "vi_sao": "Đề không cho $S$ và $l$ ; đã có quy luật theo nhiệt độ của $\\rho$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
