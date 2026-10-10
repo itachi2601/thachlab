@@ -52,31 +52,31 @@
 | l11-nguon-dien | 43 | da-dang | Bài 24. Nguồn điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
 | l11-nang-luong-cong-suat-dien | 44 | da-dang | Bài 25. Năng lượng điện và công suất điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
 | l11-thuc-hanh-do-sdd-pin | 45 | da-dang | Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
-| l10-lam-quen-voi-vat-li | 46 | chua-lam | Bài 1. Làm quen với Vật lí (3 mục DB, chưa chạy batch). |
-| l10-an-toan-phong-thuc-hanh | 47 | chua-lam | Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí (3 mục DB, chưa chạy batch). |
-| l10-thuc-hanh-sai-so | 48 | chua-lam | Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo (3 mục DB, chưa chạy batch). |
-| l10-tong-hop-phan-tich-luc | 58 | chua-lam | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực (3 mục DB, chưa chạy batch). |
-| l10-dinh-luat-1-newton | 59 | chua-lam | Bài 14. Định luật 1 Newton (3 mục DB, chưa chạy batch). |
-| l10-dinh-luat-2-newton | 60 | chua-lam | Bài 15. Định luật 2 Newton (3 mục DB, chưa chạy batch). |
-| l10-dinh-luat-3-newton | 61 | chua-lam | Bài 16. Định luật 3 Newton (3 mục DB, chưa chạy batch). |
-| l10-trong-luc-luc-cang | 62 | chua-lam | Bài 17. Trọng lực và lực căng (3 mục DB, chưa chạy batch). |
-| l10-luc-ma-sat | 63 | chua-lam | Bài 18. Lực ma sát (3 mục DB, chưa chạy batch). |
-| l10-luc-can-luc-nang | 64 | chua-lam | Bài 19. Lực cản và lực nâng (3 mục DB, chưa chạy batch). |
-| l10-giai-bai-toan-dong-luc-hoc | 65 | chua-lam | Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. |
-| l10-moment-luc | 66 | chua-lam | Bài 21. Moment lực. Cân bằng của vật rắn (3 mục DB, chưa chạy batch). |
-| l10-thuc-hanh-tong-hop-luc | 67 | chua-lam | Bài 22. Thực hành: Tổng hợp lực (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. |
-| l10-nang-luong-cong-co-hoc | 68 | chua-lam | Bài 23. Năng lượng. Công cơ học (2 mục DB, chưa chạy batch). |
-| l10-cong-suat | 69 | chua-lam | Bài 24. Công suất (2 mục DB, chưa chạy batch). |
-| l10-dong-nang-the-nang | 70 | chua-lam | Bài 25. Động năng, thế năng (3 mục DB, chưa chạy batch). |
-| l10-co-nang-bao-toan | 71 | chua-lam | Bài 26. Cơ năng và định luật bảo toàn cơ năng (3 mục DB, chưa chạy batch). |
-| l10-hieu-suat | 72 | chua-lam | Bài 27. Hiệu suất (2 mục DB, chưa chạy batch). |
-| l10-dong-luong | 73 | chua-lam | Bài 28. Động lượng (3 mục DB, chưa chạy batch). |
-| l10-bao-toan-dong-luong | 74 | chua-lam | Bài 29. Định luật bảo toàn động lượng (3 mục DB, chưa chạy batch). |
-| l10-thuc-hanh-dong-luong | 75 | chua-lam | Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm (3 mục DB, chưa chạy batch). |
-| l10-chuyen-dong-tron-deu | 76 | chua-lam | Bài 31. Động học của chuyển động tròn đều (3 mục DB, chưa chạy batch). |
-| l10-luc-huong-tam | 77 | chua-lam | Bài 32. Lực hướng tâm và gia tốc hướng tâm (3 mục DB, chưa chạy batch). |
-| l10-bien-dang-vat-ran | 78 | chua-lam | Bài 33. Biến dạng của vật rắn (2 mục DB, chưa chạy batch). |
-| l10-khoi-luong-rieng-ap-suat | 79 | chua-lam | Bài 34. Khối lượng riêng. Áp suất chất lỏng (3 mục DB, chưa chạy batch). |
+| l10-lam-quen-voi-vat-li | 46 | da-dang | Bài 1. Làm quen với Vật lí (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-an-toan-phong-thuc-hanh | 47 | da-dang | Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-thuc-hanh-sai-so | 48 | da-dang | Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-tong-hop-phan-tich-luc | 58 | da-dang | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-dinh-luat-1-newton | 59 | da-dang | Bài 14. Định luật 1 Newton (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-dinh-luat-2-newton | 60 | da-dang | Bài 15. Định luật 2 Newton (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-dinh-luat-3-newton | 61 | da-dang | Bài 16. Định luật 3 Newton (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-trong-luc-luc-cang | 62 | da-dang | Bài 17. Trọng lực và lực căng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-luc-ma-sat | 63 | da-dang | Bài 18. Lực ma sát (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-luc-can-luc-nang | 64 | da-dang | Bài 19. Lực cản và lực nâng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-giai-bai-toan-dong-luc-hoc | 65 | da-dang | Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-moment-luc | 66 | da-dang | Bài 21. Moment lực. Cân bằng của vật rắn (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-thuc-hanh-tong-hop-luc | 67 | da-dang | Bài 22. Thực hành: Tổng hợp lực (0 mục DB, chưa chạy batch). Lưu ý: bài chưa có mục nào trên DB, batch có thể bỏ qua. — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-nang-luong-cong-co-hoc | 68 | da-dang | Bài 23. Năng lượng. Công cơ học (2 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-cong-suat | 69 | da-dang | Bài 24. Công suất (2 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-dong-nang-the-nang | 70 | da-dang | Bài 25. Động năng, thế năng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-co-nang-bao-toan | 71 | da-dang | Bài 26. Cơ năng và định luật bảo toàn cơ năng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-hieu-suat | 72 | da-dang | Bài 27. Hiệu suất (2 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-dong-luong | 73 | da-dang | Bài 28. Động lượng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-bao-toan-dong-luong | 74 | da-dang | Bài 29. Định luật bảo toàn động lượng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-thuc-hanh-dong-luong | 75 | da-dang | Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-chuyen-dong-tron-deu | 76 | da-dang | Bài 31. Động học của chuyển động tròn đều (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-luc-huong-tam | 77 | da-dang | Bài 32. Lực hướng tâm và gia tốc hướng tâm (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-bien-dang-vat-ran | 78 | da-dang | Bài 33. Biến dạng của vật rắn (2 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
+| l10-khoi-luong-rieng-ap-suat | 79 | da-dang | Bài 34. Khối lượng riêng. Áp suất chất lỏng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
 | l9-khuc-xa-anh-sang | 83 | chua-lam | Bài 5. Khúc xạ ánh sáng (3 mục DB, chưa chạy batch). |
 | l9-phan-xa-toan-phan | 84 | chua-lam | Bài 6. Phản xạ toàn phần (3 mục DB, chưa chạy batch). |
 | l9-lang-kinh-tan-sac | 85 | chua-lam | Bài 7. Lăng kính (1 mục DB, chưa chạy batch). |
