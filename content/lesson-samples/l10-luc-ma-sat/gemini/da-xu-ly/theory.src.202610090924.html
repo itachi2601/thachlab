@@ -1,0 +1,408 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Phân biệt <strong>ma sát nghỉ</strong>, <strong>ma sát trượt</strong>, <strong>ma sát lăn</strong>: khi nào xuất hiện, hướng ra sao, lớn bao nhiêu.</li>
+<li>Dùng $F_{\text{mst}} = \mu N$ và tính đúng <strong>áp lực $N$</strong> trên mặt ngang, khi kéo xiên và trên mặt nghiêng.</li>
+<li>Đọc bảng số liệu để tìm hệ số ma sát và nhận xét sai số.</li>
+<li>Giải bài toán động lực học có ma sát, kể cả vật trượt trên mặt phẳng nghiêng.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: thùng nước không chịu nhúc nhích</h3>
+
+<p>Ở nhà, An cần đẩy một thùng nước khoáng sát vào góc tường. An đẩy ngang $50$ N: thùng đứng im. Đẩy mạnh dần, tới một lúc thùng "bật" ra và trượt; lạ là lúc đó giữ thùng trượt tiếp lại <strong>nhẹ tay hơn</strong>.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Lúc An đẩy $50$ N mà thùng chưa nhúc nhích, sàn tác dụng lên thùng lực ma sát bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q1" id="tl63-q1a"><label for="tl63-q1a" class="tl-opt tl-no">A. Bằng 0, vì thùng chưa chuyển động</label>
+<input type="radio" name="tl63-q1" id="tl63-q1b"><label for="tl63-q1b" class="tl-opt tl-ok">B. Đúng $50$ N, ngược chiều lực đẩy</label>
+<input type="radio" name="tl63-q1" id="tl63-q1c"><label for="tl63-q1c" class="tl-opt tl-no">C. Bằng $\mu mg$, tính theo công thức ma sát</label>
+<input type="radio" name="tl63-q1" id="tl63-q1d"><label for="tl63-q1d" class="tl-opt tl-no">D. Lớn hơn $50$ N, nên thùng mới đứng yên</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Thùng đứng yên nên hợp lực bằng 0: ma sát phải cân bằng đúng lực đẩy, $50$ N. Đây là <strong>ma sát nghỉ</strong>, nó "tự điều chỉnh" theo lực đẩy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A: nếu không có ma sát thì lực $50$ N phải làm thùng chạy. Chọn C: $\mu mg$ chỉ dùng cho vật <em>đang trượt</em>. Chọn D: ma sát lớn hơn lực đẩy thì thùng phải lùi về phía An. Hỏi lại: thùng đứng yên thì hợp lực bằng bao nhiêu?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: ba loại lực ma sát</h3>
+
+<h4>1. Ma sát nghỉ</h4>
+
+<p><strong>🔑 Chưa trượt · bằng lực đẩy · ngược xu hướng trượt</strong></p>
+
+<ul>
+<li>Xuất hiện khi có ngoại lực kéo/đẩy mà vật <strong>vẫn đứng yên</strong> trên mặt tiếp xúc.</li>
+<li>Điểm đặt: trên vật, tại mặt tiếp xúc. Phương: song song mặt tiếp xúc.</li>
+<li>Chiều: <strong>ngược xu hướng chuyển động</strong> tương đối của vật.</li>
+<li>Độ lớn: <strong>bằng</strong> thành phần ngoại lực song song mặt tiếp xúc.</li>
+<li>Có giới hạn: <strong>ma sát nghỉ cực đại</strong> $F_{\text{msn max}}$. Lực đẩy vượt mức này thì vật bắt đầu trượt.</li>
+</ul>
+
+<p>Ví dụ: tủ cần lực ngang tối thiểu $300$ N mới dịch. Hai bạn đẩy $260$ N và kéo $35$ N cùng chiều: tổng $295$ N $\lt 300$ N, tủ vẫn đứng yên, ma sát nghỉ lúc đó là $295$ N.</p>
+
+<!--FIG1-->
+
+<h4>2. Ma sát trượt</h4>
+
+<p><strong>🔑 Đang trượt · ngược chiều trượt · $F = \mu N$</strong></p>
+
+<ul>
+<li>Xuất hiện khi vật <strong>trượt</strong> trên bề mặt; ngược chiều chuyển động tương đối.</li>
+<li><strong>Không phụ thuộc</strong> diện tích tiếp xúc và tốc độ (gần đúng).</li>
+<li><strong>Phụ thuộc</strong> vật liệu, tình trạng hai mặt (nhẵn, khô, ướt…).</li>
+<li><strong>Tỉ lệ</strong> với áp lực $N$ giữa hai mặt.</li>
+<li>Thường <strong>nhỏ hơn</strong> nghỉ cực đại: vì thế An thấy nhẹ tay.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Lực ma sát trượt</p>
+$$F_{\text{mst}} = \mu N$$
+<p>$\mu$: hệ số ma sát trượt, <strong>không có đơn vị</strong> · $N$: độ lớn áp lực (N).</p>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-luc-ma-sat-02">
+<p class="tl-label">🔬 Thí nghiệm: đổi mặt tiếp xúc, đổi tốc độ, cho lăn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hộp $0{,}40$ kg. Kéo trượt đều khi hộp nằm (mặt rộng), rồi dựng đứng (mặt hẹp), rồi kéo nhanh hơn. Cuối cùng kê hộp lên hai bút chì tròn cho lăn.</li>
+<li><strong>Quan sát:</strong> ba lần trượt lực kế đều chỉ khoảng $1{,}2$ N; khi lăn chỉ dưới $0{,}1$ N.</li>
+<li><strong>Rút ra:</strong> ma sát trượt không đổi theo diện tích, tốc độ; ma sát lăn nhỏ hơn rất nhiều.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Hộp đang trượt đều. Dựng đứng hộp cho diện tích tiếp xúc còn $1/3$, kéo cùng tốc độ. Lực ma sát trượt:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q2" id="tl63-q2a"><label for="tl63-q2a" class="tl-opt tl-no">A. Giảm còn $1/3$, vì chỗ chạm nhỏ hơn</label>
+<input type="radio" name="tl63-q2" id="tl63-q2b"><label for="tl63-q2b" class="tl-opt tl-no">B. Tăng gấp 3, vì hộp đè mạnh hơn lên mỗi chỗ chạm</label>
+<input type="radio" name="tl63-q2" id="tl63-q2c"><label for="tl63-q2c" class="tl-opt tl-ok">C. Gần như không đổi</label>
+<input type="radio" name="tl63-q2" id="tl63-q2d"><label for="tl63-q2d" class="tl-opt tl-no">D. Bằng 0, vì hộp đứng không vững</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = \mu N$: vật liệu không đổi ($\mu$ giữ nguyên), $N = mg$ không đổi, nên ma sát không đổi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B đều tưởng diện tích nằm trong công thức. Nhìn lại $F = \mu N$: có diện tích không? Còn D: hộp vẫn trượt trên bàn thì vẫn có ma sát trượt.</p></div>
+</div>
+</div>
+
+<h4>3. Đo hệ số ma sát</h4>
+
+<p><strong>🔑 Kéo đều · đọc lực kế · μ = F/N</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-luc-ma-sat-01">
+<p class="tl-label">🔬 Thí nghiệm: đo hệ số ma sát bằng lực kế</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hộp gỗ $0{,}20$ kg trên mặt bàn gỗ; móc lực kế (chia độ $0{,}1$ N), kéo ngang tăng dần. Ghi số chỉ <em>lúc hộp vừa bật đi</em> (ma sát nghỉ cực đại) và <em>lúc hộp trượt đều</em> (ma sát trượt). Thêm gia trọng cho tổng khối lượng $0{,}40$; $0{,}60$; $0{,}80$ kg: đo 4 lần. Áp lực $N = mg$, $g = 9{,}8\ \text{m/s}^2$.</li>
+<li><strong>Quan sát:</strong> số chỉ tăng dần rồi tụt xuống khi hộp bắt đầu trượt; hộp càng nặng, cả hai số chỉ càng lớn.</li>
+<li><strong>Rút ra:</strong> ma sát trượt tỉ lệ với $N$, và nhỏ hơn ma sát nghỉ cực đại.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$N$ (N)</th><th>Nghỉ cực đại (N)</th><th>Trượt (N)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,96</td><td>0,7</td><td>0,6</td></tr>
+<tr><td>3,92</td><td>1,5</td><td>1,2</td></tr>
+<tr><td>5,88</td><td>2,1</td><td>1,7</td></tr>
+<tr><td>7,84</td><td>2,9</td><td>2,4</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>Tính $F_{\text{trượt}}/N$ cho từng lần đo. Hệ số $\mu$ bằng bao nhiêu? Lần đo nào kém tin cậy nhất?</p>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem nhận xét</summary>
+<p>__NHANXET__</p>
+</details>
+
+<h4>4. Áp lực $N$: không phải lúc nào cũng bằng $mg$</h4>
+
+<p><strong>🔑 Chiếu lên phương vuông góc mặt tiếp xúc</strong></p>
+
+<ul>
+<li><strong>Mặt ngang, lực kéo ngang:</strong> $N = P = mg$.</li>
+<li><strong>Mặt ngang, kéo chếch lên góc $\alpha$:</strong> lực kéo "nhấc" bớt vật, $N = mg - F\sin\alpha$.</li>
+<li><strong>Mặt nghiêng góc $\alpha$:</strong> tách $P$ thành $P_x = mg\sin\alpha$ (dọc dốc, kéo vật xuống) và $P_y = mg\cos\alpha$ (ép vào dốc). $N$ cân bằng $P_y$: $N = mg\cos\alpha$.</li>
+<li>$N$ vuông góc mặt dốc nên <strong>không kéo</strong> vật xuống dốc.</li>
+</ul>
+
+<!--FIG2-->
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-luc-ma-sat-03">
+<p class="tl-label">🔬 Thí nghiệm: nâng dần tấm ván</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt hộp gỗ trên tấm ván gỗ dài $L = 1{,}00$ m, nâng dần một đầu, đo độ cao $h$ lúc hộp bắt đầu trượt. Sau đó hạ ván, búng nhẹ hộp, tìm $h$ để hộp trượt đều.</li>
+<li><strong>Quan sát:</strong> hộp bắt đầu trượt khi $h \approx 0{,}34$ m ($\alpha \approx 20^\circ$); trượt đều khi $h \approx 0{,}29$ m ($\alpha \approx 17^\circ$).</li>
+<li><strong>Rút ra:</strong> lúc sắp trượt $mg\sin\alpha = \mu_n\, mg\cos\alpha$, nên $\mu_n = \tan\alpha \approx 0{,}36$; tương tự $\mu \approx \tan 17^\circ \approx 0{,}30$, khớp bảng đo bằng lực kế.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Kéo vật $3$ kg trên sàn ngang bằng lực $20$ N chếch lên $30^\circ$. Lấy $g = 9{,}8\ \text{m/s}^2$. Áp lực của vật lên sàn là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q3" id="tl63-q3a"><label for="tl63-q3a" class="tl-opt tl-no">A. $29{,}4$ N</label>
+<input type="radio" name="tl63-q3" id="tl63-q3b"><label for="tl63-q3b" class="tl-opt tl-no">B. $39{,}4$ N</label>
+<input type="radio" name="tl63-q3" id="tl63-q3c"><label for="tl63-q3c" class="tl-opt tl-no">C. $12{,}1$ N</label>
+<input type="radio" name="tl63-q3" id="tl63-q3d"><label for="tl63-q3d" class="tl-opt tl-ok">D. $19{,}4$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $N = mg - F\sin 30^\circ = 29{,}4 - 10 = 19{,}4$ N. Lực kéo chếch lên đỡ bớt một phần trọng lượng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $29{,}4$ N là quên thành phần $F\sin\alpha$; $39{,}4$ N là cộng nhầm (lực kéo chếch <em>lên</em>, không ép xuống); $12{,}1$ N là nhầm $\sin$ với $\cos$: $29{,}4 - F\cos 30^\circ = 29{,}4 - 17{,}3$, trong khi $F\cos 30^\circ = 17{,}3$ N là thành phần nằm ngang, không ảnh hưởng $N$.</p></div>
+</div>
+</div>
+
+<h4>5. Ma sát lăn; ma sát có lợi và có hại</h4>
+
+<p><strong>🔑 Lăn nhẹ hơn trượt · lợi cũng có, hại cũng có</strong></p>
+
+<ul>
+<li><strong>Ma sát lăn</strong> xuất hiện khi vật lăn trên bề mặt; nhỏ hơn ma sát trượt rất nhiều (bánh xe, vòng bi).</li>
+<li><strong>Có lợi:</strong> quẹt diêm (ma sát sinh nhiệt làm đầu diêm cháy); phấn bám bảng; lốp bám đường để phanh.</li>
+<li><strong>Có hại:</strong> phanh gấp làm mòn lốp; mòn đĩa, líp, xích xe đạp; nóng và mòn má phanh, bạc đạn xe máy.</li>
+</ul>
+
+<details class="tl-details">
+<summary>⛸️ Bấm xem: sân băng và xe đạp</summary>
+<p>Lưỡi giày trượt trên băng có $\mu$ chỉ khoảng $0{,}01$ nên lướt rất xa. Muốn dừng, vận động viên xoay ngang lưỡi giày cho cạnh lưỡi cày vào băng. Ở xe đạp, dầu nhớt và vòng bi giảm ma sát ở trục bánh; còn lốp và má phanh lại cần ma sát lớn để bám đường và dừng được xe.</p>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: ma sát lúc nào cũng bằng $\mu N$</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Ma sát nghỉ</th><th>Ma sát trượt</th></tr>
+</thead>
+<tbody>
+<tr><td>Vật đứng yên</td><td>Vật đang trượt</td></tr>
+<tr><td>Bằng lực gây xu hướng trượt</td><td>$F = \mu N$, không đổi</td></tr>
+<tr><td>Từ 0 đến $F_{\text{msn max}}$</td><td>Thường nhỏ hơn $F_{\text{msn max}}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Đứng yên: dùng cân bằng lực, không dùng $\mu N$</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl63-q4-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl63-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Tủ $40$ kg có ma sát nghỉ cực đại $200$ N. Em đẩy ngang $120$ N, tủ đứng yên. Lực ma sát sàn tác dụng lên tủ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q4" id="tl63-q4a"><label for="tl63-q4a" class="tl-opt tl-ok">A. $120$ N</label>
+<input type="radio" name="tl63-q4" id="tl63-q4b"><label for="tl63-q4b" class="tl-opt tl-no">B. $200$ N</label>
+<input type="radio" name="tl63-q4" id="tl63-q4c"><label for="tl63-q4c" class="tl-opt tl-no">C. $80$ N</label>
+<input type="radio" name="tl63-q4" id="tl63-q4d"><label for="tl63-q4d" class="tl-opt tl-no">D. $0$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tủ đứng yên nên ma sát nghỉ cân bằng lực đẩy: $120$ N. Con số $200$ N chỉ là "trần". Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $200$ N là lấy nhầm mức cực đại; nếu ma sát là $200$ N thì tủ phải trượt về phía em. $80$ N là lấy hiệu $200 - 120$. $0$ N là quên ma sát nghỉ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: áp lực luôn bằng $mg$</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tình huống</th><th>Áp lực $N$</th></tr>
+</thead>
+<tbody>
+<tr><td>Mặt ngang, kéo ngang</td><td>$mg$</td></tr>
+<tr><td>Mặt ngang, kéo chếch lên</td><td>$mg - F\sin\alpha$</td></tr>
+<tr><td>Mặt nghiêng góc $\alpha$</td><td>$mg\cos\alpha$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Quyển sách $0{,}5$ kg đang trượt xuống mặt bàn nghiêng $30^\circ$; $\mu = 0{,}3$; $g = 9{,}8\ \text{m/s}^2$. Lực ma sát trượt bằng khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q5" id="tl63-q5a"><label for="tl63-q5a" class="tl-opt tl-no">A. $1{,}47$ N</label>
+<input type="radio" name="tl63-q5" id="tl63-q5b"><label for="tl63-q5b" class="tl-opt tl-no">B. $0{,}74$ N</label>
+<input type="radio" name="tl63-q5" id="tl63-q5c"><label for="tl63-q5c" class="tl-opt tl-ok">C. $1{,}27$ N</label>
+<input type="radio" name="tl63-q5" id="tl63-q5d"><label for="tl63-q5d" class="tl-opt tl-no">D. $2{,}45$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $N = mg\cos 30^\circ \approx 4{,}24$ N; $F = 0{,}3 \cdot 4{,}24 \approx 1{,}27$ N.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $1{,}47$ N là dùng $N = mg$ như mặt ngang; $0{,}74$ N là nhân nhầm $\sin 30^\circ$; $2{,}45$ N là $P_x = mg\sin 30^\circ$, thành phần kéo sách xuống, không phải ma sát.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: ma sát luôn cản chuyển động</h4>
+
+<p>Ma sát ngược chiều <strong>trượt tương đối</strong> giữa hai mặt, không nhất thiết ngược chiều chuyển động của vật.</p>
+
+<!--FIG4-->
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Hiểu sai</th><th>Hiểu đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>Ngược chiều vật chạy</td><td>Ngược chiều mặt tiếp xúc trượt (hoặc muốn trượt)</td></tr>
+<tr><td>Ma sát chỉ có hại</td><td>Không có ma sát nghỉ thì không đi bộ được</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Chân đẩy đất lùi · đất đẩy chân tới</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Khi em bước đi, lực ma sát do mặt đường tác dụng lên bàn chân đang đạp đất hướng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q6" id="tl63-q6a"><label for="tl63-q6a" class="tl-opt tl-no">A. Ra sau, vì ma sát luôn cản chuyển động</label>
+<input type="radio" name="tl63-q6" id="tl63-q6b"><label for="tl63-q6b" class="tl-opt tl-no">B. Thẳng đứng lên trên</label>
+<input type="radio" name="tl63-q6" id="tl63-q6c"><label for="tl63-q6c" class="tl-opt tl-no">C. Không có, vì chân không trượt</label>
+<input type="radio" name="tl63-q6" id="tl63-q6d"><label for="tl63-q6d" class="tl-opt tl-ok">D. Tới trước, cùng chiều em đi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chân có xu hướng trượt ra sau, nên ma sát nghỉ hướng tới trước. Chính lực này đẩy em đi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lấy chiều đi làm mốc thay cho chiều chân muốn trượt. B là phản lực $N$, không phải ma sát. C: chân không trượt vẫn có <em>ma sát nghỉ</em> — thử đi trên sàn đổ dầu sẽ thấy.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Ma sát nghỉ xuất hiện khi nào, chiều và độ lớn thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Có ngoại lực, vật chưa trượt · ngược xu hướng trượt · <strong>bằng lực gây xu hướng trượt</strong> · tối đa $F_{\text{msn max}}$.</p>
+</details>
+<details class="tl-details">
+<summary>2. Viết công thức ma sát trượt, nói tên và đơn vị từng ký hiệu. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$F_{\text{mst}} = \mu N$ · $\mu$: hệ số ma sát trượt, không đơn vị · $N$: áp lực (N).</p>
+</details>
+<details class="tl-details">
+<summary>3. Ma sát trượt phụ thuộc và không phụ thuộc vào gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Phụ thuộc: vật liệu, tình trạng mặt, áp lực. Không phụ thuộc: diện tích tiếp xúc, tốc độ.</p>
+</details>
+<details class="tl-details">
+<summary>4. Áp lực $N$ trong ba trường hợp? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Ngang: $mg$ · kéo chếch lên: $mg - F\sin\alpha$ · mặt nghiêng: $mg\cos\alpha$.</p>
+</details>
+<details class="tl-details">
+<summary>5. So sánh ma sát nghỉ cực đại, ma sát trượt, ma sát lăn. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Ma sát nghỉ cực đại ≥ ma sát trượt (thường hơn một chút) ≫ ma sát lăn. Vì vậy đẩy cho "bật" khó hơn giữ cho trượt; bánh xe nhẹ hơn kéo lê.</p>
+</details>
+<details class="tl-details">
+<summary>6. Ma sát luôn ngược chiều chuyển động của vật — đúng hay sai? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Sai. Ngược chiều <strong>trượt tương đối</strong> của mặt tiếp xúc. Ví dụ: ma sát nghỉ đẩy bàn chân tới trước khi đi.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Ở công viên, một bạn nhỏ được thả không vận tốc đầu từ đỉnh cầu trượt dài $2{,}0$ m, nghiêng $30^\circ$ so với phương ngang. Hệ số ma sát trượt giữa bạn và mặt trượt là $0{,}20$. Lấy $g = 9{,}8\ \text{m/s}^2$. Tìm gia tốc của bạn và tốc độ ở chân cầu trượt.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"thả không vận tốc đầu"</td><td>$v_0 = 0$ · dữ kiện ngầm</td></tr>
+<tr><td>"cầu trượt dài $2{,}0$ m"</td><td>$s = 2$ m · dọc dốc</td></tr>
+<tr><td>"nghiêng $30^\circ$"</td><td>$\alpha = 30^\circ$ · tách $P$ (Hình 3)</td></tr>
+<tr><td>"hệ số ma sát trượt $0{,}20$"</td><td>$\mu = 0{,}2$ · ma sát trượt</td></tr>
+<tr><td>"tìm gia tốc, tốc độ ở chân cầu trượt"</td><td>$a$, $v$ · động học không cần $t$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Vẽ lực, chọn trục:</strong> $\vec P$, $\vec N$, $\vec F_{\text{ms}}$ (Hình 3). Trục $Ox$ dọc mặt trượt hướng xuống, $Oy$ vuông góc mặt trượt.</li>
+<li><strong>Chiếu lên $Oy$:</strong> $N - mg\cos\alpha = 0 \Rightarrow N = mg\cos\alpha$.</li>
+<li><strong>Chiếu lên $Ox$:</strong> $mg\sin\alpha - \mu mg\cos\alpha = ma$, nên $m$ triệt tiêu:
+$$a = g(\sin\alpha - \mu\cos\alpha)$$
+Với $\mu\cos\alpha = 0{,}20 \cdot 0{,}866 \approx 0{,}173$:
+$$a \approx 9{,}8\,(0{,}5 - 0{,}173) \approx 3{,}2\ \text{m/s}^2$$</li>
+<li><strong>Tốc độ chân cầu trượt:</strong> $v = \sqrt{2as} = \sqrt{2 \cdot 3{,}2 \cdot 2{,}0} \approx 3{,}6$ m/s.</li>
+<li><strong>Kiểm tra:</strong> $\tan 30^\circ \approx 0{,}58 \gt 0{,}20$ nên bạn nhỏ trượt được; $a$ nhỏ hơn $g\sin\alpha = 4{,}9\ \text{m/s}^2$ (cầu trượt không ma sát) — hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng cầu trượt cũ bị nhám nên $\mu = 0{,}40$.</p>
+<ol class="tl-steps">
+<li>$N = mg\cos 30^\circ$, phương trình trên $Ox$ như cũ.</li>
+<li><strong>Bước 2 (em điền):</strong> $a = \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $v = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$a = 9{,}8\,(0{,}5 - 0{,}40 \cdot 0{,}866) \approx 1{,}5\ \text{m/s}^2$; $v = \sqrt{2as} \approx 2{,}45$ m/s (thế $a$ chưa làm tròn, $a \approx 1{,}505$).</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: biết chuyển động, tìm hệ số ma sát</summary>
+<p>Xe đạp và người $86$ kg đang chạy $4$ m/s thì bóp phanh khoá bánh, xe trượt $2$ m rồi dừng; $g = 10\ \text{m/s}^2$. Lực gây ra gia tốc là <strong>ma sát trượt</strong> của đường lên lốp. $a = \dfrac{0 - 16}{2 \cdot 2} = -4\ \text{m/s}^2$; $F_{\text{ms}} = 86 \cdot 4 = 344$ N; $\mu = \dfrac{344}{86 \cdot 10} = 0{,}4$.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl63-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl63-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Đẩy thùng $55$ kg trên sàn ngang bằng lực ngang $220$ N; $\mu = 0{,}35$; $g = 9{,}8\ \text{m/s}^2$. Gia tốc của thùng khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl63-q7" id="tl63-q7a"><label for="tl63-q7a" class="tl-opt tl-ok">A. $0{,}57\ \text{m/s}^2$</label>
+<input type="radio" name="tl63-q7" id="tl63-q7b"><label for="tl63-q7b" class="tl-opt tl-no">B. $4{,}0\ \text{m/s}^2$</label>
+<input type="radio" name="tl63-q7" id="tl63-q7c"><label for="tl63-q7c" class="tl-opt tl-no">C. $7{,}4\ \text{m/s}^2$</label>
+<input type="radio" name="tl63-q7" id="tl63-q7d"><label for="tl63-q7d" class="tl-opt tl-no">D. $3{,}4\ \text{m/s}^2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F_{\text{ms}} = 0{,}35 \cdot 55 \cdot 9{,}8 \approx 188{,}7$ N; $a = (220 - 188{,}7)/55 \approx 0{,}57\ \text{m/s}^2$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $4{,}0$ là quên ma sát; $7{,}4$ là cộng lực đẩy với ma sát; $3{,}4$ là lấy riêng ma sát chia khối lượng. Tìm hợp lực $F - \mu mg$ trước. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy làm lại bài toán mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🚗 Bấm xem: ba nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Phanh ABS:</strong> không cho bánh khoá cứng, giữ lốp gần ngưỡng ma sát nghỉ cực đại (lớn hơn ma sát trượt) nên thường dừng ngắn hơn trên đường nhựa và vẫn đánh lái được.</li>
+<li><strong>Lốp có gai, giày leo núi:</strong> tăng $\mu$ để bám, nhất là khi đường ướt.</li>
+<li><strong>Băng tải dốc ở siêu thị:</strong> ma sát nghỉ giữ túi hàng không tụt, cùng chiều hàng đi lên.</li>
+</ul>
+<p>Lực cản của không khí, của nước cũng cản chuyển động nhưng phụ thuộc tốc độ và hình dạng vật — học ở Bài 19.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Kéo thùng $20$ kg trượt đều trên sàn ngang bằng lực ngang $60$ N; $g = 10\ \text{m/s}^2$. Tìm $\mu$. <em>(0,3)</em></li>
+<li><strong>⭐⭐</strong> Vật $3$ kg ở Câu 2 (kéo $20$ N chếch $30^\circ$), $\mu = 0{,}5$, $g = 9{,}8\ \text{m/s}^2$. Tìm gia tốc. <em>($F_{\text{ms}} = 9{,}7$ N; $a \approx 2{,}5\ \text{m/s}^2$)</em></li>
+<li><strong>⭐⭐</strong> Kéo thùng $10$ kg trượt <em>đều</em> trên sàn ngang bằng dây chếch lên $45^\circ$; $\mu = 0{,}2$; $g = 9{,}8\ \text{m/s}^2$. Tìm lực kéo. <em>($F\cos 45^\circ = \mu(mg - F\sin 45^\circ)$ ⇒ $F = \dfrac{\mu mg}{\cos 45^\circ + \mu\sin 45^\circ} \approx 23{,}1$ N)</em></li>
+<li><strong>⭐⭐⭐</strong> Thùng hàng trọng lượng $500$ N trượt xuống dốc $30^\circ$ với gia tốc đo được $2\ \text{m/s}^2$; $g = 10\ \text{m/s}^2$. Tìm $\mu$. <em>($m = 50$ kg; $\mu = \dfrac{P\sin\alpha - ma}{P\cos\alpha} = \dfrac{250 - 100}{433} \approx 0{,}35$)</em></li>
+<li><strong>⭐⭐⭐</strong> Xe tải phanh gấp trên đường nhựa khô, khoá bánh và để lại vết trượt dài $45$ m. Giả sử $\mu = 0{,}70$, $g = 9{,}8\ \text{m/s}^2$. Lúc bắt đầu trượt xe chạy nhanh cỡ nào? <em>($v_0 = \sqrt{2\mu g s} = \sqrt{2 \cdot 0{,}70 \cdot 9{,}8 \cdot 45} \approx 25$ m/s $\approx 89$ km/h)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Đứng yên → <strong>ma sát nghỉ</strong> = lực gây xu hướng trượt.</li>
+<li>Đang trượt → $F = \mu N$; $\mu$ không đơn vị.</li>
+<li>Không phụ thuộc diện tích, tốc độ.</li>
+<li>$N$: ngang $mg$ · kéo chếch $mg - F\sin\alpha$ · dốc $mg\cos\alpha$.</li>
+<li>Nghỉ cực đại ≥ trượt (hơn chút) ≫ lăn.</li>
+<li>Ngược chiều <strong>trượt tương đối</strong>, có lúc giúp vật đi.</li>
+<li>Đọc đề: "đứng yên", "trượt đều", "khoá bánh" quyết định dùng loại ma sát nào.</li>
+</ul>
+</div>

@@ -1,0 +1,133 @@
+{
+  "bai": "l10-khoi-luong-rieng-ap-suat",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng hai chất lỏng: chọn A ở mặt phân cách, B cùng mức trong cùng một chất lỏng nên p_A = p_B, tức p_a + ρ₁gh₁ = p_a + ρ₂gh₂."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chú thích tách hai dòng: ρ₁, h₁ là chất lỏng phía trên A và ρ₂, h₂ là chất lỏng phía trên B, không thêm số Hình 3 vì không kiểm được hình."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào details mục 6 phép so P = ρ_vật gV với F_A = ρ_ℓ gV để suy ra điều kiện nổi (mục II đã quá trần nên chèn trong details)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ví dụ khúc gỗ 2 dm³ nặng 12 N, phần chìm 1,2 dm³ cho F_A = 12 N trong details, không thêm quiz mới."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay câu mở Bẫy 2 bằng định nghĩa ngắn áp suất dư và áp suất tuyệt đối trước Câu 5, đồng thời bỏ cụm đồng hồ bơm lốp trùng ý trong bảng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải giờ nói rõ chỉ dùng ρgh vì hỏi áp lực của nước, và nhân 1,05·10⁵ với 0,24 thì ra 25 200 N là áp lực của nước lẫn khí quyển."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi phương án C sửa thành lỗi nhớ máy móc \"áp suất như nhau\" trong khi hai bình có h khác nhau (30 cm và 20 cm)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ ngay trước quiz Câu 2: đổi S ra m² với 1 cm² = 10⁻⁴ m², dòng này dùng chung với q-cau2."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc (vì 1 lít = 10⁻³ m³) vào ví dụ chai nước."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần nhận xét trong bài vẫn là placeholder __NHANXET__."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details Bẫy 1 nêu rõ áp lực lên đáy bình loe nhỏ hơn trọng lượng nước, bình thắt miệng thì lớn hơn."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần đổi chiều trong bài vẫn là placeholder __DOICHIEU__."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng định nghĩa khối lượng riêng trung bình của tàu là tổng khối lượng chia cho thể tích phần vỏ kín kể cả khoang rỗng."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán đã nhấn lỗi A nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ρ là đặc trưng của chất và phản hồi đã nói rõ lỗi B nên bỏ qua."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ⚠ đổi cm² ra m² trước quiz Câu 2, dùng chung dòng với c8."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn điều kiện cùng độ sâu ở mục 4 nên bỏ qua."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ⚠ trước quiz Câu 4: \"không phụ thuộc lượng nước\" không có nghĩa mọi bình như nhau, phải so h."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn p_a và nay có thêm định nghĩa theo c5 nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn việc đổi cả ρ lẫn h về SI nên bỏ qua."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Details Bẫy 1 đã nhấn nước chỗ loe tựa lên thành, và nay có thêm so sánh với trọng lượng nên bỏ qua."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.5: thêm p_A = p_B, tức p_a + ρ₁gh₁ = p_a + ρ₂gh₂, rồi mới ra ρ₁h₁ = ρ₂h₂; chú thích ρ₁,h₁ là chất lỏng phía trên A, ρ₂,h₂ là chất lỏng phía trên B.",
+      "Mục II.6 (details): thêm P = ρ_vật gV so với F_A = ρ_ℓ gV để suy ra điều kiện nổi.",
+      "Mục II.6 (details): ví dụ gỗ 2 dm³, 12 N, phần chìm 1,2 dm³ cho F_A = 12 N; thế cả thể tích vật thì ra 20 N (sai).",
+      "Mục II.1: thêm 1 lít = 10⁻³ m³ vào ví dụ chai nước.",
+      "Câu 2: thêm ⚠ 1 cm² = 10⁻⁴ m² trước quiz.",
+      "Câu 4: thêm ⚠ phải so độ sâu h trước quiz; phản hồi phương án C sửa thành lỗi nhớ máy móc \"như nhau\" khi h khác nhau (30 cm và 20 cm).",
+      "Bẫy 1 (details): bình loe có áp lực đáy nhỏ hơn trọng lượng nước, bình thắt miệng có áp lực đáy lớn hơn.",
+      "Bẫy 2: thêm định nghĩa áp suất dư và áp suất tuyệt đối trước Câu 5; bỏ cụm đồng hồ bơm lốp khỏi bảng.",
+      "Bài toán mẫu bước 3: giải thích chỉ dùng ρgh; nếu dùng 1,05·10⁵ Pa × 0,24 m² thì ra 25 200 N, là áp lực của nước lẫn khí quyển.",
+      "Đời sống: định nghĩa khối lượng riêng trung bình của tàu (tổng khối lượng chia cho thể tích vỏ kín kể cả khoang rỗng)."
+    ],
+    "so_tu_them": 15,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

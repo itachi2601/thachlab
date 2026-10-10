@@ -36,7 +36,7 @@
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Quy trình 4 bước</p>
 <ol class="tl-steps">
-<li><strong>Vẽ:</strong> hình, chọn vật khảo sát, chọn hệ trục: Ox theo chiều chuyển động, Oy vuông góc.</li>
+<li><strong>Vẽ:</strong> hình, chọn vật khảo sát, chọn hệ trục: Ox theo chiều chuyển động dự kiến (hoặc chiều lực kéo), chọn một lần và giữ đến hết bài; Oy vuông góc.</li>
 <li><strong>Kể lực:</strong> mỗi lực phải chỉ ra được <strong>vật nào gây ra</strong>; vẽ chung gốc ở trọng tâm.</li>
 <li><strong>Viết:</strong> $\vec P + \vec N + \vec F + \dots = m\vec a$, rồi <strong>chiếu</strong> lên Ox và Oy.</li>
 <li><strong>Giải và kiểm:</strong> tìm $a$, ghép công thức chuyển động; kiểm đơn vị, dấu, trường hợp đặc biệt.</li>
@@ -80,7 +80,7 @@ $$N = mg - F\sin\alpha$$
 <input type="radio" name="tl65-q2" id="tl65-q2c"><label for="tl65-q2c" class="tl-opt tl-no">C. $50\ \text{N}$</label>
 <input type="radio" name="tl65-q2" id="tl65-q2d"><label for="tl65-q2d" class="tl-opt tl-no">D. $17{,}3\ \text{N}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $N = 200 - 100 \cdot 0{,}5 = 150\ \text{N}$, rồi $F_{\text{ms}} = 0{,}2 \cdot 150 = 30\ \text{N}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A ($40\ \text{N}$) là coi $N = mg$, quên dây nhấc bớt thùng. C ($50\ \text{N}$) là cộng $F\sin\alpha$ thay vì trừ: dây kéo lên chứ không đè xuống. D ($17{,}3\ \text{N}$) là lấy $F\cos\alpha$ làm áp lực; áp lực đọc trên trục Oy, vuông góc mặt sàn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A ($40\ \text{N}$) là coi $N = mg$, quên dây nhấc bớt thùng. C ($50\ \text{N}$) là cộng $F\sin\alpha$ thay vì trừ: dây kéo lên chứ không đè xuống. D ($17{,}3\ \text{N}$) là lấy $N = F\cos\alpha \approx 86{,}6\ \text{N}$ rồi nhân $\mu$; áp lực đọc trên trục Oy, vuông góc mặt sàn.</p></div>
 </div>
 </div>
 
@@ -106,7 +106,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <div class="tl-box tl-box--exp" data-exp="tn-l10-giaibt-dlh-01">
 <p class="tl-label">🔬 Thí nghiệm: hai hộp, một nhẹ một nặng</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> hai hộp bút nhựa giống nhau, một hộp rỗng, một hộp nhét đầy tẩy và bút. Đặt cạnh nhau ở đầu tấm ván nghiêng khoảng $30^\circ$, thả cùng lúc.</li>
+<li><strong>Làm:</strong> hai hộp bút giống nhau, một hộp rỗng, một hộp nhét đầy đồ. Đặt cạnh nhau ở đầu tấm ván nghiêng khoảng $30^\circ$, thả cùng lúc.</li>
 <li><strong>Quan sát:</strong> hai hộp tới chân ván gần như cùng lúc.</li>
 <li><strong>Rút ra:</strong> gia tốc trượt không phụ thuộc khối lượng — đúng câu dự đoán ở mục I.</li>
 </ol>
@@ -151,14 +151,14 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <input type="radio" name="tl65-q4" id="tl65-q4b"><label for="tl65-q4b" class="tl-opt tl-no">B. $T - P_2 = m_2 a$</label>
 <input type="radio" name="tl65-q4" id="tl65-q4c"><label for="tl65-q4c" class="tl-opt tl-no">C. $P_2 = m_2 a$</label>
 <input type="radio" name="tl65-q4" id="tl65-q4d"><label for="tl65-q4d" class="tl-opt tl-no">D. $P_2 - T = (m_1 + m_2)\,a$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với $m_2$, chiều dương hướng xuống: $\vec P_2$ cùng chiều dương, $\vec T$ ngược chiều. Cộng với phương trình của $m_1$: $P_2 - F_{\text{ms}} = (m_1 + m_2)\,a$, lực căng tự triệt tiêu.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là lấy chiều dương của $m_2$ hướng lên mà vẫn dùng chung $a$ với $m_1$: khi đó $a$ của $m_2$ phải đổi dấu, nếu không thì sai. C là quên dây kéo $m_2$ lên. D là ghi khối lượng cả hệ trong khi vế trái chỉ có lực lên $m_2$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với $m_2$, chiều dương hướng xuống: $\vec P_2$ cùng chiều dương, $\vec T$ ngược chiều. Với $m_1$ (trượt trên bàn có ma sát): $T - F_{\text{ms}} = m_1 a$. Cộng hai phương trình: $P_2 - F_{\text{ms}} = (m_1 + m_2)\,a$, lực căng tự triệt tiêu.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là lấy chiều dương của $m_2$ hướng lên mà vẫn dùng chung $a$ với $m_1$; với trục hướng lên, phương trình đúng phải là $T - P_2 = -m_2 a$. C là quên dây kéo $m_2$ lên. D là ghi khối lượng cả hệ trong khi vế trái chỉ có lực lên $m_2$.</p></div>
 </div>
 </div>
 
 <details class="tl-details">
 <summary>🔍 Xem thêm: hai vật chồng lên nhau thì sao?</summary>
-<p>Ma sát giữa hai vật: xét cả hệ thì là <strong>nội lực</strong> (triệt tiêu từng cặp), xét riêng từng vật thì là <strong>ngoại lực</strong>. Vẫn 4 bước cho từng vật; thêm một việc: kiểm hai vật có trượt lên nhau không (thử thách ⭐⭐⭐ ở mục VI).</p>
+<p>Ma sát giữa hai vật: xét cả hệ thì là <strong>nội lực</strong> (triệt tiêu từng cặp), xét riêng từng vật thì là <strong>ngoại lực</strong>.<br>Nội lực: lực giữa các vật trong hệ đang xét.<br>Ngoại lực: lực do vật ngoài hệ gây ra.<br>Vẫn 4 bước cho từng vật; thêm một việc: kiểm hai vật có trượt lên nhau không (thử thách ⭐⭐⭐ ở mục VI).</p>
 </details>
 
 <h4>5. Đo thử: xe lăn kéo bởi quả nặng</h4>
@@ -168,9 +168,9 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <div class="tl-box tl-box--exp" data-exp="tn-l10-giaibt-dlh-02">
 <p class="tl-label">🔬 Thí nghiệm: hệ xe lăn và quả nặng</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> xe lăn $m_1 = 0{,}40\ \text{kg}$ trên máng ngang, nối dây qua ròng rọc với quả nặng $m_2 = 0{,}10\ \text{kg}$. Thả từ nghỉ, đo thời gian $t$ xe đi $s = 0{,}80\ \text{m}$ bằng cổng quang và đồng hồ hiện số. Làm 5 lần, tính $a = 2s/t^2$.</li>
+<li><strong>Làm:</strong> xe lăn $m_1 = 0{,}40\ \text{kg}$ trên máng ngang, nối dây qua ròng rọc với quả nặng $m_2 = 0{,}10\ \text{kg}$. Thả từ nghỉ, đo thời gian $t$ xe đi $s = 0{,}80\ \text{m}$ bằng cổng quang và đồng hồ hiện số. Làm 5 lần, tính $a = 2s/t^2$ (từ $s = \tfrac12 at^2$ với $v_0 = 0$).</li>
 <li><strong>Quan sát:</strong> $t$ dao động quanh $0{,}93\ \text{s}$ (bảng dưới).</li>
-<li><strong>Rút ra:</strong> bỏ ma sát, 4 bước cho $a = \dfrac{m_2 g}{m_1 + m_2} = 2{,}0\ \text{m/s}^2$; đem so với $a$ đo.</li>
+<li><strong>Rút ra:</strong> bỏ ma sát (cho $F_{\text{ms}} = 0$ trong $P_2 - F_{\text{ms}} = (m_1 + m_2)\,a$ ở Câu 3), được $a = \dfrac{m_2 g}{m_1 + m_2} = 2{,}0\ \text{m/s}^2$; đem so với $a$ đo.</li>
 </ol>
 </div>
 
@@ -198,7 +198,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 
 <details class="tl-details">
 <summary>📊 Bấm xem nhận xét</summary>
-<p>Cả 5 lần đều <strong>nhỏ hơn</strong> $2{,}0$; trung bình khoảng $1{,}83\ \text{m/s}^2$, thấp hơn khoảng $8\,\%$. Lệch một phía là <strong>sai số hệ thống</strong>: ma sát ở trục bánh xe và ròng rọc, ròng rọc có khối lượng. Lấy $g = 9{,}8$ thì dự đoán là $1{,}96$, vẫn cao hơn. Tính ngược: lực cản tổng cộng cỡ $0{,}5 \cdot (2{,}0 - 1{,}83) \approx 0{,}08\ \text{N}$.</p>
+<p>Cả 5 lần đều <strong>nhỏ hơn</strong> $2{,}0$; trung bình khoảng $1{,}83\ \text{m/s}^2$, thấp hơn khoảng $8\,\%$. Lệch một phía là <strong>sai số hệ thống</strong>: ma sát ở trục bánh xe và ròng rọc, ròng rọc có khối lượng. Lấy $g = 9{,}8$ thì dự đoán là $1{,}96$, vẫn cao hơn. Tính ngược: lực cản tổng cộng cỡ $(m_1 + m_2)(a_{\text{lí thuyết}} - a_{\text{đo}}) = 0{,}5 \cdot 0{,}17 \approx 0{,}08\ \text{N}$.</p>
 <p>Chênh nhau giữa các lần (vài phần trăm giây) là <strong>sai số ngẫu nhiên</strong>, chủ yếu do lúc thả tay.</p>
 </details>
 
@@ -219,7 +219,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <input type="radio" name="tl65-q5" id="tl65-q5b"><label for="tl65-q5b" class="tl-opt tl-no">B. $\vec P$, $\vec N$, "lực đà" lên dốc và ma sát</label>
 <input type="radio" name="tl65-q5" id="tl65-q5c"><label for="tl65-q5c" class="tl-opt tl-ok">C. $\vec P$, $\vec N$ và ma sát hướng xuống dốc</label>
 <input type="radio" name="tl65-q5" id="tl65-q5d"><label for="tl65-q5d" class="tl-opt tl-no">D. $\vec P$, $\vec N$ và ma sát hướng lên dốc</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tay đã rời hộp nên hết lực đẩy. Hộp đi lên nên ma sát cản lại, hướng xuống dốc. Hộp vẫn đi lên được nhờ quán tính, không cần lực nào đẩy. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tay đã rời hộp nên hết lực đẩy. Hộp đi lên nên ma sát cản lại, hướng xuống dốc. Hộp vẫn đi lên được nhờ quán tính, không cần lực nào đẩy.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: tay đã buông, không còn chạm hộp. B: "lực đà" không do vật nào gây ra — đó là quán tính, không phải lực. D: ma sát trượt luôn ngược chiều trượt; hộp đi lên thì ma sát hướng xuống. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
@@ -232,7 +232,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <tbody>
 <tr><td>"Lực đà", "lực quán tính"</td><td>Không có vật nào gây ra</td></tr>
 <tr><td>Lực của tay sau khi buông</td><td>Tay không còn chạm vật</td></tr>
-<tr><td>"Lực hướng tâm" vẽ thêm</td><td>Là vai của một lực đã có</td></tr>
+<tr><td>Trọng lực $\vec P_2$ của vật treo vẽ lên $m_1$</td><td>Chỉ dây chạm $m_1$: lực đó là $\vec T$</td></tr>
 </tbody>
 </table>
 </div>
@@ -302,7 +302,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 
 <h4>Bẫy 4: ma sát nghỉ cũng tính bằng $\mu N$</h4>
 
-<p>Vật chưa trượt thì ma sát bằng bao nhiêu?</p>
+<p>Vật chưa trượt thì ma sát bằng bao nhiêu? (Kí hiệu $\mu_n$ là hệ số ma sát nghỉ, khác $\mu$ của ma sát trượt.)</p>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl65-q8-conf" value="chac"> Chắc</label>
@@ -316,7 +316,7 @@ $$a = g(\sin\alpha - \mu\cos\alpha)$$
 <input type="radio" name="tl65-q8" id="tl65-q8c"><label for="tl65-q8c" class="tl-opt tl-no">C. $0\ \text{N}$</label>
 <input type="radio" name="tl65-q8" id="tl65-q8d"><label for="tl65-q8d" class="tl-opt tl-no">D. $80\ \text{N}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tủ đứng yên nên $a = 0$; chiếu Ox: $F - F_{\text{ms}} = 0$, vậy $F_{\text{ms}} = 120\ \text{N}$. Ma sát nghỉ tự "vừa đủ"; $200\ \text{N}$ chỉ là mức trần.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: $\mu N = 200\ \text{N}$ là mức lớn nhất ma sát nghỉ đạt được; nếu ma sát thật là $200\ \text{N}$ thì tủ bị đẩy lùi về phía em. C: không có ma sát thì $120\ \text{N}$ đã làm tủ chạy. D: hiệu $200 - 120$ không ứng với lực nào. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: $\mu_n N = 200\ \text{N}$ là mức lớn nhất ma sát nghỉ đạt được; nếu ma sát thật là $200\ \text{N}$ thì tủ bị đẩy lùi về phía em. C: không có ma sát thì $120\ \text{N}$ đã làm tủ chạy. D: hiệu $200 - 120$ không ứng với lực nào. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
 
@@ -422,7 +422,7 @@ $a = 2\ \text{m/s}^2$; $T = m_2(g - a) = 8\ \text{N}$; $s = \tfrac12 \cdot 2 \cd
 <summary>🏞️ Bấm xem: bốn nơi đang dùng bài này</summary>
 <ul>
 <li><strong>Cầu trượt, máng trượt nước:</strong> $a$ không phụ thuộc người nặng nhẹ; muốn nhanh hơn thì dốc hơn hoặc dội nước cho bớt ma sát.</li>
-<li><strong>Ô tô đỗ trên dốc:</strong> ma sát nghỉ giữ xe bằng $mg\sin\alpha$; dốc quá thì cần quá $\mu_n mg\cos\alpha$, xe trượt dù đã phanh.</li>
+<li><strong>Ô tô đỗ trên dốc:</strong> ma sát nghỉ giữ xe bằng $mg\sin\alpha$; dốc quá thì $mg\sin\alpha$ vượt $\mu_n mg\cos\alpha$, ma sát nghỉ không giữ nổi, xe trượt dù đã phanh.</li>
 <li><strong>Cáp treo lên núi:</strong> ca bin và cáp là hệ vật nối dây; lực căng cáp tính đúng theo 4 bước cho từng ca bin.</li>
 <li><strong>Kéo bao gạo trên sàn:</strong> kéo hơi xiên lên nhẹ tay hơn kéo ngang, vì $N$ giảm nên ma sát giảm.</li>
 </ul>

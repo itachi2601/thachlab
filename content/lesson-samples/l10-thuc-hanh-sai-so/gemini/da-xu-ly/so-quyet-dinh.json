@@ -1,0 +1,109 @@
+{
+  "bai": "l10-thuc-hanh-sai-so",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: a là gia tốc, đơn vị m/s², nên [a] = L·T⁻²."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp vào dòng ⚠ trước Câu 1: hệ số như 1/2, 2 không có thứ nguyên."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 3 ghi rõ dụng cụ có vạch chia thường lấy nửa ĐCNN, dụng cụ hiện số lấy một ĐCNN."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ cụm \"tới đơn vị ĐCNN của dụng cụ\" vì mâu thuẫn với ±0,5 mm; giữ quy tắc 1–2 CSCN."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giới hạn quy tắc ít CSCN nhất cho phép nhân, chia và thêm đơn vị m cho ba thừa số."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải viết hẳn ΔT = Δt/10 = 0,015 s nên δT = 0,015/2,007 = 0,15/20,07."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C viết đủ: \"nhỏ hơn δ ≈ 4,2 % của tấm bìa\", song song với D; phản hồi giữ nguyên vẫn khớp."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề bài thêm \"chu kì T là thời gian của một dao động\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Kí hiệu thứ nguyên K và danh sách 5 thứ nguyên theo SGK Kết nối tri thức, mục II đã vượt trần nên không thêm ghi chú."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn \"C nhầm số chữ số với độ chính xác\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1 về [a] và hệ số không thứ nguyên (gộp với c1, c2)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi quên cộng sai số dụng cụ."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 6 đã nhấn số mũ nhân với sai số tỉ đối."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 7 đã nhấn Ā viết cùng bậc thập phân với ΔA."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn đo nhiều lần chỉ giảm sai số ngẫu nhiên."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 \"So δA, không so ΔA\" đã nhấn."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng quy tắc CSCN đã có \"Số 0 đứng đầu: không có nghĩa\" kèm ví dụ 0,0005."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: sai số dụng cụ ghi rõ vạch chia lấy nửa ĐCNN, dụng cụ hiện số (đồng hồ số, cân điện tử) lấy một ĐCNN.",
+      "Mục 2: thêm trước Câu 1 [a] = L·T⁻² (a là gia tốc, m/s²) và hệ số 1/2, 2 không có thứ nguyên.",
+      "Mục 7: bỏ \"tới đơn vị ĐCNN của dụng cụ\" khỏi quy tắc ghi ΔA.",
+      "Mục 7: quy tắc giữ số CSCN ít nhất chỉ áp cho nhân, chia; ví dụ thêm đơn vị m cho ba thừa số, dấu = đổi thành ≈ (kết quả 3,2·10³ m³ không đổi).",
+      "Câu 6: phương án nhiễu C đổi thành \"δ ≈ 0,2 % nhỏ hơn δ ≈ 4,2 % của tấm bìa\".",
+      "Bài toán mẫu: đề thêm định nghĩa chu kì T; lời giải bước 2 viết ΔT = 0,015 s, δT = 0,015/2,007 ≈ 0,747 % (kết quả không đổi).",
+      "Thí nghiệm 1: bỏ chú thích mô hình T = 2π√(l/g) ở bước Quan sát.",
+      "Cắt câu gợi ý cuối phản hồi sai câu dự đoán và câu hỏi phụ cuối phản hồi đúng Câu 5 để bù chữ."
+    ],
+    "so_tu_them": 8,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-sai-so/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

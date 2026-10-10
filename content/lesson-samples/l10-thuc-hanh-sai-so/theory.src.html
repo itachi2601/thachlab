@@ -22,7 +22,7 @@
 <input type="radio" name="tl48-q1" id="tl48-q1c"><label for="tl48-q1c" class="tl-opt tl-no">C. Số nhiều chữ số hơn luôn gần giá trị thật hơn</label>
 <input type="radio" name="tl48-q1" id="tl48-q1d"><label for="tl48-q1d" class="tl-opt tl-no">D. Thước kẻ hỏng vì không đọc được phần lẻ</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Đo không bao giờ cho giá trị thật tuyệt đối. Việc cần học là <strong>ước lượng sai số</strong> và <strong>ghi kết quả kèm sai số</strong>.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi mỗi đại lượng chỉ có một con số đọc được. C nhầm số chữ số với độ chính xác: số chữ số do dụng cụ quyết định, ghi thêm không làm sát hơn. D: thước vạch $1\ \text{mm}$ không hỏng, chỉ chia thô hơn thước điện tử. Gợi ý: hai dụng cụ có độ chia nhỏ như nhau không?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi mỗi đại lượng chỉ có một con số đọc được. C nhầm số chữ số với độ chính xác: số chữ số do dụng cụ quyết định, ghi thêm không làm sát hơn. D: thước vạch $1\ \text{mm}$ không hỏng, chỉ chia thô hơn thước điện tử.</p></div>
 </div>
 </div>
 
@@ -93,6 +93,8 @@
 
 <p>Kiểm $s = v t$: $[v] = \text{L} \cdot \text{T}^{-1}$ nên $[v t] = \text{L} \cdot \text{T}^{-1} \cdot \text{T} = \text{L} = [s]$ ✓.</p>
 
+<p>⚠ $a$ là gia tốc, đơn vị $\text{m/s}^2$, nên $[a] = \text{L} \cdot \text{T}^{-2}$.<br>⚠ Hệ số như $\tfrac{1}{2}$, $2$ không có thứ nguyên.</p>
+
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Công thức nào chắc chắn sai?</p>
@@ -115,7 +117,7 @@
 <li><strong>Đo trực tiếp:</strong> đọc ngay trên dụng cụ (cân khối lượng, bình chia độ).</li>
 <li><strong>Đo gián tiếp:</strong> qua công thức với đại lượng đo trực tiếp (khối lượng riêng, tốc độ).</li>
 <li><strong>Sai số hệ thống:</strong> lặp lại mọi lần đo, lệch cùng một phía. Nguồn: dụng cụ chưa chỉnh về số 0, độ chia nhỏ nhất (ĐCNN).</li>
-<li><strong>Sai số dụng cụ</strong> $\Delta A_{\text{dc}}$: thường <strong>nửa ĐCNN</strong> (có dụng cụ lấy một ĐCNN).</li>
+<li><strong>Sai số dụng cụ</strong> $\Delta A_{\text{dc}}$ thường lấy:<br>dụng cụ có vạch chia: <strong>nửa ĐCNN</strong><br>dụng cụ hiện số (đồng hồ số, cân điện tử): <strong>một ĐCNN</strong>.</li>
 <li><strong>Sai số ngẫu nhiên:</strong> do thao tác, phản xạ, yếu tố bên ngoài; các lần đo tản quanh giá trị trung bình. Giảm bằng đo nhiều lần.</li>
 </ul>
 
@@ -138,7 +140,7 @@
 <p class="tl-label">🔬 Thí nghiệm: 10 dao động của con lắc đơn, đo 5 lần</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> con lắc đơn dài $1{,}000\ \text{m}$, lệch $5^\circ$ rồi thả. Đồng hồ số (ĐCNN $0{,}01\ \text{s}$) bấm thời gian $t$ của 10 dao động, 5 lần.</li>
-<li><strong>Quan sát:</strong> 5 lần đo không trùng nhau (bảng dưới, số liệu minh hoạ: mô hình $T = 2\pi\sqrt{l/g}$ cộng độ lệch do bấm tay).</li>
+<li><strong>Quan sát:</strong> 5 lần đo không trùng nhau (bảng dưới, số liệu minh hoạ).</li>
 <li><strong>Rút ra:</strong> các số tản quanh một giá trị: lấy trung bình, tính sai số.</li>
 </ol>
 </div>
@@ -213,7 +215,7 @@ __BANG_TN1__
 
 <ul>
 <li>Kết quả là một khoảng: $A = \overline{A} \pm \Delta A$.</li>
-<li>$\Delta A$ viết đến <strong>1–2 chữ số có nghĩa</strong> (CSCN), tới đơn vị ĐCNN của dụng cụ.</li>
+<li>$\Delta A$ viết đến <strong>1–2 chữ số có nghĩa</strong> (CSCN).</li>
 <li>$\overline{A}$ viết đến <strong>cùng bậc thập phân</strong> với $\Delta A$.</li>
 </ul>
 
@@ -233,7 +235,7 @@ __BANG_TN1__
 </table>
 </div>
 
-<p>Khi tính, kết quả giữ số CSCN <strong>bằng số có ít CSCN nhất</strong>: $12{,}5 \cdot 16 \cdot 15{,}88 = 3{,}2 \cdot 10^{3}\ \text{m}^3$, vì $16$ chỉ có 2 CSCN.</p>
+<p>Khi <strong>nhân, chia</strong>, kết quả giữ số CSCN <strong>bằng số có ít CSCN nhất</strong>: $12{,}5\ \text{m} \cdot 16\ \text{m} \cdot 15{,}88\ \text{m} \approx 3{,}2 \cdot 10^{3}\ \text{m}^3$, vì $16$ chỉ có 2 CSCN.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -280,7 +282,7 @@ __BANG_TN1__
 <input type="radio" name="tl48-q6" id="tl48-q6b"><label for="tl48-q6b" class="tl-opt tl-no">B. Hết sai số, vì đã lấy trung bình</label>
 <input type="radio" name="tl48-q6" id="tl48-q6c"><label for="tl48-q6c" class="tl-opt tl-no">C. Độ lệch còn khoảng $0{,}06\ \text{g}$, vì chia cho 5</label>
 <input type="radio" name="tl48-q6" id="tl48-q6d"><label for="tl48-q6d" class="tl-opt tl-no">D. Đo thêm 100 lần thì độ lệch triệt tiêu</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lệch cùng một phía $0{,}3\ \text{g}$ ở cả 5 lần nên trung bình cũng lệch $0{,}3\ \text{g}$. Muốn sửa phải chỉnh cân về số 0. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lệch cùng một phía $0{,}3\ \text{g}$ ở cả 5 lần nên trung bình cũng lệch $0{,}3\ \text{g}$. Muốn sửa phải chỉnh cân về số 0.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B, C, D đều tưởng trung bình xoá được sai số hệ thống: chỉ sai số tản hai phía mới bị trung bình làm nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
@@ -318,7 +320,7 @@ __BANG_TN1__
 <div class="tl-quiz">
 <input type="radio" name="tl48-q7" id="tl48-q7a"><label for="tl48-q7a" class="tl-opt tl-no">A. Cục tẩy, vì vật nhỏ nên ít sai số</label>
 <input type="radio" name="tl48-q7" id="tl48-q7b"><label for="tl48-q7b" class="tl-opt tl-no">B. Như nhau, vì cùng $\Delta A = 0{,}5\ \text{mm}$</label>
-<input type="radio" name="tl48-q7" id="tl48-q7c"><label for="tl48-q7c" class="tl-opt tl-no">C. Cục tẩy, vì $\delta \approx 0{,}2\,\%$ nhỏ hơn tấm</label>
+<input type="radio" name="tl48-q7" id="tl48-q7c"><label for="tl48-q7c" class="tl-opt tl-no">C. Cục tẩy, vì $\delta \approx 0{,}2\,\%$ nhỏ hơn $\delta \approx 4{,}2\,\%$ của tấm bìa</label>
 <input type="radio" name="tl48-q7" id="tl48-q7d"><label for="tl48-q7d" class="tl-opt tl-ok">D. Tấm bìa, vì $\delta \approx 0{,}2\,\%$ nhỏ hơn $\delta \approx 4{,}2\,\%$ của cục tẩy</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tấm bìa: $\dfrac{0{,}5}{250} \approx 0{,}2\,\%$. Cục tẩy: $\dfrac{0{,}5}{12} \approx 4{,}2\,\%$. Cùng một sai số tuyệt đối, vật nhỏ bị "ảnh hưởng" nặng hơn.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhầm: vật nhỏ không tự ít sai số. B chỉ so $\Delta A$, quên chia cho giá trị đo. C đảo hai con số: $0{,}2\,\%$ là của tấm bìa, cục tẩy có $4{,}2\,\%$.</p></div>
@@ -397,7 +399,7 @@ __BANG_TN1__
 
 <div class="tl-box" data-exp="tn-l10-sai-so-03">
 <p class="tl-label">📝 Đề bài</p>
-<p>Đo $g$ bằng con lắc đơn: $g = \dfrac{4\pi^2 l}{T^2}$. Dây dài $l = 1{,}000\ \text{m}$, thước ĐCNN $1\ \text{mm}$ (sai số dụng cụ bằng một ĐCNN). Thời gian $t$ của 10 dao động đo 5 lần bằng đồng hồ số ĐCNN $0{,}01\ \text{s}$, kết quả ở bảng trên. Bỏ qua sai số của $\pi$. Tính $g$ và ghi kết quả.</p>
+<p>Đo $g$ bằng con lắc đơn: $g = \dfrac{4\pi^2 l}{T^2}$. Dây dài $l = 1{,}000\ \text{m}$, thước ĐCNN $1\ \text{mm}$ (sai số dụng cụ bằng một ĐCNN). Thời gian $t$ của 10 dao động (chu kì $T$ là thời gian của một dao động) đo 5 lần bằng đồng hồ số ĐCNN $0{,}01\ \text{s}$, kết quả ở bảng trên. Bỏ qua sai số của $\pi$. Tính $g$ và ghi kết quả.</p>
 </div>
 
 <div class="table-scroll">
@@ -420,7 +422,7 @@ __BANG_TN1__
 <summary>🧮 Bấm xem lời giải</summary>
 <ol class="tl-steps">
 <li><strong>Chu kì:</strong> $\overline{t} = 20{,}07\ \text{s}$, $\Delta t = 0{,}14 + 0{,}01 = 0{,}15\ \text{s}$ (bảng) nên $T = 2{,}007\ \text{s}$.</li>
-<li><strong>Sai số tỉ đối của $T$:</strong> $\delta T = \delta t = \dfrac{0{,}15}{20{,}07} \approx 0{,}747\,\%$ (chia cho 10 không đổi $\delta$).</li>
+<li><strong>Sai số tỉ đối của $T$:</strong> $\Delta T = \dfrac{\Delta t}{10} = 0{,}015\ \text{s}$ nên $\delta T = \dfrac{0{,}015}{2{,}007} = \dfrac{0{,}15}{20{,}07} \approx 0{,}747\,\%$.</li>
 <li><strong>Giá trị trung bình:</strong> $$\overline{g} = \dfrac{4\pi^2 \cdot 1{,}000}{2{,}007^2} \approx 9{,}80\ \text{m/s}^2$$</li>
 <li><strong>Sai số của $l$:</strong> ở bài này đề quy ước lấy một ĐCNN (không phải nửa ĐCNN như ở mục II), nên $\delta l = \dfrac{0{,}001}{1{,}000} = 0{,}1\,\%$.</li>
 <li><strong>Sai số của $g$:</strong> $g$ chứa $l$ và $T^2$, nên $\delta g = \delta l + 2\,\delta T \approx 0{,}1 + 2 \cdot 0{,}747 \approx 1{,}6\,\%$.</li>

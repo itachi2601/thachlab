@@ -1,0 +1,131 @@
+{
+  "bai": "l10-co-nang-bao-toan",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ví dụ táo ở độ cao 1,8 m với v = 8 m/s, tính đủ ½mv² + mgz = 6,4 + 3,6 = 10 J (khớp ví dụ bảo toàn phía sau)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi dòng 🔑 thành \"Chỉ trọng lực (lực đàn hồi) sinh công · cơ năng không đổi\", bỏ thuật ngữ \"lực thế\" chưa định nghĩa."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Rơi hoặc trượt trên máng nhẵn từ độ cao h, xuất phát nghỉ: v = √(2gh), không phụ thuộc m\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng dưới công thức: công thức cho trường hợp chỉ có trọng lực, có lò xo thì thêm thế năng đàn hồi (trỏ tới «Xem thêm»)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: nói rõ lò xo nằm ngang, chọn mốc ngang vật nên mgz = 0, chú thích k và Δl mỗi ý một dòng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm thêm tấm chắn sáng bề rộng d gắn trên quả nặng, cổng quang đo thời gian chắn t, v = d/t."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: tách sai số ngẫu nhiên khi đo h (lệch lên hoặc xuống, nặng nhất ở h nhỏ) với sai số hệ thống (luôn lệch một phía), liệt kê nguyên nhân thành từng dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ A_c là công của ma sát, lực cản; trường hợp tổng quát dùng ký hiệu riêng ΔW = A_khác, lực kéo cùng chiều thì A_khác > 0."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(mốc thế năng ở mặt bàn)\" vào câu cơ năng tỉ lệ với độ cao đỉnh."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa ô bảng thành \"Ô tô xuống dốc đều nhờ phanh (tốc độ không đổi, độ cao giảm)\", tránh dùng đúng ví dụ nhảy dù để không lộ đáp án Câu 4."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: đổi mốc thì W đổi, nhưng hiệu thế năng và tốc độ không đổi; ví dụ hai mốc đã có trong phản hồi Câu 6 nên không thêm."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: giải thích h = l − l·cos 60° qua hai khoảng cách tới điểm treo, mỗi ý một dòng."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn bẫy A, và thêm ⚠ trước câu dự đoán sẽ làm hỏng mục đích dự đoán."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ nhắc hệ số ½ trong động năng trước Câu 1 (kèm ví dụ c1)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: không cho m vẫn tính được v vì m triệt tiêu."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn thứ tự W_2 − W_1 trong công thức và phản hồi, không cần ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4: tốc độ không đổi chưa đủ, phải xét độ cao."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua Bẫy 2 và dòng 🔑 \"Giữ tổng · không giữ từng phần\"."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dùng chung dòng ⚠ của c11 trước Câu 6: tốc độ không phụ thuộc mốc."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ví dụ táo ở nửa độ cao (W_d = W_t nhưng v ≈ 7,1 chứ không phải 5 m/s) đã cho thấy v không tỉ lệ với W_d."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: thêm ví dụ táo ở độ cao 1,8 m, v = 8 m/s: W = 6,4 + 3,6 = 10 J.",
+      "Mục II.1: bỏ câu \"Chọn mốc một lần, dùng suốt bài toán\" (đã có ở Bẫy 3).",
+      "Mục II.2: dòng 🔑 đổi \"lực thế\" thành \"trọng lực (lực đàn hồi)\".",
+      "Mục II.2: thêm ghi chú công thức bảo toàn chỉ cho trường hợp có trọng lực, có lò xo thì thêm thế năng đàn hồi.",
+      "Mục II.2: v = √(2gh) áp dụng cho cả trượt máng nhẵn, không phụ thuộc m.",
+      "Thí nghiệm con lắc: thêm tấm chắn sáng bề rộng d, v = d/t.",
+      "Nhận xét số liệu con lắc: tách sai số ngẫu nhiên (đo h) với sai số hệ thống (luôn dưới 100%).",
+      "Thêm ⚠ trước Câu 2: m triệt tiêu.",
+      "Xem thêm lò xo: lò xo nằm ngang, mốc ngang vật nên mgz = 0, chú thích k (N/m), Δl (m).",
+      "Mục II.4: A_c là công của ma sát, lực cản; trường hợp tổng quát ký hiệu ΔW = A_khác.",
+      "Thí nghiệm bóng bàn: ghi rõ mốc thế năng ở mặt bàn.",
+      "Bẫy 1: ví dụ không bảo toàn đổi thành ô tô xuống dốc đều nhờ phanh (tốc độ không đổi, độ cao giảm).",
+      "Thêm ⚠ trước Câu 4 (tốc độ không đổi chưa đủ) và trước Câu 6 (tốc độ, hiệu thế năng không phụ thuộc mốc).",
+      "Thử thách ⭐⭐: giải thích h = l − l·cos 60° = 0,4 m, kết quả v ≈ 2,8 m/s giữ nguyên.",
+      "Phản hồi sai Câu 1, 2, 4: cắt câu chốt lặp ý để bù độ dài."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-co-nang-bao-toan/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

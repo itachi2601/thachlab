@@ -1,0 +1,115 @@
+{
+  "bai": "l10-hieu-suat",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong nhận xét thêm $s = h/\\sin\\alpha$ và phép tính $0,20\\ \\text{m}/\\sin 15^\\circ \\approx 77,3$ cm, không thêm cột vào bảng."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã bỏ \"trượt lâu hơn\": công lực ma sát tăng theo quãng đường trượt nên hao phí lớn hơn."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ ở góc 15°, $F = 1,55/0,773 \\approx 2,0$ N."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn \"(nhớ $P = W/t$)\" vào câu chia cho $t$."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đổi thành \"$H$ không đơn vị, thường viết bằng %\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(đổi mỗi $H$ ra số thập phân rồi mới nhân)\", bù bằng cách cắt câu lặp \"Hiệu suất 100 % hoặc hơn là không thể\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô \"Máy lớn thì $P$ lớn\" đổi thành \"Máy mạnh là máy có $P_{ci}$ lớn\", khớp với Câu 3."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm hàng bảng: thêm dòng ⚠ trước Câu 4 (dùng chung với q-cau4) và đổi lời nhắc thành \"đọc lại dòng ⚠ ngay trên câu hỏi\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"hiệu suất động cơ xăng chỉ cỡ 25–33 %\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ \"phần 🔁 Thử sức đổi chiều\"."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi sai (năng lượng không tự biến mất), bỏ qua."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói rõ 500 kJ là phần có ích, bỏ qua."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói rõ 20 % là tỉ lệ hao phí, bỏ qua."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có bảng Bẫy 1 và dòng 🔑 \"Hiệu suất ≠ công suất\" ngay trước câu, bỏ qua."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ \"Đề cho phần hao phí thì trừ ra $W_{ci}$ trước\" trước Câu 4, cắt câu trùng ý trong phản hồi đúng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn \"luôn nhỏ hơn từng $H$ thành phần\", loại được phương án trung bình 85 %."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: công suất điện không cố định, cùng công và cùng $H$ mà làm nhanh hơn thì $P_{tp}$ lớn hơn."
+      }
+    ],
+    "doi_noi_dung": [
+      "Nhận xét ván nghiêng (trong details): thêm $s = h/\\sin\\alpha$, $0,20\\ \\text{m}/\\sin 15^\\circ \\approx 77,3$ cm so với 28,3 cm ở 45°.",
+      "Nhận xét ván nghiêng: thay \"trượt lâu hơn\" bằng \"công lực ma sát tăng theo quãng đường trượt\".",
+      "Sai số lực kế: ghi rõ ở 15°, $F = W_{tp}/s = 1,55/0,773 \\approx 2,0$ N, sai số ±0,02 N là 1 %.",
+      "Mục 3: thêm lời nhắc đổi $H$ ra số thập phân trước khi nhân.",
+      "Mục 3: cắt câu \"Hiệu suất 100 % hoặc hơn là không thể\" (ý này vẫn còn ở hộp quy tắc và Trả bài).",
+      "Bảng Bẫy 1: \"Máy lớn thì P lớn\" thành \"Máy mạnh là máy có $P_{ci}$ lớn\".",
+      "Bảng Bẫy 2: \"$H$ tính bằng %\" thành \"$H$ không đơn vị, thường viết bằng %\".",
+      "Thêm dòng ⚠ trước Câu 4: đề cho hao phí thì trừ ra $W_{ci}$ trước.",
+      "Câu 4: cắt câu nhắc trừ hao phí trong phản hồi đúng vì đã có dòng ⚠.",
+      "Câu 4: phản hồi sai nay trỏ tới dòng ⚠.",
+      "Thêm dòng ⚠ trước Câu 6: công suất điện không cố định, cùng công và cùng $H$ mà làm nhanh hơn thì $P_{tp}$ lớn hơn.",
+      "Câu 6: phản hồi sai trỏ rõ tới phần \"🔁 Thử sức đổi chiều\".",
+      "Mục VI: hiệu suất động cơ xăng ghi thành 25–33 %.",
+      "Định dạng: các đáp án nhiều ý (Trả bài, Điền bước, Thử thách, chú thích $P_{ci}$/$P_{tp}$) tách mỗi ý một dòng bằng <br>, không đổi số liệu."
+    ],
+    "so_tu_them": 28,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-hieu-suat/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

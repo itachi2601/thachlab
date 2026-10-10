@@ -1,0 +1,124 @@
+{
+  "bai": "l10-dong-nang-the-nang",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai mở bài sửa thành: D là cho quãng lết gấp 8 lần, đúng phải gấp 2² = 4 tức 2·4 = 8 m."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"Với một vật đã cho\" ở tính chất 1 (và ở đáp án Trả bài 2) để không hiểu nhầm là không phụ thuộc m."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm bước F_ms = μmg thay vào s = mv²/(2F_ms) ra s/v² = 1/(2μg)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ mốc mặt bàn z = 2,0 − 0,8 = 1,2 m trước kết quả 6 J."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích h là độ cao của vật so với mặt đất."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đầu hộp định lí thế năng thêm định nghĩa: lực thế là lực có công chỉ phụ thuộc điểm đầu, điểm cuối."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng đi xuống viết lại: \"Với trọng lực (A_P = A_MN), đi xuống: …\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: trọng lực hợp với đường đi góc 90° − α và h = s sin α, giữ nguyên công thức."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra thêm phương trình ½mv_B² − ½mv_A² = mg(z_A − z_B) rồi chia hai vế cho ½m."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề ⭐⭐⭐ thêm g = 10 m/s², đáp án viết v² = v₀² + 2A/m = 100 + 2·400/2 = 500, tách mỗi ý một dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi đổi cấu trúc quiz (ô tự tin phải đứng ngoài .tl-quiz, trước khi phản hồi hiện), đề câu hỏi nằm ngay bên dưới nên vẫn đọc được trước khi chọn."
+      },
+      {
+        "id": "q-Dự đoán (mở bài)",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn quãng phanh tỉ lệ v², và đây là câu dự đoán trước khi học nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ nhắc không quên hệ số ½ trước Câu 1."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nhắc đổi km/h chỉ có ở cuối bài, đã thêm ⚠ đổi km/h ra m/s trước Câu 2."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn thế năng đầu trừ cuối trong hộp định lí thế năng trước Câu 3."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ⚠ lập tỉ số tốc độ cuối/đầu rồi mới bình phương, bỏ câu nhắc trùng ở cuối phản hồi sai."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn đầu trừ cuối và có bảng Bẫy 2 ngay trước Câu 5."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và bảng ngay trước Câu 6 đã nhấn đúng lỗi bỏ quên ma sát."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài toán mẫu ngay trước đã dùng hiệu độ cao z_A − z_B, lỗi này đã được nhấn."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài, phản hồi sai: giải thích lại phương án D (16 m là gấp 8 lần), đúng phải gấp 4 lần tức 8 m.",
+      "II.1: tính chất động năng thành \"với một vật đã cho, chỉ phụ thuộc tốc độ\" (cả đáp án Trả bài 2).",
+      "II.2: bỏ ví dụ máy bay ở danh sách tổng công dương (đã có trong details).",
+      "II.2 details nhận xét: thêm F_ms = μmg, s/v² = 1/(2μg), kết quả μ ≈ 0,25 giữ nguyên.",
+      "II.3: chú thích h là độ cao so với mặt đất, ghi z = 1,2 m cho mốc mặt bàn (6 J giữ nguyên).",
+      "II.3: bỏ ví dụ máy đóng cọc (trùng với mục VI).",
+      "II.4: thêm giải thích góc 90° − α và h = s sin α cho mặt nghiêng.",
+      "II.4: thêm định nghĩa lực thế ở đầu hộp định lí thế năng, ghi A_P = A_MN với trọng lực.",
+      "II.4 thí nghiệm con lắc: rút gọn câu rút ra, ý vật lí giữ nguyên.",
+      "Thêm dòng ⚠ trước Câu 1 (hệ số ½), Câu 2 (đổi km/h), Câu 4 (lập tỉ số rồi bình phương), bỏ câu nhắc cuối phản hồi sai Câu 4.",
+      "V. Lời giải mẫu: thêm bước chia hai vế cho ½m để ra v_B² = v_A² + 2g(z_A − z_B) = 400.",
+      "VI. Thử thách ⭐⭐⭐: thêm g = 10 m/s², v² = 100 + 2·400/2 = 500, v ≈ 22,4 m/s (kết quả không đổi).",
+      "Trả bài, Điền bước, Thử thách ⭐⭐⭐: tách đáp án nhiều ý thành từng dòng bằng <br>."
+    ],
+    "so_tu_them": 13,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dong-nang-the-nang/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

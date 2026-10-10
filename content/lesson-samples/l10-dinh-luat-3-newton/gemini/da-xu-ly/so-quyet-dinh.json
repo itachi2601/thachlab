@@ -1,0 +1,124 @@
+{
+  "bai": "l10-dinh-luat-3-newton",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 1 sửa thành \"không vượt quá sai số đọc (±0,1 N)\" cho khớp phương án A và thông số lực kế."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ thuật ngữ \"sai số ngẫu nhiên\" chưa định nghĩa, dùng thống nhất \"sai số đọc\" và nói rõ không phải hai lực khác nhau."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 1 viết lại: \"số chỉ lực kế 2 lớn hơn lực kế 1 là 0,1 N; ở lần 4 thì ngược lại\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào Bẫy 2 câu dẫn \"Lực bằng nhau và F = ma nên m_A a_A = m_B a_B\" và kiểm bằng 8000·5 = 1000·40 ở dòng 🔑, cắt bớt phản hồi Câu 3 để bù chữ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "\"Cùng loại\" định nghĩa là cùng bản chất (hấp dẫn/đàn hồi/ma sát), phản hồi Câu 2 ghi rõ \"cùng là lực đàn hồi của dây\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi đổi tình huống/cấu trúc mở bài (câu hỏi \"sao em lại đi lùi?\" ngay sau cũng dựa vào kết quả này), vượt phạm vi sửa tại chỗ."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 3 sửa thành \"Khí cháy đẩy lại tên lửa, trong chân không vẫn vậy\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐⭐ viết từng dòng: hai phương trình, cộng lại được a = 1 m/s², rồi thay vào tìm T = 500 N."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thành hai gạch \"Đá bóng\" và \"Đạp xe\", bỏ phần nhắc lại về bơi."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 4 phương án D đổi thành \"phản lực của búa ngược chiều lực ném, tức hướng ra sau, không có lực nào hướng lên\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trong phản hồi Câu 0, không cần thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đặc điểm \"Cùng lúc\" đã nêu trước quiz và phản hồi đã giải thích phương án C."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn điều kiện cùng một vật, nay thêm định nghĩa \"cùng loại = cùng bản chất\" (c5)."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn lực bằng nhau, hậu quả khác do gia tốc."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Bẫy 3 \"Đẩy cái gì · cái đó đẩy lại\" đã nhấn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và bài toán mẫu đã nhấn lực bằng nhau nhưng gia tốc khác nhau."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Hệ thức m_A a_A = m_B a_B nay đã dẫn ở Bẫy 2 và dùng lại trong bài toán mẫu, phần điền bước trước Câu 6."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 1 (đề): \"số chỉ lực kế 2 lớn hơn lực kế 1 là 0,1 N; ở lần 4 thì ngược lại\".",
+      "Câu 1 (phản hồi đúng): \"nhỏ hơn sai số đọc\" → \"không vượt quá sai số đọc (±0,1 N)\".",
+      "Câu 1 (phản hồi đúng): bỏ thuật ngữ \"sai số ngẫu nhiên\".",
+      "Mục II.2: \"cùng loại\" định nghĩa lại là cùng bản chất (hấp dẫn, đàn hồi, ma sát) thay cho hút/đẩy.",
+      "Câu 2 (phản hồi đúng): \"cùng loại (lực kéo)\" → \"cùng là lực đàn hồi của dây\".",
+      "Bẫy 2: thêm dẫn xuất m_A a_A = m_B a_B từ F_AB = F_BA và F = ma.",
+      "Bẫy 2: dòng 🔑 kiểm bằng 8000·5 = 1000·40.",
+      "Bẫy 2: bỏ cụm \"a = F/m\" trong đoạn văn.",
+      "Câu 3 (phản hồi sai): rút gọn thành \"độ lớn lực tương tác không phụ thuộc khối lượng hay vận tốc\".",
+      "Bẫy 3 (bảng): \"Khí cháy đẩy lại tên lửa, trong chân không vẫn vậy\".",
+      "Câu 4 (phản hồi D): thay ý \"lực nằm trên đường thẳng nối hai vật\" bằng \"phản lực ngược chiều lực ném\".",
+      "Thử thách ⭐⭐⭐: thêm bước cộng hai phương trình 600 = 600a → a = 1 m/s², T = 300 + 200·1 = 500 N (kết quả không đổi).",
+      "Mục VI: tách \"Đá bóng\" và \"Đạp xe\" thành hai gạch, bỏ câu \"bàn đạp đẩy người về trước\"."
+    ],
+    "so_tu_them": -12,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dinh-luat-3-newton/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

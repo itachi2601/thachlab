@@ -1,0 +1,103 @@
+{
+  "bai": "l10-dong-luong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Phần mềm tính xung lượng bằng diện tích dưới đồ thị F–t\" ngay tại bước Làm."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đưa sai số cổng quang ±0,01 m/s và cảm biến ±2 % vào khung Đọc số liệu, gộp bớt câu hỏi trùng ý để bù chữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong bài (phần nhận xét là chỗ giữ __NHANXET__)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ chiều dương là chiều tới, viết Δp = m(−1 − 1) = −2m và nói m tính bằng kg, Δp bằng kg·m/s."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách ô bảng: hợp lực nhỏ đúng ngần ấy lần, lực đỡ chỉ xấp xỉ khi lớn hơn nhiều trọng lượng; phần ⭐⭐⭐ là chỗ giữ sinh tự động nên không sửa."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: trong bài dấu $ đóng sau \"≈ 4,7 m/s\", không sau \"− 12\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ trường hợp p₁ = p₂ là công thức góc bất kì rút gọn lại, không thêm đẳng thức lượng giác để giữ độ dài."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi câu hỏi thành \"Các trường hợp góc đặc biệt?\" và thêm trường hợp p₁ = p₂ vào đáp án."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C nay nói rõ Δt phải nằm ở tử số, v = FΔt/m, và bỏ câu gợi ý trùng ý."
+      },
+      {
+        "id": "q-du_doan_mo_bai",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, thêm ⚠ sẽ lộ đáp án, phản hồi sai đã chỉ ra lỗi chỉ nhìn khối lượng."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ý động lượng phụ thuộc hệ quy chiếu ở mục 1, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: FΔt cho ra Δp, chưa phải tốc độ."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 🔑 mục 2 và ở Bẫy 2, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở 🔑 và bảng Bẫy 3, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài toán mẫu đã nhấn bước chia cho Δt, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.4, bước Làm: thêm \"xung lượng = diện tích dưới đồ thị F–t\".",
+      "Khung Đọc số liệu: thêm sai số cổng quang ±0,01 m/s mỗi lần đo và sai số cảm biến ±2 %; trợ giảng đối chiếu với nội dung sinh vào __NHANXET__ để không lệch số.",
+      "Bảng Bẫy 1: thêm chiều dương là chiều tới, Δp = m(−1 − 1) = −2m, m tính bằng kg, Δp tính bằng kg·m/s.",
+      "Bảng Bẫy 3, dòng F: hợp lực nhỏ hơn đúng tỉ lệ Δt; lực đỡ của đệm/sàn chỉ xấp xỉ tỉ lệ đó khi lớn hơn nhiều trọng lượng (bỏ cụm \"bỏ qua trọng lực\").",
+      "Mục II.2: ghi rõ p = 2p₁cos(α/2) là công thức góc bất kì rút gọn khi p₁ = p₂.",
+      "Câu 2, phản hồi sai C: đúng ra v = FΔt/m, Δt nằm ở tử số.",
+      "Trả bài câu 3: đổi \"Bốn trường hợp góc\" thành \"Các trường hợp góc đặc biệt\", đáp án thêm trường hợp p₁ = p₂."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

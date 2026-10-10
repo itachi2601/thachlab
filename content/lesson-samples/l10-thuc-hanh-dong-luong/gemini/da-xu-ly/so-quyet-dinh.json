@@ -1,0 +1,113 @@
+{
+  "bai": "l10-thuc-hanh-dong-luong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không đổi ký hiệu toàn bài (bảng chèn ngoài vẫn dùng $t_1'$) mà thêm chú thích ở TN2: $t_1'$ là xe 1 qua cổng 1, khác nghĩa với thí nghiệm 1."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại thành \"một số đề gọi đây là va chạm đàn hồi\" và nói rõ $p = 0$ chỉ vì hai xe cùng đứng yên lúc đầu, hai xe chạy tới bật nhau thì $p \\neq 0$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm khối <details> dưới bảng TN2 với công thức $\\Delta p_1' = |p_1'|(\\Delta m/m_1 + \\Delta t/t_1')$ và tiêu chí $|p'| \\le \\Delta p'$ (không ghi số vì bảng chèn ngoài)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (số liệu nằm trong bảng __BANG_B2__ chèn ngoài), tiêu chí kết luận đã thêm theo c3."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bảng __BANG_A2__ chèn ngoài), trợ giảng nên kiểm lại vì 0,1879 chỉ ra khi làm tròn $v'$ = 0,234, không làm tròn thì 0,1876 và δ ≈ 2,7 % (kết luận δ > ε không đổi)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 4 lời giải mẫu ghi rõ $m_1 + m_2$ gồm hai lần cân nên $\\Delta m = 0{,}002$ kg."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"lấy số đo lần xe chắn cổng đầu tiên, vì xe có thể bật lại qua cổng\" và \"gắn thêm gia trọng (quả nặng) lên xe\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích hình nằm ngoài HTML ở mốc FIG3)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi D sửa thành: D lấy $(m_1+m_2)/m_2 = 3$ như va chạm mềm, nhưng hai xe tách nhau nên không cộng khối lượng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong <details> mô hình $a \\approx gh/L$, $v_{thật}^2 = v^2 + 2ax$ kèm ví dụ $h = 2$ mm."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi A, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: đề có thể cho bề rộng theo cm, đổi sang m trước khi tính $v$."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: xe nặng hơn chạy chậm hơn nên qua cổng mất thời gian dài hơn (bỏ câu trùng ý trong phản hồi đúng)."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 2 (dính nhau thì cộng khối lượng), không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 (lệch cùng phía là sai số hệ thống), không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: khối lượng gấp đôi chưa chắc làm $v'$ giảm nửa, rút $v'$ từ $m_1v_1 = (m_1+m_2)v'$ rồi mới xét."
+      }
+    ],
+    "doi_noi_dung": [
+      "TN1 (mục 2): giải thích \"số đo lần đầu\" là lần xe chắn cổng đầu tiên và gia trọng là quả nặng gắn thêm.",
+      "Mục 1: chuyển danh sách \"Trước khi đo\" vào <details>, mỗi bước một dòng (nội dung giữ nguyên).",
+      "Mục 3: rút gọn câu dẫn bảng thành \"Kết quả cả ba lần:\".",
+      "TN2 (mục 4): câu \"va chạm đàn hồi\" sửa thành cách gọi của một số đề, nói rõ $p = 0$ chỉ khi hai xe cùng đứng yên lúc đầu.",
+      "TN2: chú thích $t_1'$ ở thí nghiệm 2 là xe 1 qua cổng 1, khác nghĩa với thí nghiệm 1.",
+      "TN2: thêm <details> công thức $\\Delta p_1' = |p_1'|(\\Delta m/m_1 + \\Delta t/t_1')$, tương tự $\\Delta p_2'$, và kết luận bảo toàn khi $|p'| \\le \\Delta p'$.",
+      "Câu 2: phản hồi D đổi thành lỗi dùng $(m_1+m_2)/m_2 = 3$, phản hồi đúng bỏ câu trùng với dòng ⚠ mới.",
+      "Thêm dòng ⚠ trước Câu 1 (đổi cm sang m), Câu 2 (xe nặng hơn có t dài hơn), Câu 6 (rút v' trước khi xét).",
+      "Bài toán mẫu bước 4: ghi rõ $\\Delta m = 0{,}002$ kg vì $m_1 + m_2$ gồm hai lần cân (số liệu không đổi).",
+      "Details băng nghiêng: thêm $a \\approx gh/L$, $v_{thật}^2 = v^2 + 2ax$, ví dụ h = 2 mm cho a ≈ 0,016 m/s² và $v_{thật}$ ≈ 0,514 m/s (trợ giảng đối chiếu với __BANG_NGHIENG__, nếu bảng dùng a chưa làm tròn có thể ra 0,515)."
+    ],
+    "so_tu_them": 39,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

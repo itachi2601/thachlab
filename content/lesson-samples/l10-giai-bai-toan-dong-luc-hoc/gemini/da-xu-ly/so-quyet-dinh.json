@@ -1,0 +1,128 @@
+{
+  "bai": "l10-giai-bai-toan-dong-luc-hoc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Vẽ sửa thành Ox theo chiều chuyển động dự kiến (hoặc chiều lực kéo), chọn một lần và giữ đến hết bài."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 3 viết thêm phương trình của m1 (trượt trên bàn có ma sát) là T − F_ms = m1·a trước khi cộng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B ghi rõ: với trục của m2 hướng lên, phương trình đúng là T − P2 = −m2·a."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi D ghi rõ phép tính: lấy N = F cosα ≈ 86,6 N rồi nhân μ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nguồn gốc a = 2s/t² là s = ½at² với v0 = 0."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu nối: cho F_ms = 0 trong P2 − F_ms = (m1 + m2)a ở Câu 3."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay 0,5 bằng biểu thức (m1 + m2)(a_lí thuyết − a_đo) rồi mới thế số."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa μ_n ngay đầu Bẫy 4 và đổi phản hồi B Câu 7 thành μ_n N = 200 N."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lực hướng tâm chưa học nên thay dòng đó bằng lỗi sát bài: vẽ trọng lực P2 của vật treo lên m1 (thực ra chỉ có T)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa nội lực và ngoại lực trong ô Xem thêm, mỗi ý một dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành: dốc quá thì mg sinα vượt μ_n mg cosα, ma sát nghỉ không giữ nổi."
+      },
+      {
+        "id": "q-du-doan-muc-I",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn đúng lỗi chỉ nhìn lực kéo xuống dốc nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn dây nhấc bớt thùng ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn N = mg cosα nhỏ hơn mg."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chiều dương đi vòng theo dây."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi và bảng lực thừa đã nhấn lực đà không phải lực."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn ma sát trượt tỉ lệ với N."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn giữ chiều dương, và quy trình nay cũng ghi giữ trục đến hết bài (c1)."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ma sát nghỉ vừa đủ, μ_n N chỉ là mức trần."
+      },
+      {
+        "id": "q-dien-buoc-V",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lời giải đã chỉ rõ ma sát nghỉ 10 N, không phải 12 N."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 1 (mục II.2), phản hồi D: giải thích 17,3 N = 0,2 · 86,6 N (lấy nhầm N = F cosα).",
+      "Câu 3 (mục II.4), phản hồi đúng: thêm phương trình m1 là T − F_ms = m1·a trước khi cộng.",
+      "Câu 3, phản hồi B: phương trình đúng với trục m2 hướng lên là T − P2 = −m2·a.",
+      "Thí nghiệm 2: a = 2s/t² suy từ s = ½at² (v0 = 0).",
+      "Thí nghiệm 2: a = m2g/(m1 + m2) = 2,0 m/s² lấy từ P2 − F_ms = (m1 + m2)a với F_ms = 0.",
+      "Nhận xét thí nghiệm 2: lực cản ≈ (m1 + m2)(a_lí thuyết − a_đo) = 0,5 · 0,17 ≈ 0,08 N (số không đổi).",
+      "Bẫy 1, bảng lực thừa: bỏ dòng lực hướng tâm, thay bằng lỗi vẽ P2 của vật treo lên m1.",
+      "Bẫy 4: định nghĩa μ_n (hệ số ma sát nghỉ).",
+      "Câu 7, phản hồi B: đổi μN thành μ_n N = 200 N.",
+      "Ô Xem thêm vật chồng: thêm định nghĩa nội lực và ngoại lực.",
+      "Mục VI, ô tô trên dốc: mg sinα vượt μ_n mg cosα thì xe trượt.",
+      "Bước Vẽ của quy trình: Ox chọn một lần theo chiều chuyển động dự kiến và giữ đến hết bài."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

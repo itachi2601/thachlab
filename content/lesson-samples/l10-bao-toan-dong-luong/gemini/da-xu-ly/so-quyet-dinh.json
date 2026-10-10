@@ -1,0 +1,104 @@
+{
+  "bai": "l10-bao-toan-dong-luong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung va chạm mềm tách dòng: $v_1, v_2$ là vận tốc trước, $v$ (không dấu phẩy) là vận tốc chung sau va chạm."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài, phần nhận xét đang là mốc __NHANXET__)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C của câu 1 sửa thành: ngay sau cú ôm chưa có lực nào kịp hãm, ma sát nhỏ chỉ làm chậm dần về sau (xem Bẫy 3)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4 thêm một dòng: hệ đang chuyển động thì viết $(m+M)\\vec v_0 = m\\vec v + M\\vec V$, không dùng công thức $\\vec V = -\\frac{m}{M}\\vec v$."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngay sau dòng đó ví dụ đá rơi chéo vào xe cát trên ray, chỉ bảo toàn động lượng theo phương ngang."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích ray đệm khí (thổi khí nâng xe lên, ma sát gần bằng 0) đặt trong phản hồi đúng, để phương án D không bị lộ đáp án."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích trong ngoặc: cổng quang đo thời gian xe chắn tia sáng, từ đó tính vận tốc."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và nhận xét đang là mốc chèn tự động (__BANG__, __NHANXET__) nên chưa kiểm được mâu thuẫn, trợ giảng cần đối chiếu khi số liệu được chèn."
+      },
+      {
+        "id": "q-tl74-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi D và ở Bẫy 2, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl74-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: danh sách ngoại lực ghi rõ Trái Đất hút."
+      },
+      {
+        "id": "q-tl74-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: đề câu hỏi yêu cầu thoả cả động lượng lẫn động năng, mục 3 nêu va chạm mềm làm động năng giảm."
+      },
+      {
+        "id": "q-tl74-q4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bài chưa nhắc đổi đơn vị nên thêm dòng ⚠ trước câu 4: đổi khối lượng ra kg, $1\\ \\text{g} = 0{,}001\\ \\text{kg}$."
+      },
+      {
+        "id": "q-tl74-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước câu này bằng bảng Bẫy 1 và dòng 🔑 về dấu."
+      },
+      {
+        "id": "q-tl74-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng bảng Bẫy 2 và dòng 🔑 \"động lượng luôn giữ\"."
+      },
+      {
+        "id": "q-tl74-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục \"Coi gần đúng là kín\" và bảng Bẫy 3."
+      },
+      {
+        "id": "q-tl74-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng \"Dấu của kết quả cho biết chiều\" và bước \"Đọc dấu\" trong bài mẫu."
+      }
+    ],
+    "doi_noi_dung": [
+      "Khung \"Vận tốc chung sau va chạm mềm\": tách nghĩa ký hiệu, $v_1, v_2$ là vận tốc trước va chạm, $v$ là vận tốc chung sau va chạm.",
+      "Mục 4 Phản lực: thêm dòng cho hệ đang chuyển động rồi tách, $(m + M)\\vec v_0 = m\\vec v + M\\vec V$.",
+      "Mục 1 Hệ kín: thêm ví dụ bảo toàn theo một phương (đá rơi chéo vào xe cát trên ray, chỉ bảo toàn theo phương ngang).",
+      "Phản hồi sai câu 1 (phương án C): nay nói ma sát nhỏ làm chậm dần về sau, khớp với Bẫy 3.",
+      "Phản hồi đúng câu 2: thêm giải thích ray đệm khí nâng xe lên nên ma sát gần bằng 0.",
+      "Thí nghiệm 1: thêm chú thích cổng quang (đo thời gian chắn sáng để tính vận tốc).",
+      "Thêm dòng ⚠ đổi gam ra kilôgam trước câu 4.",
+      "Cắt để bù độ dài: bỏ dòng \"Vật này mất bao nhiêu động lượng, vật kia nhận đúng bấy nhiêu\", bỏ ví dụ vòi cứu hoả, bỏ \"cú ôm của An và Bình\" khỏi ví dụ va chạm mềm, rút gọn câu ví dụ hệ An + Bình."
+    ],
+    "so_tu_them": 55,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-bao-toan-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "bai": "l10-chuyen-dong-tron-deu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu n nhưng ghi rõ ngay cạnh công thức: n là số vòng trong 1 phút, khác số vòng đếm trong Δt ở mục 2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi đơn vị cho v = πdn: ra m/phút khi n tính bằng vòng/phút, chia 60 để ra m/s (trong details)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa giải thích phương án D thành 'tưởng độ biến thiên vận tốc bằng chính độ lớn vận tốc'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước v₂ − v₁ = v₂ + (−v₁), −v₁ vẫn vuông góc v₂ nên dùng Pitago; không thêm hình vì không được chèn ảnh."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết tiếp ω = 2π/86 400 ≈ 7,27·10⁻⁵ rad/s."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong details: tính ω không cần r, r chỉ dùng nếu muốn tính v = ωr (không ghi số vì bảng đo là dữ liệu sinh sau)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết xen v = (θ/t)·r = ωr, tròn đều nên θ/t chính là ω."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3 hướng dẫn cách tìm chiều bằng mặt đồng hồ mà không lộ đáp án; không sửa hình."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành vệt thẳng ngay từ chỗ rời vành, không bám theo vành, không bắn theo bán kính."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm R ≈ 6370 km ngay trong dòng Trái Đất tự quay."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một câu giải thích hình học r = R cos φ trong gợi ý ⭐⭐⭐; không thêm hình."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ mốc 365 ngày, chỉ giữ Trái Đất tự quay T = 24 h."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 cố ý cho làm câu trước rồi mới chốt bảng, kiến thức đã có ở mục II.3; chuyển bảng là đổi cấu trúc mục."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn (hàng thẳng nên cùng thời gian một vòng), không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn θ = s/r và phản hồi nêu rõ lỗi lấy cung làm góc, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: mỗi kim có chu kì riêng, xác định đúng T của kim được hỏi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp với c8: dòng ⚠ trước Câu 3 về cách tìm chiều vận tốc theo chiều quay."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay tên Bẫy 1 và bảng tốc độ/vận tốc, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục II.3 (cùng ω, xa tâm v lớn hơn), không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chia 60 ra f rồi nhân 2π ở Bẫy 3, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 7: viết v = ωr trước, đừng đoán n tăng hay giảm theo cảm giác."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.2 ví dụ Trái Đất: thêm ω = 2π/86 400 ≈ 7,27·10⁻⁵ rad/s.",
+      "II.2 details đĩa lò vi sóng: thêm ghi chú ω không phụ thuộc r, r = 0,14 m chỉ để tính v = ωr (không thêm số).",
+      "II.3: viết rõ v = (θ/t)·r = ωr.",
+      "II.4 thí nghiệm giọt nước: quan sát đổi thành vệt thẳng ngay từ chỗ rời vành, không bám vành.",
+      "Thêm 3 dòng ⚠ trước Câu 2, Câu 3, Câu 7.",
+      "Câu 4: phản hồi đúng thêm bước v₂ − v₁ = v₂ + (−v₁); phản hồi sai sửa nguồn gốc phương án D (10 m/s).",
+      "Bẫy 3: ghi rõ n trong ω = 2πn/60 là số vòng trong 1 phút.",
+      "V lời giải: v = πdn ra m/phút khi n tính bằng vòng/phút, chia 60 ra m/s.",
+      "VI: thêm R ≈ 6370 km cho dòng 463 m/s.",
+      "VI ⭐⭐⭐: thêm giải thích hình học r = R cos φ (số 5947 km, 432 m/s giữ nguyên, đã kiểm).",
+      "Mang về: bỏ mốc Trái Đất quanh Mặt Trời 365 ngày.",
+      "Cắt để bù độ dài: câu dẫn 'Em đọc to…' ở mục IV và gạch đầu dòng 'Xe đạp' ở mục VI (lặp ý Câu 7)."
+    ],
+    "so_tu_them": 65,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-tron-deu/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

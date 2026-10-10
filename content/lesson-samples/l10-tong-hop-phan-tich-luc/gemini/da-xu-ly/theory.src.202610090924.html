@@ -1,0 +1,485 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li><strong>Tổng hợp</strong> hai lực đồng quy bằng quy tắc hình bình hành: $F^2 = F_1^2 + F_2^2 + 2F_1F_2\cos\alpha$.</li>
+<li><strong>Phân tích</strong> một lực thành hai thành phần vuông góc: $F_x = F\cos\alpha$, $F_y = F\sin\alpha$.</li>
+<li>Dùng <strong>điều kiện cân bằng</strong> $\vec F_1 + \vec F_2 + \vec F_3 = \vec 0$ để tìm lực căng dây.</li>
+<li>Phân biệt <strong>hai lực cân bằng</strong> với <strong>cặp lực – phản lực</strong>.</li>
+</ul>
+<p>Đọc khoảng 18 phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: hai dây kéo một chiếc xe</h3>
+
+<p>Trên sân băng, hai bạn cùng kéo một chiếc xe chở dụng cụ bằng hai sợi dây. Mỗi bạn kéo đúng <strong>100 N</strong>. Khi hai dây song song, xe lao đi rất nhanh. Khi hai bạn đứng lệch hẳn sang hai bên, xe chỉ nhích chậm.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Hai bạn kéo cùng lúc, mỗi bạn 100 N. <strong>Hợp lực</strong> tác dụng lên xe là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q1" id="tl58-q1a"><label for="tl58-q1a" class="tl-opt tl-no">A. Luôn bằng 200 N, vì 100 + 100</label>
+<input type="radio" name="tl58-q1" id="tl58-q1b"><label for="tl58-q1b" class="tl-opt tl-no">B. Luôn bằng 100 N, vì xe chỉ có một chiều chạy</label>
+<input type="radio" name="tl58-q1" id="tl58-q1c"><label for="tl58-q1c" class="tl-opt tl-ok">C. Từ 0 đến 200 N, tuỳ <em>góc giữa hai dây</em></label>
+<input type="radio" name="tl58-q1" id="tl58-q1d"><label for="tl58-q1d" class="tl-opt tl-no">D. Luôn bằng 0, vì hai lực kéo triệt tiêu nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Lực là <strong>vectơ</strong>: ngoài độ lớn còn có hướng. Hai dây song song cùng chiều cho 200 N; càng mở rộng góc, hợp lực càng nhỏ. Cả bài này xoay quanh một việc: <em>cộng vectơ lực</em>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Thử nghĩ tới hai trường hợp ở đầu bài: dây song song và dây lệch hẳn sang hai bên. Hai trường hợp ấy có cho cùng một kết quả không? Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<!--SIMKEO-->
+
+<h3>II. Kiến thức: tổng hợp, phân tích, cân bằng</h3>
+
+<h4>1. Tổng hợp lực</h4>
+
+<p><strong>🔑 Thay nhiều lực · bằng một lực · tác dụng y hệt</strong></p>
+
+<ul>
+<li><strong>Tổng hợp lực</strong>: thay các lực tác dụng đồng thời lên một vật bằng <strong>một lực</strong> có tác dụng giống hệt.</li>
+<li>Lực thay thế gọi là <strong>hợp lực</strong>; các lực bị thay gọi là <strong>lực thành phần</strong>.</li>
+<li>Hệ thức: $\vec F = \vec F_1 + \vec F_2 + \dots$ (cộng <em>vectơ</em>, không cộng số).</li>
+</ul>
+
+<p>Ví dụ: hai người cùng đẩy một chiếc xe hỏng theo <strong>cùng một chiều</strong>, xe chạy y như khi một người khỏe gấp đôi đẩy một mình. Lệch hướng đi là kết quả đã khác.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-tonghopluc-01">
+<p class="tl-label">🔬 Thí nghiệm: ba lực kế và chiếc vòng nhẫn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> buộc ba dây vào một vòng nhẫn, mỗi dây móc một lực kế. Hai bạn kéo lực kế 1, 2 theo hai hướng hợp góc $\alpha$; bạn thứ ba kéo lực kế 3 cho vòng nằm yên. Đọc ba số, vạch ba hướng dây trên giấy.</li>
+<li><strong>Quan sát:</strong> dựng hình bình hành từ $\vec F_1$, $\vec F_2$ theo tỉ lệ: đường chéo dài đúng bằng số đọc của lực kế 3 và <strong>ngược hướng</strong> dây thứ ba.</li>
+<li><strong>Rút ra:</strong> hợp lực của $\vec F_1$, $\vec F_2$ cùng độ lớn, ngược chiều $\vec F_3$: quy tắc hình bình hành đúng với lực.</li>
+</ol>
+</div>
+<!--video:tn-l10-tonghopluc-01-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: hai lực kế, thước đo góc</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/4duh8FCeRwM?rel=0&start=50&end=135" title="hai lực kế, thước đo góc" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Hai lực kế kéo lệch nhau. Dây treo quả nặng nằm về phía nào so với góc giữa hai lực kế?</p>
+</div>
+
+
+<details class="tl-details">
+<summary>📊 Bấm xem: bảng số liệu mẫu và câu hỏi về sai số</summary>
+<p>Bảng số liệu mẫu cho một lần làm với $F_1 = 3{,}0$ N, $F_2 = 4{,}0$ N (lực kế chia độ 0,1 N, sai số $\pm 0{,}1$ N):</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Góc $\alpha$</th><th>$F$ tính (N)</th><th>$F_3$ đọc (N)</th></tr>
+</thead>
+<tbody>
+<tr><td>$0^\circ$</td><td>7,0</td><td>6,9</td></tr>
+<tr><td>$60^\circ$</td><td>6,1</td><td>6,1</td></tr>
+<tr><td>$90^\circ$</td><td>5,0</td><td>5,1</td></tr>
+<tr><td>$120^\circ$</td><td>3,6</td><td>3,7</td></tr>
+<tr><td>$180^\circ$</td><td>1,0</td><td>1,1</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>Độ lệch lớn nhất giữa cột "tính" và cột "đọc" là bao nhiêu? Có thể kết luận quy tắc hình bình hành <em>sai</em> không?</p>
+<p><strong>Nhận xét:</strong> lệch tối đa <strong>0,1 N</strong>, cỡ sai số của lực kế (mỗi số đọc đã $\pm 0{,}1$ N), nên <strong>chưa đủ lý do để bác</strong> quy tắc. Nguồn sai lệch nhỏ: dây không thẳng hẳn, ma sát giữa vòng và giấy, mắt đọc lệch vạch.</p>
+</div>
+</details>
+
+<h4>2. Hai lực cùng phương</h4>
+
+<p><strong>🔑 Cùng chiều: cộng · Ngược chiều: trừ</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trường hợp</th><th>Hợp lực</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng phương, <strong>cùng chiều</strong></td><td>$F = F_1 + F_2$, cùng chiều hai lực</td></tr>
+<tr><td>Cùng phương, <strong>ngược chiều</strong></td><td>$F = \lvert F_1 - F_2 \rvert$, cùng chiều lực lớn hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🪢 Bấm xem ví dụ: kéo co</summary>
+<p>Đội trái kéo 800 N, đội phải kéo 750 N: hợp lực $800 - 750 = 50$ N, hướng về đội trái, dây trượt dần về bên ấy.</p>
+</details>
+
+<h4>3. Hai lực đồng quy: quy tắc hình bình hành</h4>
+
+<p><strong>🔑 Dựng hình bình hành · đường chéo là hợp lực</strong></p>
+
+<ul>
+<li>Vẽ $\vec F_1$, $\vec F_2$ chung gốc, hợp nhau góc $\alpha$.</li>
+<li>Dựng hình bình hành nhận hai vectơ đó làm cạnh.</li>
+<li><strong>Đường chéo xuất phát từ gốc</strong> chính là hợp lực $\vec F$.</li>
+</ul>
+
+$$F^2 = F_1^2 + F_2^2 + 2F_1F_2\cos\alpha$$
+
+<!--FIG1-->
+
+<p><strong>🔑 Góc càng mở · hợp lực càng nhỏ</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trường hợp đặc biệt</th><th>Hợp lực</th></tr>
+</thead>
+<tbody>
+<tr><td>$\alpha = 0^\circ$ (cùng chiều)</td><td>$F = F_1 + F_2$ — <strong>lớn nhất</strong></td></tr>
+<tr><td>$\alpha = 180^\circ$ (ngược chiều)</td><td>$F = \lvert F_1 - F_2 \rvert$ — <strong>nhỏ nhất</strong></td></tr>
+<tr><td>$\alpha = 90^\circ$ (vuông góc)</td><td>$F = \sqrt{F_1^2 + F_2^2}$</td></tr>
+<tr><td>$F_1 = F_2$</td><td>$F = 2F_1\cos\dfrac{\alpha}{2}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>📐 Bấm xem: hướng của hợp lực</summary>
+<p>Gọi $\theta$ là góc giữa $\vec F$ và $\vec F_1$. Áp dụng định lí cosin cho tam giác lực:</p>
+$$\cos\theta = \frac{F^2 + F_1^2 - F_2^2}{2FF_1}$$
+<p>Trường hợp hai lực vuông góc: $\cos\theta = \dfrac{F_1}{F}$, nên hợp lực lệch về phía lực lớn hơn.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl58-q2-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl58-q2-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Hai lực đồng quy, mỗi lực $10$ N, hợp nhau góc $120^\circ$. Độ lớn hợp lực là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q2" id="tl58-q2a"><label for="tl58-q2a" class="tl-opt tl-ok">A. $10$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2b"><label for="tl58-q2b" class="tl-opt tl-no">B. $20$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2c"><label for="tl58-q2c" class="tl-opt tl-no">C. $17{,}3$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2d"><label for="tl58-q2d" class="tl-opt tl-no">D. $0$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = 2F_1\cos\dfrac{\alpha}{2} = 2 \cdot 10 \cdot \cos 60^\circ = 10$ N. Ba vectơ $\vec F_1$, $\vec F_2$, $\vec F$ cùng độ dài, tạo thành tam giác đều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu chọn $20$ N là đã cộng số (chỉ đúng khi $\alpha = 0^\circ$); nếu chọn $17{,}3$ N là đã lấy nhầm $\alpha = 60^\circ$ thay vì $120^\circ$. Với $\alpha = 120^\circ$ thì $\dfrac{\alpha}{2} = 60^\circ$: tính lại rồi thế vào. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>4. Hai lực song song cùng chiều</h4>
+
+<p><strong>🔑 Cộng độ lớn · giá chia tỉ lệ nghịch</strong></p>
+
+<ul>
+<li>Hợp lực <strong>song song, cùng chiều</strong> với hai lực, độ lớn $F = F_1 + F_2$.</li>
+<li>Giá của hợp lực nằm giữa hai giá, chia khoảng cách theo tỉ lệ <strong>nghịch</strong>: $\dfrac{F_1}{F_2} = \dfrac{d_2}{d_1}$, với $d_1$, $d_2$ là khoảng cách từ giá của $\vec F_1$, $\vec F_2$ tới <strong>giá của hợp lực</strong>.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🎒 Bấm xem ví dụ: đòn gánh</summary>
+<p>Thùng 30 N ở đầu trái, thùng 20 N ở đầu phải, đòn dài 1 m. Vai đỡ tổng $30 + 20 = 50$ N, đặt gần thùng nặng hơn: $\dfrac{30}{20} = \dfrac{d_2}{d_1}$ nên $d_1 = 0{,}4$ m tính từ thùng 30 N.</p>
+</details>
+
+<h4>5. Phân tích lực</h4>
+
+<p><strong>🔑 Một lực · thành hai lực vuông góc · cùng tác dụng</strong></p>
+
+<ul>
+<li><strong>Phân tích lực</strong> là việc ngược với tổng hợp: thay một lực bằng hai lực thành phần có tác dụng giống hệt.</li>
+<li>Chọn hai phương <strong>vuông góc</strong> $Ox$, $Oy$ rồi chiếu lực lên từng phương.</li>
+<li>Gọi $\alpha$ là góc giữa $\vec F$ và $Ox$:</li>
+</ul>
+
+$$F_x = F\cos\alpha \qquad F_y = F\sin\alpha$$
+
+<p>Ví dụ: kéo vali bằng tay kéo nghiêng. Thành phần nằm ngang $F_x$ làm vali chạy; thành phần thẳng đứng $F_y$ làm giảm áp lực của vali lên mặt đường.</p>
+
+<!--FIG2-->
+
+<p><strong>🔑 Góc kề: cos · Góc đối: sin</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-tonghopluc-02">
+<p class="tl-label">🔬 Thí nghiệm: vật trên mặt phẳng nghiêng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> quả nặng $P = 2{,}0$ N đặt trên ván trơn nghiêng góc $\alpha$; lực kế <strong>song song với ván</strong> giữ vật đứng yên. Đọc ở $\alpha = 15^\circ, 30^\circ, 45^\circ$.</li>
+<li><strong>Quan sát:</strong> lực kế chỉ khoảng $0{,}5$; $1{,}0$; $1{,}4$ N, tăng theo góc và luôn nhỏ hơn $2{,}0$ N.</li>
+<li><strong>Rút ra:</strong> lực kéo bằng thành phần dọc ván $P_x = P\sin\alpha$; thành phần $P_y = P\cos\alpha$ ép vuông góc vào ván.</li>
+</ol>
+</div>
+
+<!--SIMDOC-->
+
+<!--FIG3-->
+
+<p>Xe tải đỗ trên dốc: dốc càng đứng thì $P_x$ càng lớn, nên càng cần phanh tay chắc.</p>
+
+<h4>6. Cân bằng lực</h4>
+
+<p><strong>🔑 Đứng yên · hợp lực bằng không</strong></p>
+
+<ul>
+<li>Chất điểm <strong>cân bằng</strong> khi tổng các lực tác dụng lên nó bằng $\vec 0$: $\vec F_1 + \vec F_2 + \dots = \vec 0$.</li>
+<li>Với <strong>ba lực</strong>: hợp của hai lực <strong>bằng và ngược chiều</strong> lực thứ ba.</li>
+<li>Ba lực cùng nằm trong <strong>một mặt phẳng</strong> và tạo thành một tam giác lực khép kín. (Với chất điểm, mọi lực đều đặt tại cùng một điểm nên đương nhiên đồng quy.)</li>
+</ul>
+
+<p>Ví dụ: chiếc đèn treo trần bằng hai sợi dây. Ba lực tác dụng lên chỗ buộc dây là hai lực căng $\vec T_1$, $\vec T_2$ và trọng lực $\vec P$ của đèn; đèn đứng yên nên ba lực triệt tiêu nhau.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Chất điểm đứng yên chịu ba lực. Hai lực $F_1 = 3$ N và $F_2 = 4$ N vuông góc nhau. Lực thứ ba $F_3$ phải có độ lớn và hướng nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q3" id="tl58-q3a"><label for="tl58-q3a" class="tl-opt tl-no">A. $7$ N, cùng hướng hợp của $\vec F_1$, $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3b"><label for="tl58-q3b" class="tl-opt tl-no">B. $1$ N, ngược hướng với $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3c"><label for="tl58-q3c" class="tl-opt tl-no">C. $5$ N, cùng hướng với hợp của $\vec F_1$, $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3d"><label for="tl58-q3d" class="tl-opt tl-ok">D. $5$ N, ngược hướng với hợp của $\vec F_1$, $\vec F_2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hợp của $\vec F_1$, $\vec F_2$ là $\sqrt{3^2 + 4^2} = 5$ N; để cân bằng, $\vec F_3$ phải <strong>cùng độ lớn, ngược hướng</strong> với hợp lực ấy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai lỗi hay gặp: cộng số $3 + 4 = 7$ trong khi hai lực vuông góc; hoặc để $\vec F_3$ cùng hướng với hợp lực thì ba lực cộng lại thành $10$ N, không phải $0$. Tính hợp lực trước, rồi tìm lực "đối" của nó.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: hợp lực luôn bằng tổng hai lực</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Cộng số (sai)</th><th>Cộng vectơ (đúng)</th></tr>
+</thead>
+<tbody>
+<tr><td>$F = F_1 + F_2$ với mọi góc</td><td>$F$ thay đổi theo góc $\alpha$</td></tr>
+<tr><td>Hợp lực luôn lớn hơn từng lực</td><td>Có thể nhỏ hơn cả hai lực thành phần</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 $\lvert F_1 - F_2 \rvert \le F \le F_1 + F_2$</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl58-q4-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl58-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Hai lực đồng quy $6$ N và $8$ N. Hợp lực của chúng có thể có độ lớn nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q4" id="tl58-q4a"><label for="tl58-q4a" class="tl-opt tl-no">A. $1$ N</label>
+<input type="radio" name="tl58-q4" id="tl58-q4b"><label for="tl58-q4b" class="tl-opt tl-ok">B. $10$ N</label>
+<input type="radio" name="tl58-q4" id="tl58-q4c"><label for="tl58-q4c" class="tl-opt tl-no">C. $15$ N</label>
+<input type="radio" name="tl58-q4" id="tl58-q4d"><label for="tl58-q4d" class="tl-opt tl-no">D. $20$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hợp lực nằm trong khoảng từ $\lvert 8 - 6 \rvert = 2$ N đến $8 + 6 = 14$ N. Giá trị $10$ N thuộc khoảng này (ứng với hai lực vuông góc).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tìm hai đầu mút trước: nhỏ nhất khi hai lực ngược chiều, lớn nhất khi cùng chiều. Giá trị em chọn đang nằm ngoài khoảng đó. Nếu đã chọn <em>Chắc</em> mà vẫn sai, hãy xem lại hai trường hợp $\alpha = 0^\circ$ và $\alpha = 180^\circ$.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: hai lực cân bằng và cặp lực – phản lực</h4>
+
+<p>Quyển sách nằm yên trên bàn: trọng lực $\vec P$ và phản lực $\vec N$ của bàn có cùng độ lớn, ngược chiều. Nhiều bạn kết luận ngay "đó là cặp lực – phản lực".</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Hai lực cân bằng</th><th>Lực – phản lực (Newton III)</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng đặt lên <strong>một vật</strong></td><td>Đặt lên <strong>hai vật khác nhau</strong></td></tr>
+<tr><td>Triệt tiêu nhau</td><td>Không triệt tiêu</td></tr>
+<tr><td>Có thể khác bản chất (hút, đỡ)</td><td>Luôn cùng loại, xuất hiện cùng lúc</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Cùng vật: cân bằng · Khác vật: lực – phản lực</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Quyển sách nằm yên trên bàn. Lực nào dưới đây là <strong>phản lực</strong> (theo định luật III Newton) của trọng lực $\vec P$ mà Trái Đất tác dụng lên sách?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q5" id="tl58-q5a"><label for="tl58-q5a" class="tl-opt tl-no">A. Lực $\vec N$ do bàn đỡ sách</label>
+<input type="radio" name="tl58-q5" id="tl58-q5b"><label for="tl58-q5b" class="tl-opt tl-no">B. Lực sách ép xuống mặt bàn</label>
+<input type="radio" name="tl58-q5" id="tl58-q5c"><label for="tl58-q5c" class="tl-opt tl-no">C. Lực ma sát nghỉ giữa sách và bàn</label>
+<input type="radio" name="tl58-q5" id="tl58-q5d"><label for="tl58-q5d" class="tl-opt tl-ok">D. Lực hút sách tác dụng lên Trái Đất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\vec P$ là Trái Đất hút sách; phản lực của nó là sách hút Trái Đất, đặt lên <strong>Trái Đất</strong>. Còn $\vec N$ cân bằng với $\vec P$ vì cả hai cùng đặt lên sách.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hỏi hai câu: lực em chọn đặt lên vật nào? Có cùng vật với $\vec P$ không? Phản lực phải đặt lên vật <em>kia</em> trong cặp tương tác (Trái Đất – sách).</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: nhầm sin và cos khi phân tích lực</h4>
+
+<p>Xét tam giác vuông có cạnh huyền là chính $\vec F$ và $\alpha$ là góc giữa $\vec F$ với phương đang chiếu: thành phần nằm <strong>kề</strong> góc $\alpha$ thì dùng $\cos$; nằm <strong>đối</strong> diện góc $\alpha$ thì dùng $\sin$. Trên dốc nghiêng góc $\alpha$, thành phần song song dốc của trọng lực là $P\sin\alpha$, <em>không phải</em> $P\cos\alpha$.</p>
+
+<p><strong>🔑 Dốc: song song = sin · vuông góc = cos</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Thùng $5$ kg đặt trên dốc nghiêng $30^\circ$ (lấy $g = 10$ m/s²). Thành phần trọng lực kéo thùng <strong>dọc theo dốc</strong> là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q6" id="tl58-q6a"><label for="tl58-q6a" class="tl-opt tl-ok">A. $25$ N</label>
+<input type="radio" name="tl58-q6" id="tl58-q6b"><label for="tl58-q6b" class="tl-opt tl-no">B. $50$ N</label>
+<input type="radio" name="tl58-q6" id="tl58-q6c"><label for="tl58-q6c" class="tl-opt tl-no">C. $43{,}3$ N</label>
+<input type="radio" name="tl58-q6" id="tl58-q6d"><label for="tl58-q6d" class="tl-opt tl-no">D. $5$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $P = mg = 50$ N; $P_x = P\sin 30^\circ = 25$ N. Mẹo kiểm: dốc càng thoải ($\alpha \to 0$) thì lực kéo dọc dốc phải $\to 0$, khớp với $\sin\alpha$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $50$ N là cả trọng lực; $43{,}3$ N là $P\cos 30^\circ$, thành phần <em>ép vào dốc</em>. Nếu dốc gần nằm ngang thì lực kéo dọc dốc phải rất nhỏ, hãy chọn công thức cho đúng tính chất đó.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Tổng hợp lực là gì? Hợp lực và lực thành phần là gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Thay nhiều lực · bằng một lực · tác dụng y hệt.</strong> Lực thay thế = hợp lực; các lực bị thay = lực thành phần.</p>
+</details>
+<details class="tl-details">
+<summary>2. Viết công thức độ lớn hợp lực hai lực đồng quy và bốn trường hợp đặc biệt. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$F^2 = F_1^2 + F_2^2 + 2F_1F_2\cos\alpha$. Cùng chiều: $F_1 + F_2$. Ngược chiều: $\lvert F_1 - F_2 \rvert$. Vuông góc: $\sqrt{F_1^2 + F_2^2}$. Hai lực bằng nhau: $2F_1\cos\dfrac{\alpha}{2}$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Độ lớn hợp lực của hai lực $F_1$, $F_2$ nằm trong khoảng nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$\lvert F_1 - F_2 \rvert \le F \le F_1 + F_2$. Góc càng mở, hợp lực càng nhỏ.</p>
+</details>
+<details class="tl-details">
+<summary>4. Phân tích lực là gì? Viết $F_x$, $F_y$ và nói $\alpha$ là góc nào. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Thay một lực bằng hai thành phần vuông góc. $F_x = F\cos\alpha$, $F_y = F\sin\alpha$, với $\alpha$ là góc giữa $\vec F$ và trục $Ox$. Thành phần kề góc: cos; đối góc: sin.</p>
+</details>
+<details class="tl-details">
+<summary>5. Điều kiện cân bằng của chất điểm? Với ba lực thì thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tổng các lực bằng $\vec 0$. Ba lực: hợp của hai lực <strong>bằng và ngược chiều</strong> lực thứ ba; ba lực đồng quy.</p>
+</details>
+<details class="tl-details">
+<summary>6. Hai lực cân bằng khác cặp lực – phản lực ở điểm nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Cân bằng: cùng một vật, triệt tiêu.</strong> Lực – phản lực: hai vật khác nhau, không triệt tiêu.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<h4>Bài 1: hai bạn kéo xe trượt</h4>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Hai bạn kéo một chiếc xe trượt trên sân băng. Dây bạn A kéo $30$ N về phía đông, dây bạn B kéo $40$ N về phía bắc. Bỏ qua ma sát. Tìm <strong>độ lớn và hướng</strong> của hợp lực tác dụng lên xe.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"$30$ N về phía đông"</td><td>$F_1 = 30$ N</td><td>lực thành phần thứ nhất</td></tr>
+<tr><td>"$40$ N về phía bắc"</td><td>$F_2 = 40$ N; $\alpha = 90^\circ$</td><td>đông ⟂ bắc, hai lực vuông góc</td></tr>
+<tr><td>"Bỏ qua ma sát"</td><td>chỉ còn hai lực kéo</td><td>không có lực thứ ba</td></tr>
+<tr><td>"độ lớn và hướng"</td><td>$F$ và $\theta$</td><td>$F = \sqrt{F_1^2 + F_2^2}$; $\cos\theta = \dfrac{F_1}{F}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Độ lớn:</strong> $F = \sqrt{30^2 + 40^2} = \sqrt{2500} = 50$ N.</li>
+<li><strong>Hướng:</strong> $\cos\theta = \dfrac{30}{50} = 0{,}6$, suy ra $\theta \approx 53^\circ$ so với hướng đông, lệch về phía bắc.</li>
+<li><strong>Kiểm tra:</strong> $\lvert 40 - 30 \rvert = 10 \le 50 \le 70 = 40 + 30$, nằm trong khoảng cho phép. Hợp lực lệch về phía lực lớn hơn (bắc) đúng như mong đợi.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng hai bạn kéo mỗi người $50$ N và hai dây hợp nhau góc $120^\circ$.</p>
+<ol class="tl-steps">
+<li>Hai lực bằng nhau nên dùng $F = 2F_1\cos\dfrac{\alpha}{2}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $\dfrac{\alpha}{2} = \;?$ và $\cos\dfrac{\alpha}{2} = \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $F = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$\dfrac{\alpha}{2} = 60^\circ$, $\cos 60^\circ = 0{,}5$, nên $F = 2 \cdot 50 \cdot 0{,}5 = 50$ N. Hai dây mở rộng khiến hợp lực chỉ còn bằng mỗi lực thành phần.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi số: kéo song song và kéo ngược</summary>
+<p>Vẫn hai lực $50$ N. Hai dây <strong>song song</strong> ($\alpha = 0^\circ$): $F = 100$ N. Hai bạn đứng đối diện ($\alpha = 180^\circ$): $F = 0$, xe không nhúc nhích. Góc càng mở, hợp lực càng nhỏ.</p>
+</details>
+
+<h4>Bài 2: chiếc đèn treo bằng hai dây</h4>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Đèn khối lượng $2{,}0$ kg treo trần bằng hai dây đối xứng, hai dây hợp nhau góc $60^\circ$. Lấy $g = 10$ m/s². Tính lực căng của mỗi dây.</p>
+</div>
+
+<!--FIG4-->
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"khối lượng $2{,}0$ kg"</td><td>$P = mg = 20$ N</td><td>trọng lực, hướng xuống</td></tr>
+<tr><td>"treo trần" (đèn đứng yên)</td><td>ngầm: đèn cân bằng</td><td>$\vec T_1 + \vec T_2 + \vec P = \vec 0$</td></tr>
+<tr><td>"hai dây đối xứng"</td><td>$T_1 = T_2 = T$</td><td>hai lực bằng nhau: $F = 2T\cos\dfrac{\alpha}{2}$</td></tr>
+<tr><td>"hợp nhau góc $60^\circ$"</td><td>$\alpha = 60^\circ$</td><td>mỗi dây lệch $30^\circ$ so với phương thẳng đứng</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Cân bằng:</strong> hợp lực của $\vec T_1$, $\vec T_2$ phải cân bằng $\vec P$, nên $F_{12} = P = 20$ N, hướng lên.</li>
+<li><strong>Hợp lực:</strong> $F_{12} = 2T\cos 30^\circ = T\sqrt{3}$.</li>
+<li><strong>Giải:</strong> $T = \dfrac{20}{\sqrt{3}} \approx 11{,}5$ N.</li>
+<li><strong>Kiểm tra:</strong> mỗi dây gánh hơn nửa trọng lượng ($11{,}5 \gt 10$ N) vì kéo nghiêng, hợp lý.</li>
+</ol>
+</details>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi số: mở rộng hai dây ra</summary>
+<p>Góc giữa hai dây là $120^\circ$: $2T\cos 60^\circ = 20$ nên $T = 20$ N. Càng mở rộng hai dây thì $\cos\dfrac{\alpha}{2}$ càng nhỏ, $T$ càng lớn; dây gần nằm ngang ($\alpha \to 180^\circ$) thì $T \to \infty$ và đứt. Đó là lý do <strong>dây treo đèn không bao giờ căng thẳng ngang</strong>.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl58-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl58-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Giữ nguyên chiếc đèn $20$ N, em đổi sang hai dây dài hơn nên góc giữa hai dây giảm từ $120^\circ$ còn $60^\circ$. Lực căng mỗi dây:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl58-q7" id="tl58-q7a"><label for="tl58-q7a" class="tl-opt tl-no">A. Tăng lên</label>
+<input type="radio" name="tl58-q7" id="tl58-q7b"><label for="tl58-q7b" class="tl-opt tl-no">B. Không đổi, vì trọng lượng đèn không đổi</label>
+<input type="radio" name="tl58-q7" id="tl58-q7c"><label for="tl58-q7c" class="tl-opt tl-ok">C. Giảm xuống</label>
+<input type="radio" name="tl58-q7" id="tl58-q7d"><label for="tl58-q7d" class="tl-opt tl-no">D. Luôn bằng $10$ N, vì mỗi dây đỡ một nửa</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $T$ giảm từ $20$ N xuống $11{,}5$ N. Hai dây gần song song nhau hơn thì cùng "kéo thẳng lên", ít lãng phí lực.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Trọng lượng đèn không đổi, nhưng $T$ còn phụ thuộc <em>góc</em>: $T = \dfrac{P}{2\cos(\alpha/2)}$. Chia đôi $20$ N thành $10$ N chỉ đúng khi hai dây thẳng đứng. Nếu đã chọn <em>Chắc</em> mà vẫn sai, hãy xem lại phần thử sức đổi số.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: ba nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Biển hiệu treo bằng hai dây xiên:</strong> hai dây cùng nâng một tải; góc dây quyết định lực căng, nên dây được chọn theo góc lớn nhất cho phép.</li>
+<li><strong>Hai người cùng kéo một xe đẩy ở siêu thị:</strong> hai lực kéo chếch nhau thì hợp lực nhỏ hơn tổng hai lực; hai người kéo ngược chiều, bằng nhau thì hợp lực triệt tiêu, xe đứng yên.</li>
+<li><strong>Kéo xe sa lầy:</strong> buộc dây vào gốc cây, kéo ngang giữa dây: lực nhỏ của người thành lực rất lớn dọc dây, như bài toán đèn treo với $\alpha \to 180^\circ$.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Hai lực $6$ N và $8$ N vuông góc: tính hợp lực. <em>(10 N)</em></li>
+<li><strong>⭐⭐</strong> Hai lực $F_1 = F_2 = 12$ N có hợp lực $12$ N. Tìm góc giữa chúng. <em>($120^\circ$)</em></li>
+<li><strong>⭐⭐⭐</strong> Thùng $10$ kg nằm yên trên dốc $37^\circ$ ($\sin 37^\circ = 0{,}6$; $g = 10$ m/s²). Tính lực ma sát nghỉ và phản lực vuông góc của dốc. <em>(60 N dọc dốc hướng lên; 80 N)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tổng hợp</strong>: nhiều lực → một lực; cộng <em>vectơ</em>.</li>
+<li><strong>Hình bình hành</strong>: đường chéo = hợp lực; góc càng mở, hợp lực càng nhỏ.</li>
+<li>$\lvert F_1 - F_2 \rvert \le F \le F_1 + F_2$.</li>
+<li><strong>Phân tích</strong>: $F_x = F\cos\alpha$, $F_y = F\sin\alpha$; kề: cos, đối: sin.</li>
+<li><strong>Cân bằng</strong>: tổng lực $= \vec 0$; ba lực đồng quy.</li>
+<li>Cân bằng: <strong>cùng vật</strong>. Lực – phản lực: <strong>khác vật</strong>.</li>
+<li>Đọc đề: gạch cụm "đứng yên", "đều", "bỏ qua ma sát" — chúng là dữ kiện ngầm.</li>
+</ul>
+</div>

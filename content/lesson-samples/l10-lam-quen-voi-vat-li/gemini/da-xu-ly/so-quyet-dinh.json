@@ -1,0 +1,141 @@
+{
+  "bai": "l10-lam-quen-voi-vat-li",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng vi mô ở mục 1 nay nêu tiêu chí: không quan sát được bằng mắt thường, như nguyên tử, phân tử."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa ngắn \"(một dự đoán chưa được kiểm tra)\" ngay lần dùng đầu trong bảng mục 4."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Liệt kê 5 bước đánh số với tên đầy đủ theo SGK ngay trong văn bản mục 5."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: suy luận ở bước 1 chỉ dẫn tới câu hỏi, còn đoán nguyên nhân để đem kiểm tra là giả thuyết."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nhãn thí nghiệm nêu trước hai giả thuyết đối lập, phần Rút ra giải thích vai trò của giấy đặt trên sách và giấy vo tròn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng của Câu 6 thêm ý: phần chênh lệch là do không khí cản giấy vo nhiều hơn, không phải vì giấy nhẹ hơn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn vì bài dùng mốc __NS__/__TS__/__G__ chứ không có số 38,3 hay 0,64."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải thêm phép kiểm tra G2 bằng ly rỗng ướp lạnh kèm dự đoán, vẫn giữ 5 bước để câu \"bước 5 của lời giải\" ở Câu 7 còn đúng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm của Bẫy 1 nêu rõ mô hình lí thuyết coi robot chạy đều suốt đường đi."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"không vượt quá sai số\" cho khớp với bảng và phản hồi Câu 6."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"quan sát định tính\" bằng \"chỉ xem vật nào chạm sàn trước\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details> thêm phát biểu bảo toàn năng lượng và hai dòng chuyển hoá: thế năng → động năng, hoá năng → điện năng."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"smartphone\" thành \"điện thoại thông minh\" ở Trả bài."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay nhiễu A thành \"Nhiễu xạ tia X: y tế\" (dễ nhầm với X-quang) và sửa phản hồi A cho khớp, D vẫn là đáp án duy nhất."
+      },
+      {
+        "id": "q-tl46-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, phản hồi đã giải thích tiêu chí \"không tạo chất mới\", thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-tl46-q2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Xử lí cùng c1 bằng cách nêu tiêu chí vi mô ngay ở mục 1, không thêm dòng ⚠ riêng để khỏi lặp."
+      },
+      {
+        "id": "q-tl46-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng mục 3 đã nhấn chỗ này, nhiễu cũng đã được làm khó hơn qua c14."
+      },
+      {
+        "id": "q-tl46-q4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm dòng ⚠ trước Câu 3 (gộp với c4)."
+      },
+      {
+        "id": "q-tl46-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 1 đã nhấn chỗ này, từ \"mô hình\" được giải thích qua c9."
+      },
+      {
+        "id": "q-tl46-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 và dòng 🔑 \"Bác bỏ cũng là kết quả\" đã nhấn chỗ này."
+      },
+      {
+        "id": "q-tl46-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn chỗ này, phản hồi Câu 6 nay thêm nguyên nhân không khí cản (c6)."
+      },
+      {
+        "id": "q-tl46-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Kết luận của lời giải và phản hồi A đã nhấn rằng G1 bị bác bỏ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: vi mô được định nghĩa là không quan sát được bằng mắt thường (nguyên tử, phân tử); bỏ dòng ví dụ nắp ấm vì lặp với mở bài và thí nghiệm.",
+      "Câu 1: phản hồi sai cho D sửa thành \"nguyên tử không thấy bằng mắt thường nên là vi mô\".",
+      "Mục 2: bỏ dòng \"Ảnh hưởng... vô cùng to lớn\" vì mục 3 đã trình bày; ví dụ \"tổng quát\" (trong details) thêm phát biểu bảo toàn năng lượng: thế năng → động năng, hoá năng → điện năng.",
+      "Mục 3: bỏ câu robot hút bụi vì lặp với mục VI.",
+      "Câu 2: phương án A đổi thành \"Nhiễu xạ tia X: y tế\", phản hồi A nói nhiễu xạ tia X thuộc nghiên cứu còn X-quang thuộc y tế.",
+      "Mục 4: thêm định nghĩa giả thuyết (một dự đoán chưa được kiểm tra); rút đoạn \"bổ sung nhau\" còn một câu.",
+      "Mục 5: liệt kê 5 bước theo SGK KNTT; thêm dòng ⚠ phân biệt suy luận ở bước 1 với giả thuyết.",
+      "Thí nghiệm sách và giấy rơi: nhãn nêu hai giả thuyết; Rút ra giải thích giấy trên sách được che nên không bị cản, giấy vo cùng khối lượng nhưng bị cản ít hơn; thay \"định tính\".",
+      "Câu 3: phản hồi đúng rút gọn còn \"Lan đoán nguyên nhân mà chưa kiểm tra: đó là giả thuyết\".",
+      "Bẫy 1: thêm câu mô hình coi robot chạy đều; bảng bỏ chú thích lặp \"tính bằng công thức/đo bằng đồng hồ\" (số liệu 30 s, 33 s giữ nguyên).",
+      "Câu 5: bỏ câu cuối lặp ý trong phản hồi sai.",
+      "Bẫy 3: \"nhỏ hơn sai số\" đổi thành \"không vượt quá sai số\"; Câu 6 phản hồi đúng thêm ý chênh lệch do không khí cản giấy vo, không phải do nhẹ hơn.",
+      "Bài toán mẫu: bước 3 thêm phép kiểm tra G2 (ly rỗng ướp lạnh, dự đoán vẫn đọng giọt); bước 4 tách hai kết quả thành hai dòng.",
+      "Trả bài: đổi \"smartphone\" thành \"điện thoại thông minh\"; vi mô ghi kèm tiêu chí mắt thường; các ý tách dòng bằng <br>.",
+      "Thử thách phân tầng: đáp án nhiều ý tách dòng bằng <br>, số liệu không đổi."
+    ],
+    "so_tu_them": 7,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-lam-quen-voi-vat-li/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -38,7 +38,7 @@
 <li><strong>DC</strong> (hoặc dấu —): dòng điện <strong>một chiều</strong>. Ví dụ: pin, đầu ra của bộ nguồn học đường.</li>
 <li><strong>AC</strong> (hoặc dấu ~): dòng điện <strong>xoay chiều</strong>. Ví dụ: điện ở ổ cắm trong nhà.</li>
 <li>Cực <strong>dương</strong>: "+" hoặc màu <strong>đỏ</strong>. Cực <strong>âm</strong>: "−" hoặc màu <strong>xanh</strong>.</li>
-<li><strong>Input</strong> (I): đầu vào, nơi điện đi vào thiết bị. <strong>Output</strong>: đầu ra, nơi thiết bị cấp điện cho mạch (Hình 2).</li>
+<li><strong>Input</strong> (IN): đầu vào, nơi điện đi vào thiết bị. <strong>Output</strong> (OUT): đầu ra, nơi thiết bị cấp điện cho mạch (Hình 2).</li>
 </ul>
 
 <!--FIG2-->
@@ -48,7 +48,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> được giáo viên cho phép, đặt núm bộ nguồn lần lượt ở các vạch 3; 6; 9; 12 V. Mắc vôn kế một chiều vào hai cực Output (cực đỏ của vôn kế nối cực +), đọc số chỉ.</li>
 <li><strong>Quan sát:</strong> số chỉ luôn cao hơn vạch một chút (bảng dưới, số liệu minh hoạ).</li>
-<li><strong>Rút ra:</strong> vạch chỉ là giá trị gần đúng; trước khi nối dụng cụ, đo lại bằng vôn kế.</li>
+<li><strong>Rút ra:</strong> vạch chỉ là giá trị gần đúng; trước khi nối dụng cụ, nên đo lại bằng vôn kế (thói quen nên có).</li>
 </ol>
 </div>
 
@@ -56,7 +56,7 @@ __BANG_TN1__
 
 <details class="tl-details">
 <summary>📊 Đọc bảng: số chỉ cao hơn vạch 0,1–0,4 V, có phải đo sai? (tự trả lời rồi bấm)</summary>
-<p>Không. Độ lệch luôn khoảng <strong>__TILE__ %</strong> của vạch, tăng đều theo vạch: đó là sai số của chính bộ nguồn, không phải do thao tác. Vôn kế chỉ chia tới 0,1 V nên số chỉ làm tròn tới 0,1 V. Với bóng 6 V, nguồn ở vạch 6 V cho 6,2 V, gần định mức; nếu nhầm sang vạch 12 V, bóng nhận 12,4 V, <strong>hơn gấp đôi</strong> định mức và có thể cháy.</p>
+<p>Không. Độ lệch luôn khoảng <strong>__TILE__ %</strong> của vạch, tăng đều theo vạch: đó là sai số của chính bộ nguồn, không phải do thao tác. Vôn kế chỉ chia tới 0,1 V nên số chỉ làm tròn tới 0,1 V. Với bóng 6 V, nguồn ở vạch 6 V cho 6,2 V, gần định mức (định mức là số vôn ghi trên nhãn dụng cụ, mức dụng cụ được thiết kế để hoạt động bình thường); nếu nhầm sang vạch 12 V, bóng nhận 12,4 V, <strong>hơn gấp đôi</strong> định mức và có thể cháy.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -68,7 +68,7 @@ __BANG_TN1__
 <input type="radio" name="tl47-q2" id="tl47-q2c"><label for="tl47-q2c" class="tl-opt tl-no">C. Input 220 V ~, vì đó là chỗ có điện</label>
 <input type="radio" name="tl47-q2" id="tl47-q2d"><label for="tl47-q2d" class="tl-opt tl-ok">D. Output DC, núm ở vạch 6 V</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đúng loại dòng (DC), đúng chỗ (Output), đúng số vôn (6 V).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A sai loại dòng điện: ghi DC thì cần một chiều. B cho dụng cụ nhận gấp đôi định mức. C: Input là chỗ bộ nguồn <em>nhận</em> điện từ ổ cắm, nối dụng cụ vào đó là sai chỗ và dính 220 V. Đọc lại ba thông tin trên nhãn: loại dòng, vị trí, số vôn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A sai loại dòng điện: ghi DC thì cần một chiều. B cho dụng cụ nhận gấp đôi định mức (số vôn ghi trên nhãn). C: Input là chỗ bộ nguồn <em>nhận</em> 220 V từ ổ cắm, nối dụng cụ vào đó là sai chỗ. Đọc lại ba thông tin trên nhãn: loại dòng, vị trí, số vôn.</p></div>
 </div>
 </div>
 
@@ -82,7 +82,7 @@ __BANG_TN1__
 <li><strong>Cảnh báo (tam giác):</strong> nhiệt độ cao · nguy hiểm về điện · từ trường · chất phóng xạ · chất dễ cháy · chất độc sức khoẻ · tia laser · vật sắc nhọn · bình khí nén áp suất cao · lưu ý cẩn thận</li>
 <li><strong>Cấm (tròn đỏ gạch chéo):</strong> cấm lửa · không được bỏ vào thùng rác</li>
 <li><strong>Bắt buộc (tròn xanh):</strong> cần đeo mặt nạ phòng độc</li>
-<li><strong>Bảo quản:</strong> dụng cụ đặt đứng · tránh ánh nắng · dụng cụ dễ vỡ</li>
+<li><strong>Bảo quản (thường là hình vẽ đen, không theo khung tam giác hay tròn):</strong> dụng cụ đặt đứng · tránh ánh nắng · dụng cụ dễ vỡ</li>
 </ul>
 
 <!--FIG3-->
@@ -90,12 +90,13 @@ __BANG_TN1__
 <div class="tl-box tl-box--exp" data-exp="tn-l10-an-toan-03">
 <p class="tl-label">🔬 Hoạt động: rà phòng thực hành</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đi một vòng phòng thực hành, tìm ít nhất 5 kí hiệu (trên bộ nguồn, tủ hoá chất, chai cồn, bình khí...), chụp ảnh.</li>
+<li><strong>Làm:</strong> đi một vòng phòng thực hành, tìm ít nhất 5 kí hiệu (trên bộ nguồn, tủ hoá chất, chai cồn, hộp dụng cụ...), chụp ảnh.</li>
 <li><strong>Quan sát:</strong> kí hiệu cùng nhóm thường cùng hình dạng, cùng màu viền.</li>
-<li><strong>Rút ra:</strong> xếp từng kí hiệu vào nhóm cảnh báo, cấm hay bắt buộc, rồi nói được việc phải làm.</li>
+<li><strong>Rút ra:</strong> xếp từng kí hiệu vào nhóm cảnh báo, cấm, bắt buộc hay bảo quản, rồi nói được việc phải làm.</li>
 </ol>
 </div>
 
+<p>⚠ Tia lửa điện ở ổ cắm, bộ nguồn cũng là lửa.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Lọ cồn có hai kí hiệu: <em>chất dễ cháy</em> và <em>cấm lửa</em>. Trên bàn đang đốt đèn cồn và có bộ nguồn, nên đặt lọ cồn ở đâu?</p>
@@ -105,13 +106,13 @@ __BANG_TN1__
 <input type="radio" name="tl47-q3" id="tl47-q3c"><label for="tl47-q3c" class="tl-opt tl-no">C. Cạnh ổ cắm, để nếu đổ thì chảy xuống sàn</label>
 <input type="radio" name="tl47-q3" id="tl47-q3d"><label for="tl47-q3d" class="tl-opt tl-no">D. Trên bộ nguồn cho đỡ chật bàn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chất dễ cháy phải xa lửa và xa thiết bị điện. Đậy nắp để hơi cồn không lan ra.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B đặt chất dễ cháy sát ngọn lửa. C và D để dung dịch dễ cháy gần thiết bị điện: một tia lửa điện là đủ gây cháy. Hai kí hiệu của lọ nói: tránh lửa, tránh điện.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B đặt chất dễ cháy sát ngọn lửa. C và D để cồn gần thiết bị điện, nơi có thể bật ra tia lửa điện. Kí hiệu "cấm lửa" gồm cả tia lửa này.</p></div>
 </div>
 </div>
 
 <h4>3. Mười quy tắc, bốn nhóm</h4>
 
-<p><strong>🔑 Từ khoá để nhớ: Đọc · Kiểm · Xin phép · Tắt trước · Đúng vôn · Dây gọn · Khô ráo · Xa nóng · Xa tia · Dọn sạch</strong></p>
+<p><strong>🔑 Từ khoá để nhớ: Đọc · Kiểm · Xin phép · Tắt trước · Đúng vôn · Dây gọn · Khô ráo · Dùng kẹp · Giữ khoảng cách · Dọn sạch</strong></p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -141,11 +142,12 @@ __BANG_TN1__
 <p class="tl-label">🔬 Thí nghiệm: càng xa ngọn lửa, càng bớt nóng</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> giáo viên đặt nhiệt kế cạnh ngọn đèn cồn, lần lượt cách 2; 5; 10; 20 cm, đợi số chỉ ổn định. Cả lớp đứng xa quan sát.</li>
-<li><strong>Quan sát:</strong> __NHIET__ (số liệu minh hoạ, không phải quy luật 1/r²; nhiệt kế đo tới 200 °C, nhiệt độ phòng 25 °C, sai số ±1 °C).</li>
-<li><strong>Rút ra:</strong> cách 2 cm là nóng bỏng tay, cách 20 cm gần như không thấy; chỉ từ 5 ra 10 cm, phần nóng thêm đã giảm mạnh, từ 16 xuống 4 °C. Vì vậy phải <strong>giữ khoảng cách</strong>.</li>
+<li><strong>Quan sát:</strong> __NHIET__ (số liệu minh hoạ; nhiệt kế đo tới 200 °C, nhiệt độ phòng 25 °C, sai số ±1 °C).</li>
+<li><strong>Rút ra:</strong> chỉ từ 5 ra 10 cm, phần nóng hơn nhiệt độ phòng đã giảm mạnh, từ 16 °C (41 − 25) xuống 4 °C (29 − 25). Vì vậy phải <strong>giữ khoảng cách</strong>.</li>
 </ol>
 </div>
 
+<p>⚠ Tia laser phản xạ qua gương vẫn hại mắt như tia thẳng.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Thí nghiệm có tia laser. Cách làm đúng là:</p>
@@ -154,7 +156,7 @@ __BANG_TN1__
 <input type="radio" name="tl47-q4" id="tl47-q4b"><label for="tl47-q4b" class="tl-opt tl-no">B. Đặt gương cho tia phản xạ ngang tầm mắt để cả lớp cùng xem</label>
 <input type="radio" name="tl47-q4" id="tl47-q4c"><label for="tl47-q4c" class="tl-opt tl-ok">C. Hướng tia vào màn chắn thấp hơn tầm mắt, giữ khoảng cách, không nhìn vào tia hoặc tia phản xạ</label>
 <input type="radio" name="tl47-q4" id="tl47-q4d"><label for="tl47-q4d" class="tl-opt tl-no">D. Chiếu thử vào bạn bên cạnh để xem tia có đi thẳng không</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia laser rất tập trung, chiếu vào mắt có thể gây tổn thương. Cho tia đi xuống thấp, có màn chắn, và giữ khoảng cách.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia laser rất tập trung, chiếu vào mắt có thể gây tổn thương.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A, B, D đều để tia (trực tiếp hoặc phản xạ) có khả năng vào mắt người. Gợi ý: tia kết thúc ở đâu thì an toàn nhất?</p></div>
 </div>
 </div>
@@ -169,8 +171,8 @@ __BANG_TN1__
 <tr><th>Em dễ nghĩ</th><th>Thực tế</th></tr>
 </thead>
 <tbody>
-<tr><td>Phích khớp ổ cắm là dùng được</td><td>Hình dạng chỉ nói <em>cắm được</em></td></tr>
-<tr><td>Cứ cắm, hỏng thì thôi</td><td>Số vôn trên nhãn mới nói <em>dùng được</em></td></tr>
+<tr><td>Phích khớp ổ cắm là dùng được</td><td>Hình dạng chỉ nói <em>cắm được</em><br>Số vôn trên nhãn mới nói <em>dùng được</em></td></tr>
+<tr><td>Cứ cắm, hỏng thì thôi</td><td>Quá áp có thể cháy, chập ngay lần bật đầu</td></tr>
 </tbody>
 </table>
 </div>
@@ -188,7 +190,7 @@ __BANG_TN1__
 <input type="radio" name="tl47-q5" id="tl47-q5b"><label for="tl47-q5b" class="tl-opt tl-no">B. Chỉ hỏng nếu để cắm lâu</label>
 <input type="radio" name="tl47-q5" id="tl47-q5c"><label for="tl47-q5c" class="tl-opt tl-no">C. An toàn nếu bật công tắc thật nhanh rồi tắt</label>
 <input type="radio" name="tl47-q5" id="tl47-q5d"><label for="tl47-q5d" class="tl-opt tl-ok">D. Không được cắm: 220 V gấp đôi định mức 110 V, dễ cháy hỏng; phải hỏi giáo viên</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ cắm khi hiệu điện thế nguồn tương ứng với dụng cụ. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ cắm khi hiệu điện thế nguồn tương ứng với dụng cụ.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhầm hình dạng phích với số vôn. B và C cho rằng có thể hỏng "từ từ": quá áp có thể làm hỏng ngay lần bật đầu. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: đọc số vôn trên nhãn, đừng đọc hình phích.</p></div>
 </div>
 </div>
@@ -210,6 +212,7 @@ __BANG_TN1__
 
 <p><strong>🔑 Nóng không cần đỏ · Dụng cụ trước, tay sau</strong></p>
 
+<p>⚠ Cốc thuỷ tinh đang nóng gặp nước lạnh đột ngột dễ nứt vỡ.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Đèn cồn đã tắt được một phút, cốc nước vừa đun sôi không còn bốc khói. Muốn nhấc cốc ra, em nên:</p>
@@ -219,7 +222,7 @@ __BANG_TN1__
 <input type="radio" name="tl47-q6" id="tl47-q6c"><label for="tl47-q6c" class="tl-opt tl-no">C. Dội nước lạnh lên cốc thuỷ tinh cho nguội ngay</label>
 <input type="radio" name="tl47-q6" id="tl47-q6d"><label for="tl47-q6d" class="tl-opt tl-no">D. Cầm bình thường vì không còn lửa, không còn khói</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Không còn lửa, không còn khói không có nghĩa là hết nóng. Dùng dụng cụ hỗ trợ.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và D dùng tay để thử nhiệt: chạm vào là đã bỏng. C làm thuỷ tinh nóng gặp nước lạnh đột ngột, dễ nứt vỡ, nước nóng văng ra. Gợi ý: có dụng cụ nào giúp tay không phải chạm vào cốc?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và D dùng tay để thử nhiệt: chạm vào là đã bỏng. C: cốc có thể nứt vỡ, nước nóng văng ra. Gợi ý: có dụng cụ nào giúp tay không phải chạm vào cốc?</p></div>
 </div>
 </div>
 
@@ -260,27 +263,27 @@ __BANG_TN1__
 <p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
 <details class="tl-details">
 <summary>1. DC, AC, "+", "−", Input, Output nghĩa là gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>DC một chiều · AC xoay chiều · "+" hoặc đỏ: cực dương · "−" hoặc xanh: cực âm · Input đầu vào · Output đầu ra.</p>
+<p>DC: một chiều<br>AC: xoay chiều<br>"+" hoặc đỏ: cực dương<br>"−" hoặc xanh: cực âm<br>Input (IN): đầu vào<br>Output (OUT): đầu ra</p>
 </details>
 <details class="tl-details">
 <summary>2. Hình dạng và màu của kí hiệu cho biết gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Tam giác: cảnh báo nguy hiểm · tròn đỏ gạch chéo: cấm · tròn xanh: bắt buộc · rồi mới đọc hình bên trong.</p>
+<p>Tam giác: cảnh báo nguy hiểm<br>Tròn đỏ gạch chéo: cấm<br>Tròn xanh: bắt buộc<br>Rồi mới đọc hình bên trong.</p>
 </details>
 <details class="tl-details">
 <summary>3. Ba việc phải làm trước khi bắt đầu thí nghiệm? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Đọc kĩ hướng dẫn và kí hiệu · kiểm tra thiết bị, dụng cụ · được giáo viên cho phép.</p>
+<p>Đọc kĩ hướng dẫn và kí hiệu<br>Kiểm tra thiết bị, dụng cụ<br>Được giáo viên cho phép</p>
 </details>
 <details class="tl-details">
 <summary>4. Bốn quy tắc khi làm việc với điện? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Tắt công tắc trước khi cầm, tháo · cắm ổ khi số vôn khớp · dây gọn, không vướng · nước, dung dịch dẫn điện và dễ cháy ở xa.</p>
+<p>Tắt công tắc trước khi cầm, tháo<br>Chỉ cắm ổ khi số vôn khớp<br>Dây gọn, không vướng<br>Nước, dung dịch dẫn điện và dễ cháy để xa</p>
 </details>
 <details class="tl-details">
 <summary>5. Với vật nóng và tia laser phải làm gì, vì sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Vật nóng: dùng dụng cụ hỗ trợ, không chạm trực tiếp · nung nóng, vật bắn ra, tia laser: giữ khoảng cách an toàn (xa hơn thì bớt nóng rất nhanh).</p>
+<p>Vật nóng: dùng dụng cụ hỗ trợ, không chạm trực tiếp<br>Nung nóng, vật bắn ra, tia laser: giữ khoảng cách an toàn (xa hơn thì bớt nóng rất nhanh)</p>
 </details>
 <details class="tl-details">
 <summary>6. Làm xong thí nghiệm phải làm gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Vệ sinh, sắp gọn thiết bị và dụng cụ · bỏ chất thải vào đúng nơi quy định.</p>
+<p>Vệ sinh, sắp gọn thiết bị và dụng cụ<br>Bỏ chất thải vào đúng nơi quy định</p>
 </details>
 </div>
 
@@ -315,7 +318,7 @@ __BANG_TN1__
 <li><strong>Chọn đúng số vôn.</strong> Xoay núm về vạch 6 V (nguồn cho khoảng 6,2 V, gần định mức), nối bóng vào Output DC.</li>
 <li><strong>Xin phép.</strong> Báo giáo viên kiểm tra, được cho phép rồi mới bật nguồn.</li>
 </ol>
-<p><strong>Kiểm tra kết quả:</strong> bốn lỗi và một điều kiện chưa đủ (chưa có phép của giáo viên) ứng với năm quy tắc (hiệu điện thế khớp, nước xa thiết bị điện, dây gọn, tắt công tắc trước khi tháo, chờ giáo viên cho phép), mỗi điều có một việc sửa ở các bước 1–4 ✓.</p>
+<p><strong>Kiểm tra kết quả:</strong> bốn lỗi và một điều kiện chưa đủ (chưa có phép của giáo viên) ứng với năm quy tắc (hiệu điện thế khớp, nước xa thiết bị điện, dây gọn, tắt công tắc trước khi tháo, chờ giáo viên cho phép), mỗi điều có một việc sửa ở các bước 1–4 (bước 2 sửa cả hai lỗi nước và dây) ✓.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -334,7 +337,7 @@ __BANG_TN1__
 
 <details class="tl-details">
 <summary>🔁 Thử sức đổi tình huống: đèn cồn bị đổ, cồn cháy lan trên mặt bàn gần bộ nguồn</summary>
-<p>Lùi ra, báo giáo viên ngay · tắt nguồn điện nếu công tắc ở gần và không phải bước qua chỗ ướt · làm theo hướng dẫn của giáo viên, thường là trùm khăn ướt hoặc phủ cát lên chỗ cháy. Không cố cứu thiết bị; không tạt nước vội vì cồn tan trong nước và loang theo, cháy lan rộng.</p>
+<p>Dừng tay, lùi ra khỏi chỗ cháy.<br>Một bạn tắt nguồn điện nếu công tắc ở gần và không phải bước qua chỗ ướt.<br>Cùng lúc, bạn khác báo giáo viên ngay.<br>Làm theo hướng dẫn của giáo viên, thường là trùm khăn ướt hoặc phủ cát lên chỗ cháy.<br>Không cố cứu thiết bị.<br>Không tạt nước vội vì cồn tan trong nước và loang theo, cháy lan rộng.</p>
 </details>
 
 <p class="tl-conf">Em chắc bao nhiêu?
@@ -362,9 +365,9 @@ __BANG_TN1__
 <details class="tl-details">
 <summary>🏗️ Bấm xem: bốn nơi quy tắc an toàn đang làm việc</summary>
 <ul>
-<li><strong>Nhà bếp, nhà ở:</strong> bếp ga có van khoá, bình ga để xa nguồn lửa, ổ cắm có cầu dao chống giật, kí hiệu cảnh báo "nguy hiểm điện" trên tủ điện chung cư. Đọc kí hiệu trước khi mở tủ.</li>
+<li><strong>Nhà ở, chung cư:</strong> ổ cắm có cầu dao chống giật, kí hiệu cảnh báo "nguy hiểm điện" trên tủ điện chung cư. Đọc kí hiệu trước khi mở tủ.</li>
 <li><strong>Sân băng:</strong> lưỡi giày trượt là vật sắc nhọn; ra khỏi mặt băng thì đậy bao lưỡi.</li>
-<li><strong>Nhà bếp:</strong> rút phích bằng cách cầm thân phích, không giật dây; ấm đun nước không đặt sát ổ cắm hay chỗ ướt.</li>
+<li><strong>Nhà bếp:</strong> bếp ga có van khoá, bình ga để xa nguồn lửa.<br>Rút phích bằng cách cầm thân phích, không giật dây.<br>Ấm đun nước không đặt sát ổ cắm hay chỗ ướt.</li>
 <li><strong>Phòng hoá chất:</strong> chai ghi kí hiệu chất dễ cháy, chất độc thì cất đúng chỗ, đậy nắp, xa lửa.</li>
 </ul>
 </details>
@@ -387,6 +390,6 @@ __BANG_TN1__
 <li><strong>Với điện</strong>: tắt trước · đúng vôn · dây gọn · khô ráo.</li>
 <li><strong>Nóng và tia</strong>: dụng cụ trước, tay sau · giữ khoảng cách.</li>
 <li><strong>Sau khi làm</strong>: dọn sạch · chất thải đúng nơi.</li>
-<li>Gặp sự cố: dừng · ngắt nguồn nếu an toàn · báo giáo viên.</li>
+<li>Gặp sự cố: dừng → ngắt nguồn nếu an toàn → báo giáo viên → làm theo hướng dẫn.</li>
 </ul>
 </div>

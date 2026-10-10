@@ -1,0 +1,127 @@
+{
+  "bai": "l10-thuc-hanh-tong-hop-luc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ chữ mâu thuẫn ở cột trái và ghi từng dòng: cân thanh trước, nhẹ hơn 0,1 N thì bỏ qua, nặng hơn thì trừ nửa trọng lượng thanh đồng chất khỏi số chỉ mỗi lực kế."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào câu kiểm tra: khi F₁ = F₂ công thức tổng quát gọn thành F = 2F₁cos(α/2), nên α = 60° cho cos 30°."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: chuỗi này không có trong bài (bảng kết quả là mốc __BANG_A2__)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay bằng hai dòng song song: δ ≤ Δ thì hợp quy tắc trong sai số, δ > Δ thì chưa hợp và phải kiểm dụng cụ, thao tác trước khi nghi quy tắc."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ Δ = 0,3 N là cận trên của sai số do lực kế, chưa tính sai số vẽ, và nêu nguồn của 0,07 N (1 mm ứng 0,05 N cộng phần do góc lệch 1°)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không đánh số lại cả đoạn mà tách quy tắc chính ở cuối thành một dòng in đậm riêng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án D đổi thành 'Lần đo này chưa hợp trong sai số' để phân biệt rõ với B, vẫn là đáp án đúng duy nhất."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng thêm bước ghép F_A + F_B = P với F_A·d_A = F_B·d_B để ra F_A = P·d_B/AB, giữ nguyên vị trí câu hỏi nhanh (không đổi cấu trúc)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô góc bù trong bảng thêm ghi chú không thay góc này vào công thức F có dấu +."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển dòng 🔑 và gạch đầu dòng về số 0 lên ngay dưới bảng tình huống, trước khung Câu 3."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 6 nhắc Mở bài giữ hợp lực P cố định, còn câu này giữ F₁, F₂ cố định."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi câu dự đoán ghi rõ phần hướng lên là thành phần thẳng đứng T·cos(α/2)."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán nhằm bộc lộ quan niệm sai trước khi học, thêm ⚠ sẽ lộ đáp án và phản hồi sai đã giải thích D."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: hai dây vuông góc thì không cộng thẳng hai số chỉ."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục 4 ('Chưa nói quy tắc sai'), và phương án D đã sửa chữ theo c7."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn: dòng 'lệch số 0 cộng vào mọi lần đọc' nay nằm ngay trước Câu 3."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn α đo ở nút O, và bảng nay ghi thêm góc bù không thay vào công thức."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn ở mục 1: F₃ cân bằng với F, cùng độ lớn, ngược chiều."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dùng chung dòng ⚠ với c11 về đại lượng được giữ cố định."
+      },
+      {
+        "id": "q-cau_hoi_nhanh",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn bằng dòng 🔑 'vật gần đầu nào, đầu đó gánh nhiều' và phản hồi B."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bảng dụng cụ (mục II.1), dòng thanh AB: cân thanh trước, nhẹ hơn 0,1 N thì bỏ qua, nặng hơn thì trừ nửa trọng lượng thanh (đồng chất) khỏi số chỉ mỗi lực kế.",
+      "Mục II.2, lần 2: thêm công thức rút gọn F = 2F₁cos(α/2) khi F₁ = F₂ (kết quả 3,46 N giữ nguyên).",
+      "Thí nghiệm mục II.2: bỏ câu 'Lần 3: lực kế 3… lệch 0,3 N' ở bước Rút ra vì mục 4 đã nêu đầy đủ.",
+      "Mục II.3: Δ = 0,3 N ghi rõ là cận trên của sai số do lực kế, chưa tính sai số vẽ, và thêm dòng δ > Δ thì chưa hợp.",
+      "Mục II.4: 0,07 N giải thích là sai số vẽ (1 mm ứng 0,05 N cộng phần do góc lệch 1°), chưa tính trong Δ.",
+      "Câu 2: chữ đáp án D đổi thành 'Lần đo này chưa hợp trong sai số, vì δ = 0,5 N vượt Δ' (vẫn là đáp án đúng).",
+      "Câu hỏi nhanh (hai lực song song): phản hồi đúng thêm cách suy ra F_A = P·d_B/AB.",
+      "Bẫy 2: ô góc bù ghi rõ không thay 180° − α vào công thức F có dấu +.",
+      "Câu dự đoán: phản hồi đúng ghi rõ phần hướng lên là thành phần thẳng đứng T·cos(α/2)."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "bai": "l10-luc-huong-tam",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước đổi 600 vòng/phút = 10 vòng/s, ω = 2π·10, r = 0,20 m và phép tính 62,8²·0,20 ≈ 790 m/s²; bù bằng cách bỏ chữ \"Ví dụ\" và cắt câu thừa ở mục II."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi nguồn \"(Bài 31)\" cạnh v = ωr, đồng thời cắt vế \"một công thức, hai cách viết\" để bù chữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành Δv song song với bán kính ở điểm giữa hai vị trí, chĩa vào tâm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lí do: quả nặng đứng yên nên lực căng dây bằng Mg."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi kẹp đặt sát miệng ống, kẹp đứng yên nghĩa là r giữ đúng 0,50 m."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cách tính hàng 1 (T, v, F) vào hộp nhận xét trong <details> để không tăng chữ hiện ngay."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>, giải thích ∼ là \"tỉ lệ với\" và nêu quy tắc sai số tỉ đối của tích (Bài 3) cho T² = T·T."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục tiêu đổi thành \"Gỡ ba hiểu lầm\", thêm hiểu lầm về chiều phụ thuộc của a_ht vào r."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi D nêu rõ giả định: nếu \"lực li tâm\" cân bằng hấp dẫn thì hợp lực bằng 0, vệ tinh bay thẳng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gọi tên lực là thành phần nằm ngang của phản lực mặt băng lên lưỡi giày cắm nghiêng, sửa đồng bộ ở mục VI."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phép thay F_max = 0,5mg để thấy m triệt tiêu, ra √(0,5gr)."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết 0,16·mg = 0,16·1200·10 = 1920 N."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện mω²r ≤ 0,3mg, chia cho m được ω²r ≤ 0,3g = 3 m/s², mỗi ý một dòng."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung ý: mặt đường nghiêng làm phản lực nghiêng theo, có thành phần hướng vào tâm cua."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đóng khung Tự kiểm tra ngay sau tl-quiz ở Bẫy 1 và Bẫy 3, bỏ </div> cũ sau dòng 🔑, để bảng và dòng 🔑 ra ngoài khung."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, thêm ⚠ sẽ lộ đáp án; phản hồi đã giải thích lỗi A."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"⚠ Để ý số mũ của v trong công thức.\" trước Câu 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"⚠ Chỉ tính lực do một vật cụ thể gây ra.\" trước Câu 2, vì Bẫy 2 nằm sau câu này."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước câu hỏi (\"Vẽ thêm nó là đếm một lực hai lần\"), không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 2 và câu dẫn đã đặt vấn đề \"lực li tâm\" ngay trước quiz, không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"tuỳ đại lượng nào giữ nguyên\" ngay trước câu hỏi, không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng dữ liệu bài toán mẫu ngay trước quiz đã nhấn \"đổi đơn vị\" km/h ra m/s, không thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 ví dụ lồng vắt: thêm 600 vòng/phút = 10 vòng/s, ω = 2π·10 = 20π ≈ 62,8 rad/s, r = 0,20 m, a ≈ 62,8²·0,20 ≈ 790 m/s² (kết quả không đổi).",
+      "II.1: Δv được mô tả là song song với bán kính ở điểm giữa hai vị trí, chĩa vào tâm.",
+      "II.1 Câu 1 phản hồi đúng: câu kết đổi thành \"Lực bám cần có cũng gấp bốn\" (F = mv²/r).",
+      "II.2 và VI: lực hướng tâm của vận động viên trượt băng được gọi tên là thành phần nằm ngang của phản lực mặt băng lên lưỡi giày cắm nghiêng.",
+      "II.2 Câu 2 phản hồi D: nếu \"lực li tâm\" cân bằng hấp dẫn thì hợp lực bằng 0, vệ tinh bay thẳng.",
+      "II.3 thí nghiệm nút cao su: lực căng dây bằng Mg vì quả nặng đứng yên; kẹp sát miệng ống đứng yên nghĩa là r giữ đúng 0,50 m.",
+      "II.3 nhận xét (details): thêm tính hàng 1, T = 1,02 s, v ≈ 3,08 m/s, mv²/r ≈ 0,95 N; giải thích sai số tỉ đối của F gấp đôi của t qua T² = T·T.",
+      "V lời giải mẫu: thay F_max = 0,5mg được v_max = √(0,5gr), m triệt tiêu.",
+      "V trời mưa: F_max = 0,16·mg = 0,16·1200·10 = 1920 N (số không đổi).",
+      "VI thử thách ⭐⭐: thêm điều kiện mω²r ≤ 0,3mg, tức ω²r ≤ 0,3g = 3 m/s².",
+      "VI đường nghiêng: phản lực nghiêng theo mặt đường, có thành phần hướng vào tâm cua.",
+      "Bẫy 1 và Bẫy 3: sửa vị trí thẻ đóng div, bảng và dòng 🔑 ra ngoài khung Tự kiểm tra.",
+      "Mục tiêu: \"Gỡ ba hiểu lầm\", thêm hiểu lầm về chiều phụ thuộc của a_ht vào r."
+    ],
+    "so_tu_them": 22,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-luc-huong-tam/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

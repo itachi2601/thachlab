@@ -1,0 +1,99 @@
+{
+  "bai": "l10-bien-dang-vat-ran",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng Chiều thành ba dòng: ngược chiều biến dạng, dãn thì kéo vật về phía lò xo, nén thì đẩy vật ra xa lò xo; cắt câu 'Giảm xóc xe máy cũng vậy' (đã có ở mục VI) để bù chữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng đơn vị F (N), Δl (m), k (N/m) vào ô định luật Hooke, tách l0 và l thành hai dòng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong bài (phần nhận xét đang là chỗ giữ chỗ __NHAN_XET_TN2__)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ô bảng thành 'Tăng theo lực nhưng không tỉ lệ', bù chữ bằng cách cắt câu lặp ý cuối Bẫy 3."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 cố ý cho học sinh làm Câu 4 trước rồi mới giải thích, như Bẫy 1 và Bẫy 3; chuyển câu lên trước sẽ lộ đáp án."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm bước tính P1 = 1 N và P2 = 3 N, giải thích lấy hiệu hai chiều dài thì l0 triệt tiêu, rồi chỉ rõ 1 N là trọng lượng vật 100 g."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại đáp án ⭐⭐ thành ba dòng: lò xo nguyên dãn 1 cm, hai nửa nối tiếp cùng chịu 1 N nên mỗi nửa dãn 0,5 cm, tách riêng một nửa thì k = 200 N/m."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ đơn vị cm vô nghĩa ở phương án C, còn '100/8 = 12,5'; phản hồi 'chia ngược k/F' vẫn khớp."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn 'cái gấp đôi là độ dãn, không phải chiều dài' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu cáp thang máy bị kéo ra và nhắc xét chiều cặp lực nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi chia 3/6 chưa đổi ra mét nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu 400 N là do quên đổi cm ra m nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã tách 'dãn tổng 6 cm' với 'dãn thêm 2 cm' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói treo đứng hay nằm không thay được điều kiện giới hạn đàn hồi nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói 5 cm mới là độ dãn, chưa cộng l0 nên không thêm dòng ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2, dòng Chiều của lực đàn hồi: ghi rõ lực ngược chiều biến dạng, dãn thì kéo vật về phía lò xo, nén thì đẩy vật ra xa lò xo.",
+      "Mục II.2: bỏ câu 'Giảm xóc xe máy cũng vậy.' (ví dụ này đã có trong mục VI).",
+      "Mục II.3, ô định luật Hooke: thêm dòng đơn vị F (N), Δl (m), k (N/m); bỏ '(m)' lẻ sau l.",
+      "Bẫy 1, bảng so sánh: ô 'Không tỉ lệ với lực' đổi thành 'Tăng theo lực nhưng không tỉ lệ'.",
+      "Bẫy 3: bỏ câu 'Bỏ điều kiện ấy là tính ra số vô nghĩa.'",
+      "Câu 5, phương án nhiễu C: '100/8 = 12,5 cm' đổi thành '100/8 = 12,5' (bỏ đơn vị sai). Đáp án B và phản hồi giữ nguyên.",
+      "Mục V, details 'Thử sức đổi chiều': thêm P1 = 1 N, P2 = 3 N và lý do lấy hiệu thì l0 triệt tiêu. Kết quả không đổi: k = 50 N/m, l0 = 20 cm.",
+      "Mục VI, đáp án thử thách ⭐⭐: giải thích lại vì sao mỗi nửa dãn 0,5 cm (hai nửa nối tiếp cùng chịu 1 N, cộng lại 1 cm). Kết quả không đổi: 0,5 cm và k = 200 N/m."
+    ],
+    "so_tu_them": 0,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-bien-dang-vat-ran/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

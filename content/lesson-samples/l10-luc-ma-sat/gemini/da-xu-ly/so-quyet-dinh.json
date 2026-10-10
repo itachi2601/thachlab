@@ -1,0 +1,138 @@
+{
+  "bai": "l10-luc-ma-sat",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 6 thêm cụm \"đang trượt\" để chắc chắn dùng ma sát trượt, đáp án 0,57 m/s² giữ nguyên."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài hiện tại); tên \"hệ số ma sát nghỉ\" cho μ_n đã được bổ sung ở thí nghiệm nâng ván theo c3."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"sinα = h/L\" trước α ≈ 20° và gọi tên μ_n là hệ số ma sát nghỉ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"tương tự\" bằng \"trượt đều thì hợp lực bằng 0, nên μ = tan17° ≈ 0,30\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ α so với phương ngang và thêm phương trình chiếu N + F sinα − mg = 0."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng N ở khung Mang về tách mỗi trường hợp một dòng, ghi rõ α của dây (so với phương ngang) và α của dốc; không đổi ký hiệu toàn bài."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hộp công thức ghi thêm: N bằng độ lớn phản lực của mặt lên vật, và tách chú thích thành từng dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C câu dự đoán đổi thành \"giá trị cố định của sàn, không phụ thuộc lực đẩy\", phản hồi C sửa cho khớp."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra nêu điều kiện bắt đầu trượt tanα > μ_n và giải thích vì sao 0,58 ≫ 0,20 vẫn đủ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm gợi ý sai số đọc lực kế ±0,05 N (nửa độ chia) ngay trước câu hỏi."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng sửa thành \"không đổi theo lực kéo nếu N giữ nguyên\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi công thức v² − v0² = 2as và F_ms = m|a|, mỗi bước một dòng."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thống nhất ký hiệu toàn bài cần sửa nhiều chỗ, vượt phạm vi sửa ≤ 2 câu tại chỗ."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lực cản và lực nâng là Bài 19 riêng trong sách Kết nối tri thức; thêm mục mới là đổi cấu trúc bài."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích lỗi chọn A, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thí nghiệm và phản hồi đã nhấn ma sát không phụ thuộc diện tích."
+      },
+      {
+        "id": "q-cau2-C",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: N giảm do F sinα (thẳng đứng), không phải F cosα (nằm ngang)."
+      },
+      {
+        "id": "q-cau2-A",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 đã nhấn N = mg − F sinα khi kéo chếch."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và dòng 🔑 đã nhấn ma sát nghỉ không lấy mức cực đại."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn N = mg cosα trên dốc."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn ma sát ngược chiều trượt tương đối."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: lấy lực đẩy trừ ma sát trượt rồi mới chia cho m."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu dự đoán: phương án nhiễu C đổi thành \"giá trị cố định, không phụ thuộc lực đẩy\", phản hồi C sửa theo.",
+      "Mục II.1: ví dụ tủ 295 N chuyển vào <details>, nội dung giữ nguyên, để bù độ dài.",
+      "Hộp công thức ma sát trượt: thêm ý N bằng độ lớn phản lực của mặt lên vật.",
+      "Đọc số liệu: thêm gợi ý sai số đọc lực kế ±0,05 N (nửa độ chia 0,1 N).",
+      "Mục 4, kéo chếch: α đo so với phương ngang và thêm phương trình chiếu N + F sinα − mg = 0.",
+      "Thí nghiệm nâng ván: thêm sinα = h/L, gọi μ_n là hệ số ma sát nghỉ, và giải thích trượt đều ⇒ hợp lực 0 ⇒ μ = tan17° ≈ 0,30.",
+      "Câu 2: thêm dòng ⚠ về F sinα và F cosα, rút gọn phản hồi phương án C (số liệu không đổi).",
+      "Bảng Bẫy 1: ma sát trượt \"không đổi theo lực kéo nếu N giữ nguyên\".",
+      "Lời giải bài toán mẫu, bước kiểm tra: điều kiện bắt đầu trượt là tanα > μ_n.",
+      "Thử sức xe đạp: ghi v² − v0² = 2as và F_ms = m|a| = 344 N, kết quả μ = 0,4 không đổi.",
+      "Câu 6: đề thêm \"đang trượt\" và thêm dòng ⚠, đáp án 0,57 m/s² không đổi.",
+      "Khung Mang về: dòng N ghi rõ α của dây (so với phương ngang) và α của dốc."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-luc-ma-sat/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

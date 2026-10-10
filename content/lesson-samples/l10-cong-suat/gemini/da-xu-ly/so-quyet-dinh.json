@@ -1,0 +1,117 @@
+{
+  "bai": "l10-cong-suat",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(lấy $g = 10\\ \\text{m/s}^2$)\" ngay sau $A = mgh = 100\\,000$ J trong phản hồi đúng của câu dự đoán."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng Rút ra: $F$ trong $P = F v$ là lực đẩy xe tiến lên, không phải lực chân ấn, số nhẹ cho $F$ lớn nhưng $v$ nhỏ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước lên dốc phải thắng thêm thành phần trọng lực dọc mặt dốc nên cần $F$ lớn, rồi $v = P/F$ nhỏ, và gộp bỏ gạch đầu dòng lặp ý."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐ ghi rõ chạy đều nên $a = 0$, lực kéo bằng lực cản, còn Bẫy 3 không thêm vì mục đang sát trần."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 3 ghi \"thành phần trọng lực dọc mặt dốc, kéo xe xuống\" và chú thích $P_{\\max}$ là công suất tối đa."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không đổi tên máy vì phải sửa cả đề và 4 phương án, chỉ viết rõ \"công máy A/B\" và \"phương án A, C, D\" trong phản hồi để khỏi lẫn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án nhiễu A, B thành câu cũng dùng $P = F v$ nhưng suy luận sai, và sửa phản hồi sai cho khớp, đáp án C giữ nguyên."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 7 đổi thành \"công suất tối đa $6$ kW\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hai đoạn trích đều khớp nguyên văn, đã sửa câu đầu thành \"cabin cùng hàng $800$ kg\" cho thống nhất với câu $1\\,600$ kg."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"không đổi\" cho $F$ khi dùng $A = F d = F v_{tb} t$, và Trả bài 4 ghi rõ điều kiện này cho công suất trung bình."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi gắn công với thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu phương án A chưa chia cho $t$, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu D coi 1 CV bằng 1 kW, không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu lỗi chưa đổi km/h ra m/s, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tên mục Bẫy 1 và phản hồi đã nhấn công suất lớn chưa chắc công lớn, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và phản hồi đã nhấn việc đổi Wh sang kWh, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Chính tên mục Bẫy 3 đã nêu ngộ nhận động cơ yếu đi, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu C là thời gian ứng với 4 kW, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài, phản hồi đúng câu dự đoán: ghi rõ $g = 10\\ \\text{m/s}^2$ cho $A = 100\\,000$ J.",
+      "II.3, khung quy tắc: điều kiện dùng $A = F d = F v_{tb} t$ thành lực không đổi và cùng hướng. Trả bài 4 thêm điều kiện này cho công suất trung bình.",
+      "II.3, ví dụ xe đạp điện: thêm bước lên dốc cần thắng thành phần trọng lực dọc dốc nên $F$ lớn và $v = P/F$ nhỏ. Bỏ gạch đầu dòng lặp \"muốn $F$ lớn thì $v$ nhỏ\".",
+      "Thí nghiệm đạp xe lên dốc, dòng Rút ra: $F$ là lực đẩy xe tiến lên, không phải lực chân ấn.",
+      "Bẫy 3, bảng: thêm \"thành phần trọng lực dọc mặt dốc, kéo xe xuống\" và định nghĩa $P_{\\max}$ là công suất tối đa.",
+      "Câu 4, phản hồi: đổi $A_A$, $A_B$ thành \"công máy A/B\", ghi \"phương án A, C, D\". Số liệu 50 000 J và 100 000 J giữ nguyên.",
+      "Câu 6: phương án nhiễu A thành \"Giảm số làm $F$ tăng nên $P = F v$ vượt mức tối đa\", B thành \"Lên dốc $v$ giảm nên theo $P = F v$ công suất động cơ giảm\". Phản hồi sai sửa cho khớp, đáp án C giữ nguyên.",
+      "Câu 7: đề ghi \"công suất tối đa $6$ kW\". Kết quả 20 s không đổi.",
+      "Thử sức đổi chiều: \"hàng 800 kg\" thành \"cabin cùng hàng 800 kg\". Kết quả 0,625 m/s và 0,31 m/s không đổi.",
+      "Thử thách ⭐⭐: đáp án ghi rõ chạy đều nên lực kéo bằng lực cản. Số 4 000 N và 2 000 N không đổi.",
+      "Cắt để giữ hạn mức: câu \"Lần 1 là đi chậm, lần 4 là leo thật nhanh\", rút gọn gạch \"Mở rộng\" ở II.1, bỏ câu lặp ý trong phản hồi Câu 5 và Câu 6."
+    ],
+    "so_tu_them": 8,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-cong-suat/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "bai": "l10-moment-luc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(đường thẳng chứa lực)\" vào phương án B của câu dự đoán."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Cầm ở 60 cm (xa gấp đôi) thì chỉ cần 60 N\"."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(= 0,30 N·m)\" ở thí nghiệm, phần giải thích khi nào được giữ cm đặt trong details nhận xét vì mục II đã sát trần."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi ngay trong dòng quy tắc: M₁, M₂… là moment thuận kim, M₁′, M₂′… là moment ngược kim."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi nhiễu C sửa thành: cho Lan ngồi đối xứng với Minh, quên hai người nặng khác nhau."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng quy ước dấu moment và nối với \"thuận kim = ngược kim\", bù bằng cách bỏ dòng ví dụ tấm ván (đã có trong details)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi điều kiện \"(trục nằm giữa hai giá)\" cho d = d₁ + d₂, trường hợp trục ngoài để trong details."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào details trường hợp trục ngoài hai giá: M = F(x + d) − Fx = Fd."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 1 ghi \"Lực hợp với cán góc α\", trường hợp cos nằm ở dòng ⚠ trước Câu 3."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra nói rõ P₁ đặt tại A nên moment bằng 0, N quay ngược kim và P quay thuận kim."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu 6 nhắc lại \"đề bài gốc (giá đỡ tại O, OA = 0,4 m)\"."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi chọn A, thêm vào đó c1 đã giải thích cụm \"giá của lực\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi để nguyên 30 cm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn \"người nặng ngồi gần trục hơn\" và lỗi làm ngược tỉ lệ."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: góc với cán dùng sin, góc với phương vuông góc cán dùng cos."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thí nghiệm cửa và bảng Bẫy 2 đã nhấn trường hợp giá lực qua trục."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Khung ngẫu lực và phản hồi đã nhấn d là khoảng cách giữa hai giá."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi so lực, còn nhầm OA đã được xử lí ở c11."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 1 (phản hồi đúng): thêm mốc so sánh, cầm ở 60 cm thì F = 60 N.",
+      "Quy tắc moment: M₁, M₂… ứng với thuận kim, M₁′, M₂′… ứng với ngược kim.",
+      "Thí nghiệm thước: thêm 30 N·cm = 0,30 N·m, details nhận xét thêm ghi chú khi nào phải đổi d sang m.",
+      "Câu 2 (phản hồi sai): giải thích lại phương án 1,5 m là ngồi đối xứng, bỏ qua chênh lệch khối lượng.",
+      "Điều kiện cân bằng: thêm quy ước dấu moment (+ theo chiều dương, − chiều kia) và bỏ dòng ví dụ tấm ván ngoài details.",
+      "Ngẫu lực: d = d₁ + d₂ chỉ khi trục nằm giữa hai giá, details thêm trường hợp trục ngoài M = F(x + d) − Fx = Fd.",
+      "Bẫy 1: α là góc giữa lực và cán, thêm dòng ⚠ sin/cos trước Câu 3, phản hồi Câu 3 và Trả bài 2 sửa cho khớp.",
+      "Bài toán mẫu (bước kiểm tra): nêu rõ moment của P₁ quanh A bằng 0 và chiều quay của N, P.",
+      "Câu 6: nhắc lại OA = 0,4 m của đề gốc."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-moment-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

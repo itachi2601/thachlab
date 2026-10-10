@@ -1,0 +1,126 @@
+{
+  "bai": "l10-trong-luc-luc-cang",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"không hề có thép\" thành \"không hề có nhựa\" cho khớp phương án B và phản hồi."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"đồng chất\" vào gạch đầu dòng trọng tâm (và câu Trả bài 2)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Trả bài 3 ghi rõ hai lần treo đủ tìm G, lần thứ ba chỉ để kiểm tra, mỗi ý một dòng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong <details> dòng 1 N/kg = 1 (kg·m/s²)/kg = 1 m/s²."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Dây nhẹ: T như nhau ở mọi điểm\" vì T đều là do dây nhẹ, không phải do không dãn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"($\\vec F$ là hợp lực lên vật đó)\" vào câu cách giải, bù bằng cắt mệnh đề lặp ý ở định nghĩa trọng lực."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này nằm trong chú thích hình, không có trong bài)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 2 ghi đủ: a hướng lên (đi lên nhanh dần hoặc đi xuống chậm dần), a hướng xuống (đi xuống nhanh dần hoặc đi lên chậm dần), bù bằng rút gọn hai câu dẫn ở Bẫy 2 và Bẫy 3."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"$P_A$ cân bằng phản lực $\\vec N$ của bàn\" để không lẫn với đơn vị N."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gợi ý bước 3 nêu rõ tiêu chí \"tính số thì chọn phương trình ít số hạng hơn\", còn tiêu chí xét xu hướng nằm ở dòng ⚠ trước Câu 6."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 6 ghi rõ \"bước 2 (phương trình của vật B) trong 🧮 lời giải bài mẫu\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 6 đổi thành \"Khối A càng nặng thì lực căng…\", các phương án A, B, D chuyển sang dạng \"càng lớn/càng nhỏ\", đáp án vẫn là A."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"($v_0 = 0$)\" sau \"từ nghỉ\" trong khung Mang về."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi (điểm buộc dây là chỗ đặt lực căng), không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng ví dụ 9,8 → 9,78 N, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn phương lực căng trùng với sợi dây, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn trọng lượng đổi theo g nơi đặt vật, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn T = P chỉ khi không có gia tốc, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn lực căng luôn dọc theo dây, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: khi đổi $m_A$ đừng xét $T = m_A a$ vì cả $m_A$ lẫn $a$ cùng đổi, bù bằng cắt câu lặp ý trong phản hồi sai."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: \"chỗ không hề có thép\" → \"chỗ không hề có nhựa\".",
+      "Mục II.2 và Trả bài 2: trọng tâm ở tâm đối xứng chỉ khi vật phẳng đồng chất.",
+      "Mục II.4: điều kiện T như nhau ở mọi điểm của dây chỉ còn \"dây nhẹ\" (bỏ \"không dãn\").",
+      "Mục II.5: ghi rõ $\\vec F$ trong $\\vec F = m\\vec a$ là hợp lực tác dụng lên từng vật.",
+      "Details bảng đo: thêm 1 N/kg = 1 m/s² để so P/m với g.",
+      "Bảng Bẫy 2: a hướng lên gồm cả đi xuống chậm dần, a hướng xuống gồm cả đi lên chậm dần (khớp bài ⭐⭐ 550 N).",
+      "Bảng dữ liệu bài mẫu: $N$ → phản lực $\\vec N$ của bàn.",
+      "Câu 6: đề đổi sang \"Khối A càng nặng thì lực căng…\", phương án A, B, D đổi sang \"càng lớn/càng nhỏ\", đáp án đúng vẫn A, số liệu không đổi.",
+      "Trả bài 3: hai lần treo đủ tìm G, lần thứ ba để kiểm tra.",
+      "Khung Mang về: \"từ nghỉ\" chú thích $v_0 = 0$."
+    ],
+    "so_tu_them": 20,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-trong-luc-luc-cang/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

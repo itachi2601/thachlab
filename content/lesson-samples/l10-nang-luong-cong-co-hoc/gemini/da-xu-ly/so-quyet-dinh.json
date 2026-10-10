@@ -1,0 +1,95 @@
+{
+  "bai": "l10-nang-luong-cong-co-hoc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"tay theo Hà một đoạn ngắn rồi buông\" để rõ lực của Lan chỉ sinh công trên đoạn tay còn chạm, giữ nguyên tình huống và quiz."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa θ là góc nghiêng dốc và viết rõ cos(90°+θ) = −sinθ, s·sinθ = h (không thêm hình vì không được chèn ảnh)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung trong lời giải: năng lượng vào nhiều hơn phần ma sát lấy đi, phần dư làm động năng tăng, hẹn học kĩ ở bài Động năng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi tên bước 3 thành \"Phản lực\" (bằng độ lớn áp lực) và ghi chú F·sin30° là phần thẳng đứng, khác F·cos30° dọc đường đi."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp hai mục phanh thành một mục \"Phanh xe máy\" có cả ý động năng thành nhiệt."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài 3 thêm \"vật đi thẳng một chiều thì d = s\" và tách mỗi ý một dòng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ \"(lấy g = 10 m/s²)\" ở thí nghiệm 2 vì đề đã cho sẵn P."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, chèn cảnh báo sẽ lộ đáp án; phản hồi sai đã giải thích phương án C."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở câu \"chỉ phần lực dọc đường đi, F cosα, mới sinh công\" và phản hồi đã nêu lỗi dùng sin."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: chuyển động đều vẫn có dịch chuyển nên từng lực vẫn có thể sinh công."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1 (bưng khay đi ngang, α = 90°, A = 0), trích ghép hai ô bảng bằng \"|\" nhưng nội dung có trong nguồn."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 2 (s của vật nhận lực)."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 (đẩy dọc dốc thì α = 0°)."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng dữ liệu bài toán mẫu (F sin30° làm giảm áp lực)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: Lan chỉ đẩy Hà trên một đoạn ngắn rồi buông, Hà lướt tổng cộng 3 m (công của Lan chỉ trên đoạn tay còn chạm).",
+      "II.3: định nghĩa θ là góc nghiêng dốc, thêm bước cos(90°+θ) = −sinθ và s·sinθ = h để ra A_P = −Ph khi đi lên.",
+      "II.2: thêm dòng ⚠ trước Câu 2 (chuyển động đều vẫn có dịch chuyển, từng lực vẫn có thể sinh công).",
+      "II.3: bỏ \"(lấy g = 10 m/s²)\" ở thí nghiệm 2, số liệu P = 2,0 N và bảng không đổi.",
+      "Cắt để bù độ dài mục II: câu ví dụ vali chếch lên sau Mẹo nhớ, ví dụ lưỡi giày trượt ở ý ma sát, cụm \"Có ở mọi nơi\".",
+      "Bài toán mẫu bước 3: đổi \"Áp lực\" thành \"Phản lực\" (N = 280 N không đổi), thêm ghi chú F sin30° thẳng đứng, F cos30° dọc đường đi.",
+      "Bài toán mẫu bước 5: giải thích tổng công ≈ 310 J > 0 thì động năng tăng, ván nhanh dần.",
+      "Trả bài 3: thêm d = s khi vật đi thẳng một chiều; các đáp án Trả bài tách mỗi ý một dòng.",
+      "Đời sống: gộp hai mục phanh thành một mục Phanh xe máy."
+    ],
+    "so_tu_them": 0,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-nang-luong-cong-co-hoc/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

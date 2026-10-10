@@ -1,0 +1,106 @@
+{
+  "bai": "l10-luc-can-luc-nang",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lực đẩy Archimedes đã học ở KHTN 8, câu dự đoán cố ý dựa vào kiến thức cũ và II.4 định nghĩa lại đầy đủ, trong khi mục II đã vượt hạn mức nên không thêm dòng nhắc."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong hộp nhận xét đã ghi rõ n là số phễu, lực cản khi rơi đều tỉ lệ với n, nên nếu lực cản tỉ lệ v² thì v²/n phải không đổi."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm vế 'rơi đều nên lực cản bằng trọng lượng: trọng lượng gấp 4 thì lực cản gấp 4, trong khi v chỉ gấp đôi'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ nhảy dù nay nói rõ lúc mở dù lực cản lớn hơn trọng lượng nên người chậm dần, rồi lực cản giảm theo tốc độ tới khi bằng trọng lượng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã nêu F1 = p1S, F2 = p2S và V = SΔh ngay trong câu suy ra F_A."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'chỉ phụ thuộc ρ chất lỏng và tỉ lệ với Δh' ở II.5 và đáp án Trả bài câu 5."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng 'khi đã nổi yên: F_A = P, không lớn hơn' vào ô bảng (không thêm hàng để khỏi trái tiêu đề 'Khi vật chìm hẳn'), dòng tổng kết ghi điều kiện chìm hẳn và nổi yên."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước cân bằng nay nói T là lực lực kế kéo vật lên, bằng số chỉ lực kế, T và F_A hướng lên, P hướng xuống."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Chen ô chọn mức chắc vào giữa phương án và phản hồi sẽ phá cấu trúc .tl-quiz (phản hồi phải là con trực tiếp, hiện ngay khi chọn)."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích Hình 1 không có trong bài), và câu dự đoán không cần cảnh báo trước."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: lực cản của không khí khác ma sát giữa hai mặt rắn tiếp xúc."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng II.6 (nay rõ hơn sau c7) nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng cả mục Bẫy 1 ngay trước Câu 3 nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (ghép hai ô bảng bằng '|'), và bảng Bẫy 2 đã nhấn V phần chìm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng cả mục Bẫy 3 ngay trước Câu 5 nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn V phần chìm và phản hồi Câu 6 chỉ lại Bẫy 2 nên không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 hộp '📊 nhận xét': định nghĩa n = số phễu, lực cản khi rơi đều tỉ lệ n, nêu rõ F_c = P khi rơi đều (số liệu không đổi, v²/n ≈ 1,2 đã kiểm lại).",
+      "II.1: thêm dòng ⚠ trước Câu 1 phân biệt lực cản của không khí với ma sát giữa hai mặt rắn.",
+      "II.2 ví dụ nhảy dù: thêm pha mở dù có lực cản lớn hơn trọng lượng nên chậm dần, rồi lực cản giảm về bằng trọng lượng thì rơi đều 5 m/s.",
+      "II.5: Δp phụ thuộc ρ chất lỏng và tỉ lệ với Δh (trước ghi 'chỉ tỉ lệ với Δh'), sửa tương tự ở Trả bài câu 5.",
+      "II.5: phép suy F_A nêu rõ F1 = p1S, F2 = p2S và V = SΔh.",
+      "II.6 bảng, hàng P < F_A: thêm 'khi đã nổi yên: F_A = P, không lớn hơn'.",
+      "II.6: bỏ câu ví dụ tàu ngầm (trùng với mục VI) để bù chữ.",
+      "Bài toán mẫu bước 4: nói rõ T là lực kéo của lực kế (bằng số chỉ), chiều các lực, kết quả 3,4 N không đổi.",
+      "Tổng kết: dòng so P với F_A ghi điều kiện 'khi chìm hẳn', thêm dòng 'nổi yên: F_A phần chìm = P'.",
+      "Bỏ câu đuôi ở phản hồi Câu 1, Câu 2 và Câu 3 để bù độ dài, nội dung vật lí không đổi."
+    ],
+    "so_tu_them": 20,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-luc-can-luc-nang/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

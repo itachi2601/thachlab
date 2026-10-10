@@ -1,0 +1,145 @@
+{
+  "bai": "l10-tong-hop-phan-tich-luc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đầu mục 3 thêm định nghĩa hai lực đồng quy (giá cắt nhau tại một điểm, trượt về điểm đó để chung gốc)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa \"giá (đường thẳng chứa vectơ lực)\" đặt ngay ở lần dùng đầu tiên trong mục 3, dùng chung cho mục 4."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ đòn gánh thêm d₂ = 1,5d₁ và d₁ + d₂ = 1 m, ra d₁ = 0,4 m, d₂ = 0,6 m."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tổng hợp hai lực song song cùng chiều có trong Bài 13 sách Kết nối tri thức nên giữ nguyên."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thí nghiệm mặt phẳng nghiêng thêm ngoặc: α là góc nghiêng ván, không phải góc giữa P và ván."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 3 thêm lý do: góc giữa P và phương vuông góc dốc bằng α (cạnh tương ứng vuông góc) nên thành phần song song dốc đối diện góc, dùng sin."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng 🔑 sửa thành \"Cạnh kề góc: cos · Cạnh đối góc: sin\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ví dụ vali thành kéo xe bằng dây chếch lên cho khớp chú thích Hình 2 theo mô tả của góp ý."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cách vẽ: đặt các vectơ nối đuôi (gốc vectơ sau trùng ngọn vectơ trước) thì thành tam giác lực khép kín."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng 🔑 và gạch đầu dòng đầu mục 6 ghi rõ cân bằng gồm đứng yên hoặc chuyển động thẳng đều."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 2 thêm giải thích phương án 1 N (trừ số chỉ đúng khi hai lực cùng phương) và tách mỗi lỗi một dòng."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ dòng 🔑, thêm dòng ⚠ về cặp \"A lên B và B lên A\" trước Câu 4, phản hồi sai giải thích B là phản lực của N."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong khung hướng hợp lực thêm bước: F₂ > F₁ thì F₁/F < 1/√2, nên θ > 45°."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bài 1 ghi θ là góc giữa vectơ F và hướng đông."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thử thách ⭐⭐⭐ thêm cos 37° = 0,8 và gợi ý cân bằng theo P_x, P_y, bỏ chữ \"nghỉ\" chưa học, đáp án tách dòng."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nhận xét trong <details> dưới video: dây treo nằm trên đường kéo dài đường chéo, ngược hướng hợp lực hai lực kế."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lực là vectơ, không cộng số."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ rõ lỗi lấy nhầm góc cho phương án 17,3 N."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 6 và phản hồi đã nhấn F₃ phải ngược hướng hợp lực."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 khoảng giá trị hợp lực đã nhấn ngay trước câu."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4: đặt lên vật khác chưa đủ, phải là cặp A lên B và B lên A."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn P sin α, không phải P cos α."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phần thử sức đổi số ngay trước câu đã nêu chiều biến thiên của T theo góc."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: thêm định nghĩa hai lực đồng quy và \"giá\" của lực (đường thẳng chứa vectơ lực).",
+      "Mục 3, khung hướng hợp lực: thêm bước F₂ > F₁ ⇒ F₁/F < 1/√2 ⇒ θ > 45°.",
+      "Mục 4, ví dụ đòn gánh: thêm d₁ + d₂ = 1 m, kết quả d₁ = 0,4 m, d₂ = 0,6 m.",
+      "Mục 5: ví dụ vali đổi thành kéo xe bằng dây chếch lên, cần đối chiếu chú thích Hình 2 (FIG2).",
+      "Mục 5: dòng 🔑 sửa thành cạnh kề/cạnh đối góc.",
+      "Mục 5, thí nghiệm mặt phẳng nghiêng: ghi chú α là góc nghiêng ván, không phải góc giữa P và ván.",
+      "Mục 6: cân bằng gồm đứng yên hoặc chuyển động thẳng đều, thêm cách vẽ tam giác lực nối đuôi.",
+      "Câu 2: phản hồi sai thêm giải thích phương án 1 N.",
+      "Bẫy 3: thêm lý do góc giữa P và phương vuông góc dốc bằng α.",
+      "Câu 4: thêm dòng ⚠ trước câu, phản hồi sai nêu lực sách ép bàn là phản lực của N.",
+      "Bài 1: bảng dữ liệu định nghĩa θ là góc giữa F và hướng đông.",
+      "Thử thách ⭐⭐⭐: thêm cos 37° = 0,8 và gợi ý, đáp án giữ 60 N và 80 N.",
+      "Video thí nghiệm: thêm nhận xét đáp trong <details>.",
+      "Cắt để giữ hạn mức: ví dụ hai người đẩy xe hỏng (mục 1), câu xe tải đỗ dốc (mục 5), lời nhắc lặp trong 6 tiêu đề Trả bài."
+    ],
+    "so_tu_them": 15,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-tong-hop-phan-tich-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "bai": "l10-dinh-luat-2-newton",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-09",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C viết lại thành \"nghĩ vật nặng tăng tốc nhanh hơn, thật ra vật nặng khó đổi vận tốc hơn\", tách mỗi phương án một dòng và cắt câu \"Hãy nhớ cảm giác thật\" bị lặp ý."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc \"(từ $s = \\tfrac12 at^2$ với $v_0 = 0$)\" ngay sau công thức $a = 2s/t^2$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi sai số cảm biến lực ±0,01 N và sai số đo t ±0,01 s ngay trong bước Làm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng giải thích phương án A, tách phản hồi mỗi phương án một dòng, đồng thời cắt câu hỏi \"giải thích cho bạn\" ở phản hồi đúng để bù độ dài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng 1 sửa thành \"cùng hướng với hợp lực tác dụng lên vật\" và đáp án Trả bài 1 viết lại theo hợp lực, mỗi ý một dòng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ô gập \"Bấm xem phép tính\" gồm đổi tấn ra kg, tính a và s cho cả hai xe, kèm dẫn về công thức ở mục 5 (đặt trong details vì mục II đã quá trần)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề sửa thành \"Bẫy 1: tưởng $F$ trong công thức là lực kéo\" để báo đây là quan niệm sai."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề sửa thành \"Bẫy 2: tưởng lực hướng đâu, vật chạy hướng đó\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"(lực kéo nằm ngang, ngược chiều ma sát)\" dưới công thức trừ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích \"($g \\approx 9{,}8\\ \\text{m/s}^2$: gia tốc rơi tự do)\" dưới $P = mg$."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ô gập ví dụ P = 20 N, g = 10 m/s² → m = 2 kg → a = 2,5 m/s², đặt trong details để giữ hạn mức mục III."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết đầy đủ $a = \\dfrac{0^2 - 15^2}{2\\cdot 25}$ và ghi $m = 1200$ kg trong phần thử sức."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"36 km/h = 10 m/s\" vào đáp án ⭐⭐⭐, không sửa mục Mang về để giữ thay đổi tại chỗ."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi A trong phản hồi câu dự đoán."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 tỉ lệ và phản hồi C đã nhấn lỗi cộng thẳng độ tăng lực."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 \"khối lượng gấp đôi · gia tốc một nửa\" đã nhấn chiều tỉ lệ nghịch."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn lỗi quên trừ ma sát ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn gia tốc khác vận tốc ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 đổi gam ra kg đã đứng ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6 nhắc mẫu số là 2s, quên số 2 thì lực hãm ra gấp đôi."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1 (TN xe trên máng): thêm sai số cảm biến ±0,01 N, sai số đo t ±0,01 s và nguồn gốc a = 2s/t² (s = ½at², v0 = 0).",
+      "Mục II.3: phát biểu sửa thành gia tốc cùng hướng với hợp lực; đáp án Trả bài 1 sửa theo.",
+      "Mục II.3: cắt gạch \"Ví dụ 80/40 = 2, 80/80 = 1 m/s²\" vì đã có trong phản hồi câu dự đoán.",
+      "Mục II.4: thêm ô gập phép tính xe con 1500 kg (a = 10 m/s², s = 20 m) và xe tải 15 000 kg (a = 1 m/s², s = 200 m).",
+      "Bẫy 1: ghi điều kiện dùng a = (Fk − Fms)/m là lực kéo nằm ngang, ngược chiều ma sát.",
+      "Bẫy 3: thêm g ≈ 9,8 m/s² và ô gập ví dụ P = 20 N, g = 10 m/s² → m = 2 kg → a = 5/2 = 2,5 m/s².",
+      "Mục V thử sức: viết a = (0² − 15²)/(2·25) = −225/50 = −4,5 m/s², m = 1200 kg; thêm dòng ⚠ về hệ số 2 trước Câu 6.",
+      "Mục VI thử thách ⭐⭐⭐: thêm 36 km/h = 10 m/s vào đáp án (kết quả giữ nguyên a = −2 m/s², 25 m, còn cách 5 m)."
+    ],
+    "so_tu_them": 34,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dinh-luat-2-newton/gemini/da-xu-ly/theory.src.202610090924.html"
+  }
+}

@@ -1,0 +1,431 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nhận ra <strong>hệ kín</strong> và phát biểu <strong>định luật bảo toàn động lượng</strong>.</li>
+<li>Viết phương trình động lượng có <strong>dấu theo chiều dương</strong> đã chọn.</li>
+<li>Phân biệt <strong>va chạm mềm</strong>, <strong>va chạm đàn hồi</strong>; tính vận tốc chung sau va chạm mềm.</li>
+<li>Giải thích <strong>chuyển động bằng phản lực</strong>: súng giật, tên lửa.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: cú ôm trên sân băng</h3>
+
+<p>An trượt thẳng tới với tốc độ $4\ \text{m/s}$ rồi ôm chầm lấy Bình đang đứng yên. Hai bạn nặng như nhau, đều $50\ \text{kg}$. Sau cú ôm, cả hai cùng lướt đi trên mặt băng gần như không ma sát.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Ngay sau cú ôm, hai bạn cùng lướt với tốc độ bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q1" id="tl74-q1a"><label for="tl74-q1a" class="tl-opt tl-no">A. $4\ \text{m/s}$, An kéo Bình theo đúng tốc độ cũ</label>
+<input type="radio" name="tl74-q1" id="tl74-q1b"><label for="tl74-q1b" class="tl-opt tl-ok">B. $2\ \text{m/s}$</label>
+<input type="radio" name="tl74-q1" id="tl74-q1c"><label for="tl74-q1c" class="tl-opt tl-no">C. $0$, ôm nhau thì đứng lại</label>
+<input type="radio" name="tl74-q1" id="tl74-q1d"><label for="tl74-q1d" class="tl-opt tl-no">D. Khoảng $2{,}8\ \text{m/s}$, để động năng giữ nguyên</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Trước cú ôm chỉ An có động lượng: $50 \cdot 4 = 200\ \text{kg}\cdot\text{m/s}$. Sau cú ôm, $100\ \text{kg}$ mang đúng ngần ấy động lượng nên $v = 2\ \text{m/s}$. Mục II giải thích vì sao nó "phải" giữ nguyên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: khối lượng chuyển động gấp đôi mà vẫn $4\ \text{m/s}$ thì động lượng tự nhân đôi — từ đâu ra? C: trên băng không có gì cản hai bạn, không có lí do để dừng. D: cú ôm làm mất một phần động năng (biến dạng, nóng lên); thứ được giữ nguyên là <strong>động lượng</strong> — xem Bẫy 2.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: định luật bảo toàn động lượng</h3>
+
+<h4>1. Hệ kín</h4>
+
+<p><strong>🔑 Không ngoại lực · hoặc ngoại lực cân bằng</strong></p>
+
+<ul>
+<li><strong>Hệ</strong>: nhóm vật em chọn để xét (An + Bình).</li>
+<li><strong>Nội lực</strong>: lực giữa các vật trong hệ (An kéo Bình, Bình kéo An).</li>
+<li><strong>Ngoại lực</strong>: lực do vật ngoài hệ gây ra (Trái Đất hút, mặt băng đỡ, ma sát).</li>
+<li><strong>Hệ kín</strong> (hệ cô lập): không có ngoại lực, hoặc các ngoại lực cân bằng nhau.</li>
+<li><strong>Coi gần đúng là kín</strong>: va chạm, nổ, bắn súng — nội lực rất lớn, xảy ra rất nhanh, ngoại lực bỏ qua được.</li>
+<li>Ngoại lực chỉ triệt tiêu theo <strong>một phương</strong> → động lượng bảo toàn <strong>theo phương đó</strong>.</li>
+</ul>
+
+<p>Ví dụ: với An và Bình, trọng lực cân bằng phản lực của mặt băng, ma sát rất nhỏ, nên hệ hai bạn coi là kín.</p>
+
+<p>Hệ nào dưới đây coi được là hệ kín trong thời gian xét?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q2" id="tl74-q2a"><label for="tl74-q2a" class="tl-opt tl-no">A. Quả táo đang rơi tự do (hệ chỉ gồm quả táo)</label>
+<input type="radio" name="tl74-q2" id="tl74-q2b"><label for="tl74-q2b" class="tl-opt tl-no">B. Người và xe đạp đang phanh trên đường nhựa</label>
+<input type="radio" name="tl74-q2" id="tl74-q2c"><label for="tl74-q2c" class="tl-opt tl-no">C. Thuyền buồm đang được gió đẩy ra khơi</label>
+<input type="radio" name="tl74-q2" id="tl74-q2d"><label for="tl74-q2d" class="tl-opt tl-ok">D. Hai xe va chạm trên ray đệm khí nằm ngang</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trọng lực của hai xe cân bằng lực đỡ của đệm khí, ma sát gần như bằng 0; lực giữa hai xe là nội lực.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: trọng lực là ngoại lực không bị cân bằng, động lượng của táo tăng dần. B: ma sát của mặt đường là ngoại lực, chính nó làm xe chậm lại. C: gió là ngoại lực. Với mỗi hệ, hỏi: còn ngoại lực nào chưa bị cân bằng?</p></div>
+</div>
+
+<h4>2. Phát biểu định luật</h4>
+
+<p><strong>🔑 Hệ kín · tổng vectơ động lượng không đổi</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Định luật bảo toàn động lượng</p>
+<p>Động lượng toàn phần của một hệ kín là một đại lượng bảo toàn:</p>
+$$\vec p_1 + \vec p_2 + \dots = \vec p_1\,' + \vec p_2\,' + \dots$$
+<p>Hệ hai vật:</p>
+$$m_1\vec v_1 + m_2\vec v_2 = m_1\vec v_1\,' + m_2\vec v_2\,'$$
+<p>$\vec v$: vận tốc trước tương tác · $\vec v\,'$: vận tốc sau · động lượng đo bằng $\text{kg}\cdot\text{m/s}$.</p>
+</div>
+
+<ul>
+<li>Từng vật có thể đổi động lượng; <strong>tổng</strong> thì không đổi.</li>
+<li>Vật này mất bao nhiêu động lượng, vật kia nhận đúng bấy nhiêu.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: vì sao lại bảo toàn?</summary>
+<p>Hai vật tác dụng lên nhau cặp lực $\vec F_{12} = -\vec F_{21}$ (định luật III Newton) trong cùng thời gian $\Delta t$. Theo Bài 28: $\Delta\vec p_1 = \vec F_{21}\Delta t$, $\Delta\vec p_2 = \vec F_{12}\Delta t$. Cộng lại: $\Delta\vec p_1 + \Delta\vec p_2 = \vec 0$.</p>
+</details>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-baotoandl-01">
+<p class="tl-label">🔬 Thí nghiệm: va chạm mềm trên ray đệm khí</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> xe 1 ($m_1 = 0{,}20\ \text{kg}$) gắn đầu kim, xe 2 gắn miếng sáp, đứng yên giữa hai cổng quang. Đẩy nhẹ xe 1: cổng quang 1 đo $v_1$; hai xe dính nhau đi qua cổng quang 2 đo $v$. Đổi $m_2$, đo 4 lần.</li>
+<li><strong>Quan sát:</strong> hai xe dính nhau đi chậm hơn xe 1 lúc đầu; $m_2$ càng lớn, $v$ càng nhỏ. Bảng dưới là số liệu minh hoạ (tính từ mô hình, làm tròn như số đọc thật).</li>
+<li><strong>Rút ra:</strong> $m_1 v_1 \approx (m_1 + m_2)v$ — động lượng trước và sau gần bằng nhau.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$m_2$ (kg)</th><th>$v_1$ (m/s)</th><th>$v$ (m/s)</th></tr>
+</thead>
+<tbody>
+__BANG__
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>Tính $p_{\text{trước}} = m_1 v_1$ và $p_{\text{sau}} = (m_1 + m_2)v$ cho từng lần. Lệch nhau bao nhiêu phần trăm? Vì sao $p_{\text{sau}}$ thường không lớn hơn $p_{\text{trước}}$, và nếu lớn hơn thì nói lên điều gì?</p>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem nhận xét</summary>
+<p>__NHANXET__</p>
+</details>
+
+<h4>3. Va chạm mềm và va chạm đàn hồi</h4>
+
+<p><strong>🔑 Mềm: dính nhau · Đàn hồi: bật ra, giữ động năng</strong></p>
+
+<ul>
+<li><strong>Va chạm mềm</strong>: sau va chạm hai vật dính nhau, chuyển động <strong>cùng vận tốc</strong>. Động năng <strong>giảm</strong> (thành nhiệt, biến dạng).</li>
+<li><strong>Va chạm đàn hồi</strong>: hai vật rời nhau, hình dạng phục hồi; <strong>tổng động năng giữ nguyên</strong>.</li>
+<li>Cả hai loại: <strong>động lượng đều bảo toàn</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Vận tốc chung sau va chạm mềm</p>
+$$v = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$$
+<p>$v_1, v_2, v$ là giá trị <strong>đại số</strong>: cùng chiều dương thì dương, ngược chiều thì âm. Vật 2 đứng yên: $v = \dfrac{m_1 v_1}{m_1 + m_2}$.</p>
+</div>
+
+<p>Ví dụ va chạm mềm: đạn cắm vào bao cát, toa tàu móc nối vào nhau, cú ôm của An và Bình.</p>
+
+<p>Bi cái lăn $2\ \text{m/s}$ va thẳng vào bi đỏ cùng khối lượng đang đứng yên. Coi va chạm là đàn hồi. Kết quả nào thoả cả bảo toàn động lượng lẫn động năng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q3" id="tl74-q3a"><label for="tl74-q3a" class="tl-opt tl-ok">A. Bi cái dừng, bi đỏ đi tiếp $2\ \text{m/s}$</label>
+<input type="radio" name="tl74-q3" id="tl74-q3b"><label for="tl74-q3b" class="tl-opt tl-no">B. Hai bi cùng đi $1\ \text{m/s}$ theo chiều cũ</label>
+<input type="radio" name="tl74-q3" id="tl74-q3c"><label for="tl74-q3c" class="tl-opt tl-no">C. Bi cái bật lùi $2\ \text{m/s}$, bi đỏ đi $2\ \text{m/s}$</label>
+<input type="radio" name="tl74-q3" id="tl74-q3d"><label for="tl74-q3d" class="tl-opt tl-no">D. Bi cái đi tiếp $2\ \text{m/s}$, bi đỏ đi $2\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Động lượng: trước $2m$, sau $0 + 2m$. Động năng: trước $\tfrac12 m \cdot 2^2$, sau đúng bằng thế. Hai bi bằng nhau "đổi vận tốc" cho nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B giữ được động lượng nhưng động năng còn một nửa — đó là va chạm mềm. C: tổng động lượng sau $-2m + 2m = 0$, mất hết. D: tổng động lượng sau gấp đôi, tự sinh ra từ đâu? Kiểm <strong>cả hai</strong> điều kiện cho từng phương án.</p></div>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-baotoandl-02">
+<p class="tl-label">🔬 Thí nghiệm: hai xe có đệm lò xo</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> trên ray đệm khí, hai xe cùng khối lượng, đầu xe gắn vòng lò xo lá. Xe 2 đứng yên, đẩy xe 1 tới va vào.</li>
+<li><strong>Quan sát:</strong> xe 1 gần như dừng hẳn; xe 2 lao đi với tốc độ gần bằng tốc độ xe 1 lúc đầu.</li>
+<li><strong>Rút ra:</strong> va chạm gần đàn hồi; cả động lượng lẫn động năng được "chuyển" trọn từ xe 1 sang xe 2.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>➕ Mở rộng: công thức va chạm đàn hồi trực diện</summary>
+<p>Giải hệ hai phương trình (bảo toàn động lượng và động năng):</p>
+$$v_1' = \dfrac{(m_1 - m_2)v_1 + 2m_2 v_2}{m_1 + m_2}$$
+$$v_2' = \dfrac{(m_2 - m_1)v_2 + 2m_1 v_1}{m_1 + m_2}$$
+<p>Với $m_1 = m_2$: $v_1' = v_2$, $v_2' = v_1$ — hai vật đổi vận tốc cho nhau.</p>
+</details>
+
+<h4>4. Chuyển động bằng phản lực</h4>
+
+<p><strong>🔑 Phụt một phần về sau · phần còn lại lao tới</strong></p>
+
+<ul>
+<li>Một phần của hệ tách ra bay theo một hướng → phần còn lại chuyển động <strong>ngược hướng</strong>.</li>
+<li>Hệ ban đầu đứng yên: tổng động lượng bằng $\vec 0$ cả trước lẫn sau.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Chuyển động bằng phản lực</p>
+$$m\vec v + M\vec V = \vec 0 \;\Rightarrow\; \vec V = -\dfrac{m}{M}\,\vec v$$
+<p>$m, \vec v$: phần phụt ra · $M, \vec V$: phần còn lại · dấu "−": ngược chiều.</p>
+</div>
+
+<p>Ví dụ: súng giật lùi khi bắn; tên lửa phụt khí; con mực phụt nước để lao đi; vòi cứu hoả giật ngược vào tay người cầm.</p>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-baotoandl-03">
+<p class="tl-label">🔬 Thí nghiệm: tên lửa bóng bay</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> căng một sợi cước ngang lớp, xỏ qua ống hút. Thổi căng bóng bay, bóp miệng bóng, dán bóng vào ống hút rồi buông tay.</li>
+<li><strong>Quan sát:</strong> khí phụt ra phía sau, bóng lao về phía trước dọc sợi cước.</li>
+<li><strong>Rút ra:</strong> không cần "đẩy vào" vật nào bên ngoài; phần khí phụt ra mang động lượng về sau thì bóng nhận động lượng về trước.</li>
+</ol>
+</div>
+
+<p>Súng $4\ \text{kg}$ đặt tự do, bắn viên đạn $20\ \text{g}$ bay ngang với vận tốc $500\ \text{m/s}$. Súng giật với vận tốc:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q4" id="tl74-q4a"><label for="tl74-q4a" class="tl-opt tl-no">A. $25\ \text{m/s}$, ngược chiều đạn</label>
+<input type="radio" name="tl74-q4" id="tl74-q4b"><label for="tl74-q4b" class="tl-opt tl-no">B. $2{,}5\ \text{m/s}$, cùng chiều đạn</label>
+<input type="radio" name="tl74-q4" id="tl74-q4c"><label for="tl74-q4c" class="tl-opt tl-ok">C. $2{,}5\ \text{m/s}$, ngược chiều đạn</label>
+<input type="radio" name="tl74-q4" id="tl74-q4d"><label for="tl74-q4d" class="tl-opt tl-no">D. $0$, súng nặng hơn nhiều nên không giật</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $V = -\dfrac{0{,}02 \cdot 500}{4} = -2{,}5\ \text{m/s}$: dấu "−" nghĩa là ngược chiều đạn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: đổi nhầm $20\ \text{g} = 0{,}2\ \text{kg}$ (đúng là $0{,}02\ \text{kg}$). B: tính đúng độ lớn nhưng bỏ dấu "−". D: nặng hơn chỉ làm vận tốc giật nhỏ đi, không làm nó bằng 0 — trước bắn tổng động lượng bằng 0, sau bắn cũng phải bằng 0.</p></div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: quên dấu của vận tốc</h4>
+
+<p>Phương trình động lượng là phương trình <strong>vectơ</strong>. Muốn thế số, phải chọn một chiều dương trước.</p>
+
+<!--FIG4-->
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Viết sai</th><th>Viết đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>Thế mọi tốc độ là số dương</td><td>Ngược chiều dương: thế $v \lt 0$</td></tr>
+<tr><td>Kết quả chỉ đọc độ lớn</td><td>Dấu của kết quả cho biết chiều</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Chọn chiều + trước · ngược chiều mang dấu −</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl74-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl74-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Người $50\ \text{kg}$ đứng trên xe goòng $100\ \text{kg}$ đang chạy $2\ \text{m/s}$ trên ray ngang. Người nhảy khỏi xe về phía sau với vận tốc $1\ \text{m/s}$ so với đất. Bỏ qua ma sát. Ngay sau đó xe chạy với tốc độ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q5" id="tl74-q5a"><label for="tl74-q5a" class="tl-opt tl-no">A. $2{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl74-q5" id="tl74-q5b"><label for="tl74-q5b" class="tl-opt tl-ok">B. $3{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl74-q5" id="tl74-q5c"><label for="tl74-q5c" class="tl-opt tl-no">C. $3{,}0\ \text{m/s}$</label>
+<input type="radio" name="tl74-q5" id="tl74-q5d"><label for="tl74-q5d" class="tl-opt tl-no">D. $2{,}0\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương theo xe: $150 \cdot 2 = 100V + 50 \cdot (-1)$ ⇒ $V = 3{,}5\ \text{m/s}$. Người đẩy xe về phía trước khi nhảy lùi, nên xe nhanh lên. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $2{,}5$: thế $+1$ cho người — quên người đi ngược chiều dương. $3{,}0$: bỏ hẳn động lượng của người sau khi nhảy. $2{,}0$: người tách khỏi xe cũng là một tương tác, xe phải đổi tốc độ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: động lượng giữ nguyên thì động năng cũng giữ nguyên</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Va chạm mềm</th><th>Va chạm đàn hồi</th></tr>
+</thead>
+<tbody>
+<tr><td>Dính nhau, chung vận tốc</td><td>Rời nhau, bật ra</td></tr>
+<tr><td>Động lượng: bảo toàn</td><td>Động lượng: bảo toàn</td></tr>
+<tr><td>Động năng: giảm</td><td>Động năng: giữ nguyên</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Động lượng: luôn giữ · động năng: tuỳ loại va chạm</strong></p>
+
+<p>Viên đạn bay ngang cắm vào bao cát treo đứng yên và nằm lại trong đó. Trong lúc va chạm, với hệ đạn + bao cát:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q6" id="tl74-q6a"><label for="tl74-q6a" class="tl-opt tl-no">A. Động lượng và động năng đều bảo toàn</label>
+<input type="radio" name="tl74-q6" id="tl74-q6b"><label for="tl74-q6b" class="tl-opt tl-no">B. Động năng bảo toàn, động lượng giảm</label>
+<input type="radio" name="tl74-q6" id="tl74-q6c"><label for="tl74-q6c" class="tl-opt tl-no">C. Động lượng và động năng đều giảm</label>
+<input type="radio" name="tl74-q6" id="tl74-q6d"><label for="tl74-q6d" class="tl-opt tl-ok">D. Động lượng bảo toàn, động năng giảm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đạn nằm lại trong bao: va chạm mềm. Va chạm rất nhanh nên hệ coi là kín, động lượng giữ nguyên; phần lớn động năng thành nhiệt và làm cát xới tung.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: đạn dính lại là va chạm mềm, động năng không giữ được. B: ngược lại — thứ được giữ là động lượng. C: động lượng không mất, vì trong lúc va chạm không có ngoại lực đáng kể theo phương ngang.</p></div>
+</div>
+
+<h4>Bẫy 3: dùng bảo toàn động lượng cho cả quãng trượt dài</h4>
+
+<p>Sau cú ôm, An và Bình lướt chậm dần rồi dừng: ma sát của băng tuy nhỏ nhưng tác dụng lâu. Định luật chỉ nối trạng thái <strong>ngay trước</strong> với <strong>ngay sau</strong> va chạm.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trong va chạm (rất ngắn)</th><th>Sau va chạm (kéo dài)</th></tr>
+</thead>
+<tbody>
+<tr><td>Ma sát rất nhỏ so với nội lực</td><td>Ma sát là lực chính theo phương ngang</td></tr>
+<tr><td>Dùng bảo toàn động lượng</td><td>Dùng định luật II Newton, động học</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Bảo toàn: ngay trước ↔ ngay sau va chạm</strong></p>
+
+<p>Viên bi thép lăn trên bàn, va vào cục đất nặn đứng yên, dính lại rồi cả hai trượt chậm dần, dừng sau $30\ \text{cm}$. Dùng được bảo toàn động lượng cho hệ bi + đất nặn ở giai đoạn nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q7" id="tl74-q7a"><label for="tl74-q7a" class="tl-opt tl-ok">A. Từ ngay trước đến ngay sau va chạm</label>
+<input type="radio" name="tl74-q7" id="tl74-q7b"><label for="tl74-q7b" class="tl-opt tl-no">B. Từ lúc va chạm đến lúc dừng hẳn</label>
+<input type="radio" name="tl74-q7" id="tl74-q7c"><label for="tl74-q7c" class="tl-opt tl-no">C. Không giai đoạn nào, vì bàn có ma sát</label>
+<input type="radio" name="tl74-q7" id="tl74-q7d"><label for="tl74-q7d" class="tl-opt tl-no">D. Chỉ dùng được khi mặt bàn nhẵn tuyệt đối</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trong khoảnh khắc va chạm, lực bi ép vào đất nặn rất lớn, ma sát không đáng kể. Sau đó ma sát tác dụng suốt $30\ \text{cm}$ và đưa động lượng về 0.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: trên quãng $30\ \text{cm}$ ma sát là ngoại lực tác dụng lâu, động lượng giảm về 0. C và D: không cần bàn nhẵn — va chạm đủ nhanh thì ma sát nhỏ so với nội lực, bỏ qua được.</p></div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Hệ kín là gì? Kể hai trường hợp coi gần đúng là kín. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Không ngoại lực, hoặc ngoại lực cân bằng · gần đúng: va chạm, nổ, bắn súng (nội lực rất lớn, rất nhanh).</p>
+</details>
+<details class="tl-details">
+<summary>2. Phát biểu định luật bảo toàn động lượng, viết cho hệ hai vật. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Hệ kín → tổng vectơ động lượng không đổi · $m_1\vec v_1 + m_2\vec v_2 = m_1\vec v_1\,' + m_2\vec v_2\,'$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Trước khi thế số vào phương trình động lượng phải làm gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Chọn chiều dương · vận tốc ngược chiều mang dấu "−" · dấu kết quả cho biết chiều.</p>
+</details>
+<details class="tl-details">
+<summary>4. Va chạm mềm khác va chạm đàn hồi ở đâu? Cái gì bảo toàn trong cả hai? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Mềm: dính nhau, mất động năng · đàn hồi: rời nhau, giữ động năng · cả hai: bảo toàn động lượng.</p>
+</details>
+<details class="tl-details">
+<summary>5. Công thức vận tốc chung sau va chạm mềm, suy ra từ đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v = \dfrac{m_1v_1 + m_2v_2}{m_1 + m_2}$ · từ $m_1v_1 + m_2v_2 = (m_1 + m_2)v$ · giá trị đại số.</p>
+</details>
+<details class="tl-details">
+<summary>6. Chuyển động bằng phản lực là gì? Dấu "−" trong công thức nói gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Một phần tách ra một hướng, phần còn lại đi ngược hướng · $\vec V = -\dfrac{m}{M}\vec v$ · "−": ngược chiều phần phụt ra.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Trên sân băng, hai cầu thủ khúc côn cầu lao vào nhau trên cùng một đường thẳng: cầu thủ A nặng $80\ \text{kg}$ chạy $6\ \text{m/s}$, cầu thủ B nặng $100\ \text{kg}$ chạy $3\ \text{m/s}$ theo chiều ngược lại. Va chạm xong, hai người ôm dính lấy nhau. Bỏ qua ma sát trong lúc va chạm. Tìm vận tốc (độ lớn và chiều) của hai người ngay sau va chạm và phần động năng đã mất.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"trên cùng một đường thẳng"</td><td>một phương · chọn chiều dương (Hình 4)</td></tr>
+<tr><td>"A nặng $80\ \text{kg}$ chạy $6\ \text{m/s}$"</td><td>$m_A = 80\ \text{kg}$; $v_A = +6\ \text{m/s}$</td></tr>
+<tr><td>"B … $3\ \text{m/s}$ theo chiều ngược lại"</td><td>$m_B = 100\ \text{kg}$; $v_B = -3\ \text{m/s}$ · Bẫy 1</td></tr>
+<tr><td>"ôm dính lấy nhau"</td><td>va chạm mềm · chung vận tốc $v$</td></tr>
+<tr><td>"bỏ qua ma sát trong lúc va chạm"</td><td>hệ kín · bảo toàn động lượng</td></tr>
+<tr><td>"phần động năng đã mất"</td><td>$W_{\text{đ}} = \tfrac12 mv^2$, trước trừ sau</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Hệ kín:</strong> trọng lực cân bằng phản lực mặt băng; ma sát bỏ qua; va chạm rất nhanh.</li>
+<li><strong>Chọn chiều dương</strong> theo chiều chạy của A: $v_A = +6\ \text{m/s}$, $v_B = -3\ \text{m/s}$.</li>
+<li><strong>Bảo toàn động lượng:</strong> $m_A v_A + m_B v_B = (m_A + m_B)v$
+$$v = \dfrac{80 \cdot 6 + 100 \cdot (-3)}{180}$$
+$$v = \dfrac{180}{180} = 1\ \text{m/s}$$</li>
+<li><strong>Đọc dấu:</strong> $v \gt 0$ → hai người trượt theo chiều của A, tốc độ $1\ \text{m/s}$.</li>
+<li><strong>Động năng:</strong> trước $\tfrac12 \cdot 80 \cdot 6^2 + \tfrac12 \cdot 100 \cdot 3^2 = 1440 + 450 = 1890\ \text{J}$; sau $\tfrac12 \cdot 180 \cdot 1^2 = 90\ \text{J}$. Mất $1800\ \text{J}$, khoảng $95\,\%$.</li>
+<li><strong>Kiểm tra:</strong> A có động lượng lớn hơn ($480$ so với $300\ \text{kg}\cdot\text{m/s}$) nên hai người đi theo chiều A — khớp dấu. Động năng giảm — đúng là va chạm mềm.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng B chạy $4{,}8\ \text{m/s}$ (vẫn ngược chiều A).</p>
+<ol class="tl-steps">
+<li>Chiều dương theo A: $v_A = +6\ \text{m/s}$, $v_B = -4{,}8\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> tổng động lượng trước $= \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $v = \;?$ Hai người chuyển động thế nào?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$80 \cdot 6 + 100 \cdot (-4{,}8) = 480 - 480 = 0$, nên $v = 0$: hai người đứng sững tại chỗ. Toàn bộ $1440 + 1152 = 2592\ \text{J}$ động năng biến mất khỏi chuyển động.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: B chạy cùng chiều A</summary>
+<p>A đuổi theo B ($3\ \text{m/s}$, cùng chiều) rồi ôm dính. Lúc này $v_B = +3\ \text{m/s}$: $v = \dfrac{480 + 300}{180} \approx 4{,}3\ \text{m/s}$, cùng chiều A. Để ý: em nào quên dấu ở bài mẫu sẽ ra đúng con số này — tức là đã giải nhầm sang bài "cùng chiều".</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl74-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl74-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Xe 1 nặng $1\ \text{kg}$ chạy $4\ \text{m/s}$ va vào xe 2 nặng $3\ \text{kg}$ đang chạy $2\ \text{m/s}$ ngược chiều. Hai xe móc dính vào nhau. Ngay sau va chạm, hai xe:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl74-q8" id="tl74-q8a"><label for="tl74-q8a" class="tl-opt tl-no">A. Chạy $2{,}5\ \text{m/s}$ theo chiều xe 1</label>
+<input type="radio" name="tl74-q8" id="tl74-q8b"><label for="tl74-q8b" class="tl-opt tl-no">B. Chạy $0{,}5\ \text{m/s}$ theo chiều xe 1</label>
+<input type="radio" name="tl74-q8" id="tl74-q8c"><label for="tl74-q8c" class="tl-opt tl-ok">C. Chạy $0{,}5\ \text{m/s}$ theo chiều xe 2</label>
+<input type="radio" name="tl74-q8" id="tl74-q8d"><label for="tl74-q8d" class="tl-opt tl-no">D. Chạy $2{,}0\ \text{m/s}$ theo chiều xe 2</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương theo xe 1: $v = \dfrac{1 \cdot 4 + 3 \cdot (-2)}{4} = -0{,}5\ \text{m/s}$. Dấu "−": theo chiều xe 2, vì xe 2 có động lượng lớn hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: thế $v_2 = +2$ — quên dấu, thành bài cùng chiều. B: tính đúng $-0{,}5$ nhưng bỏ dấu khi kết luận chiều. D: dừng ở tổng động lượng $-2\ \text{kg}\cdot\text{m/s}$, quên chia cho tổng khối lượng $4\ \text{kg}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy làm lại bài toán mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🚀 Bấm xem: bốn nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Tên lửa, tàu vũ trụ:</strong> ngoài không gian không có gì để "đạp vào"; phụt khí về sau là cách duy nhất để tăng tốc hay đổi hướng.</li>
+<li><strong>Bắn súng:</strong> tì chặt báng súng vào vai để súng và người thành một khối nặng hơn, vận tốc giật nhỏ đi.</li>
+<li><strong>Xe đâm nhau:</strong> hai xe va chạm mềm, dính vào nhau; phần động năng "mất" chính là công làm méo thân xe, nên vỏ xe được thiết kế để biến dạng.</li>
+<li><strong>Trượt băng đôi:</strong> hai bạn đứng yên đẩy nhau thì trượt ngược chiều; bạn nhẹ hơn trượt nhanh hơn.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng: ⭐ và ⭐⭐</summary>
+<ul>
+<li><strong>⭐</strong> Người $60\ \text{kg}$ đứng yên trên ván trượt (bỏ ma sát) ném quả tạ $3\ \text{kg}$ về phía trước với vận tốc $4\ \text{m/s}$. Người trượt lùi với tốc độ bao nhiêu? <em>($V = \dfrac{3 \cdot 4}{60} = 0{,}2\ \text{m/s}$, ngược chiều ném)</em></li>
+<li><strong>⭐⭐</strong> Đạn $10\ \text{g}$ bay ngang $400\ \text{m/s}$ cắm vào bao cát $3{,}99\ \text{kg}$ treo đứng yên. Tìm vận tốc bao cát ngay sau va chạm và phần trăm động năng còn lại. <em>($v = \dfrac{0{,}01 \cdot 400}{4} = 1\ \text{m/s}$; $\dfrac{2\ \text{J}}{800\ \text{J}} = 0{,}25\,\%$)</em></li>
+<li><strong>⭐⭐</strong> Tên lửa $1{,}0$ tấn đứng yên ngoài không gian, phụt tức thời $100\ \text{kg}$ khí với vận tốc $800\ \text{m/s}$. Phần còn lại chuyển động thế nào? <em>($V = \dfrac{100 \cdot 800}{900} \approx 89\ \text{m/s}$, ngược chiều khí)</em></li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách lập luận: bảo toàn theo một phương</summary>
+<ul>
+<li><strong>⭐⭐⭐</strong> Xe cát $50\ \text{kg}$ chạy $2\ \text{m/s}$ trên ray ngang. Hòn đá $10\ \text{kg}$ rơi chéo cắm vào cát; lúc chạm, vận tốc đá $6\ \text{m/s}$, chếch xuống $60^\circ$ so với phương ngang, thành phần ngang ngược chiều xe. Tìm vận tốc xe sau đó. <em>(Chỉ bảo toàn theo phương ngang, vì ray đỡ theo phương đứng: $50 \cdot 2 - 10 \cdot 6\cos 60^\circ = 60v$ ⇒ $v \approx 1{,}17\ \text{m/s}$, chiều cũ)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Hệ kín: không ngoại lực · ngoại lực cân bằng · va chạm, nổ.</li>
+<li>Hệ kín → tổng vectơ động lượng không đổi.</li>
+<li>Chọn chiều dương trước; ngược chiều mang dấu "−".</li>
+<li>Va chạm mềm: dính nhau, chung $v$, mất động năng.</li>
+<li>Va chạm đàn hồi: rời nhau, giữ cả động lượng lẫn động năng.</li>
+<li>Phản lực: $\vec V = -\dfrac{m}{M}\vec v$, ngược chiều phần phụt ra.</li>
+<li>Đọc đề: "dính", "cắm vào", "ôm" → mềm; "ngược chiều" → dấu "−"; "ngay sau" → mới bảo toàn.</li>
+</ul>
+</div>
