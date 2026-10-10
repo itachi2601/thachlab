@@ -132,7 +132,7 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
                 </div>
               ))}
               {g.paired && (
-                <p className="text-[15px] leading-relaxed text-muted">
+                <p className="text-[18px] leading-relaxed text-muted">
                   Học hai buổi mỗi tuần: chọn một buổi A và một buổi B.
                 </p>
               )}
@@ -141,7 +141,7 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
         ))}
       </ul>
       {/* P19: nói rõ đây là số liệu gì. */}
-      <p className="mt-2 text-[15px] leading-relaxed text-muted">
+      <p className="mt-2 text-[18px] leading-relaxed text-muted">
         Mỗi dòng là một buổi trong tuần, lớp nào còn chỗ xem ở trang đăng ký. Lịch do thầy cập nhật khi mở lớp.
       </p>
       <p className="mt-3">

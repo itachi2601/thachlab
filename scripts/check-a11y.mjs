@@ -55,6 +55,13 @@ const PAIRS = [
   // — Chế độ Dịu mắt (kem/nâu) —
   ["dịu mắt · ink / kem", "#33291a", "#f5efe0", 4.5],
   ["dịu mắt · muted / kem", "#6b5a3e", "#f5efe0", 4.5],
+  // — Phụ huynh + Dịu mắt: vẫn AAA 7:1 trên kem —
+  ["PH dịu · ink #33291a / kem", "#33291a", "#f5efe0", 7],
+  ["PH dịu · muted #57492f / kem", "#57492f", "#f5efe0", 7],
+  ["PH dịu · primary #1e40af / kem", "#1e40af", "#f5efe0", 7],
+  ["PH dịu · ok #064e3b / kem", "#064e3b", "#f5efe0", 7],
+  ["PH dịu · warn #78350f / kem", "#78350f", "#f5efe0", 7],
+  ["PH dịu · danger #991b1b / kem", "#991b1b", "#f5efe0", 7],
 ];
 let bad = 0;
 console.log("— Tương phản —");

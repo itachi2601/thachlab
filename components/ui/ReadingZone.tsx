@@ -14,6 +14,8 @@ import { Eye } from "lucide-react";
  * kem/nâu (CSS ở khối "P1/P2 kha-nang-doc" cuối app/globals.css). Rời trang là trả lại.
  */
 const FONT_SCALES = [0.94, 1, 1.08];
+/** Phụ huynh 45–60: không cho nhỏ hơn mức chuẩn (P1 — thân ≥18px). */
+const PARENT_MIN_LEVEL = 1;
 const FONT_STORE = "thachlab-read-font";
 const DIM_STORE = "thachlab-read-dim";
 const THEME_STORE = "thachlab-theme";
@@ -51,6 +53,7 @@ export default function ReadingZone({
   className?: string;
   plainLabels?: boolean;
 }) {
+  const minLevel = plainLabels ? PARENT_MIN_LEVEL : 0;
   const [fontLevel, setFontLevel] = useState(1);
   const [dim, setDim] = useState(false);
   const restored = useRef(false);
@@ -61,7 +64,7 @@ export default function ReadingZone({
     try {
       const raw = window.localStorage.getItem(FONT_STORE);
       const saved = raw === null ? null : Number(raw);
-      if (saved !== null && Number.isInteger(saved) && saved >= 0 && saved < FONT_SCALES.length && saved !== fontLevel) {
+      if (saved !== null && Number.isInteger(saved) && saved >= minLevel && saved < FONT_SCALES.length && saved !== fontLevel) {
         setFontLevel(saved);
       }
       if (window.localStorage.getItem(DIM_STORE) === "1") setDim(true);
@@ -133,8 +136,8 @@ export default function ReadingZone({
         <div className="lesson-fonttools">
           <button
             type="button"
-            onClick={() => setFontLevel((v) => Math.max(0, v - 1))}
-            disabled={fontLevel === 0}
+            onClick={() => setFontLevel((v) => Math.max(minLevel, v - 1))}
+            disabled={fontLevel <= minLevel}
             aria-label="Cỡ chữ nhỏ hơn"
             style={plainLabels ? { padding: "0 14px" } : undefined}
           >

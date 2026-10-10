@@ -140,6 +140,18 @@ html[data-theme="light"] .bg-white\/5,
 html[data-theme="light"] .bg-white\/\[0\.04\],
 html[data-theme="light"] .bg-white\/\[0\.06\],
 html[data-theme="light"] .bg-white\/\[0\.07\] { background-color: rgb(15 23 42 / .045); }
+/* Các mức mờ còn lại của idiom nền tối (trước đây không được vá → hover/viền "tàng hình" trên nền trắng) */
+html[data-theme="light"] .bg-white\/10,
+html[data-theme="light"] .bg-white\/15,
+html[data-theme="light"] .bg-white\/20,
+html[data-theme="light"] .hover\:bg-white\/5:hover,
+html[data-theme="light"] .hover\:bg-white\/10:hover,
+html[data-theme="light"] .hover\:bg-white\/\[0\.04\]:hover,
+html[data-theme="light"] .hover\:bg-white\/\[0\.06\]:hover { background-color: rgb(15 23 42 / .08); }
+html[data-theme="light"] .border-white\/20,
+html[data-theme="light"] .border-white\/25,
+html[data-theme="light"] .border-white\/30,
+html[data-theme="light"] .hover\:border-white\/30:hover { border-color: var(--color-line-strong); }
 html[data-theme="light"] .border-white\/10,
 html[data-theme="light"] .border-white\/15,
 html[data-theme="light"] .border-white\/\[0\.07\] { border-color: rgb(15 23 42 / .12); }
@@ -197,7 +209,19 @@ html[data-theme="light"] [class~="bg-[#2563EB]"].text-white,
 html[data-theme="light"] [class~="bg-[#1D4ED8]"].text-white,
 html[data-theme="light"] [class~="bg-primary"].text-white,
 html[data-theme="light"] [class*="bg-emerald-"].text-white,
-html[data-theme="light"] [class*="bg-red-"].text-white { color: #fff; }
+html[data-theme="light"] [class*="bg-red-"].text-white,
+html[data-theme="light"] [class*="bg-orange-"].text-white,
+html[data-theme="light"] [class*="bg-rose-"].text-white,
+html[data-theme="light"] [class*="bg-amber-"].text-white,
+html[data-theme="light"] [class*="bg-cyan-"].text-white,
+html[data-theme="light"] [class*="bg-sky-"].text-white,
+html[data-theme="light"] [class*="bg-violet-"].text-white,
+html[data-theme="light"] [class*="bg-teal-"].text-white,
+html[data-theme="light"] [class*="bg-indigo-"].text-white,
+html[data-theme="light"] [class*="bg-purple-"].text-white,
+html[data-theme="light"] [class*="bg-pink-"].text-white,
+html[data-theme="light"] [class*="bg-fuchsia-"].text-white,
+html[data-theme="light"] [class*="bg-green-"].text-white { color: #fff; }
 html[data-theme="light"] .shadow-black\/50 { --tw-shadow-color: rgb(15 23 42 / .16); }
 html[data-theme="light"] .theme-toggle { background: var(--color-surface-2); border-color: var(--color-line-strong); color: var(--color-primary); }
 html[data-theme="light"] .theme-toggle:hover { background: var(--color-primary-soft); color: var(--color-primary-dark); }
@@ -3040,6 +3064,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }

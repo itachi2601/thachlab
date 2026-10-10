@@ -82,35 +82,35 @@ export default function LoginPage() {
     }
   }
 
-  const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none";
+  const inputCls = "w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-ink focus:border-primary focus:outline-none";
   const btnCls = "w-full rounded-full px-5 py-3 text-sm font-semibold transition-all disabled:opacity-50";
 
   return (
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-md px-6 pt-32 pb-20">
-        <h1 className="font-display text-3xl font-bold text-white">
+        <h1 className="font-display text-3xl font-bold text-ink">
           Đăng <span className="text-gradient">nhập</span>
         </h1>
 
         {authLoading || session ? (
-          <p className="mt-6 text-slate-400">
+          <p className="mt-6 text-muted">
             {session ? "Bạn đã đăng nhập — đang chuyển hướng…" : "Đang kiểm tra đăng nhập…"}
           </p>
         ) : !supabaseConfigured ? (
-          <p className="mt-6 text-slate-400">
+          <p className="mt-6 text-muted">
             Hệ thống đang được cấu hình, vui lòng quay lại sau.
           </p>
         ) : (
           <div className="mt-8">
             {/* User Type Tabs */}
-            <div className="mb-6 flex gap-2 border-b border-white/10">
+            <div className="mb-6 flex gap-2 border-b border-line">
               <button
                 onClick={() => setUserType("student")}
                 className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                   userType === "student"
-                    ? "border-b-2 border-primary text-white"
-                    : "text-slate-400 hover:text-slate-300"
+                    ? "border-b-2 border-primary text-ink"
+                    : "text-muted hover:text-ink"
                 }`}
               >
                 👨‍🎓 Học sinh
@@ -119,8 +119,8 @@ export default function LoginPage() {
                 onClick={() => setUserType("teacher")}
                 className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                   userType === "teacher"
-                    ? "border-b-2 border-primary text-white"
-                    : "text-slate-400 hover:text-slate-300"
+                    ? "border-b-2 border-primary text-ink"
+                    : "text-muted hover:text-ink"
                 }`}
               >
                 👨‍🏫 Giáo viên
@@ -131,16 +131,16 @@ export default function LoginPage() {
             <button
               onClick={handleGoogleLogin}
               disabled={busy}
-              className={`${btnCls} mb-4 border border-white/10 bg-white/5 text-white hover:bg-white/10`}
+              className={`${btnCls} mb-4 border border-line-strong bg-panel text-ink hover:bg-primary-soft`}
             >
               {busy ? "Đang xử lý…" : "🔐 Đăng nhập với Google"}
             </button>
 
             {/* Divider */}
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex-1 border-t border-white/10" />
-              <span className="text-xs text-slate-500">Hoặc</span>
-              <div className="flex-1 border-t border-white/10" />
+              <div className="flex-1 border-t border-line" />
+              <span className="text-xs text-muted">Hoặc</span>
+              <div className="flex-1 border-t border-line" />
             </div>
 
             {/* Email/Password Form */}
@@ -148,7 +148,7 @@ export default function LoginPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-1 block text-sm font-medium text-slate-300"
+                  className="mb-1 block text-sm font-medium text-ink"
                 >
                   Email hoặc tên đăng nhập
                 </label>
@@ -163,7 +163,7 @@ export default function LoginPage() {
               </div>
               <div>
                 <div className="mb-1 flex items-center justify-between">
-                  <label htmlFor="password" className="block text-sm font-medium text-slate-300">
+                  <label htmlFor="password" className="block text-sm font-medium text-ink">
                     Mật khẩu
                   </label>
                   {userType === "student" && (
@@ -181,7 +181,7 @@ export default function LoginPage() {
                   className={inputCls}
                 />
               </div>
-              {error && <p className="text-sm text-red-400">❌ {error}</p>}
+              {error && <p className="text-sm text-danger">❌ {error}</p>}
               <button
                 type="submit"
                 disabled={busy}
@@ -193,7 +193,7 @@ export default function LoginPage() {
 
             {/* Signup Link */}
             {userType === "student" && (
-              <p className="mt-4 text-center text-sm text-slate-400">
+              <p className="mt-4 text-center text-sm text-muted">
                 Chưa có tài khoản?{" "}
                 <Link href="/dang-ky" className="text-primary hover:underline">
                   Đăng ký ngay
@@ -202,7 +202,7 @@ export default function LoginPage() {
             )}
 
             {userType === "teacher" && (
-              <p className="mt-4 text-center text-xs text-slate-500">
+              <p className="mt-4 text-center text-xs text-muted">
                 Liên hệ quản trị viên để được cấp tài khoản giáo viên
               </p>
             )}

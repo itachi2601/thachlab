@@ -12,7 +12,7 @@ import { claimStaffInvite, fetchGrantedStaffRole, signUpWithInvite } from "@/ser
 import { claimParentLink, fetchClaimedChild, isParentCode, signUpParentWithCode } from "@/services/parent-links";
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-ink placeholder:text-muted focus:border-primary focus:outline-none";
 
 function errorMessage(error: unknown, fallback: string) {
   if (error instanceof Error) return error.message;
@@ -24,7 +24,7 @@ function roleLabel(role: string, tier: string | null) {
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
+  return <div className="mx-auto max-w-md rounded-3xl border border-line bg-panel p-8">{children}</div>;
 }
 
 function InviteContent() {
@@ -48,9 +48,9 @@ function InviteContent() {
   if (!code)
     return (
       <Card>
-        <h1 className="font-display text-xl font-bold text-white">Thiếu mã mời</h1>
-        <p className="mt-2 text-sm text-slate-400">
-          Mở đúng đường dẫn thầy cô gửi cho bạn, dạng <code className="text-slate-300">/loi-moi?ma=ABC12345</code>.
+        <h1 className="font-display text-xl font-bold text-ink">Thiếu mã mời</h1>
+        <p className="mt-2 text-sm text-muted">
+          Mở đúng đường dẫn thầy cô gửi cho bạn, dạng <code className="text-ink">/loi-moi?ma=ABC12345</code>.
         </p>
       </Card>
     );
@@ -58,9 +58,9 @@ function InviteContent() {
   if (done)
     return (
       <Card>
-        <Check className="mx-auto text-emerald-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">{parent ? "Đã nối với con" : "Đã nhận lời mời"}</h1>
-        <p className="mt-2 text-center text-sm text-slate-400">{done}</p>
+        <Check className="mx-auto text-ok" size={40} />
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">{parent ? "Đã nối với con" : "Đã nhận lời mời"}</h1>
+        <p className="mt-2 text-center text-sm text-muted">{done}</p>
         <Link
           href={parent ? "/phu-huynh" : "/tai-khoan"}
           className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
@@ -73,9 +73,9 @@ function InviteContent() {
   if (failed)
     return (
       <Card>
-        <Mail className="mx-auto text-amber-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">{parent ? "Chưa nối được với con" : "Chưa nhận được lời mời"}</h1>
-        <p className="mt-2 text-center text-sm text-slate-400">{failed}</p>
+        <Mail className="mx-auto text-warn" size={40} />
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">{parent ? "Chưa nối được với con" : "Chưa nhận được lời mời"}</h1>
+        <p className="mt-2 text-center text-sm text-muted">{failed}</p>
         {/* Đang đăng nhập rồi mà đẩy về trang đăng nhập thì chỉ làm người ta rối thêm. */}
         <Link
           href={session ? "/tai-khoan" : "/dang-nhap"}
@@ -89,10 +89,10 @@ function InviteContent() {
   if (needConfirm)
     return (
       <Card>
-        <Mail className="mx-auto text-sky-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Kiểm tra email</h1>
-        <p className="mt-2 text-center text-sm text-slate-400">
-          Tài khoản đã được tạo. Mở email <strong className="text-slate-200">{email}</strong> và bấm link xác nhận,
+        <Mail className="mx-auto text-primary" size={40} />
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">Kiểm tra email</h1>
+        <p className="mt-2 text-center text-sm text-muted">
+          Tài khoản đã được tạo. Mở email <strong className="text-ink">{email}</strong> và bấm link xác nhận,
           sau đó đăng nhập là đã có sẵn quyền được cấp.
         </p>
       </Card>
@@ -169,17 +169,17 @@ function InviteContent() {
     }
   }
 
-  if (loading) return <Card><p className="text-center text-slate-400">Đang tải…</p></Card>;
+  if (loading) return <Card><p className="text-center text-muted">Đang tải…</p></Card>;
 
   // Thầy/cô chủ trang bấm nhầm link mời thì nhận lời mời sẽ tự hạ quyền chính mình
   // (xem chặn ở apply_staff_invite). Nói rõ trước, đừng để chạm vào nút.
   if (session && realProfile?.role === "admin")
     return (
       <Card>
-        <h1 className="font-display text-xl font-bold text-white">{parent ? "Không cần mã phụ huynh" : "Không cần nhận lời mời"}</h1>
-        <p className="mt-2 text-sm text-slate-400">
-          <strong className="text-slate-200">{session.user.email}</strong> là tài khoản quản trị, đã có sẵn mọi quyền.
-          Mã <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong> vẫn còn nguyên — gửi link này
+        <h1 className="font-display text-xl font-bold text-ink">{parent ? "Không cần mã phụ huynh" : "Không cần nhận lời mời"}</h1>
+        <p className="mt-2 text-sm text-muted">
+          <strong className="text-ink">{session.user.email}</strong> là tài khoản quản trị, đã có sẵn mọi quyền.
+          Mã <strong className="font-mono text-ink">{code.toUpperCase()}</strong> vẫn còn nguyên — gửi link này
           cho đúng người được mời.
         </p>
         <Link
@@ -194,11 +194,11 @@ function InviteContent() {
   if (session)
     return (
       <Card>
-        <h1 className="font-display text-xl font-bold text-white">{parent ? "Nối với con" : "Nhận lời mời"}</h1>
-        <p className="mt-2 text-sm text-slate-400">
-          Bạn đang đăng nhập bằng <strong className="text-slate-200">{session.user.email}</strong>. Bấm nút dưới để
+        <h1 className="font-display text-xl font-bold text-ink">{parent ? "Nối với con" : "Nhận lời mời"}</h1>
+        <p className="mt-2 text-sm text-muted">
+          Bạn đang đăng nhập bằng <strong className="text-ink">{session.user.email}</strong>. Bấm nút dưới để
           {parent ? " nối tài khoản này với con theo mã " : " nhận quyền theo mã "}
-          <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong>.
+          <strong className="font-mono text-ink">{code.toUpperCase()}</strong>.
         </p>
         <button
           type="button"
@@ -213,10 +213,10 @@ function InviteContent() {
 
   return (
     <Card>
-      <h1 className="font-display text-xl font-bold text-white">{parent ? "Tạo tài khoản phụ huynh" : "Tạo tài khoản"}</h1>
-      <p className="mt-2 text-sm text-slate-400">
+      <h1 className="font-display text-xl font-bold text-ink">{parent ? "Tạo tài khoản phụ huynh" : "Tạo tài khoản"}</h1>
+      <p className="mt-2 text-sm text-muted">
         {parent ? "Mã phụ huynh " : "Mã mời "}
-        <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong>
+        <strong className="font-mono text-ink">{code.toUpperCase()}</strong>
         {parent
           ? " — tạo tài khoản xong là xem được ngay kết quả học tập của con."
           : " — tạo tài khoản xong là có ngay quyền được cấp."}
@@ -239,9 +239,9 @@ function InviteContent() {
           {busy ? "Đang tạo…" : "Tạo tài khoản"}
         </button>
       </form>
-      <p className="mt-4 text-center text-xs text-slate-500">
+      <p className="mt-4 text-center text-xs text-muted">
         Đã có tài khoản?{" "}
-        <Link href={`/dang-nhap?next=${encodeURIComponent(`/loi-moi?ma=${code}`)}`} className="text-blue-300">
+        <Link href={`/dang-nhap?next=${encodeURIComponent(`/loi-moi?ma=${code}`)}`} className="text-primary">
           Đăng nhập rồi quay lại đây
         </Link>
       </p>
@@ -249,16 +249,30 @@ function InviteContent() {
   );
 }
 
-export default function InvitePage() {
+function InviteShell() {
+  const code = (useSearchParams().get("ma") ?? "").trim();
+  const parent = isParentCode(code);
   return (
     <>
       <Navbar />
-      <main className="mx-auto min-h-screen w-full max-w-4xl px-5 pt-28 pb-16">
-        <Suspense fallback={<Card><p className="text-center text-slate-400">Đang tải…</p></Card>}>
-          <InviteContent />
-        </Suspense>
+      <main className={`${parent ? "parent-page " : ""}mx-auto min-h-screen w-full max-w-4xl px-5 pt-28 pb-16`}>
+        <InviteContent />
       </main>
-      <Footer />
+      <Footer variant={parent ? "parent" : "default"} />
     </>
+  );
+}
+
+export default function InvitePage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="mx-auto min-h-screen w-full max-w-4xl px-5 pt-28 pb-16">
+          <Card><p className="text-center text-muted">Đang tải…</p></Card>
+        </main>
+      }
+    >
+      <InviteShell />
+    </Suspense>
   );
 }
