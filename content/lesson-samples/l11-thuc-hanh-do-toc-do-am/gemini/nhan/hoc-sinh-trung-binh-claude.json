@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Âm: cảm giác của tai và đại lượng đo được",
+      "trich_nguyen_van": "ứng với dạng đồ thị dao động (do các hoạ âm): giúp phân biệt đàn với sáo khi cùng nốt, cùng độ to.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Em chưa biết 'hoạ âm' và 'âm cơ bản' là gì. Câu tự kiểm tra ngay sau đó lại có phương án B 'Tần số của âm cơ bản', còn định nghĩa nằm trong hộp 'Mức nhận biết' đặt sau câu hỏi và đang thu gọn.",
+      "de_xuat": "Thêm một câu định nghĩa âm cơ bản (f0) và hoạ âm (2f0, 3f0, …) ngay trong gạch đầu dòng Âm sắc, trước câu tự kiểm tra."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Tốc độ truyền âm: $v = \\lambda f$",
+      "trich_nguyen_van": "Trong một chu kì sóng đi được một bước sóng, nên $v = \\lambda f$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Nhìn v = λf, em nghĩ tăng f thì v tăng. Mục này chưa nói v không phụ thuộc f. Ý đó chỉ xuất hiện trong phản hồi sai của câu 2 và ở Bẫy 3.",
+      "de_xuat": "Thêm gạch đầu dòng: 'v chỉ do môi trường và nhiệt độ quyết định; đổi f thì λ đổi theo, v giữ nguyên'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Tốc độ truyền âm: $v = \\lambda f$",
+      "trich_nguyen_van": "Máy phát cho $f$ chính xác.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu là f không có sai số. Nhưng mục 5 và bài toán mẫu lại dùng f = 500 ± 1 Hz và cộng thêm Δf/f.",
+      "de_xuat": "Sửa thành 'Máy phát cho f khá chính xác (sai số cỡ ±1 Hz)'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Cột khí cộng hưởng: nút ở mặt nước, bụng ở miệng ống",
+      "trich_nguyen_van": "l + e = (2k+1)\\dfrac{\\lambda}{4}",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu l xuất hiện mà chưa được nói rõ là đo từ đâu tới đâu. Phải đến câu hỏi sau mới thấy chữ 'chiều dài cột khí'.",
+      "de_xuat": "Ghi ngay trước công thức: 'l là chiều dài cột khí, đo từ miệng ống xuống mặt nước'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Dụng cụ và cách đo",
+      "trich_nguyen_van": "hoặc pít-tông có vạch chuẩn kéo dần lên.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm lại mô tả cột khí dài dần từ miệng ống xuống. Em không rõ dùng pít-tông thì di chuyển theo chiều nào, và lần to đầu tiên gặp phải có còn là l1 không.",
+      "de_xuat": "Nói rõ pít-tông bắt đầu sát miệng ống rồi kéo dần xuống, để cột khí dài ra như khi hạ nước."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Bảng số liệu và sai số",
+      "trich_nguyen_van": "\\Delta\\lambda = 2\\,(\\Delta l_1 + \\Delta l_2) \\approx 0{,}26\\ \\text{cm}",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Em thay Δl1 = Δl2 = 0,06 vào thì được 2(0,06 + 0,06) = 0,24 cm, không ra 0,26. Em sẽ nghĩ mình tính sai. Thật ra bài dùng giá trị chưa làm tròn 0,064 cm.",
+      "de_xuat": "Ghi Δl1 = Δl2 ≈ 0,064 cm, hoặc sửa kết quả thành Δλ ≈ 0,24 cm cho khớp với số đã làm tròn."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "5. Bảng số liệu và sai số",
+      "trich_nguyen_van": "Sai số lấy bằng trung bình độ lệch khỏi giá trị trung bình: $\\Delta l_1 = 0{,}06\\ \\text{cm}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không tự ra được 0,06 vì bài không ghi các độ lệch từng lần. Em cũng không hiểu vì sao Δλ lại bằng 2 nhân tổng Δl1 + Δl2.",
+      "de_xuat": "Ghi các độ lệch của l1 (0,08; 0,02; 0,08; 0,12; 0,02 → trung bình 0,064). Thêm một câu: 'sai số của hiệu bằng tổng hai sai số, rồi nhân 2 vì λ = 2(l2 − l1)'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "5. Bảng số liệu và sai số",
+      "trich_nguyen_van": "sai số đọc $\\pm 2\\ \\text{mm}$, không phải số đo thật",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục này cho sai số đọc ±2 mm nhưng lại tính Δl chỉ từ độ lệch ngẫu nhiên (0,6 mm). Bài toán mẫu thì lấy thẳng Δl = 0,2 cm. Em không biết khi nào dùng cách nào.",
+      "de_xuat": "Nói rõ một quy ước chung, ví dụ Δl = độ lệch trung bình + sai số dụng cụ. Hoặc giải thích vì sao mục 5 bỏ qua sai số đọc còn bài mẫu thì dùng nó."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Bảng số liệu và sai số",
+      "trich_nguyen_van": "Kết quả: $v = 341{,}6 \\pm 2{,}0\\ \\text{m/s}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Ngay sau dòng này là câu hỏi so với 343. Bài chưa dạy rằng phải đổi kết quả thành khoảng 339,6–343,6 rồi xem 343 có nằm trong đó không. Quy tắc này chỉ có trong phản hồi và ở mục Trả bài.",
+      "de_xuat": "Thêm một câu trước câu hỏi: 'Kết quả là khoảng từ v̄ − Δv đến v̄ + Δv; giá trị tham khảo nằm trong khoảng ấy thì phép đo phù hợp'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Bảng số liệu và sai số",
+      "trich_nguyen_van": "Mỗi hàng: $\\lambda = 2(l_2 - l_1)$ rồi $v = \\lambda f$.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em dễ lấy 68,0 cm nhân 500 mà quên đổi sang mét, không ra được 340.",
+      "de_xuat": "Làm mẫu hàng 1: 2(50,8 − 16,8) = 68,0 cm = 0,680 m; 0,680 · 500 = 340 m/s."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2: \"Hai lần nghe to liên tiếp cách nhau một bước sóng\"",
+      "trich_nguyen_van": "Hai lần to cách một lần",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em dễ đọc 'cách một lần' thành 'cách nhau một lần' tức là liền nhau, nên thấy mâu thuẫn với dòng ngay trên (λ/2).",
+      "de_xuat": "Ghi rõ: 'Lần to thứ nhất và thứ ba (bỏ qua một lần ở giữa)'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: \"Âm cao thì truyền nhanh hơn\"",
+      "trich_nguyen_van": "$v$ do môi trường quyết định nhiệt độ không đổi nên $(v \\approx 343\\ \\text{m/s})$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu bị đảo, thiếu dấu câu nên em đọc không ra ý.",
+      "de_xuat": "Sửa thành: 'v do môi trường quyết định; nhiệt độ không đổi nên v vẫn ≈ 343 m/s'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Học sinh nhớ kinh nghiệm gõ vào chai: chai nhiều nước kêu trầm hơn. Từ đó suy ra chai nặng thì kêu thấp, lẫn lộn giữa gõ vào thân chai và thổi vào cột khí.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học sinh cho rằng hai nhạc cụ khác nhau thì tần số khác nhau. Em chưa nắm 'âm cơ bản' vì khái niệm này chưa được định nghĩa trước câu hỏi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "giúp phân biệt đàn với sáo khi cùng nốt, cùng độ to."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học sinh mang thói quen từ sóng dừng trên dây (bài 13), lấy λ/2 cho lần cộng hưởng đầu tiên thay vì λ/4 cho ống một đầu kín.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nghe to nhất (cộng hưởng) khi từ nút lên bụng là một số lẻ lần một phần tư bước sóng."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Học sinh nghĩ muốn so hai giá trị thì cả hai đều phải có sai số. Bài chưa dạy cách so với khoảng v̄ ± Δv trước câu hỏi.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học sinh nhớ 'lần đầu là λ/4' mà quên hiệu chỉnh e, nên lấy l1 đúng bằng λ/4.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nằm cao hơn miệng một đoạn $e$ (hiệu chỉnh đầu hở, cỡ $0{,}6$ lần bán kính ống)"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Học sinh lấy thẳng khoảng cách hai lần to liên tiếp làm bước sóng, quên rằng khoảng này chỉ bằng λ/2.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "l_2 - l_1 = \\dfrac{\\lambda}{2}\\;\\Rightarrow\\;\\lambda = 2\\,(l_2 - l_1)"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Học sinh đọc v = λf như thể f quyết định v. Mục 2 chưa nói rõ trước câu hỏi rằng v không phụ thuộc f.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Học sinh dùng luôn v = 343 m/s như hằng số, quên tính lại v theo nhiệt độ 30 °C.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phòng $30\\ ^\\circ\\text{C}$ cho $v \\approx 349\\ \\text{m/s}$, không phải $343$."
+    }
+  ]
+}

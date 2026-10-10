@@ -1,0 +1,147 @@
+{
+  "bai": "l11-song-dien-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại thành: từ trường biến thiên sinh điện trường (Faraday), điện trường biến thiên sinh từ trường (Maxwell), hai trường sinh ra nhau liên tiếp nên lan đi."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc giải thích điện từ trường là điện trường và từ trường gắn liền, sinh ra nhau."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vế giải thích tia lửa điện ở công tắc phát sóng điện từ và radio thu được."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ \"điện môi\" và \"hằng số điện môi\" (chưa học), chỉ giữ ý trong nước, thuỷ tinh tốc độ v nhỏ hơn c."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách chú thích mỗi ý một dòng và thêm dòng λ = v/f cho môi trường có tốc độ v."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào khung ví dụ (trong details) chiều ngược lại: λ = 3 m thì f = 10^8 Hz = 100 MHz."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm khung details ngắn giải thích sóng phản xạ qua lại trong lò tạo chỗ nóng nhất cách nhau λ/2, hẹn học kĩ ở bài Sóng dừng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"quay 15–20 giây\" thành \"bật lò 15–20 giây\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"hàng chục km\" thành \"khoảng 100 km\" cho khớp bảng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: khi kể bảy vùng thì tách vi sóng riêng, trong truyền thông vi sóng được gộp vào sóng vô tuyến."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách danh sách thành vùng vô tuyến (đài AM, FM) và vi sóng (4G/5G, wifi, bluetooth, GPS, truyền hình vệ tinh), mỗi nhóm một dòng."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích sóng mang là sóng điện từ cao tần do máy tạo, tín hiệu làm biên độ (AM) hoặc tần số (FM) của nó biến đổi theo."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"khi đó chia đôi\" vào dòng ra-đa và một khung details ví dụ s = ct/2 (t = 2·10^-4 s thì s = 30 km)."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi quy đổi 1 MHz = 10^6 Hz và 1 GHz = 10^9 Hz ngay trong bảng đọc đề, f_1 = 100·10^6 = 10^8 Hz."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi vế đầu thành \"thời gian truyền sóng từ vệ tinh GPS tới máy thu đo lệch 1 μs\" cho thống nhất với vế sau."
+      },
+      {
+        "id": "q-Dự đoán trước khi học",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi phương án A đã nhấn không khí ở độ cao lớn coi như chân không, không thêm."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài và phản hồi phương án D đã nhấn điều kiện B vuông góc với E, không thêm."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu đã nêu nửa bước sóng, phản hồi A đã nhấn quên nhân 2, nay có thêm giải thích d = λ/2."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu biên tím 380 nm và phản hồi B đã nhấn, không thêm."
+      },
+      {
+        "id": "q-Bẫy 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn siêu âm là sóng cơ ở cả câu dự đoán và phản hồi D, không thêm."
+      },
+      {
+        "id": "q-Bẫy 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mọi sóng điện từ cùng tốc độ c trong chân không, không thêm."
+      },
+      {
+        "id": "q-Bẫy 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng vi sóng và siêu âm cùng câu \"vi\" chỉ bước sóng ngắn đã nhấn, không thêm."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4: 1 kHz = 10^3 Hz, còn 1 MHz = 10^6 Hz."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1: thêm ý Maxwell, điện trường biến thiên sinh từ trường, hai trường sinh ra nhau nên lan đi thành sóng.",
+      "II.1: định nghĩa điện từ trường trong ngoặc, ví dụ radio kêu \"rẹt\" giải thích do tia lửa điện ở công tắc phát sóng.",
+      "II.2: bỏ \"điện môi/hằng số điện môi\", thay bằng tốc độ v nhỏ hơn c trong nước, thuỷ tinh.",
+      "II.2: thêm công thức λ = v/f cho môi trường có tốc độ v vào dòng chú thích.",
+      "II.2 (details): thêm ví dụ ngược λ = 3 m → f = 10^8 Hz = 100 MHz, tiêu đề details đổi thành tính λ từ f và ngược lại.",
+      "II.3: thêm details giải thích hai vệt chảy cách nhau λ/2 do sóng phản xạ chồng lên nhau (dẫn sang bài Sóng dừng).",
+      "II.3: thí nghiệm sô-cô-la đổi \"quay 15–20 giây\" thành \"bật lò 15–20 giây\".",
+      "II.4: phạm vi thang sóng đổi từ \"hàng chục km\" thành \"khoảng 100 km\".",
+      "II.4: thêm câu nói rõ tách vi sóng khi kể bảy vùng, gộp vào sóng vô tuyến trong truyền thông.",
+      "II.5: phân nhóm đài AM, FM thuộc vùng vô tuyến, còn 4G/5G, wifi, bluetooth, GPS, truyền hình vệ tinh thuộc vi sóng.",
+      "II.5: giải thích sóng mang cao tần, tín hiệu làm biên độ (AM) hoặc tần số (FM) biến đổi.",
+      "II.5: ra-đa đi – về thì chia đôi, thêm details ví dụ t = 2·10^-4 s → s = 30 km.",
+      "Câu 1: bỏ câu hỏi cuối phản hồi đúng \"Em giải thích được cho bạn ngồi cạnh chưa?\" để bù độ dài.",
+      "V: bảng đọc đề thêm 1 MHz = 10^6 Hz (f_1 = 100·10^6 = 10^8 Hz) và 1 GHz = 10^9 Hz.",
+      "V: thêm dòng ⚠ trước Câu 4 về 1 kHz = 10^3 Hz, còn 1 MHz = 10^6 Hz.",
+      "VI: câu thách đấu GPS đổi \"đồng hồ máy thu lệch 1 μs\" thành \"thời gian truyền sóng đo lệch 1 μs\", đáp số 300 m giữ nguyên."
+    ],
+    "so_tu_them": 80,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-song-dien-tu/gemini/da-xu-ly/theory.src.202610100630.html"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "bai": "Bài 10. Thực hành: Đo tần số của sóng âm",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Phương án 1: dao động kí và micro",
+      "trich_nguyen_van": "đổi dao động của âm thành hiệu điện thế biến thiên, nối vào CH1.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không biết CH1 là gì, là cổng nào trên máy. Cả bài không định nghĩa.",
+      "de_xuat": "Thêm ngoặc: CH1 (kênh vào số 1 của dao động kí)."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "chỉnh VOLT/DIV và TRIGGER cho hình rõ, đứng yên.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "TRIGGER chưa được giới thiệu ở mục 2 (chỉ có TIME/DIV, VOLT/DIV). Em không biết vặn núm nào để hình đứng yên.",
+      "de_xuat": "Ở danh sách dụng cụ mục 2, thêm một gạch: núm TRIGGER (đồng bộ) giữ cho hình sóng đứng yên trên màn."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Phương án 1: dao động kí và micro",
+      "trich_nguyen_van": "nhân số ô với độ chia, chia cho số chu kì, lật ngược.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mẹo nhớ ba bước không có bước đổi ms ra s. Học thuộc mẹo thì em sẽ lật ngược 2,0 ms ra 0,5 Hz, đúng lỗi mà câu 3 và câu 6 bắt.",
+      "de_xuat": "Đổi mẹo thành \"Nhân – Chia – Đổi – Lật\" để khớp với dòng \"Đổi 1 ms = 10⁻³ s rồi mới lật ngược\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "mỗi lần cho một giá trị $f = \\dfrac{N}{L\\,k}$ hơi khác nhau.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Thay số vào được 4/(9,1·1) ≈ 0,44, nhưng bảng ghi 439,6 Hz. Không có dòng nào chỉ ra phải đổi 9,1 ms ra 9,1·10⁻³ s.",
+      "de_xuat": "Ghi tính mẫu cho lần 1 ngay dưới bảng: f = 4/(9,1·10⁻³ s) ≈ 439,6 Hz."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "Dụng cụ ($0{,}1$ ô): $\\Delta f_{dc} \\approx 4{,}8\\ \\text{Hz}$.",
+      "loai": "nhảy_bước",
+      "muc": "chặn",
+      "em_hieu_la": "Không biết làm sao từ 0,1 ô ra được 4,8 Hz. Công thức Δf/f = ΔL/L đến mục V mới xuất hiện. Tự xử lí bảng số liệu của mình thì em kẹt ở bước này.",
+      "de_xuat": "Thêm phép tính ngay tại đây: Δf_dc = f̄·(0,1/9,1) ≈ 440,6·0,011 ≈ 4,8 Hz, kèm lí do sai số tỉ đối của f bằng sai số tỉ đối của L."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "Trung bình các $\\Delta f_i$: $\\Delta\\bar f \\approx 3{,}1\\ \\text{Hz}$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ba ký hiệu Δf̄, Δf và Δf_i trông gần giống nhau. Em dễ lấy 3,1 Hz làm kết quả cuối thay vì 8 Hz.",
+      "de_xuat": "Đặt tên bằng lời cho từng ký hiệu: Δf̄ là sai số ngẫu nhiên trung bình, Δf là sai số tổng."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "$\\delta = \\dfrac{\\Delta f}{\\bar f} \\approx 1{,}8\\ \\%$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "δ xuất hiện mà không có tên gọi. Đến Thử thách ⭐⭐⭐ bài lại hỏi \"sai số tỉ đối\", em không nối được hai chỗ là cùng một đại lượng.",
+      "de_xuat": "Viết: \"sai số tỉ đối δ = Δf/f̄ ≈ 1,8 %\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "làm $L$ lệch cỡ $0{,}1$ ô (ngẫu nhiên; phần dụng cụ đã cộng vào $\\Delta f$)",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Không rõ độ lệch đọc 0,1 ô là sai số ngẫu nhiên hay sai số dụng cụ. Phản hồi câu 4 lại viết \"luôn lệch cỡ 0,1 ô, con số này cố định\", nghe giống sai số hệ thống.",
+      "de_xuat": "Nói rõ một lần: 0,1 ô là giới hạn đọc, tính vào sai số dụng cụ. Còn việc mỗi lần đọc lệch thừa hay thiếu là ngẫu nhiên. Sửa chữ \"cố định\" thành \"độ lớn cỡ 0,1 ô\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Đo thật: 5 lần đo và sai số",
+      "trich_nguyen_van": "D — đếm đỉnh dễ đếm thừa một chu kì (xem Bẫy 1)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bẫy 1 nằm ở mục III, em chưa đọc tới nên lời giải thích cho phương án D chưa có nghĩa với em.",
+      "de_xuat": "Giải thích ngay tại chỗ: n đỉnh chỉ có n − 1 chu kì."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "4. Phương án 2: điện thoại hoặc bộ dụng cụ thực hành",
+      "trich_nguyen_van": "đọc tần số ở đỉnh cao nhất của phổ.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "\"Phổ\" chưa được giải thích. Em dễ lẫn \"đỉnh của phổ\" với \"đỉnh sóng\" trên dao động kí.",
+      "de_xuat": "Thêm: phổ là đồ thị độ mạnh theo tần số; trục ngang là Hz, nên đỉnh cao nhất nằm ở tần số của âm."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đo tần số trong đời sống",
+      "trich_nguyen_van": "Chọn thang cho đồ thị hiện $6$ đến $8$ chu kì.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 4 bảo hiện 4 đến 8 chu kì, ở đây lại là 6 đến 8. Em không biết con số nào đúng.",
+      "de_xuat": "Thống nhất một khoảng ở cả hai chỗ, hoặc nói rõ vì sao ở đây cần nhiều chu kì hơn."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: lấy biên độ làm tần số",
+      "trich_nguyen_van": "Sóng cao hay thấp",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Chữ \"cao\" vừa nói biên độ (sóng cao), vừa nói tần số (âm cao) trong cùng một bảng. Đây đúng là chỗ làm em chọn nhầm phương án C câu 7.",
+      "de_xuat": "Đổi thành \"Sóng nhô lên nhiều hay ít (biên độ)\" và thêm một câu cảnh báo: \"sóng cao\" không phải \"âm cao\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "Bẫy 2: nhầm núm và nhầm đơn vị độ chia",
+      "trich_nguyen_van": "hai đơn vị lệch nhau $1\\,000$ lần, đọc kĩ trên núm",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng nhấn vào ms/ô và μs/ô, nhưng câu tự kiểm tra ngay sau đó không có μs. Phương án C lại là lệch 10 lần (0,02 ms/ô), không phải lệch 1 000 lần.",
+      "de_xuat": "Cho một phương án nhiễu ứng với đọc nhầm 0,2 μs/ô, hoặc thêm một ví dụ đổi μs ra s."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: xử lý một lần đo",
+      "trich_nguyen_van": "$f \\sim \\dfrac{1}{L}$ nên $\\dfrac{\\Delta f}{f} = \\dfrac{\\Delta L}{L}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu \"∼\" chưa được giải thích. Em cũng không hiểu vì sao f tỉ lệ nghịch với L thì sai số tỉ đối của hai đại lượng lại bằng nhau.",
+      "de_xuat": "Viết \"f tỉ lệ nghịch với L (f = N/(Lk))\" và thêm một câu: L tăng 1 % thì f giảm khoảng 1 %, nên sai số tỉ đối bằng nhau."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "V. Bài toán mẫu: xử lý một lần đo",
+      "trich_nguyen_van": "Vậy $\\Delta f \\approx 438{,}6 \\cdot 0{,}018 \\approx 7{,}7\\ \\text{Hz}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tính lại 438,6 · 0,018 thì ra 7,9 chứ không phải 7,7. Em tưởng mình tính sai. Con số 7,7 đến từ 0,0175 chưa làm tròn.",
+      "de_xuat": "Ghi 0,1/5,7 ≈ 0,0175, rồi 438,6 · 0,0175 ≈ 7,7 Hz."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "V. Bài toán mẫu: xử lý một lần đo",
+      "trich_nguyen_van": "đếm $2$ chu kì liên tiếp. Hai chu kì chiếm khoảng:",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Câu này hỏi ngược, tìm L từ T. Công thức đảo L = NT/k chưa xuất hiện ở đâu, em chỉ quen T = Lk/N.",
+      "de_xuat": "Gợi ý trong đề: \"từ T = Lk/N suy ra L = NT/k\", hoặc thêm một ví dụ tính ngược trước câu này."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "V. Bài toán mẫu: xử lý một lần đo",
+      "trich_nguyen_van": "em lấy số đỉnh ($3$) làm số chu kì thay vì $2$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề cho sẵn \"2 chu kì\" và không nhắc gì tới đỉnh. Em không hiểu vì sao mình lại đi đếm đỉnh.",
+      "de_xuat": "Sửa đề thành \"đếm từ đỉnh đầu tới đỉnh thứ 3\", hoặc đổi lời giải thích cho phương án D."
+    },
+    {
+      "id": "c18",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi xử lý số liệu",
+      "trich_nguyen_van": "Trả bài: nhớ lại trước khi xử lý số liệu",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề nói \"trước khi xử lý số liệu\", nhưng phần xử lí bảng 5 lần đo đã nằm ở mục II.3, phía trên.",
+      "de_xuat": "Đổi tiêu đề thành \"Trả bài: nhớ lại trước bài toán mẫu\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất \"con số Hz\" với độ to của tiếng đàn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A — độ to ứng với biên độ; vặn nhỏ tiếng đàn thì con số Hz không đổi."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lật ngược 5 ms mà không đổi ra giây. Trước câu này bài chưa nhắc phải đổi ms ra s.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Làm theo mẹo \"Nhân – Chia – Lật\" nên bỏ qua bước đổi ms ra s, lật 2,0 ra 0,5.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi $1\\ \\text{ms} = 10^{-3}\\ \\text{s}$ rồi mới lật ngược."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ sóng to, rõ thì đo chính xác hơn, không nhận ra sai số phụ thuộc bề rộng L trên trục ngang.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đếm 6 đỉnh thành 6 chu kì.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Giữa hai đỉnh liên tiếp là <strong>một</strong> chu kì: $n$ đỉnh cho $n - 1$ chu kì."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính đúng T = 0,4 ms nhưng lật ngược luôn mà không đổi ra giây.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi $1\\ \\text{ms} = 10^{-3}\\ \\text{s}$ rồi mới lật ngược."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lẫn \"sóng cao\" (biên độ) với \"âm cao\" (tần số); chính bảng Bẫy 3 dùng chữ \"cao\" cho cả hai.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "To hay nhỏ do biên độ. Cao hay thấp do tần số. Hai điều độc lập."
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Không có công thức đảo L = NT/k nên chỉ tính T/k = 4,5 ô cho một chu kì và quên nhân với N = 2.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

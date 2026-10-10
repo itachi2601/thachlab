@@ -1,0 +1,116 @@
+{
+  "bai": "l11-song-ngang-song-doc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một câu nhắc định nghĩa sóng cơ (dao động cơ lan truyền trong môi trường vật chất) ngay trước câu về sóng điện từ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nội dung các ô khớp nguyên văn (dấu | là ranh giới ô); đổi tiêu đề cột thành 'Sóng cơ ngang' và 'Sóng cơ dọc' để không mâu thuẫn với ánh sáng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hai đoạn trích khớp nguồn (chỉ lược giữa bằng dấu ...); trong details đổi số nguyên ở các dòng cùng pha, ngược pha, vuông pha thành $n$ và ghi rõ khác $k$."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thành hai dòng: Nén là chỗ $u = 0$, đồ thị đi xuống và Dãn là chỗ $u = 0$, đồ thị đi lên."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện '$u \\gt 0$ là lệch theo chiều dương trục $x$' vào quy tắc, vì quy tắc phụ thuộc quy ước dấu của $u$ so với trục $x$ chứ không phụ thuộc chiều truyền."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu '$P$ là công suất sóng (W) truyền qua diện tích $S$'."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 0,1 s là ước lượng chung cho độ trễ phản xạ tay, không tính từ bảng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước $t_P = d/8$, $t_S = d/4{,}5$ và $t_S - t_P = 20$ trước phương trình, kết quả 206 km giữ nguyên."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ phương án 30 cm, sửa phản hồi nêu rõ lối sai là nhân biên độ 3 cm với 10 s."
+      },
+      {
+        "id": "q-tl28-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi chọn A trong phản hồi nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi chọn B trong phản hồi nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lớp khí giữa điện thoại và vỏ bình nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi quên bình phương nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi gán $v \\cdot t$ cho phao nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã giải thích vì sao đỉnh đồ thị không phải vùng nén nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl28-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã có câu chốt so với phương truyền sóng, không so với mặt đất."
+      },
+      {
+        "id": "q-dien-buoc-con-thieu",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu cả hai lỗi ($\\lambda$ thay $\\lambda/2$ và đổi tần số) trong phần xem đáp án."
+      },
+      {
+        "id": "q-tl28-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi coi 0,2 m là cả bước sóng nên không thêm dòng ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1 Sóng ngang: thêm định nghĩa sóng cơ là dao động cơ lan truyền trong môi trường vật chất.",
+      "Bảng so sánh ở mục 4: tiêu đề cột đổi thành 'Sóng cơ ngang' và 'Sóng cơ dọc'.",
+      "Mục 5: thêm câu nói $P$ là công suất sóng (W) truyền qua diện tích $S$ trong $I = P/S$.",
+      "Details ôn bài 8: số nguyên trong điều kiện cùng pha, ngược pha, vuông pha đổi từ $k$ sang $n$, tránh trùng số sóng $k = 2\\pi/\\lambda$.",
+      "Bẫy 2: quy tắc vùng nén, vùng dãn thêm điều kiện $u \\gt 0$ là lệch theo chiều dương trục $x$.",
+      "Mang về: dòng 'Nén, dãn ở $u = 0$' tách thành hai dòng phân biệt đồ thị đi xuống (nén) và đi lên (dãn).",
+      "Details đọc bảng TN: con số 0,1 s ghi rõ là ước lượng chung cho phản xạ tay, không tính từ bảng.",
+      "Thách đấu động đất: thêm bước $t_P = d/8$, $t_S = d/4{,}5$, $t_S - t_P = 20$; kết quả $d \\approx 206$ km không đổi.",
+      "Quiz tl28-q5: phản hồi phương án C (30 cm) giải thích lại là nhân biên độ 3 cm với 10 s.",
+      "Cắt câu phụ trong phản hồi đúng của q1, q4, q5 và chữ 'Áp dụng:' ở mục 4 để bù độ dài."
+    ],
+    "so_tu_them": 2,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-song-ngang-song-doc/gemini/da-xu-ly/theory.src.202610100630.html"
+  }
+}

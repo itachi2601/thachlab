@@ -71,7 +71,7 @@
 <p><strong>🔑 $v_{max} = A\omega$ · $a = -\omega^2 x$ · hệ thức độc lập</strong></p>
 
 <ul>
-<li>Tốc độ cực đại $|v|_{max} = A\omega$, khi qua O.</li>
+<li>$v = -A\omega\sin(\omega t + \varphi)$, tốc độ cực đại $|v|_{max} = A\omega$ khi qua O.</li>
 <li>Gia tốc cực đại $|a|_{max} = \omega^2 A$, ở hai biên.</li>
 <li>$a = -\omega^2 x$: $a$ luôn trái dấu $x$.</li>
 <li>Không có $t$: $v^2 = \omega^2(A^2 - x^2)$.</li>
@@ -88,7 +88,7 @@
 <input type="radio" name="tl23-q2" id="tl23-q2b"><label for="tl23-q2b" class="tl-opt tl-no">B. $20\ \text{cm/s}$; $+300\ \text{cm/s}^2$</label>
 <input type="radio" name="tl23-q2" id="tl23-q2c"><label for="tl23-q2c" class="tl-opt tl-no">C. $50\ \text{cm/s}$; $0$</label>
 <input type="radio" name="tl23-q2" id="tl23-q2d"><label for="tl23-q2d" class="tl-opt tl-ok">D. $40\ \text{cm/s}$; $+300\ \text{cm/s}^2$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $|v| = 10\sqrt{25 - 9} = 40\ \text{cm/s}$. $a = -100\cdot(-3) = +300\ \text{cm/s}^2$: vật ở phía âm thì gia tốc hướng về O, tức chiều dương. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $|v| = 10\sqrt{25 - 9} = 40\ \text{cm/s}$. $a = -100\cdot(-3) = +300\ \text{cm/s}^2$: vật ở phía âm thì gia tốc hướng về O, tức chiều dương.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A thay $|x| = 3$ vào $a = -\omega^2 x$, mất dấu của $x$. B tính $\omega(A - |x|) = 10\cdot2$, quên bình phương rồi khai căn. C lấy giá trị ở O, trong khi vật đang ở $x = -3$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
@@ -111,13 +111,14 @@
 </table>
 </div>
 
-<p><strong>Câu 3 (kỹ năng thực hành).</strong> Sai số của $t_{10}$ lấy bằng nửa khoảng chênh lớn nhất trong bảng. Kết quả chu kì ghi đúng là:</p>
+<p>⚠ Từ $t_{10}$ sang $T$: chia cả giá trị lẫn sai số cho 10.</p>
+<p><strong>Câu 3 (kỹ năng thực hành).</strong> Sai số của $t_{10}$ lấy bằng $\dfrac{t_{max} - t_{min}}{2}$ trong bảng. Sai số của $T$ làm tròn lên, giữ một chữ số có nghĩa. Kết quả chu kì ghi đúng là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl23-q3" id="tl23-q3a"><label for="tl23-q3a" class="tl-opt tl-ok">A. $T = 1{,}20 \pm 0{,}02\ \text{s}$</label>
 <input type="radio" name="tl23-q3" id="tl23-q3b"><label for="tl23-q3b" class="tl-opt tl-no">B. $T = 12{,}03 \pm 0{,}15\ \text{s}$</label>
 <input type="radio" name="tl23-q3" id="tl23-q3c"><label for="tl23-q3c" class="tl-opt tl-no">C. $T = 1{,}20 \pm 0{,}15\ \text{s}$</label>
 <input type="radio" name="tl23-q3" id="tl23-q3d"><label for="tl23-q3d" class="tl-opt tl-no">D. $T = 1{,}20 \pm 0{,}03\ \text{s}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta t_{10} = \dfrac{12{,}18 - 11{,}89}{2} \approx 0{,}15\ \text{s}$. Chia cả giá trị lẫn sai số cho 10: $\Delta T \approx 0{,}015\ \text{s}$, làm tròn lên $0{,}02\ \text{s}$. Đo 10 dao động là để sai số bấm tay bị chia 10.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta t_{10} = \dfrac{12{,}18 - 11{,}89}{2} = 0{,}145\ \text{s}$. Chia cả giá trị lẫn sai số cho 10: $\Delta T = 0{,}0145\ \text{s}$, làm tròn lên $0{,}02\ \text{s}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là thời gian 10 dao động, chưa chia 10. C chia giá trị cho 10 nhưng quên chia sai số. D lấy $\dfrac{12{,}18 - 11{,}89}{10} \approx 0{,}03$, quên chia đôi khoảng chênh.</p></div>
 </div>
 
@@ -127,7 +128,7 @@
 
 <ul>
 <li>Tìm $\omega$ từ $T$, $f$ (hoặc $\omega = \dfrac{v_{max}}{A}$).</li>
-<li>Tìm $A$: đề cho thẳng, hoặc $A^2 = x_0^2 + (v_0/\omega)^2$.</li>
+<li>Tìm $A$: đề cho thẳng, hoặc $A^2 = x_0^2 + (v_0/\omega)^2$ (chính là hệ thức độc lập ở Họ 2).</li>
 <li>Tìm $\varphi$: $\cos\varphi = \dfrac{x_0}{A}$ cho hai giá trị $\pm$.</li>
 <li>Chọn dấu: $v_0 = -A\omega\sin\varphi$, nên $v_0 \gt 0$ thì $\varphi \lt 0$; $v_0 \lt 0$ thì $\varphi \gt 0$.</li>
 </ul>
@@ -157,10 +158,10 @@
 <p><strong>🔑 Thời gian: $\Delta t = \Delta\varphi/\omega$</strong><br><strong>🔑 Quãng đường: nửa chu kì $2A$, một chu kì $4A$</strong></p>
 
 <ul>
-<li>Vẽ điểm M trên vòng tròn bán kính $A$, góc pha $\omega t + \varphi$, quay ngược chiều kim đồng hồ.</li>
+<li>Vẽ điểm M trên vòng tròn bán kính $A$, góc pha $\omega t + \varphi$ đo từ bán trục $Ox$ dương, quay ngược chiều kim đồng hồ.</li>
 <li>Hình chiếu của M lên trục $Ox$ là li độ $x$. Nửa trên: $v \lt 0$; nửa dưới: $v \gt 0$.</li>
-<li>Thời gian bằng góc M quét chia $\omega$: góc $2\pi$ ứng với $T$.</li>
-<li>Quãng đường: nửa chu kì luôn $2A$, một chu kì luôn $4A$.</li>
+<li>Góc quét $2\pi$ ứng với thời gian $T$.</li>
+<li>⚠ $\dfrac{T}{4}$ đi được đúng $A$ chỉ khi xuất phát ở O hoặc ở biên.</li>
 <li>Tốc độ trung bình $= \dfrac{s}{\Delta t}$; vận tốc trung bình $= \dfrac{x_2 - x_1}{\Delta t}$.</li>
 </ul>
 
@@ -274,7 +275,7 @@
 <p class="tl-label">🎤 Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
 <details class="tl-details"><summary>1. Từ $x = A\cos(\omega t+\varphi)$, lấy $T$, $f$ thế nào? Gặp dấu trừ, gặp $\sin$ thì sao?</summary>
 <p>$T = 2\pi/\omega$; $f = 1/T$<br>$-\cos\alpha = \cos(\alpha+\pi)$<br>$\sin\alpha = \cos(\alpha - \pi/2)$</p></details>
-<details class="tl-details"><summary>2. Ba công thức nối $x$, $v$, $a$ không cần $t$?</summary>
+<details class="tl-details"><summary>2. Ba công thức chủ chốt của Họ 2 về $x$, $v$, $a$?</summary>
 <p>$|v|_{max} = A\omega$<br>$a = -\omega^2 x$<br>$v^2 = \omega^2(A^2 - x^2)$</p></details>
 <details class="tl-details"><summary>3. Biết $x_0$ và chiều đi lúc $t = 0$, chọn $\varphi$ thế nào?</summary>
 <p>$\cos\varphi = x_0/A$<br>Đi chiều dương: $\varphi \lt 0$<br>Đi chiều âm: $\varphi \gt 0$</p></details>
@@ -309,7 +310,7 @@
 <ol class="tl-steps">
 <li>a) $T = \dfrac{2\pi}{2\pi} = 1\ \text{s}$. $v_{max} = 8\cdot2\pi = 16\pi \approx 50{,}3\ \text{cm/s}$.</li>
 <li>Lúc $t = 0$: $x_0 = 8\cos(-\pi/3) = 4\ \text{cm}$. Vì $\varphi \lt 0$, vật đang đi về biên dương.</li>
-<li>b) Vật qua O lần đầu khi pha bằng $\dfrac{\pi}{2}$: M quét $\Delta\varphi = \dfrac{\pi}{2} + \dfrac{\pi}{3} = \dfrac{5\pi}{6}$. $\Delta t = \dfrac{5\pi/6}{2\pi} = \dfrac{5}{12} \approx 0{,}42\ \text{s}$.</li>
+<li>b) Pha tăng dần từ $-\dfrac{\pi}{3}$, đã vượt mốc $-\dfrac{\pi}{2}$, nên vật qua O lần đầu khi pha bằng $\dfrac{\pi}{2}$: M quét $\Delta\varphi = \dfrac{\pi}{2} + \dfrac{\pi}{3} = \dfrac{5\pi}{6}$. $\Delta t = \dfrac{5\pi/6}{2\pi} = \dfrac{5}{12} \approx 0{,}42\ \text{s}$.</li>
 <li>c) Từ 4 tới 8 cm: đi $4\ \text{cm}$. Từ 8 về 0: đi $8\ \text{cm}$. Vậy $s = 12\ \text{cm}$.</li>
 <li>Tốc độ trung bình $= \dfrac{12}{5/12} = 28{,}8\ \text{cm/s}$.</li>
 <li>Kiểm tra bằng mốc: $\dfrac{A}{2}$ → biên mất $\dfrac{T}{6}$, biên → O mất $\dfrac{T}{4}$; tổng $\dfrac{5T}{12}$ ✓. Tốc độ TB $28{,}8 \lt v_{max}$, hợp lý.</li>
@@ -320,7 +321,7 @@
 
 <div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng phương trình, tìm thời điểm đầu tiên vật tới $x = -4\ \text{cm}$ và quãng đường đến lúc đó.</p>
 <ol class="tl-steps">
-<li>$x = -4\ \text{cm} = -A/2$. Lần đầu tới đó, M ở nửa trên, pha $2\pi/3$.</li>
+<li>$x = -4\ \text{cm} = -A/2$. Lần đầu tới đó, vật đang đi chiều âm (từ biên dương về) nên M ở nửa trên, pha $2\pi/3$.</li>
 <li><strong>Bước 2 (em điền):</strong> $\Delta\varphi = \;?$, rồi $\Delta t = \;?$</li>
 <li><strong>Bước 3 (em điền):</strong> $s = \;?$ — gợi ý: đi $4 \to 8 \to -4$.</li>
 </ol>
@@ -328,6 +329,7 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🔁 Thử sức biến thể: đổi dấu pha, hỏi lần thứ hai</p>
+<p>⚠ Pha $\omega t + \varphi$ cứ tăng, được phép vượt $\pi$. Hai lần qua O liên tiếp cách nhau $\dfrac{T}{2}$.</p>
 <p><strong>Câu 7.</strong> Đổi phương trình thành $x = 8\cos\left(2\pi t + \dfrac{\pi}{3}\right)\ \text{cm}$. Thời điểm vật qua vị trí cân bằng <strong>lần thứ hai</strong> là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl23-q7" id="tl23-q7a"><label for="tl23-q7a" class="tl-opt tl-ok">A. $\dfrac{7}{12}\ \text{s}$</label>
@@ -344,7 +346,7 @@
 <details class="tl-details">
 <summary>🌍 Bấm xem: 3 chỗ gặp lại bốn họ</summary>
 <ul>
-<li><strong>Đồng hồ quả lắc (họ 1):</strong> chỉnh $T$ đúng $2\ \text{s}$ để mỗi nửa dao động là một tiếng "tích".</li>
+<li><strong>Đồng hồ quả lắc (họ 1):</strong> loại quả lắc dài thường được chỉnh $T$ đúng $2\ \text{s}$ để mỗi nửa dao động là một tiếng "tích". Quả lắc ngắn hơn có $T$ nhỏ hơn, như $1{,}6\ \text{s}$ ở Mở bài.</li>
 <li><strong>Loa điện thoại (họ 2):</strong> màng loa rung nhanh nên $a_{max} = \omega^2 A$ rất lớn dù $A$ nhỏ.</li>
 <li><strong>Xích đu (họ 4):</strong> gần hai biên ghế đi chậm, qua chỗ thấp nhất đi nhanh, nên nửa đường không phải nửa thời gian.</li>
 </ul>

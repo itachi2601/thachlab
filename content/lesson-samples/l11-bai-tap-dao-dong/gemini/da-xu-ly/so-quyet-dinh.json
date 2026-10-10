@@ -1,0 +1,134 @@
+{
+  "bai": "l11-bai-tap-dao-dong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng đầu của Họ 2 nay mở bằng $v = -A\\omega\\sin(\\omega t + \\varphi)$, nên quy tắc dấu ở Họ 3 có nguồn gốc."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu \"Từ O tới A/2: quét 30°, mất T/12\" không có trong bài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm \"đo từ bán trục Ox dương\" vào gạch đầu dòng vẽ điểm M."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thay gạch đầu dòng lặp ý 2A/4A (đã có ở dòng 🔑) bằng dòng ⚠: T/4 đi đúng A chỉ khi xuất phát ở O hoặc biên."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Quy tắc làm tròn lên một chữ số có nghĩa được đưa vào đề Câu 3, và phản hồi ghi số thật 0,145 s và 0,0145 s."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 3 nay ghi rõ sai số bằng $(t_{max} - t_{min})/2$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước b) trong lời giải đã giải thích pha tăng từ −π/3, đã vượt −π/2, nên mốc kế tiếp là π/2."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm dòng ⚠ trước Câu 7: pha được vượt π, hai lần qua O liên tiếp cách nhau T/2."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã ghi chú công thức $A^2$ chính là hệ thức độc lập ở Họ 2."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Trả bài 2 đổi thành \"Ba công thức chủ chốt của Họ 2 về x, v, a?\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm lý do: vật đang đi chiều âm (từ biên dương về) nên M ở nửa trên."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã nói rõ loại quả lắc dài mới chỉnh T = 2 s, còn quả lắc ngắn hơn có T nhỏ hơn như 1,6 s ở Mở bài (không gọi là \"chuẩn\")."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán, phản hồi đã nhấn biên–biên là nửa dao động, thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $-\\cos\\alpha = \\cos(\\alpha+\\pi)$ ngay trước Câu 1, không cần thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"a luôn trái dấu x\" ở Họ 2, không cần thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã thêm dòng ⚠ trước Câu 3: chia cả giá trị lẫn sai số cho 10."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc $v_0 \\lt 0$ thì $\\varphi \\gt 0$ đã có ngay trong Họ 3, không cần thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu \"Từ O tới A/2: quét 30°...\" không có trong bài."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Bẫy 2 đã nhấn \"quãng đường cộng từng đoạn\", không cần thêm."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Xử lý chung với c8 bằng dòng ⚠ trước Câu 7 (hai lần qua O cách nhau T/2)."
+      },
+      {
+        "id": "q-Trả bài 5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Xử lý chung với c4 bằng dòng ⚠ về điều kiện T/4 đi đúng A ở mục Họ 4."
+      }
+    ],
+    "doi_noi_dung": [
+      "Họ 2: thêm biểu thức vận tốc $v = -A\\omega\\sin(\\omega t + \\varphi)$ vào gạch đầu dòng tốc độ cực đại.",
+      "Họ 3: ghi chú $A^2 = x_0^2 + (v_0/\\omega)^2$ là hệ thức độc lập của Họ 2.",
+      "Họ 4: góc pha của M đo từ bán trục Ox dương.",
+      "Họ 4: gạch đầu dòng \"Thời gian bằng góc M quét chia ω...\" rút gọn thành \"Góc quét 2π ứng với thời gian T\" (dòng 🔑 đã có Δt = Δφ/ω).",
+      "Họ 4: thay gạch đầu dòng lặp quãng đường 2A/4A bằng ⚠ \"T/4 đi đúng A chỉ khi xuất phát ở O hoặc ở biên\".",
+      "Câu 3: đề ghi rõ $\\Delta t_{10} = (t_{max} - t_{min})/2$ và sai số của T làm tròn lên, giữ một chữ số có nghĩa.",
+      "Câu 3: phản hồi đúng sửa số trung gian từ ≈0,15 s thành 0,145 s và từ ≈0,015 s thành 0,0145 s, đáp án A (±0,02 s) không đổi.",
+      "Câu 3: thêm dòng ⚠ chia cả sai số cho 10, đồng thời bỏ câu \"Đo 10 dao động là để sai số bấm tay bị chia 10\" trong phản hồi.",
+      "Câu 2: bỏ câu hỏi phụ \"Em giải thích được cho bạn ngồi cạnh chưa?\" trong phản hồi đúng để bù độ dài.",
+      "Bài mẫu b) (trong details): giải thích vì sao chọn pha π/2 thay cho −π/2, kết quả 5/12 s không đổi.",
+      "Điền bước: giải thích M ở nửa trên vì vật đang đi chiều âm.",
+      "Câu 7: thêm dòng ⚠ pha được vượt π, hai lần qua O liên tiếp cách nhau T/2.",
+      "Đời sống (trong details): đồng hồ T = 2 s là loại quả lắc dài, còn quả lắc ngắn hơn có T nhỏ hơn như 1,6 s ở Mở bài."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-dao-dong/gemini/da-xu-ly/theory.src.202610100630.html"
+  }
+}

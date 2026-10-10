@@ -1,0 +1,180 @@
+{
+  "bai": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Họ 2: vị trí $W_{\\text{đ}}=nW_t$",
+      "trich_nguyen_van": "Đảo lại, $W_t=nW_{\\text{đ}}$ thì $x=\\pm A\\sqrt{\\dfrac{n}{n+1}}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Trường hợp đảo chỉ có công thức li độ, không có công thức tốc độ. Gặp Câu 7, em sẽ dùng luôn $|v|=v_{\\max}\\sqrt{n/(n+1)}$ với $n=3$ và ra 1,10 m/s.",
+      "de_xuat": "Thêm vào gạch đầu dòng này: «khi đó $W_{\\text{đ}}=\\tfrac{1}{n+1}W$, nên $|v|=\\dfrac{v_{\\max}}{\\sqrt{n+1}}$»."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Họ 3: đồ thị năng lượng theo $x$ và theo $t$",
+      "trich_nguyen_van": "Đọc đồ thị: đỉnh cao nhất là $W$; hai đỉnh $W_t$ liền nhau cách $T/2$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Mục này chỉ dạy khoảng $T/2$ giữa hai đỉnh. Câu 3 lại hỏi khoảng cách giữa hai giao điểm $W_{\\text{đ}}=W_t$ ($T/4$), nên em sẽ chọn $T/2$.",
+      "de_xuat": "Thêm một gạch đầu dòng: «$W_{\\text{đ}}=W_t$ tại $x=\\pm A/\\sqrt2$, bốn lần mỗi chu kì, hai lần liên tiếp cách nhau $T/4$»."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Đo để kiểm: cơ năng theo biên độ",
+      "trich_nguyen_van": "$W\\propto A^2$ nên sai số tương đối của $W$ gấp đôi: tới 20%.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Cột $W$ trong bảng tính từ $v_{\\max}$ đo bằng video, không tính từ $A$. Em sẽ thấy mâu thuẫn: hàng $A=1$ chỉ lệch mô hình khoảng 6% mà lại bảo sai tới 20%.",
+      "de_xuat": "Sửa thành: «sai số tương đối của $A^2$ (nên của tỉ số $W/A^2$) gấp đôi sai số của $A$: tới 20%»."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "II. Bốn họ bài tập năng lượng",
+      "trich_nguyen_van": "\"tại li độ $x$\", \"động năng khi…\"",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm «động năng khi…» cũng khớp với «động năng gấp $n$ lần thế năng», nên em không biết xếp vào Họ 1 hay Họ 2.",
+      "de_xuat": "Đổi thành «"
+    },
+    {
+      "id": "c5",
+      "vi_tri": "II. Bốn họ bài tập năng lượng",
+      "trich_nguyen_van": "Mốc thế năng luôn ở vị trí cân bằng (VTCB).",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Sang Họ 4 lại ghi «Mốc ở đáy», em tưởng con lắc đơn dùng một quy ước mốc khác.",
+      "de_xuat": "Ở Họ 4 ghi rõ: «đáy chính là VTCB của con lắc đơn»."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Đo để kiểm: cơ năng theo biên độ",
+      "trich_nguyen_van": "treo quả nặng $m=250\\ \\text{g}$, lò xo dãn thêm $5{,}0\\ \\text{cm}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lò xo treo thẳng đứng có cả trọng lực và độ dãn ban đầu, nên em không chắc $W=\\tfrac12 kA^2$ còn đúng. Em dễ thế nhầm $\\Delta\\ell+A$ vào công thức.",
+      "de_xuat": "Thêm một câu: «với lò xo thẳng đứng, chọn mốc ở VTCB thì $W=\\tfrac12 kA^2$ vẫn đúng ($A$ tính từ VTCB)»."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "I. Mở bài: đẩy xích đu mạnh gấp đôi",
+      "trich_nguyen_van": "Với góc nhỏ, $W\\approx\\tfrac12 mgl\\alpha_0^2$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức con lắc đơn xuất hiện trước khi được giới thiệu (mãi tới mục 5. Họ 4). Em không biết nó từ đâu ra.",
+      "de_xuat": "Ghi kèm «(công thức này học ở mục Họ 4)»."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Họ 3: đồ thị năng lượng theo $x$ và theo $t$",
+      "trich_nguyen_van": "B là thời gian từ $t=0$ tới giao điểm đầu tiên.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Giao điểm tại $T/8$ chỉ đúng khi vật xuất phát từ biên hoặc VTCB. Bài không nói Hình 3 bắt đầu ở đâu.",
+      "de_xuat": "Ghi trong chú thích Hình 3: «tại $t=0$ vật ở biên $x=A$»."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 3. Góc nhỏ phải đổi ra rad",
+      "trich_nguyen_van": "$W\\approx\\tfrac12\\cdot0{,}2\\cdot9{,}8\\cdot1\\cdot0{,}105^2\\approx10{,}7\\ \\text{mJ}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bấm đúng các số đã ghi thì được $0{,}98\\cdot0{,}011025\\approx10{,}8\\ \\text{mJ}$, không phải 10,7. Em sẽ nghi mình bấm sai.",
+      "de_xuat": "Ghi $\\alpha_0\\approx0{,}1047\\ \\text{rad}$, hoặc thêm chú thích «giữ nguyên số trong máy, không làm tròn»."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$\\omega=\\sqrt{\\dfrac{100}{0{,}1}}=\\sqrt{1000}=10\\pi\\ \\text{rad/s}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không thấy vì sao $\\sqrt{1000}$ lại bằng $10\\pi$.",
+      "de_xuat": "Viết thêm bước trung gian: $\\sqrt{1000}=10\\sqrt{10}=10\\pi$ (vì $\\pi^2=10$)."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "Bốn lần mỗi chu kì.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi chỉ hỏi li độ và tốc độ, nên em không rõ «bốn lần» là bốn lần gì.",
+      "de_xuat": "Sửa thành «Vật qua các vị trí này bốn lần mỗi chu kì»."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "4. Họ 3: đồ thị năng lượng theo $x$ và theo $t$",
+      "trich_nguyen_van": "Năng lượng có chu kì $T/2$, tần số $2f$; li độ có chu kì $T$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục này chỉ nêu kết quả. Lý do «$x=\\pm A$ đều cho $W_t$ cực đại» mãi tới Bẫy 2 mới có, sau cả Câu 3 và Câu 5.",
+      "de_xuat": "Đưa câu «Vì sao gấp đôi?» của Bẫy 2 lên ngay sau gạch đầu dòng này."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ năng lượng tỉ lệ thuận với góc lệch, quên bình phương.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "năng lượng đi theo <strong>bình phương</strong> biên độ"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy «tại li độ $x$» liền tính $\\tfrac12 kx^2$ rồi dừng, nhầm thế năng với động năng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Động năng: $W_{\\text{đ}}=W-W_t=\\tfrac12 k(A^2-x^2)$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chia đúng cho $n+1$ nhưng quên lấy căn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "chia cho $n$ thay vì $n+1$, hoặc quên căn"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lẫn chu kì năng lượng $T/2$ với khoảng giữa hai lần $W_{\\text{đ}}=W_t$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thế $\\cos\\alpha_0$ vào chỗ $1-\\cos\\alpha_0$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "viết $\\cos\\alpha_0$ thay cho $1-\\cos\\alpha_0{,}$"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn chu kì thế năng làm chu kì dao động.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Năng lượng có chu kì $T/2$, tần số $2f$; li độ có chu kì $T$."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thế góc bằng độ vào công thức góc nhỏ, không đổi ra rad.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "thế góc bằng độ vào công thức góc nhỏ"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp nguyên $|v|=v_{\\max}\\sqrt{n/(n+1)}$ với $n=3$ cho trường hợp đảo, vì bài không có công thức tốc độ khi $W_t=nW_{\\text{đ}}$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "tu_kiem_tra_mJ",
+      "dap_an_sai_hap_dan": "0,0000125 mJ",
+      "loi_tu_duy": "Đổi J sang mJ bằng cách chia 1000 thay vì nhân 1000.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "J sang mJ: nhân 1000"
+    }
+  ]
+}

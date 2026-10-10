@@ -1,0 +1,131 @@
+{
+  "bai": "l11-bai-tap-nang-luong-dao-dong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào gạch đầu dòng trường hợp đảo: $W_{\\text{đ}}=W/(n+1)$ nên $|v|=v_{\\max}/\\sqrt{n+1}$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm gạch đầu dòng: $W_{\\text{đ}}=W_t$ tại $x=\\pm A/\\sqrt2$, bốn lần mỗi chu kì, hai lần liền nhau cách $T/4$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành sai số của $A^2$ (nên của tỉ số $W/A^2$) tới 20%, sửa luôn hàng $A=4$ cho khớp."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề xuất bị cụt nên tự viết: đổi cụm \"động năng khi…\" thành \"khi vật cách VTCB…\" để không lẫn với Họ 2."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi ở Họ 4: độ cao so với đáy (đáy chính là VTCB)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một câu ở bước Rút ra: lò xo thẳng đứng vẫn có $W=\\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(xem Họ 4)\" sau công thức góc nhỏ trong phản hồi câu dự đoán."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không sửa được chú thích hình nên sửa phản hồi B thành thời gian từ biên (hoặc VTCB) tới giao điểm gần nhất, đáp án $T/4$ không phụ thuộc điểm xuất phát."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi $\\alpha_0\\approx0{,}1047$ rad ở cả hai chỗ, kết quả $10{,}7$ mJ giữ nguyên và giờ bấm khớp."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước $\\sqrt{1000}=10\\sqrt{10}=10\\pi$ (vì $\\pi^2=10$) trong lời giải."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Vật qua các vị trí này bốn lần mỗi chu kì\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Chuyển đoạn \"Vì sao gấp đôi?\" là đổi cấu trúc, lý do đã có ở Bẫy 2 và mục II đã sát trần."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán không nên gợi trước, phản hồi và mục VI đã nhấn bình phương."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $W_{\\text{đ}}=W-W_t$ và phản hồi A đã giải thích."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng ⚠ Bẫy của Họ 2 đã nhấn lỗi quên căn."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: $T/2$ là khoảng giữa hai đỉnh $W_t$, không phải giữa hai lần $W_{\\text{đ}}=W_t$."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng ⚠ Bẫy của Họ 4 đã nhấn lỗi dùng $\\cos\\alpha_0$."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Họ 3 và lời dẫn Bẫy 2 đã nhấn chu kì năng lượng $T/2$."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy Họ 4 và tên mục Bẫy 3 đã nhấn việc đổi ra rad."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ ngắn trước Câu 7 nhắc thế năng mới là phần gấp 3, kèm công thức mới ở Họ 2 (c1)."
+      },
+      {
+        "id": "q-tu_kiem_tra_mJ",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã ghi rõ \"J sang mJ: nhân 1000\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Họ 2: thêm công thức tốc độ cho trường hợp $W_t=nW_{\\text{đ}}$: $|v|=v_{\\max}/\\sqrt{n+1}$ (khớp Câu 7: 0,63 m/s).",
+      "Họ 2: bỏ phần ví dụ tốc độ $\\approx0{,}97\\,v_{\\max}$ để bù độ dài, ví dụ li độ giữ nguyên.",
+      "Họ 3: thêm gạch đầu dòng $W_{\\text{đ}}=W_t$ tại $x=\\pm A/\\sqrt2$, bốn lần mỗi chu kì, cách nhau $T/4$.",
+      "Câu 3: phản hồi B đổi thành thời gian từ biên (hoặc VTCB) tới giao điểm gần nhất, bỏ câu lặp ý trong phản hồi đúng.",
+      "Thí nghiệm lò xo: thêm câu lò xo thẳng đứng vẫn có $W=\\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB.",
+      "Chi tiết sai số: sai số 20% và 5% giờ gán cho $A^2$ (tỉ số $W/A^2$), không gán cho $W$ đo từ video.",
+      "Câu 6: $\\alpha_0\\approx0{,}1047$ rad (thay 0,105), kết quả 10,7 mJ và các phương án nhiễu không đổi.",
+      "Bài toán mẫu: thêm bước $\\sqrt{1000}=10\\sqrt{10}=10\\pi$ (vì $\\pi^2=10$).",
+      "Họ 4: ghi rõ đáy chính là VTCB (mốc thế năng).",
+      "Bẫy 3: bỏ câu lặp \"góc lớn hơn 10° thì bỏ xấp xỉ\" vì bảng ngay trên đã nêu."
+    ],
+    "so_tu_them": 5,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/gemini/da-xu-ly/theory.src.202610100630.html"
+  }
+}

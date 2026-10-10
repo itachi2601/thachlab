@@ -1,0 +1,131 @@
+{
+  "bai": "l11-thuc-hanh-do-toc-do-am",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng Âm sắc thêm một câu định nghĩa âm cơ bản $f_0$ và hoạ âm $2f_0$, $3f_0$ trước câu 2, bù chữ bằng cách rút gọn phản hồi câu 2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 2 thêm gạch đầu dòng: v chỉ do môi trường và nhiệt độ quyết định, đổi f thì λ đổi theo."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"khá chính xác (cỡ ±1 Hz)\" cho khớp Δf ở mục 5 và bài mẫu."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu ngay trước công thức: l là chiều dài cột khí, đo từ miệng ống xuống mặt nước."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành pít-tông đặt sát miệng ống rồi kéo xa dần để cột khí dài thêm, vì \"kéo dần lên\" làm cột khí ngắn lại."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi Δl1 = Δl2 ≈ 0,064 cm nên 2(0,064 + 0,064) ≈ 0,26 cm khớp kết quả."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Liệt kê độ lệch của l1 và thêm câu giải thích: sai số của hiệu bằng tổng hai sai số, rồi nhân 2."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ mục 5 chỉ tính sai số ngẫu nhiên, quy ước đo nhiều lần và đo một lần đặt trong details sai số để không vượt hạn mức."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 4 nêu cách so: giá trị tham khảo nằm trong khoảng v̄ ± Δv thì phép đo phù hợp."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm làm mẫu hàng 1, có bước đổi 68,0 cm = 0,680 m, ra 340 m/s."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ô bảng thành \"Lần to thứ 1 và thứ 3 (bỏ qua một lần ở giữa)\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa câu phản hồi thành hai câu rõ ràng: v do môi trường quyết định, nhiệt độ không đổi nên v vẫn ≈ 343 m/s."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 1: thổi ngang miệng là làm cột không khí rung, không phải gõ vào thân chai."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ý cùng nốt, cùng độ to, còn phần thiếu định nghĩa âm cơ bản đã xử lý ở c1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn điều kiện số lẻ lần λ/4 ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp với dòng ⚠ của c9, có nói rõ giá trị tham khảo coi như chính xác để chặn phương án D."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn hiệu chỉnh e ở mục 3 và tiêu đề Bẫy 1."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn l2 − l1 = λ/2 bằng công thức, mẹo và tiêu đề Bẫy 2."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Sau khi nhận c2, mục 2 đã nói v không phụ thuộc f và tiêu đề Bẫy 3 đã nêu sẵn bẫy này, nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn rằng ở 30 °C thì v ≈ 349 m/s, không phải 343."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 5: Δl1 = Δl2 ghi là ≈ 0,064 cm (trước ghi 0,06), kèm độ lệch l1 là 0,08; 0,02; 0,08; 0,12; 0,02 cm. Δλ ≈ 0,26 cm, Δv ≈ 2,0 m/s giữ nguyên.",
+      "Mục 5: thêm làm mẫu hàng 1, λ = 68,0 cm = 0,680 m, v = 340 m/s.",
+      "Mục 5: nói rõ Δl chỉ là sai số ngẫu nhiên.",
+      "Details sai số: thêm quy ước đo nhiều lần thì Δl = độ lệch trung bình + sai số dụng cụ (bảng bỏ qua phần dụng cụ).",
+      "Details sai số: đo một lần như bài mẫu thì lấy sai số đọc.",
+      "Mục 2: máy phát cho f sai số cỡ ±1 Hz (trước ghi \"chính xác\").",
+      "Mục 2: thêm ý v chỉ do môi trường và nhiệt độ quyết định, không phụ thuộc f.",
+      "Mục 1: thêm định nghĩa âm cơ bản f0 và hoạ âm 2f0, 3f0.",
+      "Mục 3: định nghĩa l là chiều dài cột khí từ miệng ống xuống mặt nước.",
+      "Mục 4: pít-tông đặt sát miệng ống rồi kéo xa dần để cột khí dài thêm (trước ghi \"kéo dần lên\").",
+      "Bẫy 2, bảng: \"Lần to thứ 1 và thứ 3\" ứng với λ.",
+      "Câu 7, phản hồi đúng: sửa câu v ≈ 343 m/s cho đúng ngữ pháp.",
+      "Câu 4, phản hồi đúng: rút gọn còn khoảng 339,6 đến 343,6 m/s chứa giá trị tham khảo.",
+      "Thêm dòng ⚠ trước câu 1 (thổi vào cột khí, không phải gõ vào thân chai).",
+      "Thêm dòng ⚠ trước câu 4 (so với khoảng v̄ ± Δv)."
+    ],
+    "so_tu_them": 65,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/gemini/da-xu-ly/theory.src.202610100630.html"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "bai": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Sóng ngang",
+      "trich_nguyen_van": "Sóng điện từ (ánh sáng, wifi) cũng là sóng ngang nhưng không phải sóng cơ.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài dùng 'sóng cơ' làm ranh giới phân loại nhưng không có chỗ nào nhắc lại định nghĩa. Học sinh không biết vì sao ánh sáng 'không phải sóng cơ'.",
+      "de_xuat": "Thêm một dòng nhắc lại ngay trước câu này: sóng cơ là dao động cơ lan truyền trong môi trường vật chất."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Sóng cơ truyền được ở đâu?",
+      "trich_nguyen_van": "Truyền trong | chất rắn, mặt chất lỏng | chất rắn, lỏng, khí",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng ghi tiêu đề 'Sóng ngang', trong khi mục 1 vừa nói ánh sáng là sóng ngang và câu hỏi 3 nói ánh sáng qua được chân không. Học sinh dễ thấy hai chỗ mâu thuẫn nhau, hoặc nhớ rằng mọi sóng ngang chỉ truyền trong rắn và mặt chất lỏng.",
+      "de_xuat": "Đổi tiêu đề cột thành 'Sóng cơ ngang' và 'Sóng cơ dọc', hoặc ghi chú dưới bảng rằng bảng chỉ xét sóng cơ."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "5. Sóng truyền năng lượng",
+      "trich_nguyen_van": "Đọc phương trình $u = A\\cos(\\omega t - kx)$: ... hệ số trước $x$ là $k = \\dfrac{2\\pi}{\\lambda}$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ngay vài dòng sau, 'Cùng pha: $d = k\\lambda$' lại dùng $k$ là số nguyên. Học sinh có thể thay $k = 2\\pi/\\lambda$ vào $d = k\\lambda$ và ra $d = 2\\pi$.",
+      "de_xuat": "Dùng chữ khác cho số nguyên (ví dụ $n$) trong các dòng cùng pha, ngược pha, vuông pha, hoặc ghi rõ '$k$ ở đây là số nguyên'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "✅ Mang về sau bài học",
+      "trich_nguyen_van": "Nén, dãn: ở chỗ $u = 0$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bản tóm tắt bỏ mất điều kiện chiều dốc của đồ thị. Học sinh chỉ học bản này sẽ không phân biệt được điểm $u = 0$ nào là nén, điểm nào là dãn.",
+      "de_xuat": "Ghi đủ: '$u = 0$, đồ thị đi xuống là nén; $u = 0$, đồ thị đi lên là dãn (khi $u > 0$ là lệch theo chiều truyền)'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 2: tưởng vùng nén ở đỉnh đồ thị",
+      "trich_nguyen_van": "$u = 0$, đồ thị đi xuống (theo chiều $x$): vùng nén.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Quy tắc chỉ đúng khi trục $x$ và chiều $u > 0$ cùng hướng truyền sóng, nhưng điều kiện này chỉ nằm trong đề câu hỏi. Lời giải còn ngầm coi sóng truyền từ trái sang phải. Học sinh áp dụng máy móc khi trục ngược chiều sẽ ra kết quả ngược.",
+      "de_xuat": "Thêm điều kiện ngay trong quy tắc: 'với trục $x$ theo chiều truyền và $u > 0$ là lệch theo chiều $x$'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Sóng truyền năng lượng",
+      "trich_nguyen_van": "Cường độ sóng $I = \\dfrac{P}{S}$ (W/m²)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không nói $P$ là gì. Học sinh có thể nhầm $P$ với áp suất hoặc trọng lượng.",
+      "de_xuat": "Ghi rõ '$P$: công suất sóng, tức năng lượng sóng truyền đi trong 1 s (W)'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Thí nghiệm đo: tốc độ xung trên lò xo",
+      "trich_nguyen_van": "độ trễ bấm lúc đầu và lúc cuối không bằng nhau, lệch khoảng ±0,1 s.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự tính từ bảng, các lần đo chỉ lệch trung bình tối đa 0,064 s. Học sinh thấy con số ±0,1 s không khớp với dữ liệu vừa đọc.",
+      "de_xuat": "Đổi thành 'lệch cỡ vài phần trăm giây, như bảng cho thấy (tối đa 0,064 s)', hoặc giải thích ±0,1 s là ước lượng chung chứ không lấy từ bảng."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "🎯 Thử thách phân tầng",
+      "trich_nguyen_van": "Gọi khoảng cách là $d$: $\\dfrac{d}{4{,}5} - \\dfrac{d}{8} = 20$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy vì sao phương trình có dạng này: chưa ghi $t_S = d/v_S$, $t_P = d/v_P$ và hiệu thời gian bằng 20 s.",
+      "de_xuat": "Thêm một dòng trước đó: '$t_P = d/8$, $t_S = d/4{,}5$; S tới sau nên $t_S - t_P = 20$'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: \"sóng chở nước và phao đi theo\"",
+      "trich_nguyen_van": "Ra 30 cm là lấy 10 lần biên độ",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không hiểu vì sao lại có '10 lần biên độ'. Phương án 30 cm không ứng với một lối nghĩ sai tự nhiên nào nên gần như không ai chọn.",
+      "de_xuat": "Nói rõ lối nghĩ sai, ví dụ 'nhân biên độ 3 cm với 10 s'. Hoặc thay bằng phương án 6 cm (nghĩ phao dời 2A mỗi lần nhấp nhô)."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "tl28-q1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy gợn lan ra thì nghĩ nước chảy từ chỗ sỏi tới, đẩy phao lên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nếu chọn A: nước mà chảy tới thì phao phải trôi theo, nhưng phao chỉ nhấp nhô tại chỗ."
+    },
+    {
+      "cau": "tl28-q2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chuyển hình ảnh sóng nước, dây lên xuống sang âm, nên nghĩ lớp khí dao động lên xuống.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn B là gán cho âm kiểu dao động của sóng ngang."
+    },
+    {
+      "cau": "tl28-q3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ rằng chất rắn truyền âm tốt nên nghĩ vỏ bình vẫn đưa âm ra, quên lớp khí giữa điện thoại và vỏ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "âm phải đi qua lớp khí giữa điện thoại và vỏ trước đã."
+    },
+    {
+      "cau": "tl28-q4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi năng lượng tỉ lệ thuận với biên độ, quên bình phương.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra 2 lần là quên bình phương biên độ."
+    },
+    {
+      "cau": "tl28-q5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy $v \\cdot t$ của sóng gán cho quãng dời của phao.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra 10 m là lấy $v \\cdot t$: đó là quãng đường của sóng, gán nhầm cho phao."
+    },
+    {
+      "cau": "tl28-q6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất đỉnh đồ thị với chỗ 'đậm đặc' nhất, như hình ảnh đỉnh sóng ngang.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ở đỉnh hay đáy, vòng lệch xa nhất nhưng hai vòng bên cạnh cũng lệch gần bằng thế"
+    },
+    {
+      "cau": "tl28-q7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gọi 'dọc' vì sóng truyền theo phương thẳng đứng, tức là so với mặt đất thay vì so với phương dao động.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tên gọi so phương dao động với phương truyền sóng, không so với mặt đất hay với dây."
+    },
+    {
+      "cau": "Điền bước còn thiếu",
+      "dap_an_sai_hap_dan": "Ghi 0,8 m cho khoảng nén – dãn, hoặc đổi tần số khi vào nước",
+      "loi_tu_duy": "Lấy nhầm $\\lambda$ thay vì $\\lambda/2$; nghĩ $v$ đổi thì $f$ cũng đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lấy nhầm $\\lambda$ thay vì $\\dfrac{\\lambda}{2}$, hay đổi luôn tần số khi vào nước?"
+    },
+    {
+      "cau": "tl28-q8",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi khoảng nén – dãn gần nhất 0,2 m là cả bước sóng, rồi tính $340/0{,}2$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra 1700 Hz là coi $0{,}2\\ \\text{m}$ là cả bước sóng."
+    }
+  ]
+}
