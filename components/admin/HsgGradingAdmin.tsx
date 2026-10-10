@@ -73,7 +73,7 @@ export default function HsgGradingAdmin() {
   const [rows, setRows] = useState<Row[]>([]);
   const [busy, setBusy] = useState("");
   const [msg, setMsg] = useState("");
-  const [provider, setProvider] = useState<"deepseek" | "haiku">("deepseek");
+  const [provider, setProvider] = useState<"sonnet" | "haiku" | "deepseek">("sonnet");
   const [creating, setCreating] = useState(false);
 
   const test = tests?.find((t) => t.id === testId) ?? null;
@@ -376,9 +376,10 @@ export default function HsgGradingAdmin() {
             <button className={btnCls} onClick={addRow}>+ Thêm học sinh</button>
             {qs.some((q) => q.type === "essay") && (
               <>
-                <select value={provider} onChange={(e) => setProvider(e.target.value as "deepseek" | "haiku")} className={`${inputCls} py-2`}>
-                  <option value="deepseek">DeepSeek</option>
-                  <option value="haiku">Claude Haiku</option>
+                <select value={provider} onChange={(e) => setProvider(e.target.value as "sonnet" | "haiku" | "deepseek")} className={`${inputCls} py-2`}>
+                  <option value="sonnet">Claude Sonnet (khuyên dùng)</option>
+                  <option value="haiku">Claude Haiku (rẻ)</option>
+                  <option value="deepseek">DeepSeek (rẻ)</option>
                 </select>
                 <button className={btnCls} disabled={!!busy} onClick={() => aiGrade()}>
                   {busy === "ai" ? "Đang chấm…" : "Chấm AI tất cả tự luận"}
