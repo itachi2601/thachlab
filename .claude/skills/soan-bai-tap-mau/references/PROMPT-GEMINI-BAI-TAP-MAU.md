@@ -1,6 +1,6 @@
 # Prompt gửi Gemini: viết BẢN NHÁP bài tập mẫu (Claude kiểm + dựng + đăng)
 
-Cách dùng: thầy dán file `gemini/gui/trung-binh-3-bai-tap-mau.txt` (do `scripts/gemini-phan-hoi.mts --xuat --lesson-id <id>` sinh ra, đã điền tên bài, lớp và **danh mục YCCĐ** vào chỗ `{YCCĐ}`) làm tin nhắn thứ 3 trong cuộc chat học sinh ảo trên gemini.google.com, sau khi Gemini đã đọc bài. Không có cuộc chat đó thì đính `theory.html` rồi dán prompt. Lưu kết quả:
+Cách dùng: thầy dán file `gemini/gui/trung-binh-3-bai-tap-mau.txt` (do `scripts/gemini-phan-hoi.mts --xuat --lesson-id <id>` sinh ra, đã điền tên bài, lớp và **danh mục YCCĐ** vào chỗ `{YCCĐ}`) làm tin nhắn thứ 3 trong cuộc chat học sinh ảo trên gemini.google.com, sau khi Gemini đã đọc bài. Không có cuộc chat đó thì đính `theory.html` rồi dán prompt. Trước khi dán, thay `{DANH_SACH_DANG}` bằng danh sách dạng từ `scripts/logs/batch-ra-soat/ket-qua/<lesson_id>.quet-dang.json` (mỗi dạng: tên, cấp độ). Lưu kết quả:
 `content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json`
 Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không đính dữ liệu học sinh.
 
@@ -8,16 +8,19 @@ Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không �
 
 ## PROMPT (sao chép từ đây)
 
-Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP **ĐÚNG 4 DẠNG** BÀI TẬP MẪU, xếp theo HỆ THỐNG BÀI TẬP BẮC CẦU 4 CẤP ĐỘ (scaffolding), cho bài "{TÊN BÀI}" (lớp {LỚP}), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm.
+Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP BÀI TẬP MẪU cho bài "{TÊN BÀI}" (lớp {LỚP}), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm, xếp theo HỆ BẮC CẦU CẤP ĐỘ 1–4.
+
+SỐ DẠNG VÀ TÊN DẠNG ĐÃ CHỐT (bước 0, do Sonnet quét từ lý thuyết và ngân hàng câu hỏi): {DANH_SACH_DANG}
+- Viết ĐÚNG các dạng trong danh sách trên, đúng thứ tự, đúng tên. Không thêm, không bớt, không đổi tên.
 
 PHẠM VI BẮT BUỘC (vi phạm là bản nháp bị loại)
-- Bốn dạng phải phủ các yêu cầu cần đạt (YCCĐ) của bài dưới đây; `yccd_de_xuat` của mỗi dạng chép NGUYÊN VĂN một dòng trong danh mục:
+- Các dạng phải phủ các yêu cầu cần đạt (YCCĐ) của bài dưới đây; `yccd_de_xuat` của mỗi dạng chép NGUYÊN VĂN một dòng trong danh mục:
 {YCCĐ}
 - Chỉ dùng khái niệm, đại lượng, công thức CÓ TRONG bài lý thuyết. Thứ bài không nhắc tới (ví dụ góc từ khuynh, thành phần thẳng đứng của địa từ khi bài chỉ nói la bàn định hướng) thì KHÔNG đưa vào, dù đúng vật lí.
 - Bài thiên về khái niệm, ít công thức: dạng 1–2 là bài định tính (xác định cực, chiều lực, đọc hình đường sức, chọn phát biểu đúng và nêu lí do); chỉ dạng 3–4 mới dùng phép tính có trong bài. Không bịa thêm công thức để "có số mà tính".
-- Bốn dạng không được cùng xoay quanh một tình huống; mỗi dạng ứng với một mục kiến thức khác nhau của bài khi có thể.
+- Các dạng không được cùng xoay quanh một tình huống; mỗi dạng ứng với một mục kiến thức khác nhau của bài khi có thể.
 
-HỆ THỐNG BẮC CẦU 4 CẤP (mỗi dạng đại diện đúng một cấp, theo thứ tự này)
+CẤP ĐỘ 1–4 (mỗi dạng gắn một cấp; cấp không giảm khi đi xuống dạng sau; số dạng cùng cấp có thể nhiều hơn một)
 - Cấp 1 · Áp dụng trực tiếp (DỄ, nhận biết): dữ kiện cho thẳng, một khái niệm/công thức, 1–2 bước. Học sinh chỉ cần nhận ra công thức và thế số.
 - Cấp 2 · Có điều kiện hoặc bẫy (TRUNG BÌNH, thông hiểu): cùng cách làm cấp 1 nhưng phải chọn đúng điều kiện áp dụng, đổi đơn vị, xét dấu/hướng, hoặc tránh một lỗi phổ biến của bài.
 - Cấp 3 · Kết hợp nhiều bước (TRUNG BÌNH–KHÁ, vận dụng): chia thành 3+ bước; một bước con chính là bài cấp 2.

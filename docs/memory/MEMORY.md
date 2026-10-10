@@ -125,7 +125,7 @@
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 6/10: 130 đề đăng (item 57=41, 59=28, 60=15 ẨN; item 58 Cuối HK1 +49 ở Bản nháp); 40 bộ LỆCH còn lại cần vá tay (7 bộ đề 0 câu); script `--nam l11` đã commit 471489729, chưa push; treo: thầy xem + bật Hiện, lời giải/nhãn chưa có, 693/701 do phiên khác chuyển vào item 58
 - [Rà soát 18 bài L12 (6/10)](project_thachlab_l12_ra_soat_2026_10_06.md) — đã sửa + vào main; treo: ghi DB, thầy đối chiếu SGK (Boyle/Charles, khí thực, bếp từ), xem 375px
 - [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick
-- [Bài tập mẫu: quét dạng trước nháp](project_thachlab_btm_quet_dang.md) — số dạng 2–6 theo ngân hàng; bài 17 nháp 5 dạng, chờ kiểm chéo lần cuối và viết lại
+- [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — L12 24 bài + L11 20–44 + L10 58–66 đã ghi DB (10/10); treo: bài 38/43/45, L10 đợt B 68–79 (hỏi phiên 96babb trước), bài 10 L12, deploy lý thuyết
 - [L11: 6 bài lý thuyết còn lại 9/10](project_thachlab_l11_6_bai_con_lai.md) — 6/6 đăng + deploy; treo video + thầy đối chiếu SGK; L10/L11/L12 đã đủ bài tương tác
 - [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài seed 10/10; CĐ01(161)+CĐ02(166) đã ghi DB; còn 12 CĐ + 3 mới + đề
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải/đề: mỗi trường hợp một dòng, không viết liền

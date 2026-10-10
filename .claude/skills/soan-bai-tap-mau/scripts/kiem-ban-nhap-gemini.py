@@ -45,11 +45,13 @@ def main():
         nonlocal warn; warn += 1; print("  !", msg)
 
     dang = j.get("dang_bai") or []
-    if len(dang) != 4:
-        print(f"! số dạng = {len(dang)} (hệ bắc cầu cần ĐÚNG 4)")
+    # Số dạng không cố định (9/10/2026): phân theo lý thuyết + ngân hàng câu hỏi của chủ đề, thường 2–6.
+    if not (2 <= len(dang) <= 6):
+        print(f"! số dạng = {len(dang)} (ngoài khoảng 2–6, kiểm lại phân dạng)")
     caps = [d.get("cap_do") for d in dang]
-    if caps != [1, 2, 3, 4][:len(dang)]:
-        print(f"✗ cap_do phải là 1,2,3,4 theo thứ tự, hiện là {caps}"); err_pre = 1
+    # Cấp độ 1–4, không giảm khi đi xuống (9/10/2026: số dạng không cố định, cấp có thể lặp lại).
+    if any(c not in (1, 2, 3, 4) for c in caps) or caps != sorted(caps):
+        print(f"✗ cap_do phải thuộc 1–4 và không giảm theo thứ tự, hiện là {caps}"); err_pre = 1
     for i, d in enumerate(dang, 1):
         print(f"\n[Dạng {i}] {d.get('label','?')}")
         for k in CAN:
