@@ -18,6 +18,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 5. `20261010800000_an_cau_cat_cut_hien_thi` — ẩn 181 câu ngân hàng lỗi hiển thị (có bảng sao lưu).
 6. `20261010150000_ta_sua_buoi_7_ngay_va_doi_anh` — TA sửa buổi 7 ngày + đổi ảnh đại diện.
 7. `20261011120000_question_bank_lint_flags` — cột `lint_flags`; xong chạy `npx tsx scripts/cap-nhat-lint-flags.mts --ghi`.
+- `20261011130000_bank_set_question_figure_service` — hàm `_svc` (service_role) cho `scripts/ghi-hinh-sau-duyet.mts` ghi hình Gemini đã duyệt.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701), `20261006150000_quiz_live` (Đố vui lớp học `/choi`, `/tro-giang/do-vui`; chưa thử 2 điện thoại).
 - Tất cả đều giờ nào chạy cũng được; rollback ở cuối file hoặc `perf/rollback/`. Sau khi chạy: `node scripts/gen-database-doc.mjs`.
 
