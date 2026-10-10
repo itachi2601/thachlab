@@ -7,7 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
-import { fetchClasses, requestClassJoin } from "@/services/classes";
+import { APPROVAL_CLASS_SLUGS, fetchClasses, requestClassJoin } from "@/services/classes";
 import type { SchoolClass } from "@/features/exams/types";
 
 const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
@@ -170,13 +170,16 @@ export default function RegisterPage() {
       if (authData.session && classId) {
         await requestClassJoin(Number(classId)).catch(() => undefined);
       }
+      const needsApproval = APPROVAL_CLASS_SLUGS.includes(classes.find((item) => String(item.id) === classId)?.slug ?? "");
 
       const next = readInternalNext();
       toast(
         "success",
         next
           ? "Đăng ký thành công. Đăng nhập để làm tiếp đề."
-          : "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.",
+          : needsApproval
+            ? "Đăng ký thành công! Yêu cầu vào lớp Học sinh giỏi & Chuyên đang chờ thầy duyệt."
+            : "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.",
       );
 
       setTimeout(() => {
@@ -293,6 +296,11 @@ export default function RegisterPage() {
               <option value="">-- Chọn khối lớp --</option>
               {classes.map((item) => <option key={item.id} value={item.id}>{item.icon ? `${item.icon} ` : ""}{item.name}</option>)}
             </select>
+            {APPROVAL_CLASS_SLUGS.includes(classes.find((item) => String(item.id) === classId)?.slug ?? "") && (
+              <p className="mt-2 text-sm text-amber-300">
+                Lớp này thầy duyệt từng em. Đăng ký xong, em chờ thầy duyệt mới vào học được.
+              </p>
+            )}
           </div>
 
           <div>

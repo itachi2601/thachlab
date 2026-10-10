@@ -185,25 +185,32 @@ export async function fetchMyClassRequest(userId: string): Promise<MyClassReques
   return { classId: best.class_id, className: schoolClass?.name ?? "", status: best.status };
 }
 
-/** Học sinh tự vào 1 khối lớp, không cần giáo viên duyệt (alpha test miễn phí, 7/10/2026). Vào lại được sau khi bị từ chối/đang chờ. */
-export async function requestClassJoin(classId: number): Promise<void> {
+/** Lớp phải được giáo viên duyệt tay (khớp cột classes.requires_approval; DB chặn học sinh tự đặt 'active'). */
+export const APPROVAL_CLASS_SLUGS = ["hsg-vat-ly-9"];
+
+/** Học sinh tự vào 1 khối lớp, không cần giáo viên duyệt (alpha test miễn phí, 7/10/2026), trừ lớp trong APPROVAL_CLASS_SLUGS: lớp đó chỉ gửi yêu cầu 'pending'. Vào lại được sau khi bị từ chối/đang chờ. */
+export async function requestClassJoin(classId: number): Promise<"active" | "pending"> {
   const supabase = getSupabase();
   const { data: auth } = await supabase.auth.getUser();
   const userId = auth.user?.id;
   if (!userId) throw new Error("Bạn cần đăng nhập.");
 
+  const { data: target } = await supabase.from("classes").select("slug").eq("id", classId).maybeSingle();
+  const status = APPROVAL_CLASS_SLUGS.includes(target?.slug ?? "") ? "pending" : "active";
+
   const { error: insertError } = await supabase
     .from("user_classes")
-    .insert({ user_id: userId, class_id: classId, status: "active" });
-  if (!insertError) return;
+    .insert({ user_id: userId, class_id: classId, status });
+  if (!insertError) return status;
   if (insertError.code !== "23505") throw insertError; // đã có dòng (ví dụ đã từng bị từ chối) -> chuyển sang cập nhật
 
   const { error: updateError } = await supabase
     .from("user_classes")
-    .update({ status: "active", requested_at: new Date().toISOString(), reviewed_by: null, reviewed_at: null })
+    .update({ status, requested_at: new Date().toISOString(), reviewed_by: null, reviewed_at: null })
     .eq("user_id", userId)
     .eq("class_id", classId);
   if (updateError) throw updateError;
+  return status;
 }
 
 export interface ClassJoinRequest {
