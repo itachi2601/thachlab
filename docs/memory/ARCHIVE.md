@@ -41,3 +41,28 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Vinh danh tuần trang chủ](project_thachlab_public_honor_board.md) — v2 (20260928180000) deploy + chạy 28/9; còn treo tài khoản test + thầy xem web
 - [Lộ trình huy hiệu theo lớp](project_thachlab_title_grade_roadmap.md) — tab "Theo lớp" trang Rank; deploy 28/9/2026, chưa test UI
 - [Lớp 12 Từ trường/Điện từ](project_thachlab_l12_tu_truong_dien_tu.md) — 12 chủ đề GV gộp 6 lesson_items, dọn quiz trùng + 24 câu ẩn 26/9; bài học rút ra → feedback_content_images_eyeball
+
+## Chuyển từ MEMORY.md ngày 10/10/2026 (dọn index)
+- [Thiết kế huy hiệu](project_thachlab_specialist_badge_design.md)
+- [Bảng tuần của lớp](project_thachlab_class_rank_board.md)
+- [GĐ 1b rank](project_thachlab_gd1b_rank.md)
+- [Welcome panel](project_thachlab_welcome_panel.md)
+- [VL12 Ch1 lý thuyết](project_thachlab_vl12_chuong1_ly_thuyet.md) — bài 3,4 CHƯA ghi DB
+- [Bài 11 VL12 thực hành](project_thachlab_l12_thuc_hanh_cam_ung_tu.md) — treo ghi DB bài 12 + 4 bài sửa hình
+- [L10 lý thuyết Ch5–7](project_thachlab_l10_ly_thuyet_ch5_7.md) — L11 còn 6 bài, L12 còn 1
+- [Thay ví dụ xưởng](project_thachlab_vi_du_doi_song_thay_xuong.md) — 53 bài xong
+- [Khả năng đọc WCAG](project_thachlab_kha_nang_doc.md) — `npm run check:a11y`
+- [Bài mẫu trống](project_thachlab_worked_examples_blank.md) — đã vá, gốc chưa xác nhận
+- [Navbar topbar](project_thachlab_navbar_topbar.md) — live; chờ kiểm 360/375px
+- [Hero tab Hình chiếu](project_thachlab_hero_hinhchieu.md) — chưa deploy
+- [Thiết kế huy hiệu](project_thachlab_specialist_badge_design.md) — design system Cowork; 96/96 + 13 BST đã có
+- [Bảng tuần của lớp](project_thachlab_class_rank_board.md) — top tuần / vị trí em; khối phân bố bậc chưa làm
+- [GĐ 1b rank – gộp main + deploy](project_thachlab_gd1b_rank.md) — #1–5 đã vào main, còn kiểm deploy + dọn docs/stash
+- [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
+- [Chương 1 VL12 — lý thuyết tương tác](project_thachlab_vl12_chuong1_ly_thuyet.md) — bài 3 Nội năng/ĐL1 (lesson 4) + bài 4 Thực hành (lesson 5) soạn 4/10/2026, CHƯA ghi DB; số đo độ dài + 6 lỗi hình SVG đã gặp
+- [Khả năng đọc WCAG 2/10](project_thachlab_kha_nang_doc.md) — P0+P1/P2 đã vào main; chuẩn docs/UI.md, `npm run check:a11y`; treo: xem ReadingZone khi đăng nhập, text-violet theme sáng
+- [Bài mẫu trống dù DB còn (4/10)](project_thachlab_worked_examples_blank.md) — file tĩnh không chứa lời giải, lượt Supabase hỏng → trống; đã vá + deploy 5967310a8; nguyên nhân gốc trên máy thầy chưa xác nhận
+- [Top bar Navbar 4/10](project_thachlab_navbar_topbar.md) — sửa N2/D2/M2 + dropdown "Thêm", đã live 2026-10-04 (e1c8e7651, a849aa18c); chờ kiểm khi đăng nhập ở 360/375px
+- [Hero tab 4 "Hình chiếu"](project_thachlab_hero_hinhchieu.md) — bóng của M quay đều đồng nhịp với con lắc lò xo nằm ngang trên CÙNG một trục x (4/10); 34 kiểm toán + ảnh 360/375/1440, JS tải đầu trang chủ không đổi (216 KB gzip); quyết định đã chốt: "đồng nhịp ≠ trùng vị trí" (khớp ω chỉ làm hiệu pha THÔI TĂNG) · treo: chưa deploy, chưa nhúng vào bài 1 lớp 11 (repo chưa có cơ chế mount mô phỏng trong ContentHtml)
+- [Rà soát 18 bài L12 (6/10)](project_thachlab_l12_ra_soat_2026_10_06.md) — đã sửa + vào main; treo: ghi DB, thầy đối chiếu SGK (Boyle/Charles, khí thực, bếp từ), xem 375px
+- [L11: 6 bài lý thuyết còn lại 9/10](project_thachlab_l11_6_bai_con_lai.md) — 6/6 đăng + deploy; treo video + thầy đối chiếu SGK; L10/L11/L12 đã đủ bài tương tác

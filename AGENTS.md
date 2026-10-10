@@ -260,3 +260,9 @@ Mọi đường vào một trang có `RequireAuth` từ bên ngoài (mã QR dán
 - `?next=` phải giữ **cả phần query** (`/kiem-tra/lam/?id=770`) — mất `?id=` là mở sai trang; `/dang-nhap` chỉ nhận đường dẫn nội bộ bắt đầu bằng một `/`.
 - Đổi tham số của một trang đích (ví dụ `/kiem-tra/lam` đổi cách nhận mã đề) thì phải sửa **cùng lúc** mọi nơi sinh link tới nó — mã QR và mục quét học sinh gom ở `lib/exam-link.ts`.
 - Sinh mã QR/link in ra giấy mà không kiểm bằng cách **giải mã lại** thì coi như chưa kiểm: sai cũng không có lỗi build nào báo. Mẫu: `npx tsx scripts/kiem-qr.mts`.
+
+# Giữ file nạp-mỗi-phiên gọn (thầy chốt 10/10/2026)
+`docs/STATE.md` (<15 KB), `docs/memory/MEMORY.md` (<10 KB), `AGENTS.md` nạp mỗi phiên nên mỗi byte thừa là token mất ở MỌI phiên sau.
+- Khi chốt phiên (`/ban-giao`, `/xong-viec`): mục nào trong STATE.md đã xong/đã chạy → chuyển **nguyên văn** sang `docs/STATE-archive.md`, STATE.md chỉ giữ hiện trạng + việc ĐANG CHỜ, mỗi việc 1–2 dòng (chi tiết để ở `docs/memory/project_*.md`).
+- MEMORY.md: mỗi file memory đúng MỘT dòng, một câu hook; không dán lại tóm tắt nhiều câu; không lặp file đã có; việc xong → chuyển dòng sang `docs/memory/ARCHIVE.md`.
+- Thấy hai file trên vượt hạn mức thì dọn ngay trước khi làm tiếp (không cần hỏi).
