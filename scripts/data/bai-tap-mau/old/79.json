@@ -1,0 +1,18 @@
+{
+ "lesson_id": 79,
+ "item_id": 263,
+ "questions": [
+  {
+   "label": "Dạng 1: Bài tập về khối lượng riêng. Sự cân bằng của vật, hệ vật trong chất lỏng",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\">Áp dụng công thức lực đẩy Archimedes theo từng trường hợp cụ thể: $F_A = d.V = d.S.h$, trong đó $F_A$ là lực đẩy Archimedes (N), $d$ là trọng lượng riêng của chất lỏng (khí) bị chiếm chỗ (N/$m^3$), $S$ là tiết diện của vật ($m^2$), $h$ là phần chiều cao của vật chìm trong chất lỏng (m), $V$ là phần thể tích chìm trong chất lỏng.</p>\n<ul class=\"list-disc list-inside my-2 ml-4\">\n<li class=\"my-1\">Bước 1: Dùng định luật II Newton cho các lực tác dụng lên vật khi cân bằng tại một vị trí.</li>\n<li class=\"my-1\">Bước 2: Áp dụng công thức $F_A = d.V$ để xác định đại lượng cần tìm.</li>\n</ul>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ:</strong> Một quả cầu có thể tích 20 $cm^3$ lơ lửng trong nước, khối lượng riêng của nước là 1 g/$cm^3$, lấy g = 9,8 m/$s^2$. Lực đẩy Archimedes tác dụng lên quả cầu là bao nhiêu?</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> $F_A = d.V = 1000.9,8.20.10^{-6} = 0,196$ N.</p>"
+  },
+  {
+   "label": "Dạng 2: Cân bằng của vật và hệ vật trong hai hay nhiều chất lỏng không hòa tan",
+   "body_html": "<ul class=\"list-disc list-inside my-2 ml-4\">\n<li class=\"my-1\">Bước 1: Dùng định luật Newton cho các lực tác dụng lên vật khi cân bằng tại một vị trí: $\\vec{F_1} + \\vec{F_2} + ... + \\vec{F_{A1}} + \\vec{F_{A2}} + ... = \\vec{0}$.</li>\n<li class=\"my-1\">Bước 2: Áp dụng công thức $F_A = d.V$ cho từng lớp chất lỏng để xác định đại lượng cần tìm.</li>\n</ul>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ:</strong> Treo một vật bằng kim loại vào lực kế rồi nhúng chìm vào một bình tràn đựng nước thì lực kế chỉ 8,5 N, đồng thời lượng nước tràn ra có thể tích 0,5 lít. Biết trọng lượng riêng của nước là 10000 N/$m^3$. a) Vật có khối lượng bao nhiêu? b) Tìm trọng lượng riêng của vật.</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p>\n<p class=\"text-base leading-relaxed my-2\">a) Thể tích nước tràn ra đúng bằng thể tích vật chiếm chỗ: $V = 0,5$ lít $= 0,0005\\ m^3$. Lực đẩy Archimedes: $F_A = d_n.V = 10000.0,0005 = 5$ N. Trọng lượng vật: $P = F + F_A = 8,5 + 5 = 13,5$ N $\\Rightarrow m = 1,35$ kg.</p>\n<p class=\"text-base leading-relaxed my-2\">b) Trọng lượng riêng của vật: $d = \\dfrac{P}{V} = 2,7.10^4$ N/$m^3$ $\\Rightarrow$ vật làm bằng nhôm.</p>"
+  },
+  {
+   "label": "Dạng 3: Áp suất chất lỏng",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ:</strong> Một thùng hình trụ cao 1,5 m đựng đầy nước. Biết trọng lượng riêng của nước là 10000 N/$m^3$; áp suất khí quyển là $10^5$ Pa. Tính áp suất tại: a) đáy thùng; b) một điểm A cách đáy thùng 40 cm.</p>\n<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p>\n<p class=\"text-base leading-relaxed my-2\">a) Áp suất của nước tác dụng lên đáy thùng: $p = d_n.h = 10000.1,5 = 15000$ Pa. Áp suất tuyệt đối tại đáy thùng: $p_D = p_a + d.h = 10^5 + 15000 = 115000$ Pa.</p>\n<p class=\"text-base leading-relaxed my-2\">b) Khoảng cách từ A đến mặt thoáng: $h_1 = h - \\Delta h = 1,5 - 0,4 = 1,1$ m. Áp suất của nước tại A: $p_1 = h_1.d_n = 1,1.10000 = 11000$ Pa. Áp suất tuyệt đối tại A: $p_A = p_a + p_1 = 10^5 + 11000 = 111000$ Pa.</p>"
+  }
+ ]
+}

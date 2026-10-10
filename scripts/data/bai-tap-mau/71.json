@@ -1,0 +1,547 @@
+{
+ "lesson_id": 71,
+ "lesson_title": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tính cơ năng theo mốc thế năng đã chọn",
+   "topic": "Cơ năng và định luật bảo toàn cơ năng",
+   "problem_html": "<p>Hòn đá khối lượng $0{,}20\\ \\text{kg}$ được ném thẳng đứng lên từ một cửa sổ cách mặt đất $6{,}0\\ \\text{m}$. Đang đi lên, hòn đá qua điểm $P$ cách mặt đất $8{,}0\\ \\text{m}$ với tốc độ $3{,}0\\ \\text{m/s}$. Mái sân thượng của toà nhà cao $10\\ \\text{m}$ so với mặt đất. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<p>Tính động năng, thế năng và cơ năng của hòn đá tại $P$ khi chọn mốc thế năng ở:</p>\n<ol type=\"a\"><li>mặt đất;</li><li>cửa sổ;</li><li>mái sân thượng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Hòn đá ném thẳng đứng lên từ cửa sổ, qua điểm P rồi rơi xuống đất\"><rect x=\"16\" y=\"250.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"40\" y=\"50\" width=\"110\" height=\"200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"128\" y=\"118\" width=\"22\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"150.0\" y1=\"50.0\" x2=\"262.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"54.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mái sân thượng: 10 m</text><line x1=\"150.0\" y1=\"90.0\" x2=\"262.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"94.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">P: 8,0 m</text><line x1=\"150.0\" y1=\"130.0\" x2=\"262.0\" y2=\"130.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"134.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">cửa sổ: 6,0 m</text><text x=\"270.0\" y=\"112.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">P</tspan><tspan dy=\"-4\"> = 3,0 m/s</tspan></text><text x=\"270\" y=\"278\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất</text><circle cx=\"170\" cy=\"90\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"170.0\" cy=\"130.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"130.0;117.0;106.0;97.0;90.0;85.0;82.0;81.0;82.0;85.0;90.0;97.0;106.0;117.0;130.0;145.0;162.0;181.0;202.0;225.0;250.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ném thẳng đứng lên từ cửa sổ, chạy đúng thời gian thật (khoảng 2 s). Độ cao vẽ đúng tỉ lệ. Tốc độ tại P ghi trên hình.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng là tổng của động năng và thế năng trọng trường, đơn vị jun (J).</li><li>$W=W_\\text{d}+W_\\text{t}=\\dfrac12mv^2+mgz$.</li><li>$z$ đo từ mốc thế năng (trục hướng lên); điểm nằm dưới mốc thì $z\\lt0$.</li><li>⚠ <strong>Điều kiện:</strong> thế năng và cơ năng phụ thuộc mốc; động năng không phụ thuộc mốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Động năng tại $P$</span></p><p>Động năng chỉ phụ thuộc $m$ và $v$, không phụ thuộc mốc:</p>$$W_\\text{d}=\\dfrac12mv^2=\\dfrac12\\cdot0{,}20\\cdot3{,}0^2$$<div class=\"bt-ans\">$$W_\\text{d}=0{,}90\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Mốc ở mặt đất</span></p><p>Mốc ở mặt đất nên $z_P=8{,}0$ m:</p>$$W_\\text{t}=mgz_P=0{,}20\\cdot10\\cdot8{,}0=16\\ \\text{J}$$$$W=W_\\text{d}+W_\\text{t}=0{,}90+16$$<div class=\"bt-ans\">$$W=16{,}9\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Mốc ở cửa sổ</span></p><p>Mốc ở cửa sổ: $P$ cao hơn mốc $8{,}0-6{,}0=2{,}0$ m nên $z_P=2{,}0$ m:</p>$$W_\\text{t}=mgz_P=0{,}20\\cdot10\\cdot2{,}0=4{,}0\\ \\text{J}$$$$W=W_\\text{d}+W_\\text{t}=0{,}90+4{,}0$$<div class=\"bt-ans\">$$W=4{,}9\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Mốc ở mái sân thượng</span></p><p>Mái cao $10$ m, $P$ cao $8{,}0$ m: $P$ nằm dưới mốc $2{,}0$ m nên $z_P=-2{,}0$ m:</p>$$W_\\text{t}=mgz_P=0{,}20\\cdot10\\cdot(-2{,}0)=-4{,}0\\ \\text{J}$$$$W=W_\\text{d}+W_\\text{t}=0{,}90-4{,}0$$<div class=\"bt-ans\">$$W=-3{,}1\\ \\text{J}$$</div><p>Cơ năng âm không sai: nó chỉ cho biết $P$ nằm dưới mốc và động năng nhỏ hơn độ lớn thế năng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Động năng giữ nguyên $0{,}90$ J ở cả ba mốc; thế năng và cơ năng đổi theo mốc.</p>$$16{,}9-4{,}9=12\\ \\text{J}=0{,}20\\cdot10\\cdot6{,}0$$$$16{,}9-(-3{,}1)=20\\ \\text{J}=0{,}20\\cdot10\\cdot10$$<p>Hiệu hai cơ năng bằng $mg$ nhân khoảng cách giữa hai mốc ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) mặt đất: $W_\\text{d}=0{,}90\\ \\text{J}$ · $W_\\text{t}=16\\ \\text{J}$ · $W=16{,}9\\ \\text{J}$</p><p>b) cửa sổ: $W_\\text{d}=0{,}90\\ \\text{J}$ · $W_\\text{t}=4{,}0\\ \\text{J}$ · $W=4{,}9\\ \\text{J}$</p><p>c) mái sân thượng: $W_\\text{d}=0{,}90\\ \\text{J}$ · $W_\\text{t}=-4{,}0\\ \\text{J}$ · $W=-3{,}1\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vị trí, tốc độ và mốc thế năng</strong> → tính động năng, rồi thế năng với $z$ đo từ mốc; cơ năng là tổng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Hòn đá đang đi lên qua điểm P cách mặt đất 8 mét\"><rect x=\"16\" y=\"250.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"40\" y=\"50\" width=\"110\" height=\"200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"128\" y=\"118\" width=\"22\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"150.0\" y1=\"50.0\" x2=\"262.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"54.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mái sân thượng: 10 m</text><line x1=\"150.0\" y1=\"90.0\" x2=\"262.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"94.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">P: 8,0 m</text><line x1=\"150.0\" y1=\"130.0\" x2=\"262.0\" y2=\"130.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"270\" y=\"134.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">cửa sổ: 6,0 m</text><text x=\"270.0\" y=\"112.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">P</tspan><tspan dy=\"-4\"> = 3,0 m/s</tspan></text><text x=\"270\" y=\"278\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất</text><circle cx=\"170\" cy=\"90\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"170\" cy=\"90\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"170\" y1=\"83.0\" x2=\"170.0\" y2=\"59.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M164.2,69.0 L170.0,59.0 L175.8,69.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></svg><figcaption>Dữ kiện: ba mốc có thể chọn — mặt đất, cửa sổ, mái sân thượng. Độ cao vẽ đúng tỉ lệ. Mũi tên là vận tốc tại P (đi lên).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Hòn đá khối lượng $0{,}20$ kg”</td><td>$m=0{,}20\\ \\text{kg}$</td><td>Khối lượng có mặt ở cả động năng và thế năng</td></tr><tr><td>“ném thẳng đứng lên từ một cửa sổ cách mặt đất $6{,}0$ m”</td><td>Cửa sổ cao $6{,}0\\ \\text{m}$ so với mặt đất</td><td>Độ cao của một điểm phải đo từ mốc thế năng</td></tr><tr><td>“qua điểm $P$ cách mặt đất $8{,}0$ m với tốc độ $3{,}0$ m/s”</td><td>$z_P=8{,}0\\ \\text{m}$ (so với mặt đất); $v_P=3{,}0\\ \\text{m/s}$</td><td>Động năng $\\dfrac12mv^2$ · thế năng $mgz$</td></tr><tr><td>“mái sân thượng của toà nhà cao $10$ m so với mặt đất”</td><td>Mái cao $10\\ \\text{m}$ so với mặt đất</td><td>Mốc thứ ba, nằm ở phía trên $P$</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Thế năng trọng trường $mgz$</td></tr><tr><td>“khi chọn mốc thế năng ở: a) mặt đất; b) cửa sổ; c) mái sân thượng”</td><td>Ba mốc, cách mặt đất lần lượt $0$; $6{,}0$ m; $10$ m</td><td>⚠ Thế năng và cơ năng phụ thuộc mốc, động năng thì không; $z$ luôn đo từ mốc đã chọn</td></tr><tr><td>“Tính động năng, thế năng và cơ năng tại $P$”</td><td>Cần $W_\\text{d}$, $W_\\text{t}$, $W$ (J)</td><td>$W=W_\\text{d}+W_\\text{t}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vị trí, tốc độ</b> và <b>mốc thế năng</b> → nghĩ tới <b>W = ½mv² + mgz</b>, z đo từ mốc.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Động năng tại $P$",
+     "hoi": "Động năng của hòn đá tại $P$ bằng bao nhiêu?",
+     "dap_so": 0.9,
+     "sai_so": 0.02,
+     "don_vi": "J",
+     "loi_hay_gap": "Thiếu hệ số $\\dfrac12$, hoặc quên bình phương tốc độ."
+    },
+    {
+     "tieu_de": "Mốc ở mặt đất",
+     "hoi": "Khi chọn mốc ở mặt đất, cơ năng của hòn đá tại $P$ bằng bao nhiêu?",
+     "dap_so": 16.9,
+     "sai_so": 0.1,
+     "don_vi": "J",
+     "loi_hay_gap": "Chỉ tính thế năng mà bỏ động năng, hoặc đo độ cao của $P$ từ cửa sổ trong khi mốc là mặt đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng động năng với thế năng tính theo độ cao của $P$ so với mặt đất",
+       "dung": true
+      },
+      {
+       "text": "Cộng động năng với thế năng tính theo độ cao của $P$ so với cửa sổ",
+       "dung": false,
+       "vi_sao": "Mốc đã chọn là mặt đất nên $z$ phải đo từ mặt đất; cửa sổ chỉ là nơi ném."
+      },
+      {
+       "text": "Lấy thế năng trừ động năng",
+       "dung": false,
+       "vi_sao": "Cơ năng là tổng của động năng và thế năng, không phải hiệu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mốc ở cửa sổ",
+     "hoi": "Khi chọn mốc ở cửa sổ, cơ năng của hòn đá tại $P$ bằng bao nhiêu?",
+     "dap_so": 4.9,
+     "sai_so": 0.1,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên độ cao đo từ mặt đất dù mốc đã dời.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại độ cao của $P$ so với cửa sổ rồi cộng với động năng",
+       "dung": true
+      },
+      {
+       "text": "Giữ độ cao của $P$ đo từ mặt đất vì $P$ không đổi chỗ",
+       "dung": false,
+       "vi_sao": "Vị trí thật không đổi nhưng $z$ đo từ mốc; mốc dời thì $z$ đổi."
+      },
+      {
+       "text": "Giữ nguyên cơ năng vì động năng không đổi",
+       "dung": false,
+       "vi_sao": "Thế năng đổi theo mốc nên cơ năng cũng đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mốc ở mái sân thượng",
+     "hoi": "Khi chọn mốc ở mái sân thượng, cơ năng của hòn đá tại $P$ bằng bao nhiêu?",
+     "dap_so": -3.1,
+     "sai_so": 0.1,
+     "don_vi": "J",
+     "loi_hay_gap": "Tính $z$ của $P$ so với mái nhưng thế sai vào công thức thế năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $z$ của $P$ so với mái rồi cộng với động năng",
+       "dung": true
+      },
+      {
+       "text": "Lấy $z=+2{,}0$ m vì khoảng cách luôn dương",
+       "dung": false,
+       "vi_sao": "$z$ là toạ độ so với mốc, không phải khoảng cách; điểm nằm dưới mốc thì $z$ mang dấu khác và thế năng cũng vậy."
+      },
+      {
+       "text": "Cho cơ năng bằng động năng vì $P$ ở gần mái",
+       "dung": false,
+       "vi_sao": "Thế năng chỉ bằng $0$ khi $P$ trùng mốc; ở gần mốc vẫn phải tính theo $z$ thật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Bảo toàn cơ năng: tìm tốc độ và độ cao",
+   "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+   "problem_html": "<p>Hòn bi nhỏ khối lượng $50\\ \\text{g}$ được thả không vận tốc đầu từ đỉnh $A$ của một máng cong nhẵn. Điểm $A$ cao $2{,}45\\ \\text{m}$ so với chân máng $O$. Bỏ qua mọi lực cản, lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính tốc độ của bi tại $O$.</li>\n<li>Tính tốc độ của bi tại điểm $M$ cao $1{,}2\\ \\text{m}$ so với chân máng.</li>\n<li>Tại một điểm $N$ trên máng, tốc độ của bi bằng $3{,}0\\ \\text{m/s}$. Tính độ cao của $N$ so với chân máng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Hòn bi trượt từ đỉnh A xuống chân máng cong nhẵn rồi chạy tiếp trên sàn ngang\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\" points=\"130.0,72.0 131.9,75.2 133.7,78.4 135.6,81.6 137.5,84.6 139.3,87.7 141.2,90.6 143.1,93.5 144.9,96.4 146.8,99.2 148.7,101.9 150.5,104.6 152.4,107.3 154.3,109.9 156.1,112.4 158.0,114.9 159.9,117.3 161.7,119.7 163.6,122.0 165.5,124.2 167.3,126.4 169.2,128.6 171.1,130.7 172.9,132.7 174.8,134.7 176.7,136.7 178.5,138.5 180.4,140.4 182.3,142.1 184.1,143.8 186.0,145.5 187.9,147.1 189.7,148.7 191.6,150.2 193.5,151.6 195.3,153.0 197.2,154.3 199.1,155.6 200.9,156.8 202.8,158.0 204.7,159.1 206.5,160.2 208.4,161.2 210.3,162.1 212.1,163.0 214.0,163.9 215.9,164.7 217.7,165.4 219.6,166.1 221.5,166.7 223.3,167.3 225.2,167.8 227.1,168.3 228.9,168.7 230.8,169.0 232.7,169.3 234.5,169.6 236.4,169.8 238.3,169.9 240.1,170.0 242.0,170.0\"/><line x1=\"242.0\" y1=\"170.0\" x2=\"400.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"130.0\" y1=\"170.0\" x2=\"130.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\"/><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"100.0\" x2=\"106.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"170.0\" x2=\"106.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"72.0\" x2=\"106.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"122.0\" x2=\"106.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"72.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"106.0\" y1=\"72.0\" x2=\"130.0\" y2=\"72.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><line x1=\"106.0\" y1=\"122.0\" x2=\"163.6\" y2=\"122.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><text x=\"92\" y=\"76.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">A: 2,45 m</text><text x=\"92\" y=\"126.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M: 1,2 m</text><text x=\"92\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chân máng O</text><circle cx=\"130.0\" cy=\"72.0\" r=\"4.5\" fill=\"#f87171\"/><circle cx=\"163.6\" cy=\"122.0\" r=\"4.5\" fill=\"#f87171\"/><text x=\"140\" y=\"66.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"173.6\" y=\"114.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"135.6\" cy=\"68.8\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"135.6;135.9;136.5;137.6;139.1;141.0;143.5;146.4;149.8;153.8;158.4;163.6;169.5;176.1;183.6;192.1;201.5;212.1;223.6;235.9;249.2;263.2;277.2\" dur=\"2.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"68.8;69.1;70.3;72.1;74.7;78.0;82.0;86.7;92.0;98.0;104.5;111.5;118.9;126.6;134.4;142.2;149.4;155.8;160.6;163.2;163.5;163.5;163.5\" dur=\"2.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: bi thả nhẹ tại A, trượt không ma sát; chạy chậm 2 lần so với thực tế. Độ cao vẽ đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng $W=W_\\text{d}+W_\\text{t}=\\dfrac12mv^2+mgz$.</li><li><strong>Định luật:</strong> chỉ trọng lực sinh công thì cơ năng không đổi, $W_1=W_2$.</li><li>$\\dfrac12mv_1^2+mgz_1=\\dfrac12mv_2^2+mgz_2$; khối lượng $m$ có ở hai vế nên triệt tiêu.</li><li>⚠ <strong>Điều kiện:</strong> máng nhẵn, bỏ qua lực cản; phản lực của máng vuông góc đường đi nên không sinh công.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng tại $A$</span></p><p>Mốc ở chân máng $O$. Đổi $m=50\\ \\text{g}=0{,}050\\ \\text{kg}$. Tại $A$ bi nghỉ nên chỉ có thế năng:</p>$$W_A=mgz_A=0{,}050\\cdot10\\cdot2{,}45$$<div class=\"bt-ans\">$$W_A=1{,}225\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ tại $O$</span></p><p>Máng nhẵn, bỏ qua lực cản nên $W_O=W_A$. Tại $O$: $z_O=0$, chỉ còn động năng:</p>$$\\dfrac12mv_O^2=W_A$$$$v_O=\\sqrt{\\dfrac{2W_A}{m}}=\\sqrt{\\dfrac{2\\cdot1{,}225}{0{,}050}}=\\sqrt{49}$$<div class=\"bt-ans\">$$v_O=7{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ tại $M$</span></p><p>Tại $M$ bi còn thế năng:</p>$$W_\\text{t}(M)=mgz_M=0{,}050\\cdot10\\cdot1{,}2=0{,}60\\ \\text{J}$$$$W_\\text{d}(M)=W_A-W_\\text{t}(M)=1{,}225-0{,}60=0{,}625\\ \\text{J}$$$$v_M=\\sqrt{\\dfrac{2W_\\text{d}(M)}{m}}=\\sqrt{\\dfrac{2\\cdot0{,}625}{0{,}050}}=\\sqrt{25}$$<div class=\"bt-ans\">$$v_M=5{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao của $N$</span></p><p>Tại $N$: $v_N=3{,}0$ m/s, chưa biết $z_N$. Viết $W_N=W_A$:</p>$$\\dfrac12mv_N^2+mgz_N=W_A$$$$\\dfrac12\\cdot0{,}050\\cdot3{,}0^2+0{,}050\\cdot10\\cdot z_N=1{,}225$$$$0{,}225+0{,}50\\,z_N=1{,}225\\ \\Rightarrow\\ z_N=\\dfrac{1{,}000}{0{,}50}$$<div class=\"bt-ans\">$$z_N=2{,}0\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Càng xuống thấp, tốc độ càng lớn: $z_N\\gt z_M\\gt z_O$ ứng với $v_N\\lt v_M\\lt v_O$ ✓.</p>$$v_O=\\sqrt{2gz_A}=\\sqrt{2\\cdot10\\cdot2{,}45}=\\sqrt{49}=7{,}0\\ \\text{m/s}$$<p>Cách này không cần khối lượng vì $m$ triệt tiêu ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_O=7{,}0\\ \\text{m/s}$</p><p>b) $v_M=5{,}0\\ \\text{m/s}$</p><p>c) $z_N=2{,}0\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: máng <strong>nhẵn, bỏ qua lực cản</strong>, đề cho độ cao hoặc tốc độ ở hai vị trí → viết $W_1=W_2$, khối lượng triệt tiêu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Máng cong nhẵn: A cao 2,45 m, M cao 1,2 m so với chân máng O\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\" points=\"130.0,72.0 131.9,75.2 133.7,78.4 135.6,81.6 137.5,84.6 139.3,87.7 141.2,90.6 143.1,93.5 144.9,96.4 146.8,99.2 148.7,101.9 150.5,104.6 152.4,107.3 154.3,109.9 156.1,112.4 158.0,114.9 159.9,117.3 161.7,119.7 163.6,122.0 165.5,124.2 167.3,126.4 169.2,128.6 171.1,130.7 172.9,132.7 174.8,134.7 176.7,136.7 178.5,138.5 180.4,140.4 182.3,142.1 184.1,143.8 186.0,145.5 187.9,147.1 189.7,148.7 191.6,150.2 193.5,151.6 195.3,153.0 197.2,154.3 199.1,155.6 200.9,156.8 202.8,158.0 204.7,159.1 206.5,160.2 208.4,161.2 210.3,162.1 212.1,163.0 214.0,163.9 215.9,164.7 217.7,165.4 219.6,166.1 221.5,166.7 223.3,167.3 225.2,167.8 227.1,168.3 228.9,168.7 230.8,169.0 232.7,169.3 234.5,169.6 236.4,169.8 238.3,169.9 240.1,170.0 242.0,170.0\"/><line x1=\"242.0\" y1=\"170.0\" x2=\"400.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"130.0\" y1=\"170.0\" x2=\"130.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\"/><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"100.0\" x2=\"106.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"170.0\" x2=\"106.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"72.0\" x2=\"106.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"94.0\" y1=\"122.0\" x2=\"106.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"72.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"106.0\" y1=\"72.0\" x2=\"130.0\" y2=\"72.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><line x1=\"106.0\" y1=\"122.0\" x2=\"163.6\" y2=\"122.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><text x=\"92\" y=\"76.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">A: 2,45 m</text><text x=\"92\" y=\"126.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">M: 1,2 m</text><text x=\"92\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">chân máng O</text><circle cx=\"130.0\" cy=\"72.0\" r=\"4.5\" fill=\"#f87171\"/><circle cx=\"163.6\" cy=\"122.0\" r=\"4.5\" fill=\"#f87171\"/><text x=\"140\" y=\"66.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"173.6\" y=\"114.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"137.0\" cy=\"65.0\" r=\"5.5\" fill=\"#34d399\"/></svg><figcaption>Dữ kiện: độ cao của A và M so với chân máng O (mốc thế năng). Điểm N ở ý c chưa được đánh dấu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Hòn bi nhỏ khối lượng $50$ g”</td><td>$m=50\\ \\text{g}=0{,}050\\ \\text{kg}$</td><td>Đổi sang kilôgam trước khi tính</td></tr><tr><td>“thả không vận tốc đầu từ đỉnh $A$ của một máng cong nhẵn”</td><td>$v_A=0$</td><td>⚠ Máng nhẵn: chỉ trọng lực sinh công; phản lực vuông góc đường đi không sinh công</td></tr><tr><td>“$A$ cao $2{,}45$ m so với chân máng $O$”</td><td>$z_A=2{,}45\\ \\text{m}$; mốc ở $O$ nên $z_O=0$</td><td>Độ cao đo từ mốc thế năng</td></tr><tr><td>“Bỏ qua mọi lực cản, lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>⚠ Bỏ qua lực cản: được dùng $W_1=W_2$ giữa hai vị trí bất kì</td></tr><tr><td>“a) tốc độ của bi tại $O$”</td><td>Cần $v_O$ (m/s)</td><td>$W_A=W_O$</td></tr><tr><td>“b) điểm $M$ cao $1{,}2$ m so với chân máng”</td><td>$z_M=1{,}2\\ \\text{m}$; cần $v_M$ (m/s)</td><td>$W_A=W_M$, với $W_M=W_\\text{d}+W_\\text{t}$</td></tr><tr><td>“c) tại một điểm $N$, tốc độ của bi bằng $3{,}0$ m/s”</td><td>$v_N=3{,}0\\ \\text{m/s}$; cần $z_N$ (m)</td><td>$W_A=W_N$, rút $z_N$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bỏ qua ma sát</b> và <b>độ cao hai vị trí</b> → nghĩ tới <b>W₁ = W₂</b>, khối lượng triệt tiêu.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng tại $A$",
+     "hoi": "Cơ năng của bi tại $A$ (mốc ở chân máng) bằng bao nhiêu?",
+     "dap_so": 1.225,
+     "sai_so": 0.01,
+     "don_vi": "J",
+     "loi_hay_gap": "Đưa khối lượng vào công thức khi chưa đổi gam sang kilôgam."
+    },
+    {
+     "tieu_de": "Tốc độ tại $O$",
+     "hoi": "Tốc độ của bi tại $O$ bằng bao nhiêu?",
+     "dap_so": 7.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Quên khai căn, hoặc quên hệ số $2$ khi rút tốc độ từ $\\dfrac12mv^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho cơ năng tại $O$ bằng cơ năng tại $A$; tại $O$ chỉ còn động năng",
+       "dung": true
+      },
+      {
+       "text": "Dùng gia tốc $g\\sin\\alpha$ và độ dài máng để tính",
+       "dung": false,
+       "vi_sao": "Máng cong nên gia tốc đổi liên tục, đề lại không cho độ dài hay hình dạng máng; bảo toàn cơ năng chỉ cần độ cao."
+      },
+      {
+       "text": "Cho thế năng tại $O$ bằng thế năng tại $A$",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc độ cao, mà $A$ và $O$ khác độ cao."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ tại $M$",
+     "hoi": "Tốc độ của bi tại $M$ bằng bao nhiêu?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Bỏ thế năng tại $M$, hoặc dùng sai độ cao khi tính động năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết cơ năng tại $M$ gồm động năng và thế năng, cho bằng cơ năng tại $A$",
+       "dung": true
+      },
+      {
+       "text": "Cho tốc độ tại $M$ bằng nửa tốc độ tại $O$ vì $M$ ở khoảng nửa độ cao",
+       "dung": false,
+       "vi_sao": "Tốc độ không tỉ lệ với độ cao: động năng tỉ lệ với $v^2$ và bằng phần thế năng đã giảm."
+      },
+      {
+       "text": "Bỏ thế năng tại $M$ vì bi đang chuyển động",
+       "dung": false,
+       "vi_sao": "$M$ vẫn cao hơn chân máng nên bi còn thế năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao của $N$",
+     "hoi": "Điểm $N$ cách chân máng bao nhiêu?",
+     "dap_so": 2.0,
+     "sai_so": 0.02,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng $z_N=\\dfrac{v_N^2}{2g}$ như thể bi bắt đầu chuyển động từ chân máng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết cơ năng tại $N$ gồm động năng và thế năng, cho bằng cơ năng tại $A$, rồi rút $z_N$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $z_N=\\dfrac{v_N^2}{2g}$",
+       "dung": false,
+       "vi_sao": "Đại lượng $\\dfrac{v_N^2}{2g}$ là phần độ cao đã giảm từ $A$ xuống $N$, chưa phải độ cao của $N$."
+      },
+      {
+       "text": "Cho $z_N=z_A\\cdot\\dfrac{v_N}{v_O}$",
+       "dung": false,
+       "vi_sao": "Độ cao không tỉ lệ thuận với tốc độ; phải so sánh năng lượng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Điều kiện bảo toàn và vị trí động năng bằng thế năng",
+   "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+   "problem_html": "<p>Hòn đá khối lượng $0{,}40\\ \\text{kg}$ được ném thẳng đứng lên từ mặt đất với tốc độ $12\\ \\text{m/s}$. Bỏ qua sức cản của không khí, lấy $g=10\\ \\text{m/s}^2$ và chọn mốc thế năng ở mặt đất.</p>\n<ol type=\"a\"><li>Trong lúc đi lên, cơ năng của hòn đá thay đổi thế nào? Giải thích.</li>\n<li>Tính cơ năng của hòn đá.</li>\n<li>Tìm độ cao tại đó động năng bằng thế năng.</li>\n<li>Tính động năng của hòn đá khi nó ở độ cao $5{,}0\\ \\text{m}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hòn đá ném thẳng đứng lên từ mặt đất rồi rơi xuống\"><rect x=\"16\" y=\"225.5\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"248\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất (mốc thế năng)</text><line x1=\"144.0\" y1=\"120.0\" x2=\"300.0\" y2=\"120.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"308\" y=\"124.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">độ cao 5,0 m</text><line x1=\"130\" y1=\"212\" x2=\"130.0\" y2=\"176.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M124.2,186.0 L130.0,176.0 L135.8,186.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"140.0\" y=\"198.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">0</tspan><tspan dy=\"-4\"> = 12 m/s</tspan></text><circle cx=\"130.0\" cy=\"220.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0;130.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"220.0;197.0;176.0;157.0;140.0;125.0;112.0;101.0;92.0;85.0;80.0;77.0;76.0;77.0;80.0;85.0;92.0;101.0;112.0;125.0;140.0;157.0;176.0;197.0;220.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ném thẳng đứng lên từ mặt đất, chạy đúng thời gian thật (khoảng 2,4 s). Không ghi thang độ cao.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng $W=W_\\text{d}+W_\\text{t}$.</li><li><strong>Định luật:</strong> chỉ trọng lực sinh công thì cơ năng không đổi, $W_1=W_2$.</li><li>Động năng giảm bao nhiêu thì thế năng tăng bấy nhiêu, và ngược lại.</li><li>$W_\\text{d}=W_\\text{t}$ thì $W=2W_\\text{t}$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua sức cản; tốc độ thay đổi không có nghĩa là cơ năng thay đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điều kiện áp dụng</span></p><p>Đã bỏ qua sức cản nên trong lúc bay hòn đá chỉ chịu trọng lực.</p><p>Chỉ trọng lực sinh công nên cơ năng <strong>không đổi</strong>: động năng giảm bao nhiêu thì thế năng tăng bấy nhiêu.</p><div class=\"bt-ans\"><p>Cơ năng không đổi trong suốt chuyển động.</p></div><p>Tốc độ giảm chỉ cho biết động năng giảm, không cho biết cơ năng giảm.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cơ năng của hòn đá</span></p><p>Lúc ném $z=0$ nên thế năng bằng $0$, chỉ còn động năng:</p>$$W=W_\\text{d}=\\dfrac12mv_0^2=\\dfrac12\\cdot0{,}40\\cdot12^2$$<div class=\"bt-ans\">$$W=28{,}8\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí động năng bằng thế năng</span></p><p>$W_\\text{d}=W_\\text{t}$ nên $W=2W_\\text{t}$:</p>$$W_\\text{t}=\\dfrac W2=14{,}4\\ \\text{J}$$$$z=\\dfrac{W_\\text{t}}{mg}=\\dfrac{14{,}4}{0{,}40\\cdot10}$$<div class=\"bt-ans\">$$z=3{,}6\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Động năng ở độ cao $5{,}0$ m</span></p><p>Cơ năng vẫn $28{,}8$ J. Thế năng ở độ cao đó:</p>$$W_\\text{t}=mgz=0{,}40\\cdot10\\cdot5{,}0=20\\ \\text{J}$$$$W_\\text{d}=W-W_\\text{t}=28{,}8-20$$<div class=\"bt-ans\">$$W_\\text{d}=8{,}8\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$3{,}6\\ \\text{m}:\\ 14{,}4+14{,}4=28{,}8\\ \\text{J}$$$$5{,}0\\ \\text{m}:\\ 8{,}8+20=28{,}8\\ \\text{J}$$<p>Độ cao cực đại là $\\dfrac{v_0^2}{2g}=7{,}2$ m, nên cả $3{,}6$ m và $5{,}0$ m đều đạt tới được ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Cơ năng không đổi (chỉ trọng lực sinh công)</p><p>b) $W=28{,}8\\ \\text{J}$</p><p>c) $z=3{,}6\\ \\text{m}$</p><p>d) $W_\\text{d}=8{,}8\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề <strong>bỏ qua sức cản</strong> và hỏi vị trí có <strong>động năng bằng thế năng</strong> → cơ năng không đổi; $W=2W_\\text{t}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hòn đá ném lên từ mặt đất; mốc thế năng ở mặt đất; xét độ cao 5,0 mét\"><rect x=\"16\" y=\"225.5\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"248\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất (mốc thế năng)</text><line x1=\"144.0\" y1=\"120.0\" x2=\"300.0\" y2=\"120.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"308\" y=\"124.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">độ cao 5,0 m</text><line x1=\"130\" y1=\"212\" x2=\"130.0\" y2=\"176.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M124.2,186.0 L130.0,176.0 L135.8,186.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"140.0\" y=\"198.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">0</tspan><tspan dy=\"-4\"> = 12 m/s</tspan></text><circle cx=\"130.0\" cy=\"120.0\" r=\"5.5\" fill=\"#34d399\"/></svg><figcaption>Dữ kiện: tốc độ ném và độ cao 5,0 m ở ý d. Độ cao ở ý c chưa được đánh dấu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Hòn đá khối lượng $0{,}40$ kg … ném thẳng đứng lên từ mặt đất với tốc độ $12$ m/s”</td><td>$m=0{,}40\\ \\text{kg}$; $z_0=0$; $v_0=12\\ \\text{m/s}$</td><td>Lúc ném: có động năng, chưa có thế năng (mốc ở mặt đất)</td></tr><tr><td>“Bỏ qua sức cản của không khí”</td><td>Chỉ có trọng lực tác dụng</td><td>⚠ Chỉ trọng lực (hay lực đàn hồi) sinh công thì mới dùng được định luật bảo toàn cơ năng</td></tr><tr><td>“lấy $g=10$ m/s² và chọn mốc thế năng ở mặt đất”</td><td>$g=10\\ \\text{m/s}^2$; $z$ đo từ mặt đất</td><td>Thế năng $mgz$</td></tr><tr><td>“a) cơ năng của hòn đá thay đổi thế nào?”</td><td>Cần kết luận về sự thay đổi của $W$</td><td>Điều kiện của định luật bảo toàn cơ năng</td></tr><tr><td>“b) Tính cơ năng”</td><td>Cần $W$ (J)</td><td>$W=W_\\text{d}+W_\\text{t}$</td></tr><tr><td>“c) động năng bằng thế năng”</td><td>$W_\\text{d}=W_\\text{t}$; cần $z$ (m)</td><td>Quan hệ giữa $W$ và $W_\\text{t}$ khi hai thành phần bằng nhau</td></tr><tr><td>“d) ở độ cao $5{,}0$ m, tính động năng”</td><td>$z=5{,}0\\ \\text{m}$; cần $W_\\text{d}$ (J)</td><td>$W_\\text{d}=W-W_\\text{t}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bỏ qua sức cản</b> và hỏi <b>động năng bằng thế năng</b> → nghĩ tới <b>W không đổi</b>, W = 2Wt.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điều kiện áp dụng",
+     "hoi": "Khi hòn đá đi lên, cơ năng của nó thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Không đổi, vì chỉ trọng lực sinh công trong lúc bay",
+       "dung": true
+      },
+      {
+       "text": "Giảm dần, vì tốc độ của đá giảm dần, nên động năng ít đi",
+       "dung": false,
+       "vi_sao": "Tốc độ giảm làm động năng giảm nhưng thế năng tăng bù lại; cơ năng là tổng của cả hai."
+      },
+      {
+       "text": "Tăng dần, vì độ cao của đá tăng dần, nên thế năng nhiều lên",
+       "dung": false,
+       "vi_sao": "Độ cao tăng làm thế năng tăng nhưng động năng giảm bù lại; cơ năng không chỉ gồm thế năng."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng tốc độ giảm thì cơ năng giảm, quên thế năng tăng bù lại."
+    },
+    {
+     "tieu_de": "Cơ năng của hòn đá",
+     "hoi": "Cơ năng của hòn đá (mốc ở mặt đất) bằng bao nhiêu?",
+     "dap_so": 28.8,
+     "sai_so": 0.2,
+     "don_vi": "J",
+     "loi_hay_gap": "Thiếu hệ số $\\dfrac12$, hoặc quên bình phương tốc độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính tại lúc ném, nơi $z=0$ nên chỉ còn động năng",
+       "dung": true
+      },
+      {
+       "text": "Lấy $W=mgz$ với $z=5{,}0$ m",
+       "dung": false,
+       "vi_sao": "$5{,}0$ m là độ cao của ý d, không phải vị trí ném; lúc ném $z=0$."
+      },
+      {
+       "text": "Lấy $W=mgz$ với độ cao cực đại",
+       "dung": false,
+       "vi_sao": "Đề chưa cho độ cao cực đại; lúc ném đã đủ dữ kiện ($m$, $v_0$, $z=0$) và cơ năng bằng nhau ở mọi vị trí."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí động năng bằng thế năng",
+     "hoi": "Động năng bằng thế năng ở độ cao nào so với mặt đất?",
+     "dap_so": 3.6,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Cho thế năng bằng cả cơ năng, hoặc bằng động năng lúc ném.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $W=2W_\\text{t}$ rồi rút $z$ từ $W_\\text{t}=mgz$",
+       "dung": true
+      },
+      {
+       "text": "Cho $W_\\text{d}=0$ để tìm $z$",
+       "dung": false,
+       "vi_sao": "$W_\\text{d}=0$ ứng với điểm cao nhất, không phải chỗ động năng bằng thế năng."
+      },
+      {
+       "text": "Dùng $z=\\dfrac{v_0^2}{2g}$",
+       "dung": false,
+       "vi_sao": "Đó là độ cao cực đại (nơi $v=0$), không phải chỗ $W_\\text{d}=W_\\text{t}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Động năng ở độ cao $5{,}0$ m",
+     "hoi": "Ở độ cao $5{,}0$ m, động năng của hòn đá bằng bao nhiêu?",
+     "dap_so": 8.8,
+     "sai_so": 0.1,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng động năng lúc ném cho mọi độ cao, hoặc cộng thế năng vào cơ năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy cơ năng trừ thế năng tại độ cao đó",
+       "dung": true
+      },
+      {
+       "text": "Dùng $W_\\text{d}=\\dfrac12mv_0^2$ vì tốc độ ném đã cho",
+       "dung": false,
+       "vi_sao": "$v_0$ là tốc độ lúc ném; ở độ cao $5{,}0$ m tốc độ đã giảm nên động năng nhỏ hơn."
+      },
+      {
+       "text": "Cho $W_\\text{d}=W_\\text{t}$ như ý c",
+       "dung": false,
+       "vi_sao": "Chỉ ở độ cao tìm được ở ý c mới có $W_\\text{d}=W_\\text{t}$; độ cao khác thì khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Ném lên từ sân thượng: tốc độ ném, động năng gấp ba thế năng, đổi mốc",
+   "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+   "problem_html": "<p>Từ sân thượng cao $3{,}0\\ \\text{m}$ so với mặt đất, một bạn ném thẳng đứng lên hòn sỏi khối lượng $0{,}20\\ \\text{kg}$. Hòn sỏi lên tới độ cao cực đại $8{,}0\\ \\text{m}$ so với mặt đất rồi rơi xuống. Bỏ qua sức cản của không khí, lấy $g=10\\ \\text{m/s}^2$ và chọn mốc thế năng ở mặt đất.</p>\n<ol type=\"a\"><li>Tính cơ năng của hòn sỏi.</li>\n<li>Tính tốc độ lúc ném.</li>\n<li>Tìm độ cao (so với mặt đất) tại đó động năng bằng ba lần thế năng.</li>\n<li>Chọn lại mốc thế năng ở mặt sân thượng. Tính cơ năng của hòn sỏi và độ cao cực đại của nó so với mốc mới.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Hòn sỏi ném thẳng đứng lên từ mép sân thượng, lên tới độ cao cực đại rồi rơi xuống đất\"><rect x=\"16\" y=\"250.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"40\" y=\"190.0\" width=\"110\" height=\"60.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"150.0\" y1=\"190.0\" x2=\"290.0\" y2=\"190.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"298\" y=\"194.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">sân thượng: 3,0 m</text><line x1=\"150.0\" y1=\"90.0\" x2=\"290.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"298\" y=\"94.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">cực đại: 8,0 m</text><text x=\"298\" y=\"278\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất</text><circle cx=\"175.0\" cy=\"190.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0;175.0\" dur=\"2.26s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"190.0;172.0;155.8;141.4;128.8;117.9;108.8;101.5;96.0;92.3;90.3;90.1;91.8;95.1;100.3;107.3;116.0;126.5;138.8;152.9;168.8;186.4;205.8;227.0;250.0\" dur=\"2.26s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ném lên từ mép sân thượng, chạy đúng thời gian thật (khoảng 2,3 s). Độ cao vẽ đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng $W=W_\\text{d}+W_\\text{t}=\\dfrac12mv^2+mgz$, $z$ đo từ mốc.</li><li><strong>Định luật:</strong> chỉ trọng lực sinh công thì $W_1=W_2$.</li><li>Điểm cao nhất: $v=0$ nên $W=W_\\text{t}$.</li><li>$W_\\text{d}=nW_\\text{t}$ thì $W=(n+1)W_\\text{t}$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua sức cản; mọi độ cao đo từ cùng một mốc, đổi mốc thì $z$ và $W$ đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng (mốc ở mặt đất)</span></p><p>Ở điểm cao nhất sỏi dừng lại thoáng chốc, $v=0$ nên chỉ có thế năng:</p>$$W=mgz_\\text{max}=0{,}20\\cdot10\\cdot8{,}0$$<div class=\"bt-ans\">$$W=16\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ ném</span></p><p>Điểm ném cao $3{,}0$ m nên tại đó sỏi có cả động năng và thế năng. Bảo toàn cơ năng:</p>$$\\dfrac12mv_0^2+mgz_0=W$$$$\\dfrac12\\cdot0{,}20\\,v_0^2+0{,}20\\cdot10\\cdot3{,}0=16\\ \\Rightarrow\\ 0{,}10\\,v_0^2=10$$$$v_0=\\sqrt{100}$$<div class=\"bt-ans\">$$v_0=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí động năng bằng ba lần thế năng</span></p><p>$W_\\text{d}=3W_\\text{t}$ nên $W=W_\\text{d}+W_\\text{t}=4W_\\text{t}$:</p>$$W_\\text{t}=\\dfrac W4=4{,}0\\ \\text{J}$$$$z=\\dfrac{W_\\text{t}}{mg}=\\dfrac{4{,}0}{0{,}20\\cdot10}$$<div class=\"bt-ans\">$$z=2{,}0\\ \\text{m}$$</div><p>Vị trí này nằm dưới sân thượng, trên đường sỏi rơi xuống.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi mốc ở sân thượng</span></p><p>Mốc mới ở sân thượng: điểm ném có $z'=0$, điểm cao nhất có $z'_\\text{max}=8{,}0-3{,}0=5{,}0$ m.</p><p>Tại điểm ném thế năng bằng $0$, chỉ còn động năng:</p>$$W'=\\dfrac12mv_0^2=\\dfrac12\\cdot0{,}20\\cdot10^2$$<div class=\"bt-ans\">$$W'=10\\ \\text{J}$$</div><p>Độ cao cực đại so với mốc mới:</p><div class=\"bt-ans\">$$z'_\\text{max}=5{,}0\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$W'=mgz'_\\text{max}=0{,}20\\cdot10\\cdot5{,}0=10\\ \\text{J}$$$$W-W'=16-10=6{,}0\\ \\text{J}=0{,}20\\cdot10\\cdot3{,}0$$<p>Cơ năng giảm đúng bằng thế năng của sân thượng đối với mốc cũ; tốc độ ném không đổi.</p><p>Tỉ lệ $W_\\text{d}=3W_\\text{t}$ cũng đổi theo mốc, nên đề phải nói rõ mốc.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W=16\\ \\text{J}$</p><p>b) $v_0=10\\ \\text{m/s}$</p><p>c) $z=2{,}0\\ \\text{m}$</p><p>d) $W'=10\\ \\text{J}$ · $z'_\\text{max}=5{,}0\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>ném từ nơi cao</strong>, biết độ cao cực đại, hỏi tốc độ hoặc vị trí có <strong>động năng gấp n lần thế năng</strong> → $W_1=W_2$, một mốc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Hòn sỏi ở điểm cao nhất, cách mặt đất 8 mét; sân thượng cao 3 mét\"><rect x=\"16\" y=\"250.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"40\" y=\"190.0\" width=\"110\" height=\"60.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"150.0\" y1=\"190.0\" x2=\"290.0\" y2=\"190.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"298\" y=\"194.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">sân thượng: 3,0 m</text><line x1=\"150.0\" y1=\"90.0\" x2=\"290.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.85\"/><text x=\"298\" y=\"94.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">cực đại: 8,0 m</text><text x=\"298\" y=\"278\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mặt đất</text><circle cx=\"175.0\" cy=\"90.0\" r=\"5.5\" fill=\"#34d399\"/><text x=\"187\" y=\"82.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 0</text></svg><figcaption>Dữ kiện: sân thượng 3,0 m; điểm cao nhất 8,0 m so với mặt đất. Độ cao vẽ đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Từ sân thượng cao $3{,}0$ m … ném thẳng đứng lên hòn sỏi khối lượng $0{,}20$ kg”</td><td>$z_0=3{,}0\\ \\text{m}$; $m=0{,}20\\ \\text{kg}$; $v_0\\ne0$</td><td>Điểm ném đã có cả động năng lẫn thế năng</td></tr><tr><td>“Bỏ qua sức cản của không khí, lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>⚠ Chỉ trọng lực sinh công: dùng được $W_1=W_2$</td></tr><tr><td>“lên tới độ cao cực đại $8{,}0$ m so với mặt đất”</td><td>$z_\\text{max}=8{,}0\\ \\text{m}$; tại đó $v=0$</td><td>Tại điểm cao nhất động năng bằng $0$</td></tr><tr><td>“chọn mốc thế năng ở mặt đất”</td><td>$z$ đo từ mặt đất (ý a, b, c)</td><td>⚠ Dùng một mốc cho cả ý; đổi mốc thì $z$ và $W$ đổi</td></tr><tr><td>“a) cơ năng của hòn sỏi”</td><td>Cần $W$ (J)</td><td>$W=W_\\text{d}+W_\\text{t}$</td></tr><tr><td>“b) tốc độ lúc ném”</td><td>Cần $v_0$ (m/s)</td><td>$W$ tại điểm ném bằng $W$ đã tính</td></tr><tr><td>“c) động năng bằng ba lần thế năng”</td><td>$W_\\text{d}=3W_\\text{t}$; cần $z$ (m)</td><td>$W=W_\\text{d}+W_\\text{t}$</td></tr><tr><td>“d) mốc thế năng ở mặt sân thượng”</td><td>Mốc mới cách mặt đất $3{,}0\\ \\text{m}$</td><td>Độ cao mới $z'=z-3{,}0$; thế năng và cơ năng tính lại</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ném từ nơi cao</b> và <b>Wđ gấp n lần Wt</b> → nghĩ tới <b>W₁ = W₂</b>, giữ một mốc.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng (mốc ở mặt đất)",
+     "hoi": "Cơ năng của hòn sỏi (mốc ở mặt đất) bằng bao nhiêu?",
+     "dap_so": 16,
+     "sai_so": 0.2,
+     "don_vi": "J",
+     "loi_hay_gap": "Tính thêm động năng ở điểm cao nhất dù sỏi đã dừng lại, hoặc dùng độ cao của sân thượng."
+    },
+    {
+     "tieu_de": "Tốc độ ném",
+     "hoi": "Tốc độ ném $v_0$ bằng bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Coi sỏi được ném từ mặt đất, quên rằng điểm ném đã cao hơn mốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết cơ năng tại điểm ném gồm cả động năng và thế năng, cho bằng cơ năng đã tính",
+       "dung": true
+      },
+      {
+       "text": "Dùng $v_0=\\sqrt{2gz_\\text{max}}$ như thả rơi từ độ cao cực đại xuống mặt đất",
+       "dung": false,
+       "vi_sao": "Điểm ném cách mặt đất $3{,}0$ m chứ không ở mặt đất."
+      },
+      {
+       "text": "Cho $v_0=0$ vì sỏi dừng lại ở điểm cao nhất",
+       "dung": false,
+       "vi_sao": "Ở điểm cao nhất $v=0$, còn tại điểm ném $v_0\\ne0$; hai vị trí khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí động năng gấp ba thế năng",
+     "hoi": "Độ cao (so với mặt đất) tại đó động năng gấp ba lần thế năng là bao nhiêu?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Đảo tỉ lệ (coi thế năng gấp ba động năng), hoặc chia cơ năng cho $3$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $W=W_\\text{d}+W_\\text{t}=4W_\\text{t}$ rồi rút $z$ từ thế năng",
+       "dung": true
+      },
+      {
+       "text": "Cho $W_\\text{t}=3W_\\text{d}$ rồi rút $z$",
+       "dung": false,
+       "vi_sao": "Đề cho động năng gấp ba lần thế năng: $W_\\text{d}=3W_\\text{t}$, không phải ngược lại."
+      },
+      {
+       "text": "Cho $z$ bằng một phần ba độ cao cực đại",
+       "dung": false,
+       "vi_sao": "Phải viết $W=W_\\text{d}+W_\\text{t}$ rồi mới suy ra phần thế năng; độ cao không tự chia theo tỉ lệ của động năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi mốc ở sân thượng",
+     "hoi": "Khi chọn mốc ở sân thượng, cơ năng của hòn sỏi bằng bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên cơ năng cũ dù mốc đã đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $z$ từ mốc mới rồi cộng thế năng với động năng",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên cơ năng vì sỏi chuyển động như cũ",
+       "dung": false,
+       "vi_sao": "Chuyển động thật không đổi nhưng thế năng đổi theo mốc, nên cơ năng đổi."
+      },
+      {
+       "text": "Cộng thêm thế năng của sân thượng đối với mốc cũ",
+       "dung": false,
+       "vi_sao": "Mốc mới cao hơn mốc cũ nên thế năng tại mỗi điểm giảm đi chứ không tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Có lực cản: công của lực cản từ độ giảm cơ năng",
+   "topic": "Biến thiên cơ năng khi có ma sát",
+   "problem_html": "<p>Vận động viên trượt tuyết khối lượng $50\\ \\text{kg}$ (kể cả dụng cụ) xuất phát từ nghỉ ở đỉnh dốc $A$, cao $10\\ \\text{m}$ so với chân dốc $B$, và trượt xuống chân dốc với tốc độ $12\\ \\text{m/s}$. Lấy $g=10\\ \\text{m/s}^2$ và chọn mốc thế năng ở chân dốc.</p>\n<ol type=\"a\"><li>Tính cơ năng của vận động viên tại $A$ và tại $B$.</li>\n<li>Tính công của lực cản (ma sát và không khí) trên dốc.</li>\n<li>Lực cản đã lấy đi bao nhiêu phần trăm cơ năng ban đầu?</li>\n<li>Ở một lượt trượt khác, vận động viên qua $A$ với tốc độ $5{,}0\\ \\text{m/s}$. Coi công của lực cản trên dốc vẫn như lượt trước, tính tốc độ ở chân dốc.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Vận động viên trượt tuyết từ nghỉ ở đỉnh dốc A xuống chân dốc B\"><rect x=\"16\" y=\"160.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"267.8\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"267.8\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"60.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\"/><line x1=\"40.0\" y1=\"40.0\" x2=\"40.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"34.0\" y1=\"40.0\" x2=\"46.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"34.0\" y1=\"160.0\" x2=\"46.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"32\" y=\"104.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">10 m</text><circle cx=\"60.0\" cy=\"40.0\" r=\"4.5\" fill=\"#f87171\"/><circle cx=\"267.8\" cy=\"160.0\" r=\"4.5\" fill=\"#f87171\"/><text x=\"68.0\" y=\"32.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"263.8\" y=\"184.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"279.8\" y=\"148.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">tại B: 12 m/s</text><circle cx=\"63.2\" cy=\"34.4\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"63.2;63.8;65.3;67.9;71.6;76.2;82.0;88.7;96.5;105.3;115.2;126.1;138.1;151.1;165.1;180.2;196.3;213.4;231.6;250.8;271.1\" dur=\"3.33s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"34.4;34.7;35.6;37.1;39.2;41.9;45.2;49.1;53.6;58.7;64.4;70.7;77.6;85.1;93.2;101.9;111.2;121.1;131.6;142.7;154.4\" dur=\"3.33s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: trượt từ nghỉ ở A xuống B, chạy đúng thời gian thật (khoảng 3,3 s). Độ cao vẽ đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng $W=W_\\text{d}+W_\\text{t}$ theo mốc thế năng đã chọn.</li><li><strong>Định luật:</strong> lực cản sinh công thì cơ năng đổi: $\\Delta W=W_\\text{sau}-W_\\text{đầu}=A_\\text{c}$.</li><li>Lực cản ngược chiều chuyển động nên $A_\\text{c}\\lt0$, cơ năng giảm.</li><li>Phần cơ năng mất: $\\dfrac{\\lvert A_\\text{c}\\rvert}{W_\\text{đầu}}\\cdot100\\,\\%$.</li><li>⚠ <strong>Điều kiện:</strong> có ma sát, lực cản thì không dùng $W_1=W_2$; viết $\\Delta W=A_\\text{c}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng tại $A$</span></p><p>Mốc ở chân dốc $B$. Tại $A$ vận động viên xuất phát từ nghỉ nên chỉ có thế năng:</p>$$W_A=mgz_A=50\\cdot10\\cdot10$$<div class=\"bt-ans\">$$W_A=5000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cơ năng tại $B$</span></p><p>Tại $B$: $z_B=0$ nên chỉ còn động năng:</p>$$W_B=\\dfrac12mv_B^2=\\dfrac12\\cdot50\\cdot12^2$$<div class=\"bt-ans\">$$W_B=3600\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực cản</span></p><p>Có lực cản sinh công nên cơ năng không bảo toàn. Cơ năng sau trừ cơ năng đầu:</p>$$A_\\text{c}=W_B-W_A=3600-5000$$<div class=\"bt-ans\">$$A_\\text{c}=-1400\\ \\text{J}$$</div><p>Công âm: lực cản lấy bớt cơ năng, phần này thành nhiệt.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phần trăm cơ năng mất</span></p>$$\\dfrac{\\lvert A_\\text{c}\\rvert}{W_A}\\cdot100\\,\\%=\\dfrac{1400}{5000}\\cdot100\\,\\%$$<div class=\"bt-ans\">$$28\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lượt trượt khác</span></p><p>Công của lực cản vẫn là $-1400$ J. Cơ năng ban đầu mới, có cả động năng lẫn thế năng:</p>$$W_A'=\\dfrac12m v_A'^2+mgz_A=\\dfrac12\\cdot50\\cdot5{,}0^2+5000=5625\\ \\text{J}$$$$W_B'=W_A'+A_\\text{c}=5625-1400=4225\\ \\text{J}$$$$v_B'=\\sqrt{\\dfrac{2W_B'}{m}}=\\sqrt{\\dfrac{2\\cdot4225}{50}}=\\sqrt{169}$$<div class=\"bt-ans\">$$v_B'=13\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Xuất phát nhanh hơn thì xuống chân dốc nhanh hơn: $13\\gt12$ ✓.</p>$$\\sqrt{5{,}0^2+2\\cdot10\\cdot10}=\\sqrt{225}=15\\ \\text{m/s}$$<p>Nếu bỏ qua lực cản thì được $15$ m/s; có lực cản thì nhỏ hơn: $12\\lt13\\lt15$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_A=5000\\ \\text{J}$ · $W_B=3600\\ \\text{J}$</p><p>b) $A_\\text{c}=-1400\\ \\text{J}$</p><p>c) $28\\,\\%$</p><p>d) $v_B'=13\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>ma sát, lực cản</strong> và cho tốc độ ở hai vị trí → cơ năng không bảo toàn, $A_\\text{c}=W_\\text{sau}-W_\\text{đầu}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Dốc cao 10 mét: lượt đầu xuất phát từ nghỉ, lượt hai qua A với 5,0 mét trên giây\"><rect x=\"16\" y=\"160.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"267.8\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"267.8\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"60.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\"/><line x1=\"40.0\" y1=\"40.0\" x2=\"40.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"34.0\" y1=\"40.0\" x2=\"46.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"34.0\" y1=\"160.0\" x2=\"46.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"32\" y=\"104.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">10 m</text><circle cx=\"60.0\" cy=\"40.0\" r=\"4.5\" fill=\"#f87171\"/><circle cx=\"267.8\" cy=\"160.0\" r=\"4.5\" fill=\"#f87171\"/><text x=\"68.0\" y=\"32.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"263.8\" y=\"184.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"279.8\" y=\"148.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">tại B: 12 m/s</text><circle cx=\"63.2\" cy=\"34.4\" r=\"5.5\" fill=\"#34d399\"/><text x=\"130.0\" y=\"44.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">lượt 2: qua A với 5,0 m/s</text></svg><figcaption>Dữ kiện: độ cao dốc và tốc độ tại B của lượt đầu; tốc độ tại A của lượt hai. Độ cao vẽ đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“khối lượng $50$ kg (kể cả dụng cụ)”</td><td>$m=50\\ \\text{kg}$</td><td>Khối lượng của cả hệ trượt</td></tr><tr><td>“xuất phát từ nghỉ ở đỉnh dốc $A$, cao $10$ m so với chân dốc $B$”</td><td>$v_A=0$; $z_A=10\\ \\text{m}$ (mốc ở $B$)</td><td>Tại $A$ chỉ có thế năng</td></tr><tr><td>“trượt xuống chân dốc với tốc độ $12$ m/s”</td><td>$v_B=12\\ \\text{m/s}$; $z_B=0$</td><td>Tại $B$ chỉ có động năng</td></tr><tr><td>“Lấy $g=10$ m/s² và chọn mốc thế năng ở chân dốc”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Thế năng $mgz$ với $z$ đo từ chân dốc</td></tr><tr><td>“công của lực cản (ma sát và không khí)”</td><td>Cần $A_\\text{c}$ (J)</td><td>⚠ Có ma sát, lực cản sinh công: cơ năng không bảo toàn, dùng $\\Delta W=A_\\text{c}$</td></tr><tr><td>“bao nhiêu phần trăm cơ năng ban đầu”</td><td>Cần tỉ lệ (%)</td><td>So với cơ năng ban đầu</td></tr><tr><td>“lượt khác, qua $A$ với tốc độ $5{,}0$ m/s”</td><td>$v_A'=5{,}0\\ \\text{m/s}$</td><td>Cơ năng đầu mới gồm cả động năng lẫn thế năng</td></tr><tr><td>“Coi công của lực cản vẫn như lượt trước”</td><td>$A_\\text{c}'=A_\\text{c}$</td><td>⚠ Giả thiết đề cho: công cản không đổi giữa hai lượt</td></tr><tr><td>“tính tốc độ ở chân dốc”</td><td>Cần $v_B'$ (m/s)</td><td>$W_B'=W_A'+A_\\text{c}$, rút $v_B'$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ma sát, lực cản</b> và cơ năng hai vị trí khác nhau → nghĩ tới <b>ΔW = Ac</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng tại $A$",
+     "hoi": "Cơ năng của vận động viên tại $A$ (mốc ở chân dốc) bằng bao nhiêu?",
+     "dap_so": 5000,
+     "sai_so": 20,
+     "don_vi": "J",
+     "loi_hay_gap": "Tính cả động năng tại $A$ dù xuất phát từ nghỉ, hoặc quên nhân với $g$."
+    },
+    {
+     "tieu_de": "Cơ năng tại $B$",
+     "hoi": "Cơ năng của vận động viên tại $B$ bằng bao nhiêu?",
+     "dap_so": 3600,
+     "sai_so": 20,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ thế năng của $A$ cho $B$, dù $B$ nằm ngay tại mốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tại chân dốc $z=0$ nên cơ năng chỉ còn động năng",
+       "dung": true
+      },
+      {
+       "text": "Cho cơ năng tại $B$ bằng cơ năng tại $A$ vì cơ năng bảo toàn",
+       "dung": false,
+       "vi_sao": "Có lực cản sinh công nên cơ năng không bảo toàn; $W_B$ phải tính riêng từ tốc độ tại $B$."
+      },
+      {
+       "text": "Lấy thế năng của $A$ cộng với động năng tại $B$",
+       "dung": false,
+       "vi_sao": "Thế năng của $A$ không còn ở $B$; tại $B$ thế năng bằng $0$ vì $B$ ở mốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực cản",
+     "hoi": "Công của lực cản trên dốc bằng bao nhiêu?",
+     "dap_so": -1400,
+     "sai_so": 10,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy cơ năng đầu trừ cơ năng sau nên mất dấu của công cản.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy cơ năng sau trừ cơ năng đầu",
+       "dung": true
+      },
+      {
+       "text": "Lấy cơ năng đầu trừ cơ năng sau",
+       "dung": false,
+       "vi_sao": "Độ biến thiên cơ năng luôn là sau trừ đầu; đảo lại thì sai dấu của công cản."
+      },
+      {
+       "text": "Cho công cản bằng $0$ vì vận động viên vẫn tăng tốc",
+       "dung": false,
+       "vi_sao": "Tốc độ tăng vì công dương của trọng lực lớn hơn công âm của lực cản; lực cản vẫn sinh công."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm cơ năng mất",
+     "hoi": "Lực cản đã lấy đi bao nhiêu phần trăm cơ năng ban đầu?",
+     "dap_so": 28,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Chia cho cơ năng ở chân dốc thay vì cơ năng ban đầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia độ lớn công cản cho cơ năng ban đầu",
+       "dung": true
+      },
+      {
+       "text": "Chia độ lớn công cản cho cơ năng ở chân dốc",
+       "dung": false,
+       "vi_sao": "Phần trăm mất tính so với lúc đầu, không phải so với lúc cuối."
+      },
+      {
+       "text": "Lấy $W_B$ chia $W_A$ rồi gọi đó là phần mất",
+       "dung": false,
+       "vi_sao": "Thương đó là phần còn lại, không phải phần đã mất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lượt trượt khác",
+     "hoi": "Ở lượt trượt khác, tốc độ ở chân dốc bằng bao nhiêu?",
+     "dap_so": 13.0,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Dùng lại tốc độ của lượt trước, hoặc bỏ lực cản vì lượt này nhanh hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính cơ năng đầu mới, cộng công cản cũ, rồi rút tốc độ từ động năng ở chân dốc",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A_\\text{c}=-1400$ J nhưng lấy cơ năng đầu cũ ($5000$ J)",
+       "dung": false,
+       "vi_sao": "Lượt này qua $A$ với tốc độ khác nên cơ năng đầu khác; phải tính lại cơ năng tại $A$ rồi mới cộng công cản."
+      },
+      {
+       "text": "Cộng $5{,}0$ m/s vào tốc độ của lượt trước",
+       "dung": false,
+       "vi_sao": "Tốc độ không cộng như vậy; động năng tỉ lệ với bình phương tốc độ nên phải cộng năng lượng rồi mới suy tốc độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p><strong>Bài 1.</strong> Vận động viên nhảy cầu đạt điểm cao nhất cách mặt nước $10\\ \\text{m}$ rồi rơi xuống. Bỏ qua ma sát với không khí. Lấy $g=9{,}8\\ \\text{m/s}^2$. Ước lượng tốc độ khi chạm nước.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Bảo toàn cơ năng giữa đỉnh (1) và lúc chạm nước (2): $W_{t1}=W_{d2} \\Leftrightarrow mgh=\\dfrac12mv^2 \\Rightarrow v=\\sqrt{2gh}=\\sqrt{2\\cdot 9{,}8\\cdot 10}\\approx14\\ \\text{m/s}$.</p></details><h4>Bài 2 · Dễ</h4><p><strong>Bài 2.</strong> Một vật được ném thẳng đứng lên cao từ mặt đất với vận tốc đầu $8\\ \\text{m/s}$. Tính vận tốc của vật khi động năng bằng thế năng.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Bảo toàn cơ năng: $W_d=W_t \\Rightarrow \\dfrac12 mv_0^2 = 2\\cdot\\dfrac12 mv^2 \\Rightarrow v=\\dfrac{v_0}{\\sqrt2}=4\\sqrt2\\approx5{,}66\\ \\text{m/s}$.</p></details><h4>Bài 3 · Dễ</h4><p><strong>Bài 3.</strong> Em bé khối lượng $20\\ \\text{kg}$ trượt từ đỉnh cầu trượt cao $2\\ \\text{m}$. Tới chân cầu trượt, tốc độ là $4\\ \\text{m/s}$. Lấy $g=9{,}8\\ \\text{m/s}^2$. Cơ năng của em bé có bảo toàn không?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Cơ năng tại đỉnh $=mgh=20\\cdot 9{,}8\\cdot 2=392\\ \\text{J}$. Cơ năng tại chân $=\\dfrac12mv^2=\\dfrac12\\cdot 20\\cdot 4^2=160\\ \\text{J}$. Vì $392\\ne160$ nên cơ năng <em class=\"italic\">không</em> bảo toàn — lực ma sát trên cầu trượt sinh công âm làm một phần cơ năng chuyển hoá thành nhiệt.</p></details><h4>Bài 4 · Trung bình</h4><p><strong>Bài 4.</strong> Quả bóng nhỏ ném với vận tốc đầu $4\\ \\text{m/s}$ theo phương ngang, rời mặt bàn ở độ cao $1\\ \\text{m}$ so với sàn. Lấy $g=9{,}8\\ \\text{m/s}^2$, bỏ qua ma sát. Tính vận tốc khi chạm sàn.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Bảo toàn cơ năng: $\\dfrac12mv_1^2+mgh=\\dfrac12mv_2^2 \\Rightarrow v_2=\\sqrt{v_1^2+2gh}=\\sqrt{4^2+2\\cdot 9{,}8\\cdot 1}\\approx6\\ \\text{m/s}$.</p></details><h4>Bài 5 · Trung bình</h4><p><strong>Bài 5.</strong> Viên bi khối lượng $1\\ \\text{kg}$ được thả rơi từ đỉnh mặt phẳng nghiêng cao $20\\ \\text{cm}$, ma sát trên dốc không đáng kể. Lấy $g=10\\ \\text{m/s}^2$. a) Tìm tốc độ ở chân dốc. b) Ở chân dốc, bi tiếp tục trượt trên mặt ngang $1\\ \\text{m}$ rồi dừng. Tìm lực ma sát trên mặt ngang.</p><figure class=\"fig\">\n<svg viewBox=\"0 0 300 180\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M20 160 L 220 160 L 220 40 Z\" fill=\"#60A5FA\" fill-opacity=\"0.12\" stroke=\"currentColor\" stroke-opacity=\"0.5\" stroke-width=\"2\"/>\n<line x1=\"20\" y1=\"160\" x2=\"280\" y2=\"160\" stroke=\"currentColor\" stroke-opacity=\"0.35\"/>\n<rect x=\"188\" y=\"24\" width=\"22\" height=\"16\" fill=\"#F59E0B\" transform=\"rotate(-33 199 32)\"/>\n<text x=\"60\" y=\"115\" fill=\"currentColor\" font-size=\"12\">α</text>\n<path d=\"M40 160 A 25 25 0 0 1 55 141\" fill=\"none\" stroke=\"currentColor\" stroke-opacity=\"0.5\"/>\n<text x=\"225\" y=\"150\" fill=\"currentColor\" font-size=\"11\">chân dốc</text>\n<text x=\"195\" y=\"20\" fill=\"currentColor\" font-size=\"11\">đỉnh dốc</text>\n</svg>\n<figcaption>Vật trượt trên mặt phẳng nghiêng có ma sát</figcaption>\n</figure><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a) Bảo toàn cơ năng (không ma sát trên dốc): $mgh=\\dfrac12mv_O^2 \\Rightarrow v_O=\\sqrt{2gh}=\\sqrt{2\\cdot 10\\cdot 0{,}2}=2\\ \\text{m/s}$. b) Định lí động năng trên đoạn ngang: $0-\\dfrac12mv_O^2=-F_{ms}\\cdot s \\Rightarrow F_{ms}=\\dfrac{mv_O^2}{2s}=\\dfrac{1\\cdot 4}{2\\cdot 1}=2\\ \\text{N}$.</p></details><h4>Bài 6 · Trung bình</h4><p><strong>Bài 6.</strong> Con lắc đơn dài $l=1\\ \\text{m}$ tại nơi $g=9{,}8\\ \\text{m/s}^2$, bỏ qua ma sát. Góc lệch cực đại $\\alpha_0=60^\\circ$. a) Tốc độ khi dây treo hợp với phương thẳng đứng góc $\\alpha=30^\\circ$. b) Tốc độ khi dây treo ở phương thẳng đứng. c) Cơ năng của con lắc khi $\\alpha=30^\\circ$ (biết $m=0{,}05\\ \\text{kg}$).</p><figure class=\"fig\">\n<svg viewBox=\"0 0 260 200\" xmlns=\"http://www.w3.org/2000/svg\">\n<line x1=\"130\" y1=\"15\" x2=\"130\" y2=\"170\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-dasharray=\"3,3\"/>\n<line x1=\"130\" y1=\"15\" x2=\"75\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/>\n<circle cx=\"75\" cy=\"150\" r=\"9\" fill=\"#F59E0B\"/>\n<line x1=\"130\" y1=\"15\" x2=\"130\" y2=\"170\" stroke=\"#34D399\" stroke-width=\"2\" stroke-opacity=\"0.6\"/>\n<circle cx=\"130\" cy=\"170\" r=\"9\" fill=\"#34D399\"/>\n<circle cx=\"130\" cy=\"15\" r=\"2\" fill=\"currentColor\"/>\n<path d=\"M130 45 A 30 30 0 0 0 108 65\" fill=\"none\" stroke=\"currentColor\" stroke-opacity=\"0.5\"/>\n<text x=\"112\" y=\"48\" fill=\"currentColor\" font-size=\"12\">α</text>\n<text x=\"60\" y=\"145\" fill=\"currentColor\" font-size=\"12\">A</text>\n<text x=\"136\" y=\"182\" fill=\"currentColor\" font-size=\"12\">O</text>\n</svg>\n<figcaption>Con lắc đơn: O là vị trí thấp nhất (mốc thế năng), A là vị trí dây treo lệch góc α</figcaption>\n</figure><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Chọn mốc thế năng tại vị trí thấp nhất O, độ cao so với O của vị trí lệch góc $\\alpha$ là $h=l(1-\\cos\\alpha)$. a) Bảo toàn cơ năng giữa vị trí lệch $30^\\circ$ và vị trí biên $60^\\circ$ (v=0 ở biên): $v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}=\\sqrt{2\\cdot 9{,}8\\cdot 1\\cdot (\\cos30^\\circ-\\cos60^\\circ)}\\approx2{,}7\\ \\text{m/s}$. b) Tại vị trí cân bằng ($\\alpha=0$): $v_O=\\sqrt{2gl(1-\\cos\\alpha_0)}=\\sqrt{2\\cdot 9{,}8\\cdot 1\\cdot (1-\\cos60^\\circ)}=\\sqrt{9{,}8}\\approx3{,}13\\ \\text{m/s}$. c) Cơ năng bảo toàn tại mọi vị trí: $W=\\dfrac12mv_O^2=\\dfrac12\\cdot 0{,}05\\cdot 9{,}8\\approx0{,}245\\ \\text{J}$.</p></details><h4>Bài 7 · Trung bình</h4><p><strong>Bài 7.</strong> Con lắc đơn dài $l=0{,}6\\ \\text{m}$. Đưa vật lên vị trí A hợp với phương thẳng đứng OC góc $\\alpha_0=30^\\circ$ rồi thả nhẹ. Bỏ qua ma sát, lấy $g=9{,}8\\ \\text{m/s}^2$. Tính tốc độ tại vị trí M khi dây treo hợp với OC góc $\\alpha=20^\\circ$.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Chọn mốc thế năng tại O (thấp nhất). Bảo toàn cơ năng giữa A (v=0) và M: $mgl(1-\\cos\\alpha_0)=mgl(1-\\cos\\alpha)+\\dfrac12mv_M^2 \\Rightarrow v_M=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}=\\sqrt{2\\cdot 9{,}8\\cdot 0{,}6\\cdot (\\cos20^\\circ-\\cos30^\\circ)}\\approx0{,}93\\ \\text{m/s}$.</p></details><h4>Bài 8 · Khó</h4><p><strong>Bài 8.</strong> Quả bóng khối lượng $200\\ \\text{g}$ ném thẳng đứng lên cao với $v_0=15\\ \\text{m/s}$, đạt độ cao $10\\ \\text{m}$ so với vị trí ném. Lấy $g=9{,}8\\ \\text{m/s}^2$. Tính tỉ lệ cơ năng đã biến đổi do lực cản không khí.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Chọn mốc thế năng tại vị trí ném. Cơ năng ban đầu $W_1=\\dfrac12mv_0^2=\\dfrac12\\cdot 0{,}2\\cdot 15^2=22{,}5\\ \\text{J}$. Cơ năng tại vị trí cao nhất (chỉ còn thế năng, do có lực cản nên không đạt độ cao lý tưởng) $W_2=mgh=0{,}2\\cdot 9{,}8\\cdot 10=19{,}6\\ \\text{J}$. Tỉ lệ biến đổi $=\\dfrac{W_1-W_2}{W_1}\\cdot 100\\%=\\dfrac{22{,}5-19{,}6}{22{,}5}\\cdot 100\\%\\approx12{,}9\\%$.</p></details><h4>Bài 9 · Khó</h4><p><strong>Bài 9.</strong> Vật khối lượng $2\\ \\text{kg}$ trượt có ma sát trên mặt phẳng nghiêng dài $3\\ \\text{m}$, góc nghiêng $\\alpha=30^\\circ$, hệ số ma sát $\\mu=0{,}1$. Lấy $g=10\\ \\text{m/s}^2$. Tính công trọng lực, công lực ma sát, độ biến thiên động năng và tốc độ ở chân dốc.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Công trọng lực: $A_P=mg\\sin\\alpha\\cdot s=2\\cdot 10\\cdot 0{,}5\\cdot 3=30\\ \\text{J}$. Công lực ma sát: $A_{ms}=-\\mu mg\\cos\\alpha\\cdot s=-0{,}1\\cdot 2\\cdot 10\\cdot \\cos30^\\circ\\cdot 3\\approx-5{,}2\\ \\text{J}$. Độ biến thiên động năng $\\Delta W_d=A_P+A_{ms}\\approx30-5{,}2=24{,}8\\ \\text{J}$. Tốc độ ở chân dốc: $v=\\sqrt{\\dfrac{2\\Delta W_d}{m}}=\\sqrt{\\dfrac{2\\cdot 24{,}8}{2}}\\approx4{,}98\\ \\text{m/s}$.</p></details><h4>Bài 10 · Nâng cao</h4><p><strong>Bài 10.</strong> Từ tầng lầu cao $4\\ \\text{m}$, vật khối lượng $250\\ \\text{g}$ ném thẳng đứng lên cao với $v_0=4\\ \\text{m/s}$; chạm đất lún sâu $16\\ \\text{cm}$ rồi dừng. Lấy $g=10\\ \\text{m/s}^2$. Tính lực cản trung bình của đất.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Độ cao cực đại (mốc tại mặt đất) $z_{max}=4+\\dfrac{4^2}{20}=4{,}8\\ \\text{m}$. Từ $z_{max}$ vật rơi xuống và lún sâu $s=0{,}16\\ \\text{m}$ ($z_D=-0{,}16\\ \\text{m}$, $v_D=0$): $-F_C\\cdot s=mgz_D-mgz_{max} \\Rightarrow F_C=\\dfrac{mg(z_{max}-z_D)}{s}=\\dfrac{0{,}25\\cdot 10\\cdot (4{,}8+0{,}16)}{0{,}16}=77{,}5\\ \\text{N}$.</p></details>"
+ }
+}

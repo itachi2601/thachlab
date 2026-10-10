@@ -1,0 +1,14 @@
+{
+ "lesson_id": 77,
+ "item_id": 258,
+ "questions": [
+  {
+   "label": "Tự luận 1",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Mặt trăng chuyển động tròn đều xung quanh Trái đất với chu kỳ 27,3 ngày. Biết mặt trăng có khối lượng $m = 7{,}347.10^{22}$ kg, khoảng cách từ tâm Trái đất đến tâm Mặt trăng là $r = 384403$ km. Tính:</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">a. Tốc độ của mặt trăng trên quỹ đạo.</li><li class=\"my-1\">b. Gia tốc hướng tâm của mặt trăng.</li><li class=\"my-1\">c. Lực hướng tâm do trái đất tác dụng lên mặt trăng.</li><li class=\"my-1\">d. Số vòng quay của mặt trăng xung quanh trái đất trong 1 năm, coi 1 năm là 365 ngày.</li></ul><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><p class=\"text-base leading-relaxed my-2\">a. Vận tốc của Mặt Trăng trên quỹ đạo là tốc độ $v = r\\omega = r.\\dfrac{2\\pi}{T} = 384403.1000.\\dfrac{2\\pi}{27{,}3.24.3600} = 1023{,}98$ m/s.</p><p class=\"text-base leading-relaxed my-2\">b. Gia tốc hướng tâm $a_{ht} = \\dfrac{v^2}{r} = \\dfrac{1023{,}98^2}{384403.1000} = 2{,}73.10^{-3}$ m/$s^2$.</p><p class=\"text-base leading-relaxed my-2\">c. Lực hướng tâm $F_{ht} = m.a_{ht} = 7{,}347.10^{22}.2{,}73.10^{-3} = 2.10^{20}$ N.</p><p class=\"text-base leading-relaxed my-2\">d. Số vòng quay $N = \\dfrac{365}{27{,}3} = 13{,}4$ vòng.</p>"
+  },
+  {
+   "label": "Tự luận 2",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Một chiếc xe đua có khối lượng 800 kg chạy với tốc độ lớn nhất (mà không bị trượt) theo đường tròn nằm ngang có bán kính 80 m được một vòng sau khoảng thời gian 28,4 s. Lấy $g = 9{,}8$ m/$s^2$. Tính:</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">a. Gia tốc hướng tâm của xe.</li><li class=\"my-1\">b. Hệ số ma sát cực đại giữa các bánh xe và mặt đường.</li></ul><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/77/1790223545454-fig12.png\" alt=\"Xe đua chuyển động tròn trên đường nằm ngang: lực pháp tuyến N, lực ma sát F_ms, trọng lực mg\"><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><p class=\"text-base leading-relaxed my-2\">a. Xe đua chạy được một vòng sau khoảng thời gian 28,4 s $\\Rightarrow T = 28{,}4$ s. Tốc độ góc của xe $\\omega = \\dfrac{2\\pi}{T} = \\dfrac{2\\pi}{28{,}4} \\approx 0{,}22$ rad/s. Gia tốc hướng tâm của xe $a_{ht} = \\omega^2.R = 0{,}22^2.80 \\approx 3{,}92$ m/$s^2$.</p><p class=\"text-base leading-relaxed my-2\">b. Vì tốc độ xe lớn nhất nên lực ma sát nghỉ (đóng vai trò là lực hướng tâm) có giá trị lớn nhất: $F_{ms} = F_{ht} \\Rightarrow \\mu.m.g = m.a_{ht} \\Rightarrow \\mu = \\dfrac{a_{ht}}{g} = \\dfrac{3{,}92}{9{,}8} = 0{,}4$.</p>"
+  }
+ ]
+}

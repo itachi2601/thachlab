@@ -1,0 +1,498 @@
+{
+ "lesson_id": 70,
+ "lesson_title": "Bài 25. Động năng, thế năng",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tính động năng và so sánh động năng",
+   "topic": "Động năng và định lí động năng",
+   "problem_html": "<p>Một xe tải khối lượng $4{,}0$ tấn chạy trên đường thẳng với tốc độ $36\\ \\text{km/h}$.</p>\n<ol type=\"a\"><li>Tính động năng của xe tải (đơn vị kJ).</li>\n<li>Một ô tô con khối lượng $1{,}0$ tấn có động năng đúng bằng động năng của xe tải. Tính tốc độ của ô tô con theo m/s.</li>\n<li>Sau đó xe tải tăng tốc đến $90\\ \\text{km/h}$. Động năng của xe tải khi đó gấp mấy lần lúc đầu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Xe tải 4,0 tấn chạy với tốc độ 36 km/h rồi tăng tốc đến 90 km/h\"><line x1=\"16.0\" y1=\"168.0\" x2=\"404.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"24\" y=\"124\" width=\"46\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"70\" y=\"134\" width=\"18\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"36.0\" cy=\"162.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"60.0\" cy=\"162.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"80.0\" cy=\"162.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;6.0 0.0;12.0 0.0;18.0 0.0;24.0 0.0;30.0 0.0;36.0 0.0;42.0 0.0;48.0 0.0;54.2 0.0;60.9 0.0;68.0 0.0;75.6 0.0;83.6 0.0;92.1 0.0;101.0 0.0;110.4 0.0;120.2 0.0;130.5 0.0;141.2 0.0;152.4 0.0;164.0 0.0;176.1 0.0;188.6 0.0;201.6 0.0;215.0 0.0;228.9 0.0;243.2 0.0;258.0 0.0;258.0 0.0;258.0 0.0;258.0 0.0;258.0 0.0\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"24\" y=\"112\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">36 km/h</text><line x1=\"346.0\" y1=\"120.0\" x2=\"346.0\" y2=\"168.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"342.0\" y=\"112\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">90 km/h</text><text x=\"24\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">xe tải 4,0 tấn</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy 2 s với 36 km/h rồi tăng tốc đều trong 5 s đến 90 km/h (đúng thời gian thật). Chưa tính động năng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> động năng là năng lượng vật có do đang chuyển động.</li><li>$W_\\text{d}=\\dfrac12mv^2$ ($m$: kg; $v$: m/s; $W_\\text{d}$: J).</li><li>Động năng không âm và tỉ lệ với bình phương tốc độ.</li><li>⚠ <strong>Điều kiện:</strong> đổi tấn ra kg, km/h ra m/s ($1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$) trước khi thay số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi tốc độ ra m/s</span></p><p>Khối lượng xe tải: $m=4{,}0$ tấn $=4000\\ \\text{kg}$.</p>$$v_1=\\dfrac{36}{3{,}6}$$<div class=\"bt-ans\">$$v_1=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Động năng của xe tải</span></p>$$W_\\text{d1}=\\dfrac12mv_1^2=\\dfrac12\\cdot4000\\cdot10^2$$<div class=\"bt-ans\">$$W_\\text{d1}=200\\,000\\ \\text{J}=200\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ của ô tô con</span></p><p>Khối lượng ô tô con: $m'=1{,}0$ tấn $=1000\\ \\text{kg}$. Hai động năng bằng nhau:</p>$$\\dfrac12m'v'^2=W_\\text{d1}$$$$v'=\\sqrt{\\dfrac{2W_\\text{d1}}{m'}}=\\sqrt{\\dfrac{2\\cdot200\\,000}{1000}}=\\sqrt{400}$$<div class=\"bt-ans\">$$v'=20\\ \\text{m/s}$$</div><p>Đổi lại: $20\\ \\text{m/s}=72\\ \\text{km/h}$. Khối lượng chỉ bằng một phần tư nên tốc độ phải gấp đôi để cùng động năng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tăng tốc đến $90\\ \\text{km/h}$</span></p><p>Tốc độ mới: $v_2=\\dfrac{90}{3{,}6}=25\\ \\text{m/s}$. Khối lượng không đổi, lập tỉ số:</p>$$\\dfrac{W_\\text{d2}}{W_\\text{d1}}=\\dfrac{\\frac12mv_2^2}{\\frac12mv_1^2}=\\left(\\dfrac{v_2}{v_1}\\right)^2$$$$\\dfrac{W_\\text{d2}}{W_\\text{d1}}=\\left(\\dfrac{25}{10}\\right)^2$$<div class=\"bt-ans\">$$\\dfrac{W_\\text{d2}}{W_\\text{d1}}=6{,}25$$</div><p>Tốc độ chỉ gấp $2{,}5$ lần nhưng động năng gấp hơn $6$ lần.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$W_\\text{d2}=\\dfrac12\\cdot4000\\cdot25^2=1\\,250\\,000\\ \\text{J}=1250\\ \\text{kJ}$$$$\\dfrac{1250}{200}=6{,}25\\ \\checkmark$$<p>Động năng tăng khi tốc độ tăng, đơn vị là J ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_\\text{d}=200\\ \\text{kJ}$</p><p>b) $v'=20\\ \\text{m/s}$ ($72\\ \\text{km/h}$)</p><p>c) gấp $6{,}25$ lần</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng và tốc độ (km/h)</strong> hoặc <strong>so sánh động năng</strong> → đổi ra kg, m/s rồi dùng $\\tfrac12mv^2$; so sánh thì lập tỉ số.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Xe tải 4,0 tấn tốc độ 36 km/h và ô tô con 1,0 tấn có cùng động năng với xe tải\"><line x1=\"16.0\" y1=\"84.0\" x2=\"100.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"24\" y=\"40\" width=\"46\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"70\" y=\"50\" width=\"18\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"36.0\" cy=\"78.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"60.0\" cy=\"78.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"80.0\" cy=\"78.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"16.0\" y1=\"170.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"24\" y=\"144\" width=\"56\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"36\" y=\"132\" width=\"30\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"36.0\" cy=\"162.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"68.0\" cy=\"162.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"112\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe tải</text><text x=\"112.0\" y=\"68.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 4,0 tấn · v<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 36 km/h</tspan></text><text x=\"112.0\" y=\"90.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">W<tspan dy=\"4\" font-size=\"10\">d1</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"112\" y=\"134\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ô tô con</text><text x=\"112\" y=\"154\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m′ = 1,0 tấn · cùng động năng với xe tải</text><text x=\"112\" y=\"176\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v′ = ?</text></svg><figcaption>Dữ kiện: hai xe cùng động năng; ô tô con chưa biết tốc độ. Hình không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“xe tải khối lượng $4{,}0$ tấn … tốc độ $36\\ \\text{km/h}$”</td><td>$m=4{,}0$ tấn; $v_1=36\\ \\text{km/h}$</td><td>⚠ Đổi sang kg và m/s trước khi thay vào công thức động năng</td></tr><tr><td>“a) Tính động năng của xe tải”</td><td>Cần $W_\\text{d1}$ (kJ)</td><td>Đại lượng cần tìm</td></tr><tr><td>“ô tô con khối lượng $1{,}0$ tấn có động năng đúng bằng động năng của xe tải”</td><td>$m'=1{,}0$ tấn; $W_\\text{d}'=W_\\text{d1}$</td><td>Hai động năng bằng nhau: viết phương trình cho ô tô con</td></tr><tr><td>“b) tốc độ của ô tô con theo m/s”</td><td>Cần $v'$ (m/s)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) tăng tốc đến $90\\ \\text{km/h}$”</td><td>$v_2=90\\ \\text{km/h}$; khối lượng không đổi</td><td>⚠ Cùng một vật nên chỉ so sánh được qua tốc độ; hai tốc độ cùng đơn vị</td></tr><tr><td>“gấp mấy lần lúc đầu”</td><td>Cần $W_\\text{d2}/W_\\text{d1}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng và tốc độ (km/h)</b> hoặc <b>so sánh động năng</b> → nghĩ tới <b>đổi ra m/s</b> rồi <b>½mv²</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi tốc độ ra m/s",
+     "hoi": "Tốc độ ban đầu của xe tải theo m/s là bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Thế thẳng số km/h vào công thức, hoặc nhân với $3{,}6$ thay vì chia."
+    },
+    {
+     "tieu_de": "Động năng của xe tải",
+     "hoi": "Động năng của xe tải bằng bao nhiêu kJ?",
+     "dap_so": 200,
+     "sai_so": 1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Quên bình phương tốc độ hoặc quên hệ số $\\dfrac12$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bình phương tốc độ (m/s) rồi nhân với một nửa khối lượng (kg)",
+       "dung": true
+      },
+      {
+       "text": "Nhân khối lượng với tốc độ rồi chia đôi",
+       "dung": false,
+       "vi_sao": "Động năng tỉ lệ với bình phương tốc độ, không phải với tốc độ."
+      },
+      {
+       "text": "Thế thẳng tốc độ theo km/h",
+       "dung": false,
+       "vi_sao": "Kết quả chỉ có đơn vị J khi $m$ tính bằng kg và $v$ tính bằng m/s."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ của ô tô con",
+     "hoi": "Tốc độ của ô tô con bằng bao nhiêu m/s?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Quên khai căn, hoặc quên đổi tấn ra kg.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt động năng ô tô con bằng động năng xe tải rồi giải ra tốc độ",
+       "dung": true
+      },
+      {
+       "text": "Cho tốc độ ô tô con bằng tốc độ xe tải",
+       "dung": false,
+       "vi_sao": "Động năng bằng nhau nhưng khối lượng khác nhau thì tốc độ khác nhau."
+      },
+      {
+       "text": "Cho tích khối lượng nhân tốc độ của hai xe bằng nhau",
+       "dung": false,
+       "vi_sao": "Động năng tỉ lệ với $mv^2$ chứ không phải $mv$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tăng tốc đến $90\\ \\text{km/h}$",
+     "hoi": "Động năng xe tải lúc sau gấp mấy lần lúc đầu?",
+     "dap_so": 6.25,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Lấy tỉ số hai tốc độ rồi quên bình phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập tỉ số tốc độ sau với tốc độ đầu rồi bình phương",
+       "dung": true
+      },
+      {
+       "text": "Lấy tỉ số tốc độ, không bình phương",
+       "dung": false,
+       "vi_sao": "Động năng tỉ lệ với bình phương tốc độ nên tỉ số động năng là bình phương tỉ số tốc độ."
+      },
+      {
+       "text": "Lấy hiệu hai tốc độ rồi bình phương",
+       "dung": false,
+       "vi_sao": "So sánh hai động năng là lập tỉ số, không phải lấy hiệu hai tốc độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Thế năng trọng trường khi mốc ở mặt đất",
+   "topic": "Thế năng trọng trường và mốc thế năng",
+   "problem_html": "<p>Trong một kho hàng, thùng $A$ khối lượng $12\\ \\text{kg}$ đặt trên giá ở độ cao $1{,}5\\ \\text{m}$, thùng $B$ khối lượng $5{,}0\\ \\text{kg}$ đặt trên giá ở độ cao $3{,}6\\ \\text{m}$ (cùng so với nền kho). Chọn mốc thế năng tại nền kho, lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính thế năng trọng trường của mỗi thùng.</li>\n<li>So sánh thế năng của hai thùng.</li>\n<li>Thùng $C$ khối lượng $8{,}0\\ \\text{kg}$ có thế năng $240\\ \\text{J}$ (cùng mốc ở nền kho). Tính độ cao của thùng $C$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Hai thùng hàng được nâng từ nền kho lên hai tầng giá ở độ cao khác nhau\"><rect x=\"16\" y=\"196.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"70.0\" y1=\"196.0\" x2=\"70.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"196.0\" x2=\"150.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"136.0\" x2=\"150.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"230.0\" y1=\"196.0\" x2=\"230.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"310.0\" y1=\"196.0\" x2=\"310.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"230.0\" y1=\"52.0\" x2=\"310.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"172\" y1=\"196\" x2=\"172\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M167.9,143.0 L172.0,136.0 L176.1,143.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"172\" y1=\"136.0\" x2=\"172\" y2=\"196\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M176.1,189.0 L172.0,196.0 L167.9,189.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"178\" y=\"170.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,5 m</text><line x1=\"334\" y1=\"196\" x2=\"334\" y2=\"52.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M329.9,59.0 L334.0,52.0 L338.1,59.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"334\" y1=\"52.0\" x2=\"334\" y2=\"196\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M338.1,189.0 L334.0,196.0 L329.9,189.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"340\" y=\"128.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3,6 m</text><text x=\"110\" y=\"100.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A · 12 kg</text><text x=\"270\" y=\"20.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B · 5,0 kg</text><rect x=\"88\" y=\"168.0\" width=\"44\" height=\"28\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"><animate attributeName=\"y\" values=\"168.0;167.7;167.0;165.7;164.0;161.8;159.2;156.3;153.0;149.5;145.8;141.9;138.0;134.1;130.2;126.5;123.0;119.7;116.8;114.2;112.0;110.3;109.0;108.3;108.0;108.0;108.0;108.0;108.0\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"252\" y=\"172.0\" width=\"36\" height=\"24\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"><animate attributeName=\"y\" values=\"172.0;171.4;169.5;166.5;162.4;157.1;150.9;143.8;136.0;127.6;118.6;109.4;100.0;90.6;81.4;72.4;64.0;56.2;49.1;42.9;37.6;33.5;30.5;28.6;28.0;28.0;28.0;28.0;28.0\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai thùng được nâng đồng thời từ nền kho lên giá (khoảng 6 s). Độ cao vẽ đúng tỉ lệ (1 m ứng với 40 px). Chưa tính thế năng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thế năng trọng trường là năng lượng tương tác giữa Trái Đất và vật, phụ thuộc vị trí của vật.</li><li>$W_\\text{t}=mgz$ ($z$: toạ độ trên trục thẳng đứng hướng lên, gốc tại mốc).</li><li>Mốc ở mặt đất thì $z=h$, độ cao so với mặt đất.</li><li>⚠ <strong>Điều kiện:</strong> phải chọn mốc trước; vùng khảo sát nhỏ để $g$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thế năng của thùng $A$</span></p>$$W_{\\text{t}A}=m_Agz_A=12\\cdot10\\cdot1{,}5$$<div class=\"bt-ans\">$$W_{\\text{t}A}=180\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thế năng của thùng $B$</span></p>$$W_{\\text{t}B}=m_Bgz_B=5{,}0\\cdot10\\cdot3{,}6$$<div class=\"bt-ans\">$$W_{\\text{t}B}=180\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh hai thế năng</span></p><p>Hai thế năng <strong>bằng nhau</strong>.</p><p>Thùng $B$ cao gấp $2{,}4$ lần nhưng khối lượng chỉ bằng $\\dfrac{5}{12}$ khối lượng thùng $A$; tích $mz$ như nhau.</p><p>Thế năng phụ thuộc cả khối lượng lẫn độ cao, không chỉ một đại lượng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao của thùng $C$</span></p>$$W_{\\text{t}C}=m_Cgz_C\\ \\Rightarrow\\ z_C=\\dfrac{W_{\\text{t}C}}{m_Cg}=\\dfrac{240}{8{,}0\\cdot10}$$<div class=\"bt-ans\">$$z_C=3{,}0\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{kg}\\cdot\\text{m/s}^2\\cdot\\text{m}=\\text{J}$ ✓.</p><p>Mốc ở nền kho nên $z_C$ là độ cao của thùng $C$ so với nền kho, nằm giữa hai giá ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_{\\text{t}A}=180\\ \\text{J}$ · $W_{\\text{t}B}=180\\ \\text{J}$</p><p>b) hai thùng có thế năng bằng nhau</p><p>c) $z_C=3{,}0\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>độ cao so với mốc</strong> và hỏi <strong>thế năng</strong> → $W_\\text{t}=mgz$; so sánh phải tính cả khối lượng lẫn độ cao.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Thùng A và thùng B trên giá, mốc thế năng ở nền kho; thùng C chỉ cho khối lượng và thế năng\"><rect x=\"16\" y=\"196.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"70.0\" y1=\"196.0\" x2=\"70.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"196.0\" x2=\"150.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"136.0\" x2=\"150.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"230.0\" y1=\"196.0\" x2=\"230.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"310.0\" y1=\"196.0\" x2=\"310.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"230.0\" y1=\"52.0\" x2=\"310.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"172\" y1=\"196\" x2=\"172\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M167.9,143.0 L172.0,136.0 L176.1,143.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"172\" y1=\"136.0\" x2=\"172\" y2=\"196\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M176.1,189.0 L172.0,196.0 L167.9,189.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"178\" y=\"170.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,5 m</text><line x1=\"334\" y1=\"196\" x2=\"334\" y2=\"52.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M329.9,59.0 L334.0,52.0 L338.1,59.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"334\" y1=\"52.0\" x2=\"334\" y2=\"196\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M338.1,189.0 L334.0,196.0 L329.9,189.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"340\" y=\"128.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3,6 m</text><text x=\"110\" y=\"100.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A · 12 kg</text><text x=\"270\" y=\"20.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B · 5,0 kg</text><rect x=\"88\" y=\"108.0\" width=\"44\" height=\"28\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><rect x=\"252\" y=\"28.0\" width=\"36\" height=\"24\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><text x=\"110.0\" y=\"154.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">W<tspan dy=\"4\" font-size=\"10\">tA</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"270.0\" y=\"70.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">W<tspan dy=\"4\" font-size=\"10\">tB</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16.0\" y=\"224.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thùng C: 8,0 kg · W<tspan dy=\"4\" font-size=\"10\">t</tspan><tspan dy=\"-4\"> = 240 J · độ cao = ?</tspan></text></svg><figcaption>Dữ kiện: mốc thế năng ở nền kho; độ cao A, B vẽ đúng tỉ lệ (1 m ứng với 40 px). Thùng C không vẽ vì chưa biết độ cao.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng $A$ khối lượng $12$ kg … độ cao $1{,}5$ m”</td><td>$m_A=12\\ \\text{kg}$; $z_A=1{,}5\\ \\text{m}$</td><td>⚠ Mỗi thùng có khối lượng và độ cao riêng</td></tr><tr><td>“thùng $B$ khối lượng $5{,}0$ kg … độ cao $3{,}6$ m”</td><td>$m_B=5{,}0\\ \\text{kg}$; $z_B=3{,}6\\ \\text{m}$</td><td>Thế năng trọng trường $W_\\text{t}=mgz$</td></tr><tr><td>“Chọn mốc thế năng tại nền kho”</td><td>Mốc ở nền kho</td><td>⚠ Mốc ở nền kho thì $z$ bằng độ cao so với nền</td></tr><tr><td>“lấy $g=10$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Gia tốc trọng trường</td></tr><tr><td>“a) thế năng trọng trường của mỗi thùng”</td><td>Cần $W_\\text{tA}$, $W_\\text{tB}$ (J)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) So sánh thế năng của hai thùng”</td><td>So hai kết quả ở câu a</td><td>Thế năng phụ thuộc cả khối lượng lẫn độ cao</td></tr><tr><td>“c) thùng $C$ khối lượng $8{,}0$ kg có thế năng $240$ J”</td><td>$m_C=8{,}0\\ \\text{kg}$; $W_\\text{tC}=240\\ \\text{J}$</td><td>Rút $z$ từ công thức thế năng (mốc vẫn ở nền kho)</td></tr><tr><td>“độ cao của thùng $C$”</td><td>Cần $z_C$ (m)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>độ cao so với mốc</b> và hỏi <b>thế năng</b> → nghĩ tới <b>mgz</b> với z tính từ mốc.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thế năng của thùng $A$",
+     "hoi": "Thế năng trọng trường của thùng $A$ bằng bao nhiêu J?",
+     "dap_so": 180,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Quên nhân với $g$, hoặc lấy độ cao của thùng khác."
+    },
+    {
+     "tieu_de": "Thế năng của thùng $B$",
+     "hoi": "Thế năng trọng trường của thùng $B$ bằng bao nhiêu J?",
+     "dap_so": 180,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Thế khối lượng của thùng này vào độ cao của thùng kia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng cùng công thức với khối lượng và độ cao của chính thùng $B$",
+       "dung": true
+      },
+      {
+       "text": "Dùng khối lượng của thùng $A$ vì cùng một mốc",
+       "dung": false,
+       "vi_sao": "Mỗi thùng có khối lượng riêng; mốc chung không làm hai khối lượng bằng nhau."
+      },
+      {
+       "text": "Cộng thế năng của thùng $B$ vào thế năng đã tính của thùng $A$",
+       "dung": false,
+       "vi_sao": "Thế năng của một thùng chỉ tính từ khối lượng và độ cao của chính thùng đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai thế năng",
+     "hoi": "Chọn kết luận đúng về thế năng của hai thùng.",
+     "lua_chon": [
+      {
+       "text": "Hai thùng có thế năng bằng nhau",
+       "dung": true
+      },
+      {
+       "text": "Thùng $B$ lớn hơn vì ở cao hơn",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc cả độ cao lẫn khối lượng; chỉ xét độ cao là bỏ sót khối lượng."
+      },
+      {
+       "text": "Thùng $A$ lớn hơn vì nặng hơn",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc cả khối lượng lẫn độ cao; chỉ xét khối lượng là bỏ sót độ cao."
+      }
+     ],
+     "loi_hay_gap": "Chỉ so độ cao hoặc chỉ so khối lượng mà không tính tích $mgz$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai kết quả vừa tính",
+       "dung": true
+      },
+      {
+       "text": "So riêng độ cao của hai thùng",
+       "dung": false,
+       "vi_sao": "Thế năng còn phụ thuộc khối lượng nên so riêng độ cao chưa đủ."
+      },
+      {
+       "text": "So riêng khối lượng của hai thùng",
+       "dung": false,
+       "vi_sao": "Thế năng còn phụ thuộc độ cao nên so riêng khối lượng chưa đủ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao của thùng $C$",
+     "hoi": "Thùng $C$ ở độ cao bao nhiêu mét so với nền kho?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Chia cho khối lượng mà quên $g$, hoặc nhân thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $W_\\text{t}=mgz$ rút $z$ rồi thế số",
+       "dung": true
+      },
+      {
+       "text": "Nhân $W_\\text{t}$ với $m$ và $g$",
+       "dung": false,
+       "vi_sao": "Từ $W_\\text{t}=mgz$, muốn có $z$ phải chia cho $mg$, không nhân."
+      },
+      {
+       "text": "Chia $W_\\text{t}$ cho $m$ mà bỏ $g$",
+       "dung": false,
+       "vi_sao": "Thiếu $g$ nên kết quả không còn đơn vị mét."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đổi mốc thế năng và xét dấu thế năng",
+   "topic": "Thế năng trọng trường và mốc thế năng",
+   "problem_html": "<p>Một toà nhà có tầng hầm với sàn nằm sâu $4{,}0\\ \\text{m}$ dưới mặt đường. Sàn tầng 3 cao $6{,}0\\ \\text{m}$ và sàn tầng 6 cao $15\\ \\text{m}$ so với mặt đường. Một chậu cây khối lượng $2{,}0\\ \\text{kg}$ đặt trên sàn tầng 3. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<p>Tính thế năng trọng trường của chậu cây khi chọn mốc thế năng tại:</p>\n<ol type=\"a\"><li>mặt đường;</li><li>sàn tầng hầm;</li><li>sàn tầng 6.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Toà nhà có tầng hầm; mốc thế năng dời lần lượt qua các sàn, chậu cây đặt trên sàn tầng 3 đứng yên\"><rect x=\"150\" y=\"24.0\" width=\"100\" height=\"190.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150.0\" y1=\"24.0\" x2=\"250.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"114.0\" x2=\"250.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"214.0\" x2=\"250.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"174.0\" x2=\"150.0\" y2=\"174.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"250.0\" y1=\"174.0\" x2=\"330.0\" y2=\"174.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"262\" y=\"28.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 6 · 15 m</text><text x=\"262\" y=\"118.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 3 · 6,0 m</text><text x=\"336\" y=\"178.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mặt đường</text><text x=\"262\" y=\"218.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn hầm · −4,0 m</text><rect x=\"190\" y=\"100.0\" width=\"20\" height=\"14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><circle cx=\"200\" cy=\"92.0\" r=\"8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"158\" y=\"78.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chậu cây 2,0 kg</text><line x1=\"24\" y1=\"174.0\" x2=\"250\" y2=\"174.0\" stroke=\"#f87171\" stroke-width=\"2\" stroke-dasharray=\"7 5\"><animate attributeName=\"y1\" values=\"174.0;174.0;174.0;174.0;179.0;184.0;189.0;194.0;199.0;204.0;209.0;214.0;214.0;214.0;214.0;214.0;214.0;214.0;209.0;204.0;199.0;194.0;189.0;184.0;179.0;174.0;169.0;164.0;159.0;154.0;149.0;144.0;139.0;134.0;129.0;124.0;119.0;114.0;109.0;104.0;99.0;94.0;89.0;84.0;79.0;74.0;69.0;64.0;59.0;54.0;49.0;44.0;39.0;34.0;29.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0\" dur=\"7.56s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"174.0;174.0;174.0;174.0;179.0;184.0;189.0;194.0;199.0;204.0;209.0;214.0;214.0;214.0;214.0;214.0;214.0;214.0;209.0;204.0;199.0;194.0;189.0;184.0;179.0;174.0;169.0;164.0;159.0;154.0;149.0;144.0;139.0;134.0;129.0;124.0;119.0;114.0;109.0;104.0;99.0;94.0;89.0;84.0;79.0;74.0;69.0;64.0;59.0;54.0;49.0;44.0;39.0;34.0;29.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0;24.0\" dur=\"7.56s\" begin=\"indefinite\" fill=\"freeze\"/></line><text x=\"28\" y=\"168.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\">mốc<animate attributeName=\"y\" values=\"168.0;168.0;168.0;168.0;173.0;178.0;183.0;188.0;193.0;198.0;203.0;208.0;208.0;208.0;208.0;208.0;208.0;208.0;203.0;198.0;193.0;188.0;183.0;178.0;173.0;168.0;163.0;158.0;153.0;148.0;143.0;138.0;133.0;128.0;123.0;118.0;113.0;108.0;103.0;98.0;93.0;88.0;83.0;78.0;73.0;68.0;63.0;58.0;53.0;48.0;43.0;38.0;33.0;28.0;23.0;18.0;18.0;18.0;18.0;18.0;18.0;18.0;18.0;18.0\" dur=\"7.56s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mốc thế năng (nét đứt đỏ) dời lần lượt qua các sàn của đề (khoảng 7 s); chậu cây đứng yên. Độ cao vẽ đúng tỉ lệ (1 m ứng với 10 px).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mốc thế năng là vị trí chọn để $W_\\text{t}=0$.</li><li>$W_\\text{t}=mgz$ với $z$ tính từ mốc, trục hướng lên.</li><li>Trên mốc: $z\\gt0$, $W_\\text{t}\\gt0$ · tại mốc: $W_\\text{t}=0$ · dưới mốc: $z\\lt0$, $W_\\text{t}\\lt0$.</li><li>⚠ <strong>Điều kiện:</strong> ghi kết quả thế năng thì phải nói rõ mốc; đổi mốc thì tính lại $z$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Mốc tại mặt đường</span></p><p>Chậu cây nằm trên mốc, $z=6{,}0\\ \\text{m}$:</p>$$W_\\text{t}=mgz=2{,}0\\cdot10\\cdot6{,}0$$<div class=\"bt-ans\">$$W_\\text{t}=120\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Mốc tại sàn tầng hầm</span></p><p>Sàn hầm nằm dưới mặt đường $4{,}0\\ \\text{m}$ nên chậu cây cao hơn sàn hầm một đoạn bằng tổng hai khoảng:</p>$$z=6{,}0+4{,}0=10\\ \\text{m}$$$$W_\\text{t}=2{,}0\\cdot10\\cdot10$$<div class=\"bt-ans\">$$W_\\text{t}=200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Mốc tại sàn tầng 6</span></p><p>Chậu cây nằm dưới mốc nên $z$ mang dấu âm:</p>$$z=6{,}0-15=-9{,}0\\ \\text{m}$$$$W_\\text{t}=2{,}0\\cdot10\\cdot(-9{,}0)$$<div class=\"bt-ans\">$$W_\\text{t}=-180\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Chậu cây không di chuyển nhưng thế năng đổi theo mốc, nên kết quả luôn phải ghi kèm mốc.</p><p>Gọi $W_1$, $W_2$, $W_3$ là thế năng ở câu a, b, c. Hai mốc ở câu a và b cách nhau $4{,}0\\ \\text{m}$; hai mốc ở câu a và c cách nhau $15\\ \\text{m}$:</p>$$W_2-W_1=200-120=80\\ \\text{J}=mg\\cdot4{,}0\\ \\checkmark$$$$W_1-W_3=120-(-180)=300\\ \\text{J}=mg\\cdot15\\ \\checkmark$$<p>Hiệu hai thế năng bằng $mg$ nhân khoảng cách giữa hai mốc, không phụ thuộc mốc nào được chọn.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) mốc mặt đường: $W_\\text{t}=120\\ \\text{J}$</p><p>b) mốc sàn hầm: $W_\\text{t}=200\\ \\text{J}$</p><p>c) mốc sàn tầng 6: $W_\\text{t}=-180\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề <strong>đổi mốc</strong> hoặc vật <strong>ở dưới mốc</strong> → tính lại $z$ từ mốc mới, chú ý dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Toà nhà có tầng hầm, mặt đường, sàn tầng 3 có chậu cây và sàn tầng 6\"><rect x=\"150\" y=\"24.0\" width=\"100\" height=\"190.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150.0\" y1=\"24.0\" x2=\"250.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"114.0\" x2=\"250.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"214.0\" x2=\"250.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"174.0\" x2=\"150.0\" y2=\"174.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"250.0\" y1=\"174.0\" x2=\"330.0\" y2=\"174.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"262\" y=\"28.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 6 · 15 m</text><text x=\"262\" y=\"118.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 3 · 6,0 m</text><text x=\"336\" y=\"178.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mặt đường</text><text x=\"262\" y=\"218.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">sàn hầm · −4,0 m</text><rect x=\"190\" y=\"100.0\" width=\"20\" height=\"14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><circle cx=\"200\" cy=\"92.0\" r=\"8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"158\" y=\"78.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">chậu cây 2,0 kg</text><text x=\"158.0\" y=\"138.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">W<tspan dy=\"4\" font-size=\"9\">t</tspan><tspan dy=\"-4\"> = ? (theo từng mốc)</tspan></text></svg><figcaption>Dữ kiện: các sàn vẽ đúng tỉ lệ độ cao (1 m ứng với 10 px); mốc thế năng chưa chọn, đề lần lượt đặt mốc ở ba nơi.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“sàn nằm sâu $4{,}0$ m dưới mặt đường”</td><td>Sàn hầm: $z=-4{,}0\\ \\text{m}$ so với mặt đường</td><td>⚠ $z$ là toạ độ có dấu, tính từ mốc theo trục hướng lên</td></tr><tr><td>“sàn tầng 3 cao $6{,}0$ m và sàn tầng 6 cao $15$ m so với mặt đường”</td><td>Tầng 3: $6{,}0\\ \\text{m}$; tầng 6: $15\\ \\text{m}$ (so với mặt đường)</td><td>Độ cao cho sẵn so với mặt đường, không phải so với mốc</td></tr><tr><td>“chậu cây khối lượng $2{,}0$ kg đặt trên sàn tầng 3”</td><td>$m=2{,}0\\ \\text{kg}$; chậu đứng yên ở độ cao $6{,}0\\ \\text{m}$ so với mặt đường</td><td>Vị trí của vật không đổi, chỉ đổi mốc</td></tr><tr><td>“Lấy $g=10$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Thế năng trọng trường $W_\\text{t}=mgz$</td></tr><tr><td>“a) mặt đường”</td><td>Mốc ở độ cao $0$</td><td>Tính $z$ của chậu so với mốc này</td></tr><tr><td>“b) sàn tầng hầm”</td><td>Mốc ở $-4{,}0\\ \\text{m}$ so với mặt đường</td><td>⚠ Mốc đổi thì $z$ phải tính lại từ mốc mới</td></tr><tr><td>“c) sàn tầng 6”</td><td>Mốc ở $15\\ \\text{m}$ so với mặt đường</td><td>⚠ Xét chậu nằm phía nào của mốc để xác định dấu của $z$</td></tr><tr><td>“Tính thế năng trọng trường của chậu cây”</td><td>Cần $W_\\text{t}$ (J) ứng với từng mốc</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đổi mốc thế năng</b> hoặc vật <b>nằm dưới mốc</b> → nghĩ tới <b>tính lại z có dấu</b> theo mốc mới.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Mốc tại mặt đường",
+     "hoi": "Thế năng của chậu cây khi mốc ở mặt đường là bao nhiêu J?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Quên nhân với $g$ hoặc quên khối lượng."
+    },
+    {
+     "tieu_de": "Mốc tại sàn tầng hầm",
+     "hoi": "Thế năng của chậu cây khi mốc ở sàn tầng hầm là bao nhiêu J?",
+     "dap_so": 200,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên $z$ của mốc cũ, hoặc tính sai khoảng cách từ mốc mới tới chậu cây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $z$ từ mốc mới rồi mới thế vào công thức",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $z$ vì chậu cây không di chuyển",
+       "dung": false,
+       "vi_sao": "$z$ tính từ mốc nên mốc đổi thì $z$ phải đổi."
+      },
+      {
+       "text": "Lấy $6{,}0-4{,}0$ vì hầm nằm dưới mặt đường",
+       "dung": false,
+       "vi_sao": "Hầm ở phía dưới mặt đường nên khoảng cách từ sàn hầm tới chậu cây là tổng hai khoảng, không phải hiệu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mốc tại sàn tầng 6",
+     "hoi": "Thế năng của chậu cây khi mốc ở sàn tầng 6 là bao nhiêu J?",
+     "dap_so": -180,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Bỏ qua dấu của $z$, hoặc lấy khoảng cách làm $z$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét chậu nằm trên hay dưới mốc rồi chọn dấu của $z$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $z$ bằng khoảng cách giữa chậu và mốc, bỏ qua dấu",
+       "dung": false,
+       "vi_sao": "$z$ là toạ độ có dấu, khoảng cách chỉ là độ lớn của $z$."
+      },
+      {
+       "text": "Cho $W_\\text{t}=0$ vì chậu không đổi chỗ",
+       "dung": false,
+       "vi_sao": "$W_\\text{t}=0$ chỉ khi vật ở đúng mốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Công của trọng lực và độ biến thiên thế năng",
+   "topic": "Thế năng trọng trường và mốc thế năng",
+   "problem_html": "<p>Một người đi xe đạp (tổng khối lượng $60\\ \\text{kg}$) đi trên đường đồi: từ đỉnh dốc $A$ cao $40\\ \\text{m}$ xuống chân dốc $B$ cao $12\\ \\text{m}$, rồi lên đồi $C$ cao $25\\ \\text{m}$ (các độ cao đều tính từ cùng một mức chuẩn). Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính công của trọng lực khi người đi từ $A$ đến $B$.</li>\n<li>Tính công của trọng lực khi người đi từ $B$ đến $C$.</li>\n<li>Tính công của trọng lực trên cả đoạn từ $A$ đến $C$. Công này có phụ thuộc vào việc đường đi quanh co thế nào không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Người đi xe đạp chạy từ đỉnh dốc A xuống chân dốc B rồi lên đồi C\"><line x1=\"16.0\" y1=\"200.0\" x2=\"410.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"260\" y=\"216\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mức chuẩn (độ cao 0)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"1\" points=\"46.0,40.0 48.6,40.1 51.1,40.3 53.7,40.7 56.3,41.2 58.8,41.9 61.4,42.7 64.0,43.7 66.5,44.8 69.1,46.1 71.7,47.5 74.2,49.0 76.8,50.7 79.4,52.5 81.9,54.4 84.5,56.4 87.1,58.5 89.6,60.8 92.2,63.1 94.8,65.5 97.3,68.0 99.9,70.6 102.5,73.2 105.0,75.9 107.6,78.7 110.2,81.5 112.7,84.4 115.3,87.2 117.9,90.1 120.4,93.1 123.0,96.0 125.6,98.9 128.1,101.9 130.7,104.8 133.3,107.6 135.8,110.5 138.4,113.3 141.0,116.1 143.5,118.8 146.1,121.4 148.7,124.0 151.2,126.5 153.8,128.9 156.4,131.2 158.9,133.5 161.5,135.6 164.1,137.6 166.6,139.5 169.2,141.3 171.8,143.0 174.3,144.5 176.9,145.9 179.5,147.2 182.0,148.3 184.6,149.3 187.2,150.1 189.7,150.8 192.3,151.3 194.9,151.7 197.4,151.9 200.0,152.0 202.8,152.0 205.5,151.9 208.3,151.7 211.1,151.4 213.8,151.1 216.6,150.7 219.4,150.3 222.1,149.8 224.9,149.2 227.7,148.5 230.4,147.8 233.2,147.0 236.0,146.2 238.7,145.3 241.5,144.4 244.3,143.4 247.0,142.4 249.8,141.3 252.6,140.2 255.3,139.0 258.1,137.8 260.9,136.6 263.6,135.3 266.4,134.0 269.2,132.7 271.9,131.4 274.7,130.1 277.5,128.7 280.2,127.4 283.0,126.0 285.8,124.6 288.5,123.3 291.3,121.9 294.1,120.6 296.8,119.3 299.6,118.0 302.4,116.7 305.1,115.4 307.9,114.2 310.7,113.0 313.4,111.8 316.2,110.7 319.0,109.6 321.7,108.6 324.5,107.6 327.3,106.7 330.0,105.8 332.8,105.0 335.6,104.2 338.3,103.5 341.1,102.8 343.9,102.2 346.6,101.7 349.4,101.3 352.2,100.9 354.9,100.6 357.7,100.3 360.5,100.1 363.2,100.0 366.0,100.0\"/><line x1=\"46.0\" y1=\"40.0\" x2=\"46.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"46.0\" cy=\"40.0\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"200.0\" y1=\"152.0\" x2=\"200.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"200.0\" cy=\"152.0\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"366.0\" y1=\"100.0\" x2=\"366.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"366.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"40.0\" y=\"18.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A · 40 m</text><text x=\"200.0\" y=\"176.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B · 12 m</text><text x=\"366.0\" y=\"76.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C · 25 m</text><text x=\"250\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">người + xe đạp: 60 kg</text><circle cx=\"46.0\" cy=\"33.0\" r=\"6.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"46.0;55.2;64.1;72.4;80.1;87.4;94.3;100.9;107.3;113.5;119.7;125.8;131.9;138.1;144.5;151.1;157.9;165.2;172.9;181.1;189.9;199.1;208.4;217.6;226.7;235.7;244.5;253.1;261.7;270.1;278.4;286.8;295.1;303.5;312.1;320.7;329.5;338.4;347.5;356.7;366.0;366.0;366.0;366.0;366.0\" dur=\"8.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"33.0;34.0;36.8;40.9;46.0;51.8;58.0;64.6;71.3;78.2;85.2;92.2;99.1;106.0;112.8;119.4;125.6;131.4;136.6;140.9;143.8;145.0;144.7;143.6;141.7;139.3;136.3;132.9;129.2;125.3;121.2;117.1;113.1;109.1;105.4;102.0;99.0;96.5;94.6;93.4;93.0;93.0;93.0;93.0;93.0\" dur=\"8.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy dọc đường từ A qua B tới C với tốc độ không đổi (khoảng 8 s). Độ cao vẽ đúng tỉ lệ (1 m ứng với 4 px), khoảng cách ngang thì không.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trọng lực là lực thế, công của nó chỉ phụ thuộc điểm đầu và điểm cuối.</li><li>$A_{MN}=W_{\\text{t}M}-W_{\\text{t}N}=mg(z_M-z_N)$ (thế năng đầu trừ thế năng cuối).</li><li>Đi xuống: công dương · đi lên: công âm.</li><li>⚠ <strong>Điều kiện:</strong> không cần biết đường đi; kết quả không phụ thuộc mốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Từ $A$ đến $B$</span></p>$$A_{AB}=W_{\\text{t}A}-W_{\\text{t}B}=mg(z_A-z_B)=60\\cdot10\\cdot(40-12)$$<div class=\"bt-ans\">$$A_{AB}=16\\,800\\ \\text{J}=16{,}8\\ \\text{kJ}$$</div><p>Đi xuống nên công dương.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Từ $B$ đến $C$</span></p>$$A_{BC}=mg(z_B-z_C)=60\\cdot10\\cdot(12-25)$$<div class=\"bt-ans\">$$A_{BC}=-7800\\ \\text{J}=-7{,}8\\ \\text{kJ}$$</div><p>Đi lên nên trọng lực cản, công âm.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Từ $A$ đến $C$</span></p><p>Chỉ cần độ cao đầu và độ cao cuối, không cần đường đi qua $B$:</p>$$A_{AC}=mg(z_A-z_C)=60\\cdot10\\cdot(40-25)$$<div class=\"bt-ans\">$$A_{AC}=9000\\ \\text{J}=9{,}0\\ \\text{kJ}$$</div><p>Công này <strong>không phụ thuộc</strong> đường đi quanh co thế nào.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p>$$A_{AB}+A_{BC}=16{,}8+(-7{,}8)=9{,}0\\ \\text{kJ}=A_{AC}\\ \\checkmark$$<p>Chọn mốc tại $B$: $W_{\\text{t}A}=60\\cdot10\\cdot28=16{,}8\\ \\text{kJ}$ và $W_{\\text{t}C}=60\\cdot10\\cdot13=7{,}8\\ \\text{kJ}$, hiệu vẫn là $9{,}0\\ \\text{kJ}$: mốc không ảnh hưởng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{AB}=16{,}8\\ \\text{kJ}$</p><p>b) $A_{BC}=-7{,}8\\ \\text{kJ}$</p><p>c) $A_{AC}=9{,}0\\ \\text{kJ}$, không phụ thuộc đường đi</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>công của trọng lực giữa hai vị trí</strong> → thế năng đầu trừ thế năng cuối, bỏ qua đường đi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Đường đồi đi qua ba điểm A, B, C ở các độ cao khác nhau so với mức chuẩn\"><line x1=\"16.0\" y1=\"200.0\" x2=\"410.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"260\" y=\"216\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mức chuẩn (độ cao 0)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"1\" points=\"46.0,40.0 48.6,40.1 51.1,40.3 53.7,40.7 56.3,41.2 58.8,41.9 61.4,42.7 64.0,43.7 66.5,44.8 69.1,46.1 71.7,47.5 74.2,49.0 76.8,50.7 79.4,52.5 81.9,54.4 84.5,56.4 87.1,58.5 89.6,60.8 92.2,63.1 94.8,65.5 97.3,68.0 99.9,70.6 102.5,73.2 105.0,75.9 107.6,78.7 110.2,81.5 112.7,84.4 115.3,87.2 117.9,90.1 120.4,93.1 123.0,96.0 125.6,98.9 128.1,101.9 130.7,104.8 133.3,107.6 135.8,110.5 138.4,113.3 141.0,116.1 143.5,118.8 146.1,121.4 148.7,124.0 151.2,126.5 153.8,128.9 156.4,131.2 158.9,133.5 161.5,135.6 164.1,137.6 166.6,139.5 169.2,141.3 171.8,143.0 174.3,144.5 176.9,145.9 179.5,147.2 182.0,148.3 184.6,149.3 187.2,150.1 189.7,150.8 192.3,151.3 194.9,151.7 197.4,151.9 200.0,152.0 202.8,152.0 205.5,151.9 208.3,151.7 211.1,151.4 213.8,151.1 216.6,150.7 219.4,150.3 222.1,149.8 224.9,149.2 227.7,148.5 230.4,147.8 233.2,147.0 236.0,146.2 238.7,145.3 241.5,144.4 244.3,143.4 247.0,142.4 249.8,141.3 252.6,140.2 255.3,139.0 258.1,137.8 260.9,136.6 263.6,135.3 266.4,134.0 269.2,132.7 271.9,131.4 274.7,130.1 277.5,128.7 280.2,127.4 283.0,126.0 285.8,124.6 288.5,123.3 291.3,121.9 294.1,120.6 296.8,119.3 299.6,118.0 302.4,116.7 305.1,115.4 307.9,114.2 310.7,113.0 313.4,111.8 316.2,110.7 319.0,109.6 321.7,108.6 324.5,107.6 327.3,106.7 330.0,105.8 332.8,105.0 335.6,104.2 338.3,103.5 341.1,102.8 343.9,102.2 346.6,101.7 349.4,101.3 352.2,100.9 354.9,100.6 357.7,100.3 360.5,100.1 363.2,100.0 366.0,100.0\"/><line x1=\"46.0\" y1=\"40.0\" x2=\"46.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"46.0\" cy=\"40.0\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"200.0\" y1=\"152.0\" x2=\"200.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"200.0\" cy=\"152.0\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"366.0\" y1=\"100.0\" x2=\"366.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"366.0\" cy=\"100.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"40.0\" y=\"18.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A · 40 m</text><text x=\"200.0\" y=\"176.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B · 12 m</text><text x=\"366.0\" y=\"76.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C · 25 m</text><text x=\"250\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">người + xe đạp: 60 kg</text></svg><figcaption>Dữ kiện: ba độ cao vẽ đúng tỉ lệ (1 m ứng với 4 px); khoảng cách ngang và độ dài đường đi không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“người đi xe đạp (tổng khối lượng $60$ kg)”</td><td>$m=60\\ \\text{kg}$</td><td>Trọng lực $P=mg$</td></tr><tr><td>“đỉnh dốc $A$ cao $40$ m … chân dốc $B$ cao $12$ m … đồi $C$ cao $25$ m”</td><td>$z_A=40\\ \\text{m}$; $z_B=12\\ \\text{m}$; $z_C=25\\ \\text{m}$</td><td>⚠ Các độ cao tính từ cùng một mức chuẩn</td></tr><tr><td>“Lấy $g=10$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Gia tốc trọng trường</td></tr><tr><td>“a) công của trọng lực khi đi từ $A$ đến $B$”</td><td>Cần $A_{AB}$ (kJ)</td><td>Định lí thế năng: công của lực thế bằng hiệu thế năng</td></tr><tr><td>“b) từ $B$ đến $C$”</td><td>Cần $A_{BC}$ (kJ)</td><td>Cùng công thức cho mọi đoạn đường</td></tr><tr><td>“c) cả đoạn từ $A$ đến $C$ … có phụ thuộc vào đường đi quanh co không”</td><td>Cần $A_{AC}$ (kJ) và kết luận về đường đi</td><td>⚠ Trọng lực là lực thế: công chỉ phụ thuộc vị trí đầu và cuối</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công của trọng lực</b> giữa hai vị trí → nghĩ tới <b>thế năng đầu trừ thế năng cuối</b>, bỏ qua đường đi.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Từ $A$ đến $B$",
+     "hoi": "Công của trọng lực từ $A$ đến $B$ bằng bao nhiêu kJ?",
+     "dap_so": 16.8,
+     "sai_so": 0.1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Lấy thế năng cuối trừ đầu, quên nhân với $g$, hoặc quên đổi J ra kJ."
+    },
+    {
+     "tieu_de": "Từ $B$ đến $C$",
+     "hoi": "Công của trọng lực từ $B$ đến $C$ bằng bao nhiêu kJ?",
+     "dap_so": -7.8,
+     "sai_so": 0.1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Lấy độ lớn độ chênh cao rồi bỏ dấu của công.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng cùng công thức thế năng đầu trừ thế năng cuối cho đoạn $BC$",
+       "dung": true
+      },
+      {
+       "text": "Lấy giá trị tuyệt đối vì độ cao đổi thì công luôn dương",
+       "dung": false,
+       "vi_sao": "Công có dấu; dấu cho biết trọng lực phát động hay cản chuyển động."
+      },
+      {
+       "text": "Lấy trọng lượng nhân quãng đường $BC$",
+       "dung": false,
+       "vi_sao": "Quãng đường $BC$ không cho; công của trọng lực chỉ cần độ cao đầu và độ cao cuối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Từ $A$ đến $C$",
+     "hoi": "Công của trọng lực từ $A$ đến $C$ bằng bao nhiêu kJ?",
+     "dap_so": 9.0,
+     "sai_so": 0.1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Cộng độ lớn công hai đoạn thay vì cộng đại số, hoặc đi tìm độ dài đường quanh co.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy thế năng tại $A$ trừ thế năng tại $C$",
+       "dung": true
+      },
+      {
+       "text": "Cộng độ lớn công của hai đoạn $AB$ và $BC$",
+       "dung": false,
+       "vi_sao": "Công đi lên mang dấu khác nên phải cộng đại số chứ không cộng độ lớn."
+      },
+      {
+       "text": "Tính độ dài đường đi từ $A$ qua $B$ tới $C$ rồi nhân trọng lực",
+       "dung": false,
+       "vi_sao": "Công của trọng lực không phụ thuộc đường đi; dữ kiện độ dài đường cũng không có."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Định lí động năng với nhiều ngoại lực",
+   "topic": "Động năng và định lí động năng",
+   "problem_html": "<p>Một người kéo thùng hàng khối lượng $20\\ \\text{kg}$ từ chân dốc lên đỉnh dốc bằng sợi dây song song với mặt dốc. Dốc dài $10\\ \\text{m}$, nghiêng góc $30^\\circ$ so với phương ngang. Thùng bắt đầu chuyển động từ trạng thái nghỉ ở chân dốc. Lực kéo có độ lớn không đổi $150\\ \\text{N}$, lực ma sát giữa thùng và mặt dốc là $25\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính tốc độ của thùng khi tới đỉnh dốc.</li>\n<li>Lần khác, thùng được đẩy cho tốc độ đầu $2{,}0\\ \\text{m/s}$ ở chân dốc, lực ma sát vẫn là $25\\ \\text{N}$. Lực kéo không đổi phải có độ lớn bao nhiêu để thùng vừa tới đỉnh dốc thì dừng lại?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Thùng 20 kg được kéo từ chân dốc lên đỉnh dốc dài 10 m nghiêng 30 độ\"><line x1=\"36.0\" y1=\"204.0\" x2=\"287.1\" y2=\"59.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"26.0\" y1=\"204.0\" x2=\"330.0\" y2=\"204.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><path d=\"M92.0,204.0 A56,56 0 0 0 84.5,176.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"98.0\" y=\"194.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><text x=\"18\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 20 kg</text><text x=\"18\" y=\"50\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực kéo 150 N, song song dốc</text><text x=\"18\" y=\"72\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực ma sát 25 N</text><text x=\"240\" y=\"186\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dốc dài 10 m</text><g transform=\"translate(36.0 204.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"36.0 204.0;36.8 203.5;39.3 202.1;43.4 199.7;49.2 196.4;56.6 192.1;65.7 186.8;76.4 180.6;88.8 173.5;102.9 165.4;118.5 156.3;135.9 146.3;154.9 135.4;175.5 123.5;197.8 110.6;221.7 96.8;247.3 82.0;247.3 82.0;247.3 82.0;247.3 82.0\" dur=\"4.75s\" begin=\"indefinite\" fill=\"freeze\"/><g transform=\"rotate(-30)\"><rect x=\"0\" y=\"-24\" width=\"36\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/></g></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng được kéo từ nghỉ ở chân dốc lên đỉnh dốc (đúng thời gian thật, khoảng 4 s). Chưa vẽ các lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định lí động năng:</strong> $\\dfrac12mv^2-\\dfrac12mv_0^2=A_1+A_2+\\dots$ (tổng công mọi ngoại lực).</li><li>Công của lực không đổi: $A=Fs\\cos\\varphi$ ($\\varphi$: góc giữa lực và đường đi).</li><li>Công của trọng lực: $-mgh$ khi vật đi lên độ cao $h$.</li><li>⚠ <strong>Điều kiện:</strong> cộng công của MỌI ngoại lực, kể cả công âm; phản lực vuông góc đường đi có công bằng $0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của lực kéo</span></p><p>Lực kéo song song mặt dốc, cùng chiều chuyển động ($\\varphi=0^\\circ$):</p>$$A_F=Fs=150\\cdot10$$<div class=\"bt-ans\">$$A_F=1500\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của lực ma sát</span></p><p>Ma sát ngược chiều chuyển động ($\\varphi=180^\\circ$):</p>$$A_\\text{ms}=-F_\\text{ms}s=-25\\cdot10$$<div class=\"bt-ans\">$$A_\\text{ms}=-250\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của trọng lực</span></p><p>Độ cao đỉnh dốc so với chân dốc:</p>$$h=s\\sin30^\\circ=10\\cdot0{,}5=5{,}0\\ \\text{m}$$$$A_P=-mgh=-20\\cdot10\\cdot5{,}0$$<div class=\"bt-ans\">$$A_P=-1000\\ \\text{J}$$</div><p>Phản lực $\\vec N$ vuông góc mặt dốc nên $A_N=0$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ ở đỉnh dốc (định lí động năng)</span></p>$$\\dfrac12mv^2-0=A_F+A_\\text{ms}+A_P$$$$\\dfrac12mv^2=1500-250-1000=250\\ \\text{J}$$$$v=\\sqrt{\\dfrac{2\\cdot250}{20}}=\\sqrt{25}$$<div class=\"bt-ans\">$$v=5{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lực kéo để thùng vừa tới đỉnh thì dừng</span></p><p>Động năng đầu $\\dfrac12mv_0^2$ với $v_0=2{,}0\\ \\text{m/s}$, động năng cuối bằng $0$:</p>$$0-\\dfrac12mv_0^2=F's+A_\\text{ms}+A_P$$$$-\\dfrac12\\cdot20\\cdot2{,}0^2=F'\\cdot10-250-1000$$$$-40=10F'-1250\\ \\Rightarrow\\ F'=\\dfrac{1210}{10}$$<div class=\"bt-ans\">$$F'=121\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Hợp lực dọc dốc: $121-25-100=-4\\ \\text{N}$, âm nên thùng giảm tốc, gia tốc $a=\\dfrac{-4}{20}=-0{,}2\\ \\text{m/s}^2$.</p>$$v^2=v_0^2+2as=2{,}0^2+2\\cdot(-0{,}2)\\cdot10=0\\ \\checkmark$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v=5{,}0\\ \\text{m/s}$</p><p>b) $F'=121\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>nhiều ngoại lực</strong> (kéo, ma sát, trọng lực) và hỏi tốc độ → cộng công mọi lực, cho bằng độ biến thiên động năng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Thùng trên dốc nghiêng 30 độ chịu lực kéo song song dốc, lực ma sát và trọng lực\"><line x1=\"36.0\" y1=\"204.0\" x2=\"287.1\" y2=\"59.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"26.0\" y1=\"204.0\" x2=\"330.0\" y2=\"204.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><path d=\"M92.0,204.0 A56,56 0 0 0 84.5,176.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"98.0\" y=\"194.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><text x=\"18\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 20 kg</text><text x=\"18\" y=\"50\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực kéo 150 N, song song dốc</text><text x=\"18\" y=\"72\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực ma sát 25 N</text><text x=\"240\" y=\"186\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dốc dài 10 m</text><g transform=\"translate(148.6 139.0)\"><g transform=\"rotate(-30)\"><rect x=\"0\" y=\"-24\" width=\"36\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/></g></g><line x1=\"158.17175976009693\" y1=\"119.60769515458674\" x2=\"202.3\" y2=\"94.1\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M190.8,94.1 L202.3,94.1 L196.5,104.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"158.17175976009693\" y1=\"119.60769515458674\" x2=\"150.8\" y2=\"123.9\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M155.9,123.9 L150.8,123.9 L153.3,119.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"158.17175976009693\" y1=\"119.60769515458674\" x2=\"158.2\" y2=\"187.6\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M164.0,177.6 L158.2,187.6 L152.4,177.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"208.3\" y=\"96.1\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><text x=\"140.8\" y=\"143.9\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"></tspan></text><text x=\"166.2\" y=\"191.6\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = mg</text></svg><figcaption>Dữ kiện: ba lực vẽ cùng tỉ lệ (1 N ứng với 0,34 px), đặt tại tâm thùng. Chưa vẽ phản lực của mặt dốc.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hàng khối lượng $20$ kg … sợi dây song song với mặt dốc”</td><td>$m=20\\ \\text{kg}$; lực kéo cùng phương, cùng chiều chuyển động</td><td>Công của lực không đổi: $A=Fs\\cos\\varphi$</td></tr><tr><td>“Dốc dài $10$ m, nghiêng góc $30^\\circ$ so với phương ngang”</td><td>$s=10\\ \\text{m}$; $\\alpha=30^\\circ$</td><td>Liên hệ chiều dài dốc, góc nghiêng và độ cao đỉnh dốc</td></tr><tr><td>“bắt đầu chuyển động từ trạng thái nghỉ” (câu a)</td><td>$v_0=0$, động năng đầu bằng $0$</td><td>Động năng $\\tfrac12mv^2$</td></tr><tr><td>“Lực kéo … không đổi $150$ N, lực ma sát … $25$ N”</td><td>$F=150\\ \\text{N}$; $F_\\text{ms}=25\\ \\text{N}$</td><td>⚠ Cộng công của mọi ngoại lực, kể cả công âm; phản lực vuông góc đường đi có công bằng $0$</td></tr><tr><td>“Lấy $g=10$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lực cũng là ngoại lực</td></tr><tr><td>“a) tốc độ của thùng khi tới đỉnh dốc”</td><td>Cần $v$ (m/s)</td><td>Định lí động năng: tổng công = độ biến thiên động năng</td></tr><tr><td>“b) tốc độ đầu $2{,}0$ m/s … vừa tới đỉnh dốc thì dừng lại”</td><td>$v_0=2{,}0\\ \\text{m/s}$; $v=0$ ở đỉnh; cần $F'$ (N)</td><td>Độ biến thiên động năng giữa lúc đầu và lúc dừng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều ngoại lực</b> (kéo, ma sát, trọng lực) và hỏi <b>tốc độ</b> → nghĩ tới <b>cộng công mọi lực</b> = biến thiên động năng.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của lực kéo",
+     "hoi": "Công của lực kéo trên cả dốc bằng bao nhiêu J?",
+     "dap_so": 1500,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân lực kéo với độ cao đỉnh dốc thay vì với chiều dài dốc."
+    },
+    {
+     "tieu_de": "Công của lực ma sát",
+     "hoi": "Công của lực ma sát trên cả dốc bằng bao nhiêu J?",
+     "dap_so": -250,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Bỏ sót công của ma sát, hoặc gán sai dấu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét chiều của ma sát so với chuyển động rồi tính $F_\\text{ms}s\\cos\\varphi$",
+       "dung": true
+      },
+      {
+       "text": "Bỏ qua ma sát vì đề đã cho lực kéo",
+       "dung": false,
+       "vi_sao": "Mọi ngoại lực đều phải có mặt trong tổng công, kể cả lực cản."
+      },
+      {
+       "text": "Lấy lực ma sát nhân độ cao đỉnh dốc",
+       "dung": false,
+       "vi_sao": "Ma sát sinh công trên quãng đường thùng trượt dọc mặt dốc, không phải trên độ cao."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của trọng lực",
+     "hoi": "Công của trọng lực khi thùng lên tới đỉnh dốc bằng bao nhiêu J?",
+     "dap_so": -1000,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy trọng lượng nhân chiều dài dốc, quên rằng trọng lực chỉ sinh công theo độ cao.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy trọng lượng nhân độ cao đỉnh dốc, xét dấu",
+       "dung": true
+      },
+      {
+       "text": "Lấy trọng lượng nhân chiều dài dốc",
+       "dung": false,
+       "vi_sao": "Chiều dài dốc không phải độ cao; trọng lực chỉ sinh công theo độ cao thay đổi."
+      },
+      {
+       "text": "Bỏ qua trọng lực vì đã có lực kéo và ma sát",
+       "dung": false,
+       "vi_sao": "Trọng lực là ngoại lực và sinh công khi vật đổi độ cao."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ ở đỉnh dốc",
+     "hoi": "Tốc độ của thùng khi tới đỉnh dốc bằng bao nhiêu m/s?",
+     "dap_so": 5.0,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Quên một trong ba công, cộng độ lớn thay vì cộng đại số, hoặc quên hệ số $\\dfrac12$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng công của ba lực rồi cho bằng độ biến thiên động năng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy công của lực kéo",
+       "dung": false,
+       "vi_sao": "Ma sát và trọng lực cũng sinh công nên phải cộng vào tổng."
+      },
+      {
+       "text": "Cộng độ lớn công của ba lực, bỏ dấu",
+       "dung": false,
+       "vi_sao": "Công cản mang dấu khác công phát động nên phải cộng đại số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo để thùng vừa tới đỉnh thì dừng",
+     "hoi": "Lực kéo phải có độ lớn bao nhiêu N?",
+     "dap_so": 121,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Coi động năng đầu bằng $0$ dù thùng được đẩy sẵn, hoặc bỏ sót công của một lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho tổng công ba lực bằng độ biến thiên động năng, từ tốc độ đầu về $0$",
+       "dung": true
+      },
+      {
+       "text": "Cho lực kéo bằng lực ma sát",
+       "dung": false,
+       "vi_sao": "Đi lên dốc thì trọng lực cũng cản chuyển động nên lực kéo phải thắng cả hai."
+      },
+      {
+       "text": "Cho tổng công của ba lực bằng $0$",
+       "dung": false,
+       "vi_sao": "Động năng không đứng yên từ đầu: đầu khác $0$, cuối bằng $0$ nên độ biến thiên khác $0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 1.</strong> Một vật khối lượng $2\\ kg$ có thế năng $8\\ J$ đối với mặt đất. Lấy $g = 10\\ m/s^2$. Khi đó vật ở độ cao bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Độ cao của vật: $W = mgh \\Rightarrow 8 = 2.10.h \\Rightarrow h = 4\\ m$.</p></details><h4>Bài 2 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 2.</strong> Một vật khối lượng $200\\ gram$ có động năng là $10\\ J$. Khi đó tốc độ của vật bằng bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Tốc độ của vật $v=\\sqrt{\\dfrac{2W_d}{m}}=\\sqrt{\\dfrac{2.10}{0,2}}=10\\ m/s.$</p></details><h4>Bài 3 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 3.</strong> Một vật có khối lượng không đổi, động năng của nó tăng lên bằng $16$ lần giá trị ban đầu của nó. Khi đó tốc độ của vật sẽ thay đổi như thế nào?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có tỉ số $\\dfrac{W_{d2}}{W_{d1}}=\\left(\\dfrac{v_2}{v_1}\\right)^2\\Rightarrow\\left(\\dfrac{v_2}{v_1}\\right)^2=16\\Rightarrow v_2=4v_1$ — tốc độ của vật tăng gấp $4$ lần.</p></details><h4>Bài 4 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 4.</strong> Một ô tô có khối lượng $1,5$ tấn đang chuyển động thẳng đều, trong $2$ giờ xe đi được quãng đường $72\\ km$. Tính động năng của ô tô.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Đổi $1,5$ tấn $=1500\\ kg$. Tốc độ $v=\\dfrac{s}{t}=\\dfrac{72}{2}=36\\ km/h=10\\ m/s$. Động năng $W_d=\\dfrac12.1500.10^2=75000\\ J.$</p></details><h4>Bài 5 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 5.</strong> Một vật có khối lượng $50\\ kg$. Tính thế năng của vật biết nó đang ở độ cao $20\\ m$ so với mặt đất nếu:<br>a. Chọn gốc thế năng ở mặt đất.<br>b. Chọn gốc thế năng ở trần nhà cao $10\\ m$.<br>c. Chọn gốc thế năng ở đáy giếng sâu $10\\ m$.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Chọn gốc thế năng ở mặt đất thì $W_t = mgz = 50.10.20 = 10000\\ J$.</p><p class=\"text-base leading-relaxed my-2\">b. Chọn gốc thế năng ở trần nhà cao $10\\ m$ thì $W_t = mgz = 50.10.10 = 5000\\ J$.</p><p class=\"text-base leading-relaxed my-2\">c. Chọn gốc thế năng ở đáy giếng sâu $10\\ m$ thì $W_t = mgz = 50.10.30 = 15000\\ J$.</p></details><h4>Bài 6 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 6.</strong> Một vật có khối lượng $m = 5\\ kg$ được đặt ở một vị trí trong trọng trường và có thế năng tại đó bằng $W_{t1} = 600\\ J$. Thả tự do cho vật rơi tới mặt đất, tại đó thế năng của vật bằng $W_{t2} = -1000\\ J$. Lấy $g = 10\\ m/s^2$.<br>a. Hãy xác định vị trí ứng với gốc thế năng đã chọn.<br>b. Hỏi vật đã rơi từ độ cao nào so với mặt đất?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Độ cao của gốc thế năng so với mặt đất: $\\dfrac{1000}{5.10} = 20\\ m$. Vậy mốc thế năng cách mặt đất $20\\ m$.</p><p class=\"text-base leading-relaxed my-2\">b. Thế năng tại điểm có độ cao $h_1$ so với mốc thế năng: $W_{t1} = mgh_1 \\Rightarrow h_1 = \\dfrac{W_{t1}}{mg} = \\dfrac{600}{5.10} = 12\\ m$.</p><p class=\"text-base leading-relaxed my-2\">Độ cao tại điểm thả vật là $h = h_1 + h_2 = 12 + 20 = 32\\ m$.</p></details><h4>Bài 7 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 7.</strong> Ở thời điểm $t_0 = 0$, một vật có khối lượng $m = 1\\ kg$ rơi không vận tốc đầu từ độ cao $h_0 = 4\\ m$, chọn gốc thế năng tại mặt đất, lấy $g = 10\\ m/s^2$. Trong thời gian t kể từ lúc bắt đầu rơi, trọng lực sinh công $12\\ J$. Thế năng của vật ở thời điểm t là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Công của trọng lực bằng độ giảm thế năng: $A_P = \\Delta W_t = W_{t0} - W_t \\Leftrightarrow 12 = mgh_0 - W_t \\Rightarrow W_t = 1.10.4 - 12 = 28\\ J$.</p></details><h4>Bài 8 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 8.</strong> Một chiếc cần cẩu nâng kiện hàng $1,2$ tấn từ mặt đất lên độ cao $h = 7,5\\ m$. Lấy $g = 9,8\\ m/s^2$. Tính thế năng của kiện hàng tại độ cao h và công mà cần cẩu thực hiện.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Đổi $1,2$ tấn $= 1200\\ kg$. Thế năng của kiện hàng tại độ cao h là $W_t = mgh = 1200.9,8.7,5 = 88200\\ J$.</p><p class=\"text-base leading-relaxed my-2\">Công của trọng lực bằng độ giảm thế năng $A_P = \\Delta W_t = 0 - mgh = -88200\\ J$.</p><p class=\"text-base leading-relaxed my-2\">Coi chuyển động của kiện hàng là đều, công mà cần cẩu thực hiện bằng độ lớn công của trọng lực: $A = |A_P| = 88200\\ J$.</p></details><h4>Bài 9 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 9.</strong> Cho một vật có khối lượng $500\\ gram$ đang chuyển động đều với vận tốc là $18\\ km/h$. Tác dụng của một lực $F$ thì vật đạt vận tốc $36\\ km/h$. Lấy $g=10\\ m/s^2$. Tìm công của lực $F$.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Đổi $v_1=18\\ km/h=5\\ m/s$, $v_2=36\\ km/h=10\\ m/s$. Áp dụng định lí động năng: $A_{\\vec F}=\\dfrac12mv_2^2-\\dfrac12mv_1^2=\\dfrac12.0,5.10^2-\\dfrac12.0,5.5^2=18,75\\ J.$</p></details><h4>Bài 10 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 10.</strong> Một vật đang đứng yên thì tác dụng một lực $F$ không đổi làm vật bắt đầu chuyển động và đạt được vận tốc $v$ sau khi đi được quãng đường là $s$. Nếu tăng lực tác dụng lên $9$ lần thì vận tốc vật sẽ đạt được bao nhiêu khi cùng đi được quãng đường $s$?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Theo định lí động năng: $\\dfrac12mv^2=Fs\\Rightarrow v^2=\\dfrac{2Fs}{m}$. Khi $F$ tăng lên $9$ lần thì $v^2$ tăng $9$ lần nên $v$ tăng lên $3$ lần.</p></details><h4>Bài 11 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 11.</strong> Một ô tô có khối lượng $1500\\ kg$ đang chuyển động với vận tốc $54\\ km/h$. Tài xế tắt máy và hãm phanh, ô tô đi thêm $50\\ m$ thì dừng lại. Tính độ lớn lực ma sát.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Đổi $v=54\\ km/h=15\\ m/s$. Áp dụng định lí động năng: $-F_{ms}s=0-\\dfrac12mv^2\\Rightarrow F_{ms}=\\dfrac{mv^2}{2s}=\\dfrac{1500.15^2}{2.50}=3375\\ N.$</p></details><h4>Bài 12 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 12.</strong> Một ô tô khối lượng $1,5$ tấn đang chạy với tốc độ $36\\ km/h$.<br>a. Tìm động năng của ô tô.<br>b. Động năng của ô tô đã thay đổi một lượng bao nhiêu khi nó hãm phanh tới tốc độ $5\\ m/s$?<br>c. Biết quãng đường hãm phanh là $100\\ m$, tính lực hãm trung bình của ô tô.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Đổi $m=1500\\ kg$, $36\\ km/h=10\\ m/s$.<br>a. Động năng của ô tô $W_d=\\dfrac12.1500.10^2=75000\\ J.$<br>b. Động năng khi hãm phanh tới $5\\ m/s$: $W_d'=\\dfrac12.1500.5^2=18750\\ J$. Động năng giảm $W_d-W_d'=75000-18750=56250\\ J.$<br>c. Lực hãm trung bình: $A_{ham}=\\Delta W_d\\Leftrightarrow-Fs=W_d'-W_d\\Rightarrow F=-\\dfrac{18750-75000}{100}=562,5\\ N.$</p></details><h4>Bài 13 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 13.</strong> Vận động viên Hoàng Xuân Vinh bắn một viên đạn có khối lượng $100\\ gram$ bay ngang với vận tốc $300\\ m/s$ xuyên qua tấm bia bằng gỗ dày $5\\ cm$. Sau khi xuyên qua bia gỗ thì đạn có vận tốc $100\\ m/s$. Tính lực cản của tấm bia gỗ tác dụng lên viên đạn.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Áp dụng định lí động năng: $A=F_c.s=\\dfrac12mv_2^2-\\dfrac12mv_1^2\\Rightarrow F_c=\\dfrac{\\frac12.0,1.100^2-\\frac12.0,1.300^2}{0,05}=\\dfrac{500-4500}{0,05}=-80000\\ N\\Rightarrow|F_c|=80000\\ N.$</p></details><h4>Bài 14 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 14.</strong> [KNTT] Một thùng hàng được đặt trên mặt phẳng nhẵn, nằm ngang. Để dịch chuyển nó, người ta móc dây nối với nó và kéo dây theo phương hợp với phương nằm ngang một góc $\\theta$, với lực có độ lớn $45\\ N$. Sau khi đi được quãng đường $1,5\\ m$ thì lực thực hiện công $50\\ J$ và thùng hàng đạt vận tốc $2,6\\ m/s$.<br>a. Tính góc $\\theta$.<br>b. Tính khối lượng của thùng hàng.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Công của lực kéo $A=Fs\\cos\\theta\\Rightarrow\\cos\\theta=\\dfrac{A}{Fs}=\\dfrac{50}{45.1,5}=\\dfrac{20}{27}\\Rightarrow\\theta\\approx42°.$<br>b. Vì bề mặt nhẵn, công lực kéo chuyển hoá hoàn toàn thành động năng: $A_F=\\Delta W_d=\\dfrac12mv^2\\Rightarrow m=\\dfrac{2A_F}{v^2}=\\dfrac{2.50}{2,6^2}\\approx14,8\\ kg.$</p></details><h4>Bài 15 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 15.</strong> Một buồng cáp treo chở người với khối lượng tổng cộng $800\\ kg$ đi từ vị trí xuất phát cách mặt đất $10\\ m$ tới trạm dừng thứ nhất ở độ cao $550\\ m$, sau đó tiếp tục tới trạm khác ở độ cao $1300\\ m$ (lấy $g = 9,8\\ m/s^2$).<br>a. Tìm thế năng trọng trường của buồng cáp tại vị trí xuất phát và tại các trạm, khi lấy mặt đất làm mốc, và khi lấy trạm dừng thứ nhất làm mốc.<br>b. Tính công do trọng lực thực hiện khi buồng cáp treo di chuyển từ vị trí xuất phát đến trạm 1, và từ trạm 1 đến trạm kế tiếp.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Chọn mặt đất làm mốc thế năng: ở vị trí xuất phát $W_t = 800.9,8.10 = 78400\\ J$; ở trạm 1: $800.9,8.550 = 4312000\\ J$; ở trạm 2: $800.9,8.1300 = 10192000\\ J$.</p><p class=\"text-base leading-relaxed my-2\">Chọn trạm 1 làm mốc thế năng: ở vị trí xuất phát $W_t = 800.9,8.(10-550) = -4233600\\ J$; ở trạm 1: $0\\ J$; ở trạm 2: $800.9,8.(1300-550) = 5880000\\ J$.</p><p class=\"text-base leading-relaxed my-2\">b. Theo độ biến thiên thế năng: $A_1 = mgz_1 - mgz_2 = -4233600\\ J$ (từ xuất phát đến trạm 1); $A_2 = mgz_2 - mgz_3 = -5880000\\ J$ (từ trạm 1 đến trạm 2).</p></details><h4>Bài 16 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 16.</strong> Một viên đạn có khối lượng $50\\ gam$ đang bay theo phương ngang với tốc độ $200\\ m/s$ thì:<br>a. Viên đạn xuyên qua một tấm gỗ dày rồi chui sâu và mắc kẹt vào gỗ $4\\ cm$. Xác định lực cản của gỗ.<br>b. Trường hợp tấm gỗ chỉ dày $2\\ cm$ thì viên đạn chui qua tấm gỗ và bay ra ngoài. Biết rằng lực cản trong cả hai trường hợp đều như nhau. Xác định vận tốc viên đạn lúc ra khỏi tấm gỗ.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Khi viên đạn mắc kẹt vào gỗ, vận tốc sau bằng $0$. Áp dụng định lí biến thiên động năng: $0-\\dfrac12.0,05.200^2=F_c.0,04.\\cos180°\\Rightarrow F_c=25000\\ N.$<br>b. Lực cản như nhau $F_c=25000\\ N$: $\\dfrac12.0,05.v_2^2-\\dfrac12.0,05.200^2=25000.0,02.\\cos180°\\Rightarrow v_2\\approx141,4\\ m/s.$</p></details><h4>Bài 17 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 17.</strong> Một xe có khối lượng $2$ tấn chuyển động trên đoạn $AB$ nằm ngang với vận tốc không đổi $7,2\\ km/h$. Hệ số ma sát giữa xe và mặt đường là $\\mu=0,2$. Lấy $g=10\\ m/s^2$.<br>a. Tính lực kéo của động cơ.<br>b. Đến điểm $B$ thì xe tắt máy và xuống dốc $BC$ nghiêng góc $30°$ so với phương ngang, bỏ qua ma sát. Biết vận tốc tại chân $C$ là $72\\ km/h$. Tìm chiều dài dốc $BC$.<br>c. Tại $C$ xe tiếp tục chuyển động trên đoạn đường nằm ngang $CD$ và đi thêm được $200\\ m$ thì dừng lại. Tìm hệ số ma sát trên đoạn $CD$.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> a. Xe chuyển động đều trên đoạn nằm ngang: $F_k=F_{ms}=\\mu mg=0,2.2000.10=4000\\ N.$<br>b. Đổi $v_B=7,2\\ km/h=2\\ m/s$, $v_C=72\\ km/h=20\\ m/s$. Áp dụng định lí động năng: $\\dfrac12mv_C^2-\\dfrac12mv_B^2=A_{\\vec P}=mg\\sin30°.BC\\Rightarrow\\dfrac12.2000.(20^2-2^2)=2000.10.\\sin30°.BC\\Rightarrow BC=39,6\\ m.$<br>c. Với $A_{\\vec P}=0$ trên đoạn ngang $CD$: $\\dfrac12mv_D^2-\\dfrac12mv_C^2=A_{\\vec F_{ms}}\\Rightarrow\\dfrac12.2000.(0^2-20^2)=-\\mu.2000.10.200\\Rightarrow\\mu=0,1.$</p></details><h4>Bài 18 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 18.</strong> Hai xe chở than có khối lượng $m_1$ và $3m_1$, cùng chuyển động trên hai tuyến đường ray song song nhau với $W_{d1}=\\dfrac19W_{d2}$. Nếu xe $1$ tăng vận tốc thêm $3\\ m/s$ thì $W_{d1}=W_{d2}$. Tìm độ lớn vận tốc $v_1$, $v_2$.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Lúc đầu: $\\dfrac12m_1v_1^2=\\dfrac19.\\dfrac12.3m_1v_2^2\\Rightarrow v_2=\\sqrt3\\,v_1\\ \\ (1)$<br>Nếu xe $1$ tăng vận tốc thêm $3\\ m/s$ thì $W_{d1}=W_{d2}$: $\\dfrac12m_1(v_1+3)^2=\\dfrac12.3m_1v_2^2\\Rightarrow v_2=\\dfrac{v_1+3}{\\sqrt3}\\ \\ (2)$<br>Từ $(1)$ và $(2)$: $\\sqrt3v_1=\\dfrac{v_1+3}{\\sqrt3}\\Rightarrow3v_1=v_1+3\\Rightarrow v_1=1,5\\ m/s$; $v_2=\\sqrt3.1,5\\approx2,6\\ m/s.$</p></details>"
+ }
+}

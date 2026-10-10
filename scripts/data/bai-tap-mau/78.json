@@ -1,0 +1,593 @@
+{
+ "lesson_id": 78,
+ "lesson_title": "Bài 33. Biến dạng của vật rắn",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Nhận biết biến dạng kéo, nén, đàn hồi, dẻo và giới hạn đàn hồi",
+   "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+   "problem_html": "<p>Một lò xo có chiều dài tự nhiên $20\\ \\text{cm}$, một đầu gắn vào tường. Tác dụng lên đầu còn lại một lực kéo hướng ra xa tường, độ lớn $F$ tăng dần qua năm lần thử. Mỗi lần thử, đọc chiều dài $l$ khi có lực, rồi thôi lực và đọc chiều dài $l'$ của lò xo:</p>\n<div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>$F$ (N)</th><th>$2$</th><th>$4$</th><th>$6$</th><th>$8$</th><th>$10$</th></tr></thead><tbody>\n<tr><td>$l$ (cm), khi có lực</td><td>$22$</td><td>$24$</td><td>$26$</td><td>$28$</td><td>$33$</td></tr>\n<tr><td>$l'$ (cm), sau khi thôi lực</td><td>$20$</td><td>$20$</td><td>$20$</td><td>$20$</td><td>$22$</td></tr></tbody></table></div>\n<ol type=\"a\"><li>Lò xo chịu biến dạng kéo hay biến dạng nén?</li>\n<li>Ở lần thử nào lò xo bị biến dạng dẻo?</li>\n<li>Trong các lần thử, lực lớn nhất mà lò xo còn đàn hồi bằng bao nhiêu? Giới hạn đàn hồi của lò xo nằm trong khoảng nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 172\" role=\"img\" aria-label=\"Lò xo gắn vào tường được kéo bằng lực tăng dần từ 2 đến 10 niutơn, thước đo chiều dài bên dưới\"><line x1=\"30.0\" y1=\"40.0\" x2=\"30.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"40.0\" x2=\"22.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"50.0\" x2=\"22.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"60.0\" x2=\"22.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"22.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"80.0\" x2=\"22.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"90.0\" x2=\"22.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"100.0\" x2=\"22.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"22.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"56.0\" x2=\"150.0\" y2=\"126.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"150.0\" y=\"48\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">l₀ = 20 cm</text><g transform=\"translate(30.0,75.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(120.00 1)\"><animateTransform attributeName=\"transform\" type=\"scale\" values=\"120.00 1;120.00 1;120.00 1;126.00 1;129.00 1;132.00 1;132.00 1;132.00 1;132.00 1;132.00 1;132.00 1;132.00 1;136.00 1;140.00 1;144.00 1;144.00 1;144.00 1;144.00 1;144.00 1;144.00 1;144.00 1;148.00 1;152.00 1;156.00 1;156.00 1;156.00 1;156.00 1;156.00 1;156.00 1;156.00 1;160.00 1;164.00 1;168.00 1;168.00 1;168.00 1;168.00 1;168.00 1;168.00 1;168.00 1;178.00 1;188.00 1;198.00 1;198.00 1;198.00 1;198.00 1;198.00 1;198.00 1;198.00 1\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.0638\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"150.0\" y1=\"75.0\" x2=\"174.0\" y2=\"75.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"150.0;150.0;150.0;156.0;159.0;162.0;162.0;162.0;162.0;162.0;162.0;162.0;166.0;170.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;178.0;182.0;186.0;186.0;186.0;186.0;186.0;186.0;186.0;190.0;194.0;198.0;198.0;198.0;198.0;198.0;198.0;198.0;208.0;218.0;228.0;228.0;228.0;228.0;228.0;228.0;228.0\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"174.0;174.0;174.0;168.0;177.0;186.0;186.0;186.0;186.0;186.0;186.0;186.0;198.0;210.0;222.0;222.0;222.0;222.0;222.0;222.0;222.0;234.0;246.0;258.0;258.0;258.0;258.0;258.0;258.0;258.0;270.0;282.0;294.0;294.0;294.0;294.0;294.0;294.0;294.0;312.0;330.0;348.0;348.0;348.0;348.0;348.0;348.0;348.0\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0;75.0\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M167.8,71.4 L174.0,75.0 L167.8,78.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M167.8,71.4 L174.0,75.0 L167.8,78.6;M167.8,71.4 L174.0,75.0 L167.8,78.6;M167.8,71.4 L174.0,75.0 L167.8,78.6;M161.8,71.4 L168.0,75.0 L161.8,78.6;M170.8,71.4 L177.0,75.0 L170.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M179.8,71.4 L186.0,75.0 L179.8,78.6;M191.8,71.4 L198.0,75.0 L191.8,78.6;M203.8,71.4 L210.0,75.0 L203.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M215.8,71.4 L222.0,75.0 L215.8,78.6;M227.8,71.4 L234.0,75.0 L227.8,78.6;M239.8,71.4 L246.0,75.0 L239.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M251.8,71.4 L258.0,75.0 L251.8,78.6;M263.8,71.4 L270.0,75.0 L263.8,78.6;M275.8,71.4 L282.0,75.0 L275.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M287.8,71.4 L294.0,75.0 L287.8,78.6;M305.8,71.4 L312.0,75.0 L305.8,78.6;M323.8,71.4 L330.0,75.0 L323.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6;M341.8,71.4 L348.0,75.0 L341.8,78.6\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/></path></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.0638;0.2553\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"412\" y=\"28\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">F = 2 N</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.2553;0.4468\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"412\" y=\"28\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">F = 4 N</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.4468;0.6383\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"412\" y=\"28\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">F = 6 N</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.6383;0.8298\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"412\" y=\"28\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">F = 8 N</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.8298\" dur=\"9.40s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"412\" y=\"28\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">F = 10 N</text></g><line x1=\"30.0\" y1=\"140.0\" x2=\"246.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"140.0\" x2=\"30.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"140.0\" x2=\"36.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"42.0\" y1=\"140.0\" x2=\"42.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"48.0\" y1=\"140.0\" x2=\"48.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"54.0\" y1=\"140.0\" x2=\"54.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"140.0\" x2=\"60.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"66.0\" y1=\"140.0\" x2=\"66.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"72.0\" y1=\"140.0\" x2=\"72.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"78.0\" y1=\"140.0\" x2=\"78.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"84.0\" y1=\"140.0\" x2=\"84.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"140.0\" x2=\"90.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"96.0\" y1=\"140.0\" x2=\"96.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"140.0\" x2=\"102.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"108.0\" y1=\"140.0\" x2=\"108.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"114.0\" y1=\"140.0\" x2=\"114.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"120.0\" y1=\"140.0\" x2=\"120.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"126.0\" y1=\"140.0\" x2=\"126.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"132.0\" y1=\"140.0\" x2=\"132.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"138.0\" y1=\"140.0\" x2=\"138.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"140.0\" x2=\"144.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"140.0\" x2=\"150.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"156.0\" y1=\"140.0\" x2=\"156.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"162.0\" y1=\"140.0\" x2=\"162.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"168.0\" y1=\"140.0\" x2=\"168.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"140.0\" x2=\"174.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"180.0\" y1=\"140.0\" x2=\"180.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"186.0\" y1=\"140.0\" x2=\"186.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"192.0\" y1=\"140.0\" x2=\"192.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"198.0\" y1=\"140.0\" x2=\"198.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"204.0\" y1=\"140.0\" x2=\"204.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"140.0\" x2=\"210.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"216.0\" y1=\"140.0\" x2=\"216.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"222.0\" y1=\"140.0\" x2=\"222.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"228.0\" y1=\"140.0\" x2=\"228.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"234.0\" y1=\"140.0\" x2=\"234.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"240.0\" y1=\"140.0\" x2=\"240.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"246.0\" y1=\"140.0\" x2=\"246.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"30.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><text x=\"60.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">5</text><text x=\"90.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><text x=\"120.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">15</text><text x=\"150.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><text x=\"180.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">25</text><text x=\"210.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><text x=\"240.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">35</text><text x=\"252.0\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lực kéo tăng lần lượt qua năm mức của bảng, dừng ở mỗi mức (khoảng 10 s); độ dài mũi tên tỉ lệ với F (1 N ứng với 12 px). Chỉ vẽ lúc có lực, không vẽ lúc thôi lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Biến dạng kéo:</strong> cặp lực hướng ra ngoài vật, vật dài ra.</li><li><strong>Biến dạng nén:</strong> cặp lực hướng vào trong vật, vật ngắn lại.</li><li><strong>Đàn hồi:</strong> thôi lực, vật trở lại hình dạng, kích thước ban đầu. <strong>Dẻo:</strong> thôi lực, vật không trở lại như cũ.</li><li><strong>Giới hạn đàn hồi:</strong> mức lực lớn nhất mà vật còn đàn hồi; vượt qua thì biến dạng thành dẻo.</li><li>⚠ <strong>Điều kiện:</strong> đàn hồi hay dẻo chỉ xét sau khi thôi lực, so với chiều dài ban đầu $l_0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Loại biến dạng</span></p><p>Lực kéo hướng ra xa tường, tức hướng ra ngoài lò xo; lò xo dài ra từ $20\\ \\text{cm}$.</p><div class=\"bt-ans\"><p><strong>Biến dạng kéo</strong></p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lần thử bị biến dạng dẻo</span></p><p>Sau khi thôi lực, so $l'$ với chiều dài ban đầu $l_0=20\\ \\text{cm}$.</p><p>$F=2;\\ 4;\\ 6;\\ 8\\ \\text{N}$: $l'=20\\ \\text{cm}$, trở về đúng chiều dài cũ: <strong>đàn hồi</strong>.</p><p>$F=10\\ \\text{N}$: $l'=22\\ \\text{cm}\\ne20\\ \\text{cm}$, không trở về như cũ: <strong>dẻo</strong>.</p><div class=\"bt-ans\"><p>Lần thử $F=10\\ \\text{N}$</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực lớn nhất còn đàn hồi</span></p><p>Trong các lần có $l'=20\\ \\text{cm}$, lực lớn nhất là lần thứ tư.</p><div class=\"bt-ans\">$$F=8\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khoảng của giới hạn đàn hồi</span></p><p>Ở $8\\ \\text{N}$ lò xo còn đàn hồi, nên giới hạn không nhỏ hơn $8\\ \\text{N}$.</p><p>Ở $10\\ \\text{N}$ lò xo đã dẻo, nên giới hạn nhỏ hơn $10\\ \\text{N}$.</p><p>Chưa thử lực nằm giữa hai giá trị, nên chỉ chặn được một khoảng:</p><div class=\"bt-ans\"><p>$8\\ \\text{N}\\le$ giới hạn đàn hồi $\\lt10\\ \\text{N}$</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Từ $2$ đến $8\\ \\text{N}$, cứ $1\\ \\text{N}$ lò xo dài thêm $1\\ \\text{cm}$.</p>$$l=20+10=30\\ \\text{cm}\\quad(\\text{nếu còn tỉ lệ ở }10\\ \\text{N})$$<p>Thực tế $l=33\\ \\text{cm}\\gt30\\ \\text{cm}$: không còn tỉ lệ, khớp với biến dạng dẻo ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Biến dạng kéo</p><p>b) Lần thử $F=10\\ \\text{N}$</p><p>c) Lực lớn nhất còn đàn hồi: $8\\ \\text{N}$; $8\\ \\text{N}\\le$ giới hạn đàn hồi $\\lt10\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>bảng chiều dài khi có lực và sau khi thôi lực</strong> → so chiều dài sau khi thôi lực với $l_0$ để biết đàn hồi hay dẻo.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 172\" role=\"img\" aria-label=\"Lò xo gắn vào tường, chiều dài tự nhiên 20 cm, đang chịu lực kéo 6 niutơn\"><line x1=\"30.0\" y1=\"40.0\" x2=\"30.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"40.0\" x2=\"22.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"50.0\" x2=\"22.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"60.0\" x2=\"22.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"22.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"80.0\" x2=\"22.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"90.0\" x2=\"22.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"100.0\" x2=\"22.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"22.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"56.0\" x2=\"150.0\" y2=\"126.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"150.0\" y=\"48\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">l₀ = 20 cm</text><g transform=\"translate(30.0,75.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(156.00 1)\"></polyline></g><line x1=\"186.0\" y1=\"75\" x2=\"258.0\" y2=\"75.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M248.0,69.2 L258.0,75.0 L248.0,80.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"110\" x2=\"186.0\" y2=\"110\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M179.0,105.9 L186.0,110.0 L179.0,114.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"186.0\" y1=\"110\" x2=\"150.0\" y2=\"110\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M157.0,114.1 L150.0,110.0 L157.0,105.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"168.0\" y=\"126\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Δl</text><text x=\"266.0\" y=\"80\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 6 N</text><line x1=\"30.0\" y1=\"140.0\" x2=\"246.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"140.0\" x2=\"30.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"140.0\" x2=\"36.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"42.0\" y1=\"140.0\" x2=\"42.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"48.0\" y1=\"140.0\" x2=\"48.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"54.0\" y1=\"140.0\" x2=\"54.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"140.0\" x2=\"60.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"66.0\" y1=\"140.0\" x2=\"66.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"72.0\" y1=\"140.0\" x2=\"72.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"78.0\" y1=\"140.0\" x2=\"78.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"84.0\" y1=\"140.0\" x2=\"84.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"140.0\" x2=\"90.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"96.0\" y1=\"140.0\" x2=\"96.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"140.0\" x2=\"102.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"108.0\" y1=\"140.0\" x2=\"108.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"114.0\" y1=\"140.0\" x2=\"114.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"120.0\" y1=\"140.0\" x2=\"120.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"126.0\" y1=\"140.0\" x2=\"126.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"132.0\" y1=\"140.0\" x2=\"132.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"138.0\" y1=\"140.0\" x2=\"138.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"140.0\" x2=\"144.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"140.0\" x2=\"150.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"156.0\" y1=\"140.0\" x2=\"156.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"162.0\" y1=\"140.0\" x2=\"162.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"168.0\" y1=\"140.0\" x2=\"168.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"140.0\" x2=\"174.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"180.0\" y1=\"140.0\" x2=\"180.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"186.0\" y1=\"140.0\" x2=\"186.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"192.0\" y1=\"140.0\" x2=\"192.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"198.0\" y1=\"140.0\" x2=\"198.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"204.0\" y1=\"140.0\" x2=\"204.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"140.0\" x2=\"210.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"216.0\" y1=\"140.0\" x2=\"216.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"222.0\" y1=\"140.0\" x2=\"222.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"228.0\" y1=\"140.0\" x2=\"228.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"234.0\" y1=\"140.0\" x2=\"234.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"240.0\" y1=\"140.0\" x2=\"240.0\" y2=\"147.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"246.0\" y1=\"140.0\" x2=\"246.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"30.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><text x=\"60.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">5</text><text x=\"90.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><text x=\"120.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">15</text><text x=\"150.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><text x=\"180.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">25</text><text x=\"210.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><text x=\"240.0\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">35</text><text x=\"252.0\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cm</text></svg><figcaption>Dữ kiện: một lần thử trong bảng (F = 6 N); vạch đứt đánh dấu đầu lò xo khi chưa có lực, Δl là phần dài thêm. Thước vẽ đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“lò xo có chiều dài tự nhiên $20$ cm, một đầu gắn vào tường”</td><td>$l_0=20\\ \\text{cm}$</td><td>⚠ Chiều dài tự nhiên là chiều dài khi chưa có lực, dùng làm mốc để so sánh</td></tr><tr><td>“lực kéo hướng ra xa tường”</td><td>Lực hướng ra ngoài lò xo</td><td>Hướng của cặp lực cho biết biến dạng kéo hay nén</td></tr><tr><td>“đọc chiều dài $l$ khi có lực”</td><td>$l=22;\\ 24;\\ 26;\\ 28;\\ 33\\ \\text{cm}$</td><td>Chiều dài lúc đang chịu lực</td></tr><tr><td>“thôi lực và đọc chiều dài $l'$”</td><td>$l'=20;\\ 20;\\ 20;\\ 20;\\ 22\\ \\text{cm}$</td><td>⚠ Đàn hồi hay dẻo chỉ xét sau khi thôi lực</td></tr><tr><td>“a) kéo hay nén”</td><td>Cần loại biến dạng</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) lần thử nào bị biến dạng dẻo”</td><td>Cần lần thử ($F$, N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) lực lớn nhất còn đàn hồi … giới hạn đàn hồi”</td><td>Cần $F$ (N) và khoảng của giới hạn</td><td>Giới hạn đàn hồi: mức lực lớn nhất mà vật còn đàn hồi</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thôi lực mà chiều dài khác ban đầu</b> → nghĩ tới <b>biến dạng dẻo</b>, đã quá giới hạn đàn hồi.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Loại biến dạng",
+     "hoi": "Lò xo trong thí nghiệm chịu biến dạng nào?",
+     "lua_chon": [
+      {
+       "text": "Biến dạng kéo",
+       "dung": true
+      },
+      {
+       "text": "Biến dạng nén",
+       "dung": false,
+       "vi_sao": "Biến dạng nén có cặp lực hướng vào trong vật, làm vật ngắn lại; ở đây lò xo dài ra."
+      },
+      {
+       "text": "Biến dạng dẻo",
+       "dung": false,
+       "vi_sao": "Kéo hay nén phân loại theo hướng của lực; dẻo hay đàn hồi phân loại theo việc vật có trở về sau khi thôi lực."
+      }
+     ],
+     "loi_hay_gap": "Gọi tên loại biến dạng theo một dấu hiệu khác, không xét cặp lực tác dụng vào lò xo."
+    },
+    {
+     "tieu_de": "Lần thử bị biến dạng dẻo",
+     "hoi": "Ở lần thử nào lò xo bị biến dạng dẻo?",
+     "lua_chon": [
+      {
+       "text": "Lần thử $F=10\\ \\text{N}$",
+       "dung": true
+      },
+      {
+       "text": "Không lần nào, vì lò xo luôn co lại",
+       "dung": false,
+       "vi_sao": "Co lại một phần chưa phải trở về như cũ: $22\\ \\text{cm}$ vẫn khác $20\\ \\text{cm}$."
+      },
+      {
+       "text": "Cả năm lần, vì $l'$ khác $l$",
+       "dung": false,
+       "vi_sao": "Mốc so sánh là chiều dài ban đầu $20\\ \\text{cm}$, không phải chiều dài lúc đang chịu lực."
+      }
+     ],
+     "loi_hay_gap": "Chỉ nhìn lò xo có co lại hay không, bỏ qua việc có trở về đúng chiều dài ban đầu hay chưa.",
+     "chon_buoc_ke": [
+      {
+       "text": "So chiều dài sau khi thôi lực với chiều dài tự nhiên",
+       "dung": true
+      },
+      {
+       "text": "So chiều dài sau khi thôi lực với chiều dài lúc có lực",
+       "dung": false,
+       "vi_sao": "Mốc để xét đàn hồi hay dẻo là chiều dài ban đầu, không phải chiều dài lúc đang chịu lực."
+      },
+      {
+       "text": "Chọn lần thử có lực nhỏ nhất trong bảng số liệu",
+       "dung": false,
+       "vi_sao": "Lực nhỏ không phải dấu hiệu của biến dạng dẻo; phải xét lò xo có trở về chiều dài cũ không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực lớn nhất còn đàn hồi",
+     "hoi": "Lực lớn nhất trong bảng mà lò xo vẫn trở về đúng chiều dài ban đầu là bao nhiêu?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy lực của lần thử cuối cùng trong bảng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn lần lớn nhất mà lò xo vẫn trở về chiều dài ban đầu",
+       "dung": true
+      },
+      {
+       "text": "Lấy lực của lần thử cuối cùng trong bảng đã cho ở đề",
+       "dung": false,
+       "vi_sao": "Lần thử cuối là lần đã gây biến dạng dẻo, không còn đàn hồi."
+      },
+      {
+       "text": "Lấy lực nhỏ nhất trong bảng vì như vậy là an toàn",
+       "dung": false,
+       "vi_sao": "Giới hạn đàn hồi là mức lực lớn nhất vẫn còn đàn hồi, không phải mức nhỏ nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng của giới hạn đàn hồi",
+     "hoi": "Giới hạn đàn hồi của lò xo nằm trong khoảng nào?",
+     "lua_chon": [
+      {
+       "text": "Trong khoảng từ $8\\ \\text{N}$ đến dưới $10\\ \\text{N}$",
+       "dung": true
+      },
+      {
+       "text": "Đúng bằng $8\\ \\text{N}$, vì đó là lần cuối còn đàn hồi",
+       "dung": false,
+       "vi_sao": "Chưa thử lực nằm giữa $8\\ \\text{N}$ và $10\\ \\text{N}$ nên chưa thể kết luận giới hạn đúng bằng $8\\ \\text{N}$."
+      },
+      {
+       "text": "Đúng bằng $10\\ \\text{N}$, vì đó là lần thử cuối cùng",
+       "dung": false,
+       "vi_sao": "Ở $10\\ \\text{N}$ lò xo đã bị dẻo, nên $10\\ \\text{N}$ đã vượt giới hạn."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng giới hạn đàn hồi đúng bằng một lực đã thử trong bảng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chặn giới hạn giữa lực lần còn đàn hồi và lực lần đã dẻo",
+       "dung": true
+      },
+      {
+       "text": "Lấy trung bình của hai lực ấy làm giá trị giới hạn",
+       "dung": false,
+       "vi_sao": "Không có cơ sở chọn đúng trung bình; chỉ biết giới hạn nằm trong khoảng giữa hai lực."
+      },
+      {
+       "text": "Lấy lực của lần thử cuối cùng trong bảng làm giới hạn",
+       "dung": false,
+       "vi_sao": "Lần cuối đã gây biến dạng dẻo, nên đã vượt qua giới hạn rồi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Định luật Hooke: tìm độ cứng, độ dãn và lực",
+   "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+   "problem_html": "<p>Một lò xo nhẹ nằm ngang, một đầu cố định. Kéo đầu còn lại bằng lực $6{,}0\\ \\text{N}$ thì lò xo dãn thêm $4{,}0\\ \\text{cm}$. Lò xo luôn trong giới hạn đàn hồi.</p>\n<ol type=\"a\"><li>Tính độ cứng $k$ của lò xo.</li>\n<li>Kéo bằng lực $9{,}0\\ \\text{N}$ thì lò xo dãn thêm bao nhiêu xentimét?</li>\n<li>Muốn lò xo dãn thêm $2{,}0\\ \\text{cm}$ thì phải kéo bằng lực bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Lò xo nằm ngang, một đầu cố định, bị kéo bằng lực 6,0 niutơn và dãn thêm 4,0 xentimét\"><line x1=\"30.0\" y1=\"46.0\" x2=\"30.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"46.0\" x2=\"22.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"56.3\" x2=\"22.0\" y2=\"64.3\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"66.6\" x2=\"22.0\" y2=\"74.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"76.9\" x2=\"22.0\" y2=\"84.9\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"87.1\" x2=\"22.0\" y2=\"95.1\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"97.4\" x2=\"22.0\" y2=\"105.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"107.7\" x2=\"22.0\" y2=\"115.7\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"118.0\" x2=\"22.0\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"58.0\" x2=\"150.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><g transform=\"translate(30.0,82.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(124.80 1)\"><animateTransform attributeName=\"transform\" type=\"scale\" values=\"124.80 1;126.89 1;128.98 1;131.08 1;133.17 1;135.26 1;137.35 1;139.45 1;141.54 1;143.63 1;145.72 1;147.82 1;149.91 1;152.00 1;152.00 1;152.00 1;152.00 1;152.00 1;152.00 1;152.00 1\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></g><line x1=\"154.8\" y1=\"82.0\" x2=\"162.0\" y2=\"82.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"154.8;156.9;159.0;161.1;163.2;165.3;167.4;169.4;171.5;173.6;175.7;177.8;179.9;182.0;182.0;182.0;182.0;182.0;182.0;182.0\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"162.0;167.2;172.5;177.7;182.9;188.2;193.4;198.6;203.8;209.1;214.3;219.5;224.8;230.0;230.0;230.0;230.0;230.0;230.0;230.0\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0;82.0\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M157.7,79.5 L162.0,82.0 L157.7,84.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M157.7,79.5 L162.0,82.0 L157.7,84.5;M162.9,79.5 L167.2,82.0 L162.9,84.5;M168.1,79.5 L172.5,82.0 L168.1,84.5;M173.4,79.5 L177.7,82.0 L173.4,84.5;M178.6,79.5 L182.9,82.0 L178.6,84.5;M183.8,79.5 L188.2,82.0 L183.8,84.5;M189.1,79.5 L193.4,82.0 L189.1,84.5;M194.3,79.5 L198.6,82.0 L194.3,84.5;M199.5,79.5 L203.8,82.0 L199.5,84.5;M204.7,79.5 L209.1,82.0 L204.7,84.5;M210.0,79.5 L214.3,82.0 L210.0,84.5;M215.2,79.5 L219.5,82.0 L215.2,84.5;M220.4,79.5 L224.8,82.0 L220.4,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5;M225.7,79.5 L230.0,82.0 L225.7,84.5\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/></path><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.7368\" dur=\"3.80s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"150.0\" y1=\"106\" x2=\"182.0\" y2=\"106\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M175.0,101.9 L182.0,106.0 L175.0,110.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"182.0\" y1=\"106\" x2=\"150.0\" y2=\"106\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M157.0,110.1 L150.0,106.0 L157.0,101.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"166.0\" y=\"126\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Δl = 4,0 cm</text></g><text x=\"238.0\" y=\"87\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 6,0 N</text><text x=\"70\" y=\"52\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">k = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lực kéo tăng dần tới 6,0 N (khoảng 4 s), độ dãn tăng theo; 1 N ứng với 8 px, 1 cm ứng với 8 px. Số đo Δl chỉ hiện khi lò xo dừng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Lực đàn hồi</strong> xuất hiện khi lò xo biến dạng, ngược chiều biến dạng; lò xo đứng yên thì lực kéo (đẩy) cân bằng với nó.</li><li><strong>Định luật Hooke:</strong> $F_{\\text{đh}}=k\\left|\\Delta l\\right|$.</li><li>Đơn vị: $F_{\\text{đh}}$ (N), $\\Delta l$ (m), $k$ (N/m).</li><li>$k$ thuộc về lò xo, không đổi khi lực đổi.</li><li>⚠ <strong>Điều kiện:</strong> chỉ trong giới hạn đàn hồi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi độ dãn ra mét</span></p>$$\\left|\\Delta l\\right|=4{,}0\\ \\text{cm}=0{,}040\\ \\text{m}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ cứng</span></p><p>Lò xo đứng yên nên lực kéo cân bằng với lực đàn hồi:</p>$$F_{\\text{đh}}=F=6{,}0\\ \\text{N}$$$$k=\\dfrac{F_{\\text{đh}}}{\\left|\\Delta l\\right|}=\\dfrac{6{,}0}{0{,}040}$$<div class=\"bt-ans\">$$k=150\\ \\text{N/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ dãn khi kéo $9{,}0\\ \\text{N}$</span></p><p>Cùng lò xo nên $k=150\\ \\text{N/m}$:</p>$$\\left|\\Delta l'\\right|=\\dfrac{F'}{k}=\\dfrac{9{,}0}{150}=0{,}060\\ \\text{m}$$<div class=\"bt-ans\">$$\\left|\\Delta l'\\right|=6{,}0\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực khi dãn thêm $2{,}0\\ \\text{cm}$</span></p>$$\\left|\\Delta l''\\right|=2{,}0\\ \\text{cm}=0{,}020\\ \\text{m}$$$$F''=k\\left|\\Delta l''\\right|=150\\cdot0{,}020$$<div class=\"bt-ans\">$$F''=3{,}0\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\dfrac{F}{\\left|\\Delta l\\right|}=\\dfrac{6{,}0}{4{,}0}=\\dfrac{9{,}0}{6{,}0}=\\dfrac{3{,}0}{2{,}0}=1{,}5\\ \\text{N/cm}$$<p>Ba cặp (lực, độ dãn) có cùng tỉ số, đúng tính tỉ lệ thuận ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $k=150\\ \\text{N/m}$</p><p>b) $\\left|\\Delta l'\\right|=6{,}0\\ \\text{cm}$</p><p>c) $F''=3{,}0\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực và độ dãn (cm) của lò xo</strong> → dùng $F_{\\text{đh}}=k\\left|\\Delta l\\right|$, đổi cm ra m trước khi thế.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Lò xo nằm ngang, một đầu cố định, bị kéo bằng lực 6,0 niutơn và dãn thêm 4,0 xentimét\"><line x1=\"30.0\" y1=\"46.0\" x2=\"30.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"46.0\" x2=\"22.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"56.3\" x2=\"22.0\" y2=\"64.3\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"66.6\" x2=\"22.0\" y2=\"74.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"76.9\" x2=\"22.0\" y2=\"84.9\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"87.1\" x2=\"22.0\" y2=\"95.1\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"97.4\" x2=\"22.0\" y2=\"105.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"107.7\" x2=\"22.0\" y2=\"115.7\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"118.0\" x2=\"22.0\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"58.0\" x2=\"150.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><g transform=\"translate(30.0,82.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(152.00 1)\"></polyline></g><line x1=\"182.0\" y1=\"82\" x2=\"230.0\" y2=\"82.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M220.0,76.2 L230.0,82.0 L220.0,87.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"106\" x2=\"182.0\" y2=\"106\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M175.0,101.9 L182.0,106.0 L175.0,110.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"182.0\" y1=\"106\" x2=\"150.0\" y2=\"106\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M157.0,110.1 L150.0,106.0 L157.0,101.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"166.0\" y=\"126\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Δl = 4,0 cm</text><text x=\"238.0\" y=\"87\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 6,0 N</text><text x=\"70\" y=\"52\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">k = ?</text></svg><figcaption>Dữ kiện: lực kéo 6,0 N (1 N ứng với 8 px) làm lò xo dãn thêm 4,0 cm; vạch đứt là đầu lò xo khi chưa kéo.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“lò xo nhẹ nằm ngang, một đầu cố định”</td><td>Lò xo đứng yên khi kéo</td><td>⚠ Lực kéo cân bằng với lực đàn hồi của lò xo</td></tr><tr><td>“kéo bằng lực $6{,}0$ N … dãn thêm $4{,}0$ cm”</td><td>$F=6{,}0\\ \\text{N}$; $\\left|\\Delta l\\right|=4{,}0\\ \\text{cm}$</td><td>Đơn vị trong công thức: N, m, N/m</td></tr><tr><td>“luôn trong giới hạn đàn hồi”</td><td>Hooke dùng được</td><td>⚠ Định luật Hooke chỉ đúng trong giới hạn đàn hồi</td></tr><tr><td>“a) độ cứng $k$”</td><td>Cần $k$ (N/m)</td><td>Định luật Hooke</td></tr><tr><td>“b) kéo bằng lực $9{,}0$ N … dãn thêm bao nhiêu xentimét”</td><td>$F'=9{,}0\\ \\text{N}$; cần $\\left|\\Delta l'\\right|$ (cm)</td><td>Độ cứng thuộc về lò xo</td></tr><tr><td>“c) dãn thêm $2{,}0$ cm … lực”</td><td>$\\left|\\Delta l''\\right|=2{,}0\\ \\text{cm}$; cần $F''$ (N)</td><td>Định luật Hooke</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực và độ dãn (cm)</b> của lò xo → nghĩ tới <b>F = k|Δl|</b>, đổi cm ra m.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi độ dãn ra mét",
+     "hoi": "Độ dãn $4{,}0\\ \\text{cm}$ bằng bao nhiêu mét?",
+     "dap_so": 0.04,
+     "sai_so": 0.001,
+     "don_vi": "m",
+     "loi_hay_gap": "Thế thẳng số xentimét vào công thức mà không đổi đơn vị."
+    },
+    {
+     "tieu_de": "Độ cứng",
+     "hoi": "Độ cứng $k$ của lò xo bằng bao nhiêu?",
+     "dap_so": 150,
+     "sai_so": 1,
+     "don_vi": "N/m",
+     "loi_hay_gap": "Nhân $F$ với độ dãn thay vì chia, hoặc chia ngược độ dãn cho $F$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Rút $k$ từ định luật Hooke, với độ dãn đã đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "Nhân lực kéo với độ dãn đã đổi ra mét rồi ghi N/m",
+       "dung": false,
+       "vi_sao": "Công thức là $F=k\\left|\\Delta l\\right|$ nên $k$ là thương của $F$ và $\\left|\\Delta l\\right|$, không phải tích."
+      },
+      {
+       "text": "Chia độ dãn đã đổi ra mét cho lực kéo rồi ghi N/m",
+       "dung": false,
+       "vi_sao": "Chia ngược cho đơn vị m/N, không phải N/m."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ dãn khi kéo $9{,}0\\ \\text{N}$",
+     "hoi": "Kéo bằng lực $9{,}0\\ \\text{N}$, lò xo dãn thêm bao nhiêu xentimét?",
+     "dap_so": 6.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Coi số niutơn và số xentimét tăng thêm cùng một lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng độ cứng đã tìm để suy ra độ dãn mới",
+       "dung": true
+      },
+      {
+       "text": "Cộng thêm $3\\ \\text{cm}$ vì lực tăng thêm $3\\ \\text{N}$",
+       "dung": false,
+       "vi_sao": "Niutơn và xentimét không chuyển đổi $1:1$; phải qua độ cứng $k$."
+      },
+      {
+       "text": "Nhân lực mới với độ cứng của lò xo để ra độ dãn",
+       "dung": false,
+       "vi_sao": "Nhân cho đơn vị N·N/m, không phải mét; độ dãn là thương $F/k$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực khi dãn thêm $2{,}0\\ \\text{cm}$",
+     "hoi": "Muốn lò xo dãn thêm $2{,}0\\ \\text{cm}$ thì phải kéo bằng lực bao nhiêu?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "N",
+     "loi_hay_gap": "Thế độ dãn tính bằng xentimét vào công thức, hoặc chia $k$ cho độ dãn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân độ cứng với độ dãn đã đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "Nhân độ cứng với số xentimét của độ dãn",
+       "dung": false,
+       "vi_sao": "Độ dãn phải đổi sang mét; dùng $2{,}0$ cho kết quả lớn gấp trăm lần."
+      },
+      {
+       "text": "Lấy độ cứng chia cho độ dãn đã đổi ra mét",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ thuận với độ dãn, không tỉ lệ nghịch."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Chiều dài của lò xo khi bị kéo dãn hoặc bị nén",
+   "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+   "problem_html": "<p>Một lò xo nhẹ nằm ngang, một đầu gắn vào tường, chiều dài tự nhiên $24\\ \\text{cm}$, độ cứng $120\\ \\text{N/m}$. Lò xo luôn trong giới hạn đàn hồi.</p>\n<ol type=\"a\"><li>Tính chiều dài của lò xo khi tác dụng lên đầu tự do một lực kéo $3{,}6\\ \\text{N}$ dọc theo trục lò xo.</li>\n<li>Tính chiều dài của lò xo khi tác dụng lên đầu tự do một lực đẩy $4{,}8\\ \\text{N}$ dọc theo trục, hướng về phía tường.</li>\n<li>Muốn lò xo dài $30\\ \\text{cm}$ thì phải tác dụng lực kéo bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Lò xo nằm ngang gắn vào tường, lần lượt bị kéo dài ra rồi bị đẩy ngắn lại\"><line x1=\"30.0\" y1=\"50.0\" x2=\"30.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"50.0\" x2=\"22.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"60.0\" x2=\"22.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"22.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"80.0\" x2=\"22.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"90.0\" x2=\"22.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"100.0\" x2=\"22.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"22.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"120.0\" x2=\"22.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"62.0\" x2=\"150.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"150.0\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">chưa biến dạng</text><g transform=\"translate(30.0,85.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(120.00 1)\"><animateTransform attributeName=\"transform\" type=\"scale\" values=\"120.00 1;120.00 1;120.00 1;121.07 1;124.10 1;128.64 1;134.00 1;139.36 1;143.90 1;146.93 1;148.00 1;148.00 1;148.00 1;148.00 1;148.00 1;148.00 1;146.12 1;141.00 1;134.00 1;127.00 1;121.88 1;120.00 1;120.00 1;120.00 1;120.00 1;118.93 1;115.90 1;111.36 1;106.00 1;100.64 1;96.10 1;93.07 1;92.00 1;92.00 1;92.00 1;92.00 1;92.00 1;92.00 1;93.88 1;99.00 1;106.00 1;113.00 1;118.12 1;120.00 1;120.00 1;120.00 1;120.00 1\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.0652;0.3478\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"150.0\" y1=\"85.0\" x2=\"166.0\" y2=\"85.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"150.0;150.0;150.0;151.1;154.1;158.6;164.0;169.4;173.9;176.9;178.0;178.0;178.0;178.0;178.0;178.0;176.1;171.0;164.0;157.0;151.9;150.0;150.0;150.0;150.0;148.9;145.9;141.4;136.0;130.6;126.1;123.1;122.0;122.0;122.0;122.0;122.0;122.0;123.9;129.0;136.0;143.0;148.1;150.0;150.0;150.0;150.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"166.0;166.0;166.0;167.1;170.1;175.9;192.0;208.1;221.7;230.8;234.0;234.0;234.0;234.0;234.0;234.0;228.4;213.0;192.0;173.0;167.9;166.0;166.0;166.0;166.0;164.9;161.9;158.6;164.0;169.4;173.9;176.9;178.0;178.0;178.0;178.0;178.0;178.0;176.1;171.0;164.0;159.0;164.1;166.0;166.0;166.0;166.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M157.7,80.2 L166.0,85.0 L157.7,89.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M158.8,80.2 L167.1,85.0 L158.8,89.8;M161.8,80.2 L170.1,85.0 L161.8,89.8;M167.6,80.2 L175.9,85.0 L167.6,89.8;M183.7,80.2 L192.0,85.0 L183.7,89.8;M199.8,80.2 L208.1,85.0 L199.8,89.8;M213.4,80.2 L221.7,85.0 L213.4,89.8;M222.5,80.2 L230.8,85.0 L222.5,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M225.7,80.2 L234.0,85.0 L225.7,89.8;M220.1,80.2 L228.4,85.0 L220.1,89.8;M204.7,80.2 L213.0,85.0 L204.7,89.8;M183.7,80.2 L192.0,85.0 L183.7,89.8;M164.7,80.2 L173.0,85.0 L164.7,89.8;M159.6,80.2 L167.9,85.0 L159.6,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M156.6,80.2 L164.9,85.0 L156.6,89.8;M153.6,80.2 L161.9,85.0 L153.6,89.8;M150.3,80.2 L158.6,85.0 L150.3,89.8;M155.7,80.2 L164.0,85.0 L155.7,89.8;M161.0,80.2 L169.4,85.0 L161.0,89.8;M165.6,80.2 L173.9,85.0 L165.6,89.8;M168.6,80.2 L176.9,85.0 L168.6,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M169.7,80.2 L178.0,85.0 L169.7,89.8;M167.8,80.2 L176.1,85.0 L167.8,89.8;M162.7,80.2 L171.0,85.0 L162.7,89.8;M155.7,80.2 L164.0,85.0 L155.7,89.8;M150.7,80.2 L159.0,85.0 L150.7,89.8;M155.8,80.2 L164.1,85.0 L155.8,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8;M157.7,80.2 L166.0,85.0 L157.7,89.8\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/></path></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.5435;0.8261\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"166.0\" y1=\"85.0\" x2=\"150.0\" y2=\"85.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"166.0;166.0;166.0;167.1;170.1;175.9;192.0;208.1;221.7;230.8;234.0;234.0;234.0;234.0;234.0;234.0;228.4;213.0;192.0;173.0;167.9;166.0;166.0;166.0;166.0;164.9;161.9;158.6;164.0;169.4;173.9;176.9;178.0;178.0;178.0;178.0;178.0;178.0;176.1;171.0;164.0;159.0;164.1;166.0;166.0;166.0;166.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"150.0;150.0;150.0;151.1;154.1;158.6;164.0;169.4;173.9;176.9;178.0;178.0;178.0;178.0;178.0;178.0;176.1;171.0;164.0;157.0;151.9;150.0;150.0;150.0;150.0;148.9;145.9;141.4;136.0;130.6;126.1;123.1;122.0;122.0;122.0;122.0;122.0;122.0;123.9;129.0;136.0;143.0;148.1;150.0;150.0;150.0;150.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0;85.0\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M158.3,89.8 L150.0,85.0 L158.3,80.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M159.4,89.8 L151.1,85.0 L159.4,80.2;M162.4,89.8 L154.1,85.0 L162.4,80.2;M167.0,89.8 L158.6,85.0 L167.0,80.2;M172.3,89.8 L164.0,85.0 L172.3,80.2;M177.7,89.8 L169.4,85.0 L177.7,80.2;M182.2,89.8 L173.9,85.0 L182.2,80.2;M185.2,89.8 L176.9,85.0 L185.2,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M186.3,89.8 L178.0,85.0 L186.3,80.2;M184.4,89.8 L176.1,85.0 L184.4,80.2;M179.3,89.8 L171.0,85.0 L179.3,80.2;M172.3,89.8 L164.0,85.0 L172.3,80.2;M165.3,89.8 L157.0,85.0 L165.3,80.2;M160.2,89.8 L151.9,85.0 L160.2,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M157.2,89.8 L148.9,85.0 L157.2,80.2;M154.2,89.8 L145.9,85.0 L154.2,80.2;M149.7,89.8 L141.4,85.0 L149.7,80.2;M144.3,89.8 L136.0,85.0 L144.3,80.2;M139.0,89.8 L130.6,85.0 L139.0,80.2;M134.4,89.8 L126.1,85.0 L134.4,80.2;M131.4,89.8 L123.1,85.0 L131.4,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M130.3,89.8 L122.0,85.0 L130.3,80.2;M132.2,89.8 L123.9,85.0 L132.2,80.2;M137.3,89.8 L129.0,85.0 L137.3,80.2;M144.3,89.8 L136.0,85.0 L144.3,80.2;M151.3,89.8 L143.0,85.0 L151.3,80.2;M156.4,89.8 L148.1,85.0 L156.4,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2;M158.3,89.8 L150.0,85.0 L158.3,80.2\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/></path></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.0652;0.3478\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"330\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực kéo</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.5435;0.8261\" dur=\"6.90s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"330\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lực đẩy</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kéo rồi đẩy một lò xo (khoảng 7 s). Hình chỉ minh hoạ chiều biến dạng; độ lớn lực và độ biến dạng không theo số liệu của đề.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Lực đàn hồi</strong> xuất hiện khi lò xo biến dạng; lò xo đứng yên thì lực kéo (đẩy) cân bằng với nó.</li><li><strong>Định luật Hooke:</strong> $F_{\\text{đh}}=k\\left|\\Delta l\\right|$; $F$ (N), $\\Delta l$ (m), $k$ (N/m).</li><li>$\\left|\\Delta l\\right|=\\left|l-l_0\\right|$: phần dài thêm hoặc ngắn đi, không phải chiều dài $l$.</li><li>Lò xo bị kéo: $l=l_0+\\left|\\Delta l\\right|$.</li><li>Lò xo bị nén: $l=l_0-\\left|\\Delta l\\right|$.</li><li>⚠ <strong>Điều kiện:</strong> chỉ trong giới hạn đàn hồi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ dãn khi kéo</span></p><p>Lò xo đứng yên nên lực kéo cân bằng với lực đàn hồi:</p>$$F_{\\text{đh}}=F_1=3{,}6\\ \\text{N}$$$$\\left|\\Delta l_1\\right|=\\dfrac{F_{\\text{đh}}}{k}=\\dfrac{3{,}6}{120}=0{,}030\\ \\text{m}$$<div class=\"bt-ans\">$$\\left|\\Delta l_1\\right|=3{,}0\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều dài khi kéo</span></p><p>Bị kéo nên lò xo dài hơn chiều dài tự nhiên:</p>$$l_1=l_0+\\left|\\Delta l_1\\right|=24+3{,}0$$<div class=\"bt-ans\">$$l_1=27\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều dài khi nén</span></p>$$\\left|\\Delta l_2\\right|=\\dfrac{F_2}{k}=\\dfrac{4{,}8}{120}=0{,}040\\ \\text{m}=4{,}0\\ \\text{cm}$$<p>Bị nén nên lò xo ngắn hơn chiều dài tự nhiên:</p>$$l_2=l_0-\\left|\\Delta l_2\\right|=24-4{,}0$$<div class=\"bt-ans\">$$l_2=20\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực kéo để lò xo dài $30\\ \\text{cm}$</span></p><p>Lò xo dài $30\\ \\text{cm}$ lớn hơn $l_0$ nên bị kéo dãn:</p>$$\\left|\\Delta l_3\\right|=l_3-l_0=30-24=6{,}0\\ \\text{cm}=0{,}060\\ \\text{m}$$$$F_3=k\\left|\\Delta l_3\\right|=120\\cdot0{,}060$$<div class=\"bt-ans\">$$F_3=7{,}2\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$l_2=20\\ \\text{cm}\\lt l_0=24\\ \\text{cm}\\lt l_1=27\\ \\text{cm}$: nén thì ngắn đi, kéo thì dài ra ✓.</p><p>Lực $7{,}2\\ \\text{N}$ gấp đôi $3{,}6\\ \\text{N}$ nên độ dãn gấp đôi ($6{,}0\\ \\text{cm}$ so với $3{,}0\\ \\text{cm}$) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $l_1=27\\ \\text{cm}$</p><p>b) $l_2=20\\ \\text{cm}$</p><p>c) $F_3=7{,}2\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>chiều dài lò xo</strong> khi kéo hoặc nén → tìm $\\left|\\Delta l\\right|$ bằng Hooke, rồi cộng (kéo) hoặc trừ (nén) với $l_0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Lò xo nằm ngang ở chiều dài tự nhiên 24 xentimét, độ cứng 120 niutơn trên mét\"><line x1=\"30.0\" y1=\"50.0\" x2=\"30.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"50.0\" x2=\"22.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"60.0\" x2=\"22.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"22.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"80.0\" x2=\"22.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"90.0\" x2=\"22.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"100.0\" x2=\"22.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"22.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"30.0\" y1=\"120.0\" x2=\"22.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><g transform=\"translate(30.0,85.0)\"><polyline points=\"0.0000,0.0 0.0700,0.0 0.0939,7.0 0.1417,-7.0 0.1894,7.0 0.2372,-7.0 0.2850,7.0 0.3328,-7.0 0.3806,7.0 0.4283,-7.0 0.4761,7.0 0.5239,-7.0 0.5717,7.0 0.6194,-7.0 0.6672,7.0 0.7150,-7.0 0.7628,7.0 0.8106,-7.0 0.8583,7.0 0.9061,-7.0 0.9300,0.0 1.0000,0.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(120.00 1)\"></polyline></g><line x1=\"150.0\" y1=\"62.0\" x2=\"150.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"30\" y1=\"52\" x2=\"150.0\" y2=\"52\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M143.0,47.9 L150.0,52.0 L143.0,56.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"52\" x2=\"30\" y2=\"52\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M37.0,56.1 L30.0,52.0 L37.0,47.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"90.0\" y=\"44\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l₀ = 24 cm</text><text x=\"200\" y=\"78\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">k = 120 N/m</text><text x=\"200\" y=\"102\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">kéo 3,6 N → l = ?</text><text x=\"200\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đẩy 4,8 N → l = ?</text></svg><figcaption>Dữ kiện: lò xo ở chiều dài tự nhiên (chưa có lực); ba ý a, b, c của đề đều dùng cùng lò xo này.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“lò xo nhẹ nằm ngang, một đầu gắn vào tường”</td><td>Lò xo nhẹ, một đầu cố định</td><td>⚠ Lực kéo (đẩy) cân bằng với lực đàn hồi; bỏ qua khối lượng lò xo</td></tr><tr><td>“chiều dài tự nhiên $24$ cm”</td><td>$l_0=24\\ \\text{cm}$</td><td>⚠ $\\left|\\Delta l\\right|=\\left|l-l_0\\right|$: độ biến dạng khác chiều dài $l$</td></tr><tr><td>“độ cứng $120$ N/m”</td><td>$k=120\\ \\text{N/m}$</td><td>Độ cứng thuộc về lò xo</td></tr><tr><td>“luôn trong giới hạn đàn hồi”</td><td>Hooke dùng được</td><td>⚠ Định luật Hooke chỉ đúng trong giới hạn đàn hồi</td></tr><tr><td>“a) lực kéo $3{,}6$ N”</td><td>$F_1=3{,}6\\ \\text{N}$; cần $l_1$</td><td>Biến dạng kéo</td></tr><tr><td>“b) lực đẩy $4{,}8$ N hướng về phía tường”</td><td>$F_2=4{,}8\\ \\text{N}$; cần $l_2$</td><td>Biến dạng nén</td></tr><tr><td>“c) dài $30$ cm … lực kéo”</td><td>$l_3=30\\ \\text{cm}$; cần $F_3$ (N)</td><td>Định luật Hooke</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hỏi chiều dài lò xo</b> khi kéo hoặc nén → nghĩ tới <b>Δl</b> rồi so với <b>l₀</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ dãn khi kéo",
+     "hoi": "Khi kéo bằng lực $3{,}6\\ \\text{N}$, độ dãn $\\left|\\Delta l_1\\right|$ bằng bao nhiêu xentimét?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia lực cho độ cứng nhưng quên đổi kết quả từ mét sang xentimét, hoặc chia ngược."
+    },
+    {
+     "tieu_de": "Chiều dài khi kéo",
+     "hoi": "Khi kéo bằng lực $3{,}6\\ \\text{N}$, lò xo dài bao nhiêu xentimét?",
+     "dap_so": 27,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy độ dãn làm chiều dài của lò xo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi độ biến dạng sang chiều dài của lò xo",
+       "dung": true
+      },
+      {
+       "text": "Coi độ biến dạng chính là chiều dài của lò xo lúc này",
+       "dung": false,
+       "vi_sao": "Độ biến dạng chỉ là phần dài thêm hoặc ngắn đi; chiều dài còn gồm cả chiều dài tự nhiên."
+      },
+      {
+       "text": "Luôn trừ độ biến dạng khỏi chiều dài tự nhiên của lò xo",
+       "dung": false,
+       "vi_sao": "Trừ chỉ đúng khi lò xo bị nén; lò xo bị kéo thì dài hơn chiều dài tự nhiên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài khi nén",
+     "hoi": "Khi đẩy bằng lực $4{,}8\\ \\text{N}$ về phía tường, lò xo dài bao nhiêu xentimét?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng lại cách tính chiều dài của lần kéo mà không xét lò xo đang bị đẩy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính độ biến dạng mới, rồi xét lò xo ngắn đi hay dài ra",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn chiều dài của lần kéo vì cùng một lò xo",
+       "dung": false,
+       "vi_sao": "Lực đẩy $4{,}8\\ \\text{N}$ khác lực kéo $3{,}6\\ \\text{N}$ nên độ biến dạng cũng khác."
+      },
+      {
+       "text": "Cộng độ biến dạng vào chiều dài tự nhiên như lúc kéo",
+       "dung": false,
+       "vi_sao": "Lò xo bị nén thì ngắn đi, không dài thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo để lò xo dài $30\\ \\text{cm}$",
+     "hoi": "Phải kéo bằng lực bao nhiêu để lò xo dài $30\\ \\text{cm}$?",
+     "dap_so": 7.2,
+     "sai_so": 0.05,
+     "don_vi": "N",
+     "loi_hay_gap": "Thế chiều dài $30\\ \\text{cm}$ vào công thức Hooke như thể đó là độ dãn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm độ dãn từ chiều dài đề cho, rồi mới tính lực",
+       "dung": true
+      },
+      {
+       "text": "Thế thẳng chiều dài đề cho vào công thức Hooke để tính lực",
+       "dung": false,
+       "vi_sao": "Chiều dài đề cho là $l$, không phải độ biến dạng $\\left|\\Delta l\\right|$."
+      },
+      {
+       "text": "Thế chiều dài tự nhiên vào công thức Hooke để tính lực",
+       "dung": false,
+       "vi_sao": "Chiều dài tự nhiên cũng không phải độ biến dạng; độ dãn là phần dài hơn chiều dài tự nhiên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Lò xo treo vật đứng yên: tìm độ cứng, chiều dài và khối lượng",
+   "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+   "problem_html": "<p>Một lò xo nhẹ có chiều dài tự nhiên $20\\ \\text{cm}$, treo thẳng đứng, đầu trên cố định. Treo vào đầu dưới một vật khối lượng $120\\ \\text{g}$; khi vật đứng yên, lò xo dài $23\\ \\text{cm}$. Lấy $g=10\\ \\text{m/s}^2$, lò xo luôn trong giới hạn đàn hồi.</p>\n<ol type=\"a\"><li>Tính độ cứng $k$ của lò xo.</li>\n<li>Treo thêm vào vật đó một vật $80\\ \\text{g}$ nữa. Khi đứng yên, lò xo dài bao nhiêu?</li>\n<li>Phải treo thêm bao nhiêu gam nữa (so với vật $120\\ \\text{g}$ ban đầu) để lò xo dài $32\\ \\text{cm}$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Lò xo thẳng đứng, đầu trên cố định, treo vật 120 gam ở đầu dưới\"><line x1=\"150.0\" y1=\"24.0\" x2=\"250.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"24.0\" x2=\"158.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"160.0\" y1=\"24.0\" x2=\"168.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"170.0\" y1=\"24.0\" x2=\"178.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"180.0\" y1=\"24.0\" x2=\"188.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"190.0\" y1=\"24.0\" x2=\"198.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"200.0\" y1=\"24.0\" x2=\"208.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"210.0\" y1=\"24.0\" x2=\"218.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"220.0\" y1=\"24.0\" x2=\"228.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"230.0\" y1=\"24.0\" x2=\"238.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"240.0\" y1=\"24.0\" x2=\"248.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"250.0\" y1=\"24.0\" x2=\"258.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"140\" y1=\"24\" x2=\"140\" y2=\"124.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M144.1,117.0 L140.0,124.0 L135.9,117.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"124.0\" x2=\"140\" y2=\"24\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M135.9,31.0 L140.0,24.0 L144.1,31.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"134\" y=\"78.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₀ = 20 cm</text><line x1=\"120.0\" y1=\"124.0\" x2=\"250.0\" y2=\"124.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><g transform=\"translate(200.0,24.0)\"><polyline points=\"0.0,0.0000 0.0,0.0700 7.0,0.0939 -7.0,0.1417 7.0,0.1894 -7.0,0.2372 7.0,0.2850 -7.0,0.3328 7.0,0.3806 -7.0,0.4283 7.0,0.4761 -7.0,0.5239 7.0,0.5717 -7.0,0.6194 7.0,0.6672 -7.0,0.7150 7.0,0.7628 -7.0,0.8106 7.0,0.8583 -7.0,0.9061 0.0,0.9300 0.0,1.0000\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(1 100.00)\"><animateTransform attributeName=\"transform\" type=\"scale\" values=\"1 100.00;1 100.61;1 102.32;1 104.88;1 108.00;1 111.37;1 114.69;1 117.71;1 120.21;1 122.04;1 123.12;1 123.44;1 123.05;1 122.05;1 120.58;1 118.82;1 116.92;1 115.05;1 113.37;1 111.99;1 110.98;1 110.41;1 110.25;1 110.50;1 111.08;1 111.92;1 112.92;1 113.99;1 115.04;1 115.97;1 116.74;1 117.29;1 117.60;1 117.67;1 117.52;1 117.18;1 116.70;1 116.13;1 115.53;1 114.94;1 114.42;1 114.00;1 113.70;1 113.53;1 113.50;1 113.59;1 113.79;1 114.06;1 114.39;1 114.73;1 115.05;1 115.34;1 115.58;1 115.74;1 115.83;1 115.84;1 115.79;1 115.67;1 115.51;1 115.33;1 115.14;1 114.96;1 114.80;1 114.67;1 114.58;1 114.53;1 114.53;1 114.56;1 114.63;1 114.72;1 114.82;1 114.93;1 115.03;1 115.12;1 115.19;1 115.24;1 115.26;1 115.27;1 115.25;1 115.21;1 115.16;1 115.10;1 115.04;1 114.98;1 114.93;1 114.89;1 114.86;1 114.85;1 114.85;1 114.86;1 114.89;1 114.91;1 114.95;1 114.98;1 115.01;1 115.04;1 115.06;1 115.08;1 115.08;1 115.08;1 115.00\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></g><rect x=\"177.0\" y=\"124.0\" width=\"46\" height=\"32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><animate attributeName=\"y\" values=\"124.0;124.6;126.3;128.9;132.0;135.4;138.7;141.7;144.2;146.0;147.1;147.4;147.0;146.1;144.6;142.8;140.9;139.1;137.4;136.0;135.0;134.4;134.3;134.5;135.1;135.9;136.9;138.0;139.0;140.0;140.7;141.3;141.6;141.7;141.5;141.2;140.7;140.1;139.5;138.9;138.4;138.0;137.7;137.5;137.5;137.6;137.8;138.1;138.4;138.7;139.1;139.3;139.6;139.7;139.8;139.8;139.8;139.7;139.5;139.3;139.1;139.0;138.8;138.7;138.6;138.5;138.5;138.6;138.6;138.7;138.8;138.9;139.0;139.1;139.2;139.2;139.3;139.3;139.2;139.2;139.2;139.1;139.0;139.0;138.9;138.9;138.9;138.9;138.9;138.9;138.9;138.9;138.9;139.0;139.0;139.0;139.1;139.1;139.1;139.1;139.0\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"200.0\" y=\"144.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">120 g<animate attributeName=\"y\" values=\"144.5;145.1;146.8;149.4;152.5;155.9;159.2;162.2;164.7;166.5;167.6;167.9;167.5;166.6;165.1;163.3;161.4;159.6;157.9;156.5;155.5;154.9;154.8;155.0;155.6;156.4;157.4;158.5;159.5;160.5;161.2;161.8;162.1;162.2;162.0;161.7;161.2;160.6;160.0;159.4;158.9;158.5;158.2;158.0;158.0;158.1;158.3;158.6;158.9;159.2;159.6;159.8;160.1;160.2;160.3;160.3;160.3;160.2;160.0;159.8;159.6;159.5;159.3;159.2;159.1;159.0;159.0;159.1;159.1;159.2;159.3;159.4;159.5;159.6;159.7;159.7;159.8;159.8;159.7;159.7;159.7;159.6;159.5;159.5;159.4;159.4;159.4;159.4;159.4;159.4;159.4;159.4;159.4;159.5;159.5;159.5;159.6;159.6;159.6;159.6;159.5\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/></text><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.9167\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"262\" y1=\"24\" x2=\"262\" y2=\"139.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M266.1,132.0 L262.0,139.0 L257.9,132.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"262\" y1=\"139.0\" x2=\"262\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257.9,31.0 L262.0,24.0 L266.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"270\" y=\"85.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 23 cm</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thả vật 120 g từ chiều dài tự nhiên; lò xo dao động tắt dần rồi đứng yên (tính theo k, m; chạy chậm 3 lần, khoảng 5 s).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Lò xo nhẹ treo vật đứng yên:</strong> lực đàn hồi cân bằng với trọng lượng, $F_{\\text{đh}}=P=mg$.</li><li><strong>Định luật Hooke:</strong> $F_{\\text{đh}}=k\\left|\\Delta l\\right|$; $F$ (N), $\\Delta l$ (m), $k$ (N/m).</li><li>$\\left|\\Delta l\\right|=\\left|l-l_0\\right|$; treo vật thì lò xo dãn: $l=l_0+\\left|\\Delta l\\right|$.</li><li>⚠ <strong>Điều kiện:</strong> lò xo nhẹ, trong giới hạn đàn hồi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực đàn hồi khi vật $120\\ \\text{g}$ đứng yên</span></p><p>Vật đứng yên nên lực đàn hồi cân bằng với trọng lượng:</p>$$F_{\\text{đh}}=P=mg=0{,}120\\cdot10$$<div class=\"bt-ans\">$$F_{\\text{đh}}=1{,}2\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ cứng</span></p>$$\\left|\\Delta l\\right|=l-l_0=23-20=3{,}0\\ \\text{cm}=0{,}030\\ \\text{m}$$$$k=\\dfrac{F_{\\text{đh}}}{\\left|\\Delta l\\right|}=\\dfrac{1{,}2}{0{,}030}$$<div class=\"bt-ans\">$$k=40\\ \\text{N/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều dài khi treo thêm $80\\ \\text{g}$</span></p><p>Lò xo chịu cả hai vật, khối lượng cộng dồn:</p>$$m'=120+80=200\\ \\text{g}=0{,}200\\ \\text{kg}$$$$F'=m'g=0{,}200\\cdot10=2{,}0\\ \\text{N}$$$$\\left|\\Delta l'\\right|=\\dfrac{F'}{k}=\\dfrac{2{,}0}{40}=0{,}050\\ \\text{m}=5{,}0\\ \\text{cm}$$$$l'=l_0+\\left|\\Delta l'\\right|=20+5{,}0$$<div class=\"bt-ans\">$$l'=25\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tổng khối lượng để lò xo dài $32\\ \\text{cm}$</span></p>$$\\left|\\Delta l''\\right|=32-20=12\\ \\text{cm}=0{,}12\\ \\text{m}$$$$F''=k\\left|\\Delta l''\\right|=40\\cdot0{,}12=4{,}8\\ \\text{N}$$$$m''=\\dfrac{F''}{g}=\\dfrac{4{,}8}{10}=0{,}48\\ \\text{kg}$$<div class=\"bt-ans\">$$m''=480\\ \\text{g}\\ (\\text{tổng})$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khối lượng treo thêm</span></p><p>Đã có sẵn vật $120\\ \\text{g}$, nên phần cần thêm là:</p>$$\\Delta m=m''-m_1=480-120$$<div class=\"bt-ans\">$$\\Delta m=360\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Cứ $40\\ \\text{g}$ thì lò xo dãn thêm $1\\ \\text{cm}$ (vì $k=40\\ \\text{N/m}$, $g=10\\ \\text{m/s}^2$).</p><p>$120\\ \\text{g}$ ứng với $3\\ \\text{cm}$; $200\\ \\text{g}$ ứng với $5\\ \\text{cm}$; $480\\ \\text{g}$ ứng với $12\\ \\text{cm}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $k=40\\ \\text{N/m}$</p><p>b) $l'=25\\ \\text{cm}$</p><p>c) Treo thêm $360\\ \\text{g}$ (tổng $480\\ \\text{g}$)</p></div><p class=\"bt-note\">Nhận dạng: lò xo <strong>treo vật đứng yên</strong> → lực đàn hồi bằng trọng lượng của <strong>tất cả vật đang treo</strong>, rồi dùng Hooke.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Lò xo thẳng đứng, đầu trên cố định, treo vật 120 gam ở đầu dưới\"><line x1=\"150.0\" y1=\"24.0\" x2=\"250.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"24.0\" x2=\"158.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"160.0\" y1=\"24.0\" x2=\"168.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"170.0\" y1=\"24.0\" x2=\"178.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"180.0\" y1=\"24.0\" x2=\"188.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"190.0\" y1=\"24.0\" x2=\"198.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"200.0\" y1=\"24.0\" x2=\"208.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"210.0\" y1=\"24.0\" x2=\"218.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"220.0\" y1=\"24.0\" x2=\"228.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"230.0\" y1=\"24.0\" x2=\"238.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"240.0\" y1=\"24.0\" x2=\"248.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"250.0\" y1=\"24.0\" x2=\"258.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"140\" y1=\"24\" x2=\"140\" y2=\"124.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M144.1,117.0 L140.0,124.0 L135.9,117.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"124.0\" x2=\"140\" y2=\"24\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M135.9,31.0 L140.0,24.0 L144.1,31.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"134\" y=\"78.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₀ = 20 cm</text><line x1=\"120.0\" y1=\"124.0\" x2=\"250.0\" y2=\"124.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><g transform=\"translate(200.0,24.0)\"><polyline points=\"0.0,0.0000 0.0,0.0700 7.0,0.0939 -7.0,0.1417 7.0,0.1894 -7.0,0.2372 7.0,0.2850 -7.0,0.3328 7.0,0.3806 -7.0,0.4283 7.0,0.4761 -7.0,0.5239 7.0,0.5717 -7.0,0.6194 7.0,0.6672 -7.0,0.7150 7.0,0.7628 -7.0,0.8106 7.0,0.8583 -7.0,0.9061 0.0,0.9300 0.0,1.0000\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(1 115.00)\"></polyline></g><rect x=\"177.0\" y=\"139.0\" width=\"46\" height=\"32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></rect><text x=\"200.0\" y=\"159.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">120 g</text><line x1=\"262\" y1=\"24\" x2=\"262\" y2=\"139.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M266.1,132.0 L262.0,139.0 L257.9,132.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"262\" y1=\"139.0\" x2=\"262\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257.9,31.0 L262.0,24.0 L266.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"270\" y=\"85.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 23 cm</text><text x=\"236\" y=\"160.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">k = ?</text></svg><figcaption>Dữ kiện: vật 120 g đứng yên, lò xo dài 23 cm; vạch đứt là đầu dưới lò xo khi chưa treo vật. Thước chiều dài vẽ đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“lò xo nhẹ … treo thẳng đứng, đầu trên cố định”</td><td>Đầu dưới chỉ chịu lực của vật treo</td><td>⚠ Lò xo nhẹ: bỏ qua khối lượng lò xo</td></tr><tr><td>“chiều dài tự nhiên $20$ cm”</td><td>$l_0=20\\ \\text{cm}$</td><td>Mốc để tính độ biến dạng</td></tr><tr><td>“treo vật $120$ g; khi vật đứng yên, lò xo dài $23$ cm”</td><td>$m_1=120\\ \\text{g}$; $l_1=23\\ \\text{cm}$</td><td>⚠ Vật đứng yên: các lực tác dụng lên vật cân bằng</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng $P=mg$</td></tr><tr><td>“luôn trong giới hạn đàn hồi”</td><td>Hooke dùng được cho cả ba ý</td><td>⚠ Định luật Hooke chỉ đúng trong giới hạn đàn hồi</td></tr><tr><td>“a) độ cứng $k$”</td><td>Cần $k$ (N/m)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) treo thêm vật $80$ g nữa”</td><td>$m_2=80\\ \\text{g}$ (vật thêm); cần $l'$</td><td>Khối lượng treo lúc này</td></tr><tr><td>“c) treo thêm bao nhiêu gam để lò xo dài $32$ cm”</td><td>$l''=32\\ \\text{cm}$; cần khối lượng treo thêm (g)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy lò xo <b>treo vật đứng yên</b> → nghĩ tới <b>lực đàn hồi cân bằng trọng lượng</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực đàn hồi khi vật $120\\ \\text{g}$ đứng yên",
+     "hoi": "Khi vật $120\\ \\text{g}$ đứng yên, lực đàn hồi của lò xo bằng bao nhiêu?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy khối lượng (g hoặc kg) làm lực mà không nhân với $g$."
+    },
+    {
+     "tieu_de": "Độ cứng",
+     "hoi": "Độ cứng $k$ của lò xo bằng bao nhiêu?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "N/m",
+     "loi_hay_gap": "Thế chiều dài của lò xo vào công thức Hooke thay cho độ biến dạng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia lực đàn hồi cho độ dãn đã đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "Chia lực đàn hồi cho chiều dài lò xo lúc đứng yên",
+       "dung": false,
+       "vi_sao": "Chiều dài $l$ không phải độ biến dạng; $\\left|\\Delta l\\right|=\\left|l-l_0\\right|$."
+      },
+      {
+       "text": "Chia lực đàn hồi cho chiều dài tự nhiên của lò xo",
+       "dung": false,
+       "vi_sao": "Chiều dài tự nhiên cũng không phải độ biến dạng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài khi treo thêm $80\\ \\text{g}$",
+     "hoi": "Sau khi treo thêm vật $80\\ \\text{g}$, lò xo dài bao nhiêu xentimét?",
+     "dap_so": 25,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chỉ tính lực của vật treo thêm, bỏ quên vật treo từ đầu; hoặc ghi độ dãn làm chiều dài.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm khối lượng tổng đang treo rồi tính độ dãn tương ứng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy trọng lượng của vật $80\\ \\text{g}$ vừa treo thêm vào",
+       "dung": false,
+       "vi_sao": "Lò xo đang gánh cả hai vật; lực đàn hồi cân bằng với tổng trọng lượng."
+      },
+      {
+       "text": "Giữ nguyên độ dãn đã có ở lần treo đầu tiên",
+       "dung": false,
+       "vi_sao": "Thêm vật thì lực đàn hồi lớn hơn, nên độ dãn cũng khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng khối lượng để lò xo dài $32\\ \\text{cm}$",
+     "hoi": "Khi lò xo dài $32\\ \\text{cm}$, tổng khối lượng đang treo bằng bao nhiêu gam?",
+     "dap_so": 480,
+     "sai_so": 5,
+     "don_vi": "g",
+     "loi_hay_gap": "Thế thẳng chiều dài $32\\ \\text{cm}$ làm độ dãn, hoặc quên đổi đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm độ dãn từ chiều dài rồi suy ra lực và khối lượng",
+       "dung": true
+      },
+      {
+       "text": "Lấy khối lượng ban đầu nhân tỉ số hai chiều dài",
+       "dung": false,
+       "vi_sao": "Khối lượng tỉ lệ với độ dãn chứ không tỉ lệ với chiều dài; chiều dài còn gồm cả chiều dài tự nhiên."
+      },
+      {
+       "text": "Thế chiều dài $32\\ \\text{cm}$ làm độ dãn trong công thức Hooke",
+       "dung": false,
+       "vi_sao": "$32\\ \\text{cm}$ là chiều dài $l$; độ dãn còn phải bớt đi chiều dài tự nhiên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng treo thêm",
+     "hoi": "Phải treo thêm bao nhiêu gam nữa so với vật $120\\ \\text{g}$ ban đầu?",
+     "dap_so": 360,
+     "sai_so": 5,
+     "don_vi": "g",
+     "loi_hay_gap": "Ghi tổng khối lượng làm khối lượng cần treo thêm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bớt phần đã treo khỏi tổng khối lượng cần có",
+       "dung": true
+      },
+      {
+       "text": "Lấy luôn tổng khối lượng vừa tìm được ở bước trước",
+       "dung": false,
+       "vi_sao": "Đề hỏi phần cần treo thêm, không phải tổng khối lượng."
+      },
+      {
+       "text": "Cộng tổng khối lượng với phần khối lượng đã treo",
+       "dung": false,
+       "vi_sao": "Cộng làm khối lượng lớn hơn tổng cần có, lò xo sẽ dãn quá $32\\ \\text{cm}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Bài ngược: biết hai chiều dài, tìm chiều dài tự nhiên và độ cứng",
+   "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+   "problem_html": "<p>Một lò xo nhẹ treo thẳng đứng, đầu trên cố định. Treo vào đầu dưới vật khối lượng $160\\ \\text{g}$, khi đứng yên lò xo dài $24\\ \\text{cm}$. Treo thêm một vật nữa để tổng khối lượng treo là $480\\ \\text{g}$, khi đứng yên lò xo dài $28\\ \\text{cm}$. Lấy $g=10\\ \\text{m/s}^2$, lò xo luôn trong giới hạn đàn hồi. Chưa biết chiều dài tự nhiên và độ cứng của lò xo.</p>\n<ol type=\"a\"><li>Tính độ cứng $k$.</li>\n<li>Tính chiều dài tự nhiên $l_0$.</li>\n<li>Nếu chỉ treo vật $400\\ \\text{g}$ thì lò xo dài bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Lò xo thẳng đứng treo vật 160 gam, sau đó treo thêm vật nữa cho tổng khối lượng 480 gam\"><line x1=\"130.0\" y1=\"24.0\" x2=\"250.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"130.0\" y1=\"24.0\" x2=\"138.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"142.0\" y1=\"24.0\" x2=\"150.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"154.0\" y1=\"24.0\" x2=\"162.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"166.0\" y1=\"24.0\" x2=\"174.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"178.0\" y1=\"24.0\" x2=\"186.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"190.0\" y1=\"24.0\" x2=\"198.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"202.0\" y1=\"24.0\" x2=\"210.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"214.0\" y1=\"24.0\" x2=\"222.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"226.0\" y1=\"24.0\" x2=\"234.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"238.0\" y1=\"24.0\" x2=\"246.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"250.0\" y1=\"24.0\" x2=\"258.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><g transform=\"translate(190.0,24.0)\"><polyline points=\"0.0,0.0000 0.0,0.0700 7.0,0.0939 -7.0,0.1417 7.0,0.1894 -7.0,0.2372 7.0,0.2850 -7.0,0.3328 7.0,0.3806 -7.0,0.4283 7.0,0.4761 -7.0,0.5239 7.0,0.5717 -7.0,0.6194 7.0,0.6672 -7.0,0.7150 7.0,0.7628 -7.0,0.8106 7.0,0.8583 -7.0,0.9061 0.0,0.9300 0.0,1.0000\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(1 120.00)\"><animateTransform attributeName=\"transform\" type=\"scale\" values=\"1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.00;1 120.92;1 123.46;1 127.22;1 131.74;1 136.52;1 141.12;1 145.13;1 148.25;1 150.30;1 151.20;1 151.00;1 149.83;1 147.90;1 145.46;1 142.78;1 140.14;1 137.76;1 135.84;1 134.49;1 133.78;1 133.71;1 134.21;1 135.18;1 136.48;1 137.96;1 139.47;1 140.87;1 142.04;1 142.90;1 143.41;1 143.56;1 143.38;1 142.90;1 142.22;1 141.41;1 140.55;1 139.74;1 139.04;1 138.49;1 138.14;1 138.00;1 138.05;1 138.27;1 138.62;1 139.06;1 139.54;1 140.01;1 140.43;1 140.76;1 141.00;1 141.11;1 141.12;1 141.02;1 140.84;1 140.61;1 140.34;1 140.07;1 139.83;1 139.62;1 139.47;1 139.39;1 139.37;1 139.40;1 139.49;1 139.61;1 139.76;1 139.91;1 140.06;1 140.18;1 140.27;1 140.33;1 140.36;1 140.35;1 140.30;1 140.24;1 140.16;1 140.08;1 139.99;1 139.92;1 139.86;1 139.82;1 139.80;1 139.80;1 139.82;1 139.85;1 139.90;1 139.94;1 139.99;1 140.03;1 140.07;1 140.10;1 140.11;1 140.11;1 140.11;1 140.09;1 140.07;1 140.04;1 140.01;1 139.99;1 139.97;1 139.95;1 139.94;1 139.94;1 139.94;1 139.95;1 139.96;1 139.97;1 140.00\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></g><rect x=\"162.0\" y=\"144.0\" width=\"56\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><animate attributeName=\"y\" values=\"144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.0;144.9;147.5;151.2;155.7;160.5;165.1;169.1;172.2;174.3;175.2;175.0;173.8;171.9;169.5;166.8;164.1;161.8;159.8;158.5;157.8;157.7;158.2;159.2;160.5;162.0;163.5;164.9;166.0;166.9;167.4;167.6;167.4;166.9;166.2;165.4;164.6;163.7;163.0;162.5;162.1;162.0;162.0;162.3;162.6;163.1;163.5;164.0;164.4;164.8;165.0;165.1;165.1;165.0;164.8;164.6;164.3;164.1;163.8;163.6;163.5;163.4;163.4;163.4;163.5;163.6;163.8;163.9;164.1;164.2;164.3;164.3;164.4;164.3;164.3;164.2;164.2;164.1;164.0;163.9;163.9;163.8;163.8;163.8;163.8;163.9;163.9;163.9;164.0;164.0;164.1;164.1;164.1;164.1;164.1;164.1;164.1;164.0;164.0;164.0;164.0;164.0;163.9;163.9;163.9;163.9;164.0;164.0;164.0\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"190.0\" y=\"163.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">160 g<animate attributeName=\"y\" values=\"163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;163.5;164.4;167.0;170.7;175.2;180.0;184.6;188.6;191.7;193.8;194.7;194.5;193.3;191.4;189.0;186.3;183.6;181.3;179.3;178.0;177.3;177.2;177.7;178.7;180.0;181.5;183.0;184.4;185.5;186.4;186.9;187.1;186.9;186.4;185.7;184.9;184.1;183.2;182.5;182.0;181.6;181.5;181.5;181.8;182.1;182.6;183.0;183.5;183.9;184.3;184.5;184.6;184.6;184.5;184.3;184.1;183.8;183.6;183.3;183.1;183.0;182.9;182.9;182.9;183.0;183.1;183.3;183.4;183.6;183.7;183.8;183.8;183.9;183.8;183.8;183.7;183.7;183.6;183.5;183.4;183.4;183.3;183.3;183.3;183.3;183.4;183.4;183.4;183.5;183.5;183.6;183.6;183.6;183.6;183.6;183.6;183.6;183.5;183.5;183.5;183.5;183.5;183.4;183.4;183.4;183.4;183.5;183.5;183.5\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/></text><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.1575\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"162.0\" y=\"174.0\" width=\"56\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><animate attributeName=\"y\" values=\"174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.0;174.9;177.5;181.2;185.7;190.5;195.1;199.1;202.2;204.3;205.2;205.0;203.8;201.9;199.5;196.8;194.1;191.8;189.8;188.5;187.8;187.7;188.2;189.2;190.5;192.0;193.5;194.9;196.0;196.9;197.4;197.6;197.4;196.9;196.2;195.4;194.6;193.7;193.0;192.5;192.1;192.0;192.0;192.3;192.6;193.1;193.5;194.0;194.4;194.8;195.0;195.1;195.1;195.0;194.8;194.6;194.3;194.1;193.8;193.6;193.5;193.4;193.4;193.4;193.5;193.6;193.8;193.9;194.1;194.2;194.3;194.3;194.4;194.3;194.3;194.2;194.2;194.1;194.0;193.9;193.9;193.8;193.8;193.8;193.8;193.9;193.9;193.9;194.0;194.0;194.1;194.1;194.1;194.1;194.1;194.1;194.1;194.0;194.0;194.0;194.0;194.0;193.9;193.9;193.9;193.9;194.0;194.0;194.0\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"190.0\" y=\"193.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">+ 320 g<animate attributeName=\"y\" values=\"193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;193.5;194.4;197.0;200.7;205.2;210.0;214.6;218.6;221.7;223.8;224.7;224.5;223.3;221.4;219.0;216.3;213.6;211.3;209.3;208.0;207.3;207.2;207.7;208.7;210.0;211.5;213.0;214.4;215.5;216.4;216.9;217.1;216.9;216.4;215.7;214.9;214.1;213.2;212.5;212.0;211.6;211.5;211.5;211.8;212.1;212.6;213.0;213.5;213.9;214.3;214.5;214.6;214.6;214.5;214.3;214.1;213.8;213.6;213.3;213.1;213.0;212.9;212.9;212.9;213.0;213.1;213.3;213.4;213.6;213.7;213.8;213.8;213.9;213.8;213.8;213.7;213.7;213.6;213.5;213.4;213.4;213.3;213.3;213.3;213.3;213.4;213.4;213.4;213.5;213.5;213.6;213.6;213.6;213.6;213.6;213.6;213.6;213.5;213.5;213.5;213.5;213.5;213.4;213.4;213.4;213.4;213.5;213.5;213.5\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/></text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;0.0000;0.1575\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"110\" y1=\"24\" x2=\"110\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M114.1,137.0 L110.0,144.0 L105.9,137.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110\" y1=\"144.0\" x2=\"110\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M105.9,31.0 L110.0,24.0 L114.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"104\" y=\"88.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₁ = 24 cm</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" calcMode=\"discrete\" values=\"0;1\" keyTimes=\"0;0.9475\" dur=\"7.62s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"110\" y1=\"24\" x2=\"110\" y2=\"164.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M114.1,157.0 L110.0,164.0 L105.9,157.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110\" y1=\"164.0\" x2=\"110\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M105.9,31.0 L110.0,24.0 L114.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"104\" y=\"98.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₂ = 28 cm</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: treo vật 160 g, rồi treo thêm một vật nữa; lò xo dao động tắt dần quanh vị trí cân bằng mới (tính theo k, m; chạy chậm 2,5 lần, khoảng 8 s).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Lò xo nhẹ treo vật đứng yên:</strong> lực đàn hồi cân bằng với trọng lượng, $mg=k\\left|\\Delta l\\right|$.</li><li>$\\left|\\Delta l\\right|=l-l_0$ khi lò xo dãn; $F$ (N), $\\Delta l$ (m), $k$ (N/m).</li><li>$k$ và $l_0$ thuộc về lò xo, không đổi giữa hai lần treo.</li><li>Hai trạng thái của cùng một lò xo cho hai phương trình.</li><li>⚠ <strong>Điều kiện:</strong> lò xo nhẹ, trong giới hạn đàn hồi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phần lực tăng thêm</span></p><p>Vật đứng yên nên lực đàn hồi cân bằng với trọng lượng:</p>$$F_1=m_1g=0{,}160\\cdot10=1{,}6\\ \\text{N}$$$$F_2=m_2g=0{,}480\\cdot10=4{,}8\\ \\text{N}$$$$\\Delta F=F_2-F_1=4{,}8-1{,}6$$<div class=\"bt-ans\">$$\\Delta F=3{,}2\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ cứng</span></p><p>Viết Hooke cho hai trạng thái rồi trừ vế theo vế, $l_0$ triệt tiêu:</p>$$F_1=k\\left(l_1-l_0\\right),\\quad F_2=k\\left(l_2-l_0\\right)$$$$F_2-F_1=k\\left(l_2-l_1\\right)$$$$k=\\dfrac{\\Delta F}{l_2-l_1}=\\dfrac{3{,}2}{0{,}28-0{,}24}=\\dfrac{3{,}2}{0{,}040}$$<div class=\"bt-ans\">$$k=80\\ \\text{N/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ dãn của lần treo đầu</span></p>$$\\left|\\Delta l_1\\right|=\\dfrac{F_1}{k}=\\dfrac{1{,}6}{80}=0{,}020\\ \\text{m}$$<div class=\"bt-ans\">$$\\left|\\Delta l_1\\right|=2{,}0\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều dài tự nhiên</span></p><p>Treo vật thì lò xo dãn, nên $l_0$ nhỏ hơn $l_1$:</p>$$l_0=l_1-\\left|\\Delta l_1\\right|=24-2{,}0$$<div class=\"bt-ans\">$$l_0=22\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chiều dài khi chỉ treo $400\\ \\text{g}$</span></p>$$F_3=m_3g=0{,}400\\cdot10=4{,}0\\ \\text{N}$$$$\\left|\\Delta l_3\\right|=\\dfrac{F_3}{k}=\\dfrac{4{,}0}{80}=0{,}050\\ \\text{m}=5{,}0\\ \\text{cm}$$$$l_3=l_0+\\left|\\Delta l_3\\right|=22+5{,}0$$<div class=\"bt-ans\">$$l_3=27\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thế $k=80\\ \\text{N/m}$, $l_0=22\\ \\text{cm}$ vào trạng thái thứ hai:</p>$$l_2=22+\\dfrac{4{,}8}{80}\\cdot100=28\\ \\text{cm}$$<p>Khớp với đề ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $k=80\\ \\text{N/m}$</p><p>b) $l_0=22\\ \\text{cm}$</p><p>c) $l_3=27\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>hai chiều dài ứng với hai khối lượng</strong>, $l_0$ chưa biết → viết Hooke cho cả hai trạng thái rồi trừ vế để loại $l_0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Hai lần treo cùng một lò xo: vật 160 gam làm lò xo dài 24 xentimét, tổng 480 gam làm lò xo dài 28 xentimét\"><line x1=\"60.0\" y1=\"24.0\" x2=\"380.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"24.0\" x2=\"68.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"80.0\" y1=\"24.0\" x2=\"88.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"100.0\" y1=\"24.0\" x2=\"108.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"120.0\" y1=\"24.0\" x2=\"128.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"140.0\" y1=\"24.0\" x2=\"148.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"160.0\" y1=\"24.0\" x2=\"168.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"180.0\" y1=\"24.0\" x2=\"188.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"200.0\" y1=\"24.0\" x2=\"208.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"220.0\" y1=\"24.0\" x2=\"228.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"240.0\" y1=\"24.0\" x2=\"248.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"260.0\" y1=\"24.0\" x2=\"268.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"280.0\" y1=\"24.0\" x2=\"288.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"300.0\" y1=\"24.0\" x2=\"308.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"320.0\" y1=\"24.0\" x2=\"328.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"340.0\" y1=\"24.0\" x2=\"348.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"360.0\" y1=\"24.0\" x2=\"368.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"24.0\" x2=\"388.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><g transform=\"translate(150.0,24.0)\"><polyline points=\"0.0,0.0000 0.0,0.0700 7.0,0.0939 -7.0,0.1417 7.0,0.1894 -7.0,0.2372 7.0,0.2850 -7.0,0.3328 7.0,0.3806 -7.0,0.4283 7.0,0.4761 -7.0,0.5239 7.0,0.5717 -7.0,0.6194 7.0,0.6672 -7.0,0.7150 7.0,0.7628 -7.0,0.8106 7.0,0.8583 -7.0,0.9061 0.0,0.9300 0.0,1.0000\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(1 120.00)\"></polyline></g><rect x=\"122.0\" y=\"144.0\" width=\"56\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></rect><text x=\"150.0\" y=\"163.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">160 g</text><line x1=\"88\" y1=\"24\" x2=\"88\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M92.1,137.0 L88.0,144.0 L83.9,137.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"88\" y1=\"144.0\" x2=\"88\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M83.9,31.0 L88.0,24.0 L92.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"82\" y=\"88.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₁ = 24 cm</text><g transform=\"translate(310.0,24.0)\"><polyline points=\"0.0,0.0000 0.0,0.0700 7.0,0.0939 -7.0,0.1417 7.0,0.1894 -7.0,0.2372 7.0,0.2850 -7.0,0.3328 7.0,0.3806 -7.0,0.4283 7.0,0.4761 -7.0,0.5239 7.0,0.5717 -7.0,0.6194 7.0,0.6672 -7.0,0.7150 7.0,0.7628 -7.0,0.8106 7.0,0.8583 -7.0,0.9061 0.0,0.9300 0.0,1.0000\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\" transform=\"scale(1 140.00)\"></polyline></g><rect x=\"282.0\" y=\"164.0\" width=\"56\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></rect><text x=\"310.0\" y=\"183.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">480 g</text><line x1=\"248\" y1=\"24\" x2=\"248\" y2=\"164.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M252.1,157.0 L248.0,164.0 L243.9,157.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"248\" y1=\"164.0\" x2=\"248\" y2=\"24\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M243.9,31.0 L248.0,24.0 L252.1,31.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"242\" y=\"98.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">l₂ = 28 cm</text></svg><figcaption>Dữ kiện: hai trạng thái của cùng một lò xo (hai hình vẽ cạnh nhau). Chiều dài tự nhiên chưa biết nên không vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“lò xo nhẹ treo thẳng đứng, đầu trên cố định”</td><td>Đầu dưới chỉ chịu lực của vật treo</td><td>⚠ Lò xo nhẹ: bỏ qua khối lượng lò xo</td></tr><tr><td>“vật $160$ g, khi đứng yên lò xo dài $24$ cm”</td><td>$m_1=160\\ \\text{g}$; $l_1=24\\ \\text{cm}$</td><td>⚠ Vật đứng yên: các lực tác dụng lên vật cân bằng</td></tr><tr><td>“tổng khối lượng treo là $480$ g … dài $28$ cm”</td><td>$m_2=480\\ \\text{g}$ (tổng); $l_2=28\\ \\text{cm}$</td><td>Dữ kiện của lần treo thứ hai</td></tr><tr><td>“chưa biết chiều dài tự nhiên và độ cứng”</td><td>$l_0$ và $k$ chưa biết</td><td>Hai ẩn chưa biết</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng $P=mg$</td></tr><tr><td>“a) độ cứng $k$; b) chiều dài tự nhiên $l_0$”</td><td>Cần $k$ (N/m), $l_0$ (cm)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) chỉ treo vật $400$ g … dài bao nhiêu”</td><td>$m_3=400\\ \\text{g}$; cần $l_3$ (cm)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai trạng thái của cùng một lò xo</b>, <b>l₀ chưa biết</b> → nghĩ tới <b>so sánh hai trạng thái</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phần lực tăng thêm",
+     "hoi": "Khi tổng khối lượng treo tăng từ $160\\ \\text{g}$ lên $480\\ \\text{g}$, lực đàn hồi tăng thêm bao nhiêu?",
+     "dap_so": 3.2,
+     "sai_so": 0.05,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy lực của lần treo sau thay cho phần lực tăng thêm."
+    },
+    {
+     "tieu_de": "Độ cứng",
+     "hoi": "Độ cứng $k$ của lò xo bằng bao nhiêu?",
+     "dap_so": 80,
+     "sai_so": 1,
+     "don_vi": "N/m",
+     "loi_hay_gap": "Chia lực của một lần treo cho chiều dài lò xo, hoặc quên đổi xentimét sang mét.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia phần lực tăng thêm cho phần chiều dài tăng thêm",
+       "dung": true
+      },
+      {
+       "text": "Chia lực của lần treo sau cho chiều dài lúc đó",
+       "dung": false,
+       "vi_sao": "Chiều dài $28\\ \\text{cm}$ còn gồm cả chiều dài tự nhiên chưa biết, nên không phải độ dãn."
+      },
+      {
+       "text": "Chia lực của lần treo đầu cho phần chiều dài tăng thêm",
+       "dung": false,
+       "vi_sao": "Phần chiều dài tăng thêm ứng với phần lực tăng thêm, không ứng với lực của lần treo đầu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ dãn của lần treo đầu",
+     "hoi": "Với vật $160\\ \\text{g}$, lò xo dãn bao nhiêu xentimét so với chiều dài tự nhiên?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy hiệu hai chiều dài làm độ dãn của lần treo đầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng độ cứng vừa tìm với lực của lần treo đầu",
+       "dung": true
+      },
+      {
+       "text": "Lấy hiệu hai chiều dài đề cho làm độ dãn cần tìm",
+       "dung": false,
+       "vi_sao": "Hiệu hai chiều dài là phần dãn thêm giữa hai lần treo, không phải độ dãn so với chiều dài tự nhiên."
+      },
+      {
+       "text": "Lấy luôn chiều dài của lần treo đầu làm độ dãn",
+       "dung": false,
+       "vi_sao": "Chiều dài của lò xo không phải độ dãn của nó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài tự nhiên",
+     "hoi": "Chiều dài tự nhiên $l_0$ của lò xo bằng bao nhiêu xentimét?",
+     "dap_so": 22,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Coi chiều dài đo được của lần treo đầu là chiều dài tự nhiên.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ chiều dài đo được và độ dãn, suy ra chiều dài ban đầu",
+       "dung": true
+      },
+      {
+       "text": "Lấy chiều dài lần treo đầu làm chiều dài tự nhiên của lò xo",
+       "dung": false,
+       "vi_sao": "Lúc treo vật lò xo đã dãn, nên chiều dài ấy không còn là chiều dài tự nhiên."
+      },
+      {
+       "text": "Lấy hiệu hai chiều dài làm chiều dài tự nhiên của lò xo",
+       "dung": false,
+       "vi_sao": "Hiệu hai chiều dài là phần dãn thêm giữa hai lần treo, không phải chiều dài của lò xo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài khi chỉ treo $400\\ \\text{g}$",
+     "hoi": "Khi chỉ treo vật $400\\ \\text{g}$, lò xo dài bao nhiêu xentimét?",
+     "dap_so": 27,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng độ dãn của một trong hai lần treo trước mà không xét khối lượng mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính độ dãn ứng với khối lượng mới, rồi đổi sang chiều dài",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn chiều dài của lần treo đầu tiên cho vật mới",
+       "dung": false,
+       "vi_sao": "Khối lượng $400\\ \\text{g}$ khác $160\\ \\text{g}$ nên độ dãn và chiều dài cũng khác."
+      },
+      {
+       "text": "Lấy độ dãn mới tìm được làm chiều dài lò xo",
+       "dung": false,
+       "vi_sao": "Độ dãn chỉ là phần dài thêm; chiều dài còn gồm cả chiều dài tự nhiên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,630 @@
+{
+ "lesson_id": 68,
+ "lesson_title": "Bài 23. Năng lượng. Công cơ học",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Chuyển hoá và bảo toàn năng lượng: tính phần năng lượng còn lại",
+   "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
+   "problem_html": "<p>Một máy xay sinh tố nhận điện năng từ ổ cắm với tốc độ $300\\ \\text{J}$ mỗi giây. Trong mỗi giây, lưỡi dao và hoa quả nhận động năng $240\\ \\text{J}$; phần còn lại làm nóng động cơ và phát ra tiếng ồn.</p>\n<ol type=\"a\"><li>Khi máy chạy, điện năng chuyển hoá thành những dạng năng lượng nào?</li>\n<li>Tính phần năng lượng biến thành nhiệt năng và âm thanh trong mỗi giây.</li>\n<li>Máy chạy liên tục $20\\ \\text{s}$. Tính phần năng lượng biến thành nhiệt năng và âm thanh trong thời gian đó.</li>\n<li>Bạn An nói: “Tắt máy rồi thì phần năng lượng ấy đã mất hẳn.” Nhận xét câu nói của An.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Hai cột năng lượng tăng dần: điện năng nhận vào và động năng của lưỡi dao; cột nhiệt năng và âm thanh chưa vẽ\"><line x1=\"20.0\" y1=\"190.0\" x2=\"400.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"40\" y=\"190\" width=\"70\" height=\"0\" fill=\"#38bdf8\" fill-opacity=\".35\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"190.0;60.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;130.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"160\" y=\"190\" width=\"70\" height=\"0\" fill=\"#fb923c\" fill-opacity=\".35\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"190.0;86.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"280.0\" y=\"164.0\" width=\"70.0\" height=\"26.0\" fill=\"none\" stroke-dasharray=\"5 4\" stroke=\"#94a3b8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"315.0\" y=\"185\" fill=\"#94a3b8\" font-size=\"20\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"75.0\" y=\"208\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Điện năng</text><text x=\"75.0\" y=\"225\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">nhận vào</text><text x=\"195.0\" y=\"208\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Động năng</text><text x=\"195.0\" y=\"225\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">lưỡi dao, hoa quả</text><text x=\"315.0\" y=\"208\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Nhiệt năng</text><text x=\"315.0\" y=\"225\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">+ âm thanh</text><text x=\"210\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">4 s đầu sau khi bật máy</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật (4 s): cột điện năng tăng 300 J mỗi giây, cột động năng tăng 240 J mỗi giây, cùng một thang chiều cao. Cột nhiệt năng và âm thanh chưa vẽ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> năng lượng tồn tại ở nhiều dạng; chuyển hoá từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác.</li><li><strong>Định luật bảo toàn:</strong> năng lượng không tự sinh ra, không tự mất đi.</li><li>Năng lượng là đại lượng vô hướng, đơn vị jun (J).</li><li>⚠ <strong>Điều kiện:</strong> tính đủ mọi dạng năng lượng, kể cả nhiệt năng và âm thanh tản ra môi trường.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Các dạng năng lượng xuất hiện</span></p><p>Điện năng vào máy, ra là <strong>động năng</strong> (lưỡi dao, hoa quả), <strong>nhiệt năng</strong> (động cơ nóng) và <strong>năng lượng âm thanh</strong> (tiếng ồn).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phần nhiệt năng và âm thanh trong mỗi giây</span></p><p>Năng lượng điện nhận vào bằng tổng các phần năng lượng sinh ra:</p>$$E_{\\text{điện}}=E_{\\text{động}}+E_{\\text{nhiệt, âm}}$$$$E_{\\text{nhiệt, âm}}=300-240$$<div class=\"bt-ans\">$$E_{\\text{nhiệt, âm}}=60\\ \\text{J mỗi giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phần nhiệt năng và âm thanh trong $20\\ \\text{s}$</span></p><p>Mỗi giây có $60\\ \\text{J}$, máy chạy $20\\ \\text{s}$:</p>$$E=60\\ \\text{J/s}\\cdot20\\ \\text{s}$$<div class=\"bt-ans\">$$E=1200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhận xét lời An</span></p><p>Sau khi tắt máy, nhiệt năng và âm thanh tản ra không khí xung quanh.</p><p>Không còn thấy nóng hay nghe ồn <strong>không có nghĩa</strong> là năng lượng mất đi.</p><p>Năng lượng không tự mất: câu nói của An <strong>sai</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$240+60=300\\ \\text{J}\\ \\text{(một giây)}$$$$240\\cdot20+1200=6000=300\\cdot20\\ \\text{J}\\ \\text{(hai mươi giây)}$$<p>Tổng các phần ra bằng điện năng vào ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) điện năng → động năng, nhiệt năng, năng lượng âm thanh</p><p>b) $60\\ \\text{J}$ mỗi giây</p><p>c) $1200\\ \\text{J}$</p><p>d) An sai: năng lượng không mất, chỉ tản vào môi trường</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>năng lượng vào và một phần năng lượng ra</strong> rồi hỏi phần còn lại → bảo toàn năng lượng: tổng vào bằng tổng ra.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Sơ đồ chuyển hoá: điện năng vào máy xay, ra là động năng và phần nhiệt năng cộng âm thanh chưa biết\"><rect x=\"165.0\" y=\"70.0\" width=\"90.0\" height=\"70.0\" fill=\"none\" rx=\"8\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"210\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Máy xay</text><text x=\"210\" y=\"119\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">sinh tố</text><line x1=\"24\" y1=\"105\" x2=\"165\" y2=\"105\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M155.0,99.2 L165.0,105.0 L155.0,110.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"24\" y=\"90\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Điện năng vào</text><text x=\"24\" y=\"130\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">300 J mỗi giây</text><line x1=\"255\" y1=\"90\" x2=\"310\" y2=\"56\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M298.5,56.3 L310.0,56.0 L304.5,66.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"316\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Động năng</text><text x=\"316\" y=\"69\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">240 J mỗi giây</text><line x1=\"255\" y1=\"122\" x2=\"310\" y2=\"158\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M304.8,147.7 L310.0,158.0 L298.5,157.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"316\" y=\"156\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nhiệt năng</text><text x=\"316\" y=\"173\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">+ âm thanh</text><text x=\"316\" y=\"190\" fill=\"#f87171\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">? J mỗi giây</text></svg><figcaption>Dữ kiện: số liệu của một giây. Mũi tên chỉ hướng chuyển hoá năng lượng, độ dài mũi tên không biểu diễn độ lớn.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Một máy xay sinh tố nhận điện năng từ ổ cắm …”</td><td>Máy là nơi năng lượng đổi dạng</td><td>⚠ Phải tính đủ mọi dạng năng lượng sinh ra, kể cả nhiệt năng và âm thanh lan ra môi trường</td></tr><tr><td>“tốc độ $300$ J mỗi giây”</td><td>Điện năng vào: $300\\ \\text{J}$ mỗi giây</td><td>Năng lượng đo bằng jun (J); điện năng truyền từ ổ cắm sang máy</td></tr><tr><td>“lưỡi dao và hoa quả nhận động năng $240$ J”</td><td>Động năng: $240\\ \\text{J}$ mỗi giây</td><td>Động năng là năng lượng do chuyển động</td></tr><tr><td>“phần còn lại làm nóng động cơ và phát ra tiếng ồn”</td><td>Nhiệt năng và âm thanh</td><td>Năng lượng chuyển hoá từ dạng này sang dạng khác</td></tr><tr><td>“a) … những dạng năng lượng nào?”</td><td>Cần liệt kê các dạng</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) trong mỗi giây”</td><td>Cần $E$ (J) trong $1\\ \\text{s}$</td><td>Năng lượng vào, năng lượng ra</td></tr><tr><td>“c) máy chạy liên tục $20$ s”</td><td>$t=20\\ \\text{s}$</td><td>Năng lượng tích luỹ tỉ lệ với thời gian máy chạy</td></tr><tr><td>“d) … phần năng lượng ấy đã mất hẳn”</td><td>Nhận định cần kiểm tra</td><td>Năng lượng sau khi tắt máy</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>năng lượng vào</b> và <b>một phần năng lượng ra</b>, hỏi phần còn lại → nghĩ tới <b>tổng vào bằng tổng ra</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Các dạng năng lượng xuất hiện",
+     "hoi": "Chọn mô tả đúng về sự chuyển hoá năng lượng của máy.",
+     "lua_chon": [
+      {
+       "text": "Thành động năng, nhiệt năng và âm thanh",
+       "dung": true
+      },
+      {
+       "text": "Hết thành động năng, phần còn lại mất đi",
+       "dung": false,
+       "vi_sao": "Năng lượng không tự mất đi: phần không thành động năng vẫn tồn tại ở một dạng khác."
+      },
+      {
+       "text": "Thành động năng và quang năng",
+       "dung": false,
+       "vi_sao": "Đề không nhắc tới ánh sáng; hai hiện tượng của phần còn lại là nóng lên và tiếng ồn."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng phần không thành động năng bị hao hụt hẳn, hoặc thêm một dạng đề không nhắc tới."
+    },
+    {
+     "tieu_de": "Phần nhiệt năng và âm thanh mỗi giây",
+     "hoi": "Trong mỗi giây, phần năng lượng thành nhiệt năng và âm thanh là bao nhiêu?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Coi phần không thành động năng là hao đi nên không cần tính, hoặc ghép hai số của đề sai phép tính.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy năng lượng điện vào trừ phần đã thành động năng",
+       "dung": true
+      },
+      {
+       "text": "Cộng năng lượng điện vào với động năng",
+       "dung": false,
+       "vi_sao": "Tổng các phần ra phải bằng năng lượng vào; cộng thêm cho một tổng khác năng lượng thật có."
+      },
+      {
+       "text": "Chia năng lượng điện cho động năng",
+       "dung": false,
+       "vi_sao": "Bảo toàn năng lượng nói về tổng và hiệu các phần năng lượng, không phải thương của chúng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần nhiệt năng và âm thanh trong $20\\ \\text{s}$",
+     "hoi": "Trong $20\\ \\text{s}$, phần năng lượng thành nhiệt năng và âm thanh là bao nhiêu?",
+     "dap_so": 1200,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên kết quả của một giây, hoặc chia cho thời gian thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân năng lượng mỗi giây với thời gian máy chạy",
+       "dung": true
+      },
+      {
+       "text": "Chia năng lượng mỗi giây cho thời gian máy chạy",
+       "dung": false,
+       "vi_sao": "Năng lượng tích luỹ theo thời gian nên phải nhân với thời gian, không chia."
+      },
+      {
+       "text": "Giữ nguyên kết quả của một giây",
+       "dung": false,
+       "vi_sao": "Máy chạy lâu hơn thì năng lượng tạo ra nhiều hơn; kết quả một giây chỉ là phần nhỏ của cả quá trình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhận xét lời An",
+     "hoi": "Chọn nhận xét đúng về câu nói của An.",
+     "lua_chon": [
+      {
+       "text": "Sai: năng lượng chỉ tản vào môi trường",
+       "dung": true
+      },
+      {
+       "text": "Đúng: hết nóng và hết ồn thì năng lượng đã hết",
+       "dung": false,
+       "vi_sao": "Hết nóng, hết ồn chỉ cho biết năng lượng đã tản ra xung quanh, không phải đã biến mất."
+      },
+      {
+       "text": "Đúng: điện năng đã dùng hết nên không còn gì",
+       "dung": false,
+       "vi_sao": "Dùng hết điện không có nghĩa năng lượng mất; nó đã sang các dạng khác."
+      }
+     ],
+     "loi_hay_gap": "Nhầm “không còn thấy nóng, không còn nghe ồn” với “năng lượng không còn”.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng định luật bảo toàn năng lượng",
+       "dung": true
+      },
+      {
+       "text": "Dùng công thức $A=Fs\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Đề không nêu lực hay độ dịch chuyển; câu hỏi là năng lượng có mất đi hay không."
+      },
+      {
+       "text": "Dựa vào việc máy còn nóng hay không",
+       "dung": false,
+       "vi_sao": "Máy nóng hay nguội không cho biết năng lượng có được bảo toàn hay không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Công của lực cùng phương với dịch chuyển, đơn vị jun",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "problem_html": "<p>Nam đẩy một xe chở hàng trong siêu thị đi thẳng đều quãng đường $12\\ \\text{m}$ trên sàn nằm ngang. Lực đẩy có độ lớn $25\\ \\text{N}$, hướng theo chiều chuyển động của xe. Sàn tác dụng lên xe một lực cản dọc đường đi.</p>\n<ol type=\"a\"><li>Tính công của lực đẩy.</li>\n<li>Tính công của lực cản.</li>\n<li>Tính tổng công của hai lực này.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Xe chở hàng được đẩy đi thẳng đều 12 mét trên sàn nằm ngang, lực đẩy 25 niutơn hướng theo chiều chuyển động\"><rect x=\"16\" y=\"140.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60.0\" y1=\"170.0\" x2=\"360.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"165.0\" x2=\"60.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"110.0\" y1=\"165.0\" x2=\"110.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"110.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"160.0\" y1=\"165.0\" x2=\"160.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"160.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"210.0\" y1=\"165.0\" x2=\"210.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"260.0\" y1=\"165.0\" x2=\"260.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"260.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">8</text><line x1=\"310.0\" y1=\"165.0\" x2=\"310.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"310.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"360.0\" y1=\"165.0\" x2=\"360.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"360.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">12</text><text x=\"382.0\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">m</text><g><rect x=\"36.0\" y=\"94.0\" width=\"48.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"94.0\" x2=\"24.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"46.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"74.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"24.0\" cy=\"76.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"29.0\" y1=\"76\" x2=\"59.0\" y2=\"76.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M49.0,70.2 L59.0,76.0 L49.0,81.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"24.0\" y=\"62\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 25 N</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;300.0 0.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"410\" y=\"20\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">Lực cản của sàn: ?</text><text x=\"410\" y=\"38\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">Xe chuyển động thẳng đều</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy đều dọc thước 12 m với tốc độ minh hoạ 2,0 m/s (đề không cho tốc độ), mất 6 s; lực đẩy vẽ 1 N ứng với 1,2 px. Lực cản chưa vẽ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực làm vật dịch chuyển thì thực hiện công, truyền năng lượng cho vật.</li><li>$A=Fs\\cos\\alpha$ ($\\alpha$: góc giữa $\\vec F$ và độ dịch chuyển; vật đi thẳng một chiều thì $d=s$).</li><li>$\\alpha=0^\\circ$: $A=Fs$ · $\\alpha=180^\\circ$: $A=-Fs$.</li><li>Công là đại lượng vô hướng, $1\\ \\text{J}=1\\ \\text{N}\\cdot\\text{m}$.</li><li>⚠ <strong>Điều kiện:</strong> chuyển động thẳng đều thì hợp lực bằng $\\vec 0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của lực đẩy</span></p><p>Lực đẩy cùng hướng dịch chuyển, $\\alpha=0^\\circ$:</p>$$A_{\\text{đẩy}}=Fs\\cos0^\\circ=25\\cdot12\\cdot1$$<div class=\"bt-ans\">$$A_{\\text{đẩy}}=300\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ lớn lực cản</span></p><p>Xe chuyển động thẳng đều nên hợp lực dọc đường đi bằng $0$:</p>$$F_{\\text{đẩy}}-F_c=0$$<div class=\"bt-ans\">$$F_c=25\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực cản</span></p><p>Lực cản ngược hướng dịch chuyển, $\\alpha=180^\\circ$:</p>$$A_c=F_c\\,s\\cos180^\\circ=25\\cdot12\\cdot(-1)$$<div class=\"bt-ans\">$$A_c=-300\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tổng công</span></p><p>Công là đại lượng vô hướng nên cộng đại số:</p>$$A=A_{\\text{đẩy}}+A_c=300+(-300)$$<div class=\"bt-ans\">$$A=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N}\\cdot\\text{m}=\\text{J}$ ✓.</p><p>Công dương và công âm cùng độ lớn triệt tiêu nhau; xe vẫn đi vì lực đẩy và lực cản cân bằng ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{\\text{đẩy}}=300\\ \\text{J}$</p><p>b) $A_c=-300\\ \\text{J}$</p><p>c) $A=0$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực cùng hướng hoặc ngược hướng dịch chuyển</strong> → $A=Fs$ với dấu cộng hoặc dấu trừ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Xe chở hàng ở vị trí đầu và cuối đoạn đường 12 mét, lực đẩy F cùng hướng chuyển động\"><rect x=\"16\" y=\"140.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g opacity=\".3\"><rect x=\"336.0\" y=\"94.0\" width=\"48.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"336.0\" y1=\"94.0\" x2=\"324.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"346.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"374.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"324.0\" cy=\"76.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><rect x=\"36.0\" y=\"94.0\" width=\"48.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"94.0\" x2=\"24.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"46.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"74.0\" cy=\"132.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"24.0\" cy=\"76.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"29.0\" y1=\"76\" x2=\"59.0\" y2=\"76.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M49.0,70.2 L59.0,76.0 L49.0,81.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"24.0\" y=\"62\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 25 N</text><line x1=\"60.0\" y1=\"144.0\" x2=\"60.0\" y2=\"176.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"360.0\" y1=\"144.0\" x2=\"360.0\" y2=\"176.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"60.0\" y1=\"170\" x2=\"360.0\" y2=\"170\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M353.0,165.9 L360.0,170.0 L353.0,174.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"360.0\" y1=\"170\" x2=\"60.0\" y2=\"170\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M67.0,174.1 L60.0,170.0 L67.0,165.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210.0\" y=\"192\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 12 m</text><text x=\"20.0\" y=\"26\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lực cản của sàn: ?</text></svg><figcaption>Dữ kiện: xe ở vị trí đầu (nét đậm) và cuối đoạn đường (nét mờ); lực đẩy vẽ 1 N ứng với 1,2 px. Lực cản chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đi thẳng đều quãng đường $12$ m trên sàn nằm ngang”</td><td>$s=12\\ \\text{m}$; chuyển động thẳng đều</td><td>⚠ Chuyển động thẳng đều: hợp lực lên xe bằng $\\vec 0$ (định luật I Newton)</td></tr><tr><td>“lực đẩy có độ lớn $25$ N, hướng theo chiều chuyển động”</td><td>$F=25\\ \\text{N}$; lực và dịch chuyển cùng phương</td><td>⚠ $A=Fs$ chỉ dùng khi lực cùng hướng dịch chuyển; hướng khác thì có $\\cos\\alpha$</td></tr><tr><td>“Sàn tác dụng lên xe một lực cản dọc đường đi”</td><td>$F_c=\\,?$</td><td>Lực cản có tác dụng gì với chuyển động của xe</td></tr><tr><td>“a) công của lực đẩy”</td><td>Cần $A_{\\text{đẩy}}$ (J)</td><td>Đại lượng cần tìm: $A=Fs\\cos\\alpha$</td></tr><tr><td>“b) công của lực cản”</td><td>Cần $A_c$ (J)</td><td>Góc giữa lực cản và dịch chuyển quyết định dấu của công</td></tr><tr><td>“c) tổng công của hai lực”</td><td>Cần $A$ (J)</td><td>Công là đại lượng vô hướng, các công cộng đại số với nhau</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực cùng hướng hoặc ngược hướng dịch chuyển</b> → nghĩ tới <b>A = Fs</b>, đặt dấu theo hướng.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của lực đẩy",
+     "hoi": "Công của lực đẩy bằng bao nhiêu?",
+     "dap_so": 300,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân thêm một hệ số không có trong đề (như $g$) hoặc dùng $\\sin$ thay vì $\\cos$."
+    },
+    {
+     "tieu_de": "Độ lớn lực cản",
+     "hoi": "Lực cản của sàn có độ lớn bằng bao nhiêu?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Bỏ qua dữ kiện chuyển động thẳng đều nên không xác định được lực cản.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng điều kiện chuyển động thẳng đều: hợp lực dọc đường đi bằng không",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A=Fs$ để suy ra lực cản",
+       "dung": false,
+       "vi_sao": "Công thức công cần biết lực; ở bước này chính lực cản đang cần tìm."
+      },
+      {
+       "text": "Cho lực cản bằng không vì sàn nằm ngang",
+       "dung": false,
+       "vi_sao": "Sàn nằm ngang chỉ cho biết phản lực vuông góc; vẫn có lực cản dọc đường đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực cản",
+     "hoi": "Công của lực cản bằng bao nhiêu?",
+     "dap_so": -300,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy dấu dương cho mọi công, không xét góc giữa lực cản và dịch chuyển.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế góc giữa lực cản và dịch chuyển vào $A=Fs\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $A_c=+F_c\\,s$ như lực đẩy",
+       "dung": false,
+       "vi_sao": "Dấu của công do góc giữa lực và dịch chuyển quyết định; cần xét lại góc của lực cản."
+      },
+      {
+       "text": "Cho $A_c=0$ vì xe không dừng lại",
+       "dung": false,
+       "vi_sao": "Lực cản cũng có độ dịch chuyển cùng phương nên công của nó khác không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng công",
+     "hoi": "Tổng công của hai lực bằng bao nhiêu?",
+     "dap_so": 0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Cộng độ lớn hai công, bỏ qua dấu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng đại số hai công đã tính",
+       "dung": true
+      },
+      {
+       "text": "Cộng độ lớn của hai công",
+       "dung": false,
+       "vi_sao": "Mỗi công mang dấu riêng của nó; bỏ dấu là cộng sai."
+      },
+      {
+       "text": "Nhân hai công với nhau",
+       "dung": false,
+       "vi_sao": "Công là đại lượng vô hướng; các công của nhiều lực cộng với nhau, không nhân."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Công của lực xiên góc và dấu của công",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "problem_html": "<p>Một thùng đồ trượt thẳng $8{,}0\\ \\text{m}$ trên sàn nằm ngang. Trong ba tình huống dưới đây, lực $\\vec F$ tác dụng lên thùng đều có độ lớn $F=70\\ \\text{N}$ nhưng khác hướng:</p>\n<ol type=\"a\"><li>$\\vec F$ hợp với hướng chuyển động góc $60^\\circ$;</li>\n<li>$\\vec F$ thẳng đứng, hướng lên;</li>\n<li>$\\vec F$ hợp với hướng chuyển động góc $120^\\circ$.</li></ol>\n<p>Tính công của $\\vec F$ trong từng tình huống và cho biết đó là công phát động, công cản hay lực không sinh công.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 304\" role=\"img\" aria-label=\"Ba thùng cùng trượt 8,0 mét trên sàn nằm ngang, mỗi thùng chịu lực 70 niutơn theo một hướng khác nhau\"><text x=\"8\" y=\"20\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cả ba tình huống: F = 70 N</text><line x1=\"130.0\" y1=\"36.0\" x2=\"130.0\" y2=\"268.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"370.0\" y1=\"36.0\" x2=\"370.0\" y2=\"268.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"110.0\" y1=\"84.0\" x2=\"412.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"8\" y=\"80\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">a) α = 60°</text><g><rect x=\"110.0\" y=\"58.0\" width=\"40.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"71\" x2=\"151.0\" y2=\"34.6\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M141.0,40.4 L151.0,34.6 L151.0,46.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;240.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"110.0\" y1=\"168.0\" x2=\"412.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"8\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">b) thẳng đứng</text><g><rect x=\"110.0\" y=\"142.0\" width=\"40.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"155\" x2=\"130.0\" y2=\"113.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M124.2,123.0 L130.0,113.0 L135.8,123.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;240.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"110.0\" y1=\"252.0\" x2=\"412.0\" y2=\"252.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"8\" y=\"248\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">c) α = 120°</text><g><rect x=\"110.0\" y=\"226.0\" width=\"40.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"239\" x2=\"109.0\" y2=\"202.6\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M109.0,214.1 L109.0,202.6 L119.0,208.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;240.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"130.0\" y1=\"280\" x2=\"370.0\" y2=\"280\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M363.0,275.9 L370.0,280.0 L363.0,284.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"370.0\" y1=\"280\" x2=\"130.0\" y2=\"280\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M137.0,284.1 L130.0,280.0 L137.0,275.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"250.0\" y=\"298\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 8,0 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ba thùng cùng trượt 8,0 m trong 4 s (tốc độ minh hoạ 2,0 m/s). Lực vẽ cùng tỉ lệ ở cả ba hàng (1 N ứng với 0,6 px).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$A=Fs\\cos\\alpha$; chỉ thành phần của lực dọc đường đi, $F\\cos\\alpha$, sinh công.</li><li>Góc nhọn: $A\\gt0$, công phát động · góc vuông: $A=0$ · góc tù: $A\\lt0$, công cản.</li><li>Công là đại lượng vô hướng: dương, âm hoặc bằng $0$.</li><li>⚠ <strong>Điều kiện:</strong> $\\alpha$ là góc giữa lực và hướng chuyển động, rồi mới thế vào công thức.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tình huống a: $\\alpha=60^\\circ$</span></p>$$A=Fs\\cos\\alpha=70\\cdot8{,}0\\cdot\\cos60^\\circ$$$$A=560\\cdot0{,}5$$<div class=\"bt-ans\">$$A=280\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tình huống b: lực thẳng đứng</span></p><p>Đường đi nằm ngang, lực thẳng đứng nên hai phương vuông góc: $\\alpha=90^\\circ$.</p>$$A=70\\cdot8{,}0\\cdot\\cos90^\\circ$$<div class=\"bt-ans\">$$A=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tình huống c: $\\alpha=120^\\circ$</span></p><p>Thế đúng góc đề cho:</p>$$A=70\\cdot8{,}0\\cdot\\cos120^\\circ$$$$A=560\\cdot(-0{,}5)$$<div class=\"bt-ans\">$$A=-280\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phân loại công</span></p><p>a) $\\alpha=60^\\circ$ là góc nhọn, $A\\gt0$: <strong>công phát động</strong>.</p><p>b) $\\alpha=90^\\circ$, $A=0$: <strong>lực không sinh công</strong>.</p><p>c) $\\alpha=120^\\circ$ là góc tù, $A\\lt0$: <strong>công cản</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Độ lớn mỗi công không vượt quá $Fs=560\\ \\text{J}$ ✓.</p><p>Hai góc $60^\\circ$ và $120^\\circ$ bù nhau nên hai công cùng độ lớn, trái dấu ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=280\\ \\text{J}$, công phát động</p><p>b) $A=0$, lực không sinh công</p><p>c) $A=-280\\ \\text{J}$, công cản</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực chếch một góc so với hướng đi</strong> và hỏi phát động hay cản → $A=Fs\\cos\\alpha$, xét dấu của $\\cos\\alpha$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Lực F hợp với độ dịch chuyển d góc 60 độ khi thùng trượt trên sàn nằm ngang\"><line x1=\"40.0\" y1=\"130.0\" x2=\"400.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"150.0\" y=\"104.0\" width=\"40.0\" height=\"26.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"170.0\" y1=\"117\" x2=\"201.5\" y2=\"62.4\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M191.5,68.2 L201.5,62.4 L201.5,73.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"170.0\" y1=\"117\" x2=\"280.0\" y2=\"117\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M270.0,111.2 L280.0,117.0 L270.0,122.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"286.0\" y=\"122\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = 8,0 m</text><path d=\"M204.0,117.0 A34,34 0 0 0 187.0,87.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"212.0\" y=\"107\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 60°</text><text x=\"209.5\" y=\"60.4\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 70 N</text></svg><figcaption>Dữ kiện: hình vẽ minh hoạ tình huống a (α = 60°). Lực vẽ 1 N ứng với 0,9 px; vectơ d chỉ hướng chuyển động, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“trượt thẳng $8{,}0$ m trên sàn nằm ngang”</td><td>$s=8{,}0\\ \\text{m}$; đường đi nằm ngang</td><td>⚠ Vật đi thẳng một chiều nên $d=s$</td></tr><tr><td>“lực $\\vec F$ … độ lớn $F=70$ N nhưng khác hướng”</td><td>$F=70\\ \\text{N}$ không đổi</td><td>Công phụ thuộc cả $F$, $s$ và góc giữa lực với đường đi</td></tr><tr><td>“a) hợp với hướng chuyển động góc $60^\\circ$”</td><td>$\\alpha=60^\\circ$</td><td>⚠ $\\alpha$ là góc giữa $\\vec F$ và hướng chuyển động; đề đã cho sẵn góc này</td></tr><tr><td>“b) thẳng đứng, hướng lên”</td><td>Lực thẳng đứng; đường đi nằm ngang</td><td>Tự xác định $\\alpha$ từ hướng của lực và hướng đi</td></tr><tr><td>“c) hợp với hướng chuyển động góc $120^\\circ$”</td><td>$\\alpha=120^\\circ$</td><td>Thế đúng góc đề cho, không đổi sang góc bù</td></tr><tr><td>“công phát động, công cản hay … không sinh công”</td><td>Cần $A$ (J) và loại công</td><td>Dấu của $\\cos\\alpha$ cho biết loại công</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực chếch một góc so với hướng đi</b>, hỏi phát động hay cản → nghĩ tới <b>A = Fs·cosα</b>, xét dấu cosα.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tình huống a: $\\alpha=60^\\circ$",
+     "hoi": "Công của lực khi $\\alpha=60^\\circ$ bằng bao nhiêu?",
+     "dap_so": 280,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng $\\sin$ thay cho $\\cos$, hoặc bỏ luôn hệ số $\\cos\\alpha$."
+    },
+    {
+     "tieu_de": "Tình huống b: lực thẳng đứng",
+     "hoi": "Công của lực thẳng đứng hướng lên bằng bao nhiêu?",
+     "dap_so": 0,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân thẳng $F$ với $s$, quên rằng phải xét góc giữa lực và đường đi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm góc giữa lực thẳng đứng và đường đi nằm ngang",
+       "dung": true
+      },
+      {
+       "text": "Bỏ qua góc, nhân thẳng $F$ với $s$",
+       "dung": false,
+       "vi_sao": "Công thức công luôn có $\\cos\\alpha$; không có góc thì chưa tính được công."
+      },
+      {
+       "text": "Lấy góc giữa lực và trục thẳng đứng",
+       "dung": false,
+       "vi_sao": "$\\alpha$ là góc giữa lực và hướng chuyển động, không phải giữa lực và trục thẳng đứng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tình huống c: $\\alpha=120^\\circ$",
+     "hoi": "Công của lực khi $\\alpha=120^\\circ$ bằng bao nhiêu?",
+     "dap_so": -280,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Đổi sang góc bù của $120^\\circ$ rồi coi như tình huống a, hoặc bỏ dấu của kết quả.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế đúng góc đề cho vào $A=Fs\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Lấy góc bù rồi tính như tình huống a",
+       "dung": false,
+       "vi_sao": "Góc giữa lực và dịch chuyển là góc đề cho; đổi sang góc bù làm mất thông tin về dấu."
+      },
+      {
+       "text": "Lấy trị tuyệt đối vì công không âm",
+       "dung": false,
+       "vi_sao": "Công là đại lượng vô hướng nhưng có thể mang dấu; dấu cho biết lực làm tăng hay giảm năng lượng của vật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phân loại công",
+     "hoi": "Chọn cách phân loại đúng cho ba tình huống a, b, c.",
+     "lua_chon": [
+      {
+       "text": "a) phát động · b) không sinh công · c) công cản",
+       "dung": true
+      },
+      {
+       "text": "a) phát động · b) công cản · c) phát động",
+       "dung": false,
+       "vi_sao": "Loại công do dấu của $\\cos\\alpha$ quyết định; hãy đối chiếu dấu kết quả các ý trước."
+      },
+      {
+       "text": "a) công cản · b) không sinh công · c) phát động",
+       "dung": false,
+       "vi_sao": "Loại công do dấu của $\\cos\\alpha$ quyết định; hãy đối chiếu dấu kết quả các ý trước."
+      }
+     ],
+     "loi_hay_gap": "Gán loại công theo độ lớn lực thay vì theo dấu của $\\cos\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đối chiếu dấu của mỗi kết quả với loại công",
+       "dung": true
+      },
+      {
+       "text": "Phân loại theo độ lớn của lực",
+       "dung": false,
+       "vi_sao": "Cả ba tình huống có cùng độ lớn lực nhưng loại công khác nhau."
+      },
+      {
+       "text": "Phân loại theo khối lượng thùng",
+       "dung": false,
+       "vi_sao": "Đề không cho khối lượng thùng; loại công do góc giữa lực và hướng chuyển động quyết định."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Công của trọng lực (lên, xuống dốc) và của lực ma sát",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "problem_html": "<p>Công nhân kéo đều một thùng hàng khối lượng $40\\ \\text{kg}$ lên theo mặt dốc nghiêng $30^\\circ$ so với phương ngang, đi được $6{,}0\\ \\text{m}$ dọc mặt dốc thì dừng. Lực ma sát trượt giữa thùng và dốc có độ lớn $40\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính độ cao thùng được nâng lên và công của trọng lực trong lúc kéo lên.</li>\n<li>Tính công của lực ma sát trong lúc kéo lên.</li>\n<li>Công nhân buông tay, thùng trượt xuống đúng $6{,}0\\ \\text{m}$ dọc dốc về chỗ cũ (lực ma sát vẫn là $40\\ \\text{N}$). Tính công của trọng lực và công của lực ma sát trong lúc trượt xuống.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Thùng 40 kg được kéo đều lên 6,0 mét dọc mặt dốc nghiêng 30 độ, dừng ở đỉnh rồi trượt xuống về chỗ cũ\"><line x1=\"16.0\" y1=\"225.0\" x2=\"340.0\" y2=\"225.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"225.0\" x2=\"278.5\" y2=\"85.0\" stroke=\"currentColor\" stroke-width=\"2.8\" opacity=\"1\"/><path d=\"M88.0,225.0 A52,52 0 0 0 81.0,199.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"96.0\" y=\"219.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><text x=\"410.0\" y=\"28.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 40 N</tspan></text><text x=\"410\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">m = 40 kg</text><g><g transform=\"translate(53.3 215.0) rotate(-30)\"><rect x=\"-18.0\" y=\"-24.0\" width=\"36.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 -0.0;8.7 -5.0;17.3 -10.0;26.0 -15.0;34.6 -20.0;43.3 -25.0;52.0 -30.0;60.6 -35.0;69.3 -40.0;77.9 -45.0;86.6 -50.0;95.3 -55.0;103.9 -60.0;112.6 -65.0;121.2 -70.0;129.9 -75.0;138.6 -80.0;147.2 -85.0;155.9 -90.0;164.5 -95.0;173.2 -100.0;181.9 -105.0;190.5 -110.0;199.2 -115.0;207.8 -120.0;207.8 -120.0;207.2 -119.6;205.1 -118.4;201.6 -116.4;196.8 -113.6;190.5 -110.0;182.9 -105.6;173.9 -100.4;163.5 -94.4;151.7 -87.6;138.6 -80.0;124.0 -71.6;108.1 -62.4;90.8 -52.4;72.1 -41.6;52.0 -30.0;30.5 -17.6;0.0 -0.0\" keyTimes=\"0.0000;0.0304;0.0607;0.0911;0.1215;0.1518;0.1822;0.2126;0.2430;0.2733;0.3037;0.3341;0.3644;0.3948;0.4252;0.4555;0.4859;0.5163;0.5466;0.5770;0.6074;0.6378;0.6681;0.6985;0.7289;0.7896;0.8017;0.8139;0.8260;0.8382;0.8503;0.8625;0.8746;0.8868;0.8989;0.9111;0.9232;0.9354;0.9475;0.9597;0.9718;0.9840;1.0000\" dur=\"8.23s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"33.32050807568878\" y1=\"180.35898384862244\" x2=\"241.16660498395407\" y2=\"60.35898384862248\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M233.0,60.4 L241.2,60.4 L237.1,67.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"241.16660498395407\" y1=\"60.35898384862248\" x2=\"33.32050807568878\" y2=\"180.35898384862244\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M41.4,180.4 L33.3,180.4 L37.4,173.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"118.2\" y=\"104.8\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6,0 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật (khoảng 8,2 s): kéo đều lên với tốc độ minh hoạ 1,0 m/s, dừng 0,5 s ở đỉnh, rồi buông cho thùng trượt xuống về chỗ cũ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Trọng lực: vật đi xuống độ cao $h$ thì $A_P=+Ph$; đi lên thì $A_P=-Ph$; đi ngang thì $A_P=0$.</li><li>Lên hay xuống dốc dài $s$, nghiêng $\\theta$: độ cao $h=s\\sin\\theta$.</li><li>Ma sát trượt ngược hướng chuyển động: $A_{ms}=-F_{ms}\\,s$.</li><li>Trọng lượng $P=mg$.</li><li>⚠ <strong>Điều kiện:</strong> công trọng lực tính theo độ cao $h$, công ma sát tính theo quãng đường $s$ đi thật.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ cao thùng được nâng lên</span></p><p>Độ cao tính từ quãng đường dọc dốc và góc dốc:</p>$$h=s\\sin\\theta=6{,}0\\cdot\\sin30^\\circ$$<div class=\"bt-ans\">$$h=3{,}0\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của trọng lực lúc kéo lên</span></p><p>Trọng lượng của thùng:</p>$$P=mg=40\\cdot10=400\\ \\text{N}$$<p>Thùng đi lên:</p>$$A_P=-Ph=-400\\cdot3{,}0$$<div class=\"bt-ans\">$$A_P=-1200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực ma sát lúc kéo lên</span></p><p>Ma sát tác dụng suốt quãng đường dọc dốc, không phải độ cao:</p>$$A_{ms}=-F_{ms}\\,s=-40\\cdot6{,}0$$<div class=\"bt-ans\">$$A_{ms}=-240\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của trọng lực lúc trượt xuống</span></p><p>Thùng về chỗ cũ, đi xuống độ cao $h=3{,}0\\ \\text{m}$:</p>$$A_P=+Ph=400\\cdot3{,}0$$<div class=\"bt-ans\">$$A_P=+1200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công của lực ma sát lúc trượt xuống</span></p><p>Ma sát vẫn ngược hướng chuyển động, quãng đường vẫn $6{,}0\\ \\text{m}$:</p>$$A_{ms}=-F_{ms}\\,s=-40\\cdot6{,}0$$<div class=\"bt-ans\">$$A_{ms}=-240\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Cả đi lên rồi trượt xuống, công trọng lực: $-1200+1200=0$ (thùng về đúng độ cao ban đầu).</p><p>Công ma sát: $-240-240=-480\\ \\text{J}$, ma sát tiêu hao năng lượng cả hai chiều ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $h=3{,}0\\ \\text{m}$ · $A_P=-1200\\ \\text{J}$</p><p>b) $A_{ms}=-240\\ \\text{J}$</p><p>c) $A_P=+1200\\ \\text{J}$ · $A_{ms}=-240\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vật lên hoặc xuống dốc có ma sát</strong> → $A_P=\\pm Ph$ với $h=s\\sin\\theta$, $A_{ms}=-F_{ms}s$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Thùng trên mặt dốc nghiêng 30 độ: trọng lực P thẳng đứng xuống, độ dịch chuyển d dọc dốc hướng lên, độ cao h chưa biết\"><line x1=\"16.0\" y1=\"225.0\" x2=\"340.0\" y2=\"225.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"225.0\" x2=\"278.5\" y2=\"85.0\" stroke=\"currentColor\" stroke-width=\"2.8\" opacity=\"1\"/><path d=\"M88.0,225.0 A52,52 0 0 0 81.0,199.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"96.0\" y=\"219.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><text x=\"410.0\" y=\"28.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 40 N</tspan></text><text x=\"410\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">m = 40 kg</text><g transform=\"translate(165.9 150.0) rotate(-30)\"><rect x=\"-18.0\" y=\"-24.0\" width=\"36.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/></g><line x1=\"159.9038105676658\" y1=\"139.60769515458674\" x2=\"159.9\" y2=\"211.6\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M165.7,201.6 L159.9,211.6 L154.1,201.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"167.9\" y=\"209.6\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = mg</text><line x1=\"159.9038105676658\" y1=\"139.60769515458674\" x2=\"220.52558883257652\" y2=\"104.60769515458675\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M209.0,104.6 L220.5,104.6 L214.8,114.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"226.5\" y=\"96.6\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d</text><line x1=\"278.5\" y1=\"225.0\" x2=\"278.5\" y2=\"85.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><text x=\"286.5\" y=\"159.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = ?</text><line x1=\"36.32050807568878\" y1=\"185.55513627132908\" x2=\"244.16660498395407\" y2=\"65.5551362713291\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M236.0,65.6 L244.2,65.6 L240.1,72.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244.16660498395407\" y1=\"65.5551362713291\" x2=\"36.32050807568878\" y2=\"185.55513627132908\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M44.4,185.6 L36.3,185.6 L40.4,178.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"121.2\" y=\"110.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6,0 m</text></svg><figcaption>Dữ kiện: trọng lực vẽ 1 N ứng với 0,18 px; lực ma sát (nhỏ hơn nhiều) không vẽ cùng tỉ lệ nên chỉ ghi trị số trên hình; vectơ d chỉ hướng chuyển động.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hàng khối lượng $40$ kg … nghiêng $30^\\circ$ … $6{,}0$ m dọc mặt dốc”</td><td>$m=40\\ \\text{kg}$; $\\theta=30^\\circ$; $s=6{,}0\\ \\text{m}$ dọc dốc</td><td>⚠ $s$ đo dọc mặt dốc; độ cao $h$ phải tính từ góc dốc</td></tr><tr><td>“lực ma sát trượt … $40$ N”</td><td>$F_{ms}=40\\ \\text{N}$</td><td>Ma sát trượt cùng phương với chuyển động</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng $P=mg$</td></tr><tr><td>“a) độ cao thùng được nâng lên và công của trọng lực”</td><td>Cần $h$ (m) và $A_P$ (J)</td><td>Công của trọng lực chỉ phụ thuộc độ cao, theo chiều lên hay xuống</td></tr><tr><td>“b) công của lực ma sát trong lúc kéo lên”</td><td>Cần $A_{ms}$ (J)</td><td>Công của ma sát tính theo quãng đường đi thật</td></tr><tr><td>“c) thùng trượt xuống đúng $6{,}0$ m … ma sát vẫn là $40$ N”</td><td>$s'=6{,}0\\ \\text{m}$; chiều đi đã đổi; $F_{ms}=40\\ \\text{N}$</td><td>Chiều chuyển động đổi thì xét lại góc giữa từng lực và dịch chuyển</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật lên hoặc xuống dốc có ma sát</b> → nghĩ tới <b>A_P = ±Ph</b> (h = s·sinθ) và <b>A_ms = −F_ms·s</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ cao thùng được nâng lên",
+     "hoi": "Thùng được nâng lên độ cao bao nhiêu?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy độ cao bằng quãng đường dọc dốc, quên nhân với $\\sin$ của góc dốc."
+    },
+    {
+     "tieu_de": "Công của trọng lực lúc kéo lên",
+     "hoi": "Công của trọng lực khi thùng được kéo lên bằng bao nhiêu?",
+     "dap_so": -1200,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Tính theo quãng đường dọc dốc thay vì độ cao, hoặc quên xét thùng đi lên hay đi xuống.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $A_P=\\pm Ph$ và chọn dấu theo chiều lên hoặc xuống",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A_P=+Ph$ vì thùng có trọng lực",
+       "dung": false,
+       "vi_sao": "Dấu của công trọng lực phụ thuộc thùng lên hay xuống, không phải chỉ vì có trọng lực."
+      },
+      {
+       "text": "Dùng $A_P=\\pm Ps$ với $s$ dọc dốc",
+       "dung": false,
+       "vi_sao": "Công của trọng lực tính theo độ cao $h$, không theo quãng đường dọc dốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực ma sát lúc kéo lên",
+     "hoi": "Công của lực ma sát khi thùng được kéo lên bằng bao nhiêu?",
+     "dap_so": -240,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng độ cao $h$ thay cho quãng đường $s$, hoặc đặt dấu theo hướng của lực kéo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng công thức công của lực ma sát với $s$ là quãng đường dọc dốc",
+       "dung": true
+      },
+      {
+       "text": "Dùng $A_{ms}=-F_{ms}\\,h$ với $h$ là độ cao",
+       "dung": false,
+       "vi_sao": "Ma sát tác dụng suốt quãng đường dọc dốc, nên phải dùng quãng đường đi thật."
+      },
+      {
+       "text": "Dùng $A_{ms}=+F_{ms}\\,s$",
+       "dung": false,
+       "vi_sao": "Dấu của công do góc giữa lực ma sát và dịch chuyển quyết định; cần xét lại góc đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của trọng lực lúc trượt xuống",
+     "hoi": "Công của trọng lực khi thùng trượt xuống về chỗ cũ bằng bao nhiêu?",
+     "dap_so": 1200,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên kết quả lúc đi lên mà không xét lại chiều chuyển động.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét lại dấu theo chiều đi xuống, vẫn dùng độ cao $h$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên kết quả lúc kéo lên",
+       "dung": false,
+       "vi_sao": "Chiều chuyển động đã đổi nên cần xét lại góc giữa trọng lực và dịch chuyển."
+      },
+      {
+       "text": "Dùng $A_P=Ps$ vì thùng trượt dọc dốc",
+       "dung": false,
+       "vi_sao": "Công của trọng lực tính theo độ cao, không theo quãng đường trượt dọc dốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực ma sát lúc trượt xuống",
+     "hoi": "Công của lực ma sát khi thùng trượt xuống bằng bao nhiêu?",
+     "dap_so": -240,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Đổi dấu theo chiều đi mà không xét lại góc giữa lực ma sát và dịch chuyển.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét lại góc giữa lực ma sát và dịch chuyển lúc đi xuống",
+       "dung": true
+      },
+      {
+       "text": "Đổi dấu so với lúc kéo lên vì chiều đi đã đổi",
+       "dung": false,
+       "vi_sao": "Lực ma sát cũng đổi hướng theo chiều chuyển động; cần xét lại góc giữa nó và dịch chuyển."
+      },
+      {
+       "text": "Cho bằng không vì thùng tự trượt nhờ trọng lực",
+       "dung": false,
+       "vi_sao": "Ma sát vẫn tác dụng và thùng vẫn dịch chuyển, nên công của ma sát khác không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Nhiều lực trên mặt phẳng: tìm phản lực N, lực ma sát rồi công từng lực",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "problem_html": "<p>Trên nền kho nằm ngang, một người kéo thùng khối lượng $25\\ \\text{kg}$ bằng sợi dây chếch lên, hợp với phương ngang góc $30^\\circ$, lực kéo có độ lớn $100\\ \\text{N}$. Thùng đi thẳng $12\\ \\text{m}$. Hệ số ma sát trượt giữa thùng và nền là $0{,}20$. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<p>Tính công của lực kéo, của trọng lực, của phản lực và của lực ma sát, rồi tính tổng công của các lực đó.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Thùng 25 kg được kéo bằng dây chếch lên 30 độ trên sàn nằm ngang, đi thẳng 12 mét\"><rect x=\"16\" y=\"140.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"50.0\" y1=\"168.0\" x2=\"290.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"50.0\" y1=\"163.0\" x2=\"50.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"50.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"90.0\" y1=\"163.0\" x2=\"90.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"90.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"130.0\" y1=\"163.0\" x2=\"130.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"130.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"170.0\" y1=\"163.0\" x2=\"170.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"170.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"210.0\" y1=\"163.0\" x2=\"210.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">8</text><line x1=\"250.0\" y1=\"163.0\" x2=\"250.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"250.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"290.0\" y1=\"163.0\" x2=\"290.0\" y2=\"173.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"290.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">12</text><text x=\"308.0\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">m</text><g><rect x=\"25.0\" y=\"108.0\" width=\"50.0\" height=\"32.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"75.0\" y1=\"120.0\" x2=\"152.9\" y2=\"75.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><circle cx=\"152.9\" cy=\"75.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"75.0\" y1=\"120\" x2=\"127.0\" y2=\"90.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M115.5,90.0 L127.0,90.0 L121.2,100.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"50.0\" y=\"128\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">25 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.3 0.0;1.1 0.0;2.4 0.0;4.3 0.0;6.7 0.0;9.6 0.0;13.1 0.0;17.1 0.0;21.6 0.0;26.7 0.0;32.3 0.0;38.4 0.0;45.1 0.0;52.3 0.0;60.0 0.0;68.3 0.0;77.1 0.0;86.4 0.0;96.3 0.0;106.7 0.0;117.6 0.0;129.1 0.0;141.1 0.0;153.6 0.0;166.7 0.0;180.3 0.0;194.4 0.0;209.1 0.0;224.3 0.0;240.0 0.0\" dur=\"3.59s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"10\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lực kéo F = 100 N, dây chếch lên</text><text x=\"10\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hệ số ma sát trượt μ = 0,20</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật (khoảng 3,6 s): thùng bắt đầu từ nghỉ rồi nhanh dần; lực kéo vẽ 1 N ứng với 0,6 px. Các lực khác chưa vẽ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Công của từng lực: $A=Fs\\cos\\alpha$, dấu theo góc giữa lực đó và hướng đi.</li><li>Theo phương thẳng đứng thùng không chuyển động: tổng các lực thẳng đứng bằng $0$.</li><li>$F_{ms}=\\mu N$, ngược hướng chuyển động; $P=mg$.</li><li>$\\vec P$ và $\\vec N$ vuông góc với đường đi nằm ngang nên không sinh công.</li><li>⚠ <strong>Điều kiện:</strong> lực kéo chếch lên có thành phần thẳng đứng, nên $N$ phải tính lại, không được lấy $N=mg$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phản lực của sàn</span></p><p>Trọng lượng của thùng:</p>$$P=mg=25\\cdot10=250\\ \\text{N}$$<p>Thùng không dịch chuyển theo phương thẳng đứng. Lực kéo chếch lên có thành phần thẳng đứng $F\\sin\\alpha$ hướng lên:</p>$$N+F\\sin\\alpha=P$$$$N=P-F\\sin\\alpha=250-100\\cdot0{,}5$$<div class=\"bt-ans\">$$N=200\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực ma sát trượt</span></p>$$F_{ms}=\\mu N=0{,}20\\cdot200$$<div class=\"bt-ans\">$$F_{ms}=40\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực kéo</span></p><p>Góc giữa lực kéo và hướng đi là $30^\\circ$:</p>$$A_F=Fs\\cos30^\\circ=100\\cdot12\\cdot0{,}866$$<div class=\"bt-ans\">$$A_F\\approx1039\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của lực ma sát</span></p><p>Ma sát ngược hướng chuyển động, $\\alpha=180^\\circ$:</p>$$A_{ms}=-F_{ms}\\,s=-40\\cdot12$$<div class=\"bt-ans\">$$A_{ms}=-480\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công của trọng lực và phản lực</span></p><p>Cả hai vuông góc với hướng đi ($\\alpha=90^\\circ$, $\\cos90^\\circ=0$):</p><div class=\"bt-ans\">$$A_P=A_N=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Tổng công</span></p><p>Cộng đại số công của cả bốn lực:</p>$$A=A_F+A_P+A_N+A_{ms}=1039+0+0+(-480)$$<div class=\"bt-ans\">$$A\\approx559\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N}\\cdot\\text{m}=\\text{J}$ ✓.</p><p>Phản lực $N=200\\ \\text{N}$ nhỏ hơn trọng lượng $250\\ \\text{N}$ vì lực kéo chếch lên nâng bớt thùng ✓.</p><p>Tổng công dương: lực kéo truyền vào thùng nhiều năng lượng hơn phần ma sát lấy đi ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$A_F\\approx1039\\ \\text{J}$ · $A_{ms}=-480\\ \\text{J}$</p><p>$A_P=A_N=0$</p><p>Tổng công $A\\approx559\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực kéo chếch lên và hệ số ma sát</strong> → tìm $N$ trước, rồi $F_{ms}=\\mu N$ và công từng lực.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Thùng 25 kg ở vị trí đầu và cuối đoạn đường 12 mét, dây kéo chếch lên hợp với phương ngang góc 30 độ\"><rect x=\"16\" y=\"130.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g opacity=\".3\"><rect x=\"325.0\" y=\"98.0\" width=\"50.0\" height=\"32.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><rect x=\"85.0\" y=\"98.0\" width=\"50.0\" height=\"32.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"135.0\" y1=\"110.0\" x2=\"212.9\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><circle cx=\"212.9\" cy=\"65.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"135.0\" y1=\"110\" x2=\"187.0\" y2=\"80.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M175.5,80.0 L187.0,80.0 L181.2,90.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"135.0\" y1=\"110.0\" x2=\"245.0\" y2=\"110.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><path d=\"M175.0,110.0 A40,40 0 0 0 169.6,90.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"201.0\" y=\"104\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 30°</text><text x=\"222.9\" y=\"63.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 100 N</text><text x=\"110.0\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">25 kg</text><line x1=\"110.0\" y1=\"134.0\" x2=\"110.0\" y2=\"164.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"350.0\" y1=\"134.0\" x2=\"350.0\" y2=\"164.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"110.0\" y1=\"158\" x2=\"350.0\" y2=\"158\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M343.0,153.9 L350.0,158.0 L343.0,162.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"350.0\" y1=\"158\" x2=\"110.0\" y2=\"158\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M117.0,162.1 L110.0,158.0 L117.0,153.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"230.0\" y=\"180\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 12 m</text><text x=\"10\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = 0,20</text></svg><figcaption>Dữ kiện: thùng ở vị trí đầu (nét đậm) và cuối (nét mờ); lực kéo vẽ 1 N ứng với 0,6 px. Trọng lực, phản lực, ma sát chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng khối lượng $25$ kg … nền kho nằm ngang”</td><td>$m=25\\ \\text{kg}$</td><td>⚠ Công của một lực chỉ tính theo thành phần của lực dọc theo dịch chuyển</td></tr><tr><td>“dây chếch lên, hợp với phương ngang góc $30^\\circ$, lực kéo $100$ N”</td><td>$F=100\\ \\text{N}$; $\\alpha=30^\\circ$ (cũng là góc giữa lực và hướng đi)</td><td>Lực kéo chếch lên so với hướng đi</td></tr><tr><td>“hệ số ma sát trượt … $0{,}20$”</td><td>$\\mu=0{,}20$</td><td>$F_{ms}=\\mu N$, ngược hướng chuyển động</td></tr><tr><td>“đi thẳng $12$ m”</td><td>$s=12\\ \\text{m}$</td><td>Mỗi lực có công $F\\,s\\cos\\alpha$ của riêng nó</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng $P=mg$</td></tr><tr><td>“công của lực kéo, trọng lực, phản lực và lực ma sát”</td><td>Cần $A_F$, $A_P$, $A_N$, $A_{ms}$ (J)</td><td>Đại lượng cần tìm</td></tr><tr><td>“tổng công của các lực đó”</td><td>Cần $A$ (J)</td><td>Công là đại lượng vô hướng, cộng đại số</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực kéo chếch lên</b> và <b>hệ số ma sát</b> → nghĩ tới <b>N = P − F·sinα</b> trước, rồi <b>F_ms = μN</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phản lực của sàn",
+     "hoi": "Phản lực $N$ của sàn lên thùng bằng bao nhiêu?",
+     "dap_so": 200,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho $N=mg$ ngay, không xét thành phần thẳng đứng của lực kéo chếch lên."
+    },
+    {
+     "tieu_de": "Lực ma sát trượt",
+     "hoi": "Lực ma sát trượt có độ lớn bao nhiêu?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $\\mu\\cdot mg$ thay vì $\\mu N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân hệ số ma sát với $N$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Nhân hệ số ma sát với trọng lượng $P$",
+       "dung": false,
+       "vi_sao": "Ma sát tỉ lệ với áp lực vuông góc, tức phản lực $N$ của bước trước, không phải trọng lượng."
+      },
+      {
+       "text": "Nhân hệ số ma sát với $F\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Thành phần dọc đường đi của lực kéo không phải áp lực của thùng lên sàn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực kéo",
+     "hoi": "Công của lực kéo bằng bao nhiêu?",
+     "dap_so": 1039,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng $\\sin$ thay cho $\\cos$ hoặc bỏ luôn hệ số $\\cos\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $F$, $s$ và côsin của góc giữa lực kéo với hướng đi",
+       "dung": true
+      },
+      {
+       "text": "Nhân $F$ với $s$, bỏ $\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Chỉ phần lực dọc đường đi, $F\\cos\\alpha$, mới sinh công; lực chếch nên không bỏ được $\\cos\\alpha$."
+      },
+      {
+       "text": "Dùng $F\\sin\\alpha$ thay cho $F\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Góc đã cho là góc với hướng đi (phương ngang), nên thành phần dọc đường đi kề góc đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực ma sát",
+     "hoi": "Công của lực ma sát bằng bao nhiêu?",
+     "dap_so": -480,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng $\\mu mg$ thay cho $\\mu N$ hoặc quên dấu của công cản.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $F_{ms}$ với quãng đường rồi đặt dấu theo góc giữa ma sát và hướng đi",
+       "dung": true
+      },
+      {
+       "text": "Lấy $A_{ms}=+F_{ms}\\,s$",
+       "dung": false,
+       "vi_sao": "Dấu của công do góc giữa lực ma sát và dịch chuyển quyết định; cần xét lại góc đó."
+      },
+      {
+       "text": "Lấy $A_{ms}=-\\mu P s$",
+       "dung": false,
+       "vi_sao": "Ma sát phụ thuộc phản lực $N$ đã tìm ở bước đầu, không phụ thuộc trọng lượng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của trọng lực và phản lực",
+     "hoi": "Chọn kết luận đúng về $A_P$ và $A_N$.",
+     "lua_chon": [
+      {
+       "text": "Cả hai bằng không vì cùng vuông góc với hướng đi",
+       "dung": true
+      },
+      {
+       "text": "Cả hai khác không vì có độ lớn lớn",
+       "dung": false,
+       "vi_sao": "Công không phụ thuộc lực lớn hay nhỏ mà phụ thuộc thành phần của lực dọc đường đi."
+      },
+      {
+       "text": "$A_P=-Ph$ vì trọng lực hướng xuống",
+       "dung": false,
+       "vi_sao": "Thùng đi ngang, độ cao không đổi; trọng lực vuông góc với đường đi."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng lực lớn thì công khác không, không xét góc với hướng đi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm góc giữa từng lực và hướng đi",
+       "dung": true
+      },
+      {
+       "text": "Cộng $P$ và $N$ rồi nhân với $s$",
+       "dung": false,
+       "vi_sao": "Mỗi lực có công riêng theo góc riêng; không gộp lực rồi nhân."
+      },
+      {
+       "text": "Dùng $A=Fs\\cos30^\\circ$ cho cả hai lực",
+       "dung": false,
+       "vi_sao": "Góc $30^\\circ$ là của dây kéo; $\\vec P$ và $\\vec N$ có góc riêng với hướng đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng công",
+     "hoi": "Tổng công của các lực bằng bao nhiêu?",
+     "dap_so": 559,
+     "sai_so": 3,
+     "don_vi": "J",
+     "loi_hay_gap": "Cộng độ lớn các công, bỏ dấu của công cản.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng đại số công của cả bốn lực",
+       "dung": true
+      },
+      {
+       "text": "Tính tổng công bằng $(F-F_{ms})\\,s$",
+       "dung": false,
+       "vi_sao": "$F$ chếch góc nên chỉ thành phần $F\\cos\\alpha$ dọc đường đi mới sinh công."
+      },
+      {
+       "text": "Lấy công của lực kéo làm tổng công",
+       "dung": false,
+       "vi_sao": "Ma sát cũng chuyển năng lượng (công cản) nên phải tính vào tổng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

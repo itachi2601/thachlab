@@ -1,0 +1,429 @@
+{
+ "lesson_id": 76,
+ "lesson_title": "Bài 31. Động học của chuyển động tròn đều",
+ "generated_at": "2026-10-11",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Nhận biết chuyển động tròn đều, vận tốc và độ dịch chuyển góc",
+   "topic": "Động học của chuyển động tròn đều",
+   "problem_html": "<p>Một xe đồ chơi chạy ngược chiều kim đồng hồ trên đường ray hình tròn tâm $O$, bán kính $r=0{,}50\\ \\text{m}$. Đồng hồ tốc độ của xe luôn chỉ $0{,}40\\ \\text{m/s}$. Xét lúc xe đi qua điểm $A$ xa nhất về bên phải tâm $O$ (nhìn từ trên xuống).</p>\n<ol type=\"a\"><li>Chuyển động của xe có phải là chuyển động tròn đều không? Vận tốc của xe có đổi không?</li>\n<li>Tại $A$, vectơ vận tốc có phương, chiều thế nào?</li>\n<li>Sau $5{,}0\\ \\text{s}$ kể từ lúc qua $A$, xe đi được cung dài bao nhiêu và độ dịch chuyển góc là bao nhiêu radian?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Xe đồ chơi chạy ngược chiều kim đồng hồ trên đường ray tròn bán kính 0,50 m, xuất phát từ điểm A bên phải tâm O\"><circle cx=\"135.0\" cy=\"125.0\" r=\"95.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"135.0\" y1=\"125.0\" x2=\"230.0\" y2=\"125.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"135.0\" cy=\"125.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"127.0\" y=\"145.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"230.0\" cy=\"125.0\" r=\"4\" fill=\"currentColor\"/><text x=\"240.0\" y=\"130.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"182.5\" y=\"117.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">r = 0,50 m</text><path d=\"M100.7,19.4 A111.0,111.0 0 0 0 38.9,69.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M46.7,65.0 L38.9,69.5 L38.9,60.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"272\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đồng hồ tốc độ</text><text x=\"272\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">luôn chỉ 0,40 m/s</text><text x=\"272\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Xe chạy ngược chiều</text><text x=\"272\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">kim đồng hồ</text><text x=\"272\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 5,0 s:  s = ?</text><text x=\"272\" y=\"196\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">θ = ?</text><circle cx=\"230.0\" cy=\"125.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"230.0;229.7;228.8;227.3;225.2;222.5;219.3;215.5;211.2;206.4;201.2;195.5;189.5;183.1;176.4;169.4;162.2;154.9;147.4;139.8;132.2;124.6;117.1;109.7;102.5;95.5;88.7;82.2;76.1;70.3;64.9;60.0;55.6;51.7;48.3;45.5;43.2;41.6;40.5;40.0;40.2;40.9;42.3;44.2;46.7;49.8;53.4;57.6;62.2;67.4;72.9\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"125.0;117.4;109.9;102.4;95.1;88.0;81.1;74.5;68.3;62.4;56.9;51.8;47.2;43.1;39.5;36.5;34.0;32.1;30.8;30.1;30.0;30.6;31.7;33.4;35.7;38.6;42.1;46.0;50.5;55.4;60.8;66.6;72.8;79.3;86.1;93.2;100.4;107.8;115.4;122.9;130.5;138.1;145.6;152.9;160.1;167.0;173.7;180.1;186.1;191.7;196.9\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy từ A với tốc độ không đổi 0,40 m/s (chạy đúng thời gian thật, dừng ở t = 5,0 s). Chỉ vẽ quỹ đạo và chiều quay, không vẽ vectơ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chuyển động tròn đều có quỹ đạo tròn và tốc độ không đổi.</li><li>Vận tốc là vectơ: phương tiếp tuyến với quỹ đạo, chiều theo chiều chuyển động, độ lớn bằng tốc độ $v$.</li><li>Cung đi được: $s=vt$. Độ dịch chuyển góc: $\\theta=\\dfrac{s}{r}$ (rad).</li><li>⚠ <strong>Điều kiện:</strong> $s=vt$ chỉ dùng khi tốc độ $v$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Loại chuyển động</span></p><p>Quỹ đạo là đường tròn bán kính $0{,}50\\ \\text{m}$.</p><p>Đồng hồ tốc độ luôn chỉ cùng một số, nên tốc độ không đổi.</p><div class=\"bt-ans\"><p>Đây là chuyển động tròn đều.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vận tốc có đổi không</span></p><p>Tốc độ chỉ là độ lớn của vận tốc.</p><p>Vận tốc là vectơ: hướng đổi cũng là vận tốc đổi.</p><div class=\"bt-ans\"><p>Tốc độ không đổi nhưng vận tốc đổi hướng liên tục.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc tại $A$</span></p><p>Bán kính $OA$ nằm ngang; vận tốc vuông góc với bán kính nên nằm trên tiếp tuyến, thẳng đứng.</p><p>Xe đi ngược chiều kim đồng hồ qua điểm bên phải nên đi lên.</p><div class=\"bt-ans\"><p>$\\vec v$ thẳng đứng, hướng lên, độ lớn $0{,}40\\ \\text{m/s}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cung đi được sau $5{,}0\\ \\text{s}$</span></p><p>Tốc độ không đổi nên:</p>$$s=vt=0{,}40\\cdot5{,}0$$<div class=\"bt-ans\">$$s=2{,}0\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Độ dịch chuyển góc</span></p>$$\\theta=\\dfrac{s}{r}=\\dfrac{2{,}0}{0{,}50}$$<div class=\"bt-ans\">$$\\theta=4{,}0\\ \\text{rad}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$4{,}0\\ \\text{rad}\\approx229^\\circ$: lớn hơn nửa vòng ($\\pi\\approx3{,}14\\ \\text{rad}$), nhỏ hơn một vòng ($2\\pi\\approx6{,}28\\ \\text{rad}$).</p><p>Chu vi đường ray $2\\pi r\\approx3{,}14\\ \\text{m}$; xe đi $2{,}0\\ \\text{m}$ nên chưa hết vòng ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) chuyển động tròn đều; vận tốc đổi hướng liên tục</p><p>b) $\\vec v$ thẳng đứng, hướng lên</p><p>c) $s=2{,}0\\ \\text{m}$ · $\\theta=4{,}0\\ \\text{rad}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>quỹ đạo tròn</strong> và <strong>tốc độ không đổi</strong> → chuyển động tròn đều; vận tốc luôn tiếp tuyến, $\\theta=\\dfrac{s}{r}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Đường ray tròn tâm O bán kính 0,50 m; xe đi qua điểm A bên phải tâm, ngược chiều kim đồng hồ\"><circle cx=\"135.0\" cy=\"125.0\" r=\"95.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"135.0\" y1=\"125.0\" x2=\"230.0\" y2=\"125.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"135.0\" cy=\"125.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"127.0\" y=\"145.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"230.0\" cy=\"125.0\" r=\"4\" fill=\"currentColor\"/><text x=\"240.0\" y=\"130.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"182.5\" y=\"117.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">r = 0,50 m</text><path d=\"M100.7,19.4 A111.0,111.0 0 0 0 38.9,69.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M46.7,65.0 L38.9,69.5 L38.9,60.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"272\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đồng hồ tốc độ</text><text x=\"272\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">luôn chỉ 0,40 m/s</text><text x=\"272\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Xe chạy ngược chiều</text><text x=\"272\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">kim đồng hồ</text><text x=\"272\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 5,0 s:  s = ?</text><text x=\"272\" y=\"196\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">θ = ?</text></svg><figcaption>Dữ kiện: đường ray tròn tâm O, bán kính 0,50 m; xe đi qua A (xa nhất về bên phải) theo chiều ngược kim đồng hồ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“xe đồ chơi chạy ngược chiều kim đồng hồ trên đường ray hình tròn tâm $O$, bán kính $r=0{,}50$ m”</td><td>Quỹ đạo tròn; $r=0{,}50\\ \\text{m}$</td><td>Chuyển động tròn: quỹ đạo là đường tròn</td></tr><tr><td>“đồng hồ tốc độ của xe luôn chỉ $0{,}40$ m/s”</td><td>$v=0{,}40\\ \\text{m/s}$, không đổi</td><td>⚠ Chuyển động tròn đều cần đủ hai điều: quỹ đạo tròn và tốc độ không đổi</td></tr><tr><td>“a) có phải chuyển động tròn đều không? Vận tốc có đổi không?”</td><td>Cần kết luận về loại chuyển động và về vận tốc</td><td>Tốc độ chỉ là độ lớn; vận tốc là vectơ có phương, chiều</td></tr><tr><td>“b) tại $A$ … vectơ vận tốc có phương, chiều thế nào”</td><td>$A$ xa nhất về bên phải tâm; xe quay ngược chiều kim đồng hồ</td><td>Quan hệ giữa phương của vận tốc và quỹ đạo, bán kính</td></tr><tr><td>“c) sau $5{,}0$ s”</td><td>$t=5{,}0\\ \\text{s}$</td><td>Cung đi được khi tốc độ không đổi: $s=vt$</td></tr><tr><td>“cung dài bao nhiêu … độ dịch chuyển góc bao nhiêu radian”</td><td>Cần $s$ (m), $\\theta$ (rad)</td><td>Đại lượng cần tìm: $\\theta=\\dfrac{s}{r}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>quỹ đạo tròn</b> và <b>tốc độ không đổi</b> → nghĩ tới <b>chuyển động tròn đều</b> và <b>$\\theta=\\dfrac{s}{r}$</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Loại chuyển động",
+     "hoi": "Chuyển động của xe thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Tròn đều: quỹ đạo tròn, tốc độ không đổi",
+       "dung": true
+      },
+      {
+       "text": "Không đều: vận tốc đổi hướng nên tốc độ cũng đổi",
+       "dung": false,
+       "vi_sao": "Tốc độ chỉ là độ lớn của vận tốc; hướng đổi không làm tốc độ đổi. Đồng hồ vẫn chỉ cùng một số."
+      },
+      {
+       "text": "Chưa kết luận được, vì chưa biết chu kì",
+       "dung": false,
+       "vi_sao": "Tròn đều chỉ đòi hai điều: quỹ đạo tròn và tốc độ không đổi; không cần biết chu kì."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng vận tốc đổi hướng thì tốc độ cũng đổi, nên không gọi là đều."
+    },
+    {
+     "tieu_de": "Vận tốc có đổi không",
+     "hoi": "Vận tốc (vectơ) của xe có đổi không?",
+     "lua_chon": [
+      {
+       "text": "Có đổi, vì hướng của vận tốc thay đổi liên tục",
+       "dung": true
+      },
+      {
+       "text": "Không đổi, vì tốc độ không đổi",
+       "dung": false,
+       "vi_sao": "Vận tốc là vectơ; chỉ cần hướng đổi là vận tốc đã đổi."
+      },
+      {
+       "text": "Không đổi, vì xe chạy trên đường ray có hình dạng cố định",
+       "dung": false,
+       "vi_sao": "Hình dạng đường ray cố định, nhưng phương tiếp tuyến của nó đổi từ điểm này sang điểm khác."
+      }
+     ],
+     "loi_hay_gap": "Coi vận tốc và tốc độ là một: tốc độ không đổi nên vận tốc không đổi."
+    },
+    {
+     "tieu_de": "Vận tốc tại $A$",
+     "hoi": "Tại $A$, vectơ vận tốc hướng thế nào?",
+     "lua_chon": [
+      {
+       "text": "Thẳng đứng, hướng lên",
+       "dung": true
+      },
+      {
+       "text": "Nằm ngang, hướng vào tâm $O$",
+       "dung": false,
+       "vi_sao": "Phương hướng vào tâm là phương bán kính; vận tốc vuông góc với bán kính."
+      },
+      {
+       "text": "Thẳng đứng, hướng xuống",
+       "dung": false,
+       "vi_sao": "Đúng phương tiếp tuyến nhưng ngược với chiều chuyển động của xe (ngược chiều kim đồng hồ)."
+      }
+     ],
+     "loi_hay_gap": "Vẽ vận tốc theo phương bán kính, hoặc vẽ đúng phương nhưng ngược chiều chuyển động."
+    },
+    {
+     "tieu_de": "Cung đi được sau $5{,}0\\ \\text{s}$",
+     "hoi": "Cung $s$ xe đi được sau $5{,}0\\ \\text{s}$ dài bao nhiêu mét?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy tốc độ chia cho thời gian, hoặc nhân với $r$ thay cho thời gian."
+    },
+    {
+     "tieu_de": "Độ dịch chuyển góc",
+     "hoi": "Độ dịch chuyển góc $\\theta$ bằng bao nhiêu radian?",
+     "dap_so": 4.0,
+     "sai_so": 0.05,
+     "don_vi": "rad",
+     "loi_hay_gap": "Nhân cung với bán kính thay vì chia, hoặc lấy luôn độ dài cung làm góc."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Tìm chu kì, tần số, tốc độ góc từ số vòng đếm được",
+   "topic": "Tốc độ góc, chu kì, tần số",
+   "problem_html": "<p>Một vòng đu quay trong công viên quay đều, quay hết $5$ vòng trong $2{,}0$ phút. Lúc bắt đầu tính thời gian, một cabin đang ở vị trí thấp nhất.</p>\n<ol type=\"a\"><li>Tính chu kì và tần số quay của vòng đu quay.</li>\n<li>Tính tốc độ góc của vòng đu quay.</li>\n<li>Sau $10\\ \\text{s}$ kể từ lúc đó, bán kính nối cabin ấy với trục quay đã quét một góc bao nhiêu độ?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Vòng đu quay quay đều 5 vòng; một cabin xuất phát từ vị trí thấp nhất, bán kính nối cabin quay quanh trục O\"><line x1=\"135.0\" y1=\"112.0\" x2=\"93.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"135.0\" y1=\"112.0\" x2=\"177.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"63.0\" y1=\"212.0\" x2=\"207.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"112.0\" r=\"85.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"112.0\" r=\"5\" fill=\"currentColor\"/><text x=\"144.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">O</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Vòng đu quay</text><text x=\"250\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">5 vòng trong 2,0 phút</text><text x=\"250\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cabin xuất phát từ</text><text x=\"250\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">vị trí thấp nhất</text><text x=\"250\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 10 s:  θ = ?</text><line x1=\"135.0\" y1=\"112.0\" x2=\"135.0\" y2=\"197.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.85\"><animate attributeName=\"x2\" values=\"135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"135.0\" cy=\"197.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0;157.0;177.5;195.1;208.6;217.1;220.0;217.1;208.6;195.1;177.5;157.0;135.0;113.0;92.5;74.9;61.4;52.9;50.0;52.9;61.4;74.9;92.5;113.0;135.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0;194.1;185.6;172.1;154.5;134.0;112.0;90.0;69.5;51.9;38.4;29.9;27.0;29.9;38.4;51.9;69.5;90.0;112.0;134.0;154.5;172.1;185.6;194.1;197.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: cabin đi đủ 5 vòng (chạy nhanh gấp 20 lần: 6 s thay cho 2,0 phút). Hình dừng ở vị trí xuất phát.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chu kì $T$ là thời gian đi hết một vòng; $n$ vòng trong $\\Delta t$ thì $T=\\dfrac{\\Delta t}{n}$.</li><li>Tần số $f=\\dfrac{1}{T}$ (Hz).</li><li>Tốc độ góc $\\omega=\\dfrac{2\\pi}{T}=2\\pi f$ (rad/s); góc quét $\\theta=\\omega t$.</li><li>⚠ <strong>Điều kiện:</strong> thời gian đổi ra giây; $\\omega$ không đổi nên dùng được $\\theta=\\omega t$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chu kì</span></p><p>Đổi thời gian ra giây: $\\Delta t=2{,}0\\ \\text{phút}=120\\ \\text{s}$.</p>$$T=\\dfrac{\\Delta t}{n}=\\dfrac{120}{5}$$<div class=\"bt-ans\">$$T=24\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tần số</span></p>$$f=\\dfrac{1}{T}=\\dfrac{1}{24}$$<div class=\"bt-ans\">$$f\\approx0{,}0417\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ góc</span></p>$$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{24}$$<div class=\"bt-ans\">$$\\omega=\\dfrac{\\pi}{12}\\approx0{,}262\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc quét sau $10\\ \\text{s}$</span></p>$$\\theta=\\omega t=\\dfrac{\\pi}{12}\\cdot10$$$$\\theta=\\dfrac{5\\pi}{6}\\ \\text{rad}\\approx2{,}62\\ \\text{rad}$$<p>Đổi sang độ:</p>$$\\theta=\\dfrac{5\\pi}{6}\\cdot\\dfrac{180^\\circ}{\\pi}$$<div class=\"bt-ans\">$$\\theta=150^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\omega T=\\dfrac{\\pi}{12}\\cdot24=2\\pi\\ \\text{rad}$$<p>Đúng bằng một vòng ✓.</p><p>$\\dfrac{10}{24}\\approx0{,}417$ vòng; $0{,}417\\cdot360^\\circ=150^\\circ$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=24\\ \\text{s}$ · $f\\approx0{,}0417\\ \\text{Hz}$</p><p>b) $\\omega\\approx0{,}262\\ \\text{rad/s}$</p><p>c) $\\theta=150^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số vòng và thời gian đếm được</strong> → $T=\\dfrac{\\Delta t}{n}$, rồi $f$, $\\omega$ và góc quét $\\theta=\\omega t$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Vòng đu quay tâm O, cabin ở vị trí thấp nhất lúc bắt đầu tính thời gian\"><line x1=\"135.0\" y1=\"112.0\" x2=\"93.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"135.0\" y1=\"112.0\" x2=\"177.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"63.0\" y1=\"212.0\" x2=\"207.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"112.0\" r=\"85.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"112.0\" r=\"5\" fill=\"currentColor\"/><text x=\"144.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">O</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Vòng đu quay</text><text x=\"250\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">5 vòng trong 2,0 phút</text><text x=\"250\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cabin xuất phát từ</text><text x=\"250\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">vị trí thấp nhất</text><text x=\"250\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 10 s:  θ = ?</text><line x1=\"135.0\" y1=\"112.0\" x2=\"135.0\" y2=\"197.0\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><circle cx=\"135.0\" cy=\"197.0\" r=\"5\" fill=\"#fb923c\"/></svg><figcaption>Dữ kiện: vòng đu quay quay đều; cabin xuất phát từ vị trí thấp nhất. Hình không vẽ vị trí sau 10 s.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vòng đu quay quay đều”</td><td>$\\omega$, $T$ không đổi</td><td>⚠ Chuyển động tròn đều: dùng được $\\theta=\\omega t$</td></tr><tr><td>“quay hết $5$ vòng trong $2{,}0$ phút”</td><td>$n=5$ vòng; $\\Delta t=2{,}0\\ \\text{phút}$</td><td>⚠ Đổi thời gian ra giây trước khi tính</td></tr><tr><td>“a) chu kì và tần số”</td><td>Cần $T$ (s), $f$ (Hz)</td><td>Đại lượng cần tìm: $T=\\dfrac{\\Delta t}{n}$, $f=\\dfrac{1}{T}$</td></tr><tr><td>“b) tốc độ góc”</td><td>Cần $\\omega$ (rad/s)</td><td>Đại lượng cần tìm: $\\omega=\\dfrac{2\\pi}{T}=2\\pi f$</td></tr><tr><td>“c) sau $10$ s … quét một góc bao nhiêu độ”</td><td>$t=10\\ \\text{s}$; cần $\\theta$ (độ)</td><td>Góc quét liên hệ với $\\omega$ và thời gian; đổi rad sang độ</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số vòng đếm được trong một khoảng thời gian</b> → nghĩ tới <b>$T=\\dfrac{\\Delta t}{n}$</b>, rồi $f$, $\\omega$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ bằng bao nhiêu giây?",
+     "dap_so": 24,
+     "sai_so": 0.1,
+     "don_vi": "s",
+     "loi_hay_gap": "Quên đổi phút ra giây, hoặc chia số vòng cho thời gian (ra tần số chứ không phải chu kì)."
+    },
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ bằng bao nhiêu hertz?",
+     "dap_so": 0.0417,
+     "sai_so": 0.001,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Dùng $f=T$ hoặc lấy số vòng chia cho số phút rồi coi là hertz."
+    },
+    {
+     "tieu_de": "Tốc độ góc",
+     "hoi": "Tốc độ góc $\\omega$ bằng bao nhiêu rad/s?",
+     "dap_so": 0.262,
+     "sai_so": 0.003,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Quên nhân với $2\\pi$ (ra chính $f$), hoặc chia $2\\pi$ cho tần số thay vì cho chu kì."
+    },
+    {
+     "tieu_de": "Góc quét sau $10\\ \\text{s}$",
+     "hoi": "Sau $10\\ \\text{s}$ bán kính nối cabin quét góc bao nhiêu độ?",
+     "dap_so": 150,
+     "sai_so": 1,
+     "don_vi": "°",
+     "loi_hay_gap": "Quên đổi radian sang độ, hoặc nhân $\\omega$ với chu kì thay cho thời gian $10\\ \\text{s}$."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đổi vòng/phút sang rad/s và tìm góc quay trong thời gian ngắn",
+   "topic": "Tốc độ góc, chu kì, tần số",
+   "problem_html": "<p>Đĩa của một ổ cứng máy tính quay đều với tốc độ $7200$ vòng/phút. Lúc bắt đầu tính thời gian, một điểm đánh dấu gần mép đĩa nằm ở đỉnh đĩa (nhìn từ trên xuống).</p>\n<ol type=\"a\"><li>Tính tần số quay và chu kì quay (chu kì tính ra mili giây).</li>\n<li>Tính tốc độ góc của đĩa theo rad/s.</li>\n<li>Trong khoảng thời gian $1{,}0\\ \\text{ms}$, đĩa quay được một góc bao nhiêu độ?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Đĩa ổ cứng quay đều quanh tâm O; một điểm đánh dấu gần mép đi theo đường tròn\"><circle cx=\"135.0\" cy=\"120.0\" r=\"88.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"66.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"0.8\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"44.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"0.8\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"14.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.0\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"3\" fill=\"currentColor\"/><text x=\"115.0\" y=\"125.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đĩa của ổ cứng</text><text x=\"250\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">7200 vòng/phút</text><text x=\"250\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = ?   T = ? (ms)</text><text x=\"250\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = ?</text><text x=\"250\" y=\"178\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 1,0 ms:  θ = ?</text><line x1=\"135.0\" y1=\"120.0\" x2=\"135.0\" y2=\"42.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.85\"><animate attributeName=\"x2\" values=\"135.0;129.1;123.3;117.5;111.8;106.3;100.9;95.7;90.8;86.0;81.6;77.5;73.7;70.2;67.1;64.4;62.1;60.2;58.8;57.7;57.2;57.0;57.3;58.0;59.2;60.8;62.8;65.3;68.1;71.3;74.9;78.8;83.1;87.6;92.4;97.4;102.7;108.1;113.7;119.4;125.2;131.1;137.0;142.8;148.7;154.4;160.0;165.5;170.8;176.0;180.8;185.5;189.8;193.8;197.5;200.9;203.8;206.4;208.6;210.3;211.6;212.5;212.9;212.9;212.5;211.6;210.3;208.6;206.4;203.8;200.9;197.5;193.8;189.8;185.5;180.8;176.0;170.8;165.5;160.0;154.4\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"42.0;42.2;42.9;44.0;45.5;47.5;49.8;52.6;55.8;59.3;63.1;67.3;71.8;76.6;81.6;86.8;92.2;97.8;103.5;109.3;115.1;121.0;126.9;132.7;138.4;144.1;149.6;155.0;160.1;165.1;169.7;174.1;178.2;181.9;185.3;188.4;191.0;193.2;195.0;196.4;197.4;197.9;198.0;197.6;196.8;195.5;193.9;191.8;189.3;186.4;183.1;179.5;175.5;171.2;166.6;161.8;156.7;151.4;146.0;140.3;134.6;128.8;122.9;117.1;111.2;105.4;99.7;94.0;88.6;83.3;78.2;73.4;68.8;64.5;60.5;56.9;53.6;50.7;48.2;46.1;44.5\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"135.0\" cy=\"42.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"135.0;129.1;123.3;117.5;111.8;106.3;100.9;95.7;90.8;86.0;81.6;77.5;73.7;70.2;67.1;64.4;62.1;60.2;58.8;57.7;57.2;57.0;57.3;58.0;59.2;60.8;62.8;65.3;68.1;71.3;74.9;78.8;83.1;87.6;92.4;97.4;102.7;108.1;113.7;119.4;125.2;131.1;137.0;142.8;148.7;154.4;160.0;165.5;170.8;176.0;180.8;185.5;189.8;193.8;197.5;200.9;203.8;206.4;208.6;210.3;211.6;212.5;212.9;212.9;212.5;211.6;210.3;208.6;206.4;203.8;200.9;197.5;193.8;189.8;185.5;180.8;176.0;170.8;165.5;160.0;154.4\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"42.0;42.2;42.9;44.0;45.5;47.5;49.8;52.6;55.8;59.3;63.1;67.3;71.8;76.6;81.6;86.8;92.2;97.8;103.5;109.3;115.1;121.0;126.9;132.7;138.4;144.1;149.6;155.0;160.1;165.1;169.7;174.1;178.2;181.9;185.3;188.4;191.0;193.2;195.0;196.4;197.4;197.9;198.0;197.6;196.8;195.5;193.9;191.8;189.3;186.4;183.1;179.5;175.5;171.2;166.6;161.8;156.7;151.4;146.0;140.3;134.6;128.8;122.9;117.1;111.2;105.4;99.7;94.0;88.6;83.3;78.2;73.4;68.8;64.5;60.5;56.9;53.6;50.7;48.2;46.1;44.5\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đĩa thật quay quá nhanh để nhìn, nên hình chạy chậm 1000 lần (8 s ứng với 8 ms). Điểm đánh dấu xuất phát ở đỉnh đĩa.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Vòng/phút → vòng/giây: chia $60$, được tần số $f$.</li><li>$\\omega=2\\pi f$; $T=\\dfrac{1}{f}$.</li><li>Góc quét $\\theta=\\omega t$ (rad); đổi sang độ: nhân $\\dfrac{180^\\circ}{\\pi}$.</li><li>⚠ <strong>Điều kiện:</strong> $t$ đổi ra giây ($1\\ \\text{ms}=10^{-3}\\ \\text{s}$) trước khi nhân với $\\omega$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số</span></p>$$f=\\dfrac{n}{60}=\\dfrac{7200}{60}$$<div class=\"bt-ans\">$$f=120\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chu kì</span></p>$$T=\\dfrac{1}{f}=\\dfrac{1}{120}\\ \\text{s}\\approx0{,}00833\\ \\text{s}$$<div class=\"bt-ans\">$$T\\approx8{,}33\\ \\text{ms}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ góc</span></p>$$\\omega=2\\pi f=2\\pi\\cdot120=240\\pi$$<div class=\"bt-ans\">$$\\omega\\approx754\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc quét trong $1{,}0\\ \\text{ms}$</span></p><p>Đổi thời gian: $t=1{,}0\\ \\text{ms}=10^{-3}\\ \\text{s}$.</p>$$\\theta=\\omega t=240\\pi\\cdot10^{-3}\\approx0{,}754\\ \\text{rad}$$<p>Đổi sang độ:</p>$$\\theta=0{,}754\\cdot\\dfrac{180^\\circ}{\\pi}$$<div class=\"bt-ans\">$$\\theta\\approx43{,}2^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Trong $1{,}0\\ \\text{ms}$ đĩa quay $f\\cdot t=120\\cdot10^{-3}=0{,}12$ vòng.</p>$$0{,}12\\cdot360^\\circ=43{,}2^\\circ$$<p>Khớp với kết quả trên ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f=120\\ \\text{Hz}$ · $T\\approx8{,}33\\ \\text{ms}$</p><p>b) $\\omega\\approx754\\ \\text{rad/s}$</p><p>c) $\\theta\\approx43{,}2^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vòng/phút</strong> → chia $60$ ra $f$, nhân $2\\pi$ ra $\\omega$; thời gian ngắn thì đổi ra giây.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Đĩa ổ cứng tâm O với một điểm đánh dấu gần mép, lúc bắt đầu tính thời gian\"><circle cx=\"135.0\" cy=\"120.0\" r=\"88.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"66.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"0.8\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"44.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"0.8\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"14.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.0\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"120.0\" r=\"3\" fill=\"currentColor\"/><text x=\"115.0\" y=\"125.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"250\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đĩa của ổ cứng</text><text x=\"250\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">7200 vòng/phút</text><text x=\"250\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = ?   T = ? (ms)</text><text x=\"250\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = ?</text><text x=\"250\" y=\"178\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 1,0 ms:  θ = ?</text><line x1=\"135.0\" y1=\"120.0\" x2=\"135.0\" y2=\"42.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.9\"/><circle cx=\"135.0\" cy=\"42.0\" r=\"5\" fill=\"#fb923c\"/></svg><figcaption>Dữ kiện: đĩa quay đều 7200 vòng/phút; điểm đánh dấu ở đỉnh lúc t = 0. Hình không vẽ vị trí sau 1,0 ms.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“quay đều với tốc độ $7200$ vòng/phút”</td><td>$n=7200$ vòng/phút</td><td>⚠ Vòng/phút chưa phải đơn vị của $\\omega$: đổi trước khi tính</td></tr><tr><td>“a) tần số quay và chu kì quay (ra mili giây)”</td><td>Cần $f$ (Hz), $T$ (ms)</td><td>Đại lượng cần tìm: $f=\\dfrac{n}{60}$, $T=\\dfrac{1}{f}$</td></tr><tr><td>“b) tốc độ góc theo rad/s”</td><td>Cần $\\omega$ (rad/s)</td><td>Đại lượng cần tìm: $\\omega=2\\pi f$</td></tr><tr><td>“c) trong khoảng thời gian $1{,}0$ ms”</td><td>$t=1{,}0\\ \\text{ms}$</td><td>⚠ Thời gian đổi ra giây khi nhân với $\\omega$ (rad/s)</td></tr><tr><td>“đĩa quay được một góc bao nhiêu độ”</td><td>Cần $\\theta$ (độ)</td><td>Góc quét $\\theta=\\omega t$; đổi rad sang độ</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vòng/phút</b> → nghĩ tới <b>chia $60$ ra $f$, nhân $2\\pi$ ra $\\omega$</b>; thời gian ngắn thì đổi ra giây.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ bằng bao nhiêu hertz?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Quên chia $60$ (coi $7200$ là số vòng mỗi giây), hoặc nhân với $60$ thay vì chia."
+    },
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ bằng bao nhiêu mili giây?",
+     "dap_so": 8.33,
+     "sai_so": 0.05,
+     "don_vi": "ms",
+     "loi_hay_gap": "Đổi giây sang mili giây sai hệ số, hoặc lấy $T=f$."
+    },
+    {
+     "tieu_de": "Tốc độ góc",
+     "hoi": "Tốc độ góc $\\omega$ bằng bao nhiêu rad/s?",
+     "dap_so": 754,
+     "sai_so": 2,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Dừng ở bước đổi sang vòng/giây (được $f$ chứ chưa phải $\\omega$), hoặc quên chia $60$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $f$ đã có, nhân với $2\\pi$",
+       "dung": true
+      },
+      {
+       "text": "Lấy luôn $f$ làm $\\omega$",
+       "dung": false,
+       "vi_sao": "$f$ tính theo vòng/giây còn $\\omega$ tính theo rad/s; mỗi vòng là $2\\pi\\ \\text{rad}$."
+      },
+      {
+       "text": "Nhân $7200$ với $2\\pi$ rồi dừng",
+       "dung": false,
+       "vi_sao": "$7200$ là vòng mỗi phút; $\\omega$ cần vòng mỗi giây, nên còn phải chia $60$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc quét trong $1{,}0\\ \\text{ms}$",
+     "hoi": "Trong $1{,}0\\ \\text{ms}$ đĩa quay được góc bao nhiêu độ?",
+     "dap_so": 43.2,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Quên đổi mili giây ra giây, hoặc quên đổi radian sang độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $\\omega$ với $t$ đã đổi ra giây, rồi đổi sang độ",
+       "dung": true
+      },
+      {
+       "text": "Nhân $\\omega$ với $1{,}0$ (giữ nguyên số của mili giây)",
+       "dung": false,
+       "vi_sao": "$\\omega$ tính theo rad/s nên thời gian phải ở đơn vị giây; để nguyên số mili giây thì kết quả sai hệ số một nghìn."
+      },
+      {
+       "text": "Lấy $360^\\circ$ nhân với tần số $f$",
+       "dung": false,
+       "vi_sao": "Tích đó cho góc quay trong $1\\ \\text{s}$ chứ không phải trong $1{,}0\\ \\text{ms}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Các điểm cùng quay, khác bán kính: tốc độ v = ωr",
+   "topic": "Liên hệ tốc độ dài và tốc độ góc",
+   "problem_html": "<p>Một đĩa than có đường kính $30\\ \\text{cm}$ quay đều $45$ vòng/phút quanh trục qua tâm. Điểm $M$ nằm ở mép đĩa, điểm $N$ cách tâm $5{,}0\\ \\text{cm}$.</p>\n<ol type=\"a\"><li>Tính tốc độ góc của đĩa.</li>\n<li>Tính tốc độ của điểm $M$.</li>\n<li>Tính tốc độ của điểm $N$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 266\" role=\"img\" aria-label=\"Đĩa than đường kính 30 cm quay đều; điểm M ở mép và điểm N cách tâm 5,0 cm cùng nằm trên một bán kính và cùng quay\"><circle cx=\"130.0\" cy=\"118.0\" r=\"100.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"130.0\" cy=\"118.0\" r=\"33.3\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"130.0\" cy=\"118.0\" r=\"5.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"120.0\" y=\"110.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"262.0\" cy=\"74.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"274\" y=\"79\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M: mép đĩa</text><circle cx=\"262.0\" cy=\"100.0\" r=\"5\" fill=\"#38bdf8\"/><text x=\"274\" y=\"105\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N: cách tâm</text><text x=\"274\" y=\"123\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">5,0 cm</text><text x=\"256\" y=\"160\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đĩa than 45 vòng/phút</text><text x=\"256\" y=\"184\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = ?</text><text x=\"256.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"256.0\" y=\"228.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"30.0\" y1=\"238\" x2=\"230.0\" y2=\"238\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M223.0,233.9 L230.0,238.0 L223.0,242.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"230.0\" y1=\"238\" x2=\"30.0\" y2=\"238\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M37.0,242.1 L30.0,238.0 L37.0,233.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130.0\" y=\"256\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 30 cm</text><line x1=\"130.0\" y1=\"118.0\" x2=\"211.9\" y2=\"60.6\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"0.6\"><animate attributeName=\"x2\" values=\"211.9;196.3;176.9;155.0;131.7;108.4;86.2;66.4;50.1;38.3;31.5;30.2;34.4;43.8;58.1;76.3;97.4;120.4;143.9;166.7;187.4;204.9;218.3;226.8;230.0;227.6;219.9;207.2;190.2;169.9;147.4;123.9;100.8;79.2;60.5;45.7;35.4;30.5;31.0;37.0;48.1;63.7;83.1;105.0;128.3;151.6;173.8;193.6;209.9;221.7;228.5;229.8;225.6;216.2;201.9;183.7;162.6;139.6;116.1;93.3;72.6;55.1;41.7;33.2;30.0;32.4;40.1;52.8;69.8;90.1;112.6;136.1;159.2;180.8;199.5;214.3;224.6;229.5;229.0;223.0;211.9\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"60.6;43.1;29.7;21.2;18.0;20.4;28.1;40.8;57.8;78.1;100.6;124.1;147.2;168.8;187.5;202.3;212.6;217.5;217.0;211.0;199.9;184.3;164.9;143.0;119.7;96.4;74.2;54.4;38.1;26.3;19.5;18.2;22.4;31.8;46.1;64.3;85.4;108.4;131.9;154.7;175.4;192.9;206.3;214.8;218.0;215.6;207.9;195.2;178.2;157.9;135.4;111.9;88.8;67.2;48.5;33.7;23.4;18.5;19.0;25.0;36.1;51.7;71.1;93.0;116.3;139.6;161.8;181.6;197.9;209.7;216.5;217.8;213.6;204.2;189.9;171.7;150.6;127.6;104.1;81.3;60.6\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"157.3\" cy=\"98.9\" r=\"5.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"157.3;152.1;145.6;138.3;130.6;122.8;115.4;108.8;103.4;99.4;97.2;96.7;98.1;101.3;106.0;112.1;119.1;126.8;134.6;142.2;149.1;155.0;159.4;162.3;163.3;162.5;160.0;155.7;150.1;143.3;135.8;128.0;120.3;113.1;106.8;101.9;98.5;96.8;97.0;99.0;102.7;107.9;114.4;121.7;129.4;137.2;144.6;151.2;156.6;160.6;162.8;163.3;161.9;158.7;154.0;147.9;140.9;133.2;125.4;117.8;110.9;105.0;100.6;97.7;96.7;97.5;100.0;104.3;109.9;116.7;124.2;132.0;139.7;146.9;153.2;158.1;161.5;163.2;163.0;161.0;157.3\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"98.9;93.0;88.6;85.7;84.7;85.5;88.0;92.3;97.9;104.7;112.2;120.0;127.7;134.9;141.2;146.1;149.5;151.2;151.0;149.0;145.3;140.1;133.6;126.3;118.6;110.8;103.4;96.8;91.4;87.4;85.2;84.7;86.1;89.3;94.0;100.1;107.1;114.8;122.6;130.2;137.1;143.0;147.4;150.3;151.3;150.5;148.0;143.7;138.1;131.3;123.8;116.0;108.3;101.1;94.8;89.9;86.5;84.8;85.0;87.0;90.7;95.9;102.4;109.7;117.4;125.2;132.6;139.2;144.6;148.6;150.8;151.3;149.9;146.7;142.0;135.9;128.9;121.2;113.4;105.8;98.9\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"211.9\" cy=\"60.6\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"211.9;196.3;176.9;155.0;131.7;108.4;86.2;66.4;50.1;38.3;31.5;30.2;34.4;43.8;58.1;76.3;97.4;120.4;143.9;166.7;187.4;204.9;218.3;226.8;230.0;227.6;219.9;207.2;190.2;169.9;147.4;123.9;100.8;79.2;60.5;45.7;35.4;30.5;31.0;37.0;48.1;63.7;83.1;105.0;128.3;151.6;173.8;193.6;209.9;221.7;228.5;229.8;225.6;216.2;201.9;183.7;162.6;139.6;116.1;93.3;72.6;55.1;41.7;33.2;30.0;32.4;40.1;52.8;69.8;90.1;112.6;136.1;159.2;180.8;199.5;214.3;224.6;229.5;229.0;223.0;211.9\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"60.6;43.1;29.7;21.2;18.0;20.4;28.1;40.8;57.8;78.1;100.6;124.1;147.2;168.8;187.5;202.3;212.6;217.5;217.0;211.0;199.9;184.3;164.9;143.0;119.7;96.4;74.2;54.4;38.1;26.3;19.5;18.2;22.4;31.8;46.1;64.3;85.4;108.4;131.9;154.7;175.4;192.9;206.3;214.8;218.0;215.6;207.9;195.2;178.2;157.9;135.4;111.9;88.8;67.2;48.5;33.7;23.4;18.5;19.0;25.0;36.1;51.7;71.1;93.0;116.3;139.6;161.8;181.6;197.9;209.7;216.5;217.8;213.6;204.2;189.9;171.7;150.6;127.6;104.1;81.3;60.6\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy đúng thời gian thật, 4 s (3 vòng). M và N nằm trên cùng một bán kính, xuất phát ở góc 35° so với phương ngang.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Mọi điểm của một vật quay đều có cùng $\\omega$, $T$, $f$.</li><li>$\\omega=2\\pi f$ (vòng/phút: chia $60$ rồi nhân $2\\pi$).</li><li>Tốc độ của điểm cách trục $r$: $v=\\omega r$.</li><li>⚠ <strong>Điều kiện:</strong> $r$ là khoảng cách từ điểm đó đến trục (bán kính, nửa đường kính), đổi ra mét.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ góc của đĩa</span></p>$$f=\\dfrac{n}{60}=\\dfrac{45}{60}=0{,}75\\ \\text{Hz}$$$$\\omega=2\\pi f=2\\pi\\cdot0{,}75=1{,}5\\pi$$<div class=\"bt-ans\">$$\\omega\\approx4{,}71\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ của điểm $M$</span></p><p>$M$ ở mép nên bán kính bằng nửa đường kính: $r_M=\\dfrac{30}{2}=15\\ \\text{cm}=0{,}15\\ \\text{m}$.</p>$$v_M=\\omega r_M=1{,}5\\pi\\cdot0{,}15$$<div class=\"bt-ans\">$$v_M\\approx0{,}707\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ của điểm $N$</span></p><p>Cùng một đĩa nên $N$ có cùng $\\omega$; chỉ bán kính khác: $r_N=5{,}0\\ \\text{cm}=0{,}050\\ \\text{m}$.</p>$$v_N=\\omega r_N=1{,}5\\pi\\cdot0{,}050$$<div class=\"bt-ans\">$$v_N\\approx0{,}236\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p>$$\\dfrac{v_M}{v_N}=\\dfrac{r_M}{r_N}=\\dfrac{15}{5{,}0}=3$$<p>Từ hai kết quả: $\\dfrac{0{,}707}{0{,}236}\\approx3{,}00$ ✓.</p><p>Hai điểm cùng $\\omega$ nên tốc độ tỉ lệ với bán kính.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega\\approx4{,}71\\ \\text{rad/s}$</p><p>b) $v_M\\approx0{,}707\\ \\text{m/s}$</p><p>c) $v_N\\approx0{,}236\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều điểm trên cùng một vật quay</strong> → cùng $\\omega$, tính $v=\\omega r$ với $r$ riêng từng điểm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 266\" role=\"img\" aria-label=\"Đĩa than đường kính 30 cm; điểm M ở mép, điểm N cách tâm O 5,0 cm\"><circle cx=\"130.0\" cy=\"118.0\" r=\"100.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"130.0\" cy=\"118.0\" r=\"33.3\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"130.0\" cy=\"118.0\" r=\"5.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"120.0\" y=\"110.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"262.0\" cy=\"74.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"274\" y=\"79\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">M: mép đĩa</text><circle cx=\"262.0\" cy=\"100.0\" r=\"5\" fill=\"#38bdf8\"/><text x=\"274\" y=\"105\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">N: cách tâm</text><text x=\"274\" y=\"123\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">5,0 cm</text><text x=\"256\" y=\"160\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đĩa than 45 vòng/phút</text><text x=\"256\" y=\"184\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = ?</text><text x=\"256.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"256.0\" y=\"228.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"30.0\" y1=\"238\" x2=\"230.0\" y2=\"238\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M223.0,233.9 L230.0,238.0 L223.0,242.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"230.0\" y1=\"238\" x2=\"30.0\" y2=\"238\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M37.0,242.1 L30.0,238.0 L37.0,233.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130.0\" y=\"256\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 30 cm</text><line x1=\"130.0\" y1=\"118.0\" x2=\"211.9\" y2=\"60.6\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"0.9\"/><circle cx=\"211.9\" cy=\"60.6\" r=\"6\" fill=\"#fb923c\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"163.3\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"163.3\" cy=\"118.0\" r=\"5.5\" fill=\"#38bdf8\"/><text x=\"168.3\" y=\"110.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><text x=\"219.9\" y=\"56.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"146.7\" y=\"142.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">5,0 cm</text></svg><figcaption>Dữ kiện: đường kính 30 cm; N cách tâm 5,0 cm; M ở mép. Hai điểm nằm trên hai bán kính khác nhau chỉ để dễ nhìn.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đĩa than có đường kính $30$ cm”</td><td>$d=30\\ \\text{cm}$</td><td>⚠ Bán kính là nửa đường kính; đổi ra mét</td></tr><tr><td>“quay đều $45$ vòng/phút quanh trục qua tâm”</td><td>$n=45$ vòng/phút</td><td>Đổi sang $f$ rồi $\\omega$</td></tr><tr><td>“a) tốc độ góc của đĩa”</td><td>Cần $\\omega$ (rad/s)</td><td>Đại lượng cần tìm: $\\omega=2\\pi f$</td></tr><tr><td>“điểm $M$ nằm ở mép đĩa” — “b) tốc độ của $M$”</td><td>$M$ cách tâm một bán kính đĩa; cần $v_M$ (m/s)</td><td>Công thức liên hệ $v$, $\\omega$, $r$: $v=\\omega r$</td></tr><tr><td>“điểm $N$ cách tâm $5{,}0$ cm” — “c) tốc độ của $N$”</td><td>$r_N=5{,}0\\ \\text{cm}$; cần $v_N$ (m/s)</td><td>⚠ $M$ và $N$ cùng nằm trên một đĩa quay: so $\\omega$ của hai điểm trước khi chọn công thức</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều điểm trên cùng một vật quay</b> → nghĩ tới <b>cùng $\\omega$</b>, $v=\\omega r$ với $r$ riêng từng điểm.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ góc của đĩa",
+     "hoi": "Tốc độ góc $\\omega$ của đĩa bằng bao nhiêu rad/s?",
+     "dap_so": 4.71,
+     "sai_so": 0.03,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Dùng $\\omega=2\\pi n$ với $n$ tính bằng vòng/phút (quên chia $60$)."
+    },
+    {
+     "tieu_de": "Tốc độ của điểm $M$",
+     "hoi": "Tốc độ $v_M$ của điểm $M$ ở mép bằng bao nhiêu m/s?",
+     "dap_so": 0.707,
+     "sai_so": 0.005,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Lấy bán kính bằng cả đường kính, hoặc để $r$ tính bằng cm rồi ghi kết quả là m/s."
+    },
+    {
+     "tieu_de": "Tốc độ của điểm $N$",
+     "hoi": "Tốc độ $v_N$ của điểm $N$ bằng bao nhiêu m/s?",
+     "dap_so": 0.236,
+     "sai_so": 0.003,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cho mỗi điểm một $\\omega$ riêng theo khoảng cách tới tâm, hoặc lấy lại tốc độ của $M$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $\\omega$ của đĩa, thay $r$ bằng khoảng cách từ $N$ đến tâm",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\omega$ riêng cho $N$ vì $N$ nằm gần tâm",
+       "dung": false,
+       "vi_sao": "Mọi điểm của đĩa quét cùng một góc trong cùng thời gian nên có chung $\\omega$; chỉ $v$ phụ thuộc $r$."
+      },
+      {
+       "text": "Giữ nguyên $v_M$ vì cùng một đĩa",
+       "dung": false,
+       "vi_sao": "Cùng $\\omega$ nhưng khác bán kính quỹ đạo thì $v=\\omega r$ khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Cánh quạt: từ vòng/phút tìm tốc độ đầu cánh, bài ngược tìm chiều dài cánh mới",
+   "topic": "Liên hệ tốc độ dài và tốc độ góc",
+   "problem_html": "<p>Cánh quạt của một máy làm mát công nghiệp dài $0{,}40\\ \\text{m}$ (tính từ trục quay đến đầu cánh), quay đều $480$ vòng/phút.</p>\n<ol type=\"a\"><li>Tính tốc độ của đầu cánh.</li>\n<li>Người ta thay cánh khác và cho quạt quay chậm lại còn $320$ vòng/phút, nhưng muốn đầu cánh vẫn giữ tốc độ như trước. Hỏi cánh mới phải dài bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Cánh quạt ba cánh dài 0,40 m quay đều quanh trục O; một đầu cánh được đánh dấu\"><circle cx=\"135.0\" cy=\"130.0\" r=\"80.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><line x1=\"135.0\" y1=\"130.0\" x2=\"135.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"4.0\" opacity=\"1\"><animate attributeName=\"x2\" values=\"135.0;125.0;115.1;105.6;96.5;88.0;80.2;73.4;67.5;62.6;58.9;56.4;55.2;55.2;56.4;58.9;62.6;67.5;73.4;80.2;88.0;96.5;105.6;115.1;125.0;135.0;145.0;154.9;164.4;173.5;182.0;189.8;196.6;202.5;207.4;211.1;213.6;214.8;214.8;213.6;211.1;207.4;202.5;196.6;189.8;182.0;173.5;164.4;154.9;145.0;135.0;125.0;115.1;105.6;96.5;88.0;80.2;73.4;67.5;62.6;58.9;56.4;55.2;55.2;56.4;58.9;62.6;67.5;73.4;80.2;88.0;96.5;105.6;115.1;125.0;135.0;145.0;154.9;164.4;173.5;182.0\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"50.0;50.6;52.5;55.6;59.9;65.3;71.7;79.0;87.1;95.9;105.3;115.0;125.0;135.0;145.0;154.7;164.1;172.9;181.0;188.3;194.7;200.1;204.4;207.5;209.4;210.0;209.4;207.5;204.4;200.1;194.7;188.3;181.0;172.9;164.1;154.7;145.0;135.0;125.0;115.0;105.3;95.9;87.1;79.0;71.7;65.3;59.9;55.6;52.5;50.6;50.0;50.6;52.5;55.6;59.9;65.3;71.7;79.0;87.1;95.9;105.3;115.0;125.0;135.0;145.0;154.7;164.1;172.9;181.0;188.3;194.7;200.1;204.4;207.5;209.4;210.0;209.4;207.5;204.4;200.1;194.7\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"135.0\" y1=\"130.0\" x2=\"65.7\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"4.0\" opacity=\"1\"><animate attributeName=\"x2\" values=\"65.7;71.3;77.8;85.3;93.6;102.5;111.9;121.7;131.6;141.7;151.6;161.3;170.6;179.3;187.3;194.5;200.7;205.9;210.0;212.9;214.6;215.0;214.1;212.1;208.7;204.3;198.7;192.2;184.7;176.4;167.5;158.1;148.3;138.4;128.3;118.4;108.7;99.4;90.7;82.7;75.5;69.3;64.1;60.0;57.1;55.4;55.0;55.9;57.9;61.3;65.7;71.3;77.8;85.3;93.6;102.5;111.9;121.7;131.6;141.7;151.6;161.3;170.6;179.3;187.3;194.5;200.7;205.9;210.0;212.9;214.6;215.0;214.1;212.1;208.7;204.3;198.7;192.2;184.7;176.4;167.5\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"170.0;178.4;186.0;192.7;198.4;203.1;206.6;208.9;209.9;209.7;208.3;205.6;201.7;196.6;190.6;183.5;175.7;167.1;157.9;148.3;138.4;128.3;118.3;108.5;99.0;90.0;81.6;74.0;67.3;61.6;56.9;53.4;51.1;50.1;50.3;51.7;54.4;58.3;63.4;69.4;76.5;84.3;92.9;102.1;111.7;121.6;131.7;141.7;151.5;161.0;170.0;178.4;186.0;192.7;198.4;203.1;206.6;208.9;209.9;209.7;208.3;205.6;201.7;196.6;190.6;183.5;175.7;167.1;157.9;148.3;138.4;128.3;118.3;108.5;99.0;90.0;81.6;74.0;67.3;61.6;56.9\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"135.0\" y1=\"130.0\" x2=\"204.3\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"4.0\" opacity=\"1\"><animate attributeName=\"x2\" values=\"204.3;208.7;212.1;214.1;215.0;214.6;212.9;210.0;205.9;200.7;194.5;187.3;179.3;170.6;161.3;151.6;141.7;131.6;121.7;111.9;102.5;93.6;85.3;77.8;71.3;65.7;61.3;57.9;55.9;55.0;55.4;57.1;60.0;64.1;69.3;75.5;82.7;90.7;99.4;108.7;118.4;128.3;138.4;148.3;158.1;167.5;176.4;184.7;192.2;198.7;204.3;208.7;212.1;214.1;215.0;214.6;212.9;210.0;205.9;200.7;194.5;187.3;179.3;170.6;161.3;151.6;141.7;131.6;121.7;111.9;102.5;93.6;85.3;77.8;71.3;65.7;61.3;57.9;55.9;55.0;55.4\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"170.0;161.0;151.5;141.7;131.7;121.6;111.7;102.1;92.9;84.3;76.5;69.4;63.4;58.3;54.4;51.7;50.3;50.1;51.1;53.4;56.9;61.6;67.3;74.0;81.6;90.0;99.0;108.5;118.3;128.3;138.4;148.3;157.9;167.1;175.7;183.5;190.6;196.6;201.7;205.6;208.3;209.7;209.9;208.9;206.6;203.1;198.4;192.7;186.0;178.4;170.0;161.0;151.5;141.7;131.7;121.6;111.7;102.1;92.9;84.3;76.5;69.4;63.4;58.3;54.4;51.7;50.3;50.1;51.1;53.4;56.9;61.6;67.3;74.0;81.6;90.0;99.0;108.5;118.3;128.3;138.4\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"135.0\" cy=\"50.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"135.0;125.0;115.1;105.6;96.5;88.0;80.2;73.4;67.5;62.6;58.9;56.4;55.2;55.2;56.4;58.9;62.6;67.5;73.4;80.2;88.0;96.5;105.6;115.1;125.0;135.0;145.0;154.9;164.4;173.5;182.0;189.8;196.6;202.5;207.4;211.1;213.6;214.8;214.8;213.6;211.1;207.4;202.5;196.6;189.8;182.0;173.5;164.4;154.9;145.0;135.0;125.0;115.1;105.6;96.5;88.0;80.2;73.4;67.5;62.6;58.9;56.4;55.2;55.2;56.4;58.9;62.6;67.5;73.4;80.2;88.0;96.5;105.6;115.1;125.0;135.0;145.0;154.9;164.4;173.5;182.0\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"50.0;50.6;52.5;55.6;59.9;65.3;71.7;79.0;87.1;95.9;105.3;115.0;125.0;135.0;145.0;154.7;164.1;172.9;181.0;188.3;194.7;200.1;204.4;207.5;209.4;210.0;209.4;207.5;204.4;200.1;194.7;188.3;181.0;172.9;164.1;154.7;145.0;135.0;125.0;115.0;105.3;95.9;87.1;79.0;71.7;65.3;59.9;55.6;52.5;50.6;50.0;50.6;52.5;55.6;59.9;65.3;71.7;79.0;87.1;95.9;105.3;115.0;125.0;135.0;145.0;154.7;164.1;172.9;181.0;188.3;194.7;200.1;204.4;207.5;209.4;210.0;209.4;207.5;204.4;200.1;194.7\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"135.0\" cy=\"130.0\" r=\"8.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"130.0\" r=\"2.5\" fill=\"currentColor\"/><text x=\"272\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cánh quạt dài 0,40 m</text><text x=\"272\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">480 vòng/phút</text><text x=\"272\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đầu cánh: v = ?</text><text x=\"272\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cánh mới, quay chậm</text><text x=\"272\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">320 vòng/phút, giữ v:</text><text x=\"272\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: quạt thật quay quá nhanh để nhìn, nên hình chạy chậm 40 lần (8 s ứng với 0,2 s). Đầu cánh được đánh dấu xuất phát ở đỉnh.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Vòng/phút → $f$: chia $60$; $\\omega=2\\pi f$.</li><li>Đầu cánh cách trục một đoạn bằng chiều dài cánh: $v=\\omega r$.</li><li>Đổi ngược: $r=\\dfrac{v}{\\omega}$; vòng/phút → $\\omega=2\\pi\\cdot\\dfrac{n}{60}$.</li><li>⚠ <strong>Điều kiện:</strong> thay cánh và đổi tốc độ quay thì $r$ được chọn lại để giữ $v$; các điểm của cùng một cánh vẫn cùng $\\omega$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số</span></p>$$f=\\dfrac{n}{60}=\\dfrac{480}{60}$$<div class=\"bt-ans\">$$f=8{,}0\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ góc</span></p>$$\\omega=2\\pi f=2\\pi\\cdot8{,}0=16\\pi$$<div class=\"bt-ans\">$$\\omega\\approx50{,}3\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ đầu cánh</span></p><p>Đầu cánh cách trục $r_1=0{,}40\\ \\text{m}$:</p>$$v=\\omega r_1=16\\pi\\cdot0{,}40$$<div class=\"bt-ans\">$$v\\approx20{,}1\\ \\text{m/s}$$</div><p>Khoảng $72\\ \\text{km/h}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ góc mới</span></p><p>Quạt quay $n_2=320$ vòng/phút:</p>$$f_2=\\dfrac{n_2}{60}=\\dfrac{320}{60}\\approx5{,}33\\ \\text{Hz}$$$$\\omega_2=2\\pi f_2=2\\pi\\cdot5{,}33$$<div class=\"bt-ans\">$$\\omega_2\\approx33{,}5\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chiều dài cánh mới</span></p><p>Giữ $v=20{,}1\\ \\text{m/s}$ ở đầu cánh mới:</p>$$r_2=\\dfrac{v}{\\omega_2}=\\dfrac{20{,}1}{33{,}5}$$<div class=\"bt-ans\">$$r_2\\approx0{,}60\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$\\omega_1r_1=50{,}3\\cdot0{,}40\\approx20{,}1\\ \\text{m/s}$$$$\\omega_2r_2=33{,}5\\cdot0{,}60\\approx20{,}1\\ \\text{m/s}$$<p>Cách tắt: $r_2=r_1\\cdot\\dfrac{n_1}{n_2}=0{,}40\\cdot\\dfrac{480}{320}=0{,}60\\ \\text{m}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v\\approx20{,}1\\ \\text{m/s}$</p><p>b) $r_2\\approx0{,}60\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>đổi tốc độ quay, giữ tốc độ đầu cánh</strong> → $v=\\omega r$ cố định, đổi vòng/phút ra $\\omega$ rồi tìm $r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Cánh quạt dài 0,40 m quay quanh trục O\"><circle cx=\"135.0\" cy=\"130.0\" r=\"80.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><line x1=\"135.0\" y1=\"130.0\" x2=\"215.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"4.0\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"130.0\" r=\"8.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"135.0\" cy=\"130.0\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"215.0\" cy=\"130.0\" r=\"5.5\" fill=\"#fb923c\"/><text x=\"175.0\" y=\"120.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,40 m</text><text x=\"129.0\" y=\"154.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"272\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cánh quạt dài 0,40 m</text><text x=\"272\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">480 vòng/phút</text><text x=\"272\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đầu cánh: v = ?</text><text x=\"272\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cánh mới, quay chậm</text><text x=\"272\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">320 vòng/phút, giữ v:</text><text x=\"272\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = ?</text></svg><figcaption>Dữ kiện: cánh cũ dài 0,40 m (vẽ đúng tỉ lệ độ dài); chưa vẽ cánh mới và vận tốc.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“cánh quạt … dài $0{,}40$ m (tính từ trục quay đến đầu cánh)”</td><td>$r_1=0{,}40\\ \\text{m}$</td><td>Bán kính quỹ đạo của đầu cánh</td></tr><tr><td>“quay đều $480$ vòng/phút”</td><td>$n=480$ vòng/phút</td><td>⚠ Đổi vòng/phút trước khi dùng $\\omega$</td></tr><tr><td>“a) tốc độ của đầu cánh”</td><td>Cần $v_1$ (m/s)</td><td>Đại lượng cần tìm: $v=\\omega r$</td></tr><tr><td>“quay chậm lại còn $320$ vòng/phút”</td><td>$n_2=320$ vòng/phút</td><td>⚠ Đổi vòng/phút trước khi dùng $\\omega$</td></tr><tr><td>“đầu cánh vẫn giữ tốc độ như trước”</td><td>$v_2=v_1$</td><td>⚠ Giữ $v$ thì $r$ phải chọn lại theo $\\omega$ mới</td></tr><tr><td>“b) cánh mới phải dài bao nhiêu”</td><td>Cần $r_2$ (m)</td><td>Bán kính quỹ đạo của đầu cánh mới; $v=\\omega r$ viết cho cánh mới</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đổi tốc độ quay, giữ tốc độ đầu cánh</b> → nghĩ tới <b>$v=\\omega r$</b> với $r$ đổi theo $\\omega$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ của quạt bằng bao nhiêu hertz?",
+     "dap_so": 8.0,
+     "sai_so": 0.05,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Quên chia $60$, hoặc nhân với $60$ thay vì chia."
+    },
+    {
+     "tieu_de": "Tốc độ góc",
+     "hoi": "Tốc độ góc $\\omega$ bằng bao nhiêu rad/s?",
+     "dap_so": 50.3,
+     "sai_so": 0.3,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Nhân $2\\pi$ với số vòng/phút thay vì tần số.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $2\\pi$ với tần số tính bằng Hz",
+       "dung": true
+      },
+      {
+       "text": "Nhân $2\\pi$ với số vòng/phút",
+       "dung": false,
+       "vi_sao": "Số vòng/phút chưa phải vòng/giây; $\\omega$ theo rad/s phải dùng $f$ (vòng/giây)."
+      },
+      {
+       "text": "Lấy $2\\pi$ chia cho tần số",
+       "dung": false,
+       "vi_sao": "Phải chia $2\\pi$ cho chu kì; chia cho tần số thì ra đơn vị không phải rad/s."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ đầu cánh",
+     "hoi": "Tốc độ $v$ của đầu cánh bằng bao nhiêu m/s?",
+     "dap_so": 20.1,
+     "sai_so": 0.2,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Dùng $v=\\omega/r$, hoặc lấy tần số thay cho tốc độ góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $v=\\omega r$ với $r$ là chiều dài cánh",
+       "dung": true
+      },
+      {
+       "text": "Dùng $v=\\omega/r$",
+       "dung": false,
+       "vi_sao": "Chia $\\omega$ cho $r$ cho đơn vị $1/(\\text{m}\\cdot\\text{s})$, không phải m/s."
+      },
+      {
+       "text": "Lấy $v=f\\cdot r$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số $2\\pi$: một vòng dài $2\\pi r$, nên $v=2\\pi fr=\\omega r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ góc mới",
+     "hoi": "Quạt quay $320$ vòng/phút thì $\\omega_2$ bằng bao nhiêu rad/s?",
+     "dap_so": 33.5,
+     "sai_so": 0.3,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy luôn số vòng/phút làm $\\omega$, hoặc nhân $2\\pi$ với số vòng/phút mà quên chia $60$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia $60$ ra $f_2$ rồi nhân $2\\pi$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\omega_2$ bằng số vòng/phút",
+       "dung": false,
+       "vi_sao": "Vòng/phút là đơn vị của $n$; $\\omega$ tính theo rad/s, mỗi vòng là $2\\pi\\ \\text{rad}$ và mỗi phút có $60$ giây."
+      },
+      {
+       "text": "Nhân $2\\pi$ với số vòng/phút",
+       "dung": false,
+       "vi_sao": "Chưa chia $60$ thì chưa ra vòng/giây nên kết quả sai hệ số $60$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài cánh mới",
+     "hoi": "Cánh mới dài $r_2$ bằng bao nhiêu mét?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Nhân $v$ với $\\omega_2$ thay vì chia, hoặc giữ nguyên chiều dài cánh cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ $v$ của đầu cánh, lấy $v$ chia cho $\\omega_2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $v$ nhân với $\\omega_2$",
+       "dung": false,
+       "vi_sao": "Tích $v\\omega$ có đơn vị $\\text{m/s}^2$, không phải mét."
+      },
+      {
+       "text": "Lấy $\\omega_2$ chia cho $v$",
+       "dung": false,
+       "vi_sao": "Thương $\\omega/v$ có đơn vị $1/\\text{m}$, đó là $1/r$ chứ không phải $r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Điền vào chỗ trống của bảng dưới đây các độ lớn của các góc theo độ hoặc radian (rad):</p><div class=\"my-3 overflow-x-auto\"><table class=\"w-full min-w-[420px] border-collapse text-sm\"><tbody><tr><td class=\"border border-white/10 p-2 font-semibold\">Độ</td><td class=\"border border-white/10 p-2\">0°</td><td class=\"border border-white/10 p-2\">?</td><td class=\"border border-white/10 p-2\">45°</td><td class=\"border border-white/10 p-2\">?</td><td class=\"border border-white/10 p-2\">90°</td></tr><tr><td class=\"border border-white/10 p-2 font-semibold\">Rad</td><td class=\"border border-white/10 p-2\">0</td><td class=\"border border-white/10 p-2\">?</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{4}$</td><td class=\"border border-white/10 p-2\">?</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{2}$</td></tr></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><div class=\"my-3 overflow-x-auto\"><table class=\"w-full min-w-[420px] border-collapse text-sm\"><tbody><tr><td class=\"border border-white/10 p-2 font-semibold\">Độ</td><td class=\"border border-white/10 p-2\">0°</td><td class=\"border border-white/10 p-2\">30°</td><td class=\"border border-white/10 p-2\">45°</td><td class=\"border border-white/10 p-2\">60°</td><td class=\"border border-white/10 p-2\">90°</td></tr><tr><td class=\"border border-white/10 p-2 font-semibold\">Rad</td><td class=\"border border-white/10 p-2\">0</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{6}$</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{4}$</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{3}$</td><td class=\"border border-white/10 p-2\">$\\frac{\\pi}{2}$</td></tr></tbody></table></div></details><h4>Bài 2 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Tính quãng đường đi được khi vật chuyển động tròn có độ dịch chuyển góc 1 rad, biết bán kính đường tròn là 2 m.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có $\\theta = \\dfrac{s}{r} \\Rightarrow s = \\theta r = 1\\cdot 2 = 2$ m.</p><h4>Bài 3 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Xét chuyển động của kim giờ đồng hồ. Tìm độ dịch chuyển góc của nó (theo độ và radian): a. Trong mỗi giờ. b. Trong khoảng thời gian từ 12h đến 15h30.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><p class=\"text-base leading-relaxed my-2\">a. $\\theta = 30^0 = \\dfrac{\\pi}{6}$ rad.</p><p class=\"text-base leading-relaxed my-2\">b. $\\theta = 105^0 = \\dfrac{7\\pi}{12}$ rad.</p><h4>Bài 4 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Một cánh quạt có tốc độ quay 3000 vòng/phút. Tính chu kì quay của nó.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có $f = \\dfrac{3000}{60} = 50$ Hz $\\Rightarrow T = \\dfrac{1}{f} = 0{,}02$ s.</p><h4>Bài 5 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Một mô tơ điện quay quanh trục với tốc độ 3600 vòng/phút. Tốc độ góc của mô tơ này bằng bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có $f = \\dfrac{3600}{60} = 60$ Hz $\\Rightarrow \\omega = 2\\pi f = 2\\pi.60 = 120\\pi$ rad/s.</p><h4>Bài 6 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Roto trong một tổ máy của nhà máy thủy điện Hòa Bình quay 125 vòng mỗi phút. Hãy tính tốc độ góc của roto này theo đơn vị rad/s.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Tần số của roto $f = \\dfrac{125}{60} \\approx 2{,}083$ Hz $\\Rightarrow \\omega = 2\\pi f = 2\\pi.2{,}083 = 13{,}1$ rad/s.</p><h4>Bài 7 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Xét một điểm nằm trên đường xích đạo trong chuyển động tự quay của Trái Đất. Biết bán kính Trái Đất tại xích đạo là 6400 km. Hãy tính: a. Chu kì chuyển động của điểm đó. b. Tốc độ và tốc độ góc của điểm đó.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><p class=\"text-base leading-relaxed my-2\">a. Thời gian Trái Đất tự quay quanh trục 1 vòng là 1 ngày $\\to T = 1$ ngày $= 24$ h $= 24.3600 = 86400$ s.</p><p class=\"text-base leading-relaxed my-2\">b. Tốc độ góc $\\omega = \\dfrac{2\\pi}{T} = \\dfrac{2\\pi}{86400} = 7{,}27.10^{-5}$ rad/s. Tốc độ $v = \\omega r = 7{,}27.10^{-5}.6400000 = 465{,}42$ m/s.</p><h4>Bài 8 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Hai vật A và B chuyển động tròn đều lần lượt trên hai đường tròn có bán kính khác nhau với $R_1 = 3R_2$, nhưng có cùng chu kì. Nếu vật A chuyển động với tốc độ 15 m/s thì tốc độ của vật B là bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có $T = \\dfrac{2\\pi R_1}{v_1} = \\dfrac{2\\pi R_2}{v_2} \\Rightarrow v_2 = \\dfrac{v_1 R_2}{R_1} = \\dfrac{v_1 R_2}{3R_2} = \\dfrac{v_1}{3} = \\dfrac{15}{3} = 5$ m/s.</p><h4>Bài 9 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Biết chiều dài kim phút và kim giây của một chiếc đồng hồ lần lượt là 4 cm và 5 cm. Hãy tính: a. Tỉ số chu kì quay của hai kim. b. Tỉ số tốc độ của đầu kim phút và đầu kim giây.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong></p><p class=\"text-base leading-relaxed my-2\">a. Tỉ số chu kì quay của hai kim $\\dfrac{T_{ph}}{T_s} = 60$.</p><p class=\"text-base leading-relaxed my-2\">b. Tỉ số tốc độ của đầu kim phút và đầu kim giây $\\dfrac{v_{ph}}{v_s} = \\dfrac{\\omega_{ph}}{\\omega_s}\\dfrac{R_{ph}}{R_s} = \\dfrac{T_s}{T_{ph}}\\dfrac{R_{ph}}{R_s} = \\dfrac{1}{60}.\\dfrac{4}{5} = \\dfrac{1}{75}$.</p><h4>Bài 10 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Một đồng hồ có kim giờ dài 3 cm, kim phút dài 4 cm. Tính tỉ số giữa tốc độ của hai đầu kim.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Tỉ số giữa tốc độ đầu hai kim $\\dfrac{v_{ph}}{v_h} = \\dfrac{\\omega_{ph}}{\\omega_h}\\dfrac{R_{ph}}{R_h} = \\dfrac{T_h}{T_{ph}}\\dfrac{R_{ph}}{R_h} = \\dfrac{12.60}{60}.\\dfrac{4}{3} = 16$.</p><h4>Bài 11 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Trái đất quay quanh Mặt trời theo quỹ đạo coi như tròn có bán kính $R = 1{,}5.10^8$ km. Mặt trăng quay quanh Trái đất theo quĩ đạo coi như tròn có bán kính $r = 3{,}8.10^5$ km. Biết Trái đất quay quanh Mặt trời một vòng hết thời gian là $T_1 = 365{,}25$ ngày, Mặt trăng quay quanh Trái đất một vòng hết thời gian là $T_2 = 27{,}32$ ngày.</p><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/76/1790223500009-fig06.png\" alt=\"\"><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">a. Tính quãng đường Trái đất vạch được trong thời gian Mặt trăng quay đúng một vòng (1 tháng âm lịch).</li><li class=\"my-1\">b. Tính số vòng quay của Mặt trăng quanh Trái đất trong thời gian Trái đất quay đúng một vòng (1 năm).</li></ul><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Áp dụng công thức chu kỳ $T = \\dfrac{2\\pi}{\\omega} \\Rightarrow \\omega = \\dfrac{2\\pi}{T}$; $\\theta = \\dfrac{s}{r} \\Rightarrow s = \\theta r$; $\\omega = \\dfrac{\\theta}{t} \\Rightarrow \\theta = \\omega t$. Vậy $s = \\omega t r$.</p><p class=\"text-base leading-relaxed my-2\">a. Quãng đường Trái đất đi được sau thời gian $T_2$: $s_1 = \\omega_1 T_2 R = \\dfrac{2\\pi}{T_1}T_2 R = \\dfrac{T_2}{T_1}2\\pi R \\Rightarrow s_1 = \\dfrac{27{,}32}{365{,}25}.2.3{,}14.1{,}5.10^{11} = 70{,}46.10^9$ m $= 70{,}46.10^6$ km.</p><p class=\"text-base leading-relaxed my-2\">b. Trong thời gian $T_2$, Mặt Trăng quay quanh Trái Đất được 1 vòng. Trong thời gian $T_1$, Mặt Trăng quay được $N = \\dfrac{T_1}{T_2} = \\dfrac{365{,}25}{27{,}32} \\approx 13{,}4$ vòng.</p><h4>Bài 12 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Hai vật A và B chuyển động tròn đều trên hai đường tròn tiếp xúc nhau. Chu kì của A là 6 s, còn chu kì của B là 3 s. Biết rằng tại thời điểm ban đầu chúng xuất phát cùng một lúc từ điểm tiếp xúc của hai đường tròn và chuyển động ngược chiều nhau. Tính khoảng thời gian ngắn nhất để hai vật gặp nhau.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải:</strong> Ta có $T_A = 6$ s, $T_B = 3$ s $\\Rightarrow T_A = 2T_B$. Khi vật A quay 1 vòng thì vật B phải quay 2 vòng để hai vật gặp nhau $\\Rightarrow \\Delta t = 6$ s.</p>"
+ }
+}

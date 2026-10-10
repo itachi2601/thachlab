@@ -1,0 +1,506 @@
+{
+ "lesson_id": 69,
+ "lesson_title": "Bài 24. Công suất",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công suất, công và đổi đơn vị (kWh, mã lực)",
+   "topic": "Công suất",
+   "problem_html": "<p>Một máy bơm nước có công suất $2{,}0\\ \\text{kW}$, hoạt động liên tục $3{,}0$ giờ.</p>\n<ol type=\"a\"><li>Tính công máy bơm sinh ra, theo kWh và theo jun.</li>\n<li>Công suất của máy bơm bằng bao nhiêu mã lực Pháp? Lấy $1\\ \\text{CV}=736\\ \\text{W}$.</li>\n<li>Một máy bơm khác có công suất $0{,}50\\ \\text{kW}$ phải hoạt động bao lâu để sinh cùng công đó?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 460 186\" role=\"img\" aria-label=\"Máy bơm công suất 2,0 kW chạy liên tục 3,0 giờ, đồng hồ có kim quay từ 12 đến 3\"><rect x=\"40.0\" y=\"62.0\" width=\"90.0\" height=\"64.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"85.0\" cy=\"94.0\" r=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g><line x1=\"85.0\" y1=\"94.0\" x2=\"85.0\" y2=\"74.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"94.0\" x2=\"67.7\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"94.0\" x2=\"102.3\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 85 94;1080 85 94\" dur=\"6s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"85.0\" cy=\"94.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"85\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P = 2,0 kW</text><circle cx=\"330.0\" cy=\"94.0\" r=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"330.0\" y=\"68.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">12</text><text x=\"360.0\" y=\"98.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3</text><text x=\"330.0\" y=\"128.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">6</text><text x=\"300.0\" y=\"98.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">9</text><g><line x1=\"330.0\" y1=\"94.0\" x2=\"330.0\" y2=\"64.0\" stroke=\"#f87171\" stroke-width=\"3.2\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 330 94;90 330 94\" dur=\"6s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"330.0\" cy=\"94.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"330\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">kim chạy 3,0 h</text><text x=\"235\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Công A = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: máy bơm hoạt động liên tục, kim đồng hồ chạy 3,0 giờ (1 s trong hình ứng với 0,5 giờ). Công A chưa tính.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất là công sinh ra trong một đơn vị thời gian.</li><li>$P=\\dfrac{A}{t}$, nên $A=Pt$.</li><li>$1\\ \\text{W}=1\\ \\text{J/s}$; $1\\ \\text{kW}=10^{3}\\ \\text{W}$; $1\\ \\text{CV}=736\\ \\text{W}$.</li><li>kWh là đơn vị của <strong>công</strong>: $1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$.</li><li>⚠ <strong>Điều kiện:</strong> công suất không đổi trong cả khoảng thời gian.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công theo kWh</span></p><p>Công suất không đổi nên $A=Pt$; kW nhân giờ ra kWh:</p>$$A=Pt=2{,}0\\cdot3{,}0$$<div class=\"bt-ans\">$$A=6{,}0\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đổi sang jun</span></p><p>$1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$:</p>$$A=6{,}0\\cdot3{,}6\\cdot10^{6}$$<div class=\"bt-ans\">$$A=2{,}16\\cdot10^{7}\\ \\text{J}$$</div><p>Kiểm bằng đơn vị SI: $2000\\ \\text{W}\\cdot10800\\ \\text{s}=2{,}16\\cdot10^{7}\\ \\text{J}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi sang mã lực</span></p><p>Đổi $2{,}0\\ \\text{kW}=2000\\ \\text{W}$ rồi chia cho $736\\ \\text{W/CV}$:</p>$$P=\\dfrac{2000}{736}$$<div class=\"bt-ans\">$$P\\approx2{,}72\\ \\text{CV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Máy bơm thứ hai</span></p><p>Cùng công $A=6{,}0\\ \\text{kWh}$, công suất $P'=0{,}50\\ \\text{kW}$:</p>$$t'=\\dfrac{A}{P'}=\\dfrac{6{,}0\\ \\text{kWh}}{0{,}50\\ \\text{kW}}$$<div class=\"bt-ans\">$$t'=12\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$P't'=0{,}50\\cdot12=6{,}0\\ \\text{kWh}=A$$<p>Khớp công đã tính ở ý a ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=6{,}0\\ \\text{kWh}=2{,}16\\cdot10^{7}\\ \\text{J}$</p><p>b) $P\\approx2{,}72\\ \\text{CV}$</p><p>c) $t'=12\\ \\text{h}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất và thời gian hoạt động</strong> → $A=Pt$; kWh là đơn vị công, đổi đơn vị trước khi so.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 460 196\" role=\"img\" aria-label=\"Hai máy bơm: máy thứ nhất 2,0 kW chạy 3,0 giờ, máy thứ hai 0,50 kW chạy thời gian chưa biết, cùng một công\"><rect x=\"40.0\" y=\"24.0\" width=\"90.0\" height=\"64.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"85.0\" cy=\"56.0\" r=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g><line x1=\"85.0\" y1=\"56.0\" x2=\"85.0\" y2=\"36.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"56.0\" x2=\"67.7\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"56.0\" x2=\"102.3\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><circle cx=\"85.0\" cy=\"56.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"85\" y=\"16\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P = 2,0 kW</text><line x1=\"140\" y1=\"56\" x2=\"250\" y2=\"56\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M241.2,50.9 L250.0,56.0 L241.2,61.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"195\" y=\"46\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t = 3,0 h</text><text x=\"262\" y=\"61\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = ?</text><rect x=\"40.0\" y=\"112.0\" width=\"90.0\" height=\"64.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"85.0\" cy=\"144.0\" r=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g><line x1=\"85.0\" y1=\"144.0\" x2=\"85.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"144.0\" x2=\"67.7\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"85.0\" y1=\"144.0\" x2=\"102.3\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><circle cx=\"85.0\" cy=\"144.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"85\" y=\"104\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P′ = 0,50 kW</text><line x1=\"140\" y1=\"144\" x2=\"250\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\"/><path d=\"M241.2,138.9 L250.0,144.0 L241.2,149.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"195\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t′ = ?</text><text x=\"262\" y=\"149\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cùng công A</text></svg><figcaption>Dữ kiện: hai máy sinh cùng một công A; chiều dài mũi tên thời gian không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“máy bơm nước có công suất $2{,}0$ kW”</td><td>$P=2{,}0\\ \\text{kW}$</td><td>Công suất: tốc độ sinh công; đơn vị W, kW, mã lực</td></tr><tr><td>“hoạt động liên tục”</td><td>Công suất không đổi trong cả khoảng thời gian</td><td>⚠ Công suất không đổi thì mới dùng một công thức cho cả khoảng thời gian</td></tr><tr><td>“$3{,}0$ giờ”</td><td>$t=3{,}0\\ \\text{h}$</td><td>Thời gian hoạt động</td></tr><tr><td>“a) công … theo kWh và theo jun”</td><td>Cần $A$ (kWh) và $A$ (J)</td><td>Công và công suất liên hệ qua thời gian; kWh là đơn vị của công, $1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$</td></tr><tr><td>“b) bao nhiêu mã lực Pháp? $1\\ \\text{CV}=736\\ \\text{W}$”</td><td>$1\\ \\text{CV}=736\\ \\text{W}$; cần $P$ (CV)</td><td>⚠ Đổi hai đại lượng về cùng đơn vị (W) trước khi so</td></tr><tr><td>“c) máy bơm khác … $0{,}50$ kW … cùng công đó”</td><td>$P'=0{,}50\\ \\text{kW}$; $A'=A$</td><td>Cùng công thì thời gian phụ thuộc công suất</td></tr><tr><td>“phải hoạt động bao lâu”</td><td>Cần $t'$ (h)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất và thời gian hoạt động</b> → nghĩ tới <b>A = P·t</b>, rồi đổi đơn vị.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công theo kWh",
+     "hoi": "Công do máy bơm sinh ra trong 3,0 giờ bằng bao nhiêu kWh?",
+     "dap_so": 6.0,
+     "sai_so": 0.1,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Ghi kết quả bằng đơn vị công suất (kW) thay vì đơn vị công, hoặc đổi giờ sang giây rồi vẫn gọi là kWh."
+    },
+    {
+     "tieu_de": "Đổi sang jun",
+     "hoi": "Công đó bằng bao nhiêu jun? (nhập hệ số a của kết quả a·10⁷)",
+     "dap_so": 2.16,
+     "sai_so": 0.02,
+     "don_vi": "×10⁷ J",
+     "loi_hay_gap": "Dùng $1\\ \\text{kWh}=3600\\ \\text{J}$ (nhầm với số giây trong một giờ) hoặc chỉ nhân với $1000$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân công theo kWh với $3{,}6\\cdot10^{6}\\ \\text{J/kWh}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân với $3600$",
+       "dung": false,
+       "vi_sao": "$3600$ chỉ là số giây trong một giờ; $1\\ \\text{kWh}$ còn có hệ số $1000$ từ kW sang W."
+      },
+      {
+       "text": "Nhân với $1000$",
+       "dung": false,
+       "vi_sao": "$1000$ chỉ đổi kW sang W; còn phải đổi giờ sang giây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi sang mã lực",
+     "hoi": "Công suất 2,0 kW bằng bao nhiêu mã lực Pháp (CV)? Lấy 1 CV = 736 W.",
+     "dap_so": 2.72,
+     "sai_so": 0.02,
+     "don_vi": "CV",
+     "loi_hay_gap": "Nhân thay vì chia cho $736$, hoặc quên đổi $2{,}0\\ \\text{kW}$ ra W trước khi chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $2{,}0\\ \\text{kW}$ ra W rồi chia cho $736\\ \\text{W/CV}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân $2{,}0\\ \\text{kW}$ với $736$",
+       "dung": false,
+       "vi_sao": "Phép nhân với $736$ là đổi theo chiều ngược lại, từ CV sang W."
+      },
+      {
+       "text": "Chia $2{,}0$ cho $736$ mà không đổi kW ra W",
+       "dung": false,
+       "vi_sao": "$736$ tính bằng W còn $2{,}0$ tính bằng kW; hai số phải cùng đơn vị mới chia được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Máy bơm thứ hai",
+     "hoi": "Máy 0,50 kW phải hoạt động bao lâu để sinh cùng công đó?",
+     "dap_so": 12,
+     "sai_so": 0.2,
+     "don_vi": "giờ",
+     "loi_hay_gap": "Lấy công suất chia cho công (đảo ngược), hoặc giữ nguyên thời gian cũ vì “cùng công”.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t'=A/P'$ với công theo kWh và công suất theo kW",
+       "dung": true
+      },
+      {
+       "text": "$t'=P'/A$",
+       "dung": false,
+       "vi_sao": "Từ $P=A/t$ suy ra $t=A/P$; công suất chia cho công không ra thời gian."
+      },
+      {
+       "text": "Giữ $t'=3{,}0\\ \\text{h}$ vì cùng công",
+       "dung": false,
+       "vi_sao": "Cùng công nhưng công suất khác nhau thì thời gian sinh ra công đó khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Công suất trung bình khi kéo vật trượt và khi nâng vật",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "problem_html": "<p>Một người làm hai việc liên tiếp.</p>\n<ol type=\"a\"><li>Kéo đều một thùng hàng trượt trên sàn ngang bằng lực kéo $120\\ \\text{N}$ cùng hướng chuyển động. Thùng đi được $15\\ \\text{m}$ trong $20\\ \\text{s}$. Tính công của lực kéo và công suất trung bình khi kéo.</li>\n<li>Nâng đều thùng hàng $24\\ \\text{kg}$ từ sàn lên giá cao $1{,}5\\ \\text{m}$ trong $3{,}0\\ \\text{s}$. Lấy $g=10\\ \\text{m/s}^2$. Tính công suất trung bình của lực nâng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 460 290\" role=\"img\" aria-label=\"Hai cảnh: thùng hàng được kéo trượt 15 m trên sàn ngang trong 20 giây; thùng 24 kg được nâng lên giá cao 1,5 m trong 3,0 giây\"><rect x=\"16\" y=\"100.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"84.0\" y1=\"108.0\" x2=\"84.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"84.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"184.0\" y1=\"108.0\" x2=\"184.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"184.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5</text><line x1=\"284.0\" y1=\"108.0\" x2=\"284.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"284.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"384.0\" y1=\"108.0\" x2=\"384.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"384.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">15 m</text><g><rect x=\"40.0\" y=\"66.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"84.0\" y1=\"83.0\" x2=\"132.0\" y2=\"83.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M122.0,77.2 L132.0,83.0 L122.0,88.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62.0\" y=\"58.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">F = 120 N</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;300.0 0.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><rect x=\"16\" y=\"262.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"310.0\" y=\"217.0\" width=\"120.0\" height=\"45.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"214\" y1=\"262.0\" x2=\"214\" y2=\"217.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M209.9,224.0 L214.0,217.0 L218.1,224.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"214\" y1=\"217.0\" x2=\"214\" y2=\"262.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M218.1,255.0 L214.0,262.0 L209.9,255.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"208\" y=\"245.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,5 m</text><g><rect x=\"240.0\" y=\"228.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"262.0\" y=\"250.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">24 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.0 -45.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"40\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cảnh 1: kéo thùng 15 m trong 20 s</text><text x=\"40\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cảnh 2: nâng thùng lên giá trong 3,0 s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: cảnh 1 chạy chậm 4 lần (20 s thật ứng với 5 s); cảnh 2 chạy đúng thời gian thật (3,0 s). Công và công suất chưa tính.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất trung bình là công chia cho thời gian: $P=\\dfrac{A}{t}$.</li><li>$A=Fd$ khi lực không đổi, cùng hướng độ dịch chuyển.</li><li>Nâng đều: lực nâng cân bằng trọng lực, $F=mg$.</li><li>⚠ <strong>Điều kiện:</strong> với $A=Fd$, lực không đổi và cùng hướng chuyển động.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của lực kéo</span></p>$$A_1=F_1d_1=120\\cdot15$$<div class=\"bt-ans\">$$A_1=1800\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất khi kéo</span></p>$$P_1=\\dfrac{A_1}{t_1}=\\dfrac{1800}{20}$$<div class=\"bt-ans\">$$P_1=90\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực nâng</span></p><p>Nâng đều nên $a=0$, lực nâng cân bằng trọng lực:</p>$$F_2=mg=24\\cdot10$$<div class=\"bt-ans\">$$F_2=240\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của lực nâng</span></p><p>Thùng đi lên đúng bằng độ cao của giá:</p>$$A_2=F_2h=240\\cdot1{,}5$$<div class=\"bt-ans\">$$A_2=360\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công suất khi nâng</span></p>$$P_2=\\dfrac{A_2}{t_2}=\\dfrac{360}{3{,}0}$$<div class=\"bt-ans\">$$P_2=120\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Dùng $P=Fv$ với vận tốc trung bình:</p>$$P_1=F_1\\cdot\\dfrac{d_1}{t_1}=120\\cdot0{,}75=90\\ \\text{W}$$$$P_2=F_2\\cdot\\dfrac{h}{t_2}=240\\cdot0{,}50=120\\ \\text{W}$$<p>Hai cách cho cùng kết quả ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_1=1800\\ \\text{J}$ · $P_1=90\\ \\text{W}$</p><p>b) $P_2=120\\ \\text{W}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực, quãng đường và thời gian</strong> → $A=Fd$ rồi $P=A/t$; nâng đều thì lực nâng là $mg$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 460 290\" role=\"img\" aria-label=\"Cảnh kéo thùng trượt 15 m trong 20 giây và cảnh nâng thùng 24 kg lên giá cao 1,5 m trong 3,0 giây\"><rect x=\"16\" y=\"100.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"84.0\" y1=\"108.0\" x2=\"84.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"84.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"184.0\" y1=\"108.0\" x2=\"184.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"184.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5</text><line x1=\"284.0\" y1=\"108.0\" x2=\"284.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"284.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"384.0\" y1=\"108.0\" x2=\"384.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"384.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">15 m</text><rect x=\"40.0\" y=\"66.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"84.0\" y1=\"83.0\" x2=\"132.0\" y2=\"83.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M122.0,77.2 L132.0,83.0 L122.0,88.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62.0\" y=\"58.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">F = 120 N</text><rect x=\"340.0\" y=\"66.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-dasharray=\"5 4\" stroke-width=\"1.4\"/><line x1=\"84.0\" y1=\"38.0\" x2=\"384.0\" y2=\"38.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M377.0,33.9 L384.0,38.0 L377.0,42.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"384.0\" y1=\"38.0\" x2=\"84.0\" y2=\"38.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M91.0,42.1 L84.0,38.0 L91.0,33.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210.0\" y=\"30.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = 15 m</text><text x=\"40\" y=\"14\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cảnh 1: kéo thùng, t = 20 s</text><text x=\"40\" y=\"176\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cảnh 2: nâng thùng lên giá, t = 3,0 s</text><rect x=\"16\" y=\"262.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"310.0\" y=\"217.0\" width=\"120.0\" height=\"45.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"214\" y1=\"262.0\" x2=\"214\" y2=\"217.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M209.9,224.0 L214.0,217.0 L218.1,224.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"214\" y1=\"217.0\" x2=\"214\" y2=\"262.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M218.1,255.0 L214.0,262.0 L209.9,255.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"208\" y=\"245.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,5 m</text><rect x=\"240.0\" y=\"228.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"262.0\" y=\"250.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">24 kg</text><rect x=\"240.0\" y=\"183.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-dasharray=\"5 4\" stroke-width=\"1.4\"/></svg><figcaption>Dữ kiện: nét đứt là vị trí cuối của thùng. Lực kéo vẽ theo tỉ lệ 1 N ứng với 0,4 px; lực nâng chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Kéo đều một thùng hàng trượt trên sàn ngang”</td><td>Lực kéo không đổi</td><td>⚠ $A=Fd$ dùng khi lực không đổi và cùng hướng chuyển động</td></tr><tr><td>“lực kéo $120$ N”</td><td>$F_1=120\\ \\text{N}$</td><td>Lực sinh công</td></tr><tr><td>“đi được $15$ m trong $20$ s”</td><td>$d_1=15\\ \\text{m}$; $t_1=20\\ \\text{s}$</td><td>Công suất trung bình là công trong một đơn vị thời gian</td></tr><tr><td>“Tính công của lực kéo và công suất trung bình”</td><td>Cần $A_1$ (J) và $P_1$ (W)</td><td>Công của lực; công suất trung bình</td></tr><tr><td>“Nâng đều thùng hàng $24$ kg”</td><td>$m=24\\ \\text{kg}$</td><td>⚠ Nâng đều: gia tốc bằng không, hai lực tác dụng lên thùng cân bằng</td></tr><tr><td>“lên giá cao $1{,}5$ m trong $3{,}0$ s”</td><td>$h=1{,}5\\ \\text{m}$; $t_2=3{,}0\\ \\text{s}$</td><td>Quãng đường nâng là độ cao</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng của vật</td></tr><tr><td>“công suất trung bình của lực nâng”</td><td>Cần $P_2$ (W)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực, quãng đường và thời gian</b> → nghĩ tới <b>A = F·d</b> rồi <b>P = A/t</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của lực kéo",
+     "hoi": "Công của lực kéo 120 N trên quãng đường 15 m bằng bao nhiêu?",
+     "dap_so": 1800,
+     "sai_so": 10,
+     "don_vi": "J",
+     "loi_hay_gap": "Chia quãng đường cho lực, hoặc nhân thêm cả thời gian $20\\ \\text{s}$."
+    },
+    {
+     "tieu_de": "Công suất khi kéo",
+     "hoi": "Công suất trung bình khi kéo bằng bao nhiêu?",
+     "dap_so": 90,
+     "sai_so": 1,
+     "don_vi": "W",
+     "loi_hay_gap": "Nhân công với thời gian thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia công cho thời gian $20\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân công với $20\\ \\text{s}$",
+       "dung": false,
+       "vi_sao": "Nhân công với thời gian cho đại lượng khác; công suất là công trên mỗi giây nên phải chia."
+      },
+      {
+       "text": "Chia công cho $15\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "Chia công cho quãng đường ra lực, không phải công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực nâng",
+     "hoi": "Thùng 24 kg được nâng đều. Lực nâng bằng bao nhiêu? (g = 10 m/s²)",
+     "dap_so": 240,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy lực nâng bằng khối lượng hoặc quên $g$; khối lượng đo bằng kg, lực đo bằng N.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nâng đều nên lực nâng cân bằng trọng lực, $F=mg$",
+       "dung": true
+      },
+      {
+       "text": "$F=m$, vì nâng thì lực nâng bằng khối lượng",
+       "dung": false,
+       "vi_sao": "Khối lượng (kg) và lực (N) khác nhau; trọng lực của vật là $mg$."
+      },
+      {
+       "text": "$F=mgh$",
+       "dung": false,
+       "vi_sao": "$mgh$ là công (J), không phải lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực nâng",
+     "hoi": "Công của lực nâng khi thùng lên cao 1,5 m bằng bao nhiêu?",
+     "dap_so": 360,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng quãng đường $15\\ \\text{m}$ của cảnh 1 hoặc lực kéo $120\\ \\text{N}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân lực nâng với độ cao nâng $1{,}5\\ \\text{m}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân lực kéo $120\\ \\text{N}$ với $1{,}5\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "$120\\ \\text{N}$ là lực kéo ngang ở cảnh 1; ở cảnh 2 lực tác dụng lên thùng là lực nâng."
+      },
+      {
+       "text": "Nhân lực nâng với $15\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "$15\\ \\text{m}$ là quãng đường ở cảnh 1; ở cảnh 2 thùng chỉ đi lên $1{,}5\\ \\text{m}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất khi nâng",
+     "hoi": "Công suất trung bình của lực nâng bằng bao nhiêu?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "W",
+     "loi_hay_gap": "Chia công cho $20\\ \\text{s}$ của cảnh 1 thay vì thời gian nâng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia công của lực nâng cho thời gian nâng $3{,}0\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Chia công của lực nâng cho $20\\ \\text{s}$",
+       "dung": false,
+       "vi_sao": "$20\\ \\text{s}$ là thời gian kéo ở cảnh 1; công của lực nâng sinh ra trong $3{,}0\\ \\text{s}$."
+      },
+      {
+       "text": "Nhân công với thời gian nâng",
+       "dung": false,
+       "vi_sao": "Công suất là công chia thời gian, không phải nhân."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Công suất tức thời P = F·v, đổi km/h ra m/s",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "problem_html": "<p>Một xe máy điện chạy trên đường thẳng nằm ngang. Lực kéo của động cơ luôn cùng hướng chuyển động.</p>\n<ol type=\"a\"><li>Xe chạy đều với tốc độ $36\\ \\text{km/h}$, lực kéo $150\\ \\text{N}$. Tính công suất tức thời của động cơ.</li>\n<li>Xe giữ chạy đều như vậy trong $5{,}0$ phút. Tính công động cơ sinh ra.</li>\n<li>Sau đó xe tăng tốc. Lúc tốc độ đạt $54\\ \\text{km/h}$ thì lực kéo là $120\\ \\text{N}$. Tính công suất tức thời lúc đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 460 160\" role=\"img\" aria-label=\"Xe máy điện chạy đều trên đường thẳng ngang với tốc độ 36 km/h, lực kéo của động cơ 150 N cùng hướng chuyển động\"><rect x=\"16\" y=\"100.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30.0\" y1=\"108.0\" x2=\"30.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"30.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"90.0\" y1=\"108.0\" x2=\"90.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"90.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"150.0\" y1=\"108.0\" x2=\"150.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"150.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">20</text><line x1=\"210.0\" y1=\"108.0\" x2=\"210.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"210.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">30</text><line x1=\"270.0\" y1=\"108.0\" x2=\"270.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"270.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">40</text><line x1=\"330.0\" y1=\"108.0\" x2=\"330.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"330.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">50 m</text><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Xe chạy đều, v = 36 km/h</text><g><circle cx=\"30.0\" cy=\"90.0\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"70.0\" cy=\"90.0\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"24.0\" y=\"62.0\" width=\"52.0\" height=\"18.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"70.0\" y1=\"80.0\" x2=\"76.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"52.0\" x2=\"84.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"26.0\" y1=\"62.0\" x2=\"46.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"86.0\" y1=\"71.0\" x2=\"131.0\" y2=\"71.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M121.0,65.2 L131.0,71.0 L121.0,76.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"52.0\" y=\"42.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">F = 150 N</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;300.0 0.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy đúng thời gian thật 5 s, thước đo quãng đường tính từ vị trí xuất phát. Lực kéo vẽ theo tỉ lệ 1 N ứng với 0,3 px. Công suất chưa tính.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất tức thời là công suất tại đúng một lúc.</li><li>$P=Fv$ với $F$ và $v$ lấy tại lúc đó.</li><li>Đổi tốc độ: $\\text{m/s}=\\dfrac{\\text{km/h}}{3{,}6}$; $1\\ \\text{phút}=60\\ \\text{s}$.</li><li>Chạy đều: $F$, $v$ không đổi nên $P$ không đổi, $A=Pt$.</li><li>⚠ <strong>Điều kiện:</strong> lực cùng hướng chuyển động; $v$ tính bằng m/s.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi tốc độ</span></p>$$v=\\dfrac{36}{3{,}6}$$<div class=\"bt-ans\">$$v=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất tức thời khi chạy đều</span></p><p>$F$ cùng hướng $v$:</p>$$P=Fv=150\\cdot10$$<div class=\"bt-ans\">$$P=1500\\ \\text{W}=1{,}5\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công trong 5,0 phút</span></p><p>Chạy đều nên $P$ không đổi; đổi $t=5{,}0\\ \\text{phút}=300\\ \\text{s}$:</p>$$A=Pt=1500\\cdot300$$<div class=\"bt-ans\">$$A=4{,}5\\cdot10^{5}\\ \\text{J}=450\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất lúc tăng tốc</span></p><p>Đổi tốc độ và dùng $F'$, $v'$ tại đúng lúc đó:</p>$$v'=\\dfrac{54}{3{,}6}=15\\ \\text{m/s}$$$$P'=F'v'=120\\cdot15$$<div class=\"bt-ans\">$$P'=1800\\ \\text{W}=1{,}8\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cách khác cho công: quãng đường $s=vt=10\\cdot300=3000\\ \\text{m}$.</p>$$A=Fs=150\\cdot3000=4{,}5\\cdot10^{5}\\ \\text{J}$$<p>Khớp ý b ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P=1{,}5\\ \\text{kW}$</p><p>b) $A=450\\ \\text{kJ}$</p><p>c) $P'=1{,}8\\ \\text{kW}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực kéo cùng hướng chuyển động và tốc độ km/h</strong> → đổi ra m/s rồi dùng $P=Fv$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 460 160\" role=\"img\" aria-label=\"Xe máy điện có lực kéo F cùng hướng với vận tốc v\"><rect x=\"16\" y=\"100.0\" width=\"428\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30.0\" y1=\"108.0\" x2=\"30.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"30.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">0</text><line x1=\"90.0\" y1=\"108.0\" x2=\"90.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"90.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"150.0\" y1=\"108.0\" x2=\"150.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"150.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">20</text><line x1=\"210.0\" y1=\"108.0\" x2=\"210.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"210.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">30</text><line x1=\"270.0\" y1=\"108.0\" x2=\"270.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"270.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">40</text><line x1=\"330.0\" y1=\"108.0\" x2=\"330.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"330.0\" y=\"132.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">50 m</text><circle cx=\"30.0\" cy=\"90.0\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"70.0\" cy=\"90.0\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"24.0\" y=\"62.0\" width=\"52.0\" height=\"18.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"70.0\" y1=\"80.0\" x2=\"76.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"52.0\" x2=\"84.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"26.0\" y1=\"62.0\" x2=\"46.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"86.0\" y1=\"71.0\" x2=\"131.0\" y2=\"71.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M121.0,65.2 L131.0,71.0 L121.0,76.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"52.0\" y=\"42.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">F = 150 N</text><line x1=\"52.0\" y1=\"24.0\" x2=\"95.2\" y2=\"24.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M85.2,18.2 L95.2,24.0 L85.2,29.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"52.0\" y=\"16.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 36 km/h</text><text x=\"210\" y=\"26\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ý c: v′ = 54 km/h, F′ = 120 N</text></svg><figcaption>Dữ kiện ý a: lực kéo (cam) tỉ lệ 1 N ứng với 0,3 px; vận tốc (xanh) tỉ lệ 1 km/h ứng với 1,2 px. F và v cùng hướng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“chạy trên đường thẳng nằm ngang”</td><td>Chuyển động thẳng</td><td>Lực cùng phương với độ dịch chuyển</td></tr><tr><td>“Lực kéo … luôn cùng hướng chuyển động”</td><td>$\\vec F$ cùng hướng $\\vec v$</td><td>⚠ $P=Fv$ chỉ dùng khi lực cùng hướng chuyển động</td></tr><tr><td>“a) chạy đều với tốc độ $36$ km/h, lực kéo $150$ N”</td><td>$v=36\\ \\text{km/h}$; $F=150\\ \\text{N}$</td><td>⚠ Vận tốc phải ở m/s thì tích $Fv$ mới ra W</td></tr><tr><td>“công suất tức thời”</td><td>Cần $P$ (kW)</td><td>Công suất tại đúng một lúc: $F$ và $v$ lúc đó</td></tr><tr><td>“b) giữ chạy đều … trong $5{,}0$ phút”</td><td>$t=5{,}0\\ \\text{phút}$</td><td>⚠ Chạy đều thì $F$, $v$ không đổi nên $P$ không đổi; $t$ tính bằng giây</td></tr><tr><td>“Tính công động cơ sinh ra”</td><td>Cần $A$ (kJ)</td><td>Công, công suất và thời gian liên hệ nhau</td></tr><tr><td>“c) tăng tốc … $54$ km/h … lực kéo là $120$ N”</td><td>$v'=54\\ \\text{km/h}$; $F'=120\\ \\text{N}$</td><td>Công suất tức thời dùng $F$ và $v$ tại đúng lúc xét, không dùng giá trị của lúc khác</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực kéo cùng hướng chuyển động</b> và <b>tốc độ km/h</b> → nghĩ tới <b>P = F·v</b>, v đổi ra m/s.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi tốc độ",
+     "hoi": "Tốc độ 36 km/h bằng bao nhiêu m/s?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhân với $3{,}6$ thay vì chia, hoặc đưa thẳng $36$ vào công thức."
+    },
+    {
+     "tieu_de": "Công suất tức thời khi chạy đều",
+     "hoi": "Công suất tức thời của động cơ khi chạy đều bằng bao nhiêu kW?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "kW",
+     "loi_hay_gap": "Nhân $150$ với $36$ mà chưa đổi km/h ra m/s, kết quả sai đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân lực kéo với vận tốc đã đổi ra m/s",
+       "dung": true
+      },
+      {
+       "text": "Nhân lực kéo với $36\\ \\text{km/h}$",
+       "dung": false,
+       "vi_sao": "N nhân km/h không ra W; công suất tính bằng W khi $v$ tính bằng m/s."
+      },
+      {
+       "text": "Chia lực kéo cho vận tốc",
+       "dung": false,
+       "vi_sao": "$F/v$ không phải công suất; công suất tức thời là $Fv$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công trong 5,0 phút",
+     "hoi": "Công do động cơ sinh ra trong 5,0 phút chạy đều bằng bao nhiêu kJ?",
+     "dap_so": 450,
+     "sai_so": 3,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Dùng $5{,}0$ thay cho $300\\ \\text{s}$ (quên đổi phút ra giây), hoặc quên đổi J ra kJ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=Pt$ với $t=300\\ \\text{s}$, vì chạy đều thì $P$ không đổi",
+       "dung": true
+      },
+      {
+       "text": "$A=Pt$ với $t=5{,}0$ (phút)",
+       "dung": false,
+       "vi_sao": "$P$ tính bằng W ($\\text{J/s}$) nên $t$ phải tính bằng giây."
+      },
+      {
+       "text": "$A=Fv$",
+       "dung": false,
+       "vi_sao": "$Fv$ là công suất, đơn vị W; muốn có công phải nhân thêm thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất lúc tăng tốc",
+     "hoi": "Khi tốc độ đạt 54 km/h với lực kéo 120 N, công suất tức thời bằng bao nhiêu kW?",
+     "dap_so": 1.8,
+     "sai_so": 0.02,
+     "don_vi": "kW",
+     "loi_hay_gap": "Dùng lại vận tốc $36\\ \\text{km/h}$ của ý a, hoặc cho rằng công suất vẫn như cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F'$ và $v'$ tại đúng lúc đó, sau khi đổi $v'$ ra m/s",
+       "dung": true
+      },
+      {
+       "text": "Giữ công suất của ý a vì vẫn là một xe",
+       "dung": false,
+       "vi_sao": "Công suất tức thời đổi theo $F$ và $v$ tại từng lúc; xe tăng tốc thì $F$ và $v$ đã khác."
+      },
+      {
+       "text": "Dùng $F'$ với $v=36\\ \\text{km/h}$ cũ",
+       "dung": false,
+       "vi_sao": "Vận tốc phải lấy tại đúng lúc xét, tức $v'$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Công suất động cơ nâng vật: lực nâng, vận tốc lớn nhất, thời gian ngắn nhất",
+   "topic": "Công suất của động cơ, máy kéo",
+   "problem_html": "<p>Một cần cẩu tháp có động cơ công suất $22{,}5\\ \\text{kW}$ nâng đều một kiện vật liệu khối lượng $750\\ \\text{kg}$ từ mặt đất lên tầng cao $30\\ \\text{m}$. Coi toàn bộ công suất của động cơ dùng để nâng kiện vật liệu. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính lực nâng của cáp.</li>\n<li>Tính vận tốc nâng đều lớn nhất.</li>\n<li>Tính thời gian ngắn nhất để nâng kiện vật liệu lên $30\\ \\text{m}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 460 290\" role=\"img\" aria-label=\"Cần cẩu tháp có động cơ 22,5 kW nâng kiện vật liệu 750 kg từ mặt đất lên độ cao 30 m\"><line x1=\"30.0\" y1=\"270.0\" x2=\"440.0\" y2=\"270.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"90.0\" y1=\"270.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><rect x=\"52.0\" y=\"30.0\" width=\"18.0\" height=\"20.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"280.0\" y1=\"40.0\" x2=\"280.0\" y2=\"46.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100\" y=\"28\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = 22,5 kW</text><line x1=\"258.0\" y1=\"90.0\" x2=\"352.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><line x1=\"352\" y1=\"270.0\" x2=\"352\" y2=\"90.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M347.9,97.0 L352.0,90.0 L356.1,97.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"352\" y1=\"90.0\" x2=\"352\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M356.1,263.0 L352.0,270.0 L347.9,263.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"362\" y=\"184.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30 m</text><line x1=\"280.0\" y1=\"46\" x2=\"280.0\" y2=\"236.0\" stroke=\"currentColor\" stroke-width=\"1.8\"><animate attributeName=\"y2\" values=\"236.0;56.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><rect x=\"258.0\" y=\"236.0\" width=\"44\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"280.0\" y=\"257.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">750 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.0 -180.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lần nâng thử, tốc độ trong hình chỉ để minh hoạ (không phải kết quả cần tìm). Lực nâng, vận tốc và thời gian chưa tính.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất động cơ giới hạn $F$ và $v$ qua $P=Fv$.</li><li>Nâng đều: lực nâng cân bằng trọng lực, $F=mg$.</li><li>Vận tốc: $v=\\dfrac{P}{F}$ ($P$ đổi ra W).</li><li>Chuyển động đều: $t=\\dfrac{h}{v}$.</li><li>⚠ <strong>Điều kiện:</strong> toàn bộ công suất động cơ dùng để nâng vật.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực nâng</span></p><p>Nâng đều nên lực nâng cân bằng trọng lực:</p>$$F=mg=750\\cdot10$$<div class=\"bt-ans\">$$F=7500\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vận tốc nâng lớn nhất</span></p><p>Đổi $P=22{,}5\\ \\text{kW}=22500\\ \\text{W}$:</p>$$v_{max}=\\dfrac{P}{F}=\\dfrac{22500}{7500}$$<div class=\"bt-ans\">$$v_{max}=3{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian ngắn nhất</span></p><p>Nâng đều với vận tốc lớn nhất:</p>$$t_{min}=\\dfrac{h}{v_{max}}=\\dfrac{30}{3{,}0}$$<div class=\"bt-ans\">$$t_{min}=10\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Công cần để nâng kiện lên $30\\ \\text{m}$:</p>$$A=mgh=750\\cdot10\\cdot30=225000\\ \\text{J}$$$$Pt_{min}=22500\\cdot10=225000\\ \\text{J}$$<p>Hai công bằng nhau ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=7500\\ \\text{N}$</p><p>b) $v_{max}=3{,}0\\ \\text{m/s}$</p><p>c) $t_{min}=10\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất động cơ</strong> và hỏi <strong>vận tốc lớn nhất hoặc thời gian ngắn nhất</strong> → $F=mg$, $v=P/F$, $t=h/v$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 460 290\" role=\"img\" aria-label=\"Kiện vật liệu 750 kg ở mặt đất cần nâng đều lên độ cao 30 m; nét đứt là vị trí cuối\"><line x1=\"30.0\" y1=\"270.0\" x2=\"440.0\" y2=\"270.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"90.0\" y1=\"270.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"40.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><rect x=\"52.0\" y=\"30.0\" width=\"18.0\" height=\"20.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"280.0\" y1=\"40.0\" x2=\"280.0\" y2=\"46.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100\" y=\"28\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = 22,5 kW</text><line x1=\"258.0\" y1=\"90.0\" x2=\"352.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><line x1=\"352\" y1=\"270.0\" x2=\"352\" y2=\"90.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M347.9,97.0 L352.0,90.0 L356.1,97.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"352\" y1=\"90.0\" x2=\"352\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M356.1,263.0 L352.0,270.0 L347.9,263.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"362\" y=\"184.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30 m</text><line x1=\"280.0\" y1=\"46\" x2=\"280.0\" y2=\"236.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"258.0\" y=\"236.0\" width=\"44\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"280.0\" y=\"257.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">750 kg</text><rect x=\"258.0\" y=\"90.0\" width=\"44.0\" height=\"34.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-dasharray=\"5 4\" stroke-width=\"1.4\"/></svg><figcaption>Dữ kiện: độ cao nâng 30 m (nét đứt là vị trí cuối của kiện); chưa vẽ lực nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“động cơ công suất $22{,}5$ kW”</td><td>$P=22{,}5\\ \\text{kW}$</td><td>Công suất của động cơ</td></tr><tr><td>“Coi toàn bộ công suất của động cơ dùng để nâng”</td><td>Công suất động cơ = công suất nâng vật</td><td>⚠ Bỏ qua mọi hao phí; vận tốc lớn nhất ứng với công suất này</td></tr><tr><td>“nâng đều một kiện vật liệu khối lượng $750$ kg”</td><td>$m=750\\ \\text{kg}$</td><td>⚠ Nâng đều: gia tốc bằng không, hai lực tác dụng lên kiện cân bằng</td></tr><tr><td>“lên tầng cao $30$ m”</td><td>$h=30\\ \\text{m}$</td><td>Quãng đường nâng là độ cao</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng của vật</td></tr><tr><td>“a) lực nâng của cáp”</td><td>Cần $F$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) vận tốc nâng đều lớn nhất”</td><td>Cần $v_{max}$ (m/s)</td><td>Công suất liên hệ lực và vận tốc</td></tr><tr><td>“c) thời gian ngắn nhất”</td><td>Cần $t_{min}$ (s)</td><td>Chuyển động đều: quãng đường, vận tốc, thời gian</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất động cơ</b> và <b>nâng đều</b> → nghĩ tới <b>F = mg</b>, <b>v = P/F</b>, <b>t = h/v</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực nâng",
+     "hoi": "Nâng đều, lực nâng của cáp bằng bao nhiêu?",
+     "dap_so": 7500,
+     "sai_so": 50,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên nhân với $g$: khối lượng tính bằng kg, lực tính bằng N."
+    },
+    {
+     "tieu_de": "Vận tốc nâng lớn nhất",
+     "hoi": "Vận tốc nâng đều lớn nhất bằng bao nhiêu?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Để công suất ở đơn vị kW khi chia cho lực ở đơn vị N.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=P/F$ với $P$ đổi ra W",
+       "dung": true
+      },
+      {
+       "text": "$v=F/P$",
+       "dung": false,
+       "vi_sao": "Đảo ngược; từ $P=Fv$ suy ra $v=P/F$."
+      },
+      {
+       "text": "$v=h/t$",
+       "dung": false,
+       "vi_sao": "Chưa biết $t$, đó là điều phải tìm ở ý sau; vận tốc lớn nhất phải rút từ công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian ngắn nhất",
+     "hoi": "Thời gian ngắn nhất để nâng kiện lên 30 m bằng bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng vận tốc không phải vận tốc lớn nhất, hoặc chia công suất cho độ cao.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=h/v$ với $v$ là vận tốc lớn nhất",
+       "dung": true
+      },
+      {
+       "text": "$t=P/h$",
+       "dung": false,
+       "vi_sao": "Công suất chia cho độ cao không ra thời gian; quãng đường chia vận tốc mới ra thời gian."
+      },
+      {
+       "text": "$t=h/v$ với $v$ tuỳ ý",
+       "dung": false,
+       "vi_sao": "Thời gian ngắn nhất chỉ ứng với vận tốc lớn nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Xe lên dốc với công suất tối đa: lực kéo tăng, vận tốc giảm",
+   "topic": "Công suất của động cơ, máy kéo",
+   "problem_html": "<p>Một ô tô tải khối lượng $4{,}5$ tấn có động cơ công suất tối đa $36\\ \\text{kW}$. Tổng lực cản (ma sát và không khí) là $1800\\ \\text{N}$, coi không đổi cả trên đường ngang lẫn khi lên dốc. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Xe chạy đều trên đường ngang với công suất tối đa. Tính vận tốc của xe.</li>\n<li>Xe lên dốc có độ dốc $6\\,\\%$ (đi $100\\ \\text{m}$ theo mặt dốc thì lên cao $6\\ \\text{m}$). Tính lực kéo của động cơ khi xe lên dốc đều.</li>\n<li>Xe lên dốc đều với công suất tối đa. Tính vận tốc của xe.</li>\n<li>Đoạn dốc dài $500\\ \\text{m}$. Tính thời gian xe đi hết đoạn dốc này.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 460 200\" role=\"img\" aria-label=\"Ô tô tải leo lên một con dốc nghiêng nhẹ với công suất tối đa\"><line x1=\"20.0\" y1=\"172.0\" x2=\"440.0\" y2=\"146.8\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ô tô tải 4,5 tấn, công suất tối đa 36 kW</text><text x=\"30\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Dốc 6 %: đi 100 m theo mặt dốc thì lên cao 6 m</text><g><g transform=\"translate(50.0,170.2) rotate(-3.43)\"><rect x=\"-10.0\" y=\"-48.0\" width=\"70.0\" height=\"30.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"60.0\" y=\"-38.0\" width=\"30.0\" height=\"20.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"60.0\" y1=\"-38.0\" x2=\"60.0\" y2=\"-48.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"12.0\" cy=\"-9.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"74.0\" cy=\"-9.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;300.0 -18.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"30\" y=\"96\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Lên dốc với công suất tối đa</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lần chạy thử lên dốc, tốc độ trong hình chỉ để minh hoạ (không phải kết quả cần tìm). Góc dốc vẽ đúng tỉ lệ 6 %. Vận tốc chưa tính.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất tối đa có hạn, $P=Fv$ nên $F$ lớn thì $v$ nhỏ.</li><li>Chạy đều: tổng các lực dọc theo chuyển động bằng không, lực kéo bằng tổng lực cản.</li><li>Thành phần trọng lực dọc dốc: $F_d=mg\\sin\\alpha$, $\\sin\\alpha=\\dfrac{\\text{độ cao}}{\\text{độ dài theo mặt dốc}}$.</li><li>Chuyển động đều: $t=\\dfrac{s}{v}$.</li><li>⚠ <strong>Điều kiện:</strong> lực cản (ma sát, không khí) coi không đổi khi lên dốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Vận tốc trên đường ngang</span></p><p>Chạy đều nên lực kéo bằng lực cản; đổi $P_{max}=36\\ \\text{kW}=36000\\ \\text{W}$:</p>$$F_1=F_c=1800\\ \\text{N}$$$$v_1=\\dfrac{P_{max}}{F_1}=\\dfrac{36000}{1800}$$<div class=\"bt-ans\">$$v_1=20\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực kéo khi lên dốc đều</span></p><p>Độ dốc: $\\sin\\alpha=\\dfrac{6}{100}=0{,}06$; trọng lượng $mg=4500\\cdot10=45000\\ \\text{N}$.</p>$$F_d=mg\\sin\\alpha=45000\\cdot0{,}06=2700\\ \\text{N}$$<p>Lên dốc đều: lực kéo bằng lực cản cộng thành phần trọng lực dọc dốc:</p>$$F_2=F_c+F_d=1800+2700$$<div class=\"bt-ans\">$$F_2=4500\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc khi lên dốc</span></p><p>Vẫn dùng công suất tối đa:</p>$$v_2=\\dfrac{P_{max}}{F_2}=\\dfrac{36000}{4500}$$<div class=\"bt-ans\">$$v_2=8{,}0\\ \\text{m/s}$$</div><p>Đổi: $8{,}0\\cdot3{,}6=28{,}8\\ \\text{km/h}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian đi hết dốc</span></p><p>Lên dốc đều với $v_2$:</p>$$t=\\dfrac{s}{v_2}=\\dfrac{500}{8{,}0}$$<div class=\"bt-ans\">$$t=62{,}5\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$F_1v_1=1800\\cdot20=36000\\ \\text{W},\\quad F_2v_2=4500\\cdot8{,}0=36000\\ \\text{W}$$<p>Cả hai bằng $P_{max}$ ✓.</p><p>Lực kéo tăng $\\dfrac{4500}{1800}=2{,}5$ lần nên vận tốc là $\\dfrac{20}{2{,}5}=8{,}0\\ \\text{m/s}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_1=20\\ \\text{m/s}$ ($72\\ \\text{km/h}$)</p><p>b) $F_2=4500\\ \\text{N}$</p><p>c) $v_2=8{,}0\\ \\text{m/s}$ ($28{,}8\\ \\text{km/h}$)</p><p>d) $t=62{,}5\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>lên dốc đều với công suất tối đa</strong> → lực kéo = lực cản + thành phần trọng lực dọc dốc, rồi $v=P/F$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 460 200\" role=\"img\" aria-label=\"Xe trên dốc: 100 m theo mặt dốc thì lên cao 6 m; trọng lực mg thẳng đứng xuống\"><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ô tô tải 4,5 tấn, công suất tối đa 36 kW</text><line x1=\"60.0\" y1=\"176.0\" x2=\"380.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"60.0\" y1=\"176.0\" x2=\"380.0\" y2=\"176.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><line x1=\"380.0\" y1=\"176.0\" x2=\"380.0\" y2=\"106.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.9\"/><path d=\"M106.0,176.0 A46,46 0 0 0 104.9,166.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"120.0\" y=\"164.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"112\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">100 m theo mặt dốc</text><text x=\"388\" y=\"146\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6 m</text><g transform=\"translate(220.0,141.0) rotate(-12.34)\"><rect x=\"-26\" y=\"-28\" width=\"52\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/></g><line x1=\"217.00824369672395\" y1=\"127.32339975645233\" x2=\"217.0\" y2=\"181.3\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M222.8,171.3 L217.0,181.3 L211.2,171.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"225.0\" y=\"167.3\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">mg</text></svg><figcaption>Dữ kiện: dốc vẽ phóng to cho dễ thấy (thực tế nghiêng ít hơn nhiều); chỉ vẽ trọng lực mg, chưa vẽ thành phần nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ô tô tải khối lượng $4{,}5$ tấn”</td><td>$m=4{,}5\\cdot10^{3}\\ \\text{kg}$</td><td>Trọng lượng $mg$</td></tr><tr><td>“công suất tối đa $36$ kW”</td><td>$P_{max}=36\\ \\text{kW}$</td><td>Công suất tối đa có hạn: $P=Fv$</td></tr><tr><td>“tổng lực cản $1800$ N, coi không đổi”</td><td>$F_c=1800\\ \\text{N}$</td><td>⚠ Chạy đều: lực kéo cân bằng với tổng lực cản</td></tr><tr><td>“a) chạy đều trên đường ngang với công suất tối đa”</td><td>Cần $v_1$ (m/s)</td><td>Công suất liên hệ lực kéo và vận tốc</td></tr><tr><td>“b) độ dốc $6\\,\\%$ (đi $100$ m theo mặt dốc thì lên cao $6$ m)”</td><td>$6\\ \\text{m}$ cao trên $100\\ \\text{m}$ theo mặt dốc</td><td>⚠ Trên dốc, trọng lực có thành phần dọc mặt dốc (phân tích lực)</td></tr><tr><td>“lực kéo … khi xe lên dốc đều”</td><td>Cần $F_2$ (N)</td><td>Chạy đều: tổng các lực dọc theo chuyển động bằng không</td></tr><tr><td>“c) lên dốc đều với công suất tối đa”</td><td>Cần $v_2$ (m/s)</td><td>Công suất liên hệ lực kéo và vận tốc</td></tr><tr><td>“d) đoạn dốc dài $500$ m”</td><td>$s=500\\ \\text{m}$; cần $t$ (s)</td><td>Chuyển động đều: quãng đường, vận tốc, thời gian</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lên dốc đều</b> → nghĩ tới <b>F = lực cản + trọng lực dọc dốc</b>, rồi <b>v = P/F</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Vận tốc trên đường ngang",
+     "hoi": "Chạy đều trên đường ngang với công suất tối đa, vận tốc bằng bao nhiêu?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Quên đổi kW ra W, hoặc dùng khối lượng xe để tính lực kéo."
+    },
+    {
+     "tieu_de": "Lực kéo khi lên dốc đều",
+     "hoi": "Lên dốc đều, lực kéo của động cơ bằng bao nhiêu?",
+     "dap_so": 4500,
+     "sai_so": 30,
+     "don_vi": "N",
+     "loi_hay_gap": "Chỉ tính lực cản trên đường ngang mà bỏ thành phần trọng lực dọc dốc, hoặc cộng cả trọng lượng của xe.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng lực cản với thành phần trọng lực dọc dốc",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy lực cản trên đường ngang",
+       "dung": false,
+       "vi_sao": "Lên dốc, trọng lực có thành phần dọc mặt dốc kéo xe xuống; lực kéo phải thắng thêm phần đó."
+      },
+      {
+       "text": "Cộng lực cản với cả trọng lượng $mg$",
+       "dung": false,
+       "vi_sao": "Chỉ thành phần của trọng lực dọc mặt dốc ($mg\\sin\\alpha$) cản xe; phần vuông góc mặt dốc đã được mặt đường cân bằng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc khi lên dốc",
+     "hoi": "Lên dốc đều với công suất tối đa, vận tốc bằng bao nhiêu?",
+     "dap_so": 8.0,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Dùng lực cản trên đường ngang để tính vận tốc, hoặc quên đổi kW ra W.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=P/F$ với $F$ là lực kéo khi lên dốc",
+       "dung": true
+      },
+      {
+       "text": "$v=P/F_c$ với $F_c$ là lực cản trên đường ngang",
+       "dung": false,
+       "vi_sao": "Lực kéo khi lên dốc khác lực cản trên đường ngang; phải dùng lực kéo ở bước trước."
+      },
+      {
+       "text": "Giữ nguyên vận tốc trên đường ngang vì công suất vẫn là tối đa",
+       "dung": false,
+       "vi_sao": "Công suất không đổi nhưng lực kéo đổi thì vận tốc đổi theo, $v=P/F$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đi hết dốc",
+     "hoi": "Đi hết đoạn dốc dài 500 m mất bao nhiêu giây?",
+     "dap_so": 62.5,
+     "sai_so": 0.5,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng vận tốc trên đường ngang, hoặc đảo ngược tỉ số quãng đường và vận tốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=s/v$ với $v$ của đoạn lên dốc",
+       "dung": true
+      },
+      {
+       "text": "$t=s/v$ với $v$ trên đường ngang",
+       "dung": false,
+       "vi_sao": "Trên dốc xe chạy với vận tốc khác; phải dùng vận tốc lên dốc."
+      },
+      {
+       "text": "$t=v/s$",
+       "dung": false,
+       "vi_sao": "Đảo ngược; thời gian bằng quãng đường chia vận tốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,482 @@
+{
+ "lesson_id": 73,
+ "lesson_title": "Bài 28. Động lượng",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tính động lượng của một vật, đổi đơn vị và xét dấu theo chiều dương",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "problem_html": "<p>Trên một đoạn đường thẳng, xe tải khối lượng $1{,}5$ tấn chạy với tốc độ $54\\ \\text{km/h}$; ô tô con khối lượng $750\\ \\text{kg}$ chạy ngược chiều với tốc độ $72\\ \\text{km/h}$. Chọn chiều dương là chiều chuyển động của xe tải, mốc là mặt đường.</p>\n<ol type=\"a\"><li>Tính động lượng của xe tải.</li>\n<li>Tính động lượng của ô tô con (kể cả dấu).</li>\n<li>Xe nào có động lượng với độ lớn lớn hơn?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Xe tải 1,5 tấn chạy 54 km/h sang phải và ô tô con 750 kg chạy 72 km/h sang trái trên hai làn đường thẳng\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.6\"/><line x1=\"14.0\" y1=\"162.0\" x2=\"406.0\" y2=\"162.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.6\"/><line x1=\"24\" y1=\"22\" x2=\"104\" y2=\"22\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M95.3,17.0 L104.0,22.0 L95.3,27.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"112\" y=\"27\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chiều dương</text><g transform=\"translate(60.0,84)\"><g><g transform=\"scale(1,1)\"><rect x=\"-30\" y=\"-26\" width=\"40\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M10,-4 V-18 H24 L30,-10 V-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-18\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"20\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><line x1=\"31\" y1=\"-14\" x2=\"76.0\" y2=\"-14.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M66.0,-19.8 L76.0,-14.0 L66.0,-8.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"53.5\" y=\"-26\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">54 km/h</text><text x=\"0\" y=\"-36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">xe tải · 1,5 tấn</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;150.0 0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g transform=\"translate(350.0,154)\"><g><g transform=\"scale(-1,1)\"><path d=\"M-20,-4 V-12 H-11 L-5,-20 H8 L14,-12 H20 V-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-11\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"11\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><line x1=\"-21\" y1=\"-14\" x2=\"-81.0\" y2=\"-14.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M-71.0,-8.2 L-81.0,-14.0 L-71.0,-19.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"-51.0\" y=\"-26\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">72 km/h</text><text x=\"0\" y=\"-36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">ô tô con · 750 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-200.0 0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai xe chạy thẳng đều đúng thời gian thật (4 s). Mũi tên vận tốc vẽ cùng tỉ lệ (1 m/s ứng với 3 px). Chiều dương là chiều chuyển động của xe tải. Không vẽ động lượng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> động lượng là vectơ $\\vec p=m\\vec v$, cùng hướng với vận tốc.</li><li>Độ lớn $p=mv$, đơn vị $\\text{kg}\\cdot\\text{m/s}$.</li><li>Chọn chiều dương: vận tốc cùng chiều mang dấu $+$, ngược chiều mang dấu $-$.</li><li>⚠ <strong>Điều kiện:</strong> $m$ tính bằng kg, $v$ bằng m/s (đổi tấn, km/h trước), vận tốc đo so với mặt đường.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Động lượng của xe tải</span></p><p>Đổi đơn vị:</p>$$m_1=1{,}5\\ \\text{tấn}=1500\\ \\text{kg}$$$$v_1=54\\ \\text{km/h}=15\\ \\text{m/s}$$<p>Xe tải chạy theo chiều dương nên $v_1=+15\\ \\text{m/s}$:</p>$$p_1=m_1v_1=1500\\cdot15$$<div class=\"bt-ans\">$$p_1=22500\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Dấu $+$: động lượng cùng chiều dương.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Động lượng của ô tô con</span></p><p>Đổi: $72\\ \\text{km/h}=20\\ \\text{m/s}$. Ô tô chạy ngược chiều dương nên $v_2=-20\\ \\text{m/s}$:</p>$$p_2=m_2v_2=750\\cdot(-20)$$<div class=\"bt-ans\">$$p_2=-15000\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Dấu $-$: động lượng ngược chiều dương.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh độ lớn</span></p><p>So hai độ lớn, bỏ dấu:</p>$$\\lvert p_1\\rvert=22500\\ \\text{kg}\\cdot\\text{m/s}\\ \\gt\\ \\lvert p_2\\rvert=15000\\ \\text{kg}\\cdot\\text{m/s}$$<div class=\"bt-ans\"><p>Xe tải có động lượng với độ lớn lớn hơn.</p></div><p>Ô tô chạy nhanh hơn nhưng khối lượng chỉ bằng một nửa xe tải, nên khối lượng thắng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị $\\text{kg}\\cdot\\text{m/s}$ ✓.</p><p>Hai động lượng trái dấu vì hai xe chạy ngược chiều ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p_1=22500\\ \\text{kg}\\cdot\\text{m/s}$ (cùng chiều dương)</p><p>b) $p_2=-15000\\ \\text{kg}\\cdot\\text{m/s}$</p><p>c) Xe tải</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng, tốc độ và chiều chuyển động</strong> → $p=mv$ với đơn vị chuẩn; chiều dương quyết định dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Hai xe chạy ngược chiều trên hai làn; chiều dương là chiều xe tải\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.6\"/><line x1=\"14.0\" y1=\"162.0\" x2=\"406.0\" y2=\"162.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.6\"/><line x1=\"24\" y1=\"22\" x2=\"104\" y2=\"22\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M95.3,17.0 L104.0,22.0 L95.3,27.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"112\" y=\"27\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chiều dương</text><g transform=\"translate(60.0,84)\"><g><g transform=\"scale(1,1)\"><rect x=\"-30\" y=\"-26\" width=\"40\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M10,-4 V-18 H24 L30,-10 V-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-18\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"20\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><line x1=\"31\" y1=\"-14\" x2=\"76.0\" y2=\"-14.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M66.0,-19.8 L76.0,-14.0 L66.0,-8.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"53.5\" y=\"-26\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">54 km/h</text><text x=\"0\" y=\"-36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">xe tải · 1,5 tấn</text></g></g><g transform=\"translate(350.0,154)\"><g><g transform=\"scale(-1,1)\"><path d=\"M-20,-4 V-12 H-11 L-5,-20 H8 L14,-12 H20 V-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-11\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"11\" cy=\"-3\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></g><line x1=\"-21\" y1=\"-14\" x2=\"-81.0\" y2=\"-14.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M-71.0,-8.2 L-81.0,-14.0 L-71.0,-19.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"-51.0\" y=\"-26\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">72 km/h</text><text x=\"0\" y=\"-36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">ô tô con · 750 kg</text></g></g></svg><figcaption>Dữ kiện: chiều dương là chiều xe tải (sang phải). Mũi tên vận tốc cùng tỉ lệ (1 m/s ứng với 3 px). Chưa vẽ động lượng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“xe tải khối lượng $1{,}5$ tấn … tốc độ $54$ km/h”</td><td>$m_1=1{,}5\\ \\text{tấn}$; $v_1=54\\ \\text{km/h}$</td><td>⚠ Đổi sang đơn vị chuẩn trước khi tính: kg, m/s</td></tr><tr><td>“ô tô con khối lượng $750$ kg chạy ngược chiều … $72$ km/h”</td><td>$m_2=750\\ \\text{kg}$; $v_2=72\\ \\text{km/h}$; ngược chiều xe tải</td><td>Vận tốc là đại lượng có hướng</td></tr><tr><td>“Chọn chiều dương là chiều chuyển động của xe tải, mốc là mặt đường”</td><td>Chiều dương = chiều xe tải; mốc: mặt đường</td><td>⚠ Động lượng là vectơ cùng hướng với vận tốc; dấu theo chiều dương đã chọn</td></tr><tr><td>“a) động lượng của xe tải”</td><td>Cần $p_1$</td><td>Đại lượng cần tìm: động lượng $p=mv$</td></tr><tr><td>“b) động lượng của ô tô con (kể cả dấu)”</td><td>Cần $p_2$ (có dấu)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) xe nào có động lượng với độ lớn lớn hơn”</td><td>So hai độ lớn</td><td>Độ lớn của đại lượng vectơ: bỏ dấu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng, tốc độ và chiều chuyển động</b> → nghĩ tới <b>p = mv</b>, ngược chiều dương thì vận tốc mang dấu âm.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Động lượng của xe tải",
+     "hoi": "Động lượng $p_1$ của xe tải bằng bao nhiêu?",
+     "dap_so": 22500,
+     "sai_so": 100,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Nhân thẳng $1{,}5$ và $54$ mà không đổi tấn sang kg, km/h sang m/s."
+    },
+    {
+     "tieu_de": "Động lượng của ô tô con",
+     "hoi": "Động lượng $p_2$ của ô tô con (theo chiều dương đã chọn) bằng bao nhiêu?",
+     "dap_so": -15000,
+     "sai_so": 100,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Bỏ qua việc xét dấu theo chiều dương đã chọn, hoặc nhân với km/h chưa đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi tốc độ sang m/s, rồi gắn dấu trừ cho vận tốc vì ngược chiều dương",
+       "dung": true
+      },
+      {
+       "text": "Thế thẳng số km/h vào $p=mv$ cho đỡ phải đổi",
+       "dung": false,
+       "vi_sao": "Với đơn vị $\\text{kg}\\cdot\\text{m/s}$, vận tốc phải tính bằng m/s; dùng km/h cho kết quả sai."
+      },
+      {
+       "text": "Lấy vận tốc dương vì tốc độ không âm",
+       "dung": false,
+       "vi_sao": "Tốc độ không âm, nhưng vận tốc có hướng: ngược chiều dương thì mang dấu trừ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh độ lớn",
+     "hoi": "Xe nào có động lượng với độ lớn lớn hơn?",
+     "lua_chon": [
+      {
+       "text": "Xe tải, vì $\\lvert p_1\\rvert\\gt\\lvert p_2\\rvert$",
+       "dung": true
+      },
+      {
+       "text": "Ô tô con, vì chạy nhanh hơn",
+       "dung": false,
+       "vi_sao": "Động lượng phụ thuộc cả khối lượng lẫn tốc độ; ô tô nhanh hơn nhưng nhẹ hơn."
+      },
+      {
+       "text": "Bằng nhau, vì hai xe ngược chiều",
+       "dung": false,
+       "vi_sao": "Ngược chiều chỉ làm hai động lượng trái dấu; độ lớn vẫn do $m\\cdot v$ quyết định."
+      }
+     ],
+     "loi_hay_gap": "So sánh theo tốc độ thay vì theo tích $m\\cdot v$, hoặc kết luận hai xe bằng nhau vì ngược chiều.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bỏ dấu rồi so hai độ lớn $\\lvert p_1\\rvert$ và $\\lvert p_2\\rvert$",
+       "dung": true
+      },
+      {
+       "text": "Cộng $p_1+p_2$ rồi xét dấu của tổng",
+       "dung": false,
+       "vi_sao": "Tổng là động lượng của cả hệ, không cho biết xe nào lớn hơn."
+      },
+      {
+       "text": "So tốc độ hai xe rồi kết luận",
+       "dung": false,
+       "vi_sao": "Động lượng còn phụ thuộc khối lượng; chỉ so tốc độ là bỏ quên một nửa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Xung lượng của lực và tốc độ vật thu được",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "problem_html": "<p>Trong nòng một khẩu súng trường nằm ngang, khí thuốc súng đẩy viên đạn khối lượng $10\\ \\text{g}$ bằng một lực trung bình $9000\\ \\text{N}$ trong thời gian $1{,}0\\ \\text{ms}$. Viên đạn đứng yên trước khi bắn; bỏ qua ma sát và lực cản của không khí.</p>\n<ol type=\"a\"><li>Tính xung lượng của lực đẩy.</li>\n<li>Tính tốc độ của viên đạn khi ra khỏi nòng.</li>\n<li>Nòng ngắn đi sao cho thời gian đẩy chỉ còn $0{,}50\\ \\text{ms}$ với cùng lực đẩy. Tính tốc độ của viên đạn khi ra khỏi nòng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Viên đạn 10 g chạy trong nòng súng nằm ngang dưới lực đẩy trung bình 9000 N trong 1,0 ms\"><rect x=\"40\" y=\"58\" width=\"332\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"40\" y=\"106\" width=\"332\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"40.0\" y1=\"58.0\" x2=\"40.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g transform=\"translate(100.0,86)\"><g><path d=\"M0,-6 H10 L18,0 L10,6 H0 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><line x1=\"-54.0\" y1=\"0\" x2=\"0\" y2=\"0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M-10.0,-5.8 L0.0,0.0 L-10.0,5.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"-54.0\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 9000 N</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;0.7 0;2.7 0;6.1 0;10.8 0;16.9 0;24.3 0;33.1 0;43.2 0;54.7 0;67.5 0;81.7 0;97.2 0;114.1 0;132.3 0;151.9 0;172.8 0;195.1 0;218.7 0;243.7 0;270.0 0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><text x=\"40\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đạn 10 g, đứng yên trước khi bắn</text><text x=\"40\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Lực đẩy của khí thuốc súng tác dụng trong 1,0 ms</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chậm 2000 lần: 1,0 ms thật ứng với 2 s trên hình. Đạn đi trong nòng dưới lực không đổi, nên đường đi tăng theo bình phương thời gian. Không vẽ tốc độ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> xung lượng của lực là tích $\\vec F\\Delta t$, đơn vị $\\text{N}\\cdot\\text{s}$.</li><li><strong>Định luật:</strong> $\\Delta\\vec p=\\vec F\\,\\Delta t$, tức $mv_2-mv_1=F\\Delta t$ ($\\text{N}\\cdot\\text{s}=\\text{kg}\\cdot\\text{m/s}$).</li><li>Đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ và $1\\ \\text{g}=10^{-3}\\ \\text{kg}$ trước khi tính.</li><li>⚠ <strong>Điều kiện:</strong> $F$ là hợp lực lên vật, lấy giá trị trung bình trong $\\Delta t$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Xung lượng của lực đẩy</span></p><p>Đổi $\\Delta t=1{,}0\\ \\text{ms}=1{,}0\\cdot10^{-3}\\ \\text{s}$:</p>$$F\\Delta t=9000\\cdot1{,}0\\cdot10^{-3}$$<div class=\"bt-ans\">$$F\\Delta t=9{,}0\\ \\text{N}\\cdot\\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ ra khỏi nòng</span></p><p>Đạn đứng yên lúc đầu nên $p_1=0$; đổi $m=10\\ \\text{g}=0{,}010\\ \\text{kg}$:</p>$$F\\Delta t=mv_2-0$$$$v_2=\\dfrac{F\\Delta t}{m}=\\dfrac{9{,}0}{0{,}010}$$<div class=\"bt-ans\">$$v_2=900\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nòng ngắn hơn</span></p><p>Lực giữ nguyên, thời gian đẩy $\\Delta t'=0{,}50\\ \\text{ms}=0{,}50\\cdot10^{-3}\\ \\text{s}$:</p>$$v_2'=\\dfrac{F\\Delta t'}{m}=\\dfrac{9000\\cdot0{,}50\\cdot10^{-3}}{0{,}010}$$<div class=\"bt-ans\">$$v_2'=450\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N}\\cdot\\text{s}/\\text{kg}=\\text{m/s}$ ✓.</p><p>Cùng lực, thời gian đẩy giảm một nửa thì tốc độ giảm một nửa ✓.</p><p>$900\\ \\text{m/s}$ cùng cỡ tốc độ đạn súng trường ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Xung lượng $=9{,}0\\ \\text{N}\\cdot\\text{s}$</p><p>b) $v_2=900\\ \\text{m/s}$</p><p>c) $v_2'=450\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực và thời gian tác dụng</strong>, hỏi tốc độ → xung lượng $F\\Delta t$ bằng độ biến thiên động lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Đạn đứng yên trong nòng, lực đẩy 9000 N hướng theo trục nòng\"><rect x=\"40\" y=\"58\" width=\"332\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"40\" y=\"106\" width=\"332\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"40.0\" y1=\"58.0\" x2=\"40.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g transform=\"translate(100.0,86)\"><g><path d=\"M0,-6 H10 L18,0 L10,6 H0 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><line x1=\"-54.0\" y1=\"0\" x2=\"0\" y2=\"0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M-10.0,-5.8 L0.0,0.0 L-10.0,5.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"-54.0\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 9000 N</text></g></g><text x=\"40\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Đạn 10 g, đứng yên trước khi bắn</text><text x=\"40\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Lực đẩy của khí thuốc súng tác dụng trong 1,0 ms</text></svg><figcaption>Dữ kiện: đạn bắt đầu từ trạng thái đứng yên; lực đẩy trung bình vẽ theo tỉ lệ 1000 N ứng với 6 px. Thời gian đẩy 1,0 ms.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“viên đạn khối lượng $10$ g”</td><td>$m=10\\ \\text{g}$</td><td>⚠ Đổi gam sang kilôgam trước khi tính</td></tr><tr><td>“lực trung bình $9000$ N trong thời gian $1{,}0$ ms”</td><td>$F=9000\\ \\text{N}$; $\\Delta t=1{,}0\\ \\text{ms}$</td><td>Xung lượng của lực là tích của $F$ với $\\Delta t$; ⚠ đổi ms sang s</td></tr><tr><td>“nằm ngang … bỏ qua ma sát và lực cản của không khí”</td><td>Lực đẩy là hợp lực lên viên đạn</td><td>⚠ Liên hệ xung lượng với độ biến thiên động lượng dùng với hợp lực</td></tr><tr><td>“Viên đạn đứng yên trước khi bắn”</td><td>$v_1=0$, nên $p_1=0$</td><td>Độ biến thiên động lượng: sau trừ trước</td></tr><tr><td>“a) xung lượng của lực đẩy”</td><td>Cần xung lượng (N·s)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) tốc độ của viên đạn khi ra khỏi nòng”</td><td>Cần $v_2$ (m/s)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) thời gian đẩy chỉ còn $0{,}50$ ms với cùng lực”</td><td>$\\Delta t'=0{,}50\\ \\text{ms}$; $F$ giữ nguyên</td><td>Xét đại lượng nào đổi, đại lượng nào giữ nguyên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực tác dụng trong khoảng thời gian ngắn</b> → nghĩ tới <b>xung lượng FΔt</b>, bằng độ biến thiên động lượng.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Xung lượng của lực đẩy",
+     "hoi": "Xung lượng của lực đẩy bằng bao nhiêu?",
+     "dap_so": 9.0,
+     "sai_so": 0.05,
+     "don_vi": "N·s",
+     "loi_hay_gap": "Dùng $\\Delta t$ tính bằng ms mà không đổi sang giây, kết quả gấp nghìn lần."
+    },
+    {
+     "tieu_de": "Tốc độ ra khỏi nòng",
+     "hoi": "Tốc độ $v_2$ của viên đạn khi ra khỏi nòng bằng bao nhiêu?",
+     "dap_so": 900,
+     "sai_so": 5,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Dùng khối lượng tính bằng gam mà không đổi sang kg, hoặc chia lực cho khối lượng rồi quên nhân thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt xung lượng bằng $mv_2-0$ rồi rút $v_2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $v_2=F/m$",
+       "dung": false,
+       "vi_sao": "$F/m$ là gia tốc (m/s²); muốn tốc độ phải nhân thêm thời gian tác dụng."
+      },
+      {
+       "text": "Lấy $v_2=F\\Delta t\\cdot m$",
+       "dung": false,
+       "vi_sao": "Xung lượng bằng $m\\,v_2$, nên $v_2$ bằng xung lượng chia cho $m$, không nhân."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nòng ngắn hơn",
+     "hoi": "Tốc độ ra khỏi nòng khi thời gian đẩy chỉ còn $0{,}50\\ \\text{ms}$ bằng bao nhiêu?",
+     "dap_so": 450,
+     "sai_so": 3,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cho rằng cùng lực thì tốc độ không đổi, quên rằng thời gian đẩy đã đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $F$, thay $\\Delta t$ mới vào xung lượng",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên tốc độ vì lực không đổi",
+       "dung": false,
+       "vi_sao": "Cùng lực nhưng tác dụng ngắn hơn thì xung lượng nhỏ hơn, nên $v_2$ cũng nhỏ đi."
+      },
+      {
+       "text": "Nhân đôi lực rồi tính lại với $\\Delta t$ cũ",
+       "dung": false,
+       "vi_sao": "Đề giữ nguyên lực, chỉ đổi thời gian đẩy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Động lượng của hệ hai vật theo góc giữa hai chuyển động",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "problem_html": "<p>Hai xe đẩy trong kho trượt trên sàn nhẵn: xe 1 khối lượng $50\\ \\text{kg}$ chạy với tốc độ $6{,}0\\ \\text{m/s}$, xe 2 khối lượng $80\\ \\text{kg}$ chạy với tốc độ $5{,}0\\ \\text{m/s}$. Tính độ lớn động lượng của hệ hai xe (đối với sàn) khi:</p>\n<ol type=\"a\"><li>hai xe chạy ngược chiều nhau trên cùng một đường thẳng;</li>\n<li>hai xe chạy trên hai đường vuông góc nhau;</li>\n<li>hai vận tốc hợp nhau góc $60^\\circ$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Ba cặp xe đẩy chạy về cùng một điểm theo ba cách: ngược chiều, vuông góc, hợp nhau 60 độ\"><rect x=\"5.0\" y=\"30\" width=\"134\" height=\"150\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.3\"/><text x=\"11.0\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">a) ngược chiều</text><g transform=\"translate(21.0,100.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><line x1=\"12\" y1=\"0\" x2=\"30.0\" y2=\"0.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M20.6,-5.4 L30.0,0.0 L20.6,5.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;24.0 0.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g transform=\"translate(129.0,100.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><line x1=\"-12\" y1=\"0\" x2=\"-27.0\" y2=\"0.0\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M-19.2,4.5 L-27.0,0.0 L-19.2,-4.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-20.0 0.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><rect x=\"143.0\" y=\"30\" width=\"134\" height=\"150\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.3\"/><text x=\"149.0\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">b) vuông góc</text><g transform=\"translate(159.0,100.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><line x1=\"12\" y1=\"0\" x2=\"30.0\" y2=\"0.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M20.6,-5.4 L30.0,0.0 L20.6,5.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;24.0 0.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g transform=\"translate(215.0,152.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><line x1=\"0\" y1=\"-12\" x2=\"0.0\" y2=\"-27.0\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M-4.5,-19.2 L0.0,-27.0 L4.5,-19.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 -20.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><rect x=\"281.0\" y=\"30\" width=\"134\" height=\"150\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.3\"/><text x=\"287.0\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">c) hợp 60°</text><g transform=\"translate(297.0,100.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><line x1=\"12\" y1=\"0\" x2=\"30.0\" y2=\"0.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M20.6,-5.4 L30.0,0.0 L20.6,5.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;24.0 0.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g transform=\"translate(327.0,145.0)\"><g><rect x=\"-10\" y=\"-6\" width=\"20\" height=\"12\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><line x1=\"6.0\" y1=\"-10.392304845413264\" x2=\"13.5\" y2=\"-23.4\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M5.7,-18.9 L13.5,-23.4 L13.5,-14.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;10.0 -17.3\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><text x=\"8\" y=\"202\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe 1 (xanh): 50 kg, 6,0 m/s</text><text x=\"8\" y=\"220\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe 2 (cam): 80 kg, 5,0 m/s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng minh hoạ (2 s): quãng đường mỗi xe vẽ tỉ lệ với tốc độ (6,0 : 5,0), độ dài tuyệt đối không theo tỉ lệ thật. Mũi tên vận tốc cùng tỉ lệ (1 m/s ứng với 4 px). Không vẽ động lượng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> động lượng của hệ là tổng vectơ $\\vec p=\\vec p_1+\\vec p_2$.</li><li>Mỗi vật $p_i=m_iv_i$, hệ quy chiếu gắn với sàn.</li><li>Cùng hướng: $p=p_1+p_2$ · ngược hướng: $p=\\lvert p_1-p_2\\rvert$ · vuông góc: $p=\\sqrt{p_1^2+p_2^2}$.</li><li>Góc $\\alpha$ bất kì: $p^2=p_1^2+p_2^2+2p_1p_2\\cos\\alpha$.</li><li>⚠ <strong>Điều kiện:</strong> cộng vectơ, không cộng độ lớn; $\\alpha$ là góc giữa hai vectơ chung gốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Động lượng của xe 1</span></p>$$p_1=m_1v_1=50\\cdot6{,}0$$<div class=\"bt-ans\">$$p_1=300\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Động lượng của xe 2</span></p>$$p_2=m_2v_2=80\\cdot5{,}0$$<div class=\"bt-ans\">$$p_2=400\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ngược chiều ($\\alpha=180^\\circ$)</span></p><p>Chọn chiều dương là chiều của $\\vec p_2$; $\\vec p_1$ ngược chiều nên mang dấu $-$:</p>$$p=p_2-p_1=400-300$$<div class=\"bt-ans\">$$p=100\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Hướng cùng chiều xe 2.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vuông góc ($\\alpha=90^\\circ$)</span></p>$$p=\\sqrt{p_1^2+p_2^2}=\\sqrt{300^2+400^2}=\\sqrt{250000}$$<div class=\"bt-ans\">$$p=500\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hợp nhau $60^\\circ$</span></p>$$p^2=p_1^2+p_2^2+2p_1p_2\\cos60^\\circ$$$$p^2=300^2+400^2+2\\cdot300\\cdot400\\cdot0{,}5=370000$$<div class=\"bt-ans\">$$p=\\sqrt{370000}\\approx608\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Hợp lực luôn nằm trong khoảng từ hiệu đến tổng hai độ lớn: $100\\le p\\le700$ ✓.</p><p>Góc giữa hai vectơ càng nhỏ, tổng càng lớn: $100\\lt500\\lt608\\lt700$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p=100\\ \\text{kg}\\cdot\\text{m/s}$</p><p>b) $p=500\\ \\text{kg}\\cdot\\text{m/s}$</p><p>c) $p\\approx608\\ \\text{kg}\\cdot\\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>động lượng của hệ nhiều vật</strong> và <strong>góc giữa các chuyển động</strong> → tính từng $p_i=m_iv_i$ rồi cộng vectơ theo góc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Hai vectơ vận tốc của hai xe chung gốc O hợp nhau góc 60 độ\"><line x1=\"130\" y1=\"150\" x2=\"202.0\" y2=\"150.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M192.0,144.2 L202.0,150.0 L192.0,155.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"130\" y1=\"150\" x2=\"160.0\" y2=\"98.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M150.0,103.8 L160.0,98.0 L160.0,109.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"130.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><path d=\"M164.0,150.0 A34,34 0 0 0 147.0,120.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"172\" y=\"136\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 60°</text><text x=\"210.0\" y=\"155.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 6,0 m/s</tspan></text><text x=\"168.0\" y=\"100.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 5,0 m/s</tspan></text><text x=\"20\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Trường hợp c): hai vectơ vận tốc chung gốc</text><text x=\"20\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">xe 1: 50 kg · xe 2: 80 kg · sàn nhẵn</text></svg><figcaption>Dữ kiện: v₁ và v₂ chung gốc, vẽ cùng tỉ lệ (1 m/s ứng với 12 px). Ý a) và b) có α = 180° và α = 90°. Chưa vẽ động lượng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“xe 1 khối lượng $50$ kg … tốc độ $6{,}0$ m/s”</td><td>$m_1=50\\ \\text{kg}$; $v_1=6{,}0\\ \\text{m/s}$</td><td>Động lượng của từng vật: $p=mv$</td></tr><tr><td>“xe 2 khối lượng $80$ kg … tốc độ $5{,}0$ m/s”</td><td>$m_2=80\\ \\text{kg}$; $v_2=5{,}0\\ \\text{m/s}$</td><td>Động lượng của từng vật: $p=mv$</td></tr><tr><td>“trượt trên sàn nhẵn … (đối với sàn)”</td><td>Mọi vận tốc đo so với sàn</td><td>⚠ Hai động lượng phải cùng một hệ quy chiếu mới cộng được</td></tr><tr><td>“a) ngược chiều nhau trên cùng một đường thẳng”</td><td>Góc giữa hai vectơ: $\\alpha=180^\\circ$</td><td>Động lượng của hệ là tổng vectơ</td></tr><tr><td>“b) hai đường vuông góc nhau”</td><td>$\\alpha=90^\\circ$</td><td>⚠ Cộng vectơ, không cộng độ lớn; $\\alpha$ là góc giữa hai vectơ chung gốc</td></tr><tr><td>“c) hai vận tốc hợp nhau góc $60^\\circ$”</td><td>$\\alpha=60^\\circ$</td><td>Tổng hai vectơ qua góc $\\alpha$ bất kì</td></tr><tr><td>“độ lớn động lượng của hệ hai xe”</td><td>Cần $p$ (kg·m/s) ở ba trường hợp</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>động lượng của hệ nhiều vật</b> và <b>góc giữa các chuyển động</b> → nghĩ tới <b>cộng vectơ theo góc α</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Động lượng của xe 1",
+     "hoi": "Độ lớn động lượng $p_1$ của xe 1 bằng bao nhiêu?",
+     "dap_so": 300,
+     "sai_so": 1,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Nhầm khối lượng của hai xe khi thế số."
+    },
+    {
+     "tieu_de": "Động lượng của xe 2",
+     "hoi": "Độ lớn động lượng $p_2$ của xe 2 bằng bao nhiêu?",
+     "dap_so": 400,
+     "sai_so": 1,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Dùng tốc độ của xe 1 cho xe 2."
+    },
+    {
+     "tieu_de": "Ngược chiều ($\\alpha=180^\\circ$)",
+     "hoi": "Độ lớn động lượng của hệ khi hai xe chạy ngược chiều bằng bao nhiêu?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Cộng hai độ lớn như khi cùng chiều, hoặc dùng căn tổng bình phương của trường hợp vuông góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn chiều dương rồi cộng đại số hai động lượng trái dấu",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ lớn $p_1+p_2$",
+       "dung": false,
+       "vi_sao": "Chỉ khi cùng chiều mới cộng độ lớn; ngược chiều thì hai vectơ triệt tiêu một phần."
+      },
+      {
+       "text": "Dùng $\\sqrt{p_1^2+p_2^2}$",
+       "dung": false,
+       "vi_sao": "Căn tổng bình phương chỉ dành cho hai vectơ vuông góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vuông góc ($\\alpha=90^\\circ$)",
+     "hoi": "Độ lớn động lượng của hệ khi hai xe chạy trên hai đường vuông góc bằng bao nhiêu?",
+     "dap_so": 500,
+     "sai_so": 2,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Cộng thẳng hai độ lớn, hoặc quên khai căn sau khi cộng bình phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dựng hai vectơ làm hai cạnh góc vuông, tổng là cạnh huyền",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ lớn $p_1+p_2$",
+       "dung": false,
+       "vi_sao": "Cộng thẳng độ lớn chỉ đúng khi hai vectơ cùng hướng; ở đây tổng vectơ ngắn hơn tổng hai độ dài."
+      },
+      {
+       "text": "Lấy hiệu $\\lvert p_1-p_2\\rvert$",
+       "dung": false,
+       "vi_sao": "Hiệu chỉ đúng khi hai vectơ ngược hướng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hợp nhau $60^\\circ$",
+     "hoi": "Độ lớn động lượng của hệ khi hai vận tốc hợp nhau $60^\\circ$ bằng bao nhiêu?",
+     "dap_so": 608,
+     "sai_so": 3,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Dùng nhầm dấu của số hạng chứa $\\cos\\alpha$, hoặc coi như vuông góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $p^2=p_1^2+p_2^2+2p_1p_2\\cos\\alpha$ với $\\alpha=60^\\circ$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $p^2=p_1^2+p_2^2-2p_1p_2\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Sai dấu: $\\alpha$ là góc giữa hai vectơ chung gốc nên số hạng chứa $\\cos\\alpha$ mang dấu $+$."
+      },
+      {
+       "text": "Coi như vuông góc: $p=\\sqrt{p_1^2+p_2^2}$",
+       "dung": false,
+       "vi_sao": "Công thức đó chỉ đúng khi $\\cos\\alpha=0$, tức $\\alpha=90^\\circ$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Độ biến thiên động lượng khi vật bật ngược lại",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "problem_html": "<p>Quả bóng cao su khối lượng $0{,}10\\ \\text{kg}$ lăn trên sàn nhẵn, đập vuông góc vào một vách cứng với tốc độ $4{,}0\\ \\text{m/s}$.</p>\n<ol type=\"a\"><li>Bóng bật ngược lại với cùng tốc độ $4{,}0\\ \\text{m/s}$. Chọn chiều dương là chiều bóng tới vách. Tính độ biến thiên động lượng của bóng.</li>\n<li>Lần khác, bóng tới vách cũng với $4{,}0\\ \\text{m/s}$ nhưng bật lại với tốc độ $3{,}0\\ \\text{m/s}$. Tính độ biến thiên động lượng (chiều dương như ý a).</li>\n<li>Ở ý a, nếu chọn chiều dương là chiều bóng bật ra khỏi vách thì độ biến thiên động lượng bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Quả bóng 0,10 kg lăn tới vách cứng với tốc độ 4,0 m/s rồi bật ngược lại cùng tốc độ\"><line x1=\"380.0\" y1=\"30.0\" x2=\"380.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"380.0\" y1=\"30.0\" x2=\"388.0\" y2=\"38.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"38.4\" x2=\"388.0\" y2=\"46.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"46.8\" x2=\"388.0\" y2=\"54.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"55.2\" x2=\"388.0\" y2=\"63.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"63.6\" x2=\"388.0\" y2=\"71.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"72.0\" x2=\"388.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"80.4\" x2=\"388.0\" y2=\"88.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"88.8\" x2=\"388.0\" y2=\"96.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"97.2\" x2=\"388.0\" y2=\"105.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"105.6\" x2=\"388.0\" y2=\"113.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"114.0\" x2=\"388.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><rect x=\"16\" y=\"112.0\" width=\"364.0\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"372.0\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">vách cứng</text><text x=\"30\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Bóng 0,10 kg trên sàn nhẵn</text><text x=\"30\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Tốc độ tới vách: 4,0 m/s</text><g transform=\"translate(60.0,100.0)\"><g><circle cx=\"0\" cy=\"0\" r=\"12.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><g opacity=\"1\"><line x1=\"15.0\" y1=\"0\" x2=\"55.0\" y2=\"0.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M45.0,-5.8 L55.0,0.0 L45.0,5.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0;0\" keyTimes=\"0;0.5;1\" calcMode=\"discrete\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"-15.0\" y1=\"0\" x2=\"-55.0\" y2=\"0.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M-45.0,5.8 L-55.0,0.0 L-45.0,-5.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;1\" keyTimes=\"0;0.5;1\" calcMode=\"discrete\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;308.0 0;0 0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><line x1=\"30\" y1=\"160\" x2=\"110\" y2=\"160\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M101.3,155.0 L110.0,160.0 L101.3,165.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"118\" y=\"165\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều dương (ý a): chiều tới vách</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chậm 5 lần (ý a): bóng tới vách rồi bật ngược lại cùng tốc độ. Mũi tên vận tốc cùng tỉ lệ (1 m/s ứng với 10 px). Chưa vẽ độ biến thiên động lượng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $\\Delta\\vec p=\\vec p_2-\\vec p_1$ (sau trừ trước), cũng là vectơ.</li><li>Chọn chiều dương trước; vận tốc cùng chiều mang dấu $+$, ngược chiều mang dấu $-$.</li><li>Chiếu lên chiều dương: $\\Delta p=m(v_2-v_1)$.</li><li>⚠ <strong>Điều kiện:</strong> bóng bật ngược lại thì $v_1$ và $v_2$ trái dấu.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn chiều dương, vận tốc sau</span></p><p>Chọn chiều dương là chiều bóng tới vách:</p>$$v_1=+4{,}0\\ \\text{m/s}$$<p>Bóng bật ngược lại nên vận tốc sau mang dấu $-$:</p><div class=\"bt-ans\">$$v_2=-4{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ý a — bật lại cùng tốc độ</span></p>$$\\Delta p=m(v_2-v_1)=0{,}10\\,(-4{,}0-4{,}0)$$<div class=\"bt-ans\">$$\\Delta p=-0{,}80\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Dấu $-$: $\\Delta\\vec p$ hướng ra xa vách.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ý b — bật lại chậm hơn</span></p><p>Vận tốc sau là $v_2=-3{,}0\\ \\text{m/s}$:</p>$$\\Delta p=0{,}10\\,(-3{,}0-4{,}0)$$<div class=\"bt-ans\">$$\\Delta p=-0{,}70\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Bóng bật lại chậm hơn nên $\\lvert\\Delta p\\rvert$ nhỏ hơn ở ý a.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ý c — đổi chiều dương</span></p><p>Chiều dương là chiều bóng bật ra khỏi vách: cả hai vận tốc đổi dấu, $v_1=-4{,}0\\ \\text{m/s}$ và $v_2=+4{,}0\\ \\text{m/s}$:</p>$$\\Delta p=0{,}10\\,\\bigl(4{,}0-(-4{,}0)\\bigr)$$<div class=\"bt-ans\">$$\\Delta p=+0{,}80\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Độ lớn không đổi; chỉ dấu đổi theo chiều dương.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hiệu hai tốc độ $4{,}0-4{,}0=0$ cho $\\Delta p=0$ — vô lí vì bóng đã đổi hướng ✓.</p>$$\\lvert\\Delta p\\rvert=m(v+v')=0{,}10\\,(4{,}0+4{,}0)=0{,}80$$<p>Khớp với ý a và ý c ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Delta p=-0{,}80\\ \\text{kg}\\cdot\\text{m/s}$</p><p>b) $\\Delta p=-0{,}70\\ \\text{kg}\\cdot\\text{m/s}$</p><p>c) $\\Delta p=+0{,}80\\ \\text{kg}\\cdot\\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề nói <strong>bật ngược lại</strong> → chọn chiều dương, hai vận tốc trái dấu, $\\Delta p=m(v_2-v_1)$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Bóng trước và sau va chạm với vách; chiều dương là chiều bóng tới vách\"><line x1=\"380.0\" y1=\"30.0\" x2=\"380.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"380.0\" y1=\"30.0\" x2=\"388.0\" y2=\"38.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"38.4\" x2=\"388.0\" y2=\"46.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"46.8\" x2=\"388.0\" y2=\"54.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"55.2\" x2=\"388.0\" y2=\"63.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"63.6\" x2=\"388.0\" y2=\"71.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"72.0\" x2=\"388.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"80.4\" x2=\"388.0\" y2=\"88.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"88.8\" x2=\"388.0\" y2=\"96.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"97.2\" x2=\"388.0\" y2=\"105.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"105.6\" x2=\"388.0\" y2=\"113.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"114.0\" x2=\"388.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><rect x=\"16\" y=\"112.0\" width=\"364.0\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"372.0\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">vách cứng</text><text x=\"30\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Bóng 0,10 kg trên sàn nhẵn</text><text x=\"30\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Tốc độ tới vách: 4,0 m/s</text><circle cx=\"190\" cy=\"100.0\" r=\"12.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"205.0\" y1=\"100.0\" x2=\"245.0\" y2=\"100.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M235.0,94.2 L245.0,100.0 L235.0,105.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"120\" cy=\"100.0\" r=\"12.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><line x1=\"105.0\" y1=\"100.0\" x2=\"65.0\" y2=\"100.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M75.0,105.8 L65.0,100.0 L75.0,94.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190\" y=\"76.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">trước</text><text x=\"120\" y=\"76.0\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">sau</text><line x1=\"30\" y1=\"160\" x2=\"110\" y2=\"160\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M101.3,155.0 L110.0,160.0 L101.3,165.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"118\" y=\"165\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều dương (ý a): chiều tới vách</text></svg><figcaption>Dữ kiện: hai vị trí của bóng (trước: nét liền, sau: nét đứt); mũi tên vận tốc cùng tỉ lệ (1 m/s ứng với 10 px). Chưa vẽ độ biến thiên động lượng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Quả bóng cao su khối lượng $0{,}10$ kg lăn trên sàn nhẵn”</td><td>$m=0{,}10\\ \\text{kg}$</td><td>Độ biến thiên động lượng: $\\Delta\\vec p=\\vec p_2-\\vec p_1$</td></tr><tr><td>“đập vuông góc vào một vách cứng với tốc độ $4{,}0$ m/s”</td><td>Tốc độ trước va chạm: $4{,}0\\ \\text{m/s}$</td><td>Tốc độ là độ lớn; vận tốc có hướng</td></tr><tr><td>“a) bật ngược lại với cùng tốc độ … chiều dương là chiều bóng tới vách”</td><td>Tốc độ sau: $4{,}0\\ \\text{m/s}$; chiều dương = chiều tới vách</td><td>⚠ Bật ngược lại: hướng vận tốc đổi — xét dấu theo chiều dương đã chọn</td></tr><tr><td>“b) bật lại với tốc độ $3{,}0$ m/s”</td><td>Tốc độ sau: $3{,}0\\ \\text{m/s}$; chiều dương như ý a</td><td>Giữ nguyên chiều dương đã chọn</td></tr><tr><td>“Tính độ biến thiên động lượng”</td><td>Cần $\\Delta p$ ở ý a và ý b</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) chọn chiều dương là chiều bóng bật ra khỏi vách”</td><td>Cùng sự kiện ở ý a, chiều dương ngược lại</td><td>⚠ Đổi chiều dương thì dấu của các vận tốc đổi theo</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bật ngược lại</b> → nghĩ tới <b>chọn chiều dương</b>: hai vận tốc trái dấu, Δp = m(v₂ − v₁).",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chọn chiều dương, vận tốc sau",
+     "hoi": "Chọn chiều dương là chiều bóng tới vách. Vận tốc $v_2$ của bóng sau va chạm (ý a) bằng bao nhiêu?",
+     "dap_so": -4.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Bỏ qua việc xét dấu của vận tốc theo chiều dương đã chọn."
+    },
+    {
+     "tieu_de": "Ý a — bật lại cùng tốc độ",
+     "hoi": "Độ biến thiên động lượng $\\Delta p$ ở ý a bằng bao nhiêu?",
+     "dap_so": -0.8,
+     "sai_so": 0.01,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Lấy hiệu hai tốc độ nên ra kết quả không đáng có, hoặc bỏ dấu của $v_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $m(v_2-v_1)$ với $v_2$ mang dấu trừ",
+       "dung": true
+      },
+      {
+       "text": "Lấy $m\\,(\\lvert v_2\\rvert-\\lvert v_1\\rvert)$",
+       "dung": false,
+       "vi_sao": "Hiệu hai độ lớn bỏ quên việc bóng đã đổi hướng."
+      },
+      {
+       "text": "Chỉ lấy $mv_2$",
+       "dung": false,
+       "vi_sao": "$\\Delta p$ là sau trừ trước; còn phải trừ động lượng trước va chạm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ý b — bật lại chậm hơn",
+     "hoi": "Độ biến thiên động lượng $\\Delta p$ ở ý b bằng bao nhiêu?",
+     "dap_so": -0.7,
+     "sai_so": 0.01,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Dùng $v_2$ của ý a, hoặc lấy hiệu hai tốc độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thay $v_2$ mới (trái dấu $v_1$) vào $m(v_2-v_1)$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên kết quả ý a vì bóng cũng tới với tốc độ cũ",
+       "dung": false,
+       "vi_sao": "Tốc độ sau đã khác nên $v_2$ khác, $\\Delta p$ khác."
+      },
+      {
+       "text": "Lấy hiệu hai tốc độ rồi nhân $m$",
+       "dung": false,
+       "vi_sao": "Hiệu hai tốc độ không cho đúng $\\Delta p$ vì $v_1$ và $v_2$ trái dấu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ý c — đổi chiều dương",
+     "hoi": "Chọn chiều dương là chiều bóng bật ra khỏi vách. Độ biến thiên động lượng ở ý a bằng bao nhiêu?",
+     "dap_so": 0.8,
+     "sai_so": 0.01,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Chỉ đổi dấu một trong hai vận tốc, hoặc giữ nguyên các dấu cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi dấu cả $v_1$ lẫn $v_2$ theo chiều dương mới rồi tính lại",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên kết quả ý a vì vật không đổi",
+       "dung": false,
+       "vi_sao": "Đổi chiều dương thì cả hai vận tốc phải xét lại dấu, nên kết quả không thể giữ nguyên."
+      },
+      {
+       "text": "Chỉ đổi dấu $v_2$, giữ $v_1$",
+       "dung": false,
+       "vi_sao": "Cả hai vận tốc đều phải xét lại theo chiều dương mới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Lực trung bình từ độ biến thiên động lượng và thời gian tác dụng",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "problem_html": "<p>Thủ môn bắt quả bóng khối lượng $0{,}40\\ \\text{kg}$ đang bay ngang với tốc độ $20\\ \\text{m/s}$ và giữ cho bóng dừng hẳn. Coi lực của tay lên bóng nằm ngang và bỏ qua trọng lượng của bóng trong lúc bắt. Chọn chiều dương là chiều bay của bóng.</p>\n<ol type=\"a\"><li>Tay giữ cứng, bóng dừng hẳn sau $0{,}010\\ \\text{s}$. Tính lực trung bình của tay lên bóng.</li>\n<li>Tay co lại theo bóng, bóng dừng hẳn sau $0{,}050\\ \\text{s}$. Tính lực trung bình của tay lên bóng.</li>\n<li>Lực ở ý b bằng bao nhiêu lần lực ở ý a? Vì sao co tay lại thì đỡ đau hơn?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Thủ môn bắt quả bóng 0,40 kg bay ngang với tốc độ 20 m/s theo hai cách: tay giữ cứng và tay co lại theo bóng\"><text x=\"14\" y=\"34.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">a) tay giữ cứng</text><g transform=\"translate(50.0,70.0)\"><g><circle cx=\"0\" cy=\"0\" r=\"10.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><g opacity=\"1\"><line x1=\"-22\" y1=\"-22\" x2=\"22\" y2=\"-22\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M12.6,-27.4 L22.0,-22.0 L12.6,-16.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0;0\" keyTimes=\"0;0.8333;1\" calcMode=\"discrete\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;100.0 0;110.0 0\" dur=\"2.40s\" keyTimes=\"0;0.8333;1\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g><g><rect x=\"160.0\" y=\"50.0\" width=\"14\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"174.0\" y1=\"62.0\" x2=\"184.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"78.0\" x2=\"184.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0 0;10.0 0\" dur=\"2.40s\" keyTimes=\"0;0.8333;1\" begin=\"indefinite\" fill=\"freeze\"/></g></g><text x=\"280\" y=\"75.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = 0,010 s</text><text x=\"14\" y=\"114.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">b) tay co lại theo bóng</text><g transform=\"translate(50.0,150.0)\"><g><circle cx=\"0\" cy=\"0\" r=\"10.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><g opacity=\"1\"><line x1=\"-22\" y1=\"-22\" x2=\"22\" y2=\"-22\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M12.6,-27.4 L22.0,-22.0 L12.6,-16.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0;0\" keyTimes=\"0;0.5000;1\" calcMode=\"discrete\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;100.0 0;150.0 0\" dur=\"4.00s\" keyTimes=\"0;0.5000;1\" begin=\"indefinite\" fill=\"freeze\"/></g></g><g><g><rect x=\"160.0\" y=\"130.0\" width=\"14\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"174.0\" y1=\"142.0\" x2=\"184.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"158.0\" x2=\"184.0\" y2=\"158.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0 0;50.0 0\" dur=\"4.00s\" keyTimes=\"0;0.5000;1\" begin=\"indefinite\" fill=\"freeze\"/></g></g><text x=\"280\" y=\"155.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = 0,050 s</text><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Bóng 0,40 kg bay ngang 20 m/s tới tay thủ môn</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chậm 40 lần: bóng bay 1,0 m rồi dừng hẳn trong tay. Quãng dừng của bóng tính từ giảm tốc đều. Mũi tên xanh là vận tốc của bóng khi bay (chưa vẽ lực).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $\\Delta\\vec p=\\vec p_2-\\vec p_1$; xung lượng của lực là $\\vec F\\Delta t$.</li><li><strong>Định luật:</strong> $\\Delta\\vec p=\\vec F\\,\\Delta t$, suy ra $\\vec F=\\dfrac{\\Delta\\vec p}{\\Delta t}$ (lực trung bình).</li><li>Chọn chiều dương rồi chiếu: $\\Delta p=m(v_2-v_1)$.</li><li>⚠ <strong>Điều kiện:</strong> $F$ là hợp lực; ở đây lực của tay nằm ngang, trọng lượng bóng không đáng kể.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ biến thiên động lượng</span></p><p>Bóng dừng hẳn nên $v_2=0$; chiều dương là chiều bay nên $v_1=+20\\ \\text{m/s}$:</p>$$\\Delta p=m(v_2-v_1)=0{,}40\\,(0-20)$$<div class=\"bt-ans\">$$\\Delta p=-8{,}0\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ý a — tay giữ cứng</span></p>$$F=\\dfrac{\\Delta p}{\\Delta t}=\\dfrac{-8{,}0}{0{,}010}$$<div class=\"bt-ans\">$$F=-800\\ \\text{N}$$</div><p>Độ lớn $800\\ \\text{N}$; dấu $-$: lực của tay hướng ngược chiều bay của bóng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ý b — tay co lại</span></p><p>Bóng vẫn từ $20\\ \\text{m/s}$ về $0$ nên $\\Delta p$ vẫn là $-8{,}0\\ \\text{kg}\\cdot\\text{m/s}$; chỉ $\\Delta t$ đổi:</p>$$F'=\\dfrac{\\Delta p}{\\Delta t'}=\\dfrac{-8{,}0}{0{,}050}$$<div class=\"bt-ans\">$$F'=-160\\ \\text{N}$$</div><p>Độ lớn $160\\ \\text{N}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So sánh hai lực</span></p>$$\\dfrac{F'}{F}=\\dfrac{\\Delta t}{\\Delta t'}=\\dfrac{0{,}010}{0{,}050}$$<div class=\"bt-ans\">$$\\dfrac{F'}{F}=0{,}20$$</div><p>Cùng $\\Delta p$ thì thời gian dừng dài gấp $5$ lần làm lực nhỏ đi $5$ lần. Co tay theo bóng nên đỡ đau hơn; đệm, túi khí, găng tay hoạt động theo cùng nguyên tắc.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Trọng lượng bóng cỡ $0{,}40\\cdot10=4{,}0\\ \\text{N}$, chỉ khoảng $0{,}5\\,\\%$ của $800\\ \\text{N}$, nên bỏ qua trọng lượng là hợp lí ✓.</p><p>Đơn vị: $\\text{kg}\\cdot\\text{m/s}\\,/\\,\\text{s}=\\text{N}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\lvert F\\rvert=800\\ \\text{N}$ (ngược chiều bay)</p><p>b) $\\lvert F'\\rvert=160\\ \\text{N}$</p><p>c) $F'/F=0{,}20$: dừng chậm hơn thì lực nhỏ hơn</p></div><p class=\"bt-note\">Nhận dạng: vật <strong>dừng hẳn sau thời gian Δt</strong> → $F=\\Delta p/\\Delta t$; muốn lực nhỏ thì kéo dài $\\Delta t$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Bóng bay ngang tới tay thủ môn; chiều dương là chiều bay của bóng\"><text x=\"14\" y=\"34.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">a) tay giữ cứng</text><g transform=\"translate(50.0,70.0)\"><circle cx=\"0\" cy=\"0\" r=\"10.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"-22\" y1=\"-22\" x2=\"22\" y2=\"-22\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M12.6,-27.4 L22.0,-22.0 L12.6,-16.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><rect x=\"160.0\" y=\"50.0\" width=\"14\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"174.0\" y1=\"62.0\" x2=\"184.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"78.0\" x2=\"184.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"280\" y=\"75.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = 0,010 s</text><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Bóng 0,40 kg bay ngang 20 m/s tới tay thủ môn</text><line x1=\"30\" y1=\"118\" x2=\"110\" y2=\"118\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M101.3,113.0 L110.0,118.0 L101.3,123.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"118\" y=\"123\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều dương: chiều bay của bóng</text></svg><figcaption>Dữ kiện: bóng bay ngang 20 m/s tới tay thủ môn; chiều dương là chiều bay của bóng. Chưa vẽ lực của tay.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“quả bóng khối lượng $0{,}40$ kg đang bay ngang với tốc độ $20$ m/s”</td><td>$m=0{,}40\\ \\text{kg}$; $v_1=20\\ \\text{m/s}$</td><td>Động lượng $p=mv$</td></tr><tr><td>“giữ cho bóng dừng hẳn”</td><td>$v_2=0$</td><td>Độ biến thiên động lượng: sau trừ trước</td></tr><tr><td>“lực của tay … nằm ngang, bỏ qua trọng lượng của bóng”</td><td>Lực của tay là hợp lực lên bóng</td><td>⚠ $\\Delta\\vec p=\\vec F\\Delta t$ dùng với hợp lực; đề cho phép bỏ qua trọng lượng</td></tr><tr><td>“Chọn chiều dương là chiều bay của bóng”</td><td>$v_1\\gt0$</td><td>Dấu của $\\Delta p$ và của lực theo chiều dương này</td></tr><tr><td>“a) tay giữ cứng, bóng dừng hẳn sau $0{,}010$ s”</td><td>$\\Delta t=0{,}010\\ \\text{s}$</td><td>Lực trung bình qua độ biến thiên động lượng</td></tr><tr><td>“b) tay co lại theo bóng, dừng hẳn sau $0{,}050$ s”</td><td>$\\Delta t'=0{,}050\\ \\text{s}$</td><td>Xét đại lượng nào đổi, đại lượng nào giữ nguyên so với ý a</td></tr><tr><td>“c) bằng bao nhiêu lần … vì sao đỡ đau hơn”</td><td>Cần tỉ số hai lực và lời giải thích</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật dừng hẳn sau thời gian Δt</b> → nghĩ tới <b>F = Δp/Δt</b>; muốn lực nhỏ thì kéo dài Δt.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ biến thiên động lượng",
+     "hoi": "Độ biến thiên động lượng $\\Delta p$ của bóng (chiều dương là chiều bay) bằng bao nhiêu?",
+     "dap_so": -8.0,
+     "sai_so": 0.1,
+     "don_vi": "kg·m/s",
+     "loi_hay_gap": "Lấy $mv_1$ mà không trừ động lượng sau, hoặc bỏ dấu dù $\\Delta\\vec p$ ngược chiều dương."
+    },
+    {
+     "tieu_de": "Ý a — tay giữ cứng",
+     "hoi": "Độ lớn lực trung bình của tay lên bóng ở ý a bằng bao nhiêu?",
+     "dap_so": 800,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhân $\\Delta p$ với $\\Delta t$ thay vì chia, hoặc thay trọng lượng bóng vào làm lực dừng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy độ biến thiên động lượng chia cho thời gian dừng",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\Delta p\\cdot\\Delta t$",
+       "dung": false,
+       "vi_sao": "Xung lượng bằng $F\\Delta t$, nên $F=\\Delta p/\\Delta t$; nhân là sai phép tính."
+      },
+      {
+       "text": "Lấy lực bằng trọng lượng của bóng",
+       "dung": false,
+       "vi_sao": "Trọng lượng là lực hút của Trái Đất; lực làm bóng dừng là lực nằm ngang của tay."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ý b — tay co lại",
+     "hoi": "Độ lớn lực trung bình của tay lên bóng ở ý b bằng bao nhiêu?",
+     "dap_so": 160,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho rằng $\\Delta p$ nhỏ đi vì tay mềm; hoặc giữ nguyên lực của ý a.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên $\\Delta p$ (cùng bóng, cùng dừng hẳn), thay thời gian dừng mới",
+       "dung": true
+      },
+      {
+       "text": "Cho $\\Delta p$ nhỏ đi vì tay mềm",
+       "dung": false,
+       "vi_sao": "Bóng vẫn từ tốc độ cũ về $0$ nên $\\Delta p$ như nhau; tay mềm chỉ làm $\\Delta t$ dài hơn."
+      },
+      {
+       "text": "Giữ nguyên lực của ý a vì cùng một quả bóng",
+       "dung": false,
+       "vi_sao": "Cùng $\\Delta p$ nhưng $\\Delta t$ khác thì $F=\\Delta p/\\Delta t$ khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai lực",
+     "hoi": "Lực ở ý b bằng bao nhiêu lần lực ở ý a?",
+     "dap_so": 0.2,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Đảo ngược tỉ số, hoặc so hai độ biến thiên động lượng thay vì so hai lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia lực ý b cho lực ý a",
+       "dung": true
+      },
+      {
+       "text": "Chia lực ý a cho lực ý b",
+       "dung": false,
+       "vi_sao": "“Ý b bằng bao nhiêu lần ý a” là lấy ý b chia ý a; đảo lại sẽ ra tỉ số lớn hơn $1$."
+      },
+      {
+       "text": "Chia $\\Delta t$ ở ý b cho $\\Delta t$ ở ý a",
+       "dung": false,
+       "vi_sao": "Lực tỉ lệ nghịch với thời gian dừng nên tỉ số lực là nghịch đảo tỉ số thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 1.</strong> So sánh động lượng của xe A và xe B. Biết xe A có khối lượng 1000 kg và vận tốc 60 km/h, xe B có khối lượng 2000 kg và vận tốc 30 km/h.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Đổi $60\\ \\text{km/h}=\\frac{50}{3}\\ \\text{m/s};\\ 30\\ \\text{km/h}=10\\ \\text{m/s}$</p><p class=\"text-base leading-relaxed my-2\">Động lượng của xe A là $p_{A}=m_{A}v_{A}=1000.\\frac{50}{3}=16666,7 kg.m/s.$</p><p class=\"text-base leading-relaxed my-2\">Động lượng của xe B là $p_{B}=m_{B}v_{B}=2000.10=20000 kg.m/s.$</p><p class=\"text-base leading-relaxed my-2\">Vậy động lượng xe B lớn hơn động lượng xe A.</p></details><h4>Bài 2 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 2.</strong> Một vật có khối lượng 1,5 kg được thả rơi tự do xuống đất trong thời gian 0,5 s. Lấy g = 10 m/$s^{2}$. Độ biến thiên động lượng của vật trong khoảng thời gian đó là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Áp dụng công thức $\\Delta p=F.\\Delta t$</p><p class=\"text-base leading-relaxed my-2\">Ta có độ lớn $\\Delta p=F.\\Delta t=mg.\\Delta t= 1,5.10.0,5 = 7,5 kg.m/s.$</p></details><h4>Bài 3 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 3.</strong> Một đoàn tàu có khối lượng 10 tấn đang chuyển động trên đường ray nằm ngang với vận tốc 54 km/h, người lái tàu nhìn ra xa thấy một chướng ngại vật, liền hãm phanh. Tính độ lớn lực hãm để tàu dừng lại sau 10 giây.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Ta có $v_{2}=0\\ \\text{m/s};\\ v_{1}=54\\ \\text{km/h}=15\\ \\text{m/s}$</p><p class=\"text-base leading-relaxed my-2\">Độ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=-mv_{1}=-10000.15=-150000\\ \\text{kg.m/s}.$</p><p class=\"text-base leading-relaxed my-2\">Lực hãm để tàu dừng lại sau 10 s là $\\Delta p=F\\Delta t\\Rightarrow F=\\frac{-150000}{10}=-15000 N.$</p><p class=\"text-base leading-relaxed my-2\">Độ lớn lực hãm là $15000\\ \\text{N}$.</p></details><h4>Bài 4 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 4.</strong> Một viên đạn có khối lượng $m=10\\ \\text{g}$ đang bay với vận tốc $v_{1}=1000\\ \\text{m/s}$ thì gặp bức tường. Sau khi xuyên qua bức tường thì vận tốc của viên đạn còn lại là $v_{2}=400\\ \\text{m/s},$ thời gian xuyên thủng tường là 0,01 s. Độ lớn lực cản trung bình của bức tường lên viên đạn la bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Chọn chiều (+) là chiều chuyển động ban đầu</p><p class=\"text-base leading-relaxed my-2\">Xung lượng của của lực $\\vec{F}.\\Delta t=\\vec{p}_{2}-\\vec{p}_{1}$</p><p class=\"text-base leading-relaxed my-2\">Chiếu lên chiều dương ta được $F.0,01=10.10^{-3}.\\left( 400-1000 \\right)=-6\\ \\text{kg.m/s}\\Rightarrow F=-600\\ \\text{N}.$</p><p class=\"text-base leading-relaxed my-2\">Độ lớn lực cản trung bình của bức tường lên viên đạn bằng $F_{c}=600 N.$</p></details><h4>Bài 5 · Khó</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 5.</strong> Cho một bình chứa không khí, một phân tử khí có khối lượng 4,65.$10^{-26}$kg đang bay với vận tốc 600 m/s va chạm vuông góc với thành bình và bật trở lại với vận tốc cũ. Tính xung lượng của lực tác dụng vào thành bình.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Theo bài ra ta có $v_{2}= v_{1} = v = 600 m/s.$</p><p class=\"text-base leading-relaxed my-2\">Chọn chiều dương là chiều chuyển động của phần tử khí trước khi chạm vào thành bình ta có $\\Delta p=F\\Delta t$</p><p class=\"text-base leading-relaxed my-2\">Chiếu theo chiều dương $F\\Delta t=-mv_{2}-mv_{1}=-2mv\\Rightarrow F\\Delta t=-2.4,65.10^{-26}.600=-5,58.10^{-23} Ns.$</p></details>"
+ }
+}

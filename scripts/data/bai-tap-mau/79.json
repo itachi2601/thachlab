@@ -1,0 +1,462 @@
+{
+ "lesson_id": 79,
+ "lesson_title": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code kiem cheo 10/10/2026, da sua theo gop y"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Khối lượng riêng và áp suất p = F/S (đổi đơn vị)",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một khối kim loại hình hộp chữ nhật có kích thước $3{,}0\\ \\text{cm}\\times4{,}0\\ \\text{cm}\\times15\\ \\text{cm}$, khối lượng $1{,}26\\ \\text{kg}$. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính khối lượng riêng của kim loại, theo kg/m³.</li>\n<li>Đặt khối nằm trên mặt bàn nằm ngang bằng mặt lớn nhất ($4{,}0\\ \\text{cm}\\times15\\ \\text{cm}$). Tính áp suất khối ép lên mặt bàn.</li>\n<li>Dựng khối đứng trên mặt nhỏ nhất ($3{,}0\\ \\text{cm}\\times4{,}0\\ \\text{cm}$). Tính áp suất khối ép lên mặt bàn lúc này.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Khối hộp kim loại nằm trên mặt bàn được lật sang tư thế đứng\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"60.0\" y=\"146.0\" width=\"120.0\" height=\"24.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><g><rect x=\"60.0\" y=\"146.0\" width=\"120.0\" height=\"24.0\" fill=\"#ca8a04\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"2.4\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0.0 180.0 170.0;0.0 180.0 170.0;0.0 180.0 170.0;4.5 180.0 170.0;9.0 180.0 170.0;13.5 180.0 170.0;18.0 180.0 170.0;22.5 180.0 170.0;27.0 180.0 170.0;31.5 180.0 170.0;36.0 180.0 170.0;40.5 180.0 170.0;45.0 180.0 170.0;49.5 180.0 170.0;54.0 180.0 170.0;58.5 180.0 170.0;63.0 180.0 170.0;67.5 180.0 170.0;72.0 180.0 170.0;76.5 180.0 170.0;81.0 180.0 170.0;85.5 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0;90.0 180.0 170.0\" dur=\"3.36s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"60.0\" y1=\"132.0\" x2=\"180.0\" y2=\"132.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M173.0,127.9 L180.0,132.0 L173.0,136.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"180.0\" y1=\"132.0\" x2=\"60.0\" y2=\"132.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M67.0,136.1 L60.0,132.0 L67.0,127.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"98.0\" y=\"126.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">15 cm</text><line x1=\"48.0\" y1=\"146.0\" x2=\"48.0\" y2=\"170.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M52.1,163.0 L48.0,170.0 L43.9,163.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"48.0\" y1=\"170.0\" x2=\"48.0\" y2=\"146.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M43.9,153.0 L48.0,146.0 L52.1,153.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"42.0\" y=\"163.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">3,0 cm</text><text x=\"14\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">nằm: chạm bàn bằng mặt 4,0 × 15 cm</text><text x=\"236\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hộp 3,0 × 4,0 × 15 cm</text><text x=\"236\" y=\"82\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,26 kg</text><text x=\"236\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ρ = ?</text><text x=\"236\" y=\"128\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khối được lật từ tư thế nằm sang tư thế đứng, quay quanh cạnh dưới (khoảng 3 s); đường nét đứt là vị trí lúc đầu. Tỉ lệ 1 cm ứng với 8 px, bề dày 4,0 cm vuông góc với hình.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng riêng $\\rho=m/V$ (kg/m³); áp lực $F$ vuông góc mặt ép; áp suất $p=F/S$ (Pa).</li><li>Đổi: $1\\ \\text{cm}^3=10^{-6}\\ \\text{m}^3$ · $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$.</li><li>Khối đặt trên bàn: áp lực lên bàn bằng trọng lượng, $F=mg$.</li><li>⚠ <strong>Điều kiện:</strong> đổi mọi đại lượng về kg, m, N trước khi thế số; $S$ là diện tích mặt chạm bàn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng riêng</span></p><p>Thể tích hộp, đổi ra m³:</p>$$V=3{,}0\\cdot4{,}0\\cdot15=180\\ \\text{cm}^3=1{,}8\\cdot10^{-4}\\ \\text{m}^3$$<p>Khối lượng riêng:</p>$$\\rho=\\dfrac{m}{V}=\\dfrac{1{,}26}{1{,}8\\cdot10^{-4}}$$<div class=\"bt-ans\">$$\\rho=7000\\ \\text{kg/m}^3$$</div><p>Tức $7{,}0\\ \\text{g/cm}^3$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Áp suất khi khối nằm</span></p><p>Áp lực lên bàn bằng trọng lượng của khối:</p>$$F=mg=1{,}26\\cdot10=12{,}6\\ \\text{N}$$<p>Mặt chạm bàn $4{,}0\\times15=60\\ \\text{cm}^2=6{,}0\\cdot10^{-3}\\ \\text{m}^2$:</p>$$p_1=\\dfrac{F}{S_1}=\\dfrac{12{,}6}{6{,}0\\cdot10^{-3}}$$<div class=\"bt-ans\">$$p_1=2100\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Áp suất khi khối đứng</span></p><p>Cùng áp lực $F=12{,}6\\ \\text{N}$; mặt chạm bàn nhỏ nhất $3{,}0\\times4{,}0=12\\ \\text{cm}^2=1{,}2\\cdot10^{-3}\\ \\text{m}^2$:</p>$$p_2=\\dfrac{F}{S_2}=\\dfrac{12{,}6}{1{,}2\\cdot10^{-3}}$$<div class=\"bt-ans\">$$p_2=10\\,500\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Khối lượng riêng cỡ kim loại thông thường (nhôm $2700$, sắt $7800\\ \\text{kg/m}^3$) ✓.</p><p>Diện tích chạm bàn đổi từ $60$ xuống $12\\ \\text{cm}^2$ (nhỏ đi $5$ lần), $F$ không đổi: $2100\\cdot5=10\\,500\\ \\text{Pa}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\rho=7000\\ \\text{kg/m}^3$</p><p>b) $p_1=2100\\ \\text{Pa}$</p><p>c) $p_2=10\\,500\\ \\text{Pa}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>kích thước, khối lượng</strong> và hỏi <strong>áp suất lên mặt bàn</strong> → $\\rho=m/V$ và $p=F/S$ với $F=mg$; đổi cm về m trước khi thế số.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Khối hộp ở hai tư thế: nằm và đứng, với các kích thước và mặt chạm bàn\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"30.0\" y=\"146.0\" width=\"120.0\" height=\"24.0\" fill=\"#ca8a04\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"30.0\" y1=\"170.0\" x2=\"150.0\" y2=\"170.0\" stroke=\"#34d399\" stroke-width=\"4.5\" opacity=\"1\"/><line x1=\"30.0\" y1=\"132.0\" x2=\"150.0\" y2=\"132.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M143.0,127.9 L150.0,132.0 L143.0,136.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"132.0\" x2=\"30.0\" y2=\"132.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M37.0,136.1 L30.0,132.0 L37.0,127.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"68.0\" y=\"126.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">15 cm</text><line x1=\"162.0\" y1=\"146.0\" x2=\"162.0\" y2=\"170.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M166.1,163.0 L162.0,170.0 L157.9,163.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"162.0\" y1=\"170.0\" x2=\"162.0\" y2=\"146.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M157.9,153.0 L162.0,146.0 L166.1,153.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"168.0\" y=\"163.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3,0 cm</text><rect x=\"250.0\" y=\"50.0\" width=\"24.0\" height=\"120.0\" fill=\"#ca8a04\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"250.0\" y1=\"170.0\" x2=\"274.0\" y2=\"170.0\" stroke=\"#34d399\" stroke-width=\"4.5\" opacity=\"1\"/><line x1=\"288.0\" y1=\"50.0\" x2=\"288.0\" y2=\"170.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M292.1,163.0 L288.0,170.0 L283.9,163.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"288.0\" y1=\"170.0\" x2=\"288.0\" y2=\"50.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M283.9,57.0 L288.0,50.0 L292.1,57.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"294.0\" y=\"115.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">15 cm</text><line x1=\"250.0\" y1=\"38.0\" x2=\"274.0\" y2=\"38.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M267.0,33.9 L274.0,38.0 L267.0,42.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"274.0\" y1=\"38.0\" x2=\"250.0\" y2=\"38.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M257.0,42.1 L250.0,38.0 L257.0,33.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"262.0\" y=\"28.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">3,0 cm</text><text x=\"14\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">nằm: mặt chạm bàn 4,0 × 15 cm</text><text x=\"232\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">đứng: mặt chạm bàn 3,0 × 4,0 cm</text></svg><figcaption>Dữ kiện: hai tư thế của cùng một khối (1 cm ứng với 8 px); nét xanh lá là mặt chạm bàn; bề dày 4,0 cm vuông góc với hình.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“khối kim loại hình hộp chữ nhật $3{,}0\\ \\text{cm}\\times4{,}0\\ \\text{cm}\\times15\\ \\text{cm}$”</td><td>Ba cạnh: $3{,}0$; $4{,}0$; $15$ (cm)</td><td>⚠ Thể tích hình hộp là tích ba cạnh; đổi cm³ ra m³ trước khi thế số</td></tr><tr><td>“khối lượng $1{,}26\\ \\text{kg}$”</td><td>$m=1{,}26\\ \\text{kg}$</td><td>Khối lượng riêng: khối lượng của một đơn vị thể tích</td></tr><tr><td>“Lấy $g=10\\ \\text{m/s}^2$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Áp lực của khối lên bàn do trọng lượng của khối</td></tr><tr><td>“a) khối lượng riêng của kim loại, theo kg/m³”</td><td>Cần $\\rho$ (kg/m³)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) nằm trên mặt bàn bằng mặt lớn nhất ($4{,}0\\ \\text{cm}\\times15\\ \\text{cm}$)”</td><td>Mặt chạm bàn: $4{,}0\\times15\\ \\text{cm}^2$</td><td>⚠ $S$ là diện tích mặt chạm bàn; đổi cm² ra m²</td></tr><tr><td>“c) dựng đứng trên mặt nhỏ nhất ($3{,}0\\ \\text{cm}\\times4{,}0\\ \\text{cm}$)”</td><td>Mặt chạm bàn: $3{,}0\\times4{,}0\\ \\text{cm}^2$</td><td>Cùng một khối; mặt chạm bàn đổi thì diện tích $S$ đổi</td></tr><tr><td>“Tính áp suất khối ép lên mặt bàn”</td><td>Cần áp suất ở hai tư thế (Pa)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kích thước và khối lượng</b> rồi hỏi <b>áp suất lên mặt bàn</b> → nghĩ tới <b>ρ = m/V</b>, <b>p = F/S</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng riêng",
+     "hoi": "Khối lượng riêng của kim loại bằng bao nhiêu kg/m³?",
+     "dap_so": 7000,
+     "sai_so": 50,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Thế thể tích còn ở cm³ hoặc đổi sai bậc, nên khối lượng riêng lệch luỹ thừa của 10."
+    },
+    {
+     "tieu_de": "Áp suất khi khối nằm",
+     "hoi": "Áp suất khối ép lên bàn khi nằm bằng mặt lớn nhất là bao nhiêu Pa?",
+     "dap_so": 2100,
+     "sai_so": 10,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Lấy khối lượng (kg) làm áp lực, hoặc chia cho diện tích còn ở cm².",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy trọng lượng chia cho diện tích mặt chạm bàn, đã đổi ra m²",
+       "dung": true
+      },
+      {
+       "text": "Lấy khối lượng 1,26 kg làm áp lực rồi chia cho diện tích đã đổi ra m²",
+       "dung": false,
+       "vi_sao": "Áp lực là lực (N), không phải khối lượng (kg); phải nhân với $g$ trước."
+      },
+      {
+       "text": "Lấy trọng lượng chia cho diện tích của mặt nhỏ nhất",
+       "dung": false,
+       "vi_sao": "Mặt chạm bàn ở tư thế này là mặt lớn nhất, không phải mặt nhỏ nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Áp suất khi khối đứng",
+     "hoi": "Áp suất khối ép lên bàn khi dựng đứng bằng bao nhiêu Pa?",
+     "dap_so": 10500,
+     "sai_so": 50,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Giữ nguyên diện tích của ý trước, hoặc nhầm mặt chạm bàn với mặt không chạm bàn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ áp lực, đổi sang diện tích mặt chạm bàn mới",
+       "dung": true
+      },
+      {
+       "text": "Giữ diện tích của mặt lớn nhất vì vẫn là cùng một khối",
+       "dung": false,
+       "vi_sao": "Áp suất phụ thuộc diện tích mặt đang chạm bàn; mặt chạm bàn đã đổi nên $S$ đổi."
+      },
+      {
+       "text": "Lấy áp suất ở ý trước nhân với (diện tích mới / diện tích cũ)",
+       "dung": false,
+       "vi_sao": "Áp suất tỉ lệ nghịch với diện tích, nên phải nhân với (diện tích cũ / diện tích mới); nhân ngược lại cho kết quả sai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Áp suất chất lỏng theo độ sâu: p = ρgh",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một bể chứa dầu hoả có khối lượng riêng $0{,}80\\ \\text{g/cm}^3$, mực dầu cao $2{,}5\\ \\text{m}$. Lấy $g=10\\ \\text{m/s}^2$. Chỉ xét áp suất do dầu gây ra.</p>\n<ol type=\"a\"><li>Tính áp suất do dầu gây ra ở đáy bể.</li>\n<li>Điểm $M$ trong dầu cách mặt thoáng $1{,}0\\ \\text{m}$. Tính áp suất do dầu gây ra tại $M$.</li>\n<li>Ở đáy bể có một nắp van tròn diện tích $20\\ \\text{cm}^2$. Tính áp lực của dầu lên nắp van.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Đầu dò áp suất chìm đều từ mặt thoáng xuống đáy bể dầu hoả\"><rect x=\"70.0\" y=\"40.0\" width=\"140.0\" height=\"100.0\" fill=\"#fb923c\" fill-opacity=\"0.30\"/><path d=\"M70.0,22 V140.0 H210.0 V22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"70.0\" y1=\"40.0\" x2=\"210.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"206.0\" y=\"35.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">mặt thoáng</text><line x1=\"222.0\" y1=\"40.0\" x2=\"222.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><line x1=\"222.0\" y1=\"40.0\" x2=\"228.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">0</text><line x1=\"222.0\" y1=\"60.0\" x2=\"228.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"64.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">0,5</text><line x1=\"222.0\" y1=\"80.0\" x2=\"228.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1,0</text><line x1=\"222.0\" y1=\"100.0\" x2=\"228.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"104.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1,5</text><line x1=\"222.0\" y1=\"120.0\" x2=\"228.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">2,0</text><line x1=\"222.0\" y1=\"140.0\" x2=\"228.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"144.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">2,5 m</text><text x=\"222\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">độ sâu</text><circle cx=\"86.0\" cy=\"80.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"96\" y=\"85.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><line x1=\"56\" y1=\"40.0\" x2=\"56\" y2=\"80.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M60.1,73.0 L56.0,80.0 L51.9,73.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56\" y1=\"80.0\" x2=\"56\" y2=\"40.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M51.9,47.0 L56.0,40.0 L60.1,47.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"50\" y=\"64.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,0 m</text><rect x=\"125\" y=\"136.0\" width=\"30\" height=\"8\" fill=\"#34d399\" fill-opacity=\"0.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"140\" y=\"162.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nắp van S = 20 cm²</text><text x=\"268\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Dầu hoả</text><text x=\"268\" y=\"82\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ρ = 0,80 g/cm³</text><text x=\"268\" y=\"102\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Mực dầu cao 2,5 m</text><circle cx=\"104\" cy=\"40.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"40.0;44.0;47.9;51.9;55.8;59.8;63.8;67.7;71.7;75.6;79.6;83.5;87.5;91.5;95.4;99.4;103.3;107.3;111.2;115.2;119.2;123.1;127.1;131.0;135.0\" dur=\"2.88s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đầu dò chìm đều từ mặt thoáng xuống đáy bể (khoảng 3 s), thước độ sâu ghi bên phải. Không vẽ số đo áp suất.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chất lỏng đứng yên gây áp suất theo mọi phương; phần do chất lỏng tại độ sâu $h$ là $\\rho gh$.</li><li>$h$ đo từ mặt thoáng xuống điểm đang xét · $1\\ \\text{g/cm}^3=1000\\ \\text{kg/m}^3$.</li><li>Hai điểm chênh nhau độ sâu $\\Delta h$: $\\Delta p=\\rho g\\Delta h$.</li><li>Áp lực lên diện tích $S$: $F=pS$ ($S$ đổi ra m²).</li><li>⚠ <strong>Điều kiện:</strong> đề hỏi “do dầu gây ra” thì không cộng $p_a$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp suất do dầu ở đáy</span></p><p>Đổi $\\rho=0{,}80\\ \\text{g/cm}^3=800\\ \\text{kg/m}^3$; đáy ở độ sâu $h_1=2{,}5\\ \\text{m}$:</p>$$p_1=\\rho gh_1=800\\cdot10\\cdot2{,}5$$<div class=\"bt-ans\">$$p_1=20\\,000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Áp suất do dầu tại $M$</span></p><p>$M$ cách mặt thoáng $h_M=1{,}0\\ \\text{m}$:</p>$$p_M=\\rho gh_M=800\\cdot10\\cdot1{,}0$$<div class=\"bt-ans\">$$p_M=8000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Áp lực lên nắp van</span></p><p>Diện tích nắp $S=20\\ \\text{cm}^2=2{,}0\\cdot10^{-3}\\ \\text{m}^2$; nắp nằm ở đáy nên dùng áp suất ở đáy:</p>$$F=p_1S=20\\,000\\cdot2{,}0\\cdot10^{-3}$$<div class=\"bt-ans\">$$F=40\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p>$$\\Delta p=\\rho g\\Delta h=800\\cdot10\\cdot(2{,}5-1{,}0)=12\\,000\\ \\text{Pa}$$<p>Khớp với $20\\,000-8000=12\\,000\\ \\text{Pa}$ ✓.</p><p>Đáy sâu hơn $M$ nên áp suất ở đáy lớn hơn ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p_1=20\\,000\\ \\text{Pa}$</p><p>b) $p_M=8000\\ \\text{Pa}$</p><p>c) $F=40\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>mực chất lỏng</strong> và hỏi <strong>áp suất ở độ sâu h</strong> → $p=\\rho gh$ với $h$ đo từ mặt thoáng; đổi $\\rho$ về kg/m³.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Bể dầu hoả cao 2,5 m, điểm M cách mặt thoáng 1,0 m, nắp van ở đáy\"><rect x=\"70.0\" y=\"40.0\" width=\"140.0\" height=\"100.0\" fill=\"#fb923c\" fill-opacity=\"0.30\"/><path d=\"M70.0,22 V140.0 H210.0 V22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"70.0\" y1=\"40.0\" x2=\"210.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"206.0\" y=\"35.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">mặt thoáng</text><line x1=\"222.0\" y1=\"40.0\" x2=\"222.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><line x1=\"222.0\" y1=\"40.0\" x2=\"228.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">0</text><line x1=\"222.0\" y1=\"60.0\" x2=\"228.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"64.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">0,5</text><line x1=\"222.0\" y1=\"80.0\" x2=\"228.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1,0</text><line x1=\"222.0\" y1=\"100.0\" x2=\"228.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"104.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1,5</text><line x1=\"222.0\" y1=\"120.0\" x2=\"228.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">2,0</text><line x1=\"222.0\" y1=\"140.0\" x2=\"228.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.8\"/><text x=\"232\" y=\"144.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">2,5 m</text><text x=\"222\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">độ sâu</text><circle cx=\"86.0\" cy=\"80.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"96\" y=\"85.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M</text><line x1=\"56\" y1=\"40.0\" x2=\"56\" y2=\"80.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M60.1,73.0 L56.0,80.0 L51.9,73.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56\" y1=\"80.0\" x2=\"56\" y2=\"40.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M51.9,47.0 L56.0,40.0 L60.1,47.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"50\" y=\"64.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,0 m</text><rect x=\"125\" y=\"136.0\" width=\"30\" height=\"8\" fill=\"#34d399\" fill-opacity=\"0.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"140\" y=\"162.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nắp van S = 20 cm²</text><text x=\"268\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Dầu hoả</text><text x=\"268\" y=\"82\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ρ = 0,80 g/cm³</text><text x=\"268\" y=\"102\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Mực dầu cao 2,5 m</text><text x=\"284.0\" y=\"124.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">đáy</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"284.0\" y=\"144.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"284\" y=\"164\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></svg><figcaption>Dữ kiện: độ sâu đo từ mặt thoáng xuống; 40 px ứng với 1 m. Chưa có số đo áp suất nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“bể chứa dầu hoả có khối lượng riêng $0{,}80\\ \\text{g/cm}^3$”</td><td>$\\rho=0{,}80\\ \\text{g/cm}^3$</td><td>⚠ Đổi $\\rho$ sang kg/m³ trước khi thế số</td></tr><tr><td>“mực dầu cao $2{,}5\\ \\text{m}$”</td><td>Đáy ở độ sâu $2{,}5\\ \\text{m}$</td><td>⚠ $h$ là độ sâu đo từ mặt thoáng xuống điểm đang xét</td></tr><tr><td>“Chỉ xét áp suất do dầu gây ra”</td><td>Không tính khí quyển</td><td>Áp suất do chất lỏng gây ra là phần $\\rho gh$</td></tr><tr><td>“a) áp suất do dầu gây ra ở đáy bể”</td><td>Cần $p$ ở đáy (Pa)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) điểm $M$ trong dầu cách mặt thoáng $1{,}0\\ \\text{m}$”</td><td>Độ sâu của $M$: $1{,}0\\ \\text{m}$</td><td>Cùng chất lỏng, độ sâu khác thì áp suất khác</td></tr><tr><td>“c) nắp van tròn diện tích $20\\ \\text{cm}^2$ ở đáy bể”</td><td>$S=20\\ \\text{cm}^2$ (đặt tại đáy)</td><td>Áp lực từ áp suất và diện tích; đổi cm² ra m²</td></tr><tr><td>“Lấy $g=10\\ \\text{m/s}^2$”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Hệ số trong $\\rho gh$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>mực chất lỏng</b> và hỏi <b>áp suất ở độ sâu h</b> → nghĩ tới <b>p = ρgh</b>, h đo từ mặt thoáng.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp suất do dầu ở đáy",
+     "hoi": "Áp suất do dầu gây ra ở đáy bể bằng bao nhiêu Pa?",
+     "dap_so": 20000,
+     "sai_so": 100,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Thế ρ = 0,80 vào công thức khi chưa đổi sang kg/m³."
+    },
+    {
+     "tieu_de": "Áp suất do dầu tại $M$",
+     "hoi": "Áp suất do dầu gây ra tại $M$ bằng bao nhiêu Pa?",
+     "dap_so": 8000,
+     "sai_so": 50,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Dùng khoảng cách từ $M$ đến đáy bể thay cho khoảng cách từ $M$ đến mặt thoáng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy độ sâu của $M$ từ mặt thoáng, nhân với $\\rho g$",
+       "dung": true
+      },
+      {
+       "text": "Lấy khoảng cách từ $M$ xuống đáy bể làm $h$",
+       "dung": false,
+       "vi_sao": "$h$ trong $\\rho gh$ là độ sâu tính từ mặt thoáng xuống điểm, không tính từ đáy lên."
+      },
+      {
+       "text": "Lấy một nửa áp suất ở đáy vì $M$ ở khoảng giữa bể",
+       "dung": false,
+       "vi_sao": "Áp suất tỉ lệ với độ sâu thật của điểm; $M$ không nằm đúng giữa bể."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Áp lực lên nắp van",
+     "hoi": "Áp lực của dầu lên nắp van bằng bao nhiêu N?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhân áp suất với diện tích còn ở cm², hoặc dùng áp suất của điểm khác.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân áp suất ở đáy với diện tích nắp (đổi ra m²)",
+       "dung": true
+      },
+      {
+       "text": "Nhân áp suất ở đáy với 20, giữ nguyên đơn vị cm²",
+       "dung": false,
+       "vi_sao": "Áp suất tính bằng Pa = N/m², nên diện tích phải đổi ra m² trước khi nhân."
+      },
+      {
+       "text": "Nhân áp suất tại $M$ với diện tích của nắp van",
+       "dung": false,
+       "vi_sao": "Nắp nằm ở đáy bể, nên áp suất tác dụng lên nắp là áp suất ở đáy, không phải ở $M$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Áp suất tuyệt đối và áp suất dư",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một thùng hình trụ cao $1{,}8\\ \\text{m}$, miệng hở, đựng đầy nước có khối lượng riêng $1000\\ \\text{kg/m}^3$. Áp suất khí quyển là $1{,}0\\cdot10^5\\ \\text{Pa}$; lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính áp suất do nước gây ra ở đáy thùng và áp suất tuyệt đối tại đáy thùng.</li>\n<li>Điểm $A$ trong nước cách đáy thùng $50\\ \\text{cm}$. Tính áp suất tuyệt đối tại $A$ và số chỉ của áp kế (đo áp suất dư) gắn tại $A$.</li>\n<li>Một điểm $B$ trong thùng có áp suất tuyệt đối $1{,}12\\cdot10^5\\ \\text{Pa}$. Tính khoảng cách từ $B$ đến mặt thoáng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Nước dâng dần trong thùng trụ cao 1,8 m tới miệng thùng; điểm A cách đáy 0,50 m\"><rect x=\"70.0\" y=\"182.0\" width=\"100.0\" height=\"0.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"><animate attributeName=\"y\" values=\"182.0;177.2;172.3;167.5;162.6;157.8;152.9;148.1;143.2;138.4;133.5;128.7;123.8;119.0;114.2;109.3;104.5;99.6;94.8;89.9;85.1;80.2;75.4;70.5;65.7;60.8;56.0\" dur=\"3.38s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;4.8;9.7;14.5;19.4;24.2;29.1;33.9;38.8;43.6;48.5;53.3;58.2;63.0;67.8;72.7;77.5;82.4;87.2;92.1;96.9;101.8;106.6;111.5;116.3;121.2;126.0\" dur=\"3.38s\" begin=\"indefinite\" fill=\"freeze\"/></rect><path d=\"M70.0,56.0 V182.0 H170.0 V56.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"120\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">miệng hở</text><circle cx=\"120.0\" cy=\"147.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"129.0\" y=\"151.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><line x1=\"50\" y1=\"56.0\" x2=\"50\" y2=\"182.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M54.1,175.0 L50.0,182.0 L45.9,175.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"50\" y1=\"182.0\" x2=\"50\" y2=\"56.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M45.9,63.0 L50.0,56.0 L54.1,63.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"44\" y=\"124.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,8 m</text><line x1=\"192\" y1=\"147.0\" x2=\"192\" y2=\"182.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M196.1,175.0 L192.0,182.0 L187.9,175.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"192\" y1=\"182.0\" x2=\"192\" y2=\"147.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M187.9,154.0 L192.0,147.0 L196.1,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"198\" y=\"169.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">0,50 m</text><text x=\"262\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước: ρ = 1000 kg/m³</text><text x=\"262.0\" y=\"88.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">a</tspan><tspan dy=\"-4\"> = 1,0·10⁵ Pa</tspan></text><text x=\"262\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">g = 10 m/s²</text><g opacity=\"0\"><line x1=\"120.0\" y1=\"127.0\" x2=\"120.0\" y2=\"141.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"y1\" values=\"127.0;127.0;127.0;127.0;127.0;127.0;127.0;127.0;127.0;127.0;127.0;127.0;123.8;119.0;114.2;109.3;104.5;99.6;94.8;89.9;85.1;80.2;75.4;70.5;65.7;60.8;56.0\" dur=\"3.38s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M124.5,133.2 L120.0,141.0 L115.5,133.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;1;1\" dur=\"3.38s\" calcMode=\"discrete\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"120.0\" cy=\"147.0\" r=\"4.5\" fill=\"currentColor\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng được đổ nước từ cạn đến đầy (khoảng 3 s). Mũi tên cam nối mặt nước với A, xuất hiện khi nước vượt qua A và dài dần theo mực nước. 70 px ứng với 1 m.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> áp suất tuyệt đối tại điểm ở độ sâu $h$: $p=p_a+\\rho gh$.</li><li>Áp suất dư (số chỉ áp kế) là phần vượt trên khí quyển: $p-p_a=\\rho gh$.</li><li>Áp suất “do chất lỏng gây ra” cũng là $\\rho gh$.</li><li>Đổi chiều: $h=\\dfrac{p-p_a}{\\rho g}$.</li><li>⚠ <strong>Điều kiện:</strong> miệng thùng hở nên mặt thoáng chịu $p_a$; $h$ đo từ mặt thoáng xuống điểm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp suất ở đáy thùng</span></p><p>Đáy sâu $h=1{,}8\\ \\text{m}$ so với mặt thoáng. Phần do nước:</p>$$\\rho gh=1000\\cdot10\\cdot1{,}8=18\\,000\\ \\text{Pa}$$<p>Áp suất tuyệt đối thêm áp suất khí quyển:</p>$$p_{\\text{đáy}}=p_a+\\rho gh=1{,}0\\cdot10^5+18\\,000$$<div class=\"bt-ans\">$$p_{\\text{đáy}}=118\\,000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điểm $A$: áp suất dư</span></p><p>Độ sâu của $A$ so với mặt thoáng:</p>$$h_A=1{,}8-0{,}50=1{,}3\\ \\text{m}$$<p>Áp kế đo áp suất dư, tức phần do nước:</p>$$p_{\\text{dư}}=\\rho gh_A=1000\\cdot10\\cdot1{,}3$$<div class=\"bt-ans\">$$p_{\\text{dư}}=13\\,000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điểm $A$: áp suất tuyệt đối</span></p>$$p_A=p_a+\\rho gh_A=1{,}0\\cdot10^5+13\\,000$$<div class=\"bt-ans\">$$p_A=113\\,000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điểm $B$: độ sâu</span></p><p>Bỏ phần khí quyển trước:</p>$$\\rho gh_B=p_B-p_a=1{,}12\\cdot10^5-1{,}0\\cdot10^5=12\\,000\\ \\text{Pa}$$$$h_B=\\dfrac{12\\,000}{\\rho g}=\\dfrac{12\\,000}{1000\\cdot10}$$<div class=\"bt-ans\">$$h_B=1{,}2\\ \\text{m}$$</div><p>$B$ nằm trong thùng vì $1{,}2\\ \\text{m}\\lt1{,}8\\ \\text{m}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$p_{\\text{đáy}}-p_A=\\rho g\\cdot0{,}50=5000\\ \\text{Pa}$$<p>Khớp với $118\\,000-113\\,000=5000\\ \\text{Pa}$ ✓.</p><p>Áp suất dư luôn nhỏ hơn áp suất tuyệt đối đúng $p_a$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) do nước: $18\\,000\\ \\text{Pa}$ · tuyệt đối: $118\\,000\\ \\text{Pa}$</p><p>b) tuyệt đối tại $A$: $113\\,000\\ \\text{Pa}$ · áp kế chỉ $13\\,000\\ \\text{Pa}$</p><p>c) $h_B=1{,}2\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>áp suất tuyệt đối</strong> hay <strong>áp suất dư (áp kế)</strong> → xét có cộng $p_a$ hay không; $h$ luôn đo từ mặt thoáng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Thùng trụ cao 1,8 m đầy nước, miệng hở; điểm A cách đáy 0,50 m\"><rect x=\"70.0\" y=\"56.0\" width=\"100.0\" height=\"126.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"/><path d=\"M70.0,56.0 V182.0 H170.0 V56.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"120\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">miệng hở</text><circle cx=\"120.0\" cy=\"147.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"129.0\" y=\"151.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><line x1=\"50\" y1=\"56.0\" x2=\"50\" y2=\"182.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M54.1,175.0 L50.0,182.0 L45.9,175.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"50\" y1=\"182.0\" x2=\"50\" y2=\"56.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M45.9,63.0 L50.0,56.0 L54.1,63.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"44\" y=\"124.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,8 m</text><line x1=\"192\" y1=\"147.0\" x2=\"192\" y2=\"182.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M196.1,175.0 L192.0,182.0 L187.9,175.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"192\" y1=\"182.0\" x2=\"192\" y2=\"147.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M187.9,154.0 L192.0,147.0 L196.1,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"198\" y=\"169.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">0,50 m</text><text x=\"262\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước: ρ = 1000 kg/m³</text><text x=\"262.0\" y=\"88.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">a</tspan><tspan dy=\"-4\"> = 1,0·10⁵ Pa</tspan></text><text x=\"262\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">g = 10 m/s²</text><text x=\"262.0\" y=\"132.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">đáy</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"262\" y=\"152\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p tại A = ?</text></svg><figcaption>Dữ kiện: thùng đầy nước đến miệng; 70 px ứng với 1 m; A đánh dấu cách đáy 0,50 m. Chưa vẽ độ sâu của A.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hình trụ cao $1{,}8\\ \\text{m}$, miệng hở, đựng đầy nước”</td><td>Mặt thoáng ở miệng thùng, cao $1{,}8\\ \\text{m}$ so với đáy</td><td>⚠ Miệng thùng hở thì mặt thoáng chịu áp suất nào?</td></tr><tr><td>“khối lượng riêng $1000\\ \\text{kg/m}^3$”, “$p_a=1{,}0\\cdot10^5\\ \\text{Pa}$”</td><td>$\\rho=1000\\ \\text{kg/m}^3$; $p_a=1{,}0\\cdot10^5\\ \\text{Pa}$</td><td>Áp suất tại điểm ở độ sâu $h$ gồm hai phần</td></tr><tr><td>“a) áp suất do nước gây ra ở đáy … và áp suất tuyệt đối tại đáy”</td><td>Hai đại lượng khác nhau tại cùng một điểm</td><td>⚠ Hai cách hỏi này khác nhau ở điểm nào?</td></tr><tr><td>“b) điểm $A$ … cách đáy thùng $50\\ \\text{cm}$”</td><td>$A$ cao $0{,}50\\ \\text{m}$ so với đáy</td><td>⚠ Độ cao so với đáy có phải độ sâu $h$ không?</td></tr><tr><td>“số chỉ của áp kế (đo áp suất dư) gắn tại $A$”</td><td>Cần $p$ dư tại $A$ (Pa)</td><td>Áp suất dư: phần vượt trên khí quyển</td></tr><tr><td>“c) điểm $B$ … áp suất tuyệt đối $1{,}12\\cdot10^5\\ \\text{Pa}$”</td><td>$p_B=1{,}12\\cdot10^5\\ \\text{Pa}$; cần $h_B$ (m)</td><td>Đổi chiều: biết áp suất, tìm độ sâu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>áp suất tuyệt đối</b> hoặc <b>áp suất dư</b> (áp kế) trong đề → nghĩ tới <b>có cộng pₐ hay không</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp suất ở đáy thùng",
+     "hoi": "Áp suất tuyệt đối tại đáy thùng bằng bao nhiêu Pa?",
+     "dap_so": 118000,
+     "sai_so": 500,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Chỉ tính phần do nước, bỏ quên phần khí quyển trên mặt thoáng."
+    },
+    {
+     "tieu_de": "Điểm $A$: áp suất dư",
+     "hoi": "Áp kế gắn tại $A$ chỉ áp suất dư bằng bao nhiêu Pa?",
+     "dap_so": 13000,
+     "sai_so": 100,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Lấy độ cao của $A$ so với đáy làm $h$, hoặc cộng thêm áp suất khí quyển vào số chỉ của áp kế.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy độ sâu của $A$ từ mặt thoáng, nhân với $\\rho g$",
+       "dung": true
+      },
+      {
+       "text": "Lấy độ cao 0,50 m của $A$ so với đáy để làm $h$",
+       "dung": false,
+       "vi_sao": "$h$ đo từ mặt thoáng xuống điểm, không đo từ đáy lên."
+      },
+      {
+       "text": "Cộng thêm $p_a$ vì áp kế đo áp suất tại điểm $A$",
+       "dung": false,
+       "vi_sao": "Áp kế đo áp suất dư, phần vượt trên khí quyển; cộng $p_a$ cho áp suất tuyệt đối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điểm $A$: áp suất tuyệt đối",
+     "hoi": "Áp suất tuyệt đối tại $A$ bằng bao nhiêu Pa?",
+     "dap_so": 113000,
+     "sai_so": 500,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Trừ thay vì cộng áp suất khí quyển, hoặc lấy luôn áp suất ở đáy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng áp suất khí quyển với phần do nước tại $A$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $p_a$ trừ phần do nước tại $A$",
+       "dung": false,
+       "vi_sao": "Nước phía trên $A$ ép thêm xuống nên áp suất lớn hơn $p_a$, không nhỏ hơn."
+      },
+      {
+       "text": "Giữ áp suất tuyệt đối ở đáy vì cùng một thùng nước",
+       "dung": false,
+       "vi_sao": "Chỉ các điểm cùng độ sâu mới cùng áp suất; $A$ nông hơn đáy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điểm $B$: độ sâu",
+     "hoi": "Điểm $B$ cách mặt thoáng bao nhiêu mét?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "m",
+     "loi_hay_gap": "Chia cả áp suất tuyệt đối cho $\\rho g$, hoặc bỏ quên $g$ khi chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trừ $p_a$, rồi chia phần còn lại cho $\\rho g$",
+       "dung": true
+      },
+      {
+       "text": "Chia thẳng áp suất tuyệt đối của $B$ cho $\\rho g$",
+       "dung": false,
+       "vi_sao": "Phần $p_a$ do khí quyển, không do nước; chia cả $p_a$ cho $\\rho g$ cho độ sâu vô lí, lớn hơn chiều cao thùng."
+      },
+      {
+       "text": "Trừ $p_a$ rồi chia phần còn lại cho $\\rho$, bỏ $g$",
+       "dung": false,
+       "vi_sao": "Phần do nước là $\\rho gh$ đủ ba thừa số; thiếu $g$ thì sai đơn vị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Bình thông nhau chứa hai chất lỏng không hoà tan",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một ống chữ U tiết diện đều, hai đầu hở, chứa thuỷ ngân (khối lượng riêng $13\\,600\\ \\text{kg/m}^3$). Rót nước (khối lượng riêng $1000\\ \\text{kg/m}^3$) vào nhánh trái, tạo cột nước cao $20{,}4\\ \\text{cm}$ tính từ mặt phân cách nước – thuỷ ngân. Hai chất lỏng đứng yên.</p>\n<ol type=\"a\"><li>Mặt thuỷ ngân ở nhánh phải cao hơn mặt phân cách bao nhiêu centimet?</li>\n<li>Mặt nước ở nhánh trái cao hơn mặt thuỷ ngân ở nhánh phải bao nhiêu centimet?</li>\n<li>Để mặt thuỷ ngân ở nhánh phải cao hơn mặt phân cách $3{,}0\\ \\text{cm}$, cột nước ở nhánh trái phải cao bao nhiêu centimet?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Rót nước vào nhánh trái ống chữ U chứa thuỷ ngân: thuỷ ngân nhánh trái tụt xuống, nhánh phải dâng lên\"><path d=\"M100.0,128.0 L136.0,128.0 L136.0,170.0 L176.0,170.0 L176.0,128.0 L212.0,128.0 L212.0,200.0 L100.0,200.0 Z\" fill=\"#94a3b8\" fill-opacity=\"0.55\"><animate attributeName=\"d\" values=\"M100.0,128.0 L136.0,128.0 L136.0,170.0 L176.0,170.0 L176.0,128.0 L212.0,128.0 L212.0,200.0 L100.0,200.0 Z;M100.0,128.2 L136.0,128.2 L136.0,170.0 L176.0,170.0 L176.0,127.8 L212.0,127.8 L212.0,200.0 L100.0,200.0 Z;M100.0,128.3 L136.0,128.3 L136.0,170.0 L176.0,170.0 L176.0,127.7 L212.0,127.7 L212.0,200.0 L100.0,200.0 Z;M100.0,128.5 L136.0,128.5 L136.0,170.0 L176.0,170.0 L176.0,127.5 L212.0,127.5 L212.0,200.0 L100.0,200.0 Z;M100.0,128.6 L136.0,128.6 L136.0,170.0 L176.0,170.0 L176.0,127.4 L212.0,127.4 L212.0,200.0 L100.0,200.0 Z;M100.0,128.8 L136.0,128.8 L136.0,170.0 L176.0,170.0 L176.0,127.2 L212.0,127.2 L212.0,200.0 L100.0,200.0 Z;M100.0,128.9 L136.0,128.9 L136.0,170.0 L176.0,170.0 L176.0,127.1 L212.0,127.1 L212.0,200.0 L100.0,200.0 Z;M100.0,129.1 L136.0,129.1 L136.0,170.0 L176.0,170.0 L176.0,126.9 L212.0,126.9 L212.0,200.0 L100.0,200.0 Z;M100.0,129.2 L136.0,129.2 L136.0,170.0 L176.0,170.0 L176.0,126.8 L212.0,126.8 L212.0,200.0 L100.0,200.0 Z;M100.0,129.4 L136.0,129.4 L136.0,170.0 L176.0,170.0 L176.0,126.6 L212.0,126.6 L212.0,200.0 L100.0,200.0 Z;M100.0,129.5 L136.0,129.5 L136.0,170.0 L176.0,170.0 L176.0,126.5 L212.0,126.5 L212.0,200.0 L100.0,200.0 Z;M100.0,129.7 L136.0,129.7 L136.0,170.0 L176.0,170.0 L176.0,126.3 L212.0,126.3 L212.0,200.0 L100.0,200.0 Z;M100.0,129.8 L136.0,129.8 L136.0,170.0 L176.0,170.0 L176.0,126.2 L212.0,126.2 L212.0,200.0 L100.0,200.0 Z;M100.0,130.0 L136.0,130.0 L136.0,170.0 L176.0,170.0 L176.0,126.0 L212.0,126.0 L212.0,200.0 L100.0,200.0 Z;M100.0,130.1 L136.0,130.1 L136.0,170.0 L176.0,170.0 L176.0,125.9 L212.0,125.9 L212.0,200.0 L100.0,200.0 Z;M100.0,130.3 L136.0,130.3 L136.0,170.0 L176.0,170.0 L176.0,125.7 L212.0,125.7 L212.0,200.0 L100.0,200.0 Z;M100.0,130.5 L136.0,130.5 L136.0,170.0 L176.0,170.0 L176.0,125.5 L212.0,125.5 L212.0,200.0 L100.0,200.0 Z;M100.0,130.6 L136.0,130.6 L136.0,170.0 L176.0,170.0 L176.0,125.4 L212.0,125.4 L212.0,200.0 L100.0,200.0 Z;M100.0,130.8 L136.0,130.8 L136.0,170.0 L176.0,170.0 L176.0,125.2 L212.0,125.2 L212.0,200.0 L100.0,200.0 Z;M100.0,130.9 L136.0,130.9 L136.0,170.0 L176.0,170.0 L176.0,125.1 L212.0,125.1 L212.0,200.0 L100.0,200.0 Z;M100.0,131.1 L136.0,131.1 L136.0,170.0 L176.0,170.0 L176.0,124.9 L212.0,124.9 L212.0,200.0 L100.0,200.0 Z;M100.0,131.2 L136.0,131.2 L136.0,170.0 L176.0,170.0 L176.0,124.8 L212.0,124.8 L212.0,200.0 L100.0,200.0 Z;M100.0,131.4 L136.0,131.4 L136.0,170.0 L176.0,170.0 L176.0,124.6 L212.0,124.6 L212.0,200.0 L100.0,200.0 Z;M100.0,131.5 L136.0,131.5 L136.0,170.0 L176.0,170.0 L176.0,124.5 L212.0,124.5 L212.0,200.0 L100.0,200.0 Z;M100.0,131.5 L136.0,131.5 L136.0,170.0 L176.0,170.0 L176.0,124.5 L212.0,124.5 L212.0,200.0 L100.0,200.0 Z;M100.0,131.5 L136.0,131.5 L136.0,170.0 L176.0,170.0 L176.0,124.5 L212.0,124.5 L212.0,200.0 L100.0,200.0 Z;M100.0,131.5 L136.0,131.5 L136.0,170.0 L176.0,170.0 L176.0,124.5 L212.0,124.5 L212.0,200.0 L100.0,200.0 Z;M100.0,131.5 L136.0,131.5 L136.0,170.0 L176.0,170.0 L176.0,124.5 L212.0,124.5 L212.0,200.0 L100.0,200.0 Z\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></path><rect x=\"100.0\" y=\"128.0\" width=\"36\" height=\"0.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"><animate attributeName=\"y\" values=\"128.0;124.0;120.0;115.9;111.9;107.9;103.9;99.9;95.8;91.8;87.8;83.8;79.8;75.7;71.7;67.7;63.7;59.7;55.6;51.6;47.6;43.6;39.5;35.5;35.5;35.5;35.5;35.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;4.2;8.3;12.5;16.7;20.9;25.0;29.2;33.4;37.6;41.7;45.9;50.1;54.3;58.4;62.6;66.8;71.0;75.1;79.3;83.5;87.7;91.8;96.0;96.0;96.0;96.0;96.0\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></rect><path d=\"M100.0,24 V200 H212.0 V24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M136.0,24 V170 H176.0 V24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"118.0\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">pₐ</text><text x=\"194.0\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">pₐ</text><line x1=\"100.0\" y1=\"128.0\" x2=\"212.0\" y2=\"128.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"><animate attributeName=\"y1\" values=\"128.0;128.2;128.3;128.5;128.6;128.8;128.9;129.1;129.2;129.4;129.5;129.7;129.8;130.0;130.1;130.3;130.5;130.6;130.8;130.9;131.1;131.2;131.4;131.5;131.5;131.5;131.5;131.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"128.0;128.2;128.3;128.5;128.6;128.8;128.9;129.1;129.2;129.4;129.5;129.7;129.8;130.0;130.1;130.3;130.5;130.6;130.8;130.9;131.1;131.2;131.4;131.5;131.5;131.5;131.5;131.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"118.0\" cy=\"128.0\" r=\"4\" fill=\"currentColor\"><animate attributeName=\"cy\" values=\"128.0;128.2;128.3;128.5;128.6;128.8;128.9;129.1;129.2;129.4;129.5;129.7;129.8;130.0;130.1;130.3;130.5;130.6;130.8;130.9;131.1;131.2;131.4;131.5;131.5;131.5;131.5;131.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"194.0\" cy=\"128.0\" r=\"4\" fill=\"currentColor\"><animate attributeName=\"cy\" values=\"128.0;128.2;128.3;128.5;128.6;128.8;128.9;129.1;129.2;129.4;129.5;129.7;129.8;130.0;130.1;130.3;130.5;130.6;130.8;130.9;131.1;131.2;131.4;131.5;131.5;131.5;131.5;131.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"124.0\" y=\"144.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A<animate attributeName=\"y\" values=\"144.0;144.2;144.3;144.5;144.6;144.8;144.9;145.1;145.2;145.4;145.5;145.7;145.8;146.0;146.1;146.3;146.5;146.6;146.8;146.9;147.1;147.2;147.4;147.5;147.5;147.5;147.5;147.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"199.0\" y=\"144.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B<animate attributeName=\"y\" values=\"144.0;144.2;144.3;144.5;144.6;144.8;144.9;145.1;145.2;145.4;145.5;145.7;145.8;146.0;146.1;146.3;146.5;146.6;146.8;146.9;147.1;147.2;147.4;147.5;147.5;147.5;147.5;147.5\" dur=\"3.24s\" begin=\"indefinite\" fill=\"freeze\"/></text><g opacity=\"0\"><line x1=\"86.0\" y1=\"35.5\" x2=\"86.0\" y2=\"131.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"81.0\" y1=\"35.5\" x2=\"91.0\" y2=\"35.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"81.0\" y1=\"131.5\" x2=\"91.0\" y2=\"131.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"78.0\" y=\"88.5\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h₁</text><line x1=\"226.0\" y1=\"124.5\" x2=\"226.0\" y2=\"131.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"221.0\" y1=\"124.5\" x2=\"231.0\" y2=\"124.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"221.0\" y1=\"131.5\" x2=\"231.0\" y2=\"131.5\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"236.0\" y=\"136.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h₂</text><animate attributeName=\"opacity\" values=\"0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1\" dur=\"3.24s\" calcMode=\"discrete\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"300\" y=\"70\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước</text><text x=\"300\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">ρ₁ = 1000 kg/m³</text><text x=\"300\" y=\"120\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thuỷ ngân</text><text x=\"300\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">ρ₂ = 13 600 kg/m³</text><text x=\"300\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Minh hoạ:</text><text x=\"300\" y=\"186\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cột nước 16 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: rót nước vào nhánh trái (khoảng 3 s). Cột nước trong hình là 16 cm, khác số liệu của đề; 1 cm ứng với 6 px. Hai điểm A, B luôn cùng mức ngang.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trong cùng một chất lỏng đứng yên, hai điểm cùng mức ngang có cùng áp suất.</li><li>Hai chất lỏng không hoà tan: chọn $A$ ở mặt phân cách, $B$ cùng mức ngang với $A$ ở nhánh kia.</li><li>$p_A=p_B$ nên $p_a+\\rho_1gh_1=p_a+\\rho_2gh_2$, tức $\\rho_1h_1=\\rho_2h_2$.</li><li>⚠ <strong>Điều kiện:</strong> hai nhánh hở (cùng $p_a$); $A$ và $B$ cùng nằm trong thuỷ ngân.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp suất tại mặt phân cách</span></p><p>Chọn $A$ ở mặt phân cách (nhánh trái), $B$ ở nhánh phải cùng mức ngang với $A$. Phần áp suất do cột nước phía trên $A$:</p>$$\\rho_1gh_1=1000\\cdot10\\cdot0{,}204$$<div class=\"bt-ans\">$$\\rho_1gh_1=2040\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cột thuỷ ngân phía trên $B$</span></p><p>$A$, $B$ cùng nằm trong thuỷ ngân, cùng mức ngang nên $p_A=p_B$; hai nhánh hở nên $p_a$ triệt tiêu:</p>$$\\rho_2gh_2=\\rho_1gh_1$$$$h_2=\\dfrac{2040}{13\\,600\\cdot10}=0{,}015\\ \\text{m}$$<div class=\"bt-ans\">$$h_2=1{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chênh mực hai mặt thoáng</span></p><p>Cả hai mặt thoáng đều ở phía trên mặt phân cách; hai độ cao đo từ mặt phân cách:</p>$$\\Delta h=h_1-h_2=20{,}4-1{,}5$$<div class=\"bt-ans\">$$\\Delta h=18{,}9\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi chiều: tìm cột nước</span></p><p>Biết $h_2'=3{,}0\\ \\text{cm}$, tìm $h_1'$ từ $\\rho_1h_1'=\\rho_2h_2'$:</p>$$h_1'=\\dfrac{\\rho_2h_2'}{\\rho_1}=\\dfrac{13\\,600\\cdot3{,}0}{1000}$$<div class=\"bt-ans\">$$h_1'=40{,}8\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\rho_1h_1'=1000\\cdot40{,}8=40\\,800=13\\,600\\cdot3{,}0=\\rho_2h_2'$$<p>Thuỷ ngân nặng gấp $13{,}6$ lần nước nên cột nước cao gấp $13{,}6$ lần cột thuỷ ngân: $20{,}4/1{,}5=13{,}6$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $h_2=1{,}5\\ \\text{cm}$</p><p>b) $\\Delta h=18{,}9\\ \\text{cm}$</p><p>c) cột nước cao $40{,}8\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>ống chữ U</strong> với <strong>hai chất lỏng không hoà tan</strong> → chọn hai điểm cùng mức ngang trong cùng một chất lỏng, rồi cho hai áp suất bằng nhau.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Ống chữ U: cột nước 20,4 cm ở nhánh trái, thuỷ ngân ở nhánh phải; A ở mặt phân cách, B cùng mức ngang với A\"><path d=\"M100.0,150.0 L136.0,150.0 L136.0,170.0 L176.0,170.0 L176.0,136.0 L212.0,136.0 L212.0,200.0 L100.0,200.0 Z\" fill=\"#94a3b8\" fill-opacity=\"0.55\"/><rect x=\"100.0\" y=\"48.0\" width=\"36\" height=\"102.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"/><path d=\"M100.0,24 V200 H212.0 V24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M136.0,24 V170 H176.0 V24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"118.0\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">pₐ</text><text x=\"194.0\" y=\"17\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">pₐ</text><line x1=\"100.0\" y1=\"150.0\" x2=\"212.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"1\"/><circle cx=\"118.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"194.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><text x=\"124.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"199.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><line x1=\"86.0\" y1=\"48.0\" x2=\"86.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"81.0\" y1=\"48.0\" x2=\"91.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"81.0\" y1=\"150.0\" x2=\"91.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"78.0\" y=\"104.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h₁ = 20,4 cm</text><line x1=\"226.0\" y1=\"136.0\" x2=\"226.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"221.0\" y1=\"136.0\" x2=\"231.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"221.0\" y1=\"150.0\" x2=\"231.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"236.0\" y=\"148.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h₂ = ?</text><text x=\"300\" y=\"70\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước</text><text x=\"300\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">ρ₁ = 1000 kg/m³</text><text x=\"300\" y=\"120\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thuỷ ngân</text><text x=\"300\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">ρ₂ = 13 600 kg/m³</text></svg><figcaption>Dữ kiện: cột nước vẽ đúng tỉ lệ (1 cm ứng với 5 px); độ chênh h₂ vẽ phóng to cho dễ thấy, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ống chữ U tiết diện đều, hai đầu hở, chứa thuỷ ngân”</td><td>$\\rho_2=13\\,600\\ \\text{kg/m}^3$; hai mặt thoáng cùng chịu $p_a$</td><td>⚠ Hai nhánh hở: $p_a$ như nhau ở hai bên</td></tr><tr><td>“Rót nước … vào nhánh trái”</td><td>$\\rho_1=1000\\ \\text{kg/m}^3$</td><td>Nước và thuỷ ngân không hoà tan, có mặt phân cách</td></tr><tr><td>“cột nước cao $20{,}4\\ \\text{cm}$ tính từ mặt phân cách”</td><td>$h_1=20{,}4\\ \\text{cm}$</td><td>$h$ đo từ mặt phân cách đến mặt thoáng của nước</td></tr><tr><td>“Hai chất lỏng đứng yên”</td><td>Cân bằng áp suất</td><td>⚠ Điều kiện để hai điểm có cùng áp suất là gì?</td></tr><tr><td>“a) mặt thuỷ ngân ở nhánh phải cao hơn mặt phân cách”</td><td>Cần $h_2$ (cm)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) mặt nước ở nhánh trái cao hơn mặt thuỷ ngân ở nhánh phải”</td><td>Cần hiệu hai mực (cm)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) mặt thuỷ ngân ở nhánh phải cao hơn mặt phân cách $3{,}0\\ \\text{cm}$”</td><td>$h_2=3{,}0\\ \\text{cm}$; cần $h_1$ (cm)</td><td>Đổi chiều: biết cột thuỷ ngân, tìm cột nước</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ống chữ U</b> với <b>hai chất lỏng không hoà tan</b> → nghĩ tới <b>hai điểm cùng mức ngang</b> trong cùng chất lỏng.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp suất tại mặt phân cách",
+     "hoi": "Áp suất do cột nước gây ra tại mặt phân cách (điểm $A$) bằng bao nhiêu Pa?",
+     "dap_so": 2040,
+     "sai_so": 10,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Để chiều cao cột nước còn ở cm khi thế vào $\\rho gh$."
+    },
+    {
+     "tieu_de": "Cột thuỷ ngân phía trên $B$",
+     "hoi": "Mặt thuỷ ngân ở nhánh phải cao hơn mặt phân cách bao nhiêu cm?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cho hai mặt thoáng ngang nhau như khi chỉ có một chất lỏng, hoặc đảo tỉ số hai khối lượng riêng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho áp suất cột thuỷ ngân trên $B$ bằng áp suất tại $A$",
+       "dung": true
+      },
+      {
+       "text": "Cho độ cao thuỷ ngân bằng độ cao cột nước vì cùng một ống chữ U",
+       "dung": false,
+       "vi_sao": "Mực ngang nhau chỉ khi cùng một chất lỏng; ở đây hai chất lỏng có khối lượng riêng khác nhau."
+      },
+      {
+       "text": "Nhân độ cao cột nước với tỉ số $\\rho_2/\\rho_1$",
+       "dung": false,
+       "vi_sao": "Tỉ số bị đảo: thuỷ ngân nặng hơn nước nên cột thuỷ ngân thấp hơn cột nước chứ không cao hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chênh mực hai mặt thoáng",
+     "hoi": "Mặt nước ở nhánh trái cao hơn mặt thuỷ ngân ở nhánh phải bao nhiêu cm?",
+     "dap_so": 18.9,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cộng hai độ cao với nhau, hoặc coi mặt thuỷ ngân bên phải ngang với mặt phân cách.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu hai độ cao, cùng đo từ mặt phân cách",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ cao",
+       "dung": false,
+       "vi_sao": "Cả hai mặt thoáng nằm phía trên mặt phân cách, cùng phía; chênh lệch là hiệu chứ không phải tổng."
+      },
+      {
+       "text": "Lấy luôn độ cao cột nước, coi thuỷ ngân bên phải ngang mặt phân cách",
+       "dung": false,
+       "vi_sao": "Mặt thuỷ ngân bên phải cao hơn mặt phân cách, chính là $h_2$ ở ý a."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi chiều: tìm cột nước",
+     "hoi": "Cột nước ở nhánh trái phải cao bao nhiêu cm?",
+     "dap_so": 40.8,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Đảo tỉ số hai khối lượng riêng, hoặc cộng thêm vào cột nước cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng lại cân bằng áp suất với $h_2'$ đã biết",
+       "dung": true
+      },
+      {
+       "text": "Nhân 3,0 cm với tỉ số khối lượng riêng $\\rho_1/\\rho_2$",
+       "dung": false,
+       "vi_sao": "Nước nhẹ hơn thuỷ ngân nên cột nước phải cao hơn cột thuỷ ngân; tỉ số bị đảo."
+      },
+      {
+       "text": "Cộng thêm 3,0 cm vào cột nước 20,4 cm cũ",
+       "dung": false,
+       "vi_sao": "Cột nước tỉ lệ với $h_2$ theo tỉ số khối lượng riêng, không tăng thêm đúng bằng độ tăng của $h_2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Lực đẩy Archimedes: khối nổi và điều kiện chìm hẳn",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Một khối gỗ hình hộp chữ nhật có đáy $20\\ \\text{cm}\\times20\\ \\text{cm}$, cao $10\\ \\text{cm}$, khối lượng $2{,}4\\ \\text{kg}$, được thả vào nước (khối lượng riêng $1000\\ \\text{kg/m}^3$) sao cho đáy nằm ngang. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính khối lượng riêng của gỗ. Khối nổi hay chìm trong nước?</li>\n<li>Khi khối đứng yên trên mặt nước, tính lực đẩy Archimedes tác dụng lên khối.</li>\n<li>Tính chiều cao phần khối chìm trong nước.</li>\n<li>Đặt lên mặt trên của khối một vật nhỏ (thể tích không đáng kể) để khối vừa chìm hẳn, mặt trên ngang với mặt nước. Bể đủ rộng để mực nước coi như không đổi. Tính khối lượng tối thiểu của vật.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Khối gỗ được thả chạm mặt nước, chìm xuống, dao động tắt dần rồi nổi yên\"><rect x=\"30.0\" y=\"90.0\" width=\"220.0\" height=\"110.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"/><text x=\"258.0\" y=\"94.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mặt nước</text><line x1=\"30.0\" y1=\"90.0\" x2=\"250.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><rect x=\"90.0\" y=\"40.0\" width=\"100.0\" height=\"50.0\" fill=\"#ca8a04\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"y\" values=\"40.0;43.7;52.7;63.4;72.1;76.3;75.5;70.7;64.1;58.0;54.4;53.9;56.2;60.1;64.2;67.0;68.0;67.1;64.9;62.2;60.1;59.1;59.3;60.5;62.1;63.6;64.5;64.6;64.0;63.1;62.1;61.4;61.1;61.4;61.9;62.6;63.1;63.3;63.3;63.0;62.6;62.2;62.0;62.0;62.1;62.4;62.6;62.8;62.8;62.8;62.6;62.5;62.4;62.3;62.3;62.4;62.5;62.6;62.6;62.6;62.6;62.5;62.5;62.4;62.4;62.4;62.5;62.5;62.5;62.6;62.5\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></rect><path d=\"M30.0,50.0 V200.0 H250.0 V50.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"266\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước: 1000 kg/m³</text><text x=\"266\" y=\"76\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Khối gỗ 20 × 20 × 10 cm</text><text x=\"266\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Minh hoạ: m = 1,8 kg</text><text x=\"266\" y=\"142\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">(khác khối của đề)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khối gỗ cùng kích thước nhưng m = 1,8 kg (khác đề) được thả khi vừa chạm nước; dao động tắt dần theo đúng thời gian thật (khoảng 3 s). 1 cm ứng với 5 px, coi mực nước không đổi.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng riêng $\\rho=m/V$; lực đẩy Archimedes hướng lên, $F_A=\\rho_\\ell gV$.</li><li>Vật đặc: $\\rho_{\\text{vật}}\\lt\\rho_\\ell$ thì nổi; $\\rho_{\\text{vật}}\\gt\\rho_\\ell$ thì chìm; bằng nhau thì lơ lửng.</li><li>Trọng lượng $P=mg$; vật đứng yên thì các lực tác dụng cân bằng nhau.</li><li>⚠ <strong>Điều kiện:</strong> $V$ trong $F_A$ là thể tích phần chìm, không phải cả vật khi vật chưa chìm hết.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng riêng của gỗ</span></p><p>Thể tích khối:</p>$$V=S\\cdot H=0{,}20\\cdot0{,}20\\cdot0{,}10=4{,}0\\cdot10^{-3}\\ \\text{m}^3$$$$\\rho=\\dfrac{m}{V}=\\dfrac{2{,}4}{4{,}0\\cdot10^{-3}}$$<div class=\"bt-ans\">$$\\rho=600\\ \\text{kg/m}^3$$</div><p>$600\\lt1000$ nên gỗ <strong>nổi</strong> trong nước.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đẩy khi khối nổi</span></p><p>Khối đứng yên nên lực đẩy cân bằng với trọng lượng:</p>$$F_A=P=mg=2{,}4\\cdot10$$<div class=\"bt-ans\">$$F_A=24\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều cao phần chìm</span></p><p>Từ $F_A=\\rho_\\ell gV_{\\text{chìm}}$, thể tích phần chìm:</p>$$V_{\\text{chìm}}=\\dfrac{F_A}{\\rho_\\ell g}=\\dfrac{24}{1000\\cdot10}=2{,}4\\cdot10^{-3}\\ \\text{m}^3$$<p>Chia cho diện tích đáy $S=0{,}040\\ \\text{m}^2$:</p>$$h'=\\dfrac{V_{\\text{chìm}}}{S}=\\dfrac{2{,}4\\cdot10^{-3}}{0{,}040}=0{,}060\\ \\text{m}$$<div class=\"bt-ans\">$$h'=6{,}0\\ \\text{cm}$$</div><p>Nhỏ hơn $10\\ \\text{cm}$: khối nổi, khớp với ý a.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vừa chìm hẳn</span></p><p>Khi vừa chìm hẳn, phần chìm là cả khối, $V=4{,}0\\cdot10^{-3}\\ \\text{m}^3$. Lực đẩy lúc này:</p>$$F_{A}=\\rho_\\ell gV=1000\\cdot10\\cdot4{,}0\\cdot10^{-3}=40\\ \\text{N}$$<p>Lực đẩy cân bằng với trọng lượng của khối và vật:</p>$$(m+m')g=F_A\\ \\Rightarrow\\ m+m'=4{,}0\\ \\text{kg}$$$$m'=4{,}0-2{,}4$$<div class=\"bt-ans\">$$m'=1{,}6\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$(2{,}4+1{,}6)\\cdot10=40\\ \\text{N}=F_A\\ ✓$$<p>Mỗi centimet chìm thêm của khối cần thêm $\\rho_\\ell gS\\cdot0{,}01=4\\ \\text{N}$ lực đẩy; phần $4{,}0\\ \\text{cm}$ còn lại ứng với $16\\ \\text{N}$, đúng bằng trọng lượng vật $1{,}6\\cdot10$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\rho=600\\ \\text{kg/m}^3$ · khối nổi</p><p>b) $F_A=24\\ \\text{N}$</p><p>c) $h'=6{,}0\\ \\text{cm}$</p><p>d) $m'=1{,}6\\ \\text{kg}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật thả vào chất lỏng</strong>, <strong>nổi</strong> hoặc <strong>vừa chìm hẳn</strong> → $F_A=\\rho_\\ell gV$ với $V$ là phần chìm, rồi cân bằng với trọng lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Khối gỗ 20 × 20 × 10 cm, khối lượng 2,4 kg, đặt phía trên mặt nước trước khi thả\"><rect x=\"30.0\" y=\"90.0\" width=\"220.0\" height=\"110.0\" fill=\"#38bdf8\" fill-opacity=\"0.28\"/><text x=\"258.0\" y=\"94.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mặt nước</text><line x1=\"30.0\" y1=\"90.0\" x2=\"250.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><rect x=\"90.0\" y=\"34.0\" width=\"100.0\" height=\"50.0\" fill=\"#ca8a04\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M30.0,50.0 V200.0 H250.0 V50.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"90.0\" y1=\"26.0\" x2=\"190.0\" y2=\"26.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M183.0,21.9 L190.0,26.0 L183.0,30.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"190.0\" y1=\"26.0\" x2=\"90.0\" y2=\"26.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M97.0,30.1 L90.0,26.0 L97.0,21.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"118.0\" y=\"20.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">20 cm</text><line x1=\"202.0\" y1=\"34.0\" x2=\"202.0\" y2=\"84.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M206.1,77.0 L202.0,84.0 L197.9,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"202.0\" y1=\"84.0\" x2=\"202.0\" y2=\"34.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M197.9,41.0 L202.0,34.0 L206.1,41.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"208.0\" y=\"64.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">10 cm</text><text x=\"140.0\" y=\"64.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">2,4 kg</text><text x=\"266\" y=\"126\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước: 1000 kg/m³</text><text x=\"266\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đáy khối 20 × 20 cm</text><text x=\"266\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">g = 10 m/s²</text></svg><figcaption>Dữ kiện: khối trước khi thả (1 cm ứng với 5 px). Chưa vẽ mức chìm của khối.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“khối gỗ hình hộp chữ nhật có đáy $20\\ \\text{cm}\\times20\\ \\text{cm}$, cao $10\\ \\text{cm}$”</td><td>$S=0{,}040\\ \\text{m}^2$; $H=0{,}10\\ \\text{m}$</td><td>Thể tích hộp: $V=S\\cdot H$</td></tr><tr><td>“khối lượng $2{,}4\\ \\text{kg}$”, “Lấy $g=10\\ \\text{m/s}^2$”</td><td>$m=2{,}4\\ \\text{kg}$; $g=10\\ \\text{m/s}^2$</td><td>Khối lượng riêng $\\rho=m/V$; trọng lượng $P=mg$</td></tr><tr><td>“thả vào nước (khối lượng riêng $1000\\ \\text{kg/m}^3$)”</td><td>$\\rho_\\ell=1000\\ \\text{kg/m}^3$</td><td>⚠ Lực đẩy Archimedes: $F_A=\\rho_\\ell gV$; xác định $V$ là thể tích của phần nào</td></tr><tr><td>“a) khối lượng riêng của gỗ. Khối nổi hay chìm”</td><td>Cần $\\rho_{\\text{gỗ}}$; so với $\\rho_\\ell$</td><td>Vật đặc: so $\\rho_{\\text{vật}}$ với $\\rho_\\ell$</td></tr><tr><td>“b) khi khối đứng yên trên mặt nước”</td><td>Khối cân bằng</td><td>⚠ Khối đang ở trạng thái nào?</td></tr><tr><td>“c) chiều cao phần khối chìm”</td><td>Cần $h'$ (cm)</td><td>Đại lượng cần tìm</td></tr><tr><td>“d) vật nhỏ … để khối vừa chìm hẳn, mặt trên ngang với mặt nước”</td><td>Cần $m'$ tối thiểu (kg)</td><td>Mốc “vừa chìm hẳn” cho biết điều gì về $V$?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật thả vào chất lỏng</b>, <b>nổi</b> hoặc <b>vừa chìm hẳn</b> → nghĩ tới <b>F_A = ρgV</b> với V là phần chìm.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng riêng của gỗ",
+     "hoi": "Khối lượng riêng của gỗ bằng bao nhiêu kg/m³?",
+     "dap_so": 600,
+     "sai_so": 5,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Thế thể tích còn ở cm³, hoặc nhầm thể tích khối với diện tích đáy."
+    },
+    {
+     "tieu_de": "Lực đẩy khi khối nổi",
+     "hoi": "Lực đẩy Archimedes lên khối khi nổi yên bằng bao nhiêu N?",
+     "dap_so": 24,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng thể tích cả khối trong công thức lực đẩy, hoặc quên nhân $g$ khi đổi khối lượng sang lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho lực đẩy cân bằng với trọng lượng của khối",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\rho_\\ell gV$ với $V$ là thể tích cả khối",
+       "dung": false,
+       "vi_sao": "$V$ trong công thức lực đẩy là thể tích phần chìm; khối nổi nên chưa chìm hết."
+      },
+      {
+       "text": "Lấy lực đẩy bằng khối lượng 2,4 kg, không nhân $g$",
+       "dung": false,
+       "vi_sao": "Lực đẩy là lực (N), khối lượng là kg; phải nhân với $g$ mới ra trọng lượng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều cao phần chìm",
+     "hoi": "Chiều cao phần khối chìm trong nước bằng bao nhiêu cm?",
+     "dap_so": 6.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia thể tích phần chìm cho một cạnh đáy thay vì diện tích đáy, hoặc đảo tỉ số khối lượng riêng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm thể tích phần chìm từ lực đẩy, rồi chia cho diện tích đáy",
+       "dung": true
+      },
+      {
+       "text": "Nhân chiều cao 10 cm với tỉ số $\\rho_{\\text{nước}}/\\rho_{\\text{gỗ}}$",
+       "dung": false,
+       "vi_sao": "Kết quả vượt chiều cao khối; khối đang nổi nên phần chìm phải thấp hơn 10 cm."
+      },
+      {
+       "text": "Chia thể tích phần chìm cho một cạnh đáy 20 cm",
+       "dung": false,
+       "vi_sao": "Chiều cao bằng thể tích chia cho diện tích đáy (tích hai cạnh), không chia cho một cạnh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vừa chìm hẳn",
+     "hoi": "Vật đặt thêm phải có khối lượng tối thiểu bao nhiêu kg?",
+     "dap_so": 1.6,
+     "sai_so": 0.05,
+     "don_vi": "kg",
+     "loi_hay_gap": "Dùng lực đẩy của lúc nổi, hoặc coi khối lượng vật bằng khối lượng nước bị chiếm chỗ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho lực đẩy lớn nhất cân bằng với trọng lượng của khối và vật",
+       "dung": true
+      },
+      {
+       "text": "Cho vật nặng bằng khối lượng nước bị khối chiếm chỗ khi chìm hẳn",
+       "dung": false,
+       "vi_sao": "Lượng nước bị chiếm chỗ cân bằng với cả khối lẫn vật cộng lại, không riêng vật."
+      },
+      {
+       "text": "Dùng lực đẩy ứng với phần chìm 6,0 cm ở ý trước",
+       "dung": false,
+       "vi_sao": "Khi chìm hẳn, $V$ là cả khối nên lực đẩy lớn hơn lúc nổi; dùng phần chìm cũ thì không cần thêm vật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Một quả cầu có thể tích $20\\ \\text{cm}^3$ lơ lửng trong nước, khối lượng riêng của nước là $1\\ \\text{g/cm}^3$, lấy $g = 9{,}8\\ \\text{m/s}^2$. Lực đẩy Archimedes tác dụng lên quả cầu là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải gốc:</strong> Trọng lượng riêng của nước $d = \\rho g = 1000\\cdot9{,}8 = 9800\\ \\text{N/m}^3$. $F_A = d\\cdot V = 9800\\cdot20\\cdot10^{-6} = 0{,}196\\ \\text{N}$.</p></details><h4>Bài 2 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Đề:</strong> Treo một vật bằng kim loại vào lực kế rồi nhúng chìm vào một bình tràn đựng nước thì lực kế chỉ 8,5 N, đồng thời lượng nước tràn ra có thể tích 0,5 lít. Biết trọng lượng riêng của nước là 10000 N/$\\text{m}^3$. a) Vật có khối lượng bao nhiêu? b) Tìm trọng lượng riêng của vật.</p>\n<details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Lời giải gốc:</strong></p><p class=\"text-base leading-relaxed my-2\">a) Thể tích nước tràn ra đúng bằng thể tích vật chiếm chỗ: $V = 0{,}5\\ \\text{lít} = 0{,}0005\\ \\text{m}^3$. Lực đẩy Archimedes: $F_A = d_n\\cdot V = 10000\\cdot0{,}0005 = 5\\ \\text{N}$. Trọng lượng vật: $P = F + F_A = 8{,}5 + 5 = 13{,}5\\ \\text{N}$; với $g = 10\\ \\text{m/s}^2$ thì $m = 1{,}35\\ \\text{kg}$.</p><p class=\"text-base leading-relaxed my-2\">b) Trọng lượng riêng của vật: $d = \\dfrac{P}{V} = \\dfrac{13{,}5}{0{,}0005} = 2{,}7\\cdot10^4\\ \\text{N/m}^3$, nên vật làm bằng nhôm.</p></details>"
+ }
+}
