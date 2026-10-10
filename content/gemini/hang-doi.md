@@ -83,3 +83,9 @@
 | l9-thau-kinh | 86 | chua-lam | Bài 8. Thấu kính (1 mục DB, chưa chạy batch). |
 | l9-thuc-hanh-tieu-cu | 87 | chua-lam | Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ (1 mục DB, chưa chạy batch). |
 | l9-kinh-lup-bai-tap-thau-kinh | 88 | chua-lam | Bài 10. Kính lúp. Bài tập thấu kính (1 mục DB, chưa chạy batch). |
+| l11-bai-tap-dao-dong | 23 | chua-lam | Bài 4. Bài tập về dao động điều hoà — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
+| l11-bai-tap-nang-luong-dao-dong | 26 | chua-lam | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
+| l11-song-ngang-song-doc | 28 | chua-lam | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
+| l11-thuc-hanh-do-tan-so-am | 29 | chua-lam | Bài 10. Thực hành: Đo tần số của sóng âm — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
+| l11-song-dien-tu | 30 | chua-lam | Bài 11. Sóng điện từ — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
+| l11-thuc-hanh-do-toc-do-am | 34 | chua-lam | Bài 15. Thực hành: Đo tốc độ truyền âm — soạn 9/10/2026 (kiểm chéo khi soạn), CHƯA qua vòng học sinh ảo (thêm 10/10/2026). |
