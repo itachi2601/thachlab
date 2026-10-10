@@ -538,6 +538,7 @@ export default function ExamRunner({
           )}
         </div>
 
+        <div className="exam-paper">
         <QuestionSlide slideKey={cur}>
           <QuestionCard
             index={cur + 1}
@@ -551,6 +552,7 @@ export default function ExamRunner({
             }}
           />
         </QuestionSlide>
+        </div>
 
         {/* mb-28: chừa chỗ để cuộn thanh nút lên khỏi nút Báo lỗi nổi + banner giả lập (D2/D3) */}
         <div className="exam-nav-row mb-28 mt-6 flex items-center gap-2">

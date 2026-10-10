@@ -11,7 +11,7 @@
 // Biến CSS được trỏ vào --font-display/--font-body/--font-mono trong @theme (globals.css).
 // Cinzel + Playfair Display (tên bậc huy hiệu rank) đã chuyển sang components/rank/rank-fonts.ts —
 //   chỉ trang có render component rank mới tải, trang chủ không còn dính.
-import { Be_Vietnam_Pro, Inter, JetBrains_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, Inter, JetBrains_Mono, Tinos } from "next/font/google";
 
 export const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["vietnamese", "latin"],
@@ -35,4 +35,15 @@ export const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-export const fontClassName = `${beVietnamPro.variable} ${inter.variable} ${jetbrainsMono.variable}`;
+// Tinos: serif cùng số đo với Times New Roman (metric-compatible) — chỉ dùng cho vùng ĐỀ (.exam-paper) để chữ
+// ngắt dòng/ngắt trang như đề giấy. preload: false để không giành băng thông với font thân trang; chỉ tải khi
+// trang có chữ dùng tới (font-display swap). Weight 400/700 (đậm cho "Câu n." và \textbf trong đề).
+export const tinos = Tinos({
+  subsets: ["vietnamese", "latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  preload: false,
+  variable: "--font-tinos",
+});
+
+export const fontClassName = `${beVietnamPro.variable} ${inter.variable} ${jetbrainsMono.variable} ${tinos.variable}`;
