@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import ExamSection, { compressRasterInputs, type TopicGroup } from "@/components/admin/ExamSection";
 import ExamQrPanel from "@/components/admin/ExamQrPanel";
+import ExamTaSendPanel from "@/components/admin/ExamTaSendPanel";
 import { useToast } from "@/components/ui/Toast";
 import { canonicalizeQuestionTopics, type SchoolClass } from "@/features/exams/types";
 import {
@@ -567,6 +568,8 @@ export default function AzotaExamComposer() {
             hint="Đề vừa đăng đã vào DB — chiếu mã này cho cả lớp quét ngay, không cần chờ deploy."
           />
         )}
+
+        {publishedExam && <ExamTaSendPanel examId={publishedExam.id} />}
 
         {log.length > 0 && (
           <pre className="max-h-48 overflow-auto whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-slate-300">

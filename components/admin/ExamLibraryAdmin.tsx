@@ -5,6 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import ExamSection, { type ExamSectionSeed, type TopicGroup } from "@/components/admin/ExamSection";
 import ExamQrPanel from "@/components/admin/ExamQrPanel";
+import ExamTaSendPanel from "@/components/admin/ExamTaSendPanel";
 import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
 import { useToast } from "@/components/ui/Toast";
 import { canonicalizeQuestionTopics, type Difficulty, type ExamQuestion, type SchoolClass } from "@/features/exams/types";
@@ -421,6 +422,8 @@ export default function ExamLibraryAdmin({
                     : "Đề đang là BẢN NHÁP — học sinh quét mã sẽ thấy “Đề này đang ẩn”. Tích “Xuất bản” rồi bấm Lưu trước khi chiếu."
                 }
               />
+
+              <ExamTaSendPanel examId={full.id} />
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className="text-xs font-semibold text-muted">
