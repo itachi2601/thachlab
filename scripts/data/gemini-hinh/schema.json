@@ -2,30 +2,308 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Thông số đồ thị cho thachlab (khớp services/figure-spec.ts)",
   "type": "object",
-  "required": ["id", "kind", "do_tin_cay"],
+  "required": [
+    "id",
+    "kind",
+    "do_tin_cay"
+  ],
   "properties": {
-    "id": { "type": "integer" },
-    "kind": { "enum": ["plot", "khong_ve_duoc"] },
-    "mo_ta": { "type": "string", "description": "Bắt buộc khi kind = khong_ve_duoc: mô tả hình bằng lời (loại hình, phần tử, cách nối)" },
-    "xLabel": { "type": "string" }, "yLabel": { "type": "string" },
-    "xRange": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
-    "yRange": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
-    "xTicks": { "type": "array", "items": { "$ref": "#/$defs/tick" } },
-    "yTicks": { "type": "array", "items": { "$ref": "#/$defs/tick" } },
-    "series": { "type": "array", "items": { "oneOf": [
-      { "type": "object", "required": ["type", "A", "T"], "properties": { "type": { "const": "sinusoid" }, "A": { "type": "number" }, "T": { "type": "number" }, "phi": { "type": "number" }, "y0": { "type": "number" }, "domain": { "$ref": "#/$defs/pair" }, "label": { "type": "string" }, "dashed": { "type": "boolean" } } },
-      { "type": "object", "required": ["type", "points"], "properties": { "type": { "const": "polyline" }, "points": { "type": "array", "items": { "$ref": "#/$defs/pair" } }, "label": { "type": "string" }, "dashed": { "type": "boolean" } } },
-      { "type": "object", "required": ["type", "k", "domain"], "properties": { "type": { "const": "hyperbola" }, "k": { "type": "number" }, "domain": { "$ref": "#/$defs/pair" }, "label": { "type": "string" }, "dashed": { "type": "boolean" } } },
-      { "type": "object", "required": ["type", "y0", "tau"], "properties": { "type": { "const": "exponential" }, "y0": { "type": "number" }, "tau": { "type": "number" }, "yInf": { "type": "number" }, "domain": { "$ref": "#/$defs/pair" }, "label": { "type": "string" }, "dashed": { "type": "boolean" } } }
-    ] } },
-    "points": { "type": "array", "items": { "type": "object", "required": ["x", "y"], "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "label": { "type": "string" } } } },
-    "guides": { "type": "array", "items": { "type": "object", "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "label": { "type": "string" } } } },
-    "grid": { "type": "boolean" },
-    "do_tin_cay": { "enum": [0, 0.5, 1] },
-    "ghi_chu": { "type": "string" }
+    "id": {
+      "type": "integer"
+    },
+    "kind": {
+      "enum": [
+        "plot",
+        "multi",
+        "khong_ve_duoc"
+      ]
+    },
+    "mo_ta": {
+      "type": "string",
+      "description": "Bắt buộc khi kind = khong_ve_duoc: mô tả hình bằng lời (loại hình, phần tử, cách nối)"
+    },
+    "xLabel": {
+      "type": "string"
+    },
+    "yLabel": {
+      "type": "string"
+    },
+    "xRange": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "yRange": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "xTicks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tick"
+      }
+    },
+    "yTicks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tick"
+      }
+    },
+    "series": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "A",
+              "T"
+            ],
+            "properties": {
+              "type": {
+                "const": "sinusoid"
+              },
+              "A": {
+                "type": "number"
+              },
+              "T": {
+                "type": "number"
+              },
+              "phi": {
+                "type": "number"
+              },
+              "y0": {
+                "type": "number"
+              },
+              "domain": {
+                "$ref": "#/$defs/pair"
+              },
+              "label": {
+                "type": "string"
+              },
+              "dashed": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "points"
+            ],
+            "properties": {
+              "type": {
+                "const": "polyline"
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/pair"
+                }
+              },
+              "label": {
+                "type": "string"
+              },
+              "dashed": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "k",
+              "domain"
+            ],
+            "properties": {
+              "type": {
+                "const": "hyperbola"
+              },
+              "k": {
+                "type": "number"
+              },
+              "domain": {
+                "$ref": "#/$defs/pair"
+              },
+              "label": {
+                "type": "string"
+              },
+              "dashed": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "y0",
+              "tau"
+            ],
+            "properties": {
+              "type": {
+                "const": "exponential"
+              },
+              "y0": {
+                "type": "number"
+              },
+              "tau": {
+                "type": "number"
+              },
+              "yInf": {
+                "type": "number"
+              },
+              "domain": {
+                "$ref": "#/$defs/pair"
+              },
+              "label": {
+                "type": "string"
+              },
+              "dashed": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "a",
+              "h",
+              "k"
+            ],
+            "properties": {
+              "type": {
+                "const": "parabola"
+              },
+              "a": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              },
+              "k": {
+                "type": "number"
+              },
+              "domain": {
+                "$ref": "#/$defs/pair"
+              },
+              "label": {
+                "type": "string"
+              },
+              "dashed": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "x",
+          "y"
+        ],
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "guides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "grid": {
+      "type": "boolean"
+    },
+    "do_tin_cay": {
+      "enum": [
+        0,
+        0.5,
+        1
+      ]
+    },
+    "ghi_chu": {
+      "type": "string"
+    },
+    "cols": {
+      "enum": [
+        1,
+        2
+      ],
+      "description": "multi: số cột lưới (mặc định 2)"
+    },
+    "figures": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "description": "Chỉ khi kind = multi: MỖI hình một đối tượng có cấu trúc y hệt kind=plot (không cần id/do_tin_cay), thêm khoá nhan = nhãn hình (A, B, C, D hoặc Hình 1…).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nhan": {
+            "type": "string"
+          }
+        }
+      }
+    }
   },
   "$defs": {
-    "tick": { "type": "object", "required": ["v"], "properties": { "v": { "type": "number" }, "label": { "type": "string" } } },
-    "pair": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+    "tick": {
+      "type": "object",
+      "required": [
+        "v"
+      ],
+      "properties": {
+        "v": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "pair": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    }
   }
 }
