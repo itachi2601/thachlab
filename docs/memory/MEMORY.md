@@ -72,6 +72,7 @@
 - [L10 lý thuyết Ch5–7](project_thachlab_l10_ly_thuyet_ch5_7.md) — L11 còn 6 bài, L12 còn 1
 - [Thay ví dụ xưởng](project_thachlab_vi_du_doi_song_thay_xuong.md) — 53 bài xong
 - [Khả năng đọc WCAG](project_thachlab_kha_nang_doc.md) — `npm run check:a11y`
+- [Nền SÁNG mặc định toàn site](project_thachlab_nen_sang.md) — 11/10/2026: bảng màu light-first theo lứa tuổi, `/dev/giao-dien`, `scripts/do-bo-cuc.mjs`; bản chính `docs/MAU-NEN-SANG.md`
 - [Bài mẫu trống](project_thachlab_worked_examples_blank.md) — đã vá, gốc chưa xác nhận
 - [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa được: scripts/data/de-l10-24-25-can-xem.md
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 40 bộ lệch cần vá tay; thầy bật Hiện
@@ -129,4 +130,5 @@
 - [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài seed 10/10; CĐ01(161)+CĐ02(166) đã ghi DB; còn 12 CĐ + 3 mới + đề
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải/đề: mỗi trường hợp một dòng, không viết liền
 - [Mã QR cho từng đề (10/10)](project_thachlab_ma_qr_de_thi.md) — `ExamQrPanel` ở /quan-tri/sua-de + /quan-tri/dang-de (chiếu lên bảng), HS quét ở `/quet-ma`; `lib/exam-link.ts` là chỗ duy nhất sinh link đề; `RequireAuth` giữ `?next=`; vào main `a1a1b6e08`; treo: thử iPhone/Android thật, QR cho CNC + nhap-bai
+- [Nền SÁNG mặc định toàn site (11/10)](project_thachlab_nen_sang.md) — `@theme` = nền sáng, tối chỉ là tuỳ chọn; PH 45–60 AAA 8,9:1; dọn ~112 file màu nền tối; xem thử `/dev/giao-dien`; deploy `9077fbd47`; bản chính `docs/MAU-NEN-SANG.md`
 - Giao diện nền sáng (11/10) — mặc định sáng toàn site, token trong `app/globals.css`; tài liệu `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
