@@ -469,5 +469,7 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-10-06 · Bảng `exams` có `question_count` là generated column → khi update mảng `questions` qua Supabase REST API, KHÔNG được truyền kèm trường `question_count` (gây lỗi 400 `Column is a generated column`), Postgres tự tính lại.
 - 2026-10-06 · Câu trắc nghiệm chứa hai đơn vị tương đương cùng đúng về mặt vật lý (ví dụ: `400 K.` và `127°C.`) nhưng hệ thống chỉ gắn 1 đáp án đúng → phải đổi số của phương án nhiễu (ví dụ `27°C.`) để tránh học sinh làm đúng nhưng bị chấm sai.
 - 2026-10-06 · Các câu hỏi nhắc tới "hình bên", "đồ thị bên" bị mất hình scan/ảnh từ Word → cần cô lập tạm thời khỏi mảng `questions` trong `exams` và đánh dấu `archived=true` trong `question_bank` kèm file backup để học sinh không gặp đề lỗi trong lúc chờ bổ sung ảnh.
+- 2026-10-10 · Trang Đăng đề có HAI chỗ điền Tên đề/Thời gian (khối ngoài của `ExamSection` và `ExamDraftEditor` bên trong). Khi bấm "Sửa chi tiết từng câu" thì khối ngoài là **ô chết** — gõ vào không lưu, phải gõ lại lần hai. → Đã gộp còn MỘT khối ở đầu `ExamSection`, luôn hiện; ai sửa tiếp phần đề thì đừng thêm ô Tên đề/Thời gian ở chỗ khác.
+- 2026-10-10 · Thời gian mặc định cũ là 45 phút cho mọi đề (đề 8 câu hay 40 câu cũng vậy) → giờ lấy theo ước lượng số câu/dạng câu (`features/exams/duration.ts`: TN 1,5′ · ĐS 2′ · TLN 2,5′ · tự luận 8′, làm tròn lên bội số 5). Số này chỉ là GỢI Ý, vẫn phải nhìn lại theo lớp trước khi Đăng.
 
 
