@@ -1,0 +1,497 @@
+{
+ "lesson_id": 126,
+ "lesson_title": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 4/4 dạng khớp; sửa TAB nuốt \\t ở D1, bỏ lộ ở bảng D2,D3,D4, nhan_dang D4, thay lựa chọn sai gượng D2,D3, YCCĐ D3,D4 → 218. Bài không có chủ đề riêng trong ngân hàng (nên gắn YCCĐ riêng). Bài đã có mục bai_tap_mau (id 283, trống)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Đàn ghi ta điện: dòng cảm ứng và suất điện động trung bình",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "problem_html": "<p>Dây La của một đàn ghi ta điện dao động với tần số $110\\ \\text{Hz}$ ngay phía trên bộ cảm ứng (pickup): một nam châm nhỏ quấn cuộn dây $6\\,000$ vòng, nối với máy tăng âm. Dây thép đã bị nam châm từ hoá và không chạm vào cuộn dây; cuộn dây đứng yên. Trong mỗi nửa chu kì dao động của dây, từ thông qua mỗi vòng dây biến thiên một lượng $|\\Delta\\Phi|=0{,}30\\ \\mu\\text{Wb}$ ($1\\ \\mu\\text{Wb}=10^{-6}\\ \\text{Wb}$).</p><ol type=\"a\"><li>Trong cuộn dây có dòng điện cảm ứng không? Nếu có, tần số của nó bằng bao nhiêu?</li><li>Tính độ lớn suất điện động cảm ứng trung bình trong cuộn dây trong nửa chu kì đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Dây thép của đàn ghi ta điện dao động ngay phía trên bộ cảm ứng gồm nam châm quấn cuộn dây nối với máy tăng âm\"><text x=\"14\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dây La: f = 110 Hz</text><text x=\"14\" y=\"38\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cuộn dây: N = 6 000 vòng</text><text x=\"406\" y=\"20\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">dòng cảm ứng? e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"40.0\" y1=\"72.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"380.0\" y1=\"72.0\" x2=\"380.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"50\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">dây thép</text><line x1=\"165.0\" y1=\"136.0\" x2=\"190.0\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"136.0\" x2=\"255.0\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"144.0\" x2=\"190.0\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"144.0\" x2=\"255.0\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"152.0\" x2=\"190.0\" y2=\"152.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"152.0\" x2=\"255.0\" y2=\"152.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"160.0\" x2=\"190.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"160.0\" x2=\"255.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"168.0\" x2=\"190.0\" y2=\"168.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"168.0\" x2=\"255.0\" y2=\"168.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"176.0\" x2=\"190.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"176.0\" x2=\"255.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"184.0\" x2=\"190.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"184.0\" x2=\"255.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"192.0\" x2=\"190.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"192.0\" x2=\"255.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><rect x=\"165\" y=\"130\" width=\"90\" height=\"70\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"190\" y=\"118\" width=\"40\" height=\"84\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"210\" y=\"135\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">N</text><text x=\"210\" y=\"196\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S</text><path d=\"M255,184 H300\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M165,184 H140 V222 H350 V198\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><rect x=\"300\" y=\"170\" width=\"100\" height=\"28\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"350\" y=\"188\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">Máy tăng âm</text><text x=\"210\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">bộ cảm ứng (pickup)</text><path d=\"M40,90 Q210,90.0 380,90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"d\" values=\"M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,58.0 380,90;M40,90 Q210,62.3 380,90;M40,90 Q210,74.0 380,90;M40,90 Q210,90.0 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,122.0 380,90;M40,90 Q210,117.7 380,90;M40,90 Q210,106.0 380,90;M40,90 Q210,90.0 380,90\" dur=\"4.36s\" begin=\"indefinite\" fill=\"freeze\"/></path></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dây thép dao động trên bộ cảm ứng, chạy chậm 60 lần. Hình không vẽ dòng cảm ứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> từ thông qua mạch kín biến thiên thì có suất điện động và dòng cảm ứng; mạch không cần chuyển động.</li><li><strong>Đàn ghi ta điện:</strong> dây thép bị từ hoá dao động làm từ thông qua cuộn dây biến thiên cùng nhịp với dây.</li><li><strong>Công thức:</strong> $e_c=-N\\dfrac{\\Delta\\Phi}{\\Delta t}$; độ lớn $|e_c|=N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, $\\Delta\\Phi$ là của MỘT vòng.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta\\Phi$ ra Wb ($1\\ \\mu\\text{Wb}=10^{-6}\\ \\text{Wb}$), $\\Delta t$ ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng cảm ứng và tần số (câu a)</span></p><p>Cuộn dây đứng yên, nhưng dây thép bị từ hoá dao động làm từ thông qua cuộn dây biến thiên liên tục. Mạch kín (nối máy tăng âm) và từ thông biến thiên nên có suất điện động cảm ứng và dòng cảm ứng.</p><p>Mỗi chu kì dao động của dây, từ thông tăng rồi giảm đúng một lần nên dòng cảm ứng lặp lại cùng nhịp với dây.</p><div class=\"bt-ans\"><p>Câu a: <strong>có</strong> dòng cảm ứng, tần số bằng tần số của dây: $f=110\\ \\text{Hz}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thời gian nửa chu kì</span></p>$$T=\\dfrac{1}{f}=\\dfrac{1}{110}\\approx9{,}09\\cdot10^{-3}\\ \\text{s}$$$$\\Delta t=\\dfrac{T}{2}$$<div class=\"bt-ans\">$$\\Delta t\\approx4{,}55\\cdot10^{-3}\\ \\text{s}=4{,}55\\ \\text{ms}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động cảm ứng (câu b)</span></p><p>$|\\Delta\\Phi|=0{,}30\\ \\mu\\text{Wb}=3{,}0\\cdot10^{-7}\\ \\text{Wb}$ là của một vòng; cuộn có $N=6\\,000$ vòng nối tiếp:</p>$$|e_c|=N\\,\\dfrac{|\\Delta\\Phi|}{\\Delta t}$$$$|e_c|=6\\,000\\cdot\\dfrac{3{,}0\\cdot10^{-7}}{4{,}55\\cdot10^{-3}}$$<div class=\"bt-ans\">$$|e_c|\\approx0{,}40\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{Wb/s}=\\text{V}$.</p><p>Nếu lấy $\\Delta t$ bằng cả chu kì thì $e_c$ chỉ còn một nửa; sai vì $\\Delta\\Phi$ đề cho là trong NỬA chu kì.</p><p>Cỡ vài trăm mV, hợp với tín hiệu thực tế của bộ cảm ứng; tín hiệu nhỏ nên phải qua máy tăng âm.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Có dòng cảm ứng, tần số $110\\ \\text{Hz}$ (bằng tần số dây)</p><p>b) $|e_c|\\approx0{,}40\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>dây đàn rung trên cuộn dây đứng yên</strong> → từ thông qua cuộn biến thiên cùng tần số dây; $|e_c|=N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Dữ kiện: dây thép dao động giữa hai vị trí biên trên bộ cảm ứng; từ thông qua mỗi vòng dây biến thiên trong nửa chu kì\"><text x=\"14\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dây La: f = 110 Hz</text><text x=\"14\" y=\"38\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">cuộn dây: N = 6 000 vòng</text><text x=\"406\" y=\"20\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">dòng cảm ứng? e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"40.0\" y1=\"72.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"380.0\" y1=\"72.0\" x2=\"380.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"50\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">dây thép</text><line x1=\"165.0\" y1=\"136.0\" x2=\"190.0\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"136.0\" x2=\"255.0\" y2=\"136.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"144.0\" x2=\"190.0\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"144.0\" x2=\"255.0\" y2=\"144.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"152.0\" x2=\"190.0\" y2=\"152.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"152.0\" x2=\"255.0\" y2=\"152.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"160.0\" x2=\"190.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"160.0\" x2=\"255.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"168.0\" x2=\"190.0\" y2=\"168.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"168.0\" x2=\"255.0\" y2=\"168.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"176.0\" x2=\"190.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"176.0\" x2=\"255.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"184.0\" x2=\"190.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"184.0\" x2=\"255.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"165.0\" y1=\"192.0\" x2=\"190.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"230.0\" y1=\"192.0\" x2=\"255.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><rect x=\"165\" y=\"130\" width=\"90\" height=\"70\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"190\" y=\"118\" width=\"40\" height=\"84\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"210\" y=\"135\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">N</text><text x=\"210\" y=\"196\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">S</text><path d=\"M255,184 H300\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M165,184 H140 V222 H350 V198\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><rect x=\"300\" y=\"170\" width=\"100\" height=\"28\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"350\" y=\"188\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">Máy tăng âm</text><text x=\"210\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">bộ cảm ứng (pickup)</text><line x1=\"40.0\" y1=\"90.0\" x2=\"380.0\" y2=\"90.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"1\"/><path d=\"M40,90 Q210,58.0 380,90\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M40,90 Q210,122.0 380,90\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><line x1=\"300\" y1=\"90\" x2=\"300\" y2=\"84.2472\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M297.5,88.6 L300.0,84.2 L302.5,88.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"300\" y1=\"90\" x2=\"300\" y2=\"95.7528\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M302.5,91.4 L300.0,95.8 L297.5,91.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"324\" y=\"124\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nửa chu kì</text><text x=\"14\" y=\"56\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">|ΔΦ| = 0,30 µWb mỗi vòng, trong nửa chu kì</text></svg><figcaption>Dữ kiện: nét đứt cam là hai vị trí biên của dây, nét xám là vị trí cân bằng; từ thông qua mỗi vòng biến thiên trong nửa chu kì. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“dây La … dao động với tần số $110\\ \\text{Hz}$ ngay phía trên bộ cảm ứng”</td><td>$f=110\\ \\text{Hz}$</td><td>⚠ Điều kiện có dòng cảm ứng trong mạch kín: từ thông qua mạch biến thiên</td></tr><tr><td>“cuộn dây $6\\,000$ vòng, nối với máy tăng âm”</td><td>$N=6\\,000$; mạch kín qua máy tăng âm</td><td>Cuộn có $N$ vòng nối tiếp</td></tr><tr><td>“không chạm vào cuộn dây; cuộn dây đứng yên”</td><td>Cuộn dây đứng yên</td><td>⚠ Xét từ thông qua cuộn dây, không xét cuộn dây có chuyển động hay không</td></tr><tr><td>“trong mỗi nửa chu kì dao động của dây”</td><td>$\\Delta t$ = nửa chu kì</td><td>Liên hệ chu kì với tần số</td></tr><tr><td>“từ thông qua mỗi vòng dây biến thiên $|\\Delta\\Phi|=0{,}30\\ \\mu\\text{Wb}$”</td><td>$|\\Delta\\Phi|=0{,}30\\ \\mu\\text{Wb}$ (một vòng)</td><td>Đổi $\\mu\\text{Wb}$ ra Wb</td></tr><tr><td>“a) có dòng điện cảm ứng không? tần số?”</td><td>Cần kết luận và $f$ của dòng</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) độ lớn suất điện động cảm ứng trung bình”</td><td>Cần $|e_c|$ (V)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>dây đàn rung trên cuộn dây đứng yên</b> → nghĩ tới <b>từ thông biến thiên</b>, rồi <b>|e_c| = N|ΔΦ|/Δt</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Dòng cảm ứng và tần số",
+     "hoi": "Cuộn dây đứng yên, dây không chạm vào cuộn dây. Dòng cảm ứng trong cuộn dây thế nào?",
+     "lua_chon": [
+      {
+       "text": "Có dòng, tần số bằng tần số dao động của dây",
+       "dung": true
+      },
+      {
+       "text": "Không có dòng, vì cuộn dây đứng yên",
+       "dung": false,
+       "vi_sao": "Điều kiện là từ thông qua cuộn dây biến thiên, không đòi cuộn dây chuyển động. Dây thép bị từ hoá dao động làm từ thông qua cuộn đổi liên tục."
+      },
+      {
+       "text": "Có dòng, nhưng chỉ khi dây chạm vào cuộn dây",
+       "dung": false,
+       "vi_sao": "Dây không cần chạm; dây thép bị từ hoá dao động làm từ thông qua cuộn dây biến thiên ngay từ xa."
+      }
+     ],
+     "loi_hay_gap": "Buộc dòng cảm ứng vào chuyển động của cuộn dây; điều kiện thật là từ thông qua cuộn dây biến thiên."
+    },
+    {
+     "tieu_de": "Thời gian nửa chu kì",
+     "hoi": "Khoảng thời gian $\\Delta t$ của nửa chu kì dao động bằng bao nhiêu (đơn vị ms)?",
+     "dap_so": 4.55,
+     "sai_so": 0.05,
+     "don_vi": "ms",
+     "loi_hay_gap": "Lấy $\\Delta t$ bằng cả chu kì (quên chia đôi), hoặc để $\\Delta t$ ở giây rồi trộn với ms.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính chu kì $T=\\dfrac{1}{f}$ rồi lấy một nửa",
+       "dung": true
+      },
+      {
+       "text": "Lấy luôn $\\Delta t=f$",
+       "dung": false,
+       "vi_sao": "Tần số có đơn vị Hz, không phải thời gian; thời gian là nghịch đảo của tần số."
+      },
+      {
+       "text": "Lấy $\\Delta t=T$, cả một chu kì",
+       "dung": false,
+       "vi_sao": "Đề cho $\\Delta\\Phi$ trong nửa chu kì nên $\\Delta t$ phải là nửa chu kì; lấy cả chu kì thì $\\Delta t$ gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Suất điện động cảm ứng",
+     "hoi": "Độ lớn suất điện động cảm ứng trung bình trong cuộn dây bằng bao nhiêu (đơn vị V)?",
+     "dap_so": 0.396,
+     "sai_so": 0.01,
+     "don_vi": "V",
+     "loi_hay_gap": "Quên nhân với $N$ (chỉ lấy suất điện động của một vòng), hoặc quên đổi $\\mu\\text{Wb}$ ra Wb nên lệch rất nhiều lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "$|e_c|=N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$ với $\\Delta\\Phi$ của một vòng, đổi ra Wb",
+       "dung": true
+      },
+      {
+       "text": "$|e_c|=\\dfrac{|\\Delta\\Phi|}{\\Delta t}$ (bỏ $N$)",
+       "dung": false,
+       "vi_sao": "Cuộn gồm $N$ vòng nối tiếp, mỗi vòng cho suất điện động như nhau nên cả cuộn gấp $N$ lần."
+      },
+      {
+       "text": "$|e_c|=N\\,|\\Delta\\Phi|\\cdot\\Delta t$",
+       "dung": false,
+       "vi_sao": "Faraday là tốc độ biến thiên từ thông, phải chia cho $\\Delta t$; nhân thì đơn vị không phải V."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Sạc không dây: điện áp thứ cấp lí tưởng và số đo",
+   "topic": "Máy biến áp",
+   "problem_html": "<p>Một đế sạc không dây có cuộn sơ cấp $N_1=24$ vòng nối nguồn xoay chiều, điện áp hiệu dụng $U_1=12\\ \\text{V}$. Cuộn thứ cấp sau lưng điện thoại có $N_2=16$ vòng. Hai cuộn đặt đồng trục, không có lõi sắt chung. Áp sát, vôn kế xoay chiều (sai số $\\pm0{,}1\\ \\text{V}$) nối hai đầu cuộn thứ cấp chỉ $7{,}2\\ \\text{V}$.</p><ol type=\"a\"><li>Coi hai cuộn ghép lí tưởng, tính điện áp $U_2$ ở cuộn thứ cấp.</li><li>Số đo $7{,}2\\ \\text{V}$ bằng bao nhiêu phần trăm giá trị lí tưởng? Vì sao số đo nhỏ hơn?</li><li>Kê thêm hai tấm bìa dày $1\\ \\text{cm}$ mỗi tấm vào giữa hai cuộn, vôn kế chỉ $5{,}4\\ \\text{V}$. Lúc này số đo bằng bao nhiêu phần trăm giá trị lí tưởng?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 252\" role=\"img\" aria-label=\"Đế sạc không dây với cuộn sơ cấp nối nguồn xoay chiều, phía trên là điện thoại có cuộn thứ cấp nối vôn kế; đường sức từ nét đứt đổi chiều\"><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">sơ cấp: N<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 24 vòng · U</tspan><tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 12 V</tspan></text><text x=\"14\" y=\"32\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">thứ cấp: N<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = 16 vòng</tspan></text><text x=\"410\" y=\"244\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> lí tưởng = ?</tspan></text><rect x=\"100\" y=\"62\" width=\"220\" height=\"80\" rx=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"150\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"174\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"198\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"246\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"150\" y=\"138\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">cuộn thứ cấp (sau lưng điện thoại)</text><rect x=\"100\" y=\"164\" width=\"220\" height=\"64\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"150\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"174\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"198\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"246\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"150\" y=\"224\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">cuộn sơ cấp (trong đế sạc)</text><g opacity=\"0\"><line x1=\"165\" y1=\"186\" x2=\"165\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M160.5,129.8 L165.0,122.0 L169.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"205\" y1=\"186\" x2=\"205\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M200.5,129.8 L205.0,122.0 L209.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"245\" y1=\"186\" x2=\"245\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M240.5,129.8 L245.0,122.0 L249.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0\" dur=\"4.94s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"165\" y1=\"122\" x2=\"165\" y2=\"186\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M169.5,178.2 L165.0,186.0 L160.5,178.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"205\" y1=\"122\" x2=\"205\" y2=\"186\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M209.5,178.2 L205.0,186.0 L200.5,178.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"245\" y1=\"122\" x2=\"245\" y2=\"186\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M249.5,178.2 L245.0,186.0 L240.5,178.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0\" dur=\"4.94s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"60\" cy=\"196\" r=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"60\" y=\"201\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">~</text><path d=\"M76,196 H143\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257,196 H290 V232 H60 V212\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><circle cx=\"370\" cy=\"110\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"370\" y=\"116\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">V</text><path d=\"M143,110 V48 H370 V92\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257,110 H352\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"370\" y=\"144\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">7,2 V</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng xoay chiều ở cuộn sơ cấp đổi chiều nên từ trường xuyên qua hai cuộn đổi chiều (nét đứt, đầu mũi tên đổi theo). Hình không vẽ điện áp thứ cấp. Số vòng vẽ thu gọn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> sạc không dây là máy biến áp không lõi: cuộn sơ cấp trong đế sạc, cuộn thứ cấp sau lưng điện thoại.</li><li><strong>Công thức:</strong> $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$, $U$ là điện áp hiệu dụng.</li><li><strong>Tỉ lệ phần trăm:</strong> $\\dfrac{U_{\\text{đo}}}{U_{\\text{lí tưởng}}}\\cdot100\\%$.</li><li>⚠ <strong>Điều kiện:</strong> công thức chỉ đúng khi mọi từ thông của cuộn sơ cấp xuyên qua cuộn thứ cấp; $N_2$ là cuộn nối với thiết bị cần nạp.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tỉ số số vòng</span></p>$$\\dfrac{N_2}{N_1}=\\dfrac{16}{24}$$<div class=\"bt-ans\">$$\\dfrac{N_2}{N_1}\\approx0{,}667$$</div><p>Cuộn thứ cấp ít vòng hơn sơ cấp: máy hạ áp, $U_2\\lt U_1$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện áp thứ cấp lí tưởng (câu a)</span></p>$$\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$$$$U_2=12\\cdot\\dfrac{16}{24}$$<div class=\"bt-ans\">$$U_2=8{,}0\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số đo so với lí tưởng (câu b)</span></p>$$\\dfrac{U_{\\text{đo}}}{U_2}\\cdot100\\%=\\dfrac{7{,}2}{8{,}0}\\cdot100\\%$$<div class=\"bt-ans\">$$\\dfrac{U_{\\text{đo}}}{U_2}=90\\%$$</div><p>Số đo thấp hơn lí tưởng $0{,}8\\ \\text{V}$, lớn hơn nhiều so với sai số $\\pm0{,}1\\ \\text{V}$ của vôn kế.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nguyên nhân số đo nhỏ hơn (câu b)</span></p><p>Hai cuộn rời nhau, không có lõi sắt dẫn từ chung nên một phần từ thông của cuộn sơ cấp rò ra ngoài, không xuyên qua cuộn thứ cấp. Từ thông qua cuộn thứ cấp biến thiên ít hơn nên suất điện động cảm ứng nhỏ hơn giá trị lí tưởng.</p><div class=\"bt-ans\"><p>Nguyên nhân chính: <strong>từ thông rò</strong>, mô hình lí tưởng chỉ gần đúng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khi kê hai tấm bìa (câu c)</span></p><p>Giá trị lí tưởng chỉ phụ thuộc $U_1$, $N_1$, $N_2$ nên vẫn là $8{,}0\\ \\text{V}$; khe hở chỉ làm số đo tụt.</p>$$\\dfrac{5{,}4}{8{,}0}\\cdot100\\%$$<div class=\"bt-ans\">$$\\dfrac{U'_{\\text{đo}}}{U_2}=67{,}5\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Nếu đảo tỉ số vòng thì $U_2=18\\ \\text{V}\\gt U_1$, vô lí với cuộn thứ cấp ít vòng hơn.</p><p>Khe hở tăng, tỉ lệ giảm từ $90\\%$ xuống $67{,}5\\%$: hợp với từ thông rò tăng theo khe hở.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $U_2=8{,}0\\ \\text{V}$</p><p>b) Số đo bằng $90\\%$ giá trị lí tưởng; nhỏ hơn vì từ thông rò (hai cuộn không có lõi chung)</p><p>c) $67{,}5\\%$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai cuộn dây với số vòng khác nhau</strong> → $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$ cho giá trị lí tưởng; số đo luôn thấp hơn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 252\" role=\"img\" aria-label=\"Dữ kiện: hai cuộn đặt đồng trục không có lõi sắt chung, cuộn sơ cấp nối nguồn xoay chiều, cuộn thứ cấp nối vôn kế\"><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">sơ cấp: N<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 24 vòng · U</tspan><tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 12 V</tspan></text><text x=\"14\" y=\"32\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">thứ cấp: N<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = 16 vòng</tspan></text><text x=\"410\" y=\"244\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> lí tưởng = ?</tspan></text><rect x=\"100\" y=\"62\" width=\"220\" height=\"80\" rx=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"150\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"174\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"198\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"246\" cy=\"110\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"150\" y=\"138\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">cuộn thứ cấp (sau lưng điện thoại)</text><rect x=\"100\" y=\"164\" width=\"220\" height=\"64\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"150\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"174\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"198\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"246\" cy=\"196\" rx=\"7\" ry=\"15\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"150\" y=\"224\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">cuộn sơ cấp (trong đế sạc)</text><g opacity=\".9\"><line x1=\"165\" y1=\"186\" x2=\"165\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M160.5,129.8 L165.0,122.0 L169.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"205\" y1=\"186\" x2=\"205\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M200.5,129.8 L205.0,122.0 L209.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"245\" y1=\"186\" x2=\"245\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M240.5,129.8 L245.0,122.0 L249.5,129.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"60\" cy=\"196\" r=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"60\" y=\"201\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">~</text><path d=\"M76,196 H143\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257,196 H290 V232 H60 V212\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><circle cx=\"370\" cy=\"110\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"370\" y=\"116\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">V</text><path d=\"M143,110 V48 H370 V92\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M257,110 H352\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"370\" y=\"144\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">7,2 V</text></svg><figcaption>Dữ kiện: hai cuộn đồng trục, áp sát, không có lõi sắt chung; vôn kế nối cuộn thứ cấp. Số vòng vẽ thu gọn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“cuộn sơ cấp $N_1=24$ vòng … $U_1=12\\ \\text{V}$”</td><td>$N_1=24$; $U_1=12\\ \\text{V}$ (hiệu dụng)</td><td>⚠ $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$ với $U$ là điện áp hiệu dụng</td></tr><tr><td>“cuộn thứ cấp sau lưng điện thoại có $N_2=16$ vòng”</td><td>$N_2=16$</td><td>Cuộn thứ cấp là cuộn nối với thiết bị cần nạp</td></tr><tr><td>“đồng trục, không có lõi sắt chung”</td><td>Không có lõi dẫn từ chung</td><td>Điều kiện áp dụng công thức máy biến áp</td></tr><tr><td>“vôn kế (sai số $\\pm0{,}1\\ \\text{V}$) … chỉ $7{,}2\\ \\text{V}$”</td><td>$U_{\\text{đo}}=7{,}2\\pm0{,}1\\ \\text{V}$</td><td>Số đo kèm sai số; so với giá trị lí tưởng</td></tr><tr><td>“c) hai tấm bìa dày $1\\ \\text{cm}$ … chỉ $5{,}4\\ \\text{V}$”</td><td>Khe $2\\ \\text{cm}$; $U'_{\\text{đo}}=5{,}4\\ \\text{V}$</td><td>Công thức $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$</td></tr><tr><td>“a) tính điện áp $U_2$”</td><td>Cần $U_2$ lí tưởng (V)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) bao nhiêu phần trăm … Vì sao số đo nhỏ hơn?”</td><td>Cần tỉ lệ (%) và nguyên nhân</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai cuộn dây khác số vòng</b> → nghĩ tới <b>U₂/U₁ = N₂/N₁</b> (lí tưởng), rồi so số đo với lí tưởng.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tỉ số số vòng",
+     "hoi": "Tỉ số $\\dfrac{N_2}{N_1}$ bằng bao nhiêu?",
+     "dap_so": 0.667,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Đảo tỉ số (chia $N_1$ cho $N_2$) vì nhầm cuộn nào là thứ cấp."
+    },
+    {
+     "tieu_de": "Điện áp thứ cấp lí tưởng",
+     "hoi": "Điện áp thứ cấp lí tưởng $U_2$ bằng bao nhiêu (đơn vị V)?",
+     "dap_so": 8.0,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Dùng tỉ số đảo nên điện áp thứ cấp lớn hơn sơ cấp, trái với việc thứ cấp ít vòng hơn; hoặc coi điện áp không đổi qua hai cuộn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$ của máy biến áp lí tưởng rồi suy ra $U_2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $U_2=U_1\\dfrac{N_1}{N_2}$",
+       "dung": false,
+       "vi_sao": "$N_2$ là cuộn nối với thiết bị cần nạp; thứ cấp ít vòng hơn sơ cấp thì điện áp thứ cấp phải nhỏ hơn, công thức này cho lớn hơn."
+      },
+      {
+       "text": "Lấy $U_2=U_1\\dfrac{N_1-N_2}{N_1}$",
+       "dung": false,
+       "vi_sao": "Điện áp tỉ lệ với số vòng chứ không tỉ lệ với hiệu số vòng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số đo so với lí tưởng",
+     "hoi": "Số đo $7{,}2\\ \\text{V}$ đạt bao nhiêu phần trăm giá trị lí tưởng?",
+     "dap_so": 90,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Chia ngược (lí tưởng chia cho số đo) nên ra hơn $100\\%$, hoặc lấy hiệu của hai giá trị làm phần trăm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia số đo cho giá trị lí tưởng rồi nhân $100\\%$",
+       "dung": true
+      },
+      {
+       "text": "Chia giá trị lí tưởng cho số đo",
+       "dung": false,
+       "vi_sao": "Ra tỉ số lớn hơn $1$, nghĩa là số đo vượt giá trị lí tưởng; ngược với thực tế vì có từ thông rò."
+      },
+      {
+       "text": "Lấy hiệu hai giá trị chia cho $U_1$",
+       "dung": false,
+       "vi_sao": "Mẫu số phải là giá trị lí tưởng mà đề so sánh, không phải $U_1$; hiệu số cũng cho phần hụt chứ không cho phần đạt được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nguyên nhân số đo nhỏ hơn",
+     "hoi": "Nguyên nhân chính khiến số đo nhỏ hơn giá trị lí tưởng là gì?",
+     "lua_chon": [
+      {
+       "text": "Một phần từ thông của cuộn sơ cấp rò ra ngoài, không xuyên qua cuộn thứ cấp",
+       "dung": true
+      },
+      {
+       "text": "Sai số $\\pm0{,}1\\ \\text{V}$ của vôn kế",
+       "dung": false,
+       "vi_sao": "Sai số này nhỏ hơn rất nhiều so với độ chênh giữa số đo và giá trị lí tưởng nên không giải thích được."
+      },
+      {
+       "text": "Tần số ở cuộn thứ cấp nhỏ hơn tần số ở cuộn sơ cấp",
+       "dung": false,
+       "vi_sao": "Tần số của suất điện động cảm ứng bằng tần số biến thiên của từ thông, tức bằng tần số cuộn sơ cấp; thứ thay đổi là độ lớn."
+      }
+     ],
+     "loi_hay_gap": "Quy hết cho sai số dụng cụ hoặc cho tần số, quên rằng hai cuộn không có lõi sắt chung.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét nguyên nhân làm số đo khác giá trị lí tưởng",
+       "dung": true
+      },
+      {
+       "text": "Tính lại $U_2$ bằng $U_1\\dfrac{N_1}{N_2}$ xem có khớp số đo không",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số cho giá trị lớn hơn $U_1$, càng xa số đo; và công thức lí tưởng đúng là $U_2=U_1\\dfrac{N_2}{N_1}$."
+      },
+      {
+       "text": "Lấy số đo làm $U_2$ rồi tính ngược số vòng $N_2$",
+       "dung": false,
+       "vi_sao": "Đề đã cho $N_2$; đổi $N_2$ cho khớp số đo không giải thích vì sao số đo thấp hơn giá trị lí tưởng của số vòng thật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khi kê hai tấm bìa",
+     "hoi": "Với hai tấm bìa, số đo $5{,}4\\ \\text{V}$ đạt bao nhiêu phần trăm giá trị lí tưởng?",
+     "dap_so": 67.5,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Tính lại giá trị lí tưởng theo khe hở mới; giá trị lí tưởng chỉ phụ thuộc điện áp sơ cấp và tỉ số vòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ nguyên giá trị lí tưởng đã tính, chia số đo mới cho nó",
+       "dung": true
+      },
+      {
+       "text": "Tính lại giá trị lí tưởng với khe hở mới",
+       "dung": false,
+       "vi_sao": "Công thức lí tưởng không chứa khoảng cách; khe hở chỉ làm số đo tụt, không đổi tỉ số vòng."
+      },
+      {
+       "text": "Lấy hiệu hai số đo chia cho $U_1$",
+       "dung": false,
+       "vi_sao": "Đề hỏi số đo mới so với giá trị lí tưởng; hiệu hai số đo chia cho $U_1$ không trả lời câu đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khá · Dòng điện Foucault: điều kiện xuất hiện, lực hãm và toả nhiệt",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "problem_html": "<p>Cho một tấm nhôm liền khối kích thước $100\\times60\\times3\\ \\text{mm}$ trong bốn tình huống (bỏ qua lực cản không khí):</p><ol><li>Tấm nằm yên cạnh một nam châm đứng yên.</li><li>Tấm rơi theo phương thẳng đứng qua khe giữa hai cực của một nam châm mạnh; mặt tấm vuông góc với đường sức từ.</li><li>Tấm nằm yên giữa hai cực của một nam châm điện, cường độ dòng điện nuôi nam châm tăng dần.</li><li>Tấm nằm yên trong một lò nướng đang nóng, không có nam châm nào ở gần.</li></ol><ol type=\"a\"><li>Dòng điện Foucault xuất hiện trong tấm ở những tình huống nào?</li><li>So với khi rơi tự do không có nam châm, tấm ở tình huống (2) rơi nhanh hơn, chậm hơn hay như nhau?</li><li>Phần cơ năng của tấm mất đi trong tình huống (2) đã chuyển thành dạng năng lượng nào?</li><li>Thay bằng tấm nhôm cùng cỡ nhưng xẻ vài rãnh song song, tấm ở tình huống (2) rơi nhanh hơn hay chậm hơn tấm liền khối?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Bốn tình huống với tấm nhôm: nằm yên cạnh nam châm, rơi qua khe nam châm, nằm yên trong nam châm điện có dòng tăng dần, nằm trong lò nướng\"><rect x=\"6\" y=\"8\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"216\" y=\"8\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"6\" y=\"126\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"216\" y=\"126\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><text x=\"12\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(1) tấm và nam châm đứng yên</text><rect x=\"32\" y=\"70\" width=\"35\" height=\"24\" rx=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"49.5\" y=\"87.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N</text><rect x=\"67\" y=\"70\" width=\"35\" height=\"24\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"84.5\" y=\"87.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">S</text><rect x=\"146\" y=\"64\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><text x=\"67\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nam châm</text><text x=\"149\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">tấm</text><text x=\"222\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(2) tấm rơi qua khe giữa hai cực</text><rect x=\"246\" y=\"52\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"260.0\" y=\"84.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N</text><rect x=\"356\" y=\"52\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"370.0\" y=\"84.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">S</text><g><line x1=\"274\" y1=\"66\" x2=\"356\" y2=\"66\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,61.5 L356.0,66.0 L348.2,70.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"274\" y1=\"78\" x2=\"356\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,73.5 L356.0,78.0 L348.2,82.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"274\" y1=\"90\" x2=\"356\" y2=\"90\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,85.5 L356.0,90.0 L348.2,94.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0 50\" dur=\"3s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"312\" y=\"26\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/></g><text x=\"12\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(3) dòng nuôi nam châm tăng</text><rect x=\"36\" y=\"170\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"36.0\" y1=\"176.0\" x2=\"64.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"184.0\" x2=\"64.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"192.0\" x2=\"64.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"200.0\" x2=\"64.0\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"208.0\" x2=\"64.0\" y2=\"208.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"216.0\" x2=\"64.0\" y2=\"216.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><rect x=\"146\" y=\"170\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"146.0\" y1=\"176.0\" x2=\"174.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"184.0\" x2=\"174.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"192.0\" x2=\"174.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"200.0\" x2=\"174.0\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"208.0\" x2=\"174.0\" y2=\"208.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"216.0\" x2=\"174.0\" y2=\"216.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><g opacity=\".15\"><line x1=\"64\" y1=\"184\" x2=\"146\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,179.5 L146.0,184.0 L138.2,188.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64\" y1=\"196\" x2=\"146\" y2=\"196\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,191.5 L146.0,196.0 L138.2,200.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64\" y1=\"208\" x2=\"146\" y2=\"208\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,203.5 L146.0,208.0 L138.2,212.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0.1;1.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><rect x=\"102\" y=\"184\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><text x=\"222\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(4) trong lò nướng nóng</text><rect x=\"242\" y=\"156\" width=\"146\" height=\"70\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"312\" y=\"180\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><g opacity=\".4\"><path d=\"M256,218 q4,-6 8,0 t8,0 t8,0 t8,0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.5\"/><animate attributeName=\"opacity\" values=\"0.4;1.0;0.5;1.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\".4\"><path d=\"M334,218 q4,-6 8,0 t8,0 t8,0 t8,0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.5\"/><animate attributeName=\"opacity\" values=\"0.4;1.0;0.5;1.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: minh hoạ các tình huống đúng như đề mô tả (có chỗ đổi, có chỗ không). Tốc độ đi xuống của tấm trong hình không thể hiện lực hãm; không vẽ dòng cảm ứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> dòng Foucault là dòng cảm ứng khép kín trong khối vật dẫn chuyển động trong từ trường hoặc nằm trong từ trường biến thiên.</li><li><strong>Điều kiện:</strong> từ thông qua khối biến thiên; khối nằm yên cạnh nam châm đứng yên thì không có dòng.</li><li><strong>Hai tác dụng:</strong> lực hãm điện từ (Lenz: chống lại sự biến thiên từ thông, tức chống lại chuyển động) và toả nhiệt Joule $Q=I^2Rt$.</li><li><strong>Dòng:</strong> $I=\\dfrac{|e_c|}{R}$; điện trở của mạch dòng tăng thì dòng giảm.</li><li>⚠ <strong>Điều kiện:</strong> nhôm không nhiễm từ nhưng vẫn dẫn điện, nên vẫn có dòng Foucault.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tình huống có dòng Foucault (câu a)</span></p><p>(1): tấm và nam châm cùng đứng yên, từ thông qua tấm không đổi nên không có dòng.</p><p>(2): tấm chuyển động vào vùng có từ trường, từ thông qua tấm biến thiên nên có dòng.</p><p>(3): tấm đứng yên nhưng từ trường biến thiên theo dòng nuôi nam châm điện, từ thông qua tấm biến thiên nên có dòng.</p><p>(4): lò nướng nóng nhưng không có từ trường nên không có dòng cảm ứng; tấm nóng do truyền nhiệt.</p><div class=\"bt-ans\"><p>Câu a: tình huống <strong>(2) và (3)</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tấm rơi trong tình huống (2) (câu b)</span></p><p>Từ thông qua tấm thay đổi khi tấm đi vào khe nên có dòng Foucault. Theo Lenz, từ trường cảm ứng chống lại sự biến thiên từ thông, tức chống lại chuyển động của tấm: dòng cảm ứng chịu lực từ cản tấm.</p><p>Nhôm không bị nam châm hút; lực cản do dòng cảm ứng sinh ra.</p><div class=\"bt-ans\"><p>Câu b: tấm rơi <strong>chậm hơn</strong> rơi tự do.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Năng lượng (câu c)</span></p><p>Lực hãm điện từ thực hiện công cản nên cơ năng của tấm giảm. Năng lượng không tự mất: cơ năng chuyển thành điện năng của dòng Foucault, rồi toả thành nhiệt trong chính tấm.</p>$$Q=I^2Rt$$<div class=\"bt-ans\"><p>Câu c: <strong>nhiệt Joule</strong> toả ra trong tấm nhôm.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tấm có rãnh xẻ (câu d)</span></p><p>Hai tấm cùng cỡ, từ thông qua tấm biến thiên như nhau nên suất điện động cảm ứng như nhau. Rãnh xẻ cắt các đường dòng khép kín, điện trở của mạch dòng tăng.</p>$$I=\\dfrac{|e_c|}{R}$$<p>$R$ tăng thì $I$ giảm, lực hãm điện từ yếu đi.</p><div class=\"bt-ans\"><p>Câu d: tấm có rãnh <strong>rơi nhanh hơn</strong> tấm liền khối.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Khớp thí nghiệm trong bài: tấm nhôm liền khối giữa hai cực tắt dao động sau khoảng $3{,}8\\ \\text{s}$, tấm có rãnh xẻ sau khoảng $13{,}3\\ \\text{s}$.</p><p>Nhôm không nhiễm từ nhưng vẫn dẫn điện; dòng Foucault chỉ cần từ thông biến thiên.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Tình huống (2) và (3)</p><p>b) Rơi chậm hơn rơi tự do, do lực hãm điện từ</p><p>c) Nhiệt Joule toả ra trong tấm</p><p>d) Tấm có rãnh xẻ rơi nhanh hơn tấm liền khối</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>khối kim loại trong từ trường</strong> → xét từ thông có biến thiên không; có thì có lực hãm và toả nhiệt.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Dữ kiện: bốn tình huống với tấm nhôm, đường sức nét đứt giữa hai cực nam châm ở tình huống hai và ba\"><rect x=\"6\" y=\"8\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"216\" y=\"8\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"6\" y=\"126\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><rect x=\"216\" y=\"126\" width=\"198\" height=\"110\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\"/><text x=\"12\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(1) tấm và nam châm đứng yên</text><rect x=\"32\" y=\"70\" width=\"35\" height=\"24\" rx=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"49.5\" y=\"87.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N</text><rect x=\"67\" y=\"70\" width=\"35\" height=\"24\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"84.5\" y=\"87.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">S</text><rect x=\"146\" y=\"64\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><text x=\"67\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nam châm</text><text x=\"149\" y=\"110\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">tấm</text><text x=\"222\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(2) tấm rơi qua khe giữa hai cực</text><rect x=\"246\" y=\"52\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"260.0\" y=\"84.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N</text><rect x=\"356\" y=\"52\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"370.0\" y=\"84.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">S</text><g><line x1=\"274\" y1=\"66\" x2=\"356\" y2=\"66\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,61.5 L356.0,66.0 L348.2,70.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"274\" y1=\"78\" x2=\"356\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,73.5 L356.0,78.0 L348.2,82.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"274\" y1=\"90\" x2=\"356\" y2=\"90\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M348.2,85.5 L356.0,90.0 L348.2,94.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><rect x=\"312\" y=\"26\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><rect x=\"312\" y=\"76\" width=\"6\" height=\"30\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"12\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(3) dòng nuôi nam châm tăng</text><rect x=\"36\" y=\"170\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"36.0\" y1=\"176.0\" x2=\"64.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"184.0\" x2=\"64.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"192.0\" x2=\"64.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"200.0\" x2=\"64.0\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"208.0\" x2=\"64.0\" y2=\"208.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"36.0\" y1=\"216.0\" x2=\"64.0\" y2=\"216.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><rect x=\"146\" y=\"170\" width=\"28\" height=\"54\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"146.0\" y1=\"176.0\" x2=\"174.0\" y2=\"176.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"184.0\" x2=\"174.0\" y2=\"184.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"192.0\" x2=\"174.0\" y2=\"192.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"200.0\" x2=\"174.0\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"208.0\" x2=\"174.0\" y2=\"208.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"146.0\" y1=\"216.0\" x2=\"174.0\" y2=\"216.0\" stroke=\"#fb923c\" stroke-width=\"1.3\" opacity=\"1\"/><g><line x1=\"64\" y1=\"184\" x2=\"146\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,179.5 L146.0,184.0 L138.2,188.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64\" y1=\"196\" x2=\"146\" y2=\"196\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,191.5 L146.0,196.0 L138.2,200.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64\" y1=\"208\" x2=\"146\" y2=\"208\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M138.2,203.5 L146.0,208.0 L138.2,212.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><rect x=\"102\" y=\"184\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><text x=\"222\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">(4) trong lò nướng nóng</text><rect x=\"242\" y=\"156\" width=\"146\" height=\"70\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"312\" y=\"180\" width=\"6\" height=\"30\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M256,218 q4,-6 8,0 t8,0 t8,0 t8,0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.5\"/><path d=\"M334,218 q4,-6 8,0 t8,0 t8,0 t8,0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.5\"/></svg><figcaption>Dữ kiện: bốn tình huống. Ở (2) tấm bắt đầu từ vị trí phía trên khe, nét đứt xám là vị trí khi đã vào khe. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) tấm nằm yên cạnh nam châm đứng yên”</td><td>Tấm đứng yên; nam châm đứng yên</td><td>⚠ Dòng Foucault là dòng cảm ứng trong khối vật dẫn; điều kiện có dòng cảm ứng là gì?</td></tr><tr><td>“(2) tấm rơi qua khe giữa hai cực nam châm mạnh”</td><td>Tấm chuyển động; nam châm đứng yên</td><td>Xét từ thông qua tấm khi tấm đi vào và đi qua khe</td></tr><tr><td>“(3) nam châm điện, dòng nuôi tăng dần”</td><td>Tấm đứng yên; dòng nuôi nam châm điện tăng dần</td><td>Cường độ dòng điện đổi thì từ trường đổi</td></tr><tr><td>“(4) trong lò nướng nóng, không có nam châm”</td><td>Có nhiệt độ cao; không có từ trường</td><td>Xét có từ trường tác dụng lên tấm hay không</td></tr><tr><td>“b) so với rơi tự do không có nam châm”</td><td>Cần so sánh chuyển động</td><td>Định luật Lenz; tác dụng của từ trường lên dòng điện</td></tr><tr><td>“c) phần cơ năng mất đi … dạng năng lượng nào”</td><td>Cần dạng năng lượng mới</td><td>Bảo toàn năng lượng: năng lượng không tự mất đi</td></tr><tr><td>“d) tấm nhôm cùng cỡ nhưng xẻ vài rãnh song song”</td><td>Tấm cùng cỡ, có vài rãnh song song</td><td>So hai tấm cùng rơi qua khe</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối kim loại trong từ trường</b> → hỏi <b>từ thông có biến thiên không</b>, rồi xét lực hãm và nhiệt Joule.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tình huống có dòng Foucault",
+     "hoi": "Dòng điện Foucault xuất hiện trong tấm ở những tình huống nào?",
+     "lua_chon": [
+      {
+       "text": "Tình huống (2) và (3)",
+       "dung": true
+      },
+      {
+       "text": "Chỉ tình huống (2), vì chỉ khi tấm chuyển động mới có dòng",
+       "dung": false,
+       "vi_sao": "Ở (3) tấm đứng yên nhưng từ trường biến thiên nên từ thông qua tấm vẫn biến thiên, vẫn có dòng Foucault."
+      },
+      {
+       "text": "Tình huống (1), (2) và (3), vì cứ có nam châm là có dòng",
+       "dung": false,
+       "vi_sao": "Ở (1) tấm và nam châm cùng đứng yên, từ thông không đổi nên không có dòng; điều kiện là từ thông biến thiên, không phải có mặt trong từ trường."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng cứ ở cạnh nam châm là có dòng, hoặc chỉ tính khi tấm chuyển động."
+    },
+    {
+     "tieu_de": "Tấm rơi trong tình huống (2)",
+     "hoi": "So với rơi tự do khi không có nam châm, tấm ở tình huống (2) rơi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Chậm hơn, vì dòng Foucault chịu lực từ chống lại chuyển động của tấm",
+       "dung": true
+      },
+      {
+       "text": "Nhanh hơn, vì nam châm hút tấm xuống",
+       "dung": false,
+       "vi_sao": "Nhôm không bị nam châm hút; lực tác dụng lên tấm là lực từ lên dòng cảm ứng, theo Lenz lực này chống lại chuyển động."
+      },
+      {
+       "text": "Như nhau, vì dòng cảm ứng chỉ làm tấm nóng lên",
+       "dung": false,
+       "vi_sao": "Dòng điện trong từ trường chịu lực từ; theo Lenz lực này chống lại sự biến thiên từ thông, tức cản chuyển động của tấm."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng nam châm hút nhôm, hoặc cho rằng dòng cảm ứng chỉ làm nóng mà không tác dụng lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét từ thông qua tấm khi tấm đi vào khe, rồi áp dụng định luật Lenz cho dòng cảm ứng",
+       "dung": true
+      },
+      {
+       "text": "Bỏ qua dòng cảm ứng vì nhôm không nhiễm từ",
+       "dung": false,
+       "vi_sao": "Nhôm vẫn dẫn điện: từ thông biến thiên là có dòng cảm ứng, không cần vật liệu nhiễm từ."
+      },
+      {
+       "text": "Chỉ xét trọng lực vì nam châm không tác dụng lên nhôm",
+       "dung": false,
+       "vi_sao": "Nam châm không hút nhôm, nhưng từ trường vẫn tác dụng lực lên dòng cảm ứng trong nhôm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng",
+     "hoi": "Phần cơ năng của tấm mất đi trong lúc rơi qua nam châm chuyển thành gì?",
+     "lua_chon": [
+      {
+       "text": "Nhiệt Joule toả ra trong tấm do dòng Foucault",
+       "dung": true
+      },
+      {
+       "text": "Không mất: cơ năng của tấm vẫn bảo toàn",
+       "dung": false,
+       "vi_sao": "Có lực hãm điện từ thực hiện công cản nên cơ năng của tấm giảm, không bảo toàn."
+      },
+      {
+       "text": "Điện năng cất giữ trong nam châm",
+       "dung": false,
+       "vi_sao": "Nam châm chỉ tạo từ trường, không tích điện năng; năng lượng của dòng cảm ứng toả thành nhiệt ngay trong tấm."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng cơ năng vẫn bảo toàn, hoặc cho rằng năng lượng mất đi biến mất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng bảo toàn năng lượng: tìm dạng năng lượng mà hệ nhận thêm",
+       "dung": true
+      },
+      {
+       "text": "Lấy độ giảm thế năng bằng độ tăng động năng của tấm",
+       "dung": false,
+       "vi_sao": "Đó là bảo toàn cơ năng, chỉ đúng khi không có lực cản; ở đây có lực hãm điện từ nên phần thế năng giảm lớn hơn phần động năng tăng."
+      },
+      {
+       "text": "Tính công của trọng lực rồi dừng, không xét năng lượng của dòng cảm ứng",
+       "dung": false,
+       "vi_sao": "Công của trọng lực chỉ cho phần thế năng giảm; phần không thành động năng phải đi đâu đó, chính là năng lượng của dòng cảm ứng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tấm có rãnh xẻ",
+     "hoi": "Tấm xẻ rãnh ở tình huống (2) rơi nhanh hơn hay chậm hơn tấm liền khối?",
+     "lua_chon": [
+      {
+       "text": "Nhanh hơn, vì rãnh cắt đường dòng nên điện trở mạch dòng tăng, dòng nhỏ, lực hãm yếu",
+       "dung": true
+      },
+      {
+       "text": "Chậm hơn, vì rãnh làm tấm dẫn điện tốt hơn nên dòng lớn hơn",
+       "dung": false,
+       "vi_sao": "Rãnh cắt các đường dòng khép kín nên điện trở của mạch dòng tăng chứ không giảm; cùng suất điện động mà điện trở lớn thì dòng nhỏ."
+      },
+      {
+       "text": "Như nhau, vì rãnh không làm đổi từ thông qua tấm",
+       "dung": false,
+       "vi_sao": "Từ thông và suất điện động không đổi, nhưng dòng $I=\\dfrac{|e_c|}{R}$ còn phụ thuộc điện trở; điện trở tăng thì dòng giảm, lực hãm yếu đi."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng rãnh làm tấm dẫn điện tốt hơn, hoặc cho rằng rãnh làm tấm nhẹ hơn nên đổi hẳn chuyển động.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét rãnh xẻ làm đổi đại lượng nào của mạch dòng cảm ứng",
+       "dung": true
+      },
+      {
+       "text": "So khối lượng của hai tấm",
+       "dung": false,
+       "vi_sao": "Rãnh chỉ lấy đi vài gam nhôm, không đủ làm đổi hẳn chuyển động."
+      },
+      {
+       "text": "So từ thông qua hai tấm, cho rằng tấm có rãnh nhận ít từ thông hơn",
+       "dung": false,
+       "vi_sao": "Hai tấm cùng cỡ nên từ thông qua chúng gần như nhau; chỗ khác nhau nằm ở mạch dòng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Bếp từ: chọn nồi, nhiệt lượng, hiệu suất và thời gian đun",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "problem_html": "<p>Bếp từ nhà Lan ghi $2\\,000\\ \\text{W}$ (công suất điện bếp tiêu thụ), hiệu suất $80\\%$ (tỉ số giữa nhiệt lượng nước nhận được và điện năng bếp tiêu thụ). Lan có hai nồi cùng cỡ: một nồi nhôm và một nồi gang. Lan đun $1{,}2$ lít nước từ $25\\ ^\\circ\\text{C}$ đến sôi ($100\\ ^\\circ\\text{C}$). Nước có khối lượng riêng $1\\,000\\ \\text{kg/m}^3$ và nhiệt dung riêng $4\\,200\\ \\text{J/(kg·K)}$.</p><ol type=\"a\"><li>Nên dùng nồi nào để đun nhanh hơn? Vì sao?</li><li>Tính nhiệt lượng nước nhận được.</li><li>Tính thời gian đun sôi nước.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Mặt cắt bếp từ: cuộn dây dưới mặt kính, nồi nước trên mặt kính, đường sức từ nét đứt đổi chiều xuyên qua kính vào đáy nồi\"><text x=\"14\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bếp từ: 2 000 W · H = 80 %</text><text x=\"14\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,2 lít nước: 25 °C → 100 °C</text><text x=\"406\" y=\"18\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">nồi nào? Q = ? t = ?</text><rect x=\"70\" y=\"170\" width=\"280\" height=\"48\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"110\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"138\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"166\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"194\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"250\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"278\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"306\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"70\" y=\"156\" width=\"280\" height=\"8\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"356\" y=\"163\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">mặt kính</text><text x=\"210\" y=\"232\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">cuộn dây dưới mặt kính, dòng xoay chiều tần số cao</text><rect x=\"114\" y=\"92\" width=\"192\" height=\"54\" fill=\"#38bdf8\" opacity=\".22\"/><path d=\"M118,150 L108,66 H312 L302,150 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"210\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">nồi gang hoặc nhôm</text><text x=\"210\" y=\"125\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước</text><g opacity=\"0\"><line x1=\"150\" y1=\"180\" x2=\"150\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M145.5,143.8 L150.0,136.0 L154.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"185\" y1=\"180\" x2=\"185\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M180.5,143.8 L185.0,136.0 L189.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"235\" y1=\"180\" x2=\"235\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M230.5,143.8 L235.0,136.0 L239.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"180\" x2=\"270\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M265.5,143.8 L270.0,136.0 L274.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0\" dur=\"4.94s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"150\" y1=\"136\" x2=\"150\" y2=\"180\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M154.5,172.2 L150.0,180.0 L145.5,172.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"185\" y1=\"136\" x2=\"185\" y2=\"180\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M189.5,172.2 L185.0,180.0 L180.5,172.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"235\" y1=\"136\" x2=\"235\" y2=\"180\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M239.5,172.2 L235.0,180.0 L230.5,172.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"136\" x2=\"270\" y2=\"180\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M274.5,172.2 L270.0,180.0 L265.5,172.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0;0.0;0.0;0.7;1.0;0.7;0.0;0.0;0.0\" dur=\"4.94s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng xoay chiều đổi chiều trong cuộn dây nên từ trường của cuộn dây đổi chiều (nét đứt, đầu mũi tên đổi theo). Hình không vẽ dòng cảm ứng và không thể hiện nhiệt độ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Bếp từ:</strong> dòng xoay chiều tần số cao trong cuộn dây tạo từ trường biến thiên; dòng Foucault toả nhiệt ngay trong đáy nồi, không có mâm nóng.</li><li><strong>Chọn nồi:</strong> đáy nhiễm từ (gang, thép) toả nhiệt lớn; nhôm không nhiễm từ, điện trở suất thấp nên toả nhiệt rất ít.</li><li><strong>Nhiệt lượng nước nhận:</strong> $Q=mc\\Delta t$ với $\\Delta t=t_2-t_1$; $m=D\\cdot V$.</li><li><strong>Hiệu suất:</strong> $H=\\dfrac{Q}{A}$; công suất hữu ích $P_{\\text{ích}}=H\\cdot P$; thời gian $t=\\dfrac{Q}{P_{\\text{ích}}}$.</li><li>⚠ <strong>Điều kiện:</strong> $2\\,000\\ \\text{W}$ là công suất điện tiêu thụ; đổi kJ ra J trước khi chia cho W.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn nồi (câu a)</span></p><p>Bếp từ không có mâm nóng: nhiệt sinh ngay trong đáy nồi nhờ dòng Foucault.</p><p>Nồi gang nhiễm từ nên tập trung được từ thông, dòng Foucault toả nhiệt lớn. Nồi nhôm không nhiễm từ và có điện trở suất thấp nên toả nhiệt rất ít.</p><div class=\"bt-ans\"><p>Câu a: nên dùng <strong>nồi gang</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt lượng nước nhận (câu b)</span></p>$$m=D\\cdot V=1\\,000\\cdot1{,}2\\cdot10^{-3}=1{,}2\\ \\text{kg}$$$$Q=mc\\Delta t=1{,}2\\cdot4\\,200\\cdot(100-25)$$<div class=\"bt-ans\">$$Q=378\\,000\\ \\text{J}=378\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất hữu ích</span></p>$$P_{\\text{ích}}=H\\cdot P=0{,}80\\cdot2\\,000$$<div class=\"bt-ans\">$$P_{\\text{ích}}=1\\,600\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian đun sôi (câu c)</span></p>$$t=\\dfrac{Q}{P_{\\text{ích}}}=\\dfrac{378\\,000}{1\\,600}$$<div class=\"bt-ans\">$$t\\approx236\\ \\text{s}\\approx3{,}9\\ \\text{phút}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{J}/\\text{W}=\\text{s}$.</p><p>Cùng cỡ thí nghiệm trong bài: $1{,}0$ lít nước từ $25{,}0\\ ^\\circ\\text{C}$ sôi sau $4$ phút ở $2\\,000\\ \\text{W}$.</p><p>Điện năng tiêu thụ $A=P\\,t\\approx2\\,000\\cdot236\\approx472\\ \\text{kJ}$; $80\\%$ của nó là $378\\ \\text{kJ}$, khớp $Q$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Nồi gang</p><p>b) $Q=378\\ \\text{kJ}$</p><p>c) $t\\approx236\\ \\text{s}\\approx3{,}9$ phút</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>bếp từ, hiệu suất, đun nước</strong> → chọn nồi nhiễm từ; $Q=mc\\Delta t$; $t=\\dfrac{Q}{H\\cdot P}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Dữ kiện: bếp từ công suất 2000 oát hiệu suất 80 phần trăm, nồi chứa 1,2 lít nước trên mặt kính\"><text x=\"14\" y=\"18\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bếp từ: 2 000 W · H = 80 %</text><text x=\"14\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,2 lít nước: 25 °C → 100 °C</text><text x=\"406\" y=\"18\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">nồi nào? Q = ? t = ?</text><rect x=\"70\" y=\"170\" width=\"280\" height=\"48\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"110\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"138\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"166\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"194\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"222\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"250\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"278\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><ellipse cx=\"306\" cy=\"194\" rx=\"7\" ry=\"14\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"70\" y=\"156\" width=\"280\" height=\"8\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"356\" y=\"163\" fill=\"currentColor\" font-size=\"10\" font-weight=\"400\" text-anchor=\"start\">mặt kính</text><text x=\"210\" y=\"232\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">cuộn dây dưới mặt kính, dòng xoay chiều tần số cao</text><rect x=\"114\" y=\"92\" width=\"192\" height=\"54\" fill=\"#38bdf8\" opacity=\".22\"/><path d=\"M118,150 L108,66 H312 L302,150 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"210\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">nồi gang hoặc nhôm</text><text x=\"210\" y=\"125\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước</text><g opacity=\".9\"><line x1=\"150\" y1=\"180\" x2=\"150\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M145.5,143.8 L150.0,136.0 L154.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"185\" y1=\"180\" x2=\"185\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M180.5,143.8 L185.0,136.0 L189.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"235\" y1=\"180\" x2=\"235\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M230.5,143.8 L235.0,136.0 L239.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"180\" x2=\"270\" y2=\"136\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M265.5,143.8 L270.0,136.0 L274.5,143.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g></svg><figcaption>Dữ kiện: bếp từ, mặt kính, nồi chứa nước. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“bếp từ ghi $2\\,000\\ \\text{W}$ (công suất điện bếp tiêu thụ)”</td><td>$P=2\\,000\\ \\text{W}$ (điện tiêu thụ)</td><td>⚠ Phân biệt công suất điện tiêu thụ với công suất hữu ích</td></tr><tr><td>“hiệu suất $80\\%$ (nhiệt nước nhận / điện năng tiêu thụ)”</td><td>$H=80\\%$</td><td>Định nghĩa hiệu suất: tỉ số nhiệt hữu ích và điện năng</td></tr><tr><td>“hai nồi cùng cỡ: một nồi nhôm, một nồi gang”</td><td>Hai loại vật liệu đáy nồi</td><td>⚠ So sánh vật liệu đáy hai nồi</td></tr><tr><td>“$1{,}2$ lít nước từ $25\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$”</td><td>$V=1{,}2$ lít; $t_1=25\\ ^\\circ\\text{C}$; $t_2=100\\ ^\\circ\\text{C}$</td><td>Đổi lít ra kg bằng khối lượng riêng; độ tăng nhiệt độ</td></tr><tr><td>“khối lượng riêng $1\\,000\\ \\text{kg/m}^3$; nhiệt dung riêng $4\\,200\\ \\text{J/(kg·K)}$”</td><td>$D=1\\,000\\ \\text{kg/m}^3$; $c=4\\,200\\ \\text{J/(kg·K)}$</td><td>Nhiệt lượng vật thu vào khi nóng lên</td></tr><tr><td>“a) nên dùng nồi nào? Vì sao?”</td><td>Cần chọn nồi và lí do</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) nhiệt lượng nước nhận”</td><td>Cần $Q$</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) thời gian đun sôi”</td><td>Cần $t$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bếp từ, hiệu suất, đun nước</b> → nghĩ tới <b>nhiệt sinh ở đâu</b>, rồi <b>nhiệt nước nhận</b> và <b>công suất hữu ích</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chọn nồi",
+     "hoi": "Nên dùng nồi nào để đun nhanh hơn, và vì sao?",
+     "lua_chon": [
+      {
+       "text": "Nồi gang: đáy nhiễm từ nên dòng Foucault toả nhiệt lớn ngay trong đáy nồi",
+       "dung": true
+      },
+      {
+       "text": "Nồi nhôm, vì nhôm dẫn nhiệt tốt nên nhiệt từ mặt bếp truyền vào nồi nhanh",
+       "dung": false,
+       "vi_sao": "Bếp từ không có mâm nóng để truyền nhiệt; nhiệt sinh ngay trong đáy nồi nhờ dòng Foucault, nên tính chất điện từ của đáy nồi mới quyết định."
+      },
+      {
+       "text": "Nồi nào cũng được, vì dòng Foucault xuất hiện ở mọi kim loại nên nhiệt toả ra như nhau",
+       "dung": false,
+       "vi_sao": "Nhôm cũng có dòng Foucault, nhưng không nhiễm từ và điện trở suất thấp nên công suất toả nhiệt rất nhỏ; nồi gang nóng nhanh hơn rõ rệt."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ bếp từ truyền nhiệt từ mặt bếp sang nồi như bếp điện nên chọn nồi dẫn nhiệt tốt."
+    },
+    {
+     "tieu_de": "Nhiệt lượng nước nhận",
+     "hoi": "Nước nhận nhiệt lượng $Q$ bằng bao nhiêu (đơn vị kJ)?",
+     "dap_so": 378,
+     "sai_so": 2,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Thế nhiệt độ cuối $100\\ ^\\circ\\text{C}$ thay cho độ tăng nhiệt độ, hoặc quên đổi lít ra kilôgam, hoặc ghi kết quả ở J cạnh đơn vị kJ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi thể tích sang khối lượng, rồi $Q=mc\\Delta t$ với $\\Delta t$ là độ tăng nhiệt độ",
+       "dung": true
+      },
+      {
+       "text": "Lấy $Q=mc\\,t_2$ với $t_2$ là nhiệt độ sôi",
+       "dung": false,
+       "vi_sao": "Nhiệt lượng cần độ tăng nhiệt độ $\\Delta t=t_2-t_1$, không phải nhiệt độ cuối."
+      },
+      {
+       "text": "Lấy $Q=P\\cdot t$ với $P$ là công suất ghi trên bếp",
+       "dung": false,
+       "vi_sao": "Chưa biết $t$; hơn nữa $P\\,t$ là điện năng bếp tiêu thụ, không phải nhiệt lượng nước nhận."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất hữu ích",
+     "hoi": "Công suất hữu ích truyền vào nước bằng bao nhiêu (đơn vị W)?",
+     "dap_so": 1600,
+     "sai_so": 10,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy luôn công suất ghi trên bếp làm công suất hữu ích, hoặc chia cho hiệu suất thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân công suất điện với hiệu suất",
+       "dung": true
+      },
+      {
+       "text": "Chia công suất điện cho hiệu suất",
+       "dung": false,
+       "vi_sao": "Chia cho số nhỏ hơn $1$ nên ra số lớn hơn công suất bếp, vô lí vì công suất hữu ích không thể vượt công suất điện."
+      },
+      {
+       "text": "Lấy công suất hữu ích bằng công suất ghi trên bếp",
+       "dung": false,
+       "vi_sao": "Công suất ghi trên bếp là công suất điện tiêu thụ; một phần hao đi (nung nóng nồi, toả ra không khí) nên không truyền hết vào nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đun sôi",
+     "hoi": "Thời gian đun sôi nước bằng bao nhiêu (đơn vị giây)?",
+     "dap_so": 236,
+     "sai_so": 2,
+     "don_vi": "s",
+     "loi_hay_gap": "Chia nhiệt lượng cho công suất ghi trên bếp (bỏ qua hao phí), hoặc thế $Q$ ở kJ cùng $P$ ở W.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia nhiệt lượng nước nhận (đã đổi ra J) cho công suất hữu ích",
+       "dung": true
+      },
+      {
+       "text": "Chia nhiệt lượng cho công suất ghi trên bếp",
+       "dung": false,
+       "vi_sao": "Nhiệt lượng nước nhận chỉ được cấp với công suất hữu ích; chia cho công suất ghi trên bếp cho thời gian ngắn hơn thực tế."
+      },
+      {
+       "text": "Nhân nhiệt lượng với công suất hữu ích",
+       "dung": false,
+       "vi_sao": "Từ $P=\\dfrac{Q}{t}$ suy ra $t=\\dfrac{Q}{P}$; phép nhân cho đơn vị J·W, không phải giây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

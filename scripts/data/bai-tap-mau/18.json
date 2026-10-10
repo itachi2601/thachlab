@@ -1,0 +1,586 @@
+{
+ "lesson_id": 18,
+ "lesson_title": "Bài 17. Hiện tượng phóng xạ",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; đã bỏ số/chiều khỏi lựa chọn đúng D1,D4, nhan_dang D3,D4, sửa lệch số hiển thị D4,D5 (n≈1,6504, t≈9455 năm). D3 cần log₂ (lý thuyết bài không dạy; đã gợi ý trong đề). Bài chưa có mục bai_tap_mau trong DB."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Chuỗi phân rã α, β⁻: tìm hạt nhân con",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "problem_html": "<p>Hạt nhân $^{238}_{92}\\text{U}$ phóng xạ $\\alpha$ và biến thành hạt nhân X. Hạt nhân X phóng xạ $\\beta^-$ thành hạt nhân Y, rồi Y lại phóng xạ $\\beta^-$ thành hạt nhân W.</p><ol type=\"a\"><li>Tìm số khối và số proton của X, Y, W.</li><li>So với $^{238}_{92}\\text{U}$, hạt nhân W đứng ở ô nào trong bảng tuần hoàn (cùng ô, lùi hay tiến mấy ô)? Số khối thay đổi thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hạt nhân urani lần lượt phóng ra một hạt anpha rồi hai electron; các hạt nhân con X, Y, W chưa biết\"><circle cx=\"58.0\" cy=\"118.0\" r=\"21\" fill=\"#38bdf830\" stroke=\"#38bdf8\" stroke-width=\"2.2\"></circle><circle cx=\"158.0\" cy=\"118.0\" r=\"21\" fill=\"#38bdf830\" stroke=\"#38bdf8\" stroke-width=\"2.2\"><animate attributeName=\"opacity\" values=\"0.2;0.2;1;1\" keyTimes=\"0.000;0.267;0.300;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"258.0\" cy=\"118.0\" r=\"21\" fill=\"#38bdf830\" stroke=\"#38bdf8\" stroke-width=\"2.2\"><animate attributeName=\"opacity\" values=\"0.2;0.2;1;1\" keyTimes=\"0.000;0.556;0.589;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"358.0\" cy=\"118.0\" r=\"21\" fill=\"#38bdf830\" stroke=\"#38bdf8\" stroke-width=\"2.2\"><animate attributeName=\"opacity\" values=\"0.2;0.2;1;1\" keyTimes=\"0.000;0.844;0.878;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"50.8\" y=\"165.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">238</text><text x=\"50.8\" y=\"182.5\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">92</text><text x=\"52.8\" y=\"182.0\" fill=\"currentColor\" font-size=\"20\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"158\" y=\"176\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">X ?</text><text x=\"258\" y=\"176\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Y ?</text><text x=\"358\" y=\"176\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">W ?</text><line x1=\"83\" y1=\"118\" x2=\"133\" y2=\"118\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M125.4,113.6 L133.0,118.0 L125.4,122.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"108.0\" y=\"108\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">α</text><line x1=\"183\" y1=\"118\" x2=\"233\" y2=\"118\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M225.4,113.6 L233.0,118.0 L225.4,122.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"208.0\" y=\"108\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">β⁻</text><line x1=\"283\" y1=\"118\" x2=\"333\" y2=\"118\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M325.4,113.6 L333.0,118.0 L325.4,122.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"308.0\" y=\"108\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">β⁻</text><circle cx=\"58\" cy=\"118\" r=\"6.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0\"><animate attributeName=\"cx\" values=\"58;58;102;102\" keyTimes=\"0.000;0.089;0.267;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"118;118;34;34\" keyTimes=\"0.000;0.089;0.267;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.000;0.089;0.094;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"158\" cy=\"118\" r=\"4\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0\"><animate attributeName=\"cx\" values=\"158;158;202;202\" keyTimes=\"0.000;0.378;0.556;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"118;118;34;34\" keyTimes=\"0.000;0.378;0.556;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.000;0.378;0.383;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"258\" cy=\"118\" r=\"4\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0\"><animate attributeName=\"cx\" values=\"258;258;302;302\" keyTimes=\"0.000;0.667;0.844;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"118;118;34;34\" keyTimes=\"0.000;0.667;0.844;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.000;0.667;0.672;1.000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"26.0\" cy=\"204.0\" r=\"6.5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"></circle><text x=\"38\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">tia α</text><circle cx=\"130.0\" cy=\"204.0\" r=\"4\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.2\"></circle><text x=\"142\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">electron (tia β⁻)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mỗi lần phân rã, hạt nhân phóng một hạt bay lên rồi hạt nhân con sáng lên. Hạt nhân con ghi dấu ? vì chưa biết. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Tia $\\alpha$ là hạt nhân $^4_2\\text{He}$ ($A=4$, $Z=2$); tia $\\beta^-$ là electron $^0_{-1}e$ ($A=0$, $Z=-1$).</li><li>Mỗi phương trình phân rã bảo toàn số khối $A$ (dòng trên) và điện tích $Z$ (dòng dưới).</li><li>Trong bảng tuần hoàn: $\\alpha$ làm hạt nhân con lùi $2$ ô, $\\beta^-$ làm hạt nhân con tiến $1$ ô.</li><li>Điều kiện: viết lần lượt từng phân rã; hạt nhân con của lần trước là hạt nhân mẹ của lần sau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phân rã $\\alpha$: số khối của X</span></p><p>$^{238}_{92}\\text{U}\\to\\ ^{A_X}_{Z_X}\\text{X}+\\ ^4_2\\text{He}$</p>$$238=A_X+4$$<div class=\"bt-ans\">$$A_X=234$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phân rã $\\alpha$: số proton của X</span></p>$$92=Z_X+2$$<div class=\"bt-ans\">$$Z_X=90$$</div><p>Hạt nhân $^{234}_{90}\\text{X}$ là thori, lùi $2$ ô so với urani.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phân rã $\\beta^-$ thứ nhất: hạt nhân Y</span></p><p>$^{234}_{90}\\text{X}\\to\\ ^{A_Y}_{Z_Y}\\text{Y}+\\ ^0_{-1}e$</p>$$234=A_Y+0\\Rightarrow A_Y=234$$$$90=Z_Y+(-1)\\Rightarrow Z_Y=91$$<div class=\"bt-ans\">$$^{234}_{91}\\text{Y}$$</div><p>Hạt nhân Y là protactini, tiến $1$ ô so với X.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phân rã $\\beta^-$ thứ hai: hạt nhân W</span></p><p>$^{234}_{91}\\text{Y}\\to\\ ^{A_W}_{Z_W}\\text{W}+\\ ^0_{-1}e$</p>$$234=A_W+0\\Rightarrow A_W=234$$$$91=Z_W+(-1)\\Rightarrow Z_W=92$$<div class=\"bt-ans\">$$^{234}_{92}\\text{W}$$</div><p>Hạt nhân W là urani-234.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Phân rã $\\alpha$: $238=234+4$ và $92=90+2$, hai vế bằng nhau.</p><p>Cả chuỗi: $\\alpha$ lùi $2$ ô, hai lần $\\beta^-$ tiến $1+1=2$ ô, nên W trở về đúng ô của urani.</p><p>Số khối giảm đúng $4$ (chỉ hạt $\\alpha$ lấy đi nuclôn), khớp $238\\to234$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) X: $A=234$, $Z=90$; Y: $A=234$, $Z=91$; W: $A=234$, $Z=92$</p><p>b) W cùng ô với $^{238}_{92}\\text{U}$ (cùng số proton); số khối nhỏ hơn $4$ đơn vị</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>chuỗi phân rã $\\alpha$, $\\beta^-$ nối tiếp</strong> → viết từng phương trình, bảo toàn $A$ và $Z$ ở mỗi lần.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Dữ kiện: chuỗi ba phân rã bắt đầu từ urani 238, các hạt nhân con X, Y, W chưa biết\"><rect x=\"12.0\" y=\"46.0\" width=\"76.0\" height=\"44.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"47.4\" y=\"62.8\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">238</text><text x=\"47.4\" y=\"83.7\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">92</text><text x=\"49.4\" y=\"83.2\" fill=\"currentColor\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">U</text><rect x=\"118.0\" y=\"46.0\" width=\"76.0\" height=\"44.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"156.0\" y=\"75\" fill=\"#fb923c\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">X</text><text x=\"156.0\" y=\"112\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = ?</text><text x=\"156.0\" y=\"132\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Z = ?</text><rect x=\"224.0\" y=\"46.0\" width=\"76.0\" height=\"44.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"262.0\" y=\"75\" fill=\"#fb923c\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">Y</text><text x=\"262.0\" y=\"112\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = ?</text><text x=\"262.0\" y=\"132\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Z = ?</text><rect x=\"330.0\" y=\"46.0\" width=\"76.0\" height=\"44.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"368.0\" y=\"75\" fill=\"#fb923c\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">W</text><text x=\"368.0\" y=\"112\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = ?</text><text x=\"368.0\" y=\"132\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Z = ?</text><line x1=\"91\" y1=\"68.0\" x2=\"115\" y2=\"68.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M107.4,63.6 L115.0,68.0 L107.4,72.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"103.0\" y=\"59.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">α</text><line x1=\"197\" y1=\"68.0\" x2=\"221\" y2=\"68.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M213.4,63.6 L221.0,68.0 L213.4,72.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"209.0\" y=\"59.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">β⁻</text><line x1=\"303\" y1=\"68.0\" x2=\"327\" y2=\"68.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M319.4,63.6 L327.0,68.0 L319.4,72.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"315.0\" y=\"59.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">β⁻</text><text x=\"12\" y=\"160\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: A, Z của X, Y, W và vị trí của W so với U</text></svg><figcaption>Dữ kiện: hạt nhân mẹ và loại tia ở mỗi phân rã; các ô có dấu ? là đại lượng cần tìm. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"phóng xạ $\\alpha$ … phóng xạ $\\beta^-$ … lại phóng xạ $\\beta^-$\"</td><td>Ba phân rã nối tiếp: $\\alpha$, $\\beta^-$, $\\beta^-$</td><td>⚠ Mỗi phương trình phân rã phải bảo toàn số khối $A$ và điện tích $Z$; hạt nhân con của lần trước là hạt nhân mẹ của lần sau</td></tr><tr><td>\"$^{238}_{92}\\text{U}$ phóng xạ $\\alpha$ … hạt nhân X\"</td><td>Mẹ: $A=238$, $Z=92$; tia $\\alpha$</td><td>Kí hiệu hạt nhân $^A_Z\\text{X}$ (số khối trên, số proton dưới); bản chất tia $\\alpha$</td></tr><tr><td>\"X phóng xạ $\\beta^-$ … hạt nhân Y\"</td><td>Mẹ X; tia $\\beta^-$</td><td>Bản chất và kí hiệu của tia $\\beta^-$</td></tr><tr><td>\"Y lại phóng xạ $\\beta^-$ … hạt nhân W\"</td><td>Mẹ Y; tia $\\beta^-$</td><td>Bản chất và kí hiệu của tia $\\beta^-$</td></tr><tr><td>\"Tìm số khối và số proton của X, Y, W\"</td><td>Cần $A$, $Z$ của ba hạt nhân</td><td>Đại lượng cần tìm</td></tr><tr><td>\"So với $^{238}_{92}\\text{U}$, hạt nhân W đứng ở ô nào\"</td><td>Cần vị trí ô và thay đổi số khối của W</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chuỗi phân rã nối tiếp, hỏi hạt nhân con</b> → nghĩ tới <b>bảo toàn A và Z</b> ở từng phương trình.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số khối của X",
+     "hoi": "Hạt nhân X có số khối bằng bao nhiêu?",
+     "dap_so": 234,
+     "sai_so": 0,
+     "loi_hay_gap": "Nhầm vai trò số khối và điện tích của hạt $\\alpha$, hoặc cộng thay vì trừ."
+    },
+    {
+     "tieu_de": "Số proton của X",
+     "hoi": "Hạt nhân X có bao nhiêu proton?",
+     "dap_so": 90,
+     "sai_so": 0,
+     "loi_hay_gap": "Trừ $4$ cho số proton (lấy nhầm số khối của hạt $\\alpha$), hoặc coi số proton không đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết phương trình bảo toàn điện tích cho phân rã $\\alpha$, với điện tích của hạt $\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Số proton của mẹ bằng số proton của X cộng $4$, vì hạt $\\alpha$ có số khối $4$",
+       "dung": false,
+       "vi_sao": "Số khối $4$ là tổng proton và nơtron; chỉ phần proton (điện tích $+2e$) đi vào phương trình điện tích."
+      },
+      {
+       "text": "Số proton không đổi vì hạt $\\alpha$ chỉ lấy đi nơtron",
+       "dung": false,
+       "vi_sao": "Hạt $\\alpha$ gồm $2$ proton và $2$ nơtron, nên lấy đi cả hai proton."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số proton của Y",
+     "hoi": "Hạt nhân Y có bao nhiêu proton?",
+     "dap_so": 91,
+     "sai_so": 0,
+     "loi_hay_gap": "Cho số proton giảm $1$ vì thấy electron mang điện âm, hoặc coi số proton không đổi vì electron rất nhẹ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết phương trình bảo toàn số khối và điện tích cho phân rã $\\beta^-$, với kí hiệu của electron",
+       "dung": true
+      },
+      {
+       "text": "Phân rã $\\beta^-$: số proton giảm $1$ vì electron mang điện âm bay đi",
+       "dung": false,
+       "vi_sao": "Electron điện $-e$ bay đi thì hạt nhân con phải tăng $1$ proton để tổng điện tích không đổi: $Z_X=Z_Y+(-1)$."
+      },
+      {
+       "text": "Phân rã $\\beta^-$: số proton không đổi vì electron quá nhẹ, không đáng kể",
+       "dung": false,
+       "vi_sao": "Electron mang điện $-e$, không thể bỏ qua trong bảo toàn điện tích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số proton của W",
+     "hoi": "Hạt nhân W có bao nhiêu proton?",
+     "dap_so": 92,
+     "sai_so": 0,
+     "loi_hay_gap": "Cộng $1$ vào số proton của X (bỏ qua Y), hoặc giữ nguyên số proton của Y.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết lại phương trình bảo toàn số khối và điện tích cho phân rã $\\beta^-$ của Y",
+       "dung": true
+      },
+      {
+       "text": "Cộng $1$ vào số proton của X, vì X mới là hạt nhân có sẵn từ đầu",
+       "dung": false,
+       "vi_sao": "X đã phân rã thành Y rồi; W là con của Y nên phải cộng $1$ vào số proton của Y."
+      },
+      {
+       "text": "Số proton không đổi, lần này chỉ phát thêm tia $\\gamma$",
+       "dung": false,
+       "vi_sao": "Đề cho Y phóng xạ $\\beta^-$ nên số proton vẫn tăng $1$; tia $\\gamma$ mới là tia không đổi ô."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Số hạt nhân còn lại và đã phân rã sau thời gian t",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "problem_html": "<p>Một mẫu chứa $N_0=6{,}4.10^{18}$ hạt nhân poloni $^{210}_{84}\\text{Po}$ phóng xạ $\\alpha$ với chu kì bán rã $T=138$ ngày.</p><ol type=\"a\"><li>Sau $552$ ngày, còn bao nhiêu hạt nhân Po chưa phân rã?</li><li>Khi đó, bao nhiêu phần trăm số hạt nhân ban đầu đã phân rã?</li><li>Sau $759$ ngày kể từ lúc đầu, số hạt nhân Po còn lại bằng bao nhiêu phần trăm số hạt nhân ban đầu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 220\" role=\"img\" aria-label=\"Đường cong số hạt nhân còn lại N theo thời gian, trục thời gian chia theo chu kì bán rã T\"><line x1=\"68\" y1=\"192\" x2=\"373.0\" y2=\"192\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M365.4,187.6 L373.0,192.0 L365.4,196.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"76\" y1=\"200\" x2=\"76\" y2=\"24\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M71.6,31.6 L76.0,24.0 L80.4,31.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"373.0\" y=\"209\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"84\" y=\"32\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"76.0,40.0 80.5,45.2 85.0,50.2 89.5,55.0 94.0,59.7 98.5,64.2 103.0,68.5 107.5,72.7 112.0,76.8 116.5,80.7 121.0,84.5 125.5,88.2 130.0,91.7 134.5,95.1 139.0,98.4 143.5,101.6 148.0,104.7 152.5,107.7 157.0,110.5 161.5,113.3 166.0,116.0 170.5,118.6 175.0,121.1 179.5,123.5 184.0,125.8 188.5,128.1 193.0,130.3 197.5,132.4 202.0,134.4 206.5,136.4 211.0,138.3 215.5,140.1 220.0,141.9 224.5,143.6 229.0,145.2 233.5,146.8 238.0,148.3 242.5,149.8 247.0,151.3 251.5,152.7 256.0,154.0 260.5,155.3 265.0,156.5 269.5,157.8 274.0,158.9 278.5,160.0 283.0,161.1 287.5,162.2 292.0,163.2 296.5,164.2 301.0,165.1 305.5,166.0 310.0,166.9 314.5,167.8 319.0,168.6 323.5,169.4 328.0,170.2 332.5,170.9 337.0,171.6 341.5,172.3 346.0,173.0\"/><text x=\"70\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">N₀</text><line x1=\"76.0\" y1=\"116.0\" x2=\"166.0\" y2=\"116.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"166.0\" y1=\"116.0\" x2=\"166.0\" y2=\"192.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"166.0\" cy=\"116.0\" r=\"3.5\" fill=\"#38bdf8\"/><text x=\"70\" y=\"120.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">N₀/2</text><text x=\"166\" y=\"209\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">T</text><line x1=\"76.0\" y1=\"154.0\" x2=\"256.0\" y2=\"154.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"256.0\" y1=\"154.0\" x2=\"256.0\" y2=\"192.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"256.0\" cy=\"154.0\" r=\"3.5\" fill=\"#38bdf8\"/><text x=\"70\" y=\"158.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">N₀/4</text><text x=\"256\" y=\"209\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">2T</text><line x1=\"76.0\" y1=\"173.0\" x2=\"346.0\" y2=\"173.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"346.0\" y1=\"173.0\" x2=\"346.0\" y2=\"192.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"346.0\" cy=\"173.0\" r=\"3.5\" fill=\"#38bdf8\"/><text x=\"70\" y=\"177.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">N₀/8</text><text x=\"346\" y=\"209\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">3T</text><text x=\"70\" y=\"209\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"76.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"76.0;85.0;94.0;103.0;112.0;121.0;130.0;139.0;148.0;157.0;166.0;175.0;184.0;193.0;202.0;211.0;220.0;229.0;238.0;247.0;256.0;265.0;274.0;283.0;292.0;301.0;310.0;319.0;328.0;337.0;346.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;50.2;59.7;68.5;76.8;84.5;91.7;98.4;104.7;110.5;116.0;121.1;125.8;130.3;134.4;138.3;141.9;145.2;148.3;151.3;154.0;156.5;158.9;161.1;163.2;165.1;166.9;168.6;170.2;171.6;173.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy trên đường cong số hạt nhân còn lại, một chu kì T ứng với 2 s mô phỏng. Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Số hạt nhân còn lại: $N=N_0\\,2^{-t/T}=\\dfrac{N_0}{2^n}$ với $n=\\dfrac{t}{T}$.</li><li>Phần còn lại $\\dfrac{N}{N_0}=2^{-n}$; phần đã phân rã $\\dfrac{\\Delta N}{N_0}=1-2^{-n}$.</li><li>Điều kiện: $t$ và $T$ cùng đơn vị (ngày); $n$ không nguyên vẫn thế được vào $2^{-n}$.</li><li>Đọc kĩ đề hỏi phần “còn lại” hay “đã phân rã”.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số chu kì đã qua sau $552$ ngày</span></p>$$n=\\dfrac{t_1}{T}=\\dfrac{552}{138}$$<div class=\"bt-ans\">$$n=4$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số hạt nhân còn lại (câu a)</span></p>$$N=\\dfrac{N_0}{2^n}=\\dfrac{6{,}4.10^{18}}{2^4}$$<div class=\"bt-ans\">$$N=4{,}0.10^{17}\\ \\text{hạt nhân}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phần trăm đã phân rã (câu b)</span></p>$$\\dfrac{\\Delta N}{N_0}=1-2^{-4}=1-0{,}0625$$<div class=\"bt-ans\">$$\\dfrac{\\Delta N}{N_0}=0{,}9375=93{,}75\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phần trăm còn lại sau $759$ ngày (câu c)</span></p>$$n=\\dfrac{759}{138}=5{,}5$$<p>$n$ không nguyên vẫn thế được vào hàm mũ (dùng máy tính).</p>$$\\dfrac{N}{N_0}=2^{-5{,}5}$$<div class=\"bt-ans\">$$\\dfrac{N}{N_0}\\approx0{,}0221=2{,}21\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Câu a và b: phần còn lại $\\dfrac{1}{16}=6{,}25\\%$, cộng $93{,}75\\%$ đã phân rã được $100\\%$.</p><p>Câu c: sau $5$ chu kì còn $\\dfrac{1}{32}=3{,}125\\%$, sau $6$ chu kì còn $\\dfrac{1}{64}\\approx1{,}56\\%$; $2{,}21\\%$ nằm giữa hai mốc, khớp $n=5{,}5$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N=4{,}0.10^{17}$ hạt nhân</p><p>b) $93{,}75\\%$ số hạt nhân ban đầu đã phân rã</p><p>c) còn lại $\\approx2{,}21\\%$ số hạt nhân ban đầu</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>sau thời gian $t$, chu kì bán rã $T$</strong> → áp dụng định luật phóng xạ, đọc kĩ hỏi “còn lại” hay “đã phân rã”.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Dữ kiện: chu kì bán rã, số hạt nhân ban đầu và hai thời điểm khảo sát t₁, t₂ trên trục thời gian\"><rect x=\"12.0\" y=\"14.0\" width=\"190.0\" height=\"30.0\" rx=\"8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"107\" y=\"34\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">T = 138 ngày</text><rect x=\"218.0\" y=\"14.0\" width=\"190.0\" height=\"30.0\" rx=\"8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"313\" y=\"34\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N₀ = 6,4·10¹⁸ hạt</text><line x1=\"20\" y1=\"116\" x2=\"396\" y2=\"116\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M388.4,111.6 L396.0,116.0 L388.4,120.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"136\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><circle cx=\"20.0\" cy=\"116.0\" r=\"4\" fill=\"currentColor\"/><text x=\"20\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0</text><circle cx=\"138.0\" cy=\"116.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"138\" y=\"100\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t₁ = 552 ngày</text><circle cx=\"300.0\" cy=\"116.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"300\" y=\"100\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t₂ = 759 ngày</text><text x=\"12\" y=\"166\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Tại t₁: N = ? · đã phân rã ?%</text><text x=\"12\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Tại t₂: còn lại ?%</text></svg><figcaption>Dữ kiện: T, N₀ và hai thời điểm t₁, t₂ của đề; các vị trí trên trục không theo tỉ lệ. Dấu ? là đại lượng cần tìm.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hạt nhân poloni $^{210}_{84}\\text{Po}$ phóng xạ $\\alpha$\"</td><td>Mẫu chỉ có một chất phóng xạ</td><td>⚠ $t$ và $T$ phải cùng đơn vị thời gian; công thức chỉ cho số hạt chất mẹ còn lại, không tính hạt nhân con</td></tr><tr><td>\"$N_0=6{,}4.10^{18}$ hạt nhân\"</td><td>$N_0=6{,}4.10^{18}$</td><td>Số hạt nhân ban đầu $N_0$</td></tr><tr><td>\"chu kì bán rã $T=138$ ngày\"</td><td>$T=138$ ngày</td><td>Chu kì bán rã: thời gian để số hạt giảm còn một nửa</td></tr><tr><td>\"Sau $552$ ngày\"</td><td>$t_1=552$ ngày</td><td>Thời gian phân rã $t$, cùng đơn vị với $T$</td></tr><tr><td>\"còn bao nhiêu hạt nhân Po chưa phân rã\"</td><td>Cần số hạt còn lại lúc $t_1$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"bao nhiêu phần trăm số hạt nhân ban đầu đã phân rã\"</td><td>Cần phần đã phân rã lúc $t_1$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"Sau $759$ ngày … còn lại bằng bao nhiêu phần trăm\"</td><td>$t_2=759$ ngày; cần phần còn lại</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>sau thời gian t, chu kì bán rã T</b> → nghĩ tới <b>định luật phóng xạ</b>: mỗi chu kì còn một nửa.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số chu kì",
+     "hoi": "Sau $552$ ngày, mẫu đã qua bao nhiêu chu kì bán rã?",
+     "dap_so": 4,
+     "sai_so": 0.01,
+     "don_vi": "chu kì",
+     "loi_hay_gap": "Chia ngược $T$ cho $t$ nên ra số nhỏ hơn $1$, hoặc lấy thẳng số ngày làm số mũ."
+    },
+    {
+     "tieu_de": "Số hạt nhân còn lại",
+     "hoi": "Số hạt nhân Po chưa phân rã bằng bao nhiêu, tính theo đơn vị $10^{17}$ hạt?",
+     "dap_so": 4.0,
+     "sai_so": 0.05,
+     "don_vi": "·10¹⁷ hạt",
+     "loi_hay_gap": "Lấy số hạt đã phân rã làm số hạt còn lại, hoặc chia $N_0$ cho $n$ thay vì cho $2^n$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$N=\\dfrac{N_0}{2^n}$ với $n$ vừa tính",
+       "dung": true
+      },
+      {
+       "text": "$N=\\dfrac{N_0}{n}$",
+       "dung": false,
+       "vi_sao": "Mỗi chu kì số hạt chia $2$, qua $n$ chu kì phải chia $2^n$, không chia $n$."
+      },
+      {
+       "text": "$N=N_0\\left(1-\\dfrac{1}{2^n}\\right)$",
+       "dung": false,
+       "vi_sao": "Đó là số hạt đã phân rã; đề hỏi số hạt chưa phân rã."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm đã phân rã",
+     "hoi": "Bao nhiêu phần trăm số hạt nhân ban đầu đã phân rã?",
+     "dap_so": 93.75,
+     "sai_so": 0.1,
+     "don_vi": "%",
+     "loi_hay_gap": "Ghi phần còn lại làm đáp số, hoặc cộng thêm một lượng cố định cho mỗi chu kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "Phần đã phân rã bằng $1-\\dfrac{1}{2^n}$",
+       "dung": true
+      },
+      {
+       "text": "Phần đã phân rã bằng $\\dfrac{1}{2^n}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{1}{2^n}$ là phần còn lại; đề hỏi phần đã phân rã."
+      },
+      {
+       "text": "Mỗi chu kì phân rã $50\\%$ nên cộng $n\\cdot50\\%$",
+       "dung": false,
+       "vi_sao": "Mỗi chu kì chỉ phân rã một nửa số hạt đang còn, không phải một nửa số hạt ban đầu; cộng như vậy sẽ vượt quá $100\\%$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm còn lại sau $759$ ngày",
+     "hoi": "Sau $759$ ngày, số hạt nhân còn lại bằng bao nhiêu phần trăm số hạt nhân ban đầu?",
+     "dap_so": 2.21,
+     "sai_so": 0.02,
+     "don_vi": "%",
+     "loi_hay_gap": "Làm tròn $n$ thành số nguyên rồi mới lấy $2^{-n}$, hoặc lấy trung bình của hai mốc nguyên.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $n=\\dfrac{t}{T}$ rồi thế vào $2^{-n}$ bằng máy tính, kể cả khi $n$ không nguyên",
+       "dung": true
+      },
+      {
+       "text": "Lấy trung bình phần còn lại ở hai mốc chu kì nguyên kề nhau",
+       "dung": false,
+       "vi_sao": "Phần còn lại giảm theo cấp số nhân chứ không đều, nên trung bình cộng hai mốc lớn hơn giá trị thật ở chính giữa."
+      },
+      {
+       "text": "Làm tròn $n$ xuống số nguyên gần nhất rồi lấy $2^{-n}$",
+       "dung": false,
+       "vi_sao": "Làm tròn bỏ mất nửa chu kì, nên phần còn lại bị tính cao hơn thật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khá · Khối lượng đã phân rã: tìm chu kì bán rã và thời gian",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "problem_html": "<p>Một mẫu iốt-131 ($^{131}_{53}\\text{I}$) dùng trong y học có khối lượng ban đầu $m_0=64\\ \\mu\\text{g}$. Sau $24$ ngày, khối lượng iốt-131 đã phân rã (biến thành hạt nhân con) là $56\\ \\mu\\text{g}$.</p><ol type=\"a\"><li>Tính chu kì bán rã $T$ của iốt-131.</li><li>Tính khối lượng iốt-131 chưa phân rã còn lại sau $40$ ngày kể từ lúc đầu.</li><li>Sau ít nhất bao nhiêu ngày (kể từ lúc đầu) thì khối lượng iốt-131 chưa phân rã nhỏ hơn $0{,}1\\ \\mu\\text{g}$? Làm tròn lên đến ngày.</li></ol><p>Gợi ý: câu c cần logarit cơ số $2$; trên máy tính, $\\log_2x=\\dfrac{\\ln x}{\\ln2}$.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 170\" role=\"img\" aria-label=\"Hai mươi bốn hạt nhân của một mẫu minh hoạ phân rã dần, thanh thời gian chia theo chu kì T\"><circle cx=\"34\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.182;0.192;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.471;0.481;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.008;0.018;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"112\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/><circle cx=\"138\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.235;0.245;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164\" cy=\"34\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.158;0.168;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.694;0.704;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.023;0.033;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.604;0.614;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"112\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/><circle cx=\"138\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.265;0.275;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164\" cy=\"60\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.298;0.308;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.075;0.085;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.531;0.541;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.040;0.050;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"112\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.420;0.430;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"138\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.374;0.384;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164\" cy=\"86\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.114;0.124;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.135;0.145;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.208;0.218;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.334;0.344;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"112\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.816;0.826;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"138\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.057;0.067;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"164\" cy=\"112\" r=\"8\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.5\"><animate attributeName=\"fill-opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.094;0.104;1\" dur=\"8s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"232.0\" y=\"70.0\" width=\"160.0\" height=\"12.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><rect x=\"232\" y=\"70\" width=\"0\" height=\"12\" rx=\"3\" fill=\"#34d399\"><animate attributeName=\"width\" values=\"0.0;160.0\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"272.0\" y1=\"82.0\" x2=\"272.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"272.0\" y=\"105\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">T</text><line x1=\"312.0\" y1=\"82.0\" x2=\"312.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"312.0\" y=\"105\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">2T</text><line x1=\"352.0\" y1=\"82.0\" x2=\"352.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"352.0\" y=\"105\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">3T</text><line x1=\"392.0\" y1=\"82.0\" x2=\"392.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"392.0\" y=\"105\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">4T</text><text x=\"232\" y=\"60\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">thời gian →</text><circle cx=\"240.0\" cy=\"128.0\" r=\"7\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1\"></circle><text x=\"254\" y=\"132\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">chưa phân rã</text><circle cx=\"240.0\" cy=\"150.0\" r=\"7\" fill=\"#38bdf81a\" stroke=\"#38bdf8\" stroke-width=\"1.4\"></circle><text x=\"254\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">đã phân rã</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mẫu minh hoạ 24 hạt nhân, một chu kì T ứng với 2 s mô phỏng; thời điểm mỗi hạt phân rã tính từ định luật phóng xạ (khác chất trong đề). Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Chất mẹ còn lại: $m_t=m_0\\,2^{-n}$ với $n=\\dfrac{t}{T}$, tức $\\dfrac{m_0}{m_t}=2^n$.</li><li>Khối lượng đã phân rã: $\\Delta m=m_0-m_t=m_0(1-2^{-n})$.</li><li>Điều kiện: $2^{-n}$ chỉ cho phần CÒN LẠI; $n$ được phép không nguyên.</li><li>Muốn tìm $n$ từ $2^n=k$: dùng logarit cơ số $2$, $n=\\log_2k$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng còn lại sau $24$ ngày</span></p>$$m_{24}=m_0-\\Delta m=64-56$$<div class=\"bt-ans\">$$m_{24}=8\\ \\mu\\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chu kì đã qua</span></p>$$2^n=\\dfrac{m_0}{m_{24}}=\\dfrac{64}{8}=8$$<div class=\"bt-ans\">$$n=3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chu kì bán rã (câu a)</span></p>$$T=\\dfrac{t}{n}=\\dfrac{24}{3}$$<div class=\"bt-ans\">$$T=8\\ \\text{ngày}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khối lượng còn lại sau $40$ ngày (câu b)</span></p>$$n'=\\dfrac{40}{T}=\\dfrac{40}{8}=5$$$$m=\\dfrac{m_0}{2^5}=\\dfrac{64}{32}$$<div class=\"bt-ans\">$$m=2\\ \\mu\\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian để còn dưới $0{,}1\\ \\mu\\text{g}$ (câu c)</span></p>$$m_0\\,2^{-n}\\lt0{,}1\\Rightarrow2^n\\gt\\dfrac{64}{0{,}1}=640$$$$n\\gt\\log_2640\\approx9{,}32$$$$t=nT\\gt9{,}32\\cdot8$$<div class=\"bt-ans\">$$t\\gt74{,}6\\ \\text{ngày}$$</div><p>Làm tròn lên đến ngày: sau ít nhất $75$ ngày.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$2^3=8$ khớp $\\dfrac{64}{8}$; $T=8$ ngày đúng cỡ chu kì bán rã thực tế của iốt-131.</p><p>Câu c: sau $9$ chu kì ($72$ ngày) còn $\\dfrac{64}{512}=0{,}125\\ \\mu\\text{g}\\gt0{,}1$; sau $10$ chu kì ($80$ ngày) còn $0{,}0625\\ \\mu\\text{g}$; $74{,}6$ ngày nằm giữa hai mốc.</p><p>Sau $40$ ngày còn $2\\ \\mu\\text{g}$, ít hơn $8\\ \\mu\\text{g}$ của ngày thứ $24$: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=8$ ngày</p><p>b) $m=2\\ \\mu\\text{g}$</p><p>c) $t\\gt74{,}6$ ngày, tức sau ít nhất $75$ ngày</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng đã phân rã</strong> và hỏi chu kì hoặc thời gian → đổi sang phần còn lại trước, rồi dùng $2^{-n}$ và logarit cơ số $2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Dữ kiện: khối lượng iốt-131 ban đầu 64 microgam, sau 24 ngày đã phân rã 56 microgam\"><text x=\"22\" y=\"34\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">m₀ = 64 μg (lúc đầu)</text><rect x=\"22.0\" y=\"48.0\" width=\"315.0\" height=\"28.0\" rx=\"0\" fill=\"#fb923c30\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"337.0\" y=\"48.0\" width=\"45.0\" height=\"28.0\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"179.5\" y=\"67\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">đã phân rã: 56 μg</text><text x=\"359.5\" y=\"100\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">còn lại: ?</text><line x1=\"22\" y1=\"110\" x2=\"382\" y2=\"110\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M374.4,105.6 L382.0,110.0 L374.4,114.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"382\" y=\"130\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><circle cx=\"22.0\" cy=\"110.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"337.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"337.0\" y=\"130\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">24 ngày</text><text x=\"22\" y=\"166\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = ?   ·   sau 40 ngày: m = ?   ·   thời gian để m < 0,1 μg: ?</text></svg><figcaption>Dữ kiện: phần cam là khối lượng đã phân rã sau 24 ngày, vẽ đúng tỉ lệ với 64 μg; phần nét đứt là khối lượng còn lại cần tìm.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khối lượng iốt-131 đã phân rã\"</td><td>Phần đã phân rã, không phải phần còn lại</td><td>⚠ Công thức $2^{-t/T}$ áp dụng cho chất mẹ; đọc kĩ đề cho phần nào của mẫu</td></tr><tr><td>\"khối lượng ban đầu $m_0=64\\ \\mu\\text{g}$\"</td><td>$m_0=64\\ \\mu\\text{g}$</td><td>Khối lượng chất mẹ lúc đầu $m_0$</td></tr><tr><td>\"Sau $24$ ngày … đã phân rã là $56\\ \\mu\\text{g}$\"</td><td>$t=24$ ngày; $\\Delta m=56\\ \\mu\\text{g}$</td><td>Khối lượng đã phân rã $\\Delta m$ sau thời gian $t$</td></tr><tr><td>\"Tính chu kì bán rã $T$\"</td><td>Cần $T$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"sau $40$ ngày … chưa phân rã còn lại\"</td><td>$t=40$ ngày; cần khối lượng còn lại</td><td>Đại lượng cần tìm</td></tr><tr><td>\"ít nhất bao nhiêu ngày … nhỏ hơn $0{,}1\\ \\mu\\text{g}$\"</td><td>Ngưỡng $0{,}1\\ \\mu\\text{g}$; cần $t$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng đã phân rã, hỏi chu kì hoặc thời gian</b> → nghĩ tới <b>định luật phóng xạ</b> và logarit cơ số $2$.",
+   "cap_do": 3,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng còn lại sau $24$ ngày",
+     "hoi": "Sau $24$ ngày, khối lượng iốt-131 chưa phân rã còn lại là bao nhiêu microgam?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "μg",
+     "loi_hay_gap": "Lấy khối lượng đã phân rã làm khối lượng còn lại."
+    },
+    {
+     "tieu_de": "Số chu kì đã qua",
+     "hoi": "Trong $24$ ngày, khối lượng đã giảm đi một nửa bao nhiêu lần (số chu kì $n$)?",
+     "dap_so": 3,
+     "sai_so": 0.02,
+     "don_vi": "chu kì",
+     "loi_hay_gap": "Lấy $n$ bằng chính tỉ số khối lượng (đó là $2^n$), hoặc thế khối lượng đã phân rã vào $2^{-n}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $m_t=m_0\\,2^{-n}$ suy ra $2^n=\\dfrac{m_0}{m_t}$ rồi tìm $n$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $n=\\dfrac{m_0}{m_t}$",
+       "dung": false,
+       "vi_sao": "Tỉ số khối lượng là $2^n$, không phải $n$: mỗi chu kì khối lượng chia $2$ chứ không trừ đi một lượng đều."
+      },
+      {
+       "text": "Thế khối lượng đã phân rã vào $2^{-n}$",
+       "dung": false,
+       "vi_sao": "$2^{-n}$ chỉ tính phần CÒN LẠI; khối lượng đã phân rã là $m_0(1-2^{-n})$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chu kì bán rã",
+     "hoi": "Chu kì bán rã $T$ bằng bao nhiêu ngày?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "ngày",
+     "loi_hay_gap": "Nhân $t$ với $n$ thay vì chia, hoặc chia ngược $n$ cho $t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$T=\\dfrac{t}{n}$",
+       "dung": true
+      },
+      {
+       "text": "$T=n\\cdot t$",
+       "dung": false,
+       "vi_sao": "Mẫu đã qua nhiều chu kì trong thời gian $t$ nên một chu kì phải ngắn hơn $t$, không dài hơn."
+      },
+      {
+       "text": "$T=\\dfrac{n}{t}$",
+       "dung": false,
+       "vi_sao": "Đó là số chu kì trên mỗi ngày (nghịch đảo của $T$), đơn vị là $1/\\text{ngày}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng còn lại sau $40$ ngày",
+     "hoi": "Sau $40$ ngày kể từ lúc đầu, khối lượng iốt-131 chưa phân rã còn lại là bao nhiêu microgam?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "μg",
+     "loi_hay_gap": "Cho khối lượng giảm đều theo ngày như $24$ ngày đầu, hoặc lấy số ngày làm số mũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $n'=\\dfrac{40}{T}$ rồi $m=\\dfrac{m_0}{2^{n'}}$",
+       "dung": true
+      },
+      {
+       "text": "Cho khối lượng giảm đều theo ngày, cùng tốc độ như $24$ ngày đầu",
+       "dung": false,
+       "vi_sao": "Phóng xạ giảm theo hàm mũ: lượng mất mỗi ngày nhỏ dần theo lượng còn lại."
+      },
+      {
+       "text": "Dùng $m=m_0\\cdot2^{-40}$",
+       "dung": false,
+       "vi_sao": "Số mũ phải là $\\dfrac{t}{T}$ (số chu kì), không phải số ngày $t$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian để còn dưới $0{,}1\\ \\mu\\text{g}$",
+     "hoi": "Thời gian $t$ để khối lượng còn lại đúng bằng $0{,}1\\ \\mu\\text{g}$ là bao nhiêu ngày?",
+     "dap_so": 74.6,
+     "sai_so": 0.3,
+     "don_vi": "ngày",
+     "loi_hay_gap": "Đếm trọn số chu kì rồi tính (ra số lớn hơn thời gian ít nhất), hoặc cho rằng mẫu phân rã hết hoàn toàn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $m_0\\,2^{-n}=0{,}1$ bằng logarit cơ số $2$, rồi nhân với $T$",
+       "dung": true
+      },
+      {
+       "text": "Chia đôi khối lượng liên tiếp tới khi dưới $0{,}1\\ \\mu\\text{g}$ rồi lấy trọn số chu kì đó",
+       "dung": false,
+       "vi_sao": "Khối lượng chỉ cần giảm qua ngưỡng; thời điểm đó nằm giữa hai mốc chu kì nguyên, nên đếm trọn chu kì cho đáp số lớn hơn thời gian ít nhất."
+      },
+      {
+       "text": "Cho khối lượng còn lại bằng $0$ (phân rã hết)",
+       "dung": false,
+       "vi_sao": "Hàm mũ không bao giờ bằng $0$; phải đặt ngưỡng $0{,}1\\ \\mu\\text{g}$ của đề."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Độ phóng xạ của nguồn: Bq, Ci và sự giảm theo thời gian",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "problem_html": "<p>Nguồn coban-60 ($^{60}_{27}\\text{Co}$) trong máy xạ trị là $4{,}0\\ \\text{g}$ coban-60 nguyên chất, chu kì bán rã $T=5{,}27$ năm. Lấy $1$ năm $=365$ ngày, $N_A=6{,}022.10^{23}$ hạt/mol, khối lượng mol $A=60\\ \\text{g/mol}$ và $\\ln2=0{,}693$.</p><ol type=\"a\"><li>Tính số hạt nhân Co-60 trong nguồn lúc đầu và hằng số phóng xạ $\\lambda$ (đơn vị $1/\\text{s}$).</li><li>Tính độ phóng xạ ban đầu $H_0$ theo Bq và theo Ci.</li><li>Sau $10{,}54$ năm, độ phóng xạ của nguồn còn bao nhiêu Ci?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Đồng hồ đo độ phóng xạ H của một nguồn: kim quay dần về phía vạch không\"><path d=\"M38,138 A92,92 0 0 1 222,138\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"38.0\" y1=\"138.0\" x2=\"47.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"42.5\" y1=\"109.6\" x2=\"51.1\" y2=\"112.4\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"55.6\" y1=\"83.9\" x2=\"62.9\" y2=\"89.2\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"75.9\" y1=\"63.6\" x2=\"81.2\" y2=\"70.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"101.6\" y1=\"50.5\" x2=\"104.4\" y2=\"59.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"130.0\" y1=\"46.0\" x2=\"130.0\" y2=\"55.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"158.4\" y1=\"50.5\" x2=\"155.6\" y2=\"59.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"184.1\" y1=\"63.6\" x2=\"178.8\" y2=\"70.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"204.4\" y1=\"83.9\" x2=\"197.1\" y2=\"89.2\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"217.5\" y1=\"109.6\" x2=\"208.9\" y2=\"112.4\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"222.0\" y1=\"138.0\" x2=\"213.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"38\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">0</text><text x=\"222\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">H₀</text><text x=\"130\" y=\"102\" fill=\"#34d399\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">H</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"-0.0 130 138;-12.1 130 138;-23.3 130 138;-33.8 130 138;-43.6 130 138;-52.7 130 138;-61.2 130 138;-69.2 130 138;-76.6 130 138;-83.5 130 138;-90.0 130 138;-96.0 130 138;-101.7 130 138;-106.9 130 138;-111.8 130 138;-116.4 130 138;-120.6 130 138;-124.6 130 138;-128.3 130 138;-131.8 130 138;-135.0 130 138;-138.0 130 138;-140.8 130 138;-143.4 130 138;-145.9 130 138;-148.2 130 138;-150.3 130 138;-152.3 130 138;-154.2 130 138;-155.9 130 138;-157.5 130 138\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"130.0\" y1=\"138.0\" x2=\"208.0\" y2=\"138.0\" stroke=\"#f87171\" stroke-width=\"3\" opacity=\"1\"/></g><circle cx=\"130.0\" cy=\"138.0\" r=\"6\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"></circle><rect x=\"262.0\" y=\"56.0\" width=\"138.0\" height=\"82.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"290.0\" y=\"76.0\" width=\"82.0\" height=\"42.0\" rx=\"4\" fill=\"#94a3b830\" stroke=\"#94a3b8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"331\" y=\"102\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Co-60</text><text x=\"331\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nguồn trong hộp chì</text><line x1=\"262\" y1=\"70\" x2=\"232\" y2=\"54\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M235.9,60.3 L232.0,54.0 L239.4,53.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"262\" y1=\"100\" x2=\"232\" y2=\"92\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M237.3,97.3 L232.0,92.0 L239.2,90.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"262\" y1=\"130\" x2=\"232\" y2=\"130\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M238.4,133.7 L232.0,130.0 L238.4,126.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: kim tụt dần trong 3 chu kì (một chu kì ứng với 2 s mô phỏng); thang chia đều không ghi số, nguồn minh hoạ khác đề. Hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Số hạt nhân: $N_0=\\dfrac{m_0}{A}N_A$ ($m_0$ theo g, $A$ lấy bằng khối lượng mol theo g/mol).</li><li>Hằng số phóng xạ $\\lambda=\\dfrac{\\ln2}{T}$ với $T$ tính bằng giây; độ phóng xạ $H=\\lambda N$.</li><li>$H_t=H_0\\,2^{-t/T}$; $1\\ \\text{Ci}=3{,}7.10^{10}\\ \\text{Bq}$.</li><li>Điều kiện: muốn $H$ ra Bq thì $\\lambda$ phải ở đơn vị $1/\\text{s}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số hạt nhân ban đầu (câu a)</span></p>$$N_0=\\dfrac{m_0}{A}N_A=\\dfrac{4{,}0}{60}\\cdot6{,}022.10^{23}$$<div class=\"bt-ans\">$$N_0\\approx4{,}01.10^{22}\\ \\text{hạt nhân}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hằng số phóng xạ (câu a)</span></p><p>$T=5{,}27\\cdot365\\cdot86\\,400\\approx1{,}662.10^{8}\\ \\text{s}$.</p>$$\\lambda=\\dfrac{0{,}693}{T}=\\dfrac{0{,}693}{1{,}662.10^{8}}$$<div class=\"bt-ans\">$$\\lambda\\approx4{,}17.10^{-9}\\ \\text{s}^{-1}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ phóng xạ ban đầu theo Bq (câu b)</span></p>$$H_0=\\lambda N_0=4{,}17.10^{-9}\\cdot4{,}01.10^{22}$$<p>Dùng $\\lambda$ và $N_0$ chưa làm tròn (hai số trên đã làm tròn nên tích ghi ra hơi lệch):</p><div class=\"bt-ans\">$$H_0\\approx1{,}674.10^{14}\\ \\text{Bq}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi ra curi (câu b)</span></p>$$H_0=\\dfrac{1{,}674.10^{14}}{3{,}7.10^{10}}\\ \\text{Ci}$$<div class=\"bt-ans\">$$H_0\\approx4{,}52.10^{3}\\ \\text{Ci}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Độ phóng xạ sau $10{,}54$ năm (câu c)</span></p><p>$n=\\dfrac{10{,}54}{5{,}27}=2$, không cần tính lại $\\lambda$.</p>$$H=\\dfrac{H_0}{2^2}=\\dfrac{4{,}52.10^{3}}{4}$$<div class=\"bt-ans\">$$H\\approx1{,}13.10^{3}\\ \\text{Ci}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Tính cách khác: $N=\\dfrac{N_0}{4}\\approx1{,}004.10^{22}$ hạt, $H=\\lambda N\\approx4{,}19.10^{13}\\ \\text{Bq}\\approx1{,}13.10^{3}\\ \\text{Ci}$ (dùng $\\lambda$ chưa làm tròn), khớp câu c.</p><p>Độ lớn hợp lí: nguồn xạ trị thực tế có độ phóng xạ cỡ hàng nghìn curi.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N_0\\approx4{,}01.10^{22}$ hạt nhân; $\\lambda\\approx4{,}17.10^{-9}\\ \\text{s}^{-1}$</p><p>b) $H_0\\approx1{,}67.10^{14}\\ \\text{Bq}\\approx4{,}52.10^{3}\\ \\text{Ci}$</p><p>c) $H\\approx1{,}13.10^{3}\\ \\text{Ci}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng nguồn, $T$ tính bằng năm, hỏi Bq hoặc Ci</strong> → đếm $N_0$, đổi $T$ ra giây rồi lấy $H=\\lambda N$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 172\" role=\"img\" aria-label=\"Dữ kiện: nguồn coban-60 khối lượng 4,0 gam, chu kì bán rã 5,27 năm\"><rect x=\"20.0\" y=\"40.0\" width=\"100.0\" height=\"96.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"40.0\" y=\"66.0\" width=\"60.0\" height=\"44.0\" rx=\"4\" fill=\"#94a3b830\" stroke=\"#94a3b8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"70\" y=\"94\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Co-60</text><text x=\"70\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">m = 4,0 g</text><text x=\"150\" y=\"52\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = 5,27 năm</text><text x=\"150\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1 năm = 365 ngày</text><text x=\"150\" y=\"108\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N₀ = ?   ·   λ = ?</text><text x=\"150\" y=\"130\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">H₀ = ? Bq = ? Ci</text><text x=\"150\" y=\"152\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 10,54 năm: H = ? Ci</text></svg><figcaption>Dữ kiện: khối lượng, chu kì bán rã và thời điểm khảo sát của đề; dấu ? là đại lượng cần tìm. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$T=5{,}27$ năm … $1$ năm $=365$ ngày\"</td><td>$T=5{,}27$ năm</td><td>⚠ Muốn $H$ ra Bq thì $\\lambda$ phải ở đơn vị $1/\\text{s}$; $A$ lấy gần đúng bằng khối lượng mol</td></tr><tr><td>\"$4{,}0\\ \\text{g}$ coban-60 nguyên chất\"</td><td>$m_0=4{,}0\\ \\text{g}$; $A=60\\ \\text{g/mol}$</td><td>Khối lượng mol; số Avôgađrô $N_A$</td></tr><tr><td>\"$N_A=6{,}022.10^{23}$ hạt/mol, $\\ln2=0{,}693$\"</td><td>Hằng số cho sẵn</td><td>Số Avôgađrô; hằng số phóng xạ $\\lambda$</td></tr><tr><td>\"số hạt nhân Co-60 … hằng số phóng xạ $\\lambda$\"</td><td>Cần $N_0$, $\\lambda$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"độ phóng xạ ban đầu $H_0$ theo Bq và theo Ci\"</td><td>Cần $H_0$ ở hai đơn vị</td><td>Đại lượng cần tìm; đơn vị Bq và Ci</td></tr><tr><td>\"Sau $10{,}54$ năm\"</td><td>$t=10{,}54$ năm; cần $H$</td><td>Thời gian $t$, cùng đơn vị với $T$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng nguồn, T bằng năm, hỏi Bq hoặc Ci</b> → nghĩ tới <b>H = λN</b>, chú ý đơn vị.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số hạt nhân ban đầu",
+     "hoi": "Số hạt nhân Co-60 trong nguồn lúc đầu bằng bao nhiêu, tính theo đơn vị $10^{22}$ hạt?",
+     "dap_so": 4.01,
+     "sai_so": 0.02,
+     "don_vi": "·10²² hạt",
+     "loi_hay_gap": "Quên chia cho khối lượng mol, hoặc nhân thêm với một đại lượng không liên quan."
+    },
+    {
+     "tieu_de": "Hằng số phóng xạ",
+     "hoi": "Hằng số phóng xạ $\\lambda$ bằng bao nhiêu, tính theo đơn vị $10^{-9}\\ \\text{s}^{-1}$?",
+     "dap_so": 4.17,
+     "sai_so": 0.03,
+     "don_vi": "·10⁻⁹ s⁻¹",
+     "loi_hay_gap": "Để $T$ tính bằng năm rồi dùng luôn (ra đơn vị $1/\\text{năm}$), hoặc đổi năm sang giây thiếu một bước.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\lambda=\\dfrac{0{,}693}{T}$ với $T$ đổi ra giây",
+       "dung": true
+      },
+      {
+       "text": "$\\lambda=\\dfrac{0{,}693}{T}$ với $T$ tính bằng năm rồi dùng luôn",
+       "dung": false,
+       "vi_sao": "Khi đó $\\lambda$ có đơn vị $1/\\text{năm}$; $H=\\lambda N$ sẽ ra số phân rã mỗi năm, không phải Bq."
+      },
+      {
+       "text": "$\\lambda=\\dfrac{T}{0{,}693}$",
+       "dung": false,
+       "vi_sao": "Đó là nghịch đảo: $\\lambda$ càng nhỏ khi $T$ càng dài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ phóng xạ ban đầu (Bq)",
+     "hoi": "Độ phóng xạ ban đầu $H_0$ bằng bao nhiêu, tính theo đơn vị $10^{14}\\ \\text{Bq}$?",
+     "dap_so": 1.674,
+     "sai_so": 0.01,
+     "don_vi": "·10¹⁴ Bq",
+     "loi_hay_gap": "Bỏ quên $\\ln2$ (lấy $\\dfrac{N_0}{T}$), hoặc nhân $\\lambda$ với khối lượng thay vì số hạt nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H_0=\\lambda N_0$",
+       "dung": true
+      },
+      {
+       "text": "$H_0=\\dfrac{N_0}{T}$",
+       "dung": false,
+       "vi_sao": "Bỏ mất thừa số $\\ln2$: số phân rã mỗi giây là $\\lambda N_0$ với $\\lambda=\\dfrac{\\ln2}{T}$, không phải $\\dfrac{N_0}{T}$."
+      },
+      {
+       "text": "$H_0=\\lambda m_0$",
+       "dung": false,
+       "vi_sao": "$H$ tỉ lệ với số hạt nhân $N_0$, không tỉ lệ với khối lượng tính bằng gam."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi ra curi",
+     "hoi": "Độ phóng xạ ban đầu bằng bao nhiêu curi?",
+     "dap_so": 4520,
+     "sai_so": 30,
+     "don_vi": "Ci",
+     "loi_hay_gap": "Nhân với hệ số đổi thay vì chia (curi là đơn vị rất lớn), hoặc lấy $1\\ \\text{Ci}$ bằng một lũy thừa tròn của $10$ Bq.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi Bq sang Ci theo định nghĩa của $1\\ \\text{Ci}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân với $3{,}7.10^{10}$",
+       "dung": false,
+       "vi_sao": "Đổi sang đơn vị lớn thì con số phải nhỏ đi."
+      },
+      {
+       "text": "Chia cho $10^{11}$ cho tròn số",
+       "dung": false,
+       "vi_sao": "$1\\ \\text{Ci}=3{,}7.10^{10}\\ \\text{Bq}$ theo định nghĩa, không phải $10^{11}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ phóng xạ sau $10{,}54$ năm",
+     "hoi": "Sau $10{,}54$ năm, độ phóng xạ của nguồn còn bao nhiêu curi?",
+     "dap_so": 1130,
+     "sai_so": 10,
+     "don_vi": "Ci",
+     "loi_hay_gap": "Chia $H_0$ cho $n$ thay vì cho $2^n$, hoặc chỉ cho giảm một nửa dù đã qua nhiều chu kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $n=\\dfrac{t}{T}$ rồi $H=\\dfrac{H_0}{2^n}$, không cần tính lại $\\lambda$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{H_0}{n}$",
+       "dung": false,
+       "vi_sao": "Mỗi chu kì độ phóng xạ chia $2$; qua $n$ chu kì phải chia $2^n$."
+      },
+      {
+       "text": "$H=\\dfrac{H_0}{2}$ vì độ phóng xạ giảm một nửa",
+       "dung": false,
+       "vi_sao": "Thời gian khảo sát dài hơn một chu kì nên độ phóng xạ đã giảm một nửa nhiều lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Xác định tuổi mẫu cổ bằng carbon-14",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "problem_html": "<p>Cây còn sống có độ phóng xạ của $^{14}_6\\text{C}$ là $0{,}226\\ \\text{Bq}$ trên mỗi gam carbon. Khi cây chết, không còn carbon mới đi vào cây, và $^{14}\\text{C}$ phân rã với chu kì bán rã $T=5730$ năm. Giả sử tỉ lệ $^{14}\\text{C}$ trong khí quyển không đổi suốt thời gian đó và mẫu không bị nhiễm carbon mới.</p><p>Một mẩu than gỗ cổ chứa $5{,}0\\ \\text{g}$ carbon, đo được độ phóng xạ của $^{14}\\text{C}$ trong mẩu là $0{,}360\\ \\text{Bq}$.</p><ol type=\"a\"><li>Tính độ phóng xạ riêng của mẫu (Bq trên mỗi gam carbon) và tỉ số của nó so với cây sống.</li><li>Tính tuổi của mẩu than gỗ.</li><li>Nếu mẩu than thực ra bị lẫn một ít carbon hiện đại (chứa nhiều $^{14}\\text{C}$ hơn mức còn lại trong mẫu cổ), tuổi tính theo cách trên lớn hơn hay nhỏ hơn tuổi thật?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 238\" role=\"img\" aria-label=\"Độ phóng xạ riêng của carbon-14 không đổi khi cây sống, rồi giảm dần từ lúc cây chết\"><line x1=\"48\" y1=\"176\" x2=\"386\" y2=\"176\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M378.4,171.6 L386.0,176.0 L378.4,180.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56\" y1=\"184\" x2=\"56\" y2=\"42\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,49.6 L56.0,42.0 L60.4,49.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"386\" y=\"193\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"64\" y=\"50\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h</text><line x1=\"56.0\" y1=\"58.0\" x2=\"134.0\" y2=\"58.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"134.0,58.0 138.6,62.0 143.2,65.9 147.8,69.7 152.4,73.3 157.0,76.8 161.6,80.2 166.2,83.4 170.8,86.6 175.4,89.6 180.0,92.6 184.6,95.4 189.2,98.1 193.8,100.8 198.4,103.4 203.0,105.8 207.6,108.2 212.2,110.5 216.8,112.8 221.4,114.9 226.0,117.0 230.6,119.0 235.2,121.0 239.8,122.8 244.4,124.6 249.0,126.4 253.6,128.1 258.2,129.7 262.8,131.3 267.4,132.8 272.0,134.3 276.6,135.7 281.2,137.1 285.8,138.4 290.4,139.7 295.0,140.9 299.6,142.1 304.2,143.3 308.8,144.4 313.4,145.5 318.0,146.5 322.6,147.5 327.2,148.5 331.8,149.4 336.4,150.3 341.0,151.2 345.6,152.0 350.2,152.9 354.8,153.6 359.4,154.4 364.0,155.1 368.6,155.9 373.2,156.5\"/><line x1=\"134.0\" y1=\"50.0\" x2=\"134.0\" y2=\"182.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"134\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">cây chết (t = 0)</text><text x=\"50\" y=\"62\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h₀</text><text x=\"82\" y=\"50\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">cây sống: h₀ = 0,226 Bq/g</text><line x1=\"56.0\" y1=\"124.6\" x2=\"244.4\" y2=\"124.6\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"244.4\" y1=\"124.6\" x2=\"244.4\" y2=\"176.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"50\" y=\"128.6\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h = ?</text><line x1=\"134\" y1=\"210\" x2=\"244.39999999999998\" y2=\"210\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M237.4,205.9 L244.4,210.0 L237.4,214.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244.39999999999998\" y1=\"210\" x2=\"134\" y2=\"210\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M141.0,214.1 L134.0,210.0 L141.0,205.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"189.2\" y=\"229\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tuổi t = ?</text><circle cx=\"134.0\" cy=\"58.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"134.0;138.6;143.2;147.8;152.4;157.0;161.6;166.2;170.8;175.4;180.0;184.6;189.2;193.8;198.4;203.0;207.6;212.2;216.8;221.4;226.0;230.6;235.2;239.8;244.4\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"58.0;62.0;65.9;69.7;73.3;76.8;80.2;83.4;86.6;89.6;92.6;95.4;98.1;100.8;103.4;105.8;108.2;110.5;112.8;114.9;117.0;119.0;121.0;122.8;124.6\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy từ lúc cây chết tới lúc đo; h là độ phóng xạ riêng (Bq trên mỗi gam carbon). Mẫu minh hoạ khác đề, trục thời gian không chia vạch.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Độ phóng xạ riêng $h=\\dfrac{H}{m_C}$ (Bq trên $1$ g carbon): chỉ so được hai mẫu khi cùng khối lượng carbon.</li><li>Sau khi cây chết: $h=h_0\\,2^{-n}$ với $n=\\dfrac{t}{T}$, tức $\\dfrac{h_0}{h}=2^n$.</li><li>Điều kiện (giả thiết): tỉ lệ $^{14}\\text{C}$ trong khí quyển không đổi; mẫu không trao đổi carbon sau khi chết và không nhiễm carbon mới.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ phóng xạ riêng của mẫu (câu a)</span></p>$$h=\\dfrac{H}{m_C}=\\dfrac{0{,}360}{5{,}0}$$<div class=\"bt-ans\">$$h=0{,}0720\\ \\text{Bq/g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tỉ số so với cây sống (câu a)</span></p>$$\\dfrac{h}{h_0}=\\dfrac{0{,}0720}{0{,}226}$$<div class=\"bt-ans\">$$\\dfrac{h}{h_0}\\approx0{,}319$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chu kì đã qua (câu b)</span></p>$$2^n=\\dfrac{h_0}{h}=\\dfrac{0{,}226}{0{,}0720}\\approx3{,}14$$$$n=\\log_2 3{,}14$$<div class=\"bt-ans\">$$n\\approx1{,}65$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tuổi của mẩu than (câu b)</span></p>$$t=nT=1{,}6504\\cdot5730$$<div class=\"bt-ans\">$$t\\approx9455\\ \\text{năm}\\approx9{,}5.10^{3}\\ \\text{năm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khi mẫu bị lẫn carbon hiện đại (câu c)</span></p><p>$^{14}\\text{C}$ thêm vào làm độ phóng xạ riêng $h$ đo được lớn hơn $h$ thật của mẫu cổ, nên tỉ số $\\dfrac{h}{h_0}$ gần $1$ hơn và $n$ nhỏ đi.</p><div class=\"bt-ans\"><p>Tuổi tính ra nhỏ hơn tuổi thật.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$0{,}319$ nằm giữa $0{,}5$ và $0{,}25$ nên $1\\lt n\\lt2$; $n=1{,}65$ hợp lí.</p>$$h=h_0\\,2^{-n}=0{,}226\\cdot2^{-1{,}65}\\approx0{,}0720\\ \\text{Bq/g}$$<p>Tuổi cỡ $9{,}5$ nghìn năm, còn trong tầm đo của $^{14}\\text{C}$ (tới khoảng $50\\,000$ năm).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $h=0{,}0720\\ \\text{Bq/g}$; $\\dfrac{h}{h_0}\\approx0{,}319$</p><p>b) $t\\approx9455$ năm (cỡ $9{,}5$ nghìn năm)</p><p>c) Tuổi tính ra nhỏ hơn tuổi thật</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai mẫu có khối lượng carbon khác nhau và giả thiết khí quyển</strong> → đưa về độ phóng xạ riêng, tìm $n$ bằng logarit rồi $t=nT$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 166\" role=\"img\" aria-label=\"Dữ kiện: độ phóng xạ của carbon-14 trên mỗi gam carbon ở cây sống và độ phóng xạ đo được của mẩu than gỗ cổ\"><rect x=\"14.0\" y=\"40.0\" width=\"180.0\" height=\"78.0\" rx=\"8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"104\" y=\"64\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">cây còn sống</text><text x=\"104\" y=\"88\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">mỗi gam carbon:</text><text x=\"104\" y=\"108\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">0,226 Bq</text><rect x=\"226.0\" y=\"40.0\" width=\"180.0\" height=\"78.0\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"316\" y=\"64\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">mẩu than gỗ cổ</text><text x=\"316\" y=\"88\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">5,0 g carbon:</text><text x=\"316\" y=\"108\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">đo được 0,360 Bq</text><text x=\"14\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = 5730 năm · tuổi mẫu t = ?</text></svg><figcaption>Dữ kiện: hai số đo ở hai khối lượng carbon khác nhau; dấu ? là đại lượng cần tìm. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tỉ lệ $^{14}\\text{C}$ trong khí quyển không đổi … không bị nhiễm carbon mới\"</td><td>Hai giả thiết của phép định tuổi</td><td>⚠ Phép định tuổi chỉ đúng khi cả hai giả thiết này đúng</td></tr><tr><td>\"cây còn sống … $0{,}226\\ \\text{Bq}$ trên mỗi gam carbon\"</td><td>$h_0=0{,}226\\ \\text{Bq/g}$ (trên $1$ g carbon)</td><td>Độ phóng xạ riêng của cây sống</td></tr><tr><td>\"$T=5730$ năm\"</td><td>$T=5730$ năm</td><td>Chu kì bán rã của $^{14}\\text{C}$</td></tr><tr><td>\"chứa $5{,}0\\ \\text{g}$ carbon, đo được … $0{,}360\\ \\text{Bq}$\"</td><td>$m_C=5{,}0\\ \\text{g}$; $H=0{,}360\\ \\text{Bq}$ (trên $5{,}0$ g carbon)</td><td>Khái niệm độ phóng xạ riêng</td></tr><tr><td>\"Tính độ phóng xạ riêng … và tỉ số so với cây sống\"</td><td>Cần $h$ và $\\dfrac{h}{h_0}$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"Tính tuổi của mẩu than gỗ\"</td><td>Cần $t$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"bị lẫn một ít carbon hiện đại\"</td><td>Vi phạm giả thiết không nhiễm</td><td>Ảnh hưởng của carbon lẫn vào lên độ phóng xạ riêng đo được</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai mẫu khác khối lượng carbon, có giả thiết khí quyển</b> → nghĩ tới <b>độ phóng xạ riêng</b>, rồi logarit.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ phóng xạ riêng của mẫu",
+     "hoi": "Độ phóng xạ riêng của mẫu (Bq trên mỗi gam carbon) bằng bao nhiêu?",
+     "dap_so": 0.072,
+     "sai_so": 0.001,
+     "don_vi": "Bq/g",
+     "loi_hay_gap": "Dùng thẳng số đo của cả mẩu mà không chia cho khối lượng carbon."
+    },
+    {
+     "tieu_de": "Tỉ số so với cây sống",
+     "hoi": "Tỉ số $\\dfrac{h}{h_0}$ giữa độ phóng xạ riêng của mẫu và của cây sống bằng bao nhiêu?",
+     "dap_so": 0.319,
+     "sai_so": 0.003,
+     "loi_hay_gap": "So hai số đo ứng với khối lượng carbon khác nhau, hoặc lấy tỉ số ngược.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai độ phóng xạ riêng, cùng tính trên $1$ g carbon",
+       "dung": true
+      },
+      {
+       "text": "So trực tiếp $0{,}360\\ \\text{Bq}$ với $0{,}226\\ \\text{Bq}$",
+       "dung": false,
+       "vi_sao": "Hai số đo ứng với $5{,}0$ g và $1$ g carbon; phải đưa về cùng khối lượng carbon mới so được."
+      },
+      {
+       "text": "Lấy tỉ số khối lượng carbon $\\dfrac{5{,}0}{1{,}0}$",
+       "dung": false,
+       "vi_sao": "Phần lớn carbon trong mẫu là $^{12}\\text{C}$ không phân rã; chỉ độ phóng xạ của $^{14}\\text{C}$ cho biết tuổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chu kì đã qua",
+     "hoi": "Số chu kì $n$ mà mẫu đã trải qua bằng bao nhiêu?",
+     "dap_so": 1.65,
+     "sai_so": 0.02,
+     "don_vi": "chu kì",
+     "loi_hay_gap": "Lấy $n$ bằng chính tỉ số $\\dfrac{h_0}{h}$, hoặc lấy $n=1-\\dfrac{h}{h_0}$ (phần đã phân rã).",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $\\dfrac{h_0}{h}=2^n$ tìm $n$ bằng logarit cơ số $2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $n=\\dfrac{h_0}{h}$",
+       "dung": false,
+       "vi_sao": "Tỉ số $\\dfrac{h_0}{h}$ bằng $2^n$ chứ không bằng $n$."
+      },
+      {
+       "text": "Lấy $n=1-\\dfrac{h}{h_0}$",
+       "dung": false,
+       "vi_sao": "Đó là phần đã phân rã, không phải số chu kì."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tuổi của mẩu than",
+     "hoi": "Tuổi của mẩu than gỗ bằng bao nhiêu năm?",
+     "dap_so": 9455,
+     "sai_so": 60,
+     "don_vi": "năm",
+     "loi_hay_gap": "Đổi $T$ sang đơn vị khác rồi vẫn ghi năm, hoặc dùng phần trăm đã phân rã thay cho số chu kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=n\\cdot T$",
+       "dung": true
+      },
+      {
+       "text": "$t=nT$ nhưng đổi $T$ ra giây rồi vẫn ghi đáp số bằng năm",
+       "dung": false,
+       "vi_sao": "Đổi $T$ ra giây thì $t$ ra giây; ghi là năm sẽ sai hệ số hơn $10^7$ lần."
+      },
+      {
+       "text": "$t=\\left(1-\\dfrac{h}{h_0}\\right)T$",
+       "dung": false,
+       "vi_sao": "Phần trăm đã phân rã không phải số chu kì; tuổi phải tính từ $n$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khi mẫu bị lẫn carbon hiện đại",
+     "hoi": "Nếu mẫu lẫn carbon hiện đại, tuổi tính theo cách trên so với tuổi thật thế nào?",
+     "lua_chon": [
+      {
+       "text": "Nhỏ hơn: $^{14}\\text{C}$ thêm vào làm độ phóng xạ riêng đo được cao, mẫu trông trẻ hơn",
+       "dung": true
+      },
+      {
+       "text": "Lớn hơn: thêm carbon làm mẫu trông nhiều tuổi hơn",
+       "dung": false,
+       "vi_sao": "Carbon hiện đại có nhiều $^{14}\\text{C}$ làm $h$ đo được cao hơn, tỉ số $\\dfrac{h}{h_0}$ gần $1$ hơn, nên tuổi tính ra nhỏ hơn."
+      },
+      {
+       "text": "Không đổi: $^{14}\\text{C}$ mới cũng phân rã theo $T$ nên tuổi vẫn đúng",
+       "dung": false,
+       "vi_sao": "Phép tính coi mọi $^{14}\\text{C}$ trong mẫu đã phân rã từ khi cây chết; $^{14}\\text{C}$ thêm vào chưa trải qua thời gian đó."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng thêm carbon thì mẫu trông già hơn, hoặc cho rằng giả thiết không ảnh hưởng kết quả.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét carbon lẫn vào làm độ phóng xạ riêng đo được thay đổi thế nào",
+       "dung": true
+      },
+      {
+       "text": "Tính lại $T$ cho carbon hiện đại",
+       "dung": false,
+       "vi_sao": "$T$ của $^{14}\\text{C}$ là hằng số, không đổi dù carbon cũ hay mới."
+      },
+      {
+       "text": "Bỏ qua: giả thiết chỉ là thủ tục, không ảnh hưởng kết quả",
+       "dung": false,
+       "vi_sao": "Tuổi chỉ đúng khi giả thiết đúng; vi phạm giả thiết thì tuổi tính ra lệch."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

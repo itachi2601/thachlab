@@ -1,0 +1,571 @@
+{
+ "lesson_id": 125,
+ "lesson_title": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng + 11 bài tu_luan khớp; đã sửa vi_sao D1 sai, lộ chiều/kết quả D3,D4,D5, lựa chọn sai gượng, thiếu Ω. Câu 6 cũ (nối tắt) lời giải gốc 20 sai → 60 vòng; bỏ Câu 7 (6,5 V sai, đúng 9,4 V)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tần số dòng điện của máy phát: f = np",
+   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+   "problem_html": "<p>Rô-to của một máy phát điện xoay chiều một pha là nam châm có $4$ cặp cực, quay đều với tốc độ $750$ vòng/phút.</p><ol type=\"a\"><li>Tính tần số $f$ của dòng điện do máy phát ra.</li><li>Tính tần số góc $\\omega$ của suất điện động ở câu a.</li><li>Một máy phát khác có rô-to quay $300$ vòng/phút. Muốn dòng điện phát ra có tần số $50\\ \\text{Hz}$ thì rô-to của máy này phải có bao nhiêu cặp cực?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Rô-to nam châm nhiều cặp cực quay trước một cuộn dây đứng yên, đồ thị suất điện động e theo thời gian có điểm chạy\"><line x1=\"226\" y1=\"100\" x2=\"408\" y2=\"100\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M400.4,95.6 L408.0,100.0 L400.4,104.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"234\" y1=\"150\" x2=\"234\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M229.6,53.6 L234.0,46.0 L238.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"406\" y=\"117\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"242\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\" points=\"234.0,100.0 235.0,94.1 236.0,88.3 237.0,82.7 238.0,77.7 239.0,73.1 240.0,69.3 241.0,66.1 242.0,63.9 243.0,62.5 244.0,62.0 245.0,62.5 246.0,63.9 247.0,66.1 248.0,69.3 249.0,73.1 250.0,77.7 251.0,82.7 252.0,88.3 253.0,94.1 254.0,100.0 255.0,105.9 256.0,111.7 257.0,117.3 258.0,122.3 259.0,126.9 260.0,130.7 261.0,133.9 262.0,136.1 263.0,137.5 264.0,138.0 265.0,137.5 266.0,136.1 267.0,133.9 268.0,130.7 269.0,126.9 270.0,122.3 271.0,117.3 272.0,111.7 273.0,105.9 274.0,100.0 275.0,94.1 276.0,88.3 277.0,82.7 278.0,77.7 279.0,73.1 280.0,69.3 281.0,66.1 282.0,63.9 283.0,62.5 284.0,62.0 285.0,62.5 286.0,63.9 287.0,66.1 288.0,69.3 289.0,73.1 290.0,77.7 291.0,82.7 292.0,88.3 293.0,94.1 294.0,100.0 295.0,105.9 296.0,111.7 297.0,117.3 298.0,122.3 299.0,126.9 300.0,130.7 301.0,133.9 302.0,136.1 303.0,137.5 304.0,138.0 305.0,137.5 306.0,136.1 307.0,133.9 308.0,130.7 309.0,126.9 310.0,122.3 311.0,117.3 312.0,111.7 313.0,105.9 314.0,100.0 315.0,94.1 316.0,88.3 317.0,82.7 318.0,77.7 319.0,73.1 320.0,69.3 321.0,66.1 322.0,63.9 323.0,62.5 324.0,62.0 325.0,62.5 326.0,63.9 327.0,66.1 328.0,69.3 329.0,73.1 330.0,77.7 331.0,82.7 332.0,88.3 333.0,94.1 334.0,100.0 335.0,105.9 336.0,111.7 337.0,117.3 338.0,122.3 339.0,126.9 340.0,130.7 341.0,133.9 342.0,136.1 343.0,137.5 344.0,138.0 345.0,137.5 346.0,136.1 347.0,133.9 348.0,130.7 349.0,126.9 350.0,122.3 351.0,117.3 352.0,111.7 353.0,105.9 354.0,100.0 355.0,94.1 356.0,88.3 357.0,82.7 358.0,77.7 359.0,73.1 360.0,69.3 361.0,66.1 362.0,63.9 363.0,62.5 364.0,62.0 365.0,62.5 366.0,63.9 367.0,66.1 368.0,69.3 369.0,73.1 370.0,77.7 371.0,82.7 372.0,88.3 373.0,94.1 374.0,100.0 375.0,105.9 376.0,111.7 377.0,117.3 378.0,122.3 379.0,126.9 380.0,130.7 381.0,133.9 382.0,136.1 383.0,137.5 384.0,138.0 385.0,137.5 386.0,136.1 387.0,133.9 388.0,130.7 389.0,126.9 390.0,122.3 391.0,117.3 392.0,111.7 393.0,105.9 394.0,100.0\"/><ellipse cx=\"158\" cy=\"82\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"91\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"100\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"109\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"118\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"158\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">cuộn dây</text><text x=\"14\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">4 cặp cực ; n = 750 vòng/phút</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 84 100;-360.0 84 100\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M84,100 L135.7,121.4 A56,56 0 0 0 135.7,78.6 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L135.7,78.6 A56,56 0 0 0 105.4,48.3 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L105.4,48.3 A56,56 0 0 0 62.6,48.3 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L62.6,48.3 A56,56 0 0 0 32.3,78.6 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L32.3,78.6 A56,56 0 0 0 32.3,121.4 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L32.3,121.4 A56,56 0 0 0 62.6,151.7 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L62.6,151.7 A56,56 0 0 0 105.4,151.7 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L105.4,151.7 A56,56 0 0 0 135.7,121.4 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"84.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/></g><circle cx=\"234.0\" cy=\"100.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"234.0;235.2;236.5;237.8;239.0;240.2;241.5;242.8;244.0;245.2;246.5;247.8;249.0;250.2;251.5;252.8;254.0;255.2;256.5;257.8;259.0;260.2;261.5;262.8;264.0;265.2;266.5;267.8;269.0;270.2;271.5;272.8;274.0;275.2;276.5;277.8;279.0;280.2;281.5;282.8;284.0;285.2;286.5;287.8;289.0;290.2;291.5;292.8;294.0;295.2;296.5;297.8;299.0;300.2;301.5;302.8;304.0;305.2;306.5;307.8;309.0;310.2;311.5;312.8;314.0;315.2;316.5;317.8;319.0;320.2;321.5;322.8;324.0;325.2;326.5;327.8;329.0;330.2;331.5;332.8;334.0;335.2;336.5;337.8;339.0;340.2;341.5;342.8;344.0;345.2;346.5;347.8;349.0;350.2;351.5;352.8;354.0;355.2;356.5;357.8;359.0;360.2;361.5;362.8;364.0;365.2;366.5;367.8;369.0;370.2;371.5;372.8;374.0;375.2;376.5;377.8;379.0;380.2;381.5;382.8;384.0;385.2;386.5;387.8;389.0;390.2;391.5;392.8;394.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"100.0;92.6;85.5;78.9;73.1;68.4;64.9;62.7;62.0;62.7;64.9;68.4;73.1;78.9;85.5;92.6;100.0;107.4;114.5;121.1;126.9;131.6;135.1;137.3;138.0;137.3;135.1;131.6;126.9;121.1;114.5;107.4;100.0;92.6;85.5;78.9;73.1;68.4;64.9;62.7;62.0;62.7;64.9;68.4;73.1;78.9;85.5;92.6;100.0;107.4;114.5;121.1;126.9;131.6;135.1;137.3;138.0;137.3;135.1;131.6;126.9;121.1;114.5;107.4;100.0;92.6;85.5;78.9;73.1;68.4;64.9;62.7;62.0;62.7;64.9;68.4;73.1;78.9;85.5;92.6;100.0;107.4;114.5;121.1;126.9;131.6;135.1;137.3;138.0;137.3;135.1;131.6;126.9;121.1;114.5;107.4;100.0;92.6;85.5;78.9;73.1;68.4;64.9;62.7;62.0;62.7;64.9;68.4;73.1;78.9;85.5;92.6;100.0;107.4;114.5;121.1;126.9;131.6;135.1;137.3;138.0;137.3;135.1;131.6;126.9;121.1;114.5;107.4;100.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"14\" y=\"186\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: rô-to (đỏ: cực N, xanh: cực S) quay đều ngược chiều kim đồng hồ trước cuộn dây đứng yên; điểm xanh chạy trên đồ thị e(t) tính theo số cặp cực; chạy chậm, một vòng quay ứng với 4 s. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Rô-to có $p$ cặp cực, quay $n$ vòng mỗi giây thì tần số dòng điện $f=np$.</li><li>Tần số góc: $\\omega=2\\pi f$.</li><li>Điều kiện: $n$ tính bằng vòng/giây (đổi từ vòng/phút bằng cách chia cho $60$); $p$ là số cặp cực, không phải số cực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi tốc độ quay sang vòng/giây</span></p><p>Đề: $n=750$ vòng/phút.</p>$$n=\\dfrac{750}{60}$$<div class=\"bt-ans\">$$n=12{,}5\\ \\text{vòng/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tần số (câu a)</span></p>$$f=np=12{,}5\\cdot4$$<div class=\"bt-ans\">$$f=50\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tần số góc (câu b)</span></p>$$\\omega=2\\pi f=2\\pi\\cdot50$$<div class=\"bt-ans\">$$\\omega=100\\pi\\approx314{,}2\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số cặp cực của máy thứ hai (câu c)</span></p><p>$n'=\\dfrac{300}{60}=5$ vòng/s; $f'=50\\ \\text{Hz}$.</p>$$f'=n'p'\\Rightarrow p'=\\dfrac{f'}{n'}=\\dfrac{50}{5}$$<div class=\"bt-ans\">$$p'=10\\ \\text{cặp cực}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Máy thứ nhất: $12{,}5\\cdot4=50\\ \\text{Hz}$, đúng tần số lưới điện.</p><p>Máy thứ hai: $5\\cdot10=50\\ \\text{Hz}$, khớp đề.</p><p>Nếu quên chia $60$ thì ra $750\\cdot4=3000\\ \\text{Hz}$: lớn gấp $60$ lần tần số lưới, vô lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f=50\\ \\text{Hz}$</p><p>b) $\\omega=100\\pi\\approx314{,}2\\ \\text{rad/s}$</p><p>c) $p'=10$ cặp cực (tức $20$ cực)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số cặp cực và tốc độ quay bằng vòng/phút</strong> → đổi sang vòng/giây rồi dùng $f=np$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Dữ kiện: rô-to nhiều cặp cực quay đều trước cuộn dây, tốc độ cho bằng vòng trên phút\"><line x1=\"226\" y1=\"100\" x2=\"408\" y2=\"100\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M400.4,95.6 L408.0,100.0 L400.4,104.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"234\" y1=\"150\" x2=\"234\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M229.6,53.6 L234.0,46.0 L238.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"406\" y=\"117\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"242\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\" points=\"234.0,100.0 235.0,94.1 236.0,88.3 237.0,82.7 238.0,77.7 239.0,73.1 240.0,69.3 241.0,66.1 242.0,63.9 243.0,62.5 244.0,62.0 245.0,62.5 246.0,63.9 247.0,66.1 248.0,69.3 249.0,73.1 250.0,77.7 251.0,82.7 252.0,88.3 253.0,94.1 254.0,100.0 255.0,105.9 256.0,111.7 257.0,117.3 258.0,122.3 259.0,126.9 260.0,130.7 261.0,133.9 262.0,136.1 263.0,137.5 264.0,138.0 265.0,137.5 266.0,136.1 267.0,133.9 268.0,130.7 269.0,126.9 270.0,122.3 271.0,117.3 272.0,111.7 273.0,105.9 274.0,100.0 275.0,94.1 276.0,88.3 277.0,82.7 278.0,77.7 279.0,73.1 280.0,69.3 281.0,66.1 282.0,63.9 283.0,62.5 284.0,62.0 285.0,62.5 286.0,63.9 287.0,66.1 288.0,69.3 289.0,73.1 290.0,77.7 291.0,82.7 292.0,88.3 293.0,94.1 294.0,100.0 295.0,105.9 296.0,111.7 297.0,117.3 298.0,122.3 299.0,126.9 300.0,130.7 301.0,133.9 302.0,136.1 303.0,137.5 304.0,138.0 305.0,137.5 306.0,136.1 307.0,133.9 308.0,130.7 309.0,126.9 310.0,122.3 311.0,117.3 312.0,111.7 313.0,105.9 314.0,100.0 315.0,94.1 316.0,88.3 317.0,82.7 318.0,77.7 319.0,73.1 320.0,69.3 321.0,66.1 322.0,63.9 323.0,62.5 324.0,62.0 325.0,62.5 326.0,63.9 327.0,66.1 328.0,69.3 329.0,73.1 330.0,77.7 331.0,82.7 332.0,88.3 333.0,94.1 334.0,100.0 335.0,105.9 336.0,111.7 337.0,117.3 338.0,122.3 339.0,126.9 340.0,130.7 341.0,133.9 342.0,136.1 343.0,137.5 344.0,138.0 345.0,137.5 346.0,136.1 347.0,133.9 348.0,130.7 349.0,126.9 350.0,122.3 351.0,117.3 352.0,111.7 353.0,105.9 354.0,100.0 355.0,94.1 356.0,88.3 357.0,82.7 358.0,77.7 359.0,73.1 360.0,69.3 361.0,66.1 362.0,63.9 363.0,62.5 364.0,62.0 365.0,62.5 366.0,63.9 367.0,66.1 368.0,69.3 369.0,73.1 370.0,77.7 371.0,82.7 372.0,88.3 373.0,94.1 374.0,100.0 375.0,105.9 376.0,111.7 377.0,117.3 378.0,122.3 379.0,126.9 380.0,130.7 381.0,133.9 382.0,136.1 383.0,137.5 384.0,138.0 385.0,137.5 386.0,136.1 387.0,133.9 388.0,130.7 389.0,126.9 390.0,122.3 391.0,117.3 392.0,111.7 393.0,105.9 394.0,100.0\"/><ellipse cx=\"158\" cy=\"82\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"91\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"100\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"109\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"158\" cy=\"118\" rx=\"11\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"158\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">cuộn dây</text><text x=\"14\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">4 cặp cực ; n = 750 vòng/phút</text><path d=\"M84,100 L135.7,121.4 A56,56 0 0 0 135.7,78.6 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L135.7,78.6 A56,56 0 0 0 105.4,48.3 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L105.4,48.3 A56,56 0 0 0 62.6,48.3 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L62.6,48.3 A56,56 0 0 0 32.3,78.6 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L32.3,78.6 A56,56 0 0 0 32.3,121.4 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L32.3,121.4 A56,56 0 0 0 62.6,151.7 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L62.6,151.7 A56,56 0 0 0 105.4,151.7 Z\" fill=\"#f87171\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M84,100 L105.4,151.7 A56,56 0 0 0 135.7,121.4 Z\" fill=\"#38bdf8\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"84.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"14\" y=\"186\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = ? ; ω = ? ; p' = ? (câu c)</text></svg><figcaption>Dữ kiện: rô-to 4 cặp cực (đỏ: cực N, xanh: cực S), tốc độ quay cho bằng vòng/phút. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Rô-to … là nam châm có $4$ cặp cực\"</td><td>$p=4$ cặp cực</td><td>⚠ $p$ là số cặp cực, không phải số cực</td></tr><tr><td>\"quay đều với tốc độ $750$ vòng/phút\"</td><td>$n=750$ vòng/phút</td><td>⚠ Công thức tần số dùng vòng quay mỗi giây; kiểm đơn vị của $n$ trước</td></tr><tr><td>\"Tính tần số $f$ của dòng điện\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa tần số, tốc độ quay và số cặp cực</td></tr><tr><td>\"tần số góc $\\omega$ của suất điện động\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa tần số góc và tần số</td></tr><tr><td>\"quay $300$ vòng/phút … tần số $50\\ \\text{Hz}$\"</td><td>$n'=300$ vòng/phút; $f'=50\\ \\text{Hz}$</td><td>Cùng đổi đơn vị của $n'$; bài hỏi ngược (tìm số cặp cực)</td></tr><tr><td>\"phải có bao nhiêu cặp cực\"</td><td>Đại lượng cần tìm</td><td>Số cặp cực, không phải số cực</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số cặp cực, tốc độ quay bằng vòng/phút</b> → nghĩ tới <b>đổi sang vòng/giây, rồi $f=np$</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi tốc độ quay sang vòng/giây",
+     "hoi": "Tốc độ quay $n$ bằng bao nhiêu vòng/giây?",
+     "dap_so": 12.5,
+     "sai_so": 0.05,
+     "don_vi": "vòng/s",
+     "loi_hay_gap": "Giữ nguyên số vòng/phút của đề, hoặc nhân với $60$ thay vì chia."
+    },
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ của dòng điện bằng bao nhiêu hertz?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Quên nhân với số cặp cực, hoặc dùng số cực thay cho số cặp cực.",
+     "chon_buoc_ke": [
+      {
+       "text": "$f=np$ với $n$ tính bằng vòng/giây",
+       "dung": true
+      },
+      {
+       "text": "$f=\\dfrac{n}{p}$",
+       "dung": false,
+       "vi_sao": "Mỗi cặp cực làm tần số tăng thêm một chu kì mỗi vòng, nên phải nhân với $p$, không chia."
+      },
+      {
+       "text": "$f=n$ vì một vòng quay là một chu kì",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi rô-to có một cặp cực; ở đây mỗi vòng quay cho nhiều chu kì."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tần số góc",
+     "hoi": "Tần số góc $\\omega$ bằng bao nhiêu rad/s?",
+     "dap_so": 314.16,
+     "sai_so": 0.5,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy $\\omega=f$ (quên $2\\pi$) hoặc $\\omega=\\dfrac{f}{2\\pi}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\omega=2\\pi f$ với $f$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$\\omega=f$",
+       "dung": false,
+       "vi_sao": "$\\omega$ tính bằng rad/s, $f$ bằng Hz; hai đại lượng hơn kém nhau hệ số $2\\pi$."
+      },
+      {
+       "text": "$\\omega=\\dfrac{2\\pi}{f}$",
+       "dung": false,
+       "vi_sao": "Sai thứ nguyên: $\\omega=2\\pi f$, không lấy $2\\pi$ chia cho $f$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số cặp cực của máy thứ hai",
+     "hoi": "Rô-to của máy thứ hai phải có bao nhiêu cặp cực?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "cặp cực",
+     "loi_hay_gap": "Dùng $n'=300$ vòng/phút mà không đổi sang vòng/giây, hoặc trả lời số cực thay vì số cặp cực.",
+     "chon_buoc_ke": [
+      {
+       "text": "$p'=\\dfrac{f'}{n'}$ với $n'$ đã đổi sang vòng/giây",
+       "dung": true
+      },
+      {
+       "text": "$p'=\\dfrac{f'}{n'}$ với $n'=300$ vòng/phút",
+       "dung": false,
+       "vi_sao": "Công thức $f=np$ chỉ đúng khi $n$ tính bằng vòng/giây; để vòng/phút sẽ ra số quá nhỏ."
+      },
+      {
+       "text": "$p'=\\dfrac{n'}{f'}$",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số: từ $f=np$ suy ra $p=\\dfrac{f}{n}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Suất điện động cực đại và hiệu dụng của khung quay",
+   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+   "problem_html": "<p>Một khung dây phẳng gồm $N=400$ vòng, diện tích mỗi vòng $S=50\\ \\text{cm}^2$, quay đều với tốc độ $1200$ vòng/phút quanh một trục vuông góc với đường sức của từ trường đều có cảm ứng từ $B=0{,}030\\ \\text{T}$.</p><ol type=\"a\"><li>Tính tần số góc $\\omega$ của khung.</li><li>Tính suất điện động cực đại $E_0$ trong khung.</li><li>Tính suất điện động hiệu dụng $E$.</li><li>Giữ nguyên $N$, $S$, $B$ và tăng tốc độ quay lên $1800$ vòng/phút. Khi đó $E_0$ bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 198\" role=\"img\" aria-label=\"Khung dây quay đều trong từ trường đều, đồ thị suất điện động e theo thời gian có điểm chạy\"><line x1=\"222\" y1=\"106\" x2=\"394\" y2=\"106\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M386.4,101.6 L394.0,106.0 L386.4,110.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"230\" y1=\"162\" x2=\"230\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M225.6,53.6 L230.0,46.0 L234.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"392\" y=\"123\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"238\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\" points=\"230.0,106.0 231.9,99.1 233.8,92.4 235.6,86.0 237.5,80.1 239.4,74.9 241.2,70.4 243.1,66.8 245.0,64.2 246.9,62.5 248.8,62.0 250.6,62.5 252.5,64.2 254.4,66.8 256.2,70.4 258.1,74.9 260.0,80.1 261.9,86.0 263.8,92.4 265.6,99.1 267.5,106.0 269.4,112.9 271.2,119.6 273.1,126.0 275.0,131.9 276.9,137.1 278.8,141.6 280.6,145.2 282.5,147.8 284.4,149.5 286.2,150.0 288.1,149.5 290.0,147.8 291.9,145.2 293.8,141.6 295.6,137.1 297.5,131.9 299.4,126.0 301.2,119.6 303.1,112.9 305.0,106.0 306.9,99.1 308.8,92.4 310.6,86.0 312.5,80.1 314.4,74.9 316.2,70.4 318.1,66.8 320.0,64.2 321.9,62.5 323.8,62.0 325.6,62.5 327.5,64.2 329.4,66.8 331.2,70.4 333.1,74.9 335.0,80.1 336.9,86.0 338.8,92.4 340.6,99.1 342.5,106.0 344.4,112.9 346.2,119.6 348.1,126.0 350.0,131.9 351.9,137.1 353.8,141.6 355.6,145.2 357.5,147.8 359.4,149.5 361.2,150.0 363.1,149.5 365.0,147.8 366.9,145.2 368.8,141.6 370.6,137.1 372.5,131.9 374.4,126.0 376.2,119.6 378.1,112.9 380.0,106.0\"/><line x1=\"12\" y1=\"58\" x2=\"150\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,52.5 L150.0,58.0 L140.5,63.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"84\" x2=\"150\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,78.5 L150.0,84.0 L140.5,89.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"128\" x2=\"150\" y2=\"128\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,122.5 L150.0,128.0 L140.5,133.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"154\" x2=\"150\" y2=\"154\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,148.5 L150.0,154.0 L140.5,159.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"154\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"12\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N = 400 vòng ; S = 50 cm²</text><text x=\"12\" y=\"38\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B = 0,030 T ; n = 1200 vòng/phút</text><text x=\"80\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nhìn dọc trục quay</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 80 106;-720.0 80 106\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"80.0\" y1=\"74.0\" x2=\"80.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><circle cx=\"80.0\" cy=\"74.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"80.0\" cy=\"138.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"80\" y1=\"106\" x2=\"110\" y2=\"106\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M101.2,100.9 L110.0,106.0 L101.2,111.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"80.0\" cy=\"106.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"230.0\" cy=\"106.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"230.0;232.3;234.7;237.0;239.4;241.7;244.1;246.4;248.8;251.1;253.4;255.8;258.1;260.5;262.8;265.2;267.5;269.8;272.2;274.5;276.9;279.2;281.6;283.9;286.2;288.6;290.9;293.3;295.6;298.0;300.3;302.7;305.0;307.3;309.7;312.0;314.4;316.7;319.1;321.4;323.8;326.1;328.4;330.8;333.1;335.5;337.8;340.2;342.5;344.8;347.2;349.5;351.9;354.2;356.6;358.9;361.2;363.6;365.9;368.3;370.6;373.0;375.3;377.7;380.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"106.0;97.4;89.2;81.6;74.9;69.4;65.3;62.8;62.0;62.8;65.3;69.4;74.9;81.6;89.2;97.4;106.0;114.6;122.8;130.4;137.1;142.6;146.7;149.2;150.0;149.2;146.7;142.6;137.1;130.4;122.8;114.6;106.0;97.4;89.2;81.6;74.9;69.4;65.3;62.8;62.0;62.8;65.3;69.4;74.9;81.6;89.2;97.4;106.0;114.6;122.8;130.4;137.1;142.6;146.7;149.2;150.0;149.2;146.7;142.6;137.1;130.4;122.8;114.6;106.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khung (nhìn dọc trục quay, mũi tên đỏ là pháp tuyến) quay đều ngược chiều kim đồng hồ, điểm xanh chạy trên đồ thị e(t); chọn gốc thời gian lúc pháp tuyến cùng hướng B; chạy chậm, hai vòng quay ứng với 4 s. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Từ thông cực đại qua khung: $\\Phi_0=NBS$.</li><li>Suất điện động cảm ứng $e=-\\Phi'$ nên $E_0=NBS\\omega$, với $\\omega=2\\pi n$ ($n$ vòng/giây).</li><li>Giá trị hiệu dụng: $E=\\dfrac{E_0}{\\sqrt{2}}$.</li><li>Điều kiện: trục quay vuông góc với $\\vec{B}$, quay đều; đổi $S$ sang m², $n$ sang vòng/giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số góc (câu a)</span></p><p>$n=\\dfrac{1200}{60}=20$ vòng/s.</p>$$\\omega=2\\pi n=2\\pi\\cdot20$$<div class=\"bt-ans\">$$\\omega=40\\pi\\approx125{,}7\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Suất điện động cực đại (câu b)</span></p><p>$S=50\\ \\text{cm}^2=50\\cdot10^{-4}\\ \\text{m}^2=0{,}005\\ \\text{m}^2$.</p>$$E_0=NBS\\omega=400\\cdot0{,}030\\cdot0{,}005\\cdot40\\pi$$$$E_0=0{,}06\\cdot40\\pi=2{,}4\\pi$$<div class=\"bt-ans\">$$E_0\\approx7{,}54\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động hiệu dụng (câu c)</span></p>$$E=\\dfrac{E_0}{\\sqrt{2}}=\\dfrac{2{,}4\\pi}{\\sqrt{2}}$$<div class=\"bt-ans\">$$E\\approx5{,}33\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tăng tốc độ quay (câu d)</span></p><p>$n'=\\dfrac{1800}{60}=30$ vòng/s nên $\\omega'=60\\pi\\ \\text{rad/s}$; $N$, $S$, $B$ không đổi.</p>$$E_0'=NBS\\omega'=0{,}06\\cdot60\\pi=3{,}6\\pi$$<div class=\"bt-ans\">$$E_0'\\approx11{,}31\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$E\\approx5{,}33\\ \\text{V}\\lt E_0\\approx7{,}54\\ \\text{V}$: hiệu dụng nhỏ hơn cực đại.</p><p>$E_0$ tỉ lệ với tốc độ quay: $\\dfrac{1800}{1200}=1{,}5$ lần, và $1{,}5\\cdot7{,}54\\approx11{,}31\\ \\text{V}$, khớp.</p><p>Nếu quên đổi $\\text{cm}^2$ sang $\\text{m}^2$ thì $E_0$ lớn gấp $10^4$ lần, vô lí cho khung nhỏ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega=40\\pi\\approx125{,}7\\ \\text{rad/s}$</p><p>b) $E_0\\approx7{,}54\\ \\text{V}$</p><p>c) $E\\approx5{,}33\\ \\text{V}$</p><p>d) $E_0'\\approx11{,}31\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khung $N$ vòng quay trong $\\vec{B}$, vòng/phút, cm²</strong> → đổi đơn vị rồi dùng $E_0=NBS\\omega$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Dữ kiện: khung dây quay quanh trục vuông góc với từ trường đều, đường nét đứt cam là biên độ suất điện động cần tìm\"><line x1=\"222\" y1=\"106\" x2=\"394\" y2=\"106\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M386.4,101.6 L394.0,106.0 L386.4,110.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"230\" y1=\"162\" x2=\"230\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M225.6,53.6 L230.0,46.0 L234.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"392\" y=\"123\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"238\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\" points=\"230.0,106.0 231.9,99.1 233.8,92.4 235.6,86.0 237.5,80.1 239.4,74.9 241.2,70.4 243.1,66.8 245.0,64.2 246.9,62.5 248.8,62.0 250.6,62.5 252.5,64.2 254.4,66.8 256.2,70.4 258.1,74.9 260.0,80.1 261.9,86.0 263.8,92.4 265.6,99.1 267.5,106.0 269.4,112.9 271.2,119.6 273.1,126.0 275.0,131.9 276.9,137.1 278.8,141.6 280.6,145.2 282.5,147.8 284.4,149.5 286.2,150.0 288.1,149.5 290.0,147.8 291.9,145.2 293.8,141.6 295.6,137.1 297.5,131.9 299.4,126.0 301.2,119.6 303.1,112.9 305.0,106.0 306.9,99.1 308.8,92.4 310.6,86.0 312.5,80.1 314.4,74.9 316.2,70.4 318.1,66.8 320.0,64.2 321.9,62.5 323.8,62.0 325.6,62.5 327.5,64.2 329.4,66.8 331.2,70.4 333.1,74.9 335.0,80.1 336.9,86.0 338.8,92.4 340.6,99.1 342.5,106.0 344.4,112.9 346.2,119.6 348.1,126.0 350.0,131.9 351.9,137.1 353.8,141.6 355.6,145.2 357.5,147.8 359.4,149.5 361.2,150.0 363.1,149.5 365.0,147.8 366.9,145.2 368.8,141.6 370.6,137.1 372.5,131.9 374.4,126.0 376.2,119.6 378.1,112.9 380.0,106.0\"/><line x1=\"12\" y1=\"58\" x2=\"150\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,52.5 L150.0,58.0 L140.5,63.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"84\" x2=\"150\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,78.5 L150.0,84.0 L140.5,89.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"128\" x2=\"150\" y2=\"128\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,122.5 L150.0,128.0 L140.5,133.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"12\" y1=\"154\" x2=\"150\" y2=\"154\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M140.5,148.5 L150.0,154.0 L140.5,159.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"154\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"12\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N = 400 vòng ; S = 50 cm²</text><text x=\"12\" y=\"38\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B = 0,030 T ; n = 1200 vòng/phút</text><text x=\"80\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nhìn dọc trục quay</text><line x1=\"230.0\" y1=\"62.0\" x2=\"380.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"380\" y=\"56\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">E₀ = ?</text><line x1=\"80.0\" y1=\"74.0\" x2=\"80.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><circle cx=\"80.0\" cy=\"74.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"80.0\" cy=\"138.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"80\" y1=\"106\" x2=\"110\" y2=\"106\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M101.2,100.9 L110.0,106.0 L101.2,111.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"80.0\" cy=\"106.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"114\" y=\"98\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n</text><text x=\"12\" y=\"214\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω, E₀, E = ? ; E₀ khi n mới = ?</text></svg><figcaption>Dữ kiện: trục quay vuông góc với B; mũi tên đỏ là pháp tuyến của khung. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khung dây phẳng gồm $N=400$ vòng, diện tích mỗi vòng $S=50\\ \\text{cm}^2$\"</td><td>$N=400$; $S=50\\ \\text{cm}^2$</td><td>Số vòng và diện tích; kiểm đơn vị của $S$</td></tr><tr><td>\"quay đều … $1200$ vòng/phút\"</td><td>$n=1200$ vòng/phút</td><td>Kiểm đơn vị của $n$; liên hệ giữa $n$ và tần số góc</td></tr><tr><td>\"trục vuông góc với đường sức … $B=0{,}030\\ \\text{T}$\"</td><td>$B=0{,}030\\ \\text{T}$; trục quay $\\perp\\vec{B}$</td><td>⚠ Dùng cho khung quay đều quanh trục vuông góc với $\\vec{B}$</td></tr><tr><td>\"Tính tần số góc $\\omega$\"</td><td>Đại lượng cần tìm</td><td>Liên hệ tần số góc với tốc độ quay</td></tr><tr><td>\"suất điện động cực đại $E_0$\"</td><td>Đại lượng cần tìm</td><td>Liên hệ suất điện động cực đại với $N$, $B$, $S$ và tốc độ góc</td></tr><tr><td>\"suất điện động hiệu dụng $E$\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa giá trị hiệu dụng và cực đại</td></tr><tr><td>\"tăng tốc độ quay lên $1800$ vòng/phút\"</td><td>$n'=1800$ vòng/phút; $N$, $S$, $B$ giữ nguyên</td><td>Đại lượng nào đổi, đại lượng nào giữ nguyên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khung $N$ vòng quay trong $\\vec{B}$, vòng/phút, cm²</b> → nghĩ tới <b>$E_0=NBS\\omega$</b>, đổi đơn vị trước.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số góc",
+     "hoi": "Tần số góc $\\omega$ của khung bằng bao nhiêu rad/s?",
+     "dap_so": 125.66,
+     "sai_so": 0.5,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy $\\omega=1200$ (quên đổi vòng/phút sang vòng/giây) hoặc quên nhân $2\\pi$."
+    },
+    {
+     "tieu_de": "Suất điện động cực đại",
+     "hoi": "Suất điện động cực đại $E_0$ bằng bao nhiêu volt?",
+     "dap_so": 7.54,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Thế $S=50$ (cm²) không đổi ra m², hoặc quên nhân số vòng $N$, hoặc quên $\\omega$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$E_0=NBS\\omega$ với $S$ theo m²",
+       "dung": true
+      },
+      {
+       "text": "$E_0=BS\\omega$ (chỉ một vòng)",
+       "dung": false,
+       "vi_sao": "Khung có $N$ vòng nên từ thông và suất điện động phải nhân với $N$."
+      },
+      {
+       "text": "$E_0=NBS$",
+       "dung": false,
+       "vi_sao": "Đó là từ thông cực đại $\\Phi_0$; đạo hàm theo thời gian sinh thêm thừa số $\\omega$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Suất điện động hiệu dụng",
+     "hoi": "Suất điện động hiệu dụng $E$ bằng bao nhiêu volt?",
+     "dap_so": 5.33,
+     "sai_so": 0.03,
+     "don_vi": "V",
+     "loi_hay_gap": "Chia $E_0$ cho $2$ hoặc nhân với $\\sqrt{2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$E=\\dfrac{E_0}{\\sqrt{2}}$",
+       "dung": true
+      },
+      {
+       "text": "$E=E_0\\sqrt{2}$",
+       "dung": false,
+       "vi_sao": "Hiệu dụng nhỏ hơn cực đại; nhân $\\sqrt{2}$ cho số lớn hơn."
+      },
+      {
+       "text": "$E=\\dfrac{E_0}{2}$",
+       "dung": false,
+       "vi_sao": "Hệ số $\\dfrac{1}{2}$ chỉ nằm ở trung bình của bình phương; hiệu dụng chia cho $\\sqrt{2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tăng tốc độ quay",
+     "hoi": "Sau khi tăng tốc độ quay, $E_0'$ bằng bao nhiêu volt?",
+     "dap_so": 11.31,
+     "sai_so": 0.06,
+     "don_vi": "V",
+     "loi_hay_gap": "Vẫn dùng $\\omega$ cũ, hoặc đổi cả $N$, $B$, $S$ thay vì chỉ đổi $\\omega$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chỉ đổi $\\omega$, giữ nguyên $N$, $B$, $S$ rồi tính lại $E_0$",
+       "dung": true
+      },
+      {
+       "text": "$E_0$ tỉ lệ với $\\omega^2$",
+       "dung": false,
+       "vi_sao": "$E_0=NBS\\omega$ chỉ chứa $\\omega$ bậc nhất; bình phương không xuất hiện."
+      },
+      {
+       "text": "$E_0$ không đổi vì $N$, $B$, $S$ không đổi",
+       "dung": false,
+       "vi_sao": "$E_0$ còn phụ thuộc tốc độ góc $\\omega$, mà $\\omega$ đã thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Máy biến áp lí tưởng: điện áp, cường độ và công suất hai cuộn",
+   "topic": "Máy biến áp",
+   "problem_html": "<p>Một máy biến áp lí tưởng có cuộn sơ cấp $N_1=1100$ vòng, cuộn thứ cấp $N_2=60$ vòng. Mắc cuộn sơ cấp vào mạng điện xoay chiều có điện áp hiệu dụng $U_1=220\\ \\text{V}$. Cuộn thứ cấp nối với một bóng đèn, cường độ hiệu dụng ở cuộn thứ cấp là $I_2=2{,}5\\ \\text{A}$.</p><ol type=\"a\"><li>Máy này là máy tăng áp hay hạ áp? Tính điện áp hiệu dụng $U_2$ ở hai đầu cuộn thứ cấp.</li><li>Tính cường độ hiệu dụng $I_1$ ở cuộn sơ cấp.</li><li>Tính công suất mà mạch sơ cấp lấy từ mạng điện.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Máy biến áp lí tưởng nối nguồn xoay chiều; đường sức từ trong lõi mạnh yếu theo điện áp u1 và điểm chạy trên đồ thị u1\"><rect x=\"130\" y=\"30\" width=\"160\" height=\"118\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><rect x=\"162\" y=\"58\" width=\"96\" height=\"62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"146\" y=\"44\" width=\"128\" height=\"90\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-dasharray=\"6 4\" stroke-opacity=\"0.15\"><animate attributeName=\"stroke-opacity\" values=\"0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><ellipse cx=\"146\" cy=\"66\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"75\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"84\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"93\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"102\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"111\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"80\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"89\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"98\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"132.0\" y1=\"66.0\" x2=\"60.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"132.0\" y1=\"111.0\" x2=\"60.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"288.0\" y1=\"80.0\" x2=\"360.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"288.0\" y1=\"107.0\" x2=\"360.0\" y2=\"107.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"60\" cy=\"88\" r=\"21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"49.0,88.0 50.1,86.1 51.2,84.5 52.3,83.1 53.4,82.3 54.5,82.0 55.6,82.3 56.7,83.1 57.8,84.5 58.9,86.1 60.0,88.0 61.1,89.9 62.2,91.5 63.3,92.9 64.4,93.7 65.5,94.0 66.6,93.7 67.7,92.9 68.8,91.5 69.9,89.9 71.0,88.0\"/><line x1=\"60.0\" y1=\"67.0\" x2=\"60.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"109.0\" x2=\"60.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"360.0,80.0 360.0,86.0 369.0,88.0 351.0,91.2 369.0,94.4 351.0,97.6 369.0,100.8 351.0,104.0 360.0,107.0\"/><text x=\"14\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U₁ = 220 V</text><text x=\"14\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N₁ = 1100 vòng</text><text x=\"406\" y=\"26\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U₂ = ?</text><text x=\"406\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">N₂ = 60 vòng</text><text x=\"406\" y=\"126\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I₂ = 2,5 A</text><text x=\"210\" y=\"24\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">lõi kín</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\" points=\"156.0,196.0 157.3,194.3 158.7,192.6 160.1,191.0 161.4,189.5 162.8,188.2 164.1,187.1 165.4,186.2 166.8,185.5 168.2,185.1 169.5,185.0 170.8,185.1 172.2,185.5 173.6,186.2 174.9,187.1 176.2,188.2 177.6,189.5 178.9,191.0 180.3,192.6 181.7,194.3 183.0,196.0 184.3,197.7 185.7,199.4 187.1,201.0 188.4,202.5 189.8,203.8 191.1,204.9 192.4,205.8 193.8,206.5 195.2,206.9 196.5,207.0 197.8,206.9 199.2,206.5 200.6,205.8 201.9,204.9 203.2,203.8 204.6,202.5 205.9,201.0 207.3,199.4 208.7,197.7 210.0,196.0 211.3,194.3 212.7,192.6 214.1,191.0 215.4,189.5 216.8,188.2 218.1,187.1 219.4,186.2 220.8,185.5 222.2,185.1 223.5,185.0 224.8,185.1 226.2,185.5 227.6,186.2 228.9,187.1 230.2,188.2 231.6,189.5 232.9,191.0 234.3,192.6 235.7,194.3 237.0,196.0 238.3,197.7 239.7,199.4 241.1,201.0 242.4,202.5 243.8,203.8 245.1,204.9 246.4,205.8 247.8,206.5 249.2,206.9 250.5,207.0 251.8,206.9 253.2,206.5 254.6,205.8 255.9,204.9 257.2,203.8 258.6,202.5 259.9,201.0 261.3,199.4 262.6,197.7 264.0,196.0\"/><text x=\"148\" y=\"201\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">u₁</text><circle cx=\"156.0\" cy=\"196.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"156.0;157.7;159.4;161.1;162.8;164.4;166.1;167.8;169.5;171.2;172.9;174.6;176.2;177.9;179.6;181.3;183.0;184.7;186.4;188.1;189.8;191.4;193.1;194.8;196.5;198.2;199.9;201.6;203.2;204.9;206.6;208.3;210.0;211.7;213.4;215.1;216.8;218.4;220.1;221.8;223.5;225.2;226.9;228.6;230.2;231.9;233.6;235.3;237.0;238.7;240.4;242.1;243.8;245.4;247.1;248.8;250.5;252.2;253.9;255.6;257.2;258.9;260.6;262.3;264.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"196.0;193.9;191.8;189.9;188.2;186.9;185.8;185.2;185.0;185.2;185.8;186.9;188.2;189.9;191.8;193.9;196.0;198.1;200.2;202.1;203.8;205.1;206.2;206.8;207.0;206.8;206.2;205.1;203.8;202.1;200.2;198.1;196.0;193.9;191.8;189.9;188.2;186.9;185.8;185.2;185.0;185.2;185.8;186.9;188.2;189.9;191.8;193.9;196.0;198.1;200.2;202.1;203.8;205.1;206.2;206.8;207.0;206.8;206.2;205.1;203.8;202.1;200.2;198.1;196.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm xanh chạy trên đồ thị điện áp nguồn u₁(t); đường sức từ trong lõi (nét đứt) đậm nhạt theo |u₁|, chiều đổi liên tục nên không vẽ đầu mũi tên; chạy chậm. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Máy biến áp lí tưởng: $\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}=\\dfrac{I_2}{I_1}$.</li><li>$N_2\\lt N_1$: hạ áp; $N_2\\gt N_1$: tăng áp.</li><li>Không sinh thêm điện năng: $P_1=P_2$, tức $U_1I_1=U_2I_2$.</li><li>Điều kiện: máy lí tưởng (không hao phí), nguồn xoay chiều, $U$ và $I$ là giá trị hiệu dụng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Loại máy (câu a)</span></p><p>Đề: $N_2=60$ vòng, $N_1=1100$ vòng nên $N_2\\lt N_1$.</p><div class=\"bt-ans\"><p>Cuộn thứ cấp ít vòng hơn: máy hạ áp.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện áp thứ cấp (câu a)</span></p>$$\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}\\Rightarrow U_2=U_1\\dfrac{N_2}{N_1}=220\\cdot\\dfrac{60}{1100}$$<div class=\"bt-ans\">$$U_2=12\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cường độ sơ cấp (câu b)</span></p>$$\\dfrac{I_2}{I_1}=\\dfrac{N_1}{N_2}\\Rightarrow I_1=I_2\\dfrac{N_2}{N_1}=2{,}5\\cdot\\dfrac{60}{1100}$$<div class=\"bt-ans\">$$I_1\\approx0{,}136\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất sơ cấp (câu c)</span></p>$$P_1=U_1I_1=220\\cdot0{,}1364$$<div class=\"bt-ans\">$$P_1=30\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$P_2=U_2I_2=12\\cdot2{,}5=30\\ \\text{W}=P_1$$<p>Máy hạ áp nên $I_1\\lt I_2$ ($0{,}136\\ \\text{A}\\lt2{,}5\\ \\text{A}$): điện áp giảm bao nhiêu lần thì cường độ tăng bấy nhiêu lần.</p><p>Công suất sơ cấp bằng thứ cấp: máy biến áp không sinh thêm điện năng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Máy hạ áp; $U_2=12\\ \\text{V}$</p><p>b) $I_1\\approx0{,}136\\ \\text{A}$</p><p>c) $P_1=30\\ \\text{W}$ (bằng công suất đèn)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số vòng hai cuộn, máy lí tưởng</strong> → tỉ số điện áp bằng tỉ số vòng, tỉ số cường độ ngược lại, công suất không đổi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 182\" role=\"img\" aria-label=\"Dữ kiện: máy biến áp lí tưởng với số vòng hai cuộn, điện áp sơ cấp, cường độ thứ cấp; điện áp thứ cấp cần tìm\"><rect x=\"130\" y=\"30\" width=\"160\" height=\"118\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><rect x=\"162\" y=\"58\" width=\"96\" height=\"62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"146\" y=\"44\" width=\"128\" height=\"90\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-dasharray=\"6 4\" stroke-opacity=\"0.70\"></rect><ellipse cx=\"146\" cy=\"66\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"75\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"84\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"93\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"102\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"146\" cy=\"111\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"80\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"89\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"274\" cy=\"98\" rx=\"14\" ry=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"132.0\" y1=\"66.0\" x2=\"60.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"132.0\" y1=\"111.0\" x2=\"60.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"288.0\" y1=\"80.0\" x2=\"360.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"288.0\" y1=\"107.0\" x2=\"360.0\" y2=\"107.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"60\" cy=\"88\" r=\"21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"49.0,88.0 50.1,86.1 51.2,84.5 52.3,83.1 53.4,82.3 54.5,82.0 55.6,82.3 56.7,83.1 57.8,84.5 58.9,86.1 60.0,88.0 61.1,89.9 62.2,91.5 63.3,92.9 64.4,93.7 65.5,94.0 66.6,93.7 67.7,92.9 68.8,91.5 69.9,89.9 71.0,88.0\"/><line x1=\"60.0\" y1=\"67.0\" x2=\"60.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"109.0\" x2=\"60.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"360.0,80.0 360.0,86.0 369.0,88.0 351.0,91.2 369.0,94.4 351.0,97.6 369.0,100.8 351.0,104.0 360.0,107.0\"/><text x=\"14\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U₁ = 220 V</text><text x=\"14\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N₁ = 1100 vòng</text><text x=\"406\" y=\"26\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U₂ = ?</text><text x=\"406\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">N₂ = 60 vòng</text><text x=\"406\" y=\"126\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I₂ = 2,5 A</text><text x=\"210\" y=\"24\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">lõi kín</text></svg><figcaption>Dữ kiện: hai cuộn dây trên cùng một lõi kín (số vòng ghi trên hình, không vẽ đủ số vòng). Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"máy biến áp lí tưởng\"</td><td>Không hao phí</td><td>⚠ Chỉ dùng tỉ số điện áp, tỉ số cường độ và bảo toàn công suất khi máy lí tưởng, nguồn xoay chiều</td></tr><tr><td>\"cuộn sơ cấp $N_1=1100$ vòng, … thứ cấp $N_2=60$ vòng\"</td><td>$N_1=1100$; $N_2=60$</td><td>So sánh số vòng hai cuộn để biết tăng hay hạ áp</td></tr><tr><td>\"điện áp hiệu dụng $U_1=220\\ \\text{V}$\"</td><td>$U_1=220\\ \\text{V}$ (sơ cấp)</td><td>Điện áp sơ cấp đi với số vòng sơ cấp</td></tr><tr><td>\"cường độ hiệu dụng ở cuộn thứ cấp là $I_2=2{,}5\\ \\text{A}$\"</td><td>$I_2=2{,}5\\ \\text{A}$ (thứ cấp)</td><td>Điện áp và cường độ của một cuộn đi với số vòng của chính cuộn đó</td></tr><tr><td>\"tăng áp hay hạ áp … $U_2$\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa điện áp và số vòng hai cuộn</td></tr><tr><td>\"cường độ hiệu dụng $I_1$ ở cuộn sơ cấp\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa cường độ hai cuộn</td></tr><tr><td>\"công suất mà mạch sơ cấp lấy từ mạng điện\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa công suất hai cuộn</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số vòng hai cuộn, máy lí tưởng</b> → nghĩ tới <b>$U$ tỉ lệ $N$, $I$ tỉ lệ ngược</b>, $P_1=P_2$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Loại máy",
+     "hoi": "Máy biến áp này thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Hạ áp, vì cuộn thứ cấp có ít vòng hơn cuộn sơ cấp",
+       "dung": true
+      },
+      {
+       "text": "Tăng áp, vì cuộn thứ cấp có ít vòng hơn",
+       "dung": false,
+       "vi_sao": "Cuộn nhiều vòng hơn thì điện áp lớn hơn; thứ cấp ít vòng hơn nên điện áp ra nhỏ hơn."
+      },
+      {
+       "text": "Không đổi điện áp, vì máy lí tưởng",
+       "dung": false,
+       "vi_sao": "Máy lí tưởng chỉ có nghĩa là không hao phí; điện áp vẫn thay đổi theo tỉ số vòng."
+      }
+     ],
+     "loi_hay_gap": "Kết luận theo điện áp mà chưa so sánh số vòng, hoặc nghĩ cuộn ít vòng hơn thì điện áp lớn hơn."
+    },
+    {
+     "tieu_de": "Điện áp thứ cấp",
+     "hoi": "Điện áp hiệu dụng $U_2$ bằng bao nhiêu volt?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Viết ngược tỉ số số vòng khi thế vào công thức.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}$ với $N_1$ đi cùng $U_1$",
+       "dung": true
+      },
+      {
+       "text": "$U_2=U_1$ vì máy lí tưởng",
+       "dung": false,
+       "vi_sao": "Máy lí tưởng chỉ có nghĩa là không hao phí; điện áp vẫn đổi theo số vòng của hai cuộn."
+      },
+      {
+       "text": "$U_2=U_1\\dfrac{N_1}{N_2}$",
+       "dung": false,
+       "vi_sao": "Viết ngược: $N_1$ đi với $U_1$ (sơ cấp), $N_2$ đi với $U_2$ (thứ cấp)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cường độ sơ cấp",
+     "hoi": "Cường độ hiệu dụng $I_1$ bằng bao nhiêu ampe?",
+     "dap_so": 0.1364,
+     "sai_so": 0.002,
+     "don_vi": "A",
+     "loi_hay_gap": "Lẫn thứ tự của hai cuộn khi viết tỉ số cường độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng tỉ số cường độ của hai cuộn: $\\dfrac{I_2}{I_1}=\\dfrac{N_1}{N_2}$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{I_1}{I_2}=\\dfrac{N_1}{N_2}$",
+       "dung": false,
+       "vi_sao": "Sai thứ tự: $I_2$ đi với $N_1$ và $I_1$ đi với $N_2$."
+      },
+      {
+       "text": "$I_1=I_2$ vì dòng điện không bị mất",
+       "dung": false,
+       "vi_sao": "Dòng điện không giữ nguyên: điện áp đổi thì cường độ đổi ngược lại để công suất không đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất sơ cấp",
+     "hoi": "Công suất mạch sơ cấp lấy từ mạng điện bằng bao nhiêu watt?",
+     "dap_so": 30,
+     "sai_so": 0.3,
+     "don_vi": "W",
+     "loi_hay_gap": "Lẫn điện áp của cuộn này với cường độ của cuộn kia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính từ điện áp và cường độ của chính cuộn sơ cấp",
+       "dung": true
+      },
+      {
+       "text": "$P_1=U_1I_2$",
+       "dung": false,
+       "vi_sao": "Mỗi cuộn dùng điện áp và cường độ của chính nó; $U_1$ phải đi với $I_1$."
+      },
+      {
+       "text": "$P_1=\\dfrac{P_2}{N_2/N_1}$ vì điện áp thay đổi",
+       "dung": false,
+       "vi_sao": "Tỉ số vòng chỉ liên hệ $U$ với $U$ và $I$ với $I$ của hai cuộn, không phải công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Hao phí và hiệu suất khi truyền tải điện năng",
+   "topic": "Máy biến áp",
+   "problem_html": "<p>Một nhà máy truyền công suất $P=1{,}2\\ \\text{MW}$ đến nơi tiêu thụ bằng đường dây có điện trở tổng cộng $R=5\\ \\Omega$. Điện áp hiệu dụng ở nơi phát là $U=20\\ \\text{kV}$, coi $\\cos\\varphi=1$.</p><ol type=\"a\"><li>Tính cường độ hiệu dụng $I$ trên đường dây.</li><li>Tính công suất hao phí $\\Delta P$ trên đường dây và hiệu suất truyền tải $H$.</li><li>Giữ nguyên $P$ và $R$, tăng điện áp nơi phát lên $60\\ \\text{kV}$. Công suất hao phí lúc này là bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 184\" role=\"img\" aria-label=\"Nhà máy truyền điện qua đường dây có điện trở R tới nơi tiêu thụ; điện trở sáng lên theo cường độ dòng điện\"><circle cx=\"46\" cy=\"116\" r=\"21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"35.0,116.0 36.1,114.1 37.2,112.5 38.3,111.1 39.4,110.3 40.5,110.0 41.6,110.3 42.7,111.1 43.8,112.5 44.9,114.1 46.0,116.0 47.1,117.9 48.2,119.5 49.3,120.9 50.4,121.7 51.5,122.0 52.6,121.7 53.7,120.9 54.8,119.5 55.9,117.9 57.0,116.0\"/><text x=\"46\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P = 1,2 MW</text><text x=\"46\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 20 kV</text><line x1=\"46.0\" y1=\"95.0\" x2=\"46.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"88.0\" x2=\"82.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"137.0\" x2=\"46.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"144.0\" x2=\"366.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"82.0\" y1=\"88.0\" x2=\"150.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"165.0\" y=\"74\" width=\"60.0\" height=\"28\" rx=\"7\" fill=\"#fb923c\" opacity=\"0.00\"><animate attributeName=\"opacity\" values=\"0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"112.0\" cy=\"88\" r=\"4.2\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"112.0;114.7;117.4;119.8;121.9;123.6;124.9;125.7;126.0;125.7;124.9;123.6;121.9;119.8;117.4;114.7;112.0;109.3;106.6;104.2;102.1;100.4;99.1;98.3;98.0;98.3;99.1;100.4;102.1;104.2;106.6;109.3;112.0;114.7;117.4;119.8;121.9;123.6;124.9;125.7;126.0;125.7;124.9;123.6;121.9;119.8;117.4;114.7;112.0;109.3;106.6;104.2;102.1;100.4;99.1;98.3;98.0;98.3;99.1;100.4;102.1;104.2;106.6;109.3;112.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"288.0\" cy=\"88\" r=\"4.2\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"288.0;290.7;293.4;295.8;297.9;299.6;300.9;301.7;302.0;301.7;300.9;299.6;297.9;295.8;293.4;290.7;288.0;285.3;282.6;280.2;278.1;276.4;275.1;274.3;274.0;274.3;275.1;276.4;278.1;280.2;282.6;285.3;288.0;290.7;293.4;295.8;297.9;299.6;300.9;301.7;302.0;301.7;300.9;299.6;297.9;295.8;293.4;290.7;288.0;285.3;282.6;280.2;278.1;276.4;275.1;274.3;274.0;274.3;275.1;276.4;278.1;280.2;282.6;285.3;288.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"150.0,88.0 168.0,88.0 172.5,96.0 181.5,80.0 190.5,96.0 199.5,80.0 208.5,96.0 217.5,80.0 222.0,88.0 240.0,88.0\"/><line x1=\"240.0\" y1=\"88.0\" x2=\"330.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"330\" y=\"68\" width=\"72\" height=\"62\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"366\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tải</text><line x1=\"366.0\" y1=\"130.0\" x2=\"366.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"195\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 5 Ω</text><text x=\"195\" y=\"116\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ΔP = ?</text><text x=\"112\" y=\"76\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text><text x=\"366\" y=\"160\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi tiêu thụ</text><text x=\"46\" y=\"176\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi phát</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng xoay chiều đổi chiều (hạt xanh dao động), điện trở của dây sáng cam theo i²; chạy chậm. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Khi $\\cos\\varphi=1$: $I=\\dfrac{P}{U}$ ($U$ là điện áp nơi phát).</li><li>Hao phí toả nhiệt trên dây: $\\Delta P=RI^2=\\dfrac{RP^2}{U^2}$.</li><li>Hiệu suất truyền tải: $H=1-\\dfrac{\\Delta P}{P}$.</li><li>Tăng $U$ lên $k$ lần thì $\\Delta P$ giảm $k^2$ lần. Điều kiện: đổi MW, kV sang W, V.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ trên dây (câu a)</span></p><p>$P=1{,}2\\ \\text{MW}=1{,}2\\cdot10^6\\ \\text{W}$; $U=20\\ \\text{kV}=2\\cdot10^4\\ \\text{V}$.</p>$$I=\\dfrac{P}{U}=\\dfrac{1{,}2\\cdot10^6}{2\\cdot10^4}$$<div class=\"bt-ans\">$$I=60\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất hao phí (câu b)</span></p>$$\\Delta P=RI^2=5\\cdot60^2=5\\cdot3600$$<div class=\"bt-ans\">$$\\Delta P=18\\,000\\ \\text{W}=18\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hiệu suất truyền tải (câu b)</span></p>$$H=1-\\dfrac{\\Delta P}{P}=1-\\dfrac{18}{1200}$$<div class=\"bt-ans\">$$H=0{,}985=98{,}5\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tăng điện áp nơi phát (câu c)</span></p><p>$U'=60\\ \\text{kV}=3U$ nên $k=3$ và hao phí giảm $k^2=9$ lần.</p>$$\\Delta P'=\\dfrac{\\Delta P}{9}=\\dfrac{18}{9}$$<div class=\"bt-ans\">$$\\Delta P'=2\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Tính trực tiếp: $I'=\\dfrac{1{,}2\\cdot10^6}{6\\cdot10^4}=20\\ \\text{A}$, $\\Delta P'=5\\cdot20^2=2000\\ \\text{W}$, khớp.</p><p>Hao phí $18\\ \\text{kW}$ chỉ bằng $1{,}5\\%$ của $1200\\ \\text{kW}$: hợp lí cho đường dây cao thế.</p><p>Thế $P$ theo MW và $U$ theo kV vào $I=\\dfrac{P}{U}$ thì sai đơn vị: ra $I=0{,}06$ chứ không phải $60\\ \\text{A}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I=60\\ \\text{A}$</p><p>b) $\\Delta P=18\\ \\text{kW}$; $H=98{,}5\\%$</p><p>c) $\\Delta P'=2\\ \\text{kW}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất, điện áp nơi phát, điện trở đường dây</strong> → $I=\\dfrac{P}{U}$ rồi $\\Delta P=RI^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 184\" role=\"img\" aria-label=\"Dữ kiện: công suất và điện áp nơi phát, điện trở đường dây; cường độ dòng và hao phí cần tìm\"><circle cx=\"46\" cy=\"116\" r=\"21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"35.0,116.0 36.1,114.1 37.2,112.5 38.3,111.1 39.4,110.3 40.5,110.0 41.6,110.3 42.7,111.1 43.8,112.5 44.9,114.1 46.0,116.0 47.1,117.9 48.2,119.5 49.3,120.9 50.4,121.7 51.5,122.0 52.6,121.7 53.7,120.9 54.8,119.5 55.9,117.9 57.0,116.0\"/><text x=\"46\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P = 1,2 MW</text><text x=\"46\" y=\"48\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U = 20 kV</text><line x1=\"46.0\" y1=\"95.0\" x2=\"46.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"88.0\" x2=\"82.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"137.0\" x2=\"46.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46.0\" y1=\"144.0\" x2=\"366.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"82.0\" y1=\"88.0\" x2=\"150.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"150.0,88.0 168.0,88.0 172.5,96.0 181.5,80.0 190.5,96.0 199.5,80.0 208.5,96.0 217.5,80.0 222.0,88.0 240.0,88.0\"/><line x1=\"240.0\" y1=\"88.0\" x2=\"330.0\" y2=\"88.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"330\" y=\"68\" width=\"72\" height=\"62\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"366\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tải</text><line x1=\"366.0\" y1=\"130.0\" x2=\"366.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"195\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 5 Ω</text><text x=\"195\" y=\"116\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ΔP = ?</text><text x=\"112\" y=\"76\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text><text x=\"366\" y=\"160\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi tiêu thụ</text><text x=\"46\" y=\"176\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi phát</text></svg><figcaption>Dữ kiện: điện trở R là điện trở tổng cộng của đường dây. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Điện áp hiệu dụng ở nơi phát là $U=20\\ \\text{kV}$, coi $\\cos\\varphi=1$\"</td><td>$U=20\\ \\text{kV}$; $\\cos\\varphi=1$</td><td>⚠ $U$ là điện áp nơi phát, không phải độ sụt áp trên dây; chỉ khi $\\cos\\varphi=1$ mới có $P=UI$</td></tr><tr><td>\"công suất $P=1{,}2\\ \\text{MW}$\"</td><td>$P=1{,}2\\ \\text{MW}$</td><td>Đổi MW, kV sang đơn vị cơ bản trước khi tính</td></tr><tr><td>\"điện trở tổng cộng $R=5\\ \\Omega$\"</td><td>$R=5\\ \\Omega$</td><td>Dây dẫn có điện trở nên toả nhiệt</td></tr><tr><td>\"cường độ hiệu dụng $I$ trên đường dây\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa công suất, điện áp và cường độ</td></tr><tr><td>\"công suất hao phí … hiệu suất truyền tải\"</td><td>Đại lượng cần tìm</td><td>Hao phí do toả nhiệt trên dây; định nghĩa hiệu suất truyền tải</td></tr><tr><td>\"tăng điện áp nơi phát lên $60\\ \\text{kV}$\"</td><td>$U'=60\\ \\text{kV}$; $P$, $R$ giữ nguyên</td><td>Điện áp tăng thì cường độ trên dây thay đổi thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất, điện áp nơi phát, điện trở dây</b> → nghĩ tới <b>$I=P/U$ rồi $\\Delta P=RI^2$</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ trên dây",
+     "hoi": "Cường độ hiệu dụng $I$ trên đường dây bằng bao nhiêu ampe?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "A",
+     "loi_hay_gap": "Thế $P$ theo MW và $U$ theo kV mà không đổi về W, V nên sai cỡ độ lớn."
+    },
+    {
+     "tieu_de": "Công suất hao phí",
+     "hoi": "Công suất hao phí $\\Delta P$ bằng bao nhiêu kilô-oát?",
+     "dap_so": 18,
+     "sai_so": 0.1,
+     "don_vi": "kW",
+     "loi_hay_gap": "Dùng sai công thức của hao phí, hoặc quên đổi W sang kW.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta P=RI^2$ với $I$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta P=RI$",
+       "dung": false,
+       "vi_sao": "Nhiệt toả ra tỉ lệ với bình phương cường độ, không phải bậc nhất."
+      },
+      {
+       "text": "$\\Delta P=UI$ với $U=20\\ \\text{kV}$",
+       "dung": false,
+       "vi_sao": "$UI$ là toàn bộ công suất truyền đi; $U$ ở đây không phải hiệu điện thế rơi trên dây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất truyền tải",
+     "hoi": "Hiệu suất truyền tải $H$ bằng bao nhiêu phần trăm?",
+     "dap_so": 98.5,
+     "sai_so": 0.1,
+     "don_vi": "%",
+     "loi_hay_gap": "Lấy $H=\\dfrac{\\Delta P}{P}$ nên ra tỉ lệ hao phí thay vì tỉ lệ còn lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H=1-\\dfrac{\\Delta P}{P}$, cùng đơn vị công suất",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{\\Delta P}{P}$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ lệ bị hao phí; hiệu suất là phần còn lại."
+      },
+      {
+       "text": "$H=1-\\dfrac{\\Delta P}{P}$ với $\\Delta P$ theo kW và $P$ theo MW",
+       "dung": false,
+       "vi_sao": "Hai công suất phải cùng đơn vị mới chia được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tăng điện áp nơi phát",
+     "hoi": "Công suất hao phí lúc này bằng bao nhiêu kilô-oát?",
+     "dap_so": 2,
+     "sai_so": 0.02,
+     "don_vi": "kW",
+     "loi_hay_gap": "Suy hao phí mới từ hệ số tăng của điện áp theo tỉ lệ đoán, không tính lại cường độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại cường độ ứng với điện áp mới rồi tính hao phí",
+       "dung": true
+      },
+      {
+       "text": "Hao phí giảm đúng bằng hệ số tăng của điện áp",
+       "dung": false,
+       "vi_sao": "Hao phí phụ thuộc cường độ, không trực tiếp phụ thuộc điện áp; phải tính lại cường độ trước."
+      },
+      {
+       "text": "Hao phí không đổi vì $P$ và $R$ không đổi",
+       "dung": false,
+       "vi_sao": "Hao phí là $RI^2$ mà $I=\\dfrac{P}{U}$ thay đổi khi $U$ thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Máy tăng áp trước đường dây: hao phí và điện áp tối thiểu",
+   "topic": "Máy biến áp",
+   "problem_html": "<p>Một máy phát điện có công suất $P=400\\ \\text{kW}$, điện áp hiệu dụng ở hai cực $U_1=2\\ \\text{kV}$. Điện được đưa qua máy biến áp lí tưởng có $N_1=1000$ vòng, $N_2=5000$ vòng rồi truyền đi trên đường dây có điện trở tổng cộng $R=10\\ \\Omega$ (coi $\\cos\\varphi=1$; điện áp ở đầu đường dây là điện áp thứ cấp của máy biến áp).</p><ol type=\"a\"><li>Tính điện áp hiệu dụng ở đầu đường dây.</li><li>Tính cường độ hiệu dụng trên đường dây và công suất hao phí trên đó.</li><li>Muốn hiệu suất truyền tải đạt ít nhất $99\\%$ với cùng $P$, $R$, $U_1$ và $N_1$ thì điện áp ở đầu đường dây tối thiểu là bao nhiêu kV, và $N_2$ tối thiểu là bao nhiêu vòng?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Máy phát, máy biến áp tăng áp, đường dây có điện trở R và tải; đường sức trong lõi và điện trở của dây sáng theo dòng xoay chiều\"><circle cx=\"34\" cy=\"85\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"23.0,85.0 24.1,83.1 25.2,81.5 26.3,80.1 27.4,79.3 28.5,79.0 29.6,79.3 30.7,80.1 31.8,81.5 32.9,83.1 34.0,85.0 35.1,86.9 36.2,88.5 37.3,89.9 38.4,90.7 39.5,91.0 40.6,90.7 41.7,89.9 42.8,88.5 43.9,86.9 45.0,85.0\"/><rect x=\"76\" y=\"45\" width=\"68\" height=\"80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"96\" y=\"62\" width=\"28\" height=\"46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"86\" y=\"53\" width=\"48\" height=\"64\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" stroke-opacity=\"0.15\"><animate attributeName=\"stroke-opacity\" values=\"0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15;0.32;0.48;0.62;0.75;0.86;0.94;0.98;1.00;0.98;0.94;0.86;0.75;0.62;0.48;0.32;0.15\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><ellipse cx=\"86\" cy=\"68\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"78\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"88\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"98\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"68\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"78\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"88\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"98\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"76.0\" y1=\"70.0\" x2=\"34.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"76.0\" y1=\"104.0\" x2=\"34.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"70.0\" x2=\"34.0\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"104.0\" x2=\"34.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"70.0\" x2=\"190.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><rect x=\"203.0\" y=\"56\" width=\"54.0\" height=\"28\" rx=\"7\" fill=\"#fb923c\" opacity=\"0.00\"><animate attributeName=\"opacity\" values=\"0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00;0.02;0.09;0.19;0.31;0.43;0.53;0.60;0.62;0.60;0.53;0.43;0.31;0.19;0.09;0.02;0.00\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"168.0\" cy=\"70\" r=\"4.2\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"168.0;170.0;171.8;173.6;175.1;176.3;177.2;177.8;178.0;177.8;177.2;176.3;175.1;173.6;171.8;170.0;168.0;166.0;164.2;162.4;160.9;159.7;158.8;158.2;158.0;158.2;158.8;159.7;160.9;162.4;164.2;166.0;168.0;170.0;171.8;173.6;175.1;176.3;177.2;177.8;178.0;177.8;177.2;176.3;175.1;173.6;171.8;170.0;168.0;166.0;164.2;162.4;160.9;159.7;158.8;158.2;158.0;158.2;158.8;159.7;160.9;162.4;164.2;166.0;168.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"310.0\" cy=\"70\" r=\"4.2\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"310.0;312.0;313.8;315.6;317.1;318.3;319.2;319.8;320.0;319.8;319.2;318.3;317.1;315.6;313.8;312.0;310.0;308.0;306.2;304.4;302.9;301.7;300.8;300.2;300.0;300.2;300.8;301.7;302.9;304.4;306.2;308.0;310.0;312.0;313.8;315.6;317.1;318.3;319.2;319.8;320.0;319.8;319.2;318.3;317.1;315.6;313.8;312.0;310.0;308.0;306.2;304.4;302.9;301.7;300.8;300.2;300.0;300.2;300.8;301.7;302.9;304.4;306.2;308.0;310.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"190.0,70.0 206.0,70.0 210.0,78.0 218.0,62.0 226.0,78.0 234.0,62.0 242.0,78.0 250.0,62.0 254.0,70.0 270.0,70.0\"/><line x1=\"270.0\" y1=\"70.0\" x2=\"350.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"104.0\" x2=\"350.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><rect x=\"350\" y=\"58\" width=\"58\" height=\"58\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"379\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tải</text><text x=\"8\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = 400 kW</text><text x=\"8\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U₁ = 2 kV</text><text x=\"110\" y=\"34\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N₁ = 1000 ; N₂ = 5000</text><text x=\"146\" y=\"60\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">U₂ = ?</text><text x=\"230\" y=\"54\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 10 Ω</text><text x=\"230\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I, ΔP = ?</text><text x=\"230\" y=\"154\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U, N₂ tối thiểu = ? (câu c)</text><text x=\"118\" y=\"139\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">máy tăng áp</text><text x=\"379\" y=\"134\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi tiêu thụ</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng xoay chiều đổi chiều (hạt xanh dao động), đường sức trong lõi máy biến áp đậm nhạt, điện trở của dây sáng cam theo i²; chạy chậm. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Máy biến áp lí tưởng: $\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}$ và $P_1=P_2$ (công suất truyền đi không đổi).</li><li>Đường dây: $I=\\dfrac{P}{U_2}$ (cosφ = 1), $\\Delta P=RI^2$.</li><li>Hiệu suất $H=1-\\dfrac{\\Delta P}{P}$; $H\\ge99\\%$ nghĩa là $\\Delta P\\le0{,}01P$.</li><li>Điều kiện: $U_2$ là điện áp ở đầu đường dây; đổi kW, kV sang W, V.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện áp ở đầu đường dây (câu a)</span></p>$$U_2=U_1\\dfrac{N_2}{N_1}=2\\cdot\\dfrac{5000}{1000}$$<div class=\"bt-ans\">$$U_2=10\\ \\text{kV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ trên dây (câu b)</span></p><p>$P=4\\cdot10^5\\ \\text{W}$; $U_2=10^4\\ \\text{V}$.</p>$$I=\\dfrac{P}{U_2}=\\dfrac{4\\cdot10^5}{10^4}$$<div class=\"bt-ans\">$$I=40\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hao phí trên dây (câu b)</span></p>$$\\Delta P=RI^2=10\\cdot40^2$$<div class=\"bt-ans\">$$\\Delta P=16\\,000\\ \\text{W}=16\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cường độ tối đa cho phép (câu c)</span></p><p>$H\\ge99\\%$ nghĩa là $\\Delta P\\le0{,}01P=4000\\ \\text{W}$.</p>$$RI^2\\le4000\\Rightarrow I^2\\le\\dfrac{4000}{10}=400$$<div class=\"bt-ans\">$$I_{\\max}=20\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện áp tối thiểu (câu c)</span></p><p>Công suất truyền không đổi nên $U_2=\\dfrac{P}{I}$; $I$ càng nhỏ thì $U_2$ càng lớn.</p>$$U_{2,\\min}=\\dfrac{P}{I_{\\max}}=\\dfrac{4\\cdot10^5}{20}$$<div class=\"bt-ans\">$$U_{2,\\min}=20\\,000\\ \\text{V}=20\\ \\text{kV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Số vòng thứ cấp tối thiểu (câu c)</span></p>$$\\dfrac{N_2}{N_1}=\\dfrac{U_2}{U_1}\\Rightarrow N_{2,\\min}=1000\\cdot\\dfrac{20}{2}$$<div class=\"bt-ans\">$$N_{2,\\min}=10\\,000\\ \\text{vòng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Sơ cấp: $I_1=\\dfrac{P}{U_1}=200\\ \\text{A}$; $\\dfrac{I_1}{I_2}=\\dfrac{200}{40}=5=\\dfrac{N_2}{N_1}$, khớp.</p><p>Với $U_2=10\\ \\text{kV}$: $H=1-\\dfrac{16}{400}=96\\%\\lt99\\%$, nên phải tăng điện áp.</p><p>Với $U_2=20\\ \\text{kV}$: $\\Delta P=10\\cdot20^2=4000\\ \\text{W}$, đúng bằng $1\\%$ của $P$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $U_2=10\\ \\text{kV}$</p><p>b) $I=40\\ \\text{A}$; $\\Delta P=16\\ \\text{kW}$ ($H=96\\%$)</p><p>c) $U_2\\ge20\\ \\text{kV}$; $N_2\\ge10\\,000$ vòng</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>máy tăng áp rồi đường dây, hỏi điều kiện hiệu suất</strong> → đổi $H$ thành giới hạn của $\\Delta P$, rồi $I$, rồi $U$, rồi $N_2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Dữ kiện: máy phát, máy biến áp tăng áp với số vòng hai cuộn, đường dây có điện trở R; các đại lượng cần tìm in màu cam\"><circle cx=\"34\" cy=\"85\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"23.0,85.0 24.1,83.1 25.2,81.5 26.3,80.1 27.4,79.3 28.5,79.0 29.6,79.3 30.7,80.1 31.8,81.5 32.9,83.1 34.0,85.0 35.1,86.9 36.2,88.5 37.3,89.9 38.4,90.7 39.5,91.0 40.6,90.7 41.7,89.9 42.8,88.5 43.9,86.9 45.0,85.0\"/><rect x=\"76\" y=\"45\" width=\"68\" height=\"80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"96\" y=\"62\" width=\"28\" height=\"46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"86\" y=\"53\" width=\"48\" height=\"64\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" stroke-opacity=\"0.70\"></rect><ellipse cx=\"86\" cy=\"68\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"78\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"88\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"86\" cy=\"98\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"68\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"78\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"88\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"134\" cy=\"98\" rx=\"10\" ry=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"76.0\" y1=\"70.0\" x2=\"34.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"76.0\" y1=\"104.0\" x2=\"34.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"70.0\" x2=\"34.0\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"104.0\" x2=\"34.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"70.0\" x2=\"190.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"190.0,70.0 206.0,70.0 210.0,78.0 218.0,62.0 226.0,78.0 234.0,62.0 242.0,78.0 250.0,62.0 254.0,70.0 270.0,70.0\"/><line x1=\"270.0\" y1=\"70.0\" x2=\"350.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"104.0\" x2=\"350.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><rect x=\"350\" y=\"58\" width=\"58\" height=\"58\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"379\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tải</text><text x=\"8\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = 400 kW</text><text x=\"8\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U₁ = 2 kV</text><text x=\"110\" y=\"34\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N₁ = 1000 ; N₂ = 5000</text><text x=\"146\" y=\"60\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">U₂ = ?</text><text x=\"230\" y=\"54\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 10 Ω</text><text x=\"230\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I, ΔP = ?</text><text x=\"230\" y=\"154\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U, N₂ tối thiểu = ? (câu c)</text><text x=\"118\" y=\"139\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">máy tăng áp</text><text x=\"379\" y=\"134\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nơi tiêu thụ</text></svg><figcaption>Dữ kiện: điện áp ở đầu đường dây là điện áp thứ cấp của máy biến áp. Hình minh hoạ, không vẽ theo tỉ lệ số liệu.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"công suất $P=400\\ \\text{kW}$, … $U_1=2\\ \\text{kV}$\"</td><td>$P=400\\ \\text{kW}$; $U_1=2\\ \\text{kV}$</td><td>Đổi kW, kV sang đơn vị cơ bản trước khi tính</td></tr><tr><td>\"máy biến áp lí tưởng có $N_1=1000$ vòng, $N_2=5000$ vòng\"</td><td>$N_1=1000$; $N_2=5000$</td><td>⚠ Máy lí tưởng: công suất hai cuộn bằng nhau; điện áp tỉ lệ với số vòng</td></tr><tr><td>\"điện trở tổng cộng $R=10\\ \\Omega$ (coi $\\cos\\varphi=1$ …)\"</td><td>$R=10\\ \\Omega$; $\\cos\\varphi=1$</td><td>⚠ Điện áp ở đầu đường dây là điện áp thứ cấp; cường độ trên dây tính từ công suất và điện áp này</td></tr><tr><td>\"điện áp hiệu dụng ở đầu đường dây\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa điện áp và số vòng hai cuộn</td></tr><tr><td>\"cường độ … trên đường dây và công suất hao phí\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa công suất, điện áp, cường độ; hao phí do toả nhiệt</td></tr><tr><td>\"hiệu suất truyền tải đạt ít nhất $99\\%$\"</td><td>Hiệu suất tối thiểu $99\\%$ (giới hạn cho hao phí)</td><td>Điều kiện về hiệu suất liên hệ thế nào với công suất hao phí?</td></tr><tr><td>\"điện áp … tối thiểu … $N_2$ tối thiểu\"</td><td>Đại lượng cần tìm</td><td>Liên hệ giữa cường độ, điện áp ở đầu đường dây và số vòng thứ cấp</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>máy tăng áp rồi đường dây, hỏi điều kiện hiệu suất</b> → nghĩ tới <b>đổi $H$ thành giới hạn của $\\Delta P$</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện áp ở đầu đường dây",
+     "hoi": "Điện áp hiệu dụng ở đầu đường dây bằng bao nhiêu kilô-vôn?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "kV",
+     "loi_hay_gap": "Viết ngược tỉ số số vòng."
+    },
+    {
+     "tieu_de": "Cường độ trên dây",
+     "hoi": "Cường độ hiệu dụng trên đường dây bằng bao nhiêu ampe?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $U_1$ (điện áp máy phát) thay cho điện áp ở đầu đường dây, hoặc quên đổi kW, kV.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I=\\dfrac{P}{U_2}$ với $U_2$ là điện áp đầu đường dây",
+       "dung": true
+      },
+      {
+       "text": "$I=\\dfrac{P}{U_1}$",
+       "dung": false,
+       "vi_sao": "Dòng trên đường dây chịu điện áp thứ cấp của máy biến áp, không phải điện áp ở hai cực máy phát."
+      },
+      {
+       "text": "$I=\\dfrac{U_2}{R}$",
+       "dung": false,
+       "vi_sao": "Đó là cường độ nếu toàn bộ $U_2$ rơi trên điện trở dây; điện áp truyền tải không rơi hết trên dây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hao phí trên dây",
+     "hoi": "Công suất hao phí trên dây bằng bao nhiêu kilô-oát?",
+     "dap_so": 16,
+     "sai_so": 0.1,
+     "don_vi": "kW",
+     "loi_hay_gap": "Dùng $\\Delta P=RI$ hoặc nhân nhầm với $U_1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta P=RI^2$ với $I$ của đường dây",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta P=RI_1^2$ với $I_1$ là dòng sơ cấp",
+       "dung": false,
+       "vi_sao": "Nhiệt toả ra trên dây do dòng của đường dây (thứ cấp), không phải dòng ở cuộn sơ cấp."
+      },
+      {
+       "text": "$\\Delta P=\\dfrac{U_2^2}{R}$",
+       "dung": false,
+       "vi_sao": "Đó là công thức khi toàn bộ điện áp $U_2$ rơi trên điện trở, không phải trường hợp truyền tải."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cường độ tối đa cho phép",
+     "hoi": "Cường độ lớn nhất trên dây để hiệu suất không dưới $99\\%$ là bao nhiêu ampe?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "A",
+     "loi_hay_gap": "Hiểu $99\\%$ là hao phí và lấy $\\Delta P=0{,}99P$, hoặc quên căn bậc hai khi giải $I^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi điều kiện hiệu suất thành giới hạn hao phí, rồi từ giới hạn đó tìm cường độ",
+       "dung": true
+      },
+      {
+       "text": "Cho $\\Delta P=0{,}99P$",
+       "dung": false,
+       "vi_sao": "Con số $99\\%$ là hiệu suất, không phải tỉ lệ hao phí."
+      },
+      {
+       "text": "Giải $I\\le\\dfrac{\\Delta P_{\\max}}{R}$",
+       "dung": false,
+       "vi_sao": "Hao phí không tỉ lệ bậc nhất với cường độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện áp tối thiểu",
+     "hoi": "Điện áp tối thiểu ở đầu đường dây là bao nhiêu kilô-vôn?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "kV",
+     "loi_hay_gap": "Cho rằng điện áp càng nhỏ thì hao phí càng nhỏ, hoặc quên đổi đơn vị sang W, V.",
+     "chon_buoc_ke": [
+      {
+       "text": "$U_2=\\dfrac{P}{I_{\\max}}$ với $P$ là công suất truyền đi",
+       "dung": true
+      },
+      {
+       "text": "$U_2=\\dfrac{\\Delta P_{\\max}}{I_{\\max}}$",
+       "dung": false,
+       "vi_sao": "$\\Delta P$ chỉ là phần hao phí; điện áp truyền tải tính từ công suất truyền đi $P$."
+      },
+      {
+       "text": "$U_2=I\\cdot R$",
+       "dung": false,
+       "vi_sao": "$IR$ chỉ là độ sụt áp trên dây, không phải điện áp truyền tải."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số vòng thứ cấp tối thiểu",
+     "hoi": "Số vòng $N_2$ tối thiểu của cuộn thứ cấp là bao nhiêu vòng?",
+     "dap_so": 10000,
+     "sai_so": 100,
+     "don_vi": "vòng",
+     "loi_hay_gap": "Viết ngược tỉ số, hoặc dùng $N_2$ ban đầu thay vì tính lại theo điện áp mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{N_2}{N_1}=\\dfrac{U_2}{U_1}$ với $U_2$ là giá trị tối thiểu vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{N_2}{N_1}=\\dfrac{U_1}{U_2}$",
+       "dung": false,
+       "vi_sao": "Viết ngược: cuộn thứ cấp nhiều vòng hơn thì điện áp lớn hơn."
+      },
+      {
+       "text": "Giữ $N_2=5000$ vì máy đã có sẵn",
+       "dung": false,
+       "vi_sao": "Số vòng thứ cấp phải tính lại theo điện áp tối thiểu vừa tìm, không dùng giá trị cũ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\">Một máy biến thế có cuộn sơ cấp 1000 vòng dây được mắc vào mạng điện xoay chiều có hiệu điện thế hiệu dụng 220 V. Khi đó hiệu điện thế hiệu dụng ở hai đầu cuộn thứ cấp đế hở là 484 V. Bỏ qua mọi hao phí của máy biến thế. Tính số vòng dây của cuộn thứ cấp?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$\\frac{U_{1}}{U_{2}}=\\frac{N_{1}}{N_{2}}\\Leftrightarrow \\frac{220}{484}=\\frac{1000}{N_{2}}\\Leftrightarrow N_{2}=2200\\left(\\text{vòng}\\right)$</p></details><h4>Bài 2 · Dễ</h4><p class=\"text-base leading-relaxed my-2\">Một máy phát điện xoay chiều có khung dây phẳng gồm 50 vòng dây, mỗi vòng dây có diện tích 2,0 cm$^{2}$. Khung dây quay trong một từ trường đều có độ lớn cảm ứng từ là 0,01 T và hướng vuông góc với trục quay, tốc độ quay ổn định là 20 vòng/giây. Suất điện động cảm ứng cực đại là bao nhiêu mV? (viết kết quả gồm hai chữ số).</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$E_{o}=\\omega NBS=40\\pi.50.0,01.2.10^{-4}=13\\left( mV \\right)$</p></details><h4>Bài 3 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Rotato của một máy phát điện xoay chiều là khung dây dẫn hình vuông với cạnh 25 cm quay 40,0 vòng trong một giây. Từ trường của stato có độ lớn $B=0,5 T$</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">a)</strong> Biên độ của suất điện động của máy là bao nhiêu Volt (Viết kết quả làm tròn đến hai chữ số sau dấu phẩy thập phân)?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">b)</strong> Biết điện trở của máy là $4,00 \\Omega$. Biên độ của dòng điện do máy phát ra là bao nhiêu ampe (viết kết quả làm tròn đến hai chữ số sau dấu phẩy thập phân)?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">a) $E_{o}=\\omega NBS=80\\pi.1.0,5.0,25^{2}=7,85\\left( V \\right)$</p><p class=\"text-base leading-relaxed my-2\">b) $I_{o}=\\frac{E_{o}}{R}=\\frac{7,85}{4}=1,96\\left( A \\right)$</p></details><h4>Bài 4 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Từ thông gửi qua một khung dây có biểu thức: $\\Phi =2\\sqrt{2}cos(300t) (mWb).$ Suất điện động hiệu dụng xuất hiện trong khung dây có độ lớn bao nhiêu mV?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">- Suất điện động hiệu dụng xuất hiện trong khung dây: $E=\\frac{E_{0}}{\\sqrt{2}}=\\frac{\\omega \\Phi _{0}}{\\sqrt{2}}=\\frac{300.2\\sqrt{2}.10^{-3}}{\\sqrt{2}}=600.10^{-3} V=600 mV.$</p></details><h4>Bài 5 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Rotato của một máy phát điện xoay chiều gồm tám vòng dây, mỗi vòng có diện tích $S=0,09 m^{2}$, điện trở của rotato là 6,0 $\\Omega$. Rotato quay trong từ trường của stato có độ lớn cảm ứng từ là 0,500 T với tần số không đổi 50,0 Hz. Phát biểu nào sau đây <strong class=\"font-bold\">đúng</strong>, phát biếu nào <strong class=\"font-bold\">sai</strong>?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">a)</strong> Tần số góc là 377 rad/s.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">b)</strong> Suất điện động cực đại do máy phát ra là 123 V.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">c)</strong> Bỏ qua điện trở mạch ngoài, cường độ dòng điện cực đại là 20,5A.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">d)</strong> Nếu mạch ngoài có điện trở $6{,}0\\ \\Omega$, cường độ dòng điện cực đại là 15,5A.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">a) Sai. $\\omega =2\\pi f=314,16\\left( rad/s \\right)$</p><p class=\"text-base leading-relaxed my-2\">b) Sai. $E_{o}=\\omega NBS=113\\left( V \\right)$</p><p class=\"text-base leading-relaxed my-2\">c) Sai. $I_{o}=\\frac{E_{o}}{R}=\\frac{113}{6}=18,8\\left( A \\right)$</p><p class=\"text-base leading-relaxed my-2\">d) Sai. $I_{o}=\\frac{E_{o}}{2R}=\\frac{113}{2.6}=9,42\\left( A \\right)$</p></details><h4>Bài 6 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\"> Một khung dây dẫn phẳng có diện tích $S=20 cm^{2}$, có $N=100$ vòng dây, quay đều với tốc độ 50 vòng/giây quanh một trục vuông góc với các đường sức của một trừ trường đều có cảm ứng từ $B=0,1 T$. Chọn gốc thời gian $t=0$ là lúc vecto pháp tuyến $\\vec{n}$ của diện tích S của khung dây cùng chiều với vecto cảm ứng từ $\\vec{B}$ và chiều dương là chiều quay của khung dây</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">a)</strong> Viết biểu thức xác định từ thông qua khung dây.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">b)</strong> Viết biểu thức xác định suất điện động xuất hiện trong khung dây</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">a) $\\Phi =NBScos\\left( 2\\pi ft+\\varphi \\right)=0,02cos\\left( 100\\pi t \\right)\\left( Wb \\right)$</p><p class=\"text-base leading-relaxed my-2\">b) $e=\\omega NBScos\\left( \\omega t+\\varphi \\right)=2\\pi cos\\left( 100\\pi t-\\frac{\\pi }{2} \\right)\\left( V \\right)$</p></details><h4>Bài 7 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Cuộn thứ cấp của một máy biến áp có 800 vòng. Từ thông trong lõi thép biến thiên với tần số 50 Hz và giá trị từ thông cực đại qua một vòng dây bằng 2,4 mWb. Tính suất điện động hiệu dụng cuộn thứ cấp? (Viết kết quả làm tròn đến phần nguyên)</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$E=\\frac{E_{o}}{\\sqrt{2}}=\\frac{2\\pi fN\\Phi _{o}}{\\sqrt{2}}=\\frac{2\\pi.50.800.2,4.10^{-3}}{\\sqrt{2}}=427\\left( V \\right)$</p></details><h4>Bài 8 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Một máy biến áp lí tưởng có số vòng dây cuộn sơ cấp và thứ cấp lần lượt là $N_{1}$ và $N_{2}=N_{1}+300$. Đặt vào hai đầu cuộn sơ cấp một điện áp xoay chiều có giá trị hiệu dụng U thì điện áp hiệu dụng hai đầu cuộn thứ cấp bằng 4U. Giá trị của $N_{1}$ bằng bao nhiêu vòng?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$\\frac{U_{1}}{U_{2}}=\\frac{N_{1}}{N_{2}}\\Leftrightarrow \\frac{U}{4U}=\\frac{N_{1}}{N_{1}+300}\\Leftrightarrow N_{1}=100\\left( \\text{vòng} \\right)$</p></details><h4>Bài 9 · Khá</h4><p class=\"text-base leading-relaxed my-2\">Đặt vào hai đầu cuộn sơ cấp của một máy biến áp lí tưởng (bỏ qua hao phí) một điện áp xoay chiều có giá trị hiệu dụng không đổi thì điện áp hiệu dụng giữa hai đầu cuộn thứ cấp để hở là 100 V. Ở cuộn thứ cấp, nếu giảm bớt n vòng dây thì điện áp hiệu dụng giữa hai đầu để hở của nó là U, nếu tăng thêm n vòng dây thì điện áp đó là 2U. Nếu tăng thêm 3n vòng đây ở cuộn thứ cấp thì điện áp hiệu dụng giữa hai đầu để hở của cuộn này bằng bao nhiêu V?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Gọi $k$ là điện áp trên mỗi vòng thứ cấp: máy lí tưởng, $U_1$ không đổi nên $U_2=kN_2$.</p><p class=\"text-base leading-relaxed my-2\">Ban đầu $kN_2=100$. Bớt $n$ vòng: $k(N_2-n)=U$. Thêm $n$ vòng: $k(N_2+n)=2U$.</p><p class=\"text-base leading-relaxed my-2\">Chia hai vế: $N_2+n=2(N_2-n)\\Rightarrow N_2=3n$.</p><p class=\"text-base leading-relaxed my-2\">Thêm $3n$ vòng: $U'=k(N_2+3n)=k\\cdot6n=2kN_2=200\\ \\text{V}$.</p></details><h4>Bài 10 · Khá</h4><p class=\"text-base leading-relaxed my-2\">Một học sinh quấn một máy biến áp với dự định số vòng dây của cuộn sơ cấp gấp hai lần số vòng dây của cuộn thứ cấp. Do sơ suất nên cuộn thứ cấp bị thiếu một số vòng dây. Muốn xác định số vòng dây thiếu để quấn tiếp thêm vào cuộn thứ cấp cho đủ, học sinh này đặt vào hai đầu cuộn sơ cấp một điện áp xoay chiều có giá trị hiệu dụng không đổi, rồi dùng vôn kết xác định tỉ số điện áp ở cuộn thứ cấp để hở và cuộn sơ cấp. Lúc đầu tỉ số điện áp bằng 0,43. Sau khi quấn thêm vào cuộn thứ cấp 24 vòng dây thì tỉ số điện áp bằng 0,45. Bỏ qua mọi hao phí trong máy biến áp. Để được máy biến áp đúng như dự định, học sinh này phải tiếp tục quấn thêm vào cuộn thứ cấp bao nhiêu vòng?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Gọi $N_1$ là số vòng sơ cấp, máy lí tưởng nên $\\dfrac{U_2}{U_1}=\\dfrac{N_2}{N_1}$.</p><p class=\"text-base leading-relaxed my-2\">Lúc đầu $N_2=0{,}43N_1$. Sau khi quấn thêm $24$ vòng: $N_2+24=0{,}45N_1$.</p><p class=\"text-base leading-relaxed my-2\">Trừ hai phương trình: $24=0{,}02N_1\\Rightarrow N_1=1200$ vòng.</p><p class=\"text-base leading-relaxed my-2\">Dự định $N_2=\\dfrac{N_1}{2}=600$ vòng; hiện có $0{,}45\\cdot1200=540$ vòng. Cần quấn thêm $600-540=60$ vòng.</p></details><h4>Bài 11 · Khó</h4><p class=\"text-base leading-relaxed my-2\">Một máy biến áp lí tưởng lúc mới sản xuất có tỉ số điện áp hiệu dụng cuộn sơ cấp và thứ cấp bằng 2. Sau một thời gian sử dụng do lớp cách điện kém nên có x vòng dây cuộn thứ cấp bị nối tắt vì vậy tỉ số điện áp hiệu dụng cuộn sơ cấp và thứ cấp bằng 2,5. Để xác định x người ta quấn thêm vào cuộn thứ cấp 135 vòng dây thì thấy tỉ số điện áp hiệu dụng cuộn sơ cấp và thứ cấp bằng 1,6. Số vòng dây bị nối tắt là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">Lúc mới sản xuất $N_1=2N_2$. Nối tắt $x$ vòng thì thứ cấp còn $N_2-x$ vòng: $\\dfrac{N_1}{N_2-x}=2{,}5\\Rightarrow N_2-x=0{,}4N_1=0{,}8N_2$, nên $x=0{,}2N_2$.</p><p class=\"text-base leading-relaxed my-2\">Quấn thêm $135$ vòng: $\\dfrac{N_1}{N_2-x+135}=1{,}6\\Rightarrow N_2-x+135=0{,}625N_1=1{,}25N_2$.</p><p class=\"text-base leading-relaxed my-2\">Thế $N_2-x=0{,}8N_2$: $0{,}8N_2+135=1{,}25N_2\\Rightarrow N_2=300$ vòng.</p><p class=\"text-base leading-relaxed my-2\">Số vòng bị nối tắt: $x=0{,}2\\cdot300=60$ vòng.</p></details>"
+ }
+}

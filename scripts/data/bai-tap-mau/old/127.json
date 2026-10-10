@@ -1,0 +1,30 @@
+{
+ "lesson_id": 127,
+ "item_id": 184,
+ "questions": [
+  {
+   "label": "Ví dụ 3",
+   "body_html": "<p><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/127/1790155294866-fig10.png\" alt=\"Hình minh hoạ\"> <strong>Ví dụ 3:</strong> Trong mạch sau có một phần năng lượng trong mạch dao động điện từ được bức xạ ra không gian xung quanh dưới dạng sóng điện từ, vậy những sóng điện từ này được tạo ra như thế nào?</p><p><strong>Giải</strong></p><p><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/127/1790155295400-fig11.png\" alt=\"Hình minh hoạ\"> Sóng điện từ được tạo ra khi có sự dao động của điện trường và từ trường trong mạch LC dao động. Dòng điện biến thiên trong cuộn cảm tạo ra từ trường biến thiên, còn tụ điện phóng điện tạo ra điện trường biến thiên. Điện trường biến thiên và từ trường biến thiên khi bức xạ ra ngoài sẽ lan truyền trong không gian dưới dạng sóng điện từ, trong đó điện trường và từ trường dao động vuông góc với nhau và cùng vuông góc với hướng lan truyền của sóng.</p>"
+  },
+  {
+   "label": "Ví dụ 4",
+   "body_html": "<p><strong>Ví dụ 4:</strong> Hertz đã tiến hành một thí nghiệm nổi tiếng vào năm 1886 về sự tồn tại của sóng điện từ. Ông cho hai quả cầu kim loại đặt gần nhau và nối với một cuộn cảm ứng. Gần hai quả cầu kim loại ông đặt hai quả cầu kim loại nhỏ ở mỗi đầu của vòng dây tròn, giữa hai quả cầu có một khe hở nhỏ (hình vẽ). Khi cuộn dây cảm ứng gây ra sự phóng điện ở hai quả cầu và phát ra tia lửa điện thì hai quả cầu nhỏ nối vòng dây dẫn cũng phóng điện. Hãy giải thích hiện tượng xảy ra.</p><p><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/127/1790155296278-fig12.png\" alt=\"Hình minh hoạ\"></p><p><strong>Giải</strong></p><p>Giải thích: Giữa hai quả cầu nhỏ nối với vòng dây có sự phóng điện chứng tỏ trong vòng dây có dòng điện biến thiên. Sự xuất hiện dòng điện trong vòng dây là do có điện từ trường biến thiên gây ra suất điện động trong vòng dây. Rõ ràng điện từ trường được sinh ra từ tia lửa điện ở hai quả cầu kim loại nối với cuộn cảm ứng đã lan truyền đến vòng dây. Từ hiện tượng này Hertz đã kết luận có sóng điện từ (hay điện từ trường) lan truyền từ nơi này đến nơi khác.</p>"
+  },
+  {
+   "label": "Ví dụ 6",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 6:</strong> Sóng FM của Đài Tiếng Nói Việt Nam có tần số 100 MHz. Bước sóng của sóng này bằng bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Giải</strong></p><p class=\"text-base leading-relaxed my-2\">$c=300000km/s=3.10^{8}m/s$</p><p class=\"text-base leading-relaxed my-2\">Bước sóng điện từ: $\\lambda =\\frac{c}{f}=\\frac{3.10^{8}}{100.10^{6}}=3m$</p>"
+  },
+  {
+   "label": "Ví dụ 7",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 7:</strong> Khi sóng điện từ truyền từ không khí vào môi trường chất lỏng có chiết suất n, thì tốc độ và bước sóng lan truyền sóng điện từ như thế nào?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Giải</strong></p><p class=\"text-base leading-relaxed my-2\">Khi sóng điện từ truyền từ không khí vào môi trường chất lỏng có chiết suất n, thì tốc độ lan truyền sóng điện từ giảm n lần: $v=\\frac{c}{n}$</p><p class=\"text-base leading-relaxed my-2\">Từ $\\lambda =\\frac{v}{f},$ do tần số không đổi nên bước sóng điện từ cũng giảm n lần.</p>"
+  },
+  {
+   "label": "Ví dụ 8",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Ví dụ 8:</strong> Một sóng vô tuyến và một sóng cơ có cùng tần số, khi truyền trong không khí tốc độ hai sóng lần lượt là $300000km/s$ và $340m/s.$ Tỉ số của bước sóng giữa sóng vô tuyến và sóng cơ bằng bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Giải</strong></p><p class=\"text-base leading-relaxed my-2\">Ta có: $v_{1}=c=300000km/s=3.10^{8}m/s,v_{1}=340m/s, f_{1}=f_{1}$</p><p class=\"text-base leading-relaxed my-2\">Từ $\\lambda =\\frac{v}{f}\\Rightarrow \\frac{\\lambda _{1}}{\\lambda _{2}}=\\frac{v_{1}}{v_{2}}=8,82.10^{5}$</p>"
+  },
+  {
+   "label": "Bài 13.1",
+   "body_html": "<p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">Bài 13.1/</strong> Trong thông tin liên lạc bằng sóng vô tuyến, người ta thường sử dụng cách biến điệu biên độ, tức là làm cho biên độ của sóng điện từ cao tần (gọi là sóng mang) biến thiên theo thời gian với tần số bằng tần số của dao động âm tần. Biết tần số của sóng mang là $800 kHz.$ Khi dao động âm tần só tần số $1000 Hz$ thực hiện một dao động toàn phần thì dao động cao tần thực hiện bao nhiêu số dao động toàn phần?</p><p class=\"text-base leading-relaxed my-2\">Tần số của sóng mang là $800 kHz,$ nghĩa là trong $1 s$ dao động cao tần thực hiện 800000 dao động.</p><p class=\"text-base leading-relaxed my-2\">Âm tần có tần số $1000 Hz,$ nghĩa là trong $1 s$ âm tần thực hiện $1000$ dao động.</p><p class=\"text-base leading-relaxed my-2\">Ta có: $\\frac{f_{m}}{f_{a}}=\\frac{800000}{1000}=800$</p><p class=\"text-base leading-relaxed my-2\">Vậy khi dao động cao tần thực hiện $800$ dao động thì ân tần thực hiện $1$ dao động.</p>"
+  }
+ ]
+}
