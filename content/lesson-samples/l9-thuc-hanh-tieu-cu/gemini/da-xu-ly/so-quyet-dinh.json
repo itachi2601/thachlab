@@ -1,0 +1,110 @@
+{
+  "bai": "l9-thuc-hanh-tieu-cu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào đề Câu 4: thấu kính nằm giữa giá nên tâm O cách mỗi mặt giá 1,0 cm."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa phản hồi Câu 5: sai số của d' cỡ nửa độ rộng khoảng nét, tức khoảng 0,6 cm."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại bước Làm của thí nghiệm cách 3 theo thứ tự: đặt kính cách vật khoảng 2f, dịch màn cho nét, chỉnh kính từng chút và hứng nét lại."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nêu rõ Δf = ΔL/4 kèm ví dụ ΔL = 0,2 cm cho Δf = 0,05 cm (khác số của Thử thách ⭐⭐)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi kèm tên: 'Mục II.2 (Cách 1)' và 'mục II.4, Cách 3'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ô bảng Bẫy 1 thành 'Tới mặt giá gần vật và gần màn' cho khớp tình huống Câu 4."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi lí do đáp án đúng B thành 'vì đo nhiều lần và biết mức dao động', giữ nguyên tl-ok."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa gạch đầu dòng: chỉnh màn cho ảnh nét trước rồi mới so chiều cao."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay '(cùng độ chia 0,1 cm)' bằng '(các f trong bảng có một chữ số thập phân)'."
+      },
+      {
+        "id": "q-Dự đoán trước khi học",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu rõ điều kiện vật cách 2f nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mốc 20 m ở mục Cách 1 và trong phản hồi nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ rõ phải so cột f với f̄ nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích A là 2f nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích d và d' hụt cùng phía nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và dòng 🔑 'Nét là một đoạn' đã nhấn ý này nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói sai số 2 % là nhỏ và đáp án B đã đổi lí do, nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi cộng thay vì trừ nên không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 4: thêm giả thiết thấu kính nằm giữa giá dày 2,0 cm, tâm O cách mỗi mặt giá 1,0 cm (số liệu d = d' = 19,0 cm và f = 9,5 cm giữ nguyên).",
+      "Câu 5, phản hồi đúng: sai số của d' ≈ nửa khoảng nét = 0,6 cm (trước đây ngụ ý 1,2 cm).",
+      "Cách 3, Rút ra: thêm Δf = ΔL/4, ví dụ ΔL = 0,2 cm cho Δf = 0,05 cm.",
+      "Cách 3, thí nghiệm: thứ tự thao tác là đặt kính cách vật khoảng 2f, chỉnh màn cho nét, rồi chỉnh kính tới khi ảnh cao bằng vật.",
+      "Cách 3, gạch đầu dòng: phải có ảnh nét trước rồi mới so chiều cao.",
+      "Bảng Bẫy 1: hàng thứ hai chỉ rõ đo tới mặt giá gần vật và gần màn thì d, d' hụt.",
+      "Câu 6: đáp án đúng B đổi lí do thành 'vì đo nhiều lần và biết mức dao động'.",
+      "Xử lí sai số: lí do làm tròn f̄ đổi thành 'các f trong bảng có một chữ số thập phân'.",
+      "Cắt bớt: chú thích '(cây, toà nhà bên kia sân)' ở Cách 1, câu 'tính từ mô hình…' ở thí nghiệm cách 2, câu hỏi gợi mở cuối phản hồi đúng Câu 3."
+    ],
+    "so_tu_them": 35,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-thuc-hanh-tieu-cu/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}

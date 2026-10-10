@@ -44,7 +44,7 @@
 <p class="tl-label">🔬 Thí nghiệm: khối bán trụ thủy tinh</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt khối bán trụ trên vòng chia độ, mặt phẳng hướng lên. Chiếu tia laser vào <strong>mặt cong</strong>, hướng đúng vào tâm I (xem Hình 1). Tăng dần góc tới $i$ tại I.</li>
-<li><strong>Quan sát:</strong> $i$ nhỏ: có cả tia khúc xạ ra không khí lẫn tia phản xạ mờ. $i$ tăng: tia khúc xạ lệch dần ra xa pháp tuyến và mờ đi, tia phản xạ sáng dần. Gần $42^\circ$ (đúng là $41{,}8^\circ$): tia khúc xạ đi sát mặt phẳng. Vượt quá: chỉ còn tia phản xạ, sáng gần bằng tia tới.</li>
+<li><strong>Quan sát:</strong> $i$ nhỏ: có cả tia khúc xạ ra không khí lẫn tia phản xạ mờ. $i$ tăng: tia khúc xạ lệch dần ra xa pháp tuyến và mờ đi, tia phản xạ sáng dần. Khoảng $42^\circ$: tia khúc xạ đi sát mặt phẳng. Vượt quá: chỉ còn tia phản xạ, sáng gần bằng tia tới.</li>
 <li><strong>Rút ra:</strong> vượt góc tới hạn, ánh sáng không ló ra được nữa, bị phản xạ toàn phần.</li>
 </ol>
 </div>
@@ -106,7 +106,7 @@
 <p><strong>🔑 Từ chiết quang hơn · sang chiết quang kém · góc tới đủ lớn</strong></p>
 
 <ul>
-<li><strong>Điều kiện 1:</strong> ánh sáng đi từ môi trường chiết suất <strong>lớn</strong> $n_1$ (chiết quang hơn) sang môi trường chiết suất <strong>nhỏ</strong> $n_2$ (chiết quang kém), tức $n_1 \gt n_2$.</li>
+<li><strong>Điều kiện 1:</strong> ánh sáng đi từ môi trường chiết suất <strong>lớn</strong> $n_1$ sang môi trường chiết suất <strong>nhỏ</strong> $n_2$ ($n_1 \gt n_2$).</li>
 <li><strong>Điều kiện 2:</strong> góc tới $i \ge i_{th}$.</li>
 <li>Thiếu một trong hai điều kiện là <strong>không</strong> có phản xạ toàn phần.</li>
 </ul>
@@ -119,7 +119,6 @@ $$\sin i_{th} = \frac{n_2}{n_1} = \frac{n_{nhỏ}}{n_{lớn}}$$
 <summary>📐 Bấm xem: công thức này từ đâu ra?</summary>
 <p>Định luật khúc xạ: $n_1 \sin i = n_2 \sin r$. Tại góc tới hạn, tia khúc xạ đi sát mặt phân cách nên $r = 90^\circ$, $\sin r = 1$:</p>
 $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
-<p>Đúng tại $i = i_{th}$ là trường hợp giới hạn: tia khúc xạ đi sát mặt phân cách và rất mờ.<br>Chỉ khi $i$ vượt $i_{th}$ thì tia khúc xạ mất hẳn, ánh sáng phản xạ toàn bộ.</p>
 </details>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l9-pxtp-03">
@@ -140,8 +139,6 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 </ul>
 <p>Chiết suất càng lớn, góc tới hạn càng nhỏ, ánh sáng càng dễ bị "nhốt" bên trong.</p>
 </details>
-
-<p>⚠ Môi trường thứ hai không phải không khí thì không dùng được $\dfrac{1}{n_1}$: phải thế đúng $n_2$ vào công thức.</p>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl84-q3-conf" value="chac"> Chắc</label>
@@ -168,13 +165,12 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 <li>Mỗi sợi có <strong>lõi</strong> thủy tinh hoặc nhựa trong suốt.</li>
 <li>Lõi được bọc <strong>lớp vỏ</strong> có chiết suất <strong>nhỏ hơn</strong> lõi.</li>
 <li>Ánh sáng trong lõi gặp mặt lõi – vỏ với góc tới lớn hơn $i_{th}$, phản xạ toàn phần hết lần này tới lần khác, nên đi theo sợi dù sợi uốn cong nhẹ.</li>
-<li>Chỗ uốn càng gắt, tia đập vào thành càng gần pháp tuyến nên góc tới càng nhỏ. Tụt dưới $i_{th}$ là ánh sáng lọt ra vỏ.</li>
 <li>Dùng để: truyền Internet, truyền hình, điện thoại; <strong>ống nội soi</strong> trong y học.</li>
 </ul>
 
 <!--FIG3-->
 
-<p>Sợi quang mảnh cỡ sợi tóc, ánh sáng chạy hàng kilômét trong đó mà yếu đi rất ít.</p>
+<p>Đường Internet cáp quang về nhà em là những sợi mảnh cỡ sợi tóc, chở tín hiệu ánh sáng chớp tắt rất nhanh, yếu đi rất ít sau mỗi kilômét.</p>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l9-pxtp-02">
 <p class="tl-label">🔬 Thí nghiệm: dòng nước dẫn ánh sáng</p>
@@ -227,7 +223,7 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
-<tr><th>Ra môi trường chiết quang kém ($n_1 \gt n_2$)</th><th>Vào môi trường chiết quang hơn ($n_1 \lt n_2$)</th></tr>
+<tr><th>Ra môi trường kém ($n_1 \gt n_2$)</th><th>Vào môi trường hơn ($n_1 \lt n_2$)</th></tr>
 </thead>
 <tbody>
 <tr><td>Tia khúc xạ lệch <strong>xa</strong> pháp tuyến ($r \gt i$)</td><td>Tia khúc xạ lệch <strong>gần</strong> pháp tuyến ($r \lt i$)</td></tr>
@@ -237,7 +233,7 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 </table>
 </div>
 
-<p><strong>🔑 Góc tới hạn chỉ có một chiều: chiết quang hơn ra kém</strong></p>
+<p><strong>🔑 Góc tới hạn chỉ có một chiều: đặc ra loãng</strong></p>
 
 <h4>Bẫy 2</h4>
 
@@ -252,20 +248,20 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 <div class="tl-quiz">
 <input type="radio" name="tl84-q6" id="tl84-q6a"><label for="tl84-q6a" class="tl-opt tl-no">A. Không, vì $30^\circ$ nhỏ hơn $42^\circ$</label>
 <input type="radio" name="tl84-q6" id="tl84-q6b"><label for="tl84-q6b" class="tl-opt tl-ok">B. Có, vì góc tới là $60^\circ$</label>
-<input type="radio" name="tl84-q6" id="tl84-q6c"><label for="tl84-q6c" class="tl-opt tl-no">C. Không, vì góc tới phải nhỏ hơn $42^\circ$ mới phản xạ toàn phần</label>
+<input type="radio" name="tl84-q6" id="tl84-q6c"><label for="tl84-q6c" class="tl-opt tl-no">C. Không, vì $30^\circ + 42^\circ \lt 90^\circ$</label>
 <input type="radio" name="tl84-q6" id="tl84-q6d"><label for="tl84-q6d" class="tl-opt tl-no">D. Có, vì thủy tinh luôn phản xạ toàn phần</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Góc tới $i = 90^\circ - 30^\circ = 60^\circ \gt 42^\circ$, và ánh sáng đi từ thủy tinh ra không khí: đủ cả hai điều kiện.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A là lấy $30^\circ$, góc với <em>mặt</em> phân cách, làm góc tới. Vẽ pháp tuyến rồi đổi: $i = 90^\circ - 30^\circ$. Chọn C là nhớ ngược điều kiện 2: cần $i \ge i_{th}$. Thủy tinh cũng không phải lúc nào cũng phản xạ toàn phần (xem Hình 1). Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $30^\circ$ là góc với <em>mặt</em> phân cách, không phải góc tới. Vẽ pháp tuyến rồi đổi: $i = 90^\circ - 30^\circ$. Thủy tinh cũng không phải lúc nào cũng phản xạ toàn phần (xem Hình 1). Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
 
 <p><strong>🔑 Góc tới = góc với pháp tuyến · không phải với mặt</strong></p>
 
+<p>Đề hay cho góc giữa tia sáng và <em>mặt</em> phân cách để bẫy: đổi ra $i = 90^\circ - \text{góc với mặt}$.</p>
+
 <h4>Bẫy 3</h4>
 
-<p>Cả hai đều là phản xạ, nhưng không giống hệt nhau. Ống nhòm và kính tiềm vọng tốt dùng <strong>lăng kính phản xạ toàn phần</strong> thay cho gương phẳng. Đó là khối thủy tinh tam giác vuông cân: tia sáng tới mặt huyền với góc tới $45^\circ \gt 41{,}8^\circ$ nên phản xạ toàn phần, đổi hướng $90^\circ$.</p>
-
-<p>⚠ Lăng kính trong ống nhòm không phóng đại, chỉ bẻ hướng tia sáng như một tấm gương.</p>
+<p>Cả hai đều là phản xạ, nhưng không giống hệt nhau. Ống nhòm và kính tiềm vọng tốt dùng <strong>lăng kính phản xạ toàn phần</strong> thay cho gương phẳng.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -409,7 +405,7 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 <ul>
 <li><strong>Kim cương lấp lánh:</strong> góc tới hạn chỉ $24{,}4^\circ$. Thợ mài cắt mặt sao cho ánh sáng vào rồi phản xạ toàn phần nhiều lần, chỉ thoát ra ở mặt trên.</li>
 <li><strong>Bọt khí dưới nước sáng như bạc:</strong> ánh sáng trong nước gặp mặt bọt khí với góc tới lớn thì phản xạ toàn phần.</li>
-<li><strong>Đường nhựa "ướt" lúc trưa nắng:</strong> lớp không khí nóng sát mặt đường có chiết suất nhỏ hơn lớp trên. Ánh sáng từ trời đi xiên xuống qua các lớp có chiết suất nhỏ dần nên góc tới tăng dần.<br>Tới lớp sát mặt đường, góc tới vượt góc tới hạn: tia bị phản xạ toàn phần và hắt ngược lên mắt, nên em thấy "vũng nước" phản chiếu bầu trời.</li>
+<li><strong>Đường nhựa "ướt" lúc trưa nắng:</strong> lớp không khí nóng sát mặt đường có chiết suất nhỏ hơn lớp trên. Ánh sáng từ trời đi xiên xuống bị bẻ ngược lên mắt. Thực ra đó là khúc xạ qua nhiều lớp không khí, trông giống phản xạ toàn phần, nên em thấy "vũng nước" phản chiếu bầu trời.</li>
 <li><strong>Cáp quang và nội soi:</strong> Internet tốc độ cao; ống nội soi đưa ánh sáng vào dạ dày và đưa hình ảnh ra ngoài.</li>
 </ul>
 </details>
@@ -419,7 +415,7 @@ $$n_1 \sin i_{th} = n_2 \;\Rightarrow\; \sin i_{th} = \frac{n_2}{n_1}$$
 <ul>
 <li><strong>⭐</strong> Một chất lỏng có chiết suất $1{,}25$. Tính góc tới hạn khi ánh sáng đi từ chất lỏng ra không khí. <br><em>Đáp số: $\sin i_{th} = 0{,}8$</em><br><em>$i_{th} \approx 53{,}1^\circ$</em></li>
 <li><strong>⭐⭐</strong> Ánh sáng đi từ một chất lỏng ra không khí có góc tới hạn $45^\circ$. Tìm chiết suất chất lỏng. <br><em>Đáp số: $n = 1/\sin 45^\circ \approx 1{,}41$</em></li>
-<li><strong>⭐⭐⭐</strong> Sợi quang có lõi $n_1 = 1{,}50$, vỏ $n_2 = 1{,}41$. Tia sáng trong lõi hợp với trục sợi góc lớn nhất bao nhiêu để vẫn phản xạ toàn phần ở thành? <br><em>Gợi ý: góc với trục $= 90^\circ - i$.</em><br><em>Góc với trục càng lớn thì $i$ càng nhỏ, mà $i$ nhỏ nhất được phép là $i_{th}$.</em><br><em>$\sin i_{th} = 0{,}94$, $i_{th} \approx 70{,}1^\circ$</em><br><em>Góc với trục tối đa $\approx 19{,}9^\circ$</em></li>
+<li><strong>⭐⭐⭐</strong> Sợi quang có lõi $n_1 = 1{,}50$, vỏ $n_2 = 1{,}41$. Tia sáng trong lõi được hợp với trục sợi góc lớn nhất bao nhiêu để vẫn phản xạ toàn phần ở thành? <br><em>Gợi ý: góc với trục $= 90^\circ - i$.</em><br><em>$\sin i_{th} = 0{,}94$, $i_{th} \approx 70{,}1^\circ$</em><br><em>Góc với trục tối đa $\approx 19{,}9^\circ$</em></li>
 </ul>
 </details>
 

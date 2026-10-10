@@ -77,12 +77,12 @@
 | l10-luc-huong-tam | 77 | da-dang | Bài 32. Lực hướng tâm và gia tốc hướng tâm (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
 | l10-bien-dang-vat-ran | 78 | da-dang | Bài 33. Biến dạng của vật rắn (2 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
 | l10-khoi-luong-rieng-ap-suat | 79 | da-dang | Bài 34. Khối lượng riêng. Áp suất chất lỏng (3 mục DB, chưa chạy batch). — mẻ sửa 9/10/2026, kiểm chéo kiem-code, đăng 10/10 (trần từ nới 5%). Chờ TA rà trên web |
-| l9-khuc-xa-anh-sang | 83 | chua-lam | Bài 5. Khúc xạ ánh sáng (3 mục DB, chưa chạy batch). |
-| l9-phan-xa-toan-phan | 84 | chua-lam | Bài 6. Phản xạ toàn phần (3 mục DB, chưa chạy batch). |
-| l9-lang-kinh-tan-sac | 85 | chua-lam | Bài 7. Lăng kính (1 mục DB, chưa chạy batch). |
-| l9-thau-kinh | 86 | chua-lam | Bài 8. Thấu kính (1 mục DB, chưa chạy batch). |
-| l9-thuc-hanh-tieu-cu | 87 | chua-lam | Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ (1 mục DB, chưa chạy batch). |
-| l9-kinh-lup-bai-tap-thau-kinh | 88 | chua-lam | Bài 10. Kính lúp. Bài tập thấu kính (1 mục DB, chưa chạy batch). |
+| l9-khuc-xa-anh-sang | 83 | da-dang | Bài 5. Khúc xạ ánh sáng: API sửa 12/20 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l9-phan-xa-toan-phan | 84 | da-dang | Bài 6. Phản xạ toàn phần: API sửa 14/20 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l9-lang-kinh-tan-sac | 85 | da-dang | Bài 7. Lăng kính: API sửa 9/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l9-thau-kinh | 86 | da-dang | Bài 8. Thấu kính: API sửa 9/16 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l9-thuc-hanh-tieu-cu | 87 | da-dang | Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ: API sửa 9/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l9-kinh-lup-bai-tap-thau-kinh | 88 | da-dang | Bài 10. Kính lúp. Bài tập thấu kính: API sửa 7/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
 | l11-bai-tap-dao-dong | 23 | da-dang | Bài 4. Bài tập về dao động điều hoà: API sửa 14/21 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
 | l11-bai-tap-nang-luong-dao-dong | 26 | da-dang | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà: API sửa 13/21 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
 | l11-song-ngang-song-doc | 28 | da-dang | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ: API sửa 9/18 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |

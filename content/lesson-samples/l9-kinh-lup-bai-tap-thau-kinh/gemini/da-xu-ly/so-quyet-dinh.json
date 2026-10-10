@@ -1,0 +1,110 @@
+{
+  "bai": "l9-kinh-lup-bai-tap-thau-kinh",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa gạch thành \"để vật sát phía trong F… Vật vượt ra ngoài F thì nhoè\", đồng thời sửa phản hồi đúng Câu 2 thành \"bản đồ vừa vượt ra ngoài tiêu điểm\" cho hai chỗ khớp nhau."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào gạch định nghĩa G một câu: G ứng với lúc ảnh ở rất xa nên khác tỉ số cao ảnh/vật k, rút gọn câu Lưu ý ở bài mẫu 3 và cắt câu \"Gần hơn, mắt nhìn mỏi và nhoè\" để bù độ dài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa gạch cách dùng đầu tiên thành \"mắt đặt sát kính ở phía bên kia để thấy rộng nhất\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần ba trường hợp trong bài hiện chỉ là chỗ giữ __BA_TRUONG_HOP__, không có câu được trích."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ bảng hai cột, thêm vào ô \"Ảnh thật, ngược chiều\" hai dòng: f < d < 2f thì lớn hơn vật, d > 2f thì nhỏ hơn vật; cắt câu so sánh máy ảnh ở phản hồi Câu 3 để bù độ dài."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm gợi ý trong <details> thử thách ⭐⭐⭐: ảnh ảo nên thay d' = −25 cm."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại phần Rút ra: mốc nhoè gần 10 cm khớp với f = 25/2,5 = 10 cm của kính 2,5x."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phân biệt F và F' đã học ở Bài 8 và có trên Hình 2, còn mục II đã vượt trần 480 từ nên không thêm chữ cho ý phụ này."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án D thành \"Kính N, vì có G = 0,4 lớn hơn 0,16 của M\" (lỗi chia ngược f/25) và sửa phản hồi sai thành \"Chọn D là chia ngược f/25\"."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai của câu dự đoán đã nhấn lỗi \"to dần mãi\", không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi chia ngược f/25, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi dịch tiếp ra xa, gạch \"gần tiêu điểm\" gây hiểu lầm đã được sửa theo c1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi nhầm vùng f < d < 2f, bảng Bẫy 1 cũng đã bổ sung theo c5."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nói rõ nét đứt không phải tia yếu."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn ý f nằm ở mẫu số."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi lấy tắt k = d/f."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi bỏ dấu âm của d'."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 5 phương án D đổi thành \"Kính N, vì có G = 0,4 lớn hơn 0,16 của M\" (chia ngược: 10/25 = 0,4 và 4/25 = 0,16), phản hồi sai sửa thành \"Chọn D là chia ngược f/25\".",
+      "Mục II.2 gạch \"Nhìn lâu\": vật để sát phía trong F (ảnh ở rất xa), vật vượt ra ngoài F thì nhoè.",
+      "Câu 2 phản hồi đúng: \"nhoè hẳn\" nghĩa là bản đồ vừa vượt ra ngoài tiêu điểm (trước ghi \"đã ra tới gần tiêu điểm\").",
+      "Mục II.1: thêm câu G ứng với lúc ảnh ở rất xa nên khác tỉ số cao ảnh/vật k.",
+      "Câu Lưu ý sau bài mẫu 3 rút gọn thành \"k = 5 khác 2,5x vì G tính khi ảnh ở rất xa\".",
+      "Thí nghiệm hộp sữa phần Rút ra: mốc nhoè gần 10 cm khớp với f = 25/2,5 = 10 cm.",
+      "Bảng Bẫy 1 ô vật ngoài tiêu cự: thêm f < d < 2f thì ảnh lớn hơn vật, d > 2f thì ảnh nhỏ hơn vật.",
+      "Thử thách ⭐⭐⭐: thêm gợi ý thay d' = −25 cm cho ảnh ảo (đáp số giữ d ≈ 4,2 cm, k = 6).",
+      "Cách dùng kính lúp: mắt đặt sát kính để thấy rộng nhất."
+    ],
+    "so_tu_them": -6,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-kinh-lup-bai-tap-thau-kinh/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}

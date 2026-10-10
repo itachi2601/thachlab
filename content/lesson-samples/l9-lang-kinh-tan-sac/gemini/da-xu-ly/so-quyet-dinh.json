@@ -1,0 +1,110 @@
+{
+  "bai": "l9-lang-kinh-tan-sac",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"chàm\" vào dãy màu ở mở bài cho khớp bảy màu ở mục 3, 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng định nghĩa pháp tuyến ở mục 2 và đổi \"chiết quang hơn/kém\" trong phản hồi Câu 1 thành \"chiết suất lớn hơn/nhỏ hơn\" để khỏi lẫn với góc chiết quang."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại quan sát: đỏ xa đáy, tím gần đáy, đáy dưới thì đỏ trên, lật lăng kính thì thứ tự đảo lại."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thống nhất lại số (sẽ phải đổi bảng, hình và bài toán mẫu), chỉ viết lại chú thích bảng: bỏ từ \"crown\" và nói rõ mỗi phần dùng một loại thuỷ tinh giả định riêng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ý thích diễn đạt: dãy bảy màu đọc liền vốn là câu thuộc lòng quen dùng, đổi tên không thêm nội dung vật lí."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một câu: vị trí màu trong cầu vồng còn do phản xạ bên trong giọt nước nên không nói lên độ lệch qua lăng kính."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lý do hình học trong lời giải: hai góc nhọn có cạnh tương ứng vuông góc thì bằng nhau."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: phần kéo dài của tia trong thuỷ tinh và tia ló cùng một phía pháp tuyến, hợp với pháp tuyến góc i và r, nên góc giữa chúng là r − i."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nói rõ n = sin i/sin r viết cho góc tới trong không khí và ánh sáng truyền ngược vẫn theo đường cũ, nên mới đảo chiều."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào phản hồi sai Câu 3 một câu giải thích vì sao B sai."
+      },
+      {
+        "id": "q-du_doan_mo_bai",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: phản hồi nêu pha lê trong suốt, không có chất màu, và Câu 3 nhắc lại lăng kính chỉ tách màu."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi Câu 1 (vào thì lại gần, ra thì ra xa)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi Câu 2 về việc so từng lần đo."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi Câu 3 về phương án A và D."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong bảng Bẫy 2, thêm nữa quan sát thí nghiệm quang phổ đã được ghi rõ điều kiện đáy dưới (c3)."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 và phản hồi Câu 5."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi Câu 6, lời giải mẫu cũng đã thêm lý do r − i (c8)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2: thêm định nghĩa pháp tuyến (đường vuông góc với mặt bên tại điểm tới).",
+      "Câu 1, phản hồi đúng: \"chiết quang hơn/kém\" đổi thành \"chiết suất lớn hơn/nhỏ hơn\".",
+      "Thí nghiệm quang phổ: đỏ xa đáy, tím gần đáy, chỉ khi đáy dưới mới là đỏ trên, lật lăng kính thì đảo thứ tự.",
+      "Chú thích bảng góc lệch: bỏ \"crown\", ghi mỗi phần dùng một loại thuỷ tinh giả định riêng. Không đổi số liệu (đã kiểm D đỏ ≈ 47,7°, lục ≈ 49,3°, tím ≈ 52,2–52,3°).",
+      "Bẫy 3: thêm câu giải thích vị trí đỏ trong cầu vồng do phản xạ trong giọt nước, không nói lên độ lệch qua lăng kính.",
+      "Lời giải mẫu: thêm lý do i = A (góc có cạnh tương ứng vuông góc).",
+      "Lời giải mẫu: thêm lý do D = r − i.",
+      "Lời giải mẫu: thêm lý do đảo chiều truyền khi kiểm tra n = sin i/sin r. Không đổi kết quả số.",
+      "Câu 3, phản hồi sai: thêm giải thích vì sao phương án B sai."
+    ],
+    "so_tu_them": 48,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-lang-kinh-tan-sac/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "bai": "l9-khuc-xa-anh-sang",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay câu bấm máy bằng cách làm (rút sin r trước, máy chế độ độ D) và ví dụ i = 50°, n = 1,5 → r ≈ 30,7°, không dựa vào số liệu Hình 3a vì không kiểm được hình."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại câu: tia ló là tia ra khỏi khối nhựa, đi theo bán kính nên vuông góc mặt cong (i = 0°) như Câu 1."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details ghi rõ đi ngược từ môi trường 2 sang 1 thì i, r đổi vai nên n₁₂ = sin r/sin i = 1/n₂₁."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào bước 4 lời giải một dòng: 2,25·10⁸ (n = 4/3) và 2,26·10⁸ (n = 1,33) chỉ khác do làm tròn."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài, có thể nằm trong chú thích hình)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào bước 2 lời giải: bấm sin⁻¹ 0,6 ≈ 36,9° nên r ≈ 37°."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng nay định nghĩa D là góc giữa tia khúc xạ và phương tia tới, D = |i − r|, trường hợp vào nước thì D = i − r; không thêm hình."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi chỉ dẫn Câu 7 thành xem lại mục Thử sức đổi chiều và Câu 4 (cùng chiều đi ra môi trường kém chiết quang)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ở mục 2 bổ sung: v cùng đơn vị m/s với c nên n không có đơn vị."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài câu 6 thêm cơ chế (tia lệch xa pháp tuyến, kéo dài ngược gặp nhau cao hơn vật), mỗi ý một dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đưa gạch đầu dòng định nghĩa ảnh thật/ảnh ảo lên trước gạch \"Dựng ảnh\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 6 thêm câu: nhìn xiên thì ảnh còn lệch về phía người nhìn, nên cá thật xa bờ hơn chứ không gần hơn (đúng theo dựng tia lân cận)."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi sai (phản chiếu cho ảnh trên mặt nước), không cần thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Định nghĩa và phản hồi đã nhấn điều kiện xiên góc, không cần thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu n > 1 và phản hồi đã chỉ lỗi chia ngược, không cần thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: chia sin cho n, không chia góc cho n."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn n₁ ở phía tia tới và có Bẫy 1 riêng, không cần thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn \"hợp với mặt nước chưa phải góc tới\", không cần thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 và tiêu đề Bẫy 3 đã nhấn ảnh nằm cao hơn vật, không cần thêm."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 và Bẫy 1 đã nhấn ra môi trường kém chiết quang thì r > i, không cần thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: thêm ví dụ tính mẫu i = 50°, thuỷ tinh n = 1,5 → sin r ≈ 0,511, r ≈ 30,7°; nhắc rút sin r trước rồi bấm sin⁻¹ ở chế độ độ.",
+      "Mục 3: thêm dòng ⚠ trước Câu 3 (chia sin, không chia góc cho n).",
+      "Mục 3 (details thuận nghịch): n₁₂ = sin r/sin i = 1/n₂₁, ghi rõ chiều đi từ môi trường 2 sang 1.",
+      "Thí nghiệm khối bán trụ: giải thích tia ló đi theo bán kính nên tới mặt cong với i = 0°, không gãy.",
+      "Mục 2: c và v cùng đơn vị m/s nên n không có đơn vị.",
+      "Bài toán mẫu: bảng dữ liệu định nghĩa góc lệch D = |i − r| (vào nước D = i − r); lời giải thêm sin⁻¹ 0,6 ≈ 36,9° ≈ 37° và chú thích 2,25·10⁸ (n = 4/3) so với 2,26·10⁸ (n = 1,33) do làm tròn.",
+      "Câu 6 phản hồi sai: nhìn xiên thì ảnh còn lệch ngang về phía người nhìn, cá thật xa bờ hơn.",
+      "Trả bài câu 6: thêm cơ chế tia lệch xa pháp tuyến, kéo dài ngược gặp nhau cao hơn vật.",
+      "Mục 4: đảo thứ tự, định nghĩa ảnh thật/ảnh ảo đứng trước cách dựng ảnh.",
+      "Câu 7 phản hồi sai: chỉ dẫn xem lại đổi thành mục Thử sức đổi chiều và Câu 4."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-khuc-xa-anh-sang/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}

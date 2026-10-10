@@ -1,0 +1,109 @@
+{
+  "bai": "l9-thau-kinh",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 đổi \"d < f\" thành \"vật nằm giữa O và F\" và chú thích ngắn ảnh ảo là ảnh chỉ nhìn qua kính mới thấy, xem mục 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 5 nói rõ f lấy độ dài OF rồi gắn dấu, kèm ví dụ kính phân kì tiêu cự 20 cm thì thay f = −20 cm."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"d' có dấu, |d'| là khoảng cách ảnh tới thấu kính\" và thêm \"ảnh ảo, cùng phía với vật\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước quy đồng 1/d + 1/d' = (d + d')/(dd') ngay trong dòng Rút ra của thí nghiệm đo."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Kết luận giới hạn lại thành \"mọi vị trí vật đã đo\", thêm câu nói ảnh ảo vẫn dùng được công thức nếu giữ dấu âm của d'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details đã gọi tên tam giác OIF' và A'B'F' (OI = h), thêm bước nhân chéo d'f = dd' − df trước khi chia cho dd'f."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng f < d < 2f ở mục II.4 thêm \"cách kính xa hơn 2f\" để đối chiếu được với bước kiểm tra bài mẫu."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải mẫu và Bước 2 phần điền đã viết k = |d'|/d cho thống nhất với mục 5."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục II.4 thêm \"với kính phân kì, F' ở cùng phía với vật\", phản hồi Câu 4 đổi \"phía trước kính\" thành \"cùng phía với nến\" (Hình 3 là ảnh nên không sửa được trong HTML)."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"giữa dày, rìa mỏng là thấu kính hội tụ\" ở phản hồi và định nghĩa \"rìa mỏng hơn giữa\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích ở cả ba vị trí ngoài F hai tia vẫn cắt nhau, không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đúng lỗi cộng 1/8 + 1/12, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 1 và phản hồi đã nhấn ảnh ảo không hứng được trên màn, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 2 và phản hồi đã nhấn đúng lỗi \"mỗi nửa kính chở nửa hình\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 3, phản hồi và dòng f ở mục 5 đã nhấn việc thay f âm, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ lỗi lật tỉ số d/d' và công thức k = |d'|/d có sẵn trong bài, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.5, dòng f: phát biểu lại là f lấy độ dài OF rồi gắn dấu (dương với hội tụ, âm với phân kì), thêm ví dụ phân kì tiêu cự 20 cm thì thay f = −20 cm.",
+      "Mục II.5, dòng d': d' có dấu, |d'| là khoảng cách ảnh tới thấu kính, d' < 0 là ảnh ảo cùng phía với vật.",
+      "Mục II.5, k: bỏ phần lặp lại công thức k ở dòng h, h', giữ định nghĩa số phóng đại.",
+      "Thí nghiệm đo (tn-l9-thaukinh-03), dòng Rút ra: thêm bước quy đồng ra f = dd'/(d + d'), kết luận giới hạn ở các vị trí vật đã đo (ảnh thật), ảnh ảo vẫn dùng công thức với d' âm.",
+      "Details \"công thức từ đâu ra\": gọi tên tam giác OIF' và A'B'F' (OI = h), thêm bước nhân chéo d'f = dd' − df.",
+      "Mục II.4: dòng f < d < 2f thêm \"cách kính xa hơn 2f\".",
+      "Mục II.4, kính phân kì: thêm F' nằm cùng phía với vật.",
+      "Phản hồi sai Câu 4: \"ảnh ở phía trước kính\" đổi thành \"ảnh nằm cùng phía với nến\".",
+      "Phản hồi đúng Câu 2: \"d < f\" đổi thành \"vật nằm giữa O và F\", chú thích ảnh ảo.",
+      "Bài toán mẫu bước 3 và phần Điền bước, Bước 2: k = d'/d đổi thành k = |d'|/d (số liệu không đổi: k = 1,5 và k = 4).",
+      "Cắt câu đèn pin khỏi mục II.5 và chuyển thành mục mới trong details \"thấu kính quanh em\".",
+      "Cắt câu \"Khớp mục II.4…\" ở phản hồi đúng Câu 3.",
+      "Đáp án Trả bài 1–6 và details \"Xem bước 1–2\" tách mỗi ý một dòng bằng <br>, nội dung không đổi."
+    ],
+    "so_tu_them": 27,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-thau-kinh/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}

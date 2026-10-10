@@ -28,8 +28,8 @@
 <input type="radio" name="tl87-q1" id="tl87-q1b"><label for="tl87-q1b" class="tl-opt tl-ok">B. Xấp xỉ tiêu cự của kính</label>
 <input type="radio" name="tl87-q1" id="tl87-q1c"><label for="tl87-q1c" class="tl-opt tl-no">C. Gấp đôi tiêu cự của kính</label>
 <input type="radio" name="tl87-q1" id="tl87-q1d"><label for="tl87-q1d" class="tl-opt tl-no">D. Cỡ của tờ giấy hứng ảnh</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Vật ở rất xa thì chùm sáng tới kính coi như song song, hội tụ tại tiêu điểm ảnh $F'.$ Ảnh nằm cách kính xấp xỉ một tiêu cự. Mục II.2 biến điều này thành một phép đo.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: cỡ vật chỉ quyết định ảnh to hay nhỏ, không quyết định ảnh nằm ở đâu. C: ảnh chỉ cách kính $2f$ khi vật cũng cách kính $2f$ (mục II.4), không phải khi vật ở xa. D: tờ giấy chỉ là chỗ hứng ảnh, đổi giấy to hay nhỏ thì ảnh vẫn nằm đúng chỗ cũ.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Vật ở rất xa thì chùm sáng tới kính coi như song song, hội tụ tại tiêu điểm ảnh $F'.$ Ảnh nằm cách kính xấp xỉ một tiêu cự. Mục II.2 (Cách 1) biến điều này thành một phép đo.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: cỡ vật chỉ quyết định ảnh to hay nhỏ, không quyết định ảnh nằm ở đâu. C: ảnh chỉ cách kính $2f$ khi vật cũng cách kính $2f$ (mục II.4, Cách 3), không phải khi vật ở xa. D: tờ giấy chỉ là chỗ hứng ảnh, đổi giấy to hay nhỏ thì ảnh vẫn nằm đúng chỗ cũ.</p></div>
 </div>
 </div>
 
@@ -76,7 +76,7 @@
 <ul>
 <li>Vật ở xa: chùm sáng tới thấu kính coi như <strong>song song</strong>.</li>
 <li>Chùm song song hội tụ tại $F',$ nên ảnh cách $O$ khoảng $f.$</li>
-<li>Vật cách $20\ \text{m}$ trở lên (cây, toà nhà bên kia sân): với $f = 10\ \text{cm},$ ảnh chỉ nằm xa hơn $F'$ khoảng $0{,}5\ \text{mm}.$</li>
+<li>Vật cách $20\ \text{m}$ trở lên: với $f = 10\ \text{cm},$ ảnh chỉ nằm xa hơn $F'$ khoảng $0{,}5\ \text{mm}.$</li>
 </ul>
 
 <!--FIG2-->
@@ -125,7 +125,7 @@
 <p class="tl-label">🔬 Thí nghiệm: đổi vị trí vật 5 lần</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt vật tại $d = 15{,}0;\ 20{,}0;\ 25{,}0;\ 30{,}0;\ 40{,}0\ \text{cm}.$ Mỗi lần dịch màn cho ảnh nét nhất, đọc $d'$ trên thước chia tới $1\ \text{mm}.$</li>
-<li><strong>Quan sát:</strong> $d$ càng lớn thì $d'$ càng nhỏ; bảng dưới là số liệu minh hoạ tính từ mô hình rồi thêm sai lệch nhỏ khi đọc.</li>
+<li><strong>Quan sát:</strong> $d$ càng lớn thì $d'$ càng nhỏ; bảng dưới là số liệu minh hoạ.</li>
 <li><strong>Rút ra:</strong> mỗi lần cho một giá trị $f$ hơi khác nhau, nên cần lấy trung bình và tính sai số.</li>
 </ol>
 </div>
@@ -149,7 +149,7 @@ __BANG_TN2__
 
 <ul>
 <li>Trung bình: $\bar f = \dfrac{f_1 + f_2 + \dots + f_5}{5} = 9{,}98\ \text{cm}.$</li>
-<li>Làm tròn $\bar f = 10{,}0\ \text{cm}$ (cùng độ chia $0{,}1\ \text{cm}$) rồi mới tính độ lệch.</li>
+<li>Làm tròn $\bar f = 10{,}0\ \text{cm}$ (các $f$ trong bảng có một chữ số thập phân) rồi mới tính độ lệch.</li>
 <li>Lệch từng lần: $\Delta f_i = |f_i - \bar f|,$ được $0;\ 0{,}1;\ 0{,}1;\ 0{,}2;\ 0{,}1\ \text{cm}.$</li>
 <li>Sai số lấy bằng <strong>độ lệch lớn nhất</strong>: $\Delta f = 0{,}2\ \text{cm}.$</li>
 <li>Kết quả: $f = \bar f \pm \Delta f = 10{,}0 \pm 0{,}2\ \text{cm}.$ Khoảng từ $9{,}8$ đến $10{,}2$ khớp cách 1 ($10{,}1$).</li>
@@ -163,7 +163,7 @@ __BANG_TN2__
 <li>Khi $d = d'{:}$ $\dfrac{1}{f} = \dfrac{2}{d}$ nên $d = d' = 2f$ và $\dfrac{h'}{h} = \dfrac{d'}{d} = 1.$</li>
 <li>Ảnh thật, ngược chiều, <strong>cao đúng bằng vật</strong>.</li>
 <li>Khoảng cách vật – màn $L = d + d' = 4f$ nên $$f = \dfrac{L}{4}$$</li>
-<li>Dấu hiệu nhận biết: ảnh bằng vật dễ thấy hơn "ảnh nét nhất".</li>
+<li>Chỉnh màn cho ảnh nét trước, rồi mới so chiều cao: ảnh bằng vật dễ nhận ra hơn "ảnh nét nhất".</li>
 </ul>
 
 <!--FIG3-->
@@ -171,9 +171,9 @@ __BANG_TN2__
 <div class="tl-box tl-box--exp" data-exp="tn-l9-tieucu-03">
 <p class="tl-label">🔬 Thí nghiệm: tìm vị trí ảnh bằng vật</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> dịch thấu kính và màn cho tới khi ảnh nét và cao đúng $3{,}0\ \text{cm}$ như mũi tên. Đo khoảng cách $L$ từ vật tới màn.</li>
+<li><strong>Làm:</strong> đặt thấu kính cách vật khoảng $2f$ (lấy $f$ từ cách 1), dịch màn cho ảnh nét, rồi chỉnh thấu kính từng chút và hứng nét lại tới khi ảnh cao đúng $3{,}0\ \text{cm}$ như mũi tên. Đo khoảng cách $L$ từ vật tới màn.</li>
 <li><strong>Quan sát:</strong> $L = 40{,}4\ \text{cm}$ (số liệu minh hoạ).</li>
-<li><strong>Rút ra:</strong> $f = \dfrac{40{,}4}{4} = 10{,}1\ \text{cm},$ khớp hai cách trước. Sai số của $L$ chia cho $4$ nên cách này cho $f$ khá chính xác.</li>
+<li><strong>Rút ra:</strong> $f = \dfrac{40{,}4}{4} = 10{,}1\ \text{cm},$ khớp hai cách trước. Sai số cũng chia $4{:}$ $\Delta f = \dfrac{\Delta L}{4},$ ví dụ $\Delta L = 0{,}2\ \text{cm}$ cho $\Delta f = 0{,}05\ \text{cm},$ nên cách này khá chính xác.</li>
 </ol>
 </div>
 
@@ -185,7 +185,7 @@ __BANG_TN2__
 <input type="radio" name="tl87-q4" id="tl87-q4b"><label for="tl87-q4b" class="tl-opt tl-no">B. $f = 96{,}0\ \text{cm}$</label>
 <input type="radio" name="tl87-q4" id="tl87-q4c"><label for="tl87-q4c" class="tl-opt tl-ok">C. $f = 12{,}0\ \text{cm}$</label>
 <input type="radio" name="tl87-q4" id="tl87-q4d"><label for="tl87-q4d" class="tl-opt tl-no">D. $f = 48{,}0\ \text{cm}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $f = \dfrac{L}{4} = \dfrac{48{,}0}{4} = 12{,}0\ \text{cm};$ khi đó $d = d' = 24{,}0\ \text{cm}.$ Em giải thích được cho bạn ngồi cạnh vì sao chia $4$ chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $f = \dfrac{L}{4} = \dfrac{48{,}0}{4} = 12{,}0\ \text{cm};$ khi đó $d = d' = 24{,}0\ \text{cm}.$</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là $d$ (hay $d'$), bằng $2f$ chứ không phải $f.$ B là $2L$ và D là $L{:}$ cả hai quên rằng $L$ gồm hai đoạn $2f$ cộng lại. Nhớ $L = 4f.$</p></div>
 </div>
 </div>
@@ -196,7 +196,7 @@ __BANG_TN2__
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Thật ra $d = d' = 20{,}0\ \text{cm}$ (tới tâm). Giá đỡ dày $2{,}0\ \text{cm}.$ Nhóm đo từ vật tới mặt trước giá và từ mặt sau giá tới màn, được $d = d' = 19{,}0\ \text{cm}.$ Nhóm tính ra:</p>
+<p><strong>Câu 4.</strong> Thật ra $d = d' = 20{,}0\ \text{cm}$ (tới tâm). Giá đỡ dày $2{,}0\ \text{cm},$ thấu kính nằm giữa nên tâm $O$ cách mỗi mặt giá $1{,}0\ \text{cm}.$ Nhóm đo từ vật tới mặt trước giá và từ mặt sau giá tới màn, được $d = d' = 19{,}0\ \text{cm}.$ Nhóm tính ra:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl87-q5" id="tl87-q5a"><label for="tl87-q5a" class="tl-opt tl-ok">A. $f = 9{,}5\ \text{cm},$ nhỏ hơn thật</label>
 <input type="radio" name="tl87-q5" id="tl87-q5b"><label for="tl87-q5b" class="tl-opt tl-no">B. $f = 10{,}0\ \text{cm},$ đúng như thật</label>
@@ -214,7 +214,7 @@ __BANG_TN2__
 </thead>
 <tbody>
 <tr><td>Tới tâm $O$</td><td>Đúng khoảng cách trong công thức</td></tr>
-<tr><td>Tới mặt giá đỡ</td><td>Cả $d$ và $d'$ cùng hụt một đoạn</td></tr>
+<tr><td>Tới mặt giá gần vật và gần màn</td><td>Cả $d$ và $d'$ cùng hụt một đoạn</td></tr>
 </tbody>
 </table>
 </div>
@@ -234,7 +234,7 @@ __BANG_TN2__
 <input type="radio" name="tl87-q6" id="tl87-q6b"><label for="tl87-q6b" class="tl-opt tl-no">B. $20{,}6\ \text{cm},$ chỗ ảnh vừa bắt đầu nhoè</label>
 <input type="radio" name="tl87-q6" id="tl87-q6c"><label for="tl87-q6c" class="tl-opt tl-no">C. $40{,}0\ \text{cm},$ tổng của hai đầu mút</label>
 <input type="radio" name="tl87-q6" id="tl87-q6d"><label for="tl87-q6d" class="tl-opt tl-ok">D. $20{,}0\ \text{cm},$ trung điểm khoảng nét</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{19{,}4 + 20{,}6}{2} = 20{,}0\ \text{cm}.$ Độ rộng khoảng nét ($1{,}2\ \text{cm}$) cũng là gợi ý về sai số của $d'.$</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{19{,}4 + 20{,}6}{2} = 20{,}0\ \text{cm}.$ Sai số của $d'$ cỡ nửa độ rộng khoảng nét ($1{,}2\ \text{cm}$), tức khoảng $0{,}6\ \text{cm}.$</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B lấy một đầu mút nên lệch một phía $0{,}6\ \text{cm}.$ C cộng hai đầu thay vì lấy trung bình. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: ảnh nét là cả một đoạn.</p></div>
 </div>
 </div>
@@ -260,7 +260,7 @@ __BANG_TN2__
 <p><strong>Câu 6.</strong> Nhóm Lan đo một lần được $f = 9{,}5\ \text{cm}.$ Nhóm Minh đo năm lần được $f = 10{,}0 \pm 0{,}2\ \text{cm}.$ Kết luận nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl87-q7" id="tl87-q7a"><label for="tl87-q7a" class="tl-opt tl-no">A. Hai nhóm như nhau, vì cùng đo một thấu kính</label>
-<input type="radio" name="tl87-q7" id="tl87-q7b"><label for="tl87-q7b" class="tl-opt tl-ok">B. Nhóm Minh đáng tin hơn, vì có cả sai số</label>
+<input type="radio" name="tl87-q7" id="tl87-q7b"><label for="tl87-q7b" class="tl-opt tl-ok">B. Nhóm Minh đáng tin hơn, vì đo nhiều lần và biết mức dao động</label>
 <input type="radio" name="tl87-q7" id="tl87-q7c"><label for="tl87-q7c" class="tl-opt tl-no">C. Nhóm Lan đáng tin hơn, vì đo ít nên ít sai</label>
 <input type="radio" name="tl87-q7" id="tl87-q7d"><label for="tl87-q7d" class="tl-opt tl-no">D. Nhóm Minh sai, vì sai số $0{,}2\ \text{cm}$ quá lớn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khoảng từ $9{,}8$ đến $10{,}2$ không chứa $9{,}5{:}$ kết quả một lần của nhóm Lan nhiều khả năng dính một lỗi như Bẫy 1 hay Bẫy 2, mà nhóm không có cách nào biết.</p></div>

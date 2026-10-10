@@ -1,0 +1,127 @@
+{
+  "bai": "l9-phan-xa-toan-phan",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-10",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ i ≥ i_th theo SGK, thêm vào hộp «công thức từ đâu ra» câu nói rõ i = i_th là trường hợp giới hạn, vượt i_th mới mất hẳn tia khúc xạ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 🔑 «đặc ra loãng» thành «chiết quang hơn ra kém» cho thống nhất thuật ngữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Điều kiện 1 ghi kèm tên gọi «(chiết quang hơn)» và «(chiết quang kém)» ngay sau n₁, n₂."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2 nhắc thế đúng n₂ khi môi trường thứ hai không phải không khí, không làm mẫu đầy đủ để giữ hạn mức và tránh lộ đáp án."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một mục danh sách: uốn càng gắt thì tia đập vào thành càng gần pháp tuyến, góc tới nhỏ đi, tụt dưới i_th là lọt ra vỏ, bù bằng cách rút gọn đoạn Internet."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm được ảnh, thay bằng một câu mô tả lăng kính vuông cân có góc tới 45° > 41,8° tại mặt huyền, kèm dòng ⚠ trước Câu 6."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành «Gần 42° (đúng là 41,8°)» cho khớp bảng số liệu."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề bảng ghi đủ «chiết quang kém» và «chiết quang hơn»."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay C bằng lỗi nhớ ngược điều kiện 2 («góc tới phải nhỏ hơn 42°»), phản hồi sai giải thích riêng A, C, D."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa giải thích ảo ảnh: khúc xạ qua các lớp làm góc tới tăng dần, tới lớp sát mặt đường thì phản xạ toàn phần."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ chữ «được», thêm dòng gợi ý góc với trục lớn nhất ứng với i nhỏ nhất là i_th, số liệu giữ nguyên."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn (phản hồi nói góc khúc xạ chạm 90° trước)."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn tia phản xạ mờ trong phần quan sát thí nghiệm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dùng chung dòng ⚠ trước Câu 2 (với c4) nhắc không dùng 1/n₁ khi n₂ ≠ 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm dòng ⚠ riêng, dùng câu bổ sung ở c5 (uốn gắt làm ánh sáng lọt ra vỏ chứ không bật ngược)."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bẫy chiều truyền ngay trước Câu 4 và trong bảng so sánh."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 góc tới là góc với pháp tuyến."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: lăng kính trong ống nhòm không phóng đại, chỉ bẻ hướng tia như gương."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng phép thử sin r > 1 ở lời giải mẫu, phản hồi B cũng đã nói rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm bán trụ (Quan sát): «Khoảng 42°» đổi thành «Gần 42° (đúng là 41,8°)».",
+      "Điều kiện 1: thêm tên gọi chiết quang hơn/kém cho n₁, n₂.",
+      "Hộp «công thức từ đâu ra»: thêm câu về trường hợp giới hạn i = i_th (tia khúc xạ sát mặt, rất mờ).",
+      "Dòng ⚠ mới trước Câu 2: n₂ ≠ 1 thì không dùng 1/n₁.",
+      "Cáp quang: thêm mục uốn gắt → góc tới giảm dưới i_th → ánh sáng lọt ra vỏ; đoạn Internet rút gọn (bỏ ý «chớp tắt rất nhanh»).",
+      "Bẫy 1: tiêu đề bảng ghi «chiết quang kém/hơn», 🔑 đổi «đặc ra loãng» thành «chiết quang hơn ra kém».",
+      "Câu 5: phương án C đổi thành «góc tới phải nhỏ hơn 42° mới phản xạ toàn phần», phản hồi sai cập nhật cho A, C, D.",
+      "Bẫy 2: cắt câu lặp ý «Đề hay cho góc giữa tia sáng và mặt…» sau dòng 🔑 để bù độ dài.",
+      "Bẫy 3: thêm mô tả lăng kính vuông cân (góc tới 45° > 41,8° tại mặt huyền, đổi hướng 90°) và dòng ⚠ lăng kính không phóng đại.",
+      "Ảo ảnh đường nhựa: giải thích lại thành khúc xạ qua các lớp rồi phản xạ toàn phần ở lớp sát mặt đường.",
+      "Thử thách ⭐⭐⭐: thêm bước «góc với trục lớn nhất ↔ i = i_th», số liệu 70,1° và 19,9° giữ nguyên."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l9-phan-xa-toan-phan/gemini/da-xu-ly/theory.src.202610100808.html"
+  }
+}
