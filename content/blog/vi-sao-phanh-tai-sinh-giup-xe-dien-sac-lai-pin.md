@@ -44,7 +44,7 @@ Chọn một đáp án trong đầu rồi đọc tiếp.
 
 Động cơ điện trên xe có nam châm và cuộn dây. Khi pin cấp điện, từ trường đẩy rôto quay, rôto kéo bánh xe. Cùng một cái máy ấy quay ngược việc: bánh xe còn trớn kéo rôto quay trong từ trường. Từ thông qua cuộn dây đổi, nên trong dây xuất hiện suất điện động. Đó là **hiện tượng cảm ứng điện từ**, em gặp ở KHTN 9 và học lại ở lớp 12.
 
-Dòng điện sinh ra chạy về pin, nên pin nhận thêm năng lượng. Chiều của dòng không tuỳ ý. Dòng cảm ứng sinh ra từ trường chống lại chính sự quay đang tạo ra nó. Lớp 12 gọi đó là định luật Lenz. Trên bánh xe, tác dụng ấy là một mômen lực ngược chiều quay: xe bị hãm. Hãm và nạp pin là một việc, không phải hai việc riêng.
+Dòng điện sinh ra chạy về pin, nên pin nhận thêm năng lượng. Chiều của dòng không tuỳ ý. Dòng cảm ứng sinh ra từ trường chống lại chính sự quay đang tạo ra nó. Lớp 12 gọi đó là định luật Lenz. Trên bánh xe, tác dụng ấy là một mômen lực ngược chiều quay: xe bị hãm. Hãm và nạp pin là một việc, không phải hai việc riêng. Nói cách khác, xe không thể vừa sạc được điện mà bánh xe vẫn lăn tự do như cũ. Dòng điện nạp vào pin lấy đi động năng của xe, và lực từ cản trở của dòng điện đó chính là thứ ghì bánh xe lại.
 
 ![Bánh xe kéo máy phát, dòng điện về pin, mômen hãm ngược chiều quay](/images/blog/vi-sao-phanh-tai-sinh-so-do.svg)
 
@@ -75,6 +75,12 @@ Một bóng đèn 40 W sáng một giờ cũng tốn chừng ấy. So với mộ
 Trong phố, xe tăng tốc rồi phanh rất nhiều lần. Năng lượng của cả chuyến chủ yếu đi vào những lần tăng tốc ấy. Mô phỏng theo quãng đường đô thị thật cho thấy điện thu từ phanh có thể khoảng 20% năng lượng cả chuyến. Chu trình hỗn hợp thành phố và cao tốc, Phòng thí nghiệm Oak Ridge ước lượng phần bù nhờ phanh tái sinh khoảng 5–13%, vì trên cao tốc ít lúc phải phanh.
 
 ## Tự thử ở nhà
+
+![Thí nghiệm mô-tơ đồ chơi và đèn LED: quay trục bằng tay thì đèn sáng và cảm nhận lực cản](/images/blog/vi-sao-phanh-tai-sinh-thi-nghiem.svg)
+
+*Quay trục bằng tay biến mô-tơ thành máy phát điện nhỏ.*
+
+*Dòng điện sinh ra thắp sáng đèn LED, đồng thời định luật Lenz tạo lực từ ghì ngón tay lại.*
 
 1. Lấy một mô-tơ điện nhỏ trong đồ chơi, loại chạy pin, không cắm điện lưới.
 2. Nối hai cực của mô-tơ với một đèn LED. LED chỉ sáng theo một chiều, nên nếu chưa sáng thì đổi hai dây.

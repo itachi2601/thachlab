@@ -41,7 +41,7 @@ Chọn một đáp án trong đầu rồi đọc tiếp.
 
 Đáp án đúng là B.
 
-Mỗi phần trên người đang chuyển động tròn quanh một trục thẳng đứng, trục ấy đi qua người trượt băng. Khối lượng nằm xa trục thì khó làm cho nó quay nhanh hơn khối lượng nằm sát trục. Đại lượng đo "độ khó quay" ấy gọi là **mômen quán tính**. Với một cục nhỏ khối lượng m cách trục một đoạn r, phần đóng góp của nó tỉ lệ với m·r². Khoảng cách nằm ở luỹ thừa hai, nên kéo tay từ xa vào gần làm mômen quán tính giảm rõ.
+Mỗi phần trên người đang chuyển động tròn quanh một trục thẳng đứng, trục ấy đi qua người trượt băng. Khối lượng nằm xa trục thì khó làm cho nó quay nhanh hơn khối lượng nằm sát trục. Đại lượng đo "độ khó quay" ấy gọi là **mômen quán tính**. Để dễ hình dung: một cây gậy dài cầm ở giữa xoay qua lại rất nhẹ tay, nhưng cầm ở một đầu thì cổ tay phải gồng rất mỏi. Khoảng cách từ khối lượng tới trục quay càng xa thì vật càng "lì", càng khó thay đổi tốc độ quay. Với một cục nhỏ khối lượng m cách trục một đoạn r, phần đóng góp của nó tỉ lệ với m·r². Khoảng cách nằm ở luỹ thừa hai, nên kéo tay từ xa vào gần làm mômen quán tính giảm rõ.
 
 Đại lượng gần như không đổi trong cú xoay ngắn là **mômen động lượng**. Với cả người, nó bằng mômen quán tính nhân tốc độ góc: L = I·ω. Trên băng, ma sát nhỏ và lại tác dụng sát trục quay, nên mômen lực ngoài gần như bằng không. Lúc đó L gần như không đổi: I giảm thì ω tăng.
 
@@ -76,6 +76,12 @@ Vì I₁·ω₁ = I₂·ω₂ nên ω₂/ω₁ = 2,80/1,11 ≈ 2,5. Quay 1 vòng
 Động năng quay tăng từ khoảng 55 J lên khoảng 140 J. Phần thêm chừng 80 J, cỡ nhấc một can nước 4 kg lên cao 2 m. Đây là mô hình tròn, không phải số đo một vận động viên có tên. Người thật còn co một chân, nên tỉ số có thể khác, nhưng chiều thì rõ.
 
 ## Tự thử ở nhà
+
+![Thí nghiệm ghế xoay với hai chai nước: duỗi tay quay chậm, thu tay vào ngực quay nhanh](/images/blog/vi-sao-van-dong-vien-thu-tay-thi-nghiem.svg)
+
+*Bên trái: dang thẳng hai tay cầm chai nước, mômen quán tính lớn nên ghế quay chậm.*
+
+*Bên phải: co hai tay áp sát ngực, mômen quán tính giảm nên ghế quay nhanh hơn hẳn.*
 
 1. Chọn ghế xoay chắc, đặt trên sàn phẳng. Ngồi xuống, chân nhấc khỏi sàn để khỏi vướng.
 2. Cầm hai chai nước 0,5 lít, đậy chặt, giơ thẳng sang hai bên.

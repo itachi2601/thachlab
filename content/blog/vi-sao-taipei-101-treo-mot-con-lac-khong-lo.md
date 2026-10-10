@@ -43,6 +43,8 @@ Chọn một đáp án trong đầu rồi đọc tiếp.
 
 Gió đều và mạnh đẩy một toà nhà cao. Nhà cao thì mềm hơn em tưởng: đỉnh có thể nhích sang một bên rồi nhích về, như một con lắc rất chậm. Nếu nhịp gió trùng nhịp riêng của nhà, cú lắc lớn dần. Lớp 11 gọi đó là **cộng hưởng**. Người đứng tầng cao thấy chóng, dù nhà không đổ.
 
+Nhiều người nghĩ quả cầu hoạt động như con lật đật: cứ kéo nhà về giữa nhờ trọng lượng. Nhưng nếu hàn chết quả cầu vào sàn, nó chỉ làm toà nhà nặng thêm chứ không giúp dập tắt cú lắc. Điểm cốt lõi là quả cầu phải chuyển động lệch nhịp với nhà.
+
 Quả cầu không được bắt chết vào sàn. Nó treo bằng cáp, nên khi nhà bị đẩy sang phải, quả cầu vì quán tính chưa kịp đi theo. Trong khoảnh khắc ấy quả cầu còn lệch về phía trái so với phần nhà vừa chạy đi. Cáp và các piston nối quả cầu với nhà truyền một lực kéo ngược chiều cú lắc.
 
 Phía dưới quả cầu có tám piston dầu lớn. Dầu bị ép thì cản chuyển động và nóng lên. Cơ năng của cú lắc một phần thành nhiệt trong dầu, không chạy hết trở lại kết cấu nhà. Trang của toà nhà và hãng chế tạo bộ giảm chấn đều nói chuyển động của nhà vì gió có thể giảm khoảng 40%. Đó là mức "có thể tới", không phải mọi cơn gió đều đúng một con số.
@@ -54,6 +56,12 @@ Phía dưới quả cầu có tám piston dầu lớn. Dầu bị ép thì cản
 *Quả cầu vàng chưa kịp sang theo, nên còn lệch trái.*
 
 *Hai nét đỏ là piston dầu. Dầu nuốt bớt cơ năng.*
+
+![Đồ thị dao động của đỉnh tháp: Trường hợp có quả cầu giảm chấn TMD so với không có](/images/blog/vi-sao-taipei-101-do-thi.svg)
+
+*Đường nét đứt màu đỏ: không có con lắc, toà nhà lắc mạnh và dao động kéo dài rất lâu mới tắt.*
+
+*Đường nét liền màu xanh: có con lắc giảm chấn, biên độ lắc giảm khoảng 40% và dập tắt nhanh chóng.*
 
 Bộ này gọi là con lắc giảm chấn, chỉnh đúng tần số của nhà. "Chỉnh đúng" nghĩa là chiều dài treo và độ cản của dầu được chọn để quả cầu đáp lại đúng nhịp nhà hay bị gió lay, không phải một nhịp ngẫu nhiên.
 
