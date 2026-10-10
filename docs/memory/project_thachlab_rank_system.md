@@ -90,3 +90,7 @@ AGENTS.md cấm agent tự chạy, để lại cho thầy.
 (rank_recompute_season 4 và 5): 63 danh hiệu mới cấp cho 50 HS theo logic Dễ/TB/Khó. CODE đi kèm vẫn là WIP chưa commit
 trong working tree (phiên khác) → web thật lệch RPC: TitleCollection không hiện tiến độ danh hiệu chuyên môn (không crash).
 Cùng lúc chạy `20260928130000_rank_title_code_in_class_rpcs.sql` (xem [[project_thachlab_title_showcase]]).
+
+## Rút kinh nghiệm 10/10/2026 — thưởng tuần/tiến bộ phải có sàn điểm tuyệt đối
+- Em yếu làm 4,5 điểm mà nhận ~90 RP: `weekly_goal_rp=90` trong config mùa 4 (mặc định 30) + mục tiêu RIÊNG kéo ngưỡng xuống sàn 4 + tiến bộ tuần so mốc rất thấp. Cộng chồng một ngày tới 150–200 RP.
+- Quy tắc: mọi thưởng "so với chính em" (mục tiêu riêng, tiến bộ) phải kèm SÀN TUYỆT ĐỐI (điểm ≥6, đúng ≥60%) và TRẦN RP trong hàm — không chỉ dựa config mùa; đổi `rank_seasons.config` xong phải soát sổ `rank_rp_ledger` theo ngày (tổng RP/ngày/em) trước khi mở cho cả lớp.
