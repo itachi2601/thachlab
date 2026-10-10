@@ -63,7 +63,6 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 
-- **Lint câu hỏi (11/10/2026):** `20261011120000_question_bank_lint_flags.sql` CHƯA chạy (cột `question_bank.lint_flags` + GIN; `question_content_hash` bỏ khoá `lint_ignored`) → `bash scripts/run-migrations.sh`, rồi `npx tsx scripts/cap-nhat-lint-flags.mts --dry-run 20` xem thử và `--ghi` (hoàn tác `--undo scripts/logs/lint-flags-*.json`). **Chạy migration TRƯỚC khi deploy UI** (bấm "Bỏ qua cảnh báo" ghi `lint_ignored` vào đề; chưa có hàm hash mới thì ngân hàng sinh dòng trùng). Cột mặc định `{}` nên ô "Chỉ câu sạch" coi mọi câu là sạch tới khi chạy `--ghi`. Trước khi chạy, ô "Chỉ câu sạch" ở trang ngân hàng tự lùi về lint trên trình duyệt. `20261010800000_an_cau_cat_cut_hien_thi.sql` (ẩn 181 câu) vẫn CHƯA chạy thật (log 17:23 chỉ 3 dòng).
 
 - **Gửi trợ giảng xem trước (11/10/2026):** `20261011100000_exam_ta_preview.sql` CHƯA chạy (bảng `exam_ta_previews` + RLS, 1 policy SELECT `exams` cho TA đọc đề đã gửi dù còn ẩn) → `bash scripts/run-migrations.sh`; rollback `perf/rollback/20261011100000_exam_ta_preview.down.sql`. UI: panel "Gửi trợ giảng xem trước" ở /quan-tri/dang-de + /quan-tri/sua-de; TA làm ở `/tro-giang/xem-truoc` (đáp án hiện ngay mỗi câu) rồi sang `/tro-giang/chua-bai`. Chưa thử trên máy thật.
 

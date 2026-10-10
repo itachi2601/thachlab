@@ -417,3 +417,5 @@ chính" giờ lên web thật.
 
 
 - **Đã chạy 8/10/2026 23:27:** `20261008120000_rank_streak_week_theory_review.sql` — RPC `rank_my_streak_days` (dải chuỗi 7 ngày), bảng `theory_reviews`, RPC `rank_theory_review_open/submit` (RP ôn lại lý thuyết, cấu hình `theory_review_*`). Rollback: `perf/rollback/20261008120000_rank_streak_week_theory_review.down.sql`.
+
+- **Đã chạy 11/10/2026:** `20261011120000_question_bank_lint_flags.sql` (cột `question_bank.lint_flags` + GIN, `question_content_hash` bỏ khoá `lint_ignored`); rồi `cap-nhat-lint-flags.mts --ghi` ghi 229 dòng (deQuaNgan 14, matMu 123, anhSrcTuongDoi 68, phuongAnLanDe 25), hoàn tác `--undo scripts/logs/lint-flags-1791634389029.json`. `20261010800000_an_cau_cat_cut_hien_thi.sql` (ẩn 181 câu cắt cụt, sao lưu `question_bank_cat_cut_20261010`) cũng đã chạy.

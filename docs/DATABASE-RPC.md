@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 277 hàm, sinh tự động 2026-10-06
+# Hàm SQL / RPC (schema public) — 300 hàm, sinh tự động 2026-10-10
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -35,6 +35,7 @@ repo — xem trên Supabase Dashboard).
 - `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
 - `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
+- `get_similar_bank_questions(p_topic_id bigint, p_form text, p_exclude_ids bigint[], p_limit integer)` → TABLE(id bigint, topic_id bigint, topic_name text, form text, qtype text, difficulty text, question jsonb, same_form boolean)
 - `get_student_learning_history(p_student uuid)` → TABLE(activity text, at timestamp with time zone, lesson_title text, item_title text, score numeric, correct_count integer, question_count integer, detail_correct_count jsonb, has_essay boolean)
 - `gin_extract_query_trgm(text, internal, smallint, internal, internal, internal, internal)` → internal
 - `gin_extract_value_trgm(text, internal)` → internal
@@ -66,6 +67,7 @@ repo — xem trên Supabase Dashboard).
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
 - `manages_class(p_class bigint)` → boolean
 - `notify_class_staff(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
+- `notify_class_students(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text)` → void
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
 - `notify_user(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
 - `parent_attendance_summary(p_student uuid, p_limit integer)` → TABLE(session_id bigint, session_date date, title text, status text)
@@ -75,6 +77,20 @@ repo — xem trên Supabase Dashboard).
 - `question_content_hash(q jsonb)` → text
 - `question_topic_sync_children()` → trigger
 - `question_topic_tree_guard()` → trigger
+- `quiz_answer(p_room bigint, p_token uuid, p_choice integer)` → jsonb
+- `quiz_bank_search(p_grade text, p_topic_id bigint, p_difficulty text, p_search text, p_limit integer, p_random boolean)` → TABLE(id bigint, grade text, topic_id bigint, topic_name text, difficulty text, question jsonb)
+- `quiz_eff_phase(r quiz_rooms)` → text
+- `quiz_host_advance(p_room bigint)` → void
+- `quiz_host_create(p_set bigint, p_time_limit integer)` → jsonb
+- `quiz_host_end(p_room bigint)` → void
+- `quiz_host_kick(p_room bigint, p_player bigint)` → void
+- `quiz_host_room(p_room bigint)` → quiz_rooms
+- `quiz_host_state(p_room bigint)` → jsonb
+- `quiz_join(p_pin text, p_nickname text)` → jsonb
+- `quiz_leaderboard(p_room bigint, p_limit integer)` → jsonb
+- `quiz_secs_left(r quiz_rooms)` → numeric
+- `quiz_set_to_bank(p_set bigint, p_grade text, p_topic_name text, p_form text)` → jsonb
+- `quiz_state(p_room bigint, p_token uuid)` → jsonb
 - `rank_adjust_rp(p_season bigint, p_student uuid, p_delta integer, p_reason text)` → void
 - `rank_award(p_season bigint, p_student uuid, p_kind text, p_ref text, p_value integer, p_reason text, p_result_ref bigint)` → integer
 - `rank_best_pct(p_student uuid, p_exam bigint, p_from timestamp with time zone, p_to timestamp with time zone)` → integer
@@ -123,6 +139,7 @@ repo — xem trên Supabase Dashboard).
 - `rank_level_rank(p_level text)` → integer
 - `rank_monday_list(p_class_id bigint)` → jsonb
 - `rank_my_status()` → jsonb
+- `rank_my_streak_days(p_days integer)` → jsonb
 - `rank_my_titles()` → jsonb
 - `rank_on_result(p_student uuid, p_kind text, p_source_id bigint, p_score numeric, p_at timestamp with time zone, p_result_ref bigint)` → void
 - `rank_progress_calc(p_student uuid, p_week date)` → TABLE(q_now integer, acc_now numeric, q_base integer, acc_base numeric, gain numeric)
@@ -143,6 +160,8 @@ repo — xem trên Supabase Dashboard).
 - `rank_streak_day(p_season bigint, p_at timestamp with time zone)` → date
 - `rank_streak_offset(p_season bigint)` → integer
 - `rank_theory_open(p_item bigint)` → void
+- `rank_theory_review_open(p_item bigint)` → jsonb
+- `rank_theory_review_submit(p_item bigint, p_answers jsonb)` → jsonb
 - `rank_theory_submit(p_item bigint, p_answers jsonb)` → jsonb
 - `rank_tier_code_by_rp(p_season bigint, p_rp integer)` → text
 - `rank_tier_info(p_season bigint, p_code text, p_rp integer)` → TABLE(code text, name text, sort integer, tier_min integer, next_min integer, division integer, div_min integer, div_max integer)
@@ -162,8 +181,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -171,6 +190,7 @@ repo — xem trên Supabase Dashboard).
 - `seed_absent_attendance_for_session()` → trigger
 - `select_attendance_machine(p_session_id bigint, p_machine_code text)` → void
 - `set_limit(real)` → real
+- `set_my_avatar(p_url text)` → void
 - `set_profile_track_cttc()` → trigger
 - `set_profile_track_thpt()` → trigger
 - `show_limit()` → real
@@ -245,9 +265,12 @@ repo — xem trên Supabase Dashboard).
 - `trg_exam_classes_sync_bank()` → trigger
 - `trg_exam_result_alert()` → trigger
 - `trg_exams_sync_bank()` → trigger
+- `trg_notify_assessment_assigned()` → trigger
 - `trg_notify_homework_announcement()` → trigger
+- `trg_notify_homework_assigned()` → trigger
 - `trg_notify_parent_linked()` → trigger
 - `trg_notify_registration()` → trigger
+- `trg_notify_rp_bonus()` → trigger
 - `trg_notify_slot_for_catchup()` → trigger
 - `trg_question_topics_rename_bank()` → trigger
 - `trg_rank_class_goal()` → trigger
