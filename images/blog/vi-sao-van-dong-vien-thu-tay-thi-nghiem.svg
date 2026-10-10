@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#f8fafc" rx="8" />
+  
+  <!-- Phân cách 2 khung -->
+  <line x1="270" y1="20" x2="270" y2="300" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,4" />
+
+  <!-- BÊN TRÁI: DANG TAY CẦM CHAI (QUAY CHẬM) -->
+  <g transform="translate(0, 0)">
+    <text x="135" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">1. Dang thẳng hai tay</text>
+    <text x="135" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Mômen quán tính I lớn → quay chậm</text>
+
+    <!-- Mũi tên quay chậm -->
+    <path d="M 80 82 A 65 24 0 0 1 190 82" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" />
+    <polygon points="190,82 178,74 182,85" fill="#059669" />
+    <text x="135" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#059669" font-weight="600" text-anchor="middle">quay chậm</text>
+
+    <!-- Ghế xoay trái -->
+    <line x1="135" y1="230" x2="135" y2="275" stroke="#475569" stroke-width="6" stroke-linecap="round" />
+    <line x1="85" y1="285" x2="185" y2="285" stroke="#475569" stroke-width="5" stroke-linecap="round" />
+    <circle cx="85" cy="289" r="4" fill="#334155" />
+    <circle cx="185" cy="289" r="4" fill="#334155" />
+    <circle cx="135" cy="289" r="4" fill="#334155" />
+    <rect x="95" y="218" width="80" height="12" rx="4" fill="#334155" />
+    <line x1="95" y1="218" x2="95" y2="160" stroke="#334155" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Người ngồi trái -->
+    <circle cx="135" cy="115" r="18" fill="#fde68a" stroke="#1e293b" stroke-width="2" />
+    <line x1="135" y1="133" x2="135" y2="215" stroke="#2563eb" stroke-width="12" stroke-linecap="round" />
+    <line x1="135" y1="210" x2="170" y2="215" stroke="#1e293b" stroke-width="7" stroke-linecap="round" />
+    <line x1="170" y1="215" x2="170" y2="265" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Hai cánh tay dang ngang -->
+    <line x1="135" y1="148" x2="45" y2="155" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+    <line x1="135" y1="148" x2="225" y2="155" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Chai trái -->
+    <rect x="36" y="135" width="14" height="30" rx="3" fill="#38bdf8" stroke="#0284c7" stroke-width="2" />
+    <rect x="40" y="130" width="6" height="5" fill="#0284c7" />
+    <!-- Chai phải -->
+    <rect x="220" y="135" width="14" height="30" rx="3" fill="#38bdf8" stroke="#0284c7" stroke-width="2" />
+    <rect x="224" y="130" width="6" height="5" fill="#0284c7" />
+  </g>
+
+  <!-- BÊN PHẢI: THU HAI TAY VÀO NGỰC (QUAY NHANH) -->
+  <g transform="translate(270, 0)">
+    <text x="135" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">2. Kéo chai áp sát ngực</text>
+    <text x="135" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Mômen quán tính I giảm → quay nhanh vọt</text>
+
+    <!-- Mũi tên quay nhanh -->
+    <path d="M 80 82 A 65 24 0 0 1 190 82" fill="none" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" />
+    <polygon points="190,82 178,74 182,85" fill="#dc2626" />
+    <path d="M 90 92 A 55 18 0 0 1 180 92" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" />
+    <polygon points="180,92 170,86 173,95" fill="#dc2626" />
+    <text x="135" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#dc2626" font-weight="600" text-anchor="middle">quay nhanh hơn!</text>
+
+    <!-- Ghế xoay phải -->
+    <line x1="135" y1="230" x2="135" y2="275" stroke="#475569" stroke-width="6" stroke-linecap="round" />
+    <line x1="85" y1="285" x2="185" y2="285" stroke="#475569" stroke-width="5" stroke-linecap="round" />
+    <circle cx="85" cy="289" r="4" fill="#334155" />
+    <circle cx="185" cy="289" r="4" fill="#334155" />
+    <circle cx="135" cy="289" r="4" fill="#334155" />
+    <rect x="95" y="218" width="80" height="12" rx="4" fill="#334155" />
+    <line x1="95" y1="218" x2="95" y2="160" stroke="#334155" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Người ngồi phải -->
+    <circle cx="135" cy="115" r="18" fill="#fde68a" stroke="#1e293b" stroke-width="2" />
+    <line x1="135" y1="133" x2="135" y2="215" stroke="#2563eb" stroke-width="12" stroke-linecap="round" />
+    <line x1="135" y1="210" x2="170" y2="215" stroke="#1e293b" stroke-width="7" stroke-linecap="round" />
+    <line x1="170" y1="215" x2="170" y2="265" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Hai cánh tay gập sát ngực -->
+    <path d="M 135 148 Q 110 160 120 175" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+    <path d="M 135 148 Q 160 160 150 175" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Hai chai nước áp sát ngực -->
+    <rect x="114" y="160" width="12" height="26" rx="2" fill="#38bdf8" stroke="#0284c7" stroke-width="2" />
+    <rect x="117" y="156" width="6" height="4" fill="#0284c7" />
+
+    <rect x="144" y="160" width="12" height="26" rx="2" fill="#38bdf8" stroke="#0284c7" stroke-width="2" />
+    <rect x="147" y="156" width="6" height="4" fill="#0284c7" />
+  </g>
+</svg>
