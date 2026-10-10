@@ -229,3 +229,24 @@ Không có gì mới thì ghi "không có bài học mới" — không bịa cho
 Workflow `.github/workflows/gop-claude-vao-main.yml`: mỗi lần push nhánh `claude/*`, GitHub tự fast-forward hoặc merge sạch vào
 `main`. Chỉ khi job báo đỏ (xung đột) mới cần merge tay trên Mac. Cuối phiên vẫn báo tên nhánh, nhưng không cần in lệnh merge
 nếu job xanh — kiểm tại tab Actions. Trên Mac chỉ cần `git pull origin main`.
+
+# Nơi lưu nội dung bồi dưỡng HSG KHTN 9 – Vật lí (thầy chốt 10/10/2026)
+Đề, pre-test, chuyên đề, bài soạn cho lớp bồi dưỡng HSG KHTN 9 (và nội dung THCS nền cho lớp đó) **lưu gốc ở**
+`/Users/MAC/Documents/THPT/Lop09/00_Dung_chung/HSG_KHTN9_Vat_li/` — đọc `README.md` ở đó để biết cây thư mục
+(`01_Chuyen_de`, `02_De_thi_HSG`, `03_Ke_hoach_boi_duong`, `04_Tai_lieu_tham_khao`, `pre test`).
+- Mỗi bộ nội dung mới: **một thư mục con riêng**, kèm `README.md` ngắn (chủ đề→câu, file nào là đề/đáp án, chỗ ngoài chuẩn) và script sinh nếu có; không rải file ra thư mục gốc.
+- Hình vẽ làm bằng SVG trong script sinh (giữ script cùng thư mục để sửa số liệu rồi chạy lại); kiểm hình bằng PDF đã render trước khi báo xong.
+- Soạn xong: giao `kiem-code` (Sonnet) tự giải độc lập rồi đối chiếu đáp án trước khi coi là xong.
+- Đưa lên thachlab (số hoá) chỉ làm khi thầy bảo, theo `docs/DANG-DE-TU-WORD.md` / skill đăng đề; bản sao trong repo (`content/…`) chỉ để xem, thư mục Documents là nguồn.
+
+# Trang mẫu chuẩn cho tài liệu/sách của thầy (thầy chốt 10/10/2026)
+Mọi tài liệu in/PDF thầy nhờ soạn (đề, chuyên đề, sách…) dàn trang bằng `/Users/MAC/Documents/THPT/Lop09/00_Dung_chung/HSG_KHTN9_Vat_li/_tools/trang-mau-sach/` (`sach_mau.py`, đọc README ở đó). Luôn có **số trang** và đầu trang.
+- Đầu trang: `THCS TRẦN VĂN ƠN` + dòng dưới `GV Ngô Diệu Thạch` **chỉ khi thầy yêu cầu** (`school=True`). Không yêu cầu = tài liệu làm cho thầy → `school=False`, không in tên trường.
+- Muốn đổi kiểu trang thì sửa ở `sach_mau.py` một chỗ, không chép CSS ra từng tài liệu. Xem PDF đã render trước khi báo xong.
+
+# Link sâu vào trang cần đăng nhập — luôn giữ `?next=` (thầy chốt 10/10/2026)
+Mọi đường vào một trang có `RequireAuth` từ bên ngoài (mã QR dán trên bảng/chiếu lên tivi, link Zalo/thông báo, deep link PWA) đều có thể gặp người CHƯA đăng nhập. Từ 10/10/2026 `RequireAuth` tự gắn `?next=<đường dẫn + query>` vào nút Đăng nhập, nên:
+- Thêm đường vào mới thì **đừng truyền `loginHref` cứng** (sẽ mất `next`), trừ khi đích quay lại thật sự là trang khác.
+- `?next=` phải giữ **cả phần query** (`/kiem-tra/lam/?id=770`) — mất `?id=` là mở sai trang; `/dang-nhap` chỉ nhận đường dẫn nội bộ bắt đầu bằng một `/`.
+- Đổi tham số của một trang đích (ví dụ `/kiem-tra/lam` đổi cách nhận mã đề) thì phải sửa **cùng lúc** mọi nơi sinh link tới nó — mã QR và mục quét học sinh gom ở `lib/exam-link.ts`.
+- Sinh mã QR/link in ra giấy mà không kiểm bằng cách **giải mã lại** thì coi như chưa kiểm: sai cũng không có lỗi build nào báo. Mẫu: `npx tsx scripts/kiem-qr.mts`.
