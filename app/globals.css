@@ -3420,7 +3420,7 @@ html:not(.is-dim) .parent-page {
 /* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
    nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
    nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
-.teacher-dashboard {
+html[data-theme="light"] .teacher-dashboard {
   --color-bg: #f4f5f7;
   --color-panel: #ffffff;
   --color-surface-2: #eceef2;
