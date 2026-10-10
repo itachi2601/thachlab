@@ -9,7 +9,7 @@ Nhóm đời sống (dùng làm `tags`): Nhà bếp · Giao thông · Điện th
 - Năng lượng cơ học: Vì sao tàu lượn siêu tốc không cần động cơ ở vòng sau? · Vì sao đi xe đạp xuống dốc không cần đạp?
 - Ánh sáng: Vì sao ống hút trong cốc nước trông như gãy? · Vì sao kim cương lấp lánh hơn thuỷ tinh? · Cầu vồng luôn là cung tròn? · Kính lúp đốt được giấy?
 - Điện: Vì sao sạc nhanh làm điện thoại nóng? · Vì sao chim đậu dây điện không bị giật? · Cầu chì/aptomat cứu nhà thế nào?
-- Điện từ: Sạc không dây hoạt động thế nào? · Vì sao bếp từ không nấu được nồi nhôm? · Loa điện thoại biến điện thành tiếng ra sao?
+- Điện từ: Sạc không dây hoạt động thế nào? · Vì sao bếp từ không nấu được nồi nhôm? · Loa điện thoại biến điện thành tiếng ra sao? · Vì sao phanh tái sinh giúp xe điện sạc lại pin? (đã viết: vi-sao-phanh-tai-sinh-giup-xe-dien-sac-lai-pin)
 - Năng lượng với cuộc sống: Pin mặt trời trên mái nhà sinh bao nhiêu điện? · Vì sao đèn LED tiết kiệm hơn bóng sợi đốt?
 - Cơ sở (lớp 6–8): Vì sao dao sắc cắt dễ? (áp suất) · Vì sao tàu sắt nặng vẫn nổi? · Vì sao ống hút hút được nước? · Vì sao áo đen nóng hơn áo trắng?
 
@@ -17,12 +17,12 @@ Nhóm đời sống (dùng làm `tags`): Nhà bếp · Giao thông · Điện th
 - Động học: Thời gian phản ứng khi phanh — vì sao không dùng điện thoại khi lái? · Vận tốc viên đạn đá bóng phạt đền.
 - Động lực học: Vì sao thắt dây an toàn? (quán tính) · Vì sao tên lửa bay được trong chân không? (ĐL III) · Lốp xe mòn hết gai nguy hiểm sao? (ma sát) · Vì sao lá rơi chậm hơn hòn đá? (lực cản)
 - Năng lượng, công, công suất: Leo cầu thang tốn bao nhiêu "calo" thật? · Hiệu suất xe điện vs xe xăng.
-- Động lượng: Vì sao túi khí cứu người? · Vì sao súng giật lùi? · Vì sao nhảy xuống cát đỡ đau chân?
+- Động lượng: Vì sao túi khí cứu người? · Vì sao súng giật lùi? · Vì sao nhảy xuống cát đỡ đau chân? · Vì sao vận động viên xoay nhanh hơn khi thu tay? (đã viết: vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay)
 - Chuyển động tròn: Vì sao đường cua cao tốc nghiêng? · Máy giặt vắt khô quần áo thế nào?
 - Biến dạng, áp suất chất lỏng: Vì sao tai ù khi lặn sâu? · Vì sao đập thuỷ điện chân dày hơn đỉnh? · Lò xo trong bút bi.
 
 ## Lớp 11
-- Dao động: Vì sao cầu có thể sập vì bước đi đều (cộng hưởng)? · Đồng hồ quả lắc chạy chậm khi trời nóng? · Giảm chấn xe máy.
+- Dao động: Vì sao cầu có thể sập vì bước đi đều (cộng hưởng)? · Đồng hồ quả lắc chạy chậm khi trời nóng? · Giảm chấn xe máy. · Vì sao Taipei 101 treo một con lắc khổng lồ? (đã viết: vi-sao-taipei-101-treo-mot-con-lac-khong-lo)
 - Sóng: Vì sao nghe được tiếng người sau tường mà không thấy người? (nhiễu xạ) · Vì sao bong bóng xà phòng có màu? (giao thoa) · Siêu âm thai nhìn được em bé thế nào? · Tai nghe chống ồn · Còi xe cứu thương đổi giọng khi chạy qua (Doppler — nói rõ ngoài chương trình).
 - Điện trường: Vì sao bị điện giật khi chạm tay nắm cửa mùa khô? · Sét đánh và cột thu lôi · Màn hình cảm ứng điện dung.
 - Dòng điện, mạch điện: Vì sao pin điện thoại "chai"? · Vì sao không cắm nhiều thiết bị vào một ổ? · Pin dự phòng 10 000 mAh sạc được mấy lần?

@@ -12,7 +12,7 @@ Trang chủ (7 section trong components/home + link Footer) đã viết lại ng
 
 **Why:** Thầy muốn trang chủ bớt cảm giác "web do AI tạo" nhưng giữ nền tối + bản sắc Vật lý.
 
-**How to apply:** Tài nguyên còn thiếu: ảnh thật thầy Thạch (mục "Một chút về thầy Thạch" đang thuần chữ), ảnh + bài viết cho 3 câu hỏi phụ ở "Vật lý quanh ta" (đang hiện dạng danh sách không link). Không bịa tiểu sử/thành tích.
+**How to apply:** Tài nguyên còn thiếu: ảnh thật thầy Thạch (mục "Một chút về thầy Thạch" đang thuần chữ). Không bịa tiểu sử/thành tích. "Vật lý quanh ta" trên trang chủ chỉ hiện bài đã viết (category đúng chuỗi đó); bài nổi bật và "Những câu hỏi khác" xoay tua theo ngày lịch Việt Nam (`lib/physics-around.ts`).
 
 **Cập nhật 1/10/2026 — so với bản DeepSeek đề xuất (nền sáng, 2 cột + sidebar):** không đổi theme, chỉ ghép 4 ý:
 PublicSubNav (vào nhanh lớp, chỉ trang chủ), OpenClasses thay AudienceChooser (4 thẻ lớp + số chương/bài/mục + dải
