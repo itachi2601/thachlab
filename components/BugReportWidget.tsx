@@ -62,7 +62,6 @@ export default function BugReportWidget() {
   function onPointerDown(e: React.PointerEvent<HTMLButtonElement>) {
     drag.current = { startY: e.clientY, startBottom: currentBottom(), moved: false };
     justDragged.current = false;
-    e.currentTarget.setPointerCapture(e.pointerId);
   }
 
   function onPointerMove(e: React.PointerEvent<HTMLButtonElement>) {
@@ -70,6 +69,14 @@ export default function BugReportWidget() {
     if (!d) return;
     const dy = e.clientY - d.startY;
     if (!d.moved && Math.abs(dy) < DRAG_THRESHOLD) return;
+    if (!d.moved) {
+      // Chỉ "bắt" con trỏ khi thật sự kéo: bắt ngay lúc chạm làm WebView cũ (Zalo/Facebook) nuốt cú bấm.
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+      } catch {
+        // WebView không hỗ trợ thì vẫn kéo được trong phạm vi nút.
+      }
+    }
     d.moved = true;
     setBottomPx(clampBottom(d.startBottom - dy));
   }
@@ -140,7 +147,9 @@ export default function BugReportWidget() {
       toast("success", "Đã gửi, cảm ơn bạn!");
       close();
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Không gửi được, thử lại sau.");
+      // Lỗi của Supabase là object thường (không phải Error) nên đọc .message thay vì rơi về câu chung chung.
+      const msg = (cause as { message?: unknown } | null)?.message;
+      setError(typeof msg === "string" && msg ? `Không gửi được: ${msg}` : "Không gửi được, thử lại sau.");
     } finally {
       setBusy(false);
     }

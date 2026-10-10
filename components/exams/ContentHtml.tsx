@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import imageDimensions from "@/features/lessons/image-dimensions.json";
 
 const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
@@ -247,10 +247,49 @@ export default function ContentHtml({
     });
   }
 
+  // Đáp án em đã chọn trong các câu tự chấm. innerHTML bị thay mỗi khi KaTeX tải xong hoặc
+  // khi bấm phát video → radio mất dấu chọn, em thấy "bấm không ăn". Ghi nhớ rồi khôi phục.
+  const rootRef = useRef<HTMLSpanElement>(null);
+  const picks = useRef<{ forHtml: string; byKey: Record<string, string> }>({ forHtml: cleaned, byKey: {} });
+
+  function markAnswered(input: HTMLInputElement) {
+    const quiz = input.closest<HTMLElement>(".tl-quiz");
+    const label = input.nextElementSibling;
+    if (!quiz || !input.checked || !(label instanceof HTMLElement)) return;
+    // Dự phòng cho WebView cũ (Zalo/Facebook) chưa có :has() — CSS đọc data-answered.
+    quiz.dataset.answered = label.classList.contains("tl-ok") ? "ok" : "no";
+  }
+
+  function handleChange(event: React.ChangeEvent<HTMLSpanElement>) {
+    const input = event.target;
+    if (!(input instanceof HTMLInputElement) || !input.id) return;
+    if (input.type === "radio" && input.name) {
+      picks.current.byKey[input.name] = input.id;
+      markAnswered(input);
+    } else if (input.type === "checkbox") {
+      if (input.checked) picks.current.byKey[input.id] = input.id;
+      else delete picks.current.byKey[input.id];
+    }
+  }
+
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    if (picks.current.forHtml !== cleaned) picks.current = { forHtml: cleaned, byKey: {} };
+    for (const id of Object.values(picks.current.byKey)) {
+      const el = root.querySelector(`[id="${id.replace(/"/g, "")}"]`);
+      if (!(el instanceof HTMLInputElement) || el.checked) continue;
+      el.checked = true;
+      markAnswered(el);
+    }
+  }, [renderedWithVideo, cleaned]);
+
   return (
     <span
+      ref={rootRef}
       className={`exam-content ${className}`}
       onClick={handleClick}
+      onChange={handleChange}
       dangerouslySetInnerHTML={{ __html: renderedWithVideo }}
     />
   );

@@ -2683,6 +2683,8 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
 .exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
