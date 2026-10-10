@@ -86,7 +86,6 @@ Khi sửa một component cũ, quy đổi theo bảng này (đây cũng là vi�
 ---
 
 ## 5. Lưới an toàn trong `globals.css` (đọc trước khi định xoá)
-
 Vì theme tối từng là mặc định, hàng trăm chỗ trong JSX viết thẳng class màu nền tối. Cuối
 `app/globals.css` có khối **"NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE"** phủ các idiom đó
 (quét cả biến thể hoa/thường và độ mờ). Khối này **không phải nguồn màu** — nó chỉ để không còn ô
@@ -150,3 +149,16 @@ tối nào lọt ra khi component chưa được dọn. Khi một idiom đã s�
   loại này: phải bỏ cả chuỗi nằm trong `${…}` của template literal, nếu không sẽ báo động giả hàng
   loạt vì class hay viết trong nhánh ternary.
 
+---
+
+## 9. Ảnh kiểm chứng đợt 11/10/2026 (`docs/anh/giao-dien-nen-sang/`)
+
+| Ảnh | Nội dung | Cách chụp |
+|---|---|---|
+| `trang-chu-375-sang.png` | Trang chủ, 375px, nền sáng | `node scripts/do-bo-cuc.mjs http://localhost:3001/ --rong=375 --cao=1500 --theme=light --anh=…` |
+| `phu-huynh-375-sang.png` | `/phu-huynh` trạng thái khách, 375px — nền ấm, chữ lớn hơn khối học sinh | thêm `--theme=light` |
+| `trang-chu-375-toi.png` | Trang chủ, 375px, **nền tối tuỳ chọn** — kiểm theme tối không thoái hoá | `--theme=dark` |
+| `xem-thu-mau-1440.png` | `/dev/giao-dien`, 1440px — bảng token + bộ dựng | `--rong=1440 --cao=1300` |
+
+Số đo kèm theo (do chính công cụ in): `scrollWidth = viewport`, **tràn ngang thật = 0** ở cả bốn ảnh;
+57 phần tử "vượt mép" ở trang chủ đều nằm trong khối bị cha cắt (marquee công thức) — không phải lỗi.
