@@ -32,8 +32,26 @@ for (const id of ids) {
     for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) add(x, y);
     const bg = [...cnt.values()].sort((a, b) => b.n - a.n)[0];
     const B = [bg.r / bg.n, bg.g / bg.n, bg.b / bg.n];
+    // Khung viền: dải mép đồng màu (độ lệch < 2) mà khác màu nền > 6 → cắt bỏ (+1 px an toàn), kẻo sau khi nền thành trắng
+    // khung hiện ra thành viền đen.
+    const lum = (x: number, y: number) => data[(y * w + x) * 3 + 1];
+    const lineOk = (pts: [number, number][]) => {
+      const v = pts.map(([x, y]) => lum(x, y));
+      const m = v.reduce((a, b) => a + b, 0) / v.length;
+      const sd = Math.sqrt(v.reduce((a, b) => a + (b - m) ** 2, 0) / v.length);
+      return sd < 2 && Math.abs(m - B[1]) > 6;
+    };
+    let t = 0, bt = 0, l = 0, r = 0;
+    const row = (y: number): [number, number][] => Array.from({ length: w }, (_, x) => [x, y]);
+    const col = (x: number): [number, number][] => Array.from({ length: h }, (_, y) => [x, y]);
+    while (t < h / 4 && lineOk(row(t))) t++;
+    while (bt < h / 4 && lineOk(row(h - 1 - bt))) bt++;
+    while (l < w / 4 && lineOk(col(l))) l++;
+    while (r < w / 4 && lineOk(col(w - 1 - r))) r++;
+    const pad = (n: number) => (n ? n + 1 : 0);
+    const crop = { left: pad(l), top: pad(t), width: w - pad(l) - pad(r), height: h - pad(t) - pad(bt) };
     // phóng 3× rồi mới chỉnh màu để viền không lem
-    const big = await sharp(path.join(src, f)).removeAlpha().resize({ width: w * SCALE, kernel: "lanczos3" }).raw().toBuffer({ resolveWithObject: true });
+    const big = await sharp(path.join(src, f)).removeAlpha().extract(crop).resize({ width: crop.width * SCALE, kernel: "lanczos3" }).raw().toBuffer({ resolveWithObject: true });
     const out = Buffer.alloc(big.data.length);
     for (let i = 0; i < big.data.length; i += 3) {
       const r = Math.min(255, (big.data[i] * 255) / B[0]);
