@@ -22,6 +22,7 @@ FILES=(
   "supabase/migrations/20261010150000_ta_sua_buoi_7_ngay_va_doi_anh.sql|Trợ giảng sửa buổi chưa duyệt trong 7 ngày (policy ta_sessions, trước là 3) + hàm set_my_avatar để trợ giảng/giáo viên đổi ảnh đại diện|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261011120000_question_bank_lint_flags.sql|Thêm cột question_bank.lint_flags (text[], index GIN) cho lọc \"Chỉ câu sạch\" + question_content_hash bỏ khoá lint_ignored; chạy xong thì npx tsx scripts/cap-nhat-lint-flags.mts --ghi|giờ nào cũng được (ALTER nhanh); rollback ở cuối file"
   "supabase/migrations/20261011130000_bank_set_question_figure_service.sql|Thêm hàm bank_set_question_figure_svc (chỉ service_role) để script ghi hình Gemini đã duyệt vào câu ngân hàng; chỉ thêm hàm, không đụng dữ liệu|giờ nào cũng được; rollback ở cuối file"
+  "supabase/migrations/20261011140000_bank_replace_question_imgs.sql|Thêm 2 hàm (bank_replace_imgs_in_json, bank_replace_question_imgs, chỉ service_role/giáo viên) để thay ảnh công thức bằng chữ LaTeX trong câu ngân hàng + đề đang dùng; chỉ thêm hàm, không đụng dữ liệu|giờ nào cũng được; rollback ở cuối file"
 )
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
 # ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
