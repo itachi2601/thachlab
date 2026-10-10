@@ -1,0 +1,655 @@
+{
+ "lesson_id": 14,
+ "lesson_title": "Bài 13. Đại cương về dòng điện xoay chiều",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; sửa lộ đáp số dạng 5 (π/6, 2 lần mỗi chu kì), ô ⚠ dạng 2, dấu \\\" hiển thị dạng 3. Cần thầy xác nhận lời giải gốc bài đèn huỳnh quang (bỏ khỏi tu_luan) và ảnh fig01/fig02 của tu_luan bài 1 còn truy cập được."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Đọc các đại lượng từ biểu thức của điện áp",
+   "topic": "Viết biểu thức u, i theo thời gian",
+   "problem_html": "<p>Điện áp tức thời giữa hai đầu một thiết bị là $u=20\\sqrt{2}\\cos\\left(40\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{V}$, với $t$ tính bằng giây.</p><ol type=\"a\"><li>Tìm điện áp hiệu dụng $U$ và pha ban đầu $\\varphi_u$.</li><li>Tìm tần số góc $\\omega$, tần số $f$ và chu kì $T$.</li><li>Tính điện áp tức thời tại $t=0$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Đồ thị điện áp u theo thời gian, điểm xanh chạy dọc đường cong từ thời điểm t bằng 0\"><line x1=\"132\" y1=\"114\" x2=\"396\" y2=\"114\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M388.4,109.6 L396.0,114.0 L388.4,118.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"186\" x2=\"140\" y2=\"38\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M135.6,45.6 L140.0,38.0 L144.4,45.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"394\" y=\"131\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"148\" y=\"46\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u</text><text x=\"134\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"140.0,85.0 142.4,93.2 144.8,101.9 147.2,111.0 149.6,120.1 152.0,129.0 154.4,137.6 156.8,145.6 159.2,152.8 161.6,159.1 164.0,164.2 166.4,168.1 168.8,170.7 171.2,171.9 173.6,171.7 176.0,170.0 178.4,167.0 180.8,162.6 183.2,157.1 185.6,150.5 188.0,143.0 190.4,134.8 192.8,126.1 195.2,117.0 197.6,107.9 200.0,99.0 202.4,90.4 204.8,82.4 207.2,75.2 209.6,68.9 212.0,63.8 214.4,59.9 216.8,57.3 219.2,56.1 221.6,56.3 224.0,58.0 226.4,61.0 228.8,65.4 231.2,70.9 233.6,77.5 236.0,85.0 238.4,93.2 240.8,101.9 243.2,111.0 245.6,120.1 248.0,129.0 250.4,137.6 252.8,145.6 255.2,152.8 257.6,159.1 260.0,164.2 262.4,168.1 264.8,170.7 267.2,171.9 269.6,171.7 272.0,170.0 274.4,167.0 276.8,162.6 279.2,157.1 281.6,150.5 284.0,143.0 286.4,134.8 288.8,126.1 291.2,117.0 293.6,107.9 296.0,99.0 298.4,90.4 300.8,82.4 303.2,75.2 305.6,68.9 308.0,63.8 310.4,59.9 312.8,57.3 315.2,56.1 317.6,56.3 320.0,58.0 322.4,61.0 324.8,65.4 327.2,70.9 329.6,77.5 332.0,85.0 334.4,93.2 336.8,101.9 339.2,111.0 341.6,120.1 344.0,129.0 346.4,137.6 348.8,145.6 351.2,152.8 353.6,159.1 356.0,164.2 358.4,168.1 360.8,170.7 363.2,171.9 365.6,171.7 368.0,170.0 370.4,167.0 372.8,162.6 375.2,157.1 377.6,150.5 380.0,143.0\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u = 20√2 cos(40πt + π/3) V</text><circle cx=\"140.0\" cy=\"85.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"130\" y=\"89.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">u(0) = ?</text><circle cx=\"140.0\" cy=\"85.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"140.0;143.0;146.0;149.0;152.0;155.0;158.0;161.0;164.0;167.0;170.0;173.0;176.0;179.0;182.0;185.0;188.0;191.0;194.0;197.0;200.0;203.0;206.0;209.0;212.0;215.0;218.0;221.0;224.0;227.0;230.0;233.0;236.0;239.0;242.0;245.0;248.0;251.0;254.0;257.0;260.0;263.0;266.0;269.0;272.0;275.0;278.0;281.0;284.0;287.0;290.0;293.0;296.0;299.0;302.0;305.0;308.0;311.0;314.0;317.0;320.0;323.0;326.0;329.0;332.0;335.0;338.0;341.0;344.0;347.0;350.0;353.0;356.0;359.0;362.0;365.0;368.0;371.0;374.0;377.0;380.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"85.0;95.4;106.4;117.8;129.0;139.7;149.3;157.6;164.2;168.9;171.5;171.9;170.0;166.0;160.0;152.2;143.0;132.6;121.6;110.2;99.0;88.3;78.7;70.4;63.8;59.1;56.5;56.1;58.0;62.0;68.0;75.8;85.0;95.4;106.4;117.8;129.0;139.7;149.3;157.6;164.2;168.9;171.5;171.9;170.0;166.0;160.0;152.2;143.0;132.6;121.6;110.2;99.0;88.3;78.7;70.4;63.8;59.1;56.5;56.1;58.0;62.0;68.0;75.8;85.0;95.4;106.4;117.8;129.0;139.7;149.3;157.6;164.2;168.9;171.5;171.9;170.0;166.0;160.0;152.2;143.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy trên đồ thị u(t) vẽ từ biểu thức của đề, chạy chậm 40 lần (một chu kì ứng với 2 s). Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Dạng chuẩn $u=U_0\\cos(\\omega t+\\varphi_u)$ với $U_0\\gt0$: so từng số hạng.</li><li>$\\omega=2\\pi f$ và $T=\\dfrac{1}{f}$.</li><li>Hiệu dụng: $U=\\dfrac{U_0}{\\sqrt{2}}$.</li><li>Điều kiện: biểu thức phải ở dạng hàm cos có hệ số dương (đề cho đúng dạng này).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đối chiếu với dạng chuẩn</span></p>$$u=U_0\\cos(\\omega t+\\varphi_u)$$<p>Đề: $u=20\\sqrt{2}\\cos\\left(40\\pi t+\\dfrac{\\pi}{3}\\right)$, nên đọc ra $\\omega=40\\pi\\ \\text{rad/s}$ và $\\varphi_u=\\dfrac{\\pi}{3}\\ \\text{rad}$.</p>$$U_0=20\\sqrt{2}$$<div class=\"bt-ans\">$$U_0\\approx28{,}28\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện áp hiệu dụng (câu a)</span></p>$$U=\\dfrac{U_0}{\\sqrt{2}}=\\dfrac{20\\sqrt{2}}{\\sqrt{2}}$$<div class=\"bt-ans\">$$U=20\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tần số (câu b)</span></p>$$\\omega=2\\pi f\\Rightarrow f=\\dfrac{\\omega}{2\\pi}=\\dfrac{40\\pi}{2\\pi}$$<div class=\"bt-ans\">$$f=20\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chu kì (câu b)</span></p>$$T=\\dfrac{1}{f}=\\dfrac{1}{20}$$<div class=\"bt-ans\">$$T=0{,}05\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện áp tức thời tại $t=0$ (câu c)</span></p>$$u(0)=U_0\\cos\\varphi_u=20\\sqrt{2}\\cos\\dfrac{\\pi}{3}$$$$u(0)=20\\sqrt{2}\\cdot\\dfrac{1}{2}$$<div class=\"bt-ans\">$$u(0)=10\\sqrt{2}\\approx14{,}14\\ \\text{V}$$</div><p>Máy tính để chế độ radian.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$u(0)=14{,}14\\ \\text{V}\\lt U_0=28{,}28\\ \\text{V}$: giá trị tức thời không vượt quá cực đại.</p><p>Pha ban đầu $\\dfrac{\\pi}{3}$ nằm giữa $0$ và $\\dfrac{\\pi}{2}$ nên $u(0)$ dương và nhỏ hơn cực đại, khớp với hình.</p><p>$U=20\\ \\text{V}\\lt U_0$: hiệu dụng luôn nhỏ hơn cực đại.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $U=20\\ \\text{V}$; $\\varphi_u=\\dfrac{\\pi}{3}\\ \\text{rad}$</p><p>b) $\\omega=40\\pi\\approx125{,}7\\ \\text{rad/s}$; $f=20\\ \\text{Hz}$; $T=0{,}05\\ \\text{s}$</p><p>c) $u(0)\\approx14{,}14\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>biểu thức $u$ có số cụ thể</strong> → đối chiếu dạng chuẩn $U_0\\cos(\\omega t+\\varphi_u)$, đọc từng số hạng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Dữ kiện: biểu thức của điện áp u và đồ thị của nó, điểm cam là thời điểm t bằng 0\"><line x1=\"132\" y1=\"114\" x2=\"396\" y2=\"114\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M388.4,109.6 L396.0,114.0 L388.4,118.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"186\" x2=\"140\" y2=\"38\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M135.6,45.6 L140.0,38.0 L144.4,45.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"394\" y=\"131\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"148\" y=\"46\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u</text><text x=\"134\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"140.0,85.0 142.4,93.2 144.8,101.9 147.2,111.0 149.6,120.1 152.0,129.0 154.4,137.6 156.8,145.6 159.2,152.8 161.6,159.1 164.0,164.2 166.4,168.1 168.8,170.7 171.2,171.9 173.6,171.7 176.0,170.0 178.4,167.0 180.8,162.6 183.2,157.1 185.6,150.5 188.0,143.0 190.4,134.8 192.8,126.1 195.2,117.0 197.6,107.9 200.0,99.0 202.4,90.4 204.8,82.4 207.2,75.2 209.6,68.9 212.0,63.8 214.4,59.9 216.8,57.3 219.2,56.1 221.6,56.3 224.0,58.0 226.4,61.0 228.8,65.4 231.2,70.9 233.6,77.5 236.0,85.0 238.4,93.2 240.8,101.9 243.2,111.0 245.6,120.1 248.0,129.0 250.4,137.6 252.8,145.6 255.2,152.8 257.6,159.1 260.0,164.2 262.4,168.1 264.8,170.7 267.2,171.9 269.6,171.7 272.0,170.0 274.4,167.0 276.8,162.6 279.2,157.1 281.6,150.5 284.0,143.0 286.4,134.8 288.8,126.1 291.2,117.0 293.6,107.9 296.0,99.0 298.4,90.4 300.8,82.4 303.2,75.2 305.6,68.9 308.0,63.8 310.4,59.9 312.8,57.3 315.2,56.1 317.6,56.3 320.0,58.0 322.4,61.0 324.8,65.4 327.2,70.9 329.6,77.5 332.0,85.0 334.4,93.2 336.8,101.9 339.2,111.0 341.6,120.1 344.0,129.0 346.4,137.6 348.8,145.6 351.2,152.8 353.6,159.1 356.0,164.2 358.4,168.1 360.8,170.7 363.2,171.9 365.6,171.7 368.0,170.0 370.4,167.0 372.8,162.6 375.2,157.1 377.6,150.5 380.0,143.0\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u = 20√2 cos(40πt + π/3) V</text><circle cx=\"140.0\" cy=\"85.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"130\" y=\"89.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">u(0) = ?</text><text x=\"14\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = ? ; φᵤ = ?</text><text x=\"14\" y=\"72\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω, f, T = ?</text></svg><figcaption>Dữ kiện: biểu thức đã ở dạng chuẩn hàm cos; điểm cam là t = 0. Hình minh hoạ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$u=20\\sqrt{2}\\cos\\left(40\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{V}$\"</td><td>Biểu thức $u$ có số cụ thể</td><td>⚠ So từng số hạng với dạng chuẩn hàm cos có hệ số dương; nếu đề viết hàm sin hay hệ số âm thì phải đổi trước</td></tr><tr><td>\"$20\\sqrt{2}$\" (hệ số trước $\\cos$)</td><td>Một trong ba loại giá trị của $u$</td><td>Phân biệt giá trị tức thời, cực đại, hiệu dụng</td></tr><tr><td>\"$40\\pi t$\"</td><td>Số nhân với $t$</td><td>Tần số góc và liên hệ với tần số, chu kì</td></tr><tr><td>\"$+\\dfrac{\\pi}{3}$\"</td><td>Số cộng với $\\omega t$</td><td>Pha ban đầu</td></tr><tr><td>\"Tìm điện áp hiệu dụng $U$ và pha ban đầu $\\varphi_u$\"</td><td>Cần $U$, $\\varphi_u$</td><td>Cần hiệu dụng, pha ban đầu</td></tr><tr><td>\"tần số góc, tần số, chu kì\"</td><td>Cần $\\omega$, $f$, $T$</td><td>Cần ba đại lượng liên hệ với nhau</td></tr><tr><td>\"điện áp tức thời tại $t=0$\"</td><td>Cần $u(0)$</td><td>Thế $t=0$ vào biểu thức</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>biểu thức $u$ có số cụ thể</b> → nghĩ tới <b>đối chiếu dạng chuẩn $U_0\\cos(\\omega t+\\varphi_u)$</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đọc giá trị cực đại",
+     "hoi": "Điện áp cực đại $U_0$ bằng bao nhiêu volt?",
+     "dap_so": 28.28,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy luôn hệ số $20$ làm cực đại (quên $\\sqrt{2}$ nằm trong hệ số trước $\\cos$)."
+    },
+    {
+     "tieu_de": "Điện áp hiệu dụng",
+     "hoi": "Điện áp hiệu dụng $U$ bằng bao nhiêu volt?",
+     "dap_so": 20,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Nhân thêm $\\sqrt{2}$ thay vì chia, hoặc chia cho $2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$U=\\dfrac{U_0}{\\sqrt{2}}$ từ cực đại vừa đọc",
+       "dung": true
+      },
+      {
+       "text": "$U=U_0\\sqrt{2}$",
+       "dung": false,
+       "vi_sao": "Đó là công thức ra cực đại từ hiệu dụng; hiệu dụng phải nhỏ hơn cực đại."
+      },
+      {
+       "text": "$U=\\dfrac{U_0}{2}$",
+       "dung": false,
+       "vi_sao": "Hệ số $\\dfrac{1}{2}$ xuất hiện ở trung bình của $u^2$; điện áp hiệu dụng chia cho $\\sqrt{2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tần số",
+     "hoi": "Tần số $f$ bằng bao nhiêu hertz?",
+     "dap_so": 20,
+     "sai_so": 0.1,
+     "don_vi": "Hz",
+     "loi_hay_gap": "Lấy $f=\\omega$ hoặc $f=40$ (quên chia cho $2\\pi$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$f=\\dfrac{\\omega}{2\\pi}$ với $\\omega=40\\pi$",
+       "dung": true
+      },
+      {
+       "text": "$f=\\omega$",
+       "dung": false,
+       "vi_sao": "$\\omega$ tính bằng rad/s, $f$ tính bằng Hz; hai đại lượng khác nhau hệ số $2\\pi$."
+      },
+      {
+       "text": "$f=\\dfrac{2\\pi}{\\omega}$",
+       "dung": false,
+       "vi_sao": "Đó là công thức của chu kì $T$, không phải của $f$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ bằng bao nhiêu giây?",
+     "dap_so": 0.05,
+     "sai_so": 0.001,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy $T=f$ hoặc $T=\\dfrac{1}{\\omega}$ (quên $2\\pi$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$T=\\dfrac{1}{f}$",
+       "dung": true
+      },
+      {
+       "text": "$T=2\\pi f$",
+       "dung": false,
+       "vi_sao": "$2\\pi f$ là tần số góc $\\omega$, không phải chu kì."
+      },
+      {
+       "text": "$T=f$",
+       "dung": false,
+       "vi_sao": "$T$ và $f$ là hai số nghịch đảo của nhau, không bằng nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện áp tức thời tại $t=0$",
+     "hoi": "Điện áp tức thời tại $t=0$ bằng bao nhiêu volt?",
+     "dap_so": 14.14,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Bỏ quên pha ban đầu nên lấy luôn cực đại; hoặc để máy tính ở chế độ độ khi tính $\\cos\\dfrac{\\pi}{3}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $t=0$: $u(0)=U_0\\cos\\varphi_u$",
+       "dung": true
+      },
+      {
+       "text": "$u(0)=U_0$ vì lúc $t=0$ điện áp đạt cực đại",
+       "dung": false,
+       "vi_sao": "Chỉ đạt cực đại khi pha bằng $0$; ở đây $\\varphi_u\\neq0$."
+      },
+      {
+       "text": "$u(0)=U\\cos\\varphi_u$ với $U$ hiệu dụng",
+       "dung": false,
+       "vi_sao": "Giá trị tức thời tính từ biên độ $U_0$, không phải giá trị hiệu dụng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Công suất và nhiệt lượng toả ra trên điện trở",
+   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+   "problem_html": "<p>Dòng điện xoay chiều $i=4\\cos\\left(100\\pi t-\\dfrac{\\pi}{6}\\right)\\ \\text{A}$ chạy qua điện trở $R=25\\ \\Omega$ ($t$ tính bằng giây).</p><ol type=\"a\"><li>Tính công suất toả nhiệt trung bình của $R$.</li><li>Tính nhiệt lượng toả ra trong $2$ phút.</li><li>Một dòng điện không đổi muốn toả cùng nhiệt lượng đó trên $R$ trong cùng thời gian thì phải có cường độ bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Điện trở R nối với nguồn xoay chiều, đồ thị cường độ dòng điện i theo thời gian và điểm chạy trên đồ thị\"><line x1=\"206\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,95.6 L400.0,100.0 L392.4,104.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"214\" y1=\"166\" x2=\"214\" y2=\"30\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M209.6,37.6 L214.0,30.0 L218.4,37.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"117\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"222\" y=\"38\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i</text><text x=\"208\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"214.0,55.0 216.1,51.5 218.2,49.1 220.4,48.1 222.5,48.3 224.6,49.8 226.8,52.5 228.9,56.4 231.0,61.4 233.1,67.3 235.2,74.0 237.4,81.4 239.5,89.2 241.6,97.3 243.8,105.4 245.9,113.5 248.0,121.2 250.1,128.3 252.2,134.8 254.4,140.4 256.5,145.0 258.6,148.5 260.8,150.9 262.9,151.9 265.0,151.7 267.1,150.2 269.2,147.5 271.4,143.6 273.5,138.6 275.6,132.7 277.8,126.0 279.9,118.6 282.0,110.8 284.1,102.7 286.2,94.6 288.4,86.5 290.5,78.8 292.6,71.7 294.8,65.2 296.9,59.6 299.0,55.0 301.1,51.5 303.2,49.1 305.4,48.1 307.5,48.3 309.6,49.8 311.8,52.5 313.9,56.4 316.0,61.4 318.1,67.3 320.2,74.0 322.4,81.4 324.5,89.2 326.6,97.3 328.8,105.4 330.9,113.5 333.0,121.2 335.1,128.3 337.2,134.8 339.4,140.4 341.5,145.0 343.6,148.5 345.8,150.9 347.9,151.9 350.0,151.7 352.1,150.2 354.2,147.5 356.4,143.6 358.5,138.6 360.6,132.7 362.8,126.0 364.9,118.6 367.0,110.8 369.1,102.7 371.2,94.6 373.4,86.5 375.5,78.8 377.6,71.7 379.8,65.2 381.9,59.6 384.0,55.0\"/><rect x=\"38\" y=\"80\" width=\"80\" height=\"40\" rx=\"8\" fill=\"#fb923c\" opacity=\"0.47\"><animate attributeName=\"opacity\" values=\"0.47;0.56;0.61;0.62;0.58;0.50;0.39;0.27;0.15;0.06;0.01;0.00;0.04;0.12;0.23;0.35;0.47;0.56;0.61;0.62;0.58;0.50;0.39;0.27;0.16;0.06;0.01;0.00;0.04;0.12;0.23;0.35;0.46;0.56;0.61;0.62;0.58;0.50;0.39;0.27;0.16;0.06;0.01;0.00;0.04;0.12;0.23;0.35;0.47;0.56;0.61;0.62;0.58;0.50;0.39;0.27;0.15;0.06;0.01;0.00;0.04;0.12;0.23;0.35;0.47\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"14.0\" y1=\"100.0\" x2=\"40.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,100.0 46.0,112.0 56.0,88.0 66.0,112.0 76.0,88.0 86.0,112.0 96.0,88.0 106.0,112.0 116.0,100.0 136.0,100.0\"/><line x1=\"116.0\" y1=\"100.0\" x2=\"136.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"77\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 25 Ω</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i = 4cos(100πt − π/6) A</text><circle cx=\"214.0\" cy=\"55.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"214.0;216.7;219.3;222.0;224.6;227.3;229.9;232.6;235.2;237.9;240.6;243.2;245.9;248.5;251.2;253.8;256.5;259.2;261.8;264.5;267.1;269.8;272.4;275.1;277.8;280.4;283.1;285.7;288.4;291.0;293.7;296.3;299.0;301.7;304.3;307.0;309.6;312.3;314.9;317.6;320.2;322.9;325.6;328.2;330.9;333.5;336.2;338.8;341.5;344.2;346.8;349.5;352.1;354.8;357.4;360.1;362.8;365.4;368.1;370.7;373.4;376.0;378.7;381.3;384.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"55.0;50.8;48.4;48.1;49.8;53.4;58.7;65.7;74.0;83.3;93.2;103.4;113.5;123.0;131.7;139.1;145.0;149.2;151.6;151.9;150.2;146.6;141.3;134.3;126.0;116.7;106.8;96.6;86.5;77.0;68.3;60.9;55.0;50.8;48.4;48.1;49.8;53.4;58.7;65.7;74.0;83.3;93.2;103.4;113.5;123.0;131.7;139.1;145.0;149.2;151.6;151.9;150.2;146.6;141.3;134.3;126.0;116.7;106.8;96.6;86.5;77.0;68.3;60.9;55.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy trên đồ thị i(t) và điện trở sáng lên theo i², chạy chậm 100 lần (một chu kì ứng với 2 s). Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Công suất toả nhiệt trung bình: $P=I^2R$ với $I$ là hiệu dụng.</li><li>Hiệu dụng: $I=\\dfrac{I_0}{\\sqrt{2}}$.</li><li>Nhiệt lượng: $Q=P\\Delta t$, $\\Delta t$ tính bằng giây.</li><li>Điều kiện: nhiệt tỉ lệ với $i^2$ nên dùng hiệu dụng; pha ban đầu không ảnh hưởng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi sang hiệu dụng</span></p><p>Đề: $I_0=4\\ \\text{A}$; pha $-\\dfrac{\\pi}{6}$ không ảnh hưởng đến công suất.</p>$$I=\\dfrac{I_0}{\\sqrt{2}}=\\dfrac{4}{\\sqrt{2}}$$<div class=\"bt-ans\">$$I=2\\sqrt{2}\\approx2{,}83\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất trung bình (câu a)</span></p>$$P=I^2R=(2\\sqrt{2})^2\\cdot25=8\\cdot25$$<div class=\"bt-ans\">$$P=200\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt lượng (câu b)</span></p><p>$2$ phút $=120\\ \\text{s}$.</p>$$Q=P\\Delta t=200\\cdot120$$<div class=\"bt-ans\">$$Q=24\\,000\\ \\text{J}=24\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng không đổi tương đương (câu c)</span></p><p>Theo định nghĩa, dòng không đổi $I_{dc}$ toả cùng nhiệt trên cùng $R$ trong cùng thời gian:</p>$$I_{dc}^2R\\Delta t=I^2R\\Delta t\\Rightarrow I_{dc}=I$$<div class=\"bt-ans\">$$I_{dc}=2\\sqrt{2}\\approx2{,}83\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$P=\\dfrac{I_0^2R}{2}=\\dfrac{16\\cdot25}{2}=200\\ \\text{W}$$<p>Nếu dùng nhầm $I_0$ trong $I^2R$ thì ra $400\\ \\text{W}$, gấp đôi, và dòng không đổi tương đương lớn hơn cả hiệu dụng: vô lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P=200\\ \\text{W}$</p><p>b) $Q=24\\,000\\ \\text{J}$</p><p>c) $I_{dc}\\approx2{,}83\\ \\text{A}$, bằng cường độ hiệu dụng</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>công suất, nhiệt lượng trên điện trở</strong> khi cho biểu thức $i$ → đổi $I_0$ sang hiệu dụng rồi dùng $I^2R$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Dữ kiện: điện trở R và đồ thị cường độ dòng điện xoay chiều chạy qua nó\"><line x1=\"206\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,95.6 L400.0,100.0 L392.4,104.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"214\" y1=\"166\" x2=\"214\" y2=\"30\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M209.6,37.6 L214.0,30.0 L218.4,37.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"117\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"222\" y=\"38\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i</text><text x=\"208\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"214.0,55.0 216.1,51.5 218.2,49.1 220.4,48.1 222.5,48.3 224.6,49.8 226.8,52.5 228.9,56.4 231.0,61.4 233.1,67.3 235.2,74.0 237.4,81.4 239.5,89.2 241.6,97.3 243.8,105.4 245.9,113.5 248.0,121.2 250.1,128.3 252.2,134.8 254.4,140.4 256.5,145.0 258.6,148.5 260.8,150.9 262.9,151.9 265.0,151.7 267.1,150.2 269.2,147.5 271.4,143.6 273.5,138.6 275.6,132.7 277.8,126.0 279.9,118.6 282.0,110.8 284.1,102.7 286.2,94.6 288.4,86.5 290.5,78.8 292.6,71.7 294.8,65.2 296.9,59.6 299.0,55.0 301.1,51.5 303.2,49.1 305.4,48.1 307.5,48.3 309.6,49.8 311.8,52.5 313.9,56.4 316.0,61.4 318.1,67.3 320.2,74.0 322.4,81.4 324.5,89.2 326.6,97.3 328.8,105.4 330.9,113.5 333.0,121.2 335.1,128.3 337.2,134.8 339.4,140.4 341.5,145.0 343.6,148.5 345.8,150.9 347.9,151.9 350.0,151.7 352.1,150.2 354.2,147.5 356.4,143.6 358.5,138.6 360.6,132.7 362.8,126.0 364.9,118.6 367.0,110.8 369.1,102.7 371.2,94.6 373.4,86.5 375.5,78.8 377.6,71.7 379.8,65.2 381.9,59.6 384.0,55.0\"/><line x1=\"14.0\" y1=\"100.0\" x2=\"40.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,100.0 46.0,112.0 56.0,88.0 66.0,112.0 76.0,88.0 86.0,112.0 96.0,88.0 106.0,112.0 116.0,100.0 136.0,100.0\"/><line x1=\"116.0\" y1=\"100.0\" x2=\"136.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"77\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 25 Ω</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i = 4cos(100πt − π/6) A</text><text x=\"14\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = ? ; Q (2 phút) = ?</text></svg><figcaption>Dữ kiện: dòng xoay chiều chạy qua R trong 2 phút. Hình minh hoạ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$i=4\\cos\\left(100\\pi t-\\dfrac{\\pi}{6}\\right)\\ \\text{A}$\"</td><td>Biểu thức $i$ có số cụ thể</td><td>⚠ Điều kiện: $R$ là điện trở thuần và $i$ biến thiên theo dạng hình sin</td></tr><tr><td>\"$4\\cos$\" (hệ số trước $\\cos$)</td><td>Một trong ba loại giá trị của $i$</td><td>Phân biệt cực đại và hiệu dụng</td></tr><tr><td>\"$-\\dfrac{\\pi}{6}$\"</td><td>Pha ban đầu</td><td>Pha ban đầu có ảnh hưởng đến công suất trung bình hay không?</td></tr><tr><td>\"điện trở $R=25\\ \\Omega$\"</td><td>$R=25\\ \\Omega$</td><td>Điện trở thuần: điện năng chuyển hoàn toàn thành nhiệt</td></tr><tr><td>\"công suất toả nhiệt trung bình\"</td><td>Cần $P$</td><td>Cần công suất trung bình</td></tr><tr><td>\"trong $2$ phút\"</td><td>$\\Delta t=2$ phút</td><td>Đơn vị thời gian khi tính nhiệt lượng bằng jun</td></tr><tr><td>\"nhiệt lượng toả ra\"</td><td>Cần $Q$</td><td>Cần nhiệt lượng</td></tr><tr><td>\"dòng điện không đổi … toả cùng nhiệt lượng\"</td><td>Cần $I_{dc}$</td><td>Định nghĩa giá trị hiệu dụng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất, nhiệt lượng trên điện trở</b> → nghĩ tới <b>đổi sang hiệu dụng rồi dùng $I^2R$</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi sang hiệu dụng",
+     "hoi": "Cường độ hiệu dụng $I$ bằng bao nhiêu ampe?",
+     "dap_so": 2.83,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng luôn cực đại cho mọi phép tính, hoặc chia cho $2$ thay vì $\\sqrt{2}$."
+    },
+    {
+     "tieu_de": "Công suất trung bình",
+     "hoi": "Công suất toả nhiệt trung bình $P$ bằng bao nhiêu watt?",
+     "dap_so": 200,
+     "sai_so": 1,
+     "don_vi": "W",
+     "loi_hay_gap": "Dùng $I_0$ thay $I$ nên công suất gấp đôi; hoặc chia $I_0^2R$ cho $\\sqrt{2}$ thay vì cho $2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P=I^2R$ với $I$ hiệu dụng",
+       "dung": true
+      },
+      {
+       "text": "$P=I_0^2R$",
+       "dung": false,
+       "vi_sao": "$I_0$ là giá trị đỉnh; công suất trung bình dùng hiệu dụng, bằng một nửa $I_0^2R$."
+      },
+      {
+       "text": "$P=\\dfrac{I_0^2R}{\\sqrt{2}}$",
+       "dung": false,
+       "vi_sao": "Chia $\\sqrt{2}$ chỉ ra cường độ hiệu dụng; trong $I^2$ phải chia cho $2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng",
+     "hoi": "Nhiệt lượng $Q$ toả ra trong $2$ phút bằng bao nhiêu jun?",
+     "dap_so": 24000,
+     "sai_so": 100,
+     "don_vi": "J",
+     "loi_hay_gap": "Thế thời gian bằng phút (nhân với $2$) thay vì giây, nên kết quả nhỏ hơn rất nhiều.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q=P\\Delta t$ với $\\Delta t$ tính bằng giây",
+       "dung": true
+      },
+      {
+       "text": "$Q=P\\Delta t$ với $\\Delta t=2$ (phút)",
+       "dung": false,
+       "vi_sao": "Đơn vị jun đòi thời gian bằng giây; $2$ phút là $120$ s."
+      },
+      {
+       "text": "$Q=\\dfrac{P}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Công suất là năng lượng chia thời gian, nên nhiệt lượng bằng công suất nhân thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng không đổi tương đương",
+     "hoi": "Dòng không đổi toả cùng nhiệt lượng trên $R$ trong cùng thời gian có cường độ thế nào?",
+     "lua_chon": [
+      {
+       "text": "Bằng cường độ hiệu dụng $I$",
+       "dung": true
+      },
+      {
+       "text": "Bằng cường độ cực đại $I_0$",
+       "dung": false,
+       "vi_sao": "Dòng không đổi $I_0$ luôn ở mức đỉnh nên toả nhiều nhiệt hơn dòng xoay chiều chỉ chạm đỉnh thoáng qua."
+      },
+      {
+       "text": "Bằng $0$ vì trung bình của $i$ trong một chu kì bằng $0$",
+       "dung": false,
+       "vi_sao": "Nhiệt tỉ lệ $i^2$ nên không triệt tiêu: trung bình của $i$ bằng $0$ nhưng trung bình của $i^2$ thì không."
+      }
+     ],
+     "loi_hay_gap": "Chọn cực đại vì nghĩ dòng không đổi phải bằng đỉnh, hoặc chọn $0$ vì trung bình của $i$ bằng $0$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng định nghĩa: cùng nhiệt trên cùng $R$ trong cùng thời gian",
+       "dung": true
+      },
+      {
+       "text": "Lấy $I_{dc}$ bằng giá trị trung bình của $i$",
+       "dung": false,
+       "vi_sao": "Trung bình của $i$ bằng $0$ trong một chu kì, không cho biết nhiệt toả ra."
+      },
+      {
+       "text": "Lấy $I_{dc}=\\dfrac{I_0}{2}$",
+       "dung": false,
+       "vi_sao": "Hệ số $\\dfrac{1}{2}$ chỉ nằm ở trung bình của $i^2$; cường độ hiệu dụng chia cho $\\sqrt{2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khá · Viết biểu thức i từ tần số, cường độ hiệu dụng và giá trị lúc t = 0",
+   "topic": "Viết biểu thức u, i theo thời gian",
+   "problem_html": "<p>Dòng điện xoay chiều trong một mạch có tần số $50\\ \\text{Hz}$ và cường độ hiệu dụng $2\\ \\text{A}$. Tại $t=0$, cường độ tức thời là $-\\sqrt{2}\\ \\text{A}$ và đang tăng.</p><ol type=\"a\"><li>Viết biểu thức của $i$ (dạng hàm cos, $t$ tính bằng giây).</li><li>Tính cường độ tức thời tại $t=\\dfrac{1}{200}\\ \\text{s}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Đồ thị cường độ dòng điện i theo thời gian; điểm xanh chạy từ thời điểm t bằng 0, lúc đầu i âm và đang tăng\"><line x1=\"142\" y1=\"112\" x2=\"406\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M398.4,107.6 L406.0,112.0 L398.4,116.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"184\" x2=\"150\" y2=\"36\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M145.6,43.6 L150.0,36.0 L154.4,43.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"404\" y=\"129\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"158\" y=\"44\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i</text><text x=\"144\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"150.0,141.0 152.4,132.8 154.8,124.1 157.2,115.0 159.6,105.9 162.0,97.0 164.4,88.4 166.8,80.4 169.2,73.2 171.6,66.9 174.0,61.8 176.4,57.9 178.8,55.3 181.2,54.1 183.6,54.3 186.0,56.0 188.4,59.0 190.8,63.4 193.2,68.9 195.6,75.5 198.0,83.0 200.4,91.2 202.8,99.9 205.2,109.0 207.6,118.1 210.0,127.0 212.4,135.6 214.8,143.6 217.2,150.8 219.6,157.1 222.0,162.2 224.4,166.1 226.8,168.7 229.2,169.9 231.6,169.7 234.0,168.0 236.4,165.0 238.8,160.6 241.2,155.1 243.6,148.5 246.0,141.0 248.4,132.8 250.8,124.1 253.2,115.0 255.6,105.9 258.0,97.0 260.4,88.4 262.8,80.4 265.2,73.2 267.6,66.9 270.0,61.8 272.4,57.9 274.8,55.3 277.2,54.1 279.6,54.3 282.0,56.0 284.4,59.0 286.8,63.4 289.2,68.9 291.6,75.5 294.0,83.0 296.4,91.2 298.8,99.9 301.2,109.0 303.6,118.1 306.0,127.0 308.4,135.6 310.8,143.6 313.2,150.8 315.6,157.1 318.0,162.2 320.4,166.1 322.8,168.7 325.2,169.9 327.6,169.7 330.0,168.0 332.4,165.0 334.8,160.6 337.2,155.1 339.6,148.5 342.0,141.0 344.4,132.8 346.8,124.1 349.2,115.0 351.6,105.9 354.0,97.0 356.4,88.4 358.8,80.4 361.2,73.2 363.6,66.9 366.0,61.8 368.4,57.9 370.8,55.3 373.2,54.1 375.6,54.3 378.0,56.0 380.4,59.0 382.8,63.4 385.2,68.9 387.6,75.5 390.0,83.0\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = 50 Hz ; I = 2 A</text><text x=\"14\" y=\"42\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">t = 0: i = −√2 A</text><text x=\"14\" y=\"60\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">và đang tăng</text><line x1=\"150.0\" y1=\"141.0\" x2=\"159.9\" y2=\"108.5\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M152.5,115.4 L159.9,108.5 L162.2,118.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"150.0\" cy=\"141.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"140\" y=\"145.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">i(0)</text><circle cx=\"150.0\" cy=\"141.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"150.0;153.0;156.0;159.0;162.0;165.0;168.0;171.0;174.0;177.0;180.0;183.0;186.0;189.0;192.0;195.0;198.0;201.0;204.0;207.0;210.0;213.0;216.0;219.0;222.0;225.0;228.0;231.0;234.0;237.0;240.0;243.0;246.0;249.0;252.0;255.0;258.0;261.0;264.0;267.0;270.0;273.0;276.0;279.0;282.0;285.0;288.0;291.0;294.0;297.0;300.0;303.0;306.0;309.0;312.0;315.0;318.0;321.0;324.0;327.0;330.0;333.0;336.0;339.0;342.0;345.0;348.0;351.0;354.0;357.0;360.0;363.0;366.0;369.0;372.0;375.0;378.0;381.0;384.0;387.0;390.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"141.0;130.6;119.6;108.2;97.0;86.3;76.7;68.4;61.8;57.1;54.5;54.1;56.0;60.0;66.0;73.8;83.0;93.4;104.4;115.8;127.0;137.7;147.3;155.6;162.2;166.9;169.5;169.9;168.0;164.0;158.0;150.2;141.0;130.6;119.6;108.2;97.0;86.3;76.7;68.4;61.8;57.1;54.5;54.1;56.0;60.0;66.0;73.8;83.0;93.4;104.4;115.8;127.0;137.7;147.3;155.6;162.2;166.9;169.5;169.9;168.0;164.0;158.0;150.2;141.0;130.6;119.6;108.2;97.0;86.3;76.7;68.4;61.8;57.1;54.5;54.1;56.0;60.0;66.0;73.8;83.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy trên đồ thị i(t) theo dữ kiện của đề, chạy chậm 100 lần (một chu kì ứng với 2 s); mũi tên cam là chiều biến thiên lúc t = 0. Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>$\\omega=2\\pi f$; $I_0=I\\sqrt{2}$.</li><li>Thế $t=0$: $i(0)=I_0\\cos\\varphi$.</li><li>Chiều biến thiên lúc $t=0$: $i'(0)=-I_0\\omega\\sin\\varphi$; đang tăng thì $i'(0)\\gt0$.</li><li>Điều kiện: $I_0\\gt0$ và biểu thức viết dạng hàm cos.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số góc</span></p>$$\\omega=2\\pi f=2\\pi\\cdot50$$<div class=\"bt-ans\">$$\\omega=100\\pi\\ \\text{rad/s}\\approx314{,}2\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ cực đại</span></p>$$I_0=I\\sqrt{2}=2\\sqrt{2}$$<div class=\"bt-ans\">$$I_0\\approx2{,}83\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Giải cos φ</span></p><p>Thế $t=0$ vào $i=I_0\\cos(\\omega t+\\varphi)$:</p>$$i(0)=I_0\\cos\\varphi=-\\sqrt{2}$$$$\\cos\\varphi=\\dfrac{-\\sqrt{2}}{2\\sqrt{2}}$$<div class=\"bt-ans\">$$\\cos\\varphi=-\\dfrac{1}{2}$$</div><p>Suy ra $\\varphi=\\pm\\dfrac{2\\pi}{3}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chọn dấu của φ</span></p><p>Đang tăng: $i'(0)\\gt0$.</p>$$i'(0)=-I_0\\omega\\sin\\varphi\\gt0\\Rightarrow\\sin\\varphi\\lt0$$<div class=\"bt-ans\">$$\\varphi=-\\dfrac{2\\pi}{3}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Biểu thức và giá trị tại $t=\\dfrac{1}{200}\\ \\text{s}$</span></p>$$i=2\\sqrt{2}\\cos\\left(100\\pi t-\\dfrac{2\\pi}{3}\\right)\\ \\text{A}$$$$i\\left(\\dfrac{1}{200}\\right)=2\\sqrt{2}\\cos\\left(\\dfrac{\\pi}{2}-\\dfrac{2\\pi}{3}\\right)=2\\sqrt{2}\\cos\\left(-\\dfrac{\\pi}{6}\\right)$$<div class=\"bt-ans\">$$i=\\sqrt{6}\\approx2{,}45\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$t=0$: $2\\sqrt{2}\\cos\\left(-\\dfrac{2\\pi}{3}\\right)=2\\sqrt{2}\\cdot\\left(-\\dfrac{1}{2}\\right)=-\\sqrt{2}\\ \\text{A}$, đúng đề.</p><p>Pha đi từ $-\\dfrac{2\\pi}{3}$ đến $-\\dfrac{\\pi}{3}$ (trong khoảng $(-\\pi;0)$) thì cos tăng nên $i$ đang tăng, đúng đề.</p><p>$2{,}45\\ \\text{A}\\lt I_0=2{,}83\\ \\text{A}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=2\\sqrt{2}\\cos\\left(100\\pi t-\\dfrac{2\\pi}{3}\\right)\\ \\text{A}$</p><p>b) $i\\left(\\dfrac{1}{200}\\ \\text{s}\\right)=\\sqrt{6}\\approx2{,}45\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>$f$, hiệu dụng, $i(0)$ và “đang tăng/giảm”</strong> → giải $\\cos\\varphi$ rồi dùng chiều biến thiên chọn dấu $\\varphi$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: cường độ dòng điện lúc t bằng 0 và chiều biến thiên của nó\"><line x1=\"142\" y1=\"112\" x2=\"406\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M398.4,107.6 L406.0,112.0 L398.4,116.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"184\" x2=\"150\" y2=\"36\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M145.6,43.6 L150.0,36.0 L154.4,43.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"404\" y=\"129\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"158\" y=\"44\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i</text><text x=\"144\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"150.0,141.0 152.4,132.8 154.8,124.1 157.2,115.0 159.6,105.9 162.0,97.0 164.4,88.4 166.8,80.4 169.2,73.2 171.6,66.9 174.0,61.8 176.4,57.9 178.8,55.3 181.2,54.1 183.6,54.3 186.0,56.0 188.4,59.0 190.8,63.4 193.2,68.9 195.6,75.5 198.0,83.0 200.4,91.2 202.8,99.9 205.2,109.0 207.6,118.1 210.0,127.0 212.4,135.6 214.8,143.6 217.2,150.8 219.6,157.1 222.0,162.2 224.4,166.1 226.8,168.7 229.2,169.9 231.6,169.7 234.0,168.0 236.4,165.0 238.8,160.6 241.2,155.1 243.6,148.5 246.0,141.0 248.4,132.8 250.8,124.1 253.2,115.0 255.6,105.9 258.0,97.0 260.4,88.4 262.8,80.4 265.2,73.2 267.6,66.9 270.0,61.8 272.4,57.9 274.8,55.3 277.2,54.1 279.6,54.3 282.0,56.0 284.4,59.0 286.8,63.4 289.2,68.9 291.6,75.5 294.0,83.0 296.4,91.2 298.8,99.9 301.2,109.0 303.6,118.1 306.0,127.0 308.4,135.6 310.8,143.6 313.2,150.8 315.6,157.1 318.0,162.2 320.4,166.1 322.8,168.7 325.2,169.9 327.6,169.7 330.0,168.0 332.4,165.0 334.8,160.6 337.2,155.1 339.6,148.5 342.0,141.0 344.4,132.8 346.8,124.1 349.2,115.0 351.6,105.9 354.0,97.0 356.4,88.4 358.8,80.4 361.2,73.2 363.6,66.9 366.0,61.8 368.4,57.9 370.8,55.3 373.2,54.1 375.6,54.3 378.0,56.0 380.4,59.0 382.8,63.4 385.2,68.9 387.6,75.5 390.0,83.0\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">f = 50 Hz ; I = 2 A</text><text x=\"14\" y=\"42\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">t = 0: i = −√2 A</text><text x=\"14\" y=\"60\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">và đang tăng</text><line x1=\"150.0\" y1=\"141.0\" x2=\"159.9\" y2=\"108.5\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M152.5,115.4 L159.9,108.5 L162.2,118.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"150.0\" cy=\"141.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"140\" y=\"145.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">i(0)</text><text x=\"14\" y=\"176\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i = ?   (φ = ?)</text></svg><figcaption>Dữ kiện: i(0) âm và đang tăng; mũi tên cam là chiều biến thiên lúc t = 0. Hình minh hoạ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tần số $50\\ \\text{Hz}$\"</td><td>$f=50\\ \\text{Hz}$</td><td>Liên hệ giữa tần số và tần số góc</td></tr><tr><td>\"cường độ hiệu dụng $2\\ \\text{A}$\"</td><td>$I=2\\ \\text{A}$</td><td>Liên hệ giữa hiệu dụng và cực đại</td></tr><tr><td>\"Tại $t=0$, cường độ tức thời là $-\\sqrt{2}\\ \\text{A}$\"</td><td>$i(0)=-\\sqrt{2}\\ \\text{A}$</td><td>Thế $t=0$ vào biểu thức để lập phương trình cho $\\varphi$</td></tr><tr><td>\"đang tăng\" (điều kiện ngầm)</td><td>$i$ tăng lúc $t=0$</td><td>⚠ Một giá trị của $\\cos\\varphi$ ứng với hai nghiệm $\\varphi$ đối nhau; chiều biến thiên lúc $t=0$ để chọn nghiệm</td></tr><tr><td>\"Viết biểu thức của $i$\"</td><td>Cần $\\omega$, $I_0$, $\\varphi$</td><td>Cần dạng hàm cos với $I_0\\gt0$</td></tr><tr><td>\"tại $t=\\dfrac{1}{200}\\ \\text{s}$\"</td><td>Cần $i$ tại thời điểm này</td><td>Thế vào biểu thức vừa viết, góc tính bằng rad</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>$f$, hiệu dụng, $i(0)$ và “đang tăng”</b> → nghĩ tới <b>giải $\\cos\\varphi$, chọn dấu theo chiều biến thiên</b>.",
+   "cap_do": 3,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số góc",
+     "hoi": "Tần số góc $\\omega$ bằng bao nhiêu rad/s?",
+     "dap_so": 314.16,
+     "sai_so": 0.5,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy $\\omega=f$ hoặc $\\omega=\\dfrac{2\\pi}{f}$."
+    },
+    {
+     "tieu_de": "Cường độ cực đại",
+     "hoi": "Cường độ cực đại $I_0$ bằng bao nhiêu ampe?",
+     "dap_so": 2.83,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Lấy $I_0=I=2$ (quên nhân $\\sqrt{2}$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$I_0=I\\sqrt{2}$",
+       "dung": true
+      },
+      {
+       "text": "$I_0=\\dfrac{I}{\\sqrt{2}}$",
+       "dung": false,
+       "vi_sao": "Cực đại lớn hơn hiệu dụng; chia cho $\\sqrt{2}$ cho số nhỏ hơn."
+      },
+      {
+       "text": "$I_0=2I$",
+       "dung": false,
+       "vi_sao": "Hệ số là $\\sqrt{2}$ (do trung bình của $\\cos^2$ bằng $\\dfrac{1}{2}$), không phải $2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giải cos φ",
+     "hoi": "Từ $i(0)$, $\\cos\\varphi$ bằng bao nhiêu?",
+     "dap_so": -0.5,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Dùng $I$ hiệu dụng thay $I_0$ trong $i(0)=I\\cos\\varphi$ nên ra giá trị khác.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $t=0$: $i(0)=I_0\\cos\\varphi$ rồi giải $\\cos\\varphi$",
+       "dung": true
+      },
+      {
+       "text": "Coi $\\varphi=\\omega\\cdot0=0$",
+       "dung": false,
+       "vi_sao": "$\\varphi$ là ẩn cần tìm; $t=0$ chỉ làm mất số hạng $\\omega t$."
+      },
+      {
+       "text": "Dùng $i(0)=I\\cos\\varphi$ với $I$ hiệu dụng",
+       "dung": false,
+       "vi_sao": "Giá trị tức thời tính từ biên độ $I_0$, không phải hiệu dụng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chọn dấu của φ",
+     "hoi": "Chọn nghiệm nào của $\\varphi$ cho dòng điện \"đang tăng\" lúc $t=0$?",
+     "lua_chon": [
+      {
+       "text": "$\\varphi=-\\dfrac{2\\pi}{3}$, vì đang tăng nên $\\sin\\varphi\\lt0$",
+       "dung": true
+      },
+      {
+       "text": "$\\varphi=+\\dfrac{2\\pi}{3}$",
+       "dung": false,
+       "vi_sao": "Với $\\varphi=+\\dfrac{2\\pi}{3}$ thì $i'(0)=-I_0\\omega\\sin\\varphi\\lt0$: dòng đang giảm, ngược với đề."
+      },
+      {
+       "text": "$\\varphi=-\\dfrac{\\pi}{3}$",
+       "dung": false,
+       "vi_sao": "$\\cos\\left(-\\dfrac{\\pi}{3}\\right)\\gt0$ cho $i(0)\\gt0$, không khớp $i(0)=-\\sqrt{2}$ là số âm."
+      }
+     ],
+     "loi_hay_gap": "Lấy nghiệm dương mà máy tính cho ra từ $\\arccos$ mà không xét “đang tăng”.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu $i'(0)=-I_0\\omega\\sin\\varphi$ để chọn nghiệm",
+       "dung": true
+      },
+      {
+       "text": "Luôn chọn nghiệm dương cho gọn",
+       "dung": false,
+       "vi_sao": "Dấu của $\\varphi$ do chiều biến thiên quyết định, không chọn theo thói quen."
+      },
+      {
+       "text": "Bỏ qua “đang tăng” vì $i(0)$ đã đủ",
+       "dung": false,
+       "vi_sao": "$i(0)$ chỉ cho $\\cos\\varphi$, tức hai nghiệm đối nhau; “đang tăng” mới chọn được một nghiệm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Biểu thức và giá trị tại $t=\\dfrac{1}{200}\\ \\text{s}$",
+     "hoi": "Cường độ tức thời tại $t=\\dfrac{1}{200}\\ \\text{s}$ bằng bao nhiêu ampe?",
+     "dap_so": 2.449,
+     "sai_so": 0.02,
+     "don_vi": "A",
+     "loi_hay_gap": "Để máy tính ở chế độ độ khi tính cos của góc tính bằng rad, hoặc thế pha ban đầu sai dấu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $t$ vào biểu thức vừa viết, góc tính bằng rad",
+       "dung": true
+      },
+      {
+       "text": "Thế vào nhưng dùng $I$ hiệu dụng thay $I_0$",
+       "dung": false,
+       "vi_sao": "Giá trị tức thời tính từ biên độ $I_0$."
+      },
+      {
+       "text": "Thế vào với máy tính ở chế độ độ",
+       "dung": false,
+       "vi_sao": "Pha $100\\pi t+\\varphi$ tính bằng rad; để chế độ độ sẽ coi số rad như số độ nên sai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Khung dây quay trong từ trường: từ thông và suất điện động",
+   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+   "problem_html": "<p>Một khung dây dẫn $N=200$ vòng, diện tích mỗi vòng $S=100\\ \\text{cm}^2$, quay đều với tốc độ $1500$ vòng/phút quanh một trục vuông góc với đường sức của từ trường đều $B=0{,}04\\ \\text{T}$. Lúc $t=0$, pháp tuyến của khung cùng hướng với $\\vec{B}$.</p><ol type=\"a\"><li>Tính tần số góc $\\omega$ của khung và từ thông cực đại $\\Phi_0$.</li><li>Tính suất điện động cực đại $E_0$ và suất điện động hiệu dụng $E$.</li><li>Viết biểu thức suất điện động cảm ứng $e$ trong khung ($e$ tính bằng V, $t$ tính bằng s).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Khung dây quay đều trong từ trường đều, đồ thị từ thông Φ theo thời gian và điểm chạy trên đồ thị\"><line x1=\"230\" y1=\"112\" x2=\"394\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M386.4,107.6 L394.0,112.0 L386.4,116.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"238\" y1=\"174\" x2=\"238\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M233.6,53.6 L238.0,46.0 L242.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"392\" y=\"129\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"246\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Φ</text><text x=\"232\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"238.0,64.0 239.8,64.6 241.5,66.3 243.2,69.2 245.0,73.2 246.8,78.1 248.5,83.8 250.2,90.2 252.0,97.2 253.8,104.5 255.5,112.0 257.2,119.5 259.0,126.8 260.8,133.8 262.5,140.2 264.2,145.9 266.0,150.8 267.8,154.8 269.5,157.7 271.2,159.4 273.0,160.0 274.8,159.4 276.5,157.7 278.2,154.8 280.0,150.8 281.8,145.9 283.5,140.2 285.2,133.8 287.0,126.8 288.8,119.5 290.5,112.0 292.2,104.5 294.0,97.2 295.8,90.2 297.5,83.8 299.2,78.1 301.0,73.2 302.8,69.2 304.5,66.3 306.2,64.6 308.0,64.0 309.8,64.6 311.5,66.3 313.2,69.2 315.0,73.2 316.8,78.1 318.5,83.8 320.2,90.2 322.0,97.2 323.8,104.5 325.5,112.0 327.2,119.5 329.0,126.8 330.8,133.8 332.5,140.2 334.2,145.9 336.0,150.8 337.8,154.8 339.5,157.7 341.2,159.4 343.0,160.0 344.8,159.4 346.5,157.7 348.2,154.8 350.0,150.8 351.8,145.9 353.5,140.2 355.2,133.8 357.0,126.8 358.8,119.5 360.5,112.0 362.2,104.5 364.0,97.2 365.8,90.2 367.5,83.8 369.2,78.1 371.0,73.2 372.8,69.2 374.5,66.3 376.2,64.6 378.0,64.0\"/><line x1=\"14\" y1=\"58\" x2=\"170\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,52.5 L170.0,58.0 L160.5,63.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"84\" x2=\"170\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,78.5 L170.0,84.0 L160.5,89.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"140\" x2=\"170\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,134.5 L170.0,140.0 L160.5,145.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"166\" x2=\"170\" y2=\"166\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,160.5 L170.0,166.0 L160.5,171.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"176\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 88 112;-720.0 88 112\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"88.0\" y1=\"78.0\" x2=\"88.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><circle cx=\"88.0\" cy=\"78.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"88.0\" cy=\"146.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"88\" y1=\"112\" x2=\"118\" y2=\"112\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M108.6,106.6 L118.0,112.0 L108.6,117.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"88.0\" cy=\"112.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"238.0\" cy=\"64.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"238.0;240.2;242.4;244.6;246.8;248.9;251.1;253.3;255.5;257.7;259.9;262.1;264.2;266.4;268.6;270.8;273.0;275.2;277.4;279.6;281.8;283.9;286.1;288.3;290.5;292.7;294.9;297.1;299.2;301.4;303.6;305.8;308.0;310.2;312.4;314.6;316.8;318.9;321.1;323.3;325.5;327.7;329.9;332.1;334.2;336.4;338.6;340.8;343.0;345.2;347.4;349.6;351.8;353.9;356.1;358.3;360.5;362.7;364.9;367.1;369.2;371.4;373.6;375.8;378.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"64.0;64.9;67.7;72.1;78.1;85.3;93.6;102.6;112.0;121.4;130.4;138.7;145.9;151.9;156.3;159.1;160.0;159.1;156.3;151.9;145.9;138.7;130.4;121.4;112.0;102.6;93.6;85.3;78.1;72.1;67.7;64.9;64.0;64.9;67.7;72.1;78.1;85.3;93.6;102.6;112.0;121.4;130.4;138.7;145.9;151.9;156.3;159.1;160.0;159.1;156.3;151.9;145.9;138.7;130.4;121.4;112.0;102.6;93.6;85.3;78.1;72.1;67.7;64.9;64.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n = 1500 vòng/phút ; B = 0,04 T</text><text x=\"88\" y=\"192\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nhìn dọc trục quay</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khung (nhìn dọc trục quay, mũi tên đỏ là pháp tuyến) quay đều ngược chiều kim đồng hồ, điểm xanh chạy trên đồ thị Φ(t); chạy chậm 50 lần (một vòng ứng với 2 s). Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Từ thông: $\\Phi=NBS\\cos(\\omega t+\\varphi)$, $\\Phi_0=NBS$; $\\omega=2\\pi n$ ($n$ vòng/s).</li><li>Faraday: $e=-\\Phi'$, nên $E_0=\\Phi_0\\omega$ và $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.</li><li>Hiệu dụng: $E=\\dfrac{E_0}{\\sqrt{2}}$.</li><li>Điều kiện: trục quay vuông góc với $\\vec{B}$, quay đều; $S$ đổi ra m², $n$ ra vòng/s.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số góc</span></p><p>$n=1500$ vòng/phút $=\\dfrac{1500}{60}=25$ vòng/s.</p>$$\\omega=2\\pi n=2\\pi\\cdot25$$<div class=\"bt-ans\">$$\\omega=50\\pi\\ \\text{rad/s}\\approx157{,}1\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Từ thông cực đại (câu a)</span></p><p>$S=100\\ \\text{cm}^2=100\\cdot10^{-4}\\ \\text{m}^2=0{,}01\\ \\text{m}^2$.</p>$$\\Phi_0=NBS=200\\cdot0{,}04\\cdot0{,}01$$<div class=\"bt-ans\">$$\\Phi_0=0{,}08\\ \\text{Wb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động cực đại (câu b)</span></p>$$e=-\\Phi'\\Rightarrow E_0=\\Phi_0\\omega=0{,}08\\cdot50\\pi$$<div class=\"bt-ans\">$$E_0=4\\pi\\approx12{,}57\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Suất điện động hiệu dụng (câu b)</span></p>$$E=\\dfrac{E_0}{\\sqrt{2}}=\\dfrac{4\\pi}{\\sqrt{2}}$$<div class=\"bt-ans\">$$E=2\\sqrt{2}\\pi\\approx8{,}89\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Biểu thức của $e$ (câu c)</span></p><p>Lúc $t=0$ pháp tuyến cùng hướng $\\vec{B}$ nên $\\Phi=\\Phi_0\\cos\\omega t$.</p>$$e=-\\Phi'=\\Phi_0\\omega\\sin\\omega t=E_0\\cos\\left(\\omega t-\\dfrac{\\pi}{2}\\right)$$<div class=\"bt-ans\">$$e=4\\pi\\cos\\left(50\\pi t-\\dfrac{\\pi}{2}\\right)\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$e(0)=4\\pi\\cos\\left(-\\dfrac{\\pi}{2}\\right)=0$: lúc $t=0$ mặt khung vuông góc $\\vec{B}$, $\\Phi$ cực đại nên $e=0$.</p><p>$E\\approx8{,}89\\ \\text{V}\\lt E_0\\approx12{,}57\\ \\text{V}$, hợp lí.</p><p>Nếu quên đổi $\\text{cm}^2$ sang $\\text{m}^2$ thì $\\Phi_0$ lớn gấp $10^4$ lần, vô lí cho một khung nhỏ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega=50\\pi\\approx157{,}1\\ \\text{rad/s}$; $\\Phi_0=0{,}08\\ \\text{Wb}$</p><p>b) $E_0=4\\pi\\approx12{,}57\\ \\text{V}$; $E\\approx8{,}89\\ \\text{V}$</p><p>c) $e=4\\pi\\cos\\left(50\\pi t-\\dfrac{\\pi}{2}\\right)\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khung $N$ vòng quay trong $\\vec{B}$, vòng/phút, cm²</strong> → đổi đơn vị, $\\Phi_0=NBS$, $E_0=\\Phi_0\\omega$, $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Dữ kiện: khung dây quay quanh trục vuông góc với từ trường đều, lúc t bằng 0 pháp tuyến cùng hướng với B\"><line x1=\"230\" y1=\"112\" x2=\"394\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M386.4,107.6 L394.0,112.0 L386.4,116.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"238\" y1=\"174\" x2=\"238\" y2=\"46\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M233.6,53.6 L238.0,46.0 L242.4,53.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"392\" y=\"129\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"246\" y=\"54\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Φ</text><text x=\"232\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"238.0,64.0 239.8,64.6 241.5,66.3 243.2,69.2 245.0,73.2 246.8,78.1 248.5,83.8 250.2,90.2 252.0,97.2 253.8,104.5 255.5,112.0 257.2,119.5 259.0,126.8 260.8,133.8 262.5,140.2 264.2,145.9 266.0,150.8 267.8,154.8 269.5,157.7 271.2,159.4 273.0,160.0 274.8,159.4 276.5,157.7 278.2,154.8 280.0,150.8 281.8,145.9 283.5,140.2 285.2,133.8 287.0,126.8 288.8,119.5 290.5,112.0 292.2,104.5 294.0,97.2 295.8,90.2 297.5,83.8 299.2,78.1 301.0,73.2 302.8,69.2 304.5,66.3 306.2,64.6 308.0,64.0 309.8,64.6 311.5,66.3 313.2,69.2 315.0,73.2 316.8,78.1 318.5,83.8 320.2,90.2 322.0,97.2 323.8,104.5 325.5,112.0 327.2,119.5 329.0,126.8 330.8,133.8 332.5,140.2 334.2,145.9 336.0,150.8 337.8,154.8 339.5,157.7 341.2,159.4 343.0,160.0 344.8,159.4 346.5,157.7 348.2,154.8 350.0,150.8 351.8,145.9 353.5,140.2 355.2,133.8 357.0,126.8 358.8,119.5 360.5,112.0 362.2,104.5 364.0,97.2 365.8,90.2 367.5,83.8 369.2,78.1 371.0,73.2 372.8,69.2 374.5,66.3 376.2,64.6 378.0,64.0\"/><line x1=\"14\" y1=\"58\" x2=\"170\" y2=\"58\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,52.5 L170.0,58.0 L160.5,63.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"84\" x2=\"170\" y2=\"84\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,78.5 L170.0,84.0 L160.5,89.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"140\" x2=\"170\" y2=\"140\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,134.5 L170.0,140.0 L160.5,145.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"14\" y1=\"166\" x2=\"170\" y2=\"166\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><path d=\"M160.5,160.5 L170.0,166.0 L160.5,171.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"176\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><line x1=\"88.0\" y1=\"78.0\" x2=\"88.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"4.5\" opacity=\"1\"/><circle cx=\"88.0\" cy=\"78.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"88.0\" cy=\"146.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"88\" y1=\"112\" x2=\"118\" y2=\"112\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M108.6,106.6 L118.0,112.0 L108.6,117.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"88.0\" cy=\"112.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"122\" y=\"104\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n</text><text x=\"14\" y=\"206\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω, Φ₀, E₀, E = ? ; e = ?</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n = 1500 vòng/phút ; B = 0,04 T</text><text x=\"88\" y=\"192\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">nhìn dọc trục quay</text></svg><figcaption>Dữ kiện: lúc t = 0 pháp tuyến n cùng hướng với B; trục quay vuông góc với B. Hình minh hoạ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$N=200$ vòng, diện tích mỗi vòng $S=100\\ \\text{cm}^2$\"</td><td>$N=200$; $S=100\\ \\text{cm}^2$</td><td>Từ thông qua cả khung gồm $N$ vòng; đổi $S$ sang m²</td></tr><tr><td>\"quay đều với tốc độ $1500$ vòng/phút\"</td><td>$n=1500$ vòng/phút</td><td>Đổi sang vòng/giây; liên hệ giữa $n$ và $\\omega$</td></tr><tr><td>\"trục vuông góc với đường sức … $B=0{,}04\\ \\text{T}$\"</td><td>$B=0{,}04\\ \\text{T}$; trục quay $\\perp\\vec{B}$</td><td>⚠ Chỉ dùng cho khung quay đều quanh trục vuông góc với $\\vec{B}$</td></tr><tr><td>\"Lúc $t=0$, pháp tuyến cùng hướng với $\\vec{B}$\"</td><td>Góc giữa $\\vec{n}$ và $\\vec{B}$ bằng $0$ lúc $t=0$</td><td>Pha ban đầu của từ thông</td></tr><tr><td>\"Tính $\\omega$ và $\\Phi_0$\"</td><td>Cần $\\omega$, $\\Phi_0$</td><td>Cần tần số góc, từ thông cực đại</td></tr><tr><td>\"Tính $E_0$ và $E$\"</td><td>Cần $E_0$, $E$</td><td>Liên hệ suất điện động với từ thông; hiệu dụng</td></tr><tr><td>\"Viết biểu thức $e$\"</td><td>Cần $e(t)$</td><td>Pha của $e$ so với pha của $\\Phi$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khung $N$ vòng quay trong $\\vec{B}$, vòng/phút, cm²</b> → nghĩ tới <b>$\\Phi_0=NBS$, $E_0=\\Phi_0\\omega$</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số góc",
+     "hoi": "Tần số góc $\\omega$ của khung bằng bao nhiêu rad/s?",
+     "dap_so": 157.08,
+     "sai_so": 0.5,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy $\\omega=1500$ (quên đổi vòng/phút sang vòng/s) hoặc quên nhân $2\\pi$."
+    },
+    {
+     "tieu_de": "Từ thông cực đại",
+     "hoi": "Từ thông cực đại $\\Phi_0$ bằng bao nhiêu weber?",
+     "dap_so": 0.08,
+     "sai_so": 0.001,
+     "don_vi": "Wb",
+     "loi_hay_gap": "Thế $S=100$ (cm²) không đổi ra m², hoặc quên nhân $N$ vòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Phi_0=NBS$ với $S$ theo m²",
+       "dung": true
+      },
+      {
+       "text": "$\\Phi_0=BS$ (chỉ một vòng)",
+       "dung": false,
+       "vi_sao": "Khung có $N$ vòng nên từ thông qua cả khung phải nhân với $N$."
+      },
+      {
+       "text": "$\\Phi_0=NBS\\omega$",
+       "dung": false,
+       "vi_sao": "Đó là $E_0$; từ thông không chứa thừa số $\\omega$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Suất điện động cực đại",
+     "hoi": "Suất điện động cực đại $E_0$ bằng bao nhiêu volt?",
+     "dap_so": 12.57,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $E_0=\\Phi_0$ (quên đạo hàm sinh ra thừa số $\\omega$) hoặc chia cho $\\omega$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$E_0=\\Phi_0\\omega$ vì $e=-\\Phi'$",
+       "dung": true
+      },
+      {
+       "text": "$E_0=\\Phi_0$",
+       "dung": false,
+       "vi_sao": "Đạo hàm của $\\cos\\omega t$ theo $t$ sinh thêm thừa số $\\omega$."
+      },
+      {
+       "text": "$E_0=\\dfrac{\\Phi_0}{\\omega}$",
+       "dung": false,
+       "vi_sao": "Lấy đạo hàm thì nhân với $\\omega$, không chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Suất điện động hiệu dụng",
+     "hoi": "Suất điện động hiệu dụng $E$ bằng bao nhiêu volt?",
+     "dap_so": 8.89,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Chia $E_0$ cho $2$ hoặc nhân với $\\sqrt{2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$E=\\dfrac{E_0}{\\sqrt{2}}$",
+       "dung": true
+      },
+      {
+       "text": "$E=E_0\\sqrt{2}$",
+       "dung": false,
+       "vi_sao": "Hiệu dụng nhỏ hơn cực đại; nhân $\\sqrt{2}$ cho số lớn hơn."
+      },
+      {
+       "text": "$E=\\dfrac{E_0}{2}$",
+       "dung": false,
+       "vi_sao": "Hệ số $\\dfrac{1}{2}$ ở trung bình của bình phương; hiệu dụng chia cho $\\sqrt{2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Biểu thức của $e$",
+     "hoi": "Pha ban đầu của $e$ bằng bao nhiêu rad?",
+     "dap_so": -1.571,
+     "sai_so": 0.01,
+     "don_vi": "rad",
+     "loi_hay_gap": "Cho $e$ cùng pha ban đầu với $\\Phi$ (bằng $0$), hoặc lấy $e$ nhanh pha $\\dfrac{\\pi}{2}$ thay vì chậm pha.",
+     "chon_buoc_ke": [
+      {
+       "text": "$e=-\\Phi'=E_0\\sin\\omega t=E_0\\cos\\left(\\omega t-\\dfrac{\\pi}{2}\\right)$",
+       "dung": true
+      },
+      {
+       "text": "$e$ cùng pha với $\\Phi$ nên pha ban đầu bằng $0$",
+       "dung": false,
+       "vi_sao": "$e$ tỉ lệ với tốc độ biến thiên của $\\Phi$ chứ không với $\\Phi$; hai đại lượng vuông pha."
+      },
+      {
+       "text": "$e$ nhanh pha $\\dfrac{\\pi}{2}$ so với $\\Phi$",
+       "dung": false,
+       "vi_sao": "Từ $e=-\\Phi'$ ra $e=+E_0\\sin\\omega t$, tức chậm pha $\\dfrac{\\pi}{2}$ chứ không nhanh pha."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Thời gian đèn sáng và thời điểm đèn tắt",
+   "topic": "Viết biểu thức u, i theo thời gian",
+   "problem_html": "<p>Một bóng đèn chỉ sáng khi độ lớn điện áp tức thời đặt vào đèn không nhỏ hơn $100\\sqrt{3}\\ \\text{V}$. Đặt vào đèn điện áp $u=200\\cos(100\\pi t)\\ \\text{V}$ ($t$ tính bằng giây).</p><ol type=\"a\"><li>Trong một chu kì, đèn sáng tổng cộng bao nhiêu mili-giây?</li><li>Trong $1\\ \\text{s}$, đèn sáng tổng cộng bao lâu?</li><li>Kể từ $t=0$ (đèn đang sáng), đèn tắt lần đầu vào thời điểm nào (tính bằng mili-giây)?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Đồ thị điện áp u theo thời gian với hai đường ngưỡng cam; điểm xanh chạy dọc đồ thị và bóng đèn sáng, tối theo độ lớn của u\"><line x1=\"90\" y1=\"134\" x2=\"396\" y2=\"134\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M388.4,129.6 L396.0,134.0 L388.4,138.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"98\" y1=\"210\" x2=\"98\" y2=\"62\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M93.6,69.6 L98.0,62.0 L102.4,69.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"394\" y=\"151\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"106\" y=\"70\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u</text><text x=\"92\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"98.0,72.0 100.3,72.8 102.7,75.0 105.0,78.8 107.4,83.8 109.8,90.2 112.1,97.6 114.5,105.9 116.8,114.8 119.2,124.3 121.5,134.0 123.8,143.7 126.2,153.2 128.6,162.1 130.9,170.4 133.2,177.8 135.6,184.2 137.9,189.2 140.3,193.0 142.7,195.2 145.0,196.0 147.3,195.2 149.7,193.0 152.1,189.2 154.4,184.2 156.8,177.8 159.1,170.4 161.4,162.1 163.8,153.2 166.2,143.7 168.5,134.0 170.8,124.3 173.2,114.8 175.6,105.9 177.9,97.6 180.2,90.2 182.6,83.8 184.9,78.8 187.3,75.0 189.7,72.8 192.0,72.0 194.3,72.8 196.7,75.0 199.1,78.8 201.4,83.8 203.8,90.2 206.1,97.6 208.4,105.9 210.8,114.8 213.2,124.3 215.5,134.0 217.8,143.7 220.2,153.2 222.6,162.1 224.9,170.4 227.2,177.8 229.6,184.2 231.9,189.2 234.3,193.0 236.7,195.2 239.0,196.0 241.3,195.2 243.7,193.0 246.1,189.2 248.4,184.2 250.8,177.8 253.1,170.4 255.4,162.1 257.8,153.2 260.1,143.7 262.5,134.0 264.9,124.3 267.2,114.8 269.6,105.9 271.9,97.6 274.2,90.2 276.6,83.8 278.9,78.8 281.3,75.0 283.6,72.8 286.0,72.0 288.4,72.8 290.7,75.0 293.1,78.8 295.4,83.8 297.8,90.2 300.1,97.6 302.4,105.9 304.8,114.8 307.1,124.3 309.5,134.0 311.9,143.7 314.2,153.2 316.6,162.1 318.9,170.4 321.2,177.8 323.6,184.2 325.9,189.2 328.3,193.0 330.6,195.2 333.0,196.0 335.4,195.2 337.7,193.0 340.1,189.2 342.4,184.2 344.8,177.8 347.1,170.4 349.4,162.1 351.8,153.2 354.1,143.7 356.5,134.0 358.9,124.3 361.2,114.8 363.6,105.9 365.9,97.6 368.2,90.2 370.6,83.8 372.9,78.8 375.3,75.0 377.6,72.8 380.0,72.0\"/><line x1=\"98.0\" y1=\"80.3\" x2=\"380.0\" y2=\"80.3\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"90\" y=\"84.3\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">+100√3 V</text><line x1=\"98.0\" y1=\"187.7\" x2=\"380.0\" y2=\"187.7\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"90\" y=\"191.7\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">−100√3 V</text><circle cx=\"44\" cy=\"40\" r=\"30\" fill=\"#fb923c\" opacity=\"0.80\"><animate attributeName=\"opacity\" values=\"0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.80;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.80;0.80;0.80;0.80;0.80;0.80\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"44\" cy=\"40\" r=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"37.0,49.0 40.0,37.0 44.0,45.0 48.0,37.0 51.0,49.0\"/><rect x=\"36\" y=\"57\" width=\"16\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"390\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">u = 200cos(100πt) V</text><text x=\"390\" y=\"42\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">đèn sáng khi |u| ≥ 100√3 V</text><circle cx=\"98.0\" cy=\"72.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"98.0;100.9;103.9;106.8;109.8;112.7;115.6;118.6;121.5;124.4;127.4;130.3;133.2;136.2;139.1;142.1;145.0;147.9;150.9;153.8;156.8;159.7;162.6;165.6;168.5;171.4;174.4;177.3;180.2;183.2;186.1;189.1;192.0;194.9;197.9;200.8;203.8;206.7;209.6;212.6;215.5;218.4;221.4;224.3;227.2;230.2;233.1;236.1;239.0;241.9;244.9;247.8;250.8;253.7;256.6;259.6;262.5;265.4;268.4;271.3;274.2;277.2;280.1;283.1;286.0;288.9;291.9;294.8;297.8;300.7;303.6;306.6;309.5;312.4;315.4;318.3;321.2;324.2;327.1;330.1;333.0;335.9;338.9;341.8;344.8;347.7;350.6;353.6;356.5;359.4;362.4;365.3;368.2;371.2;374.1;377.1;380.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"72.0;73.2;76.7;82.4;90.2;99.6;110.3;121.9;134.0;146.1;157.7;168.4;177.8;185.6;191.3;194.8;196.0;194.8;191.3;185.6;177.8;168.4;157.7;146.1;134.0;121.9;110.3;99.6;90.2;82.4;76.7;73.2;72.0;73.2;76.7;82.4;90.2;99.6;110.3;121.9;134.0;146.1;157.7;168.4;177.8;185.6;191.3;194.8;196.0;194.8;191.3;185.6;177.8;168.4;157.7;146.1;134.0;121.9;110.3;99.6;90.2;82.4;76.7;73.2;72.0;73.2;76.7;82.4;90.2;99.6;110.3;121.9;134.0;146.1;157.7;168.4;177.8;185.6;191.3;194.8;196.0;194.8;191.3;185.6;177.8;168.4;157.7;146.1;134.0;121.9;110.3;99.6;90.2;82.4;76.7;73.2;72.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy trên đồ thị u(t), bóng đèn sáng khi |u| không nhỏ hơn ngưỡng (hai đường nét đứt cam); chạy chậm 100 lần (một chu kì ứng với 2 s). Hình minh hoạ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Đèn sáng khi $|u|\\ge u_s$: $|\\cos\\alpha|\\ge\\dfrac{u_s}{U_0}$ với $\\alpha=\\omega t$.</li><li>Đổi pha quét sang thời gian: $\\Delta t=\\dfrac{\\Delta\\alpha}{\\omega}$; $T=\\dfrac{2\\pi}{\\omega}$.</li><li>Mỗi chu kì có một đỉnh dương và một đỉnh âm; đèn sáng quanh mỗi đỉnh.</li><li>Điều kiện: đề cho theo độ lớn $|u|$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chu kì</span></p>$$T=\\dfrac{2\\pi}{\\omega}=\\dfrac{2\\pi}{100\\pi}$$<div class=\"bt-ans\">$$T=0{,}02\\ \\text{s}=20\\ \\text{ms}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Pha quét mỗi lần sáng</span></p>$$|\\cos\\alpha|\\ge\\dfrac{100\\sqrt{3}}{200}=\\dfrac{\\sqrt{3}}{2}$$<p>Quanh đỉnh $\\alpha=0$: $\\cos\\alpha\\ge\\dfrac{\\sqrt{3}}{2}$ khi $|\\alpha|\\le\\dfrac{\\pi}{6}$.</p>$$\\Delta\\alpha=2\\cdot\\dfrac{\\pi}{6}$$<div class=\"bt-ans\">$$\\Delta\\alpha=\\dfrac{\\pi}{3}\\approx1{,}047\\ \\text{rad}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số lần sáng mỗi chu kì</span></p><p>Đỉnh dương ($\\alpha=0$) và đỉnh âm ($\\alpha=\\pi$) đều làm $|u|=U_0$ lớn hơn ngưỡng.</p><div class=\"bt-ans\"><p>Đèn sáng $2$ lần trong mỗi chu kì.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian sáng mỗi chu kì (câu a)</span></p>$$\\Delta t_1=\\dfrac{\\Delta\\alpha}{\\omega}=\\dfrac{\\pi/3}{100\\pi}=\\dfrac{1}{300}\\ \\text{s}$$$$\\Delta t=2\\Delta t_1=\\dfrac{1}{150}\\ \\text{s}$$<div class=\"bt-ans\">$$\\Delta t\\approx6{,}67\\ \\text{ms}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian sáng trong $1\\ \\text{s}$ (câu b)</span></p><p>Số chu kì trong $1\\ \\text{s}$ là $f=\\dfrac{1}{T}=50$.</p>$$\\Delta t_{1\\,\\text{s}}=50\\cdot\\dfrac{1}{150}$$<div class=\"bt-ans\">$$\\Delta t_{1\\,\\text{s}}=\\dfrac{1}{3}\\ \\text{s}\\approx0{,}333\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Thời điểm tắt lần đầu (câu c)</span></p><p>Lúc $t=0$: $|u|=200\\ \\text{V}\\gt100\\sqrt{3}\\ \\text{V}$ nên đèn đang sáng; đèn tắt khi $|u|$ giảm xuống đúng ngưỡng, tức $\\alpha=\\dfrac{\\pi}{6}$.</p>$$t=\\dfrac{\\alpha}{\\omega}=\\dfrac{\\pi/6}{100\\pi}=\\dfrac{1}{600}\\ \\text{s}$$<div class=\"bt-ans\">$$t\\approx1{,}67\\ \\text{ms}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Tỉ lệ thời gian sáng: $\\dfrac{6{,}67}{20}=\\dfrac{1}{3}$, khớp $\\dfrac{4\\cdot\\pi/6}{2\\pi}=\\dfrac{1}{3}$.</p><p>Thử lại: $u\\left(\\dfrac{1}{600}\\right)=200\\cos\\dfrac{\\pi}{6}=100\\sqrt{3}\\ \\text{V}$, đúng bằng ngưỡng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Delta t\\approx6{,}67\\ \\text{ms}$ mỗi chu kì</p><p>b) $\\dfrac{1}{3}\\ \\text{s}\\approx0{,}333\\ \\text{s}$ trong $1\\ \\text{s}$</p><p>c) $t=\\dfrac{1}{600}\\ \\text{s}\\approx1{,}67\\ \\text{ms}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đèn sáng khi $|u|$ vượt ngưỡng</strong> → đổi điều kiện thành khoảng pha quét, rồi chia cho $\\omega$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Dữ kiện: đồ thị điện áp u theo thời gian và hai đường ngưỡng ứng với độ lớn điện áp mà đèn bắt đầu sáng\"><line x1=\"90\" y1=\"134\" x2=\"396\" y2=\"134\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M388.4,129.6 L396.0,134.0 L388.4,138.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"98\" y1=\"210\" x2=\"98\" y2=\"62\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M93.6,69.6 L98.0,62.0 L102.4,69.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"394\" y=\"151\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t</text><text x=\"106\" y=\"70\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">u</text><text x=\"92\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"98.0,72.0 100.3,72.8 102.7,75.0 105.0,78.8 107.4,83.8 109.8,90.2 112.1,97.6 114.5,105.9 116.8,114.8 119.2,124.3 121.5,134.0 123.8,143.7 126.2,153.2 128.6,162.1 130.9,170.4 133.2,177.8 135.6,184.2 137.9,189.2 140.3,193.0 142.7,195.2 145.0,196.0 147.3,195.2 149.7,193.0 152.1,189.2 154.4,184.2 156.8,177.8 159.1,170.4 161.4,162.1 163.8,153.2 166.2,143.7 168.5,134.0 170.8,124.3 173.2,114.8 175.6,105.9 177.9,97.6 180.2,90.2 182.6,83.8 184.9,78.8 187.3,75.0 189.7,72.8 192.0,72.0 194.3,72.8 196.7,75.0 199.1,78.8 201.4,83.8 203.8,90.2 206.1,97.6 208.4,105.9 210.8,114.8 213.2,124.3 215.5,134.0 217.8,143.7 220.2,153.2 222.6,162.1 224.9,170.4 227.2,177.8 229.6,184.2 231.9,189.2 234.3,193.0 236.7,195.2 239.0,196.0 241.3,195.2 243.7,193.0 246.1,189.2 248.4,184.2 250.8,177.8 253.1,170.4 255.4,162.1 257.8,153.2 260.1,143.7 262.5,134.0 264.9,124.3 267.2,114.8 269.6,105.9 271.9,97.6 274.2,90.2 276.6,83.8 278.9,78.8 281.3,75.0 283.6,72.8 286.0,72.0 288.4,72.8 290.7,75.0 293.1,78.8 295.4,83.8 297.8,90.2 300.1,97.6 302.4,105.9 304.8,114.8 307.1,124.3 309.5,134.0 311.9,143.7 314.2,153.2 316.6,162.1 318.9,170.4 321.2,177.8 323.6,184.2 325.9,189.2 328.3,193.0 330.6,195.2 333.0,196.0 335.4,195.2 337.7,193.0 340.1,189.2 342.4,184.2 344.8,177.8 347.1,170.4 349.4,162.1 351.8,153.2 354.1,143.7 356.5,134.0 358.9,124.3 361.2,114.8 363.6,105.9 365.9,97.6 368.2,90.2 370.6,83.8 372.9,78.8 375.3,75.0 377.6,72.8 380.0,72.0\"/><line x1=\"98.0\" y1=\"80.3\" x2=\"380.0\" y2=\"80.3\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"90\" y=\"84.3\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">+100√3 V</text><line x1=\"98.0\" y1=\"187.7\" x2=\"380.0\" y2=\"187.7\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"90\" y=\"191.7\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">−100√3 V</text><circle cx=\"44\" cy=\"40\" r=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\" points=\"37.0,49.0 40.0,37.0 44.0,45.0 48.0,37.0 51.0,49.0\"/><rect x=\"36\" y=\"57\" width=\"16\" height=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"390\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">u = 200cos(100πt) V</text><text x=\"390\" y=\"42\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">đèn sáng khi |u| ≥ 100√3 V</text><text x=\"14\" y=\"224\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a) ? ms ; b) ? s ; c) ? ms</text></svg><figcaption>Dữ kiện: đèn sáng khi đồ thị nằm ngoài dải giữa hai đường ngưỡng. Hình minh hoạ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chỉ sáng khi độ lớn điện áp tức thời … không nhỏ hơn $100\\sqrt{3}\\ \\text{V}$\"</td><td>$|u|\\ge100\\sqrt{3}\\ \\text{V}$</td><td>⚠ Điều kiện đề cho theo độ lớn $|u|$</td></tr><tr><td>\"$u=200\\cos(100\\pi t)\\ \\text{V}$\"</td><td>$U_0=200\\ \\text{V}$; $\\omega=100\\pi\\ \\text{rad/s}$; $\\varphi_u=0$</td><td>Đọc biên độ, tần số góc, pha ban đầu</td></tr><tr><td>\"Trong một chu kì, đèn sáng tổng cộng bao nhiêu ms\"</td><td>Cần tổng thời gian sáng trong $T$</td><td>Cần chu kì, số lần sáng mỗi chu kì, thời gian một lần sáng</td></tr><tr><td>\"Trong $1\\ \\text{s}$\"</td><td>Cần tổng thời gian sáng trong $1\\ \\text{s}$</td><td>Số chu kì trong $1\\ \\text{s}$</td></tr><tr><td>\"Kể từ $t=0$ (đèn đang sáng), đèn tắt lần đầu\"</td><td>Cần thời điểm tắt lần đầu</td><td>Pha lúc $|u|$ chạm ngưỡng lần đầu</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đèn sáng khi $|u|$ vượt ngưỡng</b> → nghĩ tới <b>đổi điều kiện thành khoảng pha quét</b>, rồi chia cho $\\omega$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ bằng bao nhiêu mili-giây?",
+     "dap_so": 20,
+     "sai_so": 0.1,
+     "don_vi": "ms",
+     "loi_hay_gap": "Quên đổi giây sang mili-giây, hoặc lấy $T=\\dfrac{1}{\\omega}$."
+    },
+    {
+     "tieu_de": "Pha quét mỗi lần sáng",
+     "hoi": "Mỗi lần đèn sáng, pha $\\omega t$ quét được bao nhiêu rad?",
+     "dap_so": 1.047,
+     "sai_so": 0.01,
+     "don_vi": "rad",
+     "loi_hay_gap": "Chỉ xét nửa bên của đỉnh (quên đỉnh nằm giữa), hoặc chỉ xét $u$ dương.",
+     "chon_buoc_ke": [
+      {
+       "text": "$|\\cos\\alpha|\\ge\\dfrac{\\sqrt{3}}{2}$: pha quanh mỗi đỉnh trong một khoảng đối xứng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ xét $u\\ge100\\sqrt{3}$",
+       "dung": false,
+       "vi_sao": "Đề nói độ lớn nên điện áp âm cũng làm đèn sáng."
+      },
+      {
+       "text": "$|\\cos\\alpha|\\ge\\dfrac{1}{2}$ vì ngưỡng bằng nửa biên độ",
+       "dung": false,
+       "vi_sao": "Ngưỡng là $100\\sqrt{3}$ V, tức $\\dfrac{\\sqrt{3}}{2}$ biên độ, không phải một nửa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số lần sáng mỗi chu kì",
+     "hoi": "Mỗi chu kì đèn sáng mấy lần?",
+     "dap_so": 2,
+     "sai_so": 0,
+     "don_vi": "lần",
+     "loi_hay_gap": "Đếm một lần (chỉ đỉnh dương) hoặc bốn lần (đếm cả lúc bắt đầu và kết thúc mỗi lần sáng).",
+     "chon_buoc_ke": [
+      {
+       "text": "Sáng quanh mỗi đỉnh: một đỉnh dương, một đỉnh âm",
+       "dung": true
+      },
+      {
+       "text": "Chỉ sáng quanh đỉnh dương",
+       "dung": false,
+       "vi_sao": "$|u|$ cũng lớn ở đỉnh âm nên đèn cũng sáng ở đó."
+      },
+      {
+       "text": "Sáng quanh mỗi điểm $u=0$",
+       "dung": false,
+       "vi_sao": "Tại $u=0$ điện áp nhỏ nhất nên đèn tắt, không sáng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian sáng mỗi chu kì",
+     "hoi": "Tổng thời gian đèn sáng trong một chu kì là bao nhiêu mili-giây?",
+     "dap_so": 6.67,
+     "sai_so": 0.05,
+     "don_vi": "ms",
+     "loi_hay_gap": "Lấy pha quét nhân với $T$ thay vì chia cho $\\omega$, hoặc cho rằng đèn sáng một nửa chu kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta t=\\dfrac{2\\cdot\\text{pha quét một lần}}{\\omega}$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta t=\\text{pha quét}\\cdot T$",
+       "dung": false,
+       "vi_sao": "Pha quét tính bằng rad; đổi sang thời gian phải chia cho $\\omega$ (hoặc lấy tỉ lệ $\\dfrac{\\text{pha}}{2\\pi}$ nhân $T$)."
+      },
+      {
+       "text": "$\\Delta t=\\dfrac{T}{2}$ vì đèn sáng nửa thời gian",
+       "dung": false,
+       "vi_sao": "Tỉ lệ thời gian sáng phải tính từ pha quét, không đoán bằng một nửa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian sáng trong 1 s",
+     "hoi": "Trong $1\\ \\text{s}$ đèn sáng tổng cộng bao nhiêu giây?",
+     "dap_so": 0.333,
+     "sai_so": 0.005,
+     "don_vi": "s",
+     "loi_hay_gap": "Nhân với $\\omega$ thay vì số chu kì, hoặc đếm số lần đổi chiều thay cho số chu kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "Số chu kì trong $1$ s là $f$, nhân với thời gian sáng mỗi chu kì",
+       "dung": true
+      },
+      {
+       "text": "Nhân với $\\omega=100\\pi$",
+       "dung": false,
+       "vi_sao": "Số chu kì trong $1$ s là $f$; $\\omega$ là rad/s."
+      },
+      {
+       "text": "Nhân với số lần đổi chiều mỗi giây",
+       "dung": false,
+       "vi_sao": "Đèn sáng theo chu kì, mỗi chu kì có thời gian sáng đã tính; đếm lần đổi chiều sẽ nhân gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời điểm tắt lần đầu",
+     "hoi": "Kể từ $t=0$, đèn tắt lần đầu vào thời điểm nào, theo mili-giây?",
+     "dap_so": 1.667,
+     "sai_so": 0.02,
+     "don_vi": "ms",
+     "loi_hay_gap": "Cho rằng đèn tắt khi $u=0$, hoặc lấy góc ứng với $\\cos\\alpha=\\dfrac{1}{2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đèn tắt khi $|u|$ xuống đúng ngưỡng: $\\cos\\alpha=\\dfrac{\\sqrt{3}}{2}$, lần đầu ngay khi $|\\cos\\alpha|$ chạm ngưỡng",
+       "dung": true
+      },
+      {
+       "text": "Đèn tắt khi $u=0$, tức $\\alpha=\\dfrac{\\pi}{2}$",
+       "dung": false,
+       "vi_sao": "Đèn đã tắt từ lúc $|u|$ xuống dưới ngưỡng, trước khi $u$ về $0$."
+      },
+      {
+       "text": "Đèn tắt ở $\\alpha=\\dfrac{\\pi}{3}$ vì $\\cos\\dfrac{\\pi}{3}=\\dfrac{1}{2}$",
+       "dung": false,
+       "vi_sao": "Ngưỡng ứng với $\\cos\\dfrac{\\pi}{6}=\\dfrac{\\sqrt{3}}{2}$, không phải $\\dfrac{1}{2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p class=\"text-base leading-relaxed my-2\">Xét dòng điện xoay chiều đi qua đoạn mạch chỉ chứa điện trở R. Đồ thị điện áp - thời gian và cường độ dòng điện - thời gian được mô tả trong hình.</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/14/1790222849680-fig01.png\" alt=\"Giá trị cực đại, hiệu dụng, chu kì, tần số, pha của u, i Xét dòng điện xoay chiều đi qua đ\"> <img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/14/1790222850398-fig02.png\" alt=\"ố, pha của u, i Xét dòng điện xoay chiều đi qua đoạn mạch chỉ chứa điện trở R. Đồ thị điện\"></p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">a)</strong> Xác định giá trị cực đại, giá trị hiệu dụng, chu kì và tần số của cường độ dòng điện và điện áp.</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">b)</strong> Nhận xét về pha dao động của cường độ dòng điện và điện áp.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">a) $I_{o}=\\sqrt{2}\\left( A \\right),U_{o}=200\\left( V \\right),I=1\\left( A \\right),U=100\\sqrt{2}\\left( V \\right),T=0,02\\left( s \\right),f=50\\left( Hz \\right)$</p><p class=\"text-base leading-relaxed my-2\">b) i với u cùng pha.</p></details><h4>Bài 2 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Cường độ dòng điện xoay chiều qua một đoạn mạch có biểu thức $i=I_{0}cos(100\\pi t+\\varphi ).$ Trong một giây dòng điện có độ lớn bằng không bao nhiêu lần?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$T=\\frac{2\\pi }{\\omega }=0,02\\left( s \\right)\\Rightarrow \\Delta t=1s=50T$</p><p class=\"text-base leading-relaxed my-2\">Một chu kì dòng điện có độ lớn bằng không 2 lần, vậy 50 chu kì dòng điện có độ lớn bằng không 100 lần.</p></details><h4>Bài 3 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Cường độ dòng điện xoay chiều qua một đoạn mạch có biểu thức $i=3cos\\left( \\omega t \\right) \\left( A \\right)$, trong đó t được đo bằng s. Biết rằng trong thời gian 0,1 s thì dòng điện tăng từ giá trị 0 A đến 3A. Hãy tính tần số góc của dòng điện xoay chiều qua đoạn mạch.</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$\\frac{T}{4}=0,1\\Rightarrow T=0,4\\left( s \\right)\\Rightarrow \\omega =\\frac{2\\pi }{T}=5\\pi \\left( rad/s \\right)$</p></details><h4>Bài 4 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Cường độ dòng điện xoay chiều qua một đoạn mạch có biểu thức $i=4cos\\left( \\omega t \\right)\\left( A \\right)$. Biết rằng trong thời gian 0,01 s; dòng điện giảm từ giá trị 0 A đến -4A. Tần số của dòng điện xoay chiều là bao nhiêu Hz?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$\\frac{T}{4}=0,01\\left( s \\right)\\Rightarrow T=0,04\\left( s \\right)\\Rightarrow f=\\frac{1}{T}=25\\left( Hz \\right)$</p></details><h4>Bài 5 · Trung bình</h4><p class=\"text-base leading-relaxed my-2\">Một bếp điện có điện trở <em class=\"italic\">R</em> khi được mắc vào một điện áp xoay chiều có cường độ dòng điện cực đại là $6,4A$ thì có công suất tỏa nhiệt trung bình của bếp là $1000 W$. Giá trị điện trở của bếp điện là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$P=I^{2}R\\Leftrightarrow 1000=\\left( \\frac{6,4}{\\sqrt{2}} \\right)^{2}.R\\Leftrightarrow R=48,8\\left( \\Omega \\right)$</p></details><h4>Bài 6 · Khá</h4><p class=\"text-base leading-relaxed my-2\">Một điện áp xoay chiều được đặt vào hai đầu của một điện trở có giá trị $100 \\Omega.$ Nhiệt lượng mà điện trở toả ra trong 5 phút là $3600 J$. Điện áp cực đại có giá trị là bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\">$Q=\\frac{U^{2}}{R}t\\Leftrightarrow 3600=\\frac{U^{2}}{100}.5.60\\Leftrightarrow U=20\\sqrt{3}\\left( V \\right)\\Rightarrow U_{o}=U\\sqrt{2}=20\\sqrt{6}\\left( V \\right)$</p></details>"
+ }
+}

@@ -1,0 +1,605 @@
+{
+ "lesson_id": 15,
+ "lesson_title": "Bài 14. Hạt nhân và mô hình nguyên tử",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; đã sửa lộ đáp án dạng 2,3,5; hình dạng 3 đã xem bằng mắt (tỉ số vẽ 1,26, chú thích \"không đúng tỉ lệ\" khớp). Bài chưa có mục bai_tap_mau trong DB."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Đọc kí hiệu hạt nhân: đếm prôtôn, nơtron, êlectron và điện tích",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "problem_html": "<p>Đồng vị bền phổ biến nhất của đồng có kí hiệu hạt nhân $^{63}_{29}\\text{Cu}$. Gọi $e$ là điện tích nguyên tố.</p><ol type=\"a\"><li>Hạt nhân này có bao nhiêu prôtôn, bao nhiêu nuclôn?</li><li>Hạt nhân này có bao nhiêu nơtron?</li><li>Nguyên tử đồng trung hoà có bao nhiêu êlectron ở vỏ? Điện tích hạt nhân bằng bao nhiêu lần $e$?</li><li>Một hạt nhân khác có $82$ prôtôn và $124$ nơtron. Tính số khối của nó và viết kí hiệu hạt nhân (nguyên tố có $Z=82$ là chì, kí hiệu $\\text{Pb}$).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Các prôtôn và nơtron lần lượt vào một hạt nhân lithi-7 mẫu\"><circle cx=\"86.0\" cy=\"52.0\" r=\"7.4\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"86;86;300;300\" keyTimes=\"0.0000;0.0541;0.1622;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"52;52;100;100\" keyTimes=\"0.0000;0.0541;0.1622;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34.0\" cy=\"52.0\" r=\"7.4\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"34;34;313.2;313.2\" keyTimes=\"0.0000;0.1824;0.2905;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"52;52;107.6;107.6\" keyTimes=\"0.0000;0.1824;0.2905;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86.0\" cy=\"88.0\" r=\"7.4\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"86;86;300.0;300.0\" keyTimes=\"0.0000;0.3108;0.4189;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"88;88;115.2;115.2\" keyTimes=\"0.0000;0.3108;0.4189;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34.0\" cy=\"88.0\" r=\"7.4\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"34;34;286.8;286.8\" keyTimes=\"0.0000;0.4392;0.5473;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"88;88;107.6;107.6\" keyTimes=\"0.0000;0.4392;0.5473;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86.0\" cy=\"124.0\" r=\"7.4\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"86;86;286.8;286.8\" keyTimes=\"0.0000;0.5676;0.6757;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"124;124;92.4;92.4\" keyTimes=\"0.0000;0.5676;0.6757;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"34.0\" cy=\"124.0\" r=\"7.4\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"34;34;300.0;300.0\" keyTimes=\"0.0000;0.6959;0.8041;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"124;124;84.8;84.8\" keyTimes=\"0.0000;0.6959;0.8041;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"86.0\" cy=\"160.0\" r=\"7.4\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"86;86;313.2;313.2\" keyTimes=\"0.0000;0.8243;0.9324;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160;160;92.4;92.4\" keyTimes=\"0.0000;0.8243;0.9324;1.0000\" dur=\"7.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"34\" y=\"28\" fill=\"#f87171\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">prôtôn</text><text x=\"86\" y=\"28\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nơtron</text><circle cx=\"20.0\" cy=\"190.0\" r=\"6\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"1.6\"/><text x=\"32\" y=\"195\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">prôtôn (+e)</text><circle cx=\"150.0\" cy=\"190.0\" r=\"6\" fill=\"#94a3b8\" stroke=\"#94a3b8\" stroke-width=\"1.6\"/><text x=\"162\" y=\"195\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nơtron (không mang điện)</text><text x=\"300\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">hạt nhân mẫu: lithi-7</text><text x=\"300\" y=\"178\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">(không phải hạt nhân trong đề)</text><line x1=\"135\" y1=\"100\" x2=\"262\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M254.4,95.6 L262.0,100.0 L254.4,104.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: từng nuclôn (prôtôn hoặc nơtron) tiến vào tụ lại thành một hạt nhân mẫu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hạt nhân gồm prôtôn ($+e$) và nơtron (không mang điện), gọi chung là nuclôn.</li><li><strong>Kí hiệu</strong> $^A_Z X$: $Z$ là số prôtôn, $A$ là số nuclôn (số khối).</li><li><strong>Công thức:</strong> $N=A-Z$ là số nơtron.</li><li>⚠ <strong>Điều kiện:</strong> chỉ số dưới là $Z$, chỉ số trên là $A$ ; nguyên tử trung hoà thì số êlectron bằng số prôtôn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đọc hai chỉ số</span></p><p>Chỉ số dưới là số prôtôn $Z$, chỉ số trên là số nuclôn $A$.</p>$${}^{63}_{29}\\text{Cu}:\\quad Z=29,\\quad A=63$$<div class=\"bt-ans\"><p>Hạt nhân có <strong>29 prôtôn</strong> và <strong>63 nuclôn</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số nơtron</span></p><p>Nuclôn gồm prôtôn và nơtron nên:</p>$$N=A-Z=63-29$$<div class=\"bt-ans\">$$N=34\\ \\text{nơtron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Êlectron và điện tích hạt nhân</span></p><p>Nguyên tử trung hoà nên số êlectron bằng số prôtôn. Chỉ prôtôn mang điện ($+e$), nơtron không mang điện:</p>$$N_e=Z=29$$$$q=+Ze=+29\\,e$$<div class=\"bt-ans\"><p>Có <strong>29 êlectron</strong> ; điện tích hạt nhân bằng <strong>$+29e$</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hạt nhân có 82 prôtôn và 124 nơtron</span></p><p>Số khối bằng tổng số prôtôn và số nơtron:</p>$$A=Z+N=82+124$$<div class=\"bt-ans\">$$A=206$$</div><p>Chì có $Z=82$ nên kí hiệu hạt nhân là:</p><div class=\"bt-ans\">$${}^{206}_{82}\\text{Pb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$29+34=63=A$ ✓ khớp số nuclôn.</p><p>$206-82=124$ ✓ khớp số nơtron đề cho.</p><p>Lấy $A$ làm điện tích hạt nhân sẽ ra $63e$ — sai vì nơtron không mang điện.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $29$ prôtôn ; $63$ nuclôn</p><p>b) $34$ nơtron</p><p>c) $29$ êlectron ; điện tích hạt nhân $+29e$</p><p>d) $A=206$ ; kí hiệu $^{206}_{82}\\text{Pb}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>kí hiệu hạt nhân</strong> hoặc <strong>số prôtôn và nơtron</strong> → đọc $Z$ (dưới), $A$ (trên) và dùng $A=Z+N$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 208\" role=\"img\" aria-label=\"Kí hiệu hạt nhân của đồng với hai chỉ số cần đọc và các đại lượng cần tìm\"><text x=\"148.8\" y=\"79.8\" fill=\"currentColor\" font-size=\"24\" font-weight=\"700\" text-anchor=\"end\">63</text><text x=\"148.8\" y=\"118.2\" fill=\"currentColor\" font-size=\"24\" font-weight=\"700\" text-anchor=\"end\">29</text><text x=\"150.8\" y=\"117.2\" fill=\"currentColor\" font-size=\"44\" font-weight=\"700\" text-anchor=\"start\">Cu</text><line x1=\"78\" y1=\"36\" x2=\"112\" y2=\"62\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M108.6,53.9 L112.0,62.0 L103.3,60.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"10\" y=\"30\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chỉ số trên</text><line x1=\"78\" y1=\"174\" x2=\"112\" y2=\"120\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M104.2,124.1 L112.0,120.0 L111.7,128.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"10\" y=\"190\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chỉ số dưới</text><text x=\"250\" y=\"52\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:</text><text x=\"250\" y=\"76\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số prôtôn ?</text><text x=\"250\" y=\"98\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số nuclôn ?</text><text x=\"250\" y=\"120\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số nơtron ?</text><text x=\"250\" y=\"142\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số êlectron ?</text><text x=\"250\" y=\"164\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">điện tích hạt nhân ?</text></svg><figcaption>Dữ kiện: kí hiệu hạt nhân của đồng đã cho; các đại lượng cần tìm ghi bên phải. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"kí hiệu hạt nhân $^{63}_{29}\\text{Cu}$\"</td><td>Hai chỉ số: $63$ và $29$</td><td>⚠ Hai chỉ số có vị trí quy ước, không đọc đảo ngược; số êlectron chỉ gắn với nguyên tử trung hoà</td></tr><tr><td>\"bao nhiêu prôtôn, bao nhiêu nuclôn\"</td><td>Cần: số prôtôn, số nuclôn</td><td>Ý nghĩa chỉ số dưới và chỉ số trên của kí hiệu</td></tr><tr><td>\"bao nhiêu nơtron\"</td><td>Cần: số nơtron</td><td>Nuclôn gồm những loại hạt nào</td></tr><tr><td>\"nguyên tử đồng trung hoà … êlectron\"</td><td>Nguyên tử trung hoà điện</td><td>Điện tích của êlectron so với prôtôn</td></tr><tr><td>\"điện tích hạt nhân bằng bao nhiêu lần $e$\"</td><td>Cần: điện tích theo $e$</td><td>Loại hạt nào trong hạt nhân mang điện</td></tr><tr><td>\"$82$ prôtôn và $124$ nơtron … số khối\"</td><td>$Z=82$ ; $N=124$</td><td>Số khối đếm những hạt nào</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kí hiệu hạt nhân</b> hoặc <b>số prôtôn, nơtron</b> → đọc <b>Z (dưới), A (trên)</b>, dùng <b>A = Z + N</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đọc hai chỉ số",
+     "hoi": "Trong kí hiệu $^A_Z X$, chỉ số dưới $Z$ và chỉ số trên $A$ là gì?",
+     "lua_chon": [
+      {
+       "text": "$Z$ là số nuclôn, $A$ là số prôtôn",
+       "dung": false,
+       "vi_sao": "Đọc ngược. Số nuclôn gồm cả nơtron nên lớn hơn số prôtôn, và nó nằm ở chỉ số trên."
+      },
+      {
+       "text": "$Z$ là số prôtôn, $A$ là số nuclôn",
+       "dung": true
+      },
+      {
+       "text": "$Z$ là số nơtron, $A$ là số prôtôn",
+       "dung": false,
+       "vi_sao": "Số nơtron không có chỉ số riêng trong kí hiệu mà suy ra từ $A-Z$."
+      }
+     ],
+     "loi_hay_gap": "Đọc ngược hai chỉ số: coi chỉ số trên là số prôtôn và chỉ số dưới là số nuclôn."
+    },
+    {
+     "tieu_de": "Số nơtron",
+     "hoi": "Hạt nhân có bao nhiêu nơtron?",
+     "dap_so": 34,
+     "sai_so": 0,
+     "don_vi": "nơtron",
+     "loi_hay_gap": "Lấy luôn chỉ số trên làm số nơtron, hoặc cộng thay vì trừ hai chỉ số.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy số nuclôn trừ số prôtôn : $N=A-Z$",
+       "dung": true
+      },
+      {
+       "text": "Lấy số nuclôn cộng số prôtôn : $N=A+Z$",
+       "dung": false,
+       "vi_sao": "Nuclôn đã gồm cả prôtôn lẫn nơtron ; cộng thêm $Z$ là đếm prôtôn hai lần."
+      },
+      {
+       "text": "Lấy luôn chỉ số trên làm số nơtron",
+       "dung": false,
+       "vi_sao": "Chỉ số trên là tổng nuclôn gồm cả prôtôn, chưa trừ prôtôn đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Êlectron và điện tích hạt nhân",
+     "hoi": "Điện tích hạt nhân bằng bao nhiêu lần $e$?",
+     "dap_so": 29,
+     "sai_so": 0,
+     "don_vi": "lần e",
+     "loi_hay_gap": "Tính cả nơtron vào điện tích hạt nhân (dùng chỉ số trên thay chỉ số dưới), hoặc nghĩ nguyên tử trung hoà thì hạt nhân không mang điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chỉ prôtôn mang điện : $q=+Ze$, bằng số êlectron của nguyên tử trung hoà",
+       "dung": true
+      },
+      {
+       "text": "Cộng điện tích của mọi nuclôn : $q=+Ae$",
+       "dung": false,
+       "vi_sao": "Nơtron không mang điện nên không góp vào điện tích hạt nhân."
+      },
+      {
+       "text": "Điện tích hạt nhân bằng $0$ vì nguyên tử trung hoà",
+       "dung": false,
+       "vi_sao": "Nguyên tử trung hoà vì êlectron bù lại điện dương của hạt nhân ; riêng hạt nhân vẫn mang điện dương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hạt nhân có 82 prôtôn và 124 nơtron",
+     "hoi": "Số khối $A$ của hạt nhân có $82$ prôtôn và $124$ nơtron?",
+     "dap_so": 206,
+     "sai_so": 0,
+     "loi_hay_gap": "Lấy hiệu số nơtron trừ số prôtôn, hoặc lấy luôn số prôtôn làm số khối.",
+     "chon_buoc_ke": [
+      {
+       "text": "Số khối bằng tổng số prôtôn và số nơtron : $A=Z+N$",
+       "dung": true
+      },
+      {
+       "text": "Số khối bằng số nơtron trừ số prôtôn",
+       "dung": false,
+       "vi_sao": "Ngược chiều : $N=A-Z$ cho nơtron, còn $A$ là tổng $Z+N$."
+      },
+      {
+       "text": "Số khối chính là số prôtôn",
+       "dung": false,
+       "vi_sao": "Số prôtôn là chỉ số dưới $Z$ ; số khối phải tính thêm nơtron."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Nhận ra đồng vị: cùng số prôtôn, khác số nơtron",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "problem_html": "<p>Cho sáu hạt nhân: $^{12}_{6}\\text{C}$, $^{14}_{6}\\text{C}$, $^{14}_{7}\\text{N}$, $^{15}_{7}\\text{N}$, $^{16}_{8}\\text{O}$, $^{17}_{8}\\text{O}$.</p><ol type=\"a\"><li>Tính số nơtron của từng hạt nhân.</li><li>Trong sáu hạt nhân này có bao nhiêu cặp đồng vị? Kể tên các cặp.</li><li>Hai hạt nhân $^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$ có phải là đồng vị của nhau không? Vì sao?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Thêm nơtron vào hạt nhân hiđrô thì số prôtôn không đổi\"><circle cx=\"80.0\" cy=\"100.0\" r=\"11\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"></circle><text x=\"80\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hiđrô-1</text><text x=\"80\" y=\"168\" fill=\"#f87171\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 prôtôn</text><circle cx=\"210.0\" cy=\"100.0\" r=\"11\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"></circle><text x=\"210\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hiđrô-2 (đơteri)</text><text x=\"210\" y=\"168\" fill=\"#f87171\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 prôtôn</text><circle cx=\"340.0\" cy=\"100.0\" r=\"11\" fill=\"#f87171\" fill-opacity=\".55\" stroke=\"#f87171\" stroke-width=\"1.6\"></circle><text x=\"340\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hiđrô-3 (triti)</text><text x=\"340\" y=\"168\" fill=\"#f87171\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1 prôtôn</text><circle cx=\"210.0\" cy=\"28.0\" r=\"11\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"210;210;232;232\" keyTimes=\"0.0000;0.1250;0.2750;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"28.0;28.0;100;100\" keyTimes=\"0.0000;0.1250;0.2750;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"340.0\" cy=\"28.0\" r=\"11\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"340;340;362;362\" keyTimes=\"0.0000;0.3750;0.5250;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"28.0;28.0;100;100\" keyTimes=\"0.0000;0.3750;0.5250;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"340.0\" cy=\"28.0\" r=\"11\" fill=\"#94a3b8\" fill-opacity=\".45\" stroke=\"#94a3b8\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"340;340;351;351\" keyTimes=\"0.0000;0.6000;0.7500;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"28.0;28.0;81;81\" keyTimes=\"0.0000;0.6000;0.7500;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"210\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">thêm nơtron: vẫn là hiđrô</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt nhân hiđrô mẫu nhận thêm nơtron lần lượt; hiđrô là ví dụ khác đề. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đồng vị là những nguyên tử cùng số prôtôn $Z$, khác số nơtron $N$ (nên khác $A$).</li><li><strong>Công thức:</strong> $N=A-Z$ để tìm số nơtron từng hạt nhân.</li><li>Cùng $Z$ là cùng nguyên tố, cùng số êlectron, tính chất hoá học giống nhau.</li><li>⚠ <strong>Điều kiện:</strong> chỉ cùng số khối, hoặc chỉ cùng số nơtron, thì chưa phải đồng vị.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số nơtron của sáu hạt nhân</span></p><p>Dùng $N=A-Z$ cho từng hạt nhân:</p>$${}^{12}_{6}\\text{C}:\\ 12-6=6$$$${}^{14}_{6}\\text{C}:\\ 14-6=8$$$${}^{14}_{7}\\text{N}:\\ 14-7=7$$$${}^{15}_{7}\\text{N}:\\ 15-7=8$$$${}^{16}_{8}\\text{O}:\\ 16-8=8$$$${}^{17}_{8}\\text{O}:\\ 17-8=9$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điều kiện để là đồng vị</span></p><p>Đồng vị: hai hạt nhân <strong>cùng $Z$</strong> (cùng nguyên tố), <strong>khác $N$</strong> (nên khác $A$).</p><p>Chỉ số dưới $Z$ là căn cứ đầu tiên để ghép cặp.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ghép theo số prôtôn, đếm cặp</span></p><p>Nhóm theo chỉ số dưới:</p>$$Z=6:\\ {}^{12}_{6}\\text{C},\\ {}^{14}_{6}\\text{C}\\quad(N=6;\\ 8)$$$$Z=7:\\ {}^{14}_{7}\\text{N},\\ {}^{15}_{7}\\text{N}\\quad(N=7;\\ 8)$$$$Z=8:\\ {}^{16}_{8}\\text{O},\\ {}^{17}_{8}\\text{O}\\quad(N=8;\\ 9)$$<p>Mỗi nhóm có hai hạt nhân khác $N$, tạo thành một cặp:</p><div class=\"bt-ans\"><p>Có <strong>3 cặp</strong> đồng vị: C-12 và C-14 ; N-14 và N-15 ; O-16 và O-17.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hai hạt nhân cùng số khối</span></p><p>$^{14}_{6}\\text{C}$ có $Z=6$, $^{14}_{7}\\text{N}$ có $Z=7$ : hai nguyên tố khác nhau, chỉ giống nhau ở số khối.</p><div class=\"bt-ans\"><p><strong>Không</strong> phải đồng vị, vì khác số prôtôn.</p></div><p>Tương tự, $^{14}_{6}\\text{C}$, $^{15}_{7}\\text{N}$, $^{16}_{8}\\text{O}$ cùng $N=8$ nhưng khác $Z$ nên không phải đồng vị.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Ba cặp tìm được đều cùng $Z$ ($6$, $7$, $8$) và khác $N$ ✓.</p><p>Các cặp cùng số khối hoặc cùng số nơtron đều khác $Z$ ✓ nên không đưa vào.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N=6;\\ 8;\\ 7;\\ 8;\\ 8;\\ 9$</p><p>b) $3$ cặp : C-12 và C-14 ; N-14 và N-15 ; O-16 và O-17</p><p>c) Không, vì $^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$ khác số prôtôn</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>có phải đồng vị không</strong> hoặc <strong>chọn cặp đồng vị</strong> → so $Z$ trước (phải bằng nhau), rồi mới xét $N$ khác nhau.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Sáu hạt nhân cho bởi kí hiệu, cần tìm số nơtron và các cặp đồng vị\"><rect x=\"20.0\" y=\"20.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"52.8\" y=\"45.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">12</text><text x=\"52.8\" y=\"68.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">6</text><text x=\"54.8\" y=\"67.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">C</text><rect x=\"150.0\" y=\"20.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"182.8\" y=\"45.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">14</text><text x=\"182.8\" y=\"68.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">6</text><text x=\"184.8\" y=\"67.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">C</text><rect x=\"280.0\" y=\"20.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"312.8\" y=\"45.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">14</text><text x=\"312.8\" y=\"68.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">7</text><text x=\"314.8\" y=\"67.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">N</text><rect x=\"20.0\" y=\"94.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"52.8\" y=\"119.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">15</text><text x=\"52.8\" y=\"142.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">7</text><text x=\"54.8\" y=\"141.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">N</text><rect x=\"150.0\" y=\"94.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"182.8\" y=\"119.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">16</text><text x=\"182.8\" y=\"142.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">8</text><text x=\"184.8\" y=\"141.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">O</text><rect x=\"280.0\" y=\"94.0\" width=\"110.0\" height=\"58.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"312.8\" y=\"119.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">17</text><text x=\"312.8\" y=\"142.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">8</text><text x=\"314.8\" y=\"141.8\" fill=\"currentColor\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">O</text><text x=\"20\" y=\"190\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm:  số nơtron mỗi hạt nhân · số cặp đồng vị</text></svg><figcaption>Dữ kiện: sáu kí hiệu hạt nhân; chưa nhóm hay đánh dấu cặp nào. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"sáu hạt nhân $^{12}_{6}\\text{C}$ … $^{17}_{8}\\text{O}$\"</td><td>Sáu kí hiệu hạt nhân</td><td>⚠ Điều kiện để hai hạt nhân là đồng vị nằm ở định nghĩa đồng vị trong bài</td></tr><tr><td>\"tính số nơtron của từng hạt nhân\"</td><td>Cần: $N$ của sáu hạt nhân</td><td>Liên hệ giữa số khối, số prôtôn và số nơtron</td></tr><tr><td>\"bao nhiêu cặp đồng vị\"</td><td>Cần: số cặp</td><td>Định nghĩa đồng vị</td></tr><tr><td>\"kể tên các cặp\"</td><td>Cần: tên các cặp</td><td>Định nghĩa đồng vị</td></tr><tr><td>\"$^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$ có phải đồng vị không\"</td><td>Hai kí hiệu cho trước</td><td>Đối chiếu từng thông tin của hai hạt nhân với định nghĩa đồng vị</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>có phải đồng vị không</b> hoặc <b>chọn cặp đồng vị</b> → so <b>Z</b> trước (phải bằng nhau), rồi xét <b>N</b> khác nhau.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số nơtron của sáu hạt nhân",
+     "hoi": "Hạt nhân $^{14}_{6}\\text{C}$ có bao nhiêu nơtron?",
+     "dap_so": 8,
+     "sai_so": 0,
+     "don_vi": "nơtron",
+     "loi_hay_gap": "Lấy số khối làm số nơtron, hoặc trừ nhầm chỉ số."
+    },
+    {
+     "tieu_de": "Điều kiện để là đồng vị",
+     "hoi": "Hai hạt nhân là đồng vị của nhau khi nào?",
+     "lua_chon": [
+      {
+       "text": "Cùng số khối $A$",
+       "dung": false,
+       "vi_sao": "Ví dụ $^{40}_{18}\\text{Ar}$ và $^{40}_{20}\\text{Ca}$ cùng $A$ nhưng là hai nguyên tố khác nhau."
+      },
+      {
+       "text": "Cùng số nơtron $N$",
+       "dung": false,
+       "vi_sao": "Ví dụ $^{39}_{19}\\text{K}$ và $^{40}_{20}\\text{Ca}$ cùng $N$ nhưng là hai nguyên tố khác nhau."
+      },
+      {
+       "text": "Cùng số prôtôn $Z$, khác số nơtron $N$",
+       "dung": true
+      }
+     ],
+     "loi_hay_gap": "Cho rằng cùng số khối hoặc cùng số nơtron là đủ để thành đồng vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm điều kiện hai hạt nhân phải thoả để là đồng vị",
+       "dung": true
+      },
+      {
+       "text": "Cộng số nơtron của cả sáu hạt nhân",
+       "dung": false,
+       "vi_sao": "Tổng số nơtron không giúp biết hai hạt nhân nào là đồng vị của nhau."
+      },
+      {
+       "text": "Xếp các hạt nhân theo số khối tăng dần",
+       "dung": false,
+       "vi_sao": "Cách xếp chỉ cho thứ tự ; điều kiện đồng vị nằm ở số prôtôn, không nằm ở số khối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ghép theo số prôtôn, đếm cặp",
+     "hoi": "Có bao nhiêu cặp đồng vị trong sáu hạt nhân?",
+     "dap_so": 3,
+     "sai_so": 0,
+     "don_vi": "cặp",
+     "loi_hay_gap": "Đếm cả cặp cùng số khối hoặc cùng số nơtron, hoặc bỏ sót một nhóm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhóm các hạt nhân có cùng chỉ số dưới rồi ghép cặp trong mỗi nhóm",
+       "dung": true
+      },
+      {
+       "text": "Ghép các hạt nhân có cùng số khối",
+       "dung": false,
+       "vi_sao": "Cùng số khối chưa chắc cùng nguyên tố nên không dùng để ghép cặp đồng vị."
+      },
+      {
+       "text": "Ghép các hạt nhân có cùng số nơtron",
+       "dung": false,
+       "vi_sao": "Cùng số nơtron chưa chắc cùng nguyên tố nên không dùng để ghép cặp đồng vị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hai hạt nhân cùng số khối",
+     "hoi": "$^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$ có phải đồng vị của nhau không?",
+     "lua_chon": [
+      {
+       "text": "Có, vì cùng số khối",
+       "dung": false,
+       "vi_sao": "Điều kiện đồng vị là cùng số prôtôn, không phải cùng số khối."
+      },
+      {
+       "text": "Không, vì khác số prôtôn",
+       "dung": true
+      },
+      {
+       "text": "Có, vì khác số nơtron",
+       "dung": false,
+       "vi_sao": "Khác số nơtron chỉ là điều kiện cần ; đồng vị còn đòi cùng số prôtôn."
+      }
+     ],
+     "loi_hay_gap": "Thấy cùng số khối thì kết luận là đồng vị mà không kiểm số prôtôn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đối chiếu cặp cùng số khối với điều kiện vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Kết luận ngay là đồng vị vì cùng số khối",
+       "dung": false,
+       "vi_sao": "Điều kiện đồng vị là cùng số prôtôn, không phải cùng số khối."
+      },
+      {
+       "text": "Bỏ qua cặp này vì không cần xét",
+       "dung": false,
+       "vi_sao": "Câu c hỏi đúng về cặp này nên phải xét."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Bán kính và thể tích hạt nhân theo số khối",
+   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "problem_html": "<p>Bán kính hạt nhân có số khối $A$ cho bởi $R=1{,}2\\cdot10^{-15}\\,A^{1/3}$ (m). Coi hạt nhân là hình cầu. Xét hạt nhân kẽm $^{64}_{30}\\text{Zn}$ và hạt nhân urani $^{238}_{92}\\text{U}$.</p><ol type=\"a\"><li>Tính bán kính hạt nhân kẽm, theo đơn vị $10^{-15}\\ \\text{m}$.</li><li>Tính bán kính hạt nhân urani, theo đơn vị $10^{-15}\\ \\text{m}$.</li><li>Bán kính hạt nhân urani gấp bao nhiêu lần bán kính hạt nhân kẽm?</li><li>Thể tích hạt nhân urani gấp bao nhiêu lần thể tích hạt nhân kẽm?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Ba hạt nhân mẫu lớn dần theo số khối, bán kính ghi dưới mỗi hạt nhân\"><circle cx=\"70\" cy=\"104\" r=\"0\" fill=\"#38bdf8\" fill-opacity=\".18\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"r\" values=\"0.0;0.0;24.0;24.0\" keyTimes=\"0.0000;0.0533;0.2667;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"70\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 8</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.2667;0.3067;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"70\" y=\"176\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R = 2,4·10⁻¹⁵ m</text></g><circle cx=\"190\" cy=\"104\" r=\"0\" fill=\"#38bdf8\" fill-opacity=\".18\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"r\" values=\"0.0;0.0;36.0;36.0\" keyTimes=\"0.0000;0.3467;0.5600;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"190\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 27</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.5600;0.6000;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"190\" y=\"176\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R = 3,6·10⁻¹⁵ m</text></g><circle cx=\"330\" cy=\"104\" r=\"0\" fill=\"#38bdf8\" fill-opacity=\".18\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"r\" values=\"0.0;0.0;60.0;60.0\" keyTimes=\"0.0000;0.6400;0.8533;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"330\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 125</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0.0000;0.8533;0.8933;1.0000\" dur=\"7.50s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"330\" y=\"176\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R = 6,0·10⁻¹⁵ m</text></g><rect x=\"24.0\" y=\"20.0\" width=\"10.0\" height=\"5.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"42.0\" y=\"27\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">= 1·10⁻¹⁵ m (thước)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: bán kính tính từ công thức R = 1,2·10⁻¹⁵·∛A cho ba hạt nhân mẫu A = 8, 27, 125 (khác hạt nhân trong đề); bán kính vẽ đúng tỉ lệ với thước 10⁻¹⁵ m.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hạt nhân coi là hình cầu, bán kính tăng chậm theo số khối.</li><li><strong>Công thức:</strong> $R=1{,}2\\cdot10^{-15}A^{1/3}$ (m) ; thể tích hình cầu $V=\\dfrac{4}{3}\\pi R^3$.</li><li>⚠ <strong>Điều kiện:</strong> $A$ là số khối (chỉ số trên) ; công thức thực nghiệm nên chỉ cho giá trị gần đúng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Bán kính hạt nhân kẽm</span></p><p>Số khối $A=64$ (chỉ số trên) ; $64^{1/3}=4$ vì $4^3=64$:</p>$$R_{\\text{Zn}}=1{,}2\\cdot10^{-15}\\cdot64^{1/3}=1{,}2\\cdot10^{-15}\\cdot4$$<div class=\"bt-ans\">$$R_{\\text{Zn}}=4{,}8\\cdot10^{-15}\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bán kính hạt nhân urani</span></p><p>Số khối $A=238$ ; $238^{1/3}\\approx6{,}197$:</p>$$R_{\\text{U}}=1{,}2\\cdot10^{-15}\\cdot238^{1/3}$$<div class=\"bt-ans\">$$R_{\\text{U}}\\approx7{,}44\\cdot10^{-15}\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tỉ số hai bán kính</span></p>$$\\dfrac{R_{\\text{U}}}{R_{\\text{Zn}}}=\\dfrac{7{,}44}{4{,}8}$$<div class=\"bt-ans\">$$\\dfrac{R_{\\text{U}}}{R_{\\text{Zn}}}\\approx1{,}55$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tỉ số hai thể tích</span></p><p>Hình cầu có $V=\\dfrac{4}{3}\\pi R^3$ nên $V$ tỉ lệ với $R^3$:</p>$$\\dfrac{V_{\\text{U}}}{V_{\\text{Zn}}}=\\left(\\dfrac{R_{\\text{U}}}{R_{\\text{Zn}}}\\right)^3=1{,}55^3$$<div class=\"bt-ans\">$$\\dfrac{V_{\\text{U}}}{V_{\\text{Zn}}}\\approx3{,}72$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$R\\propto A^{1/3}$ nên $V\\propto R^3\\propto A$ : $\\dfrac{238}{64}\\approx3{,}72$ ✓ khớp.</p><p>Số khối tăng $3{,}72$ lần mà bán kính chỉ tăng $1{,}55$ lần ✓ hợp lí : bán kính tăng chậm theo căn bậc ba.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_{\\text{Zn}}=4{,}8\\cdot10^{-15}\\ \\text{m}$</p><p>b) $R_{\\text{U}}\\approx7{,}44\\cdot10^{-15}\\ \\text{m}$</p><p>c) Gấp khoảng $1{,}55$ lần</p><p>d) Gấp khoảng $3{,}72$ lần</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số khối</strong> và hỏi <strong>bán kính, tỉ số bán kính hay thể tích</strong> → $R\\propto A^{1/3}$, $V\\propto R^3\\propto A$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Hai hạt nhân hình cầu với số khối đã cho và bán kính cần tìm\"><circle cx=\"95.0\" cy=\"96.0\" r=\"46\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><line x1=\"95\" y1=\"96\" x2=\"141\" y2=\"96\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M134.0,91.9 L141.0,96.0 L134.0,100.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"118\" y=\"88\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R</text><text x=\"68.2\" y=\"157.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">64</text><text x=\"68.2\" y=\"174.5\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">30</text><text x=\"70.2\" y=\"174.0\" fill=\"currentColor\" font-size=\"20\" font-weight=\"700\" text-anchor=\"start\">Zn</text><text x=\"130\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><circle cx=\"300.0\" cy=\"96.0\" r=\"58\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><line x1=\"300\" y1=\"96\" x2=\"358\" y2=\"96\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M351.0,91.9 L358.0,96.0 L351.0,100.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"330\" y=\"88\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R</text><text x=\"269.8\" y=\"179.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">238</text><text x=\"269.8\" y=\"196.5\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">92</text><text x=\"271.8\" y=\"196.0\" fill=\"currentColor\" font-size=\"20\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"335\" y=\"190\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><text x=\"10\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">R = 1,2·10⁻¹⁵·∛A (m), hạt nhân hình cầu</text></svg><figcaption>Dữ kiện: số khối của hai hạt nhân; bán kính, tỉ số bán kính và tỉ số thể tích cần tìm. Hình không đúng tỉ lệ. </figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$R=1{,}2\\cdot10^{-15}A^{1/3}$ (m)\"</td><td>Công thức cho trước ; $A$ là số khối</td><td>⚠ Công thức thực nghiệm, cho giá trị gần đúng ; $R$ tính ra mét</td></tr><tr><td>\"hạt nhân kẽm $^{64}_{30}\\text{Zn}$\"</td><td>Một trong hai chỉ số của kí hiệu</td><td>Số khối nằm ở vị trí nào của kí hiệu</td></tr><tr><td>\"hạt nhân urani $^{238}_{92}\\text{U}$\"</td><td>Một trong hai chỉ số của kí hiệu</td><td>Số khối nằm ở vị trí nào của kí hiệu</td></tr><tr><td>\"tính bán kính hạt nhân kẽm, urani\"</td><td>Cần: $R_{\\text{Zn}}$, $R_{\\text{U}}$</td><td>Cách bán kính phụ thuộc vào số khối</td></tr><tr><td>\"bán kính urani gấp bao nhiêu lần kẽm\"</td><td>Cần: tỉ số hai bán kính</td><td>So sánh hai bán kính vừa tính</td></tr><tr><td>\"coi hạt nhân là hình cầu … thể tích gấp bao nhiêu lần\"</td><td>Cần: tỉ số hai thể tích</td><td>Thể tích hình cầu phụ thuộc bán kính thế nào</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số khối</b> và hỏi <b>bán kính, tỉ số bán kính hay thể tích</b> → <b>R ∝ A^(1/3)</b>, <b>V ∝ R³ ∝ A</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Bán kính hạt nhân kẽm",
+     "hoi": "Bán kính hạt nhân kẽm theo đơn vị $10^{-15}\\ \\text{m}$?",
+     "dap_so": 4.8,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻¹⁵ m",
+     "loi_hay_gap": "Nhân $1{,}2\\cdot10^{-15}$ trực tiếp với số khối (quên lấy căn bậc ba), hoặc chia $A$ cho $3$."
+    },
+    {
+     "tieu_de": "Bán kính hạt nhân urani",
+     "hoi": "Bán kính hạt nhân urani theo đơn vị $10^{-15}\\ \\text{m}$?",
+     "dap_so": 7.44,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻¹⁵ m",
+     "loi_hay_gap": "Lấy căn bậc hai thay căn bậc ba, hoặc đổi $A^{1/3}$ thành $A/3$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế số khối của urani vào cùng công thức : $R=1{,}2\\cdot10^{-15}A^{1/3}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy bán kính kẽm nhân với tỉ số số khối",
+       "dung": false,
+       "vi_sao": "Bán kính không tỉ lệ thẳng với số khối mà với căn bậc ba của nó."
+      },
+      {
+       "text": "Lấy bán kính kẽm nhân với bình phương tỉ số số khối",
+       "dung": false,
+       "vi_sao": "Bán kính tăng chậm hơn số khối nhiều ; nhân với $A^2$ là quá lớn, phải thế số khối vào $A^{1/3}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tỉ số hai bán kính",
+     "hoi": "Bán kính hạt nhân urani gấp bao nhiêu lần của kẽm?",
+     "dap_so": 1.55,
+     "sai_so": 0.02,
+     "don_vi": "lần",
+     "loi_hay_gap": "Chia hai số khối rồi dừng lại, không lấy căn bậc ba.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $R_{\\text{U}}$ chia $R_{\\text{Zn}}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy tỉ số hai số khối",
+       "dung": false,
+       "vi_sao": "Bán kính tỉ lệ với căn bậc ba của số khối, không tỉ lệ thẳng với số khối."
+      },
+      {
+       "text": "Lấy bình phương tỉ số hai số khối",
+       "dung": false,
+       "vi_sao": "Bán kính tỉ lệ với căn bậc ba của số khối, không tỉ lệ với bình phương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tỉ số hai thể tích",
+     "hoi": "Thể tích hạt nhân urani gấp bao nhiêu lần của kẽm?",
+     "dap_so": 3.72,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Cho rằng thể tích tỉ lệ với bán kính (hoặc bình phương bán kính) thay vì lập phương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thể tích hình cầu tỉ lệ $R^3$ : lập phương tỉ số bán kính",
+       "dung": true
+      },
+      {
+       "text": "Thể tích tỉ lệ $R$ : lấy luôn tỉ số bán kính",
+       "dung": false,
+       "vi_sao": "Thể tích có ba chiều, nên phụ thuộc $R^3$ chứ không phải $R$."
+      },
+      {
+       "text": "Thể tích tỉ lệ $R^2$ : bình phương tỉ số bán kính",
+       "dung": false,
+       "vi_sao": "$R^2$ là của diện tích mặt cầu ; thể tích cần $R^3$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Đếm hạt trong một khối lượng chất: mol, N_A, nơtron, điện tích",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "problem_html": "<p>Một mẫu sắt $^{56}_{26}\\text{Fe}$ có khối lượng $14\\ \\text{g}$, khối lượng mol xấp xỉ $56\\ \\text{g/mol}$. Lấy $N_A=6{,}022\\cdot10^{23}\\ \\text{mol}^{-1}$ và $e=1{,}6\\cdot10^{-19}\\ \\text{C}$.</p><ol type=\"a\"><li>Tính số mol sắt trong mẫu.</li><li>Mẫu có bao nhiêu hạt nhân sắt?</li><li>Mẫu có bao nhiêu nơtron?</li><li>Tính tổng điện tích của các prôtôn trong mẫu, theo culông.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Các nguyên tử trong mẫu kim loại dao động quanh vị trí cân bằng, mỗi chấm đỏ là một hạt nhân\"><rect x=\"24.0\" y=\"34.0\" width=\"214.0\" height=\"150.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g transform=\"translate(56 66)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"55.3 66.2;58.4 68.5;59.3 69.4;57.2 68.5;53.9 66.3;52.6 63.9;54.4 62.7;57.7 63.1;59.4 65.1;58.0 67.6;54.7 69.2;52.7 69.1;53.7 67.4;56.9 64.9;59.2 63.0\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(56 106)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"55.7 106.4;58.8 109.0;59.0 109.0;56.1 106.3;53.1 103.4;53.1 102.7;56.1 105.0;59.0 108.1;58.8 109.4;55.7 107.7;52.9 104.5;53.3 102.6;56.5 103.8;59.2 106.9;58.5 109.2\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(56 146)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"53.3 146.0;55.6 148.5;58.1 149.4;59.4 148.1;58.7 145.5;56.5 143.2;54.0 142.7;52.6 144.3;53.3 147.0;55.5 149.1;58.0 149.1;59.4 147.2;58.8 144.5;56.6 142.7;54.1 143.1\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(96 66)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"92.7 69.3;93.1 67.9;95.1 65.4;97.7 63.2;99.3 62.6;98.9 64.0;96.8 66.5;94.2 68.7;92.7 69.4;93.1 68.1;95.3 65.7;97.9 63.4;99.3 62.6;98.8 63.8;96.6 66.2\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(96 106)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"93.3 103.6;96.5 105.9;99.1 108.3;98.8 109.4;95.7 108.5;92.9 106.2;93.2 103.8;96.1 102.6;99.0 103.4;98.9 105.6;96.0 108.1;93.1 109.4;93.0 108.7;95.8 106.5;98.8 104.0\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(96 146)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"94.4 145.8;97.0 143.2;99.0 142.7;99.3 144.6;97.7 147.4;95.1 149.3;93.1 148.8;92.7 146.2;94.2 143.5;96.8 142.6;98.9 144.1;99.3 147.0;97.9 149.1;95.3 149.0;93.2 146.7\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(136 66)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"137.6 67.6;134.6 69.3;132.7 68.8;133.4 66.5;136.2 63.8;138.8 62.6;139.2 63.6;137.0 66.2;134.0 68.6;132.6 69.4;133.9 67.9;136.9 65.1;139.2 63.0;138.9 62.8;136.3 64.7\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(136 106)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"134.6 104.5;132.7 107.4;133.6 109.2;136.6 108.9;139.1 106.6;138.9 103.8;136.2 102.6;133.4 103.7;132.7 106.4;134.9 108.8;138.0 109.3;139.4 107.5;137.9 104.7;134.7 102.8;132.7 103.1\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(136 146)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"133.4 145.9;136.1 149.0;138.7 148.8;139.3 145.6;137.4 142.8;134.5 143.5;132.7 146.9;133.4 149.3;136.0 148.1;138.7 144.6;139.3 142.6;137.5 144.3;134.6 147.8;132.7 149.4;133.3 147.3\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(176 66)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"176.4 68.6;178.6 69.1;179.4 66.2;178.4 63.1;176.1 63.1;173.7 66.2;172.6 69.1;173.3 68.6;175.5 65.3;177.9 62.7;179.3 63.7;179.0 67.2;177.0 69.4;174.5 67.9;172.8 64.4\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(176 106)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"172.8 102.7;172.9 103.4;174.9 106.1;177.5 108.7;179.2 109.3;179.0 107.4;176.9 104.5;174.3 102.7;172.7 103.4;173.1 106.0;175.3 108.7;177.9 109.3;179.3 107.5;178.8 104.5;176.5 102.7\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(176 146)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"173.8 148.0;176.0 149.3;178.3 149.1;179.4 147.4;178.8 145.1;176.8 143.2;174.4 142.6;172.8 143.6;172.8 145.7;174.5 147.9;176.9 149.3;178.8 149.1;179.4 147.5;178.2 145.2;175.9 143.3\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(216 66)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"216.7 63.1;213.7 65.5;212.6 68.2;214.2 69.4;217.2 68.3;219.2 65.6;218.8 63.2;216.1 62.7;213.3 64.5;212.7 67.3;214.7 69.2;217.7 68.9;219.4 66.6;218.4 63.9;215.5 62.6\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(216 106)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"216.0 109.1;213.0 109.1;213.3 107.2;216.6 104.4;219.2 102.7;218.4 103.1;214.9 105.4;212.6 108.1;214.0 109.4;217.6 108.5;219.4 105.9;217.5 103.4;214.0 102.6;212.6 104.0;214.9 106.7\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><g transform=\"translate(216 146)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"219.4 149.2;218.0 147.2;214.6 144.5;212.6 142.8;214.0 143.0;217.4 145.2;219.4 147.8;218.0 149.3;214.7 148.7;212.6 146.4;213.9 143.8;217.3 142.6;219.4 143.5;218.1 146.0;214.7 148.5\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"#38bdf8\" stroke-width=\"1.4\"/><circle r=\"3.4\" fill=\"#f87171\"/></g><text x=\"24\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">mẫu kim loại phóng to</text><text x=\"256\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">mẫu sắt Fe</text><text x=\"256\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">m = 14 g</text><text x=\"256\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">M ≈ 56 g/mol</text><text x=\"256\" y=\"128\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">N<tspan dy=\"4\" font-size=\"9\">A</tspan><tspan dy=\"-4\"> = 6,022·10²³ mol⁻¹</tspan></text><text x=\"256\" y=\"154\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số hạt nhân = ?</text><text x=\"256\" y=\"174\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">số nơtron = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mỗi vòng xanh là một nguyên tử, chấm đỏ là hạt nhân; số nguyên tử trong hình chỉ để minh hoạ, thực tế rất nhiều hơn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> một mol chứa $N_A$ hạt ; khối lượng mol $M$ là khối lượng của một mol (g/mol).</li><li><strong>Công thức:</strong> $n=\\dfrac{m}{M}$ ; $N_{\\text{hn}}=n\\,N_A$ ; số nơtron mỗi hạt nhân $N=A-Z$.</li><li>Số hạt trong mẫu bằng số hạt nhân nhân với số hạt trong mỗi hạt nhân.</li><li>⚠ <strong>Điều kiện:</strong> $M$ tính bằng g/mol thì $m$ phải tính bằng gam.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số mol sắt</span></p><p>Khối lượng đã ở đơn vị gam, cùng đơn vị với $M$:</p>$$n=\\dfrac{m}{M}=\\dfrac{14}{56}$$<div class=\"bt-ans\">$$n=0{,}25\\ \\text{mol}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số hạt nhân sắt</span></p><p>Một mol chứa $N_A$ nguyên tử, mỗi nguyên tử có một hạt nhân:</p>$$N_{\\text{hn}}=n\\,N_A=0{,}25\\cdot6{,}022\\cdot10^{23}$$<div class=\"bt-ans\">$$N_{\\text{hn}}\\approx1{,}51\\cdot10^{23}\\ \\text{hạt nhân}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số nơtron trong một hạt nhân</span></p><p>Từ kí hiệu $^{56}_{26}\\text{Fe}$: $A=56$, $Z=26$.</p>$$N=A-Z=56-26$$<div class=\"bt-ans\">$$N=30\\ \\text{nơtron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số nơtron trong cả mẫu</span></p><p>Số nơtron cả mẫu bằng số hạt nhân nhân với số nơtron mỗi hạt nhân:</p>$$N_{\\text{nt}}=N_{\\text{hn}}\\cdot N=1{,}5055\\cdot10^{23}\\cdot30$$<div class=\"bt-ans\">$$N_{\\text{nt}}\\approx4{,}52\\cdot10^{24}\\ \\text{nơtron}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tổng điện tích các prôtôn</span></p><p>Mỗi hạt nhân có $Z=26$ prôtôn, mỗi prôtôn mang $+e$:</p>$$Q=N_{\\text{hn}}\\,Z\\,e=1{,}5055\\cdot10^{23}\\cdot26\\cdot1{,}6\\cdot10^{-19}$$<div class=\"bt-ans\">$$Q\\approx6{,}26\\cdot10^{5}\\ \\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$\\dfrac{N_{\\text{nt}}}{N_{\\text{hn}}}=30=A-Z$ ✓.</p><p>Số prôtôn cả mẫu $26\\cdot1{,}5055\\cdot10^{23}\\approx3{,}91\\cdot10^{24}$, nhân $e$ ra $6{,}26\\cdot10^{5}\\ \\text{C}$ ✓ khớp.</p><p>Nơtron nhiều hơn prôtôn ($30\\gt26$) đúng với hạt nhân sắt ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n=0{,}25\\ \\text{mol}$</p><p>b) $N_{\\text{hn}}\\approx1{,}51\\cdot10^{23}$ hạt nhân</p><p>c) $\\approx4{,}52\\cdot10^{24}$ nơtron</p><p>d) $Q\\approx6{,}26\\cdot10^{5}\\ \\text{C}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng chất</strong> và hỏi <strong>số nơtron, prôtôn hay điện tích</strong> → $n=\\dfrac{m}{M}$, $N_{\\text{hn}}=nN_A$, rồi nhân với số hạt trong mỗi hạt nhân.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Các đại lượng cần tìm của mẫu sắt và dữ kiện cho trước\"><rect x=\"10.0\" y=\"14.0\" width=\"120.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"70.0\" y=\"39.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">m = 14 g</text><rect x=\"160.0\" y=\"14.0\" width=\"100.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210.0\" y=\"39.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">n = ?</text><rect x=\"290.0\" y=\"14.0\" width=\"120.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"350.0\" y=\"39.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">số hạt nhân = ?</text><line x1=\"130\" y1=\"34\" x2=\"160\" y2=\"34\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><path d=\"M151.8,29.3 L160.0,34.0 L151.8,38.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"34\" x2=\"290\" y2=\"34\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><path d=\"M281.8,29.3 L290.0,34.0 L281.8,38.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"10.0\" y=\"96.0\" width=\"150.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"85.0\" y=\"121.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nơtron mỗi hạt nhân = ?</text><rect x=\"190.0\" y=\"96.0\" width=\"220.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"300.0\" y=\"121.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">số nơtron cả mẫu = ?</text><rect x=\"190.0\" y=\"152.0\" width=\"220.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"300.0\" y=\"177.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">điện tích các prôtôn = ?</text><text x=\"10\" y=\"76\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">M ≈ 56 g/mol · N<tspan dy=\"4\" font-size=\"9\">A</tspan><tspan dy=\"-4\"> = 6,022·10²³ mol⁻¹ · e = 1,6·10⁻¹⁹ C</tspan></text><text x=\"10\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">kí hiệu: Fe, số khối 56,</text><text x=\"10\" y=\"184\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">chỉ số dưới 26</text></svg><figcaption>Dữ kiện: khối lượng mẫu, khối lượng mol, N_A, e và kí hiệu hạt nhân; bốn đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mẫu sắt $^{56}_{26}\\text{Fe}$ có khối lượng $14$ g\"</td><td>$m=14$ g ; hai chỉ số $56$ và $26$</td><td>⚠ Khối lượng mol cho theo g/mol thì khối lượng phải ở đơn vị gam</td></tr><tr><td>\"khối lượng mol xấp xỉ $56$ g/mol\"</td><td>$M\\approx56$ g/mol</td><td>Khối lượng mol là khối lượng của một mol</td></tr><tr><td>\"$N_A=6{,}022\\cdot10^{23}$ mol$^{-1}$\"</td><td>$N_A$</td><td>Một mol chứa bao nhiêu hạt</td></tr><tr><td>\"bao nhiêu hạt nhân sắt\"</td><td>Cần: số hạt nhân</td><td>Mỗi nguyên tử có bao nhiêu hạt nhân</td></tr><tr><td>\"bao nhiêu nơtron\"</td><td>Cần: số nơtron cả mẫu</td><td>Số nơtron của mỗi hạt nhân đọc từ kí hiệu</td></tr><tr><td>\"tổng điện tích của các prôtôn … $e=1{,}6\\cdot10^{-19}$ C\"</td><td>$e=1{,}6\\cdot10^{-19}$ C ; cần: $Q$</td><td>Điện tích mỗi prôtôn ; số prôtôn của mỗi hạt nhân</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng chất</b>, hỏi <b>số nơtron</b> → <b>n = m/M</b>, <b>N = n·N_A</b>, nhân số nơtron mỗi hạt nhân.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số mol sắt",
+     "hoi": "Số mol sắt trong mẫu?",
+     "dap_so": 0.25,
+     "sai_so": 0.005,
+     "don_vi": "mol",
+     "loi_hay_gap": "Nhân $m$ với $M$ thay vì chia, hoặc đổi khối lượng sang kg mà vẫn dùng $M$ tính bằng g/mol."
+    },
+    {
+     "tieu_de": "Số hạt nhân sắt",
+     "hoi": "Số hạt nhân sắt trong mẫu, theo đơn vị $10^{23}$?",
+     "dap_so": 1.5055,
+     "sai_so": 0.02,
+     "don_vi": "×10²³ hạt nhân",
+     "loi_hay_gap": "Chia $n$ cho $N_A$ (ra số rất nhỏ), hoặc quên rằng mỗi nguyên tử có đúng một hạt nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số mol với $N_A$ : $N_{\\text{hn}}=n\\,N_A$",
+       "dung": true
+      },
+      {
+       "text": "Chia số mol cho $N_A$ : $N_{\\text{hn}}=\\dfrac{n}{N_A}$",
+       "dung": false,
+       "vi_sao": "Ra số cực nhỏ ; một mol chứa $N_A$ hạt nên phải nhân."
+      },
+      {
+       "text": "Nhân khối lượng với $N_A$ : $N_{\\text{hn}}=m\\,N_A$",
+       "dung": false,
+       "vi_sao": "Khối lượng không cho biết số hạt ; phải đi qua số mol $n=\\dfrac{m}{M}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số nơtron trong một hạt nhân",
+     "hoi": "Số nơtron trong mỗi hạt nhân sắt?",
+     "dap_so": 30,
+     "sai_so": 0,
+     "don_vi": "nơtron",
+     "loi_hay_gap": "Dùng $Z$ hoặc $A$ làm số nơtron của mỗi hạt nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đọc kí hiệu rồi lấy số nuclôn trừ số prôtôn : $N=A-Z$",
+       "dung": true
+      },
+      {
+       "text": "Lấy số khối làm số nơtron",
+       "dung": false,
+       "vi_sao": "Số khối gồm cả prôtôn ; phải trừ số prôtôn."
+      },
+      {
+       "text": "Lấy số prôtôn làm số nơtron",
+       "dung": false,
+       "vi_sao": "Số prôtôn là $Z$ ; số nơtron suy ra từ $A-Z$, hai số này khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số nơtron trong cả mẫu",
+     "hoi": "Số nơtron trong cả mẫu, theo đơn vị $10^{24}$?",
+     "dap_so": 4.5165,
+     "sai_so": 0.05,
+     "don_vi": "×10²⁴ nơtron",
+     "loi_hay_gap": "Nhân số nơtron mỗi hạt nhân với số mol thay vì số hạt nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số hạt nhân với số nơtron mỗi hạt nhân",
+       "dung": true
+      },
+      {
+       "text": "Nhân số mol với số nơtron mỗi hạt nhân",
+       "dung": false,
+       "vi_sao": "Số mol chưa phải số hạt ; phải nhân với số hạt nhân."
+      },
+      {
+       "text": "Chia số hạt nhân cho số nơtron mỗi hạt nhân",
+       "dung": false,
+       "vi_sao": "Phép chia cho ra số hạt nhân gộp, không phải số nơtron."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng điện tích các prôtôn",
+     "hoi": "Tổng điện tích các prôtôn trong mẫu, theo đơn vị $10^{5}\\ \\text{C}$?",
+     "dap_so": 6.2629,
+     "sai_so": 0.05,
+     "don_vi": "×10⁵ C",
+     "loi_hay_gap": "Dùng số khối hoặc số nơtron thay cho số prôtôn, hoặc quên nhân với $e$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số hạt nhân với $Z$ rồi với $e$",
+       "dung": true
+      },
+      {
+       "text": "Nhân số hạt nhân với $A$ rồi với $e$",
+       "dung": false,
+       "vi_sao": "$A$ là số nuclôn ; nơtron không mang điện nên chỉ đếm $Z$ prôtôn."
+      },
+      {
+       "text": "Nhân số nơtron cả mẫu với $e$",
+       "dung": false,
+       "vi_sao": "Nơtron không mang điện, nên số nơtron không cho tổng điện tích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Khối lượng nguyên tử trung bình: tìm tỉ lệ đồng vị, đổi u, kg, MeV/c²",
+   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "problem_html": "<p>Bo tự nhiên gồm hai đồng vị: $^{10}_{5}\\text{B}$ có khối lượng nguyên tử $10{,}013\\ \\text{u}$ và $^{11}_{5}\\text{B}$ có khối lượng nguyên tử $11{,}009\\ \\text{u}$. Khối lượng nguyên tử trung bình của bo tự nhiên là $10{,}811\\ \\text{u}$. Lấy $1\\ \\text{u}\\approx1{,}66054\\cdot10^{-27}\\ \\text{kg}\\approx931{,}5\\ \\text{MeV}/c^2$.</p><ol type=\"a\"><li>Tìm phần trăm số nguyên tử của mỗi đồng vị trong bo tự nhiên.</li><li>Tính khối lượng một nguyên tử $^{11}_{5}\\text{B}$ ra kilôgam.</li><li>Tính khối lượng đó ra $\\text{MeV}/c^2$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Khối lượng trung bình của các nguyên tử liti lấy ngẫu nhiên dần ổn định theo tỉ lệ đồng vị\"><clipPath id=\"d50c\"><rect x=\"48\" y=\"20\" width=\"0\" height=\"210\"><animate attributeName=\"width\" from=\"0\" to=\"344\" dur=\"8.0s\" begin=\"indefinite\" fill=\"freeze\"/></rect></clipPath><rect x=\"50.0\" y=\"120.0\" width=\"340.0\" height=\"94.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.6\"/><line x1=\"46.0\" y1=\"214.0\" x2=\"50.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"43\" y=\"218.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">6,0</text><line x1=\"46.0\" y1=\"174.8\" x2=\"50.0\" y2=\"174.8\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"43\" y=\"178.8\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">6,5</text><line x1=\"46.0\" y1=\"135.7\" x2=\"50.0\" y2=\"135.7\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"43\" y=\"139.7\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">7,0</text><text x=\"43\" y=\"112\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">u</text><g clip-path=\"url(#d50c)\"><circle cx=\"54.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"62.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"71.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"79.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"88.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"96.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"105.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"113.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"122.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"130.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"139.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"147.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"156.2\" cy=\"62\" r=\"3.3\" fill=\"#fb923c\"/><circle cx=\"164.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"173.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"181.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"190.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"198.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"207.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"215.8\" cy=\"62\" r=\"3.3\" fill=\"#fb923c\"/><circle cx=\"224.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"232.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"241.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"249.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"258.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"266.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"275.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"283.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"292.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"300.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"309.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"317.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"326.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"334.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"343.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"351.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"360.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"368.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"377.2\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><circle cx=\"385.8\" cy=\"62\" r=\"3.3\" fill=\"#38bdf8\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\" opacity=\"1\" points=\"54.2,134.4 62.8,134.4 71.2,134.4 79.8,134.4 88.2,134.4 96.8,134.4 105.2,134.4 113.8,134.4 122.2,134.4 130.8,134.4 139.2,134.4 147.8,134.4 156.2,140.4 164.8,140.0 173.2,139.6 181.8,139.3 190.2,139.0 198.8,138.8 207.2,138.5 215.8,142.3 224.2,141.9 232.8,141.5 241.2,141.2 249.8,140.9 258.2,140.7 266.8,140.4 275.2,140.2 283.8,140.0 292.2,139.8 300.8,139.6 309.2,139.5 317.8,139.3 326.2,139.2 334.8,139.0 343.2,138.9 351.8,138.8 360.2,138.7 368.8,138.5 377.2,138.4 385.8,138.3\"/></g><circle cx=\"60.0\" cy=\"28.0\" r=\"4\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1.2\"/><text x=\"70\" y=\"32\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">⁶Li (6,015 u)</text><circle cx=\"180.0\" cy=\"28.0\" r=\"4\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><text x=\"190\" y=\"32\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">⁷Li (7,016 u)</text><text x=\"50\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mỗi chấm: một nguyên tử được lấy ngẫu nhiên</text><text x=\"56\" y=\"111\" fill=\"#34d399\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">khối lượng trung bình các nguyên tử đã lấy</text><text x=\"220.0\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">số nguyên tử đã lấy (từ trái sang phải)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: liti tự nhiên mẫu (7,5 % ⁶Li, 92,5 % ⁷Li), khác bo trong đề; lấy ngẫu nhiên 40 nguyên tử, đường xanh là khối lượng trung bình các nguyên tử đã lấy. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng nguyên tử trung bình của nguyên tố là trung bình theo tỉ lệ các đồng vị trong tự nhiên.</li><li><strong>Công thức:</strong> $\\bar m=x_1m_1+x_2m_2$ với $x_1+x_2=1$ ; $1\\ \\text{u}\\approx1{,}66054\\cdot10^{-27}\\ \\text{kg}\\approx931{,}5\\ \\text{MeV}/c^2$.</li><li>⚠ <strong>Điều kiện:</strong> tỉ lệ tính theo số nguyên tử ; đổi đơn vị bằng cách nhân với hệ số cho sẵn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lập phương trình khối lượng trung bình</span></p><p>Gọi $x$ là tỉ lệ của $^{10}_{5}\\text{B}$ ; tỉ lệ của $^{11}_{5}\\text{B}$ là $1-x$ vì tổng hai tỉ lệ bằng $1$:</p>$$10{,}013\\,x+11{,}009\\,(1-x)=10{,}811$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tìm tỉ lệ của ¹⁰B</span></p><p>Rút gọn rồi giải:</p>$$11{,}009-0{,}996\\,x=10{,}811$$$$x=\\dfrac{11{,}009-10{,}811}{0{,}996}=\\dfrac{0{,}198}{0{,}996}$$<div class=\"bt-ans\">$$x\\approx0{,}199=19{,}9\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tỉ lệ của ¹¹B</span></p><p>Hai tỉ lệ cộng lại bằng $100\\ \\%$:</p>$$1-x=100\\ \\%-19{,}9\\ \\%$$<div class=\"bt-ans\">$$80{,}1\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khối lượng một nguyên tử ¹¹B ra kilôgam</span></p><p>Nhân khối lượng theo u với số kg ứng với $1\\ \\text{u}$:</p>$$m=11{,}009\\cdot1{,}66054\\cdot10^{-27}$$<div class=\"bt-ans\">$$m\\approx1{,}83\\cdot10^{-26}\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khối lượng một nguyên tử ¹¹B ra MeV/c²</span></p><p>Nhân khối lượng theo u với số $\\text{MeV}/c^2$ ứng với $1\\ \\text{u}$:</p>$$m=11{,}009\\cdot931{,}5$$<div class=\"bt-ans\">$$m\\approx1{,}025\\cdot10^{4}\\ \\text{MeV}/c^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$0{,}199\\cdot10{,}013+0{,}801\\cdot11{,}009\\approx10{,}81$ ✓ khớp khối lượng trung bình.</p><p>Trung bình cộng đơn giản của hai khối lượng chỉ là $10{,}511\\ \\text{u}$, khác $10{,}811\\ \\text{u}$ vì $^{11}_{5}\\text{B}$ chiếm đa số ✓.</p><p>$1{,}83\\cdot10^{-26}\\ \\text{kg}$ nhỏ cỡ $10^{-26}$ kg ✓ hợp lí với khối lượng một nguyên tử.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $^{10}_{5}\\text{B}$ khoảng $19{,}9\\ \\%$ ; $^{11}_{5}\\text{B}$ khoảng $80{,}1\\ \\%$</p><p>b) $m\\approx1{,}83\\cdot10^{-26}\\ \\text{kg}$</p><p>c) $m\\approx1{,}025\\cdot10^{4}\\ \\text{MeV}/c^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng các đồng vị và khối lượng trung bình</strong> → lập $x_1m_1+x_2m_2=\\bar m$ với $x_1+x_2=1$ ; đổi u bằng hệ số cho sẵn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 220\" role=\"img\" aria-label=\"Hai đồng vị của bo với khối lượng nguyên tử đã cho và khối lượng trung bình của bo tự nhiên\"><rect x=\"10.0\" y=\"14.0\" width=\"190.0\" height=\"54.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"220.0\" y=\"14.0\" width=\"190.0\" height=\"54.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"48.4\" y=\"33.9\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">10</text><text x=\"48.4\" y=\"53.1\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">5</text><text x=\"50.4\" y=\"52.6\" fill=\"currentColor\" font-size=\"22\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"98\" y=\"46\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">10,013 u</text><text x=\"258.4\" y=\"33.9\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">11</text><text x=\"258.4\" y=\"53.1\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">5</text><text x=\"260.4\" y=\"52.6\" fill=\"currentColor\" font-size=\"22\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"308\" y=\"46\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">11,009 u</text><text x=\"105\" y=\"90\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tỉ lệ ?</text><text x=\"315\" y=\"90\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">tỉ lệ ?</text><rect x=\"60.0\" y=\"106.0\" width=\"300.0\" height=\"40.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210.0\" y=\"131.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bo tự nhiên: khối lượng trung bình 10,811 u</text><text x=\"10\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">1 u ≈ 1,66054·10⁻²⁷ kg ≈ 931,5 MeV/c²</text><text x=\"10\" y=\"192\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: tỉ lệ hai đồng vị</text><text x=\"10\" y=\"210\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">khối lượng một nguyên tử ¹¹B ra kg và ra MeV/c²</text></svg><figcaption>Dữ kiện: khối lượng nguyên tử hai đồng vị và khối lượng trung bình; tỉ lệ mỗi đồng vị là ẩn. Hình không đúng tỉ lệ. </figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khối lượng nguyên tử $10{,}013$ u và $11{,}009$ u\"</td><td>Khối lượng hai đồng vị</td><td>⚠ Khối lượng nguyên tử ghi trong bảng là con số gắn với tỉ lệ các đồng vị trong tự nhiên </td></tr><tr><td>\"khối lượng nguyên tử trung bình của bo tự nhiên là $10{,}811$ u\"</td><td>$10{,}811$ u</td><td>Khối lượng trung bình của một hỗn hợp nhiều loại nguyên tử</td></tr><tr><td>\"phần trăm số nguyên tử của mỗi đồng vị\"</td><td>Cần: hai tỉ lệ</td><td>Hai tỉ lệ liên hệ với nhau thế nào</td></tr><tr><td>\"$1\\ \\text{u}\\approx1{,}66054\\cdot10^{-27}$ kg\"</td><td>Hệ số đổi u sang kg</td><td>Đơn vị khối lượng nguyên tử</td></tr><tr><td>\"ra kilôgam\"</td><td>Cần: khối lượng theo kg</td><td>Đổi đơn vị theo hệ số đã cho</td></tr><tr><td>\"$\\approx931{,}5\\ \\text{MeV}/c^2$ … ra $\\text{MeV}/c^2$\"</td><td>Hệ số đổi u sang $\\text{MeV}/c^2$</td><td>Đổi đơn vị theo hệ số đã cho</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng các đồng vị và khối lượng trung bình</b> → lập <b>x₁m₁ + x₂m₂ = m̄</b> với <b>x₁ + x₂ = 1</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lập phương trình khối lượng trung bình",
+     "hoi": "Phương trình nào đúng, với $x$ là tỉ lệ của $^{10}_{5}\\text{B}$?",
+     "lua_chon": [
+      {
+       "text": "$\\dfrac{10{,}013+11{,}009}{2}=10{,}811$",
+       "dung": false,
+       "vi_sao": "Trung bình cộng bằng $10{,}511$ u, không bằng $10{,}811$ u ; hai đồng vị không có số nguyên tử bằng nhau."
+      },
+      {
+       "text": "$10{,}013\\,x+11{,}009\\,x=10{,}811$",
+       "dung": false,
+       "vi_sao": "Dùng cùng tỉ lệ $x$ cho cả hai đồng vị ; tỉ lệ của $^{11}_{5}\\text{B}$ phải là $1-x$ vì tổng hai tỉ lệ bằng $1$."
+      },
+      {
+       "text": "$10{,}013\\,x+11{,}009\\,(1-x)=10{,}811$",
+       "dung": true
+      }
+     ],
+     "loi_hay_gap": "Lấy trung bình cộng của hai khối lượng, hoặc dùng cùng một tỉ lệ $x$ cho cả hai đồng vị."
+    },
+    {
+     "tieu_de": "Tìm tỉ lệ của ¹⁰B",
+     "hoi": "Phần trăm số nguyên tử $^{10}_{5}\\text{B}$ trong bo tự nhiên?",
+     "dap_so": 19.9,
+     "sai_so": 0.2,
+     "don_vi": "%",
+     "loi_hay_gap": "Nhầm $x$ với tỉ lệ của đồng vị còn lại, hoặc chia sai khi giải phương trình.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải phương trình vừa lập để tìm $x$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\dfrac{10{,}811-10{,}013}{10{,}013}$ làm tỉ lệ",
+       "dung": false,
+       "vi_sao": "Phép chia này không liên hệ với tỉ lệ số nguyên tử ; $x$ phải thoả phương trình trung bình."
+      },
+      {
+       "text": "Lấy $\\dfrac{10{,}811}{11{,}009}$ làm tỉ lệ",
+       "dung": false,
+       "vi_sao": "Đó là tỉ số hai khối lượng, không phải phần trăm số nguyên tử."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tỉ lệ của ¹¹B",
+     "hoi": "Phần trăm số nguyên tử $^{11}_{5}\\text{B}$?",
+     "dap_so": 80.1,
+     "sai_so": 0.2,
+     "don_vi": "%",
+     "loi_hay_gap": "Quên rằng hai tỉ lệ cộng lại bằng $100\\ \\%$, hoặc lấy phần trăm của một đồng vị làm cho cả hai.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $100\\ \\%$ trừ tỉ lệ của $^{10}_{5}\\text{B}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy tỉ lệ $^{11}_{5}\\text{B}$ bằng tỉ lệ $^{10}_{5}\\text{B}$",
+       "dung": false,
+       "vi_sao": "Hai tỉ lệ không bằng nhau nếu không thì khối lượng trung bình đã là trung bình cộng."
+      },
+      {
+       "text": "Lấy tỉ lệ $^{11}_{5}\\text{B}$ bằng $\\dfrac{11{,}009}{10{,}811}$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ số hai khối lượng, không phải phần trăm số nguyên tử."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng một nguyên tử ¹¹B ra kilôgam",
+     "hoi": "Khối lượng một nguyên tử $^{11}_{5}\\text{B}$ theo đơn vị $10^{-26}\\ \\text{kg}$?",
+     "dap_so": 1.828,
+     "sai_so": 0.01,
+     "don_vi": "×10⁻²⁶ kg",
+     "loi_hay_gap": "Nhân hệ số đổi theo hướng ngược (chia), hoặc dùng số khối thay khối lượng nguyên tử.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân khối lượng theo u với số kg ứng với $1\\ \\text{u}$",
+       "dung": true
+      },
+      {
+       "text": "Chia khối lượng theo u cho $1{,}66054\\cdot10^{-27}$",
+       "dung": false,
+       "vi_sao": "Phép chia ra số cỡ $10^{27}$ ; hệ số này là số kg ứng với 1 u nên phải nhân."
+      },
+      {
+       "text": "Nhân với $931{,}5$ rồi đổi tiếp",
+       "dung": false,
+       "vi_sao": "$931{,}5$ là hệ số đổi u sang $\\text{MeV}/c^2$, không phải sang kg."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng một nguyên tử ¹¹B ra MeV/c²",
+     "hoi": "Khối lượng đó theo đơn vị $10^{4}\\ \\text{MeV}/c^2$?",
+     "dap_so": 1.0255,
+     "sai_so": 0.002,
+     "don_vi": "×10⁴ MeV/c²",
+     "loi_hay_gap": "Lẫn $931{,}5\\ \\text{MeV}/c^2$ với $1{,}66054\\cdot10^{-27}$ kg, hoặc nhân hai hệ số vào nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân khối lượng theo u với $931{,}5\\ \\text{MeV}/c^2$ ứng với mỗi u",
+       "dung": true
+      },
+      {
+       "text": "Nhân khối lượng theo kg với $931{,}5$",
+       "dung": false,
+       "vi_sao": "$931{,}5$ là số $\\text{MeV}/c^2$ ứng với 1 u ; áp vào kg thì sai đơn vị."
+      },
+      {
+       "text": "Nhân khối lượng theo u với $1{,}6\\cdot10^{-13}$",
+       "dung": false,
+       "vi_sao": "$1{,}6\\cdot10^{-13}$ là số J ứng với 1 MeV, không dùng để đổi u sang $\\text{MeV}/c^2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
