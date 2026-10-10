@@ -33,7 +33,7 @@ function band(p: number | null) {
   return p >= 75 ? "easy" : p >= 50 ? "mid" : "hard";
 }
 
-export default function ReviewBoard({ data, examId, classId }: { data: ExamReviewData; examId: number; classId: number }) {
+export default function ReviewBoard({ data, examId, classId, canCreateHomework = true }: { data: ExamReviewData; examId: number; classId: number; canCreateHomework?: boolean }) {
   const router = useRouter();
   const { profile } = useAuth();
   const toast = useToast();
@@ -46,13 +46,14 @@ export default function ReviewBoard({ data, examId, classId }: { data: ExamRevie
   const [reviewCreated, setReviewCreated] = useState(false);
 
   useEffect(() => {
+    if (!canCreateHomework) return;
     Promise.all([fetchClasses(), fetchChapters(), fetchLessons()])
       .then(([classes, chapters, lessons]) => {
         const grade = classGrade(classes.find((c) => c.id === classId)?.name ?? "");
         setCatalog({ grade, chapters, lessons });
       })
       .catch(() => setCatalog({ grade: null, chapters: [], lessons: [] }));
-  }, [classId]);
+  }, [classId, canCreateHomework]);
 
   const { questions, stats } = data;
   const q = questions[idx];
@@ -198,6 +199,7 @@ export default function ReviewBoard({ data, examId, classId }: { data: ExamRevie
             <ZoomIn size={16} />
           </button>
         </div>
+        {canCreateHomework && (
         <button
           className="rb-btn"
           onClick={createReview}
@@ -206,6 +208,7 @@ export default function ReviewBoard({ data, examId, classId }: { data: ExamRevie
         >
           <NotebookPen size={16} /> {reviewCreated ? "Đã tạo BTVN ôn tập" : creatingReview ? "Đang tạo…" : "Tạo BTVN ôn tập"}
         </button>
+        )}
         <button className="rb-btn" onClick={toggleFullscreen} title="Toàn màn hình (F)">
           <Maximize size={16} /> Toàn màn hình
         </button>

@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261010700000_ta_doc_thanh_vien_lop.sql|Cho trợ giảng đọc danh sách thành viên lớp (1 policy SELECT trên user_classes) để dùng trang Chữa bài /tro-giang/chua-bai|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261010500000_notify_rp_thuong.sql|Báo chuông khi em được cộng RP thưởng mục tiêu tuần / tiến bộ tuần / mục tiêu cả lớp (trigger trên rank_rp_ledger, kèm phụ huynh); chỉ thêm hàm + trigger, không gửi bù|giờ nào cũng được; rollback perf/rollback/20261010500000_notify_rp_thuong.down.sql"
 )
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162

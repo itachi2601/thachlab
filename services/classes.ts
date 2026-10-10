@@ -147,6 +147,17 @@ export async function fetchClassStudents(classId: number): Promise<ClassStudent[
     .filter((profile): profile is ClassStudent => Boolean(profile));
 }
 
+/** Chỉ mã học sinh đang học trong lớp — dùng cho trang chữa bài của trợ giảng (không cần tên). */
+export async function fetchClassStudentIds(classId: number): Promise<string[]> {
+  const { data, error } = await getSupabase()
+    .from("user_classes")
+    .select("user_id")
+    .eq("class_id", classId)
+    .eq("status", "active");
+  if (error) throw error;
+  return (data ?? []).map((row) => row.user_id as string);
+}
+
 export type ClassJoinStatus = "pending" | "active" | "rejected";
 
 export interface MyClassRequest {

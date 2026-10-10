@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus } from "lucide-react";
+import { Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import { demoAccruedHours, demoMonthlyScore, demoSessions, isDemoAssistant } from "@/lib/tro-giang/demo";
@@ -125,6 +125,14 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
       >
         <PenLine size={18} />
         Ghi buổi hôm nay
+      </Link>
+
+      <Link
+        href="/tro-giang/chua-bai"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
+      >
+        <Tv size={16} />
+        Chữa bài · xem đáp án
       </Link>
 
       <Link
