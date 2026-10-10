@@ -92,3 +92,18 @@ Lesson 102 còn 1 mục `kiem_tra` tên rác "kiểm tra chương 1" (id 41, t�
 mục `kiem_tra` rỗng tên "Kiểm tra" (id 31). Trang chọn mục 41 để gắn đề mới (không phải mục 31)
 khi tick "Gắn vào Kiểm tra" + "Thay liên kết" — cơ chế chọn mục nào trong nhiều mục cùng `kind`
 chưa rõ, cẩn thận nếu bài khác cũng có nhiều mục trùng loại.
+
+**Sửa 2026-10-10 (đã vào main, commit `fd28afb83`): trang Đăng đề có HAI chỗ điền Tên đề/Thời gian
+— khối ngoài của `ExamSection` và `ExamDraftEditor` bên trong.** Khi bấm “Sửa chi tiết từng câu”
+thì đề thật là `edited`, còn 2 ô ở ngoài chỉ ghi vào `titleInput`/`durationInput` → **ô chết**: gõ
+vào không lưu, phải gõ lại lần thứ hai (đi từ Ngân hàng câu hỏi → Soạn đề luôn rơi vào cảnh này).
+→ Đã gộp còn **MỘT khối** ở đầu `ExamSection`, luôn hiện (kể cả trang Sửa đề); `commitTitle`/
+`commitDuration` ghi thẳng vào `edited`. Ai sửa tiếp phần đề thì **đừng thêm ô Tên đề/Thời gian ở
+chỗ khác**.
+
+**Cùng ngày — thời gian mặc định không còn là 45 phút cứng.** `features/exams/duration.ts` ước
+lượng theo số câu/dạng câu: TN 1,5′ · ĐS 2′ · TLN 2,5′ · tự luận 8′, làm tròn lên bội số 5, kẹp
+5–180. Hiện ngay dưới ô thời gian: “22 câu: 12 TN × 1,5′ · 4 ĐS × 2′ · 6 TLN × 2,5′ → khoảng 45
+phút” + nút **Dùng 45 phút**; **không tự đè** lên số thầy đã gõ. Đề bốc từ ngân hàng câu hỏi và
+file Word không ghi “Thời gian: …” lấy luôn số ước lượng. Số này chỉ là GỢI Ý — vẫn nhìn lại theo
+lớp trước khi Đăng. Nhật ký skill: `.claude/skills/up-de-kiem-tra/SKILL.md`.

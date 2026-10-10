@@ -127,3 +127,6 @@
 - [Bài tập mẫu: quét dạng trước nháp](project_thachlab_btm_quet_dang.md) — số dạng 2–6 theo ngân hàng; bài 17 nháp 5 dạng, chờ kiểm chéo lần cuối và viết lại
 - [L11: 6 bài lý thuyết còn lại 9/10](project_thachlab_l11_6_bai_con_lai.md) — 6/6 đăng + deploy; treo video + thầy đối chiếu SGK; L10/L11/L12 đã đủ bài tương tác
 - [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài seed 10/10; CĐ01(161)+CĐ02(166) đã ghi DB; còn 12 CĐ + 3 mới + đề
+- [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải/đề: mỗi trường hợp một dòng, không viết liền
+- [Mã QR cho từng đề (10/10)](project_thachlab_ma_qr_de_thi.md) — `ExamQrPanel` ở /quan-tri/sua-de + /quan-tri/dang-de (chiếu lên bảng), HS quét ở `/quet-ma`; `lib/exam-link.ts` là chỗ duy nhất sinh link đề; `RequireAuth` giữ `?next=`; vào main `a1a1b6e08`; treo: thử iPhone/Android thật, QR cho CNC + nhap-bai
+- Giao diện nền sáng (11/10) — mặc định sáng toàn site, token trong `app/globals.css`; tài liệu `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
