@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Home, Maximiz
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import TheoryRpBar from "@/components/lessons/TheoryRpBar";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
@@ -486,6 +487,7 @@ function TheoryBlock({
             <FileText size={15} /> Tài liệu PDF
           </a>
         )}
+        {loggedIn && open && hasBody && <TheoryRpBar itemId={item.id} bodyHtml={item.body_html} rootRef={rootRef} />}
         {loggedIn && open && (
           <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
             <Check size={14} /> {done ? "Đã tự xác nhận đọc" : "Tôi đã đọc xong"}
