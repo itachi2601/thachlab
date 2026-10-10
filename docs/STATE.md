@@ -11,6 +11,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **10/10/2026 — 25 bài lý thuyết L10 (lesson 46–48, 58–79) từ mẻ `sua-ly-thuyet` 9/10: ĐÃ GHI DB** (kiểm chéo 5 agent `kiem-code`, trần từ nới 5% cho bài 67/75/79; file = DB). **CHƯA DEPLOY** — `public/data` sinh lúc build nên web chỉ thấy sau deploy; main local đang ahead origin 11 commit (còn việc phiên khác: QR đề, HSG chấm nhanh, BTM L12), xem trước khi push. Sao lưu `scripts/logs/ly-thuyet-bai{46..79}-backup-1791605*`.
 - **10/10/2026 — Mã QR cho từng đề (thầy chiếu lên bảng, học sinh quét là vào đúng đề).** Bước 1 (phía thầy):
   `components/admin/ExamQrPanel.tsx` hiện ở `/quan-tri/sua-de` (chọn đề nào là có QR) và ở `/quan-tri/dang-de`
   (hiện ngay sau khi đăng xong) — QR + link + sao chép + tải PNG + nút **“Chiếu lên bảng”** (toàn màn hình, nền
