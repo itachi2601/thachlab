@@ -180,3 +180,5 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 xem mục "Đợt tối ưu tải số 4" ở trên.)
 
 - **9/10/2026 — L10 đủ 34/34 bài lý thuyết tương tác:** bài 65 (B20) và 67 (B22) soạn từ 6/10 nhưng chưa từng lên DB (lesson_items rỗng); 9/10 kiểm chéo lại, sửa bài 67 (commit 4f56f73e9), đăng bằng `upload-lesson.mts` → mục Lý thuyết + đề Luyện tập 904/905, deploy xong (out/data/lessons/65|67.json có tl-quiz). Treo: chưa xem 2 bài trên web thật ở 375px; bài 65 còn 3 góp ý nhỏ về Hình 3/4/5 (tỉ lệ mũi tên lặp số quiz, F_ms nằm trong khối) chưa sửa.
+
+- **BTM L12 đợt 1 (10/10/2026):** bài 2,3,4,6,7,8 đã đăng (dòng bai_tap_mau mới 327–329 cho bài 6,7,8). Còn soạn lại 12 bài L12: 9,11,13–19,125–127 (nháp cũ batch 9/10 không đạt). Kế hoạch 42 bài L10/L11 chờ thầy duyệt.
