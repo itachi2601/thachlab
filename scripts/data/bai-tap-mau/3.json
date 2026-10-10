@@ -1,0 +1,672 @@
+{
+ "lesson_id": 3,
+ "lesson_title": "Bài 2. Thang nhiệt độ",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 6/6 dạng khớp; sửa chú thích/nhãn Δ hình dạng 4 (lộ quan hệ), hoi bước 4 dạng 5."
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Chiều truyền nhiệt năng và cân bằng nhiệt",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Một viên bi thép nhỏ được nung tới $120\\ ^\\circ\\text{C}$ rồi thả vào một bể nước rất lớn đang ở $25\\ ^\\circ\\text{C}$. Bể cách nhiệt tốt với bên ngoài và chứa nhiều nhiệt năng hơn viên bi rất nhiều.</p><ol type=\"a\"><li>Viên bi nóng hơn nước bao nhiêu độ?</li><li>Nhiệt năng truyền theo chiều nào?</li><li>Quá trình truyền nhiệt dừng lại khi nào? Lúc đó hai vật ở trạng thái gì?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"m-0\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Hai khối nước bằng nhau, một nóng một lạnh, ngăn bởi vách dẫn nhiệt; hai nhiệt kế dần chỉ cùng một mức\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"28.0\" width=\"174.0\" height=\"170.0\" rx=\"0\" fill=\"#f87171\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"216.0\" y=\"28.0\" width=\"174.0\" height=\"170.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"204.0\" y=\"22.0\" width=\"12.0\" height=\"182.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.5\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><rect x=\"93.0\" y=\"56.0\" width=\"14.0\" height=\"118.0\" rx=\"7\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"100.0\" cy=\"180.0\" r=\"10\" fill=\"#f87171\" fill-opacity=\"0.85\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"107.0\" y1=\"168.0\" x2=\"114.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"172.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">0</text><line x1=\"107.0\" y1=\"115.0\" x2=\"114.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"119.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">50</text><line x1=\"107.0\" y1=\"62.0\" x2=\"114.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"66.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">100</text><text x=\"100\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">°C</text><rect x=\"96.5\" y=\"104.4\" width=\"7\" height=\"67.6\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"104.4;109.1;112.7;115.6;117.8;119.5;120.9;121.9;122.7;123.4;123.9;124.2;124.5;124.8;125.0;125.1;125.2;125.3;125.4;125.4;125.5;125.5;125.5;125.5;125.5\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"67.6;62.9;59.3;56.4;54.2;52.5;51.1;50.1;49.3;48.6;48.1;47.8;47.5;47.2;47.0;46.9;46.8;46.7;46.6;46.6;46.5;46.5;46.5;46.5;46.5\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"313.0\" y=\"56.0\" width=\"14.0\" height=\"118.0\" rx=\"7\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"320.0\" cy=\"180.0\" r=\"10\" fill=\"#f87171\" fill-opacity=\"0.85\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"327.0\" y1=\"168.0\" x2=\"334.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"172.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">0</text><line x1=\"327.0\" y1=\"115.0\" x2=\"334.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"119.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">50</text><line x1=\"327.0\" y1=\"62.0\" x2=\"334.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"66.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">100</text><text x=\"320\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">°C</text><rect x=\"316.5\" y=\"146.8\" width=\"7\" height=\"25.2\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"146.8;142.1;138.5;135.6;133.4;131.7;130.3;129.3;128.5;127.8;127.3;127.0;126.7;126.4;126.2;126.1;126.0;125.9;125.8;125.8;125.7;125.7;125.7;125.7;125.7\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"25.2;29.9;33.5;36.4;38.6;40.3;41.7;42.7;43.5;44.2;44.7;45.0;45.3;45.6;45.8;45.9;46.0;46.1;46.2;46.2;46.3;46.3;46.3;46.3;46.3\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"117\" y=\"216\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước nóng</text><text x=\"303\" y=\"216\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước lạnh</text><text x=\"210\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">vách dẫn nhiệt</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng mẫu (số liệu khác đề): hai khối nước bằng nhau, 60 °C và 20 °C lúc đầu. Thời gian rút gọn, chạy 5 s. Mức thuỷ ngân là mức nóng, không phụ thuộc thang đọc.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt độ cho biết mức nóng của vật, trạng thái cân bằng nhiệt và chiều truyền nhiệt năng.</li><li><strong>Quy luật:</strong> hai vật tiếp xúc, chênh nhiệt độ thì nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn.</li><li>Hai nhiệt độ bằng nhau thì ngừng truyền : hai vật ở trạng thái cân bằng nhiệt.</li><li>⚠ <strong>Điều kiện:</strong> chiều truyền do nhiệt độ quyết định, không do khối lượng, chất liệu hay lượng nhiệt năng ; hệ không trao đổi nhiệt với bên ngoài.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>So sánh hai nhiệt độ</span></p><p>Hai nhiệt độ cùng thang Celsius nên trừ trực tiếp:</p>$$\\Delta t=t_1-t_2=120-25$$<div class=\"bt-ans\">$$\\Delta t=95\\ ^\\circ\\text{C}\\gt0$$</div><p>Viên bi nóng hơn nước.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều truyền nhiệt năng</span></p><p>Chiều truyền do nhiệt độ quyết định, không do lượng nhiệt năng:</p>$$t_1=120\\ ^\\circ\\text{C}\\gt t_2=25\\ ^\\circ\\text{C}$$<div class=\"bt-ans\"><p>Nhiệt năng truyền từ <strong>viên bi sang nước</strong>.</p></div><p>Bể chứa nhiều nhiệt năng hơn nhưng lạnh hơn, nên không truyền ngược cho viên bi.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điều kiện ngừng truyền</span></p><p>Nhiệt năng ngừng truyền khi hai nhiệt độ bằng nhau:</p>$$t_{\\text{bi}}=t_{\\text{nước}}$$<div class=\"bt-ans\"><p>Hai vật ở trạng thái <strong>cân bằng nhiệt</strong>.</p></div><p>Nhiệt độ chung nằm giữa $25\\ ^\\circ\\text{C}$ và $120\\ ^\\circ\\text{C}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Giống thí nghiệm trộn nước nóng với nước lạnh : nhiệt độ chung nằm giữa hai nhiệt độ đầu.</p><p>Kết luận không đổi dù bể nhiều nhiệt năng hơn : chỉ nhiệt độ quyết định chiều truyền.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) bi nóng hơn nước $95\\ ^\\circ\\text{C}$</p><p>b) từ viên bi sang nước</p><p>c) khi hai nhiệt độ bằng nhau ; hai vật ở trạng thái cân bằng nhiệt</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai vật tiếp xúc kèm nhiệt độ</strong> → so nhiệt độ, không so khối lượng hay lượng nhiệt năng ; nóng sang lạnh, bằng nhau thì dừng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c1-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Viên bi thép nóng 120 độ C sắp thả vào bể nước lớn 25 độ C\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"40.0\" y=\"100.0\" width=\"340.0\" height=\"90.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.14\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"178\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bể nước 25 °C (rất lớn)</text><circle cx=\"210.0\" cy=\"56.0\" r=\"16\" fill=\"#f87171\" fill-opacity=\"0.55\" stroke=\"#f87171\" stroke-width=\"2.4\"/><text x=\"236\" y=\"52\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bi thép 120 °C</text><text x=\"236\" y=\"72\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">vừa thả vào bể</text><text x=\"40\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nhiệt năng truyền: ?</text></svg><figcaption>Dữ kiện: hai nhiệt độ cùng thang Celsius; bể nhiều nhiệt năng hơn nhưng lạnh hơn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cách nhiệt tốt với bên ngoài … nhiều nhiệt năng hơn\"</td><td>Chỉ bi và nước trao đổi nhiệt</td><td>⚠ Chiều truyền do <strong>nhiệt độ</strong> quyết định, không do lượng nhiệt năng hay khối lượng</td></tr><tr><td>\"bi thép … $120\\ ^\\circ\\text{C}$\"</td><td>$t_1=120\\ ^\\circ\\text{C}$</td><td>Nhiệt độ cho biết mức nóng của vật</td></tr><tr><td>\"bể nước … $25\\ ^\\circ\\text{C}$\"</td><td>$t_2=25\\ ^\\circ\\text{C}$</td><td>Cùng thang Celsius nên so sánh trực tiếp</td></tr><tr><td>\"nóng hơn bao nhiêu độ\"</td><td>Cần $\\Delta t$</td><td>$\\Delta t=t_1-t_2$</td></tr><tr><td>\"nhiệt năng truyền theo chiều nào\"</td><td>So $t_1$ với $t_2$</td><td>Từ vật nóng hơn sang vật lạnh hơn</td></tr><tr><td>\"dừng lại khi nào … trạng thái gì\"</td><td>Điều kiện dừng</td><td>Hai nhiệt độ bằng nhau → cân bằng nhiệt</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai vật tiếp xúc</b> kèm nhiệt độ → so <b>nhiệt độ</b>, nóng truyền sang lạnh, bằng nhau thì dừng.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "So sánh hai nhiệt độ",
+     "hoi": "Viên bi nóng hơn nước bao nhiêu độ Celsius?",
+     "dap_so": 95,
+     "sai_so": 0.5,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cộng hai nhiệt độ thay vì lấy hiệu."
+    },
+    {
+     "tieu_de": "Chiều truyền nhiệt năng",
+     "hoi": "Nhiệt năng truyền theo chiều nào?",
+     "lua_chon": [
+      {
+       "text": "Từ viên bi sang nước",
+       "dung": true
+      },
+      {
+       "text": "Từ nước sang viên bi, vì bể chứa nhiều nhiệt năng hơn",
+       "dung": false,
+       "vi_sao": "Chiều truyền do nhiệt độ quyết định, không do lượng nhiệt năng : bể lạnh hơn nên không truyền cho vật nóng hơn."
+      },
+      {
+       "text": "Không truyền, vì hai vật khác chất",
+       "dung": false,
+       "vi_sao": "Hai vật khác chất vẫn truyền nhiệt khi chênh nhiệt độ ; chất liệu không quyết định chiều truyền."
+      }
+     ],
+     "loi_hay_gap": "Chọn chiều từ bể sang viên bi vì bể «chứa nhiều nhiệt năng hơn» — lẫn nhiệt độ với lượng nhiệt năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét vật nào có nhiệt độ cao hơn",
+       "dung": true
+      },
+      {
+       "text": "Xét vật nào chứa nhiều nhiệt năng hơn",
+       "dung": false,
+       "vi_sao": "Lượng nhiệt năng nhiều hay ít không quyết định chiều truyền ; chỉ nhiệt độ quyết định."
+      },
+      {
+       "text": "Xét vật nào có khối lượng lớn hơn",
+       "dung": false,
+       "vi_sao": "Khối lượng không quyết định chiều truyền nhiệt ; so nhiệt độ mới đúng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điều kiện ngừng truyền",
+     "hoi": "Quá trình truyền nhiệt dừng lại khi nào?",
+     "lua_chon": [
+      {
+       "text": "Khi hai vật có cùng nhiệt độ — cân bằng nhiệt",
+       "dung": true
+      },
+      {
+       "text": "Khi viên bi nguội về $0\\ ^\\circ\\text{C}$",
+       "dung": false,
+       "vi_sao": "Nhiệt độ cuối nằm giữa hai nhiệt độ đầu, không về $0\\ ^\\circ\\text{C}$."
+      },
+      {
+       "text": "Khi viên bi hết nhiệt năng",
+       "dung": false,
+       "vi_sao": "Vật không bao giờ hết nhiệt năng ; sự truyền dừng khi hai nhiệt độ bằng nhau."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng bi phải nguội về 0 °C hoặc phải hết nhiệt năng thì mới ngừng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hỏi hai nhiệt độ đã bằng nhau chưa",
+       "dung": true
+      },
+      {
+       "text": "Hỏi viên bi còn nóng hơn $0\\ ^\\circ\\text{C}$ không",
+       "dung": false,
+       "vi_sao": "$0\\ ^\\circ\\text{C}$ không phải mốc dừng ; nhiệt năng chỉ ngừng truyền khi hai vật cùng nhiệt độ."
+      },
+      {
+       "text": "Hỏi nước đã nhiều nhiệt năng bằng bi chưa",
+       "dung": false,
+       "vi_sao": "Lượng nhiệt năng không quyết định ; điều kiện dừng là bằng nhiệt độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Đổi giữa thang Celsius và thang Kelvin",
+   "topic": "Thang Celsius và thang Kelvin",
+   "problem_html": "<p>Làm tròn $T=t+273$ ($T$ tính bằng K, $t$ tính bằng °C).</p><ol type=\"a\"><li>Thân nhiệt bình thường của người là $37\\ ^\\circ\\text{C}$. Tính theo thang Kelvin.</li><li>Heli sôi ở $4{,}22\\ \\text{K}$ (áp suất khí quyển). Tính theo thang Celsius.</li><li>Thuỷ ngân đông đặc ở $-39\\ ^\\circ\\text{C}$. Tính theo thang Kelvin.</li><li>Một bạn báo đã đo được nhiệt độ $-300\\ ^\\circ\\text{C}$ trong phòng thí nghiệm. Kết quả đó có đáng tin không? Vì sao?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Các thang nhiệt độ đặt song song, một con trỏ chạy lên cho thấy cùng một nhiệt độ ở mỗi thang\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"150.0\" y1=\"200.0\" x2=\"150.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"150\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Celsius (°C)</text><line x1=\"145.0\" y1=\"200.0\" x2=\"155.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"141\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">0</text><line x1=\"145.0\" y1=\"160.0\" x2=\"155.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"141\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">25</text><line x1=\"145.0\" y1=\"120.0\" x2=\"155.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"141\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">50</text><line x1=\"145.0\" y1=\"80.0\" x2=\"155.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"141\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">75</text><line x1=\"145.0\" y1=\"40.0\" x2=\"155.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"141\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">100</text><line x1=\"270.0\" y1=\"200.0\" x2=\"270.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"270\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Kelvin (K)</text><line x1=\"265.0\" y1=\"200.0\" x2=\"275.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"261\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">273</text><line x1=\"265.0\" y1=\"160.0\" x2=\"275.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"261\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">298</text><line x1=\"265.0\" y1=\"120.0\" x2=\"275.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"261\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">323</text><line x1=\"265.0\" y1=\"80.0\" x2=\"275.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"261\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">348</text><line x1=\"265.0\" y1=\"40.0\" x2=\"275.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"261\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">373</text><line x1=\"156\" y1=\"200.0\" x2=\"226\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"4 3\"><animate attributeName=\"y1\" values=\"200.0;189.3;178.7;168.0;157.3;146.7;136.0;125.3;114.7;104.0;93.3;82.7;72.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"200.0;189.3;178.7;168.0;157.3;146.7;136.0;125.3;114.7;104.0;93.3;82.7;72.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"150\" cy=\"200.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"200.0;189.3;178.7;168.0;157.3;146.7;136.0;125.3;114.7;104.0;93.3;82.7;72.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"270\" cy=\"200.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"200.0;189.3;178.7;168.0;157.3;146.7;136.0;125.3;114.7;104.0;93.3;82.7;72.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng mẫu: cùng một nhiệt độ chạy từ 0 °C đến 80 °C, đọc trên các thang song song (tại 80 °C: 80 °C = 353 K). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thang Celsius lấy nước đá tan làm $0$ ; thang Kelvin lấy độ không tuyệt đối làm $0$ ($0\\ \\text{K}=-273{,}15\\ ^\\circ\\text{C}$).</li><li><strong>Công thức:</strong> $T=t+273$ ; $t=T-273$ (làm tròn từ $273{,}15$).</li><li>Kí hiệu K, không viết °K ; kelvin không bao giờ âm.</li><li>⚠ <strong>Điều kiện:</strong> công thức này đổi một <strong>giá trị</strong> nhiệt độ, không dùng cho khoảng chênh.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thân nhiệt sang Kelvin</span></p><p>Đổi một giá trị từ °C sang K : cộng $273$.</p>$$T=t+273=37+273$$<div class=\"bt-ans\">$$T=310\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Heli sang Celsius</span></p><p>Từ K sang °C : trừ $273$.</p>$$t=T-273=4{,}22-273$$<div class=\"bt-ans\">$$t\\approx-268{,}8\\ ^\\circ\\text{C}$$</div><p>Dùng $273{,}15$ ra $-268{,}93\\ ^\\circ\\text{C}$ ; hai cách chênh nhau chưa tới $0{,}2\\ ^\\circ\\text{C}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thuỷ ngân sang Kelvin</span></p><p>Giữ nguyên dấu âm của $t$ khi cộng :</p>$$T=t+273=-39+273$$<div class=\"bt-ans\">$$T=234\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt độ $-300\\ ^\\circ\\text{C}$</span></p><p>Đổi sang K để so với độ không tuyệt đối :</p>$$T=-300+273=-27\\ \\text{K}\\lt0$$<p>Kelvin không âm ; nhiệt độ thấp nhất là $0\\ \\text{K}=-273{,}15\\ ^\\circ\\text{C}$.</p><div class=\"bt-ans\"><p>Không đáng tin : thấp hơn độ không tuyệt đối.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đổi ngược : $310-273=37$ ✓ ; $234-273=-39$ ✓.</p><p>Ba nhiệt độ hợp lệ đều dương trên thang Kelvin ✓ ; heli sôi ở $4{,}22\\ \\text{K}\\approx-269\\ ^\\circ\\text{C}$ là cực lạnh ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=310\\ \\text{K}$</p><p>b) $t\\approx-268{,}8\\ ^\\circ\\text{C}$</p><p>c) $T=234\\ \\text{K}$</p><p>d) không đáng tin (thấp hơn $0\\ \\text{K}$)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiệt độ ở một thang</strong>, hỏi thang kia (°C ↔ K) → cộng hoặc trừ $273$ cho <strong>một giá trị</strong> ; kết quả kelvin âm là vô lí.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Bốn nhiệt độ cho ở một thang, cần đổi sang thang còn lại\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"14.0\" y=\"18.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">37 °C (thân nhiệt)</text><line x1=\"210\" y1=\"35\" x2=\"242\" y2=\"35\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,29.9 L242.0,35.0 L233.2,40.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"18.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? K</text><rect x=\"14.0\" y=\"72.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">4,22 K (heli sôi)</text><line x1=\"210\" y1=\"89\" x2=\"242\" y2=\"89\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,83.9 L242.0,89.0 L233.2,94.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"72.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"94\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? °C</text><rect x=\"14.0\" y=\"126.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−39 °C (thuỷ ngân)</text><line x1=\"210\" y1=\"143\" x2=\"242\" y2=\"143\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,137.9 L242.0,143.0 L233.2,148.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"126.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"148\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? K</text><rect x=\"14.0\" y=\"180.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"202\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">−300 °C (đo được?)</text><line x1=\"210\" y1=\"197\" x2=\"242\" y2=\"197\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,191.9 L242.0,197.0 L233.2,202.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"180.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"202\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">đáng tin không?</text></svg><figcaption>Dữ kiện: mỗi thẻ là một giá trị nhiệt độ cần đổi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Làm tròn $T=t+273$\"</td><td>$T=t+273$ ; $t=T-273$</td><td>⚠ Đổi <strong>một giá trị</strong> nhiệt độ ; kelvin không âm, thấp nhất $0\\ \\text{K}=-273{,}15\\ ^\\circ\\text{C}$</td></tr><tr><td>\"thân nhiệt … $37\\ ^\\circ\\text{C}$ … theo Kelvin\"</td><td>$t=37\\ ^\\circ\\text{C}$</td><td>°C → K : $T=t+273$</td></tr><tr><td>\"heli sôi ở $4{,}22\\ \\text{K}$ … theo Celsius\"</td><td>$T=4{,}22\\ \\text{K}$</td><td>K → °C : $t=T-273$</td></tr><tr><td>\"thuỷ ngân đông đặc ở $-39\\ ^\\circ\\text{C}$\"</td><td>$t=-39\\ ^\\circ\\text{C}$</td><td>Giữ nguyên dấu âm của $t$ khi cộng</td></tr><tr><td>\"đo được $-300\\ ^\\circ\\text{C}$ … có đáng tin không\"</td><td>$t=-300\\ ^\\circ\\text{C}$</td><td>Đổi sang K rồi so với độ không tuyệt đối</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiệt độ ở một thang</b>, hỏi thang kia (°C ↔ K) → <b>cộng hoặc trừ 273</b> cho một giá trị.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thân nhiệt sang Kelvin",
+     "hoi": "Thân nhiệt người ($37\\ ^\\circ\\text{C}$) bằng bao nhiêu kelvin?",
+     "dap_so": 310,
+     "sai_so": 0.5,
+     "don_vi": "K",
+     "loi_hay_gap": "Trừ 273 thay vì cộng, hoặc giữ nguyên số vì cho rằng hai thang chỉ khác ký hiệu."
+    },
+    {
+     "tieu_de": "Heli sang Celsius",
+     "hoi": "Nhiệt độ sôi của heli ($4{,}22\\ \\text{K}$) bằng bao nhiêu độ Celsius?",
+     "dap_so": -268.8,
+     "sai_so": 0.2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cộng 273 như khi đi từ °C sang K — đi ngược chiều thì phải trừ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trừ 273 : $t=T-273$",
+       "dung": true
+      },
+      {
+       "text": "Cộng 273 : $t=T+273$",
+       "dung": false,
+       "vi_sao": "Cộng 273 là đi từ °C sang K ; muốn ra °C phải trừ."
+      },
+      {
+       "text": "Giữ nguyên số vì hai thang chia khoảng bằng nhau",
+       "dung": false,
+       "vi_sao": "Khoảng chia bằng nhau nhưng gốc lệch $273$ độ nên số đọc khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thuỷ ngân sang Kelvin",
+     "hoi": "Thuỷ ngân đông đặc ở $-39\\ ^\\circ\\text{C}$ ứng với bao nhiêu kelvin?",
+     "dap_so": 234,
+     "sai_so": 0.5,
+     "don_vi": "K",
+     "loi_hay_gap": "Bỏ dấu âm rồi cộng, như thể nhiệt độ là dương.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng 273 cho cả số âm : $T=-39+273$",
+       "dung": true
+      },
+      {
+       "text": "Bỏ dấu âm rồi cộng : $T=39+273$",
+       "dung": false,
+       "vi_sao": "Dấu âm là một phần của giá trị ; bỏ đi thì ra nhiệt độ cao hơn nhiều so với thật."
+      },
+      {
+       "text": "Số âm trong Celsius thì không đổi sang Kelvin được",
+       "dung": false,
+       "vi_sao": "Số âm trong Celsius vẫn đổi bình thường ; chỉ cần kết quả kelvin không âm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ −300 °C",
+     "hoi": "Kết quả đo $-300\\ ^\\circ\\text{C}$ có đáng tin không?",
+     "lua_chon": [
+      {
+       "text": "Không : ứng với kelvin âm, thấp hơn độ không tuyệt đối",
+       "dung": true
+      },
+      {
+       "text": "Có, vì thang Celsius cho phép số âm tuỳ ý",
+       "dung": false,
+       "vi_sao": "Celsius có số âm nhưng không thấp hơn $-273{,}15\\ ^\\circ\\text{C}$ (chính là $0\\ \\text{K}$)."
+      },
+      {
+       "text": "Có, nếu làm lạnh bằng nitơ lỏng",
+       "dung": false,
+       "vi_sao": "Nitơ lỏng chỉ xuống khoảng $-196\\ ^\\circ\\text{C}$ ; không cách nào xuống dưới $0\\ \\text{K}$."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng Celsius có số âm nên âm bao nhiêu cũng được.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi sang kelvin rồi so với $0\\ \\text{K}$",
+       "dung": true
+      },
+      {
+       "text": "So với $0\\ ^\\circ\\text{C}$ : âm thì chắc chắn đo được",
+       "dung": false,
+       "vi_sao": "$0\\ ^\\circ\\text{C}$ không phải mốc thấp nhất ; mốc thấp nhất là $0\\ \\text{K}$."
+      },
+      {
+       "text": "So với $100\\ ^\\circ\\text{C}$ : nhỏ hơn thì hợp lí",
+       "dung": false,
+       "vi_sao": "$100\\ ^\\circ\\text{C}$ là mốc nước sôi, không liên quan đến giới hạn dưới của nhiệt độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đổi giữa ba thang Celsius, Kelvin, Fahrenheit",
+   "topic": "Thang Celsius và thang Kelvin",
+   "problem_html": "<p>Dùng $t_F=1{,}8\\,t+32$ ($t_F$ tính bằng °F, $t$ tính bằng °C) và $T=t+273$.</p><ol type=\"a\"><li>Công thức làm bánh nhập từ Mỹ yêu cầu nướng ở $374\\ ^\\circ\\text{F}$. Tính nhiệt độ nướng theo °C.</li><li>Nhiệt kế y tế hiện $98{,}6\\ ^\\circ\\text{F}$. Tính thân nhiệt theo °C, rồi theo K.</li><li>Phòng thí nghiệm ghi nhiệt độ phòng $293\\ \\text{K}$. Tính nhiệt độ đó theo °F.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Các thang nhiệt độ đặt song song, một con trỏ chạy lên cho thấy cùng một nhiệt độ ở mỗi thang\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"90.0\" y1=\"200.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"90\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Celsius</text><line x1=\"85.0\" y1=\"200.0\" x2=\"95.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">0</text><line x1=\"85.0\" y1=\"160.0\" x2=\"95.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">25</text><line x1=\"85.0\" y1=\"120.0\" x2=\"95.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">50</text><line x1=\"85.0\" y1=\"80.0\" x2=\"95.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">75</text><line x1=\"85.0\" y1=\"40.0\" x2=\"95.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">100</text><line x1=\"210.0\" y1=\"200.0\" x2=\"210.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"210\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Kelvin</text><line x1=\"205.0\" y1=\"200.0\" x2=\"215.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">273</text><line x1=\"205.0\" y1=\"160.0\" x2=\"215.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">298</text><line x1=\"205.0\" y1=\"120.0\" x2=\"215.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">323</text><line x1=\"205.0\" y1=\"80.0\" x2=\"215.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">348</text><line x1=\"205.0\" y1=\"40.0\" x2=\"215.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">373</text><line x1=\"330.0\" y1=\"200.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"330\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Fahrenheit</text><line x1=\"325.0\" y1=\"200.0\" x2=\"335.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">32</text><line x1=\"325.0\" y1=\"160.0\" x2=\"335.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">77</text><line x1=\"325.0\" y1=\"120.0\" x2=\"335.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">122</text><line x1=\"325.0\" y1=\"80.0\" x2=\"335.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">167</text><line x1=\"325.0\" y1=\"40.0\" x2=\"335.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">212</text><line x1=\"96\" y1=\"200.0\" x2=\"166\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"4 3\"><animate attributeName=\"y1\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"216\" y1=\"200.0\" x2=\"286\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"4 3\"><animate attributeName=\"y1\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"90\" cy=\"200.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210\" cy=\"200.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"330\" cy=\"200.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"200.0;192.0;184.0;176.0;168.0;160.0;152.0;144.0;136.0;128.0;120.0;112.0;104.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng mẫu: cùng một nhiệt độ chạy từ 0 °C đến 60 °C, đọc trên các thang song song (tại 60 °C: 60 °C = 333 K = 140 °F). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thang Fahrenheit lấy nước đá tan $32\\ ^\\circ\\text{F}$, nước sôi $212\\ ^\\circ\\text{F}$, chia $180$ khoảng ; $1\\ ^\\circ\\text{C}$ ứng với $1{,}8\\ ^\\circ\\text{F}$.</li><li><strong>Công thức:</strong> $t_F=1{,}8\\,t+32$ ; $t=\\dfrac{t_F-32}{1{,}8}$ ; $T=t+273$.</li><li>K và °F không đổi thẳng cho nhau : luôn đi qua °C.</li><li>⚠ <strong>Điều kiện:</strong> đổi một giá trị nhiệt độ ; đi từ °C : nhân $1{,}8$ rồi cộng $32$, đi về °C : trừ $32$ rồi chia $1{,}8$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt độ nướng sang Celsius</span></p><p>Từ °F về °C : trừ $32$ trước, chia $1{,}8$ sau.</p>$$t=\\dfrac{t_F-32}{1{,}8}=\\dfrac{374-32}{1{,}8}=\\dfrac{342}{1{,}8}$$<div class=\"bt-ans\">$$t=190\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thân nhiệt sang Celsius</span></p>$$t=\\dfrac{98{,}6-32}{1{,}8}=\\dfrac{66{,}6}{1{,}8}$$<div class=\"bt-ans\">$$t=37\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thân nhiệt sang Kelvin</span></p><p>Cộng $273$ vào số đo Celsius vừa tìm :</p>$$T=t+273=37+273$$<div class=\"bt-ans\">$$T=310\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt độ phòng sang Fahrenheit</span></p><p>Kelvin không đổi thẳng sang °F ; về °C trước :</p>$$t=T-273=293-273=20\\ ^\\circ\\text{C}$$<p>Rồi sang °F :</p>$$t_F=1{,}8\\,t+32=1{,}8\\cdot20+32=36+32$$<div class=\"bt-ans\">$$t_F=68\\ ^\\circ\\text{F}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đổi ngược : $1{,}8\\cdot190+32=342+32=374$ ✓ ; $1{,}8\\cdot37+32=66{,}6+32=98{,}6$ ✓.</p><p>$37\\ ^\\circ\\text{C}$, $310\\ \\text{K}$, $98{,}6\\ ^\\circ\\text{F}$ là ba cách ghi một thân nhiệt ✓.</p><p>Hợp lí : $190\\ ^\\circ\\text{C}$ là nhiệt độ nướng bánh thông dụng ; $68\\ ^\\circ\\text{F}$ là phòng mát.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $190\\ ^\\circ\\text{C}$</p><p>b) $37\\ ^\\circ\\text{C}$ ; $310\\ \\text{K}$</p><p>c) $68\\ ^\\circ\\text{F}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>°F</strong> hoặc đổi <strong>K ↔ °F</strong> → luôn đi qua °C : về °C (trừ 32 chia 1,8 hoặc trừ 273), rồi sang thang cần tìm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-2\"><svg viewBox=\"0 0 420 182\" role=\"img\" aria-label=\"Ba nhiệt độ cho ở thang Fahrenheit hoặc Kelvin, cần đổi sang thang khác\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"14.0\" y=\"18.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">374 °F (nướng bánh)</text><line x1=\"210\" y1=\"35\" x2=\"242\" y2=\"35\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,29.9 L242.0,35.0 L233.2,40.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"18.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? °C</text><rect x=\"14.0\" y=\"72.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">98,6 °F (nhiệt kế y tế)</text><line x1=\"210\" y1=\"89\" x2=\"242\" y2=\"89\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,83.9 L242.0,89.0 L233.2,94.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"72.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"94\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? °C rồi ? K</text><rect x=\"14.0\" y=\"126.0\" width=\"190.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"109\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">293 K (nhiệt độ phòng)</text><line x1=\"210\" y1=\"143\" x2=\"242\" y2=\"143\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M233.2,137.9 L242.0,143.0 L233.2,148.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"248.0\" y=\"126.0\" width=\"158.0\" height=\"34.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"327\" y=\"148\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">? °F</text></svg><figcaption>Dữ kiện: mỗi thẻ là một giá trị cần đổi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$t_F=1{,}8\\,t+32$ … $T=t+273$\"</td><td>Hai công thức đổi</td><td>⚠ Đổi một <strong>giá trị</strong> nhiệt độ ; K và °F không đổi thẳng cho nhau, phải qua °C</td></tr><tr><td>\"nướng ở $374\\ ^\\circ\\text{F}$ … theo °C\"</td><td>$t_F=374\\ ^\\circ\\text{F}$</td><td>°F → °C : trừ 32 rồi chia 1,8</td></tr><tr><td>\"nhiệt kế y tế hiện $98{,}6\\ ^\\circ\\text{F}$ … theo °C, rồi theo K\"</td><td>$t_F=98{,}6\\ ^\\circ\\text{F}$</td><td>°F → °C rồi °C → K : cộng 273</td></tr><tr><td>\"nhiệt độ phòng $293\\ \\text{K}$ … theo °F\"</td><td>$T=293\\ \\text{K}$</td><td>K → °C : trừ 273 ; °C → °F : nhân 1,8 rồi cộng 32</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>°F</b> hoặc đổi <b>K ↔ °F</b> → luôn đi <b>qua °C</b> : trừ 32 chia 1,8 hoặc trừ 273, rồi sang thang cần tìm.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt độ nướng sang Celsius",
+     "hoi": "Nhiệt độ nướng ($374\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?",
+     "dap_so": 190,
+     "sai_so": 0.5,
+     "don_vi": "°C",
+     "loi_hay_gap": "Dùng thẳng công thức °C → °F (nhân 1,8 cộng 32) cho chiều ngược lại."
+    },
+    {
+     "tieu_de": "Thân nhiệt sang Celsius",
+     "hoi": "Thân nhiệt ($98{,}6\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?",
+     "dap_so": 37,
+     "sai_so": 0.1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Chia 1,8 trước rồi mới trừ 32 — sai thứ tự phép ngược.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trừ 32 rồi chia cho 1,8",
+       "dung": true
+      },
+      {
+       "text": "Chia cho 1,8 rồi mới trừ 32",
+       "dung": false,
+       "vi_sao": "Muốn gỡ $t_F=1{,}8\\,t+32$ phải làm ngược thứ tự : trừ $32$ trước, chia $1{,}8$ sau."
+      },
+      {
+       "text": "Nhân 1,8 rồi cộng 32 như khi đi từ °C sang °F",
+       "dung": false,
+       "vi_sao": "Đó là chiều °C → °F ; đi ngược lại phải làm các phép ngược."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thân nhiệt sang Kelvin",
+     "hoi": "Thân nhiệt đó bằng bao nhiêu kelvin?",
+     "dap_so": 310,
+     "sai_so": 0.5,
+     "don_vi": "K",
+     "loi_hay_gap": "Cộng 273 vào số °F ban đầu thay vì số °C vừa tìm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng 273 vào số đo Celsius vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Cộng 273 vào số đo Fahrenheit ban đầu",
+       "dung": false,
+       "vi_sao": "273 chỉ cộng vào số đo Celsius ; số °F thuộc một thang khác."
+      },
+      {
+       "text": "Nhân 1,8 rồi cộng 273",
+       "dung": false,
+       "vi_sao": "Hệ số 1,8 chỉ có giữa Celsius và Fahrenheit, không có giữa Celsius và Kelvin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ phòng sang Fahrenheit",
+     "hoi": "Nhiệt độ phòng ($293\\ \\text{K}$) bằng bao nhiêu độ Fahrenheit?",
+     "dap_so": 68,
+     "sai_so": 0.5,
+     "don_vi": "°F",
+     "loi_hay_gap": "Nhân 1,8 cộng 32 thẳng vào số kelvin — công thức °F dùng số đo Celsius.",
+     "chon_buoc_ke": [
+      {
+       "text": "Về °C trước (trừ 273), rồi nhân 1,8 cộng 32",
+       "dung": true
+      },
+      {
+       "text": "Nhân 1,8 cộng 32 thẳng vào số kelvin",
+       "dung": false,
+       "vi_sao": "Công thức °F dùng số đo Celsius, không dùng số kelvin."
+      },
+      {
+       "text": "Trừ 273 rồi trừ 32",
+       "dung": false,
+       "vi_sao": "Trừ 32 là phép về °C từ °F ; đi sang °F phải nhân 1,8 rồi cộng 32."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Khoảng chênh nhiệt độ trên ba thang",
+   "topic": "Thang Celsius và thang Kelvin",
+   "problem_html": "<p>Dự báo thời tiết một ngày ở Hà Nội: thấp nhất $17\\ ^\\circ\\text{C}$, cao nhất $29\\ ^\\circ\\text{C}$. Dùng $T=t+273$ và $t_F=1{,}8\\,t+32$.</p><ol type=\"a\"><li>Chênh lệch giữa nhiệt độ cao nhất và thấp nhất là bao nhiêu độ Celsius?</li><li>Chênh lệch đó bằng bao nhiêu kelvin?</li><li>Chênh lệch đó bằng bao nhiêu độ Fahrenheit?</li><li>Bạn An lấy chênh lệch tính ở câu a rồi cộng thêm 273 để ra kelvin. Chỉ ra chỗ sai trong cách làm của An.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Ba thang nhiệt độ song song, một đoạn nóng lên mọc dần cho thấy độ lớn khoảng chênh ở mỗi thang\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"90.0\" y1=\"200.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"90\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Celsius</text><line x1=\"85.0\" y1=\"200.0\" x2=\"95.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">0</text><line x1=\"85.0\" y1=\"160.0\" x2=\"95.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">25</text><line x1=\"85.0\" y1=\"120.0\" x2=\"95.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">50</text><line x1=\"85.0\" y1=\"80.0\" x2=\"95.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">75</text><line x1=\"85.0\" y1=\"40.0\" x2=\"95.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"81\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">100</text><line x1=\"210.0\" y1=\"200.0\" x2=\"210.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"210\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Kelvin</text><line x1=\"205.0\" y1=\"200.0\" x2=\"215.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">273</text><line x1=\"205.0\" y1=\"160.0\" x2=\"215.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">298</text><line x1=\"205.0\" y1=\"120.0\" x2=\"215.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">323</text><line x1=\"205.0\" y1=\"80.0\" x2=\"215.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">348</text><line x1=\"205.0\" y1=\"40.0\" x2=\"215.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"201\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">373</text><line x1=\"330.0\" y1=\"200.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"330\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Fahrenheit</text><line x1=\"325.0\" y1=\"200.0\" x2=\"335.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"204.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">32</text><line x1=\"325.0\" y1=\"160.0\" x2=\"335.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">77</text><line x1=\"325.0\" y1=\"120.0\" x2=\"335.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"124.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">122</text><line x1=\"325.0\" y1=\"80.0\" x2=\"335.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"84.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">167</text><line x1=\"325.0\" y1=\"40.0\" x2=\"335.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"321\" y=\"44.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">212</text><rect x=\"84\" y=\"168.0\" width=\"12\" height=\"0\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.5\"><animate attributeName=\"y\" values=\"168.0;120.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;48.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"204\" y=\"168.0\" width=\"12\" height=\"0\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.5\"><animate attributeName=\"y\" values=\"168.0;120.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;48.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"324\" y=\"168.0\" width=\"12\" height=\"0\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.5\"><animate attributeName=\"y\" values=\"168.0;120.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;48.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng mẫu: khoảng nóng lên từ 20 °C đến 50 °C (số liệu khác đề), đọc trên ba thang. Đọc khoảng nóng lên trên ba thang. Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chênh lệch (khoảng chênh) $\\Delta$ là hiệu hai nhiệt độ, khác một giá trị nhiệt độ.</li><li><strong>Công thức:</strong> $\\Delta t=t_2-t_1$ ; $\\Delta T=\\Delta t$ ; $\\Delta t_F=1{,}8\\,\\Delta t$.</li><li>Khoảng chia Celsius và Kelvin bằng nhau ; $100$ khoảng Celsius ứng với $180$ khoảng Fahrenheit.</li><li>⚠ <strong>Điều kiện:</strong> với khoảng chênh không cộng $273$, không cộng $32$ (hai số này là độ lệch gốc, triệt tiêu khi lấy hiệu).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chênh lệch trên thang Celsius</span></p>$$\\Delta t=t_2-t_1=29-17$$<div class=\"bt-ans\">$$\\Delta t=12\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chênh lệch trên thang Kelvin</span></p><p>Khoảng chia hai thang bằng nhau : $1\\ \\text{K}$ ứng với $1\\ ^\\circ\\text{C}$ nên số không đổi :</p>$$\\Delta T=\\Delta t$$<div class=\"bt-ans\">$$\\Delta T=12\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chênh lệch trên thang Fahrenheit</span></p><p>$1\\ ^\\circ\\text{C}$ ứng với $1{,}8\\ ^\\circ\\text{F}$, không cộng $32$ :</p>$$\\Delta t_F=1{,}8\\,\\Delta t=1{,}8\\cdot12$$<div class=\"bt-ans\">$$\\Delta t_F=21{,}6\\ ^\\circ\\text{F}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chỗ sai của bạn An</span></p><p>An cộng $273$ vào một <strong>khoảng chênh</strong>. $273$ là độ lệch giữa hai gốc, chỉ dùng khi đổi một <strong>giá trị</strong> nhiệt độ.</p><p>Khi lấy hiệu hai nhiệt độ, hai số $273$ triệt tiêu :</p>$$(t_2+273)-(t_1+273)=t_2-t_1$$<div class=\"bt-ans\"><p>Chênh lệch trên thang Kelvin vẫn bằng chênh lệch trên thang Celsius.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đổi từng đầu : $17\\ ^\\circ\\text{C}=62{,}6\\ ^\\circ\\text{F}$ ; $29\\ ^\\circ\\text{C}=84{,}2\\ ^\\circ\\text{F}$.</p>$$84{,}2-62{,}6=21{,}6\\ ^\\circ\\text{F}$$<p>✓ Khớp. Đổi từng đầu sang kelvin : $302-290=12\\ \\text{K}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $12\\ ^\\circ\\text{C}$</p><p>b) $12\\ \\text{K}$</p><p>c) $21{,}6\\ ^\\circ\\text{F}$</p><p>d) cộng $273$ vào khoảng chênh là sai</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>chênh lệch / tăng / giảm bao nhiêu độ</strong> → K bằng °C, °F bằng $1{,}8\\times$°C ; không cộng 273, không cộng 32.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Nhiệt độ thấp nhất 17 độ C và cao nhất 29 độ C; cần chênh lệch trên ba thang\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"100.0\" y1=\"190.0\" x2=\"100.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"92.0\" y1=\"148.0\" x2=\"108.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"86\" y=\"152\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">17 °C</text><line x1=\"92.0\" y1=\"76.0\" x2=\"108.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"86\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">29 °C</text><line x1=\"140\" y1=\"148\" x2=\"140\" y2=\"76\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M134.9,84.8 L140.0,76.0 L145.1,84.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"76\" x2=\"140\" y2=\"148\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M145.1,139.2 L140.0,148.0 L134.9,139.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"156\" y=\"116.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chênh lệch ?</text><text x=\"250\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δ (°C) = ?</text><text x=\"250\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δ (K) = ?</text><text x=\"250\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δ (°F) = ?</text></svg><figcaption>Dữ kiện: hai nhiệt độ cùng thang Celsius; hỏi khoảng chênh trên ba thang. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thấp nhất $17\\ ^\\circ\\text{C}$, cao nhất $29\\ ^\\circ\\text{C}$\"</td><td>$t_1=17\\ ^\\circ\\text{C}$ ; $t_2=29\\ ^\\circ\\text{C}$</td><td>⚠ Đề hỏi <strong>chênh lệch</strong>, không phải một giá trị nhiệt độ : không cộng 273, không cộng 32</td></tr><tr><td>\"bao nhiêu độ Celsius\"</td><td>Cần $\\Delta t$</td><td>$\\Delta t=t_2-t_1$</td></tr><tr><td>\"bao nhiêu kelvin\"</td><td>Cần $\\Delta T$</td><td>$1\\ \\text{K}$ ứng với $1\\ ^\\circ\\text{C}$ : $\\Delta T=\\Delta t$</td></tr><tr><td>\"bao nhiêu độ Fahrenheit\"</td><td>Cần $\\Delta t_F$</td><td>$1\\ ^\\circ\\text{C}$ ứng với $1{,}8\\ ^\\circ\\text{F}$ : $\\Delta t_F=1{,}8\\,\\Delta t$</td></tr><tr><td>\"cộng thêm 273 để ra kelvin … chỗ sai\"</td><td>Phép cộng 273 áp vào chênh lệch</td><td>273 dùng cho loại đại lượng nào : giá trị hay khoảng chênh ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chênh lệch / tăng / giảm bao nhiêu độ</b> → K bằng °C, °F bằng <b>1,8 × °C</b>, không cộng 273 hay 32.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chênh lệch trên thang Celsius",
+     "hoi": "Nhiệt độ cao nhất hơn thấp nhất bao nhiêu độ Celsius?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cộng hai nhiệt độ thay vì lấy hiệu."
+    },
+    {
+     "tieu_de": "Chênh lệch trên thang Kelvin",
+     "hoi": "Chênh lệch đó bằng bao nhiêu kelvin?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "K",
+     "loi_hay_gap": "Cộng 273 vào khoảng chênh, như khi đổi một giá trị nhiệt độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Khoảng chênh kelvin bằng khoảng chênh Celsius, giữ nguyên số",
+       "dung": true
+      },
+      {
+       "text": "Cộng 273 vào khoảng chênh",
+       "dung": false,
+       "vi_sao": "273 là độ lệch giữa hai gốc, chỉ dùng khi đổi một giá trị ; hai đầu cùng cộng 273 nên hiệu không đổi."
+      },
+      {
+       "text": "Nhân khoảng chênh với 1,8",
+       "dung": false,
+       "vi_sao": "Hệ số 1,8 là của thang Fahrenheit, không phải của thang Kelvin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chênh lệch trên thang Fahrenheit",
+     "hoi": "Chênh lệch đó bằng bao nhiêu độ Fahrenheit?",
+     "dap_so": 21.6,
+     "sai_so": 0.1,
+     "don_vi": "°F",
+     "loi_hay_gap": "Nhân 1,8 rồi còn cộng thêm 32 — số 32 triệt tiêu khi lấy hiệu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân khoảng chênh °C với 1,8, không cộng 32",
+       "dung": true
+      },
+      {
+       "text": "Nhân với 1,8 rồi cộng 32",
+       "dung": false,
+       "vi_sao": "32 là độ lệch gốc, chỉ cộng khi đổi một giá trị ; với khoảng chênh thì triệt tiêu."
+      },
+      {
+       "text": "Cộng 273 rồi nhân 1,8",
+       "dung": false,
+       "vi_sao": "273 thuộc thang Kelvin, không liên quan đến khoảng chênh Fahrenheit."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chỗ sai của bạn An",
+     "hoi": "Cách làm của An sai ở chỗ nào?",
+     "lua_chon": [
+      {
+       "text": "Cộng 273 vào một khoảng chênh ; 273 chỉ dùng khi đổi một giá trị nhiệt độ",
+       "dung": true
+      },
+      {
+       "text": "Phải trừ 273 chứ không cộng",
+       "dung": false,
+       "vi_sao": "Trừ 273 cũng sai : khoảng chênh không cần đổi gốc, kelvin giữ nguyên số của Celsius."
+      },
+      {
+       "text": "Kelvin không dùng để đo chênh lệch",
+       "dung": false,
+       "vi_sao": "Kelvin đo được khoảng chênh ; chỉ là khoảng chênh kelvin đúng bằng khoảng chênh Celsius."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng chỉ cần đổi dấu cộng thành trừ là hết sai.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét lại phép cộng 273 đã dùng cho khoảng chênh",
+       "dung": true
+      },
+      {
+       "text": "Tính lại hiệu hai nhiệt độ Celsius",
+       "dung": false,
+       "vi_sao": "Hiệu Celsius ở câu a đã đúng ; chỗ sai nằm ở bước sau, khi đổi sang kelvin."
+      },
+      {
+       "text": "Đổi chênh lệch sang Fahrenheit",
+       "dung": false,
+       "vi_sao": "Chỗ sai của An ở bước sang kelvin, không liên quan đến thang Fahrenheit."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 5 · Khó · Nhiệt độ ở các thang khác nhau: so sánh và chiều truyền nhiệt",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Ba vật A, B, C được đo bằng ba nhiệt kế khác thang: vật A chỉ $68\\ ^\\circ\\text{F}$, vật B chỉ $293\\ \\text{K}$, vật C chỉ $25\\ ^\\circ\\text{C}$. Cho ba vật tiếp xúc nhau và không trao đổi nhiệt với bên ngoài. Dùng $T=t+273$ và $t_F=1{,}8\\,t+32$.</p><ol type=\"a\"><li>Đổi nhiệt độ của vật A và vật B về °C.</li><li>Xếp ba vật theo nhiệt độ tăng dần.</li><li>Cặp vật nào không trao đổi nhiệt với nhau ngay từ đầu? Nhiệt năng truyền từ vật nào sang vật nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"m5-0\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Hai khối nước bằng nhau, một nóng một lạnh, ngăn bởi vách dẫn nhiệt; hai nhiệt kế dần chỉ cùng một mức\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"28.0\" width=\"174.0\" height=\"170.0\" rx=\"0\" fill=\"#f87171\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"216.0\" y=\"28.0\" width=\"174.0\" height=\"170.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"204.0\" y=\"22.0\" width=\"12.0\" height=\"182.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.5\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><rect x=\"93.0\" y=\"56.0\" width=\"14.0\" height=\"118.0\" rx=\"7\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"100.0\" cy=\"180.0\" r=\"10\" fill=\"#f87171\" fill-opacity=\"0.85\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"107.0\" y1=\"168.0\" x2=\"114.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"172.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">273</text><line x1=\"107.0\" y1=\"115.0\" x2=\"114.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"119.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">323</text><line x1=\"107.0\" y1=\"62.0\" x2=\"114.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"117\" y=\"66.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">373</text><text x=\"100\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">K</text><rect x=\"96.5\" y=\"93.8\" width=\"7\" height=\"78.2\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"93.8;100.8;106.3;110.6;113.9;116.5;118.5;120.1;121.3;122.2;123.0;123.6;124.0;124.4;124.6;124.9;125.0;125.1;125.2;125.3;125.4;125.4;125.5;125.5;125.5\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"78.2;71.2;65.7;61.4;58.1;55.5;53.5;51.9;50.7;49.8;49.0;48.4;48.0;47.6;47.4;47.1;47.0;46.9;46.8;46.7;46.6;46.6;46.5;46.5;46.5\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"313.0\" y=\"56.0\" width=\"14.0\" height=\"118.0\" rx=\"7\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"320.0\" cy=\"180.0\" r=\"10\" fill=\"#f87171\" fill-opacity=\"0.85\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"327.0\" y1=\"168.0\" x2=\"334.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"172.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">32</text><line x1=\"327.0\" y1=\"115.0\" x2=\"334.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"119.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">122</text><line x1=\"327.0\" y1=\"62.0\" x2=\"334.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"337\" y=\"66.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">212</text><text x=\"320\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">°F</text><rect x=\"316.5\" y=\"157.4\" width=\"7\" height=\"14.6\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"157.4;150.4;144.9;140.6;137.3;134.7;132.7;131.1;129.9;129.0;128.2;127.6;127.2;126.8;126.6;126.3;126.2;126.1;126.0;125.9;125.8;125.8;125.7;125.7;125.7\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"14.6;21.6;27.1;31.4;34.7;37.3;39.3;40.9;42.1;43.0;43.8;44.4;44.8;45.2;45.4;45.7;45.8;45.9;46.0;46.1;46.2;46.2;46.3;46.3;46.3\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"117\" y=\"216\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước nóng</text><text x=\"303\" y=\"216\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước lạnh</text><text x=\"210\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">vách dẫn nhiệt</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng mẫu (số liệu khác đề): hai khối nước bằng nhau, 343 K và 50 °F lúc đầu. Thời gian rút gọn, chạy 5 s. Mức thuỷ ngân là mức nóng, không phụ thuộc thang đọc.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chiều truyền nhiệt năng và cân bằng nhiệt do nhiệt độ thật của vật quyết định.</li><li><strong>Quy luật:</strong> nóng hơn → lạnh hơn ; bằng nhau thì không truyền (cân bằng nhiệt).</li><li><strong>Công thức:</strong> $t=\\dfrac{t_F-32}{1{,}8}$ ; $t=T-273$.</li><li>⚠ <strong>Điều kiện:</strong> chỉ so sánh nhiệt độ khi cùng một thang ; số đọc lớn ở thang này chưa chắc nóng hơn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Vật A về Celsius</span></p>$$t_A=\\dfrac{68-32}{1{,}8}=\\dfrac{36}{1{,}8}$$<div class=\"bt-ans\">$$t_A=20\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vật B về Celsius</span></p><p>Đã là kelvin, trừ $273$ :</p>$$t_B=293-273$$<div class=\"bt-ans\">$$t_B=20\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Xếp theo nhiệt độ</span></p><p>Cả ba đã cùng thang Celsius : $t_A=20\\ ^\\circ\\text{C}$ ; $t_B=20\\ ^\\circ\\text{C}$ ; $t_C=25\\ ^\\circ\\text{C}$.</p>$$t_A=t_B\\lt t_C$$<div class=\"bt-ans\"><p>Thứ tự tăng dần : A và B bằng nhau, rồi đến C.</p></div><p>So thẳng các số đọc ($68$, $293$, $25$) sẽ ra thứ tự sai.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều truyền nhiệt</span></p><p>A và B cùng $20\\ ^\\circ\\text{C}$ : đã cân bằng nhiệt, không trao đổi nhiệt với nhau.</p><p>C nóng hơn ($25\\ ^\\circ\\text{C}\\gt20\\ ^\\circ\\text{C}$) : nhiệt năng truyền từ C sang A và sang B.</p><div class=\"bt-ans\"><p>C truyền cho A và B ; A với B không trao đổi nhiệt.</p></div><p>Khi cả ba cân bằng, nhiệt độ chung nằm giữa $20\\ ^\\circ\\text{C}$ và $25\\ ^\\circ\\text{C}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đổi ngược : $1{,}8\\cdot20+32=68$ ✓ ; $20+273=293$ ✓.</p><p>Số đọc lớn nhất là $293$ (vật B) nhưng B không nóng nhất ✓ : thang khác nhau thì số đọc không so thẳng được.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t_A=t_B=20\\ ^\\circ\\text{C}$</p><p>b) $A=B\\lt C$</p><p>c) A và B không trao đổi nhiệt ; nhiệt năng truyền từ C sang A và B</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều nhiệt độ ở nhiều thang</strong> → đổi hết về một thang rồi so ; cùng nhiệt độ thì không truyền, khác nhau thì từ cao sang thấp.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c5-2\"><svg viewBox=\"0 0 420 174\" role=\"img\" aria-label=\"Ba vật A, B, C với số đọc ở ba thang khác nhau, cho tiếp xúc với nhau\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"80\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Vật A</text><rect x=\"28.0\" y=\"40.0\" width=\"104.0\" height=\"56.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"80\" y=\"74\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">68 °F</text><text x=\"80\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">= ? °C</text><text x=\"210\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Vật B</text><rect x=\"158.0\" y=\"40.0\" width=\"104.0\" height=\"56.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"74\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">293 K</text><text x=\"210\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">= ? °C</text><text x=\"340\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Vật C</text><rect x=\"288.0\" y=\"40.0\" width=\"104.0\" height=\"56.0\" rx=\"6\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"340\" y=\"74\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">25 °C</text><text x=\"340\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">đã ở °C</text><text x=\"210\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">tiếp xúc nhau, không trao đổi nhiệt với bên ngoài</text></svg><figcaption>Dữ kiện: ba số đọc ở ba thang khác nhau, chưa so thẳng được. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"không trao đổi nhiệt với bên ngoài\"</td><td>Chỉ A, B, C trao đổi với nhau</td><td>⚠ Chiều truyền chỉ do <strong>nhiệt độ thật</strong> ; số đọc ở các thang khác nhau không so thẳng được</td></tr><tr><td>\"vật A chỉ $68\\ ^\\circ\\text{F}$\"</td><td>$t_F=68\\ ^\\circ\\text{F}$</td><td>°F → °C : trừ 32 rồi chia 1,8</td></tr><tr><td>\"vật B chỉ $293\\ \\text{K}$\"</td><td>$T=293\\ \\text{K}$</td><td>K → °C : trừ 273</td></tr><tr><td>\"vật C chỉ $25\\ ^\\circ\\text{C}$\"</td><td>$t=25\\ ^\\circ\\text{C}$</td><td>Đã ở °C, dùng làm thang chung để so sánh</td></tr><tr><td>\"xếp ba vật theo nhiệt độ tăng dần\"</td><td>So ba số cùng thang</td><td>Chỉ so sánh khi cùng một thang</td></tr><tr><td>\"cặp nào không trao đổi nhiệt … truyền từ vật nào sang vật nào\"</td><td>So từng cặp</td><td>Bằng nhau → cân bằng nhiệt, không truyền ; khác nhau → từ cao sang thấp</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều nhiệt độ ở nhiều thang</b> → đổi hết về <b>một thang</b> rồi so ; bằng nhau thì không truyền.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Vật A về Celsius",
+     "hoi": "Vật A ($68\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Trừ 273 cho cả số °F, hoặc chia 1,8 trước khi trừ 32."
+    },
+    {
+     "tieu_de": "Vật B về Celsius",
+     "hoi": "Vật B ($293\\ \\text{K}$) bằng bao nhiêu độ Celsius?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Dùng cách đổi của °F (trừ 32 chia 1,8) cho số kelvin.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trừ 273 từ số kelvin",
+       "dung": true
+      },
+      {
+       "text": "Trừ 32 rồi chia 1,8",
+       "dung": false,
+       "vi_sao": "Đó là cách đổi từ °F ; vật B đo bằng kelvin."
+      },
+      {
+       "text": "Giữ nguyên số vì đều chỉ độ nóng",
+       "dung": false,
+       "vi_sao": "Số đọc ở hai thang khác nhau vì gốc lệch $273$ độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Xếp theo nhiệt độ",
+     "hoi": "Xếp ba vật theo nhiệt độ tăng dần như thế nào?",
+     "lua_chon": [
+      {
+       "text": "A và B bằng nhau, rồi đến C",
+       "dung": true
+      },
+      {
+       "text": "C, rồi A, rồi B (theo số đọc nhỏ đến lớn)",
+       "dung": false,
+       "vi_sao": "Ba số đọc ở ba thang khác nhau, so thẳng là vô nghĩa ; phải đổi cùng thang trước."
+      },
+      {
+       "text": "A nhỏ hơn B, B nhỏ hơn C",
+       "dung": false,
+       "vi_sao": "A và B cùng nhiệt độ nên không có «A nhỏ hơn B»."
+      }
+     ],
+     "loi_hay_gap": "So thẳng ba số đọc 68, 293, 25 mà chưa đổi cùng thang.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đưa cả ba về cùng một thang rồi so sánh",
+       "dung": true
+      },
+      {
+       "text": "So thẳng ba số đọc",
+       "dung": false,
+       "vi_sao": "Ba thang có gốc và độ chia khác nhau, số đọc không so thẳng được."
+      },
+      {
+       "text": "Cộng 273 vào cả ba số đọc",
+       "dung": false,
+       "vi_sao": "273 chỉ dùng cho số đo Celsius ; A đo bằng °F, B đã là kelvin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều truyền nhiệt",
+     "hoi": "Ngay lúc đầu, khi ba vật tiếp xúc, nhiệt năng truyền thế nào?",
+     "lua_chon": [
+      {
+       "text": "Từ C sang A và B ; A với B không trao đổi nhiệt",
+       "dung": true
+      },
+      {
+       "text": "Từ B sang A và C, vì B có số đọc lớn nhất",
+       "dung": false,
+       "vi_sao": "Số đọc lớn không có nghĩa nóng hơn khi khác thang : B thật ra nguội hơn C."
+      },
+      {
+       "text": "Cả ba trao đổi nhiệt với nhau cho đến khi bằng nhau",
+       "dung": false,
+       "vi_sao": "A và B đã cùng nhiệt độ nên không truyền cho nhau ; chỉ C truyền sang."
+      }
+     ],
+     "loi_hay_gap": "Chọn vật có số đọc lớn nhất làm vật nóng nhất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chỉ xét chênh lệch nhiệt độ thật giữa từng cặp",
+       "dung": true
+      },
+      {
+       "text": "Chọn vật có số đọc lớn nhất làm vật nóng nhất",
+       "dung": false,
+       "vi_sao": "Số đọc ở các thang khác nhau không so thẳng được."
+      },
+      {
+       "text": "Chọn vật nặng hơn làm vật truyền nhiệt",
+       "dung": false,
+       "vi_sao": "Chiều truyền do nhiệt độ quyết định, không do khối lượng (đề cũng không cho)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Nâng cao · Lập phương trình giữa hai thang",
+   "topic": "Thang Celsius và thang Kelvin",
+   "problem_html": "<p>Dùng $t_F=1{,}8\\,t+32$ ($t$ là số đọc °C) và $T=t+273$.</p><ol type=\"a\"><li>Ở nhiệt độ nào thì số đọc trên thang Fahrenheit gấp đôi số đọc trên thang Celsius?</li><li>Ở nhiệt độ nào thì hai thang Fahrenheit và Celsius cho cùng một số đọc?</li><li>Ở nhiệt độ nào (tính theo K) thì số đọc trên thang Celsius bằng một nửa số đọc trên thang Kelvin?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị số đọc Fahrenheit theo số đọc Celsius là một đường thẳng đi qua hai mốc của nước\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"186.0\" x2=\"400\" y2=\"186.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,181.6 L400.0,186.0 L392.4,190.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"68.0\" y1=\"186.0\" x2=\"68.0\" y2=\"18\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M63.6,25.6 L68.0,18.0 L72.4,25.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"178.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (°C)</text><text x=\"76.0\" y=\"22\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"9\">F</tspan> (°F)</text><line x1=\"68.0\" y1=\"182.0\" x2=\"68.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"68.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">0</text><line x1=\"208.0\" y1=\"182.0\" x2=\"208.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"208.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">50</text><line x1=\"348.0\" y1=\"182.0\" x2=\"348.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"348.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">100</text><line x1=\"64.0\" y1=\"162.3\" x2=\"72.0\" y2=\"162.3\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"166.3\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">32</text><line x1=\"64.0\" y1=\"95.7\" x2=\"72.0\" y2=\"95.7\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"99.7\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">122</text><line x1=\"64.0\" y1=\"29.1\" x2=\"72.0\" y2=\"29.1\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"33.1\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">212</text><circle cx=\"68.0\" cy=\"162.3\" r=\"4\" fill=\"#fb923c\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\"/><circle cx=\"348.0\" cy=\"29.1\" r=\"4\" fill=\"#fb923c\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"78.0\" y=\"178.3\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">nước đá tan</text><text x=\"356.0\" y=\"33.1\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">nước sôi</text><line x1=\"68.0\" y1=\"162.3\" x2=\"68.0\" y2=\"162.3\" stroke=\"#f87171\" stroke-width=\"2.6\"><animate attributeName=\"x2\" values=\"68.0;96.0;124.0;152.0;180.0;208.0;236.0;264.0;292.0;320.0;348.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"162.3;149.0;135.7;122.4;109.0;95.7;82.4;69.1;55.8;42.4;29.1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"68.0\" cy=\"162.3\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"68.0;96.0;124.0;152.0;180.0;208.0;236.0;264.0;292.0;320.0;348.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"162.3;149.0;135.7;122.4;109.0;95.7;82.4;69.1;55.8;42.4;29.1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy từ mốc nước đá tan đến mốc nước sôi, vẽ dần đường thẳng số đọc °F theo số đọc °C (tính từ công thức đổi). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mỗi nhiệt độ có một số đọc ở mỗi thang ; hai số đọc liên hệ bậc nhất.</li><li><strong>Công thức:</strong> $t_F=1{,}8\\,t+32$ ; $t=T-273$.</li><li>Đề cho quan hệ giữa hai số đọc → thay công thức đổi để được phương trình một ẩn.</li><li>⚠ <strong>Điều kiện:</strong> chọn một ẩn duy nhất ; kiểm lại nghiệm bằng cách đổi thuận.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lập phương trình câu a</span></p><p>Số đọc °F gấp đôi số đọc °C :</p>$$t_F=2t$$<p>Thay $t_F=1{,}8\\,t+32$ :</p><div class=\"bt-ans\">$$1{,}8\\,t+32=2t$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Giải câu a</span></p><p>Chuyển các số hạng chứa $t$ về một vế :</p>$$32=2t-1{,}8\\,t=0{,}2\\,t$$$$t=\\dfrac{32}{0{,}2}$$<div class=\"bt-ans\">$$t=160\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Giải câu b</span></p><p>Cùng số đọc : $t_F=t$.</p>$$1{,}8\\,t+32=t$$$$32=t-1{,}8\\,t=-0{,}8\\,t$$$$t=\\dfrac{32}{-0{,}8}$$<div class=\"bt-ans\">$$t=-40\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Giải câu c</span></p><p>Số đọc Celsius bằng nửa số đọc Kelvin : $t=\\dfrac{T}{2}$ với $t=T-273$.</p>$$T-273=\\dfrac{T}{2}$$$$T-\\dfrac{T}{2}=273\\Rightarrow\\dfrac{T}{2}=273$$<div class=\"bt-ans\">$$T=546\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Câu a : $t_F=1{,}8\\cdot160+32=320=2\\cdot160$ ✓.</p><p>Câu b : $1{,}8\\cdot(-40)+32=-72+32=-40$ ✓.</p><p>Câu c : $t=546-273=273\\ ^\\circ\\text{C}=\\dfrac{546}{2}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t=160\\ ^\\circ\\text{C}$ (khi đó $t_F=320\\ ^\\circ\\text{F}$)</p><p>b) $t=-40\\ ^\\circ\\text{C}$</p><p>c) $T=546\\ \\text{K}$ (khi đó $t=273\\ ^\\circ\\text{C}$)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>quan hệ giữa hai số đọc</strong> (gấp đôi, bằng nhau, một nửa) → thay công thức đổi để được phương trình một ẩn, rồi thử lại.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị số đọc Fahrenheit theo số đọc Celsius, đường thẳng qua hai mốc của nước\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"186.0\" x2=\"400\" y2=\"186.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,181.6 L400.0,186.0 L392.4,190.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"68.0\" y1=\"186.0\" x2=\"68.0\" y2=\"18\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M63.6,25.6 L68.0,18.0 L72.4,25.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"178.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (°C)</text><text x=\"76.0\" y=\"22\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"9\">F</tspan> (°F)</text><line x1=\"68.0\" y1=\"182.0\" x2=\"68.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"68.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">0</text><line x1=\"208.0\" y1=\"182.0\" x2=\"208.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"208.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">50</text><line x1=\"348.0\" y1=\"182.0\" x2=\"348.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"348.0\" y=\"206.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\">100</text><line x1=\"64.0\" y1=\"162.3\" x2=\"72.0\" y2=\"162.3\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"166.3\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">32</text><line x1=\"64.0\" y1=\"95.7\" x2=\"72.0\" y2=\"95.7\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"99.7\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">122</text><line x1=\"64.0\" y1=\"29.1\" x2=\"72.0\" y2=\"29.1\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"33.1\" fill=\"currentColor\" font-size=\"12\" font-weight=\"500\" text-anchor=\"end\">212</text><circle cx=\"68.0\" cy=\"162.3\" r=\"4\" fill=\"#fb923c\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\"/><circle cx=\"348.0\" cy=\"29.1\" r=\"4\" fill=\"#fb923c\" fill-opacity=\"1\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"78.0\" y=\"178.3\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">nước đá tan</text><text x=\"356.0\" y=\"33.1\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"500\" text-anchor=\"start\">nước sôi</text><line x1=\"68.0\" y1=\"162.3\" x2=\"348.0\" y2=\"29.1\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"224.8\" y=\"128.3\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"9\">F</tspan> = 1,8t + 32</text></svg><figcaption>Dữ kiện: hai thang liên hệ bậc nhất; mỗi nhiệt độ có một số đọc ở mỗi thang. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Dùng $t_F=1{,}8\\,t+32$ … $T=t+273$\"</td><td>Mỗi thang có một số đọc</td><td>⚠ Cùng một nhiệt độ nhưng <strong>số đọc ở các thang khác nhau</strong> : viết cả hai vế theo cùng một biến rồi mới lập phương trình</td></tr><tr><td>\"số đọc Fahrenheit gấp đôi số đọc Celsius\"</td><td>$t_F=2t$</td><td>Thay $t_F=1{,}8\\,t+32$ → phương trình bậc nhất ẩn $t$</td></tr><tr><td>\"hai thang … cùng một số đọc\"</td><td>$t_F=t$</td><td>Thay $t_F=1{,}8\\,t+32$ → phương trình bậc nhất ẩn $t$</td></tr><tr><td>\"Celsius bằng một nửa số đọc Kelvin\"</td><td>$t=\\dfrac{T}{2}$</td><td>Thay $t=T-273$ → phương trình bậc nhất ẩn $T$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>quan hệ giữa hai số đọc</b> (gấp đôi, bằng nhau, một nửa) → thay công thức đổi để được <b>phương trình một ẩn</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lập phương trình câu a",
+     "hoi": "Phương trình nào diễn tả «số đọc °F gấp đôi số đọc °C»?",
+     "lua_chon": [
+      {
+       "text": "$1{,}8\\,t+32=2t$",
+       "dung": true
+      },
+      {
+       "text": "$1{,}8\\,t=2t$",
+       "dung": false,
+       "vi_sao": "Quên $+32$ : công thức °C → °F phải có đủ cả $1{,}8$ và $32$."
+      },
+      {
+       "text": "$t+273=2t$",
+       "dung": false,
+       "vi_sao": "Đó là thang Kelvin ; đề nói về thang Fahrenheit."
+      }
+     ],
+     "loi_hay_gap": "Quên số 32 của công thức đổi, hoặc dùng công thức Kelvin cho đề nói về Fahrenheit."
+    },
+    {
+     "tieu_de": "Giải câu a",
+     "hoi": "Giải phương trình ở câu a : nhiệt độ bằng bao nhiêu độ Celsius?",
+     "dap_so": 160,
+     "sai_so": 0.5,
+     "don_vi": "°C",
+     "loi_hay_gap": "Chia riêng một số hạng cho 2, hoặc bỏ số 32 vì thấy nhỏ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chuyển các số hạng chứa $t$ về một vế rồi chia",
+       "dung": true
+      },
+      {
+       "text": "Chia cả hai vế cho 2 nhưng chỉ chia số hạng $1{,}8\\,t$",
+       "dung": false,
+       "vi_sao": "Chia hai vế cho 2 phải chia mọi số hạng, không chia riêng một số hạng."
+      },
+      {
+       "text": "Bỏ số 32 vì nhỏ so với $1{,}8\\,t$",
+       "dung": false,
+       "vi_sao": "Bỏ $32$ làm mất nghiệm ; phải giữ đủ mọi số hạng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giải câu b",
+     "hoi": "Hai thang Fahrenheit và Celsius cho cùng số đọc ở nhiệt độ nào (°C)?",
+     "dap_so": -40,
+     "sai_so": 0.5,
+     "don_vi": "°C",
+     "loi_hay_gap": "Đặt số đọc bằng 0 thay vì đặt hai số đọc bằng nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt $t_F=t$ rồi giải $1{,}8\\,t+32=t$",
+       "dung": true
+      },
+      {
+       "text": "Đặt $t_F=0$ vì đó là nhiệt độ thấp nhất",
+       "dung": false,
+       "vi_sao": "Hai thang cùng số đọc khi số °F bằng số °C, không phải khi bằng $0$."
+      },
+      {
+       "text": "Đặt $T=t$ vì Kelvin giống Celsius",
+       "dung": false,
+       "vi_sao": "Hai thang đó luôn lệch $273$ độ nên không bao giờ cùng số đọc ; đề hỏi °F và °C."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giải câu c",
+     "hoi": "Số đọc Celsius bằng nửa số đọc Kelvin ở nhiệt độ nào (K)?",
+     "dap_so": 546,
+     "sai_so": 1,
+     "don_vi": "K",
+     "loi_hay_gap": "Chỉ chia đôi $t$ mà không chia đôi cả số đọc Kelvin, hoặc đảo gấp đôi với một nửa.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập $T-273=\\dfrac{T}{2}$",
+       "dung": true
+      },
+      {
+       "text": "Lập $\\dfrac{T}{2}=T+273$",
+       "dung": false,
+       "vi_sao": "Sai chiều đổi : số đọc Celsius là $T-273$, không phải $T+273$."
+      },
+      {
+       "text": "Lập $T-273=2T$",
+       "dung": false,
+       "vi_sao": "Ngược : Celsius là một nửa Kelvin, không phải gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

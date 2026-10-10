@@ -1,0 +1,412 @@
+{
+ "lesson_id": 4,
+ "lesson_title": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; đã bỏ công thức/kết luận lộ trong bảng phân tích dạng 3,5 (và ô ⚠ dạng 4), bỏ số trong loi_hay_gap dạng 1,2,3. Lưu ý: 22/36 câu ngân hàng chủ đề 199 (cơ năng→nội năng) ngoài lý thuyết bài."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Nhận ra cách biến đổi nội năng: thực hiện công hay truyền nhiệt",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "problem_html": "<p>Một đĩa phanh bằng nhôm có khối lượng $m=0{,}25\\ \\text{kg}$, nhiệt độ ban đầu $25{,}0\\ ^\\circ\\text{C}$. Khi phanh gấp, lực ma sát của má phanh thực hiện công $4400\\ \\text{J}$ lên đĩa. Thời gian phanh rất ngắn nên coi đĩa chưa kịp truyền nhiệt ra ngoài. Sau đó xe dừng, đĩa đang ở $45{,}0\\ ^\\circ\\text{C}$ nguội dần về $25{,}0\\ ^\\circ\\text{C}$ trong không khí. Nhiệt dung riêng của nhôm là $c=880\\ \\text{J/(kg·K)}$.</p><ol type=\"a\"><li>Lúc phanh, nội năng của đĩa biến đổi bằng cách nào? Tính độ biến thiên nội năng $\\Delta U_1$ của đĩa lúc phanh.</li><li>Lúc nguội, nội năng của đĩa biến đổi bằng cách nào? Tính nhiệt lượng $Q$ của đĩa và độ biến thiên nội năng $\\Delta U_2$ lúc nguội.</li><li>Tính độ biến thiên nội năng của đĩa từ trước lúc phanh đến khi nguội hẳn.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-1-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Đĩa phanh nhôm quay chậm dần và dừng lại khi má phanh ép vào, kèm các dữ kiện của đề\"><g><animateTransform attributeName=\"transform\" values=\"0 100 100;260 100 100;460 100 100;600 100 100;690 100 100;740 100 100;760 100 100\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\" type=\"rotate\"/><circle cx=\"100.0\" cy=\"100.0\" r=\"60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"100.0\" cy=\"100.0\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"132.9\" cy=\"119.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><circle cx=\"100.0\" cy=\"138.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><circle cx=\"67.1\" cy=\"119.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><circle cx=\"67.1\" cy=\"81.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><circle cx=\"100.0\" cy=\"62.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><circle cx=\"132.9\" cy=\"81.0\" r=\"7\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><line x1=\"44.0\" y1=\"100.0\" x2=\"86.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"114.0\" y1=\"100.0\" x2=\"156.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"2\" opacity=\"1\"/></g><rect x=\"162.0\" y=\"76.0\" width=\"16.0\" height=\"48.0\" rx=\"3\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.9\"/><text x=\"146\" y=\"68\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">má phanh</text><text x=\"210\" y=\"34\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">m = 0,25 kg</text><text x=\"210\" y=\"54\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">c = 880 J/(kg·K)</text><text x=\"210\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Phanh gấp: ma sát</text><text x=\"210\" y=\"102\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thực hiện công</text><text x=\"210\" y=\"122\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = 4400 J</text><text x=\"210\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">25,0 → 45,0 → 25,0 °C</text><text x=\"210\" y=\"176\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ΔU = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đĩa quay chậm dần rồi dừng (minh hoạ, chạy 4 s).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nội năng $U$ là tổng động năng và thế năng của các phân tử ; đổi bằng hai cách: thực hiện công (có lực làm vật dịch chuyển) và truyền nhiệt (có chênh nhiệt độ).</li><li><strong>Định luật I:</strong> $\\Delta U=A+Q$ ; nhận vào thì dương, mất đi thì âm.</li><li><strong>Nhiệt lượng:</strong> $Q=mc\\,\\Delta t$ với $\\Delta t=t_{\\text{cuối}}-t_{\\text{đầu}}$.</li><li>⚠ <strong>Điều kiện:</strong> lúc phanh bỏ qua truyền nhiệt ($Q=0$) ; lúc nguội không còn lực làm đĩa dịch chuyển ($A=0$).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận ra cách biến đổi lúc phanh</span></p><p>Có lực ma sát làm bề mặt đĩa dịch chuyển, còn đề bỏ qua truyền nhiệt:</p><div class=\"bt-ans\"><p>Cách biến đổi: <strong>thực hiện công</strong>, nhiệt lượng $Q=0$</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ biến thiên nội năng lúc phanh</span></p><p>Đĩa nhận công nên $A\\gt0$:</p>$$\\Delta U_1=A+Q=4400+0$$<div class=\"bt-ans\">$$\\Delta U_1=+4400\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lúc nguội: truyền nhiệt</span></p><p>Đĩa ($45{,}0\\ ^\\circ\\text{C}$) nóng hơn không khí ($25{,}0\\ ^\\circ\\text{C}$), không có lực làm đĩa dịch chuyển: <strong>truyền nhiệt</strong>, $A=0$.</p><p>Độ biến thiên nhiệt độ lấy cuối trừ đầu:</p>$$\\Delta t=25{,}0-45{,}0=-20{,}0\\ \\text{K}$$$$Q=mc\\,\\Delta t=0{,}25\\cdot880\\cdot(-20{,}0)$$<div class=\"bt-ans\">$$Q=-4400\\ \\text{J}$$</div><p>Đĩa toả nhiệt nên $Q\\lt0$. Vì $A=0$:</p>$$\\Delta U_2=A+Q=0+(-4400)$$<div class=\"bt-ans\">$$\\Delta U_2=-4400\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra: cả quá trình</span></p><p>Cộng hai giai đoạn:</p>$$\\Delta U=\\Delta U_1+\\Delta U_2=4400+(-4400)$$<div class=\"bt-ans\">$$\\Delta U=0$$</div><p>Đĩa về đúng $25{,}0\\ ^\\circ\\text{C}$, thể tích gần như không đổi nên nội năng như lúc đầu ✓.</p><p>Kiểm tra giai đoạn phanh: $mc\\,\\Delta t=0{,}25\\cdot880\\cdot20{,}0=4400\\ \\text{J}$, đúng bằng công đĩa nhận ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Thực hiện công · $\\Delta U_1=+4400\\ \\text{J}$</p><p>b) Truyền nhiệt · $Q=-4400\\ \\text{J}$ · $\\Delta U_2=-4400\\ \\text{J}$</p><p>c) $\\Delta U=0$</p></div><p class=\"bt-note\">Nhận dạng: có <strong>lực làm vật dịch chuyển</strong> → thực hiện công ; có <strong>chênh nhiệt độ</strong> → truyền nhiệt. Rồi đặt dấu theo “nhận thì cộng, mất thì trừ”.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-1-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Dòng thời gian ba mốc nhiệt độ của đĩa phanh: trước phanh 25 độ, sau phanh 45 độ, nguội hẳn 25 độ\"><circle cx=\"60.0\" cy=\"70.0\" r=\"30\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/><text x=\"60\" y=\"75\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">25,0 °C</text><circle cx=\"210.0\" cy=\"70.0\" r=\"30\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/><text x=\"210\" y=\"75\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">45,0 °C</text><circle cx=\"360.0\" cy=\"70.0\" r=\"30\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/><text x=\"360\" y=\"75\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">25,0 °C</text><text x=\"60\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">trước phanh</text><text x=\"210\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">sau phanh</text><text x=\"360\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nguội hẳn</text><line x1=\"94\" y1=\"70\" x2=\"176\" y2=\"70\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M166.6,64.6 L176.0,70.0 L166.6,75.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244\" y1=\"70\" x2=\"326\" y2=\"70\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M316.6,64.6 L326.0,70.0 L316.6,75.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"135\" y=\"118\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Phanh</text><text x=\"135\" y=\"138\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 4400 J</text><text x=\"135\" y=\"158\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">Q = 0</text><text x=\"285\" y=\"118\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Nguội</text><text x=\"285\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">A = 0</text><text x=\"285\" y=\"158\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = ?</text></svg><figcaption>Dữ kiện: hai giai đoạn, mỗi giai đoạn chỉ một cách tác động. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lực ma sát của má phanh thực hiện công $4400$ J lên đĩa\"</td><td>$A=4400\\ \\text{J}$ (đĩa nhận công)</td><td>Thực hiện công: có lực làm vật dịch chuyển · quy ước dấu: nhận vào thì $+$</td></tr><tr><td>\"thời gian phanh rất ngắn nên coi đĩa chưa kịp truyền nhiệt\"</td><td>Lúc phanh: không truyền nhiệt</td><td>⚠ Chỉ khi bỏ qua truyền nhiệt thì lúc phanh mới chỉ còn một cách tác động</td></tr><tr><td>\"nhôm $m=0{,}25$ kg, $c=880$ J/(kg·K)\"</td><td>$m=0{,}25\\ \\text{kg}$ ; $c=880\\ \\text{J/(kg·K)}$</td><td>Nhiệt lượng $Q=mc\\,\\Delta t$</td></tr><tr><td>\"đĩa $45{,}0\\ ^\\circ$C nguội dần về $25{,}0\\ ^\\circ$C\"</td><td>$t_{\\text{đầu}}=45{,}0\\ ^\\circ\\text{C}$ ; $t_{\\text{cuối}}=25{,}0\\ ^\\circ\\text{C}$</td><td>Hai cách đổi nội năng: công (lực làm dịch chuyển) · truyền nhiệt (chênh nhiệt độ) ; $\\Delta t$ lấy cuối trừ đầu</td></tr><tr><td>\"tính $\\Delta U_1$, $\\Delta U_2$\"</td><td>Cần $\\Delta U$ của từng giai đoạn</td><td>$\\Delta U=A+Q$</td></tr><tr><td>\"từ trước lúc phanh đến khi nguội hẳn\"</td><td>Cần $\\Delta U$ toàn bộ</td><td>Cộng độ biến thiên nội năng của hai giai đoạn</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực làm vật dịch chuyển</b> hay <b>chênh nhiệt độ</b> → nghĩ tới <b>công hay truyền nhiệt</b>, rồi ΔU = A + Q.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận ra cách biến đổi lúc phanh",
+     "hoi": "Lúc phanh gấp, nội năng của đĩa biến đổi bằng cách nào?",
+     "lua_chon": [
+      {
+       "text": "Thực hiện công: lực ma sát làm bề mặt đĩa dịch chuyển, không truyền nhiệt",
+       "dung": true
+      },
+      {
+       "text": "Truyền nhiệt, vì đĩa nóng lên",
+       "dung": false,
+       "vi_sao": "Nóng lên là kết quả, chưa phải cách. Phải xem có lực làm dịch chuyển hay có chênh nhiệt độ ; ở đây là lực ma sát, còn đề đã bỏ qua truyền nhiệt."
+      },
+      {
+       "text": "Cả hai cách như nhau",
+       "dung": false,
+       "vi_sao": "Đề coi đĩa chưa kịp truyền nhiệt ra ngoài, nên lúc phanh chỉ còn thực hiện công."
+      }
+     ],
+     "loi_hay_gap": "Nhầm “nóng lên” với “truyền nhiệt”. Cách phân biệt: có lực làm vật dịch chuyển (công) hay có chênh nhiệt độ (truyền nhiệt)."
+    },
+    {
+     "tieu_de": "Độ biến thiên nội năng lúc phanh",
+     "hoi": "$\\Delta U_1$ của đĩa lúc phanh bằng bao nhiêu?",
+     "dap_so": 4400,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ghi ngược dấu vì nghĩ ma sát là lực cản, nên “mất công”. Hệ là đĩa: đĩa nhận công nên $A\\gt0$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chỉ có công nên $\\Delta U=A$, với $A$ dương vì đĩa nhận công",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta U=A+Q$ rồi tính $Q=mc\\,\\Delta t$ với $\\Delta t=20$",
+       "dung": false,
+       "vi_sao": "Lúc phanh đề đã bỏ qua truyền nhiệt ($Q=0$) ; thêm $mc\\,\\Delta t$ là đếm cùng một năng lượng hai lần."
+      },
+      {
+       "text": "$\\Delta U=-A$ vì lực ma sát là lực cản",
+       "dung": false,
+       "vi_sao": "Lực ma sát cản xe nhưng với đĩa nó truyền năng lượng vào ; đĩa nhận công nên $A\\gt0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lúc nguội: truyền nhiệt",
+     "hoi": "Nhiệt lượng $Q$ của đĩa lúc nguội bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -4400,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy $\\Delta t$ là đầu trừ cuối nên ra $Q\\gt0$. Đĩa toả nhiệt phải ra $Q\\lt0$ ; $\\Delta t$ luôn là cuối trừ đầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q=mc\\,\\Delta t$ với $\\Delta t=25-45$ (cuối trừ đầu), được số âm",
+       "dung": true
+      },
+      {
+       "text": "$Q=mc\\,\\Delta t$ với $\\Delta t=45-25$",
+       "dung": false,
+       "vi_sao": "$\\Delta t$ là cuối trừ đầu ; đĩa nguội nên $\\Delta t\\lt0$ và đĩa toả nhiệt ($Q\\lt0$)."
+      },
+      {
+       "text": "$Q=0$ vì không có lực nào làm đĩa dịch chuyển",
+       "dung": false,
+       "vi_sao": "Không có công không có nghĩa là không có nhiệt ; đĩa nóng hơn không khí vẫn toả nhiệt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra: cả quá trình"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Đặt dấu A, Q khi khí vừa nhận vừa mất năng lượng",
+   "topic": "Vận dụng ΔU = A + Q",
+   "problem_html": "<p>Khí trong xilanh của một bơm tay được nén rồi giãn ra. Giai đoạn 1: nén nhanh, pit-tông thực hiện công $180\\ \\text{J}$ lên khí, đồng thời khí toả ra ngoài $70\\ \\text{J}$ nhiệt lượng qua thành xilanh. Giai đoạn 2: pit-tông được thả ra, khí giãn nở, nhận $130\\ \\text{J}$ nhiệt lượng từ không khí xung quanh và sinh công $150\\ \\text{J}$ đẩy pit-tông.</p><ol type=\"a\"><li>Tính độ biến thiên nội năng $\\Delta U_1$ của khí ở giai đoạn 1.</li><li>Tính độ biến thiên nội năng $\\Delta U_2$ của khí ở giai đoạn 2.</li><li>Sau hai giai đoạn, nội năng của khí tăng hay giảm, và bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-2-0\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Pit-tông nén khí trong xilanh rồi để khí giãn ra, kèm dữ kiện hai giai đoạn\"><rect x=\"51.5\" y=\"51.5\" width=\"174.5\" height=\"57.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"><animate attributeName=\"width\" values=\"174.5;104.5;149.5\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"50.0\" y1=\"50.0\" x2=\"280.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"50.0\" y1=\"110.0\" x2=\"280.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"50.0\" y1=\"50.0\" x2=\"50.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g><animateTransform attributeName=\"transform\" values=\"0.0 0;-70.0 0;-25.0 0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\" type=\"translate\"/><rect x=\"226.0\" y=\"53.0\" width=\"8.0\" height=\"54.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"234.0\" y1=\"80.0\" x2=\"280.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"280.0\" y1=\"66.0\" x2=\"280.0\" y2=\"94.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/></g><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Khí trong xilanh của bơm tay</text><text x=\"16\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">① nén: công vào 180 J, nhiệt ra 70 J</text><text x=\"16\" y=\"172\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">② giãn: nhiệt vào 130 J, công ra 150 J</text><text x=\"330\" y=\"90\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ΔU = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: pit-tông bị đẩy vào (nén) rồi lùi ra một phần (giãn), chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hệ đang xét là khối khí ; $A\\gt0$ khi khí bị nén (nhận công), $A\\lt0$ khi khí giãn (sinh công).</li><li>$Q\\gt0$ khi khí thu nhiệt, $Q\\lt0$ khi khí toả nhiệt.</li><li><strong>Định luật I:</strong> $\\Delta U=A+Q$ (cộng đại số, mang theo dấu).</li><li>⚠ <strong>Điều kiện:</strong> $A$, $Q$ đều tính cho cùng một hệ (khối khí) ; mỗi giai đoạn đặt dấu riêng rồi mới cộng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Giai đoạn 1: khí bị nén, toả nhiệt</span></p><p>Khí bị nén nên nhận công: $A_1=+180\\ \\text{J}$. Khí toả nhiệt: $Q_1=-70\\ \\text{J}$.</p>$$\\Delta U_1=A_1+Q_1=180+(-70)$$<div class=\"bt-ans\">$$\\Delta U_1=+110\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Giai đoạn 2: khí giãn, thu nhiệt</span></p><p>Khí thu nhiệt: $Q_2=+130\\ \\text{J}$. Khí sinh công (năng lượng mất đi): $A_2=-150\\ \\text{J}$.</p>$$\\Delta U_2=A_2+Q_2=-150+130$$<div class=\"bt-ans\">$$\\Delta U_2=-20\\ \\text{J}$$</div><p>Nội năng giảm vì khí sinh ra nhiều công hơn nhiệt nhận vào.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cộng hai giai đoạn</span></p>$$\\Delta U=\\Delta U_1+\\Delta U_2=110+(-20)$$<div class=\"bt-ans\">$$\\Delta U=+90\\ \\text{J}$$</div><p>Nội năng của khí tăng $90\\ \text{J}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cộng riêng công và nhiệt của cả hai giai đoạn:</p>$$A=180+(-150)=+30\\ \\text{J}$$$$Q=(-70)+130=+60\\ \\text{J}$$$$\\Delta U=A+Q=30+60=90\\ \\text{J}$$<p>✓ Khớp. Ghi nhầm $Q_1=+70$ sẽ ra $250\\ \\text{J}$ ở giai đoạn 1 — sai, vì khí đang toả nhiệt.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Delta U_1=+110\\ \\text{J}$</p><p>b) $\\Delta U_2=-20\\ \\text{J}$</p><p>c) Tăng $90\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: khí <strong>vừa nhận vừa mất</strong> năng lượng → đặt dấu từng số theo chiều đi vào hay ra khỏi khí, rồi cộng đại số.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-2-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Hai giai đoạn của khí trong xilanh: nén với công vào 180 J và nhiệt ra 70 J; giãn với nhiệt vào 130 J và công ra 150 J\"><text x=\"10\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">① Nén</text><text x=\"220\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">② Giãn</text><rect x=\"11.5\" y=\"71.5\" width=\"49.5\" height=\"47.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"></rect><line x1=\"10.0\" y1=\"70.0\" x2=\"110.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"10.0\" y1=\"120.0\" x2=\"110.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"10.0\" y1=\"70.0\" x2=\"10.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"61.0\" y=\"73.0\" width=\"8.0\" height=\"44.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"69.0\" y1=\"95.0\" x2=\"115.0\" y2=\"95.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"115.0\" y1=\"81.0\" x2=\"115.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"169\" y1=\"95\" x2=\"115.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M125.0,100.8 L115.0,95.0 L125.0,89.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"122\" y=\"66\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">công 180 J</text><line x1=\"40\" y1=\"120\" x2=\"40.0\" y2=\"141.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M45.8,131.0 L40.0,141.0 L34.2,131.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"50\" y=\"152\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nhiệt 70 J</text><rect x=\"221.5\" y=\"71.5\" width=\"84.5\" height=\"47.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"></rect><line x1=\"220.0\" y1=\"70.0\" x2=\"320.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"120.0\" x2=\"320.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"70.0\" x2=\"220.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"306.0\" y=\"73.0\" width=\"8.0\" height=\"44.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"314.0\" y1=\"95.0\" x2=\"360.0\" y2=\"95.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"360.0\" y1=\"81.0\" x2=\"360.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"270\" y1=\"159.0\" x2=\"270.0\" y2=\"120.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M264.2,130.0 L270.0,120.0 L275.8,130.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220\" y=\"177\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nhiệt 130 J</text><line x1=\"360\" y1=\"95\" x2=\"405.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M395.0,89.2 L405.0,95.0 L395.0,100.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"335\" y=\"66\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">công 150 J</text><text x=\"10\" y=\"195\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Độ dài mũi tên tỉ lệ độ lớn (k = 0,3 px/J)</text></svg><figcaption>Dữ kiện: mũi tên chỉ chiều năng lượng đi vào hay ra khỏi khí. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"giai đoạn 1: pit-tông thực hiện công $180$ J lên khí\"</td><td>công $180\\ \\text{J}$, đi vào khí</td><td>Quy ước dấu định luật I: nhận vào thì $+$, mất đi thì $-$</td></tr><tr><td>\"khí toả ra ngoài $70$ J nhiệt lượng\"</td><td>nhiệt $70\\ \\text{J}$, đi ra khỏi khí</td><td>Quy ước dấu như trên</td></tr><tr><td>\"giai đoạn 2: khí nhận $130$ J nhiệt lượng\"</td><td>nhiệt $130\\ \\text{J}$, đi vào khí</td><td>Quy ước dấu như trên</td></tr><tr><td>\"khí giãn nở … sinh công $150$ J\"</td><td>công $150\\ \\text{J}$, đi ra khỏi khí</td><td>⚠ Hệ đang xét là khí: công khí sinh ra là năng lượng khí mất đi</td></tr><tr><td>\"tính $\\Delta U_1$, $\\Delta U_2$\"</td><td>Cần $\\Delta U_1$, $\\Delta U_2$</td><td>$\\Delta U=A+Q$ viết riêng cho từng giai đoạn</td></tr><tr><td>\"sau hai giai đoạn\"</td><td>Cần $\\Delta U$ cả hai giai đoạn</td><td>Cộng đại số $\\Delta U_1+\\Delta U_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy khí <b>vừa nhận vừa mất</b> năng lượng → đặt dấu theo <b>vào / ra</b>, rồi ΔU = A + Q.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Giai đoạn 1: khí bị nén, toả nhiệt",
+     "hoi": "$\\Delta U_1$ của khí ở giai đoạn 1 bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": 110,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ra $250\\ \\text{J}$ vì cộng cả hai con số ; khí toả nhiệt phải mang $Q_1=-70$."
+    },
+    {
+     "tieu_de": "Giai đoạn 2: khí giãn, thu nhiệt",
+     "hoi": "$\\Delta U_2$ của khí ở giai đoạn 2 bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -20,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ra $+280\\ \\text{J}$ vì để $A_2=+150$ ; hoặc ra $+20\\ \\text{J}$ vì lấy lớn trừ nhỏ mà quên nội năng giảm. Khí sinh công thì $A_2=-150$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Khí thu nhiệt $Q_2=+130$, khí sinh công $A_2=-150$, rồi cộng đại số",
+       "dung": true
+      },
+      {
+       "text": "$A_2=+150$ vì có công 150 J xuất hiện",
+       "dung": false,
+       "vi_sao": "Khí là hệ đang xét : công do khí sinh ra là năng lượng khí mất đi nên $A_2=-150$."
+      },
+      {
+       "text": "Lấy $150-130$ rồi ghi dương",
+       "dung": false,
+       "vi_sao": "Nhiệt nhận vào nhỏ hơn công sinh ra, phần thiếu lấy từ nội năng nên $\\Delta U_2$ phải âm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cộng hai giai đoạn",
+     "hoi": "Nội năng khí sau hai giai đoạn thay đổi bao nhiêu (kể cả dấu)?",
+     "dap_so": 90,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Cộng độ lớn $110+20=130\\ \\text{J}$ (bỏ dấu âm của giai đoạn 2), hoặc chỉ lấy giai đoạn sau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng đại số $\\Delta U_1+\\Delta U_2$",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy giai đoạn sau vì đó là trạng thái cuối",
+       "dung": false,
+       "vi_sao": "Giai đoạn 1 đã làm nội năng khí đổi ; độ biến thiên tổng phải cộng cả hai phần."
+      },
+      {
+       "text": "Cộng độ lớn của hai độ biến thiên",
+       "dung": false,
+       "vi_sao": "Cộng độ lớn bỏ mất dấu âm của giai đoạn 2 ; phải cộng đại số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Bài ngược: biết ΔU và một đại lượng, tìm công hoặc nhiệt lượng còn lại",
+   "topic": "Vận dụng ΔU = A + Q",
+   "problem_html": "<p>Một khối khí trong xilanh trải qua hai quá trình liên tiếp. Quá trình 1: nén khí, khí nhận công $25\\ \\text{J}$ và nội năng của khí giảm $35\\ \\text{J}$. Quá trình 2: hơ nóng khí, khí nhận nhiệt lượng $100\\ \\text{J}$ và nội năng của khí tăng $20\\ \\text{J}$.</p><ol type=\"a\"><li>Ở quá trình 1, khí toả hay thu nhiệt? Nhiệt lượng bao nhiêu?</li><li>Ở quá trình 2, khí nhận hay sinh công? Công bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-3-0\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Pit-tông nén khí trong xilanh ở quá trình 1, kèm dữ kiện hai quá trình\"><rect x=\"51.5\" y=\"51.5\" width=\"164.5\" height=\"57.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"><animate attributeName=\"width\" values=\"164.5;94.5\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"50.0\" y1=\"50.0\" x2=\"280.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"50.0\" y1=\"110.0\" x2=\"280.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"50.0\" y1=\"50.0\" x2=\"50.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g><animateTransform attributeName=\"transform\" values=\"0.0 0;-70.0 0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\" type=\"translate\"/><rect x=\"216.0\" y=\"53.0\" width=\"8.0\" height=\"54.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"224.0\" y1=\"80.0\" x2=\"270.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"270.0\" y1=\"66.0\" x2=\"270.0\" y2=\"94.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/></g><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Quá trình 1: nén khí</text><text x=\"16\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">① nén: công vào 25 J, nội năng giảm 35 J</text><text x=\"16\" y=\"172\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">② hơ nóng: nhiệt vào 100 J, nội năng tăng 20 J</text><text x=\"330\" y=\"90\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Q₁ = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng quá trình ①: pit-tông bị đẩy vào, chạy 3 s. Quá trình ② chỉ mô tả bằng số liệu.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định luật I:</strong> $\\Delta U=A+Q$, rút ra $Q=\\Delta U-A$ hoặc $A=\\Delta U-Q$.</li><li><strong>Đặt dấu trước:</strong> nội năng giảm thì $\\Delta U\\lt0$ ; nhận công thì $A\\gt0$ ; nhận nhiệt thì $Q\\gt0$.</li><li><strong>Đọc kết quả:</strong> $Q\\lt0$ là toả nhiệt ; $A\\lt0$ là sinh công.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta U$, $A$, $Q$ cùng tính cho một hệ (khối khí) ; đặt dấu hai số đề cho rồi mới rút ẩn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Quá trình 1: tìm nhiệt lượng</span></p><p>Nội năng giảm: $\\Delta U_1=-35\\ \\text{J}$. Khí nhận công: $A_1=+25\\ \\text{J}$.</p><p>Rút $Q_1$ từ định luật I:</p>$$\\Delta U_1=A_1+Q_1$$$$Q_1=\\Delta U_1-A_1=-35-25$$<div class=\"bt-ans\">$$Q_1=-60\\ \\text{J}$$</div><p>$Q_1\\lt0$ nên khí <strong>toả</strong> $60\\ \\text{J}$ nhiệt lượng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Quá trình 2: tìm công</span></p><p>Khí nhận nhiệt: $Q_2=+100\\ \\text{J}$. Nội năng tăng: $\\Delta U_2=+20\\ \\text{J}$.</p><p>Rút $A_2$ từ định luật I:</p>$$A_2=\\Delta U_2-Q_2=20-100$$<div class=\"bt-ans\">$$A_2=-80\\ \\text{J}$$</div><p>$A_2\\lt0$ nên khí <strong>sinh công</strong> $80\\ \\text{J}$ (giãn nở đẩy pit-tông).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>Thay ngược vào định luật I:</p>$$\\Delta U_1=25+(-60)=-35\\ \\text{J}$$$$\\Delta U_2=-80+100=+20\\ \\text{J}$$<p>✓ Khớp với đề.</p><p>Nếu coi nội năng giảm là $\\Delta U_1=+35$ sẽ ra $Q_1=+10\\ \\text{J}$: nén mà thu nhiệt và nội năng tăng, trái với đề.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Khí toả nhiệt $60\\ \\text{J}$ ($Q_1=-60\\ \\text{J}$)</p><p>b) Khí sinh công $80\\ \\text{J}$ ($A_2=-80\\ \\text{J}$)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>ΔU</strong> và <strong>một trong hai</strong> công / nhiệt, hỏi đại lượng còn lại → đặt dấu hai số đề cho rồi rút từ $\\Delta U=A+Q$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-3-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Quá trình 1: nén khí, công vào 25 J, nội năng giảm 35 J. Quá trình 2: hơ nóng, nhiệt vào 100 J, nội năng tăng 20 J\"><text x=\"10\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">① Nén</text><text x=\"220\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">② Hơ nóng</text><rect x=\"11.5\" y=\"71.5\" width=\"49.5\" height=\"47.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"></rect><line x1=\"10.0\" y1=\"70.0\" x2=\"110.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"10.0\" y1=\"120.0\" x2=\"110.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"10.0\" y1=\"70.0\" x2=\"10.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"61.0\" y=\"73.0\" width=\"8.0\" height=\"44.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"69.0\" y1=\"95.0\" x2=\"115.0\" y2=\"95.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"115.0\" y1=\"81.0\" x2=\"115.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"156\" y1=\"95\" x2=\"146.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M151.2,98.0 L146.0,95.0 L151.2,92.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"110\" y=\"66\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">công 25 J</text><text x=\"60\" y=\"152\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q₁ = ?</text><text x=\"60\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ΔU₁ = −35 J</text><rect x=\"221.5\" y=\"71.5\" width=\"49.5\" height=\"47.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"></rect><line x1=\"220.0\" y1=\"70.0\" x2=\"320.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"120.0\" x2=\"320.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"70.0\" x2=\"220.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"271.0\" y=\"73.0\" width=\"8.0\" height=\"44.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0.9\"/><line x1=\"279.0\" y1=\"95.0\" x2=\"325.0\" y2=\"95.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"325.0\" y1=\"81.0\" x2=\"325.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"270\" y1=\"160.0\" x2=\"270.0\" y2=\"120.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M264.2,130.0 L270.0,120.0 L275.8,130.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"280\" y=\"150\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nhiệt 100 J</text><text x=\"340\" y=\"96\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A₂ = ?</text><text x=\"340\" y=\"116\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">ΔU₂ = +20 J</text><text x=\"10\" y=\"200\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Độ dài mũi tên tỉ lệ độ lớn (k = 0,4 px/J)</text></svg><figcaption>Dữ kiện: mỗi quá trình cho ΔU và một trong hai đại lượng A, Q; đại lượng còn lại là ẩn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"quá trình 1: khí nhận công $25$ J\"</td><td>công $25\\ \\text{J}$, đi vào khí</td><td>Quy ước dấu: nhận vào thì $+$, mất đi thì $-$</td></tr><tr><td>\"nội năng của khí giảm $35$ J\"</td><td>nội năng bớt $35\\ \\text{J}$</td><td>$\\Delta U$ là độ biến thiên (cuối trừ đầu)</td></tr><tr><td>\"toả hay thu nhiệt? Nhiệt lượng bao nhiêu?\"</td><td>Cần $Q_1$</td><td>⚠ Đặt dấu hai số đề cho trước (kể cả dấu) rồi mới tìm ẩn</td></tr><tr><td>\"quá trình 2: khí nhận nhiệt lượng $100$ J\"</td><td>nhiệt $100\\ \\text{J}$, đi vào khí</td><td>Quy ước dấu như trên</td></tr><tr><td>\"nội năng của khí tăng $20$ J\"</td><td>nội năng thêm $20\\ \\text{J}$</td><td>$\\Delta U$ là độ biến thiên (cuối trừ đầu)</td></tr><tr><td>\"khí nhận hay sinh công? Công bao nhiêu?\"</td><td>Cần $A_2$</td><td>⚠ Cả ba đại lượng cùng tính cho khối khí</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy đề cho <b>ΔU</b> và <b>một trong hai</b> công / nhiệt → đặt dấu rồi <b>rút ẩn</b> từ ΔU = A + Q.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Quá trình 1: tìm nhiệt lượng",
+     "hoi": "$Q_1$ của khí ở quá trình 1 bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -60,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ra $+10\\ \\text{J}$ vì coi “nội năng giảm 35” là $\\Delta U=+35$ ; hoặc ra $-10\\ \\text{J}$ vì đặt $A_1=-25$ khi nhầm “nén” với “sinh công”."
+    },
+    {
+     "tieu_de": "Quá trình 2: tìm công",
+     "hoi": "$A_2$ của khí ở quá trình 2 bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -80,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Đảo dấu vì lấy $Q-\\Delta U$ (đảo hai số) ; hoặc kết luận “khí nhận công” từ chữ “nhận nhiệt”.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_2=\\Delta U_2-Q_2$ với $\\Delta U_2=+20$ và $Q_2=+100$",
+       "dung": true
+      },
+      {
+       "text": "$A_2=Q_2-\\Delta U_2$",
+       "dung": false,
+       "vi_sao": "Định luật I là $\\Delta U=A+Q$ nên $A=\\Delta U-Q$ ; đảo hai số sẽ đổi dấu kết quả."
+      },
+      {
+       "text": "$A_2=\\Delta U_2+Q_2$",
+       "dung": false,
+       "vi_sao": "Cộng là sai phép rút : chuyển $Q$ sang vế kia phải đổi dấu thành $-Q$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Công làm nóng vật rồi nhiệt truyền sang nước: đặt dấu riêng cho từng vật",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "problem_html": "<p>Một thợ khoan lỗ trên khối đồng khối lượng $0{,}300\\ \\text{kg}$ đặt trong cốc cách nhiệt chứa $0{,}250\\ \\text{kg}$ nước ở $24{,}0\\ ^\\circ\\text{C}$. Trong một lượt khoan, mũi khoan thực hiện công $5400\\ \\text{J}$ lên khối đồng. Cuối lượt khoan, nước ở $27{,}0\\ ^\\circ\\text{C}$. Coi nước chỉ nhận nhiệt từ khối đồng (bỏ qua trao đổi nhiệt với cốc và không khí) và nước không nhận công. Nhiệt dung riêng của nước là $c=4200\\ \\text{J/(kg·K)}$.</p><ol type=\"a\"><li>Tính nhiệt lượng nước nhận được.</li><li>Khối đồng toả hay thu nhiệt? Tính nhiệt lượng $Q$ của khối đồng.</li><li>Tính độ biến thiên nội năng của khối đồng. Nội năng khối đồng tăng hay giảm?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Mũi khoan khoan khối đồng đặt trong cốc nước, nhiệt kế trong nước chỉ tăng từ 24 độ lên 27 độ\"><rect x=\"194.0\" y=\"96.0\" width=\"186.0\" height=\"86.0\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"></rect><line x1=\"190.0\" y1=\"60.0\" x2=\"190.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"384.0\" y1=\"60.0\" x2=\"384.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"190.0\" y1=\"184.0\" x2=\"384.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"232.0\" y=\"142.0\" width=\"110.0\" height=\"40.0\" rx=\"2\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.8\"/><text x=\"287\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">đồng 0,300 kg</text><text x=\"194\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nước 0,250 kg</text><g><animateTransform attributeName=\"transform\" values=\"0 0;0 8;0 0;0 8;0 0;0 8\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\" type=\"translate\"/><line x1=\"287.0\" y1=\"20.0\" x2=\"287.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><rect x=\"279.0\" y=\"14.0\" width=\"16.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"287\" y1=\"40\" x2=\"287\" y2=\"128\" stroke=\"#fb923c\" stroke-width=\"9\" stroke-dasharray=\"3 5\" opacity=\".9\"><animate attributeName=\"stroke-dashoffset\" values=\"0.0;-16.0;-32.0;-48.0;-64.0;-80.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line></g><rect x=\"46.0\" y=\"36.0\" width=\"14.0\" height=\"124.0\" rx=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"53.0\" cy=\"168.0\" r=\"11\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"2.4\"/><rect x=\"50\" y=\"110.0\" width=\"6\" height=\"50.0\" fill=\"#f87171\" stroke=\"none\"><animate attributeName=\"y\" values=\"110.0;102.0;94.0;86.0;78.0;70.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"50.0;58.0;66.0;74.0;82.0;90.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">nhiệt kế (nước)</text><text x=\"70\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">24,0 °C</text><text x=\"70\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">27,0 °C</text><line x1=\"60.0\" y1=\"110.0\" x2=\"66.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"70.0\" x2=\"66.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"130\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">mũi khoan: A = 5400 J</text><text x=\"130\" y=\"202\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ΔU của khối đồng = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mũi khoan làm việc, nước nóng dần từ 24,0 °C đến 27,0 °C (chạy 4 s).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối đồng vừa nhận công (mũi khoan) vừa toả nhiệt (cho nước) ; nước chỉ thu nhiệt.</li><li><strong>Nhiệt lượng:</strong> $Q=mc\\,\\Delta t$ với $\\Delta t=t_{\\text{cuối}}-t_{\\text{đầu}}$.</li><li><strong>Định luật I</strong> cho từng vật: $\\Delta U=A+Q$ ; nhiệt vật này thu bằng nhiệt vật kia toả.</li><li>⚠ <strong>Điều kiện:</strong> không mất nhiệt ra cốc và không khí ; nước và khối đồng đặt dấu riêng, không lẫn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt lượng nước nhận</span></p><p>Độ tăng nhiệt độ của nước:</p>$$\\Delta t=27{,}0-24{,}0=3{,}0\\ \\text{K}$$$$Q_n=m\\,c\\,\\Delta t=0{,}250\\cdot4200\\cdot3{,}0$$<div class=\"bt-ans\">$$Q_n=+3150\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt lượng của khối đồng</span></p><p>Nước chỉ nhận nhiệt từ khối đồng, nên khối đồng toả đúng lượng đó:</p>$$Q_đ=-Q_n$$<div class=\"bt-ans\">$$Q_đ=-3150\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ biến thiên nội năng của khối đồng</span></p><p>Hệ là khối đồng: nhận công của mũi khoan ($A=+5400\\ \\text{J}$) và toả nhiệt ($Q_đ=-3150\\ \\text{J}$).</p>$$\\Delta U_đ=A+Q_đ=5400+(-3150)$$<div class=\"bt-ans\">$$\\Delta U_đ=+2250\\ \\text{J}$$</div><p>$\\Delta U_đ\\gt0$ nên nội năng khối đồng <strong>tăng</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Nước không nhận công: $\\Delta U_n=A_n+Q_n=0+3150=3150\\ \\text{J}$.</p><p>Cộng nội năng tăng của cả hai vật:</p>$$\\Delta U_đ+\\Delta U_n=2250+3150=5400\\ \\text{J}$$<p>✓ Đúng bằng công mũi khoan: năng lượng không mất đi, chỉ chia cho đồng và nước.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q_n=3150\\ \\text{J}$</p><p>b) Khối đồng toả nhiệt · $Q_đ=-3150\\ \\text{J}$</p><p>c) $\\Delta U_đ=+2250\\ \\text{J}$ · nội năng tăng</p></div><p class=\"bt-note\">Nhận dạng: <strong>hai vật trao đổi nhiệt</strong>, một vật <strong>nhận công</strong> → đặt dấu riêng cho từng vật ; nhiệt vật này thu là nhiệt vật kia toả.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-4-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hai hệ: khối đồng nhận công 5400 J, nước nhận nhiệt từ khối đồng\"><text x=\"10\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Hệ 1: khối đồng</text><text x=\"220\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Hệ 2: nước</text><rect x=\"40.0\" y=\"78.0\" width=\"150.0\" height=\"60.0\" rx=\"3\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.8\"/><text x=\"115\" y=\"113\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">đồng 0,300 kg</text><line x1=\"115\" y1=\"24.0\" x2=\"115.0\" y2=\"78.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M120.8,68.0 L115.0,78.0 L109.2,68.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"124\" y=\"50\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">công 5400 J</text><text x=\"115\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 5400 J · Q = ?</text><rect x=\"230.0\" y=\"78.0\" width=\"170.0\" height=\"60.0\" rx=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"0.8\"/><text x=\"315\" y=\"113\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nước 0,250 kg</text><text x=\"315\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 0 · Q = ?</text><text x=\"315\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">24,0 °C → 27,0 °C</text><line x1=\"190.0\" y1=\"108.0\" x2=\"230.0\" y2=\"108.0\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"210\" y=\"98\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nhiệt</text><text x=\"10\" y=\"205\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Mũi tên tỉ lệ độ lớn (k = 0,01 px/J). Nhiệt trao đổi chưa biết nên không vẽ.</text></svg><figcaption>Dữ kiện: đặt dấu riêng cho từng hệ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mũi khoan thực hiện công $5400$ J lên khối đồng\"</td><td>$A=5400\\ \\text{J}$, đi vào khối đồng</td><td>Thực hiện công · quy ước dấu: nhận vào thì $+$</td></tr><tr><td>\"$0{,}250$ kg nước ở $24{,}0\\ ^\\circ$C … cuối lượt khoan $27{,}0\\ ^\\circ$C\"</td><td>$m=0{,}250\\ \\text{kg}$ ; $t_{\\text{đầu}}=24{,}0\\ ^\\circ\\text{C}$ ; $t_{\\text{cuối}}=27{,}0\\ ^\\circ\\text{C}$ ; $c=4200\\ \\text{J/(kg·K)}$</td><td>$Q=mc\\,\\Delta t$ ; $\\Delta t$ lấy cuối trừ đầu</td></tr><tr><td>\"nước chỉ nhận nhiệt từ khối đồng … không nhận công\"</td><td>Nước: $A=0$ ; nhiệt nước thu là nhiệt đồng mất</td><td>⚠ Điều kiện: không mất nhiệt ra cốc và không khí · mỗi vật đặt dấu riêng</td></tr><tr><td>\"tính nhiệt lượng nước nhận được\"</td><td>Cần $Q_{\\text{nước}}$</td><td>$Q=mc\\,\\Delta t$</td></tr><tr><td>\"khối đồng toả hay thu nhiệt? Tính $Q$\"</td><td>Cần $Q_{\\text{đồng}}$</td><td>Một vật thu bao nhiêu thì vật kia toả bấy nhiêu</td></tr><tr><td>\"độ biến thiên nội năng của khối đồng\"</td><td>Cần $\\Delta U_{\\text{đồng}}$</td><td>$\\Delta U=A+Q$ viết cho khối đồng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai vật trao đổi nhiệt</b> và <b>một vật nhận công</b> → đặt dấu <b>riêng</b> cho từng vật rồi dùng ΔU = A + Q.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt lượng nước nhận",
+     "hoi": "Nhiệt lượng $Q_n$ nước nhận được bằng bao nhiêu?",
+     "dap_so": 3150,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy $\\Delta t=24$ hoặc $27$ thay vì $27-24=3\\ \\text{K}$ ; hoặc quên nhân khối lượng nước."
+    },
+    {
+     "tieu_de": "Nhiệt lượng của khối đồng",
+     "hoi": "Nhiệt lượng $Q_đ$ của khối đồng bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -3150,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ghi $+3150\\ \\text{J}$ vì thấy hai nhiệt lượng cùng độ lớn. Với hệ là khối đồng, nhiệt mất đi mang dấu âm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nước thu bao nhiêu thì đồng toả bấy nhiêu: $Q_đ=-Q_n$",
+       "dung": true
+      },
+      {
+       "text": "$Q_đ=+Q_n$ vì hai nhiệt lượng cùng độ lớn",
+       "dung": false,
+       "vi_sao": "Đồng mất năng lượng cho nước ; với hệ là khối đồng, nhiệt mất đi mang dấu âm."
+      },
+      {
+       "text": "$Q_đ=m_đ\\,c_đ\\,\\Delta t$ của đồng",
+       "dung": false,
+       "vi_sao": "Đề không cho nhiệt độ cuối và nhiệt dung riêng của đồng ; chỉ cần dùng quan hệ với nhiệt nước thu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ biến thiên nội năng của khối đồng",
+     "hoi": "$\\Delta U$ của khối đồng bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": 2250,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ghi $\\Delta U=A=5400\\ \\text{J}$ vì quên khối đồng đang toả nhiệt cho nước ; hoặc lấy $Q$ của nước làm $Q$ của đồng nên ra $8550\\ \\text{J}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hệ là khối đồng: $\\Delta U=A+Q_đ$ với $A$ dương, $Q_đ$ âm",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta U=A$ vì khối đồng nóng lên",
+       "dung": false,
+       "vi_sao": "Khối đồng còn toả nhiệt cho nước nên $Q_đ\\ne0$ ; chỉ lấy công là bỏ sót phần năng lượng đã mất."
+      },
+      {
+       "text": "$\\Delta U=A+Q_n$ với $Q_n$ là nhiệt nước nhận",
+       "dung": false,
+       "vi_sao": "$Q_n$ thuộc hệ nước ; với hệ khối đồng phải dùng nhiệt của chính khối đồng ($Q_đ$ âm)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Cả chu trình: ΔU = 0 trong tủ lạnh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "problem_html": "<p>Trong tủ lạnh, gas (môi chất) tuần hoàn qua máy nén, dàn nóng, van tiết lưu và dàn lạnh rồi trở về đúng trạng thái lúc đầu chu trình. Trong mỗi chu trình, máy nén thực hiện công $150\\ \\text{J}$ lên gas; ở dàn nóng gas toả ra môi trường $450\\ \\text{J}$ nhiệt lượng. Van tiết lưu không nhận công, không sinh công và không trao đổi nhiệt; gas chỉ thu nhiệt ở dàn lạnh.</p><ol type=\"a\"><li>Tính nhiệt lượng gas thu vào ở dàn lạnh trong một chu trình.</li><li>Cần lấy $54\\ \\text{kJ}$ nhiệt từ ngăn lạnh. Tủ phải chạy bao nhiêu chu trình?</li><li>Tính tổng công máy nén thực hiện trong số chu trình đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-5-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Gas tuần hoàn qua máy nén, dàn nóng, van tiết lưu, dàn lạnh rồi về đúng chỗ xuất phát\"><line x1=\"110.0\" y1=\"135.0\" x2=\"110.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"100.0\" x2=\"165.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"275.0\" y1=\"100.0\" x2=\"330.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"100.0\" x2=\"330.0\" y2=\"135.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"165.0\" x2=\"330.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"200.0\" x2=\"275.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"165.0\" y1=\"200.0\" x2=\"110.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"200.0\" x2=\"110.0\" y2=\"165.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"70.0\" y=\"135.0\" width=\"80.0\" height=\"30.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"110\" y=\"154.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Máy nén</text><rect x=\"165.0\" y=\"87.0\" width=\"110.0\" height=\"26.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"220\" y=\"104.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Dàn nóng</text><rect x=\"288.0\" y=\"135.0\" width=\"84.0\" height=\"30.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"330\" y=\"154.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Van tiết lưu</text><rect x=\"165.0\" y=\"187.0\" width=\"110.0\" height=\"26.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"220\" y=\"204.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Dàn lạnh</text><line x1=\"47.5\" y1=\"150\" x2=\"70.0\" y2=\"150.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M60.0,144.2 L70.0,150.0 L60.0,155.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"4\" y=\"128\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">công 150 J</text><line x1=\"220\" y1=\"87\" x2=\"220.0\" y2=\"19.5\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M214.2,29.5 L220.0,19.5 L225.8,29.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"232\" y=\"50\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nhiệt toả 450 J</text><text x=\"220\" y=\"234\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nhiệt thu Q = ?</text><circle cx=\"110\" cy=\"118\" r=\"6\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"110.0;110.0;330.0;330.0;110.0;110.0\" keyTimes=\"0.0000;0.0281;0.3719;0.5281;0.8719;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"118.0;100.0;100.0;200.0;200.0;118.0\" keyTimes=\"0.0000;0.0281;0.3719;0.5281;0.8719;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: một phân tử gas đi hết một chu trình rồi về chỗ cũ (chạy 6 s). Mũi tên tỉ lệ độ lớn (k = 0,15 px/J).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nội năng phụ thuộc nhiệt độ và thể tích ; hết một chu trình gas về đúng trạng thái đầu nên $\\Delta U=0$.</li><li><strong>Định luật I</strong> cho cả chu trình: $0=A+Q_{\\text{tổng}}$ với $Q_{\\text{tổng}}=Q_{\\text{nóng}}+Q_{\\text{lạnh}}$.</li><li><strong>Dấu:</strong> máy nén cho gas công ($A\\gt0$) ; dàn nóng gas toả nhiệt ($Q_{\\text{nóng}}\\lt0$) ; dàn lạnh gas thu nhiệt ($Q_{\\text{lạnh}}\\gt0$).</li><li>⚠ <strong>Điều kiện:</strong> van tiết lưu không công, không nhiệt ; đổi kJ ra J trước khi chia.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>ΔU của gas sau một chu trình</span></p><p>Gas ra khỏi chu trình ở đúng trạng thái lúc vào, cùng nhiệt độ và thể tích, nên nội năng như cũ:</p><div class=\"bt-ans\">$$\\Delta U=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt thu ở dàn lạnh</span></p><p>Công: $A=+150\\ \\text{J}$. Nhiệt toả ở dàn nóng: $Q_{\\text{nóng}}=-450\\ \\text{J}$. Van tiết lưu không có công, không có nhiệt.</p>$$\\Delta U=A+Q_{\\text{nóng}}+Q_{\\text{lạnh}}$$$$0=150+(-450)+Q_{\\text{lạnh}}$$$$Q_{\\text{lạnh}}=450-150$$<div class=\"bt-ans\">$$Q_{\\text{lạnh}}=+300\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chu trình</span></p><p>Đổi $54\\ \\text{kJ}=54\\,000\\ \\text{J}$. Mỗi chu trình lấy $300\\ \\text{J}$ từ ngăn lạnh:</p>$$n=\\dfrac{54\\,000}{300}$$<div class=\"bt-ans\">$$n=180\\ \\text{chu trình}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tổng công của máy nén</span></p>$$A_{\\text{tổng}}=n\\cdot150=180\\cdot150=27\\,000\\ \\text{J}$$<div class=\"bt-ans\">$$A_{\\text{tổng}}=27\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Nhiệt toả ở dàn nóng trong $180$ chu trình:</p>$$180\\cdot450=81\\,000\\ \\text{J}=81\\ \\text{kJ}$$<p>Bằng nhiệt lấy từ ngăn lạnh cộng công: $54+27=81\\ \\text{kJ}$ ✓.</p><p>Mỗi $1\\ \text{J}$ công lấy đi $2\\ \text{J}$ nhiệt từ ngăn lạnh — hợp lí với tủ lạnh thực.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q_{\\text{lạnh}}=300\\ \\text{J}$</p><p>b) $n=180$ chu trình</p><p>c) $A_{\\text{tổng}}=27\\ \\text{kJ}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>một chu trình</strong>, gas <strong>về trạng thái đầu</strong> → $\\Delta U=0$, nên công nhận vào cộng nhiệt tổng bằng 0.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"b4-5-2\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Sơ đồ chu trình của gas: máy nén nhận công 150 J, dàn nóng toả 450 J, dàn lạnh thu nhiệt chưa biết\"><line x1=\"110.0\" y1=\"135.0\" x2=\"110.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"100.0\" x2=\"165.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"275.0\" y1=\"100.0\" x2=\"330.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"100.0\" x2=\"330.0\" y2=\"135.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"165.0\" x2=\"330.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"330.0\" y1=\"200.0\" x2=\"275.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"165.0\" y1=\"200.0\" x2=\"110.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110.0\" y1=\"200.0\" x2=\"110.0\" y2=\"165.0\" stroke=\"#94a3b8\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"70.0\" y=\"135.0\" width=\"80.0\" height=\"30.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"110\" y=\"154.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Máy nén</text><rect x=\"165.0\" y=\"87.0\" width=\"110.0\" height=\"26.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"220\" y=\"104.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Dàn nóng</text><rect x=\"288.0\" y=\"135.0\" width=\"84.0\" height=\"30.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"330\" y=\"154.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Van tiết lưu</text><rect x=\"165.0\" y=\"187.0\" width=\"110.0\" height=\"26.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"220\" y=\"204.5\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">Dàn lạnh</text><line x1=\"47.5\" y1=\"150\" x2=\"70.0\" y2=\"150.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M60.0,144.2 L70.0,150.0 L60.0,155.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"4\" y=\"128\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">công 150 J</text><line x1=\"220\" y1=\"87\" x2=\"220.0\" y2=\"19.5\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M214.2,29.5 L220.0,19.5 L225.8,29.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"232\" y=\"50\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">nhiệt toả 450 J</text><text x=\"220\" y=\"234\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">nhiệt thu Q = ?</text></svg><figcaption>Dữ kiện: trong một chu trình gas về đúng trạng thái đầu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"trở về đúng trạng thái lúc đầu chu trình\"</td><td>Hết chu trình: cùng nhiệt độ, cùng thể tích</td><td>⚠ Nội năng phụ thuộc nhiệt độ và thể tích</td></tr><tr><td>\"máy nén thực hiện công $150$ J lên gas\"</td><td>công $150\\ \\text{J}$, đi vào gas</td><td>Quy ước dấu: nhận vào thì $+$, mất đi thì $-$</td></tr><tr><td>\"ở dàn nóng gas toả ra $450$ J\"</td><td>nhiệt $450\\ \\text{J}$, đi ra khỏi gas</td><td>Quy ước dấu như trên</td></tr><tr><td>\"van tiết lưu không công, không nhiệt\"</td><td>Van: $A=0$ ; $Q=0$</td><td>Chỉ máy nén có công · chỉ dàn nóng và dàn lạnh có nhiệt</td></tr><tr><td>\"nhiệt lượng gas thu vào ở dàn lạnh\"</td><td>Cần $Q_{\\text{lạnh}}$</td><td>Định luật I, viết cho cả chu trình</td></tr><tr><td>\"lấy $54$ kJ nhiệt từ ngăn lạnh … bao nhiêu chu trình\"</td><td>$54\\ \\text{kJ}=54\\,000\\ \\text{J}$</td><td>Số chu trình $=$ nhiệt cần lấy $\\div$ nhiệt thu mỗi chu trình</td></tr><tr><td>\"tổng công máy nén\"</td><td>Cần $A_{\\text{tổng}}$</td><td>Công mỗi chu trình $\\times$ số chu trình</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>một chu trình</b>, gas <b>về trạng thái đầu</b> → nghĩ tới <b>ΔU = 0</b> nên A + Q tổng = 0.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "ΔU của gas sau một chu trình",
+     "hoi": "Sau một chu trình, $\\Delta U$ của gas bằng bao nhiêu?",
+     "lua_chon": [
+      {
+       "text": "Bằng 0, vì gas trở về đúng trạng thái đầu nên nội năng như cũ",
+       "dung": true
+      },
+      {
+       "text": "Bằng công máy nén, vì chỉ máy nén cấp năng lượng cho gas",
+       "dung": false,
+       "vi_sao": "Gas còn toả nhiệt ở dàn nóng và thu nhiệt ở dàn lạnh ; cộng tất cả lại thì nội năng không đổi sau chu trình."
+      },
+      {
+       "text": "Bằng nhiệt toả ở dàn nóng, vì đó là phần lớn nhất",
+       "dung": false,
+       "vi_sao": "Độ lớn một phần không quyết định ΔU ; ΔU là tổng đại số của mọi công và nhiệt, mà gas về trạng thái đầu thì tổng ấy là 0."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng gas “nhận công thì nội năng tăng” mà quên gas đã trở về đúng trạng thái đầu ; nội năng phụ thuộc nhiệt độ và thể tích."
+    },
+    {
+     "tieu_de": "Nhiệt thu ở dàn lạnh",
+     "hoi": "$Q_{\\text{lạnh}}$ gas thu vào ở dàn lạnh trong một chu trình bằng bao nhiêu?",
+     "dap_so": 300,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ra $600\\ \\text{J}$ vì cộng $150+450$ (quên nhiệt toả mang dấu âm) ; hoặc ra $450\\ \\text{J}$ vì coi gas thu lại đúng nhiệt đã toả.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $0=A+Q_{\\text{nóng}}+Q_{\\text{lạnh}}$ với $Q_{\\text{nóng}}$ âm rồi rút $Q_{\\text{lạnh}}$",
+       "dung": true
+      },
+      {
+       "text": "$Q_{\\text{lạnh}}=150+450$",
+       "dung": false,
+       "vi_sao": "Nhiệt toả ở dàn nóng mang dấu âm ; cộng hai số dương là quên dấu."
+      },
+      {
+       "text": "$Q_{\\text{lạnh}}=450$ vì gas thu lại đúng nhiệt đã toả",
+       "dung": false,
+       "vi_sao": "Gas còn nhận công 150 J ở máy nén ; thu 450 J rồi toả 450 J thì $\\Delta U=150\\ne0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chu trình",
+     "hoi": "Tủ phải chạy bao nhiêu chu trình để lấy $54\\ \\text{kJ}$ từ ngăn lạnh?",
+     "dap_so": 180,
+     "sai_so": 0.5,
+     "don_vi": "chu trình",
+     "loi_hay_gap": "Chia $54$ cho $300$ mà không đổi kJ ra J nên ra $0{,}18$ ; hoặc chia cho nhiệt toả ở dàn nóng ($450\\ \\text{J}$) thay vì nhiệt thu ở dàn lạnh.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n=$ nhiệt cần lấy $\\div$ nhiệt thu mỗi chu trình, sau khi đổi kJ ra J",
+       "dung": true
+      },
+      {
+       "text": "$n=\\dfrac{54}{300}$ (giữ nguyên kJ)",
+       "dung": false,
+       "vi_sao": "kJ và J khác đơn vị : $54\\ \\text{kJ}=54\\,000\\ \\text{J}$ rồi mới chia cho nhiệt thu mỗi chu trình."
+      },
+      {
+       "text": "$n=\\dfrac{54\\,000}{450}$",
+       "dung": false,
+       "vi_sao": "$450\\ \\text{J}$ là nhiệt toả ở dàn nóng ; nhiệt lấy từ ngăn lạnh là nhiệt thu ở dàn lạnh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng công của máy nén",
+     "hoi": "Tổng công máy nén thực hiện bằng bao nhiêu kJ?",
+     "dap_so": 27,
+     "sai_so": 0.1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Ra $54\\ \\text{kJ}$ vì lấy số chu trình nhân nhiệt thu mỗi chu trình ; hoặc ra $81\\ \\text{kJ}$ vì lấy nhiệt toả ở dàn nóng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{\\text{tổng}}=n\\times$ công của máy nén trong một chu trình",
+       "dung": true
+      },
+      {
+       "text": "$A_{\\text{tổng}}=n\\times$ nhiệt thu mỗi chu trình",
+       "dung": false,
+       "vi_sao": "Đó là nhiệt lấy từ ngăn lạnh, không phải công máy nén bỏ ra."
+      },
+      {
+       "text": "$A_{\\text{tổng}}=n\\times$ nhiệt toả ở dàn nóng",
+       "dung": false,
+       "vi_sao": "Nhiệt toả ở dàn nóng bằng công cộng nhiệt thu ; không phải riêng công."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

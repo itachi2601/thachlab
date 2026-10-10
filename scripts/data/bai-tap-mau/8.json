@@ -1,0 +1,513 @@
+{
+ "lesson_id": 8,
+ "lesson_title": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; đã sửa loi_hay_gap lộ đáp số dạng 4, vi_sao dạng 2 và 5, chú thích hình dạng 3 (vẽ theo tỉ lệ)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Quá trình đẳng tích: nung nóng bình kín",
+   "topic": "Vận dụng phương trình trạng thái",
+   "problem_html": "<p>Một bình thép kín chứa khí nén ở $27\\ ^\\circ\\text{C}$, áp suất $2{,}4.10^5\\ \\text{Pa}$. Bình được đặt gần lò nung nên khí trong bình nóng lên tới $117\\ ^\\circ\\text{C}$. Thể tích bình coi như không đổi.</p><ol type=\"a\"><li>Tính áp suất khí trong bình lúc đó.</li><li>Bình có van an toàn tự mở khi áp suất đạt $3{,}6.10^5\\ \\text{Pa}$. Khí nóng tới bao nhiêu độ C thì van mở?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Bình thép kín được đốt nóng từ 27 độ C lên 117 độ C, kim áp kế quay dần\"><rect x=\"36.0\" y=\"56.0\" width=\"100.0\" height=\"90.0\" rx=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"86\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">khí kín</text><text x=\"86\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">V không đổi</text><path d=\"M58,178 C47,168 51,161 58,151 C65,161 69,168 58,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><path d=\"M86,178 C75,168 79,161 86,151 C93,161 97,168 86,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><path d=\"M114,178 C103,168 107,161 114,151 C121,161 125,168 114,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><line x1=\"136.0\" y1=\"100.0\" x2=\"208.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"254.0\" cy=\"100.0\" r=\"46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"227.8\" y1=\"126.2\" x2=\"222.9\" y2=\"131.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"115.3\" x2=\"213.3\" y2=\"116.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"100.0\" x2=\"210.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"84.7\" x2=\"213.3\" y2=\"83.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"227.8\" y1=\"73.8\" x2=\"222.9\" y2=\"68.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"238.7\" y1=\"63.0\" x2=\"237.2\" y2=\"59.3\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"254.0\" y1=\"63.0\" x2=\"254.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"269.3\" y1=\"63.0\" x2=\"270.8\" y2=\"59.3\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"280.2\" y1=\"73.8\" x2=\"285.1\" y2=\"68.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"84.7\" x2=\"294.7\" y2=\"83.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"100.0\" x2=\"298.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"115.3\" x2=\"294.7\" y2=\"116.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"280.2\" y1=\"126.2\" x2=\"285.1\" y2=\"131.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 254 100;38.9 254 100\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"254.0\" y1=\"100.0\" x2=\"250.8\" y2=\"66.2\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/></g><circle cx=\"254.0\" cy=\"100.0\" r=\"4\" fill=\"currentColor\"/><text x=\"254\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">p₁ = 2,4·10⁵ Pa</text><text x=\"254\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">p₂ = ?</text><rect x=\"346.0\" y=\"44.0\" width=\"12.0\" height=\"108.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"352.0\" cy=\"162.0\" r=\"10\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"2\"/><rect x=\"349\" y=\"129.6\" width=\"6\" height=\"22.4\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"129.6;54.8\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"22.4;97.2\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"358.0\" y1=\"129.6\" x2=\"366.0\" y2=\"129.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"370\" y=\"133.6\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">27 °C</text><line x1=\"358.0\" y1=\"54.8\" x2=\"366.0\" y2=\"54.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"370\" y=\"58.8\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">117 °C</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nhiệt độ tăng đều từ 27 °C lên 117 °C trong 4 s; kim áp kế quay theo công thức, thang đo không ghi số. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trạng thái một lượng khí xác định có ba thông số $p$, $V$, $T$; $T(\\text{K})=t(^\\circ\\text{C})+273$.</li><li><strong>Định luật:</strong> đẳng tích ($V$ không đổi) thì $p$ tỉ lệ thuận với $T$ (Kelvin).</li><li><strong>Công thức:</strong> $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$.</li><li>⚠ <strong>Điều kiện:</strong> bình kín, lượng khí và thể tích không đổi; $T$ phải đổi ra Kelvin.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi nhiệt độ sang Kelvin</span></p>$$T_1=27+273=300\\ \\text{K}$$$$T_2=117+273=390\\ \\text{K}$$<div class=\"bt-ans\">$$T_2=390\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Áp suất khi nóng lên (câu a)</span></p><p>Thể tích và lượng khí không đổi:</p>$$\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$$$$p_2=p_1\\dfrac{T_2}{T_1}=2{,}4.10^5\\cdot\\dfrac{390}{300}$$<div class=\"bt-ans\">$$p_2=3{,}12.10^5\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt độ để van mở (câu b)</span></p><p>Van mở khi $p_3=3{,}6.10^5$ Pa, vẫn đẳng tích:</p>$$T_3=T_1\\dfrac{p_3}{p_1}=300\\cdot\\dfrac{3{,}6.10^5}{2{,}4.10^5}$$<div class=\"bt-ans\">$$T_3=450\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi về độ C</span></p>$$t_3=T_3-273=450-273$$<div class=\"bt-ans\">$$t_3=177\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$p_2=3{,}12.10^5\\ \\text{Pa}\\lt3{,}6.10^5\\ \\text{Pa}$ nên ở $117\\ ^\\circ\\text{C}$ van chưa mở; hợp lí vì $117\\ ^\\circ\\text{C}\\lt177\\ ^\\circ\\text{C}$.</p><p>Nếu lấy tỉ số Celsius $117/27\\approx4{,}3$ thì ra $p_2\\approx10{,}4.10^5\\ \\text{Pa}$, vô lí so với mức tăng thật.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p_2=3{,}12.10^5\\ \\text{Pa}$</p><p>b) $t_3=177\\ ^\\circ\\text{C}$</p></div><p class=\"bt-note\">Nhận dạng: đề nói <strong>bình kín, thể tích không đổi</strong> và nhiệt độ thay đổi → dùng $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$, đổi sang Kelvin trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Dữ kiện: bình kín thể tích không đổi, áp suất và nhiệt độ ban đầu, nhiệt độ sau khi nóng lên\"><rect x=\"36.0\" y=\"56.0\" width=\"100.0\" height=\"90.0\" rx=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"86\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">khí kín</text><text x=\"86\" y=\"114\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">V không đổi</text><path d=\"M58,178 C47,168 51,161 58,151 C65,161 69,168 58,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><path d=\"M86,178 C75,168 79,161 86,151 C93,161 97,168 86,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><path d=\"M114,178 C103,168 107,161 114,151 C121,161 125,168 114,178 Z\" fill=\"#fb923c\" opacity=\".85\"/><line x1=\"136.0\" y1=\"100.0\" x2=\"208.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"254.0\" cy=\"100.0\" r=\"46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"227.8\" y1=\"126.2\" x2=\"222.9\" y2=\"131.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"115.3\" x2=\"213.3\" y2=\"116.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"100.0\" x2=\"210.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"84.7\" x2=\"213.3\" y2=\"83.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"227.8\" y1=\"73.8\" x2=\"222.9\" y2=\"68.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"238.7\" y1=\"63.0\" x2=\"237.2\" y2=\"59.3\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"254.0\" y1=\"63.0\" x2=\"254.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"269.3\" y1=\"63.0\" x2=\"270.8\" y2=\"59.3\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"280.2\" y1=\"73.8\" x2=\"285.1\" y2=\"68.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"84.7\" x2=\"294.7\" y2=\"83.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"100.0\" x2=\"298.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"291.0\" y1=\"115.3\" x2=\"294.7\" y2=\"116.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"280.2\" y1=\"126.2\" x2=\"285.1\" y2=\"131.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"254.0\" y1=\"100.0\" x2=\"250.8\" y2=\"66.2\" stroke=\"#94a3b8\" stroke-width=\"2.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"254.0\" cy=\"100.0\" r=\"4\" fill=\"currentColor\"/><text x=\"254\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">p₁ = 2,4·10⁵ Pa</text><text x=\"254\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">p₂ = ?</text><rect x=\"346.0\" y=\"44.0\" width=\"12.0\" height=\"108.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"352.0\" cy=\"162.0\" r=\"10\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"2\"/><rect x=\"349\" y=\"54.8\" width=\"6\" height=\"97.2\" fill=\"#f87171\"/><line x1=\"358.0\" y1=\"129.6\" x2=\"366.0\" y2=\"129.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"370\" y=\"133.6\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">27 °C</text><line x1=\"358.0\" y1=\"54.8\" x2=\"366.0\" y2=\"54.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"370\" y=\"58.8\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">117 °C</text><text x=\"16\" y=\"24\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đẳng tích: p/T không đổi</text><text x=\"16\" y=\"42\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">T phải là Kelvin</text></svg><figcaption>Dữ kiện: V không đổi, lượng khí không đổi; kim xám là vị trí ban đầu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bình thép kín … khí nén ở 27 °C, áp suất $2{,}4.10^5$ Pa\"</td><td>$t_1=27\\ ^\\circ\\text{C}$; $p_1=2{,}4.10^5\\ \\text{Pa}$</td><td>Trạng thái 1; $T=t+273$ nên đổi ra Kelvin</td></tr><tr><td>\"Thể tích bình coi như không đổi\"</td><td>$V$ không đổi; khí kín</td><td>⚠ Đẳng tích: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ — chỉ dùng khi lượng khí và $V$ không đổi</td></tr><tr><td>\"nóng lên tới 117 °C\"</td><td>$t_2=117\\ ^\\circ\\text{C}$</td><td>Trạng thái 2; đổi ra Kelvin trước khi lấy tỉ số</td></tr><tr><td>\"Tính áp suất khí lúc đó\"</td><td>Cần $p_2$</td><td>$p_2=p_1\\dfrac{T_2}{T_1}$</td></tr><tr><td>\"van an toàn tự mở khi áp suất đạt $3{,}6.10^5$ Pa\"</td><td>$p_3=3{,}6.10^5\\ \\text{Pa}$</td><td>Vẫn đẳng tích: so với trạng thái 1</td></tr><tr><td>\"nóng tới bao nhiêu độ C thì van mở\"</td><td>Cần $t_3$</td><td>$T_3=T_1\\dfrac{p_3}{p_1}$, rồi $t=T-273$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bình kín, thể tích không đổi</b> và nhiệt độ đổi → nghĩ tới <b>$\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$</b>, đổi sang Kelvin.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi nhiệt độ sang Kelvin",
+     "hoi": "Nhiệt độ sau khi nóng lên, tính theo Kelvin, là bao nhiêu?",
+     "dap_so": 390,
+     "sai_so": 0.5,
+     "don_vi": "K",
+     "loi_hay_gap": "Quên đổi, cứ dùng $117$ (độ C) hoặc cộng nhầm $273$ cho cả hai nhiệt độ rồi lại lấy tỉ số Celsius."
+    },
+    {
+     "tieu_de": "Áp suất khi nóng lên",
+     "hoi": "Áp suất khí sau khi nóng lên là bao nhiêu (đơn vị $10^5$ Pa)?",
+     "dap_so": 3.12,
+     "sai_so": 0.02,
+     "don_vi": "×10⁵ Pa",
+     "loi_hay_gap": "Lấy tỉ số Celsius $\\dfrac{117}{27}$ nên ra áp suất lớn gấp hơn 4 lần; hoặc lật ngược tỉ số $\\dfrac{T_1}{T_2}$ và ra áp suất nhỏ đi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đẳng tích: $p_2=p_1\\dfrac{T_2}{T_1}$ với $T$ Kelvin",
+       "dung": true
+      },
+      {
+       "text": "$p_2=p_1\\dfrac{t_2}{t_1}$ với nhiệt độ Celsius",
+       "dung": false,
+       "vi_sao": "Thang Celsius không có gốc $0$ thật nên tỉ số $\\dfrac{117}{27}$ vô nghĩa; phải dùng Kelvin."
+      },
+      {
+       "text": "$p_2=p_1$ vì bình kín nên áp suất không đổi",
+       "dung": false,
+       "vi_sao": "Bình kín chỉ giữ $V$ và lượng khí; nhiệt độ tăng thì áp suất phải tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ để van mở",
+     "hoi": "Van mở khi khí nóng tới nhiệt độ nào, tính theo Kelvin?",
+     "dap_so": 450,
+     "sai_so": 1,
+     "don_vi": "K",
+     "loi_hay_gap": "Lật ngược tỉ số ($T_3=T_1\\dfrac{p_1}{p_3}$) nên ra nhiệt độ thấp hơn $T_1$, hoặc nhân tỉ số áp suất với nhiệt độ Celsius.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vẫn đẳng tích: $T_3=T_1\\dfrac{p_3}{p_1}$",
+       "dung": true
+      },
+      {
+       "text": "$T_3=T_1\\dfrac{p_1}{p_3}$",
+       "dung": false,
+       "vi_sao": "Áp suất cần tăng thì nhiệt độ phải tăng, tức $T_3\\gt T_1$; tỉ số lật ngược cho $T_3\\lt T_1$."
+      },
+      {
+       "text": "Tính theo Celsius: $t_3=t_1\\dfrac{p_3}{p_1}$",
+       "dung": false,
+       "vi_sao": "Tỉ lệ thuận chỉ đúng với nhiệt độ Kelvin, Celsius không có gốc $0$ thật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi về độ C",
+     "hoi": "Nhiệt độ van mở, tính theo độ C, là bao nhiêu?",
+     "dap_so": 177,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cộng $273$ thay vì trừ, hoặc quên đổi nên trả lời bằng kelvin."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Phương trình trạng thái khi cả p, V, T cùng đổi",
+   "topic": "Vận dụng phương trình trạng thái",
+   "problem_html": "<p>Trong xi lanh của một động cơ đốt trong có $2{,}4\\ \\text{dm}^3$ hỗn hợp khí ở áp suất $1{,}0\\ \\text{atm}$ và nhiệt độ $27\\ ^\\circ\\text{C}$. Pit-tông nén hỗn hợp xuống còn $0{,}20\\ \\text{dm}^3$ thì áp suất tăng lên $18\\ \\text{atm}$. Coi lượng khí không đổi.</p><ol type=\"a\"><li>Tính nhiệt độ của khí cuối quá trình nén, theo kelvin và theo độ C.</li><li>Nếu nén thật chậm để nhiệt độ vẫn là $27\\ ^\\circ\\text{C}$ thì áp suất cuối là bao nhiêu atm? So sánh với $18\\ \\text{atm}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Pit-tông nén khí trong xi lanh từ 2,4 xuống 0,20 đềximét khối\"><line x1=\"50.0\" y1=\"62.0\" x2=\"372.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"50.0\" y1=\"118.0\" x2=\"372.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"50.0\" y1=\"62.0\" x2=\"50.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"56\" y=\"64\" width=\"300\" height=\"52\" fill=\"#34d399\" opacity=\".25\"><animate attributeName=\"width\" values=\"300.0;25.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-275 0\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"356.0\" y=\"66.0\" width=\"10.0\" height=\"48.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.35\"/><line x1=\"366.0\" y1=\"90.0\" x2=\"402.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"402.0\" y1=\"74.0\" x2=\"402.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/></g><line x1=\"56.0\" y1=\"140.0\" x2=\"356.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"134.0\" x2=\"56.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"356.0\" y1=\"134.0\" x2=\"356.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"276.0\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V₁ = 2,4 dm³</text><line x1=\"56.0\" y1=\"172.0\" x2=\"81.0\" y2=\"172.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"56.0\" y1=\"166.0\" x2=\"56.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"81.0\" y1=\"166.0\" x2=\"81.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"89\" y=\"176\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V₂ = 0,20 dm³</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Trước nén: p₁ = 1,0 atm ; T₁ = 27 °C</text><text x=\"16\" y=\"44\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Sau nén: p₂ = 18 atm ; T₂ = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: pit-tông nén đều trong 5 s, thể tích khí tính từ số liệu của đề. Chiều dài đúng tỉ lệ thể tích.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ba thông số $p$, $V$, $T$ (Kelvin) của một lượng khí xác định.</li><li><strong>Định luật:</strong> phương trình trạng thái; giữ $T$ không đổi thì ra Boyle.</li><li><strong>Công thức:</strong> $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ · Boyle: $p_1V_1=p_2V_2$</li><li>⚠ <strong>Điều kiện:</strong> lượng khí không đổi; $p$, $V$ cùng đơn vị ở hai vế, $T$ Kelvin.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi nhiệt độ ban đầu sang Kelvin</span></p>$$T_1=27+273$$<div class=\"bt-ans\">$$T_1=300\\ \\text{K}$$</div><p>$p$ và $V$ chỉ lấy tỉ số nên giữ nguyên atm và dm³, không cần đổi.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt độ cuối quá trình nén (câu a)</span></p><p>Cả $p$, $V$, $T$ cùng đổi, lượng khí không đổi:</p>$$\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$$$$T_2=T_1\\cdot\\dfrac{p_2V_2}{p_1V_1}=300\\cdot\\dfrac{18\\cdot0{,}20}{1{,}0\\cdot2{,}4}=300\\cdot1{,}5$$<div class=\"bt-ans\">$$T_2=450\\ \\text{K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi sang độ C</span></p>$$t_2=T_2-273=450-273$$<div class=\"bt-ans\">$$t_2=177\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nén thật chậm (câu b)</span></p><p>Nhiệt độ giữ $27\\ ^\\circ\\text{C}$ nên dùng định luật Boyle:</p>$$p_1V_1=p'_2V_2$$$$p'_2=p_1\\dfrac{V_1}{V_2}=1{,}0\\cdot\\dfrac{2{,}4}{0{,}20}$$<div class=\"bt-ans\">$$p'_2=12\\ \\text{atm}$$</div><p>Nhỏ hơn $18$ atm: nén nhanh làm khí nóng lên nên áp suất cao hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\dfrac{p_1V_1}{T_1}=\\dfrac{1{,}0\\cdot2{,}4}{300}=0{,}008$$$$\\dfrac{p_2V_2}{T_2}=\\dfrac{18\\cdot0{,}20}{450}=0{,}008$$<p>Hai vế bằng nhau, đúng một lượng khí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T_2=450\\ \\text{K}$, tức $t_2=177\\ ^\\circ\\text{C}$</p><p>b) $p'_2=12\\ \\text{atm}$, nhỏ hơn $18\\ \\text{atm}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>cả áp suất, thể tích, nhiệt độ cùng đổi</strong> với lượng khí không đổi → dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Dữ kiện: thể tích, áp suất, nhiệt độ ban đầu và áp suất cuối\"><line x1=\"50.0\" y1=\"62.0\" x2=\"372.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"50.0\" y1=\"118.0\" x2=\"372.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"50.0\" y1=\"62.0\" x2=\"50.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"56\" y=\"64\" width=\"25\" height=\"52\" fill=\"#34d399\" opacity=\".25\"/><g transform=\"translate(-275 0)\"><rect x=\"356.0\" y=\"66.0\" width=\"10.0\" height=\"48.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"0.35\"/><line x1=\"366.0\" y1=\"90.0\" x2=\"402.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"402.0\" y1=\"74.0\" x2=\"402.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/></g><rect x=\"356.0\" y=\"66.0\" width=\"10.0\" height=\"48.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><line x1=\"56.0\" y1=\"140.0\" x2=\"356.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"134.0\" x2=\"56.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"356.0\" y1=\"134.0\" x2=\"356.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"276.0\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V₁ = 2,4 dm³</text><line x1=\"56.0\" y1=\"172.0\" x2=\"81.0\" y2=\"172.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"56.0\" y1=\"166.0\" x2=\"56.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"81.0\" y1=\"166.0\" x2=\"81.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><text x=\"89\" y=\"176\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V₂ = 0,20 dm³</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Trước nén: p₁ = 1,0 atm ; T₁ = 27 °C</text><text x=\"16\" y=\"44\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Sau nén: p₂ = 18 atm ; T₂ = ?</text><text x=\"16\" y=\"206\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p₁V₁/T₁ = p₂V₂/T₂</text><text x=\"410\" y=\"54\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">nét đứt: vị trí pit-tông lúc đầu</text></svg><figcaption>Dữ kiện: cả ba thông số cùng đổi, lượng khí không đổi. Chiều dài đúng tỉ lệ thể tích.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$2{,}4\\ \\text{dm}^3$ hỗn hợp khí ở $1{,}0$ atm và $27\\ ^\\circ\\text{C}$\"</td><td>$V_1=2{,}4\\ \\text{dm}^3$; $p_1=1{,}0$ atm; $t_1=27\\ ^\\circ\\text{C}$</td><td>Trạng thái 1; $T_1=t_1+273$</td></tr><tr><td>\"nén … còn $0{,}20\\ \\text{dm}^3$ thì áp suất tăng lên $18$ atm\"</td><td>$V_2=0{,}20\\ \\text{dm}^3$; $p_2=18$ atm</td><td>Trạng thái 2: $p$, $V$ cùng đổi</td></tr><tr><td>\"Coi lượng khí không đổi\"</td><td>Lượng khí không đổi</td><td>⚠ Điều kiện dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$; $p$, $V$ cùng đơn vị ở hai vế, $T$ phải là Kelvin</td></tr><tr><td>\"Tính nhiệt độ của khí cuối quá trình nén\"</td><td>Cần $T_2$ (K và °C)</td><td>$T_2=T_1\\dfrac{p_2V_2}{p_1V_1}$</td></tr><tr><td>\"nén thật chậm để nhiệt độ vẫn là $27\\ ^\\circ\\text{C}$\"</td><td>$T$ không đổi</td><td>⚠ Nhiệt độ không đổi nên dùng định luật Boyle: $p_1V_1=p'_2V_2$</td></tr><tr><td>\"áp suất cuối là bao nhiêu atm?\"</td><td>Cần $p'_2$</td><td>$p'_2=p_1\\dfrac{V_1}{V_2}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cả $p$, $V$, $T$ cùng đổi</b> với lượng khí không đổi → nghĩ tới <b>$\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi nhiệt độ ban đầu sang Kelvin",
+     "hoi": "Nhiệt độ ban đầu theo Kelvin là bao nhiêu?",
+     "dap_so": 300,
+     "sai_so": 0.5,
+     "don_vi": "K",
+     "loi_hay_gap": "Dùng thẳng $27$ (độ C) vào công thức."
+    },
+    {
+     "tieu_de": "Nhiệt độ cuối quá trình nén",
+     "hoi": "Nhiệt độ cuối quá trình nén theo Kelvin là bao nhiêu?",
+     "dap_so": 450,
+     "sai_so": 1,
+     "don_vi": "K",
+     "loi_hay_gap": "Dùng $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ (bỏ quên thể tích đổi) sẽ ra $T_2=5400$ K; hoặc lật ngược một tỉ số.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ vì cả $p$, $V$, $T$ cùng đổi",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ vì khí ở trong xi lanh kín",
+       "dung": false,
+       "vi_sao": "Thể tích đổi (từ $2{,}4$ xuống $0{,}20$ dm³) nên không dùng được hệ thức đẳng tích."
+      },
+      {
+       "text": "Dùng $p_1V_1=p_2V_2$ (Boyle)",
+       "dung": false,
+       "vi_sao": "Boyle cần nhiệt độ không đổi, mà nhiệt độ cuối đã khác $27\\,^\\circ$C."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi sang độ C",
+     "hoi": "Nhiệt độ cuối quá trình nén theo độ C là bao nhiêu?",
+     "dap_so": 177,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cộng $273$ thay vì trừ."
+    },
+    {
+     "tieu_de": "Nén thật chậm",
+     "hoi": "Nếu nén thật chậm thì áp suất cuối là bao nhiêu atm?",
+     "dap_so": 12,
+     "sai_so": 0.2,
+     "don_vi": "atm",
+     "loi_hay_gap": "Vẫn dùng $T_2=450$ K cho trường hợp nén chậm, hoặc lật ngược tỉ số thể tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhiệt độ không đổi nên $p_1V_1=p'_2V_2$ (Boyle)",
+       "dung": true
+      },
+      {
+       "text": "Vẫn dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ với $T_2$ vừa tìm được",
+       "dung": false,
+       "vi_sao": "Nén chậm thì khí không nóng lên, $T_2=T_1$; $T_2$ vừa tìm ứng với nén nhanh."
+      },
+      {
+       "text": "$p'_2=p_1\\dfrac{V_2}{V_1}$",
+       "dung": false,
+       "vi_sao": "Thể tích giảm thì áp suất phải tăng; tỉ số này cho áp suất nhỏ đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đọc đồ thị p–T của hai đường đẳng tích",
+   "topic": "Vận dụng phương trình trạng thái",
+   "problem_html": "<p>Một lượng khí xác định được nung nóng trong bình kín có thể tích $V_1=4{,}0$ lít. Quá trình này được biểu diễn trên đồ thị $p$–$T$ bởi đoạn MN thuộc đường thẳng (1) kéo dài đi qua gốc toạ độ O. Tại M: $T_M=300\\ \\text{K}$, $p_M=3{,}0.10^5\\ \\text{Pa}$; tại N: $T_N=500\\ \\text{K}$.</p><p>Cũng lượng khí đó, khi đặt trong một bình kín khác, được biểu diễn bởi đường thẳng (2) đi qua gốc toạ độ O và qua điểm Q có $T_Q=300\\ \\text{K}$, $p_Q=1{,}5.10^5\\ \\text{Pa}$.</p><ol type=\"a\"><li>Tính áp suất tại N.</li><li>Tính thể tích bình ứng với đường (2).</li><li>Đường (1) hay đường (2) ứng với thể tích lớn hơn?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Đồ thị p theo T của một lượng khí: điểm M chạy dọc đường thẳng qua gốc toạ độ tới điểm N, đường thứ hai qua Q\"><line x1=\"60\" y1=\"190\" x2=\"392\" y2=\"190\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M384.4,185.6 L392.0,190.0 L384.4,194.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60\" y1=\"190\" x2=\"60\" y2=\"24\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M55.6,31.6 L60.0,24.0 L64.4,31.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"388\" y=\"208\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">T (K)</text><text x=\"50\" y=\"34\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">p</text><text x=\"52\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"60.0\" y1=\"190.0\" x2=\"330.0\" y2=\"28.0\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"190.0\" x2=\"330.0\" y2=\"109.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"336.0\" y=\"31.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(1)</text><text x=\"336.0\" y=\"113.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(2)</text><line x1=\"210.0\" y1=\"190.0\" x2=\"210.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"310.0\" y1=\"190.0\" x2=\"310.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"210.0\" y1=\"186.0\" x2=\"210.0\" y2=\"194.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">300</text><line x1=\"310.0\" y1=\"186.0\" x2=\"310.0\" y2=\"194.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"310.0\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">500</text><circle cx=\"210.0\" cy=\"100.0\" r=\"4.5\" fill=\"#fb923c\"/><circle cx=\"210.0\" cy=\"145.0\" r=\"4.5\" fill=\"#38bdf8\"/><text x=\"202.0\" y=\"84.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">T<tspan dy=\"4\" font-size=\"9\">M</tspan><tspan dy=\"-4\"> = 300 K</tspan></text><text x=\"202.0\" y=\"99.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">p<tspan dy=\"4\" font-size=\"9\">M</tspan><tspan dy=\"-4\"> = 3,0·10⁵ Pa</tspan></text><text x=\"220.0\" y=\"163.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"9\">Q</tspan><tspan dy=\"-4\"> = 300 K</tspan></text><text x=\"220.0\" y=\"177.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"9\">Q</tspan><tspan dy=\"-4\"> = 1,5·10⁵ Pa</tspan></text><text x=\"84\" y=\"22\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(1): V₁ = 4,0 lít</text><text x=\"84\" y=\"38\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(2): V₂ = ?</text><text x=\"322.0\" y=\"64.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"9\">N</tspan><tspan dy=\"-4\"> = 500 K</tspan></text><text x=\"322.0\" y=\"80.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = ?</tspan></text><circle cx=\"210.0\" cy=\"100.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"210.0;310.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"100.0;40.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm biểu diễn trạng thái chạy từ M tới N dọc đường thẳng (1) (nung nóng đều 4 s). Hình vẽ theo tỉ lệ, trục không ghi số.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên đồ thị $p$–$T$, đường đẳng tích là đường thẳng kéo dài qua gốc toạ độ.</li><li><strong>Định luật:</strong> trên một đường đẳng tích, $\\dfrac{p}{T}$ không đổi.</li><li><strong>Công thức:</strong> cùng một đường: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ · hai đường cùng $T$: $p_1V_1=p_2V_2$</li><li>⚠ <strong>Điều kiện:</strong> $\\dfrac{p}{T}$ chỉ bằng nhau khi hai điểm cùng một đường; khác đường là khác thể tích.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận ra quá trình MN</span></p><p>Đường thẳng đi qua gốc toạ độ trên đồ thị $p$–$T$: $p$ tỉ lệ thuận với $T$, thể tích bình không đổi.</p><div class=\"bt-ans\"><p>MN là quá trình <strong>đẳng tích</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Áp suất tại N (câu a)</span></p>$$\\dfrac{p_M}{T_M}=\\dfrac{p_N}{T_N}$$$$p_N=p_M\\dfrac{T_N}{T_M}=3{,}0.10^5\\cdot\\dfrac{500}{300}$$<div class=\"bt-ans\">$$p_N=5{,}0.10^5\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thể tích ứng với đường (2) (câu b)</span></p><p>M và Q cùng nhiệt độ $300$ K, cùng lượng khí. Từ phương trình trạng thái với $T_M=T_Q$:</p>$$p_MV_1=p_QV_2$$$$V_2=V_1\\dfrac{p_M}{p_Q}=4{,}0\\cdot\\dfrac{3{,}0.10^5}{1{,}5.10^5}$$<div class=\"bt-ans\">$$V_2=8{,}0\\ \\text{lít}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So sánh hai đường (câu c)</span></p><p>Tại $T=300$ K: $p_Q\\lt p_M$ nên đường (2) nằm <strong>dưới</strong> đường (1).</p><div class=\"bt-ans\"><p>Đường nằm dưới ứng với thể tích <strong>lớn hơn</strong>: $V_2=8{,}0\\ \\text{lít}\\gt V_1=4{,}0\\ \\text{lít}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$p_MV_1=3{,}0.10^5\\cdot4{,}0$ và $p_QV_2=1{,}5.10^5\\cdot8{,}0$ đều bằng $12.10^5$ (Pa·lít), đúng cùng nhiệt độ và cùng lượng khí.</p><p>Hằng số $\\dfrac{p}{T}$: đường (1) là $1000$ Pa/K, đường (2) là $500$ Pa/K; tỉ lệ nghịch với thể tích ($\\dfrac{p}{T}=\\dfrac{nR}{V}$).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p_N=5{,}0.10^5\\ \\text{Pa}$</p><p>b) $V_2=8{,}0\\ \\text{lít}$</p><p>c) Đường (2) (nằm dưới) ứng với thể tích lớn hơn</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đường thẳng qua gốc trên đồ thị $p$–$T$</strong> → đẳng tích; so hai đường thì kẻ đường thẳng đứng tại cùng $T$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Dữ kiện: hai đường thẳng qua gốc toạ độ trên đồ thị p–T, các điểm M, N, Q và nhiệt độ tương ứng\"><line x1=\"60\" y1=\"190\" x2=\"392\" y2=\"190\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M384.4,185.6 L392.0,190.0 L384.4,194.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60\" y1=\"190\" x2=\"60\" y2=\"24\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M55.6,31.6 L60.0,24.0 L64.4,31.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"388\" y=\"208\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">T (K)</text><text x=\"50\" y=\"34\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">p</text><text x=\"52\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"60.0\" y1=\"190.0\" x2=\"330.0\" y2=\"28.0\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"60.0\" y1=\"190.0\" x2=\"330.0\" y2=\"109.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"336.0\" y=\"31.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(1)</text><text x=\"336.0\" y=\"113.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(2)</text><line x1=\"210.0\" y1=\"190.0\" x2=\"210.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"310.0\" y1=\"190.0\" x2=\"310.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"210.0\" y1=\"186.0\" x2=\"210.0\" y2=\"194.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">300</text><line x1=\"310.0\" y1=\"186.0\" x2=\"310.0\" y2=\"194.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"310.0\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">500</text><circle cx=\"210.0\" cy=\"100.0\" r=\"4.5\" fill=\"#fb923c\"/><circle cx=\"210.0\" cy=\"145.0\" r=\"4.5\" fill=\"#38bdf8\"/><text x=\"202.0\" y=\"84.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">T<tspan dy=\"4\" font-size=\"9\">M</tspan><tspan dy=\"-4\"> = 300 K</tspan></text><text x=\"202.0\" y=\"99.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">p<tspan dy=\"4\" font-size=\"9\">M</tspan><tspan dy=\"-4\"> = 3,0·10⁵ Pa</tspan></text><text x=\"220.0\" y=\"163.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"9\">Q</tspan><tspan dy=\"-4\"> = 300 K</tspan></text><text x=\"220.0\" y=\"177.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"9\">Q</tspan><tspan dy=\"-4\"> = 1,5·10⁵ Pa</tspan></text><text x=\"84\" y=\"22\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(1): V₁ = 4,0 lít</text><text x=\"84\" y=\"38\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(2): V₂ = ?</text><text x=\"322.0\" y=\"64.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"9\">N</tspan><tspan dy=\"-4\"> = 500 K</tspan></text><text x=\"322.0\" y=\"80.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p<tspan dy=\"4\" font-size=\"10\">N</tspan><tspan dy=\"-4\"> = ?</tspan></text><circle cx=\"310.0\" cy=\"40.0\" r=\"4.5\" fill=\"#fb923c\"/></svg><figcaption>Dữ kiện: hai đường đẳng tích của cùng một lượng khí; M và Q cùng nhiệt độ. Hình vẽ theo tỉ lệ, trục không ghi số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"nung nóng trong bình kín $V_1=4{,}0$ lít … đoạn MN thuộc đường thẳng (1) kéo dài qua gốc toạ độ\"</td><td>$V_1=4{,}0$ lít; đường (1) qua O</td><td>Đường thẳng qua gốc trên đồ thị $p$–$T$: $\\dfrac{p}{T}$ không đổi</td></tr><tr><td>\"Tại M: $300$ K, $3{,}0.10^5$ Pa; tại N: $T_N=500$ K\"</td><td>$T_M$, $p_M$, $T_N$</td><td>M, N cùng nằm trên đường (1)</td></tr><tr><td>\"Cũng lượng khí đó, bình kín khác … đường (2) qua gốc O và qua Q\"</td><td>$T_Q=300$ K; $p_Q=1{,}5.10^5$ Pa</td><td>⚠ $\\dfrac{p}{T}$ chỉ bằng nhau khi cùng một đường; M và Q thuộc hai đường (hai thể tích khác nhau)</td></tr><tr><td>\"a) Tính áp suất tại N\"</td><td>Cần $p_N$</td><td>$p_N=p_M\\dfrac{T_N}{T_M}$</td></tr><tr><td>\"b) Tính thể tích bình ứng với đường (2)\"</td><td>Cần $V_2$</td><td>M, Q cùng $T$: từ $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ ra hệ thức giữa $p$ và $V$</td></tr><tr><td>\"c) Đường nào ứng với thể tích lớn hơn?\"</td><td>So sánh $V_1$ và $V_2$</td><td>Kẻ đường thẳng đứng tại một $T$, so hai giá trị $p$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đường thẳng qua gốc trên đồ thị $p$–$T$</b> → nghĩ tới <b>đẳng tích, $\\dfrac{p}{T}$ không đổi</b>; so hai đường tại cùng $T$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận ra quá trình MN",
+     "hoi": "Quá trình MN là quá trình gì?",
+     "lua_chon": [
+      {
+       "text": "Đẳng tích ($V$ không đổi)",
+       "dung": true
+      },
+      {
+       "text": "Đẳng nhiệt ($T$ không đổi)",
+       "dung": false,
+       "vi_sao": "Đẳng nhiệt thì $T$ không đổi, nhưng ở MN nhiệt độ tăng từ $300$ K lên $500$ K."
+      },
+      {
+       "text": "Đẳng áp ($p$ không đổi)",
+       "dung": false,
+       "vi_sao": "Đẳng áp thì $p$ không đổi, nhưng ở MN áp suất tăng theo $T$ (đường thẳng qua gốc)."
+      }
+     ],
+     "loi_hay_gap": "Nhầm đường thẳng qua gốc với đẳng áp (đường nằm ngang); đẳng áp có $p$ không đổi còn MN có $p$ tăng theo $T$."
+    },
+    {
+     "tieu_de": "Áp suất tại N",
+     "hoi": "Áp suất khí tại N là bao nhiêu (đơn vị $10^5$ Pa)?",
+     "dap_so": 5.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁵ Pa",
+     "loi_hay_gap": "Lật ngược tỉ số nhiệt độ ($p_N=p_M\\dfrac{T_M}{T_N}$) ra $1{,}8.10^5$ Pa, hoặc cộng thêm hiệu nhiệt độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng đường (1): $p_N=p_M\\dfrac{T_N}{T_M}$",
+       "dung": true
+      },
+      {
+       "text": "$p_N=p_M\\dfrac{T_M}{T_N}$",
+       "dung": false,
+       "vi_sao": "Nhiệt độ tăng thì áp suất phải tăng, tức $p_N\\gt p_M$; tỉ số lật ngược cho $p_N\\lt p_M$."
+      },
+      {
+       "text": "$p_N=p_M+(T_N-T_M)$",
+       "dung": false,
+       "vi_sao": "$p$ và $T$ khác đơn vị, không cộng được; $p$ tỉ lệ thuận với $T$ chứ không tăng thêm một lượng bằng nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích ứng với đường (2)",
+     "hoi": "Thể tích bình ứng với đường (2) là bao nhiêu lít?",
+     "dap_so": 8.0,
+     "sai_so": 0.1,
+     "don_vi": "lít",
+     "loi_hay_gap": "Dùng $\\dfrac{p_M}{T_M}=\\dfrac{p_Q}{T_Q}$ cho M và Q; hai điểm thuộc hai đường khác nhau nên hằng số $\\dfrac{p}{T}$ khác nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "M, Q cùng $T$ nên $p_MV_1=p_QV_2$",
+       "dung": true
+      },
+      {
+       "text": "$V_2=V_1\\dfrac{p_Q}{p_M}$",
+       "dung": false,
+       "vi_sao": "Cùng $T$, áp suất nhỏ hơn thì thể tích phải lớn hơn; tỉ số này cho $V_2\\lt V_1$."
+      },
+      {
+       "text": "Dùng $\\dfrac{p}{T}$ không đổi cho M và Q",
+       "dung": false,
+       "vi_sao": "M và Q thuộc hai đường (hai thể tích) khác nhau; $\\dfrac{p}{T}$ chỉ không đổi trên cùng một đường."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai đường",
+     "hoi": "Đường nào ứng với thể tích lớn hơn?",
+     "lua_chon": [
+      {
+       "text": "Đường nằm dưới (đường (2))",
+       "dung": true
+      },
+      {
+       "text": "Đường nằm trên (đường (1))",
+       "dung": false,
+       "vi_sao": "Cùng $T$, đường trên có $p$ lớn hơn; vì $\\dfrac{pV}{T}$ không đổi nên $V$ phải nhỏ hơn."
+      },
+      {
+       "text": "Không so sánh được vì hai đường ở hai bình khác nhau",
+       "dung": false,
+       "vi_sao": "Cùng một lượng khí, so tại cùng $T$ là so sánh được."
+      }
+     ],
+     "loi_hay_gap": "Đoán theo cảm giác «đường dốc hơn thì to hơn»; phải so hai giá trị $p$ tại cùng một $T$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $p$ tại cùng một $T$, rồi suy ra $V$ từ $\\dfrac{pV}{T}$ không đổi",
+       "dung": true
+      },
+      {
+       "text": "Chọn đường dốc hơn là thể tích lớn hơn",
+       "dung": false,
+       "vi_sao": "Độ dốc chỉ cho biết đường nằm trên hay dưới; muốn suy ra $V$ phải dùng $\\dfrac{pV}{T}$ không đổi."
+      },
+      {
+       "text": "So $V$ bằng cách so $\\dfrac{p}{T}$ của hai đường rồi cho $V$ tỉ lệ thuận",
+       "dung": false,
+       "vi_sao": "$\\dfrac{p}{T}=\\dfrac{nR}{V}$ nên $V$ tỉ lệ nghịch với $\\dfrac{p}{T}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Phương trình Clapeyron – Mendeleev: số mol, khối lượng, thể tích",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "problem_html": "<p>Một bình thép dung tích $12$ lít chứa khí nitrogen ($M=28\\ \\text{g/mol}$) ở $27\\ ^\\circ\\text{C}$, áp suất $2{,}0.10^6\\ \\text{Pa}$. Lấy $R=8{,}31\\ \\text{J/(mol·K)}$.</p><ol type=\"a\"><li>Tính số mol khí trong bình.</li><li>Tính khối lượng khí nitrogen trong bình.</li><li>Nếu đưa lượng khí này về điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, $1\\ \\text{atm}$) thì nó chiếm bao nhiêu lít?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 192\" role=\"img\" aria-label=\"Bình thép chứa khí nitrogen, các phân tử chuyển động hỗn loạn va chạm vào thành bình\"><rect x=\"40.0\" y=\"42.0\" width=\"168.0\" height=\"98.0\" rx=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"100.0\" y1=\"42.0\" x2=\"100.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"88.0\" y1=\"30.0\" x2=\"112.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><circle cx=\"86\" cy=\"124\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"86;89;93;97;101;105;109;113;117;121;125;129;133;137;141;145;149;153;157;160;164;168;172;176;180;184;188;192;193;189;185;181;177;173;169;165;161;157;153;149;145;142;138;134;130;126;122;118;114;110;106;102;98;94;90;86;82;78;74;71;67\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"124;125;121;117;113;109;105;101;97;93;89;85;81;77;73;69;65;61;57;58;62;66;70;74;78;82;86;90;94;98;102;106;110;115;119;123;126;122;118;114;110;106;102;98;94;90;86;82;78;74;70;66;62;58;57;61;65;69;73;77;81\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"66\" cy=\"73\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"66;70;74;78;82;86;90;94;98;102;106;109;113;117;121;125;129;133;137;141;145;149;153;157;161;165;169;173;177;181;185;189;193;192;188;184;180;176;172;168;164;160;156;152;148;144;140;136;132;128;124;120;116;112;108;104;100;96;92;88;84\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;73;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72;72\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"144\" cy=\"88\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"144;139;135;130;125;120;116;111;106;101;97;92;87;83;78;73;68;64;59;54;58;62;67;72;77;81;86;91;95;100;105;110;114;119;124;128;133;138;143;147;152;157;162;166;171;176;180;185;190;194;190;185;180;175;171;166;161;156;152;147;142\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"88;90;91;92;94;95;97;98;100;101;102;104;105;107;108;110;111;112;114;115;117;118;120;121;122;124;125;126;125;123;122;120;119;117;116;115;113;112;110;109;107;106;105;103;102;100;99;97;96;95;93;92;90;89;87;86;85;83;82;80;79\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"81\" cy=\"114\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"81;84;88;91;94;98;101;105;108;112;115;119;122;125;129;132;136;139;143;146;150;153;156;160;163;167;170;174;177;181;184;187;191;194;191;188;184;181;177;174;170;167;163;160;157;153;150;146;143;139;136;132;129;126;122;119;115;112;108;105;101\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"114;117;119;121;123;125;125;123;121;119;117;114;112;110;108;106;104;101;99;97;95;93;91;88;86;84;82;80;78;75;73;71;69;67;65;62;60;58;56;58;60;62;64;66;68;71;73;75;77;79;81;84;86;88;90;92;94;97;99;101;103\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"56\" cy=\"74\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"56;56;61;67;72;77;82;88;93;98;103;109;114;119;124;130;135;140;145;151;156;161;166;172;177;182;187;193;191;186;181;175;170;165;160;154;149;144;139;133;128;123;118;112;107;102;97;91;86;81;76;70;65;60;55;58;63;68;74;79;84\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"74;78;81;85;88;92;95;99;102;105;109;112;116;119;123;126;123;120;116;113;109;106;103;99;96;92;89;85;82;79;75;72;68;65;61;58;57;60;64;67;71;74;77;81;84;88;91;95;98;101;105;108;112;115;119;122;126;124;120;117;113\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"107\" cy=\"64\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"107;107;106;106;106;105;105;105;104;104;104;103;103;102;102;102;101;101;101;100;100;100;99;99;99;98;98;98;97;97;97;96;96;96;95;95;95;94;94;94;93;93;92;92;92;91;91;91;90;90;90;89;89;89;88;88;88;87;87;87;86\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"64;70;77;83;90;96;103;110;116;123;124;117;110;104;97;91;84;78;71;64;58;60;66;73;80;86;93;99;106;112;119;126;121;114;108;101;94;88;81;75;68;62;56;63;69;76;82;89;95;102;109;115;122;124;118;111;105;98;92;85;79\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"62\" cy=\"100\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"62;59;55;57;60;64;68;72;76;80;84;88;92;96;100;104;108;112;115;119;123;127;131;135;139;143;147;151;155;159;163;167;170;174;178;182;186;190;194;191;187;183;179;175;171;167;163;159;155;152;148;144;140;136;132;128;124;120;116;112;108\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"100;103;107;111;115;119;122;126;123;119;115;111;107;104;100;96;92;88;85;81;77;73;69;65;62;58;57;61;65;69;73;76;80;84;88;92;95;99;103;107;111;115;118;122;126;123;119;115;111;108;104;100;96;92;89;85;81;77;73;69;66\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"101\" cy=\"105\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"101;96;90;85;79;74;69;63;58;55;60;66;71;77;82;88;93;98;104;109;115;120;126;131;137;142;147;153;158;164;169;175;180;186;191;192;187;181;176;171;165;160;154;149;143;138;132;127;122;116;111;105;100;94;89;83;78;73;67;62;56\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"105;105;105;105;105;105;105;105;105;105;105;105;106;106;106;106;106;106;106;106;106;106;106;106;107;107;107;107;107;107;107;107;107;107;107;107;108;108;108;108;108;108;108;108;108;108;108;108;109;109;109;109;109;109;109;109;109;109;109;109;110\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"181\" cy=\"97\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"181;183;185;187;189;192;194;193;191;188;186;184;182;180;177;175;173;171;169;166;164;162;160;158;155;153;151;149;147;144;142;140;138;136;133;131;129;127;125;122;120;118;116;114;111;109;107;105;103;100;98;96;94;92;89;87;85;83;81;78;76\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"97;100;102;105;108;110;113;116;119;121;124;126;123;120;118;115;112;110;107;104;101;99;96;93;90;88;85;82;79;77;74;71;68;66;63;60;58;56;59;62;65;67;70;73;76;78;81;84;87;89;92;95;97;100;103;106;108;111;114;117;119\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"187\" cy=\"90\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"187;189;191;193;193;191;189;186;184;182;180;178;175;173;171;169;166;164;162;160;158;155;153;151;149;147;144;142;140;138;135;133;131;129;127;124;122;120;118;115;113;111;109;107;104;102;100;98;95;93;91;89;87;84;82;80;78;76;73;71;69\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"90;96;102;108;114;120;126;120;114;108;102;96;90;84;78;72;66;60;57;63;69;75;81;87;93;99;105;111;117;123;123;117;111;105;99;93;87;81;75;69;63;57;60;66;72;78;84;90;96;102;108;114;120;126;120;114;108;102;96;90;84\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"135\" cy=\"107\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"><animate attributeName=\"cx\" values=\"135;138;141;144;148;151;154;157;160;163;166;169;172;176;179;182;185;188;191;194;191;188;185;182;179;176;173;170;167;163;160;157;154;151;148;145;142;139;135;132;129;126;123;120;117;114;111;108;104;101;98;95;92;89;86;83;80;76;73;70;67\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"107;104;101;99;96;93;90;87;84;81;78;75;73;70;67;64;61;58;56;59;62;65;67;70;73;76;79;82;85;88;91;93;96;99;102;105;108;111;114;117;119;122;125;125;122;119;116;113;110;107;105;102;99;96;93;90;87;84;81;79;76\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"124\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khí nitrogen N₂</text><text x=\"232\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V = 12 lít</text><text x=\"232\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 27 °C</text><text x=\"232\" y=\"82\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p = 2,0·10⁶ Pa</text><text x=\"232\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = 28 g/mol</text><text x=\"232\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">R = 8,31 J/(mol·K)</text><text x=\"232\" y=\"142\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n = ?</text><text x=\"232\" y=\"160\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = ?</text><text x=\"232\" y=\"178\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V₀ = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chuyển động nhiệt của phân tử khí trong bình trong 6 s (phản xạ đàn hồi ở thành). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $n=\\dfrac{m}{M}$; điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, 1 atm): 1 mol chiếm 22,4 lít.</li><li><strong>Định luật:</strong> phương trình Clapeyron – Mendeleev cho một trạng thái của khí.</li><li><strong>Công thức:</strong> $pV=nRT$, $R=8{,}31\\ \\text{J/(mol·K)}$.</li><li>⚠ <strong>Điều kiện:</strong> $R$ này đòi $p$ theo Pa, $V$ theo m³, $T$ theo K.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị sang SI</span></p>$$V=12\\ \\text{lít}=12.10^{-3}\\ \\text{m}^3=0{,}012\\ \\text{m}^3$$$$T=27+273=300\\ \\text{K}$$<p>$p=2{,}0.10^6$ Pa đã đúng đơn vị.</p><div class=\"bt-ans\">$$V=0{,}012\\ \\text{m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số mol khí (câu a)</span></p>$$pV=nRT\\Rightarrow n=\\dfrac{pV}{RT}$$$$n=\\dfrac{2{,}0.10^6\\cdot0{,}012}{8{,}31\\cdot300}=\\dfrac{24000}{2493}$$<div class=\"bt-ans\">$$n\\approx9{,}63\\ \\text{mol}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khối lượng khí (câu b)</span></p>$$m=nM=9{,}63\\cdot28$$<div class=\"bt-ans\">$$m\\approx270\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thể tích ở điều kiện tiêu chuẩn (câu c)</span></p><p>1 mol khí ở $0\\ ^\\circ\\text{C}$, 1 atm chiếm $22{,}4$ lít:</p>$$V_0=n\\cdot22{,}4=9{,}63\\cdot22{,}4$$<div class=\"bt-ans\">$$V_0\\approx216\\ \\text{lít}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Khí đang ở gần $20$ atm nên bị nén: $12$ lít $\\ll216$ lít ở $1$ atm, hợp lí.</p><p>Cách khác, dùng phương trình trạng thái cho cùng lượng khí:</p>$$V_0=\\dfrac{p_1V_1}{T_1}\\cdot\\dfrac{T_0}{p_0}=\\dfrac{2{,}0.10^6\\cdot12}{300}\\cdot\\dfrac{273}{1{,}013.10^5}\\approx216\\ \\text{lít}$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n\\approx9{,}63\\ \\text{mol}$</p><p>b) $m\\approx270\\ \\text{g}$</p><p>c) $V_0\\approx216\\ \\text{lít}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>$p$, $V$, $T$ của một trạng thái</strong> và hỏi số mol, khối lượng → $pV=nRT$, đổi $V$ ra m³ và $T$ ra K.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 192\" role=\"img\" aria-label=\"Dữ kiện: thể tích, nhiệt độ, áp suất, khối lượng mol của khí trong bình\"><rect x=\"40.0\" y=\"42.0\" width=\"168.0\" height=\"98.0\" rx=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"100.0\" y1=\"42.0\" x2=\"100.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"88.0\" y1=\"30.0\" x2=\"112.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><circle cx=\"86\" cy=\"124\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"66\" cy=\"73\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"144\" cy=\"88\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"81\" cy=\"114\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"56\" cy=\"74\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"107\" cy=\"64\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"62\" cy=\"100\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"101\" cy=\"105\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"181\" cy=\"97\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"187\" cy=\"90\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><circle cx=\"135\" cy=\"107\" r=\"3.6\" fill=\"#38bdf8\" opacity=\".9\"/><text x=\"124\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khí nitrogen N₂</text><text x=\"232\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V = 12 lít</text><text x=\"232\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t = 27 °C</text><text x=\"232\" y=\"82\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">p = 2,0·10⁶ Pa</text><text x=\"232\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = 28 g/mol</text><text x=\"232\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">R = 8,31 J/(mol·K)</text><text x=\"232\" y=\"142\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">n = pV/(RT)</text><text x=\"232\" y=\"160\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = n·M</text><text x=\"232\" y=\"178\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V₀ = n·22,4 lít</text></svg><figcaption>Dữ kiện: một trạng thái của khí, cần số mol rồi khối lượng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bình thép dung tích $12$ lít … khí nitrogen ($M=28$ g/mol)\"</td><td>$V=12$ lít; $M=28$ g/mol</td><td>Lượng khí xác định: $n=\\dfrac{m}{M}$</td></tr><tr><td>\"ở $27\\ ^\\circ\\text{C}$, áp suất $2{,}0.10^6$ Pa\"</td><td>$t=27\\ ^\\circ\\text{C}$; $p=2{,}0.10^6$ Pa</td><td>Một trạng thái nên dùng $pV=nRT$; $T=t+273$</td></tr><tr><td>\"Lấy $R=8{,}31$ J/(mol·K)\"</td><td>$R=8{,}31$</td><td>⚠ $R$ này đòi $p$ theo Pa, $V$ theo m³, $T$ theo K</td></tr><tr><td>\"a) Tính số mol khí\"</td><td>Cần $n$</td><td>$n=\\dfrac{pV}{RT}$</td></tr><tr><td>\"b) khối lượng khí nitrogen\"</td><td>Cần $m$</td><td>$m=nM$</td></tr><tr><td>\"c) điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, $1$ atm) chiếm bao nhiêu lít?\"</td><td>Cần $V_0$</td><td>1 mol ở điều kiện tiêu chuẩn chiếm 22,4 lít</td></tr></tbody></table></div>",
+   "nhan_dang": "Đề cho <b>$p$, $V$, $T$ của một trạng thái</b> và hỏi số mol, khối lượng → nghĩ tới <b>$pV=nRT$</b>, đổi $V$ ra m³.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị sang SI",
+     "hoi": "Thể tích bình theo m³ là bao nhiêu?",
+     "dap_so": 0.012,
+     "sai_so": 0.0005,
+     "don_vi": "m³",
+     "loi_hay_gap": "Quên đổi lít sang m³ (lấy $V=12$) làm $n$ lớn gấp $1000$ lần; hoặc đổi sai thành $0{,}12\\ \\text{m}^3$."
+    },
+    {
+     "tieu_de": "Số mol khí",
+     "hoi": "Số mol khí trong bình là bao nhiêu?",
+     "dap_so": 9.63,
+     "sai_so": 0.05,
+     "don_vi": "mol",
+     "loi_hay_gap": "Dùng $V=12$ (lít) với $R=8{,}31$ làm $n$ lớn gấp $1000$ lần; hoặc dùng $t=27$ thay cho $T=300$ K.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n=\\dfrac{pV}{RT}$ với $V$ theo m³ và $T$ theo K",
+       "dung": true
+      },
+      {
+       "text": "$n=\\dfrac{pV}{RT}$ giữ $V$ theo lít",
+       "dung": false,
+       "vi_sao": "$R=8{,}31$ J/(mol·K) đòi $V$ theo m³; để lít sẽ sai $1000$ lần."
+      },
+      {
+       "text": "$n=\\dfrac{RT}{pV}$",
+       "dung": false,
+       "vi_sao": "Lật ngược: $n$ tỉ lệ thuận với $p$ và $V$, không phải với $T$ ở tử số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng khí",
+     "hoi": "Khối lượng khí nitrogen trong bình là bao nhiêu gam?",
+     "dap_so": 270,
+     "sai_so": 2,
+     "don_vi": "g",
+     "loi_hay_gap": "Chia thay vì nhân ($m=\\dfrac{n}{M}$), hoặc đọc kết quả là kilôgam.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m=nM$ với $M=28$ g/mol cho ra gam",
+       "dung": true
+      },
+      {
+       "text": "$m=\\dfrac{n}{M}$",
+       "dung": false,
+       "vi_sao": "Từ $n=\\dfrac{m}{M}$ suy ra $m=nM$; chia cho $M$ là sai đại lượng."
+      },
+      {
+       "text": "$m=nM$ rồi đọc kết quả là kilôgam",
+       "dung": false,
+       "vi_sao": "$M=28$ g/mol nên $nM$ ra gam; muốn kilôgam phải đổi thêm $10^{-3}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích ở điều kiện tiêu chuẩn",
+     "hoi": "Thể tích lượng khí này ở điều kiện tiêu chuẩn là bao nhiêu lít?",
+     "dap_so": 216,
+     "sai_so": 1,
+     "don_vi": "lít",
+     "loi_hay_gap": "Dùng $24{,}79$ lít/mol (điều kiện chuẩn $25\\ ^\\circ\\text{C}$, $1$ bar) hoặc giữ nguyên $12$ lít vì «bình không đổi».",
+     "chon_buoc_ke": [
+      {
+       "text": "$V_0=n\\cdot22{,}4$ lít",
+       "dung": true
+      },
+      {
+       "text": "$V_0=12$ lít vì thể tích bình không đổi",
+       "dung": false,
+       "vi_sao": "Đưa về điều kiện tiêu chuẩn là đổi $p$ và $T$ nên thể tích khí thay đổi, không còn là thể tích bình."
+      },
+      {
+       "text": "$V_0=n\\cdot24{,}79$ lít",
+       "dung": false,
+       "vi_sao": "$24{,}79$ lít/mol ứng với điều kiện chuẩn ($25\\ ^\\circ\\text{C}$, $1$ bar); đề hỏi điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, $1$ atm)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Lượng khí thay đổi: tính khối lượng khí đã dùng",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "problem_html": "<p>Một bình thép dung tích $8{,}0$ lít chứa khí oxygen ($M=32\\ \\text{g/mol}$). Lúc mới nạp, bình ở $27\\ ^\\circ\\text{C}$ và áp suất khí trong bình là $4{,}5.10^6\\ \\text{Pa}$. Sau một thời gian dùng để hàn, van được đóng lại; bình để trong kho ở $17\\ ^\\circ\\text{C}$, áp suất khí còn lại là $1{,}5.10^6\\ \\text{Pa}$. Lấy $R=8{,}31\\ \\text{J/(mol·K)}$, coi oxygen là khí lí tưởng.</p><ol type=\"a\"><li>Tính khối lượng oxygen trong bình lúc mới nạp và lúc còn lại.</li><li>Tính khối lượng oxygen đã dùng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Oxygen trong bình thép được dùng bớt, kim áp kế quay từ 4,5 về 1,5 nhân 10 mũ 6 pascal\"><rect x=\"30.0\" y=\"80.0\" width=\"100.0\" height=\"100.0\" rx=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"80.0\" y1=\"80.0\" x2=\"80.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"68.0\" y=\"50.0\" width=\"24.0\" height=\"12.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"80\" y=\"138\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O₂</text><line x1=\"130.0\" y1=\"130.0\" x2=\"206.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"258.0\" cy=\"130.0\" r=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"227.6\" y1=\"160.4\" x2=\"222.6\" y2=\"165.4\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.5\" y1=\"147.6\" x2=\"211.8\" y2=\"149.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.0\" y1=\"130.0\" x2=\"208.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.5\" y1=\"112.4\" x2=\"211.8\" y2=\"110.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"227.6\" y1=\"99.6\" x2=\"222.6\" y2=\"94.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"240.4\" y1=\"87.5\" x2=\"238.9\" y2=\"83.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"258.0\" y1=\"87.0\" x2=\"258.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"275.6\" y1=\"87.5\" x2=\"277.1\" y2=\"83.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"288.4\" y1=\"99.6\" x2=\"293.4\" y2=\"94.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"300.5\" y1=\"112.4\" x2=\"304.2\" y2=\"110.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"301.0\" y1=\"130.0\" x2=\"308.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"300.5\" y1=\"147.6\" x2=\"304.2\" y2=\"149.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"288.4\" y1=\"160.4\" x2=\"293.4\" y2=\"165.4\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"236.8\" y=\"155.2\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"236.8\" y=\"112.8\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">2</text><text x=\"279.2\" y=\"112.8\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">4</text><text x=\"279.2\" y=\"155.2\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">6</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 258 130;-135.0 258 130\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"258.0\" y1=\"130.0\" x2=\"295.0\" y2=\"114.7\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/></g><circle cx=\"258.0\" cy=\"130.0\" r=\"4\" fill=\"currentColor\"/><text x=\"258\" y=\"198\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">×10⁶ Pa</text><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lúc mới nạp: 27 °C ; 4,5·10⁶ Pa</text><text x=\"16\" y=\"38\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lúc còn lại: 17 °C ; 1,5·10⁶ Pa</text><text x=\"330\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">V = 8,0 lít</text><text x=\"330\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">M = 32 g/mol</text><text x=\"330\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δm = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khí được dùng dần, kim áp kế quay đều từ 4,5·10⁶ Pa về 1,5·10⁶ Pa trong 4 s. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hằng số $\\dfrac{pV}{T}=nR$ gắn với lượng khí (số mol $n$).</li><li><strong>Định luật:</strong> $pV=nRT$ viết được cho từng trạng thái, kể cả khi lượng khí đổi.</li><li><strong>Công thức:</strong> $n=\\dfrac{pV}{RT}$ · $m=nM$</li><li>⚠ <strong>Điều kiện:</strong> lượng khí đã đổi (xả bớt, bơm thêm) thì không dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận ra lượng khí đã đổi</span></p><p>Khí đã được dùng bớt nên lượng khí lúc đầu và lúc sau khác nhau; hằng số $pV/T=nR$ không còn chung.</p><div class=\"bt-ans\"><p>Không dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$; viết $pV=nRT$ riêng cho từng trạng thái.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lúc mới nạp (câu a)</span></p><p>$V=8{,}0$ lít $=8{,}0.10^{-3}\\ \\text{m}^3$; $T_1=27+273=300$ K.</p>$$n_1=\\dfrac{p_1V}{RT_1}=\\dfrac{4{,}5.10^6\\cdot8{,}0.10^{-3}}{8{,}31\\cdot300}=\\dfrac{36000}{2493}$$<div class=\"bt-ans\">$$n_1\\approx14{,}44\\ \\text{mol}$$</div>$$m_1=n_1M=14{,}44\\cdot32$$<div class=\"bt-ans\">$$m_1\\approx462\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lúc còn lại (câu a)</span></p><p>$T_2=17+273=290$ K.</p>$$n_2=\\dfrac{p_2V}{RT_2}=\\dfrac{1{,}5.10^6\\cdot8{,}0.10^{-3}}{8{,}31\\cdot290}=\\dfrac{12000}{2409{,}9}$$<div class=\"bt-ans\">$$n_2\\approx4{,}98\\ \\text{mol}$$</div>$$m_2=n_2M=4{,}98\\cdot32$$<div class=\"bt-ans\">$$m_2\\approx159\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khối lượng đã dùng (câu b)</span></p>$$\\Delta m=m_1-m_2=462-159$$<div class=\"bt-ans\">$$\\Delta m\\approx303\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Khối lượng còn lại $\\dfrac{159}{462}\\approx34{,}4\\%$, gần tỉ số áp suất $\\dfrac{1{,}5}{4{,}5}\\approx33{,}3\\%$; chênh nhẹ vì nhiệt độ hai lần khác nhau ($300$ K và $290$ K).</p><p>Khối lượng đã dùng nhỏ hơn $m_1$: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $m_1\\approx462\\ \\text{g}$ ; $m_2\\approx159\\ \\text{g}$</p><p>b) $\\Delta m\\approx303\\ \\text{g}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>xả bớt, đã dùng</strong> khí → lượng khí đổi, tính $n$ riêng bằng $pV=nRT$ cho từng trạng thái rồi trừ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Dữ kiện: hai trạng thái của bình oxygen trước và sau khi dùng, kim xám là lúc mới nạp\"><rect x=\"30.0\" y=\"80.0\" width=\"100.0\" height=\"100.0\" rx=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"80.0\" y1=\"80.0\" x2=\"80.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"68.0\" y=\"50.0\" width=\"24.0\" height=\"12.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"80\" y=\"138\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O₂</text><line x1=\"130.0\" y1=\"130.0\" x2=\"206.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"258.0\" cy=\"130.0\" r=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"227.6\" y1=\"160.4\" x2=\"222.6\" y2=\"165.4\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.5\" y1=\"147.6\" x2=\"211.8\" y2=\"149.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.0\" y1=\"130.0\" x2=\"208.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"215.5\" y1=\"112.4\" x2=\"211.8\" y2=\"110.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"227.6\" y1=\"99.6\" x2=\"222.6\" y2=\"94.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"240.4\" y1=\"87.5\" x2=\"238.9\" y2=\"83.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"258.0\" y1=\"87.0\" x2=\"258.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"275.6\" y1=\"87.5\" x2=\"277.1\" y2=\"83.8\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"288.4\" y1=\"99.6\" x2=\"293.4\" y2=\"94.6\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"300.5\" y1=\"112.4\" x2=\"304.2\" y2=\"110.9\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"301.0\" y1=\"130.0\" x2=\"308.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"300.5\" y1=\"147.6\" x2=\"304.2\" y2=\"149.1\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"288.4\" y1=\"160.4\" x2=\"293.4\" y2=\"165.4\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"236.8\" y=\"155.2\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"236.8\" y=\"112.8\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">2</text><text x=\"279.2\" y=\"112.8\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">4</text><text x=\"279.2\" y=\"155.2\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"258.0\" y1=\"130.0\" x2=\"295.0\" y2=\"114.7\" stroke=\"#94a3b8\" stroke-width=\"2.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"258.0\" y1=\"130.0\" x2=\"221.0\" y2=\"114.7\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/><circle cx=\"258.0\" cy=\"130.0\" r=\"4\" fill=\"currentColor\"/><text x=\"258\" y=\"198\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">×10⁶ Pa</text><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lúc mới nạp: 27 °C ; 4,5·10⁶ Pa</text><text x=\"16\" y=\"38\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lúc còn lại: 17 °C ; 1,5·10⁶ Pa</text><text x=\"330\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">V = 8,0 lít</text><text x=\"330\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">M = 32 g/mol</text><text x=\"330\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δm = ?</text><text x=\"16\" y=\"206\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">pV = nRT cho từng trạng thái</text></svg><figcaption>Dữ kiện: lượng khí giảm, tính số mol riêng cho từng trạng thái; kim xám là lúc mới nạp. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bình thép dung tích $8{,}0$ lít … khí oxygen ($M=32$ g/mol)\"</td><td>$V=8{,}0$ lít; $M=32$ g/mol</td><td>$n=\\dfrac{m}{M}$; đổi $V$ ra m³</td></tr><tr><td>\"Lúc mới nạp, $27\\ ^\\circ\\text{C}$, $4{,}5.10^6$ Pa\"</td><td>$t_1=27\\ ^\\circ\\text{C}$; $p_1=4{,}5.10^6$ Pa</td><td>Trạng thái 1: $p_1V=n_1RT_1$</td></tr><tr><td>\"Sau một thời gian dùng để hàn … khí còn lại\"</td><td>Lượng khí đã giảm</td><td>⚠ Lượng khí đã đổi: không dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$; tính $n$ riêng cho từng trạng thái</td></tr><tr><td>\"bình để trong kho ở $17\\ ^\\circ\\text{C}$, áp suất còn lại $1{,}5.10^6$ Pa\"</td><td>$t_2=17\\ ^\\circ\\text{C}$; $p_2=1{,}5.10^6$ Pa</td><td>Trạng thái 2: $p_2V=n_2RT_2$</td></tr><tr><td>\"a) khối lượng oxygen lúc mới nạp và lúc còn lại\"</td><td>Cần $m_1$, $m_2$</td><td>$m=nM=\\dfrac{pVM}{RT}$</td></tr><tr><td>\"b) khối lượng oxygen đã dùng\"</td><td>Cần $\\Delta m$</td><td>$\\Delta m=m_1-m_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>xả bớt, đã dùng</b> khí → lượng khí đổi, nghĩ tới <b>$pV=nRT$</b> riêng từng trạng thái, rồi trừ.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận ra lượng khí đã đổi",
+     "hoi": "Có dùng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho hai trạng thái này không?",
+     "lua_chon": [
+      {
+       "text": "Không: lượng khí đã giảm nên phải tính $n$ riêng cho từng trạng thái",
+       "dung": true
+      },
+      {
+       "text": "Có, vì bình thép vẫn kín",
+       "dung": false,
+       "vi_sao": "Bình kín lúc đo, nhưng khí đã được dùng bớt trước đó; hằng số $\\dfrac{pV}{T}=nR$ đã nhỏ đi."
+      },
+      {
+       "text": "Có, vì thể tích bình không đổi",
+       "dung": false,
+       "vi_sao": "Thể tích không đổi chưa đủ; còn phải giữ nguyên lượng khí."
+      }
+     ],
+     "loi_hay_gap": "Thấy bình vẫn kín và thể tích không đổi nên dùng luôn phương trình trạng thái, quên rằng khí đã được dùng bớt."
+    },
+    {
+     "tieu_de": "Lúc mới nạp",
+     "hoi": "Số mol oxygen lúc mới nạp là bao nhiêu?",
+     "dap_so": 14.44,
+     "sai_so": 0.1,
+     "don_vi": "mol",
+     "loi_hay_gap": "Quên đổi lít sang m³, hoặc thế $t=27$ thay cho $T=300$ K.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n_1=\\dfrac{p_1V}{RT_1}$ với $V$ theo m³, $T_1=300$ K",
+       "dung": true
+      },
+      {
+       "text": "Thế $t_1=27$ trực tiếp vào mẫu số",
+       "dung": false,
+       "vi_sao": "$T$ phải đổi ra Kelvin."
+      },
+      {
+       "text": "Dùng $n=\\dfrac{V}{22{,}4}$ cho cả bình",
+       "dung": false,
+       "vi_sao": "Bình không ở điều kiện tiêu chuẩn (đang ở $27\\ ^\\circ\\text{C}$ và áp suất rất lớn)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lúc còn lại",
+     "hoi": "Số mol oxygen còn lại trong bình là bao nhiêu?",
+     "dap_so": 4.98,
+     "sai_so": 0.03,
+     "don_vi": "mol",
+     "loi_hay_gap": "Giữ $T=300$ K cho trạng thái 2, hoặc suy $n_2=n_1\\dfrac{p_2}{p_1}$ (chỉ đúng khi nhiệt độ không đổi) ra $4{,}81$ mol.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n_2=\\dfrac{p_2V}{RT_2}$ với $T_2=290$ K",
+       "dung": true
+      },
+      {
+       "text": "Vẫn dùng $T=300$ K vì cùng một bình",
+       "dung": false,
+       "vi_sao": "Bình đã để trong kho ở $17\\ ^\\circ\\text{C}$, tức $290$ K."
+      },
+      {
+       "text": "$n_2=n_1\\dfrac{p_2}{p_1}$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi nhiệt độ không đổi; ở đây nhiệt độ đã đổi từ $300$ K sang $290$ K."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng đã dùng",
+     "hoi": "Khối lượng oxygen đã dùng là bao nhiêu gam?",
+     "dap_so": 303,
+     "sai_so": 2,
+     "don_vi": "g",
+     "loi_hay_gap": "Lấy hiệu số mol rồi quên nhân $M$, hoặc dùng cùng một nhiệt độ cho hai áp suất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta m=(n_1-n_2)M$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta m=(p_1-p_2)\\dfrac{V}{RT}$ với $T=300$ K",
+       "dung": false,
+       "vi_sao": "Hai áp suất ứng với hai nhiệt độ khác nhau ($300$ K và $290$ K), không dùng chung một $T$; kết quả còn là số mol, thiếu nhân $M$."
+      },
+      {
+       "text": "$\\Delta m=n_1-n_2$",
+       "dung": false,
+       "vi_sao": "Hiệu số mol chưa phải khối lượng; phải nhân $M=32$ g/mol."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

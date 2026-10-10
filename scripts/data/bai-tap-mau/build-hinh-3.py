@@ -1,0 +1,313 @@
+"""Bài tập mẫu Bài 2 "Thang nhiệt độ" (Vật lí 12, lesson_id 3) — 6 dạng theo ket-qua/3.quet-dang.json.
+Chạy: python3 scripts/data/bai-tap-mau/build-hinh-3.py   (idempotent)"""
+import json, os, sys
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from hinh_3 import *
+
+J = os.path.join(HERE, "3.json")
+
+# ═════════════ ĐỀ CÁC DẠNG (dễ → khó) ═════════════
+DANG = [
+ dict(label="Dạng 1 · Dễ · Chiều truyền nhiệt năng và cân bằng nhiệt",
+      topic="Nhiệt độ và cân bằng nhiệt",
+      problem_html=r"""<p>Một viên bi thép nhỏ được nung tới $120\ ^\circ\text{C}$ rồi thả vào một bể nước rất lớn đang ở $25\ ^\circ\text{C}$. Bể cách nhiệt tốt với bên ngoài và chứa nhiều nhiệt năng hơn viên bi rất nhiều.</p><ol type="a"><li>Viên bi nóng hơn nước bao nhiêu độ?</li><li>Nhiệt năng truyền theo chiều nào?</li><li>Quá trình truyền nhiệt dừng lại khi nào? Lúc đó hai vật ở trạng thái gì?</li></ol>"""),
+ dict(label="Dạng 2 · Dễ · Đổi giữa thang Celsius và thang Kelvin",
+      topic="Thang Celsius và thang Kelvin",
+      problem_html=r"""<p>Làm tròn $T=t+273$ ($T$ tính bằng K, $t$ tính bằng °C).</p><ol type="a"><li>Thân nhiệt bình thường của người là $37\ ^\circ\text{C}$. Tính theo thang Kelvin.</li><li>Heli sôi ở $4{,}22\ \text{K}$ (áp suất khí quyển). Tính theo thang Celsius.</li><li>Thuỷ ngân đông đặc ở $-39\ ^\circ\text{C}$. Tính theo thang Kelvin.</li><li>Một bạn báo đã đo được nhiệt độ $-300\ ^\circ\text{C}$ trong phòng thí nghiệm. Kết quả đó có đáng tin không? Vì sao?</li></ol>"""),
+ dict(label="Dạng 3 · Trung bình · Đổi giữa ba thang Celsius, Kelvin, Fahrenheit",
+      topic="Thang Celsius và thang Kelvin",
+      problem_html=r"""<p>Dùng $t_F=1{,}8\,t+32$ ($t_F$ tính bằng °F, $t$ tính bằng °C) và $T=t+273$.</p><ol type="a"><li>Công thức làm bánh nhập từ Mỹ yêu cầu nướng ở $374\ ^\circ\text{F}$. Tính nhiệt độ nướng theo °C.</li><li>Nhiệt kế y tế hiện $98{,}6\ ^\circ\text{F}$. Tính thân nhiệt theo °C, rồi theo K.</li><li>Phòng thí nghiệm ghi nhiệt độ phòng $293\ \text{K}$. Tính nhiệt độ đó theo °F.</li></ol>"""),
+ dict(label="Dạng 4 · Trung bình · Khoảng chênh nhiệt độ trên ba thang",
+      topic="Thang Celsius và thang Kelvin",
+      problem_html=r"""<p>Dự báo thời tiết một ngày ở Hà Nội: thấp nhất $17\ ^\circ\text{C}$, cao nhất $29\ ^\circ\text{C}$. Dùng $T=t+273$ và $t_F=1{,}8\,t+32$.</p><ol type="a"><li>Chênh lệch giữa nhiệt độ cao nhất và thấp nhất là bao nhiêu độ Celsius?</li><li>Chênh lệch đó bằng bao nhiêu kelvin?</li><li>Chênh lệch đó bằng bao nhiêu độ Fahrenheit?</li><li>Bạn An lấy chênh lệch tính ở câu a rồi cộng thêm 273 để ra kelvin. Chỉ ra chỗ sai trong cách làm của An.</li></ol>"""),
+ dict(label="Dạng 5 · Khó · Nhiệt độ ở các thang khác nhau: so sánh và chiều truyền nhiệt",
+      topic="Nhiệt độ và cân bằng nhiệt",
+      problem_html=r"""<p>Ba vật A, B, C được đo bằng ba nhiệt kế khác thang: vật A chỉ $68\ ^\circ\text{F}$, vật B chỉ $293\ \text{K}$, vật C chỉ $25\ ^\circ\text{C}$. Cho ba vật tiếp xúc nhau và không trao đổi nhiệt với bên ngoài. Dùng $T=t+273$ và $t_F=1{,}8\,t+32$.</p><ol type="a"><li>Đổi nhiệt độ của vật A và vật B về °C.</li><li>Xếp ba vật theo nhiệt độ tăng dần.</li><li>Cặp vật nào không trao đổi nhiệt với nhau ngay từ đầu? Nhiệt năng truyền từ vật nào sang vật nào?</li></ol>"""),
+ dict(label="Dạng 6 · Nâng cao · Lập phương trình giữa hai thang",
+      topic="Thang Celsius và thang Kelvin",
+      problem_html=r"""<p>Dùng $t_F=1{,}8\,t+32$ ($t$ là số đọc °C) và $T=t+273$.</p><ol type="a"><li>Ở nhiệt độ nào thì số đọc trên thang Fahrenheit gấp đôi số đọc trên thang Celsius?</li><li>Ở nhiệt độ nào thì hai thang Fahrenheit và Celsius cho cùng một số đọc?</li><li>Ở nhiệt độ nào (tính theo K) thì số đọc trên thang Celsius bằng một nửa số đọc trên thang Kelvin?</li></ol>"""),
+]
+BUILD = [d1, d2, d3, d4, d5, d6]
+
+# ═════════════ BẢNG PHÂN TÍCH ĐỀ ═════════════
+ANALYSIS = [
+ [(r'"cách nhiệt tốt với bên ngoài … nhiều nhiệt năng hơn"', r"Chỉ bi và nước trao đổi nhiệt", r"⚠ Chiều truyền do <strong>nhiệt độ</strong> quyết định, không do lượng nhiệt năng hay khối lượng"),
+  (r'"bi thép … $120\ ^\circ\text{C}$"', r"$t_1=120\ ^\circ\text{C}$", r"Nhiệt độ cho biết mức nóng của vật"),
+  (r'"bể nước … $25\ ^\circ\text{C}$"', r"$t_2=25\ ^\circ\text{C}$", r"Cùng thang Celsius nên so sánh trực tiếp"),
+  (r'"nóng hơn bao nhiêu độ"', r"Cần $\Delta t$", r"$\Delta t=t_1-t_2$"),
+  (r'"nhiệt năng truyền theo chiều nào"', r"So $t_1$ với $t_2$", r"Từ vật nóng hơn sang vật lạnh hơn"),
+  (r'"dừng lại khi nào … trạng thái gì"', r"Điều kiện dừng", r"Hai nhiệt độ bằng nhau → cân bằng nhiệt")],
+ [(r'"Làm tròn $T=t+273$"', r"$T=t+273$ ; $t=T-273$", r"⚠ Đổi <strong>một giá trị</strong> nhiệt độ ; kelvin không âm, thấp nhất $0\ \text{K}=-273{,}15\ ^\circ\text{C}$"),
+  (r'"thân nhiệt … $37\ ^\circ\text{C}$ … theo Kelvin"', r"$t=37\ ^\circ\text{C}$", r"°C → K : $T=t+273$"),
+  (r'"heli sôi ở $4{,}22\ \text{K}$ … theo Celsius"', r"$T=4{,}22\ \text{K}$", r"K → °C : $t=T-273$"),
+  (r'"thuỷ ngân đông đặc ở $-39\ ^\circ\text{C}$"', r"$t=-39\ ^\circ\text{C}$", r"Giữ nguyên dấu âm của $t$ khi cộng"),
+  (r'"đo được $-300\ ^\circ\text{C}$ … có đáng tin không"', r"$t=-300\ ^\circ\text{C}$", r"Đổi sang K rồi so với độ không tuyệt đối")],
+ [(r'"$t_F=1{,}8\,t+32$ … $T=t+273$"', r"Hai công thức đổi", r"⚠ Đổi một <strong>giá trị</strong> nhiệt độ ; K và °F không đổi thẳng cho nhau, phải qua °C"),
+  (r'"nướng ở $374\ ^\circ\text{F}$ … theo °C"', r"$t_F=374\ ^\circ\text{F}$", r"°F → °C : trừ 32 rồi chia 1,8"),
+  (r'"nhiệt kế y tế hiện $98{,}6\ ^\circ\text{F}$ … theo °C, rồi theo K"', r"$t_F=98{,}6\ ^\circ\text{F}$", r"°F → °C rồi °C → K : cộng 273"),
+  (r'"nhiệt độ phòng $293\ \text{K}$ … theo °F"', r"$T=293\ \text{K}$", r"K → °C : trừ 273 ; °C → °F : nhân 1,8 rồi cộng 32")],
+ [(r'"thấp nhất $17\ ^\circ\text{C}$, cao nhất $29\ ^\circ\text{C}$"', r"$t_1=17\ ^\circ\text{C}$ ; $t_2=29\ ^\circ\text{C}$", r"⚠ Đề hỏi <strong>chênh lệch</strong>, không phải một giá trị nhiệt độ : không cộng 273, không cộng 32"),
+  (r'"bao nhiêu độ Celsius"', r"Cần $\Delta t$", r"$\Delta t=t_2-t_1$"),
+  (r'"bao nhiêu kelvin"', r"Cần $\Delta T$", r"$1\ \text{K}$ ứng với $1\ ^\circ\text{C}$ : $\Delta T=\Delta t$"),
+  (r'"bao nhiêu độ Fahrenheit"', r"Cần $\Delta t_F$", r"$1\ ^\circ\text{C}$ ứng với $1{,}8\ ^\circ\text{F}$ : $\Delta t_F=1{,}8\,\Delta t$"),
+  (r'"cộng thêm 273 để ra kelvin … chỗ sai"', r"Phép cộng 273 áp vào chênh lệch", r"273 dùng cho loại đại lượng nào : giá trị hay khoảng chênh ?")],
+ [(r'"không trao đổi nhiệt với bên ngoài"', r"Chỉ A, B, C trao đổi với nhau", r"⚠ Chiều truyền chỉ do <strong>nhiệt độ thật</strong> ; số đọc ở các thang khác nhau không so thẳng được"),
+  (r'"vật A chỉ $68\ ^\circ\text{F}$"', r"$t_F=68\ ^\circ\text{F}$", r"°F → °C : trừ 32 rồi chia 1,8"),
+  (r'"vật B chỉ $293\ \text{K}$"', r"$T=293\ \text{K}$", r"K → °C : trừ 273"),
+  (r'"vật C chỉ $25\ ^\circ\text{C}$"', r"$t=25\ ^\circ\text{C}$", r"Đã ở °C, dùng làm thang chung để so sánh"),
+  (r'"xếp ba vật theo nhiệt độ tăng dần"', r"So ba số cùng thang", r"Chỉ so sánh khi cùng một thang"),
+  (r'"cặp nào không trao đổi nhiệt … truyền từ vật nào sang vật nào"', r"So từng cặp", r"Bằng nhau → cân bằng nhiệt, không truyền ; khác nhau → từ cao sang thấp")],
+ [(r'"Dùng $t_F=1{,}8\,t+32$ … $T=t+273$"', r"Mỗi thang có một số đọc", r"⚠ Cùng một nhiệt độ nhưng <strong>số đọc ở các thang khác nhau</strong> : viết cả hai vế theo cùng một biến rồi mới lập phương trình"),
+  (r'"số đọc Fahrenheit gấp đôi số đọc Celsius"', r"$t_F=2t$", r"Thay $t_F=1{,}8\,t+32$ → phương trình bậc nhất ẩn $t$"),
+  (r'"hai thang … cùng một số đọc"', r"$t_F=t$", r"Thay $t_F=1{,}8\,t+32$ → phương trình bậc nhất ẩn $t$"),
+  (r'"Celsius bằng một nửa số đọc Kelvin"', r"$t=\dfrac{T}{2}$", r"Thay $t=T-273$ → phương trình bậc nhất ẩn $T$")],
+]
+
+# ═════════════ LỜI GIẢI (mỗi bước một khối, mỗi công thức một dòng) ═════════════
+R1 = [r"<strong>Khái niệm:</strong> nhiệt độ cho biết mức nóng của vật, trạng thái cân bằng nhiệt và chiều truyền nhiệt năng.",
+      r"<strong>Quy luật:</strong> hai vật tiếp xúc, chênh nhiệt độ thì nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn.",
+      r"Hai nhiệt độ bằng nhau thì ngừng truyền : hai vật ở trạng thái cân bằng nhiệt.",
+      r"⚠ <strong>Điều kiện:</strong> chiều truyền do nhiệt độ quyết định, không do khối lượng, chất liệu hay lượng nhiệt năng ; hệ không trao đổi nhiệt với bên ngoài."]
+R2 = [r"<strong>Khái niệm:</strong> thang Celsius lấy nước đá tan làm $0$ ; thang Kelvin lấy độ không tuyệt đối làm $0$ ($0\ \text{K}=-273{,}15\ ^\circ\text{C}$).",
+      r"<strong>Công thức:</strong> $T=t+273$ ; $t=T-273$ (làm tròn từ $273{,}15$).",
+      r"Kí hiệu K, không viết °K ; kelvin không bao giờ âm.",
+      r"⚠ <strong>Điều kiện:</strong> công thức này đổi một <strong>giá trị</strong> nhiệt độ, không dùng cho khoảng chênh."]
+R3 = [r"<strong>Khái niệm:</strong> thang Fahrenheit lấy nước đá tan $32\ ^\circ\text{F}$, nước sôi $212\ ^\circ\text{F}$, chia $180$ khoảng ; $1\ ^\circ\text{C}$ ứng với $1{,}8\ ^\circ\text{F}$.",
+      r"<strong>Công thức:</strong> $t_F=1{,}8\,t+32$ ; $t=\dfrac{t_F-32}{1{,}8}$ ; $T=t+273$.",
+      r"K và °F không đổi thẳng cho nhau : luôn đi qua °C.",
+      r"⚠ <strong>Điều kiện:</strong> đổi một giá trị nhiệt độ ; đi từ °C : nhân $1{,}8$ rồi cộng $32$, đi về °C : trừ $32$ rồi chia $1{,}8$."]
+R4 = [r"<strong>Khái niệm:</strong> chênh lệch (khoảng chênh) $\Delta$ là hiệu hai nhiệt độ, khác một giá trị nhiệt độ.",
+      r"<strong>Công thức:</strong> $\Delta t=t_2-t_1$ ; $\Delta T=\Delta t$ ; $\Delta t_F=1{,}8\,\Delta t$.",
+      r"Khoảng chia Celsius và Kelvin bằng nhau ; $100$ khoảng Celsius ứng với $180$ khoảng Fahrenheit.",
+      r"⚠ <strong>Điều kiện:</strong> với khoảng chênh không cộng $273$, không cộng $32$ (hai số này là độ lệch gốc, triệt tiêu khi lấy hiệu)."]
+R5 = [r"<strong>Khái niệm:</strong> chiều truyền nhiệt năng và cân bằng nhiệt do nhiệt độ thật của vật quyết định.",
+      r"<strong>Quy luật:</strong> nóng hơn → lạnh hơn ; bằng nhau thì không truyền (cân bằng nhiệt).",
+      r"<strong>Công thức:</strong> $t=\dfrac{t_F-32}{1{,}8}$ ; $t=T-273$.",
+      r"⚠ <strong>Điều kiện:</strong> chỉ so sánh nhiệt độ khi cùng một thang ; số đọc lớn ở thang này chưa chắc nóng hơn."]
+R6 = [r"<strong>Khái niệm:</strong> mỗi nhiệt độ có một số đọc ở mỗi thang ; hai số đọc liên hệ bậc nhất.",
+      r"<strong>Công thức:</strong> $t_F=1{,}8\,t+32$ ; $t=T-273$.",
+      r"Đề cho quan hệ giữa hai số đọc → thay công thức đổi để được phương trình một ẩn.",
+      r"⚠ <strong>Điều kiện:</strong> chọn một ẩn duy nhất ; kiểm lại nghiệm bằng cách đổi thuận."]
+
+SOLS = [
+ sol(R1, [
+  ("So sánh hai nhiệt độ", [P("Hai nhiệt độ cùng thang Celsius nên trừ trực tiếp:"), M(r"\Delta t=t_1-t_2=120-25"), A(r"\Delta t=95\ ^\circ\text{C}\gt0"), P("Viên bi nóng hơn nước.")]),
+  ("Chiều truyền nhiệt năng", [P("Chiều truyền do nhiệt độ quyết định, không do lượng nhiệt năng:"), M(r"t_1=120\ ^\circ\text{C}\gt t_2=25\ ^\circ\text{C}"),
+     A("T:Nhiệt năng truyền từ <strong>viên bi sang nước</strong>."), P("Bể chứa nhiều nhiệt năng hơn nhưng lạnh hơn, nên không truyền ngược cho viên bi.")]),
+  ("Điều kiện ngừng truyền", [P("Nhiệt năng ngừng truyền khi hai nhiệt độ bằng nhau:"), M(r"t_{\text{bi}}=t_{\text{nước}}"),
+     A("T:Hai vật ở trạng thái <strong>cân bằng nhiệt</strong>."), P(r"Nhiệt độ chung nằm giữa $25\ ^\circ\text{C}$ và $120\ ^\circ\text{C}$.")]),
+  ("Kiểm tra", [P("Giống thí nghiệm trộn nước nóng với nước lạnh : nhiệt độ chung nằm giữa hai nhiệt độ đầu."),
+     P("Kết luận không đổi dù bể nhiều nhiệt năng hơn : chỉ nhiệt độ quyết định chiều truyền.")])],
+  [r"a) bi nóng hơn nước $95\ ^\circ\text{C}$", r"b) từ viên bi sang nước", r"c) khi hai nhiệt độ bằng nhau ; hai vật ở trạng thái cân bằng nhiệt"],
+  r"Nhận dạng: đề cho <strong>hai vật tiếp xúc kèm nhiệt độ</strong> → so nhiệt độ, không so khối lượng hay lượng nhiệt năng ; nóng sang lạnh, bằng nhau thì dừng."),
+ sol(R2, [
+  ("Thân nhiệt sang Kelvin", [P("Đổi một giá trị từ °C sang K : cộng $273$."), M(r"T=t+273=37+273"), A(r"T=310\ \text{K}")]),
+  ("Heli sang Celsius", [P("Từ K sang °C : trừ $273$."), M(r"t=T-273=4{,}22-273"), A(r"t\approx-268{,}8\ ^\circ\text{C}"),
+     P(r"Dùng $273{,}15$ ra $-268{,}93\ ^\circ\text{C}$ ; hai cách chênh nhau chưa tới $0{,}2\ ^\circ\text{C}$.")]),
+  ("Thuỷ ngân sang Kelvin", [P("Giữ nguyên dấu âm của $t$ khi cộng :"), M(r"T=t+273=-39+273"), A(r"T=234\ \text{K}")]),
+  ("Nhiệt độ $-300\\ ^\\circ\\text{C}$", [P("Đổi sang K để so với độ không tuyệt đối :"), M(r"T=-300+273=-27\ \text{K}\lt0"),
+     P(r"Kelvin không âm ; nhiệt độ thấp nhất là $0\ \text{K}=-273{,}15\ ^\circ\text{C}$."), A("T:Không đáng tin : thấp hơn độ không tuyệt đối.")]),
+  ("Kiểm tra", [P(r"Đổi ngược : $310-273=37$ ✓ ; $234-273=-39$ ✓."),
+     P(r"Ba nhiệt độ hợp lệ đều dương trên thang Kelvin ✓ ; heli sôi ở $4{,}22\ \text{K}\approx-269\ ^\circ\text{C}$ là cực lạnh ✓.")])],
+  [r"a) $T=310\ \text{K}$", r"b) $t\approx-268{,}8\ ^\circ\text{C}$", r"c) $T=234\ \text{K}$", r"d) không đáng tin (thấp hơn $0\ \text{K}$)"],
+  r"Nhận dạng: đề cho <strong>nhiệt độ ở một thang</strong>, hỏi thang kia (°C ↔ K) → cộng hoặc trừ $273$ cho <strong>một giá trị</strong> ; kết quả kelvin âm là vô lí."),
+ sol(R3, [
+  ("Nhiệt độ nướng sang Celsius", [P("Từ °F về °C : trừ $32$ trước, chia $1{,}8$ sau."), M(r"t=\dfrac{t_F-32}{1{,}8}=\dfrac{374-32}{1{,}8}=\dfrac{342}{1{,}8}"), A(r"t=190\ ^\circ\text{C}")]),
+  ("Thân nhiệt sang Celsius", [M(r"t=\dfrac{98{,}6-32}{1{,}8}=\dfrac{66{,}6}{1{,}8}"), A(r"t=37\ ^\circ\text{C}")]),
+  ("Thân nhiệt sang Kelvin", [P("Cộng $273$ vào số đo Celsius vừa tìm :"), M(r"T=t+273=37+273"), A(r"T=310\ \text{K}")]),
+  ("Nhiệt độ phòng sang Fahrenheit", [P("Kelvin không đổi thẳng sang °F ; về °C trước :"), M(r"t=T-273=293-273=20\ ^\circ\text{C}"),
+     P("Rồi sang °F :"), M(r"t_F=1{,}8\,t+32=1{,}8\cdot20+32=36+32"), A(r"t_F=68\ ^\circ\text{F}")]),
+  ("Kiểm tra", [P(r"Đổi ngược : $1{,}8\cdot190+32=342+32=374$ ✓ ; $1{,}8\cdot37+32=66{,}6+32=98{,}6$ ✓."),
+     P(r"$37\ ^\circ\text{C}$, $310\ \text{K}$, $98{,}6\ ^\circ\text{F}$ là ba cách ghi một thân nhiệt ✓."),
+     P(r"Hợp lí : $190\ ^\circ\text{C}$ là nhiệt độ nướng bánh thông dụng ; $68\ ^\circ\text{F}$ là phòng mát.")])],
+  [r"a) $190\ ^\circ\text{C}$", r"b) $37\ ^\circ\text{C}$ ; $310\ \text{K}$", r"c) $68\ ^\circ\text{F}$"],
+  r"Nhận dạng: đề có <strong>°F</strong> hoặc đổi <strong>K ↔ °F</strong> → luôn đi qua °C : về °C (trừ 32 chia 1,8 hoặc trừ 273), rồi sang thang cần tìm."),
+ sol(R4, [
+  ("Chênh lệch trên thang Celsius", [M(r"\Delta t=t_2-t_1=29-17"), A(r"\Delta t=12\ ^\circ\text{C}")]),
+  ("Chênh lệch trên thang Kelvin", [P(r"Khoảng chia hai thang bằng nhau : $1\ \text{K}$ ứng với $1\ ^\circ\text{C}$ nên số không đổi :"), M(r"\Delta T=\Delta t"), A(r"\Delta T=12\ \text{K}")]),
+  ("Chênh lệch trên thang Fahrenheit", [P(r"$1\ ^\circ\text{C}$ ứng với $1{,}8\ ^\circ\text{F}$, không cộng $32$ :"), M(r"\Delta t_F=1{,}8\,\Delta t=1{,}8\cdot12"), A(r"\Delta t_F=21{,}6\ ^\circ\text{F}")]),
+  ("Chỗ sai của bạn An", [P(r"An cộng $273$ vào một <strong>khoảng chênh</strong>. $273$ là độ lệch giữa hai gốc, chỉ dùng khi đổi một <strong>giá trị</strong> nhiệt độ."),
+     P("Khi lấy hiệu hai nhiệt độ, hai số $273$ triệt tiêu :"), M(r"(t_2+273)-(t_1+273)=t_2-t_1"), A("T:Chênh lệch trên thang Kelvin vẫn bằng chênh lệch trên thang Celsius.")]),
+  ("Kiểm tra", [P(r"Đổi từng đầu : $17\ ^\circ\text{C}=62{,}6\ ^\circ\text{F}$ ; $29\ ^\circ\text{C}=84{,}2\ ^\circ\text{F}$."), M(r"84{,}2-62{,}6=21{,}6\ ^\circ\text{F}"),
+     P(r"✓ Khớp. Đổi từng đầu sang kelvin : $302-290=12\ \text{K}$ ✓.")])],
+  [r"a) $12\ ^\circ\text{C}$", r"b) $12\ \text{K}$", r"c) $21{,}6\ ^\circ\text{F}$", r"d) cộng $273$ vào khoảng chênh là sai"],
+  r"Nhận dạng: đề hỏi <strong>chênh lệch / tăng / giảm bao nhiêu độ</strong> → K bằng °C, °F bằng $1{,}8\times$°C ; không cộng 273, không cộng 32."),
+ sol(R5, [
+  ("Vật A về Celsius", [M(r"t_A=\dfrac{68-32}{1{,}8}=\dfrac{36}{1{,}8}"), A(r"t_A=20\ ^\circ\text{C}")]),
+  ("Vật B về Celsius", [P("Đã là kelvin, trừ $273$ :"), M(r"t_B=293-273"), A(r"t_B=20\ ^\circ\text{C}")]),
+  ("Xếp theo nhiệt độ", [P(r"Cả ba đã cùng thang Celsius : $t_A=20\ ^\circ\text{C}$ ; $t_B=20\ ^\circ\text{C}$ ; $t_C=25\ ^\circ\text{C}$."), M(r"t_A=t_B\lt t_C"),
+     A("T:Thứ tự tăng dần : A và B bằng nhau, rồi đến C."), P("So thẳng các số đọc ($68$, $293$, $25$) sẽ ra thứ tự sai.")]),
+  ("Chiều truyền nhiệt", [P(r"A và B cùng $20\ ^\circ\text{C}$ : đã cân bằng nhiệt, không trao đổi nhiệt với nhau."), P(r"C nóng hơn ($25\ ^\circ\text{C}\gt20\ ^\circ\text{C}$) : nhiệt năng truyền từ C sang A và sang B."),
+     A("T:C truyền cho A và B ; A với B không trao đổi nhiệt."), P(r"Khi cả ba cân bằng, nhiệt độ chung nằm giữa $20\ ^\circ\text{C}$ và $25\ ^\circ\text{C}$.")]),
+  ("Kiểm tra", [P(r"Đổi ngược : $1{,}8\cdot20+32=68$ ✓ ; $20+273=293$ ✓."),
+     P(r"Số đọc lớn nhất là $293$ (vật B) nhưng B không nóng nhất ✓ : thang khác nhau thì số đọc không so thẳng được.")])],
+  [r"a) $t_A=t_B=20\ ^\circ\text{C}$", r"b) $A=B\lt C$", r"c) A và B không trao đổi nhiệt ; nhiệt năng truyền từ C sang A và B"],
+  r"Nhận dạng: đề cho <strong>nhiều nhiệt độ ở nhiều thang</strong> → đổi hết về một thang rồi so ; cùng nhiệt độ thì không truyền, khác nhau thì từ cao sang thấp."),
+ sol(R6, [
+  ("Lập phương trình câu a", [P("Số đọc °F gấp đôi số đọc °C :"), M(r"t_F=2t"), P(r"Thay $t_F=1{,}8\,t+32$ :"), A(r"1{,}8\,t+32=2t")]),
+  ("Giải câu a", [P("Chuyển các số hạng chứa $t$ về một vế :"), M(r"32=2t-1{,}8\,t=0{,}2\,t"), M(r"t=\dfrac{32}{0{,}2}"), A(r"t=160\ ^\circ\text{C}")]),
+  ("Giải câu b", [P(r"Cùng số đọc : $t_F=t$."), M(r"1{,}8\,t+32=t"), M(r"32=t-1{,}8\,t=-0{,}8\,t"), M(r"t=\dfrac{32}{-0{,}8}"), A(r"t=-40\ ^\circ\text{C}")]),
+  ("Giải câu c", [P(r"Số đọc Celsius bằng nửa số đọc Kelvin : $t=\dfrac{T}{2}$ với $t=T-273$."), M(r"T-273=\dfrac{T}{2}"), M(r"T-\dfrac{T}{2}=273\Rightarrow\dfrac{T}{2}=273"), A(r"T=546\ \text{K}")]),
+  ("Kiểm tra", [P(r"Câu a : $t_F=1{,}8\cdot160+32=320=2\cdot160$ ✓."), P(r"Câu b : $1{,}8\cdot(-40)+32=-72+32=-40$ ✓."),
+     P(r"Câu c : $t=546-273=273\ ^\circ\text{C}=\dfrac{546}{2}$ ✓.")])],
+  [r"a) $t=160\ ^\circ\text{C}$ (khi đó $t_F=320\ ^\circ\text{F}$)", r"b) $t=-40\ ^\circ\text{C}$", r"c) $T=546\ \text{K}$ (khi đó $t=273\ ^\circ\text{C}$)"],
+  r"Nhận dạng: đề cho <strong>quan hệ giữa hai số đọc</strong> (gấp đôi, bằng nhau, một nửa) → thay công thức đổi để được phương trình một ẩn, rồi thử lại."),
+]
+
+# ═════════════ TỰ GIẢI TỪNG BƯỚC ═════════════
+STEPS = [
+ # ── Dạng 1 ──
+ dict(nhan_dang=r"Thấy <b>hai vật tiếp xúc</b> kèm nhiệt độ → so <b>nhiệt độ</b>, nóng truyền sang lạnh, bằng nhau thì dừng.",
+  cap_do=1, fading="mo_het", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("So sánh hai nhiệt độ", "Viên bi nóng hơn nước bao nhiêu độ Celsius?", 95, "°C", 0.5,
+       loi=r"Cộng hai nhiệt độ thay vì lấy hiệu."),
+  buoc("Chiều truyền nhiệt năng", "Nhiệt năng truyền theo chiều nào?",
+       loi=r"Chọn chiều từ bể sang viên bi vì bể «chứa nhiều nhiệt năng hơn» — lẫn nhiệt độ với lượng nhiệt năng.",
+       lua_chon=[(r"Từ viên bi sang nước", True),
+                 (r"Từ nước sang viên bi, vì bể chứa nhiều nhiệt năng hơn", r"Chiều truyền do nhiệt độ quyết định, không do lượng nhiệt năng : bể lạnh hơn nên không truyền cho vật nóng hơn."),
+                 (r"Không truyền, vì hai vật khác chất", r"Hai vật khác chất vẫn truyền nhiệt khi chênh nhiệt độ ; chất liệu không quyết định chiều truyền.")],
+       ke=[(r"Xét vật nào có nhiệt độ cao hơn", True),
+           (r"Xét vật nào chứa nhiều nhiệt năng hơn", r"Lượng nhiệt năng nhiều hay ít không quyết định chiều truyền ; chỉ nhiệt độ quyết định."),
+           (r"Xét vật nào có khối lượng lớn hơn", r"Khối lượng không quyết định chiều truyền nhiệt ; so nhiệt độ mới đúng.")]),
+  buoc("Điều kiện ngừng truyền", "Quá trình truyền nhiệt dừng lại khi nào?",
+       loi=r"Cho rằng bi phải nguội về 0 °C hoặc phải hết nhiệt năng thì mới ngừng.",
+       lua_chon=[(r"Khi hai vật có cùng nhiệt độ — cân bằng nhiệt", True),
+                 (r"Khi viên bi nguội về $0\ ^\circ\text{C}$", r"Nhiệt độ cuối nằm giữa hai nhiệt độ đầu, không về $0\ ^\circ\text{C}$."),
+                 (r"Khi viên bi hết nhiệt năng", r"Vật không bao giờ hết nhiệt năng ; sự truyền dừng khi hai nhiệt độ bằng nhau.")],
+       ke=[(r"Hỏi hai nhiệt độ đã bằng nhau chưa", True),
+           (r"Hỏi viên bi còn nóng hơn $0\ ^\circ\text{C}$ không", r"$0\ ^\circ\text{C}$ không phải mốc dừng ; nhiệt năng chỉ ngừng truyền khi hai vật cùng nhiệt độ."),
+           (r"Hỏi nước đã nhiều nhiệt năng bằng bi chưa", r"Lượng nhiệt năng không quyết định ; điều kiện dừng là bằng nhiệt độ.")]),
+  buoc("Kiểm tra")]),
+ # ── Dạng 2 ──
+ dict(nhan_dang=r"Thấy <b>nhiệt độ ở một thang</b>, hỏi thang kia (°C ↔ K) → <b>cộng hoặc trừ 273</b> cho một giá trị.",
+  cap_do=1, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Thân nhiệt sang Kelvin", "Thân nhiệt người ($37\\ ^\\circ\\text{C}$) bằng bao nhiêu kelvin?", 310, "K", 0.5,
+       loi=r"Trừ 273 thay vì cộng, hoặc giữ nguyên số vì cho rằng hai thang chỉ khác ký hiệu."),
+  buoc("Heli sang Celsius", "Nhiệt độ sôi của heli ($4{,}22\\ \\text{K}$) bằng bao nhiêu độ Celsius?", -268.8, "°C", 0.2,
+       loi=r"Cộng 273 như khi đi từ °C sang K — đi ngược chiều thì phải trừ.",
+       ke=[(r"Trừ 273 : $t=T-273$", True),
+           (r"Cộng 273 : $t=T+273$", r"Cộng 273 là đi từ °C sang K ; muốn ra °C phải trừ."),
+           (r"Giữ nguyên số vì hai thang chia khoảng bằng nhau", r"Khoảng chia bằng nhau nhưng gốc lệch $273$ độ nên số đọc khác nhau.")]),
+  buoc("Thuỷ ngân sang Kelvin", "Thuỷ ngân đông đặc ở $-39\\ ^\\circ\\text{C}$ ứng với bao nhiêu kelvin?", 234, "K", 0.5,
+       loi=r"Bỏ dấu âm rồi cộng, như thể nhiệt độ là dương.",
+       ke=[(r"Cộng 273 cho cả số âm : $T=-39+273$", True),
+           (r"Bỏ dấu âm rồi cộng : $T=39+273$", r"Dấu âm là một phần của giá trị ; bỏ đi thì ra nhiệt độ cao hơn nhiều so với thật."),
+           (r"Số âm trong Celsius thì không đổi sang Kelvin được", r"Số âm trong Celsius vẫn đổi bình thường ; chỉ cần kết quả kelvin không âm.")]),
+  buoc("Nhiệt độ −300 °C", "Kết quả đo $-300\\ ^\\circ\\text{C}$ có đáng tin không?",
+       loi=r"Cho rằng Celsius có số âm nên âm bao nhiêu cũng được.",
+       lua_chon=[(r"Không : ứng với kelvin âm, thấp hơn độ không tuyệt đối", True),
+                 (r"Có, vì thang Celsius cho phép số âm tuỳ ý", r"Celsius có số âm nhưng không thấp hơn $-273{,}15\ ^\circ\text{C}$ (chính là $0\ \text{K}$)."),
+                 (r"Có, nếu làm lạnh bằng nitơ lỏng", r"Nitơ lỏng chỉ xuống khoảng $-196\ ^\circ\text{C}$ ; không cách nào xuống dưới $0\ \text{K}$.")],
+       ke=[(r"Đổi sang kelvin rồi so với $0\ \text{K}$", True),
+           (r"So với $0\ ^\circ\text{C}$ : âm thì chắc chắn đo được", r"$0\ ^\circ\text{C}$ không phải mốc thấp nhất ; mốc thấp nhất là $0\ \text{K}$."),
+           (r"So với $100\ ^\circ\text{C}$ : nhỏ hơn thì hợp lí", r"$100\ ^\circ\text{C}$ là mốc nước sôi, không liên quan đến giới hạn dưới của nhiệt độ.")]),
+  buoc("Kiểm tra")]),
+ # ── Dạng 3 ──
+ dict(nhan_dang=r"Thấy <b>°F</b> hoặc đổi <b>K ↔ °F</b> → luôn đi <b>qua °C</b> : trừ 32 chia 1,8 hoặc trừ 273, rồi sang thang cần tìm.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Nhiệt độ nướng sang Celsius", "Nhiệt độ nướng ($374\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?", 190, "°C", 0.5,
+       loi=r"Dùng thẳng công thức °C → °F (nhân 1,8 cộng 32) cho chiều ngược lại."),
+  buoc("Thân nhiệt sang Celsius", "Thân nhiệt ($98{,}6\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?", 37, "°C", 0.1,
+       loi=r"Chia 1,8 trước rồi mới trừ 32 — sai thứ tự phép ngược.",
+       ke=[(r"Trừ 32 rồi chia cho 1,8", True),
+           (r"Chia cho 1,8 rồi mới trừ 32", r"Muốn gỡ $t_F=1{,}8\,t+32$ phải làm ngược thứ tự : trừ $32$ trước, chia $1{,}8$ sau."),
+           (r"Nhân 1,8 rồi cộng 32 như khi đi từ °C sang °F", r"Đó là chiều °C → °F ; đi ngược lại phải làm các phép ngược.")]),
+  buoc("Thân nhiệt sang Kelvin", "Thân nhiệt đó bằng bao nhiêu kelvin?", 310, "K", 0.5,
+       loi=r"Cộng 273 vào số °F ban đầu thay vì số °C vừa tìm.",
+       ke=[(r"Cộng 273 vào số đo Celsius vừa tìm", True),
+           (r"Cộng 273 vào số đo Fahrenheit ban đầu", r"273 chỉ cộng vào số đo Celsius ; số °F thuộc một thang khác."),
+           (r"Nhân 1,8 rồi cộng 273", r"Hệ số 1,8 chỉ có giữa Celsius và Fahrenheit, không có giữa Celsius và Kelvin.")]),
+  buoc("Nhiệt độ phòng sang Fahrenheit", "Nhiệt độ phòng ($293\\ \\text{K}$) bằng bao nhiêu độ Fahrenheit?", 68, "°F", 0.5,
+       loi=r"Nhân 1,8 cộng 32 thẳng vào số kelvin — công thức °F dùng số đo Celsius.",
+       ke=[(r"Về °C trước (trừ 273), rồi nhân 1,8 cộng 32", True),
+           (r"Nhân 1,8 cộng 32 thẳng vào số kelvin", r"Công thức °F dùng số đo Celsius, không dùng số kelvin."),
+           (r"Trừ 273 rồi trừ 32", r"Trừ 32 là phép về °C từ °F ; đi sang °F phải nhân 1,8 rồi cộng 32.")]),
+  buoc("Kiểm tra")]),
+ # ── Dạng 4 ──
+ dict(nhan_dang=r"Thấy <b>chênh lệch / tăng / giảm bao nhiêu độ</b> → K bằng °C, °F bằng <b>1,8 × °C</b>, không cộng 273 hay 32.",
+  cap_do=2, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Chênh lệch trên thang Celsius", "Nhiệt độ cao nhất hơn thấp nhất bao nhiêu độ Celsius?", 12, "°C", 0.1,
+       loi=r"Cộng hai nhiệt độ thay vì lấy hiệu."),
+  buoc("Chênh lệch trên thang Kelvin", "Chênh lệch đó bằng bao nhiêu kelvin?", 12, "K", 0.1,
+       loi=r"Cộng 273 vào khoảng chênh, như khi đổi một giá trị nhiệt độ.",
+       ke=[(r"Khoảng chênh kelvin bằng khoảng chênh Celsius, giữ nguyên số", True),
+           (r"Cộng 273 vào khoảng chênh", r"273 là độ lệch giữa hai gốc, chỉ dùng khi đổi một giá trị ; hai đầu cùng cộng 273 nên hiệu không đổi."),
+           (r"Nhân khoảng chênh với 1,8", r"Hệ số 1,8 là của thang Fahrenheit, không phải của thang Kelvin.")]),
+  buoc("Chênh lệch trên thang Fahrenheit", "Chênh lệch đó bằng bao nhiêu độ Fahrenheit?", 21.6, "°F", 0.1,
+       loi=r"Nhân 1,8 rồi còn cộng thêm 32 — số 32 triệt tiêu khi lấy hiệu.",
+       ke=[(r"Nhân khoảng chênh °C với 1,8, không cộng 32", True),
+           (r"Nhân với 1,8 rồi cộng 32", r"32 là độ lệch gốc, chỉ cộng khi đổi một giá trị ; với khoảng chênh thì triệt tiêu."),
+           (r"Cộng 273 rồi nhân 1,8", r"273 thuộc thang Kelvin, không liên quan đến khoảng chênh Fahrenheit.")]),
+  buoc("Chỗ sai của bạn An", "Cách làm của An sai ở chỗ nào?",
+       loi=r"Cho rằng chỉ cần đổi dấu cộng thành trừ là hết sai.",
+       lua_chon=[(r"Cộng 273 vào một khoảng chênh ; 273 chỉ dùng khi đổi một giá trị nhiệt độ", True),
+                 (r"Phải trừ 273 chứ không cộng", r"Trừ 273 cũng sai : khoảng chênh không cần đổi gốc, kelvin giữ nguyên số của Celsius."),
+                 (r"Kelvin không dùng để đo chênh lệch", r"Kelvin đo được khoảng chênh ; chỉ là khoảng chênh kelvin đúng bằng khoảng chênh Celsius.")],
+       ke=[(r"Xét lại phép cộng 273 đã dùng cho khoảng chênh", True),
+           (r"Tính lại hiệu hai nhiệt độ Celsius", r"Hiệu Celsius ở câu a đã đúng ; chỗ sai nằm ở bước sau, khi đổi sang kelvin."),
+           (r"Đổi chênh lệch sang Fahrenheit", r"Chỗ sai của An ở bước sang kelvin, không liên quan đến thang Fahrenheit.")]),
+  buoc("Kiểm tra")]),
+ # ── Dạng 5 ──
+ dict(nhan_dang=r"Thấy <b>nhiều nhiệt độ ở nhiều thang</b> → đổi hết về <b>một thang</b> rồi so ; bằng nhau thì không truyền.",
+  cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Vật A về Celsius", "Vật A ($68\\ ^\\circ\\text{F}$) bằng bao nhiêu độ Celsius?", 20, "°C", 0.2,
+       loi=r"Trừ 273 cho cả số °F, hoặc chia 1,8 trước khi trừ 32."),
+  buoc("Vật B về Celsius", "Vật B ($293\\ \\text{K}$) bằng bao nhiêu độ Celsius?", 20, "°C", 0.2,
+       loi=r"Dùng cách đổi của °F (trừ 32 chia 1,8) cho số kelvin.",
+       ke=[(r"Trừ 273 từ số kelvin", True),
+           (r"Trừ 32 rồi chia 1,8", r"Đó là cách đổi từ °F ; vật B đo bằng kelvin."),
+           (r"Giữ nguyên số vì đều chỉ độ nóng", r"Số đọc ở hai thang khác nhau vì gốc lệch $273$ độ.")]),
+  buoc("Xếp theo nhiệt độ", "Xếp ba vật theo nhiệt độ tăng dần như thế nào?",
+       loi=r"So thẳng ba số đọc 68, 293, 25 mà chưa đổi cùng thang.",
+       lua_chon=[(r"A và B bằng nhau, rồi đến C", True),
+                 (r"C, rồi A, rồi B (theo số đọc nhỏ đến lớn)", r"Ba số đọc ở ba thang khác nhau, so thẳng là vô nghĩa ; phải đổi cùng thang trước."),
+                 (r"A nhỏ hơn B, B nhỏ hơn C", r"A và B cùng nhiệt độ nên không có «A nhỏ hơn B».")],
+       ke=[(r"Đưa cả ba về cùng một thang rồi so sánh", True),
+           (r"So thẳng ba số đọc", r"Ba thang có gốc và độ chia khác nhau, số đọc không so thẳng được."),
+           (r"Cộng 273 vào cả ba số đọc", r"273 chỉ dùng cho số đo Celsius ; A đo bằng °F, B đã là kelvin.")]),
+  buoc("Chiều truyền nhiệt", "Ngay lúc đầu, khi ba vật tiếp xúc, nhiệt năng truyền thế nào?",
+       loi=r"Chọn vật có số đọc lớn nhất làm vật nóng nhất.",
+       lua_chon=[(r"Từ C sang A và B ; A với B không trao đổi nhiệt", True),
+                 (r"Từ B sang A và C, vì B có số đọc lớn nhất", r"Số đọc lớn không có nghĩa nóng hơn khi khác thang : B thật ra nguội hơn C."),
+                 (r"Cả ba trao đổi nhiệt với nhau cho đến khi bằng nhau", r"A và B đã cùng nhiệt độ nên không truyền cho nhau ; chỉ C truyền sang.")],
+       ke=[(r"Chỉ xét chênh lệch nhiệt độ thật giữa từng cặp", True),
+           (r"Chọn vật có số đọc lớn nhất làm vật nóng nhất", r"Số đọc ở các thang khác nhau không so thẳng được."),
+           (r"Chọn vật nặng hơn làm vật truyền nhiệt", r"Chiều truyền do nhiệt độ quyết định, không do khối lượng (đề cũng không cho).")]),
+  buoc("Kiểm tra")]),
+ # ── Dạng 6 ──
+ dict(nhan_dang=r"Thấy <b>quan hệ giữa hai số đọc</b> (gấp đôi, bằng nhau, một nửa) → thay công thức đổi để được <b>phương trình một ẩn</b>.",
+  cap_do=4, fading="giau_het", go_roi={"buoc_hay_sai": 0}, buoc=[
+  buoc("Lập phương trình câu a", "Phương trình nào diễn tả «số đọc °F gấp đôi số đọc °C»?",
+       loi=r"Quên số 32 của công thức đổi, hoặc dùng công thức Kelvin cho đề nói về Fahrenheit.",
+       lua_chon=[(r"$1{,}8\,t+32=2t$", True),
+                 (r"$1{,}8\,t=2t$", r"Quên $+32$ : công thức °C → °F phải có đủ cả $1{,}8$ và $32$."),
+                 (r"$t+273=2t$", r"Đó là thang Kelvin ; đề nói về thang Fahrenheit.")]),
+  buoc("Giải câu a", "Giải phương trình ở câu a : nhiệt độ bằng bao nhiêu độ Celsius?", 160, "°C", 0.5,
+       loi=r"Chia riêng một số hạng cho 2, hoặc bỏ số 32 vì thấy nhỏ.",
+       ke=[(r"Chuyển các số hạng chứa $t$ về một vế rồi chia", True),
+           (r"Chia cả hai vế cho 2 nhưng chỉ chia số hạng $1{,}8\,t$", r"Chia hai vế cho 2 phải chia mọi số hạng, không chia riêng một số hạng."),
+           (r"Bỏ số 32 vì nhỏ so với $1{,}8\,t$", r"Bỏ $32$ làm mất nghiệm ; phải giữ đủ mọi số hạng.")]),
+  buoc("Giải câu b", "Hai thang Fahrenheit và Celsius cho cùng số đọc ở nhiệt độ nào (°C)?", -40, "°C", 0.5,
+       loi=r"Đặt số đọc bằng 0 thay vì đặt hai số đọc bằng nhau.",
+       ke=[(r"Đặt $t_F=t$ rồi giải $1{,}8\,t+32=t$", True),
+           (r"Đặt $t_F=0$ vì đó là nhiệt độ thấp nhất", r"Hai thang cùng số đọc khi số °F bằng số °C, không phải khi bằng $0$."),
+           (r"Đặt $T=t$ vì Kelvin giống Celsius", r"Hai thang đó luôn lệch $273$ độ nên không bao giờ cùng số đọc ; đề hỏi °F và °C.")]),
+  buoc("Giải câu c", "Số đọc Celsius bằng nửa số đọc Kelvin ở nhiệt độ nào (K)?", 546, "K", 1,
+       loi=r"Chỉ chia đôi $t$ mà không chia đôi cả số đọc Kelvin, hoặc đảo gấp đôi với một nửa.",
+       ke=[(r"Lập $T-273=\dfrac{T}{2}$", True),
+           (r"Lập $\dfrac{T}{2}=T+273$", r"Sai chiều đổi : số đọc Celsius là $T-273$, không phải $T+273$."),
+           (r"Lập $T-273=2T$", r"Ngược : Celsius là một nửa Kelvin, không phải gấp đôi.")]),
+  buoc("Kiểm tra")]),
+]
+
+# ═════════════ GHI FILE ═════════════
+write(J, 3, "Bài 2. Thang nhiệt độ", DANG, BUILD, ANALYSIS, SOLS)
+inject(J, BUILD, ANALYSIS, SOLS, STEPS)
+d = json.load(open(J))
+d["generated_at"] = "2026-10-10"
+for k in (0, 4):                               # dạng định tính / chiều truyền: bài tương tự lấy câu ly_thuyet của YCCĐ
+    d["dang_bai"][k]["form"] = "ly_thuyet"
+d["review"] = {"checked": False, "notes": "chờ kiểm chéo (kiem-code) — tự giải lại bằng Python đã khớp"}
+json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
+print("xong", J)

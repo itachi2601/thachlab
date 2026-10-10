@@ -1,0 +1,504 @@
+{
+ "lesson_id": 6,
+ "lesson_title": "Bài 5. Thuyết động học phân tử chất khí",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; sửa vi_sao lựa chọn 2 bước 1 dạng 1, giảm SVG dạng 1 xuống 8,7 KB. Lưu ý: topic 204 chỉ 2 câu bai_tap."
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Đối chiếu phát biểu với thuyết động học phân tử (Brown, áp suất, nhiệt độ)",
+   "topic": "Nội dung thuyết động học phân tử",
+   "problem_html": "<p>Một hộp kín đựng khói hương. Rọi chùm sáng ngang qua hộp và quan sát bằng kính lúp, thấy mỗi hạt khói là một chấm sáng đi theo đường gấp khúc, không dừng lại. Có bốn phát biểu:</p><ol><li>Hạt khói bị phân tử khí va đập từ mọi phía; hai phía không bao giờ cân bằng nên hạt bị đẩy lệch liên tục.</li><li>Chuyển động của hạt khói chứng tỏ các phân tử khí chuyển động hỗn loạn, không ngừng.</li><li>Áp suất của khí lên thành hộp là do trọng lượng của khí đè xuống đáy hộp.</li><li>Nhiệt độ khí càng cao thì các phân tử khí chuyển động càng chậm.</li></ol><p>Có bao nhiêu phát biểu đúng? Sửa lại các phát biểu sai cho đúng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Hạt khói trong hộp kín bị các phân tử khí va đập, đi theo đường gấp khúc\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"27.0\" y=\"31.0\" width=\"366.0\" height=\"158.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g transform=\"translate(360.2 105.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"360.2 105.0;223.6 98.2;224.4 37.0;225.6 125.2;251.5 183.0;316.8 37.0;382.2 183.0;387.0 172.3;326.4 37.0;278.0 145.2;276.0 140.8\" keyTimes=\"0.0000;0.1331;0.1978;0.2909;0.3581;0.5281;0.6981;0.7106;0.8681;0.9941;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(98.4 111.7)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"98.4 111.7;33.0 42.1;38.1 37.0;175.6 183.0;208.3 148.3;236.8 183.0;356.0 37.0;387.0 75.1;298.9 183.0;179.7 37.0;60.5 183.0;33.0 149.0;83.3 87.3\" keyTimes=\"0.0000;0.0806;0.0869;0.2562;0.2966;0.3309;0.4747;0.5122;0.6184;0.7622;0.9059;0.9394;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(66.3 81.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"66.3 81.3;225.2 183.0;387.0 79.2;320.8 37.0;202.0 113.1;184.1 37.0;149.8 183.0;115.4 37.0;81.1 183.0;77.2 166.7\" keyTimes=\"0.0000;0.1575;0.3181;0.3838;0.5016;0.5731;0.7103;0.8475;0.9847;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(278.5 43.1)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"278.5 43.1;333.3 37.0;387.0 43.1;33.0 82.9;387.0 122.6;33.0 162.4;170.4 177.9\" keyTimes=\"0.0000;0.0419;0.0831;0.3538;0.6244;0.8950;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(264.5 126.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"264.5 126.9;301.4 183.0;387.0 52.6;376.7 37.0;280.8 183.0;187.0 40.3\" keyTimes=\"0.0000;0.1144;0.3800;0.4119;0.7094;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(220.0 45.7)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"220.0 45.7;274.2 183.0;331.9 37.0;387.0 177.0;384.6 183.0;326.9 37.0;283.4 147.5;303.3 122.3\" keyTimes=\"0.0000;0.1938;0.4000;0.5975;0.6063;0.8125;0.9688;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(43.6 104.7)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"43.6 104.7;33.0 108.9;222.3 183.0;387.0 118.4;179.2 37.0;33.0 94.3;199.5 159.6;133.9 37.0;103.2 94.5\" keyTimes=\"0.0000;0.0094;0.1756;0.3203;0.5028;0.6312;0.7775;0.9291;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(194.9 77.6)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"194.9 77.6;387.0 74.8;33.0 69.6;387.0 64.3;33.0 59.1;118.0 57.9\" keyTimes=\"0.0000;0.1434;0.4078;0.6722;0.9366;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(330.4 140.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"330.4 140.3;311.9 183.0;248.3 37.0;215.2 113.1;313.8 37.0;387.0 93.7;279.9 176.6;281.6 183.0;283.4 176.5;338.6 160.5\" keyTimes=\"0.0000;0.0619;0.2737;0.3841;0.5769;0.7203;0.9300;0.9375;0.9450;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(135.3 47.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"135.3 47.3;136.4 37.0;151.4 183.0;166.4 37.0;175.8 129.3;156.5 183.0;104.0 37.0;51.5 183.0;33.0 131.4;66.7 37.6\" keyTimes=\"0.0000;0.0119;0.1781;0.3444;0.4494;0.5097;0.6734;0.8372;0.8950;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(332.7 93.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"332.7 93.4;387.0 78.7;232.3 37.0;33.0 90.8;174.0 128.9;33.0 165.4;101.1 183.0;178.9 162.9;33.0 163.4;223.5 164.2\" keyTimes=\"0.0000;0.0459;0.1766;0.3450;0.4641;0.5781;0.6331;0.6959;0.8278;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(33.2 67.6)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"33.2 67.6;81.7 37.0;189.3 105.0;85.6 37.0;33.0 71.7;202.4 183.0;387.0 61.6;349.6 37.0;325.8 52.7\" keyTimes=\"0.0000;0.0612;0.1972;0.3428;0.4169;0.6547;0.9141;0.9666;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(380.0 95.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"380.0 95.0;387.0 98.5;216.0 183.0;33.0 92.5;145.5 37.0;387.0 156.4;333.0 183.0;152.5 93.8\" keyTimes=\"0.0000;0.0075;0.1875;0.3803;0.4988;0.7531;0.8100;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(308.6 76.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"308.6 76.4;387.0 124.3;290.5 183.0;222.6 141.6;263.4 183.0;387.0 57.4;366.9 37.0;223.2 183.0;218.6 178.3\" keyTimes=\"0.0000;0.1106;0.2466;0.3422;0.4228;0.6672;0.7069;0.9909;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(374.3 147.7)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"374.3 147.7;387.0 159.5;361.2 183.0;201.6 37.0;42.0 183.0;33.0 174.6;183.4 37.0;230.4 80.0\" keyTimes=\"0.0000;0.0228;0.0684;0.3513;0.6341;0.6503;0.9169;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(210.0 110.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"210.0 110.0;210.0 110.0;204.5 114.8;208.1 129.4;208.1 130.3;208.4 130.6;204.5 127.5;193.8 128.7;192.0 128.9;194.7 129.5;196.7 160.4;213.3 171.0;213.5 170.8;264.9 166.7;269.0 165.7;274.0 162.9;277.4 163.1;278.2 164.0\" keyTimes=\"0.0000;0.1331;0.1972;0.2909;0.2966;0.3422;0.3841;0.4494;0.4641;0.5016;0.6959;0.7762;0.7775;0.9300;0.9450;0.9688;0.9941;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"15\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/></g><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hộp kín</text><text x=\"300\" y=\"22\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">chùm sáng rọi ngang</text><circle cx=\"40.0\" cy=\"212.0\" r=\"6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/><text x=\"52\" y=\"217\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">hạt khói</text><circle cx=\"150.0\" cy=\"212.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><text x=\"160\" y=\"217\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">phân tử khí</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt khói (phóng to) và phân tử khí bay thẳng, đổi hướng đúng lúc va chạm; chạy chậm hàng tỉ lần. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chuyển động Brown là chuyển động gấp khúc, không ngừng của hạt nhỏ lơ lửng trong khí hay lỏng.</li><li><strong>Thuyết:</strong> phân tử khí chuyển động hỗn loạn, không ngừng ; nhiệt độ càng cao, tốc độ càng lớn.</li><li><strong>Áp suất:</strong> do vô số va chạm của phân tử vào thành bình, mỗi va chạm tác dụng một lực lên thành.</li><li>⚠ <strong>Điều kiện:</strong> đối chiếu cả phần giải thích của mỗi phát biểu, không chỉ phần đầu nghe quen.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phát biểu (1): nguyên nhân hạt khói đi gấp khúc</span></p><p>Hộp kín nên không có gió ; chùm sáng chỉ giúp nhìn thấy hạt.</p><p>Hạt khói to hơn phân tử khí rất nhiều và bị phân tử va đập từ mọi phía. Hai phía không bao giờ cân bằng tuyệt đối nên hạt bị đẩy lệch liên tục.</p><div class=\"bt-ans\"><p>Phát biểu (1) <strong>đúng</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phát biểu (2): hạt khói cho biết gì về phân tử</span></p><p>Hạt khói không tự đi được, cái đẩy nó là phân tử khí.</p><p>Hạt đi mãi, hướng luôn đổi, nên phân tử khí chuyển động hỗn loạn, không ngừng.</p><div class=\"bt-ans\"><p>Phát biểu (2) <strong>đúng</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phát biểu (3): nguồn gốc của áp suất khí</span></p><p>Khí tác dụng áp suất lên mọi thành hộp : nắp trên, thành bên và đáy. Trọng lượng chỉ hướng xuống đáy nên không giải thích được.</p><p>Nguyên nhân đúng : vô số va chạm của phân tử vào thành hộp, mỗi va chạm tác dụng một lực nhỏ.</p><div class=\"bt-ans\"><p>Phát biểu (3) <strong>sai</strong>. Sửa : áp suất khí lên thành hộp do vô số va chạm của phân tử khí vào thành hộp.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phát biểu (4): nhiệt độ và tốc độ phân tử</span></p><p>Nhiệt độ càng cao thì phân tử chuyển động càng nhanh, va đập vào hạt khói và thành hộp càng mạnh.</p><div class=\"bt-ans\"><p>Phát biểu (4) <strong>sai</strong>. Sửa : nhiệt độ khí càng cao thì các phân tử khí chuyển động càng nhanh.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Đếm số phát biểu đúng</span></p><p>Đúng ở (1) và (2), sai ở (3) và (4):</p>$$1+1+0+0$$<div class=\"bt-ans\">$$\\text{Số phát biểu đúng}=2$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>Có $2$ phát biểu đúng : (1) và (2).</p><p>Sửa (3) : áp suất khí do vô số va chạm của phân tử vào thành hộp.</p><p>Sửa (4) : nhiệt độ càng cao, phân tử chuyển động càng nhanh.</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hiện tượng nhìn thấy</strong> và các phát biểu giải thích → so từng phát biểu với <strong>3 nội dung của thuyết</strong>, đặc biệt phần giải thích.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Hạt khói bị phân tử khí va đập từ nhiều hướng với tốc độ khác nhau\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"27.0\" y=\"31.0\" width=\"366.0\" height=\"158.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"110.0\" r=\"15\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\"/><circle cx=\"120.0\" cy=\"70.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"120\" y1=\"70\" x2=\"160.0\" y2=\"75.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M153.0,69.7 L160.0,75.0 L151.9,78.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"320.0\" cy=\"80.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"320\" y1=\"80\" x2=\"285.0\" y2=\"100.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M293.8,100.0 L285.0,100.0 L289.4,92.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"90.0\" cy=\"150.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"90\" y1=\"150\" x2=\"120.0\" y2=\"125.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M111.3,126.5 L120.0,125.0 L117.0,133.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"340.0\" cy=\"160.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"340\" y1=\"160\" x2=\"295.0\" y2=\"145.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M300.8,151.6 L295.0,145.0 L303.6,143.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"260.0\" cy=\"48.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"260\" y1=\"48\" x2=\"275.0\" y2=\"78.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M275.5,69.2 L275.0,78.0 L267.7,73.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"270.0\" cy=\"150.0\" r=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><line x1=\"270\" y1=\"150\" x2=\"275.0\" y2=\"110.0\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M269.7,117.0 L275.0,110.0 L278.4,118.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"144\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hạt khói</text><text x=\"30\" y=\"22\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mũi tên: tốc độ phân tử (dài tỉ lệ với tốc độ)</text><text x=\"100\" y=\"212\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">va đập từ nhiều phía, không bao giờ cân bằng tuyệt đối</text></svg><figcaption>Dữ kiện: hạt khói to, phân tử khí nhỏ và đi theo mọi hướng. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hộp kín … khói hương … hạt khói đi theo đường gấp khúc\"</td><td>Hộp kín, không gió; hạt khói to hơn phân tử khí rất nhiều</td><td>⚠ Chuyển động Brown chỉ giải thích được khi tính đến các phân tử khí rất nhỏ va đập vào hạt</td></tr><tr><td>\"(1) hạt khói bị phân tử khí va đập từ mọi phía … không cân bằng\"</td><td>Phát biểu (1)</td><td>Nguyên nhân của chuyển động Brown</td></tr><tr><td>\"(2) chứng tỏ các phân tử khí chuyển động hỗn loạn, không ngừng\"</td><td>Phát biểu (2)</td><td>Chuyển động Brown là bằng chứng gián tiếp về chuyển động của phân tử</td></tr><tr><td>\"(3) áp suất … do trọng lượng của khí đè xuống đáy hộp\"</td><td>Phát biểu (3)</td><td>Áp suất khí tác dụng lên những thành nào? Nguyên nhân gây áp suất theo thuyết</td></tr><tr><td>\"(4) nhiệt độ càng cao thì … càng chậm\"</td><td>Phát biểu (4)</td><td>Liên hệ giữa nhiệt độ và tốc độ chuyển động của phân tử</td></tr><tr><td>\"có bao nhiêu phát biểu đúng?\"</td><td>Cần tìm: số phát biểu đúng</td><td>Đối chiếu từng phát biểu với thuyết rồi đếm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hạt khói gấp khúc</b> hoặc <b>áp suất khí</b> → nghĩ tới <b>phân tử va chạm hỗn loạn</b>, không phải trọng lượng.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phát biểu (1): nguyên nhân hạt khói đi gấp khúc",
+     "hoi": "Điều nào đúng về nguyên nhân khiến hạt khói đi gấp khúc?",
+     "lua_chon": [
+      {
+       "text": "Hạt khói bị phân tử khí va đập không cân bằng từ mọi phía",
+       "dung": true
+      },
+      {
+       "text": "Chùm sáng rọi vào đẩy hạt khói đi",
+       "dung": false,
+       "vi_sao": "Chùm sáng chỉ giúp nhìn thấy hạt, không đủ lực đẩy; hộp kín nên cũng không có tác nhân bên ngoài."
+      },
+      {
+       "text": "Dòng khí trong hộp cuốn mọi hạt khói theo một chiều",
+       "dung": false,
+       "vi_sao": "Dòng khí làm mọi hạt đi cùng chiều, còn thực tế mỗi hạt đi một kiểu và hộp kín không có gió."
+      }
+     ],
+     "loi_hay_gap": "Đổ cho chùm sáng rọi vào hoặc cho dòng khí — trong khi hộp kín, không có gió, còn mọi hạt đi mỗi hạt một kiểu."
+    },
+    {
+     "tieu_de": "Phát biểu (2): hạt khói cho biết gì về phân tử",
+     "hoi": "Chuyển động của hạt khói cho biết điều gì về phân tử khí?",
+     "lua_chon": [
+      {
+       "text": "Phân tử khí chuyển động hỗn loạn, không ngừng",
+       "dung": true
+      },
+      {
+       "text": "Phân tử khí đứng yên, chỉ hạt khói chuyển động",
+       "dung": false,
+       "vi_sao": "Nếu phân tử đứng yên thì không có lực va đập nào đẩy hạt khói."
+      },
+      {
+       "text": "Mọi phân tử khí cùng chuyển động theo một hướng",
+       "dung": false,
+       "vi_sao": "Nếu cùng một hướng, hạt khói sẽ bị cuốn một chiều chứ không đi gấp khúc."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng phân tử khí đứng yên còn hạt khói tự chuyển động — nhưng hạt khói không tự đi được, phải có lực đẩy từ phân tử."
+    },
+    {
+     "tieu_de": "Phát biểu (3): nguồn gốc của áp suất khí",
+     "hoi": "Áp suất khí lên thành hộp sinh ra từ đâu?",
+     "lua_chon": [
+      {
+       "text": "Từ vô số va chạm của phân tử khí vào thành hộp",
+       "dung": true
+      },
+      {
+       "text": "Từ trọng lượng của khí đè xuống đáy hộp",
+       "dung": false,
+       "vi_sao": "Khí còn tác dụng áp suất lên nắp trên và thành bên, trọng lượng chỉ hướng xuống đáy nên không giải thích được."
+      },
+      {
+       "text": "Từ lực hút giữa các phân tử khí",
+       "dung": false,
+       "vi_sao": "Lực hút giữa các phân tử khí rất yếu và nằm bên trong khối khí, không tạo ra áp suất lên thành."
+      }
+     ],
+     "loi_hay_gap": "Đổ cho trọng lượng khí đè xuống đáy — quên rằng khí còn tác dụng áp suất lên nắp trên và thành bên."
+    },
+    {
+     "tieu_de": "Phát biểu (4): nhiệt độ và tốc độ phân tử",
+     "hoi": "Khi nhiệt độ khí tăng thì tốc độ trung bình của phân tử thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Tăng lên",
+       "dung": true
+      },
+      {
+       "text": "Giảm đi vì phân tử mất năng lượng",
+       "dung": false,
+       "vi_sao": "Ngược lại : nhiệt độ càng cao, phân tử càng có nhiều năng lượng chuyển động nên càng nhanh."
+      },
+      {
+       "text": "Không đổi vì phân tử luôn chuyển động hỗn loạn",
+       "dung": false,
+       "vi_sao": "Hỗn loạn nói về hướng chuyển động, không nói về tốc độ ; tốc độ phụ thuộc nhiệt độ."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng nóng lên thì phân tử mất năng lượng nên chậm lại — ngược với thuyết : nhiệt độ càng cao, chuyển động càng nhanh."
+    },
+    {
+     "tieu_de": "Đếm số phát biểu đúng",
+     "hoi": "Có bao nhiêu phát biểu đúng?",
+     "dap_so": 2,
+     "sai_so": 0,
+     "don_vi": "phát biểu",
+     "loi_hay_gap": "Tính cả phát biểu (3) hoặc (4) vì nghe quen tai, hoặc bỏ sót một trong hai phát biểu đúng."
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Từ khối lượng khí tính số mol và số phân tử",
+   "topic": "Mol, số Avogadro và lượng chất khí",
+   "problem_html": "<p>Một bình kín chứa $0{,}16\\ \\text{kg}$ khí oxygen ($\\text{O}_2$). Khối lượng mol của oxygen là $M=32\\ \\text{g/mol}$. Lấy $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$.</p><ol type=\"a\"><li>Tính số mol khí trong bình.</li><li>Tính số phân tử oxygen trong bình.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Bình kín đựng khí oxygen, các phân tử khí bay thẳng và va vào thành bình\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"27.0\" y=\"49.0\" width=\"226.0\" height=\"130.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g transform=\"translate(69.6 135.6)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"69.6 135.6;35.0 96.3;69.7 57.0;170.2 171.0;245.0 86.1;219.3 57.0;118.8 171.0;73.5 119.6\" keyTimes=\"0.0000;0.0832;0.1666;0.4081;0.5878;0.6496;0.8911;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(80.4 147.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"80.4 147.4;114.7 57.0;158.1 171.0;201.5 57.0;244.8 171.0;245.0 170.6;201.8 57.0;179.8 114.8\" keyTimes=\"0.0000;0.1496;0.3383;0.5270;0.7157;0.7164;0.9044;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(141.1 83.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"141.1 83.9;245.0 86.0;35.0 90.2;245.0 94.4;195.1 95.4\" keyTimes=\"0.0000;0.1811;0.5471;0.9130;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(157.9 64.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"157.9 64.9;160.2 57.0;192.3 171.0;224.5 57.0;245.0 129.8;233.4 171.0;201.2 57.0;195.6 77.1\" keyTimes=\"0.0000;0.0163;0.2518;0.4874;0.6378;0.7229;0.9584;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(83.9 61.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"83.9 61.8;245.0 59.4;91.2 57.0;35.0 57.9;245.0 61.1;64.0 63.9\" keyTimes=\"0.0000;0.2114;0.4132;0.4870;0.7625;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(218.8 127.2)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"218.8 127.2;245.0 132.9;69.8 171.0;35.0 163.4;245.0 117.8;151.4 97.4\" keyTimes=\"0.0000;0.0486;0.3731;0.4376;0.8267;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(139.5 70.2)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"139.5 70.2;181.9 57.0;245.0 76.6;35.0 142.0;128.1 171.0;245.0 134.6;223.8 128.0\" keyTimes=\"0.0000;0.0776;0.1930;0.5771;0.7473;0.9611;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(67.5 150.2)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"67.5 150.2;88.3 171.0;202.5 57.0;245.0 99.4;173.3 171.0;59.1 57.0;35.0 81.1;125.1 171.0;239.2 57.0;245.0 62.8;234.5 73.2\" keyTimes=\"0.0000;0.0343;0.2221;0.2919;0.4099;0.5977;0.6374;0.7855;0.9733;0.9828;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(130.2 119.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"130.2 119.9;96.4 171.0;35.0 78.0;48.9 57.0;124.2 171.0;199.5 57.0;245.0 125.8;215.1 171.0;201.7 150.6\" keyTimes=\"0.0000;0.0968;0.2731;0.3130;0.5291;0.7452;0.8757;0.9614;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(74.3 61.2)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"74.3 61.2;78.0 57.0;179.7 171.0;245.0 97.7;208.7 57.0;107.1 171.0;80.2 140.9\" keyTimes=\"0.0000;0.0112;0.3141;0.5088;0.6170;0.9199;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(198.9 80.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"198.9 80.8;245.0 71.6;171.5 57.0;35.0 84.1;245.0 125.9;35.0 167.6;51.9 171.0;184.4 144.7\" keyTimes=\"0.0000;0.0559;0.1449;0.3103;0.5646;0.8190;0.8395;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(193.5 144.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"193.5 144.0;37.1 57.0;35.0 58.2;237.9 171.0;245.0 167.1;47.1 57.0;35.0 63.7;118.7 110.2\" keyTimes=\"0.0000;0.2362;0.2394;0.5458;0.5565;0.8554;0.8737;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><text x=\"30\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bình kín đựng khí O₂</text><text x=\"30\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 0,16 kg</text><text x=\"290\" y=\"70\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = 32 g/mol</text><text x=\"290\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">N<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> = 6,02·10²³ mol⁻¹</tspan></text><text x=\"290\" y=\"130\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n = ?</text><text x=\"290\" y=\"154\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">N = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: phân tử khí bay thẳng đều giữa hai va chạm, phản xạ ở thành bình; chạy chậm hàng tỉ lần. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mol là lượng chất chứa $N_A$ phân tử ; khối lượng mol $M$ là khối lượng của 1 mol (g/mol).</li><li><strong>Công thức:</strong> $n=\\dfrac{m}{M}$ ; $N=n\\,N_A$ với $N_A\\approx6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$.</li><li>⚠ <strong>Điều kiện:</strong> $M$ tính bằng g/mol thì $m$ phải tính bằng gam (đổi $1\\ \\text{kg}=1000\\ \\text{g}$).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số mol khí</span></p><p>$M$ tính bằng g/mol nên đổi khối lượng ra gam :</p>$$m=0{,}16\\ \\text{kg}=160\\ \\text{g}$$$$n=\\dfrac{m}{M}=\\dfrac{160}{32}$$<div class=\"bt-ans\">$$n=5\\ \\text{mol}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số phân tử oxygen</span></p><p>Một mol chứa $N_A$ phân tử nên $n$ mol chứa :</p>$$N=n\\,N_A=5\\cdot6{,}02\\cdot10^{23}$$<div class=\"bt-ans\">$$N=3{,}01\\cdot10^{24}\\ \\text{phân tử}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>Đổi ngược : $n\\,M=5\\cdot32=160\\ \\text{g}=0{,}16\\ \\text{kg}$ ✓ khớp khối lượng đề cho.</p><p>$N$ gấp $n=5$ lần $N_A$ ✓.</p><p>Quên đổi kg ra g sẽ ra $\\dfrac{0{,}16}{32}=0{,}005\\ \\text{mol}$ — nhỏ hơn thực tế $1000$ lần.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n=5\\ \\text{mol}$</p><p>b) $N=3{,}01\\cdot10^{24}$ phân tử</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng khí và khối lượng mol</strong> → $n=\\dfrac{m}{M}$ (đổi $m$ ra gam), rồi $N=n\\,N_A$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Sơ đồ từ khối lượng khí đến số mol rồi đến số phân tử\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"10.0\" y=\"30.0\" width=\"112.0\" height=\"50.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"66.0\" y=\"52.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">m = 0,16 kg</text><text x=\"66.0\" y=\"68.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">khí O₂</text><rect x=\"154.0\" y=\"30.0\" width=\"112.0\" height=\"50.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210.0\" y=\"60.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">n = ?</text><rect x=\"298.0\" y=\"30.0\" width=\"112.0\" height=\"50.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"354.0\" y=\"60.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N = ?</text><line x1=\"122\" y1=\"55\" x2=\"154\" y2=\"55\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M145.2,49.9 L154.0,55.0 L145.2,60.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"266\" y1=\"55\" x2=\"298\" y2=\"55\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M289.2,49.9 L298.0,55.0 L289.2,60.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"138\" y=\"44\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">÷ M</text><text x=\"282\" y=\"44\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">× N<tspan dy=\"4\" font-size=\"9\">A</tspan></text><text x=\"10\" y=\"112\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">M = 32 g/mol  (đơn vị gam trên mol)</text><text x=\"10\" y=\"136\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">N<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> = 6,02·10²³ mol⁻¹</tspan></text><text x=\"10\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Đơn vị phải khớp: M tính bằng g/mol thì m tính bằng g</text></svg><figcaption>Dữ kiện: khối lượng đã biết; số mol và số phân tử là hai đại lượng cần tìm, nối bằng M và N_A. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bình kín chứa $0{,}16$ kg khí oxygen\"</td><td>$m=0{,}16$ kg</td><td>⚠ $M$ tính bằng g/mol nên phải đổi $m$ ra gam trước khi chia</td></tr><tr><td>\"khối lượng mol $M=32$ g/mol\"</td><td>$M=32$ g/mol</td><td>$n=\\dfrac{m}{M}$</td></tr><tr><td>\"lấy $N_A=6{,}02\\cdot10^{23}$ mol$^{-1}$\"</td><td>$N_A=6{,}02\\cdot10^{23}$ mol$^{-1}$</td><td>$N=n\\,N_A$ (số phân tử trong $n$ mol)</td></tr><tr><td>\"tính số mol khí\"</td><td>Cần $n$</td><td>$n=\\dfrac{m}{M}$</td></tr><tr><td>\"tính số phân tử oxygen\"</td><td>Cần $N$</td><td>$N=n\\,N_A$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng khí và khối lượng mol</b> → <b>n = m/M</b> (m đổi ra gam), rồi <b>N = n·N_A</b>.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số mol khí",
+     "hoi": "Số mol khí trong bình bằng bao nhiêu?",
+     "dap_so": 5,
+     "sai_so": 0.05,
+     "don_vi": "mol",
+     "loi_hay_gap": "Chia thẳng khối lượng tính bằng kg cho $M$ tính bằng g/mol, nên số mol nhỏ hơn thực tế đúng $1000$ lần."
+    },
+    {
+     "tieu_de": "Số phân tử oxygen",
+     "hoi": "Số phân tử oxygen trong bình?",
+     "dap_so": 3.01,
+     "sai_so": 0.02,
+     "don_vi": "×10²⁴ phân tử",
+     "loi_hay_gap": "Chia $n$ cho $N_A$ (ra số rất nhỏ) hoặc nhân $N_A$ với khối lượng thay vì với số mol.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số mol với $N_A$ : $N=n\\,N_A$",
+       "dung": true
+      },
+      {
+       "text": "Chia số mol cho $N_A$ : $N=\\dfrac{n}{N_A}$",
+       "dung": false,
+       "vi_sao": "Chia ra số rất nhỏ cỡ $10^{-24}$ ; mỗi mol chứa $N_A$ phân tử nên phải nhân với $N_A$."
+      },
+      {
+       "text": "Nhân khối lượng với $N_A$ : $N=m\\,N_A$",
+       "dung": false,
+       "vi_sao": "Khối lượng không cho biết số phân tử ; phải đi qua số mol $n=\\dfrac{m}{M}$ trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Từ số phân tử tính khối lượng, thể tích ở đktc và so sánh hai bình",
+   "topic": "Mol, số Avogadro và lượng chất khí",
+   "problem_html": "<p>Một bình kín chứa $1{,}505\\cdot10^{23}$ nguyên tử khí helium ở điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, $1\\ \\text{atm}$). Khối lượng mol của helium là $4\\ \\text{g/mol}$. Lấy $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$.</p><ol type=\"a\"><li>Tính số mol helium trong bình.</li><li>Tính khối lượng helium.</li><li>Tính thể tích của bình, theo lít.</li><li>Một bình thứ hai có cùng thể tích, cùng điều kiện, đựng khí hydrogen ($\\text{H}_2$, $M=2\\ \\text{g/mol}$). Tính khối lượng hydrogen và số phân tử hydrogen trong bình thứ hai.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Bình kín đựng khí helium ở điều kiện tiêu chuẩn, các nguyên tử bay thẳng và va vào thành bình\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"27.0\" y=\"49.0\" width=\"226.0\" height=\"130.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g transform=\"translate(154.8 129.1)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"154.8 129.1;187.0 57.0;238.1 171.0;245.0 155.6;200.9 57.0;149.8 171.0;98.8 57.0;80.0 99.0\" keyTimes=\"0.0000;0.1264;0.3264;0.3535;0.5264;0.7264;0.9264;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(171.9 158.6)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"171.9 158.6;245.0 111.4;160.7 57.0;35.0 138.1;86.1 171.0;230.4 77.9\" keyTimes=\"0.0000;0.1528;0.3290;0.5917;0.6984;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(171.9 127.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"171.9 127.4;35.0 124.4;245.0 120.0;35.0 115.5;245.0 111.0;35.0 106.5;101.3 105.1\" keyTimes=\"0.0000;0.1312;0.3325;0.5338;0.7351;0.9364;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(145.9 107.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"145.9 107.8;245.0 71.1;207.0 57.0;35.0 120.7;170.9 171.0;245.0 143.6;35.0 65.8;58.8 57.0;96.0 70.8\" keyTimes=\"0.0000;0.1254;0.1735;0.3912;0.5632;0.6570;0.9228;0.9529;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(98.3 92.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"98.3 92.3;35.0 93.8;245.0 99.0;35.0 104.1;39.6 104.2\" keyTimes=\"0.0000;0.1297;0.5602;0.9906;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(162.6 140.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"162.6 140.9;102.4 171.0;35.0 137.2;195.3 57.0;245.0 81.9;66.9 171.0;35.0 155.0;230.9 57.0;245.0 64.1;134.5 119.4\" keyTimes=\"0.0000;0.0693;0.1470;0.3317;0.3889;0.5941;0.6308;0.8564;0.8727;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(229.9 120.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"229.9 120.3;200.7 57.0;148.3 171.0;95.8 57.0;43.3 171.0;35.0 152.9;60.6 97.3\" keyTimes=\"0.0000;0.1322;0.3702;0.6082;0.8462;0.8840;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(46.8 168.7)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"46.8 168.7;46.3 171.0;35.0 119.8;48.8 57.0;73.9 171.0;98.9 57.0;124.0 171.0;149.0 57.2\" keyTimes=\"0.0000;0.0040;0.0935;0.2033;0.4025;0.6018;0.8011;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(223.3 142.5)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"223.3 142.5;245.0 163.7;237.5 171.0;120.9 57.0;35.0 140.9;65.7 171.0;182.4 57.0;245.0 118.2;220.7 141.9\" keyTimes=\"0.0000;0.0466;0.0626;0.3129;0.4973;0.5632;0.8135;0.9479;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(86.0 88.1)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"86.0 88.1;245.0 94.5;35.0 102.9;245.0 111.3;49.7 119.1\" keyTimes=\"0.0000;0.2054;0.4766;0.7477;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><g transform=\"translate(98.9 101.9)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"98.9 101.9;128.6 171.0;177.5 57.0;226.5 171.0;245.0 127.9;214.5 57.0;184.7 126.4\" keyTimes=\"0.0000;0.1437;0.3810;0.6182;0.7079;0.8555;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"4\" fill=\"#34d399\" stroke=\"#34d399\" stroke-width=\"1.2\"/></g><text x=\"30\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">bình kín đựng khí He</text><text x=\"30\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">0 °C · 1 atm</text><text x=\"290\" y=\"66\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N = 1,505·10²³</text><text x=\"290\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">nguyên tử He</text><text x=\"290\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">M = 4 g/mol</text><text x=\"290\" y=\"130\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">m = ?</text><text x=\"290\" y=\"154\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">V = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nguyên tử He bay thẳng đều giữa hai va chạm; chạy chậm hàng tỉ lần. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> số mol $n$ nối số phân tử $N$, khối lượng $m$ và thể tích khí $V$.</li><li><strong>Công thức:</strong> $n=\\dfrac{N}{N_A}$ ; $m=n\\,M$ ; $V=22{,}4\\,n$ (lít, ở đktc).</li><li>⚠ <strong>Điều kiện:</strong> $22{,}4$ lít/mol chỉ đúng ở điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, $1\\ \\text{atm}$), cho mọi chất khí.</li><li>Cùng thể tích, cùng điều kiện thì cùng số mol, khác khí thì khác khối lượng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số mol helium</span></p>$$n=\\dfrac{N}{N_A}=\\dfrac{1{,}505\\cdot10^{23}}{6{,}02\\cdot10^{23}}$$<div class=\"bt-ans\">$$n=0{,}25\\ \\text{mol}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khối lượng helium</span></p><p>Khối lượng bằng số mol nhân khối lượng của 1 mol :</p>$$m=n\\,M=0{,}25\\cdot4$$<div class=\"bt-ans\">$$m=1{,}0\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thể tích bình</span></p><p>Ở điều kiện tiêu chuẩn, 1 mol khí chiếm $22{,}4$ lít :</p>$$V=22{,}4\\,n=22{,}4\\cdot0{,}25$$<div class=\"bt-ans\">$$V=5{,}6\\ \\text{lít}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bình thứ hai đựng hydrogen</span></p><p>Cùng thể tích, cùng điều kiện tiêu chuẩn nên cùng số mol :</p>$$n'=n=0{,}25\\ \\text{mol}$$<p>Số phân tử cũng bằng bình thứ nhất :</p>$$N'=n'\\,N_A=1{,}505\\cdot10^{23}\\ \\text{phân tử}$$<p>Khối lượng khác vì khối lượng mol khác :</p>$$m'=n'\\,M'=0{,}25\\cdot2$$<div class=\"bt-ans\">$$m'=0{,}5\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$\\dfrac{V}{22{,}4}=\\dfrac{5{,}6}{22{,}4}=0{,}25\\ \\text{mol}$ ✓ khớp câu a.</p><p>Hydrogen có khối lượng mol nhỏ hơn helium nên cùng số mol thì nhẹ hơn : $0{,}5\\ \\text{g}\\lt1{,}0\\ \\text{g}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n=0{,}25\\ \\text{mol}$</p><p>b) $m=1{,}0\\ \\text{g}$</p><p>c) $V=5{,}6\\ \\text{lít}$</p><p>d) $m'=0{,}5\\ \\text{g}$ ; $N'=1{,}505\\cdot10^{23}$ phân tử</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số phân tử</strong> và <strong>điều kiện tiêu chuẩn</strong> → qua số mol : $n=\\dfrac{N}{N_A}$, $m=nM$, $V=22{,}4\\,n$ ; hai bình cùng $V$ thì cùng $n$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Sơ đồ từ số nguyên tử He đến số mol, khối lượng và thể tích ở điều kiện tiêu chuẩn\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"8.0\" y=\"20.0\" width=\"130.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"73.0\" y=\"39.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">N = 1,505·10²³</text><text x=\"73.0\" y=\"55.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nguyên tử He</text><rect x=\"178.0\" y=\"20.0\" width=\"80.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"218.0\" y=\"47.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">n = ?</text><rect x=\"60.0\" y=\"116.0\" width=\"100.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"110.0\" y=\"143.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">m = ?</text><rect x=\"280.0\" y=\"116.0\" width=\"100.0\" height=\"44.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"330.0\" y=\"143.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V = ?</text><line x1=\"138\" y1=\"42\" x2=\"178\" y2=\"42\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M169.2,36.9 L178.0,42.0 L169.2,47.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"158\" y=\"33\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">÷ N<tspan dy=\"4\" font-size=\"9\">A</tspan></text><line x1=\"200\" y1=\"64\" x2=\"130\" y2=\"116\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M140.1,114.8 L130.0,116.0 L134.0,106.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"134\" y=\"84\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">× M</text><line x1=\"238\" y1=\"64\" x2=\"306\" y2=\"116\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M302.1,106.6 L306.0,116.0 L295.9,114.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"276\" y=\"84\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">× 22,4 L/mol</text><text x=\"8\" y=\"188\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Bình thứ hai (H₂): cùng V, cùng đktc → số mol so với bình He?</text></svg><figcaption>Dữ kiện: số nguyên tử cho trước; khối lượng và thể tích cần tìm đều đi qua số mol. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$1{,}505\\cdot10^{23}$ nguyên tử khí helium\"</td><td>$N=1{,}505\\cdot10^{23}$</td><td>$n=\\dfrac{N}{N_A}$</td></tr><tr><td>\"khối lượng mol của helium là $4$ g/mol\"</td><td>$M=4$ g/mol</td><td>$m=n\\,M$</td></tr><tr><td>\"ở điều kiện tiêu chuẩn ($0\\ ^\\circ$C, $1$ atm)\"</td><td>Thể tích mol $22{,}4$ lít</td><td>⚠ Chỉ ở điều kiện tiêu chuẩn mới dùng $V=22{,}4\\,n$ (lít), với mọi chất khí</td></tr><tr><td>\"tính số mol, khối lượng, thể tích bình\"</td><td>Cần $n$, $m$, $V$</td><td>$n=\\dfrac{N}{N_A}$ ; $m=n\\,M$ ; $V=22{,}4\\,n$</td></tr><tr><td>\"bình thứ hai cùng thể tích, cùng điều kiện, đựng $\\text{H}_2$\"</td><td>$V$ và điều kiện như bình 1 ; $M'=2$ g/mol</td><td>⚠ Ở đktc mọi khí có cùng thể tích mol nên cùng thể tích thì cùng số mol ; khối lượng mol khác thì khối lượng khác</td></tr><tr><td>\"khối lượng hydrogen và số phân tử hydrogen\"</td><td>Cần $m'$, $N'$</td><td>$m'=n\\,M'$ ; $N'=n\\,N_A$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số phân tử và điều kiện tiêu chuẩn</b> → <b>n = N/N_A</b>, rồi <b>m = nM</b> và <b>V = 22,4·n</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số mol helium",
+     "hoi": "Số mol helium trong bình?",
+     "dap_so": 0.25,
+     "sai_so": 0.005,
+     "don_vi": "mol",
+     "loi_hay_gap": "Nhân $N$ với $N_A$ thay vì chia, hoặc lấy luôn $N$ làm số mol."
+    },
+    {
+     "tieu_de": "Khối lượng helium",
+     "hoi": "Khối lượng helium trong bình?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "g",
+     "loi_hay_gap": "Chia số mol cho $M$ thay vì nhân, hoặc dùng khối lượng mol của hydrogen.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số mol với khối lượng mol : $m=n\\,M$",
+       "dung": true
+      },
+      {
+       "text": "Chia số mol cho khối lượng mol : $m=\\dfrac{n}{M}$",
+       "dung": false,
+       "vi_sao": "Khối lượng bằng số mol nhân khối lượng của 1 mol, không chia."
+      },
+      {
+       "text": "Nhân số phân tử với khối lượng mol : $m=N\\,M$",
+       "dung": false,
+       "vi_sao": "$N$ là số phân tử ; nhân với $M$ ra giá trị lớn hơn thực tế $N_A$ lần. Phải dùng số mol $n$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích bình",
+     "hoi": "Thể tích bình theo lít?",
+     "dap_so": 5.6,
+     "sai_so": 0.1,
+     "don_vi": "lít",
+     "loi_hay_gap": "Lấy luôn $22{,}4$ lít làm thể tích bình (đó là thể tích của đúng 1 mol), hoặc nhân $22{,}4$ với khối lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số mol với $22{,}4$ lít/mol : $V=22{,}4\\,n$",
+       "dung": true
+      },
+      {
+       "text": "Nhân khối lượng với $22{,}4$ : $V=22{,}4\\,m$",
+       "dung": false,
+       "vi_sao": "$22{,}4$ lít là thể tích của 1 mol, không phải của 1 gam ; phải nhân với số mol."
+      },
+      {
+       "text": "Lấy $V=22{,}4$ lít vì đó là thể tích mol",
+       "dung": false,
+       "vi_sao": "$22{,}4$ lít chỉ là thể tích của đúng 1 mol ; bình này không phải 1 mol nên phải nhân với số mol."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bình thứ hai đựng hydrogen",
+     "hoi": "Khối lượng hydrogen trong bình thứ hai?",
+     "dap_so": 0.5,
+     "sai_so": 0.02,
+     "don_vi": "g",
+     "loi_hay_gap": "Cho rằng cùng thể tích thì cùng khối lượng (lấy bằng khối lượng helium), hoặc nghĩ khí nhẹ hơn chiếm ít chỗ hơn nên ít mol hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng thể tích, cùng đktc nên cùng số mol ; khối lượng tính bằng $m'=n\\,M'$",
+       "dung": true
+      },
+      {
+       "text": "Cùng thể tích nên cùng khối lượng : $m'=m$",
+       "dung": false,
+       "vi_sao": "Cùng thể tích chỉ cho cùng số mol ; hydrogen có khối lượng mol khác helium nên khối lượng khác."
+      },
+      {
+       "text": "Hydrogen nhẹ hơn nên chiếm ít chỗ hơn, số mol ít hơn",
+       "dung": false,
+       "vi_sao": "Ở đktc mọi khí đều có thể tích mol $22{,}4$ lít ; thể tích bằng nhau thì số mol bằng nhau, khí nhẹ hay nặng đều thế."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Chuỗi nhiều khâu: thể tích, khối lượng riêng, khối lượng, số mol, số phân tử",
+   "topic": "Mol, số Avogadro và lượng chất khí",
+   "problem_html": "<p>Một giọt nước hình cầu có đường kính $4{,}0\\ \\text{mm}$. Nước có khối lượng riêng $\\rho=1{,}0\\ \\text{g/cm}^3$ và khối lượng mol $M=18\\ \\text{g/mol}$. Lấy $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$.</p><ol type=\"a\"><li>Tính thể tích giọt nước, theo $\\text{cm}^3$.</li><li>Tính khối lượng giọt nước.</li><li>Tính số mol nước trong giọt.</li><li>Tính số phân tử nước trong giọt.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Giọt nước hình cầu phóng to, các phân tử nước chuyển động bên trong\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><circle cx=\"130.0\" cy=\"100.0\" r=\"66\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><g transform=\"translate(94.3 90.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"94.3 90.4;137.5 39.5;182.5 131.0;80.7 135.9;100.3 84.0\" keyTimes=\"0.0000;0.2047;0.5174;0.8301;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(157.0 105.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"157.0 105.0;183.7 129.0;69.0 98.8;179.0 74.5\" keyTimes=\"0.0000;0.1343;0.5783;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(107.2 98.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"107.2 98.0;190.5 92.5;70.7 114.3;187.3 79.0;75.5 127.3;126.8 97.9\" keyTimes=\"0.0000;0.1644;0.4041;0.6438;0.8836;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(100.6 120.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"100.6 120.0;79.6 65.7;179.9 65.0;145.1 159.1;69.4 93.3;86.5 84.0\" keyTimes=\"0.0000;0.1537;0.4187;0.6836;0.9486;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(138.5 86.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"138.5 86.8;96.7 48.9;133.9 160.9;156.5 45.1;149.4 53.4\" keyTimes=\"0.0000;0.1861;0.5750;0.9639;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(142.7 108.6)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"142.7 108.6;190.9 95.9;72.0 81.2;176.9 139.0;169.0 129.3\" keyTimes=\"0.0000;0.1650;0.5618;0.9586;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(174.9 91.3)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"174.9 91.3;190.8 94.8;83.1 139.0;146.2 41.2;150.4 157.5;129.7 130.0\" keyTimes=\"0.0000;0.0406;0.3317;0.6228;0.9139;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(164.7 80.1)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"164.7 80.1;184.2 128.1;93.8 149.1;87.2 56.5;179.6 64.5;173.7 88.6\" keyTimes=\"0.0000;0.1460;0.4074;0.6688;0.9302;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(157.5 108.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"157.5 108.8;121.5 39.6;98.7 152.3;187.2 78.9;72.2 80.4;162.7 151.5;159.7 138.5\" keyTimes=\"0.0000;0.1414;0.3500;0.5586;0.7671;0.9757;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(167.2 109.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"167.2 109.0;151.8 43.0;69.0 101.1;153.8 156.2;173.2 57.0;73.9 76.0;101.7 119.1\" keyTimes=\"0.0000;0.1294;0.3226;0.5157;0.7089;0.9020;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(107.8 141.2)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"107.8 141.2;160.0 46.9;99.1 152.6;161.9 48.0;97.2 151.4;103.9 141.2\" keyTimes=\"0.0000;0.2218;0.4728;0.7239;0.9749;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(87.0 88.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"87.0 88.8;93.3 148.7;181.2 133.2;159.6 46.6;74.7 74.2;108.2 157.0;114.6 153.8\" keyTimes=\"0.0000;0.1420;0.3523;0.5625;0.7728;0.9830;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(109.2 52.8)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"109.2 52.8;69.8 110.0;137.8 160.5;190.7 94.4;126.6 39.1;69.0 101.2;129.0 161.0;172.6 120.3\" keyTimes=\"0.0000;0.1256;0.2789;0.4321;0.5854;0.7387;0.8920;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><g transform=\"translate(181.0 114.4)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"181.0 114.4;186.6 122.8;88.8 145.0;102.4 45.6;190.6 93.3;166.8 114.0\" keyTimes=\"0.0000;0.0294;0.3223;0.6151;0.9079;1.0000\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"3.6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/></g><line x1=\"64\" y1=\"188\" x2=\"196\" y2=\"188\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M189.0,183.9 L196.0,188.0 L189.0,192.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"196\" y1=\"188\" x2=\"64\" y2=\"188\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M71.0,192.1 L64.0,188.0 L71.0,183.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"130\" y=\"208\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 4,0 mm</text><text x=\"250\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">giọt nước hình cầu</text><text x=\"250\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">ρ = 1,0 g/cm³</text><text x=\"250\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">M = 18 g/mol</text><text x=\"250\" y=\"124\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">N = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: phân tử nước (phóng to rất nhiều) chuyển động trong giọt; chạy chậm hàng tỉ lần. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng riêng $\\rho=\\dfrac{m}{V}$ nối thể tích và khối lượng của chất.</li><li><strong>Công thức:</strong> $V=\\dfrac{\\pi d^3}{6}$ (hình cầu) ; $m=\\rho V$ ; $n=\\dfrac{m}{M}$ ; $N=n\\,N_A$.</li><li>⚠ <strong>Điều kiện:</strong> đổi đơn vị độ dài trước ($1\\ \\text{mm}=0{,}1\\ \\text{cm}$) ; $22{,}4$ lít chỉ dùng cho chất khí ở đktc, không dùng cho nước.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thể tích giọt nước</span></p><p>Đổi đường kính ra cm vì $\\rho$ cho bằng g/cm$^3$ : $d=4{,}0\\ \\text{mm}=0{,}40\\ \\text{cm}$.</p>$$V=\\dfrac{\\pi d^3}{6}=\\dfrac{\\pi\\cdot0{,}40^3}{6}$$<div class=\"bt-ans\">$$V\\approx0{,}0335\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khối lượng giọt nước</span></p>$$m=\\rho\\,V=1{,}0\\cdot0{,}0335$$<div class=\"bt-ans\">$$m\\approx0{,}0335\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số mol nước</span></p><p>Nước là chất lỏng nên dùng khối lượng mol, không dùng $22{,}4$ lít :</p>$$n=\\dfrac{m}{M}=\\dfrac{0{,}0335}{18}$$<div class=\"bt-ans\">$$n\\approx1{,}86\\cdot10^{-3}\\ \\text{mol}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số phân tử nước</span></p>$$N=n\\,N_A=1{,}86\\cdot10^{-3}\\cdot6{,}02\\cdot10^{23}$$<div class=\"bt-ans\">$$N\\approx1{,}12\\cdot10^{21}\\ \\text{phân tử}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Giọt nặng $0{,}0335\\ \\text{g}$, bằng $\\dfrac{0{,}0335}{18}\\approx\\dfrac{1}{540}$ mol nên $N\\approx\\dfrac{6{,}02\\cdot10^{23}}{540}\\approx1{,}1\\cdot10^{21}$ ✓.</p><p>Một giọt nhỏ xíu đã chứa cỡ một nghìn tỉ tỉ phân tử.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V\\approx0{,}0335\\ \\text{cm}^3$</p><p>b) $m\\approx0{,}0335\\ \\text{g}$</p><p>c) $n\\approx1{,}86\\cdot10^{-3}\\ \\text{mol}$</p><p>d) $N\\approx1{,}12\\cdot10^{21}$ phân tử</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>kích thước vật và khối lượng riêng</strong> → $V\\to m=\\rho V\\to n=\\dfrac{m}{M}\\to N=n\\,N_A$ ; đổi đơn vị độ dài trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 226\" role=\"img\" aria-label=\"Sơ đồ từ đường kính giọt nước đến thể tích, khối lượng, số mol và số phân tử\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><circle cx=\"70.0\" cy=\"80.0\" r=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"30\" y1=\"140\" x2=\"110\" y2=\"140\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M103.0,135.9 L110.0,140.0 L103.0,144.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110\" y1=\"140\" x2=\"30\" y2=\"140\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M37.0,144.1 L30.0,140.0 L37.0,135.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"70\" y=\"160\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 4,0 mm</text><rect x=\"190.0\" y=\"8.0\" width=\"100.0\" height=\"32.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240.0\" y=\"29.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V = ?</text><rect x=\"190.0\" y=\"64.0\" width=\"100.0\" height=\"32.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240.0\" y=\"85.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">m = ?</text><rect x=\"190.0\" y=\"120.0\" width=\"100.0\" height=\"32.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240.0\" y=\"141.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">n = ?</text><rect x=\"190.0\" y=\"176.0\" width=\"100.0\" height=\"32.0\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240.0\" y=\"197.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">N = ?</text><line x1=\"240\" y1=\"40\" x2=\"240\" y2=\"64\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M245.1,55.2 L240.0,64.0 L234.9,55.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"252\" y=\"58\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">× ρ  (1,0 g/cm³)</text><line x1=\"240\" y1=\"96\" x2=\"240\" y2=\"120\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M245.1,111.2 L240.0,120.0 L234.9,111.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"252\" y=\"114\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">÷ M  (18 g/mol)</text><line x1=\"240\" y1=\"152\" x2=\"240\" y2=\"176\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M245.1,167.2 L240.0,176.0 L234.9,167.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"252\" y=\"170\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">× N<tspan dy=\"4\" font-size=\"9\">A</tspan></text><text x=\"8\" y=\"196\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Hình cầu: V = π·d³/6</text></svg><figcaption>Dữ kiện: chỉ biết đường kính; mỗi đại lượng đi qua đại lượng đứng trước nó. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"giọt nước hình cầu, đường kính $4{,}0$ mm\"</td><td>$d=4{,}0$ mm</td><td>⚠ Thể tích hình cầu $V=\\dfrac{\\pi d^3}{6}$ ; đổi $d$ ra cm vì $\\rho$ cho bằng g/cm$^3$</td></tr><tr><td>\"khối lượng riêng $\\rho=1{,}0$ g/cm$^3$\"</td><td>$\\rho=1{,}0$ g/cm$^3$</td><td>$m=\\rho\\,V$</td></tr><tr><td>\"khối lượng mol $M=18$ g/mol\"</td><td>$M=18$ g/mol</td><td>$n=\\dfrac{m}{M}$ (nước là chất lỏng, không dùng $22{,}4$ lít)</td></tr><tr><td>\"lấy $N_A=6{,}02\\cdot10^{23}$ mol$^{-1}$\"</td><td>$N_A=6{,}02\\cdot10^{23}$ mol$^{-1}$</td><td>$N=n\\,N_A$</td></tr><tr><td>\"tính thể tích … khối lượng … số mol … số phân tử\"</td><td>Cần $V$, $m$, $n$, $N$</td><td>$V\\to m\\to n\\to N$, mỗi đại lượng đi qua đại lượng đứng trước</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kích thước vật, khối lượng riêng</b> → <b>V → m=ρV → n=m/M → N=nN_A</b>, đổi đơn vị trước.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thể tích giọt nước",
+     "hoi": "Thể tích giọt nước theo cm³?",
+     "dap_so": 0.0335,
+     "sai_so": 0.0005,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Thế $d=4{,}0$ vào công thức khi chưa đổi mm ra cm (ra thể tích lớn hơn $1000$ lần), hoặc dùng $\\dfrac{4}{3}\\pi d^3$ thay vì $\\dfrac{4}{3}\\pi r^3$."
+    },
+    {
+     "tieu_de": "Khối lượng giọt nước",
+     "hoi": "Khối lượng giọt nước?",
+     "dap_so": 0.0335,
+     "sai_so": 0.0005,
+     "don_vi": "g",
+     "loi_hay_gap": "Chia thể tích cho khối lượng riêng, hoặc nhân $\\rho$ với đường kính thay vì thể tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân khối lượng riêng với thể tích : $m=\\rho\\,V$",
+       "dung": true
+      },
+      {
+       "text": "Chia thể tích cho khối lượng riêng : $m=\\dfrac{V}{\\rho}$",
+       "dung": false,
+       "vi_sao": "Đơn vị ra $\\text{cm}^6/\\text{g}$, không phải khối lượng ; khối lượng bằng khối lượng riêng nhân thể tích."
+      },
+      {
+       "text": "Nhân khối lượng riêng với đường kính : $m=\\rho\\,d$",
+       "dung": false,
+       "vi_sao": "$d$ là độ dài, không phải thể tích ; $\\rho$ chỉ nhân với thể tích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số mol nước",
+     "hoi": "Số mol nước trong giọt?",
+     "dap_so": 1.86,
+     "sai_so": 0.03,
+     "don_vi": "×10⁻³ mol",
+     "loi_hay_gap": "Lấy $V$ chia $22{,}4$ — nhưng nước là chất lỏng, thể tích mol $22{,}4$ lít chỉ dùng cho chất khí ở đktc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia khối lượng cho khối lượng mol : $n=\\dfrac{m}{M}$",
+       "dung": true
+      },
+      {
+       "text": "Chia thể tích cho $22{,}4$ : $n=\\dfrac{V}{22{,}4}$",
+       "dung": false,
+       "vi_sao": "$22{,}4$ lít/mol chỉ đúng cho chất khí ở điều kiện tiêu chuẩn ; nước là chất lỏng."
+      },
+      {
+       "text": "Nhân khối lượng với khối lượng mol : $n=m\\,M$",
+       "dung": false,
+       "vi_sao": "Đơn vị ra $\\text{g}^2/\\text{mol}$, vô nghĩa ; số mol là số lần $M$ chứa trong $m$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số phân tử nước",
+     "hoi": "Số phân tử nước trong giọt?",
+     "dap_so": 1.12,
+     "sai_so": 0.02,
+     "don_vi": "×10²¹ phân tử",
+     "loi_hay_gap": "Chia $n$ cho $N_A$ hoặc nhân $N_A$ với khối lượng, nên ra con số không cỡ $10^{21}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân số mol với $N_A$ : $N=n\\,N_A$",
+       "dung": true
+      },
+      {
+       "text": "Chia số mol cho $N_A$ : $N=\\dfrac{n}{N_A}$",
+       "dung": false,
+       "vi_sao": "Ra số cực nhỏ ; mỗi mol chứa $N_A$ phân tử nên phải nhân."
+      },
+      {
+       "text": "Nhân khối lượng với $N_A$ : $N=m\\,N_A$",
+       "dung": false,
+       "vi_sao": "Phải đi qua số mol : khối lượng chia $M$ mới cho số mol."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Khoảng cách giữa các phân tử khí so với kích thước phân tử",
+   "topic": "Mol, số Avogadro và lượng chất khí",
+   "problem_html": "<p>Khí nitrogen ở điều kiện tiêu chuẩn. Coi mỗi phân tử nằm ở tâm một hình lập phương nhỏ; các hình lập phương xếp khít nhau và lấp đầy thể tích khí. Thể tích mol ở điều kiện tiêu chuẩn là $22{,}4\\ \\text{L}$. Lấy $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$. Đường kính phân tử nitrogen cỡ $D=3{,}0\\cdot10^{-10}\\ \\text{m}$.</p><ol type=\"a\"><li>Tính thể tích của mỗi hình lập phương nhỏ, theo $\\text{m}^3$.</li><li>Tính cạnh $d$ của hình lập phương, coi là khoảng cách giữa hai phân tử kề nhau.</li><li>Khoảng cách đó gấp bao nhiêu lần đường kính phân tử? Kết quả khớp với nội dung nào của thuyết động học phân tử?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 212\" role=\"img\" aria-label=\"Khí nitrogen ở điều kiện tiêu chuẩn: mỗi phân tử nằm ở tâm một hình lập phương nhỏ, các hình xếp khít nhau\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"20\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.040;0.080;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"40.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"60\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.088;0.128;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"80.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"100\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.136;0.176;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"120.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"140\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.183;0.223;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"160.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"180\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.231;0.271;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"200.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"220\" y=\"44\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.279;0.319;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"240.0\" cy=\"64.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"20\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.327;0.367;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"40.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"60\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.374;0.414;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"80.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"100\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.422;0.462;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"120.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"140\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.470;0.510;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"160.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"180\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.518;0.558;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"200.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"220\" y=\"84\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.566;0.606;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"240.0\" cy=\"104.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"20\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.613;0.653;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"40.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"60\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.661;0.701;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"80.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"100\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.709;0.749;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"120.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"140\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.757;0.797;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"160.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"180\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.804;0.844;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"200.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><rect x=\"220\" y=\"124\" width=\"40\" height=\"40\" fill=\"#34d399\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"fill-opacity\" values=\"0;0;0.3;0.3\" keyTimes=\"0;0.852;0.892;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"240.0\" cy=\"144.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.2\"/><text x=\"20\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">khí N₂ ở đktc: mỗi phân tử ở tâm một ô</text><text x=\"20\" y=\"188\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">22,4 L khí ↔ N<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> ô (xếp khít)</tspan></text><text x=\"282\" y=\"74\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">d = ?</text><text x=\"282\" y=\"98\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cạnh ô = khoảng cách</text><text x=\"282\" y=\"114\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hai phân tử kề nhau</text><text x=\"282\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">D = 3,0·10⁻¹⁰ m</text><text x=\"282\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">đường kính phân tử</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lần lượt từng ô được tô, mỗi ô chứa một phân tử (mặt cắt phẳng của hình lập phương). Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thể tích mol $V_{mol}$ chứa $N_A$ phân tử, mỗi phân tử chiếm một ô.</li><li><strong>Công thức:</strong> $V_1=\\dfrac{V_{mol}}{N_A}$ ; $V_1=d^3\\Rightarrow d=\\sqrt[3]{V_1}$.</li><li><strong>Thuyết:</strong> kích thước phân tử rất nhỏ so với khoảng cách giữa chúng.</li><li>⚠ <strong>Điều kiện:</strong> đổi $22{,}4$ lít sang $\\text{m}^3$ ; hình lập phương xếp khít chỉ là ước lượng cỡ độ lớn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi thể tích mol ra mét khối</span></p><p>$1\\ \\text{L}=10^{-3}\\ \\text{m}^3$ nên :</p>$$V_{mol}=22{,}4\\ \\text{L}=22{,}4\\cdot10^{-3}\\ \\text{m}^3$$<div class=\"bt-ans\">$$V_{mol}=0{,}0224\\ \\text{m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thể tích của mỗi hình lập phương</span></p><p>$N_A$ phân tử chiếm $V_{mol}$, mỗi phân tử chiếm một phần $N_A$ :</p>$$V_1=\\dfrac{V_{mol}}{N_A}=\\dfrac{0{,}0224}{6{,}02\\cdot10^{23}}$$<div class=\"bt-ans\">$$V_1\\approx3{,}72\\cdot10^{-26}\\ \\text{m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cạnh hình lập phương</span></p><p>Hình lập phương có $V_1=d^3$ :</p>$$d=\\sqrt[3]{V_1}=\\sqrt[3]{37{,}2\\cdot10^{-27}}$$<div class=\"bt-ans\">$$d\\approx3{,}34\\cdot10^{-9}\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So với đường kính phân tử</span></p>$$\\dfrac{d}{D}=\\dfrac{3{,}34\\cdot10^{-9}}{3{,}0\\cdot10^{-10}}$$<div class=\"bt-ans\">$$\\dfrac{d}{D}\\approx11\\ \\text{lần}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Đối chiếu với thuyết</span></p><p>Khoảng cách giữa hai phân tử khí lớn gấp cỡ chục lần kích thước phân tử.</p><div class=\"bt-ans\"><p>Khớp nội dung 1 : kích thước phân tử rất nhỏ so với khoảng cách giữa chúng ; vì vậy lực liên kết yếu và khí dễ nén.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$d^3\\cdot N_A=(3{,}34\\cdot10^{-9})^3\\cdot6{,}02\\cdot10^{23}\\approx0{,}0224\\ \\text{m}^3$ ✓ khớp $V_{mol}$.</p><p>Quên đổi lít ra mét khối sẽ làm $d$ lớn gấp 10 lần, ra $3{,}34\\cdot10^{-8}\\ \\text{m}$ — vô lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V_1\\approx3{,}72\\cdot10^{-26}\\ \\text{m}^3$</p><p>b) $d\\approx3{,}34\\cdot10^{-9}\\ \\text{m}$</p><p>c) $\\dfrac{d}{D}\\approx11$ lần ; khớp nội dung : phân tử rất nhỏ so với khoảng cách giữa chúng</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>khoảng cách giữa các phân tử</strong> → $V_1=\\dfrac{V_{mol}}{N_A}$, $d=\\sqrt[3]{V_1}$, rồi so với kích thước phân tử.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Một ô vuông là mặt cắt của hình lập phương chứa một phân tử, với cạnh d cần tìm và đường kính phân tử D\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"24.0\" width=\"120.0\" height=\"120.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"90.0\" cy=\"84.0\" r=\"12\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><line x1=\"30\" y1=\"164\" x2=\"150\" y2=\"164\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M143.0,159.9 L150.0,164.0 L143.0,168.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"164\" x2=\"30\" y2=\"164\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M37.0,168.1 L30.0,164.0 L37.0,159.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"90.0\" y=\"186\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">d = ?</text><line x1=\"78.0\" y1=\"60.0\" x2=\"102.0\" y2=\"60.0\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M95.0,55.9 L102.0,60.0 L95.0,64.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"102.0\" y1=\"60.0\" x2=\"78.0\" y2=\"60.0\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M85.0,64.1 L78.0,60.0 L85.0,55.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"108.0\" y=\"58.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">D</text><text x=\"200\" y=\"50\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Một ô = thể tích V₁ cho một phân tử</text><text x=\"200\" y=\"78\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">V<tspan dy=\"4\" font-size=\"10\">mol</tspan><tspan dy=\"-4\"> = 22,4 L = N</tspan><tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> ô</tspan></text><text x=\"200\" y=\"106\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">D = 3,0·10⁻¹⁰ m</text><text x=\"200\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần: d và tỉ số d / D</text></svg><figcaption>Dữ kiện: cạnh ô là khoảng cách hai phân tử kề nhau; hình vẽ không đúng tỉ lệ giữa D và d. Hình minh hoạ, không đúng tỉ lệ; số chấm chỉ để minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khí nitrogen ở điều kiện tiêu chuẩn … thể tích mol $22{,}4$ L\"</td><td>$V_{mol}=22{,}4$ L</td><td>⚠ Đổi $1\\ \\text{L}=10^{-3}\\ \\text{m}^3$ trước khi tính trong hệ SI</td></tr><tr><td>\"mỗi phân tử ở tâm một hình lập phương, xếp khít, lấp đầy thể tích\"</td><td>1 phân tử ↔ 1 ô ; $N_A$ ô ↔ 1 mol</td><td>Thể tích một ô bằng thể tích mol chia cho số phân tử trong một mol</td></tr><tr><td>\"thể tích của mỗi hình lập phương nhỏ\"</td><td>Cần $V_1$</td><td>$V_1=\\dfrac{V_{mol}}{N_A}$</td></tr><tr><td>\"cạnh $d$ = khoảng cách giữa hai phân tử kề nhau\"</td><td>Cần $d$</td><td>$V_1=d^3$ nên $d=\\sqrt[3]{V_1}$</td></tr><tr><td>\"đường kính phân tử $D=3{,}0\\cdot10^{-10}$ m\"</td><td>$D=3{,}0\\cdot10^{-10}$ m</td><td>Tỉ số $\\dfrac{d}{D}$</td></tr><tr><td>\"khớp với nội dung nào của thuyết?\"</td><td>So khoảng cách $d$ với kích thước $D$</td><td>Nội dung 1 của thuyết: kích thước phân tử so với khoảng cách giữa chúng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khoảng cách giữa các phân tử</b> → mỗi phân tử chiếm <b>V₁ = V_mol/N_A</b>, khoảng cách là <b>∛V₁</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi thể tích mol ra mét khối",
+     "hoi": "Thể tích mol $22{,}4$ lít bằng bao nhiêu $\\text{m}^3$?",
+     "dap_so": 0.0224,
+     "sai_so": 0.0002,
+     "don_vi": "m³",
+     "loi_hay_gap": "Đổi sai hệ số ($1\\ \\text{L}=10^{-3}\\ \\text{m}^3$) hoặc quên đổi nên cạnh ô ra lớn gấp 10 lần."
+    },
+    {
+     "tieu_de": "Thể tích của mỗi hình lập phương",
+     "hoi": "Thể tích $V_1$ của mỗi hình lập phương?",
+     "dap_so": 3.72,
+     "sai_so": 0.03,
+     "don_vi": "×10⁻²⁶ m³",
+     "loi_hay_gap": "Nhân $V_{mol}$ với $N_A$ thay vì chia, hoặc dùng thể tích của chính phân tử thay cho thể tích ô.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia thể tích mol cho $N_A$ : $V_1=\\dfrac{V_{mol}}{N_A}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân thể tích mol với $N_A$ : $V_1=V_{mol}\\,N_A$",
+       "dung": false,
+       "vi_sao": "Ra thể tích lớn hơn cả $V_{mol}$ ; mỗi phân tử chiếm một phần nhỏ của $V_{mol}$."
+      },
+      {
+       "text": "Dùng thể tích phân tử : $V_1=\\dfrac{\\pi D^3}{6}$",
+       "dung": false,
+       "vi_sao": "Đó là thể tích của chính phân tử ; ô còn gồm khoảng trống quanh phân tử nên lớn hơn rất nhiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cạnh hình lập phương",
+     "hoi": "Cạnh $d$ của hình lập phương?",
+     "dap_so": 3.34,
+     "sai_so": 0.03,
+     "don_vi": "×10⁻⁹ m",
+     "loi_hay_gap": "Lấy căn bậc hai thay căn bậc ba, hoặc chọn $d=V_1$ (nhầm thể tích với độ dài).",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy căn bậc ba : $d=\\sqrt[3]{V_1}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy căn bậc hai : $d=\\sqrt{V_1}$",
+       "dung": false,
+       "vi_sao": "Căn bậc hai ứng với hình vuông ; hình lập phương có $V_1=d^3$ nên phải lấy căn bậc ba."
+      },
+      {
+       "text": "Lấy luôn $d=V_1$",
+       "dung": false,
+       "vi_sao": "$V_1$ là thể tích ($\\text{m}^3$), $d$ là độ dài ($\\text{m}$) ; phải lấy căn bậc ba."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So với đường kính phân tử",
+     "hoi": "Khoảng cách $d$ gấp bao nhiêu lần đường kính phân tử?",
+     "dap_so": 11.1,
+     "sai_so": 0.3,
+     "don_vi": "lần",
+     "loi_hay_gap": "Lấy $D$ chia $d$ (ra số nhỏ hơn $1$) hoặc nhân hai độ dài với nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia $d$ cho $D$ : $\\dfrac{d}{D}$",
+       "dung": true
+      },
+      {
+       "text": "Chia $D$ cho $d$ : $\\dfrac{D}{d}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : hỏi khoảng cách gấp mấy lần đường kính nên lấy $\\dfrac{d}{D}$, kết quả lớn hơn $1$."
+      },
+      {
+       "text": "Nhân hai độ dài : $d\\cdot D$",
+       "dung": false,
+       "vi_sao": "Tích hai độ dài là diện tích, không cho biết gấp bao nhiêu lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đối chiếu với thuyết",
+     "hoi": "Kết quả này khớp với nội dung nào của thuyết?",
+     "lua_chon": [
+      {
+       "text": "Phân tử khí rất nhỏ so với khoảng cách giữa chúng",
+       "dung": true
+      },
+      {
+       "text": "Phân tử khí nằm sát nhau như ở thể lỏng",
+       "dung": false,
+       "vi_sao": "Khoảng cách lớn hơn đường kính phân tử cỡ chục lần, giữa hai phân tử còn khoảng trống rất lớn."
+      },
+      {
+       "text": "Kích thước phân tử khí lớn hơn khoảng cách giữa chúng",
+       "dung": false,
+       "vi_sao": "Ngược lại : đường kính $D$ nhỏ hơn khoảng cách $d$ nhiều lần."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng phân tử khí gần như chạm nhau như ở thể lỏng — trái với kết quả $d$ lớn hơn $D$ cỡ chục lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đối chiếu $d$ và $D$ với các nội dung của thuyết",
+       "dung": true
+      },
+      {
+       "text": "Tính tiếp tốc độ trung bình của phân tử",
+       "dung": false,
+       "vi_sao": "Đề không cho dữ kiện về tốc độ, và câu hỏi chỉ yêu cầu nối kết quả với nội dung của thuyết."
+      },
+      {
+       "text": "Tính lại $d$ cho khí oxygen",
+       "dung": false,
+       "vi_sao": "Chất khí khác không làm đổi kết luận cỡ độ lớn, và đề không yêu cầu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
