@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Home, Maximiz
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
-import TheoryRpBar from "@/components/lessons/TheoryRpBar";
+import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
@@ -325,6 +325,7 @@ function TheoryBlock({
   const [allOpen, setAllOpen] = useState(false);
   const [resumeIndex, setResumeIndex] = useState<number | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
+  const rp = useTheoryRp(item.id, loggedIn && open ? item.body_html : "", rootRef);
   const isOpen = (i: number) => allOpen || openSections.has(i);
   // Số mốc chưa từng mở — hiện cạnh "Mở tất cả" để biết bài còn bao nhiêu (bản đồ "còn gì").
   const unopenedCount = allOpen ? 0 : Math.max(0, total - openSections.size);
@@ -414,6 +415,7 @@ function TheoryBlock({
       </button>}
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
+          <TheoryRpHint rp={rp} />
           {total === 0 ? (
             <ContentHtml html={item.body_html} className="block leading-relaxed" />
           ) : (
@@ -487,7 +489,7 @@ function TheoryBlock({
             <FileText size={15} /> Tài liệu PDF
           </a>
         )}
-        {loggedIn && open && hasBody && <TheoryRpBar itemId={item.id} bodyHtml={item.body_html} rootRef={rootRef} />}
+        {loggedIn && open && hasBody && <TheoryRpBar rp={rp} />}
         {loggedIn && open && (
           <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
             <Check size={14} /> {done ? "Đã tự xác nhận đọc" : "Tôi đã đọc xong"}
