@@ -63,7 +63,7 @@ const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta n
 #tong{position:sticky;top:0;background:#fff;padding:8px;border-bottom:1px solid #ddd}</style></head><body>
 <div id="tong"><b>${cards.length} câu</b> · <button onclick="xuat()">Xuất quyết định (JSON)</button> <span id="kq"></span></div>
 ${cards.join("\n")}
-<script>function xuat(){const o={};document.querySelectorAll('input[type=radio]:checked').forEach(r=>o[r.name.slice(1)]=r.value);const g={};document.querySelectorAll('.gc').forEach(i=>{if(i.value.trim())g[i.dataset.id]=i.value.trim();});if(Object.keys(g).length)o._ghi_chu=g;const s=JSON.stringify(o);navigator.clipboard.writeText(s);document.getElementById('kq').textContent='đã chép '+document.querySelectorAll('input[type=radio]:checked').length+' quyết định vào clipboard → dán vào quyet-dinh.json';}</script>
+<script>function xuat(){const o={};document.querySelectorAll('input[type=radio]:checked').forEach(r=>o[r.name.slice(1)]=r.value);const g={};document.querySelectorAll('.gc').forEach(i=>{if(i.value.trim())g[i.dataset.id]=i.value.trim();});if(Object.keys(g).length)o._ghi_chu=g;const s=JSON.stringify(o);try{navigator.clipboard.writeText(s)}catch(e){}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,1)],{type:'application/json'}));a.download='quyet-dinh.json';a.click();document.getElementById('kq').textContent='đã chép '+document.querySelectorAll('input[type=radio]:checked').length+' quyết định → file quyet-dinh.json đã tải vào thư mục Downloads (báo tôi, tôi chép vào dự án)';}</script>
 </body></html>`;
 fs.writeFileSync(path.join(root, "so-sanh.html"), html);
 
