@@ -181,7 +181,7 @@ def d4(k):
     b += arrow(p, "r", *o, o[0] - 120, o[1] - 120, 3) + lbl(o[0] - 36, o[1] - 70, "B", RED, 15, "start", "700")
     b += arc(*o, 52, 90, 135, RED) + lbl(o[0] + 6, o[1] - 62, "45°", RED, 13, "start", "700")
     b += lbl(250, 70, "Bđ = 40 μT (bắc)", BLUE, 13, "start", "700") + lbl(250, 92, "B₁ = 30 μT (dây 1)", ORG, 13, "start", "700") + lbl(250, 114, "B₂ = ? (dây 2)", ORG, 13, "start", "700")
-    return fig("d4-2", VB, "Từ trường Trái Đất hướng bắc cộng với từ trường của hai dây; tổng hợp lệch 45 độ về phía tây", b, "Dữ kiện: B₁ hướng tây, tổng hợp lệch 45° về tây. " + NOTE)
+    return fig("d4-2", VB, "Từ trường Trái Đất hướng bắc cộng với từ trường của hai dây; tổng hợp lệch 45 độ về phía tây", b, "Dữ kiện: B₁ = 30 μT, tổng hợp lệch 45° về tây. " + NOTE)
 
 BUILD = [d1, d2, d3, d4]
 
@@ -189,9 +189,9 @@ BUILD = [d1, d2, d3, d4]
 DANG = [
  dict(label="Dạng 1 · Dễ · Chiều từ trường và độ mạnh quanh thanh nam châm",
       topic="Đường sức từ và từ phổ",
-      problem_html=("<p>Một thanh nam châm thẳng nằm ngang, cực bắc (N) ở bên phải, cực nam (S) ở bên trái. Kim nam châm nhỏ lần lượt đặt tại: "
+      problem_html=("<p>Một thanh nam châm thẳng nằm ngang, cực bắc (N) ở bên phải, cực nam (S) ở bên trái. Xét từ trường tại: "
                     "<strong>M</strong> — phía trên, chính giữa thanh, ngoài thanh; <strong>P</strong> — trên đường thẳng chứa thanh, bên phải cực N, ngoài thanh; "
-                    "<strong>Q</strong> — chính giữa, bên trong thanh.</p>"
+                    "<strong>Q</strong> — chính giữa, xét bên trong thanh.</p>"
                     "<p>a) Tại mỗi điểm M, P, Q, từ trường hướng sang trái hay sang phải (đầu N của kim nam châm nhỏ nằm cân bằng chỉ về phía nào)?</p>"
                     "<p>b) Trên hình vẽ đường sức, điểm A gần cực N có đường sức mau, điểm B ở xa có đường sức thưa. Từ trường ở điểm nào mạnh hơn?</p>"
                     "<p>c) Rắc mạt sắt quanh thanh thì thấy các chuỗi hạt cong. Chuỗi hạt đó có phải là đường sức từ không?</p>")),
@@ -223,31 +223,30 @@ DANG = [
 
 # ───────────── bảng phân tích đề ─────────────
 ANALYSIS = [
- [("\"thanh nam châm thẳng, cực bắc ở bên phải\"", "N bên phải, S bên trái", "⚠ Ngoài thanh, đường sức đi từ cực N sang cực S; trong thanh đi từ S sang N (đường cong kín)"),
-  ("\"kim nam châm nhỏ ... nằm cân bằng\"", "Kim đủ nhỏ, đã đứng yên", "Chiều từ trường tại điểm = chiều nam → bắc của kim = hướng đầu N của kim"),
-  ("\"M — phía trên, chính giữa thanh\"", "Ngoài thanh, trên đường sức từ N sang S", "Từ trường hướng từ phía cực N sang phía cực S"),
-  ("\"P — bên phải cực N\"", "Ngoài thanh, ở phía cực N", "Đường sức từ cực N đi ra xa cực"),
-  ("\"Q — bên trong thanh\"", "Trong thanh", "Đường sức khép kín: trong thanh đi từ S sang N"),
-  ("\"đường sức mau ... thưa\"", "A mau, B thưa", "Mật độ đường sức biểu diễn độ mạnh: mau → mạnh, thưa → yếu"),
-  ("\"chuỗi hạt cong\"", "Từ phổ", "Từ phổ là ảnh thật cho thấy hình dạng; đường sức là đường vẽ theo quy ước")],
- [("\"dây thẳng dài, vuông góc trang giấy\"", "Mặt phẳng trang vuông góc dây", "⚠ Đường sức quanh dây thẳng là các đường tròn đồng tâm nằm trong mặt phẳng vuông góc với dây"),
-  ("\"dòng điện hướng ra phía người nhìn\"", "$I$ ra khỏi trang", "Quy tắc nắm tay phải: ngón cái chỉ chiều dòng điện, các ngón khum lại chỉ chiều đường sức"),
-  ("\"A bên phải, B phía trên, C bên trái\"", "Ba điểm trên ba hướng khác nhau", "Chiều từ trường là tiếp tuyến của đường tròn tại điểm đó"),
-  ("\"xác định chiều từ trường\"", "Cần chiều tại A, B, C", "Đầu N của kim chỉ theo tiếp tuyến"),
-  ("\"đảo chiều dòng điện\"", "$I$ vào trang", "Đổi chiều dòng điện thì đổi chiều từ trường"),
-  ("\"cách dây 2 cm ... 6 cm\"", "$d_B=2$ cm, $d_C=6$ cm", "Càng xa dây từ trường càng yếu; gần dây đường sức mau")],
- [("\"$B_{\\text{đ}} = 40\\ \\mu\\text{T}$, hướng bắc\"", "$B_{\\text{đ}}=40\\ \\mu\\text{T}$", "Từ trường Trái Đất định hướng kim về phía bắc"),
-  ("\"dây ... ngay phía trên la bàn\"", "Từ trường của dây nằm ngang, vuông góc với dây", "⚠ Từ trường dây (hướng tây hoặc đông) vuông góc $B_{\\text{đ}}$ (hướng bắc)"),
-  ("\"kim lệch $37^\\circ$ về phía tây\"", "$\\alpha=37^\\circ$", "⚠ Kim chỉ theo từ trường tổng hợp, chỉ xét hai từ trường này"),
-  ("\"tính $B_{\\text{dây}}$\"", "Cần $B_{\\text{dây}}$", "Hai vectơ vuông góc: $\\tan\\alpha=\\dfrac{B_{\\text{dây}}}{B_{\\text{đ}}}$"),
-  ("\"cảm ứng từ tổng hợp\"", "Cần $B$", "$B=\\sqrt{B_{\\text{đ}}^2+B_{\\text{dây}}^2}$ hoặc $B=\\dfrac{B_{\\text{đ}}}{\\cos\\alpha}$"),
-  ("\"đảo chiều dòng điện\"", "Đổi chiều dòng điện", "Đổi chiều dòng thì đổi chiều từ trường của dây; độ lớn không đổi")],
- [("\"dây (1) phía trên, dây (2) phía dưới la bàn\"", "Hai dây ở hai phía của la bàn", "⚠ Quy tắc nắm tay phải dùng riêng cho từng dây; từ trường tổng = vectơ tổng các từ trường"),
-  ("\"dây (1) nam → bắc; dây (2) bắc → nam\"", "Hai dòng ngược chiều", "Nắm tay phải cho từng dây; so hai chiều từ trường tại la bàn"),
+ [("\"thanh nam châm thẳng, cực bắc ở bên phải\"", "N bên phải, S bên trái", "⚠ Đường sức từ có khép kín không? Ngoài thanh và trong thanh có đi cùng một chiều không?"),
+  ("\"kim nam châm nhỏ ... nằm cân bằng\"", "Kim đủ nhỏ, đã đứng yên", "Chiều từ trường tại điểm được định nghĩa qua kim như thế nào?"),
+  ("\"M — phía trên, chính giữa thanh\"", "Ngoài thanh, phía trên", "Điểm này nằm trên đường sức nào? Đường sức đó đi ra từ đâu?"),
+  ("\"P — bên phải cực N\"", "Ngoài thanh, phía cực N", "Gần một cực, đường sức đi ra hay đi vào cực đó?"),
+  ("\"Q — xét bên trong thanh\"", "Trong thanh", "Đường sức tiếp tục thế nào khi đi qua thanh?"),
+  ("\"điểm A ... mau, điểm B ... thưa\"", "A mau, B thưa", "Quy ước vẽ đường sức gắn với độ mạnh yếu ra sao?"),
+  ("\"chuỗi hạt cong\"", "Chuỗi mạt sắt", "Chuỗi hạt và đường vẽ trong sách giống và khác nhau ở điểm nào?")],
+ [("\"dây thẳng dài, vuông góc trang giấy\"", "Mặt phẳng trang vuông góc dây", "⚠ Đường sức quanh dây thẳng dài có hình gì trong mặt phẳng vuông góc dây?"),
+  ("\"dòng điện hướng ra phía người nhìn\"", "$I$ ra khỏi trang", "Quy tắc nào xác định chiều đường sức từ chiều dòng điện?"),
+  ("\"A bên phải, B phía trên, C bên trái\"", "Ba điểm trên ba hướng khác nhau", "Chiều từ trường tại một điểm của đường tròn là hướng nào so với bán kính?"),
+  ("\"đảo chiều dòng điện\"", "$I$ vào trang", "Chiều dòng điện đổi thì điều gì của đường sức đổi theo?"),
+  ("\"cách dây 2 cm ... 6 cm\"", "$d_B=2$ cm, $d_C=6$ cm", "Khoảng cách tới dây ảnh hưởng thế nào đến độ mạnh?")],
+ [("\"$B_{\\text{đ}} = 40\\ \\mu\\text{T}$, hướng bắc\"", "$B_{\\text{đ}}=40\\ \\mu\\text{T}$", "Từ trường Trái Đất làm kim chỉ hướng nào khi chưa có dòng điện?"),
+  ("\"dây ... ngay phía trên la bàn\"", "Từ trường của dây tại kim nằm ngang", "⚠ Từ trường của dây tạo với hướng bắc góc nào? Chiều xác định thế nào?"),
+  ("\"kim lệch $37^\\circ$ về phía tây\"", "$\\alpha=37^\\circ$", "⚠ Kim chỉ theo vectơ nào? Chỉ xét những từ trường nào?"),
+  ("\"tính $B_{\\text{dây}}$\"", "Cần $B_{\\text{dây}}$", "Hai vectơ vuông góc và một góc đã biết: dùng hệ thức lượng nào?"),
+  ("\"cảm ứng từ tổng hợp\"", "Cần $B$", "Vectơ tổng của hai vectơ vuông góc có độ lớn tính thế nào?"),
+  ("\"đảo chiều dòng điện\"", "Đổi chiều dòng điện", "Đại lượng nào của từ trường dây đổi, đại lượng nào giữ nguyên?")],
+ [("\"dây (1) phía trên, dây (2) phía dưới la bàn\"", "Hai dây ở hai phía của la bàn", "⚠ Quy tắc xác định chiều dùng cho từng dây hay cho cả hai dây cùng lúc?"),
+  ("\"dây (1) nam → bắc; dây (2) bắc → nam\"", "Hai dòng ngược chiều", "Vị trí của dây so với la bàn ảnh hưởng thế nào đến chiều từ trường?"),
   ("\"$B_1 = 30\\ \\mu\\text{T}$\"", "$B_1=30\\ \\mu\\text{T}$", "Từ trường của dây (1) tại la bàn"),
-  ("\"kim lệch $45^\\circ$ về phía tây\"", "$\\alpha=45^\\circ$", "⚠ Kim chỉ theo tổng hợp: $\\tan\\alpha=\\dfrac{B_{\\text{dây}}}{B_{\\text{đ}}}$ với $B_{\\text{dây}}$ là tổng hai từ trường của dây"),
-  ("\"tính $B_2$\"", "Cần $B_2$", "Cộng hay trừ đại số tuỳ hai từ trường cùng chiều hay ngược chiều"),
-  ("\"đổi chiều dòng điện ở dây (2)\"", "Đổi chiều $\\vec B_2$", "Xét lại chiều từ trường dây (2), tìm $B_{\\text{dây}}$ rồi tổng hợp với $B_{\\text{đ}}$")],
+  ("\"kim lệch $45^\\circ$ về phía tây\"", "$\\alpha=45^\\circ$", "⚠ Kim chỉ theo vectơ nào? Các từ trường của dây có cùng phương với nhau không?"),
+  ("\"tính $B_2$\"", "Cần $B_2$", "Hai từ trường cùng phương tổng hợp bằng phép cộng hay trừ?"),
+  ("\"đổi chiều dòng điện ở dây (2)\"", "Đổi chiều $\\vec B_2$", "Sau khi đổi, hai từ trường của dây còn quan hệ nào với nhau?")],
 ]
 
 # ───────────── lời giải ─────────────
@@ -297,9 +296,109 @@ SOLS = [
   ("Câu b: tìm $B_2$", [P("Kim lệch $45^\\circ$, hai từ trường của dây cùng chiều nên cộng đại số:"), M(r"\tan45^\circ=\dfrac{B_1+B_2}{B_{\text{đ}}}=1"), M(r"B_1+B_2=B_{\text{đ}}=40\ \mu\text{T}"), M(r"B_2=40-30"), A(r"B_2=10\ \mu\text{T}")]),
   ("Câu c: đổi chiều dòng ở dây (2)", [P("$\\vec B_2$ quay sang hướng đông, ngược chiều $\\vec B_1$ nên trừ đại số (hướng tây vì $B_1\\gt B_2$):"), M(r"B_{\text{dây}}=B_1-B_2=30-10"), A(r"B_{\text{dây}}=20\ \mu\text{T}\ \ (\text{hướng tây})")]),
   ("Tổng hợp với Trái Đất", [P("$\\vec B_{\\text{dây}}\\perp\\vec B_{\\text{đ}}$ nên:"), M(r"B=\sqrt{40^2+20^2}=\sqrt{2000}"), A(r"B\approx44{,}7\ \mu\text{T}"), M(r"\tan\alpha=\dfrac{20}{40}=0{,}5"), A(r"\alpha\approx26{,}6^\circ\ \ (\text{về phía tây})")]),
-  ("Kiểm tra", [P("Dòng ngược nhau thì từ trường dây yếu đi: $20\\lt40$, kim lệch ít hơn ($26{,}6^\\circ\\lt45^\\circ$) ✓.")])],
+  ("Kiểm tra", [P("Hai dòng giờ cùng chiều nên hai từ trường ngược nhau và trừ nhau: $20\\lt40$, kim lệch ít hơn ($26{,}6^\\circ\\lt45^\\circ$) ✓.")])],
   ["a) Cả hai dây: từ trường hướng tây", "b) $B_2=10\\ \\mu\\text{T}$", "c) $B\\approx44{,}7\\ \\mu\\text{T}$; kim lệch $\\approx26{,}6^\\circ$ về phía tây"],
   "Nhận dạng: <strong>nhiều dây quanh một điểm</strong> → nắm tay phải cho từng dây, cộng/trừ đại số các từ trường cùng phương, rồi tổng hợp với Trái Đất."),
 ]
 
+# ───────────── tự giải từng bước (9/10/2026) ─────────────
+STEPS = [
+ dict(nhan_dang=r"Thấy <b>kim nhỏ cạnh thanh nam châm</b> → nghĩ tới <b>đường sức từ</b> và quy ước vẽ chúng.",
+  cap_do=1, fading="mo_het", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Tại M (phía trên, ngoài thanh)", "Tại M, đầu N của kim nhỏ chỉ về phía nào?",
+       loi=r"Lấy chiều từ S sang N (chiều bên trong thanh) cho cả điểm ở ngoài thanh.",
+       lua_chon=[(r"Sang trái", True), (r"Sang phải", r"Đó là chiều bên trong thanh; ngoài thanh đường sức đi từ cực N (bên phải) vòng sang cực S (bên trái).")]),
+  buoc("Tại P (bên phải cực N, ngoài thanh)", "Tại P, đầu N của kim nhỏ chỉ về phía nào?",
+       loi=r"Cho rằng đường sức chạy vào cực N, hoặc nhầm P với điểm nằm trên đường sức đi sang cực S.",
+       lua_chon=[(r"Sang phải", True), (r"Sang trái", r"Đường sức đi ra từ cực N nên phía ngoài cực N chúng đi ra xa cực, không quay vào cực N.")],
+       ke=[(r"Đường sức đi ra từ cực N nên ở phía ngoài cực N chúng đi ra xa", True),
+           (r"Đường sức đi vào cực N nên ở phía ngoài cực N chúng hướng về cực", r"Ngoài nam châm đường sức đi ra từ cực N và đi vào cực S, không phải ngược lại."),
+           (r"Dùng quy tắc nắm tay phải cho thanh nam châm", r"Nắm tay phải dùng cho dòng điện; nam châm xác định chiều bằng quy ước N → S ngoài thanh.")]),
+  buoc("Tại Q (bên trong thanh)", "Tại Q, từ trường hướng sang phía nào?",
+       loi=r"Dùng chiều N → S (chiều ngoài thanh) cho điểm ở bên trong thanh, quên đường sức khép kín.",
+       lua_chon=[(r"Sang phải", True), (r"Sang trái", r"Đường sức khép kín: ngoài thanh đi N → S thì trong thanh phải đi S → N, tức từ trái sang phải.")],
+       ke=[(r"Đường sức khép kín nên trong thanh đi từ cực S sang cực N", True),
+           (r"Trong thanh cũng đi từ cực N sang cực S như ngoài thanh", r"Đường sức không có điểm đầu hay cuối; nếu trong thanh cũng đi N → S thì không khép kín được."),
+           (r"Trong thanh không có từ trường", r"Bên trong thanh vẫn có từ trường; đường sức khép kín đi xuyên qua thanh.")]),
+  buoc("So sánh A và B", "Từ trường ở điểm nào mạnh hơn?",
+       loi=r"Cho rằng đường sức thưa thì từ trường mạnh, hoặc so theo độ dài đường sức.",
+       lua_chon=[(r"Tại A", True), (r"Tại B", r"Đường sức thưa nghĩa là từ trường yếu; tại B đường sức thưa."), (r"Bằng nhau", r"Mật độ đường sức hai điểm khác nhau nên độ mạnh khác nhau.")],
+       ke=[(r"So mật độ đường sức tại A và tại B", True),
+           (r"So độ dài đường sức đi qua hai điểm", r"Độ dài đường sức không cho biết độ mạnh; độ mạnh do mật độ (mau hay thưa)."),
+           (r"So số mũi tên vẽ trên mỗi đường sức", r"Mũi tên chỉ chiều, không liên quan độ mạnh.")]),
+  buoc("Mạt sắt và đường sức", "Chuỗi hạt mạt sắt có phải là đường sức từ không?",
+       loi=r"Coi chuỗi mạt sắt chính là đường sức, quên rằng đường sức là đường vẽ theo quy ước và có chiều.",
+       lua_chon=[(r"Không: chuỗi hạt là từ phổ, chỉ cho thấy hình dạng", True), (r"Có: mỗi chuỗi hạt là một đường sức", r"Từ phổ chỉ cho thấy hình dạng, không cho biết chiều; đường sức là đường vẽ theo quy ước, có mũi tên.")],
+       ke=[(r"Phân biệt ảnh thật (từ phổ) với đường vẽ quy ước (đường sức)", True),
+           (r"Xét số chuỗi hạt để biết số đường sức", r"Số chuỗi hạt tuỳ ta rắc, không cố định; đường sức vẽ nhiều hay ít chỉ là quy ước."),
+           (r"Xét màu của mạt sắt", r"Màu mạt sắt không mang thông tin về từ trường.")])]),
+ dict(nhan_dang=r"Cho <b>dòng điện thẳng và chiều dòng điện</b> → nghĩ tới <b>quy tắc nắm tay phải</b>; đường sức là vòng tròn đồng tâm.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Xác định chiều đường sức", "Nhìn từ phía người nhìn, các đường sức quay theo chiều nào?",
+       loi=r"Nắm tay phải nhưng quay ngược: cho rằng dòng điện hướng ra thì đường sức quay cùng chiều kim đồng hồ.",
+       lua_chon=[(r"Ngược chiều kim đồng hồ", True), (r"Cùng chiều kim đồng hồ", r"Ngón cái chỉ ra phía người nhìn thì các ngón khum lại chỉ chiều ngược kim đồng hồ khi nhìn từ phía đó.")]),
+  buoc("Chiều từ trường tại A, B, C", "Tại A (bên phải dây), đầu N của kim chỉ hướng nào?",
+       loi=r"Lấy tiếp tuyến theo chiều xuyên tâm (chỉ vào hoặc ra khỏi dây) thay vì tiếp tuyến của vòng tròn.",
+       lua_chon=[(r"Lên", True), (r"Xuống", r"Đường sức đang quay ngược chiều kim đồng hồ, tiếp tuyến tại A hướng ngược lại."), (r"Sang phải", r"Từ trường là tiếp tuyến của vòng tròn nên vuông góc với đường nối điểm với dây; sang phải là hướng ra xa dây."), (r"Sang trái", r"Sang trái chỉ về phía dây, cũng là phương xuyên tâm; từ trường vuông góc phương đó.")],
+       ke=[(r"Từ trường là tiếp tuyến của vòng tròn đường sức tại điểm đó", True),
+           (r"Từ trường hướng thẳng từ dây ra điểm cần xét", r"Đường sức là vòng tròn quanh dây, tiếp tuyến vuông góc với bán kính chứ không dọc theo bán kính."),
+           (r"Từ trường song song với dây", r"Từ trường quanh dây thẳng nằm trong mặt phẳng vuông góc với dây.")]),
+  buoc("Đảo chiều dòng điện", "Sau khi đảo chiều dòng điện, tại A từ trường hướng nào?",
+       loi=r"Cho rằng đổi chiều dòng điện chỉ làm đổi độ mạnh, không đổi chiều từ trường.",
+       lua_chon=[(r"Xuống", True), (r"Lên", r"Đổi chiều dòng điện thì đường sức quay ngược lại, nên chiều từ trường tại mỗi điểm đảo."), (r"Không có từ trường", r"Vẫn có dòng điện (chỉ đổi chiều) nên từ trường vẫn còn.")],
+       ke=[(r"Dòng vào trang: đường sức quay cùng chiều kim đồng hồ, lấy tiếp tuyến tại A", True),
+           (r"Chiều từ trường không đổi vì độ lớn dòng điện không đổi", r"Chiều từ trường phụ thuộc chiều dòng điện, không chỉ độ lớn."),
+           (r"Giữ nguyên chiều quay, chỉ đổi điểm xét", r"Chiều quay của đường sức đảo khi dòng điện đảo.")]),
+  buoc("So sánh B và C", "Từ trường tại B hay tại C mạnh hơn?",
+       loi=r"Cho rằng điểm nằm ở phía trên dây thì từ trường mạnh hơn, hoặc bỏ qua khoảng cách tới dây.",
+       lua_chon=[(r"Tại B", True), (r"Tại C", r"C cách dây xa hơn nên đường sức thưa hơn, từ trường yếu hơn.")],
+       ke=[(r"Điểm gần dây hơn thì đường sức mau hơn, từ trường mạnh hơn", True),
+           (r"Hai điểm cách dây khác nhau nhưng cùng một dây nên từ trường bằng nhau", r"Cùng một dây vẫn khác nhau theo khoảng cách: càng xa càng yếu."),
+           (r"Điểm ở xa dây thì từ trường mạnh hơn", r"Ngược lại: từ trường yếu dần khi ra xa dây.")])]),
+ dict(nhan_dang=r"Cho <b>góc lệch của kim la bàn</b> → nghĩ tới <b>tổng hợp hai từ trường vuông góc</b> bằng hình chữ nhật.",
+  cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Chiều từ trường của dây", "Từ trường của dây tại la bàn so với hướng bắc của Trái Đất như thế nào?",
+       loi=r"Cho rằng từ trường của dây cùng phương với từ trường Trái Đất nên chỉ cộng đại số.",
+       lua_chon=[(r"Vuông góc, hướng tây", True), (r"Cùng phương, hướng bắc", r"Nếu cùng phương với $\vec B_{\text{đ}}$ thì kim không lệch, trái với đề."), (r"Vuông góc, hướng đông", r"Nắm tay phải cho dòng nam → bắc, la bàn dưới dây: từ trường hướng tây, khớp với kim lệch về tây.")]),
+  buoc("Câu a: $B_{\\text{dây}}$", "Cảm ứng từ của dây tại la bàn bằng bao nhiêu (đơn vị μT)?", 30.2, "μT", 0.3,
+       loi=r"Dùng $\sin\alpha$ hoặc $\cos\alpha$ thay cho $\tan\alpha$, hoặc lật ngược tỉ số.",
+       ke=[(r"Hai vectơ vuông góc: $\tan\alpha=\dfrac{B_{\text{dây}}}{B_{\text{đ}}}$", True),
+           (r"$\sin\alpha=\dfrac{B_{\text{dây}}}{B_{\text{đ}}}$", r"$B_{\text{đ}}$ là cạnh kề của góc $\alpha$, không phải cạnh huyền; tỉ số cạnh đối/cạnh kề là $\tan$."),
+           (r"$\tan\alpha=\dfrac{B_{\text{đ}}}{B_{\text{dây}}}$", r"Góc $\alpha$ đo từ hướng bắc nên $B_{\text{dây}}$ là cạnh đối, $B_{\text{đ}}$ là cạnh kề; tỉ số bị lật ngược.")]),
+  buoc("Câu b: cảm ứng từ tổng hợp", "Cảm ứng từ tổng hợp tại kim bằng bao nhiêu (đơn vị μT)?", 50.1, "μT", 0.5,
+       loi=r"Cộng số học hai cảm ứng từ, hoặc nhân với $\cos\alpha$ thay vì chia.",
+       ke=[(r"$B_{\text{đ}}$ là cạnh kề: $B=\dfrac{B_{\text{đ}}}{\cos\alpha}$ (hoặc căn bậc hai tổng bình phương)", True),
+           (r"$B=B_{\text{đ}}+B_{\text{dây}}$", r"Hai vectơ vuông góc không cộng số học; phải dùng định lí Pythagore."),
+           (r"$B=B_{\text{đ}}\cos\alpha$", r"Cạnh kề nhỏ hơn cạnh huyền; $B$ phải lớn hơn $B_{\text{đ}}$ nên chia cho $\cos\alpha$, không nhân.")]),
+  buoc("Câu c: đảo chiều dòng điện", "Sau khi đảo chiều dòng điện, kim lệch thế nào so với hướng bắc?",
+       loi=r"Cho rằng kim vẫn lệch về tây, hoặc cho rằng đổi chiều dòng làm đổi cả độ lớn góc lệch.",
+       lua_chon=[(r"Lệch cùng góc, về phía đông", True), (r"Lệch cùng góc, vẫn về phía tây", r"Đổi chiều dòng điện thì từ trường của dây đổi chiều, kim phải quay sang phía ngược lại."), (r"Không lệch", r"Độ lớn dòng điện không đổi nên từ trường của dây vẫn còn, kim vẫn lệch (chỉ đổi phía).")],
+       ke=[(r"$\vec B_{\text{dây}}$ đảo chiều, độ lớn giữ nguyên nên góc lệch giữ nguyên, đổi phía", True),
+           (r"Đổi dòng thì $B_{\text{dây}}$ đổi dấu và góc lệch thành âm, nghĩa là kim về bắc", r"Đổi chiều chỉ làm kim lệch sang phía kia, không làm triệt tiêu từ trường."),
+           (r"Tính lại $\tan\alpha$ với $B_{\text{dây}}$ mới bằng không", r"Đổi chiều dòng điện không làm $B_{\text{dây}}$ bằng không.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang=r"Thấy <b>nhiều dây quanh một điểm</b> → nắm tay phải cho từng dây, <b>cộng hay trừ</b> các từ trường cùng phương, rồi tổng hợp.",
+  cap_do=4, fading="giau_het", go_roi={"buoc_hay_sai": 0}, buoc=[
+  buoc("Câu a: chiều từ trường mỗi dây", "Từ trường của hai dây tại la bàn cùng chiều hay ngược chiều?",
+       loi=r"Thấy hai dòng ngược chiều thì kết luận hai từ trường ngược chiều, quên rằng hai dây nằm ở hai phía đối nhau của la bàn.",
+       lua_chon=[(r"Cùng chiều", True), (r"Ngược chiều", r"Dòng ngược chiều nhưng dây ở hai phía đối nhau của la bàn; hai lần đảo cho từ trường cùng hướng.")]),
+  buoc("Câu b: tìm $B_2$", "Cảm ứng từ của dây (2) tại la bàn bằng bao nhiêu (đơn vị μT)?", 10, "μT", 0.2,
+       loi=r"Trừ hai cảm ứng từ của dây dù chúng cùng chiều, hoặc dùng $\sin\alpha$ thay cho $\tan\alpha$.",
+       ke=[(r"Cùng chiều nên cộng: $B_1+B_2=B_{\text{đ}}\tan\alpha$", True),
+           (r"Chỉ dây (2) gây lệch: $B_2=B_{\text{đ}}\tan\alpha$", r"Dây (1) cũng có dòng điện và tạo từ trường $B_1$ cùng chiều, phải tính cả $B_1$ vào tổng."),
+           (r"$B_1+B_2=B_{\text{đ}}\sin\alpha$", r"$B_{\text{đ}}$ là cạnh kề của góc $\alpha$; tỉ số cạnh đối/cạnh kề là $\tan$, không phải $\sin$.")]),
+  buoc("Câu c: đổi chiều dòng ở dây (2)", "Sau khi đổi, từ trường tổng của hai dây tại la bàn bằng bao nhiêu (đơn vị μT)?", 20, "μT", 0.2,
+       loi=r"Vẫn cộng $B_1+B_2$ dù đã đổi chiều dòng ở dây (2).",
+       ke=[(r"$\vec B_2$ đảo chiều, hai từ trường ngược nhau nên trừ đại số", True),
+           (r"Vẫn cộng $B_1+B_2$ như lúc trước", r"Đổi chiều dòng ở dây (2) thì $\vec B_2$ đảo chiều, hai từ trường không còn cùng chiều."),
+           (r"Chỉ còn từ trường của dây (2)", r"Dây (1) vẫn có dòng điện nên vẫn tạo từ trường.")]),
+  buoc("Tổng hợp với Trái Đất", "Kim lệch bao nhiêu độ so với hướng bắc (đơn vị độ)?", 26.6, "°", 0.2,
+       loi=r"Cộng đại số $B_{\text{dây}}+B_{\text{đ}}$ dù hai vectơ vuông góc, hoặc lật ngược tỉ số trong $\tan\alpha$.",
+       ke=[(r"Hai vectơ vuông góc: $\tan\alpha=\dfrac{B_{\text{dây}}}{B_{\text{đ}}}$", True),
+           (r"Cộng đại số $B_{\text{dây}}+B_{\text{đ}}$ rồi suy ra góc", r"Hai vectơ vuông góc không cộng đại số; phải tổng hợp theo hình bình hành."),
+           (r"$\tan\alpha=\dfrac{B_{\text{đ}}}{B_{\text{dây}}}$", r"Góc đo từ hướng bắc nên $B_{\text{dây}}$ là cạnh đối; tỉ số bị lật ngược.")]),
+  buoc("Kiểm tra")]),
+]
+
 write(J, 10, "Bài 9. Khái niệm từ trường", DANG, BUILD, ANALYSIS, SOLS)
+inject(J, BUILD, ANALYSIS, SOLS, STEPS)
