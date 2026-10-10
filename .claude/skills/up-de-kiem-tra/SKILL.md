@@ -473,3 +473,4 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-10-10 · Thời gian mặc định cũ là 45 phút cho mọi đề (đề 8 câu hay 40 câu cũng vậy) → giờ lấy theo ước lượng số câu/dạng câu (`features/exams/duration.ts`: TN 1,5′ · ĐS 2′ · TLN 2,5′ · tự luận 8′, làm tròn lên bội số 5). Số này chỉ là GỢI Ý, vẫn phải nhìn lại theo lớp trước khi Đăng.
 
 
+- 2026-10-11 · Trang soạn đề giờ chạy `lib/question-lint.ts` (cờ "loi" chặn Đăng/Lưu, "canhBao" chỉ vàng; "Bỏ qua cảnh báo" ghi `lint_ignored`) → câu bị chặn thì sửa nội dung, đừng bỏ qua trừ khi chắc đúng; quy tắc mới chỉ thêm ở lib rồi chạy `cap-nhat-lint-flags.mts`. Cờ chặn phải đo tỉ lệ bắt nhầm trên cả ngân hàng trước (deCutCuoi bắt 30% câu "…là" hợp lệ).
