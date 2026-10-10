@@ -18,7 +18,9 @@ export async function updateMyAvatar(studentId: string, file: File) {
   if (uploadError) throw uploadError;
 
   const { data } = supabase.storage.from(AVATAR_BUCKET).getPublicUrl(path);
-  const { error } = await supabase.from("profiles").update({ avatar_url: data.publicUrl }).eq("id", studentId);
+  let { error } = await supabase.from("profiles").update({ avatar_url: data.publicUrl }).eq("id", studentId);
+  // Chính sách profiles chỉ cho role='student' tự sửa hàng của mình -> trợ giảng/giáo viên đi qua hàm set_my_avatar.
+  if (error) ({ error } = await supabase.rpc("set_my_avatar", { p_url: data.publicUrl }));
   if (error) {
     await supabase.storage.from(AVATAR_BUCKET).remove([path]);
     throw error;

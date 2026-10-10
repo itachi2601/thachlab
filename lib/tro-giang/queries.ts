@@ -256,12 +256,32 @@ export interface TaSessionListItem {
   papers_graded: number | null;
   status: TaSessionStatus;
   reject_reason: string | null;
+  start_time?: string | null;
+  end_time?: string | null;
+}
+
+/** Số ngày trợ giảng còn được sửa lại buổi của mình (kể từ ngày làm); trùng policy "ta sua buoi trong han". */
+export const TA_EDIT_WINDOW_DAYS = 7;
+
+export function canTaEditSession(s: Pick<TaSessionListItem, "status" | "work_date">, now = new Date()): boolean {
+  if (s.status !== "submitted") return false;
+  const d = new Date(`${s.work_date}T00:00:00`);
+  return (now.getTime() - d.getTime()) / 86_400_000 < TA_EDIT_WINDOW_DAYS + 1;
+}
+
+export async function updateOwnSession(
+  id: string,
+  fields: { work_date: string; class_label: string | null; start_time: string | null; end_time: string | null; student_touches?: number | null; papers_graded?: number | null },
+): Promise<void> {
+  const { data, error } = await getSupabase().from("ta_sessions").update(fields).eq("id", id).select("id");
+  if (error) throw error;
+  if (!data?.length) throw new Error("Buổi này đã được duyệt hoặc quá hạn sửa (7 ngày).");
 }
 
 export async function fetchRecentSessions(assistantId: string, limit = 10): Promise<TaSessionListItem[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
-    .select("id, work_date, session_type, class_label, phudao_students, hours, student_touches, papers_graded, status, reject_reason")
+    .select("id, work_date, session_type, class_label, phudao_students, hours, student_touches, papers_graded, status, reject_reason, start_time, end_time")
     .eq("assistant_id", assistantId)
     .order("work_date", { ascending: false })
     .order("created_at", { ascending: false })

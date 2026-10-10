@@ -40,7 +40,8 @@ export default function AvatarUploader({
       await refreshProfile();
       toast("success", "Đã đổi ảnh đại diện.");
     } catch (error) {
-      toast("error", error instanceof Error ? error.message : "Không đổi được ảnh, thử lại nhé.");
+      const msg = (error as { message?: string } | null)?.message;
+      toast("error", msg ? `Không đổi được ảnh: ${msg}` : "Không đổi được ảnh, thử lại nhé.");
     } finally {
       setBusy(false);
     }

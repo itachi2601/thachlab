@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv, ClipboardCheck } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
+import TaSessionQuickEdit from "@/components/tro-giang/TaSessionQuickEdit";
 import { demoAccruedHours, demoMonthlyScore, demoSessions, isDemoAssistant } from "@/lib/tro-giang/demo";
 import { formatHours, formatVnd, buildNextTierMessage } from "@/lib/tro-giang/format";
 import {
   fetchRecentSessions,
+  canTaEditSession,
   getAccruedHours,
   getMonthlyScore,
   type TaAssistant,
@@ -59,6 +61,7 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
   const [score, setScore] = useState<TaMonthlyScore | null>(() => (demo ? demoMonthlyScore(month) : null));
   const [accruedHours, setAccruedHours] = useState<number | null>(() => (demo ? demoAccruedHours() : null));
   const [sessions, setSessions] = useState<TaSessionListItem[] | null>(() => (demo ? demoSessions() : null));
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   useEffect(() => {
     if (demo) return;
@@ -191,7 +194,8 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
               const TypeIcon = typeMeta.icon;
               const StatusIcon = statusMeta.icon;
               return (
-                <div key={s.id} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div key={s.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-slate-300">
                     <TypeIcon size={18} />
                   </span>
@@ -217,6 +221,22 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
                     <StatusIcon size={13} />
                     {statusMeta.label}
                   </span>
+                  </div>
+                  {!demo && canTaEditSession(s) && editingId !== s.id && (
+                    <button type="button" onClick={() => setEditingId(s.id)} className="mt-2 min-h-11 text-sm font-semibold text-blue-300 underline">
+                      Sửa buổi này
+                    </button>
+                  )}
+                  {editingId === s.id && (
+                    <TaSessionQuickEdit
+                      session={s}
+                      onCancel={() => setEditingId(null)}
+                      onSaved={() => {
+                        setEditingId(null);
+                        fetchRecentSessions(assistant.id, 10).then(setSessions).catch(() => {});
+                      }}
+                    />
+                  )}
                 </div>
               );
             })}
