@@ -29,7 +29,7 @@ export default function TitleGradeRoadmap({ titles }: { titles: RankTitle[] }) {
         return (
           <section key={grade}>
             <div className="mb-3 flex items-baseline justify-between gap-3">
-              <h3 className="font-display text-base font-semibold text-white">{GRADE_LABELS[grade]}</h3>
+              <h3 className="font-display text-base font-semibold text-ink">{GRADE_LABELS[grade]}</h3>
               <span className="text-xs text-slate-500">
                 {owned}/{list.length} đã mở
               </span>
@@ -43,7 +43,7 @@ export default function TitleGradeRoadmap({ titles }: { titles: RankTitle[] }) {
                   <article
                     key={t.code}
                     className={`flex items-center gap-3 rounded-2xl border p-3 ${
-                      unlocked ? "border-amber-400/30 bg-amber-400/5" : "border-white/10 bg-white/[0.02]"
+                      unlocked ? "border-amber-400/30 bg-amber-400/5" : "border-line bg-surface-2"
                     }`}
                   >
                     {badgeSrc ? (
@@ -57,14 +57,14 @@ export default function TitleGradeRoadmap({ titles }: { titles: RankTitle[] }) {
                     ) : (
                       <span
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
-                          unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
+                          unlocked ? "bg-amber-400/20 text-amber-200" : "bg-surface-2 text-slate-500"
                         }`}
                       >
                         {unlocked ? <Sparkles size={16} /> : <Lock size={14} />}
                       </span>
                     )}
                     <div className="min-w-0 flex-1">
-                      <p className={`truncate text-sm font-semibold ${unlocked ? "text-white" : "text-slate-300"}`}>{t.name}</p>
+                      <p className={`truncate text-sm font-semibold ${unlocked ? "text-ink" : "text-ink"}`}>{t.name}</p>
                       <p className="text-[12px] text-slate-500">
                         {unlocked ? LEVEL_LABELS[LEVEL_ORDER[Math.max(0, levelRank(t.level) - 1)]] : "Chưa mở"}
                       </p>

@@ -12,7 +12,7 @@ import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorB
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
 // chỉ còn khung + tab Tổng quan. Khung chờ giữ chiều cao tương đương một tab.
-const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />;
+const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-surface-2" aria-hidden />;
 const TabError = () => <LazyPanelFallback />;
 
 // Mỗi tab bọc LazyErrorBoundary: lỗi render bên trong 1 tab chỉ hỏng đúng tab
@@ -120,28 +120,27 @@ export default function TeacherThptDashboard() {
 
   return (
     <div className="teacher-dashboard space-y-6">
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
-        <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+      <section className="relative overflow-hidden rounded-3xl border border-line bg-panel p-6 sm:p-8">
         <div className="relative">
           <p className="text-xs font-bold uppercase tracking-[.16em] text-blue-300">Dashboard giáo viên · THPT</p>
-          <h2 className="mt-2 font-display text-2xl font-bold text-white">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
-          <p className="mt-2 text-sm text-slate-400">
+          <h2 className="mt-2 font-display text-2xl font-bold text-ink">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
+          <p className="mt-2 text-sm text-muted">
             {selectedClass ? `Đang xem lớp ${selectedClass.name} · ${students.length} học sinh` : "Chọn khối lớp bên dưới để bắt đầu theo dõi học sinh."}
           </p>
           {loadError && <p className="mt-2 text-xs text-red-300">{loadError}</p>}
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
+      <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
         <label className="block">
-          <span className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-400">
+          <span className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-muted">
             Lớp đang dạy{classes.length > 0 && ` · ${classes.length} lớp`}
           </span>
           <select
             aria-label="Lớp đang dạy"
             value={selectedClassId ?? ""}
             onChange={(event) => setSelectedClassId(Number(event.target.value))}
-            className="w-full max-w-sm rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white"
+            className="w-full max-w-sm rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink"
           >
             <option value="" disabled>{classes.length ? "Chọn khối lớp" : "Chưa được phân công lớp nào"}</option>
             {classes.map((item) => (
@@ -151,7 +150,7 @@ export default function TeacherThptDashboard() {
         </label>
       </section>
 
-      <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">
+      <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">
         {TABS.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -159,7 +158,7 @@ export default function TeacherThptDashboard() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${
-                activeTab === tab.id ? "bg-blue-600 text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                activeTab === tab.id ? "bg-blue-600 text-white" : "text-muted hover:bg-surface-2 hover:text-primary"
               }`}
             >
               <Icon size={17} />{tab.label}
@@ -169,7 +168,7 @@ export default function TeacherThptDashboard() {
       </nav>
 
       {!selectedClassId ? (
-        <p className="rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-slate-500">
+        <p className="rounded-2xl border border-dashed border-line p-10 text-center text-sm text-slate-500">
           Chưa có lớp nào để hiển thị.
         </p>
       ) : (

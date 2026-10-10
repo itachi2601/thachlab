@@ -15,7 +15,7 @@ import { questionsMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "w-full rounded-xl border border-line-strong bg-surface-2 px-3 py-2 text-sm text-ink placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const selectCls = `${inputCls} bg-panel`;
 const pageSize = 12;
 
@@ -307,7 +307,7 @@ export default function ExamLibraryAdmin({
         </p>
       </header>
 
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+      <section className="space-y-3 rounded-2xl border border-line bg-surface-2 p-4">
         <div className="flex flex-wrap gap-2">
           <input
             value={search}
@@ -332,7 +332,7 @@ export default function ExamLibraryAdmin({
           </select>
         </div>
 
-        <div aria-live="polite" className="text-xs text-slate-400">
+        <div aria-live="polite" className="text-xs text-muted">
           {listBusy ? "Đang tìm…" : listError ? "Không tải được danh sách" : `${count} đề · Mới nhất trước`}
         </div>
         {listError && (
@@ -343,28 +343,28 @@ export default function ExamLibraryAdmin({
             </button>
           </p>
         )}
-        {!listBusy && !listError && rows.length === 0 && <p className="py-6 text-center text-sm text-slate-400">Không có đề phù hợp.</p>}
+        {!listBusy && !listError && rows.length === 0 && <p className="py-6 text-center text-sm text-muted">Không có đề phù hợp.</p>}
 
-        <div className="divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10">
+        <div className="divide-y divide-line overflow-hidden rounded-xl border border-line">
           {rows.map((r) => (
             <button
               key={r.id}
               type="button"
               onClick={() => selectExam(r.id)}
-              className={`flex w-full flex-wrap items-center gap-3 px-3 py-2.5 text-left text-sm hover:bg-white/5 ${
+              className={`flex w-full flex-wrap items-center gap-3 px-3 py-2.5 text-left text-sm hover:bg-surface-2 ${
                 selectedId === r.id ? "bg-primary/10" : ""
               }`}
             >
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-slate-100">{r.title}</span>
-                <span className="block text-xs text-slate-400">
+                <span className="block truncate text-ink">{r.title}</span>
+                <span className="block text-xs text-muted">
                   #{r.id} · {r.question_count} câu · {r.duration_minutes} phút
                   {r.classIds.length > 0 && ` · ${classNames(r.classIds)}`} · {fmtDate(r.created_at)}
                 </span>
               </span>
               <span
                 className={`shrink-0 rounded-full px-2 py-0.5 text-[12px] font-semibold ${
-                  r.published ? "bg-emerald-500/15 text-emerald-300" : "bg-white/10 text-slate-400"
+                  r.published ? "bg-emerald-500/15 text-emerald-300" : "bg-surface-2 text-muted"
                 }`}
               >
                 {r.published ? "Đã xuất bản" : "Bản nháp"}
@@ -377,7 +377,7 @@ export default function ExamLibraryAdmin({
           <button type="button" disabled={page === 0} onClick={() => setPage((p) => p - 1)} className="admin-chip">
             ← Trước
           </button>
-          <span className="text-xs text-slate-400">
+          <span className="text-xs text-muted">
             Trang {page + 1} / {pages}
           </span>
           <button type="button" disabled={listBusy || !!listError || page + 1 >= pages} onClick={() => setPage((p) => p + 1)} className="admin-chip">
@@ -387,19 +387,19 @@ export default function ExamLibraryAdmin({
       </section>
 
       {selectedId !== null && (
-        <section className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-4">
-          {loadingFull && <p className="text-sm text-slate-400">Đang tải đề #{selectedId}…</p>}
+        <section className="space-y-4 rounded-2xl border border-line bg-surface-2 p-4">
+          {loadingFull && <p className="text-sm text-muted">Đang tải đề #{selectedId}…</p>}
           {full && (
             <>
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4">
                 <div>
                   <h2 className="admin-h2">Đề #{full.id}</h2>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-muted">
                     Tạo lúc {fmtDate(full.created_at)}
                     {full.cnc_key && " · Ngân hàng CNC"}
                   </p>
                 </div>
-                <label className="inline-flex items-center gap-2 text-sm text-slate-300">
+                <label className="inline-flex items-center gap-2 text-sm text-ink">
                   <input type="checkbox" checked={publishedInput} onChange={(e) => setPublishedInput(e.target.checked)} />
                   Xuất bản (học sinh thấy được)
                 </label>
@@ -423,7 +423,7 @@ export default function ExamLibraryAdmin({
               />
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <label className="text-xs font-semibold text-slate-400">
+                <label className="text-xs font-semibold text-muted">
                   Điểm đạt, thang 10 (để trống = không đánh giá đạt)
                   <input
                     type="number"
@@ -435,7 +435,7 @@ export default function ExamLibraryAdmin({
                     className={`${inputCls} mt-1`}
                   />
                 </label>
-                <label className="text-xs font-semibold text-slate-400">
+                <label className="text-xs font-semibold text-muted">
                   Khối lớp (để tra yêu cầu cần đạt khi gắn nhãn Chủ đề)
                   <select value={grade ?? ""} onChange={(e) => setGradeOverride(e.target.value || null)} className={`${selectCls} mt-1`}>
                     <option value="">— chọn khối —</option>
@@ -470,7 +470,7 @@ export default function ExamLibraryAdmin({
               )}
               {missingFigure.length > 0 && <MissingFigureNotice nums={missingFigure} ack={figureAck} onAck={setFigureAck} />}
 
-              <div className="sticky bottom-4 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#080D1A]/95 p-4 shadow-2xl backdrop-blur">
+              <div className="sticky bottom-4 flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-panel/95 p-4 shadow-2xl backdrop-blur">
                 <button
                   type="button"
                   onClick={save}

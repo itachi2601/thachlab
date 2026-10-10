@@ -45,7 +45,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
   }
 
   if (detail === undefined) {
-    return <p className="mt-10 text-center text-sm text-slate-400">Đang tải bài làm…</p>;
+    return <p className="mt-10 text-center text-sm text-muted">Đang tải bài làm…</p>;
   }
   if (detail === null) {
     return <p className="mt-10 text-center text-sm text-slate-500">Không tải được bài làm này.</p>;
@@ -57,8 +57,8 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
   return (
     <>
       <div className="mb-4">
-        <h1 className="font-display text-2xl font-bold text-white">{detail.examTitle}</h1>
-        <p className="mt-1 text-sm text-slate-400">Làm ngày {dateLabel}</p>
+        <h1 className="font-display text-2xl font-bold text-ink">{detail.examTitle}</h1>
+        <p className="mt-1 text-sm text-muted">Làm ngày {dateLabel}</p>
       </div>
 
       <ExamResultSummary
@@ -70,14 +70,14 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
           rp?.sourceEnabled ? (
             <span className="inline-flex items-center gap-1.5">
               <Sparkles size={14} className="text-amber-300" />
-              Bài này: <b className="text-white">{rp.practiceRp}/{rp.maxRp} RP</b>
+              Bài này: <b className="text-ink">{rp.practiceRp}/{rp.maxRp} RP</b>
               {rp.fixRp > 0 && (
                 <>
-                  {" "}· sửa sai <b className="text-white">{rp.fixRp}/{rp.fixMaxRp} RP</b>
+                  {" "}· sửa sai <b className="text-ink">{rp.fixRp}/{rp.fixMaxRp} RP</b>
                 </>
               )}
               {" · "}
-              <Link href="/lop-hoc/xep-hang/" className="text-cyan-300 hover:underline">
+              <Link href="/lop-hoc/xep-hang/" className="text-primary hover:underline">
                 Xếp hạng
               </Link>
             </span>
@@ -88,24 +88,24 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
       />
 
       {showFix && (
-        <section className="mt-8 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 sm:p-5">
+        <section className="mt-8 rounded-2xl border border-line bg-panel p-4 sm:p-5">
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-2 text-primary">
               <Wrench size={16} />
             </span>
-            <h2 className="font-display text-lg font-semibold text-white">Sửa sai để nhận RP</h2>
+            <h2 className="font-display text-lg font-semibold text-ink">Sửa sai để nhận RP</h2>
             <span className="ml-auto text-xs text-slate-500">
               tối đa {rp!.fixMaxRp} RP · đã nhận {rp!.fixRp}
             </span>
           </div>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className="mt-2 text-sm text-muted">
             Với mỗi chủ đề em sai, làm một bài ngắn gồm câu <em>khác</em> cùng chủ đề từ ngân hàng. Đạt từ 80% là chủ đề đó được tính đã sửa. Tối đa 3 lượt mỗi chủ đề.
           </p>
           <ul className="mt-3 space-y-2">
             {topics.map((t) => (
-              <li key={t.topicId} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-panel px-3 py-2">
+              <li key={t.topicId} className="flex flex-wrap items-center gap-3 rounded-xl border border-line bg-panel px-3 py-2">
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm text-white">{t.name}</span>
+                  <span className="block truncate text-sm text-ink">{t.name}</span>
                   <span className="text-xs text-slate-500">
                     sai {t.wrong}/{t.total} câu · đã dùng {t.attemptsDone}/3 lượt
                   </span>
@@ -125,7 +125,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
         </section>
       )}
 
-      <h2 id="xem-lai-tung-cau" className="mt-10 mb-4 scroll-mt-24 font-display text-xl font-semibold text-white">
+      <h2 id="xem-lai-tung-cau" className="mt-10 mb-4 scroll-mt-24 font-display text-xl font-semibold text-ink">
         Xem lại từng câu
       </h2>
       <p className="mb-4 text-sm text-slate-500">
@@ -157,7 +157,7 @@ function DetailLoader() {
 
   return (
     <>
-      <Link href={fromParent ? "/phu-huynh/" : "/lop-hoc/ket-qua/"} className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white">
+      <Link href={fromParent ? "/phu-huynh/" : "/lop-hoc/ket-qua/"} className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted hover:text-primary">
         <ChevronLeft size={16} /> {fromParent ? "Về Kết quả của con" : "Về Kết quả học tập"}
       </Link>
       <RequireAuth>
@@ -174,9 +174,9 @@ export default function KetQuaChiTietPage() {
       <main className="min-h-screen w-full">
         <div className="mx-auto w-full max-w-3xl px-6 pb-20 pt-28">
           {!supabaseConfigured ? (
-            <p className="text-center text-slate-400">Hệ thống đang được cấu hình.</p>
+            <p className="text-center text-muted">Hệ thống đang được cấu hình.</p>
           ) : (
-            <Suspense fallback={<p className="text-center text-sm text-slate-400">Đang tải…</p>}>
+            <Suspense fallback={<p className="text-center text-sm text-muted">Đang tải…</p>}>
               <DetailLoader />
             </Suspense>
           )}

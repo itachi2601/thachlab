@@ -87,14 +87,14 @@ function groupByGrade(courses: HomeCourse[]): GradeRow[] {
 
 function SessionList({ sessions }: { sessions: HomeCourseSession[] }) {
   return (
-    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-lg leading-relaxed text-[#334155]">
+    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-lg leading-relaxed text-ink">
       {sessions.map((s) => (
         <li key={`${s.weekday}-${s.start}`} className="whitespace-nowrap">
-          <span className="font-semibold text-[#0f172a]">{WEEKDAY[s.weekday] ?? ""}</span>{" "}
+          <span className="font-semibold text-ink">{WEEKDAY[s.weekday] ?? ""}</span>{" "}
           <span className="tabular-nums">
             {s.start}–{s.end}
           </span>
-          {s.location && <span className="text-[#475569]"> · {s.location}</span>}
+          {s.location && <span className="text-muted"> · {s.location}</span>}
         </li>
       ))}
     </ul>
@@ -106,7 +106,7 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
   if (rows.length === 0) {
     // P9: trạng thái rỗng nói rõ vì sao + việc làm được (nút Zalo nằm ngay dưới).
     return (
-      <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#334155]">
+      <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink">
         Hiện chưa có lớp nào mở đăng ký. Khi thầy mở lớp mới, lịch sẽ hiện ở đây; anh chị nhắn Zalo để được
         báo trước.
       </p>
@@ -114,11 +114,11 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
   }
   const year = (courses?.find((c) => c.schoolYear)?.schoolYear ?? "").replace("-", "–");
   return (
-    <div className="mt-5 max-w-2xl rounded-2xl border border-[#cbd5e1] bg-white px-5 py-4">
+    <div className="mt-5 max-w-2xl rounded-2xl border border-line bg-surface-2 px-5 py-4">
       <h3 className="font-display text-lg font-semibold">
         Lịch lớp học thêm{year ? ` năm học ${year}` : ""}
       </h3>
-      <ul className="mt-1 divide-y divide-[#e2e8f0]">
+      <ul className="mt-1 divide-y divide-line">
         {rows.map((g) => (
           <li key={g.className} className="grid gap-y-1 py-3 sm:grid-cols-[5.5rem_1fr] sm:items-baseline">
             <span className="text-lg font-bold">Lớp {g.className}</span>
@@ -126,13 +126,13 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
               {g.groups.map((grp, i) => (
                 <div key={grp.label ?? i} className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   {grp.label && (
-                    <span className="text-[15px] font-semibold uppercase tracking-wide text-[#475569]">{grp.label}</span>
+                    <span className="text-[15px] font-semibold uppercase tracking-wide text-muted">{grp.label}</span>
                   )}
                   <SessionList sessions={grp.sessions} />
                 </div>
               ))}
               {g.paired && (
-                <p className="text-[15px] leading-relaxed text-[#475569]">
+                <p className="text-[15px] leading-relaxed text-muted">
                   Học hai buổi mỗi tuần: chọn một buổi A và một buổi B.
                 </p>
               )}
@@ -141,11 +141,11 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
         ))}
       </ul>
       {/* P19: nói rõ đây là số liệu gì. */}
-      <p className="mt-2 text-[15px] leading-relaxed text-[#475569]">
+      <p className="mt-2 text-[15px] leading-relaxed text-muted">
         Mỗi dòng là một buổi trong tuần, lớp nào còn chỗ xem ở trang đăng ký. Lịch do thầy cập nhật khi mở lớp.
       </p>
       <p className="mt-3">
-        <Link href="/khoa-hoc" className={`${btn} bg-[#155e75] text-white hover:bg-[#0e7490]`}>
+        <Link href="/khoa-hoc" className={`${btn} bg-primary text-white hover:bg-primary-dark`}>
           Xem chi tiết và đăng ký <ArrowRight size={18} />
         </Link>
       </p>
@@ -163,7 +163,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
   ].filter(Boolean);
 
   return (
-    <section className="bg-[#f8fafc] px-6 py-10 text-[#0f172a] lg:px-12">
+    <section className="bg-panel px-6 py-10 text-ink lg:px-12">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[16rem_1fr] lg:items-start lg:gap-12">
         <div>
           {CONTACT.teacherPhoto && (
@@ -178,7 +178,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
           )}
           <p className="mt-4 font-display text-xl font-bold">Thầy Thạch</p>
           {introLines.map((line) => (
-            <p key={line} className="mt-1 text-lg leading-snug text-[#334155]">
+            <p key={line} className="mt-1 text-lg leading-snug text-ink">
               {line}
             </p>
           ))}
@@ -186,7 +186,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
 
         <div>
           <h2 className="font-display text-2xl font-bold">Dành cho phụ huynh</h2>
-          <p className="mt-3 max-w-xl text-lg leading-relaxed text-[#334155]">
+          <p className="mt-3 max-w-xl text-lg leading-relaxed text-ink">
             Bài trên web học miễn phí. Lớp học thêm tại {CONTACT.area.replace(/^Khu vực /i, "khu vực ")}; học phí đóng tại
             trung tâm.
           </p>
@@ -197,11 +197,11 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
             {QUESTIONS.map((q) => (
               <li key={q.title}>
                 <h3 className="font-display text-lg font-semibold">{q.title}</h3>
-                <p className="mt-1.5 text-lg leading-relaxed text-[#334155]">{q.desc}</p>
+                <p className="mt-1.5 text-lg leading-relaxed text-ink">{q.desc}</p>
                 {q.href && (
                   <Link
                     href={q.href}
-                    className="mt-2 inline-flex min-h-12 items-center gap-1 text-base font-semibold text-[#155e75] hover:underline"
+                    className="mt-2 inline-flex min-h-12 items-center gap-1 text-base font-semibold text-primary hover:underline"
                   >
                     Xem kết quả của con <ArrowRight size={16} />
                   </Link>
@@ -216,7 +216,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
                 href={CONTACT.zalo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${btn} bg-[#155e75] text-white hover:bg-[#0e7490]`}
+                className={`${btn} bg-primary text-white hover:bg-primary-dark`}
               >
                 <MessageCircle size={18} /> Nhắn Zalo cho thầy
               </a>
@@ -224,7 +224,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
             {CONTACT.phone && (
               <a
                 href={`tel:${CONTACT.phone}`}
-                className={`${btn} border border-[#cbd5e1] bg-white text-[#0f172a] hover:bg-[#f1f5f9]`}
+                className={`${btn} border border-line-strong bg-panel text-ink hover:bg-surface-2`}
               >
                 <Phone size={18} /> Gọi {phone}
               </a>

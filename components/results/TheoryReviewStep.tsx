@@ -34,7 +34,7 @@ function Row({ done, label, value }: { done: boolean; label: string; value: stri
   // M4: trạng thái đạt/chưa không chỉ bằng màu — có biểu tượng và chữ.
   return (
     <li className="flex items-center justify-between gap-3 text-sm">
-      <span className="flex items-center gap-2 text-slate-200">
+      <span className="flex items-center gap-2 text-ink">
         {done ? (
           <Check size={16} className="shrink-0 text-emerald-300" aria-label="Xong" />
         ) : (
@@ -42,7 +42,7 @@ function Row({ done, label, value }: { done: boolean; label: string; value: stri
         )}
         {label}
       </span>
-      <span className={done ? "font-semibold text-emerald-300" : "text-slate-400"}>{value}</span>
+      <span className={done ? "font-semibold text-emerald-300" : "text-muted"}>{value}</span>
     </li>
   );
 }
@@ -256,7 +256,7 @@ export default function TheoryReviewStep({
   const mainDone = secNow >= secTotal && (quizTotal === 0 || quizNow >= quizNeed);
   const needMoreTime = mainDone && timeNow < reqSec;
 
-  if (phase === "loading") return <p className="text-sm text-slate-400">Đang mở bài lý thuyết…</p>;
+  if (phase === "loading") return <p className="text-sm text-muted">Đang mở bài lý thuyết…</p>;
   if (phase === "error") {
     return (
       <div className="space-y-3">
@@ -268,14 +268,14 @@ export default function TheoryReviewStep({
   return (
     <div className="space-y-4">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wide text-sky-300">Bước 1 · Xem lại lý thuyết</p>
-        <p className="mt-1 text-sm text-slate-300">
-          Đọc bài <strong className="text-white">{item?.title || needLabel(need)}</strong>, làm các câu tự kiểm tra
+        <p className="text-xs font-semibold uppercase tracking-wide text-primary">Bước 1 · Xem lại lý thuyết</p>
+        <p className="mt-1 text-sm text-ink">
+          Đọc bài <strong className="text-ink">{item?.title || needLabel(need)}</strong>, làm các câu tự kiểm tra
           trong bài. Xong các mục dưới đây thì mở bài thoát phụ đạo.
         </p>
       </div>
 
-      <ul className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3" aria-live="polite">
+      <ul className="space-y-2 rounded-xl border border-line bg-surface-2 p-3" aria-live="polite">
         <Row done={secNow >= secTotal} label="Đọc hết các mốc" value={`${secNow}/${secTotal}`} />
         {quizTotal > 0 && (
           <Row done={quizNow >= quizNeed} label="Trả lời câu tự kiểm tra" value={`${quizNow}/${quizNeed} câu`} />
@@ -284,7 +284,7 @@ export default function TheoryReviewStep({
 
       <div
         ref={scrollRef}
-        className="max-h-[52vh] overflow-y-auto rounded-xl border border-white/10 bg-panel/60 p-3 sm:p-4"
+        className="max-h-[52vh] overflow-y-auto rounded-xl border border-line bg-panel/60 p-3 sm:p-4"
         tabIndex={0}
         aria-label="Bài lý thuyết"
       >

@@ -41,7 +41,7 @@ const RescueDropSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-400 sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -55,7 +55,7 @@ const InterferenceSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-400 sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -69,7 +69,7 @@ const SoundWavesSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-400 sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -156,16 +156,12 @@ export function PhysicsSimulationHero() {
   };
 
   return (
-    <section id="thpt" className="relative overflow-clip bg-[#05070B] px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
+    <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[-20%] h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-cyan-500/[0.08] blur-[120px]"
-      />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-10">
         <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">
             Có bao giờ em tự hỏi…
           </p>
 
@@ -173,7 +169,7 @@ export function PhysicsSimulationHero() {
             {copy.line1}
             <br />
             {copy.before}
-            <span className="text-cyan-300">{copy.accent}</span>
+            <span className="text-primary">{copy.accent}</span>
             {copy.after}
           </h1>
 
@@ -186,14 +182,14 @@ export function PhysicsSimulationHero() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/lop-hoc"
-              className="inline-flex items-center gap-2 rounded-lg bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 active:scale-[0.98] sm:text-base"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark active:scale-[0.98] sm:text-base"
             >
               Vào lớp học
               <ArrowRight size={18} />
             </Link>
             <Link
               href="#learning-path"
-              className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-ink transition hover:bg-white/5 active:scale-[0.98] sm:text-base"
+              className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-ink transition hover:bg-surface-2 active:scale-[0.98] sm:text-base"
             >
               Xem lộ trình
             </Link>
@@ -203,7 +199,7 @@ export function PhysicsSimulationHero() {
             Học miễn phí trên web, theo đúng nhịp lớp trên trường.
           </p>
         </div>
-        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl shadow-black/30 sm:p-5 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
+        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl sm:p-5 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2 sm:mb-3">
             <p className="font-mono text-[13px] uppercase tracking-widest text-muted">
               Thí nghiệm
@@ -212,7 +208,7 @@ export function PhysicsSimulationHero() {
               role="tablist"
               aria-label="Chọn thí nghiệm"
               onKeyDown={onTablistKeyDown}
-              className="flex overflow-hidden rounded-lg border border-white/10"
+              className="flex overflow-hidden rounded-lg border border-line-strong"
             >
               {TABS.map((item) => (
                 <button
@@ -226,8 +222,8 @@ export function PhysicsSimulationHero() {
                   onClick={() => setTab(item.key)}
                   className={`inline-flex min-h-11 items-center whitespace-nowrap rounded-none px-2 text-[13px] font-medium transition active:scale-[0.98] sm:px-3 sm:text-sm ${
                     tab === item.key
-                      ? "bg-cyan-300/[0.14] text-cyan-300"
-                      : "text-slate-400 hover:bg-white/[0.06]"
+                      ? "bg-primary-soft text-primary"
+                      : "text-muted hover:bg-surface-2"
                   }`}
                 >
                   {item.label}

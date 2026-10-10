@@ -22,14 +22,14 @@ export default function PhysicsEverywhere() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-xl">
-            <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Vật lý quanh ta</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">Vật lý quanh ta</p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
               Những câu hỏi từ đời thường
             </h2>
           </div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition hover:text-primary-dark"
           >
             Tất cả bài viết <ArrowRight size={16} />
           </Link>
@@ -49,11 +49,11 @@ export default function PhysicsEverywhere() {
                 />
               </div>
               <p className="mt-5 font-mono text-xs uppercase tracking-widest text-muted">{featured.tag}</p>
-              <h3 className="mt-2 font-display text-2xl font-bold leading-snug text-ink transition-colors group-hover:text-cyan-200">
+              <h3 className="mt-2 font-display text-2xl font-bold leading-snug text-ink transition-colors group-hover:text-primary">
                 {featured.title}
               </h3>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{featured.desc}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300">
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
                 Đọc bài <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
               </span>
             </Link>

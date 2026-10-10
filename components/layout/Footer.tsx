@@ -86,7 +86,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
       </footer>
     );
   }
-  const bg = "bg-[#04060A]";
+  const bg = "bg-panel";
   const headCls = "font-display text-sm font-semibold text-ink";
   const listCls = "mt-2 space-y-0";
   const linkCls = "inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary";

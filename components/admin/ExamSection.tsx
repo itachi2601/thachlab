@@ -366,7 +366,7 @@ export default function ExamSection({
       </div>
 
       {estimate && (
-        <p className="-mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-slate-500">
+        <p className="-mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] text-slate-500">
           <span>
             {questions.length} câu: {estimate.note} → khoảng <b className="text-slate-300">{estimate.minutes} phút</b>
           </span>

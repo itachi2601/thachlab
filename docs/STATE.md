@@ -11,6 +11,14 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **11/10/2026 — Giao diện NỀN SÁNG (trắng) là mặc định toàn site** (thầy chốt; trước đây mặc định nền tối "deep space", theme sáng chỉ là chồng `!important` nên màu bết).
+  Bảng màu mới light-first trong `app/globals.css`: khối `@theme` = nền sáng, `html[data-theme="dark"]` = nền tối (nay chỉ là **tuỳ chọn**, không theo `prefers-color-scheme`); thêm token `surface-2`, `line-strong` (3,2:1 — đạt WCAG 1.4.11), `ok/warn/danger`, `primary-soft`.
+  Khác biệt theo nhóm người xem: `.parent-page` nền ấm + chữ phụ 8,9:1 (AAA) + navy `#1e40af` + viền ô nhập đậm hơn; `.teacher-dashboard`/`.admin-shell` nền trung tính, mật độ cao; học sinh + trang công khai dùng mặc định.
+  Đã dọn class màu nền tối/neon/gradient/quầng sáng ở ~112 file component (5 phiên con; kiểm chứng bằng `scripts/kiem-doi-mau.mts`: 100/112 file kết luận "chỉ đổi chuỗi class"); cuối `globals.css` còn **lưới an toàn** phủ nốt idiom cũ (`bg-white/5`, `border-white/10`, `bg-[#0B1020]`, `shadow-[0_0_…]`).
+  Mặc định theme đổi ở `app/layout.tsx` + `components/ui/ReadingZone.tsx` + `components/layout/ThemeToggle.tsx` (snapshot SSR = light, tự cập nhật `meta theme-color`), `app/manifest.ts` + `viewport.themeColor` sang nền sáng.
+  Xem thử: **`/dev/giao-dien`** (`?theme=dark`, `?aud=parent|teacher`) — bảng token + bộ dựng + 3 nhóm người xem.
+  Kiểm: `npm run check:a11y` ĐẠT (0 cặp màu lỗi, 0 chỗ chữ <12px — đã nâng 4 chỗ có sẵn ở `class-num--exam`, `SoundInterferenceSimulation`, `ExamSection`, `ExamQrPanel`), `npx tsc --noEmit` sạch, ảnh 375px/1440px hai theme bằng `scripts/do-bo-cuc.mjs` (device emulation — `chrome --window-size` KHÔNG cho viewport 375px, xem `docs/MAU-NEN-SANG.md` §8), tràn ngang thật = 0.
+  Tài liệu: `docs/MAU-NEN-SANG.md` (mới: bảng quy đổi idiom + việc còn treo), cập nhật `docs/UI.md` §1–2/§5 và `docs/QUY-TAC-THIET-KE.md` (thêm M7). **CHƯA DEPLOY.**
 - **10/10/2026 — 25 bài lý thuyết L10 (lesson 46–48, 58–79) từ mẻ `sua-ly-thuyet` 9/10: ĐÃ GHI DB** (kiểm chéo 5 agent `kiem-code`, trần từ nới 5% cho bài 67/75/79; file = DB). **CHƯA DEPLOY** — `public/data` sinh lúc build nên web chỉ thấy sau deploy; main local đang ahead origin 11 commit (còn việc phiên khác: QR đề, HSG chấm nhanh, BTM L12), xem trước khi push. Sao lưu `scripts/logs/ly-thuyet-bai{46..79}-backup-1791605*`.
 - **10/10/2026 — Mã QR cho từng đề (thầy chiếu lên bảng, học sinh quét là vào đúng đề).** Bước 1 (phía thầy):
   `components/admin/ExamQrPanel.tsx` hiện ở `/quan-tri/sua-de` (chọn đề nào là có QR) và ở `/quan-tri/dang-de`

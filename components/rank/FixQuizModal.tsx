@@ -102,7 +102,7 @@ export default function FixQuizModal({
         role="presentation"
       >
         <motion.div
-          className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-white/10 bg-panel p-5 shadow-2xl sm:p-6 ${
+          className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-line bg-panel p-5 shadow-2xl sm:p-6 ${
             wide ? "max-w-2xl" : "max-w-sm"
           }`}
           initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
@@ -114,17 +114,17 @@ export default function FixQuizModal({
           aria-modal="true"
         >
           <div className="mb-3 flex items-start justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-white">Sửa sai để nhận RP</h2>
-            <button type="button" onClick={onClose} aria-label="Đóng" className="text-slate-400 hover:text-white">
+            <h2 className="font-display text-lg font-semibold text-ink">Sửa sai để nhận RP</h2>
+            <button type="button" onClick={onClose} aria-label="Đóng" className="text-muted hover:text-primary">
               <X size={18} />
             </button>
           </div>
 
-          {phase === "loading" && <p className="text-sm text-slate-400">Đang soạn câu hỏi tương đương…</p>}
+          {phase === "loading" && <p className="text-sm text-muted">Đang soạn câu hỏi tương đương…</p>}
 
           {phase === "error" && (
             <div className="space-y-4">
-              <p className="text-sm text-slate-300">{errorMsg}</p>
+              <p className="text-sm text-ink">{errorMsg}</p>
               <Button variant="outline" onClick={onClose} className="w-full">
                 Đóng
               </Button>
@@ -133,8 +133,8 @@ export default function FixQuizModal({
 
           {phase === "intro" && quiz && (
             <div className="space-y-4">
-              <p className="text-sm text-slate-300">
-                <strong className="text-white">{quiz.topicName}</strong> · {quiz.total} câu · cần đạt từ {quiz.passPct}% · còn{" "}
+              <p className="text-sm text-ink">
+                <strong className="text-ink">{quiz.topicName}</strong> · {quiz.total} câu · cần đạt từ {quiz.passPct}% · còn{" "}
                 {quiz.attemptsLeft} lượt.
               </p>
               <p className="text-xs text-slate-500">
@@ -149,7 +149,7 @@ export default function FixQuizModal({
           {phase === "running" && (
             <div className="space-y-4">
               <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-ink">
                   Câu {cur + 1}/{questions.length}
                 </p>
                 <p className="text-xs text-slate-500">
@@ -179,8 +179,8 @@ export default function FixQuizModal({
                   result.passed ? "border-emerald-500/40 bg-emerald-500/10" : "border-amber-500/40 bg-amber-500/10"
                 }`}
               >
-                <p className="text-3xl font-bold text-white">{result.pct}%</p>
-                <p className="mt-1 text-sm text-slate-300">
+                <p className="text-3xl font-bold text-ink">{result.pct}%</p>
+                <p className="mt-1 text-sm text-ink">
                   Đúng {result.correct}/{result.total} câu
                 </p>
               </div>

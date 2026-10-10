@@ -73,40 +73,40 @@ function HeroStats({
     <div className="relative mt-4 space-y-3 sm:mt-5">
       {next && rank && (
         <div>
-          <div className="flex items-center justify-between gap-3 text-[13px] text-slate-300">
+          <div className="flex items-center justify-between gap-3 text-[13px] text-ink">
             <span className="flex items-center gap-1.5">
-              <Trophy size={14} className="shrink-0 text-amber-300" aria-hidden />
-              Còn <b className="text-white">{next.rp_needed} RP</b> nữa là lên {next.name}
+              <Trophy size={14} className="shrink-0 text-primary" aria-hidden />
+              Còn <b className="text-ink">{next.rp_needed} RP</b> nữa là lên {next.name}
             </span>
-            <Link href="/lop-hoc/xep-hang" className="-my-3 inline-flex min-h-11 shrink-0 items-center gap-0.5 text-blue-200 hover:text-white">
+            <Link href="/lop-hoc/xep-hang" className="-my-3 inline-flex min-h-11 shrink-0 items-center gap-0.5 text-primary hover:underline">
               Xếp hạng <ChevronRight size={14} />
             </Link>
           </div>
-          <div className="mt-1 h-2 overflow-hidden rounded-full bg-white/10">
+          <div className="mt-1 h-2 overflow-hidden rounded-full bg-surface-2">
             <div
-              className="h-full rounded-full bg-amber-400"
+              className="h-full rounded-full bg-primary"
               style={{ width: `${Math.max(3, Math.min(100, Math.round((100 * rank.rp) / Math.max(1, rank.rp + next.rp_needed))))}%` }}
             />
           </div>
         </div>
       )}
       {daily && (
-        <div className="space-y-2 border-t border-white/10 pt-3">
-          <p className="flex items-center gap-2 text-sm font-semibold text-white">
-            <Flame size={18} className={daily.streak > 0 ? "text-amber-400" : "text-slate-500"} fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
+        <div className="space-y-2 border-t border-line pt-3">
+          <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+            <Flame size={18} className={daily.streak > 0 ? "text-warn" : "text-slate-500"} fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
             {daily.streak > 0 ? `Chuỗi ${daily.streak} ngày` : "Bắt đầu chuỗi ngày"}
-            {daily.today_done && <span className="text-xs font-normal text-emerald-300">đã giữ hôm nay ✓</span>}
+            {daily.today_done && <span className="text-xs font-normal text-ok">đã giữ hôm nay ✓</span>}
           </p>
           {days && days.length > 0 && <StreakWeek days={days} />}
           {daily.streak > 0 && freezeLeft > 0 && !daily.today_done && (
-            <p className="text-[13px] text-sky-300">Tuần này còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
+            <p className="text-[13px] text-muted">Tuần này còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
           )}
         </div>
       )}
       {weekGain !== null && (
-        <p className="border-t border-white/10 pt-3 text-[13px] text-slate-300">
+        <p className="border-t border-line pt-3 text-[13px] text-ink">
           Tiến bộ so với tuần trước:{" "}
-          <b className="text-emerald-300">{weekGain > 0 ? `+${String(weekGain).replace(".", ",")} điểm` : "giữ vững phong độ"}</b>
+          <b className="text-ok">{weekGain > 0 ? `+${String(weekGain).replace(".", ",")} điểm` : "giữ vững phong độ"}</b>
         </p>
       )}
     </div>
@@ -375,21 +375,21 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel p-4 sm:rounded-3xl sm:p-7">
+      <section className="relative overflow-hidden rounded-2xl border border-line bg-panel p-4 sm:rounded-3xl sm:p-7">
         <div className="relative flex items-start justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <RankAvatarFrame status={rank} size={56}>
               <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
             </RankAvatarFrame>
             <div className="min-w-0">
-              <h1 className="font-display text-xl font-bold leading-tight text-white sm:text-3xl">
+              <h1 className="font-display text-xl font-bold leading-tight text-ink sm:text-3xl">
                 Chào {profile?.full_name || "bạn"} quay lại
               </h1>
               {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
-              <p className="mt-1 text-[13px] text-slate-400 sm:text-sm">
+              <p className="mt-1 text-[13px] text-muted sm:text-sm">
                 Lớp {className}
-                <span className="text-slate-600"> · </span>
-                <Link href="/lop-hoc" className="-my-3 inline-flex min-h-11 items-center gap-0.5 text-blue-200 hover:text-white">
+                <span className="text-muted"> · </span>
+                <Link href="/lop-hoc" className="-my-3 inline-flex min-h-11 items-center gap-0.5 text-primary hover:underline">
                   Chương trình lớp <ChevronRight size={14} />
                 </Link>
               </p>
@@ -401,7 +401,7 @@ export default function ThptStudentHome({
             <Link
               href="/quet-ma"
               aria-label="Quét mã QR của đề"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-300 hover:border-white/30 hover:text-white sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink hover:border-line-strong sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
             >
               <QrCode size={16} />
               <span className="hidden sm:inline">Quét mã</span>
@@ -409,7 +409,7 @@ export default function ThptStudentHome({
             <button
               onClick={onSignOut}
               aria-label="Đăng xuất"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-ink hover:border-line-strong sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
             >
               <LogOut size={16} />
               <span className="hidden sm:inline">Đăng xuất</span>

@@ -47,12 +47,12 @@ export default function ParentGoal({ studentId, avg }: { studentId: string; avg:
   const goal = useChildGoal(studentId);
   const chip = (active: boolean) =>
     `inline-flex min-h-12 min-w-14 items-center justify-center rounded-xl border px-4 font-semibold ${
-      active ? "border-cyan-300 bg-cyan-400/15 text-cyan-300" : "border-white/15 text-slate-200 hover:border-white/30"
+      active ? "border-primary bg-primary-soft text-primary" : "border-line text-ink hover:border-line-strong"
     }`;
 
   return (
-    <div className="border-t border-white/10 pt-3">
-      <p className="text-slate-400">Điểm con hướng tới</p>
+    <div className="border-t border-line pt-3">
+      <p className="text-muted">Điểm con hướng tới</p>
       <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Chọn điểm mục tiêu">
         {GOALS.map((g) => (
           <button key={g} type="button" className={chip(goal === g)} aria-pressed={goal === g} onClick={() => save(studentId, g)}>
@@ -66,17 +66,17 @@ export default function ParentGoal({ studentId, avg }: { studentId: string; avg:
         )}
       </div>
       {goal === null ? (
-        <p className="parent-copy mt-2 text-slate-400">
+        <p className="parent-copy mt-2 text-muted">
           Chọn một mức để xem con còn cách bao xa. Mục tiêu chỉ lưu trên điện thoại này, thầy không thấy.
         </p>
       ) : avg === null ? null : avg >= goal ? (
-        <p className="parent-copy mt-2 text-emerald-300">
+        <p className="parent-copy mt-2 text-ok">
           Điểm trung bình của con ({scoreText(avg)}) đã đạt mục tiêu {goal}.
         </p>
       ) : (
-        <p className="parent-copy mt-2 text-slate-300">
+        <p className="parent-copy mt-2 text-ink">
           Điểm trung bình hiện tại {scoreText(avg)} — còn cách mục tiêu {goal} khoảng{" "}
-          <b className="text-white">{scoreText(Math.round((goal - avg) * 10) / 10)} điểm</b>.
+          <b className="text-ink">{scoreText(Math.round((goal - avg) * 10) / 10)} điểm</b>.
         </p>
       )}
     </div>

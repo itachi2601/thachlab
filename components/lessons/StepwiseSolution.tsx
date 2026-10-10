@@ -64,7 +64,7 @@ function Choices({
             type="button"
             onClick={() => onPick(c)}
             className="bt-choice"
-            style={isPicked ? { borderColor: c.dung ? "#34d399" : "#f87171" } : undefined}
+            style={isPicked ? { borderColor: c.dung ? "var(--color-ok)" : "var(--color-danger)" } : undefined}
             aria-pressed={isPicked}
           >
             <ContentHtml html={c.text} className="inline" />

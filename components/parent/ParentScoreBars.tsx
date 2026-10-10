@@ -28,7 +28,7 @@ export default function ParentScoreBars({ points, goal }: { points: BarPoint[]; 
             className="pointer-events-none absolute inset-x-0 border-t border-dashed border-slate-400/60"
             style={{ bottom: at(6.5) }}
           />
-          <span className="absolute right-0 text-[15px] text-slate-400" style={{ bottom: at(6.5) + 1 }}>
+          <span className="absolute right-0 text-[15px] text-muted" style={{ bottom: at(6.5) + 1 }}>
             6,5
           </span>
           {goal ? (
@@ -43,7 +43,7 @@ export default function ParentScoreBars({ points, goal }: { points: BarPoint[]; 
               return (
                 <div key={p.at} className="relative flex h-full w-full max-w-14 flex-col items-center justify-end">
                   <span
-                    className="parent-num mb-1 text-lg font-bold text-white"
+                    className="parent-num mb-1 text-lg font-bold text-ink"
                     style={{ position: "absolute", bottom: at(p.score) }}
                   >
                     {scoreText(p.score)}
@@ -57,12 +57,12 @@ export default function ParentScoreBars({ points, goal }: { points: BarPoint[]; 
       </div>
       <div className="flex justify-around gap-1.5 pl-1 pr-9 pt-1.5">
         {shown.map((p) => (
-          <span key={p.at} className="parent-num w-full max-w-14 whitespace-nowrap text-center text-[15px] text-slate-400">
+          <span key={p.at} className="parent-num w-full max-w-14 whitespace-nowrap text-center text-[15px] text-muted">
             {shortDate(p.at)}
           </span>
         ))}
       </div>
-      <figcaption className="mt-2 text-[15px] text-slate-400">
+      <figcaption className="mt-2 text-[15px] text-muted">
         Mỗi cột là một bài, từ cũ (trái) đến mới (phải). Vạch đứt là mốc 6,5 (bắt đầu mức Khá).
         {goal ? ` Vạch xanh liền là mục tiêu ${scoreText(goal)} do phụ huynh chọn.` : ""}
       </figcaption>

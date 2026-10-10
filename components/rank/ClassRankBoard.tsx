@@ -39,13 +39,13 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
   const weekStart = new Date(data.week_start).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" });
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
+    <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Trophy size={18} className="text-amber-300" />
-          <h2 className="font-display font-bold text-white">Bảng tuần của lớp</h2>
+          <h2 className="font-display font-bold text-ink">Bảng tuần của lớp</h2>
         </div>
-        <Link href="/lop-hoc/" className="text-xs text-cyan-300 hover:underline">
+        <Link href="/lop-hoc/" className="text-xs text-primary hover:underline">
           Bậc cả lớp →
         </Link>
       </div>
@@ -58,9 +58,9 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
 
       {/* Khối 1 — Top tuần */}
       <div className="mt-4">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Top tuần</p>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">Top tuần</p>
         {data.top_week.length === 0 ? (
-          <p className="rounded-xl border border-dashed border-white/10 p-3 text-sm text-slate-400">
+          <p className="rounded-xl border border-dashed border-line p-3 text-sm text-muted">
             Chưa ai nhận RP tuần này. Bài luyện tập đầu tiên em làm sẽ đưa em lên top 1.
           </p>
         ) : (
@@ -81,12 +81,12 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
                   </span>
                   <Avatar url={m.avatar} name={m.name} size={30} />
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold text-white">
+                    <span className="block truncate text-sm font-semibold text-ink">
                       {m.name}
-                      {m.is_me && <span className="ml-1 text-xs font-normal text-cyan-300">(em)</span>}
+                      {m.is_me && <span className="ml-1 text-xs font-normal text-primary">(em)</span>}
                     </span>
                     {m.title && <WornTitle title={m.title} className="block" />}
-                    <span className="flex items-center gap-1 text-xs text-slate-400">
+                    <span className="flex items-center gap-1 text-xs text-muted">
                       <RankBadge code={m.tier_code ?? undefined} division={m.division} paragon={m.paragon} size={14} />
                       <b className="text-emerald-300">+{m.rp_week} RP</b> tuần này
                     </span>
@@ -101,7 +101,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
       {/* Khối 2 — Vị trí của em */}
       {me && (
         <div className="mt-4 rounded-xl border border-cyan-400/20 bg-cyan-500/5 p-3">
-          <p className="text-sm text-white">
+          <p className="text-sm text-ink">
             {me.rp_week === 0 ? (
               <>
                 Em <b>chưa có RP tuần này</b>. Làm 1 bài luyện tập đạt từ 7,0 là có RP ngay.
@@ -110,22 +110,22 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
               <>
                 Trong nhóm {me.tier_code ? <TierName code={me.tier_code} size="sm" /> : "chưa xếp bậc"}
                 {me.tier_size > 1 ? <> ({me.tier_size} bạn)</> : null}, tuần này em có <b className="text-emerald-300">+{me.rp_week} RP</b>
-                {me.tied > 0 && <span className="text-slate-400"> · ngang với {me.tied} bạn cùng bậc</span>}
+                {me.tied > 0 && <span className="text-muted"> · ngang với {me.tied} bạn cùng bậc</span>}
                 {me.in_top && <span className="ml-1 text-amber-300">· Em đang trong top 3 lớp!</span>}
                 {!me.above && !me.in_top && <span className="ml-1 text-amber-300">· Em đang dẫn đầu bậc!</span>}
               </>
             )}
           </p>
-          <div className="mt-2 space-y-1 text-xs text-slate-300">
+          <div className="mt-2 space-y-1 text-xs text-ink">
             {me.above && (
               <p className="flex items-center gap-1.5">
-                <ArrowUp size={12} className="text-cyan-300" />
+                <ArrowUp size={12} className="text-primary" />
                 <Avatar url={me.above.avatar} name={me.above.name} size={16} />
-                Còn <b className="text-white">{me.above.rp_week - me.rp_week + 1} RP</b> nữa để vượt {me.above.name} (cùng bậc)
+                Còn <b className="text-ink">{me.above.rp_week - me.rp_week + 1} RP</b> nữa để vượt {me.above.name} (cùng bậc)
               </p>
             )}
             {me.below && (
-              <p className="flex items-center gap-1.5 text-slate-400">
+              <p className="flex items-center gap-1.5 text-muted">
                 <Flame size={12} className="text-orange-300" />
                 <Avatar url={me.below.avatar} name={me.below.name} size={16} />
                 {me.below.name} đang bám sau em {me.rp_week - me.below.rp_week} RP
@@ -137,7 +137,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
 
       {/* Khối 4 — Ghi nhận tuần này */}
       <div className="mt-4">
-        <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
           <Sparkles size={14} /> Ghi nhận tuần này
         </p>
         {data.improved === null && data.weekly.length === 0 ? (
@@ -145,17 +145,17 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
         ) : (
           <ul className="space-y-1 text-sm">
             {data.improved && (
-              <li className="flex items-center gap-1.5 text-slate-300">
+              <li className="flex items-center gap-1.5 text-ink">
                 <Avatar url={data.improved.avatar} name={data.improved.name} size={18} />
                 <span>
-                  <b className="text-white">{data.improved.name}</b> tiến bộ nhất tuần
+                  <b className="text-ink">{data.improved.name}</b> tiến bộ nhất tuần
                   <span className="ml-1 text-xs text-emerald-300">+{data.improved.delta} RP so với tuần trước</span>
                 </span>
               </li>
             )}
             {data.weekly.slice(0, 6).map((e, i) => (
-              <li key={i} className="text-slate-300">
-                <b className="text-white">{e.name}</b> {e.label}
+              <li key={i} className="text-ink">
+                <b className="text-ink">{e.name}</b> {e.label}
                 <span className="ml-1 text-xs text-slate-600">{new Date(e.at).toLocaleDateString("vi-VN", { weekday: "short" })}</span>
               </li>
             ))}
@@ -164,7 +164,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
       </div>
 
       <p className="mt-3 text-[12px] text-slate-500">
-        {data.season.name} còn <b className="text-slate-300">{left} ngày</b>.
+        {data.season.name} còn <b className="text-ink">{left} ngày</b>.
       </p>
     </section>
   );
@@ -175,28 +175,28 @@ function ClassGoalBar({ goal }: { goal: ClassGoal }) {
   return (
     <div
       className="mt-3 rounded-xl border p-3"
-      style={{ borderColor: goal.reached ? "rgba(52,211,153,.45)" : "rgba(255,255,255,.1)", background: goal.reached ? "rgba(52,211,153,.08)" : undefined }}
+      style={{ borderColor: goal.reached ? "rgba(52,211,153,.45)" : "var(--color-line)", background: goal.reached ? "rgba(52,211,153,.08)" : undefined }}
     >
-      <p className="flex items-center gap-1.5 text-sm font-semibold text-white">
-        <Users size={15} className={goal.reached ? "text-emerald-300" : "text-cyan-300"} />
+      <p className="flex items-center gap-1.5 text-sm font-semibold text-ink">
+        <Users size={15} className={goal.reached ? "text-ok" : "text-primary"} />
         Mục tiêu chung: cả lớp đạt {goal.target} huy hiệu tuần này
-        <span className="ml-auto text-xs font-normal text-slate-400">
+        <span className="ml-auto text-xs font-normal text-muted">
           {Math.min(goal.done, goal.target)}/{goal.target}
         </span>
       </p>
-      <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/10">
+      <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
         <div className="h-full rounded-full" style={{ width: `${pct}%`, background: goal.reached ? "#34d399" : "#22d3ee" }} />
       </div>
-      <p className="mt-1.5 text-xs text-slate-400">
+      <p className="mt-1.5 text-xs text-muted">
         {goal.reached ? (
           <>Cả lớp đã đạt mục tiêu{goal.rp > 0 ? <> — mỗi bạn được <b className="text-emerald-300">+{goal.rp} RP</b></> : null}. Cảm ơn mọi người!</>
         ) : (
           <>
-            Huy hiệu của <b className="text-slate-200">bất kỳ bạn nào</b> trong lớp đều tính
+            Huy hiệu của <b className="text-ink">bất kỳ bạn nào</b> trong lớp đều tính
             {goal.rp > 0 ? <>; đạt mục tiêu, mỗi bạn nhận <b className="text-emerald-300">+{goal.rp} RP</b></> : null}. Rủ nhau cùng học nhé.
           </>
         )}
-        {goal.my_contrib > 0 && <span className="ml-1 text-cyan-300">Em đã góp {goal.my_contrib} huy hiệu.</span>}
+        {goal.my_contrib > 0 && <span className="ml-1 text-primary">Em đã góp {goal.my_contrib} huy hiệu.</span>}
       </p>
     </div>
   );

@@ -49,7 +49,7 @@ import {
 } from "@/services/analytics";
 
 const inputCls =
-  "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "rounded-xl border border-line-strong bg-surface-2 px-3 py-2 text-sm text-ink placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const chipBtn =
   "admin-chip";
 
@@ -308,7 +308,7 @@ function ItemForm({
         />
       )}
       {isHomework && (
-        <label className="flex flex-wrap items-center gap-2 text-sm text-slate-300">
+        <label className="flex flex-wrap items-center gap-2 text-sm text-ink">
           Hạn nộp
           <input
             type="datetime-local"
@@ -325,12 +325,12 @@ function ItemForm({
       )}
       {isWorkedKind && (
         <div className="space-y-3">
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-muted">
             Dạng bài tự luận (kiểu cũ, chỉ hiện lời giải) — bài tập mẫu có chấm đáp án thì
             gắn đề ở dưới.
           </p>
           {questions.map((q, idx) => (
-            <div key={idx} className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
+            <div key={idx} className="space-y-2 rounded-xl border border-line bg-surface-2 p-3">
               <div className="flex items-center gap-2">
                 <input
                   value={q.label}
@@ -363,13 +363,13 @@ function ItemForm({
       {examKind && (
         <div className="space-y-1">
           {isWorkedKind && (
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted">
               Đề gắn ở đây hiện thành từng bài mẫu: em chọn đáp án, bấm &quot;Kiểm tra&quot;
               mới mở lời giải chi tiết.
             </p>
           )}
           {kind === "luyen_tap" && (
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted">
               Toàn bộ câu của các đề gắn ở đây gộp thành ngân hàng để bốc ngẫu nhiên.
             </p>
           )}
@@ -391,7 +391,7 @@ function ItemForm({
         <button
           onClick={saveDraft}
           disabled={busy}
-          className="rounded-full border border-white/15 px-5 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-50"
+          className="rounded-full border border-line px-5 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-50"
         >
           💾 Lưu nháp
         </button>
@@ -406,7 +406,7 @@ function ItemForm({
         )}
         <button
           onClick={onCancel}
-          className="rounded-full border border-white/15 px-5 py-2 text-sm text-slate-300 hover:border-white/30"
+          className="rounded-full border border-line px-5 py-2 text-sm text-ink hover:border-line-strong"
         >
           Hủy
         </button>
@@ -456,9 +456,9 @@ function PracticeWrongestPanel({ itemId }: { itemId: number }) {
   }
 
   return (
-    <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
-      <p className="text-sm font-semibold text-white">Câu học sinh hay sai</p>
-      <p className="text-xs text-slate-400">
+    <div className="space-y-2 rounded-xl border border-line bg-surface-2 p-3">
+      <p className="text-sm font-semibold text-ink">Câu học sinh hay sai</p>
+      <p className="text-xs text-muted">
         Gộp mọi lượt làm của mọi lớp trên các đề gắn ở trên — dùng để biết câu nào trong
         ngân hàng cần xem lại đề bài hoặc dạy lại.
       </p>
@@ -472,23 +472,23 @@ function PracticeWrongestPanel({ itemId }: { itemId: number }) {
             const key = `${row.examId}|${row.sourceIndex}`;
             const question = questionsByExam[row.examId]?.[row.sourceIndex];
             return (
-              <div key={key} className="rounded-lg border border-white/10 bg-panel">
+              <div key={key} className="rounded-lg border border-line bg-panel">
                 <button
                   type="button"
                   onClick={() => toggle(row)}
                   className="flex w-full items-center gap-3 p-3 text-left"
                 >
                   <span className="min-w-0 flex-1">
-                    <span className="block text-sm text-white">
+                    <span className="block text-sm text-ink">
                       {row.examTitle} · Câu {row.sourceIndex + 1}
-                      <span className="ml-2 font-normal text-slate-400">
+                      <span className="ml-2 font-normal text-muted">
                         {row.topic} · {practiceFormLabel(row.form)}
                       </span>
                     </span>
                   </span>
                   <span className="shrink-0 text-right">
                     <span
-                      className={`font-mono text-sm font-bold ${row.pct >= 60 ? "text-red-300" : row.pct >= 30 ? "text-amber-300" : "text-slate-300"}`}
+                      className={`font-mono text-sm font-bold ${row.pct >= 60 ? "text-red-300" : row.pct >= 30 ? "text-amber-300" : "text-ink"}`}
                     >
                       {row.pct}%
                     </span>
@@ -502,7 +502,7 @@ function PracticeWrongestPanel({ itemId }: { itemId: number }) {
                   />
                 </button>
                 {openKey === key && question && (
-                  <div className="border-t border-white/10 p-3 text-sm text-slate-300">
+                  <div className="border-t border-line p-3 text-sm text-ink">
                     <ContentHtml html={question.question} className="exam-content block" />
                     {question.type === "multiple_choice" && (
                       <ul className="mt-2 space-y-1 text-xs">
@@ -602,7 +602,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
             >
               <span title={meta.label}>{meta.icon}</span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-medium text-white">
+                <span className="block truncate text-sm font-medium text-ink">
                   {it.title}
                 </span>
                 <span className="text-xs" style={{ color: meta.color }}>
@@ -654,7 +654,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
           );
         })}
         {items.length === 0 && !adding && (
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted">
             Chưa có mục nào — bấm “+ Thêm mục” để soạn lý thuyết, video, đề…
           </p>
         )}
@@ -845,7 +845,7 @@ function ChapterLessonsEditor({
           ← Chọn chương khác
         </button>
         <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[#60A5FA]">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
             {schoolClass ? `Lớp ${schoolClass.name}` : "Toàn trường"}
           </p>
           <h3 className="truncate admin-h2">
@@ -894,7 +894,7 @@ function ChapterLessonsEditor({
 
       <div className="admin-card flex flex-wrap items-center gap-3">
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-white">Giao bài về nhà cho cả chương</p>
+          <p className="text-sm font-semibold text-ink">Giao bài về nhà cho cả chương</p>
           <p className="text-xs text-slate-500">
             Đặt chung một hạn nộp cho mọi mục “Bài tập về nhà” trong chương, khỏi mở
             từng bài để sửa từng mục.
@@ -904,7 +904,7 @@ function ChapterLessonsEditor({
           type="datetime-local"
           value={chapterDueAt}
           onChange={(e) => setChapterDueAt(e.target.value)}
-          className={`${inputCls} bg-[#0B1020]`}
+          className={`${inputCls} bg-panel`}
         />
         <button
           onClick={assignChapterHomeworkDueAt}
@@ -938,7 +938,7 @@ function ChapterLessonsEditor({
                       {LESSON_KIND_META[l.lesson_kind].badge}
                     </span>
                   )}
-                  <span className="truncate font-medium text-white hover:text-primary">
+                  <span className="truncate font-medium text-ink hover:text-primary">
                     {l.title}
                   </span>
                   {l.lesson_kind === "bai_hoc" && (() => {
@@ -971,7 +971,7 @@ function ChapterLessonsEditor({
                   value={l.lesson_kind}
                   onChange={(e) => setKind(l, e.target.value as LessonKind)}
                   title="Loại bài"
-                  className="rounded-lg border border-white/10 bg-panel px-2 py-1 text-xs text-slate-300"
+                  className="rounded-lg border border-line-strong bg-panel px-2 py-1 text-xs text-ink"
                 >
                   {LESSON_KIND_OPTIONS.map((k) => (
                     <option key={k} value={k}>
@@ -1027,7 +1027,7 @@ function ChapterLessonsEditor({
           </div>
         ))}
         {lessons.length === 0 && (
-          <p className="text-sm text-slate-400">Chưa có bài học nào trong chương.</p>
+          <p className="text-sm text-muted">Chưa có bài học nào trong chương.</p>
         )}
       </div>
     </div>
@@ -1122,7 +1122,7 @@ export default function LessonsAdmin() {
   return (
     <div className="space-y-6">
       <section className="admin-card">
-        <p className="mb-3 text-sm font-medium text-slate-300">
+        <p className="mb-3 text-sm font-medium text-ink">
           1. Chọn lớp
         </p>
         <div className="flex flex-wrap gap-2">
@@ -1145,7 +1145,7 @@ export default function LessonsAdmin() {
                 className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                   active
                     ? "text-white"
-                    : "border-white/10 text-slate-400 hover:border-white/30 hover:text-slate-200"
+                    : "border-line text-muted hover:border-line-strong hover:text-ink"
                 }`}
               >
                 {schoolClass.icon && `${schoolClass.icon} `}
@@ -1163,7 +1163,7 @@ export default function LessonsAdmin() {
 
       {selectedClass && (
         <section className="admin-card">
-          <p className="mb-3 text-sm font-medium text-slate-300">2. Chọn môn học</p>
+          <p className="mb-3 text-sm font-medium text-ink">2. Chọn môn học</p>
           <div className="flex flex-wrap gap-2">
             {subjectsForGrade(classGrade(selectedClass.name) ?? "").map((subject) => (
               <button
@@ -1173,7 +1173,7 @@ export default function LessonsAdmin() {
                 className={`rounded-full border px-4 py-2 text-sm font-semibold ${
                   selectedSubjectCode === subject.code
                     ? "border-blue-400 bg-blue-500/15 text-blue-200"
-                    : "border-white/10 text-slate-400 hover:border-white/30"
+                    : "border-line text-muted hover:border-line-strong"
                 }`}
               >
                 {subject.icon} {subject.label}
@@ -1188,7 +1188,7 @@ export default function LessonsAdmin() {
         className="admin-card space-y-4"
       >
         <div>
-          <p className="text-sm font-medium text-slate-300">
+          <p className="text-sm font-medium text-ink">
             3. Thêm chương {academicSubject(selectedSubjectCode).label} cho {selectedClass ? `lớp ${selectedClass.name}` : "lớp đã chọn"}
           </p>
           <p className="mt-1 text-xs text-slate-500">
@@ -1215,7 +1215,7 @@ export default function LessonsAdmin() {
 
       <div className="space-y-2">
         <div>
-          <p className="text-sm font-medium text-slate-300">
+          <p className="text-sm font-medium text-ink">
             4. Chọn chương để đăng bài học
           </p>
           {selectedClass && (
@@ -1233,7 +1233,7 @@ export default function LessonsAdmin() {
               onClick={() => setOpenChapter(ch)}
               className="min-w-0 flex-1 text-left"
             >
-              <span className="block truncate font-medium text-white hover:text-primary">
+              <span className="block truncate font-medium text-ink hover:text-primary">
                 {ch.title}
               </span>
               <span className="text-xs text-slate-500">
@@ -1264,7 +1264,7 @@ export default function LessonsAdmin() {
                   className={`rounded-full border px-3 py-1 text-xs font-semibold ${
                     ch.classIds.includes(selectedClassId)
                       ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200"
-                      : "border-white/15 text-slate-300 hover:border-white/30"
+                      : "border-line text-ink hover:border-line-strong"
                   }`}
                 >
                   {ch.classIds.includes(selectedClassId)
@@ -1307,7 +1307,7 @@ export default function LessonsAdmin() {
           </div>
         ))}
         {selectedClassId && subjectChapters.length === 0 && (
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted">
             Lớp này chưa có chương nào — thêm chương đầu tiên ở trên.
           </p>
         )}

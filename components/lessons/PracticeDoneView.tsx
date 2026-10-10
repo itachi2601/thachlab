@@ -46,11 +46,11 @@ export default function PracticeDoneView({
       : null;
   return (
     <div className="space-y-4">
-      <div className="rounded-2xl border border-white/10 bg-panel p-6 text-center">
+      <div className="rounded-2xl border border-line bg-panel p-6 text-center">
         <p className="font-display text-4xl font-bold text-gradient">
           {summary.score10.toLocaleString("vi-VN")}
         </p>
-        <p className="mt-2 text-sm text-slate-300">
+        <p className="mt-2 text-sm text-ink">
           Đúng trọn vẹn {summary.correctCount}/{questions.length} câu · {formatClock(usedSeconds)}
         </p>
         {practiceStatus && passScore !== null && (
@@ -81,7 +81,7 @@ export default function PracticeDoneView({
             <button
               type="button"
               onClick={onRetry}
-              className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+              className="rounded-full border border-line px-4 py-1.5 text-xs font-semibold text-ink hover:border-line-strong"
             >
               Thử lại
             </button>
@@ -114,7 +114,7 @@ export default function PracticeDoneView({
                     </span>
                   )}
                   {formLabel && (
-                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
+                    <span className="rounded-full border border-line px-2.5 py-1 text-muted">
                       {formLabel}
                     </span>
                   )}

@@ -11,7 +11,7 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
  * Fallback theo QUY-TAC-THIET-KE-PHU-HUYNH: câu đầy đủ, chữ 18px, min-height giữ chỗ.
  */
 const boxClass =
-  "flex min-h-[12rem] items-center justify-center rounded-2xl border border-white/10 bg-panel p-8 text-center text-lg leading-relaxed text-slate-300";
+  "flex min-h-[12rem] items-center justify-center rounded-2xl border border-line bg-panel p-8 text-center text-lg leading-relaxed text-ink";
 
 const ParentChildCardsLazyInner = dynamic(() => import("@/components/parent/ParentChildCards"), {
   ssr: false,

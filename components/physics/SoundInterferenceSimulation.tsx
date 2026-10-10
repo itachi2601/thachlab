@@ -159,13 +159,13 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
             style={{ left: `${x}%` }}
           />
         ))}
-        <span className="pointer-events-none absolute bottom-3 left-2 text-[11px] font-semibold text-white/80">Màn hình · 2 loa (chấm xanh)</span>
+        <span className="pointer-events-none absolute bottom-3 left-2 text-[12px] font-semibold text-white/80">Màn hình · 2 loa (chấm xanh)</span>
         {/* tai / micro */}
         <span
           className="pointer-events-none absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-emerald-400/90 shadow"
           style={{ left: `${px}%`, top: `${py}%` }}
         />
-        <span className="pointer-events-none absolute right-2 top-2 rounded bg-black/50 px-2 py-1 text-[11px] text-white/80">
+        <span className="pointer-events-none absolute right-2 top-2 rounded bg-black/50 px-2 py-1 text-[12px] text-white/80">
           Sáng = to · Tối = nhỏ
         </span>
       </div>

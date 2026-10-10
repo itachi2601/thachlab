@@ -29,12 +29,12 @@ export default function MistakeReviewPanel() {
         <div id="mistake-review-list" className="space-y-5 pb-2">
           {mistakes.slice(0, visibleCount).map((item) => (
             <div key={`${item.examId}-${item.questionIndex}`}>
-              <p className="mb-2 text-sm font-semibold text-slate-300">{item.examTitle}</p>
+              <p className="mb-2 text-sm font-semibold text-ink">{item.examTitle}</p>
               <QuestionCard index={item.questionIndex + 1} question={item.question} response={item.response} review />
             </div>
           ))}
           {visibleCount < mistakes.length && (
-            <button type="button" onClick={() => setVisibleCount((count) => count + 5)} className="w-full rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-300 hover:border-white/25">
+            <button type="button" onClick={() => setVisibleCount((count) => count + 5)} className="w-full rounded-xl border border-line px-4 py-3 text-sm font-semibold text-ink hover:border-line-strong">
               Xem thêm {Math.min(5, mistakes.length - visibleCount)} câu
             </button>
           )}

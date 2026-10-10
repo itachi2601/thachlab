@@ -30,18 +30,18 @@ import { supabaseConfigured } from "@/services/supabase";
  */
 function Notice({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8 text-center text-slate-300">
+    <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-8 text-center text-ink">
       {children}
     </div>
   );
 }
 
 const REG_TONE: Record<MyRegistration["status"], string> = {
-  pending: "text-amber-300",
-  catchup: "text-amber-300",
-  active: "text-emerald-300",
-  rejected: "text-red-300",
-  left: "text-slate-500",
+  pending: "text-warn",
+  catchup: "text-warn",
+  active: "text-ok",
+  rejected: "text-danger",
+  left: "text-muted",
 };
 
 /**
@@ -52,14 +52,14 @@ function RegistrationList({ items }: { items: MyRegistration[] }) {
   const needAttention = items.filter((r) => r.status !== "active");
   if (needAttention.length === 0) return null;
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="font-display text-lg font-semibold text-white">Đăng ký học</h2>
+    <section className="mb-6 rounded-2xl border border-line bg-panel p-5">
+      <h2 className="font-display text-lg font-semibold text-ink">Đăng ký học</h2>
       <ul className="mt-3 space-y-2">
         {needAttention.map((r) => (
-          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2">
+          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-surface-2 px-3 py-2">
             <span className="min-w-0 flex-1">
-              <span className="block font-semibold text-white">{r.courseName}</span>
-              <span className="block text-slate-400">
+              <span className="block font-semibold text-ink">{r.courseName}</span>
+              <span className="block text-muted">
                 {r.student_id === null ? `${r.child_name} (chưa có tài khoản)` : r.studentName}
                 {r.className ? ` · khối ${r.className}` : ""}
                 {r.joined_late ? " · vào trễ, sẽ bù bài" : ""}
@@ -77,24 +77,24 @@ function RegistrationList({ items }: { items: MyRegistration[] }) {
 function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
   return (
     <Notice>
-      <Users className="mx-auto text-slate-400" size={36} />
-      <h1 className="mt-4 font-display text-xl font-bold text-white">Tài khoản này chưa nối với con</h1>
-      <p className="mt-3 text-left text-slate-400">
+      <Users className="mx-auto text-muted" size={36} />
+      <h1 className="mt-4 font-display text-xl font-bold text-ink">Tài khoản này chưa nối với con</h1>
+      <p className="mt-3 text-left text-muted">
         Thầy cần gửi phụ huynh một <b>link mời</b> (dạng{" "}
-        <code className="rounded bg-white/[.06] px-1.5 py-0.5 text-slate-200">/loi-moi?ma=PH…</code>) để
+        <code className="rounded bg-surface-2 px-1.5 py-0.5 text-ink">/loi-moi?ma=PH…</code>) để
         tài khoản này nối với con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
       </p>
       <RegistrationList items={registrations} />
       <div className="mt-5 flex flex-wrap justify-center gap-3">
         <Link
           href="/khoa-hoc"
-          className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-2.5 font-semibold text-slate-200 hover:border-white/30"
+          className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
         >
           <CalendarPlus size={16} /> Đăng ký học cho con
         </Link>
         <Link
           href="/tai-khoan"
-          className="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-2.5 font-semibold text-slate-200 hover:border-white/30"
+          className="inline-flex items-center justify-center rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
         >
           Về tài khoản
         </Link>
@@ -150,7 +150,7 @@ function ParentHome() {
       <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
         {children.length > 1 && (
           <>
-            <label htmlFor="chon-con" className="font-semibold text-slate-300">
+            <label htmlFor="chon-con" className="font-semibold text-ink">
               Chọn con:
             </label>
             <span className="relative">
@@ -158,7 +158,7 @@ function ParentHome() {
                 id="chon-con"
                 value={selected.studentId}
                 onChange={(e) => setSelectedId(e.target.value)}
-                className="appearance-none rounded-xl border border-white/10 bg-panel py-2.5 pl-4 pr-10 font-semibold text-white focus:border-primary focus:outline-none"
+                className="appearance-none rounded-xl border border-line-strong bg-panel py-2.5 pl-4 pr-10 font-semibold text-ink focus:border-primary focus:outline-none"
               >
                 {children.map((c) => (
                   <option key={c.studentId} value={c.studentId}>
@@ -169,13 +169,13 @@ function ParentHome() {
               </select>
               <ChevronDown
                 size={18}
-                className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"
+                className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted"
               />
             </span>
           </>
         )}
         {selected.classLabel && (
-          <span className="rounded-full border border-white/15 px-3 py-1 font-semibold text-slate-300">
+          <span className="rounded-full border border-line px-3 py-1 font-semibold text-ink">
             Lớp {selected.classLabel}
           </span>
         )}
@@ -184,7 +184,7 @@ function ParentHome() {
       <TeacherContact variant="slim" className="mb-6" />
 
       {selected.classId === null && (
-        <p className="parent-copy mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-amber-100/90">
+        <p className="parent-copy mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-warn">
           {selected.fullName} chưa được thầy duyệt vào lớp trên thachlab, nên chưa có điểm và chưa có
           hạng trong lớp. Phụ huynh nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
         </p>
@@ -211,8 +211,8 @@ function ParentHome() {
         <ParentTuitionCard registrations={selectedRegistrations} courses={selectedCourses} />
         <RegistrationList items={selectedRegistrations} />
 
-        <section className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-4">
-          <span className="text-slate-300">Muốn đăng ký cho con học lớp khác, hoặc cho em nhỏ?</span>
+        <section className="flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-panel px-5 py-4">
+          <span className="text-ink">Muốn đăng ký cho con học lớp khác, hoặc cho em nhỏ?</span>
           <Link
             href="/khoa-hoc"
             className="ml-auto inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-white hover:bg-primary-dark"
@@ -234,7 +234,7 @@ export default function PhuHuynhPage() {
       <Navbar />
       <main className="parent-page min-h-screen w-full px-5 pb-20 pt-28 sm:px-6">
         {!supabaseConfigured ? (
-          <p className="text-center text-slate-400">Hệ thống đang được cấu hình.</p>
+          <p className="text-center text-muted">Hệ thống đang được cấu hình.</p>
         ) : (
           <RequireAuth
             loginHref="/dang-nhap?next=/phu-huynh"

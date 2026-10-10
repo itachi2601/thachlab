@@ -13,7 +13,7 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 const Inner = dynamic(() => import("@/components/dashboard/ThptStudentHome"), {
   ssr: false,
   loading: () => (
-    <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400 min-h-[60vh]">Đang tải bảng học tập…</p>
+    <p className="rounded-2xl border border-line bg-panel p-6 text-muted min-h-[60vh]">Đang tải bảng học tập…</p>
   ),
 });
 
@@ -21,7 +21,7 @@ export default function ThptStudentHomeLazy(props: ComponentProps<typeof Inner>)
   return (
     <LazyErrorBoundary
       fallback={
-        <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400 min-h-[60vh]">
+        <p className="rounded-2xl border border-line bg-panel p-6 text-muted min-h-[60vh]">
           Không tải được bảng học tập. Thử tải lại trang.
         </p>
       }

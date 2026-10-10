@@ -40,5 +40,5 @@ export default function TaskRpLine({
   }, [kind, sourceId, staticText]);
 
   if (!text) return null;
-  return <p className="text-base leading-relaxed text-slate-200">{text}</p>;
+  return <p className="text-base leading-relaxed text-ink">{text}</p>;
 }

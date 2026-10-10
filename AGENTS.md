@@ -32,6 +32,7 @@ hàm/tham số). Log migration đã chạy ở `docs/STATE-archive.md`. Các fil
 | **Mọi UI học sinh nhìn thấy** (quy tắc thiết kế có dẫn nghiên cứu tâm lý/thị giác, checklist) | `docs/QUY-TAC-THIET-KE.md` |
 | **Mọi UI phụ huynh nhìn thấy** (`/phu-huynh`, dải phụ huynh ở trang chủ, `/loi-moi`, footer — bộ quy tắc P1..P21 cho tuổi 45–60, checklist) | `docs/QUY-TAC-THIET-KE-PHU-HUYNH.md` |
 | Nghiên cứu nền cho UI phụ huynh (thị giác/nhận thức/tâm lý tuổi 45–60, 26 nguồn có nhãn bằng chứng) | `docs/NGHIEN-CUU-PHU-HUYNH-45-60.md` |
+| **Bảng màu nền sáng — mặc định toàn site từ 11/10/2026** (token, số đo tương phản, bảng quy đổi idiom nền tối → token, khác biệt theo nhóm tuổi, trang xem thử `/dev/giao-dien`) | `docs/MAU-NEN-SANG.md` |
 | **Độ dài & nhịp bài lý thuyết** (hạn mức đo được, vì sao bài dài làm HS bỏ, cách kiểm chứng) | `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` |
 | AI Tutor Socratic (GĐ 4, Q2–Q3/2027): quyết định kiến trúc không phụ thuộc model + eval offline `scripts/eval-ai-tutor.mts` | `docs/AI-TUTOR.md` |
 
@@ -131,6 +132,15 @@ git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
 ## Xung đột
 Hai phiên cùng sửa một file riêng (không phải file dùng chung) → phiên merge sau tự gộp và kiểm lại; nếu ý định mâu thuẫn
 thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
+
+## Commit theo ĐƯỜNG DẪN CỤ THỂ — không `git commit -a`/`git add .` (bài học 11/10/2026)
+Hai phiên cùng mở một cây làm việc (khác nhánh vẫn chung thư mục) thì `git commit -a` của phiên này **nuốt luôn thay đổi
+chưa commit của phiên kia**, và có thể chỉ nuốt một phần file (đợt 11/10/2026: khối CSS cuối `globals.css` bị commit kèm
+vào commit của phiên khác, khối bảng màu ở đầu file thì không → main ở trạng thái nửa vời tới khi đợt sau commit).
+- Commit sớm, chia mẻ nhỏ; ghi rõ đường dẫn (`git commit -- <path>…`), kiểm `git status` trước khi commit.
+- Thấy file dùng chung "tự nhiên" khác đi thì tra `git log -S '<chuỗi>' -- <file>` trước khi sửa tiếp, đừng ghi lại từ đầu.
+- Muốn biết thay đổi của mình có bị lẫn không: `git show HEAD:<file> | grep '<dấu hiệu của mình>'`.
+
 
 # Cập nhật bài lý thuyết đã đăng — chỉ đẩy phần lý thuyết
 

@@ -224,7 +224,7 @@ export default function ExamQrPanel({
             {hint && <p className="mt-1 text-xs text-amber-300/90">{hint}</p>}
           </div>
 
-          <p className="break-all rounded-lg border border-white/10 bg-black/30 px-2 py-1.5 font-mono text-[11px] text-slate-400">
+          <p className="break-all rounded-lg border border-white/10 bg-black/30 px-2 py-1.5 font-mono text-[12px] text-slate-400">
             {url}
           </p>
 

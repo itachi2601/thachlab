@@ -11,14 +11,14 @@ import { useToast } from "@/components/ui/Toast";
 import { changeMyPassword } from "@/services/password-reset";
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-ink placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
 function errorMessage(error: unknown, fallback: string) {
   return error instanceof Error ? error.message : fallback;
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
+  return <div className="mx-auto max-w-md rounded-3xl border border-line bg-panel p-8">{children}</div>;
 }
 
 function ChangePasswordForm() {
@@ -34,8 +34,8 @@ function ChangePasswordForm() {
     return (
       <Card>
         <Check className="mx-auto text-emerald-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Đã đổi mật khẩu</h1>
-        <p className="mt-2 text-center text-sm text-slate-400">
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">Đã đổi mật khẩu</h1>
+        <p className="mt-2 text-center text-sm text-muted">
           Mật khẩu mới đã có hiệu lực — lần đăng nhập sau nhớ dùng mật khẩu này.
         </p>
         <Link
@@ -75,8 +75,8 @@ function ChangePasswordForm() {
   return (
     <Card>
       <KeyRound className="mx-auto text-primary" size={36} />
-      <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Đổi mật khẩu</h1>
-      <p className="mt-2 text-center text-sm text-slate-400">
+      <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">Đổi mật khẩu</h1>
+      <p className="mt-2 text-center text-sm text-muted">
         Nhập mật khẩu hiện tại và mật khẩu mới muốn dùng từ giờ.
       </p>
       <form onSubmit={submit} className="mt-5 space-y-3">
@@ -121,7 +121,7 @@ function ChangePasswordForm() {
       <button
         type="button"
         onClick={() => router.push("/tai-khoan")}
-        className="mt-2 w-full text-center text-xs text-slate-500 hover:text-slate-300"
+        className="mt-2 w-full text-center text-xs text-slate-500 hover:text-ink"
       >
         ← Quay lại Tài khoản của tôi
       </button>

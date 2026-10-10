@@ -114,15 +114,15 @@ export default function MonitorDailyAttendancePanel({ courseId, role }: { course
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">{MONITOR_ROLE_LABEL[role]}</p>
-          <h3 className="mt-1 flex items-center gap-2 font-display text-xl font-bold text-white">
+          <h3 className="mt-1 flex items-center gap-2 font-display text-xl font-bold text-ink">
             <CalendarCheck size={19} className="text-orange-300" />Điểm danh ngày {formatDate(today)}
           </h3>
-          <p className="mt-1 text-xs text-slate-400">
+          <p className="mt-1 text-xs text-muted">
             Mặc định cả lớp có mặt — chỉ tick bạn vắng và ghi lý do. Chỉ nhập/sửa được trong ngày hôm nay.
           </p>
         </div>
-        <div className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2 text-right">
-          <strong className="block text-lg text-white">{present}/{total}</strong>
+        <div className="rounded-xl border border-line bg-panel px-4 py-2 text-right">
+          <strong className="block text-lg text-ink">{present}/{total}</strong>
           <small className="text-xs text-slate-500">Có mặt · {absent.size} vắng</small>
         </div>
       </div>
@@ -135,25 +135,25 @@ export default function MonitorDailyAttendancePanel({ courseId, role }: { course
         </p>
       )}
 
-      <label className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400">
+      <label className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted">
         Sĩ số lớp
         <input
           type="number"
           min={0}
           value={headcount ?? ""}
           onChange={(event) => setHeadcount(event.target.value === "" ? null : Math.max(0, Number(event.target.value)))}
-          className="w-20 rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-sm font-bold text-white"
+          className="w-20 rounded-lg border border-line-strong bg-panel px-2 py-1.5 text-sm font-bold text-ink"
         />
         <span className="font-normal normal-case text-slate-500">(mặc định lấy theo danh sách lớp: {classmates.length})</span>
       </label>
 
-      <div className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2">
+      <div className="mt-3 flex items-center gap-2 rounded-xl border border-line-strong bg-panel px-3 py-2">
         <Search size={15} className="text-slate-500" />
         <input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Tìm bạn trong lớp…"
-          className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"
+          className="w-full bg-transparent text-sm text-ink placeholder:text-slate-500 focus:outline-none"
         />
       </div>
 
@@ -161,10 +161,10 @@ export default function MonitorDailyAttendancePanel({ courseId, role }: { course
         {visible.map((mate) => {
           const isAbsent = absent.has(mate.id);
           return (
-            <div key={mate.id} className={`rounded-xl border p-3 ${isAbsent ? "border-red-400/30 bg-red-500/5" : "border-white/10 bg-black/15"}`}>
+            <div key={mate.id} className={`rounded-xl border p-3 ${isAbsent ? "border-red-400/30 bg-red-500/5" : "border-line bg-black/15"}`}>
               <label className="flex items-center gap-2 text-sm">
                 <input type="checkbox" checked={isAbsent} onChange={() => toggleAbsent(mate.id)} className="h-4 w-4 accent-red-500" />
-                <span className={isAbsent ? "font-bold text-red-200" : "text-white"}>{mate.name}</span>
+                <span className={isAbsent ? "font-bold text-red-200" : "text-ink"}>{mate.name}</span>
                 {isAbsent && <UserX size={14} className="ml-auto text-red-300" />}
               </label>
               {isAbsent && (
@@ -172,14 +172,14 @@ export default function MonitorDailyAttendancePanel({ courseId, role }: { course
                   value={absent.get(mate.id) ?? ""}
                   onChange={(event) => setAbsent((current) => new Map(current).set(mate.id, event.target.value))}
                   placeholder="Lý do (ốm, có phép, không phép…)"
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-xs text-white placeholder:text-slate-600"
+                  className="mt-2 w-full rounded-lg border border-line-strong bg-panel px-2 py-1.5 text-xs text-ink placeholder:text-slate-600"
                 />
               )}
             </div>
           );
         })}
         {!visible.length && (
-          <p className="sm:col-span-2 rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500">
+          <p className="sm:col-span-2 rounded-xl border border-dashed border-line p-6 text-center text-sm text-slate-500">
             {classmates.length ? "Không tìm thấy bạn nào phù hợp." : "Danh sách lớp trống — nhờ thầy/cô nhập danh sách lớp trước."}
           </p>
         )}
@@ -195,13 +195,13 @@ export default function MonitorDailyAttendancePanel({ courseId, role }: { course
       </button>
 
       {history.length > 0 && (
-        <div className="mt-5 border-t border-white/10 pt-4">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div className="mt-5 border-t border-line pt-4">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted">
             <History size={14} />Tuần này đã nộp
           </div>
           <div className="mt-2 flex flex-wrap gap-2">
             {history.map((row) => (
-              <span key={row.id} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-slate-300">
+              <span key={row.id} className="rounded-full border border-line bg-black/20 px-3 py-1 text-xs text-ink">
                 {formatDate(row.attendance_date)}: {row.present_count}/{row.headcount}
                 {row.absentees.length > 0 && <span className="text-red-300"> · {row.absentees.length} vắng</span>}
               </span>

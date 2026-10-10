@@ -124,7 +124,7 @@ export default function GateQuizModal({
         role="presentation"
       >
         <motion.div
-          className={`flex max-h-[92vh] w-full flex-col rounded-2xl border border-white/10 bg-panel shadow-2xl ${running ? "max-w-2xl" : "max-w-sm"}`}
+          className={`flex max-h-[92vh] w-full flex-col rounded-2xl border border-line bg-panel shadow-2xl ${running ? "max-w-2xl" : "max-w-sm"}`}
           initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
@@ -135,28 +135,28 @@ export default function GateQuizModal({
           aria-label={`Thi thăng hạng lên ${targetName}`}
         >
           <div className="flex shrink-0 items-start justify-between gap-3 px-4 pt-4 sm:px-6 sm:pt-5">
-            <h2 className="font-display text-lg font-semibold text-white">Thi thăng hạng · {targetName}</h2>
+            <h2 className="font-display text-lg font-semibold text-ink">Thi thăng hạng · {targetName}</h2>
             <button
               type="button"
               onClick={onClose}
               aria-label={running ? "Tạm dừng, em vào thi tiếp sau" : "Đóng"}
-              className="-mr-2 -mt-1 flex h-11 w-11 items-center justify-center rounded-full text-slate-400 hover:bg-white/5 hover:text-white"
+              className="-mr-2 -mt-1 flex h-11 w-11 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-primary"
             >
               <X size={20} />
             </button>
           </div>
 
           <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-2 sm:px-6">
-            {phase === "loading" && <p className="text-base text-slate-300">Đang soạn bài thi…</p>}
+            {phase === "loading" && <p className="text-base text-ink">Đang soạn bài thi…</p>}
 
-            {phase === "error" && <p className="text-base leading-relaxed text-slate-200">{errorMsg}</p>}
+            {phase === "error" && <p className="text-base leading-relaxed text-ink">{errorMsg}</p>}
 
             {phase === "intro" && start && (
-              <div className="space-y-3 text-base leading-relaxed text-slate-200">
+              <div className="space-y-3 text-base leading-relaxed text-ink">
                 <p>
-                  <strong className="text-white">{start.total} câu</strong>, độ khó tự điều chỉnh theo bài làm của em: đúng thì câu sau khó hơn, sai thì dễ hơn.
+                  <strong className="text-ink">{start.total} câu</strong>, độ khó tự điều chỉnh theo bài làm của em: đúng thì câu sau khó hơn, sai thì dễ hơn.
                 </p>
-                <ul className="list-disc space-y-1 pl-5 text-slate-300">
+                <ul className="list-disc space-y-1 pl-5 text-ink">
                   <li>Cần đúng từ {start.passPct}% số câu.</li>
                   {(gate.min_hard_correct ?? 0) > 0 && <li>Đúng ít nhất {gate.min_hard_correct} câu mức Khó.</li>}
                   {gate.min_level && <li>Kết thúc ở mức {GATE_LEVEL_LABELS[gate.min_level]} trở lên.</li>}
@@ -165,18 +165,18 @@ export default function GateQuizModal({
                     Chưa đạt thì không mất RP, thi lại sau {gate.cooldown_hours ?? 48} giờ.
                   </li>
                 </ul>
-                {start.index > 0 && <p className="text-sm text-cyan-300">Em đang làm dở — tiếp tục từ câu {start.index + 1}.</p>}
+                {start.index > 0 && <p className="text-sm text-primary">Em đang làm dở — tiếp tục từ câu {start.index + 1}.</p>}
               </div>
             )}
 
             {running && exam && question && (
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm font-semibold text-slate-200">
+                  <p className="text-sm font-semibold text-ink">
                     Câu {index + 1}/{total}
                   </p>
                   <div
-                    className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/10"
+                    className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-surface-2"
                     role="progressbar"
                     aria-valuemin={0}
                     aria-valuemax={total}
@@ -193,7 +193,7 @@ export default function GateQuizModal({
             {phase === "result" && result && <GateResultView result={result} gate={gate} />}
           </div>
 
-          <div className="shrink-0 border-t border-white/10 px-4 py-3 sm:px-6">
+          <div className="shrink-0 border-t border-line px-4 py-3 sm:px-6">
             {phase === "loading" && null}
             {(phase === "error" || phase === "result") && (
               <Button variant="outline" onClick={onClose} className="min-h-11 w-full">
@@ -230,12 +230,12 @@ function GateResultView({ result, gate }: { result: GateResult; gate: RankGate }
   return (
     <div className="space-y-3">
       <div className={`rounded-xl border p-4 text-center ${tone}`}>
-        <p className="flex items-center justify-center gap-2 text-base font-semibold text-white">
+        <p className="flex items-center justify-center gap-2 text-base font-semibold text-ink">
           <Icon size={20} aria-hidden className={result.passed ? "text-emerald-300" : "text-amber-300"} />
           {result.passed ? "Em đã qua bài thi" : "Lần này chưa đạt"}
         </p>
-        <p className="mt-1 text-3xl font-bold text-white">{result.pct}%</p>
-        <p className="mt-1 text-base text-slate-200">
+        <p className="mt-1 text-3xl font-bold text-ink">{result.pct}%</p>
+        <p className="mt-1 text-base text-ink">
           Đúng {result.correct}/{result.total} câu
           {hardNeeded || result.hardCorrect > 0 ? ` · ${result.hardCorrect} câu Khó` : ""}
         </p>
@@ -245,7 +245,7 @@ function GateResultView({ result, gate }: { result: GateResult; gate: RankGate }
         <p className="text-base leading-relaxed text-emerald-200">Em đã lên bậc mới. Xem huy hiệu ở trang xếp hạng.</p>
       )}
       {result.passed && !result.promoted && (
-        <p className="text-base leading-relaxed text-slate-200">
+        <p className="text-base leading-relaxed text-ink">
           {result.missingTitles > 0
             ? `Bài thi đã xong. Em còn thiếu ${result.missingTitles} danh hiệu chuyên môn — luyện thêm ở bộ sưu tập là lên bậc ngay.`
             : "Bài thi đã xong. Bậc mới sẽ cập nhật sau ít giây — tải lại trang nếu chưa thấy."}
@@ -253,16 +253,16 @@ function GateResultView({ result, gate }: { result: GateResult; gate: RankGate }
       )}
       {!result.passed && (
         <>
-          <p className="text-base leading-relaxed text-slate-200">
+          <p className="text-base leading-relaxed text-ink">
             {reasons.join("; ").replace(/^./, (c) => c.toUpperCase())}. Em không mất RP.
           </p>
           {result.weakTopics.length > 0 && (
-            <p className="text-base leading-relaxed text-slate-200">
-              Nên ôn trước: <b className="text-white">{result.weakTopics.map((w) => w.name).join("; ")}</b>.
+            <p className="text-base leading-relaxed text-ink">
+              Nên ôn trước: <b className="text-ink">{result.weakTopics.map((w) => w.name).join("; ")}</b>.
             </p>
           )}
           {result.cooldownUntil && (
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-ink">
               Thi lại được sau {formatGateWhen(result.cooldownUntil)} ({gate.cooldown_hours ?? 48} giờ kể từ lúc nộp).
             </p>
           )}

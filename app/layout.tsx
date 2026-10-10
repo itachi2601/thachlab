@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // PWA (GĐ 2.6 M1): manifest do app/manifest.ts sinh ra; iOS cần apple-touch-icon riêng.
   icons: { apple: "/icons/apple-touch-icon.png" },
-  appleWebApp: { capable: true, title: "ThachLab", statusBarStyle: "black" },
+  appleWebApp: { capable: true, title: "ThachLab", statusBarStyle: "default" },
   title: {
     default: "ThachLab — Vật lý không chỉ là công thức",
     template: "%s | ThachLab",
@@ -77,7 +77,9 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#05070b",
+  // Nền sáng là mặc định ⇒ thanh trạng thái/thanh địa phương của trình duyệt cũng lấy nền sáng
+  // (ThemeToggle đổi <meta name="theme-color"> khi người dùng tự bật nền tối).
+  themeColor: "#f5f7fa",
 };
 
 // Structured data toàn site — giúp Google nhận diện thương hiệu.
@@ -99,17 +101,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`h-full antialiased ${fontClassName}`} data-theme="dark" suppressHydrationWarning>
+    <html lang="vi" className={`h-full antialiased ${fontClassName}`} data-theme="light" suppressHydrationWarning>
       <head>
         {/* Bắt tay TCP+TLS với Supabase (Singapore) song song lúc tải trang, thay vì chờ
             tới request đầu tiên — ước tính tiết kiệm ~50-150ms round-trip đầu tiên từ VN. */}
         {SUPABASE_URL && <link rel="preconnect" href={SUPABASE_URL} crossOrigin="anonymous" />}
-        {/* Theme: lựa chọn đã lưu > /phu-huynh mặc định SÁNG (phụ huynh lớn tuổi đọc chữ sẫm trên nền
-            sáng nhanh hơn — Piepenbrock 2013; chữ xanh nhỏ trên nền đen là tổ hợp tệ nhất cho 45+)
-            > theo hệ điều hành. Cùng logic với components/ui/ReadingZone.tsx (defaultTheme). */}
+        {/* Theme: NỀN SÁNG là mặc định toàn site (thầy chốt 11/10/2026) — đọc chữ sẫm trên nền
+            sáng nhanh hơn ở mọi lứa tuổi và ưu thế rõ nhất với chữ nhỏ (M1, Piepenbrock 2013),
+            hợp cả mắt học sinh 14–18 lẫn phụ huynh 45–60. Chỉ đổi sang tối khi người dùng ĐÃ
+            tự chọn (nút Trăng/Mặt trời) — không theo prefers-color-scheme nữa để màu sắc kiểm
+            soát được và không "nửa tối nửa sáng" giữa các phiên. Cùng logic với
+            components/ui/ReadingZone.tsx (defaultTheme) và components/layout/ThemeToggle.tsx. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=(location.pathname==="/phu-huynh"||location.pathname.indexOf("/phu-huynh/")===0)?"light":(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="dark")t="light";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
           }}
         />
         {/* Lưới an toàn SỚM cho ChunkLoadError: chạy trước hydrate (ChunkErrorGuard chỉ đăng ký

@@ -39,17 +39,17 @@ export default function ParentHomeworkNotes({ classId, studentId }: { classId: n
   if (items === null || items.length === 0) return null;
 
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="flex items-center gap-2 font-display font-semibold text-white">
-        <CalendarClock size={16} className="text-cyan-300" /> Bài tập về nhà
+    <section className="mb-6 rounded-2xl border border-line bg-panel p-5">
+      <h2 className="flex items-center gap-2 font-display font-semibold text-ink">
+        <CalendarClock size={16} className="text-primary" /> Bài tập về nhà
       </h2>
       <div className="mt-3 space-y-2">
         {items.map((item) => {
           const percent = percents[item.id];
           return (
             <div key={item.id} className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
-              <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
-              <p className="mt-1.5 text-[12px] text-slate-500">
+              <p className="whitespace-pre-wrap text-sm text-ink">{item.body}</p>
+              <p className="mt-1.5 text-[12px] text-muted">
                 {item.createdByName || "Giáo viên"} ·{" "}
                 {new Date(item.createdAt).toLocaleString("vi-VN", {
                   day: "2-digit",
@@ -59,13 +59,13 @@ export default function ParentHomeworkNotes({ classId, studentId }: { classId: n
                 })}
               </p>
               {percent !== undefined ? (
-                <p className="mt-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-emerald-300">
+                <p className="mt-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-ok">
                   <CheckCircle2 size={12} /> Trợ giảng đã chấm trên lớp: {percent}% đã làm
                 </p>
               ) : (
-                // slate-600 (#475569) trên panel tối chỉ ~3,4:1 — dưới ngưỡng đọc của phụ huynh; dùng
-                // slate-500 (token đã được nâng ở @theme và .parent-page) để đạt ≥4,5:1 cả hai theme.
-                <p className="mt-1.5 text-[12px] text-slate-500">Chưa được chấm trên lớp.</p>
+                // P2: chữ phụ trong khối phụ huynh phải ≥4,5:1 (nhắm 7:1) — dùng token muted
+                // (đã được .parent-page nâng lên #3d4653) thay cho slate-500/#64748b.
+                <p className="mt-1.5 text-[12px] text-muted">Chưa được chấm trên lớp.</p>
               )}
             </div>
           );

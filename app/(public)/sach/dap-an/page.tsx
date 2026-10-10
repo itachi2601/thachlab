@@ -35,11 +35,11 @@ type Answers = {
   worked: Worked[];
 };
 
-const BODY = "text-sm leading-relaxed text-slate-300 [&_p]:mb-2";
+const BODY = "text-sm leading-relaxed text-ink [&_p]:mb-2";
 
 function Badge({ n }: { n: number }) {
   return (
-    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-white/10 px-1.5 text-xs font-bold text-white">
+    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-surface-2 px-1.5 text-xs font-bold text-ink">
       {n}
     </span>
   );
@@ -48,8 +48,8 @@ function Badge({ n }: { n: number }) {
 function Section({ title, hint, children }: { title: string; hint?: string; children: React.ReactNode }) {
   return (
     <section className="mt-8">
-      <h2 className="font-display text-xl font-semibold text-white">{title}</h2>
-      {hint && <p className="mt-1 text-sm text-slate-400">{hint}</p>}
+      <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
+      {hint && <p className="mt-1 text-sm text-muted">{hint}</p>}
       <div className="mt-4 space-y-3">{children}</div>
     </section>
   );
@@ -76,7 +76,7 @@ function AnswersView({ id }: { id: string }) {
 
   if (failed) {
     return (
-      <p className="mt-8 rounded-xl border border-white/10 bg-panel p-5 text-slate-300">
+      <p className="mt-8 rounded-xl border border-line bg-panel p-5 text-ink">
         Chưa có đáp án cho bài này. Kiểm tra lại mã QR trong sách hoặc mở bài trên{" "}
         <Link href="/lop-hoc/" className="text-primary hover:underline">
           trang lớp học
@@ -85,7 +85,7 @@ function AnswersView({ id }: { id: string }) {
       </p>
     );
   }
-  if (!data) return <p className="mt-8 text-slate-400">Đang tải…</p>;
+  if (!data) return <p className="mt-8 text-muted">Đang tải…</p>;
 
   const quizzes = data.items.filter((i) => i.kind === "quiz");
   const selfs = data.items.filter((i) => i.kind !== "quiz");
@@ -93,14 +93,14 @@ function AnswersView({ id }: { id: string }) {
   return (
     <>
       <p className="text-xs font-semibold tracking-widest text-slate-500">{data.chapter}</p>
-      <h1 className="mt-1 font-display text-3xl font-bold text-white sm:text-4xl">{data.title}</h1>
-      <p className="mt-3 text-slate-400">
+      <h1 className="mt-1 font-display text-3xl font-bold text-ink sm:text-4xl">{data.title}</h1>
+      <p className="mt-3 text-muted">
         Đáp án & gợi ý cho các ô trống và câu hỏi in trong sách. Làm xong trên giấy rồi hãy mở. Số thứ tự trùng với số in
         trong sách.
       </p>
       <Link
         href={`/lop-hoc/bai?id=${data.lessonId}`}
-        className="mt-4 inline-block rounded-lg border border-white/15 px-4 py-2 text-sm text-white hover:bg-white/5"
+        className="mt-4 inline-block rounded-lg border border-line-strong px-4 py-2 text-sm text-ink hover:bg-surface-2"
       >
         Mở bài này để xem mô phỏng, luyện tập và giải đề →
       </Link>
@@ -109,9 +109,9 @@ function AnswersView({ id }: { id: string }) {
         <Section title="Ô điền công thức" hint="Ô vuông nhỏ có số trong phần lý thuyết.">
           <div className="grid gap-3 sm:grid-cols-2">
             {data.formulas.map((f) => (
-              <div key={f.n} className="flex items-center gap-3 rounded-xl border border-white/10 bg-panel p-4">
+              <div key={f.n} className="flex items-center gap-3 rounded-xl border border-line bg-panel p-4">
                 <Badge n={f.n} />
-                <ContentHtml html={f.display ? `$$${f.tex}$$` : `$${f.tex}$`} className="text-white" />
+                <ContentHtml html={f.display ? `$$${f.tex}$$` : `$${f.tex}$`} className="text-ink" />
               </div>
             ))}
           </div>
@@ -121,20 +121,20 @@ function AnswersView({ id }: { id: string }) {
       {quizzes.length > 0 && (
         <Section title="Câu trắc nghiệm" hint="Đáp án đúng và phân tích lỗi thường gặp.">
           {quizzes.map((k) => (
-            <article key={k.n} className="rounded-xl border border-white/10 bg-panel p-4">
+            <article key={k.n} className="rounded-xl border border-line bg-panel p-4">
               <div className="flex items-center gap-3">
                 <Badge n={k.n} />
-                <span className="text-sm font-semibold text-white">
+                <span className="text-sm font-semibold text-ink">
                   {k.tag} {k.where ? <span className="font-normal text-slate-500">· mục {k.where}</span> : null}
                 </span>
-                <span className="ml-auto inline-flex h-7 w-7 items-center justify-center rounded-full border border-emerald-400/60 text-sm font-bold text-emerald-300">
+                <span className="ml-auto inline-flex h-7 w-7 items-center justify-center rounded-full border border-emerald-400/60 text-sm font-bold text-ok">
                   {k.letter}
                 </span>
               </div>
               {k.ok && <ContentHtml html={k.ok} className={`mt-3 block ${BODY}`} />}
               {k.no && (
-                <div className="mt-2 border-t border-white/10 pt-2">
-                  <p className="text-xs font-semibold text-slate-400">Nếu em chọn sai</p>
+                <div className="mt-2 border-t border-line pt-2">
+                  <p className="text-xs font-semibold text-muted">Nếu em chọn sai</p>
                   <ContentHtml html={k.no} className={`mt-1 block ${BODY}`} />
                 </div>
               )}
@@ -146,10 +146,10 @@ function AnswersView({ id }: { id: string }) {
       {selfs.length > 0 && (
         <Section title="Câu tự hỏi, trả bài & thử thách" hint="Đối chiếu với câu em đã viết trong sách.">
           {selfs.map((k) => (
-            <article key={k.n} className="rounded-xl border border-white/10 bg-panel p-4">
+            <article key={k.n} className="rounded-xl border border-line bg-panel p-4">
               <div className="flex items-center gap-3">
                 <Badge n={k.n} />
-                <span className="text-sm font-semibold text-white">
+                <span className="text-sm font-semibold text-ink">
                   {k.tag} {k.where ? <span className="font-normal text-slate-500">· mục {k.where}</span> : null}
                 </span>
               </div>
@@ -163,9 +163,9 @@ function AnswersView({ id }: { id: string }) {
       {data.worked.length > 0 && (
         <Section title="Lời giải bài tập mẫu" hint="Xem sau khi em đã tự điền bảng phân tích đề.">
           {data.worked.map((w) => (
-            <details key={w.n} className="rounded-xl border border-white/10 bg-panel p-4">
-              <summary className="cursor-pointer text-sm font-semibold text-white">
-                {w.label} <span className="font-normal text-slate-400">· {w.title}</span>
+            <details key={w.n} className="rounded-xl border border-line bg-panel p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-ink">
+                {w.label} <span className="font-normal text-muted">· {w.title}</span>
               </summary>
               <ContentHtml html={w.solution} className={`mt-3 block ${BODY}`} />
             </details>
@@ -186,7 +186,7 @@ export default function BookAnswersPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-24 pt-28 lg:px-8">
-        <Suspense fallback={<p className="text-slate-400">Đang tải…</p>}>
+        <Suspense fallback={<p className="text-muted">Đang tải…</p>}>
           <Inner />
         </Suspense>
       </main>

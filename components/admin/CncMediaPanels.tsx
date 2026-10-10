@@ -44,7 +44,7 @@ export function CncVideosAdmin({
           <h3 className="mt-1 admin-h2">
             YouTube · {lessonTitle}
           </h3>
-          <p className="mt-1 text-xs leading-5 text-slate-400">
+          <p className="mt-1 text-xs leading-5 text-muted">
             Có thể thêm nhiều video. Mỗi video sẽ xuất hiện trong mục Video bài giảng của bài đang chọn.
           </p>
         </div>
@@ -62,22 +62,22 @@ export function CncVideosAdmin({
 
       <div className="mt-5 grid gap-4 lg:grid-cols-[1fr_220px]">
         <div className="space-y-3">
-          <label className="block text-sm text-slate-300">
+          <label className="block text-sm text-ink">
             Tên video
             <input
               value={title}
               onChange={(event) => onTitleChange(event.target.value)}
               placeholder="Ví dụ: Cấu tạo máy tiện CNC"
-              className="mt-1 w-full rounded-xl border border-white/10 bg-[#080D1A] px-3 py-2 text-white placeholder:text-slate-500"
+              className="mt-1 w-full rounded-xl border border-line-strong bg-panel px-3 py-2 text-ink placeholder:text-slate-500"
             />
           </label>
-          <label className="block text-sm text-slate-300">
+          <label className="block text-sm text-ink">
             Liên kết YouTube
             <input
               value={url}
               onChange={(event) => onUrlChange(event.target.value)}
               placeholder="https://www.youtube.com/watch?v=..."
-              className="mt-1 w-full rounded-xl border border-white/10 bg-[#080D1A] px-3 py-2 text-white placeholder:text-slate-500"
+              className="mt-1 w-full rounded-xl border border-line-strong bg-panel px-3 py-2 text-ink placeholder:text-slate-500"
             />
           </label>
           <button
@@ -90,7 +90,7 @@ export function CncVideosAdmin({
           </button>
         </div>
 
-        <div className="overflow-hidden rounded-xl border border-white/10 bg-[#080D1A]">
+        <div className="overflow-hidden rounded-xl border border-line bg-panel">
           {previewId ? (
             <img
               src={getYouTubeThumbnailUrl(previewId)}
@@ -107,13 +107,13 @@ export function CncVideosAdmin({
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
         {loading ? (
-          <p className="text-xs text-slate-400">Đang tải danh sách video…</p>
+          <p className="text-xs text-muted">Đang tải danh sách video…</p>
         ) : videos.length === 0 ? (
           <p className="admin-empty md:col-span-2">
             Bài học này chưa có video YouTube.
           </p>
         ) : videos.map((video, index) => (
-          <div key={video.id} className="flex gap-3 rounded-xl border border-white/10 bg-[#080D1A] p-3">
+          <div key={video.id} className="flex gap-3 rounded-xl border border-line bg-panel p-3">
             <img
               src={getYouTubeThumbnailUrl(video.youtube_id)}
               alt=""
@@ -121,7 +121,7 @@ export function CncVideosAdmin({
             />
             <div className="min-w-0 flex-1">
               <span className="text-[12px] font-bold text-red-300">VIDEO {index + 1}</span>
-              <a href={video.youtube_url} target="_blank" rel="noreferrer" className="mt-0.5 block truncate text-sm font-semibold text-white hover:text-red-300">
+              <a href={video.youtube_url} target="_blank" rel="noreferrer" className="mt-0.5 block truncate text-sm font-semibold text-ink hover:text-red-300">
                 {video.title}
               </a>
               <button type="button" onClick={() => onDelete(video)} className="mt-2 text-[12px] font-bold text-red-300 hover:text-red-200">
@@ -159,13 +159,13 @@ export function CncFilesAdmin({
     <section className="rounded-2xl border border-primary/30 bg-primary/10 p-5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs font-bold tracking-wide text-[#93C5FD] uppercase">
+          <p className="text-xs font-bold tracking-wide text-primary uppercase">
             Tệp của bài học
           </p>
           <h3 className="mt-1 admin-h2">
             {lessonTitle}
           </h3>
-          <p className="mt-1 text-xs leading-5 text-slate-400">
+          <p className="mt-1 text-xs leading-5 text-muted">
             PowerPoint xuất hiện ở Nội dung bài học; các tệp khác xuất hiện trong mục Tài liệu.
           </p>
         </div>
@@ -229,16 +229,16 @@ function FileUploadPanel({
   return (
     <div className="admin-card">
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-xs font-black text-[#93C5FD]">
+        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-xs font-black text-primary">
           {icon}
         </span>
         <div>
-          <h4 className="text-sm font-bold text-white">{title}</h4>
+          <h4 className="text-sm font-bold text-ink">{title}</h4>
           <p className="mt-0.5 text-xs text-slate-500">{description}</p>
         </div>
       </div>
 
-      <label className={`mt-4 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 px-4 py-4 text-center text-xs font-semibold text-slate-300 hover:border-primary/60 hover:bg-primary/10 ${busy ? "pointer-events-none opacity-60" : ""}`}>
+      <label className={`mt-4 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-line-strong bg-surface-2 px-4 py-4 text-center text-xs font-semibold text-ink hover:border-primary/60 hover:bg-primary/10 ${busy ? "pointer-events-none opacity-60" : ""}`}>
         {busy ? "Đang tải tệp lên…" : "+ Chọn tệp để tải lên"}
         <input
           type="file"
@@ -254,18 +254,18 @@ function FileUploadPanel({
 
       <div className="mt-4 space-y-2">
         {files.length === 0 ? (
-          <p className="rounded-lg bg-white/5 px-3 py-3 text-center text-xs text-slate-500">
+          <p className="rounded-lg bg-surface-2 px-3 py-3 text-center text-xs text-slate-500">
             Chưa có tệp nào.
           </p>
         ) : (
           files.map((file) => (
-            <div key={file.id} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+            <div key={file.id} className="flex items-center gap-3 rounded-lg border border-line bg-surface-2 px-3 py-2">
               <div className="min-w-0 flex-1">
                 <a
                   href={file.file_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block truncate text-xs font-semibold text-white hover:text-[#60A5FA]"
+                  className="block truncate text-xs font-semibold text-ink hover:text-primary"
                 >
                   {file.title}
                 </a>

@@ -26,7 +26,7 @@ export default function Features() {
     <section id="features" className="border-t border-line py-20 lg:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
         <Reveal className="lg:col-span-5">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Cách học</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">Cách học</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Một bài học trên ThachLab diễn ra thế nào
           </h2>
@@ -37,7 +37,7 @@ export default function Features() {
           </p>
           <Link
             href="/lop-hoc"
-            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition hover:text-primary-dark"
           >
             Xem các lớp đang mở <ArrowRight size={16} />
           </Link>
@@ -47,7 +47,7 @@ export default function Features() {
           <ol className="divide-y divide-line border-y border-line">
             {steps.map((s, i) => (
               <li key={s.title} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_1fr] sm:gap-6">
-                <span className="font-mono text-sm text-cyan-300">0{i + 1}</span>
+                <span className="font-mono text-sm text-primary">0{i + 1}</span>
                 <div>
                   <h3 className="font-display text-lg font-semibold text-ink">{s.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted">{s.desc}</p>

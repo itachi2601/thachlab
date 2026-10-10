@@ -14,8 +14,8 @@ export default function GiaoThoaAmPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-4xl px-4 pb-24 pt-28 lg:px-8">
-        <h1 className="font-display text-2xl font-semibold text-white sm:text-3xl">Giao thoa sóng âm bằng hai loa của máy</h1>
-        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+        <h1 className="font-display text-2xl font-semibold text-ink sm:text-3xl">Giao thoa sóng âm bằng hai loa của máy</h1>
+        <p className="mt-2 text-sm leading-relaxed text-ink">
           Hai loa trái/phải phát cùng một âm sin nên luôn đồng pha: đó là hai nguồn kết hợp. Bản đồ dưới đây nhìn từ trên xuống,
           màn hình nằm ở đáy. Bật âm, che một tai rồi chậm rãi dịch đầu sang ngang để nghe chỗ to, chỗ nhỏ.
         </p>

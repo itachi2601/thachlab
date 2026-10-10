@@ -3,11 +3,11 @@ import Link from "next/link";
 /** Khối kêu gọi hành động ở cuối mỗi bài viết — điều hướng sang đăng ký / lớp học. */
 export default function BlogCta() {
   return (
-    <aside className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0B1020] to-[#101a3a] p-8 text-center">
-      <p className="font-display text-xl font-bold text-white sm:text-2xl">
+    <aside className="mt-14 overflow-hidden rounded-3xl border border-line bg-panel p-8 text-center">
+      <p className="font-display text-xl font-bold text-ink sm:text-2xl">
         Sẵn sàng bắt đầu lộ trình của con?
       </p>
-      <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-slate-400">
+      <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted">
         Đăng ký học thử offline miễn phí, nhận lộ trình cá nhân hóa và tài khoản
         học online cùng thầy Thạch.
       </p>
@@ -20,7 +20,7 @@ export default function BlogCta() {
         </Link>
         <Link
           href="/lop-hoc"
-          className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-white/40"
+          className="rounded-full border border-line-strong px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary"
         >
           Xem chương trình học
         </Link>

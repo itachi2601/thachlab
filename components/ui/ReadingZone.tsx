@@ -21,15 +21,15 @@ const THEME_EVENT = "thachlab-theme-change";
 
 type Theme = "light" | "dark";
 
-/** Theme khi KHÔNG bật dịu mắt — cùng logic với script inline ở app/layout.tsx. */
+/** Theme khi KHÔNG bật dịu mắt — cùng logic với script inline ở app/layout.tsx.
+ *  Từ 11/10/2026 nền SÁNG là mặc định toàn site; chỉ đổi sang tối khi người dùng đã tự chọn
+ *  (nút Trăng/Mặt trời) — không còn theo prefers-color-scheme để màu sắc kiểm soát được. */
 function defaultTheme(): Theme {
   try {
     const saved = window.localStorage.getItem(THEME_STORE);
     if (saved === "light" || saved === "dark") return saved;
   } catch {}
-  const p = window.location.pathname;
-  if (p === "/phu-huynh" || p.startsWith("/phu-huynh/")) return "light";
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  return "light";
 }
 
 function applyTheme(theme: Theme) {

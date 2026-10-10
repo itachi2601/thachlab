@@ -17,7 +17,7 @@ const ContentHtmlLazyInner = dynamic(() => import("@/components/exams/ContentHtm
   ssr: false,
   loading: () => (
     <span
-      className="inline-block h-4 w-32 max-w-full animate-pulse rounded bg-white/10 align-middle"
+      className="inline-block h-4 w-32 max-w-full animate-pulse rounded bg-surface-2 align-middle"
       aria-hidden
     />
   ),

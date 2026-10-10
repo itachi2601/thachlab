@@ -14,25 +14,47 @@ export const contrast = (a, b) => { const x = lum(hex(a)), y = lum(hex(b)); retu
 if (process.argv.length === 4) { console.log(contrast(process.argv[2], process.argv[3]).toFixed(2)); process.exit(0); }
 
 // [tên, chữ, nền, ngưỡng] — ngưỡng 4.5 chữ thường, 3 chữ lớn/icon/viền (WCAG AA)
+// Từ 11/10/2026 bảng màu lấy NỀN SÁNG làm mặc định; theme tối vẫn kiểm để không thoái hoá.
 const PAIRS = [
-  ["ink tối / bg", "#f1f5f9", "#05070b", 4.5],
-  ["muted tối / panel", "#94a3b8", "#0b1020", 4.5],
-  ["ink sáng / trắng", "#0f172a", "#ffffff", 4.5],
-  ["muted sáng / trắng", "#475569", "#ffffff", 4.5],
-  ["cyan / bg tối", "#22d3ee", "#05070b", 4.5],
-  ["accent vàng / bg tối", "#facc15", "#05070b", 4.5],
-  ["nhấn tiêu đề tối #60a5fa / bg", "#60a5fa", "#05070b", 4.5],
-  ["nhấn tiêu đề sáng #1d4ed8 / #f8fafc", "#1d4ed8", "#f8fafc", 4.5],
-  ["nhấn ấm tối #fb923c / bg", "#fb923c", "#05070b", 4.5],
-  ["nhấn ấm sáng #c2410c / trắng", "#c2410c", "#ffffff", 4.5],
-  ["dịu mắt ink / kem", "#33291a", "#f5efe0", 4.5],
-  ["dịu mắt muted / kem", "#6b5a3e", "#f5efe0", 4.5],
-  ["override sáng cyan #0e7490", "#0e7490", "#ffffff", 4.5],
-  ["override sáng emerald #047857", "#047857", "#ffffff", 4.5],
-  ["override sáng amber #a16207", "#a16207", "#ffffff", 4.5],
-  ["override sáng red #b91c1c", "#b91c1c", "#ffffff", 4.5],
-  ["override sáng violet #6d28d9", "#6d28d9", "#ffffff", 4.5],
-  ["slate-500 theme sáng #64748b / trắng", "#64748b", "#ffffff", 4.5],
+  // — Nền sáng (mặc định) —
+  ["sáng · ink #0f172a / bg #f5f7fa", "#0f172a", "#f5f7fa", 4.5],
+  ["sáng · ink / panel trắng", "#0f172a", "#ffffff", 4.5],
+  ["sáng · muted #475569 / bg", "#475569", "#f5f7fa", 4.5],
+  ["sáng · muted / panel trắng", "#475569", "#ffffff", 4.5],
+  ["sáng · chữ trắng / nút primary #1d4ed8", "#ffffff", "#1d4ed8", 4.5],
+  ["sáng · primary #1d4ed8 (chữ/viền) / bg", "#1d4ed8", "#f5f7fa", 4.5],
+  ["sáng · primary-soft #eef2ff + primary-dark chữ", "#1e40af", "#eef2ff", 4.5],
+  ["sáng · ok #047857 / trắng", "#047857", "#ffffff", 4.5],
+  ["sáng · warn #b45309 / trắng", "#b45309", "#ffffff", 4.5],
+  ["sáng · danger #b91c1c / trắng", "#b91c1c", "#ffffff", 4.5],
+  ["sáng · cyan #0e7490 / trắng", "#0e7490", "#ffffff", 4.5],
+  ["sáng · violet #6d28d9 / trắng", "#6d28d9", "#ffffff", 4.5],
+  ["sáng · slate-500 #64748b / trắng", "#64748b", "#ffffff", 4.5],
+  ["sáng · viền line-strong #cfd6e0 / trắng (1.4.11 cần 3:1)", "#8b93a1", "#ffffff", 3],
+  ["sáng · nhấn tiêu đề #1d4ed8 / bg", "#1d4ed8", "#f5f7fa", 4.5],
+  ["sáng · nhấn ấm #c2410c / trắng", "#c2410c", "#ffffff", 4.5],
+  // — Phụ huynh 45–60: nhắm AAA 7:1 (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md P2) —
+  ["PH · ink #14181f / #f7f7f4", "#14181f", "#f7f7f4", 7],
+  ["PH · muted #3d4653 / #f7f7f4", "#3d4653", "#f7f7f4", 7],
+  ["PH · muted / panel trắng", "#3d4653", "#ffffff", 7],
+  ["PH · chữ trắng / nút #1e40af", "#ffffff", "#1e40af", 7],
+  ["PH · primary #1e40af / #f7f7f4", "#1e40af", "#f7f7f4", 7],
+  ["PH · ok #065f46 / #f7f7f4", "#065f46", "#f7f7f4", 7],
+  ["PH · warn #78350f / #f7f7f4", "#78350f", "#f7f7f4", 7],
+  ["PH · danger #991b1b / #f7f7f4", "#991b1b", "#f7f7f4", 7],
+  // — Theme tối (tuỳ chọn) —
+  ["tối · ink / bg", "#f1f5f9", "#05070b", 4.5],
+  ["tối · muted / panel", "#94a3b8", "#0b1020", 4.5],
+  ["tối · cyan / bg", "#22d3ee", "#05070b", 4.5],
+  ["tối · accent vàng / bg", "#facc15", "#05070b", 4.5],
+  ["tối · nhấn #60a5fa / bg", "#60a5fa", "#05070b", 4.5],
+  ["tối · chữ trắng / nút primary #2563eb", "#ffffff", "#2563eb", 4.5],
+  ["tối · nhấn ấm #fb923c / bg", "#fb923c", "#05070b", 4.5],
+  ["tối · slate-500 #7c8ba1 / panel", "#7c8ba1", "#0b1020", 4.5],
+  ["tối · viền line-strong #cbd5e1 / panel (3:1)", "#cbd5e1", "#0b1020", 3],
+  // — Chế độ Dịu mắt (kem/nâu) —
+  ["dịu mắt · ink / kem", "#33291a", "#f5efe0", 4.5],
+  ["dịu mắt · muted / kem", "#6b5a3e", "#f5efe0", 4.5],
 ];
 let bad = 0;
 console.log("— Tương phản —");

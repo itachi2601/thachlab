@@ -31,14 +31,14 @@ export default function TodayCard({
 }) {
   const act = { onUnlock, onQuickPractice };
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
-      <h2 className="font-display font-bold text-white">Hôm nay em làm gì</h2>
+    <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
+      <h2 className="font-display font-bold text-ink">Hôm nay em làm gì</h2>
       <div className="mt-3 space-y-2.5">
         {primary && <PrimaryStep step={primary} {...act} />}
 
         {secondary.length > 0 && (
           <>
-            <p className="pt-1 text-[13px] font-bold uppercase tracking-wide text-slate-400">Hoặc em chọn một việc khác</p>
+            <p className="pt-1 text-[13px] font-bold uppercase tracking-wide text-muted">Hoặc em chọn một việc khác</p>
             <ul className="space-y-2">
               {secondary.map((step) => (
                 <li key={step.key}>
@@ -52,8 +52,8 @@ export default function TodayCard({
         <RpFoot rank={rank} />
 
         {alertText && (
-          <p className="flex items-start gap-1.5 text-[13px] text-amber-200/80">
-            <AlertTriangle size={14} className="mt-0.5 shrink-0 text-amber-300" />
+          <p className="flex items-start gap-1.5 text-[13px] text-warn">
+            <AlertTriangle size={14} className="mt-0.5 shrink-0 text-warn" />
             {alertText}
           </p>
         )}
@@ -78,7 +78,7 @@ function RpFoot({ rank }: { rank?: RankStatus | null }) {
     lines.push(`Tuần này ${weekly.done}/${weekly.target} bài (từ ${fmt(weekly.min_score)} điểm). Đủ bài nhận +${weekly.rp} RP.`);
   }
   return (
-    <div className="border-t border-white/10 pt-2.5 text-[13px] text-slate-300">
+    <div className="border-t border-line pt-2.5 text-[13px] text-ink">
       {lines.length > 0 && (
         <ul className="space-y-1.5">
           {lines.map((line) => (
@@ -87,8 +87,8 @@ function RpFoot({ rank }: { rank?: RankStatus | null }) {
         </ul>
       )}
       <details>
-        <summary className="flex min-h-11 cursor-pointer items-center text-blue-200 hover:text-white">Cách tăng RP</summary>
-        <ul className="space-y-1.5 pb-1 pl-4 text-slate-300">
+        <summary className="flex min-h-11 cursor-pointer items-center text-primary hover:underline">Cách tăng RP</summary>
+        <ul className="space-y-1.5 pb-1 pl-4 text-ink">
           <li className="list-disc">Làm bài lần đầu: RP tính theo điểm. Làm lại không cộng thêm RP bài đó.</li>
           <li className="list-disc">Đọc lý thuyết rồi làm đúng phần lớn câu kiểm tra nhanh cuối bài.</li>
           <li className="list-disc">Mỗi ngày làm ít nhất một bài đạt điểm tối thiểu để giữ chuỗi.</li>
@@ -158,13 +158,13 @@ function OptionStep({ step, ...act }: { step: NextStep } & Act) {
     <StepControl
       step={step}
       {...act}
-      className="flex min-h-14 w-full items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-left hover:bg-white/10 disabled:opacity-50"
+      className="flex min-h-14 w-full items-center justify-between gap-3 rounded-xl border border-line bg-surface-2 p-3 text-left hover:border-line-strong disabled:opacity-50"
     >
       <span className="min-w-0">
-        <span className="block text-sm font-bold text-white">
+        <span className="block text-sm font-bold text-ink">
           {step.action}: {step.title}
         </span>
-        {hint && <span className="mt-0.5 block text-[13px] leading-snug text-slate-400">{hint}</span>}
+        {hint && <span className="mt-0.5 block text-[13px] leading-snug text-muted">{hint}</span>}
       </span>
       <ChevronRight size={16} className="shrink-0 text-slate-500" />
     </StepControl>

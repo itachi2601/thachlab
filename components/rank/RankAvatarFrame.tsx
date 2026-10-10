@@ -48,7 +48,7 @@ export default function RankAvatarFrame({
       style={{ padding: ring, background: paragon ? AURORA : METAL[metal], boxShadow: `0 0 0 1px rgba(0,0,0,.45), 0 0 18px ${meta.color}66` }}
     >
       <span className="block rounded-full" style={{ padding: gap, background: `linear-gradient(135deg, ${meta.light}, ${meta.color})` }}>
-        <span className="block overflow-hidden rounded-full bg-[#0b1020]" style={{ width: size, height: size }}>
+        <span className="block overflow-hidden rounded-full bg-surface-2" style={{ width: size, height: size }}>
           {children}
         </span>
       </span>

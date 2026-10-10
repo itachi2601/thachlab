@@ -28,7 +28,7 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
     <section className="lesson-section">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2>Bậc trong lớp</h2>
-        <Link href="/lop-hoc/xep-hang/" className="text-xs text-cyan-300 hover:underline">
+        <Link href="/lop-hoc/xep-hang/" className="text-xs text-primary hover:underline">
           Xếp hạng của em →
         </Link>
       </div>
@@ -49,7 +49,7 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
                 </div>
                 <ul className="flex flex-wrap gap-2">
                   {t.members.map((m, i) => (
-                    <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-white/10 bg-panel py-1 pl-1 pr-3 text-xs text-slate-200">
+                    <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-line bg-panel py-1 pl-1 pr-3 text-xs text-ink">
                       <Avatar url={m.avatar} name={m.name} size={18} />
                       {m.name}
                       {m.division && <span className="ml-1 text-slate-500">{divisionLabel(m.division)}</span>}
@@ -61,11 +61,11 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
             );
           })}
           {data.unranked.length > 0 && (
-            <div className="rounded-2xl border border-dashed border-white/10 p-3 sm:p-4">
+            <div className="rounded-2xl border border-dashed border-line p-3 sm:p-4">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Chưa nhận RP · {data.unranked.length} bạn</p>
               <ul className="flex flex-wrap gap-2">
                 {data.unranked.map((m, i) => (
-                  <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-white/5 py-1 pl-1 pr-3 text-xs text-slate-500">
+                  <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-line py-1 pl-1 pr-3 text-xs text-slate-500">
                     <Avatar url={m.avatar} name={m.name} size={18} />
                     {m.name}
                   </li>
@@ -77,7 +77,7 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
       )}
 
       <div className="mt-4">
-        <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
           <TrendingUp size={14} /> Tuần này
         </p>
         {data.weekly.length === 0 ? (
@@ -85,8 +85,8 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
         ) : (
           <ul className="space-y-1 text-sm">
             {data.weekly.slice(0, 12).map((e, i) => (
-              <li key={i} className="text-slate-300">
-                <b className="text-white">{e.name}</b> {e.label}
+              <li key={i} className="text-ink">
+                <b className="text-ink">{e.name}</b> {e.label}
                 <span className="ml-1 text-xs text-slate-600">{new Date(e.at).toLocaleDateString("vi-VN", { weekday: "short" })}</span>
               </li>
             ))}

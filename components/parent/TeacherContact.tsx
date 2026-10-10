@@ -30,16 +30,16 @@ export default function TeacherContact({
   const zaloBtn =
     "inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white hover:bg-primary-dark";
   const phoneBtn =
-    "inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-base font-semibold text-slate-200 hover:border-white/30";
+    "inline-flex items-center justify-center gap-2 rounded-xl border border-line px-5 py-3 text-base font-semibold text-ink hover:border-line-strong";
 
   if (variant === "slim") {
     return (
       <div
-        className={`flex flex-wrap items-center gap-x-4 gap-y-1 rounded-2xl border border-white/10 bg-panel px-5 py-3 text-slate-300 ${className}`}
+        className={`flex flex-wrap items-center gap-x-4 gap-y-1 rounded-2xl border border-line bg-panel px-5 py-3 text-ink ${className}`}
       >
         <span>Cần trao đổi với thầy về con?</span>
         {CONTACT.phone && (
-          <a href={`tel:${CONTACT.phone}`} className="font-semibold text-cyan-300 underline-offset-2 hover:underline">
+          <a href={`tel:${CONTACT.phone}`} className="font-semibold text-primary underline-offset-2 hover:underline">
             Gọi {phone}
           </a>
         )}
@@ -48,7 +48,7 @@ export default function TeacherContact({
             href={CONTACT.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+            className="font-semibold text-primary underline-offset-2 hover:underline"
           >
             Nhắn Zalo
           </a>
@@ -58,9 +58,9 @@ export default function TeacherContact({
   }
 
   return (
-    <section className={`rounded-2xl border border-white/10 bg-panel p-5 sm:p-6 ${className}`}>
-      <h2 className="font-display text-lg font-bold text-white">Cần trao đổi với thầy về con?</h2>
-      <p className="parent-copy mt-1.5 text-slate-400">
+    <section className={`rounded-2xl border border-line bg-panel p-5 sm:p-6 ${className}`}>
+      <h2 className="font-display text-lg font-bold text-ink">Cần trao đổi với thầy về con?</h2>
+      <p className="parent-copy mt-1.5 text-muted">
         Thầy thường trả lời Zalo trong ngày. Nếu việc gấp (con ốm, xin nghỉ, đổi lịch học), phụ huynh gọi
         trực tiếp. Gõ chữ không tiện thì cứ gửi tin nhắn thoại Zalo cũng được.
       </p>
@@ -77,7 +77,7 @@ export default function TeacherContact({
         )}
       </div>
       {(CONTACT.area || CONTACT.school) && (
-        <p className="mt-3 text-slate-400">
+        <p className="mt-3 text-muted">
           {[CONTACT.school, CONTACT.area].filter(Boolean).join(" · ")}
         </p>
       )}

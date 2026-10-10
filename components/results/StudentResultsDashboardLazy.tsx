@@ -14,7 +14,7 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
  * để không nhảy bố cục khi chunk về.
  */
 const boxClass =
-  "flex min-h-[24rem] items-center justify-center rounded-2xl border border-white/10 bg-panel p-8 text-center text-lg leading-relaxed text-slate-300";
+  "flex min-h-[24rem] items-center justify-center rounded-2xl border border-line bg-panel p-8 text-center text-lg leading-relaxed text-ink";
 
 const StudentResultsDashboardLazyInner = dynamic(() => import("@/components/results/StudentResultsDashboard"), {
   ssr: false,

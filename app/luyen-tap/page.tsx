@@ -30,12 +30,12 @@ function PracticeModal(props: ComponentProps<typeof PracticeModalLazy>) {
     <LazyErrorBoundary
       fallback={
         <div role="alertdialog" className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="max-w-sm rounded-2xl border border-white/10 bg-panel p-5 text-center text-sm text-slate-300">
+          <div className="max-w-sm rounded-2xl border border-line bg-panel p-5 text-center text-sm text-ink">
             <p>Không tải được phần luyện tập (có thể do mạng chập chờn). Thử tải lại trang.</p>
             <button
               type="button"
               onClick={props.onClose}
-              className="mt-3 rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+              className="mt-3 rounded-full border border-line px-4 py-1.5 text-xs font-semibold text-ink hover:border-line-strong"
             >
               Đóng
             </button>
@@ -63,7 +63,7 @@ interface PoolStats {
 }
 
 const selectCls =
-  "w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none";
+  "w-full rounded-xl border border-line-strong bg-panel px-3 py-2 text-sm text-ink focus:border-primary focus:outline-none";
 
 function Content() {
   const { session } = useAuth();
@@ -223,8 +223,8 @@ function Content() {
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-20 pt-28 sm:px-6">
-      <h1 className="font-display text-2xl font-semibold text-white">Luyện tập theo yêu cầu cần đạt</h1>
-      <p className="mt-1 text-sm text-slate-400">
+      <h1 className="font-display text-2xl font-semibold text-ink">Luyện tập theo yêu cầu cần đạt</h1>
+      <p className="mt-1 text-sm text-muted">
         Chọn bài, yêu cầu cần đạt và mức độ để luyện đúng chỗ còn thiếu danh hiệu. Câu đã giải đúng rồi không
         được tính lại cho danh hiệu — làm câu mới mới tiến thêm.
       </p>
@@ -245,7 +245,7 @@ function Content() {
             aria-selected={mode === m}
             onClick={() => openMode(m)}
             className={`min-h-11 rounded-xl border px-3 text-sm font-semibold ${
-              mode === m ? "border-white/60 bg-white/10 text-white" : "border-white/15 text-slate-300 hover:border-white/30"
+              mode === m ? "border-primary bg-primary-soft text-ink" : "border-line text-ink hover:border-line-strong"
             }`}
           >
             {text}
@@ -254,7 +254,7 @@ function Content() {
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <label className="text-xs text-slate-400">
+        <label className="text-xs text-muted">
           Lớp
           <select
             className={selectCls}
@@ -273,7 +273,7 @@ function Content() {
             ))}
           </select>
         </label>
-        <label className={`text-xs text-slate-400 ${mode === "review" ? "hidden" : ""}`}>
+        <label className={`text-xs text-muted ${mode === "review" ? "hidden" : ""}`}>
           Chương
           <select
             className={selectCls}
@@ -291,7 +291,7 @@ function Content() {
             ))}
           </select>
         </label>
-        <label className={`text-xs text-slate-400 sm:col-span-2 ${mode === "review" ? "hidden" : ""}`}>
+        <label className={`text-xs text-muted sm:col-span-2 ${mode === "review" ? "hidden" : ""}`}>
           Bài
           <select
             className={selectCls}
@@ -316,12 +316,12 @@ function Content() {
             return (
               <section key={g.chapter.id}>
                 <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                  <h2 className="text-sm font-semibold text-white">{g.chapter.title}</h2>
+                  <h2 className="text-sm font-semibold text-ink">{g.chapter.title}</h2>
                   {ready.length > 0 && (
                     <button
                       type="button"
                       onClick={() => selectChapter(ready)}
-                      className="min-h-11 px-2 text-[13px] font-semibold text-slate-300 hover:text-white"
+                      className="min-h-11 px-2 text-[13px] font-semibold text-ink hover:text-primary"
                     >
                       Cả chương
                     </button>
@@ -340,13 +340,13 @@ function Content() {
                         onClick={() => toggleLesson(l.id)}
                         className={`min-h-11 rounded-full border px-4 py-2 text-left text-[13px] font-semibold ${
                           on
-                            ? "border-white/60 bg-white/10 text-white"
-                            : "border-white/15 text-slate-300 hover:border-white/30"
+                            ? "border-primary bg-primary-soft text-ink"
+                            : "border-line text-ink hover:border-line-strong"
                         } ${empty ? "cursor-not-allowed opacity-40" : ""}`}
                       >
                         {on ? "✓ " : ""}
                         {l.title}
-                        {empty && <span className="ml-1.5 font-normal text-slate-400">· chưa có câu</span>}
+                        {empty && <span className="ml-1.5 font-normal text-muted">· chưa có câu</span>}
                       </button>
                     );
                   })}
@@ -355,19 +355,19 @@ function Content() {
             );
           })}
           {lessons && reviewGroups.length === 0 && (
-            <p className="text-sm text-slate-400">Lớp này chưa có bài để ôn.</p>
+            <p className="text-sm text-muted">Lớp này chưa có bài để ôn.</p>
           )}
           {learned !== null && learnedReviewable.length === 0 && selected === null && reviewable.length > 0 && (
-            <p className="text-[13px] text-slate-400">Em chưa học bài nào của lớp này — chọn các bài muốn ôn nhé.</p>
+            <p className="text-[13px] text-muted">Em chưa học bài nào của lớp này — chọn các bài muốn ôn nhé.</p>
           )}
 
-          <div className="space-y-3 rounded-2xl border border-white/10 bg-panel/60 p-4">
+          <div className="space-y-3 rounded-2xl border border-line bg-panel/60 p-4">
             <div className="flex flex-wrap gap-2">
               {learnedReviewable.length > 0 && (
                 <button
                   type="button"
                   onClick={selectRecent}
-                  className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-slate-300 hover:border-white/30"
+                  className="min-h-11 rounded-full border border-line px-4 text-[13px] font-semibold text-ink hover:border-line-strong"
                 >
                   3 bài gần nhất
                 </button>
@@ -375,13 +375,13 @@ function Content() {
               <button
                 type="button"
                 onClick={() => setSelected(new Set())}
-                className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-slate-300 hover:border-white/30"
+                className="min-h-11 rounded-full border border-line px-4 text-[13px] font-semibold text-ink hover:border-line-strong"
               >
                 Bỏ chọn hết
               </button>
             </div>
             <div>
-              <p className="mb-1.5 text-[13px] text-slate-400">Số câu</p>
+              <p className="mb-1.5 text-[13px] text-muted">Số câu</p>
               <div className="flex gap-2">
                 {REVIEW_COUNTS.map((n) => (
                   <button
@@ -391,8 +391,8 @@ function Content() {
                     onClick={() => setReviewCount(n)}
                     className={`min-h-11 flex-1 rounded-full border text-sm font-semibold ${
                       reviewCount === n
-                        ? "border-white/60 bg-white/10 text-white"
-                        : "border-white/15 text-slate-300 hover:border-white/30"
+                        ? "border-primary bg-primary-soft text-ink"
+                        : "border-line text-ink hover:border-line-strong"
                     }`}
                   >
                     {n}
@@ -409,7 +409,7 @@ function Content() {
                   count: reviewCount,
                 })
               }
-              className="min-h-11 w-full rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-black disabled:cursor-not-allowed disabled:opacity-40"
+              className="min-h-11 w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
             >
               {pickedLessons.length === 0 ? "Chọn ít nhất 1 bài" : `Làm ${reviewCount} câu từ ${pickedLessons.length} bài`}
             </button>
@@ -418,15 +418,15 @@ function Content() {
       )}
 
       {mode === "single" && lesson && (
-        <div className="mt-5 space-y-4 rounded-2xl border border-white/10 bg-panel/60 p-4">
+        <div className="mt-5 space-y-4 rounded-2xl border border-line bg-panel/60 p-4">
           {poolError && <p className="text-sm text-amber-300">Chưa tải được câu hỏi của bài, thử tải lại trang.</p>}
-          {!poolError && !stats && <p className="text-sm text-slate-400">Đang tải câu hỏi của bài…</p>}
+          {!poolError && !stats && <p className="text-sm text-muted">Đang tải câu hỏi của bài…</p>}
           {stats && stats.total === 0 && !topic && (
-            <p className="text-sm text-slate-300">Bài này chưa có câu trắc nghiệm để luyện.</p>
+            <p className="text-sm text-ink">Bài này chưa có câu trắc nghiệm để luyện.</p>
           )}
           {stats && (stats.total > 0 || topic) && (
             <>
-              <label className="block text-xs text-slate-400">
+              <label className="block text-xs text-muted">
                 Yêu cầu cần đạt
                 <select className={selectCls} value={topic} onChange={(e) => setTopic(e.target.value)}>
                   <option value="">Tất cả yêu cầu của bài</option>
@@ -438,7 +438,7 @@ function Content() {
                 </select>
               </label>
               <div>
-                <p className="mb-1.5 text-xs text-slate-400">Mức độ</p>
+                <p className="mb-1.5 text-xs text-muted">Mức độ</p>
                 <div className="flex flex-wrap gap-2">
                   {(["", ...LEVELS] as Difficulty[]).map((lv) => {
                     const n = lv ? stats.byLevel[lv as keyof PoolStats["byLevel"]] : stats.total;
@@ -450,7 +450,7 @@ function Content() {
                         onClick={() => setLevel(lv)}
                         aria-pressed={on}
                         className={`rounded-full border px-3 py-1.5 text-xs font-semibold ${
-                          on ? "border-white/60 bg-white/10 text-white" : "border-white/15 text-slate-300 hover:border-white/30"
+                          on ? "border-primary bg-primary-soft text-ink" : "border-line text-ink hover:border-line-strong"
                         }`}
                       >
                         {lv ? DIFFICULTY_LABELS[lv] : "Mọi mức"} · {n}
@@ -463,7 +463,7 @@ function Content() {
                 type="button"
                 disabled={available === 0}
                 onClick={() => setPracticing(true)}
-                className="w-full rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-black disabled:cursor-not-allowed disabled:opacity-40"
+                className="w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {available === 0 ? "Chưa có câu phù hợp" : `Luyện ${Math.min(10, available)} câu`}
               </button>
@@ -516,7 +516,7 @@ export default function LuyenTapPage() {
       <Navbar />
       <main className="min-h-screen w-full">
         {!supabaseConfigured ? (
-          <p className="pt-28 text-center text-slate-400">Hệ thống đang được cấu hình.</p>
+          <p className="pt-28 text-center text-muted">Hệ thống đang được cấu hình.</p>
         ) : (
           <RequireAuth>
             <Content />

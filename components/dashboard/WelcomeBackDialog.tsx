@@ -91,38 +91,38 @@ export default function WelcomeBackDialog({
   return (
     <div className="fixed inset-0 z-[60] flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Chào mừng em quay lại">
       <button type="button" className="absolute inset-0 bg-black/60" aria-label="Đóng" onClick={close} />
-      <div className="relative w-full max-w-md rounded-t-3xl border border-white/10 bg-panel p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:rounded-3xl">
+      <div className="relative w-full max-w-md rounded-t-3xl border border-line bg-panel p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:rounded-3xl">
         <button
           type="button"
           onClick={close}
           aria-label="Đóng"
-          className="absolute right-2 top-2 flex h-11 w-11 items-center justify-center rounded-full text-slate-400 hover:bg-white/10 hover:text-white"
+          className="absolute right-2 top-2 flex h-11 w-11 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-ink"
         >
           <X size={18} />
         </button>
-        <h2 className="pr-10 font-display text-xl font-bold text-white">{first ? `Chào mừng ${first} quay lại` : "Chào mừng em quay lại"}</h2>
+        <h2 className="pr-10 font-display text-xl font-bold text-ink">{first ? `Chào mừng ${first} quay lại` : "Chào mừng em quay lại"}</h2>
 
         <div className="mt-4 space-y-3">
-          <p className="flex items-center gap-2 text-base text-white">
-            <Flame size={20} className="shrink-0 text-amber-400" fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
+          <p className="flex items-center gap-2 text-base text-ink">
+            <Flame size={20} className="shrink-0 text-warn" fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
             {daily.streak > 0 ? <>Chuỗi <b>{daily.streak} ngày</b> đang chờ em hôm nay</> : "Hôm nay là ngày bắt đầu chuỗi mới"}
           </p>
           {days && days.length > 0 && <StreakWeek days={days} />}
           {next && (
-            <p className="flex items-center gap-2 text-base text-slate-200">
-              <Trophy size={18} className="shrink-0 text-amber-300" aria-hidden />
+            <p className="flex items-center gap-2 text-base text-ink">
+              <Trophy size={18} className="shrink-0 text-primary" aria-hidden />
               <span>
-                Còn <b className="text-white">{next.rp_needed} RP</b> nữa là lên {next.name}
+                Còn <b className="text-ink">{next.rp_needed} RP</b> nữa là lên {next.name}
               </span>
             </p>
           )}
           {daily.streak > 0 && freezeLeft > 0 && (
-            <p className="text-[13px] text-sky-300">Tuần này em còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
+            <p className="text-[13px] text-muted">Tuần này em còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
           )}
         </div>
 
         <div className="mt-5">
-          <p className="mb-2 text-[13px] text-slate-400">Việc đầu tiên hôm nay</p>
+          <p className="mb-2 text-[13px] text-muted">Việc đầu tiên hôm nay</p>
           {primary.href && !primary.practice ? (
             <Link href={primary.href} ref={ctaRef as React.Ref<HTMLAnchorElement>} onClick={close} className={ctaClass}>
               {primary.action}: {primary.title}
@@ -142,7 +142,7 @@ export default function WelcomeBackDialog({
               {primary.action}: {primary.title}
             </button>
           )}
-          <button type="button" onClick={close} className="mt-1 flex min-h-11 w-full items-center justify-center text-sm text-slate-400 hover:text-white">
+          <button type="button" onClick={close} className="mt-1 flex min-h-11 w-full items-center justify-center text-sm text-muted hover:text-ink">
             Để sau
           </button>
         </div>

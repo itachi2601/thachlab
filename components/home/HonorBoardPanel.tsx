@@ -32,7 +32,7 @@ export default function HonorBoardPanel() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
               Vinh danh tuần · {weekLabel(board.week_start, active.use_prev)}
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
@@ -52,7 +52,7 @@ export default function HonorBoardPanel() {
                   aria-selected={on}
                   onClick={() => setGrade(g.grade)}
                   className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-                    on ? "border-cyan-300 bg-cyan-300 text-slate-900" : "border-line text-muted hover:border-white/30 hover:text-ink"
+                    on ? "border-primary bg-primary text-white" : "border-line text-muted hover:border-line-strong hover:text-ink"
                   }`}
                 >
                   Khối {g.grade}
@@ -66,7 +66,7 @@ export default function HonorBoardPanel() {
 
         <p className="mt-8 text-xs text-slate-500">
           Tên hiện rút gọn theo lựa chọn của từng bạn. Học sinh đổi cách hiện (đầy đủ, rút gọn hoặc ẩn) trong{" "}
-          <Link href="/tai-khoan/" className="text-cyan-300 underline-offset-4 hover:underline">
+          <Link href="/tai-khoan/" className="text-primary underline-offset-4 hover:underline">
             trang tài khoản
           </Link>
           .
@@ -126,11 +126,11 @@ function Podium({ g }: { g: PublicHonorGrade }) {
               <li
                 key={`${m.name}-${i}`}
                 className={`flex items-center gap-4 rounded-2xl border bg-panel p-4 sm:flex-col sm:text-center ${ORDER[i] ?? "sm:order-4"} ${
-                  first ? "border-cyan-300/50 sm:pb-6 sm:pt-7" : "border-line"
+                  first ? "border-primary sm:pb-6 sm:pt-7" : "border-line"
                 }`}
               >
                 <div className="flex shrink-0 flex-col items-center gap-2">
-                  <span className={`font-mono text-[12px] uppercase tracking-widest ${first ? "text-cyan-300" : "text-slate-500"}`}>
+                  <span className={`font-mono text-[12px] uppercase tracking-widest ${first ? "text-primary" : "text-slate-500"}`}>
                     Hạng {m.pos}
                   </span>
                   <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={first ? 72 : 56}>
@@ -140,10 +140,10 @@ function Podium({ g }: { g: PublicHonorGrade }) {
                 <div className="min-w-0 flex-1 sm:mt-2">
                   <p className="truncate text-base font-semibold text-ink">{m.name}</p>
                   {m.title && <WornTitle title={m.title} className="mt-0.5 sm:justify-center" />}
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-muted">
                     {meta.name} {m.paragon ? "" : divisionLabel(m.division)}
                   </p>
-                  <p className="mt-1.5 font-mono text-sm text-cyan-300">+{m.rp_week} RP tuần</p>
+                  <p className="mt-1.5 font-mono text-sm text-primary">+{m.rp_week} RP tuần</p>
                 </div>
               </li>
             );
@@ -151,23 +151,23 @@ function Podium({ g }: { g: PublicHonorGrade }) {
         </ul>
       )}
       {(g.top_more ?? 0) > 0 && (
-        <p className="mt-3 text-xs text-slate-400">
+        <p className="mt-3 text-xs text-muted">
           và {g.top_more} bạn khác cùng hạng với các bạn trên — bục chỉ hiện được 5 bạn, xếp theo tên.
         </p>
       )}
 
       {notes.length > 0 && (
         <div className="mt-6 rounded-2xl border border-line bg-panel/60 px-4 py-2">
-          <p className="flex items-center gap-2 py-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+          <p className="flex items-center gap-2 py-2 text-xs font-semibold uppercase tracking-wide text-muted">
             <Trophy size={14} className="text-amber-300" /> Ghi nhận tuần
           </p>
           <ul className="divide-y divide-line">
             {notes.map(({ key, Icon, label, who, detail }) => (
               <li key={key} className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2.5 text-sm">
-                <Icon size={16} className="shrink-0 text-cyan-300" />
-                <span className="w-full text-slate-400 sm:w-40">{label}</span>
+                <Icon size={16} className="shrink-0 text-primary" />
+                <span className="w-full text-muted sm:w-40">{label}</span>
                 <span className="font-medium text-ink">{who}</span>
-                <span className="text-slate-400">{detail}</span>
+                <span className="text-muted">{detail}</span>
               </li>
             ))}
           </ul>

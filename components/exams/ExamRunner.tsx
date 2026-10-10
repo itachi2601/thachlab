@@ -36,7 +36,7 @@ import { getSupabase } from "@/services/supabase";
 // "bấm nộp bài không có phản hồi gì" trong lúc chờ chunk tải (thường < 1 lần, cache 1 năm sau đó).
 const ExamDoneViewLazy = dynamic(() => import("@/components/exams/ExamDoneView"), {
   ssr: false,
-  loading: () => <p className="text-center text-slate-400">Đang tính điểm…</p>,
+  loading: () => <p className="text-center text-muted">Đang tính điểm…</p>,
 });
 
 // LazyErrorBoundary: điểm đã được lưu (save() ở dưới gọi ĐỘC LẬP với việc chunk này tải được hay
@@ -48,8 +48,8 @@ function ExamDoneView(props: ComponentProps<typeof ExamDoneViewLazy>) {
   return (
     <LazyErrorBoundary
       fallback={
-        <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-6 text-center">
-          <p className="text-sm text-slate-300">
+        <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-6 text-center">
+          <p className="text-sm text-ink">
             Điểm của em đã được lưu, nhưng trang không hiện được phần xem lại bài làm (có thể do
             mạng chập chờn). Thử tải lại trang.
           </p>
@@ -368,17 +368,17 @@ export default function ExamRunner({
     }
 
     return (
-      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8">
-        <h1 className="font-display text-2xl font-bold text-white">
+      <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-8">
+        <h1 className="font-display text-2xl font-bold text-ink">
           {exam.title}
         </h1>
-        <p className="mt-3 text-sm text-slate-400">
+        <p className="mt-3 text-sm text-muted">
           {exam.questions.length} câu · {exam.duration_minutes} phút · nộp bài
           là có điểm ngay kèm lời giải
         </p>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-muted">
           Học sinh:{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-ink">
             {profile?.full_name}
           </span>
           {profile?.class_name && ` · Lớp ${profile.class_name}`}
@@ -394,7 +394,7 @@ export default function ExamRunner({
         >
           {resumable ? "Làm tiếp bài đang dở" : "Bắt đầu làm bài"}
         </Button>
-        <p className="mt-3 text-center text-[13px] text-slate-400">
+        <p className="mt-3 text-center text-[13px] text-muted">
           Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.
         </p>
       </div>
@@ -418,7 +418,7 @@ export default function ExamRunner({
           onCancel={() => setConfirmOpen(false)}
         />
         {violationBanner && (
-          <div role="alert" className="fixed inset-x-3 top-20 z-50 mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-[#2a2210] px-4 py-2.5 text-sm text-amber-200 shadow-lg">
+          <div role="alert" className="fixed inset-x-3 top-20 z-50 mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-surface-2 px-4 py-2.5 text-sm text-amber-200 shadow-lg">
             <span>{violationBanner.text}</span>
             <div className="flex items-center gap-3">
               {violationBanner.type === "fullscreen_exit" && (
@@ -442,10 +442,10 @@ export default function ExamRunner({
             </div>
           </div>
         )}
-        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-4 py-2 backdrop-blur-md">
+        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-line bg-panel/95 px-4 py-2 backdrop-blur-md">
           <div className="flex items-center justify-between gap-3">
-            <span className="text-sm text-slate-400">
-              Câu <span className="font-semibold text-white">{cur + 1}</span>/{exam.questions.length}
+            <span className="text-sm text-muted">
+              Câu <span className="font-semibold text-ink">{cur + 1}</span>/{exam.questions.length}
               <span className="ml-2 hidden sm:inline">· đã làm {answeredCount}</span>
             </span>
             <span
@@ -468,10 +468,10 @@ export default function ExamRunner({
 
           {paletteOpen && (
             <>
-              <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-white/10 pt-3">
+              <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-line pt-3">
                 {groupQuestionIndexesByType(exam.questions).map((section) => (
                   <div key={section.type}>
-                    <div className="mb-1 text-[13px] font-semibold uppercase tracking-wide text-slate-400">
+                    <div className="mb-1 text-[13px] font-semibold uppercase tracking-wide text-muted">
                       {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -481,10 +481,10 @@ export default function ExamRunner({
                         const flagged = flags.has(i);
                         const cls =
                           state === "done"
-                            ? "border-primary bg-primary/25 text-white"
+                            ? "border-primary bg-primary/25 text-ink"
                             : state === "partial"
-                              ? "border-primary/50 bg-primary/10 text-slate-200"
-                              : "border-white/15 text-slate-400 hover:border-white/30";
+                              ? "border-primary/50 bg-primary/10 text-ink"
+                              : "border-line text-muted hover:border-line-strong";
                         return (
                           <button
                             key={i}
@@ -498,7 +498,7 @@ export default function ExamRunner({
                                   : " · chưa làm"
                             }${flagged ? " · đánh dấu xem lại" : ""}`}
                             className={`relative h-11 w-11 rounded-lg border text-sm font-bold transition-colors ${cls} ${
-                              i === cur ? "ring-2 ring-white/70" : ""
+                              i === cur ? "ring-2 ring-primary" : ""
                             }`}
                           >
                             {i + 1}
@@ -513,17 +513,17 @@ export default function ExamRunner({
                 ))}
               </div>
 
-              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-slate-400">
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-muted">
                 <span className="flex items-center gap-1.5">
                   <span className="h-3 w-3 rounded border border-primary bg-primary/25" />
                   Đã làm
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-3 w-3 rounded border border-primary/60 bg-[linear-gradient(to_top,rgba(37,99,235,0.55)_50%,transparent_50%)]" />
+                  <span className="h-3 w-3 rounded border border-primary/60 bg-primary/10" />
                   Làm dở
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-3 w-3 rounded border border-white/15" />
+                  <span className="h-3 w-3 rounded border border-line-strong" />
                   Chưa làm
                 </span>
                 <span className="flex items-center gap-1.5">

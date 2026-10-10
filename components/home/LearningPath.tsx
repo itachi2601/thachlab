@@ -65,7 +65,7 @@ export default function LearningPath() {
     <section id="learning-path" className="scroll-mt-20 border-t border-line py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Lộ trình lớp 9–12 và thi chuyên</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">Lộ trình lớp 9–12 và thi chuyên</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Mỗi lớp học gì?
           </h2>
@@ -74,7 +74,7 @@ export default function LearningPath() {
             trọng tâm riêng. Bài tổng quan cho cả ba năm THPT ở{" "}
             <Link
               href="/blog/lo-trinh-hoc-vat-ly-thpt-chuong-trinh-moi-2018"
-              className="font-medium text-cyan-300 underline-offset-4 hover:underline"
+              className="font-medium text-primary underline-offset-4 hover:underline"
             >
               đây
             </Link>
@@ -101,7 +101,7 @@ export default function LearningPath() {
                 </Link>
 
                 <div className="flex flex-col">
-                  <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">{s.grade}</p>
+                  <p className="font-mono text-xs uppercase tracking-widest text-primary">{s.grade}</p>
                   <h3 className="mt-1 font-display text-xl font-bold text-ink sm:text-2xl">{s.focus}</h3>
                   <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{s.detail}</p>
 
@@ -115,7 +115,7 @@ export default function LearningPath() {
                       <ul className="mt-1.5 space-y-1">
                         {s.checkpoints.map((c) => (
                           <li key={c} className="flex items-start gap-2 text-sm text-ink">
-                            <Check size={14} className="mt-1 shrink-0 text-cyan-300" />
+                            <Check size={14} className="mt-1 shrink-0 text-primary" />
                             <span>{c}</span>
                           </li>
                         ))}
@@ -126,7 +126,7 @@ export default function LearningPath() {
                   <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
                     <Link
                       href={s.classHref}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition hover:text-primary-dark"
                     >
                       {s.classHref.includes("subject=") ? "Vào khoá" : `Vào lớp ${s.grade.replace(/^Lớp /, "")}`} <ArrowRight size={16} />
                     </Link>

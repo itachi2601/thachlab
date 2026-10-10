@@ -114,7 +114,7 @@ export default async function BlogPostPage({
         </nav>
 
         <article className="mt-4">
-          <h1 className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold leading-tight text-ink sm:text-4xl">
             {post.title}
           </h1>
           <p className="mt-4 text-sm text-slate-500">

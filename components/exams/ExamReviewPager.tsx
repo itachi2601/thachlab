@@ -18,8 +18,8 @@ const NAV_DOT: Record<QuestionStatus, string> = {
   correct: "border-emerald-500/60 bg-emerald-500/15 text-emerald-200 hover:border-emerald-400",
   partial: "border-amber-500/60 bg-amber-500/15 text-amber-200 hover:border-amber-400",
   wrong: "border-red-500/60 bg-red-500/15 text-red-200 hover:border-red-400",
-  skipped: "border-white/15 text-slate-400 hover:border-white/30",
-  manual: "border-violet-400/60 bg-violet-500/15 text-violet-200 hover:border-violet-300",
+  skipped: "border-line text-muted hover:border-line-strong",
+  manual: "border-warn/60 bg-warn/5 text-warn hover:border-warn",
 };
 
 interface Props {
@@ -47,22 +47,22 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
 
   return (
     <div>
-      <div className="sticky top-16 z-30 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-5 py-3 backdrop-blur-md">
+      <div className="sticky top-16 z-30 mb-6 rounded-2xl border border-line bg-panel/95 px-5 py-3 backdrop-blur-md">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-sm text-slate-400">
-            Câu <span className="font-semibold text-white">{cur + 1}</span>/{questions.length}
+          <span className="text-sm text-muted">
+            Câu <span className="font-semibold text-ink">{cur + 1}</span>/{questions.length}
           </span>
           <button
             type="button"
             onClick={() => setPaletteOpen((v) => !v)}
-            className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-slate-300 hover:border-white/30"
+            className="rounded-full border border-line px-3 py-1 text-xs font-semibold text-ink hover:border-line-strong"
           >
             {paletteOpen ? "Ẩn bảng câu" : "Bảng câu hỏi"}
           </button>
         </div>
 
         {paletteOpen && (
-          <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-white/10 pt-3">
+          <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-line pt-3">
             {groupQuestionIndexesByType(questions).map((section) => (
               <div key={section.type}>
                 <div className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-slate-500">
@@ -79,7 +79,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
                         onClick={() => goTo(i)}
                         title={title}
                         className={`flex h-8 w-8 items-center justify-center rounded-lg border text-xs font-bold transition-colors sm:h-9 sm:w-9 ${NAV_DOT[status]} ${
-                          i === cur ? "ring-2 ring-white/70" : ""
+                          i === cur ? "ring-2 ring-primary" : ""
                         }`}
                       >
                         {i + 1}
@@ -106,11 +106,11 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
             Sai
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-white/15" />
+            <span className="h-3 w-3 rounded border border-line-strong" />
             Bỏ qua
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-violet-400/60 bg-violet-500/15" />
+            <span className="h-3 w-3 rounded border border-warn/60 bg-warn/5" />
             Thầy chấm
           </span>
         </div>
@@ -130,7 +130,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           type="button"
           disabled={cur === 0}
           onClick={() => goTo(cur - 1)}
-          className="rounded-xl border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-40"
+          className="rounded-xl border border-line px-4 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-40"
         >
           ← Câu trước
         </button>

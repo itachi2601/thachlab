@@ -3,8 +3,10 @@ import type { MetadataRoute } from "next";
 // output: "export" bắt buộc route kiểu file-convention phải tĩnh.
 export const dynamic = "force-static";
 
-// Màu lấy từ --color-bg (tối) trong app/globals.css. Giữ đồng bộ bằng tay: manifest không đọc được CSS.
-const BG = "#05070b";
+// Màu lấy từ --color-bg trong app/globals.css, nay là NỀN SÁNG (mặc định toàn site từ
+// 11/10/2026) — PWA không đổi màu theo data-theme nên lấy đúng giá trị mặc định.
+// Giữ đồng bộ bằng tay: manifest không đọc được CSS.
+const BG = "#f5f7fa";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

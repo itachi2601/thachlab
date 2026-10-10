@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import WornTitle from "@/components/rank/WornTitle";
-import { formatGateWhen, formatRp, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
+import { formatGateWhen, formatRp, titleDisplay, type RankStatus } from "@/features/rank/types";
 
 /**
  * Thẻ rank dùng ở nhiều chỗ (trang học sinh, trang kết quả, phụ huynh):
@@ -31,33 +31,26 @@ export default function RankCard({
 }) {
   const [now] = useState(() => Date.now()); // mốc chờ thi lại so với lúc mở trang
   const paragon = !!status?.tier?.paragon;
-  const meta = tierMeta(status?.tier?.code, paragon);
   const inner = (
-    <div
-      className={`relative min-w-0 overflow-hidden rounded-2xl border p-4 sm:p-5 ${className}`}
-      style={{
-        borderColor: `${meta.color}55`,
-        background: `linear-gradient(135deg, ${meta.color}26 0%, rgba(11,16,32,0) 60%)`,
-      }}
-    >
+    <div className={`relative min-w-0 overflow-hidden rounded-2xl border border-line bg-panel p-4 sm:p-5 ${className}`}>
       <div className="flex items-center gap-3 sm:gap-4">
         {status === undefined ? (
-          <div className="h-16 w-14 animate-pulse rounded-xl bg-white/5" />
+          <div className="h-16 w-14 animate-pulse rounded-xl bg-surface-2" />
         ) : (
           <RankBadge code={status?.tier?.code} division={status?.tier?.division} paragon={paragon} size={compact ? 52 : 64} />
         )}
         <div className="min-w-0 flex-1">
           {status === undefined ? (
             <>
-              <div className="h-4 w-40 animate-pulse rounded bg-white/10" />
-              <div className="mt-2 h-3 w-28 animate-pulse rounded bg-white/5" />
+              <div className="h-4 w-40 animate-pulse rounded bg-surface-2" />
+              <div className="mt-2 h-3 w-28 animate-pulse rounded bg-surface-2" />
             </>
           ) : !status?.season ? (
             <>
-              <p className="font-display text-base font-bold uppercase tracking-wide text-white">
+              <p className="font-display text-base font-bold uppercase tracking-wide text-ink">
                 {name ? `${name} · ` : ""}Chưa mở mùa
               </p>
-              <p className="mt-0.5 text-sm text-slate-400">
+              <p className="mt-0.5 text-sm text-muted">
                 {status?.display_title
                   ? titleDisplay(status.display_title.name, status.display_title.level)
                   : status?.titles_count
@@ -67,14 +60,14 @@ export default function RankCard({
             </>
           ) : (
             <>
-              {name && <p className="truncate text-xs font-bold uppercase tracking-widest text-slate-400">{name}</p>}
+              {name && <p className="truncate text-xs font-bold uppercase tracking-widest text-muted">{name}</p>}
               <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="md" />
               <p className="mt-0.5 flex min-w-0 text-sm">
                 {status.display_title ? <WornTitle title={status.display_title} size="md" /> : <span className="text-slate-500">Chưa đeo danh hiệu</span>}
               </p>
               {!compact && (
-                <p className="mt-1 text-sm text-slate-400">
-                  <b className="text-white">{formatRp(status.rp)} RP</b>
+                <p className="mt-1 text-sm text-muted">
+                  <b className="text-ink">{formatRp(status.rp)} RP</b>
                   {paragon && " · Danh vị độc quyền — trên cả Cao Thủ"}
                   {status.next && (
                     <>
@@ -96,8 +89,8 @@ export default function RankCard({
           )}
         </div>
         {compact && status?.season && (
-          <span className="shrink-0 text-right text-sm text-slate-300">
-            <b className="block text-white">{formatRp(status.rp)}</b>RP
+          <span className="shrink-0 text-right text-sm text-ink">
+            <b className="block text-ink">{formatRp(status.rp)}</b>RP
           </span>
         )}
         {href && <ChevronRight size={18} className="shrink-0 text-slate-500" />}

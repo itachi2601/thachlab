@@ -33,16 +33,16 @@ export default function HonorVisibilityPicker({ className = "" }: { className?: 
   }
 
   return (
-    <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-white/10 bg-panel px-4 py-3 text-xs text-slate-400 ${className}`}>
-      <Eye size={14} className="text-cyan-300" />
-      <label htmlFor="honor-visibility" className="text-slate-300">
+    <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-line bg-panel px-4 py-3 text-xs text-muted ${className}`}>
+      <Eye size={14} className="text-primary" />
+      <label htmlFor="honor-visibility" className="text-ink">
         Trên bảng vinh danh trang chủ, em hiện là
       </label>
       <select
         id="honor-visibility"
         value={value}
         onChange={(e) => change(e.target.value as HonorVisibility)}
-        className="rounded-lg border border-white/15 bg-[#050914] px-2 py-1 text-xs text-white"
+        className="rounded-lg border border-line-strong bg-panel px-2 py-1 text-xs text-ink"
       >
         {(Object.keys(HONOR_VISIBILITY_LABELS) as HonorVisibility[]).map((k) => (
           <option key={k} value={k}>

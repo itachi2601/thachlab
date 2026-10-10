@@ -22,7 +22,7 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
  */
 const SampleQuestionsGridLazyInner = dynamic(() => import("@/components/lessons/SampleQuestionsGrid"), {
   ssr: false,
-  loading: () => <p className="text-sm text-slate-400">Đang tải bài tập mẫu…</p>,
+  loading: () => <p className="text-sm text-muted">Đang tải bài tập mẫu…</p>,
 });
 
 // LazyErrorBoundary: "Bài tập mẫu" là 1 mục trong danh sách 6 mục của bài học, không phải luồng
@@ -32,7 +32,7 @@ const SampleQuestionsGridLazyInner = dynamic(() => import("@/components/lessons/
 function SampleQuestionsGridLazy(props: ComponentProps<typeof SampleQuestionsGridLazyInner>) {
   return (
     <LazyErrorBoundary
-      fallback={<p className="text-sm text-slate-400">Không tải được bài tập mẫu. Thử tải lại trang.</p>}
+      fallback={<p className="text-sm text-muted">Không tải được bài tập mẫu. Thử tải lại trang.</p>}
     >
       <SampleQuestionsGridLazyInner {...props} />
     </LazyErrorBoundary>

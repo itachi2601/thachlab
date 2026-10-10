@@ -57,7 +57,7 @@ export default function AboutFounder() {
         )}
 
         <Reveal delay={0.1} className={hasPhoto ? "lg:col-span-7" : "lg:col-span-12"}>
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Người đứng lớp</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">Người đứng lớp</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Một chút về thầy Thạch
           </h2>
@@ -76,7 +76,7 @@ export default function AboutFounder() {
             đều phải đi kèm một ví dụ cụ thể ngoài đời — lực ma sát là chuyện bánh xe, áp suất là chuyện
             nồi áp suất trong bếp — để em hiểu và dùng được, không học thuộc để trả bài.
           </p>
-          <blockquote className="mt-8 border-l-2 border-cyan-300 pl-5">
+          <blockquote className="mt-8 border-l-2 border-primary pl-5">
             <p className="font-display text-xl italic leading-snug text-ink">
               &ldquo;Mỗi kiến thức phải gắn với một ví dụ cụ thể trong cuộc sống.&rdquo;
             </p>
@@ -84,7 +84,7 @@ export default function AboutFounder() {
           <p className="mt-4 text-base leading-relaxed text-muted">
             <Link
               href="/phu-huynh#ket-qua"
-              className="font-medium text-cyan-300 underline-offset-4 transition hover:text-cyan-200 hover:underline"
+              className="font-medium text-primary underline-offset-4 transition hover:text-primary-dark hover:underline"
             >
               Xem điểm thi tốt nghiệp 2025 của học trò →
             </Link>
@@ -111,7 +111,7 @@ export default function AboutFounder() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium text-cyan-300 underline-offset-4 transition hover:text-cyan-200 hover:underline"
+                      className="font-medium text-primary underline-offset-4 transition hover:text-primary-dark hover:underline"
                     >
                       {s.label}
                     </a>

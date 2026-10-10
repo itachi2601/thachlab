@@ -107,20 +107,20 @@ export default function ExamAdaptiveFeedback({
   return (
     <section
       aria-label="Nhận xét và gợi ý ôn tập"
-      className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5"
+      className="mt-4 rounded-2xl border border-line bg-surface-2 p-4 sm:p-5"
     >
-      <h2 className="font-display text-lg font-semibold text-white">Nhận xét cho em</h2>
-      <p className="mt-1 text-sm leading-relaxed text-slate-300">{lead}</p>
+      <h2 className="font-display text-lg font-semibold text-ink">Nhận xét cho em</h2>
+      <p className="mt-1 text-sm leading-relaxed text-ink">{lead}</p>
 
       {blank > 0 && (
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-muted">
           Có {blank} câu để trống. Lần sau cứ chọn đáp án em nghĩ gần đúng nhất rồi đánh dấu quay lại — câu trống chắc chắn không có điểm.
         </p>
       )}
 
       {weak.length > 0 && (
         <>
-          <h3 className="mt-4 text-sm font-semibold text-white">Nên xem lại</h3>
+          <h3 className="mt-4 text-sm font-semibold text-ink">Nên xem lại</h3>
           <ul className="mt-2 space-y-2">
             {weak.map((t) => {
               const lessonId = lessonByTopic.get(t.name);
@@ -130,11 +130,11 @@ export default function ExamAdaptiveFeedback({
                 <li key={t.name} className="rounded-xl bg-amber-500/10 p-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="text-sm font-semibold text-amber-200">{t.name}</span>
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-muted">
                       sai {t.wrong}/{t.total} câu · {r < MID ? "cần học lại" : "cần củng cố"}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-slate-300">{adviceFor(t)}</p>
+                  <p className="mt-1 text-sm text-ink">{adviceFor(t)}</p>
                   {lessonId && (
                     <Link
                       href={`/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}`}

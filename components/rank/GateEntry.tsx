@@ -18,19 +18,19 @@ export default function GateEntry({ next, onStart }: { next: RankNext; onStart: 
   const waiting = gate.cooldown_until && new Date(gate.cooldown_until).getTime() > now;
 
   return (
-    <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+    <div className="mt-4 rounded-xl border border-line bg-surface-2 p-3 sm:p-4">
       {next.rp_needed > 0 ? (
-        <p className="text-sm text-slate-300">
+        <p className="text-sm text-ink">
           Bài thi thăng hạng mở khi em đạt {formatRp(next.min_rp)} RP (còn {formatRp(next.rp_needed)} RP).
         </p>
       ) : waiting ? (
-        <p className="text-base leading-relaxed text-slate-200">
-          Đủ RP rồi, còn bài thi thăng hạng. Em thi lại được sau <b className="text-white">{formatGateWhen(gate.cooldown_until!)}</b> — lúc đó ôn lại chủ đề sai nhiều rồi thử tiếp.
+        <p className="text-base leading-relaxed text-ink">
+          Đủ RP rồi, còn bài thi thăng hạng. Em thi lại được sau <b className="text-ink">{formatGateWhen(gate.cooldown_until!)}</b> — lúc đó ôn lại chủ đề sai nhiều rồi thử tiếp.
         </p>
       ) : gate.can_start ? (
         <>
-          <p className="text-base leading-relaxed text-slate-200">
-            Đủ RP rồi, còn bài thi thăng hạng lên <b className="text-white">{next.name}</b>: {gate.quiz_count ?? 12} câu, độ khó tự điều chỉnh, đạt từ {gate.pass_pct ?? 70}%.
+          <p className="text-base leading-relaxed text-ink">
+            Đủ RP rồi, còn bài thi thăng hạng lên <b className="text-ink">{next.name}</b>: {gate.quiz_count ?? 12} câu, độ khó tự điều chỉnh, đạt từ {gate.pass_pct ?? 70}%.
           </p>
           <Button onClick={onStart} className="mt-3 min-h-11 w-full sm:w-auto">
             <ClipboardCheck size={16} aria-hidden />
@@ -38,10 +38,10 @@ export default function GateEntry({ next, onStart }: { next: RankNext; onStart: 
           </Button>
         </>
       ) : (
-        <p className="text-sm text-slate-300">Bài thi thăng hạng chưa mở cho khối của em lúc này — em hỏi giáo viên nhé.</p>
+        <p className="text-sm text-ink">Bài thi thăng hạng chưa mở cho khối của em lúc này — em hỏi giáo viên nhé.</p>
       )}
       {gate.attempts !== undefined && gate.attempts > 0 && !waiting && (
-        <p className="mt-2 text-sm text-slate-400">Em đã thi {gate.attempts} lần ở bậc này.</p>
+        <p className="mt-2 text-sm text-muted">Em đã thi {gate.attempts} lần ở bậc này.</p>
       )}
     </div>
   );

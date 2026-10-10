@@ -117,16 +117,16 @@ export default function CatchupCard({
     const date = new Date(`${slot.workDate}T00:00:00`).toLocaleDateString("vi-VN", { weekday: "short", day: "2-digit", month: "2-digit" });
     const slotTopics = slot.topicIds.map((t) => topicName.get(t)).filter(Boolean) as string[];
     return (
-      <div key={slot.id} className={`rounded-xl border p-3 ${highlight ? "border-blue-400/40 bg-blue-500/[.06]" : "border-white/10 bg-white/[.02]"}`}>
+      <div key={slot.id} className={`rounded-xl border p-3 ${highlight ? "border-blue-400/40 bg-blue-500/[.06]" : "border-line bg-surface-2"}`}>
         <div className="flex flex-wrap items-center gap-2">
           {highlight && <Sparkles size={14} className="text-blue-300" />}
-          <strong className="text-sm text-white">
+          <strong className="text-sm text-ink">
             {date} · {slot.startTime.slice(0, 5)}–{slot.endTime.slice(0, 5)}
           </strong>
           {slot.assistantName && <span className="text-xs text-slate-500">{slot.assistantName}</span>}
           <span className="ml-auto text-xs text-slate-500">{slot.registeredCount}/{slot.capacity}</span>
         </div>
-        {slotTopics.length > 0 && <p className="mt-1 text-xs text-slate-400">{slotTopics.join(" · ")}</p>}
+        {slotTopics.length > 0 && <p className="mt-1 text-xs text-muted">{slotTopics.join(" · ")}</p>}
         {slot.note && <p className="mt-1 text-xs text-slate-500">{slot.note}</p>}
         {waiting && (
           <p className="mt-1 text-xs text-amber-300">
@@ -137,7 +137,7 @@ export default function CatchupCard({
           type="button"
           onClick={() => toggle(slot)}
           disabled={busySlot === slot.id}
-          className={`mt-2 min-h-11 w-full rounded-lg border py-2 text-sm font-bold disabled:opacity-40 ${registered || waiting ? "border-white/15 text-slate-300" : full ? "border-amber-400/40 text-amber-200" : "border-blue-400/50 text-blue-100 hover:bg-blue-500/10"}`}
+          className={`mt-2 min-h-11 w-full rounded-lg border py-2 text-sm font-bold disabled:opacity-40 ${registered || waiting ? "border-line text-ink" : full ? "border-amber-400/40 text-amber-200" : "border-blue-400/50 text-blue-100 hover:bg-blue-500/10"}`}
         >
           {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
         </button>
@@ -149,10 +149,10 @@ export default function CatchupCard({
     <section className="rounded-2xl border border-amber-400/25 bg-panel p-4 sm:p-5">
       <div className="flex items-center gap-2 text-amber-300">
         <BookOpenCheck size={18} />
-        <h2 className="font-display font-bold text-white">Bù bài trước khi vào lớp chính thức</h2>
+        <h2 className="font-display font-bold text-ink">Bù bài trước khi vào lớp chính thức</h2>
       </div>
-      <p className="mt-1 text-sm text-slate-300">
-        {who === "con" ? "Con" : "Em"} vào <strong className="text-white">{reg.courseName}</strong> sau khai giảng. Học bù theo thứ tự dưới đây:
+      <p className="mt-1 text-sm text-ink">
+        {who === "con" ? "Con" : "Em"} vào <strong className="text-ink">{reg.courseName}</strong> sau khai giảng. Học bù theo thứ tự dưới đây:
         bài lớp vừa học trước để theo kịp ngay, rồi lùi dần về các bài trước.
       </p>
 
@@ -163,7 +163,7 @@ export default function CatchupCard({
           </li>
         ))}
         {ordered.map((id, i) => (
-          <li key={id} className={`flex items-center gap-2 text-sm ${i === 0 ? "font-semibold text-white" : "text-slate-300"}`}>
+          <li key={id} className={`flex items-center gap-2 text-sm ${i === 0 ? "font-semibold text-ink" : "text-ink"}`}>
             {i === 0 ? <ChevronRight size={14} className="text-amber-300" /> : <span className="w-3.5 text-center text-xs text-slate-500">{i + 1}</span>}
             {topicName.get(id) ?? `Bài #${id}`}
             {i === 0 && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-200">kế tiếp</span>}
@@ -172,10 +172,10 @@ export default function CatchupCard({
       </ol>
 
       {!showSlots ? null : classId === null ? (
-        <p className="mt-4 text-sm text-slate-400">Giáo viên duyệt xong sẽ thấy lịch phụ đạo của khối ở đây.</p>
+        <p className="mt-4 text-sm text-muted">Giáo viên duyệt xong sẽ thấy lịch phụ đạo của khối ở đây.</p>
       ) : (
         <div className="mt-4">
-          <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Ca phụ đạo của trợ giảng khối</p>
+          <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-muted">Ca phụ đạo của trợ giảng khối</p>
           {slots.length === 0 ? (
             <p className="text-sm text-slate-500">Trợ giảng chưa đăng ca nào trong tuần tới. Quay lại sau vài ngày.</p>
           ) : (
@@ -183,7 +183,7 @@ export default function CatchupCard({
               {suggested.map((slot) => renderSlot(slot, slot.topicIds.includes(nextId ?? -1)))}
               {others.length > 0 && (
                 <details>
-                  <summary className="cursor-pointer text-xs text-slate-400">Ca khác trong tuần ({others.length}) — không đúng bài cần bù</summary>
+                  <summary className="cursor-pointer text-xs text-muted">Ca khác trong tuần ({others.length}) — không đúng bài cần bù</summary>
                   <div className="mt-2 space-y-2">
                     {others.map((slot) => renderSlot(slot, false))}
                   </div>

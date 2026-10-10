@@ -63,16 +63,16 @@ export default function ParentUpcoming({ classId, courses }: { classId: number; 
   if (slots.length === 0 && !freshTask) return null;
 
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-white">
-        <CalendarClock size={18} className="text-cyan-300" aria-hidden /> Sắp tới
+    <section className="mb-6 rounded-2xl border border-line bg-panel p-5">
+      <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-ink">
+        <CalendarClock size={18} className="text-primary" aria-hidden /> Sắp tới
       </h2>
       {slots.length > 0 && (
         <ul className="mt-3 space-y-2">
           {slots.map((s) => (
             <li key={`${s.date.toISOString()}-${s.start}-${s.course}`}>
-              <p className="font-semibold text-white">{dayMonth(s.date)}</p>
-              <p className="parent-copy text-slate-300">
+              <p className="font-semibold text-ink">{dayMonth(s.date)}</p>
+              <p className="parent-copy text-ink">
                 Học {s.start}–{s.end} · {s.course}
                 {s.location ? ` · ${s.location}` : ""}
               </p>
@@ -82,8 +82,8 @@ export default function ParentUpcoming({ classId, courses }: { classId: number; 
       )}
       {freshTask && (
         <div className="mt-4 rounded-xl border border-cyan-400/25 bg-cyan-400/[.06] p-3">
-          <p className="text-slate-400">Thầy nhắn con</p>
-          <p className="parent-copy mt-0.5 whitespace-pre-wrap text-white">{freshTask.body}</p>
+          <p className="text-muted">Thầy nhắn con</p>
+          <p className="parent-copy mt-0.5 whitespace-pre-wrap text-ink">{freshTask.body}</p>
         </div>
       )}
     </section>

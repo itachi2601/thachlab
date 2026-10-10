@@ -132,7 +132,7 @@ export default function RankCelebrationModal({ event, remaining, onNext }: { eve
         </div>
         <h2 className="rcl-rise relative mt-4 text-3xl font-extrabold text-white" style={{ animationDelay: "1.5s" }}>{headline}</h2>
         <p className="rcl-rise relative mt-1 text-xl font-bold" style={{ color: accent, animationDelay: "1.65s" }}>{isRank ? rankName : event.name}</p>
-        <p className="rcl-rise relative mx-auto mt-2 max-w-[28ch] text-base leading-relaxed text-slate-300" style={{ animationDelay: "1.8s" }}>
+        <p className="rcl-rise relative mx-auto mt-2 max-w-[28ch] text-base leading-relaxed text-white/90" style={{ animationDelay: "1.8s" }}>
           {isRank ? "Nỗ lực bền bỉ của em đã được ghi nhận. Giữ nhịp này và chạm tới bậc kế tiếp nhé!" : event.description || "Em vừa chinh phục thêm một danh hiệu chuyên môn."}
         </p>
 
@@ -140,7 +140,7 @@ export default function RankCelebrationModal({ event, remaining, onNext }: { eve
           <button ref={btn} onClick={onNext} className="min-h-12 rounded-xl px-5 text-base font-bold text-[#1a1305] transition active:scale-[.98]" style={{ background: `linear-gradient(135deg,#fff3cf,${accent})` }}>
             {remaining > 0 ? `Tiếp theo (còn ${remaining})` : "Tuyệt vời!"}
           </button>
-          <Link href="/lop-hoc/xep-hang" onClick={onNext} className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-slate-300 underline-offset-4 hover:underline">
+          <Link href="/lop-hoc/xep-hang" onClick={onNext} className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-white/90 underline-offset-4 hover:underline">
             Xem hành trình rank của em
           </Link>
         </div>

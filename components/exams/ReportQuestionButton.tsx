@@ -53,7 +53,7 @@ export default function ReportQuestionButton({ examId, questionIndex }: { examId
         type="button"
         onClick={() => setOpen(true)}
         disabled={sent}
-        className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-slate-400 hover:border-amber-400/50 hover:text-amber-300 disabled:cursor-default disabled:opacity-60"
+        className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-xs font-semibold text-muted hover:border-amber-400/50 hover:text-amber-300 disabled:cursor-default disabled:opacity-60"
       >
         <Flag size={13} />
         {sent ? "Đã báo lỗi câu này" : "Báo lỗi câu này"}
@@ -65,15 +65,15 @@ export default function ReportQuestionButton({ examId, questionIndex }: { examId
             role="dialog"
             aria-modal="true"
             aria-label="Báo lỗi câu hỏi"
-            className="w-full max-w-md rounded-2xl border border-white/10 bg-panel p-6 shadow-2xl"
+            className="w-full max-w-md rounded-2xl border border-line bg-panel p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-lg font-bold text-white">
+              <h2 className="flex items-center gap-2 text-lg font-bold text-ink">
                 <Flag size={18} className="text-amber-300" />
                 Báo lỗi câu {questionIndex + 1}
               </h2>
-              <button type="button" onClick={() => setOpen(false)} className="text-slate-400 hover:text-white">
+              <button type="button" onClick={() => setOpen(false)} className="text-muted hover:text-primary">
                 <X size={20} />
               </button>
             </div>
@@ -85,7 +85,7 @@ export default function ReportQuestionButton({ examId, questionIndex }: { examId
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Em nghĩ đáp án/lời giải câu này sai ở đâu, hoặc câu bị lỗi gì?"
                 rows={4}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none"
+                className="w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-sm text-ink placeholder:text-slate-500 focus:border-primary focus:outline-none"
               />
               {error && <p className="text-sm text-red-400">{error}</p>}
               <Button type="submit" disabled={busy || !description.trim()} className="w-full">

@@ -55,15 +55,15 @@ export default function ParentTuitionCard({
   );
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="font-display text-lg font-semibold text-white">Học phí</h2>
-      <ul className="mt-3 divide-y divide-white/10">
+    <section className="rounded-2xl border border-line bg-panel p-5">
+      <h2 className="font-display text-lg font-semibold text-ink">Học phí</h2>
+      <ul className="mt-3 divide-y divide-line">
         {blocks.map((block) => {
           const paid = block.paymentStatus !== "unpaid";
           return (
             <li key={block.key} className="py-3 first:pt-0 last:pb-0">
-              <p className="font-semibold text-white">{block.title}</p>
-              {block.feeNote ? <p className="parent-copy text-slate-400">{block.feeNote}</p> : null}
+              <p className="font-semibold text-ink">{block.title}</p>
+              {block.feeNote ? <p className="parent-copy text-muted">{block.feeNote}</p> : null}
               {block.months.length > 0 ? (
                 <ul className="mt-1 space-y-1">
                   {block.months.map((m) => {
@@ -71,7 +71,7 @@ export default function ParentTuitionCard({
                     return (
                       <li
                         key={m.period}
-                        className={`font-semibold ${line.tone === "paid" ? "text-emerald-300" : line.tone === "waived" ? "text-slate-200" : "text-amber-300"}`}
+                        className={`font-semibold ${line.tone === "paid" ? "text-ok" : line.tone === "waived" ? "text-ink" : "text-warn"}`}
                       >
                         {line.text}
                       </li>
@@ -80,12 +80,12 @@ export default function ParentTuitionCard({
                 </ul>
               ) : (
                 <>
-                  <p className={`mt-1 font-semibold ${paid ? "text-emerald-300" : "text-amber-300"}`}>
+                  <p className={`mt-1 font-semibold ${paid ? "text-ok" : "text-warn"}`}>
                     {paid ? PAYMENT_STATUS_LABEL[block.paymentStatus] : "Thầy chưa ghi nhận khoản đóng"}
                   </p>
-                  {block.paymentNote ? <p className="parent-copy text-slate-300">{block.paymentNote}</p> : null}
+                  {block.paymentNote ? <p className="parent-copy text-ink">{block.paymentNote}</p> : null}
                   {!paid && (
-                    <p className="parent-copy text-slate-400">
+                    <p className="parent-copy text-muted">
                       Nếu phụ huynh đã đóng rồi, nhắn thầy qua Zalo để thầy cập nhật.
                     </p>
                   )}

@@ -31,7 +31,7 @@ export default function TierName({
         {div && size !== "sm" ? ` ${div}` : ""}
       </span>
       <span
-        className={`mt-1 block truncate font-semibold uppercase text-slate-400 ${vi}`}
+        className={`mt-1 block truncate font-semibold uppercase text-muted ${vi}`}
         style={{ fontFamily: "var(--font-playfair), \"Playfair Display\", serif" }}
       >
         {div && size === "sm" ? `${div} · ` : ""}

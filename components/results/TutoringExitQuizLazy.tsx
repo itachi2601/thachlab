@@ -17,7 +17,7 @@ const TutoringExitQuizLazyInner = dynamic(() => import("@/components/results/Tut
   ssr: false,
   loading: () => (
     <div role="status" className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-      <p className="rounded-2xl border border-white/10 bg-panel px-5 py-4 text-sm text-slate-300">
+      <p className="rounded-2xl border border-line bg-panel px-5 py-4 text-sm text-ink">
         Đang tải bài tự kiểm tra…
       </p>
     </div>
@@ -29,12 +29,12 @@ export default function TutoringExitQuizLazy(props: ComponentProps<typeof Tutori
     <LazyErrorBoundary
       fallback={
         <div role="alertdialog" className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="max-w-sm rounded-2xl border border-white/10 bg-panel p-5 text-center text-sm text-slate-300">
+          <div className="max-w-sm rounded-2xl border border-line bg-panel p-5 text-center text-sm text-ink">
             <p>Không tải được bài tự kiểm tra (có thể do mạng chập chờn). Thử tải lại trang.</p>
             <button
               type="button"
               onClick={props.onClose}
-              className="mt-3 rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+              className="mt-3 rounded-full border border-line px-4 py-1.5 text-xs font-semibold text-ink hover:border-line-strong"
             >
               Đóng
             </button>

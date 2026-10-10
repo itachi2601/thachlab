@@ -79,16 +79,16 @@ export default function SampleQuestionsGrid({
 
   if (!session)
     return (
-      <p className="text-sm text-slate-400">
-        <Link href="/dang-nhap" className="font-semibold text-slate-200 underline underline-offset-2">
+      <p className="text-sm text-muted">
+        <Link href="/dang-nhap" className="font-semibold text-ink underline underline-offset-2">
           Đăng nhập
         </Link>{" "}
         để làm bài tập mẫu tự chấm.
       </p>
     );
-  if (loadState === "loading") return <p className="text-sm text-slate-400">Đang tải bài tập mẫu…</p>;
+  if (loadState === "loading") return <p className="text-sm text-muted">Đang tải bài tập mẫu…</p>;
   if (loadState === "error")
-    return <p className="text-sm text-slate-400">Không tải được bài tập mẫu. Thử tải lại trang.</p>;
+    return <p className="text-sm text-muted">Không tải được bài tập mẫu. Thử tải lại trang.</p>;
   if (picks.length === 0) return null;
 
   return (

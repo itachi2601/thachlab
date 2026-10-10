@@ -49,6 +49,7 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 - **M4 Không truyền nghĩa chỉ bằng màu**: đúng/sai, đã học/chưa học phải kèm icon/chữ. ~8% nam sinh mù màu đỏ–lục. *Birch 2012; WCAG 1.4.1.*
 - **M5 Ảnh nền trắng trên nền tối phải được xử lý**: hoặc bọc ảnh trong khung sáng có đệm 12–16px (khung sáng cố ý, đều nhau), hoặc dùng SVG nền trong suốt nét theo theme. Ô trắng chói giữa nền đen tạo loá cục bộ và làm đồng tử co giãn liên tục khi cuộn → mỏi mắt. (Lý do thị giác: thích nghi độ sáng cục bộ, loá tương phản; áp dụng cả cho ảnh scan đề.)
 - **M6 Quầng sáng/gradient/blur trang trí chỉ ở trang giới thiệu**, không ở vùng đọc/làm bài (N1, G3).
+- **M7 Nền sáng là mặc định toàn site** (từ 11/10/2026): chế độ tối chỉ bật khi học sinh tự chọn, không theo `prefers-color-scheme`. Bảng màu, số đo tương phản và bảng quy đổi idiom `bg-white/5`/`bg-[#0B1020]` → token nằm ở [`docs/MAU-NEN-SANG.md`](MAU-NEN-SANG.md); kiểm bằng `npm run check:a11y` và xem bằng `/dev/giao-dien`. Một màu nhấn duy nhất + ba màu trạng thái (M3), không thêm sắc độ bão hoà thứ ba cho trang trí.
 
 ## 4. Bố cục & chú ý (B)
 
@@ -121,6 +122,10 @@ Sweller 1988; Sweller & Cooper 1985; Chandler & Sweller 1992; Kalyuga 2003 · Ma
 
 Đo được: 27 nút + 46 liên kết trên trang; vùng nội dung có **15 cỡ chữ khác nhau**; nội dung học bắt đầu ở
 **471px/812px (58%)** trên điện thoại; cột đọc desktop 626px ≈ 84 ký tự/dòng; thân bài 16px/26px; nền `#05070B`.
+
+> **Cập nhật 11/10/2026:** nền mặc định nay là **nền sáng `#f5f7fa`** (M7, xem `docs/MAU-NEN-SANG.md`);
+> các số đo về bố cục/cỡ chữ trong phụ lục này vẫn còn nguyên giá trị, riêng kết luận "nền tối" thì thay bằng
+> "theme tối tuỳ chọn".
 
 | Ưu tiên | Vấn đề | Vi phạm | Hướng sửa |
 |---|---|---|---|

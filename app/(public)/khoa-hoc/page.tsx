@@ -33,37 +33,37 @@ function CourseCard({ course }: { course: ThptCourse }) {
   const full = course.capacity !== null && course.taken >= course.capacity;
   const started = course.starts_at ? new Date(course.starts_at) < new Date(new Date().toDateString()) : false;
   return (
-    <article className="flex flex-col rounded-3xl border border-white/10 bg-panel p-6">
+    <article className="flex flex-col rounded-3xl border border-line bg-panel p-6">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {course.className}</p>
-          <h2 className="mt-1 font-display text-xl font-bold text-white">{course.name}</h2>
+          <p className="text-xs font-bold uppercase tracking-[.14em] text-primary">Khối {course.className}</p>
+          <h2 className="mt-1 font-display text-xl font-bold text-ink">{course.name}</h2>
           <p className="text-xs text-slate-500">Năm học {course.school_year}</p>
         </div>
         <span
           className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${
-            full ? "bg-red-500/15 text-red-300" : "bg-emerald-500/15 text-emerald-300"
+            full ? "bg-red-500/15 text-danger" : "bg-emerald-500/15 text-ok"
           }`}
         >
           {seatsLabel(course)}
         </span>
       </div>
 
-      {course.description && <p className="mt-3 text-sm text-slate-300">{course.description}</p>}
+      {course.description && <p className="mt-3 text-sm text-ink">{course.description}</p>}
 
-      <ul className="mt-4 space-y-1.5 text-sm text-slate-300">
+      <ul className="mt-4 space-y-1.5 text-sm text-ink">
         {course.schedules.length === 0 ? (
           <li className="text-slate-500">Lịch học sẽ thông báo sau.</li>
         ) : (
           course.schedules.map((s) => (
             <li key={`${s.weekday}-${s.start_time}`} className="flex items-center gap-2">
-              <CalendarDays size={15} className="shrink-0 text-blue-300" />
-              <span className="font-semibold text-white">{WEEKDAY_LABEL[s.weekday]}</span>
+              <CalendarDays size={15} className="shrink-0 text-primary" />
+              <span className="font-semibold text-ink">{WEEKDAY_LABEL[s.weekday]}</span>
               <span>
                 {s.start_time}–{s.end_time}
               </span>
               {s.location && (
-                <span className="flex items-center gap-1 text-slate-400">
+                <span className="flex items-center gap-1 text-muted">
                   <MapPin size={13} /> {s.location}
                 </span>
               )}
@@ -72,7 +72,7 @@ function CourseCard({ course }: { course: ThptCourse }) {
         )}
       </ul>
 
-      <div className="mt-4 space-y-1 text-xs text-slate-400">
+      <div className="mt-4 space-y-1 text-xs text-muted">
         {course.starts_at && (
           <p>
             {started ? "Đã khai giảng" : "Khai giảng"} {formatDate(course.starts_at)}
@@ -87,7 +87,7 @@ function CourseCard({ course }: { course: ThptCourse }) {
       </div>
 
       {started && !full && (
-        <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] px-3 py-2 text-xs text-amber-100/90">
+        <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] px-3 py-2 text-xs text-warn">
           Lớp đã học được một phần. Đăng ký lúc này sẽ được xếp buổi phụ đạo bù bài trước khi vào lớp chính thức.
         </p>
       )}
@@ -97,7 +97,7 @@ function CourseCard({ course }: { course: ThptCourse }) {
         href={full ? "#" : `/khoa-hoc/dang-ky/?id=${course.id}`}
         aria-disabled={full}
         className={`mt-2 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold ${
-          full ? "pointer-events-none bg-white/5 text-slate-500" : "bg-primary text-white hover:bg-primary-dark"
+          full ? "pointer-events-none bg-surface-2 text-slate-500" : "bg-primary text-white hover:bg-primary-dark"
         }`}
       >
         <Users size={16} /> {full ? "Đã đủ chỗ" : "Đăng ký học"}
@@ -121,26 +121,26 @@ function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[]
   const href = `/khoa-hoc/dang-ky/?${slots.map((slot) => `id=${choice[slot]}`).join("&")}`;
   const slotWord = slots.map((s) => `một buổi ${s}`).join(" và ");
   return (
-    <article className="flex flex-col rounded-3xl border border-white/10 bg-panel p-6 md:col-span-2">
+    <article className="flex flex-col rounded-3xl border border-line bg-panel p-6 md:col-span-2">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {first.className}</p>
-          <h2 className="mt-1 font-display text-xl font-bold text-white">{pairKey}</h2>
+          <p className="text-xs font-bold uppercase tracking-[.14em] text-primary">Khối {first.className}</p>
+          <h2 className="mt-1 font-display text-xl font-bold text-ink">{pairKey}</h2>
           <p className="text-xs text-slate-500">Năm học {first.school_year}</p>
         </div>
-        <span className="shrink-0 rounded-full bg-blue-500/15 px-3 py-1 text-xs font-bold text-blue-200">
+        <span className="shrink-0 rounded-full bg-blue-500/15 px-3 py-1 text-xs font-bold text-primary">
           {slots.length} buổi/tuần
         </span>
       </div>
       {/* Không in description của từng khoá: đó là lời dặn cho từng buổi của luồng cũ, thẻ gộp đã nói đủ. */}
-      <p className="mt-3 text-sm text-slate-300">
+      <p className="mt-3 text-sm text-ink">
         Mỗi tuần học {slots.length} buổi: chọn {slotWord}.
       </p>
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {slots.map((slot) => (
-          <fieldset key={slot} className="rounded-2xl border border-white/10 p-4">
-            <legend className="px-1 text-xs font-bold uppercase tracking-[.14em] text-blue-300">
+          <fieldset key={slot} className="rounded-2xl border border-line p-4">
+            <legend className="px-1 text-xs font-bold uppercase tracking-[.14em] text-primary">
               {pairSlotLabel(slot)} — chọn 1
             </legend>
             <ul className="mt-1 space-y-2">
@@ -153,7 +153,7 @@ function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[]
                     <li key={c.id}>
                       <label
                         className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 text-sm ${
-                          checked ? "border-primary bg-primary/10" : "border-white/10 hover:bg-white/[.03]"
+                          checked ? "border-primary bg-primary/10" : "border-line-strong hover:bg-surface-2"
                         } ${full ? "cursor-not-allowed opacity-50" : ""}`}
                       >
                         <input
@@ -168,15 +168,15 @@ function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[]
                         <span className="flex-1">
                           {c.schedules.map((s) => (
                             <span key={`${s.weekday}-${s.start_time}`} className="block">
-                              <span className="font-semibold text-white">{WEEKDAY_LABEL[s.weekday]}</span>{" "}
-                              <span className="text-slate-300">
+                              <span className="font-semibold text-ink">{WEEKDAY_LABEL[s.weekday]}</span>{" "}
+                              <span className="text-ink">
                                 {s.start_time}–{s.end_time}
                               </span>
-                              {s.location && <span className="text-slate-400"> · {s.location}</span>}
+                              {s.location && <span className="text-muted"> · {s.location}</span>}
                             </span>
                           ))}
                         </span>
-                        <span className={`text-xs font-semibold ${full ? "text-red-300" : "text-emerald-300"}`}>
+                        <span className={`text-xs font-semibold ${full ? "text-danger" : "text-ok"}`}>
                           {seatsLabel(c)}
                         </span>
                       </label>
@@ -188,7 +188,7 @@ function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[]
         ))}
       </div>
 
-      <div className="mt-4 space-y-1 text-xs text-slate-400">
+      <div className="mt-4 space-y-1 text-xs text-muted">
         {first.starts_at && <p>Khai giảng {formatDate(first.starts_at)}</p>}
         {first.fee_note && (
           <p className="flex items-center gap-1.5">
@@ -199,13 +199,13 @@ function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[]
 
       <div className="mt-5 flex-1" />
       {!complete && !allFull && (
-        <p className="text-xs text-slate-400">Chọn đủ {slotWord} để đăng ký.</p>
+        <p className="text-xs text-muted">Chọn đủ {slotWord} để đăng ký.</p>
       )}
       <Link
         href={complete && !allFull ? href : "#"}
         aria-disabled={!complete || allFull}
         className={`mt-2 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold ${
-          complete && !allFull ? "bg-primary text-white hover:bg-primary-dark" : "pointer-events-none bg-white/5 text-slate-500"
+          complete && !allFull ? "bg-primary text-white hover:bg-primary-dark" : "pointer-events-none bg-surface-2 text-slate-500"
         }`}
       >
         <Users size={16} /> {allFull ? "Đã đủ chỗ" : "Đăng ký học"}
@@ -243,29 +243,29 @@ export default function KhoaHocPage() {
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8">
         <header className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[.16em] text-blue-300">Đăng ký học</p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-white">Lớp Vật lí đang mở</h1>
-          <p className="mt-3 text-slate-400">
+          <p className="text-xs font-bold uppercase tracking-[.16em] text-primary">Đăng ký học</p>
+          <h1 className="mt-2 font-display text-3xl font-bold text-ink">Lớp Vật lí đang mở</h1>
+          <p className="mt-3 text-muted">
             Chọn lớp đúng khối và lịch học phù hợp. Phụ huynh có thể đăng ký cho con; học sinh đã có tài khoản tự đăng
             ký. Giáo viên duyệt xong là vào lớp, học phí đóng tại trung tâm.
           </p>
         </header>
 
         {!supabaseConfigured ? (
-          <p className="mt-10 text-slate-400">Hệ thống đang được cấu hình.</p>
+          <p className="mt-10 text-muted">Hệ thống đang được cấu hình.</p>
         ) : courses === null ? (
-          <p className="mt-10 text-slate-400">Đang tải…</p>
+          <p className="mt-10 text-muted">Đang tải…</p>
         ) : error ? (
-          <p className="mt-10 text-red-300">{error}</p>
+          <p className="mt-10 text-danger">{error}</p>
         ) : courses.length === 0 ? (
-          <p className="mt-10 rounded-2xl border border-dashed border-white/10 p-8 text-center text-slate-500">
+          <p className="mt-10 rounded-2xl border border-dashed border-line p-8 text-center text-slate-500">
             Chưa có lớp nào đang mở đăng ký. Quay lại sau hoặc liên hệ trực tiếp.
           </p>
         ) : (
           <div className="mt-10 space-y-10">
             {byClass.map(([className, list]) => (
               <section key={className}>
-                <h2 className="mb-4 font-display text-lg font-bold text-slate-200">Khối {className}</h2>
+                <h2 className="mb-4 font-display text-lg font-bold text-ink">Khối {className}</h2>
                 <div className="grid gap-5 md:grid-cols-2">
                   {groupCoursesByPair(list).map((g) =>
                     g.pairKey ? (

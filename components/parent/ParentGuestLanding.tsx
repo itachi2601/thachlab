@@ -37,28 +37,28 @@ export default function ParentGuestLanding() {
   return (
     <div className="space-y-7">
       <div>
-        <h1 className="font-display text-2xl font-bold text-white sm:text-3xl">Theo dõi việc học của con</h1>
-        <p className="parent-copy mt-3 text-slate-300">
+        <h1 className="font-display text-2xl font-bold text-ink sm:text-3xl">Theo dõi việc học của con</h1>
+        <p className="parent-copy mt-3 text-ink">
           Đây là trang riêng cho phụ huynh. Phụ huynh xem được con đang học tới đâu, mạnh yếu phần nào —
           không cần mượn tài khoản của con và không phải nhắn hỏi thầy mỗi tuần.
         </p>
       </div>
 
       <section id="phu-huynh-thay-gi" className="scroll-mt-24">
-        <h2 className="font-display text-lg font-bold text-white">Phụ huynh sẽ thấy gì</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Phụ huynh sẽ thấy gì</h2>
         <ul className="mt-3 grid gap-4 sm:grid-cols-3">
           {SEES.map(({ icon: Icon, title, desc }) => (
-            <li key={title} className="rounded-2xl border border-white/10 p-4">
-              <Icon size={20} className="text-cyan-300" aria-hidden />
-              <h3 className="mt-2 font-display font-semibold text-white">{title}</h3>
-              <p className="mt-1 text-slate-400">{desc}</p>
+            <li key={title} className="rounded-2xl border border-line p-4">
+              <Icon size={20} className="text-primary" aria-hidden />
+              <h3 className="mt-2 font-display font-semibold text-ink">{title}</h3>
+              <p className="mt-1 text-muted">{desc}</p>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-white/[.02] p-5 sm:p-6">
-        <h2 className="font-display text-lg font-bold text-white">Lấy quyền xem: 3 bước</h2>
+      <section className="rounded-2xl border border-line bg-surface-2 p-5 sm:p-6">
+        <h2 className="font-display text-lg font-bold text-ink">Lấy quyền xem: 3 bước</h2>
         <ol className="mt-4 space-y-4">
           {[
             CONTACT.zalo ? (
@@ -72,7 +72,7 @@ export default function ParentGuestLanding() {
             ),
             <>
               Thầy gửi lại một <b>link mời</b> dạng{" "}
-              <code className="rounded bg-white/[.06] px-1.5 py-0.5 text-[.95em] text-slate-200">
+              <code className="rounded bg-surface-2 px-1.5 py-0.5 text-[.95em] text-ink">
                 thachlab.id.vn/loi-moi?ma=PH…
               </code>
             </>,
@@ -85,7 +85,7 @@ export default function ParentGuestLanding() {
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary font-display font-bold text-white">
                 {i + 1}
               </span>
-              <span className="text-slate-300">{step}</span>
+              <span className="text-ink">{step}</span>
             </li>
           ))}
         </ol>
@@ -106,19 +106,19 @@ export default function ParentGuestLanding() {
           {CONTACT.phone && (
             <a
               href={`tel:${CONTACT.phone}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-base font-semibold text-slate-200 hover:border-white/30"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-5 py-3 text-base font-semibold text-ink hover:border-line-strong"
             >
               <Phone size={18} /> Gọi {phone}
             </a>
           )}
           <Link
             href="/dang-nhap?next=/phu-huynh"
-            className="inline-flex min-h-12 items-center font-semibold text-cyan-300 underline-offset-2 hover:underline"
+            className="inline-flex min-h-12 items-center font-semibold text-primary underline-offset-2 hover:underline"
           >
             Đã có tài khoản? Đăng nhập
           </Link>
         </div>
-        <p className="mt-3 text-slate-400">
+        <p className="mt-3 text-muted">
           Tài khoản phụ huynh chỉ để xem: không sửa được điểm, không thấy điểm của bạn khác, không thấy
           tin nhắn riêng giữa thầy và con.
         </p>
@@ -128,7 +128,7 @@ export default function ParentGuestLanding() {
       <ScrollToHash />
       {PARENT_SHOTS.length > 0 && (
         <section id="ket-qua" className="scroll-mt-24">
-          <h2 className="font-display text-lg font-bold text-white">Kết quả học sinh của thầy</h2>
+          <h2 className="font-display text-lg font-bold text-ink">Kết quả học sinh của thầy</h2>
           <div className={`mt-3 grid gap-4 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
             {PARENT_SHOTS.map((shot) => (
               <figure key={shot.src}>
@@ -139,20 +139,20 @@ export default function ParentGuestLanding() {
                   height={shot.height}
                   sizes="(min-width: 640px) 640px, 92vw"
                   loading="lazy"
-                  className="h-auto w-full rounded-xl border border-white/10 bg-white"
+                  className="h-auto w-full rounded-xl border border-line bg-panel"
                 />
-                <figcaption className="mt-2 text-slate-400">{shot.alt}</figcaption>
+                <figcaption className="mt-2 text-muted">{shot.alt}</figcaption>
               </figure>
             ))}
           </div>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-muted">
             Ảnh thật, không phải ảnh minh hoạ. Điểm của con chỉ hiện trong tài khoản của phụ huynh và
             tài khoản của con — không công khai cho người khác.
           </p>
         </section>
       )}
 
-      <section id="thay-dung-lop" className="flex scroll-mt-24 flex-col gap-4 rounded-2xl border border-white/10 p-5 sm:flex-row sm:items-center">
+      <section id="thay-dung-lop" className="flex scroll-mt-24 flex-col gap-4 rounded-2xl border border-line p-5 sm:flex-row sm:items-center">
         {CONTACT.teacherPhoto && (
           <Image
             src={CONTACT.teacherPhoto}
@@ -161,12 +161,12 @@ export default function ParentGuestLanding() {
             height={90}
             sizes="120px"
             loading="lazy"
-            className="h-[90px] w-[120px] rounded-xl border border-white/10 object-cover"
+            className="h-[90px] w-[120px] rounded-xl border border-line object-cover"
           />
         )}
         <div>
-          <h2 className="font-display text-lg font-bold text-white">Thầy đứng lớp</h2>
-          <p className="mt-1 text-slate-300">
+          <h2 className="font-display text-lg font-bold text-ink">Thầy đứng lớp</h2>
+          <p className="mt-1 text-ink">
             Thầy Thạch — hơn {CONTACT.years} năm luyện Vật lý THPT và KHTN 9, thạc sĩ Đại học Bách khoa
             TP.HCM, á khoa đầu vào Đại học Sư phạm Kỹ thuật TP.HCM.
             {CONTACT.school ? ` Nghề chính: giảng viên ngành Cơ khí, ${CONTACT.school}.` : ""}

@@ -22,7 +22,7 @@ export default function Home() {
       <Navbar />
       <main>
         <PhysicsSimulationHero />
-        <div className="bg-[#05070B] px-6 pt-4 lg:px-12">
+        <div className="bg-bg px-6 pt-4 lg:px-12">
           <div className="mx-auto max-w-6xl">
             <PwaInstallCard guideFallback />
           </div>

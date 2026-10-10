@@ -51,12 +51,12 @@ export default function PracticeRunningView({
   const answeredCount = questions.filter((item, i) => isAnswered(item, responses[i])).length;
 
   return (
-    <div className="space-y-4 rounded-2xl border border-white/10 bg-panel p-5">
+    <div className="space-y-4 rounded-2xl border border-line bg-panel p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="text-sm text-slate-400">
-          Câu <span className="font-semibold text-white">{cur + 1}</span>/{questions.length} ·
+        <span className="text-sm text-muted">
+          Câu <span className="font-semibold text-ink">{cur + 1}</span>/{questions.length} ·
           đã làm{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-ink">
             {answeredCount}/{questions.length}
           </span>
         </span>
@@ -88,12 +88,12 @@ export default function PracticeRunningView({
               onClick={() => onSetCur(i)}
               title={`Câu ${i + 1}${flagged ? " · đã đánh dấu" : ""}`}
               className={`h-9 w-9 rounded-lg border text-xs font-bold transition-colors ${
-                i === cur ? "ring-2 ring-white/70" : ""
+                i === cur ? "ring-2 ring-primary" : ""
               }`}
               style={{
-                borderColor: flagged ? "#FBBF24" : done ? color : "rgba(255,255,255,0.12)",
+                borderColor: flagged ? "var(--color-warn)" : done ? color : "var(--color-line-strong)",
                 backgroundColor: done ? `${color}33` : "transparent",
-                color: done ? "#FFFFFF" : flagged ? "#FBBF24" : "#94A3B8",
+                color: done ? "var(--color-ink)" : flagged ? "var(--color-warn)" : "var(--color-muted)",
               }}
             >
               {i + 1}
@@ -109,7 +109,7 @@ export default function PracticeRunningView({
           type="button"
           disabled={cur === 0}
           onClick={() => onSetCur((i) => Math.max(0, i - 1))}
-          className="rounded-xl border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-40"
+          className="rounded-xl border border-line px-4 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-40"
         >
           ← Câu trước
         </button>
@@ -119,7 +119,7 @@ export default function PracticeRunningView({
           className={`inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-sm font-semibold ${
             flags.has(cur)
               ? "border-amber-400/60 bg-amber-400/10 text-amber-300"
-              : "border-white/15 text-slate-300 hover:border-white/30"
+              : "border-line text-ink hover:border-line-strong"
           }`}
         >
           <Flag size={14} />

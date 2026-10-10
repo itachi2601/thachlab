@@ -120,10 +120,10 @@ export default function PracticeStepView({
   const pct = planned > 0 ? Math.min(100, Math.round((doneFirst / planned) * 100)) : 0;
 
   return (
-    <div className="mx-auto max-w-xl space-y-4 rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
+    <div className="mx-auto max-w-xl space-y-4 rounded-2xl border border-line bg-panel p-4 sm:p-5">
       <div>
         <div className="flex items-center justify-between gap-2">
-          <p className="text-sm font-semibold text-slate-200">
+          <p className="text-sm font-semibold text-ink">
             {slot.retry ? (
               <>
                 <RotateCcw size={14} className="mr-1 inline align-[-2px]" aria-hidden />
@@ -136,18 +136,18 @@ export default function PracticeStepView({
             )}
           </p>
           <div className="flex items-center gap-1">
-            {streak >= 2 && <span className="text-sm text-slate-300">Đúng liên tiếp {streak}</span>}
+            {streak >= 2 && <span className="text-sm text-ink">Đúng liên tiếp {streak}</span>}
             <button
               type="button"
               onClick={finishEarly}
-              className="min-h-11 rounded-lg px-3 text-sm text-slate-400 hover:text-slate-200"
+              className="min-h-11 rounded-lg px-3 text-sm text-muted hover:text-ink"
             >
               Kết thúc
             </button>
           </div>
         </div>
         <div
-          className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/10"
+          className="mt-1 h-1.5 overflow-hidden rounded-full bg-surface-2"
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={planned}
@@ -159,7 +159,7 @@ export default function PracticeStepView({
       </div>
 
       {slot.retry && stage === "answering" && (
-        <p className="text-sm text-slate-300">Câu này em đã làm sai ở trên. Thử lại — lần này không tính điểm.</p>
+        <p className="text-sm text-ink">Câu này em đã làm sai ở trên. Thử lại — lần này không tính điểm.</p>
       )}
 
       <QuestionCard
@@ -172,10 +172,10 @@ export default function PracticeStepView({
       />
 
       {stage === "feedback" && hints.length > 0 && (
-        <ul className="space-y-2 border-l-2 border-amber-400/60 pl-3 text-base leading-relaxed text-slate-200">
+        <ul className="space-y-2 border-l-2 border-amber-400/60 pl-3 text-base leading-relaxed text-ink">
           {hints.map((h) => (
             <li key={h.label}>
-              <b className="text-white">Vì sao em chọn {h.label} chưa đúng:</b> <Html html={h.note} />
+              <b className="text-ink">Vì sao em chọn {h.label} chưa đúng:</b> <Html html={h.note} />
             </li>
           ))}
         </ul>
@@ -183,7 +183,7 @@ export default function PracticeStepView({
 
       {/* Thanh chốt dán đáy (D3, B6): nút Kiểm tra/Tiếp luôn trong tầm ngón cái dù câu dài; kết quả đúng/sai (M4, L1) hiện ngay trên nút, không phải cuộn. */}
       <div
-        className="sticky z-30 -mx-4 -mb-4 flex flex-col gap-2 rounded-b-2xl border-t border-white/10 bg-panel/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-5 sm:-mb-5 sm:px-5"
+        className="sticky z-30 -mx-4 -mb-4 flex flex-col gap-2 rounded-b-2xl border-t border-line bg-panel/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-5 sm:-mb-5 sm:px-5"
         style={{ bottom: "var(--lesson-bottombar-h, 0px)" }}
       >
         {stage === "feedback" && (
@@ -220,7 +220,7 @@ export default function PracticeStepView({
               <button
                 type="button"
                 onClick={addSimilar}
-                className="min-h-11 w-full rounded-full border border-white/20 px-5 text-base font-semibold text-slate-100 hover:border-white/40"
+                className="min-h-11 w-full rounded-full border border-line-strong px-5 text-base font-semibold text-ink hover:border-line-strong"
               >
                 Làm câu tương tự
               </button>

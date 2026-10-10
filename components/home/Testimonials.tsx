@@ -78,7 +78,7 @@ export default function Testimonials() {
     <section className="border-t border-line py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="max-w-xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Học trò nói gì</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">Học trò nói gì</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Lời nhắn từ học trò
           </h2>
@@ -91,7 +91,7 @@ export default function Testimonials() {
         <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {visible.map((m, i) => (
             <Reveal key={m.src} delay={i < INITIAL_COUNT ? (i % 3) * 0.06 : 0} className="mb-5 break-inside-avoid">
-              <figure className="overflow-hidden rounded-xl border border-line transition-colors hover:border-cyan-400/40">
+              <figure className="overflow-hidden rounded-xl border border-line transition-colors hover:border-primary/40">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={m.src} alt={m.alt} loading="lazy" decoding="async" className="w-full" />
               </figure>
@@ -104,7 +104,7 @@ export default function Testimonials() {
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-white/5"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-surface-2"
           >
             {expanded ? "Thu gọn" : `Xem thêm ${hidden} lời nhắn`}
             <ChevronDown size={16} className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -115,7 +115,7 @@ export default function Testimonials() {
               href="https://www.facebook.com/ngodieuthach"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-cyan-300 hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               &ldquo;Những lời yêu thương từ học trò&rdquo;
             </a>{" "}

@@ -109,7 +109,7 @@ export default function ExamDoneView({
         detailAnchor="xem-lai-bai-lam"
       />
       {hasEssay && (
-        <p className="mt-3 text-center text-xs text-violet-300">
+        <p className="mt-3 text-center text-xs text-warn">
           Đề có {exam.questions.filter((q) => q.type === "essay").length} câu tự luận — thầy/cô chấm xong,
           điểm sẽ được cập nhật.
         </p>
@@ -135,7 +135,7 @@ export default function ExamDoneView({
 
       <h2
         id="xem-lai-bai-lam"
-        className="mt-10 mb-4 scroll-mt-24 font-display text-xl font-semibold text-white"
+        className="mt-10 mb-4 scroll-mt-24 font-display text-xl font-semibold text-ink"
       >
         Xem lại bài làm
       </h2>
@@ -197,7 +197,7 @@ export default function ExamDoneView({
                     </span>
                   )}
                   {formLabel && (
-                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
+                    <span className="rounded-full border border-line px-2.5 py-1 text-muted">
                       {formLabel}
                     </span>
                   )}

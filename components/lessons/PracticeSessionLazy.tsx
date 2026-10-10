@@ -19,14 +19,14 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
  */
 const PracticeSessionLazyInner = dynamic(() => import("@/components/lessons/PracticeSession"), {
   ssr: false,
-  loading: () => <p className="min-h-[12rem] text-sm text-slate-400">Đang tải phần luyện tập…</p>,
+  loading: () => <p className="min-h-[12rem] text-sm text-muted">Đang tải phần luyện tập…</p>,
 });
 
 function PracticeSessionLazy(props: ComponentProps<typeof PracticeSessionLazyInner>) {
   return (
     <LazyErrorBoundary
       fallback={
-        <p className="min-h-[12rem] text-sm text-slate-400">
+        <p className="min-h-[12rem] text-sm text-muted">
           Không tải được phần luyện tập. Thử tải lại trang.
         </p>
       }

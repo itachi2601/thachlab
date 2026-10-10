@@ -13,7 +13,7 @@ import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
 // chỉ còn khung + tab mở sẵn. Khung chờ giữ chiều cao tương đương một tab.
-const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />;
+const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-surface-2" aria-hidden />;
 const TabError = () => <LazyPanelFallback />;
 
 // Mỗi tab bọc LazyErrorBoundary: lỗi render bên trong 1 tab (props bất ngờ, bug
@@ -153,33 +153,32 @@ export default function TeacherCourseDashboard() {
   }, [selectedCourseId, studentsNonce, roadmap]);
 
   return <div className="teacher-dashboard space-y-6">
-    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
-      <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-orange-500/10 blur-3xl" />
+    <section className="relative overflow-hidden rounded-3xl border border-line bg-panel p-6 sm:p-8">
       <div className="relative">
         <p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Dashboard giáo viên</p>
-        <h2 className="mt-2 font-display text-2xl font-bold text-white">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
-        <p className="mt-2 text-sm text-slate-400">{selectedCourse ? `Đang xem ${selectedCourse.class_label || selectedCourse.name} · ${selectedCourse.school_year} · ${students.length} học sinh` : "Chọn môn học và lớp bên dưới để bắt đầu theo dõi học sinh."}</p>
+        <h2 className="mt-2 font-display text-2xl font-bold text-ink">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
+        <p className="mt-2 text-sm text-muted">{selectedCourse ? `Đang xem ${selectedCourse.class_label || selectedCourse.name} · ${selectedCourse.school_year} · ${students.length} học sinh` : "Chọn môn học và lớp bên dưới để bắt đầu theo dõi học sinh."}</p>
         {courseError&&<p className="mt-2 text-xs text-red-300">{courseError}</p>}
       </div>
     </section>
 
-    <section className="grid gap-3 rounded-2xl border border-white/10 bg-panel p-4 sm:grid-cols-2 sm:p-5">
+    <section className="grid gap-3 rounded-2xl border border-line bg-panel p-4 sm:grid-cols-2 sm:p-5">
       <label className="block">
-        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><GraduationCap size={14}/> Môn học</span>
-        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white">
+        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><GraduationCap size={14}/> Môn học</span>
+        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
           {availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}
         </select>
       </label>
       <label className="block">
-        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courses.length} lớp`}</span>
-        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white">
+        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courses.length} lớp`}</span>
+        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
           <option value="" disabled>{courses.length ? "Chọn lớp đang dạy" : "Chưa có lớp nào"}</option>
           {courses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
         </select>
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&(isHomeroom
       ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
@@ -192,7 +191,7 @@ export default function TeacherCourseDashboard() {
     {activeTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
 
     {activeTab==="grades"&&selectedCourseId&&!isHomeroom&&(subject.hasCurriculum?<div className="space-y-4">
-      <div className="flex w-fit rounded-xl border border-white/10 bg-black/20 p-1">{([["process","Quá trình"],["final","Tổng kết học phần"]] as const).map(([id,label])=><button key={id} onClick={()=>setGradeView(id)} className={`rounded-lg px-4 py-2 text-sm font-bold transition ${gradeView===id?"bg-blue-600 text-white":"text-slate-400 hover:text-white"}`}>{label}</button>)}</div>
+      <div className="flex w-fit rounded-xl border border-line bg-black/20 p-1">{([["process","Quá trình"],["final","Tổng kết học phần"]] as const).map(([id,label])=><button key={id} onClick={()=>setGradeView(id)} className={`rounded-lg px-4 py-2 text-sm font-bold transition ${gradeView===id?"bg-blue-600 text-white":"text-muted hover:text-primary"}`}>{label}</button>)}</div>
       {gradeView==="process"
         ? <TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={openProfile}/>
         : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
@@ -202,15 +201,15 @@ export default function TeacherCourseDashboard() {
 
     {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
       <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>
-      <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-white/10 bg-panel-deep p-5 shadow-2xl">
-        <div className="mb-4 flex justify-end"><button onClick={()=>setProfileOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"><X size={14}/>Đóng</button></div>
+      <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-line bg-panel-deep p-5 shadow-2xl">
+        <div className="mb-4 flex justify-end"><button onClick={()=>setProfileOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-xs font-bold text-ink hover:bg-surface-2"><X size={14}/>Đóng</button></div>
         <TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={openProfile} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0);setProfileOpen(false)}}/>
       </aside>
     </>}
 
-    {liveExamOpen&&<div className="fixed inset-0 z-[60] overflow-y-auto bg-[#070b16] p-4 sm:p-6">
+    {liveExamOpen&&<div className="fixed inset-0 z-[60] overflow-y-auto bg-bg p-4 sm:p-6">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-4 flex justify-end"><button onClick={()=>setLiveExamOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"><X size={14}/>Đóng phòng thi</button></div>
+        <div className="mb-4 flex justify-end"><button onClick={()=>setLiveExamOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-xs font-bold text-ink hover:bg-surface-2"><X size={14}/>Đóng phòng thi</button></div>
         <CncMillingLiveMonitor/>
       </div>
     </div>}
@@ -222,17 +221,17 @@ export default function TeacherCourseDashboard() {
 function NoCourseYet({ subjectLabel, hasCourses, isAdmin, subjectCode, onCourseCreated }: {
   subjectLabel: string; hasCourses: boolean; isAdmin: boolean; subjectCode: string; onCourseCreated: () => void;
 }) {
-  return <section className="rounded-2xl border border-dashed border-white/10 bg-panel p-6">
-    <p className="text-sm font-bold text-white">{hasCourses ? `Chọn lớp môn ${subjectLabel} ở bộ chọn phía trên để nhập danh sách.` : `Môn ${subjectLabel} chưa có lớp nào.`}</p>
+  return <section className="rounded-2xl border border-dashed border-line bg-panel p-6">
+    <p className="text-sm font-bold text-ink">{hasCourses ? `Chọn lớp môn ${subjectLabel} ở bộ chọn phía trên để nhập danh sách.` : `Môn ${subjectLabel} chưa có lớp nào.`}</p>
     <p className="mt-1 text-sm text-slate-500">{isAdmin ? "Tạo lớp học phần mới ngay bên dưới, sau đó chọn lớp vừa tạo ở bộ chọn phía trên để nhập danh sách từ file Excel." : "Nhờ quản trị viên mở lớp học phần cho môn này trước khi nhập danh sách."}</p>
     {isAdmin && <CreateCourseForm subjectCode={subjectCode} defaultOpen onCreated={onCourseCreated} />}
   </section>;
 }
 
 function CurriculumPending({ subjectLabel }: { subjectLabel: string }) {
-  return <div className="rounded-2xl border border-dashed border-white/10 bg-panel p-10 text-center">
+  return <div className="rounded-2xl border border-dashed border-line bg-panel p-10 text-center">
     <Construction size={28} className="mx-auto text-amber-300" />
-    <p className="mt-3 text-sm font-bold text-white">Nội dung cho môn {subjectLabel} đang được xây dựng</p>
+    <p className="mt-3 text-sm font-bold text-ink">Nội dung cho môn {subjectLabel} đang được xây dựng</p>
     <p className="mt-1 text-sm text-slate-500">Tab này cần dữ liệu chương trình học (bài giảng, năng lực, thang điểm) riêng cho môn. Trong lúc chờ, hãy dùng tab Điểm danh để theo dõi lớp.</p>
   </div>;
 }

@@ -50,16 +50,16 @@ import TaskRpLine from "@/components/rank/TaskRpLine";
 // /lop-hoc/bai (đợt tối ưu tốc độ lần 4, perf4/RESULT.md). Cả 2 đều kéo theo QuestionCard.
 const PracticeRunningViewLazy = dynamic(() => import("@/components/lessons/PracticeRunningView"), {
   ssr: false,
-  loading: () => <p className="text-sm text-slate-400">Đang tải câu hỏi…</p>,
+  loading: () => <p className="text-sm text-muted">Đang tải câu hỏi…</p>,
 });
 // Chế độ "Từng câu": cũng chỉ hiện sau khi bấm bắt đầu → chunk riêng + LazyErrorBoundary như 2 màn trên.
 const PracticeStepViewLazy = dynamic(() => import("@/components/lessons/PracticeStepView"), {
   ssr: false,
-  loading: () => <p className="text-sm text-slate-400">Đang tải câu hỏi…</p>,
+  loading: () => <p className="text-sm text-muted">Đang tải câu hỏi…</p>,
 });
 const PracticeDoneViewLazy = dynamic(() => import("@/components/lessons/PracticeDoneView"), {
   ssr: false,
-  loading: () => <p className="text-sm text-slate-400">Đang tính điểm…</p>,
+  loading: () => <p className="text-sm text-muted">Đang tính điểm…</p>,
 });
 
 // LazyErrorBoundary: chưa nộp bài nên chưa có gì để mất — nếu chunk lỗi (mất mạng, CDN desync
@@ -68,7 +68,7 @@ function PracticeRunningView(props: ComponentProps<typeof PracticeRunningViewLaz
   return (
     <LazyErrorBoundary
       fallback={
-        <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-400">
+        <p className="rounded-2xl border border-line bg-panel p-5 text-sm text-muted">
           Không tải được phần làm bài (có thể do mạng chập chờn). Thử tải lại trang.
         </p>
       }
@@ -82,7 +82,7 @@ function PracticeStepView(props: ComponentProps<typeof PracticeStepViewLazy>) {
   return (
     <LazyErrorBoundary
       fallback={
-        <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-400">
+        <p className="rounded-2xl border border-line bg-panel p-5 text-sm text-muted">
           Không tải được phần làm bài (có thể do mạng chập chờn). Thử tải lại trang.
         </p>
       }
@@ -99,7 +99,7 @@ function PracticeDoneView(props: ComponentProps<typeof PracticeDoneViewLazy>) {
   return (
     <LazyErrorBoundary
       fallback={
-        <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-400">
+        <p className="rounded-2xl border border-line bg-panel p-5 text-sm text-muted">
           Kết quả luyện tập của em đã được lưu, nhưng trang không hiện được phần xem lại (có thể
           do mạng chập chờn). Thử tải lại trang.
         </p>
@@ -389,22 +389,22 @@ export default function PracticeSession({
   // ---------- Màn hình mở phiên ----------
   if (phase === "setup") {
     if (examIds.length === 0 && !(poolExamIds?.length))
-      return <p className="text-sm text-slate-400">Mục này chưa được gắn đề.</p>;
+      return <p className="text-sm text-muted">Mục này chưa được gắn đề.</p>;
     if (!session)
       return (
-        <p className="text-sm text-slate-400">
-          <Link href="/dang-nhap" className="font-semibold text-slate-200 underline underline-offset-2">
+        <p className="text-sm text-muted">
+          <Link href="/dang-nhap" className="font-semibold text-ink underline underline-offset-2">
             Đăng nhập
           </Link>{" "}
           để xem ngân hàng câu hỏi và luyện tập.
         </p>
       );
-    if (bankState === "loading") return <p className="text-sm text-slate-400">Đang tải ngân hàng câu hỏi…</p>;
+    if (bankState === "loading") return <p className="text-sm text-muted">Đang tải ngân hàng câu hỏi…</p>;
     if (bankState === "error")
-      return <p className="text-sm text-slate-400">Không tải được ngân hàng câu hỏi. Thử tải lại trang.</p>;
+      return <p className="text-sm text-muted">Không tải được ngân hàng câu hỏi. Thử tải lại trang.</p>;
     if (bank.length === 0)
       return (
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-muted">
           Đề đã gắn chưa có câu trắc nghiệm/đúng–sai để luyện tập tự động.
         </p>
       );
@@ -417,17 +417,17 @@ export default function PracticeSession({
         : Math.max(1, Math.round((n * averageSeconds(bank.map((p) => p.question))) / 60));
 
     return (
-      <div className="mx-auto max-w-xl space-y-5 rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
+      <div className="mx-auto max-w-xl space-y-5 rounded-2xl border border-line bg-panel p-4 sm:p-5">
         {/* RP nói trước khi làm (thầy chốt 9/10/2026): một dòng, không huy hiệu (L3) — ngay đầu để em biết lượt này có "giá" gì rồi mới chọn. */}
-        <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5">
-          <p className="text-sm font-semibold text-slate-400">Điểm xếp hạng (RP)</p>
+        <div className="rounded-xl border border-line bg-surface-2 px-3 py-2.5">
+          <p className="text-sm font-semibold text-muted">Điểm xếp hạng (RP)</p>
           <div className="mt-0.5">
             <TaskRpLine kind="practice_item" sourceId={itemId} />
           </div>
         </div>
 
         <fieldset>
-          <legend className="text-base font-bold text-white">1. Em muốn luyện kiểu nào?</legend>
+          <legend className="text-base font-bold text-ink">1. Em muốn luyện kiểu nào?</legend>
           <div role="radiogroup" aria-label="Cách luyện" className="mt-2 grid gap-2 sm:grid-cols-2">
             {(
               [
@@ -442,7 +442,7 @@ export default function PracticeSession({
                 aria-checked={mode === m.id}
                 onClick={() => changeMode(m.id)}
                 className={`flex min-h-14 items-start gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-colors ${
-                  mode === m.id ? "" : "border-white/15 hover:border-slate-400"
+                  mode === m.id ? "" : "border-line hover:border-slate-400"
                 }`}
                 style={mode === m.id ? { borderColor: color, backgroundColor: `${color}33` } : undefined}
               >
@@ -452,14 +452,14 @@ export default function PracticeSession({
                   style={
                     mode === m.id
                       ? { borderColor: color, background: `radial-gradient(${color} 45%, transparent 50%)` }
-                      : { borderColor: "#94A3B8" }
+                      : { borderColor: "var(--color-line-strong)" }
                   }
                 />
                 <span>
-                  <span className="block text-base font-bold text-white">
+                  <span className="block text-base font-bold text-ink">
                     {m.label}
                   </span>
-                  <span className="mt-0.5 block text-sm leading-snug text-slate-400">{m.hint}</span>
+                  <span className="mt-0.5 block text-sm leading-snug text-muted">{m.hint}</span>
                 </span>
               </button>
             ))}
@@ -467,8 +467,8 @@ export default function PracticeSession({
         </fieldset>
 
         <fieldset>
-          <legend className="text-base font-bold text-white">2. Bao nhiêu câu?</legend>
-          <p className="mt-0.5 text-sm text-slate-400">
+          <legend className="text-base font-bold text-ink">2. Bao nhiêu câu?</legend>
+          <p className="mt-0.5 text-sm text-muted">
             Ngân hàng có {bank.length} câu, mỗi lần bốc ngẫu nhiên một khác.
           </p>
           <div role="radiogroup" aria-label="Số câu" className="mt-2 grid grid-cols-3 gap-2">
@@ -480,24 +480,24 @@ export default function PracticeSession({
                 aria-checked={count === c}
                 onClick={() => setCount(c)}
                 className={`min-h-14 rounded-xl border-2 px-2 py-2 text-center transition-colors ${
-                  count === c ? "" : "border-white/15 hover:border-slate-400"
+                  count === c ? "" : "border-line hover:border-slate-400"
                 }`}
                 style={count === c ? { borderColor: color, backgroundColor: `${color}33` } : undefined}
               >
-                <span className="block text-base font-bold text-white">
+                <span className="block text-base font-bold text-ink">
                   {c === bank.length ? `Tất cả ${c}` : c} câu
                 </span>
-                <span className="block text-sm text-slate-400">~{minutesFor(c)} phút</span>
+                <span className="block text-sm text-muted">~{minutesFor(c)} phút</span>
               </button>
             ))}
           </div>
         </fieldset>
 
         {hasLabelledQuestions(bank) && (
-          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-white/10 pt-3 text-sm text-slate-300">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-line pt-3 text-sm text-ink">
             {ladderOn ? (
               <p>
-                Mức của em: <span className="font-bold text-white">{DIFFICULTY_LABELS[level]}</span>
+                Mức của em: <span className="font-bold text-ink">{DIFFICULTY_LABELS[level]}</span>
                 {" "}· đạt {Math.round(LADDER_PASS_RATIO * 100)}% thì lên mức.
               </p>
             ) : (
@@ -506,7 +506,7 @@ export default function PracticeSession({
             <button
               type="button"
               onClick={() => setFree((f) => !f)}
-              className="min-h-11 text-sm font-semibold text-slate-300 underline underline-offset-2 hover:text-white"
+              className="min-h-11 text-sm font-semibold text-ink underline underline-offset-2 hover:text-primary"
             >
               {ladderOn ? "Luyện tự do" : "Luyện theo mức"}
             </button>

@@ -227,13 +227,13 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
 
   const shell =
     variant === "account"
-      ? "rounded-2xl border border-white/10 bg-panel p-4"
-      : "bg-[#05070B] px-6 pb-8 pt-1 lg:px-12";
+      ? "rounded-2xl border border-line bg-panel p-4"
+      : "bg-bg px-6 pb-8 pt-1 lg:px-12";
 
   return (
     <section className={shell} aria-label="Tìm bài học">
       <div className={variant === "account" ? "" : "mx-auto max-w-6xl"}>
-        <h2 className="font-display text-lg font-bold text-white sm:text-xl">Tìm bài học</h2>
+        <h2 className="font-display text-lg font-bold text-ink sm:text-xl">Tìm bài học</h2>
         <form
           className="relative mt-2"
           role="search"
@@ -246,7 +246,7 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
           <label htmlFor="content-search" className="sr-only">
             Tên bài hoặc nội dung trong bài
           </label>
-          <Search size={18} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={18} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
           <input
             id="content-search"
             type="search"
@@ -258,35 +258,35 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
               ensureLoaded();
               setQuery(event.target.value);
             }}
-            className="min-h-11 w-full rounded-xl border border-white/15 bg-white/[0.07] py-2 pl-10 pr-3 text-base text-white outline-none placeholder:text-slate-400 focus:border-cyan-300/70"
+            className="min-h-11 w-full rounded-xl border border-line-strong bg-surface-2 py-2 pl-10 pr-3 text-base text-ink outline-none placeholder:text-muted focus:border-primary"
           />
         </form>
 
-        {ready && !failed && !hits && <p className="mt-2 text-base text-slate-300">Đang tìm…</p>}
+        {ready && !failed && !hits && <p className="mt-2 text-base text-ink">Đang tìm…</p>}
         {ready && failed && (
-          <p className="mt-2 text-base text-slate-300">
+          <p className="mt-2 text-base text-ink">
             {variant === "account"
               ? "Chưa tải được danh sách bài. Em mở Lớp học để xem."
               : "Chưa tải được danh sách bài. Em chọn lớp ở phía trên để xem."}
           </p>
         )}
         {ready && !failed && hits && shown.length === 0 && (
-          <p className="mt-2 text-base text-slate-300">Không thấy bài khớp. Thử từ khoá khác.</p>
+          <p className="mt-2 text-base text-ink">Không thấy bài khớp. Thử từ khoá khác.</p>
         )}
         {shown.length > 0 && (
-          <ul className="mt-2 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10">
+          <ul className="mt-2 divide-y divide-line overflow-hidden rounded-xl border border-line">
             {shown.map(({ hit, at, span }) => {
               const snip = at === -1 ? null : snippetOf(hit.text, at, span);
               return (
                 <li key={hit.id}>
                   <Link
                     href={hit.href}
-                    className="flex min-h-11 flex-col justify-center px-3 py-2 text-white hover:bg-white/[0.08]"
+                    className="flex min-h-11 flex-col justify-center px-3 py-2 text-ink hover:bg-surface-2"
                   >
                     <span className="text-base font-semibold leading-snug">{hit.title}</span>
-                    <span className="text-sm leading-snug text-slate-300">{hit.meta}</span>
+                    <span className="text-sm leading-snug text-ink">{hit.meta}</span>
                     {snip && (
-                      <span className="mt-0.5 text-sm leading-snug text-slate-300">
+                      <span className="mt-0.5 text-sm leading-snug text-ink">
                         {snip.before}
                         <mark className="rounded-sm bg-amber-300/25 px-0.5 text-amber-100">{snip.hit}</mark>
                         {snip.after}
@@ -299,7 +299,7 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
           </ul>
         )}
         {rows.length > MAX_HITS && (
-          <p className="mt-2 text-sm text-slate-300">
+          <p className="mt-2 text-sm text-ink">
             Còn {rows.length - MAX_HITS} bài nữa. Gõ thêm chữ để hẹp lại.
           </p>
         )}

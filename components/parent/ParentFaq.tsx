@@ -72,31 +72,31 @@ const QA: { q: string; a: React.ReactNode }[] = [
 
 export default function ParentFaq() {
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
-      <h2 className="font-display text-lg font-bold text-white">Câu hỏi thường gặp</h2>
-      <div className="mt-2 divide-y divide-white/10">
+    <section className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
+      <h2 className="font-display text-lg font-bold text-ink">Câu hỏi thường gặp</h2>
+      <div className="mt-2 divide-y divide-line">
         {QA.map((item) => (
           <details key={item.q} className="group py-1">
             {/* grid 2 cột cố định (không dùng flex-1) để dấu ⌄ luôn nằm ở cột phải, không bị đẩy
                 xuống dòng khi câu hỏi dài — 18px nên câu hỏi thường chiếm 2 dòng ở 375px. */}
-            <summary className="grid cursor-pointer list-none grid-cols-[1fr_1.25rem] items-center gap-3 py-2 font-semibold text-white marker:content-none">
+            <summary className="grid cursor-pointer list-none grid-cols-[1fr_1.25rem] items-center gap-3 py-2 font-semibold text-ink marker:content-none">
               <span>{item.q}</span>
-              <span aria-hidden className="text-center text-slate-400 transition-transform group-open:rotate-180">
+              <span aria-hidden className="text-center text-muted transition-transform group-open:rotate-180">
                 ⌄
               </span>
             </summary>
-            <p className="parent-copy pb-3 text-slate-300">{item.a}</p>
+            <p className="parent-copy pb-3 text-ink">{item.a}</p>
           </details>
         ))}
       </div>
       {CONTACT.zalo && (
-        <p className="mt-3 text-slate-400">
+        <p className="mt-3 text-muted">
           Chưa thấy câu trả lời?{" "}
           <a
             href={CONTACT.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+            className="font-semibold text-primary underline-offset-2 hover:underline"
           >
             Nhắn Zalo cho thầy
           </a>

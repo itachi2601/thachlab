@@ -1,47 +1,54 @@
 # Chuẩn giao diện — khả năng đọc & tương phản
 
-Chốt 02/10/2026 sau đợt rà WCAG (xem memory `project_thachlab_kha_nang_doc`). Mọi trang/khối mới
-phải theo bảng này; kiểm bằng `npm run check:a11y` trước khi báo xong (đo tương phản token + bắt
-chữ nhỏ hơn sàn). Đổi màu token thì **đo lại** bằng `node scripts/check-a11y.mjs '#chữ' '#nền'`,
-không ước lượng bằng mắt.
+Chốt 02/10/2026 sau đợt rà WCAG (xem memory `project_thachlab_kha_nang_doc`); **cập nhật 11/10/2026
+khi đảo sang nền sáng làm mặc định** (bảng màu đầy đủ + bảng quy đổi idiom: `docs/MAU-NEN-SANG.md`).
+Mọi trang/khối mới phải theo bảng này; kiểm bằng `npm run check:a11y` trước khi báo xong (đo tương
+phản token + bắt chữ nhỏ hơn sàn). Đổi màu token thì **đo lại** bằng
+`node scripts/check-a11y.mjs '#chữ' '#nền'`, không ước lượng bằng mắt.
 
 ## 1. Ngưỡng bắt buộc (WCAG 2.1 AA)
 
 | Loại | Tỉ lệ tối thiểu | Ghi chú |
 |---|---|---|
 | Chữ thường (< 18,66px đậm hoặc < 24px thường) | **4,5:1** | Nút 14px đậm vẫn là chữ thường |
-| Chữ lớn, icon có nghĩa, viền ô nhập, vòng focus | 3:1 | |
+| Chữ lớn, icon có nghĩa, viền ô nhập, vòng focus | 3:1 | viền ô nhập ở nền sáng: `--color-line-strong` `#8b93a1` = 3,2:1 |
 | Chữ trạng thái vô hiệu (disabled), trang trí | không bắt buộc | Đừng dùng tông này cho chữ thật |
-| Chữ đọc lâu (bài học, đề, kết quả cho phụ huynh) | nên ≥ 7:1 (AAA) | Hiện đạt 12–18:1 |
+| Chữ đọc lâu (bài học, đề, kết quả cho phụ huynh) | nên ≥ 7:1 (AAA) | nền sáng đạt 16,6:1 (chữ thân) / 7,6:1 (chữ phụ); khối phụ huynh đạt 8,9:1 |
+| Khối phụ huynh 45–60 | **7:1 (AAA)** cho mọi câu cần đọc | P2 — `#3d4653` trên `#f7f7f4` = 8,9:1 |
 
 ## 2. Token màu và số đo thật
 
-Nguồn: `app/globals.css` (`@theme` + khối `html[data-theme="light"]` + khối "P1/P2 kha-nang-doc").
+Nguồn: `app/globals.css` — khối `@theme` là **nền sáng (mặc định)**, khối `html[data-theme="dark"]`
+là nền tối (tuỳ chọn). Đo bằng `npm run check:a11y`.
 
-| Token / class | Tối (trên `#05070b` / panel `#0b1020`) | Sáng (trên `#f8fafc` / trắng) |
+| Token / class | Sáng — mặc định (trên `#f5f7fa` / trắng) | Tối — tuỳ chọn (trên `#05070b` / panel `#0b1020`) |
 |---|---|---|
-| `--color-ink` chữ thân | `#f1f5f9` — 18,4 | `#0f172a` — 17,9 |
-| `--color-muted` chữ phụ | `#94a3b8` — 7,4 | `#475569` — 7,6 |
-| `text-slate-500` | ⚠ `#62748e` (Tailwind v4) — 3,97 trên panel, chỉ dùng cho disabled/icon | `#64748b` — 4,8 (override sẵn) |
-| `text-slate-400` | `#90a1b9` — 7,2 | `#475569` — 7,6 (override sẵn) |
-| `--color-cyan` / `text-cyan-*` | `#22d3ee` — 11,2 | ép `#0e7490` — 5,4 |
-| `--color-accent` vàng / `text-amber-*` | `#facc15` — 13,2 | ép `#a16207` — 4,9 |
-| `text-emerald-*` / `text-red-*` / `text-violet-*` | tông 300–400 | ép `#047857` 5,5 / `#b91c1c` 6,5 / `#6d28d9` 7,1 |
-| `.text-gradient` (nhấn tiêu đề) | `--accent-brand-text: #60a5fa` — 7,9 | `#1d4ed8` — 6,4 |
-| `.text-gradient--warm`, `.cnc-header-grid h1 em` | `--accent-warm-text: #fb923c` — 8,9 | `#c2410c` — 5,2 |
-| Dịu mắt (`html.is-dim`, `.lesson-page.is-dim`) | nền kem `#f5efe0`, chữ `#33291a` — 12,4, phụ `#6b5a3e` — 5,8 | |
-| Nút đặc `bg-primary` + chữ trắng | xem đợt P0 (token `--color-primary`) — phải ≥ 4,5 | |
+| `--color-ink` chữ thân | `#0f172a` — 16,6 / 17,9 | `#f1f5f9` — 18,4 |
+| `--color-muted` chữ phụ | `#475569` — 7,1 / 7,6 | `#94a3b8` — 7,4 |
+| `text-slate-500` | `#64748b` — 4,76 (dùng cho mốc thời gian/placeholder) | ⚠ `#7c8ba1` (override) — 5,47; gốc Tailwind v4 `#62748e` chỉ 3,97 nên **không** dùng cho câu cần đọc |
+| `--color-primary` (nền nút đặc + chữ trắng) | `#1d4ed8` — 6,7 | `#2563eb` — 5,17 |
+| `--color-primary` (chữ/viền trên nền trang) | `#1d4ed8` — 6,24 | `#60a5fa` (override `[class*="text-primary"]`) — 7,93 |
+| `--color-line-strong` (viền ô nhập) | `#8b93a1` — 3,2 (đạt 1.4.11) | `rgba(255,255,255,.16)` → `#cbd5e1` — 12,8 |
+| `--color-ok` / `--color-warn` / `--color-danger` | `#047857` 5,5 / `#b45309` 5,0 / `#b91c1c` 6,5 | `#34d399` / `#fbbf24` / `#f87171` |
+| `--color-cyan`, `--color-violet`, `--color-accent` | `#0e7490` — 5,4 · `#6d28d9` — 7,1 · `#b45309` — 5,0 | `#22d3ee` — 11,2 · `#8b5cf6` · `#facc15` — 13,2 |
+| `.text-gradient` (nhấn tiêu đề) | `#1d4ed8` — 6,24 | `--accent-brand-text: #60a5fa` — 7,9 |
+| `.text-gradient--warm`, `.cnc-header-grid h1 em` | `#c2410c` — 5,2 | `--accent-warm-text: #fb923c` — 8,9 |
+| Khối phụ huynh (`.parent-page`) | nền `#f7f7f4`; chữ `#14181f` 16,6 · phụ `#3d4653` 8,9 · nhấn navy `#1e40af` 8,1 (nút: 8,7 với chữ trắng) | giữ token chung, chữ phụ `#b8c4d6` |
+| Dịu mắt (`html.is-dim`, `.lesson-page.is-dim`) | nền kem `#f5efe0`, chữ `#33291a` — 12,4, phụ `#6b5a3e` — 5,8 | — |
 
 Quy tắc kèm theo:
+- **Nền sáng là mặc định** (M1, P5). Nền tối chỉ bật khi người dùng đã tự chọn — không theo
+  `prefers-color-scheme`, để màu kiểm soát được. Chi tiết + bảng quy đổi idiom: `docs/MAU-NEN-SANG.md`.
 - **Không dùng chữ gradient** (`background-clip: text; color: transparent`): không có giá trị tương phản
   xác định, mất chữ ở `forced-colors`. Dùng `.text-gradient`/`.text-gradient--warm` (nay là màu đặc) hoặc
-  `text-cyan-300`.
+  `text-primary`.
 - Màu cần **hai giá trị theo theme** (tối cần tông sáng, sáng cần tông đậm) — không dùng chung một mã
   cho cả hai (bài học violet `#8b5cf6`: 4,5 tối / 4,2 sáng, trượt cả hai).
 - Tailwind **v4**: màu `slate-500` là `oklch(55.4% …)` ≈ `#62748e`, không phải `#64748b` của v3. Đo theo
   `node_modules/tailwindcss/theme.css`.
 - Chữ xanh nhỏ trên nền đen là tổ hợp tệ nhất cho người 45+ (thủy tinh thể ngả vàng giảm truyền bước
-  sóng ngắn). Trang cho phụ huynh mặc định theme **sáng** (`app/layout.tsx` script inline + `ReadingZone`).
+  sóng ngắn) — nay cả site mặc định sáng nên vấn đề này chỉ còn ở theme tối tuỳ chọn.
+
 
 ## 3. Sàn cỡ chữ
 
@@ -71,4 +78,15 @@ Ngoại lệ duy nhất: `components/tro-giang/local-preview.css` (xem thử c�
 1. `npm run check:a11y` đạt.
 2. Chữ thật không dùng `text-slate-500` ở theme tối (dùng `text-slate-400`/`text-muted`).
 3. Màu mới có hai giá trị theme và số đo ghi trong comment cạnh token.
-4. Chụp thử 375px, cả theme sáng và tối (memory `feedback_mobile_first_ui`).
+4. Chụp thử 375px, cả theme sáng và tối (memory `feedback_mobile_first_ui`) **bằng device
+   emulation**, không bằng `chrome --screenshot --window-size=375,812`:
+   ```bash
+   node scripts/do-bo-cuc.mjs http://localhost:3001/lop-hoc --rong=375 --cao=812 \
+     --theme=light --anh=/tmp/lop-hoc-375.png
+   ```
+   Công cụ in `scrollWidth` và danh sách phần tử tràn **thật** (đã loại phần tử bị cha cắt như
+   marquee). `--theme=dark` để chụp nền tối. Vì sao không dùng `--window-size`: cửa sổ 375px vẫn
+   cho layout viewport ~500px rồi cắt ảnh — ảnh trông như trang tràn ngang trong khi trang không
+   tràn (đã mất thời gian vì lỗi giả này, xem `docs/MAU-NEN-SANG.md` §8).
+5. Đổi bảng màu → xem thêm `/dev/giao-dien` và `docs/MAU-NEN-SANG.md`.
+

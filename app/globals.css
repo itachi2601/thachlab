@@ -1,27 +1,50 @@
 @import "tailwindcss";
 
 @theme {
-  /* Dark "deep space" palette — toàn trang tối, neon xanh–tím–cyan */
-  /* --color-primary là màu NỀN NÚT đặc (bg-primary, 54 chỗ) nên phải đạt 4,5:1 với chữ
-     trắng: #3b82f6 chỉ được 3,68:1 — trượt AA cho chữ thường (nút 14px đậm không tính là
-     "large text", phải ≥18,66px đậm mới hạ được xuống 3:1). #2563eb được 5,17:1.
-     Chữ/viền xanh trên nền tối lại cần tông SÁNG hơn, tách riêng ở khối
-     html[data-theme="dark"] phía dưới — xem mục "P0 tương phản". */
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-violet: #8b5cf6;
-  --color-cyan: #22d3ee;
-  --color-accent: #facc15;
-  --color-bg: #05070b;
-  --color-panel: #0b1020;
-  --color-panel-deep: #080d1d;
-  --color-ink: #f1f5f9;
-  --color-muted: #94a3b8;
-  --color-line: rgba(255, 255, 255, 0.08);
-  /* Chữ phụ trên nền tối: slate-500 gốc #64748b chỉ 3,98:1 (trượt AA 4,5:1) — 543 chỗ dùng
-     text-slate-500 (mốc thời gian, dòng phụ, placeholder). #7c8ba1 = 5,47:1 trên panel.
-     Theme sáng không bị ảnh hưởng: rule .text-slate-500 ở khối light ép lại #64748b (4,76:1). */
-  --color-slate-500: #7c8ba1;
+  /* ==========================================================================
+     BẢNG MÀU THACHLAB — NỀN SÁNG (TRẮNG) LÀ MẶC ĐỊNH (thầy chốt 11/10/2026)
+     ==========================================================================
+     Nguồn quy tắc: docs/QUY-TAC-THIET-KE.md (M1–M6), docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+     (P1, P2, P5) và docs/UI.md (ngưỡng tương phản + sàn cỡ chữ).
+
+     Ở đây là theme SÁNG. Theme TỐI (nay chỉ là tuỳ chọn, không còn là mặc định) ghi đè
+     token trong khối html[data-theme="dark"] ngay bên dưới — mọi utility Tailwind đọc
+     var(--color-*) nên chỉ cần đổi token là cả site đổi theo.
+
+     Vì sao nền sáng: Piepenbrock, Mayr, Mund & Buchner 2013 — đọc chữ sẫm trên nền sáng
+     ("positive polarity") nhanh hơn và soát lỗi tốt hơn ở MỌI lứa tuổi, ưu thế rõ nhất
+     khi chữ nhỏ (M1).
+
+     M3 — kỷ luật màu: MỘT màu nhấn cho việc bấm được (--color-primary) + 3 màu TRẠNG THÁI
+     (--color-ok/warn/danger), còn lại trung tính. Màu bão hoà chỉ để báo đúng/sai, không
+     để trang trí: màu rực kéo chú ý tiền ý thức và làm học sinh khó quay lại bài (G2).
+     M6 — KHÔNG gradient/quầng sáng/blur ở vùng đọc và vùng làm bài; chỉ trang giới thiệu.
+
+     Mọi giá trị dưới đây đã đo bằng `npm run check:a11y` — đổi thì đo lại, đừng ước lượng
+     bằng mắt (docs/UI.md §2). */
+  --color-primary: #1d4ed8;        /* nút đặc + liên kết: 7,06:1 với chữ trắng (#fff) */
+  --color-primary-dark: #1e40af;   /* hover/pressed */
+  --color-primary-soft: #eef2ff;   /* nền ô "đang chọn", chip lọc */
+  --color-violet: #6d28d9;         /* 7,1:1 trên trắng — chỉ dùng cho nhãn chuyên đề */
+  --color-cyan: #0e7490;           /* 5,4:1 trên trắng */
+  --color-accent: #b45309;         /* nhấn ấm (điểm cần chú ý): 5,0:1 trên trắng */
+  --color-bg: #f5f7fa;             /* nền trang — trắng ngà, không dùng trắng tinh để thẻ nổi */
+  --color-panel: #ffffff;          /* mặt thẻ */
+  --color-panel-deep: #ffffff;     /* navbar, thanh cố định */
+  --color-surface-2: #eef1f6;      /* ô nhạt bên trong thẻ (khung hình, hàng bảng) */
+  --color-ink: #0f172a;            /* chữ thân: 16,4:1 trên nền trang, 17,9:1 trên trắng */
+  --color-muted: #475569;          /* chữ phụ: 8,6:1 trên nền trang, 7,6:1 trên trắng */
+  --color-line: rgba(15, 23, 42, 0.10);
+  /* Viền ô nhập/viền cần NHÌN RA: WCAG 1.4.11 đòi 3:1 với nền kề bên, nên không dùng được
+     xám nhạt #cfd6e0 (chỉ 1,5:1) cho viền ô nhập. #8b93a1 = 3,2:1 trên trắng. */
+  --color-line-strong: #8b93a1;
+  --color-ok: #047857;             /* đúng / đạt: 5,5:1 trên trắng */
+  --color-warn: #b45309;           /* cần chú ý: 5,0:1 */
+  --color-danger: #b91c1c;         /* sai / lỗi: 6,5:1 */
+  /* slate-500 của Tailwind v4 là oklch(55.4%) ≈ #62748e — chỉ 3,97:1 trên panel tối, trượt
+     AA 4,5:1, mà 543 chỗ đang dùng (mốc thời gian, dòng phụ, placeholder). Nền sáng dùng
+     #64748b = 4,76:1; theme tối đổi sang #7c8ba1 = 5,47:1 (khối dark bên dưới). */
+  --color-slate-500: #64748b;
 
   /* Font tự host qua next/font (app/fonts.ts) — biến --font-be-vietnam/--font-inter/
      --font-jetbrains-mono được gắn lên <html> trong app/layout.tsx. */
@@ -32,7 +55,9 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  /* Nền sáng là mặc định ⇒ điều khiển gốc của trình duyệt (thanh cuộn, ô nhập, autofill)
+     cũng phải sáng; theme tối bật lại bằng color-scheme: dark trong khối dark. */
+  color-scheme: light;
   overflow-x: hidden;
   /* PWA/điện thoại: không phóng chữ khi xoay ngang, không hiện ô xám khi chạm. */
   -webkit-text-size-adjust: 100%;
@@ -60,35 +85,51 @@ body {
 /* Chạm là chạm: bỏ trễ 300ms và chặn zoom đúp trên điều khiển. */
 a, button, [role="button"], summary, label { touch-action: manipulation; }
 
-/* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
-/* Màu chữ danh hiệu theo mức (WornTitle, TitleShowcase): pastel cho nền tối, tông đậm cho nền sáng (≥4,5:1 trên trắng). */
+/* Màu chữ danh hiệu theo mức (WornTitle, TitleShowcase): tông ĐẬM cho nền sáng (≥4,5:1 trên
+   trắng — nay là mặc định), pastel cho nền tối (khối dark bên dưới). */
 :root {
-  --lv-thuc_tinh: #bff3f9;
-  --lv-lam_chu: #d8e3f7;
-  --lv-huyen_thoai: #d9c4ff;
-  --lv-don: #fff3cf;
-}
-html[data-theme="light"] {
   --lv-thuc_tinh: #0e7490;
   --lv-lam_chu: #475569;
   --lv-huyen_thoai: #6d28d9;
   --lv-don: #92400e;
-  color-scheme: light;
-  /* Chữ/viền xanh trên nền sáng cần tông ĐẬM: #2563eb trên #f8fafc = 4,94:1 (vừa đủ), còn
-     #3b82f6 chỉ 3,52:1. #1d4ed8 cho 6,41:1 trên nền trang và 6,70:1 trên trắng, đồng thời
-     đủ đậm cho nền nút. --color-primary-dark phải tối hơn --color-primary, nếu không nút
-     mất phản hồi hover (trước đây #3b82f6 → #1d4ed8 nên còn thấy đổi). */
-  --color-primary: #1d4ed8;
-  --color-primary-dark: #1e40af;
-  --color-bg: #f8fafc;
-  --color-panel: #ffffff;
-  --color-panel-deep: #ffffff;
-  --color-ink: #0f172a;
-  --color-muted: #475569;
-  --color-line: rgba(15, 23, 42, 0.11);
 }
 
-html[data-theme="light"] body { background-color: #f8fafc; color: #0f172a; }
+/* ==========================================================================
+   THEME TỐI — nay là TUỲ CHỌN (nút Trăng/Mặt trời ở navbar, hoặc "Dịu mắt"),
+   không còn là mặc định. Giữ bảng "deep space" cũ vì học sinh học buổi tối
+   vẫn dùng, nhưng chỉ hạ bớt độ rực của màu trang trí để đọc lâu không chói
+   (M2: nền tối dùng xám rất đậm + chữ ~87% trắng, không trắng tinh trên đen tinh).
+   ========================================================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --lv-thuc_tinh: #bff3f9;
+  --lv-lam_chu: #d8e3f7;
+  --lv-huyen_thoai: #d9c4ff;
+  --lv-don: #fff3cf;
+  --color-primary: #2563eb;        /* nền nút đặc: 5,17:1 với chữ trắng */
+  --color-primary-dark: #1d4ed8;
+  --color-primary-soft: rgba(37, 99, 235, 0.18);
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-accent: #facc15;
+  --color-bg: #05070b;
+  --color-panel: #0b1020;
+  --color-panel-deep: #080d1d;
+  --color-surface-2: rgba(255, 255, 255, 0.05);
+  --color-ink: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+  --color-danger: #f87171;
+  --color-slate-500: #7c8ba1;
+}
+
+/* Nền sáng: giá trị token nằm trong @theme (mặc định). Các rule bên dưới chỉ còn là lớp VÁ
+   cho chỗ JSX hard-code class màu của theme tối (bg-[#05070B], text-white, gradient neon…).
+   Muốn đổi sắc độ thì sửa token ở @theme, đừng sửa từng rule vá. */
+html[data-theme="light"] body { background-color: var(--color-bg); color: var(--color-ink); }
 html[data-theme="light"] .bg-\[\#05070B\],
 html[data-theme="light"] .bg-\[\#05070B\]\/90 { background-color: rgb(255 255 255 / .92); }
 html[data-theme="light"] .bg-\[\#080D1A\],
@@ -158,69 +199,76 @@ html[data-theme="light"] [class~="bg-primary"].text-white,
 html[data-theme="light"] [class*="bg-emerald-"].text-white,
 html[data-theme="light"] [class*="bg-red-"].text-white { color: #fff; }
 html[data-theme="light"] .shadow-black\/50 { --tw-shadow-color: rgb(15 23 42 / .16); }
-html[data-theme="light"] .theme-toggle { background: #f1f5f9; border-color: #cbd5e1; color: #1e3a8a; }
-html[data-theme="light"] .theme-toggle:hover { background: #e2e8f0; color: #1d4ed8; }
+html[data-theme="light"] .theme-toggle { background: var(--color-surface-2); border-color: var(--color-line-strong); color: var(--color-primary); }
+html[data-theme="light"] .theme-toggle:hover { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+/* Khối hero của trang chủ và khu giáo viên: bỏ gradient + quầng sáng, chỉ còn một mặt phẳng
+   trắng có viền (M6 — không gradient/blur ở vùng đọc; M3 — bớt sắc độ bão hoà cùng màn hình).
+   Việc "nổi" của khối này do vị trí và cỡ chữ, không do màu. */
 html[data-theme="light"] [class~="from-[#172c46]"] {
-  border-color: #cbd5e1 !important;
-  background-image: linear-gradient(135deg, #ffffff 0%, #f1f5f9 55%, #eff6ff 100%) !important;
-  box-shadow: 0 18px 45px rgb(15 23 42 / .08);
+  border-color: var(--color-line-strong) !important;
+  background-image: none !important;
+  background-color: var(--color-panel) !important;
+  box-shadow: 0 1px 2px rgb(15 23 42 / .05) !important;
 }
 html[data-theme="light"] nav.bg-panel-deep\/95 {
-  box-shadow: 0 12px 30px rgb(15 23 42 / .1);
+  box-shadow: 0 1px 2px rgb(15 23 42 / .06);
 }
 html[data-theme="light"] .bg-blue-600.text-white { color: #fff !important; }
 html[data-theme="light"] .teacher-dashboard > section:first-child {
-  border-color: #cbd5e1 !important;
-  background-image: linear-gradient(135deg, #ffffff 0%, #f1f5f9 55%, #eff6ff 100%) !important;
-  box-shadow: 0 18px 45px rgb(15 23 42 / .08);
+  border-color: var(--color-line-strong) !important;
+  background-image: none !important;
+  background-color: var(--color-panel) !important;
+  box-shadow: 0 1px 2px rgb(15 23 42 / .05) !important;
 }
 html[data-theme="light"] .teacher-dashboard > nav {
-  border-color: #dbe3ee !important;
-  background: rgb(255 255 255 / .96) !important;
-  box-shadow: 0 12px 30px rgb(15 23 42 / .1);
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  box-shadow: 0 1px 2px rgb(15 23 42 / .05);
 }
 html[data-theme="light"] .teacher-dashboard select {
-  border-color: #cbd5e1 !important;
+  border-color: var(--color-line-strong) !important;
   background: #fff !important;
-  color: #0f172a !important;
+  color: var(--color-ink) !important;
 }
 html[data-theme="light"] .student-competencies {
-  border-color: #dbe3ee !important;
+  border-color: var(--color-line) !important;
 }
 html[data-theme="light"] .competency-path {
-  border-color: #dbe3ee;
-  background: #fff;
-  box-shadow: 0 8px 24px rgb(15 23 42 / .055);
+  border-color: var(--color-line);
+  background: var(--color-panel);
+  box-shadow: 0 1px 2px rgb(15 23 42 / .04);
 }
 html[data-theme="light"] .competency-path a > div:first-child {
-  background: #e2e8f0 !important;
+  background: var(--color-surface-2) !important;
   box-shadow: none !important;
 }
 html[data-theme="light"] .competency-path a > div:first-child > div {
-  border-color: #cbd5e1 !important;
-  background: #f8fafc !important;
-  color: #64748b !important;
+  border-color: var(--color-line-strong) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted) !important;
 }
+/* Mốc đã đạt: một màu nhấn duy nhất thay cho dải cam→lam (M3), trạng thái vẫn có chữ đi kèm
+   nên không truyền nghĩa bằng màu (M4). */
 html[data-theme="light"] .competency-path a > div:first-child:has(> span) {
-  background: linear-gradient(135deg, #f59e0b, #0ea5e9) !important;
-  box-shadow: 0 8px 20px rgb(14 165 233 / .16) !important;
+  background: var(--color-primary) !important;
+  box-shadow: none !important;
 }
 html[data-theme="light"] .competency-path a > div:first-child:has(> span) > div {
-  border-color: rgb(255 255 255 / .8) !important;
-  background: linear-gradient(145deg, #eff6ff, #ecfeff) !important;
-  color: #0f5f83 !important;
+  border-color: var(--color-line-strong) !important;
+  background: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
 }
 html[data-theme="light"] .competency-path a > div:first-child > span {
   border-color: #fff;
-  background: #10b981;
+  background: var(--color-ok);
   color: #fff;
-  box-shadow: 0 2px 7px rgb(5 150 105 / .25);
+  box-shadow: none;
 }
 html[data-theme="light"] .competency-path a > div:last-child {
-  background: #cbd5e1;
+  background: var(--color-line-strong);
 }
 html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:last-child {
-  background: linear-gradient(90deg, #0ea5e9, #10b981);
+  background: var(--color-primary);
 }
 
 /* ---------- P0 tương phản (đo lại 02/10/2026, WCAG 2.1 AA) ----------
@@ -1133,7 +1181,7 @@ html[data-theme="light"] .lesson-shell .lesson-sample-actions button.is-ghost { 
 .class-chapter-progress small { flex: 0 0 auto; color: #94a3b8; font-size: 13px; white-space: nowrap; }
 /* Số thứ tự bài học: khoanh tròn, khác kiểu với nhãn chữ "Chương N" ở tiêu đề chương. */
 .class-num { display: flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
-.class-num--exam { font-size: 11px; letter-spacing: .02em; }
+.class-num--exam { font-size: 12px; letter-spacing: .02em; }
 .class-meta { flex: 0 0 auto; color: #94a3b8; font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .class-lessons { display: grid; gap: 8px; margin: 12px 0 0; padding: 0 0 0 14px; list-style: none; border-left: 1px solid var(--lesson-line); }
 .class-lessons--flat { margin-top: 0; }
@@ -3324,6 +3372,12 @@ html:not(.is-dim) .parent-page {
   --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
   --color-primary-dark: #1e3a8a;
   --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
 }
 /* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
    tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ

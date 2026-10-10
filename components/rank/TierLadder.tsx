@@ -58,12 +58,12 @@ function Cond({ state, children }: { state: CondState; children: React.ReactNode
     <li className="flex items-start gap-2 text-sm">
       <span
         className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-bold ${
-          state === "done" ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-slate-500"
+          state === "done" ? "bg-emerald-500/20 text-emerald-300" : "bg-surface-2 text-slate-500"
         }`}
       >
         {state === "done" ? <Check size={12} /> : "•"}
       </span>
-      <span className={state === "done" ? "text-slate-400" : "text-slate-200"}>{children}</span>
+      <span className={state === "done" ? "text-muted" : "text-ink"}>{children}</span>
     </li>
   );
 }
@@ -141,7 +141,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
       {/* Dải 7 huy hiệu — cuộn ngang trên máy nhỏ */}
       <div className="relative -mx-1 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="relative flex items-start justify-between gap-0.5 sm:gap-2">
-          <div className="pointer-events-none absolute left-5 right-5 top-5 h-0.5 rounded-full bg-white/10 sm:top-7" aria-hidden>
+          <div className="pointer-events-none absolute left-5 right-5 top-5 h-0.5 rounded-full bg-surface-2 sm:top-7" aria-hidden>
             {status?.season && (
               <div
                 className="h-full rounded-full"
@@ -166,19 +166,19 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               >
                 <span
                   className={`relative flex h-10 w-10 items-center justify-center rounded-full transition sm:h-14 sm:w-14 ${
-                    active ? "ring-2 ring-offset-2 ring-offset-[#0b1020]" : "group-hover:scale-105 group-focus-visible:ring-2"
+                    active ? "ring-2 ring-offset-2 ring-offset-panel" : "group-hover:scale-105 group-focus-visible:ring-2"
                   } ${locked && !active ? "opacity-55 saturate-50" : ""}`}
                   style={{ background: active ? `${m.color}33` : "rgba(11,16,32,0.9)", ["--tw-ring-color" as string]: m.light }}
                 >
                   <RankBadge code={s.code} division={s.has_divisions ? (cur ? status?.tier?.division : done ? 1 : 3) : null} size={40} className="hidden sm:block" />
                   <RankBadge code={s.code} division={s.has_divisions ? (cur ? status?.tier?.division : done ? 1 : 3) : null} size={30} className="sm:hidden" />
                   {done && (
-                    <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-[#0b1020]">
+                    <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-panel">
                       <Check size={10} strokeWidth={3} />
                     </span>
                   )}
                   {locked && (
-                    <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-700 text-slate-300 ring-2 ring-[#0b1020]">
+                    <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-panel text-muted ring-2 ring-panel">
                       <Lock size={9} />
                     </span>
                   )}
@@ -195,7 +195,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
           })}
 
           {/* Danh vị Thách Đấu — tách khỏi thang bậc bằng một vạch đứng */}
-          <span className="mt-3 h-4 w-px shrink-0 bg-white/15 sm:mt-4 sm:h-6" aria-hidden />
+          <span className="mt-3 h-4 w-px shrink-0 bg-line sm:mt-4 sm:h-6" aria-hidden />
           <button
             type="button"
             onClick={() => setSelected(PARAGON_KEY)}
@@ -205,7 +205,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
           >
             <span
               className={`relative flex h-10 w-10 items-center justify-center rounded-full transition sm:h-14 sm:w-14 ${
-                showParagon ? "ring-2 ring-offset-2 ring-offset-[#0b1020]" : "group-hover:scale-105 group-focus-visible:ring-2"
+                showParagon ? "ring-2 ring-offset-2 ring-offset-panel" : "group-hover:scale-105 group-focus-visible:ring-2"
               } ${!paragon && !showParagon ? "opacity-55 saturate-50" : ""}`}
               style={{
                 background: showParagon ? `${PARAGON_META.color}33` : "rgba(11,16,32,0.9)",
@@ -215,11 +215,11 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               <RankBadge code="thach_dau" paragon size={40} className="hidden sm:block" />
               <RankBadge code="thach_dau" paragon size={30} className="sm:hidden" />
               {paragon ? (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-[#0b1020]">
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-panel">
                   <Check size={10} strokeWidth={3} />
                 </span>
               ) : (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-700 text-slate-300 ring-2 ring-[#0b1020]">
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-panel text-muted ring-2 ring-panel">
                   <Lock size={9} />
                 </span>
               )}
@@ -258,9 +258,9 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                         Danh vị của em
                       </span>
                     ) : (
-                      <span className="rounded-full bg-white/10 px-2 py-0.5 font-bold uppercase tracking-wider text-slate-200">Danh vị đặc biệt</span>
+                      <span className="rounded-full bg-surface-2 px-2 py-0.5 font-bold uppercase tracking-wider text-ink">Danh vị đặc biệt</span>
                     )}
-                    <span className="text-slate-400">Trên cả Cao Thủ · không tính bằng RP</span>
+                    <span className="text-muted">Trên cả Cao Thủ · không tính bằng RP</span>
                   </p>
                 </div>
               </div>
@@ -269,10 +269,10 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                 <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
                 <ul className="mt-2 space-y-2">
                   <Cond state={paragon || currentSort >= list.length ? "done" : status?.season ? "todo" : "neutral"}>
-                    Đang ở bậc <b className="text-white">Cao Thủ</b> của mùa hiện tại
+                    Đang ở bậc <b className="text-ink">Cao Thủ</b> của mùa hiện tại
                   </Cond>
                   <Cond state={paragon ? "done" : status?.season ? "todo" : "neutral"}>
-                    Sưu tập <b className="text-white">đủ mọi danh hiệu</b> đang khả dụng, mỗi danh hiệu ở mức cao nhất
+                    Sưu tập <b className="text-ink">đủ mọi danh hiệu</b> đang khả dụng, mỗi danh hiệu ở mức cao nhất
                     {status ? ` (đang có ${status.titles_count})` : ""}
                   </Cond>
                   <Cond state={paragon ? "done" : "neutral"}>Giữ trọn bộ tới hết mùa để danh vị được ghi vào thành tích mùa</Cond>
@@ -293,10 +293,10 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                 )}
                 {reached && <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 font-bold uppercase tracking-wider text-emerald-300">Đã đạt</span>}
                 {isNext && status?.next && status.next.rp_needed > 0 && (
-                  <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-slate-200">Còn {formatRp(status.next.rp_needed)} RP</span>
+                  <span className="rounded-full bg-surface-2 px-2 py-0.5 font-semibold text-ink">Còn {formatRp(status.next.rp_needed)} RP</span>
                 )}
                 {hasNumbers && (
-                  <span className="text-slate-400">
+                  <span className="text-muted">
                     {step.next_min !== null ? `${formatRp(step.min_rp)} – ${formatRp(step.next_min - 1)} RP` : `Từ ${formatRp(step.min_rp)} RP`}
                   </span>
                 )}
@@ -314,14 +314,14 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                   return (
                     <div
                       key={d.division}
-                      className={`flex items-center gap-2 rounded-xl border p-2 ${here ? "border-white/30 bg-white/10" : "border-white/10 bg-white/[0.03]"}`}
+                      className={`flex items-center gap-2 rounded-xl border p-2 ${here ? "border-primary bg-primary-soft" : "border-line bg-surface-2"}`}
                     >
                       <RankBadge code={step.code} division={d.division} size={34} className="shrink-0" />
                       <span className="min-w-0">
-                        <span className="block text-xs font-bold text-white" style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}>
+                        <span className="block text-xs font-bold text-ink" style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}>
                           {meta.en} {divisionLabel(d.division)}
                         </span>
-                        <span className={`block truncate text-[12px] ${passed ? "text-emerald-300" : "text-slate-400"}`}>
+                        <span className={`block truncate text-[12px] ${passed ? "text-emerald-300" : "text-muted"}`}>
                           {formatRp(d.min)}–{formatRp(d.max)} RP
                         </span>
                       </span>
@@ -339,18 +339,18 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
           <div className="mt-4">
             <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt bậc</p>
             {step.sort === 1 ? (
-              <p className="mt-2 text-sm text-slate-300">Bậc khởi đầu — mọi học sinh tham gia mùa đều bắt đầu từ đây.</p>
+              <p className="mt-2 text-sm text-ink">Bậc khởi đầu — mọi học sinh tham gia mùa đều bắt đầu từ đây.</p>
             ) : !hasNumbers ? (
-              <p className="mt-2 text-sm text-slate-400">Ngưỡng RP và điều kiện cụ thể sẽ hiện khi giáo viên mở mùa xếp hạng.</p>
+              <p className="mt-2 text-sm text-muted">Ngưỡng RP và điều kiện cụ thể sẽ hiện khi giáo viên mở mùa xếp hạng.</p>
             ) : (
               <ul className="mt-2 space-y-2">
                 <Cond state={rpState}>
-                  Đạt <b className="text-white">{formatRp(step.min_rp)} RP</b> trong mùa
+                  Đạt <b className="text-ink">{formatRp(step.min_rp)} RP</b> trong mùa
                 </Cond>
                 {step.required_title_count > 0 && (
                   <Cond state={titleState}>
-                    Có <b className="text-white">{step.required_title_count}</b> danh hiệu chuyên môn mức{" "}
-                    <b className="text-white">{LEVEL_LABELS[step.required_title_level ?? "thuc_tinh"]}</b> trở lên
+                    Có <b className="text-ink">{step.required_title_count}</b> danh hiệu chuyên môn mức{" "}
+                    <b className="text-ink">{LEVEL_LABELS[step.required_title_level ?? "thuc_tinh"]}</b> trở lên
                     {gate ? ` (đang có ${gate.titles_have})` : ""}
                   </Cond>
                 )}
@@ -358,12 +358,12 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                   <Cond state={chalState}>
                     {step.challenge_exam_id ? (
                       <>
-                        Vượt thử thách <b className="text-white">{step.challenge_title ?? "lên hạng"}</b> — đạt từ {passPct}%
+                        Vượt thử thách <b className="text-ink">{step.challenge_title ?? "lên hạng"}</b> — đạt từ {passPct}%
                         {gate && gate.challenge_best_pct !== null ? ` (tốt nhất: ${gate.challenge_best_pct}%)` : ""}
                         {isNext && (
                           <>
                             {" · "}
-                            <Link href={`/kiem-tra/lam/?id=${step.challenge_exam_id}`} className="text-cyan-300 hover:underline">
+                            <Link href={`/kiem-tra/lam/?id=${step.challenge_exam_id}`} className="text-primary hover:underline">
                               Làm thử thách
                             </Link>
                           </>

@@ -78,9 +78,9 @@ export default function SimilarBankPractice({
 
   if (phase === "idle") {
     return (
-      <div className="mt-4 rounded-xl border border-white/10 p-4">
-        <p className="text-sm text-slate-300">
-          Đọc xong lời giải thì <strong className="text-white">gấp lại, tự trình bày từ đầu trên giấy</strong>, rồi thử
+      <div className="mt-4 rounded-xl border border-line p-4">
+        <p className="text-sm text-ink">
+          Đọc xong lời giải thì <strong className="text-ink">gấp lại, tự trình bày từ đầu trên giấy</strong>, rồi thử
           {" "}{COUNT} bài cùng dạng.
         </p>
         <Button onClick={() => void load(seen)} className="mt-3" style={{ background: color }}>
@@ -91,10 +91,10 @@ export default function SimilarBankPractice({
   }
 
   return (
-    <div className="mt-4 space-y-3 rounded-xl border border-white/10 p-4" role="region" aria-label="Bài tương tự">
-      {phase === "loading" && <p className="text-sm text-slate-400">Đang tìm bài tương tự…</p>}
+    <div className="mt-4 space-y-3 rounded-xl border border-line p-4" role="region" aria-label="Bài tương tự">
+      {phase === "loading" && <p className="text-sm text-muted">Đang tìm bài tương tự…</p>}
       {phase === "empty" && (
-        <p className="text-sm text-slate-300" role="status">
+        <p className="text-sm text-ink" role="status">
           {error
             ? "Chưa tải được bài tương tự, thử lại sau nhé."
             : seen.length > 0
@@ -123,7 +123,7 @@ export default function SimilarBankPractice({
           ) : (
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-3">
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-ink">
                   Đúng {summary?.correctCount ?? 0}/{questions.length} câu
                 </p>
                 <Button variant="outline" onClick={() => { setGoRoi(false); void load(seen); }}>
@@ -136,8 +136,8 @@ export default function SimilarBankPractice({
                 )}
               </div>
               {goRoi && stepTitles && onGoRoi && (
-                <div className="rounded-lg border border-white/10 p-3" role="region" aria-label="Gỡ rối">
-                  <p className="mb-2 text-sm text-slate-300">Em tính đến bước nào thì kẹt? Chọn để mở lại đúng bước đó trong bài mẫu.</p>
+                <div className="rounded-lg border border-line p-3" role="region" aria-label="Gỡ rối">
+                  <p className="mb-2 text-sm text-ink">Em tính đến bước nào thì kẹt? Chọn để mở lại đúng bước đó trong bài mẫu.</p>
                   <div className="grid gap-2">
                     {stepTitles.map((t, i) => (
                       <button
@@ -147,7 +147,7 @@ export default function SimilarBankPractice({
                         style={i === defaultStep ? { borderColor: color } : undefined}
                         onClick={() => onGoRoi(i)}
                       >
-                        <span className="mr-2 text-slate-400">{i + 1}.</span>
+                        <span className="mr-2 text-muted">{i + 1}.</span>
                         <ContentHtml html={t} className="inline" />
                       </button>
                     ))}

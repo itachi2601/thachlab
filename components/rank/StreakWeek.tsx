@@ -23,14 +23,14 @@ export default function StreakWeek({ days, className = "" }: { days: StreakDay[]
         const label = `${weekdayOf(day.d)}: ${day.state === "done" ? "đã giữ chuỗi" : day.state === "frozen" ? "được đóng băng" : today ? "hôm nay, chưa làm" : "chưa làm"}`;
         return (
           <li key={day.d} className="flex flex-col items-center gap-1" aria-label={label}>
-            <span className={`text-[13px] ${today ? "font-bold text-white" : "text-slate-400"}`}>{weekdayOf(day.d)}</span>
+            <span className={`text-[13px] ${today ? "font-bold text-ink" : "text-muted"}`}>{weekdayOf(day.d)}</span>
             <span
               className={`flex h-9 w-9 items-center justify-center rounded-full ${
-                day.state === "done" ? "bg-amber-500/20" : day.state === "frozen" ? "bg-sky-500/15" : "bg-white/5"
-              } ${today ? "ring-2 ring-blue-300/70" : ""}`}
+                day.state === "done" ? "bg-amber-500/20" : day.state === "frozen" ? "bg-primary-soft" : "bg-surface-2"
+              } ${today ? "ring-2 ring-primary" : ""}`}
             >
               {day.state === "done" && <Flame size={18} className="text-amber-400" fill="currentColor" aria-hidden />}
-              {day.state === "frozen" && <Snowflake size={16} className="text-sky-300" aria-hidden />}
+              {day.state === "frozen" && <Snowflake size={16} className="text-primary" aria-hidden />}
             </span>
           </li>
         );

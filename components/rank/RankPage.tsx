@@ -46,12 +46,12 @@ const GateQuizModal = dynamic(() => import("@/components/rank/GateQuizModal"), {
 
 function Section({ icon: Icon, title, children, aside }: { icon: typeof Trophy; title: string; children: React.ReactNode; aside?: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-6">
+    <section className="rounded-2xl border border-line bg-panel p-4 sm:p-6">
       <div className="mb-4 flex items-center gap-2">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-slate-300">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-2 text-ink">
           <Icon size={16} />
         </span>
-        <h2 className="font-display text-lg font-semibold text-white">{title}</h2>
+        <h2 className="font-display text-lg font-semibold text-ink">{title}</h2>
         {aside && <span className="ml-auto text-xs text-slate-500">{aside}</span>}
       </div>
       {children}
@@ -64,12 +64,12 @@ function Condition({ done, children }: { done: boolean; children: React.ReactNod
     <li className="flex items-start gap-2 text-sm">
       <span
         className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-bold ${
-          done ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-slate-500"
+          done ? "bg-emerald-500/20 text-emerald-300" : "bg-surface-2 text-slate-500"
         }`}
       >
         {done ? "✓" : "•"}
       </span>
-      <span className={done ? "text-slate-400 line-through decoration-slate-600" : "text-slate-200"}>{children}</span>
+      <span className={done ? "text-muted line-through decoration-slate-600" : "text-ink"}>{children}</span>
     </li>
   );
 }
@@ -141,7 +141,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
   }, [status]);
 
   if (status === undefined) {
-    return <p className="text-sm text-slate-400">Đang tải xếp hạng…</p>;
+    return <p className="text-sm text-muted">Đang tải xếp hạng…</p>;
   }
 
   const ledgerBySeason = status?.season ? ledger.filter((l) => l.season_id === status.season!.id) : ledger;
@@ -171,24 +171,24 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
       {/* Huy hiệu + RP + tiến trình */}
       <section
         className="relative overflow-hidden rounded-3xl border p-5 sm:p-7"
-        style={{ borderColor: `${meta.color}55`, background: `radial-gradient(120% 120% at 0% 0%, ${meta.color}33 0%, rgba(11,16,32,0.6) 55%)` }}
+        style={{ borderColor: `${meta.color}55`, background: "var(--color-panel)" }}
       >
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
           <RankBadge code={status?.tier?.code} division={status?.tier?.division} paragon={paragon} size={96} className="mx-auto sm:mx-0" />
           <div className="min-w-0 flex-1 text-center sm:text-left">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">{studentName}</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-muted">{studentName}</p>
             {status?.season ? (
               <>
                 <h1 className="mt-1">
                   <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
                 </h1>
-                <p className="mt-1 flex justify-center text-sm text-slate-300 sm:justify-start">
+                <p className="mt-1 flex justify-center text-sm text-ink sm:justify-start">
                   {status.display_title ? <WornTitle title={status.display_title} size="md" /> : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}
                 </p>
-                <p className="mt-3 font-display text-2xl font-bold text-white">
-                  {formatRp(status.rp)} <span className="text-base font-semibold text-slate-400">RP</span>
+                <p className="mt-3 font-display text-2xl font-bold text-ink">
+                  {formatRp(status.rp)} <span className="text-base font-semibold text-muted">RP</span>
                 </p>
-                <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/10">
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
                   <div className="h-full rounded-full transition-[width] motion-reduce:transition-none" style={{ width: `${bar}%`, background: `linear-gradient(90deg, ${meta.color}, ${meta.light})` }} />
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
@@ -202,8 +202,8 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
               </>
             ) : (
               <>
-                <h1 className="font-display text-2xl font-bold text-white">Chưa mở mùa xếp hạng</h1>
-                <p className="mt-1 text-sm text-slate-400">
+                <h1 className="font-display text-2xl font-bold text-ink">Chưa mở mùa xếp hạng</h1>
+                <p className="mt-1 text-sm text-muted">
                   RP sẽ bắt đầu tính khi giáo viên mở mùa cho lớp em. Danh hiệu đã sưu tập vẫn giữ nguyên.
                 </p>
               </>
@@ -239,7 +239,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
                         Thử thách: <b>{status.next.gate.challenge_title}</b> — đạt từ {status.next.gate.challenge_pass_pct}%
                         {status.next.gate.challenge_best_pct !== null ? ` (tốt nhất: ${status.next.gate.challenge_best_pct}%)` : " (chưa làm)"}
                         {" · "}
-                        <Link href={`/kiem-tra/lam/?id=${status.next.gate.challenge_exam_id}`} className="text-cyan-300 hover:underline">
+                        <Link href={`/kiem-tra/lam/?id=${status.next.gate.challenge_exam_id}`} className="text-primary hover:underline">
                           Làm thử thách
                         </Link>
                       </>
@@ -261,7 +261,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
               />
               </>
             ) : (
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-ink">
                 {paragon
                   ? "Em đã đạt danh vị Thách Đấu — không còn điều kiện nào phía trước. Giữ trọn bộ danh hiệu tới hết mùa để danh vị được ghi vào thành tích mùa."
                   : "Em đang ở bậc cao nhất của mùa này. Giữ vững phong độ!"}
@@ -272,18 +272,18 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
           <Section icon={CalendarCheck} title="Mục tiêu tuần" aside={status.weekly ? `+${status.weekly.rp} RP` : undefined}>
             {status.weekly && (
               <>
-                <p className="text-sm text-slate-300">
-                  Hoàn thành <b className="text-white">{status.weekly.target}</b> bài tính RP đạt từ{" "}
-                  <b className="text-white">{String(status.weekly.min_score).replace(".", ",")}</b> điểm trong tuần (Thứ Hai – Chủ Nhật).
+                <p className="text-sm text-ink">
+                  Hoàn thành <b className="text-ink">{status.weekly.target}</b> bài tính RP đạt từ{" "}
+                  <b className="text-ink">{String(status.weekly.min_score).replace(".", ",")}</b> điểm trong tuần (Thứ Hai – Chủ Nhật).
                 </p>
                 {status.weekly.personal && (
-                  <p className="mt-1 text-xs text-cyan-300/80">Mục tiêu đặt riêng cho em, dựa trên nhịp học 2 tuần gần nhất của chính em.</p>
+                  <p className="mt-1 text-xs text-primary/80">Mục tiêu đặt riêng cho em, dựa trên nhịp học 2 tuần gần nhất của chính em.</p>
                 )}
                 <div className="mt-3 flex items-center gap-2">
                   {Array.from({ length: status.weekly.target }).map((_, i) => (
                     <span
                       key={i}
-                      className={`h-3 flex-1 rounded-full ${i < status.weekly!.done ? "bg-emerald-400" : "bg-white/10"}`}
+                      className={`h-3 flex-1 rounded-full ${i < status.weekly!.done ? "bg-emerald-400" : "bg-surface-2"}`}
                     />
                   ))}
                 </div>
@@ -305,12 +305,12 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
           <EmptyState title="Chưa có dữ liệu danh hiệu" description="Danh hiệu tính từ các bài kiểm tra em đã làm." />
         ) : (
           <>
-            <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.02] p-1 text-xs">
+            <div className="mb-4 inline-flex rounded-full border border-line bg-surface-2 p-1 text-xs">
               <button
                 type="button"
                 onClick={() => setTitleView("chu_de")}
                 className={`rounded-full px-3 py-1.5 font-semibold transition ${
-                  titleView === "chu_de" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300"
+                  titleView === "chu_de" ? "bg-primary-soft text-primary" : "text-slate-500 hover:text-ink"
                 }`}
               >
                 Theo chủ đề
@@ -319,7 +319,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
                 type="button"
                 onClick={() => setTitleView("lop")}
                 className={`rounded-full px-3 py-1.5 font-semibold transition ${
-                  titleView === "lop" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300"
+                  titleView === "lop" ? "bg-primary-soft text-primary" : "text-slate-500 hover:text-ink"
                 }`}
               >
                 Theo lớp
@@ -355,7 +355,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
                     {l.amount}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-slate-200">{l.reason || LEDGER_KIND_LABELS[l.source_kind]}</span>
+                    <span className="block truncate text-ink">{l.reason || LEDGER_KIND_LABELS[l.source_kind]}</span>
                     <span className="text-xs text-slate-500">
                       {LEDGER_KIND_LABELS[l.source_kind]}
                       {l.actor_name && ` · ${l.actor_name}`} · {new Date(l.created_at).toLocaleDateString("vi-VN")}
@@ -373,10 +373,10 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
           ) : (
             <ul className="space-y-2">
               {seasons.map((s) => (
-                <li key={s.season_id} className="flex items-center gap-3 rounded-xl border border-white/10 p-3">
+                <li key={s.season_id} className="flex items-center gap-3 rounded-xl border border-line p-3">
                   <RankBadge code={s.tier_code} division={s.division} paragon={s.paragon} size={36} />
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate font-semibold text-white">
+                    <span className="block truncate font-semibold text-ink">
                       {s.name} {s.status === "active" && <span className="text-xs font-normal text-emerald-300">· đang diễn ra</span>}
                     </span>
                     <span className="text-xs text-slate-500">

@@ -14,7 +14,7 @@ export default function ExamSamples() {
   return (
     <section id="de-thi" className="border-t border-line py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Đề các năm</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-primary">Đề các năm</p>
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           Đề kiểm tra các năm
         </h2>
@@ -23,13 +23,13 @@ export default function ExamSamples() {
             <li key={card.id}>
               <Link
                 href={`/kiem-tra/xem-thu?id=${card.id}`}
-                className="flex min-h-14 flex-col rounded-xl border border-line px-5 py-4 transition hover:border-cyan-300/50"
+                className="flex min-h-14 flex-col rounded-xl border border-line px-5 py-4 transition hover:border-primary/50"
               >
                 <span className="text-lg font-semibold leading-snug text-ink">{examSampleLine(card)}</span>
                 <span className="mt-1 text-base text-muted">
                   {card.questionCount} câu · {card.durationMinutes} phút
                 </span>
-                <span className="mt-3 text-base font-medium text-cyan-300">Làm miễn phí</span>
+                <span className="mt-3 text-base font-medium text-primary">Làm miễn phí</span>
               </Link>
             </li>
           ))}

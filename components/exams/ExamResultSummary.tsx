@@ -23,8 +23,8 @@ function tone(pct: number) {
   if (pct >= 70)
     return {
       stroke: "#06B6D4",
-      text: "text-cyan-300",
-      soft: "bg-cyan-500/10",
+      text: "text-primary",
+      soft: "bg-primary-soft",
       message: "🔥 Khá tốt rồi — xem lại vài câu sai là chắc kiến thức.",
     };
   if (pct >= 50)
@@ -55,7 +55,7 @@ function Ring({ pct, color }: { pct: number; color: string }) {
         stroke="currentColor"
         strokeOpacity="0.12"
         strokeWidth="12"
-        className="text-slate-400"
+        className="text-muted"
       />
       <circle
         cx="60"
@@ -92,7 +92,7 @@ export interface ResultBadge {
 const BADGE_CLS: Record<ResultBadge["tone"], string> = {
   pass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
   fail: "bg-red-500/15 text-red-300 border-red-500/40",
-  pending: "bg-violet-500/15 text-violet-300 border-violet-500/40",
+  pending: "bg-warn/5 text-warn border-warn/40",
 };
 
 interface Props {
@@ -123,21 +123,21 @@ export default function ExamResultSummary({
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
+      <section className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-4">
           <div className="animate-result-pop">
             <ResultSticker tier={resultTier(pct)} />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-3">
-              <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
+              <h2 className="font-display text-xl font-bold leading-snug text-ink">{t.message}</h2>
               {badge && (
                 <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${BADGE_CLS[badge.tone]}`}>
                   {badge.label}
                 </span>
               )}
             </div>
-            {meta && <p className="mt-1 text-sm text-slate-400">{meta}</p>}
+            {meta && <p className="mt-1 text-sm text-muted">{meta}</p>}
           </div>
         </div>
 
@@ -145,21 +145,21 @@ export default function ExamResultSummary({
           <Ring pct={pct} color={t.stroke} />
           <dl className="min-w-[200px] flex-1 space-y-2 text-sm">
             <div className="flex items-center justify-between gap-3">
-              <dt className="text-slate-400">Tổng điểm</dt>
+              <dt className="text-muted">Tổng điểm</dt>
               <dd className={`rounded-lg px-3 py-1 font-mono text-lg font-bold ${t.soft} ${t.text}`}>
                 {num(summary.score10)}
-                <span className="text-slate-400"> / 10</span>
+                <span className="text-muted"> / 10</span>
               </dd>
             </div>
             <div className="flex items-center justify-between gap-3">
-              <dt className="text-slate-400">Số câu đúng trọn vẹn</dt>
-              <dd className="font-mono font-semibold text-white">
+              <dt className="text-muted">Số câu đúng trọn vẹn</dt>
+              <dd className="font-mono font-semibold text-ink">
                 {summary.correctCount}/{questions.length}
               </dd>
             </div>
             <div className="flex items-center justify-between gap-3">
-              <dt className="text-slate-400">Điểm đã đạt</dt>
-              <dd className="font-mono font-semibold text-white">
+              <dt className="text-muted">Điểm đã đạt</dt>
+              <dd className="font-mono font-semibold text-ink">
                 {num(summary.earned)}/{num(summary.max)}
               </dd>
             </div>
@@ -167,7 +167,7 @@ export default function ExamResultSummary({
         </div>
 
         {reportHint && (
-          <p className="mt-4 text-base leading-relaxed text-slate-300">
+          <p className="mt-4 text-base leading-relaxed text-ink">
             Câu nào sai hoặc khó hiểu, bấm Báo lỗi câu này.
           </p>
         )}
@@ -183,19 +183,19 @@ export default function ExamResultSummary({
       </section>
 
       <section>
-        <h3 className="mb-3 font-display font-semibold text-white">Bảng thống kê</h3>
+        <h3 className="mb-3 font-display font-semibold text-ink">Bảng thống kê</h3>
         <div className="space-y-3">
           {stats.map((s) => (
             <div
               key={s.type}
-              className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-panel p-4"
+              className="flex flex-wrap items-center gap-4 rounded-2xl border border-line bg-panel p-4"
             >
               <div className="min-w-[180px] flex-1">
-                <p className="font-semibold text-white">
+                <p className="font-semibold text-ink">
                   {s.label}{" "}
-                  <span className="text-sm font-normal text-slate-400">({s.total} câu)</span>
+                  <span className="text-sm font-normal text-muted">({s.total} câu)</span>
                 </p>
-                <ul className="mt-1 space-y-0.5 text-sm text-slate-400">
+                <ul className="mt-1 space-y-0.5 text-sm text-muted">
                   <li>
                     Số câu đúng: <b className="text-emerald-300">{s.correct}/{s.total}</b>
                   </li>
@@ -208,20 +208,20 @@ export default function ExamResultSummary({
                     Số câu sai: <b className="text-red-300">{s.wrong}/{s.total}</b>
                   </li>
                   <li>
-                    Số câu bỏ qua: <b className="text-slate-300">{s.skipped}/{s.total}</b>
+                    Số câu bỏ qua: <b className="text-ink">{s.skipped}/{s.total}</b>
                   </li>
                 </ul>
               </div>
               {s.max > 0 ? (
-                <div className="rounded-xl bg-white/5 px-4 py-2 text-center">
-                  <p className="text-xs text-slate-400">Điểm</p>
-                  <p className="font-mono font-bold text-white">
+                <div className="rounded-xl bg-surface-2 px-4 py-2 text-center">
+                  <p className="text-xs text-muted">Điểm</p>
+                  <p className="font-mono font-bold text-ink">
                     {num(s.earned)}
-                    <span className="text-slate-400"> / {num(s.max)}</span>
+                    <span className="text-muted"> / {num(s.max)}</span>
                   </p>
                 </div>
               ) : (
-                <p className="rounded-xl bg-violet-500/10 px-4 py-2 text-xs text-violet-300">
+                <p className="rounded-xl bg-warn/5 px-4 py-2 text-xs text-warn">
                   Thầy chấm tay
                 </p>
               )}

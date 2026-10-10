@@ -34,27 +34,27 @@ export default function BlogIndexPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-4xl px-6 pt-28 pb-20 lg:px-8">
-        <p className="font-mono text-xs font-medium tracking-widest text-cyan-300 uppercase">
+        <p className="font-mono text-xs font-medium tracking-widest text-primary uppercase">
           Blog kiến thức
         </p>
-        <h1 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">
           Kiến thức &amp; lộ trình{" "}
           <span className="text-gradient">Vật lý THPT</span>
         </h1>
-        <p className="mt-3 mb-10 max-w-2xl text-slate-400">
+        <p className="mt-3 mb-10 max-w-2xl text-muted">
           Chia sẻ lộ trình học, mẹo ôn thi và cách hiểu Vật lý theo chương trình
           mới 2018 — viết bởi thầy Thạch.
         </p>
 
         {posts.length === 0 ? (
-          <p className="text-slate-400">Chưa có bài viết nào.</p>
+          <p className="text-muted">Chưa có bài viết nào.</p>
         ) : (
           <div className="space-y-5">
             {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-2xl border border-white/10 bg-panel p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
+                className="group block rounded-2xl border border-line bg-panel p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
               >
                 <p className="text-xs text-slate-500">
                   <time dateTime={post.date}>{formatDate(post.date)}</time> ·{" "}
@@ -77,10 +77,10 @@ export default function BlogIndexPage() {
                     ))}
                   </div>
                 ) : null}
-                <h2 className="mt-2 font-display text-xl font-bold text-white group-hover:text-primary">
+                <h2 className="mt-2 font-display text-xl font-bold text-ink group-hover:text-primary">
                   {post.title}
                 </h2>
-                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
                   {post.description}
                 </p>
                 <span className="mt-4 inline-block text-sm font-semibold text-primary">

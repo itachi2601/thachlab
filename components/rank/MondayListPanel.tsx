@@ -51,8 +51,8 @@ export default function MondayListPanel({ classId }: { classId: number }) {
       <div className="mb-3 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 text-amber-300">
           <Sparkles size={18} />
-          <h3 className="font-display text-lg font-bold text-white">Danh sách thứ Hai</h3>
-          <span className="text-xs text-slate-400">tuần {fmtDay(data.week_start)}–{fmtDay(data.week_end)}</span>
+          <h3 className="font-display text-lg font-bold text-ink">Danh sách thứ Hai</h3>
+          <span className="text-xs text-muted">tuần {fmtDay(data.week_start)}–{fmtDay(data.week_end)}</span>
         </div>
         {!empty && (
           <button type="button" onClick={copyText} className="admin-chip flex items-center gap-1.5">
@@ -61,32 +61,32 @@ export default function MondayListPanel({ classId }: { classId: number }) {
         )}
       </div>
       {empty ? (
-        <p className="text-sm text-slate-400">Tuần vừa rồi chưa có em nào lên mức hay đủ dữ liệu để xét tiến bộ.</p>
+        <p className="text-sm text-muted">Tuần vừa rồi chưa có em nào lên mức hay đủ dữ liệu để xét tiến bộ.</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
               <Sparkles size={13} /> Lên mức
             </p>
             <ul className="space-y-1.5 text-sm">
               {data.level_ups.map((m) => (
-                <li key={m.student_id} className="text-slate-300">
-                  <b className="text-white">{m.name}</b>
-                  <span className="block text-xs text-slate-400">{m.items.join(" · ")}</span>
+                <li key={m.student_id} className="text-ink">
+                  <b className="text-ink">{m.name}</b>
+                  <span className="block text-xs text-muted">{m.items.join(" · ")}</span>
                 </li>
               ))}
               {data.level_ups.length === 0 && <li className="text-xs text-slate-500">Chưa có.</li>}
             </ul>
           </div>
           <div>
-            <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
               <TrendingUp size={13} /> Tiến bộ nhất
             </p>
             <ul className="space-y-1.5 text-sm">
               {data.improved.map((m) => (
-                <li key={m.student_id} className="text-slate-300">
-                  <b className="text-white">{m.name}</b>
-                  <span className="block text-xs text-slate-400">
+                <li key={m.student_id} className="text-ink">
+                  <b className="text-ink">{m.name}</b>
+                  <span className="block text-xs text-muted">
                     tỉ lệ đúng {pct(m.acc_base)} → {pct(m.acc_now)}{" "}
                     <b className="text-emerald-300">+{String(m.gain).replace(".", ",")} điểm %</b>
                   </span>

@@ -205,7 +205,7 @@ export default function TutoringExitQuiz({
         role="presentation"
       >
         <motion.div
-          className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-white/10 bg-panel p-5 shadow-2xl sm:p-6 ${
+          className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-line bg-panel p-5 shadow-2xl sm:p-6 ${
             wide ? "max-w-2xl" : "max-w-sm"
           }`}
           initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
@@ -217,20 +217,20 @@ export default function TutoringExitQuiz({
           aria-modal="true"
         >
           <div className="mb-3 flex items-start justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-white">
+            <h2 className="font-display text-lg font-semibold text-ink">
               {exitWindow ? "Kiểm tra cuối buổi phụ đạo" : "Tự kiểm tra thoát phụ đạo"}
             </h2>
-            <button type="button" onClick={onClose} aria-label="Đóng" className="text-slate-400 hover:text-white">
+            <button type="button" onClick={onClose} aria-label="Đóng" className="text-muted hover:text-primary">
               <X size={18} />
             </button>
           </div>
 
-          {phase === "loading" && <p className="text-sm text-slate-400">Đang soạn câu hỏi…</p>}
+          {phase === "loading" && <p className="text-sm text-muted">Đang soạn câu hỏi…</p>}
 
           {phase === "empty" && (
             <div className="space-y-4">
-              <p className="text-sm text-slate-300">
-                Ngân hàng câu hỏi chưa có câu nào cho <strong className="text-white">{needLabel(need)}</strong>. Em
+              <p className="text-sm text-ink">
+                Ngân hàng câu hỏi chưa có câu nào cho <strong className="text-ink">{needLabel(need)}</strong>. Em
                 đăng ký buổi phụ đạo bên dưới nhé.
               </p>
               <Button variant="outline" onClick={onClose} className="w-full">
@@ -243,8 +243,8 @@ export default function TutoringExitQuiz({
 
           {phase === "intro" && (
             <div className="space-y-4">
-              <p className="text-sm text-slate-300">
-                <strong className="text-white">{needLabel(need)}</strong> · {questions.length} câu · cần đạt từ{" "}
+              <p className="text-sm text-ink">
+                <strong className="text-ink">{needLabel(need)}</strong> · {questions.length} câu · cần đạt từ{" "}
                 {passPct}%.
               </p>
               <p className="text-xs text-slate-500">
@@ -263,7 +263,7 @@ export default function TutoringExitQuiz({
           {phase === "running" && (
             <div className="space-y-4">
               <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-ink">
                   Câu {cur + 1}/{questions.length}
                 </p>
                 <p className="text-xs text-slate-500">
@@ -300,8 +300,8 @@ export default function TutoringExitQuiz({
                   result.passed ? "border-emerald-500/40 bg-emerald-500/10" : "border-amber-500/40 bg-amber-500/10"
                 }`}
               >
-                <p className="text-3xl font-bold text-white">{result.pct}%</p>
-                <p className="mt-1 text-sm text-slate-300">
+                <p className="text-3xl font-bold text-ink">{result.pct}%</p>
+                <p className="mt-1 text-sm text-ink">
                   Đúng {result.correct}/{result.total} câu
                 </p>
               </div>
@@ -315,7 +315,7 @@ export default function TutoringExitQuiz({
                       : `Chưa đạt ${passPct}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau ${EXIT_COOLDOWN_HOURS} giờ em xem lại lý thuyết rồi thử lượt mới nhé.`}
                   </p>
                   {theoryHref && (
-                    <a href={theoryHref} className="inline-block font-semibold text-sky-300 underline-offset-2 hover:underline">
+                    <a href={theoryHref} className="inline-block font-semibold text-primary underline-offset-2 hover:underline">
                       Ôn lại đoạn lý thuyết →
                     </a>
                   )}

@@ -57,62 +57,62 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
 
   return <div className="space-y-5">
     <div className="flex flex-wrap gap-2">
-      <button onClick={()=>setView("live")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="live"?"border-cyan-400/40 bg-cyan-500/10 text-cyan-200":"border-white/10 text-slate-400"}`}><CalendarCheck size={16}/>Điểm danh trực tiếp</button>
-      <button onClick={()=>setView("machines")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="machines"?"border-orange-400/40 bg-orange-500/10 text-orange-200":"border-white/10 text-slate-400"}`}><Wrench size={16}/>Tình trạng máy</button>
-      <button onClick={()=>setView("summary")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="summary"?"border-cyan-400/40 bg-cyan-500/10 text-cyan-200":"border-white/10 text-slate-400"}`}><Grid3x3 size={16}/>Tổng hợp điểm danh</button>
+      <button onClick={()=>setView("live")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="live"?"border-cyan-400/40 bg-cyan-500/10 text-cyan-200":"border-line text-muted"}`}><CalendarCheck size={16}/>Điểm danh trực tiếp</button>
+      <button onClick={()=>setView("machines")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="machines"?"border-orange-400/40 bg-orange-500/10 text-orange-200":"border-line text-muted"}`}><Wrench size={16}/>Tình trạng máy</button>
+      <button onClick={()=>setView("summary")} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold ${view==="summary"?"border-cyan-400/40 bg-cyan-500/10 text-cyan-200":"border-line text-muted"}`}><Grid3x3 size={16}/>Tổng hợp điểm danh</button>
     </div>
 
-    {view==="live"&&<section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
+    {view==="live"&&<section className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-cyan-300">Tham dự offline</p><h3 className="mt-1 font-display text-2xl font-bold text-white">Điểm danh khóa học</h3><p className="mt-1 text-sm text-slate-500">Mở phiên theo buổi học để sinh viên nhập mã điểm danh; mã 6 số hiệu lực 60 phút, sau 15 phút hệ thống ghi nhận đi muộn.</p></div>
+        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-primary">Tham dự offline</p><h3 className="mt-1 font-display text-2xl font-bold text-ink">Điểm danh khóa học</h3><p className="mt-1 text-sm text-slate-500">Mở phiên theo buổi học để sinh viên nhập mã điểm danh; mã 6 số hiệu lực 60 phút, sau 15 phút hệ thống ghi nhận đi muộn.</p></div>
         <button onClick={()=>setCreating(value=>!value)} className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-4 py-2.5 text-sm font-bold text-white"><Plus size={17}/>Mở phiên điểm danh</button>
       </div>
-      {creating&&<div className="mt-5 grid gap-3 rounded-2xl border border-orange-400/20 bg-orange-500/5 p-4 sm:grid-cols-[1fr_1fr_auto]"><input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Nội dung buổi học" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white"/><input type="datetime-local" value={startsAt} onChange={e=>setStartsAt(e.target.value)} className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white"/><button disabled={busy||!title.trim()} onClick={createSession} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-40">Mở phiên</button></div>}
+      {creating&&<div className="mt-5 grid gap-3 rounded-2xl border border-orange-400/20 bg-orange-500/5 p-4 sm:grid-cols-[1fr_1fr_auto]"><input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Nội dung buổi học" className="rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm text-ink"/><input type="datetime-local" value={startsAt} onChange={e=>setStartsAt(e.target.value)} className="rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm text-white"/><button disabled={busy||!title.trim()} onClick={createSession} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-40">Mở phiên</button></div>}
       {error&&<p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
 
       <div className="mt-5 flex flex-wrap items-center gap-3">
-        <select aria-label="Chọn buổi điểm danh" value={selectedId??""} onChange={e=>setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-white/10 bg-panel-deep px-4 py-2.5 text-sm text-white sm:flex-none">
+        <select aria-label="Chọn buổi điểm danh" value={selectedId??""} onChange={e=>setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-line-strong bg-panel-deep px-4 py-2.5 text-sm text-ink sm:flex-none">
           <option value="" disabled>Chọn buổi điểm danh…</option>
           {sessions.map(item=><option key={item.id} value={item.id}>{item.title} · {new Date(item.starts_at).toLocaleString("vi-VN")} · {item.status==="open"?"Đang mở":"Đã khóa"}</option>)}
         </select>
-        <button aria-label="Làm mới" onClick={()=>void loadSessions()} className="text-slate-400"><RefreshCw size={16}/></button>
+        <button aria-label="Làm mới" onClick={()=>void loadSessions()} className="text-muted"><RefreshCw size={16}/></button>
         {!sessions.length&&<p className="text-sm text-slate-500">Chưa có buổi điểm danh nào, hãy mở phiên đầu tiên.</p>}
       </div>
 
       {selected?<>
         <div className="mt-4 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
-          <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-5">
+          <div className="rounded-2xl border border-cyan-400/20 bg-primary-soft p-5">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div><small className="font-bold uppercase tracking-wider text-cyan-300">Mã điểm danh</small><div className="mt-1 flex items-center gap-3"><strong className="font-mono text-4xl tracking-[.18em] text-white">{selected.code}</strong><button onClick={copyCode} className="flex items-center gap-1 text-cyan-300">{copied?<><CheckCheck size={18}/><small className="text-xs font-bold">Đã chép</small></>:<Copy size={18}/>}</button></div></div>
-              <div className="text-right text-sm text-slate-400"><p className="flex items-center justify-end gap-2"><Users size={15}/>{presentCount}/{students.length} đã tham dự</p><p className="mt-1 flex items-center justify-end gap-2"><Clock3 size={15}/>Đóng {new Date(selected.closes_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"})}</p></div>
+              <div><small className="font-bold uppercase tracking-wider text-primary">Mã điểm danh</small><div className="mt-1 flex items-center gap-3"><strong className="font-mono text-4xl tracking-[.18em] text-ink">{selected.code}</strong><button onClick={copyCode} className="flex items-center gap-1 text-primary">{copied?<><CheckCheck size={18}/><small className="text-xs font-bold">Đã chép</small></>:<Copy size={18}/>}</button></div></div>
+              <div className="text-right text-sm text-muted"><p className="flex items-center justify-end gap-2"><Users size={15}/>{presentCount}/{students.length} đã tham dự</p><p className="mt-1 flex items-center justify-end gap-2"><Clock3 size={15}/>Đóng {new Date(selected.closes_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"})}</p></div>
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              {selected.status==="open"&&<button onClick={async()=>{await closeAttendanceSession(selected.id);await loadSessions()}} className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-bold text-slate-300"><LockKeyhole size={14}/>Khóa phiên</button>}
+              {selected.status==="open"&&<button onClick={async()=>{await closeAttendanceSession(selected.id);await loadSessions()}} className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-xs font-bold text-ink"><LockKeyhole size={14}/>Khóa phiên</button>}
               {selected.status==="open"&&unmarkedCount>0&&<button disabled={busy} onClick={()=>void markRemainingPresent()} className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-200 disabled:opacity-40"><Check size={14}/>Đánh dấu {unmarkedCount} SV còn lại: Có mặt</button>}
-              <button disabled={busy} onClick={()=>void toggleMachineSelection()} title="Bật/tắt việc sinh viên tự chọn/đổi máy cho buổi này, độc lập với khoá điểm danh" className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold disabled:opacity-40 ${selected.machine_selection_open?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-white/10 text-slate-300"}`}>{selected.machine_selection_open?<Unlock size={14}/>:<LockKeyhole size={14}/>}{selected.machine_selection_open?"Đang cho chọn máy":"Đã khoá chọn máy"}</button>
+              <button disabled={busy} onClick={()=>void toggleMachineSelection()} title="Bật/tắt việc sinh viên tự chọn/đổi máy cho buổi này, độc lập với khoá điểm danh" className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold disabled:opacity-40 ${selected.machine_selection_open?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-line text-ink"}`}>{selected.machine_selection_open?<Unlock size={14}/>:<LockKeyhole size={14}/>}{selected.machine_selection_open?"Đang cho chọn máy":"Đã khoá chọn máy"}</button>
             </div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[.02] p-5">
-            <div className="flex items-center gap-2 text-sm font-bold text-white"><NotebookPen size={16} className="text-violet-300"/>Ghi chú buổi học</div>
-            <textarea value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} rows={5} placeholder="Ghi chú nhanh về buổi học: sự cố máy, nội dung đặc biệt, sinh viên xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-panel-deep px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none"/>
+          <div className="rounded-2xl border border-line bg-surface-2 p-5">
+            <div className="flex items-center gap-2 text-sm font-bold text-ink"><NotebookPen size={16} className="text-violet-300"/>Ghi chú buổi học</div>
+            <textarea value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} rows={5} placeholder="Ghi chú nhanh về buổi học: sự cố máy, nội dung đặc biệt, sinh viên xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-line-strong bg-panel-deep px-3 py-2.5 text-sm text-ink placeholder:text-slate-500 focus:outline-none"/>
           </div>
         </div>
 
-        <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-panel-deep px-3 py-2"><Search size={15} className="text-slate-500"/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Tìm sinh viên theo tên hoặc lớp…" className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"/></div>
-        <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[1050px] text-left text-sm"><thead><tr className="border-b border-white/10 text-xs uppercase text-slate-500"><th className="p-3">Sinh viên</th><th className="p-3">Thời gian</th><th className="p-3">Điểm danh</th><th className="p-3">Máy</th><th className="p-3">Điểm cộng/trừ</th><th className="p-3">Ghi chú</th></tr></thead><tbody>{visibleStudents.map(student=>{const record=records.find(item=>item.student_id===student.id);const bonusValue=bonusDrafts[student.id]??String(record?.bonus_points??0);const noteValue=recordNoteDrafts[student.id]??record?.note??"";const bonusNum=Number(bonusValue)||0;return <tr key={student.id} className="border-b border-white/5"><td className="p-3"><strong className="text-white">{student.name}</strong><small className="block text-slate-500">{student.className}</small></td><td className="p-3 text-slate-400">{record?.checked_in_at?new Date(record.checked_in_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}):"—"}</td><td className="p-3"><select disabled={busy} value={record?.status??""} onChange={e=>void mark(student.id,e.target.value as AttendanceStatus)} className={`rounded-lg border bg-panel-deep px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 ${record?statusMeta[record.status].style:"text-slate-500"} border-white/10`}><option value="" disabled>Chọn</option>{Object.entries(statusMeta).map(([value,meta])=><option key={value} value={value}>{meta.label}</option>)}</select></td><td className="p-3"><select disabled={!record||busy} title={!record?"Điểm danh trước khi gán máy":!sessionMachineList.length?"Giáo viên chưa chọn máy cho buổi này":""} value={record?.machine_code??""} onChange={e=>void assignMachine(student.id,e.target.value)} className="rounded-lg border border-white/10 bg-panel-deep px-2.5 py-1.5 text-xs font-bold text-slate-300 disabled:cursor-not-allowed disabled:opacity-30"><option value="">— Chưa chọn —</option>{groupMachinesByType(sessionMachineList).map(group=><optgroup key={group.type} label={group.label}>{group.machines.map(m=><option key={m.code} value={m.code} title={m.label}>{m.code}</option>)}</optgroup>)}</select></td><td className="p-3"><input type="number" step={1} disabled={!record} title={!record?"Điểm danh trước khi cộng/trừ điểm":""} value={bonusValue} onChange={e=>setBonusDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentBonus(student.id)} className={`w-20 rounded-lg border bg-panel-deep px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum>0?"border-emerald-400/30 text-emerald-300":bonusNum<0?"border-red-400/30 text-red-300":"border-white/10 text-slate-300"}`}/></td><td className="p-3"><input type="text" disabled={!record} title={!record?"Điểm danh trước khi ghi chú":""} value={noteValue} onChange={e=>setRecordNoteDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentNote(student.id)} placeholder={record?"Ghi chú…":"—"} className="w-40 rounded-lg border border-white/10 bg-panel-deep px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"/></td></tr>})}{!visibleStudents.length&&<tr><td colSpan={6} className="p-6 text-center text-sm text-slate-500">Không tìm thấy sinh viên phù hợp.</td></tr>}</tbody></table></div>
-      </>:<div className="mt-5 grid min-h-72 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><CalendarCheck size={30}/><span className="mt-2">Chọn hoặc mở một phiên điểm danh.</span></div>}
+        <div className="mt-4 flex items-center gap-2 rounded-xl border border-line-strong bg-panel-deep px-3 py-2"><Search size={15} className="text-slate-500"/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Tìm sinh viên theo tên hoặc lớp…" className="w-full bg-transparent text-sm text-ink placeholder:text-slate-500 focus:outline-none"/></div>
+        <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[1050px] text-left text-sm"><thead><tr className="border-b border-line text-xs uppercase text-slate-500"><th className="p-3">Sinh viên</th><th className="p-3">Thời gian</th><th className="p-3">Điểm danh</th><th className="p-3">Máy</th><th className="p-3">Điểm cộng/trừ</th><th className="p-3">Ghi chú</th></tr></thead><tbody>{visibleStudents.map(student=>{const record=records.find(item=>item.student_id===student.id);const bonusValue=bonusDrafts[student.id]??String(record?.bonus_points??0);const noteValue=recordNoteDrafts[student.id]??record?.note??"";const bonusNum=Number(bonusValue)||0;return <tr key={student.id} className="border-b border-line"><td className="p-3"><strong className="text-ink">{student.name}</strong><small className="block text-slate-500">{student.className}</small></td><td className="p-3 text-muted">{record?.checked_in_at?new Date(record.checked_in_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}):"—"}</td><td className="p-3"><select disabled={busy} value={record?.status??""} onChange={e=>void mark(student.id,e.target.value as AttendanceStatus)} className={`rounded-lg border bg-panel-deep px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 ${record?statusMeta[record.status].style:"text-slate-500"} border-line-strong`}><option value="" disabled>Chọn</option>{Object.entries(statusMeta).map(([value,meta])=><option key={value} value={value}>{meta.label}</option>)}</select></td><td className="p-3"><select disabled={!record||busy} title={!record?"Điểm danh trước khi gán máy":!sessionMachineList.length?"Giáo viên chưa chọn máy cho buổi này":""} value={record?.machine_code??""} onChange={e=>void assignMachine(student.id,e.target.value)} className="rounded-lg border border-line-strong bg-panel-deep px-2.5 py-1.5 text-xs font-bold text-ink disabled:cursor-not-allowed disabled:opacity-30"><option value="">— Chưa chọn —</option>{groupMachinesByType(sessionMachineList).map(group=><optgroup key={group.type} label={group.label}>{group.machines.map(m=><option key={m.code} value={m.code} title={m.label}>{m.code}</option>)}</optgroup>)}</select></td><td className="p-3"><input type="number" step={1} disabled={!record} title={!record?"Điểm danh trước khi cộng/trừ điểm":""} value={bonusValue} onChange={e=>setBonusDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentBonus(student.id)} className={`w-20 rounded-lg border bg-panel-deep px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum>0?"border-emerald-400/30 text-emerald-300":bonusNum<0?"border-red-400/30 text-red-300":"border-line-strong text-ink"}`}/></td><td className="p-3"><input type="text" disabled={!record} title={!record?"Điểm danh trước khi ghi chú":""} value={noteValue} onChange={e=>setRecordNoteDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentNote(student.id)} placeholder={record?"Ghi chú…":"—"} className="w-40 rounded-lg border border-line-strong bg-panel-deep px-2 py-1.5 text-xs text-ink placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"/></td></tr>})}{!visibleStudents.length&&<tr><td colSpan={6} className="p-6 text-center text-sm text-slate-500">Không tìm thấy sinh viên phù hợp.</td></tr>}</tbody></table></div>
+      </>:<div className="mt-5 grid min-h-72 place-items-center rounded-2xl border border-dashed border-line text-sm text-slate-500"><CalendarCheck size={30}/><span className="mt-2">Chọn hoặc mở một phiên điểm danh.</span></div>}
     </section>}
 
-    {view==="machines"&&<section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
+    {view==="machines"&&<section className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Thiết bị</p><h3 className="mt-1 font-display text-2xl font-bold text-white">Tình trạng máy</h3><p className="mt-1 text-sm text-slate-500">Sinh viên tự chọn máy khi điểm danh (hoặc giáo viên gán ở tab Điểm danh trực tiếp); mỗi máy chỉ cần 1 bạn nộp ảnh đầu ca/cuối ca cho cả nhóm. Bấm NG để báo hỏng máy.</p></div>
+        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Thiết bị</p><h3 className="mt-1 font-display text-2xl font-bold text-ink">Tình trạng máy</h3><p className="mt-1 text-sm text-slate-500">Sinh viên tự chọn máy khi điểm danh (hoặc giáo viên gán ở tab Điểm danh trực tiếp); mỗi máy chỉ cần 1 bạn nộp ảnh đầu ca/cuối ca cho cả nhóm. Bấm NG để báo hỏng máy.</p></div>
       </div>
       <div className="mt-5 flex flex-wrap items-center gap-3">
-        <select aria-label="Chọn buổi điểm danh" value={selectedId??""} onChange={e=>setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-white/10 bg-panel-deep px-4 py-2.5 text-sm text-white sm:flex-none">
+        <select aria-label="Chọn buổi điểm danh" value={selectedId??""} onChange={e=>setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-line-strong bg-panel-deep px-4 py-2.5 text-sm text-ink sm:flex-none">
           <option value="" disabled>Chọn buổi điểm danh…</option>
           {sessions.map(item=><option key={item.id} value={item.id}>{item.title} · {new Date(item.starts_at).toLocaleString("vi-VN")} · {item.status==="open"?"Đang mở":"Đã khóa"}</option>)}
         </select>
-        <button aria-label="Làm mới" onClick={loadMachineData} className="text-slate-400"><RefreshCw size={16}/></button>
+        <button aria-label="Làm mới" onClick={loadMachineData} className="text-muted"><RefreshCw size={16}/></button>
       </div>
       {selected&&<SessionMachineSetup session={selected} savedMachines={sessionMachineList} defaultWorkshop={workshop} onSaved={()=>{void loadSessionMachines();void loadSessions()}}/>}
       {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -122,8 +122,8 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
       </div>}
       {selected?<div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {machineGroups.map(group=><MachineGroupCard key={group.code} courseId={courseId} sessionId={selected.id} code={group.code} label={sessionMachineList.find(m=>m.code===group.code)?.label} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData} reports={breakdowns.filter(r=>r.machine_code===group.code)} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>)}
-        {!machineGroups.length&&<p className="rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500 sm:col-span-2 xl:col-span-1">Chưa có sinh viên nào chọn máy trong buổi này.</p>}
-      </div>:<div className="mt-5 grid min-h-56 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><Wrench size={26}/><span className="mt-2">Chọn một buổi điểm danh để xem tình trạng máy.</span></div>}
+        {!machineGroups.length&&<p className="rounded-xl border border-dashed border-line p-6 text-center text-sm text-slate-500 sm:col-span-2 xl:col-span-1">Chưa có sinh viên nào chọn máy trong buổi này.</p>}
+      </div>:<div className="mt-5 grid min-h-56 place-items-center rounded-2xl border border-dashed border-line text-sm text-slate-500"><Wrench size={26}/><span className="mt-2">Chọn một buổi điểm danh để xem tình trạng máy.</span></div>}
     </section>}
 
     {view==="summary"&&<AttendanceMatrixSummary students={students} sessions={sessions} allRecords={allRecords}/>}
@@ -145,25 +145,25 @@ function AttendanceMatrixSummary({students,sessions,allRecords}:{students:Studen
   const perfect=rows.filter(row=>orderedSessions.length>0&&row.present===orderedSessions.length).length;
   const concern=rows.filter(row=>row.absent>=2||row.late>=3||(orderedSessions.length>=3&&row.rate<75)).length;
 
-  return <section className="rounded-2xl border border-white/10 bg-panel p-5">
-    <div className="flex items-center gap-2"><Grid3x3 size={19} className="text-cyan-300"/><h3 className="font-display text-xl font-bold text-white">Tổng hợp điểm danh theo học sinh</h3></div>
+  return <section className="rounded-2xl border border-line bg-panel p-5">
+    <div className="flex items-center gap-2"><Grid3x3 size={19} className="text-primary"/><h3 className="font-display text-xl font-bold text-ink">Tổng hợp điểm danh theo học sinh</h3></div>
     <p className="mt-1 text-xs text-slate-500">Ký hiệu: <b className="text-emerald-300">C</b> Có mặt · <b className="text-amber-300">T</b> Đi trễ · <b className="text-blue-300">VP</b> Vắng có phép · <b className="text-red-300">V</b> Vắng không phép</p>
     <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4"><SummaryMetric icon={<CalendarCheck size={16}/>} value={String(orderedSessions.length)} label="Buổi đã tổ chức"/><SummaryMetric icon={<Users size={16}/>} value={orderedSessions.length?`${classRate}%`:"—"} label="Tham dự trung bình"/><SummaryMetric icon={<UserCheck size={16}/>} value={String(perfect)} label="Chuyên cần"/><SummaryMetric icon={<AlertTriangle size={16}/>} value={String(concern)} label="Cần nhắc nhở" danger/></div>
-    {!orderedSessions.length?<p className="mt-4 rounded-xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có buổi điểm danh nào.</p>:
-    <div className="mt-4 max-h-[70vh] overflow-auto rounded-xl border border-white/10">
+    {!orderedSessions.length?<p className="mt-4 rounded-xl border border-dashed border-line p-8 text-center text-sm text-slate-500">Chưa có buổi điểm danh nào.</p>:
+    <div className="mt-4 max-h-[70vh] overflow-auto rounded-xl border border-line">
       <table className="w-full min-w-max border-separate border-spacing-0 text-sm">
-        <thead className="sticky top-0 z-20 bg-[#10192a]">
+        <thead className="sticky top-0 z-20 bg-panel">
           <tr>
-            <th className="sticky left-0 z-30 min-w-48 border-b border-r border-white/10 bg-[#10192a] p-3 text-left text-xs uppercase text-slate-400">Sinh viên</th>
-            {orderedSessions.map(session=><th key={session.id} className="min-w-14 border-b border-white/10 p-2 text-center text-[12px] font-bold text-slate-400" title={session.title}>{new Date(session.starts_at).toLocaleDateString("vi-VN",{day:"2-digit",month:"2-digit"})}</th>)}
-            <th className="min-w-16 border-b border-white/10 p-2 text-center text-xs uppercase text-slate-400">Tỷ lệ</th>
+            <th className="sticky left-0 z-30 min-w-48 border-b border-r border-line bg-panel p-3 text-left text-xs uppercase text-muted">Sinh viên</th>
+            {orderedSessions.map(session=><th key={session.id} className="min-w-14 border-b border-line p-2 text-center text-[12px] font-bold text-muted" title={session.title}>{new Date(session.starts_at).toLocaleDateString("vi-VN",{day:"2-digit",month:"2-digit"})}</th>)}
+            <th className="min-w-16 border-b border-line p-2 text-center text-xs uppercase text-muted">Tỷ lệ</th>
           </tr>
         </thead>
         <tbody>
           {rows.map(row=><tr key={row.id} className="group">
-            <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3 group-hover:bg-[#10192a]"><strong className="block text-sm text-white">{row.name}</strong><small className="text-slate-500">{row.className}</small></td>
-            {row.cells.map((status,index)=><td key={index} className="border-b border-white/5 p-1.5 text-center">{status?<span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[12px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span>:<span className="text-slate-700">–</span>}</td>)}
-            <td className="border-b border-white/5 p-2 text-center"><span className={`rounded-full px-2.5 py-1 text-xs font-bold ${row.rate>=90?"bg-emerald-500/10 text-emerald-300":row.rate>=75?"bg-amber-500/10 text-amber-300":"bg-red-500/10 text-red-300"}`}>{orderedSessions.length?`${row.rate}%`:"—"}</span></td>
+            <td className="sticky left-0 z-10 border-b border-r border-line bg-panel p-3 group-hover:bg-surface-2"><strong className="block text-sm text-ink">{row.name}</strong><small className="text-slate-500">{row.className}</small></td>
+            {row.cells.map((status,index)=><td key={index} className="border-b border-line p-1.5 text-center">{status?<span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[12px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span>:<span className="text-slate-700">–</span>}</td>)}
+            <td className="border-b border-line p-2 text-center"><span className={`rounded-full px-2.5 py-1 text-xs font-bold ${row.rate>=90?"bg-emerald-500/10 text-emerald-300":row.rate>=75?"bg-amber-500/10 text-amber-300":"bg-red-500/10 text-red-300"}`}>{orderedSessions.length?`${row.rate}%`:"—"}</span></td>
           </tr>)}
           {!rows.length&&<tr><td colSpan={orderedSessions.length+2} className="p-8 text-center text-slate-500">Chưa có sinh viên.</td></tr>}
         </tbody>
@@ -171,10 +171,10 @@ function AttendanceMatrixSummary({students,sessions,allRecords}:{students:Studen
     </div>}
   </section>;
 }
-function SummaryMetric({icon,value,label,danger=false}:{icon:React.ReactNode;value:string;label:string;danger?:boolean}){return <div className={`rounded-xl border p-4 ${danger?"border-red-400/15 bg-red-500/5 text-red-300":"border-cyan-400/10 bg-cyan-500/5 text-cyan-300"}`}><div className="flex items-center gap-2 text-xs font-bold uppercase">{icon}{label}</div><strong className="mt-2 block text-2xl text-white">{value}</strong></div>}
+function SummaryMetric({icon,value,label,danger=false}:{icon:React.ReactNode;value:string;label:string;danger?:boolean}){return <div className={`rounded-xl border p-4 ${danger?"border-red-400/15 bg-red-500/5 text-red-300":"border-cyan-400/10 bg-cyan-500/5 text-primary"}`}><div className="flex items-center gap-2 text-xs font-bold uppercase">{icon}{label}</div><strong className="mt-2 block text-2xl text-ink">{value}</strong></div>}
 
 function LecturerSelect({lecturers,value,onChange,placeholder}:{lecturers:AdminProfile[];value:string;onChange:(id:string)=>void;placeholder:string}){
-  return <select value={value} onChange={e=>onChange(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white">
+  return <select value={value} onChange={e=>onChange(e.target.value)} className="mt-0.5 w-full rounded-md border border-line-strong bg-panel-deep px-2 py-1 text-[12px] text-ink">
     <option value="" disabled>{placeholder}</option>
     {lecturers.map(l=><option key={l.id} value={l.id}>{l.full_name}</option>)}
   </select>;
@@ -195,11 +195,11 @@ function SessionMachineSetup({session,savedMachines,defaultWorkshop,onSaved}:{se
   function changeWorkshop(value:string){setDirty(true);setChosenWorkshop(value);setChecked(new Set())}
   async function save(){setBusy(true);setError("");try{await setSessionMachines(session.id,chosenWorkshop,[...checked]);setDirty(false);onSaved()}catch(cause){setError(cause instanceof Error?cause.message:"Không lưu được danh sách máy.")}finally{setBusy(false)}}
   return <div className="mt-4 rounded-2xl border border-orange-400/20 bg-orange-500/5 p-4 sm:p-5">
-    <div className="flex items-center gap-2 text-sm font-bold text-white"><Wrench size={16} className="text-orange-300"/>Xưởng &amp; máy dùng trong buổi này</div>
-    <p className="mt-1 text-xs text-slate-400">Chọn xưởng thực tập và các máy sẽ dùng hôm nay — sinh viên chỉ chọn được máy trong danh sách này. Có thể sửa lại bất cứ lúc nào trong buổi.</p>
+    <div className="flex items-center gap-2 text-sm font-bold text-ink"><Wrench size={16} className="text-orange-300"/>Xưởng &amp; máy dùng trong buổi này</div>
+    <p className="mt-1 text-xs text-muted">Chọn xưởng thực tập và các máy sẽ dùng hôm nay — sinh viên chỉ chọn được máy trong danh sách này. Có thể sửa lại bất cứ lúc nào trong buổi.</p>
     <div className="mt-3 flex flex-wrap items-center gap-2">
-      <label className="text-xs font-bold text-slate-400">Xưởng thực tập</label>
-      <select value={chosenWorkshop} onChange={e=>changeWorkshop(e.target.value)} className="rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white">
+      <label className="text-xs font-bold text-muted">Xưởng thực tập</label>
+      <select value={chosenWorkshop} onChange={e=>changeWorkshop(e.target.value)} className="rounded-lg border border-line-strong bg-panel-deep px-3 py-2 text-sm text-ink">
         <option value="" disabled>Chọn xưởng…</option>
         {workshops.map(ws=><option key={ws.workshop} value={ws.workshop}>{ws.workshop}</option>)}
       </select>
@@ -212,10 +212,10 @@ function SessionMachineSetup({session,savedMachines,defaultWorkshop,onSaved}:{se
         return <div key={group.type}>
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{group.label} · {group.machines.length}</p>
-            <button type="button" onClick={toggleGroup} className="text-[12px] font-bold text-cyan-300 hover:text-cyan-200">{allChecked?"Bỏ chọn nhóm":"Chọn cả nhóm"}</button>
+            <button type="button" onClick={toggleGroup} className="text-[12px] font-bold text-primary hover:text-ink">{allChecked?"Bỏ chọn nhóm":"Chọn cả nhóm"}</button>
           </div>
           <div className="mt-2 grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {group.machines.map(m=>{const broken=m.status==="broken";return <label key={m.code} title={m.label} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-bold ${broken?"cursor-not-allowed border-white/5 text-slate-600 opacity-50":checked.has(m.code)?"cursor-pointer border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"cursor-pointer border-white/10 text-slate-300"}`}>
+            {group.machines.map(m=>{const broken=m.status==="broken";return <label key={m.code} title={m.label} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-bold ${broken?"cursor-not-allowed border-line text-slate-600 opacity-50":checked.has(m.code)?"cursor-pointer border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"cursor-pointer border-line text-ink"}`}>
               <input type="checkbox" disabled={broken} checked={checked.has(m.code)} onChange={()=>toggle(m.code)}/>{m.code}{broken&&<span className="text-[12px] font-normal text-red-300">(hỏng)</span>}
             </label>})}
           </div>
@@ -234,9 +234,9 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
   const[breakdownOpen,setBreakdownOpen]=useState(false);
   const currentIssue=reports.find(r=>r.status==="open"||r.status==="in_progress");
   async function saveNote(){try{await updateAttendanceMachineScore(sessionId,code,{note:noteDraft});onScoreSaved()}catch{/* silent */}}
-  return <div className="rounded-xl border border-white/10 bg-white/[.02] p-3">
+  return <div className="rounded-xl border border-line bg-surface-2 p-3">
     <div className="flex items-center justify-between gap-2">
-      <span className="flex items-center gap-1.5 text-sm font-bold text-white"><Icon size={14} className="text-orange-300"/>{label??`Máy ${code}`}</span>
+      <span className="flex items-center gap-1.5 text-sm font-bold text-ink"><Icon size={14} className="text-orange-300"/>{label??`Máy ${code}`}</span>
     </div>
     {members.length>0&&<p className="mt-1 truncate text-[12px] text-slate-500" title={members.map(m=>m.name).join(", ")}>{members.map(m=>m.name).join(", ")}</p>}
     <div className={`mt-2 grid gap-1.5 ${singlePhoto?"grid-cols-1":"grid-cols-2"}`}>
@@ -247,12 +247,12 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
     </div>
     {showStatus&&<>
       <div className="mt-2 grid grid-cols-2 gap-1.5">
-        <span className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold ${!currentIssue?"border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"border-white/10 text-slate-600"}`}><Check size={13}/>OK</span>
-        <button type="button" onClick={()=>setBreakdownOpen(true)} className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold transition-colors ${currentIssue?"border-red-400/40 bg-red-500/10 text-red-200":"border-white/10 text-slate-400 hover:border-red-400/30 hover:text-red-300"}`}><AlertOctagon size={13}/>NG</button>
+        <span className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold ${!currentIssue?"border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"border-line text-slate-600"}`}><Check size={13}/>OK</span>
+        <button type="button" onClick={()=>setBreakdownOpen(true)} className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold transition-colors ${currentIssue?"border-red-400/40 bg-red-500/10 text-red-200":"border-line text-muted hover:border-red-400/30 hover:text-red-300"}`}><AlertOctagon size={13}/>NG</button>
       </div>
       {breakdownOpen&&<BreakdownModal courseId={courseId} sessionId={sessionId} code={code} reports={reports} currentIssue={currentIssue} onReported={onReported} onClose={()=>setBreakdownOpen(false)} lecturers={lecturers} currentUserId={currentUserId}/>}
     </>}
-    <input type="text" value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} placeholder="Ghi chú nhóm…" className="mt-2 w-full rounded-lg border border-white/10 bg-panel-deep px-2 py-1 text-xs text-white placeholder:text-slate-600"/>
+    <input type="text" value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} placeholder="Ghi chú nhóm…" className="mt-2 w-full rounded-lg border border-line-strong bg-panel-deep px-2 py-1 text-xs text-ink placeholder:text-slate-600"/>
   </div>;
 }
 
@@ -261,15 +261,15 @@ function BreakdownModal({courseId,sessionId,code,reports,currentIssue,onReported
   const history=reports.filter(r=>r.status==="resolved");
   async function view(path:string){const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createEquipmentBreakdownPhotoUrl(path);if(win)win.location.href=signed}catch{win?.close()}}
   return <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4" onClick={onClose}>
-    <div className="max-h-[85vh] w-full max-w-sm overflow-y-auto rounded-2xl border border-white/10 bg-panel p-4" onClick={e=>e.stopPropagation()}>
+    <div className="max-h-[85vh] w-full max-w-sm overflow-y-auto rounded-2xl border border-line bg-panel p-4" onClick={e=>e.stopPropagation()}>
       <div className="flex items-center justify-between gap-2">
-        <h4 className="flex items-center gap-1.5 text-sm font-bold text-white"><AlertOctagon size={15} className="text-red-300"/>Máy {code}</h4>
-        <button type="button" onClick={onClose} className="rounded-lg p-1 text-slate-400 hover:bg-white/5 hover:text-white"><X size={16}/></button>
+        <h4 className="flex items-center gap-1.5 text-sm font-bold text-ink"><AlertOctagon size={15} className="text-red-300"/>Máy {code}</h4>
+        <button type="button" onClick={onClose} className="rounded-lg p-1 text-muted hover:bg-surface-2 hover:text-primary"><X size={16}/></button>
       </div>
       {currentIssue
         ? <div className="mt-3"><CurrentBreakdownCard report={currentIssue} onReported={onReported} onView={view} lecturers={lecturers} currentUserId={currentUserId}/></div>
         : <ReportBreakdownForm courseId={courseId} sessionId={sessionId} code={code} lecturers={lecturers} currentUserId={currentUserId} onReported={()=>{onReported();onClose()}}/>}
-      {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-3 flex items-center gap-1 text-[12px] font-bold text-slate-400 hover:text-slate-200"><History size={12}/>Lịch sử hỏng ({history.length})</button>}
+      {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-3 flex items-center gap-1 text-[12px] font-bold text-muted hover:text-ink"><History size={12}/>Lịch sử hỏng ({history.length})</button>}
       {showHistory&&<div className="mt-1.5 space-y-1">{history.map(r=><BreakdownHistoryRow key={r.id} report={r} onView={view}/>)}</div>}
     </div>
   </div>;
@@ -284,14 +284,14 @@ function ReportBreakdownForm({courseId,sessionId,code,lecturers,currentUserId,on
   const[error,setError]=useState("");
   const missing=[!file&&"ảnh",!description.trim()&&"mô tả",!reportedBy&&"giảng viên báo hỏng"].filter((v):v is string=>Boolean(v));
   async function submit(){if(missing.length)return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,brokenAt:new Date(brokenAt).toISOString(),file:file!,reportedBy});onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
-  return <div className="mt-3 rounded-lg border border-white/10 bg-black/15 p-2">
+  return <div className="mt-3 rounded-lg border border-line bg-black/15 p-2">
     <label className="block text-[12px] text-slate-500">Ảnh lúc phát hiện hỏng</label>
-    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-slate-400"/>
+    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-muted"/>
     <label className="mt-1.5 block text-[12px] text-slate-500">Giờ hư (ước lượng)</label>
-    <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white"/>
+    <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-line-strong bg-panel-deep px-2 py-1 text-[12px] text-ink"/>
     <label className="mt-1.5 block text-[12px] text-slate-500">Giảng viên báo hỏng</label>
     <LecturerSelect lecturers={lecturers} value={reportedBy} onChange={setReportedBy} placeholder="Chọn giảng viên…"/>
-    <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white placeholder:text-slate-600"/>
+    <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-line-strong bg-panel-deep px-2 py-1 text-[12px] text-ink placeholder:text-slate-600"/>
     {error&&<p className="mt-1 text-[12px] text-red-300">{error}</p>}
     <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 w-full rounded-md bg-red-600 px-2.5 py-1.5 text-[12px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
     {!busy&&missing.length>0&&<p className="mt-1 text-[12px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
@@ -321,7 +321,7 @@ function CurrentBreakdownCard({report,onReported,onView,lecturers,currentUserId}
       <LecturerSelect lecturers={lecturers} value={assignedTo} onChange={setAssignedTo} placeholder="Chọn giảng viên…"/>
       <div className="mt-1.5 flex gap-1.5">
         <button type="button" disabled={busy||!assignedTo} onClick={()=>void start()} className="rounded-md bg-amber-600 px-2.5 py-1 text-[12px] font-bold text-white disabled:opacity-40">Xác nhận</button>
-        <button type="button" onClick={()=>setAssigning(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[12px] font-bold text-slate-300">Hủy</button>
+        <button type="button" onClick={()=>setAssigning(false)} className="rounded-md border border-line px-2.5 py-1 text-[12px] font-bold text-ink">Hủy</button>
       </div>
     </div>}
     {resolving&&<ResolveBreakdownForm report={report} onDone={()=>{setResolving(false);onReported()}} lecturers={lecturers} currentUserId={currentUserId}/>}
@@ -338,10 +338,10 @@ function ResolveBreakdownForm({report,onDone,lecturers,currentUserId}:{report:Eq
   async function submit(){if(missing.length)return;setBusy(true);setError("");try{await resolveEquipmentBreakdown({id:report.id,courseId:report.course_id,machineCode:report.machine_code,note,file:file!,resolvedBy});onDone()}catch(cause){setError(cause instanceof Error?cause.message:"Không lưu được.")}finally{setBusy(false)}}
   return <div className="mt-1.5 rounded-md border border-emerald-400/20 bg-emerald-500/5 p-2">
     <label className="block text-[12px] text-slate-500">Ảnh sau khi khắc phục</label>
-    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-slate-400"/>
+    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-muted"/>
     <label className="mt-1.5 block text-[12px] text-slate-500">Giảng viên sửa chữa</label>
     <LecturerSelect lecturers={lecturers} value={resolvedBy} onChange={setResolvedBy} placeholder="Chọn giảng viên…"/>
-    <textarea value={note} onChange={e=>setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white placeholder:text-slate-600"/>
+    <textarea value={note} onChange={e=>setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-md border border-line-strong bg-panel-deep px-2 py-1 text-[12px] text-ink placeholder:text-slate-600"/>
     {error&&<p className="mt-1 text-[12px] text-red-300">{error}</p>}
     <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-2.5 py-1 text-[12px] font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
     {!busy&&missing.length>0&&<p className="mt-1 text-[12px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
@@ -349,7 +349,7 @@ function ResolveBreakdownForm({report,onDone,lecturers,currentUserId}:{report:Eq
 }
 
 function BreakdownHistoryRow({report,onView}:{report:EquipmentBreakdownReport;onView:(path:string)=>void}){
-  return <div className="rounded-md border border-white/5 bg-black/10 p-1.5 text-[12px] text-slate-400">
+  return <div className="rounded-md border border-line bg-black/10 p-1.5 text-[12px] text-muted">
     <div className="flex items-center justify-between gap-2"><span>{fmtDateTime(report.broken_at)}</span><span className="font-bold text-emerald-400">Đã khắc phục</span></div>
     <p className="mt-0.5 truncate text-slate-500" title={report.description}>{report.description}</p>
     <div className="mt-1 flex gap-2">
@@ -362,7 +362,7 @@ function BreakdownHistoryRow({report,onView}:{report:EquipmentBreakdownReport;on
 function PhotoCheckpointCell({label,code,checkpoint,photos}:{label:string;code:string;checkpoint:MachineCheckpoint;photos:AttendanceMachinePhoto[]}){
   const photo=photos.find(item=>item.machine_code===code&&item.checkpoint===checkpoint);
   async function view(){if(!photo)return;const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createAttendanceMachinePhotoUrl(photo.storage_path);if(win)win.location.href=signed}catch{win?.close()}}
-  return <button type="button" disabled={!photo} onClick={view} className={`rounded-lg border px-2 py-1.5 text-left text-[12px] font-bold disabled:cursor-not-allowed ${photo?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-white/10 bg-white/[.01] text-slate-600"}`}>
+  return <button type="button" disabled={!photo} onClick={view} className={`rounded-lg border px-2 py-1.5 text-left text-[12px] font-bold disabled:cursor-not-allowed ${photo?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-line bg-surface-2 text-slate-600"}`}>
     <span className="flex items-center gap-1">{photo?<Check size={10}/>:null}{label}</span>
     <small className="block font-normal opacity-70">{photo?(photo.profiles?.full_name??"Đã nộp"):"Chưa nộp"}</small>
   </button>;

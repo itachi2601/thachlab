@@ -29,11 +29,11 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
   if (posts.length === 0) return null;
 
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="font-display text-base font-semibold text-white">Thông báo</h2>
+    <section className="mb-6 rounded-2xl border border-line bg-panel p-5">
+      <h2 className="font-display text-base font-semibold text-ink">Thông báo</h2>
       <div className="mt-3 space-y-3">
         {posts.slice(0, 5).map((p) => (
-          <article key={p.id} className="rounded-xl border border-white/5 bg-white/[.03] p-4">
+          <article key={p.id} className="rounded-xl border border-line bg-surface-2 p-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[12px] font-semibold text-primary">
                 {CONTENT_TYPE_LABELS[p.content_type] ?? p.content_type}
@@ -42,11 +42,11 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
                 {new Date(p.created_at).toLocaleDateString("vi-VN")}
               </span>
             </div>
-            <p className="mt-2 font-medium text-white">{p.title}</p>
+            <p className="mt-2 font-medium text-ink">{p.title}</p>
             {p.body && (
               <ContentHtml
                 html={p.body}
-                className="mt-1 block whitespace-pre-line text-sm text-slate-400"
+                className="mt-1 block whitespace-pre-line text-sm text-muted"
               />
             )}
             {p.video_url && (

@@ -27,11 +27,11 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
         </p>
       )}
       <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
-      <p className="text-xs text-slate-400">
+      <p className="text-xs text-muted">
         {hasAnalysis ? "Tự thử giải trên giấy trước, kẹt thì mở phân tích đề." : "Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý."}
       </p>
       {hasAnalysis && analysed && (
-        <div className="rounded-lg border border-white/10 p-3">
+        <div className="rounded-lg border border-line p-3">
           <p className="mb-1 text-xs font-semibold" style={{ color }}>
             Phân tích đề
           </p>
@@ -40,7 +40,7 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
       )}
       {!hasAnalysis &&
         hints.slice(0, shown).map((h, i) => (
-          <div key={i} className="rounded-lg border border-white/10 p-3">
+          <div key={i} className="rounded-lg border border-line p-3">
             <p className="mb-1 text-xs font-semibold" style={{ color }}>
               Gợi ý {i + 1}/{hints.length}
             </p>

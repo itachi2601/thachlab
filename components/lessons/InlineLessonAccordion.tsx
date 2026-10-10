@@ -157,37 +157,37 @@ export default function InlineLessonAccordion({
   }
 
   return (
-    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-blue-400/40 bg-[#0B1324]" : "border-white/10 bg-panel"}`}>
+    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-primary/40 bg-panel" : "border-line bg-panel"}`}>
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={open}
         aria-controls={`inline-lesson-${lesson.id}`}
-        className="group flex w-full items-center gap-4 px-4 py-4 text-left hover:bg-white/5"
+        className="group flex w-full items-center gap-4 px-4 py-4 text-left hover:bg-surface-2"
       >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1D3461] text-lg">📖</span>
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-lg">📖</span>
         <span className="min-w-0 flex-1">
-          <span className="block font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">{lesson.title}</span>
-          <span className="mt-1 flex items-center gap-2 text-xs font-semibold text-slate-400">
+          <span className="block font-display text-sm font-bold tracking-wide text-ink uppercase group-hover:text-primary">{lesson.title}</span>
+          <span className="mt-1 flex items-center gap-2 text-xs font-semibold text-muted">
             <span>{completedCount === 0 ? "Chưa học" : percent === 100 ? "Đã hoàn thành" : "Đang học"}</span>
             <span>·</span><span>{completedCount}/{totalCount} mục</span>
           </span>
-          <span className="mt-2 block h-1.5 max-w-56 overflow-hidden rounded-full bg-white/10">
+          <span className="mt-2 block h-1.5 max-w-56 overflow-hidden rounded-full bg-surface-2">
             <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${percent}%` }} />
           </span>
         </span>
-        <span className="inline-flex items-center gap-2 text-sm font-semibold text-slate-400">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-muted">
           {open ? "Thu gọn" : "Mở bài"}
           <ChevronDown size={18} className={`transition-transform ${open ? "rotate-180" : ""}`} />
         </span>
       </button>
 
       {open && (
-        <div id={`inline-lesson-${lesson.id}`} className="border-t border-white/10 p-4 sm:p-5">
+        <div id={`inline-lesson-${lesson.id}`} className="border-t border-line p-4 sm:p-5">
           {!items ? (
-            <p className="text-sm text-slate-400">Đang tải nội dung bài học…</p>
+            <p className="text-sm text-muted">Đang tải nội dung bài học…</p>
           ) : items.length === 0 ? (
-            <p className="text-sm text-slate-400">Bài học đang được cập nhật.</p>
+            <p className="text-sm text-muted">Bài học đang được cập nhật.</p>
           ) : (
             <div className="space-y-6">
               {sections.map((section) => {
@@ -202,11 +202,11 @@ export default function InlineLessonAccordion({
                         const embed = item.kind === "video" ? youTubeEmbed(item.video_url) : null;
                         const finished = isItemDone(item);
                         return (
-                          <div key={item.id} id={`lesson-item-${item.id}`} style={{ scrollMarginTop: "112px" }} className="rounded-xl border border-white/10 bg-[#080D1A] p-4">
+                          <div key={item.id} id={`lesson-item-${item.id}`} style={{ scrollMarginTop: "112px" }} className="rounded-xl border border-line bg-surface-2 p-4">
                             <div className="flex flex-wrap items-center gap-3">
                               <div className="min-w-0 flex-1">
-                                <h5 className="font-semibold text-white">{item.title}</h5>
-                                {item.subtitle && <p className="mt-1 text-sm text-slate-400">{item.subtitle}</p>}
+                                <h5 className="font-semibold text-ink">{item.title}</h5>
+                                {item.subtitle && <p className="mt-1 text-sm text-muted">{item.subtitle}</p>}
                                 {item.due_at && (
                                   <p className="mt-1 text-sm" style={{ color: meta.color }}>
                                     Hạn nộp: {new Date(item.due_at).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric" })}
@@ -218,9 +218,9 @@ export default function InlineLessonAccordion({
 
                             {item.body_html && (
                               <div className="mt-3">
-                                <ContentHtml html={item.body_html} className="block leading-relaxed text-slate-200" />
+                                <ContentHtml html={item.body_html} className="block leading-relaxed text-ink" />
                                 {session && !finished && (
-                                  <button type="button" onClick={() => complete(item)} className="mt-3 rounded-lg border border-white/15 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-emerald-400/40 hover:text-emerald-300">
+                                  <button type="button" onClick={() => complete(item)} className="mt-3 rounded-lg border border-line px-3 py-2 text-xs font-semibold text-ink hover:border-emerald-400/40 hover:text-emerald-300">
                                     Đánh dấu đã đọc
                                   </button>
                                 )}
@@ -263,7 +263,7 @@ export default function InlineLessonAccordion({
                                         <Link href={session ? `/kiem-tra/lam?id=${examId}` : "/dang-nhap"} className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white">
                                           <Play size={15} /> {session ? (score === undefined ? "Làm bài" : `Làm lại · ${score} điểm`) : "Đăng nhập để làm"}
                                         </Link>
-                                        {exam && <span className="self-center text-xs text-slate-400">{exam.title} · {exam.duration_minutes} phút · {formatTypeCounts(exam.type_counts) || `${exam.question_count} câu`}</span>}
+                                        {exam && <span className="self-center text-xs text-muted">{exam.title} · {exam.duration_minutes} phút · {formatTypeCounts(exam.type_counts) || `${exam.question_count} câu`}</span>}
                                       </div>
                                     );
                                   })
@@ -272,16 +272,16 @@ export default function InlineLessonAccordion({
                             )}
                             <div className="mt-3 flex flex-wrap gap-2">
                               {embed && session && !finished && (
-                                <button type="button" onClick={() => complete(item)} className="rounded-lg border border-white/15 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-emerald-400/40 hover:text-emerald-300">
+                                <button type="button" onClick={() => complete(item)} className="rounded-lg border border-line px-3 py-2 text-xs font-semibold text-ink hover:border-emerald-400/40 hover:text-emerald-300">
                                   Đánh dấu đã xem
                                 </button>
                               )}
                               {(item.kind === "bai_tap_mau" || item.kind === "luyen_tap") && session && !finished && (
-                                <button type="button" onClick={() => complete(item)} className="rounded-lg border border-white/15 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-emerald-400/40 hover:text-emerald-300">
+                                <button type="button" onClick={() => complete(item)} className="rounded-lg border border-line px-3 py-2 text-xs font-semibold text-ink hover:border-emerald-400/40 hover:text-emerald-300">
                                   Đánh dấu đã làm
                                 </button>
                               )}
-                              {item.pdf_url && <a href={item.pdf_url} target="_blank" rel="noreferrer" onClick={() => complete(item)} className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-3 py-2 text-sm font-semibold text-slate-200"><FileText size={15} /> Xem PDF</a>}
+                              {item.pdf_url && <a href={item.pdf_url} target="_blank" rel="noreferrer" onClick={() => complete(item)} className="inline-flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-sm font-semibold text-ink"><FileText size={15} /> Xem PDF</a>}
                             </div>
                           </div>
                         );
@@ -299,7 +299,7 @@ export default function InlineLessonAccordion({
                 <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-400/20 bg-blue-500/5 p-4">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wide text-blue-300">Tiếp theo</p>
-                    <p className="mt-1 text-sm font-semibold text-white">{nextIncompleteItem.title}</p>
+                    <p className="mt-1 text-sm font-semibold text-ink">{nextIncompleteItem.title}</p>
                   </div>
                   <button
                     type="button"

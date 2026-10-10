@@ -86,7 +86,7 @@ export default function TitleCollection({
         return (
           <section key={g}>
             <div className="mb-3 flex items-baseline justify-between gap-3">
-              <h3 className="font-display text-base font-semibold text-white">{GROUP_LABELS[g]}</h3>
+              <h3 className="font-display text-base font-semibold text-ink">{GROUP_LABELS[g]}</h3>
               <span className="text-xs text-slate-500">
                 {owned}/{list.length} đã mở
               </span>
@@ -103,7 +103,7 @@ export default function TitleCollection({
                   <article
                     key={t.code}
                     className={`rounded-2xl border p-4 ${
-                      unlocked ? "border-amber-400/30 bg-amber-400/5" : "border-white/10 bg-white/[0.02]"
+                      unlocked ? "border-amber-400/30 bg-amber-400/5" : "border-line bg-surface-2"
                     } ${!t.active && t.kind === "specialist" ? "opacity-60" : ""}`}
                   >
                     <div className="flex items-start gap-3">
@@ -118,14 +118,14 @@ export default function TitleCollection({
                       ) : (
                         <span
                           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                            unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
+                            unlocked ? "bg-amber-400/20 text-amber-200" : "bg-surface-2 text-slate-500"
                           }`}
                         >
                           {unlocked ? <Sparkles size={18} /> : <Lock size={16} />}
                         </span>
                       )}
                       <div className="min-w-0 flex-1">
-                        <p className={`font-display font-semibold ${unlocked ? "text-white" : "text-slate-300"}`}>{t.name}</p>
+                        <p className={`font-display font-semibold ${unlocked ? "text-ink" : "text-ink"}`}>{t.name}</p>
                         <p className="text-xs text-slate-500">{t.description}</p>
                         {t.kind === "specialist" && (
                           <div className="mt-2 flex gap-1.5">
@@ -135,7 +135,7 @@ export default function TitleCollection({
                                 <span
                                   key={lv}
                                   className={`rounded-full px-2 py-0.5 text-[12px] font-semibold ${
-                                    has ? "bg-amber-400/25 text-amber-100" : "bg-white/5 text-slate-500"
+                                    has ? "bg-amber-400/25 text-amber-100" : "bg-surface-2 text-slate-500"
                                   }`}
                                   title={has ? `Nhận ${new Date(t.levels[lv]!).toLocaleDateString("vi-VN")}` : undefined}
                                 >
@@ -146,10 +146,10 @@ export default function TitleCollection({
                             })}
                           </div>
                         )}
-                        <p className="mt-2 text-xs text-slate-400">{nextRequirement(t)}</p>
+                        <p className="mt-2 text-xs text-muted">{nextRequirement(t)}</p>
                         {levelRank(t.level) < 3 && (t.kind !== "achievement") && (
-                          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
-                            <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" style={{ width: `${pct}%` }} />
+                          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-2">
+                            <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
                           </div>
                         )}
                         {canWear && unlocked && (
@@ -178,7 +178,7 @@ export default function TitleCollection({
         );
       })}
       {hiddenCount > 0 && (
-        <button type="button" onClick={() => setShowHidden((v) => !v)} className="text-xs text-slate-500 underline-offset-2 hover:text-slate-300 hover:underline">
+        <button type="button" onClick={() => setShowHidden((v) => !v)} className="text-xs text-slate-500 underline-offset-2 hover:text-ink hover:underline">
           {showHidden ? "Ẩn" : "Hiện"} {hiddenCount} danh hiệu ngoài chương trình lớp em
         </button>
       )}

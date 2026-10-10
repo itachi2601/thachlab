@@ -141,7 +141,7 @@ function ScoreTrend({ points }: { points: ScorePoint[] }) {
               cy={y(p.score)}
               r="7"
               fill={p.score >= PASS ? "#34D399" : "#F43F5E"}
-              stroke="#0B1020"
+              stroke="var(--color-panel)"
               strokeWidth="1.5"
             />
             <title>
@@ -198,7 +198,7 @@ function GapRow({
       ? "border-red-500/25 bg-red-500/[.05]"
       : gap.pct >= 30
         ? "border-amber-500/25 bg-amber-500/[.05]"
-        : "border-white/10";
+        : "border-line";
 
   return (
     <div className={`rounded-2xl border ${tone}`}>
@@ -209,8 +209,8 @@ function GapRow({
         className="flex w-full items-center gap-4 p-4 text-left"
       >
         <span className="min-w-0 flex-1">
-          <span className="block font-display font-semibold text-white">{gap.topic}</span>
-          <span className="mt-0.5 block text-[13px] text-slate-400">
+          <span className="block font-display font-semibold text-ink">{gap.topic}</span>
+          <span className="mt-0.5 block text-[13px] text-muted">
             {formLabel(gap.form)} · sai {gap.wrong}/{gap.total} câu
           </span>
         </span>
@@ -218,12 +218,12 @@ function GapRow({
         <span className="shrink-0 text-right">
           <span
             className={`block font-mono text-lg font-bold ${
-              gap.pct >= 60 ? "text-red-300" : gap.pct >= 30 ? "text-amber-300" : "text-slate-300"
+              gap.pct >= 60 ? "text-red-300" : gap.pct >= 30 ? "text-amber-300" : "text-ink"
             }`}
           >
             {gap.pct}%
           </span>
-          {viewer === "parent" && <span className="block text-[13px] text-slate-400">tỉ lệ sai</span>}
+          {viewer === "parent" && <span className="block text-[13px] text-muted">tỉ lệ sai</span>}
         </span>
         <ChevronDown
           size={18}
@@ -232,7 +232,7 @@ function GapRow({
       </button>
 
       {open && (
-        <div className="space-y-4 border-t border-white/10 p-4">
+        <div className="space-y-4 border-t border-line p-4">
           {href && (
             <Link
               href={href}
@@ -242,7 +242,7 @@ function GapRow({
             </Link>
           )}
           {items === null ? (
-            <p className="text-sm text-slate-400">Đang tải câu sai…</p>
+            <p className="text-sm text-muted">Đang tải câu sai…</p>
           ) : items.length === 0 ? (
             <p className="text-sm text-slate-500">Không tìm được chi tiết câu sai.</p>
           ) : (
@@ -251,13 +251,13 @@ function GapRow({
                 <li key={`${it.ref.examResultId}-${it.ref.questionIndex}`}>
                   <Link
                     href={detailHref(it.ref.examResultId, viewer, `#cau-${it.ref.questionIndex + 1}`)}
-                    className="flex items-start gap-3 rounded-xl bg-white/5 px-4 py-3 hover:bg-white/10"
+                    className="flex items-start gap-3 rounded-xl bg-surface-2 px-4 py-3 hover:bg-primary-soft"
                   >
                     <span className="min-w-0 flex-1">
-                      <span className="block text-[13px] font-bold text-slate-400">
+                      <span className="block text-[13px] font-bold text-muted">
                         {it.ref.examTitle} · Câu {it.ref.questionIndex + 1}
                       </span>
-                      <span className="mt-1 line-clamp-2 block text-sm text-slate-200">
+                      <span className="mt-1 line-clamp-2 block text-sm text-ink">
                         <Html html={it.question.question} />
                       </span>
                     </span>
@@ -293,11 +293,11 @@ function AttemptRow({
   return (
     <Link
       href={detailHref(point.resultId, viewer)}
-      className="flex items-center gap-4 rounded-2xl border border-white/10 p-4 hover:border-white/25"
+      className="flex items-center gap-4 rounded-2xl border border-line p-4 hover:border-line-strong"
     >
       <span className="min-w-0 flex-1">
-        <span className="block font-display font-semibold text-white">{point.examTitle}</span>
-        <span className="mt-0.5 block text-[13px] text-slate-400">
+        <span className="block font-display font-semibold text-ink">{point.examTitle}</span>
+        <span className="mt-0.5 block text-[13px] text-muted">
           {viewer === "parent" ? longDate(point.at) : dateLabel}
           {point.periodic ? ` · ${point.kindLabel}` : ""}
         </span>
@@ -336,7 +336,7 @@ function AlertBanner({
     <section className="rounded-2xl border border-amber-400/25 bg-amber-500/[.07] p-5">
       <div className="flex items-center gap-2 text-amber-300">
         <AlertTriangle size={18} />
-        <h2 className="font-display font-bold text-white">Cần chú ý</h2>
+        <h2 className="font-display font-bold text-ink">Cần chú ý</h2>
       </div>
       <p className="mt-2 text-sm text-amber-100/80">
         {alert.kind === "missed_assessment"
@@ -346,18 +346,18 @@ function AlertBanner({
             : copy.low}
       </p>
       {alert.handledNote && (
-        <p className="mt-1 text-[13px] text-slate-400">Ghi chú: {alert.handledNote}</p>
+        <p className="mt-1 text-[13px] text-muted">Ghi chú: {alert.handledNote}</p>
       )}
     </section>
   );
 }
 
 const NEED_TONE: Record<NeedStatus, string> = {
-  open: "border-sky-500/30 bg-sky-500/[.06] text-sky-200",
-  assigned: "border-indigo-500/30 bg-indigo-500/[.06] text-indigo-200",
-  tutored: "border-blue-500/30 bg-blue-500/[.06] text-blue-200",
-  cleared: "border-emerald-500/30 bg-emerald-500/[.06] text-emerald-200",
-  dismissed: "border-white/10 bg-white/[.03] text-slate-400",
+  open: "border-warn/30 bg-surface-2 text-warn",
+  assigned: "border-primary/30 bg-surface-2 text-primary",
+  tutored: "border-ok/30 bg-surface-2 text-ok",
+  cleared: "border-ok/30 bg-surface-2 text-ok",
+  dismissed: "border-line bg-surface-2 text-muted",
 };
 
 /** Cách nói với chính học sinh — không dùng chữ "cảnh báo" cho em. */
@@ -393,7 +393,7 @@ function NeedRow({
   return (
     <div className={`rounded-2xl border p-4 ${NEED_TONE[need.status]}`}>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-display font-semibold text-white">{needLabel(need)}</span>
+        <span className="font-display font-semibold text-ink">{needLabel(need)}</span>
         <span className="rounded-full border border-current px-2.5 py-0.5 text-[13px] font-bold">
           {NEED_STATUS_LABEL_STUDENT[need.status]}
         </span>
@@ -407,7 +407,7 @@ function NeedRow({
         )}
       </div>
       {outcomes.length > 0 && (
-        <ul className="mt-2 space-y-0.5 text-[13px] text-slate-300">
+        <ul className="mt-2 space-y-0.5 text-[13px] text-ink">
           {outcomes.map((o) => (
             <li key={o.topicId}>
               · {o.topicName} — sai {o.wrong}/{o.total} câu
@@ -415,7 +415,7 @@ function NeedRow({
           ))}
         </ul>
       )}
-      <p className="mt-1 text-[13px] text-slate-400">{NEED_NOTE[viewer][need.status]}</p>
+      <p className="mt-1 text-[13px] text-muted">{NEED_NOTE[viewer][need.status]}</p>
     </div>
   );
 }
@@ -438,7 +438,7 @@ function scoreText(score: number) {
 
 /** P12: chênh lệch điểm phải có cả màu LẪN chữ (mù màu đỏ–lục ~8% nam giới). */
 function deltaText(delta: number) {
-  if (delta === 0) return { cls: "text-slate-400", text: "không đổi so với bài trước" };
+  if (delta === 0) return { cls: "text-muted", text: "không đổi so với bài trước" };
   return delta > 0
     ? { cls: "text-emerald-300", text: `tăng ${scoreText(Math.abs(delta))} điểm so với bài trước` }
     : { cls: "text-red-300", text: `giảm ${scoreText(Math.abs(delta))} điểm so với bài trước` };
@@ -446,7 +446,7 @@ function deltaText(delta: number) {
 
 /** Bản ngắn của deltaText, dùng trong danh sách bài đã làm (một dòng). */
 function deltaShort(delta: number) {
-  if (delta === 0) return { cls: "text-slate-400", text: "= không đổi so với bài trước" };
+  if (delta === 0) return { cls: "text-muted", text: "= không đổi so với bài trước" };
   return delta > 0
     ? { cls: "text-emerald-300", text: `↑ tăng ${scoreText(delta)} so với bài trước` }
     : { cls: "text-red-300", text: `↓ giảm ${scoreText(Math.abs(delta))} so với bài trước` };
@@ -456,10 +456,10 @@ function deltaShort(delta: number) {
  *  nhãn–số bắt mắt lia trái–phải; số to, chữ số tabular nên các hàng vẫn thẳng cột nhau). */
 function Fact({ label, value, sub }: { label: string; value: React.ReactNode; sub?: React.ReactNode }) {
   return (
-    <div className="border-b border-white/10 py-3 first:pt-0 last:border-b-0 last:pb-0">
-      <p className="text-slate-400">{label}</p>
-      <p className="parent-num mt-0.5 font-display text-2xl font-bold text-white">{value}</p>
-      {sub && <p className="parent-copy mt-0.5 text-slate-400">{sub}</p>}
+    <div className="border-b border-line py-3 first:pt-0 last:border-b-0 last:pb-0">
+      <p className="text-muted">{label}</p>
+      <p className="parent-num mt-0.5 font-display text-2xl font-bold text-ink">{value}</p>
+      {sub && <p className="parent-copy mt-0.5 text-muted">{sub}</p>}
     </div>
   );
 }
@@ -495,9 +495,9 @@ function ParentSummaryPanel({
   const latestBand = gradeBand(latest.score);
 
   return (
-    <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="font-display text-lg font-bold text-white">Tóm tắt cho phụ huynh</h2>
-      <p className="mt-1 text-slate-400">Số liệu lấy từ các bài con làm trên web.</p>
+    <section className="mt-6 rounded-2xl border border-line bg-panel p-5">
+      <h2 className="font-display text-lg font-bold text-ink">Tóm tắt cho phụ huynh</h2>
+      <p className="mt-1 text-muted">Số liệu lấy từ các bài con làm trên web.</p>
 
       <div className="mt-3">
         <Fact
@@ -535,22 +535,22 @@ function ParentSummaryPanel({
       </div>
 
       {worst && (
-        <p className="parent-copy mt-3 text-slate-300">
-          Còn sai nhiều nhất: <b className="text-white">{worst.topic}</b> — sai {worst.wrong}/{worst.total} câu (
+        <p className="parent-copy mt-3 text-ink">
+          Còn sai nhiều nhất: <b className="text-ink">{worst.topic}</b> — sai {worst.wrong}/{worst.total} câu (
           {worst.pct}%).
         </p>
       )}
 
-      <p className="parent-copy mt-2 text-slate-300">
+      <p className="parent-copy mt-2 text-ink">
         {openNeed
           ? `Thầy đã ghi nhận và đang sắp phụ đạo phần ${needLabel(openNeed)}.`
           : "Hiện chưa có phần nào con cần phụ đạo thêm."}
       </p>
-      <p className="parent-copy mt-2 text-slate-300">
+      <p className="parent-copy mt-2 text-ink">
         Gợi ý cho tối nay:{" "}
         {worst ? (
           <>
-            hỏi con “phần <b className="text-white">{worst.topic}</b> hôm nay con thấy khó ở chỗ nào?”, rồi ngồi cùng
+            hỏi con “phần <b className="text-ink">{worst.topic}</b> hôm nay con thấy khó ở chỗ nào?”, rồi ngồi cùng
             con xem lại một câu.
           </>
         ) : (
@@ -564,7 +564,7 @@ function ParentSummaryPanel({
               href={CONTACT.zalo}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+              className="font-semibold text-primary underline-offset-2 hover:underline"
             >
               Nhờ thầy kèm thêm phần này
             </a>
@@ -693,8 +693,8 @@ export default function StudentResultsDashboard({
           <Target size={20} />
         </span>
         <div>
-          <h1 className="font-display text-2xl font-bold text-white">{title}</h1>
-          <p className="text-sm text-slate-400">{copy.subtitle}</p>
+          <h1 className="font-display text-2xl font-bold text-ink">{title}</h1>
+          <p className="text-sm text-muted">{copy.subtitle}</p>
         </div>
       </div>
 
@@ -708,23 +708,23 @@ export default function StudentResultsDashboard({
         <section className="mt-6 rounded-2xl border border-amber-400/25 bg-amber-500/[.07] p-4 sm:p-5">
           <div className="flex items-center gap-2 text-amber-300">
             <AlertTriangle size={18} />
-            <h2 className="font-display font-bold text-white">Cần chú ý</h2>
+            <h2 className="font-display font-bold text-ink">Cần chú ý</h2>
           </div>
           <p className="mt-2 text-sm text-amber-100/80">
-            Em còn <strong className="text-white">{todoExams.length} bài chưa làm</strong> — bấm vào để làm ngay:
+            Em còn <strong className="text-ink">{todoExams.length} bài chưa làm</strong> — bấm vào để làm ngay:
           </p>
           <div className="mt-3 space-y-2">
             {todoExams.map((item) => (
               <Link
                 key={item.id}
                 href={`/kiem-tra/lam?id=${item.examId}`}
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-amber-400/20 bg-black/15 p-3 hover:bg-black/25"
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-amber-400/20 bg-surface-2 p-3 hover:bg-primary-soft"
               >
                 <span className="flex min-w-0 items-center gap-2">
                   <Trophy size={16} className="shrink-0 text-amber-300" />
                   <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
-                    <small className="text-[13px] text-slate-400">Bài kiểm tra · chưa làm</small>
+                    <strong className="block truncate text-sm text-ink">{item.examTitle}</strong>
+                    <small className="text-[13px] text-muted">Bài kiểm tra · chưa làm</small>
                   </span>
                 </span>
                 <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-amber-200">
@@ -740,19 +740,19 @@ export default function StudentResultsDashboard({
         <section className="mt-6 rounded-2xl border border-emerald-400/25 bg-emerald-500/[.07] p-4 sm:p-5">
           <div className="flex items-center gap-2 text-emerald-300">
             <Sparkles size={18} />
-            <h2 className="font-display font-bold text-white">Em đã làm xong bài được giao — việc nên làm tiếp</h2>
+            <h2 className="font-display font-bold text-ink">Em đã làm xong bài được giao — việc nên làm tiếp</h2>
           </div>
           <div className="mt-3 space-y-2">
             {retryExam && (
               <Link
                 href={`/kiem-tra/lam?id=${retryExam.examId}`}
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-surface-2 p-3 hover:bg-primary-soft"
               >
                 <span className="flex min-w-0 items-center gap-2">
                   <RotateCcw size={16} className="shrink-0 text-rose-300" />
                   <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">Làm lại: {retryExam.examTitle}</strong>
-                    <small className="text-[13px] text-slate-400">
+                    <strong className="block truncate text-sm text-ink">Làm lại: {retryExam.examTitle}</strong>
+                    <small className="text-[13px] text-muted">
                       Lần trước {retryExam.score.toLocaleString("vi-VN")} điểm — làm lại để chốt kiến thức
                     </small>
                   </span>
@@ -763,13 +763,13 @@ export default function StudentResultsDashboard({
             {firstReviewGap && (
               <Link
                 href={lessonHref(firstReviewGap.topic, firstReviewGap.form) as string}
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-surface-2 p-3 hover:bg-primary-soft"
               >
                 <span className="flex min-w-0 items-center gap-2">
                   <BookOpen size={16} className="shrink-0 text-blue-300" />
                   <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">Ôn lại: {firstReviewGap.topic}</strong>
-                    <small className="text-[13px] text-slate-400">Chủ đề em còn sai nhiều nhất</small>
+                    <strong className="block truncate text-sm text-ink">Ôn lại: {firstReviewGap.topic}</strong>
+                    <small className="text-[13px] text-muted">Chủ đề em còn sai nhiều nhất</small>
                   </span>
                 </span>
                 <ArrowRight size={16} className="shrink-0 text-emerald-300" />
@@ -777,11 +777,11 @@ export default function StudentResultsDashboard({
             )}
             <Link
               href="/tai-khoan"
-              className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+              className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-surface-2 p-3 hover:bg-primary-soft"
             >
               <span className="min-w-0">
-                <strong className="block truncate text-sm text-white">Học tiếp bài đang dở</strong>
-                <small className="text-[13px] text-slate-400">Về trang cá nhân để vào bài tiếp theo</small>
+                <strong className="block truncate text-sm text-ink">Học tiếp bài đang dở</strong>
+                <small className="text-[13px] text-muted">Về trang cá nhân để vào bài tiếp theo</small>
               </span>
               <ArrowRight size={16} className="shrink-0 text-emerald-300" />
             </Link>
@@ -798,16 +798,16 @@ export default function StudentResultsDashboard({
       {viewer === "parent" && afterSummary && <div className="mt-6">{afterSummary}</div>}
 
       {!loading && isEmpty && (
-        <p className="mt-6 text-sm text-slate-400">{copy.noExam}</p>
+        <p className="mt-6 text-sm text-muted">{copy.noExam}</p>
       )}
 
       {priorityGaps.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-3 font-display font-semibold text-white">
+          <h2 className="mb-3 font-display font-semibold text-ink">
             {viewer === "parent" ? "Phần con còn sai" : "Chủ đề cần ôn"}
           </h2>
           {viewer === "parent" && (
-            <p className="parent-copy -mt-1.5 mb-3 text-slate-400">
+            <p className="parent-copy -mt-1.5 mb-3 text-muted">
               Để cùng con xem lại phần chưa chắc — không phải để chấm điểm con.
             </p>
           )}
@@ -821,8 +821,8 @@ export default function StudentResultsDashboard({
 
       {needs !== null && needs.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-1 font-display font-semibold text-white">{copy.needsTitle}</h2>
-          <p className="mb-3 text-sm text-slate-400">{copy.needsIntro}</p>
+          <h2 className="mb-1 font-display font-semibold text-ink">{copy.needsTitle}</h2>
+          <p className="mb-3 text-sm text-muted">{copy.needsIntro}</p>
           <div className="space-y-2">
             {needs.map((need) => (
               <NeedRow
@@ -839,7 +839,7 @@ export default function StudentResultsDashboard({
 
       {attempts !== null && attempts.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-3 font-display font-semibold text-white">
+          <h2 className="mb-3 font-display font-semibold text-ink">
             {viewer === "parent" ? "Các bài con đã làm" : "Bài đã làm"}
           </h2>
           <div className="space-y-3">
@@ -854,16 +854,16 @@ export default function StudentResultsDashboard({
       {/* P6/P17/N4: phụ huynh 45–60 tuổi nhận số to + câu chữ nhanh hơn biểu đồ đường có nhãn trục
           nhỏ, và biểu đồ lặp đúng dữ liệu của danh sách trên → chỉ học sinh xem biểu đồ. */}
       {viewer === "student" && points !== null && points.length > 0 && (
-        <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
+        <section className="mt-6 rounded-2xl border border-line bg-panel p-5">
           <div className="mb-3 flex items-baseline justify-between">
-            <h2 className="font-display font-semibold text-white">Điểm theo thời gian</h2>
+            <h2 className="font-display font-semibold text-ink">Điểm theo thời gian</h2>
             {avg !== null && (
-              <span className="text-sm text-slate-400">
-                trung bình <b className="text-white">{avg.toLocaleString("vi-VN")}</b>
+              <span className="text-sm text-muted">
+                trung bình <b className="text-ink">{avg.toLocaleString("vi-VN")}</b>
               </span>
             )}
           </div>
-          <div className="text-slate-300">
+          <div className="text-ink">
             <ScoreTrend points={points} />
           </div>
         </section>
@@ -871,12 +871,12 @@ export default function StudentResultsDashboard({
 
       {/* L3: phần thưởng ngoài (hạng) chỉ ở cuối, sau việc cần làm. */}
       {viewer === "parent" && (
-        <h2 className="mt-8 font-display font-semibold text-white">Thành tích trong lớp</h2>
+        <h2 className="mt-8 font-display font-semibold text-ink">Thành tích trong lớp</h2>
       )}
       {viewer === "parent" && (
         // P19: RP/danh hiệu là hệ thống điểm thưởng của web, không phải điểm học tập — nói rõ,
         // nếu không phụ huynh sẽ đọc "CAO THỦ · 2.180 RP" như một nhận xét học lực.
-        <p className="parent-copy mt-1 text-slate-400">
+        <p className="parent-copy mt-1 text-muted">
           Điểm thưởng và danh hiệu con nhận khi làm bài trên web. Đây không phải điểm học tập — điểm
           học tập nằm ở phần trên.
         </p>
