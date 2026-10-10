@@ -1,0 +1,609 @@
+{
+ "lesson_id": 58,
+ "lesson_title": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 6/6 dạng khớp; đã bỏ lộ hướng giải ở loi_hay_gap/vi_sao D1–D6, nhãn D6; tu_luan sửa LaTeX, alt rỗng, bỏ VD11 (thiếu lời giải ý a), còn 5 bài — một số có ảnh chưa ai xem được (sandbox chặn Supabase) nên thầy xem tay sau khi đăng. 12 ví dụ cũ bỏ (sai số học/làm tròn/phụ thuộc hình). Dạng 3,4 ít câu ngân hàng (chủ đề 120 có 6 câu)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Độ lớn hợp lực của hai lực đồng quy theo góc",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "problem_html": "<p>Hai sợi dây buộc vào một vòng nhẫn $O$, mỗi dây kéo qua một lực kế. Lực kế thứ nhất chỉ $F_1=5{,}0\\ \\text{N}$, lực kế thứ hai chỉ $F_2=12\\ \\text{N}$. Hai dây có thể hợp với nhau một góc $\\alpha$ tuỳ ý. Tính độ lớn hợp lực tác dụng lên vòng nhẫn khi:</p>\n<ol type=\"a\"><li>$\\alpha=0^\\circ$;</li><li>$\\alpha=180^\\circ$;</li><li>$\\alpha=90^\\circ$;</li><li>$\\alpha=60^\\circ$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Vòng nhẫn O chịu hai lực: F1 nằm ngang, F2 quay quanh O qua các góc 0, 60, 90 và 180 độ\"><line x1=\"150.0\" y1=\"160.0\" x2=\"262.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"268.0\" y=\"164.0\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">α = 0°</text><line x1=\"150.0\" y1=\"160.0\" x2=\"206.0\" y2=\"63.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"212.0\" y=\"61.0\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">α = 60°</text><line x1=\"150.0\" y1=\"160.0\" x2=\"150.0\" y2=\"48.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"156.0\" y=\"46.0\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">α = 90°</text><line x1=\"150.0\" y1=\"160.0\" x2=\"38.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"38.0\" y=\"178.0\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">α = 180°</text><line x1=\"150\" y1=\"160\" x2=\"190.0\" y2=\"160.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M180.0,154.2 L190.0,160.0 L180.0,165.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"160.0\" x2=\"246.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x2\" values=\"246.0;246.0;246.0;246.0;245.6;244.5;242.7;240.2;237.0;233.1;228.6;223.5;217.9;211.7;205.1;198.0;198.0;198.0;198.0;198.0;190.6;182.8;174.8;166.7;158.4;150.0;150.0;150.0;150.0;150.0;141.6;133.3;125.2;117.2;109.4;102.0;94.9;88.3;82.1;76.5;71.4;66.9;63.0;59.8;57.3;55.5;54.4;54.0;54.0;54.0;54.0;54.0\" dur=\"7.65s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"160.0;160.0;160.0;160.0;151.6;143.3;135.2;127.2;119.4;112.0;104.9;98.3;92.1;86.5;81.4;76.9;76.9;76.9;76.9;76.9;73.0;69.8;67.3;65.5;64.4;64.0;64.0;64.0;64.0;64.0;64.4;65.5;67.3;69.8;73.0;76.9;81.4;86.5;92.1;98.3;104.9;112.0;119.4;127.2;135.2;143.3;151.6;160.0;160.0;160.0;160.0;160.0\" dur=\"7.65s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M236.0,154.2 L246.0,160.0 L236.0,165.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M236.0,154.2 L246.0,160.0 L236.0,165.8;M236.0,154.2 L246.0,160.0 L236.0,165.8;M236.0,154.2 L246.0,160.0 L236.0,165.8;M236.0,154.2 L246.0,160.0 L236.0,165.8;M235.2,146.8 L245.6,151.6 L236.2,158.2;M233.7,139.4 L244.5,143.3 L235.7,150.7;M231.6,132.2 L242.7,135.2 L234.6,143.3;M228.9,125.2 L240.2,127.2 L232.8,136.0;M225.5,118.4 L237.0,119.4 L230.4,128.9;M221.6,112.0 L233.1,112.0 L227.4,122.0;M217.2,105.9 L228.6,104.9 L223.8,115.4;M212.2,100.3 L223.5,98.3 L219.6,109.1;M206.8,95.1 L217.9,92.1 L214.9,103.2;M200.9,90.4 L211.7,86.5 L209.7,97.8;M194.6,86.2 L205.1,81.4 L204.1,92.8;M188.0,82.6 L198.0,76.9 L198.0,88.4;M188.0,82.6 L198.0,76.9 L198.0,88.4;M188.0,82.6 L198.0,76.9 L198.0,88.4;M188.0,82.6 L198.0,76.9 L198.0,88.4;M188.0,82.6 L198.0,76.9 L198.0,88.4;M181.1,79.6 L190.6,73.0 L191.6,84.5;M174.0,77.2 L182.8,69.8 L184.8,81.1;M166.7,75.4 L174.8,67.3 L177.8,78.4;M159.3,74.3 L166.7,65.5 L170.6,76.3;M151.8,73.8 L158.4,64.4 L163.2,74.8;M144.2,74.0 L150.0,64.0 L155.8,74.0;M144.2,74.0 L150.0,64.0 L155.8,74.0;M144.2,74.0 L150.0,64.0 L155.8,74.0;M144.2,74.0 L150.0,64.0 L155.8,74.0;M144.2,74.0 L150.0,64.0 L155.8,74.0;M136.8,74.8 L141.6,64.4 L148.2,73.8;M129.4,76.3 L133.3,65.5 L140.7,74.3;M122.2,78.4 L125.2,67.3 L133.3,75.4;M115.2,81.1 L117.2,69.8 L126.0,77.2;M108.4,84.5 L109.4,73.0 L118.9,79.6;M102.0,88.4 L102.0,76.9 L112.0,82.6;M95.9,92.8 L94.9,81.4 L105.4,86.2;M90.3,97.8 L88.3,86.5 L99.1,90.4;M85.1,103.2 L82.1,92.1 L93.2,95.1;M80.4,109.1 L76.5,98.3 L87.8,100.3;M76.2,115.4 L71.4,104.9 L82.8,105.9;M72.6,122.0 L66.9,112.0 L78.4,112.0;M69.6,128.9 L63.0,119.4 L74.5,118.4;M67.2,136.0 L59.8,127.2 L71.1,125.2;M65.4,143.3 L57.3,135.2 L68.4,132.2;M64.3,150.7 L55.5,143.3 L66.3,139.4;M63.8,158.2 L54.4,151.6 L64.8,146.8;M64.0,165.8 L54.0,160.0 L64.0,154.2;M64.0,165.8 L54.0,160.0 L64.0,154.2;M64.0,165.8 L54.0,160.0 L64.0,154.2;M64.0,165.8 L54.0,160.0 L64.0,154.2;M64.0,165.8 L54.0,160.0 L64.0,154.2\" dur=\"7.65s\" begin=\"indefinite\" fill=\"freeze\"/></path><circle cx=\"150.0\" cy=\"160.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"138\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"290.0\" y=\"48.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 5,0 N</tspan></text><text x=\"290.0\" y=\"70.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 12 N</tspan></text><text x=\"290\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hợp lực F = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lực vẽ cùng tỉ lệ (1 N ứng với 8 px). F₂ quay quanh O qua bốn vị trí của đề, dừng ở mỗi vị trí (khoảng 8 s). Không vẽ hợp lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hợp lực thay hai lực đồng quy bằng một lực có tác dụng giống hệt.</li><li><strong>Quy tắc:</strong> hình bình hành, đường chéo xuất phát từ gốc là hợp lực.</li><li>$F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$ ($\\alpha$: góc giữa hai lực).</li><li>Cùng chiều: $F=F_1+F_2$ · ngược chiều: $F=\\lvert F_1-F_2\\rvert$.</li><li>⚠ <strong>Điều kiện:</strong> hai lực cùng đặt lên một chất điểm (đồng quy).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cùng chiều ($\\alpha=0^\\circ$)</span></p><p>Hai lực cùng phương, cùng chiều:</p>$$F=F_1+F_2=5{,}0+12$$<div class=\"bt-ans\">$$F=17\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ngược chiều ($\\alpha=180^\\circ$)</span></p>$$F=\\lvert F_1-F_2\\rvert=\\lvert5{,}0-12\\rvert$$<div class=\"bt-ans\">$$F=7{,}0\\ \\text{N}$$</div><p>Hợp lực cùng chiều với lực lớn hơn ($\\vec F_2$).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vuông góc ($\\alpha=90^\\circ$)</span></p>$$F=\\sqrt{F_1^2+F_2^2}=\\sqrt{5{,}0^2+12^2}=\\sqrt{169}$$<div class=\"bt-ans\">$$F=13\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hợp nhau $60^\\circ$</span></p>$$F^2=F_1^2+F_2^2+2F_1F_2\\cos60^\\circ$$$$F^2=25+144+2\\cdot5{,}0\\cdot12\\cdot0{,}5=229$$<div class=\"bt-ans\">$$F=\\sqrt{229}\\approx15{,}1\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cả bốn kết quả nằm trong khoảng từ $7{,}0$ đến $17$ N.</p><p>Góc càng mở, hợp lực càng nhỏ: $17\\gt15{,}1\\gt13\\gt7{,}0$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=17\\ \\text{N}$</p><p>b) $F=7{,}0\\ \\text{N}$</p><p>c) $F=13\\ \\text{N}$</p><p>d) $F\\approx15{,}1\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>độ lớn hai lực và góc giữa chúng</strong> → quy tắc hình bình hành; góc đặc biệt thì dùng ngay kết quả riêng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai lực F1 và F2 chung gốc O hợp nhau góc alpha\"><line x1=\"150\" y1=\"160\" x2=\"190.0\" y2=\"160.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M180.0,154.2 L190.0,160.0 L180.0,165.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"160\" x2=\"198.0\" y2=\"76.9\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M188.0,82.7 L198.0,76.9 L198.0,88.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"150.0\" cy=\"160.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M178.0,160.0 A28,28 0 0 0 164.0,135.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"184\" y=\"144\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"138\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"290.0\" y=\"48.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 5,0 N</tspan></text><text x=\"290.0\" y=\"70.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 12 N</tspan></text><text x=\"290\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hợp lực F = ?</text></svg><figcaption>Dữ kiện: hai lực chung gốc O, vẽ cùng tỉ lệ (1 N ứng với 8 px); đang vẽ α = 60° (ý d). Không dựng hình bình hành.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Hai sợi dây buộc vào một vòng nhẫn $O$, mỗi dây kéo qua một lực kế”</td><td>Hai lực cùng đặt vào $O$</td><td>⚠ Hai lực đồng quy (cùng tác dụng lên một chất điểm) mới tổng hợp được</td></tr><tr><td>“lực kế thứ nhất chỉ $5{,}0$ N, thứ hai chỉ $12$ N”</td><td>$F_1=5{,}0\\ \\text{N}$; $F_2=12\\ \\text{N}$</td><td>Độ lớn của hai lực thành phần</td></tr><tr><td>“hợp với nhau một góc $\\alpha$ tuỳ ý”</td><td>$\\alpha$ nhận bốn giá trị của đề</td><td>⚠ $\\alpha$ là góc giữa hai vectơ lực vẽ chung gốc</td></tr><tr><td>“a) $\\alpha=0^\\circ$ … b) $\\alpha=180^\\circ$ … c) $\\alpha=90^\\circ$ … d) $\\alpha=60^\\circ$”</td><td>Bốn trường hợp về góc</td><td>Hợp lực là đường chéo hình bình hành</td></tr><tr><td>“độ lớn hợp lực tác dụng lên vòng nhẫn”</td><td>Cần $F$ (N) ở từng trường hợp</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>độ lớn hai lực và góc giữa chúng</b> → nghĩ tới <b>quy tắc hình bình hành</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cùng chiều ($\\alpha=0^\\circ$)",
+     "hoi": "Khi hai lực cùng chiều, hợp lực bằng bao nhiêu?",
+     "dap_so": 17,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Hay trừ hai độ lớn vì tưởng hai lực kéo “đối nhau”."
+    },
+    {
+     "tieu_de": "Ngược chiều ($\\alpha=180^\\circ$)",
+     "hoi": "Khi hai lực ngược chiều, hợp lực bằng bao nhiêu?",
+     "dap_so": 7.0,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng hai độ lớn bất kể chiều, hoặc quên trị tuyệt đối.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu hai độ lớn",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ lớn như khi cùng chiều",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi cùng chiều; ngược chiều các lực triệt tiêu một phần."
+      },
+      {
+       "text": "Dùng $\\sqrt{F_1^2+F_2^2}$",
+       "dung": false,
+       "vi_sao": "Căn tổng bình phương chỉ dành cho hai lực vuông góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vuông góc ($\\alpha=90^\\circ$)",
+     "hoi": "Khi hai lực vuông góc, hợp lực bằng bao nhiêu?",
+     "dap_so": 13,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng thẳng hai độ lớn hoặc quên khai căn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng bình phương hai độ lớn rồi khai căn",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ lớn",
+       "dung": false,
+       "vi_sao": "Cộng số chỉ đúng khi hai lực cùng chiều."
+      },
+      {
+       "text": "Lấy hiệu hai độ lớn",
+       "dung": false,
+       "vi_sao": "Hiệu chỉ đúng khi hai lực ngược chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hợp nhau $60^\\circ$",
+     "hoi": "Khi hai lực hợp nhau góc $60^\\circ$, hợp lực bằng bao nhiêu?",
+     "dap_so": 15.1,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng thẳng độ lớn bất kể góc, hoặc dùng nhầm công thức của góc đặc biệt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$ với $\\alpha=60^\\circ$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\sqrt{F_1^2+F_2^2}$ như góc vuông",
+       "dung": false,
+       "vi_sao": "Công thức đó chỉ đúng khi $\\alpha=90^\\circ$, vì khi đó $\\cos\\alpha=0$."
+      },
+      {
+       "text": "Dùng $F^2=F_1^2+F_2^2-2F_1F_2\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Sai dấu của số hạng chứa $\\cos\\alpha$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Khoảng giá trị của hợp lực và tìm góc giữa hai lực",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "problem_html": "<p>Hai lực đồng quy có độ lớn $F_1=7{,}0\\ \\text{N}$ và $F_2=15\\ \\text{N}$ cùng tác dụng lên một chất điểm.</p>\n<ol type=\"a\"><li>Khi góc giữa hai lực thay đổi, độ lớn hợp lực nhỏ nhất và lớn nhất là bao nhiêu?</li>\n<li>Hợp lực có thể có độ lớn $5{,}0\\ \\text{N}$ không? Có thể có độ lớn $12\\ \\text{N}$ không?</li>\n<li>Biết hợp lực có độ lớn $20\\ \\text{N}$. Tính góc giữa hai lực.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Vòng quay F2 quanh điểm O từ hướng cùng chiều F1 đến hướng ngược chiều F1\"><path d=\"M200.0,160.0 A90.0,90.0 0 0 0 20.0,160.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><line x1=\"110\" y1=\"160\" x2=\"152.0\" y2=\"160.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M142.0,154.2 L152.0,160.0 L142.0,165.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110.0\" y1=\"160.0\" x2=\"200.0\" y2=\"160.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x2\" values=\"200.0;199.7;198.6;196.9;194.6;191.6;187.9;183.7;178.9;173.6;167.9;161.6;155.0;148.0;140.8;133.3;125.6;117.8;110.0;102.2;94.4;86.7;79.2;72.0;65.0;58.4;52.1;46.4;41.1;36.3;32.1;28.4;25.4;23.1;21.4;20.3;20.0;20.0;20.0;20.0;20.0\" dur=\"7.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"160.0;152.2;144.4;136.7;129.2;122.0;115.0;108.4;102.1;96.4;91.1;86.3;82.1;78.4;75.4;73.1;71.4;70.3;70.0;70.3;71.4;73.1;75.4;78.4;82.1;86.3;91.1;96.4;102.1;108.4;115.0;122.0;129.2;136.7;144.4;152.2;160.0;160.0;160.0;160.0;160.0\" dur=\"7.20s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M190.0,154.2 L200.0,160.0 L190.0,165.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M190.0,154.2 L200.0,160.0 L190.0,165.8;M189.2,147.3 L199.7,152.2 L190.2,158.8;M187.8,140.4 L198.6,144.4 L189.8,151.8;M185.8,133.7 L196.9,136.7 L188.8,144.9;M183.2,127.2 L194.6,129.2 L187.2,138.0;M180.1,121.0 L191.6,122.0 L185.0,131.4;M176.4,115.0 L187.9,115.0 L182.2,125.0;M172.2,109.4 L183.7,108.4 L178.9,118.8;M167.6,104.1 L178.9,102.1 L175.0,113.0;M162.5,99.3 L173.6,96.4 L170.7,107.5;M157.0,95.0 L167.9,91.1 L165.9,102.4;M151.2,91.1 L161.6,86.3 L160.6,97.8;M145.0,87.8 L155.0,82.1 L155.0,93.6;M138.6,85.0 L148.0,78.4 L149.0,89.9;M132.0,82.8 L140.8,75.4 L142.8,86.8;M125.1,81.2 L133.3,73.1 L136.3,84.2;M118.2,80.2 L125.6,71.4 L129.6,82.2;M111.2,79.8 L117.8,70.3 L122.7,80.8;M104.2,80.0 L110.0,70.0 L115.8,80.0;M97.3,80.8 L102.2,70.3 L108.8,79.8;M90.4,82.2 L94.4,71.4 L101.8,80.2;M83.7,84.2 L86.7,73.1 L94.9,81.2;M77.2,86.8 L79.2,75.4 L88.0,82.8;M71.0,89.9 L72.0,78.4 L81.4,85.0;M65.0,93.6 L65.0,82.1 L75.0,87.8;M59.4,97.8 L58.4,86.3 L68.8,91.1;M54.1,102.4 L52.1,91.1 L63.0,95.0;M49.3,107.5 L46.4,96.4 L57.5,99.3;M45.0,113.0 L41.1,102.1 L52.4,104.1;M41.1,118.8 L36.3,108.4 L47.8,109.4;M37.8,125.0 L32.1,115.0 L43.6,115.0;M35.0,131.4 L28.4,122.0 L39.9,121.0;M32.8,138.0 L25.4,129.2 L36.8,127.2;M31.2,144.9 L23.1,136.7 L34.2,133.7;M30.2,151.8 L21.4,144.4 L32.2,140.4;M29.8,158.8 L20.3,152.2 L30.8,147.3;M30.0,165.8 L20.0,160.0 L30.0,154.2;M30.0,165.8 L20.0,160.0 L30.0,154.2;M30.0,165.8 L20.0,160.0 L30.0,154.2;M30.0,165.8 L20.0,160.0 L30.0,154.2;M30.0,165.8 L20.0,160.0 L30.0,154.2\" dur=\"7.20s\" begin=\"indefinite\" fill=\"freeze\"/></path><circle cx=\"110.0\" cy=\"160.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"114\" y=\"190\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">α tăng dần từ 0° đến 180°</text><text x=\"98\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"290.0\" y=\"48.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 7,0 N</tspan></text><text x=\"290.0\" y=\"70.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 15 N</tspan></text><text x=\"290\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hợp lực F = 20 N</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lực vẽ cùng tỉ lệ (1 N ứng với 6 px). F₂ quay đều quanh O từ 0° đến 180° (khoảng 7 s). Góc cần tìm không được đánh dấu và không vẽ hợp lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hợp lực thay hai lực đồng quy bằng một lực có tác dụng giống hệt.</li><li><strong>Quy tắc:</strong> hình bình hành, đường chéo xuất phát từ gốc là hợp lực.</li><li>$F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$ ($\\alpha$: góc giữa hai lực).</li><li>Cùng chiều: $F=F_1+F_2$ · ngược chiều: $F=\\lvert F_1-F_2\\rvert$.</li><li>⚠ <strong>Điều kiện:</strong> hai lực cùng đặt lên một chất điểm (đồng quy).</li><li>Khoảng giá trị: $\\lvert F_1-F_2\\rvert\\le F\\le F_1+F_2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hợp lực nhỏ nhất</span></p><p>Nhỏ nhất khi hai lực ngược chiều ($\\alpha=180^\\circ$):</p>$$F_{min}=\\lvert F_1-F_2\\rvert=\\lvert7{,}0-15\\rvert$$<div class=\"bt-ans\">$$F_{min}=8{,}0\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hợp lực lớn nhất</span></p><p>Lớn nhất khi hai lực cùng chiều ($\\alpha=0^\\circ$):</p>$$F_{max}=F_1+F_2=7{,}0+15$$<div class=\"bt-ans\">$$F_{max}=22\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra $5{,}0$ N và $12$ N</span></p><p>Hợp lực chỉ nhận giá trị trong đoạn từ $8{,}0$ đến $22$ N.</p><p>$5{,}0\\lt8{,}0$: <strong>không thể</strong>.</p><p>$8{,}0\\lt12\\lt22$: <strong>có thể</strong>, ứng với một góc $\\alpha$ nào đó.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Rút $\\cos\\alpha$ từ hợp lực $20$ N</span></p>$$F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$$$$\\cos\\alpha=\\dfrac{F^2-F_1^2-F_2^2}{2F_1F_2}=\\dfrac{20^2-7{,}0^2-15^2}{2\\cdot7{,}0\\cdot15}=\\dfrac{126}{210}$$<div class=\"bt-ans\">$$\\cos\\alpha=0{,}6$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Góc giữa hai lực</span></p>$$\\alpha=\\arccos0{,}6$$<div class=\"bt-ans\">$$\\alpha\\approx53{,}1^\\circ$$</div><p>Máy tính để ở chế độ độ (DEG).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$F^2=7{,}0^2+15^2+2\\cdot7{,}0\\cdot15\\cdot0{,}6=400\\ \\Rightarrow\\ F=20\\ \\text{N}$$<p>Và $8{,}0\\lt20\\lt22$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F_{min}=8{,}0\\ \\text{N}$ · $F_{max}=22\\ \\text{N}$</p><p>b) $5{,}0\\ \\text{N}$: không thể · $12\\ \\text{N}$: có thể</p><p>c) $\\alpha\\approx53{,}1^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>hợp lực có thể bằng bao nhiêu</strong> hoặc cho $F$ rồi hỏi <strong>góc</strong> → khoảng từ hiệu đến tổng; rút $\\cos\\alpha$ từ công thức hình bình hành.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai lực F1 và F2 chung gốc O hợp nhau góc alpha chưa biết\"><line x1=\"110\" y1=\"160\" x2=\"152.0\" y2=\"160.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M142.0,154.2 L152.0,160.0 L142.0,165.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110\" y1=\"160\" x2=\"65.0\" y2=\"82.1\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M65.0,93.6 L65.0,82.1 L75.0,87.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"110.0\" cy=\"160.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M134.0,160.0 A24,24 0 0 0 98.0,139.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"130\" y=\"130\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = ?</text><text x=\"98\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"290.0\" y=\"48.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 7,0 N</tspan></text><text x=\"290.0\" y=\"70.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 15 N</tspan></text><text x=\"290\" y=\"94\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hợp lực F = 20 N</text></svg><figcaption>Dữ kiện: hai lực chung gốc O, vẽ cùng tỉ lệ (1 N ứng với 6 px). Góc vẽ chỉ để đặt tên α, không phải đáp số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Hai lực đồng quy … $F_1=7{,}0$ N và $F_2=15$ N”</td><td>$F_1=7{,}0\\ \\text{N}$; $F_2=15\\ \\text{N}$</td><td>⚠ Hai lực đồng quy cùng tác dụng lên một chất điểm</td></tr><tr><td>“khi góc giữa hai lực thay đổi”</td><td>$\\alpha$ chạy từ $0^\\circ$ đến $180^\\circ$</td><td>Hợp lực phụ thuộc góc giữa hai lực</td></tr><tr><td>“a) độ lớn nhỏ nhất và lớn nhất của hợp lực”</td><td>Cần $F_{min}$, $F_{max}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) có thể có độ lớn $5{,}0$ N không? $12$ N không?”</td><td>Hai giá trị cần kiểm tra</td><td>⚠ Cần biết hợp lực nhận những giá trị nào khi góc đổi</td></tr><tr><td>“c) hợp lực có độ lớn $20$ N”</td><td>$F=20\\ \\text{N}$</td><td>Công thức độ lớn hợp lực qua $\\alpha$</td></tr><tr><td>“tính góc giữa hai lực”</td><td>Cần $\\alpha$ (độ)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hợp lực có thể bằng</b> bao nhiêu hoặc <b>cho F, hỏi góc</b> → nghĩ tới <b>khoảng từ hiệu đến tổng</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hợp lực nhỏ nhất",
+     "hoi": "Hợp lực nhỏ nhất bằng bao nhiêu?",
+     "dap_so": 8.0,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho rằng nhỏ nhất là $0$ (hai lực triệt tiêu); điều đó chỉ xảy ra khi hai lực bằng nhau."
+    },
+    {
+     "tieu_de": "Hợp lực lớn nhất",
+     "hoi": "Hợp lực lớn nhất bằng bao nhiêu?",
+     "dap_so": 22,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy căn tổng bình phương (chỉ đúng khi hai lực vuông góc) hoặc nhân hai độ lớn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho hai lực cùng chiều rồi cộng độ lớn",
+       "dung": true
+      },
+      {
+       "text": "Cho hai lực vuông góc",
+       "dung": false,
+       "vi_sao": "Vuông góc cho $F=\\sqrt{F_1^2+F_2^2}$, nhỏ hơn tổng hai độ lớn."
+      },
+      {
+       "text": "Cho hai lực ngược chiều",
+       "dung": false,
+       "vi_sao": "Ngược chiều cho hợp lực nhỏ nhất, không phải lớn nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra $5{,}0$ N và $12$ N",
+     "hoi": "Chọn kết luận đúng về hai giá trị $5{,}0$ N và $12$ N.",
+     "lua_chon": [
+      {
+       "text": "$5{,}0$ N không thể; $12$ N có thể",
+       "dung": true
+      },
+      {
+       "text": "Cả hai đều có thể, vì hai lực hợp góc nào cũng được",
+       "dung": false,
+       "vi_sao": "Góc chỉ làm hợp lực đổi trong đoạn từ hiệu đến tổng hai độ lớn; ngoài đoạn đó không thể."
+      },
+      {
+       "text": "$5{,}0$ N có thể vì nhỏ hơn cả hai lực; $12$ N không thể",
+       "dung": false,
+       "vi_sao": "Hợp lực có thể nhỏ hơn cả hai lực nhưng không nhỏ hơn hiệu của chúng; hợp lực vẫn bị giới hạn bởi hiệu và tổng hai độ lớn."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng hợp lực nhận mọi giá trị vì góc đổi được; góc chỉ làm hợp lực đổi trong một đoạn xác định.",
+     "chon_buoc_ke": [
+      {
+       "text": "So giá trị đề hỏi với đoạn từ giá trị nhỏ nhất đến lớn nhất",
+       "dung": true
+      },
+      {
+       "text": "Tính $F$ ứng với $\\alpha=90^\\circ$ rồi so",
+       "dung": false,
+       "vi_sao": "Mỗi góc cho một giá trị của $F$; muốn biết $F$ có thể nhận giá trị nào phải xét cả đoạn."
+      },
+      {
+       "text": "Cộng $F_1+F_2$ rồi so",
+       "dung": false,
+       "vi_sao": "Tổng chỉ là giá trị lớn nhất, khi hai lực cùng chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Rút $\\cos\\alpha$ từ hợp lực $20$ N",
+     "hoi": "$\\cos\\alpha$ bằng bao nhiêu?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Đổi dấu khi chuyển vế hoặc quên chia cho $2F_1F_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chuyển vế từ $F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$ rồi chia cho $2F_1F_2$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $\\cos\\alpha=\\dfrac{F}{F_1+F_2}$",
+       "dung": false,
+       "vi_sao": "Hệ thức này không có; góc phải rút từ công thức hình bình hành."
+      },
+      {
+       "text": "Dùng $\\cos\\alpha=\\dfrac{F_1^2+F_2^2-F^2}{2F_1F_2}$",
+       "dung": false,
+       "vi_sao": "Sai dấu: số hạng chứa $\\cos\\alpha$ cộng với $F_1^2+F_2^2$ nên $\\cos\\alpha=\\dfrac{F^2-F_1^2-F_2^2}{2F_1F_2}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc giữa hai lực",
+     "hoi": "Góc giữa hai lực bằng bao nhiêu độ?",
+     "dap_so": 53.1,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Dùng arcsin thay cho arccos, hoặc để máy tính ở chế độ rad.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tra góc từ $\\cos\\alpha$ vừa tính, máy ở chế độ độ",
+       "dung": true
+      },
+      {
+       "text": "Tra góc bằng arcsin của giá trị vừa tính",
+       "dung": false,
+       "vi_sao": "Giá trị vừa tính là $\\cos\\alpha$, không phải $\\sin\\alpha$."
+      },
+      {
+       "text": "Lấy $180^\\circ$ trừ góc tra được",
+       "dung": false,
+       "vi_sao": "Góc bù ứng với $\\cos$ ngược dấu, mà giá trị $\\cos\\alpha$ vừa tính là số dương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Phân tích lực kéo xiên thành thành phần ngang và đứng",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "problem_html": "<p>Một bạn kéo thùng hàng trượt trên sàn nhà bằng sợi dây nhẹ. Dây hợp với phương ngang góc $\\alpha=40^\\circ$, lực kéo của dây có độ lớn $F=45\\ \\text{N}$.</p>\n<ol type=\"a\"><li>Tính thành phần nằm ngang $F_x$ và thành phần thẳng đứng $F_y$ của lực kéo.</li>\n<li>Thành phần nào làm thùng tiến lên? Thành phần nào làm thùng bớt ép xuống sàn?</li>\n<li>Bạn nâng tay cao hơn nên dây hợp với phương ngang góc $60^\\circ$, lực kéo vẫn là $45\\ \\text{N}$. Tính $F_x$ lúc này.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Một bạn kéo thùng trên sàn bằng dây hợp với phương ngang góc 40 độ\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"130\" y=\"126\" width=\"70\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"200.0\" y1=\"148.0\" x2=\"322.6\" y2=\"45.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><circle cx=\"322.6\" cy=\"45.2\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"331.6\" y=\"49.2\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">tay</text><line x1=\"200.0\" y1=\"148.0\" x2=\"324.0\" y2=\"148.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><path d=\"M240.0,148.0 A40,40 0 0 0 230.6,122.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"248\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text><text x=\"270.7\" y=\"72.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F = 45 N</text><text x=\"165\" y=\"193\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">thùng</text><line x1=\"200.0\" y1=\"148.0\" x2=\"212.4\" y2=\"137.6\" stroke=\"#fb923c\" stroke-width=\"2.8\"><animate attributeName=\"x2\" values=\"212.4;217.8;223.2;228.6;234.0;239.5;244.9;250.3;255.7;261.1;266.5;271.9;277.3;282.7;282.7;282.7;282.7;282.7;282.7;282.7\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"137.6;133.0;128.5;124.0;119.4;114.9;110.4;105.8;101.3;96.7;92.2;87.7;83.1;78.6;78.6;78.6;78.6;78.6;78.6;78.6\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M202.8,139.3 L212.4,137.6 L209.1,146.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M202.8,139.3 L212.4,137.6 L209.1,146.7;M208.2,134.7 L217.8,133.0 L214.5,142.2;M213.7,130.2 L223.2,128.5 L219.9,137.6;M219.1,125.7 L228.6,124.0 L225.3,133.1;M224.5,121.1 L234.0,119.4 L230.7,128.6;M229.9,116.6 L239.5,114.9 L236.1,124.0;M235.3,112.0 L244.9,110.4 L241.5,119.5;M240.7,107.5 L250.3,105.8 L247.0,114.9;M246.1,103.0 L255.7,101.3 L252.4,110.4;M251.5,98.4 L261.1,96.7 L257.8,105.9;M256.9,93.9 L266.5,92.2 L263.2,101.3;M262.3,89.3 L271.9,87.7 L268.6,96.8;M267.8,84.8 L277.3,83.1 L274.0,92.3;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7;M273.2,80.3 L282.7,78.6 L279.4,87.7\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/></path></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lực kéo tăng dần từ 15 % lên đủ 45 N (khoảng 4 s), vẽ theo tỉ lệ 1 N ứng với 2,4 px. Thùng đứng yên trong hình minh hoạ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phân tích lực là thay một lực bằng hai thành phần vuông góc có tác dụng giống hệt.</li><li>Chọn hai trục vuông góc $Ox$, $Oy$; $\\alpha$ là góc giữa $\\vec F$ và trục đang xét.</li><li>Thành phần kề góc $\\alpha$: $\\cos$ · thành phần đối góc $\\alpha$: $\\sin$.</li><li>⚠ <strong>Điều kiện:</strong> hai thành phần vuông góc nên $F^2=F_x^2+F_y^2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thành phần nằm ngang</span></p><p>Chọn $Ox$ nằm ngang, $Oy$ thẳng đứng hướng lên; $\\alpha$ là góc giữa $\\vec F$ và $Ox$:</p>$$F_x=F\\cos\\alpha=45\\cos40^\\circ$$<div class=\"bt-ans\">$$F_x\\approx34{,}5\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thành phần thẳng đứng</span></p>$$F_y=F\\sin\\alpha=45\\sin40^\\circ$$<div class=\"bt-ans\">$$F_y\\approx28{,}9\\ \\text{N}$$</div><p>Hướng lên.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tác dụng của hai thành phần</span></p><p>$F_x$ nằm dọc sàn: <strong>kéo thùng tiến lên</strong>.</p><p>$F_y$ hướng lên, vuông góc với sàn: <strong>nhấc bớt thùng</strong>, làm thùng ép xuống sàn nhẹ hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dây hợp với phương ngang góc $60^\\circ$</span></p><p>$\\alpha$ vẫn là góc so với phương ngang, $F$ không đổi:</p>$$F_x'=F\\cos60^\\circ=45\\cdot0{,}5$$<div class=\"bt-ans\">$$F_x'=22{,}5\\ \\text{N}$$</div><p>Nâng tay cao hơn thì $F_x$ nhỏ đi, $F_y$ lớn lên.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\sqrt{F_x^2+F_y^2}=\\sqrt{34{,}5^2+28{,}9^2}\\approx45\\ \\text{N}=F$$<p>Hai thành phần vuông góc nên ghép lại đúng bằng $F$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F_x\\approx34{,}5\\ \\text{N}$ · $F_y\\approx28{,}9\\ \\text{N}$</p><p>b) $F_x$ kéo thùng tiến lên · $F_y$ nhấc bớt thùng</p><p>c) $F_x'=22{,}5\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực kéo xiên và góc với phương ngang</strong> → phân tích lực thành thành phần ngang và thành phần đứng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Lực kéo F hợp với trục Ox nằm ngang góc 40 độ; trục Oy thẳng đứng hướng lên\"><rect x=\"16\" y=\"170.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"130\" y=\"126\" width=\"70\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"200.0\" y1=\"148.0\" x2=\"322.6\" y2=\"45.2\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><circle cx=\"322.6\" cy=\"45.2\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"331.6\" y=\"49.2\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">tay</text><line x1=\"200.0\" y1=\"148.0\" x2=\"324.0\" y2=\"148.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><path d=\"M240.0,148.0 A40,40 0 0 0 230.6,122.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"248\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text><text x=\"270.7\" y=\"72.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F = 45 N</text><text x=\"165\" y=\"193\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">thùng</text><line x1=\"200\" y1=\"148\" x2=\"282.7\" y2=\"78.6\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M271.4,80.6 L282.7,78.6 L278.8,89.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"200\" y1=\"148\" x2=\"290\" y2=\"148\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M281.3,143.0 L290.0,148.0 L281.3,153.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"294\" y=\"153\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ox</text><line x1=\"200\" y1=\"148\" x2=\"200\" y2=\"50\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M195.0,58.7 L200.0,50.0 L205.0,58.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"205\" y=\"48\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Oy</text></svg><figcaption>Dữ kiện: hai trục vuông góc Ox (ngang), Oy (đứng lên) đặt tại điểm buộc dây; lực F vẽ theo tỉ lệ 1 N ứng với 2,4 px. Chưa vẽ thành phần nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“sợi dây nhẹ. Dây hợp với phương ngang góc $\\alpha=40^\\circ$”</td><td>$\\alpha=40^\\circ$ (so với phương ngang)</td><td>⚠ $\\alpha$ là góc giữa $\\vec F$ và trục $Ox$ nằm ngang</td></tr><tr><td>“lực kéo của dây có độ lớn $F=45$ N”</td><td>$F=45\\ \\text{N}$</td><td>Lực cần phân tích</td></tr><tr><td>“a) thành phần nằm ngang $F_x$ và thành phần thẳng đứng $F_y$”</td><td>Cần $F_x$, $F_y$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) thành phần nào làm thùng tiến lên? … bớt ép xuống sàn?”</td><td>Tác dụng của từng thành phần</td><td>Phân tích lực: thay một lực bằng hai thành phần</td></tr><tr><td>“c) dây hợp với phương ngang góc $60^\\circ$, lực kéo vẫn là $45$ N”</td><td>$\\alpha'=60^\\circ$; $F=45\\ \\text{N}$</td><td>Đổi góc, giữ nguyên độ lớn lực</td></tr><tr><td>“Tính $F_x$ lúc này”</td><td>Cần $F_x'$ (N)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực kéo xiên</b> và <b>góc so với phương ngang</b> → nghĩ tới <b>phân tích lực</b> thành hai thành phần.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thành phần nằm ngang",
+     "hoi": "Thành phần nằm ngang $F_x$ bằng bao nhiêu?",
+     "dap_so": 34.5,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhầm cos và sin; chú ý góc cho ở đề là góc so với phương nào."
+    },
+    {
+     "tieu_de": "Thành phần thẳng đứng",
+     "hoi": "Thành phần thẳng đứng $F_y$ bằng bao nhiêu?",
+     "dap_so": 28.9,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng cos cho thành phần đứng, hoặc lấy $F-F_x$ (hiệu độ lớn, không phải thành phần vuông góc).",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $F_y=F\\sin\\alpha$ vì $F_y$ đối diện góc $\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $F_y=F-F_x$",
+       "dung": false,
+       "vi_sao": "Hai thành phần vuông góc nên $F^2=F_x^2+F_y^2$; không có hệ thức hiệu độ lớn."
+      },
+      {
+       "text": "Dùng $F_y=F\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Với $\\alpha$ là góc so với phương ngang, $\\cos\\alpha$ dành cho thành phần ngang; thành phần đứng đối diện góc $\\alpha$ nên dùng $\\sin\\alpha$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tác dụng của hai thành phần",
+     "hoi": "Thành phần nào làm thùng bớt ép xuống sàn?",
+     "lua_chon": [
+      {
+       "text": "$F_y$, vì nó hướng lên và vuông góc với sàn",
+       "dung": true
+      },
+      {
+       "text": "$F_x$, vì nó có độ lớn lớn hơn",
+       "dung": false,
+       "vi_sao": "Độ lớn không quyết định tác dụng của một thành phần."
+      },
+      {
+       "text": "Cả hai như nhau",
+       "dung": false,
+       "vi_sao": "Hai thành phần vuông góc nên tác dụng độc lập: một theo phương ngang, một theo phương đứng."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng thành phần lớn hơn thì quyết định mọi tác dụng; mỗi thành phần chỉ tác dụng theo phương của nó.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét tác dụng của từng thành phần theo phương của nó",
+       "dung": true
+      },
+      {
+       "text": "Cộng $F_x+F_y$ để biết tác dụng chung",
+       "dung": false,
+       "vi_sao": "Hai thành phần vuông góc, không cộng độ lớn; tác dụng được xét riêng từng phương."
+      },
+      {
+       "text": "Chỉ xét $F$, bỏ qua các thành phần",
+       "dung": false,
+       "vi_sao": "Muốn biết tác dụng theo từng phương thì phải dùng thành phần của phương ấy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dây hợp với phương ngang góc $60^\\circ$",
+     "hoi": "Với góc mới, $F_x$ bằng bao nhiêu?",
+     "dap_so": 22.5,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Giữ nguyên $F_x$ cũ vì $F$ không đổi, hoặc dùng sin cho thành phần ngang.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chiếu $\\vec F$ lên $Ox$ với góc mới $60^\\circ$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $F_x$ cũ vì $F$ không đổi",
+       "dung": false,
+       "vi_sao": "$F_x$ phụ thuộc cả góc: cùng $F$ mà đổi góc thì thành phần ngang đổi."
+      },
+      {
+       "text": "Dùng $F_x=F\\sin60^\\circ$",
+       "dung": false,
+       "vi_sao": "Góc vẫn là góc so với phương ngang nên thành phần ngang dùng $\\cos$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Phân tích trọng lực trên mặt dốc",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "problem_html": "<p>Một thùng hàng khối lượng $8{,}0\\ \\text{kg}$ đặt trên mặt dốc nghiêng góc $\\alpha=40^\\circ$ so với phương ngang. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính trọng lượng $P$ của thùng.</li>\n<li>Phân tích trọng lực thành hai thành phần: $P_x$ song song với mặt dốc, $P_y$ vuông góc với mặt dốc. Tính $P_x$ và $P_y$.</li>\n<li>Dốc được hạ xuống thoải hơn, nghiêng $20^\\circ$ so với phương ngang. Tính $P_x$ lúc này.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Thùng nằm trên mặt dốc được nâng dần từ nằm ngang đến nghiêng 40 độ; mũi tên trọng lực luôn thẳng đứng xuống\"><line x1=\"16.0\" y1=\"200.0\" x2=\"410.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"50.0\" cy=\"200.0\" r=\"4.5\" fill=\"currentColor\"/><g><rect x=\"50\" y=\"192\" width=\"250\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"150\" y=\"158\" width=\"60\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 50 200;-2 50 200;-4 50 200;-6 50 200;-8 50 200;-10 50 200;-12 50 200;-14 50 200;-16 50 200;-18 50 200;-20 50 200;-22 50 200;-24 50 200;-26 50 200;-28 50 200;-30 50 200;-32 50 200;-34 50 200;-36 50 200;-38 50 200;-40 50 200;-40 50 200;-40 50 200;-40 50 200;-40 50 200;-40 50 200;-40 50 200\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"180.0\" y1=\"175.0\" x2=\"180.0\" y2=\"271.0\" stroke=\"#f87171\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"180.0;179.0;177.9;176.7;175.3;173.7;172.0;170.1;168.1;165.9;163.6;161.2;158.6;155.9;153.0;150.1;147.0;143.8;140.5;137.0;133.5;133.5;133.5;133.5;133.5;133.5;133.5\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"175.0;170.5;166.0;161.5;157.2;152.8;148.5;144.3;140.1;136.1;132.0;128.1;124.3;120.5;116.9;113.3;109.9;106.6;103.4;100.3;97.3;97.3;97.3;97.3;97.3;97.3;97.3\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"180.0;179.0;177.9;176.7;175.3;173.7;172.0;170.1;168.1;165.9;163.6;161.2;158.6;155.9;153.0;150.1;147.0;143.8;140.5;137.0;133.5;133.5;133.5;133.5;133.5;133.5;133.5\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"271.0;266.5;262.0;257.5;253.2;248.8;244.5;240.3;236.1;232.1;228.0;224.1;220.3;216.5;212.9;209.3;205.9;202.6;199.4;196.3;193.3;193.3;193.3;193.3;193.3;193.3;193.3\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M185.8,261.0 L180.0,271.0 L174.2,261.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M185.8,261.0 L180.0,271.0 L174.2,261.0;M184.8,256.5 L179.0,266.5 L173.3,256.5;M183.7,252.0 L177.9,262.0 L172.2,252.0;M182.4,247.6 L176.7,257.5 L170.9,247.6;M181.0,243.2 L175.3,253.2 L169.5,243.2;M179.4,238.8 L173.7,248.8 L167.9,238.8;M177.7,234.5 L172.0,244.5 L166.2,234.5;M175.9,230.3 L170.1,240.3 L164.3,230.3;M173.8,226.2 L168.1,236.1 L162.3,226.2;M171.7,222.1 L165.9,232.1 L160.2,222.1;M169.4,218.1 L163.6,228.0 L157.8,218.1;M166.9,214.1 L161.2,224.1 L155.4,214.1;M164.4,210.3 L158.6,220.3 L152.8,210.3;M161.6,206.6 L155.9,216.5 L150.1,206.6;M158.8,202.9 L153.0,212.9 L147.3,202.9;M155.8,199.4 L150.1,209.3 L144.3,199.4;M152.8,195.9 L147.0,205.9 L141.2,195.9;M149.6,192.6 L143.8,202.6 L138.0,192.6;M146.2,189.4 L140.5,199.4 L134.7,189.4;M142.8,186.3 L137.0,196.3 L131.3,186.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3;M139.3,183.3 L133.5,193.3 L127.8,183.3\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/></path><g opacity=\"0\"><path d=\"M110.0,200.0 A60,60 0 0 0 96.0,161.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"116\" y=\"222\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text><animate attributeName=\"opacity\" values=\"0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.3;0.6;1.0;1.0;1.0;1.0;1.0\" dur=\"3.90s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mặt dốc nâng dần từ 0° đến 40° (khoảng 4 s), thùng nằm yên nhờ ma sát đủ lớn; trọng lực vẽ thẳng đứng xuống. Chưa vẽ thành phần nào.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phân tích lực là thay một lực bằng hai thành phần vuông góc có tác dụng giống hệt.</li><li>Chọn hai trục vuông góc $Ox$, $Oy$; $\\alpha$ là góc giữa $\\vec F$ và trục đang xét.</li><li>Thành phần kề góc $\\alpha$: $\\cos$ · thành phần đối góc $\\alpha$: $\\sin$.</li><li>⚠ <strong>Điều kiện:</strong> hai thành phần vuông góc nên $F^2=F_x^2+F_y^2$.</li><li>Dốc nghiêng $\\alpha$: $\\vec P$ hợp phương vuông góc dốc góc $\\alpha$, nên $P_x$ (dọc dốc) đối góc $\\alpha$, $P_y$ (vuông góc dốc) kề góc $\\alpha$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng lượng</span></p>$$P=mg=8{,}0\\cdot10$$<div class=\"bt-ans\">$$P=80\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thành phần dọc dốc</span></p><p>Chọn $Ox$ dọc dốc, $Oy$ vuông góc dốc:</p>$$P_x=P\\sin\\alpha=80\\sin40^\\circ$$<div class=\"bt-ans\">$$P_x\\approx51{,}4\\ \\text{N}$$</div><p>Thành phần này kéo thùng trượt xuống dốc.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thành phần vuông góc dốc</span></p>$$P_y=P\\cos\\alpha=80\\cos40^\\circ$$<div class=\"bt-ans\">$$P_y\\approx61{,}3\\ \\text{N}$$</div><p>Thành phần này ép thùng vào mặt dốc.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dốc thoải hơn ($20^\\circ$)</span></p>$$P_x'=P\\sin20^\\circ=80\\cdot0{,}342$$<div class=\"bt-ans\">$$P_x'\\approx27{,}4\\ \\text{N}$$</div><p>$P_x$ giảm: dốc càng thoải, thùng càng ít bị kéo xuống.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\sqrt{P_x^2+P_y^2}=\\sqrt{51{,}4^2+61{,}3^2}\\approx80\\ \\text{N}=P$$<p>Dốc nằm ngang ($\\alpha=0$): $P_x=0$, $P_y=P$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P=80\\ \\text{N}$</p><p>b) $P_x\\approx51{,}4\\ \\text{N}$ · $P_y\\approx61{,}3\\ \\text{N}$</p><p>c) $P_x'\\approx27{,}4\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vật trên mặt dốc nghiêng góc α</strong> → phân tích trọng lực theo phương dọc dốc và vuông góc dốc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Thùng trên dốc nghiêng 40 độ với hai trục: Ox dọc mặt dốc, Oy vuông góc mặt dốc; trọng lực P thẳng đứng xuống\"><line x1=\"16.0\" y1=\"200.0\" x2=\"410.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"50.0\" cy=\"200.0\" r=\"4.5\" fill=\"currentColor\"/><g transform=\"rotate(-40 50 200)\"><rect x=\"50\" y=\"192\" width=\"250\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"150\" y=\"158\" width=\"60\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/></g><line x1=\"133.51608736330365\" y1=\"97.28649966277546\" x2=\"133.5\" y2=\"193.3\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M139.3,183.3 L133.5,193.3 L127.7,183.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"141.5\" y=\"191.3\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = mg</text><line x1=\"133.51608736330365\" y1=\"97.28649966277546\" x2=\"187.13919838163213\" y2=\"52.291366984717705\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M177.3,54.0 L187.1,52.3 L183.7,61.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"193.1\" y=\"48.3\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ox</text><line x1=\"133.51608736330365\" y1=\"97.28649966277546\" x2=\"88.5209546852459\" y2=\"43.663388644447\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M90.3,53.5 L88.5,43.7 L97.9,47.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"82.5\" y=\"39.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">Oy</text><path d=\"M110.0,200.0 A60,60 0 0 0 96.0,161.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"116\" y=\"222\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text></svg><figcaption>Dữ kiện: hai trục vuông góc đặt tại tâm thùng (Ox dọc dốc, Oy vuông góc dốc); trọng lực vẽ thẳng đứng xuống, chưa vẽ thành phần nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hàng khối lượng $8{,}0$ kg … Lấy $g=10$ m/s²”</td><td>$m=8{,}0\\ \\text{kg}$; $g=10\\ \\text{m/s}^2$</td><td>Trọng lực hướng thẳng đứng xuống</td></tr><tr><td>“mặt dốc nghiêng góc $\\alpha=40^\\circ$ so với phương ngang”</td><td>$\\alpha=40^\\circ$</td><td>⚠ Hai phương chọn vuông góc: dọc dốc và vuông góc dốc</td></tr><tr><td>“a) trọng lượng $P$ của thùng”</td><td>Cần $P$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) $P_x$ song song với mặt dốc, $P_y$ vuông góc với mặt dốc”</td><td>Cần $P_x$, $P_y$ (N)</td><td>Phân tích lực theo hai phương vuông góc</td></tr><tr><td>“c) dốc nghiêng $20^\\circ$ so với phương ngang”</td><td>$\\alpha'=20^\\circ$; cùng vật</td><td>Đổi góc nghiêng, giữ nguyên vật</td></tr><tr><td>“Tính $P_x$ lúc này”</td><td>Cần $P_x'$ (N)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật trên mặt dốc nghiêng góc α</b> → nghĩ tới <b>phân tích trọng lực</b> dọc dốc và vuông góc dốc.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng lượng",
+     "hoi": "Trọng lượng $P$ của thùng bằng bao nhiêu?",
+     "dap_so": 80,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên nhân với $g$: khối lượng đo bằng kilôgam, trọng lượng (lực) đo bằng niutơn."
+    },
+    {
+     "tieu_de": "Thành phần dọc dốc",
+     "hoi": "Thành phần dọc dốc $P_x$ bằng bao nhiêu?",
+     "dap_so": 51.4,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng cos cho thành phần dọc dốc: nhầm góc nghiêng của dốc với góc giữa $\\vec P$ và mặt dốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $P_x=P\\sin\\alpha$ vì $P_x$ đối diện góc nghiêng $\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $P_x=P\\cos\\alpha$ như khi kéo xiên",
+       "dung": false,
+       "vi_sao": "Khi kéo xiên, $\\alpha$ là góc giữa lực và phương chiếu; ở dốc, trục dọc dốc hợp với $\\vec P$ góc $90^\\circ-\\alpha$ nên cos đổi thành sin."
+      },
+      {
+       "text": "Dùng $P_x=P\\tan\\alpha$",
+       "dung": false,
+       "vi_sao": "Tang chỉ là tỉ số hai thành phần; thành phần của $\\vec P$ không có hệ số $\\tan\\alpha$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thành phần vuông góc dốc",
+     "hoi": "Thành phần vuông góc dốc $P_y$ bằng bao nhiêu?",
+     "dap_so": 61.3,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng cùng một hàm (sin) cho cả hai thành phần, hoặc lấy $P-P_x$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $P_y=P\\cos\\alpha$ vì $P_y$ kề góc nghiêng $\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $P_y=P-P_x$",
+       "dung": false,
+       "vi_sao": "Hai thành phần vuông góc nên $P^2=P_x^2+P_y^2$; không có hệ thức hiệu độ lớn."
+      },
+      {
+       "text": "Dùng $P_y=P\\sin\\alpha$ giống $P_x$",
+       "dung": false,
+       "vi_sao": "Hai thành phần vuông góc không thể cùng một công thức."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dốc thoải hơn ($20^\\circ$)",
+     "hoi": "Với dốc nghiêng $20^\\circ$, $P_x$ bằng bao nhiêu?",
+     "dap_so": 27.4,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Giữ nguyên $P_x$ cũ vì trọng lượng không đổi, hoặc dùng cos cho thành phần dọc dốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ công thức cũ của $P_x$, thay góc mới $20^\\circ$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $P_x$ vì trọng lượng không đổi",
+       "dung": false,
+       "vi_sao": "$P_x$ phụ thuộc góc nghiêng."
+      },
+      {
+       "text": "Dùng $P_x=P\\cos20^\\circ$",
+       "dung": false,
+       "vi_sao": "Thành phần dọc dốc dùng $\\sin\\alpha$; dùng cos sẽ cho $P_x$ gần bằng $P$, vô lí khi dốc gần nằm ngang."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Vật treo bằng hai dây: lực căng khi vòng nhẫn cân bằng",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "problem_html": "<p>Một vật khối lượng $3{,}0\\ \\text{kg}$ được treo vào vòng nhẫn $O$ (coi là chất điểm) bằng một sợi dây nhẹ. Vòng nhẫn được giữ yên bằng hai dây nhẹ khác: dây $OA$ nằm ngang buộc vào tường, dây $OB$ hợp với phương thẳng đứng góc $30^\\circ$ buộc vào trần. Lấy $g=10\\ \\text{m/s}^2$. Tính lực căng của dây $OA$ và của dây $OB$.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Vật 3,0 kg treo vào vòng nhẫn O; dây OA nằm ngang buộc vào tường, dây OB hợp với phương thẳng đứng góc 30 độ buộc vào trần\"><line x1=\"40.0\" y1=\"70.0\" x2=\"40.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"70.0\" x2=\"32.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"86.2\" x2=\"32.0\" y2=\"94.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"102.5\" x2=\"32.0\" y2=\"110.5\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"118.8\" x2=\"32.0\" y2=\"126.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"135.0\" x2=\"32.0\" y2=\"143.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"151.2\" x2=\"32.0\" y2=\"159.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"167.5\" x2=\"32.0\" y2=\"175.5\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"183.8\" x2=\"32.0\" y2=\"191.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"32.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"30.0\" x2=\"340.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"30.0\" x2=\"158.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"169.0\" y1=\"30.0\" x2=\"177.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"188.0\" y1=\"30.0\" x2=\"196.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"207.0\" y1=\"30.0\" x2=\"215.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"226.0\" y1=\"30.0\" x2=\"234.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"245.0\" y1=\"30.0\" x2=\"253.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"264.0\" y1=\"30.0\" x2=\"272.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"283.0\" y1=\"30.0\" x2=\"291.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"302.0\" y1=\"30.0\" x2=\"310.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"321.0\" y1=\"30.0\" x2=\"329.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"340.0\" y1=\"30.0\" x2=\"348.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"130.0\" x2=\"190.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"190.0\" y1=\"130.0\" x2=\"247.7\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"190.0\" y1=\"130.0\" x2=\"190.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><rect x=\"165\" y=\"192\" width=\"50\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"190\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3,0 kg</text><line x1=\"190.0\" y1=\"130.0\" x2=\"190.0\" y2=\"68.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><path d=\"M217.0,83.2 A54,54 0 0 0 190.0,76.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"184\" y=\"86\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">30°</text><text x=\"52.0\" y=\"122.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"10\">OA</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"238.0\" y=\"86.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"10\">OB</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"178\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"48.0\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"255.7\" y=\"48.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><line x1=\"190.0\" y1=\"130.0\" x2=\"190.0\" y2=\"139.0\" stroke=\"#f87171\" stroke-width=\"2.8\"><animate attributeName=\"x2\" values=\"190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"139.0;142.9;146.8;150.8;154.7;158.6;162.5;166.5;170.4;174.3;178.2;182.2;186.1;190.0;190.0;190.0;190.0;190.0;190.0;190.0\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M192.7,134.3 L190.0,139.0 L187.3,134.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M192.7,134.3 L190.0,139.0 L187.3,134.3;M192.7,138.2 L190.0,142.9 L187.3,138.2;M192.7,142.2 L190.0,146.8 L187.3,142.2;M192.7,146.1 L190.0,150.8 L187.3,146.1;M192.7,150.0 L190.0,154.7 L187.3,150.0;M192.7,153.9 L190.0,158.6 L187.3,153.9;M192.7,157.9 L190.0,162.5 L187.3,157.9;M192.7,161.8 L190.0,166.5 L187.3,161.8;M192.7,165.7 L190.0,170.4 L187.3,165.7;M192.7,169.6 L190.0,174.3 L187.3,169.6;M192.7,173.6 L190.0,178.2 L187.3,173.6;M192.7,177.5 L190.0,182.2 L187.3,177.5;M192.7,181.4 L190.0,186.1 L187.3,181.4;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3;M192.7,185.3 L190.0,190.0 L187.3,185.3\" dur=\"4.18s\" begin=\"indefinite\" fill=\"freeze\"/></path><circle cx=\"190.0\" cy=\"130.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: trọng lực của vật treo tăng dần từ 15 % lên đủ (khoảng 4 s). Lực căng hai dây chưa vẽ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chất điểm cân bằng khi tổng các lực tác dụng lên nó bằng $\\vec 0$.</li><li>Chiếu lên hai trục vuông góc: tổng các thành phần trên mỗi trục bằng $0$.</li><li>Thành phần kề góc $\\alpha$: $\\cos$ · thành phần đối góc $\\alpha$: $\\sin$.</li><li>Trọng lượng $P=mg$, hướng thẳng đứng xuống.</li><li>⚠ <strong>Điều kiện:</strong> dây nhẹ; lực căng có phương dọc theo dây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng lực và hệ trục</span></p><p>Vòng $O$ đứng yên nên $\\vec T_{OA}+\\vec T_{OB}+\\vec P=\\vec 0$ ($\\vec P$: lực của dây treo vật, bằng trọng lượng vật).</p>$$P=mg=3{,}0\\cdot10$$<div class=\"bt-ans\">$$P=30\\ \\text{N}$$</div><p>Chọn $Ox$ nằm ngang sang phải, $Oy$ thẳng đứng hướng lên.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiếu lên $Oy$: lực căng dây $OB$</span></p><p>Dây $OA$ nằm ngang nên không có thành phần đứng. Dây $OB$ hợp phương thẳng đứng góc $30^\\circ$ nên thành phần đứng của nó kề góc $30^\\circ$:</p>$$T_{OB}\\cos30^\\circ-P=0$$$$T_{OB}=\\dfrac{P}{\\cos30^\\circ}=\\dfrac{30}{0{,}866}$$<div class=\"bt-ans\">$$T_{OB}\\approx34{,}6\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiếu lên $Ox$: lực căng dây $OA$</span></p><p>Thành phần ngang của $\\vec T_{OB}$ đối góc $30^\\circ$, cân bằng với $\\vec T_{OA}$:</p>$$T_{OB}\\sin30^\\circ-T_{OA}=0$$$$T_{OA}=34{,}6\\cdot0{,}5$$<div class=\"bt-ans\">$$T_{OA}\\approx17{,}3\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Dây $OB$ là cạnh huyền của tam giác lực nên lớn hơn cả $P$ và $T_{OA}$ ✓.</p>$$\\tan30^\\circ=\\dfrac{T_{OA}}{P}=\\dfrac{17{,}3}{30}\\approx0{,}577$$<p>Khớp với $\\tan30^\\circ\\approx0{,}577$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$T_{OB}\\approx34{,}6\\ \\text{N}$</p><p>$T_{OA}\\approx17{,}3\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: vật <strong>treo bằng dây và đứng yên</strong> → tổng lực bằng không; chiếu lên hai trục, mỗi trục một phương trình.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Vòng nhẫn O với hai trục Ox nằm ngang và Oy thẳng đứng lên, trọng lực P hướng xuống, hai dây OA và OB\"><line x1=\"40.0\" y1=\"70.0\" x2=\"40.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"70.0\" x2=\"32.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"86.2\" x2=\"32.0\" y2=\"94.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"102.5\" x2=\"32.0\" y2=\"110.5\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"118.8\" x2=\"32.0\" y2=\"126.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"135.0\" x2=\"32.0\" y2=\"143.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"151.2\" x2=\"32.0\" y2=\"159.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"167.5\" x2=\"32.0\" y2=\"175.5\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"183.8\" x2=\"32.0\" y2=\"191.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"32.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"150.0\" y1=\"30.0\" x2=\"340.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"30.0\" x2=\"158.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"169.0\" y1=\"30.0\" x2=\"177.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"188.0\" y1=\"30.0\" x2=\"196.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"207.0\" y1=\"30.0\" x2=\"215.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"226.0\" y1=\"30.0\" x2=\"234.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"245.0\" y1=\"30.0\" x2=\"253.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"264.0\" y1=\"30.0\" x2=\"272.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"283.0\" y1=\"30.0\" x2=\"291.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"302.0\" y1=\"30.0\" x2=\"310.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"321.0\" y1=\"30.0\" x2=\"329.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"340.0\" y1=\"30.0\" x2=\"348.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"130.0\" x2=\"190.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"190.0\" y1=\"130.0\" x2=\"247.7\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"190.0\" y1=\"130.0\" x2=\"190.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.8\"/><rect x=\"165\" y=\"192\" width=\"50\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"190\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3,0 kg</text><line x1=\"190.0\" y1=\"130.0\" x2=\"190.0\" y2=\"68.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><path d=\"M217.0,83.2 A54,54 0 0 0 190.0,76.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"184\" y=\"86\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">30°</text><text x=\"52.0\" y=\"122.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"10\">OA</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"238.0\" y=\"86.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T<tspan dy=\"4\" font-size=\"10\">OB</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"178\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"48.0\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"255.7\" y=\"48.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><line x1=\"190\" y1=\"130\" x2=\"190.0\" y2=\"190.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M195.8,180.0 L190.0,190.0 L184.2,180.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"190.0\" cy=\"130.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"190\" y1=\"130\" x2=\"274\" y2=\"130\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M265.3,125.0 L274.0,130.0 L265.3,135.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"278\" y=\"135\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ox</text><line x1=\"190\" y1=\"130\" x2=\"190\" y2=\"68\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M185.0,76.7 L190.0,68.0 L195.0,76.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"196\" y=\"64\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Oy</text></svg><figcaption>Dữ kiện: hai trục Ox (ngang), Oy (thẳng đứng lên) đặt tại O; chỉ vẽ trọng lực, lực căng hai dây chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vật khối lượng $3{,}0$ kg … treo vào vòng nhẫn $O$ bằng một sợi dây nhẹ”</td><td>$m=3{,}0\\ \\text{kg}$</td><td>Trọng lực hướng xuống; dây nhẹ truyền lực</td></tr><tr><td>“vòng nhẫn $O$ (coi là chất điểm)”</td><td>Chất điểm $O$</td><td>Các lực đều đặt tại $O$</td></tr><tr><td>“được giữ yên”</td><td>Vòng nhẫn đứng yên</td><td>⚠ Điều kiện cân bằng: tổng các lực bằng $\\vec 0$</td></tr><tr><td>“dây $OA$ nằm ngang”</td><td>Phương của $T_{OA}$ là phương ngang</td><td>Lực căng có phương dọc theo dây</td></tr><tr><td>“dây $OB$ hợp với phương thẳng đứng góc $30^\\circ$”</td><td>$\\beta=30^\\circ$ (so với phương thẳng đứng)</td><td>⚠ Góc cho so với phương thẳng đứng</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng của vật</td></tr><tr><td>“Tính lực căng của dây $OA$ và của dây $OB$”</td><td>Cần $T_{OA}$, $T_{OB}$ (N)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy vật <b>treo bằng dây và đứng yên</b> → nghĩ tới <b>tổng lực bằng không</b>, chiếu lên hai trục.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng lực và hệ trục",
+     "hoi": "Lực của dây treo vật lên vòng nhẫn (bằng trọng lượng vật) là bao nhiêu?",
+     "dap_so": 30,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên nhân với $g$ rồi chiếu các lực với trọng lượng bằng khối lượng."
+    },
+    {
+     "tieu_de": "Chiếu lên $Oy$: lực căng dây $OB$",
+     "hoi": "Lực căng dây $OB$ bằng bao nhiêu?",
+     "dap_so": 34.6,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhầm sin và cos khi chiếu, hoặc cho $T_{OB}$ bằng trọng lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho thành phần đứng của $T_{OB}$ cân bằng với $P$",
+       "dung": true
+      },
+      {
+       "text": "Chiếu lên $Oy$ với $T_{OB}\\sin30^\\circ=P$",
+       "dung": false,
+       "vi_sao": "Nhầm hàm khi chiếu: $30^\\circ$ là góc so với phương thẳng đứng."
+      },
+      {
+       "text": "Cho $T_{OB}=P$ vì dây $OB$ đỡ vật",
+       "dung": false,
+       "vi_sao": "Dây $OB$ xiên nên chỉ thành phần đứng của nó đỡ vật; $T_{OB}$ không thể bằng $P$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiếu lên $Ox$: lực căng dây $OA$",
+     "hoi": "Lực căng dây $OA$ bằng bao nhiêu?",
+     "dap_so": 17.3,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho $T_{OA}$ bằng trọng lượng vì dây $OA$ đang giữ vật, hoặc cho hai dây bằng nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho $T_{OA}$ cân bằng với thành phần ngang của $T_{OB}$",
+       "dung": true
+      },
+      {
+       "text": "Cho $T_{OA}=P$ vì dây $OA$ ngang",
+       "dung": false,
+       "vi_sao": "Dây $OA$ nằm ngang nên không đỡ trọng lượng; nó chỉ cân bằng thành phần ngang của $T_{OB}$."
+      },
+      {
+       "text": "Cho $T_{OA}=T_{OB}$",
+       "dung": false,
+       "vi_sao": "Hai dây không đối xứng (một ngang, một xiên) nên hai lực căng khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Khó · Dây võng: lực căng mỗi nhánh",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "problem_html": "<p>Hai đầu $A$, $B$ của một dây điện nhẹ buộc vào hai cột ở cùng độ cao, cách nhau $6{,}0\\ \\text{m}$. Treo một đèn khối lượng $4{,}0\\ \\text{kg}$ vào chính giữa dây thì chỗ treo võng xuống $0{,}50\\ \\text{m}$ so với đường thẳng $AB$ và đèn đứng yên. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Tính góc $\\theta$ giữa mỗi nhánh dây và phương ngang.</li>\n<li>Tính lực căng của mỗi nhánh dây.</li>\n<li>Lực căng gấp mấy lần trọng lượng của đèn?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Đèn 4,0 kg được thả vào chính giữa dây điện nằm ngang dài 6,0 m, dây võng xuống 0,50 m rồi đứng yên\"><line x1=\"34.0\" y1=\"30.0\" x2=\"34.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"386.0\" y1=\"30.0\" x2=\"386.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"34.0\" y1=\"70.0\" x2=\"386.0\" y2=\"70.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><line x1=\"34.0\" y1=\"46\" x2=\"386.0\" y2=\"46\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M379.0,41.9 L386.0,46.0 L379.0,50.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"386.0\" y1=\"46\" x2=\"34.0\" y2=\"46\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M41.0,50.1 L34.0,46.0 L41.0,41.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190.0\" y=\"40\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6,0 m</text><text x=\"42.0\" y=\"64.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"378.0\" y=\"64.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"222.0\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">đèn 4,0 kg</text><line x1=\"34.0\" y1=\"70.0\" x2=\"210.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"70.0;79.1;89.6;98.4;104.1;106.5;106.2;104.4;102.1;100.0;98.5;97.8;97.7;98.1;98.6;99.1;99.5;99.6;99.7;99.6;99.5;99.4;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.4;99.4;99.3;99.3;99.3;99.3;99.3;99.3\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"210.0\" y1=\"70.0\" x2=\"386.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x1\" values=\"210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"70.0;79.1;89.6;98.4;104.1;106.5;106.2;104.4;102.1;100.0;98.5;97.8;97.7;98.1;98.6;99.1;99.5;99.6;99.7;99.6;99.5;99.4;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.4;99.4;99.3;99.3;99.3;99.3;99.3;99.3\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"210.0\" y1=\"70.0\" x2=\"210.0\" y2=\"150.0\" stroke=\"#f87171\" stroke-width=\"2.8\"><animate attributeName=\"x1\" values=\"210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"70.0;79.1;89.6;98.4;104.1;106.5;106.2;104.4;102.1;100.0;98.5;97.8;97.7;98.1;98.6;99.1;99.5;99.6;99.7;99.6;99.5;99.4;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.4;99.4;99.3;99.3;99.3;99.3;99.3;99.3\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0;210.0\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"150.0;159.1;169.6;178.4;184.1;186.5;186.2;184.4;182.1;180.0;178.5;177.8;177.7;178.1;178.6;179.1;179.5;179.6;179.7;179.6;179.5;179.4;179.3;179.3;179.3;179.3;179.3;179.3;179.3;179.3;179.4;179.4;179.3;179.3;179.3;179.3;179.3;179.3\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M215.8,140.0 L210.0,150.0 L204.2,140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"><animate attributeName=\"d\" values=\"M215.8,140.0 L210.0,150.0 L204.2,140.0;M215.8,149.1 L210.0,159.1 L204.2,149.1;M215.8,159.6 L210.0,169.6 L204.2,159.6;M215.8,168.5 L210.0,178.4 L204.2,168.5;M215.8,174.1 L210.0,184.1 L204.2,174.1;M215.8,176.5 L210.0,186.5 L204.2,176.5;M215.8,176.3 L210.0,186.2 L204.2,176.3;M215.8,174.4 L210.0,184.4 L204.2,174.4;M215.8,172.1 L210.0,182.1 L204.2,172.1;M215.8,170.0 L210.0,180.0 L204.2,170.0;M215.8,168.5 L210.0,178.5 L204.2,168.5;M215.8,167.8 L210.0,177.8 L204.2,167.8;M215.8,167.8 L210.0,177.7 L204.2,167.8;M215.8,168.1 L210.0,178.1 L204.2,168.1;M215.8,168.6 L210.0,178.6 L204.2,168.6;M215.8,169.1 L210.0,179.1 L204.2,169.1;M215.8,169.5 L210.0,179.5 L204.2,169.5;M215.8,169.7 L210.0,179.6 L204.2,169.7;M215.8,169.7 L210.0,179.7 L204.2,169.7;M215.8,169.7 L210.0,179.6 L204.2,169.7;M215.8,169.6 L210.0,179.5 L204.2,169.6;M215.8,169.4 L210.0,179.4 L204.2,169.4;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.3 L210.0,179.3 L204.2,169.3;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.4 L204.2,169.4;M215.8,169.4 L210.0,179.4 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4;M215.8,169.4 L210.0,179.3 L204.2,169.4\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/></path><circle cx=\"210.0\" cy=\"70.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cy\" values=\"70.0;79.1;89.6;98.4;104.1;106.5;106.2;104.4;102.1;100.0;98.5;97.8;97.7;98.1;98.6;99.1;99.5;99.6;99.7;99.6;99.5;99.4;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.3;99.4;99.4;99.3;99.3;99.3;99.3;99.3;99.3\" dur=\"3.70s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"210.0\" y1=\"70.0\" x2=\"210.0\" y2=\"92.33333333333333\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M214.1,85.3 L210.0,92.3 L205.9,85.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"92.33333333333333\" x2=\"210.0\" y2=\"70.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M205.9,77.0 L210.0,70.0 L214.1,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"220.0\" y=\"87.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,50 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đèn thả vào giữa dây, dao động tắt dần (chỉ minh hoạ) rồi đứng yên ở độ võng 0,50 m của đề (khoảng 4 s). Chỉ vẽ trọng lực; lực căng chưa vẽ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chất điểm cân bằng khi tổng các lực tác dụng lên nó bằng $\\vec 0$.</li><li>Chiếu lên hai trục vuông góc: tổng các thành phần trên mỗi trục bằng $0$.</li><li>Thành phần kề góc $\\alpha$: $\\cos$ · thành phần đối góc $\\alpha$: $\\sin$.</li><li>Trọng lượng $P=mg$, hướng thẳng đứng xuống.</li><li>⚠ <strong>Điều kiện:</strong> dây nhẹ; lực căng có phương dọc theo dây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc của mỗi nhánh dây</span></p><p>Mỗi nhánh phủ nửa nhịp theo phương ngang và độ võng theo phương đứng:</p>$$\\tan\\theta=\\dfrac{h}{AB/2}=\\dfrac{0{,}50}{3{,}0}$$<div class=\"bt-ans\">$$\\theta\\approx9{,}46^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cân bằng theo phương đứng</span></p><p>Trọng lượng đèn:</p>$$P=mg=4{,}0\\cdot10=40\\ \\text{N}$$<p>Hai nhánh đối xứng nên $T_1=T_2=T$. Hai thành phần đứng hướng lên cùng đỡ $P$:</p>$$2T\\sin\\theta-P=0$$$$T=\\dfrac{P}{2\\sin\\theta}=\\dfrac{40}{2\\cdot0{,}1644}$$<div class=\"bt-ans\">$$T\\approx121{,}7\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So với trọng lượng đèn</span></p>$$\\dfrac{T}{P}=\\dfrac{121{,}7}{40}$$<div class=\"bt-ans\">$$\\dfrac{T}{P}\\approx3{,}04$$</div><p>Dây chỉ võng nhẹ mà lực căng đã hơn ba lần trọng lượng đèn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Võng càng ít thì $\\theta$ càng nhỏ, $\\sin\\theta$ càng nhỏ, $T$ càng lớn; dây thẳng ngang ($\\theta\\to0$) thì $T\\to\\infty$.</p><p>Vì vậy dây treo vật nặng không bao giờ căng thẳng ngang được.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\theta\\approx9{,}46^\\circ$</p><p>b) $T\\approx121{,}7\\ \\text{N}$ mỗi nhánh</p><p>c) $T\\approx3{,}04\\,P$</p></div><p class=\"bt-note\">Nhận dạng: <strong>dây võng</strong> cho nhịp và độ võng → tìm góc của dây từ hình học, rồi cân bằng theo phương đứng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Dây điện nằm ngang dài 6,0 m võng xuống 0,50 m ở chính giữa, đèn treo ở điểm giữa, trọng lực hướng xuống\"><line x1=\"34.0\" y1=\"30.0\" x2=\"34.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"386.0\" y1=\"30.0\" x2=\"386.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"34.0\" y1=\"70.0\" x2=\"386.0\" y2=\"70.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><line x1=\"34.0\" y1=\"46\" x2=\"386.0\" y2=\"46\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M379.0,41.9 L386.0,46.0 L379.0,50.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"386.0\" y1=\"46\" x2=\"34.0\" y2=\"46\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M41.0,50.1 L34.0,46.0 L41.0,41.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190.0\" y=\"40\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6,0 m</text><text x=\"42.0\" y=\"64.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"378.0\" y=\"64.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"222.0\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">đèn 4,0 kg</text><line x1=\"34.0\" y1=\"70.0\" x2=\"210.0\" y2=\"99.3\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"99.3\" x2=\"386.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"99.3\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"210.0\" y1=\"99.33333333333333\" x2=\"210.0\" y2=\"179.3\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M215.8,169.3 L210.0,179.3 L204.2,169.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"70.0\" x2=\"210.0\" y2=\"92.33333333333333\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M214.1,85.3 L210.0,92.3 L205.9,85.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"92.33333333333333\" x2=\"210.0\" y2=\"70.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M205.9,77.0 L210.0,70.0 L214.1,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"220.0\" y=\"87.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,50 m</text><path d=\"M93.2,79.9 A60,60 0 0 0 94.0,70.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"104.0\" y=\"98.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">θ = ?</text></svg><figcaption>Dữ kiện: nhịp 6,0 m và độ võng 0,50 m vẽ đúng tỉ lệ độ dài; chỉ vẽ trọng lực đèn, lực căng chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“dây điện nhẹ … hai đầu $A$, $B$ ở cùng độ cao, cách nhau $6{,}0$ m”</td><td>$AB=6{,}0\\ \\text{m}$ (nằm ngang)</td><td>Dây nhẹ: bỏ qua trọng lượng của dây</td></tr><tr><td>“đèn khối lượng $4{,}0$ kg vào chính giữa dây”</td><td>$m=4{,}0\\ \\text{kg}$; điểm treo ở giữa</td><td>⚠ Điều kiện đối xứng: hai nhánh hợp phương ngang cùng một góc</td></tr><tr><td>“võng xuống $0{,}50$ m so với đường thẳng $AB$”</td><td>Độ võng $h=0{,}50\\ \\text{m}$</td><td>Số đo hình học của dây</td></tr><tr><td>“đèn đứng yên”</td><td>Điểm treo cân bằng</td><td>⚠ Điều kiện cân bằng: tổng các lực bằng $\\vec 0$</td></tr><tr><td>“Lấy $g=10$ m/s²”</td><td>$g=10\\ \\text{m/s}^2$</td><td>Trọng lượng của đèn</td></tr><tr><td>“a) góc $\\theta$ giữa mỗi nhánh dây và phương ngang”</td><td>Cần $\\theta$ (độ)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) lực căng của mỗi nhánh dây”</td><td>Cần $T$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) gấp mấy lần trọng lượng của đèn”</td><td>Cần tỉ số $T/P$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>dây võng</b> cho nhịp và độ võng → nghĩ tới <b>góc của dây</b>, rồi <b>cân bằng theo phương đứng</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc của mỗi nhánh dây",
+     "hoi": "Góc $\\theta$ giữa mỗi nhánh dây và phương ngang bằng bao nhiêu độ?",
+     "dap_so": 9.46,
+     "sai_so": 0.1,
+     "don_vi": "°",
+     "loi_hay_gap": "Dùng nhầm độ dài nhịp trong tỉ số."
+    },
+    {
+     "tieu_de": "Cân bằng theo phương đứng",
+     "hoi": "Lực căng $T$ của mỗi nhánh dây bằng bao nhiêu?",
+     "dap_so": 121.7,
+     "sai_so": 0.6,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho mỗi nhánh đỡ một nửa trọng lượng rồi coi đó là lực căng, quên rằng dây xiên nên lực căng lớn hơn thành phần đứng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho hai thành phần đứng của hai nhánh cùng đỡ $P$, rồi rút $T$ qua $\\sin\\theta$",
+       "dung": true
+      },
+      {
+       "text": "Cho mỗi nhánh đỡ $\\dfrac{P}{2}$, nên $T=\\dfrac{P}{2}$",
+       "dung": false,
+       "vi_sao": "Chỉ thành phần đứng của mỗi nhánh đỡ $\\dfrac{P}{2}$; lực căng $T$ lớn hơn thành phần ấy vì dây xiên."
+      },
+      {
+       "text": "Cho $T=P$ vì đèn treo bằng dây",
+       "dung": false,
+       "vi_sao": "Có hai nhánh cùng đỡ và dây xiên, không thể suy ra $T$ bằng $P$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So với trọng lượng đèn",
+     "hoi": "Lực căng gấp bao nhiêu lần trọng lượng của đèn?",
+     "dap_so": 3.04,
+     "sai_so": 0.05,
+     "loi_hay_gap": "Đảo ngược tỉ số, hoặc chia lực căng cho khối lượng (khác đơn vị với trọng lượng).",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia $T$ cho trọng lượng $P=mg$",
+       "dung": true
+      },
+      {
+       "text": "Chia $P$ cho $T$",
+       "dung": false,
+       "vi_sao": "Cho tỉ số nhỏ hơn $1$: đảo ngược, vì “gấp mấy lần” hỏi $T$ so với $P$."
+      },
+      {
+       "text": "Chia $T$ cho khối lượng $m$",
+       "dung": false,
+       "vi_sao": "Khối lượng (kg) và lực (N) khác đơn vị; phải so với trọng lượng $P=mg$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094140564-fig23.jpeg\" alt=\"\"> Bài 1. <strong class=\"font-bold\">Một tấm ván nặng 240 N được bắc qua một con mương, Trọng tâm của tấm ván cách điểm tựa A 2,4 m và cách điểm tựa B 1,2m. Hỏi lực mà tấm ván tác dụng lên điểm tựa A bằng bao nhiêu?</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094141082-fig24.png\" alt=\"\"> - $\\vec{F}_{1}$ và $\\vec{F}_{2}$ là hai lực song song cùng chiều nên: $F_{1}+F_{2}=P\\Leftrightarrow F_{1}+F_{2}=240$ (1)</p><p class=\"text-base leading-relaxed my-2\">- Áp dụng quy tắc tổng hợp hai lực song song cùng chiều:</p><p class=\"text-base leading-relaxed my-2\">$\\frac{F_{1}}{F_{2}}=\\frac{d_{2}}{d_{1}}\\Leftrightarrow \\frac{F_{1}}{F_{2}}=\\frac{1,2}{2,4}\\Rightarrow F_{2}=2F_{1}(2)$</p><p class=\"text-base leading-relaxed my-2\">- Từ (1) và (2), suy ra $\\left\\{ F_{1}=80N\\\\ F_{2}=160N \\right.$</p><p>Vậy tấm ván tác dụng lên điểm tựa A một lực $F_1=80\\ \\text{N}$.</p></details><h4>Bài 2 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094136363-fig17.png\" alt=\"\"> Bài 2. <strong class=\"font-bold\">Một chất điểm chịu tác dụng của ba lực đồng phẳng. Biết ba lực này từng đôi tạo với nhau một góc 120</strong>$^\\circ$ <strong class=\"font-bold\">và độ lớn của các lực là</strong> $F_{1}=F_{2}=5N$; $F_{3}=10N$ <strong class=\"font-bold\">. Tìm độ lớn hợp lực tác dụng lên chất điểm.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094136672-fig18.png\" alt=\"\"> - Độ lớn hợp lực của hai lực $\\vec{F}_{1}$ và $\\vec{F}_{2}$ là:</p><p class=\"text-base leading-relaxed my-2\">$F_{12}=2F_{1}cos\\frac{120^{0}}{2}=2\\cdot5\\cos60^{0}=5N$</p><p class=\"text-base leading-relaxed my-2\">- Suy ra: $F_{1}=F_{2}=F_{12}=5N$ và $\\left( \\vec{F}_{12},F_{1} \\right)=60^{0}$</p><p class=\"text-base leading-relaxed my-2\">- Do đó, góc giữa $\\left( \\vec{F}_{12},\\vec{F}_{3} \\right)=180^{0}$ nên hai vecto $\\vec{F}_{12}$ và $\\vec{F}_{3}$ cùng phương ngược chiều</p><p class=\"text-base leading-relaxed my-2\">- Lực tổng hợp tác dụng lên chất điểm là: $F=\\left| F_{3}-F_{12} \\right|=\\left| 10-5 \\right|=5N$</p></details><h4>Bài 3 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094145685-fig35.png\" alt=\"\"> Bài 3. <strong class=\"font-bold\">Một vật có trọng lượng 20N được treo vào một vòng nhẫn O (coi là chất điểm). Vòng nhẫn được giữ yên bằng hai dây OA và OB. Biết dây OA nằm ngang còn dây OB hợp với phương thẳng đứng góc 45</strong>$^\\circ$<strong class=\"font-bold\">. Tìm lực căng dây OA và OB.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094146100-fig36.png\" alt=\"\"> - Chọn hệ trục Oxy như hình vẽ</p><p class=\"text-base leading-relaxed my-2\">- Vòng nhẫn được giữ cân bằng tại O nên:</p><p class=\"text-base leading-relaxed my-2\">$\\vec{T}_{OA}+\\vec{T}_{OB}+\\vec{P}=\\vec{0} \\left( 1 \\right)$</p><p class=\"text-base leading-relaxed my-2\">- Chiếu (1)/Oy, ta có:</p><p class=\"text-base leading-relaxed my-2\">$T_{OB(y)}-P=0\\Rightarrow T.cos45^{0}=P\\Rightarrow T_{OB}=\\frac{P}{cos45^{0}}=20\\sqrt{2}N$</p><p class=\"text-base leading-relaxed my-2\">- Chiếu (1)/Ox, ta có:</p><p class=\"text-base leading-relaxed my-2\">$T_{OB(x)}-T_{OA}=0\\Rightarrow T_{OA}=T_{OB}.sin45^{0}=20N$</p></details><h4>Bài 4 · Khó</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094139551-fig21.png\" alt=\"\"> Bài 4. (SGK Chân trời sáng tạo): <strong class=\"font-bold\">Hai người đang khiêng một thùng hàng khối lượng 30 kg bằng một đòn tre dài 2 m như hình. Hỏi phải treo thùng hàng ở điểm nào để lực đè lên vai người đi sau lớn hơn lực đè lên vai người đi trước 100N. Bỏ qua khối lượng của đòn tre.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- Trọng lượng của thùng hàng $P=300N$</p><p class=\"text-base leading-relaxed my-2\">- Gọi $\\vec{F}_{1}$ và $\\vec{F}_{2}$ là lực đè lên vai của người đi trước và người đi sau</p><p class=\"text-base leading-relaxed my-2\">- $\\vec{F}_{1}$ và $\\vec{F}_{2}$ là hai lực song song cùng chiều nên: $F_{1}+F_{2}=P\\Leftrightarrow F_{1}+F_{2}=300$ (1)</p><p class=\"text-base leading-relaxed my-2\">- Theo đề, lực đè lên vai người đi sau lớn hơn người đi trước 100 N nên: $F_{2}-F_{1}=100$ (2)</p><p class=\"text-base leading-relaxed my-2\">- Từ (1) và (2), suy ra $F_{1}=100N$ và $F_{2}=200N$</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094140062-fig22.png\" alt=\"\"> - Áp dụng quy tắc tổng hợp hai lực song song cùng chiều:</p><p class=\"text-base leading-relaxed my-2\">$\\frac{F_{1}}{F_{2}}=\\frac{d_{2}}{d_{1}}\\Leftrightarrow \\frac{100}{200}=\\frac{d_{2}}{d_{1}}\\Rightarrow d_{1}=2d_{2}$</p><p class=\"text-base leading-relaxed my-2\">- Lại có, $d_{1}+d_{2}=2m\\Rightarrow \\left\\{ d_{1}=\\frac{4}{3}m\\\\ d_{2}=\\frac{2}{3}m \\right.$</p><p>Vậy thùng hàng cách người đi sau $\\frac{2}{3}\\ \\text{m}$ (cách người đi trước $\\frac{4}{3}\\ \\text{m}$).</p></details><h4>Bài 5 · Nâng cao</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 5. <strong class=\"font-bold\">Thanh nhẹ nằm ngang có chiều dài</strong> $l = 1 m$ <strong class=\"font-bold\">, chịu tác dụng của ba lực song song cùng chiều và vuông góc với thanh:</strong> $F_{1}=20N;F_{3}=50N$ <strong class=\"font-bold\">đặt hai đầu thanh và</strong> $F_{2}=30N$ <strong class=\"font-bold\">ở chính giữa thanh. Tìm độ lớn và điểm đặt của hợp lực.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/58/1790094141390-fig25.png\" alt=\"\"> - Gọi hợp lực của hai lực $\\vec{F}_{1}$ và $\\vec{F}_{3}$ là $\\vec{F}_{13}$</p><p class=\"text-base leading-relaxed my-2\">- Độ lớn $F_{13}=F_{1}+F_{3}=70N$</p><p class=\"text-base leading-relaxed my-2\">- Gọi $O_{1}$ là điểm đặt của $\\vec{F}_{13}$</p><p class=\"text-base leading-relaxed my-2\">- Áp dụng quy tắc tổng hợp hai lực song song cùng chiều:</p><p class=\"text-base leading-relaxed my-2\">$\\frac{F_{1}}{F_{3}}=\\frac{O_{1}B}{O_{1}A}\\Rightarrow \\frac{O_{1}B}{O_{1}A}=\\frac{2}{5}$ (1)</p><p class=\"text-base leading-relaxed my-2\">- Mặc khác, ta có: $O_{1}A+O_{1}B=l=1m$ (2)</p><p class=\"text-base leading-relaxed my-2\">- Từ (1) và (2) ta có hệ phương trình: $\\left\\{ 2O_{1}A-5O_{1}B=0\\\\ O_{1}A+O_{1}B=1\\Leftrightarrow \\left\\{ O_{1}A=\\frac{5}{7}m\\\\ O_{1}B=\\frac{2}{7}m \\right. \\right.$</p><p class=\"text-base leading-relaxed my-2\">- Gọi $\\vec{F}_{123}$ là hợp lực của hai lực $\\vec{F}_{2}$ và $\\vec{F}_{13}$</p><p class=\"text-base leading-relaxed my-2\">- Độ lớn $F_{123}=F_{13}+F_{2}=100N$</p><p class=\"text-base leading-relaxed my-2\">- Gọi $O_{2}$ là điểm đặt của lực $\\vec{F}_{123}$</p><p class=\"text-base leading-relaxed my-2\">- Từ hình vẽ: $O_{1}I=O_{1}A-IA=\\frac{5}{7}-\\frac{1}{2}=\\frac{3}{14}m$</p><p class=\"text-base leading-relaxed my-2\">- Áp dụng quy tắc tổng hợp hai lực song song cùng chiều:</p><p class=\"text-base leading-relaxed my-2\">$\\frac{F_{2}}{F_{13}}=\\frac{O_{1}O_{2}}{O_{2}I}\\Rightarrow \\frac{O_{1}O_{2}}{O_{2}I}=\\frac{3}{7}\\left( 3 \\right)$</p><p class=\"text-base leading-relaxed my-2\">- Mặc khác, $O_{1}O_{2}+O_{2}I=O_{1}I=\\frac{3}{14}m\\left( 4 \\right)$</p><p class=\"text-base leading-relaxed my-2\">- Từ (3), (4) ta có hệ phương trình: $\\left\\{ 7O_{1}O_{2}-3O_{2}I=0\\\\ O_{1}O_{2}+O_{2}I=\\frac{3}{14}\\Leftrightarrow \\left\\{ O_{1}O_{2}=\\frac{9}{140}m\\\\ O_{2}I=\\frac{3}{20}=0,15m \\right. \\right.$</p><p class=\"text-base leading-relaxed my-2\">Vậy, hợp lực $\\vec{F}_{123}$ có điểm đặt tại $O_{2}$ cách A một đoạn 0,65 m hay cách B một đoạn 0,35 m</p></details>"
+ }
+}

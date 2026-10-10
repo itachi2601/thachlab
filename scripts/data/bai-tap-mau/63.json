@@ -1,0 +1,596 @@
+{
+ "lesson_id": 63,
+ "lesson_title": "Bài 18. Lực ma sát",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng khớp; đã sửa lộ hướng giải D1,D2,D3,D4,D5, tu_luan chỉ giữ VD5 (xe tải kéo xe con); lựa chọn mới D1/D3/D4 chưa kiểm chéo lại. 7 ví dụ cũ bỏ (đề mơ hồ/đáp án gốc sai/phụ thuộc hình/lệch chủ đề). D3,D4,D5 cùng topic 128 (26 câu bai_tap)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Ma sát nghỉ hay ma sát trượt: tủ đứng yên hay trượt",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "problem_html": "<p>Một tủ lạnh nặng $50\\ \\text{kg}$ đặt trên sàn nhà. Dùng lực kế kéo tủ theo phương ngang và tăng lực dần dần: tủ bắt đầu trượt khi lực kế chỉ $160\\ \\text{N}$. Khi tủ đã trượt, muốn giữ cho tủ trượt đều thì phải kéo bằng lực ngang $120\\ \\text{N}$.</p><ol type=\"a\"><li>Kéo tủ bằng lực ngang $140\\ \\text{N}$. Tủ đứng yên hay trượt? Lực ma sát của sàn tác dụng lên tủ bằng bao nhiêu?</li><li>Kéo tủ bằng lực ngang $200\\ \\text{N}$. Tủ đứng yên hay trượt? Tính lực ma sát và gia tốc của tủ.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Đồ thị lực ma sát tác dụng lên một hộp mẫu theo lực kéo ngang tăng dần từ 0 đến 6 N\"><line x1=\"70\" y1=\"174\" x2=\"400.0\" y2=\"174\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,169.6 L400.0,174.0 L392.4,178.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70\" y1=\"174\" x2=\"70\" y2=\"49.19999999999999\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M65.6,56.8 L70.0,49.2 L74.4,56.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"400.0\" y=\"165\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">F kéo (N)</text><text x=\"78\" y=\"47.2\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">F ma sát (N)</text><line x1=\"70.0\" y1=\"174.0\" x2=\"70.0\" y2=\"179.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"70\" y=\"194\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"174.0\" y1=\"174.0\" x2=\"174.0\" y2=\"179.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"174\" y=\"194\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"278.0\" y1=\"174.0\" x2=\"278.0\" y2=\"179.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"278\" y=\"194\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"382.0\" y1=\"174.0\" x2=\"382.0\" y2=\"179.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"382\" y=\"194\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"65.0\" y1=\"126.0\" x2=\"70.0\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"61\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"65.0\" y1=\"78.0\" x2=\"70.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"/><text x=\"61\" y=\"82\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">4</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"0.55\" points=\"70.0,174.0 278.0,78.0 278.0,97.2 382.0,97.2\"/><text x=\"132.4\" y=\"99.6\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">đứng yên</text><text x=\"345.6\" y=\"89.2\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">đang trượt</text><circle cx=\"70.0\" cy=\"174.0\" r=\"5.5\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"70.0;75.2;80.4;85.6;90.8;96.0;101.2;106.4;111.6;116.8;122.0;127.2;132.4;137.6;142.8;148.0;153.2;158.4;163.6;168.8;174.0;179.2;184.4;189.6;194.8;200.0;205.2;210.4;215.6;220.8;226.0;231.2;236.4;241.6;246.8;252.0;257.2;262.4;267.6;272.8;278.0;283.2;288.4;293.6;298.8;304.0;309.2;314.4;319.6;324.8;330.0;335.2;340.4;345.6;350.8;356.0;361.2;366.4;371.6;376.8;382.0\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"174.0;171.6;169.2;166.8;164.4;162.0;159.6;157.2;154.8;152.4;150.0;147.6;145.2;142.8;140.4;138.0;135.6;133.2;130.8;128.4;126.0;123.6;121.2;118.8;116.4;114.0;111.6;109.2;106.8;104.4;102.0;99.6;97.2;94.8;92.4;90.0;87.6;85.2;82.8;80.4;78.0;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2;97.2\" dur=\"6.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"16\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hộp mẫu 1,0 kg, lực kéo ngang tăng đều từ 0</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng một hộp mẫu khác số của đề (không phải tủ lạnh): lực kéo tăng đều từ 0 đến 6 N trong 6 s, chấm đỏ chỉ lực ma sát tại mỗi thời điểm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật chưa trượt chịu ma sát nghỉ, bằng đúng thành phần ngoại lực song song mặt tiếp xúc, tối đa là $F_{\\text{msn max}}$.</li><li><strong>Khái niệm:</strong> vật đang trượt chịu ma sát trượt $F_{\\text{mst}}=\\mu N$, thường nhỏ hơn $F_{\\text{msn max}}$.</li><li><strong>Định luật II Newton:</strong> hợp lực bằng $0$ khi vật đứng yên hoặc chuyển động thẳng đều; $F_{\\text{hl}}=ma$ khi vật có gia tốc.</li><li>⚠ <strong>Điều kiện:</strong> vật đang đứng yên thì so lực kéo với $F_{\\text{msn max}}$ trước, rồi mới chọn loại ma sát.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Kéo $140\\ \\text{N}$: so với mức bắt đầu trượt (câu a)</span></p><p>Tủ đang đứng yên nên mốc để so là ma sát nghỉ cực đại, bằng lực kéo lúc tủ bắt đầu trượt:</p>$$F=140\\ \\text{N}\\ \\lt\\ F_{\\text{msn max}}=160\\ \\text{N}$$<p>Lực kéo chưa vượt mức cực đại nên tủ vẫn đứng yên. Không so với $120\\ \\text{N}$: đó là lực ma sát khi tủ đã trượt.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ma sát nghỉ (câu a)</span></p><p>Tủ đứng yên nên hợp lực bằng $0$: ma sát nghỉ cân bằng lực kéo.</p>$$F_{\\text{msn}}=F$$<div class=\"bt-ans\">$$F_{\\text{msn}}=140\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kéo $200\\ \\text{N}$: đứng yên hay trượt (câu b)</span></p>$$F=200\\ \\text{N}\\ \\gt\\ F_{\\text{msn max}}=160\\ \\text{N}$$<p>Lực kéo vượt mức cực đại, ma sát nghỉ không tăng thêm được nữa nên tủ bắt đầu trượt.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ma sát khi tủ đang trượt (câu b)</span></p><p>Giữ tủ trượt đều ($a=0$) thì lực kéo cân bằng ma sát trượt:</p>$$F_{\\text{mst}}=F_{\\text{đều}}$$<div class=\"bt-ans\">$$F_{\\text{mst}}=120\\ \\text{N}$$</div><p>Ma sát trượt không đổi theo lực kéo, nên khi kéo $200\\ \\text{N}$ vẫn là $120\\ \\text{N}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Gia tốc (câu b)</span></p>$$F-F_{\\text{mst}}=ma$$$$a=\\dfrac{200-120}{50}$$<div class=\"bt-ans\">$$a=1{,}6\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N/kg}=\\text{m/s}^2$.</p><p>$a\\gt0$ vì lực kéo lớn hơn ma sát trượt: tủ nhanh dần, đúng với việc tủ đã trượt.</p><p>Nếu lấy $160\\ \\text{N}$ làm lực ma sát khi trượt thì $a=0{,}8\\ \\text{m/s}^2$, chỉ bằng một nửa: $160\\ \\text{N}$ là mức để bắt đầu trượt, không phải lực ma sát lúc đang trượt.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Tủ đứng yên; $F_{\\text{msn}}=140\\ \\text{N}$</p><p>b) Tủ trượt; $F_{\\text{mst}}=120\\ \\text{N}$; $a=1{,}6\\ \\text{m/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực bắt đầu trượt</strong> và <strong>lực giữ trượt đều</strong> → vật đứng yên thì so lực kéo với $F_{\\text{msn max}}$; đã trượt thì dùng ma sát trượt.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Hai lần kéo tủ lạnh 50 kilôgam trên sàn bằng lực ngang 140 niutơn và 200 niutơn, kèm hai mốc đo được\"><rect x=\"12\" y=\"112.0\" width=\"398\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"30.0\" y=\"50.0\" width=\"44.0\" height=\"62.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"52\" y=\"86\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">50 kg</text><line x1=\"74\" y1=\"81\" x2=\"118.8\" y2=\"81.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M108.8,75.2 L118.8,81.0 L108.8,86.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"74\" y=\"68\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 140 N</text><text x=\"30\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(a)</text><rect x=\"225.0\" y=\"50.0\" width=\"44.0\" height=\"62.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"247\" y=\"86\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">50 kg</text><line x1=\"269\" y1=\"81\" x2=\"333.0\" y2=\"81.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M323.0,75.2 L333.0,81.0 L323.0,86.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"269\" y=\"68\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 200 N</text><text x=\"225\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(b)</text><text x=\"16\" y=\"146\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">bắt đầu trượt khi kéo 160 N</text><text x=\"16\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">trượt đều khi kéo 120 N</text></svg><figcaption>Dữ kiện của đề: hai lực kéo và hai mốc đo (vectơ F vẽ tỉ lệ với độ lớn). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“tủ lạnh nặng $50\\ \\text{kg}$”</td><td>$m=50\\ \\text{kg}$</td><td>Khối lượng dùng trong định luật II Newton</td></tr><tr><td>“tủ bắt đầu trượt khi lực kế chỉ $160\\ \\text{N}$”</td><td>$160\\ \\text{N}$ (lúc bắt đầu trượt)</td><td>⚠ Hai mốc lực đo được là hai dữ kiện khác nhau</td></tr><tr><td>“giữ cho tủ trượt đều … kéo $120\\ \\text{N}$”</td><td>$120\\ \\text{N}$ (lúc trượt đều)</td><td>Vật chuyển động thẳng đều: hợp lực bằng $0$</td></tr><tr><td>“a) kéo bằng lực ngang $140\\ \\text{N}$”</td><td>$F=140\\ \\text{N}$</td><td>Ma sát nghỉ; ma sát trượt</td></tr><tr><td>“b) kéo bằng lực ngang $200\\ \\text{N}$”</td><td>$F=200\\ \\text{N}$</td><td>Định luật II Newton</td></tr><tr><td>“Tủ đứng yên hay trượt? lực ma sát?”</td><td>Cần kết luận và $F_{\\text{ms}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“gia tốc của tủ”</td><td>Cần $a$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật đứng yên, đề cho hai mốc lực</b> → xác định <b>loại ma sát</b> trước khi tính.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Kéo ở câu a: đứng yên hay trượt",
+     "hoi": "Kéo ngang tủ bằng lực ở câu a thì tủ đứng yên hay trượt?",
+     "lua_chon": [
+      {
+       "text": "Đứng yên, vì lực kéo chưa vượt mức bắt đầu trượt",
+       "dung": true
+      },
+      {
+       "text": "Trượt, vì lực kéo đã lớn hơn lực giữ tủ trượt đều",
+       "dung": false,
+       "vi_sao": "Lực giữ tủ trượt đều là lực ma sát khi tủ ĐÃ trượt. Tủ đang đứng yên phải so với mức bắt đầu trượt là $160\\ \\text{N}$; lực kéo nhỏ hơn mức đó."
+      },
+      {
+       "text": "Trượt, vì đã có lực kéo thì tủ phải chuyển động",
+       "dung": false,
+       "vi_sao": "Có lực kéo chưa chắc có chuyển động: ma sát nghỉ tăng theo lực kéo tới giá trị cực đại, chỉ khi lực kéo vượt mức đó vật mới trượt."
+      }
+     ],
+     "loi_hay_gap": "So lực kéo với lực ma sát lúc trượt đều thay vì ma sát nghỉ cực đại, nên kết luận tủ trượt."
+    },
+    {
+     "tieu_de": "Ma sát nghỉ ở câu a",
+     "hoi": "Lực ma sát nghỉ tác dụng lên tủ ở câu a bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 140,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $\\mu N$ cho vật đứng yên, hoặc lấy luôn mức cực đại làm ma sát nghỉ. Ma sát nghỉ chỉ bằng đúng lực kéo gây xu hướng trượt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng điều kiện cân bằng (hợp lực bằng $0$) cho tủ đang đứng yên",
+       "dung": true
+      },
+      {
+       "text": "Lấy ma sát nghỉ bằng giá trị cực đại của nó, vì đó là giá trị lớn nhất",
+       "dung": false,
+       "vi_sao": "Mức cực đại chỉ là trần mà ma sát nghỉ có thể đạt; chưa chắc đã chạm tới trần."
+      },
+      {
+       "text": "Dùng công thức ma sát trượt $\\mu N$ với $N=mg$",
+       "dung": false,
+       "vi_sao": "Công thức $\\mu N$ dùng cho vật đang trượt; tủ đứng yên thì dùng cân bằng lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kéo ở câu b: đứng yên hay trượt",
+     "hoi": "Kéo ngang tủ bằng lực ở câu b thì tủ đứng yên hay trượt?",
+     "lua_chon": [
+      {
+       "text": "Trượt, vì lực kéo vượt mức bắt đầu trượt",
+       "dung": true
+      },
+      {
+       "text": "Đứng yên, vì ma sát nghỉ luôn cân bằng lực kéo",
+       "dung": false,
+       "vi_sao": "Ma sát nghỉ chỉ cân bằng được tới giá trị cực đại; vượt mức đó nó không tăng thêm nữa nên tủ bị kéo đi."
+      },
+      {
+       "text": "Đứng yên, vì lực kéo nhỏ hơn trọng lượng của tủ",
+       "dung": false,
+       "vi_sao": "Trọng lượng là lực thẳng đứng, không đem so với lực kéo ngang; mốc để so là mức bắt đầu trượt đã đo."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng ma sát nghỉ luôn cân bằng được lực kéo, quên rằng nó có giá trị cực đại.",
+     "chon_buoc_ke": [
+      {
+       "text": "So lực kéo với mức bắt đầu trượt (ma sát nghỉ cực đại)",
+       "dung": true
+      },
+      {
+       "text": "So lực kéo với lực giữ tủ trượt đều",
+       "dung": false,
+       "vi_sao": "Tủ đang đứng yên thì mức để so là ma sát nghỉ cực đại. Lực giữ trượt đều chỉ là ma sát khi tủ đã trượt."
+      },
+      {
+       "text": "Tính ngay gia tốc từ định luật II Newton",
+       "dung": false,
+       "vi_sao": "Chưa biết tủ có trượt chưa thì chưa biết dùng ma sát nghỉ hay ma sát trượt; phải so với mức bắt đầu trượt trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ma sát khi tủ đang trượt",
+     "hoi": "Khi tủ đang trượt, lực ma sát từ sàn tác dụng lên tủ bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy ma sát trượt bằng mức bắt đầu trượt, hoặc bằng chính lực kéo đang tác dụng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng điều kiện trượt đều (hợp lực bằng $0$) cho lúc tủ đang trượt đều",
+       "dung": true
+      },
+      {
+       "text": "Lấy ma sát bằng mức bắt đầu trượt",
+       "dung": false,
+       "vi_sao": "Mức bắt đầu trượt là ma sát nghỉ cực đại; khi đã trượt ma sát tụt xuống ma sát trượt, thường nhỏ hơn."
+      },
+      {
+       "text": "Lấy ma sát bằng lực đang kéo",
+       "dung": false,
+       "vi_sao": "Lực kéo lớn hơn ma sát nên mới có gia tốc; ma sát trượt không đổi theo lực kéo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc",
+     "hoi": "Gia tốc của tủ ở câu b bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 1.6,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Lấy mức bắt đầu trượt làm lực ma sát trong định luật II Newton, hoặc bỏ ma sát và chia lực kéo cho khối lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Định luật II Newton với ma sát trượt: $a=\\dfrac{F-F_{\\text{mst}}}{m}$",
+       "dung": true
+      },
+      {
+       "text": "$a=\\dfrac{F-F_{\\text{msn max}}}{m}$",
+       "dung": false,
+       "vi_sao": "Tủ đã trượt thì ma sát tác dụng là ma sát trượt; ma sát nghỉ cực đại chỉ là mức bắt đầu trượt."
+      },
+      {
+       "text": "$a=\\dfrac{F}{m}$",
+       "dung": false,
+       "vi_sao": "Bỏ ma sát thì hợp lực quá lớn; ma sát luôn ngược chiều chuyển động và làm giảm hợp lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Ma sát trượt trên mặt ngang: hệ số ma sát, gia tốc và đoạn trượt thêm",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "problem_html": "<p>Một thùng gỗ $40\\ \\text{kg}$ trượt trên sàn xi măng nằm ngang. Dùng dây kéo theo phương ngang với lực $98\\ \\text{N}$ thì thùng trượt đều. Lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính hệ số ma sát trượt giữa thùng và sàn.</li><li>Kéo thùng từ trạng thái nghỉ bằng lực ngang $150\\ \\text{N}$ làm thùng trượt nhanh dần. Tính gia tốc của thùng.</li><li>Sau $4{,}0\\ \\text{s}$ kể từ lúc bắt đầu kéo bằng lực $150\\ \\text{N}$, người kéo buông dây. Thùng còn trượt thêm bao xa thì dừng lại?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Thùng gỗ được kéo trượt nhanh dần trên sàn ngang trong 4 giây rồi dây được buông, thùng trượt chậm dần đến dừng\"><rect x=\"16\" y=\"118.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"24.0\" y1=\"126.0\" x2=\"16.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"46.0\" y1=\"126.0\" x2=\"38.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"68.0\" y1=\"126.0\" x2=\"60.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"90.0\" y1=\"126.0\" x2=\"82.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"112.0\" y1=\"126.0\" x2=\"104.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"134.0\" y1=\"126.0\" x2=\"126.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"156.0\" y1=\"126.0\" x2=\"148.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"178.0\" y1=\"126.0\" x2=\"170.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"200.0\" y1=\"126.0\" x2=\"192.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"222.0\" y1=\"126.0\" x2=\"214.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"244.0\" y1=\"126.0\" x2=\"236.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"266.0\" y1=\"126.0\" x2=\"258.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"288.0\" y1=\"126.0\" x2=\"280.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"310.0\" y1=\"126.0\" x2=\"302.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"332.0\" y1=\"126.0\" x2=\"324.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"354.0\" y1=\"126.0\" x2=\"346.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"376.0\" y1=\"126.0\" x2=\"368.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"398.0\" y1=\"126.0\" x2=\"390.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><rect x=\"24.0\" y=\"82.0\" width=\"56.0\" height=\"36.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0.00;0.03 0.00;0.10 0.00;0.24 0.00;0.42 0.00;0.65 0.00;0.94 0.00;1.28 0.00;1.68 0.00;2.12 0.00;2.62 0.00;3.17 0.00;3.77 0.00;4.43 0.00;5.13 0.00;5.89 0.00;6.71 0.00;7.57 0.00;8.49 0.00;9.46 0.00;10.48 0.00;11.55 0.00;12.68 0.00;13.86 0.00;15.09 0.00;16.37 0.00;17.71 0.00;19.09 0.00;20.53 0.00;22.03 0.00;23.57 0.00;25.17 0.00;26.82 0.00;28.52 0.00;30.28 0.00;32.08 0.00;33.94 0.00;35.86 0.00;37.82 0.00;39.84 0.00;41.91 0.00;44.03 0.00;46.20 0.00;48.43 0.00;50.71 0.00;53.04 0.00;55.42 0.00;57.86 0.00;60.35 0.00;62.89 0.00;65.48 0.00;68.12 0.00;70.82 0.00;73.57 0.00;76.38 0.00;79.23 0.00;82.14 0.00;85.10 0.00;88.11 0.00;91.17 0.00;94.29 0.00;97.46 0.00;100.68 0.00;103.95 0.00;107.28 0.00;110.66 0.00;114.09 0.00;117.57 0.00;121.11 0.00;124.70 0.00;128.34 0.00;132.03 0.00;135.78 0.00;139.58 0.00;143.43 0.00;147.33 0.00;151.28 0.00;155.29 0.00;159.35 0.00;163.46 0.00;167.62 0.00;171.72 0.00;175.72 0.00;179.62 0.00;183.42 0.00;187.12 0.00;190.72 0.00;194.23 0.00;197.63 0.00;200.94 0.00;204.15 0.00;207.26 0.00;210.27 0.00;213.18 0.00;215.99 0.00;218.71 0.00;221.33 0.00;223.84 0.00;226.26 0.00;228.58 0.00;230.80 0.00;232.93 0.00;234.95 0.00;236.87 0.00;238.70 0.00;240.43 0.00;242.06 0.00;243.59 0.00;245.02 0.00;246.35 0.00;247.59 0.00;248.72 0.00;249.76 0.00;250.70 0.00;251.53 0.00;252.28 0.00;252.92 0.00;253.46 0.00;253.90 0.00;254.25 0.00;254.50 0.00;254.64 0.00;254.69 0.00\" dur=\"6.122s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"24.0\" y=\"82.0\" width=\"56.0\" height=\"36.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"52.0\" y=\"104.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 kg</text><g><line x1=\"80\" y1=\"100.0\" x2=\"140.0\" y2=\"100.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M130.0,94.2 L140.0,100.0 L130.0,105.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"86\" y=\"90.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 150 N</text><animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;0.6533\" calcMode=\"discrete\" dur=\"6.122s\" begin=\"indefinite\" fill=\"freeze\"/></g></g><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">kéo 150 N trong 4,0 s rồi buông dây</text><text x=\"16\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật, tính từ số liệu của đề (hình minh hoạ, không có thước đo).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật đang trượt chịu ma sát trượt, ngược chiều chuyển động.</li><li><strong>Công thức:</strong> $F_{\\text{mst}}=\\mu N$; trên mặt ngang, lực kéo ngang thì $N=mg$.</li><li><strong>Định luật II Newton:</strong> $F_{\\text{hl}}=ma$; trượt đều thì hợp lực bằng $0$.</li><li><strong>Động học:</strong> $v=v_0+at$; $v^2-v_0^2=2as$.</li><li>⚠ <strong>Điều kiện:</strong> $F_{\\text{mst}}$ chỉ phụ thuộc $\\mu$ và $N$, không đổi theo lực kéo hay tốc độ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hệ số ma sát (câu a)</span></p><p>Lực kéo ngang trên mặt ngang nên áp lực bằng trọng lượng:</p>$$N=mg=40\\cdot9{,}8=392\\ \\text{N}$$<p>Trượt đều nên ma sát trượt cân bằng lực kéo: $F_{\\text{mst}}=98\\ \\text{N}$.</p>$$\\mu=\\dfrac{F_{\\text{mst}}}{N}=\\dfrac{98}{392}$$<div class=\"bt-ans\">$$\\mu=0{,}25$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc khi kéo $150\\ \\text{N}$ (câu b)</span></p><p>Ma sát trượt vẫn là $98\\ \\text{N}$ (cùng $\\mu$, cùng $N$):</p>$$F-F_{\\text{mst}}=ma$$$$a=\\dfrac{150-98}{40}$$<div class=\"bt-ans\">$$a=1{,}3\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc lúc buông dây (câu c)</span></p><p>Thùng bắt đầu từ trạng thái nghỉ, nhanh dần đều trong $4{,}0\\ \\text{s}$:</p>$$v=at=1{,}3\\cdot4{,}0$$<div class=\"bt-ans\">$$v=5{,}2\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Gia tốc sau khi buông dây (câu c)</span></p><p>Chọn chiều chuyển động làm chiều dương. Theo phương ngang chỉ còn ma sát trượt, ngược chiều chuyển động:</p>$$-F_{\\text{mst}}=ma'$$$$a'=-\\mu g=-0{,}25\\cdot9{,}8$$<div class=\"bt-ans\">$$a'=-2{,}45\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Quãng đường trượt thêm (câu c)</span></p><p>Thùng dừng lại nên vận tốc cuối bằng $0$:</p>$$v'^2-v^2=2a's$$$$s=\\dfrac{0-5{,}2^2}{2\\cdot(-2{,}45)}$$<div class=\"bt-ans\">$$s\\approx5{,}52\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thời gian dừng $t=\\dfrac{5{,}2}{2{,}45}\\approx2{,}12\\ \\text{s}$; vận tốc trung bình $\\dfrac{5{,}2}{2}=2{,}6\\ \\text{m/s}$ nên quãng đường $2{,}6\\cdot2{,}12\\approx5{,}5\\ \\text{m}$, khớp.</p><p>$\\mu$ không có đơn vị; $|a'|=\\mu g$ không phụ thuộc khối lượng thùng.</p><p>Nếu bỏ ma sát thì $a=\\dfrac{150}{40}=3{,}75\\ \\text{m/s}^2$, gấp gần ba lần giá trị thật.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\mu=0{,}25$</p><p>b) $a=1{,}3\\ \\text{m/s}^2$</p><p>c) $s\\approx5{,}52\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>trượt đều</strong> rồi <strong>đổi lực kéo hoặc buông dây</strong> → $\\mu$ không đổi; mỗi giai đoạn viết định luật II Newton riêng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 166\" role=\"img\" aria-label=\"Hai lần kéo thùng 40 kilôgam trên sàn ngang: lực 98 niutơn làm thùng trượt đều, lực 150 niutơn kéo từ trạng thái nghỉ\"><rect x=\"12\" y=\"112.0\" width=\"398\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"30.0\" y=\"76.0\" width=\"56.0\" height=\"36.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"58\" y=\"98\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 kg</text><line x1=\"86\" y1=\"94\" x2=\"135.0\" y2=\"94.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M125.0,88.2 L135.0,94.0 L125.0,99.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"86\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 98 N</text><text x=\"30\" y=\"64\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">thùng trượt đều</text><rect x=\"225.0\" y=\"76.0\" width=\"56.0\" height=\"36.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"253\" y=\"98\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 kg</text><line x1=\"281\" y1=\"94\" x2=\"356.0\" y2=\"94.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M346.0,88.2 L356.0,94.0 L346.0,99.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"281\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 150 N</text><text x=\"225\" y=\"64\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">thùng bắt đầu từ trạng thái nghỉ</text><text x=\"16\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">g = 9,8 m/s²</text></svg><figcaption>Dữ kiện của đề (vectơ F vẽ tỉ lệ với độ lớn). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng gỗ $40\\ \\text{kg}$ trượt trên sàn xi măng nằm ngang”</td><td>$m=40\\ \\text{kg}$; mặt ngang</td><td>⚠ Áp lực $N$ phụ thuộc cách đặt vật và hướng lực kéo</td></tr><tr><td>“kéo ngang với lực $98\\ \\text{N}$ thì thùng trượt đều”</td><td>$F=98\\ \\text{N}$; $a=0$</td><td>Chuyển động thẳng đều: hợp lực bằng $0$</td></tr><tr><td>“lấy $g=9{,}8\\ \\text{m/s}^2$”</td><td>$g=9{,}8\\ \\text{m/s}^2$</td><td>Trọng lượng $P=mg$</td></tr><tr><td>“b) kéo từ trạng thái nghỉ bằng lực ngang $150\\ \\text{N}$”</td><td>$F=150\\ \\text{N}$; $v_0=0$</td><td>⚠ Loại ma sát phụ thuộc vật đang đứng yên hay đang trượt</td></tr><tr><td>“c) sau $4{,}0\\ \\text{s}$ … buông dây”</td><td>$t=4{,}0\\ \\text{s}$; sau đó lực kéo bằng $0$</td><td>Mỗi giai đoạn có gia tốc riêng; động học biến đổi đều</td></tr><tr><td>“a) hệ số ma sát trượt”</td><td>Cần $\\mu$</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) gia tốc của thùng”</td><td>Cần $a$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) thùng còn trượt thêm bao xa”</td><td>Cần $s$ (m)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>trượt đều</b> rồi <b>đổi lực kéo hoặc buông dây</b> → $\\mu$ không đổi; mỗi giai đoạn một gia tốc.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hệ số ma sát",
+     "hoi": "Hệ số ma sát trượt $\\mu$ bằng bao nhiêu?",
+     "dap_so": 0.25,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Quên đổi khối lượng thành áp lực (chia lực kéo cho khối lượng thay vì cho $mg$), hoặc quên rằng trượt đều thì ma sát bằng lực kéo."
+    },
+    {
+     "tieu_de": "Gia tốc khi kéo lực lớn hơn",
+     "hoi": "Gia tốc của thùng khi kéo bằng lực ngang ở câu b bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 1.3,
+     "sai_so": 0.03,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Cho rằng ma sát tăng theo lực kéo, hoặc bỏ ma sát khi tính gia tốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Định luật II Newton với ma sát trượt không đổi: $a=\\dfrac{F-F_{\\text{mst}}}{m}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy ma sát tăng theo lực kéo, bằng chính lực kéo mới",
+       "dung": false,
+       "vi_sao": "Khi đã trượt, ma sát trượt chỉ phụ thuộc $\\mu$ và $N$, không đổi theo lực kéo; nếu ma sát bằng lực kéo thì thùng không thể nhanh dần."
+      },
+      {
+       "text": "$a=\\dfrac{F}{m}$",
+       "dung": false,
+       "vi_sao": "Bỏ ma sát thì hợp lực quá lớn; ma sát vẫn tác dụng và ngược chiều chuyển động."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc lúc buông dây",
+     "hoi": "Vận tốc của thùng lúc buông dây bằng bao nhiêu (đơn vị m/s)?",
+     "dap_so": 5.2,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Dùng công thức quãng đường thay công thức vận tốc, hoặc dùng gia tốc không có ma sát.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhanh dần đều từ trạng thái nghỉ: $v=at$ với $a$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{Ft}{m}$ với $F$ là lực kéo",
+       "dung": false,
+       "vi_sao": "Công thức này bỏ ma sát; gia tốc đúng là gia tốc đã tính ở bước trước."
+      },
+      {
+       "text": "$v=\\tfrac12at^2$",
+       "dung": false,
+       "vi_sao": "Đó là công thức quãng đường, không phải vận tốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc sau khi buông dây",
+     "hoi": "Chọn chiều chuyển động làm chiều dương: gia tốc của thùng sau khi buông dây bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": -2.45,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Dùng lại gia tốc của giai đoạn kéo, hoặc cho rằng hết lực kéo thì không còn lực nào.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết định luật II Newton cho giai đoạn sau khi buông, liệt kê các lực theo phương ngang",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên gia tốc của giai đoạn kéo, vì ma sát không đổi",
+       "dung": false,
+       "vi_sao": "Lực kéo đã mất, hợp lực chỉ còn ma sát ngược chiều chuyển động nên hợp lực khác trước; phải viết lại định luật II Newton cho giai đoạn mới."
+      },
+      {
+       "text": "Cho gia tốc bằng $0$, vì không còn lực kéo",
+       "dung": false,
+       "vi_sao": "Hết lực kéo không có nghĩa hết lực: ma sát trượt vẫn tác dụng nên thùng chậm dần chứ không chuyển động đều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường trượt thêm",
+     "hoi": "Thùng còn trượt thêm bao xa thì dừng (đơn vị m)?",
+     "dap_so": 5.52,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng thời gian $4{,}0\\ \\text{s}$ của giai đoạn kéo cho giai đoạn trượt chậm dần, hoặc lấy gia tốc của giai đoạn kéo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Công thức không có thời gian: $0-v^2=2a's$ với $a'$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$s=vt$ với $t=4{,}0\\ \\text{s}$",
+       "dung": false,
+       "vi_sao": "$4{,}0\\ \\text{s}$ là thời gian lúc kéo; sau khi buông thùng chậm dần, không chuyển động đều."
+      },
+      {
+       "text": "$s=\\tfrac12at^2$ với gia tốc lúc kéo",
+       "dung": false,
+       "vi_sao": "Giai đoạn này gia tốc khác và vận tốc đầu không bằng $0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khá · Kéo xiên lên: áp lực thay đổi, ma sát và gia tốc",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "problem_html": "<p>Một thùng $6{,}0\\ \\text{kg}$ đặt trên sàn nằm ngang, hệ số ma sát trượt giữa thùng và sàn là $0{,}30$. Người ta kéo thùng bằng sợi dây chếch lên, hợp với phương ngang góc $30^\\circ$, lực kéo $30\\ \\text{N}$ làm thùng trượt từ trạng thái nghỉ. Lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính áp lực của thùng lên sàn.</li><li>Tính lực ma sát trượt tác dụng lên thùng.</li><li>Tính gia tốc của thùng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Thùng 6 kilôgam được kéo bằng dây chếch lên 30 độ so với phương ngang, trượt nhanh dần trên sàn nằm ngang trong 4 giây\"><rect x=\"16\" y=\"128.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"24.0\" y1=\"136.0\" x2=\"16.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"46.0\" y1=\"136.0\" x2=\"38.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"68.0\" y1=\"136.0\" x2=\"60.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"90.0\" y1=\"136.0\" x2=\"82.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"112.0\" y1=\"136.0\" x2=\"104.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"134.0\" y1=\"136.0\" x2=\"126.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"156.0\" y1=\"136.0\" x2=\"148.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"178.0\" y1=\"136.0\" x2=\"170.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"200.0\" y1=\"136.0\" x2=\"192.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"222.0\" y1=\"136.0\" x2=\"214.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"244.0\" y1=\"136.0\" x2=\"236.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"266.0\" y1=\"136.0\" x2=\"258.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"288.0\" y1=\"136.0\" x2=\"280.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"310.0\" y1=\"136.0\" x2=\"302.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"332.0\" y1=\"136.0\" x2=\"324.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"354.0\" y1=\"136.0\" x2=\"346.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"376.0\" y1=\"136.0\" x2=\"368.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"398.0\" y1=\"136.0\" x2=\"390.0\" y2=\"145.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><rect x=\"24.0\" y=\"88.0\" width=\"60.0\" height=\"40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0.00;0.12 0.00;0.47 0.00;1.06 0.00;1.88 0.00;2.94 0.00;4.24 0.00;5.77 0.00;7.53 0.00;9.53 0.00;11.77 0.00;14.24 0.00;16.95 0.00;19.89 0.00;23.07 0.00;26.48 0.00;30.13 0.00;34.02 0.00;38.14 0.00;42.49 0.00;47.08 0.00;51.91 0.00;56.97 0.00;62.27 0.00;67.80 0.00;73.57 0.00;79.57 0.00;85.81 0.00;92.28 0.00;98.99 0.00;105.94 0.00;113.12 0.00;120.53 0.00;128.18 0.00;136.07 0.00;144.19 0.00;152.55 0.00;161.14 0.00;169.97 0.00;179.03 0.00;188.33 0.00\" dur=\"4.000s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"24.0\" y=\"88.0\" width=\"60.0\" height=\"40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"54.0\" y=\"112.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">6,0 kg</text><line x1=\"84\" y1=\"108.0\" x2=\"136.0\" y2=\"78.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M124.5,78.0 L136.0,78.0 L130.2,88.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"84.0\" y1=\"108.0\" x2=\"158.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><path d=\"M124.0,108.0 A40,40 0 0 0 118.6,88.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"128\" y=\"104.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">30°</text><text x=\"132.0\" y=\"72.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F = 30 N</text></g><text x=\"16\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = 0,30</text><text x=\"16\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 9,8 m/s²</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy đúng thời gian thật 4,0 s, tính từ số liệu của đề (hình minh hoạ, không có thước đo).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> áp lực $N$ là lực ép vuông góc mặt tiếp xúc; ma sát trượt $F_{\\text{mst}}=\\mu N$.</li><li><strong>Lực kéo xiên:</strong> tách thành $F\\cos\\alpha$ (nằm ngang, kéo vật đi) và $F\\sin\\alpha$ (thẳng đứng, nhấc bớt vật).</li><li><strong>Định luật II Newton:</strong> chiếu lên phương đứng (không có gia tốc) và phương ngang ($F_{\\text{hl}}=ma$).</li><li>⚠ <strong>Điều kiện:</strong> $N$ chỉ bằng $mg$ khi các lực khác không có thành phần vuông góc mặt tiếp xúc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp lực của thùng lên sàn (câu a)</span></p><p>Theo phương thẳng đứng thùng không chuyển động, hợp lực bằng $0$. Lực kéo nhấc bớt thùng một phần $F\\sin\\alpha$:</p>$$N+F\\sin\\alpha-mg=0$$$$N=mg-F\\sin\\alpha=6{,}0\\cdot9{,}8-30\\cdot\\sin30^\\circ$$<div class=\"bt-ans\">$$N=43{,}8\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực ma sát trượt (câu b)</span></p>$$F_{\\text{mst}}=\\mu N=0{,}30\\cdot43{,}8$$<div class=\"bt-ans\">$$F_{\\text{mst}}=13{,}14\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Gia tốc (câu c)</span></p><p>Theo phương ngang chỉ có thành phần $F\\cos\\alpha$ kéo thùng đi, ma sát ngược lại:</p>$$F\\cos\\alpha-F_{\\text{mst}}=ma$$$$a=\\dfrac{30\\cdot\\cos30^\\circ-13{,}14}{6{,}0}$$<div class=\"bt-ans\">$$a\\approx2{,}14\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N/kg}=\\text{m/s}^2$.</p><p>$F\\cos30^\\circ\\approx26{,}0\\ \\text{N}$ lớn hơn nhiều $F_{\\text{mst}}$ nên thùng trượt nhanh dần, đúng với đề.</p><p>Nếu coi $N=mg$ thì $F_{\\text{mst}}=17{,}64\\ \\text{N}$ và $a\\approx1{,}39\\ \\text{m/s}^2$: ma sát bị tính thừa vì quên lực kéo nhấc bớt thùng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N=43{,}8\\ \\text{N}$</p><p>b) $F_{\\text{mst}}=13{,}14\\ \\text{N}$</p><p>c) $a\\approx2{,}14\\ \\text{m/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>lực kéo chếch một góc</strong> → tách $F$ thành hai thành phần; $N\\ne mg$, rồi mới tính ma sát.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Thùng chịu lực kéo chếch lên 30 độ và trọng lực; chưa vẽ phản lực và lực ma sát vì chưa biết độ lớn\"><rect x=\"12\" y=\"134.0\" width=\"398\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20.0\" y1=\"142.0\" x2=\"12.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"42.0\" y1=\"142.0\" x2=\"34.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"64.0\" y1=\"142.0\" x2=\"56.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"86.0\" y1=\"142.0\" x2=\"78.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"108.0\" y1=\"142.0\" x2=\"100.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"130.0\" y1=\"142.0\" x2=\"122.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"152.0\" y1=\"142.0\" x2=\"144.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"174.0\" y1=\"142.0\" x2=\"166.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"196.0\" y1=\"142.0\" x2=\"188.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"218.0\" y1=\"142.0\" x2=\"210.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"240.0\" y1=\"142.0\" x2=\"232.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"262.0\" y1=\"142.0\" x2=\"254.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"284.0\" y1=\"142.0\" x2=\"276.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"306.0\" y1=\"142.0\" x2=\"298.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"328.0\" y1=\"142.0\" x2=\"320.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"350.0\" y1=\"142.0\" x2=\"342.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"372.0\" y1=\"142.0\" x2=\"364.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><line x1=\"394.0\" y1=\"142.0\" x2=\"386.0\" y2=\"151.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.55\"/><rect x=\"128.0\" y=\"90.0\" width=\"44.0\" height=\"44.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"112.0\" x2=\"270.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><path d=\"M202.0,112.0 A52,52 0 0 0 195.0,86.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"208\" y=\"106\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">30°</text><line x1=\"150\" y1=\"112\" x2=\"181.2\" y2=\"94.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M169.7,94.0 L181.2,94.0 L175.4,104.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"185.2\" y=\"86.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 30 N</text><line x1=\"150\" y1=\"112\" x2=\"150.0\" y2=\"182.6\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M155.8,172.6 L150.0,182.6 L144.2,172.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"158\" y=\"178.6\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = mg</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">m = 6,0 kg · μ = 0,30</text><text x=\"268\" y=\"62\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cần: N, F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\">, a</tspan></text></svg><figcaption>Dữ kiện của đề: lực kéo F và trọng lực P (vẽ tỉ lệ với độ lớn, gốc ở tâm thùng). N và F_ms chưa vẽ vì chưa tính. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng $6{,}0\\ \\text{kg}$ … sàn nằm ngang”</td><td>$m=6{,}0\\ \\text{kg}$; mặt ngang</td><td>Trọng lượng; áp lực lên sàn</td></tr><tr><td>“hệ số ma sát trượt … $0{,}30$”</td><td>$\\mu=0{,}30$</td><td>Ma sát trượt $F_{\\text{mst}}=\\mu N$</td></tr><tr><td>“dây chếch lên, hợp với phương ngang góc $30^\\circ$, lực kéo $30\\ \\text{N}$”</td><td>$F=30\\ \\text{N}$; $\\alpha=30^\\circ$</td><td>⚠ Lực chếch so với mặt tiếp xúc có thành phần theo cả hai phương</td></tr><tr><td>“làm thùng trượt từ trạng thái nghỉ”</td><td>$v_0=0$; thùng đang trượt</td><td>Định luật II Newton chiếu lên từng phương</td></tr><tr><td>“a) áp lực của thùng lên sàn”</td><td>Cần $N$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) lực ma sát trượt”</td><td>Cần $F_{\\text{mst}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) gia tốc của thùng”</td><td>Cần $a$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực kéo chếch một góc</b> → nghĩ tới <b>áp lực có còn bằng trọng lượng không</b>.",
+   "cap_do": 3,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp lực của thùng lên sàn",
+     "hoi": "Áp lực của thùng lên sàn bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 43.8,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng sai áp lực (lấy $N=mg$ như mặt ngang, hoặc tách sai lực kéo)."
+    },
+    {
+     "tieu_de": "Lực ma sát trượt",
+     "hoi": "Lực ma sát trượt tác dụng lên thùng bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 13.1,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhân $\\mu$ với $mg$ thay vì với áp lực vừa tìm, hoặc lấy thành phần nằm ngang của lực kéo làm ma sát.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy áp lực vừa tìm nhân với hệ số ma sát",
+       "dung": true
+      },
+      {
+       "text": "$F_{\\text{mst}}=\\mu mg$",
+       "dung": false,
+       "vi_sao": "Lực kéo chếch lên nhấc bớt thùng nên áp lực nhỏ hơn $mg$; dùng $mg$ thì ma sát bị tính thừa."
+      },
+      {
+       "text": "$F_{\\text{mst}}=F\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "$F\\cos\\alpha$ là thành phần nằm ngang của lực kéo, là ngoại lực; ma sát trượt phải tính bằng $\\mu N$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc",
+     "hoi": "Gia tốc của thùng bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 2.14,
+     "sai_so": 0.03,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Dùng cả lực $F$ thay vì thành phần nằm ngang, hoặc nhầm $\\sin$ với $\\cos$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét các lực theo phương ngang rồi áp dụng định luật II Newton",
+       "dung": true
+      },
+      {
+       "text": "Dùng cả lực kéo $F$ mà không tách thành phần, vì thùng chuyển động theo hướng sợi dây",
+       "dung": false,
+       "vi_sao": "Thùng chuyển động theo phương ngang; chỉ thành phần nằm ngang của lực kéo kéo thùng đi, phần còn lại nhấc bớt thùng."
+      },
+      {
+       "text": "Coi thùng cân bằng nên hợp lực bằng $0$",
+       "dung": false,
+       "vi_sao": "Thùng trượt nhanh dần nên hợp lực theo phương ngang khác $0$; chỉ theo phương thẳng đứng thùng mới cân bằng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Trượt xuống mặt phẳng nghiêng: áp lực, ma sát, gia tốc và tốc độ",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "problem_html": "<p>Một bao hàng $12\\ \\text{kg}$ được thả không vận tốc đầu ở đỉnh một tấm ván dốc dài $5{,}0\\ \\text{m}$, nghiêng $35^\\circ$ so với phương ngang. Hệ số ma sát trượt giữa bao hàng và ván là $0{,}30$. Lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính áp lực của bao hàng lên ván và lực ma sát trượt.</li><li>Tính gia tốc của bao hàng.</li><li>Tính tốc độ của bao hàng khi tới chân ván.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 241\" role=\"img\" aria-label=\"Bao hàng được thả ở đỉnh tấm ván dốc dài 5 mét nghiêng 35 độ và trượt xuống chân ván\"><rect x=\"16\" y=\"219.3\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g transform=\"translate(48 30) rotate(35.0)\"><line x1=\"0.0\" y1=\"0.0\" x2=\"330.0\" y2=\"0.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><rect x=\"8.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0.00;0.23 0.00;0.91 0.00;2.06 0.00;3.66 0.00;5.71 0.00;8.23 0.00;11.20 0.00;14.63 0.00;18.51 0.00;22.86 0.00;27.66 0.00;32.91 0.00;38.63 0.00;44.80 0.00;51.43 0.00;58.51 0.00;66.06 0.00;74.06 0.00;82.51 0.00;91.43 0.00;100.80 0.00;110.63 0.00;120.91 0.00;131.66 0.00;142.86 0.00;154.51 0.00;166.63 0.00;179.20 0.00;192.23 0.00;205.71 0.00;219.66 0.00;234.06 0.00;248.91 0.00;264.23 0.00;280.00 0.00\" dur=\"1.764s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"8.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"25.0\" y=\"-8.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">12 kg</text></g></g><path d=\"M280.6,192.9 A46,46 0 0 0 272.3,219.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"242.3\" y=\"210.3\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">35°</text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 12 kg</text><text x=\"250\" y=\"60\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = 0,30</text><text x=\"250\" y=\"80\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">L = 5,0 m</text><text x=\"250\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">v₀ = 0</text><text x=\"250\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 9,8 m/s²</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật, tính từ số liệu của đề; góc nghiêng và quãng đường trượt L vẽ đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên mặt nghiêng góc $\\alpha$, trọng lực tách thành $mg\\sin\\alpha$ (dọc dốc, kéo vật xuống) và $mg\\cos\\alpha$ (ép vào dốc).</li><li><strong>Công thức:</strong> $N=mg\\cos\\alpha$; $F_{\\text{mst}}=\\mu N$ hướng lên dốc, ngược chiều trượt.</li><li><strong>Định luật II Newton</strong> chiếu lên trục dọc dốc: $mg\\sin\\alpha-F_{\\text{mst}}=ma$.</li><li><strong>Động học:</strong> $v^2-v_0^2=2as$ (không cần thời gian).</li><li>⚠ <strong>Điều kiện:</strong> vật trượt xuống được khi $\\mu\\lt\\tan\\alpha$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp lực lên ván (câu a)</span></p><p>Vuông góc ván, bao hàng không chuyển động nên $N$ cân bằng thành phần $mg\\cos\\alpha$:</p>$$N=mg\\cos\\alpha=12\\cdot9{,}8\\cdot\\cos35^\\circ$$<div class=\"bt-ans\">$$N\\approx96{,}3\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực ma sát trượt (câu a)</span></p>$$F_{\\text{mst}}=\\mu N=0{,}30\\cdot96{,}3$$<div class=\"bt-ans\">$$F_{\\text{mst}}\\approx28{,}9\\ \\text{N}$$</div><p>Hướng lên dốc, ngược chiều bao hàng trượt.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Gia tốc (câu b)</span></p><p>Chiếu lên trục $x$ dọc ván, chiều dương hướng xuống dốc:</p>$$mg\\sin\\alpha-\\mu mg\\cos\\alpha=ma$$$$a=g(\\sin\\alpha-\\mu\\cos\\alpha)$$$$a=9{,}8\\,(0{,}5736-0{,}30\\cdot0{,}8192)$$<div class=\"bt-ans\">$$a\\approx3{,}21\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ ở chân ván (câu c)</span></p><p>Thả không vận tốc đầu, quãng đường bằng chiều dài ván:</p>$$v^2-0=2aL$$$$v=\\sqrt{2\\cdot3{,}21\\cdot5{,}0}$$<div class=\"bt-ans\">$$v\\approx5{,}67\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$\\tan35^\\circ\\approx0{,}70\\gt0{,}30$ nên bao hàng trượt xuống được, đúng với đề.</p><p>$a\\lt g\\sin\\alpha\\approx5{,}62\\ \\text{m/s}^2$: có ma sát nên gia tốc nhỏ hơn khi không có ma sát.</p><p>Không ma sát thì $v=\\sqrt{2\\cdot5{,}62\\cdot5{,}0}\\approx7{,}5\\ \\text{m/s}$, lớn hơn giá trị tính được.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N\\approx96{,}3\\ \\text{N}$; $F_{\\text{mst}}\\approx28{,}9\\ \\text{N}$</p><p>b) $a\\approx3{,}21\\ \\text{m/s}^2$</p><p>c) $v\\approx5{,}67\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vật trượt trên mặt nghiêng có ma sát</strong> → $N=mg\\cos\\alpha$, rồi $a=g(\\sin\\alpha-\\mu\\cos\\alpha)$; khối lượng triệt tiêu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 241\" role=\"img\" aria-label=\"Bao hàng trên ván nghiêng 35 độ chịu trọng lực P; trục x dọc ván hướng xuống, trục y vuông góc ván\"><rect x=\"16\" y=\"219.3\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"48.0\" y1=\"30.0\" x2=\"318.3\" y2=\"219.3\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><g transform=\"translate(48 30) rotate(35.0)\"><rect x=\"148.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><path d=\"M280.6,192.9 A46,46 0 0 0 272.3,219.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"242.3\" y=\"210.3\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">35°</text><line x1=\"190.04300454389622\" y1=\"114.8102874664547\" x2=\"190.0\" y2=\"167.7\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M195.8,157.7 L190.0,167.7 L184.2,157.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"182.0\" y=\"165.7\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">P = mg</text><line x1=\"190.0\" y1=\"114.8\" x2=\"263.8\" y2=\"166.4\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><text x=\"267.0\" y=\"168.7\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x</text><line x1=\"190.0\" y1=\"114.8\" x2=\"149.9\" y2=\"57.5\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><text x=\"133.6\" y=\"58.2\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">y</text><text x=\"250\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">m = 12 kg · μ = 0,30</text><text x=\"250\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">L = 5,0 m · v₀ = 0</text><text x=\"250\" y=\"84\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cần: N, F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\">, a, v</tspan></text></svg><figcaption>Dữ kiện của đề: trọng lực P (vẽ tỉ lệ với độ lớn), trục x dọc ván hướng xuống, trục y vuông góc ván. N và F_ms chưa vẽ vì chưa tính.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“bao hàng $12\\ \\text{kg}$ được thả không vận tốc đầu”</td><td>$m=12\\ \\text{kg}$; $v_0=0$</td><td>Chuyển động biến đổi đều từ trạng thái nghỉ</td></tr><tr><td>“tấm ván dốc dài $5{,}0\\ \\text{m}$”</td><td>$L=5{,}0\\ \\text{m}$ (quãng đường)</td><td>Quãng đường vật đi dọc ván</td></tr><tr><td>“nghiêng $35^\\circ$ so với phương ngang”</td><td>$\\alpha=35^\\circ$</td><td>⚠ Mặt tiếp xúc nghiêng: xét các lực theo phương dọc và vuông góc mặt tiếp xúc</td></tr><tr><td>“hệ số ma sát trượt … $0{,}30$”</td><td>$\\mu=0{,}30$</td><td>Ma sát trượt ngược chiều trượt</td></tr><tr><td>“a) áp lực của bao hàng lên ván và lực ma sát trượt”</td><td>Cần $N$ (N), $F_{\\text{mst}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) gia tốc của bao hàng”</td><td>Cần $a$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) tốc độ khi tới chân ván”</td><td>Cần $v$ (m/s)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật trượt trên mặt nghiêng có ma sát</b> → nghĩ tới <b>áp lực và lực dọc mặt nghiêng</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp lực lên ván",
+     "hoi": "Áp lực của bao hàng lên ván bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 96.3,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy $N=mg$ như mặt ngang, hoặc nhầm $\\sin$ với $\\cos$ khi tách trọng lực."
+    },
+    {
+     "tieu_de": "Lực ma sát trượt",
+     "hoi": "Lực ma sát trượt tác dụng lên bao hàng bằng bao nhiêu (đơn vị N)?",
+     "dap_so": 28.9,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhân $\\mu$ với $mg$ thay vì với áp lực vừa tìm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy áp lực ở bước trước nhân với hệ số ma sát",
+       "dung": true
+      },
+      {
+       "text": "$F_{\\text{mst}}=\\mu mg$",
+       "dung": false,
+       "vi_sao": "Trên mặt nghiêng áp lực chỉ bằng thành phần $mg\\cos\\alpha$, nhỏ hơn $mg$."
+      },
+      {
+       "text": "$F_{\\text{mst}}=\\mu mg\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "$mg\\sin\\alpha$ là thành phần dọc ván kéo bao hàng xuống, không phải áp lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc",
+     "hoi": "Gia tốc của bao hàng bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 3.21,
+     "sai_so": 0.03,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Cộng ma sát với thành phần trọng lực dọc dốc, hoặc lấy cả $mg$ thay vì $mg\\sin\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét các lực dọc theo ván rồi áp dụng định luật II Newton",
+       "dung": true
+      },
+      {
+       "text": "Xét các lực theo phương vuông góc ván, vì bao hàng ép vào ván",
+       "dung": false,
+       "vi_sao": "Vuông góc ván bao hàng không chuyển động; gia tốc nằm dọc ván nên phải xét các lực theo phương đó."
+      },
+      {
+       "text": "Coi bao hàng cân bằng nên hợp lực bằng $0$",
+       "dung": false,
+       "vi_sao": "Bao hàng trượt nhanh dần nên hợp lực dọc ván khác $0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ ở chân ván",
+     "hoi": "Tốc độ của bao hàng khi tới chân ván bằng bao nhiêu (đơn vị m/s)?",
+     "dap_so": 5.67,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Bỏ ma sát khi tính tốc độ, hoặc thế quãng đường vào chỗ của thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Công thức không có thời gian: $v^2=2aL$ vì $v_0=0$",
+       "dung": true
+      },
+      {
+       "text": "$v=\\sqrt{2gL\\sin\\alpha}$, như khi không có ma sát",
+       "dung": false,
+       "vi_sao": "Có ma sát nên gia tốc nhỏ hơn $g\\sin\\alpha$; công thức này cho tốc độ quá lớn."
+      },
+      {
+       "text": "$v=at$ với $t=L$",
+       "dung": false,
+       "vi_sao": "$L$ là quãng đường, không phải thời gian; công thức $v=at$ cần thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Lên dốc rồi có tụt xuống không: ma sát đổi chiều theo chuyển động",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "problem_html": "<p>Một vật $3{,}0\\ \\text{kg}$ ở chân một mặt phẳng nghiêng góc $25^\\circ$ so với phương ngang, được truyền vận tốc đầu $6{,}0\\ \\text{m/s}$ dọc theo mặt dốc, hướng lên. Hệ số ma sát giữa vật và mặt dốc là $0{,}20$ (coi ma sát nghỉ cực đại bằng ma sát trượt). Lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính gia tốc của vật lúc đi lên và quãng đường vật đi lên được trên mặt dốc.</li><li>Tới điểm cao nhất, vật nằm yên lại hay trượt xuống?</li><li>Nếu vật quay về tới chân dốc, tính tốc độ của vật khi đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Vật được truyền vận tốc đầu dọc mặt dốc hướng lên từ chân dốc nghiêng 25 độ; mô phỏng dừng ở lúc vật lên tới điểm cao nhất\"><rect x=\"16\" y=\"196.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><g transform=\"translate(36 196) rotate(-25.0)\"><line x1=\"0.0\" y1=\"0.0\" x2=\"283.8\" y2=\"0.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><rect x=\"10.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0.00;9.67 0.00;19.11 0.00;28.30 0.00;37.26 0.00;45.98 0.00;54.45 0.00;62.69 0.00;70.70 0.00;78.46 0.00;85.98 0.00;93.27 0.00;100.31 0.00;107.12 0.00;113.69 0.00;120.02 0.00;126.11 0.00;131.96 0.00;137.57 0.00;142.94 0.00;148.08 0.00;152.98 0.00;157.63 0.00;162.05 0.00;166.23 0.00;170.17 0.00;173.87 0.00;177.34 0.00;180.56 0.00;183.55 0.00;186.29 0.00;188.80 0.00;191.07 0.00;193.10 0.00;194.89 0.00;196.44 0.00;197.76 0.00;198.83 0.00;199.67 0.00;200.27 0.00;200.62 0.00;200.74 0.00\" dur=\"1.014s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"10.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"27.0\" y=\"-8.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">3,0 kg</text></g></g><path d=\"M92.0,196.0 A56,56 0 0 0 86.8,172.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"98\" y=\"191\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">25°</text><text x=\"250\" y=\"190\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = 0,20</text><text x=\"250\" y=\"168\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀ = 6,0 m/s dọc dốc</text><text x=\"250\" y=\"146\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 9,8 m/s²</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng đúng thời gian thật, chỉ chạy tới lúc vật lên tới điểm cao nhất (tính từ số liệu của đề).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ma sát trượt ngược chiều trượt: vật đi lên thì ma sát hướng xuống dốc, vật trượt xuống thì ma sát hướng lên dốc.</li><li><strong>Công thức:</strong> $a_{\\text{lên}}$ có $mg\\sin\\alpha+\\mu mg\\cos\\alpha$; $a_{\\text{xuống}}$ có $mg\\sin\\alpha-\\mu mg\\cos\\alpha$.</li><li><strong>Vật nằm yên trên dốc</strong> khi $mg\\sin\\alpha\\le F_{\\text{msn max}}=\\mu mg\\cos\\alpha$.</li><li><strong>Động học:</strong> $v^2-v_0^2=2as$.</li><li>⚠ <strong>Điều kiện:</strong> đổi chiều chuyển động thì đổi chiều ma sát, nên mỗi giai đoạn có gia tốc riêng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Gia tốc lúc đi lên (câu a)</span></p><p>Chọn chiều dương hướng lên dốc. Thành phần trọng lực dọc dốc và ma sát đều hướng xuống dốc:</p>$$-mg\\sin\\alpha-\\mu mg\\cos\\alpha=ma$$$$a=-g(\\sin\\alpha+\\mu\\cos\\alpha)=-9{,}8\\,(0{,}4226+0{,}20\\cdot0{,}9063)$$<div class=\"bt-ans\">$$a\\approx-5{,}918\\ \\text{m/s}^2$$</div><p>Độ lớn $5{,}92\\ \\text{m/s}^2$, vật chậm dần.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Quãng đường đi lên (câu a)</span></p><p>Tới điểm cao nhất vật dừng lại tức thời, $v=0$:</p>$$0-v_0^2=2as$$$$s=\\dfrac{-6{,}0^2}{2\\cdot(-5{,}918)}$$<div class=\"bt-ans\">$$s\\approx3{,}04\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nằm yên hay trượt xuống (câu b)</span></p><p>So thành phần trọng lực dọc dốc với ma sát nghỉ cực đại:</p>$$mg\\sin\\alpha=3{,}0\\cdot9{,}8\\cdot0{,}4226\\approx12{,}4\\ \\text{N}$$$$F_{\\text{msn max}}=\\mu mg\\cos\\alpha=0{,}20\\cdot3{,}0\\cdot9{,}8\\cdot0{,}9063\\approx5{,}33\\ \\text{N}$$<p>$12{,}4\\ \\text{N}\\gt5{,}33\\ \\text{N}$: ma sát nghỉ không giữ nổi vật.</p><div class=\"bt-ans\"><p>Câu b: vật <strong>trượt xuống</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Gia tốc lúc trượt xuống (câu c)</span></p><p>Chiều chuyển động đổi nên ma sát hướng lên dốc. Chọn chiều dương hướng xuống dốc:</p>$$mg\\sin\\alpha-\\mu mg\\cos\\alpha=ma'$$$$a'=g(\\sin\\alpha-\\mu\\cos\\alpha)=9{,}8\\,(0{,}4226-0{,}20\\cdot0{,}9063)$$<div class=\"bt-ans\">$$a'\\approx2{,}365\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tốc độ khi về chân dốc (câu c)</span></p><p>Vật bắt đầu trượt xuống từ điểm cao nhất, đi lại đúng quãng đường $s$:</p>$$v^2-0=2a's$$$$v=\\sqrt{2\\cdot2{,}365\\cdot3{,}042}$$<div class=\"bt-ans\">$$v\\approx3{,}79\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$v\\lt v_0=6{,}0\\ \\text{m/s}$: ma sát tiêu hao một phần cơ năng.</p><p>Gia tốc lúc xuống ($2{,}365$) nhỏ hơn lúc lên ($5{,}918$) vì ma sát đổi chiều.</p><p>Đối chiếu năng lượng: động năng mất $\\tfrac12\\cdot3{,}0\\,(6{,}0^2-14{,}4)\\approx32{,}4\\ \\text{J}$, bằng công của ma sát trên cả đường đi và về $5{,}33\\cdot2\\cdot3{,}042\\approx32{,}4\\ \\text{J}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $a\\approx-5{,}918\\ \\text{m/s}^2$ (độ lớn $5{,}92$); $s\\approx3{,}04\\ \\text{m}$</p><p>b) Vật trượt xuống</p><p>c) $v\\approx3{,}79\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>vật đi lên rồi dừng trên dốc</strong> → kiểm $mg\\sin\\alpha$ với $F_{\\text{msn max}}$ trước khi kết luận; lên và xuống có hai gia tốc khác nhau.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Vật ở chân dốc nghiêng 25 độ với vận tốc đầu hướng lên dốc và trọng lực P\"><rect x=\"16\" y=\"196.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"36.0\" y1=\"196.0\" x2=\"293.2\" y2=\"76.1\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><g transform=\"translate(36 196) rotate(-25.0)\"><rect x=\"130.0\" y=\"-24.0\" width=\"34.0\" height=\"24.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><path d=\"M92.0,196.0 A56,56 0 0 0 86.8,172.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"98\" y=\"191\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">25°</text><line x1=\"164.15582555349914\" y1=\"122.99942207967737\" x2=\"229.4\" y2=\"92.6\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M217.9,91.6 L229.4,92.6 L222.8,102.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"233.4\" y=\"86.6\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀</text><line x1=\"164.15582555349914\" y1=\"122.99942207967737\" x2=\"164.2\" y2=\"152.4\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M169.9,142.4 L164.2,152.4 L158.4,142.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"172.2\" y=\"154.4\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P = mg</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">m = 3,0 kg · μ = 0,20</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">coi F<tspan dy=\"4\" font-size=\"10\">msn</tspan><tspan dy=\"-4\"> max = F</tspan><tspan dy=\"4\" font-size=\"10\">mst</tspan></text><text x=\"16\" y=\"68\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cần: a, s, trượt lại?, v</text></svg><figcaption>Dữ kiện của đề: vận tốc đầu v₀ và trọng lực P (mỗi loại vectơ vẽ tỉ lệ với độ lớn của nó, v₀ và P khác tỉ lệ). N và F_ms chưa vẽ vì chưa tính.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vật $3{,}0\\ \\text{kg}$ ở chân mặt phẳng nghiêng góc $25^\\circ$”</td><td>$m=3{,}0\\ \\text{kg}$; $\\alpha=25^\\circ$</td><td>Trọng lực tách theo hai phương: dọc dốc và vuông góc dốc</td></tr><tr><td>“vận tốc đầu $6{,}0\\ \\text{m/s}$ dọc theo mặt dốc, hướng lên”</td><td>$v_0=6{,}0\\ \\text{m/s}$, hướng lên dốc</td><td>⚠ Ma sát trượt ngược chiều chuyển động tương đối của vật so với mặt tiếp xúc</td></tr><tr><td>“hệ số ma sát … $0{,}20$ (coi ma sát nghỉ cực đại bằng ma sát trượt)”</td><td>$\\mu=0{,}20$; $F_{\\text{msn max}}=F_{\\text{mst}}$</td><td>⚠ Điều kiện để vật nằm yên hoặc chuyển động trên mặt tiếp xúc</td></tr><tr><td>“a) gia tốc lúc đi lên và quãng đường đi lên”</td><td>Cần $a$ (m/s²), $s$ (m)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) tới điểm cao nhất, nằm yên lại hay trượt xuống?”</td><td>Cần kết luận</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) tốc độ khi về tới chân dốc”</td><td>Cần $v$ (m/s)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật lên dốc rồi dừng</b> → hỏi <b>vật dừng rồi thì sao?</b>; lên và xuống khác gia tốc.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Gia tốc lúc đi lên",
+     "hoi": "Độ lớn gia tốc của vật lúc đi lên dốc bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 5.92,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Tính thiếu hoặc sai một trong các lực cản dọc dốc."
+    },
+    {
+     "tieu_de": "Quãng đường đi lên",
+     "hoi": "Vật đi lên được bao xa theo mặt dốc (đơn vị m)?",
+     "dap_so": 3.04,
+     "sai_so": 0.03,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng $g$ thay cho gia tốc dọc dốc có ma sát, hoặc quên dấu của gia tốc khi chậm dần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dừng ở điểm cao nhất nên $0-v_0^2=2as$ với gia tốc lúc đi lên",
+       "dung": true
+      },
+      {
+       "text": "$s=\\dfrac{v_0^2}{2g}$, như ném thẳng đứng",
+       "dung": false,
+       "vi_sao": "Đó là độ cao của vật ném thẳng đứng; ở đây vật chuyển động dọc dốc có ma sát nên gia tốc khác $g$."
+      },
+      {
+       "text": "$s=v_0t$ với $t$ chưa biết",
+       "dung": false,
+       "vi_sao": "Vận tốc giảm dần chứ không đều nên $s\\ne v_0t$, và đề chưa cho thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nằm yên hay trượt xuống",
+     "hoi": "Tới điểm cao nhất, vật nằm yên lại hay trượt xuống?",
+     "lua_chon": [
+      {
+       "text": "Trượt xuống, vì thành phần trọng lực dọc dốc lớn hơn ma sát nghỉ cực đại",
+       "dung": true
+      },
+      {
+       "text": "Nằm yên, vì vật đã dừng lại thì ma sát nghỉ giữ được",
+       "dung": false,
+       "vi_sao": "Vật dừng tức thời chưa có nghĩa nằm yên: phải xem ma sát nghỉ cực đại có giữ nổi $mg\\sin\\alpha$ không."
+      },
+      {
+       "text": "Trượt xuống, vì vật luôn quay lại điểm xuất phát",
+       "dung": false,
+       "vi_sao": "Không phải lúc nào cũng vậy: nếu $\\mu\\ge\\tan\\alpha$ vật nằm lại trên dốc. Phải so $mg\\sin\\alpha$ với $F_{\\text{msn max}}$."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng vật đã dừng thì nằm yên luôn, hoặc cho rằng vật luôn quay lại mà không kiểm ma sát nghỉ cực đại.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $mg\\sin\\alpha$ với ma sát nghỉ cực đại $\\mu mg\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "Coi như vật trượt xuống và tính ngay gia tốc",
+       "dung": false,
+       "vi_sao": "Chưa kiểm điều kiện đã cho là trượt; nếu ma sát nghỉ giữ được thì vật nằm yên và $a=0$."
+      },
+      {
+       "text": "Kết luận từ việc vật đã dừng lại tức thời",
+       "dung": false,
+       "vi_sao": "Dừng tức thời ở điểm cao nhất chưa nói gì về việc ma sát nghỉ có giữ nổi vật hay không."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc lúc trượt xuống",
+     "hoi": "Độ lớn gia tốc của vật lúc trượt xuống bằng bao nhiêu (đơn vị m/s²)?",
+     "dap_so": 2.37,
+     "sai_so": 0.03,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Giữ ma sát hướng xuống dốc như lúc đi lên, hoặc bỏ qua ma sát.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết lại định luật II Newton cho chiều chuyển động mới, xét lại chiều của ma sát",
+       "dung": true
+      },
+      {
+       "text": "Giữ ma sát hướng xuống dốc: $a=g(\\sin\\alpha+\\mu\\cos\\alpha)$",
+       "dung": false,
+       "vi_sao": "Vật đổi chiều chuyển động nên ma sát cũng đổi chiều, hướng lên dốc; cộng là kết quả của lúc đi lên."
+      },
+      {
+       "text": "Bỏ ma sát: $a=g\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "Vật vẫn trượt trên mặt có ma sát nên phải trừ ma sát trượt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ khi về chân dốc",
+     "hoi": "Tốc độ của vật khi về tới chân dốc bằng bao nhiêu (đơn vị m/s)?",
+     "dap_so": 3.79,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cho rằng vật về chân dốc với đúng tốc độ lúc ném, hoặc dùng gia tốc của lúc đi lên.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v^2=2a's$ với $a'$ của lúc trượt xuống và $s$ là quãng đường đã đi lên",
+       "dung": true
+      },
+      {
+       "text": "$v=v_0$, vì cơ năng bảo toàn",
+       "dung": false,
+       "vi_sao": "Có ma sát thực hiện công cản trên cả đường đi và về nên cơ năng giảm; vật về chân dốc chậm hơn lúc ném."
+      },
+      {
+       "text": "$v^2=2as$ với gia tốc của lúc đi lên",
+       "dung": false,
+       "vi_sao": "Lúc trượt xuống ma sát đổi chiều nên gia tốc khác; dùng gia tốc lúc lên chỉ cho lại đúng tốc độ lúc ném."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 1. <strong class=\"font-bold\">Một xe tải khối lượng 1,5 tấn kéo một xe con (bị chết máy) có khối lượng 1 tấn trên đường nằm ngang bằng một sợi dây không dãn và khối lượng không đáng kể. Hai xe cùng khởi hành. Sau 10 s đi được 100m. Hệ số ma sát giữa xe và mặt đường là</strong> $\\mu =0,05$ <strong class=\"font-bold\">. Lấy</strong> $g = 10\\ m/s^2$ <br />a) <strong class=\"font-bold\">Tính gia tốc và tốc độ hai xe sau 10 s chuyển động.</strong> <br />b) <strong class=\"font-bold\">Tính lực căng dây nối hai xe và lực kéo động cơ xe tải.</strong> <br />c) <strong class=\"font-bold\">Sau quãng đường trên thì dây nối bị đứt. Tìm quãng đường và thời gian xe con đi thêm được đến khi dừng lại.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/63/1790094263944-fig123.png\" alt=\"dây nối hai xe và lực kéo động cơ xe tải. c) Sau quãng đường trên thì dây nối bị đứt. Tìm \"> a) Gọi (I) là xe tải và (II) là xe con.</p><p class=\"text-base leading-relaxed my-2\">- Chọn hệ Oxy như hình vẽ</p><p class=\"text-base leading-relaxed my-2\">- Gia tốc của hai xe là: $d = \\frac{1}{2}at^2 \\Rightarrow a = \\frac{2d}{t^2} = \\frac{2.100}{10^2} = 2\\ m/s^2$</p><p class=\"text-base leading-relaxed my-2\">- Tốc độ của hai xe: $v = at = 2.10 = 20\\ m/s$</p><p class=\"text-base leading-relaxed my-2\">- Áp dụng định luật II Newton cho mỗi xe:</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/63/1790094233356-d27.png\" alt=\"hệ Oxy như hình vẽ - Gia tốc của hai xe là: &#36;d = 1 2 at^2 a = 2d t^2 = 2.100 10^2 = 2 m/s^\"> + Xe I: $\\vec{F}+\\vec{T}_{1}+\\vec{F}_{ms_{1}}+\\vec{P}_{1}+\\vec{N}_{1}=m_{1}\\vec{a}_{1}$</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">Xe II: $\\vec{T}_{2}+\\vec{F}_{ms_{2}}+\\vec{P}_{2}+\\vec{N}_{2}=m_{2}\\vec{a}_{2}$</li></ul><p class=\"text-base leading-relaxed my-2\">- Khối lượng của dây không đáng kể nên: $T_{1}=T_{2}=T$</p><p class=\"text-base leading-relaxed my-2\">- Dây không dãn, suy ra: $a_{1}=a_{2}=a$</p><p class=\"text-base leading-relaxed my-2\">- Chiếu (1)/Oy, ta có: $\\left\\{ N_{1}=P_{1}N_{2}=P_{2} \\right.$</p><p class=\"text-base leading-relaxed my-2\">- Chiếu (1)/Ox, ta có: $\\begin{cases} F - T - F_{ms_1} = m_1 a & (3) \\\\ T - F_{ms_2} = m_2 a & (4) \\end{cases}$</p><p class=\"text-base leading-relaxed my-2\">- Từ (3) và (4), ta có: $F-F_{ms_{1}}-F_{ms_{2}}=\\left( m_{1}+m_{2} \\right)a$</p><p class=\"text-base leading-relaxed my-2\">=&gt; $F=\\left( m_{1}+m_{2} \\right)a+F_{ms_{1}}+F_{ms_{2}}$</p><p class=\"text-base leading-relaxed my-2\">=&gt; $F=\\left( m_{1}+m_{2} \\right)a+\\mu m_{1}g+\\mu m_{2}g=\\left( m_{1}+m_{2} \\right)(a+\\mu g)$</p><p class=\"text-base leading-relaxed my-2\">=&gt; $F=\\left( 1,5.10^{3}+10^{3} \\right)\\left( 2+0,05.10 \\right)=6250N$</p><p class=\"text-base leading-relaxed my-2\">- Lực căng dây: $(4)=>T=m_{2}a+F_{ms_{2}}=m_{2}a+\\mu m_{2}g=10^{3}.2+0,05.10^{3}.10=2500N$</p><p class=\"text-base leading-relaxed my-2\">c) Sau khi đi được quãng đường 100m thì dây nối bị đứt, suy ra: T = 0</p><p class=\"text-base leading-relaxed my-2\">- Xe con chuyển động với gia tốc mới a'</p><p class=\"text-base leading-relaxed my-2\">- Từ (4) =&gt; $T = m_2 a' + F_{ms_2} = 0 \\Rightarrow a' = -\\frac{F_{ms_2}}{m_2} = -\\mu g = -0{,}05.10 = -0{,}5\\ m/s^2$</p><p class=\"text-base leading-relaxed my-2\">- Tốc độ của xe con ngay trước lúc dây bị đứt là $v=20$ m/s</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">Quãng đường xe con đi thêm được đến khi dừng lại:</li></ul><p class=\"text-base leading-relaxed my-2\">$v'^{2}-v^{2}=2aS=>S=-\\frac{v^{2}}{2a}=-\\frac{20^{2}}{2.\\left( -0,5 \\right)}=400m$</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">Thời gian xe con đi thêm được đến khi dừng lại:</li></ul><p class=\"text-base leading-relaxed my-2\">$v'=v+a't=>t=-\\frac{v}{a'}=-\\frac{20}{-0,5}=40s$</p></details>"
+ }
+}

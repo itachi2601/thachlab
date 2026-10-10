@@ -1,0 +1,464 @@
+{
+ "lesson_id": 66,
+ "lesson_title": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 5/5 dạng + 5 bài tu_luan khớp; đã bỏ chiều/so sánh khỏi vi_sao D1,D2,D3,D4,D5, aria-label/chú thích hình D4, thay lựa chọn sai D5 bước 4. Mô phỏng D4 vẫn thể hiện thanh nghiêng (chỉ sửa chữ). VD6, VD14 trong tu_luan do builder bổ sung chi tiết đề cũ thiếu — thầy đối chiếu. 8 ví dụ cũ bỏ (hình lệch lời giải, thiếu dữ kiện). Dạng 5 ít câu ngân hàng khớp."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Moment của lực: tính M, tìm lực khi đổi chỗ đặt",
+   "topic": "Moment lực và quy tắc moment",
+   "problem_html": "<p>Một cánh cửa rộng $0{,}90\\ \\text{m}$ quay quanh bản lề. Em đẩy cửa bằng lực $F=20\\ \\text{N}$ vuông góc với mặt cửa, tại điểm cách bản lề $75\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính moment của lực đối với trục bản lề.</li><li>Em đổi sang đẩy tại điểm cách bản lề $15\\ \\text{cm}$ mà vẫn muốn có đúng moment đó. Lực đẩy lúc này là bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Nhìn từ trên xuống: cánh cửa rộng 0,90 m quay quanh bản lề dưới lực 20 N luôn vuông góc mặt cửa, đặt cách bản lề 0,75 m\"><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"-0.00 70.0 232.0;-0.06 70.0 232.0;-0.23 70.0 232.0;-0.51 70.0 232.0;-0.90 70.0 232.0;-1.41 70.0 232.0;-2.03 70.0 232.0;-2.76 70.0 232.0;-3.60 70.0 232.0;-4.56 70.0 232.0;-5.63 70.0 232.0;-6.81 70.0 232.0;-8.10 70.0 232.0;-9.51 70.0 232.0;-11.03 70.0 232.0;-12.66 70.0 232.0;-14.40 70.0 232.0;-16.26 70.0 232.0;-18.23 70.0 232.0;-20.31 70.0 232.0;-22.50 70.0 232.0;-24.81 70.0 232.0;-27.23 70.0 232.0;-29.76 70.0 232.0;-32.40 70.0 232.0;-35.16 70.0 232.0;-38.03 70.0 232.0;-41.01 70.0 232.0;-44.10 70.0 232.0;-47.31 70.0 232.0;-50.63 70.0 232.0;-54.06 70.0 232.0;-57.60 70.0 232.0;-61.26 70.0 232.0;-65.03 70.0 232.0;-68.91 70.0 232.0;-72.90 70.0 232.0;-77.01 70.0 232.0;-81.23 70.0 232.0;-85.56 70.0 232.0;-90.00 70.0 232.0\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"70.0\" y=\"229.0\" width=\"225.0\" height=\"6.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"257.5\" cy=\"232.0\" r=\"4.5\" fill=\"#f87171\"/><line x1=\"257.5\" y1=\"232\" x2=\"257.5\" y2=\"182.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M251.7,192.0 L257.5,182.0 L263.3,192.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"70.0\" cy=\"232.0\" r=\"5.5\" fill=\"currentColor\"/><text x=\"64\" y=\"220\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">bản lề</text><line x1=\"70\" y1=\"254\" x2=\"257.5\" y2=\"254\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M250.5,249.9 L257.5,254.0 L250.5,258.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"257.5\" y1=\"254\" x2=\"70\" y2=\"254\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M77.0,258.1 L70.0,254.0 L77.0,249.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"265.5\" y=\"258\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = 0,75 m</text><text x=\"318\" y=\"50\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 20 N</text><text x=\"318\" y=\"70\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = ?</text><text x=\"318\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">cửa rộng 0,90 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống, chạy chậm 2 lần: lực luôn vuông góc mặt cửa, bỏ qua ma sát. Cánh cửa 10 kg chỉ dùng để mô phỏng chuyển động, không dùng khi giải. Cửa vẽ đúng tỉ lệ chiều dài; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> moment lực đặc trưng cho tác dụng làm quay của lực quanh một trục.</li><li><strong>Khái niệm:</strong> cánh tay đòn $d$ là khoảng cách từ trục quay tới giá của lực, đo vuông góc.</li><li><strong>Công thức:</strong> $M=F\\cdot d$ (đơn vị $\\text{N}\\cdot\\text{m}$).</li><li>⚠ <strong>Điều kiện:</strong> $d$ phải đổi ra mét; giá của lực đi qua trục thì $d=0$ và $M=0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cánh tay đòn (đổi ra mét)</span></p><p>Lực vuông góc mặt cửa nên cánh tay đòn là khoảng từ bản lề tới điểm đẩy:</p>$$d=75\\ \\text{cm}=0{,}75\\ \\text{m}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Moment của lực</span></p>$$M=F\\cdot d$$$$M=20\\cdot0{,}75$$<div class=\"bt-ans\">$$M=15\\ \\text{N}\\cdot\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực đẩy ở điểm gần bản lề</span></p><p>Cùng moment, cánh tay đòn mới $d'=15\\ \\text{cm}=0{,}15\\ \\text{m}$:</p>$$F'=\\dfrac{M}{d'}$$$$F'=\\dfrac{15}{0{,}15}$$<div class=\"bt-ans\">$$F'=100\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cánh tay đòn ngắn đi $5$ lần thì lực tăng $5$ lần: $20\\cdot5=100\\ \\text{N}$ ✓</p><p>Đơn vị: $\\text{N}\\cdot\\text{m}$ chia cho $\\text{m}$ ra $\\text{N}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $M=15\\ \\text{N}\\cdot\\text{m}$</p><p>b) $F'=100\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực vuông góc</strong> và <strong>khoảng cách từ trục tới điểm đặt</strong> → $M=F\\cdot d$, nhớ đổi cm sang m.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Dữ kiện: lực 20 N vuông góc cửa tại điểm cách bản lề 0,75 m; điểm thứ hai cách bản lề 0,15 m\"><rect x=\"70.0\" y=\"229.0\" width=\"225.0\" height=\"6.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"257.5\" cy=\"232.0\" r=\"4.5\" fill=\"#f87171\"/><line x1=\"257.5\" y1=\"232\" x2=\"257.5\" y2=\"182.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M251.7,192.0 L257.5,182.0 L263.3,192.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"70.0\" cy=\"232.0\" r=\"5.5\" fill=\"currentColor\"/><text x=\"64\" y=\"220\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">bản lề</text><line x1=\"70\" y1=\"254\" x2=\"257.5\" y2=\"254\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M250.5,249.9 L257.5,254.0 L250.5,258.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"257.5\" y1=\"254\" x2=\"70\" y2=\"254\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M77.0,258.1 L70.0,254.0 L77.0,249.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"265.5\" y=\"258\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = 0,75 m</text><circle cx=\"107.5\" cy=\"232.0\" r=\"4.5\" fill=\"#38bdf8\"/><line x1=\"70\" y1=\"270\" x2=\"107.5\" y2=\"270\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M100.5,265.9 L107.5,270.0 L100.5,274.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"107.5\" y1=\"270\" x2=\"70\" y2=\"270\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M77.0,274.1 L70.0,270.0 L77.0,265.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"115.5\" y=\"274\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d′ = 0,15 m</text><text x=\"318\" y=\"50\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 20 N</text><text x=\"318\" y=\"70\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = ?</text><text x=\"318\" y=\"90\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F′ = ?  (tại d′)</text></svg><figcaption>Dữ kiện: điểm xanh dương là chỗ đẩy thứ hai (câu b). Cửa vẽ đúng tỉ lệ chiều dài; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“cánh cửa rộng $0{,}90\\ \\text{m}$ quay quanh bản lề”</td><td>Trục quay là bản lề; bề rộng cửa $0{,}90$ m</td><td>Khái niệm: moment lực đối với một trục quay</td></tr><tr><td>“đẩy cửa bằng lực $F=20\\ \\text{N}$ vuông góc với mặt cửa”</td><td>$F=20$ N; giá của lực vuông góc mặt cửa</td><td>⚠ Cánh tay đòn đo từ đâu tới đâu? Đường nào là giá của lực?</td></tr><tr><td>“tại điểm cách bản lề $75\\ \\text{cm}$”</td><td>$75$ cm (đơn vị là cm)</td><td>⚠ Công thức moment dùng đơn vị nào của khoảng cách?</td></tr><tr><td>“a) moment của lực”</td><td>Cần $M$</td><td>Đại lượng cần tìm</td></tr><tr><td>“đẩy tại điểm cách bản lề $15\\ \\text{cm}$ mà vẫn muốn có đúng moment đó”</td><td>$15$ cm; moment không đổi</td><td>Khái niệm: hai lực cho cùng tác dụng làm quay</td></tr><tr><td>“b) lực đẩy lúc này”</td><td>Cần $F'$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực vuông góc</b> và <b>khoảng cách từ trục</b> → nghĩ tới <b>moment M = F·d</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cánh tay đòn (đổi ra mét)",
+     "hoi": "Cánh tay đòn $d$ của lực bằng bao nhiêu mét?",
+     "dap_so": 0.75,
+     "sai_so": 0.005,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng luôn số đo theo cm nên moment gấp $100$ lần giá trị đúng, hoặc lấy bề rộng cửa làm cánh tay đòn trong khi lực không đặt ở mép cửa."
+    },
+    {
+     "tieu_de": "Moment của lực",
+     "hoi": "Moment $M$ của lực bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+     "dap_so": 15,
+     "sai_so": 0.1,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Chia $F$ cho $d$ thay vì nhân, hoặc lấy bề rộng cửa làm cánh tay đòn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân độ lớn lực với cánh tay đòn (đã đổi ra mét)",
+       "dung": true
+      },
+      {
+       "text": "Chia độ lớn lực cho cánh tay đòn",
+       "dung": false,
+       "vi_sao": "Chia cho đơn vị $\\text{N}/\\text{m}$, không phải đơn vị moment $\\text{N}\\cdot\\text{m}$."
+      },
+      {
+       "text": "Nhân lực với bề rộng cả cánh cửa",
+       "dung": false,
+       "vi_sao": "Cánh tay đòn tính từ trục tới giá của lực. Lực đặt ở điểm đã cho chứ không đặt ở mép cửa, nên bề rộng cửa không phải $d$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực đẩy ở điểm gần bản lề",
+     "hoi": "Đẩy tại điểm cách bản lề $15\\ \\text{cm}$ thì lực cần bao nhiêu $\\text{N}$ để có cùng moment?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Nhân moment với cánh tay đòn mới thay vì chia, hoặc để cánh tay đòn mới theo cm nên lực lệch nhiều bậc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia moment cho cánh tay đòn mới (đã đổi ra mét)",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên lực, vì moment đã bằng nhau",
+       "dung": false,
+       "vi_sao": "Giữ nguyên lực mà cánh tay đòn đã đổi thì moment không còn bằng nhau."
+      },
+      {
+       "text": "Nhân moment với cánh tay đòn mới",
+       "dung": false,
+       "vi_sao": "Nhân ra đơn vị $\\text{N}\\cdot\\text{m}^2$, không phải đơn vị lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Lực xiên: tìm cánh tay đòn rồi tính moment",
+   "topic": "Moment lực và quy tắc moment",
+   "problem_html": "<p>Để quay một cối xay đá, người ta đẩy vào núm cầm gắn trên mặt đá. Núm cách tâm cối $r=0{,}30\\ \\text{m}$. Lực đẩy $F=80\\ \\text{N}$ nằm trong mặt phẳng nằm ngang, giá của lực hợp với đường thẳng nối núm và tâm cối góc $40^\\circ$. Trục quay đi qua tâm cối, vuông góc với mặt phẳng ngang.</p><ol type=\"a\"><li>Tìm cánh tay đòn $d$ của lực $F$.</li><li>Tính moment của lực $F$ đối với trục quay.</li><li>Nếu người đẩy vuông góc với đường nối núm – tâm thì phải đẩy bằng lực bao nhiêu để có cùng moment?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Nhìn từ trên xuống: cối xay đá quay quanh tâm khi đẩy vào núm cầm bằng lực 80 N hợp với đường nối núm và tâm góc 40 độ\"><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"-0.00 120.0 135.0;-0.08 120.0 135.0;-0.30 120.0 135.0;-0.68 120.0 135.0;-1.20 120.0 135.0;-1.88 120.0 135.0;-2.70 120.0 135.0;-3.68 120.0 135.0;-4.80 120.0 135.0;-6.08 120.0 135.0;-7.50 120.0 135.0;-9.08 120.0 135.0;-10.80 120.0 135.0;-12.68 120.0 135.0;-14.70 120.0 135.0;-16.88 120.0 135.0;-19.20 120.0 135.0;-21.68 120.0 135.0;-24.30 120.0 135.0;-27.08 120.0 135.0;-30.00 120.0 135.0;-33.08 120.0 135.0;-36.30 120.0 135.0;-39.68 120.0 135.0;-43.20 120.0 135.0;-46.88 120.0 135.0;-50.70 120.0 135.0;-54.68 120.0 135.0;-58.80 120.0 135.0;-63.08 120.0 135.0;-67.50 120.0 135.0;-72.08 120.0 135.0;-76.80 120.0 135.0;-81.68 120.0 135.0;-86.70 120.0 135.0;-91.88 120.0 135.0;-97.20 120.0 135.0;-102.68 120.0 135.0;-108.30 120.0 135.0;-114.08 120.0 135.0;-120.00 120.0 135.0\" dur=\"1.47s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"120.0\" cy=\"135.0\" r=\"72.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"107.5\" y2=\"64.1\" stroke=\"#94a3b8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"61.0\" y2=\"176.3\" stroke=\"#94a3b8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"174.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><circle cx=\"174.0\" cy=\"135.0\" r=\"5.5\" fill=\"#fb923c\"/><line x1=\"174.0\" y1=\"135\" x2=\"216.9\" y2=\"99.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M205.6,101.0 L216.9,99.0 L213.0,109.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"120.0\" cy=\"135.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"250\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 80 N</text><text x=\"250\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 0,30 m</text><text x=\"250\" y=\"110\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text><text x=\"250\" y=\"130\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = ?   M = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống, chạy chậm 2 lần: người đẩy giữ nguyên lực và góc so với đường nối núm – tâm, bỏ qua ma sát. Đá 25 kg chỉ dùng để mô phỏng, không dùng khi giải. Núm cách tâm vẽ đúng tỉ lệ; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cánh tay đòn $d$ là khoảng cách từ trục tới <em>giá của lực</em>, đo vuông góc.</li><li><strong>Công thức:</strong> $M=F\\cdot d$.</li><li>Lực hợp với đường nối trục – điểm đặt (dài $r$) góc $\\alpha$: $d=r\\sin\\alpha$.</li><li>⚠ <strong>Điều kiện:</strong> $r$ là khoảng tới điểm đặt, không phải cánh tay đòn; lực vuông góc đường nối ($\\alpha=90^\\circ$) thì $d=r$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cánh tay đòn của lực xiên</span></p><p>Giá của lực hợp với đường nối núm – tâm góc $40^\\circ$ nên:</p>$$d=r\\sin\\alpha=0{,}30\\cdot\\sin40^\\circ$$<div class=\"bt-ans\">$$d\\approx0{,}193\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Moment của lực</span></p>$$M=F\\cdot d=80\\cdot0{,}1928$$<div class=\"bt-ans\">$$M\\approx15{,}4\\ \\text{N}\\cdot\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực đẩy vuông góc đường nối núm – tâm</span></p><p>Lực vuông góc đường nối thì cánh tay đòn bằng $r$:</p>$$F_t=\\dfrac{M}{r}=\\dfrac{15{,}43}{0{,}30}$$<div class=\"bt-ans\">$$F_t\\approx51{,}4\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$d\\lt r$ nên lực xiên phải lớn hơn lực vuông góc: $80\\gt51{,}4$ ✓</p><p>Chỉ thành phần $F\\sin40^\\circ=51{,}4\\ \\text{N}$ vuông góc đường nối mới làm quay; thành phần dọc đường nối có giá qua trục nên $M=0$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d\\approx0{,}193\\ \\text{m}$</p><p>b) $M\\approx15{,}4\\ \\text{N}\\cdot\\text{m}$</p><p>c) $F_t\\approx51{,}4\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực hợp góc</strong> với đường nối trục – điểm đặt → cánh tay đòn $d=r\\sin\\alpha$, không phải $r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Dữ kiện: núm cách tâm 0,30 m, lực 80 N nằm trên một đường thẳng hợp với đường nối núm – tâm góc 40 độ\"><circle cx=\"120.0\" cy=\"135.0\" r=\"72.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"107.5\" y2=\"64.1\" stroke=\"#94a3b8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"61.0\" y2=\"176.3\" stroke=\"#94a3b8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"135.0\" x2=\"208.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><circle cx=\"174.0\" cy=\"135.0\" r=\"5.5\" fill=\"#fb923c\"/><line x1=\"174.0\" y1=\"135\" x2=\"216.9\" y2=\"99.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M205.6,101.0 L216.9,99.0 L213.0,109.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"120.0\" cy=\"135.0\" r=\"3.5\" fill=\"currentColor\"/><line x1=\"143.4\" y1=\"160.7\" x2=\"235.3\" y2=\"83.6\" stroke=\"#f87171\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><path d=\"M198.0,135.0 A24,24 0 0 0 192.4,119.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"202.0\" y=\"129\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"222.9\" y=\"93.0\" fill=\"#f87171\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">giá của lực</text><text x=\"250\" y=\"160\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 80 N</text><text x=\"250\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 0,30 m</text><text x=\"250\" y=\"200\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = 40°</text><text x=\"250.0\" y=\"220.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hỏi: d ; M ; F<tspan dy=\"4\" font-size=\"10\">t</tspan></text></svg><figcaption>Dữ kiện: nét đứt đỏ là giá của lực, nét đứt còn lại là đường nối tâm – núm. Núm cách tâm vẽ đúng tỉ lệ; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“núm cách tâm cối $r=0{,}30\\ \\text{m}$”</td><td>$r=0{,}30$ m (từ trục tới điểm đặt)</td><td>Khái niệm: trục quay qua tâm cối</td></tr><tr><td>“lực đẩy $F=80\\ \\text{N}$ nằm trong mặt phẳng nằm ngang”</td><td>$F=80$ N</td><td>Khái niệm: giá của lực — đường thẳng chứa lực</td></tr><tr><td>“giá của lực hợp với đường thẳng nối núm và tâm cối góc $40^\\circ$”</td><td>$\\alpha=40^\\circ$</td><td>⚠ Góc $40^\\circ$ là góc giữa hai đường nào? Cánh tay đòn đo từ đâu tới đâu?</td></tr><tr><td>“a) cánh tay đòn $d$”</td><td>Cần $d$</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) moment của lực $F$”</td><td>Cần $M$</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) vuông góc với đường nối núm – tâm … cùng moment”</td><td>Lực vuông góc đường nối; $M$ như câu b</td><td>⚠ Giá của lực mới nằm thế nào so với đường nối núm – tâm?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực hợp góc</b> với đường nối trục – điểm đặt → nghĩ tới <b>cánh tay đòn d, không phải r</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cánh tay đòn của lực xiên",
+     "hoi": "Cánh tay đòn $d$ của lực $F$ bằng bao nhiêu mét?",
+     "dap_so": 0.193,
+     "sai_so": 0.002,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy cánh tay đòn bằng khoảng cách tới điểm đặt, hoặc dùng $\\cos40^\\circ$ thay cho $\\sin40^\\circ$."
+    },
+    {
+     "tieu_de": "Moment của lực",
+     "hoi": "Moment $M$ của lực $F$ bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+     "dap_so": 15.4,
+     "sai_so": 0.2,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Nhân $F$ với khoảng cách tới điểm đặt (bỏ qua góc), hoặc nhân với thành phần dọc đường nối núm – tâm của lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân độ lớn lực với cánh tay đòn vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Nhân lực với khoảng cách từ trục tới núm",
+       "dung": false,
+       "vi_sao": "Khoảng cách tới núm không phải cánh tay đòn khi lực xiên; cánh tay đòn đo vuông góc tới giá của lực."
+      },
+      {
+       "text": "Nhân thành phần của lực dọc đường nối núm – tâm với khoảng cách tới núm",
+       "dung": false,
+       "vi_sao": "Thành phần dọc đường nối có giá đi qua trục nên không gây quay; thành phần gây quay vuông góc với đường nối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực đẩy vuông góc đường nối núm – tâm",
+     "hoi": "Lực $F_t$ vuông góc đường nối núm – tâm cần bao nhiêu $\\text{N}$ để có cùng moment?",
+     "dap_so": 51.4,
+     "sai_so": 0.6,
+     "don_vi": "N",
+     "loi_hay_gap": "Chia moment cho cánh tay đòn cũ của lực xiên nên ra lại đúng lực ban đầu, hoặc vẫn dùng góc $40^\\circ$ cho lực mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia moment cho cánh tay đòn mới của lực vuông góc đường nối",
+       "dung": true
+      },
+      {
+       "text": "Chia moment cho cánh tay đòn của lực xiên ở câu a",
+       "dung": false,
+       "vi_sao": "Đó là cánh tay đòn của lực cũ. Lực mới vuông góc đường nối nên có cánh tay đòn khác; chia như vậy chỉ ra lại lực ban đầu."
+      },
+      {
+       "text": "Giữ nguyên lực ban đầu vì cùng moment",
+       "dung": false,
+       "vi_sao": "Lực mới có giá khác lực cũ nên cánh tay đòn khác; cùng moment không có nghĩa là cùng lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Ngẫu lực: hợp lực và moment",
+   "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+   "problem_html": "<p>Một bánh lái tàu thuyền quay quanh trục đi qua tâm bánh lái. Người lái đặt hai tay vào hai tay nắm ở hai đầu một đường kính của bánh lái; hai tay nắm cách nhau $0{,}90\\ \\text{m}$. Mỗi tay đẩy một lực $30\\ \\text{N}$ theo phương tiếp tuyến với vành bánh lái, hai lực ngược chiều nhau và làm bánh lái quay cùng một chiều.</p><ol type=\"a\"><li>Hợp lực của hai lực là bao nhiêu?</li><li>Tính moment của cặp lực đối với trục quay.</li><li>Muốn tạo moment $36\\ \\text{N}\\cdot\\text{m}$ thì mỗi tay phải đẩy một lực bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Nhìn thẳng vào bánh lái: hai tay ở hai đầu một đường kính, mỗi tay đẩy một lực 30 N theo phương tiếp tuyến, ngược chiều nhau, bánh lái quay quanh tâm\"><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"-0.00 115.0 135.0;-0.11 115.0 135.0;-0.45 115.0 135.0;-1.01 115.0 135.0;-1.80 115.0 135.0;-2.81 115.0 135.0;-4.05 115.0 135.0;-5.51 115.0 135.0;-7.20 115.0 135.0;-9.11 115.0 135.0;-11.25 115.0 135.0;-13.61 115.0 135.0;-16.20 115.0 135.0;-19.01 115.0 135.0;-22.05 115.0 135.0;-25.31 115.0 135.0;-28.80 115.0 135.0;-32.51 115.0 135.0;-36.45 115.0 135.0;-40.61 115.0 135.0;-45.00 115.0 135.0;-49.61 115.0 135.0;-54.45 115.0 135.0;-59.51 115.0 135.0;-64.80 115.0 135.0;-70.31 115.0 135.0;-76.05 115.0 135.0;-82.01 115.0 135.0;-88.20 115.0 135.0;-94.62 115.0 135.0;-101.25 115.0 135.0;-108.12 115.0 135.0;-115.20 115.0 135.0;-122.52 115.0 135.0;-130.05 115.0 135.0;-137.82 115.0 135.0;-145.80 115.0 135.0;-154.02 115.0 135.0;-162.45 115.0 135.0;-171.12 115.0 135.0;-180.00 115.0 135.0\" dur=\"1.67s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"115.0\" cy=\"135.0\" r=\"90.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"213.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"164.0\" y2=\"50.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"66.0\" y2=\"50.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"17.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"66.0\" y2=\"219.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"164.0\" y2=\"219.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><circle cx=\"115.0\" cy=\"135.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"205.0\" cy=\"135.0\" r=\"5\" fill=\"#f87171\"/><circle cx=\"25.0\" cy=\"135.0\" r=\"5\" fill=\"#f87171\"/><line x1=\"205.0\" y1=\"135\" x2=\"205.0\" y2=\"99.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M199.2,109.0 L205.0,99.0 L210.8,109.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"25.0\" y1=\"135\" x2=\"25.0\" y2=\"171.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M30.8,161.0 L25.0,171.0 L19.2,161.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"250\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 30 N mỗi tay</text><text x=\"250\" y=\"90\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hai tay cách nhau 0,90 m</text><text x=\"250\" y=\"118\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hợp lực = ?</text><text x=\"250\" y=\"138\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">M = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy chậm 2 lần: hai tay đẩy tiếp tuyến cùng lúc, bánh lái quay tại chỗ quanh tâm, bỏ qua ma sát. Bánh lái nặng chỉ dùng để mô phỏng, không dùng khi giải. Bán kính vẽ đúng tỉ lệ; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ngẫu lực là hai lực song song, ngược chiều, cùng độ lớn, cùng đặt vào một vật.</li><li><strong>Định luật:</strong> tổng hai lực của ngẫu lực bằng $\\vec 0$ nên ngẫu lực chỉ làm vật quay.</li><li><strong>Công thức:</strong> $M=F\\cdot d$, với $d$ là khoảng cách giữa hai giá của hai lực.</li><li>⚠ <strong>Điều kiện:</strong> $F$ là độ lớn của MỘT lực; $d$ đổi ra mét.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hợp lực của hai lực</span></p><p>Hai lực song song, ngược chiều, cùng độ lớn nên cộng vectơ cho:</p><div class=\"bt-ans\"><p>Hợp lực bằng <strong>0</strong>. Bánh lái <strong>không tịnh tiến</strong>, chỉ quay quanh trục.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Moment của ngẫu lực</span></p><p>$d$ là khoảng cách giữa hai giá, $F$ là độ lớn một lực:</p>$$M=F\\cdot d=30\\cdot0{,}90$$<div class=\"bt-ans\">$$M=27\\ \\text{N}\\cdot\\text{m}$$</div><p>Kiểm tra từng lực: mỗi lực có cánh tay đòn $0{,}45\\ \\text{m}$ và cùng làm quay một chiều:</p>$$M=30\\cdot0{,}45+30\\cdot0{,}45=27\\ \\text{N}\\cdot\\text{m}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực mỗi tay để có moment lớn hơn</span></p>$$F=\\dfrac{M'}{d}=\\dfrac{36}{0{,}90}$$<div class=\"bt-ans\">$$F=40\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Moment tăng $\\dfrac{36}{27}=\\dfrac{4}{3}$ lần thì lực tăng $\\dfrac{4}{3}$ lần: $30\\cdot\\dfrac{4}{3}=40\\ \\text{N}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Hợp lực bằng $0$</p><p>b) $M=27\\ \\text{N}\\cdot\\text{m}$</p><p>c) $F=40\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai lực song song ngược chiều bằng nhau</strong> → hợp lực bằng $0$, moment $M=F\\cdot d$ với $d$ là khoảng cách giữa hai giá.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Dữ kiện: hai lực 30 N song song ngược chiều đặt ở hai đầu một đường kính; hai giá cách nhau 0,90 m\"><circle cx=\"115.0\" cy=\"135.0\" r=\"90.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"213.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"164.0\" y2=\"50.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"66.0\" y2=\"50.1\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"17.0\" y2=\"135.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"66.0\" y2=\"219.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"115.0\" y1=\"135.0\" x2=\"164.0\" y2=\"219.9\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><circle cx=\"115.0\" cy=\"135.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"205.0\" cy=\"135.0\" r=\"5\" fill=\"#f87171\"/><circle cx=\"25.0\" cy=\"135.0\" r=\"5\" fill=\"#f87171\"/><line x1=\"205.0\" y1=\"135\" x2=\"205.0\" y2=\"99.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M199.2,109.0 L205.0,99.0 L210.8,109.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"25.0\" y1=\"135\" x2=\"25.0\" y2=\"171.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M30.8,161.0 L25.0,171.0 L19.2,161.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"205.0\" y1=\"60.0\" x2=\"205.0\" y2=\"218.0\" stroke=\"#f87171\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><line x1=\"25.0\" y1=\"60.0\" x2=\"25.0\" y2=\"218.0\" stroke=\"#f87171\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><line x1=\"25.0\" y1=\"242\" x2=\"205.0\" y2=\"242\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M198.0,237.9 L205.0,242.0 L198.0,246.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"205.0\" y1=\"242\" x2=\"25.0\" y2=\"242\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M32.0,246.1 L25.0,242.0 L32.0,237.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"115.0\" y=\"258\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">d = 0,90 m</text><text x=\"33.0\" y=\"160\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><text x=\"197.0\" y=\"124\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F</text><text x=\"250\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 30 N mỗi tay</text><text x=\"250\" y=\"90\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">d = 0,90 m</text><text x=\"250\" y=\"118\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hỏi: hợp lực ; M ; F′</text></svg><figcaption>Dữ kiện: nét đứt đỏ là giá của hai lực, khoảng cách giữa hai giá là 0,90 m. Bán kính vẽ đúng tỉ lệ; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“hai tay nắm cách nhau $0{,}90\\ \\text{m}$”</td><td>Khoảng cách giữa hai giá: $0{,}90$ m</td><td>Khái niệm: ngẫu lực; khoảng cách giữa hai giá</td></tr><tr><td>“mỗi tay đẩy một lực $30\\ \\text{N}$ … tiếp tuyến … ngược chiều nhau”</td><td>$F_1=F_2=30$ N; song song, ngược chiều</td><td>⚠ Hai lực này có thoả định nghĩa ngẫu lực không? Cần kiểm tra những tính chất nào?</td></tr><tr><td>“a) hợp lực của hai lực”</td><td>Cần hợp lực</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) moment của cặp lực”</td><td>Cần $M$</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) moment $36\\ \\text{N}\\cdot\\text{m}$ … mỗi tay đẩy một lực bao nhiêu”</td><td>$M'=36$ N·m; hai lực vẫn bằng nhau</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai lực song song, ngược chiều, bằng nhau</b> → nghĩ tới <b>ngẫu lực</b>: hợp lực bằng 0, M = F·d.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hợp lực của hai lực",
+     "hoi": "Hợp lực của hai lực này là gì?",
+     "lua_chon": [
+      {
+       "text": "Bằng không, vì hai lực song song, ngược chiều, cùng độ lớn",
+       "dung": true
+      },
+      {
+       "text": "Bằng tổng hai độ lớn, vì cả hai cùng làm bánh lái quay",
+       "dung": false,
+       "vi_sao": "Cùng làm quay một chiều không có nghĩa là hai lực cùng chiều. Hai lực ngược chiều nên cộng vectơ cho không."
+      },
+      {
+       "text": "Khác không, vì bánh lái đang quay nên phải có hợp lực",
+       "dung": false,
+       "vi_sao": "Hợp lực chỉ quyết định chuyển động tịnh tiến của tâm. Ngẫu lực có hợp lực bằng không và chỉ làm vật quay tại chỗ."
+      }
+     ],
+     "loi_hay_gap": "Cộng độ lớn hai lực vì cả hai cùng làm bánh lái quay, hoặc cho rằng có quay thì phải có hợp lực khác không."
+    },
+    {
+     "tieu_de": "Moment của ngẫu lực",
+     "hoi": "Moment $M$ của ngẫu lực bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+     "dap_so": 27,
+     "sai_so": 0.2,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Chỉ tính một lực với bán kính nên được nửa moment thật, hoặc cộng hai lực rồi nhân khoảng cách.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân độ lớn một lực với khoảng cách giữa hai giá",
+       "dung": true
+      },
+      {
+       "text": "Cộng độ lớn hai lực rồi nhân với khoảng cách giữa hai giá",
+       "dung": false,
+       "vi_sao": "Mỗi lực chỉ có cánh tay đòn bằng một nửa khoảng cách giữa hai giá (trục ở giữa); cộng độ lớn rồi nhân cả khoảng cách là tính cánh tay đòn hai lần."
+      },
+      {
+       "text": "Nhân một lực với bán kính bánh lái",
+       "dung": false,
+       "vi_sao": "Chỉ tính một trong hai lực, trong khi cả hai lực cùng làm quay một chiều nên đều phải tính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực mỗi tay để có moment lớn hơn",
+     "hoi": "Để $M'=36\\ \\text{N}\\cdot\\text{m}$ thì mỗi tay phải đẩy một lực bao nhiêu $\\text{N}$?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Chia moment cho bán kính thay vì khoảng cách giữa hai giá, nên lực tìm được gấp đôi lực cần thiết.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia moment cho khoảng cách giữa hai giá",
+       "dung": true
+      },
+      {
+       "text": "Chia moment cho bán kính bánh lái",
+       "dung": false,
+       "vi_sao": "Bán kính không phải cánh tay đòn của ngẫu lực; $d$ là khoảng cách giữa hai giá."
+      },
+      {
+       "text": "Nhân moment với khoảng cách giữa hai giá",
+       "dung": false,
+       "vi_sao": "Nhân ra đơn vị $\\text{N}\\cdot\\text{m}^2$, không phải đơn vị lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Thanh có trọng lượng trên giá đỡ: tìm vị trí giá đỡ và lực giá đỡ",
+   "topic": "Moment lực và quy tắc moment",
+   "problem_html": "<p>Hai khối nặng được gắn chặt vào hai đầu $A$, $B$ của một thanh đồng chất $AB$ dài $1{,}0\\ \\text{m}$, trọng lượng $20\\ \\text{N}$. Khối ở $A$ nặng $40\\ \\text{N}$, khối ở $B$ nặng $20\\ \\text{N}$ (kích thước các khối bỏ qua). Thanh được đặt trên một giá đỡ nhọn $O$ dưới thanh và nằm ngang cân bằng.</p><ol type=\"a\"><li>Tính khoảng cách $OA$.</li><li>Tính lực giá đỡ tác dụng lên thanh.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Thanh có hai khối gắn ở hai đầu, đặt thử trên giá đỡ ở chính giữa thanh; thanh không nằm ngang\"><rect x=\"40.0\" y=\"187.0\" width=\"40.0\" height=\"8.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"-0.00 165.0 150.0;-0.01 165.0 150.0;-0.04 165.0 150.0;-0.08 165.0 150.0;-0.15 165.0 150.0;-0.24 165.0 150.0;-0.34 165.0 150.0;-0.46 165.0 150.0;-0.60 165.0 150.0;-0.76 165.0 150.0;-0.94 165.0 150.0;-1.14 165.0 150.0;-1.35 165.0 150.0;-1.59 165.0 150.0;-1.84 165.0 150.0;-2.11 165.0 150.0;-2.41 165.0 150.0;-2.72 165.0 150.0;-3.04 165.0 150.0;-3.39 165.0 150.0;-3.76 165.0 150.0;-4.14 165.0 150.0;-4.55 165.0 150.0;-4.97 165.0 150.0;-5.41 165.0 150.0;-5.87 165.0 150.0;-6.35 165.0 150.0;-6.85 165.0 150.0;-7.36 165.0 150.0;-7.90 165.0 150.0;-8.45 165.0 150.0;-9.02 165.0 150.0;-9.61 165.0 150.0;-10.22 165.0 150.0;-10.85 165.0 150.0;-11.50 165.0 150.0;-12.16 165.0 150.0;-12.84 165.0 150.0;-13.54 165.0 150.0;-14.26 165.0 150.0;-15.00 165.0 150.0\" dur=\"1.19s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"40.0\" y=\"146.0\" width=\"250.0\" height=\"8.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"40.0\" y=\"122.0\" width=\"24.0\" height=\"24.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"272.0\" y=\"128.0\" width=\"18.0\" height=\"18.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"52\" y=\"116\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"281\" y=\"122\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text></g><polygon points=\"165.0,154 155.0,172 175.0,172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"14\" y=\"20\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Khối A: 40 N</text><text x=\"14\" y=\"38\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Khối B: 20 N</text><text x=\"14\" y=\"56\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Thanh AB: dài 1,0 m, nặng 20 N</text><text x=\"165.0\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">giá đỡ đặt thử ở chính giữa thanh</text><text x=\"306\" y=\"140\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">OA = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy chậm 4 lần: giá đỡ đặt THỬ ở chính giữa (chưa phải vị trí cần tìm), thanh không giữ được nằm ngang, nghiêng rồi tựa vào gối chặn. Chiều dài thanh vẽ đúng tỉ lệ; kích thước khối không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thanh đồng chất có trọng tâm $G$ ở giữa; trọng lượng của thanh đặt tại $G$.</li><li><strong>Định luật:</strong> quy tắc moment: tổng moment thuận chiều kim đồng hồ bằng tổng moment ngược chiều. Vật cân bằng còn có tổng lực bằng $\\vec 0$.</li><li><strong>Công thức:</strong> $M=F\\cdot d$ cho từng lực.</li><li>⚠ <strong>Điều kiện:</strong> chọn trục qua $O$ để lực $N$ chưa biết có $d=0$; viết mọi khoảng cách theo cùng một ẩn $OA$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng tâm của thanh</span></p><p>Thanh đồng chất nên trọng tâm $G$ ở giữa thanh:</p>$$AG=\\dfrac{AB}{2}$$<div class=\"bt-ans\">$$AG=0{,}5\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Quy tắc moment, tìm $OA$</span></p><p>Đặt $OA=x$. Khối $A$ nặng hơn khối $B$ nên giả sử $O$ nằm giữa $A$ và $G$; sẽ kiểm lại sau.</p><p>Khi đó $OG=0{,}5-x$ và $OB=1{,}0-x$.</p><p>Chọn trục qua $O$ (lực $N$ có $d=0$). Moment làm phía $A$ đi xuống bằng moment làm phía $B$ đi xuống:</p>$$P_A\\cdot x=P\\cdot(0{,}5-x)+P_B\\cdot(1{,}0-x)$$$$40x=20(0{,}5-x)+20(1{,}0-x)$$$$80x=30$$<div class=\"bt-ans\">$$OA=0{,}375\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực giá đỡ</span></p><p>Tổng lực theo phương thẳng đứng bằng $0$, lực giá đỡ hướng lên:</p>$$N=P_A+P+P_B=40+20+20$$<div class=\"bt-ans\">$$N=80\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$x=0{,}375\\lt0{,}5$ nên $G$ đúng ở phía $B$ của $O$ ✓</p><p>Moment quanh $A$: $N\\cdot x=80\\cdot0{,}375=30\\ \\text{N}\\cdot\\text{m}$; $P\\cdot0{,}5+P_B\\cdot1{,}0=10+20=30\\ \\text{N}\\cdot\\text{m}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $OA=0{,}375\\ \\text{m}$</p><p>b) $N=80\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>vị trí giá đỡ</strong> của thanh có vật ở hai đầu → trục qua giá đỡ, đặt $OA=x$ và nhớ trọng lượng thanh đặt ở giữa.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Dữ kiện: thanh AB dài 1,0 m; trọng lượng 40 N tại A, 20 N tại trọng tâm G và 20 N tại B; vị trí giá đỡ chưa biết\"><rect x=\"40.0\" y=\"96.0\" width=\"250.0\" height=\"8.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"40.0\" y=\"72.0\" width=\"24.0\" height=\"24.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><rect x=\"272.0\" y=\"78.0\" width=\"18.0\" height=\"18.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><line x1=\"52\" y1=\"104\" x2=\"52.0\" y2=\"152.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M57.8,142.0 L52.0,152.0 L46.2,142.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"165.0\" y1=\"104\" x2=\"165.0\" y2=\"128.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M170.8,118.0 L165.0,128.0 L159.2,118.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"281\" y1=\"104\" x2=\"281.0\" y2=\"128.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M286.8,118.0 L281.0,128.0 L275.2,118.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"52.0\" y=\"168.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"10\">A</tspan></text><text x=\"52\" y=\"184\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 N</text><text x=\"165.0\" y=\"144.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"10\"></tspan></text><text x=\"165.0\" y=\"160\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">20 N (tại G)</text><text x=\"281.0\" y=\"144.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"10\">B</tspan></text><text x=\"281\" y=\"160\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">20 N</text><circle cx=\"165.0\" cy=\"100.0\" r=\"3.5\" fill=\"#94a3b8\"/><line x1=\"40\" y1=\"196\" x2=\"290\" y2=\"196\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M283.0,191.9 L290.0,196.0 L283.0,200.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"290\" y1=\"196\" x2=\"40\" y2=\"196\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,200.1 L40.0,196.0 L47.0,191.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"131.0\" y=\"214\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 1,0 m</text><text x=\"300\" y=\"40\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">giá đỡ O:</text><text x=\"300\" y=\"58\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chưa biết vị trí</text></svg><figcaption>Dữ kiện: giá đỡ O đặt ở đâu là điều cần tìm nên không vẽ. Chiều dài thanh vẽ đúng tỉ lệ; mũi tên vẽ theo tỉ lệ độ lớn lực.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thanh đồng chất $AB$ dài $1{,}0\\ \\text{m}$, trọng lượng $20\\ \\text{N}$”</td><td>$AB=1{,}0$ m; $P=20$ N</td><td>Khái niệm: trọng tâm của vật đồng chất</td></tr><tr><td>“khối ở $A$ nặng $40\\ \\text{N}$, khối ở $B$ nặng $20\\ \\text{N}$”</td><td>$P_A=40$ N tại $A$; $P_B=20$ N tại $B$</td><td>Khái niệm: moment của mỗi trọng lực đối với trục</td></tr><tr><td>“đặt trên một giá đỡ nhọn $O$ dưới thanh”</td><td>Lực $N$ của giá đỡ đặt tại $O$, chưa biết</td><td>⚠ Chọn trục ở đâu để lực chưa biết không xuất hiện trong phương trình moment?</td></tr><tr><td>“nằm ngang cân bằng”</td><td>Cân bằng</td><td>Định luật: điều kiện cân bằng của vật rắn</td></tr><tr><td>“a) khoảng cách $OA$”</td><td>Cần $OA$</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) lực giá đỡ”</td><td>Cần $N$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thanh trên giá đỡ, vật ở hai đầu</b> → nghĩ tới <b>trục qua giá đỡ</b> và <b>trọng lượng thanh ở giữa</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng tâm của thanh",
+     "hoi": "Trọng tâm $G$ của thanh cách đầu $A$ bao nhiêu mét?",
+     "dap_so": 0.5,
+     "sai_so": 0.005,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên rằng thanh có trọng lượng riêng đặt ở trọng tâm, hoặc đặt trọng tâm ở một đầu thanh."
+    },
+    {
+     "tieu_de": "Quy tắc moment, tìm $OA$",
+     "hoi": "Khoảng cách $OA$ bằng bao nhiêu mét?",
+     "dap_so": 0.375,
+     "sai_so": 0.005,
+     "don_vi": "m",
+     "loi_hay_gap": "Bỏ trọng lượng của thanh khỏi phương trình moment, hoặc viết các khoảng cách theo những ẩn khác nhau nên phương trình có hai ẩn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn trục qua giá đỡ, đặt $OA=x$, viết $OG$ và $OB$ theo $x$ rồi cho hai tổng moment bằng nhau",
+       "dung": true
+      },
+      {
+       "text": "Cho tổng các lực bằng không để tìm $OA$",
+       "dung": false,
+       "vi_sao": "Phương trình tổng lực chỉ cho lực của giá đỡ. Vị trí $O$ nằm trong điều kiện về moment."
+      },
+      {
+       "text": "Lấy $OA=OB$ vì thanh đồng chất",
+       "dung": false,
+       "vi_sao": "Đồng chất chỉ cho biết trọng tâm ở giữa thanh, không cho biết vị trí giá đỡ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực giá đỡ",
+     "hoi": "Lực $N$ của giá đỡ tác dụng lên thanh bằng bao nhiêu $\\text{N}$?",
+     "dap_so": 80,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên cộng trọng lượng của thanh, hoặc dùng lại phương trình moment quanh $O$ (trong đó $N$ không có mặt).",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho tổng các lực theo phương thẳng đứng bằng không",
+       "dung": true
+      },
+      {
+       "text": "Dùng thêm phương trình moment quanh $O$",
+       "dung": false,
+       "vi_sao": "Quanh $O$ lực $N$ có cánh tay đòn bằng không nên biến mất khỏi phương trình, không tìm được $N$."
+      },
+      {
+       "text": "Lấy $N$ bằng tổng trọng lượng hai khối, bỏ qua thanh",
+       "dung": false,
+       "vi_sao": "Thanh cũng có trọng lượng nên phải có mặt trong phương trình lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Thanh gắn bản lề giữ bằng dây xiên: lực căng và lực bản lề",
+   "topic": "Moment lực và quy tắc moment",
+   "problem_html": "<p>Một thanh đồng chất $AB$ dài $1{,}5\\ \\text{m}$, trọng lượng $40\\ \\text{N}$, nằm ngang, đỡ một biển hiệu quán ăn nặng $16\\ \\text{N}$ gắn chặt vào đầu $B$ (kích thước biển hiệu bỏ qua). Đầu $A$ gắn vào tường bằng bản lề. Một sợi dây buộc vào điểm $C$ trên thanh với $AC=1{,}2\\ \\text{m}$, đầu kia buộc vào tường ở phía trên bản lề; dây hợp với thanh góc $30^\\circ$ và giữ thanh nằm ngang.</p><ol type=\"a\"><li>Tính lực căng của dây.</li><li>Tính thành phần thẳng đứng của lực bản lề tác dụng lên thanh và cho biết nó hướng lên hay hướng xuống.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 352\" role=\"img\" aria-label=\"Thanh gắn tường bằng bản lề, đầu B gắn biển hiệu, dây buộc ở C đỡ thanh nằm ngang; khi dây đứt thanh quay xuống quanh bản lề\"><line x1=\"40.0\" y1=\"10.0\" x2=\"40.0\" y2=\"340.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"18.0\" x2=\"31.0\" y2=\"27.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"32.0\" x2=\"31.0\" y2=\"41.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"46.0\" x2=\"31.0\" y2=\"55.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"60.0\" x2=\"31.0\" y2=\"69.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"74.0\" x2=\"31.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"88.0\" x2=\"31.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"102.0\" x2=\"31.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"116.0\" x2=\"31.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"130.0\" x2=\"31.0\" y2=\"139.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"144.0\" x2=\"31.0\" y2=\"153.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"158.0\" x2=\"31.0\" y2=\"167.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"172.0\" x2=\"31.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"186.0\" x2=\"31.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"31.0\" y2=\"209.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"214.0\" x2=\"31.0\" y2=\"223.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"228.0\" x2=\"31.0\" y2=\"237.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"242.0\" x2=\"31.0\" y2=\"251.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"256.0\" x2=\"31.0\" y2=\"265.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"270.0\" x2=\"31.0\" y2=\"279.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"284.0\" x2=\"31.0\" y2=\"293.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"298.0\" x2=\"31.0\" y2=\"307.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"312.0\" x2=\"31.0\" y2=\"321.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"326.0\" x2=\"31.0\" y2=\"335.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><g><line x1=\"220.0\" y1=\"130.0\" x2=\"40.0\" y2=\"26.1\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><animate attributeName=\"opacity\" values=\"1;0;0\" keyTimes=\"0;0.02;1\" dur=\"1.04s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0.00 40.0 130.0;0.04 40.0 130.0;0.16 40.0 130.0;0.35 40.0 130.0;0.62 40.0 130.0;0.97 40.0 130.0;1.40 40.0 130.0;1.91 40.0 130.0;2.49 40.0 130.0;3.16 40.0 130.0;3.90 40.0 130.0;4.71 40.0 130.0;5.61 40.0 130.0;6.58 40.0 130.0;7.63 40.0 130.0;8.76 40.0 130.0;9.96 40.0 130.0;11.24 40.0 130.0;12.60 40.0 130.0;14.03 40.0 130.0;15.54 40.0 130.0;17.13 40.0 130.0;18.79 40.0 130.0;20.52 40.0 130.0;22.32 40.0 130.0;24.20 40.0 130.0;26.15 40.0 130.0;28.17 40.0 130.0;30.25 40.0 130.0;32.41 40.0 130.0;34.63 40.0 130.0;36.91 40.0 130.0;39.26 40.0 130.0;41.67 40.0 130.0;44.13 40.0 130.0;46.65 40.0 130.0;49.23 40.0 130.0;51.85 40.0 130.0;54.52 40.0 130.0;57.24 40.0 130.0;60.00 40.0 130.0\" dur=\"1.04s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"40.0\" y=\"127.0\" width=\"225.0\" height=\"6.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"253.0\" y=\"133.0\" width=\"24.0\" height=\"22.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/></g><circle cx=\"40.0\" cy=\"130.0\" r=\"5.5\" fill=\"currentColor\"/><text x=\"292\" y=\"30\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Thanh AB: dài 1,5 m</text><text x=\"292\" y=\"48\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Thanh nặng 40 N</text><text x=\"292\" y=\"66\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Biển hiệu 16 N gắn ở B</text><text x=\"292\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Dây buộc ở C</text><text x=\"292\" y=\"102\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">AC = 1,2 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy chậm 2 lần: NẾU dây đứt thì thanh quay xuống quanh bản lề (bỏ qua ma sát) — cho thấy dây phải giữ thanh. Thanh vẽ đúng tỉ lệ chiều dài, biển hiệu vẽ không theo tỉ lệ; khối lượng dùng để mô phỏng suy từ trọng lượng trong đề.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $d=r\\sin\\alpha$ cho lực xiên; thanh đồng chất có trọng tâm ở giữa.</li><li><strong>Định luật:</strong> vật rắn cân bằng khi tổng lực bằng $\\vec 0$ và tổng moment bằng $0$.</li><li><strong>Công thức:</strong> $M=F\\cdot d$ · theo phương thẳng đứng $\\sum F_y=0$.</li><li>⚠ <strong>Điều kiện:</strong> trục qua bản lề để lực bản lề có $d=0$; lực căng xiên chỉ có thành phần thẳng đứng $T\\sin30^\\circ$ trong phương trình lực theo phương đứng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cánh tay đòn của lực căng</span></p><p>Đối với trục qua bản lề $A$, dây hợp với thanh góc $30^\\circ$:</p>$$d_T=AC\\cdot\\sin30^\\circ=1{,}2\\cdot0{,}5$$<div class=\"bt-ans\">$$d_T=0{,}6\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Moment của hai trọng lực</span></p><p>Lực của bản lề có $d=0$ nên không có mặt. Trọng lượng thanh đặt ở $G$ cách $A$ nửa chiều dài; biển hiệu ở $B$:</p>$$M_P=P\\cdot\\dfrac{AB}{2}=40\\cdot0{,}75=30\\ \\text{N}\\cdot\\text{m}$$$$M_{P_1}=P_1\\cdot AB=16\\cdot1{,}5=24\\ \\text{N}\\cdot\\text{m}$$<div class=\"bt-ans\">$$M_P+M_{P_1}=54\\ \\text{N}\\cdot\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực căng dây</span></p><p>Thanh cân bằng nên moment của lực căng bằng tổng moment của hai trọng lực:</p>$$T\\cdot d_T=M_P+M_{P_1}$$$$T=\\dfrac{54}{0{,}6}$$<div class=\"bt-ans\">$$T=90\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực bản lề theo phương thẳng đứng</span></p><p>Thành phần thẳng đứng của lực căng hướng lên:</p>$$T_y=T\\sin30^\\circ=90\\cdot0{,}5=45\\ \\text{N}$$<p>Tổng lực theo phương thẳng đứng bằng $0$ (chiều lên là dương):</p>$$T_y+N_y-P-P_1=0$$$$N_y=40+16-45$$<div class=\"bt-ans\">$$N_y=11\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hướng của lực bản lề</span></p><div class=\"bt-ans\"><p>$N_y\\gt0$ nên thành phần thẳng đứng của lực bản lề hướng <strong>lên</strong>: dây đỡ được $45\\ \\text{N}$ trong $56\\ \\text{N}$ trọng lượng, bản lề đỡ nốt phần còn lại.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Lấy trục qua $B$: lực bản lề ở cách $B$ đoạn $1{,}5\\ \\text{m}$, thành phần đứng của lực căng cách $B$ đoạn $0{,}3\\ \\text{m}$ (cả hai hướng lên), trọng lượng thanh cách $B$ đoạn $0{,}75\\ \\text{m}$ (hướng xuống):</p>$$N_y\\cdot1{,}5+T_y\\cdot0{,}3=11\\cdot1{,}5+45\\cdot0{,}3=30\\ \\text{N}\\cdot\\text{m}$$$$P\\cdot0{,}75=40\\cdot0{,}75=30\\ \\text{N}\\cdot\\text{m}$$<p>Hai vế bằng nhau ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=90\\ \\text{N}$</p><p>b) $N_y=11\\ \\text{N}$, hướng lên</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>thanh gắn bản lề, dây xiên giữ</strong> → trục qua bản lề để tìm lực căng, rồi tổng lực theo phương đứng bằng $0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 266\" role=\"img\" aria-label=\"Dữ kiện: thanh nằm ngang gắn tường bằng bản lề ở A; dây buộc ở C hợp với thanh góc 30 độ; trọng lượng thanh 40 N, biển hiệu 16 N\"><line x1=\"40.0\" y1=\"10.0\" x2=\"40.0\" y2=\"240.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"18.0\" x2=\"31.0\" y2=\"27.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"32.0\" x2=\"31.0\" y2=\"41.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"46.0\" x2=\"31.0\" y2=\"55.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"60.0\" x2=\"31.0\" y2=\"69.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"74.0\" x2=\"31.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"88.0\" x2=\"31.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"102.0\" x2=\"31.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"116.0\" x2=\"31.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"130.0\" x2=\"31.0\" y2=\"139.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"144.0\" x2=\"31.0\" y2=\"153.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"158.0\" x2=\"31.0\" y2=\"167.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"172.0\" x2=\"31.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"186.0\" x2=\"31.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"31.0\" y2=\"209.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"214.0\" x2=\"31.0\" y2=\"223.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"228.0\" x2=\"31.0\" y2=\"237.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.7\"/><rect x=\"40.0\" y=\"127.0\" width=\"225.0\" height=\"6.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"253.0\" y=\"133.0\" width=\"24.0\" height=\"22.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><line x1=\"220.0\" y1=\"130.0\" x2=\"40.0\" y2=\"26.1\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"40.0\" cy=\"130.0\" r=\"5.5\" fill=\"currentColor\"/><path d=\"M194.0,115.0 A30,30 0 0 0 190.0,130.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"180.0\" y=\"108\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">30°</text><line x1=\"152.5\" y1=\"133\" x2=\"152.5\" y2=\"181.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M158.3,171.0 L152.5,181.0 L146.7,171.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"265.0\" y1=\"144\" x2=\"265.0\" y2=\"163.2\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M270.8,153.2 L265.0,163.2 L259.2,153.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"152.5\" cy=\"130.0\" r=\"3.5\" fill=\"#94a3b8\"/><text x=\"160.5\" y=\"188.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\"></tspan></text><text x=\"160.5\" y=\"206\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">40 N (tại G)</text><text x=\"277.0\" y=\"174.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">1</tspan></text><text x=\"277.0\" y=\"192\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">16 N</text><line x1=\"40\" y1=\"232\" x2=\"220.0\" y2=\"232\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M213.0,227.9 L220.0,232.0 L213.0,236.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"220.0\" y1=\"232\" x2=\"40\" y2=\"232\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,236.1 L40.0,232.0 L47.0,227.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"228.0\" y=\"236\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AC = 1,2 m</text><line x1=\"40\" y1=\"252\" x2=\"265.0\" y2=\"252\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M258.0,247.9 L265.0,252.0 L258.0,256.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"265.0\" y1=\"252\" x2=\"40\" y2=\"252\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,256.1 L40.0,252.0 L47.0,247.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"273.0\" y=\"256\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 1,5 m</text><text x=\"46\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"226.0\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C</text><text x=\"267.0\" y=\"122\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"292\" y=\"40\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T = ?  (lực căng dây)</text><text x=\"292.0\" y=\"60.0\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">N<tspan dy=\"4\" font-size=\"9\">y</tspan></text><text x=\"308\" y=\"60\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">= ?  (bản lề)</text></svg><figcaption>Dữ kiện: dây là đoạn màu cam, chưa vẽ lực căng và lực bản lề vì đó là đại lượng cần tìm. Thanh, điểm buộc dây và góc 30° vẽ đúng tỉ lệ; mũi tên trọng lực vẽ theo tỉ lệ độ lớn lực.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thanh đồng chất $AB$ dài $1{,}5\\ \\text{m}$, trọng lượng $40\\ \\text{N}$, nằm ngang”</td><td>$AB=1{,}5$ m; $P=40$ N</td><td>Khái niệm: trọng tâm của thanh đồng chất</td></tr><tr><td>“biển hiệu nặng $16\\ \\text{N}$ gắn chặt vào đầu $B$”</td><td>$P_1=16$ N tại $B$</td><td>Khái niệm: moment của trọng lực</td></tr><tr><td>“đầu $A$ gắn vào tường bằng bản lề”</td><td>Lực của bản lề chưa biết cả độ lớn lẫn hướng</td><td>⚠ Chọn trục ở đâu để lực chưa biết đó không xuất hiện trong phương trình moment?</td></tr><tr><td>“dây buộc vào $C$ với $AC=1{,}2\\ \\text{m}$ … hợp với thanh góc $30^\\circ$”</td><td>$AC=1{,}2$ m; $\\alpha=30^\\circ$; lực căng $T$ chưa biết</td><td>⚠ Góc $30^\\circ$ là góc giữa dây và đường nào? Cánh tay đòn của lực căng đo thế nào?</td></tr><tr><td>“giữ thanh nằm ngang”</td><td>Thanh cân bằng</td><td>Định luật: điều kiện cân bằng của vật rắn</td></tr><tr><td>“a) lực căng của dây”</td><td>Cần $T$</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) thành phần thẳng đứng của lực bản lề”</td><td>Cần độ lớn và hướng của $N_y$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thanh gắn bản lề và dây hợp góc với thanh</b> → nghĩ tới <b>trục qua bản lề</b>, cánh tay đòn <b>AC·sinα</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cánh tay đòn của lực căng",
+     "hoi": "Cánh tay đòn của lực căng dây đối với trục qua $A$ bằng bao nhiêu mét?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy cánh tay đòn bằng khoảng cách tới điểm buộc dây vì nhầm với giá của lực căng."
+    },
+    {
+     "tieu_de": "Moment của hai trọng lực",
+     "hoi": "Tổng moment của trọng lượng thanh và trọng lượng biển hiệu đối với trục qua $A$ bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+     "dap_so": 54,
+     "sai_so": 0.5,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Bỏ trọng lượng thanh, hoặc lấy cánh tay đòn của trọng lượng thanh bằng cả chiều dài thanh thay vì nửa chiều dài.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn trục qua bản lề $A$, cộng moment của trọng lượng thanh (đặt ở trọng tâm) và của biển hiệu",
+       "dung": true
+      },
+      {
+       "text": "Bỏ qua trọng lượng thanh vì thanh nằm ngang",
+       "dung": false,
+       "vi_sao": "Thanh đồng chất có trọng lượng riêng đặt ở trọng tâm, cách $A$ nửa chiều dài; không thể bỏ."
+      },
+      {
+       "text": "Lấy cánh tay đòn của trọng lượng thanh bằng cả chiều dài thanh",
+       "dung": false,
+       "vi_sao": "Trọng lượng của thanh đặt ở trọng tâm ở giữa thanh nên cánh tay đòn chỉ bằng nửa chiều dài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực căng dây",
+     "hoi": "Lực căng $T$ của dây bằng bao nhiêu $\\text{N}$?",
+     "dap_so": 90,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên nhân $\\sin30^\\circ$ nên cánh tay đòn của lực căng quá dài, hoặc cho lực căng bằng tổng hai trọng lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho moment của lực căng bằng tổng moment của hai trọng lực",
+       "dung": true
+      },
+      {
+       "text": "Cho lực căng bằng tổng hai trọng lượng",
+       "dung": false,
+       "vi_sao": "Lực căng được xác định bởi phương trình moment, không phải bằng cách cộng các trọng lượng."
+      },
+      {
+       "text": "Nhân lực căng với $AC$ rồi cho bằng tổng moment",
+       "dung": false,
+       "vi_sao": "Quên $\\sin30^\\circ$: lực căng xiên với thanh nên cánh tay đòn không phải $AC$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực bản lề theo phương thẳng đứng",
+     "hoi": "Độ lớn thành phần thẳng đứng của lực bản lề bằng bao nhiêu $\\text{N}$?",
+     "dap_so": 11,
+     "sai_so": 0.3,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho lực bản lề bằng tổng hai trọng lượng (bỏ dây), hoặc lấy cả lực căng chứ không chỉ thành phần thẳng đứng của nó.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho tổng các lực theo phương thẳng đứng bằng không, kể cả thành phần thẳng đứng của lực căng",
+       "dung": true
+      },
+      {
+       "text": "Cho lực bản lề theo phương đứng bằng tổng hai trọng lượng",
+       "dung": false,
+       "vi_sao": "Cách này bỏ qua thành phần thẳng đứng của lực căng trong phương trình lực theo phương đứng."
+      },
+      {
+       "text": "Cho lực bản lề bằng đúng lực căng của dây",
+       "dung": false,
+       "vi_sao": "Lực căng xiên nên chỉ thành phần thẳng đứng của nó nằm trong phương trình theo phương đứng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng của lực bản lề",
+     "hoi": "Thành phần thẳng đứng của lực bản lề hướng lên hay hướng xuống?",
+     "lua_chon": [
+      {
+       "text": "Hướng lên, vì dây mới đỡ được một phần trọng lượng",
+       "dung": true
+      },
+      {
+       "text": "Hướng xuống, vì dây kéo thanh lên",
+       "dung": false,
+       "vi_sao": "Hướng của lực bản lề do dấu của kết quả quyết định, không đoán theo việc dây kéo lên."
+      },
+      {
+       "text": "Bằng không, vì đã có dây đỡ",
+       "dung": false,
+       "vi_sao": "Có dây chưa suy ra bản lề không chịu lực theo phương đứng; phải kiểm bằng phương trình lực."
+      }
+     ],
+     "loi_hay_gap": "Đoán hướng theo cảm giác mà không xét dấu: thấy dây kéo lên nên cho bản lề kéo xuống.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét dấu của kết quả trong phương trình lực theo phương thẳng đứng",
+       "dung": true
+      },
+      {
+       "text": "Chọn hướng bản lề ngược chiều trọng lực rồi bỏ qua dấu của kết quả",
+       "dung": false,
+       "vi_sao": "Phải đối chiếu dấu của kết quả với chiều đã chọn; chọn trước rồi bỏ qua dấu có thể sai hướng."
+      },
+      {
+       "text": "Cho lực bản lề nằm ngang vì thanh nằm ngang",
+       "dung": false,
+       "vi_sao": "Thanh nằm ngang không có nghĩa lực bản lề nằm ngang; trọng lượng và dây đều có thành phần thẳng đứng cần cân bằng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Hai chị em chơi bập bênh có trục quay đặt ở giữa ván, bỏ qua trọng lượng ván. Người chị (bên phải) nặng $P_2=300\\ \\text{N}$, ngồi cách trục $d_2=1{,}0\\ \\text{m}$. Người em (bên trái) nặng $P_1=200\\ \\text{N}$. Người em phải ngồi cách trục bao nhiêu để bập bênh cân bằng?</p><details><summary>Hướng dẫn giải</summary><p>Trục qua trục bập bênh, quy tắc moment: $P_1d_1=P_2d_2$.</p><p>$200\\,d_1=300\\cdot1{,}0$ nên $d_1=1{,}5\\ \\text{m}$.</p><p>Kiểm tra: người nhẹ hơn ngồi xa trục hơn ✓</p></details><h4>Bài 2 · Dễ</h4><p>Một thanh dài $l=1{,}0\\ \\text{m}$, khối lượng $m=1{,}5\\ \\text{kg}$. Một đầu thanh gắn vào trần nhà bằng bản lề, đầu kia được giữ bằng sợi dây treo thẳng đứng. Trọng tâm của thanh cách bản lề $0{,}4\\ \\text{m}$. Lấy $g=10\\ \\text{m/s}^2$. Tính lực căng của dây.</p><details><summary>Hướng dẫn giải</summary><p>Trục qua bản lề (lực bản lề có $d=0$). Trọng lượng $P=mg=15\\ \\text{N}$ cách trục $0{,}4\\ \\text{m}$; lực căng $T$ cách trục $1{,}0\\ \\text{m}$ (cả hai lực thẳng đứng, thanh nằm ngang).</p><p>$T\\cdot l=P\\cdot d$ nên $T=\\dfrac{15\\cdot0{,}4}{1{,}0}=6\\ \\text{N}$.</p></details><h4>Bài 3 · Trung bình</h4><p>Một cột điện được giữ thẳng đứng nhờ một dây thép buộc vào đầu cột và gắn xuống đất; dây thép hợp với cột góc $30^\\circ$. Các dây cáp điện kéo đầu cột một lực $F=500\\ \\text{N}$ theo phương ngang, vuông góc với cột. Tính lực căng của dây thép để cột cân bằng.</p><details><summary>Hướng dẫn giải</summary><p>Trục qua chân cột (lực của đất có $d=0$). Gọi $h$ là chiều cao cột.</p><p>$F$ vuông góc cột nên cánh tay đòn là $h$. Lực căng $T$ hợp với cột góc $30^\\circ$ nên cánh tay đòn là $h\\sin30^\\circ$.</p><p>$F\\cdot h=T\\cdot h\\sin30^\\circ$ nên $T=\\dfrac{500}{0{,}5}=1000\\ \\text{N}$.</p></details><h4>Bài 4 · Trung bình</h4><p>Một người nâng một tấm gỗ đồng chất, tiết diện đều, trọng lượng $P=200\\ \\text{N}$, bằng lực $\\vec F$ vuông góc với tấm gỗ, đặt ở đầu trên, để tấm gỗ hợp với mặt đất góc $\\alpha=30^\\circ$. Đầu dưới tựa trên mặt đất không trượt. Tính độ lớn lực $F$.</p><details><summary>Hướng dẫn giải</summary><p>Trục qua đầu dưới của tấm gỗ. Gọi $l$ là chiều dài tấm gỗ.</p><p>$F$ vuông góc tấm gỗ nên cánh tay đòn là $l$. Trọng lượng đặt ở giữa tấm, cánh tay đòn là $\\dfrac{l}{2}\\cos30^\\circ$.</p><p>$F\\cdot l=P\\cdot\\dfrac{l}{2}\\cos30^\\circ$ nên $F=200\\cdot\\dfrac{1}{2}\\cdot\\dfrac{\\sqrt3}{2}=50\\sqrt3\\approx86{,}6\\ \\text{N}$.</p></details><h4>Bài 5 · Khó</h4><p>Một bánh xe bán kính $R=10\\ \\text{cm}$, khối lượng $3\\ \\text{kg}$, nằm sát một bậc cao $h=4\\ \\text{cm}$. Người ta kéo bánh xe bằng lực $F$ theo phương ngang, đặt vào trục bánh xe, để bánh xe leo lên bậc. Bỏ qua ma sát, lấy $g=10\\ \\text{m/s}^2$. Tìm lực $F$ nhỏ nhất.</p><details><summary>Hướng dẫn giải</summary><p>Khi bánh xe sắp rời mặt đất, nó chỉ còn tiếp xúc ở mép bậc $I$. Chọn trục qua $I$ (lực của bậc có $d=0$).</p><p>Cánh tay đòn của $F$ (nằm ngang) là khoảng cách thẳng đứng từ trục bánh xe tới $I$: $R-h=6\\ \\text{cm}$.</p><p>Cánh tay đòn của trọng lượng $P=30\\ \\text{N}$ là khoảng cách ngang từ trục bánh xe tới $I$: $\\sqrt{R^2-(R-h)^2}=8\\ \\text{cm}$.</p><p>$F\\cdot6\\ge30\\cdot8$ nên $F\\ge40\\ \\text{N}$; lực nhỏ nhất là $40\\ \\text{N}$.</p></details>"
+ }
+}

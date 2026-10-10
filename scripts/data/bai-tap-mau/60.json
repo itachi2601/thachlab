@@ -1,0 +1,471 @@
+{
+ "lesson_id": 60,
+ "lesson_title": "Bài 15. Định luật 2 Newton",
+ "generated_at": "2026-10-07",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải 6/6 dạng khớp; D2,D5 bỏ câu hỏi hướng/chiều (bước chỉ hiển thị) để hết lặp lua_chon+chon_buoc_ke; D6 đổi 1,8 tấn/900 N; tu_luan bỏ Bài 3 cũ (g=9,8), sửa lỗi chữ. 5 ví dụ cũ bỏ (VD1,5,6,8,13: lời giải sai/phụ thuộc hình). Cả 6 dạng cùng topic 123."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Xe điều khiển từ xa: tìm gia tốc từ lực và khối lượng",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Một xe điều khiển từ xa có khối lượng $250\\ \\text{g}$ đứng yên trên mặt bàn nhẵn. Động cơ kéo xe bằng lực nằm ngang $0{,}8\\ \\text{N}$; bỏ qua ma sát và lực cản của không khí. Tìm gia tốc của xe.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Xe điều khiển từ xa 250 gam đứng yên trên mặt bàn nhẵn, bị lực kéo ngang 0,8 N làm chuyển động nhanh dần\"><line x1=\"20.0\" y1=\"110.0\" x2=\"405.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">mặt bàn nhẵn</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 250 g</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">a = ?</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;0.07 0;0.30 0;0.66 0;1.18 0;1.84 0;2.66 0;3.62 0;4.72 0;5.98 0;7.38 0;8.93 0;10.62 0;12.47 0;14.46 0;16.60 0;18.89 0;21.32 0;23.91 0;26.64 0;29.51 0;32.54 0;35.71 0;39.03 0;42.50 0;46.12 0;49.88 0;53.79 0;57.85 0;62.05 0;66.41 0;70.91 0;75.56 0;80.35 0;85.30 0;90.39 0;95.63 0;101.01 0;106.55 0;112.23 0;118.06 0;124.03 0;130.16 0;136.43 0;142.85 0;149.41 0;156.13 0;162.99 0;170.00 0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"60.0\" y=\"84.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"72.0\" cy=\"105.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"104.0\" cy=\"105.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"116\" y1=\"94\" x2=\"164.0\" y2=\"94.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M154.0,88.2 L164.0,94.0 L154.0,99.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"122\" y=\"84\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 0,8 N</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe xuất phát từ nghỉ (thời gian phát chậm hơn thật; bấm Chạy mô phỏng). Vị trí tính theo công thức. Hình không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng là mức quán tính của vật; gia tốc là tốc độ thay đổi của vận tốc.</li><li><strong>Định luật 2 Newton:</strong> gia tốc cùng hướng hợp lực, tỉ lệ thuận với hợp lực, tỉ lệ nghịch với khối lượng.</li><li><strong>Công thức:</strong> $a=\\dfrac{F_{\\text{hl}}}{m}$, với $1\\ \\text{N}=1\\ \\text{kg}\\cdot\\text{m/s}^2$.</li><li><strong>Điều kiện:</strong> $F_{\\text{hl}}$ là hợp lực; $m$ phải đổi ra kg trước khi thế số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi khối lượng ra kg</span></p><p>Đơn vị lực là $\\text{N}=\\text{kg}\\cdot\\text{m/s}^2$ nên $m$ phải tính bằng kg.</p>$$m=250\\ \\text{g}=\\dfrac{250}{1000}\\ \\text{kg}$$<div class=\"bt-ans\">$$m=0{,}25\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính gia tốc</span></p><p>Bỏ qua ma sát và lực cản nên lực kéo nằm ngang là hợp lực: $F_{\\text{hl}}=0{,}8\\ \\text{N}$.</p>$$a=\\dfrac{F_{\\text{hl}}}{m}$$$$a=\\dfrac{0{,}8}{0{,}25}$$<div class=\"bt-ans\">$$a=3{,}2\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N/kg}=\\text{m/s}^2$.</p><p>Gia tốc cùng hướng lực kéo; xe tăng tốc nên hợp lí.</p><p>Nếu để $m=250$ (gam) rồi chia thì $a$ nhỏ đi $1000$ lần, vô lí với xe đồ chơi tăng tốc rõ rệt.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$a=3{,}2\\ \\text{m/s}^2$, cùng hướng lực kéo</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực và khối lượng (gam)</strong>, hỏi <strong>gia tốc</strong> → đổi ra kg rồi $a=F_{\\text{hl}}/m$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Xe điều khiển từ xa 250 gam chịu lực kéo ngang 0,8 N trên mặt bàn nhẵn\"><line x1=\"20.0\" y1=\"110.0\" x2=\"405.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">mặt bàn nhẵn</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 250 g</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">a = ?</text><rect x=\"60.0\" y=\"84.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"72.0\" cy=\"105.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"104.0\" cy=\"105.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"116\" y1=\"94\" x2=\"164.0\" y2=\"94.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M154.0,88.2 L164.0,94.0 L154.0,99.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"122\" y=\"84\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 0,8 N</text></svg><figcaption>Dữ kiện: khối lượng ở đơn vị gam, lực kéo ngang 0,8 N, bàn nhẵn nên không có ma sát. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“khối lượng $250\\ \\text{g}$”</td><td>$m=250\\ \\text{g}$</td><td>Khối lượng là mức quán tính; đơn vị SI là kg</td></tr><tr><td>“đứng yên trên mặt bàn nhẵn … bỏ qua ma sát và lực cản của không khí”</td><td>Không có lực cản</td><td>⚠ $F$ trong định luật 2 là hợp lực của các lực tác dụng lên vật</td></tr><tr><td>“kéo xe bằng lực nằm ngang $0{,}8\\ \\text{N}$”</td><td>$F=0{,}8\\ \\text{N}$ (nằm ngang)</td><td>Gia tốc cùng hướng hợp lực</td></tr><tr><td>“Tìm gia tốc của xe”</td><td>Cần $a$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực và khối lượng cho bằng gam</b>, hỏi gia tốc → nghĩ tới <b>định luật 2 Newton</b>, đổi ra <b>kg</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi khối lượng ra kg",
+     "hoi": "Khối lượng của xe bằng bao nhiêu kilôgam?",
+     "dap_so": 0.25,
+     "sai_so": 0.005,
+     "don_vi": "kg",
+     "loi_hay_gap": "Để nguyên số gam rồi đem chia: đơn vị lực N là kg·m/s², nên kết quả nhỏ đi khoảng một nghìn lần."
+    },
+    {
+     "tieu_de": "Tính gia tốc",
+     "hoi": "Gia tốc của xe bằng bao nhiêu?",
+     "dap_so": 3.2,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Đảo tỉ số (lấy khối lượng chia lực) hoặc nhân lực với khối lượng; gia tốc tỉ lệ thuận với lực và tỉ lệ nghịch với khối lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia hợp lực cho khối lượng đã đổi ra kg",
+       "dung": true
+      },
+      {
+       "text": "Chia khối lượng cho lực",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số: gia tốc tỉ lệ thuận với lực, tỉ lệ nghịch với khối lượng, nên lực ở tử số."
+      },
+      {
+       "text": "Nhân lực với khối lượng",
+       "dung": false,
+       "vi_sao": "Khối lượng lớn thì xe khó tăng tốc hơn nên gia tốc phải giảm khi $m$ tăng; phép nhân làm ngược lại, và đơn vị N·kg không phải $\\text{m/s}^2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Kéo thùng hàng có ma sát: hợp lực và gia tốc",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Một công nhân kéo thùng hàng $35\\ \\text{kg}$ trên sàn kho bằng sợi dây nằm ngang với lực $120\\ \\text{N}$. Sàn tác dụng lên thùng lực ma sát $50\\ \\text{N}$. Thùng đang trượt về phía người kéo. Tìm độ lớn và hướng gia tốc của thùng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Thùng hàng 35 kg trượt trên sàn kho, bị kéo bằng dây ngang 120 N, lực ma sát 50 N cản lại\"><line x1=\"20.0\" y1=\"120.0\" x2=\"405.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">sàn kho</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">a = ?  hướng?</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;0.05 0;0.21 0;0.47 0;0.83 0;1.30 0;1.88 0;2.55 0;3.33 0;4.22 0;5.21 0;6.30 0;7.50 0;8.80 0;10.21 0;11.72 0;13.33 0;15.05 0;16.88 0;18.80 0;20.83 0;22.97 0;25.21 0;27.55 0;30.00 0;32.55 0;35.21 0;37.97 0;40.83 0;43.80 0;46.88 0;50.05 0;53.33 0;56.72 0;60.21 0;63.80 0;67.50 0;71.30 0;75.21 0;79.22 0;83.33 0;87.55 0;91.88 0;96.30 0;100.83 0;105.47 0;110.21 0;115.05 0;120.00 0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"80.0\" y=\"78.0\" width=\"60.0\" height=\"42.0\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"110.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">35 kg</text><line x1=\"140\" y1=\"92\" x2=\"212.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M202.0,86.2 L212.0,92.0 L202.0,97.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 120 N</text><line x1=\"80\" y1=\"110\" x2=\"50.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M60.0,115.8 L50.0,110.0 L60.0,104.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"82\" y=\"68\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 50 N</tspan></text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng bắt đầu trượt từ nghỉ (bấm Chạy mô phỏng). Hai lực vẽ cùng tỉ lệ độ dài. Hình không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hợp lực là tổng vectơ mọi lực tác dụng lên vật; lực ma sát cản chuyển động nên ngược chiều chuyển động.</li><li><strong>Định luật 2 Newton:</strong> gia tốc cùng hướng hợp lực.</li><li><strong>Công thức:</strong> $a=\\dfrac{F_{\\text{hl}}}{m}$; hai lực ngược chiều trên một đường thẳng thì hợp lực bằng hiệu hai độ lớn.</li><li><strong>Điều kiện:</strong> $F$ là hợp lực chứ không phải một lực riêng lẻ; theo phương đứng, trọng lực và phản lực của sàn triệt tiêu nhau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tìm hợp lực</span></p><p>Chọn chiều dương là chiều chuyển động (chiều lực kéo). Lực kéo $F=120\\ \\text{N}$ cùng chiều dương, lực ma sát $F_{\\text{ms}}=50\\ \\text{N}$ ngược chiều dương.</p>$$F_{\\text{hl}}=F-F_{\\text{ms}}$$$$F_{\\text{hl}}=120-50$$<div class=\"bt-ans\">$$F_{\\text{hl}}=70\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính gia tốc</span></p>$$a=\\dfrac{F_{\\text{hl}}}{m}$$$$a=\\dfrac{70}{35}$$<div class=\"bt-ans\">$$a=2{,}0\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hướng của gia tốc</span></p><p>Gia tốc cùng hướng hợp lực. Hợp lực dương nên $\\vec a$ cùng chiều lực kéo, tức cùng chiều chuyển động.</p><div class=\"bt-ans\"><p>Gia tốc hướng về phía người kéo (cùng chiều lực kéo).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N/kg}=\\text{m/s}^2$.</p><p>Lực kéo lớn hơn ma sát nên thùng tăng tốc theo chiều kéo: hợp lí.</p><p>Nếu lấy riêng lực kéo chia cho khối lượng (bỏ ma sát) thì gia tốc lớn hơn thực tế; ma sát luôn làm giảm gia tốc khi cản chuyển động.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$a=2{,}0\\ \\text{m/s}^2$</p><p>Hướng: cùng chiều lực kéo (về phía người kéo)</p></div><p class=\"bt-note\">Nhận dạng: có <strong>lực kéo và lực ma sát</strong> cùng tác dụng → tìm <strong>hợp lực</strong> trước, rồi mới chia cho khối lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Thùng 35 kg chịu lực kéo ngang 120 N về bên phải và lực ma sát 50 N về bên trái\"><line x1=\"20.0\" y1=\"120.0\" x2=\"405.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">sàn kho</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">a = ?  hướng?</text><rect x=\"80.0\" y=\"78.0\" width=\"60.0\" height=\"42.0\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"110.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">35 kg</text><line x1=\"140\" y1=\"92\" x2=\"212.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M202.0,86.2 L212.0,92.0 L202.0,97.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 120 N</text><line x1=\"80\" y1=\"110\" x2=\"50.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M60.0,115.8 L50.0,110.0 L60.0,104.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"82\" y=\"68\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 50 N</tspan></text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">chiều chuyển động →</text></svg><figcaption>Dữ kiện: hai lực nằm ngang ngược chiều, vẽ cùng tỉ lệ độ dài. Hai lực thẳng đứng không vẽ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hàng $35\\ \\text{kg}$”</td><td>$m=35\\ \\text{kg}$</td><td>Khối lượng đã ở kg</td></tr><tr><td>“kéo … bằng sợi dây nằm ngang với lực $120\\ \\text{N}$”</td><td>$F=120\\ \\text{N}$ (ngang)</td><td>⚠ $F$ trong định luật 2 là hợp lực; theo phương đứng, trọng lực và phản lực của sàn triệt tiêu nhau</td></tr><tr><td>“sàn tác dụng lực ma sát $50\\ \\text{N}$”</td><td>$F_{\\text{ms}}=50\\ \\text{N}$</td><td>⚠ Lực ma sát cản chuyển động nên ngược chiều chuyển động</td></tr><tr><td>“đang trượt về phía người kéo”</td><td>Chiều chuyển động = chiều lực kéo</td><td>Chọn chiều dương</td></tr><tr><td>“độ lớn và hướng gia tốc”</td><td>Cần $a$ (m/s²) và hướng</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lực kéo và lực ma sát</b> cùng tác dụng → nghĩ tới <b>hợp lực</b>, không phải một lực riêng lẻ.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tìm hợp lực",
+     "hoi": "Độ lớn hợp lực nằm ngang tác dụng lên thùng bằng bao nhiêu?",
+     "dap_so": 70,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy luôn lực kéo làm hợp lực vì quên ma sát, hoặc cộng hai lực ngược chiều thay vì lấy hiệu."
+    },
+    {
+     "tieu_de": "Tính gia tốc",
+     "hoi": "Độ lớn gia tốc của thùng bằng bao nhiêu?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Chia lực kéo (chưa trừ ma sát) cho khối lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia hợp lực vừa tìm cho khối lượng của thùng",
+       "dung": true
+      },
+      {
+       "text": "Chia lực kéo cho khối lượng của thùng",
+       "dung": false,
+       "vi_sao": "Ma sát cũng tác dụng lên thùng, ngược chiều lực kéo; lực kéo chưa phải hợp lực."
+      },
+      {
+       "text": "Chia lực ma sát cho khối lượng của thùng",
+       "dung": false,
+       "vi_sao": "Lực ma sát chỉ là một trong hai lực nằm ngang; gia tốc do hợp lực của cả hai quyết định."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng của gia tốc"
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Xe đẩy siêu thị: chất thêm hàng, đổi lực đẩy",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Xe đẩy siêu thị còn rỗng được đẩy bằng lực ngang $15\\ \\text{N}$ thì có gia tốc $0{,}5\\ \\text{m/s}^2$. Sau khi chất lên xe một kiện hàng $40\\ \\text{kg}$, người ta đẩy bằng lực ngang $28\\ \\text{N}$. Bỏ qua ma sát, lực đẩy là hợp lực lên xe. Tìm gia tốc của xe khi đã chất hàng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Xe đẩy siêu thị rỗng đang tăng tốc với gia tốc 0,5 m/s² dưới lực đẩy 15 N; bên dưới là xe đã chất hàng 40 kg chịu lực đẩy 28 N\"><line x1=\"20.0\" y1=\"70.0\" x2=\"405.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"166.0\" x2=\"405.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">xe rỗng:  a<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 0,5 m/s²</tspan></text><text x=\"14\" y=\"100\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">xe chở hàng 40 kg:  a<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;0.07 0;0.30 0;0.66 0;1.18 0;1.84 0;2.66 0;3.62 0;4.72 0;5.98 0;7.38 0;8.93 0;10.62 0;12.47 0;14.46 0;16.60 0;18.89 0;21.32 0;23.91 0;26.64 0;29.51 0;32.54 0;35.71 0;39.03 0;42.50 0;46.12 0;49.88 0;53.79 0;57.85 0;62.05 0;66.41 0;70.91 0;75.56 0;80.35 0;85.30 0;90.39 0;95.62 0;101.01 0;106.55 0;112.23 0;118.06 0;124.03 0;130.16 0;136.43 0;142.85 0;149.41 0;156.13 0;162.99 0;170.00 0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"40.0\" y=\"44.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"52.0\" cy=\"65.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"84.0\" cy=\"65.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"96\" y1=\"54\" x2=\"141.0\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M131.0,48.2 L141.0,54.0 L131.0,59.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"102\" y=\"44\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 15 N</tspan></text></g><rect x=\"40.0\" y=\"140.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"52.0\" cy=\"161.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"84.0\" cy=\"161.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"48.0\" y=\"114.0\" width=\"40.0\" height=\"26.0\" rx=\"2\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><text x=\"68.0\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 kg</text><line x1=\"96\" y1=\"150\" x2=\"180.0\" y2=\"150.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M170.0,144.2 L180.0,150.0 L170.0,155.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"102\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 28 N</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chỉ xe rỗng (dữ kiện của đề) chuyển động (bấm Chạy mô phỏng). Xe chở hàng là trường hợp cần tìm nên đứng yên. Hai lực vẽ cùng tỉ lệ độ dài.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khối lượng là mức quán tính và cộng được: xe chở hàng chuyển động cùng nhau thì khối lượng cả hệ là tổng.</li><li><strong>Định luật 2 Newton:</strong> biết $F$ và $a$ thì suy ra $m$; biết $F$ và $m$ thì suy ra $a$.</li><li><strong>Công thức:</strong> $m=\\dfrac{F}{a}$ và $a=\\dfrac{F}{m}$.</li><li><strong>Điều kiện:</strong> bỏ qua ma sát nên lực đẩy là hợp lực ở cả hai trường hợp.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng xe rỗng</span></p><p>Trường hợp thứ nhất: lực đẩy là hợp lực, $F_1=15\\ \\text{N}$ và $a_1=0{,}5\\ \\text{m/s}^2$.</p>$$m_{\\text{xe}}=\\dfrac{F_1}{a_1}$$$$m_{\\text{xe}}=\\dfrac{15}{0{,}5}$$<div class=\"bt-ans\">$$m_{\\text{xe}}=30\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khối lượng khi chở hàng</span></p><p>Xe và kiện hàng chuyển động cùng nhau; khối lượng cộng được.</p>$$m=m_{\\text{xe}}+m_{\\text{hàng}}=30+40$$<div class=\"bt-ans\">$$m=70\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Gia tốc khi chở hàng</span></p>$$a_2=\\dfrac{F_2}{m}$$$$a_2=\\dfrac{28}{70}$$<div class=\"bt-ans\">$$a_2=0{,}40\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Lực đẩy tăng chưa tới gấp đôi, khối lượng tăng hơn gấp đôi nên gia tốc nhỏ hơn lúc xe rỗng: hợp lí.</p><p>Tỉ số: $\\dfrac{a_2}{a_1}=\\dfrac{F_2/F_1}{m/m_{\\text{xe}}}=\\dfrac{28/15}{70/30}=0{,}8$ và $\\dfrac{0{,}40}{0{,}5}=0{,}8$: khớp.</p><p>Nếu quên khối lượng hàng thì gia tốc lớn hơn lúc xe rỗng, trái với việc xe nặng hơn.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$a_2=0{,}40\\ \\text{m/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: <strong>cùng một xe, đổi lực hoặc chất thêm hàng</strong> → suy khối lượng từ $F$ và $a$, cộng khối lượng rồi tính lại.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Hai trường hợp của xe đẩy: xe rỗng với lực đẩy 15 N và gia tốc 0,5 m/s², xe chở hàng 40 kg với lực đẩy 28 N\"><line x1=\"20.0\" y1=\"70.0\" x2=\"405.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"166.0\" x2=\"405.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">xe rỗng:  a<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 0,5 m/s²</tspan></text><text x=\"14\" y=\"100\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">xe chở hàng 40 kg:  a<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><rect x=\"40.0\" y=\"44.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"52.0\" cy=\"65.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"84.0\" cy=\"65.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"96\" y1=\"54\" x2=\"141.0\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M131.0,48.2 L141.0,54.0 L131.0,59.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"102\" y=\"44\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 15 N</tspan></text><rect x=\"40.0\" y=\"140.0\" width=\"56.0\" height=\"20.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"52.0\" cy=\"161.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"84.0\" cy=\"161.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"48.0\" y=\"114.0\" width=\"40.0\" height=\"26.0\" rx=\"2\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\"/><text x=\"68.0\" y=\"132\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 kg</text><line x1=\"96\" y1=\"150\" x2=\"180.0\" y2=\"150.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M170.0,144.2 L180.0,150.0 L170.0,155.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"102\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 28 N</tspan></text></svg><figcaption>Dữ kiện: hai lực đẩy vẽ cùng tỉ lệ độ dài. Hai trường hợp là cùng một xe. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“còn rỗng … đẩy bằng lực ngang $15\\ \\text{N}$ … gia tốc $0{,}5\\ \\text{m/s}^2$”</td><td>$F_1=15\\ \\text{N}$; $a_1=0{,}5\\ \\text{m/s}^2$</td><td>Khối lượng xe chưa biết; định luật 2 liên hệ $F$, $m$, $a$</td></tr><tr><td>“chất lên xe một kiện hàng $40\\ \\text{kg}$”</td><td>$m_{\\text{hàng}}=40\\ \\text{kg}$</td><td>⚠ Khối lượng cộng được khi các vật chuyển động cùng nhau</td></tr><tr><td>“đẩy bằng lực ngang $28\\ \\text{N}$”</td><td>$F_2=28\\ \\text{N}$</td><td>Lực đẩy mới</td></tr><tr><td>“bỏ qua ma sát, lực đẩy là hợp lực”</td><td>Không ma sát</td><td>⚠ Lực đẩy là hợp lực ở cả hai trường hợp</td></tr><tr><td>“gia tốc của xe khi đã chất hàng”</td><td>Cần $a_2$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cùng một xe, đổi lực hoặc chất thêm hàng</b> → nghĩ tới <b>khối lượng cộng được</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng xe rỗng",
+     "hoi": "Khối lượng của xe khi chưa chất hàng bằng bao nhiêu?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "kg",
+     "loi_hay_gap": "Nhân lực với gia tốc thay vì chia, hoặc bỏ qua trường hợp thứ nhất vì nghĩ khối lượng xe chưa biết nên không tính được."
+    },
+    {
+     "tieu_de": "Khối lượng khi chở hàng",
+     "hoi": "Khối lượng của cả xe và kiện hàng bằng bao nhiêu?",
+     "dap_so": 70,
+     "sai_so": 0.5,
+     "don_vi": "kg",
+     "loi_hay_gap": "Chỉ lấy khối lượng kiện hàng (quên xe) hoặc giữ nguyên khối lượng xe rỗng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng khối lượng xe với khối lượng kiện hàng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ lấy khối lượng kiện hàng vì xe đã tính ở trường hợp trước",
+       "dung": false,
+       "vi_sao": "Xe và hàng chuyển động cùng nhau nên cả hai cùng là vật cần tăng tốc."
+      },
+      {
+       "text": "Giữ nguyên khối lượng xe vì chỉ lực đẩy thay đổi",
+       "dung": false,
+       "vi_sao": "Lực đẩy không làm đổi khối lượng; hàng chất lên xe làm tổng khối lượng tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc khi chở hàng",
+     "hoi": "Gia tốc của xe khi đã chất hàng bằng bao nhiêu?",
+     "dap_so": 0.4,
+     "sai_so": 0.01,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Chia lực đẩy mới cho khối lượng xe rỗng (quên hàng), hoặc giữ gia tốc cũ vì vẫn là chiếc xe ấy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia lực đẩy mới cho tổng khối lượng của xe và hàng",
+       "dung": true
+      },
+      {
+       "text": "Giữ gia tốc cũ vì vẫn là chiếc xe ấy",
+       "dung": false,
+       "vi_sao": "Lực đẩy và khối lượng đều đã đổi nên gia tốc phải tính lại."
+      },
+      {
+       "text": "Chia lực đẩy mới cho khối lượng xe rỗng",
+       "dung": false,
+       "vi_sao": "Kiện hàng nằm trên xe, chuyển động cùng xe, nên khối lượng cần tăng tốc gồm cả hàng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Thùng hàng từ nghỉ: gia tốc, vận tốc và quãng đường theo thời gian",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Một thùng hàng $12\\ \\text{kg}$ đứng yên trên sàn nằm ngang. Một người kéo thùng bằng lực ngang $54\\ \\text{N}$; lực ma sát giữa thùng và sàn là $18\\ \\text{N}$. Tìm vận tốc và quãng đường thùng đi được sau $6\\ \\text{s}$ kể từ lúc bắt đầu kéo.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Thùng hàng 12 kg đứng yên trên sàn ngang bị kéo bằng lực 54 N, lực ma sát 18 N, bắt đầu trượt\"><line x1=\"20.0\" y1=\"120.0\" x2=\"405.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">sàn nằm ngang</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">bắt đầu từ nghỉ</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">sau 6 s:  v = ?  s = ?</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;0.08 0;0.33 0;0.74 0;1.32 0;2.06 0;2.97 0;4.04 0;5.28 0;6.68 0;8.25 0;9.98 0;11.88 0;13.94 0;16.16 0;18.55 0;21.11 0;23.83 0;26.72 0;29.77 0;32.99 0;36.37 0;39.91 0;43.62 0;47.50 0;51.54 0;55.75 0;60.12 0;64.65 0;69.35 0;74.22 0;79.25 0;84.44 0;89.80 0;95.33 0;101.02 0;106.88 0;112.89 0;119.08 0;125.43 0;131.94 0;138.62 0;145.47 0;152.48 0;159.65 0;166.99 0;174.50 0;182.17 0;190.00 0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"80.0\" y=\"78.0\" width=\"60.0\" height=\"42.0\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"110.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 kg</text><line x1=\"140\" y1=\"92\" x2=\"194.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M184.0,86.2 L194.0,92.0 L184.0,97.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 54 N</text><line x1=\"80\" y1=\"110\" x2=\"62.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M71.4,115.4 L62.0,110.0 L71.4,104.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"82\" y=\"68\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 18 N</tspan></text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng bắt đầu trượt từ nghỉ rồi chạy 6 s đúng thời gian thật (bấm Chạy mô phỏng). Vị trí tính theo công thức. Hình không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hợp lực quyết định gia tốc; gia tốc quyết định vận tốc và vị trí thay đổi thế nào theo thời gian.</li><li><strong>Định luật 2 Newton:</strong> $a=\\dfrac{F_{\\text{hl}}}{m}$, cùng hướng hợp lực.</li><li><strong>Công thức động học</strong> (gia tốc không đổi): $v=v_0+at$ và $s=v_0t+\\tfrac12at^2$.</li><li><strong>Điều kiện:</strong> hợp lực không đổi nên $a$ không đổi, mới dùng được hai công thức động học; thùng xuất phát từ nghỉ nên $v_0=0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tìm hợp lực</span></p><p>Chọn chiều dương là chiều kéo. Lực kéo cùng chiều dương, lực ma sát ngược chiều dương.</p>$$F_{\\text{hl}}=F-F_{\\text{ms}}$$$$F_{\\text{hl}}=54-18$$<div class=\"bt-ans\">$$F_{\\text{hl}}=36\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính gia tốc</span></p>$$a=\\dfrac{F_{\\text{hl}}}{m}$$$$a=\\dfrac{36}{12}$$<div class=\"bt-ans\">$$a=3{,}0\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc sau 6 s</span></p><p>Thùng đứng yên lúc đầu nên $v_0=0$.</p>$$v=v_0+at$$$$v=0+3{,}0\\cdot6$$<div class=\"bt-ans\">$$v=18\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Quãng đường sau 6 s</span></p>$$s=v_0t+\\tfrac12at^2$$$$s=0+\\tfrac12\\cdot3{,}0\\cdot6^2$$<div class=\"bt-ans\">$$s=54\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{N/kg}=\\text{m/s}^2$; $\\text{m/s}^2\\cdot\\text{s}=\\text{m/s}$.</p><p>Cách kiểm khác: vận tốc trung bình $\\dfrac{0+18}{2}=9\\ \\text{m/s}$, nhân $6\\ \\text{s}$ ra $54\\ \\text{m}$: khớp.</p><p>Nếu nhân vận tốc cuối với $t$ thì ra gấp đôi, sai vì vận tốc tăng dần từ $0$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>$v=18\\ \\text{m/s}$, cùng chiều lực kéo</p><p>$s=54\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật bắt đầu từ nghỉ, có lực kéo và ma sát, hỏi sau t giây</strong> → định luật 2 Newton để có $a$, rồi công thức động học.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Thùng 12 kg chịu lực kéo 54 N và lực ma sát 18 N ngược chiều; sau 6 s cần tìm vận tốc và quãng đường\"><line x1=\"20.0\" y1=\"120.0\" x2=\"405.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"405\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">sàn nằm ngang</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">bắt đầu từ nghỉ</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">sau 6 s:  v = ?  s = ?</text><rect x=\"80.0\" y=\"78.0\" width=\"60.0\" height=\"42.0\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"110.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 kg</text><line x1=\"140\" y1=\"92\" x2=\"194.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M184.0,86.2 L194.0,92.0 L184.0,97.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"142\" y=\"82\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = 54 N</text><line x1=\"80\" y1=\"110\" x2=\"62.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M71.4,115.4 L62.0,110.0 L71.4,104.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"82\" y=\"68\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 18 N</tspan></text><line x1=\"110.0\" y1=\"134.0\" x2=\"300.0\" y2=\"134.0\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"205\" y=\"152\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">quãng đường s sau 6 s</text></svg><figcaption>Dữ kiện: hai lực nằm ngang vẽ cùng tỉ lệ độ dài; nét đứt xanh chỉ quãng đường cần tìm (chưa biết độ dài). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“thùng hàng $12\\ \\text{kg}$ đứng yên”</td><td>$m=12\\ \\text{kg}$; $v_0=0$</td><td>Dữ kiện ngầm: đứng yên</td></tr><tr><td>“kéo thùng bằng lực ngang $54\\ \\text{N}$”</td><td>$F=54\\ \\text{N}$ (ngang)</td><td>⚠ $F$ trong định luật 2 là hợp lực, không phải một lực riêng lẻ</td></tr><tr><td>“lực ma sát … là $18\\ \\text{N}$”</td><td>$F_{\\text{ms}}=18\\ \\text{N}$</td><td>⚠ Lực ma sát cản chuyển động nên ngược chiều chuyển động</td></tr><tr><td>“sau $6\\ \\text{s}$ kể từ lúc bắt đầu kéo”</td><td>$t=6\\ \\text{s}$</td><td>Công thức chuyển động thẳng biến đổi đều, dùng khi gia tốc không đổi</td></tr><tr><td>“vận tốc và quãng đường”</td><td>Cần $v$ (m/s) và $s$ (m)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật bắt đầu từ nghỉ, có lực kéo và ma sát, hỏi sau t giây</b> → định luật 2 Newton kết hợp động học.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tìm hợp lực",
+     "hoi": "Độ lớn hợp lực nằm ngang tác dụng lên thùng bằng bao nhiêu?",
+     "dap_so": 36,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy luôn lực kéo làm hợp lực, hoặc cộng lực kéo với lực ma sát."
+    },
+    {
+     "tieu_de": "Tính gia tốc",
+     "hoi": "Gia tốc của thùng bằng bao nhiêu?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Chia lực kéo (chưa trừ ma sát) cho khối lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng hợp lực vừa tìm: chia cho khối lượng",
+       "dung": true
+      },
+      {
+       "text": "Chia lực kéo cho khối lượng",
+       "dung": false,
+       "vi_sao": "Ma sát cũng tác dụng lên thùng nên lực kéo chưa phải hợp lực."
+      },
+      {
+       "text": "Chia khối lượng cho hợp lực",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số: gia tốc tỉ lệ nghịch với khối lượng, khối lượng phải ở mẫu số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc sau 6 s",
+     "hoi": "Vận tốc của thùng sau 6 s bằng bao nhiêu?",
+     "dap_so": 18,
+     "sai_so": 0.3,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhầm công thức vận tốc với công thức quãng đường (có ½ và $t^2$), hoặc lấy $s$ làm vận tốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật xuất phát từ nghỉ: dùng $v=v_0+at$ với $v_0=0$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $v=at^2$",
+       "dung": false,
+       "vi_sao": "$t^2$ chỉ xuất hiện ở công thức quãng đường; gia tốc đã là tốc độ đổi vận tốc nên $v=at$ khi xuất phát từ nghỉ."
+      },
+      {
+       "text": "Dùng $v=\\tfrac12at$",
+       "dung": false,
+       "vi_sao": "$\\tfrac12at$ là vận tốc trung bình trong khoảng thời gian đó (khi xuất phát từ nghỉ), không phải vận tốc tại thời điểm cuối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường sau 6 s",
+     "hoi": "Quãng đường thùng đi được sau 6 s bằng bao nhiêu?",
+     "dap_so": 54,
+     "sai_so": 1,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy vận tốc cuối nhân với thời gian (như chạy đều) hoặc quên hệ số ½.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $s=v_0t+\\tfrac12at^2$ với $v_0=0$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $s=vt$ với $v$ là vận tốc sau 6 s",
+       "dung": false,
+       "vi_sao": "Vận tốc tăng dần từ $0$, không giữ không đổi suốt 6 s; $vt$ cho quãng đường lớn hơn thực tế."
+      },
+      {
+       "text": "Dùng $s=at^2$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số $\\tfrac12$: quãng đường là $s=\\tfrac12at^2$ khi xuất phát từ nghỉ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khá · Ô tô phanh gấp: từ quãng đường phanh tìm lực hãm",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Ô tô khối lượng $1{,}4$ tấn đang chạy thẳng với tốc độ $108\\ \\text{km/h}$ thì tài xế phanh gấp. Xe để lại vết phanh dài $90\\ \\text{m}$ rồi dừng hẳn. Coi lực hãm không đổi và bỏ qua các lực cản khác. Tìm độ lớn của lực hãm và cho biết lực hãm hướng thế nào so với chiều chuyển động.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Ô tô 1,4 tấn đang chạy 108 km/h phanh gấp, để lại vết phanh dài 90 m rồi dừng; ô tô chậm dần rồi đứng yên\"><line x1=\"20.0\" y1=\"100.0\" x2=\"405.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,4 tấn   v₀ = 108 km/h</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">lực hãm = ?</text><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"370.0\" y1=\"100.0\" x2=\"370.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"100\" y1=\"124\" x2=\"370.0\" y2=\"124\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M363.0,119.9 L370.0,124.0 L363.0,128.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"370.0\" y1=\"124\" x2=\"100\" y2=\"124\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M107.0,128.1 L100.0,124.0 L107.0,119.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"179.0\" y=\"146\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vết phanh 90 m</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;11.13 0;22.03 0;32.70 0;43.12 0;53.32 0;63.28 0;73.01 0;82.50 0;91.76 0;100.78 0;109.57 0;118.12 0;126.45 0;134.53 0;142.38 0;150.00 0;157.38 0;164.53 0;171.45 0;178.12 0;184.57 0;190.78 0;196.76 0;202.50 0;208.01 0;213.28 0;218.32 0;223.12 0;227.70 0;232.03 0;236.13 0;240.00 0;243.63 0;247.03 0;250.20 0;253.12 0;255.82 0;258.28 0;260.51 0;262.50 0;264.26 0;265.78 0;267.07 0;268.12 0;268.95 0;269.53 0;269.88 0;270.00 0\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"36.0\" y=\"81.0\" width=\"64\" height=\"13\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M60.3,81.0 l5,-8 h17.9 l5,8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"47.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"89.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ô tô phanh đều tới khi dừng (thời gian phát không ứng với thời gian thật; bấm Chạy mô phỏng); tỉ lệ 3 px ứng 1 m. Vị trí tính theo công thức. Hình không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hãm làm vật chậm dần; hợp lực ngược chiều chuyển động thì gia tốc ngược chiều vận tốc.</li><li><strong>Định luật 2 Newton:</strong> $F_{\\text{hl}}=ma$, với hợp lực chính là lực hãm.</li><li><strong>Công thức động học</strong> không có $t$: $v^2-v_0^2=2as$.</li><li><strong>Điều kiện:</strong> lực hãm không đổi nên $a$ không đổi; đổi km/h ra m/s và tấn ra kg trước khi thế số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị</span></p>$$v_0=108\\ \\text{km/h}=\\dfrac{108}{3{,}6}\\ \\text{m/s}$$<div class=\"bt-ans\">$$v_0=30\\ \\text{m/s}$$</div><p>Khối lượng: $m=1{,}4\\ \\text{tấn}=1400\\ \\text{kg}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc</span></p><p>Chọn chiều dương là chiều chuyển động; lúc dừng $v=0$, quãng đường $s=90\\ \\text{m}$. Đề không cho thời gian nên dùng công thức không có $t$.</p>$$v^2-v_0^2=2as$$$$a=\\dfrac{v^2-v_0^2}{2s}=\\dfrac{0-30^2}{2\\cdot90}$$<div class=\"bt-ans\">$$a=-5{,}0\\ \\text{m/s}^2$$</div><p>Dấu âm: gia tốc ngược chiều chuyển động.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn lực hãm</span></p>$$F_{\\text{hl}}=ma$$$$|F_{\\text{hl}}|=1400\\cdot5{,}0$$<div class=\"bt-ans\">$$|F_{\\text{hl}}|=7000\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều của lực hãm</span></p><p>Gia tốc âm nên hợp lực (chính là lực hãm) ngược chiều chuyển động; trọng lực và phản lực của đường theo phương đứng triệt tiêu nhau.</p><div class=\"bt-ans\"><p>Lực hãm hướng ngược chiều chuyển động của xe.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{kg}\\cdot\\text{m/s}^2=\\text{N}$.</p><p>Thời gian phanh $t=\\dfrac{0-30}{-5{,}0}=6\\ \\text{s}$; vận tốc trung bình $\\dfrac{30+0}{2}\\cdot6=90\\ \\text{m}$: khớp quãng đường.</p><p>Nếu thế $108$ (km/h) thẳng vào công thức thì lực hãm lớn gấp gần $13$ lần, vô lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>Độ lớn lực hãm: $7000\\ \\text{N}$</p><p>Chiều: ngược chiều chuyển động của xe</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>quãng đường phanh và tốc độ ban đầu, không cho thời gian</strong>, hỏi lực → tìm gia tốc rồi áp dụng định luật 2 Newton.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Ô tô lúc bắt đầu phanh với vận tốc 108 km/h và lúc dừng sau vết phanh 90 m\"><line x1=\"20.0\" y1=\"100.0\" x2=\"405.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,4 tấn   v₀ = 108 km/h</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">lực hãm = ?</text><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"370.0\" y1=\"100.0\" x2=\"370.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"100\" y1=\"124\" x2=\"370.0\" y2=\"124\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M363.0,119.9 L370.0,124.0 L363.0,128.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"370.0\" y1=\"124\" x2=\"100\" y2=\"124\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M107.0,128.1 L100.0,124.0 L107.0,119.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"179.0\" y=\"146\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vết phanh 90 m</text><rect x=\"36.0\" y=\"81.0\" width=\"64\" height=\"13\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M60.3,81.0 l5,-8 h17.9 l5,8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"47.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"89.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"306.0\" y=\"81.0\" width=\"64\" height=\"13\" rx=\"3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><path d=\"M330.3,81.0 l5,-8 h17.9 l5,8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><circle cx=\"317.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><circle cx=\"359.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><line x1=\"104\" y1=\"62\" x2=\"164\" y2=\"62\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M154.0,56.2 L164.0,62.0 L154.0,67.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"104\" y=\"54\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀</text><text x=\"354.0\" y=\"72\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 0</text></svg><figcaption>Dữ kiện: vị trí bắt đầu phanh (đen) và vị trí dừng (xanh lá) cách nhau 90 m; vận tốc đầu vẽ theo tỉ lệ 2 px mỗi m/s. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ô tô khối lượng $1{,}4$ tấn”</td><td>$m=1{,}4$ tấn</td><td>Đổi tấn ra kg</td></tr><tr><td>“đang chạy … $108\\ \\text{km/h}$”</td><td>$v_0=108\\ \\text{km/h}$</td><td>⚠ Đổi km/h ra m/s trước khi thế số</td></tr><tr><td>“vết phanh dài $90\\ \\text{m}$ rồi dừng hẳn”</td><td>$s=90\\ \\text{m}$; $v=0$</td><td>Đề không cho thời gian phanh</td></tr><tr><td>“coi lực hãm không đổi … bỏ qua các lực cản khác”</td><td>Lực hãm là hợp lực, không đổi</td><td>⚠ $F$ trong định luật 2 là hợp lực; lực không đổi thì gia tốc không đổi</td></tr><tr><td>“độ lớn của lực hãm … hướng thế nào”</td><td>Cần $F$ (N) và chiều</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>quãng đường phanh, không cho thời gian</b>, hỏi lực hãm → nghĩ tới <b>định luật 2 Newton</b> kết hợp động học.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị",
+     "hoi": "Tốc độ ban đầu của ô tô bằng bao nhiêu mét trên giây?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhân với 3,6 thay vì chia, hoặc không đổi nên thế thẳng km/h vào công thức."
+    },
+    {
+     "tieu_de": "Gia tốc",
+     "hoi": "Gia tốc của ô tô (chiều dương là chiều chuyển động) bằng bao nhiêu?",
+     "dap_so": -5.0,
+     "sai_so": 0.1,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Quên số 2 trong $2as$, hoặc chia $v_0$ cho $s$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $v^2-v_0^2=2as$ với $v=0$ vì đề cho quãng đường, không cho thời gian",
+       "dung": true
+      },
+      {
+       "text": "Dùng $v=v_0+at$",
+       "dung": false,
+       "vi_sao": "Đề không cho thời gian phanh nên công thức này chưa dùng được."
+      },
+      {
+       "text": "Dùng $s=\\tfrac12at^2$ như xe xuất phát từ nghỉ",
+       "dung": false,
+       "vi_sao": "Lúc bắt đầu phanh xe đang chạy nhanh nên $v_0\\neq0$; công thức đó chỉ đúng khi $v_0=0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn lực hãm",
+     "hoi": "Độ lớn lực hãm bằng bao nhiêu?",
+     "dap_so": 7000,
+     "sai_so": 100,
+     "don_vi": "N",
+     "loi_hay_gap": "Để khối lượng ở đơn vị tấn khi nhân, nên lực nhỏ đi một nghìn lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng định luật 2: nhân khối lượng (đã đổi ra kg) với độ lớn gia tốc",
+       "dung": true
+      },
+      {
+       "text": "Nhân khối lượng với tốc độ ban đầu",
+       "dung": false,
+       "vi_sao": "Tích $mv_0$ có đơn vị $\\text{kg}\\cdot\\text{m/s}$, không phải N; lực cần gia tốc chứ không phải vận tốc."
+      },
+      {
+       "text": "Chia khối lượng cho gia tốc",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số: định luật 2 là $F=ma$, lực tỉ lệ thuận với cả hai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều của lực hãm"
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Khó · Tắt máy khi đang chạy đều: thời gian và quãng đường dừng",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "problem_html": "<p>Ô tô khối lượng $1{,}8$ tấn chạy thẳng đều với tốc độ $90\\ \\text{km/h}$ trên đường nằm ngang; khi đó lực kéo của động cơ là $900\\ \\text{N}$. Tại điểm O tài xế tắt máy, xe chạy chậm dần cho tới khi dừng. Coi lực cản của đường và không khí không đổi trong suốt quá trình. Tìm thời gian và quãng đường xe đi được từ O đến khi dừng.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-0\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Ô tô 1,8 tấn tắt máy tại điểm O khi đang chạy đều 90 km/h, chạy chậm dần rồi dừng\"><line x1=\"20.0\" y1=\"100.0\" x2=\"405.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,8 tấn   v₀ = 90 km/h (chạy đều)</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t = ?  s = ?</text><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><text x=\"100\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">O: tắt máy</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.00 0;11.34 0;22.44 0;33.30 0;43.92 0;54.31 0;64.45 0;74.36 0;84.03 0;93.46 0;102.65 0;111.60 0;120.31 0;128.79 0;137.02 0;145.02 0;152.78 0;160.30 0;167.58 0;174.62 0;181.42 0;187.99 0;194.31 0;200.40 0;206.25 0;211.86 0;217.23 0;222.36 0;227.26 0;231.91 0;236.33 0;240.51 0;244.44 0;248.14 0;251.61 0;254.83 0;257.81 0;260.56 0;263.06 0;265.33 0;267.36 0;269.15 0;270.70 0;272.02 0;273.09 0;273.93 0;274.52 0;274.88 0;275.00 0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"36.0\" y=\"81.0\" width=\"64\" height=\"13\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M60.3,81.0 l5,-8 h17.9 l5,8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"47.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"89.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: từ lúc tắt máy tại O đến khi xe dừng (thời gian phát không ứng với thời gian thật; bấm Chạy mô phỏng). Vị trí tính theo công thức. Hình không ghi kết quả, không vẽ tỉ lệ khoảng cách.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chuyển động thẳng đều có gia tốc bằng không, nên hợp lực bằng không (các lực cân bằng).</li><li><strong>Định luật 2 Newton:</strong> $F_{\\text{hl}}=ma$; $a=0$ thì $F_{\\text{hl}}=0$.</li><li><strong>Công thức động học:</strong> $v=v_0+at$ và $v^2-v_0^2=2as$.</li><li><strong>Điều kiện:</strong> lực cản không đổi nên $a$ không đổi sau khi tắt máy; đổi km/h ra m/s và tấn ra kg.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực cản lúc chạy đều</span></p><p>Xe chạy thẳng đều nên $a=0$, do đó $F_{\\text{hl}}=ma=0$: lực kéo cân bằng với lực cản.</p>$$F_{\\text{cản}}=F_{\\text{k}}$$<div class=\"bt-ans\">$$F_{\\text{cản}}=900\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc sau khi tắt máy</span></p><p>Tắt máy thì lực kéo không còn; lực cản trở thành hợp lực, ngược chiều chuyển động. Chọn chiều dương là chiều chuyển động; $m=1{,}8\\ \\text{tấn}=1800\\ \\text{kg}$.</p>$$a=\\dfrac{-F_{\\text{cản}}}{m}$$$$a=\\dfrac{-900}{1800}$$<div class=\"bt-ans\">$$a=-0{,}50\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian dừng</span></p><p>Đổi vận tốc đầu.</p>$$v_0=90\\ \\text{km/h}=25\\ \\text{m/s}$$$$v=v_0+at\\ \\Rightarrow\\ t=\\dfrac{v-v_0}{a}=\\dfrac{0-25}{-0{,}50}$$<div class=\"bt-ans\">$$t=50\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Quãng đường dừng</span></p>$$v^2-v_0^2=2as$$$$s=\\dfrac{v^2-v_0^2}{2a}=\\dfrac{0-25^2}{2\\cdot(-0{,}50)}$$<div class=\"bt-ans\">$$s=625\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Vận tốc trung bình $\\dfrac{25+0}{2}=12{,}5\\ \\text{m/s}$; nhân $50\\ \\text{s}$ ra $625\\ \\text{m}$: khớp.</p><p>Nếu coi xe vẫn chạy $25\\ \\text{m/s}$ suốt $50\\ \\text{s}$ thì ra $1250\\ \\text{m}$, gấp đôi; sai vì xe chậm dần.</p><p>Lực cản $900\\ \\text{N}$ lên xe $1{,}8$ tấn cho gia tốc cỡ vài phần mười $\\text{m/s}^2$: xe lăn bánh khá lâu mới dừng, hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>Thời gian: $t=50\\ \\text{s}$</p><p>Quãng đường: $s=625\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>chạy đều</strong> thì các lực cân bằng; <strong>tắt máy</strong> thì chỉ còn lực cản làm xe chậm dần.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-2\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Ô tô chạy đều với vận tốc 90 km/h và lực kéo động cơ 900 N trước khi tắt máy tại O\"><line x1=\"20.0\" y1=\"100.0\" x2=\"405.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,8 tấn   v₀ = 90 km/h (chạy đều)</text><text x=\"406\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t = ?  s = ?</text><line x1=\"100.0\" y1=\"100.0\" x2=\"100.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><text x=\"100\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">O: tắt máy</text><rect x=\"36.0\" y=\"81.0\" width=\"64\" height=\"13\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M60.3,81.0 l5,-8 h17.9 l5,8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"47.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"89.0\" cy=\"95.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"100\" y1=\"86\" x2=\"154.0\" y2=\"86.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M144.0,80.2 L154.0,86.0 L144.0,91.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"104\" y=\"72\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">k</tspan><tspan dy=\"-4\"> = 900 N</tspan></text><line x1=\"40\" y1=\"42\" x2=\"90.0\" y2=\"42\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M80.0,36.2 L90.0,42.0 L80.0,47.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"40\" y=\"36\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₀</text></svg><figcaption>Dữ kiện: lực kéo của động cơ và vận tốc vẽ theo tỉ lệ riêng của từng loại; lực cản không vẽ vì chưa biết. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ô tô khối lượng $1{,}8$ tấn”</td><td>$m=1{,}8$ tấn</td><td>Đổi tấn ra kg</td></tr><tr><td>“chạy thẳng đều với tốc độ $90\\ \\text{km/h}$”</td><td>$v_0=90\\ \\text{km/h}$; chuyển động thẳng đều</td><td>⚠ Đổi km/h ra m/s; liên hệ giữa vận tốc không đổi và gia tốc</td></tr><tr><td>“khi đó lực kéo của động cơ là $900\\ \\text{N}$”</td><td>$F_{\\text{k}}=900\\ \\text{N}$</td><td>Các lực cùng phương chuyển động</td></tr><tr><td>“tại điểm O tài xế tắt máy”</td><td>Lực kéo không còn</td><td>Xét lại các lực tác dụng lên xe</td></tr><tr><td>“lực cản … không đổi trong suốt quá trình”</td><td>$F_{\\text{cản}}$ không đổi</td><td>⚠ Lực không đổi thì gia tốc không đổi, mới dùng được công thức chuyển động thẳng biến đổi đều</td></tr><tr><td>“thời gian và quãng đường … đến khi dừng”</td><td>Cần $t$ (s) và $s$ (m); $v=0$ lúc dừng</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chạy đều</b> rồi <b>tắt máy</b> → nghĩ tới <b>hợp lực</b> của từng giai đoạn.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực cản lúc chạy đều",
+     "hoi": "Lực cản tác dụng lên xe lúc đang chạy đều bằng bao nhiêu?",
+     "dap_so": 900,
+     "sai_so": 10,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho rằng chạy đều thì không có lực cản, hoặc coi lực cản khác lực kéo vì xe đang chuyển động."
+    },
+    {
+     "tieu_de": "Gia tốc sau khi tắt máy",
+     "hoi": "Sau khi tắt máy, gia tốc của xe (chiều dương là chiều chuyển động) bằng bao nhiêu?",
+     "dap_so": -0.5,
+     "sai_so": 0.02,
+     "don_vi": "m/s²",
+     "loi_hay_gap": "Dùng hợp lực bằng không như lúc chạy đều, hoặc quên đổi tấn ra kg.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét lại các lực còn tác dụng sau khi tắt máy, rồi chia hợp lực cho khối lượng đã đổi ra kg",
+       "dung": true
+      },
+      {
+       "text": "Hợp lực vẫn là lực kéo trừ lực cản",
+       "dung": false,
+       "vi_sao": "Tắt máy thì lực kéo của động cơ không còn nữa."
+      },
+      {
+       "text": "Hợp lực vẫn bằng không như lúc chạy đều",
+       "dung": false,
+       "vi_sao": "Hợp lực chỉ bằng không khi lực kéo còn cân bằng lực cản; tắt máy rồi lực cản không còn được cân bằng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian dừng",
+     "hoi": "Từ lúc tắt máy đến khi xe dừng mất bao lâu?",
+     "dap_so": 50,
+     "sai_so": 1,
+     "don_vi": "s",
+     "loi_hay_gap": "Quên đổi km/h ra m/s, hoặc lẫn dấu của gia tốc nên ra thời gian âm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi vận tốc đầu ra m/s rồi dùng $v=v_0+at$ với $v=0$",
+       "dung": true
+      },
+      {
+       "text": "Lấy vận tốc đầu chia cho lực cản",
+       "dung": false,
+       "vi_sao": "Công thức $v=v_0+at$ cần gia tốc, không phải lực; chia cho lực thì đơn vị không ra giây."
+      },
+      {
+       "text": "Dùng gia tốc của giai đoạn chạy đều",
+       "dung": false,
+       "vi_sao": "Gia tốc lúc chạy đều bằng không; sau khi tắt máy hợp lực đổi nên gia tốc cũng đổi, phải dùng gia tốc mới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường dừng",
+     "hoi": "Quãng đường xe đi được từ O đến khi dừng bằng bao nhiêu?",
+     "dap_so": 625,
+     "sai_so": 10,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên số 2 trong $2as$, hoặc dùng $s=v_0t$ như chạy đều.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $v^2-v_0^2=2as$ (hoặc $s=v_0t+\\tfrac12at^2$) với số liệu đã có",
+       "dung": true
+      },
+      {
+       "text": "Dùng $s=v_0t$ như xe chạy đều",
+       "dung": false,
+       "vi_sao": "Xe chậm dần nên quãng đường nhỏ hơn quãng đường nếu giữ nguyên vận tốc đầu."
+      },
+      {
+       "text": "Dùng $s=\\dfrac{v_0^2}{a}$",
+       "dung": false,
+       "vi_sao": "Thiếu số 2 ở mẫu: từ $v^2-v_0^2=2as$ suy ra $s=\\dfrac{v_0^2}{2|a|}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của bài học, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 1. <strong class=\"font-bold\">Dưới tác dụng của hợp lực 20 N, một chiếc xe đồ chơi chuyển động với gia tốc</strong> $0,4\\,\\mathrm{m/}\\mathrm{s}^{2}$ <strong class=\"font-bold\">. Dưới tác dụng của hợp lực 50 N, chiếc xe chuyển động với gia tốc bao nhiêu?</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- $m=\\frac{F_{1}}{a_{1}}=\\frac{F_{2}}{a_{2}}\\Rightarrow a_{2}=\\frac{F_{2}a_{1}}{F_{1}}=\\frac{50.0,4}{20}=1\\,\\mathrm{m/}\\mathrm{s}^{2}$</p></details><h4>Bài 2 · Dễ</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/60/1790094179051-fig60.png\" alt=\"2.50 =0,36 ,m/s^ 2 &#36; - Thời gian vật đi được quãng đường 50m: &#36;v=v_ 0 +at\\Rightarrow t= v-v_ 0 a =6 \"> Bài 2. <strong class=\"font-bold\">Một người công nhân đẩy chiếc xe trượt có khối lượng m bằng 240 kg qua đoạn đường 2,3m trên một mặt hồ đóng băng không ma sát. Anh ta tác dụng một lực</strong> $\\vec{F}$ <strong class=\"font-bold\">theo phương ngang có độ lớn không đổi 130N. Nếu xe xuất phát từ trạng thái nghỉ thì vận tốc cuối cùng của nó là bao nhiêu?</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- Theo định luật II Newton, ta có: $a = \\frac{F}{m} = \\frac{130}{240} = 0,542\\ m/s^2$</p><p class=\"text-base leading-relaxed my-2\">- Tốc độ cuối cùng của chiếc xe là</p><p class=\"text-base leading-relaxed my-2\">$v^{2}-v_{0}^{2}=2aS\\Rightarrow v=\\sqrt{2aS}=\\sqrt{2.0,542.2,3}=1,6\\,\\mathrm{m/s}$</p></details><h4>Bài 3 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 3. <strong class=\"font-bold\">Một vật có khối lượng 50 kg chuyển động thẳng nhanh dần đều không vận tốc đầu, sau khi được 50 m thì vật có vận tốc 6 m/s. Bỏ qua ma sát</strong> <br />a) <strong class=\"font-bold\">Tính gia tốc và thời gian vật đi được quãng đường trên.</strong> <br />b) <strong class=\"font-bold\">Lực tác dụng lên vật là bao nhiêu?</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">a)</strong> Gia tốc của vật: $v^{2}-v_{0}^{2}=2aS\\Rightarrow a=\\frac{6^{2}-0}{2.50}=0,36\\,\\mathrm{m/}\\mathrm{s}^{2}$</p><p class=\"text-base leading-relaxed my-2\">- Thời gian vật đi được quãng đường 50m: $v=v_{0}+at\\Rightarrow t=\\frac{v-v_{0}}{a}=\\frac{6}{0,36}\\approx 16,67s$</p><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\">b)</strong> Lực tác dụng lên vật: $F=ma=50.0,36=18N$</p></details><h4>Bài 4 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 4. (SBT Chân trời sáng tạo): <strong class=\"font-bold\">Lần lượt tác dụng một lực có độ lớn không đổi F lên 1 vật có khối lượng</strong> $m_{1}$ <strong class=\"font-bold\">và vật 2 có khối lượng</strong> $m_{2}$ <strong class=\"font-bold\">thì thấy gia tốc của hai vật đó có độ lớn lần lượt là 5 m/s</strong>$^{2}$ <strong class=\"font-bold\">và 10 m/s</strong>$^{2}$<strong class=\"font-bold\">. Hỏi nếu tác dụng lực này lên vật 3 có khối lượng</strong> $m_{3}=m_{1}-m_{2}$ <strong class=\"font-bold\">thì độ lớn gia tốc của vật 3 bằng bao nhiều</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- Theo đề, ta có: $a_{2}=2a_{1}\\Leftrightarrow \\frac{F}{m_{2}}=2\\frac{F}{m_{1}}\\Rightarrow m_{1}=2m_{2}$</p><p class=\"text-base leading-relaxed my-2\">- Khi tác dụng lực F lên vật khối lượng $m_{3}=m_{1}-m_{2}=2m_{2}-m_{2}=m_{2}$</p><p class=\"text-base leading-relaxed my-2\">- Suy ra gia tốc của vật $m_{3}$ là: $a_{3}=a_{2}=10m/s^{2}$</p></details><h4>Bài 5 · Trung bình</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 5. (SBT Chân trời sáng tạo): <strong class=\"font-bold\">Một người mua hàng đẩy giỏ xe ban đầu đứng yên bởi một lực có độ lớn không đổi F thì nhận thấy phải mất t giây để xe đạt được tốc độ v. Biết rằng ban đầu giỏ xe không chứa hàng hóa và khối lượng xe khi đó là m. Hỏi sau khi hàng được đặt trọng giỏ xe thì người này cần phải tác động lực F' bằng bao nhiêu so với F để xe cũng đạt được tốc độ v từ trạng thái nghỉ sau t giây? Biết rằng khối lượng hàng hóa là</strong> $\\frac{m}{2}$</th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- Trong hai trường hợp, xe chở hàng đều đạt được tốc độ v từ trạng thái nghỉ nên gia tốc trong hai trường hợp này bằng nhau: $a=a'$</p><p class=\"text-base leading-relaxed my-2\">- Theo định luật II Newton: $\\frac{F}{m}=\\frac{F'}{m'}\\Leftrightarrow \\frac{F}{m}=\\frac{F'}{1,5m}\\Rightarrow F'=1,5F$</p></details><h4>Bài 6 · Khó</h4><div class=\"my-3 overflow-x-auto\"><table class=\"w-full border-collapse text-sm\" style=\"min-width:360px\"><thead><tr class=\"bg-white/5\"><th class=\"border border-white/10 p-2 align-top text-left font-bold\">Bài 6. <strong class=\"font-bold\">Một xe lăn khối lượng m = 50 kg, dưới tác dụng của một lực kéo chuyển động không vận tốc đầu từ đầu đến cuối phòng mất 10s. Khi chất lên xe một kiện hàng, xe phải chuyển động mất 20s. Bỏ qua ma sát. Tìm khối lượng của kiện hàng.</strong></th></tr></thead><tbody></tbody></table></div><details><summary>Hướng dẫn giải</summary><p class=\"text-base leading-relaxed my-2\"><strong class=\"font-bold\"></strong></p><p class=\"text-base leading-relaxed my-2\">- Chọn chiều chuyển động là chiều dương.</p><p class=\"text-base leading-relaxed my-2\">- Áp dụng định luật II Newton:</p><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">Khi chưa chở hàng: $F=ma_{1}$</li></ul><ul class=\"list-disc list-inside my-2 ml-4\"><li class=\"my-1\">Khi chở hàng: $F=\\left( m+m' \\right)a_{2}$ (m' là khối lượng hàng)</li></ul><p class=\"text-base leading-relaxed my-2\">- Suy ra: $ma_{1}=\\left( m+m' \\right)a_{2}$</p><p class=\"text-base leading-relaxed my-2\">- Quãng đường xe di chuyển: $S=\\frac{1}{2}a_{1}t_{1}^{2}=\\frac{1}{2}a_{2}t_{2}^{2}$</p><p class=\"text-base leading-relaxed my-2\">- Gia tốc $a_{1}=\\frac{2S}{t_{1}^{2}}$ và $a_{2}=\\frac{2S}{t_{2}^{2}}\\Leftrightarrow m\\frac{2S}{t_{1}^{2}}=\\left( m+m' \\right)\\frac{2S}{t_{2}^{2}}\\Leftrightarrow \\frac{m}{100}=\\frac{m+m'}{400}\\Leftrightarrow m'=3m=3.50=150kg$</p><p class=\"text-base leading-relaxed my-2\">- Vậy khối lượng hàng bằng 150 kg</p></details>"
+ }
+}
