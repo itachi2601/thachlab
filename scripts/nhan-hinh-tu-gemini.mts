@@ -5,7 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { normalizeFigureSpec, renderFigureSpec } from "../services/figure-spec";
+import { normalizeFigureInput, renderFigureInput } from "../services/figure-spec";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(scriptDir, "data", "gemini-hinh");
@@ -29,9 +29,9 @@ for (const f of files) {
   let svg = "";
   if (raw.kind === "khong_ve_duoc") { k.trang_thai = "khong_ve_duoc"; k.mo_ta = raw.mo_ta as string; }
   else {
-    const spec = normalizeFigureSpec(raw);
-    if (!spec) { k.trang_thai = "spec_loi"; k.loi = "normalizeFigureSpec trả null (thiếu trục/khoảng/series?)"; }
-    else { svg = renderFigureSpec(spec); fs.writeFileSync(path.join(svgDir, `${id}.svg`), svg); }
+    const spec = normalizeFigureInput(raw);
+    if (!spec) { k.trang_thai = "spec_loi"; k.loi = "spec không hợp lệ (thiếu trục/khoảng/series? hoặc một hình trong figures hỏng)"; }
+    else { svg = renderFigureInput(spec); fs.writeFileSync(path.join(svgDir, `${id}.svg`), svg); }
   }
   ket.push(k);
   const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");

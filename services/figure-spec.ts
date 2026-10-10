@@ -42,6 +42,17 @@ export type FigureSeries =
       dashed?: boolean;
     }
   | {
+      /** y = a·(x − h)² + k (chuyển động ném, x–t của chuyển động biến đổi đều, …). */
+      type: "parabola";
+      a: number;
+      h: number;
+      k: number;
+      domain?: [number, number];
+      color?: string;
+      label?: string;
+      dashed?: boolean;
+    }
+  | {
       /** y = y0 · e^(−x/tau) + yInf (phóng xạ, phóng điện tụ, …). */
       type: "exponential";
       y0: number;
@@ -73,7 +84,7 @@ export interface FigureSpec {
 const W = 440;
 const H = 260;
 const ML = 52;
-const MR = 34;
+const MR = 46; // chừa chỗ cho nhãn đường ở đầu mút bên phải
 const MT = 26;
 const MB = 40;
 const PALETTE = ["#2563eb", "#dc2626", "#16a34a", "#9333ea"];
@@ -145,6 +156,12 @@ export function normalizeFigureSpec(input: unknown): FigureSpec | null {
         const k = num(r.k);
         if (k === null || !dom || dom[0] <= 0) continue;
         series.push({ type: "hyperbola", k, domain: dom, ...common });
+      } else if (r.type === "parabola") {
+        const a = num(r.a);
+        const h = num(r.h);
+        const k = num(r.k);
+        if (a === null || a === 0 || h === null || k === null) continue;
+        series.push({ type: "parabola", a, h, k, domain: dom, ...common });
       } else if (r.type === "exponential") {
         const y0 = num(r.y0);
         const tau = num(r.tau);
@@ -196,6 +213,13 @@ export function normalizeFigureSpec(input: unknown): FigureSpec | null {
 
 /** Vẽ SVG từ spec. Trục/chữ dùng currentColor để hợp cả nền tối và sáng. */
 export function renderFigureSpec(spec: FigureSpec): string {
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" ` +
+    `style="max-width:${W}px;height:auto;display:block;margin:8px auto">${renderPlotInner(spec)}</svg>`
+  );
+}
+
+function renderPlotInner(spec: FigureSpec): string {
   const [x0, x1] = spec.xRange;
   const [y0, y1] = spec.yRange;
   const px = (x: number) => ML + ((x - x0) / (x1 - x0)) * (W - ML - MR);
@@ -251,6 +275,7 @@ export function renderFigureSpec(spec: FigureSpec): string {
   }
 
   // Đường
+  const labels: { x: number; y: number; text: string; color: string }[] = [];
   spec.series.forEach((s, i) => {
     const color = s.color ?? PALETTE[i % PALETTE.length];
     const dash = s.dashed ? ' stroke-dasharray="6,4"' : "";
@@ -264,6 +289,7 @@ export function renderFigureSpec(spec: FigureSpec): string {
         let y: number;
         if (s.type === "sinusoid") y = s.A * Math.cos((2 * Math.PI * x) / s.T + (s.phi ?? 0)) + (s.y0 ?? 0);
         else if (s.type === "hyperbola") y = x !== 0 ? s.k / x : NaN;
+        else if (s.type === "parabola") y = s.a * (x - s.h) ** 2 + s.k;
         else y = s.y0 * Math.exp(-x / s.tau) + (s.yInf ?? 0);
         pts.push([x, y]);
       }
@@ -282,13 +308,19 @@ export function renderFigureSpec(spec: FigureSpec): string {
     for (const seg of segs)
       out.push(`<polyline points="${seg}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"${dash}/>`);
     if (s.label) {
-      // Nhãn đặt ở điểm 1/3 (đường lẻ) hay 2/3 (đường chẵn) chiều dài để hai đường gặp nhau ở cuối không đè nhãn lên nhau.
       const vis = pts.filter(([x, y]) => Number.isFinite(y) && inX(x) && inY(y));
-      const at = vis[Math.min(vis.length - 1, Math.floor(vis.length * (i % 2 === 0 ? 0.33 : 0.66)))];
-      if (at)
-        out.push(`<text x="${(px(at[0]) + 4).toFixed(1)}" y="${(py(at[1]) - 7).toFixed(1)}" font-size="12" font-family="sans-serif" fill="${color}">${esc(s.label)}</text>`);
+      // Luôn đặt nhãn ở ĐẦU MÚT PHẢI (điểm có x lớn nhất), ngay bên phải đường.
+      let end = vis[0];
+      for (const q of vis) if (q[0] >= end[0]) end = q;
+      if (end) labels.push({ x: px(end[0]) + 6, y: py(end[1]) + 4, text: s.label, color });
     }
   });
+
+  // Nhãn đường: cùng một phía (bên phải đầu mút); hai nhãn gần nhau thì đẩy ra cho khỏi đè.
+  labels.sort((p, q) => p.y - q.y);
+  for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 14) labels[i].y = labels[i - 1].y + 14;
+  for (const l of labels)
+    out.push(`<text x="${l.x.toFixed(1)}" y="${l.y.toFixed(1)}" font-size="12" font-family="sans-serif" fill="${l.color}">${esc(l.text)}</text>`);
 
   // Điểm
   for (const p of spec.points ?? []) {
@@ -297,8 +329,50 @@ export function renderFigureSpec(spec: FigureSpec): string {
     if (p.label) text(px(p.x) + 6, py(p.y) - 6, p.label);
   }
 
+  return out.join("");
+}
+
+/** Câu có nhiều hình (4 đồ thị ở 4 phương án, hình 1–4 của mệnh đề a–d…): mỗi hình một spec, xếp lưới, có nhãn A/B/C/D. */
+export interface FigureSet {
+  kind: "multi";
+  cols: number;
+  panels: { nhan: string; spec: FigureSpec }[];
+}
+
+export function normalizeFigureInput(input: unknown): FigureSpec | FigureSet | null {
+  if (!input || typeof input !== "object") return null;
+  const o = input as Record<string, unknown>;
+  if (o.kind !== "multi") return normalizeFigureSpec(input);
+  if (!Array.isArray(o.figures)) return null;
+  const panels: FigureSet["panels"] = [];
+  for (const [i, f] of o.figures.slice(0, 8).entries()) {
+    const spec = normalizeFigureSpec(f);
+    if (!spec) return null; // thiếu một hình thì cả câu không dùng được — tránh đăng 3/4 phương án
+    const nhan = f && typeof f === "object" && typeof (f as Record<string, unknown>).nhan === "string" ? ((f as Record<string, unknown>).nhan as string).slice(0, 12) : String.fromCharCode(65 + i);
+    panels.push({ nhan, spec });
+  }
+  if (panels.length < 2) return null;
+  const cols = num(o.cols) === 1 ? 1 : 2;
+  return { kind: "multi", cols, panels };
+}
+
+export function renderFigureInput(f: FigureSpec | FigureSet): string {
+  if (f.kind === "plot") return renderFigureSpec(f);
+  const GAP = 16;
+  const CAP = 20;
+  const rows = Math.ceil(f.panels.length / f.cols);
+  const TW = f.cols * W + (f.cols - 1) * GAP;
+  const TH = rows * (H + CAP) + (rows - 1) * GAP;
+  const cells = f.panels.map((p, i) => {
+    const x = (i % f.cols) * (W + GAP);
+    const y = Math.floor(i / f.cols) * (H + CAP + GAP);
+    return (
+      `<text x="${x + 4}" y="${y + 14}" font-size="15" font-weight="700" font-family="sans-serif" fill="currentColor">${esc(p.nhan)}</text>` +
+      `<svg x="${x}" y="${y + CAP}" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${renderPlotInner(p.spec)}</svg>`
+    );
+  });
   return (
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" ` +
-    `style="max-width:${W}px;height:auto;display:block;margin:8px auto">${out.join("")}</svg>`
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${TW} ${TH}" width="100%" ` +
+    `style="max-width:${Math.min(TW, 720)}px;height:auto;display:block;margin:8px auto">${cells.join("")}</svg>`
   );
 }
