@@ -13,14 +13,7 @@ function env(key: string): string | undefined {
 }
 const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL")!, env("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
 
-const RULES: Record<string, RegExp> = {
-  // 2.105 / 3,5.10-5 / 1,2×104 : "10" dính liền số mũ, không có ^ hay {
-  muMatDau: /\d\s*(?:[.·×x*]|\\cdot|\\times)\s*10[-−–]?\d{1,2}(?![\d^_{])(?!\s*(?:[.,]\d))/g,
-  // 5 m3, 2 cm2, 10 km2
-  donViDai: /\d\s*(?:\\,|\s)?(?:mm|cm|dm|km|m)[23]\b(?![\^_{])/g,
-  // m/s2, kg/m3, g/cm3, rad/s2, J/kg.K2...
-  donViThuong: /\b(?:m|rad|km|cm)\/s[23]\b|\b(?:kg|g|N|C)\/(?:m|cm|dm)[23]\b/g,
-};
+import { MU_RULES as RULES } from "../lib/question-lint";
 
 type Hit = { id: number; grade: string; rule: string; ctx: string };
 const hits: Hit[] = [];

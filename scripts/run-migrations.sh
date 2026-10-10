@@ -20,6 +20,7 @@ FILES=(
   "supabase/migrations/20261011100000_exam_ta_preview.sql|Gửi đề cho trợ giảng xem trước: bảng exam_ta_previews (+RLS) và 1 policy SELECT trên exams cho TA đọc đề đã gửi dù còn ẩn|giờ nào cũng được; rollback perf/rollback/20261011100000_exam_ta_preview.down.sql"
   "supabase/migrations/20261010800000_an_cau_cat_cut_hien_thi.sql|Ẩn 181 câu ngân hàng còn lỗi cắt cụt/hiển thị (phương án rỗng, dính tab, đề thiếu giá trị); có bảng sao lưu|Chạy lúc nào cũng được (~180 dòng)"
   "supabase/migrations/20261010150000_ta_sua_buoi_7_ngay_va_doi_anh.sql|Trợ giảng sửa buổi chưa duyệt trong 7 ngày (policy ta_sessions, trước là 3) + hàm set_my_avatar để trợ giảng/giáo viên đổi ảnh đại diện|giờ nào cũng được; rollback ở cuối file"
+  "supabase/migrations/20261011120000_question_bank_lint_flags.sql|Thêm cột question_bank.lint_flags (text[], index GIN) cho lọc \"Chỉ câu sạch\" + question_content_hash bỏ khoá lint_ignored; chạy xong thì npx tsx scripts/cap-nhat-lint-flags.mts --ghi|giờ nào cũng được (ALTER nhanh); rollback ở cuối file"
 )
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
 # ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
