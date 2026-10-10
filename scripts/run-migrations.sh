@@ -14,16 +14,13 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261010400000_rank_chan_thuong_qua_cao.sql|Chặn thưởng quá cao cho điểm thấp: mục tiêu tuần có sàn 6 điểm + trần 40 RP, tiến bộ tuần cần đúng >=60%, hạ weekly_goal_rp mùa 4 từ 90 xuống 30; định nghĩa lại 2 hàm, không sửa RP đã cộng|giờ nào cũng được; rollback perf/rollback/20261010400000_rank_chan_thuong_qua_cao.down.sql"
-  "supabase/migrations/20261010410000_rank_thu_hoi_rp_vuot.sql|Thu hồi RP thưởng tuần/tiến bộ đã cộng vượt luật mới (về 0 nếu không đạt sàn 6 điểm / 60%, giảm về 30 nếu từng 90); sao lưu bảng rank_rp_awards_backup_20261010 + dòng âm vào lịch sử RP; bậc có thể tụt. XEM TRƯỚC: bash scripts/xem-truoc-thu-hoi-rp.sh|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261010420000_rank_ly_thuyet_muc_cong.sql|Mức cộng RP bài lý thuyết mới (15 RP/bài, trần 45/ngày 100/tuần, ôn lại 5 RP x3 lần) vào config mùa đang mở; chưa ai nộp nên không ảnh hưởng RP cũ|giờ nào cũng được; rollback ở đầu file (comment)"
-  "supabase/migrations/20261010300000_hsg_cham_nhanh.sql|Bảng chấm nhanh HSG KHTN 9: 2 bảng hsg_grade_tests/hsg_grade_sheets (RLS chỉ is_staff) + seed Pre-test Cơ học THCS; chỉ thêm bảng mới|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261010200000_hsg9_dot1_muc_noi_dung.sql|Khoá HSG đợt 1: tạo mục ly_thuyet + bai_tap_mau rỗng cho bài 154,155,160,162 (CĐ11,10,00,13), bật Hiện bài 160; chỉ thêm dữ liệu, idempotent|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261010100000_khoa_hsg9_vat_ly_khung.sql|Thêm KHOÁ 'Vật lí HSG & chuyên' vào KHTN 9: 1 môn hsg-vat-ly + 6 chương + 17 bài (đều published=false) + mục ly_thuyet/bai_tap_mau rỗng cho CĐ01, CĐ02; chỉ thêm dữ liệu, idempotent; cuối file in danh sách lesson_id|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261009180000_an_cau_de_hong_audit.sql|Ẩn (archived=true) 599 câu ngân hàng bị audit AI gắn de_hong (đề cắt cụt/thiếu dữ kiện); có bảng sao lưu question_bank_audit_de_hong_20261009|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261009100000_notify_exam_assigned.sql|Trigger báo chuông cho học sinh khi thầy giao bài kiểm tra / bài tập có đề (class_assessments, class_announcements); chỉ thêm hàm + trigger mới|giờ nào cũng được; rollback perf/rollback/20261009100000_notify_exam_assigned.down.sql"
   "supabase/migrations/20261006150000_quiz_live.sql|Đố vui lớp học (kiểu Kahoot): 4 bảng quiz_* + RPC cho học sinh ẩn danh/người điều khiển + tìm câu/đưa câu vào ngân hàng|Bất kỳ lúc nào (bảng/hàm mới, không đụng dữ liệu cũ; rollback perf/rollback/20261006150000_quiz_live.down.sql)"
 )
+# ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
+#   20261010300000_hsg_cham_nhanh (đã có bảng + 1 bài Pre-test; chạy lại báo policy tồn tại), 20261010100000_khoa_hsg9_vat_ly_khung
 # ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
