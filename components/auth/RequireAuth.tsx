@@ -1,8 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
+
+/** Theo dõi đổi địa chỉ (back/forward) cho `useSyncExternalStore` bên dưới. */
+function subscribeLocation(onChange: () => void) {
+  window.addEventListener("popstate", onChange);
+  return () => window.removeEventListener("popstate", onChange);
+}
 
 function Notice({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
@@ -40,7 +48,7 @@ export default function RequireAuth({
   restrictToAdmin = false,
   guestNotice,
   guestActions,
-  loginHref = "/dang-nhap",
+  loginHref,
   showSignUp = true,
   guestWide = false,
   guestHideAuthRow = false,
@@ -51,12 +59,24 @@ export default function RequireAuth({
   restrictToAdmin?: boolean;
   guestNotice?: React.ReactNode;
   guestActions?: React.ReactNode;
+  /** Đích nút Đăng nhập. Bỏ trống = giữ nguyên trang đang xem (xem `loginTarget` bên dưới). */
   loginHref?: string;
   showSignUp?: boolean;
   guestWide?: boolean;
   guestHideAuthRow?: boolean;
 }) {
   const { session, profile, loading } = useAuth();
+  // Giữ đích quay lại sau khi đăng nhập. Học sinh quét mã QR của đề (link có `?id=…`) mà chưa
+  // đăng nhập thì nút Đăng nhập PHẢI mang theo `?next=`, nếu không em bị thả về trang chủ và
+  // mất luôn mã đề vừa quét. Dùng `useSyncExternalStore` để đọc query string: không setState
+  // trong effect, và không cần bọc Suspense như `useSearchParams`.
+  const pathname = usePathname();
+  const search = useSyncExternalStore(
+    subscribeLocation,
+    () => window.location.search,
+    () => "",
+  );
+  const loginTarget = loginHref ?? `/dang-nhap?next=${encodeURIComponent(pathname + search)}`;
 
   if (!supabaseConfigured) {
     return (
@@ -80,7 +100,7 @@ export default function RequireAuth({
         {!guestHideAuthRow && (
           <div className={`mt-5 flex flex-wrap gap-3 ${guestWide ? "" : "justify-center"}`}>
             <Link
-              href={loginHref}
+              href={loginTarget}
               className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
             >
               Đăng nhập

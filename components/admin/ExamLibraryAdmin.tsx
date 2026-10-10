@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import ExamSection, { type ExamSectionSeed, type TopicGroup } from "@/components/admin/ExamSection";
+import ExamQrPanel from "@/components/admin/ExamQrPanel";
 import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
 import { useToast } from "@/components/ui/Toast";
 import { canonicalizeQuestionTopics, type Difficulty, type ExamQuestion, type SchoolClass } from "@/features/exams/types";
@@ -403,6 +404,23 @@ export default function ExamLibraryAdmin({
                   Xuất bản (học sinh thấy được)
                 </label>
               </div>
+
+              <ExamQrPanel
+                examId={full.id}
+                title={full.title}
+                meta={[
+                  `${questions.length || full.questions.length} câu`,
+                  `${full.duration_minutes} phút`,
+                  full.classIds.length > 0 ? classNames(full.classIds) : "",
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+                hint={
+                  publishedInput
+                    ? undefined
+                    : "Đề đang là BẢN NHÁP — học sinh quét mã sẽ thấy “Đề này đang ẩn”. Tích “Xuất bản” rồi bấm Lưu trước khi chiếu."
+                }
+              />
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className="text-xs font-semibold text-slate-400">

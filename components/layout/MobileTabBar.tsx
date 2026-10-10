@@ -310,6 +310,8 @@ export default function MobileTabBar() {
       { key: "rank", label: "Xếp hạng", href: "/lop-hoc/xep-hang", icon: "rank", active: onRank },
     ];
     more = [
+      // Quét mã QR của đề (thầy chiếu mã lên bảng) — xem app/quet-ma, components/admin/ExamQrPanel.tsx
+      { href: "/quet-ma", label: "Quét mã QR" },
       { href: "/lop-hoc/ket-qua", label: "Kết quả học tập" },
       { href: "/thong-bao", label: unread > 0 ? `Thông báo (${unread})` : "Thông báo" },
       { href: "/tin-nhan", label: "Tin nhắn" },
@@ -358,7 +360,7 @@ export default function MobileTabBar() {
   const moreBadge = kind === "thpt" || kind === "ta" ? dotIfUnread : undefined;
   const onMore =
     moreOpen ||
-    (kind === "thpt" && (match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc")));
+    (kind === "thpt" && (match("/quet-ma") || match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc")));
   const columns = items.length + (hasMore ? 1 : 0);
 
   return (

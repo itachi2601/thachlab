@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Flame, LogOut, Trophy } from "lucide-react";
+import { ChevronRight, Flame, LogOut, QrCode, Trophy } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -395,14 +395,26 @@ export default function ThptStudentHome({
               </p>
             </div>
           </div>
-          <button
-            onClick={onSignOut}
-            aria-label="Đăng xuất"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
-          >
-            <LogOut size={16} />
-            <span className="hidden sm:inline">Đăng xuất</span>
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            {/* Thầy chiếu mã QR của đề lên bảng → em quét là vào đúng đề (app/quet-ma).
+                Hạ cấp thành nút viền như "Đăng xuất" để không tranh chỗ nổi bật với thẻ Hôm nay (B2). */}
+            <Link
+              href="/quet-ma"
+              aria-label="Quét mã QR của đề"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-300 hover:border-white/30 hover:text-white sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
+            >
+              <QrCode size={16} />
+              <span className="hidden sm:inline">Quét mã</span>
+            </Link>
+            <button
+              onClick={onSignOut}
+              aria-label="Đăng xuất"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
+            >
+              <LogOut size={16} />
+              <span className="hidden sm:inline">Đăng xuất</span>
+            </button>
+          </div>
         </div>
         <HeroStats rank={rank} days={streakDays} weekGain={weekGain} />
       </section>

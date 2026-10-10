@@ -11,6 +11,17 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **10/10/2026 — Mã QR cho từng đề (thầy chiếu lên bảng, học sinh quét là vào đúng đề).** Bước 1 (phía thầy):
+  `components/admin/ExamQrPanel.tsx` hiện ở `/quan-tri/sua-de` (chọn đề nào là có QR) và ở `/quan-tri/dang-de`
+  (hiện ngay sau khi đăng xong) — QR + link + sao chép + tải PNG + nút **“Chiếu lên bảng”** (toàn màn hình, nền
+  trắng, QR lớn, mã đề lớn; Esc để đóng). QR sinh tại máy bằng `qrcode-generator` ở `lib/qr.ts`, không gọi dịch vụ
+  ngoài. Bước 2 (phía học sinh): trang mới `/quet-ma` — camera quét (Android dùng `BarcodeDetector` sẵn có, iPhone
+  tải chậm `jsqr` ngay lúc quét) + ô gõ số đề dự phòng; vào từ menu **“Thêm”** ở thanh đáy và nút **“Quét mã”** ở
+  trang chủ HS. `RequireAuth` nay giữ `?next=` nên quét lúc chưa đăng nhập vẫn quay về đúng đề sau khi đăng nhập.
+  Kiểm máy: `npx tsx scripts/kiem-qr.mts` (dựng ảnh từ `lib/qr.ts` rồi giải mã lại, 4/4 đúng), parser 15/15 ca,
+  `tsc` + `eslint` sạch, `next build` ra 88 trang tĩnh. **Chưa deploy, CHƯA thử bằng điện thoại thật** (cần thầy
+  chiếu thử một đề trên lớp và quét bằng cả iPhone + Android). Chưa làm: QR cho đề CNC (`CncExamComposer`) và cho
+  trang đăng bài học (`LessonImporter`).
 - **9/10/2026 — 6 bài lý thuyết tương tác L11 còn lại (B4, B7, B9, B10, B11, B15; id 23/26/28/29/30/34)** soạn bằng 6 agent + 6 kiểm chéo, ĐÃ GHI DB + deploy (commit `e37d29cc7`; bài 23/26/29 rỗng nên đăng bằng `upload-lesson.mts`, tạo đề 906–908; sao lưu `scripts/logs/ly-thuyet-bai{28,30,34}-backup-*`). Treo: video 4c, thầy đối chiếu SGK (xem `docs/memory/project_thachlab_l11_6_bai_con_lai.md`). L10/L11/L12 không còn bài thiếu.
 - [x] **Trang chủ HS: sửa sau khi xem trên web thật** (7/10/2026 tối, commit 1fdb79a27 + 0b7eff921, đã deploy + host đã kéo):
   thẻ Rank/Chuỗi ngày hết tràn mép phải ở 375px (grid item thiếu `min-w-0`), nút Luyện nhanh một dòng, chủ đề mở khoá gập còn 3;

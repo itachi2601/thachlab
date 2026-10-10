@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import ExamSection, { compressRasterInputs, type TopicGroup } from "@/components/admin/ExamSection";
+import ExamQrPanel from "@/components/admin/ExamQrPanel";
 import { useToast } from "@/components/ui/Toast";
 import { canonicalizeQuestionTopics, type SchoolClass } from "@/features/exams/types";
 import {
@@ -78,6 +79,8 @@ export default function AzotaExamComposer() {
   const [busy, setBusy] = useState(false);
   const [log, setLog] = useState<string[]>([]);
   const [doneLink, setDoneLink] = useState<string | null>(null);
+  // Đề vừa đăng xong — hiện ngay mã QR để thầy chiếu lên bảng, không phải sang trang Sửa đề tìm lại.
+  const [publishedExam, setPublishedExam] = useState<{ id: number; title: string; meta: string } | null>(null);
 
   useEffect(() => {
     fetchClasses().then((items) => {
@@ -213,6 +216,7 @@ export default function AzotaExamComposer() {
     if (!pubBundle || lessonId === null) return;
     setBusy(true);
     setDoneLink(null);
+    setPublishedExam(null);
     const steps: string[] = [];
     const push = (s: string) => {
       steps.push(s);
@@ -297,6 +301,13 @@ export default function AzotaExamComposer() {
       push("Xong.");
       createdExamId = null;
       setDoneLink(`/lop-hoc/bai/?id=${lessonId}`);
+      setPublishedExam({
+        id: examId,
+        title: rows.exam.title,
+        meta: [`${rows.exam.questions.length} câu`, `${rows.exam.duration_minutes} phút`, selectedClass?.name ?? ""]
+          .filter(Boolean)
+          .join(" · "),
+      });
       toast("success", "Đã đăng đề.");
       reloadExisting();
     } catch (e) {
@@ -547,6 +558,15 @@ export default function AzotaExamComposer() {
             </Link>
           )}
         </div>
+
+        {publishedExam && (
+          <ExamQrPanel
+            examId={publishedExam.id}
+            title={publishedExam.title}
+            meta={publishedExam.meta}
+            hint="Đề vừa đăng đã vào DB — chiếu mã này cho cả lớp quét ngay, không cần chờ deploy."
+          />
+        )}
 
         {log.length > 0 && (
           <pre className="max-h-48 overflow-auto whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-slate-300">
