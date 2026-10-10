@@ -41,7 +41,6 @@ export function useTheoryRp(itemId: number, bodyHtml: string, rootRef: React.Ref
     setFetched("loading");
   }
   const mode: Mode = total === 0 ? "off" : fetched;
-  const setMode = setFetched;
   const [availableAt, setAvailableAt] = useState<string | null>(null);
   const [count, setCount] = useState(0);
   const [busy, setBusy] = useState(false);
@@ -55,19 +54,19 @@ export function useTheoryRp(itemId: number, bodyHtml: string, rootRef: React.Ref
       const { data, error } = await sb.rpc("rank_theory_review_open", { p_item: itemId });
       if (!alive) return;
       const r = (error ? null : data) as { ok?: boolean; reason?: string; available_at?: string } | null;
-      if (!r) return setMode("off");
-      if (r.ok) return setMode("review");
+      if (!r) return setFetched("off");
+      if (r.ok) return setFetched("review");
       if (r.reason === "too_soon") {
         setAvailableAt(r.available_at ?? null);
-        return setMode("wait");
+        return setFetched("wait");
       }
-      if (r.reason === "max_rounds") return setMode("maxed");
+      if (r.reason === "max_rounds") return setFetched("maxed");
       if (r.reason === "no_first_pass") {
         void sb.rpc("rank_theory_open", { p_item: itemId }).then(() => {}, () => {});
-        return setMode("first");
+        return setFetched("first");
       }
-      setMode("off"); // no_key · not_student · no_season
-    })().catch(() => alive && setMode("off"));
+      setFetched("off"); // no_key · not_student · no_season
+    })().catch(() => alive && setFetched("off"));
     return () => { alive = false; };
   }, [itemId, total]);
 
@@ -96,7 +95,7 @@ export function useTheoryRp(itemId: number, bodyHtml: string, rootRef: React.Ref
       const fn = mode === "review" ? "rank_theory_review_submit" : "rank_theory_submit";
       const { data, error } = await getSupabase().rpc(fn, { p_item: itemId, p_answers: answers.current });
       const r = (error ? null : data) as Result | null;
-      if (!r || r.reason === "no_key" || r.reason === "not_student") setMode("off");
+      if (!r || r.reason === "no_key" || r.reason === "not_student") setFetched("off");
       else setResult(r);
     } finally {
       setBusy(false);
