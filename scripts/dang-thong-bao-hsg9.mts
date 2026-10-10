@@ -29,11 +29,15 @@ for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith(".json")).sort()) {
   if (dup?.length) { console.log(`≈ ${f}: trùng tiêu đề post ${dup[0].id} — bỏ qua`); continue; }
   console.log(`${yes ? "→ đăng" : "○ sẽ đăng"} ${f}: "${n.title}" [lớp ${n.class_ids.join(",")}]`);
   if (!yes) continue;
-  const { data, error } = await sb.rpc("create_post_with_targets", {
-    p_title: n.title, p_body: n.body_html, p_video_url: "", p_content_type: n.content_type,
-    p_subject_code: n.subject_code, p_class_ids: n.class_ids, p_course_ids: [],
-  });
+  // RPC create_post_with_targets đòi is_admin() (auth.uid()) nên service role không gọi được → ghi thẳng hai bảng.
+  const { data: ins, error } = await sb.from("posts").insert({
+    title: n.title, body: n.body_html, video_url: "", content_type: n.content_type,
+    subject_code: n.subject_code, published: true,
+  }).select("id").single();
   if (error) throw new Error(error.message);
+  const data = ins.id as number;
+  const { error: e2 } = await sb.from("post_classes").insert(n.class_ids.map((class_id: number) => ({ post_id: data, class_id })));
+  if (e2) { await sb.from("posts").delete().eq("id", data); throw new Error(e2.message); }
   n.posted_id = data;
   fs.writeFileSync(fp, JSON.stringify(n, null, 2) + "\n");
   const { data: row } = await sb.from("posts").select("published").eq("id", data).single();
