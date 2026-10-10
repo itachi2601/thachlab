@@ -27,13 +27,14 @@ export default function LoginPage() {
   useEffect(() => {
     if (authLoading || !session) return;
     const next = new URLSearchParams(window.location.search).get("next");
-    if (next && /^\/(?!\/)/.test(next)) {
-      router.replace(next);
-      return;
-    }
-    if (profile?.role === "admin" || profile?.role === "instructor") router.replace("/quan-tri");
-    else if (profile?.role === "parent") router.replace("/phu-huynh");
-    else router.replace("/tai-khoan");
+    let to = "/tai-khoan";
+    if (next && /^\/(?!\/)/.test(next)) to = next;
+    else if (profile?.role === "admin" || profile?.role === "instructor") to = "/quan-tri";
+    else if (profile?.role === "parent") to = "/phu-huynh";
+    router.replace(to);
+    // WebView cũ / mạng yếu đôi khi router.replace không chạy (kẹt "đang chuyển hướng"): sau 2,5s chuyển cứng.
+    const t = window.setTimeout(() => window.location.assign(to), 2500);
+    return () => window.clearTimeout(t);
   }, [authLoading, session, profile, router]);
 
   async function handleEmailLogin(e: React.FormEvent) {
@@ -96,6 +97,12 @@ export default function LoginPage() {
         {authLoading || session ? (
           <p className="mt-6 text-muted">
             {session ? "Bạn đã đăng nhập — đang chuyển hướng…" : "Đang kiểm tra đăng nhập…"}
+            {session && (
+              <>
+                {" "}
+                <a href="/tai-khoan" className="font-semibold text-primary underline">Bấm vào đây nếu không tự chuyển</a>
+              </>
+            )}
           </p>
         ) : !supabaseConfigured ? (
           <p className="mt-6 text-muted">
