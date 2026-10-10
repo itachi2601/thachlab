@@ -44,3 +44,4 @@ Các việc độc lập thì **gọi agent song song trong một lượt**. Bri
 
 ## Nhật ký rút kinh nghiệm
 - 2026-10-10 · tạo skill; chưa chạy thật vòng nào → sau vòng đầu, sửa quy tắc phân nhóm trong `doc-bao-loi.mts` (hàm `route`) cho khớp báo thật.
+- 2026-10-10 · vòng thật đầu: 7/9 báo đề 910 có `exam_id` rỗng (báo từ nút chung, không từ nút câu) → `doc-bao-loi.mts` nên suy `id=` từ `page_url` rồi nhóm theo đề. Báo "không đổi được ảnh/lưu" mà toast chung chung = lỗi PostgREST/RLS (không phải `Error`) → kiểm `pg_policies` trước. Đọc DB + ảnh bằng tab terminal (sandbox chặn supabase), ghi `admin_note` hàng loạt bằng 1 script (`scripts/tra-loi-bao-loi-*.mts`).
