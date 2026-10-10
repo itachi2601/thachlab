@@ -1,0 +1,525 @@
+{
+ "lesson_id": 167,
+ "lesson_title": "Bài tập tuần này: 12 bài tự luận Cơ học",
+ "review": {
+  "checked": true,
+  "notes": "tạm, chờ kiểm chéo"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Bài 7 · Vận dụng · Bình thông nhau có pittông · Thứ Tư 14/10",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Bình thông nhau gồm hai nhánh hình trụ tiết diện $S_1=100\\ \\text{cm}^2$ và $S_2=50\\ \\text{cm}^2$, chứa nước (trọng lượng riêng $10\\,000\\ \\text{N/m}^3$). Đặt lên mặt nước nhánh lớn một pittông mỏng, nhẹ, khít rồi đặt lên pittông một quả cân $1\\ \\text{kg}$. Lấy $g=10\\ \\text{N/kg}$.</p><ol type=\"a\"><li>Mực nước hai nhánh chênh lệch bao nhiêu? Nhánh nào cao hơn?</li><li>Đặt lên mặt nước nhánh nhỏ một pittông nhẹ, khít. Phải đặt lên pittông này quả cân khối lượng bao nhiêu để mực nước hai nhánh ngang nhau?</li><li>Bỏ pittông ở nhánh nhỏ (nhánh lớn vẫn còn pittông và quả cân $1\\ \\text{kg}$). Đổ dầu (trọng lượng riêng $8\\,000\\ \\text{N/m}^3$, không tan trong nước) vào nhánh nhỏ cho đến khi mặt nước hai nhánh ngang nhau. Tính chiều cao cột dầu.</li></ol><figure class=\"fig\"><svg viewBox=\"0 0 300 195\" style=\"max-width:300px;width:100%;height:auto\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#111\" stroke=\"#111\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" role=\"img\" aria-label=\"Bình thông nhau hai nhánh, nhánh lớn có pittông và quả cân 1 kg\"><rect width=\"300\" height=\"195\" fill=\"#fff\" stroke=\"none\"/><rect x=\"30.0\" y=\"70.0\" width=\"70.0\" height=\"100.0\" fill=\"#d9e3ee\" stroke-width=\"0\"/><rect x=\"170.0\" y=\"60.0\" width=\"40.0\" height=\"110.0\" fill=\"#d9e3ee\" stroke-width=\"0\"/><rect x=\"100.0\" y=\"150.0\" width=\"70.0\" height=\"20.0\" fill=\"#d9e3ee\" stroke-width=\"0\"/><path d=\"M30.0 30.0 L30.0 170.0 L210.0 170.0 L210.0 30.0\" fill=\"none\" stroke-width=\"2.2\"/><path d=\"M100.0 30.0 L100.0 150.0 L170.0 150.0 L170.0 30.0\" fill=\"none\" stroke-width=\"2.2\"/><rect x=\"31.0\" y=\"64.0\" width=\"68.0\" height=\"6.0\" fill=\"#8d8d8d\" stroke-width=\"1.5\"/><rect x=\"50.0\" y=\"40.0\" width=\"30.0\" height=\"24.0\" fill=\"#9a9a9a\" stroke-width=\"1.5\"/><text x=\"65.0\" y=\"56.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">1 kg</text><text x=\"65.0\" y=\"186.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">S₁ = 100 cm²</text><text x=\"190.0\" y=\"186.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">S₂ = 50 cm²</text><line x1=\"230.0\" y1=\"60.0\" x2=\"230.0\" y2=\"70.0\" stroke-width=\"1.1\"/><path d=\"M231.8,67.0 L230.0,70.0 L228.2,67.0\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M228.2,63.0 L230.0,60.0 L231.8,63.0\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"236.0\" y=\"68.0\" text-anchor=\"start\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">h = ?</text><line x1=\"210.0\" y1=\"70.0\" x2=\"236.0\" y2=\"70.0\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/></svg><figcaption>Bình thông nhau: nhánh lớn có pittông và quả cân, nhánh nhỏ để hở.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai nhánh hình trụ $S_1=100$ cm² và $S_2=50$ cm², chứa nước ($10\\,000$ N/m³)\"</td><td>$S_1=0{,}01$ m² ; $S_2=0{,}005$ m² ; $d_n=10\\,000$ N/m³</td><td>⚠ Đổi cm² ra m² trước khi tính áp suất ; hai điểm cùng độ cao trong cùng một chất lỏng đứng yên thì cùng áp suất</td></tr><tr><td>\"pittông mỏng, nhẹ, khít … quả cân $1$ kg\"</td><td>$m=1$ kg ; bỏ qua trọng lượng pittông</td><td>Pittông truyền áp suất lên mặt nước : $p=\\dfrac{F}{S_1}$ với $F=10m$</td></tr><tr><td>\"mực nước hai nhánh chênh lệch bao nhiêu\"</td><td>Cần tìm $h$</td><td>Cột nước chênh gây áp suất bằng áp suất của quả cân : $d_n\\,h=p$</td></tr><tr><td>\"pittông ở nhánh nhỏ … mực nước hai nhánh ngang nhau\"</td><td>Cần tìm $m_2$</td><td>⚠ Mực ngang nhau nên áp suất dưới hai pittông bằng nhau : $\\dfrac{F_1}{S_1}=\\dfrac{F_2}{S_2}$</td></tr><tr><td>\"đổ dầu ($8\\,000$ N/m³) … mặt nước hai nhánh ngang nhau\"</td><td>$d_d=8\\,000$ N/m³ ; cần tìm $h_d$</td><td>⚠ Cột dầu phải gây áp suất bằng $p$ (không còn cột nước nào chênh) : $d_d\\,h_d=p$</td></tr><tr><td>\"bình thông nhau có pittông\"</td><td>Chất lỏng truyền áp suất</td><td>Mở rộng ngoài chuẩn KHTN 9 : nguyên lí Pascal (chất lỏng truyền nguyên vẹn áp suất đặt lên nó)</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> áp suất $p=\\dfrac{F}{S}$ ; cột chất lỏng cao $h$ gây áp suất $p=d\\,h$ ; chất lỏng đứng yên truyền nguyên vẹn áp suất.</li><li><strong>Công thức:</strong> $p=\\dfrac{F}{S}$ ; $p=d\\,h$ ; $P=10m$.</li><li>Hai điểm <strong>cùng độ cao</strong> trong <strong>cùng một chất lỏng</strong> đứng yên thì có cùng áp suất (mặt đẳng áp).</li><li>⚠ <strong>Điều kiện:</strong> đổi cm² ra m² ; chỉ so sánh áp suất ở hai điểm cùng độ cao, cùng chất lỏng liên tục ; áp suất khí quyển hai nhánh như nhau nên triệt tiêu.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp suất do quả cân gây ra</span></p><p>Pittông nhẹ nên chỉ quả cân đè lên mặt nước nhánh lớn :</p>$$F=10m=10\\cdot1=10\\ \\text{N}$$$$p=\\dfrac{F}{S_1}=\\dfrac{10}{0{,}01}$$<div class=\"bt-ans\">$$p=1\\,000\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ chênh mực nước</span></p><p>Chọn mặt đẳng áp là mặt phẳng ngang đi qua mặt dưới pittông. Nước nhánh nhỏ ở cùng độ cao đó chịu thêm cột nước chênh $h$ :</p>$$d_n\\,h=p$$$$h=\\dfrac{p}{d_n}=\\dfrac{1\\,000}{10\\,000}=0{,}1\\ \\text{m}$$<div class=\"bt-ans\">$$h=10\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhánh nào cao hơn</span></p><p>Nhánh lớn bị pittông và quả cân ép nên mặt nước nhánh lớn thấp xuống ; nước bị đẩy sang nhánh nhỏ để cân bằng áp suất.</p><div class=\"bt-ans\">$$\\text{Nhánh nhỏ cao hơn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Quả cân ở nhánh nhỏ</span></p><p>Mực nước hai nhánh ngang nhau thì áp suất dưới hai pittông bằng nhau :</p>$$\\dfrac{F_1}{S_1}=\\dfrac{F_2}{S_2}$$$$F_2=F_1\\cdot\\dfrac{S_2}{S_1}=10\\cdot\\dfrac{50}{100}=5\\ \\text{N}$$$$m_2=\\dfrac{F_2}{10}$$<div class=\"bt-ans\">$$m_2=0{,}5\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Cột dầu</span></p><p>Mặt nước hai nhánh ngang nhau nên cột dầu phải gây đúng áp suất $p$ của quả cân :</p>$$d_d\\,h_d=p$$$$h_d=\\dfrac{p}{d_d}=\\dfrac{1\\,000}{8\\,000}=0{,}125\\ \\text{m}$$<div class=\"bt-ans\">$$h_d=12{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Dầu nhẹ hơn nước ($8\\,000\\lt10\\,000$) nên cột dầu phải cao hơn cột nước chênh : $12{,}5\\ \\text{cm}\\gt10\\ \\text{cm}$ ✓.</p><p>Tỉ số $\\dfrac{h_d}{h}=\\dfrac{d_n}{d_d}=\\dfrac{10\\,000}{8\\,000}=1{,}25$ ✓.</p><p>Nhánh nhỏ ở câu b : $\\dfrac{5}{0{,}005}=1\\,000\\ \\text{Pa}$, bằng $p$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $10\\ \\text{cm}$ ; nhánh nhỏ cao hơn</p><p>b) $0{,}5\\ \\text{kg}$</p><p>c) $12{,}5\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>bình thông nhau có pittông hoặc hai chất lỏng</strong> → chọn <strong>mặt đẳng áp</strong> trong cùng một chất lỏng rồi viết áp suất hai bên bằng nhau.</p></div>",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "nhan_dang": "Thấy <b>bình thông nhau có pittông / hai chất lỏng</b> → nghĩ tới <b>mặt đẳng áp</b>, viết áp suất hai bên bằng nhau.",
+   "buoc": [
+    {
+     "tieu_de": "Áp suất do quả cân gây ra",
+     "hoi": "Quả cân (pittông nhẹ) gây áp suất $p$ lên nước nhánh lớn bằng bao nhiêu pascal?",
+     "dap_so": 1000,
+     "sai_so": 10,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Chia lực cho $S_2$ thay vì $S_1$ (pittông đặt ở nhánh lớn), hoặc quên đổi cm² ra m² nên ra áp suất nhỏ hơn thực tế rất nhiều."
+    },
+    {
+     "tieu_de": "Độ chênh mực nước",
+     "hoi": "Cột nước chênh giữa hai nhánh cao bao nhiêu xentimét?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $h=\\dfrac{F}{d}$ không chia cho tiết diện, hoặc quên đổi mét ra xentimét.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cột nước chênh gây áp suất đúng bằng $p$ của quả cân : $d_n\\,h=p$",
+       "dung": true
+      },
+      {
+       "text": "Hai nhánh thông nhau nên mực nước luôn bằng nhau : $h=0$",
+       "dung": false,
+       "vi_sao": "Pittông và quả cân tạo thêm áp suất lên mặt nước nhánh lớn, nên mực nước nhánh nhỏ phải cao lên mới cân bằng."
+      },
+      {
+       "text": "$h=\\dfrac{F}{d_n}$ với $F$ là trọng lượng quả cân",
+       "dung": false,
+       "vi_sao": "Áp suất mới so sánh được với $d\\,h$ ; lực $F$ chưa chia cho tiết diện thì đơn vị là $\\text{m}^2$, không phải độ cao."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhánh nào cao hơn",
+     "hoi": "Nhánh nào có mặt nước cao hơn ?",
+     "lua_chon": [
+      {
+       "text": "Nhánh nhỏ (không pittông)",
+       "dung": true
+      },
+      {
+       "text": "Nhánh lớn (có pittông và quả cân)",
+       "dung": false,
+       "vi_sao": "Nhánh lớn bị ép bởi pittông và quả cân nên mặt nước ở đó thấp xuống, nước dồn sang nhánh nhỏ."
+      },
+      {
+       "text": "Hai nhánh ngang nhau",
+       "dung": false,
+       "vi_sao": "Ngang nhau chỉ khi áp suất hai bên bằng nhau ; ở đây nhánh lớn chịu thêm áp suất của quả cân."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng nhánh tiết diện lớn chứa nhiều nước hơn nên mực nước cao hơn — mực nước do áp suất quyết định, không do lượng nước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhánh bị ép thêm áp suất thì mực nước thấp xuống, nước dồn sang nhánh kia",
+       "dung": true
+      },
+      {
+       "text": "Nhánh nào chứa nhiều nước hơn thì mực nước cao hơn",
+       "dung": false,
+       "vi_sao": "Mực nước quyết định bởi áp suất, không phải lượng nước ; nhánh rộng chứa nhiều nước vẫn có thể thấp hơn."
+      },
+      {
+       "text": "Quả cân đặt ở nhánh nào thì nhánh đó nâng mực nước lên",
+       "dung": false,
+       "vi_sao": "Quả cân đè xuống chứ không nâng : nước bị ép dồn sang nhánh còn lại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quả cân ở nhánh nhỏ",
+     "hoi": "Phải đặt lên pittông nhánh nhỏ quả cân khối lượng bao nhiêu kilôgam để mực nước hai nhánh ngang nhau?",
+     "dap_so": 0.5,
+     "sai_so": 0.01,
+     "don_vi": "kg",
+     "loi_hay_gap": "Lấy $m_2=m_1$ vì cho rằng \"mực ngang nhau thì hai quả cân bằng nhau\" (quên tiết diện hai nhánh khác nhau), hoặc nhân nhầm $S_1/S_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp suất dưới hai pittông bằng nhau : $\\dfrac{F_1}{S_1}=\\dfrac{F_2}{S_2}$",
+       "dung": true
+      },
+      {
+       "text": "Hai quả cân phải bằng nhau : $m_2=m_1$",
+       "dung": false,
+       "vi_sao": "Ngang mực nghĩa là áp suất bằng nhau, không phải lực bằng nhau ; tiết diện khác nhau thì lực khác nhau."
+      },
+      {
+       "text": "$F_2=F_1\\cdot\\dfrac{S_1}{S_2}$",
+       "dung": false,
+       "vi_sao": "Ngược tỉ lệ : tiết diện nhánh nhỏ bé hơn nên lực cần để cùng áp suất cũng nhỏ hơn, phải nhân $\\dfrac{S_2}{S_1}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cột dầu",
+     "hoi": "Cột dầu ở nhánh nhỏ cao bao nhiêu xentimét để mặt nước hai nhánh ngang nhau?",
+     "dap_so": 12.5,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng trọng lượng riêng của nước thay vì của dầu, hoặc cộng thêm một cột nước nào đó dù mặt nước hai nhánh đã ngang nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cột dầu gây áp suất đúng bằng $p$ : $d_d\\,h_d=p$",
+       "dung": true
+      },
+      {
+       "text": "$d_n\\,h_d=p$ (dùng trọng lượng riêng của nước)",
+       "dung": false,
+       "vi_sao": "Cột đang xét là dầu nên phải dùng trọng lượng riêng của dầu, nhỏ hơn của nước."
+      },
+      {
+       "text": "$d_d\\,h_d=p+d_n\\,h$",
+       "dung": false,
+       "vi_sao": "Mặt nước hai nhánh ngang nhau nên không có cột nước chênh nào cần cộng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "go_roi": {
+    "buoc_hay_sai": 3
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Bài 8 · Vận dụng cao · Khối gỗ nổi, vật đặt trên và vật treo dưới · Thứ Tư 14/10",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Khối gỗ hình hộp chữ nhật, diện tích đáy $100\\ \\text{cm}^2$, cao $10\\ \\text{cm}$, khối lượng riêng $600\\ \\text{kg/m}^3$, thả nổi trong nước (khối lượng riêng $1\\,000\\ \\text{kg/m}^3$). Lấy $g=10\\ \\text{N/kg}$.</p><ol type=\"a\"><li>Tính chiều cao phần gỗ chìm trong nước.</li><li>Đặt lên mặt gỗ một vật nhỏ khối lượng $m$. Tính $m$ để mặt trên của gỗ vừa ngang mặt nước.</li><li>Bỏ vật ở câu b. Dùng dây mảnh, không giãn treo dưới đáy gỗ một quả cầu bằng sắt (khối lượng riêng $7\\,800\\ \\text{kg/m}^3$, ngập hoàn toàn trong nước) thì gỗ cũng vừa chìm hết. Bỏ qua thể tích dây. Tính thể tích và khối lượng quả cầu.</li><li>Trong trường hợp c, dây chịu lực căng bao nhiêu?</li></ol><figure class=\"fig\"><svg viewBox=\"0 0 300 192\" style=\"max-width:300px;width:100%;height:auto\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#111\" stroke=\"#111\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" role=\"img\" aria-label=\"Khối gỗ nổi trong nước, quả cầu sắt treo dưới đáy\"><rect width=\"300\" height=\"192\" fill=\"#fff\" stroke=\"none\"/><rect x=\"40.0\" y=\"95.0\" width=\"220.0\" height=\"85.0\" fill=\"#d9e3ee\" stroke-width=\"0\"/><path d=\"M40.0 30.0 L40.0 180.0 L260.0 180.0 L260.0 30.0\" fill=\"none\" stroke-width=\"2.4\"/><line x1=\"40.0\" y1=\"95.0\" x2=\"260.0\" y2=\"95.0\" stroke-width=\"1.8\"/><rect x=\"110.0\" y=\"70.0\" width=\"60.0\" height=\"60.0\" fill=\"#d8c9a3\" stroke-width=\"1.5\"/><text x=\"140.0\" y=\"104.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" stroke=\"none\">gỗ</text><line x1=\"110.0\" y1=\"58.0\" x2=\"170.0\" y2=\"58.0\" stroke-width=\"1.1\"/><path d=\"M164.8,55.0 L170.0,58.0 L164.8,61.0\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M115.2,61.0 L110.0,58.0 L115.2,55.0\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"140.0\" y=\"52.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">S = 100 cm²</text><line x1=\"186.0\" y1=\"70.0\" x2=\"186.0\" y2=\"130.0\" stroke-width=\"1.1\"/><path d=\"M189.0,124.8 L186.0,130.0 L183.0,124.8\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M183.0,75.2 L186.0,70.0 L189.0,75.2\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190.0\" y=\"103.0\" text-anchor=\"start\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">10 cm</text><line x1=\"170.0\" y1=\"70.0\" x2=\"190.0\" y2=\"70.0\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"170.0\" y1=\"130.0\" x2=\"190.0\" y2=\"130.0\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"140.0\" y1=\"130.0\" x2=\"140.0\" y2=\"150.0\" stroke-width=\"1.2\"/><circle cx=\"140.0\" cy=\"158.0\" r=\"8\" fill=\"#777\" stroke-width=\"1.5\"/><text x=\"152.0\" y=\"162.0\" text-anchor=\"start\" font-size=\"10.5\" font-weight=\"normal\" stroke=\"none\">sắt (câu c)</text><line x1=\"92.0\" y1=\"95.0\" x2=\"92.0\" y2=\"130.0\" stroke-width=\"1.1\"/><path d=\"M95.0,124.8 L92.0,130.0 L89.0,124.8\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M89.0,100.2 L92.0,95.0 L95.0,100.2\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"86.0\" y=\"116.0\" text-anchor=\"end\" font-size=\"11\" font-weight=\"bold\" stroke=\"none\">x</text></svg><figcaption>Khối gỗ nổi ; ở câu c có quả cầu sắt treo dưới đáy.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hình hộp chữ nhật, đáy $100$ cm², cao $10$ cm, $600$ kg/m³\"</td><td>$S=100$ cm² ; $h=10$ cm ; $D_g=600$ kg/m³</td><td>⚠ Gỗ nổi được vì $D_g\\lt D_n$ ; đổi cm³ ra m³ khi dùng $D$ theo kg/m³ : $V=S\\,h$</td></tr><tr><td>\"thả nổi trong nước ($1\\,000$ kg/m³)\"</td><td>$D_n=1\\,000$ kg/m³</td><td>Nổi cân bằng : $F_A=P_{g}$ với $F_A=10D_n\\,S\\,x$</td></tr><tr><td>\"Tính chiều cao phần gỗ chìm\"</td><td>Cần tìm $x$</td><td>$x=h\\cdot\\dfrac{D_g}{D_n}$</td></tr><tr><td>\"vật nhỏ khối lượng $m$ … mặt trên vừa ngang mặt nước\"</td><td>Gỗ chìm hết : $V_{chìm}=V$</td><td>⚠ Lúc này $F_{A,max}=10D_n\\,V$ ; cân bằng : $F_{A,max}=P_g+10m$</td></tr><tr><td>\"treo dưới đáy gỗ quả cầu sắt ($7\\,800$ kg/m³, ngập hoàn toàn) … gỗ vừa chìm hết\"</td><td>$D_s=7\\,800$ kg/m³ ; cả hai vật chìm hết</td><td>⚠ Quả cầu ngập trong nước cũng chịu lực đẩy : cân bằng cả hệ $F_{A,g}+F_{A,s}=P_g+P_s$</td></tr><tr><td>\"dây chịu lực căng bao nhiêu\"</td><td>Cần tìm $T$</td><td>Tách riêng một vật : với gỗ, $F_{A,g}=P_g+T$</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật nằm cân bằng trong chất lỏng thì lực đẩy Archimedes cân bằng với trọng lượng của những gì nó phải đỡ.</li><li><strong>Công thức:</strong> $F_A=d_n\\,V_{chìm}=10D_n\\,V_{chìm}$ ; $P=10m=10D\\,V$.</li><li>Có nhiều vật gắn với nhau thì viết cân bằng cho <strong>cả hệ</strong> : tổng lực đẩy bằng tổng trọng lượng. Cần lực căng dây thì tách riêng một vật.</li><li>⚠ <strong>Điều kiện:</strong> $V_{chìm}$ là thể tích phần ngập trong nước ; vật ngập hoàn toàn thì $V_{chìm}=V$ ; đổi cm³ ra m³ trước khi tính.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiều cao phần gỗ chìm</span></p><p>Thể tích gỗ và trọng lượng gỗ :</p>$$V=S\\,h=100\\cdot10=1\\,000\\ \\text{cm}^3=10^{-3}\\ \\text{m}^3$$$$P_g=10D_g\\,V=10\\cdot600\\cdot10^{-3}=6\\ \\text{N}$$<p>Nổi cân bằng $F_A=P_g$ :</p>$$10D_n\\,S\\,x=10D_g\\,S\\,h$$$$x=h\\cdot\\dfrac{D_g}{D_n}=10\\cdot\\dfrac{600}{1\\,000}$$<div class=\"bt-ans\">$$x=6\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đẩy khi gỗ vừa chìm hết</span></p><p>Gỗ chìm hết thì $V_{chìm}=V$ :</p>$$F_{A,max}=10D_n\\,V=10\\cdot1\\,000\\cdot10^{-3}$$<div class=\"bt-ans\">$$F_{A,max}=10\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vật đặt trên mặt gỗ</span></p><p>Gỗ phải đỡ trọng lượng của chính nó và của vật :</p>$$F_{A,max}=P_g+10m$$$$m=\\dfrac{F_{A,max}-P_g}{10}=\\dfrac{10-6}{10}$$<div class=\"bt-ans\">$$m=0{,}4\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thể tích quả cầu sắt</span></p><p>Cả gỗ và sắt đều chìm hết nên mỗi vật chịu một lực đẩy. Cân bằng của cả hệ :</p>$$F_{A,g}+F_{A,s}=P_g+P_s$$$$F_{A,max}+10D_n\\,V_s=P_g+10D_s\\,V_s$$$$V_s=\\dfrac{F_{A,max}-P_g}{10\\,(D_s-D_n)}=\\dfrac{10-6}{10\\cdot6\\,800}\\approx5{,}88\\cdot10^{-5}\\ \\text{m}^3$$<div class=\"bt-ans\">$$V_s\\approx58{,}8\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khối lượng quả cầu sắt</span></p>$$m_s=D_s\\,V_s=7\\,800\\cdot5{,}88\\cdot10^{-5}$$<div class=\"bt-ans\">$$m_s\\approx0{,}459\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Lực căng dây</span></p><p>Xét riêng khối gỗ : lực đẩy hướng lên, trọng lượng và lực căng dây cùng hướng xuống :</p>$$F_{A,g}=P_g+T$$$$T=F_{A,max}-P_g=10-6$$<div class=\"bt-ans\">$$T=4\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Xét riêng quả cầu : $T=P_s-F_{A,s}$.</p>$$P_s=10\\cdot0{,}459\\approx4{,}59\\ \\text{N}\\ ;\\ F_{A,s}=10\\cdot1\\,000\\cdot5{,}88\\cdot10^{-5}\\approx0{,}59\\ \\text{N}$$<p>$T=4{,}59-0{,}59=4{,}0\\ \\text{N}$, khớp với bước 6 ✓.</p><p>Quả cầu nặng hơn vật ở câu b ($0{,}459\\gt0{,}4\\ \\text{kg}$) vì nước còn đẩy quả cầu lên ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $6\\ \\text{cm}$</p><p>b) $0{,}4\\ \\text{kg}$</p><p>c) $V_s\\approx58{,}8\\ \\text{cm}^3$ ; $m_s\\approx0{,}459\\ \\text{kg}$</p><p>d) $4\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>vật nổi + vật đặt trên hoặc treo dưới</strong> → viết <strong>cân bằng cho cả hệ</strong> (tổng $F_A$ = tổng $P$) ; cần lực dây thì tách riêng một vật.</p></div>",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "nhan_dang": "Thấy <b>vật nổi + vật đặt trên / treo dưới</b> → nghĩ tới <b>cân bằng cả hệ</b>: tổng F<sub>A</sub> = tổng P.",
+   "buoc": [
+    {
+     "tieu_de": "Chiều cao phần gỗ chìm",
+     "hoi": "Khối gỗ nổi chìm sâu bao nhiêu xentimét?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $x=h\\cdot\\dfrac{D_n}{D_g}$ (ngược tỉ số), hoặc cho rằng gỗ chìm hết nên $x=h$."
+    },
+    {
+     "tieu_de": "Lực đẩy khi gỗ vừa chìm hết",
+     "hoi": "Khi gỗ vừa chìm hết, lực đẩy Archimedes lên gỗ bằng bao nhiêu niutơn?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng khối lượng riêng của gỗ thay vì của nước, hoặc quên nhân $10$ để đổi khối lượng ra trọng lượng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chìm hết nên $V_{chìm}=V$ : $F_{A,max}=d_n\\,V$",
+       "dung": true
+      },
+      {
+       "text": "Lực đẩy vẫn bằng trọng lượng gỗ : $F_A=P_g$",
+       "dung": false,
+       "vi_sao": "Đó là lúc gỗ nổi tự do ; khi gỗ bị đè chìm hết, phần thể tích chìm tăng lên nên lực đẩy lớn hơn trọng lượng gỗ."
+      },
+      {
+       "text": "$F_{A,max}=d_g\\,V$ (dùng trọng lượng riêng của gỗ)",
+       "dung": false,
+       "vi_sao": "Lực đẩy do nước tác dụng nên phải dùng trọng lượng riêng của nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vật đặt trên mặt gỗ",
+     "hoi": "Vật đặt lên gỗ phải có khối lượng bao nhiêu kilôgam để gỗ vừa chìm hết?",
+     "dap_so": 0.4,
+     "sai_so": 0.01,
+     "don_vi": "kg",
+     "loi_hay_gap": "Viết $F_A=P_{vật}$ mà quên trọng lượng của chính khối gỗ, hoặc quên chia cho $10$ để đổi niutơn ra kilôgam.",
+     "chon_buoc_ke": [
+      {
+       "text": "Gỗ đỡ cả chính nó và vật : $F_{A,max}=P_g+P_{vật}$",
+       "dung": true
+      },
+      {
+       "text": "$F_{A,max}=P_{vật}$",
+       "dung": false,
+       "vi_sao": "Gỗ cũng có trọng lượng riêng của nó, lực đẩy phải đỡ cả gỗ lẫn vật."
+      },
+      {
+       "text": "Phần chìm vẫn là phần chìm ở câu a, chỉ cộng thêm khối lượng vật",
+       "dung": false,
+       "vi_sao": "Thêm vật thì gỗ chìm sâu hơn ; đề cho gỗ vừa chìm hết nên $V_{chìm}=V$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích quả cầu sắt",
+     "hoi": "Thể tích $V_s$ của quả cầu sắt bằng bao nhiêu xentimét khối?",
+     "dap_so": 58.8,
+     "sai_so": 0.5,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Bỏ lực đẩy lên quả cầu (coi sắt chỉ thêm trọng lượng) nên được $V_s$ sai, hoặc đổi m³ ra cm³ sai $10^3$ lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết cân bằng cả hệ gỗ + sắt, mỗi vật chìm hết đều có lực đẩy",
+       "dung": true
+      },
+      {
+       "text": "$F_{A,g}=P_g+P_s$ (bỏ lực đẩy lên quả cầu)",
+       "dung": false,
+       "vi_sao": "Quả cầu ngập hoàn toàn trong nước cũng chịu lực đẩy, không thể bỏ qua."
+      },
+      {
+       "text": "Lấy khối lượng quả cầu bằng khối lượng vật ở câu b",
+       "dung": false,
+       "vi_sao": "Vật ở câu b chỉ chịu trọng lượng ; quả cầu bị nước đẩy lên nên khối lượng khác, phải tìm qua thể tích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng quả cầu sắt",
+     "hoi": "Khối lượng $m_s$ của quả cầu sắt bằng bao nhiêu kilôgam?",
+     "dap_so": 0.459,
+     "sai_so": 0.005,
+     "don_vi": "kg",
+     "loi_hay_gap": "Nhân thể tích với khối lượng riêng của nước, hoặc nhân với thể tích chưa đổi sang m³.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m_s=D_s\\,V_s$",
+       "dung": true
+      },
+      {
+       "text": "$m_s=D_n\\,V_s$",
+       "dung": false,
+       "vi_sao": "Đó là khối lượng của nước có cùng thể tích với quả cầu, không phải của sắt."
+      },
+      {
+       "text": "$m_s=\\dfrac{F_{A,s}}{10}$",
+       "dung": false,
+       "vi_sao": "Lực đẩy chia $10$ chỉ cho khối lượng nước bị chiếm chỗ, không phải khối lượng quả cầu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực căng dây",
+     "hoi": "Dây chịu lực căng bao nhiêu niutơn?",
+     "dap_so": 4,
+     "sai_so": 0.1,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho $T=P_s$ (bỏ lực đẩy lên quả cầu), hoặc cộng $F_A$ với $P$ của gỗ thay vì lấy hiệu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét riêng gỗ : $F_{A,g}=P_g+T$",
+       "dung": true
+      },
+      {
+       "text": "$T=P_s$",
+       "dung": false,
+       "vi_sao": "Nước đẩy quả cầu lên nên dây chỉ chịu trọng lượng trừ lực đẩy, không phải toàn bộ trọng lượng."
+      },
+      {
+       "text": "$T=F_{A,g}+P_g$",
+       "dung": false,
+       "vi_sao": "Lực căng dây và trọng lượng gỗ cùng hướng xuống, cùng cân bằng với lực đẩy : phải lấy $F_A-P_g$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "go_roi": {
+    "buoc_hay_sai": 3
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Bài 9 · Vận dụng cao · Cốc nổi trong bình — mực nước thay đổi thế nào? · Thứ Năm 15/10",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Bình hình trụ đủ cao, tiết diện $S=200\\ \\text{cm}^2$, đựng nước, mực nước cao $20\\ \\text{cm}$. Thả vào bình một cốc hình trụ thành mỏng (bỏ qua thể tích thành cốc), khối lượng $200\\ \\text{g}$, tiết diện $50\\ \\text{cm}^2$, cao $12\\ \\text{cm}$ ; cốc nổi thẳng đứng, miệng hướng lên, đáy không chạm đáy bình. Khối lượng riêng của nước $1\\ \\text{g/cm}^3$.</p><ol type=\"a\"><li>Cốc chìm sâu bao nhiêu? Mực nước trong bình dâng thêm bao nhiêu?</li><li>Rót vào cốc $100\\ \\text{g}$ nước. Cốc chìm sâu bao nhiêu? Mực nước trong bình dâng thêm bao nhiêu so với câu a?</li><li>Thay vì rót nước, bỏ vào cốc một hòn sỏi $100\\ \\text{g}$ (khối lượng riêng $2{,}5\\ \\text{g/cm}^3$). Tính độ dâng thêm của mực nước trong bình (so với câu a) trong hai trường hợp : sỏi nằm trong cốc, và sỏi được thả thẳng xuống đáy bình (cốc rỗng vẫn nổi). Trường hợp nào mực nước cao hơn, cao hơn bao nhiêu?</li><li>Rót nước vào cốc tối đa bao nhiêu gam thì cốc vẫn chưa bị ngập (miệng cốc vừa chạm mặt nước)?</li></ol><figure class=\"fig\"><svg viewBox=\"0 0 320 195\" style=\"max-width:320px;width:100%;height:auto\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#111\" stroke=\"#111\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" role=\"img\" aria-label=\"Bình trụ đựng nước, cốc hình trụ nổi thẳng đứng\"><rect width=\"320\" height=\"195\" fill=\"#fff\" stroke=\"none\"/><rect x=\"30.0\" y=\"70.0\" width=\"240.0\" height=\"100.0\" fill=\"#d9e3ee\" stroke-width=\"0\"/><path d=\"M30.0 20.0 L30.0 170.0 L270.0 170.0 L270.0 20.0\" fill=\"none\" stroke-width=\"2.4\"/><line x1=\"30.0\" y1=\"70.0\" x2=\"270.0\" y2=\"70.0\" stroke-width=\"1.6\"/><path d=\"M130.0 40.0 L130.0 100.0 L170.0 100.0 L170.0 40.0\" fill=\"none\" stroke-width=\"2\"/><rect x=\"132.0\" y=\"70.0\" width=\"36.0\" height=\"30.0\" fill=\"#f6f6f6\" stroke-width=\"0\"/><path d=\"M130.0 40.0 L130.0 100.0 L170.0 100.0 L170.0 40.0\" fill=\"none\" stroke-width=\"2\"/><text x=\"150.0\" y=\"32.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">cốc 200 g</text><text x=\"150.0\" y=\"115.0\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"normal\" stroke=\"none\">S' = 50 cm²</text><line x1=\"185.0\" y1=\"40.0\" x2=\"185.0\" y2=\"100.0\" stroke-width=\"1.1\"/><path d=\"M188.0,94.8 L185.0,100.0 L182.0,94.8\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M182.0,45.2 L185.0,40.0 L188.0,45.2\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190.0\" y=\"58.0\" text-anchor=\"start\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">12 cm</text><line x1=\"285.0\" y1=\"70.0\" x2=\"285.0\" y2=\"170.0\" stroke-width=\"1.1\"/><path d=\"M288.0,164.8 L285.0,170.0 L282.0,164.8\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M282.0,75.2 L285.0,70.0 L288.0,75.2\" fill=\"none\" stroke-width=\"1.3\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"290.0\" y=\"122.0\" text-anchor=\"start\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">20 cm</text><line x1=\"270.0\" y1=\"170.0\" x2=\"292.0\" y2=\"170.0\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"270.0\" y1=\"70.0\" x2=\"292.0\" y2=\"70.0\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"150.0\" y=\"186.0\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" stroke=\"none\">bình S = 200 cm²</text></svg><figcaption>Bình trụ và cốc nổi.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Bình hình trụ … $S=200$ cm², mực nước cao $20$ cm\"</td><td>$S=200$ cm² ; $D_n=1$ g/cm³</td><td>⚠ Độ dâng của mực nước bình tính bằng thể tích chiếm chỗ chia cho tiết diện <strong>bình</strong> $S$, không phải tiết diện cốc</td></tr><tr><td>\"cốc hình trụ thành mỏng, $200$ g, tiết diện $50$ cm², cao $12$ cm … nổi thẳng đứng\"</td><td>$m_c=200$ g ; $S_c=50$ cm² ; $h_c=12$ cm</td><td>Nổi : $F_A=P$ nên khối lượng nước bị chiếm chỗ bằng khối lượng vật : $V_{chìm}=\\dfrac{m}{D_n}$ ; độ chìm $x=\\dfrac{V_{chìm}}{S_c}$</td></tr><tr><td>\"Cốc chìm sâu bao nhiêu? Mực nước dâng thêm\"</td><td>Cần tìm $x$ và $\\Delta h$</td><td>$x=\\dfrac{V_{chìm}}{S_c}$ ; $\\Delta h=\\dfrac{V_{chìm}}{S}$</td></tr><tr><td>\"Rót vào cốc $100$ g nước\"</td><td>$m_n=100$ g</td><td>Khối lượng tổng của cốc và nước trong cốc quyết định $V_{chìm}$ ; so với câu a chỉ tăng thêm phần nước rót</td></tr><tr><td>\"hòn sỏi $100$ g ($2{,}5$ g/cm³) … trong cốc, và thả thẳng xuống đáy bình\"</td><td>$m_s=100$ g ; $D_s=2{,}5$ g/cm³</td><td>⚠ Sỏi trong cốc : vật nổi chiếm chỗ theo <strong>khối lượng</strong> ; sỏi dưới đáy : vật chìm chiếm chỗ theo <strong>thể tích thật</strong> $V=\\dfrac{m}{D}$</td></tr><tr><td>\"Rót nước tối đa … miệng cốc vừa chạm mặt nước\"</td><td>Chìm tối đa $x=h_c=12$ cm</td><td>$V_{chìm,max}=S_c\\,h_c$ ; khối lượng tối đa đỡ được $=D_n\\,V_{chìm,max}$ rồi trừ khối lượng cốc</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật nổi cân bằng nên lực đẩy bằng trọng lượng ; nước bị chiếm chỗ có khối lượng đúng bằng khối lượng vật.</li><li><strong>Công thức:</strong> $V_{chìm}=\\dfrac{m}{D_n}$ ; độ chìm $x=\\dfrac{V_{chìm}}{S_c}$ ; mực nước bình dâng $\\Delta h=\\dfrac{V_{chiếm}}{S}$.</li><li>Vật nổi chiếm chỗ theo <strong>khối lượng</strong> ; vật chìm hẳn chiếm chỗ theo <strong>thể tích thật</strong> $V=\\dfrac{m}{D}$.</li><li>⚠ <strong>Điều kiện:</strong> chia thể tích cho tiết diện <strong>bình</strong> khi tính độ dâng mực nước ; cốc phải còn nổi, miệng chưa chìm dưới mặt nước.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cốc rỗng chìm sâu bao nhiêu</span></p><p>Nổi cân bằng nên nước bị chiếm chỗ nặng bằng cốc :</p>$$V_{chìm}=\\dfrac{m_c}{D_n}=\\dfrac{200}{1}=200\\ \\text{cm}^3$$$$x=\\dfrac{V_{chìm}}{S_c}=\\dfrac{200}{50}$$<div class=\"bt-ans\">$$x=4\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Mực nước trong bình dâng</span></p><p>Phần chìm của cốc chiếm chỗ $200\\ \\text{cm}^3$ trong bình tiết diện $S$ :</p>$$\\Delta h=\\dfrac{V_{chìm}}{S}=\\dfrac{200}{200}$$<div class=\"bt-ans\">$$\\Delta h=1\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cốc chìm sâu khi có nước rót vào</span></p><p>Khối lượng cốc và nước trong cốc là $200+100=300\\ \\text{g}$ :</p>$$V_{chìm}=\\dfrac{300}{1}=300\\ \\text{cm}^3$$$$x=\\dfrac{V_{chìm}}{S_c}=\\dfrac{300}{50}$$<div class=\"bt-ans\">$$x=6\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Mực nước dâng thêm so với câu a</span></p><p>Thể tích phần chìm tăng thêm $300-200=100\\ \\text{cm}^3$ :</p>$$\\Delta h'=\\dfrac{100}{S}=\\dfrac{100}{200}$$<div class=\"bt-ans\">$$\\Delta h'=0{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Sỏi nằm trong cốc</span></p><p>Cốc vẫn nổi, nước bị chiếm chỗ thêm có khối lượng bằng khối lượng sỏi :</p>$$\\Delta V=\\dfrac{m_s}{D_n}=\\dfrac{100}{1}=100\\ \\text{cm}^3$$$$\\Delta h_1=\\dfrac{\\Delta V}{S}=\\dfrac{100}{200}$$<div class=\"bt-ans\">$$\\Delta h_1=0{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Sỏi thả xuống đáy bình</span></p><p>Cốc rỗng vẫn như câu a. Sỏi chìm hẳn chiếm đúng thể tích thật của nó :</p>$$V_s=\\dfrac{m_s}{D_s}=\\dfrac{100}{2{,}5}=40\\ \\text{cm}^3$$$$\\Delta h_2=\\dfrac{V_s}{S}=\\dfrac{40}{200}$$<div class=\"bt-ans\">$$\\Delta h_2=0{,}2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Trường hợp nào mực nước cao hơn</span></p><p>So hai độ dâng : $\\Delta h_1\\gt\\Delta h_2$. Sỏi nằm trong cốc làm mực nước cao hơn vì sỏi nổi nhờ cốc nên chiếm chỗ theo khối lượng ($100\\ \\text{cm}^3$ nước), lớn hơn thể tích thật ($40\\ \\text{cm}^3$) do sỏi nặng hơn nước.</p><div class=\"bt-ans\">$$\\text{Sỏi nằm trong cốc}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Chênh lệch giữa hai trường hợp</span></p>$$\\Delta h_1-\\Delta h_2=0{,}5-0{,}2$$<div class=\"bt-ans\">$$\\Delta h_1-\\Delta h_2=0{,}3\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">9</span><span>Lượng nước tối đa rót vào cốc</span></p><p>Cốc chìm tối đa $12\\ \\text{cm}$ :</p>$$V_{chìm,max}=S_c\\,h_c=50\\cdot12=600\\ \\text{cm}^3$$<p>Cốc và nước trong cốc nặng tối đa $600\\ \\text{g}$ :</p>$$m_{n,max}=600-m_c=600-200$$<div class=\"bt-ans\">$$m_{n,max}=400\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">10</span><span>Kiểm tra</span></p><p>Khi đó cốc và nước nặng $200+400=600\\ \\text{g}$, cần chiếm chỗ $600\\ \\text{cm}^3$ ✓.</p><p>Mực nước bình lúc đó cao $20+\\dfrac{600}{200}=23\\ \\text{cm}$, cốc chìm $12\\ \\text{cm}$ nên đáy cốc còn cách đáy bình $11\\ \\text{cm}$ ✓ (cốc không chạm đáy).</p><p>Câu b : $\\Delta h'=0{,}5\\ \\text{cm}$ đúng bằng khi rót thẳng $100\\ \\text{g}$ nước vào bình ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) chìm $4\\ \\text{cm}$ ; dâng $1\\ \\text{cm}$</p><p>b) chìm $6\\ \\text{cm}$ ; dâng thêm $0{,}5\\ \\text{cm}$</p><p>c) sỏi trong cốc : $+0{,}5\\ \\text{cm}$ ; sỏi dưới đáy : $+0{,}2\\ \\text{cm}$ ; trong cốc cao hơn $0{,}3\\ \\text{cm}$</p><p>d) $400\\ \\text{g}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>vật nổi trong bình, hỏi mực nước</strong> → vật nổi chiếm chỗ theo <strong>khối lượng</strong>, vật chìm chiếm chỗ theo <strong>thể tích</strong>.</p></div>",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "nhan_dang": "Thấy <b>vật nổi trong bình, hỏi mực nước</b> → vật nổi chiếm chỗ theo <b>khối lượng</b>, vật chìm chiếm chỗ theo <b>thể tích</b>.",
+   "buoc": [
+    {
+     "tieu_de": "Cốc rỗng chìm sâu bao nhiêu",
+     "hoi": "Cốc rỗng nổi thì chìm sâu bao nhiêu xentimét?",
+     "dap_so": 4,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia thể tích chìm cho tiết diện bình $S$ thay vì tiết diện cốc $S_c$, hoặc cho rằng cốc chìm hết chiều cao $12\\ \\text{cm}$."
+    },
+    {
+     "tieu_de": "Mực nước trong bình dâng",
+     "hoi": "Mực nước trong bình dâng thêm bao nhiêu xentimét?",
+     "dap_so": 1,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy độ dâng bằng độ chìm của cốc ($\\Delta h=x$), hoặc chia cho tiết diện cốc thay vì tiết diện bình.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thể tích chiếm chỗ chia cho tiết diện bình : $\\Delta h=\\dfrac{V_{chìm}}{S}$",
+       "dung": true
+      },
+      {
+       "text": "Mực nước dâng đúng bằng độ chìm của cốc : $\\Delta h=x$",
+       "dung": false,
+       "vi_sao": "Nước dâng lên trên cả tiết diện bình rộng, không dồn vào chỗ cốc nên $\\Delta h$ nhỏ hơn $x$."
+      },
+      {
+       "text": "$\\Delta h=\\dfrac{V_{chìm}}{S_c}$",
+       "dung": false,
+       "vi_sao": "$S_c$ là tiết diện cốc ; nước dâng trong toàn bình nên phải chia cho tiết diện bình $S$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cốc chìm sâu khi có nước rót vào",
+     "hoi": "Sau khi rót nước vào cốc, cốc chìm sâu bao nhiêu xentimét?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chỉ tính khối lượng nước rót vào mà quên khối lượng cốc, hoặc giữ nguyên độ chìm của câu a.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nổi cân bằng với tổng khối lượng cốc và nước : $V_{chìm}=\\dfrac{m_c+m_n}{D_n}$",
+       "dung": true
+      },
+      {
+       "text": "Độ chìm không đổi vì cốc vẫn là cốc đó",
+       "dung": false,
+       "vi_sao": "Cốc nặng thêm thì lực đẩy phải tăng, cốc phải chìm sâu hơn."
+      },
+      {
+       "text": "$V_{chìm}=\\dfrac{m_n}{D_n}$ (chỉ tính nước rót)",
+       "dung": false,
+       "vi_sao": "Cốc vẫn nặng $200\\ \\text{g}$ ; lực đẩy phải đỡ cả cốc và nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mực nước dâng thêm so với câu a",
+     "hoi": "Mực nước trong bình dâng thêm bao nhiêu xentimét so với câu a?",
+     "dap_so": 0.5,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia phần thể tích tăng thêm cho tiết diện cốc, hoặc tính lại từ đầu rồi quên trừ độ dâng ở câu a.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thể tích phần chìm tăng thêm chia cho tiết diện bình",
+       "dung": true
+      },
+      {
+       "text": "Thể tích nước rót chia cho tiết diện cốc",
+       "dung": false,
+       "vi_sao": "Nước dâng trong cả bình rộng hơn, không chỉ trong cốc ; phải chia cho $S$."
+      },
+      {
+       "text": "Lấy luôn độ dâng sau khi rót nước, không trừ độ dâng ở câu a",
+       "dung": false,
+       "vi_sao": "Đề hỏi dâng thêm so với câu a nên chỉ lấy phần tăng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Sỏi nằm trong cốc",
+     "hoi": "Với sỏi nằm trong cốc, mực nước bình dâng thêm bao nhiêu xentimét so với câu a?",
+     "dap_so": 0.5,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng thể tích thật của sỏi để tính phần nước bị chiếm chỗ, trong khi sỏi nổi nhờ cốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cốc vẫn nổi : nước bị chiếm chỗ thêm có khối lượng bằng khối lượng sỏi",
+       "dung": true
+      },
+      {
+       "text": "Nước bị chiếm chỗ thêm có thể tích bằng thể tích thật của sỏi",
+       "dung": false,
+       "vi_sao": "Đó là khi sỏi chìm hẳn xuống đáy ; sỏi trong cốc đang nổi cùng cốc nên chiếm chỗ theo khối lượng."
+      },
+      {
+       "text": "Cốc nổi nên mực nước bình không đổi",
+       "dung": false,
+       "vi_sao": "Cốc chìm sâu thêm để đỡ sỏi nên nước vẫn bị chiếm chỗ thêm và mực nước dâng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Sỏi thả xuống đáy bình",
+     "hoi": "Với sỏi thả xuống đáy bình, mực nước bình dâng thêm bao nhiêu xentimét so với câu a?",
+     "dap_so": 0.2,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Coi sỏi chiếm chỗ theo khối lượng như khi nổi, hoặc quên đổi khối lượng riêng nên tính sai thể tích sỏi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Sỏi chìm hẳn : nước bị chiếm chỗ bằng thể tích thật $V=\\dfrac{m}{D}$",
+       "dung": true
+      },
+      {
+       "text": "Sỏi vẫn chiếm chỗ theo khối lượng như khi nổi",
+       "dung": false,
+       "vi_sao": "Sỏi nằm dưới đáy được đáy bình đỡ, không còn nổi nên chỉ chiếm chỗ đúng thể tích thật."
+      },
+      {
+       "text": "Sỏi nằm dưới đáy nên không làm mực nước thay đổi",
+       "dung": false,
+       "vi_sao": "Sỏi vẫn chiếm một thể tích trong nước nên mực nước vẫn dâng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Trường hợp nào mực nước cao hơn",
+     "hoi": "Trường hợp nào làm mực nước bình cao hơn?",
+     "lua_chon": [
+      {
+       "text": "Sỏi nằm trong cốc",
+       "dung": true
+      },
+      {
+       "text": "Sỏi thả xuống đáy bình",
+       "dung": false,
+       "vi_sao": "Sỏi dưới đáy chỉ chiếm chỗ thể tích thật nhỏ hơn nên mực nước thấp hơn."
+      },
+      {
+       "text": "Hai trường hợp như nhau vì cùng một hòn sỏi",
+       "dung": false,
+       "vi_sao": "Sỏi trong cốc chiếm chỗ theo khối lượng, sỏi dưới đáy chiếm chỗ theo thể tích thật ; hai giá trị này khác nhau vì sỏi nặng hơn nước."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng hai trường hợp như nhau vì \"cùng hòn sỏi\" — quên một bên chiếm chỗ theo khối lượng, một bên theo thể tích.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai độ dâng vừa tìm được",
+       "dung": true
+      },
+      {
+       "text": "Kết luận ngay là như nhau vì khối lượng sỏi không đổi",
+       "dung": false,
+       "vi_sao": "Khối lượng giống nhau nhưng cách chiếm chỗ khác nhau nên độ dâng khác nhau."
+      },
+      {
+       "text": "Tính lại lực đẩy lên cốc rỗng",
+       "dung": false,
+       "vi_sao": "Lực đẩy lên cốc rỗng không đổi giữa hai trường hợp, không giúp so sánh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chênh lệch giữa hai trường hợp",
+     "hoi": "Mực nước ở hai trường hợp chênh nhau bao nhiêu xentimét (lấy số lớn trừ số nhỏ)?",
+     "dap_so": 0.3,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cộng hai độ dâng thay vì lấy hiệu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu hai độ dâng đã tìm",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai độ dâng",
+       "dung": false,
+       "vi_sao": "Hai trường hợp là hai tình huống tách rời, không xảy ra cùng lúc ; so sánh phải lấy hiệu."
+      },
+      {
+       "text": "Lấy hiệu của hai thể tích chiếm chỗ rồi chia cho tiết diện cốc",
+       "dung": false,
+       "vi_sao": "Độ dâng của mực nước bình phải chia cho tiết diện bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lượng nước tối đa rót vào cốc",
+     "hoi": "Rót nước vào cốc tối đa bao nhiêu gam thì miệng cốc vừa chạm mặt nước?",
+     "dap_so": 400,
+     "sai_so": 5,
+     "don_vi": "g",
+     "loi_hay_gap": "Lấy $S$ của bình thay vì $S_c$ khi tính thể tích chìm tối đa, hoặc quên trừ khối lượng cốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chìm tối đa $12\\ \\text{cm}$ : $V_{chìm,max}=S_c\\,h_c$, rồi trừ khối lượng cốc",
+       "dung": true
+      },
+      {
+       "text": "Đổ đầy cốc : $m=D_n\\,S_c\\,h_c$ (không trừ khối lượng cốc)",
+       "dung": false,
+       "vi_sao": "Khi miệng cốc chạm mặt nước, khối lượng cốc và nước cộng lại mới bằng khối lượng nước chiếm chỗ ; phải trừ khối lượng cốc."
+      },
+      {
+       "text": "$V_{chìm,max}=S\\,h_c$ (tiết diện bình)",
+       "dung": false,
+       "vi_sao": "Phần chìm của cốc là hình trụ tiết diện $S_c$, không phải tiết diện bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "go_roi": {
+    "buoc_hay_sai": 5
+   }
+  }
+ ]
+}

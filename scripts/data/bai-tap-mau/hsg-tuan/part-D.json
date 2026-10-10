@@ -1,0 +1,490 @@
+{
+ "lesson_id": 167,
+ "lesson_title": "Bài tập tuần này: 12 bài tự luận Cơ học",
+ "review": {
+  "checked": true,
+  "notes": "tạm, chờ kiểm chéo"
+ },
+ "dang_bai": [
+  {
+   "label": "Bài 10 · Vận dụng · Ô tô lên dốc — lực kéo, công suất, nhiên liệu · Thứ Năm 15/10",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "bai_tap",
+   "problem_html": "<p>Ô tô khối lượng $1\\,200\\ \\text{kg}$ chuyển động đều lên một dốc dài $1\\ \\text{km}$, cao $50\\ \\text{m}$ với tốc độ $36\\ \\text{km/h}$. Khi lên dốc, lực cản chuyển động (ma sát và không khí) không đổi và bằng $400\\ \\text{N}$. Lấy $g=10\\ \\text{N/kg}$.</p><ol type=\"a\"><li>Tính lực kéo của động cơ và công suất của động cơ.</li><li>Động cơ có hiệu suất $25\\ \\%$ ; xăng toả $4{,}6\\cdot10^{7}\\ \\text{J/kg}$ khi cháy. Tính lượng xăng tiêu thụ khi xe lên hết dốc.</li><li>Khi xuống dốc này, tài xế tắt máy và đạp phanh nhẹ để xe chạy đều. Tổng lực cản (ma sát, không khí và phanh) lúc đó bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"hsg-10-0\"><svg viewBox=\"0 0 440 244\" role=\"img\" aria-label=\"Ô tô khối lượng 1 200 kg chạy lên dốc dài 1 km, cao 50 m, tốc độ 36 km/h\"><polygon points=\"24,190 330,190 330,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><g transform=\"translate(163.6,135.2) rotate(-21.4)\"><rect x=\"-30\" y=\"-16\" width=\"60\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"-14\" y=\"-28\" width=\"26\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"-16\" cy=\"2\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"16\" cy=\"2\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"38\" y1=\"-8\" x2=\"90\" y2=\"-8\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M81.2,-13.1 L90.0,-8.0 L81.2,-2.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"40\" y=\"-16\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v = 36 km/h</text></g><line x1=\"346\" y1=\"70\" x2=\"346\" y2=\"190\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M350.1,183.0 L346.0,190.0 L341.9,183.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"346\" y1=\"190\" x2=\"346\" y2=\"70\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M341.9,77.0 L346.0,70.0 L350.1,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"352\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 50 m</text><line x1=\"24\" y1=\"214\" x2=\"330\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M323.0,209.9 L330.0,214.0 L323.0,218.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"330\" y1=\"214\" x2=\"24\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M31.0,218.1 L24.0,214.0 L31.0,209.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"177\" y=\"234\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">dốc dài l = 1 km</text><text x=\"30\" y=\"30\" font-size=\"12\" font-weight=\"600\" fill=\"currentColor\">m = 1 200 kg · F<tspan dy=\"4\" font-size=\"9\">c</tspan><tspan dy=\"-4\"> = 400 N</tspan></text></svg><figcaption>Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chuyển động đều lên một dốc dài $1$ km, cao $50$ m\"</td><td>$l=1000$ m ; $h=50$ m</td><td>⚠ Chuyển động đều → hợp lực bằng $0$ ; dọc dốc chỉ có thành phần trọng lực $P\\dfrac{h}{l}$ (không phải cả $P$) cần cân bằng</td></tr><tr><td>\"khối lượng $1\\,200$ kg … Lấy $g=10$\"</td><td>$m=1200$ kg ; $P=10m$</td><td>Trọng lượng $P=10m$</td></tr><tr><td>\"tốc độ $36$ km/h\"</td><td>$v=36$ km/h</td><td>⚠ Đổi ra m/s trước khi dùng $\\mathcal{P}=Fv$</td></tr><tr><td>\"lực cản … không đổi $400$ N\"</td><td>$F_c=400$ N</td><td>Lực cản cùng chiều với thành phần trọng lực (cùng ngược chiều chuyển động lên dốc)</td></tr><tr><td>\"Tính lực kéo … và công suất\"</td><td>Cần tìm $F_k$ ; $\\mathcal{P}$</td><td>$F_k=P\\dfrac{h}{l}+F_c$ ; $\\mathcal{P}=F_k v$</td></tr><tr><td>\"hiệu suất $25\\ \\%$ ; xăng toả $4{,}6\\cdot10^{7}$ J/kg\"</td><td>$H=0{,}25$ ; $q=4{,}6\\cdot10^{7}$ J/kg</td><td>⚠ $H=\\dfrac{A}{Q}$ nên $Q=\\dfrac{A}{H}$ (lớn hơn $A$) ; $m=\\dfrac{Q}{q}$ ; $A=F_k l$</td></tr><tr><td>\"xuống dốc, tắt máy … chạy đều\"</td><td>Lực kéo $=0$ ; thêm lực phanh</td><td>⚠ Chạy đều → tổng lực cản cân bằng thành phần trọng lực dọc dốc $P\\dfrac{h}{l}$</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức:</strong> chuyển động đều lên dốc → $F_k=P\\dfrac{h}{l}+F_c$ ; $\\mathcal{P}=F_k v$ ; $H=\\dfrac{A}{Q}$ ; $m=\\dfrac{Q}{q}$.</li><li>⚠ <strong>Điều kiện:</strong> đổi tốc độ ra m/s ; hiệu suất nhỏ hơn $1$ nên nhiệt toả ra lớn hơn công có ích.</li><li><strong>Xuống dốc đều:</strong> tổng lực cản cân bằng thành phần trọng lực dọc dốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi tốc độ</span></p><p>Quãng đường tính bằng mét nên đổi tốc độ ra m/s :</p>$$v=\\dfrac{36}{3{,}6}$$<div class=\"bt-ans\">$$v=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thành phần trọng lực dọc dốc</span></p><p>Trọng lượng của xe :</p>$$P=10m=10\\cdot1200=12\\,000\\ \\text{N}$$<p>Thành phần dọc dốc :</p>$$P\\dfrac{h}{l}=12\\,000\\cdot\\dfrac{50}{1000}$$<div class=\"bt-ans\">$$P\\dfrac{h}{l}=600\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực kéo của động cơ</span></p><p>Chuyển động đều : lực kéo cân bằng thành phần trọng lực và lực cản :</p>$$F_k=P\\dfrac{h}{l}+F_c=600+400$$<div class=\"bt-ans\">$$F_k=1000\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất của động cơ</span></p>$$\\mathcal{P}=F_k v=1000\\cdot10$$<div class=\"bt-ans\">$$\\mathcal{P}=10\\,000\\ \\text{W}=10\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công động cơ sinh ra</span></p><p>Lên hết dốc, động cơ đi quãng đường $l$ :</p>$$A=F_k l=1000\\cdot1000$$<div class=\"bt-ans\">$$A=1\\,000\\,000\\ \\text{J}=1\\ \\text{MJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Nhiệt lượng xăng toả ra</span></p><p>Từ $H=\\dfrac{A}{Q}$ :</p>$$Q=\\dfrac{A}{H}=\\dfrac{1\\,000\\,000}{0{,}25}$$<div class=\"bt-ans\">$$Q=4\\,000\\,000\\ \\text{J}=4\\ \\text{MJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Lượng xăng tiêu thụ</span></p>$$m=\\dfrac{Q}{q}=\\dfrac{4\\,000\\,000}{4{,}6\\cdot10^{7}}$$<div class=\"bt-ans\">$$m\\approx0{,}087\\ \\text{kg}\\approx87\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Xuống dốc, tắt máy, chạy đều</span></p><p>Không còn lực kéo. Chạy đều nên tổng lực cản cân bằng thành phần trọng lực dọc dốc :</p>$$F_{\\text{cản}}=P\\dfrac{h}{l}$$<div class=\"bt-ans\">$$F_{\\text{cản}}=600\\ \\text{N}$$</div><p>Trong đó ma sát và không khí vẫn khoảng $400\\ \\text{N}$ nên lực phanh khoảng $200\\ \\text{N}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F_k=1000\\ \\text{N}$ ; $\\mathcal{P}=10\\ \\text{kW}$</p><p>b) $m\\approx0{,}087\\ \\text{kg}$ (khoảng $87\\ \\text{g}$)</p><p>c) $600\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>xe lên dốc đều, có lực cản</strong> → $F_k=P\\dfrac{h}{l}+F_c$, công suất $=Fv$ (đổi $v$ ra m/s) ; hiệu suất thì $Q=\\dfrac{A}{H}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>xe lên dốc đều, có lực cản</b> → nghĩ tới <b>F<sub>kéo</sub> = P·h/l + F<sub>cản</sub></b>, công suất = F·v",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi tốc độ",
+     "hoi": "Tốc độ 36 km/h bằng bao nhiêu mét trên giây?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhân với $3{,}6$ thay vì chia, hoặc để nguyên km/h khi quãng đường tính bằng mét."
+    },
+    {
+     "tieu_de": "Thành phần trọng lực dọc dốc",
+     "hoi": "Thành phần của trọng lực dọc theo dốc (P·h/l) bằng bao nhiêu niutơn?",
+     "dap_so": 600,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy cả trọng lượng $P$ làm lực cần thắng dọc dốc, hoặc lấy $P\\cdot\\dfrac{l}{h}$ thay vì $P\\cdot\\dfrac{h}{l}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính thành phần trọng lực dọc dốc $P\\dfrac{h}{l}$ (mặt nghiêng giúp lợi về lực)",
+       "dung": true
+      },
+      {
+       "text": "Lấy cả trọng lượng $P$ làm lực cản dọc dốc",
+       "dung": false,
+       "vi_sao": "Xe không bị nâng thẳng đứng : dọc theo dốc chỉ có thành phần $P\\dfrac{h}{l}$ cần cân bằng."
+      },
+      {
+       "text": "Bỏ qua trọng lực vì xe chuyển động đều",
+       "dung": false,
+       "vi_sao": "Chuyển động đều chỉ nói hợp lực bằng $0$ ; lực kéo vẫn phải cân bằng thành phần trọng lực, không bỏ được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo của động cơ",
+     "hoi": "Lực kéo của động cơ khi lên dốc đều bằng bao nhiêu niutơn?",
+     "dap_so": 1000,
+     "sai_so": 10,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho $F_k=F_c$ (quên thành phần trọng lực) hoặc trừ lực cản thay vì cộng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cân bằng lực dọc dốc : $F_k=P\\dfrac{h}{l}+F_c$",
+       "dung": true
+      },
+      {
+       "text": "$F_k=P\\dfrac{h}{l}-F_c$",
+       "dung": false,
+       "vi_sao": "Lực cản ngược chiều chuyển động giống thành phần trọng lực nên lực kéo phải thắng cả hai, không phải trừ."
+      },
+      {
+       "text": "$F_k=F_c$ vì chạy đều",
+       "dung": false,
+       "vi_sao": "Chạy đều trên dốc còn thành phần trọng lực kéo xe xuống ; lực kéo phải cân bằng cả nó nữa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất của động cơ",
+     "hoi": "Công suất của động cơ bằng bao nhiêu kilôoát?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "kW",
+     "loi_hay_gap": "Dùng $v=36$ thẳng vào công thức (được số lớn gấp $3{,}6$ lần), hoặc quên đổi W sang kW.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\mathcal{P}=F_k v$ với $v$ tính bằng m/s",
+       "dung": true
+      },
+      {
+       "text": "$\\mathcal{P}=F_k v$ với $v$ giữ nguyên km/h",
+       "dung": false,
+       "vi_sao": "Đơn vị lệch nhau : phải đổi $v$ ra m/s mới ra oát."
+      },
+      {
+       "text": "$\\mathcal{P}=F_k\\,l$",
+       "dung": false,
+       "vi_sao": "$F_k\\,l$ là công của lực kéo, không phải công suất ; công suất là công chia thời gian hay $F\\,v$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công động cơ sinh ra",
+     "hoi": "Công động cơ sinh ra khi lên hết dốc bằng bao nhiêu mêgajun (MJ)?",
+     "dap_so": 1,
+     "sai_so": 0.02,
+     "don_vi": "MJ",
+     "loi_hay_gap": "Tính công nâng $P\\cdot h$ (quên công thắng lực cản) hoặc lấy $\\mathcal{P}\\cdot l$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=F_k\\,l$ (lực kéo nhân quãng đường dọc dốc)",
+       "dung": true
+      },
+      {
+       "text": "$A=P\\,h$",
+       "dung": false,
+       "vi_sao": "$P\\,h$ chỉ là công nâng xe lên ; động cơ còn phải thắng lực cản dọc suốt quãng đường nên công lớn hơn."
+      },
+      {
+       "text": "$A=\\mathcal{P}\\,l$",
+       "dung": false,
+       "vi_sao": "Công suất nhân quãng đường không ra công ; công $=$ lực $\\times$ quãng đường hoặc công suất $\\times$ thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng xăng toả ra",
+     "hoi": "Nhiệt lượng xăng phải toả ra bằng bao nhiêu mêgajun (MJ)?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "MJ",
+     "loi_hay_gap": "Nhân công với hiệu suất ($Q=A\\cdot H$) nên ra nhỏ hơn công có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q=\\dfrac{A}{H}$",
+       "dung": true
+      },
+      {
+       "text": "$Q=A\\cdot H$",
+       "dung": false,
+       "vi_sao": "Hiệu suất nhỏ hơn $1$ nên nhiệt toả ra phải lớn hơn công có ích ; nhân với $H$ sẽ ra nhỏ hơn."
+      },
+      {
+       "text": "$Q=A$",
+       "dung": false,
+       "vi_sao": "Động cơ có hiệu suất nên chỉ một phần nhiệt của xăng thành công ; không thể lấy $Q$ bằng $A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lượng xăng tiêu thụ",
+     "hoi": "Lượng xăng tiêu thụ bằng bao nhiêu gam?",
+     "dap_so": 87,
+     "sai_so": 1,
+     "don_vi": "g",
+     "loi_hay_gap": "Quên đổi kg sang gam, hoặc dùng công $A$ thay vì nhiệt lượng $Q$ để chia cho $q$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m=\\dfrac{Q}{q}$",
+       "dung": true
+      },
+      {
+       "text": "$m=\\dfrac{A}{q}$",
+       "dung": false,
+       "vi_sao": "$q$ là nhiệt toả ra khi đốt $1$ kg xăng nên phải chia nhiệt lượng $Q$, không phải công có ích $A$."
+      },
+      {
+       "text": "$m=Q\\cdot q$",
+       "dung": false,
+       "vi_sao": "Đơn vị thành $\\text{J}\\cdot\\text{J/kg}$, không ra kilôgam."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Xuống dốc, tắt máy, chạy đều",
+     "hoi": "Tổng lực cản (kể cả phanh) khi xuống dốc đều bằng bao nhiêu niutơn?",
+     "dap_so": 600,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho tổng lực cản vẫn bằng lực cản cũ, quên rằng thành phần trọng lực dọc dốc đang kéo xe xuống.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chạy đều : tổng lực cản cân bằng thành phần trọng lực dọc dốc",
+       "dung": true
+      },
+      {
+       "text": "Tổng lực cản bằng lực cản cũ vì ma sát và không khí không đổi",
+       "dung": false,
+       "vi_sao": "Còn lực phanh nữa, và xe chạy đều nên tổng lực cản phải cân bằng thành phần trọng lực, không chỉ ma sát và không khí."
+      },
+      {
+       "text": "Tổng lực cản bằng cả trọng lượng $P$",
+       "dung": false,
+       "vi_sao": "Chỉ thành phần $P\\dfrac{h}{l}$ nằm dọc theo dốc mới cần cân bằng."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Bài 11 · Vận dụng cao · Hai máng nhẵn nối bằng đoạn đường có ma sát · Thứ Sáu 16/10",
+   "topic": "Biến thiên cơ năng khi có ma sát",
+   "form": "bai_tap",
+   "problem_html": "<p>Vật nhỏ khối lượng $500\\ \\text{g}$ được thả không vận tốc đầu từ độ cao $h=5\\ \\text{m}$ trên máng cong nhẵn (1). Chân máng nối với đoạn đường nằm ngang $MN$ dài $10\\ \\text{m}$ ; trên $MN$ lực ma sát không đổi $1\\ \\text{N}$. Đầu $N$ nối với máng cong nhẵn (2). Lấy $g=10\\ \\text{N/kg}$, bỏ qua sức cản không khí.</p><ol type=\"a\"><li>Tính tốc độ của vật khi tới $M$.</li><li>Vật lên tới độ cao lớn nhất bao nhiêu trên máng (2)?</li><li>Cuối cùng vật dừng lại ở đâu? Tính tổng quãng đường vật đã đi trên đoạn $MN$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"hsg-11-0\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Hai máng cong nhẵn nối bằng đoạn nằm ngang MN có ma sát\"><path d=\"M30,30 Q 40,160 120,160\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"120.0\" y1=\"160.0\" x2=\"300.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><path d=\"M300,160 Q 380,160 392,60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"126.0\" y1=\"160.0\" x2=\"120.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"138.0\" y1=\"160.0\" x2=\"132.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"150.0\" y1=\"160.0\" x2=\"144.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"162.0\" y1=\"160.0\" x2=\"156.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"174.0\" y1=\"160.0\" x2=\"168.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"186.0\" y1=\"160.0\" x2=\"180.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"198.0\" y1=\"160.0\" x2=\"192.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"210.0\" y1=\"160.0\" x2=\"204.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"222.0\" y1=\"160.0\" x2=\"216.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"234.0\" y1=\"160.0\" x2=\"228.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"246.0\" y1=\"160.0\" x2=\"240.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"258.0\" y1=\"160.0\" x2=\"252.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"270.0\" y1=\"160.0\" x2=\"264.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"282.0\" y1=\"160.0\" x2=\"276.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><line x1=\"294.0\" y1=\"160.0\" x2=\"288.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"1\"/><circle cx=\"32.0\" cy=\"30.0\" r=\"6\" fill=\"#34d399\"/><text x=\"46\" y=\"26\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">m = 500 g, thả không vận tốc đầu</text><line x1=\"54.0\" y1=\"44.0\" x2=\"54.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"62\" y1=\"44\" x2=\"62\" y2=\"160\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M66.1,153.0 L62.0,160.0 L57.9,153.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62\" y1=\"160\" x2=\"62\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M57.9,51.0 L62.0,44.0 L66.1,51.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"70\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 5 m</text><text x=\"120\" y=\"182\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"300\" y=\"182\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><text x=\"210\" y=\"196\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">MN = 10 m, lực ma sát 1 N</text><text x=\"70\" y=\"212\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">máng (1) nhẵn</text><text x=\"350\" y=\"212\" fill=\"currentColor\" font-size=\"11\" font-weight=\"600\" text-anchor=\"middle\">máng (2) nhẵn</text></svg><figcaption>Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"máng cong nhẵn (1) … thả từ $h=5$ m\"</td><td>$h=5$ m ; $m=0{,}5$ kg (đổi từ $500$ g)</td><td>⚠ Máng nhẵn → cơ năng bảo toàn : $mgh=\\dfrac12 mv^2$</td></tr><tr><td>\"đoạn nằm ngang $MN$ dài $10$ m ; ma sát $1$ N\"</td><td>$MN=10$ m ; $F_{ms}=1$ N</td><td>⚠ Chỉ trên $MN$ cơ năng giảm đúng bằng công ma sát : $\\Delta W=F_{ms}\\,s$</td></tr><tr><td>\"Đầu $N$ nối với máng cong nhẵn (2)\"</td><td>Máng (2) không ma sát</td><td>Cơ năng tại $N$ biến hết thành thế năng ở độ cao cực đại : $mgh_2=W_N$</td></tr><tr><td>\"Tính tốc độ khi tới $M$ ; độ cao lớn nhất trên máng (2)\"</td><td>Cần tìm $v_M$ ; $h_2$</td><td>$v_M=\\sqrt{2gh}$ ; $h_2=\\dfrac{W_N}{mg}$</td></tr><tr><td>\"Cuối cùng vật dừng lại ở đâu ? Tổng quãng đường trên $MN$\"</td><td>Cần tìm vị trí dừng ; $s_{\\text{tổng}}$</td><td>⚠ Dừng hẳn khi mất hết cơ năng : $F_{ms}\\,s_{\\text{tổng}}=W_0$ ; vật có thể qua $MN$ nhiều lần</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Cơ năng:</strong> $W=mgh$ (thế năng, mốc ở mặt $MN$) hoặc $W=\\dfrac12mv^2$ (ở mặt $MN$).</li><li>⚠ <strong>Điều kiện:</strong> máng nhẵn thì cơ năng bảo toàn ; chỉ đoạn có ma sát làm cơ năng giảm : $\\Delta W=F_{ms}\\,s$.</li><li><strong>Dừng hẳn:</strong> $F_{ms}\\,s_{\\text{tổng}}=W_0$ ; vật có thể qua $MN$ nhiều lần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng ban đầu</span></p><p>Đổi $m=500\\ \\text{g}=0{,}5\\ \\text{kg}$. Chọn mốc ở mặt $MN$ :</p>$$W_0=mgh=0{,}5\\cdot10\\cdot5$$<div class=\"bt-ans\">$$W_0=25\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ tại $M$</span></p><p>Máng (1) nhẵn nên cơ năng bảo toàn, thế năng biến hết thành động năng :</p>$$\\dfrac12mv^2=W_0$$$$v=\\sqrt{\\dfrac{2W_0}{m}}=\\sqrt{\\dfrac{2\\cdot25}{0{,}5}}$$<div class=\"bt-ans\">$$v=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cơ năng tại $N$</span></p><p>Qua $MN$ lần 1 vật mất công ma sát :</p>$$A_{ms}=F_{ms}\\cdot MN=1\\cdot10=10\\ \\text{J}$$$$W_N=W_0-A_{ms}=25-10$$<div class=\"bt-ans\">$$W_N=15\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao lớn nhất trên máng (2)</span></p><p>Máng (2) nhẵn : cơ năng tại $N$ biến hết thành thế năng ở đỉnh :</p>$$mgh_2=W_N$$$$h_2=\\dfrac{W_N}{mg}=\\dfrac{15}{0{,}5\\cdot10}$$<div class=\"bt-ans\">$$h_2=3\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tổng quãng đường trên $MN$</span></p><p>Dừng hẳn thì toàn bộ cơ năng ban đầu đã biến thành công ma sát :</p>$$F_{ms}\\,s_{\\text{tổng}}=W_0$$$$s_{\\text{tổng}}=\\dfrac{W_0}{F_{ms}}=\\dfrac{25}{1}$$<div class=\"bt-ans\">$$s_{\\text{tổng}}=25\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Vị trí dừng</span></p><p>Chia cho chiều dài $MN$ :</p>$$\\dfrac{s_{\\text{tổng}}}{MN}=\\dfrac{25}{10}=2{,}5$$<p>Vật đi hết $MN$ hai lần (từ $M$ tới $N$ rồi về $M$), còn dư $5\\ \\text{m}$ kể từ $M$ về phía $N$ :</p><div class=\"bt-ans\">$$\\text{dừng cách }M\\text{ là }5\\ \\text{m (giữa }MN\\text{)}$$</div><p>Kiểm tra : $10+10+5=25\\ \\text{m}$ ✓. Lần về $M$ thứ hai vật còn $5\\ \\text{J}$ nên lên máng (1) cao $1\\ \\text{m}$ rồi trượt lại.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v=10\\ \\text{m/s}$</p><p>b) $h_2=3\\ \\text{m}$</p><p>c) Dừng cách $M$ là $5\\ \\text{m}$ (giữa $MN$) ; tổng quãng đường trên $MN$ là $25\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>máng nhẵn nối đoạn có ma sát</strong> → cơ năng chỉ mất trên đoạn ma sát : $\\Delta W=F_{ms}\\,s$ ; hỏi \"dừng ở đâu\" thì lấy $\\dfrac{W_0}{F_{ms}}$ rồi chia theo chiều dài đoạn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>máng nhẵn nối đoạn có ma sát</b> → nghĩ tới <b>ΔW = F<sub>ms</sub>·s</b>; hỏi dừng ở đâu thì lấy W₀/F<sub>ms</sub>",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 5
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng ban đầu",
+     "hoi": "Cơ năng ban đầu của vật (mốc ở mặt MN) bằng bao nhiêu jun?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Thế khối lượng $500$ (gam) vào công thức thay vì $0{,}5$ kg."
+    },
+    {
+     "tieu_de": "Tốc độ tại M",
+     "hoi": "Tốc độ của vật khi tới M bằng bao nhiêu mét trên giây?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Trừ công ma sát của $MN$ trước khi tới $M$, hoặc quên căn bậc hai ($v=2gh$).",
+     "chon_buoc_ke": [
+      {
+       "text": "Máng (1) nhẵn nên cơ năng bảo toàn : $\\dfrac12mv^2=W_0$",
+       "dung": true
+      },
+      {
+       "text": "Trừ công ma sát của $MN$ trước khi tính",
+       "dung": false,
+       "vi_sao": "Tới $M$ vật chưa vào đoạn $MN$ nên ma sát chưa sinh công."
+      },
+      {
+       "text": "Dùng $v=g\\,t$ với gia tốc không đổi",
+       "dung": false,
+       "vi_sao": "Máng cong nên gia tốc dọc máng thay đổi và thời gian chưa biết ; phải dùng bảo toàn cơ năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cơ năng tại N",
+     "hoi": "Cơ năng của vật khi tới N (sau lần qua MN đầu tiên) bằng bao nhiêu jun?",
+     "dap_so": 15,
+     "sai_so": 0.5,
+     "don_vi": "J",
+     "loi_hay_gap": "Cho cơ năng không đổi (quên ma sát trên $MN$), hoặc lấy chính công ma sát làm cơ năng còn lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "$W_N=W_0-F_{ms}\\cdot MN$",
+       "dung": true
+      },
+      {
+       "text": "$W_N=W_0$ vì hai máng đều nhẵn",
+       "dung": false,
+       "vi_sao": "Giữa hai máng là đoạn $MN$ có ma sát nên cơ năng giảm."
+      },
+      {
+       "text": "$W_N=F_{ms}\\cdot MN$",
+       "dung": false,
+       "vi_sao": "Đó là phần cơ năng đã mất, không phải phần còn lại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao lớn nhất trên máng (2)",
+     "hoi": "Vật lên tới độ cao lớn nhất bao nhiêu mét trên máng (2)?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng cơ năng ban đầu $W_0$ (ra $5\\ \\text{m}$) hoặc dùng tốc độ tại $M$ cho điểm $N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Máng (2) nhẵn : $mgh_2=W_N$",
+       "dung": true
+      },
+      {
+       "text": "$mgh_2=W_0$",
+       "dung": false,
+       "vi_sao": "Vật đã mất công ma sát trên $MN$ nên chỉ còn $W_N$ khi tới chân máng (2)."
+      },
+      {
+       "text": "$\\dfrac12mv_M^2=mgh_2$ với $v_M$ là tốc độ tại $M$",
+       "dung": false,
+       "vi_sao": "Tốc độ tại $N$ đã giảm do ma sát, không bằng tốc độ tại $M$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tổng quãng đường trên MN",
+     "hoi": "Tổng quãng đường vật đi trên đoạn MN cho tới khi dừng hẳn bằng bao nhiêu mét?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "m",
+     "loi_hay_gap": "Cho rằng vật chỉ qua $MN$ một lần ($s=MN$), hoặc dùng $W_N$ thay vì $W_0$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Toàn bộ cơ năng ban đầu thành công ma sát : $F_{ms}\\,s=W_0$",
+       "dung": true
+      },
+      {
+       "text": "$F_{ms}\\,s=W_N$",
+       "dung": false,
+       "vi_sao": "$W_N$ chỉ là cơ năng sau lần qua đầu tiên ; vật còn quay lại, phải mất hết $W_0$ mới dừng."
+      },
+      {
+       "text": "$s=MN$ vì vật qua $MN$ một lần",
+       "dung": false,
+       "vi_sao": "Hai máng nhẵn nên vật quay lại và qua $MN$ nhiều lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí dừng",
+     "hoi": "Vật dừng lại cách M bao nhiêu mét?",
+     "dap_so": 5,
+     "sai_so": 0.1,
+     "don_vi": "m",
+     "loi_hay_gap": "Kết luận dừng cách $M$ cả $s_{\\text{tổng}}$ (dài hơn $MN$), hoặc bỏ phần dư rồi cho dừng ở $M$ hay $N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia $s_{\\text{tổng}}$ cho $MN$ : số lượt đi hết $MN$ cộng phần dư",
+       "dung": true
+      },
+      {
+       "text": "Lấy luôn $s_{\\text{tổng}}$ làm khoảng cách tới $M$",
+       "dung": false,
+       "vi_sao": "$s_{\\text{tổng}}$ dài hơn $MN$ vì vật đã quay lại nhiều lần ; vị trí phải tính từ phần dư."
+      },
+      {
+       "text": "Bỏ phần dư, kết luận dừng đúng ở $M$ hoặc $N$",
+       "dung": false,
+       "vi_sao": "Phần dư khác $0$ nên vật dừng ở giữa $MN$, không phải ở hai đầu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Bài 12 · Vận dụng cao · Máy bơm nước — công suất, hiệu suất, động năng dòng nước · Thứ Sáu 16/10",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "bai_tap",
+   "problem_html": "<p>Một máy bơm có công suất tiêu thụ điện $1{,}5\\ \\text{kW}$, hiệu suất $60\\ \\%$, hút nước từ giếng lên bể đặt cao hơn mặt nước giếng $10\\ \\text{m}$. Khối lượng riêng của nước $1\\,000\\ \\text{kg/m}^3$, $g=10\\ \\text{N/kg}$.</p><ol type=\"a\"><li>Bỏ qua động năng của nước. Mỗi giây máy bơm được bao nhiêu lít nước?</li><li>Thực tế nước ra khỏi vòi (ở miệng bể) với tốc độ $4\\ \\text{m/s}$. Tính lại lượng nước bơm được mỗi giây.</li><li>Với kết quả câu b, bơm đầy bể $30\\ \\text{m}^3$ mất bao lâu? Máy tiêu thụ bao nhiêu kWh điện?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"hsg-12-0\"><svg viewBox=\"0 0 420 218\" role=\"img\" aria-label=\"Máy bơm hút nước từ giếng lên bể cao hơn mặt nước giếng 10 mét\"><rect x=\"20\" y=\"140\" width=\"110\" height=\"50\" fill=\"#d9e3ee\" stroke=\"none\" opacity=\".6\"/><path d=\"M20,120 L20,190 L130,190 L130,120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"20.0\" y1=\"140.0\" x2=\"130.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"75\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">giếng</text><rect x=\"160\" y=\"108\" width=\"44\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"182\" y=\"128\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">bơm</text><line x1=\"75.0\" y1=\"140.0\" x2=\"75.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"75.0\" y1=\"123.0\" x2=\"160.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"204.0\" y1=\"123.0\" x2=\"250.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"250.0\" y1=\"123.0\" x2=\"250.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"250.0\" y1=\"40.0\" x2=\"290.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"290\" y=\"50\" width=\"100\" height=\"40\" fill=\"#d9e3ee\" stroke=\"none\" opacity=\".6\"/><path d=\"M290,30 L290,90 L390,90 L390,30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"340\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">bể 30 m³</text><line x1=\"290\" y1=\"40\" x2=\"306\" y2=\"54\" stroke=\"#f87171\" stroke-width=\"2.2\"/><path d=\"M302.9,45.0 L306.0,54.0 L296.7,52.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"312\" y=\"40\" fill=\"#f87171\" font-size=\"11\" font-weight=\"700\" text-anchor=\"start\">v = 4 m/s</text><line x1=\"30.0\" y1=\"40.0\" x2=\"290.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"36\" y1=\"40\" x2=\"36\" y2=\"140\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M40.1,133.0 L36.0,140.0 L31.9,133.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"36\" y1=\"140\" x2=\"36\" y2=\"40\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M31.9,47.0 L36.0,40.0 L40.1,47.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"44\" y=\"94\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 10 m</text><text x=\"150\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">𝒫 = 1,5 kW, H = 60 %</text></svg><figcaption>Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"công suất tiêu thụ điện $1{,}5$ kW, hiệu suất $60\\ \\%$\"</td><td>$\\mathcal{P}=1500$ W ; $H=0{,}6$</td><td>⚠ Công suất có ích $\\mathcal{P}_{\\text{ích}}=H\\mathcal{P}$ ; điện năng tiêu thụ tính theo $\\mathcal{P}$ toàn phần</td></tr><tr><td>\"lên bể cao hơn mặt nước giếng $10$ m\"</td><td>$h=10$ m</td><td>Thế năng $1$ kg nước tăng $gh$</td></tr><tr><td>\"Bỏ qua động năng … mỗi giây được bao nhiêu lít\"</td><td>Cần tìm lưu lượng</td><td>$\\mathcal{P}_{\\text{ích}}=m\\,g\\,h$ ; $1$ kg nước $=1$ lít</td></tr><tr><td>\"nước ra khỏi vòi với tốc độ $4$ m/s\"</td><td>$v=4$ m/s</td><td>⚠ Mở rộng ngoài chuẩn KHTN 9 : động năng dòng nước ; $1$ kg cần $gh+\\dfrac12 v^2$</td></tr><tr><td>\"bơm đầy bể $30$ m³ … bao nhiêu kWh\"</td><td>$V=30$ m³ ; cần $t$ và $A$</td><td>$t=\\dfrac{V}{\\text{lưu lượng}}$ ; $A=\\mathcal{P}\\,t$ (đổi $t$ ra giờ)</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hiệu suất:</strong> $\\mathcal{P}_{\\text{ích}}=H\\,\\mathcal{P}$ ; điện năng tiêu thụ $A=\\mathcal{P}\\,t$ (toàn phần).</li><li><strong>Mỗi kg nước</strong> lên cao $h$ cần thế năng $gh$ ; nếu ra vòi với tốc độ $v$ thì thêm động năng $\\dfrac12v^2$.</li><li>⚠ <strong>Điều kiện:</strong> $1\\ \\text{kg}$ nước $=1\\ \\text{lít}$ ; kWh cần $t$ tính bằng giờ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công suất có ích</span></p>$$\\mathcal{P}_{\\text{ích}}=H\\,\\mathcal{P}=0{,}6\\cdot1500$$<div class=\"bt-ans\">$$\\mathcal{P}_{\\text{ích}}=900\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lưu lượng khi bỏ qua động năng (câu a)</span></p><p>Mỗi giây công có ích chỉ làm tăng thế năng của $m$ kilôgam nước :</p>$$\\mathcal{P}_{\\text{ích}}=m\\,g\\,h$$$$m=\\dfrac{900}{10\\cdot10}=9\\ \\text{kg}$$<div class=\"bt-ans\">$$9\\ \\text{kg nước}=9\\ \\text{lít mỗi giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Năng lượng cần cho 1 kg nước (câu b)</span></p><p>Mỗi kilôgam nước vừa được nâng lên vừa ra vòi với tốc độ $4\\ \\text{m/s}$ :</p>$$e=gh+\\dfrac12v^2=10\\cdot10+\\dfrac12\\cdot4^2$$<div class=\"bt-ans\">$$e=108\\ \\text{J/kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lưu lượng thực tế (câu b)</span></p><p>Số kilôgam nước mỗi giây $=$ năng lượng có ích mỗi giây chia năng lượng cần cho $1$ kg :</p>$$m=\\dfrac{\\mathcal{P}_{\\text{ích}}}{e}=\\dfrac{900}{108}$$<div class=\"bt-ans\">$$m\\approx8{,}33\\ \\text{kg}\\approx8{,}33\\ \\text{lít mỗi giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian bơm đầy bể (câu c)</span></p><p>Đổi $30\\ \\text{m}^3=30\\,000$ lít, chia cho lưu lượng câu b :</p>$$t=\\dfrac{30\\,000}{8{,}33}$$<div class=\"bt-ans\">$$t\\approx3600\\ \\text{s}=1\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Điện năng tiêu thụ (câu c)</span></p><p>Điện năng tính theo công suất toàn phần, thời gian đổi ra giờ :</p>$$A=\\mathcal{P}\\,t=1{,}5\\ \\text{kW}\\cdot1\\ \\text{h}$$<div class=\"bt-ans\">$$A=1{,}5\\ \\text{kWh}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $9$ lít/s</p><p>b) $\\approx8{,}33$ lít/s</p><p>c) $t=3600\\ \\text{s}=1\\ \\text{h}$ ; điện năng $1{,}5\\ \\text{kWh}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>máy bơm, hiệu suất, mỗi giây</strong> → viết năng lượng có ích trong $1\\ \\text{s}$ $=\\left(gh+\\dfrac12v^2\\right)\\times$ khối lượng nước mỗi giây.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>máy bơm, hiệu suất, mỗi giây</b> → viết <b>năng lượng có ích trong 1 s</b> = (gh + ½v²) × m mỗi giây",
+   "cap_do": 3,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công suất có ích",
+     "hoi": "Công suất có ích của máy bơm bằng bao nhiêu oát?",
+     "dap_so": 900,
+     "sai_so": 5,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy luôn $1500\\ \\text{W}$ làm công suất có ích, hoặc nhân hiệu suất với $60$ thay vì $0{,}6$."
+    },
+    {
+     "tieu_de": "Lưu lượng khi bỏ qua động năng",
+     "hoi": "Bỏ qua động năng, mỗi giây máy bơm được bao nhiêu lít nước?",
+     "dap_so": 9,
+     "sai_so": 0.1,
+     "don_vi": "lít",
+     "loi_hay_gap": "Dùng công suất toàn phần ($1500\\ \\text{W}$) trong $\\mathcal{P}=mgh$, hoặc đổi sang lít bằng cách nhân $1000$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Công có ích mỗi giây làm tăng thế năng : $\\mathcal{P}_{\\text{ích}}=m\\,g\\,h$",
+       "dung": true
+      },
+      {
+       "text": "Dùng công suất điện : $\\mathcal{P}=m\\,g\\,h$",
+       "dung": false,
+       "vi_sao": "Công suất điện là phần máy tiêu thụ ; chỉ phần có ích (nhân hiệu suất) mới nâng nước."
+      },
+      {
+       "text": "Tính $m$ rồi nhân $1000$ để ra lít",
+       "dung": false,
+       "vi_sao": "Khối lượng riêng $1000\\ \\text{kg/m}^3$ tức $1\\ \\text{kg}=1\\ \\text{lít}$ ; nhân thêm $1000$ là nhầm với đổi sang m³ hay cm³."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Năng lượng cần cho 1 kg nước",
+     "hoi": "Mỗi kilôgam nước ra khỏi vòi cần được cấp bao nhiêu jun (thế năng cộng động năng)?",
+     "dap_so": 108,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy động năng bằng $v$ hoặc $\\dfrac12v$ thay vì $\\dfrac12v^2$, hoặc bỏ luôn động năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng thế năng $gh$ với động năng $\\dfrac12v^2$ của $1$ kg nước",
+       "dung": true
+      },
+      {
+       "text": "Cộng $gh$ với $v$",
+       "dung": false,
+       "vi_sao": "Động năng của $1$ kg là $\\dfrac12v^2$ (có bình phương và hệ số $\\dfrac12$), không phải $v$."
+      },
+      {
+       "text": "Chỉ có thế năng, động năng bằng $0$ vì nước dừng ở bể",
+       "dung": false,
+       "vi_sao": "Đề cho nước ra khỏi vòi với tốc độ xác định nên phần năng lượng này phải tính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lưu lượng thực tế",
+     "hoi": "Kể cả động năng, mỗi giây máy bơm được bao nhiêu lít nước?",
+     "dap_so": 8.33,
+     "sai_so": 0.05,
+     "don_vi": "lít",
+     "loi_hay_gap": "Giữ nguyên kết quả câu a, hoặc nhân thay vì chia ($m=\\mathcal{P}_{\\text{ích}}\\cdot e$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$m=\\dfrac{\\mathcal{P}_{\\text{ích}}}{e}$ (năng lượng có ích mỗi giây chia năng lượng mỗi kg)",
+       "dung": true
+      },
+      {
+       "text": "Giữ kết quả câu a vì công suất không đổi",
+       "dung": false,
+       "vi_sao": "Công suất không đổi nhưng mỗi kg nay cần nhiều năng lượng hơn nên số kg mỗi giây phải giảm."
+      },
+      {
+       "text": "$m=\\mathcal{P}_{\\text{ích}}\\cdot e$",
+       "dung": false,
+       "vi_sao": "Số kilôgam mỗi giây là năng lượng có ích mỗi giây chia năng lượng mỗi kilôgam, không phải nhân."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bơm đầy bể",
+     "hoi": "Bơm đầy bể 30 m³ mất bao nhiêu giây (dùng lưu lượng câu b)?",
+     "dap_so": 3600,
+     "sai_so": 20,
+     "don_vi": "s",
+     "loi_hay_gap": "Chia thẳng $30$ cho lưu lượng lít/s (quên đổi m³ sang lít) hoặc dùng lưu lượng câu a.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi thể tích ra lít rồi chia cho lưu lượng câu b",
+       "dung": true
+      },
+      {
+       "text": "Chia cho lưu lượng câu a",
+       "dung": false,
+       "vi_sao": "Đề bảo dùng kết quả câu b (có tính động năng) ; lưu lượng câu a lớn hơn thực tế."
+      },
+      {
+       "text": "Chia thẳng thể tích tính bằng m³ cho lưu lượng tính bằng lít/s",
+       "dung": false,
+       "vi_sao": "Đơn vị lệch nhau : $1\\ \\text{m}^3=1000$ lít."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng tiêu thụ",
+     "hoi": "Máy tiêu thụ bao nhiêu kilôoát giờ (kWh) điện?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Tính theo công suất có ích, hoặc nhân kW với số giây rồi ghi là kWh.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=\\mathcal{P}\\,t$ với công suất điện của máy, $t$ đổi ra giờ",
+       "dung": true
+      },
+      {
+       "text": "$A=\\mathcal{P}_{\\text{ích}}\\,t$",
+       "dung": false,
+       "vi_sao": "Điện năng máy tiêu thụ tính theo công suất tiêu thụ (toàn phần), không phải phần có ích."
+      },
+      {
+       "text": "Nhân công suất (kW) với số giây rồi ghi là kWh",
+       "dung": false,
+       "vi_sao": "kWh cần thời gian tính bằng giờ ; kW nhân giây không phải kWh."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

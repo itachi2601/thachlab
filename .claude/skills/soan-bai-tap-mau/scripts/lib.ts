@@ -111,7 +111,7 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
   if (!Number.isInteger(data.lesson_id)) errors.push("thiếu lesson_id (số nguyên)");
   if (!data.review?.checked) errors.push("review.checked chưa true — chưa qua bước kiểm chéo");
   const ds: Dang[] = data.dang_bai;
-  if (!Array.isArray(ds) || ds.length < 2 || ds.length > 8) { errors.push("dang_bai cần 2–8 dạng, xếp từ dễ đến khó"); return { errors, warnings }; }
+  if (!Array.isArray(ds) || ds.length < 2 || ds.length > 12) { errors.push("dang_bai cần 2–12 dạng, xếp từ dễ đến khó"); return { errors, warnings }; }
   ds.forEach((d, i) => {
     const at = `dạng ${i + 1}`;
     for (const k of ["label", "topic", "problem_html", "solution_html"] as const)
