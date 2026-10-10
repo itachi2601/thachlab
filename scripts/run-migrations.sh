@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261010300000_hsg_cham_nhanh.sql|Bảng chấm nhanh HSG KHTN 9: 2 bảng hsg_grade_tests/hsg_grade_sheets (RLS chỉ is_staff) + seed Pre-test Cơ học THCS; chỉ thêm bảng mới|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261010200000_hsg9_dot1_muc_noi_dung.sql|Khoá HSG đợt 1: tạo mục ly_thuyet + bai_tap_mau rỗng cho bài 154,155,160,162 (CĐ11,10,00,13), bật Hiện bài 160; chỉ thêm dữ liệu, idempotent|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261010100000_khoa_hsg9_vat_ly_khung.sql|Thêm KHOÁ 'Vật lí HSG & chuyên' vào KHTN 9: 1 môn hsg-vat-ly + 6 chương + 17 bài (đều published=false) + mục ly_thuyet/bai_tap_mau rỗng cho CĐ01, CĐ02; chỉ thêm dữ liệu, idempotent; cuối file in danh sách lesson_id|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261009180000_an_cau_de_hong_audit.sql|Ẩn (archived=true) 599 câu ngân hàng bị audit AI gắn de_hong (đề cắt cụt/thiếu dữ kiện); có bảng sao lưu question_bank_audit_de_hong_20261009|giờ nào cũng được; rollback ở cuối file"

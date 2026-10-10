@@ -51,6 +51,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
     { href: "/quan-tri/lop-hoc", label: "Lớp học", desc: "Mở lớp, duyệt yêu cầu vào lớp", icon: School },
     { href: "/quan-tri/hoc-sinh", label: "Học sinh", desc: "Tài khoản học sinh và lớp đang theo", icon: GraduationCap },
     { href: "/quan-tri/bang-diem", label: "Bảng điểm", desc: "Kết quả bài kiểm tra đã nộp", icon: ClipboardList },
+    { href: "/quan-tri/hsg-cham-bai", label: "Chấm nhanh HSG 9", desc: "Nhập đáp án pretest/kiểm tra giấy, AI chấm tự luận", icon: ClipboardList },
   ],
   cttc: [
     { href: "/quan-tri/cnc-bai-hoc", label: "Bài học", desc: "Nội dung, tài nguyên và điều kiện mở bài", icon: BookOpen },
