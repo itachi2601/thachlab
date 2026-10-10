@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -244,6 +244,25 @@ export default function QuestionBankAdmin() {
   function toggleBasket(id: number) {
     setBasket((b) => (b.includes(id) ? b.filter((x) => x !== id) : [...b, id]));
   }
+  // Phân trang phía trình duyệt: chỉ vẽ PAGE_SIZE câu đầu, cuộn tới cuối thì vẽ thêm (QT: bớt KaTeX/DOM).
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const moreRef = useRef<HTMLDivElement>(null);
+  // Chỉ đưa về trang đầu khi đổi bộ lọc (đổi tập câu), không khi sửa một câu tại chỗ.
+  const firstId = items[0]?.id;
+  const setKey = `${firstId}:${items.length}`;
+  const [prevSetKey, setPrevSetKey] = useState(setKey);
+  if (prevSetKey !== setKey) {
+    setPrevSetKey(setKey);
+    setVisibleCount(PAGE_SIZE);
+  }
+  useEffect(() => {
+    const el = moreRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver((e) => e[0]?.isIntersecting && setVisibleCount((n) => n + PAGE_SIZE), { rootMargin: "600px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [visibleCount, items.length]);
+
   function addRandom() {
     const pool = items.filter((q) => !inBasket.has(q.id) && !q.archived);
     const picked = pickRandom(pool, randomN).map((q) => q.id);
@@ -500,6 +519,23 @@ export default function QuestionBankAdmin() {
     return topics.find((t) => t.id === node.id)?.name ?? "";
   })();
 
+  // Tay cầm ổn định cho QuestionRow (memo): luôn gọi bản mới nhất của hàm qua ref, nên tick giỏ không vẽ lại cả danh sách.
+  const latest = useRef({ toggleBasket, patch, attachFigure, drawFigure, acceptAiFigure, dismissAiFigure });
+  useEffect(() => {
+    latest.current = { toggleBasket, patch, attachFigure, drawFigure, acceptAiFigure, dismissAiFigure };
+  });
+  const rowApi = useMemo<RowApi>(
+    () => ({
+      pick: (id) => latest.current.toggleBasket(id),
+      patch: (id, p) => latest.current.patch(id, p),
+      figure: (q, f) => latest.current.attachFigure(q, f),
+      draw: (q) => latest.current.drawFigure(q),
+      accept: (q) => latest.current.acceptAiFigure(q),
+      dismiss: (q) => latest.current.dismissAiFigure(q),
+    }),
+    [],
+  );
+
   return (
     <div className="space-y-5 pb-24">
       <header className="flex flex-wrap items-end justify-between gap-3">
@@ -750,22 +786,26 @@ export default function QuestionBankAdmin() {
                   Chưa có câu nào ở mục này.
                 </div>
               ) : (
-                items.map((q, i) => (
-                  <QuestionRow
-                    key={q.id}
-                    index={i + 1}
-                    q={q}
-                    picked={inBasket.has(q.id)}
-                    onPick={() => toggleBasket(q.id)}
-                    topicGroups={topicGroups}
-                    onPatch={(p) => patch(q.id, p)}
-                    onFigure={(file) => attachFigure(q, file)}
-                    ai={aiFig.get(q.id)}
-                    onDraw={() => drawFigure(q)}
-                    onAcceptAi={() => acceptAiFigure(q)}
-                    onDismissAi={() => dismissAiFigure(q)}
-                  />
-                ))
+                <>
+                  {items.slice(0, visibleCount).map((q, i) => (
+                    <QuestionRow
+                      key={q.id}
+                      index={i + 1}
+                      q={q}
+                      picked={inBasket.has(q.id)}
+                      topicGroups={topicGroups}
+                      api={rowApi}
+                      ai={aiFig.get(q.id)}
+                    />
+                  ))}
+                  {visibleCount < items.length && (
+                    <div ref={moreRef} className="flex justify-center py-4">
+                      <button type="button" onClick={() => setVisibleCount((n) => n + PAGE_SIZE)} className={btnCls}>
+                        Xem thêm {Math.min(PAGE_SIZE, items.length - visibleCount)} câu (còn {items.length - visibleCount})
+                      </button>
+                    </div>
+                  )}
+                </>
               )}
             </>
           )}
@@ -975,31 +1015,49 @@ function stripHtml(html: string): string {
     .trim();
 }
 
-function QuestionRow({
+const PAGE_SIZE = 30;
+
+interface RowApi {
+  pick: (id: number) => void;
+  patch: (id: number, p: Parameters<typeof updateBankQuestion>[1]) => void;
+  figure: (q: BankQuestion, f: File) => Promise<void>;
+  draw: (q: BankQuestion) => void;
+  accept: (q: BankQuestion) => void;
+  dismiss: (q: BankQuestion) => void;
+}
+
+const QuestionRow = memo(function QuestionRow({
   index,
   q,
   picked,
-  onPick,
   topicGroups,
-  onPatch,
-  onFigure,
+  api,
   ai,
-  onDraw,
-  onAcceptAi,
-  onDismissAi,
 }: {
   index: number;
   q: BankQuestion;
   picked: boolean;
-  onPick: () => void;
   topicGroups: { parent: QuestionTopic; outcomes: QuestionTopic[] }[];
-  onPatch: (p: Parameters<typeof updateBankQuestion>[1]) => void;
-  onFigure: (file: File) => Promise<void>;
+  api: RowApi;
   ai?: AiFigState;
-  onDraw: () => void;
-  onAcceptAi: () => void;
-  onDismissAi: () => void;
 }) {
+  const onPick = () => api.pick(q.id);
+  const onPatch = (p: Parameters<typeof updateBankQuestion>[1]) => api.patch(q.id, p);
+  const onFigure = (f: File) => api.figure(q, f);
+  const onDraw = () => api.draw(q);
+  const onAcceptAi = () => api.accept(q);
+  const onDismissAi = () => api.dismiss(q);
+  // Chỉ dựng công thức (KaTeX) khi hàng gần vào màn hình; đã dựng thì giữ nguyên.
+  const rootRef = useRef<HTMLElement>(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el || seen) return;
+    // Không có IntersectionObserver thì dựng ngay (rootMargin lớn để gần như luôn "thấy").
+    const io = new IntersectionObserver((e) => e[0]?.isIntersecting && (setSeen(true), io.disconnect()), { rootMargin: "800px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [seen]);
   const [showAnswer, setShowAnswer] = useState(false);
   const [figureBusy, setFigureBusy] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -1012,6 +1070,7 @@ function QuestionRow({
 
   return (
     <article
+      ref={rootRef}
       className={`rounded-2xl border p-4 ${picked ? "border-primary/60 bg-primary/5" : "border-white/10 bg-panel"} ${q.archived ? "opacity-60" : ""}`}
     >
       <div className="flex flex-wrap items-center gap-2">
@@ -1033,7 +1092,11 @@ function QuestionRow({
         </span>
       </div>
 
-      <ContentHtml html={body.question} className="prose prose-invert mt-2 max-w-none text-sm text-slate-200" />
+      {seen ? (
+        <ContentHtml html={body.question} className="prose prose-invert mt-2 max-w-none text-sm text-slate-200" />
+      ) : (
+        <div className="mt-2 h-16 animate-pulse rounded bg-white/5" aria-hidden />
+      )}
       {q.figureNotNeeded && (
         <p className="mt-1 text-[12px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
       )}
@@ -1070,7 +1133,7 @@ function QuestionRow({
         </div>
       )}
 
-      {body.type === "multiple_choice" && (
+      {seen && body.type === "multiple_choice" && (
         <ol className="mt-2 grid gap-1 sm:grid-cols-2">
           {body.options.map((o, i) => (
             <li
@@ -1083,7 +1146,7 @@ function QuestionRow({
           ))}
         </ol>
       )}
-      {body.type === "true_false" && (
+      {seen && body.type === "true_false" && (
         <ol className="mt-2 space-y-1">
           {body.statements.map((s, i) => (
             <li key={i} className="flex gap-2 text-sm text-slate-300">
@@ -1220,4 +1283,4 @@ function QuestionRow({
       </div>
     </article>
   );
-}
+});
