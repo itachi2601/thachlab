@@ -157,26 +157,9 @@ export default function ExamDraftEditor({
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <label className="text-xs font-semibold text-slate-400">
-          Tên đề
-          <input
-            value={bundle.exam.title}
-            onChange={(e) => setExam({ title: e.target.value })}
-            className={`${inputCls} mt-1`}
-          />
-        </label>
-        <label className="text-xs font-semibold text-slate-400">
-          Thời gian (phút)
-          <input
-            type="number"
-            min={5}
-            max={180}
-            value={bundle.exam.duration_minutes ?? 45}
-            onChange={(e) => setExam({ duration_minutes: Number(e.target.value) })}
-            className={`${inputCls} mt-1`}
-          />
-        </label>
+      {/* Tên đề + Thời gian do khối cha (ExamSection) giữ — một chỗ duy nhất, không lặp lại ở đây
+          (thầy báo 10/10/2026: trước đây hai nơi cùng có 2 ô này nên phải điền hai lần). */}
+      <div className="grid gap-3 sm:grid-cols-2">
         <label className="text-xs font-semibold text-slate-400">
           Chủ đề chung
           <input

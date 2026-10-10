@@ -21,6 +21,7 @@
  */
 
 import { parseExamLatex } from "@/services/exam-latex-parser";
+import { estimateDuration } from "@/features/exams/duration";
 import { BUNDLE_SCHEMA, type LessonBundle } from "@/services/lesson-import";
 import type { RasterImageInput } from "@/services/lesson-media";
 
@@ -135,7 +136,9 @@ export function docxTextToBundle(text: string, opts: DocxExamOptions = {}): Docx
       `File có ${markerCount} mốc "Câu n." nhưng dựng được ${parsed.questions.length} câu — rà lại phần sửa bên dưới.`,
     );
 
-  const duration = opts.durationMinutes ?? guessDuration(text) ?? 45;
+  // Không có dòng "Thời gian: …" trong file thì ước lượng theo số câu/dạng câu vừa đọc được,
+  // thay cho con số 45 cố định (đề 8 câu và đề 40 câu không thể cùng 45 phút).
+  const duration = opts.durationMinutes ?? guessDuration(text) ?? estimateDuration(parsed.questions)?.minutes ?? 45;
   const title = opts.title?.trim() || guessTitle(text) || "Đề kiểm tra";
 
   return {

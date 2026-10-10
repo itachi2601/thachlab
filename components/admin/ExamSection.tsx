@@ -14,6 +14,7 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { classifyQuestionTagsBatched } from "@/services/ai-classify";
+import { estimateDuration } from "@/features/exams/duration";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
@@ -158,14 +159,22 @@ export default function ExamSection({
     const h = takeHandoff();
     if (h && h.questions.length > 0) {
       queueMicrotask(() => {
+        setTitleInput(null);
+        setDurationInput(null);
         setEdited({
           schema: BUNDLE_SCHEMA,
           theory_html: "",
           worked_examples: [],
-          exam: { title: h.title || "Đề kiểm tra", duration_minutes: 45, subject_code: subjectCode, questions: h.questions },
+          exam: {
+            title: h.title || "Đề kiểm tra",
+            // Ước lượng theo số câu/dạng câu vừa bốc, thay cho con số 45 cố định (thầy báo 10/10/2026).
+            duration_minutes: estimateDuration(h.questions)?.minutes ?? 45,
+            subject_code: subjectCode,
+            questions: h.questions,
+          },
         });
         setFileNotes([
-          `Đã lấy ${h.questions.length} câu từ Ngân hàng câu hỏi. Sửa tiêu đề/thời gian rồi chọn lớp – bài và Đăng.`,
+          `Đã lấy ${h.questions.length} câu từ Ngân hàng câu hỏi. Kiểm lại tiêu đề/thời gian (đã ước lượng theo số câu) rồi chọn lớp – bài và Đăng.`,
         ]);
         if (h.grade) onHandoffGrade?.(h.grade);
       });
@@ -178,6 +187,10 @@ export default function ExamSection({
     if (!externalSeed || externalSeed.token === lastSeedToken.current) return;
     lastSeedToken.current = externalSeed.token;
     setText("");
+    // Đổi đề khác thì bỏ giá trị thầy gõ ở đề trước, không thì ô Tên đề/Thời gian hiện số cũ
+    // trong khi đề đang mở lại là đề mới.
+    setTitleInput(null);
+    setDurationInput(null);
     setEdited(JSON.parse(JSON.stringify(externalSeed.bundle)) as LessonBundle);
   }, [externalSeed]);
 
@@ -186,8 +199,12 @@ export default function ExamSection({
     [debounced, subjectCode, images],
   );
   const guessedTitle = draft && draft.bundle.exam.title !== "Đề kiểm tra" ? draft.bundle.exam.title : "";
-  const title = titleInput ?? guessedTitle;
-  const duration = durationInput ?? draft?.bundle.exam.duration_minutes ?? 45;
+  // Khi bấm "Sửa chi tiết từng câu" thì `edited` mới là đề thật đang được lưu. Mọi ô nhập phải
+  // đọc/ghi vào CHÍNH NÓ — trước đây ô Tên đề / Thời gian ở trên chỉ ghi vào `titleInput`/
+  // `durationInput` nên khi đang sửa chi tiết là ô chết: gõ vào không lưu, phải gõ lại lần thứ hai
+  // ở khối sửa chi tiết (thầy báo 10/10/2026).
+  const title = titleInput ?? edited?.exam.title ?? guessedTitle;
+  const duration = durationInput ?? edited?.exam.duration_minutes ?? draft?.bundle.exam.duration_minutes ?? 45;
 
   const bundle: LessonBundle = useMemo(() => {
     if (edited) return edited;
@@ -215,6 +232,8 @@ export default function ExamSection({
   }, [bundle]);
 
   const questions = bundle.exam.questions;
+  /** Ước lượng thời gian theo số câu/dạng câu — chỉ để GỢI Ý, không tự đè lên số thầy đã gõ. */
+  const estimate = useMemo(() => estimateDuration(questions), [questions]);
 
   // Câu bị báo lỗi (link từ /quan-tri/sua-de?exam=&q=) — cuộn tới + tô đậm ngay khi
   // đề đã tải xong và dựng được câu đó, không cần admin tự dò trong danh sách.
@@ -282,6 +301,20 @@ export default function ExamSection({
   function startEditing() {
     setEdited(JSON.parse(JSON.stringify(bundle)) as LessonBundle);
   }
+
+  // Ghi tên đề / thời gian vào ĐÚNG đề đang hoạt động: đang sửa chi tiết thì ghi vào `edited`,
+  // chưa sửa chi tiết thì `bundle` tự dựng lại từ titleInput/durationInput.
+  function commitTitle(v: string) {
+    setTitleInput(v);
+    setEdited((prev) => (prev ? { ...prev, exam: { ...prev.exam, title: v } } : prev));
+  }
+  function commitDuration(v: number, clamp = false) {
+    const value = Number.isFinite(v) ? v : 45;
+    // Chỉ kẹp 5–180 khi rời ô: kẹp ngay lúc gõ thì gõ "45" sẽ bị nhảy thành "5" rồi "55".
+    const safe = clamp ? Math.min(180, Math.max(5, value)) : value;
+    setDurationInput(safe);
+    setEdited((prev) => (prev ? { ...prev, exam: { ...prev.exam, duration_minutes: safe } } : prev));
+  }
   function stopEditing() {
     if (edited && !window.confirm("Quay lại văn bản sẽ bỏ các sửa đổi chi tiết. Tiếp tục?")) return;
     setEdited(null);
@@ -304,7 +337,52 @@ export default function ExamSection({
   }
 
   return (
-    <section className={`grid gap-4 ${hideRawText ? "" : "lg:grid-cols-2"}`}>
+    <div className="space-y-4">
+      {/* MỘT chỗ duy nhất điền Tên đề + Thời gian, luôn hiện (kể cả khi chỉ sửa một đề có sẵn —
+          `hideRawText`). Trước đây khối này nằm trong cột "Nội dung đề" còn `ExamDraftEditor` bên
+          trong cũng có đúng 2 ô đó, nên thầy phải điền hai lần (thầy báo 10/10/2026). */}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="text-xs font-semibold text-slate-400">
+          Tên đề
+          <input
+            value={title}
+            onChange={(e) => commitTitle(e.target.value)}
+            placeholder="vd: Luyện tập – Động học"
+            className={`${inputCls} mt-1`}
+          />
+        </label>
+        <label className="text-xs font-semibold text-slate-400">
+          Thời gian (phút)
+          <input
+            type="number"
+            min={5}
+            max={180}
+            value={duration}
+            onChange={(e) => commitDuration(Number(e.target.value))}
+            onBlur={(e) => commitDuration(Number(e.target.value), true)}
+            className={`${inputCls} mt-1`}
+          />
+        </label>
+      </div>
+
+      {estimate && (
+        <p className="-mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-slate-500">
+          <span>
+            {questions.length} câu: {estimate.note} → khoảng <b className="text-slate-300">{estimate.minutes} phút</b>
+          </span>
+          {estimate.minutes !== duration && (
+            <button
+              type="button"
+              onClick={() => commitDuration(estimate.minutes)}
+              className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 font-semibold text-blue-200 hover:border-white/25 hover:text-white"
+            >
+              Dùng {estimate.minutes} phút
+            </button>
+          )}
+        </p>
+      )}
+
+      <section className={`grid gap-4 ${hideRawText ? "" : "lg:grid-cols-2"}`}>
       {!hideRawText && (
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
@@ -351,29 +429,6 @@ export default function ExamSection({
               if (f) void handleFile(f);
             }}
           />
-        </div>
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          <label className="text-xs font-semibold text-slate-400">
-            Tên đề
-            <input
-              value={title}
-              onChange={(e) => setTitleInput(e.target.value)}
-              placeholder="vd: Luyện tập – Động học"
-              className={`${inputCls} mt-1`}
-            />
-          </label>
-          <label className="text-xs font-semibold text-slate-400">
-            Thời gian (phút)
-            <input
-              type="number"
-              min={5}
-              max={180}
-              value={duration}
-              onChange={(e) => setDurationInput(Number(e.target.value))}
-              className={`${inputCls} mt-1`}
-            />
-          </label>
         </div>
 
         <div
@@ -547,7 +602,8 @@ export default function ExamSection({
           </>
         )}
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
