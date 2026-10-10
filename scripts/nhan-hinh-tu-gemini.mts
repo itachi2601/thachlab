@@ -14,6 +14,13 @@ const svgDir = path.join(root, "svg");
 fs.mkdirSync(svgDir, { recursive: true });
 
 type Ket = { id: number; trang_thai: "ve_duoc" | "khong_ve_duoc" | "json_loi" | "spec_loi"; do_tin_cay?: number; ghi_chu?: string; mo_ta?: string; loi?: string };
+// Đề bài hiện đầy đủ (không gấp): tiêu đề, đoạn, [ẢNH] thành nhãn nổi; công thức $…$ do KaTeX dựng khi mở trang.
+const mdLite = (md: string) =>
+  md
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .split("\n")
+    .map((l) => (l.startsWith("## ") ? `<h4>${l.slice(3)}</h4>` : l.startsWith("# ") ? "" : l.trim() === "[ẢNH]" ? `<span class="anh">[ẢNH]</span>` : l.trim() ? `<p>${l}</p>` : ""))
+    .join("");
 const ket: Ket[] = [];
 const cards: string[] = [];
 const files = fs.existsSync(outDir) ? fs.readdirSync(outDir).filter((f) => f.endsWith(".json")) : [];
@@ -38,18 +45,21 @@ for (const f of files) {
   cards.push(`<section class="card" id="c${id}">
   <h2>#${id} <small>${k.trang_thai} · tin cậy ${k.do_tin_cay ?? "?"}</small></h2>
   <div class="row">
-    <div class="col"><h3>Ảnh gốc</h3>${anh.map((a) => `<img src="cau/${id}/${a}">`).join("")}</div>
+    <div class="col"><h3>Ảnh gốc</h3>${anh.map((a) => `<figure><figcaption>${a.replace(/\.\w+$/, "")}</figcaption><img src="cau/${id}/${a}"></figure>`).join("")}</div>
     <div class="col"><h3>SVG mới</h3>${svg || `<p class="warn">${esc(k.mo_ta ?? k.loi ?? "không vẽ")}</p>`}</div>
   </div>
   ${k.ghi_chu ? `<p class="note">Gemini ghi chú: ${esc(k.ghi_chu)}</p>` : ""}
-  <details><summary>Đề bài</summary><pre>${esc(deBai)}</pre></details>
+  <div class="de">${mdLite(deBai)}</div>
   <details><summary>JSON</summary><pre>${esc(JSON.stringify(raw, null, 1))}</pre></details>
   <p class="duyet"><label><input type="radio" name="d${id}" value="dung"> Dùng</label> <label><input type="radio" name="d${id}" value="sua"> Vẽ lại</label> <label><input type="radio" name="d${id}" value="bo"> Bỏ</label> <input type="text" class="gc" data-id="${id}" placeholder="ghi chú cho Gemini nếu vẽ lại" size="40"></p>
 </section>`);
 }
 
 const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>So sánh hình Gemini</title>
-<style>body{font-family:system-ui;margin:16px;background:#fff;color:#111}.card{border:1px solid #ddd;border-radius:8px;padding:12px;margin:12px 0}.row{display:flex;gap:16px;flex-wrap:wrap}.col{flex:1 1 300px}.col img,.col svg{max-width:100%;border:1px solid #eee;background:#fff}.warn{color:#b91c1c}.note{color:#555}pre{white-space:pre-wrap;font-size:12px}h2 small{font-weight:normal;color:#666;font-size:.7em}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>body{font-family:system-ui;margin:16px;background:#fff;color:#111}.card{border:1px solid #ddd;border-radius:8px;padding:12px;margin:12px 0}.row{display:flex;gap:16px;flex-wrap:wrap}.col{flex:1 1 300px}.col img,.col svg{max-width:100%;border:1px solid #eee;background:#fff}.warn{color:#b91c1c}.note{color:#555}pre{white-space:pre-wrap;font-size:12px}.de{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:4px 12px;margin:8px 0;font-size:14px;line-height:1.5}.de p{margin:3px 0}.de h4{margin:10px 0 2px;color:#334155}.anh{display:inline-block;background:#fef3c7;border-radius:4px;padding:0 6px;font-size:12px;margin:1px 0}figure{margin:0 0 8px}figcaption{font-size:11px;color:#666}h2 small{font-weight:normal;color:#666;font-size:.7em}
 #tong{position:sticky;top:0;background:#fff;padding:8px;border-bottom:1px solid #ddd}</style></head><body>
 <div id="tong"><b>${cards.length} câu</b> · <button onclick="xuat()">Xuất quyết định (JSON)</button> <span id="kq"></span></div>
 ${cards.join("\n")}
