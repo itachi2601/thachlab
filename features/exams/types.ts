@@ -30,6 +30,9 @@ interface QuestionTags {
    *  Khoá: nhãn phương án ("A"…"D") với trắc nghiệm; chỉ số ý 0-based ("0"…"3") với đúng–sai (chỉ ý em chọn sai).
    *  Một câu ≤ 25 từ, nêu đúng lỗi tư duy, không vai "thầy". Backfill: scripts/backfill-distractor-notes.mts. */
   distractorNotes?: Record<string, string>;
+  /** Giáo viên đã bấm "Bỏ qua cảnh báo" cho câu này (lib/question-lint.ts bắt nhầm) — câu không còn bị chặn Lưu/Đăng.
+   *  question_content_hash() loại khoá này (migration 20261011…_question_bank_lint_flags) để không sinh câu trùng. */
+  lint_ignored?: boolean;
 }
 
 export interface MultipleChoiceQuestion extends QuestionTags {

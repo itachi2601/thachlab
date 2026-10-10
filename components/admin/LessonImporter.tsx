@@ -1,5 +1,6 @@
 "use client";
 
+import { countBlockingQuestions } from "@/lib/question-lint";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import ExamSection, { type ExamSectionSeed, type TopicGroup, compressRasterInputs } from "@/components/admin/ExamSection";
@@ -224,7 +225,9 @@ export default function LessonImporter() {
         catalogNames.length > 0 &&
         lessonId !== null &&
         !!grade));
+  const lintBlocked = countBlockingQuestions(fullBundle?.exam.questions ?? []);
   const canPublish =
+    lintBlocked === 0 &&
     !!fullBundle &&
     !!check?.ok &&
     lessonId !== null &&
@@ -857,7 +860,9 @@ export default function LessonImporter() {
         </button>
         {!canPublish && fullBundle && (
           <p className="text-xs text-slate-500">
-            {check && !check.ok
+            {lintBlocked > 0
+              ? `Còn ${lintBlocked} câu lỗi trong đề (mục 3) — sửa hoặc “Bỏ qua cảnh báo”.`
+              : check && !check.ok
               ? "Sửa hết lỗi ở khung đỏ trên trước khi đăng."
               : lessonId === null
                 ? "Chọn bài học ở mục 1."

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { countBlockingQuestions } from "@/lib/question-lint";
 import ExamSection, { compressRasterInputs, type TopicGroup } from "@/components/admin/ExamSection";
 import ExamQrPanel from "@/components/admin/ExamQrPanel";
 import ExamTaSendPanel from "@/components/admin/ExamTaSendPanel";
@@ -204,8 +205,10 @@ export default function AzotaExamComposer() {
   }, [examBundle, triage, include, questions]);
   const pubQuestions = pubBundle?.exam.questions ?? [];
   const check = pubBundle ? validateBundle(pubBundle) : null;
+  const lintBlocked = countBlockingQuestions(pubQuestions);
   const canPublish =
     !!pubBundle &&
+    lintBlocked === 0 &&
     !!check?.ok &&
     pubQuestions.length > 0 &&
     lessonId !== null &&
@@ -553,6 +556,9 @@ export default function AzotaExamComposer() {
           >
             {busy ? "Đang đăng…" : "Đăng đề"}
           </button>
+          {lintBlocked > 0 && (
+            <span className="text-xs font-semibold text-red-300">Còn {lintBlocked} câu lỗi — sửa hoặc bấm “Bỏ qua cảnh báo” ở khung đỏ phía trên.</span>
+          )}
           {doneLink && (
             <Link href={doneLink} target="_blank" className="text-sm font-semibold text-emerald-300 underline">
               Mở bài học để kiểm tra →

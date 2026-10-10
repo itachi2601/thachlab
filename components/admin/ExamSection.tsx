@@ -1,5 +1,6 @@
 "use client";
 
+import { activeLintFlags, blockingFlags, LINT_LABEL, type LintFlag } from "@/lib/question-lint";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Sparkles, Upload, WandSparkles } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
@@ -148,6 +149,8 @@ export default function ExamSection({
   const [titleInput, setTitleInput] = useState<string | null>(null);
   const [durationInput, setDurationInput] = useState<number | null>(null);
   const [edited, setEdited] = useState<LessonBundle | null>(null);
+  // Câu giáo viên đã "Bỏ qua cảnh báo" lint — khoá theo nội dung đề để không lệch khi đổi thứ tự câu.
+  const [lintIgnored, setLintIgnored] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
     const t = setTimeout(() => setDebounced(text), 250);
@@ -206,7 +209,7 @@ export default function ExamSection({
   const title = titleInput ?? edited?.exam.title ?? guessedTitle;
   const duration = durationInput ?? edited?.exam.duration_minutes ?? draft?.bundle.exam.duration_minutes ?? 45;
 
-  const bundle: LessonBundle = useMemo(() => {
+  const baseBundle: LessonBundle = useMemo(() => {
     if (edited) return edited;
     if (!draft)
       return {
@@ -225,6 +228,18 @@ export default function ExamSection({
       },
     };
   }, [edited, draft, title, duration, subjectCode]);
+
+  // Gắn lint_ignored vào các câu giáo viên đã bỏ qua cảnh báo (đi theo câu vào exams.questions).
+  const bundle: LessonBundle = useMemo(() => {
+    if (lintIgnored.size === 0) return baseBundle;
+    return {
+      ...baseBundle,
+      exam: {
+        ...baseBundle.exam,
+        questions: baseBundle.exam.questions.map((q) => (lintIgnored.has(q.question) ? { ...q, lint_ignored: true } : q)),
+      },
+    };
+  }, [baseBundle, lintIgnored]);
 
   useEffect(() => {
     onChange(bundle);
@@ -251,6 +266,12 @@ export default function ExamSection({
     [fileNotes, draft],
   );
   const incompleteCount = questions.filter((q) => problems(q).length > 0).length;
+  // Lint từng câu: cờ mức "loi" chặn Lưu/Đăng (parent khoá nút), "canhBao" chỉ hiện huy hiệu vàng.
+  const lintByQuestion = useMemo(() => questions.map((q) => activeLintFlags(q)), [questions]);
+  const lintBlocked = lintByQuestion.map((f, i) => ({ i, flags: blockingFlags(f) })).filter((x) => x.flags.length > 0);
+  const ignoreLint = (i: number) => setLintIgnored((prev) => new Set(prev).add(questions[i].question));
+  const jumpToQuestion = (i: number) =>
+    document.getElementById(`exam-q-${i}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   const tagAudit = useMemo(() => auditQuestionTags(questions, catalogNames), [questions, catalogNames]);
   const gridEnabled = !edited && !!draft && draft.markerCount === questions.length && questions.length > 0;
   const imageSrc = useMemo(() => {
@@ -544,6 +565,37 @@ export default function ExamSection({
         </div>
         )}
 
+        {lintBlocked.length > 0 && (
+          <div role="alert" className="space-y-2 rounded-xl border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
+            <div className="flex flex-wrap items-center gap-2">
+              <b>Còn {lintBlocked.length} câu lỗi — chưa thể Lưu/Đăng:</b>
+              <button
+                type="button"
+                onClick={() => jumpToQuestion(lintBlocked[0].i)}
+                className="rounded-lg bg-red-500/20 px-2 py-1 font-semibold hover:bg-red-500/30"
+              >
+                Nhảy tới câu lỗi đầu tiên (câu {lintBlocked[0].i + 1})
+              </button>
+            </div>
+            <ul className="space-y-1">
+              {lintBlocked.map(({ i, flags }) => (
+                <li key={i} className="flex flex-wrap items-center gap-2">
+                  <button type="button" onClick={() => jumpToQuestion(i)} className="font-bold underline">Câu {i + 1}</button>
+                  <span>{[...new Set(flags.map((f) => LINT_LABEL[f.code]))].join(" · ")}</span>
+                  <button
+                    type="button"
+                    onClick={() => ignoreLint(i)}
+                    className="ml-auto rounded-lg border border-red-300/40 px-2 py-0.5 hover:bg-red-500/20"
+                    title="Chỉ dùng khi câu thật sự đúng mà quy tắc bắt nhầm"
+                  >
+                    Bỏ qua cảnh báo
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {edited ? (
           <ExamDraftEditor
             bundle={bundle}
@@ -583,6 +635,7 @@ export default function ExamSection({
               {questions.map((q, i) => (
                 <div
                   key={i}
+                  id={`exam-q-${i}`}
                   ref={i === highlightIndex ? highlightRef : undefined}
                   className={
                     i === highlightIndex
@@ -595,7 +648,7 @@ export default function ExamSection({
                       Câu học sinh báo lỗi
                     </p>
                   )}
-                  <PreviewCard index={i + 1} q={q} fix={imageSrc} />
+                  <PreviewCard index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} />
                 </div>
               ))}
             </div>
@@ -936,10 +989,10 @@ function TagGrid({
   );
 }
 
-function PreviewCard({ index, q, fix }: { index: number; q: ExamQuestion; fix: (html: string) => string }) {
+function PreviewCard({ index, q, fix, lint = [] }: { index: number; q: ExamQuestion; fix: (html: string) => string; lint?: LintFlag[] }) {
   const issues = problems(q);
   return (
-    <div className={`rounded-2xl border bg-panel p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
+    <div className={`exam-paper rounded-2xl border bg-panel p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
       <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
         <span className="font-bold text-primary">Câu {index}</span>
         <span className="text-slate-500">
@@ -948,6 +1001,15 @@ function PreviewCard({ index, q, fix }: { index: number; q: ExamQuestion; fix: (
         {q.topic && <span className="rounded-full bg-white/10 px-2 py-0.5 text-slate-300">{q.topic}</span>}
         {q.form && <span className="rounded-full bg-blue-500/15 px-2 py-0.5 text-blue-200">{QUESTION_FORM_LABELS[q.form]}</span>}
         {issues.length > 0 && <span className="ml-auto text-amber-300">{issues.join(" · ")}</span>}
+        {[...new Map(lint.map((f) => [f.code, f])).values()].map((f) => (
+          <span
+            key={f.code}
+            title={f.ctx}
+            className={`rounded-full px-2 py-0.5 font-bold ${f.level === "loi" ? "bg-red-500/20 text-red-200" : "bg-amber-500/15 text-amber-200"}`}
+          >
+            {LINT_LABEL[f.code]}
+          </span>
+        ))}
       </div>
       <ContentHtml html={fix(q.question)} className="text-sm text-slate-200" />
       {q.type === "multiple_choice" && (

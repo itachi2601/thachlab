@@ -1,5 +1,6 @@
 "use client";
 
+import { countBlockingQuestions } from "@/lib/question-lint";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ExamSection, { compressRasterInputs } from "@/components/admin/ExamSection";
@@ -44,7 +45,9 @@ export default function CncExamComposer() {
   const missingFigure = questionsMissingFigure(questions);
   const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
   const figureAck = figureAckFor !== null && figureAckFor === examBundle;
+  const lintBlocked = countBlockingQuestions(questions);
   const canPublish =
+    lintBlocked === 0 &&
     !!examBundle &&
     !!check?.ok &&
     questions.length > 0 &&

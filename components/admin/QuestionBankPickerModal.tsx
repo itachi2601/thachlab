@@ -1,5 +1,7 @@
 "use client";
 
+import { LINT_LABEL } from "@/lib/question-lint";
+import { bankLintFlags } from "@/services/question-bank";
 import { useEffect, useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
@@ -53,6 +55,7 @@ export default function QuestionBankPickerModal({
   const [topicId, setTopicId] = useState<number | "">("");
   const [qtype, setQtype] = useState<ExamQuestion["type"] | "">(initialQtype ?? "");
   const [difficulty, setDifficulty] = useState<Difficulty | "all">("all");
+  const [cleanOnly, setCleanOnly] = useState(true);
   const [search, setSearch] = useState("");
   const [debounced, setDebounced] = useState("");
   const [items, setItems] = useState<BankQuestion[]>([]);
@@ -103,6 +106,7 @@ export default function QuestionBankPickerModal({
       qtype: qtype || undefined,
       difficulty,
       search: debounced,
+      cleanOnly,
       limit: 100,
     })
       .then((rows) => {
@@ -121,7 +125,7 @@ export default function QuestionBankPickerModal({
     };
     // excludeTexts đổi theo mỗi lần thêm/bớt câu trong đề — không cần lọc lại từ server, chỉ lọc khi tải mới.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, grade, topicId, qtype, difficulty, debounced]);
+  }, [open, grade, topicId, qtype, difficulty, debounced, cleanOnly]);
 
   if (!open) return null;
 
@@ -207,6 +211,10 @@ export default function QuestionBankPickerModal({
                 <option value="kho">Khó</option>
                 <option value="">Chưa phân loại</option>
               </select>
+              <label className="flex items-center gap-1.5 text-xs text-slate-400">
+                <input type="checkbox" checked={cleanOnly} onChange={(e) => setCleanOnly(e.target.checked)} />
+                Chỉ câu sạch
+              </label>
               <label className="relative ml-auto">
                 <Search size={14} className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -238,6 +246,9 @@ export default function QuestionBankPickerModal({
                         {q.topicName && <span className="rounded-full bg-white/10 px-2 py-0.5">{q.topicName}</span>}
                         {q.difficulty && <span>{DIFFICULTY_LABELS[q.difficulty]}</span>}
                         {q.form && <span className="text-blue-300">{QUESTION_FORM_LABELS[q.form]}</span>}
+                        {bankLintFlags(q).map((f) => (
+                          <span key={f.code} title={f.ctx} className="rounded-full bg-red-500/20 px-2 py-0.5 font-bold text-red-200">{LINT_LABEL[f.code]}</span>
+                        ))}
                       </div>
                       <ContentHtml html={q.question.question} className="text-slate-200" />
                     </li>

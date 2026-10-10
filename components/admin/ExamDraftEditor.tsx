@@ -287,6 +287,7 @@ function QuestionCardEditor({
 
   return (
     <article
+      id={`exam-q-${index}`}
       className={`space-y-3 rounded-2xl border p-4 ${
         issues.length ? "border-amber-500/40 bg-amber-500/[.04]" : "border-white/10 bg-white/[.03]"
       }`}

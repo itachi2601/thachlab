@@ -1,5 +1,6 @@
 "use client";
 
+import { countBlockingQuestions } from "@/lib/question-lint";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
@@ -237,7 +238,9 @@ export default function ExamLibraryAdmin({
   const missingFigure = questionsMissingFigure(questions);
   const figureAck = figureAckFor !== null && figureAckFor === examBundle;
   const setFigureAck = (v: boolean) => setFigureAckFor(v ? examBundle : null);
+  const lintBlocked = countBlockingQuestions(questions);
   const canSave =
+    lintBlocked === 0 &&
     !!examBundle &&
     !!full &&
     !!check?.ok &&
@@ -482,6 +485,9 @@ export default function ExamLibraryAdmin({
                 >
                   {saving ? "Đang lưu…" : "Lưu thay đổi"}
                 </button>
+                {lintBlocked > 0 && (
+                  <span className="text-xs font-semibold text-red-300">Còn {lintBlocked} câu lỗi — sửa hoặc “Bỏ qua cảnh báo” ở khung đỏ.</span>
+                )}
                 {canSave && (
                   <span className="inline-flex items-center gap-1 text-xs text-emerald-300">
                     <CheckCircle2 size={14} /> Sẵn sàng lưu

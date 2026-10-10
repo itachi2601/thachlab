@@ -1,5 +1,6 @@
 "use client";
 
+import { LINT_LABEL } from "@/lib/question-lint";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -57,6 +58,7 @@ import {
   updateBankQuestions,
   writeBasket,
   writeHandoff,
+  bankLintFlags,
   quickComposeFromBank,
   type BankQuestion,
   type BankTopicCount,
@@ -115,6 +117,7 @@ export default function QuestionBankAdmin() {
   const [qtype, setQtype] = useState<ExamQuestion["type"] | "">("");
   const [difficulty, setDifficulty] = useState<Difficulty | "all">("all");
   const [showArchived, setShowArchived] = useState(false);
+  const [cleanOnly, setCleanOnly] = useState(true);
   const [search, setSearch] = useState("");
   const [debounced, setDebounced] = useState("");
 
@@ -225,13 +228,14 @@ export default function QuestionBankAdmin() {
       qtype,
       difficulty,
       includeArchived: showArchived,
+      cleanOnly,
       search: debounced,
       missingFigure: node.kind === "missing-figure",
     });
     req
       .then((list) => setItems(node.kind === "unknown-grade" ? list.filter((q) => q.grade === "") : list))
       .catch((e) => toast("error", e instanceof Error ? e.message : String(e)));
-  }, [grade, node, topicIdsFilter, form, qtype, difficulty, showArchived, debounced, toast]);
+  }, [grade, node, topicIdsFilter, form, qtype, difficulty, showArchived, cleanOnly, debounced, toast]);
   useEffect(reloadItems, [reloadItems]);
 
   // Giỏ: giữ danh sách id trong sessionStorage, nạp nội dung khi mở.
@@ -766,6 +770,10 @@ export default function QuestionBankAdmin() {
                   <input type="checkbox" checked={showArchived} onChange={(e) => setShowArchived(e.target.checked)} />
                   Hiện câu đã lưu trữ
                 </label>
+                <label className="flex items-center gap-1.5 text-xs text-slate-400" title="Ẩn câu còn cờ lỗi lint (đề cụt, $ lẻ, phương án rỗng, mất dấu ^…)">
+                  <input type="checkbox" checked={cleanOnly} onChange={(e) => setCleanOnly(e.target.checked)} />
+                  Chỉ câu sạch
+                </label>
                 <div className="ml-auto flex flex-wrap items-center gap-1">
                   <input
                     type="number"
@@ -1080,6 +1088,9 @@ const QuestionRow = memo(function QuestionRow({
         </label>
         <span className="rounded bg-white/10 px-1.5 py-0.5 text-[12px] text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
         {q.archived && <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[12px] text-amber-200">đã lưu trữ</span>}
+        {bankLintFlags(q).map((f) => (
+          <span key={f.code} title={f.ctx} className="rounded bg-red-500/20 px-1.5 py-0.5 text-[12px] font-bold text-red-200">{LINT_LABEL[f.code]}</span>
+        ))}
         <span className="ml-auto text-[12px] text-slate-500">
           {q.sourceExamId !== null ? (
             <>

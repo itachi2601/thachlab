@@ -5,6 +5,7 @@
 
 import { QUESTION_TYPE_ORDER, type Difficulty, type ExamQuestion, type QuestionForm } from "@/features/exams/types";
 import { FIGURE_MARK_PG, FIGURE_WORDS_PG, HAS_IMAGE_PG, isMissingFigure } from "@/services/question-figures";
+import { activeLintFlags, blockingFlags } from "@/lib/question-lint";
 import { getSupabase } from "@/services/supabase";
 
 export interface BankQuestion {
@@ -85,6 +86,9 @@ function fromRow(r: BankRow): BankQuestion {
   };
 }
 
+/** Cờ lint mức "lỗi" còn hiệu lực của một câu ngân hàng (tính ngay trên trình duyệt, chỉ để hiện huy hiệu). */
+export const bankLintFlags = (b: BankQuestion) => blockingFlags(activeLintFlags(b.question, b.qtype));
+
 /** Lưu / xoá hình AI chờ duyệt của một câu (null = bỏ). */
 export async function saveBankAiFigure(id: number, fig: BankAiFigure | null): Promise<void> {
   const { error } = await getSupabase()
@@ -108,6 +112,8 @@ export interface BankFilter {
   missingFigure?: boolean;
   /** Chỉ lấy câu nạp từ các đề này (vd. bộ Kiểm tra nhanh của một bài lý thuyết). */
   sourceExamIds?: number[];
+  /** Chỉ câu sạch lint (cột lint_flags = '{}', do scripts/cap-nhat-lint-flags.mts ghi). */
+  cleanOnly?: boolean;
   limit?: number;
 }
 
@@ -147,8 +153,16 @@ export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQ
   if (!filter.includeArchived) q = q.eq("archived", false);
   if (filter.search?.trim()) q = q.ilike("question->>question", `%${filter.search.trim()}%`);
   if (filter.missingFigure) q = applyMissingFigureFilter(q);
+  if (filter.cleanOnly) q = q.eq("lint_flags", "{}");
   const { data, error } = await q;
-  if (error) throw new Error(error.message);
+  if (error) {
+    // Migration question_bank_lint_flags chưa chạy: bỏ lọc phía máy chủ, lọc lại bằng lint trên trình duyệt.
+    if (filter.cleanOnly && /lint_flags/.test(error.message)) {
+      const rows = await fetchBankQuestions({ ...filter, cleanOnly: false });
+      return rows.filter((r) => bankLintFlags(r).length === 0);
+    }
+    throw new Error(error.message);
+  }
   const rows = ((data as BankRow[]) ?? []).map(fromRow);
   return filter.missingFigure ? rows.filter((r) => isMissingFigure(r.question)) : rows;
 }
