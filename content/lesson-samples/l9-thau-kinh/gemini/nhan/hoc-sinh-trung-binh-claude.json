@@ -1,0 +1,139 @@
+{
+  "bai": "Bài 8. Thấu kính",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Tia đặc biệt và cách dựng ảnh",
+      "trich_nguyen_van": "Khi $d \\lt f,$ tia ① dốc hơn tia ②, hai tia loe ra",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi Câu 2 dùng ký hiệu d và thuật ngữ 'ảnh ảo'. Hai thứ này chỉ được định nghĩa ở mục 4 (d: khoảng cách vật tới thấu kính) và ở dòng Ảnh thật/Ảnh ảo. Học sinh đọc đến đây chưa biết d là gì và chưa biết 'ảnh ảo' khác 'không có ảnh' ra sao.",
+      "de_xuat": "Định nghĩa d (khoảng cách vật tới thấu kính) ngay ở mục 3, trước Câu 2. Ở chỗ 'ảnh ảo' thêm một mệnh đề ngắn: 'ảnh do đường kéo dài gặp nhau, xem mục 4'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Trục chính, quang tâm, tiêu điểm, tiêu cự",
+      "trich_nguyen_van": "$f = OF = OF'.$ Kính hội tụ càng phồng, $f$ càng ngắn.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 2 định nghĩa f là một độ dài OF (luôn dương), nhưng mục 5 lại nói f 'âm với kính phân kì'. Học sinh sẽ không biết lúc nào f là độ dài, lúc nào f mang dấu. Khi đề cho 'phân kì có tiêu cự 20 cm', em dễ thay thẳng +20 vào công thức.",
+      "de_xuat": "Ở mục 5 thêm câu: 'Tiêu cự (độ dài OF) luôn dương; khi thay vào công thức, kính phân kì lấy f = −OF'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "5. Công thức thấu kính",
+      "trich_nguyen_van": "$d'{:}$ khoảng cách ảnh tới thấu kính. Ra $d' \\gt 0{:}$ ảnh thật. Ra $d' \\lt 0{:}$ ảnh ảo.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài gọi d' là 'khoảng cách', mà khoảng cách thì không âm. Học sinh sẽ thấy mâu thuẫn khi d' = −15 cm. Em có thể bỏ dấu trừ và báo 'ảnh cách kính −15 cm', hoặc lấy 15 cm rồi đặt màn ở đó.",
+      "de_xuat": "Viết rõ: '|d'| là khoảng cách ảnh tới kính; dấu của d' cho biết ảnh thật (+) hay ảo (−)'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "5. Công thức thấu kính",
+      "trich_nguyen_van": "mỗi lần tính $f = \\dfrac{d\\,d'}{d + d'}$ đều ra gần $10\\ \\text{cm}",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức f = dd'/(d+d') xuất hiện mà không có bước biến đổi từ 1/f = 1/d + 1/d'. Học sinh trung bình không tự quy đồng ra được, nên cũng không kiểm tra lại được bảng số liệu.",
+      "de_xuat": "Thêm một dòng: '1/f = 1/d + 1/d' = (d + d')/(d d'), nên f = d d'/(d + d')'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Công thức thấu kính",
+      "trich_nguyen_van": "công thức đúng với mọi vị trí vật.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm chỉ đo với d > f, tức là chỉ có ảnh thật hứng trên màn. Câu kết luận khiến học sinh tưởng đã kiểm chứng được cả trường hợp d < f, và em vẫn có thể đi tìm ảnh trên màn trong trường hợp đó.",
+      "de_xuat": "Sửa thành 'công thức đúng với mọi vị trí vật cho ảnh thật đã đo; với ảnh ảo vẫn dùng được nếu giữ dấu d' âm'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Công thức thấu kính",
+      "trich_nguyen_van": "tam giác tạo bởi tia ② và $F'$ cho $\\dfrac{h'}{h} = \\dfrac{d' - f}{f}.$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết đó là hai tam giác nào. Từ 'cho hai tỉ số bằng nhau' sang 'chia cho dd'f' còn thiếu bước nhân chéo, nên em không tự làm lại được.",
+      "de_xuat": "Gọi tên hai tam giác (OIF' và A'B'F', với OI = h). Ghi thêm bước trung gian d'f = dd' − df trước khi chia cho dd'f."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$d' = 30 \\gt 2f = 24$ và $k \\gt 1{:}$ khớp tính chất ảnh ở mục II.4.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục II.4 chỉ nêu vị trí ảnh cho trường hợp d = 2f, không nói với f < d < 2f thì ảnh nằm ngoài 2f. Học sinh mở lại II.4 sẽ không thấy điều kiện d' > 2f để đối chiếu.",
+      "de_xuat": "Bổ sung vào dòng f < d < 2f ở mục II.4: 'ảnh cách kính xa hơn 2f'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$k = \\dfrac{d'}{d} = \\dfrac{30}{20} = 1{,}5;$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức ở mục 5 là k = |d'|/d, còn lời giải mẫu viết d'/d không có trị tuyệt đối. Học sinh dễ chép d'/d và ra k âm khi gặp ảnh ảo, chẳng hạn ở bài ⭐⭐⭐.",
+      "de_xuat": "Viết k = |d'|/d trong bước 3 và ở 'Điền bước còn thiếu' cho thống nhất với mục 5."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Tính chất ảnh theo vị trí vật",
+      "trich_nguyen_van": "nằm trong khoảng từ $O$ tới $F'.$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 2 định nghĩa F' chung cho cả hai loại kính. Học sinh quen hình kính hội tụ nên nghĩ F' luôn ở phía sau kính, và sẽ tưởng ảnh qua kính phân kì nằm sau kính. Cụm 'phía trước kính' trong Hình 3 và Câu 4 cũng không nói rõ là phía nào.",
+      "de_xuat": "Thêm vào mục 2: 'Với kính phân kì, F' nằm cùng phía với vật (phía ánh sáng tới)'. Thay cụm 'phía trước kính' bằng 'cùng phía với vật'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Học sinh nhớ câu khóa 'rìa dày phân kì', thấy chữ 'dày' trong 'giữa dày hơn phần rìa' liền gán thành kính phân kì.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Giữa dày, rìa mỏng là thấu kính hội tụ."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Học sinh nghĩ vật gần F thì ảnh ở rất xa, rồi lẫn 'gặp nhau ở rất xa' với 'loe ra không cắt nhau'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ở cả ba vị trí ngoài $F,$ tia ① thoải hơn tia ② nên hai tia vẫn cắt nhau phía sau kính"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Học sinh thay thẳng 1/8 + 1/12 theo đúng hình thức công thức mà quên chuyển vế 1/d.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $4{,}8\\ \\text{cm}$ là đã <em>cộng</em> $\\dfrac{1}{8} + \\dfrac{1}{12};$ phải chuyển vế thành phép trừ."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học sinh nhớ đúng tính chất 'd < f: ảnh cùng chiều, lớn hơn' nhưng bỏ qua điều kiện ảnh ảo thì không hứng được trên màn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ảnh cùng chiều, lớn hơn vẫn có, nhưng chỉ nhìn qua kính mới thấy."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học sinh coi mỗi nửa thấu kính tạo một nửa ảnh, nên che nửa dưới thì nghĩ chỉ còn nửa trên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Em đang nghĩ mỗi nửa kính \"chở\" một nửa hình."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đề ghi 'tiêu cự 20 cm' nên học sinh thay f = +20 như kính hội tụ, ra d' = 60 cm dương và kết luận ảnh thật.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $60\\ \\text{cm}$ là đã thay $f = +20,$ coi kính phân kì như kính hội tụ."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Học sinh nhớ k là tỉ số giữa d và d' nhưng đặt ngược thành d/d', ra h' = 6 cm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $6\\ \\text{cm}$ là lật ngược tỉ số thành $\\dfrac{d}{d'}.$"
+    }
+  ]
+}

@@ -1,0 +1,590 @@
+{
+  "lesson_title": "Bài 13. Đại cương về dòng điện xoay chiều",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Đọc các đại lượng từ biểu thức u, i",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Đối chiếu biểu thức với dạng chuẩn $u=U_0\\cos(\\omega t+\\varphi_u)$ để đọc ra $U_0$, $\\omega$, $\\varphi_u$. Sau đó dùng $\\omega=2\\pi f$, $T=\\dfrac{1}{f}$, $U=\\dfrac{U_0}{\\sqrt{2}}$.",
+      "yccd_de_xuat": "Viết biểu thức u, i theo thời gian",
+      "de_bai": "Điện áp giữa hai cực của một máy phát điện nhỏ trong phòng thí nghiệm có biểu thức $u=12\\sqrt{2}\\cos\\left(40\\pi t+\\dfrac{\\pi}{4}\\right)\\ \\text{V}$ ($t$ tính bằng giây).\na) Tìm điện áp cực đại $U_0$ và điện áp hiệu dụng $U$.\nb) Tìm tần số góc $\\omega$, tần số $f$, chu kì $T$ và pha ban đầu $\\varphi_u$.",
+      "dieu_kien_ap_dung": "Biểu thức đã ở dạng chuẩn hàm cos với biên độ dương, nên đọc trực tiếp $U_0$, $\\omega$, $\\varphi_u$ mà không cần biến đổi.",
+      "phan_tich": [
+        {
+          "trich_de": "12\\sqrt{2}",
+          "du_lieu": "$U_0=12\\sqrt{2}\\ \\text{V}$",
+          "kien_thuc": "Hệ số trước hàm cos là giá trị cực đại; $U=\\dfrac{U_0}{\\sqrt{2}}$"
+        },
+        {
+          "trich_de": "40\\pi t",
+          "du_lieu": "$\\omega=40\\pi\\ \\text{rad/s}$",
+          "kien_thuc": "$\\omega=2\\pi f$, $T=\\dfrac{1}{f}$"
+        },
+        {
+          "trich_de": "\\dfrac{\\pi}{4}",
+          "du_lieu": "$\\varphi_u=\\dfrac{\\pi}{4}\\ \\text{rad}$",
+          "kien_thuc": "Số cộng sau $\\omega t$ là pha ban đầu"
+        },
+        {
+          "trich_de": "($t$ tính bằng giây)",
+          "du_lieu": "$t$ tính bằng s",
+          "kien_thuc": "$\\omega$ tính bằng rad/s, $f$ tính bằng Hz"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "U_0,\\ U,\\ \\omega,\\ f,\\ T,\\ \\varphi_u",
+        "cong_thuc": "U=\\dfrac{U_0}{\\sqrt{2}};\\ f=\\dfrac{\\omega}{2\\pi};\\ T=\\dfrac{1}{f}"
+      },
+      "kien_thuc_goi_lai": [
+        "$u=U_0\\cos(\\omega t+\\varphi_u)$: $U_0$ cực đại, $\\varphi_u$ pha ban đầu.",
+        "$\\omega=2\\pi f$, $T=\\dfrac{2\\pi}{\\omega}=\\dfrac{1}{f}$.",
+        "$U=\\dfrac{U_0}{\\sqrt{2}}$: chia căn hai ra hiệu dụng."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đọc giá trị cực đại",
+          "cong_thuc_chu": "$U_0=$ hệ số trước $\\cos$",
+          "the_so": "$U_0=12\\sqrt{2}$",
+          "ket_qua": "$U_0\\approx16{,}97\\ \\text{V}$",
+          "kiem_tra": "Đơn vị V. $U_0\\gt0$ đúng quy ước."
+        },
+        {
+          "tieu_de": "Tính điện áp hiệu dụng",
+          "cong_thuc_chu": "$U=\\dfrac{U_0}{\\sqrt{2}}$",
+          "the_so": "$U=\\dfrac{12\\sqrt{2}}{\\sqrt{2}}$",
+          "ket_qua": "$U=12\\ \\text{V}$",
+          "kiem_tra": "$U\\lt U_0$, hợp lí."
+        },
+        {
+          "tieu_de": "Đọc tần số góc, tính tần số",
+          "cong_thuc_chu": "$f=\\dfrac{\\omega}{2\\pi}$",
+          "the_so": "$\\omega=40\\pi\\approx125{,}7\\ \\text{rad/s}$; $f=\\dfrac{40\\pi}{2\\pi}$",
+          "ket_qua": "$f=20\\ \\text{Hz}$",
+          "kiem_tra": "$\\dfrac{\\text{rad/s}}{\\text{rad}}=\\text{s}^{-1}=\\text{Hz}$."
+        },
+        {
+          "tieu_de": "Tính chu kì",
+          "cong_thuc_chu": "$T=\\dfrac{1}{f}$",
+          "the_so": "$T=\\dfrac{1}{20}$",
+          "ket_qua": "$T=0{,}05\\ \\text{s}$",
+          "kiem_tra": "Kiểm lại: $\\dfrac{2\\pi}{\\omega}=\\dfrac{2\\pi}{40\\pi}=0{,}05\\ \\text{s}$ ✓."
+        },
+        {
+          "tieu_de": "Đọc pha ban đầu",
+          "cong_thuc_chu": "$\\varphi_u=$ số cộng sau $\\omega t$",
+          "the_so": "$\\varphi_u=+\\dfrac{\\pi}{4}$",
+          "ket_qua": "$\\varphi_u=\\dfrac{\\pi}{4}\\approx0{,}7854\\ \\text{rad}$",
+          "kiem_tra": "Dấu cộng nên $\\varphi_u$ dương."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (U_0)",
+          "gia_tri": 16.97,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (U)",
+          "gia_tri": 12,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (ω)",
+          "gia_tri": 125.7,
+          "don_vi": "rad/s"
+        },
+        {
+          "y": "b (f)",
+          "gia_tri": 20,
+          "don_vi": "Hz"
+        },
+        {
+          "y": "b (T)",
+          "gia_tri": 0.05,
+          "don_vi": "s"
+        },
+        {
+          "y": "b (φ_u)",
+          "gia_tri": 0.7854,
+          "don_vi": "rad"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "U_0",
+          "bieu_thuc": "12*math.sqrt(2)",
+          "ky_vong": 16.97,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "U hiệu dụng",
+          "bieu_thuc": "12*math.sqrt(2)/math.sqrt(2)",
+          "ky_vong": 12,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "ω",
+          "bieu_thuc": "40*math.pi",
+          "ky_vong": 125.7,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "f",
+          "bieu_thuc": "40*math.pi/(2*math.pi)",
+          "ky_vong": 20,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "T",
+          "bieu_thuc": "2*math.pi/(40*math.pi)",
+          "ky_vong": 0.05,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "φ_u",
+          "bieu_thuc": "math.pi/4",
+          "ky_vong": 0.7854,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho sẵn biểu thức $u$ hoặc $i$ và hỏi $U_0$, $U$, $f$, $T$, $\\varphi$ → đối chiếu dạng chuẩn, đọc hệ số, rồi dùng $\\omega=2\\pi f$ và chia $\\sqrt{2}$.",
+      "bay_thuong_gap": [
+        "Lấy $\\omega=40\\pi$ làm tần số $f$, quên chia $2\\pi$.",
+        "Coi hệ số $12\\sqrt{2}$ là giá trị hiệu dụng.",
+        "Đọc sai dấu của pha ban đầu."
+      ],
+      "dieu_ban_khong_chac": [
+        "Máy phát mini trong phòng thí nghiệm có thể cho tần số 20 Hz khi quay 20 vòng/s (một cặp cực); số liệu hợp lí so với bảng đo trong bài."
+      ],
+      "mo_phong_goi_y": "Đồ thị $u$ theo $t$ chạy dần trên màn dao động ký, vài chu kì. Một chấm sáng chạy dọc đường cong. Nhãn: trục $u$ (V), trục $t$ (s), vạch ngang ở mức đỉnh ghi $U_0$, vạch ngang thấp hơn ghi $U$, đoạn ngang giữa hai đỉnh liền kề ghi $T$, điểm tại $t=0$ đánh dấu. Không ghi giá trị số."
+    },
+    {
+      "label": "Dạng 2 · Nhiệt lượng, công suất dùng giá trị hiệu dụng",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách đọc $I_0$ từ biểu thức và chia $\\sqrt{2}$ ở dạng 1. Thêm một bẫy mới: tính nhiệt phải dùng giá trị hiệu dụng $I$, không dùng $I_0$ hay giá trị trung bình, kèm đổi phút ra giây.",
+      "yccd_de_xuat": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "de_bai": "Dòng điện chạy qua dây đốt của một bếp điện có biểu thức $i=3\\cos\\left(100\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{A}$. Dây đốt có điện trở $R=40\\ \\Omega$, coi như không đổi. Tính công suất toả nhiệt của dây đốt và nhiệt lượng bếp toả ra trong 5 phút.",
+      "dieu_kien_ap_dung": "Công thức $P=I^2R$, $Q=I^2Rt$ dùng cho điện trở thuần không đổi, với $I$ là cường độ hiệu dụng và $t$ gồm nguyên số chu kì (ở đây 5 phút gồm rất nhiều chu kì).",
+      "phan_tich": [
+        {
+          "trich_de": "i=3\\cos",
+          "du_lieu": "$I_0=3\\ \\text{A}$",
+          "kien_thuc": "$I=\\dfrac{I_0}{\\sqrt{2}}$"
+        },
+        {
+          "trich_de": "$R=40\\ \\Omega$",
+          "du_lieu": "$R=40\\ \\Omega$",
+          "kien_thuc": "$P=I^2R$"
+        },
+        {
+          "trich_de": "5 phút",
+          "du_lieu": "$t=5\\ \\text{phút}=300\\ \\text{s}$",
+          "kien_thuc": "Đổi về giây; $Q=Pt$"
+        },
+        {
+          "trich_de": "công suất toả nhiệt",
+          "du_lieu": "cần tìm $P$",
+          "kien_thuc": "Nhiệt tỉ lệ với $i^2$, dùng hiệu dụng"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "P,\\ Q",
+        "cong_thuc": "P=I^2R=\\left(\\dfrac{I_0}{\\sqrt{2}}\\right)^2R;\\ Q=Pt"
+      },
+      "kien_thuc_goi_lai": [
+        "Cường độ hiệu dụng: dòng không đổi toả nhiệt bằng dòng xoay chiều qua cùng $R$, cùng thời gian.",
+        "$I=\\dfrac{I_0}{\\sqrt{2}}$.",
+        "Giá trị trung bình của $i$ trong một chu kì bằng 0, không dùng để tính nhiệt.",
+        "$P=I^2R$, $Q=I^2Rt$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đọc $I_0$ và tính $I$",
+          "cong_thuc_chu": "$I=\\dfrac{I_0}{\\sqrt{2}}$",
+          "the_so": "$I=\\dfrac{3}{\\sqrt{2}}$",
+          "ket_qua": "$I\\approx2{,}121\\ \\text{A}$",
+          "kiem_tra": "$I\\lt I_0$, đơn vị A."
+        },
+        {
+          "tieu_de": "Tính công suất toả nhiệt",
+          "cong_thuc_chu": "$P=I^2R$",
+          "the_so": "$P=\\left(\\dfrac{3}{\\sqrt{2}}\\right)^2\\cdot40=4{,}5\\cdot40$",
+          "ket_qua": "$P=180\\ \\text{W}$",
+          "kiem_tra": "$\\text{A}^2\\cdot\\Omega=\\text{W}$. Cỡ công suất bếp nhỏ, hợp lí."
+        },
+        {
+          "tieu_de": "Đổi thời gian",
+          "cong_thuc_chu": "$t=5\\cdot60$",
+          "the_so": "$t=300$",
+          "ket_qua": "$t=300\\ \\text{s}$",
+          "kiem_tra": "Đơn vị SI là giây."
+        },
+        {
+          "tieu_de": "Tính nhiệt lượng",
+          "cong_thuc_chu": "$Q=Pt$",
+          "the_so": "$Q=180\\cdot300$",
+          "ket_qua": "$Q=54\\,000\\ \\text{J}$",
+          "kiem_tra": "$\\text{W}\\cdot\\text{s}=\\text{J}$. Dùng nhầm $I_0$ sẽ ra $108\\,000\\ \\text{J}$, gấp đôi."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "P",
+          "gia_tri": 180,
+          "don_vi": "W"
+        },
+        {
+          "y": "Q",
+          "gia_tri": 54000,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "I hiệu dụng",
+          "bieu_thuc": "3/math.sqrt(2)",
+          "ky_vong": 2.121,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "P",
+          "bieu_thuc": "(3/math.sqrt(2))**2*40",
+          "ky_vong": 180,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Q",
+          "bieu_thuc": "(3/math.sqrt(2))**2*40*5*60",
+          "ky_vong": 54000,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho biểu thức $i$ (hoặc $I_0$) và hỏi công suất, nhiệt lượng → đổi về hiệu dụng $I=\\dfrac{I_0}{\\sqrt{2}}$, đổi thời gian ra giây, rồi dùng $P=I^2R$, $Q=I^2Rt$.",
+      "bay_thuong_gap": [
+        "Dùng $I_0=3\\ \\text{A}$ thay cho $I$, ra $P=360\\ \\text{W}$ (gấp đôi).",
+        "Cho rằng trung bình $i$ bằng 0 nên không toả nhiệt.",
+        "Nhân $\\sqrt{2}$ thay vì chia.",
+        "Để $t=5$ phút, không đổi ra 300 s."
+      ],
+      "dieu_ban_khong_chac": [
+        "Điện trở dây đốt thực tế thay đổi theo nhiệt độ; đề đã nêu coi như không đổi."
+      ],
+      "mo_phong_goi_y": "Hai bếp giống nhau đặt cạnh nhau: bếp trái nối dòng xoay chiều (đồ thị $i$ hình sin nhấp nháy bên cạnh), bếp phải nối dòng không đổi (đường ngang). Dây đốt đỏ dần với cùng tốc độ. Nhãn: $i(t)$, $I_0$, $I$, $R$, đồng hồ đếm thời gian. Không ghi giá trị $P$, $Q$."
+    },
+    {
+      "label": "Dạng 3 · Suất điện động của khung dây quay",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại bước chia $\\sqrt{2}$ ra hiệu dụng và thói quen đổi đơn vị của dạng 2 (bước con chính là bài cấp 2). Thêm mới: tự tính biên độ $E_0=NBS\\omega$ từ thông số khung và viết $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.",
+      "yccd_de_xuat": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "de_bai": "Một máy phát điện mini gồm khung dây phẳng $N=200$ vòng, diện tích mỗi vòng $S=150\\ \\text{cm}^2$, quay đều với tốc độ $3000$ vòng/phút quanh một trục nằm trong mặt khung và vuông góc với từ trường đều $B=0{,}05\\ \\text{T}$. Chọn $t=0$ lúc mặt khung vuông góc với $\\vec{B}$ (pháp tuyến $\\vec{n}$ cùng hướng $\\vec{B}$).\na) Tính tần số góc $\\omega$ và suất điện động cực đại $E_0$.\nb) Tính suất điện động hiệu dụng $E$.\nc) Viết biểu thức suất điện động $e$ theo thời gian.",
+      "dieu_kien_ap_dung": "Từ trường đều, khung quay đều quanh trục vuông góc với $\\vec{B}$ nên $\\Phi=NBS\\cos(\\omega t+\\varphi)$ và $e=-\\Phi'$ là hàm cos.",
+      "phan_tich": [
+        {
+          "trich_de": "$N=200$ vòng",
+          "du_lieu": "$N=200$",
+          "kien_thuc": "$\\Phi_0=NBS$"
+        },
+        {
+          "trich_de": "$S=150\\ \\text{cm}^2$",
+          "du_lieu": "$S=150\\ \\text{cm}^2=0{,}015\\ \\text{m}^2$",
+          "kien_thuc": "Đổi $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$"
+        },
+        {
+          "trich_de": "$3000$ vòng/phút",
+          "du_lieu": "$n=50\\ \\text{vòng/s}$",
+          "kien_thuc": "$\\omega=2\\pi n$ (mỗi vòng một chu kì)"
+        },
+        {
+          "trich_de": "$B=0{,}05\\ \\text{T}$",
+          "du_lieu": "$B=0{,}05\\ \\text{T}$",
+          "kien_thuc": "$E_0=NBS\\omega$"
+        },
+        {
+          "trich_de": "mặt khung vuông góc với $\\vec{B}$",
+          "du_lieu": "$\\varphi=0$",
+          "kien_thuc": "$\\Phi$ cực đại thì $e=0$; $e=E_0\\cos\\left(\\omega t+\\varphi-\\dfrac{\\pi}{2}\\right)$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\omega,\\ E_0,\\ E,\\ e(t)",
+        "cong_thuc": "E_0=NBS\\omega;\\ E=\\dfrac{E_0}{\\sqrt{2}};\\ e=E_0\\cos\\left(\\omega t+\\varphi-\\dfrac{\\pi}{2}\\right)"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\Phi=\\Phi_0\\cos(\\omega t+\\varphi)$, $\\Phi_0=NBS$.",
+        "$e=-\\Phi'$ nên $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.",
+        "$E_0=NBS\\omega$.",
+        "$E=\\dfrac{E_0}{\\sqrt{2}}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi đơn vị",
+          "cong_thuc_chu": "$S(\\text{m}^2)=S(\\text{cm}^2)\\cdot10^{-4}$; $n(\\text{vòng/s})=\\dfrac{n(\\text{vòng/phút})}{60}$",
+          "the_so": "$S=150\\cdot10^{-4}$; $n=\\dfrac{3000}{60}$",
+          "ket_qua": "$S=0{,}015\\ \\text{m}^2$; $n=50\\ \\text{vòng/s}$",
+          "kiem_tra": "Khung cỡ $12\\ \\text{cm}\\times12\\ \\text{cm}$, hợp lí."
+        },
+        {
+          "tieu_de": "Tính tần số góc",
+          "cong_thuc_chu": "$\\omega=2\\pi n$",
+          "the_so": "$\\omega=2\\pi\\cdot50$",
+          "ket_qua": "$\\omega=100\\pi\\approx314{,}2\\ \\text{rad/s}$",
+          "kiem_tra": "Ứng với $f=50\\ \\text{Hz}$, giống điện lưới."
+        },
+        {
+          "tieu_de": "Tính suất điện động cực đại",
+          "cong_thuc_chu": "$E_0=NBS\\omega$",
+          "the_so": "$E_0=200\\cdot0{,}05\\cdot0{,}015\\cdot100\\pi=15\\pi$",
+          "ket_qua": "$E_0\\approx47{,}12\\ \\text{V}$",
+          "kiem_tra": "$\\text{T}\\cdot\\text{m}^2\\cdot\\text{s}^{-1}=\\text{Wb/s}=\\text{V}$."
+        },
+        {
+          "tieu_de": "Tính suất điện động hiệu dụng",
+          "cong_thuc_chu": "$E=\\dfrac{E_0}{\\sqrt{2}}$",
+          "the_so": "$E=\\dfrac{15\\pi}{\\sqrt{2}}$",
+          "ket_qua": "$E\\approx33{,}32\\ \\text{V}$",
+          "kiem_tra": "$E\\lt E_0$, đơn vị V."
+        },
+        {
+          "tieu_de": "Xác định pha ban đầu của $\\Phi$",
+          "cong_thuc_chu": "$\\alpha=(\\vec{n},\\vec{B})=\\omega t+\\varphi$",
+          "the_so": "Tại $t=0$: $\\vec{n}$ cùng hướng $\\vec{B}$ nên $\\alpha=0$",
+          "ket_qua": "$\\varphi=0$",
+          "kiem_tra": "Lúc này $\\Phi=\\Phi_0$ cực đại."
+        },
+        {
+          "tieu_de": "Viết biểu thức $e$",
+          "cong_thuc_chu": "$e=E_0\\cos\\left(\\omega t+\\varphi-\\dfrac{\\pi}{2}\\right)$",
+          "the_so": "$e=15\\pi\\cos\\left(100\\pi t-\\dfrac{\\pi}{2}\\right)$",
+          "ket_qua": "$e\\approx47{,}12\\cos\\left(100\\pi t-\\dfrac{\\pi}{2}\\right)\\ \\text{V}$",
+          "kiem_tra": "Thay $t=0$: $e=15\\pi\\cos\\left(-\\dfrac{\\pi}{2}\\right)=0$, khớp với $\\Phi$ cực đại thì $e=0$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (ω)",
+          "gia_tri": 314.2,
+          "don_vi": "rad/s"
+        },
+        {
+          "y": "a (E_0)",
+          "gia_tri": 47.12,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (E)",
+          "gia_tri": 33.32,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (pha ban đầu của e)",
+          "gia_tri": -1.571,
+          "don_vi": "rad"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "ω",
+          "bieu_thuc": "3000/60*2*math.pi",
+          "ky_vong": 314.2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E_0",
+          "bieu_thuc": "200*0.05*150e-4*(3000/60*2*math.pi)",
+          "ky_vong": 47.12,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E hiệu dụng",
+          "bieu_thuc": "200*0.05*150e-4*(3000/60*2*math.pi)/math.sqrt(2)",
+          "ky_vong": 33.32,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "pha ban đầu của e",
+          "bieu_thuc": "0-math.pi/2",
+          "ky_vong": -1.571,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho $N$, $S$, $B$, tốc độ quay của khung và vị trí khung lúc $t=0$ → đổi đơn vị, tính $\\omega$, $E_0=NBS\\omega$, chia $\\sqrt{2}$, rồi viết $e$ trễ pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.",
+      "bay_thuong_gap": [
+        "Để $S$ ở $\\text{cm}^2$, ra $E_0$ lớn gấp $10^4$ lần.",
+        "Dùng $\\omega=3000$ hoặc $\\omega=50$ thay cho $2\\pi n$.",
+        "Viết $e=E_0\\cos(\\omega t)$, cho rằng $\\Phi$ cực đại thì $e$ cực đại.",
+        "Quên nhân $N$ vào $E_0$."
+      ],
+      "dieu_ban_khong_chac": [
+        "$B=0{,}05\\ \\text{T}$ và 3000 vòng/phút là giá trị điển hình cho máy phát mini; $E_0$ khoảng 47 V là hợp lí."
+      ],
+      "mo_phong_goi_y": "Nhìn dọc trục quay: hai cực nam châm hai bên, đường sức $\\vec{B}$ nằm ngang, khung dây quay đều; mũi tên pháp tuyến $\\vec{n}$ quay theo, góc $\\alpha$ tăng dần. Bên cạnh vẽ đồng thời hai đường $\\Phi(t)$ và $e(t)$ lệch nhau một phần tư chu kì. Nhãn: $\\vec{B}$, $\\vec{n}$, $\\alpha$, $\\omega$, $N$, $S$, $\\Phi$, $e$, mốc $t=0$. Không ghi giá trị $E_0$."
+    },
+    {
+      "label": "Dạng 4 · Viết biểu thức u từ số đo thực tế và chiều biến thiên",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cách tìm $\\omega$, $U_0$ (dạng 1), phân biệt hiệu dụng với cực đại (dạng 2), viết biểu thức có pha ban đầu (dạng 3). Thêm mới: dữ kiện ẩn, phải tự tìm $\\varphi$ từ giá trị tức thời lúc $t=0$ và chọn dấu theo \"đang tăng\".",
+      "yccd_de_xuat": "Viết biểu thức u, i theo thời gian",
+      "de_bai": "Một bạn dùng vôn kế xoay chiều đo ổ cắm trong nhà, vôn kế chỉ $220\\ \\text{V}$; điện lưới có tần số $50\\ \\text{Hz}$. Dao động ký cho thấy: tại thời điểm chọn làm $t=0$, điện áp tức thời là $110\\sqrt{2}\\ \\text{V}$ và đang tăng.\na) Viết biểu thức $u$ theo thời gian.\nb) Sau $t=0$, lần đầu tiên điện áp đạt giá trị cực đại vào thời điểm nào?\nc) Bạn định cắm một thiết bị có lớp cách điện chỉ chịu được điện áp tối đa $300\\ \\text{V}$ (vượt quá là bị đánh thủng). Thiết bị có an toàn không? Giải thích.",
+      "dieu_kien_ap_dung": "Điện áp lưới là hàm cos ổn định $u=U_0\\cos(\\omega t+\\varphi_u)$ với $U_0\\gt0$; vôn kế xoay chiều chỉ giá trị hiệu dụng.",
+      "phan_tich": [
+        {
+          "trich_de": "vôn kế chỉ $220\\ \\text{V}$",
+          "du_lieu": "$U=220\\ \\text{V}$",
+          "kien_thuc": "Vôn kế xoay chiều chỉ hiệu dụng; $U_0=U\\sqrt{2}$"
+        },
+        {
+          "trich_de": "tần số $50\\ \\text{Hz}$",
+          "du_lieu": "$f=50\\ \\text{Hz}$",
+          "kien_thuc": "$\\omega=2\\pi f$"
+        },
+        {
+          "trich_de": "điện áp tức thời là $110\\sqrt{2}\\ \\text{V}$",
+          "du_lieu": "$u(0)=110\\sqrt{2}\\ \\text{V}$",
+          "kien_thuc": "$u(0)=U_0\\cos\\varphi_u$"
+        },
+        {
+          "trich_de": "đang tăng",
+          "du_lieu": "$u'(0)\\gt0$",
+          "kien_thuc": "$u'=-U_0\\omega\\sin(\\omega t+\\varphi_u)$, suy ra $\\sin\\varphi_u\\lt0$"
+        },
+        {
+          "trich_de": "lần đầu tiên điện áp đạt giá trị cực đại",
+          "du_lieu": "cần tìm $t_1$",
+          "kien_thuc": "$u=U_0$ khi pha bằng $0$ (hoặc $2k\\pi$)"
+        },
+        {
+          "trich_de": "chịu được điện áp tối đa $300\\ \\text{V}$",
+          "du_lieu": "$U_{\\max}=300\\ \\text{V}$",
+          "kien_thuc": "Đánh thủng cách điện xét theo giá trị cực đại $U_0$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "u(t),\\ t_1,\\ \\text{so sánh } U_0 \\text{ với } 300\\ \\text{V}",
+        "cong_thuc": "u=U\\sqrt{2}\\cos(2\\pi f t+\\varphi_u);\\ \\cos\\varphi_u=\\dfrac{u(0)}{U_0};\\ \\omega t_1+\\varphi_u=0"
+      },
+      "kien_thuc_goi_lai": [
+        "Số chỉ vôn kế, số ghi trên thiết bị là giá trị hiệu dụng.",
+        "$U_0=U\\sqrt{2}$, $\\omega=2\\pi f$.",
+        "\"Đang tăng\" thì $\\sin\\varphi\\lt0$; \"đang giảm\" thì $\\sin\\varphi\\gt0$.",
+        "Điện áp đánh thủng cách điện so với giá trị cực đại."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Rút dữ kiện ẩn: $U_0$ và $\\omega$",
+          "cong_thuc_chu": "$U_0=U\\sqrt{2}$; $\\omega=2\\pi f$",
+          "the_so": "$U_0=220\\sqrt{2}$; $\\omega=2\\pi\\cdot50$",
+          "ket_qua": "$U_0\\approx311{,}1\\ \\text{V}$; $\\omega=100\\pi\\ \\text{rad/s}$",
+          "kiem_tra": "Đỉnh ổ điện khoảng 311 V, đúng như bài học."
+        },
+        {
+          "tieu_de": "Tìm $\\cos\\varphi_u$ từ giá trị lúc $t=0$",
+          "cong_thuc_chu": "$\\cos\\varphi_u=\\dfrac{u(0)}{U_0}$",
+          "the_so": "$\\cos\\varphi_u=\\dfrac{110\\sqrt{2}}{220\\sqrt{2}}=\\dfrac{1}{2}$",
+          "ket_qua": "$\\varphi_u=\\pm\\dfrac{\\pi}{3}$",
+          "kiem_tra": "$|\\cos\\varphi_u|\\le1$, hợp lệ."
+        },
+        {
+          "tieu_de": "Chọn dấu theo \"đang tăng\"",
+          "cong_thuc_chu": "$u'(0)=-U_0\\omega\\sin\\varphi_u\\gt0\\Rightarrow\\sin\\varphi_u\\lt0$",
+          "the_so": "Loại $+\\dfrac{\\pi}{3}$, giữ $-\\dfrac{\\pi}{3}$",
+          "ket_qua": "$\\varphi_u=-\\dfrac{\\pi}{3}\\approx-1{,}047\\ \\text{rad}$",
+          "kiem_tra": "$u'(0)=-311{,}1\\cdot100\\pi\\cdot\\sin\\left(-\\dfrac{\\pi}{3}\\right)\\gt0$ ✓."
+        },
+        {
+          "tieu_de": "Viết biểu thức $u$",
+          "cong_thuc_chu": "$u=U_0\\cos(\\omega t+\\varphi_u)$",
+          "the_so": "$u=220\\sqrt{2}\\cos\\left(100\\pi t-\\dfrac{\\pi}{3}\\right)$",
+          "ket_qua": "$u=220\\sqrt{2}\\cos\\left(100\\pi t-\\dfrac{\\pi}{3}\\right)\\ \\text{V}$",
+          "kiem_tra": "Thay $t=0$: $220\\sqrt{2}\\cdot\\dfrac{1}{2}=110\\sqrt{2}\\ \\text{V}$ ✓."
+        },
+        {
+          "tieu_de": "Tìm thời điểm cực đại đầu tiên",
+          "cong_thuc_chu": "$\\omega t_1+\\varphi_u=0$",
+          "the_so": "$100\\pi t_1-\\dfrac{\\pi}{3}=0$",
+          "ket_qua": "$t_1=\\dfrac{1}{300}\\ \\text{s}\\approx3{,}333\\cdot10^{-3}\\ \\text{s}$",
+          "kiem_tra": "$t_1\\lt\\dfrac{T}{4}=0{,}005\\ \\text{s}$, hợp lí vì $u$ đang tăng từ nửa đỉnh lên đỉnh."
+        },
+        {
+          "tieu_de": "So sánh với điện áp chịu đựng",
+          "cong_thuc_chu": "So $U_0$ với $U_{\\max}$",
+          "the_so": "$311{,}1\\ \\text{V}\\gt300\\ \\text{V}$",
+          "ket_qua": "Không an toàn",
+          "kiem_tra": "Dù số chỉ 220 V nhỏ hơn 300 V, mỗi chu kì điện áp hai lần đạt độ lớn 311 V, vượt mức chịu đựng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (U_0)",
+          "gia_tri": 311.1,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (φ_u)",
+          "gia_tri": -1.047,
+          "don_vi": "rad"
+        },
+        {
+          "y": "b (t_1)",
+          "gia_tri": 0.003333,
+          "don_vi": "s"
+        },
+        {
+          "y": "c (U_0 so với 300 V)",
+          "gia_tri": 311.1,
+          "don_vi": "V"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "U_0",
+          "bieu_thuc": "220*math.sqrt(2)",
+          "ky_vong": 311.1,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "φ_u (lấy nghiệm âm)",
+          "bieu_thuc": "-math.acos(110*math.sqrt(2)/(220*math.sqrt(2)))",
+          "ky_vong": -1.047,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "u(0) kiểm lại",
+          "bieu_thuc": "220*math.sqrt(2)*math.cos(-math.pi/3)",
+          "ky_vong": 155.6,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "u'(0) dương (đang tăng)",
+          "bieu_thuc": "-220*math.sqrt(2)*100*math.pi*math.sin(-math.pi/3)",
+          "ky_vong": 84650,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "t_1",
+          "bieu_thuc": "(math.pi/3)/(100*math.pi)",
+          "ky_vong": 0.003333,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho số đo thực tế (vôn kế, ampe kế, tần số lưới) cùng giá trị tức thời và chiều \"đang tăng/giảm\" lúc $t=0$ → đổi hiệu dụng ra cực đại, tìm $\\cos\\varphi$, chọn dấu $\\varphi$ theo chiều biến thiên, rồi khai thác pha để trả lời các ý sau.",
+      "bay_thuong_gap": [
+        "Lấy $U_0=220\\ \\text{V}$ vì quên vôn kế chỉ hiệu dụng.",
+        "Chọn $\\varphi_u=+\\dfrac{\\pi}{3}$ cho trường hợp \"đang tăng\".",
+        "Ý b: đặt pha bằng $\\dfrac{\\pi}{2}$ (đó là lúc $u=0$) thay vì bằng $0$.",
+        "Ý c: so 220 V với 300 V và kết luận an toàn."
+      ],
+      "dieu_ban_khong_chac": [
+        "Điện áp lưới thực tế dao động quanh 220 V; đề lấy đúng 220 V để tính.",
+        "Danh mục YCCĐ có \"Điện từ trường và sóng điện từ\" và \"Máy biến áp\" nhưng bài lý thuyết không trình bày (máy biến áp chỉ nhắc là bài 14), nên không ra dạng cho hai mục này."
+      ],
+      "mo_phong_goi_y": "Màn dao động ký hiện đường $u(t)$ hình sin; một chấm sáng xuất phát ở mốc $t=0$ tại vị trí nửa đỉnh, đi lên phía đỉnh rồi chạy tiếp. Bên cạnh là vôn kế xoay chiều hiển thị số chỉ và một vạch ngang đỏ ở mức điện áp chịu đựng của thiết bị. Nhãn: $u$ (V), $t$ (s), $U_0$, $U$, mốc $t=0$, mũi tên \"đang tăng\", vạch $300\\ \\text{V}$. Không ghi $\\varphi_u$, $t_1$."
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "lesson_title": "Bài 8. Áp suất - động năng của phân tử khí",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính động năng tịnh tiến trung bình từ nhiệt độ tuyệt đối",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: nhận ra công thức $\\overline{E_d} = \\frac{3}{2}kT$ và thế số với nhiệt độ đã cho sẵn bằng Kelvin.",
+      "yccd_de_xuat": "Động năng trung bình phân tử và nhiệt độ",
+      "de_bai": "Trưa hè trên một bãi cát, không khí sát mặt đất có nhiệt độ $T = 320\\ \\text{K}$. Không khí gồm chủ yếu phân tử N₂ và O₂. Cho hằng số Boltzmann $k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$.\na) Tính động năng tịnh tiến trung bình của một phân tử khí ở đó.\nb) Phân tử N₂ hay phân tử O₂ có động năng tịnh tiến trung bình lớn hơn? Giải thích.",
+      "dieu_kien_ap_dung": "Coi không khí là khí lí tưởng ở trạng thái cân bằng nhiệt; nhiệt độ trong công thức phải là nhiệt độ tuyệt đối.",
+      "phan_tich": [
+        {
+          "trich_de": "nhiệt độ $T = 320\\ \\text{K}$",
+          "du_lieu": "$T = 320\\ \\text{K}$",
+          "kien_thuc": "Nhiệt độ tuyệt đối, dùng thẳng được"
+        },
+        {
+          "trich_de": "$k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
+          "du_lieu": "$k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
+          "kien_thuc": "Hằng số Boltzmann"
+        },
+        {
+          "trich_de": "Phân tử N₂ hay phân tử O₂",
+          "du_lieu": "Hai khí khác khối lượng phân tử, cùng $T$",
+          "kien_thuc": "$\\overline{E_d}$ chỉ phụ thuộc $T$"
+        },
+        {
+          "trich_de": "Tính động năng tịnh tiến trung bình",
+          "du_lieu": "Cần tìm $\\overline{E_d}$",
+          "kien_thuc": "$\\overline{E_d} = \\frac{3}{2}kT$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\overline{E_d}",
+        "cong_thuc": "\\overline{E_d} = \\frac{3}{2}kT"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\overline{E_d} = \\frac{m\\overline{v^2}}{2} = \\frac{3}{2}kT$.",
+        "$k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$.",
+        "$\\overline{E_d}$ chỉ phụ thuộc nhiệt độ tuyệt đối, không phụ thuộc loại khí."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xác định nhiệt độ tuyệt đối",
+          "cong_thuc_chu": "$T$ (K)",
+          "the_so": "$T = 320\\ \\text{K}$",
+          "ket_qua": "$T = 320\\ \\text{K}$",
+          "kiem_tra": "Đề cho sẵn Kelvin nên không cần đổi."
+        },
+        {
+          "tieu_de": "Bước 2. Tính động năng tịnh tiến trung bình",
+          "cong_thuc_chu": "$\\overline{E_d} = \\frac{3}{2}kT$",
+          "the_so": "$\\overline{E_d} = 1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 320$",
+          "ket_qua": "$\\overline{E_d} \\approx 6{,}624\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "J/K × K = J. Cỡ $10^{-21}$ J, hơi lớn hơn giá trị ở 300 K ($6{,}2\\cdot10^{-21}$ J) vì 320 K \\gt 300 K."
+        },
+        {
+          "tieu_de": "Bước 3. So sánh N₂ và O₂",
+          "cong_thuc_chu": "$\\overline{E_d} = \\frac{3}{2}kT$ không chứa $m$",
+          "the_so": "Hai khí cùng $T = 320\\ \\text{K}$",
+          "ket_qua": "$\\overline{E_d}(\\text{N}_2) = \\overline{E_d}(\\text{O}_2) \\approx 6{,}624\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "O₂ nặng hơn nhưng bay chậm hơn; tích $m\\overline{v^2}$ vẫn bằng nhau."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 6.624e-21,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "động năng tịnh tiến trung bình ở 320 K",
+          "bieu_thuc": "1.5*1.38e-23*320",
+          "ky_vong": 6.624e-21,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho nhiệt độ tuyệt đối và hỏi động năng trung bình của một phân tử → nhân thẳng $\\frac{3}{2}kT$.",
+      "bay_thuong_gap": [
+        "Quên hệ số $\\frac{3}{2}$, ra $kT \\approx 4{,}4\\cdot10^{-21}$ J.",
+        "Cho rằng O₂ nặng hơn nên động năng lớn hơn.",
+        "Đi tìm khối lượng phân tử dù công thức không cần."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Một ô không khí sát mặt cát có các chấm hai màu (N₂ và O₂) bay hỗn loạn; chấm O₂ to hơn và bay chậm hơn, chấm N₂ nhỏ hơn và bay nhanh hơn. Nhãn: 'T = 320 K', 'N₂', 'O₂', 'Ē_d = ?'. Không hiện giá trị động năng."
+    },
+    {
+      "label": "Dạng 2 · So sánh động năng trung bình khi nhiệt độ cho bằng °C",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại công thức $\\overline{E_d} = \\frac{3}{2}kT$ của dạng 1; thêm một bẫy: nhiệt độ cho bằng °C, phải đổi sang Kelvin trước khi tính và trước khi lấy tỉ số.",
+      "yccd_de_xuat": "Động năng trung bình phân tử và nhiệt độ",
+      "de_bai": "Phòng học bật điều hòa giữ không khí ở $18\\ ^\\circ\\text{C}$; ngoài sân trưa hè nóng $36\\ ^\\circ\\text{C}$. Một bạn nói: “ngoài sân nóng gấp đôi nên động năng phân tử khí cũng gấp đôi”. Cho $k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$.\na) Tính động năng tịnh tiến trung bình của phân tử khí trong phòng và ngoài sân.\nb) Động năng đó ngoài sân lớn gấp mấy lần trong phòng? Nhận xét câu nói của bạn.",
+      "dieu_kien_ap_dung": "Coi không khí là khí lí tưởng; hệ thức $\\overline{E_d} = \\frac{3}{2}kT$ là tỉ lệ thuận nên bắt buộc dùng nhiệt độ tuyệt đối.",
+      "phan_tich": [
+        {
+          "trich_de": "không khí ở $18\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_1 = 18\\ ^\\circ\\text{C} \\Rightarrow T_1 = 291\\ \\text{K}$",
+          "kien_thuc": "$T = t + 273$"
+        },
+        {
+          "trich_de": "nóng $36\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_2 = 36\\ ^\\circ\\text{C} \\Rightarrow T_2 = 309\\ \\text{K}$",
+          "kien_thuc": "$T = t + 273$"
+        },
+        {
+          "trich_de": "nóng gấp đôi nên động năng phân tử khí cũng gấp đôi",
+          "du_lieu": "Lập luận dùng tỉ số $t_2/t_1$",
+          "kien_thuc": "Bẫy Celsius: phải lấy $T_2/T_1$"
+        },
+        {
+          "trich_de": "$k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
+          "du_lieu": "$k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
+          "kien_thuc": "Hằng số Boltzmann"
+        },
+        {
+          "trich_de": "lớn gấp mấy lần",
+          "du_lieu": "Cần tìm $\\overline{E_{d2}}/\\overline{E_{d1}}$",
+          "kien_thuc": "$\\frac{\\overline{E_{d2}}}{\\overline{E_{d1}}} = \\frac{T_2}{T_1}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\overline{E_{d2}}/\\overline{E_{d1}}",
+        "cong_thuc": "\\frac{\\overline{E_{d2}}}{\\overline{E_{d1}}} = \\frac{T_2}{T_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "$T = t + 273$.",
+        "$\\overline{E_d} = \\frac{3}{2}kT$ tỉ lệ thuận với $T$ (Kelvin).",
+        "Thang Celsius không có gốc 0 thật nên không lấy tỉ số được."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi nhiệt độ sang Kelvin",
+          "cong_thuc_chu": "$T = t + 273$",
+          "the_so": "$T_1 = 18 + 273$; $T_2 = 36 + 273$",
+          "ket_qua": "$T_1 = 291\\ \\text{K}$; $T_2 = 309\\ \\text{K}$",
+          "kiem_tra": "Hai giá trị quanh 300 K, đúng cỡ nhiệt độ phòng."
+        },
+        {
+          "tieu_de": "Bước 2. Động năng trong phòng",
+          "cong_thuc_chu": "$\\overline{E_{d1}} = \\frac{3}{2}kT_1$",
+          "the_so": "$\\overline{E_{d1}} = 1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 291$",
+          "ket_qua": "$\\overline{E_{d1}} \\approx 6{,}024\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Đơn vị J; hơi nhỏ hơn giá trị ở 300 K."
+        },
+        {
+          "tieu_de": "Bước 3. Động năng ngoài sân",
+          "cong_thuc_chu": "$\\overline{E_{d2}} = \\frac{3}{2}kT_2$",
+          "the_so": "$\\overline{E_{d2}} = 1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 309$",
+          "ket_qua": "$\\overline{E_{d2}} \\approx 6{,}396\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Lớn hơn $\\overline{E_{d1}}$ một chút, hợp lí vì nóng hơn."
+        },
+        {
+          "tieu_de": "Bước 4. Lập tỉ số và nhận xét",
+          "cong_thuc_chu": "$\\frac{\\overline{E_{d2}}}{\\overline{E_{d1}}} = \\frac{T_2}{T_1}$",
+          "the_so": "$\\frac{309}{291}$",
+          "ket_qua": "$\\approx 1{,}062$ lần",
+          "kiem_tra": "Không có đơn vị. Chỉ tăng khoảng 6%, không phải gấp đôi; câu nói của bạn sai vì lấy $36:18$ theo Celsius."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (trong phòng)",
+          "gia_tri": 6.024e-21,
+          "don_vi": "J"
+        },
+        {
+          "y": "a (ngoài sân)",
+          "gia_tri": 6.396e-21,
+          "don_vi": "J"
+        },
+        {
+          "y": "b",
+          "gia_tri": 1.062,
+          "don_vi": "lần"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "động năng ở 291 K",
+          "bieu_thuc": "1.5*1.38e-23*291",
+          "ky_vong": 6.024e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "động năng ở 309 K",
+          "bieu_thuc": "1.5*1.38e-23*309",
+          "ky_vong": 6.396e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tỉ số động năng",
+          "bieu_thuc": "(1.5*1.38e-23*309)/(1.5*1.38e-23*291)",
+          "ky_vong": 1.062,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho nhiệt độ bằng °C và hỏi động năng 'tăng mấy lần' → đổi Kelvin trước, rồi lấy $T_2/T_1$.",
+      "bay_thuong_gap": [
+        "Lấy $36 : 18 = 2$ rồi kết luận động năng gấp đôi.",
+        "Thế thẳng 18 và 36 vào $\\frac{3}{2}kT$, ra kết quả nhỏ hơn thật cỡ 16 lần.",
+        "Nghĩ động năng tỉ lệ với $T^2$."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hai ô khí đặt cạnh nhau: bên trái 'Phòng 18 °C', bên phải 'Sân 36 °C'. Chấm phân tử bên phải chỉ nhanh hơn rất ít. Dưới hình là hai thước nhiệt độ song song: thang °C (gốc 0 °C) và thang K (gốc 0 K), đánh dấu hai mức nhiệt độ trên cả hai thang. Nhãn: 't₁', 't₂', 'T₁ = ?', 'T₂ = ?', 'Ē_d₂/Ē_d₁ = ?'."
+    },
+    {
+      "label": "Dạng 3 · Tính áp suất khí từ mật độ phân tử và động năng trung bình",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại nguyên bước của dạng 2 (đổi °C sang K, tính $\\overline{E_d}$); thêm một điều mới: tính mật độ phân tử $\\mu$ từ số mol và thể tích rồi nối vào $p = \\frac{2}{3}\\mu\\overline{E_d}$.",
+      "yccd_de_xuat": "Liên hệ áp suất với động năng phân tử",
+      "de_bai": "Một quả bóng bay chứa $n = 0{,}25$ mol khí heli, thể tích bóng $V = 6{,}0$ lít, khí trong bóng ở $17\\ ^\\circ\\text{C}$. Coi heli là khí lí tưởng. Cho $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$, $k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$, $R = 8{,}31\\ \\text{J/(mol·K)}$.\na) Tính mật độ phân tử $\\mu$ trong bóng.\nb) Tính động năng tịnh tiến trung bình $\\overline{E_d}$ của một phân tử heli.\nc) Tính áp suất khí trong bóng.",
+      "dieu_kien_ap_dung": "Khí lí tưởng, phân tử chuyển động hỗn loạn, va chạm đàn hồi với vỏ bóng; nhiệt độ dùng Kelvin, thể tích dùng m³.",
+      "phan_tich": [
+        {
+          "trich_de": "$n = 0{,}25$ mol khí heli",
+          "du_lieu": "$n = 0{,}25\\ \\text{mol}$",
+          "kien_thuc": "$N = nN_A$"
+        },
+        {
+          "trich_de": "$V = 6{,}0$ lít",
+          "du_lieu": "$V = 6{,}0\\cdot10^{-3}\\ \\text{m}^3$",
+          "kien_thuc": "Đổi lít ra m³; $\\mu = N/V$"
+        },
+        {
+          "trich_de": "ở $17\\ ^\\circ\\text{C}$",
+          "du_lieu": "$T = 290\\ \\text{K}$",
+          "kien_thuc": "$\\overline{E_d} = \\frac{3}{2}kT$"
+        },
+        {
+          "trich_de": "$N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$",
+          "du_lieu": "$N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "Số Avogadro"
+        },
+        {
+          "trich_de": "$R = 8{,}31\\ \\text{J/(mol·K)}$",
+          "du_lieu": "$R = 8{,}31\\ \\text{J/(mol·K)}$",
+          "kien_thuc": "Kiểm tra bằng phương trình trạng thái"
+        },
+        {
+          "trich_de": "Tính áp suất khí trong bóng",
+          "du_lieu": "Cần tìm $p$",
+          "kien_thuc": "$p = \\frac{2}{3}\\mu\\overline{E_d}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p",
+        "cong_thuc": "p = \\frac{2}{3}\\mu\\overline{E_d}, \\quad \\mu = \\frac{nN_A}{V}"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\mu = \\frac{N}{V}$ là mật độ phân tử (1/m³), khác khối lượng riêng $\\rho = \\mu m$.",
+        "$N = nN_A$.",
+        "$p = \\frac{2}{3}\\mu\\overline{E_d}$.",
+        "$\\overline{E_d} = \\frac{3}{2}kT$, $T$ tính bằng K."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị",
+          "cong_thuc_chu": "$1\\ \\text{lít} = 10^{-3}\\ \\text{m}^3$; $T = t + 273$",
+          "the_so": "$V = 6{,}0\\cdot10^{-3}\\ \\text{m}^3$; $T = 17 + 273$",
+          "ket_qua": "$V = 6{,}0\\cdot10^{-3}\\ \\text{m}^3$; $T = 290\\ \\text{K}$",
+          "kiem_tra": "Đơn vị SI, sẵn sàng thế vào công thức."
+        },
+        {
+          "tieu_de": "Bước 2. Số phân tử",
+          "cong_thuc_chu": "$N = nN_A$",
+          "the_so": "$N = 0{,}25 \\times 6{,}02\\cdot10^{23}$",
+          "ket_qua": "$N = 1{,}505\\cdot10^{23}$",
+          "kiem_tra": "Không đơn vị (số đếm); cỡ $10^{23}$ hợp lí với 0,25 mol."
+        },
+        {
+          "tieu_de": "Bước 3. Mật độ phân tử",
+          "cong_thuc_chu": "$\\mu = \\frac{N}{V}$",
+          "the_so": "$\\mu = \\frac{1{,}505\\cdot10^{23}}{6{,}0\\cdot10^{-3}}$",
+          "ket_qua": "$\\mu \\approx 2{,}508\\cdot10^{25}\\ \\text{m}^{-3}$",
+          "kiem_tra": "Cỡ $10^{25}\\ \\text{m}^{-3}$, giống khí ở áp suất khí quyển."
+        },
+        {
+          "tieu_de": "Bước 4. Động năng trung bình (cách làm dạng 2)",
+          "cong_thuc_chu": "$\\overline{E_d} = \\frac{3}{2}kT$",
+          "the_so": "$\\overline{E_d} = 1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 290$",
+          "ket_qua": "$\\overline{E_d} \\approx 6{,}003\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Không cần khối lượng phân tử heli."
+        },
+        {
+          "tieu_de": "Bước 5. Áp suất",
+          "cong_thuc_chu": "$p = \\frac{2}{3}\\mu\\overline{E_d}$",
+          "the_so": "$p = \\frac{2}{3} \\times 2{,}508\\cdot10^{25} \\times 6{,}003\\cdot10^{-21}$",
+          "ket_qua": "$p \\approx 1{,}004\\cdot10^{5}\\ \\text{Pa}$",
+          "kiem_tra": "m⁻³·J = J/m³ = N/m² = Pa. Đối chiếu: $\\frac{nRT}{V} = \\frac{0{,}25 \\times 8{,}31 \\times 290}{6{,}0\\cdot10^{-3}} \\approx 1{,}004\\cdot10^{5}\\ \\text{Pa}$, khớp; xấp xỉ 1 atm, hợp lí với bóng bay."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 2.508e+25,
+          "don_vi": "m^-3"
+        },
+        {
+          "y": "b",
+          "gia_tri": 6.003e-21,
+          "don_vi": "J"
+        },
+        {
+          "y": "c",
+          "gia_tri": 100400,
+          "don_vi": "Pa"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "mật độ phân tử",
+          "bieu_thuc": "0.25*6.02e23/6.0e-3",
+          "ky_vong": 2.508e+25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "động năng trung bình ở 290 K",
+          "bieu_thuc": "1.5*1.38e-23*290",
+          "ky_vong": 6.003e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "áp suất từ động năng",
+          "bieu_thuc": "2/3*(0.25*6.02e23/6.0e-3)*(1.5*1.38e-23*290)",
+          "ky_vong": 100400,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "áp suất từ phương trình trạng thái",
+          "bieu_thuc": "0.25*8.31*290/6.0e-3",
+          "ky_vong": 100400,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho số mol (hoặc số phân tử), thể tích và nhiệt độ, hỏi áp suất qua động năng phân tử → tính $\\mu$, tính $\\overline{E_d}$, rồi $p = \\frac{2}{3}\\mu\\overline{E_d}$.",
+      "bay_thuong_gap": [
+        "Quên đổi 6,0 lít ra m³, áp suất lệch $10^3$ lần.",
+        "Lấy số mol chia thể tích thay cho số phân tử chia thể tích.",
+        "Nhầm $\\mu$ với khối lượng riêng $\\rho$.",
+        "Thế 17 thay cho 290 K."
+      ],
+      "dieu_ban_khong_chac": [
+        "Áp suất trong bóng cao su thật lớn hơn áp suất ngoài một chút; số liệu đã chọn cho ra xấp xỉ 1 atm, chấp nhận được ở mức THPT."
+      ],
+      "mo_phong_goi_y": "Quả bóng bay cắt dọc, bên trong các chấm heli bay hỗn loạn và bật vào vỏ; mỗi lần chạm vỏ hiện một mũi tên nhỏ hướng ra ngoài. Góc hình có ô vuông 1 m³ phóng to để minh hoạ 'mật độ μ'. Nhãn: 'n = 0,25 mol', 'V = 6,0 lít', 't = 17 °C', 'μ = ?', 'Ē_d = ?', 'p = ?'."
+    },
+    {
+      "label": "Dạng 4 · Bài ngược: bình kín bị nung nóng, tìm áp suất và nhiệt độ giới hạn",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả ba dạng trước: $\\frac{3}{2}kT$ (dạng 1), đổi °C sang K (dạng 2), $p = \\frac{2}{3}\\mu\\overline{E_d}$ (dạng 3); thêm một độ khó mới: chạy công thức theo chiều ngược (từ $p$ ra $\\mu$, từ $p$ ra $T$) với dữ kiện ẩn 'chai kín nên $\\mu$ không đổi'.",
+      "yccd_de_xuat": "Liên hệ áp suất với động năng phân tử",
+      "de_bai": "Một chai nhựa rỗng dung tích $1{,}5$ lít được vặn chặt nắp ở $25\\ ^\\circ\\text{C}$, khi đó áp suất không khí trong chai là $1{,}01\\cdot10^{5}\\ \\text{Pa}$. Chai bị bỏ quên trên bảng điều khiển ô tô đỗ ngoài nắng, khí trong chai nóng lên $65\\ ^\\circ\\text{C}$. Bỏ qua sự giãn nở của chai và coi không khí là khí lí tưởng. Cho $k = 1{,}38\\cdot10^{-23}\\ \\text{J/K}$.\na) Tính động năng tịnh tiến trung bình của phân tử khí lúc đóng nắp, mật độ phân tử và số phân tử khí trong chai.\nb) Tính động năng tịnh tiến trung bình và áp suất khí trong chai ở $65\\ ^\\circ\\text{C}$.\nc) Thành chai bắt đầu phồng méo khi áp suất bên trong đạt $1{,}20\\cdot10^{5}\\ \\text{Pa}$. Khí trong chai nóng tới bao nhiêu độ C thì chai bắt đầu phồng méo?",
+      "dieu_kien_ap_dung": "Khí lí tưởng; chai kín và không giãn nở nên số phân tử $N$ và thể tích $V$ không đổi, tức $\\mu$ không đổi; nhiệt độ dùng Kelvin.",
+      "phan_tich": [
+        {
+          "trich_de": "dung tích $1{,}5$ lít",
+          "du_lieu": "$V = 1{,}5\\cdot10^{-3}\\ \\text{m}^3$",
+          "kien_thuc": "$N = \\mu V$"
+        },
+        {
+          "trich_de": "vặn chặt nắp ở $25\\ ^\\circ\\text{C}$",
+          "du_lieu": "$T_1 = 298\\ \\text{K}$; chai kín",
+          "kien_thuc": "Dữ kiện ẩn: $N$ không đổi"
+        },
+        {
+          "trich_de": "$1{,}01\\cdot10^{5}\\ \\text{Pa}$",
+          "du_lieu": "$p_1 = 1{,}01\\cdot10^{5}\\ \\text{Pa}$",
+          "kien_thuc": "$\\mu = \\frac{3p}{2\\overline{E_d}}$ (bài ngược)"
+        },
+        {
+          "trich_de": "nóng lên $65\\ ^\\circ\\text{C}$",
+          "du_lieu": "$T_2 = 338\\ \\text{K}$",
+          "kien_thuc": "$\\overline{E_d} = \\frac{3}{2}kT$"
+        },
+        {
+          "trich_de": "Bỏ qua sự giãn nở của chai",
+          "du_lieu": "$V$ không đổi $\\Rightarrow \\mu$ không đổi",
+          "kien_thuc": "$p$ tỉ lệ $\\overline{E_d}$"
+        },
+        {
+          "trich_de": "$1{,}20\\cdot10^{5}\\ \\text{Pa}$",
+          "du_lieu": "$p_{max} = 1{,}20\\cdot10^{5}\\ \\text{Pa}$",
+          "kien_thuc": "Tính ngược ra $\\overline{E_d}$ rồi ra $T$"
+        },
+        {
+          "trich_de": "nóng tới bao nhiêu độ C",
+          "du_lieu": "Cần tìm $t_{max}$",
+          "kien_thuc": "$t = T - 273$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "t_{max}",
+        "cong_thuc": "T_{max} = \\frac{2\\overline{E_{d,max}}}{3k}, \\quad \\overline{E_{d,max}} = \\frac{3p_{max}}{2\\mu}, \\quad t_{max} = T_{max} - 273"
+      },
+      "kien_thuc_goi_lai": [
+        "$p = \\frac{2}{3}\\mu\\overline{E_d}$ đảo ra $\\mu = \\frac{3p}{2\\overline{E_d}}$ và $\\overline{E_d} = \\frac{3p}{2\\mu}$.",
+        "$\\overline{E_d} = \\frac{3}{2}kT$ đảo ra $T = \\frac{2\\overline{E_d}}{3k}$.",
+        "Bình kín, thể tích không đổi thì $\\mu = N/V$ không đổi.",
+        "$T = t + 273$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi nhiệt độ và thể tích",
+          "cong_thuc_chu": "$T = t + 273$; $1\\ \\text{lít} = 10^{-3}\\ \\text{m}^3$",
+          "the_so": "$T_1 = 25 + 273$; $T_2 = 65 + 273$; $V = 1{,}5\\cdot10^{-3}\\ \\text{m}^3$",
+          "ket_qua": "$T_1 = 298\\ \\text{K}$; $T_2 = 338\\ \\text{K}$",
+          "kiem_tra": "Phần quen của dạng 2."
+        },
+        {
+          "tieu_de": "Bước 2. Động năng lúc đóng nắp",
+          "cong_thuc_chu": "$\\overline{E_{d1}} = \\frac{3}{2}kT_1$",
+          "the_so": "$1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 298$",
+          "ket_qua": "$\\overline{E_{d1}} \\approx 6{,}169\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Cỡ $6\\cdot10^{-21}$ J như ở nhiệt độ phòng."
+        },
+        {
+          "tieu_de": "Bước 3. Mật độ phân tử (tính ngược từ áp suất)",
+          "cong_thuc_chu": "$\\mu = \\frac{3p_1}{2\\overline{E_{d1}}}$",
+          "the_so": "$\\mu = \\frac{3 \\times 1{,}01\\cdot10^{5}}{2 \\times 6{,}169\\cdot10^{-21}}$",
+          "ket_qua": "$\\mu \\approx 2{,}456\\cdot10^{25}\\ \\text{m}^{-3}$",
+          "kiem_tra": "Pa/J = 1/m³. Đối chiếu $\\frac{p_1}{kT_1} = \\frac{1{,}01\\cdot10^{5}}{1{,}38\\cdot10^{-23} \\times 298} \\approx 2{,}456\\cdot10^{25}$, khớp."
+        },
+        {
+          "tieu_de": "Bước 4. Số phân tử trong chai",
+          "cong_thuc_chu": "$N = \\mu V$",
+          "the_so": "$N = 2{,}456\\cdot10^{25} \\times 1{,}5\\cdot10^{-3}$",
+          "ket_qua": "$N \\approx 3{,}684\\cdot10^{22}$",
+          "kiem_tra": "Cỡ 0,06 mol, hợp lí với 1,5 lít không khí."
+        },
+        {
+          "tieu_de": "Bước 5. Dữ kiện ẩn và động năng ở 65 °C",
+          "cong_thuc_chu": "Chai kín, $V$ không đổi $\\Rightarrow \\mu$ không đổi; $\\overline{E_{d2}} = \\frac{3}{2}kT_2$",
+          "the_so": "$1{,}5 \\times 1{,}38\\cdot10^{-23} \\times 338$",
+          "ket_qua": "$\\overline{E_{d2}} \\approx 6{,}997\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Tăng $\\frac{338}{298} \\approx 1{,}134$ lần, không phải $\\frac{65}{25}$ lần."
+        },
+        {
+          "tieu_de": "Bước 6. Áp suất ở 65 °C",
+          "cong_thuc_chu": "$p_2 = \\frac{2}{3}\\mu\\overline{E_{d2}}$",
+          "the_so": "$p_2 = \\frac{2}{3} \\times 2{,}456\\cdot10^{25} \\times 6{,}997\\cdot10^{-21}$",
+          "ket_qua": "$p_2 \\approx 1{,}146\\cdot10^{5}\\ \\text{Pa}$",
+          "kiem_tra": "$\\frac{p_2}{p_1} \\approx 1{,}134 = \\frac{T_2}{T_1}$, đúng vì $\\mu$ không đổi."
+        },
+        {
+          "tieu_de": "Bước 7. Động năng ứng với áp suất giới hạn",
+          "cong_thuc_chu": "$\\overline{E_{d,max}} = \\frac{3p_{max}}{2\\mu}$",
+          "the_so": "$\\frac{3 \\times 1{,}20\\cdot10^{5}}{2 \\times 2{,}456\\cdot10^{25}}$",
+          "ket_qua": "$\\overline{E_{d,max}} \\approx 7{,}329\\cdot10^{-21}\\ \\text{J}$",
+          "kiem_tra": "Lớn hơn $\\overline{E_{d2}}$, phù hợp vì $p_{max} \\gt p_2$."
+        },
+        {
+          "tieu_de": "Bước 8. Nhiệt độ giới hạn",
+          "cong_thuc_chu": "$T_{max} = \\frac{2\\overline{E_{d,max}}}{3k}$; $t_{max} = T_{max} - 273$",
+          "the_so": "$T_{max} = \\frac{2 \\times 7{,}329\\cdot10^{-21}}{3 \\times 1{,}38\\cdot10^{-23}}$",
+          "ket_qua": "$T_{max} \\approx 354{,}1\\ \\text{K}$, $t_{max} \\approx 81{,}1\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Đối chiếu $T_1\\frac{p_{max}}{p_1} = 298 \\times \\frac{1{,}20}{1{,}01} \\approx 354{,}1\\ \\text{K}$. Khoang ô tô ngoài nắng có thể nóng tới cỡ này nên tình huống hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (động năng)",
+          "gia_tri": 6.169e-21,
+          "don_vi": "J"
+        },
+        {
+          "y": "a (mật độ)",
+          "gia_tri": 2.456e+25,
+          "don_vi": "m^-3"
+        },
+        {
+          "y": "a (số phân tử)",
+          "gia_tri": 3.684e+22,
+          "don_vi": "phân tử"
+        },
+        {
+          "y": "b (động năng)",
+          "gia_tri": 6.997e-21,
+          "don_vi": "J"
+        },
+        {
+          "y": "b (áp suất)",
+          "gia_tri": 114600,
+          "don_vi": "Pa"
+        },
+        {
+          "y": "c",
+          "gia_tri": 81.1,
+          "don_vi": "°C"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "động năng ở 298 K",
+          "bieu_thuc": "1.5*1.38e-23*298",
+          "ky_vong": 6.169e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "mật độ phân tử",
+          "bieu_thuc": "3*1.01e5/(2*1.5*1.38e-23*298)",
+          "ky_vong": 2.456e+25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phân tử",
+          "bieu_thuc": "1.5e-3*3*1.01e5/(2*1.5*1.38e-23*298)",
+          "ky_vong": 3.684e+22,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "động năng ở 338 K",
+          "bieu_thuc": "1.5*1.38e-23*338",
+          "ky_vong": 6.997e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "áp suất ở 65 °C",
+          "bieu_thuc": "2/3*(3*1.01e5/(2*1.5*1.38e-23*298))*(1.5*1.38e-23*338)",
+          "ky_vong": 114600,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "động năng ứng với áp suất giới hạn",
+          "bieu_thuc": "3*1.2e5/(2*(3*1.01e5/(2*1.5*1.38e-23*298)))",
+          "ky_vong": 7.329e-21,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "nhiệt độ giới hạn theo °C",
+          "bieu_thuc": "2*(3*1.2e5/(2*(3*1.01e5/(2*1.5*1.38e-23*298))))/(3*1.38e-23) - 273",
+          "ky_vong": 81.1,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho áp suất và nhiệt độ của bình kín rồi đổi nhiệt độ, hoặc hỏi nhiệt độ ứng với một áp suất giới hạn → tính ngược $\\mu$ từ $p$, giữ $\\mu$ không đổi, rồi tính ngược $\\overline{E_d}$ và $T$.",
+      "bay_thuong_gap": [
+        "Không nhận ra $\\mu$ không đổi, đi tìm lại $\\mu$ từ dữ kiện không có.",
+        "Lấy tỉ số $65 : 25$ theo Celsius để suy ra áp suất tăng 2,6 lần.",
+        "Quên trừ 273 ở câu c, ghi đáp số 354 °C.",
+        "Đảo công thức sai thành $\\mu = \\frac{2p}{3\\overline{E_d}}$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Chai nhựa PET thật chịu được áp suất lớn hơn nhiều và thành chai mềm sẽ giãn nở; ngưỡng $1{,}20\\cdot10^{5}$ Pa và giả thiết thể tích không đổi là số liệu giả định để bài toán đơn giản.",
+        "Không khí là hỗn hợp khí nhưng $\\overline{E_d}$ không phụ thuộc loại khí nên vẫn dùng chung $\\frac{3}{2}kT$."
+      ],
+      "mo_phong_goi_y": "Chai nhựa kín nằm trên bảng điều khiển ô tô, nắng chiếu qua kính. Nhiệt kế bên cạnh chai tăng dần; các chấm phân tử trong chai bay nhanh dần và đập vào thành dày hơn, áp kế gắn trên nắp quay kim lên. Thanh đánh dấu ngưỡng phồng méo trên mặt áp kế. Nhãn: 'V = 1,5 lít', 't₁ = 25 °C', 'p₁ = 1,01·10⁵ Pa', 't₂ = 65 °C', 'p₂ = ?', 'p_max = 1,20·10⁵ Pa', 't_max = ?'. Số phân tử trên hình giữ nguyên trong suốt hoạt hình."
+    }
+  ]
+}

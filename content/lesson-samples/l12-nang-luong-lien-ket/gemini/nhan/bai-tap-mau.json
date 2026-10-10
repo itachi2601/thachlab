@@ -1,0 +1,545 @@
+{
+  "lesson_title": "Bài 15. Năng lượng liên kết hạt nhân",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính độ hụt khối và năng lượng liên kết từ khối lượng hạt nhân",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nĐề cho thẳng khối lượng hạt nhân $m_X$.\nChỉ cần thế vào $\\Delta m = Z m_p + (A - Z)m_n - m_X$, rồi nhân 931,5 MeV/u.",
+      "yccd_de_xuat": "Tính độ hụt khối và năng lượng liên kết",
+      "de_bai": "Hạt nhân nitơ $^{14}_{7}\\text{N}$ là thành phần chính của khí quyển. Hạt nhân này có khối lượng hạt nhân $m_X = 13{,}999231\\ \\text{u}$.\nCho $m_p = 1{,}007276\\ \\text{u}$, $m_n = 1{,}008665\\ \\text{u}$, $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$.\nTính độ hụt khối và năng lượng liên kết của hạt nhân $^{14}_{7}\\text{N}$.",
+      "dieu_kien_ap_dung": "Khối lượng đề cho là khối lượng hạt nhân (không gồm êlectron), nên dùng thẳng $\\Delta m = Z m_p + (A - Z)m_n - m_X$ và $E_{lk} = \\Delta m\\,c^2$.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{14}_{7}\\text{N}$",
+          "du_lieu": "$Z = 7$; $A = 14$; $A - Z = 7$",
+          "kien_thuc": "Kí hiệu hạt nhân: số prôtôn $Z$, số nơtron $A - Z$"
+        },
+        {
+          "trich_de": "khối lượng hạt nhân $m_X = 13{,}999231\\ \\text{u}$",
+          "du_lieu": "$m_X = 13{,}999231\\ \\text{u}$",
+          "kien_thuc": "Khối lượng hạt nhân: không cộng $Z m_e$"
+        },
+        {
+          "trich_de": "$m_p = 1{,}007276\\ \\text{u}$",
+          "du_lieu": "$m_p = 1{,}007276\\ \\text{u}$",
+          "kien_thuc": "Khối lượng prôtôn rời"
+        },
+        {
+          "trich_de": "$m_n = 1{,}008665\\ \\text{u}$",
+          "du_lieu": "$m_n = 1{,}008665\\ \\text{u}$",
+          "kien_thuc": "Khối lượng nơtron rời"
+        },
+        {
+          "trich_de": "$1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$",
+          "du_lieu": "$1\\ \\text{u}\\cdot c^2 = 931{,}5\\ \\text{MeV}$",
+          "kien_thuc": "Hệ thức Einstein, hệ số đổi đã chứa sẵn $c^2$"
+        },
+        {
+          "trich_de": "Tính độ hụt khối và năng lượng liên kết",
+          "du_lieu": "Cần tìm: $\\Delta m$; $E_{lk} = \\Delta m\\,c^2$",
+          "kien_thuc": "Định nghĩa độ hụt khối và năng lượng liên kết"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Delta m$, $E_{lk}$",
+        "cong_thuc": "$E_{lk} = \\left[Z m_p + (A - Z)m_n - m_X\\right]c^2$"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\Delta m = Z m_p + (A - Z)m_n - m_X$, đơn vị u.",
+        "$E_{lk} = \\Delta m\\,c^2$; với $\\Delta m$ tính theo u thì $E_{lk} = \\Delta m \\times 931{,}5\\ \\text{MeV}$.",
+        "Tổng khối lượng nuclôn rời luôn lớn hơn khối lượng hạt nhân, nên $\\Delta m \\gt 0$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đếm số prôtôn và nơtron",
+          "cong_thuc_chu": "$Z$; $N = A - Z$",
+          "the_so": "$Z = 7$; $N = 14 - 7$",
+          "ket_qua": "$Z = 7$; $N = 7$",
+          "kiem_tra": "$Z + N = 14 = A$, khớp số khối."
+        },
+        {
+          "tieu_de": "Bước 2. Tính độ hụt khối",
+          "cong_thuc_chu": "$\\Delta m = Z m_p + (A - Z)m_n - m_X$",
+          "the_so": "$\\Delta m = 7 \\times 1{,}007276 + 7 \\times 1{,}008665 - 13{,}999231 = 14{,}111587 - 13{,}999231$",
+          "ket_qua": "$\\Delta m = 0{,}112356\\ \\text{u}$",
+          "kiem_tra": "$\\Delta m \\gt 0$ và chỉ cỡ phần trăm u, đúng cỡ độ hụt khối. Đơn vị u."
+        },
+        {
+          "tieu_de": "Bước 3. Tính năng lượng liên kết",
+          "cong_thuc_chu": "$E_{lk} = \\Delta m\\,c^2 = \\Delta m \\times 931{,}5\\ \\text{MeV/u}$",
+          "the_so": "$E_{lk} = 0{,}112356 \\times 931{,}5$",
+          "ket_qua": "$E_{lk} \\approx 104{,}7\\ \\text{MeV}$",
+          "kiem_tra": "u × MeV/u = MeV. Giá trị nằm giữa O-16 (127,6 MeV) và He-4 (28,3 MeV), hợp lí với $A = 14$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "Độ hụt khối",
+          "gia_tri": 0.112356,
+          "don_vi": "u"
+        },
+        {
+          "y": "Năng lượng liên kết",
+          "gia_tri": 104.66,
+          "don_vi": "MeV"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ hụt khối Δm của N-14",
+          "bieu_thuc": "7*1.007276 + 7*1.008665 - 13.999231",
+          "ky_vong": 0.112356,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng liên kết E_lk của N-14",
+          "bieu_thuc": "(7*1.007276 + 7*1.008665 - 13.999231)*931.5",
+          "ky_vong": 104.66,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho sẵn khối lượng HẠT NHÂN, $m_p$, $m_n$ và hỏi $\\Delta m$, $E_{lk}$ → đếm $Z$, $A - Z$, trừ ra $\\Delta m$, nhân 931,5.",
+      "bay_thuong_gap": [
+        "Lấy số nơtron bằng $A$ thay vì $A - Z$.",
+        "Làm tròn $m_p$, $m_n$ về 1,01 u nên $\\Delta m$ sai hoàn toàn.",
+        "Nhân thêm $c^2 = 9 \\cdot 10^{16}$ sau khi đã dùng 931,5 MeV/u.",
+        "Trừ ngược thành $m_X - (Z m_p + N m_n)$ ra số âm."
+      ],
+      "dieu_ban_khong_chac": [
+        "$m_X = 13{,}999231\\ \\text{u}$ suy từ khối lượng nguyên tử bảng tra 14,003074 u trừ $7 m_e$; làm tròn tới phần triệu."
+      ],
+      "mo_phong_goi_y": "Bên trái: 7 quả cầu đỏ (prôtôn) và 7 quả cầu xám (nơtron) rời nhau trên một đĩa cân. Bên phải: hạt nhân N-14 đã gom lại trên đĩa cân kia. Cân nghiêng về phía nuclôn rời. Khi các nuclôn gom lại, một chùm tia sáng toả ra từ hạt nhân. Nhãn: \"7 p\", \"7 n\", \"$m_X$\", \"$\\Delta m = ?$\", \"$E_{lk} = ?$\"."
+    },
+    {
+      "label": "Dạng 2 · Đề cho khối lượng nguyên tử: phải cộng $Z m_e$",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách tính $\\Delta m$ và $E_{lk}$ của Dạng 1.\nThêm đúng một bẫy: đề cho khối lượng NGUYÊN TỬ, phải cộng $Z m_e$ vào tổng hạt rời.",
+      "yccd_de_xuat": "Tính độ hụt khối và năng lượng liên kết",
+      "de_bai": "Pin điện thoại dùng kim loại liti. Bảng tra cho khối lượng nguyên tử liti $^{7}_{3}\\text{Li}$ là $m_{\\text{Li}} = 7{,}016004\\ \\text{u}$.\nCho $m_p = 1{,}007276\\ \\text{u}$, $m_n = 1{,}008665\\ \\text{u}$, $m_e = 0{,}000549\\ \\text{u}$, $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$.\nTính độ hụt khối và năng lượng liên kết của hạt nhân $^{7}_{3}\\text{Li}$.",
+      "dieu_kien_ap_dung": "Khối lượng nguyên tử đã gồm $Z$ êlectron, nên dùng $\\Delta m = Z m_p + (A - Z)m_n + Z m_e - m_{\\text{nguyên tử}}$.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{7}_{3}\\text{Li}$",
+          "du_lieu": "$Z = 3$; $A = 7$; $A - Z = 4$",
+          "kien_thuc": "Kí hiệu hạt nhân"
+        },
+        {
+          "trich_de": "khối lượng nguyên tử liti",
+          "du_lieu": "$m_{\\text{Li}} = 7{,}016004\\ \\text{u}$, đã gồm 3 êlectron",
+          "kien_thuc": "Phổ kế đo khối lượng nguyên tử → phải cộng $Z m_e$"
+        },
+        {
+          "trich_de": "$m_e = 0{,}000549\\ \\text{u}$",
+          "du_lieu": "$m_e = 0{,}000549\\ \\text{u}$",
+          "kien_thuc": "Khối lượng êlectron, dùng để bù phần êlectron"
+        },
+        {
+          "trich_de": "$1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$",
+          "du_lieu": "$1\\ \\text{u}\\cdot c^2 = 931{,}5\\ \\text{MeV}$",
+          "kien_thuc": "$E_{lk} = \\Delta m\\,c^2$"
+        },
+        {
+          "trich_de": "Tính độ hụt khối và năng lượng liên kết",
+          "du_lieu": "Cần tìm: $\\Delta m$; $E_{lk} = \\Delta m\\,c^2$",
+          "kien_thuc": "Định nghĩa độ hụt khối, năng lượng liên kết"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Delta m$, $E_{lk}$",
+        "cong_thuc": "$E_{lk} = \\left[Z m_p + (A - Z)m_n + Z m_e - m_{\\text{Li}}\\right]c^2$"
+      },
+      "kien_thuc_goi_lai": [
+        "Khối lượng nguyên tử = khối lượng hạt nhân + $Z m_e$.",
+        "Thấy chữ \"khối lượng nguyên tử\" thì cộng $Z m_e$ vào tổng hạt rời.",
+        "$E_{lk} = \\Delta m \\times 931{,}5\\ \\text{MeV}$ khi $\\Delta m$ tính theo u."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Nhận dạng loại khối lượng",
+          "cong_thuc_chu": "$m_{\\text{nguyên tử}} = m_X + Z m_e$",
+          "the_so": "Đề ghi \"khối lượng nguyên tử\", $Z = 3$",
+          "ket_qua": "Cộng thêm $3 m_e$ vào tổng hạt rời",
+          "kiem_tra": "Hai vế cùng có 3 êlectron, phép trừ mới so đúng hạt nhân với nuclôn rời."
+        },
+        {
+          "tieu_de": "Bước 2. Tổng khối lượng các hạt rời (kể cả êlectron)",
+          "cong_thuc_chu": "$m_{\\text{rời}} = Z m_p + (A - Z)m_n + Z m_e$",
+          "the_so": "$m_{\\text{rời}} = 3 \\times 1{,}007276 + 4 \\times 1{,}008665 + 3 \\times 0{,}000549 = 3{,}021828 + 4{,}034660 + 0{,}001647$",
+          "ket_qua": "$m_{\\text{rời}} = 7{,}058135\\ \\text{u}$",
+          "kiem_tra": "Lớn hơn $m_{\\text{Li}}$ một chút, đúng chiều."
+        },
+        {
+          "tieu_de": "Bước 3. Độ hụt khối",
+          "cong_thuc_chu": "$\\Delta m = m_{\\text{rời}} - m_{\\text{Li}}$",
+          "the_so": "$\\Delta m = 7{,}058135 - 7{,}016004$",
+          "ket_qua": "$\\Delta m = 0{,}042131\\ \\text{u}$",
+          "kiem_tra": "Đơn vị u; $\\Delta m \\gt 0$."
+        },
+        {
+          "tieu_de": "Bước 4. Năng lượng liên kết",
+          "cong_thuc_chu": "$E_{lk} = \\Delta m \\times 931{,}5\\ \\text{MeV/u}$",
+          "the_so": "$E_{lk} = 0{,}042131 \\times 931{,}5$",
+          "ket_qua": "$E_{lk} \\approx 39{,}25\\ \\text{MeV}$",
+          "kiem_tra": "Nếu quên $3 m_e$: $\\Delta m = 0{,}040484\\ \\text{u}$, $E_{lk} \\approx 37{,}71\\ \\text{MeV}$, lệch 1,5 MeV. Lệch này lớn hơn nhiều sai số đo, nên bước cộng $Z m_e$ là bắt buộc."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "Độ hụt khối",
+          "gia_tri": 0.042131,
+          "don_vi": "u"
+        },
+        {
+          "y": "Năng lượng liên kết",
+          "gia_tri": 39.25,
+          "don_vi": "MeV"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tổng khối lượng hạt rời kể cả êlectron",
+          "bieu_thuc": "3*1.007276 + 4*1.008665 + 3*0.000549",
+          "ky_vong": 7.058135,
+          "sai_so_tuong_doi": 0.000001
+        },
+        {
+          "mo_ta": "độ hụt khối Li-7",
+          "bieu_thuc": "3*1.007276 + 4*1.008665 + 3*0.000549 - 7.016004",
+          "ky_vong": 0.042131,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng liên kết Li-7",
+          "bieu_thuc": "(3*1.007276 + 4*1.008665 + 3*0.000549 - 7.016004)*931.5",
+          "ky_vong": 39.25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "kết quả sai nếu quên Z·m_e",
+          "bieu_thuc": "(3*1.007276 + 4*1.008665 - 7.016004)*931.5",
+          "ky_vong": 37.71,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề ghi \"khối lượng nguyên tử\" và có cho $m_e$ → cộng $Z m_e$ vào tổng hạt rời rồi làm như Dạng 1.",
+      "bay_thuong_gap": [
+        "Quên cộng $Z m_e$, ra $E_{lk}$ nhỏ hơn khoảng 1,5 MeV.",
+        "Cộng $A m_e$ thay vì $Z m_e$: số êlectron bằng số prôtôn.",
+        "Trừ $Z m_e$ khỏi tổng hạt rời thay vì cộng vào.",
+        "Hoán đổi số prôtôn và nơtron (3 và 4)."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khối lượng nguyên tử Li-7 lấy theo bảng tra 7,016004 u; kết quả 39,25 MeV khớp giá trị tham khảo cỡ 39,2 MeV."
+      ],
+      "mo_phong_goi_y": "Nguyên tử liti: hạt nhân 3 p, 4 n ở giữa, 3 êlectron quay quanh. Một khung chữ nhật bao cả nguyên tử, ghi nhãn \"khối lượng nguyên tử\". Bên cạnh: 3 p, 4 n, 3 e rời trên đĩa cân. Hoạt hình làm nổi bật 3 êlectron xuất hiện ở CẢ hai đĩa cân. Nhãn: \"$m_{\\text{Li}}$\", \"$Z m_e$\", \"$\\Delta m = ?$\"."
+    },
+    {
+      "label": "Dạng 3 · Tính năng lượng liên kết riêng và so độ bền hai hạt nhân",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại trọn Dạng 2 để ra $E_{lk}$ của neon từ khối lượng nguyên tử; phần này trình bày gọn.\nThêm một độ khó mới: chia cho $A$ ra $E_{lkr}$ rồi dùng $E_{lkr}$ (không dùng $E_{lk}$) để so độ bền.",
+      "yccd_de_xuat": "Năng lượng liên kết riêng và độ bền hạt nhân",
+      "de_bai": "Khí trong đèn quảng cáo neon chủ yếu là đồng vị $^{20}_{10}\\text{Ne}$, có khối lượng nguyên tử $m_{\\text{Ne}} = 19{,}992440\\ \\text{u}$. Hạt nhân chì $^{208}_{82}\\text{Pb}$ có năng lượng liên kết $E_{lk,\\text{Pb}} = 1636\\ \\text{MeV}$.\nCho $m_p = 1{,}007276\\ \\text{u}$, $m_n = 1{,}008665\\ \\text{u}$, $m_e = 0{,}000549\\ \\text{u}$, $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$.\na) Tính năng lượng liên kết của hạt nhân neon.\nb) Tính năng lượng liên kết riêng của mỗi hạt nhân.\nc) Hạt nhân nào bền vững hơn? Giải thích.",
+      "dieu_kien_ap_dung": "So độ bền giữa hai hạt nhân khác số khối thì phải so năng lượng liên kết riêng $E_{lkr} = E_{lk}/A$; $E_{lkr}$ lớn hơn thì hạt nhân bền hơn.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{20}_{10}\\text{Ne}$",
+          "du_lieu": "$Z = 10$; $A = 20$; $A - Z = 10$",
+          "kien_thuc": "Kí hiệu hạt nhân"
+        },
+        {
+          "trich_de": "khối lượng nguyên tử $m_{\\text{Ne}} = 19{,}992440\\ \\text{u}$",
+          "du_lieu": "$m_{\\text{Ne}} = 19{,}992440\\ \\text{u}$, gồm 10 êlectron",
+          "kien_thuc": "Cộng $Z m_e$ (bẫy Dạng 2)"
+        },
+        {
+          "trich_de": "$^{208}_{82}\\text{Pb}$",
+          "du_lieu": "$A_{\\text{Pb}} = 208$",
+          "kien_thuc": "Số nuclôn dùng để chia"
+        },
+        {
+          "trich_de": "$E_{lk,\\text{Pb}} = 1636\\ \\text{MeV}$",
+          "du_lieu": "$E_{lk,\\text{Pb}} = 1636\\ \\text{MeV}$",
+          "kien_thuc": "Năng lượng liên kết thô, chưa dùng để so bền được"
+        },
+        {
+          "trich_de": "Hạt nhân nào bền vững hơn?",
+          "du_lieu": "Cần so: $E_{lkr} = E_{lk}/A$ của hai hạt nhân",
+          "kien_thuc": "$E_{lkr}$ càng lớn càng bền"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$E_{lkr,\\text{Ne}}$, $E_{lkr,\\text{Pb}}$",
+        "cong_thuc": "$E_{lkr} = \\dfrac{E_{lk}}{A}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$E_{lkr} = E_{lk}/A$, đơn vị MeV/nuclôn.",
+        "$E_{lk}$ tăng theo $A$ nên không dùng để so độ bền.",
+        "Đỉnh đường cong $E_{lkr}$ quanh Fe-56, cỡ 8,8 MeV/nuclôn; hạt nhân nặng có $E_{lkr}$ giảm dần."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Độ hụt khối của neon (cách làm Dạng 2)",
+          "cong_thuc_chu": "$\\Delta m = Z m_p + (A - Z)m_n + Z m_e - m_{\\text{Ne}}$",
+          "the_so": "$\\Delta m = 10{,}07276 + 10{,}08665 + 0{,}00549 - 19{,}992440 = 20{,}16490 - 19{,}99244$",
+          "ket_qua": "$\\Delta m = 0{,}172460\\ \\text{u}$",
+          "kiem_tra": "Đã cộng $10 m_e$ vì đề cho khối lượng nguyên tử."
+        },
+        {
+          "tieu_de": "Bước 2. Năng lượng liên kết của neon (câu a)",
+          "cong_thuc_chu": "$E_{lk,\\text{Ne}} = \\Delta m \\times 931{,}5$",
+          "the_so": "$E_{lk,\\text{Ne}} = 0{,}172460 \\times 931{,}5$",
+          "ket_qua": "$E_{lk,\\text{Ne}} \\approx 160{,}6\\ \\text{MeV}$",
+          "kiem_tra": "Lớn hơn O-16 (127,6 MeV), hợp lí vì $A$ lớn hơn."
+        },
+        {
+          "tieu_de": "Bước 3. Năng lượng liên kết riêng của neon (câu b)",
+          "cong_thuc_chu": "$E_{lkr,\\text{Ne}} = E_{lk,\\text{Ne}}/A_{\\text{Ne}}$",
+          "the_so": "$E_{lkr,\\text{Ne}} = 160{,}65/20$",
+          "ket_qua": "$E_{lkr,\\text{Ne}} \\approx 8{,}03\\ \\text{MeV/nuclôn}$",
+          "kiem_tra": "Nằm giữa O-16 (7,98) và Fe-56 (8,79), đúng xu hướng tăng theo $A$ ở vùng nhẹ."
+        },
+        {
+          "tieu_de": "Bước 4. Năng lượng liên kết riêng của chì (câu b)",
+          "cong_thuc_chu": "$E_{lkr,\\text{Pb}} = E_{lk,\\text{Pb}}/A_{\\text{Pb}}$",
+          "the_so": "$E_{lkr,\\text{Pb}} = 1636/208$",
+          "ket_qua": "$E_{lkr,\\text{Pb}} \\approx 7{,}87\\ \\text{MeV/nuclôn}$",
+          "kiem_tra": "Nhỏ hơn đỉnh 8,8 và lớn hơn U-235 (7,59), đúng vị trí bên phải đỉnh."
+        },
+        {
+          "tieu_de": "Bước 5. So độ bền (câu c)",
+          "cong_thuc_chu": "So $E_{lkr,\\text{Ne}}$ với $E_{lkr,\\text{Pb}}$",
+          "the_so": "$8{,}03 \\gt 7{,}87$",
+          "ket_qua": "Neon bền vững hơn chì",
+          "kiem_tra": "Dù $E_{lk,\\text{Pb}}$ lớn gấp khoảng 10 lần, mỗi nuclôn trong neon vẫn bị giữ chặt hơn."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 160.6,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "b (neon)",
+          "gia_tri": 8.03,
+          "don_vi": "MeV/nuclôn"
+        },
+        {
+          "y": "b (chì)",
+          "gia_tri": 7.87,
+          "don_vi": "MeV/nuclôn"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ hụt khối Ne-20",
+          "bieu_thuc": "10*1.007276 + 10*1.008665 + 10*0.000549 - 19.992440",
+          "ky_vong": 0.17246,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "E_lk của Ne-20",
+          "bieu_thuc": "(10*1.007276 + 10*1.008665 + 10*0.000549 - 19.992440)*931.5",
+          "ky_vong": 160.6,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "E_lkr của Ne-20",
+          "bieu_thuc": "(10*1.007276 + 10*1.008665 + 10*0.000549 - 19.992440)*931.5/20",
+          "ky_vong": 8.03,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "E_lkr của Pb-208",
+          "bieu_thuc": "1636/208",
+          "ky_vong": 7.87,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi \"hạt nhân nào bền hơn\" và hai hạt nhân khác số khối → tính $E_{lk}$ từng hạt, chia cho $A$, so $E_{lkr}$.",
+      "bay_thuong_gap": [
+        "So $E_{lk}$ thô (1636 \\gt 160,6) rồi kết luận chì bền hơn.",
+        "Chia $E_{lk}$ cho $Z$ (số prôtôn) thay vì $A$.",
+        "Quên cộng $10 m_e$ khi đề cho khối lượng nguyên tử.",
+        "Nghĩ \"hạt nhân càng lớn càng bền\"."
+      ],
+      "dieu_ban_khong_chac": [
+        "$E_{lk,\\text{Pb}} = 1636\\ \\text{MeV}$ làm tròn từ giá trị tham khảo cỡ 1636,4 MeV.",
+        "Chì-208 không có trong bảng của bài; chỉ dùng để minh hoạ vùng bên phải đỉnh sắt."
+      ],
+      "mo_phong_goi_y": "Đường cong năng lượng liên kết riêng theo $A$, có đỉnh quanh Fe-56. Hai chấm sáng di chuyển dọc trục $A$ tới vị trí $A = 20$ và $A = 208$; chưa hiện độ cao trên trục tung. Bên trên: hai cột so sánh \"$E_{lk}$ thô\" (cột chì cao vọt) và \"$E_{lk}/A$\" (để trống, dấu ?). Nhãn: \"Ne-20\", \"Pb-208\", \"Fe-56\", \"$E_{lkr}$ (MeV/nuclôn)\", \"$A$\"."
+    },
+    {
+      "label": "Dạng 4 · Từ năng lượng liên kết riêng tính năng lượng phản ứng nhiệt hạch",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại liên hệ $E_{lkr} = E_{lk}/A$ của Dạng 3 theo chiều ngược: $E_{lk} = E_{lkr} \\cdot A$.\nThêm một độ khó mới: tình huống phản ứng, năng lượng toả ra bằng tổng $E_{lk}$ sau trừ tổng $E_{lk}$ trước. Có dữ kiện ẩn: nơtron rời có $E_{lk} = 0$.",
+      "yccd_de_xuat": "Năng lượng liên kết riêng và độ bền hạt nhân",
+      "de_bai": "Một lò nhiệt hạch thử nghiệm dùng phản ứng $^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$.\nNăng lượng liên kết riêng: đơteri $1{,}112\\ \\text{MeV}$/nuclôn, triti $2{,}827\\ \\text{MeV}$/nuclôn, heli-4 $7{,}074\\ \\text{MeV}$/nuclôn.\nCho $N_A = 6{,}02 \\cdot 10^{23}\\ \\text{mol}^{-1}$, $1\\ \\text{MeV} = 1{,}6 \\cdot 10^{-13}\\ \\text{J}$.\na) Tính năng lượng liên kết của mỗi hạt nhân tham gia và tạo thành.\nb) Phản ứng toả hay thu năng lượng? Bao nhiêu MeV cho một phản ứng?\nc) Trong một ngày lò tạo ra 2,0 g heli. Tính năng lượng toả ra trong ngày đó.",
+      "dieu_kien_ap_dung": "Phản ứng bảo toàn số nuclôn, nên năng lượng toả ra bằng tổng $E_{lk}$ các hạt nhân sau trừ tổng $E_{lk}$ các hạt nhân trước; nơtron rời không có liên kết nên $E_{lk} = 0$.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$",
+          "du_lieu": "$A_D = 2$; $A_T = 3$; $A_{\\text{He}} = 4$; nơtron rời",
+          "kien_thuc": "Số khối dùng để đổi $E_{lkr}$ sang $E_{lk}$; bảo toàn số nuclôn $2 + 3 = 4 + 1$"
+        },
+        {
+          "trich_de": "đơteri $1{,}112\\ \\text{MeV}$/nuclôn",
+          "du_lieu": "$E_{lkr,D} = 1{,}112\\ \\text{MeV}$",
+          "kien_thuc": "$E_{lk} = E_{lkr} \\cdot A$"
+        },
+        {
+          "trich_de": "triti $2{,}827\\ \\text{MeV}$/nuclôn",
+          "du_lieu": "$E_{lkr,T} = 2{,}827\\ \\text{MeV}$",
+          "kien_thuc": "$E_{lk} = E_{lkr} \\cdot A$"
+        },
+        {
+          "trich_de": "heli-4 $7{,}074\\ \\text{MeV}$/nuclôn",
+          "du_lieu": "$E_{lkr,\\text{He}} = 7{,}074\\ \\text{MeV}$",
+          "kien_thuc": "$E_{lkr}$ lớn hơn thì bền hơn"
+        },
+        {
+          "trich_de": "$N_A = 6{,}02 \\cdot 10^{23}\\ \\text{mol}^{-1}$",
+          "du_lieu": "$N_A = 6{,}02 \\cdot 10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "Đếm số hạt nhân: $N = \\dfrac{m}{M} N_A$, heli-4 có $M \\approx 4\\ \\text{g/mol}$"
+        },
+        {
+          "trich_de": "$1\\ \\text{MeV} = 1{,}6 \\cdot 10^{-13}\\ \\text{J}$",
+          "du_lieu": "hệ số đổi MeV → J",
+          "kien_thuc": "Đổi đơn vị năng lượng"
+        },
+        {
+          "trich_de": "lò tạo ra 2,0 g heli",
+          "du_lieu": "$m = 2{,}0\\ \\text{g}$; mỗi phản ứng tạo 1 hạt He",
+          "kien_thuc": "Số phản ứng = số hạt nhân He tạo ra"
+        },
+        {
+          "trich_de": "Bao nhiêu MeV cho một phản ứng?",
+          "du_lieu": "Cần tìm: $E = \\sum E_{lk,\\text{sau}} - \\sum E_{lk,\\text{trước}}$",
+          "kien_thuc": "Năng lượng phản ứng từ hiệu năng lượng liên kết"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$E$ (một phản ứng), $E_{\\text{ngày}}$",
+        "cong_thuc": "$E = E_{lk,\\text{He}} - (E_{lk,D} + E_{lk,T})$; $E_{\\text{ngày}} = \\dfrac{m}{M} N_A \\cdot E$"
+      },
+      "kien_thuc_goi_lai": [
+        "$E_{lk} = E_{lkr} \\cdot A$.",
+        "Tổng $E_{lk}$ sau lớn hơn trước → phản ứng toả năng lượng.",
+        "Nuclôn rời có $E_{lk} = 0$.",
+        "Hạt nhân rất nhẹ hợp lại thì toả năng lượng (bên trái đỉnh sắt)."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi $E_{lkr}$ ra $E_{lk}$ (câu a)",
+          "cong_thuc_chu": "$E_{lk} = E_{lkr} \\cdot A$",
+          "the_so": "$E_{lk,D} = 1{,}112 \\times 2$; $E_{lk,T} = 2{,}827 \\times 3$; $E_{lk,\\text{He}} = 7{,}074 \\times 4$",
+          "ket_qua": "$E_{lk,D} = 2{,}224\\ \\text{MeV}$; $E_{lk,T} = 8{,}481\\ \\text{MeV}$; $E_{lk,\\text{He}} = 28{,}30\\ \\text{MeV}$",
+          "kiem_tra": "$E_{lk,\\text{He}}$ khớp giá trị 28,30 MeV trong bài; đơteri 2,22 MeV khớp bài."
+        },
+        {
+          "tieu_de": "Bước 2. Dữ kiện ẩn: nơtron rời",
+          "cong_thuc_chu": "$E_{lk,n} = 0$",
+          "the_so": "Nơtron là một nuclôn đơn lẻ, không có liên kết",
+          "ket_qua": "$E_{lk,n} = 0\\ \\text{MeV}$",
+          "kiem_tra": "Không nhân 1 nuclôn với $E_{lkr}$ nào cả."
+        },
+        {
+          "tieu_de": "Bước 3. Năng lượng một phản ứng (câu b)",
+          "cong_thuc_chu": "$E = (E_{lk,\\text{He}} + E_{lk,n}) - (E_{lk,D} + E_{lk,T})$",
+          "the_so": "$E = (28{,}296 + 0) - (2{,}224 + 8{,}481)$",
+          "ket_qua": "$E \\approx 17{,}59\\ \\text{MeV}$, $E \\gt 0$ nên phản ứng toả năng lượng",
+          "kiem_tra": "Khớp 17,6 MeV tính từ khối lượng giảm 0,018883 u trong bài. Hợp lí: heli có $E_{lkr}$ lớn hơn hẳn, nuclôn bị giữ chặt hơn."
+        },
+        {
+          "tieu_de": "Bước 4. Số phản ứng trong ngày",
+          "cong_thuc_chu": "$N = \\dfrac{m}{M} N_A$",
+          "the_so": "$N = \\dfrac{2{,}0}{4} \\times 6{,}02 \\cdot 10^{23}$",
+          "ket_qua": "$N = 3{,}01 \\cdot 10^{23}$ phản ứng",
+          "kiem_tra": "Mỗi phản ứng tạo đúng 1 hạt He, nên số phản ứng = số hạt He."
+        },
+        {
+          "tieu_de": "Bước 5. Năng lượng trong ngày (câu c)",
+          "cong_thuc_chu": "$E_{\\text{ngày}} = N \\cdot E \\cdot 1{,}6 \\cdot 10^{-13}$",
+          "the_so": "$E_{\\text{ngày}} = 3{,}01 \\cdot 10^{23} \\times 17{,}59 \\times 1{,}6 \\cdot 10^{-13}$",
+          "ket_qua": "$E_{\\text{ngày}} \\approx 8{,}47 \\cdot 10^{11}\\ \\text{J}$",
+          "kiem_tra": "Đơn vị: số hạt × MeV × J/MeV = J. Cùng cỡ $10^{11}$ J như ví dụ 1 g heli trong bài, hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (đơteri)",
+          "gia_tri": 2.224,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "a (triti)",
+          "gia_tri": 8.481,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "a (heli-4)",
+          "gia_tri": 28.3,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "b",
+          "gia_tri": 17.59,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "c",
+          "gia_tri": 847000000000,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "E_lk heli-4 từ E_lkr",
+          "bieu_thuc": "7.074*4",
+          "ky_vong": 28.296,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng một phản ứng",
+          "bieu_thuc": "7.074*4 - (1.112*2 + 2.827*3)",
+          "ky_vong": 17.59,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phản ứng trong 2,0 g heli",
+          "bieu_thuc": "2.0/4*6.02e23",
+          "ky_vong": 3.01e+23,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng trong ngày (J)",
+          "bieu_thuc": "2.0/4*6.02e23*(7.074*4 - (1.112*2 + 2.827*3))*1.6e-13",
+          "ky_vong": 847000000000,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho $E_{lkr}$ của các hạt trong một phản ứng và hỏi toả/thu bao nhiêu → nhân $E_{lkr}$ với $A$, lấy tổng $E_{lk}$ sau trừ trước, rồi nhân số phản ứng nếu hỏi theo gam.",
+      "bay_thuong_gap": [
+        "Lấy hiệu các $E_{lkr}$ (7,074 − 1,112 − 2,827) mà không nhân với $A$.",
+        "Gán cho nơtron một năng lượng liên kết khác 0.",
+        "Trừ ngược trước − sau, ra số âm rồi kết luận \"thu năng lượng\".",
+        "Chia 17,59 MeV cho 5 nuclôn rồi ghi là năng lượng một phản ứng.",
+        "Quên đổi MeV sang J, hoặc lấy số mol heli là 2,0 thay vì 0,5."
+      ],
+      "dieu_ban_khong_chac": [
+        "Các giá trị $E_{lkr}$ của D, T, He-4 làm tròn tới 4 chữ số; triti 2,827 MeV/nuclôn không có trong bài, lấy theo giá trị tham khảo.",
+        "Khối lượng mol heli-4 lấy gần đúng 4 g/mol như ví dụ trong bài.",
+        "Sản lượng 2,0 g heli/ngày là giả định minh hoạ, không phải số liệu của lò thật."
+      ],
+      "mo_phong_goi_y": "Bên trái: hạt nhân đơteri (1 p, 1 n) và triti (1 p, 2 n) bay vào nhau. Ở giữa: chúng chạm nhau, loé sáng. Bên phải: hạt nhân heli-4 (2 p, 2 n) và một nơtron bay ra. Dưới mỗi hạt nhân là một thanh \"năng lượng liên kết\" có chiều cao chưa ghi số; nơtron không có thanh. Nhãn: \"$^{2}_{1}\\text{H}$\", \"$^{3}_{1}\\text{H}$\", \"$^{4}_{2}\\text{He}$\", \"$^{1}_{0}\\text{n}$\", \"$E_{lkr}$\", \"$E = ?$\"."
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "lesson_title": "Bài 21. Tụ điện",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính điện tích từ điện dung và hiệu điện thế",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Đọc hai số trên vỏ tụ, đổi μF ra F, dùng $Q = CU$.",
+      "yccd_de_xuat": "Điện dung, ghép tụ nối tiếp và song song",
+      "de_bai": "Một tụ hoá trên vỏ ghi “330 μF – 25 V” được nối vào nguồn điện một chiều $U = 12$ V.\na) Tính điện tích của tụ.\nb) Tính điện tích lớn nhất mà tụ có thể tích được mà không bị đánh thủng.",
+      "dieu_kien_ap_dung": "Tụ đã nạp đầy, hiệu điện thế đặt vào không vượt số vôn ghi trên vỏ, điện dung coi đúng bằng giá trị ghi.",
+      "phan_tich": [
+        {
+          "trich_de": "330 μF",
+          "du_lieu": "$C = 330$ μF $= 3{,}30\\cdot10^{-4}$ F",
+          "kien_thuc": "Ước số: 1 μF $= 10^{-6}$ F"
+        },
+        {
+          "trich_de": "25 V",
+          "du_lieu": "$U_{\\max} = 25$ V",
+          "kien_thuc": "Số vôn tối đa ghi trên vỏ; vượt quá thì tụ bị đánh thủng"
+        },
+        {
+          "trich_de": "nguồn điện một chiều $U = 12$ V",
+          "du_lieu": "$U = 12$ V",
+          "kien_thuc": "$Q = CU$"
+        },
+        {
+          "trich_de": "điện tích lớn nhất",
+          "du_lieu": "cần $Q_{\\max}$",
+          "kien_thuc": "$Q_{\\max} = CU_{\\max}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "Q; Q_max",
+        "cong_thuc": "Q = CU;\\ Q_{\\max} = CU_{\\max}"
+      },
+      "kien_thuc_goi_lai": [
+        "$C = \\dfrac{Q}{U} \\Rightarrow Q = CU$",
+        "Đơn vị: C (culông) = F · V",
+        "1 μF $= 10^{-6}$ F",
+        "Vỏ tụ ghi điện dung và hiệu điện thế tối đa"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi điện dung ra fara",
+          "cong_thuc_chu": "$1\\ \\mu\\text{F} = 10^{-6}\\ \\text{F}$",
+          "the_so": "$C = 330\\cdot10^{-6}$",
+          "ket_qua": "$C = 3{,}30\\cdot10^{-4}\\ \\text{F}$",
+          "kiem_tra": "Nằm trong khoảng $10^{-12}$ đến $10^{-3}$ F của tụ thường gặp."
+        },
+        {
+          "tieu_de": "Điện tích ở 12 V",
+          "cong_thuc_chu": "$Q = CU$",
+          "the_so": "$Q = 3{,}30\\cdot10^{-4}\\cdot12$",
+          "ket_qua": "$Q = 3{,}96\\cdot10^{-3}\\ \\text{C} = 3960\\ \\mu\\text{C}$",
+          "kiem_tra": "$12\\ \\text{V} \\lt 25\\ \\text{V}$ nên tụ an toàn; F·V = C."
+        },
+        {
+          "tieu_de": "Điện tích lớn nhất",
+          "cong_thuc_chu": "$Q_{\\max} = CU_{\\max}$",
+          "the_so": "$Q_{\\max} = 3{,}30\\cdot10^{-4}\\cdot25$",
+          "ket_qua": "$Q_{\\max} = 8{,}25\\cdot10^{-3}\\ \\text{C}$",
+          "kiem_tra": "Lớn hơn $Q$ ở câu a, đúng vì $25 \\gt 12$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.00396,
+          "don_vi": "C"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.00825,
+          "don_vi": "C"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Q ở 12 V",
+          "bieu_thuc": "330e-6*12",
+          "ky_vong": 0.00396,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Q lớn nhất ở 25 V",
+          "bieu_thuc": "330e-6*25",
+          "ky_vong": 0.00825,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho sẵn C và U (hoặc số ghi trên vỏ tụ), hỏi điện tích → đổi đơn vị rồi dùng $Q = CU$.",
+      "bay_thuong_gap": [
+        "Quên đổi μF ra F, ghi $Q = 3960$ C.",
+        "Cộng điện tích hai bản thành $2Q$.",
+        "Dùng 25 V cho câu a vì thấy số trên vỏ."
+      ],
+      "dieu_ban_khong_chac": [
+        "Danh sách dạng ở bước 0 chưa được điền (còn để chỗ trống), nên các dạng được tự chọn theo hai YCCĐ và các mục II.2–II.5 của bài."
+      ],
+      "mo_phong_goi_y": "Tụ hoá có nhãn “330 μF – 25 V” nối với nguồn 12 V qua khoá K. Đóng K: dấu + dồn dần lên một bản, dấu − lên bản kia, rồi dừng khi nạp đầy. Thanh đo hiệu điện thế có vạch 12 V và vạch đỏ 25 V (giới hạn). Nhãn: C, U, +Q, −Q, U_max."
+    },
+    {
+      "label": "Dạng 2 · Năng lượng của tụ khi đổi hiệu điện thế nạp",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách đổi μF ra F và tụ có C cố định của dạng 1. Độ khó mới: chọn đúng dạng công thức năng lượng $W = \\tfrac12 CU^2$ và tránh bẫy U giảm một nửa thì W giảm một nửa.",
+      "yccd_de_xuat": "Năng lượng của tụ điện",
+      "de_bai": "Tụ điện trong một đèn flash rời có điện dung 220 μF. Mạch tăng áp nạp tụ tới hiệu điện thế 330 V, rồi tụ xả hết qua bóng đèn khi chụp.\na) Tính năng lượng tụ dự trữ trước mỗi lần chụp.\nb) Khi pin yếu, mạch chỉ nạp được tụ tới 165 V. Tính năng lượng của tụ lúc đó và cho biết năng lượng giảm bao nhiêu lần.",
+      "dieu_kien_ap_dung": "Điện dung chỉ do cấu tạo nên không đổi khi đổi hiệu điện thế nạp; tụ nạp đầy tới đúng hiệu điện thế nêu.",
+      "phan_tich": [
+        {
+          "trich_de": "điện dung 220 μF",
+          "du_lieu": "$C = 220$ μF $= 2{,}20\\cdot10^{-4}$ F",
+          "kien_thuc": "Đổi ước số; C do cấu tạo, không đổi"
+        },
+        {
+          "trich_de": "nạp tụ tới hiệu điện thế 330 V",
+          "du_lieu": "$U = 330$ V",
+          "kien_thuc": "$W = \\tfrac12 CU^2$"
+        },
+        {
+          "trich_de": "chỉ nạp được tụ tới 165 V",
+          "du_lieu": "$U' = 165$ V",
+          "kien_thuc": "C giữ nguyên, W tỉ lệ $U^2$"
+        },
+        {
+          "trich_de": "năng lượng giảm bao nhiêu lần",
+          "du_lieu": "cần $W/W'$",
+          "kien_thuc": "$\\dfrac{W}{W'} = \\left(\\dfrac{U}{U'}\\right)^2$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "W; W'; W/W'",
+        "cong_thuc": "W = \\tfrac12 CU^2;\\ \\dfrac{W}{W'} = \\left(\\dfrac{U}{U'}\\right)^2"
+      },
+      "kien_thuc_goi_lai": [
+        "$W = \\tfrac12 QU = \\tfrac12 CU^2 = \\dfrac{Q^2}{2C}$",
+        "Biết C và U thì dùng $\\tfrac12 CU^2$",
+        "C không phụ thuộc U",
+        "Năng lượng nằm trong điện trường giữa hai bản"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi điện dung",
+          "cong_thuc_chu": "$1\\ \\mu\\text{F} = 10^{-6}\\ \\text{F}$",
+          "the_so": "$C = 220\\cdot10^{-6}$",
+          "ket_qua": "$C = 2{,}20\\cdot10^{-4}\\ \\text{F}$",
+          "kiem_tra": "Cùng cách đổi như dạng 1."
+        },
+        {
+          "tieu_de": "Năng lượng ở 330 V",
+          "cong_thuc_chu": "$W = \\tfrac12 CU^2$",
+          "the_so": "$W = \\tfrac12\\cdot2{,}20\\cdot10^{-4}\\cdot330^2$",
+          "ket_qua": "$W \\approx 11{,}98\\ \\text{J}$",
+          "kiem_tra": "F·V² = J. Cỡ vài đến chục jun, cùng cỡ tụ flash trong bài (6,75 J)."
+        },
+        {
+          "tieu_de": "Năng lượng ở 165 V",
+          "cong_thuc_chu": "$W' = \\tfrac12 CU'^2$",
+          "the_so": "$W' = \\tfrac12\\cdot2{,}20\\cdot10^{-4}\\cdot165^2$",
+          "ket_qua": "$W' \\approx 2{,}995\\ \\text{J}$",
+          "kiem_tra": "Nhỏ hơn W, hợp lí vì nạp thấp hơn."
+        },
+        {
+          "tieu_de": "Số lần giảm",
+          "cong_thuc_chu": "$\\dfrac{W}{W'} = \\left(\\dfrac{U}{U'}\\right)^2$",
+          "the_so": "$\\dfrac{W}{W'} = \\left(\\dfrac{330}{165}\\right)^2$",
+          "ket_qua": "$\\dfrac{W}{W'} = 4$",
+          "kiem_tra": "Khớp $11{,}98 : 2{,}995 = 4$. Không phải 2 lần vì Q cũng giảm theo U."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 11.98,
+          "don_vi": "J"
+        },
+        {
+          "y": "b (năng lượng)",
+          "gia_tri": 2.995,
+          "don_vi": "J"
+        },
+        {
+          "y": "b (số lần giảm)",
+          "gia_tri": 4,
+          "don_vi": "lần"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "W ở 330 V",
+          "bieu_thuc": "0.5*220e-6*330**2",
+          "ky_vong": 11.98,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "W ở 165 V",
+          "bieu_thuc": "0.5*220e-6*165**2",
+          "ky_vong": 2.995,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số W/W'",
+          "bieu_thuc": "(0.5*220e-6*330**2)/(0.5*220e-6*165**2)",
+          "ky_vong": 4,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Đề cho C cố định, đổi U nạp, hỏi năng lượng → dùng $W = \\tfrac12 CU^2$, so sánh theo bình phương U.",
+      "bay_thuong_gap": [
+        "Kết luận năng lượng giảm 2 lần vì dùng $\\tfrac12 QU$ mà giữ Q không đổi.",
+        "Quên đổi μF, ra $W \\approx 1{,}2\\cdot10^7$ J.",
+        "Quên hệ số ½.",
+        "Nghĩ C giảm khi U giảm."
+      ],
+      "dieu_ban_khong_chac": [
+        "Giá trị 220 μF – 330 V là cỡ thường gặp của tụ flash; không kiểm chứng với một model cụ thể."
+      ],
+      "mo_phong_goi_y": "Đèn flash với tụ bên trong; thanh sạc hiệu điện thế tăng dần tới vạch 330 V (lần 1) và tới vạch 165 V (lần 2). Bên cạnh là đồ thị Q–U đường thẳng qua gốc, phần tam giác dưới đường được tô dần khi nạp. Không ghi số năng lượng. Nhãn: C, U, Q, W (vùng tô)."
+    },
+    {
+      "label": "Dạng 3 · Tụ phẳng đổi cấu tạo sau khi ngắt nguồn",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại $Q = CU$ (dạng 1) và tính năng lượng (dạng 2, thành một bước con). Độ khó mới: cấu tạo tụ thay đổi sau khi ngắt nguồn, phải xác định đại lượng giữ nguyên (Q) trước khi tính.",
+      "yccd_de_xuat": "Điện dung, ghép tụ nối tiếp và song song",
+      "de_bai": "Một tụ phẳng không khí có hai bản kim loại hình vuông cạnh 15 cm, đặt đối diện nhau, cách nhau 0,80 mm. Nối tụ với nguồn 60 V cho tới khi tụ tích điện xong, rồi ngắt tụ khỏi nguồn. Sau đó kéo hai bản ra xa nhau đến khoảng cách 1,60 mm (hai bản vẫn đối diện hoàn toàn).\na) Tính điện dung và điện tích của tụ lúc còn nối nguồn.\nb) Tính hiệu điện thế giữa hai bản sau khi kéo.\nc) Tính năng lượng của tụ trước và sau khi kéo.",
+      "dieu_kien_ap_dung": "Điện trường giữa hai bản coi là đều; không khí có $\\varepsilon = 1$; sau khi ngắt nguồn tụ cô lập nên điện tích được bảo toàn.",
+      "phan_tich": [
+        {
+          "trich_de": "tụ phẳng không khí",
+          "du_lieu": "$\\varepsilon = 1$",
+          "kien_thuc": "$C = \\dfrac{\\varepsilon S}{9\\cdot10^9\\cdot4\\pi d}$"
+        },
+        {
+          "trich_de": "hình vuông cạnh 15 cm, đặt đối diện nhau",
+          "du_lieu": "$S = 0{,}15^2 = 0{,}0225$ m²",
+          "kien_thuc": "S là diện tích phần đối diện"
+        },
+        {
+          "trich_de": "cách nhau 0,80 mm",
+          "du_lieu": "$d = 8{,}0\\cdot10^{-4}$ m",
+          "kien_thuc": "Đổi mm ra m"
+        },
+        {
+          "trich_de": "Nối tụ với nguồn 60 V",
+          "du_lieu": "$U = 60$ V",
+          "kien_thuc": "$Q = CU$"
+        },
+        {
+          "trich_de": "ngắt tụ khỏi nguồn",
+          "du_lieu": "$Q' = Q$",
+          "kien_thuc": "Ngắt nguồn: Q giữ"
+        },
+        {
+          "trich_de": "khoảng cách 1,60 mm",
+          "du_lieu": "$d' = 2d$",
+          "kien_thuc": "C tỉ lệ nghịch với d nên $C' = C/2$"
+        },
+        {
+          "trich_de": "năng lượng của tụ trước và sau khi kéo",
+          "du_lieu": "cần W, W'",
+          "kien_thuc": "$W = \\tfrac12 CU^2$, $W' = \\tfrac12 QU'$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "C; Q; U'; W; W'",
+        "cong_thuc": "C = \\dfrac{\\varepsilon S}{9\\cdot10^9\\cdot4\\pi d};\\ Q = CU;\\ U' = \\dfrac{Q}{C'};\\ W = \\tfrac12 CU^2;\\ W' = \\tfrac12 QU'"
+      },
+      "kien_thuc_goi_lai": [
+        "C chỉ do S, d, ε quyết định",
+        "Còn nối nguồn: U giữ; ngắt nguồn: Q giữ",
+        "$E = U/d$ giữa hai bản",
+        "$W = \\tfrac12 QU = \\tfrac12 CU^2 = \\dfrac{Q^2}{2C}$"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi S, d ra đơn vị SI",
+          "cong_thuc_chu": "$S = a^2$",
+          "the_so": "$S = 0{,}15^2$; $d = 0{,}80\\cdot10^{-3}$",
+          "ket_qua": "$S = 0{,}0225\\ \\text{m}^2$; $d = 8{,}0\\cdot10^{-4}\\ \\text{m}$",
+          "kiem_tra": "Đúng đơn vị m² và m."
+        },
+        {
+          "tieu_de": "Điện dung ban đầu",
+          "cong_thuc_chu": "$C = \\dfrac{\\varepsilon S}{9\\cdot10^9\\cdot4\\pi d}$",
+          "the_so": "$C = \\dfrac{1\\cdot0{,}0225}{9\\cdot10^9\\cdot4\\pi\\cdot8{,}0\\cdot10^{-4}}$",
+          "ket_qua": "$C \\approx 2{,}487\\cdot10^{-10}\\ \\text{F} \\approx 248{,}7\\ \\text{pF}$",
+          "kiem_tra": "Cùng cỡ tụ nhôm tự chế trong bài (≈ 350 pF), hợp lí."
+        },
+        {
+          "tieu_de": "Điện tích khi còn nối nguồn",
+          "cong_thuc_chu": "$Q = CU$",
+          "the_so": "$Q = 2{,}487\\cdot10^{-10}\\cdot60$",
+          "ket_qua": "$Q \\approx 1{,}492\\cdot10^{-8}\\ \\text{C} \\approx 14{,}92\\ \\text{nC}$",
+          "kiem_tra": "F·V = C."
+        },
+        {
+          "tieu_de": "Xác định đại lượng giữ nguyên và C mới",
+          "cong_thuc_chu": "Ngắt nguồn: $Q' = Q$; $C \\sim \\dfrac1d \\Rightarrow C' = \\dfrac{C}{2}$",
+          "the_so": "$C' = \\dfrac{2{,}487\\cdot10^{-10}}{2}$",
+          "ket_qua": "$C' \\approx 1{,}243\\cdot10^{-10}\\ \\text{F}$",
+          "kiem_tra": "d tăng nên C giảm, đúng chiều."
+        },
+        {
+          "tieu_de": "Hiệu điện thế sau khi kéo",
+          "cong_thuc_chu": "$U' = \\dfrac{Q}{C'}$",
+          "the_so": "$U' = \\dfrac{1{,}492\\cdot10^{-8}}{1{,}243\\cdot10^{-10}}$",
+          "ket_qua": "$U' = 120\\ \\text{V}$",
+          "kiem_tra": "$E = U/d$: trước $60/8\\cdot10^{-4} = 7{,}5\\cdot10^4$ V/m, sau $120/1{,}6\\cdot10^{-3} = 7{,}5\\cdot10^4$ V/m. E không đổi vì Q và S không đổi: hợp lí."
+        },
+        {
+          "tieu_de": "Năng lượng trước và sau",
+          "cong_thuc_chu": "$W = \\tfrac12 CU^2$; $W' = \\tfrac12 QU'$",
+          "the_so": "$W = \\tfrac12\\cdot2{,}487\\cdot10^{-10}\\cdot60^2$; $W' = \\tfrac12\\cdot1{,}492\\cdot10^{-8}\\cdot120$",
+          "ket_qua": "$W \\approx 4{,}476\\cdot10^{-7}\\ \\text{J}$; $W' \\approx 8{,}952\\cdot10^{-7}\\ \\text{J}$",
+          "kiem_tra": "$W' = 2W$, khớp $W = \\dfrac{Q^2}{2C}$ với Q giữ, C giảm nửa. Phần tăng thêm do công kéo hai bản hút nhau ra xa."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (điện dung)",
+          "gia_tri": 2.487e-10,
+          "don_vi": "F"
+        },
+        {
+          "y": "a (điện tích)",
+          "gia_tri": 1.492e-8,
+          "don_vi": "C"
+        },
+        {
+          "y": "b",
+          "gia_tri": 120,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (trước)",
+          "gia_tri": 4.476e-7,
+          "don_vi": "J"
+        },
+        {
+          "y": "c (sau)",
+          "gia_tri": 8.952e-7,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "điện dung ban đầu",
+          "bieu_thuc": "0.15**2/(9e9*4*math.pi*0.8e-3)",
+          "ky_vong": 2.487e-10,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện tích",
+          "bieu_thuc": "0.15**2/(9e9*4*math.pi*0.8e-3)*60",
+          "ky_vong": 1.492e-8,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hiệu điện thế sau khi kéo",
+          "bieu_thuc": "(0.15**2/(9e9*4*math.pi*0.8e-3)*60)/(0.15**2/(9e9*4*math.pi*1.6e-3))",
+          "ky_vong": 120,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng trước",
+          "bieu_thuc": "0.5*0.15**2/(9e9*4*math.pi*0.8e-3)*60**2",
+          "ky_vong": 4.476e-7,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "năng lượng sau",
+          "bieu_thuc": "0.5*(0.15**2/(9e9*4*math.pi*0.8e-3)*60)*120",
+          "ky_vong": 8.952e-7,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có chữ “ngắt khỏi nguồn” hoặc “vẫn nối nguồn” rồi đổi d, S, ε → hỏi trước: cái gì giữ nguyên, rồi tính C mới và suy ra đại lượng còn lại.",
+      "bay_thuong_gap": [
+        "Coi U vẫn là 60 V sau khi ngắt nguồn.",
+        "Cho U đổi cùng chiều C (ra U giảm còn 30 V).",
+        "Quên đổi mm ra m hoặc dùng cạnh 15 cm làm S.",
+        "Kết luận năng lượng giảm vì C giảm, quên Q giữ nguyên."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bỏ qua hiệu ứng mép; với d rất nhỏ so với cạnh bản, sai số không đáng kể."
+      ],
+      "mo_phong_goi_y": "Hai bản vuông song song nối nguồn 60 V; đường sức điện (lục) từ bản + sang bản −. Khoá mở ra (ngắt nguồn), số dấu + và − trên mỗi bản giữ nguyên. Một bàn tay kéo bản trên lên, khoảng cách tăng gấp đôi; mật độ đường sức giữ nguyên, vôn kế giữa hai bản chỉ thay đổi (không hiện số). Nhãn: S, d, d', +Q, −Q, E, U."
+    },
+    {
+      "label": "Dạng 4 · Bộ tụ ghép hỗn hợp nối tiếp – song song",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại chuỗi tính nhiều bước của dạng 3 gồm $Q = CU$ và năng lượng (bước con cấp 2). Độ khó mới: nhiều tụ ghép với nhau, phải xác định đại lượng chung (Q với nối tiếp, U với song song) để tính điện dung bộ.",
+      "yccd_de_xuat": "Điện dung, ghép tụ nối tiếp và song song",
+      "de_bai": "Ba tụ điện chưa tích điện: $C_1 = 5$ μF, $C_2 = 20$ μF và $C_3 = 6$ μF. Tụ $C_1$ ghép nối tiếp với tụ $C_2$ thành một nhánh; nhánh này ghép song song với tụ $C_3$. Hai đầu bộ tụ nối vào nguồn $U = 15$ V.\na) Tính điện dung của bộ tụ.\nb) Tính điện tích và hiệu điện thế của từng tụ.\nc) Tính năng lượng của bộ tụ.",
+      "dieu_kien_ap_dung": "Các tụ chưa tích điện trước khi ghép nên dùng được công thức ghép nối tiếp, song song thông thường.",
+      "phan_tich": [
+        {
+          "trich_de": "chưa tích điện",
+          "du_lieu": "Ban đầu $Q = 0$ trên mọi tụ",
+          "kien_thuc": "Dùng được công thức ghép thông thường"
+        },
+        {
+          "trich_de": "$C_1 = 5$ μF, $C_2 = 20$ μF và $C_3 = 6$ μF",
+          "du_lieu": "$C_1 = 5$ μF; $C_2 = 20$ μF; $C_3 = 6$ μF",
+          "kien_thuc": "Giữ μF khi cộng; đổi ra F khi tính năng lượng"
+        },
+        {
+          "trich_de": "ghép nối tiếp với tụ $C_2$ thành một nhánh",
+          "du_lieu": "$Q_1 = Q_2 = Q_{12}$",
+          "kien_thuc": "$C_{12} = \\dfrac{C_1C_2}{C_1+C_2}$"
+        },
+        {
+          "trich_de": "nhánh này ghép song song với tụ $C_3$",
+          "du_lieu": "$U_{12} = U_3 = U$",
+          "kien_thuc": "$C = C_{12} + C_3$"
+        },
+        {
+          "trich_de": "nguồn $U = 15$ V",
+          "du_lieu": "$U = 15$ V",
+          "kien_thuc": "$Q = CU$"
+        },
+        {
+          "trich_de": "năng lượng của bộ tụ",
+          "du_lieu": "cần W",
+          "kien_thuc": "$W = \\tfrac12 CU^2$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "C; Q_1, Q_2, Q_3; U_1, U_2, U_3; W",
+        "cong_thuc": "C = \\dfrac{C_1C_2}{C_1+C_2} + C_3;\\ Q_1 = Q_2 = C_{12}U;\\ U_i = \\dfrac{Q_i}{C_i};\\ Q_3 = C_3U;\\ W = \\tfrac12 CU^2"
+      },
+      "kien_thuc_goi_lai": [
+        "Nối tiếp: Q chung, $U = U_1 + U_2$, $\\dfrac1C = \\dfrac1{C_1} + \\dfrac1{C_2}$",
+        "Song song: U chung, $Q = Q_1 + Q_2$, $C = C_1 + C_2$",
+        "Nối tiếp: tụ nhỏ chịu U lớn",
+        "$W = \\tfrac12 CU^2$"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Điện dung nhánh nối tiếp",
+          "cong_thuc_chu": "$C_{12} = \\dfrac{C_1C_2}{C_1+C_2}$",
+          "the_so": "$C_{12} = \\dfrac{5\\cdot20}{5+20}$",
+          "ket_qua": "$C_{12} = 4\\ \\mu\\text{F}$",
+          "kiem_tra": "$4 \\lt 5$: nhỏ hơn tụ nhỏ nhất, đúng tính chất nối tiếp."
+        },
+        {
+          "tieu_de": "Điện dung cả bộ",
+          "cong_thuc_chu": "$C = C_{12} + C_3$",
+          "the_so": "$C = 4 + 6$",
+          "ket_qua": "$C = 10\\ \\mu\\text{F}$",
+          "kiem_tra": "$10 \\gt 6$ và $10 \\gt 4$: lớn hơn từng nhánh, đúng tính chất song song."
+        },
+        {
+          "tieu_de": "Điện tích nhánh nối tiếp",
+          "cong_thuc_chu": "$U_{12} = U$; $Q_1 = Q_2 = C_{12}U$",
+          "the_so": "$Q_1 = Q_2 = 4\\cdot15$",
+          "ket_qua": "$Q_1 = Q_2 = 60\\ \\mu\\text{C}$",
+          "kiem_tra": "μF·V = μC."
+        },
+        {
+          "tieu_de": "Hiệu điện thế từng tụ trong nhánh",
+          "cong_thuc_chu": "$U_1 = \\dfrac{Q_1}{C_1}$; $U_2 = \\dfrac{Q_2}{C_2}$",
+          "the_so": "$U_1 = \\dfrac{60}{5}$; $U_2 = \\dfrac{60}{20}$",
+          "ket_qua": "$U_1 = 12\\ \\text{V}$; $U_2 = 3\\ \\text{V}$",
+          "kiem_tra": "$12 + 3 = 15$ V, khớp nguồn; tụ nhỏ (5 μF) chịu U lớn."
+        },
+        {
+          "tieu_de": "Tụ $C_3$",
+          "cong_thuc_chu": "$U_3 = U$; $Q_3 = C_3U$",
+          "the_so": "$Q_3 = 6\\cdot15$",
+          "ket_qua": "$U_3 = 15\\ \\text{V}$; $Q_3 = 90\\ \\mu\\text{C}$",
+          "kiem_tra": "Tổng điện tích lấy từ nguồn $60 + 90 = 150$ μC $= 10\\cdot15$: khớp."
+        },
+        {
+          "tieu_de": "Năng lượng bộ tụ",
+          "cong_thuc_chu": "$W = \\tfrac12 CU^2$",
+          "the_so": "$W = \\tfrac12\\cdot10\\cdot10^{-6}\\cdot15^2$",
+          "ket_qua": "$W = 1{,}125\\cdot10^{-3}\\ \\text{J}$",
+          "kiem_tra": "Cộng từng tụ (μF·V² = μJ): $\\tfrac12\\cdot5\\cdot12^2 + \\tfrac12\\cdot20\\cdot3^2 + \\tfrac12\\cdot6\\cdot15^2 = 360 + 90 + 675 = 1125$ μJ. Khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 10,
+          "don_vi": "μF"
+        },
+        {
+          "y": "b (Q1 = Q2)",
+          "gia_tri": 60,
+          "don_vi": "μC"
+        },
+        {
+          "y": "b (U1)",
+          "gia_tri": 12,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (U2)",
+          "gia_tri": 3,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (Q3)",
+          "gia_tri": 90,
+          "don_vi": "μC"
+        },
+        {
+          "y": "b (U3)",
+          "gia_tri": 15,
+          "don_vi": "V"
+        },
+        {
+          "y": "c",
+          "gia_tri": 0.001125,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "C nhánh nối tiếp (μF)",
+          "bieu_thuc": "5*20/(5+20)",
+          "ky_vong": 4,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "C bộ (μF)",
+          "bieu_thuc": "5*20/(5+20)+6",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U1 (V)",
+          "bieu_thuc": "(5*20/(5+20)*15)/5",
+          "ky_vong": 12,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U2 (V)",
+          "bieu_thuc": "(5*20/(5+20)*15)/20",
+          "ky_vong": 3,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Q3 (μC)",
+          "bieu_thuc": "6*15",
+          "ky_vong": 90,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng bộ (J)",
+          "bieu_thuc": "0.5*10e-6*15**2",
+          "ky_vong": 0.001125,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tổng năng lượng từng tụ (J)",
+          "bieu_thuc": "0.5*5e-6*12**2+0.5*20e-6*3**2+0.5*6e-6*15**2",
+          "ky_vong": 0.001125,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Sơ đồ có cả cụm nối tiếp lẫn cụm song song → gộp từng cụm từ trong ra ngoài, rồi tách ngược: song song chia Q theo C, nối tiếp chia U ngược với C.",
+      "bay_thuong_gap": [
+        "Cộng thẳng $5 + 20$ cho nhánh nối tiếp.",
+        "Chia đều 15 V cho hai tụ nối tiếp (7,5 V mỗi tụ).",
+        "Lấy $Q = CU$ của cả bộ (150 μC) gán cho $C_1$.",
+        "Quên đổi μF khi tính năng lượng ra J."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Sơ đồ: nhánh trên gồm C1 nối tiếp C2, nhánh dưới là C3; hai nhánh chung hai đầu nối nguồn 15 V. Đóng khoá: điện tích chạy vào hai nhánh, nhánh dưới nhận nhiều dấu hơn; trên mỗi tụ hiện cột hiệu điện thế cao thấp khác nhau (không ghi số). Nhãn: C1, C2, C3, U, Q12, Q3."
+    },
+    {
+      "label": "Dạng 5 · Chọn cách ghép tụ và hiệu điện thế giới hạn của bộ",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cách tính C bộ, Q chung và chia U trong nhánh nối tiếp của dạng 4, cùng năng lượng của dạng 2. Độ khó mới: điện dung cần đạt và số vôn giới hạn trên vỏ là dữ kiện ẩn; phải tự chọn cách ghép và tìm hiệu điện thế tối đa sao cho không tụ nào bị đánh thủng.",
+      "yccd_de_xuat": "Điện dung, ghép tụ nối tiếp và song song",
+      "de_bai": "Một thợ sửa bộ nguồn cần thay một tụ 10 μF đặt ở chỗ có hiệu điện thế làm việc 300 V. Trong hộp linh kiện chỉ có hai tụ chưa tích điện, ghi “15 μF – 250 V” và “30 μF – 250 V”.\na) Phải ghép hai tụ thế nào để được đúng 10 μF?\nb) Bộ tụ ghép được chịu hiệu điện thế tối đa bao nhiêu? Có dùng được ở 300 V không?\nc) Khi làm việc ở 300 V, tính hiệu điện thế trên mỗi tụ và năng lượng bộ tụ tích được.",
+      "dieu_kien_ap_dung": "Hai tụ chưa tích điện trước khi ghép; điện dung đúng bằng giá trị ghi; mỗi tụ không được vượt số vôn ghi trên vỏ.",
+      "phan_tich": [
+        {
+          "trich_de": "cần thay một tụ 10 μF",
+          "du_lieu": "$C_{\\text{bộ}} = 10$ μF",
+          "kien_thuc": "10 μF nhỏ hơn cả hai tụ → phải ghép nối tiếp"
+        },
+        {
+          "trich_de": "hiệu điện thế làm việc 300 V",
+          "du_lieu": "$U = 300$ V",
+          "kien_thuc": "So với $U_{\\max}$ của bộ"
+        },
+        {
+          "trich_de": "“15 μF – 250 V”",
+          "du_lieu": "$C_1 = 15$ μF; $U_{1,\\max} = 250$ V",
+          "kien_thuc": "$Q_{1,\\max} = C_1U_{1,\\max}$"
+        },
+        {
+          "trich_de": "“30 μF – 250 V”",
+          "du_lieu": "$C_2 = 30$ μF; $U_{2,\\max} = 250$ V",
+          "kien_thuc": "$Q_{2,\\max} = C_2U_{2,\\max}$"
+        },
+        {
+          "trich_de": "chịu hiệu điện thế tối đa",
+          "du_lieu": "cần $U_{\\max}$ của bộ",
+          "kien_thuc": "$Q_{\\max}$ là số nhỏ nhất của $C_iU_{i,\\max}$; $U_{\\max} = Q_{\\max}/C_{\\text{bộ}}$"
+        },
+        {
+          "trich_de": "năng lượng bộ tụ tích được",
+          "du_lieu": "cần W",
+          "kien_thuc": "$W = \\tfrac12 C_{\\text{bộ}}U^2$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "C_bộ; U_max; U_1, U_2; W",
+        "cong_thuc": "C_{\\text{bộ}} = \\dfrac{C_1C_2}{C_1+C_2};\\ U_{\\max} = \\dfrac{\\min(C_1U_{1,\\max},\\ C_2U_{2,\\max})}{C_{\\text{bộ}}};\\ U_i = \\dfrac{C_{\\text{bộ}}U}{C_i};\\ W = \\tfrac12 C_{\\text{bộ}}U^2"
+      },
+      "kien_thuc_goi_lai": [
+        "Song song: C bộ lớn hơn tụ lớn nhất; nối tiếp: nhỏ hơn tụ nhỏ nhất",
+        "Nối tiếp: Q chung, tụ nhỏ chịu U lớn",
+        "Giới hạn bộ nối tiếp: $Q_{\\max}$ nhỏ nhất của $C_iU_{i,\\max}$, rồi $U = Q/C_{\\text{bộ}}$",
+        "Vượt số vôn ghi trên vỏ: tụ bị đánh thủng"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Chọn cách ghép",
+          "cong_thuc_chu": "Song song: $C = C_1 + C_2$; nối tiếp: $C = \\dfrac{C_1C_2}{C_1+C_2}$",
+          "the_so": "Song song: $15 + 30 = 45$; nối tiếp: $\\dfrac{15\\cdot30}{15+30}$",
+          "ket_qua": "Ghép nối tiếp: $C_{\\text{bộ}} = 10\\ \\mu\\text{F}$",
+          "kiem_tra": "$10 \\lt 15$: đúng tính chất nối tiếp; song song cho 45 μF, sai yêu cầu."
+        },
+        {
+          "tieu_de": "Điện tích tối đa mỗi tụ chịu được",
+          "cong_thuc_chu": "$Q_{i,\\max} = C_iU_{i,\\max}$",
+          "the_so": "$Q_{1,\\max} = 15\\cdot250$; $Q_{2,\\max} = 30\\cdot250$",
+          "ket_qua": "$Q_{1,\\max} = 3750\\ \\mu\\text{C}$; $Q_{2,\\max} = 7500\\ \\mu\\text{C}$",
+          "kiem_tra": "Q chung nên bộ bị giới hạn bởi số nhỏ: $Q_{\\max} = 3750$ μC."
+        },
+        {
+          "tieu_de": "Hiệu điện thế tối đa của bộ",
+          "cong_thuc_chu": "$U_{\\max} = \\dfrac{Q_{\\max}}{C_{\\text{bộ}}}$",
+          "the_so": "$U_{\\max} = \\dfrac{3750}{10}$",
+          "ket_qua": "$U_{\\max} = 375\\ \\text{V}$",
+          "kiem_tra": "$375 \\lt 500$ (không cộng thẳng hai số vôn); $300 \\lt 375$ nên dùng được."
+        },
+        {
+          "tieu_de": "Hiệu điện thế mỗi tụ ở 300 V",
+          "cong_thuc_chu": "$Q = C_{\\text{bộ}}U$; $U_i = \\dfrac{Q}{C_i}$",
+          "the_so": "$Q = 10\\cdot300 = 3000\\ \\mu\\text{C}$; $U_1 = \\dfrac{3000}{15}$; $U_2 = \\dfrac{3000}{30}$",
+          "ket_qua": "$U_1 = 200\\ \\text{V}$; $U_2 = 100\\ \\text{V}$",
+          "kiem_tra": "$200 + 100 = 300$ V; cả hai đều $\\lt 250$ V, an toàn."
+        },
+        {
+          "tieu_de": "Năng lượng bộ tụ",
+          "cong_thuc_chu": "$W = \\tfrac12 C_{\\text{bộ}}U^2$",
+          "the_so": "$W = \\tfrac12\\cdot10\\cdot10^{-6}\\cdot300^2$",
+          "ket_qua": "$W = 0{,}45\\ \\text{J}$",
+          "kiem_tra": "Cộng từng tụ: $\\tfrac12\\cdot15\\cdot10^{-6}\\cdot200^2 + \\tfrac12\\cdot30\\cdot10^{-6}\\cdot100^2 = 0{,}30 + 0{,}15 = 0{,}45$ J. Khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (C bộ, ghép nối tiếp)",
+          "gia_tri": 10,
+          "don_vi": "μF"
+        },
+        {
+          "y": "b",
+          "gia_tri": 375,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (U1)",
+          "gia_tri": 200,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (U2)",
+          "gia_tri": 100,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (W)",
+          "gia_tri": 0.45,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "C bộ nối tiếp (μF)",
+          "bieu_thuc": "15*30/(15+30)",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U tối đa của bộ (V)",
+          "bieu_thuc": "min(15*250, 30*250)/(15*30/(15+30))",
+          "ky_vong": 375,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U1 ở 300 V",
+          "bieu_thuc": "(15*30/(15+30))*300/15",
+          "ky_vong": 200,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U2 ở 300 V",
+          "bieu_thuc": "(15*30/(15+30))*300/30",
+          "ky_vong": 100,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "năng lượng bộ (J)",
+          "bieu_thuc": "0.5*10e-6*300**2",
+          "ky_vong": 0.45,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Đề cho các tụ có ghi số vôn, yêu cầu tạo một điện dung hoặc hỏi bộ chịu được bao nhiêu vôn → so C cần với từng tụ để chọn cách ghép, rồi lấy $Q_{\\max}$ nhỏ nhất chia cho C bộ.",
+      "bay_thuong_gap": [
+        "Cộng thẳng $250 + 250 = 500$ V cho bộ nối tiếp.",
+        "Nghĩ nối tiếp thì U chia đều, mỗi tụ 150 V.",
+        "Ghép song song vì quen “ghép để tăng”.",
+        "Lấy số vôn lớn nhất thay vì xét tụ chạm giới hạn trước."
+      ],
+      "dieu_ban_khong_chac": [
+        "Thực tế thợ thường mắc thêm điện trở cân bằng cho tụ hoá nối tiếp; bài lí thuyết không nhắc nên không đưa vào."
+      ],
+      "mo_phong_goi_y": "Bàn thợ có hộp linh kiện với hai tụ nhãn “15 μF – 250 V” và “30 μF – 250 V”. Thử ghép song song: đồng hồ điện dung hiện dấu “✗”. Ghép nối tiếp vào bo mạch, nguồn tăng dần hiệu điện thế; trên mỗi tụ có cột hiệu điện thế dâng lên với vạch đỏ 250 V, cột của tụ 15 μF dâng nhanh hơn. Dừng hình trước khi cột chạm vạch đỏ. Nhãn: C1, C2, U, vạch 250 V, vạch 300 V làm việc."
+    }
+  ]
+}

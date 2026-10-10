@@ -1,0 +1,564 @@
+{
+  "lesson_title": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tìm hạt chưa biết bằng bảo toàn A và Z",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Chỉ dùng hai định luật: bảo toàn số nuclôn và bảo toàn điện tích.",
+      "yccd_de_xuat": "Định luật bảo toàn trong phản ứng hạt nhân",
+      "de_bai": "Để tạo ra hạt nhân ${}^{3}_{1}\\text{H}$ dùng làm nhiên liệu cho lò nhiệt hạch thử nghiệm, người ta bắn nơtron vào hạt nhân liti theo phản ứng: ${}^{6}_{3}\\text{Li} + {}^{1}_{0}\\text{n} \\to {}^{3}_{1}\\text{H} + {}^{A}_{Z}\\text{X}$. Xác định số nuclôn $A$ và điện tích $Z$ của hạt X. Cho biết X là hạt nhân nào trong các hạt nhân đã gặp trong bài.",
+      "dieu_kien_ap_dung": "Bảo toàn số nuclôn và bảo toàn điện tích đúng với mọi phản ứng hạt nhân, dù tự phát hay kích thích.",
+      "phan_tich": [
+        {
+          "trich_de": "bắn nơtron vào hạt nhân liti",
+          "du_lieu": "Li: $A_1 = 6$, $Z_1 = 3$; n: $A_2 = 1$, $Z_2 = 0$",
+          "kien_thuc": "Ký hiệu ${}^{A}_{Z}\\text{X}$: số trên là số nuclôn, số dưới là điện tích"
+        },
+        {
+          "trich_de": "${}^{3}_{1}\\text{H} + {}^{A}_{Z}\\text{X}$",
+          "du_lieu": "H: $A_3 = 3$, $Z_3 = 1$; X: $A_4 = A$, $Z_4 = Z$",
+          "kien_thuc": "Hai hạt sinh ra ở vế phải"
+        },
+        {
+          "trich_de": "Xác định số nuclôn $A$ và điện tích $Z$ của hạt X",
+          "du_lieu": "$A = A_1 + A_2 - A_3$; $Z = Z_1 + Z_2 - Z_3$",
+          "kien_thuc": "$A_1 + A_2 = A_3 + A_4$; $Z_1 + Z_2 = Z_3 + Z_4$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "A, Z",
+        "cong_thuc": "A = A_1 + A_2 - A_3;\\ Z = Z_1 + Z_2 - Z_3"
+      },
+      "kien_thuc_goi_lai": [
+        "Bảo toàn số nuclôn: $A_1 + A_2 = A_3 + A_4$.",
+        "Bảo toàn điện tích: $Z_1 + Z_2 = Z_3 + Z_4$.",
+        "Nơtron ${}^{1}_{0}\\text{n}$ có $A = 1$, $Z = 0$.",
+        "Hạt nhân heli ${}^{4}_{2}\\text{He}$ có $A = 4$, $Z = 2$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Bảo toàn số nuclôn",
+          "cong_thuc_chu": "$A_1 + A_2 = A_3 + A$",
+          "the_so": "$6 + 1 = 3 + A$",
+          "ket_qua": "$A = 4$",
+          "kiem_tra": "Số nguyên dương, nhỏ hơn tổng 7 ở vế trái: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Bảo toàn điện tích",
+          "cong_thuc_chu": "$Z_1 + Z_2 = Z_3 + Z$",
+          "the_so": "$3 + 0 = 1 + Z$",
+          "ket_qua": "$Z = 2$",
+          "kiem_tra": "Nơtron mang $Z = 0$ nên không làm đổi tổng điện tích."
+        },
+        {
+          "tieu_de": "Bước 3. Nhận ra hạt X và thử lại",
+          "cong_thuc_chu": "${}^{A}_{Z}\\text{X} = {}^{4}_{2}\\text{X}$",
+          "the_so": "Vế trái: $A = 7$, $Z = 3$. Vế phải: $A = 3 + 4 = 7$, $Z = 1 + 2 = 3$",
+          "ket_qua": "X là ${}^{4}_{2}\\text{He}$",
+          "kiem_tra": "Hai vế khớp cả $A$ lẫn $Z$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "A",
+          "gia_tri": 4,
+          "don_vi": "nuclôn"
+        },
+        {
+          "y": "Z",
+          "gia_tri": 2,
+          "don_vi": "điện tích nguyên tố"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số nuclôn A của X",
+          "bieu_thuc": "6 + 1 - 3",
+          "ky_vong": 4,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "điện tích Z của X",
+          "bieu_thuc": "3 + 0 - 1",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi phương trình phản ứng có một hạt ghi ${}^{A}_{Z}\\text{X}$ hoặc hệ số $x$ chưa biết → viết ngay hai phương trình bảo toàn $A$ và $Z$.",
+      "bay_thuong_gap": [
+        "Quên nơtron ở vế trái nên lấy $6 = 3 + A$.",
+        "Gán cho nơtron điện tích $Z = 1$.",
+        "Cộng khối lượng (u) thay cho số nuclôn, dùng nhầm bảo toàn khối lượng.",
+        "Đọc lẫn số trên và số dưới của ký hiệu hạt nhân."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài không gọi tên \"triti\", \"liti\" là đồng vị; đề chỉ dùng ký hiệu ${}^{3}_{1}\\text{H}$ và tên liti cho dễ đọc."
+      ],
+      "mo_phong_goi_y": "Một nơtron xám bay ngang tới hạt nhân Li gồm 3 chấm đỏ (prôtôn) và 3 chấm xám (nơtron). Hai bên hợp lại, rung nhẹ rồi tách thành hạt ${}^{3}_{1}\\text{H}$ và một hạt thứ hai che kín, ghi dấu \"?\". Góc hình có hai bộ đếm \"Tổng A vế trái\" và \"Tổng Z vế trái\". Nhãn: Li-6, n, H-3, X (?)."
+    },
+    {
+      "label": "Dạng 2 · Tính W từ khối lượng và xét toả hay thu",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại: bảo toàn A, Z của Dạng 1 để tìm hạt X. Thêm mới: tính W từ khối lượng các hạt và xét dấu để kết luận toả hay thu (bẫy: không phải phản ứng hạt nhân nào cũng toả).",
+      "yccd_de_xuat": "Năng lượng toả ra của phản ứng hạt nhân",
+      "de_bai": "Năm 1919, lần đầu tiên người ta biến một hạt nhân thành hạt nhân khác bằng cách bắn hạt ${}^{4}_{2}\\text{He}$ vào khí nitơ: ${}^{14}_{7}\\text{N} + {}^{4}_{2}\\text{He} \\to {}^{1}_{1}\\text{H} + {}^{A}_{Z}\\text{X}$. Cho khối lượng hạt nhân: $m_{\\text{N}} = 13{,}9992\\ \\text{u}$; $m_{\\text{He}} = 4{,}0015\\ \\text{u}$; $m_{\\text{H}} = 1{,}0073\\ \\text{u}$; $m_{\\text{X}} = 16{,}9947\\ \\text{u}$; $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$. a) Xác định $A$, $Z$ của X. b) Tính năng lượng $W$ của phản ứng theo MeV. Phản ứng toả hay thu năng lượng?",
+      "dieu_kien_ap_dung": "Bảo toàn A, Z luôn đúng; $W = (m_{\\text{trước}} - m_{\\text{sau}})c^2$ dùng khối lượng nghỉ của hạt nhân, khối lượng nghỉ không bảo toàn.",
+      "phan_tich": [
+        {
+          "trich_de": "${}^{14}_{7}\\text{N} + {}^{4}_{2}\\text{He} \\to {}^{1}_{1}\\text{H} + {}^{A}_{Z}\\text{X}$",
+          "du_lieu": "Vế trái: $A = 14 + 4$, $Z = 7 + 2$; vế phải có H ($A = 1$, $Z = 1$) và X",
+          "kien_thuc": "Bảo toàn số nuclôn và điện tích"
+        },
+        {
+          "trich_de": "$m_{\\text{N}} = 13{,}9992\\ \\text{u}$; $m_{\\text{He}} = 4{,}0015\\ \\text{u}$",
+          "du_lieu": "$m_{\\text{N}} = 13{,}9992\\ \\text{u}$; $m_{\\text{He}} = 4{,}0015\\ \\text{u}$",
+          "kien_thuc": "Khối lượng các hạt trước phản ứng"
+        },
+        {
+          "trich_de": "$m_{\\text{H}} = 1{,}0073\\ \\text{u}$; $m_{\\text{X}} = 16{,}9947\\ \\text{u}$",
+          "du_lieu": "$m_{\\text{H}} = 1{,}0073\\ \\text{u}$; $m_{\\text{X}} = 16{,}9947\\ \\text{u}$",
+          "kien_thuc": "Khối lượng các hạt sau phản ứng"
+        },
+        {
+          "trich_de": "$1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$",
+          "du_lieu": "$1\\ \\text{u}\\cdot c^2 = 931{,}5\\ \\text{MeV}$",
+          "kien_thuc": "Đổi độ hụt khối ra năng lượng"
+        },
+        {
+          "trich_de": "Phản ứng toả hay thu năng lượng?",
+          "du_lieu": "$W = (m_{\\text{N}} + m_{\\text{He}} - m_{\\text{H}} - m_{\\text{X}})c^2$",
+          "kien_thuc": "$W \\gt 0$ toả; $W \\lt 0$ thu"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "W",
+        "cong_thuc": "W = (m_{\\text{N}} + m_{\\text{He}} - m_{\\text{H}} - m_{\\text{X}})c^2"
+      },
+      "kien_thuc_goi_lai": [
+        "$W = (m_A + m_B - m_C - m_D)c^2$.",
+        "Trước nặng hơn thì toả ($W \\gt 0$).",
+        "Sau nặng hơn thì thu ($W \\lt 0$), phải cấp thêm năng lượng.",
+        "$1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Tìm A, Z của X (như Dạng 1)",
+          "cong_thuc_chu": "$14 + 4 = 1 + A$; $7 + 2 = 1 + Z$",
+          "the_so": "$A = 18 - 1$; $Z = 9 - 1$",
+          "ket_qua": "$A = 17$, $Z = 8$",
+          "kiem_tra": "Vế phải: $1 + 17 = 18$, $1 + 8 = 9$, khớp vế trái."
+        },
+        {
+          "tieu_de": "Bước 2. Tổng khối lượng trước",
+          "cong_thuc_chu": "$m_{\\text{trước}} = m_{\\text{N}} + m_{\\text{He}}$",
+          "the_so": "$13{,}9992 + 4{,}0015$",
+          "ket_qua": "$m_{\\text{trước}} = 18{,}0007\\ \\text{u}$",
+          "kiem_tra": "Gần bằng 18, đúng với 18 nuclôn."
+        },
+        {
+          "tieu_de": "Bước 3. Tổng khối lượng sau",
+          "cong_thuc_chu": "$m_{\\text{sau}} = m_{\\text{H}} + m_{\\text{X}}$",
+          "the_so": "$1{,}0073 + 16{,}9947$",
+          "ket_qua": "$m_{\\text{sau}} = 18{,}0020\\ \\text{u}$",
+          "kiem_tra": "Giữ đủ 4 chữ số thập phân, chưa làm tròn."
+        },
+        {
+          "tieu_de": "Bước 4. Năng lượng của phản ứng",
+          "cong_thuc_chu": "$W = (m_{\\text{trước}} - m_{\\text{sau}})c^2$",
+          "the_so": "$W = (18{,}0007 - 18{,}0020) \\times 931{,}5$",
+          "ket_qua": "$W = -0{,}0013 \\times 931{,}5 \\approx -1{,}211\\ \\text{MeV}$",
+          "kiem_tra": "u nhân MeV/u ra MeV. Độ lớn cỡ 1 MeV: hợp lí với phản ứng hạt nhân."
+        },
+        {
+          "tieu_de": "Bước 5. Kết luận toả hay thu",
+          "cong_thuc_chu": "$W \\lt 0 \\Rightarrow$ thu năng lượng",
+          "the_so": "$W \\approx -1{,}21\\ \\text{MeV} \\lt 0$",
+          "ket_qua": "Phản ứng thu khoảng $1{,}21\\ \\text{MeV}$",
+          "kiem_tra": "Khối lượng sau lớn hơn khối lượng trước: đúng quy tắc \"sau nặng hơn thì thu\"."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – A",
+          "gia_tri": 17,
+          "don_vi": "nuclôn"
+        },
+        {
+          "y": "a – Z",
+          "gia_tri": 8,
+          "don_vi": "điện tích nguyên tố"
+        },
+        {
+          "y": "b – W (âm: thu năng lượng)",
+          "gia_tri": -1.211,
+          "don_vi": "MeV"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ hụt khối (trước − sau)",
+          "bieu_thuc": "13.9992 + 4.0015 - 1.0073 - 16.9947",
+          "ky_vong": -0.0013,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "năng lượng W theo MeV",
+          "bieu_thuc": "(13.9992 + 4.0015 - 1.0073 - 16.9947) * 931.5",
+          "ky_vong": -1.211,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho khối lượng từng hạt và hỏi \"toả hay thu\" → lấy tổng trước trừ tổng sau, nhân 931,5, đọc dấu.",
+      "bay_thuong_gap": [
+        "Lấy sau trừ trước, ra $+1{,}21\\ \\text{MeV}$ rồi kết luận toả.",
+        "Mặc định mọi phản ứng hạt nhân đều toả năng lượng.",
+        "Làm tròn khối lượng sớm (ví dụ 18,00 và 18,00) nên ra $W = 0$.",
+        "Cho rằng khối lượng được bảo toàn nên $W$ luôn bằng 0."
+      ],
+      "dieu_ban_khong_chac": [
+        "Số liệu khối lượng đã làm tròn 4 chữ số thập phân; giá trị thực nghiệm của phản ứng này khoảng $-1{,}19\\ \\text{MeV}$, lệch nhẹ so với $-1{,}211\\ \\text{MeV}$ do làm tròn."
+      ],
+      "mo_phong_goi_y": "Hạt ${}^{4}_{2}\\text{He}$ bay tới hạt nhân N-14, hai hạt hợp lại rồi tách thành một prôtôn nhỏ và hạt X lớn ghi \"?\". Bên cạnh là một chiếc cân hai đĩa: đĩa trái đặt N + He, đĩa phải đặt H + X; kim cân chỉ lệch rất ít, không ghi số. Nhãn: N-14, He-4, H-1, X (?), \"m trước\", \"m sau\"."
+    },
+    {
+      "label": "Dạng 3 · Năng lượng nhiệt hạch của một lượng chất",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại: tính W của một phản ứng từ độ hụt khối (chính là Dạng 2) làm bước con. Thêm mới: chuyển từ một phản ứng sang lượng chất vĩ mô (đổi MeV ra J, đếm số phản ứng bằng $N_A$).",
+      "yccd_de_xuat": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "de_bai": "Lò thử nghiệm nhiệt hạch dùng phản ứng ${}^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$. Cho khối lượng hạt nhân: $m_{\\text{D}} = 2{,}0136\\ \\text{u}$ (hạt ${}^{2}_{1}\\text{H}$); $m_{\\text{T}} = 3{,}0155\\ \\text{u}$ (hạt ${}^{3}_{1}\\text{H}$); $m_{\\text{He}} = 4{,}0015\\ \\text{u}$; $m_{\\text{n}} = 1{,}0087\\ \\text{u}$; $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$; $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$; $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$; khối lượng mol của heli lấy bằng $4\\ \\text{g/mol}$. a) Tính năng lượng toả ra của một phản ứng theo MeV. b) Tính năng lượng toả ra khi tạo thành $1\\ \\text{g}$ heli, theo jun. c) Năng lượng ở câu b bằng năng lượng đốt cháy bao nhiêu kilôgam than, biết than toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$?",
+      "dieu_kien_ap_dung": "Mọi phản ứng giống nhau, mỗi phản ứng tạo đúng một hạt nhân heli; W tính từ độ hụt khối của các hạt nhân.",
+      "phan_tich": [
+        {
+          "trich_de": "${}^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$",
+          "du_lieu": "Mỗi phản ứng sinh 1 hạt He",
+          "kien_thuc": "Nhiệt hạch: hạt nhân rất nhẹ kết hợp thành hạt nặng hơn; bảo toàn A, Z"
+        },
+        {
+          "trich_de": "$m_{\\text{D}} = 2{,}0136\\ \\text{u}$",
+          "du_lieu": "$m_{\\text{D}} = 2{,}0136\\ \\text{u}$; $m_{\\text{T}} = 3{,}0155\\ \\text{u}$",
+          "kien_thuc": "Khối lượng trước phản ứng"
+        },
+        {
+          "trich_de": "$m_{\\text{He}} = 4{,}0015\\ \\text{u}$; $m_{\\text{n}} = 1{,}0087\\ \\text{u}$",
+          "du_lieu": "$m_{\\text{He}} = 4{,}0015\\ \\text{u}$; $m_{\\text{n}} = 1{,}0087\\ \\text{u}$",
+          "kien_thuc": "Khối lượng sau phản ứng"
+        },
+        {
+          "trich_de": "$1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$",
+          "du_lieu": "$1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$",
+          "kien_thuc": "Đổi đơn vị năng lượng"
+        },
+        {
+          "trich_de": "tạo thành $1\\ \\text{g}$ heli",
+          "du_lieu": "$m = 1\\ \\text{g}$; $M = 4\\ \\text{g/mol}$; $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "Số hạt $N = \\dfrac{m}{M}N_A$ = số phản ứng"
+        },
+        {
+          "trich_de": "than toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$",
+          "du_lieu": "$q = 2{,}7\\cdot10^{7}\\ \\text{J/kg}$",
+          "kien_thuc": "$m_{\\text{than}} = E/q$"
+        },
+        {
+          "trich_de": "Năng lượng ở câu b bằng năng lượng đốt cháy bao nhiêu kilôgam than",
+          "du_lieu": "$m_{\\text{than}} = \\dfrac{N \\cdot W}{q}$",
+          "kien_thuc": "So sánh năng lượng"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "W, E, m_than",
+        "cong_thuc": "E = \\dfrac{m}{M}N_A \\cdot W;\\ m_{\\text{than}} = \\dfrac{E}{q}"
+      },
+      "kien_thuc_goi_lai": [
+        "$W = (m_{\\text{D}} + m_{\\text{T}} - m_{\\text{He}} - m_{\\text{n}})c^2$.",
+        "Phản ứng D + T toả cỡ $17{,}6\\ \\text{MeV}$.",
+        "Số hạt trong khối lượng $m$: $N = \\dfrac{m}{M}N_A$.",
+        "$1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Kiểm tra bảo toàn",
+          "cong_thuc_chu": "$A$: $2 + 3 = 4 + 1$; $Z$: $1 + 1 = 2 + 0$",
+          "the_so": "$5 = 5$; $2 = 2$",
+          "ket_qua": "Phương trình cân bằng",
+          "kiem_tra": "Đúng hai định luật bảo toàn."
+        },
+        {
+          "tieu_de": "Bước 2. Độ hụt khối (như Dạng 2)",
+          "cong_thuc_chu": "$\\Delta m = m_{\\text{D}} + m_{\\text{T}} - m_{\\text{He}} - m_{\\text{n}}$",
+          "the_so": "$5{,}0291 - 5{,}0102$",
+          "ket_qua": "$\\Delta m = 0{,}0189\\ \\text{u}$",
+          "kiem_tra": "$\\Delta m \\gt 0$: phản ứng toả."
+        },
+        {
+          "tieu_de": "Bước 3. Năng lượng một phản ứng",
+          "cong_thuc_chu": "$W = \\Delta m \\cdot 931{,}5$",
+          "the_so": "$0{,}0189 \\times 931{,}5$",
+          "ket_qua": "$W \\approx 17{,}61\\ \\text{MeV}$",
+          "kiem_tra": "Khớp giá trị cỡ $17{,}6\\ \\text{MeV}$ trong bài."
+        },
+        {
+          "tieu_de": "Bước 4. Đổi ra jun",
+          "cong_thuc_chu": "$W(\\text{J}) = W(\\text{MeV}) \\times 1{,}6\\cdot10^{-13}$",
+          "the_so": "$17{,}61 \\times 1{,}6\\cdot10^{-13}$",
+          "ket_qua": "$W \\approx 2{,}817\\cdot10^{-12}\\ \\text{J}$",
+          "kiem_tra": "Rất nhỏ cho một phản ứng: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 5. Số phản ứng khi tạo 1 g heli",
+          "cong_thuc_chu": "$N = \\dfrac{m}{M}N_A$",
+          "the_so": "$N = \\dfrac{1}{4} \\times 6{,}02\\cdot10^{23}$",
+          "ket_qua": "$N \\approx 1{,}505\\cdot10^{23}$ phản ứng",
+          "kiem_tra": "Mỗi phản ứng tạo 1 hạt He nên số phản ứng bằng số hạt He."
+        },
+        {
+          "tieu_de": "Bước 6. Năng lượng toả ra",
+          "cong_thuc_chu": "$E = N \\cdot W$",
+          "the_so": "$1{,}505\\cdot10^{23} \\times 2{,}817\\cdot10^{-12}$",
+          "ket_qua": "$E \\approx 4{,}239\\cdot10^{11}\\ \\text{J}$",
+          "kiem_tra": "Lớn hơn cỡ 6 lần so với 1 g U-235 phân hạch ($7\\cdot10^{10}\\ \\text{J}$): đúng là nhiệt hạch toả nhiều hơn tính theo khối lượng."
+        },
+        {
+          "tieu_de": "Bước 7. Khối lượng than tương đương",
+          "cong_thuc_chu": "$m_{\\text{than}} = \\dfrac{E}{q}$",
+          "the_so": "$\\dfrac{4{,}239\\cdot10^{11}}{2{,}7\\cdot10^{7}}$",
+          "ket_qua": "$m_{\\text{than}} \\approx 1{,}570\\cdot10^{4}\\ \\text{kg}$ (khoảng 15,7 tấn)",
+          "kiem_tra": "J chia J/kg ra kg."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 17.61,
+          "don_vi": "MeV"
+        },
+        {
+          "y": "b",
+          "gia_tri": 423900000000,
+          "don_vi": "J"
+        },
+        {
+          "y": "c",
+          "gia_tri": 15700,
+          "don_vi": "kg"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ hụt khối",
+          "bieu_thuc": "2.0136 + 3.0155 - 4.0015 - 1.0087",
+          "ky_vong": 0.0189,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "W một phản ứng (MeV)",
+          "bieu_thuc": "(2.0136 + 3.0155 - 4.0015 - 1.0087) * 931.5",
+          "ky_vong": 17.61,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "năng lượng khi tạo 1 g He (J)",
+          "bieu_thuc": "(1/4) * 6.02e23 * (2.0136 + 3.0155 - 4.0015 - 1.0087) * 931.5 * 1.6e-13",
+          "ky_vong": 423900000000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "khối lượng than tương đương (kg)",
+          "bieu_thuc": "(1/4) * 6.02e23 * (2.0136 + 3.0155 - 4.0015 - 1.0087) * 931.5 * 1.6e-13 / 2.7e7",
+          "ky_vong": 15700,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho khối lượng hạt nhân và hỏi năng lượng của \"1 g\", \"1 kg\" chất → tính W một phản ứng, đổi ra J, nhân số phản ứng $N = \\dfrac{m}{M}N_A$.",
+      "bay_thuong_gap": [
+        "Nhân $N_A$ với khối lượng tính bằng kg mà vẫn để $M$ theo g/mol.",
+        "Quên đổi MeV ra J trước khi nhân số hạt.",
+        "Đếm số phản ứng theo tổng khối lượng D + T mà lại dùng $M$ của heli.",
+        "Nhầm nhiệt hạch với phân hạch, cho rằng cần nơtron chậm để mồi."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khối lượng mol heli lấy tròn $4\\ \\text{g/mol}$ theo đề; giá trị chính xác hơn khoảng $4{,}0026\\ \\text{g/mol}$, chỉ lệch dưới 0,1%."
+      ],
+      "mo_phong_goi_y": "Trong buồng plasma hình xuyến, hai hạt nhân nhỏ (D xanh, T tím) lao vào nhau, hợp thành hạt He và bắn ra một nơtron, kèm chớp sáng. Sau đó hình thu nhỏ: rất nhiều cặp D–T cùng phản ứng, một bình nhỏ ghi \"1 g He\" dần đầy; bên cạnh là một đống than đang cao dần, không ghi số. Nhãn: H-2, H-3, He-4, n, \"1 g He\", \"than\"."
+    },
+    {
+      "label": "Dạng 4 · Nhà máy điện hạt nhân: từ công suất lò về nhiên liệu",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại: bảo toàn A, Z (Dạng 1) cho ý a; chuỗi \"năng lượng một phản ứng → J → số hạt → khối lượng\" của Dạng 3. Thêm mới: bài ngược, đi từ công suất lò về số phân hạch và khối lượng nhiên liệu, với dữ kiện ẩn một ngày đêm = 86 400 s, gắn với ý nghĩa $k = 1$.",
+      "yccd_de_xuat": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "de_bai": "Một lò phản ứng của nhà máy điện hạt nhân toả nhiệt đều với công suất $P = 3000\\ \\text{MW}$ (mỗi giây toả $3{,}0\\cdot10^{9}\\ \\text{J}$ nhiệt). Nhiên liệu là U-235, một phân hạch điển hình: ${}^{235}_{92}\\text{U} + {}^{1}_{0}\\text{n} \\to {}^{139}_{54}\\text{Xe} + {}^{95}_{38}\\text{Sr} + x\\,{}^{1}_{0}\\text{n}$; mỗi phân hạch toả trung bình $200\\ \\text{MeV}$. Cho $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$; $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$; khối lượng mol U-235 là $235\\ \\text{g/mol}$; than toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$. a) Tìm $x$. Để công suất lò không đổi, trung bình mỗi phân hạch được phép có bao nhiêu nơtron gây phân hạch tiếp? Thanh điều khiển làm gì với số nơtron còn lại? b) Tính số phân hạch xảy ra trong lò mỗi giây. c) Lò chạy liên tục một ngày đêm tiêu thụ bao nhiêu kilôgam U-235? Cần đốt bao nhiêu kilôgam than để toả cùng lượng nhiệt đó?",
+      "dieu_kien_ap_dung": "Công suất nhiệt không đổi; mọi phân hạch toả như nhau 200 MeV; U-235 chỉ mất đi do phân hạch.",
+      "phan_tich": [
+        {
+          "trich_de": "toả nhiệt đều với công suất $P = 3000\\ \\text{MW}$",
+          "du_lieu": "$P = 3{,}0\\cdot10^{9}\\ \\text{J/s}$",
+          "kien_thuc": "Năng lượng toả mỗi giây"
+        },
+        {
+          "trich_de": "${}^{235}_{92}\\text{U} + {}^{1}_{0}\\text{n} \\to {}^{139}_{54}\\text{Xe} + {}^{95}_{38}\\text{Sr} + x\\,{}^{1}_{0}\\text{n}$",
+          "du_lieu": "Vế trái $A = 236$, $Z = 92$; vế phải $139 + 95 + x$",
+          "kien_thuc": "Bảo toàn số nuclôn và điện tích"
+        },
+        {
+          "trich_de": "mỗi phân hạch toả trung bình $200\\ \\text{MeV}$",
+          "du_lieu": "$W = 200\\ \\text{MeV}$",
+          "kien_thuc": "Đổi ra J: nhân $1{,}6\\cdot10^{-13}$"
+        },
+        {
+          "trich_de": "Để công suất lò không đổi",
+          "du_lieu": "$k = 1$",
+          "kien_thuc": "Hệ số nhân nơtron; thanh điều khiển hấp thụ nơtron"
+        },
+        {
+          "trich_de": "chạy liên tục một ngày đêm",
+          "du_lieu": "$t = 24 \\times 3600 = 86\\,400\\ \\text{s}$ (dữ kiện ẩn)",
+          "kien_thuc": "$E = P\\,t$"
+        },
+        {
+          "trich_de": "khối lượng mol U-235 là $235\\ \\text{g/mol}$",
+          "du_lieu": "$M = 235\\ \\text{g/mol}$; $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "$m = \\dfrac{N}{N_A}M$"
+        },
+        {
+          "trich_de": "tiêu thụ bao nhiêu kilôgam U-235",
+          "du_lieu": "$m_{\\text{U}} = \\dfrac{P\\,t}{W}\\cdot\\dfrac{M}{N_A}$",
+          "kien_thuc": "Bài ngược: từ năng lượng về khối lượng"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "x, n, m_U, m_than",
+        "cong_thuc": "n = \\dfrac{P}{W};\\ m_{\\text{U}} = \\dfrac{n\\,t}{N_A}M;\\ m_{\\text{than}} = \\dfrac{P\\,t}{q}"
+      },
+      "kien_thuc_goi_lai": [
+        "$k \\lt 1$ tắt dần, $k = 1$ tự duy trì, $k \\gt 1$ tăng nhanh.",
+        "Thanh điều khiển (bo, cađimi) hấp thụ nơtron để giữ $k = 1$.",
+        "Năng lượng trong thời gian $t$: $E = P\\,t$.",
+        "Khối lượng ứng với $N$ hạt: $m = \\dfrac{N}{N_A}M$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1 (ý a). Tìm x bằng bảo toàn",
+          "cong_thuc_chu": "$235 + 1 = 139 + 95 + x$; kiểm $Z$: $92 = 54 + 38$",
+          "the_so": "$x = 236 - 234$",
+          "ket_qua": "$x = 2$",
+          "kiem_tra": "Nằm trong khoảng 2–3 nơtron mỗi phân hạch như bài nêu."
+        },
+        {
+          "tieu_de": "Bước 2 (ý a). Điều kiện công suất không đổi",
+          "cong_thuc_chu": "$k = 1$",
+          "the_so": "Trong 2 nơtron sinh ra, trung bình chỉ 1 nơtron gây phân hạch tiếp",
+          "ket_qua": "1 nơtron; nơtron còn lại bị thanh điều khiển hấp thụ",
+          "kiem_tra": "Nếu để cả 2 nơtron mồi tiếp thì $k \\gt 1$, công suất tăng vọt."
+        },
+        {
+          "tieu_de": "Bước 3 (ý b). Năng lượng một phân hạch theo J",
+          "cong_thuc_chu": "$W = 200 \\times 1{,}6\\cdot10^{-13}$",
+          "the_so": "$200 \\times 1{,}6\\cdot10^{-13}$",
+          "ket_qua": "$W = 3{,}2\\cdot10^{-11}\\ \\text{J}$",
+          "kiem_tra": "Giống bài tập \"điền bước\" trong bài học."
+        },
+        {
+          "tieu_de": "Bước 4 (ý b). Số phân hạch mỗi giây",
+          "cong_thuc_chu": "$n = \\dfrac{P}{W}$",
+          "the_so": "$n = \\dfrac{3{,}0\\cdot10^{9}}{3{,}2\\cdot10^{-11}}$",
+          "ket_qua": "$n \\approx 9{,}375\\cdot10^{19}$ phân hạch/s",
+          "kiem_tra": "J/s chia J ra 1/s."
+        },
+        {
+          "tieu_de": "Bước 5 (ý c). Số phân hạch trong một ngày",
+          "cong_thuc_chu": "$N = n\\,t$",
+          "the_so": "$9{,}375\\cdot10^{19} \\times 86\\,400$",
+          "ket_qua": "$N \\approx 8{,}100\\cdot10^{24}$",
+          "kiem_tra": "Lớn hơn $N_A$ khoảng 13 lần, tức cỡ 13 mol."
+        },
+        {
+          "tieu_de": "Bước 6 (ý c). Khối lượng U-235 tiêu thụ",
+          "cong_thuc_chu": "$m_{\\text{U}} = \\dfrac{N}{N_A}M$",
+          "the_so": "$\\dfrac{8{,}100\\cdot10^{24}}{6{,}02\\cdot10^{23}} \\times 235\\ \\text{g}$",
+          "ket_qua": "$m_{\\text{U}} \\approx 3162\\ \\text{g} \\approx 3{,}162\\ \\text{kg}$",
+          "kiem_tra": "Vài kilôgam mỗi ngày cho lò cỡ nghìn MW: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 7 (ý c). Khối lượng than tương đương",
+          "cong_thuc_chu": "$m_{\\text{than}} = \\dfrac{P\\,t}{q}$",
+          "the_so": "$\\dfrac{3{,}0\\cdot10^{9} \\times 86\\,400}{2{,}7\\cdot10^{7}}$",
+          "ket_qua": "$m_{\\text{than}} \\approx 9{,}600\\cdot10^{6}\\ \\text{kg}$ (khoảng 9600 tấn)",
+          "kiem_tra": "Tỉ số $9{,}6\\cdot10^{6} / 3{,}162 \\approx 3\\cdot10^{6}$, cỡ \"1 g urani ≈ 2,6–3 tấn than\" trong bài."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – x",
+          "gia_tri": 2,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "a – số nơtron được mồi tiếp",
+          "gia_tri": 1,
+          "don_vi": "nơtron/phân hạch"
+        },
+        {
+          "y": "b",
+          "gia_tri": 93750000000000000000,
+          "don_vi": "phân hạch/s"
+        },
+        {
+          "y": "c – U-235",
+          "gia_tri": 3.162,
+          "don_vi": "kg"
+        },
+        {
+          "y": "c – than",
+          "gia_tri": 9600000,
+          "don_vi": "kg"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số nơtron x",
+          "bieu_thuc": "235 + 1 - 139 - 95",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phân hạch mỗi giây",
+          "bieu_thuc": "3.0e9 / (200 * 1.6e-13)",
+          "ky_vong": 93750000000000000000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "khối lượng U-235 một ngày (kg)",
+          "bieu_thuc": "3.0e9 * 86400 / (200 * 1.6e-13) / 6.02e23 * 235 / 1000",
+          "ky_vong": 3.162,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "khối lượng than một ngày (kg)",
+          "bieu_thuc": "3.0e9 * 86400 / 2.7e7",
+          "ky_vong": 9600000,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho công suất lò hoặc nhà máy và hỏi nhiên liệu tiêu thụ trong một khoảng thời gian → $E = P\\,t$, chia năng lượng một phân hạch ra số hạt, đổi về khối lượng; ý định tính về $k$ và thanh điều khiển.",
+      "bay_thuong_gap": [
+        "Quên đổi một ngày ra 86 400 s, nhân với 24.",
+        "Coi MW là $10^{3}\\ \\text{W}$ thay vì $10^{6}\\ \\text{W}$.",
+        "Giữ khối lượng theo gam mà ghi đơn vị kg.",
+        "Cho rằng mọi nơtron sinh ra đều phải gây phân hạch tiếp; thực ra khi đó $k \\gt 1$.",
+        "Nghĩ thanh điều khiển làm chậm phản ứng bằng cách làm nguội lò, thay vì hấp thụ nơtron."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài học không nói tới hiệu suất nhà máy nên đề chỉ dùng công suất nhiệt của lò, không hỏi công suất điện.",
+        "Ý a đơn giản hoá: trong lò thật, một phần nơtron dư còn thoát ra ngoài hoặc bị vật liệu khác hấp thụ; bài học chỉ nêu vai trò hấp thụ của thanh điều khiển."
+      ],
+      "mo_phong_goi_y": "Sơ đồ nhà máy như Hình 1: lò phản ứng → bộ trao đổi nhiệt → tua bin → máy phát. Phóng to trong lò: một nơtron làm vỡ U-235 thành Xe và Sr, bắn ra vài nơtron; một nơtron bay tới hạt U khác, nơtron kia bị thanh điều khiển màu đen hút vào. Thanh điều khiển kéo lên, đẩy xuống được; đồng hồ hiển thị \"k\" và \"công suất\" thay đổi theo, không ghi số. Góc dưới có đồng hồ thời gian chạy tới \"1 ngày\" và hai đĩa so sánh: \"U-235 tiêu thụ\" và \"than tương đương\". Nhãn: U-235, Xe-139, Sr-95, n, thanh điều khiển, chất tải nhiệt, tua bin, máy phát."
+    }
+  ]
+}

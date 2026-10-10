@@ -1,0 +1,497 @@
+{
+  "lesson_title": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Nhận biết nơi có điện trường xoáy",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nChỉ dùng một tiêu chí: từ trường có biến thiên theo thời gian hay không.",
+      "yccd_de_xuat": "Nêu được từ trường biến thiên sinh ra điện trường xoáy và ngược lại.",
+      "de_bai": "Xét bốn trường hợp sau:\n(1) Một nam châm thẳng nằm yên trong lòng một ống dây.\n(2) Một nam châm thẳng được đẩy nhanh vào lòng ống dây.\n(3) Một quả cầu kim loại tích điện $q = 2\\ \\mu\\text{C}$ đặt cố định trên giá cách điện.\n(4) Một ống dây có dòng điện xoay chiều tần số 50 Hz chạy qua.\na) Có bao nhiêu trường hợp xuất hiện điện trường xoáy?\nb) Nêu dạng đường sức của điện trường xoáy trong các trường hợp đó.",
+      "dieu_kien_ap_dung": "Điện trường xoáy chỉ xuất hiện ở vùng có từ trường biến thiên theo thời gian; độ mạnh của từ trường không quyết định.",
+      "phan_tich": [
+        {
+          "trich_de": "nằm yên trong lòng một ống dây",
+          "du_lieu": "$\\vec{B}$ không đổi theo thời gian",
+          "kien_thuc": "Từ trường không biến thiên thì không sinh điện trường xoáy"
+        },
+        {
+          "trich_de": "được đẩy nhanh vào lòng ống dây",
+          "du_lieu": "$\\vec{B}$ tại mỗi điểm trong ống thay đổi",
+          "kien_thuc": "Từ trường biến thiên sinh điện trường xoáy"
+        },
+        {
+          "trich_de": "tích điện $q = 2\\ \\mu\\text{C}$ đặt cố định",
+          "du_lieu": "$q = 2 \\cdot 10^{-6}$ C, đứng yên",
+          "kien_thuc": "Điện tích đứng yên gây điện trường tĩnh, đường sức không khép kín"
+        },
+        {
+          "trich_de": "dòng điện xoay chiều tần số 50 Hz",
+          "du_lieu": "$f = 50$ Hz, dòng đổi chiều liên tục",
+          "kien_thuc": "Dòng biến thiên gây từ trường biến thiên"
+        },
+        {
+          "trich_de": "dạng đường sức của điện trường xoáy",
+          "du_lieu": "cần tìm: dạng đường sức",
+          "kien_thuc": "Đường sức điện trường xoáy là đường cong kín bao quanh đường cảm ứng từ"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "N",
+        "cong_thuc": "N = \\text{số trường hợp có } \\vec{B} \\text{ biến thiên theo thời gian}"
+      },
+      "kien_thuc_goi_lai": [
+        "Từ trường biến thiên theo thời gian sinh ra điện trường xoáy.",
+        "Đường sức điện trường xoáy là đường cong kín, bao quanh các đường cảm ứng từ.",
+        "Điện trường tĩnh do điện tích đứng yên gây ra, đường sức không khép kín.",
+        "Thí nghiệm nam châm rơi: kim điện kế về 0 khi nam châm nằm yên."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chọn tiêu chí",
+          "cong_thuc_chu": "$\\vec{B}$ biến thiên theo thời gian $\\Rightarrow$ có điện trường xoáy",
+          "the_so": "Chỉ xét $\\vec{B}$ có đổi theo thời gian không, không xét $\\vec{B}$ mạnh hay yếu.",
+          "ket_qua": "Tiêu chí: sự biến thiên của $\\vec{B}$",
+          "kiem_tra": "Khớp thí nghiệm: nam châm nằm yên thì kim điện kế chỉ 0."
+        },
+        {
+          "tieu_de": "Bước 2. Xét trường hợp (1) và (2)",
+          "cong_thuc_chu": "(1): $\\vec{B}$ không đổi; (2): $\\vec{B}$ thay đổi",
+          "the_so": "(1) nam châm nằm yên → không có.\n(2) nam châm chuyển động → có.",
+          "ket_qua": "(1) không; (2) có",
+          "kiem_tra": "Cùng một nam châm, chỉ khác ở chỗ chuyển động hay đứng yên."
+        },
+        {
+          "tieu_de": "Bước 3. Xét trường hợp (3) và (4)",
+          "cong_thuc_chu": "(3): điện tích đứng yên; (4): dòng xoay chiều",
+          "the_so": "(3) chỉ có điện trường tĩnh, không có từ trường biến thiên → không.\n(4) dòng đổi chiều 50 lần mỗi giây theo chu kì → $\\vec{B}$ biến thiên → có.",
+          "ket_qua": "(3) không; (4) có",
+          "kiem_tra": "(3) là điện trường tĩnh, không phải điện trường xoáy."
+        },
+        {
+          "tieu_de": "Bước 4. Đếm và nêu dạng đường sức",
+          "cong_thuc_chu": "$N$ = số trường hợp \"có\"",
+          "the_so": "$N = 0 + 1 + 0 + 1$",
+          "ket_qua": "$N = 2$ trường hợp; đường sức là đường cong kín bao quanh đường cảm ứng từ",
+          "kiem_tra": "$N$ nguyên, nằm trong khoảng 0 đến 4."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 2,
+          "don_vi": "trường hợp"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số trường hợp có điện trường xoáy",
+          "bieu_thuc": "sum([0, 1, 0, 1])",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề liệt kê nhiều tình huống nam châm, ống dây, điện tích và hỏi có điện trường xoáy không → kiểm tra từng tình huống: từ trường có biến thiên theo thời gian không.",
+      "bay_thuong_gap": [
+        "Nghĩ nam châm mạnh nằm yên vẫn sinh điện trường xoáy.",
+        "Coi điện trường quanh quả cầu tích điện là điện trường xoáy.",
+        "Vẽ đường sức điện trường xoáy hở, đi từ dương sang âm."
+      ],
+      "dieu_ban_khong_chac": [
+        "Tin nhắn không kèm danh mục YCCĐ; `yccd_de_xuat` chép nguyên văn từ mục tiêu bài học."
+      ],
+      "mo_phong_goi_y": "Bốn ô hình nhỏ đặt cạnh nhau, đánh số (1)–(4). Ô (1): nam châm đứng yên trong ống dây. Ô (2): nam châm trượt vào ống dây. Ô (3): quả cầu trên giá cách điện, có dấu +. Ô (4): ống dây nối nguồn xoay chiều, mũi tên dòng điện đổi chiều liên tục. Chưa vẽ đường sức điện để không lộ đáp án. Nhãn: N, S, q, f = 50 Hz, ống dây."
+    },
+    {
+      "label": "Dạng 2 · Tụ điện, dòng điện dịch và góc giữa E, B",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại tiêu chí của dạng 1: chỉ sự biến thiên mới sinh ra trường kia, nay áp dụng theo chiều ngược (điện trường biến thiên sinh từ trường).\nThêm một bẫy mới: tụ nối nguồn một chiều đã tích đầy thì điện trường không đổi, nên không có từ trường.",
+      "yccd_de_xuat": "Hiểu điện từ trường là một trường thống nhất; tại mỗi điểm $\\vec{E}$ vuông góc với $\\vec{B}$.",
+      "de_bai": "Một tụ điện phẳng có điện dung $C = 2{,}2\\ \\mu\\text{F}$, giữa hai bản là lớp điện môi. Xét ba cách nối tụ:\n(a) Nối với nguồn một chiều 12 V qua một điện trở, ngay sau khi đóng khoá, tụ đang tích điện.\n(b) Vẫn mạch đó, sau 10 phút tụ đã tích điện đầy, điện tích hai bản không đổi nữa.\n(c) Nối với nguồn xoay chiều 12 V – 50 Hz.\n1) Có bao nhiêu cách nối mà vùng giữa hai bản tụ xuất hiện từ trường?\n2) Tại một điểm giữa hai bản có cả điện trường và từ trường biến thiên, góc giữa $\\vec{E}$ và $\\vec{B}$ bằng bao nhiêu độ?",
+      "dieu_kien_ap_dung": "Giữa hai bản tụ chỉ có từ trường khi điện trường ở đó biến thiên (có dòng điện dịch); điện môi không cho điện tích chạy qua.",
+      "phan_tich": [
+        {
+          "trich_de": "giữa hai bản là lớp điện môi",
+          "du_lieu": "không có điện tích chạy qua",
+          "kien_thuc": "Cái \"chạy qua\" tụ là dòng điện dịch, không phải dòng điện tích"
+        },
+        {
+          "trich_de": "ngay sau khi đóng khoá, tụ đang tích điện",
+          "du_lieu": "điện tích hai bản đang tăng → $\\vec{E}$ tăng",
+          "kien_thuc": "Điện trường biến thiên → dòng điện dịch → từ trường"
+        },
+        {
+          "trich_de": "tụ đã tích điện đầy, điện tích hai bản không đổi nữa",
+          "du_lieu": "$\\vec{E}$ không đổi theo thời gian",
+          "kien_thuc": "Không có dòng điện dịch → không có từ trường"
+        },
+        {
+          "trich_de": "nguồn xoay chiều 12 V – 50 Hz",
+          "du_lieu": "$U = 12$ V, $f = 50$ Hz, tụ nạp xả liên tục",
+          "kien_thuc": "$\\vec{E}$ biến thiên cả độ lớn lẫn chiều → có từ trường"
+        },
+        {
+          "trich_de": "góc giữa $\\vec{E}$ và $\\vec{B}$",
+          "du_lieu": "cần tìm: $\\alpha$",
+          "kien_thuc": "Tại mỗi điểm của điện từ trường, $\\vec{E} \\perp \\vec{B}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "N, \\alpha",
+        "cong_thuc": "N = \\text{số cách nối có } \\vec{E} \\text{ biến thiên};\\ \\alpha = (\\vec{E}, \\vec{B})"
+      },
+      "kien_thuc_goi_lai": [
+        "Khi tụ tích hoặc phóng điện, điện trường giữa hai bản biến thiên.",
+        "Điện trường biến thiên tương đương dòng điện dịch; dòng điện dịch gây từ trường có đường sức kín.",
+        "Điện trường và từ trường biến thiên là hai mặt của điện từ trường.",
+        "Tại mỗi điểm của điện từ trường, $\\vec{E}$ vuông góc với $\\vec{B}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chọn tiêu chí",
+          "cong_thuc_chu": "$\\vec{E}$ biến thiên $\\Rightarrow$ dòng điện dịch $\\Rightarrow$ từ trường",
+          "the_so": "Chỉ xét điện tích hai bản có đang thay đổi không.",
+          "ket_qua": "Tiêu chí: sự biến thiên của $\\vec{E}$ giữa hai bản",
+          "kiem_tra": "Cùng logic dạng 1, đổi vai điện và từ."
+        },
+        {
+          "tieu_de": "Bước 2. Xét cách (a) và (b)",
+          "cong_thuc_chu": "(a): điện tích tăng; (b): điện tích không đổi",
+          "the_so": "(a) $\\vec{E}$ đang tăng → có từ trường.\n(b) $\\vec{E}$ không đổi → không có dòng điện dịch → không có từ trường.",
+          "ket_qua": "(a) có; (b) không",
+          "kiem_tra": "Cùng nguồn một chiều, kết quả khác nhau vì khác thời điểm."
+        },
+        {
+          "tieu_de": "Bước 3. Xét cách (c) và đếm",
+          "cong_thuc_chu": "(c): tụ nạp xả liên tục theo dòng 50 Hz",
+          "the_so": "$N = 1 + 0 + 1$",
+          "ket_qua": "$N = 2$ cách nối",
+          "kiem_tra": "Khớp thí nghiệm trong bài: mạch xoay chiều có tụ vẫn có dòng."
+        },
+        {
+          "tieu_de": "Bước 4. Góc giữa $\\vec{E}$ và $\\vec{B}$",
+          "cong_thuc_chu": "$\\vec{E} \\perp \\vec{B}$ tại mỗi điểm",
+          "the_so": "$\\alpha = 90^\\circ$",
+          "ket_qua": "$\\alpha = 90^\\circ$",
+          "kiem_tra": "Không phụ thuộc $C$, $U$ hay $f$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "1",
+          "gia_tri": 2,
+          "don_vi": "cách nối"
+        },
+        {
+          "y": "2",
+          "gia_tri": 90,
+          "don_vi": "độ"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số cách nối có từ trường",
+          "bieu_thuc": "sum([1, 0, 1])",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "góc giữa E và B (độ)",
+          "bieu_thuc": "math.degrees(math.pi/2)",
+          "ky_vong": 90,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho tụ điện ở nhiều trạng thái (đang nạp, đã đầy, xoay chiều) và hỏi có từ trường không → xét điện trường giữa hai bản có biến thiên không; góc giữa $\\vec{E}$ và $\\vec{B}$ luôn là $90^\\circ$.",
+      "bay_thuong_gap": [
+        "Nghĩ điện tích chạy xuyên qua lớp điện môi giữa hai bản.",
+        "Cho rằng tụ đã tích đầy vẫn có từ trường vì điện trường giữa hai bản mạnh.",
+        "Cho rằng chỉ nguồn xoay chiều mới tạo từ trường, quên giai đoạn tụ đang nạp.",
+        "Nhầm $\\vec{E}$ song song với $\\vec{B}$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Tin nhắn không kèm danh mục YCCĐ; `yccd_de_xuat` chép từ mục tiêu bài học.",
+        "Giá trị $C$, $U$ chỉ làm bối cảnh, không dùng để tính."
+      ],
+      "mo_phong_goi_y": "Ba khung mạch (a), (b), (c) đặt cạnh nhau. Mỗi khung có tụ phẳng, nguồn, khoá. Khung (a) và (b) dùng nguồn một chiều, có đồng hồ thời gian (0 s và 10 phút). Khung (c) dùng nguồn xoay chiều. Các đường sức điện giữa hai bản dày lên hoặc giữ nguyên tuỳ khung. Chưa vẽ đường sức từ. Nhãn: C = 2,2 μF, U = 12 V, f = 50 Hz, $\\vec{E}$, điện môi."
+    },
+    {
+      "label": "Dạng 3 · Chu kì, tần số, bước sóng và trạng thái E, B của sóng",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại ý $\\vec{E} \\perp \\vec{B}$ của dạng 2 làm bước con ở câu c.\nThêm một độ khó mới: chuỗi tính số có đổi đơn vị ns → s rồi dùng $\\lambda = cT = c/f$, kết hợp tính chất cùng pha và sóng ngang.",
+      "yccd_de_xuat": "Mô tả được sự tạo thành, lan truyền sóng điện từ và tính chất của nó.",
+      "de_bai": "Một ăng ten phát sóng điện từ vào không khí. Tại điểm M cách ăng ten một đoạn, vectơ cường độ điện trường $\\vec{E}$ biến thiên điều hoà với chu kì $T = 1{,}25\\ \\text{ns}$. Sóng truyền qua M theo phương nằm ngang, hướng về phía Bắc. Coi không khí như chân không, $c = 3 \\cdot 10^8$ m/s.\na) Tính tần số $f$ của sóng.\nb) Tính bước sóng $\\lambda$.\nc) Ở thời điểm $t_1$, $\\vec{E}$ tại M có độ lớn cực đại và có phương thẳng đứng. Tại $t_1$, độ lớn của $\\vec{B}$ tại M thế nào và $\\vec{B}$ có phương nào?",
+      "dieu_kien_ap_dung": "Sóng truyền trong chân không với tốc độ $c$; $\\vec{E}$, $\\vec{B}$ biến thiên điều hoà cùng pha, vuông góc nhau và vuông góc phương truyền.",
+      "phan_tich": [
+        {
+          "trich_de": "chu kì $T = 1{,}25\\ \\text{ns}$",
+          "du_lieu": "$T = 1{,}25 \\cdot 10^{-9}$ s",
+          "kien_thuc": "Đổi ns → s; $f = 1/T$"
+        },
+        {
+          "trich_de": "Coi không khí như chân không, $c = 3 \\cdot 10^8$ m/s",
+          "du_lieu": "$c = 3 \\cdot 10^8$ m/s",
+          "kien_thuc": "$\\lambda = cT = \\frac{c}{f}$"
+        },
+        {
+          "trich_de": "theo phương nằm ngang, hướng về phía Bắc",
+          "du_lieu": "phương truyền: Nam – Bắc, nằm ngang",
+          "kien_thuc": "Sóng ngang: $\\vec{E}$, $\\vec{B}$ vuông góc phương truyền"
+        },
+        {
+          "trich_de": "có độ lớn cực đại và có phương thẳng đứng",
+          "du_lieu": "$E = E_0$, $\\vec{E}$ thẳng đứng",
+          "kien_thuc": "$\\vec{E}$, $\\vec{B}$ cùng pha; $\\vec{E} \\perp \\vec{B}$"
+        },
+        {
+          "trich_de": "Tính bước sóng $\\lambda$",
+          "du_lieu": "cần tìm: $\\lambda$",
+          "kien_thuc": "$\\lambda = cT$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "f, \\lambda",
+        "cong_thuc": "f = \\frac{1}{T};\\ \\lambda = cT"
+      },
+      "kien_thuc_goi_lai": [
+        "Sóng điện từ là sóng ngang: $\\vec{E} \\perp \\vec{B}$ và cả hai vuông góc phương truyền.",
+        "$\\vec{E}$ và $\\vec{B}$ biến thiên điều hoà, luôn cùng pha.",
+        "Trong chân không: $c = 3 \\cdot 10^8$ m/s, $\\lambda = cT = \\frac{c}{f}$.",
+        "Đổi ns: $1\\ \\text{ns} = 10^{-9}$ s."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị chu kì",
+          "cong_thuc_chu": "$1\\ \\text{ns} = 10^{-9}\\ \\text{s}$",
+          "the_so": "$T = 1{,}25 \\cdot 10^{-9}$ s",
+          "ket_qua": "$T = 1{,}25 \\cdot 10^{-9}\\ \\text{s}$",
+          "kiem_tra": "Chu kì rất nhỏ, đúng cỡ sóng vô tuyến tần số cao."
+        },
+        {
+          "tieu_de": "Bước 2. Tính tần số",
+          "cong_thuc_chu": "$f = \\dfrac{1}{T}$",
+          "the_so": "$f = \\dfrac{1}{1{,}25 \\cdot 10^{-9}}$",
+          "ket_qua": "$f = 8{,}00 \\cdot 10^8\\ \\text{Hz} = 800\\ \\text{MHz}$",
+          "kiem_tra": "Đơn vị 1/s = Hz."
+        },
+        {
+          "tieu_de": "Bước 3. Tính bước sóng",
+          "cong_thuc_chu": "$\\lambda = cT$",
+          "the_so": "$\\lambda = 3 \\cdot 10^8 \\times 1{,}25 \\cdot 10^{-9}$",
+          "ket_qua": "$\\lambda = 0{,}375\\ \\text{m}$",
+          "kiem_tra": "Thử lại: $c/f = 3 \\cdot 10^8 / (8 \\cdot 10^8) = 0{,}375$ m. Đơn vị (m/s)·s = m."
+        },
+        {
+          "tieu_de": "Bước 4. Độ lớn $\\vec{B}$ tại $t_1$",
+          "cong_thuc_chu": "$\\vec{E}$, $\\vec{B}$ cùng pha",
+          "the_so": "$E = E_0 \\Rightarrow B = B_0$",
+          "ket_qua": "$B$ đạt cực đại",
+          "kiem_tra": "Không dùng quan hệ lệch pha $\\pi/2$ của mạch có tụ."
+        },
+        {
+          "tieu_de": "Bước 5. Phương của $\\vec{B}$ tại $t_1$",
+          "cong_thuc_chu": "$\\vec{B} \\perp \\vec{E}$ và $\\vec{B} \\perp$ phương truyền",
+          "the_so": "$\\vec{E}$ thẳng đứng → $\\vec{B}$ nằm ngang; phương truyền Nam – Bắc → $\\vec{B}$ vuông góc Nam – Bắc",
+          "ket_qua": "$\\vec{B}$ có phương nằm ngang, Đông – Tây",
+          "kiem_tra": "Ba phương thẳng đứng, Nam – Bắc, Đông – Tây vuông góc từng đôi."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 800000000,
+          "don_vi": "Hz"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.375,
+          "don_vi": "m"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tần số f",
+          "bieu_thuc": "1/1.25e-9",
+          "ky_vong": 800000000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "bước sóng λ = cT",
+          "bieu_thuc": "3e8*1.25e-9",
+          "ky_vong": 0.375,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thử lại λ = c/f",
+          "bieu_thuc": "3e8/(1/1.25e-9)",
+          "ky_vong": 0.375,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho chu kì hoặc tần số của sóng tại một điểm, kèm phương truyền và trạng thái của $\\vec{E}$ → đổi đơn vị, tính $f$, $\\lambda$; dùng cùng pha cho độ lớn $B$, dùng vuông góc cho phương $\\vec{B}$.",
+      "bay_thuong_gap": [
+        "Quên đổi ns sang s, ra bước sóng sai $10^9$ lần.",
+        "Cho rằng khi $E$ cực đại thì $B = 0$ (mang lệch pha $\\pi/2$ của mạch có tụ sang).",
+        "Chọn $\\vec{B}$ thẳng đứng hoặc song song phương truyền.",
+        "Viết $\\lambda = c \\cdot f$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài chỉ cho biết $\\vec{B}$ vuông góc với $\\vec{E}$ và phương truyền, không có quy tắc xác định chiều, nên chỉ hỏi phương Đông – Tây, không hỏi chiều.",
+        "Công thức $f = 1/T$ suy từ $\\lambda = cT = c/f$ trong bài."
+      ],
+      "mo_phong_goi_y": "Hệ trục ba chiều tại điểm M: một trục nằm ngang hướng Bắc (phương truyền), một trục thẳng đứng, một trục nằm ngang còn lại. Vectơ $\\vec{E}$ dao động lên xuống theo trục thẳng đứng, lớn dần rồi nhỏ dần. Sóng chạy dọc trục Bắc. Chưa vẽ vectơ $\\vec{B}$ để không lộ đáp án. Nhãn: M, Bắc, Nam, Đông, Tây, $\\vec{E}$, T = 1,25 ns, c."
+    },
+    {
+      "label": "Dạng 4 · Radar sân bay và thang sóng điện từ",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại $\\lambda = c/f$ và cách đổi đơn vị của dạng 3 (câu a, c).\nThêm một độ khó mới: tình huống đời sống có dữ kiện ẩn (xung đi rồi phản xạ quay về, quãng đường bằng hai lần khoảng cách), rồi đối chiếu kết quả với thang sóng điện từ.",
+      "yccd_de_xuat": "Đọc được thang sóng điện từ: sáu vùng sóng và ứng dụng chính.",
+      "de_bai": "Radar của một sân bay phát các xung sóng điện từ tần số $3{,}0\\ \\text{GHz}$ về phía một máy bay đang bay tới. Xung phản xạ trên thân máy bay quay về radar sau $200\\ \\mu\\text{s}$ kể từ lúc phát. Ở cửa an ninh của sân bay, máy soi hành lí dùng tia X bước sóng $0{,}05\\ \\text{nm}$. Coi sóng truyền trong không khí như trong chân không, $c = 3 \\cdot 10^8$ m/s; trong thời gian xung đi và về, máy bay coi như đứng yên.\na) Tính bước sóng của sóng radar và cho biết nó thuộc vùng nào của thang sóng điện từ.\nb) Tính khoảng cách từ radar đến máy bay.\nc) Tần số tia X gấp bao nhiêu lần tần số sóng radar? Bức xạ nào mang năng lượng lớn hơn?",
+      "dieu_kien_ap_dung": "Sóng truyền thẳng với tốc độ $c$ trong không khí coi như chân không, phản xạ trên thân máy bay; máy bay coi như đứng yên trong thời gian đo.",
+      "phan_tich": [
+        {
+          "trich_de": "tần số $3{,}0\\ \\text{GHz}$",
+          "du_lieu": "$f = 3{,}0 \\cdot 10^9$ Hz",
+          "kien_thuc": "Đổi GHz → Hz; $\\lambda = c/f$"
+        },
+        {
+          "trich_de": "quay về radar sau $200\\ \\mu\\text{s}$ kể từ lúc phát",
+          "du_lieu": "$t = 2{,}00 \\cdot 10^{-4}$ s, gồm cả lượt đi và lượt về",
+          "kien_thuc": "Dữ kiện ẩn: $s = ct = 2d$"
+        },
+        {
+          "trich_de": "tia X bước sóng $0{,}05\\ \\text{nm}$",
+          "du_lieu": "$\\lambda_X = 5 \\cdot 10^{-11}$ m",
+          "kien_thuc": "$f_X = c/\\lambda_X$; tia X: 0,01 – 10 nm"
+        },
+        {
+          "trich_de": "Coi sóng truyền trong không khí như trong chân không, $c = 3 \\cdot 10^8$ m/s",
+          "du_lieu": "$c = 3 \\cdot 10^8$ m/s cho cả hai bức xạ",
+          "kien_thuc": "Mọi vùng sóng điện từ có cùng tốc độ $c$ trong chân không"
+        },
+        {
+          "trich_de": "Bức xạ nào mang năng lượng lớn hơn?",
+          "du_lieu": "so sánh $f_X$ và $f$",
+          "kien_thuc": "Tần số càng cao (bước sóng càng nhỏ) thì năng lượng càng lớn"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\lambda, d, k",
+        "cong_thuc": "\\lambda = \\frac{c}{f};\\ d = \\frac{ct}{2};\\ k = \\frac{f_X}{f} = \\frac{c/\\lambda_X}{f}"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\lambda = \\frac{c}{f}$; quãng đường $s = ct$.",
+        "Sóng điện từ phản xạ như sóng cơ.",
+        "Vô tuyến: 1 mm – hàng km (phát thanh, wifi, radar); tia X: 0,01 – 10 nm.",
+        "Bước sóng càng nhỏ, tần số càng cao thì năng lượng càng lớn.",
+        "Đổi: $1\\ \\text{GHz} = 10^9$ Hz, $1\\ \\mu\\text{s} = 10^{-6}$ s, $1\\ \\text{nm} = 10^{-9}$ m."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Bước sóng radar (cách làm dạng 3)",
+          "cong_thuc_chu": "$\\lambda = \\dfrac{c}{f}$",
+          "the_so": "$\\lambda = \\dfrac{3 \\cdot 10^8}{3{,}0 \\cdot 10^9}$",
+          "ket_qua": "$\\lambda = 0{,}100\\ \\text{m} = 10{,}0\\ \\text{cm}$",
+          "kiem_tra": "Đơn vị (m/s)/Hz = m."
+        },
+        {
+          "tieu_de": "Bước 2. Đối chiếu thang sóng",
+          "cong_thuc_chu": "So $\\lambda$ với các khoảng của thang sóng",
+          "the_so": "$1\\ \\text{mm} \\lt 0{,}1\\ \\text{m} \\lt$ hàng km",
+          "ket_qua": "Vùng sóng vô tuyến",
+          "kiem_tra": "Khớp bảng: radar thuộc vùng vô tuyến."
+        },
+        {
+          "tieu_de": "Bước 3. Quãng đường xung đi và về (dữ kiện ẩn)",
+          "cong_thuc_chu": "$s = ct$, với $s = 2d$",
+          "the_so": "$s = 3 \\cdot 10^8 \\times 2{,}00 \\cdot 10^{-4}$",
+          "ket_qua": "$s = 6{,}00 \\cdot 10^4\\ \\text{m}$",
+          "kiem_tra": "$s$ là tổng lượt đi và lượt về, chưa phải khoảng cách."
+        },
+        {
+          "tieu_de": "Bước 4. Khoảng cách radar – máy bay",
+          "cong_thuc_chu": "$d = \\dfrac{s}{2}$",
+          "the_so": "$d = \\dfrac{6{,}00 \\cdot 10^4}{2}$",
+          "ket_qua": "$d = 3{,}00 \\cdot 10^4\\ \\text{m} = 30{,}0\\ \\text{km}$",
+          "kiem_tra": "30 km hợp lí cho máy bay đang tiếp cận sân bay."
+        },
+        {
+          "tieu_de": "Bước 5. Tần số tia X",
+          "cong_thuc_chu": "$f_X = \\dfrac{c}{\\lambda_X}$",
+          "the_so": "$f_X = \\dfrac{3 \\cdot 10^8}{5 \\cdot 10^{-11}}$",
+          "ket_qua": "$f_X = 6{,}00 \\cdot 10^{18}\\ \\text{Hz}$",
+          "kiem_tra": "0,05 nm nằm trong khoảng 0,01 – 10 nm của tia X."
+        },
+        {
+          "tieu_de": "Bước 6. So sánh tần số và năng lượng",
+          "cong_thuc_chu": "$k = \\dfrac{f_X}{f}$",
+          "the_so": "$k = \\dfrac{6{,}00 \\cdot 10^{18}}{3{,}0 \\cdot 10^9}$",
+          "ket_qua": "$k = 2{,}00 \\cdot 10^9$ lần; tia X mang năng lượng lớn hơn",
+          "kiem_tra": "Thử lại: $k = \\lambda/\\lambda_X = 0{,}1 / (5 \\cdot 10^{-11}) = 2 \\cdot 10^9$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.1,
+          "don_vi": "m"
+        },
+        {
+          "y": "b",
+          "gia_tri": 30,
+          "don_vi": "km"
+        },
+        {
+          "y": "c",
+          "gia_tri": 2000000000,
+          "don_vi": "lần"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "bước sóng radar",
+          "bieu_thuc": "3e8/3.0e9",
+          "ky_vong": 0.1,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "khoảng cách radar – máy bay (m)",
+          "bieu_thuc": "3e8*200e-6/2",
+          "ky_vong": 30000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tần số tia X",
+          "bieu_thuc": "3e8/0.05e-9",
+          "ky_vong": 6000000000000000000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tỉ số f_X/f",
+          "bieu_thuc": "(3e8/0.05e-9)/3.0e9",
+          "ky_vong": 2000000000,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề là tình huống thật (radar, định vị, phản xạ) có thời gian đi – về và nhiều loại bức xạ → đổi đơn vị, tính $\\lambda = c/f$, dùng $s = ct$ rồi chia 2, đối chiếu thang sóng để xếp vùng và so năng lượng.",
+      "bay_thuong_gap": [
+        "Quên chia 2, ra khoảng cách 60 km.",
+        "Không đổi μs, GHz, nm về s, Hz, m.",
+        "Nghĩ tia X truyền nhanh hơn sóng radar; thực ra cùng tốc độ $c$.",
+        "Cho rằng bước sóng dài hơn thì năng lượng lớn hơn."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bỏ qua chuyển động của máy bay trong 200 μs (máy bay đi chưa tới vài cm), giả thiết đã ghi trong đề.",
+        "Ý \"năng lượng lớn hơn\" chỉ so sánh định tính theo bài, không tính năng lượng."
+      ],
+      "mo_phong_goi_y": "Cảnh sân bay nhìn ngang. Bên trái là anten radar, bên phải là máy bay ở xa. Một xung sóng (đoạn sóng ngắn) chạy từ radar tới máy bay, chạm thân máy bay rồi quay về radar. Đồng hồ đếm thời gian chạy theo xung. Góc dưới có máy soi hành lí với chùm tia X. Không ghi khoảng cách. Nhãn: radar, f = 3,0 GHz, máy bay, d = ?, t = 200 μs, máy soi tia X, λ_X = 0,05 nm."
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "lesson_title": "Bài 17. Khái niệm điện trường",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính E từ lực đo được và xác định chiều lực theo dấu q",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: dùng định nghĩa $\\vec E=\\vec F/q$ để tìm độ lớn và chiều của $\\vec E$, rồi đổi điện tích thử để tính lực mới.",
+      "yccd_de_xuat": "Cường độ điện trường của điện tích điểm",
+      "de_bai": "Tại điểm M trong một điện trường, đặt điện tích thử $q_1=-4$ nC thì nó chịu lực điện $6\\cdot10^{-4}$ N hướng về phía bắc.\na) Tính độ lớn và nêu hướng của cường độ điện trường tại M.\nb) Bỏ $q_1$ đi, đặt vào đúng chỗ đó điện tích thử $q_2=+2$ nC. Tính lực điện lên $q_2$ và nêu hướng.",
+      "dieu_kien_ap_dung": "Điện tích thử đủ nhỏ để không làm thay đổi điện trường tại M; $\\vec E$ tại M do điện tích nguồn quyết định, không phụ thuộc điện tích thử.",
+      "phan_tich": [
+        {
+          "trich_de": "$q_1=-4$ nC",
+          "du_lieu": "$q_1=-4\\cdot10^{-9}$ C",
+          "kien_thuc": "$q\\lt 0$ nên $\\vec F$ ngược chiều $\\vec E$"
+        },
+        {
+          "trich_de": "lực điện $6\\cdot10^{-4}$ N hướng về phía bắc",
+          "du_lieu": "$F_1=6\\cdot10^{-4}$ N, hướng bắc",
+          "kien_thuc": "$E=\\dfrac{F}{|q|}$"
+        },
+        {
+          "trich_de": "$q_2=+2$ nC",
+          "du_lieu": "$q_2=2\\cdot10^{-9}$ C",
+          "kien_thuc": "$F=|q|E$; $q\\gt 0$ nên $\\vec F$ cùng chiều $\\vec E$"
+        },
+        {
+          "trich_de": "đặt vào đúng chỗ đó",
+          "du_lieu": "vẫn là điểm M",
+          "kien_thuc": "$\\vec E$ tại M không đổi khi đổi điện tích thử"
+        },
+        {
+          "trich_de": "Tính lực điện lên $q_2$",
+          "du_lieu": "cần tìm $F_2$",
+          "kien_thuc": "$F_2=|q_2|E$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E, F_2",
+        "cong_thuc": "E=\\dfrac{F_1}{|q_1|},\\quad F_2=|q_2|E"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\vec E=\\dfrac{\\vec F}{q}$, đơn vị V/m (N/C).",
+        "$q\\gt 0$: $\\vec F$ cùng chiều $\\vec E$; $q\\lt 0$: $\\vec F$ ngược chiều $\\vec E$.",
+        "$E$ không phụ thuộc điện tích thử $q$.",
+        "1 nC $=10^{-9}$ C."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi đơn vị điện tích",
+          "cong_thuc_chu": "$1\\ \\text{nC}=10^{-9}\\ \\text{C}$",
+          "the_so": "$|q_1|=4\\cdot10^{-9}$ C; $q_2=2\\cdot10^{-9}$ C",
+          "ket_qua": "$|q_1|=4\\cdot10^{-9}\\ \\text{C}$",
+          "kiem_tra": "Điện tích cỡ nC là điện tích nhỏ, hợp với vai trò điện tích thử."
+        },
+        {
+          "tieu_de": "Độ lớn cường độ điện trường tại M",
+          "cong_thuc_chu": "$E=\\dfrac{F_1}{|q_1|}$",
+          "the_so": "$E=\\dfrac{6\\cdot10^{-4}}{4\\cdot10^{-9}}$",
+          "ket_qua": "$E=1{,}5\\cdot10^{5}\\ \\text{V/m}$",
+          "kiem_tra": "N/C = V/m, đúng đơn vị cường độ điện trường."
+        },
+        {
+          "tieu_de": "Hướng của $\\vec E$ tại M",
+          "cong_thuc_chu": "$q_1\\lt 0\\Rightarrow \\vec E$ ngược chiều $\\vec F_1$",
+          "the_so": "$\\vec F_1$ hướng bắc",
+          "ket_qua": "$\\vec E$ hướng về phía nam",
+          "kiem_tra": "$\\vec E$ cùng phương với $\\vec F_1$ (bắc–nam), chỉ ngược chiều."
+        },
+        {
+          "tieu_de": "Lực lên $q_2$",
+          "cong_thuc_chu": "$F_2=|q_2|E$",
+          "the_so": "$F_2=2\\cdot10^{-9}\\cdot1{,}5\\cdot10^{5}$",
+          "ket_qua": "$F_2=3\\cdot10^{-4}\\ \\text{N}$",
+          "kiem_tra": "$|q_2|$ bằng một nửa $|q_1|$ nên $F_2$ bằng một nửa $F_1$: hợp lí."
+        },
+        {
+          "tieu_de": "Hướng lực lên $q_2$",
+          "cong_thuc_chu": "$q_2\\gt 0\\Rightarrow \\vec F_2$ cùng chiều $\\vec E$",
+          "the_so": "$\\vec E$ hướng nam",
+          "ket_qua": "$\\vec F_2$ hướng về phía nam",
+          "kiem_tra": "Hai điện tích trái dấu đặt cùng chỗ chịu lực ngược chiều nhau: đúng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 150000,
+          "don_vi": "V/m (hướng nam)"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.0003,
+          "don_vi": "N (hướng nam)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn E tại M",
+          "bieu_thuc": "6e-4/4e-9",
+          "ky_vong": 150000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực lên q2",
+          "bieu_thuc": "2e-9*(6e-4/4e-9)",
+          "ky_vong": 0.0003,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho lực đo được trên một điện tích thử tại một điểm và hỏi E hoặc lực khi đổi điện tích thử → dùng $E=F/|q|$, xác định chiều theo dấu q, giữ nguyên $\\vec E$ khi đổi q.",
+      "bay_thuong_gap": [
+        "Lấy hướng $\\vec E$ theo hướng lực mà quên $q_1$ âm.",
+        "Nghĩ đổi điện tích thử thì E cũng đổi (đọc $E=F/q$ như E tỉ lệ nghịch với q).",
+        "Quên đổi nC sang C nên E sai $10^9$ lần.",
+        "Để E mang dấu âm thay vì ghi độ lớn dương kèm hướng."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Một điểm M trên nền có hoa la bàn (B, N, Đ, T). Đặt chấm đỏ nhãn '$q_1=-4$ nC' tại M, hiện mũi tên lực nhãn '$\\vec F_1$' hướng lên phía bắc. Sau đó chấm đỏ mờ đi, chấm xanh nhãn '$q_2=+2$ nC' xuất hiện đúng tại M, mũi tên lực nhãn '$\\vec F_2$' hiện ra với dấu hỏi về độ dài và chiều. Mũi tên $\\vec E$ để ẩn, chỉ có nhãn '$\\vec E$ = ?'."
+    },
+    {
+      "label": "Dạng 2 · Điện trường của một điện tích điểm trong điện môi",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách xác định độ lớn và chiều $\\vec E$ của Dạng 1; thêm MỘT độ khó mới: E do điện tích nguồn Q gây ra, phải đổi cm sang m, đưa hằng số điện môi $\\varepsilon$ vào và lấy chiều theo dấu Q (âm thì hướng vào).",
+      "yccd_de_xuat": "Cường độ điện trường của điện tích điểm",
+      "de_bai": "Một điện tích điểm $Q=-8$ nC đặt cố định trong dầu có hằng số điện môi $\\varepsilon=2$. Điểm M cách Q 6 cm, điểm N nằm trên tia QM và cách Q 12 cm.\na) Tính cường độ điện trường tại M và nêu hướng.\nb) Tính cường độ điện trường tại N.",
+      "dieu_kien_ap_dung": "Q là điện tích điểm đứng yên, môi trường dầu đồng nhất bao quanh nên dùng được $E=k\\dfrac{|Q|}{\\varepsilon r^2}$.",
+      "phan_tich": [
+        {
+          "trich_de": "$Q=-8$ nC",
+          "du_lieu": "$|Q|=8\\cdot10^{-9}$ C, $Q\\lt 0$",
+          "kien_thuc": "$Q\\lt 0$: $\\vec E$ hướng về phía Q"
+        },
+        {
+          "trich_de": "hằng số điện môi $\\varepsilon=2$",
+          "du_lieu": "$\\varepsilon=2$",
+          "kien_thuc": "$E=k\\dfrac{|Q|}{\\varepsilon r^2}$, không lấy $\\varepsilon=1$"
+        },
+        {
+          "trich_de": "Điểm M cách Q 6 cm",
+          "du_lieu": "$r_M=0{,}06$ m",
+          "kien_thuc": "đổi cm sang m trước khi thế"
+        },
+        {
+          "trich_de": "cách Q 12 cm",
+          "du_lieu": "$r_N=0{,}12$ m $=2r_M$",
+          "kien_thuc": "$E\\sim\\dfrac{1}{r^2}$: r gấp đôi thì E còn một phần tư"
+        },
+        {
+          "trich_de": "Tính cường độ điện trường tại N",
+          "du_lieu": "cần tìm $E_N$",
+          "kien_thuc": "$E_N=E_M\\left(\\dfrac{r_M}{r_N}\\right)^2$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E_M, E_N",
+        "cong_thuc": "E_M=k\\dfrac{|Q|}{\\varepsilon r_M^2},\\quad E_N=E_M\\left(\\dfrac{r_M}{r_N}\\right)^2"
+      },
+      "kien_thuc_goi_lai": [
+        "$E=k\\dfrac{|Q|}{\\varepsilon r^2}$, $k=9\\cdot10^{9}$ N·m²/C².",
+        "Phương: đường nối Q với điểm xét.",
+        "$Q\\gt 0$: hướng ra xa Q; $Q\\lt 0$: hướng về Q.",
+        "r gấp n lần thì E giảm $n^2$ lần."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi đơn vị",
+          "cong_thuc_chu": "$1\\ \\text{cm}=10^{-2}\\ \\text{m}$",
+          "the_so": "$r_M=0{,}06$ m; $|Q|=8\\cdot10^{-9}$ C",
+          "ket_qua": "$r_M^2=3{,}6\\cdot10^{-3}\\ \\text{m}^2$",
+          "kiem_tra": "Bình phương sau khi đã đổi sang m."
+        },
+        {
+          "tieu_de": "Độ lớn E tại M",
+          "cong_thuc_chu": "$E_M=k\\dfrac{|Q|}{\\varepsilon r_M^2}$",
+          "the_so": "$E_M=9\\cdot10^{9}\\cdot\\dfrac{8\\cdot10^{-9}}{2\\cdot0{,}06^2}$",
+          "ket_qua": "$E_M=1{,}0\\cdot10^{4}\\ \\text{V/m}$",
+          "kiem_tra": "Trong không khí sẽ là $2\\cdot10^4$ V/m; dầu $\\varepsilon=2$ làm E giảm một nửa: hợp lí."
+        },
+        {
+          "tieu_de": "Hướng E tại M",
+          "cong_thuc_chu": "$Q\\lt 0\\Rightarrow\\vec E$ hướng về Q",
+          "the_so": "phương QM",
+          "ket_qua": "$\\vec E_M$ nằm trên đường QM, hướng từ M về Q",
+          "kiem_tra": "Điện tích âm: đường sức đi vào Q, đúng."
+        },
+        {
+          "tieu_de": "E tại N theo tỉ lệ khoảng cách",
+          "cong_thuc_chu": "$E_N=E_M\\left(\\dfrac{r_M}{r_N}\\right)^2$",
+          "the_so": "$E_N=1{,}0\\cdot10^{4}\\cdot\\left(\\dfrac{6}{12}\\right)^2$",
+          "ket_qua": "$E_N=2{,}5\\cdot10^{3}\\ \\text{V/m}$",
+          "kiem_tra": "Xa hơn thì E nhỏ hơn; $\\vec E_N$ cũng hướng về Q."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 10000,
+          "don_vi": "V/m (hướng từ M về Q)"
+        },
+        {
+          "y": "b",
+          "gia_tri": 2500,
+          "don_vi": "V/m (hướng về Q)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "E tại M",
+          "bieu_thuc": "9e9*8e-9/(2*0.06**2)",
+          "ky_vong": 10000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E tại N tính trực tiếp",
+          "bieu_thuc": "9e9*8e-9/(2*0.12**2)",
+          "ky_vong": 2500,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho một điện tích nguồn Q, khoảng cách r (thường bằng cm) và môi trường → dùng $E=k|Q|/(\\varepsilon r^2)$ sau khi đổi đơn vị, chiều lấy theo dấu Q.",
+      "bay_thuong_gap": [
+        "Thế r bằng cm (6 thay vì 0,06) nên E sai $10^4$ lần.",
+        "Quên $\\varepsilon$ hoặc nhân $\\varepsilon$ lên tử thay vì chia.",
+        "Thế Q âm vào công thức rồi ra E âm.",
+        "Vẽ $\\vec E$ hướng ra xa Q dù Q âm.",
+        "Khi r gấp đôi chỉ chia E cho 2, quên bình phương."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài lí thuyết chỉ nói chung 'ε là hằng số điện môi'; giá trị $\\varepsilon=2$ cho dầu là số liệu giả định của đề, cần giữ nguyên trong đề để học sinh không phải tra."
+      ],
+      "mo_phong_goi_y": "Một chấm xanh lớn nhãn '$Q=-8$ nC' giữa khay dầu màu vàng nhạt có nhãn '$\\varepsilon=2$'. Các đường sức thẳng từ xa chạy vào Q, mau gần Q, thưa ở xa. Trên một đường sức đánh dấu điểm M (nhãn '6 cm') và N (nhãn '12 cm'), mỗi điểm có một mũi tên nhỏ nhấp nháy với nhãn '$\\vec E_M$ = ?', '$\\vec E_N$ = ?', không hiện độ dài thật."
+    },
+    {
+      "label": "Dạng 3 · Chồng chất điện trường của hai điện tích tại điểm nằm ngoài đoạn nối",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại nguyên bài Dạng 2 cho từng điện tích (tính độ lớn, lấy chiều theo dấu Q); thêm MỘT độ khó mới: cộng hai vectơ cùng phương, phải tự xác định chúng cùng chiều hay ngược chiều khi điểm nằm ngoài đoạn AB.",
+      "yccd_de_xuat": "Nguyên lí chồng chất điện trường",
+      "de_bai": "Trong không khí, đặt $q_1=+9$ nC tại A và $q_2=-4$ nC tại B, với $AB=4$ cm. Điểm M nằm trên đường thẳng AB, ở ngoài đoạn AB về phía B, cách B 2 cm. Tính cường độ điện trường tổng hợp tại M và nêu hướng.",
+      "dieu_kien_ap_dung": "Hai điện tích điểm đứng yên trong không khí ($\\varepsilon\\approx1$); điện trường tổng hợp là tổng vectơ của từng điện trường thành phần.",
+      "phan_tich": [
+        {
+          "trich_de": "Trong không khí",
+          "du_lieu": "$\\varepsilon=1$",
+          "kien_thuc": "$E=k\\dfrac{|Q|}{r^2}$"
+        },
+        {
+          "trich_de": "$q_1=+9$ nC tại A",
+          "du_lieu": "$q_1=9\\cdot10^{-9}$ C, $q_1\\gt 0$",
+          "kien_thuc": "$\\vec E_1$ hướng ra xa A"
+        },
+        {
+          "trich_de": "$q_2=-4$ nC tại B",
+          "du_lieu": "$|q_2|=4\\cdot10^{-9}$ C, $q_2\\lt 0$",
+          "kien_thuc": "$\\vec E_2$ hướng về B"
+        },
+        {
+          "trich_de": "ở ngoài đoạn AB về phía B, cách B 2 cm",
+          "du_lieu": "$r_2=MB=0{,}02$ m; $r_1=MA=AB+BM=0{,}06$ m",
+          "kien_thuc": "tự suy khoảng cách từ hình; M, A, B thẳng hàng nên hai vectơ cùng phương"
+        },
+        {
+          "trich_de": "Tính cường độ điện trường tổng hợp tại M",
+          "du_lieu": "cần tìm E",
+          "kien_thuc": "$\\vec E=\\vec E_1+\\vec E_2$; ngược chiều thì $E=|E_1-E_2|$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E",
+        "cong_thuc": "\\vec E=\\vec E_1+\\vec E_2,\\quad E=|E_1-E_2|\\ \\text{(ngược chiều)}"
+      },
+      "kien_thuc_goi_lai": [
+        "$E_i=k\\dfrac{|q_i|}{r_i^2}$ cho từng điện tích.",
+        "Dương thì ra, âm thì vào.",
+        "Cùng chiều: $E=E_1+E_2$; ngược chiều: $E=|E_1-E_2|$.",
+        "Vẽ trước, tính sau; $\\vec E$ tổng cùng chiều vectơ lớn hơn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Khoảng cách từ M tới mỗi điện tích",
+          "cong_thuc_chu": "$r_1=AB+BM,\\ r_2=BM$",
+          "the_so": "$r_1=4+2$ cm; $r_2=2$ cm",
+          "ket_qua": "$r_1=0{,}06\\ \\text{m},\\ r_2=0{,}02\\ \\text{m}$",
+          "kiem_tra": "M ở ngoài đoạn về phía B nên M xa A hơn xa B."
+        },
+        {
+          "tieu_de": "Độ lớn $E_1$ (giống Dạng 2)",
+          "cong_thuc_chu": "$E_1=k\\dfrac{|q_1|}{r_1^2}$",
+          "the_so": "$E_1=9\\cdot10^{9}\\cdot\\dfrac{9\\cdot10^{-9}}{0{,}06^2}$",
+          "ket_qua": "$E_1=2{,}25\\cdot10^{4}\\ \\text{V/m}$",
+          "kiem_tra": "Đơn vị V/m; giá trị dương."
+        },
+        {
+          "tieu_de": "Độ lớn $E_2$ (giống Dạng 2)",
+          "cong_thuc_chu": "$E_2=k\\dfrac{|q_2|}{r_2^2}$",
+          "the_so": "$E_2=9\\cdot10^{9}\\cdot\\dfrac{4\\cdot10^{-9}}{0{,}02^2}$",
+          "ket_qua": "$E_2=9{,}0\\cdot10^{4}\\ \\text{V/m}$",
+          "kiem_tra": "$q_2$ nhỏ hơn nhưng gần M gấp 3 lần nên $E_2$ lớn hơn $E_1$: hợp lí."
+        },
+        {
+          "tieu_de": "Chiều của hai vectơ tại M",
+          "cong_thuc_chu": "$q_1\\gt 0$: ra xa A; $q_2\\lt 0$: về B",
+          "the_so": "$\\vec E_1$ hướng theo chiều từ B ra M; $\\vec E_2$ hướng từ M về B",
+          "ket_qua": "$\\vec E_1$ và $\\vec E_2$ cùng phương, ngược chiều",
+          "kiem_tra": "Vẽ hai mũi tên tại M thấy chúng chỉ ngược nhau."
+        },
+        {
+          "tieu_de": "Cộng vectơ",
+          "cong_thuc_chu": "$E=|E_1-E_2|$",
+          "the_so": "$E=9{,}0\\cdot10^{4}-2{,}25\\cdot10^{4}$",
+          "ket_qua": "$E=6{,}75\\cdot10^{4}\\ \\text{V/m}$, hướng từ M về B",
+          "kiem_tra": "E nhỏ hơn $E_2$ và cùng chiều $\\vec E_2$ (vectơ lớn hơn): hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "E tổng hợp",
+          "gia_tri": 67500,
+          "don_vi": "V/m (hướng từ M về B)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "E1",
+          "bieu_thuc": "9e9*9e-9/0.06**2",
+          "ky_vong": 22500,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E2",
+          "bieu_thuc": "9e9*4e-9/0.02**2",
+          "ky_vong": 90000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E tổng hợp",
+          "bieu_thuc": "abs(9e9*9e-9/0.06**2 - 9e9*4e-9/0.02**2)",
+          "ky_vong": 67500,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có hai điện tích và điểm M nằm trên đường thẳng nối chúng → tính từng $E_i$, vẽ chiều theo dấu và vị trí M (trong hay ngoài đoạn), rồi cộng hoặc trừ độ lớn.",
+      "bay_thuong_gap": [
+        "Lấy $r_1=AB=4$ cm thay vì $AM=6$ cm.",
+        "Thấy hai điện tích trái dấu là cho cùng chiều như khi M ở giữa AB.",
+        "Cộng số có dấu: $E=E_1+(-E_2)$ mà không vẽ hình.",
+        "Dùng $\\sqrt{E_1^2+E_2^2}$ theo thói quen bài mẫu dù hai vectơ cùng phương.",
+        "Nêu hướng E theo vectơ nhỏ hơn."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Trục ngang có ba điểm theo thứ tự A, B, M. Chấm đỏ tại A nhãn '$q_1=+9$ nC', chấm xanh tại B nhãn '$q_2=-4$ nC'. Ghi nhãn đoạn 'AB = 4 cm', 'BM = 2 cm'. Tại M lần lượt mọc ra mũi tên đỏ '$\\vec E_1$' và mũi tên xanh '$\\vec E_2$' (chưa đúng tỉ lệ độ dài, có dấu hỏi về chiều), sau cùng hiện mũi tên lục '$\\vec E$ = ?'."
+    },
+    {
+      "label": "Dạng 4 · Hai điện tích bằng nhau, điểm trên đường trung trực (góc ẩn, nhiều ý)",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cách tính từng $E_i$ (Dạng 2), cách lấy chiều lực theo dấu q (Dạng 1) và cách cộng vectơ (Dạng 3); thêm MỘT độ khó mới: hai vectơ hợp góc bất kì, góc phải tự rút ra từ hình học rồi dùng $E=2E_1\\cos\\dfrac{\\alpha}{2}$.",
+      "yccd_de_xuat": "Nguyên lí chồng chất điện trường",
+      "de_bai": "Trong một mô hình máy lọc bụi, hai quả cầu nhỏ cùng tích điện $Q=+5$ nC được giữ cố định tại A và B trong không khí, $AB=8$ cm. Một hạt bụi mang điện $q=-3{,}2\\cdot10^{-18}$ C đi tới điểm M nằm trên đường trung trực của AB, cách trung điểm H của AB một đoạn 3 cm. Coi hai quả cầu là điện tích điểm.\na) Tính cường độ điện trường tổng hợp tại M và nêu hướng.\nb) Tính lực điện lên hạt bụi tại M và nêu hướng.\nc) Khi hạt bụi tới đúng H, lực điện tổng hợp lên nó bằng bao nhiêu?",
+      "dieu_kien_ap_dung": "Hai quả cầu coi là điện tích điểm đứng yên trong không khí ($\\varepsilon\\approx1$); hạt bụi đủ nhỏ để không làm thay đổi điện trường của hai quả cầu.",
+      "phan_tich": [
+        {
+          "trich_de": "cùng tích điện $Q=+5$ nC",
+          "du_lieu": "$q_1=q_2=5\\cdot10^{-9}$ C",
+          "kien_thuc": "cả hai $\\vec E$ hướng ra xa điện tích nguồn"
+        },
+        {
+          "trich_de": "$AB=8$ cm",
+          "du_lieu": "$AH=HB=0{,}04$ m",
+          "kien_thuc": "H là trung điểm, MH vuông góc AB"
+        },
+        {
+          "trich_de": "cách trung điểm H của AB một đoạn 3 cm",
+          "du_lieu": "$MH=0{,}03$ m",
+          "kien_thuc": "dữ kiện ẩn: $MA=MB=\\sqrt{3^2+4^2}=5$ cm, $\\cos\\widehat{AMH}=\\dfrac{3}{5}$"
+        },
+        {
+          "trich_de": "nằm trên đường trung trực của AB",
+          "du_lieu": "$r_1=r_2\\Rightarrow E_1=E_2$",
+          "kien_thuc": "$E=2E_1\\cos\\dfrac{\\alpha}{2}$, $\\vec E$ nằm dọc trung trực"
+        },
+        {
+          "trich_de": "$q=-3{,}2\\cdot10^{-18}$ C",
+          "du_lieu": "$|q|=3{,}2\\cdot10^{-18}$ C, $q\\lt 0$",
+          "kien_thuc": "$F=|q|E$, $\\vec F$ ngược chiều $\\vec E$"
+        },
+        {
+          "trich_de": "Khi hạt bụi tới đúng H",
+          "du_lieu": "$r_1=r_2=0{,}04$ m, hai vectơ ngược chiều",
+          "kien_thuc": "$E_H=|E_1-E_2|$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E, F, F_H",
+        "cong_thuc": "E=2E_1\\cos\\dfrac{\\alpha}{2},\\quad F=|q|E,\\quad F_H=|q|\\,|E_{1H}-E_{2H}|"
+      },
+      "kien_thuc_goi_lai": [
+        "$E_1=k\\dfrac{|Q|}{r^2}$ với $r=MA$.",
+        "Hai vectơ bằng nhau hợp góc $\\alpha$: $E=2E_1\\cos\\dfrac{\\alpha}{2}$.",
+        "$q\\lt 0$: lực ngược chiều $\\vec E$.",
+        "Hai vectơ bằng nhau, ngược chiều thì tổng bằng 0.",
+        "Bộ 3–4–5 cho khoảng cách ẩn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Rút dữ kiện ẩn từ hình",
+          "cong_thuc_chu": "$MA=\\sqrt{MH^2+AH^2},\\ \\cos\\dfrac{\\alpha}{2}=\\dfrac{MH}{MA}$",
+          "the_so": "$MA=\\sqrt{3^2+4^2}$ cm; $\\cos\\dfrac{\\alpha}{2}=\\dfrac{3}{5}$",
+          "ket_qua": "$MA=MB=0{,}05\\ \\text{m},\\ \\cos\\dfrac{\\alpha}{2}=0{,}6$",
+          "kiem_tra": "$\\vec E_1$ nằm trên đường AM kéo dài, nên nửa góc giữa hai vectơ bằng góc AMH: đúng."
+        },
+        {
+          "tieu_de": "Độ lớn mỗi vectơ (đã quen)",
+          "cong_thuc_chu": "$E_1=E_2=k\\dfrac{Q}{MA^2}$",
+          "the_so": "$E_1=9\\cdot10^{9}\\cdot\\dfrac{5\\cdot10^{-9}}{0{,}05^2}$",
+          "ket_qua": "$E_1=E_2=1{,}8\\cdot10^{4}\\ \\text{V/m}$",
+          "kiem_tra": "Đơn vị V/m."
+        },
+        {
+          "tieu_de": "Cộng hai vectơ hợp góc $\\alpha$",
+          "cong_thuc_chu": "$E=2E_1\\cos\\dfrac{\\alpha}{2}$",
+          "the_so": "$E=2\\cdot1{,}8\\cdot10^{4}\\cdot0{,}6$",
+          "ket_qua": "$E=2{,}16\\cdot10^{4}\\ \\text{V/m}$",
+          "kiem_tra": "$E$ nằm giữa $|E_1-E_2|=0$ và $E_1+E_2=3{,}6\\cdot10^4$: hợp lí."
+        },
+        {
+          "tieu_de": "Hướng của $\\vec E$ tại M",
+          "cong_thuc_chu": "thành phần dọc AB triệt tiêu do đối xứng",
+          "the_so": "$\\vec E_1$ ra xa A, $\\vec E_2$ ra xa B",
+          "ket_qua": "$\\vec E$ nằm trên đường trung trực, hướng từ H ra M (ra xa AB)",
+          "kiem_tra": "Hai điện tích dương đều đẩy ra nên tổng hướng ra xa đoạn AB."
+        },
+        {
+          "tieu_de": "Lực lên hạt bụi tại M",
+          "cong_thuc_chu": "$F=|q|E$, $q\\lt 0$ nên ngược chiều $\\vec E$",
+          "the_so": "$F=3{,}2\\cdot10^{-18}\\cdot2{,}16\\cdot10^{4}$",
+          "ket_qua": "$F\\approx6{,}91\\cdot10^{-14}\\ \\text{N}$, hướng từ M về H",
+          "kiem_tra": "Hạt bụi âm bị hai quả cầu dương hút về phía chúng: đúng với thực tế lọc bụi."
+        },
+        {
+          "tieu_de": "Lực tại trung điểm H",
+          "cong_thuc_chu": "$E_H=|E_{1H}-E_{2H}|$",
+          "the_so": "$E_{1H}=E_{2H}$ (cùng cách 4 cm), hai vectơ ngược chiều",
+          "ket_qua": "$E_H=0\\Rightarrow F_H=0\\ \\text{N}$",
+          "kiem_tra": "Đối xứng: tại H hai lực đẩy/hút từ A và B cân bằng nhau."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 21600,
+          "don_vi": "V/m (dọc trung trực, hướng ra xa AB)"
+        },
+        {
+          "y": "b",
+          "gia_tri": 6.912e-14,
+          "don_vi": "N (hướng từ M về H)"
+        },
+        {
+          "y": "c",
+          "gia_tri": 0,
+          "don_vi": "N"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "MA",
+          "bieu_thuc": "math.sqrt(0.03**2 + 0.04**2)",
+          "ky_vong": 0.05,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E1 tại M",
+          "bieu_thuc": "9e9*5e-9/0.05**2",
+          "ky_vong": 18000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E tổng hợp tại M",
+          "bieu_thuc": "2*(9e9*5e-9/0.05**2)*(0.03/0.05)",
+          "ky_vong": 21600,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E tổng kiểm lại bằng công thức góc bất kì",
+          "bieu_thuc": "math.sqrt(2*18000**2*(1 + math.cos(2*math.acos(0.6))))",
+          "ky_vong": 21600,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực lên hạt bụi",
+          "bieu_thuc": "3.2e-18*21600",
+          "ky_vong": 6.912e-14,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "E tại H",
+          "bieu_thuc": "abs(9e9*5e-9/0.04**2 - 9e9*5e-9/0.04**2)",
+          "ky_vong": 0,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có hai điện tích bằng nhau và điểm trên trung trực, chỉ cho khoảng cách tới trung điểm → tự tính khoảng cách tới từng điện tích và nửa góc, dùng $E=2E_1\\cos(\\alpha/2)$, rồi suy lực theo dấu điện tích đặt vào.",
+      "bay_thuong_gap": [
+        "Dùng $r=MH=3$ cm hoặc $r=AH=4$ cm thay vì $MA=5$ cm.",
+        "Cộng thẳng $E=E_1+E_2=3{,}6\\cdot10^4$ V/m, bỏ qua góc.",
+        "Coi hai vectơ vuông góc vì thấy bộ 3–4–5, trong khi góc vuông ở H chứ không ở M.",
+        "Lấy $\\cos\\dfrac{\\alpha}{2}=\\dfrac{4}{5}$ (nhầm cạnh kề).",
+        "Cho lực lên hạt bụi cùng chiều $\\vec E$, quên q âm.",
+        "Ở câu c nghĩ tại H điện trường mạnh nhất vì gần cả hai quả cầu."
+      ],
+      "dieu_ban_khong_chac": [
+        "Điện tích hạt bụi $3{,}2\\cdot10^{-18}$ C (20 electron) là giá trị minh hoạ; lực rất nhỏ so với trọng lượng hạt bụi lớn, đề không xét chuyển động nên không ảnh hưởng đáp số.",
+        "Công thức $E=2E_1\\cos\\dfrac{\\alpha}{2}$ có trong bảng của bài; nếu muốn tránh công thức này có thể dùng $E^2=E_1^2+E_2^2+2E_1E_2\\cos\\alpha$ với $\\cos\\alpha=-0{,}28$, cho cùng kết quả."
+      ],
+      "mo_phong_goi_y": "Hai quả cầu đỏ tại A và B trên trục ngang, nhãn '$+5$ nC', đoạn 'AB = 8 cm', trung điểm H. Đường trung trực nét đứt đi lên từ H. Một hạt bụi nhỏ màu xám, nhãn '$q=-3{,}2\\cdot10^{-18}$ C', trôi tới điểm M trên trung trực, nhãn 'MH = 3 cm'. Tại M hiện hai mũi tên đỏ '$\\vec E_1$', '$\\vec E_2$' hướng ra xa A và B, kèm cung góc '$\\alpha$' giữa chúng; sau đó dựng hình bình hành nét mờ và đường chéo lục '$\\vec E$ = ?'. Cuối cùng hạt bụi trượt xuống H, hiện nhãn '$\\vec F_H$ = ?'."
+    }
+  ]
+}

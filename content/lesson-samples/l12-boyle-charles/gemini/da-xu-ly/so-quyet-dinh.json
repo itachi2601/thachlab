@@ -1,0 +1,163 @@
+{
+  "bai": "l12-boyle-charles",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu về 'một phần tư → gấp bốn' không có trong bài (có thể nằm trong chú thích hình, ngoài văn bản)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: không bắt buộc đổi ra SI, chỉ cần p1, p2 cùng đơn vị áp suất và V1, V2 cùng đơn vị thể tích."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lập luận đổi sang dùng định luật Charles (cùng p, khí nóng hơn có V lớn hơn) ở mục 2 và phản hồi Câu 6, tránh dựa vào quan hệ đẳng tích chưa học."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay 'còn nội năng/gốc 0 thật' bằng 'ở 0 °C khí vẫn có thể tích khác 0, chỉ tính từ 0 K thì V mới tỉ lệ thuận với T' (mục 3 và Trả bài 3)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng đổi thành ℓ (cm), ℓ/T (cm/K) và thêm câu ống tiết diện đều nên thể tích tỉ lệ với chiều dài cột khí."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành: cột chưa nóng đều thì cột ngắn hơn dự đoán nên không giải thích được việc ℓ/T nhích lên, các nguyên nhân tách mỗi ý một dòng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lí do: cùng T, đường cao hơn có V lớn hơn, theo Boyle V lớn thì p nhỏ."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ký hiệu thành p_dưới = p_trên + h và tách ba trường hợp mỗi ý một dòng, không thêm hình."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(học ở bài sau)' sau quan hệ đẳng tích trong bảng Bẫy 1."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'vô lí, vì nhiệt độ tuyệt đối chỉ tăng 20% nên thể tích cũng chỉ tăng 20%'."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "B đổi thành 'khoảng 0,94 lần' (293/313 ≈ 0,936), phản hồi sai giải thích riêng A, B, C mỗi ý một dòng."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi 'câu a:'/'câu b:' trước dữ liệu trạng thái 2, nói rõ trạng thái 2 câu b khác câu a, bỏ chữ 'ngầm' vì đề đã nói rõ."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Kết luận so sánh trực tiếp 0,8 < 1,8 atm, phép nén B ghi rõ là '(Không bắt buộc)'."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề biến thể ghi rõ pittông trượt tự do nên áp suất khí luôn giữ 1,5 atm."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 300 K vào đề ⭐, đề ⭐⭐ ghi rõ giữ 3,0·10^5 Pa và nung 2,0 lít từ 300 K lên 360 K (đáp số 2,4 lít giữ nguyên)."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa ngắn đoạn nhiệt là khí không kịp trao đổi nhiệt với bên ngoài, bỏ ý đo lốp vì mục đời sống đã có."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'khí đổi trạng thái (ít nhất hai thông số thay đổi) là một quá trình'."
+      },
+      {
+        "id": "c18",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Trả bài 5 viết lại: khí bị nhốt dưới cột thuỷ ngân 200 mm trong ống hở phía trên, p0 = 760 mmHg."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn '$V$ giảm bao nhiêu lần thì $p$ tăng bấy nhiêu lần', chú thích 'gấp bốn' không có trong văn bản bài."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn, phản hồi đã nêu 327 là lấy 27 + 300."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'tính p1V1 rồi chia cho thể tích mới'."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn việc phải đổi sang kenvin."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'pV không đổi không có nghĩa V không đổi'."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 5: lấy T2/T1 với T2 là nhiệt độ sau, nóng lên thì thể tích tăng."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn, lập luận phản hồi đã được viết lại theo định luật Charles ở góp ý c3."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'A mới là thể tích lúc khí đang ở 400 K'."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 5 phương án B: 0,93 → khoảng 0,94 lần (293/313 ≈ 0,936), phản hồi sai giải thích riêng A, B, C.",
+      "Bảng thí nghiệm Charles: cột V (cm) → ℓ (cm), V/T → ℓ/T (cm/K), thêm câu ống tiết diện đều nên V tỉ lệ với ℓ. Số liệu giữ nguyên.",
+      "Sai số Charles (details): cột khí chưa nóng đều làm cột ngắn hơn dự đoán nên không giải thích được ℓ/T tăng (trước ghi 'sai lệch cả hai chiều').",
+      "Lí do dùng kenvin (mục 3 và Trả bài 3): bỏ 'còn nội năng', thay bằng 'ở 0 °C thể tích khác 0, chỉ tính từ 0 K thì V ∝ T'.",
+      "Mục 2 và 3: thêm lí do đường đẳng nhiệt xa gốc là nóng hơn (Charles, cùng p) và đường đẳng áp cao hơn là p nhỏ hơn (Boyle, cùng T).",
+      "Câu 6: phản hồi đúng/sai lập luận theo đường nằm ngang (cùng p) và định luật Charles, thay cho quan hệ đẳng tích.",
+      "Mở rộng cột thuỷ ngân: p2 = p1 + h → p_dưới = p_trên + h.",
+      "Bẫy 2 details: 'ống dài thêm vài phần trăm' → 'nhiệt độ tuyệt đối tăng 20% nên thể tích tăng 20%'.",
+      "Bảng dữ liệu bài toán mẫu: ghi 'câu a:'/'câu b:' cho trạng thái 2, bỏ chữ 'dữ kiện ngầm'.",
+      "Lời giải câu c: so sánh trực tiếp 0,8 atm < 1,8 atm, phép nén B ghi là không bắt buộc.",
+      "Quiz 7: pittông trượt tự do, áp suất luôn 1,5 atm. Đáp án 4,0 lít không đổi.",
+      "Thử thách ⭐ thêm 300 K, ⭐⭐ ghi rõ giữ 3,0·10^5 Pa, 2,0 lít, 300 K → 360 K. Đáp số 3,0·10^5 Pa và 2,4 lít không đổi.",
+      "Thách đấu ⭐⭐⭐: thêm định nghĩa đoạn nhiệt, bỏ câu về đo lốp.",
+      "Trả bài 5: đề viết lại rõ (khí dưới cột Hg 200 mm, ống hở phía trên, p0 = 760 mmHg). Đáp số 960 mmHg giữ nguyên.",
+      "Cắt chữ để bù: bỏ gạch đầu dòng 'Ví dụ: nén rất chậm…' ở mục 1, bỏ câu hỏi cuối phản hồi đúng Câu 3, rút gọn đoạn mở Bẫy 2, bỏ 'Chọn lại nhé' ở Câu 6."
+    ],
+    "so_tu_them": 55,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-boyle-charles/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

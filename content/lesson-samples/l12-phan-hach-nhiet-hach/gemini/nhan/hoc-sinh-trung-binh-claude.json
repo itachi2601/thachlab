@@ -1,0 +1,263 @@
+{
+  "bai": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Phản ứng hạt nhân và những gì bảo toàn",
+      "trich_nguyen_van": "Kích thích: bị hạt khác bắn vào rồi biến đổi — ví dụ phân hạch, nhiệt hạch.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Nhiệt hạch cũng xảy ra do bắn một hạt vào hạt nhân nhẹ. Ý này mâu thuẫn với mục 6 và dễ dẫn tới chọn B ở Câu 5 (\"Có nơtron chậm bắn vào hạt nhẹ\").",
+      "de_xuat": "Tách ví dụ: phân hạch là do nơtron bắn vào; nhiệt hạch là do các hạt nhân nhẹ va chạm với nhau ở nhiệt độ rất cao, không cần hạt bắn phá."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Phản ứng hạt nhân và những gì bảo toàn",
+      "trich_nguyen_van": "Xét phản ứng $A + B \\to C + D$ ($A_i$ là số nuclôn, $Z_i$ là điện tích).",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ A vừa là tên hạt vừa là số nuclôn. Chỉ số 1–4 không được nói rõ ứng với A, B, C, D nên học sinh không biết $A_1$ là của hạt nào.",
+      "de_xuat": "Ghi rõ: hạt A có $A_1, Z_1$; hạt B có $A_2, Z_2$; hạt C có $A_3, Z_3$; hạt D có $A_4, Z_4$. Nên đặt tên hạt bằng $X_1, X_2…$ để khỏi trùng với số nuclôn."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "I. Mở bài: nhà máy không có ngọn lửa nào",
+      "trich_nguyen_van": "B. Hạt nhân urani vỡ ra, khối lượng nghỉ thành năng lượng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Khối lượng nghỉ\" là một loại khối lượng đặc biệt khác với khối lượng thường. Bài dùng từ này suốt từ mục I đến mục III mà không nhắc lại nghĩa.",
+      "de_xuat": "Ở mục 1, thêm một câu nhắc: khối lượng nghỉ là khối lượng của hạt khi đứng yên, ứng với năng lượng nghỉ $E = mc^2$."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Năng lượng toả ra của phản ứng hạt nhân",
+      "trich_nguyen_van": "Với $m_A, m_B$ là khối lượng hai hạt trước, $m_C, m_D$ là hai hạt sau:",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Công thức chỉ có hai hạt sau, nên khi áp vào phản ứng ở Câu 1, học sinh chỉ trừ $m_{Ba}$ và $m_{Kr}$, bỏ sót 3 nơtron. Khi đó $\\Delta m \\approx 3{,}21$ u, sai hoàn toàn.",
+      "de_xuat": "Viết dạng tổng quát $W = (\\sum m_{trước} - \\sum m_{sau})c^2$ và nhấn: phải tính mọi hạt sau phản ứng, kể cả $x$ nơtron."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Năng lượng toả ra của phản ứng hạt nhân",
+      "trich_nguyen_van": "Đọc bảng rồi tính $W$ cho phản ứng ở Câu 1 (sai số cỡ $0{,}0002$–$0{,}0003\\ \\text{u}$).",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài giao việc tính nhưng không có lời giải ngay tại chỗ. Phần sai số liền sau đã cho sẵn $0{,}186$ u và 173 MeV, còn lời giải chỉ có ở mục V nên học sinh không tự kiểm tra được.",
+      "de_xuat": "Thêm một ô \"Bấm xem\" ngay dưới bảng, ghi từng bước: tổng trước, tổng sau (có $3m_n$), $\\Delta m$, rồi nhân 931,5."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Năng lượng toả ra của phản ứng hạt nhân",
+      "trich_nguyen_van": "Độ hụt khối chỉ $0{,}186\\ \\text{u}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Mục 2 không gọi hiệu khối lượng trước – sau là \"độ hụt khối\". Học sinh dễ nhầm với độ hụt khối của một hạt nhân ($Zm_p + Nm_n - m_X$) đã học ở bài trước.",
+      "de_xuat": "Ngay dưới công thức ghi: $\\Delta m = (m_A + m_B) - (m_C + m_D)$ là độ hụt khối của phản ứng, khác với độ hụt khối của một hạt nhân."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Phân hạch: hạt nhân nặng vỡ ra",
+      "trich_nguyen_van": "toả vì hai mảnh vỡ bền hơn nên năng lượng liên kết riêng tăng.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy được mối nối giữa \"năng lượng liên kết riêng tăng\" với \"khối lượng nghỉ giảm\". Đó là hai lời giải thích riêng rẽ.",
+      "de_xuat": "Thêm nửa câu: năng lượng liên kết tổng của các mảnh lớn hơn của U nên tổng khối lượng nghỉ sau nhỏ hơn trước, phần chênh toả ra."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Phân hạch: hạt nhân nặng vỡ ra",
+      "trich_nguyen_van": "A. Khối lượng nghỉ các mảnh vỡ nhỏ hơn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "\"Nhỏ hơn\" mà không nói nhỏ hơn cái gì. Học sinh hiểu thành \"mỗi mảnh nhẹ hơn urani\", điều hiển nhiên đúng nhưng không phải lí do toả năng lượng.",
+      "de_xuat": "Sửa thành \"A. Tổng khối lượng nghỉ các hạt sau nhỏ hơn tổng khối lượng nghỉ các hạt trước\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "1. Phản ứng hạt nhân và những gì bảo toàn",
+      "trich_nguyen_van": "Em cộng thiếu một vế: bên phải có cả Ba, Kr và $x$ nơtron.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lỗi phổ biến nhất (ra $x = 2$) là quên nơtron tới ở vế trái. Phản hồi lại chỉ vào vế phải nên không trúng chỗ sai.",
+      "de_xuat": "Thêm: \"Đừng quên nơtron bắn vào ở vế trái: $235 + 1$ chứ không phải $235$\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "4. Phản ứng dây chuyền và hệ số nhân nơtron",
+      "trich_nguyen_van": "giữ ở mức gần nhau",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ dòng 3 cm ứng với $k = 1$ hay chỉ là số ghim đổ ba lần gần nhau. Bảng cũng không nối khoảng cách ghim với khối lượng tới hạn.",
+      "de_xuat": "Thêm cột \"Tương ứng\": 4 cm ↔ $k \\lt 1$, 3 cm ↔ $k \\approx 1$, 2 cm ↔ $k \\gt 1$, và một câu: ghim sát hơn giống nhiên liệu đậm đặc hơn."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "5. Lò phản ứng và nhà máy điện hạt nhân",
+      "trich_nguyen_van": "Thanh nhiên liệu: urani đã làm giàu, ngâm trong chất tải nhiệt.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Làm giàu\" chưa được giải thích ở đây. Mãi đến ô ẩn trong Bẫy 1 mới có \"vài phần trăm U-235\".",
+      "de_xuat": "Thêm ngoặc: \"(tăng tỉ lệ U-235 lên vài phần trăm)\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "6. Nhiệt hạch: hạt nhân nhẹ kết hợp lại",
+      "trich_nguyen_van": "Lõi Mặt trời chỉ cỡ $1{,}5\\cdot10^7\\ \\text{K}$, thấp hơn điều kiện $10^8\\ \\text{K}$ của con người.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bullet điều kiện ghi $10^8$–$10^9$ K như điều kiện bắt buộc, rồi ví dụ lại cho Mặt trời chạy ở nhiệt độ thấp hơn. Học sinh không biết khi làm Câu 5 thì điều kiện nào đúng.",
+      "de_xuat": "Ở bullet điều kiện ghi rõ: \"$10^8$–$10^9$ K là điều kiện cho lò nhân tạo; trong sao, mật độ cực lớn bù cho nhiệt độ thấp hơn\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "6. Nhiệt hạch: hạt nhân nhẹ kết hợp lại",
+      "trich_nguyen_van": "JET, ITER giam plasma bằng từ trường.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Plasma\" chưa được định nghĩa, cũng không rõ vì sao từ trường giam được nó.",
+      "de_xuat": "Thêm: \"plasma là khí bị ion hoá hoàn toàn ở nhiệt độ rất cao, gồm hạt nhân và êlectron tự do, nên từ trường giữ được\"."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "6. Nhiệt hạch: hạt nhân nhẹ kết hợp lại",
+      "trich_nguyen_van": "$4\\,{}^{1}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + 2\\,\\text{e}^{+} + 2\\nu$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu $\\text{e}^{+}$ và $\\nu$ xuất hiện mà không có tên gọi. Học sinh không kiểm tra được bảo toàn điện tích vì không biết $\\text{e}^{+}$ mang điện tích +1.",
+      "de_xuat": "Chú thích ngay sau phương trình: $\\text{e}^{+}$ là pôzitron (điện tích +1), $\\nu$ là nơtrinô (không mang điện)."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "V. Bài toán mẫu: một gam urani bằng mấy tấn than?",
+      "trich_nguyen_van": "$N = \\dfrac{1}{235} \\times 6{,}02\\cdot10^{23} \\approx 2{,}56\\cdot10^{21}$ hạt",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Số $6{,}02\\cdot10^{23}$ không có trong dữ liệu đề. Công thức $N = \\frac{m}{M}N_A$ cũng không được viết ra, nên học sinh không biết số này từ đâu.",
+      "de_xuat": "Thêm $N_A = 6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$ vào dữ liệu đề và viết bước $N = \\frac{m}{M}N_A$ trước khi thay số."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "V. Bài toán mẫu: một gam urani bằng mấy tấn than?",
+      "trich_nguyen_van": "$W = 0{,}1859 \\times 931{,}5 \\approx 173{,}2\\ \\text{MeV}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không thấy $c^2$ đâu. Học sinh có thể định nhân thêm $(3\\cdot10^8)^2$.",
+      "de_xuat": "Viết bước trung gian: $W = 0{,}1859\\ \\text{u}\\cdot c^2 = 0{,}1859 \\times 931{,}5\\ \\text{MeV}/c^2 \\cdot c^2$."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "V. Bài toán mẫu: một gam urani bằng mấy tấn than?",
+      "trich_nguyen_van": "Vẫn lò đó, nhưng mỗi phân hạch toả $200\\ \\text{MeV}$.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Vừa tính ra 173 MeV, giờ \"vẫn lò đó\" lại là 200 MeV. Học sinh nghĩ mình tính sai ở trên hoặc không biết khi làm bài nên dùng số nào.",
+      "de_xuat": "Giải thích một câu: 200 MeV là giá trị trung bình cho mọi kiểu phân hạch U-235 (nhiều cặp mảnh khác nhau), còn 173 MeV chỉ cho riêng cặp Ba–Kr."
+    },
+    {
+      "id": "c18",
+      "vi_tri": "V. Bài toán mẫu: một gam urani bằng mấy tấn than?",
+      "trich_nguyen_van": "Số phân hạch cần để toả ra $1\\ \\text{J}$ là:",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 7 hỏi đúng bài vừa có đáp án ở ô \"Điền bước\" ngay trên. Học sinh chỉ chép lại $3{,}1\\cdot10^{10}$ chứ không tự kiểm tra được gì.",
+      "de_xuat": "Đổi số ở Câu 7 (ví dụ 180 MeV hoặc 1 kJ) để học sinh phải tự làm lại."
+    },
+    {
+      "id": "c19",
+      "vi_tri": "V. Bài toán mẫu: một gam urani bằng mấy tấn than?",
+      "trich_nguyen_van": "quên rằng $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$ chứ không phải $10^{-16}$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dùng $10^{-16}$ ra $5\\cdot10^{13}$, không khớp phương án nào. B ($3{,}1\\cdot10^{13}$) phải dùng $1{,}6\\cdot10^{-16}$ mới ra, còn D ($5{,}0\\cdot10^{12}$) không được giải thích.",
+      "de_xuat": "Sửa thành \"$1{,}6\\cdot10^{-16}$ (nhầm sang keV) cho B\" và nêu phép tính dẫn tới D."
+    },
+    {
+      "id": "c20",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Muốn tăng công suất thì nâng $k$ lên hơi quá 1 trong thời gian ngắn rồi kéo thanh điều khiển về lại.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "\"Kéo về lại\" có thể hiểu là kéo ra, trong khi mục 5 nói \"kéo ra thì $k$ tăng\". Học sinh không rõ phải đẩy vào hay kéo ra để đưa $k$ về 1.",
+      "de_xuat": "Viết rõ: \"rút thanh ra một chút để $k$ hơi lớn hơn 1, đạt công suất mới thì đẩy thanh vào lại để $k$ trở về 1\"."
+    },
+    {
+      "id": "c21",
+      "vi_tri": "2. Năng lượng toả ra của phản ứng hạt nhân",
+      "trich_nguyen_van": "B. Phải cấp thêm năng lượng cho phản ứng",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lí thuyết dùng từ \"thu năng lượng\", còn đáp án đúng lại ghi \"cấp thêm\". Học sinh dò từ khoá \"thu\" không thấy, dễ phân vân.",
+      "de_xuat": "Sửa thành \"B. Thu năng lượng (phải cấp thêm năng lượng cho phản ứng)\"."
+    },
+    {
+      "id": "c22",
+      "vi_tri": "Bẫy 2: \"khối lượng được bảo toàn\"",
+      "trich_nguyen_van": "Vì $E = mc^2$ cho phép đổi qua lại giữa khối lượng và năng lượng",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Trước đó bài dùng $W = \\Delta m\\,c^2$, giờ lại là $E = mc^2$. Học sinh không chắc $E$ và $W$ là cùng một đại lượng hay khác nhau.",
+      "de_xuat": "Ghi \"$E = mc^2$ (năng lượng nghỉ); phần chênh lệch chính là $W = \\Delta m\\,c^2$ ở mục 2\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy urani ngâm trong nước nên nghĩ có phản ứng hoá học toả nhiệt như đốt cháy.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phản ứng hạt nhân không phải phản ứng hoá học"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên nơtron bắn vào ở vế trái: $235 = 144 + 89 + x$ nên ra $x = 2$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Em cộng thiếu một vế: bên phải có cả Ba, Kr và $x$ nơtron."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ khối lượng tăng tức là \"có thêm\", nên có năng lượng sinh ra; đọc ngược dấu của $W$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Em đọc ngược dấu rồi. Nhớ câu \"trước nặng hơn thì toả\""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Bài nhắc nhiều lần \"hạt nhân hấp thụ nơtron\", nên học sinh nghĩ năng lượng đến từ chính nơtron bị hấp thụ rồi biến thành nhiệt.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy $1{,}002 \\approx 1$ nên coi như $k = 1$, công suất không đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$k = 1{,}002$ tuy chỉ hơn 1 một chút nhưng vẫn $k \\gt 1$, nên số nơtron tăng dần."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Mục 1 xếp nhiệt hạch vào loại \"bị hạt khác bắn vào\", nên học sinh chọn \"nơtron chậm bắn vào hạt nhẹ\". Ngoài ra, thấy Mặt trời chạy dưới $10^8$ K nên nghi ngờ phương án A.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phương án B mô tả cách mồi phân hạch, không phải nhiệt hạch."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Coi \"kết hợp lại\" là ngược với \"vỡ ra\", nên nghĩ dấu năng lượng cũng ngược: phân hạch toả thì nhiệt hạch thu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cả hai phản ứng đều toả năng lượng khi đi về phía hạt nhân bền hơn."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đổi MeV ra jun bằng $1{,}6\\cdot10^{-16}$ (nhầm với keV), nên ra $3{,}1\\cdot10^{13}$. Phương án này cùng chữ số với đáp án đúng nên rất dễ bị chọn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "quên rằng $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}\\ \\text{J}$ chứ không phải $10^{-16}$"
+    }
+  ]
+}

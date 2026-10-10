@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 6. Phản xạ toàn phần",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Điều kiện và góc tới hạn",
+      "trich_nguyen_van": "Điều kiện 2: góc tới $i \\ge i_{th}$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 1 và Hình 2 nói khi i = i_th vẫn còn tia khúc xạ đi sát mặt phân cách. Điều kiện 2 lại ghi i ≥ i_th là đã phản xạ toàn phần. Ngay tại i = i_th, em không biết có tia ló hay không. Phương án B của Câu 7 càng làm em rối thêm.",
+      "de_xuat": "Thêm một câu nói rõ: tại đúng i = i_th là trường hợp giới hạn (tia khúc xạ sát mặt, rất mờ); phản xạ toàn phần thực sự xảy ra khi i vượt i_th. Hoặc thống nhất viết i > i_th trong cả bài."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "Bẫy 1",
+      "trich_nguyen_van": "Góc tới hạn chỉ có một chiều: đặc ra loãng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "\"Đặc\" và \"loãng\" chưa được định nghĩa ở đâu trong bài. Em dễ hiểu là khối lượng riêng (nặng/nhẹ) chứ không phải chiết suất lớn/nhỏ.",
+      "de_xuat": "Thay bằng \"chiết suất lớn ra chiết suất nhỏ\", hoặc ghi rõ \"đặc/loãng ở đây là về chiết suất, không phải khối lượng riêng\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Điều kiện và góc tới hạn",
+      "trich_nguyen_van": "Từ chiết quang hơn · sang chiết quang kém · góc tới đủ lớn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thuật ngữ \"chiết quang hơn/kém\" xuất hiện trước khi bài nói nó nghĩa là chiết suất lớn hơn/nhỏ hơn. Sau đó bài dùng lẫn hai cách gọi.",
+      "de_xuat": "Ở Điều kiện 1 ghi rõ: \"môi trường chiết suất lớn (gọi là chiết quang hơn)\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Điều kiện và góc tới hạn",
+      "trich_nguyen_van": "Ra không khí ($n_2 = 1$) thì $\\sin i_{th} = \\dfrac{1}{n_1}$.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Mọi ví dụ và bảng số trước Câu 2 đều là ra không khí. Em quen tay tính 1/n, nên gặp thủy tinh sang nước sẽ lấy luôn 41,8° hoặc 48,8° có sẵn trong bảng.",
+      "de_xuat": "Thêm một ví dụ ngắn có n₂ ≠ 1 (ví dụ nước sang dầu, hoặc làm mẫu thủy tinh sang nước) trước Câu 2."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Cáp quang: ống dẫn ánh sáng",
+      "trich_nguyen_van": "phản xạ toàn phần hết lần này tới lần khác, nên đi theo sợi dù sợi uốn cong nhẹ",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa giải thích vì sao uốn cong lại làm góc tới nhỏ đi. Đến Câu 3, em phải đoán chứ không suy ra được.",
+      "de_xuat": "Thêm một câu kèm hình: khi sợi cong gắt, tia sáng đập vào thành dốc hơn (gần pháp tuyến hơn) nên góc tới giảm, có thể xuống dưới i_th."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 3",
+      "trich_nguyen_van": "Ống nhòm và kính tiềm vọng tốt dùng lăng kính phản xạ toàn phần thay cho gương phẳng.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Em không biết \"lăng kính phản xạ toàn phần\" trông thế nào, tia sáng đi ra sao. Bài cũng chưa nói lớp bạc của gương hấp thụ một phần ánh sáng. Vì vậy Câu 6 thành đoán mò.",
+      "de_xuat": "Thêm hình lăng kính vuông cân với tia tới 45° > 41,8° tại mặt huyền. Thêm một câu: gương tráng bạc luôn hấp thụ một phần ánh sáng (đặt trước Câu 6)."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "1. Hiện tượng phản xạ toàn phần",
+      "trich_nguyen_van": "Với $i = 30^\\circ$ ($n = 1{,}5$): tia khúc xạ ló ra với $r \\approx 48{,}6^\\circ$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hình 1 và bảng \"r tính\" đưa ra r mà không nhắc công thức. Định luật n₁sin i = n₂sin r chỉ xuất hiện sau, trong mục ẩn ở phần 2. Em không biết số này từ đâu ra.",
+      "de_xuat": "Ghi kèm trong chú thích: \"1,5·sin30° = 1·sin r ⇒ sin r = 0,75\", hoặc nhắc định luật khúc xạ ngay đầu mục 1."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "1. Hiện tượng phản xạ toàn phần",
+      "trich_nguyen_van": "Khoảng $42^\\circ$: tia khúc xạ đi sát mặt phẳng.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng số liệu ngay bên dưới ghi tại 42° là \"không còn\" tia khúc xạ. Em thấy hai chỗ mâu thuẫn và không biết 42° là có hay không có tia ló.",
+      "de_xuat": "Sửa thành \"khoảng 41–42° (đúng là 41,8°): tia khúc xạ đi sát mặt phẳng\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1",
+      "trich_nguyen_van": "Ra môi trường kém ($n_1 \\gt n_2$)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề bảng chỉ ghi \"kém\" và \"hơn\" mà không nói kém/hơn về cái gì. Em phải tự đoán là chiết quang.",
+      "de_xuat": "Ghi đủ: \"Ra môi trường chiết quang kém\" / \"Vào môi trường chiết quang hơn\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 2",
+      "trich_nguyen_van": "C. Không, vì $30^\\circ + 42^\\circ \\lt 90^\\circ$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phép cộng này không ứng với lỗi tư duy nào em có thể mắc. Phần phản hồi cũng không giải thích vì sao C sai, nên em chỉ thấy khó hiểu.",
+      "de_xuat": "Thay C bằng một lỗi thật, ví dụ \"Không, vì góc tới là 30° < 42°\", hoặc bổ sung giải thích cho C trong phần phản hồi."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Thực ra đó là khúc xạ qua nhiều lớp không khí, trông giống phản xạ toàn phần",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề là \"bốn nơi em gặp phản xạ toàn phần\", nhưng mục này lại nói đây không phải phản xạ toàn phần. Em không biết ảo ảnh đường nhựa có tính là ví dụ của bài hay không.",
+      "de_xuat": "Đổi tiêu đề thành \"...phản xạ toàn phần (và một hiện tượng trông giống)\", hoặc nói rõ: ở lớp sát mặt đường, tia sáng cuối cùng bị phản xạ toàn phần."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Tia sáng trong lõi được hợp với trục sợi góc lớn nhất bao nhiêu để vẫn phản xạ toàn phần ở thành?",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Gợi ý chỉ cho \"góc với trục = 90° − i\". Em không thấy được bước: góc với trục lớn nhất ứng với i nhỏ nhất, tức i = i_th. Câu chữ \"được hợp\" cũng gây khó đọc.",
+      "de_xuat": "Thêm vào gợi ý: \"góc với trục càng lớn thì i càng nhỏ; i nhỏ nhất được phép là i_th\". Sửa \"được hợp\" thành \"hợp\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ nhớ \"ra không khí thì lệch xa pháp tuyến\" mà không nghĩ tới việc góc khúc xạ không thể vượt 90°.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Góc tới tăng thì góc khúc xạ chạm $90^\\circ$ trước"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ rằng chưa phản xạ toàn phần thì không có phản xạ nào cả, quên rằng khi có khúc xạ vẫn luôn có một phần ánh sáng phản xạ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "có cả tia khúc xạ ra không khí lẫn tia phản xạ mờ"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen công thức 1/n của trường hợp ra không khí, lấy luôn 41,8° của thủy tinh mà bỏ qua n₂ = 1,33.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Hình dung chỗ gập như một bức tường chặn ánh sáng bật ngược lại, không liên hệ được độ cong với góc tới.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ so góc tới với 48,8° mà quên kiểm tra chiều truyền (không khí vào nước).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhiều bạn nghĩ: \"cứ chiếu thật xiên là ánh sáng bật lại hết\"."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn góc giữa tia sáng và mặt phân cách làm góc tới.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Góc tới = góc với pháp tuyến · không phải với mặt"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn lăng kính với ống nhòm nên nghĩ lăng kính có tác dụng phóng đại; bài chưa nói gương bạc hấp thụ ánh sáng.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy 50° sát 48,8° nên cho rằng tia đi sát mặt nước, nhầm góc gần tới hạn với đúng góc tới hạn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thử tính $\\sin r$ cho tia $60^\\circ$: $1{,}33 \\cdot 0{,}866 \\approx 1{,}15 \\gt 1$, vô lí"
+    }
+  ]
+}

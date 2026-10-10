@@ -1,0 +1,590 @@
+{
+  "lesson_title": "Bài 17. Hiện tượng phóng xạ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Nhận dạng tia phóng xạ qua điện trường và vật chắn",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nChỉ dùng bản chất và điện tích của từng tia để suy ra chiều lệch và khả năng đâm xuyên.",
+      "yccd_de_xuat": "Các tia phóng xạ α, β, γ",
+      "de_bai": "Một nguồn phóng xạ đặt trong hộp chì có khe hẹp, phát ra chùm tia gồm ba loại $\\alpha$, $\\beta^-$, $\\gamma$.\nChùm tia bay theo phương nằm ngang từ trái sang phải, đi vào khoảng giữa hai bản kim loại song song đặt nằm ngang: bản trên tích điện dương, bản dưới tích điện âm.\nSau hai bản là một màn huỳnh quang. Trên màn thấy ba vết: vết (1) lệch lên trên, vết (2) nằm thẳng hàng với khe, vết (3) lệch xuống dưới.\nCả hệ đặt trong chân không.\na) Mỗi vết ứng với loại tia nào? Nêu lí do.\nb) Đặt một tờ giấy chắn ngay trước khe thì vết nào biến mất? Vì sao?\nc) Nêu điện tích (theo $e$) của hạt tạo vết (1) và của hạt tạo vết (3).",
+      "dieu_kien_ap_dung": "Chùm tia đi trong chân không, chỉ chịu lực điện giữa hai bản; chiều lệch do dấu điện tích của hạt quyết định.",
+      "phan_tich": [
+        {
+          "trich_de": "bản trên tích điện dương, bản dưới tích điện âm",
+          "du_lieu": "Bản trên (+), bản dưới (−)",
+          "kien_thuc": "Hạt dương bị đẩy về bản âm, hạt âm bị đẩy về bản dương"
+        },
+        {
+          "trich_de": "vết (1) lệch lên trên",
+          "du_lieu": "Vết (1) lệch về bản dương",
+          "kien_thuc": "Hạt tạo vết (1) mang điện âm"
+        },
+        {
+          "trich_de": "vết (2) nằm thẳng hàng với khe",
+          "du_lieu": "Vết (2) không lệch",
+          "kien_thuc": "Tia không mang điện thì không lệch"
+        },
+        {
+          "trich_de": "vết (3) lệch xuống dưới",
+          "du_lieu": "Vết (3) lệch về bản âm",
+          "kien_thuc": "Hạt tạo vết (3) mang điện dương"
+        },
+        {
+          "trich_de": "Đặt một tờ giấy chắn ngay trước khe",
+          "du_lieu": "Vật chắn: một tờ giấy",
+          "kien_thuc": "Tia $\\alpha$ đâm xuyên kém nhất, một tờ giấy đã chặn"
+        },
+        {
+          "trich_de": "Cả hệ đặt trong chân không",
+          "du_lieu": "Không có không khí hấp thụ tia",
+          "kien_thuc": "Cả ba tia đều tới được màn khi chưa chắn"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "Loại tia ở vết (1), (2), (3); vết bị mất khi chắn giấy",
+        "cong_thuc": "$q \\gt 0$: lệch về bản âm; $q \\lt 0$: lệch về bản dương; $q = 0$: không lệch"
+      },
+      "kien_thuc_goi_lai": [
+        "Tia $\\alpha$ là hạt nhân $^4_2\\text{He}$, mang điện $+2e$, lệch về bản âm.",
+        "Tia $\\beta^-$ là electron $^0_{-1}e$, mang điện $-e$, lệch về bản dương.",
+        "Tia $\\gamma$ là sóng điện từ, không mang điện, không lệch.",
+        "Đâm xuyên tăng dần: $\\alpha \\lt \\beta \\lt \\gamma$; tờ giấy đã chặn được $\\alpha$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xác định chiều lực điện theo dấu điện tích",
+          "cong_thuc_chu": "$q \\gt 0$ → về bản âm; $q \\lt 0$ → về bản dương; $q = 0$ → không lệch",
+          "the_so": "Bản trên (+), bản dưới (−)",
+          "ket_qua": "Hạt dương lệch xuống; hạt âm lệch lên; hạt không mang điện đi thẳng",
+          "kiem_tra": "Chiều lệch do điện tích quyết định, không do nặng nhẹ."
+        },
+        {
+          "tieu_de": "Bước 2. Vết (1)",
+          "cong_thuc_chu": "Lệch lên = lệch về bản dương → $q \\lt 0$",
+          "the_so": "Trong ba tia chỉ $\\beta^-$ mang điện âm",
+          "ket_qua": "Vết (1) là tia $\\beta^-$",
+          "kiem_tra": "Electron $^0_{-1}e$ có điện tích $-e$, khớp."
+        },
+        {
+          "tieu_de": "Bước 3. Vết (3)",
+          "cong_thuc_chu": "Lệch xuống = lệch về bản âm → $q \\gt 0$",
+          "the_so": "Trong ba tia chỉ $\\alpha$ mang điện dương",
+          "ket_qua": "Vết (3) là tia $\\alpha$",
+          "kiem_tra": "Hạt nhân $^4_2\\text{He}$ có $Z = 2$ nên mang $+2e$, khớp."
+        },
+        {
+          "tieu_de": "Bước 4. Vết (2)",
+          "cong_thuc_chu": "Không lệch → $q = 0$",
+          "the_so": "Tia $\\gamma$ là photon",
+          "ket_qua": "Vết (2) là tia $\\gamma$",
+          "kiem_tra": "Ba vết ứng đúng ba loại tia, không loại nào lặp."
+        },
+        {
+          "tieu_de": "Bước 5. Chắn bằng tờ giấy",
+          "cong_thuc_chu": "Tờ giấy chặn được $\\alpha$; $\\beta^-$ cần vài mm nhôm; $\\gamma$ cần chì dày",
+          "the_so": "Tia bị chặn là $\\alpha$",
+          "ket_qua": "Vết (3) biến mất; vết (1) và (2) vẫn còn",
+          "kiem_tra": "Tia ion hoá mạnh nhất là tia đâm xuyên kém nhất, hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b) Số thứ tự vết biến mất",
+          "gia_tri": 3,
+          "don_vi": "(vết số)"
+        },
+        {
+          "y": "c) Điện tích hạt tạo vết (1)",
+          "gia_tri": -1,
+          "don_vi": "e"
+        },
+        {
+          "y": "c) Điện tích hạt tạo vết (3)",
+          "gia_tri": 2,
+          "don_vi": "e"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Điện tích hạt alpha theo e bằng Z của He",
+          "bieu_thuc": "2",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Điện tích electron theo e",
+          "bieu_thuc": "-1",
+          "ky_vong": -1,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Số vết còn lại khi chắn giấy",
+          "bieu_thuc": "3-1",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho chùm tia đi qua hai bản tích điện hoặc gặp vật chắn → xét dấu điện tích để suy chiều lệch, xét khả năng đâm xuyên để suy tia bị chặn.",
+      "bay_thuong_gap": [
+        "Nghĩ tia $\\alpha$ nặng nên \"rơi xuống\", lấy khối lượng thay cho điện tích để giải thích chiều lệch.",
+        "Đảo chiều: cho hạt dương lệch về bản dương.",
+        "Nghĩ tờ giấy chặn được $\\gamma$ vì $\\gamma$ \"chỉ là ánh sáng\".",
+        "Nghĩ hai bản kim loại là nơi phát ra tia."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài chỉ nêu điện trường, không nêu từ trường, nên đề chỉ dùng hai bản tích điện.",
+        "Đáp số định tính được mã hoá thành số (số thứ tự vết, điện tích theo e) để có trường số."
+      ],
+      "mo_phong_goi_y": "Hộp chì có khe bên trái, chùm tia bay ngang sang phải vào giữa hai bản kim loại nằm ngang (bản trên ghi \"+\", bản dưới ghi \"−\"). Ba vệt sáng tách ra: một vệt cong lên, một vệt đi thẳng, một vệt cong xuống, chạm màn huỳnh quang tại ba vết đánh số (1), (2), (3). Chưa ghi tên tia trên vệt. Có nút \"Đặt tờ giấy\" chèn tờ giấy trước khe để học sinh tự quan sát vết nào tắt. Nhãn: khe, bản (+), bản (−), màn, vết (1), vết (2), vết (3), tờ giấy."
+    },
+    {
+      "label": "Dạng 2 · Viết phương trình phân rã, xác định hạt nhân con",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại dạng 1: nhận bản chất và điện tích của từng tia ($\\beta^-$ là $^0_{-1}e$, $\\beta^+$ là $^0_1e$, $\\gamma$ không mang điện).\nThêm MỘT độ khó mới: cân bằng $A$ và $Z$ để tìm hạt nhân con, tránh bẫy nhầm chiều tiến/lùi ô và bẫy \"$\\gamma$ làm đổi hạt nhân\".",
+      "yccd_de_xuat": "Các tia phóng xạ α, β, γ",
+      "de_bai": "Trong xạ trị ung thư, nguồn $^{60}_{27}\\text{Co}$ phân rã $\\beta^-$; hạt nhân con sinh ra ở trạng thái kích thích rồi phát tia $\\gamma$ để về trạng thái bền.\nTrong y học còn dùng đồng vị nhân tạo $^{11}_{6}\\text{C}$, phân rã $\\beta^+$.\nCho bảng số hiệu: bo $Z = 5$, nitơ $Z = 7$, sắt $Z = 26$, niken $Z = 28$.\na) Viết phương trình hai giai đoạn phân rã của $^{60}_{27}\\text{Co}$. Hạt nhân con cuối cùng có $A$, $Z$ bằng bao nhiêu, là hạt nhân gì, tiến hay lùi mấy ô so với coban?\nb) Viết phương trình phân rã của $^{11}_{6}\\text{C}$. Hạt nhân con có $A$, $Z$ bằng bao nhiêu, là hạt nhân gì, tiến hay lùi mấy ô?",
+      "dieu_kien_ap_dung": "Mọi phương trình phân rã đều phải bảo toàn số khối $A$ (dòng trên) và điện tích $Z$ (dòng dưới).",
+      "phan_tich": [
+        {
+          "trich_de": "nguồn $^{60}_{27}\\text{Co}$ phân rã $\\beta^-$",
+          "du_lieu": "$A = 60$, $Z = 27$; tia $^0_{-1}e$",
+          "kien_thuc": "$\\beta^-$: $A$ giữ nguyên, $Z$ tăng 1"
+        },
+        {
+          "trich_de": "hạt nhân con sinh ra ở trạng thái kích thích rồi phát tia $\\gamma$",
+          "du_lieu": "Hạt nhân con ở trạng thái $Y^*$",
+          "kien_thuc": "$\\gamma$: $^A_Z X^* \\to\\ ^A_Z X + \\gamma$, không đổi ô"
+        },
+        {
+          "trich_de": "$^{11}_{6}\\text{C}$, phân rã $\\beta^+$",
+          "du_lieu": "$A = 11$, $Z = 6$; tia $^0_1e$",
+          "kien_thuc": "$\\beta^+$: $A$ giữ nguyên, $Z$ giảm 1"
+        },
+        {
+          "trich_de": "bo $Z = 5$, nitơ $Z = 7$, sắt $Z = 26$, niken $Z = 28$",
+          "du_lieu": "Bảng tra tên hạt nhân theo $Z$",
+          "kien_thuc": "Tên nguyên tố do $Z$ quyết định"
+        },
+        {
+          "trich_de": "tiến hay lùi mấy ô",
+          "du_lieu": "Cần tìm: $\\Delta Z$",
+          "kien_thuc": "$\\Delta Z = Z_{con} - Z_{mẹ}$; dương là tiến, âm là lùi"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$A_{con}$, $Z_{con}$",
+        "cong_thuc": "$A_{mẹ} = A_{con} + A_{tia}$; $Z_{mẹ} = Z_{con} + Z_{tia}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\beta^-$: $^A_Z X \\to\\ ^A_{Z+1}Y + ^0_{-1}e$, con tiến 1 ô.",
+        "$\\beta^+$: $^A_Z X \\to\\ ^A_{Z-1}Y + ^0_1e$, con lùi 1 ô.",
+        "$\\gamma$: $^A_Z X^* \\to\\ ^A_Z X + \\gamma$, không đổi ô.",
+        "Tia $\\gamma$ phát ra ngay sau phân rã $\\alpha$ hoặc $\\beta$, khi hạt nhân con còn kích thích."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Ghi ký hiệu của từng tia (dùng lại dạng 1)",
+          "cong_thuc_chu": "$\\beta^- = ^0_{-1}e$; $\\beta^+ = ^0_1e$; $\\gamma$: $A = 0$, $Z = 0$",
+          "the_so": "—",
+          "ket_qua": "Đã có $A$, $Z$ của các tia",
+          "kiem_tra": "Điện tích của tia khớp chiều lệch ở dạng 1."
+        },
+        {
+          "tieu_de": "Bước 2. Giai đoạn $\\beta^-$ của coban",
+          "cong_thuc_chu": "$60 = A' + 0$; $27 = Z' + (-1)$",
+          "the_so": "$A' = 60$; $Z' = 27 + 1 = 28$",
+          "ket_qua": "$^{60}_{27}\\text{Co} \\to\\ ^{60}_{28}\\text{Ni}^* + ^0_{-1}e$",
+          "kiem_tra": "$Z' = 28$ ứng với niken, không phải sắt ($Z = 26$)."
+        },
+        {
+          "tieu_de": "Bước 3. Giai đoạn phát $\\gamma$",
+          "cong_thuc_chu": "$^A_Z X^* \\to\\ ^A_Z X + \\gamma$",
+          "the_so": "$A = 60$, $Z = 28$ giữ nguyên",
+          "ket_qua": "$^{60}_{28}\\text{Ni}^* \\to\\ ^{60}_{28}\\text{Ni} + \\gamma$; con cuối cùng $^{60}_{28}\\text{Ni}$, tiến 1 ô",
+          "kiem_tra": "Tổng hai giai đoạn: $A$ không đổi, $Z$ tăng 1, đúng một phân rã $\\beta^-$."
+        },
+        {
+          "tieu_de": "Bước 4. Phân rã $\\beta^+$ của $^{11}_6\\text{C}$",
+          "cong_thuc_chu": "$11 = A' + 0$; $6 = Z' + 1$",
+          "the_so": "$A' = 11$; $Z' = 6 - 1 = 5$",
+          "ket_qua": "$^{11}_{6}\\text{C} \\to\\ ^{11}_{5}\\text{B} + ^0_1e$; con là bo, lùi 1 ô",
+          "kiem_tra": "Nếu ra $Z = 7$ (nitơ) là đã dùng nhầm kiểu $\\beta^-$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a) A của hạt nhân con cuối cùng",
+          "gia_tri": 60,
+          "don_vi": ""
+        },
+        {
+          "y": "a) Z của hạt nhân con cuối cùng (Ni, tiến 1 ô)",
+          "gia_tri": 28,
+          "don_vi": ""
+        },
+        {
+          "y": "b) A của hạt nhân con",
+          "gia_tri": 11,
+          "don_vi": ""
+        },
+        {
+          "y": "b) Z của hạt nhân con (B, lùi 1 ô)",
+          "gia_tri": 5,
+          "don_vi": ""
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "A con của Co-60 sau beta- và gamma",
+          "bieu_thuc": "60-0-0",
+          "ky_vong": 60,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Z con của Co-60: 27 = Z' + (-1), gamma không đổi Z",
+          "bieu_thuc": "27-(-1)-0",
+          "ky_vong": 28,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A con của C-11",
+          "bieu_thuc": "11-0",
+          "ky_vong": 11,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Z con của C-11: 6 = Z' + 1",
+          "bieu_thuc": "6-1",
+          "ky_vong": 5,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho hạt nhân mẹ và loại tia, hỏi hạt nhân con hoặc tiến/lùi mấy ô → viết phương trình, cân bằng $A$ ở trên, $Z$ ở dưới, rồi tra tên theo $Z$.",
+      "bay_thuong_gap": [
+        "Nhầm $\\beta^+$ với $\\beta^-$: cho $Z$ tăng thay vì giảm.",
+        "Nghĩ tia $\\gamma$ làm giảm $A$ hoặc $Z$.",
+        "Tìm $Z'$ bằng cách cộng thay vì cân bằng: $27 + (-1) = 26$ → chọn nhầm sắt.",
+        "Quên ghi dấu $^*$ cho hạt nhân con kích thích trước khi phát $\\gamma$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài lí thuyết không nhắc $^{11}\\text{C}$; đồng vị này được dùng như ví dụ $\\beta^+$ thực tế, chỉ cần quy tắc dịch ô có trong bài."
+      ],
+      "mo_phong_goi_y": "Một dải ô bảng tuần hoàn rút gọn (B, C, N … Fe, Co, Ni) hiện dưới đề. Hạt nhân Co-60 phát ra một electron nhỏ mang dấu \"−\", hạt nhân phát sáng nhấp nháy (trạng thái kích thích) rồi bắn ra một tia gợn sóng $\\gamma$. Hạt nhân C-11 phát ra một positron mang dấu \"+\". Không hiện ô đích của hạt nhân con. Nhãn: hạt nhân mẹ, tia $\\beta^-$, tia $\\beta^+$, tia $\\gamma$, hạt nhân con (?), A, Z."
+    },
+    {
+      "label": "Dạng 3 · Định luật phóng xạ: số hạt đã phân rã và lượng hạt nhân con",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại dạng 2: bước đầu là viết phương trình phân rã $\\alpha$ để biết hạt nhân con.\nThêm MỘT độ khó mới: định luật phóng xạ — đổi khối lượng ra số hạt, tính số hạt đã phân rã sau $t$, rồi suy ra khối lượng hạt nhân con.",
+      "yccd_de_xuat": "Định luật phóng xạ và chu kì bán rã",
+      "de_bai": "Một nguồn $^{210}_{84}\\text{Po}$ dùng trong phòng thí nghiệm phóng xạ $\\alpha$ với chu kì bán rã $T = 138$ ngày. Hạt nhân con tạo thành là hạt nhân bền.\nLúc đóng gói, nguồn chứa $m_0 = 21{,}0\\ \\text{mg}$ poloni nguyên chất.\nLấy $N_A = 6{,}022.10^{23}$ hạt/mol; coi khối lượng mol của mỗi hạt nhân (tính bằng g/mol) bằng số khối của nó. Cho biết chì có $Z = 82$.\na) Viết phương trình phân rã, xác định hạt nhân con.\nb) Tính số hạt nhân poloni ban đầu $N_0$.\nc) Sau $276$ ngày kể từ lúc đóng gói, tính số hạt $\\alpha$ đã phát ra và khối lượng hạt nhân con đã tạo thành.",
+      "dieu_kien_ap_dung": "Định luật $N_t = N_0 2^{-t/T}$ áp dụng cho một lượng lớn hạt nhân cùng loại; hạt nhân con bền nên mỗi phân rã tạo đúng một hạt nhân con và nó không phân rã tiếp.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{210}_{84}\\text{Po}$",
+          "du_lieu": "$A = 210$, $Z = 84$",
+          "kien_thuc": "$\\alpha$: $A$ giảm 4, $Z$ giảm 2"
+        },
+        {
+          "trich_de": "$T = 138$ ngày",
+          "du_lieu": "$T = 138$ ngày",
+          "kien_thuc": "$N_t = N_0 2^{-t/T}$; không cần đổi ra giây vì chỉ dùng $t/T$"
+        },
+        {
+          "trich_de": "$m_0 = 21{,}0\\ \\text{mg}$",
+          "du_lieu": "$m_0 = 0{,}0210\\ \\text{g}$",
+          "kien_thuc": "$N_0 = \\dfrac{m_0}{A}N_A$"
+        },
+        {
+          "trich_de": "$N_A = 6{,}022.10^{23}$ hạt/mol",
+          "du_lieu": "$N_A = 6{,}022.10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "Đổi số mol ↔ số hạt"
+        },
+        {
+          "trich_de": "Hạt nhân con tạo thành là hạt nhân bền",
+          "du_lieu": "Số hạt nhân con = $\\Delta N$",
+          "kien_thuc": "Mỗi phân rã tạo một hạt $\\alpha$ và một hạt nhân con"
+        },
+        {
+          "trich_de": "Sau $276$ ngày",
+          "du_lieu": "$t = 276$ ngày",
+          "kien_thuc": "$n = t/T$"
+        },
+        {
+          "trich_de": "số hạt $\\alpha$ đã phát ra và khối lượng hạt nhân con đã tạo thành",
+          "du_lieu": "Cần tìm: $\\Delta N$, $m_{con}$",
+          "kien_thuc": "$\\Delta N = N_0(1 - 2^{-t/T})$; $m_{con} = \\dfrac{\\Delta N}{N_A}A_{con}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Delta N$, $m_{con}$",
+        "cong_thuc": "$\\Delta N = N_0\\left(1 - 2^{-t/T}\\right)$; $m_{con} = \\dfrac{\\Delta N}{N_A}A_{con}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$N_0 = \\dfrac{m_0}{A}N_A$.",
+        "$N_t = N_0 2^{-t/T}$; số đã phân rã $\\Delta N = N_0(1 - 2^{-t/T})$.",
+        "Sau $2T$ còn $1/4$, đã phân rã $75\\%$.",
+        "$\\alpha$: $^A_Z X \\to\\ ^{A-4}_{Z-2}Y + ^4_2\\text{He}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Phương trình phân rã (bài cấp 2)",
+          "cong_thuc_chu": "$^A_Z X \\to\\ ^{A-4}_{Z-2}Y + ^4_2\\text{He}$",
+          "the_so": "$A' = 210 - 4 = 206$; $Z' = 84 - 2 = 82$",
+          "ket_qua": "$^{210}_{84}\\text{Po} \\to\\ ^{206}_{82}\\text{Pb} + ^4_2\\text{He}$",
+          "kiem_tra": "$210 = 206 + 4$; $84 = 82 + 2$; $Z = 82$ là chì."
+        },
+        {
+          "tieu_de": "Bước 2. Số hạt nhân ban đầu",
+          "cong_thuc_chu": "$N_0 = \\dfrac{m_0}{A}N_A$",
+          "the_so": "$N_0 = \\dfrac{0{,}0210}{210} \\times 6{,}022.10^{23}$",
+          "ket_qua": "$N_0 = 6{,}022.10^{19}$ hạt",
+          "kiem_tra": "$m_0$ đã đổi ra gam để khớp g/mol; $10^{-4}$ mol là hợp lí cho 21 mg."
+        },
+        {
+          "tieu_de": "Bước 3. Số chu kì bán rã",
+          "cong_thuc_chu": "$n = t/T$",
+          "the_so": "$n = 276 / 138$",
+          "ket_qua": "$n = 2$",
+          "kiem_tra": "Cùng đơn vị ngày, tỉ số không thứ nguyên."
+        },
+        {
+          "tieu_de": "Bước 4. Số hạt đã phân rã = số hạt $\\alpha$",
+          "cong_thuc_chu": "$\\Delta N = N_0\\left(1 - 2^{-n}\\right)$",
+          "the_so": "$\\Delta N = 6{,}022.10^{19} \\times (1 - 1/4) = 6{,}022.10^{19} \\times 0{,}75$",
+          "ket_qua": "$\\Delta N \\approx 4{,}517.10^{19}$ hạt",
+          "kiem_tra": "$\\Delta N \\lt N_0$ và bằng $75\\%$ của $N_0$, khớp bảng $2T$."
+        },
+        {
+          "tieu_de": "Bước 5. Khối lượng hạt nhân con",
+          "cong_thuc_chu": "$m_{con} = \\dfrac{\\Delta N}{N_A}A_{con}$",
+          "the_so": "$m_{con} = \\dfrac{4{,}517.10^{19}}{6{,}022.10^{23}} \\times 206$",
+          "ket_qua": "$m_{con} \\approx 0{,}01545\\ \\text{g} = 15{,}45\\ \\text{mg}$",
+          "kiem_tra": "Khối lượng Po đã phân rã là $0{,}75 \\times 21{,}0 = 15{,}75\\ \\text{mg}$; chì nhẹ hơn theo tỉ lệ $206/210$: $15{,}75 \\times 206/210 = 15{,}45\\ \\text{mg}$, khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b) Số hạt nhân Po ban đầu N0",
+          "gia_tri": 60220000000000000000,
+          "don_vi": "hạt"
+        },
+        {
+          "y": "c) Số hạt α đã phát ra",
+          "gia_tri": 45170000000000000000,
+          "don_vi": "hạt"
+        },
+        {
+          "y": "c) Khối lượng chì Pb-206 tạo thành",
+          "gia_tri": 15.45,
+          "don_vi": "mg"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "N0 từ khối lượng",
+          "bieu_thuc": "0.0210/210*6.022e23",
+          "ky_vong": 60220000000000000000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Số hạt đã phân rã sau 276 ngày",
+          "bieu_thuc": "0.0210/210*6.022e23*(1-2**(-276/138))",
+          "ky_vong": 45170000000000000000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Khối lượng chì tạo thành (mg)",
+          "bieu_thuc": "0.0210/210*6.022e23*(1-2**(-276/138))/6.022e23*206*1000",
+          "ky_vong": 15.45,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Đối chiếu: khối lượng Po đã phân rã nhân 206/210",
+          "bieu_thuc": "21.0*(1-2**(-2))*206/210",
+          "ky_vong": 15.45,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho khối lượng ban đầu, chu kì bán rã và hỏi số hạt tia phát ra hoặc lượng hạt nhân con → viết phương trình, đổi $m_0$ ra $N_0$, tính $\\Delta N$, rồi đổi ngược ra khối lượng con theo $A_{con}$.",
+      "bay_thuong_gap": [
+        "Tính số hạt còn lại $N_0/4$ trong khi đề hỏi số hạt đã phát ra.",
+        "Lấy khối lượng chì bằng khối lượng Po đã phân rã ($15{,}75\\ \\text{mg}$), quên số khối con là 206.",
+        "Quên đổi mg ra g trước khi chia cho g/mol, kết quả lệch $10^3$ lần.",
+        "Dùng $A = 206$ khi tính $N_0$ của poloni."
+      ],
+      "dieu_ban_khong_chac": [
+        "Công thức $m_{con} = \\dfrac{\\Delta N}{N_A}A_{con}$ là dùng ngược hệ thức $N_0 = \\dfrac{m_0}{A}N_A$ có trong bài, không phải công thức mới.",
+        "Coi khối lượng mol bằng số khối là gần đúng, sai lệch dưới 0,1%."
+      ],
+      "mo_phong_goi_y": "Một hộp chứa nhiều chấm màu đỏ (Po). Thanh thời gian chạy theo ngày; các chấm đỏ ngẫu nhiên phát ra hạt $\\alpha$ nhỏ bay ra khỏi hộp và đổi thành chấm xám (Pb). Bộ đếm cạnh hộp đếm số hạt $\\alpha$ đã bay ra, nhưng dừng hoạt hình trước mốc 276 ngày, không hiện số cuối. Nhãn: Po-210 (mẹ), Pb (con), hạt $\\alpha$, $T = 138$ ngày, $t$, $m_0$."
+    },
+    {
+      "label": "Dạng 4 · Độ phóng xạ và xác định tuổi mẫu cổ bằng carbon-14",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại dạng 3: quy luật $2^{-t/T}$ và đổi đơn vị thời gian.\nThêm MỘT độ khó mới: bài ngược — chưa biết $t$, phải tự rút $H$ và $H_0$ từ dữ kiện ẩn (số đếm trong thời gian đo, độ phóng xạ riêng của gỗ tươi) rồi giải ra tuổi.",
+      "yccd_de_xuat": "Độ phóng xạ và bài toán xác định tuổi",
+      "de_bai": "Tại một di chỉ khảo cổ, người ta tìm được một mẩu than củi từ bếp lửa cổ.\nTách ra $4{,}00\\ \\text{g}$ carbon từ mẩu than rồi đặt vào máy đếm. Sau khi trừ phông nền, máy ghi được $120$ phân rã của $^{14}_6\\text{C}$ trong $10$ phút.\nGỗ tươi cùng loại có độ phóng xạ $0{,}250\\ \\text{Bq}$ cho mỗi gam carbon. $^{14}_6\\text{C}$ có chu kì bán rã $T = 5730$ năm; lấy $1$ năm $= 3{,}156.10^7\\ \\text{s}$.\nCoi máy ghi được mọi phân rã xảy ra trong mẫu.\na) Tính độ phóng xạ $H$ hiện nay của mẫu và độ phóng xạ $H_0$ của chính lượng carbon đó lúc cây còn sống.\nb) Tính số hạt nhân $^{14}_6\\text{C}$ còn trong mẫu.\nc) Ước tính tuổi mẩu than.",
+      "dieu_kien_ap_dung": "Coi lượng $^{14}\\text{C}$ trong khí quyển xưa nay không đổi, mẫu không bị nhiễm carbon mới, và khối lượng carbon của mẫu coi như không đổi theo thời gian.",
+      "phan_tich": [
+        {
+          "trich_de": "Tách ra $4{,}00\\ \\text{g}$ carbon",
+          "du_lieu": "$m_C = 4{,}00\\ \\text{g}$",
+          "kien_thuc": "Độ phóng xạ tỉ lệ với lượng chất"
+        },
+        {
+          "trich_de": "máy ghi được $120$ phân rã của $^{14}_6\\text{C}$ trong $10$ phút",
+          "du_lieu": "$\\Delta N_{đo} = 120$; $\\Delta t = 600\\ \\text{s}$",
+          "kien_thuc": "$H$ = số phân rã mỗi giây (dữ kiện ẩn)"
+        },
+        {
+          "trich_de": "Gỗ tươi cùng loại có độ phóng xạ $0{,}250\\ \\text{Bq}$ cho mỗi gam carbon",
+          "du_lieu": "$0{,}250\\ \\text{Bq/g}$",
+          "kien_thuc": "$H_0$ của mẫu = $0{,}250 \\times m_C$ (dữ kiện ẩn)"
+        },
+        {
+          "trich_de": "$T = 5730$ năm",
+          "du_lieu": "$T = 5730$ năm",
+          "kien_thuc": "$\\lambda = \\ln 2 / T$"
+        },
+        {
+          "trich_de": "lấy $1$ năm $= 3{,}156.10^7\\ \\text{s}$",
+          "du_lieu": "Hệ số đổi năm ra giây",
+          "kien_thuc": "$\\lambda$ phải tính theo $1/\\text{s}$ để $H = \\lambda N$ ra Bq"
+        },
+        {
+          "trich_de": "Ước tính tuổi mẩu than",
+          "du_lieu": "Cần tìm: $t$",
+          "kien_thuc": "$H = H_0 2^{-t/T}$ → $t = T\\dfrac{\\ln(H_0/H)}{\\ln 2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$H$, $H_0$, $N$, $t$",
+        "cong_thuc": "$H = \\lambda N$; $t = T\\,\\dfrac{\\ln(H_0/H)}{\\ln 2}$"
+      },
+      "kien_thuc_goi_lai": [
+        "Độ phóng xạ $H$ là số phân rã mỗi giây, đơn vị Bq.",
+        "$H = \\lambda N$, $\\lambda = \\ln 2 / T$ (đơn vị $1/\\text{s}$).",
+        "$H_t = H_0 2^{-t/T} = H_0 e^{-\\lambda t}$.",
+        "Định tuổi bằng $^{14}\\text{C}$: so độ phóng xạ mẫu cổ với gỗ tươi cùng lượng carbon."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Độ phóng xạ hiện nay của mẫu",
+          "cong_thuc_chu": "$H = \\dfrac{\\Delta N_{đo}}{\\Delta t}$",
+          "the_so": "$H = \\dfrac{120}{10 \\times 60}$",
+          "ket_qua": "$H = 0{,}200\\ \\text{Bq}$",
+          "kiem_tra": "Đã đổi phút ra giây; Bq = phân rã/s."
+        },
+        {
+          "tieu_de": "Bước 2. Độ phóng xạ lúc cây còn sống",
+          "cong_thuc_chu": "$H_0 = 0{,}250\\ \\text{Bq/g} \\times m_C$",
+          "the_so": "$H_0 = 0{,}250 \\times 4{,}00$",
+          "ket_qua": "$H_0 = 1{,}00\\ \\text{Bq}$",
+          "kiem_tra": "$H \\lt H_0$, đúng với mẫu đã chết lâu."
+        },
+        {
+          "tieu_de": "Bước 3. Hằng số phóng xạ (quen từ dạng 3)",
+          "cong_thuc_chu": "$\\lambda = \\dfrac{\\ln 2}{T}$",
+          "the_so": "$\\lambda = \\dfrac{0{,}6931}{5730 \\times 3{,}156.10^7}$",
+          "ket_qua": "$\\lambda \\approx 3{,}833.10^{-12}\\ \\text{s}^{-1}$",
+          "kiem_tra": "$T$ rất dài nên $\\lambda$ rất nhỏ, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Số hạt $^{14}\\text{C}$ còn lại",
+          "cong_thuc_chu": "$N = \\dfrac{H}{\\lambda}$",
+          "the_so": "$N = \\dfrac{0{,}200}{3{,}833.10^{-12}}$",
+          "ket_qua": "$N \\approx 5{,}218.10^{10}$ hạt",
+          "kiem_tra": "Đơn vị: $\\text{Bq} : \\text{s}^{-1}$ = số hạt. Rất nhỏ so với số nguyên tử carbon trong 4 g, đúng vì $^{14}\\text{C}$ chỉ là vết."
+        },
+        {
+          "tieu_de": "Bước 5. Giải ngược ra tuổi",
+          "cong_thuc_chu": "$\\dfrac{H}{H_0} = 2^{-t/T}$ → $t = T\\,\\dfrac{\\ln(H_0/H)}{\\ln 2}$",
+          "the_so": "$t = 5730 \\times \\dfrac{\\ln 5}{\\ln 2} = 5730 \\times 2{,}322$",
+          "ket_qua": "$t \\approx 1{,}330.10^{4}$ năm",
+          "kiem_tra": "$H/H_0 = 20\\%$ nằm giữa $25\\%$ (ở $2T = 11\\,460$ năm) và $12{,}5\\%$ (ở $3T = 17\\,190$ năm); kết quả nằm đúng khoảng đó."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a) Độ phóng xạ hiện nay H",
+          "gia_tri": 0.2,
+          "don_vi": "Bq"
+        },
+        {
+          "y": "a) Độ phóng xạ lúc cây còn sống H0",
+          "gia_tri": 1,
+          "don_vi": "Bq"
+        },
+        {
+          "y": "b) Số hạt C-14 còn lại",
+          "gia_tri": 52180000000,
+          "don_vi": "hạt"
+        },
+        {
+          "y": "c) Tuổi mẩu than",
+          "gia_tri": 13300,
+          "don_vi": "năm"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "H hiện nay",
+          "bieu_thuc": "120/(10*60)",
+          "ky_vong": 0.2,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "H0 của 4 g carbon tươi",
+          "bieu_thuc": "0.250*4.00",
+          "ky_vong": 1,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Hằng số phóng xạ lambda (1/s)",
+          "bieu_thuc": "math.log(2)/(5730*3.156e7)",
+          "ky_vong": 3.833e-12,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Số hạt C-14 còn lại",
+          "bieu_thuc": "0.200/(math.log(2)/(5730*3.156e7))",
+          "ky_vong": 52180000000,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Tuổi mẩu than (năm)",
+          "bieu_thuc": "5730*math.log(1.00/0.200)/math.log(2)",
+          "ky_vong": 13300,
+          "sai_so_tuong_doi": 0.005
+        },
+        {
+          "mo_ta": "Kiểm ngược: H0*2^(-t/T) phải bằng H",
+          "bieu_thuc": "1.00*2**(-13304.65/5730)",
+          "ky_vong": 0.2,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho mẫu cổ, số đếm phân rã trong một khoảng thời gian và độ phóng xạ của mẫu tươi → quy cả hai về Bq cho cùng lượng chất, lập tỉ số $H/H_0 = 2^{-t/T}$, giải ra $t$.",
+      "bay_thuong_gap": [
+        "Lấy $120$ làm độ phóng xạ, quên chia cho $600\\ \\text{s}$.",
+        "So $H$ của 4 g mẫu cổ với $0{,}250\\ \\text{Bq}$ của 1 g gỗ tươi, quên nhân khối lượng.",
+        "Tính $\\lambda$ theo $1/\\text{năm}$ rồi dùng $N = H/\\lambda$, số hạt sai $3{,}156.10^7$ lần.",
+        "Viết $t = T \\cdot H_0/H$ hoặc chia $\\ln 5$ cho $T$, đảo ngược hàm mũ sai."
+      ],
+      "dieu_ban_khong_chac": [
+        "Độ phóng xạ riêng của carbon tươi thực tế khoảng $0{,}23\\ \\text{Bq/g}$; dùng $0{,}250$ cho số tròn.",
+        "Chỉ $120$ lần đếm nên thăng giáng thống kê cỡ $\\pm 11$ lần (khoảng $9\\%$), tuổi có thể lệch cỡ $\\pm 800$ năm; giả thiết máy ghi mọi phân rã là lí tưởng hoá.",
+        "Bài lí thuyết chỉ giải ví dụ có $t/T$ nguyên; ở đây $t/T$ không nguyên nên cần lấy $\\ln$ hai vế của $H = H_0 2^{-t/T}$ — chỉ là biến đổi định luật có trong bài."
+      ],
+      "mo_phong_goi_y": "Bên trái: khúc gỗ tươi trên đĩa cân ghi 4,00 g carbon, máy đếm Geiger kêu đều. Bên phải: mẩu than cổ cùng 4,00 g, máy đếm kêu thưa hơn rõ rệt; đồng hồ đếm ngược 10 phút, bộ đếm xung tăng dần (không hiện con số cuối). Phía dưới là đường cong $H$ giảm theo thời gian với các mốc $T$, $2T$, $3T$; một đường ngang ở mức $H$ của mẩu than cắt đường cong tại điểm có dấu \"?\" trên trục thời gian. Nhãn: gỗ tươi, than cổ, máy đếm, phông nền đã trừ, $H_0$, $H$, $T = 5730$ năm, $t = ?$."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "bai": "l12-dien-tu-truong-song-dien-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi câu dẫn Bẫy 1 thành \"Giống ở quy tắc vẽ đường sức, khác ở hình dạng đường sức và nguồn sinh ra\" để khớp với bảng."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details> ghi rõ đây là công thức dòng qua tụ chỉ để đối chiếu, kèm phép thay số 12·2π·10⁻⁶ ≈ 7,5·10⁻⁵ A/Hz."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nửa câu \"nghĩa là i đạt cực đại đúng lúc u = 0\" vào câu dẫn Bẫy 3."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"mạch dao động kín\" bằng \"mạch gồm tụ và cuộn cảm, nơi năng lượng dồn qua lại giữa hai linh kiện\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Cho cả A, B, C đủ 6 vùng, chỉ khác thứ tự (A ngược chiều, B đổi hồng ngoại/tử ngoại, C đổi X/gamma), sửa phản hồi sai cho khớp."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng đổi đơn vị mm, μm, nm dưới bảng thang sóng, mỗi quy đổi một dòng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ vi ba là một phần của vùng vô tuyến."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong lời giải câu b thêm lý do coi đường lên, đường xuống đều ≈ h và 30 km không dùng tới."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bullet λ = v/f (v < c) ở mục 4; đổi bài điền 150 MHz thành 120 MHz (λ = 2,5 m) để không trùng đáp án 2 m của Câu 7."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bullet ở mục 3: điện trường tĩnh hoặc từ trường không đổi đứng riêng không phải điện từ trường; rút gọn phản hồi sai Câu 3 để bù chữ."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"về 0 khi giữ nam châm đứng yên trong lòng ống (từ trường vẫn có nhưng không đổi)\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách ý: thí nghiệm chỉ đo dòng, còn việc dòng điện dịch sinh từ trường là kết luận của Maxwell."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích trong <details>: chiết suất n cho biết ánh sáng trong môi trường chậm hơn n lần."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chép đúng cụm trong đề: \"phát ở 100 MHz\", \"ở độ cao 35 786 km\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chi tiết radio chạy pin trong phản hồi, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bullet đường sức kín và phản hồi chỉ rõ lỗi điện trường tĩnh."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"giữa hai bản tụ là chất cách điện\" ở thí nghiệm và phản hồi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bullet mục 3 đã nhấn \"hai mặt của một trường thống nhất\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bullet mục 4 đã in đậm \"cùng pha\" ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bullet mục 5 đã in đậm \"giảm dần\"; phương án nhiễu yếu đã xử lý ở c5."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nêu đúng lỗi này ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi D, và c9 đã thêm λ = v/f vào mục 4 trước câu hỏi."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2: bỏ \"(cả độ lớn lẫn chiều)\" vì khi tụ chỉ tích hoặc phóng một lần, điện trường không đổi chiều.",
+      "Thí nghiệm 2, bước Rút ra: thí nghiệm chỉ đo dòng; từ trường của dòng điện dịch là kết luận của Maxwell.",
+      "Thí nghiệm 1: kim về 0 khi giữ nam châm đứng yên trong lòng ống (từ trường không đổi).",
+      "Details thí nghiệm 2: thêm phép thay số U·2πC = 12·2π·10⁻⁶ ≈ 7,5·10⁻⁵ A/Hz = 0,075 mA/Hz.",
+      "Mục II.3: thêm bullet điện trường tĩnh hoặc từ trường không đổi đứng riêng không phải điện từ trường.",
+      "Mục II.4: thêm λ = v/f với v < c trong môi trường khác chân không.",
+      "Mục II.5: thêm dòng đổi đơn vị 1 mm = 1000 μm = 10⁻³ m, 1 μm = 1000 nm = 10⁻⁶ m, 1 nm = 10⁻⁹ m.",
+      "Câu 5: phương án A, B, C đổi thành chuỗi đủ 6 vùng sai thứ tự; đáp án D giữ nguyên; phản hồi sai viết lại.",
+      "Bài điền bước: tần số 150 MHz → 120 MHz, f = 1,2·10⁸ Hz, λ = 2,5 m; thời gian trễ vẫn ≈ 0,24 s.",
+      "Bài toán mẫu câu b: giải thích s ≈ 2h vì 30 km rất nhỏ so với h.",
+      "Câu 6 phản hồi đúng: \"mạch dao động kín\" → mạch gồm tụ và cuộn cảm.",
+      "Mục VI: vi ba ghi là một phần vùng vô tuyến; thử thách Khá thêm giải thích v = c/n."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

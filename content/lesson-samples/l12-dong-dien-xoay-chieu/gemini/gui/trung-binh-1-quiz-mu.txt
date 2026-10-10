@@ -1,0 +1,289 @@
+Bạn là học sinh lớp 12 hồ sơ "trung-binh" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). Dưới đây là bài "Đại cương về dòng điện xoay chiều" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").
+
+=== NỘI DUNG BÀI (HTML) ===
+<div>
+<p>🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Giải thích vì sao <strong>khung dây quay</strong> trong từ trường sinh ra điện xoay chiều.</li>
+<li>Đọc và <strong>viết biểu thức</strong> $u$, $i$ theo thời gian; tính $T$, $f$, $\omega$.</li>
+<li>Hiểu <strong>giá trị hiệu dụng</strong> và vì sao ổ điện "220 V" có đỉnh cao hơn 220 V.</li>
+<li>Tự trả lời <strong>5 câu ở mục Trả bài</strong>. Khoảng 12 phút · 6 mục · 7 câu tự kiểm tra.</li>
+</ul>
+</div>
+
+<h3>I. Mở bài: con số 220 V trên ổ điện</h3>
+
+<p>Ổ điện trong phòng em ghi <strong>220 V – 50 Hz</strong>. Đèn bàn cắm vào sáng đều, không nhấp nháy. Nhưng điện áp giữa hai lỗ ổ cắm thật ra đang lên xuống liên tục, có lúc bằng 0, và đảo dấu 100 lần mỗi giây.</p>
+
+<div>
+<p>🤔 Dự đoán trước khi học</p>
+<p>Đặt dao động ký vào hai lỗ ổ điện nhà em. Đỉnh cao nhất của sóng điện áp nằm ở khoảng:</p>
+<div>
+<input><label>A. Đúng 220 V</label>
+<input><label>B. Khoảng 311 V</label>
+<input><label>C. Khoảng 156 V</label>
+
+
+</div>
+</div>
+
+<h3>II. Kiến thức: từ khung dây quay đến ổ điện nhà em</h3>
+
+<h4>II.1 Khung dây quay trong từ trường</h4>
+<p>🔑 <strong>Quay khung · Từ thông đổi · Suất điện động xoay chiều</strong></p>
+<p>Khung dây $N$ vòng, diện tích $S$, quay đều với tốc độ góc $\omega$ quanh trục vuông góc với $\vec{B}$.</p>
+<ul>
+<li>Pháp tuyến $\vec{n}$ hợp $\vec{B}$ góc $\alpha=\omega t+\varphi$, với $\varphi$ là góc lúc $t=0$.</li>
+<li>Từ thông: $\Phi=\Phi_0\cos(\omega t+\varphi)$, trong đó $\Phi_0=NBS$.</li>
+<li>Theo Faraday, $e=-\Phi'$. Suy ra $e$ cũng là hàm cos, nhưng <strong>chậm pha $\dfrac{\pi}{2}$</strong> so với $\Phi$:</li>
+</ul>
+<p>$$e=E_0\cos\left(\omega t+\varphi-\frac{\pi}{2}\right)$$</p>
+<p>$$E_0=NBS\omega$$</p>
+<p>Quay nhanh gấp đôi thì $E_0$ gấp đôi: đạp xe nhanh thì đèn dynamo sáng hơn.</p>
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 1. Nhìn dọc trục quay: khung quay đều nên góc α tăng đều theo thời gian, và Φ = NBS·cos α dao động tuần hoàn.</figcaption></figure>
+<div>
+<p>🔬 Thí nghiệm đo: máy phát mini quay tay</p>
+<ol>
+<li><strong>Làm:</strong> nối máy phát mini (một cặp cực) với dao động ký. Quay đều tay ở $n=2,4,6,8,10$ vòng/s, mỗi lần đọc biên độ $U_0$ trên màn.</li>
+<li><strong>Quan sát:</strong> màn hiện đường hình sin; quay càng nhanh, sóng càng cao và càng dày.</li>
+<li><strong>Rút ra:</strong> xem bảng bên dưới.</li>
+</ol>
+</div>
+<div><table>
+<thead><tr><th>$n$ (vòng/s)</th><th>$U_0$ (V)</th><th>$U_0/n$ (V·s)</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>0,95</td><td>0,475</td></tr>
+<tr><td>4</td><td>1,82</td><td>0,455</td></tr>
+<tr><td>6</td><td>2,84</td><td>0,473</td></tr>
+<tr><td>8</td><td>3,67</td><td>0,459</td></tr>
+<tr><td>10</td><td>4,70</td><td>0,470</td></tr>
+</tbody></table></div>
+<p><em>Bảng số liệu mẫu của một lần đo (minh hoạ, không phải số đo của lớp em).</em></p>
+<details>
+<summary>📊 Bấm xem: từ bảng rút ra gì, sai số đến từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
+<p><strong>Rút ra:</strong> $U_0/n$ gần như không đổi (khoảng $0{,}47$), nên $U_0\propto n\propto\omega$, đúng với $E_0=NBS\omega$.</p>
+<p><strong>Sai số:</strong> tay quay không đều · đọc đỉnh sóng trên màn lệch nửa ô · điện trở cuộn dây làm $U_0$ đo được nhỏ hơn $E_0$.</p>
+</details>
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Theo bảng, tăng tốc độ quay từ 2 lên 6 vòng/s. Biên độ $U_0$ và tần số $f$ của điện áp thay đổi thế nào?</p>
+<div>
+<input><label>A. $U_0$ gấp 3 lần, $f$ gấp 3 lần</label>
+<input><label>B. $U_0$ gấp 3 lần, $f$ không đổi</label>
+<input><label>C. $U_0$ không đổi, $f$ gấp 3 lần</label>
+
+
+</div>
+</div>
+
+<h4>II.2 Biểu thức dòng điện và điện áp xoay chiều</h4>
+<p>🔑 <strong>Hàm cos · $I_0$, $\omega$, $\varphi$ · Cùng tần số</strong></p>
+<p>Nối khung với mạch ngoài, $u$ và $i$ biến thiên cùng tần số với $e$:</p>
+<p>$$u=U_0\cos(\omega t+\varphi_u)$$</p>
+<p>$$i=I_0\cos(\omega t+\varphi_i)$$</p>
+<div><table>
+<thead><tr><th>Đại lượng</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>$u$, $i$</td><td>giá trị tức thời tại lúc $t$</td></tr>
+<tr><td>$U_0$, $I_0\ \gt 0$</td><td>giá trị cực đại (biên độ)</td></tr>
+<tr><td>$\omega t+\varphi$</td><td>pha tại lúc $t$; $\varphi$ là pha ban đầu</td></tr>
+<tr><td>$\omega$ (rad/s)</td><td>tần số góc, $\omega=2\pi f$</td></tr>
+</tbody></table></div>
+<p>🔑 <strong>$T=\dfrac{2\pi}{\omega}$ · $f=\dfrac{1}{T}$ · Đổi chiều $2f$ lần/s</strong></p>
+<ul>
+<li>Điện lưới Việt Nam: $f=50\ \text{Hz}$, nên $\omega=100\pi\approx314\ \text{rad/s}$ và $T=0{,}02\ \text{s}$.</li>
+<li>Mỗi chu kì dòng điện đổi chiều 2 lần, nên 1 s đổi chiều $2f$ lần: ổ điện nhà em là <strong>100 lần/s</strong>.</li>
+</ul>
+<div>
+<p>🔬 Thí nghiệm: hai đèn LED mắc ngược chiều</p>
+<ol>
+<li><strong>Làm:</strong> nối máy phát tín hiệu với hai LED mắc song song, ngược chiều, qua điện trở bảo vệ. Chỉnh $f=1\ \text{Hz}$, rồi tăng dần lên $50\ \text{Hz}$.</li>
+<li><strong>Quan sát:</strong> ở 1 Hz, hai LED chớp luân phiên, mỗi LED 1 lần mỗi giây. Lên 50 Hz, cả hai trông như sáng liên tục.</li>
+<li><strong>Rút ra:</strong> mỗi chu kì mỗi LED sáng 1 lần, tức dòng đổi chiều 2 lần. Mắt không theo kịp 100 lần đổi chiều mỗi giây nên thấy đèn sáng đều.</li>
+</ol>
+</div>
+<details>
+<summary>🧮 Bấm xem: khi nào "$2f$ lần" thành "$2f-1$ lần"?</summary>
+<p>Nếu tại $t=0$ dòng điện đang bằng 0 ($\varphi_i=\pm\dfrac{\pi}{2}$), thì lúc $t=0$ và lúc $t=1\ \text{s}$ đều là điểm dòng bằng 0, không tính là đổi chiều giữa chừng. Trong <strong>giây đầu tiên</strong> chỉ đổi chiều $2f-1$ lần; các giây sau vẫn là $2f$ lần. Đề trắc nghiệm hay hỏi đúng chỗ này.</p>
+</details>
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Dòng điện $i=4\cos\left(100\pi t-\dfrac{\pi}{3}\right)\ \text{A}$. Phát biểu nào đúng?</p>
+<div>
+<input><label>A. Tần số $f=100\ \text{Hz}$</label>
+<input><label>B. Chu kì $T=0{,}2\ \text{s}$</label>
+<input><label>C. Trong 1 s dòng điện đổi chiều 100 lần</label>
+<input><label>D. Pha ban đầu là $+\dfrac{\pi}{3}$</label>
+
+
+</div>
+</div>
+
+<h4>II.3 Giá trị hiệu dụng</h4>
+<p>🔑 <strong>Cùng nhiệt · $I=\dfrac{I_0}{\sqrt{2}}$ · Ghi trên thiết bị</strong></p>
+<ul>
+<li>Giá trị trung bình trong một chu kì bằng 0, nhưng dây vẫn nóng lên: nhiệt tỉ lệ với $i^2$ chứ không phải $i$.</li>
+<li><strong>Cường độ hiệu dụng</strong> $I$ là cường độ của dòng không đổi toả nhiệt bằng dòng xoay chiều, khi qua cùng một điện trở trong cùng thời gian.</li>
+<li>$I=\dfrac{I_0}{\sqrt{2}}$ · $U=\dfrac{U_0}{\sqrt{2}}$ · $E=\dfrac{E_0}{\sqrt{2}}$.</li>
+<li>Ampe kế, vôn kế xoay chiều và số ghi trên thiết bị đều là giá trị hiệu dụng. Ổ điện 220 V có $U_0=220\sqrt{2}\approx311\ \text{V}$.</li>
+</ul>
+<p>Mẹo: <strong>"Chia căn hai ra hiệu dụng, nhân căn hai ra đỉnh."</strong></p>
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 2. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.</figcaption></figure>
+<div>
+<p>🔬 Thí nghiệm: một chiều 12 V so với xoay chiều 12 V</p>
+<ol>
+<li><strong>Làm:</strong> lần lượt nối cùng một bóng đèn sợi đốt 12 V vào nguồn một chiều 12 V, rồi vào nguồn xoay chiều 12 V (hiệu dụng).</li>
+<li><strong>Quan sát:</strong> độ sáng hai lần như nhau.</li>
+<li><strong>Rút ra:</strong> xoay chiều 12 V hiệu dụng toả nhiệt bằng một chiều 12 V, dù đỉnh của nó là $12\sqrt{2}\approx17\ \text{V}$.</li>
+</ol>
+</div>
+<details>
+<summary>🧮 Bấm xem: vì sao lại là $\sqrt{2}$?</summary>
+<p>Trung bình của $\cos^2$ trong một chu kì là $\dfrac{1}{2}$, nên công suất trung bình $P=R\,\overline{i^2}=\dfrac{RI_0^2}{2}$. Đặt bằng $RI^2$ của dòng không đổi, ta được $I^2=\dfrac{I_0^2}{2}$, tức $I=\dfrac{I_0}{\sqrt{2}}$.</p>
+</details>
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Dòng xoay chiều có cường độ hiệu dụng $2\ \text{A}$ và dòng không đổi $2\ \text{A}$ cùng chạy qua một điện trở trong cùng thời gian. Nhiệt lượng toả ra:</p>
+<div>
+<input><label>A. Hai dòng toả bằng nhau</label>
+<input><label>B. Dòng xoay chiều toả nhiều hơn, vì đỉnh là $2\sqrt{2}\ \text{A}$</label>
+<input><label>C. Dòng xoay chiều toả ít hơn, vì trung bình bằng 0</label>
+
+
+</div>
+</div>
+
+<h3>III. Hai cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: lẫn tức thời, cực đại, hiệu dụng</h4>
+<div><table>
+<thead><tr><th>Giá trị</th><th>Là gì · Dùng khi nào</th></tr></thead>
+<tbody>
+<tr><td>Tức thời $u,i$</td><td>giá trị lúc $t$; viết biểu thức, vẽ đồ thị</td></tr>
+<tr><td>Cực đại $U_0,I_0$</td><td>đỉnh sóng; điện áp đánh thủng cách điện</td></tr>
+<tr><td>Hiệu dụng $U,I$</td><td>$=\dfrac{\text{cực đại}}{\sqrt{2}}$; ghi trên máy, đồng hồ đo, tính công suất, nhiệt</td></tr>
+<tr><td>Trung bình</td><td>luôn bằng 0; không dùng</td></tr>
+</tbody></table></div>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<p>✍️ Bẫy 1: "trung bình bằng 0 thì không toả nhiệt"</p>
+<p><strong>Câu 4.</strong> Dòng $i=2\cos(100\pi t)\ \text{A}$ chạy qua điện trở $R=10\ \Omega$. Công suất toả nhiệt của $R$ là:</p>
+<div>
+<input><label>A. $0\ \text{W}$</label>
+<input><label>B. $40\ \text{W}$</label>
+<input><label>C. $20\ \text{W}$</label>
+<input><label>D. $28\ \text{W}$</label>
+
+
+</div>
+</div>
+
+<h4>Bẫy 2: từ thông cực đại thì suất điện động cực đại</h4>
+<p>🔑 <strong>Cái này đỉnh · cái kia về 0</strong></p>
+<div><table>
+<thead><tr><th>Khung ở vị trí</th><th>$\Phi$</th><th>$e$</th></tr></thead>
+<tbody>
+<tr><td>mặt khung vuông góc $\vec{B}$</td><td>cực đại</td><td>bằng 0</td></tr>
+<tr><td>mặt khung song song $\vec{B}$</td><td>bằng 0</td><td>cực đại</td></tr>
+</tbody></table></div>
+<p>Vì $e=-\Phi'$: lúc $\Phi$ đạt đỉnh thì đồ thị nằm ngang, độ dốc bằng 0, nên $e=0$.</p>
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 3. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.</figcaption></figure>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<p>✍️ Bẫy 2: "từ thông lớn nhất thì $e$ lớn nhất"</p>
+<p><strong>Câu 5.</strong> Khung dây đang quay đều. Tại lúc mặt khung vuông góc với $\vec{B}$, suất điện động trong khung:</p>
+<div>
+<input><label>A. cực đại, vì từ thông cực đại</label>
+<input><label>B. bằng 0</label>
+<input><label>C. bằng một nửa cực đại</label>
+
+
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+<div>
+<p>🎤 Trả bài: đọc to câu hỏi, nói bằng lời của em, rồi mới bấm xem</p>
+<details><summary>1. Vì sao khung quay trong từ trường sinh ra điện xoay chiều? <small>(nói bằng lời của em trước)</small></summary>
+<p>Quay khung · $\Phi$ biến thiên tuần hoàn · $e=-\Phi'$ · $e=E_0\cos\left(\omega t+\varphi-\dfrac{\pi}{2}\right)$ · $E_0=NBS\omega$.</p></details>
+<details><summary>2. Viết biểu thức $i$ và nêu tên từng đại lượng <small>(nói bằng lời của em trước)</small></summary>
+<p>$i=I_0\cos(\omega t+\varphi)$ · $i$ tức thời · $I_0$ cực đại · $\omega t+\varphi$ pha · $\varphi$ pha ban đầu · $\omega$ tần số góc.</p></details>
+<details><summary>3. Liên hệ $T$, $f$, $\omega$? Lưới 50 Hz đổi chiều bao nhiêu lần mỗi giây? <small>(nói bằng lời của em trước)</small></summary>
+<p>$T=\dfrac{2\pi}{\omega}=\dfrac{1}{f}$ · $\omega=2\pi f$ · 50 Hz: $T=0{,}02$ s, $\omega=100\pi$, đổi chiều 100 lần/s.</p></details>
+<details><summary>4. Cường độ hiệu dụng là gì? Vì sao không dùng giá trị trung bình? <small>(nói bằng lời của em trước)</small></summary>
+<p>Cùng nhiệt với dòng không đổi · $I=\dfrac{I_0}{\sqrt{2}}$ · trung bình trong chu kì bằng 0 · nhiệt tỉ lệ $i^2$.</p></details>
+<details><summary>5. $\Phi$ và $e$ lệch pha bao nhiêu? Khi $e$ cực đại, khung nằm ở đâu? <small>(nói bằng lời của em trước)</small></summary>
+<p>Vuông pha $\dfrac{\pi}{2}$ · $e$ chậm pha hơn $\Phi$ · $e$ cực đại lúc $\Phi=0$, mặt khung song song $\vec{B}$.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: viết biểu thức dòng điện</h3>
+<div>
+<p>📝 Đề bài</p>
+<p>Dòng điện xoay chiều có tần số $50\ \text{Hz}$ và cường độ hiệu dụng $2\ \text{A}$. Tại $t=0$, cường độ tức thời là $2\ \text{A}$ và <strong>đang giảm</strong>.</p>
+<p>a) Viết biểu thức $i$. b) Cho dòng này chạy qua $R=25\ \Omega$ trong 1 phút, tính nhiệt lượng toả ra.</p>
+</div>
+<div><table>
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"tần số 50 Hz"</td><td>$f=50\ \text{Hz}$</td><td>$\omega=2\pi f$</td></tr>
+<tr><td>"hiệu dụng 2 A"</td><td>$I=2\ \text{A}$</td><td>$I_0=I\sqrt{2}$</td></tr>
+<tr><td>"$t=0$, $i=2$ A"</td><td>$i(0)=2\ \text{A}$</td><td>thay $t=0$ tìm $\cos\varphi$</td></tr>
+<tr><td>"đang giảm" (ngầm)</td><td>$i'(0)\lt0$</td><td>$i'=-I_0\omega\sin\varphi$, chọn dấu $\varphi$</td></tr>
+<tr><td>"25 Ω, 1 phút"</td><td>$R=25\ \Omega$, $t=60\ \text{s}$</td><td>$Q=I^2Rt$, dùng hiệu dụng</td></tr>
+</tbody></table></div>
+<details>
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol>
+<li>$\omega=2\pi\cdot50=100\pi\ \text{rad/s}$ và $I_0=2\sqrt{2}\ \text{A}$.</li>
+<li>$i(0)=2\sqrt{2}\cos\varphi=2$, suy ra $\cos\varphi=\dfrac{1}{\sqrt{2}}$, nên $\varphi=\pm\dfrac{\pi}{4}$.</li>
+<li>"Đang giảm" nghĩa là $i'(0)\lt0$, tức $\sin\varphi\gt0$. Chọn $\varphi=+\dfrac{\pi}{4}$.</li>
+<li><strong>Đáp số a):</strong> $i=2\sqrt{2}\cos\left(100\pi t+\dfrac{\pi}{4}\right)\ \text{A}$</li>
+<li><strong>Đáp số b):</strong> $Q=I^2Rt=2^2\cdot25\cdot60=6000\ \text{J}$</li>
+</ol>
+<p><strong>Kiểm tra:</strong> thay $t=0$: $2\sqrt{2}\cdot\dfrac{\sqrt{2}}{2}=2\ \text{A}$ ✓. Ở câu b, dùng $I_0$ sẽ ra $12\,000\ \text{J}$, gấp đôi, là lỗi hay gặp.</p>
+</details>
+<div><p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, chỉ đổi thành "đang <strong>tăng</strong>".</p>
+<ol>
+<li>$\omega=100\pi\ \text{rad/s}$, $I_0=2\sqrt{2}\ \text{A}$, $\cos\varphi=\dfrac{1}{\sqrt{2}}$.</li>
+<li><strong>Bước em điền:</strong> "đang tăng" cho $\sin\varphi$ dấu gì, nên $\varphi=\;?$</li>
+<li>Kết luận: $i=\;?$</li>
+</ol>
+<details><summary>Xem bước 2–3</summary><p>Đang tăng nên $i'(0)\gt0$, suy ra $\sin\varphi\lt0$ và $\varphi=-\dfrac{\pi}{4}$. Vậy $i=2\sqrt{2}\cos\left(100\pi t-\dfrac{\pi}{4}\right)\ \text{A}$.</p></details></div>
+<div>
+<p>✍️ Thử sức đổi câu hỏi</p>
+<p><strong>Câu 6.</strong> Với $i=2\sqrt{2}\cos\left(100\pi t+\dfrac{\pi}{4}\right)\ \text{A}$, thời điểm đầu tiên $i=0$ là:</p>
+<div>
+<input><label>A. $\dfrac{1}{200}\ \text{s}$</label>
+<input><label>B. $\dfrac{1}{400}\ \text{s}$</label>
+<input><label>C. $\dfrac{3}{400}\ \text{s}$</label>
+
+
+</div>
+</div>
+
+<h3>VI. Đời sống và thử thách</h3>
+<details>
+<summary>🌍 Bấm xem: dòng điện xoay chiều quanh em</summary>
+<ul>
+<li><strong>Ổ điện nhà em:</strong> 220 V – 50 Hz, đỉnh 311 V, đổi chiều 100 lần/s.</li>
+<li><strong>Bộ sạc điện thoại:</strong> nhận xoay chiều 220 V, đổi ra một chiều khoảng 5 V.</li>
+<li><strong>Máy giặt, quạt điện, điều hoà:</strong> động cơ chạy bằng điện xoay chiều, loại mạnh dùng ba pha, đúng loại sinh ra từ ba cuộn dây đặt lệch nhau (bài 14).</li>
+<li><strong>Truyền tải điện đi xa:</strong> dùng xoay chiều vì dễ tăng, giảm điện áp bằng máy biến áp (bài 14).</li>
+</ul>
+</details>
+<details><summary>⭐ Cơ bản: $u=100\sqrt{2}\cos(100\pi t)\ \text{V}$. Tìm $U$, $f$, $T$.</summary>
+<p>$U=100\ \text{V}$ · $f=50\ \text{Hz}$ · $T=0{,}02\ \text{s}$.</p></details>
+<details><summary>⭐⭐ Khá: khung $N=100$ vòng, $S=200\ \text{cm}^2$, quay $50$ vòng/s trong $B=0{,}1\ \text{T}$. Tìm $E_0$ và $E$.</summary>
+<p>$\omega=2\pi\cdot50=100\pi$ · $E_0=NBS\omega=100\cdot0{,}1\cdot0{,}02\cdot100\pi\approx62{,}8\ \text{V}$ · $E=\dfrac{E_0}{\sqrt{2}}\approx44{,}4\ \text{V}$.</p></details>
+<details><summary>⭐⭐⭐ Thách đấu: đèn chỉ sáng khi $|u|\ge110\sqrt{2}\ \text{V}$, mắc vào $u=220\sqrt{2}\cos(100\pi t)\ \text{V}$. Mỗi giây đèn sáng bao lâu?</summary>
+<p>$|u|\ge\dfrac{U_0}{2}$ nên $|\cos(100\pi t)|\ge\dfrac{1}{2}$. Mỗi nửa chu kì ứng với pha quét $\pi$, đỉnh nằm giữa. $|\cos|\ge\dfrac{1}{2}$ khi pha cách đỉnh không quá $\dfrac{\pi}{3}$ mỗi phía, tức $\dfrac{2\pi}{3}$ trong $\pi$. Vậy đèn sáng $\dfrac{2}{3}\ \text{s}$ mỗi giây, chia làm 100 lần chớp.</p></details>
+<div>
+<p>✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Quay khung:</strong> $\Phi$ đổi · $e=-\Phi'$ · $E_0=NBS\omega$ · $e$ chậm pha $\dfrac{\pi}{2}$ so với $\Phi$.</li>
+<li><strong>Biểu thức:</strong> $i=I_0\cos(\omega t+\varphi)$ · $\omega=2\pi f=\dfrac{2\pi}{T}$.</li>
+<li><strong>Lưới điện VN:</strong> 50 Hz · $T=0{,}02$ s · đổi chiều 100 lần/s.</li>
+<li><strong>Hiệu dụng:</strong> cùng nhiệt · chia $\sqrt{2}$ ra hiệu dụng, nhân $\sqrt{2}$ ra đỉnh.</li>
+<li><strong>Đọc đề:</strong> thấy "đang tăng/giảm" thì dùng nó chọn dấu của $\varphi$.</li>
+</ul>
+</div>

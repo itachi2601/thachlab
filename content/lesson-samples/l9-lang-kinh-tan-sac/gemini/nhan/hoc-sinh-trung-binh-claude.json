@@ -1,0 +1,148 @@
+{
+  "bai": "Bài 7. Lăng kính",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: cầu vồng trên tường phòng học",
+      "trich_nguyen_van": "đỏ, cam, vàng, lục, lam, tím",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mở bài kể 6 màu, thiếu chàm. Mục 3 và mục 4 lại kể 7 màu. Học sinh không biết quang phổ có 6 hay 7 màu.",
+      "de_xuat": "Thêm 'chàm' vào danh sách màu ở mở bài cho khớp với mục 3 và mục 4."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Đường truyền của tia sáng đơn sắc",
+      "trich_nguyen_van": "Từ môi trường chiết quang hơn (thuỷ tinh) ra môi trường kém chiết quang (không khí)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không nhắc lại 'chiết quang hơn' và 'pháp tuyến' nghĩa là gì. Học sinh dễ tưởng 'chiết quang' liên quan đến 'góc chiết quang A' vừa học ở mục 1.",
+      "de_xuat": "Thêm một dòng nhắc lại: pháp tuyến là đường vuông góc với mặt tại điểm tới; môi trường chiết quang hơn là môi trường có chiết suất lớn hơn."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Tán sắc ánh sáng trắng",
+      "trich_nguyen_van": "đỏ ở đầu xa đáy (trên), tím ở đầu gần đáy (dưới)",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ ghi nhớ 'đỏ trên, tím dưới' như một quy tắc cố định. Điều này trái với Bẫy 2: lệch theo vị trí đáy chứ không theo trên – dưới. Thí nghiệm lại không nói đáy lăng kính đặt ở dưới.",
+      "de_xuat": "Ghi rõ điều kiện: 'lăng kính đặt đáy ở dưới'. Thêm câu: 'nếu lật lăng kính thì thứ tự trên – dưới đảo lại'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Vì sao tách màu: chiết suất phụ thuộc màu",
+      "trich_nguyen_van": "Thuỷ tinh thường (crown) có chiết suất thật khoảng $1{,}51$ đến $1{,}53;$ mọi chiết suất trong bài là giả định",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Cùng gọi là 'thuỷ tinh' nhưng bài dùng ba bộ số khác nhau: chiết suất đỏ là 1,50 ở Hình 3, 1,612 ở bảng, 1,5 ở bài toán mẫu; chiết suất tím là 1,62, 1,652 và 1,54. Thí nghiệm ghi 'lăng kính thuỷ tinh' nhưng số liệu lại lấy từ thuỷ tinh pha chì. Từ 'crown' cũng không được giải thích. Học sinh sẽ không biết chiết suất của đỏ thực ra là bao nhiêu.",
+      "de_xuat": "Thống nhất một bộ chiết suất giả định cho cả bài, hoặc ghi rõ ở mỗi chỗ là loại thuỷ tinh nào. Bỏ từ 'crown' hoặc giải thích ngắn."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Vì sao tách màu: chiết suất phụ thuộc màu",
+      "trich_nguyen_van": "Mẹo nhớ thứ tự: \"Đỏ Cam Vàng Lục Lam Chàm Tím\", đọc từ màu lệch ít đến màu lệch nhiều.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Gọi là 'mẹo nhớ' nhưng thực chất chỉ chép lại danh sách màu, không có gì giúp nhớ thêm.",
+      "de_xuat": "Đổi tên thành 'Thứ tự cần thuộc', hoặc đưa một mẹo thật, chẳng hạn ghép chữ cái đầu thành câu dễ nhớ."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 3: màu đỏ lệch nhiều nhất",
+      "trich_nguyen_van": "Đỏ là màu \"mạnh\", lại nằm ngoài cùng cầu vồng, nên nhiều bạn nghĩ đỏ bị bẻ nhiều nhất.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài nêu lý do 'đỏ nằm ngoài cùng cầu vồng' nhưng không gỡ lý do đó. Học sinh vẫn thắc mắc: đỏ lệch ít thì sao lại nằm ngoài cùng?",
+      "de_xuat": "Thêm một câu: vị trí trong cầu vồng còn phụ thuộc phản xạ trong giọt nước và hướng nhìn, nên không suy ra được độ lệch qua lăng kính."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "pháp tuyến vuông góc $AC,$ nên góc giữa chúng bằng góc giữa $AB$ và $AC,$ tức $i = A = 30^\\circ.$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh chấp nhận i = A mà không hiểu vì sao: hai đường lần lượt vuông góc với hai cạnh thì tạo với nhau góc bằng góc giữa hai cạnh đó.",
+      "de_xuat": "Thêm một câu chỉ trên Hình 4: tia trong thuỷ tinh song song BC, và trong tam giác ta thấy góc giữa tia và pháp tuyến bằng góc A."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "tia trong thuỷ tinh vẫn cùng hướng tia tới, nên $D = r - i$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh không thấy vì sao lấy r trừ i. Lý do bị bỏ qua: i và r cùng đo từ một pháp tuyến, nằm cùng phía, nên góc giữa tia trong thuỷ tinh và tia ló là hiệu của chúng. Vì vậy sau đó dễ cộng nhầm.",
+      "de_xuat": "Thêm câu: 'i và r đều đo từ cùng pháp tuyến tại J, tia ló nằm xa pháp tuyến hơn, nên góc giữa tia ló và tia trong thuỷ tinh là r − i'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "đảo chiều truyền, tia từ không khí đi vào với góc tới $48{,}6^\\circ$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không hiểu vì sao phải đảo chiều truyền. Dễ đặt nhầm thành sin 30°/sin 48,6°.",
+      "de_xuat": "Nói rõ: công thức n = sin i / sin r dùng cho tia đi từ không khí vào thuỷ tinh, nên ta xét tia đi ngược lại để áp dụng."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 1: lăng kính \"tạo ra\" màu",
+      "trich_nguyen_van": "B. Một vệt trắng, không lệch",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi sai chỉ giải thích A và D, không nói vì sao B sai. Học sinh chọn B không được chỉ ra lỗi.",
+      "de_xuat": "Thêm vào phản hồi: 'Ánh sáng đã qua kính lọc lục nên không còn trắng, và lăng kính luôn làm tia lệch về đáy'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan_mo_bai",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy màu xuất hiện sau khi ánh sáng qua pha lê nên nghĩ pha lê nhuộm màu cho ánh sáng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lăng kính chỉ tách những màu có sẵn trong chùm sáng tới."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lẫn quy tắc của mặt thứ nhất (vào thuỷ tinh thì lại gần pháp tuyến) sang mặt thứ hai.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhớ: vào thuỷ tinh thì lại gần, ra không khí thì ra xa."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy chênh lệch trung bình xấp xỉ sai số thì gạt luôn là do đo sai, không so từng lần đo của hai màu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn B là bỏ qua việc cả ba lần đo lục đều lớn hơn đỏ"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ kính lọc chỉ làm màu lục đậm hơn, còn lăng kính vẫn tạo ra đủ bảy màu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nếu chọn A hoặc D là em đang coi lăng kính như máy tạo màu."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ máy móc 'tia ló đi xuống' từ các hình vẽ lăng kính đặt đáy dưới. Thí nghiệm quang phổ ghi 'trên/dưới' cũng củng cố thói quen này.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lệch theo vị trí đáy, không theo \"trên – dưới\""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đảo thứ tự vì tưởng đỏ lệch nhiều nhất, hoặc nhầm 'lệch nhiều thì nằm trên'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chiết suất nhỏ nhất, lệch ít nhất, xa đáy nhất"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn góc ló so với pháp tuyến r làm góc lệch D, quên trừ góc tới i = A.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$30{,}9^\\circ$ là góc ló so với pháp tuyến, chưa phải góc lệch"
+    }
+  ]
+}

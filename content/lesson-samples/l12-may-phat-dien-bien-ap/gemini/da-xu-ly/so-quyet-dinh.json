@@ -1,0 +1,153 @@
+{
+  "bai": "l12-may-phat-dien-bien-ap",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại mẹo theo khung đang học (khung quay một vòng thì e lặp lại một chu kì), bỏ thuật ngữ rô-to/cặp cực chưa định nghĩa."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa φ là góc pháp tuyến–B lúc t = 0 và bước e = −Φ'(t) = NBSω sin(ωt+φ) dẫn tới φ' = φ − π/2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi câu 1 sửa thành: chiều dài khung tác động gián tiếp qua S, điện trở chỉ ảnh hưởng cường độ dòng."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ C là lấy số cực (4) làm p thay vì số cặp cực p = 2, tách mỗi lỗi một dòng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc ngắn: từ trường có hướng quay đều, dùng chạy động cơ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đúng vật lí (nửa chu kì dương hai pha kề chồng nhau), sửa thành ba đèn lần lượt sáng mạnh nhất nối tiếp đều đặn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ ở II.4 Φ là từ thông qua một vòng, khác Φ ở II.1 tính cho cả N vòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: cos φ là hệ số công suất (φ lệch pha giữa u và i), khác φ ở II.1."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nói rõ U là điện áp hiệu dụng nơi phát, không phải độ sụt áp, và bài coi cos φ = 1 nên I = P/U."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển chú thích lên trước bảng, nói rõ là bảng tính cho tổ máy 20 kW, không phải số đo thí nghiệm đèn."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc: khác hiệu suất máy biến áp ở II.4."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng ghi (lí tưởng) P1 = P2, thêm dòng thực tế P2 nhỏ hơn chút, không bao giờ lớn hơn P1."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay câu chung chung bằng: N1 đi với U1, N2 đi với U2, cuộn nhiều vòng hơn thì điện áp lớn hơn."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề b ghi rõ máy phát nối cuộn sơ cấp 500 vòng, đường dây nối cuộn thứ cấp 5000 vòng."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi số liệu Trả bài 3 thành 6 cặp cực, 600 vòng/phút (f = 60 Hz) để không lộ đáp án phần điền bước."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc giải thích chỉnh lưu là đổi dòng xoay chiều thành dòng một chiều."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán và Bẫy 1 đã nhấn lỗi A."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 1: suất điện động do tốc độ biến thiên từ thông quyết định, không phải độ lớn từ thông."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn f = np và cách đổi vòng/phút ngay trước câu 2."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lệch pha 2π/3 ở bullet II.3."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn k > 1 hạ áp, k < 1 tăng áp ngay trước câu 4."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn hao phí giảm k² lần ở II.5."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn tích UI không đổi."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 5 và bước kiểm tra lời giải đã nhấn quy luật bình phương."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1: thêm φ là góc giữa pháp tuyến và B lúc t = 0 và bước e = −Φ'(t) = NBSω sin(ωt+φ) suy ra φ' = φ − π/2.",
+      "II.1: mẹo đổi thành 'khung quay một vòng thì e lặp lại một chu kì' (bỏ rô-to, p = 1).",
+      "II.1: thêm dòng ⚠ suất điện động do tốc độ biến thiên từ thông quyết định.",
+      "Câu 1 phản hồi sai: chiều dài khung tác động gián tiếp qua S, điện trở chỉ ảnh hưởng cường độ dòng.",
+      "Câu 2 phản hồi sai: C là lấy số cực 4 làm p thay vì p = 2 (100 Hz = 25 × 4).",
+      "II.3: từ trường quay được giải thích là từ trường có hướng quay đều, dùng chạy động cơ.",
+      "II.3 thí nghiệm LED: bỏ 'không bao giờ cùng lúc', thay bằng 'ba đèn lần lượt sáng mạnh nhất'.",
+      "II.4: Φ trong e1, e2 là từ thông qua một vòng, khác Φ = NBS cos α ở II.1.",
+      "II.4: cos φ trong hiệu suất là hệ số công suất (lệch pha u và i).",
+      "II.5: U là điện áp hiệu dụng nơi phát, bài coi cos φ = 1 nên I = P/U; hiệu suất truyền tải khác hiệu suất máy biến áp.",
+      "II.5: chú thích P = 20 kW, R = 2 Ω chuyển lên trước bảng, nói rõ không phải số đo thí nghiệm đèn.",
+      "Bẫy 1 bảng: P1 = P2 chỉ cho máy lí tưởng, thực tế P2 nhỏ hơn chút.",
+      "Bài toán mẫu câu b: ghi rõ máy phát nối cuộn sơ cấp 500 vòng, đường dây nối cuộn thứ cấp 5000 vòng (kết quả không đổi).",
+      "Trả bài 3: đổi 4 cặp cực/750 vòng/phút thành 6 cặp cực/600 vòng/phút, đáp án 10 vòng/s × 6 = 60 Hz.",
+      "Mang về: bỏ hai dòng lặp ý (Đọc đề đổi vòng/phút, An toàn điện)."
+    ],
+    "so_tu_them": 85,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-may-phat-dien-bien-ap/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

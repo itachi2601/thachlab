@@ -1,0 +1,139 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
+ "lesson_id": 28,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-ngang-song-doc/theory.html",
+ "id": "tn-l11-songngangdoc-03",
+ "ten": "Đo tốc độ xung dọc trên lò xo slinky bằng bấm giờ xung đi – về",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "song.toc_do_truyen_song",
+  "song.song_doc",
+  "do_luong.sai_so_ngau_nhien"
+ ],
+ "muc_tieu": "Đo thời gian xung nén chạy đi – về trên lò xo căng 4,00 m, 5 lần, tính tốc độ truyền sóng và nhận xét sai số do bấm tay.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo slinky",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước cuộn (độ chia 1 cm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây (điện thoại, độ chia 0,01 s)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Căng lò xo giữa tay bạn A và bạn B, cách nhau L = 4,00 m.",
+   "Bạn A đẩy mạnh một cái tạo một xung nén, đồng thời bấm đồng hồ.",
+   "Xung chạy tới tay B, dội lại; xung về tới tay A thì bấm dừng.",
+   "Làm 5 lần."
+  ],
+  "quan_sat": [
+   "Xung đi hết 2L = 8,00 m trong khoảng 1,1 – 1,2 s.",
+   "Năm lần đo lệch nhau vài phần trăm."
+  ],
+  "rut_ra": [
+   "v = 2L / t_tb = 8,00 / 1,154 ≈ 6,9 m/s.",
+   "Sai số chủ yếu do phản xạ tay khi bấm đồng hồ; đo đi – về làm sai số tỉ đối giảm một nửa so với đo một lượt."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Khoảng cách hai tay",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 4.0
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ sóng dọc trên lò xo (mô hình)",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 4,
+   "max": 10,
+   "mac_dinh": 7.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian xung đi – về",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "v_do",
+   "ten": "Tốc độ tính từ số đo",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t = 2L/v",
+   "v_do = 2L/t_tb"
+  ],
+  "gia_thiet": [
+   "xung không đổi tốc độ khi phản xạ ở tay B",
+   "sai số bấm tay ngẫu nhiên trong khoảng ±0,1 s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "t đi – về (s)"
+  ],
+  "hang": [
+   [
+    1,
+    1.18
+   ],
+   [
+    2,
+    1.09
+   ],
+   [
+    3,
+    1.21
+   ],
+   [
+    4,
+    1.13
+   ],
+   [
+    5,
+    1.16
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ, không phải số đo thật: t thật = 2L/v = 1.143 s với v = 7,0 m/s, cộng độ lệch bấm tay ≤ 0,07 s; trung bình 1.154 s, v ≈ 6.93 m/s."
+ },
+ "ket_qua_ky_vong": "t_tb = 1.154 s; v ≈ 6.9 m/s, lệch dưới 1 % so với mô hình 7,0 m/s.",
+ "hien_tuong_hay_sai": [
+  "Chia L cho t (quên xung đã đi cả lượt về), ra v nhỏ đi một nửa.",
+  "Tưởng vòng lò xo chạy theo xung tới tay B rồi về."
+ ],
+ "sai_so_thuong_gap": [
+  "Phản xạ tay khi bấm đồng hồ ~0,1 s ở cả lúc bắt đầu và lúc dừng.",
+  "Khó thấy đúng lúc xung về tới tay; xung yếu dần sau khi dội."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "v"
+  ],
+  "dau_ra": [
+   "xung chạy đi – về",
+   "bảng 5 lần đo có nhiễu bấm tay"
+  ],
+  "y_tuong": "Cho học sinh tự bấm nút 'Bắt đầu'/'Dừng' theo mắt, ghi 5 lần, so trung bình với giá trị mô hình.",
+  "diem_nhan": "Hỏi trước: tính v bằng L/t hay 2L/t?"
+ }
+}

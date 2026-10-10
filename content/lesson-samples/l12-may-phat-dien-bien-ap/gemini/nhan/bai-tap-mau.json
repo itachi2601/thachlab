@@ -1,0 +1,528 @@
+{
+  "lesson_title": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính điện áp thứ cấp của máy biến áp lí tưởng",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Học sinh nhận ra công thức $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2}$, so sánh $k$ với 1 rồi thế số.",
+      "yccd_de_xuat": "Nắm cấu tạo, công thức máy biến áp; phân biệt tăng áp với hạ áp.",
+      "de_bai": "Một biến áp chuông cửa được coi là máy biến áp lí tưởng. Cuộn sơ cấp có 1100 vòng, nối vào ổ cắm 220 V. Cuộn thứ cấp có 60 vòng, nối với chuông. Máy này là máy tăng áp hay hạ áp? Tính điện áp hiệu dụng ở hai đầu cuộn thứ cấp.",
+      "dieu_kien_ap_dung": "Máy biến áp lí tưởng: bỏ qua từ thông rò và điện trở cuộn dây; nguồn là điện áp xoay chiều.",
+      "phan_tich": [
+        {
+          "trich_de": "máy biến áp lí tưởng",
+          "du_lieu": "$H = 1$",
+          "kien_thuc": "Dùng được $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2}$"
+        },
+        {
+          "trich_de": "Cuộn sơ cấp có 1100 vòng",
+          "du_lieu": "$N_1 = 1100$ vòng",
+          "kien_thuc": "Cuộn sơ cấp nối nguồn"
+        },
+        {
+          "trich_de": "ổ cắm 220 V",
+          "du_lieu": "$U_1 = 220\\ \\text{V}$",
+          "kien_thuc": "Giá trị hiệu dụng của điện áp sơ cấp"
+        },
+        {
+          "trich_de": "Cuộn thứ cấp có 60 vòng",
+          "du_lieu": "$N_2 = 60$ vòng",
+          "kien_thuc": "Cuộn thứ cấp nối tải"
+        },
+        {
+          "trich_de": "Tính điện áp hiệu dụng ở hai đầu cuộn thứ cấp",
+          "du_lieu": "Cần tìm $U_2$",
+          "kien_thuc": "$U_2 = U_1\\dfrac{N_2}{N_1}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "U_2",
+        "cong_thuc": "U_2 = U_1\\dfrac{N_2}{N_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "Máy biến áp lí tưởng: $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2}$.",
+        "$k = N_1/N_2$; $k \\gt 1$ là hạ áp, $k \\lt 1$ là tăng áp.",
+        "$U$ là giá trị hiệu dụng (V)."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xác định loại máy",
+          "cong_thuc_chu": "$k = \\dfrac{N_1}{N_2}$",
+          "the_so": "$k = \\dfrac{1100}{60}$",
+          "ket_qua": "$k \\approx 18{,}33 \\gt 1$ nên là máy hạ áp",
+          "kiem_tra": "$k$ không có đơn vị; cuộn thứ cấp ít vòng hơn nên hạ áp là hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Tính điện áp thứ cấp",
+          "cong_thuc_chu": "$U_2 = U_1\\dfrac{N_2}{N_1}$",
+          "the_so": "$U_2 = 220 \\times \\dfrac{60}{1100}$",
+          "ket_qua": "$U_2 = 12{,}0\\ \\text{V}$",
+          "kiem_tra": "Đơn vị V; $12\\ \\text{V} \\lt 220\\ \\text{V}$, khớp với máy hạ áp; 12 V là mức điện áp quen gặp ở chuông cửa."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "k",
+          "gia_tri": 18.33,
+          "don_vi": "(không đơn vị) – hạ áp"
+        },
+        {
+          "y": "U2",
+          "gia_tri": 12,
+          "don_vi": "V"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tỉ số vòng dây k",
+          "bieu_thuc": "1100/60",
+          "ky_vong": 18.33,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện áp thứ cấp U2",
+          "bieu_thuc": "220*60/1100",
+          "ky_vong": 12,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho đủ $N_1$, $N_2$, $U_1$ và hỏi $U_2$ hoặc hỏi tăng/hạ áp → so sánh $k$ với 1 rồi dùng $U_2 = U_1 N_2/N_1$.",
+      "bay_thuong_gap": [
+        "Viết ngược tỉ số, tính $U_2 = U_1 N_1/N_2 \\approx 4033\\ \\text{V}$.",
+        "Nhầm quy ước: thấy $k \\gt 1$ lại kết luận tăng áp.",
+        "Tưởng máy biến áp giữ nguyên điện áp, trả lời 220 V."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài không có danh mục YCCĐ chính thức; `yccd_de_xuat` lấy nguyên văn dòng mục tiêu trong bài lý thuyết.",
+        "Biến áp chuông cửa thật có hao phí nhỏ; coi là lí tưởng theo đề."
+      ],
+      "mo_phong_goi_y": "Lõi thép kín hình chữ nhật, bên trái cuộn sơ cấp nhiều vòng nối ổ cắm, bên phải cuộn thứ cấp ít vòng nối chuông cửa. Đường từ thông chạy vòng trong lõi, mũi tên đổi chiều liên tục theo dòng xoay chiều. Nhãn: $N_1 = 1100$ vòng, $U_1 = 220\\ \\text{V}$, $N_2 = 60$ vòng, $U_2 = ?$, 'lõi thép silic'."
+    },
+    {
+      "label": "Dạng 2 · Máy biến áp: đổi kV và tính dòng thứ cấp",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại tỉ số vòng dây và cách xác định tăng/hạ áp của dạng 1. Thêm một độ khó mới: tính dòng thứ cấp bằng tỉ số đảo $\\dfrac{I_2}{I_1} = \\dfrac{N_1}{N_2}$, kèm đổi kV ↔ V.",
+      "yccd_de_xuat": "Nắm cấu tạo, công thức máy biến áp; phân biệt tăng áp với hạ áp.",
+      "de_bai": "Một tổ máy phát điện diesel đưa điện áp xoay chiều 0,4 kV vào cuộn sơ cấp của một máy biến áp lí tưởng; cường độ dòng điện hiệu dụng qua cuộn sơ cấp là 250 A. Cuộn sơ cấp có 200 vòng, cuộn thứ cấp có 11 000 vòng. a) Máy tăng áp hay hạ áp? b) Tính điện áp hiệu dụng ở cuộn thứ cấp theo kV. c) Tính cường độ dòng điện hiệu dụng ở cuộn thứ cấp.",
+      "dieu_kien_ap_dung": "Máy biến áp lí tưởng nên $P_1 = P_2$ và $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$ với các giá trị hiệu dụng.",
+      "phan_tich": [
+        {
+          "trich_de": "điện áp xoay chiều 0,4 kV",
+          "du_lieu": "$U_1 = 0{,}4\\ \\text{kV} = 400\\ \\text{V}$",
+          "kien_thuc": "Đổi kV ra V"
+        },
+        {
+          "trich_de": "máy biến áp lí tưởng",
+          "du_lieu": "$H = 1$",
+          "kien_thuc": "$U_1I_1 = U_2I_2$"
+        },
+        {
+          "trich_de": "dòng điện hiệu dụng qua cuộn sơ cấp là 250 A",
+          "du_lieu": "$I_1 = 250\\ \\text{A}$",
+          "kien_thuc": "$\\dfrac{I_2}{I_1} = \\dfrac{N_1}{N_2}$"
+        },
+        {
+          "trich_de": "Cuộn sơ cấp có 200 vòng",
+          "du_lieu": "$N_1 = 200$ vòng",
+          "kien_thuc": "Số vòng sơ cấp"
+        },
+        {
+          "trich_de": "cuộn thứ cấp có 11 000 vòng",
+          "du_lieu": "$N_2 = 11\\,000$ vòng",
+          "kien_thuc": "Số vòng thứ cấp"
+        },
+        {
+          "trich_de": "Tính cường độ dòng điện hiệu dụng ở cuộn thứ cấp",
+          "du_lieu": "Cần tìm $I_2$",
+          "kien_thuc": "$I_2 = I_1\\dfrac{N_1}{N_2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "U_2,\\ I_2",
+        "cong_thuc": "U_2 = U_1\\dfrac{N_2}{N_1};\\quad I_2 = I_1\\dfrac{N_1}{N_2}"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$: dòng điện tỉ lệ nghịch với số vòng.",
+        "$1\\ \\text{kV} = 1000\\ \\text{V}$.",
+        "Máy lí tưởng không sinh thêm điện năng: $U_1I_1 = U_2I_2$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị và xác định loại máy",
+          "cong_thuc_chu": "$k = \\dfrac{N_1}{N_2}$",
+          "the_so": "$U_1 = 0{,}4 \\times 1000 = 400\\ \\text{V}$; $k = \\dfrac{200}{11\\,000}$",
+          "ket_qua": "$k \\approx 0{,}0182 \\lt 1$ nên là máy tăng áp",
+          "kiem_tra": "Thứ cấp nhiều vòng hơn sơ cấp, đúng là tăng áp."
+        },
+        {
+          "tieu_de": "Bước 2. Tính điện áp thứ cấp",
+          "cong_thuc_chu": "$U_2 = U_1\\dfrac{N_2}{N_1}$",
+          "the_so": "$U_2 = 400 \\times \\dfrac{11\\,000}{200}$",
+          "ket_qua": "$U_2 = 22\\,000\\ \\text{V} = 22{,}0\\ \\text{kV}$",
+          "kiem_tra": "Đơn vị V rồi đổi sang kV; 22 kV là cấp điện áp trung thế quen gặp."
+        },
+        {
+          "tieu_de": "Bước 3. Tính dòng thứ cấp (tỉ số đảo)",
+          "cong_thuc_chu": "$I_2 = I_1\\dfrac{N_1}{N_2}$",
+          "the_so": "$I_2 = 250 \\times \\dfrac{200}{11\\,000}$",
+          "ket_qua": "$I_2 \\approx 4{,}545\\ \\text{A}$",
+          "kiem_tra": "Điện áp tăng 55 lần thì dòng giảm 55 lần: $250/55 \\approx 4{,}545\\ \\text{A}$."
+        },
+        {
+          "tieu_de": "Bước 4. Kiểm tra bảo toàn công suất",
+          "cong_thuc_chu": "$P_1 = U_1I_1,\\ P_2 = U_2I_2$",
+          "the_so": "$P_1 = 400 \\times 250$; $P_2 = 22\\,000 \\times 4{,}545$",
+          "ket_qua": "$P_1 = P_2 \\approx 1{,}000 \\cdot 10^5\\ \\text{W} = 100\\ \\text{kW}$",
+          "kiem_tra": "Hai công suất bằng nhau, đúng với máy lí tưởng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.0182,
+          "don_vi": "k (không đơn vị) – tăng áp"
+        },
+        {
+          "y": "b",
+          "gia_tri": 22,
+          "don_vi": "kV"
+        },
+        {
+          "y": "c",
+          "gia_tri": 4.545,
+          "don_vi": "A"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "điện áp thứ cấp U2 (V)",
+          "bieu_thuc": "400*11000/200",
+          "ky_vong": 22000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "dòng thứ cấp I2",
+          "bieu_thuc": "250*200/11000",
+          "ky_vong": 4.545,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "công suất thứ cấp P2 bằng P1",
+          "bieu_thuc": "(400*11000/200)*(250*200/11000)",
+          "ky_vong": 100000,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi cả điện áp lẫn cường độ dòng ở hai cuộn, hoặc cho điện áp theo kV → đổi đơn vị trước, dùng tỉ số thuận cho $U$, tỉ số đảo cho $I$, rồi kiểm tra $U_1I_1 = U_2I_2$.",
+      "bay_thuong_gap": [
+        "Dùng tỉ số thuận cho dòng điện: $I_2 = 250 \\times 55 = 13\\,750\\ \\text{A}$ — vô lí vì công suất tăng 3025 lần.",
+        "Thế $U_1 = 0{,}4$ rồi ghi kết quả là V, ra $U_2 = 22\\ \\text{V}$.",
+        "Tưởng điện áp tăng thì dòng điện cũng tăng."
+      ],
+      "dieu_ban_khong_chac": [
+        "Máy biến áp thực ở trạm có hiệu suất khoảng 98–99%; đề coi lí tưởng."
+      ],
+      "mo_phong_goi_y": "Tổ máy diesel nối vào cuộn sơ cấp ít vòng; cuộn thứ cấp nhiều vòng nối ra cột điện. Hai ampe kế và hai vôn kế ở hai phía: kim ampe kế sơ cấp lệch nhiều, kim ampe kế thứ cấp lệch ít (không ghi số). Nhãn: $U_1 = 0{,}4\\ \\text{kV}$, $I_1 = 250\\ \\text{A}$, $N_1 = 200$, $N_2 = 11\\,000$, $U_2 = ?$, $I_2 = ?$."
+    },
+    {
+      "label": "Dạng 3 · Truyền tải qua máy tăng áp: dòng trên dây, hao phí, hiệu suất",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Bước con đầu chính là dạng 2: dùng máy biến áp tìm điện áp và dòng đưa lên dây. Thêm một độ khó mới: nối tiếp sang đường dây, tính $\\Delta P = RI^2$ và $H = 1 - \\dfrac{\\Delta P}{P}$.",
+      "yccd_de_xuat": "Giải thích vì sao phải tăng áp trước khi truyền tải.",
+      "de_bai": "Một trạm phát điện sinh khối ở xã A phát công suất 60 kW với điện áp hiệu dụng 300 V. Điện được đưa qua máy biến áp lí tưởng có tỉ số vòng dây $N_1/N_2 = 1/20$ rồi truyền theo đường dây về xã B; tổng điện trở hai dây là 12 Ω. Coi hệ số công suất bằng 1. a) Tính điện áp ở đầu đường dây. b) Tính cường độ dòng điện trên dây. c) Tính công suất hao phí trên dây và hiệu suất truyền tải.",
+      "dieu_kien_ap_dung": "Máy biến áp lí tưởng ($P$ đưa lên dây bằng $P$ máy phát), $\\cos\\varphi = 1$, hao phí chỉ do toả nhiệt trên điện trở dây.",
+      "phan_tich": [
+        {
+          "trich_de": "phát công suất 60 kW",
+          "du_lieu": "$P = 6{,}0 \\cdot 10^4\\ \\text{W}$",
+          "kien_thuc": "Công suất truyền đi"
+        },
+        {
+          "trich_de": "điện áp hiệu dụng 300 V",
+          "du_lieu": "$U_1 = 300\\ \\text{V}$",
+          "kien_thuc": "Điện áp sơ cấp"
+        },
+        {
+          "trich_de": "máy biến áp lí tưởng",
+          "du_lieu": "$P_1 = P_2 = P$",
+          "kien_thuc": "Không sinh thêm, không mất điện năng"
+        },
+        {
+          "trich_de": "$N_1/N_2 = 1/20$",
+          "du_lieu": "$k = 0{,}05 \\lt 1$",
+          "kien_thuc": "Máy tăng áp, $U_2 = U_1 N_2/N_1$"
+        },
+        {
+          "trich_de": "tổng điện trở hai dây là 12 Ω",
+          "du_lieu": "$R = 12\\ \\Omega$",
+          "kien_thuc": "$\\Delta P = RI^2$"
+        },
+        {
+          "trich_de": "Coi hệ số công suất bằng 1",
+          "du_lieu": "$\\cos\\varphi = 1$",
+          "kien_thuc": "$I = P/U$"
+        },
+        {
+          "trich_de": "Tính công suất hao phí trên dây và hiệu suất truyền tải",
+          "du_lieu": "Cần tìm $\\Delta P$, $H$",
+          "kien_thuc": "$H = 1 - \\dfrac{\\Delta P}{P}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta P,\\ H",
+        "cong_thuc": "\\Delta P = R\\left(\\dfrac{P}{U_2}\\right)^2;\\quad H = 1 - \\dfrac{\\Delta P}{P}"
+      },
+      "kien_thuc_goi_lai": [
+        "$U_2 = U_1\\dfrac{N_2}{N_1}$ (dạng 1–2).",
+        "Dòng trên dây: $I = \\dfrac{P}{U\\cos\\varphi}$.",
+        "Hao phí: $\\Delta P = RI^2 = \\dfrac{RP^2}{U^2}$.",
+        "Hiệu suất truyền tải: $H = 1 - \\dfrac{\\Delta P}{P}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Điện áp đưa lên dây (bài cấp 2)",
+          "cong_thuc_chu": "$U_2 = U_1\\dfrac{N_2}{N_1}$",
+          "the_so": "$U_2 = 300 \\times 20$",
+          "ket_qua": "$U_2 = 6000\\ \\text{V}$",
+          "kiem_tra": "$k \\lt 1$ nên tăng áp, $U_2 \\gt U_1$ là đúng."
+        },
+        {
+          "tieu_de": "Bước 2. Dòng điện trên dây",
+          "cong_thuc_chu": "$I = \\dfrac{P}{U_2}$",
+          "the_so": "$I = \\dfrac{60\\,000}{6000}$",
+          "ket_qua": "$I = 10{,}0\\ \\text{A}$",
+          "kiem_tra": "Đối chiếu: $I_1 = 60\\,000/300 = 200\\ \\text{A}$, $I_2 = I_1 N_1/N_2 = 200/20 = 10\\ \\text{A}$ — khớp."
+        },
+        {
+          "tieu_de": "Bước 3. Công suất hao phí",
+          "cong_thuc_chu": "$\\Delta P = RI^2$",
+          "the_so": "$\\Delta P = 12 \\times 10^2$",
+          "ket_qua": "$\\Delta P = 1200\\ \\text{W} = 1{,}20\\ \\text{kW}$",
+          "kiem_tra": "Đơn vị $\\Omega \\cdot \\text{A}^2 = \\text{W}$; hao phí nhỏ hơn nhiều so với 60 kW, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Hiệu suất truyền tải",
+          "cong_thuc_chu": "$H = 1 - \\dfrac{\\Delta P}{P}$",
+          "the_so": "$H = 1 - \\dfrac{1200}{60\\,000}$",
+          "ket_qua": "$H = 0{,}980 = 98{,}0\\%$",
+          "kiem_tra": "$0 \\lt H \\lt 1$; nếu không tăng áp thì $I = 200\\ \\text{A}$, $RI^2 = 480\\ \\text{kW} \\gt P$ — không thể truyền được, cho thấy vì sao phải tăng áp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 6000,
+          "don_vi": "V"
+        },
+        {
+          "y": "b",
+          "gia_tri": 10,
+          "don_vi": "A"
+        },
+        {
+          "y": "c – hao phí",
+          "gia_tri": 1200,
+          "don_vi": "W"
+        },
+        {
+          "y": "c – hiệu suất",
+          "gia_tri": 98,
+          "don_vi": "%"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "điện áp đầu đường dây U2",
+          "bieu_thuc": "300*20",
+          "ky_vong": 6000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "dòng trên dây I",
+          "bieu_thuc": "60000/(300*20)",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hao phí ΔP",
+          "bieu_thuc": "12*(60000/(300*20))**2",
+          "ky_vong": 1200,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hiệu suất H",
+          "bieu_thuc": "1-12*(60000/(300*20))**2/60000",
+          "ky_vong": 0.98,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề có máy biến áp ở đầu nguồn và điện trở đường dây → tìm $U$ đưa lên dây trước, rồi $I = P/U$, $\\Delta P = RI^2$, $H$.",
+      "bay_thuong_gap": [
+        "Dùng $U = 300\\ \\text{V}$ của máy phát thay vì $U_2$ để tính dòng trên dây.",
+        "Tính $I = U/R = 6000/12 = 500\\ \\text{A}$ — nhầm $U$ đầu dây với độ sụt áp trên dây.",
+        "Quên bình phương: $\\Delta P = RI = 120\\ \\text{W}$.",
+        "Lấy điện trở một dây trong khi đề đã cho tổng điện trở hai dây."
+      ],
+      "dieu_ban_khong_chac": [
+        "Tình huống 'trạm sinh khối 60 kW' là giả định; số liệu R = 12 Ω cho đường dây vài km là hợp lí cỡ độ lớn."
+      ],
+      "mo_phong_goi_y": "Từ trái sang phải: trạm phát ở xã A → máy tăng áp → hai dây dẫn dài chạy qua cánh đồng → xã B. Các chấm sáng biểu diễn dòng điện chạy trên dây; dây nóng đỏ nhẹ để gợi hao phí nhiệt. Nhãn: $P = 60\\ \\text{kW}$, $U_1 = 300\\ \\text{V}$, $N_1/N_2 = 1/20$, $R = 12\\ \\Omega$, $I = ?$, $\\Delta P = ?$, $H = ?$."
+    },
+    {
+      "label": "Dạng 4 · Thiết kế thuỷ điện nhỏ: số cặp cực và điện áp tối thiểu",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả chuỗi dạng 3 (biến áp → dòng trên dây → hao phí → hiệu suất) và tỉ số vòng dây dạng 1–2. Thêm một độ khó mới: chạy chuỗi NGƯỢC từ yêu cầu hiệu suất ra điện áp và số vòng, trong đề đời sống có dữ kiện ẩn (lưới 50 Hz).",
+      "yccd_de_xuat": "Nêu nguyên tắc tạo dòng xoay chiều, cấu tạo máy phát và công thức $f = np$.",
+      "de_bai": "Một nhà máy thuỷ điện nhỏ ở vùng núi hoà điện vào lưới điện quốc gia. Tua-bin quay đều 300 vòng/phút và kéo thẳng rô-to máy phát. a) Rô-to phải có bao nhiêu cặp cực? b) Máy phát công suất 200 kW, điện áp hiệu dụng 500 V. Đường dây về thị trấn có tổng điện trở 8 Ω, coi hệ số công suất bằng 1. Muốn hiệu suất truyền tải không dưới 99% thì điện áp đưa lên đường dây ít nhất bao nhiêu? c) Máy biến áp lí tưởng đặt ở nhà máy có cuộn sơ cấp 250 vòng. Cuộn thứ cấp cần ít nhất bao nhiêu vòng?",
+      "dieu_kien_ap_dung": "Rô-to quay đều; máy biến áp lí tưởng; $\\cos\\varphi = 1$; hao phí chỉ do toả nhiệt trên dây.",
+      "phan_tich": [
+        {
+          "trich_de": "hoà điện vào lưới điện quốc gia",
+          "du_lieu": "$f = 50\\ \\text{Hz}$ (dữ kiện ẩn)",
+          "kien_thuc": "Lưới điện Việt Nam 220 V – 50 Hz"
+        },
+        {
+          "trich_de": "quay đều 300 vòng/phút",
+          "du_lieu": "$n = 300/60 = 5$ vòng/s",
+          "kien_thuc": "Đổi vòng/phút ra vòng/s trong $f = np$"
+        },
+        {
+          "trich_de": "công suất 200 kW",
+          "du_lieu": "$P = 2{,}0 \\cdot 10^5\\ \\text{W}$",
+          "kien_thuc": "Công suất truyền đi"
+        },
+        {
+          "trich_de": "điện áp hiệu dụng 500 V",
+          "du_lieu": "$U_1 = 500\\ \\text{V}$",
+          "kien_thuc": "Điện áp sơ cấp máy biến áp"
+        },
+        {
+          "trich_de": "tổng điện trở 8 Ω",
+          "du_lieu": "$R = 8\\ \\Omega$",
+          "kien_thuc": "$\\Delta P = \\dfrac{RP^2}{U^2}$"
+        },
+        {
+          "trich_de": "không dưới 99%",
+          "du_lieu": "$H \\geq 0{,}99 \\Rightarrow \\Delta P \\leq 0{,}01P$",
+          "kien_thuc": "$H = 1 - \\dfrac{\\Delta P}{P}$"
+        },
+        {
+          "trich_de": "cuộn sơ cấp 250 vòng",
+          "du_lieu": "$N_1 = 250$ vòng",
+          "kien_thuc": "$N_2 = N_1\\dfrac{U_2}{U_1}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p,\\ U_{min},\\ N_{2,min}",
+        "cong_thuc": "p = \\dfrac{f}{n};\\quad U_{min} = \\sqrt{\\dfrac{RP^2}{\\Delta P_{max}}};\\quad N_{2,min} = N_1\\dfrac{U_{min}}{U_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "$f = np$, $n$ tính bằng vòng/s.",
+        "$\\Delta P = \\dfrac{RP^2}{U^2}$: $U$ càng lớn, hao phí càng nhỏ.",
+        "$H = 1 - \\dfrac{\\Delta P}{P}$.",
+        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Số cặp cực (dữ kiện ẩn f = 50 Hz)",
+          "cong_thuc_chu": "$p = \\dfrac{f}{n}$, $n = \\dfrac{300}{60}$",
+          "the_so": "$p = \\dfrac{50}{5}$",
+          "ket_qua": "$p = 10$ cặp cực",
+          "kiem_tra": "$p$ nguyên; tua-bin quay chậm nên cần nhiều cặp cực, đúng như máy thuỷ điện."
+        },
+        {
+          "tieu_de": "Bước 2. Hao phí tối đa cho phép",
+          "cong_thuc_chu": "$\\Delta P_{max} = (1 - H_{min})P$",
+          "the_so": "$\\Delta P_{max} = 0{,}01 \\times 2 \\cdot 10^5$",
+          "ket_qua": "$\\Delta P_{max} = 2000\\ \\text{W}$",
+          "kiem_tra": "Hiệu suất càng cao thì hao phí cho phép càng nhỏ — đúng chiều."
+        },
+        {
+          "tieu_de": "Bước 3. Điện áp tối thiểu trên dây (chuỗi dạng 3 chạy ngược)",
+          "cong_thuc_chu": "$\\dfrac{RP^2}{U^2} \\leq \\Delta P_{max} \\Rightarrow U \\geq \\sqrt{\\dfrac{RP^2}{\\Delta P_{max}}}$",
+          "the_so": "$U \\geq \\sqrt{\\dfrac{8 \\times (2 \\cdot 10^5)^2}{2000}} = \\sqrt{1{,}6 \\cdot 10^8}$",
+          "ket_qua": "$U_{min} \\approx 1{,}265 \\cdot 10^4\\ \\text{V} \\approx 12{,}65\\ \\text{kV}$",
+          "kiem_tra": "Thử lại: $I = 2 \\cdot 10^5/12\\,649 \\approx 15{,}81\\ \\text{A}$, $RI^2 \\approx 2000\\ \\text{W}$ — khớp."
+        },
+        {
+          "tieu_de": "Bước 4. Số vòng thứ cấp tối thiểu",
+          "cong_thuc_chu": "$N_2 = N_1\\dfrac{U_{min}}{U_1}$",
+          "the_so": "$N_2 \\geq 250 \\times \\dfrac{12\\,649}{500} \\approx 6324{,}6$",
+          "ket_qua": "$N_{2,min} = 6325$ vòng (làm tròn lên)",
+          "kiem_tra": "$N_2 \\gt N_1$ nên là máy tăng áp; làm tròn lên để vẫn đạt $H \\geq 99\\%$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 10,
+          "don_vi": "cặp cực"
+        },
+        {
+          "y": "b",
+          "gia_tri": 12.65,
+          "don_vi": "kV"
+        },
+        {
+          "y": "c",
+          "gia_tri": 6325,
+          "don_vi": "vòng"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số cặp cực p",
+          "bieu_thuc": "50/(300/60)",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hao phí tối đa",
+          "bieu_thuc": "0.01*2e5",
+          "ky_vong": 2000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện áp tối thiểu U (V)",
+          "bieu_thuc": "math.sqrt(8*(2e5)**2/2000)",
+          "ky_vong": 12649,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "số vòng thứ cấp tối thiểu (chưa làm tròn)",
+          "bieu_thuc": "250*math.sqrt(8*(2e5)**2/2000)/500",
+          "ky_vong": 6324.6,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thử lại hao phí ở U tối thiểu",
+          "bieu_thuc": "8*(2e5/math.sqrt(8*(2e5)**2/2000))**2",
+          "ky_vong": 2000,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho yêu cầu (hiệu suất tối thiểu, hoà lưới) và hỏi thông số thiết kế (số cặp cực, điện áp, số vòng) → rút dữ kiện ẩn, viết bất đẳng thức từ $H$, giải ngược ra $U$ rồi ra $N_2$.",
+      "bay_thuong_gap": [
+        "Thế $n = 300$ vòng/phút vào $f = np$, ra $p = 1/6$.",
+        "Quên dữ kiện ẩn $f = 50\\ \\text{Hz}$ nên không tìm được $p$.",
+        "Lấy $\\Delta P = 99\\%P$ thay vì $1\\%P$.",
+        "Làm tròn xuống 6324 vòng, khiến hiệu suất hụt dưới 99%.",
+        "Quên lấy căn khi giải $U^2$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Ý a dùng $f = np$ là kiến thức mới so với chuỗi dạng 1–3; đặt ở đây để phủ mục tiêu về máy phát, có thể bị coi là thêm hơn một độ khó.",
+        "Giả định tua-bin nối thẳng rô-to (không qua hộp số); thực tế có thể khác.",
+        "Điện áp 12,65 kV không phải cấp chuẩn; thực tế sẽ chọn cấp 22 kV."
+      ],
+      "mo_phong_goi_y": "Dòng nước chảy xuống làm tua-bin quay chậm; rô-to hình vành có nhiều cặp cực N–S xen kẽ quay trong stato (không đếm sẵn số cực). Tiếp theo là máy tăng áp và đường dây dẫn về thị trấn; một thanh chỉ thị hiệu suất thay đổi khi kéo thanh trượt điện áp đường dây. Nhãn: '300 vòng/phút', 'lưới quốc gia', $P = 200\\ \\text{kW}$, $U_1 = 500\\ \\text{V}$, $R = 8\\ \\Omega$, $H \\geq 99\\%$, $N_1 = 250$, $N_2 = ?$."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+Bây giờ thôi đóng vai học sinh. Dựa trên chính bài bạn vừa đọc (không cần gửi lại), hãy làm nhiệm vụ sau.
+
+Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP **ĐÚNG 4 DẠNG** BÀI TẬP MẪU, xếp theo HỆ THỐNG BÀI TẬP BẮC CẦU 4 CẤP ĐỘ (scaffolding), cho bài "Thực hành đo độ lớn cảm ứng từ" (lớp 12), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm.
+
+HỆ THỐNG BẮC CẦU 4 CẤP (mỗi dạng đại diện đúng một cấp, theo thứ tự này)
+- Cấp 1 · Áp dụng trực tiếp (DỄ, nhận biết): dữ kiện cho thẳng, một khái niệm/công thức, 1–2 bước. Học sinh chỉ cần nhận ra công thức và thế số.
+- Cấp 2 · Có điều kiện hoặc bẫy (TRUNG BÌNH, thông hiểu): cùng cách làm cấp 1 nhưng phải chọn đúng điều kiện áp dụng, đổi đơn vị, xét dấu/hướng, hoặc tránh một lỗi phổ biến của bài.
+- Cấp 3 · Kết hợp nhiều bước (TRUNG BÌNH–KHÁ, vận dụng): chia thành 3+ bước; một bước con chính là bài cấp 2.
+- Cấp 4 · Tình huống mới (KHÓ, vận dụng cao): đề đời sống, dữ kiện ẩn cần tự rút ra, hoặc bài ngược/nhiều ý (a, b, c) buộc dùng cả ba cấp trước.
+Quy tắc bắc cầu: mỗi dạng sau **dùng lại cách làm của dạng liền trước và chỉ thêm đúng MỘT độ khó mới**. Ghi rõ trong `cau_noi`: dạng này dùng lại gì, thêm gì mới. Cấp càng cao, lời giải càng ngắn ở phần đã quen, dài ở phần mới.
+
+QUY TẮC NỘI DUNG
+1. Mỗi dạng là một KIỂU bài học sinh sẽ gặp lặp lại trong đề, không phải bài số khác của cùng một cách làm.
+2. Đề có số liệu RIÊNG, thực tế (đơn vị SI hoặc đơn vị thường dùng, giá trị hợp lí). Đề có hình học phải nói rõ điểm xuất phát, mốc đo, vật cản nằm đâu. Không chép đề trong sách.
+3. Chủ động nêu **điều kiện áp dụng** của định luật/công thức dùng (bỏ qua cản, chuyển động thẳng không đổi chiều, …).
+4. Lời giải đi **từng bước**, mỗi bước có: tên bước, công thức chữ, thế số, kết quả kèm đơn vị, và kiểm tra đơn vị/độ hợp lí. Không nhảy bước. Giữ 3–4 chữ số có nghĩa.
+5. Không dùng vai "thầy/cô", không mở bằng lời khen, không hỏi ngược học sinh trong lời giải. Câu ngắn.
+6. Mỗi ý một dòng.
+7. LaTeX trong `$…$`. Dấu `<` `>` trong công thức viết `\lt` `\gt`.
+8. Mỗi dạng kèm `kiem_tinh`: các biểu thức **Python thuần** (dùng `math.`, không import) tính lại các đại lượng quan trọng + giá trị kỳ vọng bạn đã ghi trong lời giải. Máy sẽ tự chạy để bắt lỗi số học.
+9. Mỗi dạng kèm `mo_phong_goi_y`: mô tả bằng chữ hiện tượng cần hoạt hình dưới đề (không để lộ đáp số) và các nhãn cần có trên hình. Bạn KHÔNG vẽ SVG.
+10. Bảng phân tích đề: mỗi hàng trích đúng một cụm của đề (`trich_de` phải xuất hiện nguyên văn trong `de_bai`). Hàng "cần tìm" chỉ ghi công thức, **không ghi số**.
+
+ĐẦU RA: một JSON hợp lệ, không thêm chữ nào ngoài JSON.
+
+```json
+{
+  "lesson_title": "Thực hành đo độ lớn cảm ứng từ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tên dạng ngắn",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp | Có điều kiện/bẫy | Kết hợp nhiều bước | Tình huống mới",
+      "nhan_thuc": "nhận biết | thông hiểu | vận dụng | vận dụng cao",
+      "cau_noi": "dùng lại gì từ dạng trước, thêm MỘT độ khó mới nào (dạng 1 ghi 'nền tảng')",
+      "yccd_de_xuat": "tên yêu cầu cần đạt gần nhất (Claude sẽ khớp với danh mục)",
+      "de_bai": "đề đầy đủ, có $…$ nếu cần",
+      "dieu_kien_ap_dung": "một câu",
+      "phan_tich": [
+        { "trich_de": "cụm nguyên văn trong đề", "du_lieu": "ký hiệu = giá trị đơn vị", "kien_thuc": "khái niệm/định luật/công thức" }
+      ],
+      "can_tim": { "ky_hieu": "d", "cong_thuc": "d = \\sqrt{d_1^2 + d_2^2}" },
+      "kien_thuc_goi_lai": ["mỗi dòng một ý, ≤ 5 dòng"],
+      "cac_buoc": [
+        { "tieu_de": "…", "cong_thuc_chu": "$…$", "the_so": "$…$", "ket_qua": "$… \\ \\text{km}$", "kiem_tra": "…" }
+      ],
+      "dap_so": [ { "y": "a", "gia_tri": 1.3, "don_vi": "km" } ],
+      "kiem_tinh": [
+        { "mo_ta": "độ lớn d", "bieu_thuc": "math.sqrt(1.2**2 + 0.5**2)", "ky_vong": 1.3, "sai_so_tuong_doi": 0.01 }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi … → làm …",
+      "bay_thuong_gap": ["mỗi dòng một lỗi học sinh hay mắc"],
+      "dieu_ban_khong_chac": ["liệt kê chỗ bạn nghi ngờ số liệu/hiện tượng, nếu có"],
+      "mo_phong_goi_y": "…"
+    }
+  ]
+}
+```
+
+KHÔNG in JSON hay nội dung trả lời vào khung chat. Chỉ ghi đúng JSON thuần (không dấu ```, không chữ giải thích) vào file /Users/MAC/Projects/thachlab/content/lesson-samples/l12-thuc-hanh-cam-ung-tu/gemini/nhan/bai-tap-mau.json (ghi đè nếu đã có). Xong chỉ nhắn đúng một dòng: "Đã lưu bai-tap-mau.json".

@@ -1,0 +1,568 @@
+{
+  "lesson_title": "Bài 10. Lực từ. Cảm ứng từ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Xác định phương, chiều lực từ bằng bàn tay trái",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nĐề cho thẳng chiều $\\vec B$ và chiều $I$.\nChỉ cần đặt đúng bàn tay trái.",
+      "yccd_de_xuat": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+      "de_bai": "Một đoạn dây dẫn thẳng được treo thẳng đứng trong khe của một nam châm chữ U. Trên hình vẽ (mặt phẳng hình vẽ thẳng đứng), đường sức từ trong khe hướng từ trái sang phải. Dòng điện trong dây chạy từ trên xuống dưới.\na) Nêu điểm đặt và phương của lực từ tác dụng lên đoạn dây.\nb) Dùng quy tắc bàn tay trái, xác định chiều của lực từ (ghi bằng kí hiệu ⊗ hoặc ⊙).",
+      "dieu_kien_ap_dung": "Từ trường trong khe là đều; dây thẳng nằm trọn trong khe và không song song đường sức.",
+      "phan_tich": [
+        {
+          "trich_de": "đoạn dây dẫn thẳng được treo thẳng đứng",
+          "du_lieu": "dây theo phương thẳng đứng",
+          "kien_thuc": "cần so phương dây với phương $\\vec B$ trước"
+        },
+        {
+          "trich_de": "đường sức từ trong khe hướng từ trái sang phải",
+          "du_lieu": "$\\vec B$ nằm ngang, hướng sang phải",
+          "kien_thuc": "đường sức phải xuyên vào lòng bàn tay trái"
+        },
+        {
+          "trich_de": "Dòng điện trong dây chạy từ trên xuống dưới",
+          "du_lieu": "$\\vec I$ hướng xuống",
+          "kien_thuc": "chiều cổ tay → ngón tay trùng chiều $I$"
+        },
+        {
+          "trich_de": "Nêu điểm đặt và phương",
+          "du_lieu": "cần tìm: điểm đặt, phương $\\vec F$",
+          "kien_thuc": "$\\vec F$ đặt tại trung điểm, $\\vec F \\perp$ mặt phẳng $(\\vec I;\\vec B)$"
+        },
+        {
+          "trich_de": "xác định chiều của lực từ",
+          "du_lieu": "cần tìm: chiều $\\vec F$",
+          "kien_thuc": "quy tắc bàn tay trái"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\vec F",
+        "cong_thuc": "$\\vec F \\perp$ dây, $\\vec F \\perp \\vec B$; chiều theo quy tắc bàn tay trái"
+      },
+      "kien_thuc_goi_lai": [
+        "Điểm đặt lực từ: trung điểm đoạn dây.",
+        "Phương: vuông góc đoạn dây và vuông góc đường sức.",
+        "Bàn tay trái: đường sức vào lòng bàn tay, cổ tay → ngón tay theo $I$, ngón cái choãi $90^\\circ$ chỉ $\\vec F$.",
+        "⊗ là hướng vào mặt phẳng hình, ⊙ là hướng ra ngoài.",
+        "Dây song song đường sức thì $F = 0$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Kiểm tra dây có song song đường sức không",
+          "cong_thuc_chu": "$F = BIl\\sin\\alpha$",
+          "the_so": "Dây thẳng đứng, $\\vec B$ nằm ngang nên $\\alpha = 90^\\circ$, $\\sin 90^\\circ = 1$",
+          "ket_qua": "$F \\neq 0$, lực từ lớn nhất",
+          "kiem_tra": "$\\sin\\alpha \\neq 0$ nên mới cần tìm chiều."
+        },
+        {
+          "tieu_de": "Bước 2. Điểm đặt và phương",
+          "cong_thuc_chu": "$\\vec F \\perp \\text{dây}$, $\\vec F \\perp \\vec B$",
+          "the_so": "Dây và $\\vec B$ cùng nằm trong mặt phẳng hình vẽ",
+          "ket_qua": "Điểm đặt tại trung điểm dây; $\\vec F$ vuông góc mặt phẳng hình vẽ",
+          "kiem_tra": "Góc giữa $\\vec F$ và dây là $90^\\circ$, giữa $\\vec F$ và $\\vec B$ cũng là $90^\\circ$."
+        },
+        {
+          "tieu_de": "Bước 3. Chiều lực từ theo bàn tay trái",
+          "cong_thuc_chu": "Đường sức vào lòng bàn tay; cổ tay → ngón tay theo $I$; ngón cái chỉ $\\vec F$",
+          "the_so": "Lòng bàn tay quay sang trái (đón đường sức đi tới); bốn ngón chỉ xuống dưới",
+          "ket_qua": "Ngón cái chỉ ra phía người nhìn: $\\vec F$ hướng ⊙",
+          "kiem_tra": "Đảo chiều $I$ thì lực phải thành ⊗; đúng với thí nghiệm dây lệch ngược khi đảo dòng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (góc giữa $\\vec F$ và đoạn dây)",
+          "gia_tri": 90,
+          "don_vi": "°"
+        },
+        {
+          "y": "b (chiều $\\vec F$: +1 là ⊙, −1 là ⊗)",
+          "gia_tri": 1,
+          "don_vi": ""
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "sin của góc giữa dây và B (khác 0 nên có lực)",
+          "bieu_thuc": "math.sin(math.radians(90))",
+          "ky_vong": 1,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thành phần ra khỏi hình của I×B với I=(0,−1), B=(1,0)",
+          "bieu_thuc": "0*0 - (-1)*1",
+          "ky_vong": 1,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho sẵn chiều $\\vec B$ và chiều $I$, hỏi phương/chiều lực → kiểm tra $\\sin\\alpha \\neq 0$ rồi đặt bàn tay trái.",
+      "bay_thuong_gap": [
+        "Dùng nhầm bàn tay phải (quy tắc nắm tay phải) nên ra chiều ngược.",
+        "Đặt mu bàn tay đón đường sức thay vì lòng bàn tay.",
+        "Cho rằng lực từ nằm trong mặt phẳng hình vẽ, dọc theo dây hoặc dọc đường sức.",
+        "Đặt điểm đặt lực ở đầu dây thay vì trung điểm."
+      ],
+      "dieu_ban_khong_chac": [
+        "Treo dây thẳng đứng trong khe nam châm chữ U có đường sức nằm ngang cần nam châm đặt sao cho hai cực ở hai bên trái – phải; hình cần vẽ rõ điều này."
+      ],
+      "mo_phong_goi_y": "Khe nam châm chữ U với các đường sức nằm ngang chạy sang phải (nhãn $\\vec B$). Dây thẳng đứng ở giữa khe, mũi tên dòng điện chạy xuống (nhãn $I$). Khi bấm đóng mạch, hiện bàn tay trái mờ để học sinh xoay; chưa hiện mũi tên lực. Có hai nút chọn ⊗ / ⊙ để học sinh dự đoán; nhãn 'trung điểm dây'."
+    },
+    {
+      "label": "Dạng 2 · Suy ra cảm ứng từ từ nam châm thử rồi tìm lực",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại quy tắc bàn tay trái của dạng 1.\nThêm MỘT độ khó: chiều $\\vec B$ không cho thẳng, phải tự suy ra từ nam châm thử theo định nghĩa cảm ứng từ (chiều Nam → Bắc của kim), đồng thời tránh bẫy coi $B$ phụ thuộc dòng thử.",
+      "yccd_de_xuat": "Cảm ứng từ và đơn vị tesla",
+      "de_bai": "Hình vẽ là mặt bàn nằm ngang nhìn từ trên xuống, đặt giữa hai cực của một nam châm điện mạnh tạo từ trường đều. Đặt một nam châm thử nhỏ tại điểm M thì kim nằm cân bằng dọc theo phương trái – phải của hình, cực Bắc của kim chỉ sang trái. Bỏ nam châm thử, đặt tại M một đoạn dây dẫn thẳng nằm trên mặt bàn, dọc theo phương trên – dưới của hình; dòng điện chạy từ dưới lên trên hình.\na) Xác định phương, chiều của vectơ cảm ứng từ tại M.\nb) Xác định phương, chiều của lực từ tác dụng lên đoạn dây.\nc) Tăng cường độ dòng điện lên gấp đôi. Lực từ và cảm ứng từ tại M thay đổi thế nào? Cảm ứng từ đo bằng đơn vị gì?",
+      "dieu_kien_ap_dung": "Từ trường của nam châm điện đều và mạnh hơn nhiều từ trường Trái Đất nên bỏ qua từ trường Trái Đất; dây thẳng nằm trọn trong vùng từ trường.",
+      "phan_tich": [
+        {
+          "trich_de": "nam châm điện mạnh",
+          "du_lieu": "bỏ qua từ trường Trái Đất",
+          "kien_thuc": "kim chỉ theo từ trường nam châm điện"
+        },
+        {
+          "trich_de": "kim nằm cân bằng dọc theo phương trái – phải của hình",
+          "du_lieu": "phương $\\vec B$: trái – phải",
+          "kien_thuc": "phương $\\vec B$ = phương nam châm thử nằm cân bằng"
+        },
+        {
+          "trich_de": "cực Bắc của kim chỉ sang trái",
+          "du_lieu": "$\\vec B$ hướng sang trái",
+          "kien_thuc": "chiều $\\vec B$: từ cực Nam sang cực Bắc của kim"
+        },
+        {
+          "trich_de": "dọc theo phương trên – dưới của hình",
+          "du_lieu": "dây $\\perp \\vec B$, $\\alpha = 90^\\circ$",
+          "kien_thuc": "$\\sin\\alpha = 1 \\neq 0$ nên có lực từ"
+        },
+        {
+          "trich_de": "dòng điện chạy từ dưới lên trên hình",
+          "du_lieu": "$\\vec I$ hướng lên trên hình",
+          "kien_thuc": "cổ tay → ngón tay theo chiều $I$"
+        },
+        {
+          "trich_de": "Tăng cường độ dòng điện lên gấp đôi",
+          "du_lieu": "$I' = 2I$",
+          "kien_thuc": "$F$ tỉ lệ thuận với $I$; $B$ là tính chất của từ trường"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\vec B,\\ \\vec F",
+        "cong_thuc": "$\\vec B$ theo chiều Nam → Bắc của kim; $\\vec F$ theo bàn tay trái; $B = \\dfrac{F}{Il\\sin\\alpha}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\vec B$ đặc trưng cho từ trường về tác dụng lực.",
+        "Phương $\\vec B$: phương nam châm thử nằm cân bằng; chiều: từ cực Nam sang cực Bắc của kim.",
+        "$B = F/(Il\\sin\\alpha)$, đơn vị tesla: $1\\ \\text{T} = 1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$.",
+        "Tăng dòng thử thì $F$ tăng, $B$ không đổi."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Phương, chiều $\\vec B$ tại M",
+          "cong_thuc_chu": "$\\vec B$: phương kim cân bằng, chiều Nam → Bắc của kim",
+          "the_so": "Kim nằm trái – phải, cực Bắc chỉ sang trái",
+          "ket_qua": "$\\vec B$ nằm ngang, hướng sang trái hình",
+          "kiem_tra": "Không lấy chiều Bắc → Nam của kim (đó là bẫy)."
+        },
+        {
+          "tieu_de": "Bước 2. Kiểm tra điều kiện có lực",
+          "cong_thuc_chu": "$F = BIl\\sin\\alpha$",
+          "the_so": "Dây trên – dưới, $\\vec B$ trái – phải: $\\alpha = 90^\\circ$",
+          "ket_qua": "$\\sin\\alpha = 1$, $F \\neq 0$",
+          "kiem_tra": "Dây không song song đường sức nên dùng được bàn tay trái."
+        },
+        {
+          "tieu_de": "Bước 3. Chiều lực từ (lặp lại dạng 1)",
+          "cong_thuc_chu": "Đường sức vào lòng bàn tay; cổ tay → ngón tay theo $I$",
+          "the_so": "Lòng bàn tay quay sang phải (đón đường sức đi sang trái); bốn ngón chỉ lên trên hình",
+          "ket_qua": "Ngón cái chỉ ra khỏi hình: $\\vec F$ hướng ⊙, tức thẳng đứng hướng lên khỏi mặt bàn",
+          "kiem_tra": "Nếu lấy nhầm $\\vec B$ sang phải thì $\\vec F$ thành ⊗ (ép xuống bàn) — sai do bước 1."
+        },
+        {
+          "tieu_de": "Bước 4. Tăng gấp đôi dòng điện",
+          "cong_thuc_chu": "$F = BIl\\sin\\alpha$; $B$ chỉ phụ thuộc từ trường tại M",
+          "the_so": "$I' = 2I$, $B, l, \\alpha$ giữ nguyên",
+          "ket_qua": "$F' = 2F$; $B' = B$ (không đổi); đơn vị của $B$ là tesla (T), $1\\ \\text{T} = 1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$",
+          "kiem_tra": "Tính lại $B' = F'/(I'l) = 2F/(2Il) = B$: khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (chiều $\\vec B$: +1 sang phải, −1 sang trái)",
+          "gia_tri": -1,
+          "don_vi": ""
+        },
+        {
+          "y": "b (chiều $\\vec F$: +1 là ⊙ hướng lên khỏi bàn, −1 là ⊗)",
+          "gia_tri": 1,
+          "don_vi": ""
+        },
+        {
+          "y": "c (tỉ số $F'/F$)",
+          "gia_tri": 2,
+          "don_vi": ""
+        },
+        {
+          "y": "c (tỉ số $B'/B$)",
+          "gia_tri": 1,
+          "don_vi": ""
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thành phần ra khỏi hình của I×B với I=(0,1), B=(−1,0)",
+          "bieu_thuc": "0*0 - 1*(-1)",
+          "ky_vong": 1,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số F'/F (giá trị minh hoạ B=0,2 T, I=1,5 A, l=0,05 m)",
+          "bieu_thuc": "(0.2*(2*1.5)*0.05)/(0.2*1.5*0.05)",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số B'/B tính lại từ F/(Il)",
+          "bieu_thuc": "((0.2*(2*1.5)*0.05)/((2*1.5)*0.05))/((0.2*1.5*0.05)/(1.5*0.05))",
+          "ky_vong": 1,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề không cho thẳng chiều đường sức mà cho hướng nam châm thử, hoặc hỏi $B$ đổi thế nào khi đổi dòng thử → đọc $\\vec B$ theo chiều Nam → Bắc của kim, rồi làm như dạng 1.",
+      "bay_thuong_gap": [
+        "Lấy chiều $\\vec B$ từ cực Bắc sang cực Nam của kim thử.",
+        "Cho rằng tăng dòng gấp đôi thì $B$ cũng gấp đôi.",
+        "Quên rằng hình nhìn từ trên xuống nên ⊙ nghĩa là thẳng đứng hướng lên.",
+        "Ghi đơn vị cảm ứng từ là N hoặc A/m."
+      ],
+      "dieu_ban_khong_chac": [
+        "Kim thử đặt trên mặt bàn nằm ngang chỉ quay trong mặt phẳng ngang; đề giả thiết từ trường nam châm điện nằm ngang nên hợp lí."
+      ],
+      "mo_phong_goi_y": "Hình nhìn từ trên xuống mặt bàn, hai cực nam châm điện ở hai mép trái – phải (không ghi tên cực). Bước 1: kim thử nhỏ tại M quay rồi dừng, tô đỏ đầu cực Bắc. Bước 2: kim mờ đi, dây dẫn xuất hiện tại M theo phương trên – dưới, mũi tên dòng điện chạy lên (nhãn $I$). Ô trống để học sinh vẽ $\\vec B$ và chọn ⊗/⊙ cho $\\vec F$. Thanh trượt tăng $I$ từ $I$ lên $2I$, có đồng hồ hiện '$F$ = ?' và '$B$ = ?' chưa điền số."
+    },
+    {
+      "label": "Dạng 3 · Tính lực từ khi dây đặt xiên",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại dạng 2 (đọc chiều $\\vec B$ từ kim thử) và dạng 1 (chiều lực) làm hai bước con.\nThêm MỘT độ khó: tính độ lớn $F = BIl\\sin\\alpha$, trong đó $\\alpha$ phải tự suy ra từ góc dây hợp với phương ngang.",
+      "yccd_de_xuat": "Tính lực từ F = BIl·sinθ",
+      "de_bai": "Một kim nam châm thử nhỏ quay được tự do, đặt trong khe của một nam châm chữ U, nằm cân bằng theo phương thẳng đứng với cực Bắc chỉ xuống dưới. Từ trường trong khe là từ trường đều có cảm ứng từ $B = 0,12$ T. Bỏ kim thử, đặt vào khe một đoạn dây đồng thẳng dài 15 cm, toàn bộ nằm trong khe. Dây nằm trong mặt phẳng hình vẽ (mặt phẳng thẳng đứng) và hợp với phương nằm ngang góc $30^\\circ$. Dòng điện $I = 3,0$ A chạy trong dây theo hướng chếch lên, từ trái sang phải.\na) Tính độ lớn lực từ tác dụng lên đoạn dây.\nb) Xác định phương, chiều của lực từ.\nc) Giữ dây trong mặt phẳng hình vẽ và xoay dây quanh trung điểm của nó. Ở vị trí nào lực từ lớn nhất? Tính giá trị đó.",
+      "dieu_kien_ap_dung": "Từ trường trong khe đều, dây thẳng nằm trọn trong khe; $\\alpha$ là góc giữa dây và $\\vec B$.",
+      "phan_tich": [
+        {
+          "trich_de": "cực Bắc chỉ xuống dưới",
+          "du_lieu": "$\\vec B$ thẳng đứng, hướng xuống",
+          "kien_thuc": "chiều $\\vec B$: Nam → Bắc của kim thử (dạng 2)"
+        },
+        {
+          "trich_de": "$B = 0,12$ T",
+          "du_lieu": "$B = 0,12\\ \\text{T}$",
+          "kien_thuc": "cảm ứng từ của từ trường đều"
+        },
+        {
+          "trich_de": "dài 15 cm",
+          "du_lieu": "$l = 0,15\\ \\text{m}$",
+          "kien_thuc": "đổi cm ra m"
+        },
+        {
+          "trich_de": "toàn bộ nằm trong khe",
+          "du_lieu": "cả 15 cm nằm trong từ trường",
+          "kien_thuc": "$l$ là chiều dài đoạn dây trong từ trường"
+        },
+        {
+          "trich_de": "hợp với phương nằm ngang góc $30^\\circ$",
+          "du_lieu": "$\\alpha = 90^\\circ - 30^\\circ = 60^\\circ$",
+          "kien_thuc": "$\\alpha$ đo giữa dây và đường sức (thẳng đứng), không phải với phương ngang"
+        },
+        {
+          "trich_de": "$I = 3,0$ A",
+          "du_lieu": "$I = 3,0\\ \\text{A}$",
+          "kien_thuc": "$F$ tỉ lệ thuận với $I$"
+        },
+        {
+          "trich_de": "chếch lên, từ trái sang phải",
+          "du_lieu": "chiều $\\vec I$",
+          "kien_thuc": "cổ tay → ngón tay theo $I$"
+        },
+        {
+          "trich_de": "Ở vị trí nào lực từ lớn nhất",
+          "du_lieu": "cần tìm $F_{\\max}$",
+          "kien_thuc": "$F_{\\max} = BIl$ khi $\\alpha = 90^\\circ$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "F,\\ F_{\\max}",
+        "cong_thuc": "$F = BIl\\sin\\alpha$; $F_{\\max} = BIl$"
+      },
+      "kien_thuc_goi_lai": [
+        "$F = BIl\\sin\\alpha$, $\\alpha$ là góc giữa đoạn dây và $\\vec B$.",
+        "Vuông góc: $F_{\\max} = BIl$; song song: $F = 0$.",
+        "Chiều $\\vec B$: Nam → Bắc của kim thử.",
+        "Chiều $\\vec F$: quy tắc bàn tay trái."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chiều $\\vec B$ (bài cấp 2)",
+          "cong_thuc_chu": "$\\vec B$ theo chiều Nam → Bắc của kim",
+          "the_so": "Cực Bắc kim chỉ xuống",
+          "ket_qua": "$\\vec B$ thẳng đứng hướng xuống",
+          "kiem_tra": "Phương thẳng đứng, nằm trong mặt phẳng hình vẽ."
+        },
+        {
+          "tieu_de": "Bước 2. Đổi đơn vị và tìm góc $\\alpha$",
+          "cong_thuc_chu": "$\\alpha = 90^\\circ - \\beta$ ($\\beta$ là góc với phương ngang)",
+          "the_so": "$l = 15\\ \\text{cm} = 0,15\\ \\text{m}$; $\\alpha = 90^\\circ - 30^\\circ$",
+          "ket_qua": "$\\alpha = 60^\\circ$, $\\sin\\alpha \\approx 0,866$",
+          "kiem_tra": "Đường sức thẳng đứng nên góc với dây là phần bù của $30^\\circ$."
+        },
+        {
+          "tieu_de": "Bước 3. Độ lớn lực từ",
+          "cong_thuc_chu": "$F = BIl\\sin\\alpha$",
+          "the_so": "$F = 0,12 \\times 3,0 \\times 0,15 \\times \\sin 60^\\circ$",
+          "ket_qua": "$F \\approx 0,0468\\ \\text{N} = 46,8\\ \\text{mN}$",
+          "kiem_tra": "$\\text{T}\\cdot\\text{A}\\cdot\\text{m} = \\text{N}$; $F$ nhỏ hơn $BIl = 0,054$ N: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Phương, chiều lực từ (bài cấp 1)",
+          "cong_thuc_chu": "$\\vec F \\perp$ dây, $\\vec F \\perp \\vec B$; bàn tay trái",
+          "the_so": "Lòng bàn tay ngửa lên (đón đường sức đi xuống), bốn ngón chếch lên sang phải theo $I$",
+          "ket_qua": "$\\vec F$ vuông góc mặt phẳng hình vẽ, hướng vào trong (⊗), đặt tại trung điểm dây",
+          "kiem_tra": "Dây và $\\vec B$ cùng nằm trong mặt phẳng hình nên $\\vec F$ phải vuông góc mặt phẳng đó."
+        },
+        {
+          "tieu_de": "Bước 5. Vị trí và giá trị lực lớn nhất",
+          "cong_thuc_chu": "$F_{\\max} = BIl$ khi $\\alpha = 90^\\circ$",
+          "the_so": "$F_{\\max} = 0,12 \\times 3,0 \\times 0,15$",
+          "ket_qua": "Dây nằm ngang; $F_{\\max} = 0,054\\ \\text{N} = 54\\ \\text{mN}$",
+          "kiem_tra": "$F/F_{\\max} = 0,0468/0,054 \\approx 0,866 = \\sin 60^\\circ$: khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.0468,
+          "don_vi": "N"
+        },
+        {
+          "y": "b (chiều $\\vec F$: +1 là ⊙, −1 là ⊗)",
+          "gia_tri": -1,
+          "don_vi": ""
+        },
+        {
+          "y": "c",
+          "gia_tri": 0.054,
+          "don_vi": "N"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn lực từ F",
+          "bieu_thuc": "0.12*3.0*0.15*math.sin(math.radians(60))",
+          "ky_vong": 0.0468,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "chiều F: dấu thành phần ra khỏi hình của I×B, I=(cos30°, sin30°), B=(0,−1)",
+          "bieu_thuc": "(math.cos(math.radians(30))*(-1) - math.sin(math.radians(30))*0)/abs(math.cos(math.radians(30)))",
+          "ky_vong": -1,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực từ cực đại",
+          "bieu_thuc": "0.12*3.0*0.15",
+          "ky_vong": 0.054,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số F/Fmax bằng sin 60°",
+          "bieu_thuc": "(0.12*3.0*0.15*math.sin(math.radians(60)))/(0.12*3.0*0.15)",
+          "ky_vong": 0.866,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho dây đặt xiên, góc đo so với một phương khác đường sức, hỏi cả độ lớn lẫn chiều → xác định $\\vec B$, tìm đúng $\\alpha$, tính $F = BIl\\sin\\alpha$, rồi bàn tay trái.",
+      "bay_thuong_gap": [
+        "Lấy luôn $30^\\circ$ làm $\\alpha$ nên ra $F = 0,027$ N.",
+        "Quên đổi 15 cm ra 0,15 m, kết quả lớn gấp 100 lần.",
+        "Dùng $\\cos\\alpha$ thay cho $\\sin\\alpha$.",
+        "Vẽ $\\vec F$ nằm trong mặt phẳng hình vẽ.",
+        "Nghĩ lực lớn nhất khi dây thẳng đứng (dọc đường sức) — khi đó $F = 0$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Kim thử trong khe chỉ thẳng đứng là lí tưởng hoá; thực tế cần kim quay tự do trong mặt phẳng thẳng đứng."
+      ],
+      "mo_phong_goi_y": "Mặt phẳng thẳng đứng, khe nam châm với đường sức thẳng đứng (lúc đầu chưa vẽ chiều). Kim thử nhỏ quay rồi dừng, tô đỏ cực Bắc chỉ xuống; sau đó kim mờ đi và hiện đường sức có mũi tên. Dây dài 15 cm nghiêng so với phương ngang, cung góc ghi '$30^\\circ$ so với phương ngang', mũi tên $I$ chếch lên sang phải. Một cung góc trống giữa dây và đường sức ghi '$\\alpha = ?$'. Nút xoay dây quanh trung điểm, đồng hồ lực hiện '$F$ = ?' để học sinh tự dự đoán vị trí lực lớn nhất."
+    },
+    {
+      "label": "Dạng 4 · Khung dây trong động cơ mini: ngẫu lực từ",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại $F = BIl\\sin\\alpha$ của dạng 3 nhưng giải ngược để rút ra $B$ (dữ kiện ẩn, định nghĩa cảm ứng từ của dạng 2); dùng lại cách tìm góc đúng của dạng 3 và hai lực ngược chiều theo bàn tay trái của dạng 1.\nThêm MỘT độ khó: chuyển từ một đoạn dây sang khung nhiều vòng — ngẫu lực từ và mômen $M = NBIS\\sin\\alpha$.",
+      "yccd_de_xuat": "Lực từ tác dụng lên khung dây. Ngẫu lực từ",
+      "de_bai": "Một nhóm học sinh làm mô hình động cơ điện mini cho xe đồ chơi. Để biết từ trường đều giữa hai cực nam châm, nhóm đặt một đoạn dây thử dài 2,0 cm vuông góc với đường sức, cho dòng điện 1,5 A chạy qua thì lực kế đo được lực từ 6,0 mN. Sau đó nhóm lắp vào khe một khung dây chữ nhật gồm 80 vòng, mỗi vòng kích thước 2,0 cm × 3,0 cm. Khung quay được quanh trục đi qua tâm khung, nằm trong mặt phẳng khung và vuông góc với đường sức. Dòng điện qua khung là 0,25 A.\na) Tính cảm ứng từ giữa hai cực nam châm.\nb) Tính mômen ngẫu lực từ tác dụng lên khung khi mặt phẳng khung song song với đường sức, và khi mặt phẳng khung hợp với đường sức góc 30°.\nc) Thả khung tự do (vẫn có dòng điện). Khung quay tới vị trí nào thì dừng? Vì sao ngẫu lực từ làm khung quay mà không kéo cả khung đi?",
+      "dieu_kien_ap_dung": "Từ trường giữa hai cực đều, cả khung nằm trong từ trường; trục quay vuông góc đường sức; $\\alpha$ trong $M = NBIS\\sin\\alpha$ là góc giữa $\\vec B$ và pháp tuyến khung.",
+      "phan_tich": [
+        {
+          "trich_de": "dài 2,0 cm vuông góc với đường sức",
+          "du_lieu": "$l_0 = 0,020\\ \\text{m}$, $\\alpha_0 = 90^\\circ$",
+          "kien_thuc": "$F = BIl$ khi vuông góc"
+        },
+        {
+          "trich_de": "dòng điện 1,5 A",
+          "du_lieu": "$I_0 = 1,5\\ \\text{A}$",
+          "kien_thuc": "dòng thử, không ảnh hưởng $B$"
+        },
+        {
+          "trich_de": "lực từ 6,0 mN",
+          "du_lieu": "$F_0 = 6,0\\cdot10^{-3}\\ \\text{N}$",
+          "kien_thuc": "$B = F/(Il)$ — dữ kiện ẩn"
+        },
+        {
+          "trich_de": "gồm 80 vòng",
+          "du_lieu": "$N = 80$",
+          "kien_thuc": "mômen tỉ lệ với số vòng"
+        },
+        {
+          "trich_de": "kích thước 2,0 cm × 3,0 cm",
+          "du_lieu": "$S = 0,020 \\times 0,030\\ \\text{m}^2$",
+          "kien_thuc": "$S$ là diện tích một vòng"
+        },
+        {
+          "trich_de": "Dòng điện qua khung là 0,25 A",
+          "du_lieu": "$I = 0,25\\ \\text{A}$",
+          "kien_thuc": "$M = NBIS\\sin\\alpha$"
+        },
+        {
+          "trich_de": "mặt phẳng khung song song với đường sức",
+          "du_lieu": "pháp tuyến $\\perp \\vec B$: $\\alpha = 90^\\circ$",
+          "kien_thuc": "$M_{\\max} = NBIS$"
+        },
+        {
+          "trich_de": "mặt phẳng khung hợp với đường sức góc 30°",
+          "du_lieu": "$\\alpha = 90^\\circ - 30^\\circ = 60^\\circ$",
+          "kien_thuc": "$\\alpha$ đo với pháp tuyến, không với mặt khung"
+        },
+        {
+          "trich_de": "Khung quay tới vị trí nào thì dừng",
+          "du_lieu": "cần tìm vị trí $M = 0$",
+          "kien_thuc": "khung dừng khi mặt khung vuông góc đường sức"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "B,\\ M",
+        "cong_thuc": "$B = \\dfrac{F_0}{I_0 l_0}$; $M = NBIS\\sin\\alpha$, $M_{\\max} = NBIS$"
+      },
+      "kien_thuc_goi_lai": [
+        "$B = F/(Il\\sin\\alpha)$; $1\\ \\text{T} = 1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$.",
+        "Hai cạnh đối diện chịu hai lực cùng độ lớn, ngược chiều, không cùng giá → ngẫu lực từ.",
+        "$M = NBIS\\sin\\alpha$, $\\alpha$ là góc giữa $\\vec B$ và pháp tuyến khung.",
+        "$M_{\\max} = NBIS$ khi mặt khung song song đường sức.",
+        "Khung dừng khi mặt khung vuông góc đường sức."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Rút $B$ từ phép đo dây thử",
+          "cong_thuc_chu": "$B = \\dfrac{F_0}{I_0 l_0}$",
+          "the_so": "$B = \\dfrac{6,0\\cdot10^{-3}}{1,5 \\times 0,020}$",
+          "ket_qua": "$B = 0,20\\ \\text{T}$",
+          "kiem_tra": "$\\text{N}/(\\text{A}\\cdot\\text{m}) = \\text{T}$; cỡ khe nam châm thí nghiệm (0,05–0,2 T): hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Diện tích một vòng",
+          "cong_thuc_chu": "$S = a \\cdot b$",
+          "the_so": "$S = 0,020 \\times 0,030$",
+          "ket_qua": "$S = 6,0\\cdot10^{-4}\\ \\text{m}^2$",
+          "kiem_tra": "$6\\ \\text{cm}^2 = 6\\cdot10^{-4}\\ \\text{m}^2$: đúng."
+        },
+        {
+          "tieu_de": "Bước 3. Mômen cực đại (mặt khung song song đường sức)",
+          "cong_thuc_chu": "$M_{\\max} = NBIS$",
+          "the_so": "$M_{\\max} = 80 \\times 0,20 \\times 0,25 \\times 6,0\\cdot10^{-4}$",
+          "ket_qua": "$M_{\\max} = 2,40\\cdot10^{-3}\\ \\text{N}\\cdot\\text{m}$",
+          "kiem_tra": "$\\text{T}\\cdot\\text{A}\\cdot\\text{m}^2 = \\text{N}\\cdot\\text{m}$; cỡ mN·m, hợp với động cơ đồ chơi."
+        },
+        {
+          "tieu_de": "Bước 4. Mômen khi mặt khung hợp đường sức $30^\\circ$",
+          "cong_thuc_chu": "$M = NBIS\\sin\\alpha$, $\\alpha = 90^\\circ - 30^\\circ$",
+          "the_so": "$M = 2,40\\cdot10^{-3} \\times \\sin 60^\\circ$",
+          "ket_qua": "$M \\approx 2,08\\cdot10^{-3}\\ \\text{N}\\cdot\\text{m}$",
+          "kiem_tra": "$M \\lt M_{\\max}$; nếu ra $1,20\\cdot10^{-3}$ là đã lấy nhầm $\\sin 30^\\circ$."
+        },
+        {
+          "tieu_de": "Bước 5. Vị trí dừng và lí do chỉ quay",
+          "cong_thuc_chu": "$M = 0$ khi $\\alpha = 0^\\circ$; $\\vec F_1 + \\vec F_2 = \\vec 0$",
+          "the_so": "Hai cạnh đối diện mang dòng ngược chiều → theo bàn tay trái, hai lực ngược chiều, cùng độ lớn, khác giá",
+          "ket_qua": "Khung dừng khi mặt khung vuông góc đường sức; hợp lực bằng 0 nên tâm khung không dịch chuyển, mômen khác 0 nên khung quay",
+          "kiem_tra": "Khớp thí nghiệm khung giấy 20 vòng: khung giật quay rồi dừng khi mặt khung vuông góc đường sức."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.2,
+          "don_vi": "T"
+        },
+        {
+          "y": "b (mặt khung song song đường sức)",
+          "gia_tri": 0.0024,
+          "don_vi": "N·m"
+        },
+        {
+          "y": "b (mặt khung hợp đường sức 30°)",
+          "gia_tri": 0.00208,
+          "don_vi": "N·m"
+        },
+        {
+          "y": "c (góc giữa mặt khung và đường sức khi dừng)",
+          "gia_tri": 90,
+          "don_vi": "°"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cảm ứng từ B từ phép đo dây thử",
+          "bieu_thuc": "6.0e-3/(1.5*0.020)",
+          "ky_vong": 0.2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "diện tích một vòng S",
+          "bieu_thuc": "0.020*0.030",
+          "ky_vong": 0.0006,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "mômen cực đại NBIS",
+          "bieu_thuc": "80*(6.0e-3/(1.5*0.020))*0.25*(0.020*0.030)",
+          "ky_vong": 0.0024,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "mômen khi mặt khung hợp đường sức 30° (alpha = 60°)",
+          "bieu_thuc": "80*0.2*0.25*6.0e-4*math.sin(math.radians(60))",
+          "ky_vong": 0.00208,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề là khung dây/động cơ, cho $B$ gián tiếp qua một phép đo lực, hỏi mômen ở vài vị trí → rút $B = F/(Il)$, tính $S$, dùng $M = NBIS\\sin\\alpha$ với $\\alpha$ đo từ pháp tuyến.",
+      "bay_thuong_gap": [
+        "Lấy góc giữa mặt khung và đường sức làm $\\alpha$ nên ra $M = 1,20\\cdot10^{-3}$ N·m.",
+        "Quên nhân số vòng $N$.",
+        "Đổi $S$ sai: $6\\ \\text{cm}^2$ thành $6\\cdot10^{-2}\\ \\text{m}^2$.",
+        "Cho rằng khung dừng khi mặt khung song song đường sức (đó lại là lúc mômen lớn nhất).",
+        "Nghĩ ngẫu lực có hợp lực khác 0 nên đẩy cả khung đi."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khung 'dừng' ở vị trí mặt khung vuông góc đường sức giả thiết có ma sát/cản làm tắt dao động quanh vị trí đó; bài lí thuyết chỉ nêu kết luận, không nêu cơ chế.",
+        "Động cơ thật có bộ đổi chiều dòng để quay liên tục; đề cố ý không có bộ phận này."
+      ],
+      "mo_phong_goi_y": "Phần 1: khe nam châm với đường sức đều, một đoạn dây ngắn vuông góc đường sức móc vào lực kế, nhãn $l_0$, $I_0$, số chỉ lực kế. Phần 2: khung chữ nhật nhiều vòng trong khe, trục quay vuông góc đường sức, nhãn $N$, $a$, $b$, $I$, pháp tuyến $\\vec n$ và cung góc giữa $\\vec n$ với $\\vec B$ ghi '$\\alpha$'. Hai mũi tên lực ở hai cạnh đối diện hiện khi bấm đóng mạch (ngược chiều, khác giá). Thanh trượt góc mặt khung để học sinh quan sát khung quay và đồng hồ '$M$ = ?' chưa hiện số; nút 'thả tự do' cho khung quay rồi dừng."
+    }
+  ]
+}

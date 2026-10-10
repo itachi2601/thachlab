@@ -1,0 +1,154 @@
+{
+  "bai": "l12-thuyet-dong-hoc-phan-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ý thứ ba của dòng 🔑 mục 2 thành \"Va chạm gây áp suất\" cho khớp Trả bài 2 và chương trình; không đánh số lại danh sách để giữ cấu trúc."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(đktc: 0 °C, 1 atm)\" ở lần đầu cụm này xuất hiện trong mục 2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng mục 2 viết lại thành \"lực tương tác (còn gọi là lực liên kết) gồm lực hút và lực đẩy\" để ba tên gọi khớp nhau."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"ở cùng nhiệt độ, phân tử nặng hơn chuyển động chậm hơn\" ngay trong details mục 3 (mục II đã sát trần nên không thêm gạch mới)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 24 cm và 180 s là số làm tròn từ bảng, thêm phép đổi 455 m/s = 45 500 cm/s."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 1 tách thành 2 dòng: cỡ 0,1 cm/s trong ống kín và vài cm/s trong phòng có luồng khí nhẹ, khớp với mục 3 và Câu 4."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án A thành \"từng phân tử thật ra bay rất chậm\" để khác hẳn B, phản hồi sai thêm câu giải thích vì sao C sai."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn trong details bước: phân tử gần nhau và chậm lại thì lực hút đủ giữ chúng sát nhau nên khí hoá lỏng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ ý quay/dao động (ngoài chương trình), thay bằng \"giữa hai va chạm vẫn chịu lực hút – đẩy yếu nên không hẳn thẳng đều\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án A đổi thành bẫy \"thật sự không có kích thước và lực tương tác\", C bổ sung ý bỏ qua lực tương tác cho đủ bốn nội dung, hai phản hồi sửa cho khớp."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm $n = V/22{,}4$ (V tính bằng lít, chỉ dùng ở đktc) vào gạch thể tích mol ở mục 5."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu d của lời giải ghi rõ \"cùng thể tích, cùng nhiệt độ và áp suất\"."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 1 thêm phép đổi 0,32 kg = 320 g trước khi chia cho M."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ câu nhắc \"Chắc\" trong phản hồi Câu 7 vì câu này không có ô tự tin."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 24 cm lấy từ bảng đo mục 3, còn 16 cm = 40 − 24."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"đổ cho chính hạt khói hoặc một tác nhân bên ngoài\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn chùm sáng chỉ giúp nhìn thấy hạt."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã bác bỏ dòng đối lưu bằng lập luận mỗi hạt đi một kiểu."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài và phản hồi đã nhấn \"có lực nhưng rất yếu\"."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: chỉ 22,4 lít ở đktc mới chứa $N_A$ phân tử."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn chỗ này, đuôi trùng của A cũng đã sửa theo c7."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 đã nhấn phân tử luôn chuyển động, phương án A cũng đã thay theo c10."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã tách thể tích mol và khối lượng mol."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phần điền bước và phản hồi đã nhắc nhân 22,4 với n."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2, dòng 🔑: ý thứ ba đổi từ \"Nóng thì nhanh hơn\" thành \"Va chạm gây áp suất\".",
+      "Mục 2: thêm định nghĩa đktc (0 °C, 1 atm); gạch lực đổi thành \"lực tương tác (còn gọi là lực liên kết) gồm lực hút và lực đẩy\".",
+      "Mục 1: bỏ gạch \"Trong chất khí cũng vậy…\" vì trùng ý với hộp quan sát ngay sau.",
+      "Mục 3, Rút ra: ghi 24 cm/180 s là số làm tròn từ bảng, thêm 455 m/s = 45 500 cm/s; kết luận \"cỡ ba trăm nghìn lần\" giữ nguyên (45 500 : 0,13 ≈ 3,4·10⁵).",
+      "Mục 3, details: thêm điều kiện \"ở cùng nhiệt độ\" cho quan hệ nặng hơn thì chậm hơn.",
+      "Mục 4, details: thêm bước lực hút giữ phân tử sát nhau dẫn tới hoá lỏng.",
+      "Mục 5: thêm $n = V/22{,}4$ (V tính bằng lít, chỉ dùng ở đktc); thêm dòng ⚠ trước Câu 3.",
+      "Câu 3, phản hồi đúng: bỏ câu lặp \"Phải đi đủ hai bước\".",
+      "Bẫy 1, bảng: tốc độ lan đổi thành cỡ 0,1 cm/s trong ống kín và vài cm/s trong phòng có luồng khí nhẹ; bỏ hàng \"quãng đường bay tự do / ống khuếch tán\" vì sai về cách đo.",
+      "Câu 4: phương án A đổi thành \"từng phân tử thật ra bay rất chậm\"; phản hồi sai thêm ý mũi nhận mùi gần như ngay; phản hồi đúng bỏ câu hỏi lặp.",
+      "Bẫy 2, bảng: thay ý năng lượng quay/dao động bằng \"giữa hai va chạm vẫn chịu lực hút – đẩy yếu nên không hẳn thẳng đều\".",
+      "Câu 5: A đổi thành \"thật sự không có kích thước và lực tương tác\"; C thêm ý bỏ qua lực tương tác (đủ 4 nội dung); phản hồi đúng tách mỗi ý một dòng; phản hồi sai viết lại.",
+      "Bài mẫu câu d: thêm điều kiện cùng nhiệt độ và áp suất.",
+      "Điền bước: thêm phép đổi 0,32 kg = 320 g; kết quả 10 mol không đổi.",
+      "Câu 7: bỏ câu nhắc \"Chắc\" trong phản hồi sai.",
+      "Thử thách ⭐⭐: ghi rõ 24 cm lấy từ bảng đo, còn 16 cm = 40 − 24."
+    ],
+    "so_tu_them": 20,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

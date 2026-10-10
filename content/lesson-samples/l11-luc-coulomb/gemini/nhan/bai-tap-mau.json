@@ -1,0 +1,694 @@
+{
+  "lesson_title": "Bài 16. Lực tương tác giữa hai điện tích",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính lực Coulomb giữa hai điện tích điểm",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nĐổi đơn vị sang SI, thế vào $F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$.\nXác định hút hay đẩy theo dấu $q_1q_2$.",
+      "yccd_de_xuat": "Định luật Coulomb",
+      "de_bai": "Trong một thí nghiệm, hai quả cầu nhỏ mang điện tích $q_1 = +4{,}0$ nC và $q_2 = -6{,}0$ nC được nhúng trong dầu cách điện có hằng số điện môi $\\varepsilon = 2{,}0$; tâm hai quả cách nhau 2,0 cm. Coi hai quả là điện tích điểm.\na) Tính độ lớn lực tương tác giữa hai quả.\nb) Hai quả hút hay đẩy nhau?",
+      "dieu_kien_ap_dung": "Định luật Coulomb áp dụng cho hai điện tích điểm đứng yên trong điện môi đồng chất có hằng số điện môi $\\varepsilon$.",
+      "phan_tich": [
+        {
+          "trich_de": "$q_1 = +4{,}0$ nC",
+          "du_lieu": "$q_1 = +4{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Đổi nC sang C: $1$ nC $= 10^{-9}$ C"
+        },
+        {
+          "trich_de": "$q_2 = -6{,}0$ nC",
+          "du_lieu": "$q_2 = -6{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Giữ dấu để xét hút/đẩy; công thức dùng độ lớn"
+        },
+        {
+          "trich_de": "hằng số điện môi $\\varepsilon = 2{,}0$",
+          "du_lieu": "$\\varepsilon = 2{,}0$",
+          "kien_thuc": "Trong điện môi lực giảm $\\varepsilon$ lần"
+        },
+        {
+          "trich_de": "tâm hai quả cách nhau 2,0 cm",
+          "du_lieu": "$r = 0{,}020$ m",
+          "kien_thuc": "Đổi cm sang m rồi mới bình phương"
+        },
+        {
+          "trich_de": "Coi hai quả là điện tích điểm",
+          "du_lieu": "Điều kiện áp dụng",
+          "kien_thuc": "Coulomb chỉ đúng cho điện tích điểm"
+        },
+        {
+          "trich_de": "Tính độ lớn lực tương tác",
+          "du_lieu": "Cần tìm $F$",
+          "kien_thuc": "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$"
+        },
+        {
+          "trich_de": "hút hay đẩy nhau",
+          "du_lieu": "Xét dấu $q_1q_2$",
+          "kien_thuc": "$q_1q_2 \\gt 0$: đẩy; $q_1q_2 \\lt 0$: hút"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "F",
+        "cong_thuc": "F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}"
+      },
+      "kien_thuc_goi_lai": [
+        "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$, $k = 9\\cdot10^9\\ \\text{N·m}^2/\\text{C}^2$",
+        "Đơn vị SI: $F$ (N), $q$ (C), $r$ (m)",
+        "Cùng dấu đẩy, trái dấu hút",
+        "Lực có phương nối hai điện tích"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi sang SI",
+          "cong_thuc_chu": "$1\\ \\text{nC} = 10^{-9}\\ \\text{C}$; $1\\ \\text{cm} = 10^{-2}\\ \\text{m}$",
+          "the_so": "$q_1 = 4{,}0\\cdot10^{-9}$ C; $q_2 = -6{,}0\\cdot10^{-9}$ C; $r = 0{,}020$ m",
+          "ket_qua": "$r^2 = 4{,}0\\cdot10^{-4}\\ \\text{m}^2$",
+          "kiem_tra": "Bình phương sau khi đã đổi ra mét."
+        },
+        {
+          "tieu_de": "Bước 2. Áp dụng định luật Coulomb",
+          "cong_thuc_chu": "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$",
+          "the_so": "$F = 9\\cdot10^9\\cdot\\dfrac{4{,}0\\cdot10^{-9}\\cdot6{,}0\\cdot10^{-9}}{2{,}0\\cdot4{,}0\\cdot10^{-4}}$",
+          "ket_qua": "$F = 2{,}7\\cdot10^{-4}\\ \\text{N}$",
+          "kiem_tra": "Đơn vị: $\\text{N·m}^2/\\text{C}^2\\cdot\\text{C}^2/\\text{m}^2 = \\text{N}$. Trong không khí lực sẽ là $5{,}4\\cdot10^{-4}$ N, gấp đôi, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 3. Xét chiều lực",
+          "cong_thuc_chu": "Dấu của $q_1q_2$",
+          "the_so": "$q_1q_2 = (+4{,}0\\cdot10^{-9})(-6{,}0\\cdot10^{-9}) = -2{,}4\\cdot10^{-17}\\ \\text{C}^2$",
+          "ket_qua": "$q_1q_2 \\lt 0$: hai quả hút nhau",
+          "kiem_tra": "Một dương, một âm nên hút, đúng quy tắc trái dấu hút."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.00027,
+          "don_vi": "N"
+        },
+        {
+          "y": "b (tích q1q2 âm → hút nhau)",
+          "gia_tri": -2.4e-17,
+          "don_vi": "C^2"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn lực Coulomb trong dầu",
+          "bieu_thuc": "9e9*abs(4e-9*(-6e-9))/(2.0*0.02**2)",
+          "ky_vong": 0.00027,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tích q1q2",
+          "bieu_thuc": "4e-9*(-6e-9)",
+          "ky_vong": -2.4e-17,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho sẵn hai điện tích, khoảng cách, môi trường và hỏi lực → đổi SI, thế vào công thức Coulomb, xét dấu để biết hút hay đẩy.",
+      "bay_thuong_gap": [
+        "Để $r = 2$ (cm) thay vì $0{,}020$ m, lực sai $10^4$ lần.",
+        "Quên bình phương $r$.",
+        "Quên chia cho $\\varepsilon$ khi đặt trong dầu.",
+        "Mang dấu âm vào $F$ rồi ghi $F$ âm; độ lớn luôn dương, dấu chỉ dùng để xét hút/đẩy."
+      ],
+      "dieu_ban_khong_chac": [
+        "Danh sách dạng ở bước 0 ({DANH_SACH_DANG}) chưa được điền trong tin nhắn; tôi tự chọn 5 dạng bám hai YCCĐ và các mục II.2, II.4, II.5, bẫy 2, bài toán mẫu V. Cần đối chiếu lại với danh sách đã chốt."
+      ],
+      "mo_phong_goi_y": "Hai quả cầu nhỏ trong một khay dầu màu vàng nhạt, quả trái màu đỏ nhãn \"$q_1 = +4{,}0$ nC\", quả phải màu xanh nhãn \"$q_2 = -6{,}0$ nC\". Thước đo giữa hai tâm nhãn \"$r = 2{,}0$ cm\". Góc khay ghi \"dầu, $\\varepsilon = 2{,}0$\". Hai mũi tên lực đặt tại mỗi quả, nằm trên đường nối, nhấp nháy dấu hỏi về chiều; không hiện độ lớn."
+    },
+    {
+      "label": "Dạng 2 · Lực điện trước và sau khi hai quả cầu chạm nhau",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại: đổi SI và tính lực Coulomb như Dạng 1 (làm hai lần).\nThêm MỘT độ khó: điện tích thay đổi do tiếp xúc, phải cộng có dấu rồi chia đều và xét lại dấu, tránh bẫy cộng độ lớn.",
+      "yccd_de_xuat": "Định luật Coulomb",
+      "de_bai": "Hai quả cầu kim loại nhỏ giống hệt nhau đặt trên hai giá cách điện trong không khí, tâm cách nhau 3,0 cm. Quả A mang điện tích $+10$ nC, quả B mang điện tích $-4{,}0$ nC.\na) Tính lực tương tác lúc đầu; hai quả hút hay đẩy?\nb) Dùng kẹp cách điện cho hai quả chạm nhau rồi đặt lại đúng vị trí cũ. Tính điện tích mỗi quả và lực tương tác lúc sau; hút hay đẩy?",
+      "dieu_kien_ap_dung": "Hai quả giống hệt, hệ cô lập (kẹp và giá cách điện) nên tổng đại số điện tích bảo toàn và chia đều; coi hai quả là điện tích điểm, không khí $\\varepsilon \\approx 1$.",
+      "phan_tich": [
+        {
+          "trich_de": "giống hệt nhau",
+          "du_lieu": "Hai quả cùng kích thước, cùng chất",
+          "kien_thuc": "Sau khi chạm, điện tích chia đều: $q' = \\dfrac{q_1 + q_2}{2}$"
+        },
+        {
+          "trich_de": "trong không khí",
+          "du_lieu": "$\\varepsilon \\approx 1$",
+          "kien_thuc": "Coulomb trong không khí"
+        },
+        {
+          "trich_de": "tâm cách nhau 3,0 cm",
+          "du_lieu": "$r = 0{,}030$ m",
+          "kien_thuc": "Đổi SI trước khi bình phương"
+        },
+        {
+          "trich_de": "Quả A mang điện tích $+10$ nC",
+          "du_lieu": "$q_1 = +1{,}0\\cdot10^{-8}$ C",
+          "kien_thuc": "Giữ dấu khi cộng đại số"
+        },
+        {
+          "trich_de": "quả B mang điện tích $-4{,}0$ nC",
+          "du_lieu": "$q_2 = -4{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Giữ dấu khi cộng đại số"
+        },
+        {
+          "trich_de": "cho hai quả chạm nhau rồi đặt lại đúng vị trí cũ",
+          "du_lieu": "$r$ không đổi; điện tích thay đổi",
+          "kien_thuc": "Bảo toàn điện tích trong hệ cô lập"
+        },
+        {
+          "trich_de": "Tính điện tích mỗi quả và lực tương tác lúc sau",
+          "du_lieu": "Cần tìm $q'$, $F'$",
+          "kien_thuc": "$q' = \\dfrac{q_1 + q_2}{2}$; $F' = k\\dfrac{q'^2}{r^2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "F'",
+        "cong_thuc": "F' = k\\dfrac{q'^2}{r^2},\\quad q' = \\dfrac{q_1 + q_2}{2}"
+      },
+      "kien_thuc_goi_lai": [
+        "Hệ cô lập: tổng đại số điện tích không đổi",
+        "$n$ quả giống hệt chạm rồi tách: $q' = \\dfrac{q_1 + \\dots + q_n}{n}$, cộng có dấu",
+        "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$",
+        "Sau khi chạm, hai quả luôn cùng dấu nên đẩy (nếu tổng khác 0)"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi sang SI",
+          "cong_thuc_chu": "$1\\ \\text{nC} = 10^{-9}\\ \\text{C}$",
+          "the_so": "$q_1 = +1{,}0\\cdot10^{-8}$ C; $q_2 = -4{,}0\\cdot10^{-9}$ C; $r = 0{,}030$ m",
+          "ket_qua": "$r^2 = 9{,}0\\cdot10^{-4}\\ \\text{m}^2$",
+          "kiem_tra": "Đã đổi cm sang m."
+        },
+        {
+          "tieu_de": "Bước 2. Lực lúc đầu (như Dạng 1)",
+          "cong_thuc_chu": "$F = k\\dfrac{|q_1q_2|}{r^2}$",
+          "the_so": "$F = 9\\cdot10^9\\cdot\\dfrac{1{,}0\\cdot10^{-8}\\cdot4{,}0\\cdot10^{-9}}{9{,}0\\cdot10^{-4}}$",
+          "ket_qua": "$F = 4{,}0\\cdot10^{-4}\\ \\text{N}$, hút nhau",
+          "kiem_tra": "Trái dấu nên hút; đơn vị N."
+        },
+        {
+          "tieu_de": "Bước 3. Điện tích sau khi chạm (phần mới)",
+          "cong_thuc_chu": "$q' = \\dfrac{q_1 + q_2}{2}$",
+          "the_so": "$q' = \\dfrac{1{,}0\\cdot10^{-8} + (-4{,}0\\cdot10^{-9})}{2}$",
+          "ket_qua": "$q' = +3{,}0\\cdot10^{-9}\\ \\text{C} = +3{,}0\\ \\text{nC}$",
+          "kiem_tra": "Tổng sau $= 2\\cdot3{,}0 = 6{,}0$ nC $=$ tổng trước $10 - 4{,}0$ nC: bảo toàn đúng."
+        },
+        {
+          "tieu_de": "Bước 4. Lực lúc sau",
+          "cong_thuc_chu": "$F' = k\\dfrac{q'^2}{r^2}$",
+          "the_so": "$F' = 9\\cdot10^9\\cdot\\dfrac{(3{,}0\\cdot10^{-9})^2}{9{,}0\\cdot10^{-4}}$",
+          "ket_qua": "$F' = 9{,}0\\cdot10^{-5}\\ \\text{N}$, đẩy nhau",
+          "kiem_tra": "Cùng dấu dương nên đẩy. Tích độ lớn từ 40 còn 9 (đơn vị $\\text{nC}^2$) nên lực giảm $40/9 \\approx 4{,}44$ lần: $4{,}0\\cdot10^{-4}/4{,}44 \\approx 9{,}0\\cdot10^{-5}$ N."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (lực lúc đầu, hút)",
+          "gia_tri": 0.0004,
+          "don_vi": "N"
+        },
+        {
+          "y": "b (điện tích mỗi quả)",
+          "gia_tri": 3e-9,
+          "don_vi": "C"
+        },
+        {
+          "y": "b (lực lúc sau, đẩy)",
+          "gia_tri": 0.00009,
+          "don_vi": "N"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "lực lúc đầu",
+          "bieu_thuc": "9e9*abs(10e-9*(-4e-9))/0.03**2",
+          "ky_vong": 0.0004,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện tích mỗi quả sau khi chạm",
+          "bieu_thuc": "(10e-9+(-4e-9))/2",
+          "ky_vong": 3e-9,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực lúc sau",
+          "bieu_thuc": "9e9*(3e-9)**2/0.03**2",
+          "ky_vong": 0.00009,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số lực trước/sau",
+          "bieu_thuc": "(9e9*40e-18/0.03**2)/(9e9*9e-18/0.03**2)",
+          "ky_vong": 4.444,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề có cụm \"chạm nhau rồi tách ra\" hoặc \"nối bằng dây dẫn rồi cắt\" → cộng có dấu, chia đều, xét lại dấu, rồi tính Coulomb lần hai.",
+      "bay_thuong_gap": [
+        "Cộng độ lớn $(10 + 4)/2 = 7$ nC, bỏ dấu âm.",
+        "Giữ kết luận \"hút\" sau khi chạm, quên hai quả giờ cùng dấu.",
+        "Nghĩ hai quả trái dấu chạm nhau thì luôn trung hoà, hết lực.",
+        "Quên đổi cm sang m."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khi đặt lại gần nhau ở 3 cm, hai quả kim loại có hưởng ứng làm lệch điện tích khỏi tâm; bài coi là điện tích điểm theo đúng phạm vi lý thuyết."
+      ],
+      "mo_phong_goi_y": "Hai quả cầu kim loại trên giá cách điện, nhãn \"A: $+10$ nC\" (đỏ) và \"B: $-4{,}0$ nC\" (xanh), thước nhãn \"$r = 3{,}0$ cm\". Pha 1: hai mũi tên lực hướng vào nhau. Pha 2: kẹp cách điện đưa hai quả chạm nhau, các chấm electron chạy qua chỗ chạm. Pha 3: hai quả trở về vị trí cũ, nhãn điện tích đổi thành \"$q' = ?$\", mũi tên lực hiện dấu hỏi về chiều. Không hiện số lực."
+    },
+    {
+      "label": "Dạng 3 · Tổng hợp lực điện lên một điện tích",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại: tính từng lực Coulomb (Dạng 1) và xét hút/đẩy theo dấu (bước con cấp 2, như Dạng 2).\nThêm MỘT độ khó: cộng hai vectơ lực chung gốc theo quy tắc hình bình hành, xác định đúng góc giữa hai vectơ.",
+      "yccd_de_xuat": "Định luật Coulomb",
+      "de_bai": "Ba điện tích điểm đặt tại ba đỉnh của tam giác đều ABC cạnh 3,0 cm trong không khí: $q_A = +4{,}0$ nC tại A, $q_B = -4{,}0$ nC tại B, $q_0 = +2{,}0$ nC tại C. Tìm hợp lực điện do $q_A$ và $q_B$ tác dụng lên $q_0$: độ lớn, phương và chiều.",
+      "dieu_kien_ap_dung": "Các điện tích là điện tích điểm đứng yên trong không khí ($\\varepsilon \\approx 1$); lực tổng hợp là tổng vectơ các lực Coulomb thành phần.",
+      "phan_tich": [
+        {
+          "trich_de": "tam giác đều ABC cạnh 3,0 cm",
+          "du_lieu": "$AC = BC = r = 0{,}030$ m; $\\widehat{ACB} = 60^\\circ$",
+          "kien_thuc": "Hình học: tam giác đều có ba góc $60^\\circ$"
+        },
+        {
+          "trich_de": "trong không khí",
+          "du_lieu": "$\\varepsilon \\approx 1$",
+          "kien_thuc": "Coulomb trong không khí"
+        },
+        {
+          "trich_de": "$q_A = +4{,}0$ nC tại A",
+          "du_lieu": "$q_A = +4{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "$q_Aq_0 \\gt 0$: $q_A$ đẩy $q_0$"
+        },
+        {
+          "trich_de": "$q_B = -4{,}0$ nC tại B",
+          "du_lieu": "$q_B = -4{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "$q_Bq_0 \\lt 0$: $q_B$ hút $q_0$"
+        },
+        {
+          "trich_de": "$q_0 = +2{,}0$ nC tại C",
+          "du_lieu": "$q_0 = +2{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Điện tích chịu lực, gốc của các vectơ lực"
+        },
+        {
+          "trich_de": "Tìm hợp lực điện",
+          "du_lieu": "Cần tìm $\\vec F = \\vec F_A + \\vec F_B$",
+          "kien_thuc": "$F = 2F_1\\cos\\dfrac{\\alpha}{2}$ khi $F_A = F_B$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "F",
+        "cong_thuc": "F = 2F_1\\cos\\dfrac{\\alpha}{2}"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\vec F = \\vec F_1 + \\vec F_2$, cộng theo quy tắc hình bình hành",
+        "$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$, $\\alpha$ là góc giữa hai vectơ chung gốc tại $q_0$",
+        "$F_1 = F_2$: $F = 2F_1\\cos\\dfrac{\\alpha}{2}$",
+        "Vẽ đúng chiều hút/đẩy trước khi đo góc"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Độ lớn từng lực (như Dạng 1)",
+          "cong_thuc_chu": "$F_A = k\\dfrac{|q_Aq_0|}{AC^2}$; $F_B = k\\dfrac{|q_Bq_0|}{BC^2}$",
+          "the_so": "$F_A = F_B = 9\\cdot10^9\\cdot\\dfrac{4{,}0\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{(0{,}030)^2}$",
+          "ket_qua": "$F_A = F_B = 8{,}0\\cdot10^{-5}\\ \\text{N}$",
+          "kiem_tra": "$|q_A| = |q_B|$ và $AC = BC$ nên hai lực bằng nhau, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Chiều từng lực (bước con cấp 2)",
+          "cong_thuc_chu": "Cùng dấu đẩy, trái dấu hút",
+          "the_so": "$q_Aq_0 \\gt 0$: $\\vec F_A$ hướng theo chiều từ A sang C, kéo dài ra ngoài; $q_Bq_0 \\lt 0$: $\\vec F_B$ hướng từ C về B",
+          "ket_qua": "$\\vec F_A$ cùng hướng $\\overrightarrow{AC}$; $\\vec F_B$ cùng hướng $\\overrightarrow{CB}$",
+          "kiem_tra": "Vẽ cả hai vectơ đặt gốc tại C."
+        },
+        {
+          "tieu_de": "Bước 3. Góc giữa hai vectơ (phần mới)",
+          "cong_thuc_chu": "$\\alpha = 180^\\circ - \\widehat{ACB}$",
+          "the_so": "$\\vec F_A$ ngược hướng $\\overrightarrow{CA}$, mà góc giữa $\\overrightarrow{CA}$ và $\\overrightarrow{CB}$ là $60^\\circ$: $\\alpha = 180^\\circ - 60^\\circ$",
+          "ket_qua": "$\\alpha = 120^\\circ$",
+          "kiem_tra": "Không lấy $60^\\circ$ vì $\\vec F_A$ hướng ra xa A, không hướng về A."
+        },
+        {
+          "tieu_de": "Bước 4. Độ lớn hợp lực",
+          "cong_thuc_chu": "$F = 2F_A\\cos\\dfrac{\\alpha}{2}$",
+          "the_so": "$F = 2\\cdot8{,}0\\cdot10^{-5}\\cdot\\cos60^\\circ = 2\\cdot8{,}0\\cdot10^{-5}\\cdot0{,}5$",
+          "ket_qua": "$F = 8{,}0\\cdot10^{-5}\\ \\text{N}$",
+          "kiem_tra": "Kiểm bằng công thức tổng quát: $F^2 = 2F_A^2 + 2F_A^2\\cos120^\\circ = F_A^2$, khớp."
+        },
+        {
+          "tieu_de": "Bước 5. Phương, chiều hợp lực",
+          "cong_thuc_chu": "$\\vec F = F_A\\left(\\dfrac{\\overrightarrow{AC}}{a} + \\dfrac{\\overrightarrow{CB}}{a}\\right) = F_A\\dfrac{\\overrightarrow{AB}}{a}$",
+          "the_so": "$\\overrightarrow{AC} + \\overrightarrow{CB} = \\overrightarrow{AB}$",
+          "ket_qua": "$\\vec F$ song song với AB, chiều từ A sang B",
+          "kiem_tra": "Hợp lí: A đẩy ra xa A, B hút về phía B, cả hai cùng góp phần đẩy $q_0$ theo chiều A → B."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "độ lớn hợp lực",
+          "gia_tri": 0.00008,
+          "don_vi": "N"
+        },
+        {
+          "y": "góc giữa hai lực thành phần",
+          "gia_tri": 120,
+          "don_vi": "độ"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn mỗi lực thành phần",
+          "bieu_thuc": "9e9*4e-9*2e-9/0.03**2",
+          "ky_vong": 0.00008,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hợp lực theo công thức tổng quát với góc 120 độ",
+          "bieu_thuc": "math.sqrt(2*(8e-5)**2+2*(8e-5)**2*math.cos(math.radians(120)))",
+          "ky_vong": 0.00008,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "hợp lực theo công thức 2F1cos(alpha/2)",
+          "bieu_thuc": "2*8e-5*math.cos(math.radians(60))",
+          "ky_vong": 0.00008,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi một điện tích chịu lực của hai (hoặc nhiều) điện tích không cùng phương → tính từng lực, vẽ chiều hút/đẩy tại điện tích chịu lực, tìm góc giữa hai vectơ chung gốc, cộng vectơ.",
+      "bay_thuong_gap": [
+        "Lấy góc của tam giác ($60^\\circ$) làm góc giữa hai lực, ra $1{,}39\\cdot10^{-4}$ N.",
+        "Vẽ cả hai lực cùng là hút hoặc cùng là đẩy, bỏ qua dấu của từng điện tích.",
+        "Cộng đại số $F_A + F_B = 1{,}6\\cdot10^{-4}$ N như hai lực cùng chiều.",
+        "Chỉ nêu độ lớn, quên phương và chiều."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Tam giác đều ABC, cạnh nhãn \"$a = 3{,}0$ cm\". Chấm đỏ tại A nhãn \"$q_A = +4{,}0$ nC\", chấm xanh tại B nhãn \"$q_B = -4{,}0$ nC\", chấm đỏ nhỏ tại C nhãn \"$q_0 = +2{,}0$ nC\". Lần lượt mọc hai mũi tên tại C: $\\vec F_A$ (đỏ, theo hướng kéo dài AC ra ngoài), $\\vec F_B$ (xanh, hướng về B); cung tròn nhãn \"$\\alpha = ?$\" giữa hai mũi tên. Sau đó hiện hình bình hành đứt nét và mũi tên hợp lực $\\vec F$ (tím) không ghi độ lớn."
+    },
+    {
+      "label": "Dạng 4 · Tìm vị trí cân bằng của điện tích trên đường nối hai điện tích",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại: tính lực Coulomb, xét chiều hút/đẩy và cộng vectơ như Dạng 3.\nThêm MỘT độ khó: bài ngược, cho hợp lực bằng 0 rồi tìm vị trí, phải chọn đúng vùng (trong hay ngoài đoạn AB).",
+      "yccd_de_xuat": "Cân bằng của điện tích chịu nhiều lực",
+      "de_bai": "Trên một thanh nhựa thẳng nằm ngang, trong không khí, gắn cố định hai hạt tích điện: $q_1 = +16$ nC tại A và $q_2 = -4{,}0$ nC tại B, với $AB = 9{,}0$ cm. Một hạt nhỏ mang điện tích $q_0 = +2{,}0$ nC xâu vào thanh, trượt được không ma sát dọc thanh.\na) Đặt $q_0$ ở đâu để hợp lực điện lên nó bằng 0?\nb) Tính lực do từng điện tích $q_1$, $q_2$ tác dụng lên $q_0$ tại vị trí đó để kiểm tra.\nc) Thay $q_0$ bằng hạt mang $-2{,}0$ nC thì vị trí cân bằng có thay đổi không?",
+      "dieu_kien_ap_dung": "Các hạt là điện tích điểm trong không khí; trọng lực và phản lực của thanh vuông góc với thanh, tự cân bằng, nên dọc thanh chỉ xét hai lực điện.",
+      "phan_tich": [
+        {
+          "trich_de": "$q_1 = +16$ nC tại A",
+          "du_lieu": "$q_1 = +1{,}6\\cdot10^{-8}$ C",
+          "kien_thuc": "Điện tích có độ lớn lớn hơn"
+        },
+        {
+          "trich_de": "$q_2 = -4{,}0$ nC tại B",
+          "du_lieu": "$q_2 = -4{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Trái dấu với $q_1$ → C ở ngoài đoạn AB, gần B"
+        },
+        {
+          "trich_de": "$AB = 9{,}0$ cm",
+          "du_lieu": "$AB = 0{,}090$ m",
+          "kien_thuc": "Trái dấu: $|r_1 - r_2| = AB$"
+        },
+        {
+          "trich_de": "$q_0 = +2{,}0$ nC",
+          "du_lieu": "$q_0 = +2{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Dùng để kiểm tra độ lớn hai lực"
+        },
+        {
+          "trich_de": "trượt được không ma sát dọc thanh",
+          "du_lieu": "Không có lực cản dọc thanh",
+          "kien_thuc": "Cân bằng khi $\\vec F_{10} + \\vec F_{20} = \\vec 0$"
+        },
+        {
+          "trich_de": "hợp lực điện lên nó bằng 0",
+          "du_lieu": "Cần tìm $r_1$, $r_2$",
+          "kien_thuc": "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$"
+        },
+        {
+          "trich_de": "Thay $q_0$ bằng hạt mang $-2{,}0$ nC",
+          "du_lieu": "Đổi dấu $q_0$",
+          "kien_thuc": "Vị trí cân bằng không phụ thuộc dấu và độ lớn $q_0$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "r_1, r_2",
+        "cong_thuc": "\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}},\\quad r_1 - r_2 = AB"
+      },
+      "kien_thuc_goi_lai": [
+        "Cân bằng: $\\vec F_{10} + \\vec F_{20} = \\vec 0$, hai lực cùng phương, ngược chiều, bằng độ lớn",
+        "C nằm trên đường AB, gần điện tích có độ lớn nhỏ hơn",
+        "Cùng dấu: C ở giữa; trái dấu: C ở ngoài đoạn AB",
+        "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$, không phụ thuộc $q_0$"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chọn vùng đặt C (phần mới)",
+          "cong_thuc_chu": "Trái dấu → ngoài đoạn AB, phía điện tích nhỏ",
+          "the_so": "$q_1q_2 \\lt 0$; $|q_2| = 4{,}0$ nC $\\lt |q_1| = 16$ nC",
+          "ket_qua": "C nằm trên đường AB, ngoài đoạn AB, phía B",
+          "kiem_tra": "Nếu C ở giữa A và B: A đẩy $q_0$ về phía B, B hút $q_0$ về phía B, hai lực cùng chiều, không triệt tiêu."
+        },
+        {
+          "tieu_de": "Bước 2. Tỉ số khoảng cách",
+          "cong_thuc_chu": "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$",
+          "the_so": "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{16}{4{,}0}}$",
+          "ket_qua": "$r_1 = 2r_2$",
+          "kiem_tra": "$r_1 \\gt r_2$: C xa A hơn, đúng với việc C ở phía B."
+        },
+        {
+          "tieu_de": "Bước 3. Giải khoảng cách",
+          "cong_thuc_chu": "$r_1 - r_2 = AB$",
+          "the_so": "$2r_2 - r_2 = 9{,}0$ cm",
+          "ket_qua": "$r_2 = CB = 9{,}0\\ \\text{cm}$; $r_1 = CA = 18\\ \\text{cm}$",
+          "kiem_tra": "$18 - 9{,}0 = 9{,}0$ cm $= AB$, khớp."
+        },
+        {
+          "tieu_de": "Bước 4. Kiểm tra bằng lực Coulomb",
+          "cong_thuc_chu": "$F_{10} = k\\dfrac{|q_1q_0|}{r_1^2}$; $F_{20} = k\\dfrac{|q_2q_0|}{r_2^2}$",
+          "the_so": "$F_{10} = 9\\cdot10^9\\cdot\\dfrac{1{,}6\\cdot10^{-8}\\cdot2{,}0\\cdot10^{-9}}{(0{,}18)^2}$; $F_{20} = 9\\cdot10^9\\cdot\\dfrac{4{,}0\\cdot10^{-9}\\cdot2{,}0\\cdot10^{-9}}{(0{,}090)^2}$",
+          "ket_qua": "$F_{10} = F_{20} \\approx 8{,}89\\cdot10^{-6}\\ \\text{N}$",
+          "kiem_tra": "$\\vec F_{10}$ đẩy ra xa A (hướng A → C), $\\vec F_{20}$ hút về B (hướng C → B, ngược lại): ngược chiều, bằng nhau, hợp lực bằng 0."
+        },
+        {
+          "tieu_de": "Bước 5. Đổi dấu $q_0$",
+          "cong_thuc_chu": "Điều kiện $\\dfrac{|q_1|}{r_1^2} = \\dfrac{|q_2|}{r_2^2}$ không chứa $q_0$",
+          "the_so": "$q_0 = -2{,}0$ nC: cả hai lực cùng đổi chiều, độ lớn giữ nguyên",
+          "ket_qua": "Vị trí cân bằng không đổi: $CB = 9{,}0$ cm, $CA = 18$ cm",
+          "kiem_tra": "Hai lực vẫn ngược chiều, bằng độ lớn."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (CB)",
+          "gia_tri": 9,
+          "don_vi": "cm"
+        },
+        {
+          "y": "a (CA)",
+          "gia_tri": 18,
+          "don_vi": "cm"
+        },
+        {
+          "y": "b (mỗi lực)",
+          "gia_tri": 0.00000889,
+          "don_vi": "N"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tỉ số r1/r2",
+          "bieu_thuc": "math.sqrt(16e-9/4e-9)",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "khoảng cách CB (m)",
+          "bieu_thuc": "0.09/(math.sqrt(16/4)-1)",
+          "ky_vong": 0.09,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực do q1 lên q0",
+          "bieu_thuc": "9e9*16e-9*2e-9/0.18**2",
+          "ky_vong": 0.000008889,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực do q2 lên q0",
+          "bieu_thuc": "9e9*4e-9*2e-9/0.09**2",
+          "ky_vong": 0.000008889,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi \"đặt $q_0$ ở đâu để cân bằng / hợp lực bằng 0\" với hai điện tích cố định → xét dấu chọn vùng (trong/ngoài), gần điện tích nhỏ, lập tỉ số căn và tổng/hiệu khoảng cách.",
+      "bay_thuong_gap": [
+        "Đặt C ở giữa A và B dù hai điện tích trái dấu (ra $CA = 6$ cm, $CB = 3$ cm).",
+        "Đặt C về phía điện tích lớn (phía A).",
+        "Dùng tỉ số $\\dfrac{r_1}{r_2} = \\dfrac{|q_1|}{|q_2|}$, quên căn bậc hai.",
+        "Nghĩ vị trí cân bằng thay đổi khi đổi dấu $q_0$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Cân bằng ở đây chỉ xét dọc thanh; độ bền của cân bằng (bền hay không bền) không có trong bài lý thuyết nên không hỏi."
+      ],
+      "mo_phong_goi_y": "Thanh nhựa nằm ngang có vạch chia cm. Chấm đỏ lớn tại A nhãn \"$q_1 = +16$ nC\", chấm xanh nhỏ tại B nhãn \"$q_2 = -4{,}0$ nC\", khoảng AB nhãn \"$9{,}0$ cm\". Một hạt nhỏ \"$q_0$\" được kéo thử lần lượt vào giữa AB, ra ngoài phía A, ra ngoài phía B; tại mỗi chỗ hiện hai mũi tên lực (đỏ do $q_1$, xanh do $q_2$) dài ngắn theo độ lớn. Không đánh dấu điểm cân bằng, chỉ để nhãn \"C = ?\"."
+    },
+    {
+      "label": "Dạng 5 · Cân bằng quả cầu treo chịu lực điện, trọng lực và lực căng",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại: chia đều điện tích khi chạm (Dạng 2), lực Coulomb (Dạng 1), điều kiện tổng lực bằng 0 (Dạng 4).\nThêm MỘT độ khó: ngoài lực điện còn trọng lực và lực căng dây, góc lệch phải tự rút ra từ hình học của dây.",
+      "yccd_de_xuat": "Cân bằng của điện tích chịu nhiều lực",
+      "de_bai": "Trong phòng thí nghiệm có hai quả cầu kim loại nhỏ giống hệt nhau. Quả A khối lượng 0,20 g, treo vào điểm O bằng sợi tơ cách điện dài 20 cm, ban đầu không mang điện. Quả B gắn trên giá cách điện, mang điện tích $q$ chưa biết. Cho B chạm vào A rồi tách ra. Dịch giá đỡ B sao cho khi A cân bằng thì hai quả nằm ngang nhau, tâm cách nhau 4,0 cm; lúc đó A lệch khỏi đường thẳng đứng qua O một đoạn nằm ngang 5,0 cm. Lấy $g = 9{,}8\\ \\text{m/s}^2$, bỏ qua khối lượng sợi tơ.\na) Tính độ lớn lực điện tác dụng lên A.\nb) Tính độ lớn điện tích mỗi quả sau khi chạm.\nc) Tính độ lớn điện tích $q$ ban đầu của B.",
+      "dieu_kien_ap_dung": "Hai quả là điện tích điểm, hệ cô lập khi chạm; A đứng yên nên $\\vec P + \\vec T + \\vec F = \\vec 0$, lực điện nằm ngang vì hai quả ngang nhau.",
+      "phan_tich": [
+        {
+          "trich_de": "hai quả cầu kim loại nhỏ giống hệt nhau",
+          "du_lieu": "Điện tích điểm; chạm rồi tách thì chia đều",
+          "kien_thuc": "$q' = \\dfrac{q + 0}{2}$"
+        },
+        {
+          "trich_de": "khối lượng 0,20 g",
+          "du_lieu": "$m = 2{,}0\\cdot10^{-4}$ kg",
+          "kien_thuc": "Trọng lực $P = mg$"
+        },
+        {
+          "trich_de": "sợi tơ cách điện dài 20 cm",
+          "du_lieu": "$\\ell = 0{,}20$ m",
+          "kien_thuc": "Lực căng $\\vec T$ dọc dây; điện tích không thoát qua dây"
+        },
+        {
+          "trich_de": "ban đầu không mang điện",
+          "du_lieu": "$q_A = 0$ lúc đầu",
+          "kien_thuc": "Bảo toàn điện tích: tổng $= q$"
+        },
+        {
+          "trich_de": "Cho B chạm vào A rồi tách ra",
+          "du_lieu": "Mỗi quả $q' = q/2$, cùng dấu",
+          "kien_thuc": "Cùng dấu → đẩy nhau"
+        },
+        {
+          "trich_de": "hai quả nằm ngang nhau, tâm cách nhau 4,0 cm",
+          "du_lieu": "$r = 0{,}040$ m; $\\vec F$ nằm ngang",
+          "kien_thuc": "$F = k\\dfrac{q'^2}{r^2}$"
+        },
+        {
+          "trich_de": "lệch khỏi đường thẳng đứng qua O một đoạn nằm ngang 5,0 cm",
+          "du_lieu": "$x = 0{,}050$ m (dữ kiện ẩn cho góc lệch)",
+          "kien_thuc": "$\\sin\\alpha = \\dfrac{x}{\\ell}$, $\\tan\\alpha = \\dfrac{x}{\\sqrt{\\ell^2 - x^2}}$"
+        },
+        {
+          "trich_de": "$g = 9{,}8\\ \\text{m/s}^2$",
+          "du_lieu": "$g = 9{,}8\\ \\text{m/s}^2$",
+          "kien_thuc": "$P = mg$"
+        },
+        {
+          "trich_de": "điện tích $q$ ban đầu của B",
+          "du_lieu": "Cần tìm $|q|$",
+          "kien_thuc": "$|q| = 2|q'|$, $|q'| = r\\sqrt{\\dfrac{F}{k}}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "q",
+        "cong_thuc": "|q| = 2r\\sqrt{\\dfrac{mg\\tan\\alpha}{k}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Vật còn chịu trọng lực, lực căng: tổng mọi lực bằng 0",
+        "Lực điện nằm ngang, trọng lực thẳng đứng: $\\tan\\alpha = \\dfrac{F}{P}$",
+        "Chạm rồi tách hai quả giống hệt: chia đều tổng có dấu",
+        "$F = k\\dfrac{q'^2}{r^2}$ nên $|q'| = r\\sqrt{\\dfrac{F}{k}}$"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Rút góc lệch từ hình học (phần mới)",
+          "cong_thuc_chu": "$h = \\sqrt{\\ell^2 - x^2}$; $\\tan\\alpha = \\dfrac{x}{h}$",
+          "the_so": "$h = \\sqrt{20^2 - 5{,}0^2} \\approx 19{,}36$ cm; $\\tan\\alpha = \\dfrac{5{,}0}{19{,}36}$",
+          "ket_qua": "$\\tan\\alpha \\approx 0{,}2582$ ($\\alpha \\approx 14{,}5^\\circ$)",
+          "kiem_tra": "Không dùng $\\tan\\alpha = x/\\ell$: $\\ell$ là cạnh huyền, không phải cạnh kề."
+        },
+        {
+          "tieu_de": "Bước 2. Cân bằng ba lực (phần mới)",
+          "cong_thuc_chu": "$\\vec P + \\vec T + \\vec F = \\vec 0 \\Rightarrow F = P\\tan\\alpha = mg\\tan\\alpha$",
+          "the_so": "$F = 2{,}0\\cdot10^{-4}\\cdot9{,}8\\cdot0{,}2582$",
+          "ket_qua": "$F \\approx 5{,}06\\cdot10^{-4}\\ \\text{N}$",
+          "kiem_tra": "$F \\lt P = 1{,}96\\cdot10^{-3}$ N vì góc lệch nhỏ hơn $45^\\circ$, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 3. Điện tích mỗi quả (như Dạng 1, giải ngược)",
+          "cong_thuc_chu": "$|q'| = r\\sqrt{\\dfrac{F}{k}}$",
+          "the_so": "$|q'| = 0{,}040\\cdot\\sqrt{\\dfrac{5{,}06\\cdot10^{-4}}{9\\cdot10^9}}$",
+          "ket_qua": "$|q'| \\approx 9{,}49\\cdot10^{-9}\\ \\text{C} \\approx 9{,}49\\ \\text{nC}$",
+          "kiem_tra": "Thế lại: $9\\cdot10^9\\cdot\\dfrac{(9{,}49\\cdot10^{-9})^2}{(0{,}040)^2} \\approx 5{,}07\\cdot10^{-4}$ N, khớp."
+        },
+        {
+          "tieu_de": "Bước 4. Điện tích ban đầu của B (như Dạng 2)",
+          "cong_thuc_chu": "$q' = \\dfrac{q + 0}{2} \\Rightarrow |q| = 2|q'|$",
+          "the_so": "$|q| = 2\\cdot9{,}49\\cdot10^{-9}$",
+          "ket_qua": "$|q| \\approx 1{,}90\\cdot10^{-8}\\ \\text{C} \\approx 19{,}0\\ \\text{nC}$",
+          "kiem_tra": "Đề chỉ cho lực đẩy nên chỉ tìm được độ lớn, không biết $q$ dương hay âm."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.000506,
+          "don_vi": "N"
+        },
+        {
+          "y": "b",
+          "gia_tri": 9.49e-9,
+          "don_vi": "C"
+        },
+        {
+          "y": "c",
+          "gia_tri": 1.9e-8,
+          "don_vi": "C"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tan góc lệch",
+          "bieu_thuc": "0.05/math.sqrt(0.2**2-0.05**2)",
+          "ky_vong": 0.2582,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "lực điện F = mg tan(alpha)",
+          "bieu_thuc": "2e-4*9.8*0.05/math.sqrt(0.2**2-0.05**2)",
+          "ky_vong": 0.000506,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện tích mỗi quả sau khi chạm",
+          "bieu_thuc": "0.04*math.sqrt(2e-4*9.8*0.05/math.sqrt(0.2**2-0.05**2)/9e9)",
+          "ky_vong": 9.49e-9,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện tích ban đầu của B",
+          "bieu_thuc": "2*0.04*math.sqrt(2e-4*9.8*0.05/math.sqrt(0.2**2-0.05**2)/9e9)",
+          "ky_vong": 1.9e-8,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi vật tích điện treo dây hoặc có trọng lượng, đứng yên dưới lực điện → vẽ ba lực $\\vec P$, $\\vec T$, $\\vec F$, rút góc lệch từ hình học, $F = mg\\tan\\alpha$, rồi giải ngược Coulomb và bảo toàn điện tích.",
+      "bay_thuong_gap": [
+        "Lấy $\\tan\\alpha = x/\\ell = 0{,}25$ (nhầm sin với tan).",
+        "Lấy độ lệch ngang 5,0 cm làm khoảng cách $r$ giữa hai quả.",
+        "Quên đổi 0,20 g sang kg.",
+        "Quên chia đôi điện tích: lấy luôn điện tích mỗi quả làm điện tích ban đầu của B.",
+        "Viết $F = mg\\sin\\alpha$ hoặc $F = mg$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khi B đặt gần A ở 4,0 cm, có hưởng ứng nhẹ giữa hai quả kim loại; bài coi là điện tích điểm.",
+        "Sau khi chạm, B cầm trên giá cách điện nên coi không rò điện; thực tế không khí ẩm làm điện tích giảm dần."
+      ],
+      "mo_phong_goi_y": "Điểm treo O trên giá, sợi tơ nhãn \"$\\ell = 20$ cm\" treo quả A (xám, nhãn \"$m = 0{,}20$ g\"). Quả B (đỏ, nhãn \"$q = ?$\") trên giá cách điện tiến lại chạm A, các chấm điện tích chia sang A, rồi B lùi ra. A bị đẩy lệch sang bên, B được dịch cho ngang hàng A; thước ngang nhãn \"$r = 4{,}0$ cm\", đoạn ngang từ đường thẳng đứng qua O tới A nhãn \"$x = 5{,}0$ cm\", cung góc nhãn \"$\\alpha$\". Tại A hiện ba mũi tên: $\\vec P$ (cam, xuống), $\\vec F$ (đỏ, nằm ngang ra xa B), $\\vec T$ (lục, dọc dây); không ghi độ lớn."
+    }
+  ]
+}

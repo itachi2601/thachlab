@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 18. An toàn phóng xạ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "5. Ứng dụng y tế: chẩn đoán và điều trị",
+      "trich_nguyen_van": "Đưa vào để xem · Chiếu vào để diệt",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "chặn",
+      "em_hieu_la": "Học sinh học thuộc khẩu quyết \"chẩn đoán = đưa vào, điều trị = chiếu vào\". Câu 4 lại chấm phương án B (đúng nội dung khẩu quyết này) là sai. Phần Mang về cũng lặp đúng câu này, nên học sinh tin chắc vào B.",
+      "de_xuat": "Đổi khẩu quyết theo mức liều, ví dụ \"Liều thấp để xem · Liều cao để diệt\". Thêm một câu ngay trong mục: X-quang, CT là chẩn đoán chiếu từ ngoài; Xofigo, Lutathera là điều trị đưa vào trong."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "Bẫy 1: \"Gy và Sv là một\"",
+      "trich_nguyen_van": "máy đo hiện thẳng",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bảng tra ở mục 2 ghi máy đo hiện suất liều µSv/h, thí nghiệm cũng quy đổi ra µSv/h. Ở đây lại xếp \"máy đo hiện thẳng\" vào cột Gy. Học sinh không biết máy đo cho ra Gy hay Sv.",
+      "de_xuat": "Bỏ dòng này, hoặc ghi rõ: \"máy đo liều môi trường thường hiển thị suất liều tương đương µSv/h\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Tia phóng xạ gây hại cho cơ thể thế nào",
+      "trich_nguyen_van": "cùng khoảng cách, liều tỉ lệ thuận thời gian",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Câu 1 đặt trong mục 1 nhưng dùng khái niệm \"liều\" (chỉ định nghĩa ở mục 2) và quy tắc \"liều tỉ lệ thuận thời gian\" (chỉ phát biểu ở mục 3). Học sinh phải đoán trước những điều chưa được học.",
+      "de_xuat": "Chuyển Câu 1 xuống sau mục 3, hoặc thêm vào mục 1 một câu: \"liều nhận được = suất liều × thời gian\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "V. Bài toán mẫu: suất liều 90 µSv/h tại 1 m",
+      "trich_nguyen_van": "$\\dot H_1 = 90\\ \\mu\\text{Sv/h}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu H có dấu chấm chưa từng được giới thiệu. Học sinh dễ nhầm nó với liều tương đương H của mục 2.",
+      "de_xuat": "Ở mục 2, cạnh định nghĩa suất liều, thêm: \"kí hiệu $\\dot H$ (đọc là H chấm), đơn vị µSv/h\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 2: \"xa gấp đôi thì liều giảm một nửa\"",
+      "trich_nguyen_van": "Khoảng cách so với ban đầu",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Mọi ví dụ trong bài đều xuất phát từ 1 m, nên tỉ số khoảng cách trùng với khoảng cách thật. Học sinh quen chia cho r² với r là khoảng cách tuyệt đối, sang Câu 7 sẽ chia 4² = 16.",
+      "de_xuat": "Thêm một ví dụ không xuất phát từ 1 m: \"đo ở 2 m, lùi tới 4 m là xa gấp 2, nên chia 4 chứ không chia 16\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Ba nguyên tắc: thời gian – khoảng cách – che chắn",
+      "trich_nguyen_van": "$H \\sim 1/r^2$; xa gấp đôi, liều còn $1/4$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dấu ∼ chưa được giải thích. Chữ H ở đây lại là liều tương đương, trong khi bảng và bài toán mẫu áp quy luật này cho suất liều. Học sinh không rõ đại lượng nào tỉ lệ với 1/r².",
+      "de_xuat": "Viết rõ: \"suất liều (và liều trong cùng thời gian) tỉ lệ nghịch với r²\", và bỏ kí hiệu ∼."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Biển cảnh báo và liều kế cá nhân",
+      "trich_nguyen_van": "lấy liều trung bình mỗi tuần nhân với số tuần làm việc trong năm (khoảng 50 tuần) rồi so với 20 mSv/năm",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ nêu cách tính mà không tính ra kết quả. Học sinh không kiểm tra được mình làm đúng hay sai.",
+      "de_xuat": "Thêm phép tính: 0,46/4 ≈ 0,115 mSv/tuần; × 50 ≈ 5,8 mSv/năm, nhỏ hơn 20 mSv/năm."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: suất liều 90 µSv/h tại 1 m",
+      "trich_nguyen_van": "một năm chụp <strong>2 000 giờ</strong>",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề nói về xạ trị áp sát, mỗi ca 30 phút, nhưng lại dùng chữ \"chụp\" và không nói 2 000 giờ liên hệ thế nào với số ca. Lời giải câu d chỉ ghi \"vừa đúng giới hạn\", không trả lời thẳng câu hỏi \"có vượt không\".",
+      "de_xuat": "Sửa thành \"tổng thời gian đứng ở 3 m trong năm là 2 000 giờ\". Kết luận câu d ghi rõ: \"bằng giới hạn, chưa vượt nhưng không còn dư an toàn\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Ba nguyên tắc: thời gian – khoảng cách – che chắn",
+      "trich_nguyen_van": "số đếm ở bảng dưới đã trừ sẵn phông 40 xung/phút",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phông là 40 xung/phút, trùng đúng con số 40 trong bảng ở 3 m. Học sinh dễ nghĩ ở 3 m máy chỉ còn đo phông, nguồn không còn đóng góp gì.",
+      "de_xuat": "Đổi phông sang một giá trị khác 40, hoặc ghi rõ ở 3 m máy đếm 80 xung/phút, trừ phông còn 40."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "1. Tia phóng xạ gây hại cho cơ thể thế nào",
+      "trich_nguyen_van": "gây <strong>hiệu ứng quang điện, phát xạ thứ cấp</strong>",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hai thuật ngữ được nêu ra mà không giải thích, cũng không gắn với tác hại lên cơ thể. Câu còn bắt đầu bằng \"nó\" mà không rõ chủ ngữ.",
+      "de_xuat": "Bỏ hai thuật ngữ này, hoặc thêm một cụm giải thích ngắn; viết rõ chủ ngữ là \"Tia phóng xạ\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "cách li hàng nghìn năm",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 6 nói Pu-239 có chu kì \"hàng chục nghìn năm\", phần Thách đấu nói phải chờ \"hàng trăm nghìn năm\", còn Trả bài lại ghi \"hàng nghìn năm\". Học sinh không biết nhớ con số nào.",
+      "de_xuat": "Thống nhất cách ghi, ví dụ \"hàng chục đến hàng trăm nghìn năm\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "tuỳ cường độ và thời gian chiếu",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục tiêu và mục 1 nêu bốn yếu tố, nhưng phần Mang về chỉ còn hai. Học sinh ôn theo phần Mang về sẽ thiếu khả năng ion hoá và khả năng đâm xuyên.",
+      "de_xuat": "Ghi đủ bốn yếu tố: cường độ · khả năng ion hoá · khả năng đâm xuyên · thời gian."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ suất liều tỉ lệ nghịch bậc nhất với khoảng cách: xa gấp 3 thì giảm 3 lần.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Quy luật là <strong>bình phương</strong> khoảng cách."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Vừa học ở phần mở bài rằng liều phụ thuộc khoảng cách, nên cho rằng cùng khoảng cách thì liều bằng nhau, bỏ qua thời gian.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên nhân hệ số chất lượng w_R, đổi thẳng 0,05 Gy thành 0,05 Sv.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Gy đo năng lượng · Sv đo nguy cơ"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ xa gấp đôi thì liều giảm một nửa, nên coi A và D tương đương rồi chọn A vì quen thuộc hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bẫy 2: \"xa gấp đôi thì liều giảm một nửa\""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Áp dụng nguyên văn khẩu quyết của bài: \"đưa vào để xem, chiếu vào để diệt\".",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Đưa vào để xem · Chiếu vào để diệt"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy chữ \"bể nước\" nên liên tưởng tới việc cho chất thải vào nước, tức là pha loãng, rồi cho rằng B mới là cách không phù hợp.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "<strong>cách li</strong> khỏi môi trường (bể nước, kho khô, chôn sâu)"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn chì với tấm chắn mạnh nhất, quên rằng rủi ro của nguồn alpha hở là hít hoặc nuốt phải bụi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỉ đúng khi nguồn ở <em>ngoài</em> cơ thể. Nguy hiểm nhất là lúc nguồn đã vào <em>bên trong</em>."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Dùng khoảng cách tuyệt đối 4 m nên chia cho 16, thay vì dùng tỉ số 4/2 = 2 rồi chia cho 4. Thói quen này hình thành vì mọi ví dụ trước đều xuất phát từ 1 m.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Khoảng cách so với ban đầu"
+    }
+  ]
+}

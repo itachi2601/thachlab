@@ -1,0 +1,159 @@
+{
+  "bai": "l12-nang-luong-lien-ket",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong bài (chú thích Hình 1 nằm ngoài HTML)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển Câu 3; rút phương án A còn \"Độ hụt khối của hạt nhân heli-4\" và thêm câu dẫn tới mục 3–4 trong phản hồi đúng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành $1\\ \\text{u} \\cdot c^2 = 931{,}5\\ \\text{MeV}$ cho đúng thứ nguyên và khớp Trả bài 6."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 1 nay ghi: nhân 931,5 ra MeV (đã gồm c²), hoặc đổi u sang kg rồi nhân c² ra J."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa \"Ba phép tính\" thành \"Hai phép tính\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bổ sung lập luận: E_lkr tăng, số nuclôn giữ nguyên nên tổng E_lk tăng, phần chênh lệch toả ra."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 5 nay nói E_lkr so được cho mọi hạt nhân (D) và thêm lỗi ở B."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 4 ghi rõ hạt nhân Fe-56 (Z = 26, A = 56) để lỗi C có nguồn gốc rõ."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án D đổi thành \"cho mỗi nuclôn\" như ba phương án kia."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 6 chỉ so theo một hạt nhân He-4: 28,3 MeV gấp khoảng 3,5 triệu lần 8 eV; Hình 4 không sửa được trong HTML, đã ghi để trợ giảng rà."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ khối lượng mol 4 g/mol và đổi 1 MeV = 1,6·10⁻¹³ J trong ví dụ 1 gam heli."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm năng suất toả nhiệt của than 2,9·10⁷ J/kg để kiểm được 2,3·10⁴ kg."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 6 nay nói năng lượng ứng với Δm đã toả ra ngoài khi hạt nhân hình thành."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề đơteri ghi \"khối lượng nguyên tử\" và Bước 1 ghi rõ m_p + m_n + m_e."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng trước Câu 8: năng lượng phản ứng = độ giảm khối lượng (u) × 931,5 MeV."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ hình ảnh \"giếng năng lượng\", giữ ý tổng E_lk sau lớn hơn nên hệ toả phần chênh lệch."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu ở bước Rút ra: khác đai bó ngoài, lực hạt nhân hút trực tiếp giữa từng cặp nuclôn sát nhau."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 1 là câu dự đoán trước khi học, nhắc trước sẽ lộ đáp án; phản hồi đã giải thích lỗi B."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lực hạt nhân là lực hút ở gạch đầu dòng mục 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn khối lượng nguyên tử gồm cả êlectron."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn E_lkr = E_lk/A ngay trước câu."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn E_lkr càng lớn càng bền; phản hồi nay cũng gọi tên lỗi B."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở câu mở Bẫy 1: khối lượng không mất."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 7: kiểm tra cả lí do, độ bền xét bằng E_lkr chứ không bằng kích thước."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 8: để ý \"cho một phản ứng\" hay \"cho mỗi nuclôn\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: viết lại hệ số đổi thành 1 u·c² = 931,5 MeV (trước ghi 1 u = 931,5 MeV).",
+      "Câu 3: phương án đúng A đổi thành \"Độ hụt khối của hạt nhân heli-4\", phản hồi đúng thêm câu dẫn tới mục 3–4.",
+      "Câu 4: đề ghi rõ hạt nhân Fe-56 (Z = 26, A = 56), đáp án 8,79 MeV/nuclôn và các phương án nhiễu (492, 2,76·10⁴, 18,9) giữ nguyên, đã kiểm lại.",
+      "Câu 5: phản hồi sai nay nói E_lkr so được cho mọi hạt nhân và thêm lỗi ở B.",
+      "Mục 5: gạch đầu dòng \"Hệ quả\" thêm lập luận E_lkr tăng → tổng E_lk tăng → toả phần chênh lệch.",
+      "Mục 5 (details): \"Ba phép tính\" sửa thành \"Hai phép tính\".",
+      "Mục 6: so sánh hạt nhân/hoá học chỉ theo một hạt nhân He-4: 28,3 MeV ≈ 3,5 triệu lần 8 eV; Hình 4 đang ghi \"ba triệu lần\" cần trợ giảng kiểm cho khớp.",
+      "Ví dụ 1 gam heli-4: ghi rõ 4 g/mol, 1 MeV = 1,6·10⁻¹³ J và than 2,9·10⁷ J/kg; kết quả 1,5·10²³ nguyên tử, 6,8·10¹¹ J, 2,3·10⁴ kg không đổi.",
+      "Bẫy 1 (bảng): cách đổi ra năng lượng ghi lại thành nhân 931,5 ra MeV, hoặc đổi u sang kg rồi nhân c² ra J.",
+      "Câu 6: phản hồi đúng nay nói năng lượng 18,6 MeV đã toả ra ngoài khi hạt nhân hình thành.",
+      "Bài đơteri: đề ghi m_H là khối lượng nguyên tử, Bước 1 ghi m_p + m_n + m_e = 2,016490 u; các kết quả 0,002388 u, 2,22 MeV và 1,11 MeV không đổi.",
+      "Câu 8: thêm dòng dẫn \"năng lượng phản ứng = độ giảm khối lượng × 931,5 MeV\" và dòng ⚠, phản hồi đúng rút gọn.",
+      "Câu 7: thêm dòng ⚠ về lí do so độ bền.",
+      "Thách đấu ⭐⭐⭐: bỏ hình ảnh \"giếng năng lượng\".",
+      "Ví dụ nam châm: thêm câu phân biệt đai bó ngoài với lực hút giữa từng cặp nuclôn.",
+      "Cắt câu lặp ý để bù độ dài: câu \"Em giải thích được cho bạn ngồi cạnh chưa?\" ở Câu 1 và Câu 7, câu so độ bền sau Mẹo nhớ ở mục 5, mở đầu phản hồi sai Câu 2."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-nang-luong-lien-ket/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

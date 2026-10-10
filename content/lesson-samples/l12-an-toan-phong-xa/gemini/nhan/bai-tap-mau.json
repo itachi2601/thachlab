@@ -1,0 +1,585 @@
+{
+  "lesson_title": "Bài 18. An toàn phóng xạ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính liều hấp thụ và liều tương đương từ năng lượng",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: dùng định nghĩa liều hấp thụ $D = E/m$ và liều tương đương $H = w_R D$ với tia X ($w_R = 1$). Dữ kiện cho thẳng, chỉ cần một bước đổi mJ ra J.",
+      "yccd_de_xuat": "Liều chiếu xạ và tác hại của phóng xạ",
+      "de_bai": "Khi chụp X-quang ngực, khối mô vùng ngực bị chiếu có khối lượng 12 kg và hấp thụ tổng năng lượng 1,2 mJ từ chùm tia X. Coi năng lượng phân bố đều trong khối mô.\na) Tính liều hấp thụ $D$ của khối mô (Gy).\nb) Tính liều tương đương $H$ (mSv).",
+      "dieu_kien_ap_dung": "Coi năng lượng hấp thụ phân bố đều trong khối mô, nên dùng được $D = E/m$ cho cả khối; tia X có $w_R = 1$.",
+      "phan_tich": [
+        {
+          "trich_de": "khối lượng 12 kg",
+          "du_lieu": "$m = 12\\ \\text{kg}$",
+          "kien_thuc": "khối lượng mô hấp thụ"
+        },
+        {
+          "trich_de": "tổng năng lượng 1,2 mJ",
+          "du_lieu": "$E = 1{,}2\\ \\text{mJ} = 1{,}2\\times10^{-3}\\ \\text{J}$",
+          "kien_thuc": "năng lượng mô hấp thụ"
+        },
+        {
+          "trich_de": "chùm tia X",
+          "du_lieu": "$w_R = 1$",
+          "kien_thuc": "hệ số chất lượng của tia X"
+        },
+        {
+          "trich_de": "Coi năng lượng phân bố đều trong khối mô",
+          "du_lieu": "liều như nhau mọi chỗ",
+          "kien_thuc": "$D = E/m$ áp dụng cho cả khối"
+        },
+        {
+          "trich_de": "Tính liều tương đương $H$ (mSv)",
+          "du_lieu": "cần tìm $H$",
+          "kien_thuc": "$H = w_R D$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "D, H",
+        "cong_thuc": "D = \\dfrac{E}{m};\\quad H = w_R D"
+      },
+      "kien_thuc_goi_lai": [
+        "Liều hấp thụ $D = E/m$, đơn vị gray: $1\\ \\text{Gy} = 1\\ \\text{J/kg}$.",
+        "Liều tương đương $H = w_R D$, đơn vị sievert (Sv), thường dùng mSv.",
+        "Tia X, gamma, beta: $w_R = 1$.",
+        "Mốc: một lần chụp X-quang ngực khoảng 0,1 mSv."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi năng lượng ra jun",
+          "cong_thuc_chu": "$1\\ \\text{mJ} = 10^{-3}\\ \\text{J}$",
+          "the_so": "$E = 1{,}2 \\times 10^{-3}\\ \\text{J}$",
+          "ket_qua": "$E = 1{,}2\\times10^{-3}\\ \\text{J}$",
+          "kiem_tra": "Dùng J và kg thì kết quả ra J/kg, tức Gy."
+        },
+        {
+          "tieu_de": "Bước 2. Tính liều hấp thụ",
+          "cong_thuc_chu": "$D = \\dfrac{E}{m}$",
+          "the_so": "$D = \\dfrac{1{,}2\\times10^{-3}}{12}$",
+          "ket_qua": "$D = 1{,}0\\times10^{-4}\\ \\text{Gy} = 0{,}10\\ \\text{mGy}$",
+          "kiem_tra": "J/kg = Gy. Giá trị rất nhỏ, hợp lí với một lần chụp chẩn đoán."
+        },
+        {
+          "tieu_de": "Bước 3. Tính liều tương đương",
+          "cong_thuc_chu": "$H = w_R D$, tia X có $w_R = 1$",
+          "the_so": "$H = 1 \\times 1{,}0\\times10^{-4}$",
+          "ket_qua": "$H = 1{,}0\\times10^{-4}\\ \\text{Sv} = 0{,}10\\ \\text{mSv}$",
+          "kiem_tra": "Khớp mốc 0,1 mSv của một lần chụp X-quang ngực. Với tia X, con số giữ nguyên, chỉ đổi Gy thành Sv."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.0001,
+          "don_vi": "Gy"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.1,
+          "don_vi": "mSv"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "liều hấp thụ D (Gy)",
+          "bieu_thuc": "1.2e-3/12",
+          "ky_vong": 0.0001,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "liều tương đương H (mSv)",
+          "bieu_thuc": "1*(1.2e-3/12)*1000",
+          "ky_vong": 0.1,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho năng lượng hấp thụ và khối lượng mô, hỏi liều → tính $D = E/m$ rồi nhân $w_R$ theo loại tia.",
+      "bay_thuong_gap": [
+        "Để nguyên mJ mà chia cho kg, ra kết quả lớn gấp 1000 lần.",
+        "Ghi đơn vị của $D$ là Sv, gộp Gy với Sv.",
+        "Ghi $H$ bằng Gy."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khối lượng mô bị chiếu 12 kg là giá trị ước lượng để kết quả khớp mốc 0,1 mSv trong bài; thực tế liều phân bố không đều."
+      ],
+      "mo_phong_goi_y": "Hoạt hình: ống phát tia X chiếu một chùm vào vùng ngực người đứng trước tấm nhận ảnh. Một khối mô hình hộp phát sáng dần khi nhận năng lượng. Nhãn: «tia X», «khối mô m = 12 kg», «E = 1,2 mJ», «D = ?», «H = ?». Không hiện kết quả."
+    },
+    {
+      "label": "Dạng 2 · Liều tương đương của tia alpha – bẫy hệ số chất lượng và đơn vị",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại $D = E/m$ và $H = w_R D$ của dạng 1. Thêm một độ khó mới: tia alpha có $w_R = 20$ (phải nhân, không bỏ qua, không chia), số liệu cho bằng g và µJ nên phải đổi đơn vị trước.",
+      "yccd_de_xuat": "Liều chiếu xạ và tác hại của phóng xạ",
+      "de_bai": "Một người dân sống gần khu khai thác quặng hít phải bụi chứa chất phóng xạ phát tia alpha. Bụi đọng lại trong phổi; trong một năm, mô phổi có khối lượng 1 200 g hấp thụ năng lượng 90 µJ do các hạt alpha. Giới hạn liều của dân thường là 1 mSv/năm.\na) Tính liều hấp thụ $D$ của mô phổi (Gy).\nb) Tính liều tương đương $H$ (mSv). Liều này có vượt giới hạn của dân thường không, gấp bao nhiêu lần?\nc) Ở ngoài cơ thể, tia alpha bị một tờ giấy chặn lại. Giải thích vì sao trường hợp này vẫn nguy hiểm.",
+      "dieu_kien_ap_dung": "Coi năng lượng alpha phân bố đều trong mô phổi; alpha có $w_R = 20$; so sánh trực tiếp với giới hạn 1 mSv/năm như đề yêu cầu.",
+      "phan_tich": [
+        {
+          "trich_de": "phát tia alpha",
+          "du_lieu": "$w_R = 20$",
+          "kien_thuc": "hệ số chất lượng của alpha"
+        },
+        {
+          "trich_de": "Bụi đọng lại trong phổi",
+          "du_lieu": "nguồn ở trong cơ thể",
+          "kien_thuc": "bẫy 3: alpha trong cơ thể không chắn được"
+        },
+        {
+          "trich_de": "khối lượng 1 200 g",
+          "du_lieu": "$m = 1\\,200\\ \\text{g} = 1{,}2\\ \\text{kg}$",
+          "kien_thuc": "đổi g ra kg"
+        },
+        {
+          "trich_de": "năng lượng 90 µJ",
+          "du_lieu": "$E = 90\\ \\mu\\text{J} = 9{,}0\\times10^{-5}\\ \\text{J}$",
+          "kien_thuc": "đổi µJ ra J"
+        },
+        {
+          "trich_de": "1 mSv/năm",
+          "du_lieu": "$H_{\\text{gh}} = 1\\ \\text{mSv}$",
+          "kien_thuc": "giới hạn liều dân thường"
+        },
+        {
+          "trich_de": "Tính liều tương đương $H$ (mSv)",
+          "du_lieu": "cần tìm $H$",
+          "kien_thuc": "$H = w_R D$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "D, H",
+        "cong_thuc": "D = \\dfrac{E}{m};\\quad H = w_R D;\\quad \\dfrac{H}{H_{\\text{gh}}}"
+      },
+      "kien_thuc_goi_lai": [
+        "$D = E/m$ (Gy), $H = w_R D$ (Sv).",
+        "Alpha: $w_R = 20$; tia X, gamma, beta: $w_R = 1$.",
+        "Gy đo năng lượng, Sv đo mức nguy hiểm.",
+        "Giấy chặn alpha chỉ có ý nghĩa khi nguồn ở ngoài cơ thể."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị về SI",
+          "cong_thuc_chu": "$1\\ \\text{g} = 10^{-3}\\ \\text{kg}$; $1\\ \\mu\\text{J} = 10^{-6}\\ \\text{J}$",
+          "the_so": "$m = 1\\,200 \\times 10^{-3}$; $E = 90 \\times 10^{-6}$",
+          "ket_qua": "$m = 1{,}2\\ \\text{kg}$; $E = 9{,}0\\times10^{-5}\\ \\text{J}$",
+          "kiem_tra": "Phổi người lớn cỡ 1 kg, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Liều hấp thụ",
+          "cong_thuc_chu": "$D = \\dfrac{E}{m}$",
+          "the_so": "$D = \\dfrac{9{,}0\\times10^{-5}}{1{,}2}$",
+          "ket_qua": "$D = 7{,}5\\times10^{-5}\\ \\text{Gy} = 0{,}075\\ \\text{mGy}$",
+          "kiem_tra": "Đơn vị J/kg = Gy."
+        },
+        {
+          "tieu_de": "Bước 3. Chọn hệ số chất lượng",
+          "cong_thuc_chu": "alpha: $w_R = 20$",
+          "the_so": "$w_R = 20$",
+          "ket_qua": "$w_R = 20$",
+          "kiem_tra": "Alpha gây hại gấp 20 lần tia X nên phải nhân, không chia."
+        },
+        {
+          "tieu_de": "Bước 4. Liều tương đương",
+          "cong_thuc_chu": "$H = w_R D$",
+          "the_so": "$H = 20 \\times 7{,}5\\times10^{-5}$",
+          "ket_qua": "$H = 1{,}5\\times10^{-3}\\ \\text{Sv} = 1{,}5\\ \\text{mSv}$",
+          "kiem_tra": "$H \\gt D$ về con số, đúng với $w_R \\gt 1$."
+        },
+        {
+          "tieu_de": "Bước 5. So với giới hạn dân thường",
+          "cong_thuc_chu": "$\\dfrac{H}{H_{\\text{gh}}}$",
+          "the_so": "$\\dfrac{1{,}5}{1}$",
+          "ket_qua": "$1{,}5$ lần: vượt giới hạn",
+          "kiem_tra": "Nếu quên $w_R$ sẽ ra 0,075 mSv và kết luận sai là an toàn."
+        },
+        {
+          "tieu_de": "Bước 6. Giải thích định tính (ý c)",
+          "cong_thuc_chu": "nguồn trong cơ thể: không chắn, không lùi xa được",
+          "the_so": "bụi alpha nằm sát mô phổi",
+          "ket_qua": "Alpha nhả toàn bộ năng lượng ngay tại mô phổi sống, ion hoá mạnh, phá tế bào; tờ giấy hay khoảng cách đều vô nghĩa vì nguồn đã vào trong.",
+          "kiem_tra": "Khớp bẫy 3 của bài: alpha nguy hiểm nhất khi hít, nuốt."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.000075,
+          "don_vi": "Gy"
+        },
+        {
+          "y": "b",
+          "gia_tri": 1.5,
+          "don_vi": "mSv"
+        },
+        {
+          "y": "b (tỉ số với giới hạn)",
+          "gia_tri": 1.5,
+          "don_vi": "lần"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "liều hấp thụ D (Gy)",
+          "bieu_thuc": "90e-6/(1200/1000)",
+          "ky_vong": 0.000075,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "liều tương đương H (mSv)",
+          "bieu_thuc": "20*(90e-6/1.2)*1000",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "H nếu quên w_R (mSv) – bẫy",
+          "bieu_thuc": "(90e-6/1.2)*1000",
+          "ky_vong": 0.075,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số với giới hạn 1 mSv",
+          "bieu_thuc": "(20*(90e-6/1.2)*1000)/1",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề nêu loại tia có $w_R \\ne 1$ (alpha) và số liệu ở đơn vị nhỏ (g, µJ) → đổi về kg, J, tính $D$, nhân đúng $w_R$ rồi mới so giới hạn.",
+      "bay_thuong_gap": [
+        "Quên $w_R = 20$, lấy $H = D$.",
+        "Chia cho 20 thay vì nhân.",
+        "Để nguyên 1 200 g mà chia, sai 1000 lần.",
+        "Cho rằng alpha bị giấy chặn nên luôn vô hại."
+      ],
+      "dieu_ban_khong_chac": [
+        "Đề so liều của riêng phổi với giới hạn toàn thân 1 mSv/năm; đây là đơn giản hoá vì bài không nói tới liều hiệu dụng theo cơ quan.",
+        "Năng lượng 90 µJ/năm là giá trị giả định để ra số tròn."
+      ],
+      "mo_phong_goi_y": "Hoạt hình: bụi li ti bay vào mũi, xuống phổi rồi đọng lại. Từ mỗi hạt bụi phát ra các vệt alpha rất ngắn, dừng ngay trong mô phổi xung quanh, làm tế bào lân cận đổi màu. Bên cạnh là ô so sánh: alpha từ ngoài bị tờ giấy chặn. Nhãn: «bụi phát alpha», «phổi m = 1 200 g», «E = 90 µJ», «w_R = ?», «giới hạn 1 mSv/năm». Không hiện kết quả."
+    },
+    {
+      "label": "Dạng 3 · Liều theo khoảng cách và thời gian, so giới hạn nghề nghiệp",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại bước của dạng 2 (chọn đúng $w_R$ theo loại tia để đổi Gy sang Sv, đổi phút ra giờ, µSv ra mSv) làm bước con. Thêm một độ khó mới: suất liều phải tính lại theo bình phương khoảng cách trước khi nhân thời gian.",
+      "yccd_de_xuat": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "de_bai": "Trong phòng thí nghiệm của một viện nghiên cứu hạt nhân, một nguồn gamma kín đặt cố định trên bàn. Máy đo đặt cách nguồn 0,5 m hiển thị suất liều hấp thụ 64 µGy/h. Một kỹ thuật viên ngồi ghi số liệu tại bàn cách nguồn 2,0 m, mỗi ngày 45 phút, một năm làm việc 250 ngày. Giới hạn liều nghề nghiệp là 20 mSv/năm. Coi nguồn là nguồn điểm, bỏ qua bức xạ tán xạ từ tường và sàn.\na) Tính suất liều hấp thụ tại chỗ kỹ thuật viên ngồi.\nb) Tính liều tương đương kỹ thuật viên nhận mỗi ngày (µSv).\nc) Tính liều tương đương cả năm (mSv) và so với giới hạn nghề nghiệp.",
+      "dieu_kien_ap_dung": "Nguồn điểm, bức xạ toả đều mọi hướng, bỏ qua tán xạ và hấp thụ của không khí, nên suất liều tỉ lệ nghịch với $r^2$; suất liều không đổi theo thời gian.",
+      "phan_tich": [
+        {
+          "trich_de": "một nguồn gamma kín",
+          "du_lieu": "$w_R = 1$",
+          "kien_thuc": "gamma: Gy và Sv cùng con số"
+        },
+        {
+          "trich_de": "cách nguồn 0,5 m hiển thị suất liều hấp thụ 64 µGy/h",
+          "du_lieu": "$r_1 = 0{,}5\\ \\text{m}$; $\\dot D_1 = 64\\ \\mu\\text{Gy/h}$",
+          "kien_thuc": "suất liều gốc"
+        },
+        {
+          "trich_de": "tại bàn cách nguồn 2,0 m",
+          "du_lieu": "$r_2 = 2{,}0\\ \\text{m}$",
+          "kien_thuc": "$\\dot D \\sim 1/r^2$"
+        },
+        {
+          "trich_de": "mỗi ngày 45 phút",
+          "du_lieu": "$t = 45\\ \\text{phút} = 0{,}75\\ \\text{h}$",
+          "kien_thuc": "liều = suất liều × thời gian"
+        },
+        {
+          "trich_de": "một năm làm việc 250 ngày",
+          "du_lieu": "$N = 250$ ngày",
+          "kien_thuc": "liều năm = liều ngày × số ngày"
+        },
+        {
+          "trich_de": "20 mSv/năm",
+          "du_lieu": "$H_{\\text{gh}} = 20\\ \\text{mSv}$",
+          "kien_thuc": "giới hạn nghề nghiệp"
+        },
+        {
+          "trich_de": "Coi nguồn là nguồn điểm",
+          "du_lieu": "điều kiện áp dụng",
+          "kien_thuc": "định luật bình phương khoảng cách"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\dot D_2,\\ H_{\\text{ngày}},\\ H_{\\text{năm}}",
+        "cong_thuc": "\\dot D_2 = \\dot D_1\\left(\\dfrac{r_1}{r_2}\\right)^2;\\quad H_{\\text{ngày}} = w_R \\dot D_2 t;\\quad H_{\\text{năm}} = N H_{\\text{ngày}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Suất liều tỉ lệ nghịch bình phương khoảng cách: xa gấp $n$ lần còn $1/n^2$.",
+        "Liều = suất liều × thời gian; thời gian phải đổi ra giờ khi suất liều tính theo giờ.",
+        "Gamma: $w_R = 1$, nên 1 µGy ứng với 1 µSv.",
+        "Giới hạn nghề nghiệp 20 mSv/năm."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Suất liều hấp thụ tại 2,0 m",
+          "cong_thuc_chu": "$\\dot D_2 = \\dot D_1\\left(\\dfrac{r_1}{r_2}\\right)^2$",
+          "the_so": "$\\dot D_2 = 64 \\times \\left(\\dfrac{0{,}5}{2{,}0}\\right)^2 = \\dfrac{64}{16}$",
+          "ket_qua": "$\\dot D_2 = 4{,}0\\ \\mu\\text{Gy/h}$",
+          "kiem_tra": "Xa gấp 4 lần thì giảm 16 lần, không phải 4 lần."
+        },
+        {
+          "tieu_de": "Bước 2. Quy về suất liều tương đương (bước của dạng 2)",
+          "cong_thuc_chu": "$\\dot H_2 = w_R \\dot D_2$, gamma $w_R = 1$",
+          "the_so": "$\\dot H_2 = 1 \\times 4{,}0$",
+          "ket_qua": "$\\dot H_2 = 4{,}0\\ \\mu\\text{Sv/h}$",
+          "kiem_tra": "Gamma nên con số giữ nguyên, chỉ đổi Gy thành Sv."
+        },
+        {
+          "tieu_de": "Bước 3. Liều mỗi ngày",
+          "cong_thuc_chu": "$H_{\\text{ngày}} = \\dot H_2\\, t$, $t = 45/60\\ \\text{h}$",
+          "the_so": "$H_{\\text{ngày}} = 4{,}0 \\times 0{,}75$",
+          "ket_qua": "$H_{\\text{ngày}} = 3{,}0\\ \\mu\\text{Sv}$",
+          "kiem_tra": "µSv/h × h = µSv. Thời gian dưới 1 h nên liều nhỏ hơn con số suất liều."
+        },
+        {
+          "tieu_de": "Bước 4. Liều cả năm",
+          "cong_thuc_chu": "$H_{\\text{năm}} = N\\, H_{\\text{ngày}}$",
+          "the_so": "$H_{\\text{năm}} = 250 \\times 3{,}0 = 750\\ \\mu\\text{Sv}$",
+          "ket_qua": "$H_{\\text{năm}} = 0{,}75\\ \\text{mSv}$",
+          "kiem_tra": "$1\\ \\text{mSv} = 1\\,000\\ \\mu\\text{Sv}$."
+        },
+        {
+          "tieu_de": "Bước 5. So với giới hạn nghề nghiệp",
+          "cong_thuc_chu": "$\\dfrac{H_{\\text{năm}}}{H_{\\text{gh}}}$",
+          "the_so": "$\\dfrac{0{,}75}{20}$",
+          "ket_qua": "$3{,}75\\ \\%$ giới hạn: không vượt",
+          "kiem_tra": "Kết quả nhỏ hơn phông tự nhiên 2,4 mSv/năm, hợp lí khi ngồi xa nguồn và thời gian ngắn."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 4,
+          "don_vi": "µGy/h"
+        },
+        {
+          "y": "b",
+          "gia_tri": 3,
+          "don_vi": "µSv"
+        },
+        {
+          "y": "c",
+          "gia_tri": 0.75,
+          "don_vi": "mSv"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "suất liều hấp thụ tại 2,0 m (µGy/h)",
+          "bieu_thuc": "64*(0.5/2.0)**2",
+          "ky_vong": 4,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "liều tương đương mỗi ngày (µSv)",
+          "bieu_thuc": "1*64*(0.5/2.0)**2*45/60",
+          "ky_vong": 3,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "liều tương đương cả năm (mSv)",
+          "bieu_thuc": "1*64*(0.5/2.0)**2*45/60*250/1000",
+          "ky_vong": 0.75,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "phần trăm so với 20 mSv",
+          "bieu_thuc": "(64*(0.5/2.0)**2*0.75*250/1000)/20*100",
+          "ky_vong": 3.75,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho suất liều ở một khoảng cách nhưng người đứng ở khoảng cách khác, kèm thời gian và giới hạn → đổi suất liều theo $1/r^2$, quy Gy sang Sv, nhân thời gian, cộng dồn rồi so giới hạn.",
+      "bay_thuong_gap": [
+        "Dùng $1/r$: chia 4 thay vì chia 16.",
+        "Nhân trực tiếp 45 phút với µGy/h mà không đổi ra giờ.",
+        "Dùng thẳng 64 µGy/h của vị trí máy đo cho chỗ người ngồi.",
+        "Quên đổi µSv ra mSv khi so với 20 mSv."
+      ],
+      "dieu_ban_khong_chac": [
+        "Số liệu suất liều 64 µGy/h tại 0,5 m là giả định cho nguồn gamma nhỏ trong phòng thí nghiệm, không gắn với đồng vị cụ thể."
+      ],
+      "mo_phong_goi_y": "Hoạt hình nhìn từ trên xuống: nguồn gamma là chấm đỏ ở mép bàn; các vòng tròn đồng tâm loang ra, mờ dần theo khoảng cách. Máy đo đặt trên vòng 0,5 m, kỹ thuật viên ngồi trên vòng 2,0 m. Đồng hồ ở góc chạy 45 phút. Nhãn: «nguồn gamma», «r₁ = 0,5 m», «64 µGy/h», «r₂ = 2,0 m», «45 phút/ngày», «250 ngày/năm». Không hiện suất liều tại chỗ ngồi."
+    },
+    {
+      "label": "Dạng 4 · Bài ngược: thời gian tối đa, khoảng cách tối thiểu quanh bệnh nhân",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại chuỗi của dạng 3: suất liều theo $1/r^2$ → liều = suất liều × thời gian (gamma nên giữ nguyên con số Sv như dạng 2, đổi µSv ra mSv như dạng 1–2). Thêm một độ khó mới: bài ngược — biết liều cho phép, phải tìm thời gian tối đa và khoảng cách tối thiểu, trong tình huống đời sống có dữ kiện ẩn (giới hạn dân thường).",
+      "yccd_de_xuat": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "de_bai": "Một bệnh nhân vừa được tiêm dược chất phóng xạ Lutathera (chứa $^{177}_{71}\\text{Lu}$) để điều trị khối u. Ngay sau khi tiêm, máy đo cho suất liều 25 µSv/h tại điểm cách người bệnh 1,0 m. Người nhà vào chăm sóc là dân thường. Coi người bệnh như một nguồn điểm và suất liều không đổi trong ngày đầu.\na) Người nhà ngồi sát mép giường, cách người bệnh 0,5 m, trong 2 giờ. Tính liều người nhà nhận (mSv) và cho biết liều đó bằng bao nhiêu phần trăm giới hạn liều cả năm của người nhà.\nb) Bệnh viện yêu cầu liều của người nhà trong ngày đầu không quá 50 µSv. Nếu ngồi ở ghế cách người bệnh 2,0 m thì được ở lại tối đa bao lâu?\nc) Nếu người nhà buộc phải ở trong phòng 6 giờ mà vẫn giữ mức 50 µSv, phải ngồi cách người bệnh ít nhất bao nhiêu mét?",
+      "dieu_kien_ap_dung": "Coi người bệnh là nguồn điểm, suất liều không đổi trong ngày đầu, bỏ qua tán xạ và tấm chắn, nên suất liều tỉ lệ nghịch $r^2$ và liều = suất liều × thời gian.",
+      "phan_tich": [
+        {
+          "trich_de": "suất liều 25 µSv/h tại điểm cách người bệnh 1,0 m",
+          "du_lieu": "$\\dot H_1 = 25\\ \\mu\\text{Sv/h}$; $r_1 = 1{,}0\\ \\text{m}$",
+          "kien_thuc": "suất liều gốc"
+        },
+        {
+          "trich_de": "Người nhà vào chăm sóc là dân thường",
+          "du_lieu": "dữ kiện ẩn: $H_{\\text{gh}} = 1\\ \\text{mSv/năm}$",
+          "kien_thuc": "giới hạn liều dân thường"
+        },
+        {
+          "trich_de": "Coi người bệnh như một nguồn điểm và suất liều không đổi trong ngày đầu",
+          "du_lieu": "điều kiện áp dụng",
+          "kien_thuc": "$\\dot H \\sim 1/r^2$; liều = suất liều × $t$"
+        },
+        {
+          "trich_de": "cách người bệnh 0,5 m, trong 2 giờ",
+          "du_lieu": "$r_a = 0{,}5\\ \\text{m}$; $t_a = 2\\ \\text{h}$",
+          "kien_thuc": "lại gần thì suất liều tăng"
+        },
+        {
+          "trich_de": "không quá 50 µSv",
+          "du_lieu": "$H_{\\max} = 50\\ \\mu\\text{Sv}$",
+          "kien_thuc": "liều cho phép"
+        },
+        {
+          "trich_de": "ngồi ở ghế cách người bệnh 2,0 m",
+          "du_lieu": "$r_b = 2{,}0\\ \\text{m}$",
+          "kien_thuc": "$t_{\\max} = H_{\\max}/\\dot H_b$"
+        },
+        {
+          "trich_de": "ở trong phòng 6 giờ",
+          "du_lieu": "$t_c = 6\\ \\text{h}$",
+          "kien_thuc": "$r_{\\min}$ từ suất liều cho phép"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "H_a,\\ t_{\\max},\\ r_{\\min}",
+        "cong_thuc": "H_a = \\dot H_1\\left(\\dfrac{r_1}{r_a}\\right)^2 t_a;\\quad t_{\\max} = \\dfrac{H_{\\max}}{\\dot H_1 (r_1/r_b)^2};\\quad r_{\\min} = r_1\\sqrt{\\dfrac{\\dot H_1 t_c}{H_{\\max}}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Suất liều tỉ lệ nghịch $r^2$: lại gần gấp 2 lần thì tăng 4 lần.",
+        "Liều = suất liều × thời gian; tìm thời gian thì lấy liều chia suất liều.",
+        "Giới hạn liều dân thường 1 mSv/năm.",
+        "Ba nguyên tắc: thời gian ngắn, khoảng cách xa, che chắn đủ."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Suất liều ở 0,5 m",
+          "cong_thuc_chu": "$\\dot H_a = \\dot H_1\\left(\\dfrac{r_1}{r_a}\\right)^2$",
+          "the_so": "$\\dot H_a = 25 \\times \\left(\\dfrac{1{,}0}{0{,}5}\\right)^2$",
+          "ket_qua": "$\\dot H_a = 100\\ \\mu\\text{Sv/h}$",
+          "kiem_tra": "Lại gần hơn 1 m nên suất liều tăng 4 lần, không giảm."
+        },
+        {
+          "tieu_de": "Bước 2. Liều trong 2 giờ",
+          "cong_thuc_chu": "$H_a = \\dot H_a t_a$",
+          "the_so": "$H_a = 100 \\times 2 = 200\\ \\mu\\text{Sv}$",
+          "ket_qua": "$H_a = 0{,}20\\ \\text{mSv}$",
+          "kiem_tra": "µSv/h × h = µSv; đổi 1 000 µSv = 1 mSv."
+        },
+        {
+          "tieu_de": "Bước 3. So với giới hạn dân thường (dữ kiện ẩn)",
+          "cong_thuc_chu": "$\\dfrac{H_a}{H_{\\text{gh}}} \\times 100\\%$, $H_{\\text{gh}} = 1\\ \\text{mSv}$",
+          "the_so": "$\\dfrac{0{,}20}{1} \\times 100\\%$",
+          "ket_qua": "$20\\ \\%$",
+          "kiem_tra": "Chỉ 2 giờ ngồi sát đã dùng hết một phần năm hạn mức cả năm: cần lùi xa."
+        },
+        {
+          "tieu_de": "Bước 4. Suất liều ở ghế 2,0 m",
+          "cong_thuc_chu": "$\\dot H_b = \\dot H_1\\left(\\dfrac{r_1}{r_b}\\right)^2$",
+          "the_so": "$\\dot H_b = 25 \\times \\left(\\dfrac{1{,}0}{2{,}0}\\right)^2$",
+          "ket_qua": "$\\dot H_b = 6{,}25\\ \\mu\\text{Sv/h}$",
+          "kiem_tra": "Nhỏ hơn suất liều ở 1 m đúng 4 lần."
+        },
+        {
+          "tieu_de": "Bước 5. Thời gian tối đa (bài ngược)",
+          "cong_thuc_chu": "$t_{\\max} = \\dfrac{H_{\\max}}{\\dot H_b}$",
+          "the_so": "$t_{\\max} = \\dfrac{50}{6{,}25}$",
+          "ket_qua": "$t_{\\max} = 8{,}0\\ \\text{h}$",
+          "kiem_tra": "µSv ÷ µSv/h = h. Lấy liều chia suất liều, không nhân."
+        },
+        {
+          "tieu_de": "Bước 6. Suất liều cho phép khi ở 6 giờ",
+          "cong_thuc_chu": "$\\dot H_{\\max} = \\dfrac{H_{\\max}}{t_c}$",
+          "the_so": "$\\dot H_{\\max} = \\dfrac{50}{6}$",
+          "ket_qua": "$\\dot H_{\\max} \\approx 8{,}33\\ \\mu\\text{Sv/h}$",
+          "kiem_tra": "Nằm giữa 6,25 (ở 2 m) và 25 (ở 1 m), nên khoảng cách cần tìm nằm giữa 1 m và 2 m."
+        },
+        {
+          "tieu_de": "Bước 7. Khoảng cách tối thiểu (bài ngược)",
+          "cong_thuc_chu": "$\\dot H_1\\left(\\dfrac{r_1}{r}\\right)^2 \\le \\dot H_{\\max} \\Rightarrow r_{\\min} = r_1\\sqrt{\\dfrac{\\dot H_1}{\\dot H_{\\max}}}$",
+          "the_so": "$r_{\\min} = 1{,}0 \\times \\sqrt{\\dfrac{25}{8{,}33}} = \\sqrt{3}$",
+          "ket_qua": "$r_{\\min} \\approx 1{,}73\\ \\text{m}$",
+          "kiem_tra": "Đúng dự đoán ở bước 6 (giữa 1 m và 2 m). Thử lại: $25/1{,}73^2 \\times 6 \\approx 50\\ \\mu\\text{Sv}$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (liều)",
+          "gia_tri": 0.2,
+          "don_vi": "mSv"
+        },
+        {
+          "y": "a (phần trăm giới hạn năm)",
+          "gia_tri": 20,
+          "don_vi": "%"
+        },
+        {
+          "y": "b",
+          "gia_tri": 8,
+          "don_vi": "h"
+        },
+        {
+          "y": "c",
+          "gia_tri": 1.73,
+          "don_vi": "m"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "liều 2 h ở 0,5 m (mSv)",
+          "bieu_thuc": "25*(1.0/0.5)**2*2/1000",
+          "ky_vong": 0.2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "phần trăm so với 1 mSv/năm",
+          "bieu_thuc": "(25*(1.0/0.5)**2*2/1000)/1*100",
+          "ky_vong": 20,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thời gian tối đa ở 2,0 m (h)",
+          "bieu_thuc": "50/(25*(1.0/2.0)**2)",
+          "ky_vong": 8,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "khoảng cách tối thiểu khi ở 6 h (m)",
+          "bieu_thuc": "1.0*math.sqrt(25*6/50)",
+          "ky_vong": 1.73,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thử lại liều ở r_min trong 6 h (µSv)",
+          "bieu_thuc": "25*(1.0/math.sqrt(3))**2*6",
+          "ky_vong": 50,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho liều cho phép và hỏi được ở bao lâu hoặc phải đứng xa bao nhiêu → tính suất liều tại vị trí theo $1/r^2$, rồi lấy liều chia suất liều (tìm $t$) hoặc giải ngược $r = r_1\\sqrt{\\dot H_1/\\dot H_{\\max}}$ (tìm $r$).",
+      "bay_thuong_gap": [
+        "Thấy 0,5 m nhỏ hơn 1 m mà vẫn chia cho 4 như khi lùi xa.",
+        "Tìm thời gian bằng cách nhân liều với suất liều.",
+        "Khi tìm $r_{\\min}$ quên lấy căn, ra 3 m thay vì 1,73 m.",
+        "Không nhớ giới hạn dân thường 1 mSv/năm, dùng nhầm 20 mSv/năm của người làm nghề.",
+        "Quên rằng người bệnh sau tiêm chính là một nguồn phóng xạ."
+      ],
+      "dieu_ban_khong_chac": [
+        "Suất liều 25 µSv/h tại 1 m sau tiêm Lutathera là giá trị cỡ thực tế nhưng làm tròn; thực tế suất liều giảm dần do phân rã và đào thải, bài đã giả định không đổi trong ngày đầu.",
+        "Coi người bệnh là nguồn điểm chỉ gần đúng ở khoảng cách cỡ 1 m trở lên; ở 0,5 m kết quả có thể lệch."
+      ],
+      "mo_phong_goi_y": "Hoạt hình phòng bệnh nhìn từ trên xuống: người bệnh nằm trên giường phát sáng nhẹ, các vòng đồng tâm mờ dần theo khoảng cách. Một nhân vật người nhà di chuyển giữa ba vị trí: mép giường, vòng 1,0 m, ghế 2,0 m; kèm đồng hồ đếm giờ và thanh liều tích luỹ dâng lên. Nhãn: «người bệnh sau tiêm ¹⁷⁷Lu», «25 µSv/h tại 1,0 m», «0,5 m», «2,0 m», «hạn mức 50 µSv», «r_min = ?», «t_max = ?». Không hiện kết quả."
+    }
+  ]
+}

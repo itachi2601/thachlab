@@ -1,0 +1,731 @@
+{
+  "lesson_title": "Bài 25. Năng lượng điện và công suất điện",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Điện năng tiêu thụ và đổi J ↔ kWh",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: dùng $A = Pt$ với thiết bị chạy đúng định mức, rồi đổi đơn vị J ↔ kWh.",
+      "yccd_de_xuat": "Công và công suất của nguồn điện",
+      "de_bai": "Một bình nóng lạnh ghi 220 V – 2500 W. Mỗi tối gia đình bật bình đúng hiệu điện thế định mức trong 40 phút.\na) Tính điện năng bình tiêu thụ mỗi tối theo đơn vị jun và kWh.\nb) Tính số điện (kWh) bình tiêu thụ trong 30 ngày.",
+      "dieu_kien_ap_dung": "Bình chạy đúng $U_{\\text{đm}} = 220$ V nên công suất bằng $P_{\\text{đm}}$ và không đổi suốt thời gian bật.",
+      "phan_tich": [
+        {
+          "trich_de": "ghi 220 V – 2500 W",
+          "du_lieu": "$U_{\\text{đm}} = 220$ V; $P_{\\text{đm}} = 2500$ W",
+          "kien_thuc": "Nhãn định mức của thiết bị"
+        },
+        {
+          "trich_de": "bật bình đúng hiệu điện thế định mức",
+          "du_lieu": "$P = P_{\\text{đm}} = 2500$ W",
+          "kien_thuc": "Đúng $U_{\\text{đm}}$ thì công suất thực bằng $P_{\\text{đm}}$"
+        },
+        {
+          "trich_de": "trong 40 phút",
+          "du_lieu": "$t = 40$ phút $= 2400$ s $= \\tfrac{2}{3}$ h",
+          "kien_thuc": "Ra jun: $t$ bằng giây; ra kWh: $t$ bằng giờ"
+        },
+        {
+          "trich_de": "trong 30 ngày",
+          "du_lieu": "$n = 30$",
+          "kien_thuc": "Điện năng cộng dồn theo số ngày"
+        },
+        {
+          "trich_de": "theo đơn vị jun và kWh",
+          "du_lieu": "cần tìm $A$",
+          "kien_thuc": "$1$ kWh $= 3{,}6\\cdot10^{6}$ J"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "A,\\ A_{30}",
+        "cong_thuc": "A = Pt;\\ A_{30} = 30A"
+      },
+      "kien_thuc_goi_lai": [
+        "$A = UIt = Pt$",
+        "$1$ kWh $= 3{,}6\\cdot10^{6}$ J",
+        "Ra jun: P bằng W, t bằng giây",
+        "Ra kWh: P bằng kW, t bằng giờ",
+        "Công tơ đếm kWh (năng lượng), không đếm kW"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi thời gian",
+          "cong_thuc_chu": "$t\\ (\\text{s}) = t\\ (\\text{phút})\\cdot 60$",
+          "the_so": "$t = 40\\cdot60$",
+          "ket_qua": "$t = 2400\\ \\text{s}$",
+          "kiem_tra": "40 phút gần 1 giờ, 2400 s gần 3600 s: hợp lí."
+        },
+        {
+          "tieu_de": "Điện năng mỗi tối theo jun",
+          "cong_thuc_chu": "$A = Pt$",
+          "the_so": "$A = 2500\\cdot2400$",
+          "ket_qua": "$A = 6{,}0\\cdot10^{6}\\ \\text{J}$",
+          "kiem_tra": "W·s = J: đúng đơn vị."
+        },
+        {
+          "tieu_de": "Đổi ra kWh",
+          "cong_thuc_chu": "$A\\ (\\text{kWh}) = \\dfrac{A\\ (\\text{J})}{3{,}6\\cdot10^{6}}$",
+          "the_so": "$A = \\dfrac{6{,}0\\cdot10^{6}}{3{,}6\\cdot10^{6}}$",
+          "ket_qua": "$A \\approx 1{,}667\\ \\text{kWh}$",
+          "kiem_tra": "Cách khác: $2{,}5\\ \\text{kW}\\cdot\\tfrac{2}{3}\\ \\text{h} = 1{,}667$ kWh. Khớp."
+        },
+        {
+          "tieu_de": "Điện năng trong 30 ngày",
+          "cong_thuc_chu": "$A_{30} = 30A$",
+          "the_so": "$A_{30} = 30\\cdot1{,}667$",
+          "ket_qua": "$A_{30} \\approx 50{,}0\\ \\text{kWh}$",
+          "kiem_tra": "50 số mỗi tháng cho bình nóng lạnh: hợp lí so với hoá đơn vài trăm số."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (jun)",
+          "gia_tri": 6000000,
+          "don_vi": "J"
+        },
+        {
+          "y": "a (kWh)",
+          "gia_tri": 1.667,
+          "don_vi": "kWh"
+        },
+        {
+          "y": "b",
+          "gia_tri": 50,
+          "don_vi": "kWh"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "A mỗi tối (J)",
+          "bieu_thuc": "2500*40*60",
+          "ky_vong": 6000000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A mỗi tối (kWh)",
+          "bieu_thuc": "2500*40*60/3.6e6",
+          "ky_vong": 1.667,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A trong 30 ngày (kWh)",
+          "bieu_thuc": "30*2.5*40/60",
+          "ky_vong": 50,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho công suất (hoặc nhãn) và thời gian dùng, hỏi điện năng hay số điện → dùng $A = Pt$, chọn cặp đơn vị W–s (ra J) hoặc kW–h (ra kWh).",
+      "bay_thuong_gap": [
+        "Để nguyên $t = 40$ phút khi tính ra jun: $2500\\cdot40 = 100\\,000$ J, sai.",
+        "Ghi đáp số là kW thay vì kWh.",
+        "Tính $2500\\cdot\\tfrac{2}{3} \\approx 1667$ rồi quên chia 1000, ghi 1667 kWh."
+      ],
+      "dieu_ban_khong_chac": [
+        "Giả định bình chạy liên tục 40 phút; bình thật có rơ-le tự ngắt khi nước đủ nóng nên điện năng thực có thể nhỏ hơn."
+      ],
+      "mo_phong_goi_y": "Bình nóng lạnh cắm vào ổ điện, đèn báo sáng; đồng hồ đếm phút chạy từ 0 đến 40; công tơ điện bên cạnh có số chỉ nhảy dần (không hiện số cuối). Nhãn: \"220 V – 2500 W\", \"t (phút)\", \"công tơ (kWh)\"."
+    },
+    {
+      "label": "Dạng 2 · Thiết bị chạy dưới hiệu điện thế định mức",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại $A = Pt$ và đổi kWh của Dạng 1. Thêm một bẫy: thiết bị không chạy đúng $U_{\\text{đm}}$, phải rút $R$ từ nhãn rồi tính $P = U^2/R$ (tỉ lệ với $U^2$, không tỉ lệ với $U$).",
+      "yccd_de_xuat": "Công và công suất của nguồn điện",
+      "de_bai": "Một ấm siêu tốc ghi 220 V – 1500 W. Vào giờ cao điểm, hiệu điện thế ở ổ cắm chỉ còn 198 V. Coi điện trở của ấm không đổi.\na) Tính công suất thực của ấm khi đó.\nb) Ấm chạy liên tục 12 phút ở hiệu điện thế này. Tính điện năng ấm tiêu thụ theo kWh.",
+      "dieu_kien_ap_dung": "Ấm chỉ toả nhiệt và coi $R$ không đổi khi $U$ thay đổi, nên dùng được $P = U^2/R$ với $R$ tính từ nhãn.",
+      "phan_tich": [
+        {
+          "trich_de": "ghi 220 V – 1500 W",
+          "du_lieu": "$U_{\\text{đm}} = 220$ V; $P_{\\text{đm}} = 1500$ W",
+          "kien_thuc": "$R = U_{\\text{đm}}^2/P_{\\text{đm}}$"
+        },
+        {
+          "trich_de": "chỉ còn 198 V",
+          "du_lieu": "$U = 198$ V",
+          "kien_thuc": "$U \\ne U_{\\text{đm}}$ nên $P \\ne P_{\\text{đm}}$"
+        },
+        {
+          "trich_de": "Coi điện trở của ấm không đổi",
+          "du_lieu": "$R$ = const",
+          "kien_thuc": "$P = U^2/R$ tỉ lệ $U^2$"
+        },
+        {
+          "trich_de": "công suất thực",
+          "du_lieu": "cần tìm $P$",
+          "kien_thuc": "$P = U^2/R$"
+        },
+        {
+          "trich_de": "chạy liên tục 12 phút",
+          "du_lieu": "$t = 12$ phút $= 0{,}2$ h",
+          "kien_thuc": "$A = Pt$, giữ kW và giờ để ra kWh"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "P,\\ A",
+        "cong_thuc": "P = \\dfrac{U^2}{R},\\ R = \\dfrac{U_{\\text{đm}}^2}{P_{\\text{đm}}};\\ A = Pt"
+      },
+      "kien_thuc_goi_lai": [
+        "Nhãn \"U – P\": $P_{\\text{đm}}$ chỉ đúng khi dùng đúng $U_{\\text{đm}}$",
+        "\"U bình chia P ra R\": $R = U_{\\text{đm}}^2/P_{\\text{đm}}$",
+        "Chỉ toả nhiệt: $P = UI = I^2R = U^2/R$",
+        "$A = Pt$; kW nhân giờ ra kWh"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Điện trở của ấm từ nhãn",
+          "cong_thuc_chu": "$R = \\dfrac{U_{\\text{đm}}^2}{P_{\\text{đm}}}$",
+          "the_so": "$R = \\dfrac{220^2}{1500}$",
+          "ket_qua": "$R \\approx 32{,}27\\ \\Omega$",
+          "kiem_tra": "V²/W = Ω. Vài chục ôm cho ấm 1500 W: hợp lí."
+        },
+        {
+          "tieu_de": "Công suất thực ở 198 V",
+          "cong_thuc_chu": "$P = \\dfrac{U^2}{R}$",
+          "the_so": "$P = \\dfrac{198^2}{32{,}27}$",
+          "ket_qua": "$P \\approx 1215\\ \\text{W}$",
+          "kiem_tra": "Kiểm bằng tỉ lệ: $(198/220)^2 = 0{,}81$; $0{,}81\\cdot1500 = 1215$ W. $U$ giảm thì $P$ giảm: đúng chiều."
+        },
+        {
+          "tieu_de": "Điện năng trong 12 phút",
+          "cong_thuc_chu": "$A = Pt$",
+          "the_so": "$A = 1{,}215\\ \\text{kW}\\cdot0{,}2\\ \\text{h}$",
+          "ket_qua": "$A = 0{,}243\\ \\text{kWh}$",
+          "kiem_tra": "Nhỏ hơn $1{,}5\\cdot0{,}2 = 0{,}3$ kWh khi chạy đúng định mức: hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 1215,
+          "don_vi": "W"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.243,
+          "don_vi": "kWh"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "R của ấm",
+          "bieu_thuc": "220**2/1500",
+          "ky_vong": 32.27,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "P thực ở 198 V",
+          "bieu_thuc": "198**2/(220**2/1500)",
+          "ky_vong": 1215,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A trong 12 phút (kWh)",
+          "bieu_thuc": "1215/1000*12/60",
+          "ky_vong": 0.243,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho nhãn định mức nhưng thiết bị mắc vào hiệu điện thế khác, kèm câu \"coi R không đổi\" → tìm $R$ từ nhãn, rồi $P = U^2/R$.",
+      "bay_thuong_gap": [
+        "Coi $P$ tỉ lệ với $U$: $1500\\cdot0{,}9 = 1350$ W, sai.",
+        "Giữ nguyên $P = 1500$ W vì \"nhãn ghi thế\".",
+        "Dùng $t = 12$ h hoặc $t = 720$ s rồi vẫn gắn đơn vị kWh."
+      ],
+      "dieu_ban_khong_chac": [
+        "Điện trở dây nung thật thay đổi chút theo nhiệt độ; đề đã cho \"coi R không đổi\" nên đây là phép gần đúng."
+      ],
+      "mo_phong_goi_y": "Ổ cắm có vôn kế, kim từ từ tụt từ vạch 220 V xuống 198 V; dây nung trong ấm đổi từ đỏ sáng sang đỏ nhạt hơn; bọt khí nổi chậm lại. Nhãn: \"220 V – 1500 W\", \"U ổ cắm\", \"R = const\". Không hiện giá trị P."
+    },
+    {
+      "label": "Dạng 3 · Công suất nguồn, mạch ngoài và hao phí trong nguồn",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại $P = UI = I^2R$ của Dạng 2 cho mạch ngoài. Thêm một độ khó: nguồn có điện trở trong $r$, phải tách công suất nguồn $\\mathcal{E}I$ khỏi công suất mạch ngoài $UI$ và hao phí $I^2r$.",
+      "yccd_de_xuat": "Công và công suất của nguồn điện",
+      "de_bai": "Một bộ pin sạc có suất điện động 9,0 V, điện trở trong 0,60 Ω cấp điện cho dây điện trở của một miếng sưởi tay có R = 2,4 Ω.\na) Tính cường độ dòng điện trong mạch.\nb) Tính công suất của nguồn, công suất miếng sưởi nhận được và công suất toả nhiệt trong bộ pin.\nc) Tính công của nguồn trong 5 phút.",
+      "dieu_kien_ap_dung": "Mạch kín, mạch ngoài chỉ là điện trở $R$, bỏ qua điện trở dây nối; $\\mathcal{E}$ và $r$ không đổi trong thời gian xét.",
+      "phan_tich": [
+        {
+          "trich_de": "suất điện động 9,0 V",
+          "du_lieu": "$\\mathcal{E} = 9{,}0$ V",
+          "kien_thuc": "Công suất nguồn $P_{ng} = \\mathcal{E}I$"
+        },
+        {
+          "trich_de": "điện trở trong 0,60 Ω",
+          "du_lieu": "$r = 0{,}60\\ \\Omega$",
+          "kien_thuc": "Hao phí trong nguồn $I^2r$"
+        },
+        {
+          "trich_de": "R = 2,4 Ω",
+          "du_lieu": "$R = 2{,}4\\ \\Omega$",
+          "kien_thuc": "Mạch ngoài chỉ toả nhiệt: $U = IR$"
+        },
+        {
+          "trich_de": "công suất của nguồn",
+          "du_lieu": "cần tìm $P_{ng}$",
+          "kien_thuc": "$\\mathcal{E}I = UI + I^2r$"
+        },
+        {
+          "trich_de": "trong 5 phút",
+          "du_lieu": "$t = 300$ s",
+          "kien_thuc": "$A_{ng} = \\mathcal{E}It$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "I,\\ P_{ng},\\ P_R,\\ P_r,\\ A_{ng}",
+        "cong_thuc": "I = \\dfrac{\\mathcal{E}}{R + r};\\ P_{ng} = \\mathcal{E}I;\\ P_R = UI;\\ P_r = I^2r;\\ A_{ng} = \\mathcal{E}It"
+      },
+      "kien_thuc_goi_lai": [
+        "Định luật Ohm toàn mạch: $I = \\mathcal{E}/(R + r)$, $U = \\mathcal{E} - Ir$",
+        "Công của nguồn: $A_{ng} = \\mathcal{E}It$",
+        "Công suất nguồn: $P_{ng} = \\mathcal{E}I = UI + I^2r$",
+        "Gặp \"nguồn\" hỏi $\\mathcal{E}I$; gặp \"mạch ngoài\", \"thiết bị\" hỏi $UI$"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Cường độ dòng điện",
+          "cong_thuc_chu": "$I = \\dfrac{\\mathcal{E}}{R + r}$",
+          "the_so": "$I = \\dfrac{9{,}0}{2{,}4 + 0{,}60}$",
+          "ket_qua": "$I = 3{,}0\\ \\text{A}$",
+          "kiem_tra": "V/Ω = A. Nhỏ hơn $\\mathcal{E}/R = 3{,}75$ A vì có thêm $r$: hợp lí."
+        },
+        {
+          "tieu_de": "Hiệu điện thế mạch ngoài",
+          "cong_thuc_chu": "$U = IR$",
+          "the_so": "$U = 3{,}0\\cdot2{,}4$",
+          "ket_qua": "$U = 7{,}2\\ \\text{V}$",
+          "kiem_tra": "Kiểm: $\\mathcal{E} - Ir = 9{,}0 - 3{,}0\\cdot0{,}60 = 7{,}2$ V. Khớp."
+        },
+        {
+          "tieu_de": "Công suất của nguồn",
+          "cong_thuc_chu": "$P_{ng} = \\mathcal{E}I$",
+          "the_so": "$P_{ng} = 9{,}0\\cdot3{,}0$",
+          "ket_qua": "$P_{ng} = 27\\ \\text{W}$",
+          "kiem_tra": "V·A = W."
+        },
+        {
+          "tieu_de": "Công suất miếng sưởi nhận",
+          "cong_thuc_chu": "$P_R = UI$",
+          "the_so": "$P_R = 7{,}2\\cdot3{,}0$",
+          "ket_qua": "$P_R = 21{,}6\\ \\text{W}$",
+          "kiem_tra": "Nhỏ hơn $P_{ng}$: đúng."
+        },
+        {
+          "tieu_de": "Hao phí trong bộ pin",
+          "cong_thuc_chu": "$P_r = I^2r$",
+          "the_so": "$P_r = 3{,}0^2\\cdot0{,}60$",
+          "ket_qua": "$P_r = 5{,}4\\ \\text{W}$",
+          "kiem_tra": "Kiểm cân bằng: $21{,}6 + 5{,}4 = 27$ W $= P_{ng}$."
+        },
+        {
+          "tieu_de": "Công của nguồn trong 5 phút",
+          "cong_thuc_chu": "$A_{ng} = \\mathcal{E}It = P_{ng}t$",
+          "the_so": "$A_{ng} = 27\\cdot300$",
+          "ket_qua": "$A_{ng} = 8100\\ \\text{J}$",
+          "kiem_tra": "W·s = J; $t$ đã đổi ra giây."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 3,
+          "don_vi": "A"
+        },
+        {
+          "y": "b (nguồn)",
+          "gia_tri": 27,
+          "don_vi": "W"
+        },
+        {
+          "y": "b (miếng sưởi)",
+          "gia_tri": 21.6,
+          "don_vi": "W"
+        },
+        {
+          "y": "b (trong pin)",
+          "gia_tri": 5.4,
+          "don_vi": "W"
+        },
+        {
+          "y": "c",
+          "gia_tri": 8100,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "I",
+          "bieu_thuc": "9.0/(2.4+0.60)",
+          "ky_vong": 3,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "P nguồn",
+          "bieu_thuc": "9.0*3.0",
+          "ky_vong": 27,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "P mạch ngoài",
+          "bieu_thuc": "(3.0*2.4)*3.0",
+          "ky_vong": 21.6,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "P hao phí trong pin",
+          "bieu_thuc": "3.0**2*0.60",
+          "ky_vong": 5.4,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Công của nguồn 5 phút",
+          "bieu_thuc": "9.0*3.0*5*60",
+          "ky_vong": 8100,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho $\\mathcal{E}$, $r$, $R$ và hỏi riêng công suất \"của nguồn\", \"mạch ngoài\", \"trong nguồn\" → tìm $I$ rồi tách $\\mathcal{E}I = UI + I^2r$.",
+      "bay_thuong_gap": [
+        "Lấy $UI = 21{,}6$ W làm công suất của nguồn.",
+        "Cộng thêm $I^2r$ vào $\\mathcal{E}I$ một lần nữa: $27 + 5{,}4$, sai vì hao phí đã nằm trong $\\mathcal{E}I$.",
+        "Quên $r$: $I = \\mathcal{E}/R = 3{,}75$ A.",
+        "Để $t = 5$ phút khi tính công ra jun."
+      ],
+      "dieu_ban_khong_chac": [
+        "Miếng sưởi tay 21,6 W hơi lớn so với loại bỏ túi thường gặp; có thể là loại sưởi tay xe máy. Số liệu chọn để tính tròn."
+      ],
+      "mo_phong_goi_y": "Mạch kín: khối pin vẽ có ô điện trở trong $r$ bên trong, nối với miếng sưởi $R$; chấm điện tích chạy vòng theo chiều dòng điện. Một mũi tên năng lượng lớn đi ra từ nguồn, tách thành nhánh dày đi vào miếng sưởi (miếng sưởi ửng đỏ) và nhánh mảnh quay lại làm nóng chính khối pin. Nhãn: $\\mathcal{E}$, $r$, $R$, $I$, \"$\\mathcal{E}I$\", \"$UI$\", \"$I^2r$\". Không ghi số."
+    },
+    {
+      "label": "Dạng 4 · Hiệu suất nguồn và năng lượng có ích, hao phí",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại trọn Dạng 3 (tìm $I$, $U$, tách $\\mathcal{E}I = UI + I^2r$) làm bước con. Thêm một độ khó: tính hiệu suất nguồn $H$ bằng hai cách và quy ra năng lượng có ích, hao phí trong một khoảng thời gian.",
+      "yccd_de_xuat": "Hiệu suất nguồn điện, an toàn điện",
+      "de_bai": "Một máy ấp trứng mini dùng bộ acquy có suất điện động 12 V, điện trở trong 1,5 Ω để nuôi dây điện trở sưởi có R = 6,5 Ω.\na) Tính hiệu điện thế giữa hai cực acquy và hiệu suất của nguồn.\nb) Trong 20 phút, dây sưởi nhận bao nhiêu năng lượng? Bao nhiêu năng lượng toả ra ngay trong acquy?",
+      "dieu_kien_ap_dung": "Mạch ngoài thuần điện trở (chỉ có dây sưởi), bỏ qua điện trở dây nối, nên dùng được cả $H = U/\\mathcal{E}$ và $H = R/(R + r)$.",
+      "phan_tich": [
+        {
+          "trich_de": "suất điện động 12 V",
+          "du_lieu": "$\\mathcal{E} = 12$ V",
+          "kien_thuc": "Mẫu số của $H = U/\\mathcal{E}$"
+        },
+        {
+          "trich_de": "điện trở trong 1,5 Ω",
+          "du_lieu": "$r = 1{,}5\\ \\Omega$",
+          "kien_thuc": "Hao phí $I^2r$ trong nguồn"
+        },
+        {
+          "trich_de": "dây điện trở sưởi có R = 6,5 Ω",
+          "du_lieu": "$R = 6{,}5\\ \\Omega$",
+          "kien_thuc": "Mạch ngoài thuần điện trở: $H = R/(R + r)$"
+        },
+        {
+          "trich_de": "hiệu suất của nguồn",
+          "du_lieu": "cần tìm $H$",
+          "kien_thuc": "$H = A_{\\text{ích}}/A_{\\text{tp}} = U/\\mathcal{E}$"
+        },
+        {
+          "trich_de": "Trong 20 phút",
+          "du_lieu": "$t = 1200$ s",
+          "kien_thuc": "$A_R = UIt$, $A_r = I^2rt$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "U,\\ H,\\ A_R,\\ A_r",
+        "cong_thuc": "U = IR;\\ H = \\dfrac{U}{\\mathcal{E}};\\ A_R = UIt;\\ A_r = I^2rt"
+      },
+      "kien_thuc_goi_lai": [
+        "$H = \\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}} = \\dfrac{U}{\\mathcal{E}}$",
+        "Mạch ngoài thuần điện trở: $H = \\dfrac{R}{R + r}$",
+        "Tử số là $R$ (có ích), không phải $r$",
+        "$R$ càng lớn so với $r$, $H$ càng gần 100 %"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước con Dạng 3: dòng điện",
+          "cong_thuc_chu": "$I = \\dfrac{\\mathcal{E}}{R + r}$",
+          "the_so": "$I = \\dfrac{12}{6{,}5 + 1{,}5}$",
+          "ket_qua": "$I = 1{,}5\\ \\text{A}$",
+          "kiem_tra": "V/Ω = A."
+        },
+        {
+          "tieu_de": "Hiệu điện thế hai cực acquy",
+          "cong_thuc_chu": "$U = IR$",
+          "the_so": "$U = 1{,}5\\cdot6{,}5$",
+          "ket_qua": "$U = 9{,}75\\ \\text{V}$",
+          "kiem_tra": "Kiểm: $\\mathcal{E} - Ir = 12 - 2{,}25 = 9{,}75$ V. Nhỏ hơn $\\mathcal{E}$: đúng."
+        },
+        {
+          "tieu_de": "Hiệu suất của nguồn",
+          "cong_thuc_chu": "$H = \\dfrac{U}{\\mathcal{E}}$",
+          "the_so": "$H = \\dfrac{9{,}75}{12}$",
+          "ket_qua": "$H = 0{,}8125 \\approx 81{,}3\\ \\%$",
+          "kiem_tra": "Cách 2: $\\dfrac{R}{R + r} = \\dfrac{6{,}5}{8{,}0} = 0{,}8125$. Khớp; $H \\lt 1$: hợp lí."
+        },
+        {
+          "tieu_de": "Năng lượng dây sưởi nhận trong 20 phút",
+          "cong_thuc_chu": "$A_R = UIt$",
+          "the_so": "$A_R = 9{,}75\\cdot1{,}5\\cdot1200$",
+          "ket_qua": "$A_R = 17\\,550\\ \\text{J} \\approx 17{,}6\\ \\text{kJ}$",
+          "kiem_tra": "$t$ đã đổi ra giây; V·A·s = J."
+        },
+        {
+          "tieu_de": "Năng lượng toả ra trong acquy",
+          "cong_thuc_chu": "$A_r = I^2rt$",
+          "the_so": "$A_r = 1{,}5^2\\cdot1{,}5\\cdot1200$",
+          "ket_qua": "$A_r = 4050\\ \\text{J}$",
+          "kiem_tra": "Kiểm: $A_{ng} = \\mathcal{E}It = 12\\cdot1{,}5\\cdot1200 = 21\\,600$ J $= 17\\,550 + 4050$. Và $17\\,550/21\\,600 = 0{,}8125 = H$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (U)",
+          "gia_tri": 9.75,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (H)",
+          "gia_tri": 81.25,
+          "don_vi": "%"
+        },
+        {
+          "y": "b (dây sưởi)",
+          "gia_tri": 17550,
+          "don_vi": "J"
+        },
+        {
+          "y": "b (trong acquy)",
+          "gia_tri": 4050,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "I",
+          "bieu_thuc": "12/(6.5+1.5)",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U",
+          "bieu_thuc": "1.5*6.5",
+          "ky_vong": 9.75,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "H (%)",
+          "bieu_thuc": "6.5/(6.5+1.5)*100",
+          "ky_vong": 81.25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A dây sưởi 20 phút",
+          "bieu_thuc": "9.75*1.5*20*60",
+          "ky_vong": 17550,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "A hao phí trong acquy",
+          "bieu_thuc": "1.5**2*1.5*20*60",
+          "ky_vong": 4050,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi \"hiệu suất của nguồn\" kèm năng lượng trong một thời gian → giải như Dạng 3 lấy $I$, $U$; rồi $H = U/\\mathcal{E}$ (kiểm bằng $R/(R + r)$), cuối cùng nhân công suất với $t$ (giây).",
+      "bay_thuong_gap": [
+        "Viết $H = r/(R + r) = 18{,}75\\ \\%$: đó là phần hao phí.",
+        "Dùng $\\mathcal{E}It$ làm năng lượng dây sưởi nhận.",
+        "Quên đổi 20 phút ra 1200 s.",
+        "Áp $H = R/(R + r)$ cả khi mạch ngoài có động cơ, quạt."
+      ],
+      "dieu_ban_khong_chac": [
+        "Điện trở trong 1,5 Ω là lớn với acquy thật (acquy mới chỉ cỡ phần trăm ôm); có thể coi là bộ pin cũ. Số liệu chọn để thấy rõ hao phí."
+      ],
+      "mo_phong_goi_y": "Máy ấp trứng: acquy nối dây sưởi dưới khay trứng. Bên cạnh có một thanh năng lượng dài tượng trưng năng lượng nguồn phát, tô dần theo thời gian 0 → 20 phút; thanh chia hai màu: phần lớn đi vào dây sưởi, phần nhỏ thành nhiệt trong acquy (acquy ửng đỏ nhẹ). Vôn kế mắc hai cực acquy. Nhãn: $\\mathcal{E}$, $r$, $R$, $U$, \"có ích\", \"hao phí\". Không hiện tỉ lệ phần trăm."
+    },
+    {
+      "label": "Dạng 5 · Đoản mạch và chọn cầu chì",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cách tìm $I$, $H$, $I^2r$ của Dạng 4 cho chế độ làm việc bình thường. Thêm một độ khó: dữ kiện ẩn \"hai dây chạm nhau\" nghĩa là $R \\to 0$, phải tự đặt $I = \\mathcal{E}/r$, so sánh nhiệt trong nguồn và dùng dòng làm việc để chọn cầu chì.",
+      "yccd_de_xuat": "Hiệu suất nguồn điện, an toàn điện",
+      "de_bai": "Khi cắm trại, một bộ pin có suất điện động 36 V, điện trở trong 0,10 Ω được dùng để nuôi một tấm sưởi điện trở 5,9 Ω. Cửa hàng có các cầu chì loại 5 A, 8 A, 20 A và 60 A để lắp nối tiếp sát cực pin.\na) Tính dòng điện làm việc, hiệu suất của nguồn và chọn cầu chì phù hợp.\nb) Giả sử chưa lắp cầu chì, lớp cách điện bị mòn làm hai dây nối ra từ hai cực pin chạm thẳng vào nhau. Tính dòng điện qua pin và công suất toả nhiệt trong pin, bỏ qua điện trở dây.\nc) Công suất toả nhiệt trong pin lúc đó gấp bao nhiêu lần lúc làm việc bình thường? Giải thích vì sao phải lắp cầu chì.",
+      "dieu_kien_ap_dung": "Mạch ngoài thuần điện trở; $\\mathcal{E}$, $r$ không đổi; khi đoản mạch coi điện trở mạch ngoài bằng 0 (bỏ qua điện trở dây).",
+      "phan_tich": [
+        {
+          "trich_de": "suất điện động 36 V",
+          "du_lieu": "$\\mathcal{E} = 36$ V",
+          "kien_thuc": "Định luật Ohm toàn mạch"
+        },
+        {
+          "trich_de": "điện trở trong 0,10 Ω",
+          "du_lieu": "$r = 0{,}10\\ \\Omega$",
+          "kien_thuc": "$r$ nhỏ → dòng đoản mạch $\\mathcal{E}/r$ rất lớn"
+        },
+        {
+          "trich_de": "tấm sưởi điện trở 5,9 Ω",
+          "du_lieu": "$R = 5{,}9\\ \\Omega$",
+          "kien_thuc": "$I = \\mathcal{E}/(R + r)$, $H = R/(R + r)$"
+        },
+        {
+          "trich_de": "5 A, 8 A, 20 A và 60 A",
+          "du_lieu": "các mức dòng định mức cầu chì",
+          "kien_thuc": "Chọn mức hơi lớn hơn dòng làm việc"
+        },
+        {
+          "trich_de": "chạm thẳng vào nhau",
+          "du_lieu": "đoản mạch: $R \\to 0$ (dữ kiện ẩn)",
+          "kien_thuc": "$I_{\\text{nm}} = \\mathcal{E}/r$"
+        },
+        {
+          "trich_de": "bỏ qua điện trở dây",
+          "du_lieu": "$R_{\\text{dây}} \\approx 0$",
+          "kien_thuc": "Toàn bộ nhiệt toả trong pin: $I^2r$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "I,\\ H,\\ I_{\\text{nm}},\\ P_{r,\\text{nm}},\\ k",
+        "cong_thuc": "I = \\dfrac{\\mathcal{E}}{R + r};\\ H = \\dfrac{R}{R + r};\\ I_{\\text{nm}} = \\dfrac{\\mathcal{E}}{r};\\ P_{r,\\text{nm}} = I_{\\text{nm}}^2r;\\ k = \\dfrac{I_{\\text{nm}}^2r}{I^2r}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đoản mạch: hai cực nối thẳng, $R \\to 0$, $I = \\mathcal{E}/r$",
+        "Nhiệt trong nguồn $I^2r$ tăng theo bình phương dòng",
+        "Cầu chì: dòng định mức hơi lớn hơn dòng làm việc",
+        "$H = R/(R + r)$ với mạch ngoài thuần điện trở"
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Dòng làm việc (như Dạng 3)",
+          "cong_thuc_chu": "$I = \\dfrac{\\mathcal{E}}{R + r}$",
+          "the_so": "$I = \\dfrac{36}{5{,}9 + 0{,}10}$",
+          "ket_qua": "$I = 6{,}0\\ \\text{A}$",
+          "kiem_tra": "V/Ω = A."
+        },
+        {
+          "tieu_de": "Hiệu suất nguồn (như Dạng 4)",
+          "cong_thuc_chu": "$H = \\dfrac{R}{R + r}$",
+          "the_so": "$H = \\dfrac{5{,}9}{6{,}0}$",
+          "ket_qua": "$H \\approx 98{,}3\\ \\%$",
+          "kiem_tra": "$R \\gg r$ nên $H$ sát 100 %: hợp lí."
+        },
+        {
+          "tieu_de": "Chọn cầu chì",
+          "cong_thuc_chu": "$I_{\\text{cc}}$ hơi lớn hơn $I$",
+          "the_so": "$I = 6{,}0$ A; so với 5 A, 8 A, 20 A, 60 A",
+          "ket_qua": "Chọn cầu chì $8\\ \\text{A}$",
+          "kiem_tra": "5 A nhỏ hơn 6 A: vừa bật đã đứt. 20 A, 60 A quá lớn: dây có thể nóng cháy mà cầu chì chưa đứt."
+        },
+        {
+          "tieu_de": "Dòng khi đoản mạch",
+          "cong_thuc_chu": "$I_{\\text{nm}} = \\dfrac{\\mathcal{E}}{r}$",
+          "the_so": "$I_{\\text{nm}} = \\dfrac{36}{0{,}10}$",
+          "ket_qua": "$I_{\\text{nm}} = 360\\ \\text{A}$",
+          "kiem_tra": "Gấp 60 lần dòng làm việc: đúng bản chất đoản mạch."
+        },
+        {
+          "tieu_de": "Công suất toả nhiệt trong pin khi đoản mạch",
+          "cong_thuc_chu": "$P_{r,\\text{nm}} = I_{\\text{nm}}^2r$",
+          "the_so": "$P_{r,\\text{nm}} = 360^2\\cdot0{,}10$",
+          "ket_qua": "$P_{r,\\text{nm}} = 12\\,960\\ \\text{W} \\approx 1{,}30\\cdot10^{4}\\ \\text{W}$",
+          "kiem_tra": "Kiểm: cũng bằng $\\mathcal{E}I_{\\text{nm}} = 36\\cdot360 = 12\\,960$ W vì $U = 0$, toàn bộ công suất nguồn thành nhiệt trong pin."
+        },
+        {
+          "tieu_de": "So sánh với lúc bình thường",
+          "cong_thuc_chu": "$k = \\dfrac{I_{\\text{nm}}^2r}{I^2r} = \\left(\\dfrac{I_{\\text{nm}}}{I}\\right)^2$",
+          "the_so": "$P_r = 6{,}0^2\\cdot0{,}10 = 3{,}6$ W; $k = \\dfrac{12\\,960}{3{,}6}$",
+          "ket_qua": "$k = 3600$ lần",
+          "kiem_tra": "Kiểm: $(360/6{,}0)^2 = 60^2 = 3600$. Khớp."
+        },
+        {
+          "tieu_de": "Giải thích vai trò cầu chì",
+          "cong_thuc_chu": "$I_{\\text{nm}} \\gg I_{\\text{cc}}$",
+          "the_so": "$360\\ \\text{A} \\gg 8\\ \\text{A}$",
+          "ket_qua": "Cầu chì 8 A đứt gần như tức thì, ngắt mạch",
+          "kiem_tra": "Không có cầu chì, khoảng $1{,}3\\cdot10^{4}$ W toả trong pin và dây làm cháy cách điện, pin có thể phồng, nổ."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (I)",
+          "gia_tri": 6,
+          "don_vi": "A"
+        },
+        {
+          "y": "a (H)",
+          "gia_tri": 98.33,
+          "don_vi": "%"
+        },
+        {
+          "y": "a (cầu chì)",
+          "gia_tri": 8,
+          "don_vi": "A"
+        },
+        {
+          "y": "b (I đoản mạch)",
+          "gia_tri": 360,
+          "don_vi": "A"
+        },
+        {
+          "y": "b (P trong pin)",
+          "gia_tri": 12960,
+          "don_vi": "W"
+        },
+        {
+          "y": "c",
+          "gia_tri": 3600,
+          "don_vi": "lần"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Dòng làm việc",
+          "bieu_thuc": "36/(5.9+0.10)",
+          "ky_vong": 6,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "H (%)",
+          "bieu_thuc": "5.9/(5.9+0.10)*100",
+          "ky_vong": 98.33,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Dòng đoản mạch",
+          "bieu_thuc": "36/0.10",
+          "ky_vong": 360,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "P toả nhiệt trong pin khi đoản mạch",
+          "bieu_thuc": "(36/0.10)**2*0.10",
+          "ky_vong": 12960,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Tỉ số nhiệt đoản mạch / bình thường",
+          "bieu_thuc": "((36/0.10)**2*0.10)/((36/6.0)**2*0.10)",
+          "ky_vong": 3600,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề tả tình huống \"hai dây chạm nhau\", \"chìa khoá chạm hai cực\", \"chập điện\" mà không nói $R = 0$ → tự đặt $R \\to 0$, $I = \\mathcal{E}/r$; muốn chọn cầu chì thì tính dòng làm việc rồi lấy mức hơi lớn hơn.",
+      "bay_thuong_gap": [
+        "Vẫn dùng $I = \\mathcal{E}/(R + r)$ với $R = 5{,}9\\ \\Omega$ khi đã đoản mạch.",
+        "Cho rằng đoản mạch thì $I = 0$ vì \"mạch bị hỏng\".",
+        "Chọn cầu chì 60 A cho \"an toàn, khó đứt\": ngược mục đích bảo vệ.",
+        "Tỉ số nhiệt lấy $360/6 = 60$ lần, quên bình phương."
+      ],
+      "dieu_ban_khong_chac": [
+        "Dòng 360 A là cận trên: dây nối và chỗ chạm có điện trở nhỏ khác 0, $r$ của pin cũng tăng khi nóng, nên dòng thực nhỏ hơn.",
+        "Pin thật thường có mạch bảo vệ riêng; bài không xét vì lí thuyết của bài không nhắc tới."
+      ],
+      "mo_phong_goi_y": "Giai đoạn 1: bộ pin nối tấm sưởi qua hộp cầu chì, chấm điện tích chạy đều, tấm sưởi ấm dần. Giai đoạn 2: đoạn dây gần pin bị mòn vỏ, hai lõi đồng chạm nhau tạo tia lửa; chấm điện tích chạy vòng ngắn qua chỗ chạm, dày và nhanh hơn hẳn, pin chuyển đỏ. Giai đoạn 3 (tuỳ chọn): có cầu chì, dây chì chảy đứt, dòng dừng. Nhãn: $\\mathcal{E}$, $r$, $R$, \"cầu chì\", \"chỗ chạm\", \"$I$\". Không hiện giá trị dòng."
+    }
+  ]
+}

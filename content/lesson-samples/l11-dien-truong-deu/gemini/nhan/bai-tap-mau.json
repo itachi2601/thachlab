@@ -1,0 +1,619 @@
+{
+  "lesson_title": "Bài 18. Điện trường đều",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Đọc đặc điểm điện trường đều giữa hai bản",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Chỉ dùng định nghĩa điện trường đều và quy tắc chiều đường sức (từ bản dương sang bản âm), không tính toán.",
+      "yccd_de_xuat": "Đặc điểm điện trường đều giữa hai bản song song",
+      "de_bai": "Hai bản kim loại phẳng đặt thẳng đứng, song song, cách nhau $5{,}0$ cm, bản trái tích điện dương, bản phải tích điện âm.\nBa điểm nằm xa mép bản: A cách bản trái $0{,}5$ cm, B ở chính giữa, C cách bản phải $0{,}5$ cm.\nĐo được cường độ điện trường tại B là $E_B = 2{,}0\\cdot10^{3}$ V/m.\na) Đường sức giữa hai bản có hình dạng và chiều thế nào?\nb) Tính $E_A$ và $E_C$.\nc) Đặt một điện tích dương tại C. Lực điện lên nó hướng về bản nào?\nd) Điểm P nằm ngay sát mép trên của hai bản. Kết quả câu b có dùng cho P được không?",
+      "dieu_kien_ap_dung": "Kết luận \"$\\vec E$ như nhau mọi điểm\" chỉ đúng ở vùng giữa hai bản, xa mép bản.",
+      "phan_tich": [
+        {
+          "trich_de": "bản trái tích điện dương, bản phải tích điện âm",
+          "du_lieu": "Bản trái (+), bản phải (−)",
+          "kien_thuc": "Chiều đường sức: từ bản dương sang bản âm"
+        },
+        {
+          "trich_de": "Ba điểm nằm xa mép bản",
+          "du_lieu": "A, B, C trong vùng trường đều",
+          "kien_thuc": "Xa mép: đường sức thẳng, song song, cách đều"
+        },
+        {
+          "trich_de": "$E_B = 2{,}0\\cdot10^{3}$ V/m",
+          "du_lieu": "$E_B = 2{,}0\\cdot10^{3}$ V/m",
+          "kien_thuc": "Điện trường đều: $\\vec E$ cùng phương, cùng chiều, cùng độ lớn mọi điểm"
+        },
+        {
+          "trich_de": "Tính $E_A$ và $E_C$",
+          "du_lieu": "Cần tìm: $E_A = E_C = E_B$",
+          "kien_thuc": "Định nghĩa điện trường đều"
+        },
+        {
+          "trich_de": "Đặt một điện tích dương tại C",
+          "du_lieu": "$q \\gt 0$",
+          "kien_thuc": "Lực lên điện tích dương cùng chiều $\\vec E$"
+        },
+        {
+          "trich_de": "ngay sát mép trên của hai bản",
+          "du_lieu": "P ở gần mép",
+          "kien_thuc": "Gần mép bản đường sức cong ra, trường không đều"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E_A, E_C",
+        "cong_thuc": "E_A = E_C = E_B"
+      },
+      "kien_thuc_goi_lai": [
+        "Điện trường đều: $\\vec E$ tại mọi điểm bằng nhau.",
+        "Tạo bằng hai bản phẳng song song tích điện trái dấu.",
+        "Đường sức thẳng, song song, cách đều, vuông góc hai bản, từ bản dương sang bản âm.",
+        "Gần mép bản đường sức cong, không còn đều."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "a) Chiều và hình dạng đường sức",
+          "cong_thuc_chu": "$\\vec E$: bản (+) $\\to$ bản (−)",
+          "the_so": "Bản trái (+), bản phải (−)",
+          "ket_qua": "Đường sức thẳng, song song, cách đều, nằm ngang, hướng từ trái sang phải",
+          "kiem_tra": "Hai bản thẳng đứng nên đường sức vuông góc bản phải nằm ngang. Hợp lí."
+        },
+        {
+          "tieu_de": "b) Cường độ tại A và C",
+          "cong_thuc_chu": "$E_A = E_C = E_B$ (trường đều)",
+          "the_so": "$E_B = 2{,}0\\cdot10^{3}$ V/m",
+          "ket_qua": "$E_A = E_C = 2{,}0\\cdot10^{3}\\ \\text{V/m}$",
+          "kiem_tra": "Khoảng cách tới bản không ảnh hưởng. Không suy luận kiểu điện tích điểm (gần mạnh hơn)."
+        },
+        {
+          "tieu_de": "c) Chiều lực lên điện tích dương tại C",
+          "cong_thuc_chu": "$q \\gt 0$: $\\vec F$ cùng chiều $\\vec E$",
+          "the_so": "$\\vec E$ hướng sang phải",
+          "ket_qua": "Lực hướng sang phải, về bản phải (bản âm)",
+          "kiem_tra": "Điện tích dương bị bản âm hút, bản dương đẩy. Khớp."
+        },
+        {
+          "tieu_de": "d) Điểm P sát mép",
+          "cong_thuc_chu": "Gần mép: đường sức cong, không đều",
+          "the_so": "P ở sát mép trên",
+          "ket_qua": "Không dùng được kết quả câu b cho P",
+          "kiem_tra": "Đúng với quan sát hạt bột: ra gần mép các đường cong và thưa ra."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b – E_A",
+          "gia_tri": 2000,
+          "don_vi": "V/m"
+        },
+        {
+          "y": "b – E_C",
+          "gia_tri": 2000,
+          "don_vi": "V/m"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "E_A bằng E_B",
+          "bieu_thuc": "2.0e3",
+          "ky_vong": 2000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "E_C bằng E_B",
+          "bieu_thuc": "2.0*10**3",
+          "ky_vong": 2000,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi chiều đường sức, so sánh E ở các điểm giữa hai bản, hay hỏi vùng nào là trường đều → xác định bản dương/âm, dùng định nghĩa trường đều, loại các điểm gần mép.",
+      "bay_thuong_gap": [
+        "Cho rằng điểm gần bản có E lớn hơn (nhầm với điện tích điểm).",
+        "Vẽ đường sức từ bản âm sang bản dương.",
+        "Áp dụng kết luận trường đều cho điểm sát mép bản."
+      ],
+      "dieu_ban_khong_chac": [
+        "Danh sách dạng ở bước 0 chưa được điền ({DANH_SACH_DANG} còn để trống), nên tự chọn 4 dạng theo hai YCCĐ và ba mục kiến thức của bài."
+      ],
+      "mo_phong_goi_y": "Hai bản thẳng đứng, bản trái ghi '+', bản phải ghi '−'. Hiện dần các đường sức thẳng song song, mũi tên chạy từ trái sang phải; gần mép trên và dưới các đường cong ra và thưa. Ba chấm A, B, C trên một đường ngang, một vectơ E giống nhau xuất hiện lần lượt ở mỗi điểm (không ghi giá trị A, C). Chấm P ở mép trên. Nhãn: '+', '−', A, B, C, P, $\\vec E$, $E_B = 2{,}0\\cdot10^{3}$ V/m, 5,0 cm."
+    },
+    {
+      "label": "Dạng 2 · Tính E = U/d và lực điện, có đổi đơn vị và xét dấu",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại chiều $\\vec E$ và tính chất \"E như nhau mọi điểm\" từ Dạng 1 (vị trí hạt bụi không ảnh hưởng). Thêm MỘT độ khó mới: tính định lượng $E = U/d$, $F = |q|E$ với $d$ cho bằng mm phải đổi ra mét.",
+      "yccd_de_xuat": "Đặc điểm điện trường đều giữa hai bản song song",
+      "de_bai": "Trong một mô hình lọc bụi tĩnh điện thu nhỏ, hai bản kim loại phẳng nằm ngang, song song, cách nhau $2{,}5$ mm, nối với nguồn có hiệu điện thế $U = 60$ V.\nBản trên tích điện dương.\nMột hạt bụi mang điện tích $q = -3{,}2\\cdot10^{-18}$ C nằm cách bản dưới $0{,}50$ mm, xa mép bản.\na) Tính cường độ điện trường giữa hai bản theo V/m và N/C.\nb) Tính độ lớn lực điện tác dụng lên hạt bụi.\nc) Lực điện hướng lên hay xuống? Hạt bụi bị hút về bản nào?",
+      "dieu_kien_ap_dung": "$E = U/d$ chỉ dùng cho điện trường đều giữa hai bản song song, xa mép; $d$ tính bằng mét.",
+      "phan_tich": [
+        {
+          "trich_de": "cách nhau $2{,}5$ mm",
+          "du_lieu": "$d = 2{,}5\\cdot10^{-3}$ m",
+          "kien_thuc": "Đổi mm ra m trước khi thế vào $E = U/d$"
+        },
+        {
+          "trich_de": "$U = 60$ V",
+          "du_lieu": "$U = 60$ V",
+          "kien_thuc": "$E = U/d$"
+        },
+        {
+          "trich_de": "Bản trên tích điện dương",
+          "du_lieu": "$\\vec E$ hướng thẳng xuống",
+          "kien_thuc": "Chiều đường sức: bản dương sang bản âm"
+        },
+        {
+          "trich_de": "$q = -3{,}2\\cdot10^{-18}$ C",
+          "du_lieu": "$q \\lt 0$, $|q| = 3{,}2\\cdot10^{-18}$ C",
+          "kien_thuc": "$F = |q|E$; $q \\lt 0$: lực ngược chiều $\\vec E$"
+        },
+        {
+          "trich_de": "nằm cách bản dưới $0{,}50$ mm, xa mép bản",
+          "du_lieu": "Dữ kiện nhiễu",
+          "kien_thuc": "Trường đều: E không phụ thuộc vị trí"
+        },
+        {
+          "trich_de": "theo V/m và N/C",
+          "du_lieu": "Cần tìm: $E = U/d$",
+          "kien_thuc": "$1$ V/m $= 1$ N/C"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "E, F",
+        "cong_thuc": "E = \\dfrac{U}{d},\\ F = |q|E"
+      },
+      "kien_thuc_goi_lai": [
+        "$E = \\dfrac{U}{d}$, $U$ (V), $d$ (m), $E$ (V/m).",
+        "$1$ V/m $= 1$ N/C.",
+        "$F = |q|E$, độ lớn luôn dùng $|q|$.",
+        "$q \\gt 0$: lực cùng chiều $\\vec E$; $q \\lt 0$: ngược chiều."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi khoảng cách ra mét",
+          "cong_thuc_chu": "$1\\ \\text{mm} = 10^{-3}\\ \\text{m}$",
+          "the_so": "$d = 2{,}5\\cdot10^{-3}$ m",
+          "ket_qua": "$d = 2{,}5\\cdot10^{-3}\\ \\text{m}$",
+          "kiem_tra": "Không dùng $0{,}50$ mm: vị trí hạt bụi không ảnh hưởng E."
+        },
+        {
+          "tieu_de": "a) Cường độ điện trường",
+          "cong_thuc_chu": "$E = \\dfrac{U}{d}$",
+          "the_so": "$E = \\dfrac{60}{2{,}5\\cdot10^{-3}}$",
+          "ket_qua": "$E = 2{,}4\\cdot10^{4}\\ \\text{V/m} = 2{,}4\\cdot10^{4}\\ \\text{N/C}$",
+          "kiem_tra": "Đơn vị V/m = N/C. Nếu để nguyên mm sẽ ra 24 V/m, nhỏ hơn 1000 lần."
+        },
+        {
+          "tieu_de": "b) Độ lớn lực điện",
+          "cong_thuc_chu": "$F = |q|E$",
+          "the_so": "$F = 3{,}2\\cdot10^{-18}\\cdot2{,}4\\cdot10^{4}$",
+          "ket_qua": "$F = 7{,}68\\cdot10^{-14}\\ \\text{N}$",
+          "kiem_tra": "C·N/C = N. Dùng $|q|$ nên F dương."
+        },
+        {
+          "tieu_de": "c) Chiều lực",
+          "cong_thuc_chu": "$q \\lt 0$: $\\vec F$ ngược chiều $\\vec E$",
+          "the_so": "$\\vec E$ hướng xuống",
+          "ket_qua": "Lực hướng lên, hạt bụi bị hút về bản trên (bản dương)",
+          "kiem_tra": "Điện tích âm bị bản dương hút. Khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 24000,
+          "don_vi": "V/m"
+        },
+        {
+          "y": "b",
+          "gia_tri": 7.68e-14,
+          "don_vi": "N"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cường độ điện trường E",
+          "bieu_thuc": "60/2.5e-3",
+          "ky_vong": 24000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ lớn lực điện F",
+          "bieu_thuc": "3.2e-18*60/2.5e-3",
+          "ky_vong": 7.68e-14,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho U, d (thường bằng cm hoặc mm) và một điện tích đặt giữa hai bản → đổi d ra mét, tính E = U/d, F = |q|E, rồi lấy chiều theo dấu q.",
+      "bay_thuong_gap": [
+        "Để nguyên d bằng mm hoặc cm.",
+        "Thế q âm vào F rồi ra lực âm.",
+        "Cho lực điện lên hạt âm cùng chiều đường sức.",
+        "Dùng khoảng cách hạt bụi tới bản thay cho d."
+      ],
+      "dieu_ban_khong_chac": [
+        "Hạt bụi thật có trọng lượng có thể so được với lực điện; đề chỉ hỏi lực điện nên không xét trọng lực.",
+        "Lọc bụi tĩnh điện bài chỉ nêu là mô hình gần đúng."
+      ],
+      "mo_phong_goi_y": "Hai bản nằm ngang, bản trên '+', bản dưới '−', nối với nguồn ghi U = 60 V. Đường sức mũi tên hướng xuống. Một hạt bụi nhỏ ghi 'q < 0' gần bản dưới, xuất hiện mũi tên lực (không ghi độ lớn) rồi hạt từ từ trôi về một bản. Nhãn: '+', '−', U = 60 V, d = 2,5 mm, 0,50 mm, $\\vec E$, $\\vec F$, q."
+    },
+    {
+      "label": "Dạng 3 · Hạt bay vào vuông góc đường sức: độ lệch khi ra khỏi bản",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Bước con tính $E = U/d$ (đổi mm ra m) và $F = |q|E$ chính là Dạng 2, viết gọn. Thêm MỘT độ khó mới: phân tích chuyển động như ném ngang (thay $g$ bằng $a$) để tính thời gian bay và độ lệch, rồi so với $d/2$.",
+      "yccd_de_xuat": "Chuyển động của điện tích trong điện trường đều",
+      "de_bai": "Một proton bay vào chính giữa hai bản kim loại phẳng nằm ngang, theo phương song song với hai bản, với tốc độ $v_0 = 4{,}0\\cdot10^{5}$ m/s.\nHai bản dài $L = 4{,}0$ cm, cách nhau $d = 8{,}0$ mm, hiệu điện thế $U = 40$ V, bản dưới tích điện dương.\nCho $q = 1{,}6\\cdot10^{-19}$ C, $m_p = 1{,}67\\cdot10^{-27}$ kg. Bỏ qua trọng lực.\na) Proton lệch về bản nào? Quỹ đạo trong khe có dạng gì?\nb) Tính gia tốc của proton.\nc) Tính độ lệch của proton khi ra khỏi hai bản. Proton có chạm bản không?",
+      "dieu_kien_ap_dung": "Chân không, bỏ qua trọng lực, $\\vec v_0 \\perp \\vec E$, trường đều trong toàn bộ chiều dài bản.",
+      "phan_tich": [
+        {
+          "trich_de": "chính giữa hai bản",
+          "du_lieu": "Cách mỗi bản $d/2 = 4{,}0$ mm",
+          "kien_thuc": "So độ lệch $y$ với $d/2$ để biết có chạm bản"
+        },
+        {
+          "trich_de": "song song với hai bản",
+          "du_lieu": "$\\vec v_0 \\perp \\vec E$",
+          "kien_thuc": "Ox thẳng đều, Oy nhanh dần đều (giống ném ngang)"
+        },
+        {
+          "trich_de": "$v_0 = 4{,}0\\cdot10^{5}$ m/s",
+          "du_lieu": "$v_0 = 4{,}0\\cdot10^{5}$ m/s",
+          "kien_thuc": "$t = L/v_0$"
+        },
+        {
+          "trich_de": "$L = 4{,}0$ cm",
+          "du_lieu": "$L = 0{,}040$ m",
+          "kien_thuc": "Quãng bay trong trường theo Ox"
+        },
+        {
+          "trich_de": "$d = 8{,}0$ mm",
+          "du_lieu": "$d = 8{,}0\\cdot10^{-3}$ m",
+          "kien_thuc": "$E = U/d$"
+        },
+        {
+          "trich_de": "bản dưới tích điện dương",
+          "du_lieu": "$\\vec E$ hướng lên",
+          "kien_thuc": "Proton $q \\gt 0$: lực cùng chiều $\\vec E$"
+        },
+        {
+          "trich_de": "Tính độ lệch của proton khi ra khỏi hai bản",
+          "du_lieu": "Cần tìm: $y = \\tfrac12 a t^2$",
+          "kien_thuc": "$y = \\dfrac{|q|U}{2mdv_0^2}x^2$ tại $x = L$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "a, y",
+        "cong_thuc": "a = \\dfrac{|q|U}{md},\\ y = \\tfrac12 a\\left(\\dfrac{L}{v_0}\\right)^2"
+      },
+      "kien_thuc_goi_lai": [
+        "$a = \\dfrac{|q|U}{md}$, không đổi, vuông góc $\\vec v_0$.",
+        "Ox: $x = v_0 t$; Oy: $y = \\tfrac12 a t^2$.",
+        "Quỹ đạo parabol $y = \\dfrac{|q|U}{2mdv_0^2}x^2$.",
+        "$q \\gt 0$ lệch về bản âm."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "a) Chiều lệch",
+          "cong_thuc_chu": "$\\vec E$: bản (+) $\\to$ bản (−); $q \\gt 0$: $\\vec F \\uparrow\\uparrow \\vec E$",
+          "the_so": "Bản dưới (+) nên $\\vec E$ hướng lên",
+          "ket_qua": "Lực hướng lên; proton lệch lên về bản trên (bản âm), quỹ đạo là một nhánh parabol",
+          "kiem_tra": "Lực không đổi, vuông góc $\\vec v_0$ nên đường cong, không thẳng xiên."
+        },
+        {
+          "tieu_de": "Cường độ điện trường (bước Dạng 2)",
+          "cong_thuc_chu": "$E = \\dfrac{U}{d}$",
+          "the_so": "$E = \\dfrac{40}{8{,}0\\cdot10^{-3}}$",
+          "ket_qua": "$E = 5{,}0\\cdot10^{3}\\ \\text{V/m}$",
+          "kiem_tra": "Đã đổi 8,0 mm ra mét."
+        },
+        {
+          "tieu_de": "b) Gia tốc",
+          "cong_thuc_chu": "$a = \\dfrac{|q|E}{m_p}$",
+          "the_so": "$a = \\dfrac{1{,}6\\cdot10^{-19}\\cdot5{,}0\\cdot10^{3}}{1{,}67\\cdot10^{-27}} = \\dfrac{8{,}0\\cdot10^{-16}}{1{,}67\\cdot10^{-27}}$",
+          "ket_qua": "$a \\approx 4{,}79\\cdot10^{11}\\ \\text{m/s}^2$",
+          "kiem_tra": "N/kg = m/s². Rất lớn so với $g$, nên bỏ qua trọng lực hợp lí."
+        },
+        {
+          "tieu_de": "Thời gian bay giữa hai bản",
+          "cong_thuc_chu": "$t = \\dfrac{L}{v_0}$",
+          "the_so": "$t = \\dfrac{0{,}040}{4{,}0\\cdot10^{5}}$",
+          "ket_qua": "$t = 1{,}0\\cdot10^{-7}\\ \\text{s}$",
+          "kiem_tra": "m/(m/s) = s. Vận tốc ngang không đổi."
+        },
+        {
+          "tieu_de": "c) Độ lệch khi ra khỏi bản",
+          "cong_thuc_chu": "$y = \\tfrac12 a t^2$",
+          "the_so": "$y = \\tfrac12\\cdot4{,}79\\cdot10^{11}\\cdot(1{,}0\\cdot10^{-7})^2$",
+          "ket_qua": "$y \\approx 2{,}40\\cdot10^{-3}\\ \\text{m} = 2{,}40\\ \\text{mm}$",
+          "kiem_tra": "Kiểm bằng phương trình quỹ đạo $y = \\dfrac{|q|UL^2}{2m_pdv_0^2}$ cũng ra $2{,}40\\cdot10^{-3}$ m."
+        },
+        {
+          "tieu_de": "So với khoảng cách tới bản",
+          "cong_thuc_chu": "So $y$ với $\\dfrac{d}{2}$",
+          "the_so": "$\\dfrac{d}{2} = 4{,}0$ mm; $2{,}40\\ \\text{mm} \\lt 4{,}0\\ \\text{mm}$",
+          "ket_qua": "Proton không chạm bản, bay ra khỏi khe",
+          "kiem_tra": "Độ lệch nhỏ hơn nửa khoảng cách hai bản. Hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b",
+          "gia_tri": 479000000000,
+          "don_vi": "m/s²"
+        },
+        {
+          "y": "c",
+          "gia_tri": 2.4,
+          "don_vi": "mm"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cường độ điện trường E",
+          "bieu_thuc": "40/0.008",
+          "ky_vong": 5000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "gia tốc a",
+          "bieu_thuc": "1.6e-19*(40/0.008)/1.67e-27",
+          "ky_vong": 479000000000,
+          "sai_so_tuong_doi": 0.005
+        },
+        {
+          "mo_ta": "thời gian bay t",
+          "bieu_thuc": "0.040/4.0e5",
+          "ky_vong": 1e-7,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ lệch y (m) theo y = at²/2",
+          "bieu_thuc": "0.5*(1.6e-19*(40/0.008)/1.67e-27)*(0.040/4.0e5)**2",
+          "ky_vong": 0.0024,
+          "sai_so_tuong_doi": 0.005
+        },
+        {
+          "mo_ta": "độ lệch y (m) theo phương trình quỹ đạo",
+          "bieu_thuc": "1.6e-19*40*0.040**2/(2*1.67e-27*0.008*(4.0e5)**2)",
+          "ky_vong": 0.0024,
+          "sai_so_tuong_doi": 0.005
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi hạt bay vào song song với hai bản (vuông góc đường sức) và đề cho L, d, U, v₀ → tính E, a = |q|E/m, t = L/v₀, y = at²/2, so y với d/2.",
+      "bay_thuong_gap": [
+        "Xác định sai chiều E rồi lệch sai bản.",
+        "Đổi L ra mét nhưng quên đổi d (hoặc ngược lại).",
+        "So y với d thay vì d/2 khi hạt vào chính giữa.",
+        "Nghĩ quỹ đạo là đường thẳng xiên."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hai bản nằm ngang, bản trên '−', bản dưới '+', đường sức mũi tên hướng lên. Một chấm proton vào từ mép trái ở đường giữa, bay sang phải, vẽ dần vết cong; có mũi tên vận tốc ngang không đổi và mũi tên vận tốc dọc lớn dần. Ra khỏi mép phải, vết chuyển thành đường thẳng. Không hiện số độ lệch. Nhãn: '+', '−', $\\vec v_0$, $\\vec E$, $\\vec F$, L = 4,0 cm, d = 8,0 mm, đường giữa, y."
+    },
+    {
+      "label": "Dạng 4 · Máy in phun: điểm chạm trên màn và bài ngược tìm U",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Phần tính E, a, t, y và so với d/2 dùng lại nguyên Dạng 3, viết ngắn. Thêm MỘT độ khó mới: tình huống đời sống có dữ kiện ẩn — phải tự kiểm tra điều kiện bỏ qua trọng lực, nối đoạn bay thẳng sau khi ra khỏi bản để tìm điểm chạm, rồi làm ngược ra U.",
+      "yccd_de_xuat": "Chuyển động của điện tích trong điện trường đều",
+      "de_bai": "Trong máy in phun liên tục in hạn sử dụng lên đáy lon, mỗi giọt mực có khối lượng $m = 1{,}0\\cdot10^{-10}$ kg, mang điện tích $q = -2{,}0\\cdot10^{-13}$ C.\nGiọt bay ngang với tốc độ $v_0 = 20$ m/s vào chính giữa khe hở của hai bản kim loại phẳng nằm ngang.\nHai bản dài $L = 2{,}0$ cm, cách nhau $d = 3{,}0$ mm, hiệu điện thế $U = 1500$ V, bản trên tích điện dương.\nĐáy lon đặt thẳng đứng, cách mép ra của hai bản $D = 3{,}0$ cm. Lấy $g = 9{,}8$ m/s². Bên ngoài hai bản không có điện trường.\na) Giọt mực lệch lên hay xuống? Chứng tỏ có thể bỏ qua trọng lực.\nb) Giọt có chạm bản không? Tính khoảng cách từ điểm giọt chạm lon đến đường bay ban đầu.\nc) Muốn giọt chạm lon ở điểm cách đường bay ban đầu $3{,}0$ mm thì phải đặt hiệu điện thế bao nhiêu?",
+      "dieu_kien_ap_dung": "Bỏ qua trọng lực khi $mg$ rất nhỏ so với $|q|E$; trong khe trường đều, ra khỏi bản hết lực nên giọt đi thẳng theo vận tốc lúc ra.",
+      "phan_tich": [
+        {
+          "trich_de": "$m = 1{,}0\\cdot10^{-10}$ kg",
+          "du_lieu": "$m = 1{,}0\\cdot10^{-10}$ kg",
+          "kien_thuc": "$a = |q|E/m$; so $mg$ với $|q|E$"
+        },
+        {
+          "trich_de": "$q = -2{,}0\\cdot10^{-13}$ C",
+          "du_lieu": "$q \\lt 0$, $|q| = 2{,}0\\cdot10^{-13}$ C",
+          "kien_thuc": "Điện tích âm lệch về bản dương"
+        },
+        {
+          "trich_de": "$v_0 = 20$ m/s",
+          "du_lieu": "$v_0 = 20$ m/s",
+          "kien_thuc": "$t = L/v_0$; $\\tan\\alpha = v_y/v_0$"
+        },
+        {
+          "trich_de": "vào chính giữa khe hở",
+          "du_lieu": "Cách mỗi bản $d/2 = 1{,}5$ mm",
+          "kien_thuc": "So $y$ với $d/2$"
+        },
+        {
+          "trich_de": "$L = 2{,}0$ cm",
+          "du_lieu": "$L = 0{,}020$ m",
+          "kien_thuc": "Quãng bay trong trường"
+        },
+        {
+          "trich_de": "$d = 3{,}0$ mm",
+          "du_lieu": "$d = 3{,}0\\cdot10^{-3}$ m",
+          "kien_thuc": "$E = U/d$"
+        },
+        {
+          "trich_de": "$U = 1500$ V, bản trên tích điện dương",
+          "du_lieu": "$U = 1500$ V; $\\vec E$ hướng xuống",
+          "kien_thuc": "Chiều đường sức: dương sang âm"
+        },
+        {
+          "trich_de": "cách mép ra của hai bản $D = 3{,}0$ cm",
+          "du_lieu": "$D = 0{,}030$ m",
+          "kien_thuc": "Ra khỏi bản đi thẳng: lệch thêm $D\\tan\\alpha$"
+        },
+        {
+          "trich_de": "Bên ngoài hai bản không có điện trường",
+          "du_lieu": "Ngoài khe: $F = 0$",
+          "kien_thuc": "Chuyển động thẳng đều theo quán tính"
+        },
+        {
+          "trich_de": "Muốn giọt chạm lon ở điểm cách đường bay ban đầu $3{,}0$ mm",
+          "du_lieu": "Cần tìm: $U'$ với $Y' = 3{,}0$ mm",
+          "kien_thuc": "$Y \\propto a \\propto U$ khi $L$, $D$, $v_0$, $d$ giữ nguyên"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "Y, U'",
+        "cong_thuc": "Y = y + D\\tan\\alpha,\\ U' = U\\dfrac{Y'}{Y}"
+      },
+      "kien_thuc_goi_lai": [
+        "Ném ngang, đổi $g$ thành $a = |q|E/m$.",
+        "$y = \\tfrac12 a t^2$, $v_y = at$, $\\tan\\alpha = v_y/v_0$.",
+        "Ra khỏi bản: đi thẳng theo vận tốc lúc ra.",
+        "$q \\lt 0$ lệch về bản dương.",
+        "Bỏ qua trọng lực khi $mg \\ll |q|E$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "a) Chiều lệch",
+          "cong_thuc_chu": "$q \\lt 0$: $\\vec F$ ngược chiều $\\vec E$",
+          "the_so": "Bản trên (+) nên $\\vec E$ hướng xuống",
+          "ket_qua": "Lực điện hướng lên; giọt lệch lên về bản trên",
+          "kiem_tra": "Giọt âm bị bản dương hút. Khớp với mở bài."
+        },
+        {
+          "tieu_de": "a) So lực điện với trọng lực (dữ kiện ẩn)",
+          "cong_thuc_chu": "$E = \\dfrac{U}{d}$, $F = |q|E$, $P = mg$",
+          "the_so": "$E = \\dfrac{1500}{3{,}0\\cdot10^{-3}} = 5{,}0\\cdot10^{5}$ V/m; $F = 2{,}0\\cdot10^{-13}\\cdot5{,}0\\cdot10^{5}$; $P = 1{,}0\\cdot10^{-10}\\cdot9{,}8$",
+          "ket_qua": "$F = 1{,}0\\cdot10^{-7}\\ \\text{N}$, $P = 9{,}8\\cdot10^{-10}\\ \\text{N}$, $F/P \\approx 102$",
+          "kiem_tra": "Lực điện lớn hơn trọng lực khoảng 100 lần: bỏ qua trọng lực, sai khoảng 1 %."
+        },
+        {
+          "tieu_de": "Gia tốc và thời gian bay (như Dạng 3)",
+          "cong_thuc_chu": "$a = \\dfrac{F}{m}$, $t = \\dfrac{L}{v_0}$",
+          "the_so": "$a = \\dfrac{1{,}0\\cdot10^{-7}}{1{,}0\\cdot10^{-10}}$; $t = \\dfrac{0{,}020}{20}$",
+          "ket_qua": "$a = 1{,}0\\cdot10^{3}\\ \\text{m/s}^2$, $t = 1{,}0\\cdot10^{-3}\\ \\text{s}$",
+          "kiem_tra": "$a \\approx 100g$, khớp tỉ số $F/P$."
+        },
+        {
+          "tieu_de": "b) Độ lệch tại mép ra, có chạm bản không",
+          "cong_thuc_chu": "$y = \\tfrac12 a t^2$, so với $\\dfrac{d}{2}$",
+          "the_so": "$y = \\tfrac12\\cdot1{,}0\\cdot10^{3}\\cdot(1{,}0\\cdot10^{-3})^2$; $\\dfrac{d}{2} = 1{,}5$ mm",
+          "ket_qua": "$y = 5{,}0\\cdot10^{-4}\\ \\text{m} = 0{,}50\\ \\text{mm} \\lt 1{,}5\\ \\text{mm}$: không chạm bản",
+          "kiem_tra": "Đơn vị m/s²·s² = m."
+        },
+        {
+          "tieu_de": "b) Hướng bay lúc ra khỏi bản",
+          "cong_thuc_chu": "$v_y = at$, $\\tan\\alpha = \\dfrac{v_y}{v_0}$",
+          "the_so": "$v_y = 1{,}0\\cdot10^{3}\\cdot1{,}0\\cdot10^{-3} = 1{,}0$ m/s; $\\tan\\alpha = \\dfrac{1{,}0}{20}$",
+          "ket_qua": "$\\tan\\alpha = 0{,}050$",
+          "kiem_tra": "Góc nhỏ (khoảng 2,9°), hợp với độ lệch nhỏ."
+        },
+        {
+          "tieu_de": "b) Điểm chạm lon",
+          "cong_thuc_chu": "$Y = y + D\\tan\\alpha$",
+          "the_so": "$Y = 0{,}50\\ \\text{mm} + 30\\ \\text{mm}\\cdot0{,}050$",
+          "ket_qua": "$Y = 2{,}0\\ \\text{mm}$ (phía trên đường bay ban đầu)",
+          "kiem_tra": "Kiểm bằng mẹo trung điểm: $(L/2 + D)\\tan\\alpha = 40\\ \\text{mm}\\cdot0{,}050 = 2{,}0$ mm. Khớp."
+        },
+        {
+          "tieu_de": "c) Bài ngược tìm U",
+          "cong_thuc_chu": "$Y \\propto a \\propto U$ nên $U' = U\\dfrac{Y'}{Y}$",
+          "the_so": "$U' = 1500\\cdot\\dfrac{3{,}0}{2{,}0}$",
+          "ket_qua": "$U' = 2250\\ \\text{V}$",
+          "kiem_tra": "Khi đó $y' = 0{,}50\\cdot1{,}5 = 0{,}75$ mm $\\lt 1{,}5$ mm: vẫn không chạm bản, đáp số dùng được."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – tỉ số F/P",
+          "gia_tri": 102,
+          "don_vi": "lần"
+        },
+        {
+          "y": "b – độ lệch tại mép ra y",
+          "gia_tri": 0.5,
+          "don_vi": "mm"
+        },
+        {
+          "y": "b – điểm chạm lon Y",
+          "gia_tri": 2,
+          "don_vi": "mm"
+        },
+        {
+          "y": "c",
+          "gia_tri": 2250,
+          "don_vi": "V"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cường độ điện trường E",
+          "bieu_thuc": "1500/3.0e-3",
+          "ky_vong": 500000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "lực điện F",
+          "bieu_thuc": "2.0e-13*(1500/3.0e-3)",
+          "ky_vong": 1e-7,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tỉ số F/P",
+          "bieu_thuc": "2.0e-13*(1500/3.0e-3)/(1.0e-10*9.8)",
+          "ky_vong": 102,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "gia tốc a",
+          "bieu_thuc": "2.0e-13*(1500/3.0e-3)/1.0e-10",
+          "ky_vong": 1000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ lệch tại mép ra y (m)",
+          "bieu_thuc": "0.5*1000*(0.020/20)**2",
+          "ky_vong": 0.0005,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tan alpha",
+          "bieu_thuc": "1000*(0.020/20)/20",
+          "ky_vong": 0.05,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "điểm chạm lon Y (m)",
+          "bieu_thuc": "0.5*1000*(0.020/20)**2 + 0.030*1000*(0.020/20)/20",
+          "ky_vong": 0.002,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Y theo mẹo trung điểm (m)",
+          "bieu_thuc": "(0.020/2 + 0.030)*0.05",
+          "ky_vong": 0.002,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "hiệu điện thế mới U'",
+          "bieu_thuc": "1500*3.0/2.0",
+          "ky_vong": 2250,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ lệch tại mép ra với U' (m)",
+          "bieu_thuc": "0.5*(2.0e-13*(2250/3.0e-3)/1.0e-10)*(0.020/20)**2",
+          "ky_vong": 0.00075,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề đời sống (máy in phun, ống tia, màn hình) có màn đặt cách mép bản một đoạn D, hoặc hỏi ngược U để chạm điểm cho trước → làm như Dạng 3, thêm v_y, tanα, Y = y + D·tanα, rồi dùng Y tỉ lệ với U.",
+      "bay_thuong_gap": [
+        "Cho giọt tiếp tục cong sau khi ra khỏi bản.",
+        "Quên cộng phần lệch trong khe y vào D·tanα.",
+        "Không kiểm tra bỏ qua trọng lực khi hạt là giọt mực (khối lượng lớn hơn nhiều so với electron).",
+        "Làm ngược ra U mà không kiểm tra giọt có chạm bản ở U mới.",
+        "Lấy chiều lệch xuống vì nghĩ lực cùng chiều đường sức."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khối lượng và điện tích giọt mực chọn theo cỡ giọt khoảng 60 µm và điện tích cỡ trăm fC; chỉ là cỡ độ lớn hợp lí, không phải số liệu của một máy cụ thể.",
+        "Trọng lực vẫn tác dụng trên đoạn bay D ngoài khe; bỏ qua gây sai khoảng 1 %, chấp nhận được theo điều kiện trong bài.",
+        "Công thức Y = y + D·tanα có trong phần thử thách của bài, không nằm trong mục kiến thức chính."
+      ],
+      "mo_phong_goi_y": "Đầu in bên trái bắn một dòng giọt mực nhỏ ghi 'q < 0' bay ngang vào giữa hai bản nằm ngang (bản trên '+', bản dưới '−'). Trong khe giọt vẽ vết cong nhẹ; ra khỏi mép phải vết thành đường thẳng xiên tới đáy lon đặt thẳng đứng bên phải. Đường nét đứt biểu diễn đường bay ban đầu. Có thanh trượt U: tăng U thì điểm chạm trên lon dịch xa đường nét đứt (không hiện số). Một mũi tên nhỏ P = mg rất ngắn cạnh mũi tên F dài. Nhãn: '+', '−', $\\vec v_0$, $\\vec E$, $\\vec F$, $m\\vec g$, L = 2,0 cm, d = 3,0 mm, D = 3,0 cm, y, α, Y, U."
+    }
+  ]
+}

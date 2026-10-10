@@ -1,0 +1,198 @@
+{
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: chiếc loa bé xíu vẫn hát được",
+      "trich_nguyen_van": "Dây dẫn mang dòng điện đặt trong từ trường thì bị đẩy.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cứ dây có dòng điện nằm trong từ trường là bị đẩy, nên ở ô Dự đoán ngay bên dưới em dễ chọn A. Câu mở bài này khẳng định đúng điều mà ô Dự đoán muốn bác bỏ.",
+      "de_xuat": "Đổi thành 'thường bị đẩy (nhưng không phải lúc nào cũng vậy)' để câu mở bài không mâu thuẫn với đáp án của ô Dự đoán."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "I. Mở bài: chiếc loa bé xíu vẫn hát được",
+      "trich_nguyen_van": "công thức có thừa số $\\sin\\alpha$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi nhắc tới 'công thức' và góc α, nhưng mục 2 mới giới thiệu F = BIl·sinα. Em chưa biết công thức nào nên không hiểu vì sao mình sai.",
+      "de_xuat": "Trong phản hồi của ô Dự đoán, viết rõ 'công thức F = BIl·sinα (học ở mục 2)' hoặc chỉ giải thích bằng thí nghiệm."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "I. Mở bài: chiếc loa bé xíu vẫn hát được",
+      "trich_nguyen_van": "B hướng xuống, F vuông góc và hướng vào mặt phẳng hình vẽ (⊗).",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích Hình 1 không nói chiều dòng I, nên em không tự kiểm tra được chiều F bằng bàn tay trái.",
+      "de_xuat": "Bổ sung chiều I trong chú thích Hình 1, ví dụ 'I chạy từ trái sang phải'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Độ lớn lực từ — biểu thức của định luật Ampe",
+      "trich_nguyen_van": "$B$ — cảm ứng từ (T)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "B và đơn vị tesla được dùng để tính bảng số liệu, nhưng mục 3 mới định nghĩa cảm ứng từ. Em dùng như một con số mà không biết nó là gì.",
+      "de_xuat": "Thêm nửa câu 'B là cảm ứng từ, đặc trưng độ mạnh của từ trường, định nghĩa kĩ ở mục 3'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Độ lớn lực từ — biểu thức của định luật Ampe",
+      "trich_nguyen_van": "lấy $l = 1$ m (B) — quên đổi cm sang m, lệch một bậc 10",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Quên đổi cm thì em thay l = 10 và ra 1 N, không phải 0,1 N, nên em không hiểu vì sao B là lỗi quên đổi. Thực ra 0,1 N = B·I, tức là quên nhân l. 0,005 N = B·l, tức là quên nhân I. Cách giải thích 'đọc nhầm 20 cm / 5 cm' cho A và C nghe vô lí.",
+      "de_xuat": "Sửa phản hồi thành: B = B·I (quên nhân l), C = B·l (quên nhân I). Nếu muốn bẫy lỗi quên đổi đơn vị thì thêm phương án 1 N."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Cảm ứng từ",
+      "trich_nguyen_van": "$B = F/(I\\,l\\,\\sin\\alpha)$; đơn vị tesla (T)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Nhìn công thức, em nghĩ B thay đổi khi I thay đổi. Phương án D của Câu 3 đòi em biết B không phụ thuộc dòng thử, nhưng điều này chỉ nói ở phản hồi và ở Bẫy 3 phía sau.",
+      "de_xuat": "Thêm một gạch đầu dòng trước Câu 3: 'B có sẵn tại điểm đó; đổi I thì F đổi theo, còn tỉ số F/(Il sinα) giữ nguyên', dẫn chứng bằng cột B trong bảng thí nghiệm."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Lực từ tác dụng lên khung dây — ngẫu lực từ",
+      "trich_nguyen_van": "$\\alpha$ là góc giữa $\\vec{B}$ và pháp tuyến khung",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Cùng ký hiệu α, nhưng ở công thức F là góc giữa dây và B, còn ở công thức M là góc giữa B và pháp tuyến. 'Pháp tuyến' cũng chưa được giải thích. Em dễ lấy nhầm góc, như ở Câu 7 lấy sin60° thay cho sin30°.",
+      "de_xuat": "Dùng ký hiệu khác (ví dụ θ) cho góc của khung và giải thích 'pháp tuyến là đường vuông góc với mặt khung', kèm hình."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Lực từ tác dụng lên khung dây — ngẫu lực từ",
+      "trich_nguyen_van": "không đẩy cả khung đi",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài khẳng định khung không bị đẩy đi nhưng không nêu lí do. Đáp án A của Câu 4 ('hợp lực bằng 0 nhưng mômen khác 0') chỉ xuất hiện trong phản hồi. Bài cũng không nối việc 'khung dừng' với chỗ sinα = 0 nên M = 0.",
+      "de_xuat": "Thêm câu: 'Hai lực ngược chiều nên hợp lực bằng 0, nhưng khác giá nên mômen khác 0; khi mặt khung vuông góc đường sức thì α = 0, M = 0, khung dừng'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Từ trường của dòng điện: một công thức chung cho ba dạng",
+      "trich_nguyen_van": "$B$ tỉ lệ thuận với $I$ ở cả ba dạng",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 5 nói B tỉ lệ thuận với I, nhưng Bẫy 3 lại nói tăng dòng thì B không đổi. Em không phân biệt được dòng tạo ra từ trường với dòng thử đặt vào, nên Câu 6 dễ chọn A (0,2 T).",
+      "de_xuat": "Ghi rõ 'I ở đây là dòng tạo ra từ trường, khác với dòng thử ở mục 3', và nhắc lại sự phân biệt này ngay ở Bẫy 3."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Từ trường của dòng điện: một công thức chung cho ba dạng",
+      "trich_nguyen_van": "Cả ba dạng dòng điện đều có chung một khung công thức",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục 5–8 và Câu 5 tính B của dây thẳng, vòng dây, ống dây. Phần này nằm ngoài danh mục yêu cầu của bài (chỉ gồm lực từ, cảm ứng từ, khung dây), làm bài dài thêm nhiều và đặt thêm công thức mới giữa hai phần chính.",
+      "de_xuat": "Rút mục 5–8 về phạm vi 'chiều đường sức theo quy tắc nắm tay phải', chuyển các công thức tính B và Câu 5 sang bài khác hoặc phần đọc thêm."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "8. Ống dây dài",
+      "trich_nguyen_van": "$n = N/l$ là số vòng trên mỗi mét chiều dài",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ l ở đây là chiều dài ống, còn l trong F = BIl là chiều dài đoạn dây. N cũng vừa là số vòng khung, vừa là số vòng ống. Em dễ thay nhầm số giữa các công thức.",
+      "de_xuat": "Ghi chú ngay cạnh công thức: 'l ở đây là chiều dài ống dây, không phải chiều dài đoạn dây trong F = BIl'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "8. Ống dây dài",
+      "trich_nguyen_van": "nền từ trường Trái Đất khoảng $30\\ \\mu\\text{T}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 3 ghi từ trường Trái Đất là 5·10⁻⁵ T (50 μT), ở đây lại là 30 μT. Em tưởng một trong hai chỗ ghi sai.",
+      "de_xuat": "Ghi rõ '30 μT là thành phần nằm ngang của từ trường Trái Đất, thành phần làm kim la bàn quay'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "8. Ống dây dài",
+      "trich_nguyen_van": "$n = 500$ vòng/m, $I = 2$ A → $B \\approx 1,3\\cdot10^{-3}$ T",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ví dụ cho thẳng kết quả, không có bước tính lũy thừa 10. Đến Câu 5, em lúng túng giữa 12,6·10⁻⁴, 12,6·10⁻³ và 1,26·10⁻³.",
+      "de_xuat": "Viết bước trung gian: 4π·10⁻⁷ × 1000 = 12,6·10⁻⁴ = 1,26·10⁻³ T."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Bẫy 2: lẫn quy tắc bàn tay trái với quy tắc nắm tay phải",
+      "trich_nguyen_van": "Ngón cái dọc dây chỉ chiều $I$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Cột 'Bàn tay phải' dòng này nói ngón cái chỉ I, dòng dưới lại nói ngón cái chỉ B, mà không ghi dòng nào cho dây thẳng, dòng nào cho ống dây. Em thấy mâu thuẫn và nhớ lẫn hai cách dùng.",
+      "de_xuat": "Tách cột bàn tay phải thành hai ô có nhãn: 'Dây thẳng: ngón cái theo I, bốn ngón khum chỉ B' và 'Vòng/ống dây: bốn ngón theo I, ngón cái chỉ B'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ dây nằm trọn trong từ trường thì bị đẩy mạnh nhất; câu mở bài 'thì bị đẩy' càng củng cố ý này.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đừng đoán theo cảm giác \"nằm trong từ trường là bị đẩy mạnh\""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lẫn với lực điện cùng phương điện trường, hoặc kim nam châm nằm dọc đường sức, nên cho rằng lực từ cũng dọc đường sức.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "vuông góc đoạn dây và vuông góc đường sức từ"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ nhân B·I = 0,1 rồi bỏ sót l (hoặc coi l = 1); lỗi này khác với lỗi quên đổi đơn vị.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhầm hai phương án gần giống nhau; nhớ quy ước bên ngoài nam châm 'ra Bắc vào Nam' nên đảo chiều Nam→Bắc của nam châm thử.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "từ cực Nam sang cực Bắc của nam châm thử"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhớ 'ngẫu lực = hai lực bằng nhau' nhưng lẫn 'cùng chiều' với 'ngược chiều'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "cùng độ lớn, ngược chiều, không cùng giá"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính 4π·10⁻⁷·10³ = 12,6·10⁻⁴ rồi chép nhầm lũy thừa thành 12,6·10⁻³.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp dụng 'B tỉ lệ thuận với I' của mục 5 (dòng tạo ra từ trường) cho dòng thử.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tăng dòng thử thì $B$ không đổi"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lẫn với góc so với pháp tuyến ở công thức mômen khung, nên lấy sin60° thay cho sin30°.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "dùng $\\sin\\alpha$, không dùng $\\cos\\alpha$"
+    },
+    {
+      "cau": "dien_buoc",
+      "dap_an_sai_hap_dan": "5·10⁻⁴ T",
+      "loi_tu_duy": "Thay thẳng l = 25 mà không đổi ra mét.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nếu em ra $5\\cdot10^{-4}$ T ($0,0005$ T) thì đã quên đổi $25$ cm thành mét"
+    }
+  ]
+}

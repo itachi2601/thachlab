@@ -1,0 +1,139 @@
+{
+  "bai": "l12-phuong-trinh-trang-thai",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ tên \"phương trình Clapeyron\" ở mục 1 và Trả bài 1, thay bằng câu phân biệt với $pV = nRT$ (một trạng thái, cần số mol); cắt câu mẹo nhớ để bù chữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 1 ghi rõ lập tỉ số chỉ cần cùng đơn vị hai vế, mục 4 thêm câu dùng R = 8,31 thì bắt buộc Pa và m³."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước đổi 40 cm³ = 40.10⁻⁶ m³ trước câu c trong lời giải, giải thích vì sao câu a, b không cần đổi."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu m và M cùng đơn vị và một ví dụ 32 g O₂ trong details (≈ 24,9 lít), không thêm quiz mới để giữ số câu."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách tiêu chuẩn/chuẩn thành hai dòng, in đậm chữ khác nhau, kèm 1 atm ≈ 1,013.10⁵ Pa và 1 bar = 10⁵ Pa."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi tiêu đề details thành \"đo thật thì vì sao cột p/T sẽ không bằng nhau tuyệt đối?\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phép suy qua trạng thái trung gian 1' (đẳng nhiệt rồi đẳng áp) trong details, mỗi bước một dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu 5 ghi rõ \"trạng thái trước khi xả khí và trạng thái sau khi phơi nắng\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách dòng Đọc đề: \"kín\" → lượng khí không đổi, chỉ khi thể tích không đổi mới dùng p/T; sửa luôn phản hồi Câu 0 cho nhất quán."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm (1 bar = 10⁵ Pa) ngay sau số đọc kim đồng hồ ở mở bài."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ nguyên Câu 7 (không thay quiz nguyên câu), chỉ đổi tiêu đề cho đúng nội dung và đổi thử thách ⭐ sang bài đẳng áp mới."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề sửa thành \"Khí trong bình nóng tới nhiệt độ nào thì van mở?\" và rút gọn kết luận thành từng dòng."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ T (K) = t (°C) + 273 ngay ở dòng đơn vị mục 1."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngay ở mục 2: hằng số p/T khác hằng số pV/T ở mục 1 vốn chỉ phụ thuộc lượng khí."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 0 đã nhấn lỗi lấy tỉ số Celsius, không cần thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói rõ điều kiện T không đổi của Boyle, bỏ qua."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đích danh lỗi 87/27 của phương án A, bỏ qua."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn V không đổi thì triệt tiêu, bỏ qua."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã in đậm 0 °C là 273 K chứ không phải 0 K, bỏ qua."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lượng khí đổi, chỗ mơ hồ của đề đã sửa theo c8."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã cảnh báo \"dốc là to\" và cách đọc theo cột, bỏ qua."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ lỗi 47/27 của phương án A, bỏ qua."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: bỏ cách gọi \"phương trình Clapeyron\" cho p1V1/T1 = p2V2/T2 (cả ở Trả bài 1), thêm câu phân biệt với pV = nRT.",
+      "Mục 1: thêm T (K) = t (°C) + 273 và quy tắc đơn vị p, V khi lập tỉ số hai trạng thái.",
+      "Mục 1 (details): thêm phép suy phương trình trạng thái qua trạng thái trung gian 1' (đẳng nhiệt p1V1 = p2V', đẳng áp V'/T1 = V2/T2).",
+      "Mục 2: bỏ dòng ví dụ (bóng đèn, bình gas, lốp xe) vì lặp mục VI, thêm câu phân biệt hằng số p/T với pV/T.",
+      "Mục 4: thêm điều kiện R = 8,31 thì p (Pa), V (m³) và m, M cùng đơn vị, thêm 1 atm ≈ 1,013.10⁵ Pa và 1 bar = 10⁵ Pa.",
+      "Mục 4 (details mới): ví dụ 32 g O₂ ở 27 °C, 1,0.10⁵ Pa → n = 1 mol, V ≈ 2,49.10⁻² m³ ≈ 24,9 lít.",
+      "Bài mẫu câu c: thêm bước đổi V2 = 40 cm³ = 40.10⁻⁶ m³ (kết quả n ≈ 8,0.10⁻³ mol giữ nguyên).",
+      "Thử thách ⭐: đổi sang bài đẳng áp 3,0 lít, 27 °C → 127 °C, đáp số V2 = 4,0 lít.",
+      "Thử thách ⭐⭐⭐: đề hỏi nhiệt độ của khí trong bình (127 °C), kết luận rút gọn.",
+      "Câu 5: đề ghi rõ trạng thái trước khi xả khí và sau khi phơi nắng.",
+      "Mở bài: thêm 1 bar = 10⁵ Pa."
+    ],
+    "so_tu_them": 55,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-phuong-trinh-trang-thai/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

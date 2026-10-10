@@ -1,0 +1,169 @@
+{
+  "bai": "l12-thuc-hanh-nhiet",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: mục 1 không có câu này."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện \"Cùng $P$ và $m$\" trước câu so độ dài đoạn ngang."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết $c = P\\Delta\\tau/(m\\Delta t) = P/(mk)$ và giải thích $\\Delta\\tau$, bỏ phần đơn vị trùng với bảng để bù chữ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ đoạn ngang thứ nhất/thứ hai \"kéo dài $\\tau_1$\"/\"kéo dài $\\tau_2$\" ngay trong bảng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Bảng ghi thời lượng của từng giai đoạn\" và đổi tiêu đề cột thành \"Thời lượng (s)\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngay tại Rút ra: nước nhận ít hơn $P\\tau$ nên $\\Delta t$ nhỏ đi và $c$ tính ra lớn hơn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất cách viết × 10³, ghi 4,22 là cách 1 (từng mốc) và 4,21 là cách 2 (độ dốc)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 3 ghi rõ là số đo của một nhóm khác, không phải bảng trên, số liệu và đáp án giữ nguyên."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 4 lập luận bằng việc bảng là số lí tưởng không mất nhiệt và thêm câu bác phương án A."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thành $\\lambda = P\\tau_1/m$ (đoạn ngang khi tan) và $L = P\\tau_2/m$ (đoạn ngang khi sôi), mỗi công thức một dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu nói rõ $2{,}27 \\times 10^6$ trùng tra bảng chỉ là ngẫu nhiên, vì đổi số liệu sẽ vượt mức sửa 2 câu."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm $m_2 = 0{,}100$ kg và $m = m_1 - m_2$ vào bảng dữ liệu."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước c) trong lời giải với hai nguyên nhân: mất nhiệt làm $L$ lớn hơn, nước bắn ra làm $L$ nhỏ hơn."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay ví dụ $8{,}35 \\times 10^5$ không rõ nguồn bằng lỗi cụ thể: để gam thì ra $3{,}34 \\times 10^2$."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề nói rõ số liệu lí tưởng và hỏi vì sao khi đo thật kết quả thường lớn hơn."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"thực nghiệm… độc lập\" thành \"minh hoạ\", nói rõ hai bộ số cùng tính từ giá trị tra bảng và khác giai đoạn."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ở mục 4: tra bảng $c$ nước khoảng 4 180–4 190 tuỳ nguồn, bài tập làm tròn 4 200."
+      },
+      {
+        "id": "c18",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: mục 2 không có câu này."
+      },
+      {
+        "id": "c19",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"sôi ở 100 °C nên $\\Delta t = 80$ K\" và bước $\\tau = 504\\ 000/1\\ 500 = 336$ s."
+      },
+      {
+        "id": "c20",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích ở mục 3 rằng làm nóng bình khiến nước nhận ít hơn $P\\tau$, và đổi \"nóng bình\" thành \"làm nóng bình\" ở Trả bài 6."
+      },
+      {
+        "id": "c21",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ oát kế có tích hợp đo thời gian (đúng bộ dụng cụ sách KNTT), bỏ câu lặp ý dòng 🔑 để bù chữ."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi sai nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ rõ $Q = mc$ thiếu $\\Delta t$ nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu thứ tự nóng chảy → sôi nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích từng phương án sai nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn và vừa làm chặt thêm qua c9 nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi và mục Bẫy 3 đã nhấn $\\Delta t$ là khoảng nhiệt độ nên không thêm dòng ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1: oát kế ghi rõ có tích hợp đo thời gian, bỏ câu \"Không có dụng cụ nào đọc thẳng nhiệt lượng…\" vì lặp dòng 🔑.",
+      "II.2: thêm điều kiện cùng P và m khi so độ dài đoạn ngang, viết c = PΔτ/(mΔt) = P/(mk), bỏ phần đơn vị trùng với bảng.",
+      "II.2 bảng: τ₁, τ₂ được định nghĩa là độ dài (thời lượng) của đoạn ngang thứ nhất và thứ hai.",
+      "II.3: 4,22 × 10³ ghi rõ là trung bình cách 1, 4,21 × 10³ là theo độ dốc (cách 2).",
+      "II.3: thêm giải thích mất nhiệt và làm nóng bình → Δt nhỏ đi → c cao hơn, bỏ câu \"Hai cách tính phải cho kết quả gần nhau…\" (đã có ở Bẫy 2).",
+      "Câu 3: đề ghi là số đo của nhóm khác, số liệu và đáp án 3 750 J/(kg·K) không đổi.",
+      "II.4: bảng ghi thời lượng từng giai đoạn (cột đổi tên \"Thời lượng (s)\"), bỏ câu lặp số liệu với bước Làm.",
+      "II.4: thêm ghi chú tra bảng c nước 4 180–4 190 J/(kg·K) tuỳ nguồn, bài tập làm tròn 4 200.",
+      "Câu 4 phản hồi sai: lập luận theo số lí tưởng không mất nhiệt và thêm câu bác phương án A.",
+      "V bảng dữ liệu: thêm m₂ = 0,100 kg và m = m₁ − m₂ = 0,050 kg.",
+      "V lời giải: bỏ \"hơi thoát ra\" khỏi nguyên nhân, thêm bước c) gồm mất nhiệt/làm nóng bình → L lớn hơn và nước bắn ra → L nhỏ hơn.",
+      "V lời giải: ghi chú 2,27 × 10⁶ (chia cho m₁) trùng tra bảng chỉ là ngẫu nhiên.",
+      "Thử sức: đề ghi rõ số liệu lí tưởng, ví dụ sai đổi từ 8,35 × 10⁵ thành 3,34 × 10² (để gam, 133 600/400).",
+      "⭐⭐: thêm Δt = 80 K (sôi ở 100 °C) và τ = 504 000/1 500 = 336 s, kết quả không đổi.",
+      "Thách đấu, phần kiểm tra chéo: \"thực nghiệm/độc lập\" đổi thành \"minh hoạ\", nói rõ hai bộ số cùng từ tra bảng và khác giai đoạn (74% và 75%).",
+      "Mang về: tách λ = Pτ₁/m và L = Pτ₂/m, kèm đơn vị, mỗi công thức một dòng."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-thuc-hanh-nhiet/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

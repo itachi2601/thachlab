@@ -1,0 +1,218 @@
+{
+  "bai": "Bài 15. Năng lượng liên kết hạt nhân",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: khối sắt nặng bất thường",
+      "trich_nguyen_van": "hai prôtôn đẩy nhau, nhưng lực hạt nhân hút mọi cặp nuclôn mạnh hơn hẳn nên hạt nhân vẫn đứng vững",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích Hình 1 nằm ngay trên Câu 1 \"Dự đoán trước khi học\" và đã chứa nguyên văn đáp án A. Em chỉ chép lại, không thật sự dự đoán, nên nút Chắc/Không chắc mất tác dụng.",
+      "de_xuat": "Chỉ giữ vế \"hai prôtôn đẩy nhau\" trong chú thích Hình 1, đưa vế giải thích xuống phần phản hồi của Câu 1."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Đo khối lượng hạt nhân — chỗ phát hiện độ hụt khối",
+      "trich_nguyen_van": "A. Độ hụt khối — phần khối lượng đã chuyển thành năng lượng liên kết",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Lúc gặp Câu 3, em chưa học \"năng lượng liên kết\" (mục 4) và chưa học E = mc² (mục 3). Em chọn A chỉ vì thấy chữ \"độ hụt khối\" vừa xuất hiện, chứ không hiểu khối lượng chuyển thành năng lượng thế nào.",
+      "de_xuat": "Chuyển Câu 3 xuống sau mục 4, hoặc rút phương án A còn \"Độ hụt khối — hiệu ứng thật, không phải sai số\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Khối lượng và năng lượng — hệ thức Einstein",
+      "trich_nguyen_van": "khối lượng nhỏ ứng với năng lượng khổng lồ: 1 u = 931,5 MeV",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 2 và đề bài mẫu viết 931,5 MeV/c², còn ở đây viết 931,5 MeV (thiếu /c²). Em không biết hai cách viết là một hay khác nhau, nên không chắc khi nào phải nhân thêm c².",
+      "de_xuat": "Viết thống nhất \"1 u ứng với 931,5 MeV (tức 1 u·c² = 931,5 MeV)\" như ở Trả bài 6."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bẫy 1: \"hạt nhân nhẹ hơn thì khối lượng đã mất đi\"",
+      "trich_nguyen_van": "Muốn ra jun thì phải nhân c²",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là cứ có Δm (đơn vị u) thì nhân c². Em có thể nhân 931,5 rồi nhân tiếp 9·10¹⁶, hoặc nhân thẳng Δm theo u với c². Câu này mâu thuẫn với Trả bài 6: \"931,5 MeV/u đã chứa sẵn c²\".",
+      "de_xuat": "Sửa thành \"Đổi Δm sang kg rồi nhân c² để ra J, hoặc nhân Δm (u) với 931,5 để ra MeV — không nhân c² hai lần\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Độ bền vững của hạt nhân — đọc đường cong",
+      "trich_nguyen_van": "Ba phép tính theo đúng thứ tự: nhân độ hụt khối với 931,5 ra E_lk; lấy E_lk chia số khối ra E_lkr.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu nói \"ba phép tính\" nhưng chỉ liệt kê hai. Em sẽ đi tìm phép tính thứ ba (có thể là cộng Zm_e?) mà không thấy.",
+      "de_xuat": "Sửa thành \"Hai phép tính\", hoặc thêm bước đầu \"tính Δm từ tổng hạt rời\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Độ bền vững của hạt nhân — đọc đường cong",
+      "trich_nguyen_van": "Hệ quả: hạt nhân rất nhẹ hợp lại, rất nặng vỡ ra — cả hai đều toả năng lượng.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài nói \"Hệ quả\" nhưng không chỉ ra vì sao E_lkr tăng thì toả năng lượng. Em chỉ học thuộc \"hai đầu đều toả\" mà không biết suy luận. Lời giải thích chỉ xuất hiện ở tận phần Thách đấu ⭐⭐⭐.",
+      "de_xuat": "Thêm một câu: \"Sau phản ứng E_lkr lớn hơn, số nuclôn không đổi nên tổng E_lk lớn hơn; phần chênh lệch toả ra\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "5. Độ bền vững của hạt nhân — đọc đường cong",
+      "trich_nguyen_van": "Cùng số nuclôn nên không cần thêm dữ kiện (D).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là phải cùng số nuclôn thì mới so E_lkr được. Sang Câu 7 (U-235 và Fe-56 khác số khối), em dễ chọn C \"Không so được\". Ngoài ra phản hồi không nhắc đến lỗi ở phương án B.",
+      "de_xuat": "Sửa thành \"E_lkr so được cho mọi hạt nhân, không cần thêm dữ kiện (D); cùng số nuclôn không có nghĩa là bền như nhau (B)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Độ hụt khối, năng lượng liên kết và năng lượng liên kết riêng",
+      "trich_nguyen_van": "C — chia cho 26 prôtôn thay vì cả 56 nuclôn.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề Câu 4 không cho Z và không nói đây là sắt. Em không hiểu số 26 ở đâu ra, nên lời giải thích lỗi C khó theo dõi.",
+      "de_xuat": "Ghi rõ hạt nhân trong đề, ví dụ \"Hạt nhân ⁵⁶₂₆Fe có năng lượng liên kết 492 MeV\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Độ hụt khối, năng lượng liên kết và năng lượng liên kết riêng",
+      "trich_nguyen_van": "D. 8,79 MeV/nuclôn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ riêng D viết \"MeV/nuclôn\", ba phương án còn lại đều viết \"MeV cho mỗi nuclôn\". Em có thể đoán đáp án nhờ hình thức khác biệt chứ không nhờ tính toán.",
+      "de_xuat": "Viết bốn phương án cùng một kiểu đơn vị."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "6. Vì sao năng lượng hạt nhân lớn hơn năng lượng hoá học",
+      "trich_nguyen_van": "Năng lượng liên kết tính cho một nuclôn cỡ vài MeV — hơn cả triệu lần: tổng hợp 1 nguyên tử heli-4 toả 28,3 MeV",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu đầu so theo mỗi nuclôn, ví dụ ngay sau lại so theo cả nguyên tử heli (28,3 MeV / 8 eV ≈ 3,5 triệu). Hình 4 thì ghi \"ba triệu lần\". Em không biết nên so theo đơn vị nào và tỉ lệ đúng là bao nhiêu.",
+      "de_xuat": "Chọn một cơ sở so sánh, ví dụ \"một phản ứng tạo He-4 toả 28,3 MeV, gấp khoảng 3,5 triệu lần 8 eV của một phân tử\", và sửa Hình 4 cho khớp."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "6. Vì sao năng lượng hạt nhân lớn hơn năng lượng hoá học",
+      "trich_nguyen_van": "E = 1,5·10²³ × 28,3 MeV × 1,6·10⁻¹³ ≈ 6,8·10¹¹ J",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không biết 1,6·10⁻¹³ là gì, vì bài chưa từng nói 1 MeV = 1,6·10⁻¹³ J. Ở bước trước, phép chia 1/4 cũng ngầm dùng khối lượng mol 4 g/mol mà không ghi ra.",
+      "de_xuat": "Ghi rõ \"N = (1 g / 4 g/mol) × 6,02·10²³\" và \"đổi 1 MeV = 1,6·10⁻¹³ J\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "6. Vì sao năng lượng hạt nhân lớn hơn năng lượng hoá học",
+      "trich_nguyen_van": "cỡ năng lượng đốt hơn hai chục tấn than (khoảng 2,3·10⁴ kg)",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Con số 2,3·10⁴ kg than xuất hiện mà không có năng suất toả nhiệt của than. Em không kiểm tra lại được.",
+      "de_xuat": "Thêm \"(than toả khoảng 2,9·10⁷ J/kg nên 6,8·10¹¹ / 2,9·10⁷ ≈ 2,3·10⁴ kg)\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "Bẫy 1: \"hạt nhân nhẹ hơn thì khối lượng đã mất đi\"",
+      "trich_nguyen_van": "cùng một lượng khối lượng, nay tồn tại dưới dạng năng lượng liên kết",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Cùng một phản hồi vừa nói các nuclôn \"đã toả ra\" 18,6 MeV, vừa nói phần này \"nay tồn tại\" dưới dạng năng lượng liên kết. Em không rõ năng lượng đó đã thoát ra ngoài hay vẫn nằm trong hạt nhân.",
+      "de_xuat": "Nói rõ \"phần năng lượng ứng với Δm đã toả ra ngoài khi hạt nhân hình thành; muốn tách hạt nhân phải cấp lại đúng lượng đó\"."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: năng lượng liên kết của heli-4",
+      "trich_nguyen_van": "Cũng dạng bài đó với đơteri ²₁H, biết m_H = 2,014102 u.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đề không nói m_H là khối lượng nguyên tử. Theo mẹo \"thấy khối lượng nguyên tử thì cộng Zm_e\", em sẽ không cộng m_e và tính ra tổng 2,015941 u. Kết quả này lệch với Bước 1 (2,016490 u) mà em không hiểu vì sao.",
+      "de_xuat": "Sửa đề thành \"biết khối lượng nguyên tử m_H = 2,014102 u\" và ghi Bước 1 là \"m_p + m_n + m_e = 2,016490 u\"."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "V. Bài toán mẫu: năng lượng liên kết của heli-4",
+      "trich_nguyen_van": "có khối lượng giảm đi 0,018883 u. Năng lượng toả ra là",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ dạy năng lượng liên kết của một hạt nhân, chưa dạy năng lượng toả ra của một phản ứng. Em không chắc độ giảm khối lượng của cả phản ứng có được nhân 931,5 giống Δm hay không.",
+      "de_xuat": "Thêm một dòng trước Câu 8: \"Phản ứng hạt nhân có tổng khối lượng giảm Δm thì toả năng lượng Δm × 931,5 MeV cho mỗi phản ứng\"."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "nằm sâu hơn về phía đáy \"giếng năng lượng\", nên phần chênh lệch thoát ra ngoài",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa từng giải thích \"giếng năng lượng\". Em không hình dung được \"đáy giếng\" là gì.",
+      "de_xuat": "Bỏ hình ảnh giếng, chỉ giữ ý \"tổng E_lk sau lớn hơn nên hệ đã toả phần chênh lệch\"."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "1. Lực hạt nhân — thứ keo dính giữ hạt nhân",
+      "trich_nguyen_van": "lồng thêm một đai nhựa siết chặt cả hai vòng",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đai nhựa là vật bó từ bên ngoài. Em dễ hình dung lực hạt nhân như một lớp vỏ bọc quanh hạt nhân, chứ không phải lực hút giữa từng cặp nuclôn đứng sát nhau.",
+      "de_xuat": "Thêm một câu ở bước Rút ra: \"khác với đai bó ngoài, lực hạt nhân hút trực tiếp giữa từng cặp nuclôn ở sát nhau\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ điện tích prôtôn rất nhỏ nên lực đẩy yếu. Em quên rằng khoảng cách 10⁻¹⁵ m cực nhỏ làm lực Coulomb rất lớn.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đảo vai trò hút/đẩy: nghĩ lực hạt nhân là lực đẩy cân bằng với lực tĩnh điện, không để ý prôtôn đẩy chứ không hút nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lực hạt nhân là lực hút giữa các nuclôn; không phải lực tĩnh điện, cũng không phải lực hấp dẫn."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy bảng có dòng 2 êlectron nên nghĩ phần chênh lệch là khối lượng êlectron. Em quên rằng khối lượng nguyên tử đã gồm cả êlectron.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "đo khối lượng nguyên tử (gồm cả êlectron) bằng phổ kế khối lượng rồi suy ra"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Mọi phương án đều ghi \"cho mỗi nuclôn\", nên em lấy luôn E_lk = 492 MeV làm E_lkr mà quên chia cho A.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Năng lượng liên kết riêng là năng lượng cho một nuclôn: E_lkr = E_lk/A"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ độ bền chỉ phụ thuộc số nuclôn nên cùng A thì bền như nhau, bỏ qua giá trị E_lkr khác nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "càng lớn thì hạt nhân càng bền vững"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Hiểu \"hụt khối\" theo nghĩa đen là khối lượng biến mất, không gắn với năng lượng toả ra theo E = Δmc².",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Khối lượng không mất; nó chuyển thành năng lượng liên kết theo E = Δm c²."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "B và D cùng kết luận \"Sắt bền hơn\". Em chọn theo kết luận đúng mà không kiểm tra lí do (hạt nhỏ hơn thì dễ giữ hơn).",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen phản xạ \"năng lượng tính cho mỗi nuclôn\" từ phần E_lkr. A và B cùng con số 17,6 MeV nên em không để ý chỗ khác nhau là \"mỗi nuclôn\" hay \"một phản ứng\".",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

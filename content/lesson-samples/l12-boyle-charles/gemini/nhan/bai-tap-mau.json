@@ -1,0 +1,432 @@
+{
+  "lesson_title": "Bài 6. Định luật Boyle. Định luật Charles",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Nén đẳng nhiệt, tìm áp suất mới",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Nhận ra quá trình đẳng nhiệt rồi thế số vào $p_1V_1 = p_2V_2$.",
+      "yccd_de_xuat": "Quá trình đẳng nhiệt và định luật Boyle",
+      "de_bai": "Một bơm xe đạp được bịt kín đầu ra. Trong thân bơm có $240\\ \\text{cm}^3$ không khí ở áp suất $1{,}0 \\cdot 10^5\\ \\text{Pa}$. Ấn cán bơm thật chậm cho thể tích khí còn $80\\ \\text{cm}^3$. Coi nhiệt độ khí không đổi và khí không lọt ra ngoài. Tính áp suất khí trong bơm lúc đó.",
+      "dieu_kien_ap_dung": "Khối lượng khí xác định (không lọt khí) và nhiệt độ không đổi (nén thật chậm) nên áp dụng được định luật Boyle.",
+      "phan_tich": [
+        {
+          "trich_de": "Trong thân bơm có $240\\ \\text{cm}^3$ không khí",
+          "du_lieu": "$V_1 = 240\\ \\text{cm}^3$",
+          "kien_thuc": "Thể tích trạng thái 1"
+        },
+        {
+          "trich_de": "ở áp suất $1{,}0 \\cdot 10^5\\ \\text{Pa}$",
+          "du_lieu": "$p_1 = 1{,}0 \\cdot 10^5\\ \\text{Pa}$",
+          "kien_thuc": "Áp suất trạng thái 1"
+        },
+        {
+          "trich_de": "thể tích khí còn $80\\ \\text{cm}^3$",
+          "du_lieu": "$V_2 = 80\\ \\text{cm}^3$",
+          "kien_thuc": "Thể tích trạng thái 2"
+        },
+        {
+          "trich_de": "Coi nhiệt độ khí không đổi",
+          "du_lieu": "$T$ không đổi",
+          "kien_thuc": "Quá trình đẳng nhiệt → định luật Boyle"
+        },
+        {
+          "trich_de": "Tính áp suất khí trong bơm lúc đó",
+          "du_lieu": "$p_2 = ?$",
+          "kien_thuc": "$p_2 = \\dfrac{p_1V_1}{V_2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p_2",
+        "cong_thuc": "p_2 = \\dfrac{p_1V_1}{V_2}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đẳng nhiệt: nhiệt độ của khối khí không đổi.",
+        "Định luật Boyle: $p$ tỉ lệ nghịch với $V$.",
+        "Hệ thức: $p_1V_1 = p_2V_2$.",
+        "Hai thể tích chỉ cần cùng một đơn vị."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Nhận dạng quá trình",
+          "cong_thuc_chu": "$T = \\text{hằng số} \\Rightarrow p_1V_1 = p_2V_2$",
+          "the_so": "Nén thật chậm, khí không lọt ra ngoài",
+          "ket_qua": "Quá trình đẳng nhiệt, dùng định luật Boyle",
+          "kiem_tra": "Đủ hai điều kiện: lượng khí xác định, nhiệt độ không đổi."
+        },
+        {
+          "tieu_de": "Tính áp suất mới",
+          "cong_thuc_chu": "$p_2 = \\dfrac{p_1V_1}{V_2}$",
+          "the_so": "$p_2 = \\dfrac{1{,}0 \\cdot 10^5 \\times 240}{80}$",
+          "ket_qua": "$p_2 = 3{,}0 \\cdot 10^5\\ \\text{Pa}$",
+          "kiem_tra": "$\\text{cm}^3$ triệt tiêu, còn Pa. Thể tích giảm 3 lần, áp suất tăng 3 lần: hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "p2",
+          "gia_tri": 300000,
+          "don_vi": "Pa"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "áp suất p2",
+          "bieu_thuc": "1.0e5*240/80",
+          "ky_vong": 300000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tích pV không đổi",
+          "bieu_thuc": "(1.0e5*240/80)*80 - 1.0e5*240",
+          "ky_vong": 0,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có \"nhiệt độ không đổi\" hoặc \"nén/dãn thật chậm\", cho ba trong bốn giá trị $p_1, V_1, p_2, V_2$ → dùng $p_1V_1 = p_2V_2$.",
+      "bay_thuong_gap": [
+        "Nghĩ thể tích giảm thì áp suất cũng giảm, ra $3{,}3 \\cdot 10^4$ Pa.",
+        "Nhầm đẳng nhiệt với đẳng tích, cho rằng thể tích không đổi.",
+        "Đổi thể tích sang $\\text{m}^3$ cho một trạng thái mà quên đổi trạng thái kia."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bơm xe thật có ma sát pittông và van. Đề đã cho bịt kín, nén chậm để bỏ qua các yếu tố này."
+      ],
+      "mo_phong_goi_y": "Hoạt hình thân bơm cắt dọc, đầu ra có nút bịt. Cán bơm đi xuống chậm, cột khí ngắn lại, các chấm phân tử dày dần. Áp kế gắn cạnh thân bơm có kim nhích lên nhưng không hiện số. Nhãn: $V_1 = 240\\ \\text{cm}^3$, $p_1$, $V_2 = 80\\ \\text{cm}^3$, $p_2 = ?$, \"$T$ không đổi\"."
+    },
+    {
+      "label": "Dạng 2 · Nung đẳng áp, phải đổi sang kenvin",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách của dạng 1: nhận dạng quá trình, viết hệ thức hai trạng thái rồi thế số. Thêm một độ khó mới: đề cho nhiệt độ bằng °C, phải đổi sang K trước khi lập tỉ số.",
+      "yccd_de_xuat": "Quá trình đẳng áp và định luật Charles",
+      "de_bai": "Một xilanh đặt thẳng đứng, miệng hướng lên, có pittông nhẹ trượt không ma sát. Phía trên pittông thông với khí trời nên áp suất khí trong xilanh luôn không đổi. Ban đầu khí chiếm $450\\ \\text{cm}^3$ ở $17\\ ^\\circ\\text{C}$. Đặt xilanh vào chậu nước nóng, đợi khí nóng đều tới $75\\ ^\\circ\\text{C}$. Tính thể tích khí lúc này.",
+      "dieu_kien_ap_dung": "Khối lượng khí xác định và áp suất không đổi (pittông tự do, thông khí trời) nên áp dụng được định luật Charles, với $T$ tính bằng kenvin.",
+      "phan_tich": [
+        {
+          "trich_de": "áp suất khí trong xilanh luôn không đổi",
+          "du_lieu": "$p$ không đổi",
+          "kien_thuc": "Quá trình đẳng áp → định luật Charles"
+        },
+        {
+          "trich_de": "khí chiếm $450\\ \\text{cm}^3$ ở $17\\ ^\\circ\\text{C}$",
+          "du_lieu": "$V_1 = 450\\ \\text{cm}^3$; $t_1 = 17\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Đổi $T_1 = t_1 + 273$"
+        },
+        {
+          "trich_de": "nóng đều tới $75\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_2 = 75\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Đổi $T_2 = t_2 + 273$"
+        },
+        {
+          "trich_de": "Tính thể tích khí lúc này",
+          "du_lieu": "$V_2 = ?$",
+          "kien_thuc": "$V_2 = V_1\\dfrac{T_2}{T_1}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "V_2",
+        "cong_thuc": "V_2 = V_1\\dfrac{T_2}{T_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đẳng áp: áp suất của khối khí không đổi.",
+        "Định luật Charles: $V$ tỉ lệ thuận với nhiệt độ tuyệt đối.",
+        "Hệ thức: $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$.",
+        "$T(\\text{K}) = t(^\\circ\\text{C}) + 273$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Nhận dạng quá trình",
+          "cong_thuc_chu": "$p = \\text{hằng số} \\Rightarrow \\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$",
+          "the_so": "Pittông tự do, thông khí trời",
+          "ket_qua": "Quá trình đẳng áp, dùng định luật Charles",
+          "kiem_tra": "Lượng khí xác định, áp suất không đổi."
+        },
+        {
+          "tieu_de": "Đổi nhiệt độ sang kenvin",
+          "cong_thuc_chu": "$T = t + 273$",
+          "the_so": "$T_1 = 17 + 273$; $T_2 = 75 + 273$",
+          "ket_qua": "$T_1 = 290\\ \\text{K}$; $T_2 = 348\\ \\text{K}$",
+          "kiem_tra": "$T_2 / T_1 = 1{,}2$: nhiệt độ tuyệt đối chỉ tăng 20%."
+        },
+        {
+          "tieu_de": "Tính thể tích mới",
+          "cong_thuc_chu": "$V_2 = V_1\\dfrac{T_2}{T_1}$",
+          "the_so": "$V_2 = 450 \\times \\dfrac{348}{290}$",
+          "ket_qua": "$V_2 = 540\\ \\text{cm}^3$",
+          "kiem_tra": "K triệt tiêu, còn $\\text{cm}^3$. Thể tích tăng 1,2 lần, khớp với $T$. Nếu lấy $75/17$ sẽ ra gần $1985\\ \\text{cm}^3$: vô lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "V2",
+          "gia_tri": 540,
+          "don_vi": "cm^3"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thể tích V2",
+          "bieu_thuc": "450*(75+273)/(17+273)",
+          "ky_vong": 540,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số T2/T1",
+          "bieu_thuc": "(75+273)/(17+273)",
+          "ky_vong": 1.2,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có \"áp suất không đổi\" (pittông tự do, ống hở thông khí trời), cho nhiệt độ bằng °C → đổi ra K rồi dùng $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$.",
+      "bay_thuong_gap": [
+        "Lập tỉ số bằng °C: $V_2 = 450 \\times \\dfrac{75}{17}$.",
+        "Đổi sang K cho một nhiệt độ mà quên nhiệt độ kia.",
+        "Dùng nhầm Boyle, cho $V$ tỉ lệ nghịch với $T$, ra thể tích giảm."
+      ],
+      "dieu_ban_khong_chac": [
+        "Pittông \"nhẹ\" vẫn có trọng lượng nhỏ. Áp suất khí lớn hơn áp suất khí quyển một lượng không đổi nên vẫn là đẳng áp."
+      ],
+      "mo_phong_goi_y": "Hoạt hình xilanh thẳng đứng nhúng dần vào chậu nước nóng. Nhiệt kế trong nước nhích từ 17 °C lên 75 °C. Pittông nâng lên chậm, các chấm phân tử chuyển động nhanh dần. Mũi tên khí trời phía trên pittông giữ nguyên độ dài. Nhãn: $V_1 = 450\\ \\text{cm}^3$, $t_1 = 17\\ ^\\circ\\text{C}$, $t_2 = 75\\ ^\\circ\\text{C}$, $V_2 = ?$, \"$p$ không đổi\"."
+    },
+    {
+      "label": "Dạng 3 · Chuỗi hai quá trình: đẳng nhiệt rồi đẳng áp",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại dạng 1 (Boyle) cho giai đoạn 1 và dạng 2 (Charles, đổi °C sang K) cho giai đoạn 2. Thêm một độ khó mới: nối hai quá trình, trạng thái cuối của giai đoạn 1 là trạng thái đầu của giai đoạn 2.",
+      "yccd_de_xuat": "Quá trình đẳng áp và định luật Charles",
+      "de_bai": "Trong phòng thí nghiệm, một xilanh kín có pittông chứa $3{,}0$ lít khí ở áp suất $1{,}0\\ \\text{atm}$ và nhiệt độ $27\\ ^\\circ\\text{C}$. Giai đoạn 1: đẩy pittông thật chậm, nhiệt độ khí không đổi, tới khi áp suất đạt $2{,}5\\ \\text{atm}$. Giai đoạn 2: giữ nguyên áp suất $2{,}5\\ \\text{atm}$ và nung nóng khí tới $177\\ ^\\circ\\text{C}$. Khí không bị rò. a) Tính thể tích khí sau giai đoạn 1. b) Tính thể tích khí sau giai đoạn 2.",
+      "dieu_kien_ap_dung": "Lượng khí xác định; giai đoạn 1 nhiệt độ không đổi (Boyle), giai đoạn 2 áp suất không đổi (Charles, $T$ bằng kenvin).",
+      "phan_tich": [
+        {
+          "trich_de": "chứa $3{,}0$ lít khí ở áp suất $1{,}0\\ \\text{atm}$",
+          "du_lieu": "$V_1 = 3{,}0$ lít; $p_1 = 1{,}0$ atm",
+          "kien_thuc": "Trạng thái 1"
+        },
+        {
+          "trich_de": "nhiệt độ $27\\ ^\\circ\\text{C}$",
+          "du_lieu": "$T_1 = 300\\ \\text{K}$",
+          "kien_thuc": "$T = t + 273$"
+        },
+        {
+          "trich_de": "nhiệt độ khí không đổi, tới khi áp suất đạt $2{,}5\\ \\text{atm}$",
+          "du_lieu": "$p_2 = 2{,}5$ atm; $T_2 = T_1$",
+          "kien_thuc": "Giai đoạn 1 đẳng nhiệt → Boyle"
+        },
+        {
+          "trich_de": "giữ nguyên áp suất $2{,}5\\ \\text{atm}$ và nung nóng khí tới $177\\ ^\\circ\\text{C}$",
+          "du_lieu": "$p_3 = p_2$; $t_3 = 177\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Giai đoạn 2 đẳng áp → Charles"
+        },
+        {
+          "trich_de": "Tính thể tích khí sau giai đoạn 2",
+          "du_lieu": "$V_3 = ?$",
+          "kien_thuc": "$V_3 = V_2\\dfrac{T_3}{T_2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "V_3",
+        "cong_thuc": "V_3 = \\dfrac{p_1V_1}{p_2} \\cdot \\dfrac{T_3}{T_2}"
+      },
+      "kien_thuc_goi_lai": [
+        "Mỗi giai đoạn giữ đúng một thông số không đổi.",
+        "Đẳng nhiệt: $p_1V_1 = p_2V_2$.",
+        "Đẳng áp: $\\dfrac{V_2}{T_2} = \\dfrac{V_3}{T_3}$.",
+        "Trạng thái cuối giai đoạn trước là trạng thái đầu giai đoạn sau."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Liệt kê ba trạng thái",
+          "cong_thuc_chu": "$(p_1, V_1, T_1) \\to (p_2, V_2, T_2) \\to (p_3, V_3, T_3)$",
+          "the_so": "$(1{,}0;\\ 3{,}0;\\ 300) \\to (2{,}5;\\ ?;\\ 300) \\to (2{,}5;\\ ?;\\ T_3)$",
+          "ket_qua": "1→2 đẳng nhiệt; 2→3 đẳng áp",
+          "kiem_tra": "Mỗi mũi tên chỉ giữ một thông số không đổi."
+        },
+        {
+          "tieu_de": "Giai đoạn 1 (Boyle)",
+          "cong_thuc_chu": "$V_2 = \\dfrac{p_1V_1}{p_2}$",
+          "the_so": "$V_2 = \\dfrac{1{,}0 \\times 3{,}0}{2{,}5}$",
+          "ket_qua": "$V_2 = 1{,}2\\ \\text{lít}$",
+          "kiem_tra": "Áp suất tăng 2,5 lần, thể tích giảm 2,5 lần."
+        },
+        {
+          "tieu_de": "Đổi nhiệt độ giai đoạn 2 sang kenvin",
+          "cong_thuc_chu": "$T_3 = t_3 + 273$",
+          "the_so": "$T_3 = 177 + 273$",
+          "ket_qua": "$T_3 = 450\\ \\text{K}$; $T_2 = 300\\ \\text{K}$",
+          "kiem_tra": "$T_3 / T_2 = 1{,}5$."
+        },
+        {
+          "tieu_de": "Giai đoạn 2 (Charles)",
+          "cong_thuc_chu": "$V_3 = V_2\\dfrac{T_3}{T_2}$",
+          "the_so": "$V_3 = 1{,}2 \\times \\dfrac{450}{300}$",
+          "ket_qua": "$V_3 = 1{,}8\\ \\text{lít}$",
+          "kiem_tra": "Dùng $V_2$, không dùng $V_1$. $V_3$ vẫn nhỏ hơn $V_1$ vì áp suất cuối lớn hơn đầu: hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 1.2,
+          "don_vi": "lít"
+        },
+        {
+          "y": "b",
+          "gia_tri": 1.8,
+          "don_vi": "lít"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thể tích sau giai đoạn 1",
+          "bieu_thuc": "1.0*3.0/2.5",
+          "ky_vong": 1.2,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thể tích sau giai đoạn 2",
+          "bieu_thuc": "(1.0*3.0/2.5)*(177+273)/(27+273)",
+          "ky_vong": 1.8,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề mô tả khí qua hai giai đoạn liên tiếp, mỗi giai đoạn có một chữ \"không đổi\" khác nhau → lập bảng ba trạng thái, giải lần lượt từng giai đoạn.",
+      "bay_thuong_gap": [
+        "Dùng $V_1 = 3{,}0$ lít cho giai đoạn 2, ra $4{,}5$ lít.",
+        "Lấy tỉ số $\\dfrac{177}{27}$ bằng °C.",
+        "Quên rằng giai đoạn 1 giữ nhiệt độ, lấy $T_2$ khác $300\\ \\text{K}$."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hoạt hình hai cảnh nối tiếp. Cảnh 1: pittông đẩy xuống chậm, nhiệt kế đứng yên ở 27 °C, áp kế nhích lên tới 2,5 atm. Cảnh 2: bật đèn cồn dưới xilanh, áp kế đứng yên, nhiệt kế tăng lên 177 °C, pittông nâng lên. Thanh tiến trình ghi \"Giai đoạn 1: $T$ không đổi\", \"Giai đoạn 2: $p$ không đổi\". Nhãn: $V_1 = 3{,}0$ lít, $V_2 = ?$, $V_3 = ?$."
+    },
+    {
+      "label": "Dạng 4 · Đọc hai đường đẳng áp trên đồ thị V–T",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cách nối Boyle và Charles của dạng 3. Thêm một độ khó mới: dữ kiện ẩn trong đồ thị, phải tự nhận ra hai điểm cùng nhiệt độ trên hai đường đẳng áp thì nối được bằng định luật Boyle.",
+      "yccd_de_xuat": "Đọc đồ thị các đẳng quá trình",
+      "de_bai": "Một nhóm học sinh làm thí nghiệm với cùng một lượng khí và vẽ trên hệ trục $V$–$T$ (trục tung $V$ tính bằng lít, trục hoành $T$ tính bằng kenvin) hai đường đẳng áp (1) và (2), cả hai kéo dài đều đi qua gốc $O$. Đường (1) đi qua điểm $A(300\\ \\text{K};\\ 6{,}0\\ \\text{lít})$, đường (2) đi qua điểm $B(300\\ \\text{K};\\ 4{,}0\\ \\text{lít})$. Áp suất khí ứng với đường (1) là $1{,}0\\ \\text{atm}$. a) Không tính toán, cho biết đường nào ứng với áp suất lớn hơn và giải thích. b) Tính áp suất khí ứng với đường (2). c) Khí đang ở một trạng thái trên đường (2) được nung nóng đẳng áp tới $87\\ ^\\circ\\text{C}$. Tính thể tích khí.",
+      "dieu_kien_ap_dung": "Cùng một lượng khí; hai trạng thái cùng nhiệt độ thì $pV$ bằng nhau (Boyle); dọc một đường đẳng áp thì $V/T$ không đổi (Charles).",
+      "phan_tich": [
+        {
+          "trich_de": "cùng một lượng khí",
+          "du_lieu": "khối lượng khí xác định",
+          "kien_thuc": "Điều kiện dùng Boyle và Charles"
+        },
+        {
+          "trich_de": "cả hai kéo dài đều đi qua gốc $O$",
+          "du_lieu": "$V$ tỉ lệ thuận $T$ trên mỗi đường",
+          "kien_thuc": "Đường đẳng áp trên đồ thị $V$–$T$"
+        },
+        {
+          "trich_de": "Đường (1) đi qua điểm $A(300\\ \\text{K};\\ 6{,}0\\ \\text{lít})$",
+          "du_lieu": "$T_A = 300\\ \\text{K}$; $V_A = 6{,}0$ lít",
+          "kien_thuc": "Đọc toạ độ điểm trên đồ thị"
+        },
+        {
+          "trich_de": "đường (2) đi qua điểm $B(300\\ \\text{K};\\ 4{,}0\\ \\text{lít})$",
+          "du_lieu": "$T_B = 300\\ \\text{K}$; $V_B = 4{,}0$ lít",
+          "kien_thuc": "Dữ kiện ẩn: $T_A = T_B$ → nối A, B bằng Boyle"
+        },
+        {
+          "trich_de": "Áp suất khí ứng với đường (1) là $1{,}0\\ \\text{atm}$",
+          "du_lieu": "$p_1 = 1{,}0$ atm",
+          "kien_thuc": "$p_A = p_1$"
+        },
+        {
+          "trich_de": "nung nóng đẳng áp tới $87\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_C = 87\\ ^\\circ\\text{C}$; $p$ không đổi",
+          "kien_thuc": "Charles trên đường (2), đổi sang K"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p_2; V_C",
+        "cong_thuc": "p_2 = p_1\\dfrac{V_A}{V_B};\\ V_C = V_B\\dfrac{T_C}{T_B}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đường đẳng áp trên $V$–$T$: đường thẳng kéo dài qua gốc $O$.",
+        "Cùng lượng khí: áp suất càng nhỏ, đường đẳng áp càng cao.",
+        "Boyle: cùng nhiệt độ thì $p_AV_A = p_BV_B$.",
+        "Charles: $\\dfrac{V_B}{T_B} = \\dfrac{V_C}{T_C}$, $T$ bằng kenvin.",
+        "Đọc tên hai trục trước khi đọc đồ thị."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Ý a – so sánh áp suất hai đường",
+          "cong_thuc_chu": "Cùng $T$: $pV = \\text{hằng số}$",
+          "the_so": "Kẻ đường thẳng đứng tại $T = 300\\ \\text{K}$: $V_A = 6{,}0$ lít $\\gt V_B = 4{,}0$ lít",
+          "ket_qua": "Đường (2) có áp suất lớn hơn",
+          "kiem_tra": "Khớp quy tắc: áp suất càng nhỏ, đường đẳng áp càng cao; đường (1) cao hơn."
+        },
+        {
+          "tieu_de": "Ý b – nối A và B bằng Boyle",
+          "cong_thuc_chu": "$p_1V_A = p_2V_B \\Rightarrow p_2 = p_1\\dfrac{V_A}{V_B}$",
+          "the_so": "$p_2 = 1{,}0 \\times \\dfrac{6{,}0}{4{,}0}$",
+          "ket_qua": "$p_2 = 1{,}5\\ \\text{atm}$",
+          "kiem_tra": "$p_2 \\gt p_1$, khớp với ý a."
+        },
+        {
+          "tieu_de": "Ý c – đổi nhiệt độ",
+          "cong_thuc_chu": "$T_C = t_C + 273$",
+          "the_so": "$T_C = 87 + 273$",
+          "ket_qua": "$T_C = 360\\ \\text{K}$",
+          "kiem_tra": "$T_C / T_B = 1{,}2$."
+        },
+        {
+          "tieu_de": "Ý c – Charles dọc đường (2)",
+          "cong_thuc_chu": "$V_C = V_B\\dfrac{T_C}{T_B}$",
+          "the_so": "$V_C = 4{,}0 \\times \\dfrac{360}{300}$",
+          "ket_qua": "$V_C = 4{,}8\\ \\text{lít}$",
+          "kiem_tra": "Điểm $C(360\\ \\text{K};\\ 4{,}8\\ \\text{lít})$ vẫn nằm trên đường (2): $4{,}8/360 = 4{,}0/300$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b",
+          "gia_tri": 1.5,
+          "don_vi": "atm"
+        },
+        {
+          "y": "c",
+          "gia_tri": 4.8,
+          "don_vi": "lít"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "áp suất đường (2)",
+          "bieu_thuc": "1.0*6.0/4.0",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thể tích tại 87 °C trên đường (2)",
+          "bieu_thuc": "4.0*(87+273)/300",
+          "ky_vong": 4.8,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "V/T không đổi trên đường (2)",
+          "bieu_thuc": "(4.0*(87+273)/300)/(87+273) - 4.0/300",
+          "ky_vong": 0,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho đồ thị có hai đường đẳng quá trình của cùng một lượng khí và các điểm cùng nhiệt độ (hoặc cùng thể tích) → kẻ đường thẳng đứng nối hai điểm, dùng Boyle; đi dọc một đường thì dùng Charles.",
+      "bay_thuong_gap": [
+        "Nghĩ đường nằm cao hơn là áp suất lớn hơn.",
+        "Lấy $p_2 = p_1\\dfrac{V_B}{V_A}$, viết ngược tỉ số, ra $0{,}67$ atm.",
+        "Cho rằng A và B không liên hệ được vì nằm trên hai đường khác nhau.",
+        "Ý c dùng tỉ số °C hoặc dùng $V_A$ thay vì $V_B$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Ý b dùng Boyle giữa hai trạng thái cùng nhiệt độ dù đề không mô tả quá trình đẳng nhiệt thật. Học sinh có thể chưa quen cách nghĩ này; lời giải đã nêu rõ căn cứ là cùng lượng khí và cùng $T$."
+      ],
+      "mo_phong_goi_y": "Hệ trục $V$ (lít) – $T$ (K). Hai đường thẳng (1) và (2) mọc dần từ gốc $O$, đoạn gần gốc vẽ nét đứt. Đánh dấu điểm A trên đường (1), điểm B trên đường (2). Một đường thẳng đứng nét chấm chạy tại $T = 300$ K nối A và B. Sau đó một chấm sáng trượt dọc đường (2) từ B về phía nhiệt độ cao hơn rồi dừng tại điểm C chưa ghi toạ độ. Nhãn: (1), (2), $A$, $B$, $C$, $O$, $p_1 = 1{,}0$ atm, $p_2 = ?$, \"87 °C\"."
+    }
+  ]
+}

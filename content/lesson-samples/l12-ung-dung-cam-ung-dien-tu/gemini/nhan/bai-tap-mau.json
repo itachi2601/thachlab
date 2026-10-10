@@ -1,0 +1,527 @@
+{
+  "lesson_title": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Nhận ra cảm ứng điện từ trong bộ cảm ứng đàn ghi ta điện",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "nền tảng",
+      "yccd_de_xuat": "Chỉ ra cảm ứng điện từ trong đàn ghi ta điện, sạc không dây, bếp từ.",
+      "de_bai": "Một dây Mi trầm của đàn ghi ta điện được gảy, dao động với tần số 82,4 Hz ngay phía trên bộ cảm ứng gồm nam châm nhỏ quấn cuộn dây 5 000 vòng. Dây thép không chạm vào cuộn dây; cuộn dây đứng yên và nối với máy tăng âm.\na) Trong cuộn dây có xuất hiện suất điện động cảm ứng không? Giải thích.\nb) Dòng điện cảm ứng đưa vào máy tăng âm có tần số bằng bao nhiêu?",
+      "dieu_kien_ap_dung": "Chỉ xét dao động cơ bản của dây; dây thép đã bị nam châm từ hoá và dao động trong vùng từ trường của bộ cảm ứng.",
+      "phan_tich": [
+        {
+          "trich_de": "dao động với tần số 82,4 Hz",
+          "du_lieu": "$f_{\\text{dây}} = 82{,}4$ Hz",
+          "kien_thuc": "Tần số dòng cảm ứng bằng tần số dao động của dây"
+        },
+        {
+          "trich_de": "cuộn dây 5 000 vòng",
+          "du_lieu": "$N = 5\\,000$",
+          "kien_thuc": "$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$"
+        },
+        {
+          "trich_de": "Dây thép không chạm vào cuộn dây",
+          "du_lieu": "không có tiếp xúc điện",
+          "kien_thuc": "Dòng cảm ứng sinh ra do từ thông biến thiên, không do tiếp xúc"
+        },
+        {
+          "trich_de": "cuộn dây đứng yên",
+          "du_lieu": "cuộn dây không chuyển động",
+          "kien_thuc": "Chỉ cần từ thông qua cuộn dây biến thiên"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "f_c",
+        "cong_thuc": "f_c = f_{\\text{dây}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Dây thép nằm trên nam châm bị từ hoá.",
+        "Dây dao động làm từ thông qua cuộn dây biến thiên.",
+        "$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$ khác 0 khi từ thông biến thiên.",
+        "Tần số dòng cảm ứng đúng bằng tần số dao động của dây."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xét điều kiện có suất điện động cảm ứng",
+          "cong_thuc_chu": "$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$",
+          "the_so": "Dây thép đã từ hoá dao động, khoảng cách dây – cuộn dây đổi liên tục nên $\\dfrac{\\Delta\\Phi}{\\Delta t} \\ne 0$",
+          "ket_qua": "$e_c \\ne 0$: có suất điện động cảm ứng, có dòng xoay chiều qua máy tăng âm",
+          "kiem_tra": "Khi dây tắt hẳn thì $\\Delta\\Phi = 0$, $e_c = 0$ — khớp thí nghiệm kim điện kế đứng yên khi dây ngừng rung."
+        },
+        {
+          "tieu_de": "Bước 2. Xác định tần số dòng cảm ứng",
+          "cong_thuc_chu": "$f_c = f_{\\text{dây}}$",
+          "the_so": "$f_c = 82{,}4$",
+          "ket_qua": "$f_c = 82{,}4 \\ \\text{Hz}$",
+          "kiem_tra": "Đơn vị Hz; tần số không phụ thuộc số vòng $N$, nên loa phát đúng nốt Mi trầm vừa gảy."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b",
+          "gia_tri": 82.4,
+          "don_vi": "Hz"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tần số dòng cảm ứng bằng tần số dây",
+          "bieu_thuc": "82.4",
+          "ky_vong": 82.4,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho một vật bằng thép dao động gần cuộn dây có nam châm và hỏi có dòng không, tần số bao nhiêu → kiểm tra từ thông có biến thiên không, tần số dòng bằng tần số dao động.",
+      "bay_thuong_gap": [
+        "Cho rằng cuộn dây đứng yên thì không có dòng cảm ứng.",
+        "Cho rằng dòng là dòng không đổi vì nam châm luôn hút dây.",
+        "Nghĩ gảy mạnh thì tần số tăng; thực ra gảy mạnh chỉ làm tín hiệu lớn hơn.",
+        "Nhân tần số với số vòng $N$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Danh mục YCCĐ của bài để trống; `yccd_de_xuat` lấy nguyên văn một dòng trong mục tiêu bài học.",
+        "82,4 Hz là tần số cơ bản của dây Mi trầm theo lên dây chuẩn; tín hiệu thật còn có hoạ âm, bài bỏ qua."
+      ],
+      "mo_phong_goi_y": "Dây thép nằm ngang dao động lên xuống ngay trên nam châm có quấn cuộn dây; đường sức từ qua cuộn dây dày lên, thưa đi theo vị trí dây; kim điện kế (hoặc đồ thị tín hiệu) dao động theo nhịp dây và đứng yên khi dây tắt. Nhãn: dây thép, nam châm, cuộn dây N = 5 000 vòng, máy tăng âm, loa, f_dây = 82,4 Hz. Không ghi tần số tín hiệu."
+    },
+    {
+      "label": "Dạng 2 · Điều kiện xuất hiện dòng điện Foucault và tác dụng của nó",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại từ Dạng 1: có dòng cảm ứng khi từ thông biến thiên, kể cả khi vật dẫn đứng yên. Thêm MỘT bẫy mới: vật nằm trong từ trường mạnh nhưng từ thông không đổi thì không có dòng Foucault.",
+      "yccd_de_xuat": "Phát biểu dòng điện Foucault và hai tác dụng: lực hãm, toả nhiệt Joule.",
+      "de_bai": "Một tấm nhôm liền khối kích thước 100 mm × 60 mm × 3 mm được dùng trong bốn trường hợp:\n(1) Tấm nhôm đặt yên giữa hai cực một nam châm điện, dòng qua nam châm điện là dòng không đổi 2,0 A.\n(2) Tấm nhôm treo như con lắc, dao động qua khe giữa hai cực của chính nam châm đó.\n(3) Tấm nhôm đặt yên giữa hai cực, nam châm điện được nuôi bằng dòng xoay chiều 50 Hz.\n(4) Tấm nhôm đặt trong lò nướng 200 °C, không có nam châm.\na) Trường hợp nào trong tấm nhôm xuất hiện dòng điện Foucault? Đếm số trường hợp đó.\nb) Với mỗi trường hợp có dòng Foucault, nêu tác dụng của dòng đó lên tấm nhôm.",
+      "dieu_kien_ap_dung": "Dòng Foucault chỉ xuất hiện khi từ thông qua khối vật dẫn biến thiên: khối chuyển động trong từ trường hoặc đặt trong từ trường biến thiên.",
+      "phan_tich": [
+        {
+          "trich_de": "tấm nhôm liền khối",
+          "du_lieu": "khối dẫn điện liền",
+          "kien_thuc": "Dòng khép kín trong khối, điện trở nhỏ nên dòng lớn"
+        },
+        {
+          "trich_de": "dòng qua nam châm điện là dòng không đổi 2,0 A",
+          "du_lieu": "$I = 2{,}0$ A không đổi ⇒ $B$ không đổi",
+          "kien_thuc": "Tấm đứng yên, $B$ không đổi ⇒ $\\dfrac{\\Delta\\Phi}{\\Delta t} = 0$"
+        },
+        {
+          "trich_de": "dao động qua khe giữa hai cực",
+          "du_lieu": "tấm chuyển động trong từ trường",
+          "kien_thuc": "Từ thông qua các phần của tấm biến thiên ⇒ có dòng Foucault, có lực hãm (Lenz)"
+        },
+        {
+          "trich_de": "nuôi bằng dòng xoay chiều 50 Hz",
+          "du_lieu": "$f = 50$ Hz ⇒ $B$ biến thiên",
+          "kien_thuc": "Tấm đứng yên trong từ trường biến thiên vẫn có dòng Foucault, toả nhiệt Joule"
+        },
+        {
+          "trich_de": "đặt trong lò nướng 200 °C, không có nam châm",
+          "du_lieu": "không có từ trường",
+          "kien_thuc": "Nóng lên do truyền nhiệt, không phải cảm ứng"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "n",
+        "cong_thuc": "\\text{có dòng Foucault} \\Leftrightarrow \\dfrac{\\Delta\\Phi}{\\Delta t} \\ne 0"
+      },
+      "kien_thuc_goi_lai": [
+        "Dòng Foucault là dòng cảm ứng trong lòng khối vật dẫn.",
+        "Điều kiện: khối chuyển động trong từ trường hoặc đặt trong từ trường biến thiên.",
+        "Tác dụng 1: lực hãm điện từ chống lại chuyển động (Lenz).",
+        "Tác dụng 2: toả nhiệt Joule $Q = I^2Rt$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xét trường hợp (1) — bẫy từ trường mạnh",
+          "cong_thuc_chu": "$\\dfrac{\\Delta\\Phi}{\\Delta t} = 0 \\Rightarrow e_c = 0$",
+          "the_so": "Dòng 2,0 A không đổi ⇒ $B$ không đổi; tấm đứng yên ⇒ $\\Delta\\Phi = 0$",
+          "ket_qua": "(1): không có dòng Foucault",
+          "kiem_tra": "Đúng với bảng 'từ thông không đổi' trong bài: không dòng, không lực hãm."
+        },
+        {
+          "tieu_de": "Bước 2. Xét trường hợp (2) và (3)",
+          "cong_thuc_chu": "$\\dfrac{\\Delta\\Phi}{\\Delta t} \\ne 0 \\Rightarrow$ có dòng Foucault",
+          "the_so": "(2) tấm chuyển động qua từ trường; (3) $B$ đổi chiều theo dòng 50 Hz",
+          "ket_qua": "(2) và (3): có dòng Foucault",
+          "kiem_tra": "(3) giống Dạng 1: vật dẫn đứng yên vẫn có dòng khi từ thông biến thiên."
+        },
+        {
+          "tieu_de": "Bước 3. Xét trường hợp (4)",
+          "cong_thuc_chu": "Không có từ trường ⇒ $\\Phi = 0$",
+          "the_so": "Tấm nóng do nhận nhiệt từ không khí trong lò",
+          "ket_qua": "(4): không có dòng Foucault",
+          "kiem_tra": "Nóng lên không đồng nghĩa có dòng cảm ứng."
+        },
+        {
+          "tieu_de": "Bước 4. Đếm và nêu tác dụng",
+          "cong_thuc_chu": "$n = $ số trường hợp có $\\dfrac{\\Delta\\Phi}{\\Delta t} \\ne 0$; $Q = I^2Rt$",
+          "the_so": "$n = 0 + 1 + 1 + 0$",
+          "ket_qua": "$n = 2$ trường hợp. (2): lực hãm làm dao động tắt nhanh, kèm toả nhiệt. (3): toả nhiệt Joule làm tấm ấm lên.",
+          "kiem_tra": "Năng lượng dao động ở (2) mất đi đúng bằng nhiệt Joule sinh ra — hai tác dụng đi cùng nhau."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 2,
+          "don_vi": "trường hợp"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số trường hợp có dòng Foucault",
+          "bieu_thuc": "sum([0, 1, 1, 0])",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề liệt kê nhiều tình huống có khối kim loại và nam châm, hỏi trường hợp nào có dòng Foucault → với mỗi tình huống chỉ hỏi một câu: từ thông qua khối có biến thiên không.",
+      "bay_thuong_gap": [
+        "Thấy nam châm mạnh là kết luận có dòng Foucault.",
+        "Cho rằng tấm đứng yên thì không thể có dòng, bỏ sót trường hợp từ trường xoay chiều.",
+        "Nhầm tấm nóng trong lò là do dòng điện.",
+        "Chỉ nêu lực hãm mà quên tác dụng toả nhiệt Joule."
+      ],
+      "dieu_ban_khong_chac": [
+        "Ở trường hợp (3) thực tế tấm cũng chịu lực từ dao động, nhưng bài chỉ yêu cầu tác dụng toả nhiệt vì tấm đứng yên."
+      ],
+      "mo_phong_goi_y": "Bốn khung hình nhỏ cạnh nhau: (1) tấm nhôm đứng yên giữa hai cực, ampe kế chỉ dòng không đổi; (2) tấm nhôm đung đưa qua khe; (3) tấm đứng yên, đường sức từ đổi chiều liên tục; (4) tấm trong lò có ngọn lửa. Chưa vẽ vòng dòng xoáy ở khung nào. Nhãn: N, S, 2,0 A không đổi, xoay chiều 50 Hz, lò 200 °C, tấm nhôm 100 × 60 × 3 mm."
+    },
+    {
+      "label": "Dạng 3 · Sạc không dây: điều kiện, tỉ số vòng, so với đo, thời gian nạp",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại từ Dạng 2: lập luận 'từ thông không đổi thì không có suất điện động cảm ứng' làm bước con (ý a). Thêm MỘT độ khó mới: tính toán nối tiếp nhiều bước bằng $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$, so sánh với số đo và tính thời gian nạp.",
+      "yccd_de_xuat": "Vận dụng $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$ và $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$ để giải thích, tính toán.",
+      "de_bai": "Một đế sạc không dây có cuộn sơ cấp $N_1 = 30$ vòng; cuộn thứ cấp sau lưng điện thoại có $N_2 = 18$ vòng. Hai cuộn đặt đồng trục, không chạm nhau.\na) Nếu nối nhầm cuộn sơ cấp vào nguồn một chiều 10 V, sau khi dòng đã ổn định thì cuộn thứ cấp có điện áp không?\nb) Nối cuộn sơ cấp vào nguồn xoay chiều $U_1 = 10$ V. Coi hai cuộn ghép lí tưởng, tính $U_2$.\nc) Áp sát, vôn kế xoay chiều đo trên cuộn thứ cấp được 5,4 V. Số đo đạt bao nhiêu phần trăm giá trị lí tưởng?\nd) Pin cần nhận thêm 18 000 J, công suất pin nhận được khi áp sát là 7,5 W. Nạp xong mất bao lâu?",
+      "dieu_kien_ap_dung": "Công thức $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$ chỉ đúng với dòng xoay chiều và coi gần đúng máy biến áp lí tưởng (bỏ qua từ thông rò, điện trở dây); công suất nạp coi không đổi.",
+      "phan_tich": [
+        {
+          "trich_de": "$N_1 = 30$ vòng",
+          "du_lieu": "$N_1 = 30$",
+          "kien_thuc": "Số vòng cuộn sơ cấp"
+        },
+        {
+          "trich_de": "$N_2 = 18$ vòng",
+          "du_lieu": "$N_2 = 18$",
+          "kien_thuc": "Số vòng cuộn thứ cấp, nối với pin"
+        },
+        {
+          "trich_de": "nguồn một chiều 10 V, sau khi dòng đã ổn định",
+          "du_lieu": "dòng không đổi ⇒ $B$ không đổi",
+          "kien_thuc": "$\\dfrac{\\Delta\\Phi}{\\Delta t} = 0 \\Rightarrow e_c = 0$"
+        },
+        {
+          "trich_de": "nguồn xoay chiều $U_1 = 10$ V",
+          "du_lieu": "$U_1 = 10$ V",
+          "kien_thuc": "Từ trường biến thiên sinh suất điện động cảm ứng ở cuộn thứ cấp"
+        },
+        {
+          "trich_de": "Coi hai cuộn ghép lí tưởng",
+          "du_lieu": "bỏ qua từ thông rò",
+          "kien_thuc": "$\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$"
+        },
+        {
+          "trich_de": "được 5,4 V",
+          "du_lieu": "$U_2^{\\text{đo}} = 5{,}4$ V",
+          "kien_thuc": "Tỉ lệ so với lí tưởng $= U_2^{\\text{đo}}/U_2$"
+        },
+        {
+          "trich_de": "cần nhận thêm 18 000 J",
+          "du_lieu": "$A = 18\\,000$ J",
+          "kien_thuc": "$t = A/P$"
+        },
+        {
+          "trich_de": "7,5 W",
+          "du_lieu": "$P = 7{,}5$ W",
+          "kien_thuc": "$t = A/P$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "U_2,\\ t",
+        "cong_thuc": "U_2 = U_1\\dfrac{N_2}{N_1};\\ t = \\dfrac{A}{P}"
+      },
+      "kien_thuc_goi_lai": [
+        "Sạc không dây là máy biến áp không lõi: hai cuộn rời ghép qua từ trường.",
+        "Cần dòng biến thiên ở cuộn sơ cấp.",
+        "$\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$, $N_2$ là cuộn nối với thiết bị nạp.",
+        "Không có lõi sắt nên từ thông rò, số đo luôn nhỏ hơn lí tưởng.",
+        "$t = A/P$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1 (bài cấp 2). Kiểm tra điều kiện với nguồn một chiều",
+          "cong_thuc_chu": "$e_c = -N_2\\dfrac{\\Delta\\Phi}{\\Delta t}$",
+          "the_so": "Dòng ổn định ⇒ $\\dfrac{\\Delta\\Phi}{\\Delta t} = 0$",
+          "ket_qua": "$U_2 = 0 \\ \\text{V}$",
+          "kiem_tra": "Chỉ lúc vừa đóng mạch mới có xung điện áp ngắn; khi ổn định thì không nạp được pin."
+        },
+        {
+          "tieu_de": "Bước 2. Tỉ số vòng",
+          "cong_thuc_chu": "$k = \\dfrac{N_2}{N_1}$",
+          "the_so": "$k = \\dfrac{18}{30}$",
+          "ket_qua": "$k = 0{,}6$",
+          "kiem_tra": "$N_2 \\lt N_1$ nên $k \\lt 1$: hạ áp."
+        },
+        {
+          "tieu_de": "Bước 3. Điện áp lí tưởng ở cuộn thứ cấp",
+          "cong_thuc_chu": "$U_2 = U_1\\dfrac{N_2}{N_1}$",
+          "the_so": "$U_2 = 10 \\times 0{,}6$",
+          "ket_qua": "$U_2 = 6{,}0 \\ \\text{V}$",
+          "kiem_tra": "V × (vòng/vòng) = V; $6{,}0 \\lt 10$ đúng chiều hạ áp."
+        },
+        {
+          "tieu_de": "Bước 4. So số đo với lí tưởng",
+          "cong_thuc_chu": "$\\eta_U = \\dfrac{U_2^{\\text{đo}}}{U_2} \\times 100\\%$",
+          "the_so": "$\\eta_U = \\dfrac{5{,}4}{6{,}0} \\times 100\\%$",
+          "ket_qua": "$\\eta_U = 90\\%$",
+          "kiem_tra": "Nhỏ hơn 100% đúng chiều vì có từ thông rò khi không có lõi sắt."
+        },
+        {
+          "tieu_de": "Bước 5. Thời gian nạp",
+          "cong_thuc_chu": "$t = \\dfrac{A}{P}$",
+          "the_so": "$t = \\dfrac{18\\,000}{7{,}5}$",
+          "ket_qua": "$t = 2\\,400 \\ \\text{s} = 40 \\ \\text{phút}$",
+          "kiem_tra": "J/W = s; thử lại $7{,}5 \\times 2\\,400 = 18\\,000$ J."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0,
+          "don_vi": "V"
+        },
+        {
+          "y": "b",
+          "gia_tri": 6,
+          "don_vi": "V"
+        },
+        {
+          "y": "c",
+          "gia_tri": 90,
+          "don_vi": "%"
+        },
+        {
+          "y": "d",
+          "gia_tri": 2400,
+          "don_vi": "s"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tỉ số vòng",
+          "bieu_thuc": "18/30",
+          "ky_vong": 0.6,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "U2 lí tưởng",
+          "bieu_thuc": "10*18/30",
+          "ky_vong": 6,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tỉ lệ số đo so với lí tưởng (%)",
+          "bieu_thuc": "5.4/(10*18/30)*100",
+          "ky_vong": 90,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thời gian nạp (s)",
+          "bieu_thuc": "18000/7.5",
+          "ky_vong": 2400,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thời gian nạp (phút)",
+          "bieu_thuc": "18000/7.5/60",
+          "ky_vong": 40,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho số vòng hai cuộn, điện áp nguồn, số đo vôn kế và năng lượng/công suất nạp → kiểm tra nguồn xoay chiều, tính $U_2$ lí tưởng, so với số đo, rồi $t = A/P$.",
+      "bay_thuong_gap": [
+        "Áp công thức máy biến áp cho nguồn một chiều, ra 6,0 V thay vì 0 V.",
+        "Đảo tỉ số vòng: $10 \\times 30/18 \\approx 16{,}7$ V.",
+        "Lấy hiệu số vòng: $10 \\times 12/30 = 4$ V.",
+        "Coi 90% là hiệu suất năng lượng; đó chỉ là tỉ số điện áp.",
+        "Quên đổi giây ra phút khi trả lời."
+      ],
+      "dieu_ban_khong_chac": [
+        "18 000 J chỉ khoảng một phần ba năng lượng pin điện thoại 4 000 mAh; đề nói 'nhận thêm' nên vẫn hợp lí.",
+        "Số vòng thực của cuộn sạc Qi thường cỡ 10–20 vòng, nguồn xoay chiều tần số khoảng 100–200 kHz; bài không cần tần số."
+      ],
+      "mo_phong_goi_y": "Đế sạc có cuộn sơ cấp phẳng, điện thoại đặt lên với cuộn thứ cấp đồng trục; khi bật nguồn xoay chiều, đường sức từ dao động xuyên qua khe hở, một phần rò ra ngoài; công tắc chuyển sang nguồn một chiều thì đường sức đứng yên, vôn kế thứ cấp về 0 sau một xung ngắn. Nhãn: N1 = 30 vòng, N2 = 18 vòng, U1 = 10 V, vôn kế V, pin, đồng hồ. Không hiện số đo vôn kế."
+    },
+    {
+      "label": "Dạng 4 · Bếp từ trong bếp nhà: chọn nồi, hiệu suất, thời gian đun sôi",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại: lập luận dòng Foucault có hay không (Dạng 2) để chọn nồi; cách tính tỉ lệ phần trăm và $t = A/P$ (Dạng 3). Thêm MỘT độ khó mới: tình huống đời sống, phải tự rút dữ kiện ẩn (khối lượng từ thể tích, công suất ghi trên bếp là công suất tiêu thụ) và năng lượng có ích từ $Q = mc\\Delta t$.",
+      "yccd_de_xuat": "Chỉ ra cảm ứng điện từ trong đàn ghi ta điện, sạc không dây, bếp từ.",
+      "de_bai": "Nhà Lan có một bếp từ ghi 1 800 W và hai chiếc nồi cùng cỡ: một nồi nhôm và một nồi gang. Lan cần đun 1,5 lít nước từ 28,0 °C đến sôi (100 °C) để pha trà.\na) Lan nên dùng nồi nào? Giải thích bằng dòng điện Foucault.\nb) Đun thử 2 phút với nồi đã chọn ở mức 1 800 W, nhiệt độ nước tăng từ 28,0 °C lên 56,8 °C. Tính hiệu suất của bếp trong 2 phút đó.\nc) Coi hiệu suất không đổi, ước tính tổng thời gian từ lúc bật bếp đến khi nước sôi.\nCho nhiệt dung riêng của nước $c = 4\\,200$ J/(kg·K), 1 lít nước có khối lượng 1 kg.",
+      "dieu_kien_ap_dung": "Bếp hoạt động đúng công suất ghi; bỏ qua nhiệt dung của nồi trong phép tính nhiệt có ích; coi hiệu suất không đổi suốt quá trình đun.",
+      "phan_tich": [
+        {
+          "trich_de": "bếp từ ghi 1 800 W",
+          "du_lieu": "$P = 1\\,800$ W",
+          "kien_thuc": "Công suất điện bếp tiêu thụ, không phải công suất truyền hết vào nước"
+        },
+        {
+          "trich_de": "một nồi nhôm và một nồi gang",
+          "du_lieu": "dữ kiện ẩn: nhôm không nhiễm từ, gang nhiễm từ",
+          "kien_thuc": "Bếp từ chỉ đun được nồi đáy nhiễm từ (dòng Foucault mạnh)"
+        },
+        {
+          "trich_de": "1,5 lít nước",
+          "du_lieu": "$m = 1{,}5$ kg",
+          "kien_thuc": "1 lít nước ứng với 1 kg"
+        },
+        {
+          "trich_de": "Đun thử 2 phút",
+          "du_lieu": "$t_1 = 120$ s",
+          "kien_thuc": "Điện năng tiêu thụ $A_1 = Pt_1$"
+        },
+        {
+          "trich_de": "tăng từ 28,0 °C lên 56,8 °C",
+          "du_lieu": "$\\Delta t_1 = 28{,}8$ °C",
+          "kien_thuc": "$Q_1 = mc\\Delta t_1$"
+        },
+        {
+          "trich_de": "$c = 4\\,200$ J/(kg·K)",
+          "du_lieu": "$c = 4\\,200$ J/(kg·K)",
+          "kien_thuc": "$Q = mc\\Delta t$"
+        },
+        {
+          "trich_de": "Coi hiệu suất không đổi",
+          "du_lieu": "$H$ như ở ý b",
+          "kien_thuc": "Công suất có ích $P_{\\text{ích}} = HP$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "H,\\ t",
+        "cong_thuc": "H = \\dfrac{mc\\Delta t_1}{Pt_1};\\ t = \\dfrac{mc(100 - 28{,}0)}{HP}"
+      },
+      "kien_thuc_goi_lai": [
+        "Cuộn dây bếp từ tạo từ trường biến thiên tần số cao xuyên qua mặt kính.",
+        "Đáy nồi nhiễm từ có dòng Foucault, tự nóng (toả nhiệt Joule).",
+        "Nồi nhôm gần như không nóng trên bếp từ.",
+        "Nhiệt nước nhận $Q = mc\\Delta t$; hiệu suất $H = Q/A$.",
+        "$t = A/P$ (Dạng 3), ở đây dùng công suất có ích."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chọn nồi (dùng lại Dạng 2)",
+          "cong_thuc_chu": "Từ trường biến thiên ⇒ dòng Foucault ⇒ $Q = I^2Rt$ trong đáy nồi",
+          "the_so": "Nồi gang nhiễm từ: dòng Foucault mạnh; nồi nhôm: dòng rất nhỏ",
+          "ket_qua": "Chọn nồi gang",
+          "kiem_tra": "Khớp thí nghiệm trong bài: nồi nhôm sau 4 phút nước mới ấm khoảng 35 °C."
+        },
+        {
+          "tieu_de": "Bước 2. Rút dữ kiện ẩn",
+          "cong_thuc_chu": "$m = 1{,}5$ kg; $t_1 = 2 \\times 60$ s; $\\Delta t_1 = 56{,}8 - 28{,}0$",
+          "the_so": "$t_1 = 120$ s; $\\Delta t_1 = 28{,}8$ °C",
+          "ket_qua": "$m = 1{,}5 \\ \\text{kg}$, $t_1 = 120 \\ \\text{s}$, $\\Delta t_1 = 28{,}8 \\ \\text{°C}$",
+          "kiem_tra": "Đã đổi phút ra giây để khớp W = J/s."
+        },
+        {
+          "tieu_de": "Bước 3. Nhiệt nước nhận trong 2 phút",
+          "cong_thuc_chu": "$Q_1 = mc\\Delta t_1$",
+          "the_so": "$Q_1 = 1{,}5 \\times 4\\,200 \\times 28{,}8$",
+          "ket_qua": "$Q_1 = 181\\,440 \\ \\text{J} \\approx 1{,}814 \\times 10^5 \\ \\text{J}$",
+          "kiem_tra": "kg · J/(kg·K) · K = J."
+        },
+        {
+          "tieu_de": "Bước 4. Điện năng bếp tiêu thụ trong 2 phút",
+          "cong_thuc_chu": "$A_1 = Pt_1$",
+          "the_so": "$A_1 = 1\\,800 \\times 120$",
+          "ket_qua": "$A_1 = 216\\,000 \\ \\text{J}$",
+          "kiem_tra": "W · s = J; $A_1 \\gt Q_1$ hợp lí."
+        },
+        {
+          "tieu_de": "Bước 5. Hiệu suất (cách tính phần trăm như Dạng 3)",
+          "cong_thuc_chu": "$H = \\dfrac{Q_1}{A_1} \\times 100\\%$",
+          "the_so": "$H = \\dfrac{181\\,440}{216\\,000} \\times 100\\%$",
+          "ket_qua": "$H = 84{,}0\\%$",
+          "kiem_tra": "Nhỏ hơn 100%; hao do nung thân nồi, toả ra không khí."
+        },
+        {
+          "tieu_de": "Bước 6. Nhiệt cần để đun từ 28,0 °C đến sôi",
+          "cong_thuc_chu": "$Q = mc(100 - 28{,}0)$",
+          "the_so": "$Q = 1{,}5 \\times 4\\,200 \\times 72{,}0$",
+          "ket_qua": "$Q = 453\\,600 \\ \\text{J}$",
+          "kiem_tra": "Gấp $72{,}0/28{,}8 = 2{,}5$ lần $Q_1$."
+        },
+        {
+          "tieu_de": "Bước 7. Tổng thời gian đun sôi",
+          "cong_thuc_chu": "$t = \\dfrac{Q}{HP}$",
+          "the_so": "$t = \\dfrac{453\\,600}{0{,}84 \\times 1\\,800} = \\dfrac{453\\,600}{1\\,512}$",
+          "ket_qua": "$t = 300 \\ \\text{s} = 5{,}0 \\ \\text{phút}$",
+          "kiem_tra": "Thời gian gấp 2,5 lần 2 phút, đúng tỉ lệ nhiệt lượng; J/W = s."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b",
+          "gia_tri": 84,
+          "don_vi": "%"
+        },
+        {
+          "y": "c",
+          "gia_tri": 300,
+          "don_vi": "s"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "nhiệt nước nhận trong 2 phút (J)",
+          "bieu_thuc": "1.5*4200*(56.8-28.0)",
+          "ky_vong": 181440,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "điện năng tiêu thụ trong 2 phút (J)",
+          "bieu_thuc": "1800*120",
+          "ky_vong": 216000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "hiệu suất (%)",
+          "bieu_thuc": "1.5*4200*(56.8-28.0)/(1800*120)*100",
+          "ky_vong": 84,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "nhiệt cần đến sôi (J)",
+          "bieu_thuc": "1.5*4200*(100-28.0)",
+          "ky_vong": 453600,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tổng thời gian đun sôi (s)",
+          "bieu_thuc": "1.5*4200*(100-28.0)/(0.84*1800)",
+          "ky_vong": 300,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề kể một tình huống bếp từ có nhiều loại nồi, công suất ghi trên bếp và số đo nhiệt độ → chọn nồi theo dòng Foucault, tính $Q = mc\\Delta t$, hiệu suất $H = Q/(Pt)$, rồi suy thời gian bằng công suất có ích.",
+      "bay_thuong_gap": [
+        "Chọn nồi nhôm vì 'nhôm dẫn nhiệt tốt'.",
+        "Coi 1 800 W truyền hết vào nước, ra $t = 453\\,600/1\\,800 = 252$ s.",
+        "Quên đổi 2 phút ra 120 s.",
+        "Lấy độ tăng nhiệt độ là 100 °C thay vì 72,0 °C.",
+        "Nhầm $\\Delta t$ (độ tăng nhiệt độ) với thời gian $t$.",
+        "Ở ý c chỉ tính 3 phút còn lại mà quên cộng 2 phút đầu (hoặc ngược lại)."
+      ],
+      "dieu_ban_khong_chac": [
+        "Hiệu suất bếp từ thực tế khoảng 80–90%; chọn 84% cho hợp lí, khác 74% trong thí nghiệm của bài vì đề này bỏ qua nhiệt dung nồi.",
+        "Giả thiết hiệu suất không đổi đến lúc sôi là gần đúng; gần 100 °C hao nhiệt ra không khí và hơi nước tăng."
+      ],
+      "mo_phong_goi_y": "Mặt bếp kính, dưới là cuộn dây; đường sức từ đổi chiều nhanh xuyên qua kính vào đáy nồi; trong đáy nồi gang hiện các vòng dòng xoáy và đáy đổi màu ấm dần; bên cạnh, nồi nhôm đặt lên thì không có vòng dòng nào rõ. Nhiệt kế trong nồi và đồng hồ chạy. Nhãn: bếp từ 1 800 W, nồi gang, nồi nhôm, 1,5 lít nước, 28,0 °C lúc đầu, đồng hồ. Không hiện hiệu suất và thời gian sôi."
+    }
+  ]
+}

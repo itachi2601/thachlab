@@ -1,0 +1,551 @@
+{
+  "lesson_title": "Bài 14. Hạt nhân và mô hình nguyên tử",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Đọc kí hiệu hạt nhân",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: đọc hai chỉ số của kí hiệu $^A_Z X$ và dùng một hệ thức $N = A - Z$.",
+      "yccd_de_xuat": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+      "de_bai": "Thép xây dựng chủ yếu là sắt. Đồng vị sắt phổ biến nhất có kí hiệu hạt nhân $^{56}_{26}\\text{Fe}$.\na) Hạt nhân này có bao nhiêu prôtôn?\nb) Có bao nhiêu nuclôn?\nc) Có bao nhiêu nơtron?\nd) Nguyên tử sắt trung hoà có bao nhiêu êlectron ở vỏ?\ne) Điện tích hạt nhân bằng bao nhiêu lần điện tích $e$?",
+      "dieu_kien_ap_dung": "Kí hiệu viết đúng quy ước $^A_Z X$ (trên là số nuclôn, dưới là số prôtôn) và nguyên tử ở trạng thái trung hoà điện.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{56}_{26}\\text{Fe}$",
+          "du_lieu": "$A = 56$; $Z = 26$",
+          "kien_thuc": "Kí hiệu $^A_Z X$: trên là số nuclôn, dưới là số prôtôn"
+        },
+        {
+          "trich_de": "bao nhiêu nơtron",
+          "du_lieu": "$N = ?$",
+          "kien_thuc": "$N = A - Z$"
+        },
+        {
+          "trich_de": "Nguyên tử sắt trung hoà",
+          "du_lieu": "số êlectron $= Z$",
+          "kien_thuc": "Nguyên tử trung hoà: số êlectron = số prôtôn"
+        },
+        {
+          "trich_de": "Điện tích hạt nhân",
+          "du_lieu": "$q = ?$",
+          "kien_thuc": "Prôtôn mang $+e$, nơtron không mang điện nên $q = +Ze$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "N",
+        "cong_thuc": "N = A - Z"
+      },
+      "kien_thuc_goi_lai": [
+        "Hạt nhân gồm prôtôn ($+e$) và nơtron (không mang điện), gọi chung là nuclôn.",
+        "Kí hiệu $^A_Z X$: $Z$ là số prôtôn, $A$ là số nuclôn.",
+        "$N = A - Z$ là số nơtron.",
+        "Nguyên tử trung hoà: số êlectron = số prôtôn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đọc hai chỉ số",
+          "cong_thuc_chu": "$^A_Z X$: chỉ số dưới $= Z$, chỉ số trên $= A$",
+          "the_so": "$^{56}_{26}\\text{Fe}$: $Z = 26$, $A = 56$",
+          "ket_qua": "$Z = 26$ prôtôn; $A = 56$ nuclôn",
+          "kiem_tra": "$A \\gt Z$, hợp lí vì $A$ là tổng số hạt trong hạt nhân."
+        },
+        {
+          "tieu_de": "Bước 2. Tính số nơtron",
+          "cong_thuc_chu": "$N = A - Z$",
+          "the_so": "$N = 56 - 26$",
+          "ket_qua": "$N = 30$ nơtron",
+          "kiem_tra": "$Z + N = 26 + 30 = 56 = A$, khớp."
+        },
+        {
+          "tieu_de": "Bước 3. Số êlectron và điện tích hạt nhân",
+          "cong_thuc_chu": "số êlectron $= Z$; $q = +Ze$",
+          "the_so": "số êlectron $= 26$; $q = +26e$",
+          "ket_qua": "26 êlectron; điện tích hạt nhân $+26e$",
+          "kiem_tra": "Nơtron không mang điện nên không tham gia vào $q$; $+26e$ cân bằng với $26$ êlectron, nguyên tử trung hoà."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 26,
+          "don_vi": "prôtôn"
+        },
+        {
+          "y": "b",
+          "gia_tri": 56,
+          "don_vi": "nuclôn"
+        },
+        {
+          "y": "c",
+          "gia_tri": 30,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "d",
+          "gia_tri": 26,
+          "don_vi": "êlectron"
+        },
+        {
+          "y": "e",
+          "gia_tri": 26,
+          "don_vi": "lần điện tích e (dương)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số nơtron của Fe-56",
+          "bieu_thuc": "56 - 26",
+          "ky_vong": 30,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "kiểm Z + N = A",
+          "bieu_thuc": "26 + 30",
+          "ky_vong": 56,
+          "sai_so_tuong_doi": 0
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho sẵn kí hiệu $^A_Z X$ và hỏi số hạt → đọc $Z$ ở dưới, $A$ ở trên, tính $N = A - Z$.",
+      "bay_thuong_gap": [
+        "Đọc ngược hai chỉ số: lấy 56 là số prôtôn.",
+        "Lấy $A$ làm số nơtron (trả lời 56 nơtron).",
+        "Cộng $A + Z$ thay vì trừ.",
+        "Tính cả nơtron vào điện tích hạt nhân."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Kí hiệu $^{56}_{26}\\text{Fe}$ phóng to; chỉ số trên và chỉ số dưới lần lượt sáng lên kèm mũi tên chỉ vào một hạt nhân gồm các viên đỏ (prôtôn) và xám (nơtron) đang tụ lại; vỏ ngoài có các chấm êlectron quay quanh. Nhãn: 'số nuclôn A', 'số prôtôn Z', 'prôtôn (+e)', 'nơtron (không điện)', 'êlectron'. Không hiện số đếm từng loại."
+    },
+    {
+      "label": "Dạng 2 · Nhận ra đồng vị, tránh bẫy cùng A hoặc cùng N",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách đọc $Z$, $A$ và tính $N = A - Z$ của Dạng 1; thêm một độ khó mới: chọn đúng điều kiện đồng vị (chỉ xét cùng $Z$), tránh bẫy cùng số khối hoặc cùng số nơtron.",
+      "yccd_de_xuat": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+      "de_bai": "Một bảng số liệu có bốn hạt nhân: $^{39}_{19}\\text{K}$, $^{40}_{19}\\text{K}$, $^{40}_{18}\\text{Ar}$, $^{40}_{20}\\text{Ca}$.\na) Tính số nơtron của từng hạt nhân.\nb) Chỉ ra cặp nào là đồng vị của nhau và giải thích.\nc) Bạn An nói: «$^{40}_{18}\\text{Ar}$ và $^{40}_{20}\\text{Ca}$ là đồng vị vì cùng số khối 40». Bạn Bình nói: «$^{39}_{19}\\text{K}$ và $^{40}_{20}\\text{Ca}$ là đồng vị vì cùng số nơtron». Có bao nhiêu bạn nói đúng? Giải thích.",
+      "dieu_kien_ap_dung": "Hai hạt nhân là đồng vị khi và chỉ khi cùng số prôtôn $Z$ và khác số nơtron $N$; giống nhau về $A$ hay $N$ không đủ.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{39}_{19}\\text{K}$, $^{40}_{19}\\text{K}$",
+          "du_lieu": "$Z = 19$; $A = 39$ và $40$",
+          "kien_thuc": "$N = A - Z$; cùng $Z$ là cùng nguyên tố"
+        },
+        {
+          "trich_de": "$^{40}_{18}\\text{Ar}$, $^{40}_{20}\\text{Ca}$",
+          "du_lieu": "$Z = 18$, $A = 40$; $Z = 20$, $A = 40$",
+          "kien_thuc": "Khác $Z$ là khác nguyên tố"
+        },
+        {
+          "trich_de": "cùng số khối 40",
+          "du_lieu": "$A$ bằng nhau",
+          "kien_thuc": "Cùng $A$ không phải điều kiện đồng vị"
+        },
+        {
+          "trich_de": "cùng số nơtron",
+          "du_lieu": "$N$ bằng nhau",
+          "kien_thuc": "Cùng $N$ không phải điều kiện đồng vị"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "N",
+        "cong_thuc": "N = A - Z;\\ \\text{đồng vị} \\Leftrightarrow Z_1 = Z_2,\\ N_1 \\ne N_2"
+      },
+      "kien_thuc_goi_lai": [
+        "Đồng vị: cùng $Z$, khác $N$ (nên khác $A$).",
+        "Cùng $Z$ là cùng nguyên tố, cùng tính chất hoá học.",
+        "Chỉ cần kiểm chỉ số dưới $Z$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Tính số nơtron từng hạt nhân",
+          "cong_thuc_chu": "$N = A - Z$",
+          "the_so": "$^{39}_{19}\\text{K}$: $39 - 19$; $^{40}_{19}\\text{K}$: $40 - 19$; $^{40}_{18}\\text{Ar}$: $40 - 18$; $^{40}_{20}\\text{Ca}$: $40 - 20$",
+          "ket_qua": "$N = 20$; $21$; $22$; $20$",
+          "kiem_tra": "Mỗi $N$ đều dương và nhỏ hơn $A$."
+        },
+        {
+          "tieu_de": "Bước 2. Lọc theo điều kiện cùng Z",
+          "cong_thuc_chu": "Đồng vị $\\Leftrightarrow Z_1 = Z_2$, $N_1 \\ne N_2$",
+          "the_so": "Chỉ có $^{39}_{19}\\text{K}$ và $^{40}_{19}\\text{K}$ cùng $Z = 19$; $N$ là $20$ và $21$",
+          "ket_qua": "1 cặp đồng vị: $^{39}_{19}\\text{K}$ và $^{40}_{19}\\text{K}$",
+          "kiem_tra": "Cả hai đều là kali, cùng tính chất hoá học, chỉ khác khối lượng."
+        },
+        {
+          "tieu_de": "Bước 3. Xét ý kiến của An và Bình",
+          "cong_thuc_chu": "Kiểm $Z$ của từng cặp",
+          "the_so": "An: $Z = 18$ và $Z = 20$; Bình: $Z = 19$ và $Z = 20$",
+          "ket_qua": "Cả hai bạn đều sai; số bạn đúng $= 0$",
+          "kiem_tra": "Hai cặp đều khác $Z$ nên là hai nguyên tố khác nhau, không thể là đồng vị."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – N của K-39",
+          "gia_tri": 20,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "a – N của K-40",
+          "gia_tri": 21,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "a – N của Ar-40",
+          "gia_tri": 22,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "a – N của Ca-40",
+          "gia_tri": 20,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "b – số cặp đồng vị",
+          "gia_tri": 1,
+          "don_vi": "cặp"
+        },
+        {
+          "y": "c – số bạn nói đúng",
+          "gia_tri": 0,
+          "don_vi": "bạn"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "N của K-39",
+          "bieu_thuc": "39 - 19",
+          "ky_vong": 20,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "N của K-40",
+          "bieu_thuc": "40 - 19",
+          "ky_vong": 21,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "N của Ar-40",
+          "bieu_thuc": "40 - 18",
+          "ky_vong": 22,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "N của Ca-40",
+          "bieu_thuc": "40 - 20",
+          "ky_vong": 20,
+          "sai_so_tuong_doi": 0
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho nhiều kí hiệu hạt nhân và hỏi 'đồng vị', 'cùng nguyên tố', 'cùng tính chất hoá học' → chỉ so chỉ số dưới $Z$.",
+      "bay_thuong_gap": [
+        "Thấy cùng số khối $A$ là kết luận đồng vị.",
+        "Thấy cùng số nơtron $N$ là kết luận đồng vị.",
+        "Quên rằng đồng vị phải khác $N$ (hai kí hiệu giống hệt nhau là cùng một hạt nhân)."
+      ],
+      "dieu_ban_khong_chac": [
+        "$^{40}_{19}\\text{K}$ là đồng vị phóng xạ tự nhiên; đề không xét tính phóng xạ nên không ảnh hưởng kết luận."
+      ],
+      "mo_phong_goi_y": "Bốn thẻ kí hiệu hạt nhân xếp thành hàng; bên dưới mỗi thẻ là mô hình hạt nhân với viên đỏ (prôtôn) và xám (nơtron). Ba bộ lọc lần lượt bật: 'cùng A', 'cùng N', 'cùng Z' — mỗi bộ lọc nối dây giữa các thẻ thoả điều kiện. Nhãn: 'Z', 'A', 'N = A − Z', 'đồng vị?'. Không tô sáng sẵn cặp đúng."
+    },
+    {
+      "label": "Dạng 3 · Từ đồng vị đến bán kính và khối lượng hạt nhân theo u",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại Dạng 2 làm bước con: đồng vị thì giữ nguyên $Z$, chỉ đổi $N$ để viết kí hiệu mới; thêm một độ khó mới: tính bán kính theo $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ và khối lượng một nguyên tử từ $M/N_A$, đổi ra kg và u.",
+      "yccd_de_xuat": "Kích thước, khối lượng hạt nhân và đơn vị u",
+      "de_bai": "Bạc tự nhiên có đồng vị $^{107}_{47}\\text{Ag}$. Hạt nhân X là một đồng vị khác của bạc, có nhiều hơn hạt nhân $^{107}_{47}\\text{Ag}$ đúng 2 nơtron. Khối lượng mol nguyên tử của X là $108{,}90$ g/mol. Lấy $N_A = 6{,}022 \\cdot 10^{23}\\ \\text{mol}^{-1}$ và $1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg.\na) Viết kí hiệu hạt nhân X.\nb) Tính bán kính hạt nhân X theo $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m).\nc) Tính khối lượng một nguyên tử X ra kg và ra u.",
+      "dieu_kien_ap_dung": "Công thức $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ chỉ cho giá trị gần đúng; khối lượng một nguyên tử lấy bằng $M/N_A$.",
+      "phan_tich": [
+        {
+          "trich_de": "là một đồng vị khác của bạc",
+          "du_lieu": "$Z_X = 47$",
+          "kien_thuc": "Đồng vị: cùng $Z$"
+        },
+        {
+          "trich_de": "nhiều hơn hạt nhân $^{107}_{47}\\text{Ag}$ đúng 2 nơtron",
+          "du_lieu": "$N_X = (107 - 47) + 2$",
+          "kien_thuc": "$N = A - Z$; $A = Z + N$"
+        },
+        {
+          "trich_de": "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$",
+          "du_lieu": "$A = A_X$",
+          "kien_thuc": "Bán kính hạt nhân tăng theo căn bậc ba của $A$"
+        },
+        {
+          "trich_de": "Khối lượng mol nguyên tử của X là $108{,}90$ g/mol",
+          "du_lieu": "$M = 108{,}90$ g/mol",
+          "kien_thuc": "Khối lượng một nguyên tử $m = M/N_A$"
+        },
+        {
+          "trich_de": "$1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg",
+          "du_lieu": "$1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg",
+          "kien_thuc": "Đổi kg sang u: chia cho $1{,}66054 \\cdot 10^{-27}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "R, m",
+        "cong_thuc": "R = 1{,}2 \\cdot 10^{-15} A^{1/3};\\quad m = \\dfrac{M}{N_A}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đồng vị: cùng $Z$, khác $N$.",
+        "$A = Z + N$.",
+        "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m).",
+        "Một mol có $N_A$ nguyên tử nên $m = M/N_A$.",
+        "$1\\ \\text{u} \\approx 1{,}66054 \\cdot 10^{-27}$ kg."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Viết kí hiệu X (bài con Dạng 2)",
+          "cong_thuc_chu": "$Z_X = Z_{\\text{Ag}}$; $N_X = (A - Z) + 2$; $A_X = Z_X + N_X$",
+          "the_so": "$Z_X = 47$; $N_X = (107 - 47) + 2 = 62$; $A_X = 47 + 62$",
+          "ket_qua": "$A_X = 109$; X là $^{109}_{47}\\text{Ag}$",
+          "kiem_tra": "Giữ nguyên $Z = 47$ nên vẫn là bạc; $A$ tăng đúng 2."
+        },
+        {
+          "tieu_de": "Bước 2. Tính bán kính hạt nhân",
+          "cong_thuc_chu": "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$",
+          "the_so": "$R = 1{,}2 \\cdot 10^{-15} \\cdot 109^{1/3} \\approx 1{,}2 \\cdot 10^{-15} \\cdot 4{,}777$",
+          "ket_qua": "$R \\approx 5{,}73 \\cdot 10^{-15}\\ \\text{m}$",
+          "kiem_tra": "Nằm giữa $R$ của đồng ($4{,}8 \\cdot 10^{-15}$ m) và vàng ($7{,}0 \\cdot 10^{-15}$ m), hợp lí vì $63 \\lt 109 \\lt 197$."
+        },
+        {
+          "tieu_de": "Bước 3. Khối lượng một nguyên tử ra kg",
+          "cong_thuc_chu": "$m = \\dfrac{M}{N_A}$",
+          "the_so": "$m = \\dfrac{108{,}90}{6{,}022 \\cdot 10^{23}} \\approx 1{,}808 \\cdot 10^{-22}\\ \\text{g}$",
+          "ket_qua": "$m \\approx 1{,}808 \\cdot 10^{-25}\\ \\text{kg}$",
+          "kiem_tra": "Đơn vị: (g/mol)/(mol$^{-1}$) = g, đổi $1\\ \\text{g} = 10^{-3}$ kg."
+        },
+        {
+          "tieu_de": "Bước 4. Đổi ra u",
+          "cong_thuc_chu": "$m(\\text{u}) = \\dfrac{m(\\text{kg})}{1{,}66054 \\cdot 10^{-27}}$",
+          "the_so": "$m = \\dfrac{1{,}808 \\cdot 10^{-25}}{1{,}66054 \\cdot 10^{-27}}$",
+          "ket_qua": "$m \\approx 108{,}9\\ \\text{u}$",
+          "kiem_tra": "Gần bằng số khối 109 nhưng không đúng bằng: số khối chỉ là số đếm nuclôn."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – số khối A của X",
+          "gia_tri": 109,
+          "don_vi": "nuclôn"
+        },
+        {
+          "y": "b",
+          "gia_tri": 5.73e-15,
+          "don_vi": "m"
+        },
+        {
+          "y": "c – theo kg",
+          "gia_tri": 1.808e-25,
+          "don_vi": "kg"
+        },
+        {
+          "y": "c – theo u",
+          "gia_tri": 108.9,
+          "don_vi": "u"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số khối của X",
+          "bieu_thuc": "47 + (107 - 47) + 2",
+          "ky_vong": 109,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "bán kính hạt nhân X",
+          "bieu_thuc": "1.2e-15 * 109**(1/3)",
+          "ky_vong": 5.73e-15,
+          "sai_so_tuong_doi": 0.005
+        },
+        {
+          "mo_ta": "khối lượng một nguyên tử X (kg)",
+          "bieu_thuc": "108.90 / 6.022e23 / 1000",
+          "ky_vong": 1.808e-25,
+          "sai_so_tuong_doi": 0.005
+        },
+        {
+          "mo_ta": "khối lượng một nguyên tử X (u)",
+          "bieu_thuc": "108.90 / 6.022e23 / 1000 / 1.66054e-27",
+          "ky_vong": 108.9,
+          "sai_so_tuong_doi": 0.005
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề mô tả hạt nhân qua quan hệ đồng vị và hỏi bán kính, khối lượng → tìm $A$ trước, rồi thế vào $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ và $m = M/N_A$.",
+      "bay_thuong_gap": [
+        "Thêm 2 nơtron mà lại tăng cả $Z$ (viết thành $^{109}_{49}$X).",
+        "Tính $A^{1/3}$ thành $A/3$.",
+        "Nhân $M$ với $N_A$ thay vì chia.",
+        "Quên đổi gam sang kilôgam trước khi chia cho $1{,}66054 \\cdot 10^{-27}$ kg.",
+        "Lấy luôn số khối 109 làm khối lượng theo u."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khối lượng mol 108,90 g/mol là khối lượng nguyên tử (gồm cả êlectron); bài lý thuyết cũng gọi đó là khối lượng một nguyên tử nên giữ cách gọi này."
+      ],
+      "mo_phong_goi_y": "Hai hạt nhân bạc đặt cạnh nhau: hạt nhân $^{107}_{47}\\text{Ag}$ và hạt nhân X đang được ghép thêm 2 viên xám (nơtron), số viên đỏ không đổi. Sau đó một vòng tròn đánh dấu bán kính R của X phình ra nhẹ, kèm thước tỉ lệ $10^{-15}$ m. Bên cạnh là cân với một 'mol' nguyên tử được chia thành $N_A$ phần. Nhãn: 'Z giữ nguyên', '+2 nơtron', 'R', 'M', 'N_A', '1 u'. Không hiện giá trị R hay m."
+    },
+    {
+      "label": "Dạng 4 · Bài ngược: tỉ lệ đồng vị từ khối lượng nguyên tử trung bình",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả ba dạng trước: đọc $Z$, $N$ (Dạng 1), xác nhận đồng vị (Dạng 2), so bán kính theo $A^{1/3}$ và đổi u sang kg (Dạng 3); thêm một độ khó mới: bài ngược tìm phần trăm đồng vị từ khối lượng nguyên tử trung bình rồi dùng nó để đếm nguyên tử.",
+      "yccd_de_xuat": "Kích thước, khối lượng hạt nhân và đơn vị u",
+      "de_bai": "Clo dùng khử trùng nước là hỗn hợp tự nhiên của hai đồng vị $^{35}_{17}\\text{Cl}$ và $^{37}_{17}\\text{Cl}$. Bảng tuần hoàn ghi khối lượng nguyên tử trung bình của clo là $35{,}45$ u. Coi khối lượng mỗi đồng vị tính theo u bằng số khối của nó. Một mẫu chứa $1{,}00$ g clo tự nhiên. Lấy $1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg.\na) Hai hạt nhân clo trên giống và khác nhau ở đâu?\nb) Tính phần trăm số nguyên tử của mỗi đồng vị.\nc) Tính tỉ số bán kính hạt nhân $R_{37}/R_{35}$.\nd) Ước tính số nguyên tử $^{37}_{17}\\text{Cl}$ trong mẫu.",
+      "dieu_kien_ap_dung": "Coi khối lượng mỗi đồng vị (u) bằng số khối, mẫu chỉ gồm hai đồng vị trộn đều theo đúng tỉ lệ tự nhiên, và $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ áp dụng cho cả hai hạt nhân.",
+      "phan_tich": [
+        {
+          "trich_de": "$^{35}_{17}\\text{Cl}$ và $^{37}_{17}\\text{Cl}$",
+          "du_lieu": "$Z = 17$; $A_1 = 35$, $A_2 = 37$",
+          "kien_thuc": "$N = A - Z$; cùng $Z$ là đồng vị"
+        },
+        {
+          "trich_de": "khối lượng nguyên tử trung bình của clo là $35{,}45$ u",
+          "du_lieu": "$\\bar{m} = 35{,}45$ u",
+          "kien_thuc": "$\\bar{m} = x A_1 + (1 - x) A_2$ (trung bình theo tỉ lệ đồng vị)"
+        },
+        {
+          "trich_de": "tỉ số bán kính hạt nhân $R_{37}/R_{35}$",
+          "du_lieu": "$R_{37}/R_{35} = ?$",
+          "kien_thuc": "$R \\propto A^{1/3}$"
+        },
+        {
+          "trich_de": "Một mẫu chứa $1{,}00$ g clo tự nhiên",
+          "du_lieu": "$m_{\\text{mẫu}} = 1{,}00 \\cdot 10^{-3}$ kg",
+          "kien_thuc": "Số nguyên tử $= m_{\\text{mẫu}} / \\bar{m}$ (đổi $\\bar{m}$ ra kg)"
+        },
+        {
+          "trich_de": "$1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg",
+          "du_lieu": "$1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg",
+          "kien_thuc": "Đổi u sang kg"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "x, N_{37}",
+        "cong_thuc": "x = \\dfrac{A_2 - \\bar{m}}{A_2 - A_1};\\quad N_{37} = (1 - x)\\dfrac{m_{\\text{mẫu}}}{\\bar{m}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đồng vị: cùng $Z$, khác $N$, cùng tính chất hoá học.",
+        "Khối lượng nguyên tử ghi trên bảng tuần hoàn là trung bình theo tỉ lệ đồng vị.",
+        "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ nên $R_2/R_1 = (A_2/A_1)^{1/3}$.",
+        "$1\\ \\text{u} \\approx 1{,}66054 \\cdot 10^{-27}$ kg."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. So sánh hai hạt nhân (đã quen)",
+          "cong_thuc_chu": "$N = A - Z$",
+          "the_so": "$N_{35} = 35 - 17 = 18$; $N_{37} = 37 - 17 = 20$",
+          "ket_qua": "Cùng $Z = 17$ prôtôn; khác số nơtron (18 và 20) nên khác số nuclôn",
+          "kiem_tra": "Cùng $Z$, khác $N$: đúng định nghĩa đồng vị."
+        },
+        {
+          "tieu_de": "Bước 2. Lập phương trình khối lượng trung bình (mới)",
+          "cong_thuc_chu": "$\\bar{m} = x A_1 + (1 - x) A_2 \\Rightarrow x = \\dfrac{A_2 - \\bar{m}}{A_2 - A_1}$",
+          "the_so": "$x = \\dfrac{37 - 35{,}45}{37 - 35} = \\dfrac{1{,}55}{2}$",
+          "ket_qua": "$x = 0{,}775$: $^{35}\\text{Cl}$ chiếm $77{,}5\\ \\%$; $^{37}\\text{Cl}$ chiếm $22{,}5\\ \\%$",
+          "kiem_tra": "$35{,}45$ gần 35 hơn 37 nên $^{35}\\text{Cl}$ phải chiếm phần lớn; tổng $= 100\\ \\%$."
+        },
+        {
+          "tieu_de": "Bước 3. Tỉ số bán kính (đã quen)",
+          "cong_thuc_chu": "$\\dfrac{R_{37}}{R_{35}} = \\left(\\dfrac{37}{35}\\right)^{1/3}$",
+          "the_so": "$\\left(1{,}0571\\right)^{1/3}$",
+          "ket_qua": "$R_{37}/R_{35} \\approx 1{,}019$",
+          "kiem_tra": "Thêm 2 nuclôn (khoảng $6\\ \\%$) chỉ làm $R$ tăng khoảng $2\\ \\%$, đúng quy luật căn bậc ba."
+        },
+        {
+          "tieu_de": "Bước 4. Khối lượng trung bình một nguyên tử ra kg",
+          "cong_thuc_chu": "$\\bar{m}(\\text{kg}) = \\bar{m}(\\text{u}) \\cdot 1{,}66054 \\cdot 10^{-27}$",
+          "the_so": "$35{,}45 \\cdot 1{,}66054 \\cdot 10^{-27}$",
+          "ket_qua": "$\\bar{m} \\approx 5{,}887 \\cdot 10^{-26}\\ \\text{kg}$",
+          "kiem_tra": "Cỡ $10^{-26}$ kg, cùng cỡ với nhôm ($4{,}48 \\cdot 10^{-26}$ kg), hợp lí."
+        },
+        {
+          "tieu_de": "Bước 5. Tổng số nguyên tử và số nguyên tử Cl-37",
+          "cong_thuc_chu": "$N_{\\text{tổng}} = \\dfrac{m_{\\text{mẫu}}}{\\bar{m}}$; $N_{37} = (1 - x) N_{\\text{tổng}}$",
+          "the_so": "$N_{\\text{tổng}} = \\dfrac{1{,}00 \\cdot 10^{-3}}{5{,}887 \\cdot 10^{-26}} \\approx 1{,}699 \\cdot 10^{22}$; $N_{37} = 0{,}225 \\cdot 1{,}699 \\cdot 10^{22}$",
+          "ket_qua": "$N_{37} \\approx 3{,}82 \\cdot 10^{21}$ nguyên tử",
+          "kiem_tra": "kg/kg ra số thuần, không đơn vị; $N_{37}$ nhỏ hơn $N_{\\text{tổng}}$ khoảng 4 lần, khớp với $22{,}5\\ \\%$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – số nơtron Cl-35",
+          "gia_tri": 18,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "a – số nơtron Cl-37",
+          "gia_tri": 20,
+          "don_vi": "nơtron"
+        },
+        {
+          "y": "b – phần trăm Cl-35",
+          "gia_tri": 77.5,
+          "don_vi": "%"
+        },
+        {
+          "y": "b – phần trăm Cl-37",
+          "gia_tri": 22.5,
+          "don_vi": "%"
+        },
+        {
+          "y": "c",
+          "gia_tri": 1.019,
+          "don_vi": "(không đơn vị)"
+        },
+        {
+          "y": "d",
+          "gia_tri": 3.82e+21,
+          "don_vi": "nguyên tử"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "tỉ lệ Cl-35",
+          "bieu_thuc": "(37 - 35.45) / (37 - 35)",
+          "ky_vong": 0.775,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tỉ số bán kính R37/R35",
+          "bieu_thuc": "(37/35)**(1/3)",
+          "ky_vong": 1.019,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "khối lượng trung bình một nguyên tử clo (kg)",
+          "bieu_thuc": "35.45 * 1.66054e-27",
+          "ky_vong": 5.887e-26,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tổng số nguyên tử trong 1,00 g",
+          "bieu_thuc": "1.00e-3 / (35.45 * 1.66054e-27)",
+          "ky_vong": 1.699e+22,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "số nguyên tử Cl-37",
+          "bieu_thuc": "(1 - (37 - 35.45)/(37 - 35)) * 1.00e-3 / (35.45 * 1.66054e-27)",
+          "ky_vong": 3.82e+21,
+          "sai_so_tuong_doi": 0.003
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho khối lượng nguyên tử trung bình (số lẻ) và các đồng vị thành phần, hỏi phần trăm hoặc số nguyên tử một đồng vị → lập $\\bar{m} = x A_1 + (1 - x) A_2$, giải $x$, rồi đếm nguyên tử bằng $m_{\\text{mẫu}}/\\bar{m}$.",
+      "bay_thuong_gap": [
+        "Đảo tỉ lệ: gán $77{,}5\\ \\%$ cho $^{37}\\text{Cl}$.",
+        "Lấy trung bình cộng $(35 + 37)/2 = 36$ mà không xét tỉ lệ.",
+        "Tính tỉ số bán kính bằng $37/35$ (quên căn bậc ba).",
+        "Không đổi 1,00 g sang kg khi chia cho khối lượng tính bằng kg.",
+        "Chia khối lượng mẫu cho 37 u để đếm nguyên tử Cl-37 (bỏ qua việc mẫu là hỗn hợp)."
+      ],
+      "dieu_ban_khong_chac": [
+        "Coi khối lượng đồng vị bằng số khối cho $x = 77{,}5\\ \\%$; nếu dùng khối lượng đồng vị chính xác (34,969 u và 36,966 u) thì tỉ lệ thật khoảng $75{,}8\\ \\%$ và $24{,}2\\ \\%$. Đã ghi rõ giả thiết gần đúng trong đề.",
+        "Khí clo tồn tại dạng phân tử $\\text{Cl}_2$; đề hỏi số nguyên tử nên không ảnh hưởng kết quả."
+      ],
+      "mo_phong_goi_y": "Một bình khí chứa nhiều chấm nhỏ hai màu (một màu cho $^{35}\\text{Cl}$, một màu cho $^{37}\\text{Cl}$) chuyển động hỗn loạn. Bên cạnh là một cân đòn: một đầu đặt 'nguyên tử trung bình 35,45 u', đầu kia là con trượt có thể dịch giữa mốc 35 và 37 để thể hiện tỉ lệ trộn. Phóng to hai hạt nhân clo cạnh nhau với vòng bán kính $R_{35}$ và $R_{37}$. Nhãn: 'Z = 17', 'N = ?', 'A = 35', 'A = 37', 'x', '1 − x', '1,00 g', '1 u'. Không hiện phần trăm hay số nguyên tử."
+    }
+  ]
+}

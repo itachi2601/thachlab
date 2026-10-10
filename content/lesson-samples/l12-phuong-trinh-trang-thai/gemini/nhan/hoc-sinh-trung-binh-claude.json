@@ -1,0 +1,191 @@
+{
+  "bai": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Ba thông số trạng thái — một hằng số",
+      "trich_nguyen_van": "Đây là phương trình trạng thái của khí lí tưởng, còn gọi là phương trình Clapeyron.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Phương trình Clapeyron (mục 1) và phương trình Clapeyron – Mendeleev (mục 4) là một. Khi đề bảo 'viết phương trình Clapeyron – Mendeleev', em sẽ viết p1V1/T1 = p2V2/T2 thay vì pV = nRT.",
+      "de_xuat": "Thêm một câu so sánh: 'Clapeyron: pV/T = hằng số (hai trạng thái); Clapeyron – Mendeleev: pV = nRT (một trạng thái, biết số mol)'. Nếu không, bỏ tên Clapeyron ở mục 1."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Ba thông số trạng thái — một hằng số",
+      "trich_nguyen_van": "Đơn vị: $p$ (Pa), $V$ (m³ hoặc lít), $T$ (K).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "V để lít là dùng được ở mọi công thức, kể cả pV = nRT với R = 8,31. Mục 4 không nhắc lại điều kiện đơn vị.",
+      "de_xuat": "Ghi rõ: lít/cm³ chỉ dùng được khi lập tỉ số hai trạng thái; với pV = nRT, R = 8,31 J/(mol·K) thì bắt buộc p (Pa), V (m³)."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "V. Bài toán mẫu: nén khí trong thân bơm xe đạp",
+      "trich_nguyen_van": "$n = \\dfrac{pV}{RT} = \\dfrac{6{,}0.10^5 \\times 40.10^{-6}}{8{,}31 \\times 360}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không biết 10^-6 ở đâu ra. Câu a, b vẫn để V bằng cm³, nên em sẽ thay V = 40 và ra n lớn gấp một triệu lần.",
+      "de_xuat": "Thêm bước trước câu c: 'Đổi V2 = 40 cm³ = 40.10⁻⁶ m³ (1 cm³ = 10⁻⁶ m³) vì R = 8,31 đòi V bằng m³; câu a, b không cần đổi vì chỉ lấy tỉ số V1/V2'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Phương trình Clapeyron – Mendeleev",
+      "trich_nguyen_van": "Số mol: $n = \\dfrac{m}{M}$ — $m$ là khối lượng khí, $M$ là khối lượng mol.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Không rõ M tính bằng g/mol hay kg/mol, m bằng g hay kg. Mục 4 không có ví dụ nào, 8 câu tự kiểm tra cũng không có câu nào dùng pV = nRT, nên em không biết mình đã làm được dạng này chưa.",
+      "de_xuat": "Thêm một ví dụ ngắn (ví dụ tính thể tích 32 g O₂ ở 27 °C, 1,0.10⁵ Pa), nói rõ m và M cùng dùng g hoặc cùng dùng kg, và thêm một câu tự kiểm tra về pV = nRT."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Phương trình Clapeyron – Mendeleev",
+      "trich_nguyen_van": "Ở điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, 1 atm): 1 mol khí chiếm 22,4 lít. Ở điều kiện chuẩn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Tiêu chuẩn' và 'chuẩn' là cùng một điều kiện, nên em sẽ nhớ lẫn 22,4 và 24,79 lít. Atm và bar cũng chưa được đổi ra Pa.",
+      "de_xuat": "Trình bày thành bảng hai dòng, in đậm chữ khác nhau, kèm 1 atm ≈ 1,013.10⁵ Pa và 1 bar = 10⁵ Pa."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Quá trình đẳng tích",
+      "trich_nguyen_van": "Câu hỏi về sai số: vì sao cột $p/T$ không giống nhau tuyệt đối?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi cả 5 dòng đều 0,366, tức giống nhau tuyệt đối, nên em không hiểu câu hỏi đang nói về cột nào.",
+      "de_xuat": "Ghi cột p/T với 4 chữ số (0,3661; 0,3663…), hoặc đổi câu hỏi thành 'Đo thật thì vì sao cột p/T sẽ không bằng nhau tuyệt đối?'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "1. Ba thông số trạng thái — một hằng số",
+      "trich_nguyen_van": "Kết hợp định luật Boyle (giữ $T$ không đổi) với định luật Charles (giữ $p$ không đổi)",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ được báo là 'kết hợp'. Em không tự ghép hai hệ thức thành pV/T được vì thiếu trạng thái trung gian.",
+      "de_xuat": "Thêm hai dòng: 1 → 1' đẳng nhiệt (p1V1 = p'V2), rồi 1' → 2 đẳng áp (V2/T1 = ... ), khử p' ra p1V1/T1 = p2V2/T2."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 2: dùng phương trình trạng thái khi lượng khí đã đổi",
+      "trich_nguyen_van": "Có dùng được $\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$ cho trạng thái trước và sau không?",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "'Trước' là lúc ngay trước khi phơi, tức đã xả xong. Khi đó lượng khí không đổi trong lúc phơi nên phương trình vẫn dùng được, và chọn A cũng có lí.",
+      "de_xuat": "Ghi rõ 'trạng thái trước khi xả khí và trạng thái sau khi phơi nắng'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "gặp chữ \"bình kín\", \"thể tích không đổi\" thì nghĩ ngay tới $p/T$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Cứ thấy 'kín' là dùng p/T, kể cả thân bơm 'bịt kín đầu vòi' ở bài mẫu (V thay đổi) hay bình 'vẫn kín' ở Bẫy 2 (lượng khí đổi).",
+      "de_xuat": "Tách hai ý: 'kín' → lượng khí không đổi; 'bình cứng, thể tích không đổi' → mới dùng p/T."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "I. Mở bài: kim đồng hồ nhích lên giữa trưa nắng",
+      "trich_nguyen_van": "kim đồng hồ nhích từ 5,0 bar lên hơn 5,3 bar",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bar là đơn vị lạ. Đến Câu 7 bài ghi 5,0.10⁵ Pa và nói 'đúng con số kim đồng hồ', nhưng em không biết 5,0 bar = 5,0.10⁵ Pa.",
+      "de_xuat": "Thêm chú thích ngay ở mở bài: '1 bar = 10⁵ Pa'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: nén khí trong thân bơm xe đạp",
+      "trich_nguyen_van": "Thử sức: đổi số, đổi quá trình",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề hứa đổi quá trình, nhưng Câu 7 vẫn là đẳng tích và dùng đúng số của mở bài (27 → 47 °C, 5,0 → 5,3). Thử thách ⭐ ở mục VI cũng trùng hệt Câu 2. Em làm lại bài cũ chứ không luyện được dạng mới.",
+      "de_xuat": "Đổi Câu 7 sang quá trình đẳng áp hoặc một bài pV = nRT, và thay số ở thử thách ⭐."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Nắng lên tới nhiệt độ nào thì van mở?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề hỏi nhiệt độ của nắng, nhưng lời giải lại nói 127 °C 'không phải nhiệt độ nắng ngoài trời'. Vậy 127 °C là nhiệt độ của cái gì?",
+      "de_xuat": "Sửa đề thành 'Khí trong bình nóng tới nhiệt độ nào thì van mở?' và rút gọn đoạn kết luận."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "1. Ba thông số trạng thái — một hằng số",
+      "trich_nguyen_van": "Đổi $t = 27\\ ^\\circ\\text{C} \\to T = 300\\ \\text{K}$ trước khi bấm máy.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ thấy kết quả 300 K, không thấy quy tắc. Công thức T = t + 273 mãi đến lời giải bài mẫu mới xuất hiện.",
+      "de_xuat": "Viết rõ ở đây: 'T (K) = t (°C) + 273'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "2. Quá trình đẳng tích",
+      "trich_nguyen_van": "Hằng số này phụ thuộc vào lượng khí và thể tích của bình chứa.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 1 vừa nói hằng số 'chỉ phụ thuộc lượng khí', giờ lại thêm thể tích, nghe như mâu thuẫn. Phải đến Trả bài 4 mới được giải thích hai hằng số khác nhau.",
+      "de_xuat": "Thêm ngay ở mục 2: 'p/T = nR/V, khác hằng số pV/T = nR ở mục 1'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chia thẳng hai nhiệt độ Celsius 47/27, chưa đổi ra Kelvin.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đây là chỗ sai phổ biến nhất của bài: lấy tỉ số hai nhiệt độ Celsius."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Định luật Boyle quen thuộc nhất nên chọn, quên điều kiện T phải không đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai hệ thức kia chỉ đúng khi có một thông số được giữ không đổi"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy tỉ số 87/27 trên thang Celsius.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A lấy tỉ số nhiệt độ Celsius ($87/27$)"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy đề nhắc 'thể tích' liền chọn hệ thức có chứa V, trong khi V không đổi thì phải triệt tiêu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đề giữ $V$ không đổi."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Coi 0 °C như 'không có nhiệt độ', thay T2 = 0 nên ra áp suất bằng 0.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "0 °C là 273 K chứ không phải 0 K"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng 'bình kín, thể tích không đổi' là đủ điều kiện, quên kiểm tra lượng khí. Cách hỏi 'trạng thái trước' mơ hồ càng khiến A hợp lí.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bình vẫn kín nhưng lượng khí đã bớt"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đọc theo cảm giác 'đường dốc, nằm trên là to hơn' thay vì so p tại cùng một T.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đừng đoán theo cảm giác \"dốc là to\"."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy 47/27 trên thang Celsius, ra 8,7.10⁵ Pa.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A lấy $47/27$ (tỉ số Celsius)"
+    }
+  ]
+}

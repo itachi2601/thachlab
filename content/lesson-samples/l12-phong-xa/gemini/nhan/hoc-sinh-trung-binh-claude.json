@@ -1,0 +1,200 @@
+{
+  "bai": "Bài 17. Hiện tượng phóng xạ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Định luật phóng xạ và chu kì bán rã",
+      "trich_nguyen_van": "Khối lượng và độ phóng xạ giảm cùng quy luật: $m_t = m_0\\,2^{-t/T}$, $H_t = H_0\\,2^{-t/T}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu H và khái niệm độ phóng xạ xuất hiện ở mục 3 (cả trong ΔH và thí nghiệm đọc T), nhưng đến mục 4 mới định nghĩa. Học sinh dễ coi H là một dạng khối lượng hoặc số hạt.",
+      "de_xuat": "Thêm một dòng tạm định nghĩa ngay tại mục 3: 'H là độ phóng xạ, tức số phân rã mỗi giây (xem mục 4)'. Hoặc chuyển các công thức chứa H sang mục 4."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Định luật phóng xạ và chu kì bán rã",
+      "trich_nguyen_van": "Từ khối lượng suy ra số hạt ban đầu: $N_0 = \\dfrac{m_0}{A}N_A$ ($A$ là số khối",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ thay m₀ theo kg, hoặc theo đơn vị nào đề cho, và ra kết quả sai 1000 lần. Bài không nói A ở đây đóng vai khối lượng mol tính bằng g/mol.",
+      "de_xuat": "Ghi rõ: 'm₀ tính bằng gam, A lấy gần đúng bằng khối lượng mol (g/mol)'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Định luật phóng xạ và chu kì bán rã",
+      "trich_nguyen_van": "Phần đã phân rã: $\\Delta m = m_0\\left(1 - 2^{-t/T}\\right)$, $\\Delta H = H_0\\left(1 - 2^{-t/T}\\right)$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Có thể có hai cách hiểu sai. Một là coi Δm là khối lượng cả mẫu bị mất đi, trong khi hạt nhân con vẫn còn trong mẫu. Hai là hiểu 'độ phóng xạ đã phân rã' theo nghĩa đen, trong khi ΔH chỉ là phần độ phóng xạ đã giảm.",
+      "de_xuat": "Ghi rõ: 'Δm là khối lượng chất mẹ đã biến thành chất khác; ΔH là độ giảm của độ phóng xạ'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Bốn loại tia phóng xạ",
+      "trich_nguyen_van": "Nếu chiều lệch do nặng nhẹ thì tia $\\gamma$ phải lệch mạnh nhất — thực tế nó bay thẳng.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Lập luận này ngược trực giác. Nếu lệch do trọng lượng thì γ, vốn không có khối lượng nghỉ, phải lệch ít nhất chứ không phải mạnh nhất. Học sinh sẽ thấy lời giải thích vô lí và không bị thuyết phục.",
+      "de_xuat": "Thay bằng: 'Trọng lực luôn hướng xuống, không thể kéo α về bản âm còn β⁻ về bản dương. Chỉ điện tích trái dấu mới làm hai tia lệch ngược chiều nhau'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Độ phóng xạ",
+      "trich_nguyen_van": "B là kết quả của việc nhầm $1\\ \\text{Ci} = 10^{11}\\ \\text{Bq}$ (bỏ hệ số $3{,}7$)",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Bỏ hệ số 3,7 khỏi 3,7.10¹⁰ thì được 10¹⁰ chứ không phải 10¹¹. Học sinh không hiểu lỗi nào dẫn tới 0,37 Ci.",
+      "de_xuat": "Sửa thành: 'B là nhầm số mũ, coi 1 Ci = 10¹¹ Bq'. Hoặc đổi phương án B thành 3,7 Ci, ứng đúng với lỗi bỏ hệ số 3,7."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 2: \"độ phóng xạ và chu kì bán rã là một\"",
+      "trich_nguyen_van": "một hạt nhân riêng lẻ cũng có chu kì bán rã như cả mẫu",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 3 định nghĩa T là thời gian 'một nửa số hạt nhân phân rã'. Một hạt nhân thì không chia được nửa, nên học sinh thấy câu này mâu thuẫn với định nghĩa. Em có thể nghĩ hạt nhân đó chắc chắn phân rã sau đúng T.",
+      "de_xuat": "Sửa thành: 'Với một hạt nhân riêng lẻ, T nghĩa là sau thời gian T nó có xác suất 50% đã phân rã'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 1: \"sau một chu kì bán rã là phân rã hết\"",
+      "trich_nguyen_van": "Thời gian \"đo được\" phụ thuộc lượng chất",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh khó hiểu 'thời gian đo được' là thời gian gì. Đặt cạnh 'T là hằng số' ở cùng hàng, em dễ đọc thành T phụ thuộc lượng chất.",
+      "de_xuat": "Viết rõ: 'Thời gian để độ phóng xạ tụt xuống ngang phông nền thì phụ thuộc lượng chất ban đầu'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "1. Phóng xạ là gì",
+      "trich_nguyen_van": "kết quả phải ghi dạng $483 \\pm 10$ xung/phút — đó là sai số của giá trị trung bình 5 lần",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết vì sao từ tản mát ±20 lại ra ±10. Em sẽ nghĩ con số này được chọn tùy ý.",
+      "de_xuat": "Thêm nửa câu: 'sai số của trung bình n lần ≈ độ tản mát chia √n, tức 20/√5 ≈ 9 ≈ 10'. Hoặc bỏ con số ±10 nếu ngoài phạm vi."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Độ phóng xạ",
+      "trich_nguyen_van": "$T = 8$ ngày $= 6{,}9.10^5\\ \\text{s}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh trung bình không tự thấy ngay 1 ngày = 86 400 s, nên khó kiểm lại phép đổi đơn vị.",
+      "de_xuat": "Ghi bước trung gian: 8 × 24 × 3600 = 691 200 s ≈ 6,9.10⁵ s."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "đo độ phóng xạ riêng của $^{14}\\text{C}$ trong mẫu, so với gỗ tươi cùng loại",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "'Độ phóng xạ riêng' chưa hề được định nghĩa. Học sinh sẽ hiểu là độ phóng xạ H của cả mẫu. Khi đó em không biết phải so hai mẫu có khối lượng bằng nhau, tức là so trên cùng 1 gam carbon.",
+      "de_xuat": "Thêm ngoặc giải thích: '(độ phóng xạ tính trên 1 gam carbon, để so được hai mẫu có khối lượng khác nhau)'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Cách duy nhất là lưu giữ cách li trong khoảng vài chu kì bán rã.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bẫy 1 vừa nói sau 10T vẫn còn khoảng 0,1%. Ở đây 'vài chu kì' (3–5 T) vẫn còn 3–12%. Học sinh dễ thấy hai chỗ mâu thuẫn và không biết phải giữ bao lâu.",
+      "de_xuat": "Đổi thành 'khoảng 10 chu kì bán rã trở lên, tới khi độ phóng xạ xuống ngang phông nền'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "C. Vì tia $\\beta^-$ của nó bị mẫu gỗ giữ lại hoàn toàn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa từng nói ¹⁴C phóng xạ β⁻, nên học sinh không biết 'tia β⁻ của nó' từ đâu ra. Lời giải 'lí do không nằm ở việc tia có thoát được' cũng không giải thích vì sao C sai.",
+      "de_xuat": "Ghi '¹⁴C phân rã β⁻' ở mục Khảo cổ. Trong phản hồi, nói rõ mẫu đã được đốt thành khí nên tia không bị gỗ giữ lại."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "2. Bốn loại tia phóng xạ",
+      "trich_nguyen_van": "con lùi 2 ô, $A$ giảm 4",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Ô' ở đây là ô trong bảng tuần hoàn, nhưng bài không nói. Học sinh có thể không nối 'lùi 2 ô' với 'Z giảm 2'.",
+      "de_xuat": "Ở lần dùng đầu tiên, thêm: 'ô = vị trí trong bảng tuần hoàn; lùi 2 ô nghĩa là Z giảm 2'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "hai lần đếm cùng một nguồn trong cùng một phút luôn lệch nhau vài phần trăm",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Trong cùng một phút' đọc như hai lần đếm diễn ra đồng thời. Chữ 'luôn' làm em nghĩ không bao giờ có hai số trùng nhau.",
+      "de_xuat": "Sửa: 'các lần đếm, mỗi lần dài 1 phút, thường lệch nhau vài phần trăm'."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "1. Phóng xạ là gì",
+      "trich_nguyen_van": "🔑 Tự phát · Ngẫu nhiên · Không đổi",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh dễ nhớ 'Không đổi' thành số hạt nhân hoặc độ phóng xạ không đổi. Điều này mâu thuẫn với định luật phóng xạ ở mục 3.",
+      "de_xuat": "Đổi từ khoá thành 'Không chịu tác động bên ngoài'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi phân rã như phản ứng hoá học: lạnh thì chậm, gần như dừng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ngâm nước đá, đun nóng, nén mạnh, đổ axit — máy vẫn kêu đúng nhịp ấy."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ hạt nhân gần bề mặt 'dễ thoát' hơn nên phân rã trước. Đây là lẫn giữa việc tia thoát ra khỏi mẫu với việc hạt nhân phân rã.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ngẫu nhiên: không đoán được hạt nào phân rã lúc nào."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn chiều lệch với khối lượng hoặc trọng lực thay vì dấu điện tích.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "α (điện dương) lệch về bản âm, β⁻ (electron) lệch về bản dương, γ không mang điện nên bay thẳng"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính ra 1/8 nhưng lấy phần đã phân rã (87,5%) trong khi đề hỏi phần còn lại. Lời nhắc rõ ràng chỉ xuất hiện ở cuối bài, sau câu này.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đọc đề: hỏi \"còn lại\" hay \"đã phân rã\"? Chia t cho T trước, rồi lấy 1/2^n."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi Bq và Ci chỉ là hai cách gọi, giữ nguyên con số rồi đổi nhãn đơn vị. Phần thân bài không nói Ci lớn hơn Bq.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Trừ đúng A đi 4 nhưng nhầm chiều Z, đem cộng 2 vì lẫn với kiểu tiến ô của β⁻.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A giảm 4, Z giảm 2"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy phần đã phân rã sau 2 chu kì (75%) thay vì phần còn lại. Ngoài ra có thể nghĩ độ phóng xạ giảm theo quy luật khác số hạt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tìm được n = t/T rồi thì cả N, m, H đều chia cho 2^n"
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ chu kì 5730 năm là 'dài', không liên hệ giới hạn đo với số chu kì đã trôi qua và lượng hạt còn lại so với phông nền.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "¹⁴C định tuổi gỗ, than, xương tới ~50 000 năm (còn cỡ 0,25%)"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "bai": "Bài 13. Đại cương về dòng điện xoay chiều",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "II.1 Khung dây quay trong từ trường",
+      "trich_nguyen_van": "Theo Faraday, $e=-\\Phi'$. Suy ra $e$ cũng là hàm cos, nhưng chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em đạo hàm ra $NBS\\omega\\sin(\\omega t+\\varphi)$, tức hàm sin. Em không thấy vì sao nó thành cos chậm pha $\\pi/2$, nên phải học thuộc dấu trừ trong biểu thức.",
+      "de_xuat": "Chèn một dòng trung gian: $e=NBS\\omega\\sin(\\omega t+\\varphi)$, rồi dùng $\\sin x=\\cos(x-\\frac{\\pi}{2})$."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "II.1 Khung dây quay trong từ trường",
+      "trich_nguyen_van": "$U_0/n$ gần như không đổi (khoảng $0{,}47$), nên $U_0\\propto n\\propto\\omega$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa nêu chỗ nào rằng $\\omega=2\\pi n$. Em không biết vì sao $n$ (vòng/s) tỉ lệ với $\\omega$ (rad/s). Sau này em cũng không biết đổi 50 vòng/s thành $\\omega$ ở bài tập Khá.",
+      "de_xuat": "Thêm ngay sau khi định nghĩa $\\omega$: \"khung quay $n$ vòng/s thì $\\omega=2\\pi n$; máy một cặp cực có $f=n$\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "II.1 Khung dây quay trong từ trường",
+      "trich_nguyen_van": "Biên độ $U_0$ và tần số $f$ của điện áp thay đổi thế nào?",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Câu 1 hỏi về $f$, nhưng đến II.2 bài mới định nghĩa $f$. Ý \"mỗi vòng quay cho một chu kì nên $f=n$\" chỉ xuất hiện trong phản hồi. Em không có căn cứ để trả lời, nên đoán $f$ không đổi.",
+      "de_xuat": "Trước Câu 1, thêm vào phần \"Rút ra\" của thí nghiệm: \"mỗi vòng quay cho một chu kì điện, nên tần số $f$ bằng số vòng/s\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "II.2 Biểu thức dòng điện và điện áp xoay chiều",
+      "trich_nguyen_van": "pha tại lúc $t$; $\\varphi$ là pha ban đầu",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ở II.1, $\\varphi$ là góc giữa pháp tuyến và $\\vec B$ lúc $t=0$. Ở đây $\\varphi$ lại là pha ban đầu của $u$, $i$. Em dễ nghĩ pha ban đầu của $e$ cũng là $\\varphi$, trong khi thật ra là $\\varphi-\\frac{\\pi}{2}$.",
+      "de_xuat": "Ghi rõ: \"$\\varphi$ ở II.1 là góc của khung; pha ban đầu của $e$ là $\\varphi-\\frac{\\pi}{2}$, khác với $\\varphi_u$, $\\varphi_i$\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "II.2 Biểu thức dòng điện và điện áp xoay chiều",
+      "trich_nguyen_van": "không tính là đổi chiều giữa chừng. Trong giây đầu tiên chỉ đổi chiều $2f-1$ lần; các giây sau vẫn là $2f$ lần.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Giây thứ hai cũng bắt đầu và kết thúc ở điểm $i=0$. Em không hiểu vì sao giây thứ hai lại được tính $2f$ lần còn giây đầu thì không.",
+      "de_xuat": "Nói rõ cách đếm: trong $(0;1\\,\\text{s})$ có $2f-1$ điểm 0 nằm bên trong. Từ giây thứ hai, điểm cuối mỗi khoảng được tính vào khoảng đó."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "II.3 Giá trị hiệu dụng",
+      "trich_nguyen_van": "Chọn A là nhìn vào đỉnh, chọn C là nhìn vào giá trị trung bình.",
+      "loai": "nghi_sai_đáp_án",
+      "muc": "chặn",
+      "em_hieu_la": "Em chọn B và đọc thấy \"chọn A là nhìn vào đỉnh\". Em sẽ tưởng A (đáp án đúng) là sai, rồi chuyển sang C.",
+      "de_xuat": "Sửa thành \"Chọn B là nhìn vào đỉnh, chọn C là nhìn vào giá trị trung bình\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "II.3 Giá trị hiệu dụng",
+      "trich_nguyen_van": "Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hình vẽ điện áp mà chú thích lại nói \"dòng đổi chiều\". Em lẫn lộn giữa $u$ và $i$ trên cùng một đồ thị.",
+      "de_xuat": "Sửa thành \"Chấm xanh: lúc điện áp đổi dấu\", hoặc ghi rõ là đang xét điện trở thuần nên $i$ cùng pha $u$."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 1: lẫn tức thời, cực đại, hiệu dụng",
+      "trich_nguyen_van": "Ra 28 là nhân $\\sqrt{2}$ thay vì chia.",
+      "loai": "nghi_sai_đáp_án",
+      "muc": "khó",
+      "em_hieu_la": "Em thử nhân $\\sqrt2$: $I=2\\sqrt2$, $P=8\\cdot10=80$ W, không trùng 28. Em không hiểu 28 từ đâu ra. Thật ra $28\\approx I_0^2R/\\sqrt2$, tức là chia công suất cho $\\sqrt2$ thay vì chia cho 2.",
+      "de_xuat": "Sửa thành \"Ra 28 là lấy $I_0^2R$ chia $\\sqrt2$ thay vì chia 2\", hoặc đổi phương án D thành 80 W."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: lẫn tức thời, cực đại, hiệu dụng",
+      "trich_nguyen_van": "luôn bằng 0; không dùng",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu là trung bình trên mọi khoảng thời gian đều bằng 0, kể cả khoảng ngắn hơn một chu kì.",
+      "de_xuat": "Ghi \"trung bình trong một chu kì (hoặc số nguyên chu kì) bằng 0\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 2: từ thông cực đại thì suất điện động cực đại",
+      "trich_nguyen_van": "mặt khung vuông góc $\\vec{B}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "II.1 nói về góc giữa pháp tuyến $\\vec n$ và $\\vec B$, còn bảng này nói về mặt khung. Em dễ nhầm \"vuông góc\" thành $\\alpha=90^\\circ$ nên kết luận $\\Phi=0$.",
+      "de_xuat": "Thêm cột: \"mặt khung ⊥ $\\vec B$ ⇔ $\\vec n\\parallel\\vec B$, $\\alpha=0$\"; \"mặt khung ∥ $\\vec B$ ⇔ $\\alpha=90^\\circ$\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2: từ thông cực đại thì suất điện động cực đại",
+      "trich_nguyen_van": "Hệ thức độc lập: $\\left(\\dfrac{\\Phi}{\\Phi_0}\\right)^2+\\left(\\dfrac{e}{E_0}\\right)^2=1$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức mới chỉ xuất hiện trong phản hồi, không có giải thích. Em không biết nó từ đâu ra và dùng khi nào.",
+      "de_xuat": "Đưa hệ thức vào phần lý thuyết Bẫy 2, kèm một câu: \"vì hai đại lượng vuông pha nên $\\cos^2+\\sin^2=1$\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: viết biểu thức dòng điện",
+      "trich_nguyen_van": "$i=0$ khi pha bằng $\\dfrac{\\pi}{2}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Pha bằng $-\\frac{\\pi}{2}$ cũng cho $i=0$. Em không biết vì sao chọn $\\frac{\\pi}{2}$, và có thể giải ra $t$ âm rồi bối rối.",
+      "de_xuat": "Thêm: \"pha bắt đầu từ $\\frac{\\pi}{4}$ và tăng dần, nên giá trị đầu tiên làm cos bằng 0 là $\\frac{\\pi}{2}$\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: viết biểu thức dòng điện",
+      "trich_nguyen_van": "$R=25\\ \\Omega$, $t=60\\ \\text{s}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng một bài, $t$ vừa là thời điểm ($t=0$) vừa là khoảng thời gian 60 s. Em có thể thay nhầm $t=60$ vào biểu thức $i$.",
+      "de_xuat": "Ghi khoảng thời gian là $\\Delta t=60$ s và viết $Q=I^2R\\Delta t$."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "VI. Đời sống và thử thách",
+      "trich_nguyen_van": "$E_0=NBS\\omega=100\\cdot0{,}1\\cdot0{,}02\\cdot100\\pi\\approx62{,}8\\ \\text{V}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em thấy 200 cm² biến thành 0,02 mà không có bước đổi đơn vị. Em cũng thấy dùng $\\omega=2\\pi\\cdot50$ với 50 vòng/s, trong khi bài chỉ dạy $\\omega=2\\pi f$.",
+      "de_xuat": "Thêm hai bước: \"$S=200\\ \\text{cm}^2=0{,}02\\ \\text{m}^2$\" và \"$\\omega=2\\pi n$\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ con số ghi trên ổ điện là giá trị lớn nhất của điện áp.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cho rằng tần số là cố định (như 50 Hz của lưới điện), chỉ biên độ thay đổi theo tốc độ quay. Trước câu này bài chưa nêu $f=n$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đọc 100π rồi lấy luôn 100 làm $f$, quên chia cho $2\\pi$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Điện lưới Việt Nam: $f=50\\ \\text{Hz}$, nên $\\omega=100\\pi\\approx314\\ \\text{rad/s}$"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cho rằng đỉnh $2\\sqrt2$ A lớn hơn 2 A nên dòng xoay chiều toả nhiệt nhiều hơn. Phản hồi sai (ghi \"A\" thay vì \"B\") làm lỗi này nặng thêm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "là cường độ của dòng không đổi toả nhiệt bằng dòng xoay chiều, khi qua cùng một điện trở trong cùng thời gian"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy thẳng $I_0=2$ A trong biểu thức thay vào $P=I^2R$, quên đổi sang giá trị hiệu dụng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ghi trên máy, đồng hồ đo, tính công suất, nhiệt"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất \"từ thông lớn\" với \"suất điện động lớn\", bỏ qua việc $e$ phụ thuộc tốc độ biến thiên của $\\Phi$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lúc $\\Phi$ đạt đỉnh thì đồ thị nằm ngang, độ dốc bằng 0, nên $e=0$"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đặt $100\\pi t=\\frac{\\pi}{2}$ mà quên cộng pha ban đầu $\\frac{\\pi}{4}$. Phương án C cũng dễ bị chọn vì ngay trước đó học sinh vừa làm biến thể $\\varphi=-\\frac{\\pi}{4}$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

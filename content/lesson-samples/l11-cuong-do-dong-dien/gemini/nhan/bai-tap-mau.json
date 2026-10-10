@@ -1,0 +1,523 @@
+{
+  "lesson_title": "Bài 22. Cường độ dòng điện",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính cường độ dòng điện và số electron từ điện lượng",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: dùng thẳng định nghĩa $I = \\Delta q/\\Delta t$ và $\\Delta q = Ne$. Số liệu đã ở đơn vị SI.",
+      "yccd_de_xuat": "Định nghĩa cường độ dòng điện và mật độ dòng",
+      "de_bai": "Bóng đèn sợi đốt trên bàn học đang sáng. Coi dòng điện qua đèn không đổi. Trong $40$ s có $18$ C điện lượng chuyển qua tiết diện thẳng của dây tóc. Cho $e = 1{,}6\\cdot10^{-19}$ C.\na) Tính cường độ dòng điện qua đèn.\nb) Tính số electron chuyển qua tiết diện đó trong $40$ s.",
+      "dieu_kien_ap_dung": "Dòng điện không đổi nên $\\Delta q/\\Delta t$ cho đúng cường độ tại mọi thời điểm; mỗi electron mang điện tích có độ lớn $e$.",
+      "phan_tich": [
+        {
+          "trich_de": "Coi dòng điện qua đèn không đổi",
+          "du_lieu": "$I$ không đổi theo thời gian",
+          "kien_thuc": "Dòng không đổi: chiều và cường độ không đổi"
+        },
+        {
+          "trich_de": "Trong $40$ s",
+          "du_lieu": "$\\Delta t = 40$ s",
+          "kien_thuc": "Thời gian tính bằng giây"
+        },
+        {
+          "trich_de": "$18$ C điện lượng",
+          "du_lieu": "$\\Delta q = 18$ C",
+          "kien_thuc": "Điện lượng qua tiết diện thẳng"
+        },
+        {
+          "trich_de": "Cho $e = 1{,}6\\cdot10^{-19}$ C",
+          "du_lieu": "$e = 1{,}6\\cdot10^{-19}$ C",
+          "kien_thuc": "Độ lớn điện tích electron"
+        },
+        {
+          "trich_de": "số electron",
+          "du_lieu": "$N = ?$",
+          "kien_thuc": "$\\Delta q = Ne$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "I, N",
+        "cong_thuc": "I = \\dfrac{\\Delta q}{\\Delta t};\\ N = \\dfrac{\\Delta q}{e}"
+      },
+      "kien_thuc_goi_lai": [
+        "$I = \\Delta q/\\Delta t$, đơn vị ampe (A).",
+        "$1$ A $= 1$ C/s.",
+        "Điện lượng bằng số hạt nhân điện tích mỗi hạt: $\\Delta q = Ne$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "a) Cường độ dòng điện",
+          "cong_thuc_chu": "$I = \\dfrac{\\Delta q}{\\Delta t}$",
+          "the_so": "$I = \\dfrac{18}{40}$",
+          "ket_qua": "$I = 0{,}45\\ \\text{A}$",
+          "kiem_tra": "C/s = A. Cỡ vài phần mười ampe là hợp lí với bóng đèn bàn."
+        },
+        {
+          "tieu_de": "b) Số electron",
+          "cong_thuc_chu": "$N = \\dfrac{\\Delta q}{e}$",
+          "the_so": "$N = \\dfrac{18}{1{,}6\\cdot10^{-19}}$",
+          "ket_qua": "$N = 1{,}125\\cdot10^{20}$ electron",
+          "kiem_tra": "C/C không có đơn vị, đúng là số hạt. Số rất lớn vì $e$ rất nhỏ."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.45,
+          "don_vi": "A"
+        },
+        {
+          "y": "b",
+          "gia_tri": 112500000000000000000,
+          "don_vi": "electron"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cường độ dòng điện I",
+          "bieu_thuc": "18/40",
+          "ky_vong": 0.45,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "số electron N",
+          "bieu_thuc": "18/1.6e-19",
+          "ky_vong": 112500000000000000000,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho sẵn điện lượng (C) và thời gian (s), hỏi cường độ hoặc số hạt → chia $\\Delta q$ cho $\\Delta t$, chia $\\Delta q$ cho $e$.",
+      "bay_thuong_gap": [
+        "Nhân $\\Delta q\\cdot\\Delta t$ thay vì chia.",
+        "Tính $N = \\Delta q\\cdot e$, ra số nhỏ vô lí.",
+        "Quên rằng $e$ là độ lớn, ghi số electron âm."
+      ],
+      "dieu_ban_khong_chac": [
+        "Dòng qua đèn sợi đốt lúc mới bật lớn hơn lúc ổn định; đề đã nói coi dòng không đổi để tránh chi tiết này."
+      ],
+      "mo_phong_goi_y": "Đoạn dây tóc phóng to, một mặt cắt tiết diện thẳng tô sáng. Các chấm electron trôi chậm qua mặt cắt, một bộ đếm điện lượng tăng dần theo đồng hồ bấm giờ đến 40 s. Mũi tên chiều dòng điện ngược chiều chấm electron. Nhãn: tiết diện thẳng, $\\Delta q$, $\\Delta t$, $I$, chiều electron, chiều dòng điện."
+    },
+    {
+      "label": "Dạng 2 · Điện lượng sạc pin: đổi mA, phút, mAh",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại $\\Delta q = I\\,\\Delta t$ của dạng 1. Thêm một độ khó: dữ kiện ở mA, phút, mAh, phải đổi về SI và đổi ngược sang mAh; có số vôn gây nhiễu.",
+      "yccd_de_xuat": "Định nghĩa cường độ dòng điện và mật độ dòng",
+      "de_bai": "Hộp sạc tai nghe không dây ghi đầu ra $5$ V. Khi sạc, hộp cấp cho tai nghe dòng điện không đổi $180$ mA trong $25$ phút thì tai nghe đầy.\na) Tính điện lượng đã chuyển qua dây nối, theo đơn vị C.\nb) Đổi điện lượng đó ra mAh. Biết $1$ mAh $= 3{,}6$ C.",
+      "dieu_kien_ap_dung": "Dòng điện không đổi nên điện lượng tỉ lệ thuận với thời gian: $\\Delta q = I\\,\\Delta t$.",
+      "phan_tich": [
+        {
+          "trich_de": "đầu ra $5$ V",
+          "du_lieu": "$U = 5$ V (không dùng)",
+          "kien_thuc": "Điện lượng chỉ cần $I$ và $\\Delta t$"
+        },
+        {
+          "trich_de": "dòng điện không đổi $180$ mA",
+          "du_lieu": "$I = 180$ mA $= 0{,}180$ A",
+          "kien_thuc": "Điều kiện dùng $\\Delta q = I\\,\\Delta t$; đổi mA ra A"
+        },
+        {
+          "trich_de": "trong $25$ phút",
+          "du_lieu": "$\\Delta t = 25$ phút $= 1500$ s",
+          "kien_thuc": "Đổi phút ra giây"
+        },
+        {
+          "trich_de": "$1$ mAh $= 3{,}6$ C",
+          "du_lieu": "$1$ mAh $= 3{,}6$ C",
+          "kien_thuc": "$10^{-3}$ A $\\cdot$ 3600 s"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta q",
+        "cong_thuc": "\\Delta q = I\\,\\Delta t;\\ \\Delta q_{\\text{mAh}} = \\dfrac{\\Delta q}{3{,}6}"
+      },
+      "kien_thuc_goi_lai": [
+        "Dòng không đổi: $\\Delta q = I\\,\\Delta t$.",
+        "$1$ mA $= 10^{-3}$ A; $1$ phút $= 60$ s.",
+        "$1$ mAh $= 3{,}6$ C."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi đơn vị về SI",
+          "cong_thuc_chu": "$I = 180\\cdot10^{-3}$ A; $\\Delta t = 25\\cdot60$ s",
+          "the_so": "$I = 0{,}180$ A; $\\Delta t = 1500$ s",
+          "ket_qua": "$I = 0{,}180\\ \\text{A},\\ \\Delta t = 1500\\ \\text{s}$",
+          "kiem_tra": "Đã bỏ số 5 V, không dùng tới."
+        },
+        {
+          "tieu_de": "a) Điện lượng theo C",
+          "cong_thuc_chu": "$\\Delta q = I\\,\\Delta t$",
+          "the_so": "$\\Delta q = 0{,}180\\cdot1500$",
+          "ket_qua": "$\\Delta q = 270\\ \\text{C}$",
+          "kiem_tra": "A·s = C. Nếu quên đổi phút sẽ ra 4,5 C, nhỏ vô lí."
+        },
+        {
+          "tieu_de": "b) Đổi ra mAh",
+          "cong_thuc_chu": "$\\Delta q_{\\text{mAh}} = \\dfrac{\\Delta q}{3{,}6}$",
+          "the_so": "$\\Delta q_{\\text{mAh}} = \\dfrac{270}{3{,}6}$",
+          "ket_qua": "$75\\ \\text{mAh}$",
+          "kiem_tra": "Thử cách nhanh: $180\\ \\text{mA}\\cdot\\dfrac{25}{60}\\ \\text{h} = 75$ mAh, khớp. Cỡ vài chục mAh hợp với pin tai nghe."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 270,
+          "don_vi": "C"
+        },
+        {
+          "y": "b",
+          "gia_tri": 75,
+          "don_vi": "mAh"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "điện lượng theo C",
+          "bieu_thuc": "0.180*25*60",
+          "ky_vong": 270,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "điện lượng theo mAh",
+          "bieu_thuc": "0.180*25*60/3.6",
+          "ky_vong": 75,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "kiểm tra bằng mA nhân giờ",
+          "bieu_thuc": "180*25/60",
+          "ky_vong": 75,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có mA, phút, mAh hoặc mC, kèm chữ \"không đổi\" → đổi hết về A, s, C rồi mới nhân; số vôn là dữ kiện thừa.",
+      "bay_thuong_gap": [
+        "Để nguyên 25 phút: $0{,}180\\cdot25 = 4{,}5$ C.",
+        "Để nguyên 180 mA: ra $270\\,000$, lớn gấp nghìn lần.",
+        "Nhân thêm 5 V vào điện lượng.",
+        "Đổi mAh ngược: nhân 3,6 thay vì chia."
+      ],
+      "dieu_ban_khong_chac": [
+        "Thực tế dòng sạc giảm dần khi pin gần đầy; đề giả thiết không đổi để dùng được $\\Delta q = I\\,\\Delta t$."
+      ],
+      "mo_phong_goi_y": "Hộp sạc nối dây tới tai nghe, trên dây có đồng hồ USB hiện dòng 180 mA không đổi. Đồng hồ thời gian chạy từ 0 đến 25 phút; bên cạnh là đồ thị $\\Delta q$ theo $t$ là đường thẳng đi lên (không ghi giá trị cuối). Nhãn: $I$ (mA), $\\Delta t$ (phút), $\\Delta q$ (C), $\\Delta q$ (mAh), nhãn mờ \"5 V\"."
+    },
+    {
+      "label": "Dạng 3 · Tốc độ trôi của electron từ $I = Snve$",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại bước đổi phút ra giây và $I = \\Delta q/\\Delta t$ của dạng 2 làm bước con. Thêm một độ khó: nối $I$ với chuyển động hạt tải qua $I = Snve$, đổi mm² ra m² và rút $v$.",
+      "yccd_de_xuat": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+      "de_bai": "Mỗi lõi dây nguồn của một bếp từ là dây đồng có tiết diện $2{,}5\\ \\text{mm}^2$. Khi bếp đun ở mức ổn định, trong $2$ phút có $1200$ C điện lượng chuyển qua tiết diện một lõi. Mật độ electron tự do của đồng $n = 8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$, $e = 1{,}6\\cdot10^{-19}$ C.\na) Tính cường độ dòng điện trong lõi dây.\nb) Tính tốc độ trôi của electron trong lõi dây, ra mm/s.",
+      "dieu_kien_ap_dung": "Dòng không đổi trong dây đồng đồng chất, tiết diện đều; $v$ là tốc độ trôi trung bình có hướng, không phải tốc độ chuyển động nhiệt.",
+      "phan_tich": [
+        {
+          "trich_de": "tiết diện $2{,}5\\ \\text{mm}^2$",
+          "du_lieu": "$S = 2{,}5\\cdot10^{-6}\\ \\text{m}^2$",
+          "kien_thuc": "Đổi $1\\ \\text{mm}^2 = 10^{-6}\\ \\text{m}^2$"
+        },
+        {
+          "trich_de": "ở mức ổn định",
+          "du_lieu": "$I$ không đổi",
+          "kien_thuc": "Dùng được $I = \\Delta q/\\Delta t$"
+        },
+        {
+          "trich_de": "trong $2$ phút",
+          "du_lieu": "$\\Delta t = 120$ s",
+          "kien_thuc": "Đổi phút ra giây"
+        },
+        {
+          "trich_de": "$1200$ C điện lượng",
+          "du_lieu": "$\\Delta q = 1200$ C",
+          "kien_thuc": "$I = \\Delta q/\\Delta t$"
+        },
+        {
+          "trich_de": "$n = 8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$",
+          "du_lieu": "$n = 8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$",
+          "kien_thuc": "Mật độ hạt tải, hằng số của vật liệu"
+        },
+        {
+          "trich_de": "tốc độ trôi của electron",
+          "du_lieu": "$v = ?$",
+          "kien_thuc": "$I = Snve \\Rightarrow v = I/(Sne)$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "v",
+        "cong_thuc": "v = \\dfrac{I}{S n e},\\ I = \\dfrac{\\Delta q}{\\Delta t}"
+      },
+      "kien_thuc_goi_lai": [
+        "$I = Snve$: suy từ $N = nSv\\Delta t$ hạt trong hình trụ dài $v\\Delta t$.",
+        "$n$ tính bằng m⁻³, $S$ bằng m².",
+        "Electron trôi ngược chiều dòng điện; công thức dùng độ lớn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "a) Cường độ dòng điện (bước con dạng 2)",
+          "cong_thuc_chu": "$I = \\dfrac{\\Delta q}{\\Delta t}$",
+          "the_so": "$I = \\dfrac{1200}{120}$",
+          "ket_qua": "$I = 10\\ \\text{A}$",
+          "kiem_tra": "Đã đổi 2 phút = 120 s. 10 A hợp với bếp từ."
+        },
+        {
+          "tieu_de": "Đổi tiết diện",
+          "cong_thuc_chu": "$S = 2{,}5\\cdot10^{-6}\\ \\text{m}^2$",
+          "the_so": "$2{,}5\\ \\text{mm}^2 = 2{,}5\\cdot10^{-6}\\ \\text{m}^2$",
+          "ket_qua": "$S = 2{,}5\\cdot10^{-6}\\ \\text{m}^2$",
+          "kiem_tra": "mm² sang m² nhân $10^{-6}$, không phải $10^{-3}$."
+        },
+        {
+          "tieu_de": "Tính tích $Sne$",
+          "cong_thuc_chu": "$Sne$",
+          "the_so": "$2{,}5\\cdot10^{-6}\\cdot8{,}5\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}$",
+          "ket_qua": "$Sne = 3{,}4\\cdot10^{4}\\ \\text{C/m}$",
+          "kiem_tra": "m²·m⁻³·C = C/m."
+        },
+        {
+          "tieu_de": "b) Tốc độ trôi",
+          "cong_thuc_chu": "$v = \\dfrac{I}{Sne}$",
+          "the_so": "$v = \\dfrac{10}{3{,}4\\cdot10^{4}}$",
+          "ket_qua": "$v \\approx 2{,}94\\cdot10^{-4}\\ \\text{m/s} = 0{,}294\\ \\text{mm/s}$",
+          "kiem_tra": "(C/s)/(C/m) = m/s. Thay lại: $3{,}4\\cdot10^{4}\\cdot2{,}94\\cdot10^{-4} \\approx 10$ A. Dưới 1 mm/s, hợp với bảng trong bài."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 10,
+          "don_vi": "A"
+        },
+        {
+          "y": "b",
+          "gia_tri": 0.294,
+          "don_vi": "mm/s"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "cường độ dòng điện",
+          "bieu_thuc": "1200/(2*60)",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tích S n e",
+          "bieu_thuc": "2.5e-6*8.5e28*1.6e-19",
+          "ky_vong": 34000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tốc độ trôi v (mm/s)",
+          "bieu_thuc": "1200/120/(2.5e-6*8.5e28*1.6e-19)*1000",
+          "ky_vong": 0.294,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho tiết diện, mật độ electron $n$, hỏi tốc độ trôi (hoặc ngược lại) → tìm $I$ trước, đổi $S$ ra m², rồi $v = I/(Sne)$.",
+      "bay_thuong_gap": [
+        "Đổi $2{,}5\\ \\text{mm}^2 = 2{,}5\\cdot10^{-3}\\ \\text{m}^2$, kết quả nhỏ đi nghìn lần.",
+        "Ra $v$ gần tốc độ ánh sáng hoặc vài km/s mà không thấy vô lí.",
+        "Nhầm mật độ hạt tải $n$ với mật độ dòng $j$.",
+        "Quên đổi m/s ra mm/s ở đáp số."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bếp từ dùng điện xoay chiều từ lưới; đề chỉ xét lúc đun ổn định và coi như dòng không đổi để áp dụng công thức của bài. Có thể thay bằng thiết bị một chiều nếu cần chặt chẽ."
+      ],
+      "mo_phong_goi_y": "Đoạn lõi đồng phóng to có mặt cắt tiết diện $S$. Các electron vừa rung lắc nhiệt hỗn loạn vừa trôi rất chậm ngược chiều mũi tên dòng điện. Một hình trụ trong suốt dài $v\\Delta t$ trước mặt cắt, các electron trong đó lần lượt đi qua $S$. Nhãn: $S$, $n$, $v$, $v\\Delta t$, chiều $I$, chiều electron."
+    },
+    {
+      "label": "Dạng 4 · Hai đoạn dây nối tiếp: mật độ dòng, tốc độ trôi và thời gian electron đi hết dây",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại $v = I/(Sne)$ của dạng 3 (phần này giải ngắn). Thêm một độ khó: dữ kiện ẩn, hai đoạn dây khác tiết diện mắc nối tiếp phải có cùng $I$; từ đó so sánh $j$, $v$ và giải thích vì sao thiết bị chạy ngay.",
+      "yccd_de_xuat": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+      "de_bai": "Một máy sưởi được cắm vào ổ cắm kéo dài. Dây của ổ kéo dài dài $3{,}0$ m, lõi đồng tiết diện $0{,}75\\ \\text{mm}^2$. Dây này nối tiếp với dây đi trong tường có lõi đồng tiết diện $2{,}5\\ \\text{mm}^2$. Ampe kế mắc nối tiếp ở đầu dây trong tường chỉ $6{,}0$ A, không đổi. Cho $n = 8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$, $e = 1{,}6\\cdot10^{-19}$ C.\na) Tính mật độ dòng điện trong mỗi lõi. Lõi nào nóng hơn?\nb) Tính tốc độ trôi của electron trong mỗi lõi và tỉ số giữa chúng.\nc) Một electron trôi hết chiều dài dây ổ kéo dài mất bao lâu? Vì sao máy sưởi vẫn chạy gần như ngay khi bật công tắc?",
+      "dieu_kien_ap_dung": "Mạch nối tiếp, dòng không đổi: điện tích không tích lại ở đâu nên $I$ như nhau tại mọi tiết diện; hai lõi cùng là đồng nên cùng $n$.",
+      "phan_tich": [
+        {
+          "trich_de": "dài $3{,}0$ m",
+          "du_lieu": "$\\ell = 3{,}0$ m",
+          "kien_thuc": "Thời gian trôi $t = \\ell/v$"
+        },
+        {
+          "trich_de": "lõi đồng tiết diện $0{,}75\\ \\text{mm}^2$",
+          "du_lieu": "$S_1 = 0{,}75\\cdot10^{-6}\\ \\text{m}^2$",
+          "kien_thuc": "Đổi mm² ra m²"
+        },
+        {
+          "trich_de": "nối tiếp",
+          "du_lieu": "$I_1 = I_2 = I$",
+          "kien_thuc": "Mạch nối tiếp: $I$ như nhau tại mọi tiết diện (dữ kiện ẩn)"
+        },
+        {
+          "trich_de": "có lõi đồng tiết diện $2{,}5\\ \\text{mm}^2$",
+          "du_lieu": "$S_2 = 2{,}5\\cdot10^{-6}\\ \\text{m}^2$",
+          "kien_thuc": "Đổi mm² ra m²"
+        },
+        {
+          "trich_de": "chỉ $6{,}0$ A, không đổi",
+          "du_lieu": "$I = 6{,}0$ A",
+          "kien_thuc": "Dòng không đổi"
+        },
+        {
+          "trich_de": "mật độ dòng điện",
+          "du_lieu": "$j_1, j_2 = ?$",
+          "kien_thuc": "$j = I/S = nve$"
+        },
+        {
+          "trich_de": "tốc độ trôi của electron",
+          "du_lieu": "$v_1, v_2 = ?$",
+          "kien_thuc": "$v = j/(ne)$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "j_1, j_2, v_1, v_2, t",
+        "cong_thuc": "j = \\dfrac{I}{S};\\ v = \\dfrac{j}{ne};\\ \\dfrac{v_1}{v_2} = \\dfrac{S_2}{S_1};\\ t = \\dfrac{\\ell}{v_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "Mạch nối tiếp: ampe kế đặt ở đâu cũng chỉ cùng một $I$.",
+        "$j = I/S = nve$ (A/m²); cùng $I$, dây nhỏ có $j$ lớn nên nóng hơn.",
+        "$n$ do vật liệu quyết định.",
+        "Điện trường lan dọc dây gần tốc độ ánh sáng; dây đã đầy electron tự do."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Rút dữ kiện ẩn",
+          "cong_thuc_chu": "$I_1 = I_2 = I$",
+          "the_so": "$I_1 = I_2 = 6{,}0$ A",
+          "ket_qua": "$I_1 = 6{,}0\\ \\text{A}$",
+          "kiem_tra": "Ampe kế ở dây tường nhưng dòng trong dây ổ kéo dài cũng là 6,0 A vì nối tiếp."
+        },
+        {
+          "tieu_de": "a) Mật độ dòng trong mỗi lõi",
+          "cong_thuc_chu": "$j = \\dfrac{I}{S}$",
+          "the_so": "$j_1 = \\dfrac{6{,}0}{0{,}75\\cdot10^{-6}}$; $j_2 = \\dfrac{6{,}0}{2{,}5\\cdot10^{-6}}$",
+          "ket_qua": "$j_1 = 8{,}0\\cdot10^{6}\\ \\text{A/m}^2$; $j_2 = 2{,}4\\cdot10^{6}\\ \\text{A/m}^2$",
+          "kiem_tra": "A/m². $j_1 \\gt j_2$: lõi ổ kéo dài (0,75 mm²) nóng hơn."
+        },
+        {
+          "tieu_de": "b) Tốc độ trôi (cách làm dạng 3)",
+          "cong_thuc_chu": "$v = \\dfrac{j}{ne}$, với $ne = 1{,}36\\cdot10^{10}\\ \\text{C/m}^3$",
+          "the_so": "$v_1 = \\dfrac{8{,}0\\cdot10^{6}}{1{,}36\\cdot10^{10}}$; $v_2 = \\dfrac{2{,}4\\cdot10^{6}}{1{,}36\\cdot10^{10}}$",
+          "ket_qua": "$v_1 \\approx 5{,}88\\cdot10^{-4}\\ \\text{m/s} = 0{,}588\\ \\text{mm/s}$; $v_2 \\approx 1{,}76\\cdot10^{-4}\\ \\text{m/s} = 0{,}176\\ \\text{mm/s}$",
+          "kiem_tra": "(A/m²)/(C/m³) = m/s. Cả hai dưới 1 mm/s, hợp lí."
+        },
+        {
+          "tieu_de": "b) Tỉ số tốc độ trôi",
+          "cong_thuc_chu": "$\\dfrac{v_1}{v_2} = \\dfrac{S_2}{S_1}$",
+          "the_so": "$\\dfrac{v_1}{v_2} = \\dfrac{2{,}5}{0{,}75}$",
+          "ket_qua": "$\\dfrac{v_1}{v_2} \\approx 3{,}33$",
+          "kiem_tra": "Khớp với $0{,}588/0{,}176$. Dây nhỏ hơn thì electron trôi nhanh hơn."
+        },
+        {
+          "tieu_de": "c) Thời gian electron trôi hết dây ổ kéo dài",
+          "cong_thuc_chu": "$t = \\dfrac{\\ell}{v_1}$",
+          "the_so": "$t = \\dfrac{3{,}0}{5{,}88\\cdot10^{-4}}$",
+          "ket_qua": "$t \\approx 5{,}10\\cdot10^{3}\\ \\text{s} \\approx 85\\ \\text{phút}$",
+          "kiem_tra": "m/(m/s) = s. Rất lâu, đúng với tốc độ trôi cỡ phần mười mm/s."
+        },
+        {
+          "tieu_de": "c) Giải thích máy chạy ngay",
+          "cong_thuc_chu": "Tốc độ lan điện trường $\\approx 3\\cdot10^{8}$ m/s $\\gg v$",
+          "the_so": "Dây đã đầy electron tự do",
+          "ket_qua": "Mọi electron trên toàn mạch cùng bắt đầu trôi gần như tức thì",
+          "kiem_tra": "Electron sát máy sưởi đã có sẵn, không phải chạy từ công tắc tới."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (lõi ổ kéo dài)",
+          "gia_tri": 8000000,
+          "don_vi": "A/m²"
+        },
+        {
+          "y": "a (lõi trong tường)",
+          "gia_tri": 2400000,
+          "don_vi": "A/m²"
+        },
+        {
+          "y": "b (v1)",
+          "gia_tri": 0.588,
+          "don_vi": "mm/s"
+        },
+        {
+          "y": "b (v2)",
+          "gia_tri": 0.176,
+          "don_vi": "mm/s"
+        },
+        {
+          "y": "b (v1/v2)",
+          "gia_tri": 3.33,
+          "don_vi": ""
+        },
+        {
+          "y": "c",
+          "gia_tri": 5100,
+          "don_vi": "s"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "mật độ dòng lõi 0,75 mm²",
+          "bieu_thuc": "6.0/0.75e-6",
+          "ky_vong": 8000000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "mật độ dòng lõi 2,5 mm²",
+          "bieu_thuc": "6.0/2.5e-6",
+          "ky_vong": 2400000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tích n e",
+          "bieu_thuc": "8.5e28*1.6e-19",
+          "ky_vong": 13600000000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tốc độ trôi v1 (mm/s)",
+          "bieu_thuc": "6.0/(0.75e-6*8.5e28*1.6e-19)*1000",
+          "ky_vong": 0.588,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tốc độ trôi v2 (mm/s)",
+          "bieu_thuc": "6.0/(2.5e-6*8.5e28*1.6e-19)*1000",
+          "ky_vong": 0.176,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "tỉ số v1/v2",
+          "bieu_thuc": "2.5/0.75",
+          "ky_vong": 3.33,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "thời gian trôi hết 3,0 m",
+          "bieu_thuc": "3.0/(6.0/(0.75e-6*8.5e28*1.6e-19))",
+          "ky_vong": 5100,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề có nhiều đoạn dây khác tiết diện nối tiếp, chỉ cho $I$ ở một chỗ → dùng cùng $I$ cho mọi đoạn, so sánh $j$ và $v$ theo $1/S$; hỏi thời gian electron đi hết dây → $t = \\ell/v$.",
+      "bay_thuong_gap": [
+        "Nghĩ dòng trong dây nhỏ khác 6,0 A vì ampe kế đặt ở dây khác.",
+        "Cho $v$ tỉ lệ thuận với $S$, đảo ngược tỉ số.",
+        "Kết luận dây to nóng hơn vì \"chở nhiều điện hơn\".",
+        "Giải thích máy chạy ngay bằng \"electron chạy với tốc độ ánh sáng\"."
+      ],
+      "dieu_ban_khong_chac": [
+        "Máy sưởi dùng điện lưới xoay chiều; đề coi như dòng không đổi để dùng kiến thức của bài. Có thể đổi sang nguồn một chiều nếu cần chặt chẽ.",
+        "Dây ổ kéo dài thực tế gồm hai lõi đi và về; đề chỉ xét một lõi."
+      ],
+      "mo_phong_goi_y": "Sơ đồ: ổ tường, đoạn dây tường (lõi to) nối với dây ổ kéo dài (lõi nhỏ, dài 3,0 m) rồi tới máy sưởi; ampe kế nối tiếp ở đoạn dây tường. Phóng to hai mặt cắt cạnh nhau: cùng số electron qua mỗi mặt cắt mỗi giây, nhưng ở lõi nhỏ các chấm trôi nhanh hơn và dày đặc dòng hơn; lõi nhỏ đổi màu ấm dần. Khi bật công tắc, một vệt sáng (điện trường) lan rất nhanh dọc dây, còn một electron đánh dấu chỉ nhích rất chậm. Nhãn: $S_1$, $S_2$, $I$, $j_1$, $j_2$, $v_1$, $v_2$, $\\ell$, chiều dòng điện, chiều electron."
+    }
+  ]
+}

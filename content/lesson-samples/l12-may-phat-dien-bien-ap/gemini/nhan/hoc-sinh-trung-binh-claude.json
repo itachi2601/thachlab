@@ -1,0 +1,209 @@
+{
+  "bai": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "II.1 Nguyên tắc tạo dòng điện xoay chiều",
+      "trich_nguyen_van": "Mẹo (rô-to một cặp cực, $p = 1$): một vòng quay, một chu kì.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Em gặp 'rô-to', 'cặp cực', 'p' lần đầu ở đây (Mở bài cũng đã dùng 'rô-to'), trong khi II.2 mới định nghĩa. Em không biết mẹo này nói về khung dây đang học hay về bộ phận nào khác.",
+      "de_xuat": "Chuyển câu mẹo xuống II.2, ngay sau công thức $f = np$, hoặc thêm chú thích ngắn: rô-to là phần quay, p là số cặp cực nam châm."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "II.1 Nguyên tắc tạo dòng điện xoay chiều",
+      "trich_nguyen_van": "$\\varphi' = \\varphi - \\dfrac{\\pi}{2}$ là pha ban đầu của $e$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Từ $\\Phi = NBS\\cos\\alpha$ bài nhảy thẳng tới $e = E_0\\cos(\\omega t + \\varphi')$, không có bước $e = -\\Phi'$. Em không hiểu vì sao lại trừ π/2 và $\\varphi$ (pha ban đầu của góc α) là gì.",
+      "de_xuat": "Thêm một dòng: $e = -\\dfrac{d\\Phi}{dt} = NBS\\omega\\sin(\\omega t+\\varphi) = NBS\\omega\\cos(\\omega t+\\varphi-\\frac{\\pi}{2})$, và nói rõ φ là góc giữa pháp tuyến và $\\vec B$ lúc t = 0."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "II.1 Nguyên tắc tạo dòng điện xoay chiều",
+      "trich_nguyen_van": "Chiều dài và điện trở khung chỉ ảnh hưởng tới độ lớn dòng điện.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu là chiều dài khung không ảnh hưởng gì tới suất điện động. Nhưng khung dài hơn thì S lớn hơn, nên $E_0 = NBS\\omega$ cũng lớn hơn. Hai ý này mâu thuẫn nhau.",
+      "de_xuat": "Sửa thành: chiều dài khung chỉ ảnh hưởng gián tiếp qua diện tích S; còn điện trở chỉ ảnh hưởng tới cường độ dòng, không ảnh hưởng tới suất điện động."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "II.2 Máy phát điện xoay chiều một pha",
+      "trich_nguyen_van": "C là nhầm \"2 cặp cực\" thành \"4 cực\"",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "4 cực chính là 2 cặp cực, nên em không thấy chỗ sai. Em càng rối hơn về sự khác nhau giữa 'cực' và 'cặp cực'.",
+      "de_xuat": "Ghi rõ: C là lấy số cực (4) thay cho số cặp cực, tức dùng p = 4 thay vì p = 2."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "II.3 Máy phát điện xoay chiều ba pha",
+      "trich_nguyen_van": "lợi: tiết kiệm dây, tạo từ trường quay",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Từ trường quay' chỉ xuất hiện đúng một lần, không có giải thích. Em không biết nó là gì và dùng vào việc gì.",
+      "de_xuat": "Thêm nửa câu: ba dòng lệch pha qua ba cuộn dây tạo ra một từ trường có hướng quay đều, dùng để chạy động cơ ba pha."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "II.3 Máy phát điện xoay chiều ba pha",
+      "trich_nguyen_van": "ba đèn chớp lệch nhịp nhau, không bao giờ cùng lúc.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu 'lệch pha' nghĩa là ba tín hiệu không bao giờ trùng nhau. Thực ra nửa chu kì dương của hai pha kề nhau chồng lên nhau, nên hai đèn có thể cùng sáng.",
+      "de_xuat": "Sửa thành 'ba đèn lần lượt sáng mạnh nhất, nối tiếp nhau đều đặn' để không gợi ý sai rằng chúng không bao giờ cùng sáng."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "II.4 Máy biến áp",
+      "trich_nguyen_van": "từ thông mỗi vòng hai cuộn bằng nhau nên $e_1 = N_1\\dfrac{\\Delta\\Phi}{\\Delta t}$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở II.1, $\\Phi = NBS\\cos\\alpha$ đã gồm cả N vòng. Ở đây Φ lại là từ thông một vòng rồi nhân thêm N. Em không biết khi nào Φ đã gồm N, khi nào chưa.",
+      "de_xuat": "Dùng kí hiệu riêng, ví dụ $\\Phi_0$ cho từ thông qua một vòng, và ghi rõ ở cả II.1 lẫn II.4 Φ là từ thông qua một vòng hay qua cả cuộn."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "II.4 Máy biến áp",
+      "trich_nguyen_van": "Hiệu suất $H = \\dfrac{U_2I_2\\cos\\varphi_2}{U_1I_1\\cos\\varphi_1}$; máy lí tưởng có $H = 1$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "'cos φ' chưa được định nghĩa, còn φ ở II.1 lại là pha ban đầu. Em tưởng đây là cos của pha ban đầu của suất điện động.",
+      "de_xuat": "Thêm chú thích: cos φ là hệ số công suất của mạch (φ là độ lệch pha giữa u và i), khác với φ ở II.1."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "II.5 Truyền tải điện năng đi xa",
+      "trich_nguyen_van": "Công suất $P$, điện áp $U$ (coi $\\cos\\varphi \\approx 1$): dòng trên dây $I = P/(U\\cos\\varphi)$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đã 'coi cos φ ≈ 1' mà công thức vẫn giữ cos φ, rồi $\\Delta P = RP^2/U^2$ lại bỏ đi. Em không biết khi làm bài có phải nhân cos φ không. Em cũng có thể nhầm U là điện áp trên hai đầu dây rồi dùng $U^2/R$.",
+      "de_xuat": "Ghi rõ: U là điện áp hiệu dụng ở nơi phát (không phải độ sụt áp trên dây). Viết công thức tổng quát có cos φ trước, rồi nói thêm 'khi cos φ = 1 thì $\\Delta P = RP^2/U^2$'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "II.5 Truyền tải điện năng đi xa",
+      "trich_nguyen_van": "Với $P = 20\\ \\text{kW}$, $R = 2\\ \\Omega$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng nằm ngay sau thí nghiệm bóng đèn 12 V, chú thích lại đặt ở dưới bảng. Em tưởng đây là số đo của thí nghiệm đèn, rồi thắc mắc sao nguồn 12 V lại có U = 250 V.",
+      "de_xuat": "Đặt câu giới thiệu trước bảng: 'Tính cho một tổ máy P = 20 kW, đường dây R = 2 Ω (không phải thí nghiệm đèn):'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "II.5 Truyền tải điện năng đi xa",
+      "trich_nguyen_van": "Hiệu suất truyền tải $H = 1 - \\dfrac{\\Delta P}{P}$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng kí hiệu H mà ở II.4 là hiệu suất máy biến áp, ở đây là hiệu suất đường dây. Em dễ lẫn hai đại lượng khi làm bài tổng hợp.",
+      "de_xuat": "Nói rõ đây là một hiệu suất khác, ví dụ ghi $H_{tt}$, hoặc thêm câu 'khác với hiệu suất máy biến áp ở II.4'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 1: \"Máy biến áp sinh thêm điện năng\"",
+      "trich_nguyen_van": "Giữ nguyên công suất: $P_1 = P_2$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng không ghi 'lí tưởng', nên em hiểu mọi máy biến áp đều có $P_1 = P_2$. Điều này mâu thuẫn với bảng đo $U_2$ thấp hơn và với $H < 1$ ở II.4.",
+      "de_xuat": "Ghi thành 'Lí tưởng: $P_1 = P_2$; thực tế $P_2$ nhỏ hơn một chút do hao phí, nhưng không bao giờ lớn hơn $P_1$'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "II.4 Máy biến áp",
+      "trich_nguyen_van": "Công thức luôn đặt số vòng cùng loại với điện áp cùng loại.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Cùng loại' quá chung chung. Em không rõ là ghép sơ cấp với sơ cấp, hay ghép số lớn với số lớn.",
+      "de_xuat": "Viết thẳng: $N_1$ đi với $U_1$ (sơ cấp), $N_2$ đi với $U_2$ (thứ cấp); cuộn nhiều vòng hơn thì điện áp lớn hơn."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: tổ máy 20 kW và đường dây 2 Ω",
+      "trich_nguyen_van": "b) Dòng qua máy biến áp lí tưởng: sơ cấp 500 vòng, thứ cấp 5000 vòng.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Dòng qua máy biến áp' khiến em không rõ máy phát nối vào cuộn nào và đường dây nối sau cuộn nào.",
+      "de_xuat": "Viết: 'Nối máy phát vào cuộn sơ cấp (500 vòng) của máy biến áp lí tưởng; đường dây nối với cuộn thứ cấp (5000 vòng).'"
+    },
+    {
+      "id": "c15",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "Rô-to 4 cặp cực quay 750 vòng/phút cho $f$ bao nhiêu?",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 'Điền bước còn thiếu' ở phần V dùng đúng số liệu này, mà đáp án 50 Hz đã có sẵn ở Trả bài. Bài điền bước vì thế không còn tác dụng luyện tập.",
+      "de_xuat": "Đổi số liệu ở một trong hai chỗ, ví dụ phần điền bước dùng 3 cặp cực và 1000 vòng/phút."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Bộ sạc laptop: biến áp hạ 220 V xuống 5–20 V rồi chỉnh lưu.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Chỉnh lưu' chưa được giải thích ở đâu trong bài, em không biết là làm gì.",
+      "de_xuat": "Thêm ngoặc: 'chỉnh lưu (đổi dòng xoay chiều thành dòng một chiều)'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ điện áp cao thì 'mạnh' hơn, tức là có nhiều năng lượng hơn, nên tăng áp sẽ sinh thêm điện năng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Điện áp ra lớn hơn không có nghĩa là có thêm năng lượng."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhầm từ thông với tốc độ biến thiên của từ thông. Phần lí thuyết II.1 không nêu rõ định luật Fa-ra-đây, chỉ phần phản hồi khi chọn sai mới nhắc.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đổi đúng ra 25 vòng/s nhưng coi đó luôn là tần số, quên nhân số cặp cực p.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công thức đúng là $f = np$: nhiều cặp cực thì tần số lớn."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhầm với ý 'trục vuông góc $\\vec B$' ở II.1. Lẫn giữa 120° (vị trí các cuộn dây) và 2π/3 (độ lệch pha) nên không tin chắc góc lệch.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ba suất điện động hình sin cùng tần số, biên độ, lệch pha $\\dfrac{2\\pi}{3}$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Viết ngược tỉ số thành $U_2 = U_1N_1/N_2$, không đối chiếu với kết luận 'ít vòng hơn thì điện áp nhỏ hơn'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$k = N_1/N_2$: $k \\gt 1$ hạ áp, $k \\lt 1$ tăng áp."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ nhớ 'dòng giảm 10 lần' mà quên hao phí tỉ lệ với bình phương dòng điện.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tăng $U$ lên $k$ lần thì $\\Delta P$ giảm $k^2$ lần"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy điện áp tăng 100 lần liền suy ra công suất cũng tăng, quên rằng dòng điện giảm tương ứng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thực tế điện áp tăng bao nhiêu lần thì cường độ hiệu dụng giảm bấy nhiêu lần, tích $UI$ không đổi."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính đúng điện áp tăng 20 lần nhưng chia hao phí cho 20 thay vì cho $20^2 = 400$, tức là quay lại lỗi của câu 5.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Kiểm tra: điện áp tăng 10 lần nên hao phí phải giảm $10^2 = 100$ lần"
+    }
+  ]
+}

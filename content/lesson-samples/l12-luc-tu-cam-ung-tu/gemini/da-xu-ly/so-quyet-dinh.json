@@ -1,0 +1,144 @@
+{
+  "bai": "l12-luc-tu-cam-ung-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"thì bị đẩy\" thành \"có thể bị đẩy\" để không mâu thuẫn với ô Dự đoán."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai của ô Dự đoán ghi rõ công thức $F = BIl\\sin\\alpha$ (học ở mục II.2)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài không có chú thích Hình 1 này)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"cho biết từ trường mạnh hay yếu (định nghĩa ở mục 3)\" và tách mỗi kí hiệu một dòng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án A thành 1 N (quên đổi cm) và viết lại phản hồi: 0,1 N là $B\\times I$, 0,005 N là $B\\times l$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng trước Câu 3: B có sẵn tại điểm đó, đổi I thì F đổi còn B gần như không đổi (dẫn cột B của bảng)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ kí hiệu α (đổi sang θ phải sửa nhiều mục), thêm giải thích pháp tuyến và nhấn đây là góc khác góc trong công thức F; không thêm hình vì luật cấm thêm ảnh."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: hợp lực bằng 0 nên không bị đẩy đi, mômen khác 0 nên quay; mặt khung vuông góc đường sức thì α = 0, M = 0, khung dừng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 5 ghi rõ I là dòng tạo ra từ trường, không phải dòng thử; câu mở Bẫy 3 nhắc lại sự phân biệt."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi bỏ/chuyển mục 5–8 và Câu 5 là đổi cấu trúc mục và số quiz; trợ giảng nên xem lại phạm vi chương trình của phần công thức B."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(l ở đây là chiều dài ống, khác l trong F = BIl)\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 30 μT là thành phần nằm ngang của từ trường Trái Đất, thành phần làm kim la bàn quay."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ ống dây thêm bước $4\\pi\\cdot10^{-7}\\times500\\times2 = 4\\pi\\cdot10^{-4} \\approx 12,6\\cdot10^{-4} = 1,26\\cdot10^{-3}$ T."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hai ô cột bàn tay phải gắn nhãn \"Dây thẳng\" và \"Vòng dây, ống dây\", mỗi ô nêu rõ ngón nào chỉ I, ngón nào chỉ B."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi, câu mở bài cũng đã sửa theo c1."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn phương vuông góc cả dây và đường sức."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: thay đủ ba thừa số B, I, l và đổi l ra mét."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chiều Nam sang Bắc ở mục 3 và phản hồi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"cùng độ lớn, ngược chiều, không cùng giá\"."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 5 về dời dấu phẩy và số mũ: 12,6·10⁻⁴ = 1,26·10⁻³."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 3, nay thêm phân biệt dòng nguồn với dòng thử theo c9."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn dùng sin α đúng góc với đường sức."
+      },
+      {
+        "id": "q-dien_buoc",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu lỗi quên đổi 25 cm ra mét trong lời giải."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 2: phương án nhiễu A đổi từ 0,02 N thành 1 N (thay l = 10, quên đổi cm).",
+      "Câu 2: phản hồi sai viết lại: 0,1 N = B×I (quên l), 0,005 N = B×l (quên I).",
+      "Mục 3: bỏ ví dụ dây 5,0 cm, I = 4 A, F = 0,02 N → B = 0,10 T và bỏ mốc MRI (đã có ở mục VI); giữ mốc Trái Đất 5·10⁻⁵ T, khe nam châm 0,1 T.",
+      "Mục 3: thêm ý B không phụ thuộc dòng thử, dẫn cột B của bảng thí nghiệm.",
+      "Mục 4: bỏ ví dụ khung 4×5 cm, N = 100, I = 0,5 A, B = 0,20 T → M = 0,02 N·m (trùng kết quả bài toán mẫu câu c).",
+      "Mục 4: thêm α là góc giữa B và pháp tuyến, khác góc trong công thức F; mặt khung vuông góc đường sức thì α = 0, M = 0.",
+      "Mục 5: I là dòng tạo ra từ trường, khác dòng thử.",
+      "Mục 8: ghi chú l trong n = N/l là chiều dài ống.",
+      "Ví dụ ống dây (trong details): kết quả ghi lại từ ≈1,3·10⁻³ T thành 1,26·10⁻³ T, kèm bước trung gian 4π·10⁻⁴.",
+      "Thí nghiệm la bàn: 30 μT ghi rõ là thành phần nằm ngang của từ trường Trái Đất.",
+      "Bẫy 2: bảng bàn tay phải tách nhãn Dây thẳng và Vòng dây, ống dây."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-luc-tu-cam-ung-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

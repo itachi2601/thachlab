@@ -1,0 +1,919 @@
+[
+  {
+    "id": 2212,
+    "grade": "10",
+    "topic_name": "Đọc đồ thị độ dịch chuyển – thời gian",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+      "answer": 1,
+      "options": [
+        "một đường cong parabol.",
+        "một đường thẳng xiên góc.",
+        "một đường thẳng song song với trục hoành Ot.",
+        "một đường thẳng song song với trục tung Od."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Đồ thị độ dịch chuyển theo thời gian d-t của chuyển động thẳng đều là</p>",
+      "difficulty": "de",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Chuyển động thẳng đều có vận tốc không đổi nên $d = v \\cdot t$ là hàm bậc nhất của t. Đồ thị hàm bậc nhất là một đường thẳng, hệ số góc bằng $v \\neq 0$ nên đường thẳng đó xiên góc với trục hoành. Đường thẳng song song trục hoành ứng với v = 0 (vật đứng yên), còn parabol ứng với chuyển động biến đổi đều.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"52.0\" y1=\"26\" x2=\"52.0\" y2=\"220\"/><line x1=\"52\" y1=\"220.0\" x2=\"406\" y2=\"220.0\"/></g><line x1=\"44\" y1=\"220.0\" x2=\"420\" y2=\"220.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,220.0 411,216.0 411,224.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"213.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >d (m)</text><text x=\"40.0\" y=\"234.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><polyline points=\"52.0,220.0 406.0,64.8\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"56.0\" y=\"213.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#2563eb\">d = v.t</text></svg>",
+      "summary": "Minh hoạ đồ thị d-t của chuyển động thẳng đều: đường thẳng xiên góc xuất phát từ gốc toạ độ, hệ số góc bằng vận tốc v (theo lời giải d = v.t là hàm bậc nhất).",
+      "created_at": "2026-09-25T15:49:09.498Z"
+    }
+  },
+  {
+    "id": 2565,
+    "grade": "10",
+    "topic_name": "Đối tượng và phương pháp nghiên cứu Vật lí",
+    "question": {
+      "form": "bai_tap",
+      "type": "true_false",
+      "topic": "Đối tượng và phương pháp nghiên cứu Vật lí",
+      "question": "<p>Xét các phát biểu sau về phương pháp nghiên cứu khoa học (dựa theo sơ đồ mô hình hoá):</p>",
+      "difficulty": "de",
+      "statements": [
+        {
+          "text": "Sơ đồ nghiên cứu bắt đầu từ bước \"Quan sát, suy luận\" rồi mới đến \"Đề xuất vấn đề\".",
+          "answer": true
+        },
+        {
+          "text": "Sau khi \"Hình thành giả thuyết\", bước tiếp theo luôn là \"Rút ra kết luận\" ngay lập tức, không cần kiểm tra.",
+          "answer": false
+        },
+        {
+          "text": "Nếu kết quả kiểm tra giả thuyết không phù hợp, cần điều chỉnh hoặc bác bỏ giả thuyết rồi quay lại bước hình thành giả thuyết.",
+          "answer": true
+        },
+        {
+          "text": "Phương pháp thực nghiệm và phương pháp lí thuyết là hai phương pháp hoàn toàn độc lập, không liên quan đến nhau.",
+          "answer": false
+        }
+      ],
+      "explanation": "<p>Theo sơ đồ, sau \"Hình thành giả thuyết\" phải qua \"Kiểm tra giả thuyết\"; nếu không phù hợp thì điều chỉnh/bác bỏ giả thuyết rồi quay lại; hai phương pháp thực nghiệm và lí thuyết luôn hỗ trợ, bổ sung cho nhau.</p>"
+    },
+    "ai_figure": {
+      "reason": "Hình gốc là sơ đồ khối (lưu đồ) mô tả các bước của phương pháp nghiên cứu khoa học (Quan sát/suy luận → Đề xuất vấn đề → Hình thành giả thuyết → Kiểm tra giả thuyết → ... → Rút ra kết luận), không phải đồ thị hàm số. Văn bản câu hỏi và lời giải chỉ nêu tên các bước một cách khái quát, không cung cấp đủ chi tiết về hình dạng, số lượng nhánh rẽ, mũi tên phản hồi cụ thể, cách bố trí các khối trong sơ đồ gốc (SGK) để tái dựng chính xác. Do đó không đủ dữ kiện để vẽ lại đúng sơ đồ gốc mà không bịa thêm chi tiết.",
+      "created_at": "2026-09-25T15:49:13.890Z"
+    }
+  },
+  {
+    "id": 3060,
+    "grade": "10",
+    "topic_name": "Tầm xa, thời gian bay của vật bị ném",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "answer": 3,
+      "options": [
+        "điểm ném và điểm cao nhất của quỹ đạo.",
+        "điểm cao nhất của quỹ đạo và điểm rơi.",
+        "điểm cao nhất của quỹ đạo và điểm có gia tốc bằng 0.",
+        "điểm ném và điểm rơi trên mặt đất."
+      ],
+      "question": "Một vật ném xiên có quỹ đạo như hình vẽ. Tầm bay xa của vật là khoảng cách giữa",
+      "difficulty": "de",
+      "explanation": "Theo định nghĩa, tầm bay xa (tầm xa) là khoảng cách theo phương ngang từ vị trí ném đến vị trí vật chạm đất (điểm rơi trên mặt đất). Đáp án gốc: D — khớp.",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><line x1=\"81.5\" y1=\"26\" x2=\"81.5\" y2=\"192.3\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"364.7\" y1=\"26\" x2=\"364.7\" y2=\"192.3\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"192.3\" x2=\"420\" y2=\"192.3\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,192.3 411,188.3 411,196.3\" fill=\"currentColor\"/><line x1=\"81.5\" y1=\"228\" x2=\"81.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"81.5,14 77.5,23 85.5,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"185.3\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">x (m)</text><text x=\"89.5\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >y (m)</text><text x=\"69.5\" y=\"206.3\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><polyline points=\"81.5,192.3 96.3,153.5 111.0,125.8 140.5,87.0 170.0,64.8 199.5,53.7 229.0,56.5 258.5,70.3 288.0,95.3 317.5,128.5 347.0,167.3 364.7,192.3\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"81.5\" cy=\"192.3\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"87.5\" y=\"186.3\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >Điểm ném</text><circle cx=\"199.5\" cy=\"53.7\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"205.5\" y=\"47.7\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >Điểm cao nhất</text><circle cx=\"364.7\" cy=\"192.3\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"370.7\" y=\"186.3\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >Điểm rơi</text></svg>",
+      "summary": "Vẽ quỹ đạo parabol của chuyển động ném xiên, đánh dấu điểm ném (gốc), điểm cao nhất và điểm rơi trên mặt đất để minh hoạ khái niệm tầm bay xa; số liệu minh hoạ tự chọn hợp lý vì đề chỉ cần dạng quỹ đạo, không có số liệu cụ thể.",
+      "created_at": "2026-09-25T15:49:15.617Z"
+    }
+  },
+  {
+    "id": 3368,
+    "grade": "11",
+    "topic_name": "Đọc đồ thị li độ – thời gian",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Đọc đồ thị li độ – thời gian",
+      "answer": 2,
+      "options": [
+        "đoạn thẳng",
+        "đường thẳng",
+        "đường hình sin",
+        "đường tròn."
+      ],
+      "question": "<p>Đồ thị li độ theo thời gian của dao động điều hòa là một</p>",
+      "difficulty": "de",
+      "explanation": "<p>(Không có lời giải trong nguồn — đáp án xác định theo kiến thức chuẩn.)</p>",
+      "distractorNotes": {
+        "A": "Lẫn đồ thị dao động với một đoạn thẳng; li độ biến thiên điều hòa theo $\\cos$, không tuyến tính theo thời gian.",
+        "B": "Nhầm li độ biến thiên điều hòa với hàm bậc nhất theo $t$, nên cho rằng đồ thị là đường thẳng.",
+        "D": "Lẫn đồ thị $x(t)$ với quỹ đạo của chuyển động tròn đều mà dao động điều hòa được chiếu từ đó."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Câu hỏi này mang tính lý thuyết chung (nhận biết dạng đồ thị của dao động điều hòa), không có số liệu cụ thể (biên độ, chu kỳ, pha ban đầu...) để dựng một đồ thị minh họa chính xác và không lộ đáp án. Việc vẽ một đường hình sin bất kỳ sẽ trực tiếp gợi ý/lộ đáp án C, nên không phù hợp để minh họa cho câu hỏi trắc nghiệm này.",
+      "created_at": "2026-09-25T15:45:49.227Z"
+    }
+  },
+  {
+    "id": 3370,
+    "grade": "11",
+    "topic_name": "Dao động điều hoà",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Dao động điều hoà",
+      "answer": 3,
+      "options": [
+        "đường thẳng bất kì",
+        "đường thẳng vuông góc với mặt phẳng quỹ đạo.",
+        "đường thẳng xiên góc với mặt phẳng quỹ đạo",
+        "đường thẳng nằm trong mặt phẳng quỹ đạo."
+      ],
+      "question": "<p>Dao động điều hòa có thể được coi như hình chiếu của một chuyển động tròn đều xuống một</p>",
+      "difficulty": "de",
+      "explanation": "<p>(Không có lời giải trong nguồn — đáp án xác định theo kiến thức chuẩn.)</p>",
+      "distractorNotes": {
+        "A": "Bỏ sót điều kiện về vị trí đường thẳng; chiếu lên đường thẳng bất kì không cho dao động điều hòa đúng nghĩa.",
+        "B": "Chiếu lên đường thẳng vuông góc mặt phẳng quỹ đạo thì hình chiếu chỉ là một điểm đứng yên, không dao động.",
+        "C": "Nhầm đường thẳng xiên góc với đường thẳng nằm trong mặt phẳng quỹ đạo; chiếu xiên làm sai quy ước hình chiếu."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Đây là câu lý thuyết thuần túy, không có số liệu đồ thị hay hình vẽ cụ thể nào cần dựng lại. Câu hỏi chỉ yêu cầu chọn phát biểu đúng về mối liên hệ giữa dao động điều hòa và chuyển động tròn đều, không có đồ thị hàm số hay sơ đồ hình học nào bị mất kèm số liệu để tái dựng.",
+      "created_at": "2026-09-25T15:45:26.558Z"
+    }
+  },
+  {
+    "id": 3397,
+    "grade": "11",
+    "topic_name": "Vận tốc, gia tốc trong dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Vận tốc, gia tốc trong dao động điều hoà",
+      "answer": 0,
+      "options": [
+        "1,0 Hz.",
+        "2,0 Hz.",
+        "1,5 Hz.",
+        "0,5 Hz"
+      ],
+      "question": "<p>Một vật dao động điều hòa trên trục Ox. Hình bên là đồ thị biểu diễn sự phụ thuộc của vận tốc v vào thời gian t. Tần số của dao động là</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Ta có $\\Delta t=\\frac{3T}{4}=0,75\\Rightarrow \\mathrm{T = ls.}$ Vậy $f=\\frac{1}{T}=1\\,\\mathrm{Hz.}$</p>",
+      "distractorNotes": {
+        "B": "Nhầm $\\frac{3T}{4}$ với $\\frac{3T}{2}$ hoặc lấy $T=0,5$ s từ khoảng thời gian đọc trên đồ thị.",
+        "C": "Nhầm khoảng thời gian trên đồ thị $0,75$ s là cả chu kì, hay lấy $f=1,5$ từ $\\frac{3T}{2}$.",
+        "D": "Nhầm khoảng $\\frac{3T}{4}$ với $\\frac{3T}{8}$ hoặc lấy $T=2$ s, bỏ sót hệ số $\\frac{3}{4}$."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"293.4\" y1=\"26\" x2=\"293.4\" y2=\"220\"/><line x1=\"52\" y1=\"48.4\" x2=\"406\" y2=\"48.4\"/><line x1=\"52\" y1=\"197.6\" x2=\"406\" y2=\"197.6\"/></g><line x1=\"293.4\" y1=\"26\" x2=\"293.4\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >v (cm/s)</text><text x=\"40.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"293.4\" y1=\"119.0\" x2=\"293.4\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"293.4\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,75</text><line x1=\"48.0\" y1=\"48.4\" x2=\"56.0\" y2=\"48.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"52.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">v0</text><line x1=\"48.0\" y1=\"197.6\" x2=\"56.0\" y2=\"197.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"201.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-v0</text><polyline points=\"52.0,123.0 54.2,126.2 56.4,129.4 58.6,132.6 60.9,135.8 63.1,139.0 65.3,142.1 67.5,145.2 69.7,148.3 71.9,151.3 74.1,154.2 76.3,157.1 78.5,160.0 80.8,162.7 83.0,165.4 85.2,168.0 87.4,170.6 89.6,173.0 91.8,175.3 94.0,177.6 96.3,179.7 98.5,181.8 100.7,183.7 102.9,185.5 105.1,187.2 107.3,188.8 109.5,190.3 111.7,191.6 114.0,192.8 116.2,193.9 118.4,194.8 120.6,195.6 122.8,196.3 125.0,196.8 127.2,197.2 129.4,197.5 131.6,197.6 133.9,197.6 136.1,197.4 138.3,197.1 140.5,196.7 142.7,196.1 144.9,195.4 147.1,194.6 149.4,193.6 151.6,192.5 153.8,191.2 156.0,189.9 158.2,188.4 160.4,186.8 162.6,185.0 164.8,183.2 167.1,181.2 169.3,179.2 171.5,177.0 173.7,174.7 175.9,172.3 178.1,169.9 180.3,167.3 182.5,164.7 184.7,162.0 187.0,159.2 189.2,156.4 191.4,153.4 193.6,150.5 195.8,147.4 198.0,144.4 200.2,141.3 202.5,138.1 204.7,135.0 206.9,131.8 209.1,128.6 211.3,125.3 213.5,122.1 215.7,118.9 217.9,115.7 220.2,112.5 222.4,109.3 224.6,106.2 226.8,103.0 229.0,99.9 231.2,96.9 233.4,93.9 235.6,91.0 237.8,88.1 240.1,85.3 242.3,82.5 244.5,79.9 246.7,77.3 248.9,74.8 251.1,72.4 253.3,70.0 255.5,67.8 257.8,65.7 260.0,63.7 262.2,61.8 264.4,60.0 266.6,58.3 268.8,56.8 271.0,55.4 273.3,54.1 275.5,52.9 277.7,51.9 279.9,51.0 282.1,50.2 284.3,49.5 286.5,49.0 288.7,48.7 291.0,48.5 293.2,48.4 295.4,48.4 297.6,48.6 299.8,49.0 302.0,49.4 304.2,50.1 306.4,50.8 308.6,51.7 310.9,52.7 313.1,53.8 315.3,55.1 317.5,56.5 319.7,58.0 321.9,59.7 324.1,61.5 326.4,63.3 328.6,65.3 330.8,67.4 333.0,69.6 335.2,71.9 337.4,74.3 339.6,76.8 341.8,79.4 344.1,82.0 346.3,84.8 348.5,87.6 350.7,90.4 352.9,93.4 355.1,96.4 357.3,99.4 359.5,102.5 361.8,105.6 364.0,108.7 366.2,111.9 368.4,115.1 370.6,118.3 372.8,121.5 375.0,124.8 377.2,128.0 379.4,131.2 381.7,134.4 383.9,137.6 386.1,140.7 388.3,143.8 390.5,146.9 392.7,149.9 394.9,152.9 397.2,155.8 399.4,158.7 401.6,161.5 403.8,164.2 406.0,166.9\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị v-t dạng sin, xuất phát từ v=0 tại t=0 (đi theo chiều dương ứng với phi=π/2 khi tính theo hàm cos), khoảng thời gian từ t=0 đến t=0,75s tương ứng 3T/4 theo lời giải, suy ra T=1s.",
+      "created_at": "2026-09-25T15:45:27.737Z"
+    }
+  },
+  {
+    "id": 3398,
+    "grade": "11",
+    "topic_name": "Viết phương trình dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Viết phương trình dao động điều hoà",
+      "answer": 0,
+      "options": [
+        "$x=4cos\\left( \\frac{5\\pi t}{3}+\\frac{\\pi }{3} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( \\frac{5\\pi t}{3}-\\frac{\\pi }{3} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( \\frac{5\\pi t}{6}+\\frac{\\pi }{3} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( \\frac{5\\pi t}{6}-\\frac{\\pi }{3} \\right)\\left( cm \\right).$"
+      ],
+      "question": "<p>Đồ thị dao động điều hòa của một vật như hình vẽ. Phương trình dao động của vật là</p>",
+      "difficulty": "kho",
+      "explanation": "<p>Từ đồ thị ta thấy rằng $\\left\\{ \\begin{aligned}&x_{0}=\\frac{A}{2}=2 cm\\\\ &v_{0}<0\\end{aligned} \\right.\\Rightarrow \\varphi _{0}=\\frac{\\pi }{3}$ Lại có $t_{\\left( 2\\to 0\\to -4 \\right)}=t_{\\left( \\frac{A}{2}\\to 0\\to -A \\right)}=0,4s\\Rightarrow \\frac{T}{12}+\\frac{T}{4}=0,4\\Rightarrow T=1,2s\\Rightarrow \\omega =\\frac{2\\pi }{T}=\\frac{5\\pi }{3}$ Vậy phương trình dao động của vật là $x=4cos\\left( \\frac{5\\pi t}{3}+\\frac{\\pi }{3} \\right)\\left( cm \\right).$</p>",
+      "distractorNotes": {
+        "B": "Xét sai chiều chuyển động tại $t=0$: $v_0\\lt0$ cho pha dương, đổi dấu thành $-\\frac{\\pi}{3}$.",
+        "C": "Nhầm khoảng thời gian $\\frac{T}{12}+\\frac{T}{4}$ với nửa chu kì nên $\\omega$ bị chia đôi.",
+        "D": "Sai cả chu kì (làm $\\omega$ giảm nửa) lẫn dấu pha ban đầu do bỏ qua $v_0\\lt0$."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"77.3\" y1=\"26\" x2=\"77.3\" y2=\"220\"/><line x1=\"127.9\" y1=\"26\" x2=\"127.9\" y2=\"220\"/><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"220\"/><line x1=\"330.1\" y1=\"26\" x2=\"330.1\" y2=\"220\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"84.2\" x2=\"406\" y2=\"84.2\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"77.3\" y1=\"26\" x2=\"77.3\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"77.3\" y1=\"84.2\" x2=\"406\" y2=\"84.2\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"77.3\" y1=\"228\" x2=\"77.3\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"77.3,14 73.3,23 81.3,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"85.3\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"65.3\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"127.9\" y1=\"119.0\" x2=\"127.9\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"127.9\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,4</text><line x1=\"229.0\" y1=\"119.0\" x2=\"229.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"229.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">1,2</text><line x1=\"330.1\" y1=\"119.0\" x2=\"330.1\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"330.1\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">2,0</text><line x1=\"73.3\" y1=\"45.4\" x2=\"81.3\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"70.3\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">4</text><line x1=\"73.3\" y1=\"84.2\" x2=\"81.3\" y2=\"84.2\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"70.3\" y=\"88.2\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">2</text><line x1=\"73.3\" y1=\"200.6\" x2=\"81.3\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"70.3\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-4</text><polyline points=\"52.0,123.0 54.2,119.4 56.4,115.9 58.6,112.4 60.9,108.9 63.1,105.4 65.3,101.9 67.5,98.5 69.7,95.2 71.9,91.9 74.1,88.7 76.3,85.5 78.5,82.5 80.8,79.5 83.0,76.6 85.2,73.8 87.4,71.1 89.6,68.5 91.8,66.0 94.0,63.7 96.3,61.4 98.5,59.3 100.7,57.4 102.9,55.5 105.1,53.9 107.3,52.3 109.5,50.9 111.7,49.7 113.9,48.6 116.2,47.7 118.4,46.9 120.6,46.3 122.8,45.8 125.0,45.5 127.2,45.4 129.4,45.4 131.7,45.6 133.9,46.0 136.1,46.5 138.3,47.2 140.5,48.0 142.7,49.0 144.9,50.2 147.1,51.5 149.3,53.0 151.6,54.6 153.8,56.3 156.0,58.2 158.2,60.2 160.4,62.4 162.6,64.7 164.8,67.1 167.1,69.6 169.3,72.2 171.5,75.0 173.7,77.8 175.9,80.7 178.1,83.8 180.3,86.9 182.5,90.1 184.8,93.3 187.0,96.6 189.2,100.0 191.4,103.4 193.6,106.9 195.8,110.4 198.0,113.9 200.2,117.4 202.4,121.0 204.7,124.5 206.9,128.1 209.1,131.6 211.3,135.1 213.5,138.6 215.7,142.1 217.9,145.5 220.2,148.9 222.4,152.2 224.6,155.5 226.8,158.7 229.0,161.8 231.2,164.8 233.4,167.8 235.6,170.6 237.8,173.4 240.1,176.0 242.3,178.6 244.5,181.0 246.7,183.3 248.9,185.5 251.1,187.5 253.3,189.4 255.5,191.2 257.8,192.8 260.0,194.3 262.2,195.6 264.4,196.8 266.6,197.8 268.8,198.7 271.0,199.4 273.3,199.9 275.5,200.3 277.7,200.5 279.9,200.6 282.1,200.5 284.3,200.2 286.5,199.8 288.7,199.2 290.9,198.5 293.2,197.5 295.4,196.5 297.6,195.3 299.8,193.9 302.0,192.4 304.2,190.7 306.4,188.9 308.6,187.0 310.9,184.9 313.1,182.7 315.3,180.3 317.5,177.9 319.7,175.3 321.9,172.6 324.1,169.8 326.4,167.0 328.6,164.0 330.8,160.9 333.0,157.8 335.2,154.6 337.4,151.3 339.6,147.9 341.8,144.6 344.1,141.1 346.3,137.6 348.5,134.1 350.7,130.6 352.9,127.1 355.1,123.5 357.3,120.0 359.5,116.4 361.8,112.9 364.0,109.4 366.2,105.9 368.4,102.4 370.6,99.0 372.8,95.7 375.0,92.4 377.2,89.1 379.4,86.0 381.7,82.9 383.9,79.9 386.1,77.0 388.3,74.2 390.5,71.5 392.7,68.9 394.9,66.4 397.2,64.0 399.4,61.7 401.6,59.6 403.8,57.6 406.0,55.8\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"77.3\" cy=\"84.2\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"83.3\" y=\"78.2\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >2</text></svg>",
+      "summary": "Đồ thị x-t dao động điều hòa: biên độ A=4cm, tại t=0 x0=2cm (=A/2) và đi theo chiều dương (lời giải cho v0>0, phi=-pi/3), chu kì T=2.4s ứng với omega=5pi/3.",
+      "created_at": "2026-09-25T15:45:38.493Z"
+    }
+  },
+  {
+    "id": 3399,
+    "grade": "11",
+    "topic_name": "Đọc đồ thị li độ – thời gian",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Đọc đồ thị li độ – thời gian",
+      "answer": 0,
+      "options": [
+        "0,5$\\pi$ rad.",
+        "- 0,5$\\pi$ rad.",
+        "0,25$\\pi$ rad.",
+        "$\\pi$ rad."
+      ],
+      "question": "<p>Một vật dao động điều hòa trên trục Ox. Hình bên là đồ thị biểu diễn sự phụ thuộc của li độ x vào thời gian t. Pha ban đầu của dao động là</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Ban đầu vật đi qua vị trí cân bằng theo chiều âm (x0 = 0, v0 < 0), suy ra $x_{0}=Acos\\varphi =0$ và $v_{0}=-\\omega Asin\\varphi <0\\Rightarrow \\varphi =0,5\\pi$, vậy pha ban đầu của dao động là 0,5$\\pi$ rad.</p>",
+      "distractorNotes": {
+        "B": "Đổi dấu chiều chuyển động: tại $x_0=0$ vật đi theo chiều âm nên $\\sin\\varphi\\gt0$, không phải $-0,5\\pi$.",
+        "C": "Nhầm $\\cos\\varphi=0$ với $\\cos\\varphi=\\frac{\\sqrt2}{2}$, lẫn vị trí cân bằng với $\\frac{A}{\\sqrt2}$.",
+        "D": "Lẫn $x_0=0$ với $x_0=-A$: $\\varphi=\\pi$ ứng với vật ở biên âm, không phải vị trí cân bằng."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"81.5\" y1=\"26\" x2=\"81.5\" y2=\"220\"/><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"220\"/><line x1=\"52\" y1=\"48.4\" x2=\"406\" y2=\"48.4\"/><line x1=\"52\" y1=\"197.6\" x2=\"406\" y2=\"197.6\"/></g><line x1=\"81.5\" y1=\"26\" x2=\"81.5\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"81.5\" y1=\"228\" x2=\"81.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"81.5,14 77.5,23 85.5,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"89.5\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"69.5\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"229.0\" y1=\"119.0\" x2=\"229.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"229.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">T</text><line x1=\"77.5\" y1=\"48.4\" x2=\"85.5\" y2=\"48.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"74.5\" y=\"52.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">A</text><line x1=\"77.5\" y1=\"197.6\" x2=\"85.5\" y2=\"197.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"74.5\" y=\"201.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-A</text><polyline points=\"52.0,79.1 54.2,82.0 56.4,85.0 58.6,88.1 60.8,91.2 63.1,94.4 65.3,97.7 67.5,101.1 69.7,104.4 71.9,107.9 74.1,111.3 76.3,114.8 78.5,118.3 80.8,121.8 83.0,125.3 85.2,128.9 87.4,132.4 89.6,135.8 91.8,139.3 94.0,142.7 96.3,146.1 98.5,149.4 100.7,152.6 102.9,155.8 105.1,158.9 107.3,162.0 109.5,164.9 111.7,167.8 114.0,170.6 116.2,173.2 118.4,175.8 120.6,178.2 122.8,180.5 125.0,182.7 127.2,184.7 129.4,186.6 131.6,188.4 133.9,190.0 136.1,191.5 138.3,192.8 140.5,194.0 142.7,195.0 144.9,195.8 147.1,196.5 149.4,197.0 151.6,197.4 153.8,197.6 156.0,197.6 158.2,197.5 160.4,197.2 162.6,196.7 164.8,196.1 167.0,195.3 169.3,194.3 171.5,193.2 173.7,191.9 175.9,190.5 178.1,188.9 180.3,187.2 182.5,185.4 184.8,183.4 187.0,181.2 189.2,179.0 191.4,176.6 193.6,174.1 195.8,171.5 198.0,168.7 200.2,165.9 202.4,163.0 204.7,160.0 206.9,156.9 209.1,153.7 211.3,150.5 213.5,147.2 215.7,143.8 217.9,140.4 220.2,137.0 222.4,133.5 224.6,130.0 226.8,126.5 229.0,123.0 231.2,119.5 233.4,116.0 235.6,112.5 237.8,109.0 240.1,105.6 242.3,102.2 244.5,98.8 246.7,95.5 248.9,92.3 251.1,89.1 253.3,86.0 255.6,83.0 257.8,80.1 260.0,77.3 262.2,74.5 264.4,71.9 266.6,69.4 268.8,67.0 271.0,64.8 273.3,62.6 275.5,60.6 277.7,58.8 279.9,57.1 282.1,55.5 284.3,54.1 286.5,52.8 288.7,51.7 291.0,50.7 293.2,49.9 295.4,49.3 297.6,48.8 299.8,48.5 302.0,48.4 304.2,48.4 306.4,48.6 308.6,49.0 310.9,49.5 313.1,50.2 315.3,51.0 317.5,52.0 319.7,53.2 321.9,54.5 324.1,56.0 326.3,57.6 328.6,59.4 330.8,61.3 333.0,63.3 335.2,65.5 337.4,67.8 339.6,70.2 341.8,72.8 344.1,75.4 346.3,78.2 348.5,81.1 350.7,84.0 352.9,87.1 355.1,90.2 357.3,93.4 359.5,96.6 361.8,99.9 364.0,103.3 366.2,106.7 368.4,110.2 370.6,113.6 372.8,117.1 375.0,120.7 377.2,124.2 379.4,127.7 381.7,131.2 383.9,134.7 386.1,138.1 388.3,141.6 390.5,144.9 392.7,148.3 394.9,151.6 397.1,154.8 399.4,157.9 401.6,161.0 403.8,164.0 406.0,166.9\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị x-t dạng sin chuẩn hóa (A=1, T=2), tại t=0 vật ở vị trí cân bằng x=0 và đi theo chiều âm (đường đi xuống qua gốc), khớp với lời giải x0=0, v0<0 ⇒ pha ban đầu 0,5π rad.",
+      "created_at": "2026-09-25T15:45:54.650Z"
+    }
+  },
+  {
+    "id": 3400,
+    "grade": "11",
+    "topic_name": "Viết phương trình dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Viết phương trình dao động điều hoà",
+      "answer": 0,
+      "options": [
+        "$x=4cos\\left( 10\\pi t+\\frac{2\\pi }{3} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( 20\\pi t+\\frac{2\\pi }{3} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( 10\\pi t+\\frac{5\\pi }{6} \\right)\\left( cm \\right).$",
+        "$x=4cos\\left( 20\\pi t-\\frac{\\pi }{3} \\right)\\left( cm \\right).$"
+      ],
+      "question": "<p>Hình vẽ là đồ thị biểu diễn độ dời của dao động x theo thời gian t của 1 vật dao động điều hòa. Phương trình dao động của vật là</p>",
+      "difficulty": "kho",
+      "explanation": "<p>Ta có $\\left\\{ \\begin{aligned}&A=4cm\\\\ &\\frac{T}{2}=\\frac{2,2-1}{12}\\Rightarrow T=\\frac{1}{5}s\\Rightarrow \\omega =10\\pi \\,\\mathrm{rad/s.}\\end{aligned} \\right.$ Tại thời điểm t = 0 ta có $\\left\\{ \\begin{aligned}&x=-2=-\\frac{A}{2}\\\\ &v<0\\end{aligned} \\right.\\Rightarrow \\varphi _{0}=\\frac{2\\pi }{3}$</p>",
+      "distractorNotes": {
+        "B": "Nhầm chu kì: lấy khoảng thời gian trên đồ thị làm T thay vì T/2, nên $\\omega$ bị gấp đôi.",
+        "C": "Xác định sai pha ban đầu: từ $x=-A/2$ với $v\\lt0$ không suy ra được $\\frac{5\\pi}{6}$.",
+        "D": "Sai cả $\\omega$ lẫn pha ban đầu: bỏ qua dấu của $v$ tại $t=0$ nên lấy sai góc."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"102.6\" y1=\"26\" x2=\"102.6\" y2=\"220\"/><line x1=\"186.8\" y1=\"26\" x2=\"186.8\" y2=\"220\"/><line x1=\"288.0\" y1=\"26\" x2=\"288.0\" y2=\"220\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"161.8\" x2=\"406\" y2=\"161.8\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"102.6\" y1=\"228\" x2=\"102.6\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"102.6,14 98.6,23 106.6,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"110.6\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"90.6\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"186.8\" y1=\"119.0\" x2=\"186.8\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"186.8\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">1/12</text><line x1=\"288.0\" y1=\"119.0\" x2=\"288.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"288.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">2,2/12</text><line x1=\"98.6\" y1=\"45.4\" x2=\"106.6\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"95.6\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">4</text><line x1=\"98.6\" y1=\"161.8\" x2=\"106.6\" y2=\"161.8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"95.6\" y=\"165.8\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-2</text><line x1=\"98.6\" y1=\"200.6\" x2=\"106.6\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"95.6\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-4</text><polyline points=\"52.0,55.8 54.2,58.6 56.4,61.7 58.6,65.2 60.9,68.9 63.1,72.8 65.3,77.0 67.5,81.4 69.7,86.0 71.9,90.7 74.1,95.7 76.3,100.7 78.5,105.9 80.8,111.1 83.0,116.4 85.2,121.7 87.4,127.1 89.6,132.4 91.8,137.6 94.0,142.8 96.3,147.9 98.5,152.9 100.7,157.8 102.9,162.5 105.1,167.0 107.3,171.2 109.5,175.3 111.7,179.1 113.9,182.7 116.2,185.9 118.4,188.9 120.6,191.6 122.8,193.9 125.0,195.9 127.2,197.5 129.4,198.9 131.7,199.8 133.9,200.4 136.1,200.6 138.3,200.5 140.5,199.9 142.7,199.1 144.9,197.8 147.1,196.2 149.3,194.3 151.6,192.0 153.8,189.4 156.0,186.5 158.2,183.3 160.4,179.8 162.6,176.0 164.8,172.0 167.1,167.8 169.3,163.3 171.5,158.7 173.7,153.9 175.9,148.9 178.1,143.8 180.3,138.6 182.5,133.4 184.8,128.1 187.0,122.7 189.2,117.4 191.4,112.1 193.6,106.9 195.8,101.7 198.0,96.6 200.2,91.7 202.4,86.9 204.7,82.2 206.9,77.8 209.1,73.6 211.3,69.6 213.5,65.8 215.7,62.4 217.9,59.2 220.2,56.3 222.4,53.7 224.6,51.5 226.8,49.6 229.0,48.0 231.2,46.8 233.4,46.0 235.6,45.5 237.8,45.4 240.1,45.7 242.3,46.3 244.5,47.3 246.7,48.6 248.9,50.3 251.1,52.3 253.3,54.7 255.5,57.4 257.8,60.4 260.0,63.7 262.2,67.2 264.4,71.1 266.6,75.2 268.8,79.5 271.0,84.0 273.3,88.7 275.5,93.5 277.7,98.5 279.9,103.7 282.1,108.9 284.3,114.1 286.5,119.4 288.7,124.8 290.9,130.1 293.2,135.4 295.4,140.6 297.6,145.8 299.8,150.8 302.0,155.7 304.2,160.5 306.4,165.1 308.6,169.4 310.9,173.6 313.1,177.5 315.3,181.2 317.5,184.6 319.7,187.7 321.9,190.5 324.1,192.9 326.4,195.1 328.6,196.9 330.8,198.3 333.0,199.4 335.2,200.2 337.4,200.5 339.6,200.6 341.8,200.2 344.1,199.5 346.3,198.4 348.5,197.0 350.7,195.2 352.9,193.0 355.1,190.6 357.3,187.8 359.5,184.7 361.8,181.3 364.0,177.7 366.2,173.8 368.4,169.6 370.6,165.3 372.8,160.7 375.0,155.9 377.2,151.0 379.4,146.0 381.7,140.9 383.9,135.6 386.1,130.4 388.3,125.0 390.5,119.7 392.7,114.4 394.9,109.1 397.1,103.9 399.4,98.8 401.6,93.8 403.8,88.9 406.0,84.2\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"102.6\" cy=\"161.8\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"108.6\" y=\"155.8\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >t=0</text></svg>",
+      "summary": "Đồ thị x-t dao động điều hòa: A=4cm, T=0,2s (nửa chu kì ứng với khoảng từ t=1/12 s đến t=2,2/12 s theo lời giải), tại t=0 x=-2cm và đi theo chiều âm.",
+      "created_at": "2026-09-25T15:45:43.759Z"
+    }
+  },
+  {
+    "id": 3408,
+    "grade": "11",
+    "topic_name": "Viết phương trình dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "true_false",
+      "topic": "Viết phương trình dao động điều hoà",
+      "question": "<p>Một vật dao động điều hòa trên trục Ox. Hình bên là đồ thị biểu diễn sự phụ thuộc của li độ x vào thời gian t.</p>",
+      "difficulty": "trung-binh",
+      "statements": [
+        {
+          "text": "Biên độ dao động là $\\mathrm{4 cm}.$",
+          "answer": true
+        },
+        {
+          "text": "Tần số góc dao động của vật là $\\pi \\,\\mathrm{rad/s}$",
+          "answer": false
+        },
+        {
+          "text": "Pha ban đầu của dao động là $0\\,\\mathrm{rad.}$",
+          "answer": false
+        },
+        {
+          "text": "Phương trình dao động của vật có dạng là $\\mathrm{x = 4cos}\\left( \\frac{\\pi \\mathrm{t}}{2} + \\pi \\right)\\left( \\mathrm{cm, s} \\right).$",
+          "answer": true
+        }
+      ],
+      "explanation": "<p>a. Phát biểu này đúng. Biên độ dao động là $\\mathrm{A = 4 cm}.$ b. Phát biểu này sai. Ta có $\\frac{T}{4}=1\\Rightarrow T=4\\,\\mathrm{s}\\Rightarrow \\omega = \\frac{\\pi }{2}\\,\\mathrm{rad/s.}$ c. Phát biểu này sai. Ở thời điểm bao đầu $t=0$ vật ở biên âm nên pha ban đầu của dao động là $\\pi \\,\\mathrm{rad.}$ d. Phát biểu này đúng. Phương trình dao động của vật có dạng là $\\mathrm{x = 4cos}\\left( \\frac{\\pi \\mathrm{t}}{2} + \\pi \\right)\\left( \\mathrm{cm, s} \\right).$</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"132.5\" y1=\"26\" x2=\"132.5\" y2=\"220\"/><line x1=\"373.8\" y1=\"26\" x2=\"373.8\" y2=\"220\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"132.5\" y1=\"26\" x2=\"132.5\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"52.0\" y1=\"200.6\" x2=\"406\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"40.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"132.5\" y1=\"119.0\" x2=\"132.5\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"132.5\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">1</text><line x1=\"373.8\" y1=\"119.0\" x2=\"373.8\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"373.8\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">4</text><line x1=\"48.0\" y1=\"45.4\" x2=\"56.0\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">4</text><line x1=\"48.0\" y1=\"200.6\" x2=\"56.0\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-4</text><polyline points=\"52.0,200.6 54.2,200.5 56.4,200.3 58.6,199.9 60.9,199.4 63.1,198.8 65.3,198.0 67.5,197.1 69.7,196.0 71.9,194.8 74.1,193.5 76.3,192.0 78.5,190.4 80.8,188.7 83.0,186.8 85.2,184.9 87.4,182.8 89.6,180.6 91.8,178.3 94.0,175.9 96.3,173.4 98.5,170.8 100.7,168.1 102.9,165.3 105.1,162.5 107.3,159.6 109.5,156.6 111.7,153.5 114.0,150.4 116.2,147.3 118.4,144.1 120.6,140.8 122.8,137.5 125.0,134.2 127.2,130.9 129.4,127.6 131.6,124.2 133.9,120.9 136.1,117.5 138.3,114.2 140.5,110.9 142.7,107.6 144.9,104.3 147.1,101.1 149.4,97.9 151.6,94.7 153.8,91.6 156.0,88.6 158.2,85.6 160.4,82.7 162.6,79.9 164.8,77.1 167.1,74.5 169.3,71.9 171.5,69.4 173.7,67.1 175.9,64.8 178.1,62.6 180.3,60.6 182.5,58.6 184.7,56.8 187.0,55.1 189.2,53.6 191.4,52.2 193.6,50.8 195.8,49.7 198.0,48.7 200.2,47.8 202.5,47.0 204.7,46.4 206.9,45.9 209.1,45.6 211.3,45.4 213.5,45.4 215.7,45.5 217.9,45.8 220.2,46.2 222.4,46.7 224.6,47.4 226.8,48.2 229.0,49.2 231.2,50.3 233.4,51.5 235.6,52.9 237.8,54.4 240.1,56.1 242.3,57.8 244.5,59.7 246.7,61.7 248.9,63.8 251.1,66.0 253.3,68.3 255.5,70.8 257.8,73.3 260.0,75.9 262.2,78.6 264.4,81.4 266.6,84.3 268.8,87.2 271.0,90.2 273.3,93.3 275.5,96.4 277.7,99.6 279.9,102.8 282.1,106.1 284.3,109.4 286.5,112.7 288.7,116.0 291.0,119.3 293.2,122.7 295.4,126.0 297.6,129.4 299.8,132.7 302.0,136.0 304.2,139.3 306.4,142.6 308.6,145.8 310.9,149.0 313.1,152.1 315.3,155.2 317.5,158.2 319.7,161.2 321.9,164.1 324.1,166.9 326.4,169.6 328.6,172.2 330.8,174.8 333.0,177.2 335.2,179.6 337.4,181.8 339.6,183.9 341.8,186.0 344.1,187.9 346.3,189.6 348.5,191.3 350.7,192.8 352.9,194.2 355.1,195.5 357.3,196.6 359.5,197.6 361.8,198.5 364.0,199.2 366.2,199.7 368.4,200.2 370.6,200.4 372.8,200.6 375.0,200.6 377.2,200.4 379.4,200.1 381.7,199.7 383.9,199.1 386.1,198.4 388.3,197.5 390.5,196.5 392.7,195.4 394.9,194.1 397.2,192.7 399.4,191.1 401.6,189.5 403.8,187.7 406.0,185.8\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"52.0\" cy=\"200.6\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"58.0\" y=\"194.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >-4</text><circle cx=\"132.5\" cy=\"123.0\" r=\"3.2\" fill=\"#dc2626\"/></svg>",
+      "summary": "",
+      "created_at": "2026-09-25T15:45:43.987Z"
+    }
+  },
+  {
+    "id": 3409,
+    "grade": "11",
+    "topic_name": "Viết phương trình dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "true_false",
+      "topic": "Viết phương trình dao động điều hoà",
+      "question": "<p>Đồ thị biểu diễn li độ theo thời gian của một vật được mô tả như hình vẽ.</p>",
+      "difficulty": "trung-binh",
+      "statements": [
+        {
+          "text": "Biên độ dao động là $\\mathrm{4 cm}.$",
+          "answer": true
+        },
+        {
+          "text": "Tần số của dao động là $50 Hz.$",
+          "answer": false
+        },
+        {
+          "text": "Pha ban đầu của dao động là $0\\,\\mathrm{rad.}$",
+          "answer": true
+        },
+        {
+          "text": "Phương trình dao động của vật có dạng là $\\mathrm{x = 4cos}\\left( 50\\pi t \\right)\\left( \\mathrm{cm, s} \\right).$",
+          "answer": true
+        }
+      ],
+      "explanation": "<p>a. Phát biểu này đúng. Biên độ dao động là $\\mathrm{A = 4 cm}.$ b. Phát biểu này sai. 1 ô tương ứng 1 $5.10^{-3} s,$ 1 chu kì là 8 ô khi đó $\\mathrm{T = 5}.10^{-3}.8 = 0,04 s.$ Tần số góc $\\omega =2\\pi f=2\\pi.25=50\\pi$ rad/s. Tần số của dao động là $f=\\frac{1}{T}=\\frac{1}{40.10^{-3}}=25 Hz.$ c. Phát biểu này đúng. Ở thời điểm bao đầu $t=0$ vật ở biên dương nên pha ban đầu của dao động là $\\mathrm{0 rad.}$ d. Phát biểu này đúng. Phương trình dao động của vật có dạng là $\\mathrm{x = 4cos}\\left( 50\\pi t \\right)\\left( \\mathrm{cm, s} \\right).$</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"108.3\" y1=\"26\" x2=\"108.3\" y2=\"220\"/><line x1=\"148.5\" y1=\"26\" x2=\"148.5\" y2=\"220\"/><line x1=\"188.8\" y1=\"26\" x2=\"188.8\" y2=\"220\"/><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"220\"/><line x1=\"269.2\" y1=\"26\" x2=\"269.2\" y2=\"220\"/><line x1=\"309.5\" y1=\"26\" x2=\"309.5\" y2=\"220\"/><line x1=\"349.7\" y1=\"26\" x2=\"349.7\" y2=\"220\"/><line x1=\"389.9\" y1=\"26\" x2=\"389.9\" y2=\"220\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"68.1\" y1=\"228\" x2=\"68.1\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"68.1,14 64.1,23 72.1,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (ms)</text><text x=\"76.1\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"56.1\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"108.3\" y1=\"119.0\" x2=\"108.3\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"108.3\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">5</text><line x1=\"148.5\" y1=\"119.0\" x2=\"148.5\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"148.5\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">10</text><line x1=\"188.8\" y1=\"119.0\" x2=\"188.8\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"188.8\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">15</text><line x1=\"229.0\" y1=\"119.0\" x2=\"229.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"229.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">20</text><line x1=\"269.2\" y1=\"119.0\" x2=\"269.2\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"269.2\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">25</text><line x1=\"309.5\" y1=\"119.0\" x2=\"309.5\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"309.5\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">30</text><line x1=\"349.7\" y1=\"119.0\" x2=\"349.7\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"349.7\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">35</text><line x1=\"389.9\" y1=\"119.0\" x2=\"389.9\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"389.9\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">40</text><line x1=\"64.1\" y1=\"45.4\" x2=\"72.1\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"61.1\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">4</text><line x1=\"64.1\" y1=\"200.6\" x2=\"72.1\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"61.1\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-4</text><polyline points=\"52.0,49.2 54.2,48.2 56.4,47.4 58.6,46.7 60.9,46.2 63.1,45.8 65.3,45.5 67.5,45.4 69.7,45.4 71.9,45.6 74.1,45.9 76.3,46.4 78.5,47.0 80.8,47.8 83.0,48.7 85.2,49.7 87.4,50.8 89.6,52.2 91.8,53.6 94.0,55.1 96.3,56.8 98.5,58.6 100.7,60.6 102.9,62.6 105.1,64.8 107.3,67.1 109.5,69.4 111.7,71.9 114.0,74.5 116.2,77.1 118.4,79.9 120.6,82.7 122.8,85.6 125.0,88.6 127.2,91.6 129.4,94.7 131.7,97.9 133.9,101.1 136.1,104.3 138.3,107.6 140.5,110.9 142.7,114.2 144.9,117.5 147.1,120.9 149.3,124.2 151.6,127.6 153.8,130.9 156.0,134.2 158.2,137.5 160.4,140.8 162.6,144.1 164.8,147.3 167.1,150.4 169.3,153.5 171.5,156.6 173.7,159.6 175.9,162.5 178.1,165.3 180.3,168.1 182.5,170.8 184.8,173.4 187.0,175.9 189.2,178.3 191.4,180.6 193.6,182.8 195.8,184.9 198.0,186.8 200.2,188.7 202.4,190.4 204.7,192.0 206.9,193.5 209.1,194.8 211.3,196.0 213.5,197.1 215.7,198.0 217.9,198.8 220.2,199.4 222.4,199.9 224.6,200.3 226.8,200.5 229.0,200.6 231.2,200.5 233.4,200.3 235.6,199.9 237.8,199.4 240.1,198.8 242.3,198.0 244.5,197.1 246.7,196.0 248.9,194.8 251.1,193.5 253.3,192.0 255.6,190.4 257.8,188.7 260.0,186.8 262.2,184.9 264.4,182.8 266.6,180.6 268.8,178.3 271.0,175.9 273.3,173.4 275.5,170.8 277.7,168.1 279.9,165.3 282.1,162.5 284.3,159.6 286.5,156.6 288.7,153.5 290.9,150.4 293.2,147.3 295.4,144.1 297.6,140.8 299.8,137.5 302.0,134.2 304.2,130.9 306.4,127.6 308.6,124.2 310.9,120.9 313.1,117.5 315.3,114.2 317.5,110.9 319.7,107.6 321.9,104.3 324.1,101.1 326.4,97.9 328.6,94.7 330.8,91.6 333.0,88.6 335.2,85.6 337.4,82.7 339.6,79.9 341.8,77.1 344.1,74.5 346.3,71.9 348.5,69.4 350.7,67.1 352.9,64.8 355.1,62.6 357.3,60.6 359.5,58.6 361.8,56.8 364.0,55.1 366.2,53.6 368.4,52.2 370.6,50.8 372.8,49.7 375.0,48.7 377.2,47.8 379.4,47.0 381.7,46.4 383.9,45.9 386.1,45.6 388.3,45.4 390.5,45.4 392.7,45.5 394.9,45.8 397.1,46.2 399.4,46.7 401.6,47.4 403.8,48.2 406.0,49.2\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị hình cos, biên độ 4 cm, xuất phát tại biên dương (pha ban đầu 0), mỗi ô 5 ms, một chu kì gồm 8 ô nên T = 40 ms, đúng theo lời giải.",
+      "created_at": "2026-09-25T15:45:49.934Z"
+    }
+  },
+  {
+    "id": 3421,
+    "grade": "11",
+    "topic_name": "Đọc đồ thị li độ – thời gian",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Đọc đồ thị li độ – thời gian",
+      "answer": "0,4",
+      "question": "<p>Một vật dao động điều hòa dọc theo trục Ox. Hình bên là đồ thị biểu diễn sự phụ thuộc của li độ x vào thời gian t. Chu kì dao động của vật là bao nhiêu giây?</p>",
+      "difficulty": "de",
+      "explanation": "<p>Ta có $\\Delta t=\\frac{T}{2}=0,2\\Rightarrow T=0,4\\,\\mathrm{s.}$</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"87.4\" y1=\"26\" x2=\"87.4\" y2=\"220\"/><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"220\"/><line x1=\"370.6\" y1=\"26\" x2=\"370.6\" y2=\"220\"/><line x1=\"52\" y1=\"48.4\" x2=\"406\" y2=\"48.4\"/><line x1=\"52\" y1=\"197.6\" x2=\"406\" y2=\"197.6\"/></g><line x1=\"87.4\" y1=\"26\" x2=\"87.4\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"87.4\" y1=\"228\" x2=\"87.4\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"87.4,14 83.4,23 91.4,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"95.4\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"75.4\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"229.0\" y1=\"119.0\" x2=\"229.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"229.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,2</text><line x1=\"370.6\" y1=\"119.0\" x2=\"370.6\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"370.6\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,4</text><line x1=\"83.4\" y1=\"48.4\" x2=\"91.4\" y2=\"48.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"80.4\" y=\"52.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">A</text><line x1=\"83.4\" y1=\"197.6\" x2=\"91.4\" y2=\"197.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"80.4\" y=\"201.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-A</text><polyline points=\"52.0,70.2 54.2,67.7 56.4,65.3 58.6,63.1 60.8,61.0 63.1,59.0 65.3,57.2 67.5,55.5 69.7,54.1 71.9,52.7 74.1,51.6 76.3,50.6 78.5,49.8 80.8,49.2 83.0,48.7 85.2,48.5 87.4,48.4 89.6,48.5 91.8,48.7 94.0,49.2 96.3,49.8 98.5,50.6 100.7,51.6 102.9,52.7 105.1,54.1 107.3,55.5 109.5,57.2 111.7,59.0 113.9,61.0 116.2,63.1 118.4,65.3 120.6,67.7 122.8,70.2 125.0,72.9 127.2,75.7 129.4,78.6 131.7,81.5 133.9,84.6 136.1,87.8 138.3,91.1 140.5,94.4 142.7,97.9 144.9,101.3 147.1,104.9 149.4,108.4 151.6,112.1 153.8,115.7 156.0,119.3 158.2,123.0 160.4,126.7 162.6,130.3 164.8,133.9 167.1,137.6 169.3,141.1 171.5,144.7 173.7,148.1 175.9,151.6 178.1,154.9 180.3,158.2 182.5,161.4 184.8,164.5 187.0,167.4 189.2,170.3 191.4,173.1 193.6,175.8 195.8,178.3 198.0,180.7 200.2,182.9 202.4,185.0 204.7,187.0 206.9,188.8 209.1,190.5 211.3,191.9 213.5,193.3 215.7,194.4 217.9,195.4 220.2,196.2 222.4,196.8 224.6,197.3 226.8,197.5 229.0,197.6 231.2,197.5 233.4,197.3 235.6,196.8 237.8,196.2 240.1,195.4 242.3,194.4 244.5,193.3 246.7,191.9 248.9,190.5 251.1,188.8 253.3,187.0 255.5,185.0 257.8,182.9 260.0,180.7 262.2,178.3 264.4,175.8 266.6,173.1 268.8,170.3 271.0,167.4 273.3,164.5 275.5,161.4 277.7,158.2 279.9,154.9 282.1,151.6 284.3,148.1 286.5,144.7 288.7,141.1 291.0,137.6 293.2,133.9 295.4,130.3 297.6,126.7 299.8,123.0 302.0,119.3 304.2,115.7 306.4,112.1 308.6,108.4 310.9,104.9 313.1,101.3 315.3,97.9 317.5,94.4 319.7,91.1 321.9,87.8 324.1,84.6 326.4,81.5 328.6,78.6 330.8,75.7 333.0,72.9 335.2,70.2 337.4,67.7 339.6,65.3 341.8,63.1 344.1,61.0 346.3,59.0 348.5,57.2 350.7,55.5 352.9,54.1 355.1,52.7 357.3,51.6 359.5,50.6 361.8,49.8 364.0,49.2 366.2,48.7 368.4,48.5 370.6,48.4 372.8,48.5 375.0,48.7 377.2,49.2 379.4,49.8 381.7,50.6 383.9,51.6 386.1,52.7 388.3,54.1 390.5,55.5 392.7,57.2 394.9,59.0 397.1,61.0 399.4,63.1 401.6,65.3 403.8,67.7 406.0,70.2\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị x-t hình sin, khoảng thời gian giữa hai lần liên tiếp đạt biên (từ +A tại t=0 đến -A tại t=0,2s) là T/2=0,2s, suy ra T=0,4s theo lời giải.",
+      "created_at": "2026-09-25T15:45:56.819Z"
+    }
+  },
+  {
+    "id": 3647,
+    "grade": "11",
+    "topic_name": "Đọc đồ thị li độ – thời gian",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Đọc đồ thị li độ – thời gian",
+      "answer": 3,
+      "options": [
+        "thẳng.",
+        "elip.",
+        "parabol.",
+        "hình sin."
+      ],
+      "question": "<p>Đồ thị quan hệ giữa li độ, vận tốc, gia tốc với thời gian là đường</p>",
+      "difficulty": "de",
+      "explanation": "<p>Trong dao động điều hòa, li độ, vận tốc, gia tốc đều biến đổi theo hàm sin hoặc cosin theo thời gian nên đồ thị của chúng theo thời gian đều là đường hình sin.</p>",
+      "distractorNotes": {
+        "A": "Nhầm với đồ thị quan hệ tuyến tính: $x$, $v$, $a$ biến thiên điều hòa theo $t$, không tỉ lệ bậc nhất.",
+        "B": "Nhầm đồ thị theo thời gian với đồ thị giữa hai đại lượng như $v$–$x$ có dạng elip.",
+        "C": "Nhầm với đồ thị bậc hai như $a$–$t$ trong chuyển động biến đổi đều: ở đây là hàm lượng giác."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Câu hỏi lý thuyết thuần túy, không có số liệu cụ thể (biên độ, chu kỳ, pha ban đầu) để dựng đồ thị hình sin cụ thể. Đây là câu hỏi nhận biết dạng đồ thị, không cần và không thể vẽ hình minh họa chính xác khớp với một hàm số cụ thể nào.",
+      "created_at": "2026-09-25T15:47:03.694Z"
+    }
+  },
+  {
+    "id": 3648,
+    "grade": "11",
+    "topic_name": "Hệ thức độc lập với thời gian",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Hệ thức độc lập với thời gian",
+      "answer": 1,
+      "options": [
+        "thẳng.",
+        "elip.",
+        "parabol.",
+        "hình sin."
+      ],
+      "question": "<p>Đồ thị quan hệ giữa li độ và vận tốc là đường</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Li độ và vận tốc vuông pha nên $\\frac{x^2}{x_{max}^2}+\\frac{v^2}{v_{max}^2}=1$, đây là phương trình đường elip.</p>",
+      "distractorNotes": {
+        "A": "Lẫn hai đại lượng vuông pha với hai đại lượng cùng pha hoặc ngược pha, vốn mới cho đường thẳng.",
+        "C": "Nhầm với quan hệ giữa $v$ và $x$ trong chuyển động biến đổi đều, dạng $v^2 = 2as$ cho parabol.",
+        "D": "Lẫn đồ thị theo thời gian với đồ thị giữa hai đại lượng: hình sin chỉ xuất hiện khi vẽ theo $t$."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Câu hỏi lý thuyết chỉ yêu cầu xác định dạng đồ thị (elip), không có số liệu cụ thể (x_max, v_max) để dựng hình định lượng khớp với một đề gốc. Việc vẽ elip minh họa chung chung sẽ lộ ngay đáp án đúng (B), nên không phù hợp để tái tạo hình cho câu trắc nghiệm này.",
+      "created_at": "2026-09-25T15:47:09.840Z"
+    }
+  },
+  {
+    "id": 3649,
+    "grade": "11",
+    "topic_name": "Hệ thức độc lập với thời gian",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Hệ thức độc lập với thời gian",
+      "answer": 1,
+      "options": [
+        "thẳng.",
+        "elip.",
+        "parabol.",
+        "hình sin."
+      ],
+      "question": "<p>Đồ thị quan hệ giữa vận tốc và gia tốc là đường</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Vận tốc và gia tốc vuông pha nên $\\frac{v^2}{v_{max}^2}+\\frac{a^2}{a_{max}^2}=1$, đây là phương trình đường elip.</p>",
+      "distractorNotes": {
+        "A": "Lẫn hai đại lượng vuông pha với hai đại lượng cùng pha hoặc ngược pha, vốn mới cho đường thẳng.",
+        "C": "Nhầm với quan hệ $v^2$ theo $s$ của chuyển động biến đổi đều; quên hai đại lượng này vuông pha.",
+        "D": "Lẫn đồ thị theo thời gian với đồ thị giữa hai đại lượng: hình sin chỉ xuất hiện khi vẽ theo $t$."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Đây là câu hỏi lý thuyết về dạng đồ thị v-a (elip), không có số liệu cụ thể (vmax, amax) để dựng đồ thị định lượng; đáp án chỉ là nhận dạng dạng đường (elip) chứ không cần hình minh họa số liệu, và đề cũng không cho giá trị vmax, amax cụ thể để vẽ chính xác.",
+      "created_at": "2026-09-25T15:47:13.857Z"
+    }
+  },
+  {
+    "id": 3650,
+    "grade": "11",
+    "topic_name": "Công thức vận tốc, gia tốc theo li độ",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Công thức vận tốc, gia tốc theo li độ",
+      "answer": 0,
+      "options": [
+        "đoạn thẳng qua gốc tọa độ.",
+        "đường hình sin.",
+        "đường elip.",
+        "đường thẳng qua gốc tọa độ."
+      ],
+      "question": "<p>Đồ thị quan hệ giữa li độ và gia tốc là</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Vì $a=-\\omega^2x$ là hệ thức bậc nhất giữa $a$ và $x$, với $x$ luôn bị giới hạn trong đoạn $[-A;A]$, nên đồ thị là đoạn thẳng qua gốc tọa độ.</p>",
+      "distractorNotes": {
+        "B": "Lẫn đồ thị phụ thuộc thời gian với đồ thị giữa $a$ và $x$: hình sin chỉ có khi vẽ theo $t$.",
+        "C": "Lẫn $a,x$ cùng pha (ngược pha) với cặp vuông pha như $x,v$, vốn mới cho elip.",
+        "D": "Bỏ sót giới hạn $x\\in[-A;A]$: đường thẳng kéo dài vô hạn, trong khi li độ chỉ chạy trong một đoạn."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"229.0\" y1=\"228\" x2=\"229.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"229.0,14 225.0,23 233.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">x (cm)</text><text x=\"237.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >a (cm/s²)</text><text x=\"217.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><polyline points=\"92.8,48.4 365.2,197.6\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"92.8\" cy=\"48.4\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"98.8\" y=\"42.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >-A</text><circle cx=\"365.2\" cy=\"197.6\" r=\"3.2\" fill=\"#dc2626\"/><text x=\"371.2\" y=\"191.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >A</text></svg>",
+      "summary": "Đồ thị biểu diễn quan hệ a = -ω²x là một đoạn thẳng qua gốc tọa độ, giới hạn bởi x trong [-A;A] (hệ số góc âm do a và x ngược pha).",
+      "created_at": "2026-09-25T15:47:09.452Z"
+    }
+  },
+  {
+    "id": 3729,
+    "grade": "11",
+    "topic_name": "Đọc đồ thị li độ – thời gian",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Đọc đồ thị li độ – thời gian",
+      "answer": "20",
+      "question": "<p>Đồ thị li độ theo thời gian của một chất điểm dao động điều hoà được cho như hình vẽ. Li độ của vật ở thời điểm $t = 0,4$ s là bao nhiêu cm?</p>",
+      "difficulty": "de",
+      "explanation": "<p>Từ đồ thị: biên độ $A=20$ cm, chu kì $T=0,8$ s. Tại $t=0$ vật ở biên âm $x=-20$ cm. Vì $t=0,4$ s đúng bằng nửa chu kì ($T/2$), vật đã đi hết nửa dao động và về đến biên đối diện, nên $x = +20$ cm.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"229.0\" y1=\"26\" x2=\"229.0\" y2=\"220\"/><line x1=\"406.0\" y1=\"26\" x2=\"406.0\" y2=\"220\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >x (cm)</text><text x=\"40.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"229.0\" y1=\"119.0\" x2=\"229.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"229.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,4</text><line x1=\"406.0\" y1=\"119.0\" x2=\"406.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"406.0\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,8</text><line x1=\"48.0\" y1=\"45.4\" x2=\"56.0\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">20</text><line x1=\"48.0\" y1=\"200.6\" x2=\"56.0\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-20</text><polyline points=\"52.0,200.6 54.2,200.5 56.4,200.4 58.6,200.1 60.9,199.6 63.1,199.1 65.3,198.5 67.5,197.7 69.7,196.8 71.9,195.8 74.1,194.7 76.3,193.5 78.6,192.1 80.8,190.7 83.0,189.2 85.2,187.5 87.4,185.8 89.6,183.9 91.8,182.0 94.0,180.0 96.3,177.9 98.5,175.7 100.7,173.4 102.9,171.0 105.1,168.6 107.3,166.1 109.5,163.5 111.7,160.9 114.0,158.2 116.2,155.5 118.4,152.7 120.6,149.9 122.8,147.0 125.0,144.1 127.2,141.1 129.4,138.1 131.6,135.1 133.9,132.1 136.1,129.1 138.3,126.0 140.5,123.0 142.7,120.0 144.9,116.9 147.1,113.9 149.4,110.9 151.6,107.9 153.8,104.9 156.0,101.9 158.2,99.0 160.4,96.1 162.6,93.3 164.8,90.5 167.1,87.8 169.3,85.1 171.5,82.5 173.7,79.9 175.9,77.4 178.1,75.0 180.3,72.6 182.5,70.3 184.7,68.1 187.0,66.0 189.2,64.0 191.4,62.1 193.6,60.2 195.8,58.5 198.0,56.8 200.2,55.3 202.4,53.9 204.7,52.5 206.9,51.3 209.1,50.2 211.3,49.2 213.5,48.3 215.7,47.5 217.9,46.9 220.2,46.4 222.4,45.9 224.6,45.6 226.8,45.5 229.0,45.4 231.2,45.5 233.4,45.6 235.6,45.9 237.8,46.4 240.1,46.9 242.3,47.5 244.5,48.3 246.7,49.2 248.9,50.2 251.1,51.3 253.3,52.5 255.6,53.9 257.8,55.3 260.0,56.8 262.2,58.5 264.4,60.2 266.6,62.1 268.8,64.0 271.0,66.0 273.3,68.1 275.5,70.3 277.7,72.6 279.9,75.0 282.1,77.4 284.3,79.9 286.5,82.5 288.7,85.1 291.0,87.8 293.2,90.5 295.4,93.3 297.6,96.1 299.8,99.0 302.0,101.9 304.2,104.9 306.4,107.9 308.7,110.9 310.9,113.9 313.1,116.9 315.3,120.0 317.5,123.0 319.7,126.0 321.9,129.1 324.1,132.1 326.3,135.1 328.6,138.1 330.8,141.1 333.0,144.1 335.2,147.0 337.4,149.9 339.6,152.7 341.8,155.5 344.1,158.2 346.3,160.9 348.5,163.5 350.7,166.1 352.9,168.6 355.1,171.0 357.3,173.4 359.5,175.7 361.7,177.9 364.0,180.0 366.2,182.0 368.4,183.9 370.6,185.8 372.8,187.5 375.0,189.2 377.2,190.7 379.4,192.1 381.7,193.5 383.9,194.7 386.1,195.8 388.3,196.8 390.5,197.7 392.7,198.5 394.9,199.1 397.1,199.6 399.4,200.1 401.6,200.4 403.8,200.5 406.0,200.6\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị hình sin x-t với A=20 cm, T=0,8 s, tại t=0 vật ở biên âm x=-20 cm (phi=π), số liệu lấy từ lời giải.",
+      "created_at": "2026-09-25T15:47:03.696Z"
+    }
+  },
+  {
+    "id": 5937,
+    "grade": "11",
+    "topic_name": "Động năng, thế năng của vật dao động",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Động năng, thế năng của vật dao động",
+      "answer": "0,8",
+      "question": "<p>Con lắc lò xo dao động điều hòa. Đồ thị biểu diễn sự biến đổi động năng và thế năng theo thời gian cho thấy khoảng thời gian giữa hai thời điểm liên tiếp động năng bằng thế năng là 0,2 s. Chu kỳ dao động của con lắc là bao nhiêu giây?</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p>Khoảng thời gian giữa hai lần liên tiếp $E_d=E_t$ là $\\frac{T}{4}=0,2$ s $\\Rightarrow T=0,8$ s.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"140.5\" y1=\"26\" x2=\"140.5\" y2=\"220\"/></g><line x1=\"140.5\" y1=\"26\" x2=\"140.5\" y2=\"220.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><text x=\"143.5\" y=\"38.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >0,2 s</text><line x1=\"44\" y1=\"220.0\" x2=\"420\" y2=\"220.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,220.0 411,216.0 411,224.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"213.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >E (J)</text><text x=\"40.0\" y=\"234.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"140.5\" y1=\"216.0\" x2=\"140.5\" y2=\"224.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"140.5\" y=\"235.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,2</text><polyline points=\"52.0,58.3 54.2,58.6 56.4,59.3 58.6,60.6 60.9,62.3 63.1,64.5 65.3,67.1 67.5,70.2 69.7,73.8 71.9,77.7 74.1,82.0 76.3,86.7 78.6,91.7 80.8,96.9 83.0,102.5 85.2,108.2 87.4,114.2 89.6,120.3 91.8,126.5 94.0,132.8 96.3,139.2 98.5,145.5 100.7,151.8 102.9,158.0 105.1,164.1 107.3,170.1 109.5,175.9 111.7,181.4 114.0,186.7 116.2,191.7 118.4,196.3 120.6,200.6 122.8,204.6 125.0,208.1 127.2,211.2 129.4,213.8 131.6,216.0 133.9,217.8 136.1,219.0 138.3,219.8 140.5,220.0 142.7,219.8 144.9,219.0 147.1,217.8 149.4,216.0 151.6,213.8 153.8,211.2 156.0,208.1 158.2,204.6 160.4,200.6 162.6,196.3 164.8,191.7 167.1,186.7 169.3,181.4 171.5,175.9 173.7,170.1 175.9,164.1 178.1,158.0 180.3,151.8 182.5,145.5 184.7,139.2 187.0,132.8 189.2,126.5 191.4,120.3 193.6,114.2 195.8,108.2 198.0,102.5 200.2,96.9 202.4,91.7 204.7,86.7 206.9,82.0 209.1,77.7 211.3,73.8 213.5,70.2 215.7,67.1 217.9,64.5 220.2,62.3 222.4,60.6 224.6,59.3 226.8,58.6 229.0,58.3 231.2,58.6 233.4,59.3 235.6,60.6 237.8,62.3 240.1,64.5 242.3,67.1 244.5,70.2 246.7,73.8 248.9,77.7 251.1,82.0 253.3,86.7 255.6,91.7 257.8,96.9 260.0,102.5 262.2,108.2 264.4,114.2 266.6,120.3 268.8,126.5 271.0,132.8 273.3,139.2 275.5,145.5 277.7,151.8 279.9,158.0 282.1,164.1 284.3,170.1 286.5,175.9 288.7,181.4 291.0,186.7 293.2,191.7 295.4,196.3 297.6,200.6 299.8,204.6 302.0,208.1 304.2,211.2 306.4,213.8 308.7,216.0 310.9,217.8 313.1,219.0 315.3,219.8 317.5,220.0 319.7,219.8 321.9,219.0 324.1,217.8 326.3,216.0 328.6,213.8 330.8,211.2 333.0,208.1 335.2,204.6 337.4,200.6 339.6,196.3 341.8,191.7 344.1,186.7 346.3,181.4 348.5,175.9 350.7,170.1 352.9,164.1 355.1,158.0 357.3,151.8 359.5,145.5 361.7,139.2 364.0,132.8 366.2,126.5 368.4,120.3 370.6,114.2 372.8,108.2 375.0,102.5 377.2,96.9 379.4,91.7 381.7,86.7 383.9,82.0 386.1,77.7 388.3,73.8 390.5,70.2 392.7,67.1 394.9,64.5 397.1,62.3 399.4,60.6 401.6,59.3 403.8,58.6 406.0,58.3\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"173.3\" y=\"174.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#2563eb\">Động năng</text><polyline points=\"52.0,220.0 54.2,219.8 56.4,219.0 58.6,217.8 60.9,216.0 63.1,213.8 65.3,211.2 67.5,208.1 69.7,204.6 71.9,200.6 74.1,196.3 76.3,191.7 78.6,186.7 80.8,181.4 83.0,175.9 85.2,170.1 87.4,164.1 89.6,158.0 91.8,151.8 94.0,145.5 96.3,139.2 98.5,132.8 100.7,126.5 102.9,120.3 105.1,114.2 107.3,108.2 109.5,102.5 111.7,96.9 114.0,91.7 116.2,86.7 118.4,82.0 120.6,77.7 122.8,73.8 125.0,70.2 127.2,67.1 129.4,64.5 131.6,62.3 133.9,60.6 136.1,59.3 138.3,58.6 140.5,58.3 142.7,58.6 144.9,59.3 147.1,60.6 149.4,62.3 151.6,64.5 153.8,67.1 156.0,70.2 158.2,73.8 160.4,77.7 162.6,82.0 164.8,86.7 167.1,91.7 169.3,96.9 171.5,102.5 173.7,108.2 175.9,114.2 178.1,120.3 180.3,126.5 182.5,132.8 184.7,139.2 187.0,145.5 189.2,151.8 191.4,158.0 193.6,164.1 195.8,170.1 198.0,175.9 200.2,181.4 202.4,186.7 204.7,191.7 206.9,196.3 209.1,200.6 211.3,204.6 213.5,208.1 215.7,211.2 217.9,213.8 220.2,216.0 222.4,217.8 224.6,219.0 226.8,219.8 229.0,220.0 231.2,219.8 233.4,219.0 235.6,217.8 237.8,216.0 240.1,213.8 242.3,211.2 244.5,208.1 246.7,204.6 248.9,200.6 251.1,196.3 253.3,191.7 255.6,186.7 257.8,181.4 260.0,175.9 262.2,170.1 264.4,164.1 266.6,158.0 268.8,151.8 271.0,145.5 273.3,139.2 275.5,132.8 277.7,126.5 279.9,120.3 282.1,114.2 284.3,108.2 286.5,102.5 288.7,96.9 291.0,91.7 293.2,86.7 295.4,82.0 297.6,77.7 299.8,73.8 302.0,70.2 304.2,67.1 306.4,64.5 308.7,62.3 310.9,60.6 313.1,59.3 315.3,58.6 317.5,58.3 319.7,58.6 321.9,59.3 324.1,60.6 326.3,62.3 328.6,64.5 330.8,67.1 333.0,70.2 335.2,73.8 337.4,77.7 339.6,82.0 341.8,86.7 344.1,91.7 346.3,96.9 348.5,102.5 350.7,108.2 352.9,114.2 355.1,120.3 357.3,126.5 359.5,132.8 361.7,139.2 364.0,145.5 366.2,151.8 368.4,158.0 370.6,164.1 372.8,170.1 375.0,175.9 377.2,181.4 379.4,186.7 381.7,191.7 383.9,196.3 386.1,200.6 388.3,204.6 390.5,208.1 392.7,211.2 394.9,213.8 397.1,216.0 399.4,217.8 401.6,219.0 403.8,219.8 406.0,220.0\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"290.5\" y=\"95.5\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#dc2626\">Thế năng</text></svg>",
+      "summary": "Đồ thị động năng Ed và thế năng Et theo thời gian, mỗi đại lượng biến thiên tuần hoàn với chu kì T/2, hai đường cắt nhau tại các mốc cách đều 0,2 s (lấy từ lời giải: khoảng cách giữa hai lần liên tiếp Ed=Et là T/4=0,2 s).",
+      "created_at": "2026-09-25T15:47:17.335Z"
+    }
+  },
+  {
+    "id": 5938,
+    "grade": "11",
+    "topic_name": "Bảo toàn cơ năng trong dao động điều hoà",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+      "answer": "0,16",
+      "question": "<p>Một vật có khối lượng 2 kg dao động điều hòa có đồ thị vận tốc - thời gian cho thấy tốc độ cực đại của vật là 0,4 m/s. Động năng cực đại của vật trong quá trình dao động là bao nhiêu J?</p>",
+      "difficulty": "de",
+      "explanation": "<p>$W_{d\\,max}=\\frac12mv_{max}^2=\\frac12.2.0,4^2=0,16$ J.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/></g><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >v (m/s)</text><text x=\"40.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"48.0\" y1=\"45.4\" x2=\"56.0\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">0,4</text><line x1=\"48.0\" y1=\"200.6\" x2=\"56.0\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-0,4</text><polyline points=\"52.0,45.4 54.2,45.6 56.4,46.4 58.6,47.5 60.9,49.2 63.1,51.3 65.3,53.9 67.5,56.8 69.7,60.2 71.9,64.0 74.1,68.1 76.3,72.6 78.5,77.4 80.8,82.5 83.0,87.8 85.2,93.3 87.4,99.0 89.6,104.9 91.8,110.9 94.0,116.9 96.3,123.0 98.5,129.1 100.7,135.1 102.9,141.1 105.1,147.0 107.3,152.7 109.5,158.2 111.7,163.5 113.9,168.6 116.2,173.4 118.4,177.9 120.6,182.0 122.8,185.8 125.0,189.2 127.2,192.1 129.4,194.7 131.7,196.8 133.9,198.5 136.1,199.6 138.3,200.4 140.5,200.6 142.7,200.4 144.9,199.6 147.1,198.5 149.4,196.8 151.6,194.7 153.8,192.1 156.0,189.2 158.2,185.8 160.4,182.0 162.6,177.9 164.8,173.4 167.1,168.6 169.3,163.5 171.5,158.2 173.7,152.7 175.9,147.0 178.1,141.1 180.3,135.1 182.5,129.1 184.8,123.0 187.0,116.9 189.2,110.9 191.4,104.9 193.6,99.0 195.8,93.3 198.0,87.8 200.2,82.5 202.4,77.4 204.7,72.6 206.9,68.1 209.1,64.0 211.3,60.2 213.5,56.8 215.7,53.9 217.9,51.3 220.2,49.2 222.4,47.5 224.6,46.4 226.8,45.6 229.0,45.4 231.2,45.6 233.4,46.4 235.6,47.5 237.8,49.2 240.1,51.3 242.3,53.9 244.5,56.8 246.7,60.2 248.9,64.0 251.1,68.1 253.3,72.6 255.5,77.4 257.8,82.5 260.0,87.8 262.2,93.3 264.4,99.0 266.6,104.9 268.8,110.9 271.0,116.9 273.3,123.0 275.5,129.1 277.7,135.1 279.9,141.1 282.1,147.0 284.3,152.7 286.5,158.2 288.7,163.5 291.0,168.6 293.2,173.4 295.4,177.9 297.6,182.0 299.8,185.8 302.0,189.2 304.2,192.1 306.4,194.7 308.6,196.8 310.9,198.5 313.1,199.6 315.3,200.4 317.5,200.6 319.7,200.4 321.9,199.6 324.1,198.5 326.4,196.8 328.6,194.7 330.8,192.1 333.0,189.2 335.2,185.8 337.4,182.0 339.6,177.9 341.8,173.4 344.1,168.6 346.3,163.5 348.5,158.2 350.7,152.7 352.9,147.0 355.1,141.1 357.3,135.1 359.5,129.1 361.8,123.0 364.0,116.9 366.2,110.9 368.4,104.9 370.6,99.0 372.8,93.3 375.0,87.8 377.2,82.5 379.4,77.4 381.7,72.6 383.9,68.1 386.1,64.0 388.3,60.2 390.5,56.8 392.7,53.9 394.9,51.3 397.1,49.2 399.4,47.5 401.6,46.4 403.8,45.6 406.0,45.4\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "Đồ thị v-t dạng sin với biên độ (tốc độ cực đại) 0,4 m/s, chu kỳ tuỳ ý minh hoạ; số liệu lấy từ câu dẫn (v_max = 0,4 m/s).",
+      "created_at": "2026-09-25T15:47:18.724Z"
+    }
+  },
+  {
+    "id": 6418,
+    "grade": "11",
+    "topic_name": "Đặc điểm và thang sóng điện từ",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "true_false",
+      "topic": "Đặc điểm và thang sóng điện từ",
+      "question": "<p class=\"text-base leading-relaxed my-2\"><strong>Câu 5:</strong> Thang của sóng điện từ được biểu diễn như sơ đồ dưới đây:</p><div class=\"my-3 overflow-x-auto\"><table class=\"w-full min-w-[520px] border-collapse text-sm\"><tbody><tr><td class=\"border border-white/10 p-2 text-center font-bold\">Tia gamma</td><td class=\"border border-white/10 p-2 text-center font-bold\">Tia X</td><td class=\"border border-white/10 p-2 text-center font-bold\">A</td><td class=\"border border-white/10 p-2 text-center font-bold\">Ánh sáng nhìn thấy</td><td class=\"border border-white/10 p-2 text-center font-bold\">B</td><td class=\"border border-white/10 p-2 text-center font-bold\">Sóng vô tuyến</td></tr></tbody></table></div><p class=\"text-base leading-relaxed my-2\">Xét các phát biểu sau:</p>",
+      "difficulty": "trung-binh",
+      "statements": [
+        {
+          "text": "A là tia hồng ngoại còn B là tia tử ngoại.",
+          "answer": false
+        },
+        {
+          "text": "Dãy sóng trên được sắp xếp theo thứ tự bước sóng tăng dần.",
+          "answer": true
+        },
+        {
+          "text": "Sóng điện từ của dãy trên là sóng ngang và truyền được trong chân không.",
+          "answer": true
+        },
+        {
+          "text": "Tần số sóng của bức xạ A nhỏ hơn tần số của bức xạ B.",
+          "answer": false
+        }
+      ],
+      "explanation": "<p>Theo thang sóng điện từ, thứ tự đúng là: Tia gamma – Tia X – Tia tử ngoại (A) – Ánh sáng nhìn thấy – Tia hồng ngoại (B) – Sóng vô tuyến. a. Sai — A là tử ngoại, B là hồng ngoại (ngược lại). b. Đúng, dãy đã cho có bước sóng tăng dần. c. Đúng. d. Sai — A (tử ngoại) có tần số <strong>lớn hơn</strong> B (hồng ngoại).</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg style=\"max-width:440px;height:auto;display:block;margin:8px auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 160\" width=\"100%\">\n  <text x=\"220\" y=\"20\" font-size=\"13\" text-anchor=\"middle\">Thang sóng điện từ</text>\n  <line x1=\"20\" y1=\"80\" x2=\"420\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\">\n      <path d=\"M0,0 L0,6 L9,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n  <!-- ticks -->\n  <line x1=\"40\" y1=\"72\" x2=\"40\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"110\" y1=\"72\" x2=\"110\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"180\" y1=\"72\" x2=\"180\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"250\" y1=\"72\" x2=\"250\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"320\" y1=\"72\" x2=\"320\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"390\" y1=\"72\" x2=\"390\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"2\"/>\n\n  <text x=\"40\" y=\"105\" font-size=\"12\" text-anchor=\"middle\">Tia gamma</text>\n  <text x=\"110\" y=\"105\" font-size=\"12\" text-anchor=\"middle\">Tia X</text>\n  <text x=\"180\" y=\"105\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"bold\">A</text>\n  <text x=\"250\" y=\"105\" font-size=\"12\" text-anchor=\"middle\">Ánh sáng</text>\n  <text x=\"250\" y=\"120\" font-size=\"12\" text-anchor=\"middle\">nhìn thấy</text>\n  <text x=\"320\" y=\"105\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"bold\">B</text>\n  <text x=\"390\" y=\"105\" font-size=\"12\" text-anchor=\"middle\">Sóng vô tuyến</text>\n\n  <text x=\"420\" y=\"60\" font-size=\"12\" text-anchor=\"end\">λ tăng dần →</text>\n</svg>",
+      "summary": "Sơ đồ thang sóng điện từ theo thứ tự bước sóng tăng dần: Tia gamma – Tia X – A – Ánh sáng nhìn thấy – B – Sóng vô tuyến, đúng như câu dẫn và lời giải (A là tử ngoại, B là hồng ngoại).",
+      "freeform": true,
+      "created_at": "2026-09-25T15:47:26.649Z"
+    }
+  },
+  {
+    "id": 13436,
+    "grade": "11",
+    "topic_name": "Chuyển động của điện tích trong điện trường đều",
+    "question": {
+      "form": "bai_tap",
+      "type": "true_false",
+      "topic": "Chuyển động của điện tích trong điện trường đều",
+      "question": "<p>Đồ thị tốc độ thay đổi theo độ cao của một electron chuyển động từ điểm $A$ (độ cao $3,0\\,m$, tốc độ $2.10^{6}\\,m/s$) đến điểm $B$ (độ cao $2,9\\,m$, tốc độ $0\\,m/s$) theo phương thẳng đứng trong điện trường của Trái Đất, bỏ qua lực cản không khí.</p>",
+      "difficulty": "kho",
+      "statements": [
+        {
+          "text": "Độ biến thiên tốc độ khi electron chuyển động từ $A$ đến $B$ là $2.10^{6}\\,m/s.$",
+          "answer": true
+        },
+        {
+          "text": "Không thể áp dụng định luật bảo toàn cơ năng trong trường hợp electron di chuyển này.",
+          "answer": false
+        },
+        {
+          "text": "Cường độ điện trường của Trái Đất tại điểm $A$ là $200\\,V/m.$",
+          "answer": false
+        },
+        {
+          "text": "Cường độ điện trường của Trái Đất tại điểm $B$ là $113,75\\,V/m.$",
+          "answer": true
+        }
+      ],
+      "explanation": "<p>a. $\\left|\\Delta v\\right|=\\left|0-2.10^{6}\\right|=2.10^{6}\\,m/s$. b. Bỏ qua lực cản nên cơ năng (điện + động năng) được bảo toàn: $W_A=W_B$. c, d. $qEd_1+\\dfrac{1}{2}mv_1^{2}=qEd_2+\\dfrac{1}{2}mv_2^{2}\\Rightarrow E=\\dfrac{mv_1^{2}}{2q\\left(d_2-d_1\\right)}=\\dfrac{9,1.10^{-31}.\\left(2.10^{6}\\right)^{2}}{2.\\left(-1,6.10^{-19}\\right).\\left(2,9-3,0\\right)}\\approx 113,75\\,V/m$ (không phải $200\\,V/m$).</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Câu hỏi mô tả chuyển động của electron từ A đến B trong điện trường Trái Đất với chỉ 2 điểm dữ liệu (độ cao, tốc độ tại A và B), không có đồ thị hàm số liên tục hay sơ đồ vật lý cụ thể (không phải mạch điện, không phải hệ vật-lò xo, không phải tia sáng). Đề bài chỉ cho 2 cặp giá trị (độ cao, tốc độ) rời rạc, không đủ thông tin về dạng biến thiên (tuyến tính, bậc 2...) của tốc độ theo độ cao giữa A và B để vẽ đường cong chính xác, và cũng không có hình vẽ mô tả thiết bị/thí nghiệm nào được nhắc đến trong đề để phục dựng dưới dạng SVG.",
+      "created_at": "2026-09-25T15:47:25.695Z"
+    }
+  },
+  {
+    "id": 194,
+    "grade": "12",
+    "topic_name": "Thang nhiệt độ",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Thang nhiệt độ",
+      "answer": 0,
+      "options": [
+        "5 K.",
+        "278 K.",
+        "268 K.",
+        "4 K."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Sử dụng thông tin sau: sơ đồ nguyên lí một máy sưởi dùng nước nóng — nước nóng được bơm vào ống bên trong máy, hệ thống tản nhiệt gắn với ống này; không khí lạnh được quạt hút vào và làm ấm lên nhờ hệ thống tản nhiệt. Mỗi giờ có 575 kg nước nóng được bơm qua máy. Nhiệt độ của nước giảm $5^\\circ C$ khi đi qua máy; nhiệt dung riêng của nước là $c=4180$ J/(kg.K).</p><p class=\"text-base leading-relaxed my-2\">Nhiệt độ của nước giảm bao nhiêu kelvin khi đi qua máy sưởi?</p>",
+      "difficulty": "de",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ biến thiên nhiệt độ theo Celsius và Kelvin bằng nhau: $\\Delta T(K)=\\Delta t(^\\circ C)=5$ K.</p>"
+    },
+    "ai_figure": {
+      "reason": "Câu hỏi mô tả sơ đồ nguyên lí máy sưởi nước nóng nhưng không cung cấp đủ chi tiết cấu tạo cụ thể (kích thước, vị trí ống, hướng luồng khí, cách bố trí hệ thống tản nhiệt...) để dựng lại chính xác sơ đồ gốc. Đây là hình minh họa thiết bị thực tế, không phải đồ thị hàm số, và nội dung văn bản chỉ đủ để giải bài toán nhiệt (không liên quan đến chi tiết hình vẽ), nên không có cơ sở dữ liệu để vẽ đúng hình gốc mà không bịa đặt.",
+      "created_at": "2026-09-25T15:33:31.995Z"
+    }
+  },
+  {
+    "id": 195,
+    "grade": "12",
+    "topic_name": "Nhiệt lượng và cân bằng nhiệt",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Nhiệt lượng và cân bằng nhiệt",
+      "answer": 0,
+      "options": [
+        "12 MJ.",
+        "670 MJ.",
+        "2,5 MJ.",
+        "21 kJ."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Sử dụng thông tin sau: sơ đồ nguyên lí một máy sưởi dùng nước nóng — nước nóng được bơm vào ống bên trong máy, hệ thống tản nhiệt gắn với ống này; không khí lạnh được quạt hút vào và làm ấm lên nhờ hệ thống tản nhiệt. Mỗi giờ có 575 kg nước nóng được bơm qua máy. Nhiệt độ của nước giảm $5^\\circ C$ khi đi qua máy; nhiệt dung riêng của nước là $c=4180$ J/(kg.K).</p><p class=\"text-base leading-relaxed my-2\">Nhiệt lượng tỏa ra từ nước trong mỗi giờ là</p>",
+      "difficulty": "de",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">$Q=mc\\Delta t=575\\cdot4180\\cdot5\\approx 12\\times10^6$ J $=12$ MJ.</p>"
+    },
+    "ai_figure": {
+      "reason": "Đây là câu hỏi tính toán về nhiệt lượng tỏa ra từ nước nóng qua máy sưởi, không có đồ thị hàm số hay số liệu hình học nào cần vẽ. Đề chỉ mô tả sơ lược nguyên lý hoạt động (nước nóng - ống - tản nhiệt - quạt thổi khí lạnh) nhưng không cung cấp đủ chi tiết cấu trúc cụ thể (kích thước ống, vị trí quạt, hình dạng hệ tản nhiệt...) để dựng lại chính xác sơ đồ nguyên lý gốc mà không bịa đặt chi tiết.",
+      "created_at": "2026-09-25T15:33:37.671Z"
+    }
+  },
+  {
+    "id": 613,
+    "grade": "12",
+    "topic_name": "Suất điện động do thanh dẫn chuyển động",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Suất điện động do thanh dẫn chuyển động",
+      "answer": "1,2",
+      "question": "Đoạn dây dẫn <em>MN</em> như hình bên dưới dài 0,2 m đang bị kéo về bên phải với tốc độ 2 m/s. Biết cảm ứng từ có độ lớn 1,2 T và điện trở của <em>MN</em> là 100 Ω. Bỏ qua ma sát và điện trở các thành phần còn lại của mạch điện. Tìm độ lớn lực cần thiết để kéo thanh ở tốc độ không đổi này theo đơn vị là Newton?",
+      "difficulty": "de",
+      "explanation": "<em>Độ lớn lực cần thiết để kéo thanh ở tốc độ không đổi</em> $F = IlB = \\frac{e}{R}lB = \\frac{1,2.0,20.2,0}{100}.0,2.1,2 = 1,2\\,\\mathrm{N}.$"
+    },
+    "ai_figure": {
+      "svg": "<svg style=\"max-width:440px;height:auto;display:block;margin:8px auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\">\n  <!-- Rails -->\n  <line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"60\" y1=\"60\" x2=\"360\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"60\" y1=\"200\" x2=\"360\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <!-- Resistor R at left -->\n  <rect x=\"45\" y=\"115\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"20\" y=\"135\" font-size=\"13\">R</text>\n\n  <!-- Magnetic field dots (B out of page) -->\n  <g fill=\"currentColor\">\n    <circle cx=\"130\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"170\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"210\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"250\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"290\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"130\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"170\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"210\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"250\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"290\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"130\" cy=\"170\" r=\"1.5\"/>\n    <circle cx=\"170\" cy=\"170\" r=\"1.5\"/>\n    <circle cx=\"210\" cy=\"170\" r=\"1.5\"/>\n    <circle cx=\"250\" cy=\"170\" r=\"1.5\"/>\n    <circle cx=\"290\" cy=\"170\" r=\"1.5\"/>\n  </g>\n  <text x=\"150\" y=\"50\" font-size=\"13\">B = 1,2 T (hướng ra ngoài trang)</text>\n\n  <!-- MN bar -->\n  <line x1=\"220\" y1=\"60\" x2=\"220\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"3\"/>\n  <text x=\"225\" y=\"55\" font-size=\"13\">M</text>\n  <text x=\"225\" y=\"215\" font-size=\"13\">N</text>\n\n  <!-- length label for MN -->\n  <text x=\"230\" y=\"130\" font-size=\"12\">l = 0,2 m</text>\n\n  <!-- velocity arrow -->\n  <line x1=\"220\" y1=\"130\" x2=\"270\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n  <text x=\"275\" y=\"125\" font-size=\"13\">v = 2 m/s</text>\n\n  <!-- Force arrow (kéo) -->\n  <line x1=\"220\" y1=\"150\" x2=\"270\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4,3\" marker-end=\"url(#arrow)\"/>\n  <text x=\"275\" y=\"170\" font-size=\"13\">F</text>\n\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n</svg>",
+      "summary": "Sơ đồ mạch ray dẫn song song có thanh MN dài 0,2 m trượt trên hai ray với tốc độ v = 2 m/s, từ trường B = 1,2 T hướng ra ngoài mặt phẳng, điện trở R = 100 Ω nối ở đầu ray; số liệu lấy từ câu dẫn và lời giải.",
+      "freeform": true,
+      "created_at": "2026-09-25T15:33:31.461Z"
+    }
+  },
+  {
+    "id": 4339,
+    "grade": "12",
+    "topic_name": "Tính lực từ F = BIl·sinθ",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "answer": "0,8",
+      "question": "<p class=\"text-base leading-relaxed my-2\">Một thanh nhôm $MN,$ khối lượng $0,20 kg$ chuyển động trong từ trường đều và luôn tiếp xúc với hai thanh ray đặt song song cách nhau $1,6 m,$ nằm ngang và nằm trong mặt phẳng hình vẽ. Vector cảm ứng từ của từ trường ngược hướng với trọng lực, có độ lớn $B=0,05 T.$ Hệ số ma sát giữa thanh nhôm $MN$ và hai thanh ray là $\\mu =0,4.$ Lấy $g=10 m/s^{2}.$ Khi cường độ dòng điện qua thanh nhôm không đổi bằng $12 A$ thì nó chuyển động nhanh dần đều với gia tốc bằng bao nhiêu $m/s^{2}?$</p>",
+      "difficulty": "kho",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Theo quy tắc bàn tay trái, hướng của lực từ có dạng như hình vẽ, có độ lớn $F=BIL.$</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/11/1790138079773-fig43.png\" alt=\"Hinh minh hoa\" /> Ta có $\\vec{P}+2N+2F_{ms}+\\vec{F}=m\\vec{a}$</p><p class=\"text-base leading-relaxed my-2\">Theo phương vuông góc với phương chuyển động thì $P=2N\\Rightarrow N=\\frac{P}{2}$</p><p class=\"text-base leading-relaxed my-2\">Theo phương chuyển động thì $F-2F_{ms}=ma\\Leftrightarrow BIL-2\\mu N=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a=\\frac{BIL-\\mu mg}{m}=\\frac{0,05⋅1,6⋅12-0,4⋅0,2⋅10}{0,2}=0,8 \\frac{m}{s^{2}}.$</p><p class=\"text-base leading-relaxed my-2\"><img class=\"figure\" src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/11/1790138080125-fig44.png\" alt=\"Hinh minh hoa\" /></p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Hình cần vẽ là sơ đồ mạch/hình vẽ minh họa thanh nhôm MN trên hai ray nằm ngang, chịu lực từ F, trọng lực P, phản lực N và lực ma sát theo quy tắc bàn tay trái với hướng B thẳng đứng xuống. Đây là hình minh họa định tính (không phải đồ thị hàm số) nhưng không có đủ thông tin về góc nhìn, chiều dòng điện I, chiều B cụ thể trong không gian 3D để xác định chính xác hướng các vectơ lực trên hình vẽ gốc — chỉ có thể suy luận định tính từ lời giải mà không có số liệu hình học (góc, khoảng cách, phương chiều cụ thể) để dựng lại đúng hình vẽ gốc. Do đó không đủ dữ kiện để vẽ chính xác hình minh họa này.",
+      "created_at": "2026-09-25T15:32:59.390Z"
+    }
+  },
+  {
+    "id": 5284,
+    "grade": "12",
+    "topic_name": "Nguyên tắc tạo ra dòng điện xoay chiều",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "answer": 1,
+      "options": [
+        "$0,4\\ Hz,\\ \\frac{\\pi }{4}\\ rad.$",
+        "$2,5\\ Hz,\\ \\frac{\\pi }{2}\\ rad.$",
+        "$2,5\\ Hz,\\ \\frac{\\pi }{4}\\ rad.$",
+        "$0,4\\ Hz,\\ \\frac{\\pi }{2}\\ rad.$"
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Hai máy phát điện (1) và (2) tạo ra hai suất điện động xoay chiều $e_{1}$ và $e_{2}$ cùng tần số và biến thiên theo thời gian t như hình bên. Hai suất điện động này có tần số và độ lớn độ lệch pha lần lượt là</p><p class=\"text-base leading-relaxed my-2\"><em>(Đồ thị nguồn gốc lưu ở định dạng JPEG-XR không giải mã được bằng công cụ hiện có — cần bổ sung ảnh đồ thị e-t từ file Word gốc.)</em></p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ đồ thị, ta có T = 0,4 s $\\Rightarrow f=\\frac{1}{T}=2,5\\,Hz.$</p><p class=\"text-base leading-relaxed my-2\">Xét thời điểm ban đầu $\\Rightarrow \\Delta \\varphi =\\frac{\\pi }{2}\\,rad$.</p>",
+      "distractorNotes": {
+        "A": "Lấy $f=\\frac{1}{T}$ nhầm thành $T$ nghịch đảo, và đọc sai độ lệch pha giữa hai đồ thị.",
+        "C": "Đọc tần số đúng nhưng đọc sai độ lệch pha giữa hai đồ thị: lẫn $\\frac{\\pi}{2}$ với $\\frac{\\pi}{4}$.",
+        "D": "Nhầm $f$ với $T$: lấy chu kì 0,4 s làm tần số, không lấy nghịch đảo."
+      },
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"122.8\" y1=\"26\" x2=\"122.8\" y2=\"220\"/><line x1=\"193.6\" y1=\"26\" x2=\"193.6\" y2=\"220\"/><line x1=\"264.4\" y1=\"26\" x2=\"264.4\" y2=\"220\"/><line x1=\"335.2\" y1=\"26\" x2=\"335.2\" y2=\"220\"/><line x1=\"52\" y1=\"48.4\" x2=\"406\" y2=\"48.4\"/><line x1=\"52\" y1=\"197.6\" x2=\"406\" y2=\"197.6\"/></g><line x1=\"44\" y1=\"123.0\" x2=\"420\" y2=\"123.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,123.0 411,119.0 411,127.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"116.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (s)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >e (V)</text><text x=\"40.0\" y=\"137.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"122.8\" y1=\"119.0\" x2=\"122.8\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"122.8\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,1</text><line x1=\"193.6\" y1=\"119.0\" x2=\"193.6\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"193.6\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,2</text><line x1=\"264.4\" y1=\"119.0\" x2=\"264.4\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"264.4\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,3</text><line x1=\"335.2\" y1=\"119.0\" x2=\"335.2\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"335.2\" y=\"138.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"middle\">0,4</text><line x1=\"48.0\" y1=\"48.4\" x2=\"56.0\" y2=\"48.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"52.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">E0</text><line x1=\"48.0\" y1=\"197.6\" x2=\"56.0\" y2=\"197.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"201.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-E0</text><polyline points=\"52.0,48.4 54.2,48.5 56.4,48.7 58.6,49.2 60.9,49.8 63.1,50.6 65.3,51.6 67.5,52.7 69.7,54.1 71.9,55.5 74.1,57.2 76.3,59.0 78.5,61.0 80.8,63.1 83.0,65.3 85.2,67.7 87.4,70.2 89.6,72.9 91.8,75.7 94.0,78.6 96.3,81.5 98.5,84.6 100.7,87.8 102.9,91.1 105.1,94.4 107.3,97.9 109.5,101.3 111.7,104.9 113.9,108.4 116.2,112.1 118.4,115.7 120.6,119.3 122.8,123.0 125.0,126.7 127.2,130.3 129.4,133.9 131.7,137.6 133.9,141.1 136.1,144.7 138.3,148.1 140.5,151.6 142.7,154.9 144.9,158.2 147.1,161.4 149.4,164.5 151.6,167.4 153.8,170.3 156.0,173.1 158.2,175.8 160.4,178.3 162.6,180.7 164.8,182.9 167.1,185.0 169.3,187.0 171.5,188.8 173.7,190.5 175.9,191.9 178.1,193.3 180.3,194.4 182.5,195.4 184.8,196.2 187.0,196.8 189.2,197.3 191.4,197.5 193.6,197.6 195.8,197.5 198.0,197.3 200.2,196.8 202.4,196.2 204.7,195.4 206.9,194.4 209.1,193.3 211.3,191.9 213.5,190.5 215.7,188.8 217.9,187.0 220.2,185.0 222.4,182.9 224.6,180.7 226.8,178.3 229.0,175.8 231.2,173.1 233.4,170.3 235.6,167.4 237.8,164.5 240.1,161.4 242.3,158.2 244.5,154.9 246.7,151.6 248.9,148.1 251.1,144.7 253.3,141.1 255.5,137.6 257.8,133.9 260.0,130.3 262.2,126.7 264.4,123.0 266.6,119.3 268.8,115.7 271.0,112.1 273.3,108.4 275.5,104.9 277.7,101.3 279.9,97.9 282.1,94.4 284.3,91.1 286.5,87.8 288.7,84.6 291.0,81.5 293.2,78.6 295.4,75.7 297.6,72.9 299.8,70.2 302.0,67.7 304.2,65.3 306.4,63.1 308.6,61.0 310.9,59.0 313.1,57.2 315.3,55.5 317.5,54.1 319.7,52.7 321.9,51.6 324.1,50.6 326.4,49.8 328.6,49.2 330.8,48.7 333.0,48.5 335.2,48.4 337.4,48.5 339.6,48.7 341.8,49.2 344.1,49.8 346.3,50.6 348.5,51.6 350.7,52.7 352.9,54.1 355.1,55.5 357.3,57.2 359.5,59.0 361.8,61.0 364.0,63.1 366.2,65.3 368.4,67.7 370.6,70.2 372.8,72.9 375.0,75.7 377.2,78.6 379.4,81.5 381.7,84.6 383.9,87.8 386.1,91.1 388.3,94.4 390.5,97.9 392.7,101.3 394.9,104.9 397.1,108.4 399.4,112.1 401.6,115.7 403.8,119.3 406.0,123.0\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"404.0\" y=\"117.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#2563eb\" text-anchor=\"end\">e1</text><polyline points=\"52.0,123.0 54.2,119.3 56.4,115.7 58.6,112.1 60.9,108.4 63.1,104.9 65.3,101.3 67.5,97.9 69.7,94.4 71.9,91.1 74.1,87.8 76.3,84.6 78.5,81.5 80.8,78.6 83.0,75.7 85.2,72.9 87.4,70.2 89.6,67.7 91.8,65.3 94.0,63.1 96.3,61.0 98.5,59.0 100.7,57.2 102.9,55.5 105.1,54.1 107.3,52.7 109.5,51.6 111.7,50.6 113.9,49.8 116.2,49.2 118.4,48.7 120.6,48.5 122.8,48.4 125.0,48.5 127.2,48.7 129.4,49.2 131.7,49.8 133.9,50.6 136.1,51.6 138.3,52.7 140.5,54.1 142.7,55.5 144.9,57.2 147.1,59.0 149.4,61.0 151.6,63.1 153.8,65.3 156.0,67.7 158.2,70.2 160.4,72.9 162.6,75.7 164.8,78.6 167.1,81.5 169.3,84.6 171.5,87.8 173.7,91.1 175.9,94.4 178.1,97.9 180.3,101.3 182.5,104.9 184.8,108.4 187.0,112.1 189.2,115.7 191.4,119.3 193.6,123.0 195.8,126.7 198.0,130.3 200.2,133.9 202.4,137.6 204.7,141.1 206.9,144.7 209.1,148.1 211.3,151.6 213.5,154.9 215.7,158.2 217.9,161.4 220.2,164.5 222.4,167.4 224.6,170.3 226.8,173.1 229.0,175.8 231.2,178.3 233.4,180.7 235.6,182.9 237.8,185.0 240.1,187.0 242.3,188.8 244.5,190.5 246.7,191.9 248.9,193.3 251.1,194.4 253.3,195.4 255.5,196.2 257.8,196.8 260.0,197.3 262.2,197.5 264.4,197.6 266.6,197.5 268.8,197.3 271.0,196.8 273.3,196.2 275.5,195.4 277.7,194.4 279.9,193.3 282.1,191.9 284.3,190.5 286.5,188.8 288.7,187.0 291.0,185.0 293.2,182.9 295.4,180.7 297.6,178.3 299.8,175.8 302.0,173.1 304.2,170.3 306.4,167.4 308.6,164.5 310.9,161.4 313.1,158.2 315.3,154.9 317.5,151.6 319.7,148.1 321.9,144.7 324.1,141.1 326.4,137.6 328.6,133.9 330.8,130.3 333.0,126.7 335.2,123.0 337.4,119.3 339.6,115.7 341.8,112.1 344.1,108.4 346.3,104.9 348.5,101.3 350.7,97.9 352.9,94.4 355.1,91.1 357.3,87.8 359.5,84.6 361.8,81.5 364.0,78.6 366.2,75.7 368.4,72.9 370.6,70.2 372.8,67.7 375.0,65.3 377.2,63.1 379.4,61.0 381.7,59.0 383.9,57.2 386.1,55.5 388.3,54.1 390.5,52.7 392.7,51.6 394.9,50.6 397.1,49.8 399.4,49.2 401.6,48.7 403.8,48.5 406.0,48.4\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"404.0\" y=\"42.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#dc2626\" text-anchor=\"end\">e2</text></svg>",
+      "summary": "Đồ thị hai suất điện động e1, e2 theo t: cùng chu kì T=0,4s (f=2,5Hz), lệch pha nhau π/2 (e1 xuất phát từ biên dương, e2 xuất phát từ 0 đi lên hoặc ngược lại) theo lời giải.",
+      "created_at": "2026-09-25T15:33:25.247Z"
+    }
+  },
+  {
+    "id": 5759,
+    "grade": "12",
+    "topic_name": "Nhiệt độ và cân bằng nhiệt",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Nhiệt độ và cân bằng nhiệt",
+      "answer": "0,77",
+      "question": "<p class=\"text-base leading-relaxed my-2\">Cho 200 g nước đá ở −10⁰C vào một cốc cách nhiệt đựng nước ở 30⁰C. Đồ thị nhiệt độ theo thời gian cho thấy nước đá tăng dần từ −10⁰C và nước giảm dần từ 30⁰C, hai đường gặp nhau và cùng dừng ở mức nhiệt độ chung khoảng 6⁰C. Biết nhiệt dung riêng của nước đá là 2100 J/(kg.K), nhiệt nóng chảy riêng của nước đá là $3,4.10^{5}\\ J/kg$, nhiệt dung riêng của nước là 4200 J/(kg.K), bỏ qua nhiệt dung của cốc. Khối lượng nước trong cốc bằng bao nhiêu kilôgam (làm tròn kết quả đến chữ số hàng phần trăm)?</p>",
+      "difficulty": "kho",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Phương trình cân bằng nhiệt (đá tan hết rồi cùng nước tăng lên 6⁰C): $m_d(c_d\\Delta t_d + \\lambda + c_n.6) = m_nc_n\\Delta t_n$ $\\Rightarrow 0,2.(2100.10 + 3,4.10^5 + 4200.6) = m_n.4200.(30-6) \\Rightarrow m_n \\approx 0,77$ kg.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"52.0\" y1=\"26\" x2=\"52.0\" y2=\"220\"/><line x1=\"52\" y1=\"200.6\" x2=\"406\" y2=\"200.6\"/><line x1=\"52\" y1=\"161.8\" x2=\"406\" y2=\"161.8\"/><line x1=\"52\" y1=\"138.5\" x2=\"406\" y2=\"138.5\"/><line x1=\"52\" y1=\"45.4\" x2=\"406\" y2=\"45.4\"/></g><line x1=\"52.0\" y1=\"138.5\" x2=\"406\" y2=\"138.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"264.4\" y1=\"26\" x2=\"264.4\" y2=\"161.8\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><line x1=\"44\" y1=\"161.8\" x2=\"420\" y2=\"161.8\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,161.8 411,157.8 411,165.8\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"154.8\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">t (phút)</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >Nhiệt độ (°C)</text><text x=\"40.0\" y=\"175.8\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"48.0\" y1=\"200.6\" x2=\"56.0\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"204.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">-10</text><line x1=\"48.0\" y1=\"138.5\" x2=\"56.0\" y2=\"138.5\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"142.5\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">6</text><line x1=\"48.0\" y1=\"45.4\" x2=\"56.0\" y2=\"45.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"49.4\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">30</text><polyline points=\"52.0,200.6 264.4,138.5\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"262.4\" y=\"132.5\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#2563eb\" text-anchor=\"end\">Nước đá</text><polyline points=\"52.0,45.4 264.4,138.5\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"262.4\" y=\"132.5\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#dc2626\" text-anchor=\"end\">Nước</text></svg>",
+      "summary": "Đồ thị nhiệt độ theo thời gian: đường nước đá tăng dần từ -10°C, đường nước giảm dần từ 30°C, hai đường gặp nhau tại nhiệt độ cân bằng khoảng 6°C (số liệu lấy từ câu dẫn).",
+      "created_at": "2026-09-25T15:30:08.803Z"
+    }
+  },
+  {
+    "id": 6795,
+    "grade": "12",
+    "topic_name": "Các tia phóng xạ α, β, γ",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Các tia phóng xạ α, β, γ",
+      "answer": 2,
+      "options": [
+        "Tia alpha có khả năng đâm xuyên kém nhất, không xuyên qua được tờ bìa giấy dày $1 mm.$",
+        "Tia beta có khả năng đâm xuyên mạnh hơn tia alpha, có thể xuyên qua tờ giấy dày $1 mm$ nhưng bị lá nhôm dày vài milimét chặn lại.",
+        "Tia gamma có khả năng đâm xuyên mạnh nhất, có thể xuyên qua những tấm chì dày nên không thể dùng vật liệu bằng chì để che chắn tia gamma.",
+        "Khả năng đâm xuyên của tia gamma được ứng dụng trong y học để chuẩn đoán hình ảnh bằng máy chụp cắt lớp, làm dao mổ gamma và chữa ung thư sâu."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Hình vẽ dưới đây cho biết khả năng đâm xuyên của các loại tia phóng xạ. Phát biểu nào sau đây là <strong>sai</strong> khi nói về tính chất đâm xuyên của các tia phóng xạ?</p>",
+      "difficulty": "de",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\"><figure class=\"fig\"><svg viewBox=\"0 0 340 160\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"120\" y=\"15\" width=\"18\" height=\"130\" fill=\"#D9B27C\"/>\n<rect x=\"190\" y=\"15\" width=\"18\" height=\"130\" fill=\"#9CA3AF\"/>\n<rect x=\"260\" y=\"15\" width=\"18\" height=\"130\" fill=\"#4B5563\"/>\n<text x=\"123\" y=\"155\" fill=\"currentColor\" font-size=\"12\">Giấy</text>\n<text x=\"188\" y=\"155\" fill=\"currentColor\" font-size=\"12\">Nhôm</text>\n<text x=\"256\" y=\"155\" fill=\"currentColor\" font-size=\"12\">Chì</text>\n<line x1=\"10\" y1=\"40\" x2=\"118\" y2=\"40\" stroke=\"#34D399\" stroke-width=\"3\"/>\n<text x=\"12\" y=\"34\" fill=\"#34D399\" font-size=\"12\">α</text>\n<line x1=\"10\" y1=\"75\" x2=\"188\" y2=\"75\" stroke=\"#60A5FA\" stroke-width=\"3\"/>\n<text x=\"12\" y=\"69\" fill=\"#60A5FA\" font-size=\"12\">β</text>\n<line x1=\"10\" y1=\"110\" x2=\"330\" y2=\"110\" stroke=\"#F43F5E\" stroke-width=\"3\"/>\n<text x=\"12\" y=\"104\" fill=\"#F43F5E\" font-size=\"12\">γ</text>\n</svg><figcaption>Khả năng đâm xuyên: tia α bị chặn ngay ở tờ giấy, tia β xuyên qua giấy nhưng bị lá nhôm chặn lại, tia γ xuyên qua cả tấm chì dày.</figcaption></figure>Tia gamma đâm xuyên mạnh nhất nhưng vẫn bị chặn được nếu vật liệu đủ dày — người ta thường dùng tấm chì dày cỡ 10 cm để che chắn tia gamma, nên phát biểu “không thể dùng chì để che chắn” là sai.</p>"
+    },
+    "ai_figure": {
+      "svg": "<svg style=\"max-width:440px;height:auto;display:block;margin:8px auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\">\n  <style>text{font-size:13px;}</style>\n  <!-- Nguồn phóng xạ -->\n  <circle cx=\"30\" cy=\"130\" r=\"10\" fill=\"currentColor\"/>\n  <text x=\"10\" y=\"155\">Nguồn</text>\n\n  <!-- Tờ giấy -->\n  <rect x=\"110\" y=\"40\" width=\"8\" height=\"180\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"95\" y=\"235\">Giấy</text>\n\n  <!-- Lá nhôm -->\n  <rect x=\"210\" y=\"40\" width=\"14\" height=\"180\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"195\" y=\"235\">Nhôm</text>\n\n  <!-- Tấm chì -->\n  <rect x=\"320\" y=\"40\" width=\"30\" height=\"180\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"315\" y=\"235\">Chì</text>\n\n  <!-- Tia alpha: dừng ở giấy -->\n  <line x1=\"30\" y1=\"100\" x2=\"110\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"50\" y=\"90\">α</text>\n\n  <!-- Tia beta: qua giấy, dừng ở nhôm -->\n  <line x1=\"30\" y1=\"130\" x2=\"210\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"150\" y=\"120\">β</text>\n\n  <!-- Tia gamma: qua tất cả nhưng có chặn được ở chì dày -->\n  <line x1=\"30\" y1=\"160\" x2=\"320\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"270\" y=\"150\">γ</text>\n  <!-- dấu X thể hiện gamma bị chặn nếu chì đủ dày -->\n  <line x1=\"330\" y1=\"150\" x2=\"340\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <line x1=\"340\" y1=\"150\" x2=\"330\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"2\"/>\n</svg>",
+      "summary": "Sơ đồ minh họa khả năng đâm xuyên của ba loại tia phóng xạ: tia α bị chặn bởi tờ giấy, tia β xuyên qua giấy nhưng bị lá nhôm chặn, tia γ xuyên qua cả nhôm và chỉ bị chặn khi gặp tấm chì đủ dày — theo mô tả trong lời giải.",
+      "freeform": true,
+      "created_at": "2026-09-25T15:33:08.112Z"
+    }
+  },
+  {
+    "id": 6797,
+    "grade": "12",
+    "topic_name": "Các tia phóng xạ α, β, γ",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Các tia phóng xạ α, β, γ",
+      "answer": 3,
+      "options": [
+        "Do hạt $\\beta$ đi trong điện trường hết thời gian lâu hơn.",
+        "Do hạt $\\beta$ được phóng ra với vận tốc ban đầu lớn hơn.",
+        "Do hạt $\\beta$ có khối lượng rất nhỏ so với hạt $\\alpha$ nên khi đi trong điện trường đều nó thu được gia tốc rất nhỏ so với hạt $\\alpha.$",
+        "Do hạt $\\beta$ có khối lượng rất nhỏ so với hạt $\\alpha$ nên khi đi trong điện trường đều nó thu được gia tốc rất lớn so với hạt $\\alpha.$"
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Hình bên mô tả sự lệch hướng của các tia phóng xạ khi di chuyển trong điện trường đều. Giải thích tại sao độ lớn điện tích của hạt $\\beta$ chỉ bằng một nửa độ lớn điện tích của hạt $\\alpha$ nhưng tia $\\beta$ lại lệch nhiều hơn tia $\\alpha$?</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\"><figure class=\"fig\"><svg viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"30\" y=\"10\" width=\"14\" height=\"180\" fill=\"currentColor\" fill-opacity=\"0.25\"/>\n<rect x=\"256\" y=\"10\" width=\"14\" height=\"180\" fill=\"currentColor\" fill-opacity=\"0.25\"/>\n<text x=\"20\" y=\"205\" fill=\"currentColor\" font-size=\"13\">+</text>\n<text x=\"262\" y=\"205\" fill=\"currentColor\" font-size=\"13\">−</text>\n<rect x=\"140\" y=\"182\" width=\"20\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n<path d=\"M150 182 Q 185 95 230 30\" fill=\"none\" stroke=\"#F59E0B\" stroke-width=\"2\"/>\n<text x=\"233\" y=\"30\" fill=\"#F59E0B\" font-size=\"12\">α</text>\n<path d=\"M150 182 Q 100 80 60 22\" fill=\"none\" stroke=\"#F43F5E\" stroke-width=\"2\"/>\n<text x=\"30\" y=\"22\" fill=\"#F43F5E\" font-size=\"12\">β</text>\n</svg><figcaption>So sánh độ lệch của tia α và tia β trong cùng một điện trường đều: cùng thời gian bay, tia β lệch xa hơn hẳn tia α do gia tốc lớn hơn nhiều.</figcaption></figure>Gia tốc mỗi hạt trong điện trường là $a=\\frac{|q|E}{m}$. Dù $|q_{\\beta}|=e$ chỉ bằng một nửa $q_{\\alpha}=2e$, nhưng khối lượng $m_{\\beta}\\approx 0,00055$ amu rất nhỏ so với $m_{\\alpha}\\approx 4,0015$ amu, nên gia tốc của hạt β lớn hơn rất nhiều so với hạt α — do đó tia β lệch nhiều hơn tia α.</p>"
+    },
+    "ai_figure": {
+      "svg": "<svg style=\"max-width:440px;height:auto;display:block;margin:8px auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\">\n  <!-- Plates -->\n  <rect x=\"60\" y=\"40\" width=\"220\" height=\"10\" fill=\"currentColor\"/>\n  <rect x=\"60\" y=\"200\" width=\"220\" height=\"10\" fill=\"currentColor\"/>\n  <text x=\"30\" y=\"48\" font-size=\"13\">+</text>\n  <text x=\"30\" y=\"212\" font-size=\"13\">−</text>\n\n  <!-- Field lines -->\n  <line x1=\"100\" y1=\"50\" x2=\"100\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n  <line x1=\"160\" y1=\"50\" x2=\"160\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n  <line x1=\"220\" y1=\"50\" x2=\"220\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n  <line x1=\"60\" y1=\"60\" x2=\"80\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/>\n\n  <!-- Source -->\n  <circle cx=\"40\" cy=\"125\" r=\"4\" fill=\"currentColor\"/>\n  <text x=\"15\" y=\"150\" font-size=\"12\">Nguồn</text>\n\n  <!-- Incoming beam -->\n  <line x1=\"44\" y1=\"125\" x2=\"60\" y2=\"125\" stroke=\"currentColor\" stroke-width=\"2\"/>\n\n  <!-- gamma: straight -->\n  <line x1=\"60\" y1=\"125\" x2=\"380\" y2=\"125\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"385\" y=\"129\" font-size=\"13\">γ</text>\n\n  <!-- alpha: slight deflection downward (toward negative plate, since positive charge attracted to - plate) -->\n  <path d=\"M60,125 Q220,125 380,160\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"385\" y=\"164\" font-size=\"13\">α</text>\n\n  <!-- beta: strong deflection upward (toward positive plate, negative charge attracted to + plate), larger curve -->\n  <path d=\"M60,125 Q220,110 380,60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"385\" y=\"64\" font-size=\"13\">β</text>\n</svg>",
+      "summary": "Sơ đồ tụ điện phẳng tạo điện trường đều với ba tia phóng xạ α, β, γ bay vào theo phương ngang: γ đi thẳng, α lệch nhẹ về phía bản âm, β lệch mạnh hơn nhiều về phía bản dương do gia tốc lớn hơn (theo mô tả lời giải).",
+      "freeform": true,
+      "created_at": "2026-09-25T15:33:10.396Z"
+    }
+  },
+  {
+    "id": 6800,
+    "grade": "12",
+    "topic_name": "Các tia phóng xạ α, β, γ",
+    "question": {
+      "form": "bai_tap",
+      "type": "multiple_choice",
+      "topic": "Các tia phóng xạ α, β, γ",
+      "answer": 2,
+      "options": [
+        "vùng $\\left( I \\right)$ không có từ trường.",
+        "vùng $\\left( I \\right)$ có từ đều vuông góc với mặt phẳng hình vẽ, hướng ra ngoài.",
+        "vùng $\\left( I \\right)$ có từ đều vuông góc với mặt phẳng hình vẽ, hướng vào trong.",
+        "vùng $\\left( I \\right)$ có từ đều nằm ngang, hướng sang phải."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Một nguồn phóng xạ phát ra tia $\\beta ^{-}$ bay từ bên ngoài vào miền không gian $\\left( I \\right)$ (có thể có từ trường hoặc không có từ trường) tại điểm $A$ thì quỹ đạo chuyển động của nó có dạng như hình vẽ. Kết luận nào sau đây là <strong>đúng</strong>?</p>",
+      "difficulty": "kho",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Vì hạt β⁻ bay theo quỹ đạo cong (tròn) nên vùng (I) phải có từ trường tác dụng lực Lorentz lên hạt đang chuyển động trong đó. Áp dụng quy tắc bàn tay trái theo chiều cong của quỹ đạo trong hình vẽ gốc, suy ra vùng (I) có từ trường đều vuông góc với mặt phẳng hình vẽ, hướng vào trong. (Hình vẽ gốc của câu này bị lỗi khi trích xuất tài liệu, không khôi phục lại được — đáp án lấy trực tiếp theo lời giải gốc, thầy nên đối chiếu lại đề gốc nếu có.)</p>"
+    },
+    "ai_figure": {
+      "reason": "Đây là hình mô tả quỹ đạo cong cụ thể của hạt β⁻ đi vào vùng (I) tại điểm A (hình dạng đường cong, vị trí, hướng bay vào, độ cong về phía nào so với mặt phẳng hình vẽ). Văn bản đề và lời giải không cung cấp đủ chi tiết hình học (bán kính cong, hướng lệch cụ thể của quỹ đạo, vị trí điểm A so với biên vùng I) để dựng lại chính xác quỹ đạo - đây là hình vẽ tùy ý theo hình gốc đã bị mất khi số hoá, không thể suy ra duy nhất từ đáp án \"hướng vào trong\" vì nhiều hình dạng quỹ đạo khác nhau đều có thể dẫn tới cùng kết luận đó. Do đó không đủ dữ kiện để tái tạo đúng hình gốc mà không bịa thêm chi tiết.",
+      "created_at": "2026-09-25T15:33:18.171Z"
+    }
+  },
+  {
+    "id": 7982,
+    "grade": "12",
+    "topic_name": "Đọc đồ thị các đẳng quá trình",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "multiple_choice",
+      "topic": "Đọc đồ thị các đẳng quá trình",
+      "answer": 2,
+      "options": [
+        "$(p, T)$",
+        "$(p, V)$",
+        "$(p, T)$ hoặc $(p, V)$",
+        "đồ thị đó không thể biểu diễn quá trình đẳng áp."
+      ],
+      "question": "<p class=\"text-base leading-relaxed my-2\">Nếu đồ thị hình bên biểu diễn quá trình đẳng áp — một đường thẳng song song với trục hoành (dạng $y=const$) — thì hệ tọa độ (y, x) là hệ tọa độ</p>",
+      "difficulty": "trung-binh",
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">Quá trình đẳng áp có áp suất không đổi với mọi giá trị của thể tích/nhiệt độ. Đồ thị $y=const$ (đường thẳng song song trục hoành) chỉ phù hợp khi trục tung là $p$: hệ tọa độ $(p,T)$ hoặc $(p,V)$.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\" style=\"max-width:440px;height:auto;display:block;margin:8px auto\"><g stroke=\"currentColor\" stroke-width=\"0.6\" opacity=\"0.15\"><line x1=\"52\" y1=\"103.6\" x2=\"406\" y2=\"103.6\"/></g><line x1=\"52.0\" y1=\"103.6\" x2=\"406\" y2=\"103.6\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/><text x=\"56.0\" y=\"99.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >y = const</text><line x1=\"44\" y1=\"220.0\" x2=\"420\" y2=\"220.0\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"420,220.0 411,216.0 411,224.0\" fill=\"currentColor\"/><line x1=\"52.0\" y1=\"228\" x2=\"52.0\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.8\"/><polygon points=\"52.0,14 48.0,23 56.0,23\" fill=\"currentColor\"/><text x=\"422.0\" y=\"213.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">x</text><text x=\"60.0\" y=\"22.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >y</text><text x=\"40.0\" y=\"234.0\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" >O</text><line x1=\"48.0\" y1=\"103.6\" x2=\"56.0\" y2=\"103.6\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"45.0\" y=\"107.6\" font-size=\"12\" font-family=\"sans-serif\" fill=\"currentColor\" text-anchor=\"end\">p</text><polyline points=\"87.4,103.6 370.6,103.6\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>",
+      "summary": "",
+      "created_at": "2026-09-25T15:31:47.580Z"
+    }
+  },
+  {
+    "id": 8001,
+    "grade": "12",
+    "topic_name": "Đọc đồ thị các đẳng quá trình",
+    "question": {
+      "form": "ly_thuyet",
+      "type": "true_false",
+      "topic": "Đọc đồ thị các đẳng quá trình",
+      "question": "<p class=\"text-base leading-relaxed my-2\">Cho các đồ thị đẳng quá trình sau</p>",
+      "difficulty": "trung-binh",
+      "statements": [
+        {
+          "text": "Đồ thị hình a diễn tả quá trình đẳng nhiệt.",
+          "answer": false
+        },
+        {
+          "text": "Đồ thị hình b diễn tả quá trình đẳng áp.",
+          "answer": false
+        },
+        {
+          "text": "Đồ thị hình b diễn tả quá trình đẳng tích.",
+          "answer": true
+        },
+        {
+          "text": "Đồ thị hình b diễn tả quá trình đẳng áp.",
+          "answer": true
+        }
+      ],
+      "explanation": "<p class=\"text-base leading-relaxed my-2\">a. Sai — đồ thị hình a diễn tả quá trình đẳng áp. b/d. Trong hệ tọa độ $(p,T)$, đường thẳng kéo dài qua gốc tọa độ ứng với quá trình đẳng tích, không phải đẳng áp — b sai, d đúng. c. Đúng.</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "reason": "Đề bài nhắc tới \"các đồ thị đẳng quá trình\" gồm ít nhất hai hình (a và b) với các trục tọa độ khác nhau (hình a có thể là (V,T) hoặc (p,V); hình b là (p,T)), nhưng câu dẫn không cung cấp cụ thể trục tọa độ, giá trị số liệu, hình dạng đường (đường thẳng qua gốc hay không), hay các điểm mốc trên mỗi đồ thị. Lời giải chỉ cho biết kết luận về loại quá trình (đẳng áp/đẳng tích) chứ không có số liệu (nhiệt độ, áp suất, thể tích cụ thể) để dựng lại chính xác từng đồ thị. Do đó không đủ dữ kiện để vẽ lại hình gốc mà không bịa số liệu.",
+      "created_at": "2026-09-25T15:31:55.163Z"
+    }
+  },
+  {
+    "id": 8326,
+    "grade": "12",
+    "topic_name": "Liên hệ áp suất với động năng phân tử",
+    "question": {
+      "form": "bai_tap",
+      "type": "short_answer",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "answer": "3,3",
+      "question": "<p class=\"text-base leading-relaxed my-2\">Khối lượng một phân tử khí hydrogen là $3,3.10^{-24}$ gam. Biết rằng trong $1$ giây có $10^{23}$ phân tử khí hydrogen chuyển động với tốc độ $1000$ m/s đập vào $1$ cm² thành bình theo phương nghiêng $30^\\circ$ so với thành bình (hình vẽ). Áp suất khí lên thành bình (tính theo đơn vị $10^{3}$ N/m²) là bao nhiêu?</p>",
+      "difficulty": "kho",
+      "explanation": "<figure class=\"fig\"><div class=\"rounded-lg bg-white p-2\"><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/9/1790155230896-fig01.png\" alt=\"Phân tử khí đập vào thành bình theo phương nghiêng 30 độ\" class=\"w-full h-auto rounded\" /></div><figcaption>Va chạm của phân tử khí với thành bình</figcaption></figure><p class=\"text-base leading-relaxed my-2\">Với một phân tử khí $H_2$, hệ thức giữa độ biến thiên động lượng và xung của lực: $\\Delta \\vec p = \\vec{p'} - \\vec p = \\vec{f_1}.\\Delta t \\Leftrightarrow 2mv.\\sin30^{\\circ} = f_1\\Delta t \\Leftrightarrow mv = f_1\\Delta t \\Rightarrow f_1 = \\dfrac{mv}{\\Delta t}$. Áp suất do 1 phân tử tác dụng lên thành bình $p_1 = \\dfrac{f_1}{S} = \\dfrac{mv}{S.\\Delta t}$. Áp suất do $N$ phân tử $H_2$ tác dụng lên thành bình trong 1 giây: $p = Np_1 = \\dfrac{Nmv}{S.\\Delta t} = \\dfrac{10^{23}.3,3.10^{-27}.10^{3}}{10^{-4}.1} = 3,3.10^{3}$ N/m².</p>",
+      "difficultySource": null
+    },
+    "ai_figure": {
+      "svg": "<svg style=\"max-width:440px;height:auto;display:block;margin:8px auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 260\" width=\"100%\">\n  <!-- Thành bình (mặt phẳng thẳng đứng) -->\n  <line x1=\"220\" y1=\"30\" x2=\"220\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"3\"/>\n  <!-- Gạch chéo ký hiệu tường/thành bình -->\n  <line x1=\"220\" y1=\"40\" x2=\"200\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"70\" x2=\"200\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"100\" x2=\"200\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"130\" x2=\"200\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"160\" x2=\"200\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"190\" x2=\"200\" y2=\"210\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n\n  <!-- Pháp tuyến (đường chuẩn vuông góc thành bình) nét đứt -->\n  <line x1=\"220\" y1=\"130\" x2=\"340\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n\n  <!-- Phân tử tới, hợp 30 độ với thành bình (tức 60 độ với pháp tuyến) -->\n  <line x1=\"330\" y1=\"60\" x2=\"220\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n  <!-- Phân tử phản xạ -->\n  <line x1=\"220\" y1=\"130\" x2=\"330\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n  <!-- Góc 30 độ ký hiệu -->\n  <path d=\"M 220 130 L 260 130 A 40 40 0 0 0 253 108\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"262\" y=\"122\" font-size=\"13\">30°</text>\n\n  <path d=\"M 220 130 L 260 130 A 40 40 0 0 1 253 152\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"262\" y=\"148\" font-size=\"13\">30°</text>\n\n  <text x=\"330\" y=\"55\" font-size=\"13\">v</text>\n  <text x=\"330\" y=\"215\" font-size=\"13\">v'</text>\n  <text x=\"140\" y=\"130\" font-size=\"13\">Thành bình</text>\n</svg>",
+      "summary": "Sơ đồ mô tả phân tử khí H2 va chạm đàn hồi với thành bình theo phương hợp góc 30° so với mặt thành bình (tức 60° so với pháp tuyến), thể hiện đường tới và đường phản xạ đối xứng qua pháp tuyến, dựa theo lời giải mô tả góc 30° so với thành bình.",
+      "freeform": true,
+      "created_at": "2026-09-25T15:32:29.506Z"
+    }
+  }
+]

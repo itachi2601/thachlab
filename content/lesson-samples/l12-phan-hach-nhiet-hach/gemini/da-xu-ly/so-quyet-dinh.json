@@ -1,0 +1,178 @@
+{
+  "bai": "l12-phan-hach-nhiet-hach",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa loại kích thích thành 'tương tác với hạt khác', ghi rõ phân hạch do nơtron bắn vào, nhiệt hạch do hạt nhân nhẹ va chạm ở nhiệt độ rất cao."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ hạt thứ i (lần lượt A, B, C, D) có A_i, Z_i; không đổi tên hạt để giữ LaTeX các mục sau."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(khối lượng của hạt khi đứng yên)' ở dòng khối lượng nghỉ không bảo toàn, mục 1."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nhắc 'sau có nhiều hạt thì cộng đủ, kể cả các nơtron' ngay trước công thức, giữ nguyên công thức."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm hộp mới, chỉ thêm một câu chỉ tới lời giải từng bước ở mục V câu b."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng định nghĩa Δm = Σm trước − Σm sau là độ hụt khối của phản ứng, khác độ hụt khối một hạt nhân."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nối hai ý: năng lượng liên kết riêng tăng nên tổng khối lượng nghỉ giảm."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án A đổi thành 'Tổng khối lượng nghỉ sau phản ứng nhỏ hơn trước', vẫn là tl-ok."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 1 nhắc trước hết nơtron bắn vào ở vế trái."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm cột, sửa ô cột Dây chuyền thành 'như k<1 / k≈1 / k>1'."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(tăng tỉ lệ U-235 lên vài phần trăm)' sau 'urani đã làm giàu'."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi 'Điều kiện (với lò trên Trái Đất)'; hộp Mặt trời đã giải thích mật độ bù nhiệt độ."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích plasma là khí đã ion hoá gồm hạt nhân và êlectron tự do."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm hai dòng chú thích: e⁺ là pôzitron điện tích +1, ν là nơtrinô không mang điện."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm N_A vào dữ liệu đề và viết N = (m/M)N_A trong lời giải."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước W = Δm c² = 0,1859 u·c², c² triệt tiêu khi thay 1 u = 931,5 MeV/c²."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay 'Vẫn lò đó' bằng câu nói rõ 200 MeV là trung bình trên mọi cặp mảnh, 173 MeV chỉ cho cặp Ba–Kr."
+      },
+      {
+        "id": "c18",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đổi số kéo theo viết lại cả bốn phương án và phản hồi (1 kJ trùng phương án B), tức thay quiz nguyên câu."
+      },
+      {
+        "id": "c19",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án D thành 6,25·10¹² (quên nhân 200) và phản hồi sai nêu từng lỗi dẫn tới B, C, D."
+      },
+      {
+        "id": "c20",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ: rút thanh ra một chút cho k hơi lớn hơn 1, đạt công suất mới thì đẩy thanh vào lại để k về 1."
+      },
+      {
+        "id": "c21",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án B đổi thành 'Thu năng lượng, phải cấp thêm cho phản ứng'."
+      },
+      {
+        "id": "c22",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi E = mc² là năng lượng nghỉ, phần chênh hai vế chính là W = Δm c² ở mục 2."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'không phải phản ứng hoá học' trong phản hồi, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: cộng đủ nuclôn hai vế, kể cả nơtron bắn vào ở vế trái."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'trước nặng hơn thì toả' và lỗi đọc ngược dấu."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz: nơtron bị hấp thụ chỉ mồi phản ứng, và phản hồi sai nay giải thích cả B."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn 1,002 vẫn lớn hơn 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn B là cách mồi phân hạch, nguyên nhân gốc đã sửa ở c1 và c12."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 6 đã ghi nhiệt hạch toả 17,6 MeV và phản hồi đã nhấn cả hai đều toả."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi đổi MeV ra jun, phản hồi được làm rõ thêm theo c19."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: nhiệt hạch không còn xếp là 'bị hạt khác bắn vào', mà là hạt nhân nhẹ va chạm ở nhiệt độ rất cao.",
+      "Mục 2: thêm Δm = Σm trước − Σm sau là độ hụt khối của phản ứng, và nhắc cộng đủ các nơtron sau phản ứng.",
+      "Câu 2: đáp án đúng B đổi chữ thành 'Thu năng lượng, phải cấp thêm cho phản ứng'.",
+      "Câu 3: đáp án đúng A đổi thành 'Tổng khối lượng nghỉ sau phản ứng nhỏ hơn trước', phản hồi sai giải thích B, C, D.",
+      "Bàn ghim: cột Dây chuyền gán 4 cm ↔ k<1, 3 cm ↔ k≈1, 2 cm ↔ k>1.",
+      "Mục 6: điều kiện 10⁸–10⁹ K ghi là cho lò trên Trái Đất, thêm chú thích e⁺ (pôzitron, +1), ν (nơtrinô) và plasma.",
+      "Bài toán mẫu: thêm N_A = 6,02·10²³ mol⁻¹ vào đề, lời giải ghi N = (m/M)N_A và bước W = Δm c², kết quả không đổi (173,2 MeV, 7,1·10¹⁰ J, 2,6 tấn).",
+      "Ô điền bước: 200 MeV được nói rõ là trung bình mọi cặp mảnh, 173 MeV chỉ cho cặp Ba–Kr.",
+      "Câu 7: phương án D đổi 5,0·10¹² → 6,25·10¹² (= 1 ÷ 1,6·10⁻¹³, quên nhân 200), phản hồi sai nêu nguồn gốc B (1,6·10⁻¹⁶), C (500 MeV), D.",
+      "Thử thách ⭐⭐: tăng công suất bằng cách rút thanh ra cho k hơi lớn hơn 1, rồi đẩy vào lại để k về 1."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-phan-hach-nhiet-hach/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: cân chỉ đổi số mà không ai chạm vào",
+      "trich_nguyen_van": "Dòng 3 A chạy vài giây không đủ làm nóng không khí để đẩy được nam châm",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mở bài chỉ nói cân lên 1,45 g, không nêu dòng bao nhiêu. Em sẽ thắc mắc con số 3 A ở đâu ra.",
+      "de_xuat": "Ghi rõ trong đoạn mở bài: 'Khi đóng công tắc cho dòng 3,0 A chạy qua, số trên cân nhảy lên 1,45 g'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "Thử trên mô phỏng",
+      "trich_nguyen_van": "Số liệu minh hoạ, khớp bảng ở mục II.3",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Các trạng thái mô phỏng đã tính B = F/(Il) nhưng đến dòng cuối mới cho biết l. Em không tự kiểm tra được con số 0,123 T khi đang thử.",
+      "de_xuat": "Đưa '(l = 4,0 cm, g = 9,81 m/s²)' lên ngay dưới nhãn của mô phỏng."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Bố trí và quy trình đo",
+      "trich_nguyen_van": "chiều dài cạnh dưới $l$ đo bằng thước kẹp",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em sẽ đo cả cạnh dưới của khung, kể cả khi cạnh đó dài hơn bề rộng cực nam châm. Em không biết l phải là phần dây nằm trong từ trường.",
+      "de_xuat": "Thêm: 'l là chiều dài phần dây nằm trong khe (trong từ trường), cạnh dưới phải nằm trọn trong khe'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Bố trí và quy trình đo",
+      "trich_nguyen_van": "Ngắt mạch, tăng $I$ lên từng nấc 1,0 A tới 5,0 A, lặp lại.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ngắt mạch rồi mới tăng I khiến em không hiểu chỉnh biến trở tới 2,0 A bằng cách nào khi ampe kế đang chỉ 0. Em cũng không biết có cần kiểm tra cân về 0,00 g trước mỗi lần đo hay không.",
+      "de_xuat": "Tách thành các bước: ngắt mạch, kiểm tra cân về 0,00 g, đóng mạch, chỉnh biến trở tới nấc mới, đọc Δm, ngắt ngay."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Bố trí và quy trình đo",
+      "trich_nguyen_van": "D. gần như không đổi, vì hai lực ngược chiều triệt tiêu trên cân",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "'Không đổi' có thể hiểu là không đổi so với lần đo đúng (vẫn 1,45 g). Như vậy D dễ bị đọc trùng nghĩa với C.",
+      "de_xuat": "Sửa D thành 'gần như vẫn 0,00 g như lúc chưa đóng mạch, vì hai lực ngược chiều triệt tiêu trên cân'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Bố trí và quy trình đo",
+      "trich_nguyen_van": "Lực lên dây truyền xuống giá rồi xuống cân",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em sẽ hiểu lực lên dây hướng xuống. Điều này mâu thuẫn với Câu 5, nơi lực từ lên dây hướng lên khi cân tăng.",
+      "de_xuat": "Viết 'Lực lên dây (hướng lên) truyền qua giá vào bệ cân, kéo bệ cân lên đúng bằng lực nam châm ép xuống'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Số liệu và cách tính $B$",
+      "trich_nguyen_van": "Ở đây độ dốc $\\approx 0{,}489\\ \\text{g/A}$ cho $B \\approx 0{,}120\\ \\text{T}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em tự lấy hai điểm thì ra 0,485 hoặc 0,488, không ra 0,489 nên không biết độ dốc được tính thế nào. Em cũng dễ thế 0,489 (g/A) thẳng vào công thức mà quên đổi sang kg/A.",
+      "de_xuat": "Nêu cách lấy độ dốc (vẽ đường thẳng qua gốc, chọn một điểm xa trên đường thẳng, hoặc xem công thức ở Thách đấu) và viết rõ 0,489 × 10⁻³ × 9,81 / 0,040."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Sai số của phép đo",
+      "trich_nguyen_van": "Sai số tương đối: $\\dfrac{\\Delta B}{B} \\approx \\dfrac{\\Delta(\\Delta m)}{\\Delta m}",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu Δ vừa là 'độ thay đổi' (Δm) vừa là 'sai số tuyệt đối' (ΔB, Δ(Δm)), nên em rối khi đọc Δ(Δm). Bài cũng chưa định nghĩa sai số tuyệt đối và sai số tương đối, trong khi Câu 4 cần đúng sự phân biệt này.",
+      "de_xuat": "Thêm một dòng: 'ΔX là sai số tuyệt đối của X (lấy từ dụng cụ); ΔX/X là sai số tương đối; Δ(Δm) là sai số của số đọc cân Δm'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Sai số của phép đo",
+      "trich_nguyen_van": "cân $\\pm 0{,}01\\ \\text{g}$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 2 ghi 'chia 0,01 g', mục này ghi '±0,01 g'. Em quen lấy sai số bằng nửa độ chia nên không chắc phải dùng 0,01 hay 0,005.",
+      "de_xuat": "Ghi: 'cân số chia 0,01 g, lấy sai số dụng cụ bằng 1 độ chia: ±0,01 g'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 1. Tưởng cân đo lực lên dây",
+      "trich_nguyen_van": "Lực từ vuông góc với cả dây lẫn đường sức nên cũng không thể nằm ngang khi đường sức nằm ngang.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa nói đường sức trong khe nằm ngang. Quy tắc 'lực vuông góc cả dây lẫn đường sức' cũng chỉ xuất hiện ở Hình 4, sau câu này. Vì vậy em không có căn cứ để loại phương án B.",
+      "de_xuat": "Thêm vào chú thích Hình 2: 'Trong khe, đường sức nằm ngang; dây nằm ngang vuông góc đường sức nên lực từ có phương thẳng đứng'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2. Dây không vuông góc đường sức",
+      "trich_nguyen_van": "lực chỉ bằng $\\sin 60^\\circ \\approx 0{,}87$ lần lực thật",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lực cân đo được mới là lực thật đang tác dụng. Chữ 'lực thật' làm em tưởng cân đo sai.",
+      "de_xuat": "Đổi 'lực thật' thành 'lực khi dây vuông góc (BIl)'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: tính $B$ và sai số",
+      "trich_nguyen_van": "\\approx 0{,}098\\ \\text{T}",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mọi chỗ khác đều ra B ≈ 0,12 T, ở đây lại ra 0,098 T. Em sẽ nghĩ mình hoặc đáp án tính sai.",
+      "de_xuat": "Ghi rõ đầu bài điền bước: 'Lần đo khác với một nam châm khác'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "Thử sức: tăng độ nhạy",
+      "trich_nguyen_van": "Mỗi vòng có một cạnh nằm trong khe nên lực gấp $N$ lần",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "N chưa được định nghĩa là số vòng. Trong mô phỏng, N lại là phản lực của cân, nên em dễ nhầm hai ý nghĩa.",
+      "de_xuat": "Viết 'lực gấp N lần, với N = 20 là số vòng dây' hoặc dùng ký hiệu n cho số vòng."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Thử trên mô phỏng",
+      "trich_nguyen_van": "N phản lực của cân (N = P + F′)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Khi chọn chiều ngược (cân âm), em vẫn áp N = P + F′. Như vậy N lớn hơn P, trái với việc cân giảm.",
+      "de_xuat": "Ghi 'N = P + F′ khi F′ hướng xuống, N = P − F′ khi đảo chiều dòng'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ từ trường nam châm làm nhiễu cân điện tử, vì dây không chạm vào cân nên không thể có lực thật.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ nhớ độ lớn F = BIl không đổi mà quên rằng cân báo cả chiều lực. Bài chỉ nêu −1,45 g ở thí nghiệm đặt sau câu hỏi, phần Nguyên lý chưa nói lực đổi chiều theo I.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cộng độ lớn hai lực mà bỏ qua chiều, không nghĩ theo tổng ngoại lực lên cả hệ đặt trên cân. Ngoài ra chữ 'không đổi' ở D mơ hồ nên một số em chọn C.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Quên nhân g, lấy thẳng Δm làm lực; 0,012 và 0,12 trông gần giống nhau nên dễ nhầm bậc.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cân đọc độ thay đổi khối lượng $\\Delta m$: $F = \\Delta m\\, g$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lẫn sai số tuyệt đối với sai số tương đối: dụng cụ như nhau thì nghĩ sai số như nhau. Bài nêu kết luận 'đo ở I lớn' nhưng lý do chỉ có trong phản hồi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cộng sai số tương đối · Đo ở I lớn"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất số đọc của cân với lực lên dây: cân tăng thì nghĩ lực lên dây hướng xuống.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Dùng cos 60° = 0,5 (lấy góc với pháp tuyến) thay cho sin 60°. Bài không cảnh báo nhầm sin/cos hay nhầm góc θ.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

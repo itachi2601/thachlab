@@ -1,0 +1,227 @@
+{
+  "bai": "Bài 6. Định luật Boyle. Định luật Charles",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: chiếc bơm xe và bàn tay nóng lên",
+      "trich_nguyen_van": "Khi thể tích còn một phần tư thì áp suất gấp bốn lần — tích $pV$ không đổi vì nhiệt độ không đổi.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Đoạn trên vừa nói thân bơm nóng dần lên, chú thích lại khẳng định nhiệt độ không đổi. Em không biết khi bơm xe thì có được dùng Boyle hay không. Con số 'gấp bốn' xuất hiện ngay trước câu dự đoán cũng làm em dễ chọn D.",
+      "de_xuat": "Sửa chú thích thành 'Nếu ấn thật chậm để nhiệt độ coi như không đổi thì…' và bỏ ví dụ số 'một phần tư → gấp bốn' khỏi chỗ đứng trước câu dự đoán."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Định luật Boyle — quá trình đẳng nhiệt",
+      "trich_nguyen_van": "Chỉ cần hai trạng thái cùng một đơn vị.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em có thể hiểu thành p và V phải cùng một đơn vị, hoặc bắt buộc phải đổi hết về SI.",
+      "de_xuat": "Viết rõ: '$p_1$, $p_2$ cùng một đơn vị áp suất; $V_1$, $V_2$ cùng một đơn vị thể tích, không cần đổi ra Pa và m³'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "Bẫy 3: đọc nhầm hai đường trên đồ thị",
+      "trich_nguyen_van": "đường xa gốc hơn cho $p$ lớn hơn ở cùng thể tích, mà áp suất lớn hơn thì khí nóng hơn.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Câu 'áp suất lớn hơn thì khí nóng hơn' dựa vào quan hệ đẳng tích, mà bài chưa học. Em chỉ học thuộc 'xa gốc là nóng hơn' chứ không hiểu vì sao. Ở mục 2, câu 'nhiệt độ càng cao, đường càng xa gốc' cũng không có lí do.",
+      "de_xuat": "Thêm một câu ở mục 2: 'giữ nguyên thể tích mà đun nóng khí thì áp suất tăng (đẳng tích), nên ở cùng V, đường có p lớn hơn ứng với T cao hơn'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Định luật Charles — quá trình đẳng áp",
+      "trich_nguyen_van": "vẫn còn nội năng, nên tỉ lệ thuận chỉ đúng khi $T$ có gốc $0$ thật",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không nối được 'còn nội năng' với việc thể tích tỉ lệ thuận. Cụm 'gốc 0 thật' cũng không rõ nghĩa.",
+      "de_xuat": "Viết: 'Ở 0 °C khí vẫn có thể tích khác 0; chỉ khi tính nhiệt độ từ độ không tuyệt đối (0 K) thì V mới tỉ lệ thuận với T'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Định luật Charles — quá trình đẳng áp",
+      "trich_nguyen_van": "$V$ (cm)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Thể tích lại có đơn vị cm và V/T có đơn vị cm/K. Em tưởng bảng ghi sai đơn vị, hoặc tưởng thể tích đo bằng cm.",
+      "de_xuat": "Thêm câu: 'Ống có tiết diện đều nên thể tích tỉ lệ với chiều dài cột khí ℓ; bảng ghi ℓ (cm) thay cho V'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Định luật Charles — quá trình đẳng áp",
+      "trich_nguyen_van": "Còn cột khí chưa nóng đều thì sai lệch cả hai chiều, không chỉ làm số đọc lớn hơn mô hình.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu 'hai chiều' là gì. Em cũng không rõ nguyên nhân này có giải thích được việc V/T nhích lên hay không.",
+      "de_xuat": "Nói thẳng: 'Khí chưa nóng đều thì cột ngắn hơn dự đoán, nên nguyên nhân này không giải thích được việc V/T tăng'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Định luật Charles — quá trình đẳng áp",
+      "trich_nguyen_van": "áp suất càng nhỏ, đường càng cao",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Quy tắc này ngược chiều với đẳng nhiệt ('nhiệt độ cao thì xa gốc'), lại không có lí do. Em dễ suy diễn sai thành 'đường cao hơn là áp suất lớn hơn'.",
+      "de_xuat": "Thêm: 'Kẻ đường thẳng đứng tại cùng T: đường cao hơn có V lớn hơn; theo Boyle, V lớn thì p nhỏ'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "📘 Mở rộng: đơn vị áp suất, cột thuỷ ngân và cột nước",
+      "trich_nguyen_van": "khí ở dưới chịu thêm cột đó nên $p_2 = p_1 + h$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở mọi chỗ khác, $p_1$, $p_2$ là trạng thái 1 và 2. Ở đây chúng lại là khí phía trên và khí phía dưới, nên em sẽ lắp nhầm vào $p_1V_1 = p_2V_2$.",
+      "de_xuat": "Đổi ký hiệu thành $p_{\\text{dưới}} = p_{\\text{trên}} + h$, hoặc ghi rõ '$p_1$: khí ở trên, $p_2$: khí ở dưới' kèm hình vẽ ba trường hợp."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: \"đẳng nhiệt thì thể tích không đổi\"",
+      "trich_nguyen_van": "$p$ tỉ lệ thuận với nhiệt độ tuyệt đối",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Quan hệ đẳng tích xuất hiện như kiến thức đã học, nhưng bài chưa phát biểu, chưa có hệ thức. Em không biết mình có phải dùng nó để làm bài không.",
+      "de_xuat": "Ghi chú '(định luật đẳng tích, học ở bài sau; ở đây chỉ cần nhận ra tên quá trình)'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 2: lấy tỉ số hai nhiệt độ Celsius",
+      "trich_nguyen_van": "vô lí, vì ống chỉ dài thêm vài phần trăm",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ví dụ là 1,0 lít khí (Câu 3), không có ống nào. Bảng ngay trên lại ghi tăng 20%, nên em không biết 'vài phần trăm' lấy từ đâu.",
+      "de_xuat": "Sửa thành 'vô lí, vì nhiệt độ tuyệt đối chỉ tăng 20% nên thể tích cũng chỉ tăng 20%'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2: lấy tỉ số hai nhiệt độ Celsius",
+      "trich_nguyen_van": "B. Giảm còn $0{,}93$ lần",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tính 293/313 ra khoảng 0,94 nên không biết 0,93 từ đâu ra. Phản hồi sai cũng chỉ nói về A, không giải thích B và C.",
+      "de_xuat": "Đổi B thành 'Giảm còn khoảng 0,94 lần' và thêm vào phản hồi: 'B lật ngược tỉ số; C quên rằng đẳng áp thì V vẫn thay đổi'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: nén khí trong xilanh y tế",
+      "trich_nguyen_van": "$T_2 = 360$ K; $p$ không đổi",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu a đã có $V_2 = 25$ ml, nay câu b lại dùng $T_2 = 360$ K và $V_2 = 72$ ml. Em tưởng trạng thái 2 của câu a có nhiệt độ 360 K. Đề cũng ghi rõ 'nhiệt độ không đổi' mà bảng lại gọi là 'dữ kiện ngầm'.",
+      "de_xuat": "Dùng chỉ số riêng cho câu b ($V_3$, $T_3$) hoặc ghi 'câu b:' trước ký hiệu; bỏ chữ 'ngầm' ở dòng câu a."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: nén khí trong xilanh y tế",
+      "trich_nguyen_van": "kể cả nén B xuống $2{,}0$ lít thì $p_{\\text{B}} = \\dfrac{0{,}8 \\times 4{,}0}{2{,}0} = 1{,}6$ atm",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề nói B không bị nén mà lời giải lại tính nén B. Em tưởng bước này là bắt buộc khi so sánh hai xilanh.",
+      "de_xuat": "Bỏ phép tính nén B, hoặc ghi rõ 'bước này không cần, chỉ để thấy dù có nén thì A vẫn lớn hơn'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: nén khí trong xilanh y tế",
+      "trich_nguyen_van": "Một xilanh kín có pittông nhẹ, chứa khí ở thể tích $4{,}0$ lít, áp suất $1{,}5$ atm",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đề không nói áp suất giữ không đổi, chỉ có chữ 'pittông nhẹ'. Đáp án lại dựa vào 'áp suất cuối bằng lúc đầu'. Em không suy ra được đây là đẳng áp, mà pittông nhẹ thì sao áp suất lại 1,5 atm?",
+      "de_xuat": "Viết rõ: 'pittông trượt tự do, áp suất khí luôn giữ 1,5 atm trong suốt quá trình'."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Khá: cùng lượng khí đó ở $360$ K, vẫn áp suất cũ, thể tích bằng bao nhiêu?",
+      "loai": "nhảy_bước",
+      "muc": "chặn",
+      "em_hieu_la": "Bài ⭐ không cho nhiệt độ, vậy mà lời giải dùng $T_1 = 300$ K. 'Áp suất cũ' có thể là $1{,}0 \\cdot 10^5$ Pa (ra 7,2 lít) hoặc $3{,}0 \\cdot 10^5$ Pa (ra 2,4 lít). Em không biết lấy số nào.",
+      "de_xuat": "Thêm '27 °C' vào đề ⭐ và đổi đề ⭐⭐ thành 'giữ áp suất $3{,}0 \\cdot 10^5$ Pa, nung từ 300 K lên 360 K'."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Đó là quá trình đoạn nhiệt — lí do phải đo áp suất lốp khi lốp đã nguội.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Đoạn nhiệt' chưa được định nghĩa. Em cũng không thấy liên quan giữa nén nhanh trong bơm và việc đo lốp khi nguội.",
+      "de_xuat": "Định nghĩa ngắn 'đoạn nhiệt: khí không kịp trao đổi nhiệt với bên ngoài' và tách ý đo lốp sang mục đời sống."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "$p$ · $V$ · $T$ — đổi một thông số là một quá trình.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dòng ngay dưới lại nói 'giữ đúng một thông số'. Em lẫn giữa 'đổi một' và 'giữ một', và tưởng trong đẳng quá trình chỉ một thông số thay đổi.",
+      "de_xuat": "Sửa thành 'Khí đổi trạng thái (ít nhất hai thông số thay đổi) là một quá trình'."
+    },
+    {
+      "id": "c18",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "Ống hở phía trên có cột thuỷ ngân cao thêm $200$ mm thì áp suất trong bình bằng bao nhiêu?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không rõ 'cao thêm' là thêm so với cái gì, và 'bình' với 'ống' có phải là một không.",
+      "de_xuat": "Viết: 'Khí bị nhốt dưới cột thuỷ ngân cao 200 mm trong ống hở phía trên, $p_0 = 760$ mmHg. Tính áp suất khí'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Chú thích Hình 1 ngay trước câu hỏi nhắc 'áp suất gấp bốn lần', nên em nhớ con số 4 mà không để ý đề này là thể tích giảm một nửa.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$V$ giảm bao nhiêu lần thì $p$ tăng bấy nhiêu lần"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ mang máng phải cộng một số khoảng 300 nên cộng 27 + 300, không nhớ chính xác là 273.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công thức chỉ có một phép tính: $T = t + 273$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Tính được $p_1V_1 = 6{,}0$ rồi dừng lại, lấy luôn tích làm áp suất mà quên chia cho $V_2$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cách làm chắc: tính $p_1V_1$ rồi chia cho thể tích mới"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lập tỉ số trực tiếp bằng độ C (87/27) mà không đổi sang kenvin.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tỉ lệ thuận chỉ đúng với nhiệt độ tuyệt đối"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đọc 'pV không đổi' thành 'V không đổi', nhầm chữ trong tên quá trình.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đề cho $pV$ không đổi, không nói $V$ hay $p$ không đổi"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Sau Bẫy 2 em đã biết né A, nhưng lại lập ngược tỉ số thành 293/313, ra 'giảm còn 0,93 lần'. Đây là kiểu nhầm giữa hai phương án gần giống nhau.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy đường xa gốc có áp suất lớn thì nghĩ khí 'bị nén nhiều hơn' nên lạnh hơn. Em không biết so ở cùng thể tích, và bài chưa dạy quan hệ p–T khi V không đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ở cùng thể tích nó cho áp suất lớn hơn, tức đường nằm xa gốc"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ tính giai đoạn nung nóng 300 K → 400 K rồi dừng, bỏ qua giai đoạn nguội trở lại.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A mới là thể tích lúc khí đang ở $400$ K"
+    }
+  ]
+}

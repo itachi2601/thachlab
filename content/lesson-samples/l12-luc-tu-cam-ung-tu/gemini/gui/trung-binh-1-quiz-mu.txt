@@ -1,0 +1,505 @@
+Bạn là học sinh lớp 12 hồ sơ "trung-binh" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). Dưới đây là bài "Lực từ. Cảm ứng từ" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").
+
+=== NỘI DUNG BÀI (HTML) ===
+<div>
+<p>🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu <strong>điểm đặt, phương, chiều</strong> của lực từ; dùng <strong>quy tắc bàn tay trái</strong>.</li>
+<li>Tính <strong>$F = BIl\sin\alpha$</strong>; dây song song đường sức thì $F = 0$.</li>
+<li>Hiểu <strong>cảm ứng từ $\vec{B}$</strong>: phương, chiều, độ lớn, đơn vị <strong>tesla</strong>.</li>
+<li>Nhận ra <strong>ngẫu lực từ</strong> làm khung quay; chiều đường sức của <strong>dây thẳng – vòng dây – ống dây</strong>.</li>
+</ul>
+<p>Cuối bài phải trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: chiếc loa bé xíu vẫn hát được</h3>
+
+<p>Chiếc loa bluetooth hát được nhờ màng giấy rung hàng nghìn lần mỗi giây; ngay sau đó là cuộn dây đặt sát nam châm mạnh.</p>
+
+<p>Dây dẫn mang dòng điện đặt trong từ trường thì bị đẩy. Lực ấy hướng về đâu, mạnh yếu do gì?</p>
+
+<div>
+<p>🤔 Dự đoán trước khi học</p>
+<p>Đoạn dây mang dòng điện đặt <em>song song</em> với đường sức từ. Lực từ lên dây:</p>
+<div>
+<input><label>A. Lớn nhất, vì dây nằm trọn trong từ trường</label>
+<input><label>B. Bằng 0, vì dây cùng phương đường sức</label>
+<input><label>C. Khác 0 nhưng nhỏ nhất</label>
+<input><label>D. Bằng 0 khi dây vuông góc đường sức</label>
+
+
+</div>
+</div>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 1. Dây mang dòng điện trong khe nam châm: B hướng xuống, F vuông góc và hướng vào mặt phẳng hình vẽ (⊗).</figcaption></figure>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Lực từ tác dụng lên đoạn dây mang dòng điện</h4>
+
+<p><strong>🔑 Điểm đặt giữa dây · Vuông góc dây và đường sức · Chiều theo bàn tay trái</strong></p>
+
+<ul>
+<li><strong>Điểm đặt:</strong> trung điểm của đoạn dây.</li>
+<li><strong>Phương:</strong> vuông góc đoạn dây và vuông góc đường sức từ — tức vuông góc mặt phẳng $(\vec{I}; \vec{B})$.</li>
+<li><strong>Chiều:</strong> theo quy tắc bàn tay trái.</li>
+<li><strong>Kí hiệu vẽ hình:</strong> ⊗ là hướng vào mặt phẳng hình vẽ, ⊙ là hướng ra ngoài.</li>
+</ul>
+
+<div>
+<p>📘 Quy tắc bàn tay trái</p>
+<p>Đặt bàn tay trái duỗi thẳng sao cho đường cảm ứng từ <strong>xuyên vào lòng bàn tay</strong>, chiều <strong>cổ tay đến ngón tay</strong> trùng chiều dòng điện; ngón cái choãi $90^\circ$ chỉ chiều lực từ.</p>
+</div>
+
+<p>Kiểm tra trước: dây song song đường sức thì $F = 0$.</p>
+
+<div>
+<p>🔬 Thí nghiệm: dây treo giữa hai cực nam châm</p>
+<ol>
+<li><strong>Làm:</strong> treo dây nhôm mảnh nằm ngang giữa hai cực nam châm chữ U, nối nguồn một chiều 3–6 V.</li>
+<li><strong>Quan sát:</strong> đóng mạch thì dây lệch; đảo chiều dòng thì lệch ngược lại; dây song song đường sức thì đứng yên.</li>
+<li><strong>Rút ra:</strong> lực từ có khi dây không song song đường sức, đổi chiều theo chiều dòng.</li>
+</ol>
+</div>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 2. Bàn tay trái: đường sức (⊗) xuyên vào lòng bàn tay, cổ tay → ngón tay theo chiều I, ngón cái chỉ F.</figcaption></figure>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Dây vuông góc với đường sức từ. Lực từ có phương:</p>
+<div>
+<input><label>A. Trùng phương đoạn dây</label>
+<input><label>B. Trùng phương đường sức từ</label>
+<input><label>C. Vuông góc với cả dây và đường sức</label>
+<input><label>D. Hợp với đoạn dây góc $45^\circ$</label>
+
+
+</div>
+</div>
+
+<h4>2. Độ lớn lực từ — biểu thức của định luật Ampe</h4>
+
+<p><strong>🔑 F = B·I·l·sinα · Song song thì F = 0</strong></p>
+
+<p>$$F = B\,I\,l\,\sin\alpha$$</p>
+
+<ul>
+<li>$B$ — cảm ứng từ (T); $I$ — dòng điện (A); $l$ — chiều dài đoạn dây trong từ trường (m).</li>
+<li>$\alpha$ — góc hợp bởi đoạn dây và $\vec{B}$.</li>
+</ul>
+
+<ul>
+<li><strong>Vuông góc</strong> đường sức: $\alpha = 90^\circ$, lực lớn nhất $F_{\max} = BIl$.</li>
+<li><strong>Song song</strong> đường sức: $\alpha = 0^\circ$ hoặc $180^\circ$, $F = 0$.</li>
+<li>Ví dụ: $B = 0,10$ T, $I = 5$ A, $l = 0,04$ m, vuông góc: $F = 0,02$ N.</li>
+</ul>
+
+<div>
+<p>🔬 Thí nghiệm đo: lực từ theo cường độ dòng điện</p>
+<ol>
+<li><strong>Làm:</strong> đặt dây $l = 5,0$ cm nằm ngang, vuông góc đường sức trong khe nam châm; móc đầu dây vào lực kế, tăng dần $I$ và đọc lực.</li>
+<li><strong>Quan sát:</strong> số đọc ở bảng dưới; lực tăng gần như tuyến tính theo $I$.</li>
+<li><strong>Rút ra:</strong> $F$ tỉ lệ thuận với $I$; $F$ chia cho $I\,l$ được cùng một giá trị — đó là cảm ứng từ của khe.</li>
+</ol>
+</div>
+
+<table>
+<thead>
+<tr><th>$I$ (A)</th><th>$F$ đo (mN)</th><th>$B = F/(Il)$ (T)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,0</td><td>4,6</td><td>0,092</td></tr>
+<tr><td>2,0</td><td>10,4</td><td>0,104</td></tr>
+<tr><td>3,0</td><td>14,2</td><td>0,095</td></tr>
+<tr><td>4,0</td><td>20,6</td><td>0,103</td></tr>
+<tr><td>5,0</td><td>25,5</td><td>0,102</td></tr>
+</tbody>
+</table>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 3. Lực từ tỉ lệ thuận với dòng điện: đường hồi quy qua gốc, độ dốc B·l ≈ 5,1 mN/A → B ≈ 0,10 T.</figcaption></figure>
+
+<details>
+<summary>🤏 Câu hỏi về sai số: vì sao $B$ tính ra mỗi dòng một khác, và lấy giá trị nào?</summary>
+<p>Năm giá trị trong khoảng 0,092–0,104 T; trung bình <strong>0,099 T</strong>, ghi $B = 0,099 \pm 0,005$ T. Hai nguồn lệch chính: lực kế sai số $\pm 0,3$ mN (ở dòng 1,0 A sai số tới hơn 6%) và hai đầu dây bị kẹp nằm ngoài vùng từ trường đều. Độ dốc đồ thị $F$ theo $I$ là $B\,l \approx 5,1$ mN/A → $B \approx 0,10$ T.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Dây dài 10 cm mang dòng 2 A, vuông góc đường sức, $B = 0,05$ T. Lực từ bằng:</p>
+<div>
+<input><label>A. 0,02 N</label>
+<input><label>B. 0,1 N</label>
+<input><label>C. 0,005 N</label>
+<input><label>D. 0,01 N</label>
+
+
+</div>
+</div>
+
+<h4>3. Cảm ứng từ</h4>
+
+<p><strong>🔑 Đặc trưng tác dụng lực · Phương nam châm thử · Đơn vị tesla</strong></p>
+
+<ul>
+<li><strong>Cảm ứng từ</strong> $\vec{B}$ là vectơ đặc trưng cho từ trường về tác dụng lực.</li>
+<li><strong>Phương:</strong> phương nam châm thử nằm cân bằng tại điểm đó.</li>
+<li><strong>Chiều:</strong> từ cực Nam sang cực Bắc của nam châm thử.</li>
+<li><strong>Độ lớn:</strong> $B = F/(I\,l\,\sin\alpha)$; đơn vị tesla (T), với $1\ \text{T} = 1\ \text{N}/(\text{A}\cdot\text{m})$.</li>
+</ul>
+
+<ul>
+<li>Mốc so: Trái Đất $5\cdot10^{-5}$ T · khe nam châm 0,1 T · máy MRI 1,5–3 T; dây 5,0 cm, $I = 4$ A, vuông góc đường sức, lực đo 0,02 N → $B = 0,10$ T.</li>
+</ul>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Phát biểu nào đúng về vectơ cảm ứng từ tại một điểm?</p>
+<div>
+<input><label>A. Phương trùng phương dòng điện tại điểm đó</label>
+<input><label>B. Chiều từ cực Bắc sang cực Nam của nam châm thử</label>
+<input><label>C. Chiều từ cực Nam sang cực Bắc của nam châm thử</label>
+<input><label>D. Độ lớn tăng theo cường độ dòng điện thử</label>
+
+
+</div>
+</div>
+
+<h4>4. Lực từ tác dụng lên khung dây — ngẫu lực từ</h4>
+
+<p><strong>🔑 Hai cạnh ngược chiều · Ngẫu lực làm khung quay · M = N·B·I·S·sinα (cực đại N·B·I·S)</strong></p>
+
+<ul>
+<li>Khung chữ nhật trong từ trường đều: hai cạnh đối diện chịu hai lực từ <strong>cùng độ lớn, ngược chiều, không cùng giá</strong> → thành <strong>ngẫu lực từ</strong>.</li>
+<li>Ngẫu lực làm khung <strong>quay</strong> quanh trục, không đẩy cả khung đi; khung dừng khi mặt khung vuông góc đường sức.</li>
+<li>Mômen ngẫu lực: $M = NBIS\sin\alpha$, cực đại $M_{\max} = NBIS$ khi mặt phẳng khung song song đường sức ($N$ số vòng, $S$ diện tích một vòng; $\alpha$ là góc giữa $\vec{B}$ và pháp tuyến khung).</li>
+<li>Ví dụ: khung $4$ cm $\times$ $5$ cm, $N = 100$ vòng, $I = 0,5$ A, $B = 0,20$ T → cực đại $M = 0,02$ N·m.</li>
+</ul>
+
+<details>
+<summary>🔬 Bấm xem thí nghiệm: khung dây tự quay trong từ trường</summary>
+<p><strong>Làm:</strong> quấn 20 vòng dây quanh khung giấy $3$ cm $\times$ $4$ cm, luồn hai đầu dây qua hai kim khâu làm trục quay, đặt khung giữa hai cực nam châm rồi nối với pin 1,5 V. <strong>Quan sát:</strong> khung giật quay rồi dừng khi mặt khung vuông góc đường sức; đảo hai đầu pin thì khung quay ngược lại; tháo pin thì khung đứng yên. <strong>Rút ra:</strong> hai cạnh đối diện bị hai lực từ ngược chiều kéo, tạo ngẫu lực làm khung quay — nguyên lí của động cơ điện.</p>
+</details>
+
+<p><strong>Câu 4.</strong> Vì sao ngẫu lực từ làm khung quay mà không đẩy cả khung đi?</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<input><label>A. Hợp lực bằng 0 nhưng mômen khác 0</label>
+<input><label>B. Lực từ không tác dụng lên khung dây kín</label>
+<input><label>C. Khung nhẹ nên chỉ quay mà không dịch chuyển</label>
+<input><label>D. Hai lực cùng chiều hợp thành ngẫu lực</label>
+
+
+</div>
+
+<h4>5. Từ trường của dòng điện: một công thức chung cho ba dạng</h4>
+
+<p><strong>🔑 Một công thức chung · Ba dạng khác nhau ở một yếu tố</strong></p>
+
+<p>Cả ba dạng dòng điện đều có chung một khung công thức:</p>
+
+<p>$$B = \mu_0\, I\, g$$</p>
+
+<ul>
+<li>$\mu_0 = 4\pi\cdot10^{-7}\ \text{T·m/A}$: hằng số, <strong>giống nhau</strong> ở cả ba dạng.</li>
+<li>$I$: cường độ dòng điện; $B$ <strong>tỉ lệ thuận</strong> với $I$ ở cả ba dạng.</li>
+<li>$g$ (đơn vị $\text{m}^{-1}$): <strong>yếu tố hình học</strong> — chỉ yếu tố này khác nhau giữa ba dạng.</li>
+</ul>
+
+<div>
+<table>
+<thead>
+<tr><th>Dạng</th><th>Yếu tố hình học $g$</th><th>Công thức $B$</th><th>Muốn $B$ lớn hơn</th></tr>
+</thead>
+<tbody>
+<tr><td>Dây thẳng dài</td><td>$\dfrac{1}{2\pi r}$</td><td>$B = 2\cdot10^{-7}\dfrac{I}{r}$</td><td>lại gần dây (giảm $r$)</td></tr>
+<tr><td>Vòng dây (tại tâm)</td><td>$\dfrac{N}{2R}$</td><td>$B = 2\pi\cdot10^{-7}\dfrac{NI}{R}$</td><td>tăng $N$ hoặc thu nhỏ $R$</td></tr>
+<tr><td>Ống dây (trong lòng)</td><td>$n = \dfrac{N}{l}$</td><td>$B = 4\pi\cdot10^{-7}\, nI$</td><td>quấn dày hơn (tăng $n$)</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>🧭 Quy tắc nắm tay phải: hai cách dùng — bấm xem</summary>
+<ul>
+<li><strong>Dây thẳng:</strong> ngón cái theo chiều $I$, bốn ngón khum theo chiều đường sức.</li>
+<li><strong>Vòng dây, ống dây:</strong> bốn ngón khum theo chiều $I$, ngón cái theo chiều $\vec{B}$ trong lòng.</li>
+</ul>
+</details>
+
+
+<h4>6. Dây thẳng dài</h4>
+
+<p><strong>🔑 Yếu tố hình học $g = \dfrac{1}{2\pi r}$</strong></p>
+
+<ul>
+<li>Đường sức là những <strong>đường tròn đồng tâm</strong>, tâm nằm trên dây, nằm trong mặt phẳng vuông góc với dây.</li>
+<li>$r$ là khoảng cách từ điểm xét tới dây; $B$ tỉ lệ nghịch với $r$: xa gấp đôi thì $B$ giảm một nửa.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 4a. Dây thẳng — đường sức là đường tròn đồng tâm; ngón cái theo <strong>I</strong> (lên), bốn ngón khum cho chiều <strong>B</strong> (ngược chiều kim đồng hồ nhìn từ trên xuống).</figcaption></figure>
+
+<p>$$B = \frac{\mu_0 I}{2\pi r} = 2\cdot10^{-7}\,\frac{I}{r}$$</p>
+
+<h4>7. Vòng dây tròn</h4>
+
+<p><strong>🔑 Yếu tố hình học $g = \dfrac{N}{2R}$</strong></p>
+
+<ul>
+<li>Đường sức xuyên qua mặt vòng dây, vào một mặt và ra mặt kia; tại tâm $\vec{B}$ <strong>vuông góc mặt phẳng vòng dây</strong>.</li>
+<li>$R$ là bán kính vòng, $N$ là số vòng chồng sát nhau: $N$ vòng cho $B$ gấp $N$ lần một vòng.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 4b. Vòng dây — <strong>B</strong> xuyên qua tâm, vuông góc mặt phẳng vòng; dòng ngược chiều kim đồng hồ (nhìn từ trên) cho <strong>B</strong> hướng lên.</figcaption></figure>
+
+<p>$$B = \frac{\mu_0 N I}{2R} = 2\pi\cdot10^{-7}\,\frac{N I}{R}$$</p>
+
+<h4>8. Ống dây dài</h4>
+
+<p><strong>🔑 Yếu tố hình học $g = n$</strong></p>
+
+<ul>
+<li>Trong lòng ống, từ trường là <strong>từ trường đều</strong>: đường sức song song với trục ống, cách đều nhau.</li>
+<li>$n = N/l$ là số vòng trên mỗi mét chiều dài; $B$ không phụ thuộc đường kính ống (ống phải dài hơn nhiều so với đường kính).</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 4c. Ống dây — trong lòng ống <strong>B</strong> đều, song song trục; bốn ngón khum theo <strong>I</strong> thì ngón cái chỉ chiều <strong>B</strong>.</figcaption></figure>
+
+<p>$$B = \mu_0\, n I = 4\pi\cdot10^{-7}\, nI$$</p>
+
+<details>
+<summary>🧮 Ba ví dụ số — bấm xem</summary>
+<ul>
+<li>Ví dụ dây thẳng: $I = 10$ A, cách $r = 5$ cm → $B = 4\cdot10^{-5}$ T, cỡ từ trường Trái Đất.</li>
+<li>Ví dụ vòng dây: $N = 10$, $R = 5$ cm, $I = 2$ A → $B \approx 2,5\cdot10^{-4}$ T.</li>
+<li>Ví dụ ống dây: $n = 500$ vòng/m, $I = 2$ A → $B \approx 1,3\cdot10^{-3}$ T.</li>
+</ul>
+</details>
+
+
+<details>
+<summary>🔬 Bấm xem thí nghiệm: la bàn nói gì về chiều đường sức</summary>
+<p><strong>Làm:</strong> đặt la bàn nhỏ cách dây dẫn thẳng khoảng 5 cm, cho dòng 5–10 A chạy qua vài giây; sau đó quấn dây thành ống dây và đưa la bàn vào trong lòng ống. <strong>Quan sát:</strong> cạnh dây thẳng, kim lệch hẳn khỏi phương Bắc – Nam (cỡ $50^\circ$ khi $I = 10$ A, $r = 5$ cm, nền từ trường Trái Đất khoảng $30\ \mu\text{T}$; càng gần dây hoặc càng tăng dòng thì lệch càng nhiều); đảo chiều dòng thì kim lệch sang phía ngược lại; trong lòng ống dây, kim chỉ dọc theo trục ống. <strong>Rút ra:</strong> chiều đường sức theo quy tắc nắm tay phải; từ trường trong lòng ống dây mạnh và song song trục ống.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Ống dây $n = 1000$ vòng/m, dòng 1 A. Cảm ứng từ trong lòng ống bằng:</p>
+<div>
+<input><label>A. $1,26\cdot10^{-5}$ T</label>
+<input><label>B. $12,6\cdot10^{-3}$ T</label>
+<input><label>C. $0,126\cdot10^{-3}$ T</label>
+<input><label>D. $1,26\cdot10^{-3}$ T</label>
+
+
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: quên kiểm tra dây có song song với đường sức không</h4>
+
+<p>Thấy dây trong từ trường là đặt tay trái ngay — nhưng dây song song đường sức thì $F = 0$.</p>
+
+<table>
+<thead>
+<tr><th>Dây vuông góc đường sức</th><th>Dây song song đường sức</th></tr>
+</thead>
+<tbody>
+<tr><td>$\alpha = 90^\circ$; $\sin\alpha = 1$</td><td>$\alpha = 0^\circ$ hoặc $180^\circ$; $\sin\alpha = 0$</td></tr>
+<tr><td>Lực lớn nhất $F = BIl$</td><td>Không có lực: $F = 0$</td></tr>
+<tr><td>Tìm chiều bằng bàn tay trái</td><td>Không cần tìm chiều</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Tự kiểm: vì sao đề bài hiếm khi cho dây song song với đường sức?</summary>
+<p>Vì khi đó $F = 0$ và cả bài chỉ còn một kết luận, không dùng được quy tắc bàn tay trái. Gặp dữ kiện "song song" trong đề, hãy viết ngay $F = 0$ — đó thường là câu hỏi bẫy chứ không phải câu tính toán.</p>
+</details>
+
+<h4>Bẫy 2: lẫn quy tắc bàn tay trái với quy tắc nắm tay phải</h4>
+
+<p>Hai quy tắc dùng hai bàn tay và trả lời hai câu hỏi khác nhau.</p>
+
+<table>
+<thead>
+<tr><th>Bàn tay trái</th><th>Bàn tay phải</th></tr>
+</thead>
+<tbody>
+<tr><td>Trả lời: chiều lực từ $\vec{F}$</td><td>Trả lời: chiều đường sức $\vec{B}$</td></tr>
+<tr><td>Đường sức xuyên vào lòng bàn tay</td><td>Ngón cái dọc dây chỉ chiều $I$</td></tr>
+<tr><td>Cổ tay → ngón tay theo chiều $I$; ngón cái chỉ $F$</td><td>Bốn ngón khum theo chiều $I$; ngón cái chỉ $\vec{B}$ trong ống dây</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Tự kiểm: dây thẳng có dòng điện chạy từ dưới lên. Ở phía bên phải dây, đường sức từ hướng về đâu?</summary>
+<p>Ngón cái bàn tay phải chỉ lên theo chiều dòng điện, bốn ngón khum lại quanh dây. Phía bên phải dây, đường sức hướng <strong>từ ngoài vào trong mặt phẳng hình vẽ</strong> (⊗); phía bên trái thì hướng ra ngoài (⊙). Đảo chiều dòng điện thì hai phía đổi ngược lại.</p>
+</details>
+
+<h4>Bẫy 3: tưởng cảm ứng từ $B$ phụ thuộc vào dòng điện thử</h4>
+
+<p>$B$ là thứ có sẵn ở chỗ đặt dây; $I$ và $l$ chỉ là "cây thước" để đo nó.</p>
+
+<table>
+<thead>
+<tr><th>Lực từ $F$</th><th>Cảm ứng từ $B$</th></tr>
+</thead>
+<tbody>
+<tr><td>Phụ thuộc $B, I, l, \alpha$</td><td>Chỉ phụ thuộc từ trường tại điểm đó</td></tr>
+<tr><td>Tăng dòng thử thì $F$ tăng theo</td><td>Tăng dòng thử thì $B$ không đổi</td></tr>
+<tr><td>Đo bằng lực kế (N)</td><td>Suy ra từ $F/(Il\sin\alpha)$ (T)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Câu 6.</strong> Dây dài 5 cm mang dòng 2 A, vuông góc đường sức, lực từ đo được 0,01 N. Tăng dòng lên 4 A thì $B$:</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<input><label>A. Tăng gấp đôi, thành 0,2 T</label>
+<input><label>B. Không đổi, vẫn bằng 0,1 T</label>
+<input><label>C. Giảm một nửa, còn 0,05 T</label>
+<input><label>D. Không xác định được vì thiếu chiều dài</label>
+
+
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div>
+<p>🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+
+<details>
+<summary>1. Lực từ tác dụng lên đoạn dây có điểm đặt, phương, chiều thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Giữa dây · Vuông góc dây và đường sức · Bàn tay trái.</strong> Điểm đặt tại trung điểm đoạn dây; phương vuông góc với đoạn dây và vuông góc với đường sức từ; chiều xác định bằng quy tắc bàn tay trái.</p>
+</details>
+
+<details>
+<summary>2. Phát biểu quy tắc bàn tay trái.</summary>
+<p>Đặt bàn tay trái duỗi thẳng để các đường cảm ứng từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay trùng chiều dòng điện; ngón tay cái choãi ra $90^\circ$ chỉ chiều lực từ. Nhớ kiểm tra dây có song song đường sức không, vì khi đó $F = 0$.</p>
+</details>
+
+<details>
+<summary>3. Viết công thức tính độ lớn lực từ, nêu kí hiệu và đơn vị.</summary>
+<p>$F = BIl\sin\alpha$: $B$ là cảm ứng từ (T), $I$ là cường độ dòng điện (A), $l$ là chiều dài đoạn dây trong từ trường (m), $\alpha$ là góc hợp bởi đoạn dây và $\vec{B}$. Vuông góc thì $F = BIl$; song song thì $F = 0$.</p>
+</details>
+
+<details>
+<summary>4. Cảm ứng từ là gì? Nêu phương, chiều, độ lớn, đơn vị.</summary>
+<p><strong>Đặc trưng tác dụng lực · Nam châm thử · Tesla.</strong> $\vec{B}$ đặc trưng cho từ trường về mặt tác dụng lực; phương là phương của nam châm thử nằm cân bằng; chiều từ cực Nam sang cực Bắc của nam châm thử; độ lớn $B = F/(Il\sin\alpha)$; đơn vị tesla (T), $1\ \text{T} = 1\ \text{N}/(\text{A}\cdot\text{m})$.</p>
+</details>
+
+<details>
+<summary>5. Vì sao khung dây quay trong từ trường đều? Viết công thức mômen ngẫu lực từ.</summary>
+<p><strong>Ngẫu lực từ.</strong> Hai cạnh đối diện chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá nên hợp lực bằng 0 mà mômen khác 0: $M = N\,B\,I\,S\,\sin\alpha$, cực đại $M_{\max} = N\,B\,I\,S$ khi mặt phẳng khung song song đường sức. Khung quay tới khi mặt phẳng khung vuông góc đường sức thì dừng.</p>
+</details>
+
+<details>
+<summary>6. Nêu chiều đường sức của dòng điện thẳng, vòng dây, ống dây và công thức $B$ trong ống dây.</summary>
+<p><strong>Quy tắc nắm tay phải.</strong> Dây thẳng: đường sức là đường tròn đồng tâm trong mặt phẳng vuông góc với dây. Vòng dây: đường sức vào một mặt, ra mặt kia. Ống dây: từ trường trong lòng ống đều, song song trục ống, $B = 4\pi\cdot10^{-7} n I$ với $n = N/l$ (vòng/m).</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đoạn dây trong từ trường của nam châm</h3>
+
+<div>
+<p>📝 Đề bài</p>
+<p>Dây dài $l = 20$ cm mang dòng $I = 2,5$ A trong từ trường đều $B = 0,08$ T; dây hợp đường sức góc $30^\circ$.</p>
+<p>a) Tính lực từ tác dụng lên đoạn dây.</p>
+<p>b) Xoay dây vuông góc đường sức thì lực từ bằng bao nhiêu?</p>
+<p>c) Thay bằng khung $4$ cm $\times$ $5$ cm, $N = 50$ vòng, cùng dòng. Tính mômen ngẫu lực cực đại.</p>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"dài $20$ cm"</td><td>$l = 0,20$ m</td><td>đổi ra mét</td></tr>
+<tr><td>"góc $30^\circ$ với đường sức"</td><td>$\alpha = 30^\circ$</td><td>dùng $\sin\alpha$, không dùng $\cos\alpha$</td></tr>
+<tr><td>"xoay cho vuông góc"</td><td>$\alpha = 90^\circ$</td><td>lực cực đại</td></tr>
+<tr><td>"khung $4$×$5$ cm, 50 vòng"</td><td>$S = 0,002\ \text{m}^2$</td><td>$M_{\max} = NBIS$</td></tr>
+<tr><td>"từ trường đều" (ngầm)</td><td>$\vec{B}$ như nhau ở mọi điểm</td><td>chỉ cần một giá trị $B$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol>
+<li>Câu a: $F = BIl\sin\alpha = 0,08 \times 2,5 \times 0,20 \times \sin 30^\circ = 0,02$ N $= 20$ mN.</li>
+<li>Câu b: vuông góc thì $\sin\alpha = 1$, nên $F = BIl = 0,04$ N $= 40$ mN — gấp đôi câu a.</li>
+<li>Câu c: $S = 0,04 \times 0,05 = 2\cdot10^{-3}\ \text{m}^2$; $M_{\max} = NBIS = 50 \times 0,08 \times 2,5 \times 2\cdot10^{-3} = 0,02$ N·m.</li>
+<li>Phương chiều: lực từ vuông góc dây và vuông góc đường sức từ; chiều chỉ bằng bàn tay trái (đường sức vào lòng bàn tay, cổ tay → ngón tay theo chiều $I$, ngón cái choãi $90^\circ$). Đảo chiều dòng thì lực từ đổi chiều.</li>
+<li>Kiểm tra kết quả: từ câu a suy ngược $B = \dfrac{F}{Il\sin\alpha} = \dfrac{0,02}{2,5 \times 0,20 \times 0,5} = 0,08$ T — khớp đề bài. Câu b gấp đôi câu a đúng bằng tỉ số $\sin 90^\circ / \sin 30^\circ$.</li>
+</ol>
+</details>
+
+<div>
+<p>✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Dây dài $l = 25$ cm mang dòng $I = 4$ A đặt vuông góc đường sức từ, lực kế đo được $F = 0,05$ N. Tìm $B$. Dây vuông góc nên $\sin\alpha = 1$ và $F = BIl$.</p>
+<ol>
+<li>Bước 1: dây vuông góc nên $B = \dfrac{F}{I\,l}$.</li>
+<li><strong>Em điền:</strong> thay số (đổi $25$ cm $= 0,25$ m) rồi tính $B$.</li>
+<li><strong>Em điền:</strong> $B$ bằng bao nhiêu tesla, có hợp lí không?</li>
+</ol>
+<details>
+<summary>Bấm xem bước 2–3</summary>
+<p>$B = \dfrac{F}{Il} = \dfrac{0,05}{4 \times 0,25} = 0,05$ T. Giá trị này hợp lí: khe nam châm chữ U trong phòng thí nghiệm thường có cảm ứng từ cỡ 0,05–0,2 T. Nếu em ra $5\cdot10^{-4}$ T ($0,0005$ T) thì đã quên đổi $25$ cm thành mét; còn ra 5 T là đã nhầm $25$ cm thành $2,5$ mm.</p>
+</details>
+</div>
+
+<div>
+<p>✍️ Thử sức: đổi số và đổi góc</p>
+<p><strong>Câu 7.</strong> Dây dài 10 cm mang dòng 3 A, $B = 0,05$ T, dây hợp đường sức góc $30^\circ$. Lực từ bằng:</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<input><label>A. 7,5 mN</label>
+<input><label>B. 15 mN</label>
+<input><label>C. 13 mN</label>
+<input><label>D. 0,75 mN</label>
+
+
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Loa, tai nghe:</strong> dòng biến thiên làm lực từ đổi chiều, kéo màng loa rung.</li>
+<li><strong>Động cơ điện:</strong> rôto là khung dây quay nhờ ngẫu lực từ — quạt, máy sấy tóc, xe đạp điện.</li>
+<li><strong>Cân dòng điện:</strong> đo lực từ lên dây đã biết $I$, $l$ để suy ra $B$.</li>
+<li><strong>Máy MRI:</strong> nam châm siêu dẫn tạo từ trường 1,5–3 T, mạnh hơn từ trường Trái Đất hàng chục nghìn lần.</li>
+</ul>
+
+<div>
+<p>🎯 Thử thách phân tầng</p>
+
+<details>
+<summary>⭐ Cơ bản: dây 10 cm mang dòng 2 A vuông góc đường sức, $B = 0,5$ T. Tính lực từ.</summary>
+<p>$F = BIl\sin 90^\circ = 0,5 \times 2 \times 0,10 = 0,1$ N.</p>
+</details>
+
+<details>
+<summary>⭐⭐ Khá: cũng dây đó, dây hợp đường sức $30^\circ$, lực từ đo được 0,1 N. $B$ bằng bao nhiêu?</summary>
+<p>$B = \dfrac{F}{Il\sin\alpha} = \dfrac{0,1}{2 \times 0,10 \times 0,5} = 1$ T. Cùng một lực đo được nhưng từ trường mạnh gấp đôi, vì dây đặt xiên $30^\circ$ nên chỉ "hứng" được một nửa lực.</p>
+</details>
+
+<details>
+<summary>⭐⭐⭐ Thách đấu: khung 20 vòng, $S = 25$ cm², dòng 2 A, $B = 0,4$ T. Vì sao khung quay mà tâm khung không bị đẩy đi?</summary>
+<p>Mômen cực đại $M = NBIS = 20 \times 0,4 \times 2 \times 25\cdot10^{-4} = 0,04$ N·m. Hai cạnh đối diện chịu hai lực cùng độ lớn, ngược chiều, không cùng giá: hợp lực bằng 0 nên tâm khung không dịch chuyển, nhưng mômen khác 0 nên khung quay. Động cơ thực tế còn có bộ đổi chiều dòng để khung quay liên tục.</p>
+</details>
+</div>
+
+<div>
+<p>✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Lực từ:</strong> giữa dây · vuông góc dây và đường sức · bàn tay trái.</li>
+<li><strong>Bàn tay trái:</strong> đường sức vào lòng bàn tay · cổ tay → ngón tay theo $I$ · ngón cái chỉ $\vec{F}$.</li>
+<li><strong>Độ lớn:</strong> $F = BIl\sin\alpha$ · vuông góc $F = BIl$ · song song $F = 0$.</li>
+<li><strong>Cảm ứng từ:</strong> đặc trưng tác dụng lực · chiều Nam sang Bắc · tesla.</li>
+<li><strong>Ngẫu lực từ:</strong> $M = NBIS\sin\alpha$, cực đại $NBIS$ khi mặt phẳng khung song song đường sức · dừng khi mặt phẳng khung vuông góc đường sức.</li>
+<li><strong>Đường sức:</strong> dây thẳng là đường tròn đồng tâm · lòng ống dây đều $B = 4\pi\cdot10^{-7} n I$.</li>
+<li><strong>Đọc đề:</strong> gặp "song song", "vuông góc" thì viết $\sin\alpha$ trước; gặp cm thì đổi ra m.</li>
+</ul>
+</div>

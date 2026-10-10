@@ -1,0 +1,137 @@
+{
+  "bai": "l12-dong-dien-xoay-chieu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước trung gian e = NBSω sin(ωt+φ) rồi đổi sin x = cos(x − π/2) ngay trong gạch đầu dòng Faraday ở II.1."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu mở II.1 nay ghi khung quay n vòng/s, tức ω = 2πn."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Rút ra của thí nghiệm 1 nay nêu mỗi vòng quay cho một chu kì nên f = n, trước Câu 1."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ ở II.1 rằng pha ban đầu của e là φ − π/2 (gộp vào câu sửa của c1)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại hộp 2f−1 trong details: t=0 không tính, điểm đầu mỗi giây tính cho giây bắt đầu tại đó, nên chỉ giây đầu thiếu 1 lần."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa phản hồi sai Câu 3 thành \"Chọn B là nhìn vào đỉnh\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: chú thích hình không có trong HTML bài."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa phản hồi Câu 4: 28 W là lấy I0²R = 40 chia √2 thay vì chia 2, giữ nguyên phương án D."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô Trung bình nay ghi bằng 0 trong một chu kì (hoặc số nguyên chu kì), tách dòng \"không dùng\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngay trong ô bảng Bẫy 2: (n ∥ B, α = 0) và (n ⊥ B, α = 90°), không thêm cột."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ hệ thức trong phản hồi nhưng thêm lý do: Φ/Φ0 là cos, e/E0 là sin của cùng góc; bỏ câu hỏi thừa để bù chữ."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 6 nay giải thích pha bắt đầu từ π/4 và tăng, nên lần đầu cos = 0 là pha π/2."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi khoảng thời gian thành Δt = 60 s và Q = I²RΔt ở bảng dữ liệu và lời giải, số không đổi."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải bài Khá thêm dòng đổi S = 0,02 m² và ω = 2πn, mỗi bước một dòng."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, thêm cảnh báo sẽ lộ đáp án; phản hồi và II.3 đã xử lý lỗi này."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: tần số máy phát do tốc độ quay quyết định, không cố định 50 Hz."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ω = 100π ứng với f = 50 Hz ở II.2."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn định nghĩa hiệu dụng; lỗi chữ trong phản hồi đã sửa ở c6."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn dùng hiệu dụng khi tính công suất."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn lúc Φ đạt đỉnh thì e = 0."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: đây là biểu thức đề gốc, pha ban đầu +π/4."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1: thêm ω = 2πn (n vòng/s) vào câu mở.",
+      "II.1: thêm bước e = −Φ' = NBSω sin(ωt+φ), đổi sang cos chậm pha π/2, nêu pha ban đầu của e là φ − π/2.",
+      "II.1 thí nghiệm 1, dòng Rút ra: thêm f = n (mỗi vòng một chu kì).",
+      "II.1: thêm dòng ⚠ trước Câu 1 về tần số máy phát.",
+      "II.1: phản hồi sai Câu 1 viết lại theo f = n, tách dòng.",
+      "II.1: bỏ câu ví dụ đèn dynamo (thí nghiệm đã minh hoạ cùng ý).",
+      "II.3: bỏ dòng mẹo \"chia/nhân căn hai\" vì đã có trong khung Mang về.",
+      "II.2 details 2f−1: viết lại cách đếm điểm i = 0 theo từng giây, kết luận không đổi.",
+      "Câu 3, phản hồi sai: \"Chọn A\" sửa thành \"Chọn B\" là nhìn vào đỉnh.",
+      "Câu 4, phản hồi sai: 28 W giải thích là I0²R/√2 = 40/√2 ≈ 28 W.",
+      "Bảng Bẫy 1: trung bình bằng 0 chỉ trong một chu kì (hoặc số nguyên chu kì).",
+      "Bảng Bẫy 2: thêm n ∥ B (α = 0) và n ⊥ B (α = 90°).",
+      "Câu 5, phản hồi đúng: thêm lý do của hệ thức độc lập (cos và sin cùng góc ωt+φ).",
+      "Bài toán mẫu: t = 60 s đổi thành Δt = 60 s, Q = I²RΔt = 6000 J (giữ nguyên kết quả).",
+      "Câu 6: thêm dòng ⚠ và lý do chọn pha π/2, kết quả t = 1/400 s giữ nguyên.",
+      "Bài Khá: thêm S = 200 cm² = 0,02 m² và ω = 2πn = 100π, kết quả E0 ≈ 62,8 V và E ≈ 44,4 V giữ nguyên."
+    ],
+    "so_tu_them": 35,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l12-dong-dien-xoay-chieu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "bai": "l12-an-toan-phong-xa",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khẩu quyết sai vật lí (X-quang/CT chiếu từ ngoài, Xofigo đưa vào) nên đổi 🔑 mục 5 và dòng Mang về thành \"Liều thấp để xem · Liều cao để diệt\", ví dụ cụ thể đưa vào dòng ⚠ trước Câu 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa dòng cuối bảng Bẫy 1: Gy dùng để kê liều xạ trị, còn giới hạn an toàn và máy đo môi trường (µSv/h) dùng Sv."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển quiz (đổi cấu trúc), chỉ thêm một gạch đầu dòng ở mục 1: cùng chỗ đứng, chiếu lâu gấp đôi thì liều nhận cũng gấp đôi."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm kí hiệu $\\dot H$ (đọc \"H chấm\") vào định nghĩa suất liều ở mục 2."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu ở Bẫy 2: dùng tỉ số khoảng cách, đo ở 2 m lùi tới 4 m thì chia 4 chứ không chia 16."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ $H \\sim 1/r^2$, viết rõ \"suất liều tỉ lệ nghịch với $r^2$\" ở mục 3 và ở Mang về."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phép tính trong details: 0,115 mSv/tuần × 50 ≈ 5,8 mSv/năm, dưới 20 mSv/năm."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"một năm chụp 2 000 giờ\" thành tổng 2 000 giờ đứng ở 3 m, câu d kết luận rõ là chưa vượt nhưng không còn dư an toàn."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phông từ 40 thành 30 xung/phút để không trùng số đếm ở 3 m."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ hai thuật ngữ vì có trong SGK, chỉ ghi rõ chủ ngữ \"Tia phóng xạ không nhìn thấy được\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trả bài 6 sửa thành cách li từ hàng trăm năm (Cs-137) tới hàng trăm nghìn năm (Pu-239)."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Tác hại ở Mang về ghi đủ bốn yếu tố."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn quy luật bình phương ở phản hồi và Bẫy 2, đây lại là câu dự đoán trước khi học."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã xử lí bằng gạch đầu dòng mới ở mục 1 (theo c3), nên không thêm dòng ⚠ lặp ý."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn Gy khác Sv và hệ số $w_R$."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu ngay trước quiz rằng xa gấp đôi thì còn 1/4."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4: X-quang, CT là chẩn đoán chiếu từ ngoài, còn Xofigo là điều trị đưa vào trong."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 5: trong bể nước chất thải nằm kín trong vỏ, nước chỉ chắn tia và làm mát."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 3 rằng nguồn trong cơ thể mới nguy hiểm nhất."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 7: chia theo tỉ số khoảng cách mới/cũ, không theo số mét."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 5 (🔑) và Mang về: khẩu quyết y tế đổi thành \"Liều thấp để xem · Liều cao để diệt\".",
+      "Bảng Bẫy 1, dòng cuối: bỏ \"máy đo hiện thẳng\" ở cột Gy, ghi Gy dùng kê liều xạ trị, còn giới hạn an toàn và máy đo môi trường (µSv/h) dùng Sv.",
+      "Mục 3 và Mang về: quy luật $1/r^2$ gắn với suất liều, bỏ kí hiệu $H \\sim 1/r^2$.",
+      "Mục 2: thêm kí hiệu $\\dot H$ cho suất liều.",
+      "Thí nghiệm đo theo khoảng cách: phông đổi 40 → 30 xung/phút, không có kết quả nào phụ thuộc nên bảng giữ nguyên.",
+      "Thí nghiệm liều kế (details): thêm phép tính 0,46/4 ≈ 0,115 mSv/tuần, × 50 ≈ 5,8 mSv/năm, dưới 20 mSv/năm.",
+      "Bài toán mẫu: 2 000 giờ là tổng thời gian đứng ở 3 m trong năm (sửa cả đề và bảng dữ liệu), câu d kết luận 20 mSv bằng giới hạn, chưa vượt nhưng không còn dư.",
+      "Trả bài 6: thời gian cách li ghi là hàng trăm năm (Cs-137) tới hàng trăm nghìn năm (Pu-239).",
+      "Mục 1: thêm câu liều tỉ lệ thuận thời gian chiếu.",
+      "Bẫy 2: thêm ví dụ 2 m → 4 m chia 4, không chia 16.",
+      "Mang về: dòng Tác hại ghi đủ bốn yếu tố.",
+      "Thêm 3 dòng ⚠ trước Câu 4, Câu 5, Câu 7.",
+      "Cắt các câu thừa trong phản hồi quiz 0, 1, 2, 3, 4, 7 và một cụm trong bước Quan sát của thí nghiệm để bù độ dài."
+    ],
+    "so_tu_them": 15,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-an-toan-phong-xa/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

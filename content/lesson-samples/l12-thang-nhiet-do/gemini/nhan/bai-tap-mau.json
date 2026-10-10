@@ -1,0 +1,497 @@
+{
+  "lesson_title": "Bài 2. Thang nhiệt độ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Xác định chiều truyền nhiệt năng và trạng thái cân bằng nhiệt",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: so sánh hai nhiệt độ cho sẵn cùng một thang (°C) để suy ra chiều truyền nhiệt năng và lúc đạt cân bằng nhiệt.",
+      "yccd_de_xuat": "Nhiệt độ và cân bằng nhiệt",
+      "de_bai": "Một chiếc thìa inox vừa khuấy cốc trà nóng, có nhiệt độ $70\\ ^\\circ\\text{C}$, được nhúng ngay vào một cốc nước nguội ở $25\\ ^\\circ\\text{C}$. Bỏ qua trao đổi nhiệt với không khí và với thành cốc.\na) Vật nào nóng hơn, nóng hơn bao nhiêu độ?\nb) Nhiệt năng truyền theo chiều nào?\nc) Khi nào nhiệt năng ngừng truyền? Khi đó hai vật ở trạng thái gì?",
+      "dieu_kien_ap_dung": "Thìa và nước tiếp xúc trực tiếp; bỏ qua trao đổi nhiệt với không khí và thành cốc, nên chỉ xét hai vật này.",
+      "phan_tich": [
+        {
+          "trich_de": "có nhiệt độ $70\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_1 = 70\\ ^\\circ\\text{C}$ (thìa)",
+          "kien_thuc": "Nhiệt độ cho biết mức nóng của vật"
+        },
+        {
+          "trich_de": "cốc nước nguội ở $25\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_2 = 25\\ ^\\circ\\text{C}$ (nước)",
+          "kien_thuc": "Hai nhiệt độ cùng thang Celsius nên so sánh trực tiếp được"
+        },
+        {
+          "trich_de": "Nhiệt năng truyền theo chiều nào?",
+          "du_lieu": "chiều truyền",
+          "kien_thuc": "Nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn"
+        },
+        {
+          "trich_de": "Khi nào nhiệt năng ngừng truyền?",
+          "du_lieu": "điều kiện dừng",
+          "kien_thuc": "Hai nhiệt độ bằng nhau thì đạt trạng thái cân bằng nhiệt"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta t",
+        "cong_thuc": "\\Delta t = t_1 - t_2"
+      },
+      "kien_thuc_goi_lai": [
+        "Nhiệt độ cho biết trạng thái cân bằng nhiệt và chiều truyền nhiệt năng.",
+        "Hai vật tiếp xúc, chênh nhiệt độ: nhiệt năng đi từ vật nóng hơn sang vật lạnh hơn.",
+        "Hai nhiệt độ bằng nhau thì ngừng truyền: trạng thái cân bằng nhiệt.",
+        "Chiều truyền do nhiệt độ quyết định, không do khối lượng hay chất liệu."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. So sánh hai nhiệt độ",
+          "cong_thuc_chu": "$\\Delta t = t_1 - t_2$",
+          "the_so": "$\\Delta t = 70 - 25$",
+          "ket_qua": "$\\Delta t = 45\\ ^\\circ\\text{C} \\gt 0$",
+          "kiem_tra": "Hai số cùng thang °C, hiệu dương nên thìa nóng hơn nước."
+        },
+        {
+          "tieu_de": "Bước 2. Chiều truyền nhiệt năng",
+          "cong_thuc_chu": "$t_1 \\gt t_2 \\Rightarrow$ thìa → nước",
+          "the_so": "$70\\ ^\\circ\\text{C} \\gt 25\\ ^\\circ\\text{C}$",
+          "ket_qua": "Nhiệt năng truyền từ thìa sang nước.",
+          "kiem_tra": "Hợp lí: thìa nguội đi, nước ấm lên."
+        },
+        {
+          "tieu_de": "Bước 3. Điều kiện ngừng truyền",
+          "cong_thuc_chu": "$t_{\\text{thìa}} = t_{\\text{nước}}$",
+          "the_so": "Nhiệt độ chung nằm giữa $25\\ ^\\circ\\text{C}$ và $70\\ ^\\circ\\text{C}$",
+          "ket_qua": "Hai vật ở trạng thái cân bằng nhiệt.",
+          "kiem_tra": "Giống thí nghiệm trộn nước 60 °C và 20 °C: nhiệt độ chung nằm giữa hai giá trị đầu."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 45,
+          "don_vi": "°C (thìa nóng hơn nước)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ chênh nhiệt độ ban đầu",
+          "bieu_thuc": "70 - 25",
+          "ky_vong": 45,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho hai vật tiếp xúc, nhiệt độ cùng một thang, hỏi chiều truyền → so sánh trực tiếp hai nhiệt độ, vật nóng hơn truyền sang vật lạnh hơn.",
+      "bay_thuong_gap": [
+        "Cho rằng nước nhiều hơn nên nước truyền nhiệt sang thìa.",
+        "Nghĩ thìa kim loại và nước khác chất nên không truyền nhiệt.",
+        "Nói 'hơi lạnh truyền từ nước sang thìa' thay vì nhiệt năng truyền từ thìa sang nước.",
+        "Cho rằng nhiệt độ cân bằng bằng $0$ hoặc bằng nhiệt độ một trong hai vật lúc đầu."
+      ],
+      "dieu_ban_khong_chac": [
+        "Không yêu cầu tính nhiệt độ cân bằng vì bài lí thuyết chưa có công thức nhiệt lượng."
+      ],
+      "mo_phong_goi_y": "Cốc nước có nhiệt kế, chiếc thìa đỏ dần chuyển sang cam khi nhúng vào; mũi tên nhiệt năng đi từ thìa ra nước, mờ dần rồi biến mất khi hai nhiệt kế chỉ cùng một giá trị. Nhãn: 'thìa 70 °C', 'nước 25 °C', 'nhiệt năng', 'cân bằng nhiệt'."
+    },
+    {
+      "label": "Dạng 2 · So sánh nhiệt độ cho ở hai thang khác nhau",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách xét chiều truyền nhiệt của Dạng 1; thêm MỘT độ khó: hai nhiệt độ cho ở hai thang khác gốc (K và °C), phải đổi về cùng thang trước khi so sánh.",
+      "yccd_de_xuat": "Thang Celsius và thang Kelvin",
+      "de_bai": "Cảm biến của tủ lạnh ghi nhiệt độ một lon nước ngọt vừa lấy ra là $279\\ \\text{K}$. Em cầm lon bằng lòng bàn tay có nhiệt độ $34\\ ^\\circ\\text{C}$. Bạn An nói: «Vì 279 lớn hơn 34 nên nhiệt năng truyền từ lon sang tay».\na) Đổi nhiệt độ của lon sang thang Celsius.\nb) Nhiệt năng thực sự truyền theo chiều nào?\nc) Chỉ ra chỗ sai trong lập luận của An.",
+      "dieu_kien_ap_dung": "Chỉ so sánh được hai nhiệt độ khi chúng cùng một thang; dùng $T = t + 273{,}15$.",
+      "phan_tich": [
+        {
+          "trich_de": "lon nước ngọt vừa lấy ra là $279\\ \\text{K}$",
+          "du_lieu": "$T_{\\text{lon}} = 279\\ \\text{K}$",
+          "kien_thuc": "Thang Kelvin, gốc 0 K là độ không tuyệt đối"
+        },
+        {
+          "trich_de": "lòng bàn tay có nhiệt độ $34\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_{\\text{tay}} = 34\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Thang Celsius, gốc 0 °C là nước đá đang tan"
+        },
+        {
+          "trich_de": "Vì 279 lớn hơn 34",
+          "du_lieu": "so sánh hai số khác thang",
+          "kien_thuc": "Hai thang lệch gốc 273,15 độ"
+        },
+        {
+          "trich_de": "Nhiệt năng thực sự truyền theo chiều nào?",
+          "du_lieu": "chiều truyền",
+          "kien_thuc": "Nóng hơn truyền sang lạnh hơn"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "t_{\\text{lon}}",
+        "cong_thuc": "t_{\\text{lon}} = T_{\\text{lon}} - 273{,}15"
+      },
+      "kien_thuc_goi_lai": [
+        "$T(\\text{K}) = t(^\\circ\\text{C}) + 273{,}15$; $t(^\\circ\\text{C}) = T(\\text{K}) - 273{,}15$.",
+        "$0\\ \\text{K} = -273{,}15\\ ^\\circ\\text{C}$; nước đá đang tan $0\\ ^\\circ\\text{C} = 273{,}15\\ \\text{K}$.",
+        "Nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi nhiệt độ lon sang °C",
+          "cong_thuc_chu": "$t_{\\text{lon}} = T_{\\text{lon}} - 273{,}15$",
+          "the_so": "$t_{\\text{lon}} = 279 - 273{,}15$",
+          "ket_qua": "$t_{\\text{lon}} = 5{,}85\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Vài độ trên 0 °C, hợp lí với đồ uống trong tủ lạnh."
+        },
+        {
+          "tieu_de": "Bước 2. So sánh trên cùng thang °C",
+          "cong_thuc_chu": "$\\Delta t = t_{\\text{tay}} - t_{\\text{lon}}$",
+          "the_so": "$\\Delta t = 34 - 5{,}85$",
+          "ket_qua": "$\\Delta t = 28{,}15\\ ^\\circ\\text{C} \\gt 0$",
+          "kiem_tra": "Tay nóng hơn lon."
+        },
+        {
+          "tieu_de": "Bước 3. Kết luận chiều truyền",
+          "cong_thuc_chu": "$t_{\\text{tay}} \\gt t_{\\text{lon}} \\Rightarrow$ tay → lon",
+          "the_so": "$34\\ ^\\circ\\text{C} \\gt 5{,}85\\ ^\\circ\\text{C}$",
+          "ket_qua": "Nhiệt năng truyền từ tay sang lon.",
+          "kiem_tra": "Khớp cảm giác thực tế: cầm lon thấy lạnh tay."
+        },
+        {
+          "tieu_de": "Bước 4. Kiểm tra trên thang Kelvin",
+          "cong_thuc_chu": "$T_{\\text{tay}} = t_{\\text{tay}} + 273{,}15$",
+          "the_so": "$T_{\\text{tay}} = 34 + 273{,}15$",
+          "ket_qua": "$T_{\\text{tay}} = 307{,}15\\ \\text{K} \\gt 279\\ \\text{K}$",
+          "kiem_tra": "Cùng kết luận với Bước 3. An sai vì so hai số thuộc hai thang khác gốc."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 5.85,
+          "don_vi": "°C"
+        },
+        {
+          "y": "b",
+          "gia_tri": 28.15,
+          "don_vi": "°C (tay nóng hơn lon)"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "nhiệt độ lon theo °C",
+          "bieu_thuc": "279 - 273.15",
+          "ky_vong": 5.85,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ chênh tay – lon",
+          "bieu_thuc": "34 - (279 - 273.15)",
+          "ky_vong": 28.15,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "nhiệt độ tay theo K",
+          "bieu_thuc": "34 + 273.15",
+          "ky_vong": 307.15,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi hai nhiệt độ cần so sánh mang hai đơn vị khác nhau (K và °C) → đổi về cùng một thang rồi mới so sánh.",
+      "bay_thuong_gap": [
+        "So trực tiếp 279 với 34 như An.",
+        "Đổi sai chiều: cộng 273 vào 279 K thành 552 °C.",
+        "Viết đơn vị '°K'.",
+        "Nghĩ 'hơi lạnh' từ lon truyền sang tay."
+      ],
+      "dieu_ban_khong_chac": [
+        "Giả định cảm biến tủ lạnh hiển thị theo kelvin chỉ để tạo tình huống; thực tế tủ lạnh thường hiển thị °C."
+      ],
+      "mo_phong_goi_y": "Bàn tay cầm lon nước có giọt nước đọng; hai đồng hồ hiển thị: một ghi kelvin cạnh lon, một ghi Celsius cạnh tay. Thanh trượt đổi thang đưa hai đồng hồ về cùng thang, rồi mũi tên nhiệt năng hiện ra giữa tay và lon (không ghi giá trị đổi). Nhãn: 'lon 279 K', 'tay 34 °C', 'cùng thang?', 'nhiệt năng'."
+    },
+    {
+      "label": "Dạng 3 · Tính khoảng chênh nhiệt độ khi dữ kiện ở hai thang",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại phép đổi K → °C của Dạng 2 (Bước 1 chính là bài Dạng 2) và cân bằng nhiệt của Dạng 1; thêm MỘT độ khó: tính khoảng chênh nhiệt độ và phân biệt khoảng chênh với giá trị nhiệt độ ($\\Delta t$ theo °C bằng $\\Delta T$ theo K).",
+      "yccd_de_xuat": "Thang Celsius và thang Kelvin",
+      "de_bai": "Trong giờ thực hành, một bình kín chứa khí được đo nhiệt độ ban đầu bằng cảm biến thang Kelvin: $290\\ \\text{K}$. Bình được ngâm vào một nồi nước nóng lớn. Nhiệt kế thuỷ ngân cắm trong nồi chỉ ổn định ở $75\\ ^\\circ\\text{C}$. Đợi đủ lâu để khí trong bình cân bằng nhiệt với nước.\na) Tính nhiệt độ ban đầu của khí theo °C.\nb) Tính nhiệt độ cuối của khí theo K.\nc) Tính độ tăng nhiệt độ của khí theo °C và theo K.",
+      "dieu_kien_ap_dung": "Nồi nước lớn nên coi nhiệt độ nước không đổi; khi cân bằng nhiệt, khí có cùng nhiệt độ với nước.",
+      "phan_tich": [
+        {
+          "trich_de": "nhiệt độ ban đầu bằng cảm biến thang Kelvin: $290\\ \\text{K}$",
+          "du_lieu": "$T_1 = 290\\ \\text{K}$",
+          "kien_thuc": "$t = T - 273{,}15$"
+        },
+        {
+          "trich_de": "chỉ ổn định ở $75\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_{\\text{nước}} = 75\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Nhiệt độ nước không đổi"
+        },
+        {
+          "trich_de": "khí trong bình cân bằng nhiệt với nước",
+          "du_lieu": "$t_2 = t_{\\text{nước}}$ (dữ kiện ẩn)",
+          "kien_thuc": "Cân bằng nhiệt: hai vật cùng nhiệt độ"
+        },
+        {
+          "trich_de": "độ tăng nhiệt độ của khí theo °C và theo K",
+          "du_lieu": "$\\Delta t$, $\\Delta T$",
+          "kien_thuc": "$\\Delta t(^\\circ\\text{C}) = \\Delta T(\\text{K})$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta T",
+        "cong_thuc": "\\Delta T = T_2 - T_1 = \\Delta t"
+      },
+      "kien_thuc_goi_lai": [
+        "$T(\\text{K}) = t(^\\circ\\text{C}) + 273{,}15$.",
+        "Cân bằng nhiệt: hai vật tiếp xúc đủ lâu thì cùng nhiệt độ.",
+        "Khoảng chia hai thang bằng nhau: $1\\ \\text{K} = 1\\ ^\\circ\\text{C}$, nên $\\Delta t(^\\circ\\text{C}) = \\Delta T(\\text{K})$.",
+        "Không cộng 273 vào một khoảng chênh."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi nhiệt độ ban đầu sang °C (bài Dạng 2)",
+          "cong_thuc_chu": "$t_1 = T_1 - 273{,}15$",
+          "the_so": "$t_1 = 290 - 273{,}15$",
+          "ket_qua": "$t_1 = 16{,}85\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Gần nhiệt độ phòng, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Nhiệt độ cuối nhờ cân bằng nhiệt, đổi sang K",
+          "cong_thuc_chu": "$t_2 = t_{\\text{nước}}$; $T_2 = t_2 + 273{,}15$",
+          "the_so": "$T_2 = 75 + 273{,}15$",
+          "ket_qua": "$T_2 = 348{,}15\\ \\text{K}$",
+          "kiem_tra": "Nằm giữa 273 K và 373 K, đúng với nước nóng chưa sôi."
+        },
+        {
+          "tieu_de": "Bước 3. Độ tăng nhiệt độ theo °C",
+          "cong_thuc_chu": "$\\Delta t = t_2 - t_1$",
+          "the_so": "$\\Delta t = 75 - 16{,}85$",
+          "ket_qua": "$\\Delta t = 58{,}15\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Dương, đúng là khí nóng lên."
+        },
+        {
+          "tieu_de": "Bước 4. Độ tăng nhiệt độ theo K",
+          "cong_thuc_chu": "$\\Delta T = T_2 - T_1$",
+          "the_so": "$\\Delta T = 348{,}15 - 290$",
+          "ket_qua": "$\\Delta T = 58{,}15\\ \\text{K}$",
+          "kiem_tra": "Bằng đúng $\\Delta t$ vì $1\\ \\text{K} = 1\\ ^\\circ\\text{C}$; không phải $58{,}15 + 273{,}15$."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 16.85,
+          "don_vi": "°C"
+        },
+        {
+          "y": "b",
+          "gia_tri": 348.15,
+          "don_vi": "K"
+        },
+        {
+          "y": "c (°C)",
+          "gia_tri": 58.15,
+          "don_vi": "°C"
+        },
+        {
+          "y": "c (K)",
+          "gia_tri": 58.15,
+          "don_vi": "K"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "nhiệt độ đầu theo °C",
+          "bieu_thuc": "290 - 273.15",
+          "ky_vong": 16.85,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "nhiệt độ cuối theo K",
+          "bieu_thuc": "75 + 273.15",
+          "ky_vong": 348.15,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ tăng theo °C",
+          "bieu_thuc": "75 - (290 - 273.15)",
+          "ky_vong": 58.15,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ tăng theo K",
+          "bieu_thuc": "(75 + 273.15) - 290",
+          "ky_vong": 58.15,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi 'độ tăng/độ giảm nhiệt độ' mà hai mốc cho ở hai thang → đưa hai mốc về cùng thang, lấy hiệu; khoảng chênh °C bằng khoảng chênh K.",
+      "bay_thuong_gap": [
+        "Lấy $75 - 290$ ngay, ra số âm vô nghĩa.",
+        "Cộng 273 vào khoảng chênh, ra $\\Delta T = 331{,}3\\ \\text{K}$.",
+        "Quên dữ kiện ẩn: không dùng cân bằng nhiệt để lấy nhiệt độ cuối của khí bằng nhiệt độ nước.",
+        "Làm tròn 273 ở bước này, 273,15 ở bước kia, dẫn tới hai đáp số $\\Delta$ lệch nhau."
+      ],
+      "dieu_ban_khong_chac": [
+        "Nếu dùng làm tròn 273 thì $t_1 = 17\\ ^\\circ\\text{C}$, $T_2 = 348\\ \\text{K}$, $\\Delta = 58$; cần thống nhất một cách làm tròn trong cả bài."
+      ],
+      "mo_phong_goi_y": "Bình khí kín có cảm biến kelvin được hạ vào nồi nước nóng có nhiệt kế thuỷ ngân; số trên cảm biến tăng dần rồi đứng yên khi bằng nhiệt độ nước. Bên cạnh là hai thang Celsius và Kelvin đặt song song, một mũi tên khoảng chênh có cùng độ dài trên cả hai thang (không ghi số). Nhãn: 'khí lúc đầu 290 K', 'nước 75 °C', 'cân bằng nhiệt', 'độ tăng $\\Delta t$', 'độ tăng $\\Delta T$'."
+    },
+    {
+      "label": "Dạng 4 · Tình huống đời sống: đọc nhiệt kế nhiều thang, xét truyền nhiệt và khoảng chênh",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả ba dạng trước: đổi thang để so sánh (Dạng 2), chiều truyền và cân bằng nhiệt (Dạng 1), khoảng chênh nhiệt độ (Dạng 3); thêm MỘT độ khó: dữ kiện đầu chỉ có ở thang Fahrenheit, phải tự đổi ra °C rồi mới dùng được.",
+      "yccd_de_xuat": "Nhiệt độ và cân bằng nhiệt",
+      "de_bai": "Một em bé bị sốt. Mẹ dùng nhiệt kế điện tử mua ở Mỹ, màn hình chỉ hiện thang Fahrenheit: $102{,}2\\ ^\\circ\\text{F}$. Mẹ đắp lên trán bé một khăn ướt; một nhiệt kế điện tử khác, đặt ở thang Kelvin, đo khăn được $295\\ \\text{K}$. Sau một giờ chườm khăn và uống thuốc, thân nhiệt bé còn $37{,}5\\ ^\\circ\\text{C}$.\na) Lúc đầu bé sốt bao nhiêu °C?\nb) Khi khăn vừa đắp lên trán, nhiệt năng truyền theo chiều nào? Nếu để khăn quá lâu không thay thì điều gì xảy ra?\nc) Thân nhiệt bé đã giảm bao nhiêu °C, bao nhiêu K, bao nhiêu °F?",
+      "dieu_kien_ap_dung": "Coi nhiệt độ da trán xấp xỉ thân nhiệt đo được; đổi giá trị dùng $t(^\\circ\\text{C}) = \\dfrac{t(^\\circ\\text{F}) - 32}{1{,}8}$, $t = T - 273{,}15$; đổi khoảng chênh dùng $\\Delta t(^\\circ\\text{F}) = 1{,}8\\,\\Delta t(^\\circ\\text{C})$.",
+      "phan_tich": [
+        {
+          "trich_de": "màn hình chỉ hiện thang Fahrenheit: $102{,}2\\ ^\\circ\\text{F}$",
+          "du_lieu": "$t_0(^\\circ\\text{F}) = 102{,}2\\ ^\\circ\\text{F}$",
+          "kien_thuc": "Đổi °F → °C: trừ 32 rồi chia 1,8"
+        },
+        {
+          "trich_de": "đo khăn được $295\\ \\text{K}$",
+          "du_lieu": "$T_{\\text{khăn}} = 295\\ \\text{K}$",
+          "kien_thuc": "Đổi K → °C: trừ 273,15"
+        },
+        {
+          "trich_de": "thân nhiệt bé còn $37{,}5\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_1 = 37{,}5\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Mốc cuối để tính khoảng chênh"
+        },
+        {
+          "trich_de": "Nếu để khăn quá lâu không thay",
+          "du_lieu": "khăn và trán tiếp xúc lâu",
+          "kien_thuc": "Tiến tới cân bằng nhiệt, ngừng truyền nhiệt"
+        },
+        {
+          "trich_de": "giảm bao nhiêu °C, bao nhiêu K, bao nhiêu °F",
+          "du_lieu": "$\\Delta t$, $\\Delta T$, $\\Delta t(^\\circ\\text{F})$",
+          "kien_thuc": "Khoảng chênh: °C = K; °F nhân 1,8, không cộng 32"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta t(^\\circ\\text{F})",
+        "cong_thuc": "\\Delta t(^\\circ\\text{F}) = 1{,}8\\,(t_0 - t_1)"
+      },
+      "kien_thuc_goi_lai": [
+        "$t(^\\circ\\text{C}) = \\dfrac{t(^\\circ\\text{F}) - 32}{1{,}8}$; $t(^\\circ\\text{F}) = 1{,}8\\,t(^\\circ\\text{C}) + 32$.",
+        "$t(^\\circ\\text{C}) = T(\\text{K}) - 273{,}15$.",
+        "Nhiệt năng đi từ nóng hơn sang lạnh hơn, dừng khi cân bằng nhiệt.",
+        "Khoảng chênh: $\\Delta t(^\\circ\\text{C}) = \\Delta T(\\text{K})$; $\\Delta t(^\\circ\\text{F}) = 1{,}8\\,\\Delta t(^\\circ\\text{C})$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi thân nhiệt ban đầu từ °F sang °C (dữ kiện ẩn)",
+          "cong_thuc_chu": "$t_0 = \\dfrac{t_0(^\\circ\\text{F}) - 32}{1{,}8}$",
+          "the_so": "$t_0 = \\dfrac{102{,}2 - 32}{1{,}8} = \\dfrac{70{,}2}{1{,}8}$",
+          "ket_qua": "$t_0 = 39{,}0\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Sốt cao nhưng nằm trong khoảng thân nhiệt người, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Đổi nhiệt độ khăn sang °C (như Dạng 2)",
+          "cong_thuc_chu": "$t_{\\text{khăn}} = T_{\\text{khăn}} - 273{,}15$",
+          "the_so": "$t_{\\text{khăn}} = 295 - 273{,}15$",
+          "ket_qua": "$t_{\\text{khăn}} = 21{,}85\\ ^\\circ\\text{C}$",
+          "kiem_tra": "Khăn mát hơn nhiệt độ phòng một chút, hợp lí với khăn ướt."
+        },
+        {
+          "tieu_de": "Bước 3. Chiều truyền và cân bằng nhiệt (như Dạng 1)",
+          "cong_thuc_chu": "$t_0 \\gt t_{\\text{khăn}} \\Rightarrow$ trán → khăn",
+          "the_so": "$39{,}0\\ ^\\circ\\text{C} \\gt 21{,}85\\ ^\\circ\\text{C}$",
+          "ket_qua": "Nhiệt năng truyền từ trán sang khăn. Để lâu, khăn ấm lên tới bằng nhiệt độ da, đạt cân bằng nhiệt và không lấy thêm nhiệt nữa, nên phải thay khăn.",
+          "kiem_tra": "Đúng cảm giác thực tế: khăn để lâu trên trán trở nên ấm."
+        },
+        {
+          "tieu_de": "Bước 4. Độ giảm thân nhiệt theo °C và K (như Dạng 3)",
+          "cong_thuc_chu": "$\\Delta t = t_0 - t_1$; $\\Delta T = \\Delta t$",
+          "the_so": "$\\Delta t = 39{,}0 - 37{,}5$",
+          "ket_qua": "$\\Delta t = 1{,}5\\ ^\\circ\\text{C}$; $\\Delta T = 1{,}5\\ \\text{K}$",
+          "kiem_tra": "Không cộng 273 vào khoảng chênh."
+        },
+        {
+          "tieu_de": "Bước 5. Độ giảm thân nhiệt theo °F",
+          "cong_thuc_chu": "$\\Delta t(^\\circ\\text{F}) = 1{,}8\\,\\Delta t(^\\circ\\text{C})$",
+          "the_so": "$\\Delta t(^\\circ\\text{F}) = 1{,}8 \\times 1{,}5$",
+          "ket_qua": "$\\Delta t(^\\circ\\text{F}) = 2{,}7\\ ^\\circ\\text{F}$",
+          "kiem_tra": "Đổi ngược: $37{,}5\\ ^\\circ\\text{C} = 1{,}8 \\times 37{,}5 + 32 = 99{,}5\\ ^\\circ\\text{F}$; $102{,}2 - 99{,}5 = 2{,}7\\ ^\\circ\\text{F}$, khớp."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 39,
+          "don_vi": "°C"
+        },
+        {
+          "y": "b (nhiệt độ khăn)",
+          "gia_tri": 21.85,
+          "don_vi": "°C"
+        },
+        {
+          "y": "c (°C)",
+          "gia_tri": 1.5,
+          "don_vi": "°C"
+        },
+        {
+          "y": "c (K)",
+          "gia_tri": 1.5,
+          "don_vi": "K"
+        },
+        {
+          "y": "c (°F)",
+          "gia_tri": 2.7,
+          "don_vi": "°F"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thân nhiệt ban đầu theo °C",
+          "bieu_thuc": "(102.2 - 32) / 1.8",
+          "ky_vong": 39,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "nhiệt độ khăn theo °C",
+          "bieu_thuc": "295 - 273.15",
+          "ky_vong": 21.85,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ giảm theo °C (bằng theo K)",
+          "bieu_thuc": "(102.2 - 32) / 1.8 - 37.5",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "độ giảm theo °F",
+          "bieu_thuc": "1.8 * ((102.2 - 32) / 1.8 - 37.5)",
+          "ky_vong": 2.7,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "đổi ngược kiểm tra độ giảm °F",
+          "bieu_thuc": "102.2 - (1.8 * 37.5 + 32)",
+          "ky_vong": 2.7,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề đời sống trộn nhiều thang (°F, K, °C) và hỏi nhiều ý → đổi mọi giá trị về °C trước, xét chiều truyền và cân bằng nhiệt, rồi đổi khoảng chênh đúng quy tắc (không cộng hằng số).",
+      "bay_thuong_gap": [
+        "Đổi °F → °C sai thứ tự: chia 1,8 trước rồi trừ 32.",
+        "Đổi khoảng chênh sang °F mà vẫn cộng 32, ra $34{,}7\\ ^\\circ\\text{F}$.",
+        "So trực tiếp 295 với 102,2 để xét chiều truyền.",
+        "Nghĩ khăn ướt giữ mát mãi, quên rằng khăn tiến tới cân bằng nhiệt với da.",
+        "Cộng 273 vào độ giảm $1{,}5\\ ^\\circ\\text{C}$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Nhiệt độ da trán thực tế thấp hơn thân nhiệt trong cơ thể; giả định xấp xỉ bằng nhau chỉ để đơn giản, kết luận chiều truyền không đổi vì da vẫn nóng hơn khăn nhiều.",
+        "Thang Fahrenheit có trong bài lí thuyết nhưng danh mục YCCĐ chỉ nêu Celsius, Kelvin và cân bằng nhiệt; chỉ dùng °F ở dạng vận dụng cao."
+      ],
+      "mo_phong_goi_y": "Em bé nằm, nhiệt kế điện tử hiển thị số theo °F; mẹ đặt khăn ướt lên trán, nhiệt kế thứ hai hiển thị theo K. Mũi tên nhiệt năng đi từ trán sang khăn; màu khăn chuyển dần từ xanh sang cam, mũi tên mờ dần. Đồng hồ thời gian chạy 1 giờ, cột nhiệt kế hạ xuống mốc mới. Bên phải là ba thang °C, K, °F song song có đoạn khoảng chênh được tô (không ghi đáp số). Nhãn: 'nhiệt kế 102,2 °F', 'khăn 295 K', 'nhiệt năng', 'cân bằng nhiệt', 'sau 1 giờ: 37,5 °C', 'độ giảm'."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "bai": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "Bẫy 1: đo từ mép giá đỡ thay vì tâm thấu kính",
+      "trich_nguyen_van": "Giá đỡ dày $2{,}0\\ \\text{cm}.$ Nhóm đo từ vật tới mặt trước giá và từ mặt sau giá tới màn, được $d = d' = 19{,}0\\ \\text{cm}.$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không hiểu vì sao giá dày 2 cm mà mỗi phía chỉ hụt 1 cm. Có thể nghĩ mỗi phía hụt 2 cm (ra 18 cm) và thấy số liệu đề vô lí.",
+      "de_xuat": "Thêm một câu: thấu kính nằm giữa giá nên tâm O cách mỗi mặt giá 1,0 cm, vì vậy d và d' đều hụt 1,0 cm."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "Bẫy 2: ghi vị trí khi ảnh chưa thật nét",
+      "trich_nguyen_van": "Độ rộng khoảng nét ($1{,}2\\ \\text{cm}$) cũng là gợi ý về sai số của $d'.$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Sẽ ghi Δd' = 1,2 cm, trong khi trung điểm chỉ cách mỗi đầu mút 0,6 cm.",
+      "de_xuat": "Nói rõ sai số của d' cỡ nửa độ rộng khoảng nét, tức khoảng 0,6 cm."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Cách 3: ảnh bằng vật",
+      "trich_nguyen_van": "dịch thấu kính và màn cho tới khi ảnh nét và cao đúng $3{,}0\\ \\text{cm}$ như mũi tên.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Phải dịch hai thứ cùng lúc nên không biết bắt đầu từ đâu. Dễ dò mò mãi không ra vị trí ảnh bằng vật.",
+      "de_xuat": "Ghi thứ tự thao tác: đặt thấu kính cách vật khoảng 2f (lấy f từ cách 1), dịch màn cho nét, so chiều cao ảnh với vật rồi chỉnh thấu kính từng chút và hứng lại."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Cách 3: ảnh bằng vật",
+      "trich_nguyen_van": "Sai số của $L$ chia cho $4$ nên cách này cho $f$ khá chính xác.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đọc lướt qua câu này nên không nhận ra đây là quy tắc Δf = ΔL/4. Đến Thử thách ⭐⭐ thì không biết tính Δf.",
+      "de_xuat": "Viết thành công thức riêng $\\Delta f = \\dfrac{\\Delta L}{4}$ và nêu một con số minh hoạ ngay tại đây."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "I. Mở bài: kính lúp và toà nhà bên kia đường",
+      "trich_nguyen_van": "Mục II.2 biến điều này thành một phép đo.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục II.2 là Cách 1, mục II.4 là Cách 3. Số mục lệch số cách một đơn vị nên dễ nhầm 'II.2' với 'Cách 2'.",
+      "de_xuat": "Ghi kèm tên, ví dụ 'Mục II.2 (Cách 1)' và 'mục II.4 (Cách 3)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 1: đo từ mép giá đỡ thay vì tâm thấu kính",
+      "trich_nguyen_van": "Cả $d$ và $d'$ cùng hụt một đoạn",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tưởng đo tới giá đỡ thì luôn bị hụt. Thật ra nếu đo tới mặt xa của giá thì d bị thừa.",
+      "de_xuat": "Ghi rõ 'Tới mặt giá gần vật/gần màn' để khớp với tình huống của Câu 4."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 3: lấy $f$ từ một lần đo",
+      "trich_nguyen_van": "B. Nhóm Minh đáng tin hơn, vì có cả sai số",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Có sai số' nghe như có lỗi, nên lí do này làm em nghi ngờ đáp án đúng và nghiêng sang D.",
+      "de_xuat": "Sửa lí do thành 'vì đo nhiều lần và biết được mức dao động Δf'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Cách 3: ảnh bằng vật",
+      "trich_nguyen_van": "Dấu hiệu nhận biết: ảnh bằng vật dễ thấy hơn \"ảnh nét nhất\".",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ cần thấy ảnh cao bằng vật là đủ, không cần chỉnh cho nét.",
+      "de_xuat": "Thêm: vẫn phải chỉnh màn cho nét trước, rồi mới so chiều cao ảnh với vật."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Cách 2: đo $d$ và $d'$ khi ảnh rõ nét",
+      "trich_nguyen_van": "Làm tròn $\\bar f = 10{,}0\\ \\text{cm}$ (cùng độ chia $0{,}1\\ \\text{cm}$) rồi mới tính độ lệch.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ 'độ chia' là của thước hay của bảng f. Không hiểu vì sao phải làm tròn trước, nên có thể tính lệch với 9,98.",
+      "de_xuat": "Nói rõ: các giá trị f trong bảng có một chữ số thập phân nên làm tròn f̄ về cùng chữ số đó."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán trước khi học",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhớ 'ảnh cách kính 2f' từ Bài 8 nhưng quên điều kiện vật cũng phải cách kính 2f.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C: ảnh chỉ cách kính $2f$ khi vật cũng cách kính $2f$ (mục II.4), không phải khi vật ở xa."
+    },
+    {
+      "cau": "Câu 1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi vật cách 1 m là 'rất xa' nên áp dụng luôn f ≈ d' của cách 1.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cột đèn cách $1\\ \\text{m}$ chưa phải \"rất xa\" (với $f \\approx 10\\ \\text{cm}$ cần từ $20\\ \\text{m}$)."
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Tìm lần lệch nhất theo cột d (d lớn nhất) hoặc theo cột d' thay vì so cột f với f̄.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mỗi lần lấy $f$ ở cột cuối, trừ $\\bar f = 10{,}0$ rồi bỏ dấu âm."
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy L/2 (tức d = 2f) rồi tưởng đó là f.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A là $d$ (hay $d'$), bằng $2f$ chứ không phải $f.$"
+    },
+    {
+      "cau": "Câu 4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tưởng d hụt và d' hụt thì sai số bù trừ nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B nghĩ hai sai số bù nhau, nhưng $d$ và $d'$ hụt cùng phía nên cùng làm $f$ nhỏ đi."
+    },
+    {
+      "cau": "Câu 5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dừng ngay khi ảnh vừa hết nhoè, coi đó là vị trí nét.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nét là một đoạn · ghi trung điểm"
+    },
+    {
+      "cau": "Câu 6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Hiểu 'sai số' là 'sai', nên kết quả có ±0,2 cm bị coi là kém tin cậy.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "D: sai số $0{,}2\\ \\text{cm}$ chỉ cỡ $2\\,\\%$ của $f,$ là nhỏ."
+    },
+    {
+      "cau": "Câu 7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chép nguyên dạng 1/f = 1/d + 1/d' thành 1/d' = 1/f + 1/d, cộng thay vì trừ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B cộng $\\dfrac{1}{20} + \\dfrac{1}{50}$ thay vì trừ nên ra $d'$ quá nhỏ."
+    }
+  ]
+}

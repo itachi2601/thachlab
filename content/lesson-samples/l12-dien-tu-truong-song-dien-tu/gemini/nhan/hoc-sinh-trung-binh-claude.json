@@ -1,0 +1,191 @@
+{
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "Bẫy 1: \"điện trường xoáy cũng như điện trường tĩnh\"",
+      "trich_nguyen_van": "Giống ở cách vẽ đường sức, khác ở bản chất:",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Hai loại đường sức được vẽ giống nhau. Nhưng ngay dòng 2 của bảng lại ghi một loại hở, một loại kín, nên em không biết tin câu nào.",
+      "de_xuat": "Đổi thành: \"Giống ở quy tắc vẽ (không cắt nhau, dày–thưa theo cường độ), khác ở hình dạng đường sức và nguồn sinh ra\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Điện trường biến thiên sinh từ trường — dòng điện dịch",
+      "trich_nguyen_van": "Lý thuyết $I = U \\cdot 2\\pi f C$ cho $U \\cdot 2\\pi C \\approx 0{,}075\\ \\text{mA/Hz}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Công thức này xuất hiện mà không rõ từ đâu ra. Em không tự kiểm tra được con số 0,075 và không biết có phải học thuộc nó không.",
+      "de_xuat": "Thêm một dòng ghi rõ đây là công thức dòng qua tụ trong mạch xoay chiều (chỉ để đối chiếu, không cần nhớ), kèm phép thay số 12·2π·10⁻⁶ ≈ 7,5·10⁻⁵ A/Hz."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "Bẫy 3: \"E và B lệch pha như dòng và áp trong mạch điện\"",
+      "trich_nguyen_van": "Trong mạch chỉ có tụ, dòng điện sớm pha $\\pi/2$ so với điện áp.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài coi đây là kiến thức em đã biết, nhưng trong bài chưa nói ở đâu. Em không chắc \"sớm pha π/2\" nghĩa là gì nên khó thấy chỗ khác biệt mà bẫy muốn chỉ.",
+      "de_xuat": "Thêm nửa câu giải thích: \"sớm pha π/2 tức là i đạt cực đại đúng lúc u bằng 0\", rồi mới so với sóng điện từ."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bẫy 3: \"E và B lệch pha như dòng và áp trong mạch điện\"",
+      "trich_nguyen_van": "chỉ đúng với mạch dao động kín, không dùng cho sóng điện từ đang lan truyền",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Mạch dao động kín\" là thuật ngữ lạ, bài không định nghĩa. Em không biết nó khác \"mạch chỉ có tụ\" ở bảng ngay trên chỗ nào.",
+      "de_xuat": "Thay bằng \"chỉ đúng với mạch gồm tụ và cuộn cảm (năng lượng dồn qua lại trong mạch)\", hoặc bỏ hẳn câu này."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Thang sóng điện từ",
+      "trich_nguyen_van": "Phương án A đúng thứ tự nhưng <em>tăng</em> dần bước sóng, tức ngược yêu cầu",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Phương án A thiếu vùng nhìn thấy, B thiếu gamma, C cũng chỉ có 5 vùng. Chỉ D đủ 6 vùng, nên em chọn D vì đếm số vùng chứ không cần hiểu thứ tự. Nhận xét \"A đúng thứ tự\" cũng không khớp vì A thiếu một vùng.",
+      "de_xuat": "Cho cả bốn phương án đủ 6 vùng, chỉ khác thứ tự; hoặc sửa phản hồi thành \"A đảo chiều và còn thiếu vùng nhìn thấy\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Thang sóng điện từ",
+      "trich_nguyen_van": "Tử ngoại: 10 nm – $0{,}38\\ \\mu\\text{m}$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bảng dùng lẫn mm, μm, nm. Bài không cho cách đổi nên em khó thấy 0,38 μm = 380 nm nối liền với 10 nm, và dễ nhầm nm với μm khi so sánh.",
+      "de_xuat": "Thêm một dòng dưới bảng: \"1 mm = 1000 μm; 1 μm = 1000 nm = 10⁻⁶ m; 1 nm = 10⁻⁹ m\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "sóng vô tuyến và vi ba (2,4 GHz → 12,5 cm)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Vi ba\" chưa xuất hiện trong thang sóng. Em tưởng có vùng thứ bảy, trái với \"sáu vùng\" vừa học.",
+      "de_xuat": "Ghi \"vi ba (một phần của vùng sóng vô tuyến, bước sóng cỡ mm–dm)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: đài FM 100 MHz và vệ tinh địa tĩnh",
+      "trich_nguyen_van": "quãng đường qua vệ tinh: $s = 2h$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không hiểu vì sao lấy 2h, cũng không biết con số 30 km dùng vào đâu. Em có thể cộng thêm 30 km, hoặc tính cạnh huyền.",
+      "de_xuat": "Thêm câu: \"Đài và máy thu chỉ cách nhau 30 km nên coi như cùng nằm ngay dưới vệ tinh; đường đi lên bằng h, đường đi xuống ≈ h, còn 30 km không dùng tới\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: đài FM 100 MHz và vệ tinh địa tĩnh",
+      "trich_nguyen_van": "$\\lambda = \\dfrac{v}{f} = \\dfrac{2 \\cdot 10^8}{10^8} = 2$ m.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Trước Câu 7 bài chỉ cho λ = c/f trong chân không, chưa nói rằng trong môi trường khác thì thay c bằng v. Thêm nữa, đáp số 2 m trùng với bài điền 150 MHz ngay trên, nên em dễ chọn theo trí nhớ.",
+      "de_xuat": "Ở mục 4 thêm \"trong môi trường khác: λ = v/f, với v < c\"; đồng thời đổi số liệu Câu 7 để đáp án không trùng 2 m."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "3. Điện từ trường — hai mặt của một trường",
+      "trich_nguyen_van": "Điện từ trường chỉ có khi cả hai trường đều <em>biến thiên</em>",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Điều kiện \"phải biến thiên\" chỉ xuất hiện trong phản hồi. Phần bullet không nêu rõ, nên em chỉ học được điều kiện này khi đã làm sai.",
+      "de_xuat": "Thêm một bullet ở mục 3: \"Điện trường tĩnh hay từ trường không đổi riêng lẻ không phải điện từ trường\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "1. Từ trường biến thiên sinh điện trường xoáy",
+      "trich_nguyen_van": "về 0 khi nam châm nằm yên",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Nam châm đang được thả rơi qua ống thì nằm yên lúc nào, ở đâu? Em không hình dung được so sánh \"có từ trường mà không biến thiên\".",
+      "de_xuat": "Ghi rõ: \"về 0 khi giữ nam châm đứng yên trong lòng ống (từ trường vẫn có nhưng không đổi)\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "2. Điện trường biến thiên sinh từ trường — dòng điện dịch",
+      "trich_nguyen_van": "điện trường biến thiên ở đó chính là dòng điện dịch, và nó sinh ra từ trường",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm chỉ đo dòng điện, không đo từ trường. Kết luận \"sinh ra từ trường\" giống như đọc ra từ bảng số, nên em nghĩ cột I/f chứng minh có từ trường.",
+      "de_xuat": "Tách ý: \"Thí nghiệm cho thấy mạch có dòng; Maxwell cho rằng dòng điện dịch này cũng sinh từ trường như dòng thường\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "đi vào thuỷ tinh có chiết suất $n = 1{,}5$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chiết suất và công thức v = c/n không có trong bài. Em không biết vì sao tốc độ lại bằng c chia n.",
+      "de_xuat": "Thêm ngoặc: \"(chiết suất n cho biết ánh sáng chậm đi n lần: v = c/n)\"."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: đài FM 100 MHz và vệ tinh địa tĩnh",
+      "trich_nguyen_van": "\"tần số 100 MHz\"",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cột \"Câu trong đề\" đặt trong ngoặc kép như trích nguyên văn, nhưng đề thực ra ghi \"phát ở 100 MHz\". Em tìm cụm này trong đề mà không thấy.",
+      "de_xuat": "Chép đúng cụm trong đề (\"phát ở 100 MHz\", \"độ cao 35 786 km\") hoặc bỏ ngoặc kép."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Quen nghĩ nhiễu đi theo dây điện vì bếp từ cắm điện lưới. Em bỏ qua chi tiết radio chạy pin.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "radio chạy <em>pin</em> nên không có dây điện chung"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Mang hình ảnh đường sức điện trường tĩnh (từ dương sang âm) sang điện trường xoáy.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Em đang tả đường sức của <em>điện trường tĩnh</em>."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ có dòng thì phải có điện tích chạy xuyên qua lớp cách điện của tụ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "giữa hai bản tụ là chất cách điện mà mạch vẫn có dòng"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Mục 1 và mục 2 trình bày riêng hai hiện tượng, nên em tưởng đó là hai trường độc lập.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai trường đó là hai mặt của một trường thống nhất"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Áp quan hệ lệch pha π/2 của mạch xoay chiều cho E và B. Lúc gặp câu này, Bẫy 3 chưa xuất hiện.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\vec{E}$ và $\\vec{B}$ biến thiên điều hoà, luôn <strong>cùng pha</strong> nhau."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhớ đúng chuỗi nhưng đọc ngược chiều, nhầm \"giảm dần bước sóng\" với \"tăng dần tần số/năng lượng\". Thực tế phương án nhiễu yếu vì chỉ D đủ 6 vùng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mẹo nhớ: <strong>\"Vô-Hồng-Nhìn-Tử-X-Gam\"</strong> — đọc xuôi là bước sóng giảm."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Mang thói quen \"u = 0 thì i cực đại\" của mạch có tụ sang E và B của sóng điện từ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Trong mạch chỉ có tụ, dòng điện sớm pha $\\pi/2$ so với điện áp. Nhiều em mang thói quen đó sang sóng điện từ"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Giữ nguyên c = 3·10⁸ m/s của chân không vì bài chỉ dạy λ = c/f, quên thay tốc độ trong cáp.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phương án D là lỗi quên đổi tốc độ — vẫn lấy $c = 3 \\cdot 10^8$ m/s của chân không"
+    }
+  ]
+}

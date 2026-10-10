@@ -1,0 +1,526 @@
+{
+  "lesson_title": "Bài 5. Thuyết động học phân tử chất khí",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Đối chiếu phát biểu với nội dung thuyết động học phân tử",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Học sinh đối chiếu từng phát biểu với nội dung thuyết động học phân tử, rồi đếm số phát biểu đúng.",
+      "yccd_de_xuat": "Nội dung thuyết động học phân tử",
+      "de_bai": "Một bạn ghi bốn phát biểu về chất khí theo thuyết động học phân tử:\n(1) Chất khí gồm rất nhiều phân tử, kích thước phân tử rất nhỏ so với khoảng cách giữa chúng.\n(2) Các phân tử khí chuyển động hỗn loạn, không ngừng; nhiệt độ càng cao thì tốc độ càng lớn.\n(3) Áp suất khí lên thành bình là do trọng lượng của các phân tử khí đè lên đáy bình.\n(4) Giữa các phân tử khí có cả lực hút và lực đẩy, nhưng rất yếu so với thể lỏng và thể rắn.\nCó bao nhiêu phát biểu đúng? Sửa lại phát biểu sai cho đúng.",
+      "dieu_kien_ap_dung": "Thuyết động học phân tử áp dụng cho chất khí: các phân tử ở xa nhau và chuyển động hỗn loạn, không ngừng.",
+      "phan_tich": [
+        {
+          "trich_de": "kích thước phân tử rất nhỏ so với khoảng cách giữa chúng",
+          "du_lieu": "phát biểu (1)",
+          "kien_thuc": "Nội dung 1: chất khí gồm rất nhiều phân tử, rất nhỏ so với khoảng cách giữa chúng"
+        },
+        {
+          "trich_de": "nhiệt độ càng cao thì tốc độ càng lớn",
+          "du_lieu": "phát biểu (2)",
+          "kien_thuc": "Nội dung 2: phân tử chuyển động hỗn loạn, không ngừng; nóng thì nhanh hơn"
+        },
+        {
+          "trich_de": "do trọng lượng của các phân tử khí đè lên đáy bình",
+          "du_lieu": "phát biểu (3)",
+          "kien_thuc": "Nội dung 3: phân tử va chạm vào thành bình, tác dụng lực, gây áp suất"
+        },
+        {
+          "trich_de": "rất yếu so với thể lỏng và thể rắn",
+          "du_lieu": "phát biểu (4)",
+          "kien_thuc": "Lực hút và lực đẩy giữa các phân tử khí rất yếu vì khoảng cách lớn"
+        },
+        {
+          "trich_de": "Có bao nhiêu phát biểu đúng?",
+          "du_lieu": "cần tìm: số phát biểu đúng",
+          "kien_thuc": "Đếm các phát biểu khớp nội dung thuyết"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "số phát biểu đúng",
+        "cong_thuc": "số phát biểu đúng = số phát biểu khớp nội dung thuyết động học phân tử"
+      },
+      "kien_thuc_goi_lai": [
+        "Chất khí gồm rất nhiều phân tử, rất nhỏ so với khoảng cách giữa chúng.",
+        "Phân tử chuyển động hỗn loạn, không ngừng; nhiệt độ càng cao, tốc độ càng lớn.",
+        "Phân tử va chạm vào thành bình, tác dụng lực, gây ra áp suất khí.",
+        "Lực hút và lực đẩy giữa các phân tử khí rất yếu vì khoảng cách lớn."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đối chiếu từng phát biểu",
+          "cong_thuc_chu": "Phát biểu ↔ nội dung thuyết động học phân tử",
+          "the_so": "(1) khớp nội dung 1 → Đúng.\n(2) khớp nội dung 2 → Đúng.\n(3) trái nội dung 3 → Sai.\n(4) khớp ý về lực liên kết → Đúng.",
+          "ket_qua": "Đúng, Đúng, Sai, Đúng",
+          "kiem_tra": "(3) sai vì áp suất khí tác dụng lên mọi thành bình, kể cả nắp trên, chứ không chỉ lên đáy. Trọng lượng không giải thích được điều này."
+        },
+        {
+          "tieu_de": "Bước 2. Đếm và sửa phát biểu sai",
+          "cong_thuc_chu": "Số phát biểu đúng = tổng các phát biểu đúng",
+          "the_so": "$1 + 1 + 0 + 1$",
+          "ket_qua": "$3$ phát biểu đúng",
+          "kiem_tra": "Sửa (3): áp suất khí lên thành bình do vô số va chạm của phân tử khí vào thành bình gây ra."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "số phát biểu đúng",
+          "gia_tri": 3,
+          "don_vi": "phát biểu"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "đếm số phát biểu đúng (1 = đúng, 0 = sai)",
+          "bieu_thuc": "1 + 1 + 0 + 1",
+          "ky_vong": 3,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề liệt kê phát biểu về cấu tạo, chuyển động, va chạm hay lực tương tác của phân tử khí → so từng câu với ba nội dung của thuyết và ý về lực liên kết.",
+      "bay_thuong_gap": [
+        "Cho rằng áp suất khí do trọng lượng khí đè xuống, quên rằng khí đẩy lên cả nắp bình.",
+        "Nghĩ giữa các phân tử khí không có lực nào, trong khi bài nêu có cả lực hút và lực đẩy nhưng rất yếu.",
+        "Đọc lướt, thấy câu nghe quen là chọn đúng mà không đối chiếu từng cụm."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Một bình kín hình hộp chứa nhiều chấm nhỏ (phân tử khí) bay thẳng rồi đổi hướng liên tục. Mỗi lần một chấm chạm thành bình, kể cả nắp trên và hai thành bên, chỗ đó nhấp nháy. Có một thanh trượt 'nhiệt độ': kéo lên thì các chấm chạy nhanh hơn. Nhãn: 'phân tử khí', 'thành bình', 'va chạm', 'nhiệt độ'. Không hiện số phát biểu đúng."
+    },
+    {
+      "label": "Dạng 2 · Phân biệt số mol, thể tích mol và khối lượng mol",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách đối chiếu từng phát biểu rồi đếm của Dạng 1. Thêm MỘT độ khó mới: bẫy lẫn khối lượng khí với số mol và thể tích. Muốn biết câu nào đúng, phải tính nhanh $n = m/M$ và $V = 22{,}4n$ ở đktc.",
+      "yccd_de_xuat": "Mol, số Avogadro và lượng chất khí",
+      "de_bai": "Có hai bình kín, khí trong hai bình cùng ở điều kiện tiêu chuẩn (0 °C, 1 atm). Bình A chứa 14 g khí N₂ ($M = 28$ g/mol). Bình B chứa 22 g khí CO₂ ($M = 44$ g/mol). Xét các phát biểu:\na) Mỗi bình chứa 0,5 mol khí.\nb) Bình B có thể tích lớn hơn bình A vì phân tử CO₂ nặng hơn.\nc) Thể tích khí trong mỗi bình là 11,2 lít.\nd) Số phân tử trong bình B nhiều hơn trong bình A vì khối lượng khí trong bình B lớn hơn.\nCó bao nhiêu phát biểu đúng?",
+      "dieu_kien_ap_dung": "Thể tích mol 22,4 lít chỉ dùng cho chất khí ở điều kiện tiêu chuẩn (0 °C, 1 atm).",
+      "phan_tich": [
+        {
+          "trich_de": "cùng ở điều kiện tiêu chuẩn (0 °C, 1 atm)",
+          "du_lieu": "0 °C · 1 atm",
+          "kien_thuc": "Thể tích mol mọi chất khí ở đktc là 22,4 lít"
+        },
+        {
+          "trich_de": "Bình A chứa 14 g khí N₂ ($M = 28$ g/mol)",
+          "du_lieu": "$m_A = 14$ g; $M_A = 28$ g/mol",
+          "kien_thuc": "$n = m/M$"
+        },
+        {
+          "trich_de": "Bình B chứa 22 g khí CO₂ ($M = 44$ g/mol)",
+          "du_lieu": "$m_B = 22$ g; $M_B = 44$ g/mol",
+          "kien_thuc": "$n = m/M$"
+        },
+        {
+          "trich_de": "vì phân tử CO₂ nặng hơn",
+          "du_lieu": "lí do nêu trong phát biểu b",
+          "kien_thuc": "Ở cùng nhiệt độ và áp suất, số phân tử quyết định thể tích"
+        },
+        {
+          "trich_de": "vì khối lượng khí trong bình B lớn hơn",
+          "du_lieu": "lí do nêu trong phát biểu d",
+          "kien_thuc": "$N = nN_A$: số phân tử theo số mol, không theo khối lượng"
+        },
+        {
+          "trich_de": "Có bao nhiêu phát biểu đúng?",
+          "du_lieu": "cần tìm: số phát biểu đúng",
+          "kien_thuc": "Đối chiếu từng phát biểu"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "số phát biểu đúng",
+        "cong_thuc": "n = m/M;\\ V = 22{,}4n;\\ N = nN_A"
+      },
+      "kien_thuc_goi_lai": [
+        "$n = \\dfrac{N}{N_A} = \\dfrac{m}{M}$.",
+        "Khối lượng mol $M$ khác nhau theo từng chất: N₂ 28, CO₂ 44 g/mol.",
+        "Ở đktc, 1 mol khí nào cũng chiếm 22,4 lít.",
+        "Cùng số mol thì cùng số phân tử."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Tính số mol mỗi bình",
+          "cong_thuc_chu": "$n = \\dfrac{m}{M}$",
+          "the_so": "$n_A = \\dfrac{14}{28}$; $n_B = \\dfrac{22}{44}$",
+          "ket_qua": "$n_A = n_B = 0{,}500\\ \\text{mol}$",
+          "kiem_tra": "Đơn vị g : (g/mol) = mol. Phát biểu a đúng."
+        },
+        {
+          "tieu_de": "Bước 2. Tính thể tích mỗi bình ở đktc",
+          "cong_thuc_chu": "$V = 22{,}4\\,n$",
+          "the_so": "$V = 22{,}4 \\times 0{,}5$",
+          "ket_qua": "$V_A = V_B = 11{,}2\\ \\text{L}$",
+          "kiem_tra": "Hai bình cùng số mol nên cùng thể tích. Phát biểu c đúng. Phát biểu b sai: phân tử nặng hơn không làm thể tích lớn hơn."
+        },
+        {
+          "tieu_de": "Bước 3. So sánh số phân tử",
+          "cong_thuc_chu": "$N = nN_A$",
+          "the_so": "$n_A = n_B \\Rightarrow N_A' = N_B'$",
+          "ket_qua": "$N = 0{,}5 \\times 6{,}02 \\times 10^{23} = 3{,}01 \\times 10^{23}$ phân tử mỗi bình",
+          "kiem_tra": "Bình B nặng hơn vì $M$ lớn hơn, không phải vì nhiều phân tử hơn. Phát biểu d sai."
+        },
+        {
+          "tieu_de": "Bước 4. Đếm",
+          "cong_thuc_chu": "Số phát biểu đúng = tổng các phát biểu đúng",
+          "the_so": "$1 + 0 + 1 + 0$",
+          "ket_qua": "$2$ phát biểu đúng (a và c)",
+          "kiem_tra": "Kiểm tra ngược: $0{,}5 \\times 28 = 14$ g và $0{,}5 \\times 44 = 22$ g, khớp đề."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "số mol mỗi bình",
+          "gia_tri": 0.5,
+          "don_vi": "mol"
+        },
+        {
+          "y": "thể tích mỗi bình",
+          "gia_tri": 11.2,
+          "don_vi": "L"
+        },
+        {
+          "y": "số phân tử mỗi bình",
+          "gia_tri": 3.01e+23,
+          "don_vi": "phân tử"
+        },
+        {
+          "y": "số phát biểu đúng",
+          "gia_tri": 2,
+          "don_vi": "phát biểu"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số mol N₂ bình A",
+          "bieu_thuc": "14/28",
+          "ky_vong": 0.5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số mol CO₂ bình B",
+          "bieu_thuc": "22/44",
+          "ky_vong": 0.5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thể tích mỗi bình (L)",
+          "bieu_thuc": "0.5*22.4",
+          "ky_vong": 11.2,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phân tử mỗi bình",
+          "bieu_thuc": "0.5*6.02e23",
+          "ky_vong": 3.01e+23,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "đếm phát biểu đúng",
+          "bieu_thuc": "1 + 0 + 1 + 0",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho hai khí khác nhau ở cùng điều kiện và hỏi so sánh thể tích, khối lượng hay số phân tử → quy về số mol trước, rồi mới kết luận.",
+      "bay_thuong_gap": [
+        "Cho rằng khí nặng hơn thì chiếm thể tích lớn hơn.",
+        "Cho rằng khối lượng lớn hơn thì nhiều phân tử hơn, quên chia cho $M$.",
+        "Nhớ nhầm '1 mol khí nặng 22,4 g', lẫn thể tích mol với khối lượng mol.",
+        "Dùng 22,4 lít khi khí không ở đktc."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hai bình kín đặt trên hai đĩa cân, nhãn 'A: 14 g N₂' và 'B: 22 g CO₂', góc màn hình ghi '0 °C, 1 atm'. Trong mỗi bình có các chấm phân tử chuyển động: chấm CO₂ to và đậm hơn chấm N₂. Thể tích hai bình để dấu '?'. Không hiện số mol, không hiện số chấm."
+    },
+    {
+      "label": "Dạng 3 · Chuỗi khối lượng → số mol → số phân tử → thể tích ở đktc",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại hai phép $n = m/M$ và $V = 22{,}4n$ của Dạng 2; đó là một bước con. Thêm MỘT độ khó mới: nối thành chuỗi nhiều bước. Kết quả bước trước là dữ liệu của bước sau, có đổi đơn vị kg → g và L → m³.",
+      "yccd_de_xuat": "Mol, số Avogadro và lượng chất khí",
+      "de_bai": "Một bình chữa cháy được nạp 2,2 kg khí CO₂ ($M = 44$ g/mol). Khi xả hết bình, coi toàn bộ lượng CO₂ thoát ra ở điều kiện tiêu chuẩn (0 °C, 1 atm). Lấy $N_A = 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$.\na) Tính số mol CO₂.\nb) Tính số phân tử CO₂.\nc) Tính thể tích khí CO₂ thoát ra, theo lít và theo m³.",
+      "dieu_kien_ap_dung": "Coi lượng khí thoát ra ở đktc (0 °C, 1 atm) thì thể tích mol là 22,4 lít.",
+      "phan_tich": [
+        {
+          "trich_de": "2,2 kg khí CO₂",
+          "du_lieu": "$m = 2{,}2$ kg $= 2200$ g",
+          "kien_thuc": "Đổi kg sang g vì $M$ tính bằng g/mol"
+        },
+        {
+          "trich_de": "$M = 44$ g/mol",
+          "du_lieu": "$M = 44$ g/mol",
+          "kien_thuc": "$n = m/M$"
+        },
+        {
+          "trich_de": "ở điều kiện tiêu chuẩn (0 °C, 1 atm)",
+          "du_lieu": "0 °C · 1 atm",
+          "kien_thuc": "Thể tích mol 22,4 L"
+        },
+        {
+          "trich_de": "$N_A = 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$",
+          "du_lieu": "$N_A = 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$",
+          "kien_thuc": "$N = nN_A$"
+        },
+        {
+          "trich_de": "theo lít và theo m³",
+          "du_lieu": "cần tìm: $V$",
+          "kien_thuc": "$V = 22{,}4n$; $1\\ \\text{L} = 10^{-3}\\ \\text{m}^3$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "n, N, V",
+        "cong_thuc": "n = \\dfrac{m}{M};\\ N = nN_A;\\ V = 22{,}4\\,n"
+      },
+      "kien_thuc_goi_lai": [
+        "$n = \\dfrac{m}{M}$ với $m$ tính bằng g, $M$ tính bằng g/mol.",
+        "$N = nN_A$, $N_A \\approx 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$.",
+        "Ở đktc: $V = 22{,}4n$ (lít).",
+        "$1\\ \\text{L} = 10^{-3}\\ \\text{m}^3$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi khối lượng sang gam",
+          "cong_thuc_chu": "$m(\\text{g}) = 1000 \\times m(\\text{kg})$",
+          "the_so": "$m = 1000 \\times 2{,}2$",
+          "ket_qua": "$m = 2200\\ \\text{g}$",
+          "kiem_tra": "Cùng đơn vị g với $M$ (g/mol)."
+        },
+        {
+          "tieu_de": "Bước 2. Số mol (câu a)",
+          "cong_thuc_chu": "$n = \\dfrac{m}{M}$",
+          "the_so": "$n = \\dfrac{2200}{44}$",
+          "ket_qua": "$n = 50{,}0\\ \\text{mol}$",
+          "kiem_tra": "g : (g/mol) = mol. Kiểm tra ngược: $50 \\times 44 = 2200$ g."
+        },
+        {
+          "tieu_de": "Bước 3. Số phân tử (câu b)",
+          "cong_thuc_chu": "$N = nN_A$",
+          "the_so": "$N = 50 \\times 6{,}02 \\times 10^{23}$",
+          "ket_qua": "$N = 3{,}01 \\times 10^{25}$ phân tử",
+          "kiem_tra": "mol × mol⁻¹ = số thuần. Số phân tử lớn hơn $N_A$ 50 lần, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Thể tích ở đktc (câu c)",
+          "cong_thuc_chu": "$V = 22{,}4\\,n$",
+          "the_so": "$V = 22{,}4 \\times 50$",
+          "ket_qua": "$V = 1120\\ \\text{L} = 1{,}12\\ \\text{m}^3$",
+          "kiem_tra": "Cỡ một khối hộp cạnh hơn 1 m, hợp lí cho một bình chữa cháy nhỏ."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 50,
+          "don_vi": "mol"
+        },
+        {
+          "y": "b",
+          "gia_tri": 3.01e+25,
+          "don_vi": "phân tử"
+        },
+        {
+          "y": "c (lít)",
+          "gia_tri": 1120,
+          "don_vi": "L"
+        },
+        {
+          "y": "c (m³)",
+          "gia_tri": 1.12,
+          "don_vi": "m³"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số mol CO₂",
+          "bieu_thuc": "2.2*1000/44",
+          "ky_vong": 50,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phân tử CO₂",
+          "bieu_thuc": "50*6.02e23",
+          "ky_vong": 3.01e+25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thể tích (L)",
+          "bieu_thuc": "50*22.4",
+          "ky_vong": 1120,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thể tích (m³)",
+          "bieu_thuc": "50*22.4/1000",
+          "ky_vong": 1.12,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho khối lượng khí và hỏi liên tiếp số mol, số phân tử, thể tích → luôn đi qua số mol $n$ làm trạm trung gian.",
+      "bay_thuong_gap": [
+        "Để nguyên 2,2 kg chia cho 44 g/mol, ra 0,05 mol.",
+        "Lấy luôn số mol làm số phân tử, quên nhân $N_A$.",
+        "Đổi 1120 L thành 1120 m³ hoặc 11,2 m³.",
+        "Nhân 22,4 với khối lượng thay vì với số mol."
+      ],
+      "dieu_ban_khong_chac": [
+        "Trong bình chữa cháy thật, CO₂ bị nén ở áp suất cao. Đề chỉ 'coi' lượng khí thoát ra ở đktc để dùng được 22,4 L; thực tế khí xả ra lạnh và không đúng 0 °C."
+      ],
+      "mo_phong_goi_y": "Một bình chữa cháy màu đỏ có nhãn '2,2 kg CO₂'. Bấm nút xả: luồng khí trắng phụt ra, rồi gom thành một khối hộp trong suốt lớn dần bên cạnh bình. Góc màn hình ghi '0 °C, 1 atm'. Trên khối hộp ghi 'V = ?', bên cạnh ghi 'n = ?' và 'N = ?'. Không hiện kích thước khối hộp."
+    },
+    {
+      "label": "Dạng 4 · Bài ngược: nhận ra chất khí từ hai lần cân, kết hợp giải thích áp suất",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại chuỗi $n \\to N$ của Dạng 3 (viết gọn), cách chọn đúng công thức $n = V/22{,}4$ hay $n = m/M$ của Dạng 2, và cách giải thích bằng thuyết động học của Dạng 1 (ý c). Thêm MỘT độ khó mới: bài ngược. Khối lượng khí không cho sẵn, phải rút từ hai lần cân, rồi tìm $M$ để nhận ra chất.",
+      "yccd_de_xuat": "Mol, số Avogadro và lượng chất khí",
+      "de_bai": "Phòng thí nghiệm có một bình thuỷ tinh cứng dung tích 5,6 lít bị mất nhãn. Chỉ biết khí trong bình là N₂ ($M = 28$ g/mol), O₂ ($M = 32$ g/mol) hoặc CO₂ ($M = 44$ g/mol). Bình chứa đầy khí đó ở điều kiện tiêu chuẩn (0 °C, 1 atm) cân được 1258,0 g. Hút hết khí ra, cân bình rỗng được 1250,0 g. Lấy $N_A = 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$.\na) Tính số mol và số phân tử khí lúc bình chứa đầy.\nb) Xác định khí trong bình.\nc) Nạp lại đúng lượng khí ban đầu, đóng kín bình rồi để dưới nắng trưa. Dùng thuyết động học phân tử, cho biết số phân tử trong bình và áp suất khí lên thành bình thay đổi thế nào.",
+      "dieu_kien_ap_dung": "Khí ở đktc nên thể tích mol là 22,4 lít. Bình cứng và kín nên thể tích và số phân tử không đổi khi phơi nắng.",
+      "phan_tich": [
+        {
+          "trich_de": "dung tích 5,6 lít",
+          "du_lieu": "$V = 5{,}6$ L",
+          "kien_thuc": "$n = V/22{,}4$ ở đktc"
+        },
+        {
+          "trich_de": "ở điều kiện tiêu chuẩn (0 °C, 1 atm)",
+          "du_lieu": "0 °C · 1 atm",
+          "kien_thuc": "Thể tích mol 22,4 L cho mọi chất khí"
+        },
+        {
+          "trich_de": "cân được 1258,0 g",
+          "du_lieu": "$m_{\\text{đầy}} = 1258{,}0$ g",
+          "kien_thuc": "Dữ kiện ẩn: khối lượng khí = hiệu hai lần cân"
+        },
+        {
+          "trich_de": "cân bình rỗng được 1250,0 g",
+          "du_lieu": "$m_{\\text{rỗng}} = 1250{,}0$ g",
+          "kien_thuc": "$m = m_{\\text{đầy}} - m_{\\text{rỗng}}$"
+        },
+        {
+          "trich_de": "N₂ ($M = 28$ g/mol), O₂ ($M = 32$ g/mol) hoặc CO₂ ($M = 44$ g/mol)",
+          "du_lieu": "28; 32; 44 g/mol",
+          "kien_thuc": "So $M$ tính được với các giá trị này"
+        },
+        {
+          "trich_de": "đóng kín bình rồi để dưới nắng trưa",
+          "du_lieu": "bình kín, nhiệt độ tăng",
+          "kien_thuc": "Nhiệt độ cao thì phân tử nhanh hơn; va chạm thành bình gây áp suất"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "n, N, M",
+        "cong_thuc": "m = m_{\\text{đầy}} - m_{\\text{rỗng}};\\ n = \\dfrac{V}{22{,}4};\\ N = nN_A;\\ M = \\dfrac{m}{n}"
+      },
+      "kien_thuc_goi_lai": [
+        "Ở đktc: $n = V/22{,}4$ (V tính bằng lít).",
+        "$n = m/M \\Rightarrow M = m/n$.",
+        "$N = nN_A$.",
+        "Nhiệt độ càng cao, phân tử càng nhanh; va chạm vào thành bình gây áp suất."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Rút khối lượng khí (dữ kiện ẩn)",
+          "cong_thuc_chu": "$m = m_{\\text{đầy}} - m_{\\text{rỗng}}$",
+          "the_so": "$m = 1258{,}0 - 1250{,}0$",
+          "ket_qua": "$m = 8{,}0\\ \\text{g}$",
+          "kiem_tra": "Vài gam cho vài lít khí là hợp lí. Lực đẩy của không khí lên vỏ bình như nhau ở hai lần cân nên tự triệt tiêu."
+        },
+        {
+          "tieu_de": "Bước 2. Số mol từ thể tích (câu a)",
+          "cong_thuc_chu": "$n = \\dfrac{V}{22{,}4}$",
+          "the_so": "$n = \\dfrac{5{,}6}{22{,}4}$",
+          "ket_qua": "$n = 0{,}250\\ \\text{mol}$",
+          "kiem_tra": "Phải dùng thể tích vì chưa biết $M$, không dùng được $m/M$. L : (L/mol) = mol."
+        },
+        {
+          "tieu_de": "Bước 3. Số phân tử (câu a)",
+          "cong_thuc_chu": "$N = nN_A$",
+          "the_so": "$N = 0{,}25 \\times 6{,}02 \\times 10^{23}$",
+          "ket_qua": "$N = 1{,}505 \\times 10^{23}$ phân tử",
+          "kiem_tra": "Bằng một phần tư $N_A$, khớp với 0,25 mol."
+        },
+        {
+          "tieu_de": "Bước 4. Khối lượng mol và tên khí (câu b)",
+          "cong_thuc_chu": "$M = \\dfrac{m}{n}$",
+          "the_so": "$M = \\dfrac{8{,}0}{0{,}25}$",
+          "ket_qua": "$M = 32{,}0\\ \\text{g/mol}$ → khí O₂",
+          "kiem_tra": "g : mol = g/mol. Kiểm tra ngược: $0{,}25 \\times 32 = 8{,}0$ g, khớp bước 1."
+        },
+        {
+          "tieu_de": "Bước 5. Giải thích khi phơi nắng (câu c)",
+          "cong_thuc_chu": "Bình kín → $N$ không đổi; $T$ tăng → tốc độ phân tử tăng → va chạm thành bình nhiều và mạnh hơn",
+          "the_so": "$N = 1{,}505 \\times 10^{23}$ phân tử, giữ nguyên",
+          "ket_qua": "Số phân tử không đổi; áp suất khí lên thành bình tăng",
+          "kiem_tra": "Khớp nội dung 2 và 3 của thuyết động học phân tử, giống hiện tượng bóng bay căng ra trong nước nóng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "khối lượng khí",
+          "gia_tri": 8,
+          "don_vi": "g"
+        },
+        {
+          "y": "a (số mol)",
+          "gia_tri": 0.25,
+          "don_vi": "mol"
+        },
+        {
+          "y": "a (số phân tử)",
+          "gia_tri": 1.505e+23,
+          "don_vi": "phân tử"
+        },
+        {
+          "y": "b (khối lượng mol, khí O₂)",
+          "gia_tri": 32,
+          "don_vi": "g/mol"
+        },
+        {
+          "y": "c (số phân tử sau khi phơi nắng)",
+          "gia_tri": 1.505e+23,
+          "don_vi": "phân tử"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "khối lượng khí",
+          "bieu_thuc": "1258.0 - 1250.0",
+          "ky_vong": 8,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số mol",
+          "bieu_thuc": "5.6/22.4",
+          "ky_vong": 0.25,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "số phân tử",
+          "bieu_thuc": "0.25*6.02e23",
+          "ky_vong": 1.505e+23,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "khối lượng mol",
+          "bieu_thuc": "(1258.0 - 1250.0)/(5.6/22.4)",
+          "ky_vong": 32,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi 'khí gì' hoặc cho khối lượng gián tiếp (hai lần cân) cùng thể tích ở đktc → tính $n$ từ thể tích, rồi $M = m/n$ để nhận chất.",
+      "bay_thuong_gap": [
+        "Lấy 1258,0 g làm khối lượng khí, quên trừ khối lượng bình.",
+        "Đoán khí trước rồi dùng $n = m/M$, làm vòng tròn.",
+        "Cho rằng phơi nắng làm số phân tử tăng; bình kín nên số phân tử giữ nguyên.",
+        "Giải thích áp suất tăng là do khí 'nở ra', trong khi bình cứng không đổi thể tích; nguyên nhân là phân tử va chạm thành bình nhiều và mạnh hơn."
+      ],
+      "dieu_ban_khong_chac": [
+        "Hiệu hai lần cân chỉ 8,0 g trên nền 1250 g. Cân cần độ chính xác 0,1 g; sai 0,1 g làm $M$ lệch khoảng 0,4 g/mol, vẫn phân biệt được O₂ với N₂ và CO₂.",
+        "Bài học chỉ cho kết luận định tính 'nhiệt độ tăng thì áp suất tăng', nên câu c không yêu cầu tính áp suất mới."
+      ],
+      "mo_phong_goi_y": "Cảnh 1: bình thuỷ tinh có nhãn '?' đặt trên cân điện tử, hiện số 1258,0 g. Bơm hút khí ra, các chấm phân tử biến mất dần, cân hiện 1250,0 g. Góc màn hình ghi '0 °C, 1 atm', bình ghi '5,6 L'. Cảnh 2: bình đã nạp khí lại và đóng nắp, đặt dưới mặt trời. Các chấm phân tử chạy nhanh dần, chỗ va chạm thành bình nhấp nháy dày hơn. Nhãn: 'khí ?', 'n = ?', 'M = ?', 'áp suất ?'. Không hiện tên khí, không hiện kết quả."
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "bai": "Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Ba phép đo và dụng cụ",
+      "trich_nguyen_van": "Nhìn độ dài đoạn ngang để thấy nhiệt chuyển thể lớn hơn nhiều so với nhiệt làm nóng.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mọi lần chuyển thể đều tốn nhiệt hơn nhiều so với đun nóng. Nhưng chính bảng mục 4 lại cho đá tan 334 s, ít hơn đoạn nâng 0 → 100 °C (419 s). Học sinh sẽ thấy hai chỗ mâu thuẫn nhau.",
+      "de_xuat": "Ghi rõ: hoá hơi tốn nhiệt hơn nhiều so với đun nóng 0 → 100 °C, còn nóng chảy thì cùng cỡ với đun nóng."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Đọc đồ thị nhiệt độ – thời gian",
+      "trich_nguyen_van": "Đoạn ngang càng dài, nhiệt chuyển thể càng lớn.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Có thể so độ dài đoạn ngang giữa hai thí nghiệm bất kì, kể cả khi công suất bếp hay khối lượng khác nhau.",
+      "de_xuat": "Thêm điều kiện: với cùng công suất P và cùng khối lượng m."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Đọc đồ thị nhiệt độ – thời gian",
+      "trich_nguyen_van": "$P$ không đổi: độ dốc $k = \\Delta t/\\Delta\\tau$ cho $c = \\dfrac{P}{mk}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "c = P/(mk) là một công thức mới phải học thuộc. Học sinh không thấy nó chính là c = Pτ/(mΔt) viết lại, và không biết Δτ là gì.",
+      "de_xuat": "Thêm một dòng: c = PΔτ/(mΔt) = P/(m·Δt/Δτ) = P/(mk), với Δτ là khoảng thời gian tương ứng."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Đọc đồ thị nhiệt độ – thời gian",
+      "trich_nguyen_van": "đo ở đoạn ngang thứ nhất: $\\lambda = \\dfrac{P\\tau_1}{m}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "τ₁ và τ₂ có thể là thời điểm đọc trên trục τ, chứ không phải độ dài (khoảng thời gian) của đoạn ngang.",
+      "de_xuat": "Định nghĩa ngay tại bảng: τ₁, τ₂ là độ dài thời gian của đoạn ngang thứ nhất và thứ hai."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Tính nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+      "trich_nguyen_van": "ghi lại thời gian kết thúc từng giai đoạn",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "334, 419, 2 260 là các mốc đồng hồ lúc kết thúc. Khi đó đoạn nâng nhiệt chỉ kéo dài 419 − 334 = 85 s. Nhưng bảng thực chất ghi thời lượng của từng giai đoạn.",
+      "de_xuat": "Đổi thành \"ghi thời lượng từng giai đoạn\", hoặc thêm cột mốc đồng hồ 334 / 753 / 3 013 s."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Tính nhiệt dung riêng từ số đo",
+      "trich_nguyen_van": "<em>cao hơn</em> 4 180 khoảng 1%, đúng hướng lệch do mất nhiệt.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh chưa hiểu vì sao mất nhiệt lại làm c tăng chứ không giảm. Lời giải thích (Δt nhỏ đi) chỉ xuất hiện về sau, ở phản hồi Câu 3 và Trả bài 6.",
+      "de_xuat": "Thêm ngay tại đây: mất nhiệt → nước nhận ít hơn Pτ → Δt nhỏ hơn → c tính ra lớn hơn."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Tính nhiệt dung riêng từ số đo",
+      "trich_nguyen_van": "ba giá trị $c$ đều quanh <strong>4,22.10³ J/(kg·K)</strong>",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ngay dòng sau lại ghi 4,21 × 10³. Học sinh sẽ băn khoăn kết quả là số nào, và vì sao lúc viết \".10³\" lúc viết \"× 10³\".",
+      "de_xuat": "Thống nhất cách viết × 10³ và nói rõ 4,22 là trung bình cách 1, còn 4,21 là theo độ dốc."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Tính nhiệt dung riêng từ số đo",
+      "trich_nguyen_van": "Bếp 150 W đun 0,200 kg nước; trong 300 s nhiệt độ tăng 60 °C.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng bếp, cùng khối lượng, cùng 300 s, nhưng bảng ngay trên chỉ tăng 53,3 °C. Học sinh nghĩ mình đọc nhầm, hoặc nghĩ bảng sai.",
+      "de_xuat": "Ghi rõ đây là một lần đo khác có nhiệt kế lệch, hoặc đổi sang số liệu không trùng với bộ thí nghiệm ở trên."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Tính nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+      "trich_nguyen_van": "nhiệt đưa vào mỗi giây là như nhau (100 W) ở cả ba giai đoạn — nên \"<em>mất nhiệt nhiều hơn</em>\" không giải thích được",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Lập luận chưa chặt: bếp đưa vào đều không loại trừ việc nước 100 °C mất nhiệt ra môi trường nhiều hơn. Phản hồi cũng không nhắc gì tới phương án A.",
+      "de_xuat": "Lập luận bằng việc bảng là số lí tưởng không mất nhiệt, và thêm một câu bác phương án A (đang sôi thì nước không nóng thêm)."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "✅ Mang về sau bài học",
+      "trich_nguyen_van": "$\\lambda = L = \\dfrac{P\\tau}{m}$ ($\\tau$ của đoạn nằm ngang)",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "λ bằng L, tức nhiệt nóng chảy riêng bằng nhiệt hoá hơi riêng. Điều này mâu thuẫn với 3,34 × 10⁵ và 2,26 × 10⁶.",
+      "de_xuat": "Viết tách: λ = Pτ₁/m (đoạn ngang khi tan), L = Pτ₂/m (đoạn ngang khi sôi)."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: nhiệt hoá hơi riêng của nước",
+      "trich_nguyen_van": "còn $2{,}27 \\times 10^6$ (đúng bậc nhưng nhỏ hơn khoảng 3 lần) là lấy $Q$ chia cho $m_1 = 0{,}150\\ \\text{kg}$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Chia cho m₁ ra 2,27 × 10⁶, gần như trùng giá trị tra bảng. Học sinh sẽ tin cách sai mới là đúng và cho rằng 6,80 × 10⁶ mới là kết quả lạ.",
+      "de_xuat": "Nói thẳng rằng số sai này trùng tra bảng chỉ là ngẫu nhiên, hoặc chọn lại số liệu để cách sai không cho giá trị gần 2,26 × 10⁶."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: nhiệt hoá hơi riêng của nước",
+      "trich_nguyen_van": "đừng dùng nhầm $m_1$ hay $m_2$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng dữ liệu chỉ định nghĩa m₁. Học sinh không biết m₂ là đại lượng nào.",
+      "de_xuat": "Thêm m₂ = 0,100 kg (khối lượng còn lại) vào bảng dữ liệu."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: nhiệt hoá hơi riêng của nước",
+      "trich_nguyen_van": "vì phần lớn nhiệt đi vào không khí, thành bình và hơi thoát ra",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đề câu c đòi hai nguyên nhân kèm hướng lệch, nhưng lời giải chỉ có một câu gộp ba thứ. Học sinh không biết nguyên nhân nào làm L tăng, nguyên nhân nào làm L giảm.",
+      "de_xuat": "Tách thành bước c riêng: mỗi nguyên nhân một dòng, ghi rõ nó làm L tính ra lớn hơn hay nhỏ hơn."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Thử sức: đổi chất, đổi cách đo",
+      "trich_nguyen_van": "ra $8{,}35 \\times 10^5$ là nhầm khối lượng đã tan",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đá tan hết nên khối lượng đã tan chính là 0,400 kg. Học sinh không hiểu nhầm sang khối lượng nào mà ra 8,35 × 10⁵ (phải chia cho 0,16 kg).",
+      "de_xuat": "Ghi rõ phép tính sai cụ thể, hoặc bỏ ví dụ này."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "Thử sức: đổi chất, đổi cách đo",
+      "trich_nguyen_van": "Bỏ qua mất mát thì kết quả phải bằng bao nhiêu, và vì sao kết quả đo thường lớn hơn?",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Số đo tính ra đúng bằng 3,34 × 10⁵, tức không lớn hơn. Học sinh không hiểu \"kết quả đo\" đang lớn hơn ở đâu.",
+      "de_xuat": "Nói rõ số liệu đề bài là lí tưởng, hoặc cho τ lớn hơn 668 s để thấy số đo vượt tra bảng."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "Thử thách và tổng kết",
+      "trich_nguyen_van": "Bộ số liệu thực nghiệm ở mục II.4 cho cùng tỉ lệ",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục II.4 đã ghi đó là \"số minh hoạ lí tưởng… không phải số đo thật\", ở đây lại gọi là thực nghiệm và \"độc lập\". Hai tỉ lệ 74% và 75% cũng được tính trên các giai đoạn khác nhau (một bên có, một bên không có giai đoạn đá −10 → 0 °C).",
+      "de_xuat": "Sửa thành \"bộ số liệu minh hoạ ở mục II.4\" và nói rõ đó là hai cách tính từ cùng giá trị tra bảng."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "4. Tính nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+      "trich_nguyen_van": "$c = 4{,}19 \\times 10^3\\ \\text{J/(kg·K)}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Giá trị tra bảng của nước lúc là 4 180 (mục 3, ⭐), lúc 4 190 (mục 4), lúc 4 200 (các bài tập). Học sinh không biết phải so với số nào.",
+      "de_xuat": "Thống nhất một giá trị tra bảng, và ghi rõ 4 200 là giá trị làm tròn dùng cho bài tập."
+    },
+    {
+      "id": "c18",
+      "vi_tri": "2. Đọc đồ thị nhiệt độ – thời gian",
+      "trich_nguyen_van": "Cùng một khối nước đá 0,500 kg: hoá hơi chiếm 74% tổng nhiệt",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Cùng một khối\" là khối nào? Số 0,500 kg và đá −10 °C chưa xuất hiện ở đâu trước đó, mãi tới bài Thách đấu cuối bài mới có.",
+      "de_xuat": "Ghi \"(số liệu bài Thách đấu ⭐⭐⭐ cuối bài)\" hoặc dùng số liệu 0,100 kg của mục 4."
+    },
+    {
+      "id": "c19",
+      "vi_tri": "Thử thách và tổng kết",
+      "trich_nguyen_van": "Ấm đun 1,2 kg nước từ 20 °C, bếp 1 500 W, hiệu suất 80%. Tính thời gian nước sôi",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Số 80 trong lời giải xuất hiện bất ngờ vì đề không nói nước sôi ở 100 °C. Bước chia 504 000 cho 1 500 cũng bị bỏ qua.",
+      "de_xuat": "Thêm \"sôi ở 100 °C → Δt = 80 K\" và \"τ = 504 000/1 500 = 336 s\"."
+    },
+    {
+      "id": "c20",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "nhiệt mất ra môi trường, nóng bình, nhiệt kế đọc thấp hơn thực tế",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Nóng bình\" là một nguồn sai số chưa được giải thích trước đó. Bài chỉ nhắc thoáng qua \"nhiệt dung của bình\" trong mục Bẫy 2, và chưa định nghĩa nhiệt dung.",
+      "de_xuat": "Thêm một câu ở mục 3: một phần nhiệt làm nóng chính bình nhiệt lượng kế, nước nhận ít hơn Pτ nên c tính ra cao hơn."
+    },
+    {
+      "id": "c21",
+      "vi_tri": "1. Ba phép đo và dụng cụ",
+      "trich_nguyen_van": "$P$, $\\tau$ — <strong>oát kế</strong> (W, s)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh băn khoăn vì sao oát kế lại đo được cả thời gian, hay phải dùng thêm đồng hồ.",
+      "de_xuat": "Ghi rõ: oát kế trong bộ thí nghiệm có tích hợp đồng hồ đo thời gian."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất \"nhiệt độ không đổi\" với \"không nhận nhiệt\"; nghĩ nhiệt lượng luôn phải thể hiện qua nhiệt kế.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhiệt kế không đổi <em>không</em> có nghĩa là không có nhiệt vào."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhận ra dạng quen của công thức Q = mcΔt nhưng bỏ sót Δt. Không nhận ra câu hỏi đang hỏi đại lượng đọc trực tiếp từ dụng cụ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Còn $Q = mc$ thiếu $\\Delta t$ và cũng chưa dùng đến oát kế."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn mọi đoạn nằm ngang với nóng chảy vì vừa học ví dụ nước đá tan ở 0 °C; không để ý thứ tự theo nhiệt độ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhớ thứ tự: nóng chảy (đoạn ngang thấp) → đổi nhiệt độ → sôi (đoạn ngang cao)."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính xong Pτ = 45 000 thì dừng lại, thấy con số tròn đẹp mà không kiểm tra đơn vị (J khác J/(kg·K)). Cũng có thể chọn B do quên chia Δt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ra 45 000 là mới tính nhiệt lượng $Q = P\\tau$ (đơn vị jun) mà chưa chia cho $m\\Delta t$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Dùng kinh nghiệm thực tế (nước sôi mất nhiệt nhiều ra môi trường) mà không để ý bảng là số lí tưởng không mất nhiệt. Phương án này nghe hợp lí về vật lí nên rất dễ bị chọn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nên \"<em>mất nhiệt nhiều hơn</em>\" không giải thích được chênh lệch gấp 5,4 lần"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ máy móc quy tắc \"nhiệt độ trong công thức phải đổi sang K bằng cách cộng 273\", áp dụng nhầm cho độ chênh nhiệt độ Δt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\Delta t$ là một <em>khoảng</em> nhiệt độ, không phải một giá trị nhiệt độ, nên $40\\ \\text{K} = 40\\ ^\\circ\\text{C}$"
+    }
+  ]
+}

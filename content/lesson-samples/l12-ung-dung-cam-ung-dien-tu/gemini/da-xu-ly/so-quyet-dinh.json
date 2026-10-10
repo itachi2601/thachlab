@@ -1,0 +1,143 @@
+{
+  "bai": "l12-ung-dung-cam-ung-dien-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thuỷ tinh/sứ (không dẫn điện, không có dòng) với nồi nhôm (có dòng Foucault nhưng không nhiễm từ nên toả nhiệt ít), giải thích nhiễm từ là bị nam châm hút như gang, thép."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 đổi thành \"cùng tỉ số vòng 0,75 với thí nghiệm (200 và 150 vòng)\", giữ bộ số 20/15 vì máy lí tưởng chỉ phụ thuộc tỉ số vòng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thí nghiệm con lắc dùng \"lần qua vị trí thấp nhất\" thay cho \"dao động\" và 0,63 s là khoảng giữa hai lần qua; phản hồi Câu 3 bỏ cách đếm này."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có chú thích \"Hình 4. Cùng khối lượng, cùng từ trường\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một gạch đầu dòng ở mục II.3 về lõi máy biến áp, lõi động cơ ghép lá thép mỏng sơn cách điện để giảm dòng Foucault."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích từ thông rò ngay trong gạch đầu dòng: phần không đi qua cuộn thứ cấp."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nhận xét gọi 90% là tỉ lệ điện áp đo/lí tưởng (không phải hiệu suất), so với 93% bài mẫu, và nói rõ tỉ lệ do khe hở quyết định chứ không do tỉ số vòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Một đế sạc khác\" và ghi đồng bộ N_1', U_1', N_2', U_2'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C 110 V thay bằng 165 V (lỗi lấy hiệu số vòng 220×450/600), phản hồi sai gọi đúng tên lỗi."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa mục tiêu: dùng e_c để giải thích, dùng công thức máy biến áp để tính toán."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Xoá câu kết lặp lại câu hỏi trong Thử thách ⭐⭐⭐."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi \"U là điện áp hiệu dụng\" ngay ở công thức máy biến áp mục II.2."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở bài thêm quan sát: đổi sang nồi nhôm thì bốn phút sau nước mới hơi ấm, khớp số liệu 35 °C của thí nghiệm."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề bài mẫu ghi thêm vôn kế sai số ±0,1 V cho khớp bảng dữ liệu."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ thứ tự gảy dây, kéo căng thêm, gảy lại và thêm quan sát dây căng hơn thì kim rung nhanh hơn."
+      },
+      {
+        "id": "q-Dự đoán trước khi học",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, phản hồi và Bẫy 1 đã nhấn lỗi này nên không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục II.1 và phản hồi đã nhấn điều kiện từ thông biến thiên."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2 về lỗi đảo tỉ số vòng và N_2 là cuộn nối thiết bị cần nạp."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn vai trò điện trở mạch dòng, còn mâu thuẫn với chú thích hình là trích không có trong nguồn."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4 phân biệt bếp từ với bếp hồng ngoại."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn điều kiện từ thông biến thiên."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ kiểm tra chiều N_2 \\lt N_1 thì U_2 \\lt U_1 trước Câu 6, phương án C đã thay theo c9."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.4: thuỷ tinh/sứ không dẫn điện nên không có dòng, nồi nhôm có dòng Foucault nhưng không nhiễm từ nên toả nhiệt rất ít.",
+      "II.4: bỏ câu nồi cơm cảm ứng/bếp từ âm bàn (đã có ở mục VI).",
+      "Câu 2 phản hồi đúng: bỏ \"đúng bộ số thí nghiệm\", ghi cùng tỉ số vòng 0,75 (thí nghiệm 200/150 vòng).",
+      "Thí nghiệm con lắc nhôm: 42/6/21 \"lần qua vị trí thấp nhất\" thay cho \"dao động\", 0,63 s là khoảng giữa hai lần qua liên tiếp, chu kì \"gần như\" không đổi.",
+      "Câu 3 phản hồi sai: thay \"từ 6 dao động lên 21 dao động\" bằng \"làm dao động kéo dài gấp hơn ba lần\" (3,8 s lên 13,3 s).",
+      "II.3: thêm ý lõi máy biến áp, lõi động cơ ghép lá thép mỏng sơn cách điện.",
+      "II.2: ghi U là điện áp hiệu dụng, giải thích từ thông rò.",
+      "Câu 6: phương án C đổi 110 V thành 165 V = 220×450/600 (lỗi lấy hiệu số vòng), phản hồi sai sửa theo.",
+      "Bài điền bước: N_2 thành N_2', U_2 thành U_2' = 4,0 V, nhận xét 90% là tỉ lệ điện áp đo/lí tưởng, so với 93% của bài mẫu.",
+      "Đề bài mẫu: thêm vôn kế sai số ±0,1 V.",
+      "Mở bài: thêm quan sát nồi nhôm, bốn phút sau nước mới hơi ấm (khớp 35 °C ở thí nghiệm II.4).",
+      "Thí nghiệm dây thép: rõ thứ tự gảy, kéo căng thêm, gảy lại, thêm quan sát dây căng hơn thì kim rung nhanh hơn.",
+      "Mục tiêu: e_c chỉ dùng để giải thích, công thức máy biến áp để tính toán.",
+      "Thêm 3 dòng ⚠ trước Câu 2, Câu 4, Câu 6.",
+      "Thử thách ⭐⭐⭐: xoá câu kết lặp ý."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

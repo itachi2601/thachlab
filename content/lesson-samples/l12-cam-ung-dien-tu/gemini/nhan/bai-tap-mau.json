@@ -1,0 +1,506 @@
+{
+  "lesson_title": "Bài 12. Hiện tượng cảm ứng điện từ",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tính từ thông qua khung dây",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Chỉ cần nhận ra công thức $\\Phi = BS\\cos\\alpha$ và thế số. Góc đã cho sẵn là góc của pháp tuyến, các đại lượng đã ở đơn vị SI.",
+      "yccd_de_xuat": "Từ thông qua khung dây",
+      "de_bai": "Một khung dây phẳng có diện tích $0{,}04\\ \\text{m}^2$ đặt trong từ trường đều có cảm ứng từ $B = 0{,}25\\ \\text{T}$. Pháp tuyến của mặt khung hợp với $\\vec{B}$ một góc $45^\\circ$. Tính từ thông qua khung.",
+      "dieu_kien_ap_dung": "Công thức $\\Phi = BS\\cos\\alpha$ dùng cho khung phẳng đặt trong từ trường đều, với $\\alpha$ là góc giữa pháp tuyến $\\vec{n}$ và $\\vec{B}$.",
+      "phan_tich": [
+        {
+          "trich_de": "diện tích $0{,}04\\ \\text{m}^2$",
+          "du_lieu": "$S = 0{,}04\\ \\text{m}^2$",
+          "kien_thuc": "Diện tích mặt khung, đã ở đơn vị SI"
+        },
+        {
+          "trich_de": "từ trường đều có cảm ứng từ $B = 0{,}25\\ \\text{T}$",
+          "du_lieu": "$B = 0{,}25\\ \\text{T}$",
+          "kien_thuc": "Từ trường đều nên dùng được $\\Phi = BS\\cos\\alpha$"
+        },
+        {
+          "trich_de": "Pháp tuyến của mặt khung hợp với $\\vec{B}$ một góc $45^\\circ$",
+          "du_lieu": "$\\alpha = 45^\\circ$",
+          "kien_thuc": "Góc của pháp tuyến nên đưa thẳng vào $\\cos\\alpha$"
+        },
+        {
+          "trich_de": "Tính từ thông qua khung",
+          "du_lieu": "Cần tìm $\\Phi$",
+          "kien_thuc": "$\\Phi = BS\\cos\\alpha$, đơn vị Wb"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Phi$",
+        "cong_thuc": "$\\Phi = BS\\cos\\alpha$"
+      },
+      "kien_thuc_goi_lai": [
+        "Từ thông: $\\Phi = BS\\cos\\alpha$.",
+        "$\\alpha$ là góc giữa pháp tuyến $\\vec{n}$ và $\\vec{B}$.",
+        "Đơn vị: $B$ (T), $S$ ($\\text{m}^2$), $\\Phi$ (Wb).",
+        "$\\alpha = 0^\\circ$ thì $\\Phi = BS$ lớn nhất; $\\alpha = 90^\\circ$ thì $\\Phi = 0$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xác định góc $\\alpha$",
+          "cong_thuc_chu": "$\\alpha = (\\vec{n}, \\vec{B})$",
+          "the_so": "Đề cho trực tiếp góc của pháp tuyến: $\\alpha = 45^\\circ$",
+          "ket_qua": "$\\alpha = 45^\\circ$, $\\cos\\alpha \\approx 0{,}7071$",
+          "kiem_tra": "Góc là góc của pháp tuyến, không cần đổi."
+        },
+        {
+          "tieu_de": "Bước 2. Tính từ thông",
+          "cong_thuc_chu": "$\\Phi = BS\\cos\\alpha$",
+          "the_so": "$\\Phi = 0{,}25\\cdot0{,}04\\cdot\\cos45^\\circ$",
+          "ket_qua": "$\\Phi \\approx 7{,}071\\times10^{-3}\\ \\text{Wb} \\approx 7{,}07\\ \\text{mWb}$",
+          "kiem_tra": "$\\text{T}\\cdot\\text{m}^2 = \\text{Wb}$. Kết quả nhỏ hơn giá trị lớn nhất $BS = 0{,}01\\ \\text{Wb}$: hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "Φ",
+          "gia_tri": 0.007071,
+          "don_vi": "Wb"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Từ thông qua khung",
+          "bieu_thuc": "0.25*0.04*math.cos(math.radians(45))",
+          "ky_vong": 0.007071,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho $B$, $S$ và góc của pháp tuyến, hỏi từ thông → thế thẳng vào $\\Phi = BS\\cos\\alpha$.",
+      "bay_thuong_gap": [
+        "Bấm máy tính ở chế độ radian nên $\\cos45$ ra số sai.",
+        "Dùng $\\sin\\alpha$ thay cho $\\cos\\alpha$.",
+        "Ghi đơn vị từ thông là T hoặc $\\text{T/m}^2$ thay vì Wb."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Khung dây phẳng hình vuông nằm giữa các đường sức song song, đều nhau. Mũi tên pháp tuyến $\\vec{n}$ gắn ở tâm khung, nghiêng so với các đường sức. Làm nổi bật các đường sức xuyên qua mặt khung. Nhãn: $\\vec{B}$, $\\vec{n}$, $\\alpha$, $S$."
+    },
+    {
+      "label": "Dạng 2 · Từ thông thay đổi khi quay khung và chiều Lenz",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách tính $\\Phi = BS\\cos\\alpha$ của Dạng 1. Thêm một độ khó: đề cho góc giữa MẶT KHUNG và đường sức, phải đổi sang góc pháp tuyến $\\alpha = 90^\\circ - \\beta$. Từ dấu của $\\Delta\\Phi$ suy ra chiều từ trường cảm ứng theo định luật Lenz.",
+      "yccd_de_xuat": "Định luật Faraday và định luật Lenz",
+      "de_bai": "Một khung dây dẫn kín phẳng, diện tích $0{,}03\\ \\text{m}^2$, đặt trong từ trường đều $B = 0{,}4\\ \\text{T}$. Ban đầu mặt khung song song với đường sức từ. Sau đó quay khung đến vị trí mặt khung hợp với đường sức từ một góc $30^\\circ$. a) Tính từ thông qua khung ở hai vị trí. b) Trong lúc quay, từ thông tăng hay giảm? Trong khung có dòng điện cảm ứng không? Từ trường cảm ứng cùng chiều hay ngược chiều $\\vec{B}$?",
+      "dieu_kien_ap_dung": "Từ trường đều, khung phẳng và kín; $\\alpha$ luôn lấy là góc giữa pháp tuyến và $\\vec{B}$; định luật Lenz áp dụng khi từ thông qua mạch kín biến thiên.",
+      "phan_tich": [
+        {
+          "trich_de": "khung dây dẫn kín phẳng",
+          "du_lieu": "Mạch kín",
+          "kien_thuc": "Điều kiện thứ nhất để có dòng cảm ứng"
+        },
+        {
+          "trich_de": "diện tích $0{,}03\\ \\text{m}^2$",
+          "du_lieu": "$S = 0{,}03\\ \\text{m}^2$",
+          "kien_thuc": "Dùng trong $\\Phi = BS\\cos\\alpha$"
+        },
+        {
+          "trich_de": "từ trường đều $B = 0{,}4\\ \\text{T}$",
+          "du_lieu": "$B = 0{,}4\\ \\text{T}$",
+          "kien_thuc": "$B$ không đổi; chỉ $\\alpha$ thay đổi"
+        },
+        {
+          "trich_de": "Ban đầu mặt khung song song với đường sức từ",
+          "du_lieu": "Mặt khung song song đường sức nên $\\alpha_1 = 90^\\circ$",
+          "kien_thuc": "Pháp tuyến vuông góc với mặt khung, nên $\\Phi_1 = 0$"
+        },
+        {
+          "trich_de": "mặt khung hợp với đường sức từ một góc $30^\\circ$",
+          "du_lieu": "$\\beta = 30^\\circ$ nên $\\alpha_2 = 90^\\circ - 30^\\circ = 60^\\circ$",
+          "kien_thuc": "Bẫy: góc của mặt khung, không phải góc của pháp tuyến"
+        },
+        {
+          "trich_de": "từ thông tăng hay giảm",
+          "du_lieu": "Xét dấu $\\Delta\\Phi = \\Phi_2 - \\Phi_1$",
+          "kien_thuc": "Lenz: từ thông tăng thì từ trường cảm ứng ngược chiều; từ thông giảm thì cùng chiều"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Phi_1,\\ \\Phi_2,\\ \\Delta\\Phi$",
+        "cong_thuc": "$\\Phi = BS\\cos\\alpha,\\ \\Delta\\Phi = \\Phi_2 - \\Phi_1$"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\alpha$ là góc giữa pháp tuyến và $\\vec{B}$; nếu đề cho góc $\\beta$ giữa mặt khung và đường sức thì $\\alpha = 90^\\circ - \\beta$.",
+        "Dòng cảm ứng xuất hiện khi mạch kín và từ thông biến thiên.",
+        "Lenz: từ thông tăng thì từ trường cảm ứng ngược chiều từ trường ngoài.",
+        "Lenz: từ thông giảm thì từ trường cảm ứng cùng chiều từ trường ngoài."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi góc mặt khung sang góc pháp tuyến",
+          "cong_thuc_chu": "$\\alpha = 90^\\circ - \\beta$",
+          "the_so": "Vị trí đầu: $\\beta_1 = 0^\\circ$ nên $\\alpha_1 = 90^\\circ$. Vị trí sau: $\\beta_2 = 30^\\circ$ nên $\\alpha_2 = 60^\\circ$",
+          "ket_qua": "$\\alpha_1 = 90^\\circ$; $\\alpha_2 = 60^\\circ$",
+          "kiem_tra": "Mặt khung song song đường sức thì không có đường sức xuyên qua, khớp với $\\alpha = 90^\\circ$."
+        },
+        {
+          "tieu_de": "Bước 2. Từ thông ở vị trí đầu",
+          "cong_thuc_chu": "$\\Phi_1 = BS\\cos\\alpha_1$",
+          "the_so": "$\\Phi_1 = 0{,}4\\cdot0{,}03\\cdot\\cos90^\\circ$",
+          "ket_qua": "$\\Phi_1 = 0\\ \\text{Wb}$",
+          "kiem_tra": "Đúng với mẹo: khung song song đường sức thì $\\Phi = 0$."
+        },
+        {
+          "tieu_de": "Bước 3. Từ thông ở vị trí sau",
+          "cong_thuc_chu": "$\\Phi_2 = BS\\cos\\alpha_2$",
+          "the_so": "$\\Phi_2 = 0{,}4\\cdot0{,}03\\cdot\\cos60^\\circ$",
+          "ket_qua": "$\\Phi_2 = 6{,}0\\times10^{-3}\\ \\text{Wb}$",
+          "kiem_tra": "Nhỏ hơn $BS = 0{,}012\\ \\text{Wb}$: hợp lí. Nếu dùng nhầm $\\cos30^\\circ$ sẽ ra $1{,}04\\times10^{-2}\\ \\text{Wb}$."
+        },
+        {
+          "tieu_de": "Bước 4. Xét biến thiên và kết luận theo Lenz",
+          "cong_thuc_chu": "$\\Delta\\Phi = \\Phi_2 - \\Phi_1$",
+          "the_so": "$\\Delta\\Phi = 6{,}0\\times10^{-3} - 0$",
+          "ket_qua": "$\\Delta\\Phi = +6{,}0\\times10^{-3}\\ \\text{Wb} \\gt 0$: từ thông tăng. Khung kín và từ thông biến thiên nên có dòng cảm ứng. Từ trường cảm ứng ngược chiều $\\vec{B}$.",
+          "kiem_tra": "Dòng chỉ tồn tại trong lúc đang quay; quay xong, giữ yên khung thì hết dòng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a · Φ₁",
+          "gia_tri": 0,
+          "don_vi": "Wb"
+        },
+        {
+          "y": "a · Φ₂",
+          "gia_tri": 0.006,
+          "don_vi": "Wb"
+        },
+        {
+          "y": "b · ΔΦ (tăng; có dòng cảm ứng; từ trường cảm ứng ngược chiều B)",
+          "gia_tri": 0.006,
+          "don_vi": "Wb"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Từ thông ở vị trí sau",
+          "bieu_thuc": "0.4*0.03*math.cos(math.radians(90-30))",
+          "ky_vong": 0.006,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Độ biến thiên từ thông",
+          "bieu_thuc": "0.4*0.03*math.cos(math.radians(60)) - 0.4*0.03*math.cos(math.radians(90))",
+          "ky_vong": 0.006,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho góc của MẶT KHUNG với đường sức và hỏi từ thông tăng hay giảm → đổi $\\alpha = 90^\\circ - \\beta$, tính $\\Phi$ hai lúc, xét dấu $\\Delta\\Phi$, rồi áp dụng Lenz.",
+      "bay_thuong_gap": [
+        "Lấy thẳng góc của mặt khung làm $\\alpha$, nên $\\Phi_1 = BS$ và $\\Phi_2 = BS\\cos30^\\circ$, rồi kết luận ngược là từ thông giảm.",
+        "Cho rằng từ trường cảm ứng luôn ngược chiều từ trường ngoài, không xét từ thông tăng hay giảm.",
+        "Nghĩ rằng $B$ không đổi thì không có dòng cảm ứng, quên rằng đổi $\\alpha$ cũng làm từ thông biến thiên."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Khung dây kín nằm giữa hai cực nam châm chữ U. Khung quay từ từ từ vị trí mặt khung song song với đường sức đến vị trí nghiêng. Số đường sức xuyên qua khung thay đổi dần. Kim điện kế nối với khung chỉ lệch trong lúc khung đang quay. Nhãn: $\\vec{B}$, $\\vec{n}$, $\\beta$ (góc của mặt khung), $\\alpha$ (góc của pháp tuyến), vị trí 1, vị trí 2."
+    },
+    {
+      "label": "Dạng 3 · Suất điện động và dòng cảm ứng trong cuộn N vòng",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Bước con chính là bài Dạng 2: đổi góc mặt khung sang $\\alpha$, tính $\\Delta\\Phi$ và xét tăng/giảm theo Lenz. Thêm một độ khó: dùng định luật Faraday cho cuộn $N$ vòng, $|e_c| = N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, rồi tính $i = |e_c|/R$. Đổi $\\text{cm}^2$ sang $\\text{m}^2$ chỉ là bước phụ.",
+      "yccd_de_xuat": "Định luật Faraday và định luật Lenz",
+      "de_bai": "Một cuộn dây dẫn kín gồm $250$ vòng, mỗi vòng có diện tích $40\\ \\text{cm}^2$, điện trở toàn cuộn $10\\ \\Omega$. Cuộn dây đặt trong từ trường đều, mặt các vòng dây hợp với đường sức từ một góc $30^\\circ$. Cảm ứng từ giảm đều từ $0{,}6\\ \\text{T}$ về $0{,}1\\ \\text{T}$ trong $0{,}05\\ \\text{s}$. a) Tính độ lớn suất điện động cảm ứng trong cuộn dây. b) Tính cường độ dòng điện cảm ứng. c) Từ trường cảm ứng cùng chiều hay ngược chiều từ trường ngoài?",
+      "dieu_kien_ap_dung": "Từ trường đều, $B$ biến thiên đều; các vòng giống nhau nên từ thông qua mỗi vòng như nhau; định luật Faraday cho độ lớn trung bình $|e_c| = N|\\Delta\\Phi/\\Delta t|$.",
+      "phan_tich": [
+        {
+          "trich_de": "gồm $250$ vòng",
+          "du_lieu": "$N = 250$",
+          "kien_thuc": "$N$ vòng thì suất điện động nhân $N$"
+        },
+        {
+          "trich_de": "mỗi vòng có diện tích $40\\ \\text{cm}^2$",
+          "du_lieu": "$S = 40\\times10^{-4} = 4\\times10^{-3}\\ \\text{m}^2$",
+          "kien_thuc": "Đổi về SI: $1\\ \\text{cm}^2 = 10^{-4}\\ \\text{m}^2$"
+        },
+        {
+          "trich_de": "điện trở toàn cuộn $10\\ \\Omega$",
+          "du_lieu": "$R = 10\\ \\Omega$",
+          "kien_thuc": "$i = |e_c|/R$"
+        },
+        {
+          "trich_de": "mặt các vòng dây hợp với đường sức từ một góc $30^\\circ$",
+          "du_lieu": "$\\alpha = 90^\\circ - 30^\\circ = 60^\\circ$",
+          "kien_thuc": "Bẫy góc mặt khung (giống Dạng 2)"
+        },
+        {
+          "trich_de": "Cảm ứng từ giảm đều từ $0{,}6\\ \\text{T}$ về $0{,}1\\ \\text{T}$",
+          "du_lieu": "$B_1 = 0{,}6\\ \\text{T}$, $B_2 = 0{,}1\\ \\text{T}$",
+          "kien_thuc": "Từ thông giảm; $\\Delta\\Phi = (B_2 - B_1)S\\cos\\alpha$"
+        },
+        {
+          "trich_de": "trong $0{,}05\\ \\text{s}$",
+          "du_lieu": "$\\Delta t = 0{,}05\\ \\text{s}$",
+          "kien_thuc": "Định luật Faraday"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$|e_c|,\\ i$",
+        "cong_thuc": "$|e_c| = N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|,\\ i = \\dfrac{|e_c|}{R}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$\\Phi = BS\\cos\\alpha$, với $\\alpha$ là góc của pháp tuyến.",
+        "Faraday: $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$; cuộn $N$ vòng thì nhân $N$, với $\\Phi$ là từ thông qua một vòng.",
+        "Mạch có điện trở $R$: $i = |e_c|/R$.",
+        "Lenz: từ thông giảm thì từ trường cảm ứng cùng chiều từ trường ngoài."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị và góc (đã quen từ Dạng 2)",
+          "cong_thuc_chu": "$S = 40\\times10^{-4}\\ \\text{m}^2$; $\\alpha = 90^\\circ - \\beta$",
+          "the_so": "$S = 4\\times10^{-3}\\ \\text{m}^2$; $\\alpha = 90^\\circ - 30^\\circ$",
+          "ket_qua": "$S = 4\\times10^{-3}\\ \\text{m}^2$; $\\alpha = 60^\\circ$",
+          "kiem_tra": "Vòng $40\\ \\text{cm}^2$ cỡ $6{,}3\\ \\text{cm}\\times6{,}3\\ \\text{cm}$: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Độ biến thiên từ thông qua một vòng",
+          "cong_thuc_chu": "$\\Delta\\Phi = (B_2 - B_1)S\\cos\\alpha$",
+          "the_so": "$\\Delta\\Phi = (0{,}1 - 0{,}6)\\cdot4\\times10^{-3}\\cdot\\cos60^\\circ$",
+          "ket_qua": "$\\Delta\\Phi = -1{,}0\\times10^{-3}\\ \\text{Wb}$ (từ thông giảm)",
+          "kiem_tra": "Dấu âm khớp với việc $B$ giảm."
+        },
+        {
+          "tieu_de": "Bước 3. Suất điện động cảm ứng (Faraday, $N$ vòng)",
+          "cong_thuc_chu": "$|e_c| = N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$",
+          "the_so": "$|e_c| = 250\\cdot\\dfrac{1{,}0\\times10^{-3}}{0{,}05}$",
+          "ket_qua": "$|e_c| = 5{,}0\\ \\text{V}$",
+          "kiem_tra": "$\\text{Wb/s} = \\text{V}$. Một vòng chỉ cho $0{,}02\\ \\text{V}$, nhân $250$ được $5\\ \\text{V}$: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Cường độ dòng điện cảm ứng",
+          "cong_thuc_chu": "$i = \\dfrac{|e_c|}{R}$",
+          "the_so": "$i = \\dfrac{5{,}0}{10}$",
+          "ket_qua": "$i = 0{,}50\\ \\text{A}$",
+          "kiem_tra": "$\\text{V}/\\Omega = \\text{A}$."
+        },
+        {
+          "tieu_de": "Bước 5. Chiều từ trường cảm ứng (Lenz)",
+          "cong_thuc_chu": "$\\Delta\\Phi \\lt 0$: từ thông giảm",
+          "the_so": "$\\Delta\\Phi = -1{,}0\\times10^{-3}\\ \\text{Wb} \\lt 0$",
+          "ket_qua": "Từ trường cảm ứng cùng chiều từ trường ngoài.",
+          "kiem_tra": "Từ trường cảm ứng bù lại phần từ thông bị giảm: đúng tinh thần chống lại sự biến thiên."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a · |e_c|",
+          "gia_tri": 5,
+          "don_vi": "V"
+        },
+        {
+          "y": "b · i",
+          "gia_tri": 0.5,
+          "don_vi": "A"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Diện tích một vòng (m²)",
+          "bieu_thuc": "40e-4",
+          "ky_vong": 0.004,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "|ΔΦ| qua một vòng",
+          "bieu_thuc": "abs((0.1-0.6)*40e-4*math.cos(math.radians(90-30)))",
+          "ky_vong": 0.001,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Suất điện động cảm ứng",
+          "bieu_thuc": "250*abs((0.1-0.6)*40e-4*math.cos(math.radians(60)))/0.05",
+          "ky_vong": 5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Cường độ dòng cảm ứng",
+          "bieu_thuc": "250*abs((0.1-0.6)*40e-4*math.cos(math.radians(60)))/0.05/10",
+          "ky_vong": 0.5,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho cuộn $N$ vòng, $B$ đổi từ giá trị này sang giá trị khác trong $\\Delta t$, kèm điện trở → tính $\\Delta\\Phi$ một vòng, nhân $N$, chia $\\Delta t$, rồi chia $R$; xét dấu $\\Delta\\Phi$ để dùng Lenz.",
+      "bay_thuong_gap": [
+        "Quên nhân $N$, hoặc nhân $N$ hai lần (cả vào $\\Phi$ lẫn vào $e_c$).",
+        "Không đổi $\\text{cm}^2$ sang $\\text{m}^2$, kết quả lớn gấp $10^4$ lần.",
+        "Dùng $\\cos30^\\circ$ vì lấy góc của mặt khung.",
+        "Thấy $B$ giảm lại kết luận từ trường cảm ứng ngược chiều từ trường ngoài."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Cuộn dây nhiều vòng nghiêng trong vùng từ trường đều, nối kín với một điện trở và một điện kế. Mật độ đường sức giảm dần theo thời gian, có đồng hồ đếm thời gian chạy. Kim điện kế lệch trong lúc $B$ đang giảm. Mũi tên từ trường cảm ứng mờ ở giữa cuộn (không ghi chiều sẵn). Nhãn: $N$, $S$, $\\vec{B}$, $\\vec{n}$, góc $30^\\circ$ giữa mặt vòng và đường sức, $R$, $\\Delta t$."
+    },
+    {
+      "label": "Dạng 4 · Thanh dẫn trượt trên ray: suất điện động do thanh chuyển động",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả ba cấp: bẫy góc ở Dạng 2 (đường sức hợp với mặt phẳng ray nên phải đổi sang $\\alpha$), Faraday và Ohm ở Dạng 3, chiều theo Lenz. Thêm một độ khó: dữ kiện ẩn. Từ thông biến thiên do diện tích mạch thay đổi, phải tự rút ra $\\Delta S = l\\,v\\,\\Delta t$ từ chuyển động của thanh.",
+      "yccd_de_xuat": "Suất điện động do thanh dẫn chuyển động",
+      "de_bai": "Một mô hình phanh từ trong phòng thí nghiệm gồm hai thanh ray đồng nằm ngang, song song, cách nhau $20\\ \\text{cm}$; hai đầu ray ở phía trái nối với nhau qua điện trở $R = 0{,}4\\ \\Omega$. Thanh kim loại MN đặt vuông góc với hai ray, luôn tiếp xúc tốt và trượt đều sang phải (ra xa điện trở) với tốc độ $2\\ \\text{m/s}$. Vùng đặt ray có từ trường đều $B = 0{,}5\\ \\text{T}$, đường sức từ hợp với mặt phẳng hai ray một góc $60^\\circ$. Bỏ qua điện trở của ray và thanh. Xét khoảng thời gian $0{,}5\\ \\text{s}$. a) Diện tích mạch kín và từ thông qua mạch thay đổi bao nhiêu? b) Tính độ lớn suất điện động cảm ứng và cường độ dòng điện qua $R$. c) Từ trường cảm ứng cùng hay ngược chiều từ trường ngoài? Dòng cảm ứng giúp hay cản chuyển động của thanh MN?",
+      "dieu_kien_ap_dung": "Từ trường đều phủ toàn vùng ray; thanh trượt đều, luôn vuông góc với ray nên diện tích mạch tăng đều; bỏ qua điện trở của ray và thanh nên điện trở mạch là $R$.",
+      "phan_tich": [
+        {
+          "trich_de": "hai thanh ray đồng nằm ngang, song song, cách nhau $20\\ \\text{cm}$",
+          "du_lieu": "$l = 0{,}20\\ \\text{m}$",
+          "kien_thuc": "Chiều rộng của mạch kín hình chữ nhật"
+        },
+        {
+          "trich_de": "nối với nhau qua điện trở $R = 0{,}4\\ \\Omega$",
+          "du_lieu": "$R = 0{,}4\\ \\Omega$",
+          "kien_thuc": "Điện trở, hai đoạn ray và thanh MN tạo thành mạch kín; $i = |e_c|/R$"
+        },
+        {
+          "trich_de": "trượt đều sang phải (ra xa điện trở) với tốc độ $2\\ \\text{m/s}$",
+          "du_lieu": "$v = 2\\ \\text{m/s}$",
+          "kien_thuc": "Dữ kiện ẩn: mạch dài thêm $v\\Delta t$ nên $\\Delta S = l\\,v\\,\\Delta t$, diện tích tăng"
+        },
+        {
+          "trich_de": "từ trường đều $B = 0{,}5\\ \\text{T}$",
+          "du_lieu": "$B = 0{,}5\\ \\text{T}$",
+          "kien_thuc": "$B$ không đổi; từ thông đổi vì $S$ đổi"
+        },
+        {
+          "trich_de": "đường sức từ hợp với mặt phẳng hai ray một góc $60^\\circ$",
+          "du_lieu": "$\\alpha = 90^\\circ - 60^\\circ = 30^\\circ$",
+          "kien_thuc": "Pháp tuyến vuông góc mặt phẳng ray; bẫy góc giống Dạng 2"
+        },
+        {
+          "trich_de": "Xét khoảng thời gian $0{,}5\\ \\text{s}$",
+          "du_lieu": "$\\Delta t = 0{,}5\\ \\text{s}$",
+          "kien_thuc": "Định luật Faraday"
+        },
+        {
+          "trich_de": "Dòng cảm ứng giúp hay cản chuyển động của thanh MN",
+          "du_lieu": "Câu hỏi định tính",
+          "kien_thuc": "Định luật Lenz: chống lại nguyên nhân gây ra biến thiên"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$\\Delta S,\\ \\Delta\\Phi,\\ |e_c|,\\ i$",
+        "cong_thuc": "$\\Delta S = l\\,v\\,\\Delta t,\\ \\Delta\\Phi = B\\,\\Delta S\\cos\\alpha,\\ |e_c| = \\dfrac{|\\Delta\\Phi|}{\\Delta t},\\ i = \\dfrac{|e_c|}{R}$"
+      },
+      "kien_thuc_goi_lai": [
+        "Từ thông biến thiên được bằng ba cách: đổi $B$, đổi $S$, đổi $\\alpha$; ở đây $S$ đổi.",
+        "$\\Phi = BS\\cos\\alpha$, với $\\alpha$ là góc của pháp tuyến; góc giữa đường sức và mặt phẳng là $\\beta$ thì $\\alpha = 90^\\circ - \\beta$.",
+        "Faraday: $|e_c| = |\\Delta\\Phi/\\Delta t|$; Ohm: $i = |e_c|/R$.",
+        "Lenz: chống lại sự biến thiên, nên cản chuyển động gây ra nó (như phanh từ)."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Nhận ra mạch kín và nguyên nhân biến thiên",
+          "cong_thuc_chu": "Mạch kín gồm $R$, hai đoạn ray và thanh MN; $\\Phi = BS\\cos\\alpha$ với $B$, $\\alpha$ không đổi",
+          "the_so": "Thanh đi ra xa $R$ nên chiều dài mạch tăng",
+          "ket_qua": "$S$ tăng nên $\\Phi$ tăng",
+          "kiem_tra": "Có mạch kín và từ thông biến thiên nên có dòng cảm ứng."
+        },
+        {
+          "tieu_de": "Bước 2. Dữ kiện ẩn: độ tăng diện tích",
+          "cong_thuc_chu": "$\\Delta S = l\\cdot v\\,\\Delta t$",
+          "the_so": "$\\Delta S = 0{,}20\\cdot(2\\cdot0{,}5)$",
+          "ket_qua": "$\\Delta S = 0{,}20\\ \\text{m}^2$",
+          "kiem_tra": "Thanh đi được $1\\ \\text{m}$; $\\text{m}\\cdot\\text{m} = \\text{m}^2$."
+        },
+        {
+          "tieu_de": "Bước 3. Góc pháp tuyến (đã quen)",
+          "cong_thuc_chu": "$\\alpha = 90^\\circ - \\beta$",
+          "the_so": "$\\alpha = 90^\\circ - 60^\\circ$",
+          "ket_qua": "$\\alpha = 30^\\circ$, $\\cos\\alpha \\approx 0{,}8660$",
+          "kiem_tra": "Đường sức gần đứng (hợp $60^\\circ$ với mặt ray) nên xuyên qua mạch nhiều; $\\cos\\alpha$ lớn là hợp lí."
+        },
+        {
+          "tieu_de": "Bước 4. Độ biến thiên từ thông",
+          "cong_thuc_chu": "$\\Delta\\Phi = B\\,\\Delta S\\cos\\alpha$",
+          "the_so": "$\\Delta\\Phi = 0{,}5\\cdot0{,}20\\cdot\\cos30^\\circ$",
+          "ket_qua": "$\\Delta\\Phi \\approx 8{,}660\\times10^{-2}\\ \\text{Wb}$ (tăng)",
+          "kiem_tra": "$\\text{T}\\cdot\\text{m}^2 = \\text{Wb}$; dấu dương vì diện tích tăng."
+        },
+        {
+          "tieu_de": "Bước 5. Suất điện động và dòng điện (đã quen từ Dạng 3)",
+          "cong_thuc_chu": "$|e_c| = \\dfrac{|\\Delta\\Phi|}{\\Delta t}$; $i = \\dfrac{|e_c|}{R}$",
+          "the_so": "$|e_c| = \\dfrac{0{,}0866}{0{,}5}$; $i = \\dfrac{0{,}1732}{0{,}4}$",
+          "ket_qua": "$|e_c| \\approx 0{,}1732\\ \\text{V}$; $i \\approx 0{,}4330\\ \\text{A}$",
+          "kiem_tra": "Thanh trượt đều nên $\\Delta S/\\Delta t$ không đổi; chọn $\\Delta t$ khác vẫn ra cùng $e_c$. Cỡ vài trăm mV hợp với mô hình thí nghiệm."
+        },
+        {
+          "tieu_de": "Bước 6. Chiều theo Lenz",
+          "cong_thuc_chu": "$\\Delta\\Phi \\gt 0$: từ thông tăng",
+          "the_so": "Diện tích tăng nên từ thông tăng",
+          "ket_qua": "Từ trường cảm ứng ngược chiều từ trường ngoài. Dòng cảm ứng cản chuyển động của thanh MN (nguyên lí phanh từ); muốn thanh trượt đều phải có lực kéo.",
+          "kiem_tra": "Nếu dòng giúp thanh chạy nhanh hơn thì năng lượng tự tăng, trái bảo toàn năng lượng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a · ΔS",
+          "gia_tri": 0.2,
+          "don_vi": "m²"
+        },
+        {
+          "y": "a · ΔΦ",
+          "gia_tri": 0.0866,
+          "don_vi": "Wb"
+        },
+        {
+          "y": "b · |e_c|",
+          "gia_tri": 0.1732,
+          "don_vi": "V"
+        },
+        {
+          "y": "b · i",
+          "gia_tri": 0.433,
+          "don_vi": "A"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Độ tăng diện tích mạch",
+          "bieu_thuc": "0.2*2*0.5",
+          "ky_vong": 0.2,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Độ biến thiên từ thông",
+          "bieu_thuc": "0.5*(0.2*2*0.5)*math.cos(math.radians(90-60))",
+          "ky_vong": 0.0866,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Suất điện động cảm ứng",
+          "bieu_thuc": "0.5*(0.2*2*0.5)*math.cos(math.radians(30))/0.5",
+          "ky_vong": 0.1732,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Cường độ dòng điện qua R",
+          "bieu_thuc": "0.5*(0.2*2*0.5)*math.cos(math.radians(30))/0.5/0.4",
+          "ky_vong": 0.433,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi có thanh dẫn trượt trên hai ray khép mạch với điện trở, $B$ không đổi → từ thông đổi do diện tích: tự tính $\\Delta S = l\\,v\\,\\Delta t$, rồi đi tiếp như Dạng 3; chiều và lực cản suy từ Lenz.",
+      "bay_thuong_gap": [
+        "Không thấy từ thông biến thiên vì $B$ không đổi, kết luận không có dòng.",
+        "Lấy cả diện tích mạch thay cho phần diện tích tăng thêm $\\Delta S$.",
+        "Dùng $\\cos60^\\circ$ vì lấy góc giữa đường sức và mặt phẳng ray.",
+        "Quên đổi $20\\ \\text{cm}$ thành $0{,}2\\ \\text{m}$.",
+        "Cho rằng dòng cảm ứng đẩy thanh chạy nhanh hơn."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài lí thuyết không có công thức riêng cho thanh dẫn chuyển động; lời giải chỉ dựng từ $\\Phi = BS\\cos\\alpha$ (đổi $S$) và định luật Faraday, không đưa công thức mới.",
+        "Bài không dạy quy tắc xác định chiều dòng điện trong thanh (từ M sang N hay ngược lại), nên câu c chỉ hỏi chiều từ trường cảm ứng và tác dụng cản theo Lenz.",
+        "Từ trường nghiêng $60^\\circ$ so với mặt phẳng ray là giả định cho bài tập; mô hình phanh từ thực tế thường có từ trường vuông góc với mặt ray."
+      ],
+      "mo_phong_goi_y": "Nhìn nghiêng từ trên xuống: hai ray song song nằm ngang, đầu trái nối qua điện trở. Thanh MN trượt đều sang phải, phần diện tích mạch được tô màu và lớn dần. Các đường sức đều, nghiêng so với mặt ray. Có đồng hồ đếm thời gian, không hiện số đáp án. Nhãn: $R$, M, N, $\\vec{v}$, $l$, $\\vec{B}$, $\\vec{n}$, góc $60^\\circ$ giữa đường sức và mặt ray, $\\Delta S$."
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+{
+  "lesson_title": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Nhận ra cách biến đổi nội năng",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nPhân biệt hai cách biến đổi nội năng: thực hiện công và truyền nhiệt.\nChỉ có một cách tác dụng nên $\\Delta U$ bằng đúng con số đề cho.",
+      "yccd_de_xuat": "Nội năng và hai cách làm biến đổi nội năng",
+      "de_bai": "Một xe máy đang chạy thì phanh gấp. Trong 2,0 s phanh, lực ma sát của má phanh thực hiện công 3600 J lên đĩa phanh. Thời gian rất ngắn nên coi đĩa phanh chưa kịp truyền nhiệt ra không khí.\na) Nội năng của đĩa phanh biến đổi bằng cách nào?\nb) Tính độ biến thiên nội năng của đĩa phanh trong lúc phanh.\nc) Xe dừng hẳn, đĩa phanh nguội dần trong không khí. Lúc này nội năng đĩa phanh biến đổi bằng cách nào, tăng hay giảm?",
+      "dieu_kien_ap_dung": "Hệ xét là đĩa phanh; trong 2,0 s phanh bỏ qua trao đổi nhiệt ($Q = 0$), chỉ có công của lực ma sát.",
+      "phan_tich": [
+        {
+          "trich_de": "lực ma sát của má phanh thực hiện công 3600 J lên đĩa phanh",
+          "du_lieu": "$A = +3600\\ \\text{J}$ (đĩa nhận công)",
+          "kien_thuc": "Thực hiện công: có lực làm vật dịch chuyển; nhận công thì nội năng tăng"
+        },
+        {
+          "trich_de": "chưa kịp truyền nhiệt ra không khí",
+          "du_lieu": "$Q = 0$",
+          "kien_thuc": "Không có truyền nhiệt trong lúc phanh"
+        },
+        {
+          "trich_de": "đĩa phanh nguội dần trong không khí",
+          "du_lieu": "Đĩa nóng hơn không khí, $A = 0$, $Q \\lt 0$",
+          "kien_thuc": "Truyền nhiệt: hai vật chênh nhiệt độ; toả nhiệt thì nội năng giảm"
+        },
+        {
+          "trich_de": "độ biến thiên nội năng của đĩa phanh",
+          "du_lieu": "Cần tìm $\\Delta U$",
+          "kien_thuc": "$\\Delta U = A + Q$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta U",
+        "cong_thuc": "\\Delta U = A + Q = A"
+      },
+      "kien_thuc_goi_lai": [
+        "Nội năng $U$ là tổng động năng và thế năng của các phân tử, đơn vị J.",
+        "Thực hiện công: có lực làm vật dịch chuyển.",
+        "Truyền nhiệt: hai vật chênh nhiệt độ, không cần dịch chuyển.",
+        "Nhận công hoặc thu nhiệt thì nội năng tăng; sinh công hoặc toả nhiệt thì nội năng giảm."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Xác định hệ và cách biến đổi nội năng (ý a)",
+          "cong_thuc_chu": "Có lực làm bề mặt đĩa dịch chuyển → thực hiện công",
+          "the_so": "Hệ: đĩa phanh. Lực ma sát của má phanh trượt trên đĩa.",
+          "ket_qua": "Thực hiện công",
+          "kiem_tra": "Không có ngọn lửa hay vật nóng hơn áp vào đĩa, nên đây không phải truyền nhiệt."
+        },
+        {
+          "tieu_de": "Đặt dấu",
+          "cong_thuc_chu": "Nhận công: $A \\gt 0$; không trao đổi nhiệt: $Q = 0$",
+          "the_so": "$A = +3600\\ \\text{J}$, $Q = 0$",
+          "ket_qua": "$A = +3600\\ \\text{J}$",
+          "kiem_tra": "Đĩa nhận công từ má phanh nên dấu dương."
+        },
+        {
+          "tieu_de": "Tính độ biến thiên nội năng (ý b)",
+          "cong_thuc_chu": "$\\Delta U = A + Q$",
+          "the_so": "$\\Delta U = 3600 + 0$",
+          "ket_qua": "$\\Delta U = +3600\\ \\text{J}$",
+          "kiem_tra": "Đơn vị J. $\\Delta U \\gt 0$: đĩa nóng lên, khớp thực tế đĩa phanh nóng sau khi phanh gấp."
+        },
+        {
+          "tieu_de": "Xét lúc đĩa nguội (ý c)",
+          "cong_thuc_chu": "Chênh nhiệt độ, không có lực làm dịch chuyển → truyền nhiệt",
+          "the_so": "$A = 0$, $Q \\lt 0$ (đĩa toả nhiệt) → $\\Delta U = Q \\lt 0$",
+          "ket_qua": "Truyền nhiệt; nội năng giảm",
+          "kiem_tra": "Đĩa nguội đi nghĩa là phân tử chuyển động chậm lại, nên nội năng phải giảm."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "b",
+          "gia_tri": 3600,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Độ biến thiên nội năng đĩa phanh khi phanh",
+          "bieu_thuc": "3600 + 0",
+          "ky_vong": 3600,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề tả một hiện tượng làm vật nóng lên hoặc nguội đi và hỏi \"bằng cách nào\" → hỏi \"có lực làm dịch chuyển không?\": có thì là thực hiện công, không có mà chỉ chênh nhiệt độ thì là truyền nhiệt. Nếu chỉ một cách tác dụng thì $\\Delta U$ bằng đúng $A$ (hoặc đúng $Q$).",
+      "bay_thuong_gap": [
+        "Phân loại theo cảm giác \"thấy nóng lên\" nên cho ma sát là truyền nhiệt.",
+        "Nói \"đĩa phanh có nhiệt lượng 3600 J\"; đúng phải là nội năng đĩa tăng 3600 J.",
+        "Ở ý c cho rằng nội năng không đổi vì không có công."
+      ],
+      "dieu_ban_khong_chac": [
+        "Thực tế một phần công ma sát cũng làm nóng má phanh; đề quy ước toàn bộ 3600 J vào đĩa để đơn giản."
+      ],
+      "mo_phong_goi_y": "Đĩa phanh quay chậm dần, má phanh ép vào và trượt trên mặt đĩa. Mũi tên công đi từ má phanh vào đĩa. Màu đĩa chuyển dần từ xám sang cam. Sau khi xe dừng, các mũi tên lượn sóng toả từ đĩa ra không khí, màu đĩa nhạt dần. Nhãn: \"đĩa phanh\", \"má phanh\", \"lực ma sát\", \"A\", \"không khí\", \"Q\"."
+    },
+    {
+      "label": "Dạng 2 · Đặt dấu A, Q khi hệ vừa nhận vừa mất",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại cách nhận ra công và nhiệt của dạng 1.\nThêm MỘT khó mới: cả $A$ và $Q$ cùng khác 0, một số âm, một số dương. Phải đặt đúng dấu theo quy ước \"nhận thì cộng, mất thì trừ\".",
+      "yccd_de_xuat": "Vận dụng ΔU = A + Q",
+      "de_bai": "Khí trong một xilanh kín được ngọn đèn cồn hơ nóng qua thành xilanh. Cùng lúc, pit-tông được kéo ra nhanh: khí giãn nở và sinh công 50 J. Trong quá trình đó, khí nhận nhiệt lượng 30 J từ ngọn lửa.\na) Tính độ biến thiên nội năng của khí.\nb) Bạn An nói: \"Khí được hơ trên lửa thì chắc chắn nóng lên.\" Nhận xét câu nói đó đúng hay sai, giải thích.",
+      "dieu_kien_ap_dung": "Hệ xét là khối khí trong xilanh kín (khối lượng khí không đổi); định luật I áp dụng với $A$, $Q$ là số đại số theo quy ước hệ nhận thì dương.",
+      "phan_tich": [
+        {
+          "trich_de": "được ngọn đèn cồn hơ nóng qua thành xilanh",
+          "du_lieu": "Có truyền nhiệt vào khí",
+          "kien_thuc": "Truyền nhiệt do chênh nhiệt độ"
+        },
+        {
+          "trich_de": "khí giãn nở và sinh công 50 J",
+          "du_lieu": "$A = -50\\ \\text{J}$",
+          "kien_thuc": "Hệ sinh công: $A \\lt 0$"
+        },
+        {
+          "trich_de": "khí nhận nhiệt lượng 30 J từ ngọn lửa",
+          "du_lieu": "$Q = +30\\ \\text{J}$",
+          "kien_thuc": "Hệ thu nhiệt: $Q \\gt 0$"
+        },
+        {
+          "trich_de": "độ biến thiên nội năng của khí",
+          "du_lieu": "Cần tìm $\\Delta U$",
+          "kien_thuc": "$\\Delta U = A + Q$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta U",
+        "cong_thuc": "\\Delta U = A + Q"
+      },
+      "kien_thuc_goi_lai": [
+        "Định luật I: $\\Delta U = A + Q$.",
+        "$A \\gt 0$ hệ nhận công; $A \\lt 0$ hệ sinh công.",
+        "$Q \\gt 0$ hệ thu nhiệt; $Q \\lt 0$ hệ toả nhiệt.",
+        "$\\Delta U \\gt 0$ nội năng tăng; $\\Delta U \\lt 0$ nội năng giảm, khí lạnh đi."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Xác định hệ",
+          "cong_thuc_chu": "Hệ: khối khí trong xilanh",
+          "the_so": "Mọi công, nhiệt tính cho khối khí, không tính cho pit-tông hay ngọn lửa.",
+          "ket_qua": "Hệ = khối khí",
+          "kiem_tra": "Xác định hệ trước thì mới đặt dấu đúng."
+        },
+        {
+          "tieu_de": "Đặt dấu theo câu chữ",
+          "cong_thuc_chu": "Sinh công → $A \\lt 0$; nhận nhiệt → $Q \\gt 0$",
+          "the_so": "$A = -50\\ \\text{J}$; $Q = +30\\ \\text{J}$",
+          "ket_qua": "$A = -50\\ \\text{J}$, $Q = +30\\ \\text{J}$",
+          "kiem_tra": "Công 50 J khí mất đi nên âm; nhiệt 30 J khí nhận vào nên dương."
+        },
+        {
+          "tieu_de": "Áp dụng định luật I (ý a)",
+          "cong_thuc_chu": "$\\Delta U = A + Q$",
+          "the_so": "$\\Delta U = -50 + 30$",
+          "ket_qua": "$\\Delta U = -20\\ \\text{J}$",
+          "kiem_tra": "Đơn vị J. Năng lượng mất đi (50 J) lớn hơn năng lượng nhận vào (30 J) nên kết quả âm là hợp lí."
+        },
+        {
+          "tieu_de": "Nhận xét câu nói của An (ý b)",
+          "cong_thuc_chu": "$\\Delta U \\lt 0$ → nội năng giảm → nhiệt độ khí giảm",
+          "the_so": "$\\Delta U = -20\\ \\text{J} \\lt 0$",
+          "ket_qua": "An nói sai: khí lạnh đi dù đang được hơ lửa",
+          "kiem_tra": "Nhiệt độ quyết định bởi tổng $A + Q$, không bởi riêng $Q$. Ra $+80\\ \\text{J}$ là quên dấu âm của công."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": -20,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Độ biến thiên nội năng của khí",
+          "bieu_thuc": "-50 + 30",
+          "ky_vong": -20,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho đồng thời một con số công và một con số nhiệt, kèm các động từ \"nhận, thu, sinh, toả, bị nén, giãn nở\" → xác định hệ, đổi từng động từ thành dấu, rồi cộng đại số $\\Delta U = A + Q$.",
+      "bay_thuong_gap": [
+        "Cộng hai độ lớn: $50 + 30 = 80\\ \\text{J}$, quên khí sinh công thì $A$ âm.",
+        "Đổi dấu nhầm cả nhiệt: $-50 - 30 = -80\\ \\text{J}$.",
+        "Cho rằng cứ được đun là nóng lên; bỏ qua phần năng lượng khí mất đi khi sinh công.",
+        "Đặt dấu theo góc nhìn của pit-tông hoặc ngọn lửa thay vì của khối khí."
+      ],
+      "dieu_ban_khong_chac": [
+        "Khí vừa được hơ lửa vừa lạnh đi đòi hỏi pit-tông kéo rất nhanh; số liệu 50 J và 30 J chọn cho hợp lí với khoảng 1 lít khí, nhưng chưa kiểm bằng thí nghiệm."
+      ],
+      "mo_phong_goi_y": "Xilanh nằm ngang trên ngọn đèn cồn, pit-tông trượt nhanh sang phải. Mũi tên nhiệt lượn sóng đi từ ngọn lửa vào khí; mũi tên công đi từ khí ra pit-tông. Các chấm phân tử khí giãn ra; tốc độ chấm thay đổi nhưng không hiện số. Nhãn: \"khối khí (hệ)\", \"pit-tông\", \"đèn cồn\", \"Q\", \"A\", \"giãn nở\"."
+    },
+    {
+      "label": "Dạng 3 · Tìm Q qua Q = mcΔt rồi áp dụng định luật I",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại toàn bộ dạng 2 (xác định hệ, đặt dấu, cộng đại số) làm bước cuối.\nThêm MỘT khó mới: $Q$ không cho sẵn. Phải tính nhiệt lượng vật khác thu vào bằng $Q = mc\\Delta t$, rồi chuyển sang dấu của hệ đang xét.",
+      "yccd_de_xuat": "Vận dụng ΔU = A + Q",
+      "de_bai": "Một thợ cơ khí khoan lỗ trên một khối đồng đặt chìm trong khay chứa 0,200 kg nước làm mát. Trong một lượt khoan, mũi khoan thực hiện công 5000 J lên khối đồng. Cùng lượt đó, nước làm mát nóng lên từ 25,0 °C đến 28,0 °C. Coi toàn bộ nhiệt lượng nước nhận được đều do khối đồng truyền sang; bỏ qua trao đổi nhiệt với khay và không khí. Lấy nhiệt dung riêng của nước $c = 4180\\ \\text{J/(kg·K)}$.\na) Tính nhiệt lượng nước làm mát nhận được.\nb) Tính độ biến thiên nội năng của khối đồng.\nc) Khối đồng nóng lên hay nguội đi?",
+      "dieu_kien_ap_dung": "Nhiệt chỉ trao đổi giữa khối đồng và nước (bỏ qua khay, không khí); $Q = mc\\Delta t$ dùng cho nước vì nước chỉ đổi nhiệt độ, không đổi thể.",
+      "phan_tich": [
+        {
+          "trich_de": "0,200 kg nước làm mát",
+          "du_lieu": "$m = 0{,}200\\ \\text{kg}$",
+          "kien_thuc": "Khối lượng trong $Q = mc\\Delta t$"
+        },
+        {
+          "trich_de": "mũi khoan thực hiện công 5000 J lên khối đồng",
+          "du_lieu": "$A = +5000\\ \\text{J}$",
+          "kien_thuc": "Hệ (khối đồng) nhận công: $A \\gt 0$"
+        },
+        {
+          "trich_de": "nóng lên từ 25,0 °C đến 28,0 °C",
+          "du_lieu": "$t_1 = 25{,}0\\ ^\\circ\\text{C}$, $t_2 = 28{,}0\\ ^\\circ\\text{C}$",
+          "kien_thuc": "$\\Delta t = t_2 - t_1$ là độ tăng nhiệt độ"
+        },
+        {
+          "trich_de": "toàn bộ nhiệt lượng nước nhận được đều do khối đồng truyền sang",
+          "du_lieu": "$Q_\\text{đồng} = -Q_\\text{nước}$",
+          "kien_thuc": "Nước thu bao nhiêu thì đồng toả bấy nhiêu; đồng toả nên $Q \\lt 0$"
+        },
+        {
+          "trich_de": "$c = 4180\\ \\text{J/(kg·K)}$",
+          "du_lieu": "$c = 4180\\ \\text{J/(kg·K)}$",
+          "kien_thuc": "Nhiệt dung riêng của nước"
+        },
+        {
+          "trich_de": "độ biến thiên nội năng của khối đồng",
+          "du_lieu": "Cần tìm $\\Delta U$",
+          "kien_thuc": "$\\Delta U = A + Q_\\text{đồng}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta U",
+        "cong_thuc": "\\Delta U = A - mc\\left(t_2 - t_1\\right)"
+      },
+      "kien_thuc_goi_lai": [
+        "$Q = mc\\Delta t$, $\\Delta t = t_2 - t_1$ là độ tăng nhiệt độ.",
+        "Độ tăng 1 °C bằng độ tăng 1 K.",
+        "Vật này toả bao nhiêu thì vật kia thu bấy nhiêu (khi bỏ qua mất mát).",
+        "$\\Delta U = A + Q$: nhận thì cộng, mất thì trừ."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Tính nhiệt lượng nước thu vào (ý a)",
+          "cong_thuc_chu": "$Q_\\text{nước} = mc\\left(t_2 - t_1\\right)$",
+          "the_so": "$Q_\\text{nước} = 0{,}200 \\times 4180 \\times \\left(28{,}0 - 25{,}0\\right)$",
+          "ket_qua": "$Q_\\text{nước} = 2508\\ \\text{J}$",
+          "kiem_tra": "$\\text{kg} \\cdot \\text{J/(kg·K)} \\cdot \\text{K} = \\text{J}$. Dương vì nước thu nhiệt."
+        },
+        {
+          "tieu_de": "Chuyển sang nhiệt lượng của hệ khối đồng",
+          "cong_thuc_chu": "$Q = -Q_\\text{nước}$",
+          "the_so": "$Q = -2508\\ \\text{J}$",
+          "ket_qua": "$Q = -2508\\ \\text{J}$",
+          "kiem_tra": "Đồng toả nhiệt cho nước nên dấu âm."
+        },
+        {
+          "tieu_de": "Đặt dấu công",
+          "cong_thuc_chu": "Đồng nhận công → $A \\gt 0$",
+          "the_so": "$A = +5000\\ \\text{J}$",
+          "ket_qua": "$A = +5000\\ \\text{J}$",
+          "kiem_tra": "Mũi khoan truyền công vào khối đồng."
+        },
+        {
+          "tieu_de": "Áp dụng định luật I (ý b)",
+          "cong_thuc_chu": "$\\Delta U = A + Q$",
+          "the_so": "$\\Delta U = 5000 + \\left(-2508\\right)$",
+          "ket_qua": "$\\Delta U = +2492\\ \\text{J} \\approx 2{,}49\\ \\text{kJ}$",
+          "kiem_tra": "Đơn vị J. Giá trị nằm giữa 0 và 5000 J: đồng giữ lại một phần công, phần còn lại sang nước."
+        },
+        {
+          "tieu_de": "Kết luận (ý c)",
+          "cong_thuc_chu": "$\\Delta U \\gt 0$ → nội năng tăng → nhiệt độ tăng",
+          "the_so": "$\\Delta U = +2492\\ \\text{J} \\gt 0$",
+          "ket_qua": "Khối đồng nóng lên",
+          "kiem_tra": "Hợp lí: đồng phải nóng hơn nước thì nhiệt mới truyền từ đồng sang nước."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 2508,
+          "don_vi": "J"
+        },
+        {
+          "y": "b",
+          "gia_tri": 2492,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Nhiệt lượng nước thu",
+          "bieu_thuc": "0.200*4180*(28.0-25.0)",
+          "ky_vong": 2508,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Độ biến thiên nội năng khối đồng",
+          "bieu_thuc": "5000 + (-0.200*4180*(28.0-25.0))",
+          "ky_vong": 2492,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề không cho thẳng nhiệt lượng của hệ mà cho khối lượng và nhiệt độ đầu, cuối của một vật khác trao đổi nhiệt với hệ → tính $Q = mc\\Delta t$ cho vật đó, đổi dấu sang hệ, rồi làm như dạng 2.",
+      "bay_thuong_gap": [
+        "Lấy luôn $Q = +2508\\ \\text{J}$ cho khối đồng, quên rằng nước thu thì đồng toả.",
+        "Dùng $\\Delta t = 28$ hoặc $25$ thay vì độ tăng $3{,}0\\ \\text{K}$.",
+        "Ra $7508\\ \\text{J}$ do cộng hai độ lớn.",
+        "Dùng nhiệt dung riêng của đồng cho nước."
+      ],
+      "dieu_ban_khong_chac": [
+        "Thực tế một phần công khoan làm nóng mũi khoan và phoi đồng; đề quy ước toàn bộ 5000 J vào khối đồng."
+      ],
+      "mo_phong_goi_y": "Khay nước, khối đồng nằm chìm, mũi khoan quay ép xuống. Mũi tên công đi từ mũi khoan vào khối đồng. Mũi tên nhiệt lượn sóng đi từ khối đồng ra nước. Nhiệt kế cắm trong nước, cột chất lỏng dâng dần nhưng không hiện số cuối. Nhãn: \"khối đồng (hệ)\", \"nước làm mát\", \"mũi khoan\", \"A\", \"Q\", \"nhiệt kế\"."
+    },
+    {
+      "label": "Dạng 4 · Bài ngược: tìm nhiệt trao đổi từ công và độ tăng nhiệt độ",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại cả ba dạng trước: nhận ra cách biến đổi là thực hiện công (dạng 1), quy ước dấu (dạng 2), tính bằng $mc\\Delta t$ (dạng 3).\nThêm MỘT khó mới: bài ngược. Ẩn là $Q$; phải tự rút $\\Delta U$ từ độ tăng nhiệt độ và $A$ từ công suất, rồi suy dấu của $Q$.",
+      "yccd_de_xuat": "Vận dụng ΔU = A + Q",
+      "de_bai": "Một máy xay sinh tố không có bộ phận đun nóng. Người ta cho 0,500 kg nước ở 20,0 °C vào cối nhựa rồi cho máy chạy liên tục 60 s. Lưỡi dao quay khuấy nước, truyền công cho nước với công suất 300 W. Tắt máy, đo được nước ở 28,0 °C. Coi thể tích nước không đổi; lấy $c = 4180\\ \\text{J/(kg·K)}$.\na) Tính công mà lưỡi dao thực hiện lên nước.\nb) Tính độ tăng nội năng của nước.\nc) Trong 60 s đó, nước thu hay toả nhiệt? Tính nhiệt lượng ấy.",
+      "dieu_kien_ap_dung": "Hệ là khối nước; thể tích nước coi không đổi nên nội năng chỉ đổi theo nhiệt độ, và độ tăng nội năng bằng nhiệt lượng cần để nước tăng cùng độ tăng nhiệt độ, $\\Delta U = mc\\Delta t$.",
+      "phan_tich": [
+        {
+          "trich_de": "không có bộ phận đun nóng",
+          "du_lieu": "Dữ kiện ẩn: không có nguồn nhiệt đưa vào, nước nóng lên do nhận công",
+          "kien_thuc": "Hai cách biến đổi nội năng: ở đây là thực hiện công"
+        },
+        {
+          "trich_de": "0,500 kg nước ở 20,0 °C",
+          "du_lieu": "$m = 0{,}500\\ \\text{kg}$, $t_1 = 20{,}0\\ ^\\circ\\text{C}$",
+          "kien_thuc": "Dữ kiện cho $mc\\Delta t$"
+        },
+        {
+          "trich_de": "chạy liên tục 60 s",
+          "du_lieu": "$\\tau = 60\\ \\text{s}$",
+          "kien_thuc": "Thời gian truyền công"
+        },
+        {
+          "trich_de": "công suất 300 W",
+          "du_lieu": "$P = 300\\ \\text{W}$",
+          "kien_thuc": "Năng lượng truyền trong thời gian $\\tau$ là $P\\tau$"
+        },
+        {
+          "trich_de": "nước ở 28,0 °C",
+          "du_lieu": "$t_2 = 28{,}0\\ ^\\circ\\text{C}$",
+          "kien_thuc": "$\\Delta t = t_2 - t_1$"
+        },
+        {
+          "trich_de": "Coi thể tích nước không đổi",
+          "du_lieu": "$\\Delta U = mc\\Delta t$",
+          "kien_thuc": "Nội năng phụ thuộc nhiệt độ và thể tích; thể tích không đổi thì chỉ còn nhiệt độ"
+        },
+        {
+          "trich_de": "nước thu hay toả nhiệt",
+          "du_lieu": "Cần tìm $Q$ và dấu của nó",
+          "kien_thuc": "$Q = \\Delta U - A$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "Q",
+        "cong_thuc": "Q = mc\\left(t_2 - t_1\\right) - P\\tau"
+      },
+      "kien_thuc_goi_lai": [
+        "Năng lượng đưa vào trong thời gian $\\tau$ với công suất $P$ là $P\\tau$.",
+        "$Q = mc\\Delta t$ cho biết nhiệt lượng cần để vật tăng $\\Delta t$.",
+        "$\\Delta U = A + Q$ → $Q = \\Delta U - A$.",
+        "$Q \\lt 0$: hệ toả nhiệt."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Nhận ra cách biến đổi nội năng",
+          "cong_thuc_chu": "Không có nguồn nhiệt, có lưỡi dao khuấy → nhận công",
+          "the_so": "$A \\gt 0$; $Q$ chưa biết dấu",
+          "ket_qua": "Thực hiện công là cách chính",
+          "kiem_tra": "Nước vẫn có thể trao đổi nhiệt với cối và không khí, nên chưa được cho $Q = 0$."
+        },
+        {
+          "tieu_de": "Tính công lưỡi dao (ý a)",
+          "cong_thuc_chu": "$A = P\\tau$",
+          "the_so": "$A = 300 \\times 60$",
+          "ket_qua": "$A = +18\\ 000\\ \\text{J}$",
+          "kiem_tra": "$\\text{W} \\cdot \\text{s} = \\text{J}$. Dương vì nước nhận công."
+        },
+        {
+          "tieu_de": "Tính độ tăng nội năng (ý b)",
+          "cong_thuc_chu": "$\\Delta U = mc\\left(t_2 - t_1\\right)$",
+          "the_so": "$\\Delta U = 0{,}500 \\times 4180 \\times \\left(28{,}0 - 20{,}0\\right)$",
+          "ket_qua": "$\\Delta U = +16\\ 720\\ \\text{J}$",
+          "kiem_tra": "Đơn vị J. Dương vì nước nóng lên."
+        },
+        {
+          "tieu_de": "Suy ra nhiệt lượng (ý c)",
+          "cong_thuc_chu": "$Q = \\Delta U - A$",
+          "the_so": "$Q = 16\\ 720 - 18\\ 000$",
+          "ket_qua": "$Q = -1280\\ \\text{J}$: nước toả $1280\\ \\text{J}$",
+          "kiem_tra": "Âm nghĩa là nước toả nhiệt ra cối và không khí. Độ lớn bằng khoảng 7% công, hợp lí với cối nhựa không cách nhiệt."
+        },
+        {
+          "tieu_de": "Kiểm tra chéo",
+          "cong_thuc_chu": "Nếu không mất nhiệt: $\\Delta t_\\text{lí tưởng} = \\dfrac{A}{mc}$",
+          "the_so": "$\\Delta t_\\text{lí tưởng} = \\dfrac{18\\ 000}{0{,}500 \\times 4180}$",
+          "ket_qua": "$\\Delta t_\\text{lí tưởng} \\approx 8{,}61\\ \\text{K}$",
+          "kiem_tra": "Đo được $8{,}0\\ \\text{K} \\lt 8{,}61\\ \\text{K}$. Nước nóng lên ít hơn mức lí tưởng, khớp với việc nước toả bớt nhiệt."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 18000,
+          "don_vi": "J"
+        },
+        {
+          "y": "b",
+          "gia_tri": 16720,
+          "don_vi": "J"
+        },
+        {
+          "y": "c",
+          "gia_tri": -1280,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Công lưỡi dao",
+          "bieu_thuc": "300*60",
+          "ky_vong": 18000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Độ tăng nội năng nước",
+          "bieu_thuc": "0.500*4180*(28.0-20.0)",
+          "ky_vong": 16720,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Nhiệt lượng nước trao đổi",
+          "bieu_thuc": "0.500*4180*(28.0-20.0) - 300*60",
+          "ky_vong": -1280,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Độ tăng nhiệt độ lí tưởng",
+          "bieu_thuc": "300*60/(0.500*4180)",
+          "ky_vong": 8.612,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề đời sống cho công suất, thời gian và nhiệt độ đầu, cuối, nhưng hỏi nhiệt lượng trao đổi hoặc \"thu hay toả\" → tính $A = P\\tau$, tính $\\Delta U = mc\\Delta t$, rồi $Q = \\Delta U - A$ và đọc dấu.",
+      "bay_thuong_gap": [
+        "Thấy máy không có bộ phận đun nên cho luôn $Q = 0$, rồi lấy $\\Delta U = A$.",
+        "Viết $Q = A - \\Delta U = +1280\\ \\text{J}$ và kết luận nước thu nhiệt.",
+        "Gọi $mc\\Delta t$ là \"nhiệt lượng nước nhận được\" trong khi nước không được đun.",
+        "Dùng $\\Delta t = 28$ thay vì $8{,}0\\ \\text{K}$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Bài lí thuyết nêu $Q = mc\\Delta t$ cho truyền nhiệt. Ở đây dùng $\\Delta U = mc\\Delta t$ khi nước nóng lên do nhận công, lập luận rằng nội năng chỉ phụ thuộc trạng thái. Cần giáo viên duyệt có vượt phạm vi bài không.",
+        "Công suất cơ học 300 W truyền cho nước là giá trị giả định hợp lí cho máy xay cỡ trung; công suất điện ghi trên máy thường lớn hơn.",
+        "Công thức $P\\tau$ trong bài dùng cho nhiệt lượng bếp điện; ở đây dùng cho công của lưỡi dao, cùng ý nghĩa năng lượng truyền trong thời gian $\\tau$."
+      ],
+      "mo_phong_goi_y": "Cối xay nhựa chứa nước, lưỡi dao quay tạo xoáy. Mũi tên công đi từ lưỡi dao vào nước, kèm đồng hồ đếm giây chạy tới 60 s. Mũi tên nhiệt lượn sóng mờ đi từ thành cối ra không khí, không ghi chiều chắc chắn. Nhiệt kế trong nước dâng dần, không hiện số cuối. Nhãn: \"nước (hệ)\", \"lưỡi dao\", \"A = Pτ\", \"Q = ?\", \"cối nhựa\", \"không khí\"."
+    }
+  ]
+}

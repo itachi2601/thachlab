@@ -1,0 +1,514 @@
+Bạn là học sinh lớp 12 hồ sơ "trung-binh" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). Dưới đây là bài "Máy phát điện xoay chiều. Máy biến áp" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").
+
+=== NỘI DUNG BÀI (HTML) ===
+<div>
+<p>🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu <strong>nguyên tắc tạo dòng xoay chiều</strong>, cấu tạo <strong>máy phát</strong> và công thức $f = np$.</li>
+<li>Nắm cấu tạo, công thức <strong>máy biến áp</strong>; phân biệt tăng áp với hạ áp.</li>
+<li>Giải thích vì sao phải <strong>tăng áp trước khi truyền tải</strong>.</li>
+</ul>
+<p>Cuối bài, em trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 7 câu tự kiểm tra và 1 câu dự đoán.</p>
+</div>
+
+<h3>I. Mở bài: từ tua-bin tới ổ cắm trong phòng em</h3>
+
+<p>Nước sông chảy xuống tua-bin, trục quay kéo rô-to tổ máy. Vài trăm cây số sau, ổ cắm nhà em ghi <strong>220 V – 50 Hz</strong>.</p>
+
+<p>Trên đường đi, điện áp qua vài trạm: có trạm đẩy lên <strong>500 kV</strong>, có trạm kéo về <strong>220 V</strong>. Thiết bị nào đổi được con số đó?</p>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 1. Bốn chặng: máy phát → tăng áp lên 500 kV → đường dây → hạ áp về 220 V.</figcaption></figure>
+
+<div>
+<p>🤔 Dự đoán trước khi học</p>
+<p>Đường dây được đẩy lên <strong>500 kV</strong> để:</p>
+<div>
+<input><label>A. Sinh thêm điện năng vì điện áp cao</label>
+<input><label>B. Giảm hao phí toả nhiệt trên dây dẫn</label>
+<input><label>C. Giữ cho dòng trên dây không đổi chiều</label>
+<input><label>D. Tăng tần số cho động cơ quay nhanh hơn</label>
+
+
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>II.1 Nguyên tắc tạo dòng điện xoay chiều</h4>
+
+<p>🔑 <strong>Quay khung · Từ thông biến thiên · Suất điện động xoay chiều</strong></p>
+
+<ul>
+<li>Khung $N$ vòng, diện tích $S$ quay đều với tốc độ góc $\omega$ quanh trục vuông góc $\vec{B}$.</li>
+<li>Pháp tuyến hợp với $\vec{B}$ góc $\alpha = \omega t + \varphi$ nên $\Phi = NBS\cos\alpha$ biến thiên tuần hoàn, sinh suất điện động cảm ứng xoay chiều.</li>
+</ul>
+
+<p>$$e = E_0\cos(\omega t + \varphi')$$</p>
+
+<p>$$E_0 = NBS\omega$$</p>
+
+<p>Kí hiệu: $e$, $E_0$ (V); $\omega$ (rad/s); $N$ (vòng); $S$ (m²); $B$ (T); $\varphi' = \varphi - \dfrac{\pi}{2}$ là pha ban đầu của $e$.</p>
+
+<p>Mẹo (rô-to một cặp cực, $p = 1$): <strong>một vòng quay, một chu kì</strong>.</p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Đại lượng nào quyết định suất điện động cảm ứng trong khung quay?</p>
+<div>
+<input><label>A. Độ lớn từ thông qua khung</label>
+<input><label>B. Tốc độ biến thiên của từ thông</label>
+<input><label>C. Chiều dài khung dây</label>
+<input><label>D. Điện trở khung dây</label>
+
+
+</div>
+</div>
+
+<h4>II.2 Máy phát điện xoay chiều một pha</h4>
+
+<p>🔑 <strong>Phần cảm · Phần ứng · Vành khuyên và chổi quét</strong></p>
+
+<ul>
+<li><strong>Phần cảm</strong>: nam châm — tạo ra từ trường.</li>
+<li><strong>Phần ứng</strong>: cuộn dây — sinh suất điện động cảm ứng.</li>
+<li><strong>Stato</strong> đứng yên, <strong>rô-to</strong> quay; máy thực tế cho nam châm quay.</li>
+<li>Phần ứng quay thì dòng ra ngoài nhờ <strong>vành khuyên</strong> và <strong>chổi quét</strong>.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay — cần vành khuyên và chổi quét.</figcaption></figure>
+
+<p>$$f = np$$</p>
+
+<p>$n$: số vòng mỗi giây; $p$: số cặp cực. Đề cho vòng/phút thì $f = \dfrac{np}{60}$.</p>
+
+<div>
+<p>🔬 Thí nghiệm đo: quay đều và đếm tần số</p>
+<ol>
+<li><strong>Làm:</strong> nối máy phát mini (hai cặp cực) với tần số kế; quay đều bằng động cơ/khoan ở $n = 5$–$25$ vòng/s (bước 5).</li>
+<li><strong>Quan sát:</strong> quay càng nhanh, kim càng lệch; ghi số đọc vào bảng.</li>
+<li><strong>Rút ra:</strong> tính $f/n$ từng hàng, so với $p = 2$.</li>
+</ol>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>$n$ (vòng/s)</th><th>$f$ đo (Hz)</th><th>$f/n$</th></tr>
+</thead>
+<tbody>
+<tr><td>5</td><td>9,8</td><td>1,96</td></tr>
+<tr><td>10</td><td>20,1</td><td>2,01</td></tr>
+<tr><td>15</td><td>30,2</td><td>2,01</td></tr>
+<tr><td>20</td><td>39,6</td><td>1,98</td></tr>
+<tr><td>25</td><td>50,3</td><td>2,01</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><em>Bảng số liệu mẫu (minh hoạ).</em></p>
+
+<details>
+<summary>📊 Bấm xem: bảng cho thấy gì, sai số từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
+<p><strong>Rút ra:</strong> $f/n$ luôn xấp xỉ $2$, đúng bằng số cặp cực, nên $f = np$. Đến $n = 25$ vòng/s thì $f \approx 50\ \text{Hz}$ — đúng tần số lưới điện.</p>
+<p><strong>Sai số:</strong> động cơ hoặc khoan quay không đều nên tốc độ thật lệch tốc độ đã định; tần số kế sai số $\pm 0{,}1\ \text{Hz}$; quay nhanh thì khung dây rung. Vì vậy $f/n$ dao động trong khoảng $1{,}96$–$2{,}01$ chứ không đúng $2{,}00$.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Rô-to 2 cặp cực quay 1500 vòng/phút. Tần số dòng điện là:</p>
+<div>
+<input><label>A. $25\ \text{Hz}$</label>
+<input><label>B. $50\ \text{Hz}$</label>
+<input><label>C. $100\ \text{Hz}$</label>
+<input><label>D. $3000\ \text{Hz}$</label>
+
+
+</div>
+</div>
+
+<h4>II.3 Máy phát điện xoay chiều ba pha</h4>
+
+<p>🔑 <strong>Ba cuộn lệch $120^\circ$ · Lệch pha $\dfrac{2\pi}{3}$</strong></p>
+
+<ul>
+<li>Ba suất điện động hình sin <strong>cùng tần số, biên độ, lệch pha $\dfrac{2\pi}{3}$</strong>.</li>
+<li>Stato: ba cuộn dây giống nhau lệch $\dfrac{2\pi}{3}$; rô-to nam châm quay đều nên từ thông qua ba cuộn biến thiên lệch pha $\dfrac{2\pi}{3}$.</li>
+<li><strong>Hệ ba pha</strong>: máy phát, đường dây, động cơ ba pha; lợi: tiết kiệm dây, tạo <strong>từ trường quay</strong>.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 3. Ba cuộn dây lệch 120° trên stato; nam châm quay đều cho ba suất điện động cùng tần số, cùng biên độ, lệch pha một phần ba chu kì.</figcaption></figure>
+
+<div>
+<p>🔬 Thí nghiệm: ba cuộn dây lệch $120^\circ$ và ba bóng đèn</p>
+<ol>
+<li><strong>Làm:</strong> quấn ba cuộn dây giống nhau trên vòng nhựa, lệch $120^\circ$; nối mỗi cuộn với một đèn LED rồi cho nam châm quay chậm.</li>
+<li><strong>Quan sát:</strong> ba đèn chớp lệch nhịp nhau, không bao giờ cùng lúc.</li>
+<li><strong>Rút ra:</strong> ba suất điện động cùng tần số, biên độ, lệch pha một phần ba chu kì.</li>
+</ol>
+</div>
+
+<details>
+<summary>🧮 Bấm xem: lưới ba pha và cặp số 220 V – 380 V</summary>
+<p>Lưới ba pha thường mắc <strong>hình sao</strong>: ba dây pha và một dây trung hoà. Điện áp giữa hai dây pha là $U_d$, giữa dây pha với dây trung hoà là $U_p$, và $U_d = \sqrt{3}\,U_p$. Với $U_p = 220\ \text{V}$ thì $U_d \approx 380\ \text{V}$ — đúng hai con số ghi trên thiết bị ba pha. Mắc <strong>hình tam giác</strong> thì $U_d = U_p$, dùng cho tải ba pha đối xứng.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Ba suất điện động của máy phát ba pha có đặc điểm nào?</p>
+<div>
+<input><label>A. Cùng tần số, cùng biên độ, lệch pha $120^\circ$</label>
+<input><label>B. Cùng pha, biên độ giảm dần</label>
+<input><label>C. Ba tần số khác nhau</label>
+<input><label>D. Lệch pha $90^\circ$</label>
+
+
+</div>
+</div>
+
+<h4>II.4 Máy biến áp</h4>
+
+<p>🔑 <strong>Hai cuộn dây · Lõi kín · Cảm ứng điện từ</strong></p>
+
+<ul>
+<li>Hai cuộn dây đồng $N_1 \ne N_2$ quấn trên một <strong>lõi kín</strong> bằng lá thép silic.</li>
+<li>Cuộn <strong>sơ cấp</strong> $N_1$ nối nguồn xoay chiều; cuộn <strong>thứ cấp</strong> $N_2$ nối tải.</li>
+<li>Dòng xoay chiều ở cuộn sơ cấp gây từ thông biến thiên trong lõi; từ thông mỗi vòng hai cuộn bằng nhau nên $e_1 = N_1\dfrac{\Delta\Phi}{\Delta t}$ và $e_2 = N_2\dfrac{\Delta\Phi}{\Delta t}$, suy ra $e_1/e_2 = N_1/N_2$.</li>
+</ul>
+
+<details>
+<summary>👀 Bấm xem: vì sao lõi phải ghép từ nhiều lá mỏng cách điện?</summary>
+<p>Từ thông biến thiên sinh ra dòng Fu-cô (dòng xoáy) chạy trong khối thép, làm lõi nóng lên vô ích. Ghép lõi từ nhiều lá thép silic mỏng, sơn cách điện giữa các lá thì mỗi lá chỉ còn một diện tích nhỏ, dòng xoáy yếu hẳn.</p>
+<p>Nối máy biến áp với nguồn một chiều có cường độ không đổi thì cuộn thứ cấp không có suất điện động, vì từ thông trong lõi không biến thiên.</p>
+</details>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 4. Hai cuộn dây trên cùng một lõi kín; lõi ghép từ lá thép silic mỏng cách điện để cắt dòng Fu-cô.</figcaption></figure>
+
+<p>Máy biến áp lí tưởng (bỏ hao phí):</p>
+
+<p>$$\frac{U_1}{U_2} = \frac{N_1}{N_2} = \frac{I_2}{I_1}$$</p>
+
+<ul>
+<li>$U$ (V), $I$ (A) là giá trị hiệu dụng; $k = N_1/N_2$: $k \gt 1$ <strong>hạ áp</strong>, $k \lt 1$ <strong>tăng áp</strong>.</li>
+<li><strong>Không đổi tần số</strong>, <strong>không sinh thêm điện năng</strong>: $U$ tăng bao nhiêu lần, $I$ giảm bấy nhiêu.</li>
+<li>Hiệu suất $H = \dfrac{U_2I_2\cos\varphi_2}{U_1I_1\cos\varphi_1}$; máy lí tưởng có $H = 1$.</li>
+</ul>
+
+<div>
+<p>🔬 Thí nghiệm đo: tự quấn máy biến áp</p>
+<ol>
+<li><strong>Làm:</strong> quấn cuộn sơ cấp $N_1 = 200$ vòng trên lõi kín, nối nguồn $U_1 = 12\ \text{V}$; quấn cuộn thứ cấp 100, 200, 400, 600 vòng, đo $U_2$.</li>
+<li><strong>Quan sát:</strong> $U_2$ tăng theo $N_2$; ở $N_2 = 200$ vòng, vôn kế chỉ khoảng $11{,}7\ \text{V}$.</li>
+<li><strong>Rút ra:</strong> so $\dfrac{U_2}{U_1}$ với $\dfrac{N_2}{N_1}$.</li>
+</ol>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>$N_2$ (vòng)</th><th>$U_2$ đo (V)</th><th>So với lí thuyết</th></tr>
+</thead>
+<tbody>
+<tr><td>100</td><td>5,8</td><td>thấp hơn 6,0</td></tr>
+<tr><td>200</td><td>11,7</td><td>thấp hơn 12,0</td></tr>
+<tr><td>400</td><td>23,5</td><td>thấp hơn 24,0</td></tr>
+<tr><td>600</td><td>35,0</td><td>thấp hơn 36,0</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><em>Bảng số liệu mẫu (minh hoạ).</em></p>
+
+<details>
+<summary>📊 Bấm xem: vì sao $U_2$ đo thấp hơn tính toán?</summary>
+<p><strong>Rút ra:</strong> tỉ số $\dfrac{U_2}{U_1}$ bám sát $\dfrac{N_2}{N_1}$ (0,48 so với 0,50; 1,96 so với 2,00; 2,92 so với 3,00), nên công thức $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}$ là đúng.</p>
+<p><strong>Sai số:</strong> một phần từ thông rò ra ngoài không khí; cuộn dây bằng đồng có điện trở gây sụt áp. Hai nguồn này đều làm $U_2$ thấp hơn, lệch chừng $2$–$4\%$; riêng vôn kế sai số khoảng $1\%$ có thể lệch về cả hai phía.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Máy biến áp lí tưởng có $N_1 = 500$ vòng, $N_2 = 50$ vòng, $U_1 = 220\ \text{V}$. Điện áp thứ cấp là:</p>
+<div>
+<input><label>A. $22\ \text{V}$</label>
+<input><label>B. $2200\ \text{V}$</label>
+<input><label>C. $220\ \text{V}$</label>
+<input><label>D. $2{,}2\ \text{V}$</label>
+
+
+</div>
+</div>
+
+<h4>II.5 Truyền tải điện năng đi xa</h4>
+
+<p>🔑 <strong>Tăng áp trước · Giảm hao phí · $k^2$ lần</strong></p>
+
+<ul>
+<li>Công suất $P$, điện áp $U$ (coi $\cos\varphi \approx 1$): dòng trên dây $I = P/(U\cos\varphi)$.</li>
+<li>Dây có điện trở $R$ nên toả nhiệt: hao phí $\Delta P = RI^2$, mất hẳn.</li>
+<li>Tăng $U$ lên $k$ lần thì $\Delta P$ giảm $k^2$ lần; nên đường dây dài dùng điện áp cao.</li>
+</ul>
+
+<p>$$\Delta P = RI^2 = \dfrac{RP^2}{U^2}$$</p>
+
+<p>Hiệu suất truyền tải $H = 1 - \dfrac{\Delta P}{P}$.</p>
+
+<div>
+<p>🧪 Ví dụ thực tế: vì sao phải dùng đường dây cao thế</p>
+<ol>
+<li><strong>Làm:</strong> nối bóng đèn 12 V với nguồn xoay chiều 12 V bằng dây ngắn, rồi thay bằng hai cuộn dây mảnh dài 20 m mắc nối tiếp.</li>
+<li><strong>Quan sát:</strong> đèn sáng yếu hẳn đi; sờ vào cuộn dây thấy ấm lên.</li>
+<li><strong>Rút ra:</strong> phần dây dẫn "ăn" mất là $\Delta P = RI^2$.</li>
+</ol>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>$U$ (V)</th><th>$\Delta P$ (W)</th><th>$\Delta P/P$</th></tr>
+</thead>
+<tbody>
+<tr><td>250</td><td>12 800</td><td>64 %</td></tr>
+<tr><td>500</td><td>3 200</td><td>16 %</td></tr>
+<tr><td>1 000</td><td>800</td><td>4 %</td></tr>
+<tr><td>5 000</td><td>32</td><td>0,16 %</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><em>Với $P = 20\ \text{kW}$, $R = 2\ \Omega$.</em></p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Cùng công suất, tăng điện áp nơi phát lên 10 lần thì hao phí:</p>
+<div>
+<input><label>A. giảm 10 lần</label>
+<input><label>B. giảm 100 lần</label>
+<input><label>C. không đổi</label>
+<input><label>D. tăng 10 lần</label>
+
+
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "Máy biến áp sinh thêm điện năng"</h4>
+
+<p>Điện áp ra lớn hơn không có nghĩa là có thêm năng lượng.</p>
+
+<table>
+<thead>
+<tr><th>Máy phát điện</th><th>Máy biến áp</th></tr>
+</thead>
+<tbody>
+<tr><td>Quay rô-to trong từ trường</td><td>Đổi mức điện áp xoay chiều</td></tr>
+<tr><td><strong>Chuyển cơ năng thành điện năng</strong> công suất $P$</td><td><strong>Giữ nguyên</strong> công suất: $P_1 = P_2$</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Bấm xem: "tăng áp để thêm năng lượng" sai ở đâu?</summary>
+<p>Nếu tăng áp mà công suất cũng tăng thì năng lượng sinh ra từ hư không — vi phạm định luật bảo toàn năng lượng. Thực tế điện áp tăng bao nhiêu lần thì cường độ hiệu dụng giảm bấy nhiêu lần, tích $UI$ không đổi. Đường dây cao thế không tạo thêm điện; nó chỉ giúp chở điện tới nơi tiêu thụ mà mất ít hơn.</p>
+</details>
+
+<p><strong>Câu 6.</strong> Một máy biến áp lí tưởng tăng điện áp từ $220\ \text{V}$ lên $22\ \text{kV}$. Điều nào sau đây đúng?</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không chắc</label></p>
+<div>
+<input><label>A. Công suất hai cuộn bằng nhau, dòng giảm 100 lần</label>
+<input><label>B. Công suất thứ cấp lớn hơn 100 lần</label>
+<input><label>C. Công suất thứ cấp nhỏ hơn 100 lần</label>
+<input><label>D. Tần số cũng tăng 100 lần</label>
+
+
+</div>
+
+<h4>Bẫy 2: "$f = n$, không cần để ý số cặp cực"</h4>
+
+<p>Công thức đúng là $f = np$: nhiều cặp cực thì tần số lớn.</p>
+
+<table>
+<thead>
+<tr><th>Rô-to 1 cặp cực</th><th>Rô-to 2 cặp cực</th></tr>
+</thead>
+<tbody>
+<tr><td>Một vòng quay: 1 chu kì</td><td>Một vòng quay: 2 chu kì</td></tr>
+<tr><td>Quay 25 vòng/s → $25\ \text{Hz}$</td><td>Quay 25 vòng/s → $50\ \text{Hz}$</td></tr>
+<tr><td>Muốn 50 Hz phải quay 50 vòng/s</td><td>Muốn 50 Hz chỉ cần quay 25 vòng/s</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Bấm xem: vì sao rô-to nhà máy thuỷ điện quay chậm mà vẫn ra 50 Hz?</summary>
+<p>Tua-bin nước quay khoảng $125$ vòng/phút $= 2{,}08$ vòng/s. Muốn $f = 50\ \text{Hz}$ thì $p = \dfrac{50}{2{,}08} \approx 24$ cặp cực, nên rô-to là vành nam châm có rất nhiều cặp cực. Máy phát tua-bin khí quay 3000 vòng/phút $= 50$ vòng/s chỉ cần $p = 1$.</p>
+</details>
+
+<h4>Bẫy 3: "Phần cảm là cuộn dây, phần ứng là nam châm"</h4>
+
+<p>Tên gọi dựa vào <em>nhiệm vụ</em>, không theo bộ phận quay/đứng yên.</p>
+
+<table>
+<thead>
+<tr><th>Phần cảm</th><th>Phần ứng</th></tr>
+</thead>
+<tbody>
+<tr><td>Nhiệm vụ: tạo ra từ trường</td><td>Nhiệm vụ: sinh suất điện động cảm ứng</td></tr>
+<tr><td>Thường là nam châm (vĩnh cửu hoặc điện)</td><td>Luôn là các cuộn dây dẫn</td></tr>
+<tr><td>Có thể là rô-to hoặc stato</td><td>Cũng có thể là rô-to hoặc stato</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Bấm xem: khi nào cần vành khuyên, khi nào không?</summary>
+<p>Vành khuyên và chổi quét chỉ cần khi <strong>phần ứng quay</strong>, để đưa dòng điện từ khung dây đang quay ra mạch ngoài. Nếu cho nam châm quay còn cuộn dây đứng yên thì lấy điện trực tiếp từ hai đầu cuộn dây, không cần vành khuyên — máy trong nhà máy làm vậy để tránh tia lửa ở chổi quét.</p>
+</details>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div>
+<p>🎤 Trả bài</p>
+<details>
+<summary>1. Nguyên tắc tạo dòng điện xoay chiều? Viết biểu thức suất điện động. <small>(nói bằng lời em trước)</small></summary>
+<p><strong>Quay khung · Từ thông biến thiên · Cảm ứng điện từ.</strong> Khung quay đều trong từ trường làm từ thông biến thiên tuần hoàn, sinh ra $e = E_0\cos(\omega t + \varphi')$ với $E_0 = NBS\omega$.</p>
+</details>
+
+<details>
+<summary>2. Máy phát một pha gồm những bộ phận nào? Vành khuyên để làm gì? <small>(nói bằng lời em trước)</small></summary>
+<p><strong>Phần cảm (nam châm) · Phần ứng (cuộn dây).</strong> Bộ phận đứng yên là stato, quay là rô-to; vành khuyên và chổi quét đưa dòng từ khung quay ra mạch ngoài.</p>
+</details>
+
+<details>
+<summary>3. Viết $f = np$ và nói rõ $n$, $p$. Rô-to 4 cặp cực quay 750 vòng/phút cho $f$ bao nhiêu? <small>(nói bằng lời em trước)</small></summary>
+<p>$n$ là số vòng mỗi giây (vòng/s), $p$ là số cặp cực. $750$ vòng/phút $= 12{,}5$ vòng/s nên $f = 12{,}5 \times 4 = 50\ \text{Hz}$.</p>
+</details>
+
+<details>
+<summary>4. Máy phát ba pha: ba suất điện động có đặc điểm gì? Hệ ba pha gồm gì? <small>(nói bằng lời em trước)</small></summary>
+<p><strong>Cùng tần số · Cùng biên độ · Lệch pha $\dfrac{2\pi}{3}$.</strong> Ba cuộn dây lệch $120^\circ$ nên từ thông qua chúng biến thiên lệch pha nhau một phần ba chu kì. Hệ ba pha: máy phát, đường dây, động cơ ba pha.</p>
+</details>
+
+<details>
+<summary>5. Máy biến áp: cấu tạo, công thức, khi nào là máy tăng áp? <small>(nói bằng lời em trước)</small></summary>
+<p><strong>Hai cuộn · Lõi kín · Cảm ứng điện từ.</strong> $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2} = \dfrac{I_2}{I_1}$; $k = \dfrac{N_1}{N_2} \lt 1$ là máy tăng áp. Lõi ghép từ lá thép silic mỏng cách điện để cắt dòng Fu-cô.</p>
+</details>
+
+<details>
+<summary>6. Viết công thức hao phí khi truyền tải; vì sao tăng $U$ thì hao phí giảm $k^2$ lần? <small>(nói bằng lời em trước)</small></summary>
+<p><strong>$\Delta P = RI^2$ · Tăng $U$ thì $I$ giảm · Bình phương.</strong> Với $P$ không đổi, $I = \dfrac{P}{U\cos\varphi}$ nên tăng $U$ lên $k$ lần thì hao phí giảm $k^2$ lần.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: tổ máy 20 kW và đường dây 2 Ω</h3>
+
+<div>
+<p>📝 Đề bài</p>
+<p>Tổ máy phát một pha có rô-to <strong>hai cặp cực</strong>, quay <strong>1500 vòng/phút</strong>, phát ra <strong>500 V</strong>, công suất <strong>20 kW</strong>.</p>
+<p>a) Tính tần số dòng điện.</p>
+<p>b) Dòng qua máy biến áp lí tưởng: sơ cấp <strong>500 vòng</strong>, thứ cấp <strong>5000 vòng</strong>. Máy tăng áp hay hạ áp? Tính điện áp thứ cấp.</p>
+<p>c) Đường dây điện trở tổng <strong>2 Ω</strong>. Tính hao phí khi chưa dùng và khi đã dùng máy biến áp.</p>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"rô-to hai cặp cực"</td><td>$p = 2$</td><td>số cặp cực trong $f = np$</td></tr>
+<tr><td>"quay 1500 vòng/phút"</td><td>$n = 25$ vòng/s</td><td>đổi vòng/phút ra vòng/s</td></tr>
+<tr><td>"500 V, 20 kW"</td><td>$U_1 = 500\ \text{V}$, $P = 2\cdot10^4\ \text{W}$</td><td>$P = UI$</td></tr>
+<tr><td>"sơ cấp 500 vòng, thứ cấp 5000 vòng"</td><td>$N_1 = 500$, $N_2 = 5000$</td><td>$\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}$</td></tr>
+<tr><td>"máy biến áp lí tưởng"</td><td>$H = 1$</td><td>$P_1 = P_2$</td></tr>
+<tr><td>"điện trở tổng 2 Ω"</td><td>$R = 2\ \Omega$</td><td>hao phí $\Delta P = RI^2 = \dfrac{RP^2}{U^2}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol>
+<li>Câu a: $n = \dfrac{1500}{60} = 25$ vòng/s, rồi $f = np = 25 \times 2 = 50\ \text{Hz}$.</li>
+<li>Câu b: $k = \dfrac{500}{5000} = 0{,}1 \lt 1$ nên $U_2 \gt U_1$ — máy <strong>tăng áp</strong>. $U_2 = U_1\dfrac{N_2}{N_1} = 500 \times 10 = 5000\ \text{V}$.</li>
+<li>Câu c khi chưa dùng máy biến áp: $I = \dfrac{20\,000}{500} = 40\ \text{A}$, hao phí $\Delta P = RI^2 = 2 \times 40^2 = 3200\ \text{W}$.</li>
+<li>Câu c khi đã dùng máy biến áp: $I = \dfrac{20\,000}{5000} = 4\ \text{A}$, hao phí $\Delta P = 2 \times 4^2 = 32\ \text{W}$.</li>
+<li>Kiểm tra: điện áp tăng 10 lần nên hao phí phải giảm $10^2 = 100$ lần: $\dfrac{3200}{100} = 32\ \text{W}$ — khớp. Hiệu suất truyền tải lúc đó là $H = 1 - \dfrac{32}{20\,000} = 99{,}84\%$, còn nếu không dùng máy biến áp thì chỉ đạt $84\%$.</li>
+</ol>
+</details>
+
+<div>
+<p>✍️ Điền bước còn thiếu (làm trên giấy)</p>
+<p>Vẫn tổ máy đó, nhưng rô-to có <strong>bốn cặp cực</strong> và quay <strong>750 vòng/phút</strong>.</p>
+<ol>
+<li>Bước 1: $n = \dfrac{750}{60} = 12{,}5$ vòng/s.</li>
+<li><strong>Em điền:</strong> bước 2 — áp dụng $f = np$ với $p = 4$ thì $f$ bằng bao nhiêu?</li>
+<li><strong>Em điền:</strong> bước 3 — máy phát ra đúng tần số lưới chưa? Vì sao?</li>
+</ol>
+<details>
+<summary>Bấm xem bước 2–3</summary>
+<p>$f = np = 12{,}5 \times 4 = 50\ \text{Hz}$ — vẫn đúng tần số lưới. Tốc độ quay giảm một nửa thì số cặp cực phải tăng gấp đôi để tích $np$ không đổi; đó là lí do máy phát tua-bin nước quay chậm dùng rất nhiều cặp cực.</p>
+</details>
+</div>
+
+<div>
+<p>✍️ Thử sức: đổi số vòng cuộn thứ cấp</p>
+<p><strong>Câu 7.</strong> Vẫn đề trên ($R = 2\ \Omega$, $U_1 = 500\ \text{V}$), cuộn thứ cấp <strong>10 000 vòng</strong>. Hao phí trên đường dây là:</p>
+<div>
+<input><label>A. $8\ \text{W}$</label>
+<input><label>B. $32\ \text{W}$</label>
+<input><label>C. $160\ \text{W}$</label>
+<input><label>D. $3200\ \text{W}$</label>
+
+
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Tác dụng của dòng xoay chiều:</strong> quang · nhiệt · từ · hoá · sinh lí.</li>
+<li><strong>Nhà máy thuỷ điện:</strong> rô-to quay chậm nên có hàng chục cặp cực.</li>
+<li><strong>Lưới truyền tải:</strong> 500 kV trên đường dây xa rồi hạ dần về 220 V.</li>
+<li><strong>Bộ sạc laptop:</strong> biến áp hạ 220 V xuống 5–20 V rồi chỉnh lưu.</li>
+</ul>
+
+<div>
+<p>⚠️ Dùng điện xoay chiều cho an toàn</p>
+<ul>
+<li>Chọn thiết bị đúng điện áp; aptomat phù hợp công suất.</li>
+<li>Ổ cắm, cầu dao đặt nơi khô ráo, trên cao.</li>
+<li>Bảo trì định kì; ngắt cầu dao trước khi sửa chữa.</li>
+</ul>
+</div>
+
+<div>
+<p>🎯 Thử thách phân tầng</p>
+
+<details>
+<summary>⭐ Cơ bản: $N_1 = 1000$ vòng, $N_2 = 200$ vòng, $U_1 = 220\ \text{V}$. Tăng áp hay hạ áp? $U_2$ bằng bao nhiêu?</summary>
+<p>$k = \dfrac{N_1}{N_2} = 5 \gt 1$ nên $U_1 \gt U_2$ — đây là máy <strong>hạ áp</strong>. $U_2 = U_1\dfrac{N_2}{N_1} = 220 \times \dfrac{200}{1000} = 44\ \text{V}$.</p>
+</details>
+
+<details>
+<summary>⭐⭐ Khá: vì sao máy biến áp không dùng được với dòng một chiều không đổi?</summary>
+<p>Máy biến áp sống nhờ từ thông <em>biến thiên</em> trong lõi. Dòng một chiều có cường độ không đổi cho từ thông không đổi, nên cuộn thứ cấp không có suất điện động và không có dòng điện. (Lúc vừa đóng hoặc vừa ngắt nguồn thì từ thông biến thiên trong khoảnh khắc, kim điện kế chỉ giật một cái rồi về 0.)</p>
+</details>
+
+<details>
+<summary>⭐⭐⭐ Thách đấu: $R = 5\ \Omega$, $P = 100\ \text{kW}$, $U = 5\ \text{kV}$. Tính hiệu suất; muốn 99% thì $U$ ít nhất bao nhiêu?</summary>
+<p>Ở 5 kV: $I = \dfrac{100\,000}{5000} = 20\ \text{A}$, hao phí $\Delta P = RI^2 = 5 \times 400 = 2000\ \text{W}$, hiệu suất $H = 1 - \dfrac{2000}{100\,000} = 98\%$.</p>
+<p>Muốn $H = 99\%$ thì $\Delta P \le 1000\ \text{W}$. Từ $\Delta P = \dfrac{RP^2}{U^2}$ suy ra $U^2 \ge \dfrac{5 \times (10^5)^2}{1000} = 5\cdot10^7$, tức $U \ge \sqrt{5\cdot10^7} \approx 7100\ \text{V}$. Vậy phải nâng điện áp lên khoảng $7{,}1\ \text{kV}$ trở lên.</p>
+</details>
+</div>
+
+<div>
+<p>✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Dòng xoay chiều:</strong> quay khung · từ thông biến thiên.</li>
+<li><strong>Máy phát một pha:</strong> phần cảm · phần ứng · vành khuyên.</li>
+<li><strong>Tần số:</strong> $f = np$ · $n$ vòng/s · $p$ cặp cực · vòng/phút chia 60.</li>
+<li><strong>Ba pha:</strong> ba cuộn lệch $120^\circ$ · lệch pha $\dfrac{2\pi}{3}$.</li>
+<li><strong>Máy biến áp:</strong> $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2} = \dfrac{I_2}{I_1}$ · $k \gt 1$ là hạ áp.</li>
+<li><strong>Lõi biến áp:</strong> lá thép silic ghép cách điện · cắt dòng Fu-cô.</li>
+<li><strong>Truyền tải:</strong> $\Delta P = RI^2$ · tăng $U$ $k$ lần, hao phí giảm $k^2$.</li>
+<li><strong>An toàn điện:</strong> aptomat đúng công suất · ổ cắm trên cao.</li>
+<li><strong>Đọc đề:</strong> gặp "vòng/phút" thì đổi ra vòng/s.</li>
+</ul>
+</div>

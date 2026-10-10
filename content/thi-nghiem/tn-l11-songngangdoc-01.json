@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
+ "lesson_id": 28,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-ngang-song-doc/theory.html",
+ "id": "tn-l11-songngangdoc-01",
+ "ten": "Sóng ngang trên dây nhảy: dải băng màu chỉ lên xuống",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "song.song_ngang",
+  "song.phan_tu_dao_dong_tai_cho"
+ ],
+ "muc_tieu": "Thấy phương dao động của một điểm trên dây vuông góc với phương truyền sóng, và điểm đó không chạy theo sóng.",
+ "dung_cu": [
+  {
+   "ten": "Dây nhảy dài 4–6 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dải băng màu buộc giữa dây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cột bóng rổ hoặc chân bàn để buộc đầu dây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Buộc một đầu dây vào cột, kéo căng ngang.",
+   "Buộc dải băng màu ở giữa dây.",
+   "Vẩy đầu dây lên xuống một cái thật nhanh."
+  ],
+  "quan_sat": [
+   "Một 'cái bướu' chạy dọc dây tới cột.",
+   "Dải băng chỉ nhảy lên rồi rơi về chỗ cũ, không chạy theo bướu."
+  ],
+  "rut_ra": [
+   "Phương truyền nằm ngang dọc dây, phương dao động thẳng đứng: vuông góc nhau — sóng ngang.",
+   "Phần tử dây chỉ dao động tại chỗ; thứ chạy đi là trạng thái dao động và năng lượng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ cú vẩy",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 30,
+   "mac_dinh": 15,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên dây",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "x_b",
+   "ten": "Vị trí dải băng",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 2.5
+  },
+  {
+   "ky_hieu": "u_b",
+   "ten": "Li độ dải băng theo thời gian",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "u(x, t) = A·exp(−((x − v·t)/w)²) (xung dạng chuông, bề rộng w ≈ 0,4 m)",
+   "u_b(t) = u(x_b, t): dải băng chỉ lên xuống, hoành độ không đổi"
+  ],
+  "gia_thiet": [
+   "bỏ qua tắt dần và phản xạ ở cột",
+   "dây đồng chất, căng đều"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "Vị trí đỉnh xung (m)",
+   "Li độ dải băng (cm)"
+  ],
+  "hang": [
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.4,
+    2.0,
+    3.1
+   ],
+   [
+    0.5,
+    2.5,
+    15.0
+   ],
+   [
+    0.6,
+    3.0,
+    3.1
+   ],
+   [
+    0.8,
+    4.0,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với A = 15 cm, v = 5 m/s, w = 0,4 m; số minh hoạ, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Dải băng lên tới 15 cm đúng lúc đỉnh xung đi qua (t = 0,5 s) rồi về 0; hoành độ dải băng giữ nguyên 2,5 m.",
+ "hien_tuong_hay_sai": [
+  "Tưởng dải băng bị cuốn theo 'cái bướu' tới cột.",
+  "Gọi là sóng ngang vì dây nằm ngang (đúng ra vì dao động vuông góc phương truyền)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "A",
+   "v"
+  ],
+  "dau_ra": [
+   "xung chạy trên dây",
+   "dải băng lên xuống tại chỗ"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Hỏi trước: dải băng có tới được cột không? Rồi cho chạy, vẽ vệt hoành độ dải băng (một đường thẳng đứng)."
+ }
+}

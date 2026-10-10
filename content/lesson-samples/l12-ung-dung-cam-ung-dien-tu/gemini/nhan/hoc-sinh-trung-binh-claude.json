@@ -1,0 +1,193 @@
+{
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "4. Bếp từ — nhiệt sinh ngay trong vật",
+      "trich_nguyen_van": "Nồi nhôm, thuỷ tinh, sứ không nhiễm từ nên gần như không nóng.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 3 nói dòng Foucault có trong mọi khối vật dẫn và lớn vì điện trở nhỏ. Tấm nhôm ở thí nghiệm con lắc và Câu 5 bị hãm mạnh. Mục này lại nói nồi nhôm không nóng vì 'không nhiễm từ'. Em sẽ kết luận sai rằng dòng Foucault chỉ có ở vật nhiễm từ, hoặc không hiểu vì sao nhôm lúc có, lúc không. Từ 'nhiễm từ' cũng chưa được giải thích.",
+      "de_xuat": "Thêm một câu phân biệt 'dẫn điện' với 'nhiễm từ': nhôm vẫn có dòng Foucault (nên tấm nhôm bị hãm), nhưng với bếp từ gia dụng, nồi nhôm điện trở quá nhỏ và không tập trung từ trường nên nhiệt toả ra rất ít. Ghi rõ 'nhiễm từ' là vật liệu bị nam châm hút (sắt, gang, thép)."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Sạc không dây — một máy biến áp không lõi",
+      "trich_nguyen_van": "$U_2 = U_1\\dfrac{N_2}{N_1} = 12 \\times \\dfrac{15}{20} = 9{,}0$ V — đúng bộ số của thí nghiệm vừa đọc.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Thí nghiệm vừa đọc dùng 200 vòng và 150 vòng, không phải 20 và 15. Bài toán mẫu lại gán đúng bảng số đo ấy cho đế sạc 20/15 vòng. Em sẽ không biết bộ số nào là thật, hoặc nghĩ số vòng không quan trọng.",
+      "de_xuat": "Thống nhất một bộ số vòng (200/150 hoặc 20/15) cho thí nghiệm, Câu 2 và bài toán mẫu. Nếu giữ hai bộ số thì sửa thành 'cùng tỉ số vòng 0,75 với thí nghiệm'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Dòng điện Foucault — dòng xoáy trong khối kim loại",
+      "trich_nguyen_van": "đếm số lần tấm qua vị trí thấp nhất (mỗi lần tính là một dao động)",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Ở đây 'một dao động' bị định nghĩa lại thành nửa chu kì, khác hẳn nghĩa đã học. Câu sau viết '0,63 s mỗi dao động — đúng bằng nửa chu kì'. Em sẽ rối giữa 'dao động' và 'chu kì', và có thể mang cách hiểu sai này sang chương Dao động.",
+      "de_xuat": "Đổi thành 'đếm số lần qua vị trí thấp nhất' và giữ nguyên từ 'lần qua' trong mọi số liệu (42 lần, 6 lần, 21 lần), không gọi là 'dao động'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Dòng điện Foucault — dòng xoáy trong khối kim loại",
+      "trich_nguyen_van": "Hình 4. Cùng khối lượng, cùng từ trường",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi Câu 3 nói rãnh xẻ 'lấy đi vài gam nhôm', tức tấm có rãnh nhẹ hơn. Chú thích hình lại nói 'cùng khối lượng'. Em sẽ thấy hai chỗ mâu thuẫn, nhất là khi đang cân nhắc phương án A ('nhẹ hơn').",
+      "de_xuat": "Sửa chú thích thành 'Khối lượng gần như nhau (rãnh chỉ lấy đi vài gam)'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "6. Vì sao lõi máy biến áp phải ghép từ lá thép mỏng cách điện?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Đến mục IV, bài chưa hề nói về lõi máy biến áp ghép lá thép. Nội dung này chỉ xuất hiện ở Thử thách ⭐⭐⭐ mục VI. Em sẽ tưởng mình bỏ sót một đoạn, hoặc không 'nhớ lại' được thứ chưa học.",
+      "de_xuat": "Thêm một gạch đầu dòng về lõi lá thép mỏng vào mục II.3 (nối với thí nghiệm rãnh xẻ), hoặc chuyển câu 6 Trả bài ra sau phần Thử thách."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Sạc không dây — một máy biến áp không lõi",
+      "trich_nguyen_van": "Không có lõi sắt chung nên từ thông rò nhiều, hiệu suất thấp hơn.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Từ thông rò' được dùng ngay trong gạch đầu dòng. Nghĩa của nó ('không móc vòng qua cuộn thứ cấp') chỉ có trong hộp sai số phải bấm mở. Nếu không mở hộp, em không biết 'rò' là rò đi đâu.",
+      "de_xuat": "Thêm ngay sau gạch đầu dòng: 'từ thông rò là phần đường sức của cuộn sơ cấp không đi qua cuộn thứ cấp'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu: đế sạc không dây của điện thoại",
+      "trich_nguyen_van": "hai cuộn áp sát, tỉ số vòng nhỏ mà hiệu suất ghép vẫn cao — điều quyết định là khe hở",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em sẽ so 90% với 93,3% của bài mẫu (8,4/9,0) và thấy kết quả thấp hơn, vậy 'vẫn cao' là so với cái gì? Bài cũng gọi tỉ lệ điện áp là 'hiệu suất', em sẽ nhầm nó với hiệu suất năng lượng. Ý 'tỉ số vòng nhỏ' không rõ liên quan gì.",
+      "de_xuat": "Viết lại: 'Tỉ lệ điện áp đo/lí tưởng đạt 90%, gần với 93% của bài mẫu vì cũng áp sát; tỉ lệ này phụ thuộc khe hở, không phụ thuộc tỉ số vòng'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: đế sạc không dây của điện thoại",
+      "trich_nguyen_van": "Vẫn đế sạc đó, nhưng $N_1' = 25$ vòng, $U_1' = 10$ V, $N_2 = 10$ vòng",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đế sạc 'vẫn đó' mà số vòng lại đổi. $N_1$, $U_1$ có dấu phẩy, còn $N_2$ đổi từ 15 sang 10 lại không có. Em dễ lấy nhầm $N_2 = 15$ từ bài mẫu.",
+      "de_xuat": "Bỏ chữ 'Vẫn đế sạc đó' và ghi đồng bộ $N_1' = 25$, $N_2' = 10$, $U_1' = 10$ V."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: đế sạc không dây của điện thoại",
+      "trich_nguyen_van": "chia nhầm thành một nửa (110 V)",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không thấy lỗi tư duy nào dẫn tới 110 V. Phản hồi gọi tên lỗi mơ hồ nên em không biết mình sai ở bước nào.",
+      "de_xuat": "Thay 110 V bằng một phương án có lỗi rõ ràng, ví dụ lấy hiệu số vòng: 220 × 450/600 = 165 V, rồi ghi đúng tên lỗi trong phản hồi."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Vận dụng $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$ và $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$ để giải thích, tính toán.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em chờ một bài tính với $e_c$, nhưng mọi bài tính trong bài chỉ dùng công thức máy biến áp. $e_c$ chỉ được nhắc tên, nên em không biết vận dụng thế nào.",
+      "de_xuat": "Thêm một ví dụ ngắn tính $e_c$ (chẳng hạn cuộn pickup 1 000 vòng, $\\Delta\\Phi$ cho sẵn trong $\\Delta t$ cho sẵn), hoặc sửa mục tiêu chỉ còn 'giải thích' với $e_c$."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Cùng lí do đó, lõi máy biến áp và lõi động cơ đều phải ghép từ lá thép mỏng (hoặc ferit).",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu kết chỉ nhắc lại nguyên câu hỏi, không thêm thông tin gì.",
+      "de_xuat": "Xoá câu này, hoặc thay bằng một ví dụ khác cùng nguyên lí (ví dụ lõi cuộn dây của sạc không dây làm bằng ferit)."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "với $U_1, U_2$ là điện áp hiệu dụng hai cuộn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đây là lần đầu bài nói $U$ là 'hiệu dụng'. Trước đó các số 12 V, 8,4 V không ghi rõ là giá trị gì, nên em không biết đây là kiến thức mới hay phải nhớ từ đâu.",
+      "de_xuat": "Ghi 'điện áp hiệu dụng' ngay ở gạch đầu dòng công thức máy biến áp trong mục II.2."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "I. Mở bài: mặt bếp lạnh, đáy nồi bỏng",
+      "trich_nguyen_van": "nếu nồi nóng vì cọ xát thì nồi nhôm cũng phải nóng như nồi gang, thực tế không phải",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi dùng sự thật 'nồi nhôm không nóng trên bếp từ' như điều ai cũng biết. Thông tin này đến mục II.4 mới có, nên em không có căn cứ để loại phương án C.",
+      "de_xuat": "Thêm vào đoạn mở bài một câu quan sát: 'thay nồi gang bằng nồi nhôm thì nước hầu như không ấm lên'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: đế sạc không dây của điện thoại",
+      "trich_nguyen_van": "$U_2^{đo} = 8{,}4$ V ± 0,1 V",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề bài không cho sai số ±0,1 V, nhưng bảng phân tích dữ liệu lại ghi như đề có cho. Em sẽ đọc lại đề để tìm và tưởng mình bỏ sót.",
+      "de_xuat": "Thêm '(vôn kế sai số ±0,1 V)' vào đề bài, hoặc bỏ ±0,1 V khỏi bảng."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "1. Đàn ghi ta điện — dao động thành dòng điện",
+      "trich_nguyen_van": "nối vào điện kế nhạy; gảy rồi kéo căng dây.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dây đã căng từ đầu, 'gảy rồi kéo căng' nghe như làm ngược thứ tự. Em không biết kéo căng thêm để làm gì và cần quan sát điều gì khi kéo.",
+      "de_xuat": "Viết rõ: 'gảy dây, quan sát kim; sau đó kéo căng thêm dây (nốt cao hơn), gảy lại và so nhịp rung của kim'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán trước khi học",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Mang mô hình bếp điện (mâm nóng truyền nhiệt) sang bếp từ: thấy nồi đặt trên mặt kính thì nghĩ mặt kính nóng trước.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cách nghĩ này đúng với bếp điện, sai với bếp từ: bếp từ không có mâm nóng."
+    },
+    {
+      "cau": "Câu 1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn dòng cảm ứng vào việc chính cuộn dây phải chuyển động, thay vì vào từ thông qua cuộn dây biến thiên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Điều kiện là từ thông qua khối phải biến thiên"
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đảo tỉ số vòng, lấy $N_1/N_2$ = 20/15 và nhân với 12 V. Lỗi này hay gặp vì phần kiến thức không nhấn cuộn nào là $N_2$; chỉ phản hồi sai mới nhắc.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quy lực hãm cho khối lượng ('nhẹ hơn ít bị hãm'), không nghĩ tới điện trở của mạch dòng Foucault. Phản hồi ('lấy đi vài gam') và chú thích Hình 4 ('cùng khối lượng') lại không khớp nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "rãnh xẻ cắt các đường dòng Foucault, làm điện trở mạch dòng tăng, dòng nhỏ đi nên lực hãm yếu hẳn."
+    },
+    {
+      "cau": "Câu 4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhầm bếp từ với bếp hồng ngoại (cũng mặt kính đen). Phần kiến thức chưa hề nhắc tới hồng ngoại, chỉ phản hồi sai mới bác bỏ.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Câu 5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ cứ đặt trong từ trường mạnh là có dòng Foucault, bỏ qua điều kiện từ thông biến thiên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nam châm mạnh mà đứng yên cạnh tấm nhôm thì cũng không có dòng."
+    },
+    {
+      "cau": "Câu 6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đảo tỉ số vòng, lấy 600/150 nên ra 880 V. Với học sinh trung bình, phương án C (110 V) cũng gây nhiễu vì không gắn với lỗi rõ ràng nào.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

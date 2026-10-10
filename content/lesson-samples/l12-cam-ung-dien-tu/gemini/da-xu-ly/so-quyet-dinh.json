@@ -1,0 +1,113 @@
+{
+  "bai": "l12-cam-ung-dien-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào mục IV một câu dùng quy tắc nắm tay phải để đổi chiều từ trường cảm ứng thành chiều dòng, không thêm hình vì luật cấm thêm ảnh."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa mặt Bắc (đường sức cảm ứng đi ra) và mặt Nam (đi vào) ngay sau danh sách tăng/giảm ở mục IV."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài không có câu chú thích Hình 3 này)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích dòng xoáy là dòng cảm ứng khép kín trong khối kim loại ở bước Rút ra của thí nghiệm ống nhôm."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi thêm mục mới kèm bài tập mẫu là đổi cấu trúc và số mục h3, vượt phạm vi sửa tại chỗ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ chữ 'kín' khỏi phát biểu Faraday và ghi rõ mạch hở vẫn có e_c, chỉ mạch kín mới có dòng i = |e_c|/R."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'hai hàng v = 0,2 m/s (2,1 mA và −2,0 mA) lệch nhau 0,1 mA về độ lớn', tách lời giải thành từng dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi chú bảng nói rõ số minh hoạ tỉ lệ thuận với v có cộng dao động nhỏ như sai số đo."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Quan sát chỉ còn kim điện kế lệch khi quay và về 0 khi dừng, phần đường sức chuyển sang bước Rút ra."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào phản hồi sai Câu 5 một dòng nhắc số mũ khi chia (10⁻³ : 10⁻² = 10⁻¹)."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn rằng điều quyết định là từ trường đang thay đổi, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn góc của pháp tuyến đưa thẳng vào cos, không thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 'từ thông lớn thì có dòng điện' đã nhấn ngay trước câu, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Danh sách tăng/giảm và phản hồi đã nhấn 'tiến thì đẩy', không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy và phản hồi đã nhấn 'lùi thì kéo' và 'hút nhau thì khác tên', không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 5 nhắc viết 0,03 = 3×10⁻² trước khi chia để tránh lệch một bậc lũy thừa."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi 'vẫn 80 mA' do chỉ nhìn ΔΦ, không thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II, thí nghiệm quay khung: Quan sát chỉ còn kim điện kế lệch khi quay và về 0 khi dừng. Phần đường sức chuyển sang Rút ra.",
+      "Mục III, ghi chú bảng số liệu: số minh hoạ tỉ lệ thuận với v, có cộng dao động nhỏ như sai số đo.",
+      "Mục III, lời giải câu hỏi sai số (details): ghi rõ hai hàng v = 0,2 m/s (2,1 mA và −2,0 mA) lệch nhau 0,1 mA về độ lớn. Các số liệu khác giữ nguyên.",
+      "Mục III: bỏ câu lặp 'Máy phát điện dùng một trong các cách đó.' (ý này đã có ở mục II).",
+      "Mục IV: thêm định nghĩa mặt Bắc/mặt Nam của vòng dây theo chiều đường sức cảm ứng.",
+      "Mục IV: thêm quy tắc nắm tay phải (ngón cái theo từ trường cảm ứng trong lòng vòng, các ngón khum chỉ chiều dòng).",
+      "Mục IV, thí nghiệm ống nhôm: thêm định nghĩa dòng xoáy là dòng cảm ứng khép kín trong khối kim loại.",
+      "Mục IV: rút gọn câu dẫn, câu 'Cách hiểu', bước Quan sát và phản hồi Câu 3, Câu 4. Nội dung vật lí giữ nguyên.",
+      "Mục V, định luật Faraday: suất điện động cảm ứng có cả khi mạch hở. Chỉ mạch kín mới có dòng i = |e_c|/R.",
+      "Câu 5: thêm dòng ⚠ về bẫy số mũ khi chia, và thêm dòng 10⁻³ : 10⁻² = 10⁻¹ vào phản hồi sai. Đáp án vẫn là 0,2 V."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-cam-ung-dien-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

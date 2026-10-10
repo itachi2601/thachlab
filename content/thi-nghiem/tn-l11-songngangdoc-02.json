@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
+ "lesson_id": 28,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-ngang-song-doc/theory.html",
+ "id": "tn-l11-songngangdoc-02",
+ "ten": "Sóng dọc trên lò xo slinky: vùng nén – dãn chạy, vòng đánh dấu tiến – lùi tại chỗ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "song.song_doc",
+  "song.vung_nen_dan",
+  "song.phan_tu_dao_dong_tai_cho"
+ ],
+ "muc_tieu": "Thấy các vòng lò xo dao động dọc theo phương truyền, sóng lan đi thành chuỗi vùng nén và vùng dãn.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo slinky (lò xo ống mềm, dài)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính màu",
+   "so_luong": 1
+  },
+  {
+   "ten": "Sàn nhẵn hoặc mặt bàn dài",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Hai bạn giữ hai đầu lò xo trên sàn, kéo dãn dài khoảng 4 m.",
+   "Dán băng dính màu vào một vòng ở giữa.",
+   "Một bạn đẩy – kéo đầu lò xo dọc theo trục, đều tay."
+  ],
+  "quan_sat": [
+   "Chỗ các vòng sít nhau (nén) và chỗ thưa ra (dãn) chạy dọc lò xo tới đầu kia.",
+   "Vòng có băng màu chỉ tiến – lùi quanh chỗ cũ."
+  ],
+  "rut_ra": [
+   "Vòng dao động dọc theo phương truyền: sóng dọc.",
+   "Lực đàn hồi giữa các vòng làm chỗ nén – dãn lan đi."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số đẩy – kéo",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Biên độ đẩy – kéo",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ sóng dọc trên lò xo",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 7.0
+  },
+  {
+   "ky_hieu": "λ",
+   "ten": "Khoảng cách hai vùng nén liên tiếp",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "u(x, t) = a·cos(2πf·(t − x/v)) — u là độ lệch DỌC trục của vòng ở vị trí cân bằng x",
+   "λ = v/f",
+   "vùng nén: u = 0 và ∂u/∂x < 0; vùng dãn: u = 0 và ∂u/∂x > 0"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát với sàn và tắt dần",
+   "a·2π/λ < 1 để các vòng không chạm nhau"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f (Hz)",
+   "λ = v/f (m)",
+   "Nén – dãn gần nhất (m)"
+  ],
+  "hang": [
+   [
+    1.0,
+    7.0,
+    3.5
+   ],
+   [
+    2.0,
+    3.5,
+    1.75
+   ],
+   [
+    3.5,
+    2.0,
+    1.0
+   ],
+   [
+    5.0,
+    1.4,
+    0.7
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với v = 7,0 m/s (khớp tn-l11-songngangdoc-03); số minh hoạ."
+ },
+ "ket_qua_ky_vong": "Đẩy – kéo nhanh gấp đôi thì các vùng nén sít lại gần nhau gấp đôi (λ giảm một nửa); vòng đánh dấu chỉ tiến – lùi ±a.",
+ "hien_tuong_hay_sai": [
+  "Tưởng vùng nén ứng với đỉnh đồ thị u – x (thực ra ở điểm u = 0, đồ thị đi xuống).",
+  "Tưởng vòng đánh dấu bị đẩy dần tới đầu kia lò xo."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "f",
+   "a"
+  ],
+  "dau_ra": [
+   "các vòng lò xo dao động dọc trục",
+   "đồ thị u – x đặt ngay trên lò xo"
+  ],
+  "hinh_trong_bai": "Hình 3, Hình 4",
+  "y_tuong": "Bật/tắt đồ thị u – x phía trên lò xo; đường gióng từ các điểm u = 0 xuống chỗ vòng sít và thưa."
+ }
+}

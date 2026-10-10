@@ -1,0 +1,144 @@
+{
+  "bai": "l12-phong-xa",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đưa dòng m_t, H_t lên trước ΔH và chú thích H là số phân rã mỗi giây (xem mục 4)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ m₀ tính bằng gam, A lấy gần đúng bằng khối lượng mol theo g/mol."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thành hai dòng: Δm là khối lượng chất mẹ đã biến thành hạt nhân con, ΔH là độ phóng xạ đã giảm đi."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay lập luận về γ bằng: trọng lực chỉ kéo xuống, không thể làm α và β⁻ lệch ngược chiều nhau."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa giải thích phương án B thành nhầm số mũ (coi 1 Ci = 10¹¹ Bq), bỏ cụm 'bỏ hệ số 3,7' sai."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details viết lại: với một hạt nhân, T mang nghĩa xác suất 50% đã phân rã sau thời gian T."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đổi thành 'Thời gian để độ phóng xạ tụt ngang phông nền thì phụ thuộc lượng chất'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm trong details: sai số trung bình bằng độ tản mát chia √5, tức 20/√5 ≈ 9 ≈ 10."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi bước trung gian 8 × 86 400 s ≈ 6,9.10⁵ s."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc giải thích độ phóng xạ riêng là độ phóng xạ tính trên 1 gam carbon."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'vài chu kì' thành 'khoảng 10 chu kì trở lên, tới khi độ phóng xạ xuống ngang phông nền'."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại phản hồi sai câu 8, mỗi phương án một dòng, nêu ¹⁴C phân rã β⁻ và mẫu đã đốt thành khí nên gỗ không giữ tia."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng dẫn phương trình ghi rõ dịch chuyển trong bảng tuần hoàn, mỗi ô ứng với Z đổi 1."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'các lần đếm, mỗi lần dài 1 phút, thường lệch nhau vài phần trăm'."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi từ khoá 'Không đổi' thành 'Miễn nhiễm' (cả dòng 🔑 và gạch đầu dòng) để khỏi lẫn với N không đổi."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mở bài và phản hồi câu 1, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn tính ngẫu nhiên ở mục 1 và phản hồi câu 2."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chiều lệch theo điện tích ở danh sách bốn loại tia."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng 'Còn lại · Đã phân rã' ngay trước câu 4 đã đặt hai con số cạnh nhau."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 5: curi lớn hơn becơren rất nhiều, đổi Bq ra Ci thì con số phải nhỏ đi."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn A giảm 4, Z giảm 2 ngay trước câu 6."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn N, m, H đều chia cho 2^n ở phần điền bước ngay trước."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu giới hạn ~50 000 năm (còn 0,25%) ở mục Khảo cổ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: thêm điều kiện đơn vị cho N₀ = m₀N_A/A (m₀ tính bằng gam, A ≈ khối lượng mol g/mol).",
+      "Mục 3: tách Δm (khối lượng chất mẹ đã biến thành hạt nhân con) và ΔH (độ phóng xạ đã giảm) thành hai dòng, đưa dòng m_t, H_t lên trước.",
+      "Mục 4: ghi bước đổi 8 ngày = 8 × 86 400 s ≈ 6,9.10⁵ s (kết quả λ, H giữ nguyên).",
+      "Mục 4: bỏ cụm H_t = H_0 2^{-t/T} lặp lại (đã có ở mục 3).",
+      "Câu 3 phản hồi sai: thay lập luận về tia γ bằng lập luận trọng lực không thể gây lệch ngược chiều.",
+      "Câu 5 phản hồi sai: phương án B (0,37 Ci) giải thích là nhầm 1 Ci = 10¹¹ Bq, bỏ cụm 'bỏ hệ số 3,7' sai.",
+      "Câu 8 phản hồi sai: thêm ¹⁴C phân rã β⁻, mẫu được đốt thành khí trước khi đo.",
+      "Details sai số thí nghiệm 1: ±10 = 20/√5 ≈ 9.",
+      "Details Bẫy 2: một hạt nhân riêng lẻ có xác suất 50% đã phân rã sau thời gian T.",
+      "Details thử thách Khá: lưu giữ chất thải khoảng 10 chu kì trở lên thay vì 'vài chu kì'.",
+      "Bẫy 1 bảng: thời gian phụ thuộc lượng chất là thời gian tụt ngang phông nền."
+    ],
+    "so_tu_them": 15,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-phong-xa/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

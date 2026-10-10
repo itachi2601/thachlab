@@ -1,0 +1,621 @@
+{
+  "lesson_title": "Bài 20. Điện thế",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Công của lực điện và độ giảm thế năng trong điện trường đều",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng. Dùng thẳng $A_{MN}=qEd$ và $A_{MN}=W_M-W_N$. Dữ kiện cho sẵn hình chiếu dọc đường sức, chưa có dấu âm, chưa có điện thế.",
+      "yccd_de_xuat": "Công của lực điện và thế năng điện",
+      "de_bai": "Một điện tích $q = 2{,}0\\ \\mu\\text{C}$ di chuyển trong điện trường đều có cường độ $E = 3000$ V/m.\nĐiện tích đi từ M đến N theo một đường cong bất kì.\nHình chiếu của đoạn MN lên một đường sức dài $4{,}0$ cm, N lệch theo chiều đường sức so với M.\na) Tính công của lực điện $A_{MN}$.\nb) Thế năng điện của $q$ tăng hay giảm, một lượng bao nhiêu?",
+      "dieu_kien_ap_dung": "Điện trường đều trong toàn vùng điện tích đi qua; chỉ xét công của lực điện.",
+      "phan_tich": [
+        {
+          "trich_de": "$q = 2{,}0\\ \\mu\\text{C}$",
+          "du_lieu": "$q = 2{,}0\\cdot10^{-6}$ C",
+          "kien_thuc": "Điện tích dương, đổi μC sang C"
+        },
+        {
+          "trich_de": "điện trường đều có cường độ $E = 3000$ V/m",
+          "du_lieu": "$E = 3000$ V/m",
+          "kien_thuc": "Dùng được $A_{MN}=qEd$"
+        },
+        {
+          "trich_de": "theo một đường cong bất kì",
+          "du_lieu": "Đường đi không cho cụ thể",
+          "kien_thuc": "Công lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu, điểm cuối"
+        },
+        {
+          "trich_de": "Hình chiếu của đoạn MN lên một đường sức dài $4{,}0$ cm",
+          "du_lieu": "$|d| = 0{,}040$ m",
+          "kien_thuc": "$d$ là hình chiếu của MN lên chiều đường sức"
+        },
+        {
+          "trich_de": "N lệch theo chiều đường sức so với M",
+          "du_lieu": "$d \\gt 0$",
+          "kien_thuc": "Dấu của $d$"
+        },
+        {
+          "trich_de": "Thế năng điện của $q$ tăng hay giảm",
+          "du_lieu": "Cần $W_M - W_N$",
+          "kien_thuc": "$A_{MN}=W_M-W_N$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$A_{MN}$; $W_M - W_N$",
+        "cong_thuc": "$A_{MN}=qEd$; $W_M-W_N=A_{MN}$"
+      },
+      "kien_thuc_goi_lai": [
+        "Công lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu và điểm cuối.",
+        "Điện trường đều: $A_{MN}=qEd$, $d$ là hình chiếu có dấu của MN lên chiều đường sức.",
+        "Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Đổi đơn vị và xác định dấu của d",
+          "cong_thuc_chu": "$d = +|d|$ vì N lệch theo chiều đường sức",
+          "the_so": "$d = 4{,}0\\ \\text{cm} = 0{,}040\\ \\text{m}$; $q = 2{,}0\\cdot10^{-6}\\ \\text{C}$",
+          "ket_qua": "$d = +0{,}040\\ \\text{m}$",
+          "kiem_tra": "Đường cong bất kì không ảnh hưởng; chỉ hình chiếu dọc đường sức có ý nghĩa."
+        },
+        {
+          "tieu_de": "Tính công của lực điện",
+          "cong_thuc_chu": "$A_{MN} = qEd$",
+          "the_so": "$A_{MN} = 2{,}0\\cdot10^{-6}\\cdot3000\\cdot0{,}040$",
+          "ket_qua": "$A_{MN} = 2{,}4\\cdot10^{-4}\\ \\text{J}$",
+          "kiem_tra": "Đơn vị C·(V/m)·m = C·V = J. Điện tích dương đi theo chiều $\\vec E$, lực điện cùng chiều dịch chuyển nên $A \\gt 0$, hợp lí."
+        },
+        {
+          "tieu_de": "Suy ra biến thiên thế năng",
+          "cong_thuc_chu": "$W_M - W_N = A_{MN}$",
+          "the_so": "$W_M - W_N = 2{,}4\\cdot10^{-4}$",
+          "ket_qua": "Thế năng giảm $2{,}4\\cdot10^{-4}\\ \\text{J}$",
+          "kiem_tra": "Công dương thì thế năng giảm, giống vật trượt xuống dốc."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 0.00024,
+          "don_vi": "J"
+        },
+        {
+          "y": "b (độ giảm thế năng)",
+          "gia_tri": 0.00024,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Công A_MN",
+          "bieu_thuc": "2.0e-6*3000*0.040",
+          "ky_vong": 0.00024,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho điện trường đều, độ lớn q, E và hình chiếu dọc đường sức → dùng thẳng $A=qEd$, rồi $W_M-W_N=A$.",
+      "bay_thuong_gap": [
+        "Quên đổi cm sang m nên công lớn gấp 100 lần.",
+        "Đi tìm độ dài đường cong để nhân với E, trong khi công không phụ thuộc đường đi.",
+        "Nhầm dấu: tưởng công dương thì thế năng tăng."
+      ],
+      "dieu_ban_khong_chac": [
+        "Giả thiết toàn bộ đường cong nằm trong vùng điện trường đều; đề đã nói 'điện trường đều' nên coi là đúng."
+      ],
+      "mo_phong_goi_y": "Vùng có các đường sức song song nằm ngang, mũi tên chỉ một chiều. Một chấm điện tích dương đi từ M đến N theo đường cong uốn lượn. Song song đó, một đoạn thẳng bóng mờ là hình chiếu của MN lên đường sức hiện dần ra. Nhãn: $\\vec E$, M, N, $q \\gt 0$, đoạn hình chiếu 'd'. Không ghi giá trị công."
+    },
+    {
+      "label": "Dạng 2 · Điện thế, hiệu điện thế và công với điện tích âm",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại mối liên hệ công – thế năng của Dạng 1. Thêm MỘT độ khó: chia cho $q$ để ra điện thế, đổi sang điện tích âm (electron) và giữ đúng dấu của $q$ và $U_{MN}$.",
+      "yccd_de_xuat": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+      "de_bai": "Trong điện trường của một quả cầu tích điện, chọn mốc điện thế ở vô cực.\nĐặt điện tích thử $q_1 = 3{,}0$ nC tại điểm M thì thế năng điện của nó là $4{,}5\\cdot10^{-7}$ J; đặt $q_1$ tại điểm N thì thế năng là $1{,}5\\cdot10^{-7}$ J.\na) Tính $V_M$, $V_N$ và $U_{MN}$.\nb) Bỏ $q_1$, đặt một electron ($q = -1{,}6\\cdot10^{-19}$ C) vào M. Điện thế tại M có đổi không? Tính thế năng của electron tại M.\nc) Electron đi từ M đến N. Tính công của lực điện (J và eV).",
+      "dieu_kien_ap_dung": "Mốc điện thế ở vô cực giữ cố định; điện tích thử nhỏ, không làm thay đổi điện trường của quả cầu.",
+      "phan_tich": [
+        {
+          "trich_de": "chọn mốc điện thế ở vô cực",
+          "du_lieu": "$V_\\infty = 0$",
+          "kien_thuc": "$V_M = \\dfrac{W_M}{q}$ đo so với mốc"
+        },
+        {
+          "trich_de": "$q_1 = 3{,}0$ nC",
+          "du_lieu": "$q_1 = 3{,}0\\cdot10^{-9}$ C",
+          "kien_thuc": "Đổi nC sang C"
+        },
+        {
+          "trich_de": "thế năng điện của nó là $4{,}5\\cdot10^{-7}$ J",
+          "du_lieu": "$W_M = 4{,}5\\cdot10^{-7}$ J",
+          "kien_thuc": "$V_M = W_M/q_1$"
+        },
+        {
+          "trich_de": "thế năng là $1{,}5\\cdot10^{-7}$ J",
+          "du_lieu": "$W_N = 1{,}5\\cdot10^{-7}$ J",
+          "kien_thuc": "$V_N = W_N/q_1$"
+        },
+        {
+          "trich_de": "đặt một electron ($q = -1{,}6\\cdot10^{-19}$ C) vào M",
+          "du_lieu": "$q = -1{,}6\\cdot10^{-19}$ C",
+          "kien_thuc": "Điện thế là của điểm, không đổi; $W = qV$"
+        },
+        {
+          "trich_de": "Electron đi từ M đến N",
+          "du_lieu": "Điểm đầu M, điểm cuối N",
+          "kien_thuc": "$A_{MN} = qU_{MN}$; $1\\ \\text{eV} = 1{,}6\\cdot10^{-19}$ J"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$V_M$, $V_N$, $U_{MN}$, $W_{eM}$, $A_{MN}$",
+        "cong_thuc": "$V = \\dfrac{W}{q}$; $U_{MN} = V_M - V_N$; $W_{eM} = qV_M$; $A_{MN} = qU_{MN}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$V_M = \\dfrac{W_M}{q}$, đơn vị V = J/C.",
+        "Điện thế là của điểm, không phụ thuộc điện tích đặt vào; thế năng $W = qV$ đổi theo $q$.",
+        "$U_{MN} = V_M - V_N = \\dfrac{A_{MN}}{q}$, suy ra $A_{MN} = qU_{MN}$.",
+        "Electron: $q = -e$; $1\\ \\text{eV} = 1{,}6\\cdot10^{-19}$ J."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Điện thế tại M",
+          "cong_thuc_chu": "$V_M = \\dfrac{W_M}{q_1}$",
+          "the_so": "$V_M = \\dfrac{4{,}5\\cdot10^{-7}}{3{,}0\\cdot10^{-9}}$",
+          "ket_qua": "$V_M = 150\\ \\text{V}$",
+          "kiem_tra": "J/C = V. Mốc ở vô cực, $V \\gt 0$ ứng với quả cầu tích điện dương, hợp lí."
+        },
+        {
+          "tieu_de": "Điện thế tại N",
+          "cong_thuc_chu": "$V_N = \\dfrac{W_N}{q_1}$",
+          "the_so": "$V_N = \\dfrac{1{,}5\\cdot10^{-7}}{3{,}0\\cdot10^{-9}}$",
+          "ket_qua": "$V_N = 50\\ \\text{V}$",
+          "kiem_tra": "$V_N \\lt V_M$: N xa quả cầu hơn M."
+        },
+        {
+          "tieu_de": "Hiệu điện thế giữa M và N",
+          "cong_thuc_chu": "$U_{MN} = V_M - V_N$",
+          "the_so": "$U_{MN} = 150 - 50$",
+          "ket_qua": "$U_{MN} = 100\\ \\text{V}$",
+          "kiem_tra": "Lấy đúng thứ tự điểm đầu trừ điểm cuối."
+        },
+        {
+          "tieu_de": "Thay bằng electron tại M",
+          "cong_thuc_chu": "$V_M$ không đổi; $W_{eM} = qV_M$",
+          "the_so": "$W_{eM} = (-1{,}6\\cdot10^{-19})\\cdot150$",
+          "ket_qua": "$V_M = 150\\ \\text{V}$; $W_{eM} = -2{,}4\\cdot10^{-17}\\ \\text{J}$",
+          "kiem_tra": "Điện thế giữ nguyên; chỉ thế năng đổi dấu theo $q$."
+        },
+        {
+          "tieu_de": "Công của lực điện khi electron đi M → N",
+          "cong_thuc_chu": "$A_{MN} = qU_{MN}$",
+          "the_so": "$A_{MN} = (-1{,}6\\cdot10^{-19})\\cdot100$",
+          "ket_qua": "$A_{MN} = -1{,}6\\cdot10^{-17}\\ \\text{J} = -100\\ \\text{eV}$",
+          "kiem_tra": "Electron bị kéo về chỗ điện thế cao; đi từ 150 V xuống 50 V là đi ngược lực điện nên công âm, hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (V_M)",
+          "gia_tri": 150,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (V_N)",
+          "gia_tri": 50,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (U_MN)",
+          "gia_tri": 100,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (W_eM)",
+          "gia_tri": -2.4e-17,
+          "don_vi": "J"
+        },
+        {
+          "y": "c (A_MN)",
+          "gia_tri": -1.6e-17,
+          "don_vi": "J"
+        },
+        {
+          "y": "c (A_MN theo eV)",
+          "gia_tri": -100,
+          "don_vi": "eV"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "V_M",
+          "bieu_thuc": "4.5e-7/3.0e-9",
+          "ky_vong": 150,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "V_N",
+          "bieu_thuc": "1.5e-7/3.0e-9",
+          "ky_vong": 50,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "U_MN",
+          "bieu_thuc": "4.5e-7/3.0e-9 - 1.5e-7/3.0e-9",
+          "ky_vong": 100,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Thế năng electron tại M",
+          "bieu_thuc": "-1.6e-19*150",
+          "ky_vong": -2.4e-17,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Công lực điện lên electron M→N",
+          "bieu_thuc": "-1.6e-19*100",
+          "ky_vong": -1.6e-17,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Công theo eV",
+          "bieu_thuc": "(-1.6e-19*100)/1.6e-19",
+          "ky_vong": -100,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho thế năng của một điện tích thử tại các điểm rồi đổi sang điện tích khác → tính $V = W/q$ trước, giữ $V$, rồi dùng $W = qV$ và $A = qU$ với đủ dấu.",
+      "bay_thuong_gap": [
+        "Cho rằng đặt electron vào thì $V_M$ thành âm.",
+        "Giữ nguyên thế năng $4{,}5\\cdot10^{-7}$ J khi đổi sang electron.",
+        "Quên dấu âm của electron, ra công dương.",
+        "Lấy $V_N - V_M$ thay vì $V_M - V_N$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Không nêu dấu điện tích quả cầu; điện thế dương suy ra quả cầu tích điện dương (mốc vô cực), phù hợp bài học."
+      ],
+      "mo_phong_goi_y": "Quả cầu tích điện ở giữa, các vòng đẳng thế đồng tâm mờ. Điểm M ở vòng gần, N ở vòng xa. Lần 1 một chấm đỏ $q_1$ đặt tại M rồi tại N, hiện thanh 'thế năng'. Lần 2 chấm đỏ biến thành chấm xanh (electron) tại M, nhãn điện thế tại M vẫn giữ nguyên. Sau đó electron trượt từ M ra N, có mũi tên lực điện hướng về quả cầu. Nhãn: M, N, $q_1$, $e^-$, 'mốc ∞'. Không hiện số."
+    },
+    {
+      "label": "Dạng 3 · Hiệu điện thế giữa hai điểm bất kì trong điện trường đều (U = Ed, hình chiếu xiên)",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại $A = qU$ với điện tích âm của Dạng 2 (bước cuối chính là bài cấp 2). Thêm MỘT độ khó: tự tìm hiệu điện thế bằng $U = Ed$, với $d$ là hình chiếu của đoạn xiên lên đường sức.",
+      "yccd_de_xuat": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+      "de_bai": "Trong một điện trường đều có $E = 2000$ V/m, đường sức song song với cạnh AB và hướng từ A sang B.\nTam giác ABC vuông tại B có $AB = 6{,}0$ cm, $BC = 8{,}0$ cm, $AC = 10{,}0$ cm; cạnh BC vuông góc với đường sức.\na) Tính $U_{AB}$, $U_{BC}$ và $U_{AC}$.\nb) Một điện tích $q = -5{,}0$ nC đi từ C về A theo đường thẳng CA. Tính công của lực điện.",
+      "dieu_kien_ap_dung": "Điện trường đều trong toàn tam giác; $U = Ed$ với $d$ là hình chiếu có dấu dọc chiều đường sức.",
+      "phan_tich": [
+        {
+          "trich_de": "điện trường đều có $E = 2000$ V/m",
+          "du_lieu": "$E = 2000$ V/m",
+          "kien_thuc": "Dùng được $U = Ed$"
+        },
+        {
+          "trich_de": "hướng từ A sang B",
+          "du_lieu": "Chiều $\\vec E$ từ A đến B",
+          "kien_thuc": "Điện thế giảm theo chiều đường sức: $V_A \\gt V_B$"
+        },
+        {
+          "trich_de": "$AB = 6{,}0$ cm",
+          "du_lieu": "$d_{AB} = +0{,}060$ m",
+          "kien_thuc": "AB nằm dọc đường sức"
+        },
+        {
+          "trich_de": "cạnh BC vuông góc với đường sức",
+          "du_lieu": "$d_{BC} = 0$",
+          "kien_thuc": "B, C cùng một đường đẳng thế"
+        },
+        {
+          "trich_de": "$AC = 10{,}0$ cm",
+          "du_lieu": "$AC = 0{,}100$ m, $\\cos\\alpha = AB/AC$",
+          "kien_thuc": "$d_{AC} = AC\\cos\\alpha$"
+        },
+        {
+          "trich_de": "$q = -5{,}0$ nC đi từ C về A",
+          "du_lieu": "$q = -5{,}0\\cdot10^{-9}$ C, điểm đầu C, điểm cuối A",
+          "kien_thuc": "$A_{CA} = qU_{CA}$, $U_{CA} = -U_{AC}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$U_{AB}$, $U_{BC}$, $U_{AC}$, $A_{CA}$",
+        "cong_thuc": "$U = Ed$ với $d = MN\\cos\\alpha$; $A_{CA} = qU_{CA}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$U = Ed$ chỉ trong điện trường đều.",
+        "$d$ = hình chiếu có dấu của đoạn lên chiều đường sức: $d = MN\\cos\\alpha$.",
+        "Đoạn vuông góc đường sức: $U = 0$ (đường đẳng thế).",
+        "$U_{NM} = -U_{MN}$; $A = qU$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Xác định hình chiếu dọc đường sức",
+          "cong_thuc_chu": "$d_{AB} = AB$; $d_{BC} = 0$; $d_{AC} = AC\\cos\\alpha$, $\\cos\\alpha = \\dfrac{AB}{AC}$",
+          "the_so": "$\\cos\\alpha = \\dfrac{6{,}0}{10{,}0} = 0{,}60$; $d_{AC} = 0{,}100\\cdot0{,}60$",
+          "ket_qua": "$d_{AB} = 0{,}060\\ \\text{m}$; $d_{BC} = 0$; $d_{AC} = 0{,}060\\ \\text{m}$",
+          "kiem_tra": "Hình chiếu của AC lên đường sức trùng AB, đúng hình học. Dùng $\\cos$, không dùng $\\sin$."
+        },
+        {
+          "tieu_de": "Hiệu điện thế U_AB",
+          "cong_thuc_chu": "$U_{AB} = Ed_{AB}$",
+          "the_so": "$U_{AB} = 2000\\cdot0{,}060$",
+          "ket_qua": "$U_{AB} = 120\\ \\text{V}$",
+          "kiem_tra": "Dương, phù hợp $V_A \\gt V_B$ vì đi theo chiều đường sức điện thế giảm."
+        },
+        {
+          "tieu_de": "Hiệu điện thế U_BC",
+          "cong_thuc_chu": "$U_{BC} = Ed_{BC}$",
+          "the_so": "$U_{BC} = 2000\\cdot0$",
+          "ket_qua": "$U_{BC} = 0\\ \\text{V}$",
+          "kiem_tra": "BC nằm trên đường đẳng thế."
+        },
+        {
+          "tieu_de": "Hiệu điện thế U_AC",
+          "cong_thuc_chu": "$U_{AC} = Ed_{AC}$",
+          "the_so": "$U_{AC} = 2000\\cdot0{,}060$",
+          "ket_qua": "$U_{AC} = 120\\ \\text{V}$",
+          "kiem_tra": "Đối chiếu: $U_{AC} = U_{AB} + U_{BC} = 120 + 0$, khớp."
+        },
+        {
+          "tieu_de": "Đổi thứ tự điểm cho chiều C → A",
+          "cong_thuc_chu": "$U_{CA} = -U_{AC}$",
+          "the_so": "$U_{CA} = -120$",
+          "ket_qua": "$U_{CA} = -120\\ \\text{V}$",
+          "kiem_tra": "Điểm đầu C, điểm cuối A."
+        },
+        {
+          "tieu_de": "Công của lực điện",
+          "cong_thuc_chu": "$A_{CA} = qU_{CA}$",
+          "the_so": "$A_{CA} = (-5{,}0\\cdot10^{-9})\\cdot(-120)$",
+          "ket_qua": "$A_{CA} = 6{,}0\\cdot10^{-7}\\ \\text{J}$",
+          "kiem_tra": "Điện tích âm chịu lực ngược $\\vec E$, tức hướng về phía A; đi từ C về A có thành phần dịch chuyển cùng chiều lực nên công dương."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (U_AB)",
+          "gia_tri": 120,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (U_BC)",
+          "gia_tri": 0,
+          "don_vi": "V"
+        },
+        {
+          "y": "a (U_AC)",
+          "gia_tri": 120,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (A_CA)",
+          "gia_tri": 6e-7,
+          "don_vi": "J"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "U_AB",
+          "bieu_thuc": "2000*0.060",
+          "ky_vong": 120,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "U_AC qua hình chiếu",
+          "bieu_thuc": "2000*0.100*(6.0/10.0)",
+          "ky_vong": 120,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Kiểm tra tam giác vuông",
+          "bieu_thuc": "math.sqrt(6.0**2 + 8.0**2)",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Công A_CA",
+          "bieu_thuc": "(-5.0e-9)*(-120)",
+          "ky_vong": 6e-7,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề cho điện trường đều và hình học (tam giác, góc) với đoạn không nằm dọc đường sức → chiếu lên đường sức để có $d$, tính $U = Ed$, rồi $A = qU$ giữ đủ dấu.",
+      "bay_thuong_gap": [
+        "Lấy $U_{AC} = E\\cdot AC = 200$ V (nhân thẳng độ dài).",
+        "Chiếu bằng $\\sin\\alpha$: $d = 0{,}08$ m, ra 160 V.",
+        "Cho $U_{BC} \\ne 0$ vì quên BC vuông góc đường sức.",
+        "Dùng $U_{AC}$ thay $U_{CA}$ khi điện tích đi từ C về A, sai dấu công."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Các đường sức nằm ngang hướng từ trái sang phải. Tam giác vuông ABC: A bên trái, B bên phải trên cùng đường sức, C thẳng phía trên B. Các đường đẳng thế nét đứt thẳng đứng đi qua A và qua B, C. Chấm điện tích âm trượt từ C về A theo cạnh huyền, bóng chiếu của nó chạy dọc AB. Nhãn: $\\vec E$, A, B, C, góc $\\alpha$ tại A, 'đường đẳng thế', $q \\lt 0$. Không ghi giá trị U."
+    },
+    {
+      "label": "Dạng 4 · Tăng tốc electron giữa hai bản cực: điện thế, đổi mốc và bài ngược",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại $U = Ed$ (Dạng 3), $A = qU$ với electron (Dạng 2), quan hệ công – năng lượng (Dạng 1). Thêm MỘT độ khó: tình huống thiết bị có dữ kiện ẩn ('nối đất' → V = 0; 'vận tốc ban đầu bằng 0' → công lực điện thành động năng), kèm ý ngược tìm vị trí.",
+      "yccd_de_xuat": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+      "de_bai": "Trong một ống tăng tốc electron của phòng thí nghiệm, hai lưới kim loại phẳng G1 và G2 đặt song song, cách nhau $2{,}5$ cm.\nLưới G1 nối đất, lưới G2 có điện thế $+500$ V so với đất.\nMột electron lọt qua lỗ nhỏ ở G1, vận tốc ban đầu coi như bằng 0, rồi chạy thẳng tới G2. Bỏ qua trọng lực.\nCho $e = 1{,}6\\cdot10^{-19}$ C, $m_e = 9{,}1\\cdot10^{-31}$ kg.\na) Tính cường độ điện trường giữa hai lưới và cho biết chiều đường sức.\nb) Điểm P nằm giữa hai lưới, cách G1 $1{,}0$ cm. Tính $V_P$ khi chọn mốc ở đất, và khi chọn mốc ở G2.\nc) Tính động năng (eV) và tốc độ của electron khi tới G2.\nd) Tại điểm nào electron có động năng $200$ eV?",
+      "dieu_kien_ap_dung": "Giữa hai lưới phẳng song song coi là điện trường đều; trong ống chân không, bỏ qua trọng lực và va chạm; chỉ lực điện sinh công.",
+      "phan_tich": [
+        {
+          "trich_de": "hai lưới kim loại phẳng G1 và G2 đặt song song, cách nhau $2{,}5$ cm",
+          "du_lieu": "$d = 0{,}025$ m",
+          "kien_thuc": "Điện trường đều (ngầm) → dùng $E = U/d$"
+        },
+        {
+          "trich_de": "Lưới G1 nối đất",
+          "du_lieu": "$V_{G1} = 0$ (mốc Trái Đất)",
+          "kien_thuc": "Dữ kiện ẩn về mốc điện thế"
+        },
+        {
+          "trich_de": "lưới G2 có điện thế $+500$ V so với đất",
+          "du_lieu": "$V_{G2} = 500$ V",
+          "kien_thuc": "$U_{G2G1} = V_{G2} - V_{G1}$; điện thế giảm theo chiều đường sức"
+        },
+        {
+          "trich_de": "vận tốc ban đầu coi như bằng 0",
+          "du_lieu": "$W_{đ0} = 0$",
+          "kien_thuc": "Công lực điện bằng động năng thu được"
+        },
+        {
+          "trich_de": "cách G1 $1{,}0$ cm",
+          "du_lieu": "$x_P = 0{,}010$ m",
+          "kien_thuc": "$V_P - V_{G1} = Ex_P$"
+        },
+        {
+          "trich_de": "khi chọn mốc ở G2",
+          "du_lieu": "$V'_{G2} = 0$",
+          "kien_thuc": "Đổi mốc: mọi V đổi, U giữ nguyên"
+        },
+        {
+          "trich_de": "$m_e = 9{,}1\\cdot10^{-31}$ kg",
+          "du_lieu": "$m_e = 9{,}1\\cdot10^{-31}$ kg",
+          "kien_thuc": "$W_đ = \\tfrac12 m v^2$"
+        },
+        {
+          "trich_de": "electron có động năng $200$ eV",
+          "du_lieu": "$W_đ = 200$ eV",
+          "kien_thuc": "Bài ngược: $W_đ = eV_X$ → $x = V_X/E$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "$E$, $V_P$, $V'_P$, $W_đ$, $v$, $x$",
+        "cong_thuc": "$E = \\dfrac{U}{d}$; $V_P = Ex_P$; $V'_P = V_P - V_{G2}$; $W_đ = qU_{G1G2}$; $v = \\sqrt{\\dfrac{2W_đ}{m_e}}$; $x = \\dfrac{W_đ}{eE}$"
+      },
+      "kien_thuc_goi_lai": [
+        "$E = U/d$ trong điện trường đều; đường sức hướng từ nơi điện thế cao sang nơi điện thế thấp.",
+        "Đổi mốc thì mọi điện thế đổi, hiệu điện thế giữ nguyên.",
+        "$A_{MN} = qU_{MN}$, electron $q = -e$; $1\\ \\text{eV} = 1{,}6\\cdot10^{-19}$ J.",
+        "Vận tốc đầu bằng 0: công lực điện bằng động năng $\\tfrac12 mv^2$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Cường độ và chiều điện trường",
+          "cong_thuc_chu": "$E = \\dfrac{V_{G2} - V_{G1}}{d}$",
+          "the_so": "$E = \\dfrac{500 - 0}{0{,}025}$",
+          "ket_qua": "$E = 2{,}0\\cdot10^{4}\\ \\text{V/m}$, đường sức hướng từ G2 sang G1",
+          "kiem_tra": "Điện thế giảm theo chiều đường sức: từ 500 V (G2) xuống 0 V (G1)."
+        },
+        {
+          "tieu_de": "Điện thế tại P, mốc ở đất",
+          "cong_thuc_chu": "$V_P = V_{G1} + Ex_P$",
+          "the_so": "$V_P = 0 + 2{,}0\\cdot10^{4}\\cdot0{,}010$",
+          "ket_qua": "$V_P = 200\\ \\text{V}$",
+          "kiem_tra": "Từ G1 đi ngược đường sức nên điện thế tăng; 200 V nằm giữa 0 và 500 V, và P gần G1 nên nhỏ hơn 250 V, hợp lí."
+        },
+        {
+          "tieu_de": "Điện thế tại P, mốc ở G2",
+          "cong_thuc_chu": "$V'_P = V_P - V_{G2}$ (mọi điện thế cùng trừ đi $V_{G2}$)",
+          "the_so": "$V'_P = 200 - 500$",
+          "ket_qua": "$V'_P = -300\\ \\text{V}$",
+          "kiem_tra": "P thấp hơn G2, $V'_P \\lt 0$; $U_{G2G1}$ vẫn bằng 500 V."
+        },
+        {
+          "tieu_de": "Công lực điện từ G1 đến G2",
+          "cong_thuc_chu": "$A = qU_{G1G2}$, $U_{G1G2} = V_{G1} - V_{G2}$",
+          "the_so": "$A = (-1{,}6\\cdot10^{-19})\\cdot(0 - 500)$",
+          "ket_qua": "$A = 8{,}0\\cdot10^{-17}\\ \\text{J} = 500\\ \\text{eV}$",
+          "kiem_tra": "Electron chạy về phía điện thế cao, lực điện sinh công dương."
+        },
+        {
+          "tieu_de": "Động năng và tốc độ tại G2",
+          "cong_thuc_chu": "$W_đ = A$ (vì $v_0 = 0$); $v = \\sqrt{\\dfrac{2W_đ}{m_e}}$",
+          "the_so": "$v = \\sqrt{\\dfrac{2\\cdot8{,}0\\cdot10^{-17}}{9{,}1\\cdot10^{-31}}}$",
+          "ket_qua": "$W_đ = 500\\ \\text{eV}$; $v \\approx 1{,}33\\cdot10^{7}\\ \\text{m/s}$",
+          "kiem_tra": "Đơn vị $\\sqrt{\\text{J/kg}} = \\text{m/s}$. Tốc độ cỡ 4% tốc độ ánh sáng, bậc đại lượng hợp lí cho vài trăm vôn."
+        },
+        {
+          "tieu_de": "Bài ngược: vị trí có động năng 200 eV",
+          "cong_thuc_chu": "$W_đ = (-e)(V_{G1} - V_X) = eV_X$ → $V_X = Ex$ → $x = \\dfrac{V_X}{E}$",
+          "the_so": "$V_X = 200\\ \\text{V}$; $x = \\dfrac{200}{2{,}0\\cdot10^{4}}$",
+          "ket_qua": "$x = 0{,}010\\ \\text{m} = 1{,}0\\ \\text{cm}$ tính từ G1, tức chính điểm P",
+          "kiem_tra": "Khớp ý b: $V_P = 200$ V (mốc đất) nên electron đi từ G1 tới P thu đúng 200 eV."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a (E)",
+          "gia_tri": 20000,
+          "don_vi": "V/m"
+        },
+        {
+          "y": "b (V_P, mốc đất)",
+          "gia_tri": 200,
+          "don_vi": "V"
+        },
+        {
+          "y": "b (V_P, mốc G2)",
+          "gia_tri": -300,
+          "don_vi": "V"
+        },
+        {
+          "y": "c (động năng)",
+          "gia_tri": 500,
+          "don_vi": "eV"
+        },
+        {
+          "y": "c (tốc độ)",
+          "gia_tri": 13300000,
+          "don_vi": "m/s"
+        },
+        {
+          "y": "d (khoảng cách tới G1)",
+          "gia_tri": 1,
+          "don_vi": "cm"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Cường độ điện trường",
+          "bieu_thuc": "500/0.025",
+          "ky_vong": 20000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "V_P mốc đất",
+          "bieu_thuc": "(500/0.025)*0.010",
+          "ky_vong": 200,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "V_P mốc G2",
+          "bieu_thuc": "(500/0.025)*0.010 - 500",
+          "ky_vong": -300,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Công G1→G2 (J)",
+          "bieu_thuc": "(-1.6e-19)*(0-500)",
+          "ky_vong": 8e-17,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Tốc độ tại G2",
+          "bieu_thuc": "math.sqrt(2*8.0e-17/9.1e-31)",
+          "ky_vong": 13300000,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "Vị trí động năng 200 eV (m)",
+          "bieu_thuc": "200/(500/0.025)",
+          "ky_vong": 0.01,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Đề mô tả thiết bị có hai bản/lưới song song, một bản nối đất, hạt xuất phát từ nghỉ → đặt mốc từ 'nối đất', tính $E = U/d$, điện thế theo khoảng cách, $A = qU$ rồi công thành động năng; ý ngược thì đi lùi từ động năng ra điện thế rồi ra khoảng cách.",
+      "bay_thuong_gap": [
+        "Đo khoảng cách của P từ G2 thay vì từ G1, ra $V_P = 300$ V.",
+        "Đổi mốc mà giữ nguyên $V_P = 200$ V.",
+        "Lấy công âm vì quên electron có $q = -e$ và $U_{G1G2} \\lt 0$.",
+        "Thế 500 eV trực tiếp vào $\\tfrac12 mv^2$ mà không đổi sang J.",
+        "Ý d tính $x$ từ G2 hoặc dùng $x = W_đ/E$ quên đổi eV ↔ V."
+      ],
+      "dieu_ban_khong_chac": [
+        "Sát hai lưới (có lỗ) điện trường không hoàn toàn đều; coi như đều ở vùng giữa.",
+        "Quan hệ 'công lực điện bằng động năng' chỉ xuất hiện ở phần thử thách của bài, không nằm trong khung kiến thức chính."
+      ],
+      "mo_phong_goi_y": "Ống chân không nằm ngang, hai lưới thẳng đứng G1 (trái, có kí hiệu nối đất) và G2 (phải, nhãn '+500 V'). Đường sức nét mảnh hướng từ G2 sang G1. Một chấm electron lọt qua lỗ ở G1, đứng yên rồi tăng tốc dần sang phải, vệt chuyển động dài dần thể hiện tốc độ tăng. Điểm P đánh dấu giữa hai lưới, gần G1. Một thanh 'động năng' bên cạnh dâng dần khi electron chạy. Nhãn: G1, G2, P, $\\vec E$, $e^-$, 'nối đất', $d$. Không hiện giá trị động năng hay tốc độ."
+    }
+  ]
+}

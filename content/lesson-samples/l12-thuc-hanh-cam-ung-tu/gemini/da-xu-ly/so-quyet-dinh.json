@@ -1,0 +1,137 @@
+{
+  "bai": "l12-thuc-hanh-cam-ung-tu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở bài nay ghi \"Khi đóng công tắc cho dòng 3,0 A chạy qua khung\" để khớp con số 3 A trong phản hồi Câu dự đoán."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài chỉ có mốc <!--SIM-->, không có câu này)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa lại: $l$ là chiều dài phần cạnh dưới nằm trong khe từ trường, đo bằng thước kẹp."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 viết lại thành: ngắt mạch, kiểm tra cân về 0,00 g, đóng mạch, chỉnh biến trở tới nấc mới, đọc Δm rồi ngắt ngay."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án D đổi thành \"gần như vẫn 0,00 g như lúc chưa đóng mạch\" để không trùng nghĩa với C, phản hồi đúng sửa theo."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 2 nay nói lực lên dây hướng lên, truyền qua giá kéo bệ cân lên, khớp với Câu 5."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nêu cách lấy độ dốc (đường thẳng qua gốc, công thức ở Thách đấu) và viết rõ phép thế 0,489×10⁻³×9,81/0,040."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4 đang vượt trần nên thêm một <details> định nghĩa ΔX, ΔX/X, Δm và Δ(Δm), mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ sai số cân hiện số lấy bằng 1 độ chia (±0,01 g)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chú thích Hình 2 không nằm trong HTML nên thêm vào danh sách mục II.1 câu: đường sức trong khe nằm ngang, lực từ có phương thẳng đứng; phản hồi Câu 5 rút gọn trỏ về đó."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"lực thật\" thành \"lực khi dây vuông góc\" ở đáp án D Câu 6."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đầu bài điền bước ghi thêm \"với một nam châm khác\" để giải thích vì sao B ≈ 0,098 T."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ \"$N = 20$ lần ($N$ là số vòng dây)\" trong lời giải Thử sức."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nội dung mô phỏng không có trong HTML bài)."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, thêm ⚠ sẽ lộ đáp án, và phản hồi đã giải thích cân không bị \"nhiễu\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1: cân báo cả chiều của lực lên nam châm (dấu + hay −), không chỉ độ lớn."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: cân đo tổng lực lên mọi vật tựa trên bệ, cộng theo chiều; phần mơ hồ ở D đã xử lý qua c5."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $F = \\Delta m\\, g$ trong mục II.1 và phản hồi đã nêu lỗi quên nhân g, nên bỏ qua."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua từ khoá \"Đo ở I lớn\", nay có thêm định nghĩa sai số tương đối (c8), nên bỏ qua."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn, nhưng tiêu đề \"Bẫy 1. Tưởng cân đo lực lên dây\" cùng bảng ngay trước câu đã nhấn đúng lỗi này."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: θ là góc giữa dây và đường sức, dùng sinθ, đừng nhầm sang cosθ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: thêm giá trị dòng điện 3,0 A khi cân lên 1,45 g.",
+      "Mục II.1: thêm ý đường sức trong khe nằm ngang nên lực từ có phương thẳng đứng.",
+      "Mục II.2: định nghĩa $l$ là phần cạnh dưới nằm trong khe từ trường (không phải cả cạnh khung).",
+      "Mục II.2 bước 3: quy trình nay gồm ngắt mạch, kiểm tra cân về 0,00 g, đóng mạch, chỉnh biến trở tới nấc mới, đọc Δm, ngắt ngay.",
+      "Câu 2: đáp án đúng D đổi thành \"gần như vẫn 0,00 g như lúc chưa đóng mạch\".",
+      "Câu 2, phản hồi đúng: lực lên dây hướng lên, truyền qua giá kéo bệ cân lên, còn phản lực ép nam châm xuống bệ.",
+      "Mục II.3: độ dốc 0,489 g/A lấy từ đường thẳng qua gốc; viết rõ $B = 0{,}489\\times10^{-3}\\times9{,}81/0{,}040 \\approx 0{,}120$ T (số không đổi).",
+      "Mục II.4: sai số cân hiện số lấy bằng 1 độ chia (±0,01 g); thêm <details> định nghĩa ΔX, ΔX/X, Δm, Δ(Δm).",
+      "Câu 3, phản hồi sai: bỏ cụm \"(lấy 1,2 mà không đổi sang lực)\" vì trùng ý \"quên nhân g\".",
+      "Câu 5, phản hồi sai: rút gọn lý do loại phương án B, trỏ về mục II.1.",
+      "Câu 6: đáp án D đổi \"lực thật\" thành \"lực khi dây vuông góc\"; thêm ⚠ phân biệt sinθ và cosθ (θ là góc giữa dây và đường sức).",
+      "Thêm ⚠ trước Câu 1 (cân báo cả chiều lực) và trước Câu 2 (cân đo tổng lực theo chiều).",
+      "Mục V, bài điền bước: ghi rõ dùng nam châm khác (B ≈ 0,098 T, số không đổi).",
+      "Thử sức: N được định nghĩa là số vòng dây (N = 20)."
+    ],
+    "so_tu_them": 100,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-thuc-hanh-cam-ung-tu/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

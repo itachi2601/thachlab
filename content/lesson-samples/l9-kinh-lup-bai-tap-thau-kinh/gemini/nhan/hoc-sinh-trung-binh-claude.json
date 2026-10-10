@@ -1,0 +1,146 @@
+{
+  "bai": "Bài 10. Kính lúp. Bài tập thấu kính",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Ảnh qua kính lúp và cách dùng",
+      "trich_nguyen_van": "Nhìn lâu: để vật gần tiêu điểm, ảnh ở rất xa, mắt đỡ mỏi.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Gạch này khuyên đặt vật gần tiêu điểm để nhìn thoải mái. Nhưng thí nghiệm hộp sữa (chữ nhoè hẳn ở gần 10 cm) và đáp án Câu 2 (nhoè hẳn nghĩa là đã ra tới gần tiêu điểm, phải lùi lại) coi gần tiêu điểm là chỗ hỏng. Em không biết gần tiêu điểm là tốt hay xấu.",
+      "de_xuat": "Nói rõ: vật ở sát trong tiêu điểm thì vẫn nhìn rõ và đỡ mỏi; chỉ khi vật vừa vượt ra ngoài tiêu điểm thì ảnh mới nhoè. Sửa lời giải Câu 2 cho khớp ý này."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Cấu tạo và số bội giác",
+      "trich_nguyen_van": "vật trông to gấp bao nhiêu lần so với nhìn bằng mắt thường",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Kính 2,5x thì ảnh luôn to gấp 2,5 lần vật. Đến bài mẫu 3 ra k = 5 (ảnh cao gấp 5 lần) thì em tưởng mình tính sai, hoặc nhầm G với k. Phải tới tận câu Lưu ý sau bài mẫu 3 mới được giải thích.",
+      "de_xuat": "Ghi ngay ở định nghĩa G: số này ứng với lúc ảnh ở rất xa (vật ở gần tiêu điểm), và khác số phóng đại k = h'/h ở từng vị trí cụ thể."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Ảnh qua kính lúp và cách dùng",
+      "trich_nguyen_van": "Mắt xa kính chỉ làm vùng nhìn thấy hẹp lại.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lời giải Câu 2 loại phương án A bằng ý \"mắt sát kính thì thấy rộng\". Ý này chỉ được dạy ở Bẫy 3, phía sau. Ba gạch \"Sát vật · dịch ra · tới khi rõ\" chỉ nói \"mắt nhìn vào mặt kính\", không nói mắt đặt gần kính.",
+      "de_xuat": "Thêm vào ba gạch cách dùng một ý: đặt mắt sát kính để vùng nhìn thấy rộng nhất."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bài toán mẫu 1: dựng ảnh và nhận xét",
+      "trich_nguyen_van": "ảnh thật, ngược chiều, nhỏ hơn vật; tính ra $d' = 15\\ \\text{cm},$ ảnh cao $3\\ \\text{cm}.$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Cả ba trường hợp chỉ ghi kết quả d' và chiều cao ảnh. Em không thấy phép thay số vào công thức, cũng không thấy k = 0,5; 2; 2,5 nên không tự kiểm lại được, nhất là trường hợp (c) với d' âm.",
+      "de_xuat": "Viết thêm một dòng tính cho mỗi trường hợp, ví dụ (a): 1/d' = 1/10 − 1/30 = 1/15, k = 15/30 = 0,5, h' = 0,5·6 = 3 cm."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 1: \"Kính lúp đặt ở đâu cũng phóng to\"",
+      "trich_nguyen_van": "Ảnh thật, ngược chiều",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng chỉ chia hai vùng là trong và ngoài tiêu cự, không nói ảnh lớn hay nhỏ hơn vật. Câu 3 lại bắt em phân biệt d > 2f với f < d < 2f, nên em dễ chọn \"thật, lớn hơn\".",
+      "de_xuat": "Tách cột \"Vật ngoài tiêu cự\" thành hai vùng: f < d < 2f cho ảnh lớn hơn vật, d > 2f cho ảnh nhỏ hơn vật."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Đặt vật cách kính bao nhiêu để ảnh ảo hiện cách kính $25\\ \\text{cm}$?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ mẫu cách tìm d' khi biết d, chưa lần nào tìm d khi biết ảnh ảo. Em sẽ thay d' = +25 và ra 1/d = 1/5 − 1/25, tức d = 6,25 cm, lớn hơn f. Kết quả này mâu thuẫn với ảnh ảo mà em không hiểu vì sao.",
+      "de_xuat": "Thêm gợi ý: ảnh ảo nên thay d' = −25 cm, từ đó 1/d = 1/5 + 1/25."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Ảnh qua kính lúp và cách dùng",
+      "trich_nguyen_van": "kính này có $f$ khoảng $10\\ \\text{cm}.$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Kính đã ghi sẵn 2,5x nên tính được f = 10 cm. Em không rõ thí nghiệm này dùng để đo f, hay chỉ để kiểm lại số ghi trên vành.",
+      "de_xuat": "Viết lại: chữ nhoè ở gần 10 cm, khớp với f = 25/2,5 = 10 cm của kính 2,5x."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "2. Ảnh qua kính lúp và cách dùng",
+      "trich_nguyen_van": "Đặt vật trong khoảng từ quang tâm $O$ tới tiêu điểm $F{:}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Gạch trên dùng F, gạch ngay dưới lại dùng F'. Em có thể tưởng đây là cùng một điểm, hoặc không biết mỗi điểm nằm ở phía nào của kính.",
+      "de_xuat": "Thêm ghi chú: F ở cùng phía vật, F' ở phía bên kia kính, hai điểm cùng cách O một khoảng f."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 3: \"Tiêu cự dài phóng to hơn, mắt xa kính thấy rộng hơn\"",
+      "trich_nguyen_van": "D. Kính N, vì có $G = 2{,}5$ lớn hơn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phương án C ngay trên đã ghi G = 6,25. Em thấy ngay 2,5 không thể \"lớn hơn\", nên phương án này gần như vô nghĩa và không kiểm tra được gì.",
+      "de_xuat": "Đổi D thành \"Kính N, vì có G = 10/25 = 0,4 nhỏ hơn nên nhìn rõ hơn\" để nhắm đúng lỗi chia ngược công thức."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ kính lúp luôn phóng to cùng chiều, quên rằng đó vẫn là thấu kính hội tụ và ảnh lật khi vật ra ngoài tiêu cự.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "\"To dần mãi\" là quên rằng kính chỉ phóng to cùng chiều khi vật còn gần kính."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ công thức có 25 và f nhưng chia ngược thành f/25.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $0{,}1$ là chia ngược $f/25.$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy ảnh đang to dần nên tin rằng dịch tiếp sẽ rõ và to hơn nữa. Gạch \"để vật gần tiêu điểm\" còn làm em tin thêm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dịch tiếp ra xa là đưa bản đồ ra ngoài tiêu cự, ảnh sẽ lộn ngược."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Biết ngoài tiêu cự thì ảnh thật nhưng không so d với 2f, mặc định kính lúp thì ảnh lớn hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn \"thật, lớn hơn\" là nhầm vùng $f \\lt d \\lt 2f.$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Chọn đúng \"nét đứt\" nhưng hiểu nét đứt là tia sáng yếu, không phải đường kéo dài không có ánh sáng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nét đứt không có nghĩa là \"tia yếu\": nó là đường kéo dài, không có ánh sáng."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Theo trực giác cho rằng tiêu cự dài thì phóng to nhiều hơn, quên f nằm ở mẫu số.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$f$ nằm ở <em>mẫu số</em> của $G = 25/f{:}$ $f$ càng dài, $G$ càng nhỏ."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy tắt k = d/f = 2 mà không tính d' trước. Thói quen này dễ có vì ở bài mẫu 2 k cũng bằng 2.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $4\\ \\text{cm}$ là lấy $k = d/f = 2.$"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính đúng độ lớn 25 cm nhưng bỏ dấu âm của d' nên kết luận ảnh thật.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $25\\ \\text{cm}$ nhưng gọi là ảnh thật là bỏ mất dấu âm của $d'.$"
+    }
+  ]
+}

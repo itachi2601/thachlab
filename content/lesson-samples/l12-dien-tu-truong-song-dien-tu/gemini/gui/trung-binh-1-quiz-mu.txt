@@ -1,0 +1,420 @@
+Bạn là học sinh lớp 12 hồ sơ "trung-binh" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). Dưới đây là bài "Điện từ trường. Mô hình sóng điện từ" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").
+
+=== NỘI DUNG BÀI (HTML) ===
+<div>
+<p>🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu được <strong>từ trường biến thiên sinh ra điện trường xoáy</strong> và ngược lại.</li>
+<li>Hiểu <strong>điện từ trường</strong> là một trường thống nhất; tại mỗi điểm $\vec{E}$ vuông góc với $\vec{B}$.</li>
+<li>Mô tả được <strong>sự tạo thành, lan truyền sóng điện từ</strong> và tính chất của nó.</li>
+<li>Đọc được <strong>thang sóng điện từ</strong>: sáu vùng sóng và ứng dụng chính.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong>. Khoảng 18 phút · 8 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: tiếng rè bên bếp từ</h3>
+
+<p>Mỗi lần bếp từ trong bếp bật lên nấu, chiếc radio chạy pin đặt cách đó hai mét lại rè lên — không có dây nào nối chúng với nhau.</p>
+
+<p>Vậy cái gì đã đi từ bếp từ tới ăng ten radio?</p>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 1. Bếp từ chạy dòng xoay chiều: điện từ trường lan tới ăng ten radio cách hai mét.</figcaption></figure>
+
+<div>
+<p>🤔 Dự đoán trước khi học</p>
+<p>Radio chạy pin, cách bếp từ hai mét. Vì sao nó vẫn rè?</p>
+<div>
+<input><label>A. Nhiệt từ mặt bếp truyền trong không khí làm radio rè</label>
+<input><label>B. Dòng nhiễu theo dây điện chung sang radio</label>
+<input><label>C. Dòng biến thiên trong bếp từ sinh điện từ trường tới ăng ten</label>
+<input><label>D. Sóng âm của bếp từ biến thành sóng điện từ khi gặp ăng ten</label>
+
+
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Từ trường biến thiên sinh điện trường xoáy</h4>
+
+<p><strong>🔑 Từ biến thiên · Điện trường xoáy · Đường sức kín</strong></p>
+
+<ul>
+<li>Vùng có <strong>từ trường biến thiên</strong> theo thời gian thì xuất hiện một <strong>điện trường xoáy</strong>.</li>
+<li>Đường sức của nó là <strong>đường cong kín</strong>, bao quanh các đường cảm ứng từ.</li>
+<li>Đường sức kín nên nó không có điểm đầu, điểm cuối — không gắn với điện tích nào.</li>
+<li>Điện trường tĩnh: đường sức không khép kín.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 2. Từ trường biến thiên sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.</figcaption></figure>
+
+<div>
+<p>🔬 Thí nghiệm: nam châm rơi qua ống dây</p>
+<ol>
+<li><strong>Làm:</strong> nối ống dây với điện kế; thả rơi nam châm thẳng qua lòng ống, lần chậm rồi nhanh.</li>
+<li><strong>Quan sát:</strong> kim lệch khi nam châm <em>chuyển động</em>, lệch mạnh hơn khi thả nhanh, về 0 khi nam châm nằm yên.</li>
+<li><strong>Rút ra:</strong> thứ gây ra điện trường trong dây là <strong>từ trường biến thiên</strong>, không phải từ trường mạnh.</li>
+</ol>
+</div>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Đường sức của điện trường xoáy có đặc điểm gì?</p>
+<div>
+<input><label>A. Đường cong hở, nối hai điểm ở vô cùng</label>
+<input><label>B. Đường cong kín, bao quanh các đường cảm ứng từ</label>
+<input><label>C. Đường thẳng, đi từ điện tích dương sang điện tích âm</label>
+
+
+</div>
+</div>
+
+<h4>2. Điện trường biến thiên sinh từ trường — dòng điện dịch</h4>
+
+<p><strong>🔑 Tụ nạp xả · Dòng điện dịch · Từ trường khép kín</strong></p>
+
+<ul>
+<li>Khi tụ tích hoặc phóng điện, điện tích hai bản thay đổi nên giữa hai bản có <strong>điện trường biến thiên</strong> (cả độ lớn lẫn chiều).</li>
+<li>Điện trường biến thiên ấy tương đương một dòng điện chạy qua tụ, gọi là <strong>dòng điện dịch</strong>.</li>
+<li>Dòng điện dịch gây ra <strong>từ trường</strong> có đường sức kín, bao quanh các đường sức điện.</li>
+</ul>
+
+<div>
+<p>🔬 Thí nghiệm đo: dòng xoay chiều "đi qua" tụ điện</p>
+<ol>
+<li><strong>Làm:</strong> mắc tụ $C = 1{,}0\ \mu\text{F}$ nối tiếp với đồng hồ vạn năng (thang dòng xoay chiều) vào máy phát tần số, giữ $U = 12\ \text{V}$; đọc dòng ở 50, 100, 200, 400, 800 Hz.</li>
+<li><strong>Quan sát:</strong> tần số càng lớn thì dòng càng mạnh; dòng chia cho tần số gần như không đổi.</li>
+<li><strong>Rút ra:</strong> giữa hai bản tụ là chất cách điện mà mạch vẫn có dòng — điện trường biến thiên ở đó chính là dòng điện dịch, và nó sinh ra từ trường.</li>
+</ol>
+</div>
+
+<table>
+<thead>
+<tr><th>$f$ (Hz)</th><th>$I$ (mA)</th><th>$I/f$ (mA/Hz)</th></tr>
+</thead>
+<tbody>
+<tr><td>50</td><td>3,6</td><td>0,072</td></tr>
+<tr><td>100</td><td>7,4</td><td>0,074</td></tr>
+<tr><td>200</td><td>14,8</td><td>0,074</td></tr>
+<tr><td>400</td><td>29,5</td><td>0,074</td></tr>
+<tr><td>800</td><td>58,0</td><td>0,073</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>🤏 Vì sao số đo luôn thấp hơn tính toán chừng 2–5%?</summary>
+<p>Tụ 1,0 μF có dung sai ±5%, đồng hồ có sai số ±(1% + 3 số cuối), dây nối cũng ăn bớt chút điện áp. Cột $I/f$ của bảng cho cả năm giá trị 0,072–0,074 mA/Hz — tỉ số gần như không đổi, đúng điều cần thấy: <strong>dòng qua tụ tỉ lệ với tần số</strong>. Lý thuyết $I = U \cdot 2\pi f C$ cho $U \cdot 2\pi C \approx 0{,}075\ \text{mA/Hz}$; số đo thấp hơn 2–5% (trung bình gần 3%) — nằm gọn trong dung sai của tụ.</p>
+</details>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không&nbsp;chắc</label></p>
+<p><strong>Câu 2.</strong> Tụ nối tiếp với bóng đèn trong mạch xoay chiều, đèn vẫn sáng. Vì sao?</p>
+<div>
+<input><label>A. Điện tích chạy xuyên qua lớp cách điện giữa hai bản tụ</label>
+<input><label>B. Tụ biến dòng xoay chiều thành dòng một chiều</label>
+<input><label>C. Tụ phóng điện một lần rồi ngắt</label>
+<input><label>D. Điện trường biến thiên giữa hai bản tụ tương đương dòng điện dịch</label>
+
+
+</div>
+</div>
+
+<h4>3. Điện từ trường — hai mặt của một trường</h4>
+
+<p><strong>🔑 Một trường thống nhất · Hai mặt · Luôn vuông góc</strong></p>
+
+<ul>
+<li><strong>Kết luận Maxwell:</strong> từ trường biến thiên sinh điện trường biến thiên; điện trường biến thiên cũng sinh từ trường biến thiên.</li>
+<li>Hai trường đó là hai mặt của một trường thống nhất — <strong>điện từ trường</strong> — cùng tồn tại trong không gian và chuyển hoá qua lại lẫn nhau.</li>
+<li>Tại mỗi điểm của điện từ trường, $\vec{E}$ <strong>luôn vuông góc với</strong> $\vec{B}$.</li>
+<li><strong>Ví dụ:</strong> giữa hai bản tụ ở thí nghiệm trên không có điện tích nào mà $\vec{E}$, $\vec{B}$ vẫn cùng biến thiên.</li>
+</ul>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Phát biểu nào đúng về điện từ trường?</p>
+<div>
+<input><label>A. Tên gọi khác của điện trường tĩnh</label>
+<input><label>B. Một trường thống nhất, tại mỗi điểm $\vec{E}$ vuông góc $\vec{B}$</label>
+<input><label>C. Từ trường của nam châm vĩnh cửu</label>
+<input><label>D. Hai trường riêng biệt, không liên quan nhau</label>
+
+
+</div>
+</div>
+
+<h4>4. Sự tạo thành và lan truyền sóng điện từ</h4>
+
+<p><strong>🔑 Điện sinh từ · Từ sinh điện · Lan ra xa</strong></p>
+
+<ul>
+<li>Tại O có điện trường biến thiên $E_1$: nó sinh ra $B_1$; $B_1$ biến thiên lại sinh ra $E_2$; cứ thế lan ra xa thành <strong>sóng điện từ</strong>.</li>
+<li>Sóng điện từ là <strong>sóng ngang</strong>: $\vec{E} \perp \vec{B}$ và cả hai vuông góc phương truyền.</li>
+<li>$\vec{E}$ và $\vec{B}$ biến thiên điều hoà, luôn <strong>cùng pha</strong> nhau.</li>
+<li>Truyền trong chân không với $c = 3 \cdot 10^8$ m/s; $\lambda = cT = \frac{c}{f}$ ($T$ là chu kì, $f$ là tần số).</li>
+<li><strong>Mang năng lượng</strong>: tần số càng cao thì năng lượng càng lớn.</li>
+<li>Tuân theo quy luật truyền thẳng, phản xạ, khúc xạ, giao thoa, nhiễu xạ như sóng cơ.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha.</figcaption></figure>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Tại một điểm có sóng điện từ truyền qua, nhận xét nào đúng?</p>
+<div>
+<input><label>A. Hai vectơ song song với phương truyền</label>
+<input><label>B. Sóng không truyền được trong chân không</label>
+<input><label>C. $\vec{E}$ vuông góc $\vec{B}$, cả hai vuông góc phương truyền và cùng pha</label>
+<input><label>D. Hai vectơ lệch pha $\pi/2$</label>
+
+
+</div>
+</div>
+
+<h4>5. Thang sóng điện từ</h4>
+
+<p><strong>🔑 Sáu vùng sóng · Bước sóng giảm dần</strong></p>
+
+<ul>
+<li>Sáu vùng sóng đều là <strong>sóng điện từ</strong> — cùng bản chất, khác bước sóng và tần số.</li>
+<li>Theo bước sóng <strong>giảm dần</strong>: vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.</li>
+<li>Trong chân không mọi vùng truyền cùng tốc độ $c$; bước sóng càng nhỏ thì năng lượng càng lớn.</li>
+</ul>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 4. Thang sóng điện từ: sáu vùng xếp theo bước sóng giảm dần (sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ); vùng tô xanh là sóng vô tuyến.</figcaption></figure>
+
+<table>
+<thead>
+<tr><th>Vùng sóng (bước sóng)</th><th>Gặp ở đâu</th></tr>
+</thead>
+<tbody>
+<tr><td>Vô tuyến: 1 mm – hàng km</td><td>phát thanh, wifi, radar</td></tr>
+<tr><td>Hồng ngoại: $0{,}76\ \mu\text{m}$ – 1 mm</td><td>điều khiển từ xa</td></tr>
+<tr><td>Nhìn thấy: $0{,}38$ – $0{,}76\ \mu\text{m}$</td><td>chiếu sáng, máy ảnh</td></tr>
+<tr><td>Tử ngoại: 10 nm – $0{,}38\ \mu\text{m}$</td><td>diệt khuẩn</td></tr>
+<tr><td>Tia X: 0,01 – 10 nm</td><td>chụp X-quang</td></tr>
+<tr><td>Tia gamma: dưới 0,01 nm</td><td>xạ trị ung thư</td></tr>
+</tbody>
+</table>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Cách sắp xếp nào đúng theo bước sóng giảm dần?</p>
+<div>
+<input><label>A. Gamma → tia X → tử ngoại → hồng ngoại → vô tuyến</label>
+<input><label>B. Vô tuyến → tử ngoại → nhìn thấy → hồng ngoại → tia X</label>
+<input><label>C. Nhìn thấy → vô tuyến → tia X → gamma → hồng ngoại</label>
+<input><label>D. Vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → gamma</label>
+
+
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "điện trường xoáy cũng như điện trường tĩnh"</h4>
+
+<p>Giống ở cách vẽ đường sức, khác ở bản chất:</p>
+
+<table>
+<thead>
+<tr><th>Điện trường tĩnh</th><th>Điện trường xoáy</th></tr>
+</thead>
+<tbody>
+<tr><td>Do điện tích đứng yên gây ra</td><td>Do từ trường biến thiên gây ra</td></tr>
+<tr><td>Đường sức không khép kín: từ điện tích dương sang điện tích âm</td><td>Đường sức là đường cong kín, không có điểm đầu và điểm cuối</td></tr>
+<tr><td>Không bao quanh đường cảm ứng từ nào</td><td>Bao quanh các đường cảm ứng từ</td></tr>
+<tr><td><strong>Giống nhau:</strong> đường sức không cắt nhau; nơi cường độ lớn hơn thì đường sức vẽ dày hơn, nhỏ hơn thì thưa hơn.</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Bấm xem: nơi không có điện tích vẫn có điện trường</summary>
+<p>Quanh một ống dây có dòng điện biến thiên, vùng không gian bên trong ống không có điện tích nào, vậy mà vẫn có điện trường xoáy. Điện trường tĩnh thì bắt buộc phải có điện tích sinh ra nó. Đó là lí do điện trường xoáy "đứng một mình" được, và cũng là lí do sóng điện từ bay được vào chân không.</p>
+</details>
+
+<h4>Bẫy 2: "sóng điện từ cần môi trường để truyền"</h4>
+
+<p>Dễ mang thói quen "phải có môi trường" từ sóng cơ sang sóng điện từ:</p>
+
+<table>
+<thead>
+<tr><th>Sóng cơ</th><th>Sóng điện từ</th></tr>
+</thead>
+<tbody>
+<tr><td>Truyền nhờ dao động của các phần tử môi trường: rắn, lỏng hoặc khí</td><td>Truyền được cả trong chân không, với $c = 3 \cdot 10^8$ m/s</td></tr>
+<tr><td>Không truyền được trong chân không</td><td>Nhanh nhất trong chân không, vào môi trường vật chất thì chậm hơn</td></tr>
+<tr><td>Cần môi trường đàn hồi để truyền năng lượng</td><td>Mang năng lượng đi xa mà không cần môi trường, có thể gây nhiễu thiết bị điện</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>👀 Bấm xem: ánh sáng Mặt Trời tới Trái Đất mất bao lâu?</summary>
+<p>Khoảng cách trung bình Trái Đất – Mặt Trời là $1{,}5 \cdot 10^{11}$ m, nên $t = s/c = 1{,}5 \cdot 10^{11} \div (3 \cdot 10^8) = 500$ s, tức 8 phút 20 giây. Giữa Mặt Trời và Trái Đất gần như là chân không; nếu ánh sáng cần môi trường như sóng cơ thì Trái Đất đã tối đen.</p>
+</details>
+
+<h4>Bẫy 3: "E và B lệch pha như dòng và áp trong mạch điện"</h4>
+
+<p>Trong mạch chỉ có tụ, dòng điện sớm pha $\pi/2$ so với điện áp. Nhiều em mang thói quen đó sang sóng điện từ:</p>
+
+<table>
+<thead>
+<tr><th>Tụ điện trong mạch xoay chiều</th><th>Sóng điện từ trong không gian</th></tr>
+</thead>
+<tbody>
+<tr><td>$i$ sớm pha $\pi/2$ so với $u$</td><td>$\vec{E}$ và $\vec{B}$ cùng pha</td></tr>
+<tr><td>Khi $u = 0$ thì $i$ đạt cực đại</td><td>Khi $\vec{E} = 0$ thì $\vec{B} = 0$</td></tr>
+<tr><td>Chỉ có trong mạch kín, phải có dây dẫn</td><td>Lan trong không gian, không cần dây dẫn</td></tr>
+</tbody>
+</table>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không&nbsp;chắc</label></p>
+<p><strong>Câu 6.</strong> Khi điện trường $\vec{E}$ của sóng triệt tiêu thì từ trường $\vec{B}$ thế nào?</p>
+<div>
+<input><label>A. Cũng triệt tiêu, vì hai vectơ cùng pha</label>
+<input><label>B. Cực đại, vì hai vectơ lệch pha $\pi/2$</label>
+<input><label>C. Cực đại, vì năng lượng điện bằng 0</label>
+<input><label>D. Luôn khác 0</label>
+
+
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div>
+<p>🎤 Trả bài</p>
+<p>Nói bằng lời của em trước khi bấm xem đáp án.</p>
+
+<details>
+<summary>1. Từ trường biến thiên sinh ra gì? Đường sức của nó dạng nào? <small>(nói bằng lời của em trước)</small></summary>
+<p><strong>Điện trường xoáy · Đường cong kín.</strong> Trong vùng có từ trường biến thiên xuất hiện điện trường xoáy; đường sức của nó khép kín, bao quanh các đường cảm ứng từ, không có điểm đầu và điểm cuối.</p>
+</details>
+
+<details>
+<summary>2. Điện trường biến thiên sinh ra gì? Dòng điện dịch là gì? <small>(nói bằng lời của em trước)</small></summary>
+<p><strong>Từ trường · Dòng tương đương.</strong> Điện trường biến thiên sinh ra từ trường có đường sức khép kín. Khi tụ tích hoặc phóng điện, điện trường giữa hai bản biến thiên và tương đương một dòng điện chạy qua tụ — gọi là dòng điện dịch; dòng này gây ra từ trường.</p>
+</details>
+
+<details>
+<summary>3. Điện từ trường là gì? Có tách riêng hai trường được không? <small>(nói bằng lời của em trước)</small></summary>
+<p><strong>Một trường thống nhất.</strong> Điện từ trường gồm điện trường biến thiên và từ trường biến thiên — hai mặt thể hiện cùng tồn tại và chuyển hoá qua lại; tại mỗi điểm $\vec{E}$ vuông góc với $\vec{B}$. Không tách riêng được.</p>
+</details>
+
+<details>
+<summary>4. Sóng điện từ tạo thành thế nào? Nêu tính chất và công thức bước sóng. <small>(nói bằng lời của em trước)</small></summary>
+<p><strong>Lan truyền của điện từ trường.</strong> Điện trường biến thiên sinh từ trường biến thiên, từ trường biến thiên lại sinh điện trường biến thiên; chuỗi đó lan ra xa thành sóng điện từ. Tính chất: sóng ngang, $\vec{E} \perp \vec{B} \perp$ phương truyền, hai vectơ cùng pha, truyền trong chân không với $c = 3 \cdot 10^8$ m/s, mang năng lượng. Bước sóng $\lambda = cT = \frac{c}{f}$.</p>
+</details>
+
+<details>
+<summary>5. Kể sáu vùng của thang sóng điện từ theo bước sóng giảm dần. <small>(nói bằng lời của em trước)</small></summary>
+<p><strong>Vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.</strong> Ứng dụng: phát thanh – wifi, điều khiển từ xa, chiếu sáng, diệt khuẩn, chụp X-quang, xạ trị ung thư.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đài FM 100 MHz và vệ tinh địa tĩnh</h3>
+
+<div>
+<p>📝 Đề bài</p>
+<p>Đài FM phát ở <strong>100 MHz</strong>. Máy thu cách đài <strong>30 km</strong>. Tín hiệu được phát lên vệ tinh địa tĩnh ở độ cao <strong>35 786 km</strong> rồi phát thẳng xuống máy thu. Coi sóng truyền trong chân không, $c = 3 \cdot 10^8$ m/s, bỏ qua thời gian xử lý ở vệ tinh.</p>
+<p>a) Tính bước sóng của sóng này.</p>
+<p>b) Tín hiệu đi qua vệ tinh mất bao lâu?</p>
+<p>c) Bước sóng đó thuộc vùng nào của thang sóng điện từ? Tia X dài hơn hay ngắn hơn?</p>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"tần số 100 MHz"</td><td>$f = 100\ \text{MHz} = 10^8\ \text{Hz}$</td><td>đổi về Hz rồi dùng $\lambda = c/f$</td></tr>
+<tr><td>"máy thu cách đài 30 km"</td><td>$30\ \text{km} = 3 \cdot 10^4$ m</td><td>nhỏ hơn đường qua vệ tinh hơn 2000 lần</td></tr>
+<tr><td>"vệ tinh cao 35 786 km"</td><td>$h = 3{,}5786 \cdot 10^7$ m</td><td>quãng đường qua vệ tinh: $s = 2h$</td></tr>
+<tr><td>"sóng truyền trong chân không"</td><td>$c = 3 \cdot 10^8$ m/s</td><td>tốc độ không phụ thuộc tần số</td></tr>
+<tr><td>"bỏ qua thời gian xử lý"</td><td>trễ chỉ do truyền sóng</td><td>dữ kiện ngầm: dùng $t = s/c$</td></tr>
+<tr><td>"thuộc vùng nào của thang sóng"</td><td>$\lambda = 3$ m</td><td>đối chiếu thang sóng: vùng vô tuyến</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>🧮 Bấm xem: lời giải từng bước</summary>
+<ol>
+<li>Câu a: bước sóng $\lambda = \dfrac{c}{f} = \dfrac{3 \cdot 10^8}{10^8} = 3$ m.</li>
+<li>Câu b: sóng đi đài → vệ tinh → máy thu, quãng đường $s \approx 2h = 7{,}1572 \cdot 10^7$ m. Thời gian $t = \dfrac{s}{c} \approx 0{,}239$ s, làm tròn 0,24 s.</li>
+<li>Câu c: $\lambda = 3$ m nằm trong vùng sóng vô tuyến. Tia X có bước sóng 0,01 nm đến 10 nm — nhỏ hơn bước sóng này rất nhiều.</li>
+<li>Kiểm tra kết quả: $f = \dfrac{c}{\lambda} = 10^8$ Hz = 100 MHz, khớp đúng đề.</li>
+</ol>
+</details>
+
+<div>
+<p>✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Vẫn vệ tinh đó, nhưng đài phát ở <strong>150 MHz</strong>. Em điền bước sóng và thời gian trễ.</p>
+<ol>
+<li>Bước 1: đổi tần số, $f = 1{,}5 \cdot 10^8$ Hz.</li>
+<li><strong>Em điền:</strong> bước sóng $\lambda = \dfrac{c}{f} = \;?$</li>
+<li><strong>Em điền:</strong> thời gian qua vệ tinh có thay đổi so với câu b không? Vì sao?</li>
+</ol>
+<details>
+<summary>Bấm xem bước 2–3</summary>
+<p>$\lambda = \dfrac{3 \cdot 10^8}{1{,}5 \cdot 10^8} = 2$ m. Thời gian trễ <strong>không đổi</strong>, vẫn khoảng 0,24 s: trong chân không mọi sóng điện từ đều truyền với cùng tốc độ $c$, đổi tần số chỉ làm bước sóng ngắn lại chứ không làm tín hiệu đi nhanh hơn.</p>
+</details>
+</div>
+
+<div>
+<p>✍️ Thử sức: đổi môi trường truyền</p>
+<p>Em chắc bao nhiêu? <label><input> Chắc</label> <label><input> Không&nbsp;chắc</label></p>
+<p><strong>Câu 7.</strong> Cáp dẫn tín hiệu 100 MHz, tốc độ truyền $2 \cdot 10^8$ m/s. Bước sóng trong cáp là:</p>
+<div>
+<input><label>A. 0,5 m</label>
+<input><label>B. 1,5 m</label>
+<input><label>C. 2 m</label>
+<input><label>D. 3 m</label>
+
+
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Điện thoại, wifi, lò vi sóng:</strong> sóng vô tuyến và vi ba (2,4 GHz → 12,5 cm).</li>
+<li><strong>Điều khiển từ xa:</strong> chùm tia hồng ngoại mắt không thấy, đầu thu trong tivi giải mã.</li>
+<li><strong>Nhiễu điện từ:</strong> bếp từ, sạc không dây đặt gần radio gây rè — đúng cơ chế ở đầu bài.</li>
+</ul>
+
+<div>
+<p>🎯 Thử thách phân tầng</p>
+
+<details>
+<summary>⭐ Cơ bản: sóng wifi 2,4 GHz có bước sóng bao nhiêu?</summary>
+<p>$\lambda = \dfrac{c}{f} = \dfrac{3 \cdot 10^8}{2{,}4 \cdot 10^9} = 0{,}125$ m = 12,5 cm.</p>
+</details>
+
+<details>
+<summary>⭐⭐ Khá: ánh sáng đỏ bước sóng $0{,}75\ \mu\text{m}$ (trong chân không) đi vào thuỷ tinh có chiết suất $n = 1{,}5$. Tần số, tốc độ, bước sóng thay đổi thế nào?</summary>
+<p>Tần số $f = \dfrac{c}{\lambda} = \dfrac{3 \cdot 10^8}{0{,}75 \cdot 10^{-6}} = 4 \cdot 10^{14}$ Hz và <strong>không đổi</strong> khi đổi môi trường (nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu). Tốc độ giảm: $v = \dfrac{c}{n} = 2 \cdot 10^8$ m/s. Bước sóng ngắn lại: $\lambda' = \dfrac{v}{f} = \dfrac{\lambda}{n} = 0{,}5\ \mu\text{m}$.</p>
+</details>
+
+<details>
+<summary>⭐⭐⭐ Thách đấu: hai người gọi nhau qua vệ tinh địa tĩnh, vì sao cuộc gọi hay bị ngắt quãng?</summary>
+<p>Một lượt truyền đài → vệ tinh → máy thu mất khoảng 0,24 s. Người thứ nhất nói xong, câu nói đi một lượt; câu đáp của người thứ hai quay về thêm một lượt nữa, nên độ trễ vòng khoảng $2 \times 0{,}24 = 0{,}48$ s. Sau mỗi câu có một <strong>khoảng lặng 0,48 s</strong>: người nói tưởng bên kia không nghe thấy nên nói tiếp, rồi hai người nói chồng lên nhau — đó là lí do cuộc gọi qua vệ tinh nghe ngắt quãng.</p>
+</details>
+</div>
+
+<div>
+<p>✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Từ trường biến thiên:</strong> sinh điện trường xoáy · đường sức kín.</li>
+<li><strong>Điện trường biến thiên:</strong> sinh từ trường · tụ nạp xả có dòng điện dịch.</li>
+<li><strong>Điện từ trường:</strong> một trường thống nhất · $\vec{E}$ vuông góc $\vec{B}$.</li>
+<li><strong>Sóng điện từ:</strong> sóng ngang · hai vectơ cùng pha · mang năng lượng.</li>
+<li><strong>Chân không:</strong> $c = 3 \cdot 10^8$ m/s · $\lambda = cT = \frac{c}{f}$.</li>
+<li><strong>Thang sóng:</strong> vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → X → gamma.</li>
+<li><strong>Đọc đề:</strong> đổi MHz, nm, km về Hz và mét trước khi tính.</li>
+</ul>
+</div>

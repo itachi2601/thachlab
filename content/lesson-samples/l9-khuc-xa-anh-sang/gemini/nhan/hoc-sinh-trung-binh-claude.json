@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 5. Khúc xạ ánh sáng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Định luật khúc xạ ánh sáng",
+      "trich_nguyen_van": "Bấm phím sin và sin⁻¹ trên máy tính để tính góc.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Em có công thức n₁sin i = n₂sin r nhưng chưa thấy một phép tính mẫu nào trước Câu 3. Em không biết phải rút sin r ra trước rồi mới bấm sin⁻¹, nên dễ chia thẳng góc cho n (ra 40°). Em cũng có thể quên để máy ở chế độ độ (DEG).",
+      "de_xuat": "Thêm ngay sau công thức một ví dụ 3 dòng dùng số của Hình 3a: sin r = sin50°/1,5 ≈ 0,511 → bấm sin⁻¹ → r ≈ 31°, kèm nhắc để máy ở chế độ D (độ)."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Định luật khúc xạ ánh sáng",
+      "trich_nguyen_van": "Tia ló khỏi mặt cong không gãy thêm vì đi theo bán kính (pháp tuyến của mặt cong đi qua tâm).",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em chưa được giải thích \"tia ló\" là gì. Bài cũng chưa nói pháp tuyến của mặt cong là gì, nên em không hiểu vì sao tia đi theo bán kính lại không gãy.",
+      "de_xuat": "Thêm: \"tia ló là tia đi ra khỏi khối nhựa; tia đi theo bán kính thì vuông góc mặt cong, tức i = 0°, nên đi thẳng như Câu 1\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Định luật khúc xạ ánh sáng",
+      "trich_nguyen_van": "Ánh sáng đi theo đường nào thì đi ngược lại được theo đường ấy, nên n₁₂ = 1/n₂₁.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em chưa biết n₁₂ khác n₂₁ thế nào, và không thấy vì sao \"đi ngược được\" thì suy ra nghịch đảo.",
+      "de_xuat": "Ghi rõ n₁₂ là chiết suất tỉ đối khi ánh sáng đi từ môi trường 2 sang 1, kèm một dòng: đi ngược thì i và r đổi vai nên sin r/sin i = 1/n₂₁."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Chiết suất của môi trường",
+      "trich_nguyen_van": "tức khoảng 2,26·10⁸ m/s, chậm hơn trong không khí khoảng một phần tư.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ở mục 2 tốc độ trong nước là 2,26·10⁸ m/s, nhưng Bài toán mẫu lại ra 2,25·10⁸ m/s. Em tưởng một trong hai chỗ tính sai.",
+      "de_xuat": "Ở Bài toán mẫu thêm chú thích: dùng n = 4/3 nên ra 2,25·10⁸, dùng n = 1,33 thì ra 2,26·10⁸; hai kết quả chỉ khác do làm tròn."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Nhìn vật qua mặt nước: thấy ảnh",
+      "trich_nguyen_van": "Kéo dài ngược (nét đứt xanh) gặp nhau ở ảnh, ở khoảng 0,7 độ sâu thật.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hình 4 ghi 0,7 lần độ sâu thật, nhưng bảng ở Bẫy 3 cho 1,6 m → 1,2 m, tức 0,75 lần. Em không biết con số nào đúng và nó từ đâu ra.",
+      "de_xuat": "Ghi rõ: nhìn gần thẳng đứng thì ảnh ở khoảng 3/4 độ sâu thật (1,6 m → 1,2 m); Hình 4 nhìn xiên nên ảnh nổi cao hơn, khoảng 0,7."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "1 · 0,8 = (4/3)sin r nên sin r = 0,6, r ≈ 37°.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Đề chỉ cho sin 53° ≈ 0,8. Em không biết vì sao sin r = 0,6 lại ra 37°, nên tưởng phải thuộc lòng giá trị này.",
+      "de_xuat": "Thêm vào đề \"sin 37° ≈ 0,6\" (giống mục Thử sức đổi chiều), hoặc ghi \"bấm sin⁻¹(0,6) ≈ 36,9° ≈ 37°\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "\"góc lệch\" | D = i − r",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Góc lệch D chưa từng được định nghĩa trong bài. Em sẽ nhớ máy móc D = i − r rồi áp cả khi tia đi từ nước ra không khí, và ra số âm.",
+      "de_xuat": "Định nghĩa D là góc giữa tia khúc xạ và đường kéo dài của tia tới, vẽ trên hình, và ghi: vào môi trường chiết quang hơn thì D = i − r, ra môi trường kém chiết quang thì D = r − i."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Nếu em đã chọn Chắc mà vẫn sai, xem lại bước 2 lời giải mẫu.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 7 là tia đi từ thuỷ tinh ra không khí, còn bước 2 lời giải mẫu là tia từ không khí vào nước. Xem lại chỗ đó em vẫn không thấy n₁ phải đặt ở phía tia tới khi đi ra.",
+      "de_xuat": "Đổi chỉ dẫn thành \"xem lại mục Thử sức đổi chiều và bảng ở Bẫy 1\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "n = c/v, không có đơn vị.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi yêu cầu nêu đơn vị, nhưng phần kiến thức chưa hề nói n không có đơn vị. Em sẽ đoán là m/s hoặc bỏ trống.",
+      "de_xuat": "Ở mục 2, sau công thức n = c/v, thêm: \"c và v cùng đơn vị m/s nên n không có đơn vị\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "Khác môi trường · mắt thấy ảnh ảo · ảnh nằm cao hơn vật.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đáp án chỉ nêu kết quả, chưa nói vì sao ảnh cao hơn. Em không đối chiếu được lời giải thích của mình.",
+      "de_xuat": "Thêm ý: tia từ đáy ra không khí lệch xa pháp tuyến, kéo dài ngược thì gặp nhau ở điểm cao hơn vật."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "4. Nhìn vật qua mặt nước: thấy ảnh",
+      "trich_nguyen_van": "kéo dài ngược hai tia khúc xạ (nét đứt), giao điểm là ảnh ảo",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Ảnh ảo\" xuất hiện trước, đến gạch đầu dòng sau mới được định nghĩa, nên em đọc lướt qua mà chưa hiểu.",
+      "de_xuat": "Đảo gạch đầu dòng định nghĩa ảnh thật/ảnh ảo lên trước gạch đầu dòng \"Dựng ảnh\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: \"Thấy vật dưới nước ở đâu thì vật nằm đúng chỗ đó\"",
+      "trich_nguyen_van": "C. Gần bờ hơn chỗ nhìn thấy cá",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ nói ảnh lệch lên cao, không nói gì về lệch ngang. Em không có căn cứ để loại phương án C, chỉ đoán.",
+      "de_xuat": "Thêm vào phản hồi sai một câu: khi nhìn xiên, ảnh còn lệch về phía người nhìn, nên cá thật ở xa bờ hơn chứ không gần bờ hơn."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhầm khúc xạ với phản xạ trên mặt nước, vì mặt nước quen thuộc như một tấm gương.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phản chiếu cho ảnh nằm trên mặt nước, còn chỗ \"gãy\" là phần nằm dưới nước."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ cứ qua mặt phân cách là tia gãy, bỏ qua điều kiện \"xiên góc\".",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tia sáng bị gãy khúc (đổi phương) khi truyền xiên góc qua mặt phân cách"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chia ngược v/c, không kiểm tra lại điều kiện n > 1.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Không khí n ≈ 1, nhỏ nhất; mọi môi trường khác n > 1."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chia thẳng góc cho n (60 : 1,5) thay vì chia sin, vì chưa có ví dụ tính mẫu trước câu này.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Theo thói quen không khí → nước, đặt n = 1,33 ở vế tia khúc xạ nên ra r < i.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "n₁: chiết suất môi trường chứa tia tới; n₂: môi trường chứa tia khúc xạ."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn góc hợp với mặt nước (60°) làm góc tới.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đề hay cho \"tia sáng hợp với mặt nước góc …\". Đó chưa phải góc tới."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ từ khoá \"trông nông hơn\" rồi gán cho vị trí cá thật, lẫn ảnh với vật.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "mắt thấy ảnh ảo · ảnh nằm cao hơn vật"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đặt n = 1,5 sang phía không khí như trường hợp đi vào thuỷ tinh, nên ra r < i.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Vào môi trường kém chiết quang hơn, n₂ < n₁: r > i, tia lệch xa pháp tuyến."
+    }
+  ]
+}

@@ -1,0 +1,493 @@
+{
+  "lesson_title": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Thế số vào phương trình trạng thái",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng: cả ba thông số p, V, T cùng đổi, nhiệt độ cho sẵn bằng Kelvin, chỉ cần viết phương trình trạng thái rồi rút ẩn.",
+      "yccd_de_xuat": "Vận dụng phương trình trạng thái",
+      "de_bai": "Một quả bóng thám không chứa khí heli được thả từ mặt đất. Ở mặt đất, khí trong bóng có thể tích $2{,}0\\ \\text{m}^3$, áp suất $1{,}0.10^5\\ \\text{Pa}$, nhiệt độ $300\\ \\text{K}$. Khi bóng lên tới độ cao khoảng 5 km, khí trong bóng có áp suất $0{,}50.10^5\\ \\text{Pa}$ và nhiệt độ $250\\ \\text{K}$. Bóng không bị rò khí. Tính thể tích khí trong bóng ở độ cao đó.",
+      "dieu_kien_ap_dung": "Lượng khí heli trong bóng không đổi (không rò khí) và coi heli là khí lí tưởng.",
+      "phan_tich": [
+        {
+          "trich_de": "thể tích $2{,}0\\ \\text{m}^3$, áp suất $1{,}0.10^5\\ \\text{Pa}$, nhiệt độ $300\\ \\text{K}$",
+          "du_lieu": "$V_1 = 2{,}0\\ \\text{m}^3$; $p_1 = 1{,}0.10^5\\ \\text{Pa}$; $T_1 = 300\\ \\text{K}$",
+          "kien_thuc": "Ba thông số của trạng thái 1"
+        },
+        {
+          "trich_de": "áp suất $0{,}50.10^5\\ \\text{Pa}$ và nhiệt độ $250\\ \\text{K}$",
+          "du_lieu": "$p_2 = 0{,}50.10^5\\ \\text{Pa}$; $T_2 = 250\\ \\text{K}$",
+          "kien_thuc": "Hai thông số đã biết của trạng thái 2"
+        },
+        {
+          "trich_de": "Bóng không bị rò khí",
+          "du_lieu": "Lượng khí không đổi",
+          "kien_thuc": "Điều kiện dùng phương trình trạng thái"
+        },
+        {
+          "trich_de": "Tính thể tích khí trong bóng ở độ cao đó",
+          "du_lieu": "$V_2 = ?$",
+          "kien_thuc": "$\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "V_2",
+        "cong_thuc": "V_2 = V_1 \\cdot \\dfrac{p_1}{p_2} \\cdot \\dfrac{T_2}{T_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "Ba thông số trạng thái: $p$, $V$, $T$ (Kelvin).",
+        "Lượng khí xác định: $\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$.",
+        "Không thông số nào được giữ không đổi thì phải dùng phương trình trạng thái, không dùng riêng Boyle hay Charles."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Viết phương trình trạng thái và rút $V_2$",
+          "cong_thuc_chu": "$\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2} \\Rightarrow V_2 = V_1 \\cdot \\dfrac{p_1}{p_2} \\cdot \\dfrac{T_2}{T_1}$",
+          "the_so": "$V_2 = 2{,}0 \\times \\dfrac{1{,}0.10^5}{0{,}50.10^5} \\times \\dfrac{250}{300} = 2{,}0 \\times 2 \\times 0{,}8333$",
+          "ket_qua": "$V_2 \\approx 3{,}333\\ \\text{m}^3$",
+          "kiem_tra": "Hai tỉ số không thứ nguyên nên $V_2$ cùng đơn vị $\\text{m}^3$ với $V_1$. Áp suất giảm một nửa làm bóng nở, nhiệt độ giảm làm bóng co nhẹ: $V_2$ lớn hơn $V_1$ nhưng nhỏ hơn $2V_1$, hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Kiểm lại hằng số $pV/T$",
+          "cong_thuc_chu": "$\\dfrac{p_1V_1}{T_1}$ và $\\dfrac{p_2V_2}{T_2}$",
+          "the_so": "$\\dfrac{1{,}0.10^5 \\times 2{,}0}{300}$ và $\\dfrac{0{,}50.10^5 \\times 3{,}333}{250}$",
+          "ket_qua": "Cả hai $\\approx 666{,}7\\ \\text{J/K}$",
+          "kiem_tra": "Hai vế bằng nhau, đúng một lượng khí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "V2",
+          "gia_tri": 3.333,
+          "don_vi": "m³"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Thể tích V2",
+          "bieu_thuc": "2.0*(1.0e5/0.50e5)*(250/300)",
+          "ky_vong": 3.333,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Hằng số pV/T trạng thái 1",
+          "bieu_thuc": "1.0e5*2.0/300",
+          "ky_vong": 666.7,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Hằng số pV/T trạng thái 2",
+          "bieu_thuc": "0.50e5*(2.0*2*250/300)/250",
+          "ky_vong": 666.7,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho đủ ba thông số ở trạng thái 1, hai thông số ở trạng thái 2, lượng khí không đổi → viết $p_1V_1/T_1 = p_2V_2/T_2$ rồi rút ẩn.",
+      "bay_thuong_gap": [
+        "Dùng $p_1V_1 = p_2V_2$ (Boyle) và bỏ quên nhiệt độ đã đổi.",
+        "Lật ngược tỉ số $p_1/p_2$ hoặc $T_2/T_1$, ra $V_2$ nhỏ hơn $V_1$.",
+        "Nhân thay vì chia khi rút $V_2$."
+      ],
+      "dieu_ban_khong_chac": [
+        "Coi áp suất khí trong bóng bằng áp suất không khí bên ngoài, bỏ qua lực căng vỏ bóng; đề không nói rõ điều này.",
+        "Số liệu 5 km, 0,50.10^5 Pa, 250 K là gần đúng theo khí quyển chuẩn."
+      ],
+      "mo_phong_goi_y": "Bóng thám không bay từ mặt đất lên cao; vỏ bóng phồng dần ra. Bên cạnh có hai bảng trạng thái: trạng thái 1 ghi p1, V1, T1 đầy đủ; trạng thái 2 ghi p2, T2 và V2 = ?. Nhãn: 'mặt đất', 'độ cao ~5 km', 'không rò khí'."
+    },
+    {
+      "label": "Dạng 2 · Đẳng tích – bẫy nhiệt độ Celsius",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại phương trình trạng thái của Dạng 1 (V giữ không đổi nên triệt tiêu, còn $p_1/T_1 = p_2/T_2$). Thêm một độ khó: nhiệt độ cho bằng °C, phải đổi ra Kelvin trước khi lấy tỉ số.",
+      "yccd_de_xuat": "Vận dụng phương trình trạng thái",
+      "de_bai": "Bóng đèn dây tóc chứa khí argon. Khi đèn tắt, khí trong bóng ở $25\\ ^\\circ\\text{C}$ có áp suất $0{,}50.10^5\\ \\text{Pa}$. Khi đèn sáng ổn định, khí trong bóng nóng tới $325\\ ^\\circ\\text{C}$. Coi thể tích bóng không đổi và khí không lọt ra ngoài. Tính áp suất khí trong bóng khi đèn sáng.",
+      "dieu_kien_ap_dung": "Lượng khí xác định, thể tích không đổi (quá trình đẳng tích), nhiệt độ dùng thang Kelvin.",
+      "phan_tich": [
+        {
+          "trich_de": "ở $25\\ ^\\circ\\text{C}$ có áp suất $0{,}50.10^5\\ \\text{Pa}$",
+          "du_lieu": "$t_1 = 25\\ ^\\circ\\text{C} \\to T_1 = 298\\ \\text{K}$; $p_1 = 0{,}50.10^5\\ \\text{Pa}$",
+          "kien_thuc": "Đổi $T = t + 273$"
+        },
+        {
+          "trich_de": "nóng tới $325\\ ^\\circ\\text{C}$",
+          "du_lieu": "$t_2 = 325\\ ^\\circ\\text{C} \\to T_2 = 598\\ \\text{K}$",
+          "kien_thuc": "Đổi $T = t + 273$"
+        },
+        {
+          "trich_de": "Coi thể tích bóng không đổi và khí không lọt ra ngoài",
+          "du_lieu": "$V_1 = V_2$; lượng khí không đổi",
+          "kien_thuc": "Quá trình đẳng tích, $p_1/T_1 = p_2/T_2$"
+        },
+        {
+          "trich_de": "Tính áp suất khí trong bóng khi đèn sáng",
+          "du_lieu": "$p_2 = ?$",
+          "kien_thuc": "$p_2 = p_1 \\cdot T_2/T_1$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p_2",
+        "cong_thuc": "p_2 = p_1 \\cdot \\dfrac{T_2}{T_1}"
+      },
+      "kien_thuc_goi_lai": [
+        "Giữ $V$ không đổi: phương trình trạng thái còn $p_1/T_1 = p_2/T_2$ (Gay-Lussac).",
+        "Đẳng tích: $p$ tỉ lệ thuận với nhiệt độ tuyệt đối.",
+        "Tỉ số nhiệt độ chỉ có nghĩa trên thang Kelvin: $T = t + 273$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Chọn hệ thức",
+          "cong_thuc_chu": "$V_1 = V_2 \\Rightarrow \\dfrac{p_1}{T_1} = \\dfrac{p_2}{T_2}$",
+          "the_so": "$V$ triệt tiêu ở hai vế của $\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$",
+          "ket_qua": "$p_2 = p_1 \\cdot \\dfrac{T_2}{T_1}$",
+          "kiem_tra": "Đề nói rõ thể tích không đổi, lượng khí không đổi."
+        },
+        {
+          "tieu_de": "Bước 2. Đổi nhiệt độ ra Kelvin",
+          "cong_thuc_chu": "$T = t + 273$",
+          "the_so": "$T_1 = 25 + 273$; $T_2 = 325 + 273$",
+          "ket_qua": "$T_1 = 298\\ \\text{K}$; $T_2 = 598\\ \\text{K}$",
+          "kiem_tra": "Tỉ số Kelvin $598/298 \\approx 2{,}007$, không phải $325/25 = 13$."
+        },
+        {
+          "tieu_de": "Bước 3. Tính $p_2$",
+          "cong_thuc_chu": "$p_2 = p_1 \\cdot \\dfrac{T_2}{T_1}$",
+          "the_so": "$p_2 = 0{,}50.10^5 \\times \\dfrac{598}{298}$",
+          "ket_qua": "$p_2 \\approx 1{,}003.10^5\\ \\text{Pa}$",
+          "kiem_tra": "Đơn vị Pa giữ nguyên. Nhiệt độ tăng thì áp suất tăng, hợp lí. Áp suất khi sáng xấp xỉ áp suất khí quyển, nên bóng không chịu chênh áp lớn."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "p2",
+          "gia_tri": 100300,
+          "don_vi": "Pa"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Áp suất p2 dùng Kelvin",
+          "bieu_thuc": "0.50e5*(325+273)/(25+273)",
+          "ky_vong": 100300,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Kết quả sai nếu lấy tỉ số Celsius (để đối chiếu bẫy)",
+          "bieu_thuc": "0.50e5*325/25",
+          "ky_vong": 650000,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề có chữ 'bình kín', 'thể tích không đổi' và nhiệt độ cho bằng °C → đổi ra Kelvin rồi dùng $p_1/T_1 = p_2/T_2$.",
+      "bay_thuong_gap": [
+        "Lấy tỉ số Celsius $325/25 = 13$, ra $6{,}5.10^5\\ \\text{Pa}$.",
+        "Lật ngược tỉ số thành $T_1/T_2$, áp suất giảm khi nóng lên.",
+        "Cho rằng bình kín thì áp suất không đổi.",
+        "Dùng $p_1V_1 = p_2V_2$ dù $T$ thay đổi."
+      ],
+      "dieu_ban_khong_chac": [
+        "Nhiệt độ trung bình của khí argon khi đèn sáng và áp suất nạp thực tế thay đổi theo loại đèn; 325 °C và 0,50.10^5 Pa là số giả định hợp lí."
+      ],
+      "mo_phong_goi_y": "Bóng đèn dây tóc lúc tắt rồi bật sáng; các hạt khí argon bên trong chuyển động nhanh dần, va vào thành bóng mạnh hơn. Vỏ bóng giữ nguyên kích thước. Nhãn: 'đèn tắt: t1, p1', 'đèn sáng: t2, p2 = ?', 'V không đổi'."
+    },
+    {
+      "label": "Dạng 3 · Tìm số mol, khối lượng khí bằng pV = nRT",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại bài đẳng tích có đổi °C của Dạng 2 làm bước con (câu a). Thêm một độ khó: dùng $pV = nRT$ và $n = m/M$ để tính lượng khí, phải đổi lít sang $\\text{m}^3$.",
+      "yccd_de_xuat": "Phương trình Clapeyron – Mendeleev",
+      "de_bai": "Một bình thép dung tích 12 lít chứa khí nitơ ($M = 28\\ \\text{g/mol}$). Khi bình đặt trong kho mát ở $17\\ ^\\circ\\text{C}$, áp suất khí trong bình là $2{,}9.10^5\\ \\text{Pa}$. Bình được chuyển ra xưởng, khí trong bình nóng lên tới $47\\ ^\\circ\\text{C}$. Bình kín, thể tích bình không đổi.\na) Tính áp suất khí trong bình khi ở xưởng.\nb) Tính số mol và khối lượng khí nitơ trong bình. Lấy $R = 8{,}31\\ \\text{J/(mol·K)}$.",
+      "dieu_kien_ap_dung": "Lượng khí xác định trong bình kín, thể tích không đổi, coi nitơ là khí lí tưởng, đơn vị SI (Pa, m³, K).",
+      "phan_tich": [
+        {
+          "trich_de": "dung tích 12 lít",
+          "du_lieu": "$V = 12\\ \\text{L} = 1{,}2.10^{-2}\\ \\text{m}^3$",
+          "kien_thuc": "Đổi đơn vị sang SI để dùng $R = 8{,}31$"
+        },
+        {
+          "trich_de": "$M = 28\\ \\text{g/mol}$",
+          "du_lieu": "$M = 28\\ \\text{g/mol}$",
+          "kien_thuc": "$n = m/M$"
+        },
+        {
+          "trich_de": "ở $17\\ ^\\circ\\text{C}$, áp suất khí trong bình là $2{,}9.10^5\\ \\text{Pa}$",
+          "du_lieu": "$T_1 = 290\\ \\text{K}$; $p_1 = 2{,}9.10^5\\ \\text{Pa}$",
+          "kien_thuc": "Trạng thái 1; $T = t + 273$"
+        },
+        {
+          "trich_de": "nóng lên tới $47\\ ^\\circ\\text{C}$",
+          "du_lieu": "$T_2 = 320\\ \\text{K}$",
+          "kien_thuc": "Trạng thái 2"
+        },
+        {
+          "trich_de": "Bình kín, thể tích bình không đổi",
+          "du_lieu": "$V$ không đổi; $n$ không đổi",
+          "kien_thuc": "Đẳng tích $p_1/T_1 = p_2/T_2$"
+        },
+        {
+          "trich_de": "Tính số mol và khối lượng khí nitơ trong bình",
+          "du_lieu": "$n = ?$; $m = ?$",
+          "kien_thuc": "$pV = nRT$; $m = nM$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "p_2, n, m",
+        "cong_thuc": "p_2 = p_1 \\dfrac{T_2}{T_1};\\ n = \\dfrac{p_1V}{RT_1};\\ m = nM"
+      },
+      "kien_thuc_goi_lai": [
+        "Đẳng tích: $p_1/T_1 = p_2/T_2$ (Dạng 2).",
+        "Phương trình Clapeyron – Mendeleev: $pV = nRT$, $R = 8{,}31\\ \\text{J/(mol·K)}$.",
+        "Số mol: $n = m/M$.",
+        "Khi dùng $R = 8{,}31$: $p$ (Pa), $V$ (m³), $T$ (K)."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Đổi đơn vị",
+          "cong_thuc_chu": "$T = t + 273$; $1\\ \\text{L} = 10^{-3}\\ \\text{m}^3$",
+          "the_so": "$T_1 = 17 + 273$; $T_2 = 47 + 273$; $V = 12.10^{-3}$",
+          "ket_qua": "$T_1 = 290\\ \\text{K}$; $T_2 = 320\\ \\text{K}$; $V = 1{,}2.10^{-2}\\ \\text{m}^3$",
+          "kiem_tra": "Mọi đại lượng đã ở SI."
+        },
+        {
+          "tieu_de": "Bước 2 (câu a). Áp suất ở xưởng – đẳng tích",
+          "cong_thuc_chu": "$p_2 = p_1 \\cdot \\dfrac{T_2}{T_1}$",
+          "the_so": "$p_2 = 2{,}9.10^5 \\times \\dfrac{320}{290}$",
+          "ket_qua": "$p_2 = 3{,}2.10^5\\ \\text{Pa}$",
+          "kiem_tra": "Nóng lên thì áp suất tăng, tăng khoảng 10% đúng như tỉ số $320/290$."
+        },
+        {
+          "tieu_de": "Bước 3 (câu b). Số mol khí",
+          "cong_thuc_chu": "$n = \\dfrac{p_1V}{RT_1}$",
+          "the_so": "$n = \\dfrac{2{,}9.10^5 \\times 1{,}2.10^{-2}}{8{,}31 \\times 290} = \\dfrac{3480}{2409{,}9}$",
+          "ket_qua": "$n \\approx 1{,}444\\ \\text{mol}$",
+          "kiem_tra": "Đơn vị: $\\text{Pa·m}^3 / (\\text{J/(mol·K)} \\cdot \\text{K}) = \\text{J}/(\\text{J/mol}) = \\text{mol}$."
+        },
+        {
+          "tieu_de": "Bước 4 (câu b). Khối lượng khí",
+          "cong_thuc_chu": "$m = nM$",
+          "the_so": "$m = 1{,}444 \\times 28$",
+          "ket_qua": "$m \\approx 40{,}43\\ \\text{g}$",
+          "kiem_tra": "Thử lại bằng trạng thái 2: $\\dfrac{3{,}2.10^5 \\times 1{,}2.10^{-2}}{8{,}31 \\times 320} = \\dfrac{3840}{2659{,}2} \\approx 1{,}444\\ \\text{mol}$, cùng $n$ vì lượng khí không đổi."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 320000,
+          "don_vi": "Pa"
+        },
+        {
+          "y": "b (số mol)",
+          "gia_tri": 1.444,
+          "don_vi": "mol"
+        },
+        {
+          "y": "b (khối lượng)",
+          "gia_tri": 40.43,
+          "don_vi": "g"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Áp suất p2",
+          "bieu_thuc": "2.9e5*320/290",
+          "ky_vong": 320000,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "Số mol từ trạng thái 1",
+          "bieu_thuc": "2.9e5*12e-3/(8.31*290)",
+          "ky_vong": 1.444,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Số mol từ trạng thái 2",
+          "bieu_thuc": "3.2e5*12e-3/(8.31*320)",
+          "ky_vong": 1.444,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Khối lượng nitơ (g)",
+          "bieu_thuc": "2.9e5*12e-3/(8.31*290)*28",
+          "ky_vong": 40.43,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề hỏi số mol, khối lượng khí hoặc cho $M$ → đổi hết sang SI rồi dùng $pV = nRT$, $m = nM$.",
+      "bay_thuong_gap": [
+        "Để $V$ bằng lít khi dùng $R = 8{,}31$, kết quả lệch $10^3$ lần.",
+        "Dùng $t$ (°C) thay cho $T$ (K) trong $pV = nRT$.",
+        "Tính $n$ ở hai trạng thái ra hai số khác nhau vì quên đổi một trong hai nhiệt độ.",
+        "Quên $n = m/M$ cho $m$ theo gam, $M$ theo g/mol phải cùng đơn vị gam."
+      ],
+      "dieu_ban_khong_chac": [
+        "Không nêu áp kế đo áp suất tuyệt đối hay áp suất dư vì bài lý thuyết không đề cập; đề ghi thẳng 'áp suất khí trong bình'."
+      ],
+      "mo_phong_goi_y": "Bình thép được chuyển từ kho mát (màu xanh) sang xưởng nóng (màu cam); các hạt khí trong bình chuyển động nhanh dần, số hạt giữ nguyên. Nhãn: 'V = 12 lít', 'nitơ, M = 28 g/mol', 'kho: t1, p1', 'xưởng: t2, p2 = ?', 'n = ?, m = ?'."
+    },
+    {
+      "label": "Dạng 4 · Lượng khí thay đổi: tính khí đã dùng",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại đổi °C (Dạng 2) và $pV = nRT$, $n = m/M$ (Dạng 3). Thêm một độ khó: lượng khí giữa hai trạng thái đã đổi, không dùng được phương trình trạng thái, phải tính $n$ riêng cho từng trạng thái rồi trừ; thể tích bình là dữ kiện ẩn.",
+      "yccd_de_xuat": "Phương trình Clapeyron – Mendeleev",
+      "de_bai": "Một bình thép chứa khí oxi ($M = 32\\ \\text{g/mol}$) dùng trong xưởng hàn có dung tích 10 lít. Lúc mới nạp, bình để trong xưởng ở $27\\ ^\\circ\\text{C}$, áp suất khí trong bình là $5{,}0.10^6\\ \\text{Pa}$. Sau một ca hàn, bình được cất vào kho ở $17\\ ^\\circ\\text{C}$ và áp suất khí trong bình còn $2{,}0.10^6\\ \\text{Pa}$.\na) Có dùng được $\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$ cho hai trạng thái trên không? Vì sao?\nb) Tính khối lượng khí oxi đã dùng trong ca hàn. Lấy $R = 8{,}31\\ \\text{J/(mol·K)}$.\nc) Lượng oxi đã dùng, nếu đưa về điều kiện tiêu chuẩn, chiếm thể tích bao nhiêu lít?",
+      "dieu_kien_ap_dung": "Coi oxi là khí lí tưởng; bình thép có thể tích không đổi; $pV = nRT$ áp dụng riêng cho lượng khí có trong bình ở mỗi thời điểm.",
+      "phan_tich": [
+        {
+          "trich_de": "dung tích 10 lít",
+          "du_lieu": "$V = 1{,}0.10^{-2}\\ \\text{m}^3$ (bình thép: $V$ như nhau ở hai lúc)",
+          "kien_thuc": "Dữ kiện ẩn: thể tích bình không đổi"
+        },
+        {
+          "trich_de": "$M = 32\\ \\text{g/mol}$",
+          "du_lieu": "$M = 32\\ \\text{g/mol}$",
+          "kien_thuc": "$m = nM$"
+        },
+        {
+          "trich_de": "ở $27\\ ^\\circ\\text{C}$, áp suất khí trong bình là $5{,}0.10^6\\ \\text{Pa}$",
+          "du_lieu": "$T_1 = 300\\ \\text{K}$; $p_1 = 5{,}0.10^6\\ \\text{Pa}$",
+          "kien_thuc": "$n_1 = p_1V/(RT_1)$"
+        },
+        {
+          "trich_de": "ở $17\\ ^\\circ\\text{C}$ và áp suất khí trong bình còn $2{,}0.10^6\\ \\text{Pa}$",
+          "du_lieu": "$T_2 = 290\\ \\text{K}$; $p_2 = 2{,}0.10^6\\ \\text{Pa}$",
+          "kien_thuc": "$n_2 = p_2V/(RT_2)$"
+        },
+        {
+          "trich_de": "Sau một ca hàn",
+          "du_lieu": "Khí đã được lấy ra: $n_2 \\lt n_1$",
+          "kien_thuc": "Lượng khí đổi, hằng số $pV/T = nR$ đổi"
+        },
+        {
+          "trich_de": "Tính khối lượng khí oxi đã dùng trong ca hàn",
+          "du_lieu": "$\\Delta m = ?$",
+          "kien_thuc": "$\\Delta m = (n_1 - n_2)M$"
+        },
+        {
+          "trich_de": "đưa về điều kiện tiêu chuẩn",
+          "du_lieu": "$0\\ ^\\circ\\text{C}$, 1 atm: 22,4 lít/mol",
+          "kien_thuc": "$V_0 = \\Delta n \\times 22{,}4$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\Delta m, V_0",
+        "cong_thuc": "\\Delta m = \\left(\\dfrac{p_1V}{RT_1} - \\dfrac{p_2V}{RT_2}\\right)M;\\ V_0 = \\Delta n \\times 22{,}4"
+      },
+      "kien_thuc_goi_lai": [
+        "Phương trình trạng thái chỉ dùng cho một lượng khí xác định.",
+        "$pV/T = nR$: lượng khí đổi thì hằng số đổi.",
+        "$pV = nRT$, $n = m/M$.",
+        "Điều kiện tiêu chuẩn: 1 mol khí chiếm 22,4 lít."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1 (câu a). Xét điều kiện áp dụng",
+          "cong_thuc_chu": "$\\dfrac{pV}{T} = nR$",
+          "the_so": "Sau ca hàn, khí đã được lấy ra khỏi bình nên $n_2 \\ne n_1$",
+          "ket_qua": "Không dùng được $\\dfrac{p_1V_1}{T_1} = \\dfrac{p_2V_2}{T_2}$",
+          "kiem_tra": "Hằng số $pV/T$ của hai trạng thái khác nhau; phải dùng $pV = nRT$ riêng cho từng trạng thái."
+        },
+        {
+          "tieu_de": "Bước 2. Đổi đơn vị",
+          "cong_thuc_chu": "$T = t + 273$; $1\\ \\text{L} = 10^{-3}\\ \\text{m}^3$",
+          "the_so": "$T_1 = 27 + 273$; $T_2 = 17 + 273$; $V = 10.10^{-3}$",
+          "ket_qua": "$T_1 = 300\\ \\text{K}$; $T_2 = 290\\ \\text{K}$; $V = 1{,}0.10^{-2}\\ \\text{m}^3$",
+          "kiem_tra": "Đơn vị SI, dùng được $R = 8{,}31$."
+        },
+        {
+          "tieu_de": "Bước 3. Số mol lúc mới nạp",
+          "cong_thuc_chu": "$n_1 = \\dfrac{p_1V}{RT_1}$",
+          "the_so": "$n_1 = \\dfrac{5{,}0.10^6 \\times 1{,}0.10^{-2}}{8{,}31 \\times 300} = \\dfrac{50\\,000}{2493}$",
+          "ket_qua": "$n_1 \\approx 20{,}06\\ \\text{mol}$",
+          "kiem_tra": "Đơn vị mol."
+        },
+        {
+          "tieu_de": "Bước 4. Số mol còn lại",
+          "cong_thuc_chu": "$n_2 = \\dfrac{p_2V}{RT_2}$",
+          "the_so": "$n_2 = \\dfrac{2{,}0.10^6 \\times 1{,}0.10^{-2}}{8{,}31 \\times 290} = \\dfrac{20\\,000}{2409{,}9}$",
+          "ket_qua": "$n_2 \\approx 8{,}299\\ \\text{mol}$",
+          "kiem_tra": "$n_2 \\lt n_1$, khớp với việc đã dùng khí."
+        },
+        {
+          "tieu_de": "Bước 5 (câu b). Khối lượng oxi đã dùng",
+          "cong_thuc_chu": "$\\Delta m = (n_1 - n_2)M$",
+          "the_so": "$\\Delta m = (20{,}06 - 8{,}299) \\times 32 = 11{,}76 \\times 32$",
+          "ket_qua": "$\\Delta m \\approx 376{,}2\\ \\text{g}$",
+          "kiem_tra": "Mol × g/mol = g. Dùng khoảng 59% lượng khí ban đầu, hợp lí với áp suất giảm từ 50 xuống 20 lần $10^5$ Pa."
+        },
+        {
+          "tieu_de": "Bước 6 (câu c). Thể tích ở điều kiện tiêu chuẩn",
+          "cong_thuc_chu": "$V_0 = \\Delta n \\times 22{,}4\\ \\text{L/mol}$",
+          "the_so": "$V_0 = 11{,}76 \\times 22{,}4$",
+          "ket_qua": "$V_0 \\approx 263{,}4\\ \\text{L}$",
+          "kiem_tra": "Lớn hơn nhiều dung tích bình 10 lít vì trong bình khí bị nén ở áp suất cao, hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "n1",
+          "gia_tri": 20.06,
+          "don_vi": "mol"
+        },
+        {
+          "y": "n2",
+          "gia_tri": 8.299,
+          "don_vi": "mol"
+        },
+        {
+          "y": "b",
+          "gia_tri": 376.2,
+          "don_vi": "g"
+        },
+        {
+          "y": "c",
+          "gia_tri": 263.4,
+          "don_vi": "L"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "Số mol ban đầu n1",
+          "bieu_thuc": "5.0e6*10e-3/(8.31*300)",
+          "ky_vong": 20.06,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Số mol còn lại n2",
+          "bieu_thuc": "2.0e6*10e-3/(8.31*290)",
+          "ky_vong": 8.299,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Khối lượng oxi đã dùng (g)",
+          "bieu_thuc": "(5.0e6*10e-3/(8.31*300) - 2.0e6*10e-3/(8.31*290))*32",
+          "ky_vong": 376.2,
+          "sai_so_tuong_doi": 0.002
+        },
+        {
+          "mo_ta": "Thể tích ở điều kiện tiêu chuẩn (L)",
+          "bieu_thuc": "(5.0e6*10e-3/(8.31*300) - 2.0e6*10e-3/(8.31*290))*22.4",
+          "ky_vong": 263.4,
+          "sai_so_tuong_doi": 0.002
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề có bơm thêm, xả bớt, dùng bớt khí (áp suất và nhiệt độ đều đổi mà lượng khí không giữ nguyên) → tính $n = pV/(RT)$ cho từng trạng thái rồi lấy hiệu.",
+      "bay_thuong_gap": [
+        "Dùng $p_1V_1/T_1 = p_2V_2/T_2$ dù lượng khí đã đổi.",
+        "Tính khí đã dùng bằng $\\Delta p \\cdot V/(RT)$ với một nhiệt độ chung, bỏ qua việc $T_1 \\ne T_2$.",
+        "Để $V$ bằng lít khi dùng $R = 8{,}31$.",
+        "Nhầm điều kiện tiêu chuẩn (22,4 L) với điều kiện chuẩn (24,79 L)."
+      ],
+      "dieu_ban_khong_chac": [
+        "Ở áp suất $5{,}0.10^6$ Pa oxi lệch khỏi khí lí tưởng một chút; đề coi là khí lí tưởng.",
+        "Dùng 22,4 L/mol cùng với $R = 8{,}31$ có thể lệch nhau rất nhỏ (cỡ 0,1%)."
+      ],
+      "mo_phong_goi_y": "Bình thép oxi lúc đầu dày đặc hạt khí trong xưởng; qua ca hàn, hạt khí đi dần ra qua van về phía mỏ hàn; cuối cùng bình được đặt vào kho, số hạt còn ít hơn. Bên phải, đống hạt khí đã thoát ra gom thành một khối ở điều kiện tiêu chuẩn. Nhãn: 'V = 10 lít', 'lúc nạp: t1, p1', 'sau ca hàn: t2, p2', 'n1 = ?', 'n2 = ?', 'Δm = ?', 'V0 = ?'."
+    }
+  ]
+}

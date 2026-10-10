@@ -1,0 +1,153 @@
+{
+  "bai": "l12-su-chuyen-the",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại ý nóng chảy: tới nhiệt độ nóng chảy phân tử mới bứt liên kết, từ đó nhiệt lượng chỉ phá liên kết, dao động không mạnh thêm nên nhiệt độ không đổi."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: cả ba thể đều hỗn loạn, nhưng rắn, lỏng chỉ dao động quanh vị trí cân bằng còn khí bay tự do khắp bình."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Rắn đổi thành \"dao động quanh vị trí cân bằng cố định\", và dòng ⚠ trước Câu 2 giải thích vị trí cân bằng là điểm phân tử dao động quanh."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đảo lại chiều nhân quả: lực liên kết càng mạnh thì các hạt càng bị giữ chặt, sắp xếp càng trật tự."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ đoạn đứng yên ở 100 °C xảy ra khi đun tiếp, nằm ngoài bảng số liệu."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"tăng đều\" thành \"tăng nhanh\" và ghi số đọc 0,2–0,3 °C nằm trong sai số."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Cột kiến thức đổi thành \"độ dốc đoạn rắn và đoạn lỏng vẫn có thể khác nhau\", bước kiểm tra nói rõ hai độ dốc bằng nhau là do số liệu đề."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành: trong khoảng 20–140 °C chỉ có một đoạn ngang, tức chỉ một lần chuyển thể (nóng chảy)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết \"từ mốc phút 4 đến mốc phút 8\", tính $8 - 4 = 4$ phút và nhắc đếm khoảng chứ không đếm số dòng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 6 đổi thành \"Làm nguội hơi của chất ở câu 5 từ 300 °C\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C viết lại thành \"Nhiệt độ không đổi, khối đá không nhận thêm nhiệt lượng nào\", phản hồi sai hiện có đã bác đúng ý này."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 0 thêm ý bác A: nếu tăng đều thì nhiệt kế đã không đứng ở 0 °C."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"lực cản\" bằng áp suất khí quyển đè lên mặt nước nhỏ hơn, nên bọt hơi trong lòng nước hình thành ở nhiệt độ thấp hơn."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục tiêu đổi thành \"bốn quá trình chuyển thể chính, biết thêm thăng hoa và ngưng kết\"."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một câu trong details: băng phiến thăng hoa chậm ở nhiệt độ phòng nhưng vẫn nóng chảy khi đun tới 80 °C."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại ý sôi: hơi hình thành ngay trong lòng chất lỏng thành bọt hơi, bọt nổi lên rồi vỡ ở mặt thoáng."
+      },
+      {
+        "id": "c17",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"một lượng oxygen mà ở ngoài không khí chiếm 2 lít\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mở bài đã nêu kim đứng yên ở 0 °C, và ⚠ đặt trước câu dự đoán sẽ lộ đáp án; phản hồi đã được bổ sung qua c12."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thí nghiệm rượu – nước ngay trước câu đã nhấn ý này."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2 phân biệt dao động quanh vị trí cân bằng với bay tự do khắp bình."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy sinh ra từ cách diễn đạt phương án C, đã viết lại ở c11 nên không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 và thí nghiệm hai đĩa nước đã nhấn rằng nhiệt độ sôi phụ thuộc áp suất."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đã sửa câu gây hiểu sai ở lời giải (c8) và thêm ⚠ trước Câu 5: số đoạn ngang là số lần chuyển thể."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ⚠ ngắn \"làm nguội thì đi ngược chiều lúc đun\" trước Câu 6, kèm sửa đề theo c10."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 4, Nóng chảy: tách hai giai đoạn, chỉ khi tới nhiệt độ nóng chảy phân tử mới bứt liên kết, sau đó dao động không mạnh thêm.",
+      "Mục 4, Sôi: bọt hơi hình thành trong lòng chất lỏng, nổi lên rồi vỡ ở mặt thoáng.",
+      "Thí nghiệm đun nước đá: \"tăng đều\" đổi thành \"tăng nhanh\", ghi số đọc 0,2–0,3 °C nằm trong sai số, câu 100 °C ghi rõ là ngoài bảng. Bỏ cụm \"mỗi phút đọc nhiệt kế\" vì tiêu đề đã nêu.",
+      "Mục 2: đảo chiều quan hệ lực liên kết → trật tự. Dòng Rắn đổi thành \"dao động quanh vị trí cân bằng cố định\".",
+      "Thêm ⚠ trước Câu 2: cả ba thể đều hỗn loạn, chỉ khí bay tự do khắp bình.",
+      "Câu 3, phương án C: \"Nhiệt độ không đổi, khối đá không nhận thêm nhiệt lượng nào\".",
+      "Bẫy 3: lượng oxygen bơm thêm là lượng chiếm 2 lít ở ngoài không khí.",
+      "Bài toán mẫu: cột kiến thức \"đun nóng đều\" ghi độ dốc đoạn rắn và đoạn lỏng có thể khác nhau. Lời giải câu b tính theo mốc ($8 - 4 = 4$ phút), kết quả không đổi.",
+      "Lời giải, bước kiểm tra: hai độ dốc bằng nhau là do số liệu đề, và chỉ có một đoạn ngang trong khoảng 20–140 °C.",
+      "Điền bước còn thiếu: tốc độ 15 °C/phút ghi rõ là \"giống đoạn lỏng lúc đun\", kết quả 4 + 4 = 8 phút không đổi.",
+      "Câu 6: đề đổi \"chất lỏng\" thành \"hơi của chất\" ở 300 °C.",
+      "Thêm ⚠ trước Câu 5 và trước Câu 6.",
+      "Thách đấu núi cao: giải thích bằng áp suất ngoài nhỏ hơn nên bọt hơi hình thành ở nhiệt độ thấp hơn.",
+      "Thăng hoa: thêm câu băng phiến thăng hoa ở nhiệt độ phòng nhưng vẫn nóng chảy ở 80 °C.",
+      "Câu 0: phản hồi sai thêm ý bác phương án A \"tăng đều\"."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-su-chuyen-the/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

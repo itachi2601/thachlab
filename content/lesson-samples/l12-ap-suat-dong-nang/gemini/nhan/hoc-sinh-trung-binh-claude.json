@@ -1,0 +1,209 @@
+{
+  "bai": "Bài 8. Áp suất - động năng của phân tử khí",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "4. Động năng tịnh tiến trung bình và nhiệt độ tuyệt đối",
+      "trich_nguyen_van": "Khối lượng chỉ quyết định tốc độ: $v_{rms} = \\sqrt{\\dfrac{3kT}{m}}$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu $v_{rms}$ xuất hiện mà không có tên gọi và không có định nghĩa $v_{rms}=\\sqrt{\\overline{v^2}}$. Tên 'tốc độ căn quân phương' chỉ xuất hiện ở Bẫy 2 và Bài toán mẫu. Em coi đây là một công thức mới phải học thuộc, không thấy nó suy ra từ $\\frac{m\\overline{v^2}}{2}=\\frac{3}{2}kT$.",
+      "de_xuat": "Thêm một dòng: '$v_{rms}=\\sqrt{\\overline{v^2}}$ gọi là tốc độ căn quân phương; từ $\\frac{m\\overline{v^2}}{2}=\\frac{3}{2}kT$ suy ra $\\overline{v^2}=\\frac{3kT}{m}$'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Động năng tịnh tiến trung bình và nhiệt độ tuyệt đối",
+      "trich_nguyen_van": "Phương trình trạng thái (bài trước) cho $p = \\dfrac{N}{V}kT = \\mu kT$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài trước em học dạng $pV=nRT$, chưa gặp dạng có $k$. Ký hiệu $k$ ở đây được dùng trước, đến gạch đầu dòng sau mới được định nghĩa. Em không hiểu $N/V$ và $k$ từ đâu ra.",
+      "de_xuat": "Viết rõ chuỗi biến đổi: $p=\\frac{nRT}{V}=\\frac{N}{N_A}\\frac{RT}{V}=\\frac{N}{V}\\cdot\\frac{R}{N_A}T$, rồi đặt $k=R/N_A$ ngay tại đó."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. $N$ phân tử: công thức áp suất của khí",
+      "trich_nguyen_van": "ba phương $Ox, Oy, Oz$ bình đẳng nên mỗi phương góp $\\dfrac{1}{3}$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài không nói 'góp 1/3' là 1/3 của cái gì. Em dễ hiểu thành 1/3 số phân tử bay theo mỗi trục. Bài cũng không nêu $v^2=v_x^2+v_y^2+v_z^2$ nên $\\overline{v_x^2}=\\overline{v^2}/3$.",
+      "de_xuat": "Ghi rõ: '$\\overline{v^2}=\\overline{v_x^2}+\\overline{v_y^2}+\\overline{v_z^2}$, ba số hạng bằng nhau nên $\\overline{v_x^2}=\\frac{1}{3}\\overline{v^2}$, chỉ $v_x$ gây áp suất lên thành vuông góc $Ox$'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Một phân tử va chạm vào thành bình",
+      "trich_nguyen_van": "Lực trung bình lên thành: $F = \\dfrac{2mv}{\\Delta t} = \\dfrac{mv^2}{l}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em quen $F=\\Delta p/\\Delta t$ với $\\Delta t$ là thời gian va chạm. Ở đây $\\Delta t$ lại là thời gian bay đi và về, nên em không rõ vì sao chia cho thời gian đó.",
+      "de_xuat": "Nói rõ: 'lực trung bình theo thời gian dài = động lượng truyền mỗi va chạm × số va chạm mỗi giây = $2mv\\cdot\\frac{v}{2l}$'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "\"M = 28 g/mol\" | $m = M/N_A$ | $\\overline{E_d} = \\dfrac{3}{2}kT$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng ghép $M$ (và $m$) với công thức $\\overline{E_d}$. Em sẽ nghĩ cần khối lượng phân tử mới tính được động năng. Điều này trái với thông điệp chính của bài và gần với phương án D ở Câu 4.",
+      "de_xuat": "Đổi cột kiến thức của dòng này thành '$v_{rms}=\\sqrt{3kT/m}$ (câu b)', còn $\\overline{E_d}$ đặt ở dòng '27 °C'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "Khối lượng một phân tử: $m = \\dfrac{M}{N_A} \\approx 4{,}65\\cdot10^{-26}\\ \\text{kg}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Lời giải bỏ bước đổi 28 g/mol thành 0,028 kg/mol. Em thay thẳng 28 vào thì ra $4{,}65\\cdot10^{-23}$ và không hiểu vì sao lệch 1000 lần.",
+      "de_xuat": "Ghi bước đổi: '$M=28\\ \\text{g/mol}=0{,}028\\ \\text{kg/mol}$', giống cách phần heli đã viết 0,004."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "nên $v_{rms} \\approx 5{,}2\\cdot10^{2}\\ \\text{m/s}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa định nghĩa $v_{rms}$ là căn của $\\overline{v^2}$, nên em không biết đã làm phép tính gì để từ $2{,}67\\cdot10^5$ ra $5{,}2\\cdot10^2$.",
+      "de_xuat": "Viết rõ $v_{rms}=\\sqrt{\\overline{v^2}}=\\sqrt{2{,}67\\cdot10^5}\\approx 5{,}2\\cdot10^2$ m/s."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "$p = \\dfrac{2}{3}\\mu\\overline{E_d} = \\dfrac{2}{3} \\times 4{,}0\\cdot10^{25} \\times 6{,}2\\cdot10^{-21} \\approx 1{,}66\\cdot10^{5}\\ \\text{Pa}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em bấm máy với đúng các số đã làm tròn thì ra $1{,}65\\cdot10^5$, không phải $1{,}66\\cdot10^5$. Em sẽ nghi mình tính sai.",
+      "de_xuat": "Hoặc ghi ≈ $1{,}65\\cdot10^5$ Pa, hoặc thay số chưa làm tròn ($4{,}01\\cdot10^{25}$; $6{,}21\\cdot10^{-21}$)."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "$\\overline{E_d}' \\approx 7{,}4\\cdot10^{-21}\\ \\text{J}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tính trực tiếp $1{,}5\\times1{,}38\\cdot10^{-23}\\times360=7{,}45\\cdot10^{-21}$ thì làm tròn thành 7,5. Em sẽ thấy mâu thuẫn với con số 7,4 trong bài.",
+      "de_xuat": "Ghi ≈ $7{,}5\\cdot10^{-21}$ J, hoặc chú thích rằng đây là $1{,}2\\times6{,}2$."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "I. Mở bài: quả bóng bàn bẹp và cốc nước nóng",
+      "trich_nguyen_van": "Nung nóng thì phân tử bay nhanh hơn, nên mỗi va chạm truyền động lượng lớn hơn và số va chạm mỗi giây cũng nhiều hơn",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em rút ra quy tắc chung 'phân tử nhanh hơn thì áp suất lớn hơn'. Quy tắc này dẫn em chọn B ở Câu 5 (H₂ nhanh hơn nên áp suất lớn hơn). Bài không nói rõ nó chỉ đúng khi cùng một loại khí.",
+      "de_xuat": "Thêm điều kiện: 'với cùng một khí (cùng $m$), phân tử bay nhanh hơn thì…', rồi nhắc lại điều kiện này ở Câu 5."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "D lấy số mol chia thể tích thay vì số phân tử chia thể tích.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lời giải thích chưa khớp và chưa đủ: $0{,}20/3{,}0\\cdot10^{-3}=66{,}7$ chứ không phải 0,067; D còn kèm lỗi quên đổi lít. Phương án C ($6{,}0\\cdot10^{23}$) thì không được giải thích ra từ lỗi nào.",
+      "de_xuat": "Sửa thành 'D lấy số mol chia cho 3,0 lít (vừa quên $N_A$ vừa quên đổi m³)' và nêu lỗi tạo ra phương án C."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "5. Thực nghiệm: đo áp suất khí theo nhiệt độ",
+      "trich_nguyen_van": "$\\dfrac{p}{T} = 0{,}342 \\pm 0{,}002\\ \\text{kPa/K}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết con số ±0,002 lấy từ đâu. Năm tỉ số chỉ lệch nhau tối đa khoảng 0,0008, còn sai số áp kế thì chưa được đổi sang tỉ số.",
+      "de_xuat": "Thêm một câu: '±0,5 kPa trên ~100 kPa ≈ 0,5%, nhân với 0,342 được ≈ ±0,002'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "I. Mở bài: quả bóng bàn bẹp và cốc nước nóng",
+      "trich_nguyen_van": "Khí nguội: phân tử đập thưa, nhẹ nên vỏ bẹp.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích khiến em hiểu khí nguội làm bóng bẹp, trong khi đề bài nói bóng bẹp vì bị giẫm.",
+      "de_xuat": "Sửa: 'Khí nguội: phân tử đập thưa, nhẹ, không đủ đẩy vết lõm ra.'"
+    },
+    {
+      "id": "c14",
+      "vi_tri": "3. $N$ phân tử: công thức áp suất của khí",
+      "trich_nguyen_van": "với $\\overline{v^2} = 2{,}5\\cdot10^5\\ \\text{m}^2/\\text{s}^2$ cho $p \\approx 1{,}2\\cdot10^5\\ \\text{Pa}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ví dụ cho ngay đáp số. Bài không có bước đổi 2,0 lít ra m³ và không có kết quả trung gian $\\rho$, nên em khó tự kiểm tra.",
+      "de_xuat": "Thêm một dòng: $\\rho=\\frac{6{,}02\\cdot10^{22}\\times4{,}65\\cdot10^{-26}}{2{,}0\\cdot10^{-3}}\\approx1{,}4$ kg/m³, rồi $p=\\frac13\\rho\\overline{v^2}$."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm",
+      "trich_nguyen_van": "ba đường tính gặp nhau ở khoảng $1{,}6$ atm, hợp lí.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không nêu 1 atm bằng bao nhiêu Pa (mục VI dùng 'bar' cũng vậy). Em không biết vì sao $1{,}66\\cdot10^5$ Pa lại thành 1,6 atm.",
+      "de_xuat": "Ghi kèm '(1 atm ≈ $1{,}01\\cdot10^5$ Pa)'."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "VI. Đời sống, thử thách và mang về",
+      "trich_nguyen_van": "Nhiệt độ tăng khoảng $10\\%$ thì động năng tăng đúng $10\\%$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không nói đây là nhiệt độ Kelvin. Theo Celsius, từ 0 lên 27 không phải tăng 10%, nên em dễ nhầm. Hai chữ 'khoảng' và 'đúng' đặt cạnh nhau cũng khó hiểu.",
+      "de_xuat": "Viết: 'Nhiệt độ tuyệt đối tăng 300/273 ≈ 1,10 lần thì động năng cũng tăng đúng 1,10 lần.'"
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gắn 'nóng' với 'mạnh/nặng hơn', nghĩ va chạm mạnh hơn là do khối lượng tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nóng lên không làm phân tử nặng thêm"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhớ rằng phân tử có lực hút nhau nên nghĩ chúng dính vào thành; quên rằng mô hình khí lí tưởng bỏ qua lực tương tác.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lực tương tác giữa các phân tử rất yếu nên <strong>bỏ qua</strong>"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ tính phần động lượng mất đi khi dừng lại, quên phần bật ngược. Cũng có em chọn A vì coi động lượng như vô hướng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phương án $mv$ là quên mất lượt bật ngược trở lại."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhầm $\\mu$ với $\\rho$: hai đại lượng xuất hiện cạnh nhau, khác nhau chỉ một thừa số $m$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai ký hiệu này chỉ khác nhau một chữ $m$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thay thẳng 27 °C vào $T$ mà không đổi sang Kelvin.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "<em>đổi sang Kelvin trước, rồi nhân $\\dfrac{3}{2}kT$</em>"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Áp dụng quy tắc 'nhanh hơn thì áp suất lớn hơn' từ phần Mở bài mà quên điều kiện cùng khối lượng phân tử.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "H₂ nhẹ nên bay nhanh hơn, vừa đủ bù cho khối lượng nhỏ hơn."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chia số phân tử cho 3,0 mà không đổi lít sang m³.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B quên đổi $3{,}0$ lít $= 3{,}0\\cdot10^{-3}\\ \\text{m}^3$"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy tỉ số hai nhiệt độ Celsius ($t_2/t_1$) thay vì $T_2/T_1$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "hỏi \"tăng mấy lần\" thì lấy $T_2/T_1$, đừng lấy $t_2/t_1$."
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "lesson_title": "Bài 1. Sự chuyển thể",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Gọi tên quá trình chuyển thể trong hiện tượng đời sống",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "Nền tảng.\nChỉ cần xác định thể đầu, thể cuối của chất rồi gọi đúng tên quá trình.",
+      "yccd_de_xuat": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "de_bai": "Gọi tên quá trình chuyển thể trong mỗi hiện tượng sau và nêu chiều chuyển thể (từ thể nào sang thể nào).\n(1) Que kem lấy khỏi tủ lạnh để trên bàn, sau 10 phút chảy thành nước.\n(2) Khay nước cho vào ngăn đá, sau vài giờ thành những viên đá.\n(3) Sáng sớm, những giọt sương đọng trên lá cỏ.\n(4) Nước biển trong ruộng muối cạn dần dưới nắng, để lại hạt muối.\nTrong bốn hiện tượng trên, có bao nhiêu hiện tượng chất nhận nhiệt, bao nhiêu hiện tượng chất toả nhiệt?",
+      "dieu_kien_ap_dung": "Xét chất chính trong mỗi hiện tượng (kem, nước, hơi nước) ở áp suất khí quyển; chỉ dùng bốn quá trình chính nóng chảy, đông đặc, hoá hơi, ngưng tụ.",
+      "phan_tich": [
+        {
+          "trich_de": "chảy thành nước",
+          "du_lieu": "thể đầu: rắn; thể cuối: lỏng",
+          "kien_thuc": "Nóng chảy: rắn → lỏng"
+        },
+        {
+          "trich_de": "thành những viên đá",
+          "du_lieu": "thể đầu: lỏng; thể cuối: rắn",
+          "kien_thuc": "Đông đặc: lỏng → rắn"
+        },
+        {
+          "trich_de": "giọt sương đọng trên lá cỏ",
+          "du_lieu": "thể đầu: hơi nước trong không khí; thể cuối: lỏng",
+          "kien_thuc": "Ngưng tụ: khí (hơi) → lỏng, xảy ra khi hơi gặp mặt lạnh"
+        },
+        {
+          "trich_de": "cạn dần dưới nắng",
+          "du_lieu": "thể đầu: lỏng; thể cuối: hơi; nước chưa sôi",
+          "kien_thuc": "Hoá hơi dạng bay hơi: ở mặt thoáng, ở mọi nhiệt độ"
+        },
+        {
+          "trich_de": "chất nhận nhiệt",
+          "du_lieu": "đếm số quá trình nhận nhiệt và toả nhiệt",
+          "kien_thuc": "Nóng chảy, hoá hơi nhận nhiệt; đông đặc, ngưng tụ toả nhiệt"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "N_{\\text{nhận}}, N_{\\text{toả}}",
+        "cong_thuc": "N_{\\text{nhận}} + N_{\\text{toả}} = 4"
+      },
+      "kien_thuc_goi_lai": [
+        "Nóng chảy: rắn → lỏng; đông đặc: lỏng → rắn.",
+        "Hoá hơi: lỏng → khí, gồm bay hơi và sôi.",
+        "Ngưng tụ: khí (hơi) → lỏng.",
+        "Bay hơi xảy ra ở mặt thoáng, ở mọi nhiệt độ.",
+        "Nóng chảy, hoá hơi nhận nhiệt; đông đặc, ngưng tụ toả nhiệt."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Xác định thể đầu và thể cuối",
+          "cong_thuc_chu": "$\\text{thể đầu} \\to \\text{thể cuối}$",
+          "the_so": "(1) $\\text{rắn} \\to \\text{lỏng}$\n(2) $\\text{lỏng} \\to \\text{rắn}$\n(3) $\\text{hơi} \\to \\text{lỏng}$\n(4) $\\text{lỏng} \\to \\text{hơi}$",
+          "ket_qua": "Bốn hiện tượng ứng với bốn chiều khác nhau.",
+          "kiem_tra": "Sương không rơi từ trên xuống; nó là hơi nước có sẵn trong không khí."
+        },
+        {
+          "tieu_de": "Bước 2. Gọi tên quá trình",
+          "cong_thuc_chu": "Ghép chiều chuyển thể với tên quá trình",
+          "the_so": "(1) rắn → lỏng: nóng chảy\n(2) lỏng → rắn: đông đặc\n(3) hơi → lỏng: ngưng tụ\n(4) lỏng → hơi ở mặt thoáng: bay hơi (hoá hơi)",
+          "ket_qua": "Nóng chảy · Đông đặc · Ngưng tụ · Bay hơi",
+          "kiem_tra": "Nước ruộng muối chỉ ấm khoảng vài chục độ, không sủi bọt: đó là bay hơi, không phải sôi."
+        },
+        {
+          "tieu_de": "Bước 3. Đếm số quá trình nhận nhiệt, toả nhiệt",
+          "cong_thuc_chu": "$N_{\\text{nhận}} + N_{\\text{toả}} = 4$",
+          "the_so": "Nhận nhiệt: (1) nóng chảy, (4) bay hơi\nToả nhiệt: (2) đông đặc, (3) ngưng tụ",
+          "ket_qua": "$N_{\\text{nhận}} = 2$, $N_{\\text{toả}} = 2$",
+          "kiem_tra": "Mỗi cặp ngược chiều có một quá trình nhận nhiệt, một quá trình toả nhiệt: hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "số hiện tượng chất nhận nhiệt",
+          "gia_tri": 2,
+          "don_vi": "hiện tượng"
+        },
+        {
+          "y": "số hiện tượng chất toả nhiệt",
+          "gia_tri": 2,
+          "don_vi": "hiện tượng"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "số hiện tượng nhận nhiệt: nóng chảy (1) + bay hơi (4)",
+          "bieu_thuc": "1 + 1",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "số hiện tượng toả nhiệt = tổng 4 trừ số nhận nhiệt",
+          "bieu_thuc": "4 - 2",
+          "ky_vong": 2,
+          "sai_so_tuong_doi": 0
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề kể hiện tượng đời sống và hỏi \"đó là quá trình gì\" → xác định thể đầu, thể cuối rồi gọi tên.",
+      "bay_thuong_gap": [
+        "Gọi nước ruộng muối cạn là \"sôi\" vì trời nắng nóng.",
+        "Gọi sương là \"hoá hơi\" vì nhầm chiều chuyển thể.",
+        "Cho rằng đông đặc trong ngăn đá là nhận nhiệt vì \"tủ lạnh làm lạnh\".",
+        "Dùng từ \"tan\" thay cho tên quá trình nóng chảy."
+      ],
+      "dieu_ban_khong_chac": [
+        "Que kem là hỗn hợp, không tinh khiết; chỉ dùng để gọi tên quá trình, không dùng để bàn nhiệt độ nóng chảy."
+      ],
+      "mo_phong_goi_y": "Bốn ô hoạt hình cạnh nhau: que kem chảy dần thành vũng nước; khay nước đông dần thành viên đá; hơi nước (chấm mờ) bám lên lá cỏ thành giọt; mặt nước ruộng muối hạ dần, hạt muối lộ ra. Nhãn mỗi ô: \"thể đầu: ?\", \"thể cuối: ?\", mũi tên \"nhận nhiệt / toả nhiệt: ?\" để trống."
+    },
+    {
+      "label": "Dạng 2 · Thể tích, hình dạng của rắn – lỏng – khí và bẫy \"khí không có thể tích riêng\"",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại: nhận ra chất đang ở thể nào (như dạng 1).\nThêm mới: giải thích thể tích và hình dạng bằng mô hình động học phân tử, tránh bẫy cho rằng khí giữ nguyên thể tích ban đầu.",
+      "yccd_de_xuat": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "de_bai": "Ba chất ở nhiệt độ phòng, lúc đầu mỗi chất chiếm 0,30 lít: một khối sáp nến đặc; 0,30 lít dầu ăn đựng trong ca; 0,30 lít khí helium chứa trong một quả bóng nhỏ.\nLần lượt cho từng chất vào ba bình thuỷ tinh rỗng giống nhau, mỗi bình dung tích 1,5 lít, rồi đậy kín:\n- Khối sáp đặt nằm dưới đáy bình thứ nhất.\n- Dầu ăn rót từ ca vào bình thứ hai.\n- Bình thứ ba đã được hút hết không khí từ trước; dùng bơm chuyển toàn bộ lượng khí helium trong bóng vào bình.\na) Trong bình, mỗi chất chiếm thể tích bao nhiêu? Hình dạng của nó ra sao?\nb) Dùng mô hình động học phân tử giải thích kết quả của khí helium.",
+      "dieu_kien_ap_dung": "Nhiệt độ giữ không đổi, các chất không chuyển thể, bình kín không rò khí.",
+      "phan_tich": [
+        {
+          "trich_de": "một khối sáp nến đặc",
+          "du_lieu": "$V_{\\text{sáp}}$ lúc đầu = 0,30 L; thể rắn",
+          "kien_thuc": "Rắn: phân tử rất gần, trật tự, dao động tại chỗ → có hình dạng, thể tích riêng"
+        },
+        {
+          "trich_de": "0,30 lít dầu ăn",
+          "du_lieu": "$V_{\\text{dầu}}$ lúc đầu = 0,30 L; thể lỏng",
+          "kien_thuc": "Lỏng: phân tử gần nhau, vị trí cân bằng luôn đổi → thể tích xác định, hình dạng theo bình"
+        },
+        {
+          "trich_de": "0,30 lít khí helium",
+          "du_lieu": "thể tích khí trong bóng = 0,30 L; thể khí",
+          "kien_thuc": "Khí: phân tử rất xa, hỗn loạn → thể tích và hình dạng theo bình"
+        },
+        {
+          "trich_de": "dung tích 1,5 lít",
+          "du_lieu": "$V_{\\text{bình}}$ = 1,5 L",
+          "kien_thuc": "Phần rỗng mà khí có thể chiếm"
+        },
+        {
+          "trich_de": "đậy kín",
+          "du_lieu": "lượng chất trong bình không đổi",
+          "kien_thuc": "Khí không thoát ra, chỉ dàn đều trong bình"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "V_{\\text{sáp}}, V_{\\text{dầu}}, V_{\\text{khí}}",
+        "cong_thuc": "V_{\\text{khí}} = V_{\\text{bình}}"
+      },
+      "kien_thuc_goi_lai": [
+        "Rắn: rất gần, trật tự, dao động tại chỗ → hình dạng, thể tích riêng.",
+        "Lỏng: gần, kém trật tự, vị trí cân bằng luôn đổi → thể tích xác định, hình dạng theo bình.",
+        "Khí: rất xa, hỗn loạn → thể tích, hình dạng theo bình.",
+        "Nói đúng: khí không có thể tích riêng (không phải \"không có thể tích\")."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Khối sáp (thể rắn)",
+          "cong_thuc_chu": "$V_{\\text{sáp}} = V_{\\text{đầu}}$",
+          "the_so": "$V_{\\text{sáp}} = 0{,}30 \\ \\text{L}$",
+          "ket_qua": "$V_{\\text{sáp}} = 0{,}30 \\ \\text{L}$; giữ nguyên hình khối",
+          "kiem_tra": "Phân tử chỉ dao động tại chỗ nên sáp không chảy ra theo đáy bình: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Dầu ăn (thể lỏng)",
+          "cong_thuc_chu": "$V_{\\text{dầu}} = V_{\\text{đầu}}$",
+          "the_so": "$V_{\\text{dầu}} = 0{,}30 \\ \\text{L}$",
+          "ket_qua": "$V_{\\text{dầu}} = 0{,}30 \\ \\text{L}$; hình dạng phần dưới của bình",
+          "kiem_tra": "$0{,}30 \\ \\text{L} \\lt 1{,}5 \\ \\text{L}$ nên dầu chỉ chiếm phần đáy, không đầy bình."
+        },
+        {
+          "tieu_de": "Bước 3. Khí helium (chỗ có bẫy)",
+          "cong_thuc_chu": "$V_{\\text{khí}} = V_{\\text{bình}}$",
+          "the_so": "$V_{\\text{khí}} = 1{,}5 \\ \\text{L}$\nSo với lúc trong bóng: $\\dfrac{1{,}5}{0{,}30} = 5$",
+          "ket_qua": "$V_{\\text{khí}} = 1{,}5 \\ \\text{L}$, gấp 5 lần lúc đầu; hình dạng là cả lòng bình",
+          "kiem_tra": "Không trả lời 0,30 L: con số đó là thể tích của bóng, không phải thể tích riêng của khí."
+        },
+        {
+          "tieu_de": "Bước 4. Giải thích bằng mô hình phân tử (ý b)",
+          "cong_thuc_chu": "Khoảng cách lớn → lực liên kết rất yếu → phân tử bay khắp bình",
+          "the_so": "Phân tử helium chuyển động hỗn loạn không ngừng.\nKhoảng cách giữa chúng rất xa nên lực hút gần như không giữ được chúng lại.\nChúng bay tới mọi chỗ trong bình cho tới khi gặp thành bình.",
+          "ket_qua": "Khí chiếm toàn bộ 1,5 L; khoảng cách trung bình giữa các phân tử tăng lên",
+          "kiem_tra": "Số phân tử không đổi, chỉ khoảng cách giữa chúng tăng: phù hợp với mô hình \"khí rất xa – hỗn loạn\"."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – sáp",
+          "gia_tri": 0.3,
+          "don_vi": "L"
+        },
+        {
+          "y": "a – dầu ăn",
+          "gia_tri": 0.3,
+          "don_vi": "L"
+        },
+        {
+          "y": "a – khí helium",
+          "gia_tri": 1.5,
+          "don_vi": "L"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thể tích khí bằng dung tích bình",
+          "bieu_thuc": "1.5",
+          "ky_vong": 1.5,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "tỉ số thể tích khí trong bình so với trong bóng",
+          "bieu_thuc": "1.5 / 0.30",
+          "ky_vong": 5,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "phần bình trống phía trên dầu",
+          "bieu_thuc": "1.5 - 0.30",
+          "ky_vong": 1.2,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề chuyển chất từ vật chứa này sang vật chứa khác và hỏi thể tích, hình dạng → xét thể của chất, rồi dùng khoảng cách và mức trật tự của phân tử để trả lời.",
+      "bay_thuong_gap": [
+        "Cho rằng khí vẫn chiếm 0,30 L như lúc trong bóng.",
+        "Nói \"khí không có thể tích\" thay vì \"khí không có thể tích riêng\".",
+        "Cho rằng dầu lỏng chảy ra chiếm cả bình như khí.",
+        "Nghĩ rằng khi khí dàn ra thì số phân tử tăng."
+      ],
+      "dieu_ban_khong_chac": [
+        "Việc chuyển \"toàn bộ\" khí từ bóng sang bình là lí tưởng hoá; thực tế luôn còn sót một ít khí trong bóng và ống nối."
+      ],
+      "mo_phong_goi_y": "Ba bình trong suốt đặt cạnh nhau. Bình 1: khối sáp đặt xuống đáy, giữ nguyên hình khối, phóng to thấy hạt xếp hàng, rung tại chỗ. Bình 2: dầu rót vào, lấp phần đáy, hạt sát nhau trượt qua lại. Bình 3: khí từ bóng bơm vào, các chấm hạt bay tản ra khắp bình. Nhãn: \"V_bình = 1,5 L\", \"V_sáp = ?\", \"V_dầu = ?\", \"V_khí = ?\"."
+    },
+    {
+      "label": "Dạng 3 · Đọc bảng nhiệt độ – thời gian khi đun nóng chất rắn kết tinh",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại: gọi tên quá trình (dạng 1) và mô hình phân tử của chất rắn (dạng 2) để giải thích ý d.\nThêm mới: đọc bảng số liệu để lấy nhiệt độ nóng chảy, thời gian nóng chảy và tính tốc độ tăng nhiệt.",
+      "yccd_de_xuat": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "de_bai": "Trong phòng thí nghiệm, đun nóng đều một thỏi kim loại rắn kết tinh bằng bếp điện có công suất không đổi. Cứ 2 phút đọc nhiệt kế một lần:\nThời gian (phút): 0 – 2 – 4 – 6 – 8 – 10 – 12 – 14 – 16\nNhiệt độ (°C): 22 – 92 – 162 – 232 – 232 – 232 – 232 – 232 – 302\nBảng tra nhiệt độ nóng chảy: thiếc 232 °C · chì 327 °C · nhôm 660 °C.\na) Nhiệt độ nóng chảy là bao nhiêu? Kim loại này là gì?\nb) Thời gian nóng chảy kéo dài bao lâu?\nc) Trước khi nóng chảy, nhiệt độ thỏi kim loại tăng bao nhiêu độ mỗi phút?\nd) Giải thích bằng mô hình phân tử vì sao nhiệt độ đứng yên trong giai đoạn nóng chảy dù bếp vẫn cấp nhiệt.",
+      "dieu_kien_ap_dung": "Chất rắn kết tinh, đun ở áp suất khí quyển với công suất không đổi; coi nhiệt độ ở các thời điểm đo là chính xác.",
+      "phan_tich": [
+        {
+          "trich_de": "rắn kết tinh",
+          "du_lieu": "có nhiệt độ nóng chảy xác định",
+          "kien_thuc": "Bảng số liệu phải có một đoạn nhiệt độ đứng yên"
+        },
+        {
+          "trich_de": "công suất không đổi",
+          "du_lieu": "mỗi phút nhận nhiệt như nhau",
+          "kien_thuc": "Các đoạn dốc có độ dốc như nhau (nếu chất có khả năng nóng lên tương tự)"
+        },
+        {
+          "trich_de": "232 – 232 – 232 – 232 – 232",
+          "du_lieu": "$T$ = 232 °C từ $t$ = 6 phút đến $t$ = 14 phút",
+          "kien_thuc": "Đoạn nằm ngang: độ cao là nhiệt độ chuyển thể, độ dài là thời gian chuyển thể"
+        },
+        {
+          "trich_de": "Bảng tra nhiệt độ nóng chảy",
+          "du_lieu": "thiếc 232 °C; chì 327 °C; nhôm 660 °C",
+          "kien_thuc": "Tra theo nhiệt độ nóng chảy đọc được"
+        },
+        {
+          "trich_de": "Trước khi nóng chảy",
+          "du_lieu": "từ $t$ = 0 đến $t$ = 6 phút; 22 °C → 232 °C",
+          "kien_thuc": "Tốc độ tăng nhiệt = độ tăng nhiệt độ chia thời gian"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "T_{\\text{nc}}, \\Delta t_{\\text{nc}}, r",
+        "cong_thuc": "\\Delta t_{\\text{nc}} = t_{\\text{cuối}} - t_{\\text{đầu}}; \\ r = \\dfrac{T_{\\text{nc}} - T_0}{t_{\\text{đầu}} - 0}"
+      },
+      "kien_thuc_goi_lai": [
+        "Đang chuyển thể: nhiệt độ không đổi, nhiệt lượng vẫn vào.",
+        "Đồ thị/bảng: tìm đoạn nằm ngang.",
+        "Độ cao đoạn ngang = nhiệt độ chuyển thể; độ dài = thời gian chuyển thể.",
+        "Tốc độ tăng nhiệt = độ tăng nhiệt độ chia thời gian.",
+        "Nóng chảy: nhiệt lượng dùng để phá liên kết trong mạng tinh thể."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Tìm đoạn nằm ngang",
+          "cong_thuc_chu": "$T_{\\text{nc}}$ = giá trị nhiệt độ lặp lại",
+          "the_so": "Nhiệt độ đứng ở 232 °C từ $t = 6$ phút đến $t = 14$ phút",
+          "ket_qua": "$T_{\\text{nc}} = 232 \\ ^\\circ\\text{C}$",
+          "kiem_tra": "Chỉ có một đoạn ngang: đúng với một chất kết tinh đang nóng chảy."
+        },
+        {
+          "tieu_de": "Bước 2. Tra bảng tìm tên chất",
+          "cong_thuc_chu": "So $T_{\\text{nc}}$ với bảng tra",
+          "the_so": "232 °C trùng thiếc; khác chì 327 °C, nhôm 660 °C",
+          "ket_qua": "Kim loại là thiếc",
+          "kiem_tra": "Thiếc là kim loại, rắn kết tinh: khớp đề."
+        },
+        {
+          "tieu_de": "Bước 3. Thời gian nóng chảy",
+          "cong_thuc_chu": "$\\Delta t_{\\text{nc}} = t_{\\text{cuối}} - t_{\\text{đầu}}$",
+          "the_so": "$\\Delta t_{\\text{nc}} = 14 - 6$",
+          "ket_qua": "$\\Delta t_{\\text{nc}} = 8 \\ \\text{phút}$",
+          "kiem_tra": "Lấy hiệu hai thời điểm, không đếm số ô có 232 (5 ô) để tránh ra 10 phút."
+        },
+        {
+          "tieu_de": "Bước 4. Tốc độ tăng nhiệt khi còn rắn",
+          "cong_thuc_chu": "$r = \\dfrac{T_{\\text{nc}} - T_0}{t_{\\text{đầu}} - 0}$",
+          "the_so": "$r = \\dfrac{232 - 22}{6 - 0}$",
+          "ket_qua": "$r = 35 \\ ^\\circ\\text{C/phút}$",
+          "kiem_tra": "Từng khoảng 2 phút tăng 70 °C, tức 35 °C/phút. Sau nóng chảy: $(302 - 232)/2 = 35$ °C/phút, khớp \"đun đều\"."
+        },
+        {
+          "tieu_de": "Bước 5. Giải thích ý d bằng mô hình phân tử",
+          "cong_thuc_chu": "Nhiệt lượng → phá liên kết, không làm tăng tốc độ phân tử",
+          "the_so": "Phân tử thiếc rắn xếp trật tự, dao động tại chỗ.\nNhận nhiệt, chúng dao động mạnh lên, một số thắng lực liên kết và bật khỏi vị trí cố định.\nNhiệt lượng dùng để phá liên kết nên tốc độ trung bình của phân tử không tăng.",
+          "ket_qua": "Nhiệt độ giữ 232 °C suốt 8 phút nóng chảy",
+          "kiem_tra": "Nhiệt lượng vẫn khác 0 (bếp vẫn chạy); chỉ nhiệt độ đứng yên: không lẫn nhiệt độ với nhiệt lượng."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 232,
+          "don_vi": "°C (thiếc)"
+        },
+        {
+          "y": "b",
+          "gia_tri": 8,
+          "don_vi": "phút"
+        },
+        {
+          "y": "c",
+          "gia_tri": 35,
+          "don_vi": "°C/phút"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thời gian nóng chảy",
+          "bieu_thuc": "14 - 6",
+          "ky_vong": 8,
+          "sai_so_tuong_doi": 0
+        },
+        {
+          "mo_ta": "tốc độ tăng nhiệt khi còn rắn",
+          "bieu_thuc": "(232 - 22) / (6 - 0)",
+          "ky_vong": 35,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "kiểm tra một khoảng 2 phút đầu",
+          "bieu_thuc": "(92 - 22) / 2",
+          "ky_vong": 35,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tốc độ tăng nhiệt sau khi nóng chảy xong",
+          "bieu_thuc": "(302 - 232) / 2",
+          "ky_vong": 35,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho bảng hoặc đồ thị nhiệt độ – thời gian của chất đang được đun → tìm đoạn nằm ngang, đọc độ cao và độ dài, rồi tính tốc độ ở các đoạn dốc.",
+      "bay_thuong_gap": [
+        "Đếm 5 ô có 232 °C rồi nhân 2 được 10 phút, thay vì lấy 14 − 6 = 8 phút.",
+        "Chia cho số lần đo thay vì chia cho thời gian khi tính tốc độ tăng nhiệt.",
+        "Cho rằng trong lúc nóng chảy bếp ngừng cấp nhiệt.",
+        "Giải thích \"nhiệt độ đứng yên vì không nhận nhiệt\"."
+      ],
+      "dieu_ban_khong_chac": [
+        "Đo cách 2 phút nên thời điểm bắt đầu/kết thúc nóng chảy chỉ biết chính xác tới 2 phút; đề chọn số để các mốc rơi đúng t = 6 và t = 14.",
+        "Tốc độ tăng nhiệt khi lỏng thực tế có thể hơi khác khi rắn; đề chọn bằng nhau cho đơn giản."
+      ],
+      "mo_phong_goi_y": "Bên trái: thỏi kim loại trên bếp điện, nhiệt kế cắm vào; đồng hồ chạy theo từng 2 phút. Bên phải: đồ thị nhiệt độ – thời gian tự vẽ dần từng điểm, có đoạn dốc lên, đoạn nằm ngang, rồi dốc lên tiếp; trong đoạn ngang, khung phóng to cho thấy hạt bật dần khỏi mạng. Nhãn trục: \"t (phút)\", \"T (°C)\"; nhãn đoạn ngang: \"T_nc = ?\", \"Δt_nc = ?\"."
+    },
+    {
+      "label": "Dạng 4 · Làm nguội kim loại đúc: dữ kiện ẩn về đông đặc",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại: tính thời gian từ độ đổi nhiệt độ và tốc độ đổi nhiệt, đọc đoạn nằm ngang (dạng 3); gọi tên quá trình đông đặc (dạng 1).\nThêm mới: bài theo chiều ngược (làm nguội) với dữ kiện ẩn phải tự rút ra — nhiệt độ đông đặc bằng nhiệt độ nóng chảy, thời gian đông đặc bằng thời gian nóng chảy.",
+      "yccd_de_xuat": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "de_bai": "Ở một xưởng đúc, thợ nấu chảy nhôm nguyên chất (nhiệt độ nóng chảy 660 °C) rồi rót vào khuôn để đúc chi tiết máy. Khi nấu trong lò cấp nhiệt đều, khối nhôm mất 12 phút để nóng chảy hết.\nRót xong, nhôm lỏng trong khuôn có nhiệt độ 780 °C và bắt đầu nguội. Coi khuôn lấy nhiệt của nhôm đều đặn, mỗi phút đúng bằng nhiệt lượng lò đã cấp mỗi phút lúc nấu. Cả khi còn lỏng lẫn khi đã rắn, nhôm đều nguội 30 °C mỗi phút.\na) Sau bao lâu kể từ lúc rót thì nhôm bắt đầu đông đặc, ở nhiệt độ nào?\nb) Quá trình đông đặc kéo dài bao lâu? Nhiệt độ của nhôm thay đổi thế nào trong thời gian đó?\nc) Chỉ được tháo khuôn khi nhôm đã đông đặc hoàn toàn và nguội tới 480 °C. Tính thời gian ngắn nhất từ lúc rót đến lúc tháo khuôn.",
+      "dieu_kien_ap_dung": "Nhôm nguyên chất (rắn kết tinh), áp suất khí quyển, tốc độ trao đổi nhiệt không đổi và bằng nhau lúc nấu và lúc làm nguội.",
+      "phan_tich": [
+        {
+          "trich_de": "nhiệt độ nóng chảy 660 °C",
+          "du_lieu": "$T_{\\text{nc}}$ = 660 °C",
+          "kien_thuc": "Dữ kiện ẩn: nhiệt độ đông đặc bằng nhiệt độ nóng chảy, $T_{\\text{đđ}} = T_{\\text{nc}}$"
+        },
+        {
+          "trich_de": "mất 12 phút để nóng chảy hết",
+          "du_lieu": "$\\Delta t_{\\text{nc}}$ = 12 phút",
+          "kien_thuc": "Độ dài đoạn nằm ngang khi đun"
+        },
+        {
+          "trich_de": "nhiệt độ 780 °C",
+          "du_lieu": "$T_0$ = 780 °C",
+          "kien_thuc": "Điểm xuất phát của đường làm nguội"
+        },
+        {
+          "trich_de": "mỗi phút đúng bằng nhiệt lượng lò đã cấp mỗi phút lúc nấu",
+          "du_lieu": "tốc độ toả nhiệt = tốc độ nhận nhiệt lúc nấu",
+          "kien_thuc": "Nhiệt lượng toả ra khi đông đặc bằng nhiệt lượng nhận khi nóng chảy → $\\Delta t_{\\text{đđ}} = \\Delta t_{\\text{nc}}$"
+        },
+        {
+          "trich_de": "nguội 30 °C mỗi phút",
+          "du_lieu": "$r$ = 30 °C/phút",
+          "kien_thuc": "Thời gian = độ giảm nhiệt độ chia tốc độ giảm nhiệt"
+        },
+        {
+          "trich_de": "nguội tới 480 °C",
+          "du_lieu": "$T_3$ = 480 °C",
+          "kien_thuc": "Mốc kết thúc, sau khi đã đông đặc xong"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "t",
+        "cong_thuc": "t = \\dfrac{T_0 - T_{\\text{đđ}}}{r} + \\Delta t_{\\text{đđ}} + \\dfrac{T_{\\text{đđ}} - T_3}{r}"
+      },
+      "kien_thuc_goi_lai": [
+        "Nhiệt độ nóng chảy bằng nhiệt độ đông đặc.",
+        "Đông đặc toả nhiệt nhưng nhiệt độ không đổi: đồ thị có đoạn nằm ngang.",
+        "Toả nhiệt cùng tốc độ như lúc nhận thì thời gian đông đặc bằng thời gian nóng chảy.",
+        "Thời gian nguội = độ giảm nhiệt độ chia số độ giảm mỗi phút ($r$)."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1. Rút dữ kiện ẩn: nhiệt độ đông đặc",
+          "cong_thuc_chu": "$T_{\\text{đđ}} = T_{\\text{nc}}$",
+          "the_so": "$T_{\\text{đđ}} = 660 \\ ^\\circ\\text{C}$",
+          "ket_qua": "$T_{\\text{đđ}} = 660 \\ ^\\circ\\text{C}$",
+          "kiem_tra": "$660 \\lt 780$ nên nhôm lỏng phải nguội một đoạn rồi mới đông đặc: hợp lí."
+        },
+        {
+          "tieu_de": "Bước 2. Thời gian nhôm lỏng nguội tới 660 °C (ý a)",
+          "cong_thuc_chu": "$t_1 = \\dfrac{T_0 - T_{\\text{đđ}}}{r}$",
+          "the_so": "$t_1 = \\dfrac{780 - 660}{30}$",
+          "ket_qua": "$t_1 = 4{,}0 \\ \\text{phút}$",
+          "kiem_tra": "Đơn vị: °C chia °C/phút ra phút. Giống cách tính tốc độ ở dạng 3, chỉ đảo chiều."
+        },
+        {
+          "tieu_de": "Bước 3. Rút dữ kiện ẩn: thời gian đông đặc (ý b)",
+          "cong_thuc_chu": "$\\Delta t_{\\text{đđ}} = \\Delta t_{\\text{nc}}$",
+          "the_so": "Nhiệt lượng toả ra khi đông đặc bằng nhiệt lượng nhận khi nóng chảy, cùng tốc độ trao đổi\n$\\Delta t_{\\text{đđ}} = 12 \\ \\text{phút}$",
+          "ket_qua": "$\\Delta t_{\\text{đđ}} = 12 \\ \\text{phút}$; nhiệt độ giữ nguyên $660 \\ ^\\circ\\text{C}$",
+          "kiem_tra": "Không dùng $r = 30$ °C/phút trong giai đoạn này: đang chuyển thể thì nhiệt độ không giảm."
+        },
+        {
+          "tieu_de": "Bước 4. Thời gian nhôm rắn nguội tới 480 °C",
+          "cong_thuc_chu": "$t_3 = \\dfrac{T_{\\text{đđ}} - T_3}{r}$",
+          "the_so": "$t_3 = \\dfrac{660 - 480}{30}$",
+          "ket_qua": "$t_3 = 6{,}0 \\ \\text{phút}$",
+          "kiem_tra": "Mốc 480 °C thấp hơn 660 °C nên chỉ tính sau khi đông đặc xong: đúng thứ tự."
+        },
+        {
+          "tieu_de": "Bước 5. Tổng thời gian đến lúc tháo khuôn (ý c)",
+          "cong_thuc_chu": "$t = t_1 + \\Delta t_{\\text{đđ}} + t_3$",
+          "the_so": "$t = 4{,}0 + 12 + 6{,}0$",
+          "ket_qua": "$t = 22 \\ \\text{phút}$",
+          "kiem_tra": "Nếu bỏ qua đoạn đông đặc sẽ ra $(780 - 480)/30 = 10$ phút, quá ngắn: đúng là bẫy cần tránh."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a – thời điểm bắt đầu đông đặc",
+          "gia_tri": 4,
+          "don_vi": "phút"
+        },
+        {
+          "y": "a – nhiệt độ đông đặc",
+          "gia_tri": 660,
+          "don_vi": "°C"
+        },
+        {
+          "y": "b – thời gian đông đặc",
+          "gia_tri": 12,
+          "don_vi": "phút"
+        },
+        {
+          "y": "c – thời gian đến lúc tháo khuôn",
+          "gia_tri": 22,
+          "don_vi": "phút"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thời gian nhôm lỏng nguội từ 780 °C xuống 660 °C",
+          "bieu_thuc": "(780 - 660) / 30",
+          "ky_vong": 4,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "thời gian nhôm rắn nguội từ 660 °C xuống 480 °C",
+          "bieu_thuc": "(660 - 480) / 30",
+          "ky_vong": 6,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "tổng thời gian từ lúc rót đến lúc tháo khuôn",
+          "bieu_thuc": "(780 - 660) / 30 + 12 + (660 - 480) / 30",
+          "ky_vong": 22,
+          "sai_so_tuong_doi": 0.001
+        },
+        {
+          "mo_ta": "kết quả sai nếu bỏ qua đông đặc (để đối chiếu)",
+          "bieu_thuc": "(780 - 480) / 30",
+          "ky_vong": 10,
+          "sai_so_tuong_doi": 0.001
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho quá trình làm nguội (đúc, đổ khuôn, để đông) và cho dữ kiện của lúc nấu chảy → tự suy ra nhiệt độ và thời gian đông đặc từ quá trình nóng chảy, rồi cộng ba giai đoạn: nguội lỏng – đông đặc – nguội rắn.",
+      "bay_thuong_gap": [
+        "Bỏ qua đoạn đông đặc, tính thẳng (780 − 480)/30 = 10 phút.",
+        "Cho rằng nhôm đông đặc ở nhiệt độ khác 660 °C, hoặc nhiệt độ vẫn giảm trong lúc đông đặc.",
+        "Cho rằng làm nguội là toả nhiệt nên không có đoạn nằm ngang.",
+        "Dùng thời gian đông đặc khác thời gian nóng chảy dù tốc độ trao đổi nhiệt như nhau."
+      ],
+      "dieu_ban_khong_chac": [
+        "Thực tế tốc độ nguội trong khuôn giảm dần khi nhôm gần nhiệt độ khuôn và nhôm lỏng, nhôm rắn nguội với tốc độ hơi khác nhau; đề lí tưởng hoá là 30 °C/phút đều.",
+        "Giả thiết khuôn lấy nhiệt đúng bằng tốc độ lò cấp nhiệt là lí tưởng hoá để thời gian đông đặc bằng thời gian nóng chảy, giống bài mẫu trong bài học."
+      ],
+      "mo_phong_goi_y": "Gàu rót nhôm lỏng màu cam sáng vào khuôn; màu nhôm tối dần từ ngoài vào trong, phần rắn lan dần. Bên cạnh là đồ thị nhiệt độ – thời gian tự vẽ: đoạn dốc xuống, một đoạn nằm ngang, rồi dốc xuống tiếp tới vạch \"tháo khuôn\". Nhãn: \"T_0 = 780 °C\", \"T_đđ = ?\", \"Δt_đđ = ?\", vạch ngang \"480 °C – tháo khuôn\", trục \"t (phút)\" và \"T (°C)\"."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "bai": "l12-ap-suat-dong-nang",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4: gọi tên tốc độ căn quân phương, viết $v_{rms}=\\sqrt{\\overline{v^2}}=\\sqrt{3kT/m}$ và nêu rút từ $\\frac{m\\overline{v^2}}{2}=\\frac32kT$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết chuỗi $p=nRT/V=\\frac{N}{V}\\frac{R}{N_A}T=\\mu kT$ và đặt $k=R/N_A$ ngay tại đó, gạch đầu dòng sau chỉ còn giá trị k."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ $\\overline{v^2}=\\overline{v_x^2}+\\overline{v_y^2}+\\overline{v_z^2}$ nên $\\overline{v_x^2}=\\overline{v^2}/3$, đồng thời bỏ gạch đầu dòng trung gian $p=\\frac{N}{3}\\overline{p_m}$ để bù độ dài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành lực trung bình = động lượng mỗi va chạm × số va chạm mỗi giây $=2mv\\cdot\\frac{v}{2l}$, rút gọn ví dụ bóng tennis để bù chữ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nội dung các ô khớp đúng dòng bảng (dấu | chỉ phân cách ô); đã chuyển $\\overline{E_d}=\\frac32kT$ sang dòng 27 °C, dòng M ghép $v_{rms}=\\sqrt{3kT/m}$ (câu b) và ghi 0,028 kg/mol."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải bước 3 thêm bước đổi 28 g/mol = 0,028 kg/mol và phép chia $0{,}028/6{,}02\\cdot10^{23}$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ $v_{rms}=\\sqrt{\\overline{v^2}}=\\sqrt{2{,}67\\cdot10^5}\\approx5{,}2\\cdot10^2$ m/s."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay số chưa làm tròn 4,01·10²⁵ và 6,21·10⁻²¹ cho ra 1,66·10⁵ Pa, kèm câu giải thích vì sao số tròn ra 1,65."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa $\\overline{E_d}'$ thành $1{,}2\\times6{,}21\\cdot10^{-21}\\approx7{,}5\\cdot10^{-21}$ J, đúng với tính trực tiếp $\\frac32k\\cdot360$."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 0 thêm điều kiện cùng một lượng khí, phản hồi sai Câu 5 nhắc 'nhanh hơn thì áp suất lớn hơn' chỉ đúng khi so cùng một khí."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 6 tách mỗi lỗi một dòng: D là số mol chia 3,0 (quên $N_A$ và quên đổi m³), C là số Avogadro chưa nhân số mol và chưa chia thể tích."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm cách ra ±0,002: sai số 0,5% của áp kế nhân 0,342 ≈ 0,002 kPa/K."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu 'Khí nguội: phân tử đập thưa, nhẹ nên vỏ bẹp.' không có trong bài."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ mục 3 thêm V = 2,0·10⁻³ m³ và kết quả trung gian ρ ≈ 1,4 kg/m³ trước khi tính $p=\\frac13\\rho\\overline{v^2}\\approx1{,}2\\cdot10^5$ Pa."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi kèm (1 atm ≈ 1,01·10⁵ Pa) ở bước kiểm tra."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành: nhiệt độ tuyệt đối tăng 300/273 ≈ 1,10 lần thì động năng cũng tăng đúng 1,10 lần."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 0 đã nói rõ nóng lên không làm phân tử nặng thêm, không cần dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn việc mô hình bỏ qua lực tương tác, cả ở mục 1 lẫn phản hồi Câu 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 2 đã nêu cả lỗi A (tốc độ không đổi) và lỗi B (quên lượt bật ngược)."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 3 đã phân biệt μ và ρ = μm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 4 đã chỉ rõ lỗi dùng 27 như Kelvin và có mẹo đổi Kelvin trước."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và phản hồi Câu 5 (đã bổ sung theo c10) đã nhấn đủ, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 6 đã nêu lỗi quên đổi lít ra m³."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi Câu 7 và khung Mang về đã nhấn lấy $T_2/T_1$ thay vì $t_2/t_1$."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2: lực trung bình viết lại thành $F = 2mv\\cdot\\frac{v}{2l} = \\frac{mv^2}{l}$ (động lượng mỗi va chạm × số va chạm mỗi giây).",
+      "Mục 2: ví dụ bóng tennis rút gọn còn $\\left|\\Delta p\\right| = 2mv$.",
+      "Mục 3: thêm $\\overline{v^2}=\\overline{v_x^2}+\\overline{v_y^2}+\\overline{v_z^2}$ nên $\\overline{v_x^2}=\\overline{v^2}/3$.",
+      "Mục 3: bỏ gạch đầu dòng $\\overline{p_m}$ / $p=\\frac{N}{3}\\overline{p_m}$, thay bằng 'Cộng đóng góp $\\frac{m}{V}v_x^2$ của N phân tử'.",
+      "Mục 3: ví dụ thêm V = 2,0·10⁻³ m³ và ρ ≈ 1,4 kg/m³, kết quả p ≈ 1,2·10⁵ Pa giữ nguyên.",
+      "Mục 4: thêm chuỗi $p=nRT/V=\\frac{N}{V}\\frac{R}{N_A}T=\\mu kT$, k = R/N_A định nghĩa ngay tại đó.",
+      "Mục 4: thêm định nghĩa $v_{rms}=\\sqrt{\\overline{v^2}}$ (tốc độ căn quân phương).",
+      "Mục 4: gạch đầu dòng Kelvin rút gọn.",
+      "Mục 5 (details sai số): giải thích ±0,002 = 0,5% × 0,342.",
+      "Bảng dữ liệu bài mẫu: $\\overline{E_d}=\\frac32kT$ chuyển sang dòng '27 °C'.",
+      "Bảng dữ liệu bài mẫu: dòng 'M = 28 g/mol' ghi M = 0,028 kg/mol và nối với $v_{rms}=\\sqrt{3kT/m}$ (câu b).",
+      "Lời giải bước 3: thêm đổi 0,028 kg/mol, $m = 0{,}028/6{,}02\\cdot10^{23}$ và $v_{rms}=\\sqrt{2{,}67\\cdot10^5}$.",
+      "Lời giải bước 4: thay số 4,01·10²⁵ và 6,21·10⁻²¹ → 1,66·10⁵ Pa, ghi chú số tròn cho 1,65·10⁵ Pa.",
+      "Lời giải bước 6: $\\overline{E_d}'$ sửa 7,4·10⁻²¹ → 7,5·10⁻²¹ J (= 1,2 × 6,21·10⁻²¹).",
+      "Lời giải bước 7: thêm 1 atm ≈ 1,01·10⁵ Pa.",
+      "Phản hồi sai Câu 6: giải thích phương án C (số Avogadro) và phương án D (số mol chia 3,0, quên $N_A$ và đổi m³).",
+      "Phản hồi Câu 0: thêm điều kiện 'cùng một lượng khí'.",
+      "Phản hồi sai Câu 5: thêm câu 'nhanh hơn thì áp suất lớn hơn chỉ đúng khi so cùng một khí'.",
+      "Thử thách Cơ bản: '10%' thay bằng tỉ số nhiệt độ tuyệt đối 300/273 ≈ 1,10 lần."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l12-ap-suat-dong-nang/gemini/da-xu-ly/theory.src.202610080604.html"
+  }
+}

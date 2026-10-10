@@ -1,0 +1,222 @@
+{
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Nội năng",
+      "trich_nguyen_van": "Phụ thuộc nhiệt độ và thể tích; cùng chất, khối lượng càng lớn thì nội năng càng lớn.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục tiêu ghi \"thể tích (khối lượng)\" nên em nghĩ thể tích và khối lượng là một yếu tố. Em không biết vì sao thể tích làm đổi nội năng.",
+      "de_xuat": "Thêm một câu: thể tích đổi thì khoảng cách phân tử đổi nên thế năng phân tử đổi; khối lượng là yếu tố riêng vì nó quyết định số phân tử."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Hai cách làm biến đổi nội năng",
+      "trich_nguyen_van": "Cả hai đều dẫn tới nội năng tăng.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là thực hiện công và truyền nhiệt luôn làm nội năng tăng. Câu này mâu thuẫn với gạch đầu dòng \"sinh công → giảm\", \"toả nhiệt → giảm\" ngay phía trên.",
+      "de_xuat": "Sửa chú thích thành \"Cả hai đều có thể làm nội năng tăng hoặc giảm, tuỳ vật nhận hay mất năng lượng\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Hai cách làm biến đổi nội năng",
+      "trich_nguyen_van": "Thực hiện công: có lực làm vật dịch chuyển.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phần lí thuyết chỉ nói \"dịch chuyển\". Tiêu chí \"hoặc đổi thể tích\" chỉ xuất hiện trong phản hồi Câu 2, nên với trường hợp nén khí em không chắc có tính là dịch chuyển không.",
+      "de_xuat": "Ghi luôn trong gạch đầu dòng: \"có lực làm vật dịch chuyển hoặc làm đổi thể tích (nén/giãn khí)\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Nhiệt lượng – nhiệt dung riêng",
+      "trich_nguyen_van": "$\\Delta t$ là <em>độ tăng</em> nhiệt độ (K)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đơn vị ghi K nhưng đề cho °C. Em có thể đổi 25 °C sang 298 K rồi mới trừ, hoặc lo là phải đổi.",
+      "de_xuat": "Thêm: \"Hiệu nhiệt độ tính theo °C hay K đều bằng nhau, nên trừ thẳng số °C\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Thử thách phân tầng",
+      "trich_nguyen_van": "Lỗi hay gặp: lấy $\\Delta t = 20$ hoặc 80 — luôn lấy hiệu cuối trừ đầu.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài ⭐ dặn luôn lấy cuối trừ đầu, ngay bài ⭐⭐ lại viết $(250 - t)$ là đầu trừ cuối. Em không biết lúc nào được đảo, vì mục 3 chỉ nói về vật nóng lên.",
+      "de_xuat": "Ở mục 3 thêm: \"vật toả nhiệt thì nhiệt lượng toả ra = mc(t_đầu − t_cuối)\". Sửa câu ở bài ⭐ thành \"với vật thu nhiệt, lấy cuối trừ đầu\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Thử thách phân tầng",
+      "trich_nguyen_van": "Nhiệt toả = nhiệt thu: $0{,}4 \\times 880\\left(250 - t\\right) = 0{,}8 \\times 4200\\left(t - 25\\right)$ → $t \\approx 46\\ ^\\circ\\text{C}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Phương trình cân bằng nhiệt chưa được dạy trong bài. Lời giải cũng nhảy thẳng tới 46 °C nên em không biết giải ra $t$ thế nào.",
+      "de_xuat": "Thêm một dòng nêu nguyên lí cân bằng nhiệt và bước trung gian: 352(250 − t) = 3360(t − 25) → 172 000 = 3712t → t ≈ 46 °C."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Thử thách phân tầng",
+      "trich_nguyen_van": "gần 25 °C hơn vì $m_2c_2$ lớn hơn $m_1c_1$ nhiều lần.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề không gán chỉ số 1, 2 nên em không biết vật 1 là nhôm hay nước.",
+      "de_xuat": "Viết thẳng: \"vì m_nước·c_nước (3360) lớn gần 10 lần m_nhôm·c_nhôm (352)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "5. Đo nhiệt lượng bằng số liệu thực",
+      "trich_nguyen_van": "P·τ là nhiệt đưa vào · c là ẩn cần tìm",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa giải thích ký hiệu P, τ và vì sao Q = Pτ. Các từ \"oát kế\", \"nhiệt lượng kế\" cũng lạ. Em sẽ không hiểu cột Q của bảng từ đâu ra.",
+      "de_xuat": "Thêm một dòng: \"P là công suất bếp (W = J/s), τ là thời gian đun (s); bếp đưa vào Q = P·τ jun\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Đo nhiệt lượng bằng số liệu thực",
+      "trich_nguyen_van": "Câu 4. Khí trong xilanh nhận nhiệt 100 J; khí giãn nở sinh công 60 J.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi về định luật I lại nằm ngay sau phần đo c. Mục 4 (định luật I) không có câu tự kiểm tra nào, nên em tưởng Câu 4 liên quan tới bảng số liệu.",
+      "de_xuat": "Chuyển Câu 4 lên cuối mục \"4. Định luật I Nhiệt động lực học\"; mục 5 đặt một câu về tính c hoặc vì sao c đo được lệch."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "4. Định luật I Nhiệt động lực học",
+      "trich_nguyen_van": "$\\Delta U \\gt 0$: nội năng tăng, nhiệt độ thường tăng.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ \"thường\" cho thấy có ngoại lệ, nhưng mọi lời giải sau đều khẳng định chắc \"ΔU > 0 → khí nóng lên\". Em không biết khi nào được kết luận chắc.",
+      "de_xuat": "Nói rõ: \"với khí trong các bài này, ΔU > 0 thì nhiệt độ tăng; ngoại lệ là khi chuyển thể (xem Thách đấu)\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "4. Định luật I Nhiệt động lực học",
+      "trich_nguyen_van": "ΔU = A + Q · A, Q là số đại số · Nhận vào thì dương",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không giải thích \"số đại số\" nên em không nối được với việc phải mang theo dấu âm khi thay số.",
+      "de_xuat": "Thêm: \"số đại số nghĩa là có thể âm; khi thay vào công thức phải giữ nguyên dấu\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "4. Định luật I Nhiệt động lực học",
+      "trich_nguyen_van": "Định luật I cộng hai số đại số lại: ΔU = 60 + (−15) = +45 J.",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hình 4 đã cho sẵn đáp số bài toán mẫu ở mục V. Đến lúc làm bài mẫu, em chỉ chép lại chứ không tự đặt dấu.",
+      "de_xuat": "Đổi số liệu ở Hình 4 (ví dụ công 50 J, nhiệt ra 20 J) để bài toán mẫu còn tác dụng luyện."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: bơm xe đạp",
+      "trich_nguyen_van": "lần ấn này công <strong>90 J</strong>, nhiệt truyền ra ngoài <strong>30 J</strong>.",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Số liệu trùng hệt Câu 5 (nhận công 90 J, toả 30 J) nên em nhớ đáp số +60 J mà không cần làm lại.",
+      "de_xuat": "Đổi số liệu bài điền bước, ví dụ công 70 J, nhiệt ra 25 J."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Bẫy 3: dấu của $A$ trong $\\Delta U = A + Q$",
+      "trich_nguyen_van": "Ra $+120$ là cộng cả hai như thể khí cũng nhận nhiệt; ra số âm là đổi dấu phần nhận công.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ra −120 là chỉ đổi dấu công, còn ra −60 là đổi dấu cả hai số. Gộp chung \"ra số âm\" nên em chọn C không biết mình sai ở đâu.",
+      "de_xuat": "Tách riêng: \"−120 là coi A = −90; −60 là đảo dấu cả hai (A = −90, Q = +30)\"."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "Bốn chỗ gặp lại bài này",
+      "trich_nguyen_van": "máy nén sinh công lên gas.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Trong bài, \"sinh công\" luôn đi với A < 0. Đọc câu này em dễ đặt A < 0 cho gas, trong khi gas là hệ nhận công.",
+      "de_xuat": "Viết \"máy nén thực hiện công lên gas (gas nhận công, A > 0)\"."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "Bốn chỗ gặp lại bài này",
+      "trich_nguyen_van": "chặn ba đường mất nhiệt — dẫn nhiệt (vỏ chân không), đối lưu (nút kín), bức xạ.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Đối lưu\", \"bức xạ\" xuất hiện trước khi được giải thích ở hộp kế tiếp. Riêng bức xạ không nói bị chặn bằng gì.",
+      "de_xuat": "Đảo hộp \"ba đường nhiệt\" lên trước và ghi \"bức xạ (lớp tráng bạc phản xạ)\"."
+    },
+    {
+      "id": "c17",
+      "vi_tri": "Thử thách phân tầng",
+      "trich_nguyen_van": "Vì sao tan hết tốn nhiều thời gian hơn mà chỉ tăng được 40 °C?",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là giai đoạn tan đá làm tăng 40 °C. Thật ra lúc tan nhiệt độ không đổi, 40 °C là của giai đoạn sau.",
+      "de_xuat": "Viết lại: \"Vì sao giai đoạn tan (334 s) nhiệt độ đứng yên, còn giai đoạn sau chỉ 168 s đã tăng 40 °C?\""
+    },
+    {
+      "id": "c18",
+      "vi_tri": "Thử thách phân tầng",
+      "trich_nguyen_van": "$\\lambda = 167\\ 000 / 0{,}5 = 3{,}34 \\times 10^5\\ \\text{J/kg}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "λ và công thức λ = Q/m chưa có trong bài; chính bài ghi \"bài sau sẽ gọi\". Em không biết vì sao chia Q cho m.",
+      "de_xuat": "Trước phép tính thêm: \"nhiệt nóng chảy riêng λ là nhiệt lượng làm 1 kg chất tan hết ở nhiệt độ nóng chảy: λ = Q/m\"."
+    },
+    {
+      "id": "c19",
+      "vi_tri": "I. Mở bài: hai thanh chạm vào lúc 6 giờ sáng",
+      "trich_nguyen_van": "kim loại dẫn nhiệt nhanh hơn gỗ, rút nhiệt từ tay nhanh hơn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Dẫn nhiệt\" được dùng từ đầu nhưng phải tới mục VI mới giải thích là truyền qua vật rắn tiếp xúc.",
+      "de_xuat": "Thêm ngoặc ngắn: \"dẫn nhiệt (nhiệt truyền qua chỗ tiếp xúc)\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0 (Dự đoán)",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất nội năng với nhiệt độ: cùng 60 °C thì nghĩ nội năng bằng nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nội năng là tổng; nhiệt độ chỉ là mức trung bình mỗi phân tử."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Vừa học ở câu Dự đoán là khối lượng quyết định, em áp dụng quá mức: cùng chất, cùng khối lượng thì bằng nhau, bỏ qua chênh nhiệt độ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "\"Cùng chất, cùng khối lượng\" chỉ loại bỏ khác nhau về số phân tử, không loại bỏ nhiệt độ."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Phân loại theo hiện tượng \"thấy nóng lên\" hoặc \"ma sát sinh nhiệt\" thay vì xét có lực làm dịch chuyển hay không. Chú thích Hình 2 nói cả hai đều làm nội năng tăng càng dễ làm em gộp lại.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Em đang phân loại theo \"thấy nóng lên\", mà cả hai cách đều làm nóng."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Lấy nhiệt độ cuối 100 °C làm Δt thay vì độ tăng 100 − 25.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\Delta t$ là <em>độ tăng</em> nhiệt độ (K)"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cộng thẳng hai độ lớn, quên công khí sinh ra mang dấu âm. Câu này lại đặt trước mục Bẫy 3 nên chưa được nhắc kĩ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mẹo nhớ: đọc câu chuyện trước, đặt dấu sau — \"nhận thì cộng, mất thì trừ\"."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy hai con số liền cộng lại, không đổi dấu nhiệt lượng khí toả ra môi trường.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Khí toả nhiệt 80 J | Q = −80 J"
+    }
+  ]
+}
