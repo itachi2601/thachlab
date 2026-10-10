@@ -50,6 +50,7 @@
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo bài 38/43/45, L12 12 bài, L10 đợt B
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo dang-chung.json/tiet.json
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
+- [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — Gemini Spark đọc thư mục scripts/data/gemini-hinh, thí điểm 20 câu chờ thầy
 - [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — /quan-tri/sua-de
 - [Ngân hàng câu hỏi](project_thachlab_question_bank.md) — Dễ/TB/Khó + cảnh báo trùng
 - [Đề thi thử trường/sở](project_thachlab_de_thi_thu_truong_so.md) — 304 file đã lọc, CHƯA ĐĂNG
