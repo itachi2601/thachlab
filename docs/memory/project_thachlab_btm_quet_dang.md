@@ -17,8 +17,8 @@ metadata:
 
 **Còn chờ:**
 - Bài 38, 43, 45 (L11): quét dạng báo "không có chủ đề nguồn" (0 câu ngân hàng) → thầy chọn: bổ sung ngân hàng hay gắn YCCĐ riêng. Dạng 1–2 bài 44, dạng 1 bài 35/42 đang gắn chủ đề cha.
-- L10 còn chưa soạn BTM: **đợt B = 68–74, 76–79 (11 bài, có chủ đề ngân hàng, chạy tuần tự khi thầy bảo)**. Thầy chốt 2026-10-10: BỎ đợt E (59, 61, 64, 38, 46 — 0 chủ đề) và đợt F (thực hành/đặc biệt: 47, 48, 51, 56, 65, 67, 75, 29, 34, 45, 5, 12). Hỏi trước khi chạy: phiên "[96babb]" có đang đụng L10 không (đã xảy ra đụng L11: hai phiên cùng soạn 35–44, thầy bảo để phiên kia làm, phiên này dừng).
-- Bài 10 (L12) vẫn bản 4 dạng cũ (soạn lại được, 1 bài); bài 5, 12 (thực hành L12) thầy chốt BỎ.
+- L10 đợt B = 68–74, 76–79: **ĐÃ SOẠN + kiểm chéo + commit `a7a005709`; ĐÃ ĐĂNG DB 11/10/2026 (11/11 bài, sao lưu `scripts/logs/bai-tap-mau-bai<id>-1791720*.json`, log `scripts/logs/dotB-dang.txt`)**. Cũ:  Thầy chốt 2026-10-10: BỎ đợt E (59, 61, 64, 38, 46 — 0 chủ đề) và đợt F (thực hành/đặc biệt: 47, 48, 51, 56, 65, 67, 75, 29, 34, 45, 5, 12). Hỏi trước khi chạy: phiên "[96babb]" có đang đụng L10 không (đã xảy ra đụng L11: hai phiên cùng soạn 35–44, thầy bảo để phiên kia làm, phiên này dừng).
+- Bài 10 (L12) ĐÃ soạn lại 4 dạng tự giải từng bước + ghi DB 10/10 (commit `6cafdc9c8`; memory cũ ghi sai); bài 5, 12 (thực hành L12) thầy chốt BỎ.
 - Chưa xem lại bằng mắt vài hình sau lần sửa cuối: bài 44 dạng 3,5; 41 dạng 4,5; 42 dạng 3; 39 nhãn dạng 4.
 - Chưa deploy lý thuyết (L10 25 bài + L11 6 bài ghi DB nhưng `public/data` sinh lúc build); BTM đọc DB lúc chạy nên không cần deploy. `docs/STATE.md` còn ghi L11 20–33 "chưa đăng" (sai) — cập nhật.
 - Trợ giảng rà trên web (lý thuyết + BTM mới).
