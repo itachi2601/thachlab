@@ -27,6 +27,7 @@
  * Câu hỏi và câu dẫn (COPY) đổi theo tab đang chọn, không giữ lời của tab "Ném xiên".
  */
 
+import { PhysicsPostRibbon, type RibbonPost } from "@/components/home/PhysicsPostRibbon";
 import { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -125,23 +126,7 @@ const COPY: Record<
   },
 };
 
-const FORMULAS = [
-  "R = v₀²·sin2α/g",
-  "x = A·cos(ωt + φ)",
-  "F = ma",
-  "t = √(2h/g)",
-  "E = mc²",
-  "L = v₀·t",
-  "v = dx/dt",
-  "T = 2π√(l/g)",
-  "P = F·v",
-  "λ = v/f",
-  "W = ∫F·ds",
-  "p = mv",
-  "a = -ω²x",
-];
-
-export function PhysicsSimulationHero() {
+export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: RibbonPost[] }) {
   const [tab, setTab] = useState<TabKey>("projectile");
   const copy = COPY[tab];
 
@@ -264,18 +249,8 @@ export function PhysicsSimulationHero() {
 
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <div className="marquee font-mono text-sm text-slate-500">
-          {[0, 1].map((dup) => (
-            <span key={dup} className="flex shrink-0 items-center gap-12">
-              {FORMULAS.map((f) => (
-                <span key={f} className="whitespace-nowrap">
-                  {f} <span className="mx-3 text-slate-700">·</span>
-                </span>
-              ))}
-            </span>
-          ))}
-        </div>
+      <div className="relative mx-auto mt-10 max-w-6xl">
+        <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta · bấm để đọc" />
       </div>
     </section>
   );
