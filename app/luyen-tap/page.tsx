@@ -1,6 +1,7 @@
 "use client";
 
 import ForYouRow from "@/components/mastery/ForYouRow";
+import MistakeVaultCard from "@/components/rank/MistakeVaultCard";
 import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
@@ -229,7 +230,12 @@ function Content() {
         được tính lại cho danh hiệu — làm câu mới mới tiến thêm.
       </p>
 
-      {session && <ForYouRow />}
+      {session && (
+        <div className="mt-4 space-y-4">
+          <ForYouRow />
+          <MistakeVaultCard />
+        </div>
+      )}
 
       <div role="tablist" aria-label="Kiểu luyện tập" className="mt-5 grid grid-cols-2 gap-2">
         {(
