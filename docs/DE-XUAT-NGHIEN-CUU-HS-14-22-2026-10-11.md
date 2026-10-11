@@ -227,12 +227,30 @@ ROADMAP đóng băng CNC. Ghi một ý để sau: lớp đảo ngược = đăng
 - **Mô phỏng 3D**: nặng JS trên điện thoại; SVG + PhET đủ cho THPT.
 - **Thêm lớp động lực mới** trước khi có A1.
 
-## 5. Thứ tự 4 tuần (chờ thầy chốt)
-| Tuần | Việc | Ghi chú |
-|---|---|---|
-| 1 (→18/10) | A1, A2, D2 | A1 phải xong trước 25/10 để có nền mùa 2 |
-| 2 (→25/10) | A3, C1, C2, B1 | đều client/SQL đọc, không migration trừ A2 (1 cột) |
-| 3–4 | quyết mùa 2 từ A1 (C5); B2; D1 sim đầu (Dao động L11 đang dạy) | D1 cần thầy duyệt 3 nhiệm vụ/sim |
+## 5. Thứ tự làm (chốt đề xuất 11/10/2026)
+
+Tiêu chí xếp: (1) có hạn — mùa 1 hết 25/10; (2) việc đo đứng trước việc sửa vì sửa mù là lãng phí; (3) giá trị ÷ công;
+(4) việc không migration đi trước việc có migration; (5) việc cần thầy duyệt nội dung xếp sau để thầy có thời gian xem.
+
+| # | Việc | Vì sao đứng ở đây | Công | Phụ thuộc |
+|---|---|---|---|---|
+| 1 | **D2** thử Đố vui `/choi` 2 điện thoại | 0 code, chỉ kiểm migration `20261006150000_quiz_live` đã chạy chưa rồi thử; dùng được ngay tuần này trên lớp | 1 buổi | — |
+| 2 | **A1** script đo mùa 1 | Có hạn 25/10; mọi quyết định mùa 2 (C5) đi từ số này; chỉ SQL đọc | 0,5 ngày | — |
+| 3 | **C2** nhãn "không tính điểm" + dòng kết quả luyện | Chỉ chữ, tác động thẳng nhóm 25% dưới, không rủi ro | vài giờ | — |
+| 4 | **A2** ghi đoạn đang đọc vào heartbeat | Migration nhỏ, cần chạy sớm để tới cuối tháng có 2 tuần dữ liệu cho việc soạn lại 20 bài L12 | 0,5 ngày | migration 1 cột |
+| 5 | **A3** phễu bài lý thuyết | Dữ liệu đã có, 1 SQL; đọc cùng A2 mới biết sửa bài ở đâu | 0,5 ngày | — |
+| 6 | **C1** thông báo RP kèm thông tin YCCĐ | Chỉ đổi chuỗi trong hàm; làm sau A1 để không lẫn tác động vào số mùa 1 | 0,5 ngày | sau A1 chốt số |
+| 7 | **B1** fading theo mastery | Client-only, lợi cho nhóm trên; cần vài ngày thử bằng tài khoản HS trước khi deploy | 1 ngày | — |
+| 8 | **C3** chọn 1 trong 2 chủ đề yếu ở TodayCard | Nhỏ, nhưng TodayCard vừa sửa 7/10 nên để ổn định trước | vài giờ | — |
+| 9 | **C5** quyết mùa 2 từ số A1 | Chỉ làm được sau 25/10 khi có đủ 5 tuần | 0 | A1 |
+| 10 | **B2** luyện đề dài theo phần | Giá trị cao nhưng công 1–2 ngày và đụng ExamRunner (file nhạy, có bug chuyển câu chưa rõ) — làm khi mùa 1 đã chốt | 1–2 ngày | — |
+| 11 | **D1** PhET sim đầu: Dao động L11 | Cần thầy duyệt 3 nhiệm vụ + 3 câu YCCĐ; chương đang dạy nên làm trước Động học L10 | 1 ngày/sim | thầy duyệt nội dung |
+| 12 | **B3** lint hình | Chỉ cần trước đợt soạn bài kế (Đợt 1 L11 Dao động) | 0,5 ngày | — |
+| 13 | **C4** giờ nhắc mặc định 20h | Gắn vào M4 push, M4 chưa làm (còn VAPID + deploy) | 0 thêm | M4 |
+| 14 | **D3**, **E** | Chỉ nhắc khi soạn / để sau | 0 | — |
+
+Theo tuần: **tuần 1 (→18/10)** #1–#5 · **tuần 2 (→25/10)** #6–#8 · **tuần 3–4** #9–#12 · **sau** #13–#14.
+Việc nào thầy không đồng ý thì gạch, thứ tự còn lại giữ nguyên.
 
 ## 6. Nguồn
 Sweller 1988; Sweller & Cooper 1985; Kalyuga, Ayres, Chandler & Sweller 2003 (expertise reversal); Mayer *Multimedia Learning* 2009/2020 ·
