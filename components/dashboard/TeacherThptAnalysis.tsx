@@ -6,6 +6,7 @@ import type { ClassStudent } from "@/services/classes";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassExamResults } from "@/services/class-results";
 import { getSupabase } from "@/services/supabase";
@@ -49,6 +50,9 @@ export default function TeacherThptAnalysis({
   students: ClassStudent[];
 }) {
   const toast = useToast();
+  const { profile } = useAuth();
+  // Trợ giảng không có khu vực THPT nên bị /dashboard-thpt/chua-bai chặn — có trang chữa bài riêng.
+  const reviewBase = profile?.role === "tro_giang" ? "/tro-giang/chua-bai" : "/dashboard-thpt/chua-bai";
   const studentIds = useMemo(() => students.map((s) => s.id), [students]);
 
   const [exams, setExams] = useState<{ id: number; title: string }[]>([]);
@@ -166,7 +170,7 @@ export default function TeacherThptAnalysis({
         )}
         {examId && (
           <a
-            href={`/dashboard-thpt/chua-bai?exam=${examId}&class=${classId}`}
+            href={`${reviewBase}?exam=${examId}&class=${classId}`}
             target="_blank"
             rel="noreferrer"
             className="ml-auto inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
