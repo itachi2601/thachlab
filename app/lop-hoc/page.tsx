@@ -61,7 +61,8 @@ function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>
 }
 import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOverview";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
-import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
+import { fetchMyRankStatus, fetchMyStreakDays, fetchRankStatusOf, type StreakDay } from "@/services/rank";
+import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import type { RankStatus } from "@/features/rank/types";
 import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
 
@@ -107,6 +108,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [parentChildren, setParentChildren] = useState<LinkedChild[] | null>(null);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
   const [rank, setRank] = useState<RankStatus | null>(null);
+  const [streakDays, setStreakDays] = useState<StreakDay[] | null>(null);
   // Chờ profile tải xong mới biết đang xem với tư cách nào (tránh đọc nhầm tiến độ của phụ huynh).
   const viewId = !session || !profile ? null : isParent ? selectedChildId : session.user.id;
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
@@ -198,6 +200,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     (isParent ? fetchRankStatusOf(viewId) : fetchMyRankStatus())
       .then((r) => { if (!cancelled) setRank(r); })
       .catch(() => { if (!cancelled) setRank(null); });
+    if (!isParent) fetchMyStreakDays().then((d) => { if (!cancelled) setStreakDays(d); });
     return () => { cancelled = true; };
   }, [viewId, isParent]);
 
@@ -703,6 +706,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         )}
                         {isParent && session && progressMarks && (
                           <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
+                        )}
+                        {!isParent && session && rank?.season && (
+                          <DailyStreakCard status={rank} days={streakDays} className="mb-4" />
                         )}
                         {renderNextCard()}
 
