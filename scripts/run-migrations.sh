@@ -14,16 +14,12 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261010500000_notify_rp_thuong.sql|Báo chuông khi em được cộng RP thưởng mục tiêu tuần / tiến bộ tuần / mục tiêu cả lớp (trigger trên rank_rp_ledger, kèm phụ huynh); chỉ thêm hàm + trigger, không gửi bù|giờ nào cũng được; rollback perf/rollback/20261010500000_notify_rp_thuong.down.sql"
-  "supabase/migrations/20261010600000_lop_hsg_vat_ly_9_duyet_tay.sql|Thêm lớp Học sinh giỏi & Chuyên Vật lý 9 vào chỗ chọn lớp đăng ký, học sinh chỉ gửi yêu cầu chờ thầy duyệt (cột classes.requires_approval + sửa 2 policy user_classes)|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261010700000_ta_doc_thanh_vien_lop.sql|Cho trợ giảng đọc danh sách thành viên lớp (1 policy SELECT trên user_classes) để dùng trang Chữa bài /tro-giang/chua-bai|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261011100000_exam_ta_preview.sql|Gửi đề cho trợ giảng xem trước: bảng exam_ta_previews (+RLS) và 1 policy SELECT trên exams cho TA đọc đề đã gửi dù còn ẩn|giờ nào cũng được; rollback perf/rollback/20261011100000_exam_ta_preview.down.sql"
-  "supabase/migrations/20261010800000_an_cau_cat_cut_hien_thi.sql|Ẩn 181 câu ngân hàng còn lỗi cắt cụt/hiển thị (phương án rỗng, dính tab, đề thiếu giá trị); có bảng sao lưu|Chạy lúc nào cũng được (~180 dòng)"
-  "supabase/migrations/20261010150000_ta_sua_buoi_7_ngay_va_doi_anh.sql|Trợ giảng sửa buổi chưa duyệt trong 7 ngày (policy ta_sessions, trước là 3) + hàm set_my_avatar để trợ giảng/giáo viên đổi ảnh đại diện|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261011120000_question_bank_lint_flags.sql|Thêm cột question_bank.lint_flags (text[], index GIN) cho lọc \"Chỉ câu sạch\" + question_content_hash bỏ khoá lint_ignored; chạy xong thì npx tsx scripts/cap-nhat-lint-flags.mts --ghi|giờ nào cũng được (ALTER nhanh); rollback ở cuối file"
-  "supabase/migrations/20261011130000_bank_set_question_figure_service.sql|Thêm hàm bank_set_question_figure_svc (chỉ service_role) để script ghi hình Gemini đã duyệt vào câu ngân hàng; chỉ thêm hàm, không đụng dữ liệu|giờ nào cũng được; rollback ở cuối file"
-  "supabase/migrations/20261011140000_bank_replace_question_imgs.sql|Thêm 2 hàm (bank_replace_imgs_in_json, bank_replace_question_imgs, chỉ service_role/giáo viên) để thay ảnh công thức bằng chữ LaTeX trong câu ngân hàng + đề đang dùng; chỉ thêm hàm, không đụng dữ liệu|giờ nào cũng được; rollback ở cuối file"
+  "supabase/migrations/20261011150000_student_mistakes_spaced_review.sql|Sổ tay câu sai & Ôn cách quãng (Spaced Mistake Review)|giờ nào cũng được"
+  "supabase/migrations/20261011160000_rank_bat_nguon_thuong_chenh_lech.sql|Bật nguồn RP cho đề/luyện tập HS đã nộp + làm lại thưởng chênh lệch + tính lại mùa 4|NGOÀI giờ học sinh làm bài"
 )
+# ĐÃ CHẠY 11/10/2026: 20261010500000_notify_rp_thuong, 20261010600000_lop_hsg_vat_ly_9_duyet_tay, 20261010700000_ta_doc_thanh_vien_lop,
+#   20261011100000_exam_ta_preview, 20261010800000_an_cau_cat_cut_hien_thi, 20261010150000_ta_sua_buoi_7_ngay_va_doi_anh,
+#   20261011120000_question_bank_lint_flags, 20261011130000_bank_set_question_figure_service, 20261011140000_bank_replace_question_imgs
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
 # ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
 #   20261010300000_hsg_cham_nhanh (đã có bảng + 1 bài Pre-test; chạy lại báo policy tồn tại), 20261010100000_khoa_hsg9_vat_ly_khung

@@ -11,17 +11,12 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
-1. `20261010500000_notify_rp_thuong` — chuông "+N RP" thưởng.
-2. `20261010600000_lop_hsg_vat_ly_9_duyet_tay` — lớp HSG Vật lý 9 duyệt tay; **chạy TRƯỚC khi deploy** phần `/dang-ky`.
-3. `20261010700000_ta_doc_thanh_vien_lop` — TA đọc thành viên lớp (`/tro-giang/chua-bai`).
-4. `20261011100000_exam_ta_preview` — gửi đề cho TA xem trước (`/tro-giang/xem-truoc`).
-5. `20261010800000_an_cau_cat_cut_hien_thi` — ẩn 181 câu ngân hàng lỗi hiển thị (có bảng sao lưu).
-6. `20261010150000_ta_sua_buoi_7_ngay_va_doi_anh` — TA sửa buổi 7 ngày + đổi ảnh đại diện.
-7. `20261011120000_question_bank_lint_flags` — cột `lint_flags`; xong chạy `npx tsx scripts/cap-nhat-lint-flags.mts --ghi`.
-- `20261011130000_bank_set_question_figure_service` — hàm `_svc` (service_role) cho `scripts/ghi-hinh-sau-duyet.mts` ghi hình Gemini đã duyệt.
-- `20261011140000_bank_replace_question_imgs` — hàm thay ảnh công thức bằng LaTeX, dùng bởi `scripts/thay-anh-cong-thuc.mts`.
+1. `20261011150000_student_mistakes_spaced_review` — Sổ tay câu sai & Ôn cách quãng (Spaced Mistake Review), bảng `student_mistakes` + RPC ôn tập + cộng RP.
+2. `20261011160000_rank_bat_nguon_thuong_chenh_lech` — bật nguồn RP cho đề/luyện tập HS mùa 4 đã nộp, `rp_first_attempt_only=0` (làm lại thưởng chênh lệch), tính lại mùa 4; chạy NGOÀI giờ học. Kèm code thông báo RP ở màn vào bài (ExamRunner) — cần deploy.
+- Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
+- Hiện tại không có migration nào trong danh sách chờ `FILES`.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701), `20261006150000_quiz_live` (Đố vui lớp học `/choi`, `/tro-giang/do-vui`; chưa thử 2 điện thoại).
-- Tất cả đều giờ nào chạy cũng được; rollback ở cuối file hoặc `perf/rollback/`. Sau khi chạy: `node scripts/gen-database-doc.mjs`.
+- Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
 - 25 bài lý thuyết L10 (lesson 46–48, 58–79) đã ghi DB 10/10, **chưa deploy**. Main local có thể ahead origin — xem trước khi push.
