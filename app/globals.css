@@ -1647,6 +1647,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 /* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
    (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
 .exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1.0625em; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
 .exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
 @media (max-width: 640px) {
   .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }

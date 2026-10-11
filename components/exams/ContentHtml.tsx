@@ -98,6 +98,15 @@ export function playVideo(html: string, slot: number, id: string, query: string,
  * Bảng dán từ Word có sẵn min-width cố định, tràn màn hình điện thoại nếu
  * để nguyên — bọc riêng một lớp cuộn ngang cho bảng, không đẩy tràn cả trang.
  */
+/** Hộp "Đề bài" của bài toán mẫu trong lý thuyết mô phỏng một câu hỏi thi ⇒ nhận class `tl-box--de` để
+ *  CSS đặt font đề thi thật (E4). Làm lúc hiển thị nên bài đã đăng không cần đăng lại. */
+function withDeBaiBox(html: string): string {
+  return html.replace(
+    /<div class="(tl-box(?: [^"]*)?)"([^>]*)>(\s*<p class="tl-label">[^<]*Đề bài)/g,
+    '<div class="$1 tl-box--de"$2>$3',
+  );
+}
+
 function stripWordArtifacts(html: string): string {
   return html
     .replace(/[�￼]/g, "")
@@ -180,7 +189,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(stripWordArtifacts(html))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(stripWordArtifacts(html)))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);

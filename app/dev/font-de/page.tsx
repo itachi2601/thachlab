@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ContentHtml from "@/components/exams/ContentHtml";
 import QuestionCard from "@/components/exams/QuestionCard";
 import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
 
@@ -23,6 +24,10 @@ export default function Page() {
       {QS.map((q, i) => (
         <QuestionCard key={i} index={i + 1} question={q} response={res[i]} onChange={(r) => setRes((a) => a.map((x, j) => (j === i ? r : x)))} />
       ))}
+      <div className="rounded-2xl border border-line bg-panel p-5 text-[16px]">
+        <p className="mb-2 text-sm text-muted">Bài lý thuyết: hộp Đề bài = serif, phần còn lại = Inter.</p>
+        <ContentHtml html={'<div class="tl-box tl-box--rule"><p class="tl-label">📝 Đề bài</p><p>Một điện trở $R = 20\\,\\Omega$ có cường độ dòng điện 0,5 A. Tính hiệu điện thế giữa hai đầu điện trở.</p></div><p>Lời giải: áp dụng $U = IR$ nên $U = 10$ V.</p>'} />
+      </div>
     </main>
   );
 }
