@@ -35,6 +35,26 @@ export default function BugReportWidget() {
   const drag = useRef<{ startY: number; startBottom: number; moved: boolean } | null>(null);
   const justDragged = useRef(false);
 
+  // Trang bài (điện thoại): đang cuộn xuống đọc thì ẩn nút để không đè hình/bảng; cuộn lên hoặc dừng 1,5 s thì hiện lại. (M2)
+  useEffect(() => {
+    let last = window.scrollY;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const setAway = (away: boolean) => fabRef.current?.classList.toggle("is-away", away);
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > last + 6) setAway(true);
+      else if (y < last - 6) setAway(false);
+      last = y;
+      clearTimeout(timer);
+      timer = setTimeout(() => setAway(false), 1500);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(timer);
+    };
+  }, []);
+
   useEffect(() => {
     try {
       const saved = Number(window.localStorage.getItem(POSITION_KEY));

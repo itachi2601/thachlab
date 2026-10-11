@@ -2107,7 +2107,7 @@ function LessonLoader() {
           aria-label={lessonMarked ? "Đã đánh dấu: học xong bài này" : "Đánh dấu đã học xong bài này"}
         >
           {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
-          <span>Đã học xong</span>
+          <span>Học xong</span>
         </button>
 
         <span className="lesson-bottom-step" aria-live="polite">

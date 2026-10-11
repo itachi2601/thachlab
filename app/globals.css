@@ -941,7 +941,7 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 @media (max-width: 1023px) { body:has(.mobile-tabbar) .bug-fab { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); } }
 /* Trang làm đề: thanh Trước/Sau nằm ở đáy màn hình lúc mới mở → nâng nút Báo lỗi lên trên thanh để không che nút Sau. */
 @media (max-width: 639px) { body:has(.exam-nav-row) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); } }
-@media (max-width: 639px) { body:has(.lesson-bottombar) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 46; } }
+@media (max-width: 639px) { body:has(.lesson-bottombar) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 46; transition: opacity .2s, transform .2s; } body:has(.lesson-bottombar) .bug-fab.is-away { opacity: 0; transform: translateY(12px); pointer-events: none; } }
 .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 14px; }
 .lesson-panel-title { margin: 0 0 10px; color: var(--color-ink); font-size: 13px; font-weight: 700; }
 .lesson-panel-note { margin: 0 0 8px; color: var(--color-muted); font-size: 12px; }
@@ -1469,6 +1469,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-drawer-body .lesson-tree .is-exam i { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
   .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
   .lesson-drawer-body .lesson-note-panel { padding: 0; }
+  .lesson-bottom-done span { white-space: nowrap; }
   .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--lesson-accent-line); border-radius: 10px; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-size: 13px; font-weight: 700; cursor: pointer; }
   .lesson-bottom-done.is-done { border-color: rgba(16,185,129,.45); background: rgba(16,185,129,.12); color: #34d399; }
   html[data-theme="light"] .lesson-bottom-done.is-done { color: #047857; }
@@ -1648,8 +1649,10 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
    (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
 .exam-paper .exam-content .katex { font-size: 1.05em; }
 /* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
-.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1.0625em; line-height: 1.65; }
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
 .exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
 .exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
 @media (max-width: 640px) {
   .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
@@ -1774,7 +1777,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -2758,7 +2761,7 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -2782,17 +2785,19 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
 .exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
 /* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
    --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
 .exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
 .exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
-.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: .95rem; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
 .exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
 .exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
@@ -2803,7 +2808,7 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 .exam-content .tl-sim__st p { margin: 2px 0; }
 .exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
 .exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
-.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: .95rem; line-height: 1.55; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
 .exam-content .tl-sim__leg li { margin: 2px 0; }
 .exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
 .exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
