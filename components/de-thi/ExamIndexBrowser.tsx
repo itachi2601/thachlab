@@ -138,9 +138,9 @@ export default function ExamIndexBrowser({ exams }: { exams: ExamIndexItem[] }) 
           <li key={e.id}>
             <Link
               href={examTakePath(e.id)}
-              className="flex h-full min-h-14 flex-col rounded-xl border border-line bg-surface-2 px-5 py-4 text-ink transition-colors hover:bg-primary-soft"
+              className="flex h-full min-h-14 min-w-0 flex-col rounded-xl border border-line bg-surface-2 px-5 py-4 text-ink transition-colors hover:bg-primary-soft"
             >
-              <span className="text-lg font-semibold leading-snug">{e.name}</span>
+              <span className="break-words text-lg font-semibold leading-snug">{e.name}</span>
               <span className="mt-1 text-base">
                 {[`Lớp ${e.grade}`, SHELF_LABEL[e.shelf], e.term, e.year].filter(Boolean).join(" · ")}
               </span>
