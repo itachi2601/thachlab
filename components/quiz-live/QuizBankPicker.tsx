@@ -11,6 +11,34 @@ import { searchBank, type BankHit } from "@/services/quiz-live";
 
 const field = "rounded-xl border border-line-strong bg-panel px-3 py-2.5 text-sm text-ink focus:border-primary focus:outline-none";
 
+const TIERS = ["de", "trung-binh", "kho"] as const;
+const rank = (d: string) => {
+  const i = TIERS.indexOf(d as (typeof TIERS)[number]);
+  return i < 0 ? 1 : i;
+};
+
+/** Bốc ngẫu nhiên theo tỉ lệ ~40% dễ · 40% trung bình · 20% khó, thiếu mức nào thì bù từ mức gần nhất; xếp dễ → khó. */
+async function rampPick(
+  f: { grade: string; topicId: number | null; search: string; count: number },
+  isUsable: (r: BankHit) => unknown,
+): Promise<BankHit[]> {
+  const pools = await Promise.all(
+    TIERS.map((d) => searchBank({ ...f, difficulty: d, limit: f.count * 2, random: true }).then((rows) => rows.filter(isUsable))),
+  );
+  const quota = [Math.round(f.count * 0.4), 0, Math.round(f.count * 0.2)];
+  quota[1] = f.count - quota[0] - quota[2];
+  const out: BankHit[][] = pools.map((p, i) => p.slice(0, quota[i]));
+  let missing = f.count - out.reduce((n, a) => n + a.length, 0);
+  // Bù phần thiếu: ưu tiên trung bình, rồi dễ, cuối cùng mới tới khó.
+  for (const i of [1, 0, 2]) {
+    if (missing <= 0) break;
+    const extra = pools[i].slice(out[i].length, out[i].length + missing);
+    out[i] = out[i].concat(extra);
+    missing -= extra.length;
+  }
+  return out.flat().sort((a, b) => rank(a.difficulty) - rank(b.difficulty));
+}
+
 /** Chọn câu trắc nghiệm từ ngân hàng. Bốc ngẫu nhiên N câu theo khối/chủ đề/mức độ, hoặc tự tick từng câu. */
 export default function QuizBankPicker({
   defaultGrade,
@@ -30,6 +58,7 @@ export default function QuizBankPicker({
   const [difficulty, setDifficulty] = useState("");
   const [search, setSearch] = useState("");
   const [count, setCount] = useState(10);
+  const [ramp, setRamp] = useState(true);
   const [hits, setHits] = useState<BankHit[]>([]);
   const [picked, setPicked] = useState<Set<number>>(new Set());
   const [busy, setBusy] = useState(false);
@@ -57,8 +86,14 @@ export default function QuizBankPicker({
   async function run(random: boolean) {
     setBusy(true);
     try {
-      const rows = await searchBank({ grade, topicId, difficulty, search, limit: random ? count : 60, random });
-      const usable = rows.filter((r) => !existingBankIds.has(r.id) && bankToQuizQuestion(r.id, r.question));
+      const isUsable = (r: BankHit) => !existingBankIds.has(r.id) && bankToQuizQuestion(r.id, r.question);
+      let usable: BankHit[];
+      if (random && ramp && !difficulty) {
+        usable = await rampPick({ grade, topicId, search, count }, isUsable);
+      } else {
+        const rows = await searchBank({ grade, topicId, difficulty, search, limit: random ? count : 60, random });
+        usable = rows.filter(isUsable);
+      }
       setHits(usable);
       setPicked(random ? new Set(usable.map((r) => r.id)) : new Set());
       setSearched(true);
@@ -102,6 +137,10 @@ export default function QuizBankPicker({
         <label className="flex items-center gap-2 text-sm text-ink">
           Số câu
           <input type="number" min={1} max={50} className={`${field} w-20`} value={count} onChange={(e) => setCount(Math.max(1, Math.min(50, Number(e.target.value) || 1)))} />
+        </label>
+        <label className="flex min-h-11 items-center gap-2 text-sm text-ink">
+          <input type="checkbox" className="size-5" checked={ramp} onChange={(e) => setRamp(e.target.checked)} />
+          Dễ → khó (ít câu khó)
         </label>
         <button disabled={busy} onClick={() => void run(true)} className="min-h-11 rounded-xl bg-primary px-4 text-sm font-bold text-white disabled:opacity-50">Bốc ngẫu nhiên</button>
         <button disabled={busy} onClick={() => void run(false)} className="min-h-11 rounded-xl border border-line px-4 text-sm text-ink disabled:opacity-50">Xem danh sách để tự chọn</button>
