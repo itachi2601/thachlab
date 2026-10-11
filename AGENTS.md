@@ -266,3 +266,6 @@ Mọi đường vào một trang có `RequireAuth` từ bên ngoài (mã QR dán
 - Khi chốt phiên (`/ban-giao`, `/xong-viec`): mục nào trong STATE.md đã xong/đã chạy → chuyển **nguyên văn** sang `docs/STATE-archive.md`, STATE.md chỉ giữ hiện trạng + việc ĐANG CHỜ, mỗi việc 1–2 dòng (chi tiết để ở `docs/memory/project_*.md`).
 - MEMORY.md: mỗi file memory đúng MỘT dòng, một câu hook; không dán lại tóm tắt nhiều câu; không lặp file đã có; việc xong → chuyển dòng sang `docs/memory/ARCHIVE.md`.
 - Thấy hai file trên vượt hạn mức thì dọn ngay trước khi làm tiếp (không cần hỏi).
+
+# Có script thì chạy giúp và kiểm tra (thầy chốt 11/10/2026)
+Việc cần chạy script/migration (`scripts/run-migrations.sh --yes --only N`, `*.mts`): Claude chạy trong tab terminal rồi tự kiểm kết quả (log, truy vấn lại), không chỉ in lệnh. Dry-run trước; không `db push`; việc không hoàn tác được vẫn hỏi lại. Điều này thay cho câu "agent không tự chạy migration" ở mục trên.

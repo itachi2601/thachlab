@@ -650,3 +650,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - **BTM L12 đợt 1 (10/10/2026):** bài 2,3,4,6,7,8 đã đăng (dòng bai_tap_mau mới 327–329 cho bài 6,7,8). Còn soạn lại 12 bài L12: 9,11,13–19,125–127 (nháp cũ batch 9/10 không đạt). Kế hoạch 42 bài L10/L11 chờ thầy duyệt.
 
 - 11/10/2026 đã chạy: `20261011160000_rank_bat_nguon_thuong_chenh_lech` — bật nguồn RP cho đề/luyện tập HS mùa 4 đã nộp, `rp_first_attempt_only=0` (làm lại thưởng chênh lệch), tính lại mùa 4; chạy NGOÀI giờ học. Kèm code thông báo RP ở màn vào bài (ExamRunner) — cần deploy.
+
+- 11/10/2026: chạy `20261011170000_ta_reminders` (log scripts/logs/20261011-095954-…ta_reminders.log); gửi nhắc tuần 05–11/10 cho 6 trợ giảng, chạy lại xác nhận không gửi trùng.

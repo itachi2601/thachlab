@@ -9,6 +9,7 @@
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`; nhánh claude/* tự gộp vào main (kiểm origin/main==HEAD)
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — lệnh thầy chạy đặt trong khối bash
+- [Chạy script giúp thầy](feedback_chay_script_giup.md) — có script thì Claude chạy trong tab terminal rồi tự kiểm, không chỉ in lệnh
 - [Deploy autonomy](feedback_deploy_autonomy.md) — test local xong tự deploy prod
 - [Deploy scope](feedback_thachlab_deploy_scope.md) — chỉ commit/deploy đúng feature vừa làm
 - [Small content edits](feedback_small_content_edits.md) — sửa chữ nhỏ theo quy trình tiết kiệm token
@@ -76,3 +77,5 @@
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
+- [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
+- [Skill bài tập tự luận HSG](project_thachlab_khoa_hsg9_vat_ly.md) — soan-bai-tap-tu-luan-hsg: bộ Cơ học 12 bài 10/10 xong, kiểm 12/12; mảng khác chưa soạn
