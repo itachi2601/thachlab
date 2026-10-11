@@ -12,6 +12,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
 1. `20261011150000_student_mistakes_spaced_review` — Sổ tay câu sai & Ôn cách quãng (Spaced Mistake Review), bảng `student_mistakes` + RPC ôn tập + cộng RP.
+2. `20261011170000_ta_reminders` — bảng `ta_reminders` (lịch sử nhắc trợ giảng hằng tuần), skill `kiem-tra-tro-giang-tuan`; chưa chạy thì script vẫn dry-run được.
 - Đã chạy 11/10: `20261011160000_rank_bat_nguon_thuong_chenh_lech` (+30 nguồn, cộng bù 4185 RP/131 HS, max 158/HS); còn cần deploy code thông báo RP ở ExamRunner.
 - Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
 - Hiện tại không có migration nào trong danh sách chờ `FILES`.
