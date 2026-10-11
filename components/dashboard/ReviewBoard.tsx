@@ -271,12 +271,12 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
             </span>
           </div>
 
-          <div className="rb-qtext">
+          <div className="rb-qtext exam-paper">
             <ContentHtml html={q.question} />
           </div>
 
           {q.type === "multiple_choice" && (
-            <div className="rb-options">
+            <div className="rb-options exam-paper">
               {q.options.map((opt, i) => {
                 const n = stat.optionCounts?.[i] ?? 0;
                 const optPct = stat.attempted > 0 ? Math.round((n / stat.attempted) * 100) : 0;

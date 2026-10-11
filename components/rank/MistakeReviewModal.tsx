@@ -196,11 +196,11 @@ export default function MistakeReviewModal({ onClose, onFinished }: MistakeRevie
                         <span className="font-semibold text-ink">Câu {i + 1}: {r.correct ? "Chính xác" : "Chưa đúng"}</span>
                         {r.kind === "ok" && <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 text-[13px] text-emerald-700">câu em đã làm được</span>}
                       </div>
-                      <div className="mt-2.5 text-ink">
+                      <div className="exam-paper mt-2.5 text-ink">
                         <ContentHtml html={q.question} />
                       </div>
                       {r.explanation && (
-                        <div className="mt-3 rounded-xl border border-line bg-panel p-3 text-[13px] text-muted">
+                        <div className="exam-paper mt-3 rounded-xl border border-line bg-panel p-3 text-[13px] text-muted">
                           <strong className="text-ink">Giải thích: </strong>
                           <ContentHtml html={r.explanation} />
                         </div>

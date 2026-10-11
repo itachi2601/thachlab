@@ -130,7 +130,7 @@ export default function WorkedQuestionsGrid({
               <ChevronDown size={16} className={open ? "rotate-180" : ""} />
             </button>
             {open && (
-              <div className="lesson-worked-body">
+              <div className="lesson-worked-body exam-paper">
                 {q.problem_html && q.solution_html ? (
                   <StructuredBody q={q} color={color} />
                 ) : (

@@ -13,6 +13,7 @@ import {
 } from "@/components/home/exam-sample-types";
 
 const LETTERS = ["A", "B", "C", "D"];
+const TF_LABELS = ["a)", "b)", "c)", "d)"];
 
 function readIdFromLocation(): number | null {
   if (typeof window === "undefined") return null;
@@ -115,7 +116,7 @@ function SampleQuestion({ sample }: { sample: ExamSample }) {
   const [flags, setFlags] = useState<Record<number, boolean | null>>({});
 
   return (
-    <div className="rounded-2xl border border-line bg-panel p-5">
+    <div className="exam-paper rounded-2xl border border-line bg-panel p-5">
       <p className="exam-content text-base font-medium leading-relaxed text-ink">
         <span className="mr-1 font-semibold text-primary">Câu 1.</span>
         <ContentHtml html={q.question} />
@@ -149,6 +150,7 @@ function SampleQuestion({ sample }: { sample: ExamSample }) {
           {(q.statements ?? []).map((statement, index) => (
             <li key={index} className="rounded-xl border border-line bg-surface-2 p-3">
               <p className="exam-content text-base text-ink">
+                <span className="mr-1.5 font-semibold text-muted">{TF_LABELS[index]}</span>
                 <ContentHtml html={statement.text} />
               </p>
               <div className="mt-2 flex gap-2">

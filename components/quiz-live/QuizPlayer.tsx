@@ -164,7 +164,7 @@ function Game({ session, onLeave }: { session: Session; onLeave: () => void }) {
         <>
           <p className="text-center text-sm font-semibold text-ink">Câu {s.index + 1}/{s.total}</p>
           <TimerBar left={left} total={s.time_limit} />
-          <div className="rounded-2xl bg-surface-2 p-4 text-lg leading-relaxed text-ink">
+          <div className="exam-paper rounded-2xl bg-surface-2 p-4 text-lg leading-relaxed text-ink">
             <ContentHtml html={s.question ?? ""} />
           </div>
           {myChoice !== null ? (
@@ -174,7 +174,7 @@ function Game({ session, onLeave }: { session: Session; onLeave: () => void }) {
           ) : left <= 0 ? (
             <p className="rounded-2xl bg-surface-2 py-4 text-center font-semibold text-ink">Hết giờ…</p>
           ) : (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="exam-paper grid grid-cols-2 gap-3">
               {(s.options ?? []).map((o, i) => (
                 <button
                   key={i}
@@ -199,7 +199,7 @@ function Game({ session, onLeave }: { session: Session; onLeave: () => void }) {
             </p>
             {s.my_correct && <p className="mt-1 font-mono text-xl font-bold text-ink">+{s.my_points} điểm</p>}
           </div>
-          <div className="space-y-2 rounded-2xl bg-surface-2 p-4 text-sm text-ink">
+          <div className="exam-paper space-y-2 rounded-2xl bg-surface-2 p-4 text-sm text-ink">
             <p>
               Đáp án đúng: <b className="text-ink">{OPTION_STYLE[s.answer ?? 0].letter}</b>
               {" — "}

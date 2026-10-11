@@ -105,7 +105,7 @@ export default function QuestionCard({
   const border = status ? CARD_TONE[status] : "border-line";
 
   return (
-    <div className={`rounded-2xl border bg-panel p-5 ${border}`}>
+    <div className={`exam-paper rounded-2xl border bg-panel p-5 ${border}`}>
       <div className="flex items-start gap-3">
         <p className="exam-content min-w-0 flex-1 font-medium text-ink">
           <span className="mr-1 font-semibold text-primary">Câu {index}.</span>

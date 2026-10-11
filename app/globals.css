@@ -1644,6 +1644,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
    Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
    Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
 .exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
 .exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
 @media (max-width: 640px) {
   .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }

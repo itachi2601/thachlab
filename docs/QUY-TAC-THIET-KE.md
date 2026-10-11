@@ -100,6 +100,12 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 
 ---
 
+## 7b. Nhãn đáp án đúng như đề thi thật (E) — thầy chốt 11/10/2026
+- **E1** Mọi chỗ HS thấy câu hỏi (kiểm tra, luyện tập, thi thăng hạng, ôn lỗi sai, xem thử trang chủ, màn xem lại) dùng đúng dạng chữ của đề TN THPT: Phần I phương án **A. B. C. D.** (in hoa); Phần II ý **a) b) c) d)** (thường, ngoặc đơn), nút **Đúng / Sai**; Phần III ô nhập đáp số. Không đổi sang 1/2/3/4, không a./b., không in thường ở A–D.
+- **E2** Nhãn do component sinh (`LETTERS`, `TF_LABELS` ở `components/exams/QuestionCard.tsx`), không nằm trong nội dung câu; nội dung đăng không được còn nhãn nhúng (`lib/question-lint.ts`: phuongAnConNhan, phuongAnNhanNhung). Lời giải nhắc ý nào thì gọi đúng nhãn đó ("ý a)", "đáp án B").
+- **E3** Thêm component hiển thị câu hỏi mới → dùng chung `QuestionCard` hoặc import cùng bảng nhãn; kiểm 4 nơi: `QuestionCard`, `ExamSamplePreview`, `ReviewBoard`, `GateQuizModal`/`MistakeReviewModal` (hai cái sau dùng QuestionCard).
+- **E4 Font chữ câu hỏi = font đề thi thật** (thầy chốt 11/10/2026): mọi chỗ HS thấy đề/câu hỏi/phương án/lời giải (kiểm tra, luyện tập, thăng hạng, phụ đạo, ôn lỗi sai, quiz live, xem lại, xem thử) dùng serif **Tinos (= Times New Roman)** qua `--font-exam`, chữ 17–18px, dòng ≥ 1,6; KaTeX giữ font riêng. Cách làm: bọc vùng câu hỏi bằng `<div className="exam-paper">` (CSS `.exam-paper .exam-content` ở `app/globals.css`), KHÔNG bọc thanh điều hướng/nút/tiêu đề trang; bài lý thuyết và UI khác giữ Inter. Thêm component hiển thị câu hỏi mới → bọc `exam-paper`; kiểm bằng `grep -L exam-paper` trên các file có `QuestionCard`/`ContentHtml` hiển thị câu, rồi chụp 375px.
+
 ## 8. Checklist trước khi báo "xong" một thay đổi UI học sinh
 
 1. Chụp 375×812 (light + dark nếu có) và 1440: nội dung học bắt đầu trong 40% màn đầu? (B1)
@@ -110,6 +116,8 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 6. Đích chạm ≥ 44pt, nhãn nút ≤ 1 dòng (D2); tab lộ hết ở 360px (D4); thanh cố định ≤ 15% (B6).
 7. Không có gì tự chuyển động/tự bật trong lúc đọc hoặc làm bài (B4, L6).
 8. Nêu mã quy tắc đã áp dụng trong mô tả commit; nếu phá quy tắc, ghi lý do.
+10. Nhãn câu hỏi đúng dạng đề thi thật: A–D hoa, a)–d) thường, Đúng/Sai (E1–E3).
+11. Câu hỏi/phương án/lời giải nằm trong `.exam-paper` → font Tinos như đề thi thật (E4).
 9. Video: mở bài 1 clip hiện tượng trước hộp Dự đoán (V7), mỗi hộp thí nghiệm 1 clip, đều có dòng "Nhìn vào", ≤ 90 giây, không nạp player trước khi bấm (V1–V7).
 
 ## 9. Nguồn chính (để tra khi cần, không cần đọc lại trước mỗi việc)
