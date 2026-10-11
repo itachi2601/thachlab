@@ -1591,6 +1591,16 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   animation: marquee-scroll 28s linear infinite;
 }
 
+/* Dải bài "Hiện tượng khác": chậm hơn dải công thức, dừng khi rê chuột / focus bàn phím để bấm được. */
+.marquee-posts {
+  gap: 1rem;
+  animation-duration: 70s;
+}
+.marquee-posts:hover,
+.marquee-posts:focus-within {
+  animation-play-state: paused;
+}
+
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -1875,6 +1885,13 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   .marquee {
     animation: none !important;
     opacity: 1 !important;
+  }
+  /* Giảm chuyển động: dải bài thành hàng cuộn ngang tay, bỏ bản sao thứ hai. */
+  .marquee-posts-wrap {
+    overflow-x: auto;
+  }
+  .marquee-posts > li[aria-hidden] {
+    display: none;
   }
 }
 

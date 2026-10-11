@@ -89,7 +89,7 @@ type TabKey = (typeof TABS)[number]["key"];
  *  vẫn nằm trong màn hình đầu ở 375px (B1); câu dẫn chỉ nói việc của đúng tab đó (N1, N4). */
 const COPY: Record<
   TabKey,
-  { line1: string; before: string; accent: string; after: string; body: string }
+  { line1: string; before: string; accent: string; after: string; body: string; hint: string }
 > = {
   projectile: {
     line1: "Ném ở góc nào",
@@ -97,6 +97,7 @@ const COPY: Record<
     accent: "xa nhất",
     after: "?",
     body: "Kéo bệ phóng rồi thả tay — mỗi lần ném là một thí nghiệm em tự làm.",
+    hint: "Kéo bệ phóng rồi thả tay",
   },
   rescue: {
     line1: "Thả lúc nào",
@@ -104,6 +105,7 @@ const COPY: Record<
     accent: "trúng",
     after: "?",
     body: "Lái máy bay cứu hộ, bấm thả đúng lúc để gói hàng rơi trúng bãi đáp.",
+    hint: "Bấm thả đúng lúc",
   },
   interference: {
     line1: "Sóng gặp nhau",
@@ -111,6 +113,7 @@ const COPY: Record<
     accent: "sáng",
     after: "?",
     body: "Kéo điểm M trên khay sóng hai nguồn — đọc hiệu đường đi, biết chỗ sáng hay tối.",
+    hint: "Kéo điểm M trên khay sóng",
   },
   sound: {
     line1: "Hai loa cùng phát",
@@ -118,6 +121,7 @@ const COPY: Record<
     accent: "im",
     after: "?",
     body: "Bật âm, che một tai rồi dịch đầu sang ngang — nghe tiếng to nhỏ đổi theo chỗ ngồi.",
+    hint: "Bật âm, dịch đầu sang ngang",
   },
 };
 
@@ -173,6 +177,7 @@ export function PhysicsSimulationHero() {
             {copy.after}
           </h1>
 
+          <p className="mt-2 text-sm text-muted sm:hidden">{copy.hint}</p>
           <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-5 sm:block">
             {copy.body}
           </p>
