@@ -453,12 +453,74 @@ async function writeExamSamples(url, serviceKey) {
   }
 }
 
+/**
+ * Mục lục đề các năm cho trang /de-thi. Ghi public/data/exam-index.json — CHỈ metadata
+ * (tên, lớp, loại, năm, số câu, thời gian), không câu hỏi/đáp án. Giữ file cũ nếu không ghi được.
+ */
+async function writeExamIndex(url, serviceKey) {
+  const dest = join(OUT_DIR, "exam-index.json");
+  mkdirSync(OUT_DIR, { recursive: true });
+  if (!url || !serviceKey) {
+    warn("thiếu SUPABASE_SERVICE_ROLE_KEY — giữ nguyên exam-index.json nếu có.");
+    return null;
+  }
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const admin = createClient(url, serviceKey, { auth: { persistSession: false } });
+    const [examRows, classRes] = await Promise.all([
+      fetchAll(() =>
+        admin
+          .from("exams")
+          .select("id, title, duration_minutes, question_count, created_at, subject_code, cnc_key, exam_classes(class_id)")
+          .eq("published", true),
+      ),
+      admin.from("classes").select("id, name, slug"),
+    ]);
+    if (classRes.error) throw classRes.error;
+    const classById = new Map();
+    for (const row of classRes.data ?? []) {
+      const spec = GRADE_SPECS.find((g) => g.test(row.name, row.slug));
+      if (spec) classById.set(row.id, spec);
+    }
+    const exams = [];
+    for (const row of examRows) {
+      if (row.cnc_key || !(row.subject_code == null || row.subject_code === "vat-ly")) continue;
+      const title = String(row.title ?? "");
+      const shelf = examShelfOf(title);
+      if (shelf === "chuong" || !(row.question_count >= 5)) continue;
+      const grades = gradesOf(row, classById);
+      if (grades.length === 0) continue;
+      exams.push({
+        id: row.id,
+        title,
+        shelf,
+        grade: grades[0].grade,
+        year: yearOf(title),
+        questionCount: row.question_count,
+        durationMinutes: row.duration_minutes,
+      });
+    }
+    if (exams.length === 0) {
+      warn("không có đề nào cho exam-index.json — giữ file cũ nếu có.");
+      return null;
+    }
+    exams.sort((a, b) => b.year.localeCompare(a.year) || b.id - a.id);
+    writeJson(dest, { generatedAt: new Date().toISOString(), exams });
+    console.log(`[build-content] mục lục đề các năm: ${exams.length} đề`);
+    return exams.length;
+  } catch (e) {
+    warn(`không ghi được exam-index.json: ${e?.message ?? e} — giữ file cũ nếu có.`);
+    return null;
+  }
+}
+
 async function main() {
   const started = Date.now();
   const { url, anonKey, serviceKey } = loadEnv();
   if (process.argv.includes("--only-exam-samples")) {
     if (!url) return bail("thiếu NEXT_PUBLIC_SUPABASE_URL.");
     await writeExamSamples(url, serviceKey);
+    await writeExamIndex(url, serviceKey);
     return;
   }
   if (!url || !anonKey) return bail("thiếu NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY.");
@@ -628,6 +690,7 @@ async function main() {
   });
 
   await writeExamSamples(url, serviceKey);
+  await writeExamIndex(url, serviceKey);
   const files = readdirSync(LESSONS_DIR).length + 2;
   const countsText = Object.entries(counts)
     .map(([key, value]) => `${key}=${value ?? "?"}`)

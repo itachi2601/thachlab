@@ -34,7 +34,12 @@ export default function ExamSamples() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
+        <p className="mt-6">
+          <Link href="/de-thi" className="inline-flex min-h-11 items-center text-base font-semibold text-primary underline underline-offset-4">
+            Xem tất cả đề các năm →
+          </Link>
+        </p>
+        <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted">
           Đang thử nghiệm đến 2027. Em đăng ký, làm bài, gặp chỗ sai thì báo giúp thầy.
         </p>
       </div>

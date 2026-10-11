@@ -19,7 +19,7 @@ type NavLink = { label: string; href: string; audience?: "guest-student" };
 
 const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
-  { label: "Đề thi các năm", href: "/#de-thi" },
+  { label: "Đề thi các năm", href: "/de-thi" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
