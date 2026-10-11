@@ -86,6 +86,8 @@ const TABS = [
 
 type TabKey = (typeof TABS)[number]["key"];
 
+// Khung mô phỏng (tabpanel) giữ min-height = tab cao nhất ở từng cỡ màn hình (đo 375/768/1280px: 672/743/664px)
+// để đổi tab không làm cả hero giật lên xuống. Cao hơn thế là phải đo lại.
 /** Câu hỏi + câu dẫn đổi theo tab đang chọn. Giữ hai dòng tiêu đề ngắn để mô phỏng
  *  vẫn nằm trong màn hình đầu ở 375px (B1); câu dẫn chỉ nói việc của đúng tab đó (N1, N4). */
 const COPY: Record<
@@ -163,7 +165,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
           </h1>
 
           <p className="mt-2 text-sm text-muted sm:hidden">{copy.hint}</p>
-          <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-5 sm:block">
+          <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-5 sm:block sm:min-h-[4.875rem]">
             {copy.body}
           </p>
         </div>
@@ -226,6 +228,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
             role="tabpanel"
             id={`hero-panel-${tab}`}
             aria-labelledby={`hero-tab-${tab}`}
+            className="min-h-[690px] sm:min-h-[760px] lg:min-h-[700px]"
           >
             {tab === "projectile" ? (
               <LazyErrorBoundary fallback={panelFallback}>
