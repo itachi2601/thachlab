@@ -37,6 +37,9 @@ import {
   questionHash,
   readPracticeMode,
   recordSpacing,
+  recordTopicResults,
+  weakTopicSet,
+  WEAK_TOPIC_SHARE,
   STEP_SECONDS_PER_QUESTION,
   writePracticeMode,
   type PracticeMode,
@@ -319,10 +322,20 @@ export default function PracticeSession({
       const dueBank = bank.filter((p) => due.has(questionHash(p.question)));
       const duePicked = pickRandom(dueBank, Math.min(dueBank.length, Math.max(1, Math.ceil(count * 0.4))));
       const dueKeys = new Set(duePicked.map(pickKey));
-      const restBank = bank.filter((p) => !dueKeys.has(pickKey(p)));
-      const need = Math.max(0, count - duePicked.length);
+      const afterDue = bank.filter((p) => !dueKeys.has(pickKey(p)));
+      // Chủ đề em hay sai: dành tối đa ~30% phiên để phần cần phụ đạo chắc chắn xuất hiện.
+      const weak = studentId ? weakTopicSet(studentId) : new Set<string>();
+      const weakBank = afterDue.filter((p) => weak.has((p.question.topic ?? "").trim()));
+      const weakPicked = pickRandom(
+        weakBank,
+        Math.min(weakBank.length, Math.ceil(count * WEAK_TOPIC_SHARE), Math.max(0, count - duePicked.length)),
+      );
+      const takenKeys = new Set([...dueKeys, ...weakPicked.map(pickKey)]);
+      const restBank = bank.filter((p) => !takenKeys.has(pickKey(p)));
+      const need = Math.max(0, count - duePicked.length - weakPicked.length);
       const rest = ladderOn ? pickForLevel(restBank, level, need) : pickRandom(restBank, need);
-      chosen = pickRandom([...duePicked, ...rest], duePicked.length + rest.length);
+      const all = [...duePicked, ...weakPicked, ...rest];
+      chosen = pickRandom(all, all.length);
     } else {
       chosen = ladderOn ? pickForLevel(bank, level, count) : pickRandom(bank, count);
     }
@@ -358,6 +371,10 @@ export default function PracticeSession({
         studentId,
         items.map((i) => ({ hash: questionHash(i.pick.question), correct: i.correct })),
         Date.now(),
+      );
+      recordTopicResults(
+        studentId,
+        items.map((i) => ({ topic: i.pick.question.topic ?? "", correct: i.correct })),
       );
     }
     submit(false);

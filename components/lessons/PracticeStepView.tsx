@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CheckCircle2, CircleAlert, RotateCcw } from "lucide-react";
+import { BookOpen, CheckCircle2, CircleAlert, RotateCcw } from "lucide-react";
 import QuestionCard from "@/components/exams/QuestionCard";
 import Html from "@/components/exams/ContentHtml";
 import { emptyResponses, isAnswered, type QuestionResponse } from "@/features/exams/types";
-import { distractorHints, isFullyCorrect, pickKey, similarCandidates } from "@/features/lessons/practice-step";
+import { distractorHints, isFullyCorrect, pickKey, similarCandidates, WEAK_TOPIC_MIN } from "@/features/lessons/practice-step";
 import type { PracticePick } from "@/services/lessons";
 
 /** Kết quả LẦN ĐẦU của một câu — thứ duy nhất được lưu vào practice_question_results. */
@@ -58,9 +58,14 @@ export default function PracticeStepView({
   const [streak, setStreak] = useState(0);
   const [usedKeys, setUsedKeys] = useState<Set<string>>(() => new Set(initialPicks.map(pickKey)));
   const [lastCorrect, setLastCorrect] = useState(true);
+  // Số lần sai (kể cả câu làm lại) theo chủ đề trong phiên này; chủ đề trống = gom chung "".
+  const [wrongByTopic, setWrongByTopic] = useState<Record<string, number>>({});
 
   const slot = queue[pos];
   const q = slot.pick.question;
+  const topicKey = (q.topic ?? "").trim();
+  // Sai tiếp ở cùng chủ đề → mời xem lại lý thuyết tương tác (mở tab mới để không mất phiên đang làm).
+  const needTheory = stage === "feedback" && !lastCorrect && (wrongByTopic[topicKey] ?? 0) >= WEAK_TOPIC_MIN;
   const planned = queue.filter((s) => !s.retry).length;
   const retriesLeft = queue.slice(pos).filter((s) => s.retry).length;
   const isLast = pos >= queue.length - 1;
@@ -76,6 +81,7 @@ export default function PracticeStepView({
     if (!canCheck) return;
     const ok = isFullyCorrect(q, response);
     setLastCorrect(ok);
+    if (!ok) setWrongByTopic((m) => ({ ...m, [topicKey]: (m[topicKey] ?? 0) + 1 }));
     if (!slot.retry) {
       setItems((prev) => [...prev, { pick: slot.pick, response, correct: ok }]);
       setStreak((s) => (ok ? s + 1 : 0));
@@ -179,6 +185,26 @@ export default function PracticeStepView({
             </li>
           ))}
         </ul>
+      )}
+
+      {needTheory && (
+        <div className="flex items-start gap-3 rounded-xl border border-sky-500/40 bg-sky-500/10 px-3 py-3 text-base text-ink">
+          <BookOpen size={20} className="mt-0.5 shrink-0" aria-hidden />
+          <div className="space-y-2">
+            <p>
+              {topicKey ? <>Phần <b>{topicKey}</b> em đã sai {wrongByTopic[topicKey]} lần.</> : <>Em đã sai liên tiếp mấy câu.</>}{" "}
+              Xem lại lý thuyết tương tác của bài rồi quay lại làm tiếp nhé — bài làm của em vẫn giữ nguyên.
+            </p>
+            <a
+              href={`${typeof window !== "undefined" ? window.location.pathname + window.location.search : ""}#muc=ly-thuyet`}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex min-h-11 items-center rounded-full border border-line-strong px-4 text-base font-semibold text-ink"
+            >
+              Mở lý thuyết (tab mới)
+            </a>
+          </div>
+        </div>
       )}
 
       {/* Thanh chốt dán đáy (D3, B6): nút Kiểm tra/Tiếp luôn trong tầm ngón cái dù câu dài; kết quả đúng/sai (M4, L1) hiện ngay trên nút, không phải cuộn. */}

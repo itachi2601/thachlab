@@ -109,6 +109,50 @@ export function recordSpacing(studentId: string, results: { hash: string; correc
   writeSpacing(studentId, [...byHash.values()]);
 }
 
+// ---------- Chủ đề em hay sai (để phiên sau ưu tiên bốc câu ở đó) ----------
+const TOPIC_PREFIX = "thachlab:practice-weak-topics:";
+/** Sai tích luỹ tới ngưỡng này thì chủ đề được coi là "cần phụ đạo" trong chuỗi câu. */
+export const WEAK_TOPIC_MIN = 2;
+/** Tỉ lệ tối đa của phiên dành cho câu thuộc chủ đề em hay sai. */
+export const WEAK_TOPIC_SHARE = 0.3;
+const TOPIC_MAX = 60;
+
+function readWeak(studentId: string): Record<string, number> {
+  try {
+    const parsed: unknown = JSON.parse(window.localStorage.getItem(TOPIC_PREFIX + studentId) ?? "{}");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return Object.fromEntries(Object.entries(parsed).filter(([, v]) => typeof v === "number" && v > 0));
+  } catch {
+    return {};
+  }
+}
+
+/** Sai +1, đúng −1 (không âm) theo kết quả LẦN ĐẦU; chủ đề về 0 thì bỏ khỏi danh sách. */
+export function recordTopicResults(studentId: string, results: { topic: string; correct: boolean }[]) {
+  const map = readWeak(studentId);
+  for (const r of results) {
+    const t = r.topic.trim();
+    if (!t) continue;
+    const next = (map[t] ?? 0) + (r.correct ? -1 : 1);
+    if (next <= 0) delete map[t];
+    else map[t] = Math.min(next, 10);
+  }
+  try {
+    const kept = Object.entries(map).sort((a, b) => b[1] - a[1]).slice(0, TOPIC_MAX);
+    window.localStorage.setItem(TOPIC_PREFIX + studentId, JSON.stringify(Object.fromEntries(kept)));
+  } catch {
+    /* bỏ qua */
+  }
+}
+
+export function weakTopicSet(studentId: string): Set<string> {
+  return new Set(
+    Object.entries(readWeak(studentId))
+      .filter(([, v]) => v >= WEAK_TOPIC_MIN)
+      .map(([k]) => k),
+  );
+}
+
 // ---------- Chấm 1 câu ----------
 /** Đúng trọn vẹn (earned = max) — cùng luật với buildQuestionResults/is_correct. */
 export function isFullyCorrect(q: ExamQuestion, r: QuestionResponse): boolean {
