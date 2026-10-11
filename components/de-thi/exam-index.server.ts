@@ -33,7 +33,7 @@ const SHELVES = new Set<string>(["giua-ki", "cuoi-ki", "thi-thu"]);
 function cleanName(title: string): string {
   return title
     .replace(/\s*\(đã lược[^)]*\)\s*$/i, "")
-    .replace(/^(?:thi thử tn|giữa hk\d|cuối hk\d)(?:\s*\d{4})?\s*[–—-]\s*(?:(?:10|11|12)\s*[–—-]\s*)?/i, "")
+    .replace(/^(?:thi thử tn|giữa hk\d|cuối hk\d)(?:\s*\d{4}(?:\s*[–—-]\s*\d{4})?)?\s*[–—-]\s*(?:(?:10|11|12)\s*[–—-]\s*)?/i, "")
     .trim();
 }
 

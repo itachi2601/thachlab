@@ -27,7 +27,7 @@
 //
 // Không làm fail build: thiếu env / Supabase lỗi → in cảnh báo, giữ file cũ nếu có,
 // không có thì ghi manifest rỗng; client tự lùi về gọi Supabase như cũ.
-import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -482,13 +482,36 @@ async function writeExamIndex(url, serviceKey) {
       const spec = GRADE_SPECS.find((g) => g.test(row.name, row.slug));
       if (spec) classById.set(row.id, spec);
     }
+    // Đề không gắn lớp / tên không ghi lớp (đa số đề giữa-cuối kì đã đăng): lấy lớp và loại từ BÀI HỌC
+    // đang chứa đề, theo catalog.json (bài → chương → lớp của chương). Chương "toàn trường" thì bỏ qua.
+    const lessonOfExam = new Map();
+    try {
+      const cat = JSON.parse(readFileSync(join(OUT_DIR, "catalog.json"), "utf8"));
+      const classIdsByChapter = new Map((cat.chapters ?? []).map((c) => [c.id, c.classIds ?? []]));
+      for (const l of cat.lessons ?? []) {
+        for (const ref of l.itemRefs ?? []) {
+          for (const id of ref.exam_ids ?? []) {
+            lessonOfExam.set(id, { kind: l.lesson_kind, classIds: classIdsByChapter.get(l.chapter_id) ?? [] });
+          }
+        }
+      }
+    } catch {
+      warn("không đọc được catalog.json — đề thiếu lớp sẽ bị bỏ khỏi exam-index.json.");
+    }
+    const KIND_SHELF = { kiem_tra_giua_ki: "giua-ki", kiem_tra_cuoi_ki: "cuoi-ki" };
     const exams = [];
     for (const row of examRows) {
       if (row.cnc_key || !(row.subject_code == null || row.subject_code === "vat-ly")) continue;
       const title = String(row.title ?? "");
-      const shelf = examShelfOf(title);
+      const via = lessonOfExam.get(row.id);
+      let shelf = examShelfOf(title);
+      if (shelf === "chuong" && via) shelf = KIND_SHELF[via.kind] ?? "chuong";
       if (shelf === "chuong" || !(row.question_count >= 5)) continue;
-      const grades = gradesOf(row, classById);
+      const withClasses =
+        (row.exam_classes ?? []).length === 0 && via?.classIds.length
+          ? { ...row, exam_classes: via.classIds.map((class_id) => ({ class_id })) }
+          : row;
+      const grades = gradesOf(withClasses, classById);
       if (grades.length === 0) continue;
       exams.push({
         id: row.id,
