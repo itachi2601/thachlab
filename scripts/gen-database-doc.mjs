@@ -31,8 +31,11 @@ function query(sql) {
   const f = path.join(os.tmpdir(), `dbdoc-${process.pid}-${Math.random().toString(36).slice(2)}.sql`);
   fs.writeFileSync(f, sql);
   try {
-    const out = execFileSync("supabase", ["db", "query", "--linked", "-f", f], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
-    return JSON.parse(out.slice(out.indexOf("{"), out.lastIndexOf("}") + 1)).rows;
+    const out = execFileSync("supabase", ["db", "query", "--linked", "-f", f, "-o", "json"], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+    // CLI cũ trả {rows:[…]}, CLI mới (≥2.117) trả thẳng mảng […]
+    const a = out.indexOf("["), o = out.indexOf("{");
+    if (a !== -1 && (o === -1 || a < o)) return JSON.parse(out.slice(a, out.lastIndexOf("]") + 1));
+    return JSON.parse(out.slice(o, out.lastIndexOf("}") + 1)).rows;
   } finally {
     fs.unlinkSync(f);
   }

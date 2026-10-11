@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 300 hàm, sinh tự động 2026-10-10
+# Hàm SQL / RPC (schema public) — 310 hàm, sinh tự động 2026-10-11
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -11,8 +11,11 @@ repo — xem trên Supabase Dashboard).
 - `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
 - `assists_class(p_class bigint)` → boolean
 - `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
+- `bank_replace_imgs_in_json(p_q jsonb, p_map jsonb)` → jsonb
+- `bank_replace_question_imgs(p_bank_id bigint, p_map jsonb)` → jsonb
 - `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
+- `bank_set_question_figure_svc(p_bank_id bigint, p_img_html text)` → jsonb
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
@@ -65,7 +68,12 @@ repo — xem trên Supabase Dashboard).
 - `is_photo_duty_workshop(p_session_id bigint)` → boolean
 - `is_staff()` → boolean
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
+- `live_study_summary()` → jsonb
 - `manages_class(p_class bigint)` → boolean
+- `mistake_q_public(p_key bigint, p_exam bigint, p_idx integer, p_stage integer, p_kind text, q jsonb)` → jsonb
+- `mistake_review_quiz_start(p_count integer)` → jsonb
+- `mistake_review_quiz_submit(p_attempt_id bigint, p_responses jsonb)` → jsonb
+- `mistake_stats_of(p_student uuid)` → jsonb
 - `notify_class_staff(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
 - `notify_class_students(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text)` → void
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
@@ -178,11 +186,11 @@ repo — xem trên Supabase Dashboard).
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -200,8 +208,8 @@ repo — xem trên Supabase Dashboard).
 - `similarity_op(text, text)` → boolean
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -265,6 +273,8 @@ repo — xem trên Supabase Dashboard).
 - `trg_exam_classes_sync_bank()` → trigger
 - `trg_exam_result_alert()` → trigger
 - `trg_exams_sync_bank()` → trigger
+- `trg_ingest_exam_question_mistake()` → trigger
+- `trg_ingest_practice_question_mistake()` → trigger
 - `trg_notify_assessment_assigned()` → trigger
 - `trg_notify_homework_announcement()` → trigger
 - `trg_notify_homework_assigned()` → trigger
