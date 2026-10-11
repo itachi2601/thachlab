@@ -1,5 +1,6 @@
 "use client";
 
+import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Flame, LogOut, QrCode, Trophy } from "lucide-react";
@@ -375,6 +376,7 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
+      <LateNightNudge />
       <section className="relative overflow-hidden rounded-2xl border border-line bg-panel p-4 sm:rounded-3xl sm:p-7">
         <div className="relative flex items-start justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3 sm:gap-4">

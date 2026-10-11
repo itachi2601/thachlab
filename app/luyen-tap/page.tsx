@@ -1,6 +1,7 @@
 "use client";
 
 import ForYouRow from "@/components/mastery/ForYouRow";
+import LateNightNudge from "@/components/rank/LateNightNudge";
 import MistakeVaultCard from "@/components/rank/MistakeVaultCard";
 import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
@@ -232,6 +233,7 @@ function Content() {
 
       {session && (
         <div className="mt-4 space-y-4">
+          <LateNightNudge />
           <ForYouRow />
           <MistakeVaultCard />
         </div>

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import { Flag } from "lucide-react";
+import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import Button from "@/components/ui/Button";
@@ -391,6 +392,7 @@ export default function ExamRunner({
           </span>
           {profile?.class_name && ` · Lớp ${profile.class_name}`}
         </p>
+        <LateNightNudge className="mt-4 text-left" />
         {rpNotice && (
           <p
             className={`mt-3 rounded-xl border px-4 py-2.5 text-sm ${
