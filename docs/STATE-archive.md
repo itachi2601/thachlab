@@ -3,6 +3,18 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 11/10/2026 (đã chạy xong 9 file)
+Log: `scripts/logs/` đợt 11/10/2026. Tất cả đã chạy thành công trên production.
+1. `20261010500000_notify_rp_thuong.sql` — Báo chuông khi em được cộng RP thưởng mục tiêu tuần / tiến bộ tuần / mục tiêu cả lớp (trigger trên rank_rp_ledger, kèm phụ huynh); chỉ thêm hàm + trigger, không gửi bù [rollback perf/rollback/20261010500000_notify_rp_thuong.down.sql].
+2. `20261010600000_lop_hsg_vat_ly_9_duyet_tay.sql` — Thêm lớp Học sinh giỏi & Chuyên Vật lý 9 vào chỗ chọn lớp đăng ký, học sinh chỉ gửi yêu cầu chờ thầy duyệt (cột classes.requires_approval + sửa 2 policy user_classes) [rollback ở cuối file].
+3. `20261010700000_ta_doc_thanh_vien_lop.sql` — Cho trợ giảng đọc danh sách thành viên lớp (1 policy SELECT trên user_classes) để dùng trang Chữa bài /tro-giang/chua-bai [rollback ở cuối file].
+4. `20261011100000_exam_ta_preview.sql` — Gửi đề cho trợ giảng xem trước: bảng exam_ta_previews (+RLS) và 1 policy SELECT trên exams cho TA đọc đề đã gửi dù còn ẩn [rollback perf/rollback/20261011100000_exam_ta_preview.down.sql].
+5. `20261010800000_an_cau_cat_cut_hien_thi.sql` — Ẩn 181 câu ngân hàng còn lỗi cắt cụt/hiển thị (phương án rỗng, dính tab, đề thiếu giá trị); có bảng sao lưu [rollback ở cuối file].
+6. `20261010150000_ta_sua_buoi_7_ngay_va_doi_anh.sql` — Trợ giảng sửa buổi chưa duyệt trong 7 ngày (policy ta_sessions, trước là 3) + hàm set_my_avatar để trợ giảng/giáo viên đổi ảnh đại diện [rollback ở cuối file].
+7. `20261011120000_question_bank_lint_flags.sql` — Thêm cột question_bank.lint_flags (text[], index GIN) cho lọc "Chỉ câu sạch" + question_content_hash bỏ khoá lint_ignored; chạy xong chạy `npx tsx scripts/cap-nhat-lint-flags.mts --ghi` [rollback ở cuối file].
+8. `20261011130000_bank_set_question_figure_service.sql` — Thêm hàm bank_set_question_figure_svc (chỉ service_role) để script ghi hình Gemini đã duyệt vào câu ngân hàng; chỉ thêm hàm, không đụng dữ liệu [rollback ở cuối file].
+9. `20261011140000_bank_replace_question_imgs.sql` — Thêm 2 hàm (bank_replace_imgs_in_json, bank_replace_question_imgs, chỉ service_role/giáo viên) để thay ảnh công thức bằng chữ LaTeX trong câu ngân hàng + đề đang dùng; chỉ thêm hàm, không đụng dữ liệu [rollback ở cuối file].
+
 ## Migration — 06/10/2026 (sổ học phí; đã chạy 17:14)
 Log: `scripts/logs/20261006-171434-20261006120000_thpt_fee_ledger.log`. Đã xác nhận 4 bảng `thpt_fee_*` + 13 RPC trong DATABASE.md.
 
@@ -636,3 +648,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - **9/10/2026 — L10 đủ 34/34 bài lý thuyết tương tác:** bài 65 (B20) và 67 (B22) soạn từ 6/10 nhưng chưa từng lên DB (lesson_items rỗng); 9/10 kiểm chéo lại, sửa bài 67 (commit 4f56f73e9), đăng bằng `upload-lesson.mts` → mục Lý thuyết + đề Luyện tập 904/905, deploy xong (out/data/lessons/65|67.json có tl-quiz). Treo: chưa xem 2 bài trên web thật ở 375px; bài 65 còn 3 góp ý nhỏ về Hình 3/4/5 (tỉ lệ mũi tên lặp số quiz, F_ms nằm trong khối) chưa sửa.
 
 - **BTM L12 đợt 1 (10/10/2026):** bài 2,3,4,6,7,8 đã đăng (dòng bai_tap_mau mới 327–329 cho bài 6,7,8). Còn soạn lại 12 bài L12: 9,11,13–19,125–127 (nháp cũ batch 9/10 không đạt). Kế hoạch 42 bài L10/L11 chờ thầy duyệt.
+
+- 11/10/2026 đã chạy: `20261011160000_rank_bat_nguon_thuong_chenh_lech` — bật nguồn RP cho đề/luyện tập HS mùa 4 đã nộp, `rp_first_attempt_only=0` (làm lại thưởng chênh lệch), tính lại mùa 4; chạy NGOÀI giờ học. Kèm code thông báo RP ở màn vào bài (ExamRunner) — cần deploy.
