@@ -1,12 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Activity, AlertTriangle, Clock3, Copy, Eye, RefreshCw, UserRound } from "lucide-react";
+import { Activity, AlertTriangle, ChevronDown, Copy, RefreshCw, UserRound } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassLearningPresence, type ClassLearningPresence } from "@/services/learning-presence";
 
 const ACTIVE_WINDOW_MS = 2 * 60_000;
+const STUCK_MINUTES = 30;
 
+type Row = ClassLearningPresence & { active: boolean; needsAttention: boolean; minutes: number };
+type Group = { key: string; chapterTitle: string; lessonTitle: string; rows: Row[]; activeCount: number };
+
+/**
+ * Hoạt động học trực tiếp của MỘT lớp. Quy mô thật: vài chục em/lớp, thường chỉ 0–10 em online cùng lúc,
+ * nên: gộp theo bài (thấy ngay "cả nhóm đang kẹt ở đâu"), em đang học lên trước, em vừa rời gấp vào một mục
+ * thu gọn, lớp vắng thì chỉ một dòng. Nhóm "cần hỗ trợ" nổi lên đầu.
+ */
 export default function TeacherLiveLearningPanel({
   classId,
   studentCount,
@@ -21,6 +30,7 @@ export default function TeacherLiveLearningPanel({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [now, setNow] = useState(0);
+  const [showRecent, setShowRecent] = useState(false);
 
   const load = useCallback(() => {
     return fetchClassLearningPresence(classId)
@@ -31,21 +41,38 @@ export default function TeacherLiveLearningPanel({
 
   useEffect(() => {
     void load();
-    const timer = window.setInterval(() => void load(), 30_000);
-    return () => window.clearInterval(timer);
+    // Tab ẩn thì không hỏi — giáo viên để tab nền cả buổi không nên tốn truy vấn.
+    const timer = window.setInterval(() => { if (document.visibilityState === "visible") void load(); }, 30_000);
+    const onVisible = () => { if (document.visibilityState === "visible") void load(); };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { window.clearInterval(timer); document.removeEventListener("visibilitychange", onVisible); };
   }, [load]);
 
-  const activityRows = useMemo(() => rows.map((row) => {
-    const lastSeenAgo = Math.max(0, now - Date.parse(row.lastSeenAt));
-    const studyingMinutes = Math.max(1, Math.round((now - Date.parse(row.lessonOpenedAt)) / 60_000));
-    const active = lastSeenAgo <= ACTIVE_WINDOW_MS;
-    const needsAttention = active && studyingMinutes >= 30;
-    return { ...row, active, needsAttention, studyingMinutes };
-  }), [rows, now]);
-  const activeCount = activityRows.filter((row) => row.active).length;
-  const attentionCount = activityRows.filter((row) => row.needsAttention).length;
+  const { activeGroups, recentRows, activeCount, attentionRows } = useMemo(() => {
+    const all: Row[] = rows.map((row) => {
+      const active = now - Date.parse(row.lastSeenAt) <= ACTIVE_WINDOW_MS;
+      const minutes = Math.max(1, Math.round((now - Date.parse(row.lessonOpenedAt)) / 60_000));
+      return { ...row, active, minutes, needsAttention: active && minutes >= STUCK_MINUTES };
+    });
+    const map = new Map<string, Group>();
+    for (const row of all.filter((r) => r.active)) {
+      const key = String(row.lessonId ?? "none");
+      const g = map.get(key) ?? { key, chapterTitle: row.chapterTitle, lessonTitle: row.lessonTitle, rows: [], activeCount: 0 };
+      g.rows.push(row);
+      g.activeCount += 1;
+      map.set(key, g);
+    }
+    const groups = [...map.values()].sort((a, b) => b.activeCount - a.activeCount || a.lessonTitle.localeCompare(b.lessonTitle, "vi"));
+    for (const g of groups) g.rows.sort((a, b) => Number(b.needsAttention) - Number(a.needsAttention) || b.minutes - a.minutes);
+    return {
+      activeGroups: groups,
+      recentRows: all.filter((r) => !r.active),
+      activeCount: all.filter((r) => r.active).length,
+      attentionRows: all.filter((r) => r.needsAttention),
+    };
+  }, [rows, now]);
 
-  async function copyReminder(row: (typeof activityRows)[number]) {
+  async function copyReminder(row: Row) {
     const message = row.needsAttention
       ? `Thầy/cô thấy em đang học bài “${row.lessonTitle}” khá lâu. Em đang vướng phần nào để thầy/cô hỗ trợ không?`
       : `Em đang học đến bài “${row.lessonTitle}”. Cố gắng hoàn thành phần đang học, nếu có chỗ chưa hiểu hãy báo thầy/cô nhé.`;
@@ -53,55 +80,106 @@ export default function TeacherLiveLearningPanel({
     toast("success", `Đã sao chép lời nhắc cho ${row.fullName}.`);
   }
 
+  const summary = activeCount > 0
+    ? `${activeCount}/${studentCount} em đang học${attentionRows.length ? ` · ${attentionRows.length} em có thể đang mắc` : ""}`
+    : recentRows.length > 0
+      ? `Chưa em nào đang học · ${recentRows.length} em vừa rời trong 15 phút`
+      : "Chưa em nào học trong 15 phút gần đây";
+
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-5">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2"><Activity size={19} className="text-emerald-300" /><h3 className="font-display text-lg font-bold text-white">Hoạt động học tập trực tiếp</h3></div>
-          <p className="mt-1 text-xs text-slate-500">Đang học: hoạt động trong 2 phút · Gần đây: hoạt động trong 15 phút</p>
+    <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            {activeCount > 0 && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />}
+            <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${activeCount > 0 ? "bg-ok" : "bg-surface-2"}`} />
+          </span>
+          <Activity size={18} className="shrink-0 text-muted" />
+          <h3 className="font-display text-base font-bold text-ink sm:text-lg">Đang học bây giờ</h3>
         </div>
-        <button type="button" onClick={() => { setLoading(true); void load(); }} disabled={loading} className="rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-white disabled:opacity-40" aria-label="Làm mới hoạt động học tập"><RefreshCw size={16} className={loading ? "animate-spin" : ""} /></button>
+        <button
+          type="button"
+          onClick={() => { setLoading(true); void load(); }}
+          disabled={loading}
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-muted hover:bg-surface-2 hover:text-ink disabled:opacity-40"
+          aria-label="Làm mới hoạt động học tập"
+        >
+          <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+        </button>
       </div>
+      <p className={`mt-1 text-sm ${attentionRows.length ? "text-warn" : "text-muted"}`}>
+        {error ? "Chưa đọc được dữ liệu trực tiếp. Hãy kiểm tra migration learning presence." : loading && !rows.length ? "Đang tải…" : summary}
+      </p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <MiniMetric value={`${activeCount}/${studentCount}`} label="Đang học" tone="emerald" />
-        <MiniMetric value={String(activityRows.length)} label="Hoạt động 15 phút" tone="blue" />
-        <MiniMetric value={String(attentionCount)} label="Có thể cần hỗ trợ" tone="amber" />
-      </div>
-
-      {error ? (
-        <p className="mt-4 rounded-xl border border-amber-400/15 bg-amber-500/5 p-3 text-xs text-amber-200">Chưa đọc được dữ liệu trực tiếp. Hãy kiểm tra migration learning presence.</p>
-      ) : !activityRows.length ? (
-        <p className="mt-4 rounded-xl border border-dashed border-white/10 p-7 text-center text-sm text-slate-500">Chưa có học sinh hoạt động trong 15 phút gần đây.</p>
-      ) : (
-        <div className="mt-4 space-y-2">
-          {activityRows.map((row) => (
-            <div key={row.studentId} className={`rounded-xl border p-3 ${row.needsAttention ? "border-amber-400/20 bg-amber-500/5" : "border-white/10 bg-white/[.02]"}`}>
-              <div className="flex flex-wrap items-center gap-3">
-                <span className={`h-2.5 w-2.5 rounded-full ${row.active ? "bg-emerald-400 shadow-[0_0_10px_#34d399]" : "bg-slate-600"}`} />
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <strong className="text-sm text-white">{row.fullName}</strong>
-                    {row.needsAttention && <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[12px] font-bold text-amber-300"><AlertTriangle size={11} /> Có thể đang mắc</span>}
-                  </div>
-                  <p className="mt-1 truncate text-xs text-slate-400">{row.chapterTitle ? `${row.chapterTitle} · ` : ""}{row.lessonTitle}</p>
-                  <p className="mt-1 flex items-center gap-1 text-[12px] text-slate-500"><Clock3 size={11} />{row.active ? `Đang học khoảng ${row.studyingMinutes} phút` : "Vừa dừng hoặc chuyển sang trang khác"}</p>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  <button type="button" onClick={() => onOpenStudent(row.studentId)} className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:border-blue-400/30 hover:text-blue-300"><UserRound size={13} /> Hồ sơ</button>
-                  <button type="button" onClick={() => void copyReminder(row)} className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:border-emerald-400/30 hover:text-emerald-300"><Copy size={13} /> Lời nhắc</button>
-                </div>
+      {!error && activeGroups.length > 0 && (
+        <div className="mt-3 space-y-3">
+          {activeGroups.map((g) => (
+            <div key={g.key} className="rounded-xl border border-line">
+              <div className="flex items-baseline justify-between gap-3 border-b border-line bg-surface-2 px-3 py-2">
+                <p className="min-w-0 truncate text-sm font-semibold text-ink">{g.lessonTitle}</p>
+                <span className="shrink-0 text-xs text-muted">{g.activeCount} em</span>
               </div>
-              {row.needsAttention && <p className="mt-2 border-t border-amber-400/10 pt-2 text-xs text-amber-200/70"><Eye size={12} className="mr-1 inline" />Nên hỏi em đang vướng ở đâu trước khi nhắc hoàn thành bài.</p>}
+              {g.chapterTitle && <p className="truncate px-3 pt-1.5 text-xs text-muted">{g.chapterTitle}</p>}
+              <ul className="divide-y divide-line">
+                {g.rows.map((row) => (
+                  <li key={row.studentId} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2">
+                    <div className="min-w-0 flex-1">
+                      <p className="flex flex-wrap items-center gap-x-2 text-sm text-ink">
+                        <strong>{row.fullName}</strong>
+                        <span className={`text-xs ${row.needsAttention ? "font-semibold text-warn" : "text-muted"}`}>
+                          {row.needsAttention && <AlertTriangle size={11} className="mr-1 inline" />}
+                          {row.minutes} phút{row.needsAttention ? " — hỏi em đang vướng ở đâu" : ""}
+                        </span>
+                      </p>
+                    </div>
+                    <RowActions row={row} onOpenStudent={onOpenStudent} onCopy={copyReminder} />
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+        </div>
+      )}
+
+      {!error && recentRows.length > 0 && (
+        <div className="mt-3">
+          <button
+            type="button"
+            onClick={() => setShowRecent((v) => !v)}
+            aria-expanded={showRecent}
+            className="flex min-h-11 w-full items-center justify-between gap-2 rounded-lg px-1 text-sm text-muted hover:text-ink"
+          >
+            <span>Vừa rời trong 15 phút ({recentRows.length})</span>
+            <ChevronDown size={16} className={showRecent ? "rotate-180" : ""} />
+          </button>
+          {showRecent && (
+            <ul className="divide-y divide-line rounded-xl border border-line">
+              {recentRows.map((row) => (
+                <li key={row.studentId} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm text-ink"><strong>{row.fullName}</strong></p>
+                    <p className="truncate text-xs text-muted">{row.lessonTitle} · {Math.max(1, Math.round((now - Date.parse(row.lastSeenAt)) / 60_000))} phút trước</p>
+                  </div>
+                  <RowActions row={row} onOpenStudent={onOpenStudent} onCopy={copyReminder} />
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </section>
   );
 }
 
-function MiniMetric({ value, label, tone }: { value: string; label: string; tone: "emerald" | "blue" | "amber" }) {
-  const toneClass = { emerald: "text-emerald-300", blue: "text-blue-300", amber: "text-amber-300" }[tone];
-  return <div className="rounded-xl border border-white/10 bg-white/[.025] p-3"><strong className={`block text-2xl ${toneClass}`}>{value}</strong><small className="text-slate-500">{label}</small></div>;
+function RowActions({ row, onOpenStudent, onCopy }: { row: Row; onOpenStudent: (id: string) => void; onCopy: (row: Row) => void }) {
+  return (
+    <div className="flex shrink-0 gap-1.5">
+      <button type="button" onClick={() => onOpenStudent(row.studentId)} className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-line px-3 text-xs font-semibold text-ink hover:bg-surface-2">
+        <UserRound size={13} /> Hồ sơ
+      </button>
+      <button type="button" onClick={() => void onCopy(row)} className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-line px-3 text-xs font-semibold text-ink hover:bg-surface-2">
+        <Copy size={13} /> Lời nhắc
+      </button>
+    </div>
+  );
 }
