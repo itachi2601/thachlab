@@ -17,9 +17,8 @@ FILES=(
   "supabase/migrations/20261011150000_student_mistakes_spaced_review.sql|Sổ tay câu sai & Ôn cách quãng (Spaced Mistake Review)|giờ nào cũng được"
   "supabase/migrations/20261011160000_rank_bat_nguon_thuong_chenh_lech.sql|Bật nguồn RP cho đề/luyện tập HS đã nộp + làm lại thưởng chênh lệch + tính lại mùa 4|NGOÀI giờ học sinh làm bài"
   "supabase/migrations/20261011170000_ta_reminders.sql|Bảng ta_reminders: lịch sử nhắc việc trợ giảng hằng tuần|giờ nào cũng được"
-  "supabase/migrations/20261011180000_ta_doc_ket_qua_lam_bai.sql|Trợ giảng đọc exam_results để thấy đề/phân tích/chữa bài của lớp|giờ nào cũng được"
 )
-# ĐÃ CHẠY 11/10/2026: 20261010500000_notify_rp_thuong, 20261010600000_lop_hsg_vat_ly_9_duyet_tay, 20261010700000_ta_doc_thanh_vien_lop,
+# ĐÃ CHẠY 11/10/2026: 20261011180000_ta_doc_ket_qua_lam_bai (dán tay vào SQL Editor), 20261010500000_notify_rp_thuong, 20261010600000_lop_hsg_vat_ly_9_duyet_tay, 20261010700000_ta_doc_thanh_vien_lop,
 #   20261011100000_exam_ta_preview, 20261010800000_an_cau_cat_cut_hien_thi, 20261010150000_ta_sua_buoi_7_ngay_va_doi_anh,
 #   20261011120000_question_bank_lint_flags, 20261011130000_bank_set_question_figure_service, 20261011140000_bank_replace_question_imgs
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
