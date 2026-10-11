@@ -28,6 +28,7 @@ import {
   type OpenExamAttempt,
 } from "@/services/progress";
 import { getSupabase } from "@/services/supabase";
+import { fetchStartRpNotice, type StartRpNotice } from "@/services/rank";
 
 // Màn hình sau khi nộp bài (điểm + xem lại từng câu, components/exams/ExamDoneView.tsx) kéo theo
 // ExamResultSummary + ExamReviewPager — học sinh KHÔNG thấy màn này lúc mới vào trang (chỉ hiện
@@ -106,6 +107,13 @@ export default function ExamRunner({
 }) {
   const { session, profile } = useAuth();
   const [phase, setPhase] = useState<Phase>("intro");
+  const [rpNotice, setRpNotice] = useState<StartRpNotice | null>(null);
+  useEffect(() => {
+    if (!session) return;
+    let alive = true;
+    fetchStartRpNotice(exam.id, itemId).then((n) => alive && setRpNotice(n)).catch(() => {});
+    return () => { alive = false; };
+  }, [session, exam.id, itemId]);
   const [responses, setResponses] = useState<QuestionResponse[]>(() =>
     emptyResponses(exam.questions),
   );
@@ -383,6 +391,21 @@ export default function ExamRunner({
           </span>
           {profile?.class_name && ` · Lớp ${profile.class_name}`}
         </p>
+        {rpNotice && (
+          <p
+            className={`mt-3 rounded-xl border px-4 py-2.5 text-sm ${
+              rpNotice.counts ? "border-line bg-bg text-ink" : "border-line bg-bg text-muted"
+            }`}
+          >
+            {!rpNotice.counts
+              ? "Bài này không tính RP — làm để luyện tập."
+              : rpNotice.earned >= rpNotice.maxRp
+                ? `Em đã nhận đủ ${rpNotice.maxRp} RP từ bài này. Làm lại vẫn để ôn tập, nhưng không cộng thêm RP.`
+                : rpNotice.earned > 0
+                  ? `Bài này tính RP (tối đa ${rpNotice.maxRp}). Em đã nhận ${rpNotice.earned} RP — làm lại đạt điểm cao hơn sẽ được cộng phần chênh lệch.`
+                  : `Bài này tính RP (tối đa ${rpNotice.maxRp}, theo điểm em đạt). Làm lại đạt điểm cao hơn sẽ được cộng phần chênh lệch.`}
+          </p>
+        )}
         {resumable && (
           <p className="mt-3 rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-2.5 text-sm text-amber-200">
             Em có một lượt làm dở còn {formatClock(savedSecondsLeft ?? fullSeconds)} — bấm bên dưới để làm tiếp, không mất bài.

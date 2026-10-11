@@ -365,6 +365,32 @@ export async function fetchResultRpContext(
   };
 }
 
+export interface StartRpNotice {
+  /** Bài này có tính RP trong mùa hiện tại không. */
+  counts: boolean;
+  /** RP tối đa của bài. */
+  maxRp: number;
+  /** RP em đã nhận từ bài này (0 nếu chưa). */
+  earned: number;
+}
+
+/** Thông báo trước khi làm bài: đề/mục này có tính RP không, đã nhận bao nhiêu. null = chưa mở mùa hoặc tra lỗi. */
+export async function fetchStartRpNotice(examId: number, itemId: number | null): Promise<StartRpNotice | null> {
+  const status = await fetchMyRankStatus();
+  if (!status?.season) return null;
+  const supabase = getSupabase();
+  const seasonId = status.season.id;
+  const refs = [`exam:${examId}`, ...(itemId ? [`practice_item:${itemId}`] : [])];
+  const [{ data: srcs }, { data: awards }] = await Promise.all([
+    supabase.from("rank_sources").select("source_kind, source_id, max_rp, enabled").eq("season_id", seasonId).eq("enabled", true)
+      .or(`and(source_kind.eq.exam,source_id.eq.${examId})${itemId ? `,and(source_kind.eq.practice_item,source_id.eq.${itemId})` : ""}`),
+    supabase.from("rank_rp_awards").select("awarded").eq("season_id", seasonId).eq("source_kind", "practice").in("source_ref", refs),
+  ]);
+  const maxRp = Math.max(0, ...(srcs ?? []).map((r) => r.max_rp as number));
+  const earned = Math.max(0, ...(awards ?? []).map((r) => r.awarded as number));
+  return { counts: (srcs ?? []).length > 0, maxRp, earned };
+}
+
 // ============================================================
 // Giáo viên — cấu hình
 // ============================================================
