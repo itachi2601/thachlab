@@ -25,6 +25,10 @@ const NEW_DAYS = 14;
 
 export function examShelfOf(title: string): Exclude<ShelfKey, "moi"> {
   const t = title.toLowerCase();
+  // Tiền tố loại đề đứng đầu tên thắng mọi từ khoá khác ("Cuối HK2 – Sở GD&ĐT…" là cuối kì, không phải thi thử;
+  // "Giữa HK1" chứa "hk1" nên không được rơi vào cuối kì).
+  if (/^giữa\s*hk/.test(t)) return "giua-ki";
+  if (/^cuối\s*hk/.test(t)) return "cuoi-ki";
   if (/thi thử|tốt nghiệp|\btn\s*thpt|minh họa|minh hoạ|đề thi sở|sở gd/.test(t)) return "thi-thu";
   if (/cuối\s*(học\s*)?(kì|kỳ)|\bck\s*\d?\b|\bhk\s*\d\b|học\s*(kì|kỳ)\s*\d?\s*$/.test(t)) return "cuoi-ki";
   if (/giữa\s*(học\s*)?(kì|kỳ)|\bgk\s*\d?\b/.test(t)) return "giua-ki";

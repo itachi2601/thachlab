@@ -274,6 +274,9 @@ const GRADE_SPECS = [
 
 function examShelfOf(title) {
   const t = title.toLowerCase();
+  // Tiền tố loại đề đứng đầu tên thắng mọi từ khoá khác (xem components/lop-hoc/ExamShelf.tsx).
+  if (/^giữa\s*hk/.test(t)) return "giua-ki";
+  if (/^cuối\s*hk/.test(t)) return "cuoi-ki";
   if (/thi thử|tốt nghiệp|\btn\s*thpt|minh họa|minh hoạ|đề thi sở|sở gd/.test(t)) return "thi-thu";
   // "Giữa HK1" chứa "HK1" — phải nhận giữa kì trước, không để rơi vào cuối kì.
   if (/giữa|\bgk\s*\d?\b/.test(t)) return "giua-ki";
