@@ -62,6 +62,7 @@
 - [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, chưa làm
 ## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap ở docs/ROADMAP.md
 - [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc, mùa thử nghiệm 21/9–25/10
+- [Kho bẫy trộn câu ok](project_thachlab_kho_bay_tron_cau_ok.md) — bẫy 0,4–0,7 + câu đã đúng; đầu/cuối là câu ok; chưa thử HS thật
 - [Rank thi thăng hạng thích ứng](project_thachlab_rank_gate_adaptive.md) — spec docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md
 - [Danh hiệu đeo + khung](project_thachlab_title_showcase.md) — chưa test HS thật
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — chạy lại scripts/sql/title-bank-coverage.sql
@@ -69,6 +70,7 @@
 - [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%, tối đa 3 lượt
 - [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ
 - [Quy chế trợ giảng](project_thachlab_ta_policy.md) — chấm tháng + hệ số lương; đã deploy
+- [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — iPhone ngang chiếu tivi; RLS exam_results cho TA; UI Xếp hạng mobile; treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
@@ -76,6 +78,7 @@
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
+- [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — thẻ HS ẩn danh + panel GV; heartbeat mới ở lý thuyết, chưa có ở đề/luyện tập
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
 - [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
 - [Skill bài tập tự luận HSG](project_thachlab_khoa_hsg9_vat_ly.md) — soan-bai-tap-tu-luan-hsg: bộ Cơ học 12 bài 10/10 xong, kiểm 12/12; mảng khác chưa soạn

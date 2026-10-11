@@ -40,3 +40,7 @@ thẻ riêng đặt giữa RankCard và ClassRankBoard).
   [[project_thachlab_concurrent_sessions]].
 - CHƯA test bằng tài khoản học sinh thật trên web (chỉ test RPC trực tiếp qua SQL); chưa xem UI thẻ streak
   trên trình duyệt thật.
+
+## Cập nhật 11/10/2026
+- Thầy chốt: chuỗi ngày tính MỌI bài (kiểm tra hoặc luyện tập) đạt `weekly_goal_min_score`, không chỉ bài thuộc nguồn RP. Migration `20261011200000_streak_moi_bai` (đã chạy 14:46): `rank_eval_daily_streak` bỏ join `rank_sources`, `rank_on_result` gọi chuỗi ngoài khối nguồn. Ngày cũ không tính lại.
+- Thẻ `DailyStreakCard` từng không trang nào dùng (bị bỏ khi dọn trang chủ HS, 5f8d2c91e) → đã gắn lại đầu `/lop-hoc` (học sinh, có mùa). `/tai-khoan` chỉ có dòng nhỏ trong `HeroStats`. Đã deploy 11/10 14:50; chưa mở bằng tài khoản HS thật.
