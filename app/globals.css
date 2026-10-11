@@ -2099,6 +2099,67 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board .rb-chip.active { border-color: var(--rb-accent); background: var(--rb-accent-soft); color: var(--rb-ink); box-shadow: 0 0 0 2px var(--rb-accent-soft); }
 .review-board .rb-chip.hidden { display: none; }
 
+/* Nút chạm (iPhone/iPad không có bàn phím) + chế độ điện thoại xoay ngang để mirror lên tivi/máy chiếu.
+   Màn hình iPhone ngang chỉ cao ~390px nên phải gom thanh trên/dưới còn 1 hàng mỗi bên,
+   chừa vùng an toàn (tai thỏ), chữ cỡ vừa — khi mirror lên tivi 1080p tự phóng ~2,8 lần. */
+.review-board .rb-controls { display: flex; gap: 8px; margin-bottom: 8px; }
+.review-board .rb-ctl {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 56px; padding: 0 16px;
+  border-radius: 12px; border: 1px solid var(--rb-line); background: var(--rb-surface); color: var(--rb-ink);
+  font: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; touch-action: manipulation;
+}
+.review-board .rb-ctl:disabled { opacity: .35; cursor: default; }
+.review-board .rb-ctl-main { flex: 1; background: var(--rb-accent); border-color: var(--rb-accent); color: #fff; }
+.review-board .rb-ctl-main:disabled { background: var(--rb-surface); border-color: var(--rb-line); color: var(--rb-ink-soft); opacity: .7; }
+.review-board .rb-stage-wrap { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.review-board .rb-hint { display: none; }
+@media (hover: hover) and (pointer: fine) { .review-board .rb-hint { display: flex; } }
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .review-board { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  .review-board .rb-topbar { gap: 8px; padding: 4px 10px; }
+  .review-board .rb-eyebrow { display: none; }
+  .review-board .rb-topbar h1 { margin: 0; font-size: .85rem; max-width: 30vw; }
+  .review-board .rb-progress { padding: 3px 10px; font-size: .75rem; }
+  .review-board .rb-progress-track { width: 60px; }
+  .review-board .rb-btn { height: 34px; padding: 0 10px; }
+  .review-board .rb-btn-text { display: none; }
+  .review-board .rb-btn-icon { width: 34px; }
+  .review-board .rb-zoom-pct { width: 48px; }
+
+  .review-board .rb-stage { padding: 10px 14px 16px; }
+  .review-board .rb-qmeta { gap: 6px; margin-bottom: 8px; }
+  .review-board .rb-qnum { font-size: .95rem; padding: 3px 10px; border-radius: 9px; }
+  .review-board .rb-tag { font-size: .75rem; padding: 3px 10px; }
+  .review-board .rb-result { font-size: .8rem; padding: 3px 10px; }
+  .review-board .rb-qtext { font-size: calc(1.3rem * var(--rb-zoom, 1)); line-height: 1.45; margin-bottom: 10px; }
+  .review-board .rb-options { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .review-board .rb-opt { padding: 8px 12px; gap: 9px; border-radius: 11px; font-size: calc(1.12rem * var(--rb-zoom, 1)); }
+  .review-board .rb-opt .rb-letter { width: 28px; height: 28px; font-size: .85rem; border-radius: 8px; }
+  .review-board .rb-opt .rb-badge { display: none !important; }
+  .review-board .rb-opt .rb-stat { margin-top: 5px; font-size: .72rem; }
+  .review-board .rb-tf-list { gap: 7px; }
+  .review-board .rb-tf-row { padding: 7px 12px; gap: 10px; border-radius: 11px; }
+  .review-board .rb-tf-row .rb-body { font-size: calc(1.1rem * var(--rb-zoom, 1)); }
+  .review-board .rb-tf-row .rb-letter { font-size: 1rem; }
+  .review-board .rb-tf-row .rb-verdict { font-size: .78rem; padding: 4px 10px; min-width: 54px; }
+  .review-board .rb-tf-row .rb-pct { width: 58px; font-size: .7rem; }
+  .review-board .rb-sa-box { padding: 12px; }
+  .review-board .rb-sa-box .rb-value { font-size: calc(3rem * var(--rb-zoom, 1)); }
+  .review-board .rb-explain { margin-top: 10px; }
+  .review-board .rb-explain .rb-inner { padding: 10px 14px; font-size: calc(1.05rem * var(--rb-zoom, 1)); }
+  .review-board .rb-explain.open { max-height: 4000px; }
+
+  .review-board .rb-navbar { display: flex; align-items: center; gap: 8px; padding: 4px 10px; padding-bottom: calc(4px + env(safe-area-inset-bottom)); }
+  .review-board .rb-controls { margin: 0; flex: none; gap: 6px; }
+  .review-board .rb-ctl { min-height: 40px; min-width: 44px; padding: 0 12px; font-size: .85rem; }
+  .review-board .rb-ctl-main { min-width: 140px; flex: none; }
+  .review-board .rb-navtools { display: none; }
+  .review-board .rb-strip { flex: 1; min-width: 0; padding-bottom: 0; }
+  .review-board .rb-chip { width: 38px; height: 38px; border-radius: 9px; }
+  .review-board .rb-chip b { font-size: .82rem; }
+}
+
 /* ==========================================================================
    Khu quản trị (/quan-tri) — app shell riêng, không dùng navbar/footer marketing.
    Tông màu theo trang chủ: xanh cho THPT, cam cho CTTC.

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type TouchEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Maximize, NotebookPen, X, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye, Maximize, NotebookPen, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
@@ -100,6 +100,41 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idx]);
+
+  // Điện thoại nối tivi/máy chiếu: giữ màn hình sáng suốt buổi chữa bài (Wake Lock, iOS 16.4+).
+  useEffect(() => {
+    let lock: { release: () => Promise<void> } | null = null;
+    const nav = navigator as Navigator & { wakeLock?: { request: (t: "screen") => Promise<{ release: () => Promise<void> }> } };
+    const acquire = () => {
+      if (!nav.wakeLock || document.visibilityState !== "visible") return;
+      nav.wakeLock.request("screen").then((l) => (lock = l)).catch(() => {});
+    };
+    acquire();
+    document.addEventListener("visibilitychange", acquire);
+    return () => {
+      document.removeEventListener("visibilitychange", acquire);
+      lock?.release().catch(() => {});
+    };
+  }, []);
+
+  // Vuốt ngang để chuyển câu (iPhone không có phím mũi tên).
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const onTouchStart = (e: TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = e.touches.length === 1 ? { x: t.clientX, y: t.clientY } : null;
+  };
+  const onTouchEnd = (e: TouchEvent) => {
+    const s0 = touchStart.current;
+    touchStart.current = null;
+    if (!s0) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - s0.x;
+    const dy = t.clientY - s0.y;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2) go(idx + (dx < 0 ? 1 : -1));
+  };
+
+  // iPhone Safari không có Fullscreen API cho trang web → ẩn nút thay vì để nút chết.
+  const canFullscreen = typeof document !== "undefined" && !!document.documentElement.requestFullscreen;
 
   function toggleFullscreen() {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
@@ -206,18 +241,20 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
           disabled={creatingReview || reviewCreated || !catalog}
           title="Tạo đề BTVN từ 10 câu sai nhiều nhất + 20 câu ngân hàng"
         >
-          <NotebookPen size={16} /> {reviewCreated ? "Đã tạo BTVN ôn tập" : creatingReview ? "Đang tạo…" : "Tạo BTVN ôn tập"}
+          <NotebookPen size={16} /> <span className="rb-btn-text">{reviewCreated ? "Đã tạo BTVN ôn tập" : creatingReview ? "Đang tạo…" : "Tạo BTVN ôn tập"}</span>
         </button>
         )}
-        <button className="rb-btn" onClick={toggleFullscreen} title="Toàn màn hình (F)">
-          <Maximize size={16} /> Toàn màn hình
-        </button>
-        <button className="rb-btn" onClick={() => router.back()} title="Thoát (Esc)">
-          <X size={16} /> Thoát
+        {canFullscreen && (
+          <button className="rb-btn" onClick={toggleFullscreen} title="Toàn màn hình (F)">
+            <Maximize size={16} /> <span className="rb-btn-text">Toàn màn hình</span>
+          </button>
+        )}
+        <button className="rb-btn" onClick={() => router.back()} title="Thoát (Esc)" aria-label="Thoát">
+          <X size={16} /> <span className="rb-btn-text">Thoát</span>
         </button>
       </div>
 
-      <div className="rb-stage-wrap">
+      <div className="rb-stage-wrap" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <div className="rb-stage">
           <div className="rb-qmeta">
             <span className="rb-qnum">Câu {idx + 1}</span>
@@ -327,6 +364,21 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
       </div>
 
       <div className="rb-navbar">
+        <div className="rb-controls">
+          <button className="rb-ctl" onClick={() => go(idx - 1)} disabled={idx === 0} aria-label="Câu trước">
+            <ChevronLeft size={22} />
+          </button>
+          <button className="rb-ctl rb-ctl-main" onClick={cycleReveal} disabled={reveal >= (q.explanation ? 2 : 1)}>
+            <Eye size={20} />
+            {reveal === 0 ? "Hiện đáp án" : q.explanation && reveal === 1 ? "Hiện lời giải" : "Đã hiện hết"}
+          </button>
+          <button className="rb-ctl" onClick={() => setReveal(0)} disabled={reveal === 0} aria-label="Ẩn lại">
+            Ẩn
+          </button>
+          <button className="rb-ctl" onClick={() => go(idx + 1)} disabled={idx === questions.length - 1} aria-label="Câu sau">
+            <ChevronRight size={22} />
+          </button>
+        </div>
         <div className="rb-navtools">
           <label className="rb-filt">
             <input
