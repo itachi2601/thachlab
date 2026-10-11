@@ -82,3 +82,4 @@
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
 - [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
 - [Skill bài tập tự luận HSG](project_thachlab_khoa_hsg9_vat_ly.md) — soan-bai-tap-tu-luan-hsg: bộ Cơ học 12 bài 10/10 xong, kiểm 12/12; mảng khác chưa soạn
+- [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
