@@ -58,6 +58,16 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
           })}
         </ul>
 
+        <Link
+          href="/lop-hoc/khtn-9?subject=hsg-vat-ly"
+          style={{ borderLeftColor: "#f59e0b" }}
+          className="mt-3 flex min-h-20 flex-col justify-center rounded-2xl border border-line border-l-8 bg-surface-2 px-5 py-3 text-ink transition-colors hover:bg-primary-soft"
+        >
+          <span className="text-xs font-bold tracking-wide">LỚP 9 · NÂNG CAO</span>
+          <span className="mt-0.5 text-lg font-bold">Luyện thi chuyên &amp; học sinh giỏi Vật lý 9 →</span>
+          <span className="text-sm">Chuyên đề nâng cao, bài tập mẫu từng dạng có hướng dẫn, luyện đề.</span>
+        </Link>
+
         <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-base font-semibold text-ink">
           <li>
             <Link href="/khoa-hoc" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-primary">
