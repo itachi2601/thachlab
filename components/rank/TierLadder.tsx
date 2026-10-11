@@ -264,9 +264,9 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-slate-500">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Cao Thủ và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
+              <p className="mt-3 text-[13px] text-muted">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Cao Thủ và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
               <div className="mt-4">
-                <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
+                <p className="text-[13px] font-bold uppercase tracking-wider text-muted">Điều kiện đạt danh vị</p>
                 <ul className="mt-2 space-y-2">
                   <Cond state={paragon || currentSort >= list.length ? "done" : status?.season ? "todo" : "neutral"}>
                     Đang ở bậc <b className="text-ink">Cao Thủ</b> của mùa hiện tại
@@ -306,7 +306,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
 
           {divisions && (
             <div className="mt-4">
-              <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Phân bậc · III đồng → II bạc → I vàng</p>
+              <p className="text-[13px] font-bold uppercase tracking-wider text-muted">Phân bậc · III đồng → II bạc → I vàng</p>
               <div className="mt-2 grid grid-cols-3 gap-2">
                 {divisions.map((d) => {
                   const here = isCurrent && status?.tier?.division === d.division;
@@ -314,14 +314,14 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                   return (
                     <div
                       key={d.division}
-                      className={`flex items-center gap-2 rounded-xl border p-2 ${here ? "border-primary bg-primary-soft" : "border-line bg-surface-2"}`}
+                      className={`flex flex-col items-center gap-1 rounded-xl border p-2 text-center ${here ? "border-primary bg-primary-soft" : "border-line bg-surface-2"}`}
                     >
                       <RankBadge code={step.code} division={d.division} size={34} className="shrink-0" />
                       <span className="min-w-0">
-                        <span className="block text-xs font-bold text-ink" style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}>
+                        <span className="block text-[13px] font-bold text-ink" style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}>
                           {meta.en} {divisionLabel(d.division)}
                         </span>
-                        <span className={`block truncate text-[12px] ${passed ? "text-emerald-300" : "text-muted"}`}>
+                        <span className={`block text-[13px] ${passed ? "text-emerald-300" : "text-muted"}`}>
                           {formatRp(d.min)}–{formatRp(d.max)} RP
                         </span>
                       </span>
@@ -332,12 +332,12 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
             </div>
           )}
           {step.has_divisions && !divisions && (
-            <p className="mt-3 text-xs text-slate-500">Có 3 phân bậc III · II · I theo RP trong bậc.</p>
+            <p className="mt-3 text-[13px] text-muted">Có 3 phân bậc III · II · I theo RP trong bậc.</p>
           )}
-          {!step.has_divisions && <p className="mt-3 text-xs text-slate-500">Bậc này không chia phân bậc — huy hiệu luôn bằng vàng.</p>}
+          {!step.has_divisions && <p className="mt-3 text-[13px] text-muted">Bậc này không chia phân bậc — huy hiệu luôn bằng vàng.</p>}
 
           <div className="mt-4">
-            <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt bậc</p>
+            <p className="text-[13px] font-bold uppercase tracking-wider text-muted">Điều kiện đạt bậc</p>
             {step.sort === 1 ? (
               <p className="mt-2 text-sm text-ink">Bậc khởi đầu — mọi học sinh tham gia mùa đều bắt đầu từ đây.</p>
             ) : !hasNumbers ? (

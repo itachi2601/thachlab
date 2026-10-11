@@ -191,13 +191,15 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
                 <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
                   <div className="h-full rounded-full transition-[width] motion-reduce:transition-none" style={{ width: `${bar}%`, background: `linear-gradient(90deg, ${meta.color}, ${meta.light})` }} />
                 </div>
-                <p className="mt-1 text-xs text-slate-500">
+                <p className="mt-1 text-[13px] text-muted">
                   {paragon
                     ? "Danh vị Thách Đấu — trên cả Cao Thủ, chỉ dành cho người đã sưu tập trọn bộ danh hiệu"
                     : status.tier?.div_max !== null && status.tier
                       ? `Phân bậc hiện tại: ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
                       : "Bậc cao nhất — không còn phân bậc"}
-                  {" · "}Mùa {status.season.name} ({new Date(status.season.starts_on).toLocaleDateString("vi-VN")} – {new Date(status.season.ends_on).toLocaleDateString("vi-VN")})
+                </p>
+                <p className="text-[13px] text-muted">
+                  Mùa {status.season.name} ({new Date(status.season.starts_on).toLocaleDateString("vi-VN")} – {new Date(status.season.ends_on).toLocaleDateString("vi-VN")})
                 </p>
               </>
             ) : (
