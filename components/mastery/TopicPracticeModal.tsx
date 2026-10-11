@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { BookOpen, CheckCircle2, CircleAlert, X } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
@@ -21,6 +21,7 @@ import {
 } from "@/features/exams/types";
 
 import { questionKey } from "@/services/question-context";
+import { isFullyCorrect } from "@/features/lessons/practice-step";
 
 type Phase = "loading" | "empty" | "intro" | "running" | "done";
 
@@ -48,6 +49,13 @@ function allocate(sizes: number[], count: number): number[] {
   }
   return take;
 }
+
+/** Thứ tự dễ → khó để mở đầu bằng câu em làm được, rồi tăng dần (câu "" xếp như trung bình). */
+const DIFF_RANK: Record<string, number> = { de: 0, "": 1, "trung-binh": 1, kho: 2 };
+/** Phần phụ đạo: tối đa 70% số câu thuộc đúng phần em hổng, còn lại là câu khác của bài. */
+const FOCUS_SHARE = 0.7;
+/** Sai từng này câu của phần hổng trong cùng lượt → mời xem lại lý thuyết tương tác. */
+const THEORY_AFTER_WRONG = 2;
 
 interface LessonResult {
   lessonId: number;
@@ -118,6 +126,9 @@ export default function TopicPracticeModal({
   const [picks, setPicks] = useState<PracticePick[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
   const [cur, setCur] = useState(0);
+  // Chế độ phụ đạo một phần (có topicName): báo đúng/sai ngay từng câu. checked[i] = câu i đã kiểm tra, ok[i] = đúng trọn vẹn.
+  const [checked, setChecked] = useState<boolean[]>([]);
+  const [ok, setOk] = useState<boolean[]>([]);
   const [saving, setSaving] = useState(false);
   const [result, setResult] = useState<{ score10: number; correctCount: number; total: number } | null>(null);
   // Bài của từng câu đã bốc (chỉ dùng ở chế độ nhiều bài) và kết quả theo bài sau khi nộp.
@@ -127,6 +138,7 @@ export default function TopicPracticeModal({
   const clientToken = useRef<string | null>(null);
   const submitting = useRef(false);
   const multi = examIdsByLesson !== undefined;
+  const guided = !multi && topicName.trim() !== "";
 
   useEffect(() => {
     let cancelled = false;
@@ -137,14 +149,14 @@ export default function TopicPracticeModal({
           : examIds;
         const metas = await fetchExamsFull(allIds);
         if (cancelled) return;
-        const collect = (ids: number[], seen?: Set<string>) => {
+        const collect = (ids: number[], seen?: Set<string>, anyTopic = false) => {
           const out: PracticePick[] = [];
           for (const id of ids) {
             const exam = metas.get(id) as Exam | undefined;
             if (!exam) continue;
             exam.questions.forEach((question, qi) => {
               if (question.type === "essay") return;
-              if (topicName.trim() !== "" && (question.topic ?? "").trim() !== topicName.trim()) return;
+              if (!anyTopic && topicName.trim() !== "" && (question.topic ?? "").trim() !== topicName.trim()) return;
               if (difficulty && question.difficulty !== difficulty) return;
               if (seen) {
                 const key = questionKey(question);
@@ -170,10 +182,28 @@ export default function TopicPracticeModal({
           const mixed = pickRandom(tagged, tagged.length);
           chosen = mixed.map((t) => t.pick);
           lessonOfPick = mixed.map((t) => t.lessonId);
+        } else if (topicName.trim() !== "") {
+          // Lượt phụ đạo một phần: ~70% câu đúng phần em hổng (ưu tiên Dễ/TB, xếp dễ → khó), câu đầu và câu cuối
+          // là câu khác của bài (em làm được) để mở đầu và kết thúc không bằng chuỗi câu sai.
+          const focusAll = collect(examIds);
+          const focusKeys = new Set(focusAll.map((p) => `${p.examId}:${p.sourceIndex}`));
+          const others = collect(examIds, undefined, true).filter((p) => !focusKeys.has(`${p.examId}:${p.sourceIndex}`));
+          const wantOthers = Math.min(others.length, Math.max(0, count - Math.ceil(count * FOCUS_SHARE)));
+          const focusN = Math.min(focusAll.length, count - wantOthers);
+          const otherN = Math.min(others.length, count - focusN);
+          const notHard = focusAll.filter((p) => p.question.difficulty !== "kho");
+          const hard = focusAll.filter((p) => p.question.difficulty === "kho");
+          const focus = [...pickRandom(notHard, Math.min(notHard.length, focusN)), ...pickRandom(hard, Math.max(0, focusN - notHard.length))].sort(
+            (a, b) => (DIFF_RANK[a.question.difficulty ?? ""] ?? 1) - (DIFF_RANK[b.question.difficulty ?? ""] ?? 1),
+          );
+          const warm = pickRandom(others, otherN);
+          chosen = otherN >= 2 ? [warm[0], ...focus, ...warm.slice(1)] : [...warm, ...focus];
         } else {
           chosen = pickRandom(collect(examIds), count);
         }
         setPicks(chosen);
+        setChecked(chosen.map(() => false));
+        setOk(chosen.map(() => false));
         setPickLessons(lessonOfPick);
         setResponses(emptyResponses(chosen.map((p) => p.question)));
         setPhase(chosen.length === 0 ? "empty" : "intro");
@@ -192,6 +222,15 @@ export default function TopicPracticeModal({
   const questions = picks.map((p) => p.question);
   const lastIndex = questions.length - 1;
   const answeredCount = questions.filter((q, i) => isAnswered(q, responses[i])).length;
+
+  const focusWrong = picks.filter((p, i) => checked[i] && !ok[i] && (p.question.topic ?? "").trim() === topicName.trim()).length;
+  const needTheory = guided && lessonId !== null && focusWrong >= THEORY_AFTER_WRONG;
+
+  function checkCurrent() {
+    if (!isAnswered(questions[cur], responses[cur])) return;
+    setChecked((p) => p.map((v, i) => (i === cur ? true : v)));
+    setOk((p) => p.map((v, i) => (i === cur ? isFullyCorrect(questions[cur], responses[cur]) : v)));
+  }
 
   function setResponse(i: number, r: QuestionResponse) {
     setResponses((prev) => {
@@ -315,12 +354,38 @@ export default function TopicPracticeModal({
                   Đã trả lời {answeredCount}/{questions.length}
                 </p>
               </div>
-              <QuestionCard index={cur + 1} question={questions[cur]} response={responses[cur]} onChange={(r) => setResponse(cur, r)} />
+              <QuestionCard
+                key={`${cur}-${guided && checked[cur] ? "r" : "a"}`}
+                index={cur + 1}
+                question={questions[cur]}
+                response={responses[cur]}
+                onChange={guided && checked[cur] ? undefined : (r) => setResponse(cur, r)}
+                review={guided && checked[cur]}
+              />
+              {guided && checked[cur] && (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={`flex items-start gap-2 rounded-xl border px-3 py-2 text-sm ${
+                    ok[cur] ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-100" : "border-amber-500/40 bg-amber-500/10 text-amber-100"
+                  }`}
+                >
+                  {ok[cur] ? <CheckCircle2 size={18} className="mt-0.5 shrink-0" aria-hidden /> : <CircleAlert size={18} className="mt-0.5 shrink-0" aria-hidden />}
+                  <span>{ok[cur] ? "Đúng rồi." : "Chưa đúng. Đáp án và lời giải ở phía trên."}</span>
+                </p>
+              )}
+              {needTheory && checked[cur] && !ok[cur] && (
+                <TheoryNudge lessonId={lessonId} topicName={topicName} wrong={focusWrong} newTab />
+              )}
               <div className="flex items-center justify-between gap-2">
                 <Button variant="outline" onClick={() => setCur((i) => Math.max(0, i - 1))} disabled={cur === 0}>
                   Câu trước
                 </Button>
-                {cur < lastIndex ? (
+                {guided && !checked[cur] ? (
+                  <Button onClick={checkCurrent} disabled={!isAnswered(questions[cur], responses[cur])}>
+                    Kiểm tra
+                  </Button>
+                ) : cur < lastIndex ? (
                   <Button onClick={() => setCur((i) => Math.min(lastIndex, i + 1))}>Câu tiếp</Button>
                 ) : (
                   <Button onClick={submit} disabled={saving}>
@@ -345,6 +410,9 @@ export default function TopicPracticeModal({
                   Đúng {result.correctCount}/{result.total} câu
                 </p>
               </div>
+              {guided && lessonId !== null && (focusWrong >= THEORY_AFTER_WRONG || result.correctCount * 2 < result.total) && (
+                <TheoryNudge lessonId={lessonId} topicName={topicName} wrong={focusWrong} />
+              )}
               {multi && byLesson.length > 0 && (
                 <ul className="divide-y divide-white/10 rounded-xl border border-white/10">
                   {byLesson.map((r) => {
@@ -383,6 +451,29 @@ export default function TopicPracticeModal({
               </Button>
             </div>
           )}
+      </div>
+    </div>
+  );
+}
+
+/** Mời xem lại lý thuyết tương tác của bài. Đang làm dở thì mở tab mới để không mất lượt (newTab). */
+function TheoryNudge({ lessonId, topicName, wrong, newTab = false }: { lessonId: number | null; topicName: string; wrong: number; newTab?: boolean }) {
+  if (lessonId === null) return null;
+  return (
+    <div className="flex items-start gap-3 rounded-xl border border-sky-500/40 bg-sky-500/10 px-3 py-3 text-sm text-slate-100">
+      <BookOpen size={18} className="mt-0.5 shrink-0" aria-hidden />
+      <div className="space-y-2">
+        <p>
+          Phần <b>{topicName}</b> em còn sai {wrong > 0 ? `${wrong} câu` : "nhiều"}. Xem lại lý thuyết tương tác của bài rồi quay lại luyện nhé
+          {newTab ? " — bài đang làm vẫn giữ nguyên." : "."}
+        </p>
+        <a
+          href={`/lop-hoc/bai?id=${lessonId}#muc=ly-thuyet`}
+          {...(newTab ? { target: "_blank", rel: "noopener" } : {})}
+          className="inline-flex min-h-11 items-center rounded-full border border-white/20 px-4 text-sm font-semibold text-white hover:border-white/40"
+        >
+          Mở lý thuyết{newTab ? " (tab mới)" : ""}
+        </a>
       </div>
     </div>
   );
