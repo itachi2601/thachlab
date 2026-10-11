@@ -3,11 +3,12 @@ import { MANAGED_CLASSES, classGrade } from "@/services/classes";
 import type { HomeStats } from "@/components/home/home-stats.server";
 
 // Một hàng chip, đặt ngay dưới mô phỏng — không còn là màn hình đầu.
-const CLASS_COPY: Record<string, { title: string }> = {
-  "khtn-9": { title: "KHTN 9" },
-  "lop-10": { title: "Vật lý 10" },
-  "lop-11": { title: "Vật lý 11" },
-  "lop-12": { title: "Vật lý 12" },
+// Số lớn + nhãn cấp: nhận ra "lớp mình" bằng một con số (nhận diện hơn là đọc chữ), gom THCS / THPT bằng nhãn nhỏ.
+const CLASS_COPY: Record<string, { level: string; grade: string; title: string }> = {
+  "khtn-9": { level: "THCS", grade: "9", title: "KHTN 9" },
+  "lop-10": { level: "THPT", grade: "10", title: "Vật lý 10" },
+  "lop-11": { level: "THPT", grade: "11", title: "Vật lý 11" },
+  "lop-12": { level: "THPT", grade: "12", title: "Vật lý 12" },
 };
 
 function formatCount(n: number) {
@@ -31,45 +32,44 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
   return (
     <section className="bg-bg px-6 pb-8 pt-2 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Chọn lớp để bắt đầu</h2>
-        <ul className="mt-4 flex gap-3 overflow-x-auto pb-2">
+        <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Em học lớp mấy?</h2>
+        <p className="mt-1 text-sm text-ink">Bấm vào lớp của em để vào bài học.</p>
+        <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
           {MANAGED_CLASSES.map((managed) => {
-            const copy = CLASS_COPY[managed.slug] ?? { title: managed.name };
+            const copy = CLASS_COPY[managed.slug] ?? { level: "", grade: classGrade(managed.name) ?? "", title: managed.name };
             const s = statsByGrade.get(classGrade(managed.name));
-            const detail = s ? `${s.chapters} chương · ${s.lessons} bài` : undefined;
             return (
-              <li key={managed.slug} className="shrink-0">
+              <li key={managed.slug}>
                 <Link
                   href={`/lop-hoc/${managed.slug}`}
-                  style={{ borderColor: `${managed.color}99`, boxShadow: `inset 3px 0 0 ${managed.color}` }}
-                  className="flex min-h-14 min-w-36 flex-col justify-center rounded-xl border bg-surface-2 py-2 pl-5 pr-5 text-ink transition-colors hover:bg-primary-soft"
+                  style={{ borderTopColor: managed.color }}
+                  className="flex h-full min-h-36 flex-col rounded-2xl border border-line border-t-4 bg-surface-2 p-4 text-ink transition-colors hover:bg-primary-soft"
                 >
-                  <span className="text-base font-bold">{copy.title}</span>
-                  {detail && <span className="text-sm text-ink">{detail}</span>}
+                  <span className="text-xs font-bold tracking-wide text-ink">{copy.level}</span>
+                  <span className="mt-1 flex items-baseline gap-1.5">
+                    <span className="text-sm font-semibold">Lớp</span>
+                    <span className="font-display text-5xl font-extrabold leading-none">{copy.grade}</span>
+                  </span>
+                  <span className="mt-2 text-base font-bold">{copy.title}</span>
+                  {s && s.lessons > 0 && <span className="mt-auto pt-2 text-sm">{s.chapters} chương · {s.lessons} bài</span>}
                 </Link>
               </li>
             );
           })}
         </ul>
 
-        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:max-w-xl">
-          <Link
-            href="/lop-hoc/cttc"
-            style={{ borderColor: "#fbbf2499", boxShadow: "inset 3px 0 0 #fbbf24" }}
-            className="flex min-h-14 flex-col justify-center rounded-xl border bg-surface-2 py-2 pl-5 pr-5 text-ink transition-colors hover:bg-primary-soft"
-          >
-            <span className="text-base font-bold">Sinh viên CTTC</span>
-            <span className="text-sm text-ink">Vào lớp học phần của em</span>
-          </Link>
-          <Link
-            href="/khoa-hoc"
-            style={{ borderColor: "#67e8f999", boxShadow: "inset 3px 0 0 #67e8f9" }}
-            className="flex min-h-14 flex-col justify-center rounded-xl border bg-surface-2 py-2 pl-5 pr-5 text-ink transition-colors hover:bg-primary-soft"
-          >
-            <span className="text-base font-bold">Khoá học đang mở</span>
-            <span className="text-sm text-ink">Xem và ghi danh</span>
-          </Link>
-        </div>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-base font-semibold text-ink">
+          <li>
+            <Link href="/khoa-hoc" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-primary">
+              Khoá học đang mở – ghi danh →
+            </Link>
+          </li>
+          <li>
+            <Link href="/lop-hoc/cttc" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-primary">
+              Sinh viên CTTC →
+            </Link>
+          </li>
+        </ul>
 
         <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-ink">
           {stats && (
