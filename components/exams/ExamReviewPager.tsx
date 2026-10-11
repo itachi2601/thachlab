@@ -117,7 +117,10 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
       </div>
 
       {renderAbove?.(cur)}
-      <QuestionCard index={cur + 1} question={questions[cur]} response={responses[cur]} review />
+      {/* Bọc .exam-paper như màn làm bài (ExamRunner): cùng font Tinos, cùng cỡ chữ 17–18px. */}
+      <div className="exam-paper">
+        <QuestionCard index={cur + 1} question={questions[cur]} response={responses[cur]} review />
+      </div>
 
       {examId != null && (
         <div className="mt-3 flex justify-end">

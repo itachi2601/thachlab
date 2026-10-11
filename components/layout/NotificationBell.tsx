@@ -100,20 +100,20 @@ export default function NotificationBell() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-[calc(100%+8px)] w-80 overflow-hidden rounded-2xl border border-line bg-panel/95 shadow-2xl shadow-black/50 sm:w-96">
-          <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
-            <span className="text-sm font-bold text-ink">Thông báo</span>
+        <div className="absolute right-0 top-[calc(100%+8px)] w-[22rem] overflow-hidden rounded-2xl border border-line bg-panel/95 shadow-2xl shadow-black/50 sm:w-[26rem]">
+          <div className="flex items-center justify-between border-b border-line px-4 py-3">
+            <span className="text-base font-bold text-ink">Thông báo</span>
             {count > 0 && (
-              <button type="button" onClick={readAll} className="inline-flex items-center gap-1 text-xs text-blue-300 hover:underline">
+              <button type="button" onClick={readAll} className="inline-flex items-center gap-1 text-sm text-blue-300 hover:underline">
                 <CheckCheck size={13} /> Đọc hết
               </button>
             )}
           </div>
           <div className="max-h-[60vh] overflow-y-auto">
             {items === null ? (
-              <p className="p-4 text-sm text-muted">Đang tải…</p>
+              <p className="p-4 text-base text-muted">Đang tải…</p>
             ) : items.length === 0 ? (
-              <p className="p-4 text-sm text-slate-500">Chưa có thông báo nào.</p>
+              <p className="p-4 text-base text-slate-500">Chưa có thông báo nào.</p>
             ) : (
               <ul>
                 {items.map((item) => (
@@ -121,14 +121,14 @@ export default function NotificationBell() {
                     <Link
                       href={item.href || "/thong-bao"}
                       onClick={() => void openItem(item)}
-                      className={`block px-4 py-3 transition-colors hover:bg-surface-2 ${item.read_at ? "" : "bg-blue-500/[.06]"}`}
+                      className={`block px-4 py-3.5 transition-colors hover:bg-surface-2 ${item.read_at ? "" : "bg-blue-500/[.06]"}`}
                     >
-                      <span className="flex items-start gap-2">
-                        {!item.read_at && <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-blue-400" />}
+                      <span className="flex items-start gap-2.5">
+                        {!item.read_at && <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-400" />}
                         <span className="min-w-0">
-                          <span className={`block text-sm text-ink ${item.read_at ? "" : "font-semibold"}`}>{item.title}</span>
-                          {item.body && <span className="mt-0.5 line-clamp-2 block text-xs text-muted">{item.body}</span>}
-                          <span className="mt-1 block text-[12px] text-slate-500">{timeAgo(item.created_at)}</span>
+                          <span className={`block text-base text-ink ${item.read_at ? "" : "font-semibold"}`}>{item.title}</span>
+                          {item.body && <span className="mt-1 line-clamp-2 block text-sm text-muted">{item.body}</span>}
+                          <span className="mt-1.5 block text-sm text-slate-500">{timeAgo(item.created_at)}</span>
                         </span>
                       </span>
                     </Link>
@@ -137,7 +137,7 @@ export default function NotificationBell() {
               </ul>
             )}
           </div>
-          <Link href="/thong-bao" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-2.5 text-center text-xs font-semibold text-blue-300 hover:bg-surface-2">
+          <Link href="/thong-bao" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-3 text-center text-sm font-semibold text-blue-300 hover:bg-surface-2">
             Xem tất cả
           </Link>
         </div>

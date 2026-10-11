@@ -76,9 +76,9 @@ function Inbox() {
                 }}
                 className="min-w-0 flex-1"
               >
-                <span className={`block ${item.read_at ? "text-slate-300" : "font-semibold text-white"}`}>{item.title}</span>
-                {item.body && <span className="mt-1 block text-sm text-slate-400">{item.body}</span>}
-                <span className="mt-1 block text-xs text-slate-500">{timeAgo(item.created_at)}</span>
+                <span className={`block text-base ${item.read_at ? "text-slate-300" : "font-semibold text-white"}`}>{item.title}</span>
+                {item.body && <span className="mt-1 block text-base text-slate-400">{item.body}</span>}
+                <span className="mt-1.5 block text-sm text-slate-500">{timeAgo(item.created_at)}</span>
               </Link>
               <button type="button" onClick={() => remove(item.id)} title="Xoá" className="rounded-lg border border-white/10 p-1.5 text-slate-500 hover:border-red-500/30 hover:text-red-300">
                 <Trash2 size={14} />
