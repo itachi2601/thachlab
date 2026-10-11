@@ -63,6 +63,7 @@ import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOvervie
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRankStatus, fetchMyStreakDays, fetchRankStatusOf, type StreakDay } from "@/services/rank";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
+import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
 import type { RankStatus } from "@/features/rank/types";
 import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
 
@@ -710,6 +711,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {!isParent && session && rank?.season && (
                           <DailyStreakCard status={rank} days={streakDays} className="mb-4" />
                         )}
+                        {!isParent && session && <LiveStudyStrip className="mb-4" />}
                         {renderNextCard()}
 
                         {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}

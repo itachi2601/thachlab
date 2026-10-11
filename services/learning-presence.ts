@@ -65,3 +65,28 @@ export async function fetchClassLearningPresence(classId: number): Promise<Class
     };
   });
 }
+
+export interface LiveStudySummary {
+  /** 0 khi dưới 3 em — xem `few`. */
+  total: number;
+  /** 1–2 em đang học: chỉ hiện "vài bạn", không lộ số cụ thể. */
+  few: boolean;
+  topics: { lessonId: number; title: string; n: number }[];
+}
+
+let liveCache: { at: number; value: LiveStudySummary } | null = null;
+
+/** Toàn trường, ẩn danh. Cache 60 giây trong tab để nhiều thẻ cùng trang không gọi lặp. */
+export async function fetchLiveStudySummary(): Promise<LiveStudySummary> {
+  if (liveCache && Date.now() - liveCache.at < 60_000) return liveCache.value;
+  const { data, error } = await getSupabase().rpc("live_study_summary");
+  if (error) throw error;
+  const raw = (data ?? {}) as { total?: number; few?: boolean; topics?: { lesson_id: number; title: string; n: number }[] };
+  const value: LiveStudySummary = {
+    total: raw.total ?? 0,
+    few: !!raw.few,
+    topics: (raw.topics ?? []).map((t) => ({ lessonId: t.lesson_id, title: t.title, n: t.n })),
+  };
+  liveCache = { at: Date.now(), value };
+  return value;
+}
