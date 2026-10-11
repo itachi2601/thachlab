@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- Đã chạy 11/10 16:49: `20261011210000_live_study_summary` (RPC báo live toàn trường cho HS; thẻ `LiveStudyStrip` ở `/lop-hoc`; panel GV `TeacherLiveLearningPanel` thiết kế lại). Còn chờ: `20261011200000_streak_moi_bai` (chạy ngoài giờ HS làm bài); heartbeat mới chỉ có ở `InlineLessonAccordion`.
 - Đã chạy 11/10 13:57: `20261011150000` (kho bẫy), `20261011170000_rank_lop10_bat_nguon`, `20261011170000_ta_reminders`, `20261011190000_mistake_review_mix_ok` (lượt ôn trộn bẫy/câu ok, tỉ lệ thích ứng 0,4–0,7). Chưa thử UI bằng HS thật; 2 file `20261006120000/130000_*_l11` chưa trong FILES, chưa rõ đã chạy.
 - Đã chạy 11/10: `20261011180000_ta_doc_ket_qua_lam_bai` (TA đọc exam_results; chờ thầy thử bằng tài khoản trợ giảng); `20261011170000_ta_reminders` (skill kiem-tra-tro-giang-tuan, đã gửi nhắc tuần 05–11/10 cho 6 trợ giảng); `20261011160000_rank_bat_nguon_thuong_chenh_lech` (+30 nguồn, cộng bù 4185 RP/131 HS, max 158/HS); còn cần deploy code thông báo RP ở ExamRunner.
 - Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
