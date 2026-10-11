@@ -15,8 +15,9 @@ cd "$(dirname "$0")/.."
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
   "supabase/migrations/20261011200000_streak_moi_bai.sql|Chuỗi ngày tính mọi bài đạt điểm tối thiểu (không chỉ bài thuộc nguồn RP)|ngoài giờ học sinh làm bài"
-  "supabase/migrations/20261011210000_live_study_summary.sql|RPC live_study_summary: tổng số bạn đang học + top bài (ẩn danh, ngưỡng 3)|lúc nào cũng được"
+  "supabase/migrations/20261011220000_phu_dao_bo_cau_kho.sql|Phụ đạo chỉ tính câu Dễ + Trung bình (bỏ câu Khó khi mở/đóng mục)|ngoài giờ học sinh làm bài"
 )
+# ĐÃ CHẠY 11/10/2026 (16:49): 20261011210000_live_study_summary
 # ĐÃ CHẠY 11/10/2026 (13:57): 20261011190000_mistake_review_mix_ok
 # ĐÃ CHẠY 11/10/2026 (13:56): 20261011170000_rank_lop10_bat_nguon, 20261011170000_ta_reminders
 # ĐÃ CHẠY 11/10/2026 (08:50): 20261011150000_student_mistakes_spaced_review, 20261011160000_rank_bat_nguon_thuong_chenh_lech
