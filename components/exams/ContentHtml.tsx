@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { withQuestionTables } from "@/lib/question-table";
 import imageDimensions from "@/features/lessons/image-dimensions.json";
 
 const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
@@ -179,7 +180,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(stripWordArtifacts(html)))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(stripWordArtifacts(html))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);

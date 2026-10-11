@@ -3504,3 +3504,10 @@ html[data-theme="light"] .teacher-dashboard {
 .theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
 .theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
 html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
