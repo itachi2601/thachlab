@@ -652,3 +652,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - 11/10/2026 đã chạy: `20261011160000_rank_bat_nguon_thuong_chenh_lech` — bật nguồn RP cho đề/luyện tập HS mùa 4 đã nộp, `rp_first_attempt_only=0` (làm lại thưởng chênh lệch), tính lại mùa 4; chạy NGOÀI giờ học. Kèm code thông báo RP ở màn vào bài (ExamRunner) — cần deploy.
 
 - 11/10/2026: chạy `20261011170000_ta_reminders` (log scripts/logs/20261011-095954-…ta_reminders.log); gửi nhắc tuần 05–11/10 cho 6 trợ giảng, chạy lại xác nhận không gửi trùng.
+
+- 11/10/2026 đã chạy (10:44): `20261011170000_rank_lop10_bat_nguon` — lớp 10 thuộc mùa 5 (Alpha test) chưa có nguồn RP: bật nguồn + làm lại thưởng chênh lệch + tính lại mùa 5; chạy NGOÀI giờ học. Kết quả: +310 nguồn mùa 5, cộng bù 3305 RP/51 HS (max 207/HS).
