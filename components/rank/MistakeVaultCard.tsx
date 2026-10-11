@@ -40,7 +40,7 @@ export default function MistakeVaultCard() {
                 {stats.due_count > 0
                   ? `Có ${stats.due_count} câu đã đến hạn ôn tập để nhận +RP thưởng`
                   : stats.total_active > 0
-                  ? `Đang theo dõi ${stats.total_active} câu — chưa có câu nào đến hạn hôm nay`
+                  ? `Đang theo dõi ${stats.total_active} câu — chưa câu nào đến hạn, em vẫn luyện nhẹ được xen cả câu đã làm đúng`
                   : `Đã chinh phục thành công ${stats.cleared_count} câu bẫy!`}
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function MistakeVaultCard() {
             onClick={() => setOpenModal(true)}
             className="min-h-11 shrink-0 px-4 text-xs font-semibold"
           >
-            {stats.due_count > 0 ? `Xoá bẫy ngay (${stats.due_count})` : "Mở sổ tay câu sai"}
+            {stats.due_count > 0 ? `Xoá bẫy ngay (${stats.due_count})` : "Luyện nhẹ 5 câu"}
             <ChevronRight className="ml-1.5 h-4 w-4" />
           </Button>
         </div>

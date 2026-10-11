@@ -18,6 +18,8 @@ export interface MistakeQuestionItem {
   exam_id: number;
   question_index: number;
   stage: number;
+  /** 'trap' = câu bẫy cần ôn; 'ok' = câu em từng làm đúng (xen vào cho đỡ nản). Bản RPC cũ không có. */
+  kind?: "trap" | "ok";
   type: "multiple_choice" | "true_false" | "short_answer";
   question: string;
   options: string[];
@@ -34,6 +36,7 @@ export interface MistakeQuizStart {
 
 export interface MistakeQuestionResult {
   mistake_id: number;
+  kind?: "trap" | "ok";
   correct: boolean;
   answer: unknown;
   explanation: string;

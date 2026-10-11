@@ -172,7 +172,11 @@ export default function MistakeReviewModal({ onClose, onFinished }: MistakeRevie
               {/* Review details */}
               <div className="space-y-4">
                 <h4 className="text-sm font-semibold text-ink">Chi tiết từng câu:</h4>
-                {result.results.map((r, i) => {
+                {result.results
+                  .map((r) => ({ r, i: quizStart?.questions.findIndex((x) => x.mistake_id === r.mistake_id) ?? -1 }))
+                  .filter(({ i }) => i >= 0)
+                  .sort((a, b) => a.i - b.i)
+                  .map(({ r, i }) => {
                   const q = questions[i];
                   return (
                     <div
@@ -190,6 +194,7 @@ export default function MistakeReviewModal({ onClose, onFinished }: MistakeRevie
                           <XCircle className="h-4 w-4 text-rose-500" />
                         )}
                         <span className="font-semibold text-ink">Câu {i + 1}: {r.correct ? "Chính xác" : "Chưa đúng"}</span>
+                        {r.kind === "ok" && <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 text-[13px] text-emerald-700">câu em đã làm được</span>}
                       </div>
                       <div className="mt-2.5 text-ink">
                         <ContentHtml html={q.question} />
@@ -232,6 +237,11 @@ export default function MistakeReviewModal({ onClose, onFinished }: MistakeRevie
                   exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -10 }}
                   transition={{ duration: 0.2 }}
                 >
+                  {quizStart?.questions[cur]?.kind && (
+                    <p className="mb-2 text-[13px] font-medium text-muted">
+                      {quizStart.questions[cur].kind === "ok" ? "Câu em từng làm đúng — nhớ lại cho chắc" : "Câu bẫy cần xoá"}
+                    </p>
+                  )}
                   <QuestionCard
                     index={cur + 1}
                     question={questions[cur]}
