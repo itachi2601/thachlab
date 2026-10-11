@@ -122,7 +122,7 @@ export default function TeacherLiveLearningPanel({
               {g.chapterTitle && <p className="truncate px-3 pt-1.5 text-xs text-muted">{g.chapterTitle}</p>}
               <ul className="divide-y divide-line">
                 {g.rows.map((row) => (
-                  <li key={row.studentId} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2">
+                  <li key={row.studentId} className="flex flex-col gap-1.5 px-3 py-2 sm:flex-row sm:items-center sm:gap-3">
                     <div className="min-w-0 flex-1">
                       <p className="flex flex-wrap items-center gap-x-2 text-sm text-ink">
                         <strong>{row.fullName}</strong>
@@ -155,7 +155,7 @@ export default function TeacherLiveLearningPanel({
           {showRecent && (
             <ul className="divide-y divide-line rounded-xl border border-line">
               {recentRows.map((row) => (
-                <li key={row.studentId} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2">
+                <li key={row.studentId} className="flex flex-col gap-1.5 px-3 py-2 sm:flex-row sm:items-center sm:gap-3">
                   <div className="min-w-0 flex-1">
                     <p className="text-sm text-ink"><strong>{row.fullName}</strong></p>
                     <p className="truncate text-xs text-muted">{row.lessonTitle} · {Math.max(1, Math.round((now - Date.parse(row.lastSeenAt)) / 60_000))} phút trước</p>
@@ -173,11 +173,11 @@ export default function TeacherLiveLearningPanel({
 
 function RowActions({ row, onOpenStudent, onCopy }: { row: Row; onOpenStudent: (id: string) => void; onCopy: (row: Row) => void }) {
   return (
-    <div className="flex shrink-0 gap-1.5">
-      <button type="button" onClick={() => onOpenStudent(row.studentId)} className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-line px-3 text-xs font-semibold text-ink hover:bg-surface-2">
+    <div className="flex gap-1.5 sm:shrink-0">
+      <button type="button" onClick={() => onOpenStudent(row.studentId)} className="inline-flex min-h-11 flex-1 items-center justify-center gap-1 rounded-lg border border-line px-3 sm:flex-none text-xs font-semibold text-ink hover:bg-surface-2">
         <UserRound size={13} /> Hồ sơ
       </button>
-      <button type="button" onClick={() => void onCopy(row)} className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-line px-3 text-xs font-semibold text-ink hover:bg-surface-2">
+      <button type="button" onClick={() => void onCopy(row)} className="inline-flex min-h-11 flex-1 items-center justify-center gap-1 rounded-lg border border-line px-3 sm:flex-none text-xs font-semibold text-ink hover:bg-surface-2">
         <Copy size={13} /> Lời nhắc
       </button>
     </div>
