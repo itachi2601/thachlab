@@ -1,4 +1,4 @@
-// Soạn câu cho "Đố vui lớp học": dán văn bản kiểu "Câu 1. … A. … B. … Đáp án: B" → danh sách câu trắc nghiệm.
+// Soạn câu cho "Hoạt động lớp học": dán văn bản kiểu "Câu 1. … A. … B. … Đáp án: B" → danh sách câu trắc nghiệm.
 // Toán thuần, không phụ thuộc React/Supabase — kiểm bằng scripts/test-quiz-live-text.mts.
 
 export interface QuizQuestion {

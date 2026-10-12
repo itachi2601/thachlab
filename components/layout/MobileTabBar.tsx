@@ -311,7 +311,7 @@ export default function MobileTabBar() {
     ];
     more = [
       // Quét mã QR của đề (thầy chiếu mã lên bảng) — xem app/quet-ma, components/admin/ExamQrPanel.tsx
-      { href: "/quet-ma", label: "Quét mã QR" },
+      { href: "/quet-ma", label: "Quét mã · Vào hoạt động lớp" },
       { href: "/lop-hoc/ket-qua", label: "Kết quả học tập" },
       { href: "/thong-bao", label: unread > 0 ? `Thông báo (${unread})` : "Thông báo" },
       { href: "/tin-nhan", label: "Tin nhắn" },
@@ -324,7 +324,7 @@ export default function MobileTabBar() {
       { key: "class", label: "Bài học", href: "/lop-hoc/cttc", icon: "class", active: match("/lop-hoc") },
       { key: "notice", label: "Thông báo", href: "/thong-bao", icon: "bell", active: onNotice, badge: countBadge },
     ];
-    more = [{ href: "/tin-nhan", label: "Tin nhắn" }, { href: "/tin-tuc", label: "Tin tức" }, LOGOUT_LINKS.password];
+    more = [{ href: "/choi", label: "Vào hoạt động lớp" }, { href: "/tin-nhan", label: "Tin nhắn" }, { href: "/tin-tuc", label: "Tin tức" }, LOGOUT_LINKS.password];
   } else if (kind === "parent") {
     items = [
       { key: "child", label: "Kết quả của con", href: "/phu-huynh", icon: "family", active: match("/phu-huynh") },
@@ -341,6 +341,7 @@ export default function MobileTabBar() {
     ];
     more = [
       { href: "/thong-bao", label: unread > 0 ? `Thông báo chung (${unread})` : "Thông báo chung" },
+      { href: "/tro-giang/do-vui", label: "Hoạt động lớp học" },
       { href: "/tro-giang/video", label: "Video" },
       { href: "/tro-giang/quy-che", label: "Quy chế" },
       { href: "/dashboard-thpt", label: "Quản lớp · THPT" },
@@ -353,7 +354,7 @@ export default function MobileTabBar() {
       { key: "notice", label: "Thông báo", href: "/thong-bao", icon: "bell", active: onNotice, badge: countBadge },
     ];
     if (profile?.role === "admin") items.push({ key: "admin", label: "Quản trị", href: "/quan-tri", icon: "shield", active: false });
-    more = [{ href: "/tai-khoan", label: "Tài khoản" }, LOGOUT_LINKS.password];
+    more = [{ href: "/tro-giang/do-vui", label: "Hoạt động lớp học" }, { href: "/tai-khoan", label: "Tài khoản" }, LOGOUT_LINKS.password];
   }
 
   const hasMore = more.length > 0;

@@ -1,4 +1,4 @@
-// Phía học sinh của "Đố vui lớp học": không đăng nhập, gọi RPC ẩn danh bằng fetch thuần (không kéo supabase-js).
+// Phía học sinh của "Hoạt động lớp học": không đăng nhập, gọi RPC ẩn danh bằng fetch thuần (không kéo supabase-js).
 import type { PlayerState } from "@/features/quiz-live/types";
 import { restRpc } from "./supabase-rest";
 

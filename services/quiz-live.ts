@@ -1,4 +1,4 @@
-// Phía thầy/trợ giảng của "Đố vui lớp học" — bộ câu (quiz_sets), mở phòng, điều khiển, tìm câu trong ngân hàng.
+// Phía thầy/trợ giảng của "Hoạt động lớp học" — bộ câu (quiz_sets), mở phòng, điều khiển, tìm câu trong ngân hàng.
 import { type QuizQuestion } from "@/features/quiz-live/text";
 import type { HostState } from "@/features/quiz-live/types";
 import { getSupabase } from "@/services/supabase";

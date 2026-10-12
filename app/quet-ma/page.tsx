@@ -3,7 +3,8 @@
 import dynamic from "next/dynamic";
 import { useCallback, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Keyboard } from "lucide-react";
+import Link from "next/link";
+import { Gamepad2, Keyboard } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
@@ -62,7 +63,7 @@ export default function ScanExamPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-2xl px-6 pt-28 pb-24 lg:px-8">
-        <h1 className="font-display text-2xl font-bold text-white sm:text-3xl">Quét mã QR của đề</h1>
+        <h1 className="font-display text-2xl font-bold text-white sm:text-3xl">Quét mã hoặc nhập mã</h1>
         <p className="mt-2 text-sm text-slate-400">
           Thầy chiếu mã QR lên bảng, em quét là vào đúng đề đó. Không quét được thì gõ số đề ở ô dưới.
         </p>
@@ -102,6 +103,17 @@ export default function ScanExamPage() {
             </button>
           </div>
         </form>
+
+        <Link
+          href="/choi"
+          className="mt-4 flex min-h-12 items-center gap-3 rounded-2xl border border-white/10 bg-panel p-4 text-sm font-semibold text-slate-300 hover:border-white/30"
+        >
+          <Gamepad2 size={18} />
+          <span>
+            Vào hoạt động lớp học
+            <span className="block text-xs font-normal text-slate-500">Nhập mã PIN thầy/cô chiếu trên bảng để chơi cùng cả lớp.</span>
+          </span>
+        </Link>
 
         {error && (
           <p role="alert" className="mt-4 text-center text-sm text-amber-300">

@@ -22,7 +22,6 @@ const links: NavLink[] = [
   { label: "Đề thi các năm", href: "/de-thi" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
-  { label: "Chơi", href: "/choi" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
 ];
 
@@ -268,7 +267,7 @@ export default function Navbar() {
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
-                      <Gamepad2 size={16} /> Đố vui lớp học
+                      <Gamepad2 size={16} /> Hoạt động lớp học
                     </Link>
                   )}
                   {profile?.role === "admin" && (

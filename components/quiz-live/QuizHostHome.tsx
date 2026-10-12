@@ -62,7 +62,7 @@ export default function QuizHostHome() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="font-display text-2xl font-bold text-ink">Đố vui lớp học</h1>
+          <h1 className="font-display text-2xl font-bold text-ink">Hoạt động lớp học</h1>
           <p className="mt-1 text-sm text-muted">Chiếu câu hỏi lên màn hình, học sinh vào bằng mã PIN trên điện thoại.</p>
         </div>
         <button onClick={() => setView({ kind: "edit", set: null })} className="min-h-11 rounded-xl bg-primary px-5 font-bold text-white">+ Bộ câu mới</button>

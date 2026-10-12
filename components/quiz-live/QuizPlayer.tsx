@@ -54,7 +54,7 @@ function JoinForm({ initialPin, onJoined }: { initialPin: string; onJoined: (s: 
 
   return (
     <form onSubmit={submit} className="mx-auto flex w-full max-w-sm flex-col gap-4">
-      <h1 className="text-center font-display text-3xl font-extrabold text-ink">Đố vui lớp học</h1>
+      <h1 className="text-center font-display text-3xl font-extrabold text-ink">Hoạt động lớp học</h1>
       <label className="block">
         <span className="mb-1 block text-center text-sm text-ink">Mã PIN trên màn hình lớp</span>
         <input

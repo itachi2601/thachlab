@@ -9,7 +9,7 @@ function Inner() {
   return <QuizPlayer initialPin={pin} />;
 }
 
-// Trang cho học sinh vào chơi "Đố vui lớp học" bằng mã PIN — không đăng nhập, không Navbar để màn hình điện thoại gọn.
+// Trang cho học sinh vào chơi "Hoạt động lớp học" bằng mã PIN — không đăng nhập, không Navbar để màn hình điện thoại gọn.
 export default function ChoiPage() {
   return (
     <main className="min-h-screen px-4 pt-8 pb-28">

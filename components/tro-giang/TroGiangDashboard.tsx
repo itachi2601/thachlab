@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv, ClipboardCheck } from "lucide-react";
+import { Gamepad2, Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv, ClipboardCheck } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import TaSessionQuickEdit from "@/components/tro-giang/TaSessionQuickEdit";
@@ -168,6 +168,14 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
       >
         <Megaphone size={16} />
         Thông báo lớp
+      </Link>
+
+      <Link
+        href="/tro-giang/do-vui"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
+      >
+        <Gamepad2 size={16} />
+        Hoạt động lớp học
       </Link>
 
       <Link
