@@ -24,3 +24,5 @@ Commit `e37d29cc7` (main, đã push), kho thí nghiệm 266 → 283. Sao lưu DB
 - Video (bước 4c) chưa làm cho cả 6 bài; ứng viên chương 2 ở `content/thi-nghiem/video-de-xuat-l11-chuong2.md`.
 - Thầy đối chiếu SGK: B9 cách nói "sóng mặt nước là sóng ngang" + năng lượng ∝ f²; B11 mốc tử ngoại 380 nm / tia X 10 pm–10 nm; B10 cách ghi Δf = Δf̄ + Δf_dc và số chữ số có nghĩa; B15 phần đặc trưng âm (mức nhận biết) và độ to chỉ gắn với L; B7 ký hiệu W_đ/W_t (bài 5 dùng E_đ/E_t).
 - Lớp 11 KHÔNG còn bài lý thuyết tương tác nào thiếu (26 bài). Lớp 10, 12 cũng đủ.
+
+**Cập nhật 12/10/2026:** video đã chèn + ĐĂNG (`--chi-video`) cho B9/B10/B11/B15 (id 28/29/30/34): 9 clip, bảng duyệt `content/thi-nghiem/video-de-xuat-l11-chuong2-con-lai.md`, commit `4003e5229`. Còn không có clip: `tn-l11-dotansoam-02/03`, `tn-l11-dotocdoam-03`, `tn-l11-songngangdoc-03` (dùng clip quay chậm, không phải bấm giờ), và clip mở bài của 4 bài. Tìm clip bằng `scripts/tim-clip-youtube.py`.
