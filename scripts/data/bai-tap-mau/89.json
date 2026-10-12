@@ -1,0 +1,409 @@
+{
+ "lesson_id": 89,
+ "lesson_title": "Bài 11. Điện trở. Định luật Ohm",
+ "generated_at": "2026-10-11",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo Sonnet 11/10/2026: tự giải đúng 4 dạng, 15 mục nên-sửa đã sửa; D4 đổi số liệu (nichrome, 44 Ω, 11 Ω, 1,0 A) tự tính lại: 11/0,25=44; ρ=44·0,5e-6/20=1,1e-6; R/4=11; I=11/11=1,0."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trở $R$ cho biết vật dẫn cản trở dòng điện nhiều hay ít.</li><li><strong>Định luật Ohm:</strong> $I$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $R$.</li><li>Công thức: $I=\\dfrac{U}{R}$ và $R=\\dfrac{U}{I}$.</li><li>Đơn vị: $U$ (V), $I$ (A), $R$ ($\\Omega$); $1\\ \\text{A}=1\\,000\\ \\text{mA}$.</li><li>⚠ <strong>Điều kiện:</strong> nhiệt độ không đổi thì $R$ của dây không đổi khi $U$ đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị</span></p><p>Đổi mA ra A:</p>$$I=240\\ \\text{mA}=\\dfrac{240}{1\\,000}\\ \\text{A}$$<div class=\"bt-ans\">$$I=0{,}24\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính điện trở</span></p><p>Công thức:</p>$$R=\\dfrac{U}{I}$$$$R=\\dfrac{6{,}0}{0{,}24}$$<div class=\"bt-ans\">$$R=25\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cường độ dòng điện mới</span></p><p>$R$ không đổi, $U'=9{,}0$ V:</p>$$I'=\\dfrac{U'}{R}$$$$I'=\\dfrac{9{,}0}{25}=0{,}36\\ \\text{A}$$<div class=\"bt-ans\">$$I'=360\\ \\text{mA}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>$U$ tăng $\\dfrac{9{,}0}{6{,}0}=1{,}5$ lần thì $I$ cũng tăng $1{,}5$ lần.</p>$$240\\cdot1{,}5=360\\ \\text{mA}$$<p>Khớp. Đơn vị: V : A = Ω ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=25\\ \\Omega$</p><p>b) $I'=360\\ \\text{mA}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số chỉ vôn kế, ampe kế</strong> → đổi mA ra A, $R=\\dfrac{U}{I}$; đổi $U$ thì giữ $R$, tính lại $I$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Tính điện trở và cường độ dòng điện bằng định luật Ohm",
+   "topic": "Định luật Ohm cho một điện trở",
+   "problem_html": "<p>Mắc một điện trở $R$ vào mạch như hình. Vôn kế chỉ $6{,}0\\ \\text{V}$, ampe kế chỉ $240\\ \\text{mA}$. Coi điện trở không đổi khi hiệu điện thế thay đổi.</p><ol type=\"a\"><li>Tính điện trở $R$.</li><li>Tăng hiệu điện thế giữa hai đầu $R$ lên $9{,}0\\ \\text{V}$. Khi đó ampe kế chỉ bao nhiêu miliampe?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Mạch điện: nguồn, khoá K, ampe kế chỉ 240 miliampe mắc nối tiếp với điện trở R, vôn kế chỉ 6 vôn mắc song song với R\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"140.0,240.0 40.0,240.0 40.0,180.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,140.0 40.0,70.0 125.0,70.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"165.0,70.0 250.0,70.0 250.0,125.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,185.0 250.0,240.0 154.0,240.0\"/><circle cx=\"40.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"40.0\" cy=\"180.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"40.0\" y1=\"180.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"52\" y=\"166.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">K</text><line x1=\"140.0\" y1=\"222.0\" x2=\"140.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"154.0\" y1=\"231.0\" x2=\"154.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"134\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"160\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><circle cx=\"145\" cy=\"70\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"145\" y=\"77\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"122\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"168\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"239\" y=\"125\" width=\"22\" height=\"60\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"232\" y=\"161.0\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan></text><circle cx=\"250.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"250.0\" cy=\"215.0\" r=\"3.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,100.0 360.0,100.0 360.0,137.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"360.0,177.0 360.0,215.0 250.0,215.0\"/><circle cx=\"360\" cy=\"157\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"360\" y=\"164\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"383\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"383\" y=\"183\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><path d=\"M105.4,246.0 L95.0,240.0 L105.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M34.0,115.4 L40.0,105.0 L46.0,115.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M194.6,64.0 L205.0,70.0 L194.6,76.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M256.0,196.6 L250.0,207.0 L244.0,196.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M215.4,246.0 L205.0,240.0 L215.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"145\" y=\"40\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">240 mA</text><text x=\"360\" y=\"241\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">6,0 V</text><text x=\"266\" y=\"150\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><circle cx=\"140.0\" cy=\"240.0\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"140.0;40.0;40.0;250.0;250.0;154.0;140.0;140.0\" keyTimes=\"0.000;0.132;0.355;0.632;0.855;0.982;1.000;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"240.0;240.0;70.0;70.0;240.0;240.0;240.0;240.0\" keyTimes=\"0.000;0.132;0.355;0.632;0.855;0.982;1.000;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40.0\" cy=\"213.3\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40.0;40.0;250.0;250.0;154.0;140.0;40.0;40.0\" keyTimes=\"0.000;0.189;0.465;0.689;0.815;0.833;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"213.3;70.0;70.0;240.0;240.0;240.0;240.0;213.3\" keyTimes=\"0.000;0.189;0.465;0.689;0.815;0.833;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40.0\" cy=\"86.7\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40.0;40.0;250.0;250.0;154.0;140.0;40.0;40.0\" keyTimes=\"0.000;0.022;0.298;0.522;0.648;0.667;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"86.7;70.0;70.0;240.0;240.0;240.0;240.0;86.7\" keyTimes=\"0.000;0.022;0.298;0.522;0.648;0.667;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150.0\" cy=\"70.0\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"150.0;250.0;250.0;154.0;140.0;40.0;40.0;150.0\" keyTimes=\"0.000;0.132;0.355;0.482;0.500;0.632;0.855;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"70.0;70.0;240.0;240.0;240.0;240.0;70.0;70.0\" keyTimes=\"0.000;0.132;0.355;0.482;0.500;0.632;0.855;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"250.0\" cy=\"96.7\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"250.0;250.0;154.0;140.0;40.0;40.0;250.0;250.0\" keyTimes=\"0.000;0.189;0.315;0.333;0.465;0.689;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"96.7;240.0;240.0;240.0;240.0;70.0;70.0;96.7\" keyTimes=\"0.000;0.189;0.315;0.333;0.465;0.689;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"250.0\" cy=\"223.3\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"250.0;250.0;154.0;140.0;40.0;40.0;250.0;250.0\" keyTimes=\"0.000;0.022;0.148;0.167;0.298;0.522;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"223.3;240.0;240.0;240.0;240.0;70.0;70.0;223.3\" keyTimes=\"0.000;0.022;0.148;0.167;0.298;0.522;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng).<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua ampe kế, qua điện trở, về cực (−).<br>Tốc độ chấm chỉ để minh hoạ, không tỉ lệ với cường độ dòng điện.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Sơ đồ mạch với dữ kiện: số chỉ ampe kế tính bằng miliampe, số chỉ vôn kế tính bằng vôn, điện trở R cần tìm\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"140.0,240.0 40.0,240.0 40.0,180.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,140.0 40.0,70.0 125.0,70.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"165.0,70.0 250.0,70.0 250.0,125.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,185.0 250.0,240.0 154.0,240.0\"/><circle cx=\"40.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"40.0\" cy=\"180.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"40.0\" y1=\"180.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"52\" y=\"166.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">K</text><line x1=\"140.0\" y1=\"222.0\" x2=\"140.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"154.0\" y1=\"231.0\" x2=\"154.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"134\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"160\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><circle cx=\"145\" cy=\"70\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"145\" y=\"77\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"122\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"168\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"239\" y=\"125\" width=\"22\" height=\"60\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"232\" y=\"161.0\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan></text><circle cx=\"250.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"250.0\" cy=\"215.0\" r=\"3.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,100.0 360.0,100.0 360.0,137.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"360.0,177.0 360.0,215.0 250.0,215.0\"/><circle cx=\"360\" cy=\"157\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"360\" y=\"164\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"383\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"383\" y=\"183\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><path d=\"M105.4,246.0 L95.0,240.0 L105.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M34.0,115.4 L40.0,105.0 L46.0,115.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M194.6,64.0 L205.0,70.0 L194.6,76.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M256.0,196.6 L250.0,207.0 L244.0,196.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M215.4,246.0 L205.0,240.0 L215.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"145\" y=\"40\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">I = 240 mA</text><text x=\"360\" y=\"241\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">U = 6,0 V</text><text x=\"266\" y=\"150\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><text x=\"16\" y=\"22\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Đổi mA ra A trước khi chia</text></svg><figcaption>Dữ kiện: ampe kế đo I của R, vôn kế đo U giữa hai đầu R.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;vôn kế chỉ $6{,}0$ V&quot;</td><td>$U=6{,}0\\ \\text{V}$</td><td>Vôn kế mắc song song với $R$: đo $U$ giữa hai đầu $R$</td></tr><tr><td>&quot;ampe kế chỉ $240$ mA&quot;</td><td>$I=240\\ \\text{mA}$</td><td>⚠ Công thức dùng $U$ (V), $I$ (A), $R$ ($\\Omega$): đổi mA ra A trước</td></tr><tr><td>&quot;tính điện trở $R$&quot;</td><td>Cần $R$</td><td>$R=\\dfrac{U}{I}$</td></tr><tr><td>&quot;coi điện trở không đổi&quot;</td><td>$R$ giữ nguyên</td><td>⚠ Điều kiện: $R$ do dây quyết định, không đổi theo $U$</td></tr><tr><td>&quot;Tăng hiệu điện thế giữa hai đầu $R$ lên $9{,}0\\ \\text{V}$. Khi đó ampe kế chỉ bao nhiêu miliampe?&quot;</td><td>$U'=9{,}0\\ \\text{V}$; cần $I'$</td><td>Định luật Ohm: $I'=\\dfrac{U'}{R}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vôn kế chỉ … V, ampe kế chỉ … mA</b> → đổi mA ra A, rồi $R=\\dfrac{U}{I}$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị",
+     "hoi": "Cường độ dòng điện $I$ bằng bao nhiêu ampe?",
+     "dap_so": 0.24,
+     "sai_so": 0.005,
+     "don_vi": "A",
+     "loi_hay_gap": "Hay chia cho $100$ hoặc nhân với $1\\,000$. Vì $1\\ \\text{A}=1\\,000\\ \\text{mA}$ nên đổi mA ra A là chia cho $1\\,000$."
+    },
+    {
+     "tieu_de": "Tính điện trở",
+     "hoi": "Điện trở $R$ bằng bao nhiêu?",
+     "dap_so": 25,
+     "sai_so": 0.3,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Để nguyên số mA khi chia sẽ ra $R$ rất nhỏ, vô lí. Nhân $U\\cdot I$ cũng sai: $R$ là thương $\\dfrac{U}{I}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R=\\dfrac{U}{I}$ với $I$ đã đổi ra A",
+       "dung": true
+      },
+      {
+       "text": "$R=U\\cdot I$",
+       "dung": false,
+       "vi_sao": "Điện trở là thương của $U$ và $I$, không phải tích."
+      },
+      {
+       "text": "$R=\\dfrac{U}{I}$ với $I$ để nguyên mA",
+       "dung": false,
+       "vi_sao": "Công thức dùng $I$ (A); để mA thì $R$ nhỏ đi $1\\,000$ lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cường độ dòng điện mới",
+     "hoi": "Khi $U=9{,}0$ V, ampe kế chỉ bao nhiêu miliampe?",
+     "dap_so": 360,
+     "sai_so": 3,
+     "don_vi": "mA",
+     "loi_hay_gap": "Hay giữ nguyên số chỉ ampe kế vì nghĩ $R$ tăng theo $U$. Thật ra $R$ không đổi, $I$ tăng theo $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ $R$, tính $I'=\\dfrac{U'}{R}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $R$ mới bằng $\\dfrac{U'}{I}$, coi $I$ không đổi",
+       "dung": false,
+       "vi_sao": "$R$ do dây quyết định, không đổi khi $U$ đổi; chính $I$ đổi theo $U$."
+      },
+      {
+       "text": "$I'=I\\cdot\\dfrac{U}{U'}$",
+       "dung": false,
+       "vi_sao": "Tỉ số bị lật: $U$ tăng mà $I$ lại giảm, trái với định luật Ohm ($I$ tỉ lệ thuận với $U$)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định luật Ohm:</strong> $I$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $R$.</li><li>Công thức: $I=\\dfrac{U}{R}$ và $R=\\dfrac{U}{I}$.</li><li>Đơn vị: $U$ (V), $I$ (A), $R$ ($\\Omega$); $1\\ \\text{A}=1\\,000\\ \\text{mA}$.</li><li>⚠ <strong>Điều kiện:</strong> nhiệt độ không đổi thì $R$ của dây không đổi khi $U$ đổi.</li><li>Đồ thị $I$ theo $U$ của một điện trở: đường thẳng qua gốc $O$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở $R_1$</span></p><p>Trên đường 1, điểm ở giao lưới: $U=6$ V, $I=0{,}4$ A.</p>$$R_1=\\dfrac{U}{I}=\\dfrac{6}{0{,}4}$$<div class=\"bt-ans\">$$R_1=15\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở $R_2$</span></p><p>Trên đường 2, điểm ở giao lưới: $U=8$ V, $I=0{,}2$ A.</p>$$R_2=\\dfrac{U}{I}=\\dfrac{8}{0{,}2}$$<div class=\"bt-ans\">$$R_2=40\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh</span></p>$$R_2=40\\ \\Omega\\gt R_1=15\\ \\Omega$$<div class=\"bt-ans\"><p>$R_2$ cản trở dòng điện nhiều hơn.</p></div><p>Đường 2 thoải hơn: cùng $U$, dòng qua $R_2$ nhỏ hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế cần đặt vào $R_2$</span></p><p>Từ $I=\\dfrac{U}{R}$:</p>$$U=I\\cdot R_2$$$$U=0{,}5\\cdot40$$<div class=\"bt-ans\">$$U=20\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Trên đồ thị, $U=12$ V cho $I=0{,}3$ A.</p><p>Muốn $0{,}5$ A thì cần $U$ lớn hơn $12$ V ✓</p>$$\\dfrac{20}{40}=0{,}5\\ \\text{A}\\ ✓$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_1=15\\ \\Omega$</p><p>$R_2=40\\ \\Omega$</p><p>b) $R_2$ cản trở dòng điện nhiều hơn</p><p>c) $U=20\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đồ thị $I$ theo $U$</strong> → chọn điểm ở giao lưới, $R=\\dfrac{U}{I}$; đường thoải hơn có $R$ lớn hơn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Đọc đồ thị I theo U của hai điện trở",
+   "topic": "Định luật Ohm cho một điện trở",
+   "problem_html": "<p>Hình dưới là đồ thị cường độ dòng điện $I$ theo hiệu điện thế $U$ của hai điện trở: $R_1$ (đường 1) và $R_2$ (đường 2). Coi $R_2$ không đổi khi $U$ tăng.</p><ol type=\"a\"><li>Từ đồ thị, tính $R_1$ và $R_2$.</li><li>Điện trở nào cản trở dòng điện nhiều hơn?</li><li>Phải đặt vào hai đầu $R_2$ hiệu điện thế bao nhiêu để dòng điện qua nó là $0{,}5\\ \\text{A}$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 304\" role=\"img\" aria-label=\"Đồ thị cường độ dòng điện theo hiệu điện thế của hai điện trở: đường 1 màu đỏ dốc hơn đường 2 màu xanh, cả hai đi qua gốc toạ độ\"><line x1=\"64.0\" y1=\"252.0\" x2=\"398.0\" y2=\"252.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M388.5,246.5 L398.0,252.0 L388.5,257.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"252.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M58.5,39.5 L64.0,30.0 L69.5,39.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"296\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">U</tspan> (V)</text><text x=\"74\" y=\"38\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">I</tspan> (A)</text><text x=\"56\" y=\"272\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"114.0\" y1=\"252.0\" x2=\"114.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"114.0\" y1=\"252.0\" x2=\"114.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"114.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"164.0\" y1=\"252.0\" x2=\"164.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"164.0\" y1=\"252.0\" x2=\"164.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"164.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"214.0\" y1=\"252.0\" x2=\"214.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"214.0\" y1=\"252.0\" x2=\"214.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"214.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"264.0\" y1=\"252.0\" x2=\"264.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"264.0\" y1=\"252.0\" x2=\"264.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"264.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">8</text><line x1=\"314.0\" y1=\"252.0\" x2=\"314.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"314.0\" y1=\"252.0\" x2=\"314.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"314.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"364.0\" y1=\"252.0\" x2=\"364.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"364.0\" y1=\"252.0\" x2=\"364.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"364.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">12</text><line x1=\"58.0\" y1=\"227.0\" x2=\"64.0\" y2=\"227.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"227.0\" x2=\"389.0\" y2=\"227.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"233.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,1</text><line x1=\"58.0\" y1=\"202.0\" x2=\"64.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"202.0\" x2=\"389.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"208.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,2</text><line x1=\"58.0\" y1=\"177.0\" x2=\"64.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"177.0\" x2=\"389.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"183.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,3</text><line x1=\"58.0\" y1=\"152.0\" x2=\"64.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"152.0\" x2=\"389.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"158.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,4</text><line x1=\"58.0\" y1=\"127.0\" x2=\"64.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"127.0\" x2=\"389.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"133.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,5</text><line x1=\"58.0\" y1=\"102.0\" x2=\"64.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"102.0\" x2=\"389.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"108.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,6</text><line x1=\"58.0\" y1=\"77.0\" x2=\"64.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"77.0\" x2=\"389.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"83.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,7</text><line x1=\"58.0\" y1=\"52.0\" x2=\"64.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"52.0\" x2=\"389.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"58.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,8</text><line x1=\"64.0\" y1=\"252.0\" x2=\"364.0\" y2=\"52.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\"/><line x1=\"64.0\" y1=\"252.0\" x2=\"364.0\" y2=\"177.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"277.0\" y=\"98.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">(1)</text><text x=\"362.0\" y=\"165.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">(2)</text><circle cx=\"64.0\" cy=\"252.0\" r=\"5.5\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"64.0;71.5;79.0;86.5;94.0;101.5;109.0;116.5;124.0;131.5;139.0;146.5;154.0;161.5;169.0;176.5;184.0;191.5;199.0;206.5;214.0;221.5;229.0;236.5;244.0;251.5;259.0;266.5;274.0;281.5;289.0;296.5;304.0;311.5;319.0;326.5;334.0;341.5;349.0;356.5;364.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"252.0;247.0;242.0;237.0;232.0;227.0;222.0;217.0;212.0;207.0;202.0;197.0;192.0;187.0;182.0;177.0;172.0;167.0;162.0;157.0;152.0;147.0;142.0;137.0;132.0;127.0;122.0;117.0;112.0;107.0;102.0;97.0;92.0;87.0;82.0;77.0;72.0;67.0;62.0;57.0;52.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"64.0\" cy=\"252.0\" r=\"5.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"64.0;71.5;79.0;86.5;94.0;101.5;109.0;116.5;124.0;131.5;139.0;146.5;154.0;161.5;169.0;176.5;184.0;191.5;199.0;206.5;214.0;221.5;229.0;236.5;244.0;251.5;259.0;266.5;274.0;281.5;289.0;296.5;304.0;311.5;319.0;326.5;334.0;341.5;349.0;356.5;364.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"252.0;250.1;248.2;246.4;244.5;242.6;240.8;238.9;237.0;235.1;233.2;231.4;229.5;227.6;225.8;223.9;222.0;220.1;218.2;216.4;214.5;212.6;210.8;208.9;207.0;205.1;203.2;201.4;199.5;197.6;195.8;193.9;192.0;190.1;188.2;186.4;184.5;182.6;180.8;178.9;177.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: tăng dần U từ 0 đến 12 V, mỗi chấm chạy trên đồ thị của một điện trở (bấm Chạy mô phỏng).<br>Đường (1) màu đỏ, đường (2) màu xanh.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 304\" role=\"img\" aria-label=\"Gióng mẫu trên đường 1: điểm nằm đúng giao của vạch lưới, gióng xuống trục U và sang trục I; đường 2 để học sinh tự chọn điểm\"><line x1=\"64.0\" y1=\"252.0\" x2=\"398.0\" y2=\"252.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M388.5,246.5 L398.0,252.0 L388.5,257.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"64.0\" y1=\"252.0\" x2=\"64.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M58.5,39.5 L64.0,30.0 L69.5,39.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"296\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">U</tspan> (V)</text><text x=\"74\" y=\"38\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">I</tspan> (A)</text><text x=\"56\" y=\"272\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">O</text><line x1=\"114.0\" y1=\"252.0\" x2=\"114.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"114.0\" y1=\"252.0\" x2=\"114.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"114.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"164.0\" y1=\"252.0\" x2=\"164.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"164.0\" y1=\"252.0\" x2=\"164.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"164.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"214.0\" y1=\"252.0\" x2=\"214.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"214.0\" y1=\"252.0\" x2=\"214.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"214.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">6</text><line x1=\"264.0\" y1=\"252.0\" x2=\"264.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"264.0\" y1=\"252.0\" x2=\"264.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"264.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">8</text><line x1=\"314.0\" y1=\"252.0\" x2=\"314.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"314.0\" y1=\"252.0\" x2=\"314.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"314.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"364.0\" y1=\"252.0\" x2=\"364.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"364.0\" y1=\"252.0\" x2=\"364.0\" y2=\"39.5\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"364.0\" y=\"276\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"middle\">12</text><line x1=\"58.0\" y1=\"227.0\" x2=\"64.0\" y2=\"227.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"227.0\" x2=\"389.0\" y2=\"227.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"233.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,1</text><line x1=\"58.0\" y1=\"202.0\" x2=\"64.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"202.0\" x2=\"389.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"208.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,2</text><line x1=\"58.0\" y1=\"177.0\" x2=\"64.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"177.0\" x2=\"389.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"183.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,3</text><line x1=\"58.0\" y1=\"152.0\" x2=\"64.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"152.0\" x2=\"389.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"158.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,4</text><line x1=\"58.0\" y1=\"127.0\" x2=\"64.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"127.0\" x2=\"389.0\" y2=\"127.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"133.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,5</text><line x1=\"58.0\" y1=\"102.0\" x2=\"64.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"102.0\" x2=\"389.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"108.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,6</text><line x1=\"58.0\" y1=\"77.0\" x2=\"64.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"77.0\" x2=\"389.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"83.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,7</text><line x1=\"58.0\" y1=\"52.0\" x2=\"64.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"64.0\" y1=\"52.0\" x2=\"389.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.3\"/><text x=\"54\" y=\"58.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"600\" text-anchor=\"end\">0,8</text><line x1=\"64.0\" y1=\"252.0\" x2=\"364.0\" y2=\"52.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\"/><line x1=\"64.0\" y1=\"252.0\" x2=\"364.0\" y2=\"177.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"277.0\" y=\"98.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">(1)</text><text x=\"362.0\" y=\"165.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">(2)</text><line x1=\"214.0\" y1=\"152.0\" x2=\"214.0\" y2=\"252.0\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"214.0\" y1=\"152.0\" x2=\"64.0\" y2=\"152.0\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"214.0\" cy=\"152.0\" r=\"6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\"/></svg><figcaption>Dữ kiện: gióng mẫu cho đường 1.<br>Đường 2: tự chọn một điểm nằm đúng giao lưới.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;đồ thị $I$ theo $U$&quot;</td><td>Trục đứng $I$ (A), trục ngang $U$ (V)</td><td>⚠ Đọc đúng trục trước khi chia: $R=\\dfrac{U}{I}$, không phải $\\dfrac{I}{U}$</td></tr><tr><td>&quot;đường 1&quot;, &quot;đường 2&quot;</td><td>Hai đường thẳng qua gốc $O$</td><td>Mỗi đường là một điện trở theo định luật Ohm</td></tr><tr><td>&quot;tính $R_1$ và $R_2$&quot;</td><td>Cần $R_1$, $R_2$</td><td>Chọn một điểm nằm đúng giao lưới trên mỗi đường; $R=\\dfrac{U}{I}$</td></tr><tr><td>&quot;cản trở dòng điện nhiều hơn&quot;</td><td>So sánh $R_1$, $R_2$</td><td>Điện trở cho biết mức cản trở dòng điện</td></tr><tr><td>&quot;Phải đặt vào hai đầu $R_2$ hiệu điện thế bao nhiêu để dòng điện qua nó là $0{,}5\\ \\text{A}$?&quot;</td><td>$I=0{,}5\\ \\text{A}$; cần $U$</td><td>Tìm $U$ này trên đồ thị được không? Nếu không, dùng công thức nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đồ thị $I$ theo $U$</b> → chọn điểm ở giao lưới, $R=\\dfrac{U}{I}$; đường <b>thoải</b> hơn thì $R$ lớn hơn.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở $R_1$",
+     "hoi": "Điện trở $R_1$ bằng bao nhiêu?",
+     "dap_so": 15,
+     "sai_so": 0.3,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $\\dfrac{I}{U}$ (độ dốc) thay vì $\\dfrac{U}{I}$ sẽ ra một số rất nhỏ. Đọc đúng trục: trục đứng là $I$."
+    },
+    {
+     "tieu_de": "Điện trở $R_2$",
+     "hoi": "Điện trở $R_2$ bằng bao nhiêu?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Chọn điểm không nằm trên giao lưới rồi đọc ước chừng, hoặc đọc nhầm sang đường 1.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn một điểm ở giao lưới trên đường 2, $R_2=\\dfrac{U}{I}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy độ dốc $\\dfrac{I}{U}$ của đường 2 làm $R_2$",
+       "dung": false,
+       "vi_sao": "Trục đứng là $I$ nên $\\dfrac{I}{U}$ là $\\dfrac{1}{R}$, không phải $R$."
+      },
+      {
+       "text": "Đường 2 thoải hơn nên $R_2$ nhỏ hơn $R_1$, chỉ cần ước lượng",
+       "dung": false,
+       "vi_sao": "Ngược chiều: cùng $U$, đường thoải cho $I$ nhỏ hơn, tức cản nhiều hơn; và đề hỏi giá trị nên phải tính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh",
+     "hoi": "Điện trở nào cản trở dòng điện nhiều hơn?",
+     "lua_chon": [
+      {
+       "text": "$R_2$",
+       "dung": true
+      },
+      {
+       "text": "$R_1$, vì đường 1 dốc hơn",
+       "dung": false,
+       "vi_sao": "Cùng $U$, đường 1 cho $I$ lớn hơn, tức $R_1$ cản ít hơn."
+      },
+      {
+       "text": "Bằng nhau, vì cùng đi qua gốc $O$",
+       "dung": false,
+       "vi_sao": "Đi qua gốc chỉ cho biết cả hai tuân theo định luật Ohm, không cho biết $R$ bằng nhau."
+      }
+     ],
+     "loi_hay_gap": "Hay nghĩ đường dốc hơn có điện trở lớn hơn. Ở đồ thị $I$ theo $U$, dốc hơn là dòng lớn hơn ở cùng $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai giá trị $R$ vừa tính",
+       "dung": true
+      },
+      {
+       "text": "Đọc $U$ lớn nhất của mỗi đường rồi so",
+       "dung": false,
+       "vi_sao": "Hai đường cùng dừng ở $12$ V nên $U$ lớn nhất bằng nhau, không so được gì."
+      },
+      {
+       "text": "So độ dốc: dốc hơn thì cản nhiều hơn",
+       "dung": false,
+       "vi_sao": "Trục đứng là $I$: dốc hơn là dòng lớn hơn, tức cản ít hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế cần đặt vào $R_2$",
+     "hoi": "Cần đặt vào $R_2$ hiệu điện thế bao nhiêu vôn?",
+     "dap_so": 20,
+     "sai_so": 0.3,
+     "don_vi": "V",
+     "loi_hay_gap": "Hay tìm trên đồ thị và không thấy vì $0{,}5$ A nằm ngoài khung; phải tính bằng định luật Ohm. Chia $\\dfrac{I}{R}$ hoặc $\\dfrac{R}{I}$ cũng sai.",
+     "chon_buoc_ke": [
+      {
+       "text": "$U=I\\cdot R_2$ (từ $I=\\dfrac{U}{R}$)",
+       "dung": true
+      },
+      {
+       "text": "$U=\\dfrac{I}{R_2}$",
+       "dung": false,
+       "vi_sao": "Từ $I=\\dfrac{U}{R}$ suy ra $U=I\\cdot R$, không phải chia."
+      },
+      {
+       "text": "$U=\\dfrac{R_2}{I}$",
+       "dung": false,
+       "vi_sao": "Sai đơn vị: $\\Omega$ chia A không ra V. Đúng là $U=I\\cdot R$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Công thức: $R=\\rho\\dfrac{l}{S}$.</li><li>Cùng vật liệu: $R$ tỉ lệ thuận với $l$, tỉ lệ nghịch với $S$.</li><li>Đơn vị: $\\rho$ ($\\Omega\\cdot\\text{m}$), $l$ (m), $S$ (m²); $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$.</li><li>⚠ <strong>Điều kiện:</strong> so hai dây chỉ bằng $l$ và $S$ khi cùng vật liệu, cùng nhiệt độ.</li><li>Định luật Ohm: $I=\\dfrac{U}{R}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chỉ đổi chiều dài</span></p><p>Giữ $S=0{,}4\\ \\text{mm}^2$, chiều dài tăng:</p>$$\\dfrac{l_2}{l_1}=\\dfrac{6}{2}=3$$<p>Dây dài $6$ m, tiết diện $0{,}4\\ \\text{mm}^2$:</p>$$R'=3R_1=3\\cdot2{,}5$$<div class=\"bt-ans\">$$R'=7{,}5\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đổi tiết diện</span></p><p>Tiết diện tăng:</p>$$\\dfrac{S_2}{S_1}=\\dfrac{0{,}5}{0{,}4}=1{,}25$$<p>Tiết diện lớn hơn thì $R$ nhỏ hơn bấy nhiêu lần:</p>$$R_2=\\dfrac{R'}{1{,}25}=\\dfrac{7{,}5}{1{,}25}$$<div class=\"bt-ans\">$$R_2=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cường độ dòng điện</span></p>$$I=\\dfrac{U}{R_2}=\\dfrac{4{,}5}{6}$$<div class=\"bt-ans\">$$I=0{,}75\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cách kiểm khác, $\\rho$ constantan tra ở bài: $0{,}5\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$.</p><p>Tính thẳng điện trở dây 2:</p>$$R_2=0{,}5\\cdot10^{-6}\\cdot\\dfrac{6}{0{,}5\\cdot10^{-6}}=6\\ \\Omega\\ ✓$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_2=6\\ \\Omega$</p><p>b) $I=0{,}75\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>cùng vật liệu</strong>, đề cho một dây đã biết $R$ → so $l$ (nhân) và $S$ (chia), không cần $\\rho$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Điện trở thay đổi theo chiều dài và tiết diện",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "problem_html": "<p>Hai dây dẫn cùng làm bằng constantan.</p><p>Dây 1 dài $2\\ \\text{m}$, tiết diện $0{,}4\\ \\text{mm}^2$, điện trở $2{,}5\\ \\Omega$.</p><p>Dây 2 dài $6\\ \\text{m}$, tiết diện $0{,}5\\ \\text{mm}^2$.</p><ol type=\"a\"><li>Không dùng điện trở suất, tính điện trở của dây 2.</li><li>Mắc dây 2 vào hiệu điện thế $4{,}5\\ \\text{V}$. Tính cường độ dòng điện qua dây.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hai dây constantan: dây 1 ngắn, mảnh hơn; dây 2 dài hơn và to hơn một chút\"><rect x=\"40\" y=\"66.0\" width=\"100.0\" height=\"8.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"167.0\" width=\"300.0\" height=\"10.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"40\" y=\"52\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Dây 1</text><text x=\"40\" y=\"154\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Dây 2</text><text x=\"175\" y=\"48\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 2 m</tspan></text><text x=\"175\" y=\"74\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 0,4 mm²</tspan></text><text x=\"175\" y=\"100\" fill=\"#fb923c\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 2,5 Ω</tspan></text><text x=\"40\" y=\"204\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = 6 m</tspan></text><text x=\"145\" y=\"204\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = 0,5 mm²</tspan></text><text x=\"302\" y=\"204\" fill=\"#fb923c\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"40\" y=\"238\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Cùng làm bằng constantan</text><rect x=\"40\" y=\"66.0\" width=\"100.0\" height=\"8.0\" rx=\"2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-dasharray=\"5 3\"><animate attributeName=\"y\" values=\"66.0;168.0;168.0;167.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"width\" values=\"100.0;100.0;300.0;300.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"8.0;8.0;8.0;10.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></rect></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): bóng nét đứt của dây 1 trượt xuống, kéo dài, rồi to ra thành dây 2.<br>Chiều dài vẽ đúng tỉ lệ.<br>Bề dày nét chỉ minh hoạ tiết diện, không đo trên hình.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 298\" role=\"img\" aria-label=\"Hai dây cùng vật liệu, so chiều dài và tiết diện của dây 2 với dây 1\"><rect x=\"40\" y=\"66.0\" width=\"100.0\" height=\"8.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"167.0\" width=\"300.0\" height=\"10.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"40\" y=\"52\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Dây 1</text><text x=\"40\" y=\"154\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Dây 2</text><text x=\"175\" y=\"48\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 2 m</tspan></text><text x=\"175\" y=\"74\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 0,4 mm²</tspan></text><text x=\"175\" y=\"100\" fill=\"#fb923c\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"14\">1</tspan><tspan dy=\"-4\"> = 2,5 Ω</tspan></text><text x=\"40\" y=\"204\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = 6 m</tspan></text><text x=\"145\" y=\"204\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = 0,5 mm²</tspan></text><text x=\"302\" y=\"204\" fill=\"#fb923c\" font-size=\"18\" font-weight=\"700\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"14\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"40\" y=\"238\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Cùng làm bằng constantan</text><text x=\"40\" y=\"266\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan> đổi bao nhiêu lần?</text><text x=\"40\" y=\"288\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan> đổi bao nhiêu lần?</text></svg><figcaption>Dữ kiện: cùng vật liệu nên chỉ cần so chiều dài và tiết diện.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;cùng làm bằng constantan&quot;</td><td>Cùng $\\rho$</td><td>⚠ Điều kiện để chỉ so $l$ và $S$: cùng vật liệu</td></tr><tr><td>&quot;dây 1 dài $2$ m … $2{,}5\\ \\Omega$&quot;</td><td>$l_1=2\\ \\text{m}$; $S_1=0{,}4\\ \\text{mm}^2$; $R_1=2{,}5\\ \\Omega$</td><td>$R=\\rho\\dfrac{l}{S}$: $R$ tỉ lệ thuận với $l$, tỉ lệ nghịch với $S$</td></tr><tr><td>&quot;dây 2 dài $6$ m, tiết diện $0{,}5$ mm²&quot;</td><td>$l_2=6\\ \\text{m}$; $S_2=0{,}5\\ \\text{mm}^2$</td><td>Chiều dài đổi mấy lần? Tiết diện đổi mấy lần?</td></tr><tr><td>&quot;không dùng điện trở suất&quot;</td><td>Cần $R_2$</td><td>Lần lượt đổi $l$ rồi đổi $S$ từ $R_1$</td></tr><tr><td>&quot;Mắc dây 2 vào hiệu điện thế $4{,}5\\ \\text{V}$. Tính cường độ dòng điện qua dây.&quot;</td><td>$U=4{,}5\\ \\text{V}$; cần $I$</td><td>$I=\\dfrac{U}{R}$ với điện trở của dây 2</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cùng vật liệu</b> và <b>một dây đã biết điện trở</b> → so chiều dài (nhân), so tiết diện (chia).",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chỉ đổi chiều dài",
+     "hoi": "Một dây constantan dài $6$ m, tiết diện $0{,}4\\ \\text{mm}^2$ có điện trở bao nhiêu?",
+     "dap_so": 7.5,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Hay chia cho tỉ số chiều dài. Dây dài hơn thì cản nhiều hơn: $R$ tỉ lệ thuận với $l$."
+    },
+    {
+     "tieu_de": "Đổi tiết diện",
+     "hoi": "Điện trở của dây 2 bằng bao nhiêu?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Hay nhân thêm tỉ số tiết diện như với chiều dài. Tiết diện lớn hơn thì dòng điện có đường đi rộng hơn, $R$ nhỏ hơn: chia cho tỉ số tiết diện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia cho $\\dfrac{S_2}{S_1}$ vì $R$ tỉ lệ nghịch với $S$",
+       "dung": true
+      },
+      {
+       "text": "Nhân với $\\dfrac{S_2}{S_1}$ như với chiều dài",
+       "dung": false,
+       "vi_sao": "$R$ tỉ lệ nghịch với $S$: tiết diện lớn hơn thì $R$ nhỏ hơn, phải chia."
+      },
+      {
+       "text": "Bỏ qua tiết diện vì hai dây cùng vật liệu",
+       "dung": false,
+       "vi_sao": "Cùng vật liệu chỉ cho cùng $\\rho$; $R$ vẫn phụ thuộc $l$ và $S$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện qua dây 2 bằng bao nhiêu?",
+     "dap_so": 0.75,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Hay dùng nhầm điện trở của dây 1. Đề hỏi dây 2 nên dùng $R_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I=\\dfrac{U}{R_2}$",
+       "dung": true
+      },
+      {
+       "text": "$I=\\dfrac{U}{R_1}$",
+       "dung": false,
+       "vi_sao": "Dây mắc vào nguồn là dây 2, phải dùng $R_2$."
+      },
+      {
+       "text": "$I=U\\cdot R_2$",
+       "dung": false,
+       "vi_sao": "Định luật Ohm: $I=\\dfrac{U}{R}$; nhân sẽ sai cả đơn vị."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trở $R$ cho biết vật dẫn cản trở dòng điện nhiều hay ít.</li><li>Định luật Ohm: $I=\\dfrac{U}{R}$, suy ra $R=\\dfrac{U}{I}$.</li><li>Công thức: $R=\\rho\\dfrac{l}{S}$.</li><li>Đổi đơn vị: $1\\ \\text{A}=1\\,000\\ \\text{mA}$; $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$.</li><li>⚠ <strong>Điều kiện:</strong> cùng nhiệt độ thì $\\rho$ của vật liệu không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở cuộn dây</span></p>$$I=250\\ \\text{mA}=0{,}25\\ \\text{A}$$$$R=\\dfrac{U}{I}=\\dfrac{11}{0{,}25}$$<div class=\"bt-ans\">$$R=44\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở suất</span></p><p>Đổi tiết diện:</p>$$S=0{,}5\\ \\text{mm}^2=0{,}5\\cdot10^{-6}\\ \\text{m}^2$$<p>Rút $\\rho$ từ $R=\\rho\\dfrac{l}{S}$:</p>$$\\rho=\\dfrac{R\\cdot S}{l}=\\dfrac{44\\cdot0{,}5\\cdot10^{-6}}{20}$$<div class=\"bt-ans\">$$\\rho=1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vật liệu</span></p><p>So với bảng của đề:</p><div class=\"bt-ans\"><p>Trùng với nichrome: dây làm bằng <strong>nichrome</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Điện trở sau khi gập đôi</span></p><p>Dây hai sợi chập nhau dài một nửa: $R$ giảm 2 lần.</p><p>Hai sợi cùng dẫn điện, như một dây có tiết diện gấp đôi: $R$ giảm thêm 2 lần.</p>$$R'=\\dfrac{R}{4}=\\dfrac{44}{4}$$<div class=\"bt-ans\">$$R'=11\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Số chỉ ampe kế</span></p>$$I'=\\dfrac{U}{R'}=\\dfrac{11}{11}$$<div class=\"bt-ans\">$$I'=1{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$R$ giảm 4 lần thì $I$ tăng 4 lần:</p>$$0{,}25\\cdot4=1{,}0\\ \\text{A}\\ ✓$$<p>Dây ngắn hơn, hai sợi cùng dẫn thì cản ít hơn, dòng lớn hơn: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=44\\ \\Omega$</p><p>b) $\\rho=1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$</p><p>Dây làm bằng nichrome</p><p>c) $I'=1{,}0\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số đo U, I</strong> và <strong>kích thước dây</strong> → $R=\\dfrac{U}{I}$ rồi rút $\\rho$; <strong>gập đôi</strong> thì dài một nửa, hai sợi cùng dẫn: $R$ giảm 4 lần.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Tổng hợp: tìm vật liệu dây, rồi gập đôi dây",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "problem_html": "<p>Một cuộn dây dẫn dài $20\\ \\text{m}$, tiết diện $0{,}5\\ \\text{mm}^2$, mắc vào mạch như hình. Vôn kế chỉ $11\\ \\text{V}$, ampe kế chỉ $250\\ \\text{mA}$. Coi nhiệt độ dây không đổi.</p><p>Điện trở suất ở $20\\ ^\\circ\\text{C}$:</p><p>đồng: $1{,}7 \\cdot 10^{-8}\\ \\Omega\\cdot\\text{m}$</p><p>constantan: $0{,}5 \\cdot 10^{-6}\\ \\Omega\\cdot\\text{m}$</p><p>nichrome: $1{,}1 \\cdot 10^{-6}\\ \\Omega\\cdot\\text{m}$</p><ol type=\"a\"><li>Tính điện trở của cuộn dây.</li><li>Tính điện trở suất của dây. Dây làm bằng vật liệu nào?</li><li>Gập đôi dây thành dây hai sợi chập nhau (dài một nửa, hai sợi cùng dẫn điện). Mắc dây này vào hiệu điện thế $11\\ \\text{V}$ như trước. Ampe kế chỉ bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Mạch điện: nguồn, khoá K, ampe kế chỉ 250 miliampe mắc nối tiếp với cuộn dây, vôn kế chỉ 11 vôn mắc song song với cuộn dây\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"140.0,240.0 40.0,240.0 40.0,180.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,140.0 40.0,70.0 125.0,70.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"165.0,70.0 250.0,70.0 250.0,125.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,185.0 250.0,240.0 154.0,240.0\"/><circle cx=\"40.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"40.0\" cy=\"180.0\" r=\"4\" fill=\"currentColor\"/><line x1=\"40.0\" y1=\"180.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"52\" y=\"166.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">K</text><line x1=\"140.0\" y1=\"222.0\" x2=\"140.0\" y2=\"258.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"154.0\" y1=\"231.0\" x2=\"154.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"134\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"160\" y=\"218\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><circle cx=\"145\" cy=\"70\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"145\" y=\"77\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"122\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"168\" y=\"62\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><rect x=\"239\" y=\"125\" width=\"22\" height=\"60\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"232\" y=\"161.0\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan></text><circle cx=\"250.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"250.0\" cy=\"215.0\" r=\"3.5\" fill=\"currentColor\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"250.0,100.0 360.0,100.0 360.0,137.0\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"360.0,177.0 360.0,215.0 250.0,215.0\"/><circle cx=\"360\" cy=\"157\" r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"360\" y=\"164\" fill=\"currentColor\" font-size=\"19\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"383\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"383\" y=\"183\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">−</text><path d=\"M105.4,246.0 L95.0,240.0 L105.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M34.0,115.4 L40.0,105.0 L46.0,115.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M194.6,64.0 L205.0,70.0 L194.6,76.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M256.0,196.6 L250.0,207.0 L244.0,196.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M215.4,246.0 L205.0,240.0 L215.4,234.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"145\" y=\"40\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">250 mA</text><text x=\"360\" y=\"241\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">11 V</text><text x=\"266\" y=\"150\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><circle cx=\"140.0\" cy=\"240.0\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"140.0;40.0;40.0;250.0;250.0;154.0;140.0;140.0\" keyTimes=\"0.000;0.132;0.355;0.632;0.855;0.982;1.000;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"240.0;240.0;70.0;70.0;240.0;240.0;240.0;240.0\" keyTimes=\"0.000;0.132;0.355;0.632;0.855;0.982;1.000;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40.0\" cy=\"213.3\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40.0;40.0;250.0;250.0;154.0;140.0;40.0;40.0\" keyTimes=\"0.000;0.189;0.465;0.689;0.815;0.833;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"213.3;70.0;70.0;240.0;240.0;240.0;240.0;213.3\" keyTimes=\"0.000;0.189;0.465;0.689;0.815;0.833;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40.0\" cy=\"86.7\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40.0;40.0;250.0;250.0;154.0;140.0;40.0;40.0\" keyTimes=\"0.000;0.022;0.298;0.522;0.648;0.667;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"86.7;70.0;70.0;240.0;240.0;240.0;240.0;86.7\" keyTimes=\"0.000;0.022;0.298;0.522;0.648;0.667;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150.0\" cy=\"70.0\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"150.0;250.0;250.0;154.0;140.0;40.0;40.0;150.0\" keyTimes=\"0.000;0.132;0.355;0.482;0.500;0.632;0.855;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"70.0;70.0;240.0;240.0;240.0;240.0;70.0;70.0\" keyTimes=\"0.000;0.132;0.355;0.482;0.500;0.632;0.855;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"250.0\" cy=\"96.7\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"250.0;250.0;154.0;140.0;40.0;40.0;250.0;250.0\" keyTimes=\"0.000;0.189;0.315;0.333;0.465;0.689;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"96.7;240.0;240.0;240.0;240.0;70.0;70.0;96.7\" keyTimes=\"0.000;0.189;0.315;0.333;0.465;0.689;0.965;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"250.0\" cy=\"223.3\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"250.0;250.0;154.0;140.0;40.0;40.0;250.0;250.0\" keyTimes=\"0.000;0.022;0.148;0.167;0.298;0.522;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"223.3;240.0;240.0;240.0;240.0;70.0;70.0;223.3\" keyTimes=\"0.000;0.022;0.148;0.167;0.298;0.522;0.798;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng).<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua ampe kế, qua điện trở, về cực (−).<br>Tốc độ chấm chỉ để minh hoạ, không tỉ lệ với cường độ dòng điện.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Cuộn dây trước khi gập và sau khi gập đôi thành dây hai sợi chập nhau\"><text x=\"20\" y=\"28\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Trước khi gập:</text><rect x=\"20\" y=\"48.0\" width=\"300.0\" height=\"8.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"330\" y=\"57\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan> = 20 m</text><text x=\"20\" y=\"82\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">S</tspan> = 0,5 mm²</text><text x=\"20\" y=\"122\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Gập đôi: dây hai sợi chập nhau</text><rect x=\"20\" y=\"140.0\" width=\"150.0\" height=\"8.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"20\" y=\"149.0\" width=\"150.0\" height=\"8.0\" rx=\"2\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M170,140 A8.5,8.5 0 0 1 170,157\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"190\" y=\"152\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">l</tspan>′ = ?</text><text x=\"20\" y=\"184\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">hai sợi cùng dẫn điện</text></svg><figcaption>Dữ kiện: dây hai sợi dài một nửa, hai sợi cùng dẫn điện.<br>Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;Vôn kế chỉ $11\\ \\text{V}$, ampe kế chỉ $250\\ \\text{mA}$&quot;</td><td>$U=11\\ \\text{V}$; $I=250\\ \\text{mA}$</td><td>⚠ Đổi mA ra A; $R=\\dfrac{U}{I}$</td></tr><tr><td>&quot;dài $20\\ \\text{m}$, tiết diện $0{,}5\\ \\text{mm}^2$&quot;</td><td>$l=20\\ \\text{m}$; $S=0{,}5\\ \\text{mm}^2$</td><td>⚠ $R=\\rho\\dfrac{l}{S}$ dùng $S$ (m²): $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$</td></tr><tr><td>&quot;Tính điện trở suất của dây. Dây làm bằng vật liệu nào?&quot;</td><td>Cần $\\rho$</td><td>Rút $\\rho$ từ $R=\\rho\\dfrac{l}{S}$, rồi so với bảng của đề</td></tr><tr><td>&quot;coi nhiệt độ dây không đổi&quot;</td><td>$\\rho$ không đổi</td><td>⚠ Điều kiện: gập đôi vẫn là dây đó, cùng vật liệu</td></tr><tr><td>&quot;Gập đôi dây thành dây hai sợi chập nhau (dài một nửa, hai sợi cùng dẫn điện)&quot;</td><td>Dây mới dài $10\\ \\text{m}$, gồm hai sợi</td><td>Gập đôi làm đổi những đại lượng nào trong $R=\\rho\\dfrac{l}{S}$?</td></tr><tr><td>&quot;Mắc dây này vào hiệu điện thế $11\\ \\text{V}$ như trước. Ampe kế chỉ bao nhiêu?&quot;</td><td>$U=11\\ \\text{V}$; cần $I'$</td><td>$I'=\\dfrac{U}{R'}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số đo U, I</b> kèm <b>chiều dài, tiết diện</b> → rút $\\rho$; <b>gập đôi</b> → $R$ giảm 4 lần.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở cuộn dây",
+     "hoi": "Điện trở của cuộn dây bằng bao nhiêu?",
+     "dap_so": 44,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Quên đổi mA ra A nên chia cho $250$, ra $R$ nhỏ hơn $1\\ \\Omega$, vô lí với dây dài $20$ m."
+    },
+    {
+     "tieu_de": "Điện trở suất",
+     "hoi": "Điện trở suất $\\rho$ bằng bao nhiêu (đơn vị $10^{-6}\\ \\Omega\\cdot\\text{m}$)?",
+     "dap_so": 1.1,
+     "sai_so": 0.02,
+     "don_vi": "·10⁻⁶ Ω·m",
+     "loi_hay_gap": "Để nguyên $S$ theo $\\text{mm}^2$ thì $\\rho$ lớn gấp một triệu lần. Rút ngược $\\dfrac{R\\cdot l}{S}$ cũng sai. Đổi $S$ ra m² trước.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\rho=\\dfrac{R\\cdot S}{l}$ với $S$ đổi ra m²",
+       "dung": true
+      },
+      {
+       "text": "$\\rho=\\dfrac{R\\cdot l}{S}$",
+       "dung": false,
+       "vi_sao": "Rút sai: từ $R=\\rho\\dfrac{l}{S}$ nhân hai vế với $S$ rồi chia cho $l$."
+      },
+      {
+       "text": "$\\rho=\\dfrac{R\\cdot S}{l}$ với $S$ để nguyên mm²",
+       "dung": false,
+       "vi_sao": "$\\rho$ trong bảng tính theo $\\Omega\\cdot\\text{m}$ nên $S$ phải ở m²."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vật liệu",
+     "hoi": "Dây làm bằng vật liệu nào?",
+     "lua_chon": [
+      {
+       "text": "Nichrome",
+       "dung": true
+      },
+      {
+       "text": "Đồng",
+       "dung": false,
+       "vi_sao": "Thế $\\rho$ của đồng vào $R=\\rho\\dfrac{l}{S}$: dây chỉ cản khoảng $0{,}7\\ \\Omega$, nhỏ hơn nhiều so với $44\\ \\Omega$."
+      },
+      {
+       "text": "Constantan",
+       "dung": false,
+       "vi_sao": "Thế $\\rho$ của constantan vào $R=\\rho\\dfrac{l}{S}$: $R=20\\ \\Omega$, chưa bằng một nửa $44\\ \\Omega$."
+      }
+     ],
+     "loi_hay_gap": "Hay so nhầm bậc luỹ thừa: $10^{-6}$ khác $10^{-8}$ một trăm lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $\\rho$ vừa tính với bảng điện trở suất của đề",
+       "dung": true
+      },
+      {
+       "text": "Chọn vật liệu có $\\rho$ nhỏ nhất vì dây dẫn điện",
+       "dung": false,
+       "vi_sao": "Dây nào cũng dẫn điện; phải so đúng giá trị $\\rho$ vừa tính."
+      },
+      {
+       "text": "So $R$ vừa tính với bảng",
+       "dung": false,
+       "vi_sao": "Bảng cho $\\rho$ (đặc trưng vật liệu), không cho $R$; $R$ còn phụ thuộc $l$ và $S$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở sau khi gập đôi",
+     "hoi": "Điện trở của dây sau khi gập đôi bằng bao nhiêu?",
+     "dap_so": 11,
+     "sai_so": 0.2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Hay chỉ chia đôi vì dây dài một nửa, quên rằng hai sợi cùng dẫn điện làm $R$ giảm thêm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dài một nửa và hai sợi cùng dẫn điện: $R'=\\dfrac{R}{4}$",
+       "dung": true
+      },
+      {
+       "text": "$R'=\\dfrac{R}{2}$ vì dây dài một nửa",
+       "dung": false,
+       "vi_sao": "Hai sợi chập nhau cùng dẫn điện, như tiết diện gấp đôi, nên $R$ giảm thêm 2 lần."
+      },
+      {
+       "text": "$R'=R$ vì vẫn là dây đó",
+       "dung": false,
+       "vi_sao": "Vật liệu giữ nguyên nhưng chiều dài và cách dẫn điện đã đổi, nên $R$ đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chỉ ampe kế",
+     "hoi": "Sau khi gập đôi, ampe kế chỉ bao nhiêu ampe?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "A",
+     "loi_hay_gap": "Hay chia số chỉ cũ cho 4 vì $R$ giảm 4 lần. $I$ tỉ lệ nghịch với $R$: $R$ giảm thì $I$ tăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I'=\\dfrac{U}{R'}$",
+       "dung": true
+      },
+      {
+       "text": "$I'=\\dfrac{I}{4}$ vì $R$ giảm 4 lần",
+       "dung": false,
+       "vi_sao": "Lật ngược: $I$ tỉ lệ nghịch với $R$, $R$ giảm thì $I$ tăng."
+      },
+      {
+       "text": "$I'=2I$ vì hai sợi cùng dẫn",
+       "dung": false,
+       "vi_sao": "Chỉ tính hai sợi, bỏ quên dây cũng ngắn đi một nửa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

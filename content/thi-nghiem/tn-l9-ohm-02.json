@@ -1,0 +1,141 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 11. Điện trở. Định luật Ohm",
+ "lesson_id": 89,
+ "nguon_trong_bai": "content/lesson-samples/l9-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l9-ohm-02",
+ "ten": "Đo U và I của một dây constantan, vẽ đồ thị I theo U",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "ohm.dinh_luat",
+  "ohm.do_thi_iu",
+  "ohm.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng U–I thấy I tỉ lệ thuận với U, U/I gần như không đổi; đồ thị I theo U là đường thẳng qua gốc.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn điện điều chỉnh 0–6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế (GHĐ 0,5 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế (GHĐ 6 V, ĐCNN 0,1 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đoạn dây constantan khoảng 20 Ω",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc mạch như Hình 2 với đoạn dây constantan.",
+   "Lần lượt đặt U = 1,5; 3,0; 4,5; 6,0 V; mỗi lần đọc ampe kế.",
+   "Tính U/I mỗi lần, chấm các điểm (U; I) lên đồ thị."
+  ],
+  "quan_sat": [
+   "U tăng gấp 2, 3, 4 lần thì I tăng gần đúng chừng ấy lần.",
+   "U/I gần như không đổi, quanh 20 Ω."
+  ],
+  "rut_ra": [
+   "I tỉ lệ thuận với U: định luật Ohm I = U/R.",
+   "Đồ thị I theo U là đường thẳng đi qua gốc toạ độ.",
+   "Lần dòng nhỏ nhất lệch nhiều nhất vì sai lệch đọc kim chiếm tỉ lệ lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế đặt vào dây",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở dây constantan",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 20.0
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện đọc được",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "U/I",
+   "ten": "Thương U/I",
+   "don_vi": "Ω",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = U/R",
+   "I_doc = lam_tron(I + lech, 0,01 A)",
+   "U/I_doc"
+  ],
+  "gia_thiet": [
+   "dây constantan: điện trở gần như không đổi theo nhiệt độ",
+   "lech là sai lệch khi đọc kim, không quá nửa vạch: 0.004, 0.0, -0.004, 0.0 A"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "I (A)",
+   "U/I (Ω)"
+  ],
+  "hang": [
+   [
+    1.5,
+    0.08,
+    18.75
+   ],
+   [
+    3.0,
+    0.15,
+    20.0
+   ],
+   [
+    4.5,
+    0.22,
+    20.45
+   ],
+   [
+    6.0,
+    0.3,
+    20.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: I = U/20 cộng sai lệch đọc kim, làm tròn 0,01 A; chưa phải số đo thật. Trung bình U/I = 19.80 Ω; lần 1 lệch nhiều nhất."
+ },
+ "ket_qua_ky_vong": "U/I trung bình khoảng 19.8 Ω; các điểm nằm sát đường thẳng qua gốc.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ U tăng thì R tăng vì R = U/I.",
+  "Nối các điểm thành đường gấp khúc thay vì kẻ đường thẳng qua gốc.",
+  "Cho rằng lần lệch nhiều là do định luật Ohm sai ở U nhỏ."
+ ],
+ "sai_so_thuong_gap": "Đọc kim ampe kế lệch nửa vạch; ở dòng nhỏ sai lệch này chiếm tỉ lệ lớn (khoảng 6 % ở 0,08 A).",
+ "an_toan": "Không để dòng chạy lâu ở U lớn; ngắt khoá giữa các lần đo.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Kéo thanh U, kim ampe kế nhảy theo độ chia; mỗi lần bấm 'ghi' thêm một chấm lên đồ thị I–U.",
+  "diem_nhan": "Chấm ở U nhỏ lệch khỏi đường thẳng nhiều nhất (tính theo phần trăm)."
+ }
+}

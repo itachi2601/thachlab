@@ -1,0 +1,131 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 11. Điện trở. Định luật Ohm",
+ "lesson_id": 89,
+ "nguon_trong_bai": "content/lesson-samples/l9-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l9-ohm-01",
+ "ten": "Cùng hiệu điện thế, hai dây cho hai dòng điện khác nhau",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "ohm.dien_tro",
+  "ohm.r_bang_u_chia_i",
+  "ohm.ampe_von_ke"
+ ],
+ "muc_tieu": "Thấy cùng một hiệu điện thế, các dây khác nhau cho cường độ dòng điện khác nhau; từ đó định nghĩa R = U/I.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn điện chỉnh được 0–6 V (bài dùng 3 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế (GHĐ 1 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế (GHĐ 6 V, ĐCNN 0,1 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây A, dây B (cuộn dây điện trở 10 Ω và 20 Ω)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc mạch: nguồn, khoá K, ampe kế nối tiếp với dây cần đo; vôn kế song song với dây (Hình 2).",
+   "Mắc dây A, đóng khoá, đọc vôn kế và ampe kế.",
+   "Thay dây A bằng dây B, đọc lại hai dụng cụ."
+  ],
+  "quan_sat": [
+   "Vôn kế đều chỉ 3,0 V.",
+   "Ampe kế chỉ 0,30 A với dây A, 0,15 A với dây B."
+  ],
+  "rut_ra": [
+   "Cùng U, dây cho I nhỏ hơn là dây cản trở dòng điện nhiều hơn.",
+   "Đặc trưng mức cản trở bằng R = U/I: dây A 10 Ω, dây B 20 Ω."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1.5,
+   "max": 6,
+   "mac_dinh": 3,
+   "buoc": 1.5
+  },
+  {
+   "ky_hieu": "R_A",
+   "ten": "Điện trở dây A",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "R_B",
+   "ten": "Điện trở dây B",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 20
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = U/R",
+   "R = U/I"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện trở của ampe kế, dây nối và nguồn",
+   "vôn kế có điện trở rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Dây",
+   "U (V)",
+   "I (A)",
+   "R = U/I (Ω)"
+  ],
+  "hang": [
+   [
+    "A",
+    3.0,
+    0.3,
+    10.0
+   ],
+   [
+    "B",
+    3.0,
+    0.15,
+    20.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình I = U/R, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Dây B cho dòng bằng một nửa dây A nên điện trở gấp đôi.",
+ "hien_tuong_hay_sai": [
+  "Tưởng dây nào cũng cho cùng một dòng nếu cùng nguồn.",
+  "Tính R = U·I thay vì U/I."
+ ],
+ "an_toan": "Không mắc ampe kế song song với nguồn; đóng khoá ngắn rồi ngắt để dây không nóng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Chọn dây A hoặc B, kim ampe kế quay tới giá trị I = U/R; bảng tự tính U/I.",
+  "diem_nhan": "Cùng U, dây cản nhiều thì kim ampe kế lệch ít."
+ }
+}

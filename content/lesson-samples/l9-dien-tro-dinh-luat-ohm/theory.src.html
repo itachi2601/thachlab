@@ -1,0 +1,461 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li><strong>Nêu</strong> được điện trở cho biết vật dẫn cản trở dòng điện nhiều hay ít; <strong>tính</strong> $R = \dfrac{U}{I}$ và đổi $\Omega,$ $\text{k}\Omega,$ $\text{M}\Omega.$</li>
+<li><strong>Mắc</strong> đúng ampe kế, vôn kế; từ bảng số liệu rút ra <strong>định luật Ohm</strong> và đọc đồ thị $I$ theo $U.$</li>
+<li><strong>Nêu</strong> được điện trở của dây dẫn phụ thuộc chiều dài, tiết diện và vật liệu: $R = \rho\dfrac{l}{S}.$</li>
+</ul>
+<p>Đọc khoảng __PHUT__ phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: "hạt đậu" cạnh bóng LED</h3>
+
+<p>Mở vỏ đèn LED đồ chơi, cạnh bóng LED thường có một linh kiện nhỏ như hạt đậu, sơn vạch màu.</p>
+
+<p>Lắp LED đỏ nối tiếp với "hạt đậu" đó vào pin vuông $9\ \text{V}{:}$ LED sáng đều. Bỏ nó ra, nối LED thẳng vào pin: LED loé chói rồi tắt hẳn, không sáng lại nữa.</p>
+
+<!--FIG1-->
+
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thực tế: đèn LED nối thẳng nguồn, không có điện trở</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/m7jXRYHb9R8?rel=0" title="đèn LED nối thẳng nguồn, không có điện trở" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Đèn LED sáng thế nào lúc đầu, rồi chuyện gì xảy ra sau đó?</p>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Có thêm "hạt đậu" thì LED không cháy. Nó đã làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q1" id="tl89-q1a"><label for="tl89-q1a" class="tl-opt tl-no">A. Tích thêm điện để pin bền hơn</label>
+<input type="radio" name="tl89-q1" id="tl89-q1b"><label for="tl89-q1b" class="tl-opt tl-ok">B. Làm dòng điện qua LED nhỏ đi</label>
+<input type="radio" name="tl89-q1" id="tl89-q1c"><label for="tl89-q1c" class="tl-opt tl-no">C. Làm hiệu điện thế của pin tăng lên</label>
+<input type="radio" name="tl89-q1" id="tl89-q1d"><label for="tl89-q1d" class="tl-opt tl-no">D. Chặn hẳn dòng điện cho LED nghỉ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> "Hạt đậu" là một <strong>điện trở</strong>: nó cản trở dòng điện. Mắc thêm nó, dòng qua LED nhỏ lại, đủ sáng mà không cháy. Bài này trả lời: cản bao nhiêu, tính thế nào.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Linh kiện này không tích điện (A) và không làm pin mạnh lên (C): hiệu điện thế do pin quyết định. Chặn hẳn dòng (D) thì LED đã không sáng. LED cháy vì dòng qua nó quá lớn. Linh kiện mắc thêm làm gì với dòng đó?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: điện trở và định luật Ohm</h3>
+
+<h4>1. Đo hiệu điện thế và cường độ dòng điện</h4>
+
+<p><strong>🔑 Ampe kế nối tiếp · vôn kế song song</strong></p>
+
+<ul>
+<li><strong>Ampe kế</strong> đo cường độ dòng điện $I,$ mắc <strong>nối tiếp</strong> với vật cần đo.</li>
+<li><strong>Vôn kế</strong> đo hiệu điện thế $U$ giữa hai đầu vật, mắc <strong>song song</strong> với vật.</li>
+<li>Chốt (+) của cả hai dụng cụ nối về phía cực (+) của nguồn.</li>
+<li>Chiều dòng điện quy ước: từ cực (+), qua mạch ngoài, về cực (−).</li>
+</ul>
+
+<!--FIG2-->
+
+<h4>2. Điện trở</h4>
+
+<p><strong>🔑 Cản trở dòng điện · R = U/I · ôm</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-ohm-01">
+<p class="tl-label">🔬 Thí nghiệm: cùng hiệu điện thế, hai dây khác nhau</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc mạch Hình 2, nguồn $3\ \text{V}.$ Lần lượt mắc dây A, dây B vào chỗ $R,$ đọc hai dụng cụ đo.</li>
+<li><strong>Quan sát:</strong> vôn kế đều chỉ $3{,}0\ \text{V}.$<br>Dây A: ampe kế chỉ $0{,}30\ \text{A}.$<br>Dây B: ampe kế chỉ $0{,}15\ \text{A}.$</li>
+<li><strong>Rút ra:</strong> cùng hiệu điện thế, dây B cho dòng nhỏ hơn: dây B cản trở dòng điện nhiều hơn.</li>
+</ol>
+</div>
+
+<ul>
+<li><strong>Điện trở</strong> $R$ cho biết vật dẫn cản trở dòng điện nhiều hay ít.</li>
+<li>Tính bằng thương của $U$ và $I{:}$</li>
+</ul>
+
+$$R = \frac{U}{I}$$
+
+<ul>
+<li>$U$ (V), $I$ (A), $R$ đo bằng <strong>ôm</strong>, kí hiệu $\Omega.$</li>
+<li>$1\ \text{k}\Omega = 1\,000\ \Omega.$</li>
+<li>$1\ \text{M}\Omega = 1\,000\,000\ \Omega.$</li>
+<li>Ví dụ: dây A có $R = \dfrac{3}{0{,}30} = 10\ \Omega.$<br>Dây B có $R = \dfrac{3}{0{,}15} = 20\ \Omega.$</li>
+<li>Trong sơ đồ, điện trở vẽ bằng một hình chữ nhật nhỏ (Hình 2).</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Đặt hiệu điện thế $6\ \text{V}$ vào hai đầu một dây dẫn, ampe kế chỉ $200\ \text{mA}.$ Điện trở của dây là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q2" id="tl89-q2a"><label for="tl89-q2a" class="tl-opt tl-no">A. $0{,}03\ \Omega$</label>
+<input type="radio" name="tl89-q2" id="tl89-q2b"><label for="tl89-q2b" class="tl-opt tl-no">B. $1\,200\ \Omega$</label>
+<input type="radio" name="tl89-q2" id="tl89-q2c"><label for="tl89-q2c" class="tl-opt tl-ok">C. $30\ \Omega$</label>
+<input type="radio" name="tl89-q2" id="tl89-q2d"><label for="tl89-q2d" class="tl-opt tl-no">D. $1{,}2\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đổi $200\ \text{mA} = 0{,}2\ \text{A},$ rồi $R = \dfrac{6}{0{,}2} = 30\ \Omega.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}03\ \Omega$ (A) là lấy $6 : 200,$ quên đổi mA ra A.<br>Ra $1\,200\ \Omega$ (B) là nhân $6 \cdot 200.$<br>Ra $1{,}2\ \Omega$ (D) là nhân $U \cdot I$ thay vì chia.<br>Đổi đơn vị trước, rồi mới $R = \dfrac{U}{I}.$</p></div>
+</div>
+</div>
+
+<h4>3. Định luật Ohm</h4>
+
+<p><strong>🔑 I tỉ lệ thuận U · tỉ lệ nghịch R</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-ohm-02">
+<p class="tl-label">🔬 Thí nghiệm đo: đổi U, đọc I</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc mạch Hình 2 với một đoạn dây constantan. Dùng nguồn chỉnh được, lần lượt đặt $U = __U_TN2__.$ Ampe kế có độ chia nhỏ nhất $0{,}01\ \text{A}.$</li>
+<li><strong>Quan sát:</strong> số đọc ở bảng dưới (số liệu minh hoạ, chưa phải số đo thật).</li>
+<li><strong>Rút ra:</strong> $U$ tăng gấp 2, 3, 4 lần thì $I$ cũng tăng gần đúng chừng ấy lần. Thương $\dfrac{U}{I}$ gần như không đổi, quanh $20\ \Omega.$</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$U$ (V)</th><th>$I$ (A)</th><th>$U/I$ $(\Omega)$</th></tr>
+</thead>
+<tbody>
+__BANG_TN2__
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: Định luật Ohm</summary>
+<iframe src="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Định luật Ohm"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Giữ nguyên $R,$ kéo $U$ tăng dần. $I$ thay đổi thế nào?</li>
+<li>Giữ nguyên $U,$ tăng $R.$ $I$ thay đổi thế nào?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Định luật Ohm</p>
+<p>Cường độ dòng điện qua một dây dẫn:</p>
+<ul>
+<li>tỉ lệ thuận với hiệu điện thế đặt vào hai đầu dây;</li>
+<li>tỉ lệ nghịch với điện trở của dây.</li>
+</ul>
+$$I = \frac{U}{R}$$
+</div>
+
+<ul>
+<li>Đồ thị $I$ theo $U$ của một điện trở là <strong>đường thẳng đi qua gốc toạ độ</strong> (Hình 3).</li>
+</ul>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Trong bảng, lần đo thứ nhất cho $U/I$ lệch xa $20\ \Omega$ nhất. Lí do hợp lí nhất là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q3" id="tl89-q3a"><label for="tl89-q3a" class="tl-opt tl-ok">A. Dòng nhỏ nên lệch khi đọc ampe kế chiếm tỉ lệ lớn</label>
+<input type="radio" name="tl89-q3" id="tl89-q3b"><label for="tl89-q3b" class="tl-opt tl-no">B. Điện trở của dây giảm khi hiệu điện thế nhỏ</label>
+<input type="radio" name="tl89-q3" id="tl89-q3c"><label for="tl89-q3c" class="tl-opt tl-no">C. Vôn kế đã bị mắc nối tiếp với đoạn dây</label>
+<input type="radio" name="tl89-q3" id="tl89-q3d"><label for="tl89-q3d" class="tl-opt tl-no">D. Định luật Ohm chỉ đúng khi hiệu điện thế lớn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> __FB_TN2__</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dây constantan gần như giữ nguyên điện trở, nên B sai.<br>Mắc vôn kế nối tiếp thì ampe kế chỉ gần 0 ở mọi lần, nên C sai.<br>Ba lần sau đều quanh $20\ \Omega,$ định luật vẫn đúng, nên D sai.<br>Thử tính: lệch nửa vạch $0{,}005\ \text{A}$ là bao nhiêu phần trăm của $0{,}08\ \text{A},$ và của $0{,}30\ \text{A}?$</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem: nhận xét sai số cả bảng</summary>
+<p>__NHAN_XET_TN2__</p>
+</details>
+
+<h4>4. Điện trở của dây dẫn phụ thuộc vào gì?</h4>
+
+<p><strong>🔑 Dài cản nhiều · to cản ít · tuỳ vật liệu</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-ohm-03">
+<p class="tl-label">🔬 Thí nghiệm: đổi chiều dài, tiết diện, vật liệu</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> giữ nguồn __U_TN3__. Lần lượt mắc vào chỗ $R$ bốn dây (tiết diện $S$):
+<br>(1) constantan dài $1\ \text{m},$ $S = 0{,}1\ \text{mm}^2;$
+<br>(2) constantan dài $2\ \text{m},$ $S = 0{,}1\ \text{mm}^2;$
+<br>(3) constantan dài $1\ \text{m},$ $S = 0{,}2\ \text{mm}^2;$
+<br>(4) nichrome dài $1\ \text{m},$ $S = 0{,}1\ \text{mm}^2.$</li>
+<li><strong>Quan sát:</strong> ampe kế chỉ lần lượt khoảng __I_TN3__ (số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong><br>Dài gấp đôi: điện trở gấp đôi.<br>Tiết diện gấp đôi: điện trở giảm một nửa.<br>Cùng kích thước: nichrome cản nhiều hơn constantan.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: Điện trở của dây</summary>
+<iframe src="https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Điện trở của dây"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Chỉ tăng chiều dài $l.$ $R$ thay đổi thế nào?</li>
+<li>Chỉ tăng tiết diện $S.$ $R$ thay đổi thế nào?</li>
+<li>Đổi $\rho.$ Dây thế nào thì $R$ nhỏ nhất?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+$$R = \rho\,\frac{l}{S}$$
+
+<ul>
+<li>$l{:}$ chiều dài dây (m).</li>
+<li>$S{:}$ tiết diện dây $(\text{m}^2);$ đổi $1\ \text{mm}^2 = 10^{-6}\ \text{m}^2.$</li>
+<li>$\rho$ (đọc là "rô"): <strong>điện trở suất</strong>, đặc trưng cho vật liệu, đơn vị $\Omega\cdot\text{m}.$</li>
+<li>$\rho$ càng nhỏ, vật liệu dẫn điện càng tốt.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Vật liệu</th><th>$\rho$ ở $20\ ^\circ\text{C}$ $({10^{-8}\ \Omega\cdot\text{m}})$</th></tr>
+</thead>
+<tbody>
+<tr><td>Đồng</td><td>$1{,}7$</td></tr>
+<tr><td>Nhôm</td><td>$2{,}8$</td></tr>
+<tr><td>Vonfam</td><td>$5{,}5$</td></tr>
+<tr><td>Constantan</td><td>$50$</td></tr>
+<tr><td>Nichrome</td><td>$110$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Một dây dẫn có điện trở $12\ \Omega.$ Cắt lấy đúng một nửa chiều dài của nó. Điện trở của đoạn vừa cắt là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q4" id="tl89-q4a"><label for="tl89-q4a" class="tl-opt tl-no">A. $24\ \Omega$</label>
+<input type="radio" name="tl89-q4" id="tl89-q4b"><label for="tl89-q4b" class="tl-opt tl-no">B. $12\ \Omega$</label>
+<input type="radio" name="tl89-q4" id="tl89-q4c"><label for="tl89-q4c" class="tl-opt tl-no">C. $3\ \Omega$</label>
+<input type="radio" name="tl89-q4" id="tl89-q4d"><label for="tl89-q4d" class="tl-opt tl-ok">D. $6\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng vật liệu, cùng tiết diện, $R$ tỉ lệ với $l.$ Dài một nửa thì $R = 6\ \Omega.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $24\ \Omega$ (A) là nghĩ dây ngắn lại thì cản nhiều hơn.<br>Ra $12\ \Omega$ (B) là nghĩ điện trở chỉ do vật liệu.<br>Ra $3\ \Omega$ (C) là kết quả khi <em>gập đôi</em> dây (dài một nửa và tiết diện gấp đôi), không phải cắt đôi.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "Tăng U thì R tăng"</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl89-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl89-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Một điện trở $15\ \Omega$ đang mắc vào hiệu điện thế $3\ \text{V}.$ Tăng hiệu điện thế lên $6\ \text{V}.$ Khi đó</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q5" id="tl89-q5a"><label for="tl89-q5a" class="tl-opt tl-no">A. $R$ tăng lên $30\ \Omega,$ $I$ giữ nguyên</label>
+<input type="radio" name="tl89-q5" id="tl89-q5b"><label for="tl89-q5b" class="tl-opt tl-no">B. $R$ giảm còn $7{,}5\ \Omega,$ $I$ tăng gấp bốn</label>
+<input type="radio" name="tl89-q5" id="tl89-q5c"><label for="tl89-q5c" class="tl-opt tl-ok">C. $R$ vẫn $15\ \Omega,$ $I$ tăng gấp đôi</label>
+<input type="radio" name="tl89-q5" id="tl89-q5d"><label for="tl89-q5d" class="tl-opt tl-no">D. $R$ vẫn $15\ \Omega,$ $I$ giữ nguyên</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ở nhiệt độ không đổi, $R$ do chính dây quyết định (chiều dài, tiết diện, vật liệu), không do $U.$ $I$ đi từ $\dfrac{3}{15} = 0{,}2\ \text{A}$ lên $\dfrac{6}{15} = 0{,}4\ \text{A}.$ Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đọc $R = \dfrac{U}{I}$ thành "$R$ tỉ lệ thuận với $U$": thật ra $U$ tăng thì $I$ tăng theo, thương không đổi.<br>B nhầm $R$ tỉ lệ nghịch với $U.$<br>D quên rằng $I = \dfrac{U}{R}$ đổi theo $U.$<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$R = U/I$</th><th>$I = U/R$</th></tr>
+</thead>
+<tbody>
+<tr><td>cách tính, cách đo $R$</td><td>định luật: $I$ do $U$ và $R$ quyết định</td></tr>
+<tr><td>$U$ đổi, $R$ giữ nguyên</td><td>$U$ đổi, $I$ đổi theo</td></tr>
+<tr><td>$R$ do dây: $l,$ $S,$ vật liệu</td><td>$I$ do nguồn và dây</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 2: "Đường dốc hơn thì điện trở lớn hơn"</h4>
+
+<p>Hình 4 là đồ thị $I$ theo $U$ của hai dây dẫn (1) và (2).</p>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Theo Hình 4, dây nào có điện trở lớn hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q6" id="tl89-q6a"><label for="tl89-q6a" class="tl-opt tl-ok">A. Dây (2)</label>
+<input type="radio" name="tl89-q6" id="tl89-q6b"><label for="tl89-q6b" class="tl-opt tl-no">B. Dây (1)</label>
+<input type="radio" name="tl89-q6" id="tl89-q6c"><label for="tl89-q6c" class="tl-opt tl-no">C. Hai dây bằng nhau</label>
+<input type="radio" name="tl89-q6" id="tl89-q6d"><label for="tl89-q6d" class="tl-opt tl-no">D. Chưa đủ dữ kiện để so</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng $U = 3\ \text{V}{:}$ dây (1) cho $0{,}3\ \text{A},$ dây (2) chỉ cho $0{,}1\ \text{A}.$ Cùng $U$ mà $I$ nhỏ hơn thì cản nhiều hơn: $R_2 = 30\ \Omega,$ $R_1 = 10\ \Omega.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: trục đứng là $I,$ nên đường dốc hơn là dây cho dòng <em>lớn</em> hơn ở cùng $U,$ tức cản <em>ít</em> hơn.<br>C: cùng đi qua gốc chỉ cho biết cả hai theo định luật Ohm.<br>D: đọc được $I$ của hai dây tại cùng một $U$ là đủ để so.<br>Kẻ một đường dọc tại $U = 3\ \text{V}$ rồi so hai giá trị $I.$</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đồ thị $I$ theo $U$</th><th>Đồ thị $U$ theo $I$</th></tr>
+</thead>
+<tbody>
+<tr><td>trục đứng là $I$</td><td>trục đứng là $U$</td></tr>
+<tr><td>dốc hơn: $R$ nhỏ hơn</td><td>dốc hơn: $R$ lớn hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 3: mắc nhầm ampe kế và vôn kế</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl89-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl89-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Một bạn mắc nhầm vôn kế <strong>nối tiếp</strong> với bóng đèn rồi đóng khoá. Hiện tượng là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q7" id="tl89-q7a"><label for="tl89-q7a" class="tl-opt tl-no">A. Đèn sáng bình thường, vôn kế chỉ hiệu điện thế của đèn</label>
+<input type="radio" name="tl89-q7" id="tl89-q7b"><label for="tl89-q7b" class="tl-opt tl-ok">B. Đèn gần như không sáng, vôn kế chỉ gần bằng của nguồn</label>
+<input type="radio" name="tl89-q7" id="tl89-q7c"><label for="tl89-q7c" class="tl-opt tl-no">C. Đèn sáng mạnh hơn, vôn kế cháy do dòng điện quá lớn</label>
+<input type="radio" name="tl89-q7" id="tl89-q7d"><label for="tl89-q7d" class="tl-opt tl-no">D. Đèn sáng yếu đi một nửa, vôn kế chỉ đúng số 0</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vôn kế có điện trở rất lớn. Mắc nối tiếp thì dòng gần như bằng 0: đèn không sáng. Gần như cả hiệu điện thế nguồn đặt lên vôn kế. Thường không hỏng gì, chỉ đo sai.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là kết quả khi mắc <em>đúng</em> (song song).<br>C ngược: vôn kế cản dòng rất mạnh, mạch gần như hở, không có dòng lớn.<br>D sai vì vôn kế vẫn có hiệu điện thế đặt vào, kim không đứng ở 0.<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Ampe kế</th><th>Vôn kế</th></tr>
+</thead>
+<tbody>
+<tr><td>mắc nối tiếp</td><td>mắc song song</td></tr>
+<tr><td>điện trở rất nhỏ</td><td>điện trở rất lớn</td></tr>
+<tr><td>mắc nhầm song song: gần như nối tắt, dễ hỏng</td><td>mắc nhầm nối tiếp: mạch gần như hở, đèn tắt</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Điện trở là gì? Đơn vị? Đổi kΩ, MΩ. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cho biết vật dẫn cản trở dòng điện nhiều hay ít.<br>$R = \dfrac{U}{I},$ đơn vị ôm $(\Omega).$<br>$1\ \text{k}\Omega = 10^3\ \Omega;$ $1\ \text{M}\Omega = 10^6\ \Omega.$</p>
+</details>
+<details class="tl-details">
+<summary>2. Phát biểu định luật Ohm, viết công thức. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$I$ tỉ lệ thuận với $U,$ tỉ lệ nghịch với $R.$<br>$I = \dfrac{U}{R}{:}$ $I$ (A), $U$ (V), $R$ $(\Omega).$</p>
+</details>
+<details class="tl-details">
+<summary>3. Đồ thị $I$ theo $U$ của một điện trở có dạng gì? Đường dốc hơn nói lên điều gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đường thẳng qua gốc toạ độ.<br>Dốc hơn: $R$ nhỏ hơn.</p>
+</details>
+<details class="tl-details">
+<summary>4. Mắc ampe kế, vôn kế thế nào? Mắc nhầm thì sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Ampe kế nối tiếp, vôn kế song song, chốt (+) về phía cực (+).<br>Ampe kế song song: gần như nối tắt.<br>Vôn kế nối tiếp: mạch gần như hở.</p>
+</details>
+<details class="tl-details">
+<summary>5. Điện trở của dây dẫn phụ thuộc vào gì? Viết công thức. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Chiều dài, tiết diện, vật liệu.<br>$R = \rho\dfrac{l}{S}{:}$ $\rho$ $(\Omega\cdot\text{m}),$ $l$ (m), $S$ $(\text{m}^2).$</p>
+</details>
+<details class="tl-details">
+<summary>6. $R = \dfrac{U}{I}$ và $I = \dfrac{U}{R}$ khác nhau ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$R = \dfrac{U}{I}{:}$ cách tính $R,$ $R$ không đổi khi $U$ đổi.<br>$I = \dfrac{U}{R}{:}$ định luật, $I$ đổi theo $U.$</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Dây nung của một máy sấy tóc làm bằng nichrome, dài $5\ \text{m},$ tiết diện $0{,}1\ \text{mm}^2.$ Điện trở suất của nichrome là ${1{,}1 \cdot 10^{-6}\ \Omega\cdot\text{m}}.$</p>
+<p>a) Tính điện trở của dây nung.</p>
+<p>b) Mắc dây vào hiệu điện thế $220\ \text{V}.$ Tính cường độ dòng điện qua dây.</p>
+<p>c) Muốn dòng điện chỉ còn $2\ \text{A}$ ở cùng hiệu điện thế, cần dây nichrome cùng tiết diện dài bao nhiêu?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"nichrome, dài 5&nbsp;m"</td><td>$l = 5\ \text{m}$</td></tr>
+<tr><td>"tiết diện 0,1&nbsp;mm²"</td><td>$S = 1 \cdot 10^{-7}\ \text{m}^2$ (đổi ra $\text{m}^2$)</td></tr>
+<tr><td>"điện trở suất"</td><td>${\rho = 1{,}1 \cdot 10^{-6}\ \Omega\cdot\text{m}};$ dùng $R = \rho\dfrac{l}{S}$</td></tr>
+<tr><td>"hiệu điện thế 220&nbsp;V"</td><td>$U = 220\ \text{V};$ dùng $I = \dfrac{U}{R}$</td></tr>
+<tr><td>"dòng chỉ còn 2&nbsp;A", "cùng tiết diện"</td><td>tính $R$ cần có, rồi suy ra $l$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Đổi đơn vị:</strong> $S = 0{,}1\ \text{mm}^2 = 1 \cdot 10^{-7}\ \text{m}^2.$</li>
+<li><strong>a) Điện trở:</strong> $R = \rho\dfrac{l}{S} = 1{,}1 \cdot 10^{-6} \cdot \dfrac{5}{10^{-7}} = 55\ \Omega.$</li>
+<li><strong>b) Dòng điện:</strong> $I = \dfrac{U}{R} = \dfrac{220}{55} = 4\ \text{A}.$</li>
+<li><strong>c) Điện trở cần có:</strong> $R' = \dfrac{U}{I'} = \dfrac{220}{2} = 110\ \Omega,$ gấp đôi $55\ \Omega.$ Cùng vật liệu, cùng tiết diện nên dây dài gấp đôi: $l' = 10\ \text{m}.$</li>
+<li><strong>Kiểm tra:</strong> $1{,}1 \cdot 10^{-6} \cdot \dfrac{10}{10^{-7}} = 110\ \Omega$ và $\dfrac{220}{110} = 2\ \text{A}{:}$ khớp. Dây dài hơn, cản nhiều hơn, dòng nhỏ hơn: hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng dây nung dài $5\ \text{m}$ có tiết diện $0{,}2\ \text{mm}^2.$</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $S = \;?\ \text{m}^2,$ $R = \rho\dfrac{l}{S} = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $I = \dfrac{220}{R} = \;?$</li>
+<li>Kiểm tra: tiết diện gấp đôi thì $R$ và $I$ đổi thế nào so với lời giải mẫu?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2</summary>
+<p>$S = 2 \cdot 10^{-7}\ \text{m}^2,$ $R = 27{,}5\ \Omega.$<br>$I = 8\ \text{A}.$<br>$R$ giảm một nửa, $I$ gấp đôi.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi vật liệu: thay nichrome bằng constantan</summary>
+<p>Giữ $l = 5\ \text{m},$ $S = 1 \cdot 10^{-7}\ \text{m}^2,$ dùng constantan ${\rho = 0{,}5 \cdot 10^{-6}\ \Omega\cdot\text{m}}.$<br>$R = 0{,}5 \cdot 10^{-6} \cdot \dfrac{5}{10^{-7}} = 25\ \Omega.$<br>$I = \dfrac{220}{25} = 8{,}8\ \text{A}.$<br>Điện trở suất nhỏ hơn thì dòng lớn hơn.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl89-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl89-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Dây constantan ${(\rho = 0{,}5 \cdot 10^{-6}\ \Omega\cdot\text{m})}$ dài $4\ \text{m},$ tiết diện $0{,}5\ \text{mm}^2,$ mắc vào hiệu điện thế $12\ \text{V}.$ Cường độ dòng điện qua dây là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl89-q8" id="tl89-q8a"><label for="tl89-q8a" class="tl-opt tl-no">A. $48\ \text{A}$</label>
+<input type="radio" name="tl89-q8" id="tl89-q8b"><label for="tl89-q8b" class="tl-opt tl-no">B. $0{,}33\ \text{A}$</label>
+<input type="radio" name="tl89-q8" id="tl89-q8c"><label for="tl89-q8c" class="tl-opt tl-no">C. ${3 \cdot 10^{6}}\ \text{A}$</label>
+<input type="radio" name="tl89-q8" id="tl89-q8d"><label for="tl89-q8d" class="tl-opt tl-ok">D. $3\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $S = 0{,}5 \cdot 10^{-6}\ \text{m}^2,$ $R = 0{,}5 \cdot 10^{-6} \cdot \dfrac{4}{0{,}5 \cdot 10^{-6}} = 4\ \Omega,$ $I = \dfrac{12}{4} = 3\ \text{A}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $48\ \text{A}$ (A) là nhân $U \cdot R.$<br>Ra $0{,}33\ \text{A}$ (B) là lấy $\dfrac{R}{U}.$<br>Ra ${3 \cdot 10^{6}}\ \text{A}$ (C) là để nguyên $S = 0{,}5,$ quên đổi $\text{mm}^2$ ra $\text{m}^2.$<br>Đổi $S$ trước, tính $R,$ rồi $I = \dfrac{U}{R}.$ Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 1–3 lời giải mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏠 Bấm xem: điện trở quanh em</summary>
+<ul>
+<li><strong>Dây điện trong nhà</strong> làm bằng đồng: $\rho$ nhỏ, cản ít, dây ít nóng.</li>
+<li><strong>Dây cấp điện cho điều hoà, bếp từ</strong> to hơn dây đèn: tiết diện lớn, điện trở nhỏ.</li>
+<li><strong>Dây nung</strong> của ấm điện, máy sấy tóc làm bằng nichrome: $\rho$ lớn, chịu được nhiệt độ cao.</li>
+<li><strong>Điện trở trong mạch LED, bộ sạc</strong>: giữ dòng điện ở mức an toàn.</li>
+<li><strong>Dây tóc bóng đèn sợi đốt</strong> làm bằng vonfam.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Một điện trở ghi $4{,}7\ \text{k}\Omega.$ Đổi ra ôm. <em>($4\,700\ \Omega)$</em></li>
+<li><strong>⭐⭐</strong> Dây $12\ \Omega$ được gập đôi thành dây hai sợi chập nhau. Điện trở mới bao nhiêu? <em>(dài một nửa, tiết diện gấp đôi: $3\ \Omega)$</em></li>
+<li><strong>⭐⭐⭐</strong> Đồ thị $I$ theo $U$ của bóng đèn sợi đốt cong dần về phía trục $U$ khi $U$ lớn. Điện trở của dây tóc thay đổi thế nào, vì sao? <em>(U càng lớn, dây tóc càng nóng; nhiệt độ đổi nên điện trở đổi, tăng dần: $\dfrac{U}{I}$ lớn dần, đồ thị không còn thẳng)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Điện trở: mức cản trở dòng điện, $R = \dfrac{U}{I}.$</li>
+<li>Ôm: $1\ \text{k}\Omega = 10^3\ \Omega;$ $1\ \text{M}\Omega = 10^6\ \Omega.$</li>
+<li>Định luật Ohm: $I = \dfrac{U}{R}.$</li>
+<li>Đồ thị $I$ theo $U{:}$ thẳng, qua gốc; dốc hơn là $R$ nhỏ hơn.</li>
+<li>$U$ đổi thì $I$ đổi, $R$ giữ nguyên.</li>
+<li>$R = \rho\dfrac{l}{S}{:}$ dài cản nhiều, to cản ít.</li>
+<li>Ampe kế nối tiếp, vôn kế song song.</li>
+<li>Đọc đề: đổi mA ra A, $\text{mm}^2$ ra $\text{m}^2$ trước khi thay số.</li>
+</ul>
+</div>

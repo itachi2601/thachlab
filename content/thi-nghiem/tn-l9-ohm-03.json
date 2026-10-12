@@ -1,0 +1,188 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 11. Điện trở. Định luật Ohm",
+ "lesson_id": 89,
+ "nguon_trong_bai": "content/lesson-samples/l9-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l9-ohm-03",
+ "ten": "Điện trở dây dẫn theo chiều dài, tiết diện, vật liệu",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "ohm.phu_thuoc_chieu_dai",
+  "ohm.phu_thuoc_tiet_dien",
+  "ohm.dien_tro_suat"
+ ],
+ "muc_tieu": "Thấy điện trở tỉ lệ thuận với chiều dài, tỉ lệ nghịch với tiết diện và phụ thuộc vật liệu: R = ρl/S.",
+ "dung_cu": [
+  {
+   "ten": "Pin 1,5 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế (GHĐ 1 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây constantan tiết diện 0,1 mm² (dài 1 m và 2 m)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Dây constantan tiết diện 0,2 mm², dài 1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nichrome tiết diện 0,1 mm², dài 1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Giữ nguồn 1,5 V, lần lượt mắc từng dây vào mạch nối tiếp với ampe kế.",
+   "Mỗi lần đóng khoá, đọc ampe kế rồi ngắt ngay."
+  ],
+  "quan_sat": [
+   "Dây constantan 1 m, 0,1 mm²: khoảng 0,30 A.",
+   "Dài 2 m: khoảng 0,15 A.",
+   "Tiết diện 0,2 mm²: khoảng 0,60 A.",
+   "Nichrome 1 m, 0,1 mm²: khoảng 0,14 A."
+  ],
+  "rut_ra": [
+   "Dài gấp đôi, điện trở gấp đôi.",
+   "Tiết diện gấp đôi, điện trở giảm một nửa.",
+   "Cùng kích thước, nichrome có điện trở lớn hơn constantan: R = ρl/S."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Tiết diện dây",
+   "don_vi": "mm²",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.2,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "vat_lieu",
+   "ten": "Vật liệu dây",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1,
+   "lua_chon": [
+    {
+     "gia_tri": 0,
+     "ten": "constantan",
+     "rho": 5e-07
+    },
+    {
+     "gia_tri": 1,
+     "ten": "nichrome",
+     "rho": 1.1e-06
+    }
+   ]
+  },
+  {
+   "ky_hieu": "ρ",
+   "ten": "Điện trở suất theo vật liệu đã chọn",
+   "don_vi": "Ω·m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "ρ = 0,50·10⁻⁶ Ω·m (constantan) hoặc 1,10·10⁻⁶ Ω·m (nichrome)",
+   "R = ρ·l/S (S đổi ra m²)",
+   "I = U/R"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện trở trong của pin, ampe kế, dây nối",
+   "nhiệt độ dây coi như không đổi",
+   "giới hạn l, S sao cho I = U·S/(ρ·l) ≤ 1 A (GHĐ ampe kế): với khoảng l, S khai ở trên, I lớn nhất 0,60 A (constantan, l = 1 m, S = 0,2 mm²)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Dây",
+   "l (m)",
+   "S (mm²)",
+   "R (Ω)",
+   "I (A)"
+  ],
+  "hang": [
+   [
+    "constantan",
+    1.0,
+    0.1,
+    5.0,
+    0.3
+   ],
+   [
+    "constantan",
+    2.0,
+    0.1,
+    10.0,
+    0.15
+   ],
+   [
+    "constantan",
+    1.0,
+    0.2,
+    2.5,
+    0.6
+   ],
+   [
+    "nichrome",
+    1.0,
+    0.1,
+    11.0,
+    0.14
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ R = ρl/S và I = U/R với U = 1,5 V, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Dòng giảm một nửa khi dây dài gấp đôi, gấp đôi khi tiết diện gấp đôi, nhỏ hơn hẳn khi đổi sang nichrome.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dây to hơn thì cản nhiều hơn.",
+  "Nghĩ điện trở chỉ phụ thuộc vật liệu.",
+  "Thay S tính bằng mm² vào công thức mà không đổi ra m²."
+ ],
+ "sai_so_thuong_gap": "Pin yếu dần và điện trở trong của pin làm dòng đo được nhỏ hơn tính toán, nhất là với dây 0,2 mm² (dòng lớn).",
+ "an_toan": "Không thay bằng dây đồng cùng cỡ: điện trở chỉ khoảng 0,17 Ω, gần như nối tắt pin.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo dài/thu ngắn dây, đổi độ dày và vật liệu; kim ampe kế và R tính ra đổi theo.",
+  "diem_nhan": "Gập đôi dây: dài một nửa và tiết diện gấp đôi, R còn một phần tư."
+ }
+}
