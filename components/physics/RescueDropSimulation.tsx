@@ -588,7 +588,7 @@ export function RescueDropSimulation() {
         </label>
       </div>
 
-      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
+      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono lg:grid-cols-6">
         <div>
           <dt className="text-[13px] text-slate-500">Độ cao h</dt>
           <dd className="text-sm text-ink">{formatNumber(sim.h, 1)} m</dd>

@@ -66,7 +66,13 @@ const InterferenceSimulation = dynamic(
 // Mô hình "Sóng âm": hai loa của máy phát âm đơn sắc + bản đồ vân giao thoa; Web Audio
 // chỉ có nghĩa khi học sinh thật sự chọn tab này.
 const SoundWavesSimulation = dynamic(
-  () => import("@/components/physics/SoundInterferenceSimulation").then((m) => () => <m.SoundInterferenceSimulation compact />),
+  () =>
+    import("@/components/physics/SoundInterferenceSimulation").then((m) => {
+      function CompactSoundWaves() {
+        return <m.SoundInterferenceSimulation compact />;
+      }
+      return CompactSoundWaves;
+    }),
   {
     ssr: false,
     loading: () => (
@@ -86,8 +92,8 @@ const TABS = [
 
 type TabKey = (typeof TABS)[number]["key"];
 
-// Khung mô phỏng (tabpanel) giữ min-height = tab cao nhất ở từng cỡ màn hình (đo 375/768/1280px: 672/743/664px)
-// để đổi tab không làm cả hero giật lên xuống. Cao hơn thế là phải đo lại.
+// Khung mô phỏng (tabpanel) giữ min-height phù hợp với nội dung ở từng cỡ màn hình
+// để đổi tab không làm cả hero giật lên xuống, đồng thời không để thừa khoảng trống rỗng.
 /** Câu hỏi + câu dẫn đổi theo tab đang chọn. Giữ hai dòng tiêu đề ngắn để mô phỏng
  *  vẫn nằm trong màn hình đầu ở 375px (B1); câu dẫn chỉ nói việc của đúng tab đó (N1, N4). */
 const COPY: Record<
@@ -147,16 +153,16 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
   };
 
   return (
-    <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
+    <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-10 lg:pt-16 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-10">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-8">
         <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
           <p className="font-mono text-xs uppercase tracking-widest text-primary">
             Có bao giờ em tự hỏi…
           </p>
 
-          <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[2.4rem]">
+          <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.15] tracking-tight text-ink sm:mt-4 sm:text-4xl lg:text-[2.25rem]">
             {copy.line1}
             <br />
             {copy.before}
@@ -165,7 +171,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
           </h1>
 
           <p className="mt-2 text-sm text-muted sm:hidden">{copy.hint}</p>
-          <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-5 sm:block sm:min-h-[4.875rem]">
+          <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-4 sm:block sm:min-h-[3.5rem]">
             {copy.body}
           </p>
         </div>
@@ -191,7 +197,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
             Học miễn phí trên web, theo đúng nhịp lớp trên trường.
           </p>
         </div>
-        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl sm:p-5 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
+        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl sm:p-4 lg:p-4 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2 sm:mb-3">
             <p className="font-mono text-[13px] uppercase tracking-widest text-muted">
               Thí nghiệm
@@ -228,7 +234,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
             role="tabpanel"
             id={`hero-panel-${tab}`}
             aria-labelledby={`hero-tab-${tab}`}
-            className="min-h-[690px] sm:min-h-[760px] lg:min-h-[700px]"
+            className="min-h-[520px] sm:min-h-[500px] lg:min-h-[440px]"
           >
             {tab === "projectile" ? (
               <LazyErrorBoundary fallback={panelFallback}>
@@ -252,7 +258,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
 
       </div>
 
-      <div className="relative mx-auto mt-10 max-w-6xl">
+      <div className="relative mx-auto mt-6 sm:mt-8 max-w-6xl">
         <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta · bấm để đọc" />
       </div>
     </section>
