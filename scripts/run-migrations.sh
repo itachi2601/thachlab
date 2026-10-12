@@ -16,8 +16,8 @@ cd "$(dirname "$0")/.."
 FILES=(
   "supabase/migrations/20261011200000_streak_moi_bai.sql|Chuỗi ngày tính mọi bài đạt điểm tối thiểu (không chỉ bài thuộc nguồn RP)|ngoài giờ học sinh làm bài"
   "supabase/migrations/20261011230000_phu_dao_don_muc_chi_vi_cau_kho.sql|Đóng ~174 mục phụ đạo chỉ mở vì câu Khó (có sao lưu)|lúc nào cũng được"
-  "supabase/migrations/20261012100000_hsg9_dot2_muc_noi_dung.sql|Tạo mục lý thuyết + bài tập mẫu (rỗng) cho HSG CĐ03/04/05 (bài 159,157,165); thêm dữ liệu, bài vẫn ẩn|lúc nào cũng được"
 )
+# ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung
 # ĐÃ CHẠY 11/10/2026 (17:20): 20261011220000_phu_dao_bo_cau_kho
 # ĐÃ CHẠY 11/10/2026 (16:49): 20261011210000_live_study_summary
 # ĐÃ CHẠY 11/10/2026 (13:57): 20261011190000_mistake_review_mix_ok
