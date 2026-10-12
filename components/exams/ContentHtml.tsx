@@ -181,6 +181,10 @@ function renderWithKatex(html: string, katex: KatexModule): string {
  * HTML rồi đưa vào React (không biến đổi DOM sau khi mount) nên không bị mất
  * khi React re-render.
  */
+/** Đáp án đã chọn theo nội dung HTML, sống ngoài component: nếu cha remount ContentHtml (đổi key, mở/đóng đoạn,
+ *  tải lại dữ liệu bài) thì bản mới vẫn khôi phục được lựa chọn thay vì về "chưa chọn". Giữ tối đa 40 nội dung. */
+const PICKS_BY_HTML = new Map<string, Record<string, string>>();
+
 export default function ContentHtml({
   html,
   className = "",
@@ -260,7 +264,10 @@ export default function ContentHtml({
   // Đáp án em đã chọn trong các câu tự chấm. innerHTML bị thay mỗi khi KaTeX tải xong hoặc
   // khi bấm phát video → radio mất dấu chọn, em thấy "bấm không ăn". Ghi nhớ rồi khôi phục.
   const rootRef = useRef<HTMLSpanElement>(null);
-  const picks = useRef<{ forHtml: string; byKey: Record<string, string> }>({ forHtml: cleaned, byKey: {} });
+  const picks = useRef<{ forHtml: string; byKey: Record<string, string> }>({
+    forHtml: cleaned,
+    byKey: PICKS_BY_HTML.get(cleaned) ?? {},
+  });
 
   function markAnswered(input: HTMLInputElement) {
     const quiz = input.closest<HTMLElement>(".tl-quiz");
@@ -285,7 +292,10 @@ export default function ContentHtml({
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
-    if (picks.current.forHtml !== cleaned) picks.current = { forHtml: cleaned, byKey: {} };
+    if (picks.current.forHtml !== cleaned) picks.current = { forHtml: cleaned, byKey: PICKS_BY_HTML.get(cleaned) ?? {} };
+    PICKS_BY_HTML.delete(cleaned);
+    PICKS_BY_HTML.set(cleaned, picks.current.byKey);
+    if (PICKS_BY_HTML.size > 40) PICKS_BY_HTML.delete(PICKS_BY_HTML.keys().next().value as string);
     for (const id of Object.values(picks.current.byKey)) {
       const el = root.querySelector(`[id="${id.replace(/"/g, "")}"]`);
       if (!(el instanceof HTMLInputElement) || el.checked) continue;
