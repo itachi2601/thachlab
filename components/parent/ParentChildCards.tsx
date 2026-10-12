@@ -1,6 +1,7 @@
 "use client";
 
 import CatchupCard from "@/components/results/CatchupCard";
+import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
 import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
 import ParentUpcoming from "@/components/parent/ParentUpcoming";
 import ParentAttendanceCard from "@/components/parent/ParentAttendanceCard";
@@ -26,6 +27,7 @@ export default function ParentChildCards({
       <ParentUpcoming key={`upcoming-${studentId}`} classId={classId} courses={courses} />
       <ParentAttendanceCard key={`attendance-${studentId}`} studentId={studentId} />
       <ParentHomeworkNotes key={`homework-${studentId}`} classId={classId} studentId={studentId} />
+      <EntryDiagnosticCard key={`diagnostic-${studentId}`} studentId={studentId} viewer="parent" />
       <CatchupCard key={`catchup-${studentId}`} studentId={studentId} classId={classId} viewer="parent" />
       <ParentStanding key={`standing-${studentId}`} studentId={studentId} classId={classId} />
     </>

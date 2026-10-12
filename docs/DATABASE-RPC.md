@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 310 hàm, sinh tự động 2026-10-11
+# Hàm SQL / RPC (schema public) — 314 hàm, sinh tự động 2026-10-12
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -24,6 +24,10 @@ repo — xem trên Supabase Dashboard).
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `count_question_types(qs jsonb)` → jsonb
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
+- `diagnostic_can_read(p_student uuid)` → boolean
+- `diagnostic_get(p_student uuid)` → jsonb
+- `diagnostic_reset(p_student uuid)` → void
+- `diagnostic_submit(p_student uuid, p_results jsonb)` → jsonb
 - `evaluate_exam_violation_alert(p_result_id bigint)` → void
 - `evaluate_student_alerts(p_student uuid)` → void
 - `exam_open_to_student(p_exam_id bigint, p_user_id uuid)` → boolean
@@ -189,8 +193,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -208,8 +212,8 @@ repo — xem trên Supabase Dashboard).
 - `similarity_op(text, text)` → boolean
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real

@@ -16,6 +16,7 @@ import TodayCard from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import { rankNextSteps } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
+import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
 import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
 import {
   fetchMyProgressMarks,
@@ -457,6 +458,7 @@ export default function ThptStudentHome({
       <PwaInstallCard />
 
       {/* Mục 3 — Luyện thêm: kỹ năng yếu (tự ẩn khi không có), bù bài cho em vào lớp trễ (tự ẩn), rồi MỘT khối phụ đạo */}
+      <EntryDiagnosticCard studentId={studentId} viewer="student" />
       <CatchupCard studentId={studentId} classId={classId} viewer="student" showSlots={false} />
       {showTutoring && (
         <TutoringSection

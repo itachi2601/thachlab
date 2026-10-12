@@ -15,8 +15,9 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Đã chạy 11/10 13:57: `20261011150000` (kho bẫy), `20261011170000_rank_lop10_bat_nguon`, `20261011170000_ta_reminders`, `20261011190000_mistake_review_mix_ok` (lượt ôn trộn bẫy/câu ok, tỉ lệ thích ứng 0,4–0,7). Chưa thử UI bằng HS thật; 2 file `20261006120000/130000_*_l11` chưa trong FILES, chưa rõ đã chạy. Chuỗi ngày nay tính mọi bài (`20261011200000`, đã chạy + deploy 11/10 14:50).
 - Đã chạy 11/10: `20261011180000_ta_doc_ket_qua_lam_bai` (TA đọc exam_results; chờ thầy thử bằng tài khoản trợ giảng); `20261011170000_ta_reminders` (skill kiem-tra-tro-giang-tuan, đã gửi nhắc tuần 05–11/10 cho 6 trợ giảng); `20261011160000_rank_bat_nguon_thuong_chenh_lech` (+30 nguồn, cộng bù 4185 RP/131 HS, max 158/HS); còn cần deploy code thông báo RP ở ExamRunner.
 - Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
+- Đã chạy 12/10 20:09: `20261012120000_kiem_tra_dau_vao` (bảng entry_diagnostics + diagnostic_get/submit/reset). Code UI chưa deploy, chưa thử HS thật; chưa có nút "cho làm lại" trên UI thầy/TA (RPC `diagnostic_reset` có sẵn).
 - Hiện tại không có migration nào trong danh sách chờ `FILES`.
-- Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701), `20261006150000_quiz_live` (Đố vui lớp học `/choi`, `/tro-giang/do-vui`; chưa thử 2 điện thoại).
+- Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
@@ -50,3 +51,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - **Bài tập mẫu → ngân hàng câu hỏi → "Bài tương đương"** (thầy ghi 30/9): lưu bài mẫu vào `/quan-tri/ngan-hang-cau-hoi` kèm nhãn + chống trùng; nút "Bài tương đương" dưới mỗi bài mẫu và ở `/luyen-tap`. Dùng RPC gộp, không thêm round-trip; migration chỉ viết file.
 - Đo lại độ trễ Supabase từ máy ở VN sau khi chuyển Singapore, trước khi xoá project Sydney; thêm cột `updated_at` cho `lessons`/`lesson_items`.
 - Đề xuất từ nghiên cứu HS 14–22 (11/10/2026, chờ thầy chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md` — đo mùa 1 trước, fading theo mastery, đề dài làm theo phần, PhET gắn YCCĐ.
+
+- 11/10/2026 · **UI bài lý thuyết, 5 việc CSS nhỏ thầy đã duyệt (mục 1,3,4,5,6)** — chỗ sửa + cách làm ở `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` mục 5; chưa sửa code.
+
+## 12/10/2026 — KHTN 9 cơ học 129–131 (chưa đăng)
+- Soạn + kiểm chéo xong, chờ thầy duyệt ảnh xem thử, chọn clip, bấm thử PhET, gắn topic; chi tiết `docs/memory/project_thachlab_l9_co_hoc_129_131.md`. Skill mới `.claude/skills/phet/` — Mac: `git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh`.
