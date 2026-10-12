@@ -10,7 +10,7 @@
 # VĨNH VIỄN vì `reset --hard` chỉ ghi đè file git đang quản lý, không đụng tới file ngoài git.
 set -euo pipefail
 
-REPO_URL="https://github.com/itachi2601/thachlab.git"
+REPO_URL="git@github.com:itachi2601/thachlab.git"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 cd "$ROOT"
