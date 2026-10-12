@@ -19,6 +19,7 @@ const columns = [
       { label: "Cách học trên ThachLab", href: "/#features" },
       { label: "Blog", href: "/blog" },
       { label: "Phụ huynh xem kết quả của con", href: "/phu-huynh" },
+      { label: "Điều khoản & Bản quyền", href: "/dieu-khoan" },
     ],
   },
   {
@@ -65,6 +66,9 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
               Nhắn Zalo cho thầy
             </a>
           )}
+          <a href="/dieu-khoan" className={link}>
+            Điều khoản &amp; Bản quyền
+          </a>
         </div>
       </footer>
     );
@@ -82,6 +86,9 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
               Nhắn Zalo cho thầy
             </a>
           )}
+          <a href="/dieu-khoan" className={link}>
+            Điều khoản &amp; Bản quyền
+          </a>
         </div>
       </footer>
     );

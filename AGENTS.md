@@ -276,3 +276,14 @@ Khi thầy ra quyết định thay đổi hoặc bổ sung tính năng trên tha
 2. **Nêu**: (a) nghiên cứu/mã quy tắc nào liên quan, (b) quyết định của thầy hợp hay đi ngược chỗ nào (đặc biệt rủi ro đã ghi: thưởng hữu hình làm giảm động lực nội tại, tải nhận thức, nhạy địa vị bạn cùng lứa tuổi 14–18, ngưỡng bỏ cuộc), (c) cách làm đề xuất / điều chỉnh nhỏ nếu cần, (d) cách đo hiệu quả nếu đáng đo.
 3. **Thầy vẫn là người quyết**: tư vấn xong thì làm theo ý thầy, trừ khi vi phạm nặng — khi đó nói rõ rồi hỏi một lần. Không lặp lại tư vấn khi thầy đã nghe và giữ nguyên quyết định.
 4. Ghi mã quy tắc/nghiên cứu vào mô tả commit. Phạm vi: tính năng nhìn thấy bởi HS/phụ huynh hoặc ảnh hưởng cách học; sửa lỗi, hạ tầng, script nội bộ không cần.
+
+# Nhãn câu hỏi phải y như đề thi thật (thầy chốt 11/10/2026)
+Mọi chỗ HS làm/xem câu hỏi (kiểm tra, luyện tập, thăng hạng, xem thử trang chủ): Phần I **A. B. C. D.**, Phần II **a) b) c) d)** + Đúng/Sai, Phần III ô đáp số. Làm UI/đăng đề có câu hỏi thì soát theo `docs/QUY-TAC-THIET-KE.md` mục E1–E3. Đã rà 11/10: chỉ `ExamSamplePreview` thiếu a)–d), đã sửa.
+
+# Bản quyền khi soạn bài và tìm tài nguyên (thầy chốt 12/10/2026)
+Trang công khai `/dieu-khoan` đã cam kết với người học và chủ sở hữu; mọi phiên soạn bài, quiz, đề, bài viết hoặc tìm hình/mô phỏng/video phải giữ đúng cam kết đó:
+- **Không chép nguyên văn** SGK, sách tham khảo, bài của trang khác: viết lại bằng lời mình, tự đổi số liệu/ngữ cảnh khi làm bài tập. Lời giải luôn tự soạn.
+- **Đề trích hoặc phỏng theo** kỳ thi chính thức, đề sở/trường, sách: ghi nguồn (kỳ thi/đơn vị ra đề, năm, mã đề) vào tên đề hoặc ghi chú câu. Không rõ nguồn thì nói với thầy, đừng đăng như thể tự soạn.
+- **Tài nguyên ngoài** (hình, mô phỏng, video, phông, mã): ưu tiên giấy phép mở (PhET CC-BY, Wikimedia Commons, CC0…); ghi tác giả + giấy phép + link ngay trong bài hoặc kế hoạch tài nguyên. Không dùng ảnh/clip không rõ giấy phép; video thì nhúng/dẫn link, không tải lại đăng lên.
+- Không rõ giấy phép = **không dùng**, chuyển thành hình tự vẽ SVG hoặc báo thầy.
+- Có khiếu nại bản quyền (email ở `lib/contact.ts`, quy trình ở `/dieu-khoan` mục 4): gỡ hoặc thay nội dung ngay, rồi báo thầy.
