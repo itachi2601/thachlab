@@ -156,6 +156,12 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
     <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-10 lg:pt-16 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
 
+      {ribbonPosts && ribbonPosts.length > 0 && (
+        <div className="relative mx-auto mb-6 sm:mb-8 max-w-6xl">
+          <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta · bấm để đọc" />
+        </div>
+      )}
+
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-8">
         <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
           <p className="font-mono text-xs uppercase tracking-widest text-primary">
@@ -256,10 +262,6 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
           </div>
         </div>
 
-      </div>
-
-      <div className="relative mx-auto mt-6 sm:mt-8 max-w-6xl">
-        <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta · bấm để đọc" />
       </div>
     </section>
   );

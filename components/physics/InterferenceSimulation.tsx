@@ -504,14 +504,14 @@ const MESSAGE_STYLE: Record<"max" | "min" | "mid" | "off", string> = {
 };
 
 const BUTTON_BASE =
-  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-3 text-sm font-medium transition active:scale-[0.98]";
+  "inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg px-3 text-xs sm:text-sm font-medium transition active:scale-[0.98]";
 
 const sliderClass =
   "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#2563EB] " +
-  "[&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none " +
+  "[&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none " +
   "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary " +
   "[&::-webkit-slider-thumb]:shadow-[0_0_0_3px_rgba(37,99,235,0.25)] " +
-  "[&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full " +
+  "[&::-moz-range-thumb]:h-3.5 [&::-moz-range-thumb]:w-3.5 [&::-moz-range-thumb]:rounded-full " +
   "[&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-primary";
 
 export function InterferenceSimulation() {
@@ -689,7 +689,7 @@ export function InterferenceSimulation() {
         />
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center gap-2">
+      <div className="mt-2.5 flex flex-wrap items-center gap-2">
         <button
           type="button"
           aria-pressed={playing}
@@ -700,7 +700,7 @@ export function InterferenceSimulation() {
               : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
           }`}
         >
-          {playing ? <Pause size={15} /> : <Play size={15} />}
+          {playing ? <Pause size={14} /> : <Play size={14} />}
           {playing ? "Dừng sóng" : "Chạy sóng"}
         </button>
         <button
@@ -720,17 +720,14 @@ export function InterferenceSimulation() {
           onClick={sim.reset}
           className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
         >
-          <RotateCcw size={15} />
+          <RotateCcw size={14} />
           Đặt lại
         </button>
       </div>
 
-      <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <div>
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
-            <label htmlFor="gt-f">Tần số f</label>
-            <span className="font-mono text-slate-200">{formatNumber(sim.f, 0)} Hz</span>
-          </div>
+      <div className="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">f: <b className="font-mono text-slate-200">{formatNumber(sim.f, 0)} Hz</b></span>
           <input
             id="gt-f"
             type="range"
@@ -742,13 +739,10 @@ export function InterferenceSimulation() {
             className={sliderClass}
             aria-label="Tần số cần rung"
           />
-        </div>
+        </label>
 
-        <div>
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
-            <label htmlFor="gt-v">Tốc độ v</label>
-            <span className="font-mono text-slate-200">{formatNumber(sim.v, 0)} cm/s</span>
-          </div>
+        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">v: <b className="font-mono text-slate-200">{formatNumber(sim.v, 0)} cm/s</b></span>
           <input
             id="gt-v"
             type="range"
@@ -760,13 +754,10 @@ export function InterferenceSimulation() {
             className={sliderClass}
             aria-label="Tốc độ truyền sóng"
           />
-        </div>
+        </label>
 
-        <div className="col-span-2 sm:col-span-1">
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
-            <label htmlFor="gt-ab">Khoảng cách AB</label>
-            <span className="font-mono text-slate-200">{formatNumber(sim.AB, 1)} cm</span>
-          </div>
+        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">AB: <b className="font-mono text-slate-200">{formatNumber(sim.AB, 1)} cm</b></span>
           <input
             id="gt-ab"
             type="range"
@@ -778,34 +769,34 @@ export function InterferenceSimulation() {
             className={sliderClass}
             aria-label="Khoảng cách hai nguồn"
           />
-        </div>
+        </label>
       </div>
 
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+      <p className="mt-2 text-xs leading-relaxed text-slate-400">
         {playing
-          ? "Đang chạy sóng (tua chậm): nước chạy qua lại, nhưng các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau, không phải không có sóng tới."
+          ? "Đang chạy sóng: các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau."
           : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ)."}
       </p>
 
       <p
         role="status"
         aria-live="polite"
-        className={`mt-3 min-h-[3.5rem] rounded-lg border px-3 py-2 text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
+        className={`mt-2 min-h-[3rem] rounded-lg border px-3 py-1.5 text-xs sm:text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
       >
         {sim.message.text}
       </p>
 
-      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
+      <dl className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1 font-mono">
         <div>
-          <dt className="text-[13px] text-slate-500">λ = v/f</dt>
+          <dt className="text-xs text-slate-500">λ = v/f</dt>
           <dd className="text-sm text-ink">{formatNumber(sim.lambda, 2)} cm</dd>
         </div>
         <div>
-          <dt className="text-[13px] text-slate-500">Cực đại AB</dt>
+          <dt className="text-xs text-slate-500">Cực đại AB</dt>
           <dd className="text-sm text-ink">{sim.counts.maxima}</dd>
         </div>
         <div>
-          <dt className="text-[13px] text-slate-500">Cực tiểu AB</dt>
+          <dt className="text-xs text-slate-500">Cực tiểu AB</dt>
           <dd className="text-sm text-ink">{sim.counts.minima}</dd>
         </div>
       </dl>
