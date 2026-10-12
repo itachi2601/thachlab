@@ -1,0 +1,787 @@
+{
+ "lesson_id": 165,
+ "lesson_title": "Chuyên đề 05. Công suất điện, định luật Joule–Lenz",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 12/10/2026: tự giải 6 dạng khớp; đã sửa đề D5c, D6, hình D4/D6, lời q3/q4/VII theo báo cáo."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công suất định mức và công suất thực tế: bếp mắc vào hiệu điện thế thấp hơn định mức",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "problem_html": "<p>Một bếp điện ghi $220\\ \\text{V}-1000\\ \\text{W}$. Do đường dây yếu, hiệu điện thế ở ổ cắm chỉ còn $200\\ \\text{V}$. Coi điện trở của bếp không đổi.</p><ol type=\"a\"><li>Tính điện trở của bếp và cường độ dòng điện khi bếp làm việc ở đúng định mức.</li><li>Tính công suất thực tế của bếp ở $200\\ \\text{V}$, rồi so với công suất định mức (tính theo phần trăm).</li><li>Tính nhiệt lượng bếp toả ra trong $10$ phút ở $200\\ \\text{V}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-1-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Hai thanh công suất của cùng một bếp, ở hiệu điện thế 220 V và 200 V\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Công suất của cùng một bếp</text><text x=\"30\" y=\"50\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ở 220 V (định mức)</text><rect x=\"30.0\" y=\"58.0\" width=\"300.0\" height=\"24.0\" rx=\"3\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"0.25\"/><text x=\"338.0\" y=\"76\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1000 W</text><text x=\"30\" y=\"112\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ở 200 V</text><rect x=\"30.0\" y=\"120.0\" width=\"247.9\" height=\"24.0\" rx=\"3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"30\" y=\"120\" width=\"2\" height=\"24\" rx=\"3\" fill=\"#fb923c\" fill-opacity=\".35\" stroke=\"none\"><animate attributeName=\"width\" values=\"2;247.9\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"285.9\" y=\"138\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P' = ?</text><line x1=\"330.0\" y1=\"52.0\" x2=\"330.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"16\" y=\"178\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Thang chung: hai thanh vẽ cùng tỉ lệ oát</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thanh công suất ở 200 V lớn dần cho tới giá trị thực của nó (cùng thang với thanh trên). Không ghi số cho P'.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> số ghi trên thiết bị là hiệu điện thế và công suất <em>định mức</em> (đạt khi mắc đúng định mức).</li><li><strong>Công thức:</strong> $R=\\dfrac{U_{đm}^2}{P_{đm}}$ ; $P'=\\dfrac{U'^2}{R}=P_{đm}\\left(\\dfrac{U'}{U_{đm}}\\right)^2$ ; $Q=P't$.</li><li><strong>Điều kiện:</strong> $R$ không đổi ; $t$ đổi ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở và dòng điện định mức</span></p><p>Số ghi cho $U_{đm}=220\\ \\text{V}$ và $P_{đm}=1000\\ \\text{W}$ :</p>$$R=\\dfrac{U_{đm}^2}{P_{đm}}=\\dfrac{220^2}{1000}$$<div class=\"bt-ans\">$$R=48{,}4\\ \\Omega$$</div>$$I_{đm}=\\dfrac{P_{đm}}{U_{đm}}=\\dfrac{1000}{220}$$<div class=\"bt-ans\">$$I_{đm}\\approx4{,}55\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất thực tế ở $200\\ \\text{V}$</span></p><p>$R$ không đổi, hiệu điện thế mới $U'=200\\ \\text{V}$ :</p>$$P'=\\dfrac{U'^2}{R}=\\dfrac{200^2}{48{,}4}$$<div class=\"bt-ans\">$$P'\\approx826\\ \\text{W}$$</div><p>So với định mức : $\\dfrac{826}{1000}\\approx82{,}6\\%$. Kiểm tra bằng tỉ lệ : $\\left(\\dfrac{200}{220}\\right)^2\\approx0{,}826$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt lượng trong $10$ phút</span></p><p>Đổi $t=10\\ \\text{phút}=600\\ \\text{s}$ :</p>$$Q=P't=826\\cdot600$$<div class=\"bt-ans\">$$Q\\approx4{,}96\\cdot10^5\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Dòng thực tế $I'=\\dfrac{U'}{R}=\\dfrac{200}{48{,}4}\\approx4{,}13\\ \\text{A}$ ; $Q=I'^2Rt\\approx4{,}95\\text{–}4{,}96\\cdot10^5\\ \\text{J}$ (lệch nhẹ do làm tròn $I'$) ✓.</p><p>Bếp ở $200\\ \\text{V}$ toả nhiệt ít hơn lúc định mức ($1000\\cdot600=6\\cdot10^5\\ \\text{J}$) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=48{,}4\\ \\Omega$ ; $I_{đm}\\approx4{,}55\\ \\text{A}$</p><p>b) $P'\\approx826\\ \\text{W}$, bằng $82{,}6\\%$ định mức</p><p>c) $Q\\approx4{,}96\\cdot10^5\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>hiệu điện thế khác số ghi</strong> → tìm $R=U_{đm}^2/P_{đm}$ rồi tính $P'=U'^2/R$ ; thấy <strong>thời gian bằng phút</strong> → đổi ra giây.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-1-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Bếp ghi 220 V–1000 W mắc vào nguồn 200 V\"><line x1=\"40.0\" y1=\"50.0\" x2=\"150.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"222.0\" y1=\"50.0\" x2=\"330.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"330.0\" y1=\"50.0\" x2=\"330.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"330.0\" y1=\"140.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"140.0\" x2=\"40.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"78.0\" x2=\"40.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"67.0\" x2=\"40.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"28.0\" y1=\"83.0\" x2=\"52.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"33.0\" y1=\"91.0\" x2=\"47.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"91.0\" x2=\"40.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"150.0\" y=\"42.0\" width=\"72.0\" height=\"16.0\" rx=\"3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"186\" y=\"36\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bếp: R</text><text x=\"58\" y=\"96\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nguồn 200 V</text><text x=\"186\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Cùng R, nhưng U' < U<tspan dy=\"4\" font-size=\"9\">đm</tspan></text><rect x=\"236.0\" y=\"70.0\" width=\"86.0\" height=\"56.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"279\" y=\"88\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Nhãn bếp:</text><text x=\"279\" y=\"104\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">220 V</text><text x=\"279\" y=\"120\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">1000 W</text></svg><figcaption>Dữ kiện: bảng ghi ở hình là số định mức ; nguồn thực tế chỉ 200 V. Điện trở R của bếp tính từ số ghi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bếp ghi $220\\ \\text{V}-1000\\ \\text{W}$\"</td><td>$U_{đm}=220\\ \\text{V}$ ; $P_{đm}=1000\\ \\text{W}$</td><td>Số ghi là giá trị định mức : $I_{đm}=\\dfrac{P_{đm}}{U_{đm}}$ ; $R=\\dfrac{U_{đm}^2}{P_{đm}}$</td></tr><tr><td>\"coi điện trở của bếp không đổi\"</td><td>$R$ giữ nguyên khi $U$ đổi</td><td>⚠ điều kiện dùng $P\\propto U^2$ ; thực tế $R$ phụ thuộc nhiệt độ</td></tr><tr><td>\"hiệu điện thế ở ổ cắm chỉ còn $200\\ \\text{V}$\"</td><td>$U'=200\\ \\text{V}$</td><td>$P'=\\dfrac{U'^2}{R}$ ; so với $P_{đm}$ theo phần trăm</td></tr><tr><td>\"nhiệt lượng toả ra trong $10$ phút\"</td><td>$t=10\\ \\text{phút}$</td><td>$Q=P't$ ; ⚠ đổi $t$ ra giây</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hiệu điện thế khác số ghi</b> → tìm $R=U_{đm}^2/P_{đm}$ rồi tính $P'=U'^2/R$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở của bếp",
+     "hoi": "Điện trở của bếp bằng bao nhiêu?",
+     "dap_so": 48.4,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Viết nhầm $R=\\dfrac{P}{U^2}$ hoặc $R=\\dfrac{U}{P}$ ; đơn vị của $\\dfrac{U^2}{P}$ mới là ôm."
+    },
+    {
+     "tieu_de": "Công suất thực tế ở $200\\ \\text{V}$",
+     "hoi": "Công suất thực tế của bếp ở $200\\ \\text{V}$?",
+     "dap_so": 826,
+     "sai_so": 3,
+     "don_vi": "W",
+     "loi_hay_gap": "Giữ $P=P_{đm}$ vì cho rằng số ghi luôn đúng, hoặc cho $P$ tỉ lệ bậc nhất với $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P'=\\dfrac{U'^2}{R}$ với $R$ đã tính",
+       "dung": true
+      },
+      {
+       "text": "$P'=P_{đm}$ vì bếp vẫn là bếp ghi sẵn công suất",
+       "dung": false,
+       "vi_sao": "Số ghi chỉ là công suất ở đúng hiệu điện thế định mức ; ở $U'$ khác thì $P'$ khác."
+      },
+      {
+       "text": "$P'=P_{đm}\\cdot\\dfrac{U'}{U_{đm}}$",
+       "dung": false,
+       "vi_sao": "Khi $R$ không đổi, $P$ tỉ lệ với bình phương hiệu điện thế chứ không tỉ lệ bậc nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng trong $10$ phút",
+     "hoi": "Nhiệt lượng toả ra trong $10$ phút là bao nhiêu kJ?",
+     "dap_so": 496,
+     "sai_so": 2,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Quên đổi phút ra giây, hoặc dùng công suất định mức thay vì công suất thực tế.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $t$ ra giây rồi tính $Q=P't$",
+       "dung": true
+      },
+      {
+       "text": "$Q=P_{đm}t$ với $t$ đã đổi ra giây",
+       "dung": false,
+       "vi_sao": "Bếp đang chạy ở hiệu điện thế thấp hơn định mức nên công suất thực tế nhỏ hơn $P_{đm}$."
+      },
+      {
+       "text": "$Q=P't$ với $t=10$ (phút)",
+       "dung": false,
+       "vi_sao": "$P$ tính bằng oát ($\\text{J/s}$) nên $t$ phải tính bằng giây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Cơ bản · Hiệu suất bếp, ấm: nhiệt lượng có ích, điện năng, thời gian đun, tiền điện",
+   "topic": "Tính điện năng tiêu thụ và tiền điện",
+   "problem_html": "<p>Một ấm điện ghi $220\\ \\text{V}-1200\\ \\text{W}$ đun $1{,}5\\ \\text{kg}$ nước từ $20\\ ^\\circ\\text{C}$ đến sôi ($100\\ ^\\circ\\text{C}$), hiệu suất của ấm là $84\\%$. Cho $c_{nước}=4200\\ \\text{J/(kg·K)}$; giá điện $3000$ đồng/kWh.</p><ol type=\"a\"><li>Tính nhiệt lượng có ích và điện năng ấm tiêu thụ.</li><li>Tính thời gian đun (ở đúng $220\\ \\text{V}$) và tiền điện của một lần đun.</li><li>Nếu hiệu điện thế chỉ còn $200\\ \\text{V}$ (điện trở ấm không đổi, hiệu suất vẫn $84\\%$) thì thời gian đun là bao lâu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-2-0\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Nhiệt kế chỉ nhiệt độ nước tăng từ 20 độ đến 100 độ C trong ấm điện\"><rect x=\"40.0\" y=\"18.0\" width=\"22.0\" height=\"130.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"44\" y=\"146\" width=\"14\" height=\"2\" fill=\"#f87171\" stroke=\"none\"><animate attributeName=\"y\" values=\"146;18.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"2;130.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"68\" y=\"152\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">20 °C</text><text x=\"68\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">100 °C</text><text x=\"120\" y=\"60\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ấm 220 V – 1200 W</text><text x=\"120\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1,5 kg nước</text><text x=\"120\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Hiệu suất 84%</text><text x=\"120\" y=\"140\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">t = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nước nóng dần từ 20 °C đến 100 °C (1 s mô phỏng ứng với khoảng 100 s thật). Chưa ghi thời gian đun.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hiệu suất là tỉ số nhiệt có ích trên điện năng tiêu thụ.</li><li><strong>Công thức:</strong> $Q_{ích}=mc\\Delta t$ ; $A=\\dfrac{Q_{ích}}{H}$ ; $t=\\dfrac{A}{P}$ ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$.</li><li><strong>Điều kiện:</strong> $P$ là công suất điện toàn phần ; đổi $A$ ra kWh trước khi nhân đơn giá.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt lượng có ích</span></p><p>$\\Delta t=100-20=80\\ ^\\circ\\text{C}$ :</p>$$Q_{ích}=mc\\Delta t=1{,}5\\cdot4200\\cdot80$$<div class=\"bt-ans\">$$Q_{ích}=504\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện năng tiêu thụ</span></p><p>Hiệu suất $84\\%$ nghĩa là $84\\%$ điện năng thành nhiệt có ích :</p>$$A=\\dfrac{Q_{ích}}{H}=\\dfrac{504\\,000}{0{,}84}$$<div class=\"bt-ans\">$$A=600\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian đun</span></p><p>Công suất $1200\\ \\text{W}$ là công suất điện toàn phần :</p>$$t=\\dfrac{A}{P}=\\dfrac{600\\,000}{1200}$$<div class=\"bt-ans\">$$t=500\\ \\text{s}\\approx8\\ \\text{phút}\\ 20\\ \\text{giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tiền điện</span></p><p>Đổi sang kWh trước khi nhân đơn giá :</p>$$A=\\dfrac{600\\,000}{3\\,600\\,000}=\\dfrac16\\ \\text{kWh}$$$$\\text{Tiền}=\\dfrac16\\cdot3000$$<div class=\"bt-ans\">$$\\text{Tiền}=500\\ \\text{đồng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian đun ở $200\\ \\text{V}$</span></p><p>Nhiệt cần đun và hiệu suất không đổi nên $A=600\\,000\\ \\text{J}$ ; chỉ công suất đổi :</p>$$P'=P\\left(\\dfrac{200}{220}\\right)^2=1200\\cdot0{,}826\\approx991{,}7\\ \\text{W}$$$$t'=\\dfrac{A}{P'}=\\dfrac{600\\,000}{991{,}7}$$<div class=\"bt-ans\">$$t'\\approx605\\ \\text{s}\\approx10\\ \\text{phút}\\ 5\\ \\text{giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$t'=t\\left(\\dfrac{220}{200}\\right)^2=500\\cdot1{,}21=605\\ \\text{s}$ ✓ : công suất giảm $0{,}826$ lần thì thời gian tăng $1{,}21$ lần.</p><p>Nếu quên hiệu suất ($t=Q_{ích}/P=420\\ \\text{s}$) sẽ ra ngắn hơn thực tế ✓ đã tránh.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q_{ích}=504\\,000\\ \\text{J}$ ; $A=600\\,000\\ \\text{J}$</p><p>b) $t=500\\ \\text{s}$ ($8$ phút $20$ giây) ; tiền điện $500$ đồng</p><p>c) $t'\\approx605\\ \\text{s}$ (khoảng $10$ phút $5$ giây)</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>hiệu suất</strong> và <strong>thời gian đun</strong> → $Q_{ích}=mc\\Delta t$, chia cho $H$ ra $A$, chia cho $P$ ra $t$ ; thấy <strong>tiền điện</strong> → đổi $A$ sang kWh.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-2-2\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Thanh điện năng A gồm phần nhiệt có ích 84 phần trăm và phần hao phí 16 phần trăm\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Điện năng A = P·t chia làm hai phần</text><rect x=\"40.0\" y=\"40.0\" width=\"300.0\" height=\"34.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"40.0\" y=\"40.0\" width=\"252.0\" height=\"34.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"0.25\"/><rect x=\"292.0\" y=\"40.0\" width=\"48.0\" height=\"34.0\" rx=\"0\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.25\"/><text x=\"166.0\" y=\"62\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q<tspan dy=\"4\" font-size=\"10\">ích</tspan><tspan dy=\"-4\"> = mcΔt</tspan></text><text x=\"316.0\" y=\"62\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hao</text><text x=\"40\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A: điện năng tiêu thụ</text><text x=\"316.0\" y=\"96\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">16%</text><text x=\"40\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Muốn tìm thời gian: Q<tspan dy=\"4\" font-size=\"9\">ích</tspan><tspan dy=\"-4\"> → A → t</tspan></text></svg><figcaption>Dữ kiện: 84% điện năng thành nhiệt có ích (làm nóng nước), phần còn lại hao phí. Độ dài các phần vẽ đúng tỉ lệ 84 : 16.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đun $1{,}5\\ \\text{kg}$ nước từ $20\\ ^\\circ\\text{C}$ đến sôi\"</td><td>$m=1{,}5\\ \\text{kg}$ ; $\\Delta t=100-20=80\\ ^\\circ\\text{C}$</td><td>$Q_{ích}=mc\\Delta t$ với $c=4200\\ \\text{J/(kg·K)}$</td></tr><tr><td>\"hiệu suất $84\\%$\"</td><td>$H=0{,}84$</td><td>$H=\\dfrac{Q_{ích}}{A}$ ; ⚠ $A$ là điện năng toàn phần, lớn hơn $Q_{ích}$</td></tr><tr><td>\"ấm $220\\ \\text{V}-1200\\ \\text{W}$\", \"thời gian đun\"</td><td>$P=1200\\ \\text{W}$ ở $220\\ \\text{V}$</td><td>$t=\\dfrac{A}{P}$</td></tr><tr><td>\"tiền điện\", \"giá $3000$ đồng/kWh\"</td><td>giá $3000$ đồng/kWh</td><td>đổi $A$ ra kWh : $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$</td></tr><tr><td>\"hiệu điện thế chỉ còn $200\\ \\text{V}$\"</td><td>$U'=200\\ \\text{V}$ ; $R$ và $H$ không đổi</td><td>$P'=P\\left(\\dfrac{U'}{U}\\right)^2$ ; nhiệt cần đun không đổi nên $A$ không đổi</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hiệu suất</b> và <b>thời gian đun</b> → $Q_{ích}=mc\\Delta t$ → $A=Q_{ích}/H$ → $t=A/P$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt lượng có ích",
+     "hoi": "Nhiệt lượng có ích để đun sôi nước là bao nhiêu kJ?",
+     "dap_so": 504,
+     "sai_so": 1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Lấy $\\Delta t=100$ thay vì $100-20$, hoặc dùng sai khối lượng."
+    },
+    {
+     "tieu_de": "Điện năng tiêu thụ",
+     "hoi": "Điện năng ấm tiêu thụ là bao nhiêu kJ?",
+     "dap_so": 600,
+     "sai_so": 2,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Nhân $Q_{ích}$ với $H$ thay vì chia, vì nghĩ điện năng phải nhỏ hơn nhiệt có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=\\dfrac{Q_{ích}}{H}$",
+       "dung": true
+      },
+      {
+       "text": "$A=Q_{ích}\\cdot H$",
+       "dung": false,
+       "vi_sao": "Điện năng phải lớn hơn nhiệt có ích vì có hao phí ; nhân với $H\\lt1$ làm $A$ nhỏ đi."
+      },
+      {
+       "text": "$A=Q_{ích}$",
+       "dung": false,
+       "vi_sao": "Như vậy là bỏ hao phí ; hiệu suất $84\\%$ nghĩa là $16\\%$ điện năng không thành nhiệt có ích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đun",
+     "hoi": "Thời gian đun là bao nhiêu giây?",
+     "dap_so": 500,
+     "sai_so": 3,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy $t=\\dfrac{Q_{ích}}{P}$ rồi quên hao phí.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{A}{P}$ với $A$ là điện năng toàn phần",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{Q_{ích}}{P}$",
+       "dung": false,
+       "vi_sao": "Công suất của ấm là công suất điện toàn phần ; dùng $Q_{ích}$ là bỏ qua hao phí nên thời gian ra ngắn hơn thực tế."
+      },
+      {
+       "text": "$t=A\\cdot P$",
+       "dung": false,
+       "vi_sao": "Đơn vị $\\text{J}\\cdot\\text{W}$ không phải giây ; từ $P=\\dfrac{A}{t}$ suy ra $t=\\dfrac{A}{P}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tiền điện",
+     "hoi": "Tiền điện của một lần đun là bao nhiêu đồng?",
+     "dap_so": 500,
+     "sai_so": 5,
+     "don_vi": "đồng",
+     "loi_hay_gap": "Nhân thẳng số jun với đơn giá theo kWh mà quên đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $A$ sang kWh rồi nhân đơn giá",
+       "dung": true
+      },
+      {
+       "text": "Lấy $A$ tính bằng jun nhân với đơn giá",
+       "dung": false,
+       "vi_sao": "Đơn giá tính theo kWh ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ nên không đổi thì sai hàng triệu lần."
+      },
+      {
+       "text": "Lấy $P\\cdot t$ với $P$ để nguyên theo oát, $t$ theo giờ",
+       "dung": false,
+       "vi_sao": "Phải đổi $P$ ra kilôoát ; để oát thì kết quả lớn gấp $1000$ lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đun ở $200\\ \\text{V}$",
+     "hoi": "Thời gian đun ở $200\\ \\text{V}$ là bao nhiêu giây?",
+     "dap_so": 605,
+     "sai_so": 3,
+     "don_vi": "s",
+     "loi_hay_gap": "Vẫn dùng $P=1200\\ \\text{W}$, hoặc nhân điện năng với $(U'/U)^2$ trong khi nhiệt cần đun không đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A$ vẫn bằng $\\dfrac{Q_{ích}}{H}$, chỉ công suất đổi : $t'=\\dfrac{A}{P'}$",
+       "dung": true
+      },
+      {
+       "text": "$t'=\\dfrac{A}{P}$ vẫn dùng công suất ghi trên ấm",
+       "dung": false,
+       "vi_sao": "Ở hiệu điện thế khác định mức thì công suất không còn là số ghi ; $P'=P\\left(\\dfrac{U'}{U}\\right)^2$."
+      },
+      {
+       "text": "$A'=A\\left(\\dfrac{U'}{U}\\right)^2$",
+       "dung": false,
+       "vi_sao": "Nhiệt cần đun không đổi và hiệu suất không đổi nên điện năng cần dùng không đổi ; chỉ khả năng cấp công suất thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Nâng cao · Tổn hao khi đun nước: hai lần đun, tìm công suất toả ra môi trường và nhiệt dung của ấm",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "problem_html": "<p>Một bếp $220\\ \\text{V}-1000\\ \\text{W}$ (luôn ở đúng định mức) đun nước trong một ấm, từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$. Lần 1 đun $3\\ \\text{kg}$ nước mất $21$ phút. Lần 2 đun $1\\ \\text{kg}$ nước mất $9$ phút. Cho $c_{nước}=4200\\ \\text{J/(kg·K)}$.</p><p>Giả sử hao phí gồm hai phần: nhiệt làm nóng ấm (ấm có nhiệt dung $C$ không đổi, nóng từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$ ở mỗi lần) và nhiệt toả ra môi trường với công suất $p$ không đổi trong suốt thời gian đun.</p><ol type=\"a\"><li>Tính hiệu suất của mỗi lần đun.</li><li>Tìm $p$ và $C$.</li><li>Dự đoán thời gian đun $2\\ \\text{kg}$ nước.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-3-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Hai nhiệt kế: đun 3 kg nước mất 21 phút, đun 1 kg nước mất 9 phút\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cùng bếp, cùng ấm, cùng 20 °C → 100 °C</text><rect x=\"50.0\" y=\"36.0\" width=\"22.0\" height=\"120.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"54\" y=\"154\" width=\"14\" height=\"2\" fill=\"#38bdf8\" stroke=\"none\"><animate attributeName=\"y\" values=\"154;36.0\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"2;120.0\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"78\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">20 °C</text><text x=\"78\" y=\"46\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">100 °C</text><text x=\"40\" y=\"196\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3 kg: 21 phút</text><rect x=\"250.0\" y=\"36.0\" width=\"22.0\" height=\"120.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"254\" y=\"154\" width=\"14\" height=\"2\" fill=\"#fb923c\" stroke=\"none\"><animate attributeName=\"y\" values=\"154;36.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"2;120.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"278\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">20 °C</text><text x=\"278\" y=\"46\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">100 °C</text><text x=\"240\" y=\"196\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1 kg: 9 phút</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lần đun chạy cùng lúc, nhanh 300 lần (1 s = 5 phút thật): lần 1 mất 4,2 s, lần 2 mất 1,8 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hao phí $=A-Q_{ích}$, gồm nhiệt làm nóng ấm và nhiệt toả ra môi trường.</li><li><strong>Công thức:</strong> $Q_{hp}=C\\Delta t+p\\,t$ ; $A=Pt$ ; $P\\,t=(mc+C)\\Delta t+p\\,t$.</li><li><strong>Điều kiện:</strong> $C$ và $p$ không đổi giữa các lần đun (mô hình của đề).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hiệu suất hai lần đun</span></p><p>Lần 1 : $Q_1=3\\cdot4200\\cdot80=1\\,008\\,000\\ \\text{J}$, $A_1=1000\\cdot1260=1\\,260\\,000\\ \\text{J}$, nên $H_1=\\dfrac{1\\,008\\,000}{1\\,260\\,000}=80\\%$.</p><p>Lần 2 : $Q_2=1\\cdot4200\\cdot80=336\\,000\\ \\text{J}$, $A_2=1000\\cdot540=540\\,000\\ \\text{J}$ :</p>$$H_2=\\dfrac{Q_2}{A_2}=\\dfrac{336\\,000}{540\\,000}$$<div class=\"bt-ans\">$$H_2\\approx62{,}2\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hao phí mỗi lần</span></p>$$Q_{hp1}=A_1-Q_1=1\\,260\\,000-1\\,008\\,000$$<div class=\"bt-ans\">$$Q_{hp1}=252\\,000\\ \\text{J}$$</div>$$Q_{hp2}=540\\,000-336\\,000=204\\,000\\ \\text{J}$$<p>Hao phí lần 1 lớn hơn nhưng hiệu suất lần 1 lại cao hơn : hao phí chiếm tỉ lệ nhỏ hơn khi đun nhiều nước.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất toả ra môi trường</span></p><p>Hai phương trình theo mô hình : $Q_{hp}=C\\Delta t+p\\,t$.</p>$$252\\,000=80\\,C+1260\\,p$$$$204\\,000=80\\,C+540\\,p$$<p>Trừ vế với vế : $48\\,000=720\\,p$.</p><div class=\"bt-ans\">$$p\\approx66{,}7\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt dung của ấm</span></p><p>Thế $p=\\dfrac{200}{3}\\ \\text{W}$ vào phương trình lần 2 :</p>$$80\\,C=204\\,000-540\\cdot\\dfrac{200}{3}=168\\,000$$<div class=\"bt-ans\">$$C=2100\\ \\text{J/K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian đun $2\\ \\text{kg}$</span></p><p>Điện năng $=$ nhiệt có ích $+$ nhiệt làm nóng ấm $+$ nhiệt toả ra môi trường :</p>$$1000\\,t=(2\\cdot4200+2100)\\cdot80+\\dfrac{200}{3}\\,t$$$$\\left(1000-\\dfrac{200}{3}\\right)t=840\\,000$$<div class=\"bt-ans\">$$t=900\\ \\text{s}=15\\ \\text{phút}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$H_3=\\dfrac{2\\cdot4200\\cdot80}{1000\\cdot900}=\\dfrac{672\\,000}{900\\,000}\\approx74{,}7\\%$, nằm giữa $62{,}2\\%$ ($1\\ \\text{kg}$) và $80\\%$ ($3\\ \\text{kg}$) ✓.</p><p>Thời gian đun tăng đều theo khối lượng : $540\\to900\\to1260\\ \\text{s}$ ứng với $1\\to2\\to3\\ \\text{kg}$ ✓ (mỗi kg thêm $360\\ \\text{s}$).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $H_1=80\\%$ ; $H_2\\approx62{,}2\\%$</p><p>b) $p\\approx66{,}7\\ \\text{W}$ ; $C=2100\\ \\text{J/K}$</p><p>c) $t=900\\ \\text{s}=15$ phút</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>hai lần đun, khối lượng khác nhau</strong> → hiệu suất mỗi lần, lập hao phí $=C\\Delta t+p\\,t$ cho hai lần rồi giải hệ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-3-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Hai thanh điện năng của hai lần đun, mỗi thanh gồm phần nhiệt có ích và phần hao phí\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Điện năng của mỗi lần: nhiệt có ích + hao phí</text><text x=\"16\" y=\"50\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lần 1 (3 kg, 21 phút)</text><rect x=\"30.0\" y=\"56.0\" width=\"241.9\" height=\"24.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"0.25\"/><rect x=\"271.9\" y=\"56.0\" width=\"60.5\" height=\"24.0\" rx=\"0\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.25\"/><text x=\"16\" y=\"106\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Lần 2 (1 kg, 9 phút)</text><rect x=\"30.0\" y=\"112.0\" width=\"80.6\" height=\"24.0\" rx=\"0\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"0.25\"/><rect x=\"110.6\" y=\"112.0\" width=\"49.0\" height=\"24.0\" rx=\"0\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"0.25\"/><text x=\"151.0\" y=\"73\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Q<tspan dy=\"4\" font-size=\"9\">ích</tspan></text><text x=\"302.2\" y=\"73\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hao phí</text><text x=\"70.3\" y=\"129\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Q<tspan dy=\"4\" font-size=\"9\">ích</tspan></text><text x=\"135.1\" y=\"129\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">hao phí</text><text x=\"16\" y=\"162\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Hao phí = nhiệt làm nóng ấm + nhiệt toả ra môi trường</text></svg><figcaption>Dữ kiện: độ dài thanh vẽ đúng tỉ lệ điện năng P·t của mỗi lần (A = P·t, P = 1000 W) ; phần xanh là nhiệt có ích mcΔt.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bếp $220\\ \\text{V}-1000\\ \\text{W}$ (luôn ở đúng định mức)\"</td><td>$P=1000\\ \\text{W}$ ở cả hai lần</td><td>$A=Pt$ ; ⚠ công suất không đổi nên điện năng tỉ lệ với thời gian</td></tr><tr><td>\"lần 1: $3\\ \\text{kg}$, $21$ phút ; lần 2: $1\\ \\text{kg}$, $9$ phút\"</td><td>$m_1=3,\\ t_1=1260\\ \\text{s}$ ; $m_2=1,\\ t_2=540\\ \\text{s}$</td><td>$Q_{ích}=mc\\Delta t$ ; $H=\\dfrac{Q_{ích}}{A}$ ; $Q_{hp}=A-Q_{ích}$</td></tr><tr><td>\"hao phí gồm nhiệt làm nóng ấm và nhiệt toả ra môi trường\"</td><td>$Q_{hp}=C\\Delta t+p\\,t$</td><td>⚠ $C$ và $p$ không đổi giữa hai lần : lập hai phương trình, hai ẩn</td></tr><tr><td>\"dự đoán thời gian đun $2\\ \\text{kg}$\"</td><td>Cần $t$</td><td>$P\\,t=(mc+C)\\Delta t+p\\,t$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai lần đun, khối lượng khác nhau</b> → lập $Q_{hp}=C\\Delta t+p\\,t$ cho từng lần rồi giải hệ.",
+   "cap_do": 3,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hiệu suất lần đun $1\\ \\text{kg}$",
+     "hoi": "Hiệu suất của lần đun $1\\ \\text{kg}$ nước là bao nhiêu phần trăm?",
+     "dap_so": 62.2,
+     "sai_so": 0.3,
+     "don_vi": "%",
+     "loi_hay_gap": "Dùng nhiệt có ích của lần đun $3\\ \\text{kg}$ cho lần này, hoặc để thời gian theo phút khi tính điện năng."
+    },
+    {
+     "tieu_de": "Hao phí lần đun $3\\ \\text{kg}$",
+     "hoi": "Điện năng hao phí của lần đun $3\\ \\text{kg}$ là bao nhiêu kJ?",
+     "dap_so": 252,
+     "sai_so": 1,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Tính hao phí bằng $A\\cdot H$ (đó là nhiệt có ích) hoặc coi hao phí bằng nhiệt có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q_{hp}=A-Q_{ích}$ với $A=Pt$",
+       "dung": true
+      },
+      {
+       "text": "$Q_{hp}=A\\cdot H$",
+       "dung": false,
+       "vi_sao": "$A\\cdot H$ chính là nhiệt có ích ; hao phí là $A(1-H)$."
+      },
+      {
+       "text": "$Q_{hp}=Q_{ích}$",
+       "dung": false,
+       "vi_sao": "Hao phí và nhiệt có ích cộng lại mới bằng điện năng ; hai số này không bằng nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất toả ra môi trường",
+     "hoi": "Công suất $p$ toả ra môi trường là bao nhiêu oát?",
+     "dap_so": 66.7,
+     "sai_so": 0.5,
+     "don_vi": "W",
+     "loi_hay_gap": "Coi hao phí hai lần bằng nhau, hoặc chia toàn bộ hao phí cho thời gian rồi cho là chỉ toả ra môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $Q_{hp}=C\\Delta t+p\\,t$ cho hai lần rồi trừ vế với vế",
+       "dung": true
+      },
+      {
+       "text": "Lấy $p=\\dfrac{Q_{hp}}{t}$ của lần đầu",
+       "dung": false,
+       "vi_sao": "Như vậy bỏ sót nhiệt làm nóng ấm ; cần hai phương trình để tách $C$ và $p$."
+      },
+      {
+       "text": "Cho hao phí hai lần bằng nhau vì dùng cùng một bếp",
+       "dung": false,
+       "vi_sao": "Hai lần có hao phí khác nhau vì thời gian đun khác nhau ; chính hiệu của chúng chứa thông tin về $p$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt dung của ấm",
+     "hoi": "Nhiệt dung $C$ của ấm là bao nhiêu $\\text{J/K}$?",
+     "dap_so": 2100,
+     "sai_so": 20,
+     "don_vi": "J/K",
+     "loi_hay_gap": "Chia toàn bộ hao phí cho độ tăng nhiệt, bỏ phần toả ra môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $p$ vào một phương trình : $C=\\dfrac{Q_{hp}-p\\,t}{\\Delta t}$",
+       "dung": true
+      },
+      {
+       "text": "$C=\\dfrac{Q_{hp}}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Phần toả ra môi trường $p\\,t$ cũng nằm trong hao phí ; bỏ nó thì $C$ ra lớn hơn thực tế."
+      },
+      {
+       "text": "$C=\\dfrac{p}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "$p$ là công suất (oát) còn $C$ là nhiệt dung ($\\text{J/K}$) ; đơn vị không khớp."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đun $2\\ \\text{kg}$",
+     "hoi": "Thời gian đun $2\\ \\text{kg}$ nước là bao nhiêu giây?",
+     "dap_so": 900,
+     "sai_so": 5,
+     "don_vi": "s",
+     "loi_hay_gap": "Cho thời gian tỉ lệ thuận với khối lượng, hoặc bỏ qua nhiệt làm nóng ấm và toả ra môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $Pt=(mc+C)\\Delta t+p\\,t$ rồi giải $t$",
+       "dung": true
+      },
+      {
+       "text": "Tỉ lệ thuận : $t=\\dfrac23\\cdot1260$",
+       "dung": false,
+       "vi_sao": "Ấm vẫn phải nóng thêm cùng một mức và môi trường vẫn lấy nhiệt nên thời gian không tỉ lệ thuận với khối lượng."
+      },
+      {
+       "text": "Chỉ tính nhiệt có ích : $t=\\dfrac{mc\\Delta t}{P}$",
+       "dung": false,
+       "vi_sao": "Như vậy bỏ qua hao phí nên thời gian ra quá ngắn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Nâng cao · Hai đèn định mức mắc nối tiếp: độ sáng, dòng tối đa, điện trở phụ",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "problem_html": "<p>Đèn $Đ_1$ ghi $12\\ \\text{V}-6\\ \\text{W}$, đèn $Đ_2$ ghi $12\\ \\text{V}-12\\ \\text{W}$. Coi điện trở mỗi đèn không đổi.</p><ol type=\"a\"><li>Mắc nối tiếp hai đèn vào nguồn $24\\ \\text{V}$. Tính công suất thực tế của mỗi đèn. Đèn nào sáng quá định mức, đèn nào yếu hơn định mức?</li><li>Hiệu điện thế lớn nhất đặt vào hai đèn mắc nối tiếp để không đèn nào vượt định mức là bao nhiêu?</li><li>Với nguồn $24\\ \\text{V}$, để cả hai đèn sáng đúng định mức, người ta mắc thêm điện trở $R_x$ song song với $Đ_1$ (cụm đó nối tiếp với $Đ_2$). Tính $R_x$ và công suất tiêu thụ trên $R_x$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-4-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Hai đèn có số ghi khác nhau mắc nối tiếp vào nguồn 24 V, độ sáng mỗi đèn khác nhau\"><line x1=\"40.0\" y1=\"56.0\" x2=\"96.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"56.0\" x2=\"232.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"280.0\" y1=\"56.0\" x2=\"360.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"56.0\" x2=\"360.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"140.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"140.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"66.0\" x2=\"40.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"67.0\" x2=\"40.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"28.0\" y1=\"83.0\" x2=\"52.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"33.0\" y1=\"91.0\" x2=\"47.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"91.0\" x2=\"40.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"48\" y=\"130\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">24 V</text><circle cx=\"120.0\" cy=\"56.0\" r=\"24\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\"/><line x1=\"103.0\" y1=\"39.0\" x2=\"137.0\" y2=\"73.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"103.0\" y1=\"73.0\" x2=\"137.0\" y2=\"39.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"256.0\" cy=\"56.0\" r=\"24\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><line x1=\"239.0\" y1=\"39.0\" x2=\"273.0\" y2=\"73.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"239.0\" y1=\"73.0\" x2=\"273.0\" y2=\"39.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"120\" y=\"20\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Đ<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\">: 12 V – 6 W</tspan></text><text x=\"256\" y=\"20\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Đ<tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\">: 12 V – 12 W</tspan></text><circle cx=\"120\" cy=\"56\" r=\"2\" fill=\"#fbbf24\" fill-opacity=\"0\" stroke=\"none\"><animate attributeName=\"r\" values=\"2;36\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0;0.5\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"256\" cy=\"56\" r=\"2\" fill=\"#fbbf24\" fill-opacity=\"0\" stroke=\"none\"><animate attributeName=\"r\" values=\"2;24\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0;0.5\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"200\" y=\"178\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Hai đèn sáng lên khi đóng mạch</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: quầng sáng vẽ đúng thứ tự độ sáng thực tế của hai đèn khi nối tiếp vào 24 V (không ghi số).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đèn sáng đúng định mức khi dòng qua nó bằng $I_{đm}$ ; nối tiếp thì dòng chung.</li><li><strong>Công thức:</strong> $R=\\dfrac{U_{đm}^2}{P_{đm}}$ ; $I_{đm}=\\dfrac{P_{đm}}{U_{đm}}$ ; $P=I^2R$ ; $U_{max}=I_{max}(R_1+R_2)$.</li><li><strong>Điều kiện:</strong> $R$ không đổi ; nối tiếp thì $P\\propto R$, song song thì dòng chia theo nhánh.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở của hai đèn</span></p><p>Từ số ghi của mỗi đèn :</p>$$R_1=\\dfrac{12^2}{6}$$<div class=\"bt-ans\">$$R_1=24\\ \\Omega$$</div>$$R_2=\\dfrac{12^2}{12}$$<div class=\"bt-ans\">$$R_2=12\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất thực tế khi nối tiếp vào $24\\ \\text{V}$</span></p>$$I=\\dfrac{U}{R_1+R_2}=\\dfrac{24}{36}\\approx0{,}667\\ \\text{A}$$$$P_1=I^2R_1=0{,}667^2\\cdot24$$<div class=\"bt-ans\">$$P_1\\approx10{,}7\\ \\text{W}$$</div>$$P_2=I^2R_2\\approx0{,}667^2\\cdot12\\approx5{,}33\\ \\text{W}$$<p>$P_1\\gt P_{đm1}=6\\ \\text{W}$ : $Đ_1$ sáng quá định mức, có nguy cơ cháy. $P_2\\lt P_{đm2}=12\\ \\text{W}$ : $Đ_2$ sáng yếu.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện tối đa</span></p><p>Dòng định mức : $I_{đm1}=\\dfrac{6}{12}=0{,}5\\ \\text{A}$ ; $I_{đm2}=\\dfrac{12}{12}=1\\ \\text{A}$.</p><p>Nối tiếp thì hai đèn chung một dòng, nên dòng không được vượt dòng định mức nhỏ hơn :</p><div class=\"bt-ans\">$$I_{max}=0{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế tối đa</span></p>$$U_{max}=I_{max}(R_1+R_2)=0{,}5\\cdot36$$<div class=\"bt-ans\">$$U_{max}=18\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Dòng qua $R_x$</span></p><p>$Đ_2$ sáng đúng định mức nên dòng mạch chính là $I=I_{đm2}=1\\ \\text{A}$ ; $Đ_1$ chỉ cần $I_{đm1}=0{,}5\\ \\text{A}$.</p><p>Phần dòng thừa đi qua $R_x$ :</p>$$I_x=I-I_1=1-0{,}5$$<div class=\"bt-ans\">$$I_x=0{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Giá trị $R_x$ và công suất trên $R_x$</span></p><p>Cụm $Đ_1//R_x$ nhận đúng $12\\ \\text{V}$ (vì $Đ_1$ đúng định mức) :</p>$$R_x=\\dfrac{U_x}{I_x}=\\dfrac{12}{0{,}5}$$<div class=\"bt-ans\">$$R_x=24\\ \\Omega$$</div>$$P_x=U_xI_x=12\\cdot0{,}5=6\\ \\text{W}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Cụm song song : $\\dfrac{24\\cdot24}{24+24}=12\\ \\Omega$ ; cả mạch $12+12=24\\ \\Omega$, $I=\\dfrac{24}{24}=1\\ \\text{A}$ ✓.</p><p>Tổng công suất $=24\\cdot1=24\\ \\text{W}=6+12+6$ ✓ ($Đ_1$, $Đ_2$, $R_x$).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_1\\approx10{,}7\\ \\text{W}$ (quá định mức) ; $P_2\\approx5{,}33\\ \\text{W}$ (yếu)</p><p>b) $U_{max}=18\\ \\text{V}$</p><p>c) $R_x=24\\ \\Omega$ ; $P_x=6\\ \\text{W}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>đèn định mức mắc nối tiếp</strong> → dòng chung ; lấy <strong>dòng định mức nhỏ hơn</strong> làm dòng tối đa ; thấy <strong>điện trở phụ</strong> → phần dòng thừa đi qua nó.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-4-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Mạch nối tiếp hai đèn vào nguồn 24 V, có chỗ dành cho điện trở R_x song song với đèn thứ nhất\"><line x1=\"40.0\" y1=\"56.0\" x2=\"96.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"144.0\" y1=\"56.0\" x2=\"232.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"280.0\" y1=\"56.0\" x2=\"360.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"56.0\" x2=\"360.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"140.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"140.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"66.0\" x2=\"40.0\" y2=\"56.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"67.0\" x2=\"40.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"28.0\" y1=\"83.0\" x2=\"52.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"33.0\" y1=\"91.0\" x2=\"47.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"91.0\" x2=\"40.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"48\" y=\"130\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">24 V</text><circle cx=\"120.0\" cy=\"56.0\" r=\"24\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\"/><line x1=\"103.0\" y1=\"39.0\" x2=\"137.0\" y2=\"73.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"103.0\" y1=\"73.0\" x2=\"137.0\" y2=\"39.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"256.0\" cy=\"56.0\" r=\"24\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><line x1=\"239.0\" y1=\"39.0\" x2=\"273.0\" y2=\"73.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"239.0\" y1=\"73.0\" x2=\"273.0\" y2=\"39.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"120\" y=\"20\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Đ<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\">: 12 V – 6 W</tspan></text><text x=\"256\" y=\"20\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Đ<tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\">: 12 V – 12 W</tspan></text><line x1=\"76.0\" y1=\"56.0\" x2=\"76.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"164.0\" y1=\"56.0\" x2=\"164.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"76.0\" y1=\"100.0\" x2=\"100.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"140.0\" y1=\"100.0\" x2=\"164.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><rect x=\"100.0\" y=\"90.0\" width=\"40.0\" height=\"20.0\" rx=\"4\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"0.95\"/><text x=\"120\" y=\"126\" fill=\"#94a3b8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"10\">x</tspan><tspan dy=\"-4\"> ?</tspan></text><text x=\"200\" y=\"178\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Câu c: R<tspan dy=\"4\" font-size=\"9\">x</tspan><tspan dy=\"-4\"> mắc song song với Đ₁</tspan></text></svg><figcaption>Dữ kiện: số ghi định mức của hai đèn và nguồn 24 V ; nét đứt là chỗ mắc điện trở phụ ở câu c. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$Đ_1$: $12\\ \\text{V}-6\\ \\text{W}$ ; $Đ_2$: $12\\ \\text{V}-12\\ \\text{W}$\"</td><td>$U_{đm}=12\\ \\text{V}$ ; $P_{đm1}=6\\ \\text{W}$ ; $P_{đm2}=12\\ \\text{W}$</td><td>$R=\\dfrac{U_{đm}^2}{P_{đm}}$ ; $I_{đm}=\\dfrac{P_{đm}}{U_{đm}}$</td></tr><tr><td>\"mắc nối tiếp vào nguồn $24\\ \\text{V}$\"</td><td>Cùng dòng $I$ ; $U=U_1+U_2$</td><td>⚠ nối tiếp : $I=\\dfrac{U}{R_1+R_2}$, $P=I^2R$ (không phải $U^2/R$ với cả $24\\ \\text{V}$)</td></tr><tr><td>\"hiệu điện thế lớn nhất … không đèn nào vượt định mức\"</td><td>$I\\le I_{đm1}$ và $I\\le I_{đm2}$</td><td>$I_{max}=\\min(I_{đm1},I_{đm2})$ ; $U_{max}=I_{max}(R_1+R_2)$</td></tr><tr><td>\"$R_x$ song song với $Đ_1$, cả hai đèn đúng định mức\"</td><td>$I_2=I_{đm2}$ ; $I_1=I_{đm1}$ ; $U_{x}=U_{đm}$</td><td>$I_x=I_2-I_1$ ; $R_x=\\dfrac{U_{đm}}{I_x}$ ; $P_x=U_{đm}I_x$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đèn định mức mắc nối tiếp</b> → dòng chung ; dòng tối đa là <b>dòng định mức nhỏ hơn</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở của hai đèn",
+     "hoi": "Điện trở của $Đ_1$ bằng bao nhiêu?",
+     "dap_so": 24,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Viết $R=\\dfrac{U}{P}$ hoặc lấy số ghi $P$ làm điện trở."
+    },
+    {
+     "tieu_de": "Công suất thực tế khi nối tiếp vào $24\\ \\text{V}$",
+     "hoi": "Công suất thực tế của $Đ_1$ khi nối tiếp vào $24\\ \\text{V}$?",
+     "dap_so": 10.7,
+     "sai_so": 0.1,
+     "don_vi": "W",
+     "loi_hay_gap": "Cho mỗi đèn nhận một nửa hiệu điện thế nguồn, hoặc dùng $\\dfrac{U^2}{R}$ với cả hiệu điện thế nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm dòng chung $I=\\dfrac{U}{R_1+R_2}$ rồi $P_1=I^2R_1$",
+       "dung": true
+      },
+      {
+       "text": "Cho mỗi đèn nhận một nửa hiệu điện thế nguồn",
+       "dung": false,
+       "vi_sao": "Hiệu điện thế chỉ chia đều khi hai đèn có điện trở bằng nhau ; ở đây hai điện trở khác nhau."
+      },
+      {
+       "text": "$P_1=\\dfrac{U^2}{R_1}$ với $U$ là hiệu điện thế nguồn",
+       "dung": false,
+       "vi_sao": "Cả nguồn đặt vào hai đèn nối tiếp ; mỗi đèn chỉ nhận một phần của nó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện tối đa",
+     "hoi": "Dòng điện lớn nhất qua hai đèn nối tiếp mà không đèn nào vượt định mức?",
+     "dap_so": 0.5,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Cộng hai dòng định mức, hoặc lấy dòng định mức lớn hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy dòng định mức nhỏ hơn trong hai đèn",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai dòng định mức",
+       "dung": false,
+       "vi_sao": "Nối tiếp thì hai đèn chung một dòng, không cộng được."
+      },
+      {
+       "text": "Lấy dòng định mức lớn hơn",
+       "dung": false,
+       "vi_sao": "Khi đó đèn có dòng định mức nhỏ hơn bị quá tải."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế tối đa",
+     "hoi": "Hiệu điện thế lớn nhất đặt vào hai đèn nối tiếp là bao nhiêu?",
+     "dap_so": 18,
+     "sai_so": 0.1,
+     "don_vi": "V",
+     "loi_hay_gap": "Cộng hai hiệu điện thế định mức, trong khi hai đèn chưa chắc cùng đúng định mức.",
+     "chon_buoc_ke": [
+      {
+       "text": "$U_{max}=I_{max}(R_1+R_2)$",
+       "dung": true
+      },
+      {
+       "text": "$U_{max}=U_{đm1}+U_{đm2}$",
+       "dung": false,
+       "vi_sao": "Tổng hai hiệu điện thế định mức chỉ đạt khi cả hai đèn cùng đúng định mức, mà điều đó cần hai dòng định mức bằng nhau."
+      },
+      {
+       "text": "$U_{max}=U_{đm}$ của một đèn",
+       "dung": false,
+       "vi_sao": "Hai đèn nối tiếp chia hiệu điện thế nên cả cụm chịu được nhiều hơn một hiệu điện thế định mức."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng qua $R_x$",
+     "hoi": "Dòng điện qua $R_x$ là bao nhiêu?",
+     "dap_so": 0.5,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Cho $R_x$ nhận dòng định mức của $Đ_2$ hoặc cho là bằng không vì $Đ_1$ đã đủ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dòng mạch chính trừ phần dòng $Đ_1$ cần",
+       "dung": true
+      },
+      {
+       "text": "Bằng dòng mạch chính",
+       "dung": false,
+       "vi_sao": "Dòng mạch chính chia hai nhánh ; $R_x$ chỉ nhận phần $Đ_1$ không dùng."
+      },
+      {
+       "text": "Bằng không vì $Đ_1$ đã sáng đủ",
+       "dung": false,
+       "vi_sao": "$Đ_1$ chỉ cần một nửa dòng mạch chính ; nửa còn lại phải đi qua $R_x$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giá trị $R_x$ và công suất trên $R_x$",
+     "hoi": "Giá trị của $R_x$ là bao nhiêu?",
+     "dap_so": 24,
+     "sai_so": 0.2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Dùng hiệu điện thế của cả nguồn thay vì hiệu điện thế trên cụm song song.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_x=\\dfrac{U_{đm}}{I_x}$ với $U_{đm}$ là hiệu điện thế trên $Đ_1$",
+       "dung": true
+      },
+      {
+       "text": "$R_x=\\dfrac{U_{nguồn}}{I_x}$",
+       "dung": false,
+       "vi_sao": "$R_x$ chỉ nhận hiệu điện thế của cụm song song với $Đ_1$, không phải cả nguồn."
+      },
+      {
+       "text": "Mắc $R_x$ song song với $Đ_2$ thay vì $Đ_1$",
+       "dung": false,
+       "vi_sao": "Đèn có dòng định mức nhỏ hơn mới cần chia bớt dòng ; mắc cạnh $Đ_2$ làm nó thiếu dòng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Cực đại công suất trên biến trở: giá trị R, công suất cực đại, hiệu suất",
+   "topic": "Công và công suất của nguồn điện",
+   "problem_html": "<p>Điện trở $R_0=6\\ \\Omega$ mắc nối tiếp với biến trở $R$, đặt vào hiệu điện thế không đổi $U=24\\ \\text{V}$.</p><ol type=\"a\"><li>Tìm $R$ để công suất tiêu thụ trên biến trở lớn nhất (chỉ dùng $(R-R_0)^2\\ge0$, không dùng đạo hàm hay Cô-si) và tính $P_{max}$.</li><li>Khi đó tính công suất toàn mạch và hiệu suất của mạch (công suất có ích là công suất trên $R$).</li><li>Tìm các giá trị $R$ để $P_R=18\\ \\text{W}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-5-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Chấm chạy dọc đồ thị công suất trên biến trở khi giá trị biến trở tăng dần\"><line x1=\"50.0\" y1=\"190.0\" x2=\"400.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M392.2,185.5 L400.0,190.0 L392.2,194.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"50.0\" y1=\"190.0\" x2=\"50.0\" y2=\"26.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M45.5,33.8 L50.0,26.0 L54.5,33.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"400\" y=\"182\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">R (Ω)</text><text x=\"58\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">R</tspan></text><line x1=\"160.0\" y1=\"190.0\" x2=\"160.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"160.0\" y=\"211\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><line x1=\"270.0\" y1=\"190.0\" x2=\"270.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"270.0\" y=\"211\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><line x1=\"380.0\" y1=\"190.0\" x2=\"380.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"380.0\" y=\"211\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><polyline fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.4\" opacity=\"0.9\" points=\"55.5,146.4 60.9,115.2 66.3,92.4 71.7,75.5 77.1,63.2 82.5,54.1 88.0,47.6 93.4,43.0 98.8,39.9 104.2,37.9 109.6,36.8 115.0,36.4 120.4,36.6 125.8,37.1 131.2,38.0 136.6,39.2 142.0,40.6 147.4,42.1 152.8,43.7 158.3,45.4 163.7,47.2 169.1,49.0 174.5,50.9 179.9,52.7 185.3,54.6 190.7,56.5 196.1,58.3 201.5,60.1 206.9,62.0 212.3,63.7 217.8,65.5 223.2,67.2 228.6,68.9 234.0,70.6 239.4,72.3 244.8,73.9 250.2,75.4 255.6,77.0 261.0,78.5 266.4,80.0 271.8,81.4 277.2,82.8 282.6,84.2 288.1,85.6 293.5,86.9 298.9,88.2 304.3,89.5 309.7,90.7 315.1,91.9 320.5,93.1 325.9,94.3 331.3,95.4 336.7,96.5 342.1,97.6 347.6,98.7 353.0,99.8 358.4,100.8 363.8,101.8 369.2,102.8 374.6,103.7 380.0,104.7\"/><circle cx=\"55.5\" cy=\"146.4\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"55.5;60.9;66.3;71.7;77.1;82.5;88.0;93.4;98.8;104.2;109.6;115.0;120.4;125.8;131.2;136.6;142.0;147.4;152.8;158.3;163.7;169.1;174.5;179.9;185.3;190.7;196.1;201.5;206.9;212.3;217.8;223.2;228.6;234.0;239.4;244.8;250.2;255.6;261.0;266.4;271.8;277.2;282.6;288.1;293.5;298.9;304.3;309.7;315.1;320.5;325.9;331.3;336.7;342.1;347.6;353.0;358.4;363.8;369.2;374.6;380.0\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"146.4;115.2;92.4;75.5;63.2;54.1;47.6;43.0;39.9;37.9;36.8;36.4;36.6;37.1;38.0;39.2;40.6;42.1;43.7;45.4;47.2;49.0;50.9;52.7;54.6;56.5;58.3;60.1;62.0;63.7;65.5;67.2;68.9;70.6;72.3;73.9;75.4;77.0;78.5;80.0;81.4;82.8;84.2;85.6;86.9;88.2;89.5;90.7;91.9;93.1;94.3;95.4;96.5;97.6;98.7;99.8;100.8;101.8;102.8;103.7;104.7\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"210\" y=\"70\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Biến trở trượt từ nhỏ đến lớn</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm chạy dọc đường P_R theo R (vẽ đúng công thức) khi kéo biến trở từ nhỏ đến lớn. Trục P chưa ghi thang.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất trên biến trở phụ thuộc $R$ : nhỏ khi $R$ rất bé hoặc rất lớn.</li><li><strong>Công thức:</strong> $P_R=\\dfrac{U^2R}{(R+R_0)^2}=\\dfrac{U^2}{\\frac{(R-R_0)^2}{R}+4R_0}$ ; $H=\\dfrac{R}{R+R_0}$.</li><li><strong>Điều kiện:</strong> $R_0$ cố định nối tiếp $R$ ; $U$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công suất trên biến trở theo $R$</span></p><p>Dòng chung của mạch nối tiếp :</p>$$I=\\dfrac{U}{R+R_0}$$$$P_R=I^2R=\\dfrac{U^2R}{(R+R_0)^2}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Giá trị $R$ cho công suất lớn nhất</span></p><p>Dùng $(R+R_0)^2=(R-R_0)^2+4RR_0$ rồi chia tử và mẫu cho $R\\gt0$ :</p>$$P_R=\\dfrac{U^2}{\\dfrac{(R-R_0)^2}{R}+4R_0}$$<p>Vì $(R-R_0)^2\\ge0$ nên mẫu số $\\ge4R_0$. Dấu bằng xảy ra khi $R=R_0$ :</p><div class=\"bt-ans\">$$R=R_0=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất cực đại</span></p>$$P_{max}=\\dfrac{U^2}{4R_0}=\\dfrac{24^2}{4\\cdot6}$$<div class=\"bt-ans\">$$P_{max}=24\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất toàn mạch và hiệu suất</span></p><p>Khi $R=6\\ \\Omega$ : $I=\\dfrac{24}{12}=2\\ \\text{A}$.</p>$$P_{toàn}=UI=24\\cdot2=48\\ \\text{W}$$$$H=\\dfrac{P_R}{P_{toàn}}=\\dfrac{24}{48}$$<div class=\"bt-ans\">$$H=50\\%$$</div><p>Một nửa điện năng toả nhiệt trên $R_0$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hai giá trị $R$ cùng một công suất</span></p><p>Cho $P_R=18\\ \\text{W}$ :</p>$$\\dfrac{24^2R}{(R+6)^2}=18\\ \\Rightarrow\\ 32R=(R+6)^2$$$$R^2-20R+36=0$$<p>Nghiệm $R=2\\ \\Omega$ hoặc $R=18\\ \\Omega$. Giá trị khác ở câu a :</p><div class=\"bt-ans\">$$R=18\\ \\Omega\\ \\ (\\text{và}\\ R=2\\ \\Omega)$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$R=2$ : $\\dfrac{576\\cdot2}{8^2}=18\\ \\text{W}$ ✓ ; $R=18$ : $\\dfrac{576\\cdot18}{24^2}=18\\ \\text{W}$ ✓.</p><p>$R_1R_2=2\\cdot18=36=R_0^2$ : hai nghiệm đối xứng theo <em>tích</em>, không theo hiệu.</p><p>Khi $R=18\\ \\Omega$, $H=\\dfrac{18}{24}=75\\%$ cao hơn $50\\%$ nhưng công suất trên $R$ thấp hơn $24\\ \\text{W}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=6\\ \\Omega$ ; $P_{max}=24\\ \\text{W}$</p><p>b) $P_{toàn}=48\\ \\text{W}$ ; $H=50\\%$</p><p>c) $R=18\\ \\Omega$ (và $R=2\\ \\Omega$)</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>công suất lớn nhất trên biến trở</strong> nối tiếp một điện trở → $R=R_0$, $P_{max}=U^2/4R_0$ ; thấy <strong>cùng một công suất</strong> → hai nghiệm, $R_1R_2=R_0^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-5-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Điện trở R0 bằng 6 ôm mắc nối tiếp với biến trở R, nguồn 24 vôn\"><line x1=\"40.0\" y1=\"50.0\" x2=\"100.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"148.0\" y1=\"50.0\" x2=\"210.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"300.0\" y1=\"50.0\" x2=\"340.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"340.0\" y1=\"50.0\" x2=\"340.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"340.0\" y1=\"130.0\" x2=\"40.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"130.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"66.0\" x2=\"40.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"67.0\" x2=\"40.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"28.0\" y1=\"83.0\" x2=\"52.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"33.0\" y1=\"91.0\" x2=\"47.0\" y2=\"91.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"91.0\" x2=\"40.0\" y2=\"111.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"56\" y=\"94\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U = 24 V</text><rect x=\"100.0\" y=\"42.0\" width=\"48.0\" height=\"16.0\" rx=\"3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"124\" y=\"34\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"10\">0</tspan><tspan dy=\"-4\"> = 6 Ω</tspan></text><rect x=\"210.0\" y=\"42.0\" width=\"90.0\" height=\"16.0\" rx=\"3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"222.0\" y1=\"74.0\" x2=\"288.0\" y2=\"30.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M279.0,30.6 L288.0,30.0 L284.0,38.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"255\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">biến trở R</text><text x=\"255\" y=\"156\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Tìm R để P<tspan dy=\"4\" font-size=\"9\">R</tspan><tspan dy=\"-4\"> lớn nhất</tspan></text></svg><figcaption>Dữ kiện: R₀ cố định nối tiếp với biến trở R, hiệu điện thế nguồn không đổi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$R_0=6\\ \\Omega$ nối tiếp biến trở $R$, $U=24\\ \\text{V}$\"</td><td>$R_0=6\\ \\Omega$ ; $U=24\\ \\text{V}$ không đổi</td><td>⚠ điều kiện của $R=R_0$ : một điện trở cố định nối tiếp biến trở, $U$ cả mạch không đổi</td></tr><tr><td>\"công suất trên biến trở lớn nhất\"</td><td>$P_R=I^2R=\\dfrac{U^2R}{(R+R_0)^2}$</td><td>$(R+R_0)^2=(R-R_0)^2+4RR_0$ ; $(R-R_0)^2\\ge0$</td></tr><tr><td>\"công suất toàn mạch và hiệu suất\"</td><td>$P_{toàn}=UI$ ; có ích là $P_R$</td><td>$H=\\dfrac{P_R}{P_{toàn}}=\\dfrac{R}{R+R_0}$</td></tr><tr><td>\"giá trị $R$ khác cho $P_R=18\\ \\text{W}$\"</td><td>$P_R=18\\ \\text{W}$ (nhỏ hơn $P_{max}$)</td><td>Giải $\\dfrac{U^2R}{(R+R_0)^2}=18$ : phương trình bậc hai ; $R_1R_2=R_0^2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất lớn nhất trên biến trở</b> nối tiếp điện trở cố định → $R=R_0$, $P_{max}=\\dfrac{U^2}{4R_0}$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công suất trên biến trở theo $R$",
+     "hoi": "Biểu thức nào đúng cho công suất trên biến trở?",
+     "lua_chon": [
+      {
+       "text": "$P_R=\\dfrac{U^2R}{(R+R_0)^2}$",
+       "dung": true
+      },
+      {
+       "text": "$P_R=\\dfrac{U^2}{R}$",
+       "dung": false,
+       "vi_sao": "Đó là công suất nếu cả $U$ đặt lên $R$ ; ở đây $R$ nối tiếp $R_0$ nên chỉ nhận một phần của $U$."
+      },
+      {
+       "text": "$P_R=\\dfrac{U^2}{R+R_0}$",
+       "dung": false,
+       "vi_sao": "Đó là công suất của toàn mạch, không phải của riêng biến trở."
+      }
+     ],
+     "loi_hay_gap": "Dùng cả $U$ cho biến trở hoặc nhầm công suất biến trở với công suất toàn mạch."
+    },
+    {
+     "tieu_de": "Giá trị $R$ cho công suất lớn nhất",
+     "hoi": "Giá trị $R$ để công suất trên biến trở lớn nhất?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Cho $R$ rất nhỏ (dòng lớn) hoặc rất lớn (điện trở lớn) vì nghĩ công suất luôn tăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $P_R$ thành $\\dfrac{U^2}{\\frac{(R-R_0)^2}{R}+4R_0}$ rồi xét dấu bằng",
+       "dung": true
+      },
+      {
+       "text": "Cho $R\\to0$ để dòng điện lớn nhất",
+       "dung": false,
+       "vi_sao": "Khi $R=0$ thì $P_R=I^2R=0$ ; dòng lớn nhất làm công suất toàn mạch lớn nhất, không phải của biến trở."
+      },
+      {
+       "text": "Cho $R$ thật lớn vì $P=I^2R$ tăng theo $R$",
+       "dung": false,
+       "vi_sao": "$R$ tăng làm $I$ giảm nhanh hơn ; $P_R$ tiến về $0$ khi $R$ rất lớn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất cực đại",
+     "hoi": "Công suất cực đại trên biến trở là bao nhiêu oát?",
+     "dap_so": 24,
+     "sai_so": 0.2,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy $\\dfrac{U^2}{R_0}$ (cả hiệu điện thế đặt lên $R_0$) hoặc $\\dfrac{U^2}{2R_0}$ (công suất toàn mạch).",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_{max}=\\dfrac{U^2}{4R_0}$",
+       "dung": true
+      },
+      {
+       "text": "$P_{max}=\\dfrac{U^2}{R_0}$",
+       "dung": false,
+       "vi_sao": "Đó là công suất nếu cả $U$ đặt lên $R_0$ ; nối tiếp với $R=R_0$ thì $U$ chia đôi nên công suất chỉ còn một phần tư."
+      },
+      {
+       "text": "$P_{max}=\\dfrac{U^2}{2R_0}$",
+       "dung": false,
+       "vi_sao": "Đó là công suất toàn mạch khi $R=R_0$, gồm cả phần toả ở $R_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất toàn mạch và hiệu suất",
+     "hoi": "Hiệu suất của mạch khi công suất trên biến trở cực đại là bao nhiêu phần trăm?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Cho hiệu suất $100\\%$ vì nghĩ biến trở là phần có ích duy nhất, quên điện năng toả trên $R_0$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H=\\dfrac{P_R}{P_{toàn}}=\\dfrac{R}{R+R_0}$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{P_R}{U^2/R_0}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{U^2}{R_0}$ không phải công suất toàn mạch ; toàn mạch có điện trở $R+R_0$."
+      },
+      {
+       "text": "Hiệu suất bằng $1$ vì không có hao phí",
+       "dung": false,
+       "vi_sao": "Phần toả nhiệt trên $R_0$ cũng là điện năng không có ích ; bằng đúng phần trên $R$ khi $R=R_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hai giá trị $R$ cùng một công suất",
+     "hoi": "Trong các giá trị $R$ cho công suất nêu ở câu c, giá trị lớn hơn $R_0$ là bao nhiêu?",
+     "dap_so": 18,
+     "sai_so": 0.2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy giá trị đối xứng qua $R_0$ theo hiệu, thay vì giải phương trình bậc hai.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập $\\dfrac{U^2R}{(R+R_0)^2}$ bằng công suất đó rồi giải phương trình bậc hai",
+       "dung": true
+      },
+      {
+       "text": "Lấy $R$ cách $R_0$ cùng một khoảng ở phía lớn hơn",
+       "dung": false,
+       "vi_sao": "Hai nghiệm không đối xứng theo hiệu mà theo tích : $R_1R_2=R_0^2$."
+      },
+      {
+       "text": "Cho rằng chỉ có đúng một giá trị $R$",
+       "dung": false,
+       "vi_sao": "Đồ thị tăng rồi giảm nên mỗi mức công suất dưới đỉnh có hai giá trị $R$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Vận dụng cao · Dòng điện lớn trên dây: hao phí khi truyền tải, chọn aptomat và tiết diện dây",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "problem_html": "<ol type=\"a\"><li>Trạm phát truyền công suất $60\\ \\text{kW}$ qua đường dây có tổng điện trở $8\\ \\Omega$. Tính công suất hao phí trên dây khi truyền ở $6\\ \\text{kV}$, rồi khi tăng lên $12\\ \\text{kV}$.</li><li>Một nhánh mạch nhà $220\\ \\text{V}$ có bếp $1500\\ \\text{W}$, nồi cơm $600\\ \\text{W}$, bàn là $1000\\ \\text{W}$ và $8$ bóng LED, mỗi bóng $10\\ \\text{W}$, cùng hoạt động. Dãy aptomat: $6$; $10$; $16$; $20$; $25$; $32\\ \\text{A}$. Dãy dây đồng: $1{,}5$; $2{,}5$; $4$; $6\\ \\text{mm}^2$, quy ước $J\\le5\\ \\text{A/mm}^2$ (dòng cho phép của dây $=5S$). Quy tắc chọn: $I_{làm\\ việc}\\lt I_{aptomat}\\le5S$. Chọn aptomat và tiết diện dây nhỏ nhất thoả mãn.</li><li>Lắp thêm bình nóng lạnh $2500\\ \\text{W}$ vào cùng nhánh. Phương án ở câu b còn dùng được không? Nêu phương án khắc phục.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-6-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Trạm phát truyền điện năng tới nơi dùng qua hai dây dẫn có điện trở 8 ôm\"><rect x=\"14.0\" y=\"52.0\" width=\"80.0\" height=\"60.0\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"54\" y=\"78\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Trạm phát</text><text x=\"54\" y=\"98\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">60 kW</text><rect x=\"326.0\" y=\"52.0\" width=\"80.0\" height=\"60.0\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"366\" y=\"78\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Nơi dùng</text><line x1=\"94\" y1=\"68\" x2=\"326\" y2=\"68\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-dasharray=\"8 8\"><animate attributeName=\"stroke-dashoffset\" values=\"0;-64\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"94\" y1=\"96\" x2=\"326\" y2=\"96\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-dasharray=\"8 8\"><animate attributeName=\"stroke-dashoffset\" values=\"0;-64\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><text x=\"210\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Đường dây: R = 8 Ω (cả hai dây)</text><text x=\"210\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Điện chạy từ trạm tới nơi dùng</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng điện chạy từ trạm tới nơi dùng qua đường dây có điện trở R.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hao phí trên dây là nhiệt $I^2R$ ; aptomat ngắt khi quá dòng ; dây chịu được $I\\le J\\cdot S$.</li><li><strong>Công thức:</strong> $I=\\dfrac{P}{U}$ ; $P_{hp}=I^2R=\\dfrac{P^2R}{U^2}$ ; $I_{cho\\ phép}=5S$ ; $I_{làm\\ việc}\\lt I_{apt}\\le I_{cho\\ phép}$.</li><li><strong>Điều kiện:</strong> thiết bị mắc song song ; $U$ trong $I=P/U$ là hiệu điện thế ở đầu đường dây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng trên đường dây</span></p><p>Trạm truyền $P=60\\ \\text{kW}=60\\,000\\ \\text{W}$ ở $U=6\\ \\text{kV}$ :</p>$$I=\\dfrac{P}{U}=\\dfrac{60\\,000}{6000}$$<div class=\"bt-ans\">$$I=10\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hao phí ở $6\\ \\text{kV}$</span></p>$$P_{hp}=I^2R=10^2\\cdot8$$<div class=\"bt-ans\">$$P_{hp}=800\\ \\text{W}$$</div><p>Tỉ lệ $\\dfrac{800}{60\\,000}\\approx1{,}3\\%$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hao phí ở $12\\ \\text{kV}$</span></p><p>$U$ tăng $2$ lần nên $I$ giảm $2$ lần, còn $5\\ \\text{A}$ :</p>$$P_{hp}=5^2\\cdot8$$<div class=\"bt-ans\">$$P_{hp}=200\\ \\text{W}$$</div><p>Giảm $4$ lần, đúng $P_{hp}=\\dfrac{P^2R}{U^2}\\propto\\dfrac1{U^2}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện của nhánh nhà</span></p>$$P=1500+600+1000+8\\cdot10=3180\\ \\text{W}$$$$I=\\dfrac{P}{U}=\\dfrac{3180}{220}$$<div class=\"bt-ans\">$$I\\approx14{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Aptomat và tiết diện dây</span></p><p>Aptomat nhỏ nhất lớn hơn $14{,}5\\ \\text{A}$ trong dãy : $16\\ \\text{A}$.</p>$$S\\ge\\dfrac{I_{apt}}{J}=\\dfrac{16}{5}=3{,}2\\ \\text{mm}^2$$<div class=\"bt-ans\">$$S=4\\ \\text{mm}^2$$</div><p>Kiểm tra : dòng cho phép $5\\cdot4=20\\ \\text{A}\\ge16\\ \\text{A}$ ✓ nên aptomat ngắt trước khi dây quá nóng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Dòng nhánh khi thêm bình nóng lạnh</span></p>$$P'=3180+2500=5680\\ \\text{W}$$$$I'=\\dfrac{5680}{220}$$<div class=\"bt-ans\">$$I'\\approx25{,}8\\ \\text{A}$$</div><p>Vượt $20\\ \\text{A}$ của dây $4\\ \\text{mm}^2$ và vượt aptomat $16\\ \\text{A}$ : phương án câu b không dùng được.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Phương án khắc phục</span></p><p>Giữ nguyên aptomat $16\\ \\text{A}$ thì sẽ nhảy liên tục ; đổi aptomat $32\\ \\text{A}$ phải có $S\\ge\\dfrac{32}{5}=6{,}4\\ \\text{mm}^2$, mà dãy dây chỉ tới $6\\ \\text{mm}^2$, nên aptomat $32\\ \\text{A}$ vượt dòng cho phép của dây.</p><p>Cách đúng : <strong>đi nhánh riêng cho bình nóng lạnh</strong> : $I=\\dfrac{2500}{220}\\approx11{,}4\\ \\text{A}$ ; aptomat $16\\ \\text{A}$ ; dây $4\\ \\text{mm}^2$ (dòng cho phép $20\\ \\text{A}$). Dây $2{,}5\\ \\text{mm}^2$ chỉ chịu $12{,}5\\ \\text{A}$, không có aptomat nào trong dãy nằm giữa $11{,}4$ và $12{,}5\\ \\text{A}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Nhánh cũ giữ nguyên $3180\\ \\text{W}$, $14{,}5\\ \\text{A}\\lt16\\ \\text{A}\\le20\\ \\text{A}$ ✓.</p><p>Nhánh bình : $11{,}4\\ \\text{A}\\lt16\\ \\text{A}\\le20\\ \\text{A}$ ✓.</p><p>Hao phí truyền tải tính bằng $I^2R$ với $I=P/U$, không dùng $U^2/R$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_{hp}=800\\ \\text{W}$ ($6\\ \\text{kV}$) ; $200\\ \\text{W}$ ($12\\ \\text{kV}$)</p><p>b) aptomat $16\\ \\text{A}$ ; dây $4\\ \\text{mm}^2$</p><p>c) $I'\\approx25{,}8\\ \\text{A}$ : không dùng được ; tách nhánh riêng cho bình nóng lạnh (aptomat $16\\ \\text{A}$, dây $4\\ \\text{mm}^2$)</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>truyền tải, hao phí</strong> → $I=P/U$, $P_{hp}=I^2R$ ; thấy <strong>chọn aptomat, dây</strong> → $I_{làm\\ việc}\\lt I_{apt}\\le5S$, rồi tính ngược để kiểm lại.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c05-6-2\"><svg viewBox=\"0 0 420 188\" role=\"img\" aria-label=\"Nhánh mạch nhà 220 vôn gồm aptomat nối tiếp rồi bốn nhóm thiết bị mắc song song\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nhánh mạch 220 V</text><rect x=\"20.0\" y=\"36.0\" width=\"70.0\" height=\"26.0\" rx=\"4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"55\" y=\"54\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">aptomat ?</text><line x1=\"90.0\" y1=\"49.0\" x2=\"400.0\" y2=\"49.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"49.0\" x2=\"14.0\" y2=\"49.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"14.0\" y1=\"49.0\" x2=\"14.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"14.0\" y1=\"150.0\" x2=\"400.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"400.0\" y1=\"49.0\" x2=\"400.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"49.0\" x2=\"130.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"100.0\" y=\"82.0\" width=\"60.0\" height=\"36.0\" rx=\"3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"130\" y=\"105\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">bếp</text><line x1=\"130.0\" y1=\"118.0\" x2=\"130.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"49.0\" x2=\"210.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"180.0\" y=\"82.0\" width=\"60.0\" height=\"36.0\" rx=\"3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"210\" y=\"105\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nồi cơm</text><line x1=\"210.0\" y1=\"118.0\" x2=\"210.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"290.0\" y1=\"49.0\" x2=\"290.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"260.0\" y=\"82.0\" width=\"60.0\" height=\"36.0\" rx=\"3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"290\" y=\"105\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">bàn là</text><line x1=\"290.0\" y1=\"118.0\" x2=\"290.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"49.0\" x2=\"360.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"330.0\" y=\"82.0\" width=\"60.0\" height=\"36.0\" rx=\"3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"360\" y=\"105\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8 đèn</text><line x1=\"360.0\" y1=\"118.0\" x2=\"360.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"16\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Dây dẫn: tiết diện ? (J ≤ 5 A/mm²)</text></svg><figcaption>Dữ kiện: các thiết bị mắc song song vào nhánh, aptomat và dây dẫn mắc nối tiếp ở đầu nhánh. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"truyền $60\\ \\text{kW}$ … đường dây $8\\ \\Omega$ … $6\\ \\text{kV}$ rồi $12\\ \\text{kV}$\"</td><td>$P=60\\ \\text{kW}$ ; $R=8\\ \\Omega$ ; $U=6$ rồi $12\\ \\text{kV}$</td><td>$I=\\dfrac{P}{U}$ ; $P_{hp}=I^2R$ ; ⚠ $U$ là hiệu điện thế ở trạm, không phải độ sụt áp trên dây</td></tr><tr><td>\"bếp, nồi cơm, bàn là, $8$ đèn LED cùng hoạt động\"</td><td>$P=1500+600+1000+8\\cdot10$ ; $U=220\\ \\text{V}$</td><td>Mắc song song : $P=\\sum P_i$ ; $I=\\dfrac{P}{U}$</td></tr><tr><td>\"chọn aptomat và tiết diện dây nhỏ nhất\"</td><td>$J\\le5\\ \\text{A/mm}^2$ ; dãy aptomat, dãy dây</td><td>⚠ $I_{làm\\ việc}\\lt I_{apt}\\le5S$ : aptomat không được vượt dòng cho phép của dây</td></tr><tr><td>\"lắp thêm bình nóng lạnh $2500\\ \\text{W}$\"</td><td>$P'=P+2500$</td><td>Tính lại $I'$ rồi so với dòng cho phép của dây ; nếu không có cỡ phù hợp thì tách nhánh</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>truyền tải, hao phí</b> → $I=P/U$, $P_{hp}=I^2R$ ; thấy <b>chọn aptomat, dây</b> → $I_{làm\\ việc}\\lt I_{apt}\\le5S$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Dòng trên đường dây",
+     "hoi": "Dòng điện trên đường dây khi truyền ở $6\\ \\text{kV}$?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $P=60$ (kW) với $U=6000$ (V) mà không đổi cùng đơn vị."
+    },
+    {
+     "tieu_de": "Hao phí ở $6\\ \\text{kV}$",
+     "hoi": "Công suất hao phí trên dây khi truyền ở $6\\ \\text{kV}$ là bao nhiêu oát?",
+     "dap_so": 800,
+     "sai_so": 5,
+     "don_vi": "W",
+     "loi_hay_gap": "Dùng $\\dfrac{U^2}{R}$ với $U$ của trạm : đó không phải hiệu điện thế trên dây.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_{hp}=I^2R$ với $I=\\dfrac{P}{U}$",
+       "dung": true
+      },
+      {
+       "text": "$P_{hp}=\\dfrac{U^2}{R}$ với $U$ của trạm",
+       "dung": false,
+       "vi_sao": "Hiệu điện thế trên dây chỉ là độ sụt áp $I\\cdot R$, nhỏ hơn nhiều $U$ của trạm."
+      },
+      {
+       "text": "$P_{hp}=U\\cdot I$",
+       "dung": false,
+       "vi_sao": "Đó là công suất của cả đường truyền, không phải phần hao phí trên dây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hao phí ở $12\\ \\text{kV}$",
+     "hoi": "Công suất hao phí khi truyền ở $12\\ \\text{kV}$ là bao nhiêu oát?",
+     "dap_so": 200,
+     "sai_so": 3,
+     "don_vi": "W",
+     "loi_hay_gap": "Cho hao phí giảm $2$ lần theo $U$, quên rằng hao phí tỉ lệ với $\\dfrac{1}{U^2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I$ giảm $2$ lần nên $P_{hp}=I^2R$ giảm $4$ lần",
+       "dung": true
+      },
+      {
+       "text": "$P_{hp}$ giảm $2$ lần vì $U$ tăng $2$ lần",
+       "dung": false,
+       "vi_sao": "Hao phí tỉ lệ với $I^2$ chứ không với $I$ ; $I$ giảm $2$ lần thì $I^2$ giảm $4$ lần."
+      },
+      {
+       "text": "$P_{hp}$ không đổi vì công suất truyền không đổi",
+       "dung": false,
+       "vi_sao": "Công suất truyền không đổi nhưng dòng điện giảm nên hao phí trên dây giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện của nhánh nhà",
+     "hoi": "Dòng điện của nhánh nhà khi các thiết bị cùng hoạt động?",
+     "dap_so": 14.5,
+     "sai_so": 0.1,
+     "don_vi": "A",
+     "loi_hay_gap": "Quên nhân $8$ bóng LED hoặc không đổi cùng đơn vị khi tính $\\dfrac{P}{U}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng công suất rồi chia cho $220\\ \\text{V}$",
+       "dung": true
+      },
+      {
+       "text": "Cộng dòng điện rồi chia thêm cho số thiết bị",
+       "dung": false,
+       "vi_sao": "Mắc song song thì dòng cộng lại (không chia) ; $I=\\dfrac{\\sum P}{U}$."
+      },
+      {
+       "text": "Chỉ tính thiết bị công suất lớn nhất",
+       "dung": false,
+       "vi_sao": "Mọi thiết bị cùng hoạt động đều góp dòng ; bỏ sót thì chọn aptomat quá nhỏ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Aptomat và tiết diện dây",
+     "hoi": "Tiết diện dây nhỏ nhất trong dãy cho aptomat đã chọn (mm²)?",
+     "dap_so": 4,
+     "sai_so": 0.01,
+     "don_vi": "mm²",
+     "loi_hay_gap": "Chọn dây theo dòng làm việc rồi gắn aptomat lớn hơn dòng cho phép của dây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chọn aptomat nhỏ nhất lớn hơn dòng làm việc rồi $S\\ge\\dfrac{I_{apt}}{J}$",
+       "dung": true
+      },
+      {
+       "text": "$S\\ge\\dfrac{I}{J}$ theo dòng làm việc rồi chọn aptomat bất kỳ",
+       "dung": false,
+       "vi_sao": "Aptomat không được lớn hơn dòng cho phép của dây ; không thì dây nóng trước khi aptomat ngắt."
+      },
+      {
+       "text": "Chọn aptomat bé nhất trong dãy cho chắc",
+       "dung": false,
+       "vi_sao": "Aptomat bé hơn dòng làm việc sẽ nhảy liên tục khi các thiết bị cùng chạy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng nhánh khi thêm bình nóng lạnh",
+     "hoi": "Dòng điện của nhánh sau khi thêm bình nóng lạnh?",
+     "dap_so": 25.8,
+     "sai_so": 0.1,
+     "don_vi": "A",
+     "loi_hay_gap": "Chỉ cộng dòng của bình rồi bỏ dòng cũ, hoặc không so lại với dòng cho phép của dây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng công suất mới rồi chia $220\\ \\text{V}$, so với dòng cho phép của dây",
+       "dung": true
+      },
+      {
+       "text": "Chỉ tính dòng riêng của bình",
+       "dung": false,
+       "vi_sao": "Nhánh dùng chung nên dòng nhánh gồm cả thiết bị cũ lẫn bình mới."
+      },
+      {
+       "text": "Giữ nguyên dòng cũ vì bình nóng lạnh dùng ít",
+       "dung": false,
+       "vi_sao": "Công suất bình rất lớn nên làm dòng nhánh tăng mạnh bất kể thời gian dùng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phương án khắc phục",
+     "hoi": "Phương án nào đúng?",
+     "lua_chon": [
+      {
+       "text": "Tách bình nóng lạnh sang nhánh riêng, dây $4\\ \\text{mm}^2$, aptomat $16\\ \\text{A}$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nhánh cũ, thay aptomat $32\\ \\text{A}$",
+       "dung": false,
+       "vi_sao": "Dây $4\\ \\text{mm}^2$ chỉ chịu $20\\ \\text{A}$ ; aptomat $32\\ \\text{A}$ không ngắt khi dòng tới $25\\ \\text{A}$ nên dây nóng chảy."
+      },
+      {
+       "text": "Giữ dây $4\\ \\text{mm}^2$, dùng aptomat $25\\ \\text{A}$",
+       "dung": false,
+       "vi_sao": "Dòng nhánh vượt $25\\ \\text{A}$ nên vẫn nhảy ; đồng thời aptomat $25\\ \\text{A}$ vượt dòng cho phép $20\\ \\text{A}$ của dây."
+      }
+     ],
+     "loi_hay_gap": "Chỉ nâng aptomat mà giữ dây cũ, khiến dây nóng trước khi aptomat ngắt."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Đầu tháng công tơ điện của một gia đình chỉ $2450\\ \\text{kWh}$, cuối tháng chỉ $2596\\ \\text{kWh}$. Tính điện năng tiêu thụ trong tháng (kWh và J) và tiền điện, biết giá $2000$ đồng/kWh.</p><details><summary>Hướng dẫn giải</summary><p>$A=2596-2450=146\\ \\text{kWh}=146\\cdot3{,}6\\cdot10^6=5{,}256\\cdot10^8\\ \\text{J}$.</p><p>Tiền điện $=146\\cdot2000=292\\,000$ đồng.</p><p>Lỗi hay gặp: nhân đơn giá với số jun mà không đổi sang kWh.</p></details><h4>Bài 2 · Trung bình</h4><p>Một bóng đèn dây tóc $220\\ \\text{V}-60\\ \\text{W}$ và một bóng LED $220\\ \\text{V}-10\\ \\text{W}$ cho cùng độ sáng. Mỗi ngày dùng $5$ giờ trong $30$ ngày. Tính điện năng tiêu thụ của mỗi bóng và số tiền tiết kiệm khi dùng LED (giá $2000$ đồng/kWh).</p><details><summary>Hướng dẫn giải</summary><p>Dây tóc : $0{,}06\\cdot5\\cdot30=9\\ \\text{kWh}$. LED : $0{,}01\\cdot5\\cdot30=1{,}5\\ \\text{kWh}$.</p><p>Tiết kiệm $7{,}5\\ \\text{kWh}$, tức $7{,}5\\cdot2000=15\\,000$ đồng.</p><p>Chỉ so sánh được vì hai bóng cho <em>cùng độ sáng</em> (cùng quang năng phát ra).</p></details><h4>Bài 3 · Khó</h4><p>Hai bóng đèn $Đ_1$: $110\\ \\text{V}-40\\ \\text{W}$ và $Đ_2$: $110\\ \\text{V}-100\\ \\text{W}$ mắc nối tiếp vào $220\\ \\text{V}$. Coi điện trở không đổi. Tính công suất thực tế mỗi đèn, nêu đèn nào có nguy cơ cháy.</p><details><summary>Hướng dẫn giải</summary><p>$R_1=\\dfrac{110^2}{40}=302{,}5\\ \\Omega$, $R_2=\\dfrac{110^2}{100}=121\\ \\Omega$ ; $I=\\dfrac{220}{423{,}5}\\approx0{,}519\\ \\text{A}$.</p><p>$P_1=I^2R_1\\approx81{,}6\\ \\text{W}$ (gấp hơn $2$ lần định mức, $U_1\\approx157\\ \\text{V}$) ; $P_2\\approx32{,}7\\ \\text{W}$ (sáng yếu).</p><p>$Đ_1$ có nguy cơ cháy. Trong mạch nối tiếp, đèn có định mức nhỏ hơn (điện trở lớn hơn) lại chịu nhiều hơn.</p></details><h4>Bài 4 · Nâng cao</h4><p>$U=18\\ \\text{V}$ không đổi ; $R_1=6\\ \\Omega$ nối tiếp với đoạn gồm $R_2=12\\ \\Omega$ song song biến trở $R$. Tìm $R$ để công suất trên biến trở lớn nhất, tính $P_{max}$ và hiệu suất của mạch (có ích là công suất trên biến trở).</p><details><summary>Hướng dẫn giải</summary><p>Từ hai đầu biến trở, phần còn lại có điện trở $\\dfrac{R_1R_2}{R_1+R_2}=4\\ \\Omega$ nên cực đại tại $R=4\\ \\Omega$.</p><p>Khi đó đoạn song song $3\\ \\Omega$, toàn mạch $9\\ \\Omega$, $I=2\\ \\text{A}$, $U_{R}=6\\ \\text{V}$ nên $P_{max}=\\dfrac{36}{4}=9\\ \\text{W}$.</p><p>$P_1=24\\ \\text{W}$, $P_2=3\\ \\text{W}$, $P_{toàn}=36\\ \\text{W}$ nên $H=\\dfrac{9}{36}=25\\%$. Kiểm tra $24+3+9=36$ ✓.</p></details>"
+ }
+}

@@ -1,0 +1,826 @@
+{
+ "lesson_id": 159,
+ "lesson_title": "Chuyên đề 03. Điện trở và định luật Ohm",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 12/10/2026: tự giải lại khớp; đã sửa 2 loi_hay_gap theo báo cáo."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Điện trở dây dẫn R = ρl/S: đổi đơn vị, so sánh hai vật liệu, đường kính dây",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "problem_html": "<p>Một dây nhôm dài $l=200\\ \\text{m}$, tiết diện $S=0{,}5\\ \\text{mm}^2$. Điện trở suất của nhôm là $2{,}8\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$, của đồng là $1{,}7\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$.</p><ol type=\"a\"><li>Tính điện trở của dây nhôm.</li><li>Thay bằng dây đồng có cùng chiều dài và cùng điện trở. Tính tiết diện của dây đồng.</li><li>Dây đồng đó có tiết diện tròn. Tính đường kính của nó.</li><li>Đặt hiệu điện thế $5{,}6\\ \\text{V}$ vào hai đầu dây nhôm. Tính cường độ dòng điện qua dây.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-1-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Dây nhôm dài 200 mét tiết diện 0,5 milimét vuông và dây đồng cùng chiều dài cùng điện trở\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"56.0\" width=\"250.0\" height=\"26.0\" rx=\"8\" fill=\"rgba(56,189,248,.18)\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"292\" y=\"74\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nhôm</text><line x1=\"32\" y1=\"40\" x2=\"278\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M271.0,35.9 L278.0,40.0 L271.0,44.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"278\" y1=\"40\" x2=\"32\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M39.0,44.1 L32.0,40.0 L39.0,35.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"155\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l = 200 m</text><text x=\"30\" y=\"106\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">S = 0,5 mm²</text><text x=\"200\" y=\"106\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><rect x=\"30.0\" y=\"128.0\" width=\"250.0\" height=\"26.0\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"292\" y=\"146\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đồng</text><text x=\"30\" y=\"178\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">S = ?</text><text x=\"200\" y=\"178\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">cùng l, cùng R</text><circle cx=\"40.0\" cy=\"69.0\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"40.0;45.8;51.5;57.2;63.0;68.8;74.5;80.2;86.0;91.8;97.5;103.2;109.0;114.8;120.5;126.2;132.0;137.8;143.5;149.2;155.0;160.8;166.5;172.2;178.0;183.8;189.5;195.2;201.0;206.8;212.5;218.2;224.0;229.8;235.5;241.2;247.0;252.8;258.5;264.2;270.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0;69.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40.0\" cy=\"141.0\" r=\"5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"40.0;45.8;51.5;57.2;63.0;68.8;74.5;80.2;86.0;91.8;97.5;103.2;109.0;114.8;120.5;126.2;132.0;137.8;143.5;149.2;155.0;160.8;166.5;172.2;178.0;183.8;189.5;195.2;201.0;206.8;212.5;218.2;224.0;229.8;235.5;241.2;247.0;252.8;258.5;264.2;270.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0;141.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt tải điện chạy dọc hai dây có cùng $l$ và cùng $R$ (khác vật liệu). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trở của dây phụ thuộc vật liệu ($\\rho$), chiều dài $l$, tiết diện $S$.</li><li><strong>Công thức:</strong> $R=\\dfrac{\\rho l}{S}$ ; $S=\\dfrac{\\pi d^2}{4}$ ; $I=\\dfrac UR$.</li><li>Cùng $l$ và cùng $R$ : $\\dfrac{S_1}{S_2}=\\dfrac{\\rho_1}{\\rho_2}$.</li><li>⚠ <strong>Điều kiện:</strong> đổi mọi đại lượng về một hệ ; $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở dây nhôm</span></p><p>Đổi tiết diện : $S=0{,}5\\ \\text{mm}^2=0{,}5\\cdot10^{-6}=5\\cdot10^{-7}\\ \\text{m}^2$.</p>$$R=\\dfrac{\\rho l}{S}=\\dfrac{2{,}8\\cdot10^{-8}\\cdot200}{5\\cdot10^{-7}}$$<div class=\"bt-ans\">$$R=11{,}2\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tiết diện dây đồng</span></p><p>Cùng $l$ và cùng $R$ nên $S$ tỉ lệ thuận với $\\rho$ :</p>$$\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Cu}}{\\rho_{Al}}=\\dfrac{1{,}7}{2{,}8}\\approx0{,}607$$$$S_{Cu}\\approx0{,}607\\cdot0{,}5$$<div class=\"bt-ans\">$$S_{Cu}\\approx0{,}304\\ \\text{mm}^2$$</div><p>Đồng dẫn điện tốt hơn nhôm nên cần tiết diện nhỏ hơn ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đường kính dây đồng</span></p>$$S=\\dfrac{\\pi d^2}{4}\\ \\Rightarrow\\ d=\\sqrt{\\dfrac{4S}{\\pi}}$$$$d=\\sqrt{\\dfrac{4\\cdot0{,}304}{3{,}14}}$$<div class=\"bt-ans\">$$d\\approx0{,}62\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện qua dây nhôm</span></p>$$I=\\dfrac UR=\\dfrac{5{,}6}{11{,}2}$$<div class=\"bt-ans\">$$I=0{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Dây dài $200\\ \\text{m}$ mảnh $0{,}5\\ \\text{mm}^2$ có $R$ cỡ vài đến vài chục ôm : hợp lí. Nếu ra hàng nghìn ôm thì đã quên đổi $\\text{mm}^2$ sang $\\text{m}^2$.</p><p>Tỉ lệ $0{,}304/0{,}5\\approx0{,}61$ khớp $1{,}7/2{,}8$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R=11{,}2\\ \\Omega$</p><p>b) $S_{Cu}\\approx0{,}304\\ \\text{mm}^2$</p><p>c) $d\\approx0{,}62\\ \\text{mm}$</p><p>d) $I=0{,}5\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>$\\rho$, $l$, $S$ (hay đường kính)</strong> → $R=\\rho l/S$, đổi $\\text{mm}^2$ trước ; thấy <strong>cùng $R$, cùng $l$, khác vật liệu</strong> → $S\\propto\\rho$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-1-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Dây nhôm dài 200 mét tiết diện 0,5 milimét vuông và dây đồng cùng chiều dài cùng điện trở\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"56.0\" width=\"250.0\" height=\"26.0\" rx=\"8\" fill=\"rgba(56,189,248,.18)\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"292\" y=\"74\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nhôm</text><line x1=\"32\" y1=\"40\" x2=\"278\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M271.0,35.9 L278.0,40.0 L271.0,44.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"278\" y1=\"40\" x2=\"32\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M39.0,44.1 L32.0,40.0 L39.0,35.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"155\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l = 200 m</text><text x=\"30\" y=\"106\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">S = 0,5 mm²</text><text x=\"200\" y=\"106\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R = ρl/S</text><rect x=\"30.0\" y=\"128.0\" width=\"250.0\" height=\"26.0\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"292\" y=\"146\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đồng</text><text x=\"30\" y=\"178\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">S = ?</text><text x=\"200\" y=\"178\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">S ∝ ρ khi cùng l, R</text></svg><figcaption>Dữ kiện: dây nhôm và dây đồng cùng $l$, cùng $R$, khác vật liệu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"dây nhôm dài $200$ m, tiết diện $0{,}5$ mm²\"</td><td>$l=200$ m ; $S=0{,}5$ mm² ; $\\rho_{Al}=2{,}8\\cdot10^{-8}\\ \\Omega\\cdot$m</td><td>$R=\\rho\\dfrac lS$ ; ⚠ đổi $1$ mm² $=10^{-6}$ m² rồi mới thay số, không trộn hai hệ đơn vị</td></tr><tr><td>\"tính điện trở của dây nhôm\" (câu a)</td><td>Cần $R$</td><td>$R=\\dfrac{\\rho l}{S}$</td></tr><tr><td>\"dây đồng cùng chiều dài và cùng điện trở\"</td><td>$l$ và $R$ như dây nhôm ; $\\rho_{Cu}=1{,}7\\cdot10^{-8}$</td><td>⚠ cùng $R$, cùng $l$ nên $S\\propto\\rho$ : $\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Cu}}{\\rho_{Al}}$</td></tr><tr><td>\"tiết diện tròn … đường kính\"</td><td>Có $S_{Cu}$, cần $d$</td><td>$S=\\dfrac{\\pi d^2}{4}$ nên $d=\\sqrt{\\dfrac{4S}{\\pi}}$ ; ⚠ $d$ là đường kính, không phải bán kính</td></tr><tr><td>\"đặt hiệu điện thế $5{,}6$ V … cường độ dòng điện\"</td><td>$U=5{,}6$ V ; $R$ ở câu a</td><td>Định luật Ohm $I=\\dfrac UR$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>$\\rho$, $l$, $S$ hay đường kính</b> → nghĩ tới <b>$R=\\rho l/S$</b>, đổi mm² sang m² trước.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở dây nhôm",
+     "hoi": "Điện trở của dây nhôm là bao nhiêu?",
+     "dap_so": 11.2,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Dùng $S=0{,}5$ như đã là $\\text{m}^2$ : $R$ ra lớn hơn thật $10^6$ lần."
+    },
+    {
+     "tieu_de": "Tiết diện dây đồng",
+     "hoi": "Tiết diện của dây đồng là bao nhiêu mm²?",
+     "dap_so": 0.304,
+     "sai_so": 0.005,
+     "don_vi": "mm²",
+     "loi_hay_gap": "Lấy $S_{Cu}/S_{Al}=\\rho_{Al}/\\rho_{Cu}$ (ngược) nên ra $S_{Cu}$ lớn hơn $S_{Al}$ dù đồng dẫn điện tốt hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng $l$ và $R$ nên $S$ tỉ lệ thuận với $\\rho$ : $\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Cu}}{\\rho_{Al}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Al}}{\\rho_{Cu}}$",
+       "dung": false,
+       "vi_sao": "Từ $R=\\rho l/S$ với $R$, $l$ không đổi thì $S\\propto\\rho$ chứ không tỉ lệ nghịch ; đồng có $\\rho$ nhỏ hơn nên cần $S$ nhỏ hơn."
+      },
+      {
+       "text": "Cùng $R$ nên cùng tiết diện",
+       "dung": false,
+       "vi_sao": "$R$ còn phụ thuộc $\\rho$ ; hai vật liệu khác nhau thì cùng $R$ vẫn cần tiết diện khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đường kính dây đồng",
+     "hoi": "Đường kính của dây đồng là bao nhiêu mm?",
+     "dap_so": 0.62,
+     "sai_so": 0.01,
+     "don_vi": "mm",
+     "loi_hay_gap": "Dùng $d=\\sqrt{S/\\pi}$ : đó là bán kính, thiếu hệ số $2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$d=\\sqrt{\\dfrac{4S}{\\pi}}$ từ $S=\\dfrac{\\pi d^2}{4}$",
+       "dung": true
+      },
+      {
+       "text": "$d=\\sqrt{\\dfrac S\\pi}$",
+       "dung": false,
+       "vi_sao": "Đó là bán kính $r$ (từ $S=\\pi r^2$) ; đường kính gấp đôi."
+      },
+      {
+       "text": "$d=\\dfrac{S}{\\pi}$",
+       "dung": false,
+       "vi_sao": "$S$ tỉ lệ với $d^2$ chứ không tỉ lệ với $d$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện qua dây nhôm",
+     "hoi": "Cường độ dòng điện qua dây nhôm là bao nhiêu A?",
+     "dap_so": 0.5,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Đảo thành $I=R/U$, hoặc nhân $U$ với $R$ thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I=\\dfrac UR$ với $R$ vừa tính ở bước đầu",
+       "dung": true
+      },
+      {
+       "text": "$I=U\\cdot R$",
+       "dung": false,
+       "vi_sao": "Tích $\\text{V}\\cdot\\Omega$ không phải ampe ; $U$ tăng thì $I$ tăng nhưng $R$ tăng thì $I$ giảm."
+      },
+      {
+       "text": "$I=\\dfrac RU$",
+       "dung": false,
+       "vi_sao": "Đảo ngược : $I$ phải tăng khi $U$ tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Cắt dây thành nhiều đoạn bằng nhau rồi ghép nối tiếp hoặc song song",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "problem_html": "<p>Một dây dẫn đồng chất, tiết diện đều có điện trở $R=90\\ \\Omega$ được cắt thành $3$ đoạn bằng nhau.</p><ol type=\"a\"><li>Tính điện trở của mỗi đoạn.</li><li>Ghép $3$ đoạn đó song song với nhau. Tính điện trở tương đương của bộ.</li><li>Nối bộ vào nguồn $U=6\\ \\text{V}$. Tính cường độ dòng điện qua mạch chính và qua mỗi đoạn.</li><li>Từ dây $90\\ \\Omega$ ban đầu, phải cắt thành bao nhiêu đoạn bằng nhau rồi ghép song song để điện trở tương đương bằng $0{,}9\\ \\Omega$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-2-0\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Dây điện trở 90 ôm cắt thành ba đoạn bằng nhau rồi ghép song song vào hiệu điện thế 6 vôn\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dây R = 90 Ω</text><rect x=\"30.0\" y=\"36.0\" width=\"360.0\" height=\"18.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"28.0\" x2=\"150.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"270.0\" y1=\"28.0\" x2=\"270.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"210\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">cắt 3 đoạn bằng nhau</text><line x1=\"60.0\" y1=\"110.0\" x2=\"60.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"110.0\" x2=\"360.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"110.0\" x2=\"135.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"102.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"110.0\" x2=\"360.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"114\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀ = ?</text><line x1=\"60.0\" y1=\"140.0\" x2=\"135.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"132.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"140.0\" x2=\"360.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀ = ?</text><line x1=\"60.0\" y1=\"170.0\" x2=\"135.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"162.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"170.0\" x2=\"360.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"174\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀ = ?</text><circle cx=\"60.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"360.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"46\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"374\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"290\" y=\"126\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">U<tspan dy=\"4\" font-size=\"11\">AB</tspan><tspan dy=\"-4\"> = 6 V</tspan></text><circle cx=\"60.0\" cy=\"110.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"60.0;67.5;75.0;82.5;90.0;97.5;105.0;112.5;120.0;127.5;135.0;142.5;150.0;157.5;165.0;172.5;180.0;187.5;195.0;202.5;210.0;217.5;225.0;232.5;240.0;247.5;255.0;262.5;270.0;277.5;285.0;292.5;300.0;307.5;315.0;322.5;330.0;337.5;345.0;352.5;360.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60.0\" cy=\"140.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"60.0;67.5;75.0;82.5;90.0;97.5;105.0;112.5;120.0;127.5;135.0;142.5;150.0;157.5;165.0;172.5;180.0;187.5;195.0;202.5;210.0;217.5;225.0;232.5;240.0;247.5;255.0;262.5;270.0;277.5;285.0;292.5;300.0;307.5;315.0;322.5;330.0;337.5;345.0;352.5;360.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0;140.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60.0\" cy=\"170.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"60.0;67.5;75.0;82.5;90.0;97.5;105.0;112.5;120.0;127.5;135.0;142.5;150.0;157.5;165.0;172.5;180.0;187.5;195.0;202.5;210.0;217.5;225.0;232.5;240.0;247.5;255.0;262.5;270.0;277.5;285.0;292.5;300.0;307.5;315.0;322.5;330.0;337.5;345.0;352.5;360.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0;170.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng điện chia đều cho ba nhánh giống nhau giữa $A$ và $B$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cùng vật liệu, cùng tiết diện thì $R$ tỉ lệ với chiều dài.</li><li><strong>Công thức:</strong> cắt $n$ đoạn bằng nhau : $R_0=\\dfrac Rn$ ; $n$ nhánh song song : $R_{td}=\\dfrac{R_0}n=\\dfrac R{n^2}$.</li><li>Song song : $U$ bằng nhau, $I=I_1+I_2+\\dots$ ; $I_0=\\dfrac U{R_0}$.</li><li>⚠ <strong>Điều kiện:</strong> các đoạn phải <strong>bằng nhau</strong> thì mới có $R_0=R/n$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở mỗi đoạn</span></p><p>$3$ đoạn bằng nhau, mỗi đoạn dài $\\dfrac l3$ :</p>$$R_0=\\dfrac R3=\\dfrac{90}3$$<div class=\"bt-ans\">$$R_0=30\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở tương đương khi song song</span></p>$$R_{td}=\\dfrac{R_0}3=\\dfrac{30}3$$<div class=\"bt-ans\">$$R_{td}=10\\ \\Omega$$</div><p>Kiểm tra bằng $R/n^2=90/9=10\\ \\Omega$ ✓ ; nhỏ hơn mỗi đoạn $30\\ \\Omega$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện mạch chính</span></p>$$I=\\dfrac U{R_{td}}=\\dfrac 6{10}$$<div class=\"bt-ans\">$$I=0{,}6\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện qua mỗi đoạn</span></p><p>Ba đoạn giống nhau, cùng $U=6\\ \\text{V}$ :</p>$$I_0=\\dfrac U{R_0}=\\dfrac 6{30}$$<div class=\"bt-ans\">$$I_0=0{,}2\\ \\text{A}$$</div><p>Kiểm tra : $3\\cdot0{,}2=0{,}6\\ \\text{A}=I$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Số đoạn cần cắt</span></p><p>Cắt $n$ đoạn bằng nhau rồi ghép song song :</p>$$R_{td}=\\dfrac R{n^2}$$$$0{,}9=\\dfrac{90}{n^2}\\ \\Rightarrow\\ n^2=100$$<div class=\"bt-ans\">$$n=10\\ \\text{đoạn}$$</div><p>Mỗi đoạn $9\\ \\Omega$, ghép song song $9/10=0{,}9\\ \\Omega$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Ghép song song luôn cho điện trở nhỏ hơn điện trở từng đoạn : $10\\lt30$ và $0{,}9\\lt9$ ✓.</p><p>Nếu ghép $3$ đoạn <em>nối tiếp</em> thì lại được $90\\ \\Omega$ như dây ban đầu.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_0=30\\ \\Omega$</p><p>b) $R_{td}=10\\ \\Omega$</p><p>c) $I=0{,}6\\ \\text{A}$ ; mỗi đoạn $0{,}2\\ \\text{A}$</p><p>d) $n=10$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>cắt thành $n$ đoạn bằng nhau</strong> → mỗi đoạn $R/n$ ; thấy <strong>ghép song song</strong> → thêm một lần chia $n$, được $R/n^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-2-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Dây điện trở 90 ôm cắt thành ba đoạn bằng nhau rồi ghép song song vào hiệu điện thế 6 vôn\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"30\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dây R = 90 Ω</text><rect x=\"30.0\" y=\"36.0\" width=\"360.0\" height=\"18.0\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"150.0\" y1=\"28.0\" x2=\"150.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"270.0\" y1=\"28.0\" x2=\"270.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"210\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">cắt 3 đoạn bằng nhau</text><line x1=\"60.0\" y1=\"110.0\" x2=\"60.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"360.0\" y1=\"110.0\" x2=\"360.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"110.0\" x2=\"135.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"102.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"110.0\" x2=\"360.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"114\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀</text><line x1=\"60.0\" y1=\"140.0\" x2=\"135.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"132.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"140.0\" x2=\"360.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀</text><line x1=\"60.0\" y1=\"170.0\" x2=\"135.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"135.0\" y=\"162.0\" width=\"90.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"225.0\" y1=\"170.0\" x2=\"360.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"174\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">R₀</text><circle cx=\"60.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"360.0\" cy=\"140.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"46\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"374\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"290\" y=\"126\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">U<tspan dy=\"4\" font-size=\"11\">AB</tspan><tspan dy=\"-4\"> = 6 V</tspan></text></svg><figcaption>Dữ kiện: ba đoạn bằng nhau ghép song song giữa $A$ và $B$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"dây đồng chất, tiết diện đều, $R=90\\ \\Omega$\"</td><td>$R=90\\ \\Omega$</td><td>$R=\\rho\\dfrac lS$ ; ⚠ cùng vật liệu, cùng $S$ thì $R\\propto l$</td></tr><tr><td>\"cắt thành $3$ đoạn bằng nhau\"</td><td>$n=3$ ; mỗi đoạn dài $\\dfrac l3$</td><td>$R_0=\\dfrac Rn$ ; ⚠ chỉ đúng khi các đoạn <strong>bằng nhau</strong></td></tr><tr><td>\"ghép $3$ đoạn song song\"</td><td>$3$ nhánh giống nhau</td><td>$\\dfrac1{R_{td}}=\\dfrac3{R_0}$ nên $R_{td}=\\dfrac{R_0}{3}=\\dfrac R{n^2}$</td></tr><tr><td>\"nối vào nguồn $6$ V … dòng mạch chính và mỗi đoạn\"</td><td>$U=6$ V chung cho cả ba nhánh</td><td>$I=\\dfrac U{R_{td}}$ ; $I_0=\\dfrac U{R_0}$ ; ⚠ song song thì $U$ bằng nhau</td></tr><tr><td>\"điện trở tương đương bằng $0{,}9\\ \\Omega$ … bao nhiêu đoạn\"</td><td>$R_{td}=0{,}9\\ \\Omega$ ; $R=90\\ \\Omega$ ; cần $n$</td><td>$R_{td}=\\dfrac R{n^2}$ nên $n=\\sqrt{R/R_{td}}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cắt thành $n$ đoạn bằng nhau, ghép song song</b> → nghĩ tới <b>$R/n$ mỗi đoạn, $R/n^2$ cả bộ</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở mỗi đoạn",
+     "hoi": "Điện trở của mỗi đoạn là bao nhiêu?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Giữ nguyên $90\\ \\Omega$ hoặc nhân $3$ thay vì chia $3$."
+    },
+    {
+     "tieu_de": "Điện trở tương đương khi song song",
+     "hoi": "Điện trở tương đương của bộ ba đoạn song song là bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Cộng ba điện trở như nối tiếp ($90\\ \\Omega$), hoặc cộng nghịch đảo nhưng quên lấy nghịch đảo lần nữa.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_{td}=\\dfrac{R_0}{3}$ vì ba nhánh giống nhau",
+       "dung": true
+      },
+      {
+       "text": "$R_{td}=3R_0$",
+       "dung": false,
+       "vi_sao": "Đó là nối tiếp ; song song nhiều nhánh làm điện trở chung nhỏ hơn."
+      },
+      {
+       "text": "$R_{td}=R_0$",
+       "dung": false,
+       "vi_sao": "Thêm nhánh song song luôn làm điện trở chung giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện mạch chính",
+     "hoi": "Cường độ dòng điện qua mạch chính là bao nhiêu?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Chia $6\\ \\text{V}$ cho điện trở của <em>một</em> đoạn hay của cả dây $90\\ \\Omega$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I=\\dfrac U{R_{td}}$ với $R_{td}$ của cả bộ",
+       "dung": true
+      },
+      {
+       "text": "$I=\\dfrac U{R_0}$",
+       "dung": false,
+       "vi_sao": "Đó là dòng qua <em>một</em> đoạn, chưa phải dòng mạch chính."
+      },
+      {
+       "text": "$I=\\dfrac UR$ với $R=90\\ \\Omega$",
+       "dung": false,
+       "vi_sao": "$90\\ \\Omega$ là dây trước khi cắt ; mạch bây giờ là bộ song song."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện qua mỗi đoạn",
+     "hoi": "Cường độ dòng điện qua mỗi đoạn là bao nhiêu?",
+     "dap_so": 0.2,
+     "sai_so": 0.005,
+     "don_vi": "A",
+     "loi_hay_gap": "Lấy mỗi đoạn có cả $0{,}6\\ \\text{A}$ (quên chia cho $3$ nhánh).",
+     "chon_buoc_ke": [
+      {
+       "text": "Ba đoạn giống nhau, chung $U$ : $I_0=\\dfrac U{R_0}$",
+       "dung": true
+      },
+      {
+       "text": "$I_0=3I$",
+       "dung": false,
+       "vi_sao": "Dòng mạch chính là <em>tổng</em> ba nhánh nên mỗi nhánh nhỏ hơn, không lớn hơn."
+      },
+      {
+       "text": "$I_0=\\dfrac U{R_{td}}$",
+       "dung": false,
+       "vi_sao": "Đó là dòng mạch chính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số đoạn cần cắt",
+     "hoi": "Phải cắt thành bao nhiêu đoạn bằng nhau?",
+     "dap_so": 10,
+     "sai_so": 0.05,
+     "don_vi": "đoạn",
+     "loi_hay_gap": "Dùng $R_{td}=R/n$ (quên một lần chia nữa khi ghép song song) nên ra $n=100$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_{td}=\\dfrac R{n^2}$ rồi giải $n^2=\\dfrac R{R_{td}}$",
+       "dung": true
+      },
+      {
+       "text": "$R_{td}=\\dfrac Rn$",
+       "dung": false,
+       "vi_sao": "$R/n$ mới là điện trở <em>mỗi đoạn</em> ; ghép song song $n$ đoạn còn chia thêm $n$ lần."
+      },
+      {
+       "text": "$R_{td}=nR$",
+       "dung": false,
+       "vi_sao": "Cắt dây rồi ghép nối tiếp chỉ được lại $R$, không phải $nR$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Kéo dãn dây dẫn, thể tích không đổi: R tỉ lệ với bình phương chiều dài",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "problem_html": "<p>Một dây constantan tiết diện đều có điện trở $R_1=20\\ \\Omega$. Coi thể tích dây không đổi khi kéo.</p><ol type=\"a\"><li>Kéo dây cho chiều dài tăng thêm $50\\%$. Tính điện trở $R_2$ của dây sau khi kéo.</li><li>Từ dây ở câu a, kéo tiếp cho đường kính của dây giảm còn một nửa so với lúc đó. Tính điện trở $R_3$ sau lần kéo thứ hai.</li><li>Một khối đồng khối lượng $178\\ \\text{g}$ (khối lượng riêng $8900\\ \\text{kg/m}^3$) được kéo thành sợi tiết diện đều $S=0{,}5\\ \\text{mm}^2$. Tính chiều dài sợi và điện trở của nó, biết điện trở suất của đồng là $1{,}7\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-3-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Dây constantan được kéo dài thêm 50 phần trăm rồi kéo tiếp cho đường kính giảm một nửa\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dây constantan R₁ = 20 Ω</text><text x=\"404\" y=\"26\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R₃ = ?</text><rect x=\"30\" y=\"82.0\" width=\"60.0\" height=\"36.0\" rx=\"8\" fill=\"rgba(251,146,60,.18)\" stroke=\"#fb923c\" stroke-width=\"2.6\"><animate attributeName=\"width\" values=\"60.0;90.0;360.0\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"36.0;29.4;14.7\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"82.0;85.3;92.7\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"30\" y=\"160\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Lần 1: dài thêm 50 %</text><text x=\"30\" y=\"180\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Lần 2: đường kính còn một nửa so với lúc đó</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dây bị kéo dãn hai lần liên tiếp, thể tích không đổi, nên dài ra thì mảnh đi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> kéo dãn thì thể tích $V=S\\,l$ không đổi : dài ra thì mảnh đi.</li><li><strong>Công thức:</strong> $S_1l_1=S_2l_2$ ; $\\dfrac{R_2}{R_1}=\\left(\\dfrac{l_2}{l_1}\\right)^2$ ; đường kính giảm $k$ lần thì $R$ tăng $k^4$ lần.</li><li>$V=\\dfrac mD$ ; $l=\\dfrac VS$ ; $R=\\dfrac{\\rho l}{S}$.</li><li>⚠ <strong>Điều kiện:</strong> $R\\propto l$ chỉ đúng khi $S$ không đổi ; mỗi lần kéo tính từ trạng thái ngay trước đó.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở sau lần kéo thứ nhất</span></p><p>Thể tích không đổi nên $R\\propto l^2$ ; $l_2=1{,}5\\,l_1$ :</p>$$\\dfrac{R_2}{R_1}=\\left(\\dfrac{l_2}{l_1}\\right)^2=1{,}5^2=2{,}25$$$$R_2=2{,}25\\cdot20$$<div class=\"bt-ans\">$$R_2=45\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều dài tăng ở lần kéo thứ hai</span></p><p>Đường kính giảm một nửa nên tiết diện giảm $4$ lần :</p>$$\\dfrac{S_3}{S_2}=\\left(\\dfrac12\\right)^2=\\dfrac14$$$$S_2l_2=S_3l_3\\ \\Rightarrow\\ \\dfrac{l_3}{l_2}=\\dfrac{S_2}{S_3}$$<div class=\"bt-ans\">$$\\dfrac{l_3}{l_2}=4$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện trở sau lần kéo thứ hai</span></p><p>Lần này tính từ $R_2$ (trạng thái ngay trước) :</p>$$\\dfrac{R_3}{R_2}=\\left(\\dfrac{l_3}{l_2}\\right)^2=4^2=16$$$$R_3=16\\cdot45$$<div class=\"bt-ans\">$$R_3=720\\ \\Omega$$</div><p>Kiểm tra : tổng cộng $36$ lần $R_1$, bằng $2{,}25\\cdot16$ ✓ ; đường kính giảm $2$ lần thì $R$ tăng $2^4=16$ lần ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều dài sợi đồng</span></p><p>Đổi : $m=178\\ \\text{g}=0{,}178\\ \\text{kg}$ ; $S=0{,}5\\ \\text{mm}^2=5\\cdot10^{-7}\\ \\text{m}^2$.</p>$$V=\\dfrac mD=\\dfrac{0{,}178}{8900}=2\\cdot10^{-5}\\ \\text{m}^3$$$$l=\\dfrac VS=\\dfrac{2\\cdot10^{-5}}{5\\cdot10^{-7}}$$<div class=\"bt-ans\">$$l=40\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện trở sợi đồng</span></p>$$R=\\dfrac{\\rho l}{S}=\\dfrac{1{,}7\\cdot10^{-8}\\cdot40}{5\\cdot10^{-7}}$$<div class=\"bt-ans\">$$R=1{,}36\\ \\Omega$$</div><p>Sợi đồng $40\\ \\text{m}$ mảnh $0{,}5\\ \\text{mm}^2$ có $R$ cỡ $1\\ \\Omega$ : hợp lí ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_2=45\\ \\Omega$</p><p>b) $R_3=720\\ \\Omega$</p><p>c) $l=40\\ \\text{m}$ ; $R=1{,}36\\ \\Omega$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>kéo dãn, thể tích không đổi</strong> → $R_2/R_1=(l_2/l_1)^2$, không dùng $R\\propto l$ ; thấy <strong>đường kính giảm $k$ lần</strong> → $R$ tăng $k^4$ lần ; thấy <strong>khối lượng, khối lượng riêng</strong> → $V=m/D$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-3-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Ba trạng thái của dây: ban đầu, sau lần kéo thứ nhất, sau lần kéo thứ hai; dây dài ra thì mảnh đi\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"30.0\" y=\"22.0\" width=\"60.0\" height=\"36.0\" rx=\"6\" fill=\"rgba(251,146,60,.18)\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"30\" y=\"16\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">ban đầu</text><text x=\"390\" y=\"18\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R₁ = 20 Ω</text><rect x=\"30.0\" y=\"81.3\" width=\"90.0\" height=\"29.4\" rx=\"6\" fill=\"rgba(251,146,60,.18)\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"30\" y=\"72\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">kéo lần 1</text><text x=\"390\" y=\"74\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R₂ = ?</text><rect x=\"30.0\" y=\"144.7\" width=\"360.0\" height=\"14.7\" rx=\"6\" fill=\"rgba(251,146,60,.18)\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"30\" y=\"128\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">kéo lần 2</text><text x=\"390\" y=\"130\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R₃ = ?</text></svg><figcaption>Dữ kiện: mỗi lần kéo, thể tích $V=S\\cdot l$ không đổi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"coi thể tích dây không đổi khi kéo\"</td><td>$V=S_1l_1=S_2l_2$</td><td>⚠ kéo dãn thì $S$ <strong>có</strong> đổi : dài ra thì mảnh đi ; không được dùng $R\\propto l$</td></tr><tr><td>\"kéo cho chiều dài tăng thêm $50\\%$\" (câu a)</td><td>$l_2=1{,}5\\,l_1$</td><td>$\\dfrac{R_2}{R_1}=\\left(\\dfrac{l_2}{l_1}\\right)^2$</td></tr><tr><td>\"kéo tiếp … đường kính giảm còn một nửa so với lúc đó\"</td><td>$d_3=\\dfrac{d_2}2$</td><td>$S\\propto d^2$ nên $S_3=\\dfrac{S_2}4$, từ $V$ không đổi $l_3=4\\,l_2$ ; ⚠ tính từ trạng thái ngay trước lần kéo</td></tr><tr><td>\"khối đồng $178$ g, $D=8900$ kg/m³, tiết diện $0{,}5$ mm²\"</td><td>$m=0{,}178$ kg ; $S=5\\cdot10^{-7}$ m²</td><td>$V=\\dfrac mD$ ; $V=S\\,l$ nên $l=\\dfrac VS$</td></tr><tr><td>\"điện trở của nó\"</td><td>$\\rho=1{,}7\\cdot10^{-8}\\ \\Omega\\cdot$m</td><td>$R=\\dfrac{\\rho l}{S}$ ; ⚠ $S$ đổi ra m²</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kéo dãn, thể tích không đổi</b> → nghĩ tới <b>$R\\propto l^2$</b>, không phải $R\\propto l$.",
+   "cap_do": 3,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở sau lần kéo thứ nhất",
+     "hoi": "Điện trở của dây sau lần kéo thứ nhất là bao nhiêu?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Dùng $R_2/R_1=l_2/l_1$ nên ra $30\\ \\Omega$ : quên tiết diện giảm theo."
+    },
+    {
+     "tieu_de": "Chiều dài tăng ở lần kéo thứ hai",
+     "hoi": "Lần kéo thứ hai làm chiều dài tăng bao nhiêu lần?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Cho rằng đường kính giảm $2$ lần thì chiều dài tăng $2$ lần : bỏ qua $S\\propto d^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$S$ giảm $4$ lần, $V$ không đổi nên $l$ tăng $4$ lần",
+       "dung": true
+      },
+      {
+       "text": "Đường kính giảm $2$ lần nên $l$ tăng $2$ lần",
+       "dung": false,
+       "vi_sao": "Tiết diện tỉ lệ với $d^2$ nên giảm $4$ lần ; $l$ phải tăng $4$ lần để $V=Sl$ không đổi."
+      },
+      {
+       "text": "Chiều dài không đổi vì chỉ đổi đường kính",
+       "dung": false,
+       "vi_sao": "Đây là kéo dãn, thể tích không đổi : dây mảnh đi thì phải dài ra."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở sau lần kéo thứ hai",
+     "hoi": "Điện trở của dây sau lần kéo thứ hai là bao nhiêu?",
+     "dap_so": 720,
+     "sai_so": 5,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Tính $16\\cdot20=320\\ \\Omega$ : lấy tỉ số $16$ của lần hai nhân với $R_1$ thay vì $R_2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{R_3}{R_2}=\\left(\\dfrac{l_3}{l_2}\\right)^2$, tính từ $R_2$",
+       "dung": true
+      },
+      {
+       "text": "$R_3=16R_1$",
+       "dung": false,
+       "vi_sao": "Tỉ số $16$ là so với $R_2$ (đã kéo lần một), không phải so với $R_1$."
+      },
+      {
+       "text": "$\\dfrac{R_3}{R_2}=\\dfrac{l_3}{l_2}$",
+       "dung": false,
+       "vi_sao": "Kéo dãn thì $S$ đổi nên phải bình phương tỉ số chiều dài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài sợi đồng",
+     "hoi": "Chiều dài sợi đồng kéo được là bao nhiêu mét?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "m",
+     "loi_hay_gap": "Chia khối lượng cho tiết diện, hoặc không đổi $\\text{mm}^2$ và $\\text{g}$ sang đơn vị SI.",
+     "chon_buoc_ke": [
+      {
+       "text": "$V=\\dfrac mD$ rồi $l=\\dfrac VS$",
+       "dung": true
+      },
+      {
+       "text": "$l=\\dfrac mD$",
+       "dung": false,
+       "vi_sao": "$m/D$ là <em>thể tích</em>, chưa phải chiều dài ; còn phải chia cho $S$."
+      },
+      {
+       "text": "$l=V\\cdot S$",
+       "dung": false,
+       "vi_sao": "$V=S\\cdot l$ nên $l=V/S$ ; nhân $V$ với $S$ không ra chiều dài."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở sợi đồng",
+     "hoi": "Điện trở của sợi đồng là bao nhiêu Ω?",
+     "dap_so": 1.36,
+     "sai_so": 0.02,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Thay $S=0{,}5$ ($\\text{mm}^2$) cùng $\\rho$ theo $\\Omega\\cdot\\text{m}$ : trộn hai hệ đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R=\\dfrac{\\rho l}{S}$ với $S$ đổi ra $\\text{m}^2$",
+       "dung": true
+      },
+      {
+       "text": "$R=\\dfrac{\\rho l}{S}$ với $S=0{,}5$ và $\\rho$ giữ $\\Omega\\cdot\\text{m}$",
+       "dung": false,
+       "vi_sao": "Trộn hai hệ đơn vị : phải cùng $\\text{m}^2$ hoặc dùng $\\rho$ theo $\\Omega\\cdot\\text{mm}^2/\\text{m}$."
+      },
+      {
+       "text": "$R=\\dfrac{\\rho S}{l}$",
+       "dung": false,
+       "vi_sao": "Đảo ngược : dây dài hơn thì $R$ tăng."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Đọc đồ thị U–I của hai vật dẫn: điện trở, so sánh độ dốc, ghép nối tiếp – song song",
+   "topic": "Đường đặc trưng vôn – ampe",
+   "problem_html": "<p>Trên cùng một hệ trục (trục hoành là $I$ tính bằng $\\text{A}$, trục tung là $U$ tính bằng $\\text{V}$), đồ thị $U$–$I$ của vật dẫn $(1)$ là đường thẳng đi qua gốc toạ độ và điểm $A(0{,}5\\ \\text{A};\\,3{,}0\\ \\text{V})$. Đồ thị của vật dẫn $(2)$ là đường thẳng đi qua gốc toạ độ và điểm $B(0{,}5\\ \\text{A};\\,4{,}5\\ \\text{V})$.</p><ol type=\"a\"><li>Tính điện trở của mỗi vật dẫn.</li><li>Đường nào dốc hơn? Vì sao?</li><li>Mắc hai vật dẫn song song vào nguồn $4{,}5\\ \\text{V}$. Tính cường độ dòng điện qua mạch chính.</li><li>Mắc hai vật dẫn nối tiếp vào nguồn $6\\ \\text{V}$. Tính hiệu điện thế giữa hai đầu mỗi vật dẫn.</li><li>Vẽ lại đồ thị với trục hoành là $U$, trục tung là $I$. Độ dốc của đường ứng với vật dẫn $(1)$ bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị hiệu điện thế theo cường độ dòng điện của hai vật dẫn đi qua gốc toạ độ\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"131.0\" y1=\"176.0\" x2=\"131.0\" y2=\"26.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"26.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"134.0\" x2=\"246.0\" y2=\"134.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"246.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"50.0\" x2=\"246.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"256.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M248.2,171.5 L256.0,176.0 L248.2,180.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"56.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M51.5,23.8 L56.0,16.0 L60.5,23.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"131.0\" y1=\"176.0\" x2=\"131.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"131.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,25</text><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"206.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,5</text><line x1=\"51.0\" y1=\"134.0\" x2=\"56.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"138.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">1,5</text><line x1=\"51.0\" y1=\"92.0\" x2=\"56.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"96.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"51.0\" y1=\"50.0\" x2=\"56.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"54.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">4,5</text><text x=\"256\" y=\"208\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"62\" y=\"14\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><line x1=\"56.0\" y1=\"176.0\" x2=\"206.0\" y2=\"92.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\" opacity=\"1\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"206.0\" y2=\"50.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"214.0\" y=\"97.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">(1)</text><text x=\"214.0\" y=\"55.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">(2)</text><circle cx=\"56.0\" cy=\"176.0\" r=\"5.5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"56.0;86.0;116.0;146.0;176.0;206.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"176.0;159.2;142.4;125.6;108.8;92.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"56.0\" cy=\"176.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"56.0;86.0;116.0;146.0;176.0;206.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"176.0;150.8;125.6;100.4;75.2;50.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm đo trượt dọc từng đường khi cường độ dòng điện tăng dần từ $0$ đến $0{,}5\\ \\text{A}$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đường thẳng qua gốc toạ độ : $U\\propto I$, $R$ không đổi.</li><li><strong>Công thức:</strong> đồ thị $U$–$I$ : độ dốc $=R=\\dfrac{\\Delta U}{\\Delta I}$ ; đồ thị $I$–$U$ : độ dốc $=\\dfrac1R$.</li><li>Song song : $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$ ; nối tiếp : $R_{td}=R_1+R_2$, $U_i=IR_i$.</li><li>⚠ <strong>Điều kiện:</strong> xem trục nào là $U$ rồi mới nói độ dốc là $R$ hay $1/R$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở vật dẫn (1)</span></p><p>Trục tung là $U$ nên độ dốc là $R$ :</p>$$R_1=\\dfrac{U_A}{I_A}=\\dfrac{3{,}0}{0{,}5}$$<div class=\"bt-ans\">$$R_1=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở vật dẫn (2)</span></p>$$R_2=\\dfrac{U_B}{I_B}=\\dfrac{4{,}5}{0{,}5}$$<div class=\"bt-ans\">$$R_2=9\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh độ dốc</span></p><p>Cùng $I=0{,}5\\ \\text{A}$ thì $U$ của $(2)$ lớn hơn nên đường $(2)$ nằm trên và <strong>dốc hơn</strong>.</p><p>Trên đồ thị $U$–$I$ độ dốc là $R$ : $R_2\\gt R_1$ nên đường $(2)$ dốc hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng mạch chính khi song song</span></p>$$R_{td}=\\dfrac{R_1R_2}{R_1+R_2}=\\dfrac{6\\cdot9}{15}=3{,}6\\ \\Omega$$$$I=\\dfrac U{R_{td}}=\\dfrac{4{,}5}{3{,}6}$$<div class=\"bt-ans\">$$I=1{,}25\\ \\text{A}$$</div><p>Kiểm tra : $I_1=\\dfrac{4{,}5}6=0{,}75\\ \\text{A}$, $I_2=\\dfrac{4{,}5}9=0{,}5\\ \\text{A}$, tổng $1{,}25\\ \\text{A}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hiệu điện thế mỗi vật dẫn khi nối tiếp</span></p>$$R_{td}=R_1+R_2=15\\ \\Omega$$$$I'=\\dfrac{U'}{R_{td}}=\\dfrac6{15}=0{,}4\\ \\text{A}$$$$U_1'=I'R_1=0{,}4\\cdot6$$<div class=\"bt-ans\">$$U_1'=2{,}4\\ \\text{V}$$</div><p>$U_2'=I'R_2=3{,}6\\ \\text{V}$ ; $U_1'+U_2'=6\\ \\text{V}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Độ dốc đồ thị I–U</span></p><p>Đổi hai trục : $I=\\dfrac UR$, độ dốc là $\\dfrac1R$ :</p>$$k_1=\\dfrac{\\Delta I}{\\Delta U}=\\dfrac1{R_1}=\\dfrac16$$<div class=\"bt-ans\">$$k_1\\approx0{,}167\\ \\text{A/V}$$</div><p>Đường $(2)$ có $k_2=1/9\\approx0{,}111\\ \\text{A/V}$, thoải hơn : ngược với đồ thị $U$–$I$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_1=6\\ \\Omega$ ; $R_2=9\\ \\Omega$</p><p>b) đường $(2)$ dốc hơn</p><p>c) $I=1{,}25\\ \\text{A}$</p><p>d) $U_1'=2{,}4\\ \\text{V}$ ; $U_2'=3{,}6\\ \\text{V}$</p><p>e) $k_1\\approx0{,}167\\ \\text{A/V}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>đồ thị qua gốc toạ độ</strong> → xem trục rồi nói độ dốc là $R$ ($U$–$I$) hay $1/R$ ($I$–$U$) ; hai vật dẫn <strong>ghép</strong> → tính $R_{td}$ từ hai điện trở vừa đọc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-4-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị U theo I của hai vật dẫn với hai điểm A và B ứng với dòng điện 0,5 ampe\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"131.0\" y1=\"176.0\" x2=\"131.0\" y2=\"26.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"26.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"134.0\" x2=\"246.0\" y2=\"134.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"246.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"50.0\" x2=\"246.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"256.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M248.2,171.5 L256.0,176.0 L248.2,180.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"56.0\" y2=\"16.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M51.5,23.8 L56.0,16.0 L60.5,23.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"131.0\" y1=\"176.0\" x2=\"131.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"131.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,25</text><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"206.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,5</text><line x1=\"51.0\" y1=\"134.0\" x2=\"56.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"138.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">1,5</text><line x1=\"51.0\" y1=\"92.0\" x2=\"56.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"96.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"51.0\" y1=\"50.0\" x2=\"56.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"48\" y=\"54.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">4,5</text><text x=\"256\" y=\"208\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"62\" y=\"14\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><line x1=\"56.0\" y1=\"176.0\" x2=\"206.0\" y2=\"92.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\" opacity=\"1\"/><line x1=\"56.0\" y1=\"176.0\" x2=\"206.0\" y2=\"50.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1\"/><text x=\"214.0\" y=\"97.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">(1)</text><text x=\"214.0\" y=\"55.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">(2)</text><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><line x1=\"56.0\" y1=\"92.0\" x2=\"206.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"206.0\" cy=\"92.0\" r=\"4.5\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"198.0\" y=\"84.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><line x1=\"206.0\" y1=\"176.0\" x2=\"206.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><line x1=\"56.0\" y1=\"50.0\" x2=\"206.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"206.0\" cy=\"50.0\" r=\"4.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"198.0\" y=\"42.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text></svg><figcaption>Dữ kiện: trục hoành là $I$, trục tung là $U$. Hai điểm $A$, $B$ cùng $I=0{,}5\\ \\text{A}$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đi qua gốc toạ độ\"</td><td>$U\\propto I$</td><td>⚠ đường thẳng qua gốc : vật dẫn tuân theo định luật Ohm, $R$ không đổi</td></tr><tr><td>\"vật dẫn (1) qua $A(0{,}5$ A ; $3{,}0$ V$)$ ; (2) qua $B(0{,}5$ ; $4{,}5)$\"</td><td>$A$ : $0{,}5$ A, $3{,}0$ V ; $B$ : $0{,}5$ A, $4{,}5$ V</td><td>Trục tung là $U$ nên độ dốc $=R=\\dfrac UI$</td></tr><tr><td>\"đường nào dốc hơn\"</td><td>So hai điện trở</td><td>⚠ trên đồ thị $U$–$I$ đường dốc hơn có $R$ lớn hơn</td></tr><tr><td>\"mắc song song vào $4{,}5$ V\"</td><td>$U_1=U_2=4{,}5$ V</td><td>$R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$ ; $I=\\dfrac U{R_{td}}$</td></tr><tr><td>\"mắc nối tiếp vào $6$ V … hiệu điện thế hai đầu mỗi vật dẫn\"</td><td>$I$ chung ; $U=6$ V</td><td>$R_{td}=R_1+R_2$ ; $U_i=I\\,R_i$ ; ⚠ nối tiếp thì $I$ bằng nhau</td></tr><tr><td>\"trục hoành là $U$, trục tung là $I$ … độ dốc\"</td><td>Cần $\\dfrac{\\Delta I}{\\Delta U}$</td><td>⚠ trên đồ thị $I$–$U$ độ dốc $=\\dfrac1R$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đồ thị qua gốc toạ độ</b> → nghĩ tới <b>độ dốc là $R$ (trục $U$) hay $1/R$ (trục $I$)</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở vật dẫn (1)",
+     "hoi": "Điện trở của vật dẫn (1) là bao nhiêu?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $I/U$ thay vì $U/I$ : nhầm hệ số góc khi trục tung là $U$."
+    },
+    {
+     "tieu_de": "Điện trở vật dẫn (2)",
+     "hoi": "Điện trở của vật dẫn (2) là bao nhiêu?",
+     "dap_so": 9,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $4{,}5-3{,}0$ rồi chia cho $0{,}5$ : trừ hai điểm của <em>hai đường khác nhau</em> thay vì cùng một đường.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_2=\\dfrac{U_B}{I_B}$ vì đường $(2)$ đi qua gốc toạ độ",
+       "dung": true
+      },
+      {
+       "text": "$R_2=\\dfrac{U_B-U_A}{I_B-I_A}$",
+       "dung": false,
+       "vi_sao": "$A$ và $B$ thuộc hai đường khác nhau ; hiệu hai điểm đó không phải hệ số góc của đường nào ($I_B-I_A=0$)."
+      },
+      {
+       "text": "$R_2=U_B\\cdot I_B$",
+       "dung": false,
+       "vi_sao": "Tích $\\text{V}\\cdot\\text{A}$ là công suất, không phải điện trở."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh độ dốc",
+     "hoi": "Trên đồ thị $U$–$I$, đường nào dốc hơn?",
+     "lua_chon": [
+      {
+       "text": "Đường $(2)$ dốc hơn vì cùng $I$ thì $U$ lớn hơn",
+       "dung": true
+      },
+      {
+       "text": "Đường $(1)$ dốc hơn vì $R_1$ nhỏ hơn",
+       "dung": false,
+       "vi_sao": "Trên $U$–$I$ độ dốc là $R$ ; $R$ nhỏ thì đường thoải hơn."
+      },
+      {
+       "text": "Hai đường dốc như nhau vì cùng đi qua $I=0{,}5\\ \\text{A}$",
+       "dung": false,
+       "vi_sao": "Cùng $I$ nhưng $U$ khác nhau thì độ dốc khác nhau."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ điện trở nhỏ thì dốc hơn (nhầm với đồ thị $I$–$U$).",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét cùng một $I$ rồi so $U$ của hai đường",
+       "dung": true
+      },
+      {
+       "text": "Đường nào nằm dưới thì dốc hơn",
+       "dung": false,
+       "vi_sao": "Trên $U$–$I$ đường nằm trên (cùng $I$ mà $U$ lớn hơn) mới dốc hơn."
+      },
+      {
+       "text": "Đường nào vẽ ngắn hơn thì dốc hơn",
+       "dung": false,
+       "vi_sao": "Độ dài đoạn vẽ không liên quan tới độ dốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng mạch chính khi song song",
+     "hoi": "Cường độ dòng điện mạch chính khi hai vật dẫn song song là bao nhiêu?",
+     "dap_so": 1.25,
+     "sai_so": 0.02,
+     "don_vi": "A",
+     "loi_hay_gap": "Cộng hai điện trở ($15\\ \\Omega$) như nối tiếp, hoặc cộng $I_1+I_2$ nhưng tính $I_i$ với sai $U$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$ rồi $I=\\dfrac U{R_{td}}$",
+       "dung": true
+      },
+      {
+       "text": "$R_{td}=R_1+R_2$",
+       "dung": false,
+       "vi_sao": "Đó là nối tiếp ; song song thì $R_{td}$ nhỏ hơn mỗi điện trở."
+      },
+      {
+       "text": "$I=\\dfrac U{R_1}$ (chỉ vật dẫn (1))",
+       "dung": false,
+       "vi_sao": "Chưa tính nhánh còn lại ; dòng mạch chính là tổng hai nhánh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế mỗi vật dẫn khi nối tiếp",
+     "hoi": "Hiệu điện thế giữa hai đầu vật dẫn (1) khi nối tiếp là bao nhiêu?",
+     "dap_so": 2.4,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Chia đôi $6\\ \\text{V}$ vì tưởng nối tiếp thì $U$ chia đều ; $U$ chia theo tỉ lệ điện trở.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I'=\\dfrac{U'}{R_1+R_2}$ rồi $U_1'=I'R_1$",
+       "dung": true
+      },
+      {
+       "text": "$U_1'=\\dfrac{U'}2$",
+       "dung": false,
+       "vi_sao": "Nối tiếp thì $I$ bằng nhau, $U$ chia theo tỉ lệ $R$ ; hai điện trở khác nhau thì $U$ khác nhau."
+      },
+      {
+       "text": "$U_1'=U'$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi song song ; nối tiếp thì $U_1'+U_2'=U'$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ dốc đồ thị I–U",
+     "hoi": "Độ dốc của đường ứng với vật dẫn (1) trên đồ thị $I$–$U$ là bao nhiêu A/V?",
+     "dap_so": 0.167,
+     "sai_so": 0.005,
+     "don_vi": "A/V",
+     "loi_hay_gap": "Lấy lại $6$ (độ dốc của đồ thị $U$–$I$) : quên đổi trục thì độ dốc nghịch đảo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trục tung là $I$ nên độ dốc là $\\dfrac{\\Delta I}{\\Delta U}=\\dfrac1R$",
+       "dung": true
+      },
+      {
+       "text": "Độ dốc vẫn là $R=6$",
+       "dung": false,
+       "vi_sao": "Đó là độ dốc của đồ thị $U$–$I$ ; đổi trục thì độ dốc là $1/R$."
+      },
+      {
+       "text": "Độ dốc là $\\dfrac1{R_2}$",
+       "dung": false,
+       "vi_sao": "$1/R_2$ ứng với vật dẫn $(2)$, không phải $(1)$."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Trung bình · Biến trở mắc nối tiếp: khoảng dòng điều chỉnh, vị trí con chạy, quấn biến trở",
+   "topic": "Định luật Ohm cho một điện trở",
+   "problem_html": "<p>Nguồn có hiệu điện thế không đổi $U=24\\ \\text{V}$. Một biến trở con chạy có điện trở lớn nhất $R_{max}=50\\ \\Omega$, chịu được dòng tối đa $1{,}5\\ \\text{A}$, mắc nối tiếp với điện trở $R=30\\ \\Omega$. Ampe kế coi là lí tưởng.</p><ol type=\"a\"><li>Tính khoảng giá trị cường độ dòng điện có thể điều chỉnh được trong mạch.</li><li>Muốn dòng điện bằng $0{,}6\\ \\text{A}$ thì biến trở phải có giá trị bao nhiêu? Con chạy cách đầu đã mắc bao nhiêu phần trăm chiều dài cuộn dây (cuộn dây quấn đều)?</li><li>Biến trở được quấn bằng dây nicrom, điện trở suất $1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, đường kính dây $0{,}4\\ \\text{mm}$, trên ống sứ đường kính $2\\ \\text{cm}$. Tính chiều dài dây và số vòng dây (coi mỗi vòng dài $\\pi D$ với $D$ là đường kính ống sứ).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-5-0\"><svg viewBox=\"0 0 380 170\" role=\"img\" aria-label=\"Nguồn 24 vôn nối tiếp điện trở 30 ôm, biến trở 50 ôm có con chạy và ampe kế\"><line x1=\"36.0\" y1=\"44.0\" x2=\"103.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"157.0\" y1=\"44.0\" x2=\"210.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"290.0\" y1=\"44.0\" x2=\"344.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"344.0\" y1=\"44.0\" x2=\"344.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"128.0\" x2=\"178.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"202.0\" y1=\"128.0\" x2=\"344.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"44.0\" x2=\"36.0\" y2=\"74.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"100.0\" x2=\"36.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"82.0\" x2=\"50.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"28.0\" y1=\"92.0\" x2=\"44.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><text x=\"56\" y=\"81\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"56\" y=\"101\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U = 24 V</text><rect x=\"103.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"130\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R = 30 Ω</text><rect x=\"210.0\" y=\"36.0\" width=\"80.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"250\" y=\"12\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">biến trở R<tspan dy=\"4\" font-size=\"11\">max</tspan><tspan dy=\"-4\"> = 50 Ω</tspan></text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"-30 0;30 0\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"238.0\" y1=\"62.0\" x2=\"262.0\" y2=\"24.0\" stroke=\"#fb923c\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M254.0,28.2 L262.0,24.0 L261.6,33.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"190.0\" cy=\"128.0\" r=\"12\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"190\" y=\"133\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"190\" y=\"158\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: con chạy của biến trở trượt từ đầu này sang đầu kia. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> biến trở mắc nối tiếp : $R_b$ tăng thì $I$ giảm.</li><li><strong>Công thức:</strong> $I=\\dfrac U{R_b+R}$ ; $I_{max}=\\dfrac UR$ ; $I_{min}=\\dfrac U{R_{max}+R}$ ; $R=\\dfrac{\\rho l}{S}$.</li><li>Cuộn dây quấn đều : $R_b$ tỉ lệ với chiều dài phần dây dùng ; số vòng $N=\\dfrac l{\\pi D}$.</li><li>⚠ <strong>Điều kiện:</strong> $0\\le R_b\\le R_{max}$ và $I$ không vượt dòng định mức của biến trở.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng nhỏ nhất</span></p><p>Con chạy ở $R_b=R_{max}$ :</p>$$I_{min}=\\dfrac U{R_{max}+R}=\\dfrac{24}{50+30}$$<div class=\"bt-ans\">$$I_{min}=0{,}3\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Dòng lớn nhất</span></p><p>Con chạy ở $R_b=0$ :</p>$$I_{max}=\\dfrac UR=\\dfrac{24}{30}$$<div class=\"bt-ans\">$$I_{max}=0{,}8\\ \\text{A}$$</div><p>$0{,}8\\lt1{,}5\\ \\text{A}$ nên biến trở an toàn. Dòng chỉnh được từ $0{,}3$ đến $0{,}8\\ \\text{A}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Giá trị biến trở cho dòng $0{,}6\\ \\text{A}$</span></p>$$R_{mach}=\\dfrac U{I_0}=\\dfrac{24}{0{,}6}=40\\ \\Omega$$$$R_b=R_{mach}-R=40-30$$<div class=\"bt-ans\">$$R_b=10\\ \\Omega$$</div><p>$0\\lt10\\lt50$ : đặt được ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vị trí con chạy</span></p><p>Cuộn dây quấn đều nên $R_b$ tỉ lệ với chiều dài phần dây có dòng :</p>$$\\dfrac{R_b}{R_{max}}=\\dfrac{10}{50}$$<div class=\"bt-ans\">$$20\\%\\ \\text{chiều dài cuộn dây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chiều dài dây quấn biến trở</span></p>$$S=\\dfrac{\\pi d^2}4=\\dfrac{3{,}14\\cdot(4\\cdot10^{-4})^2}4\\approx1{,}26\\cdot10^{-7}\\ \\text{m}^2$$$$l=\\dfrac{R_{max}S}{\\rho}=\\dfrac{50\\cdot1{,}26\\cdot10^{-7}}{1{,}1\\cdot10^{-6}}$$<div class=\"bt-ans\">$$l\\approx5{,}7\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Số vòng dây</span></p><p>Mỗi vòng dài $\\pi D=3{,}14\\cdot2\\cdot10^{-2}=0{,}0628\\ \\text{m}$ :</p>$$N=\\dfrac{l}{\\pi D}=\\dfrac{5{,}7}{0{,}0628}$$<div class=\"bt-ans\">$$N\\approx91\\ \\text{vòng}$$</div><p>Thực tế mỗi vòng dài hơn một chút ($\\pi(D+d)$) nên số vòng ít hơn khoảng $2\\%$ ; làm tròn lên khi quấn.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I$ từ $0{,}3\\ \\text{A}$ đến $0{,}8\\ \\text{A}$</p><p>b) $R_b=10\\ \\Omega$ ; con chạy ở $20\\%$</p><p>c) $l\\approx5{,}7\\ \\text{m}$ ; $N\\approx91$ vòng</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>biến trở nối tiếp, khoảng dòng điều chỉnh</strong> → tính hai đầu mút $R_b=0$ và $R_b=R_{max}$ ; thấy <strong>dòng cho trước</strong> → $R_b=U/I_0-R$ rồi kiểm $0\\le R_b\\le R_{max}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-5-2\"><svg viewBox=\"0 0 380 170\" role=\"img\" aria-label=\"Nguồn 24 vôn nối tiếp điện trở 30 ôm, biến trở 50 ôm có con chạy và ampe kế\"><line x1=\"36.0\" y1=\"44.0\" x2=\"103.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"157.0\" y1=\"44.0\" x2=\"210.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"290.0\" y1=\"44.0\" x2=\"344.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"344.0\" y1=\"44.0\" x2=\"344.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"128.0\" x2=\"178.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"202.0\" y1=\"128.0\" x2=\"344.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"44.0\" x2=\"36.0\" y2=\"74.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.0\" y1=\"100.0\" x2=\"36.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"82.0\" x2=\"50.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"28.0\" y1=\"92.0\" x2=\"44.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><text x=\"56\" y=\"81\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"56\" y=\"101\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U = 24 V</text><rect x=\"103.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"130\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R = 30 Ω</text><rect x=\"210.0\" y=\"36.0\" width=\"80.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"250\" y=\"12\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">biến trở R<tspan dy=\"4\" font-size=\"11\">max</tspan><tspan dy=\"-4\"> = 50 Ω</tspan></text><line x1=\"238.0\" y1=\"62.0\" x2=\"262.0\" y2=\"24.0\" stroke=\"#fb923c\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M254.0,28.2 L262.0,24.0 L261.6,33.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"190.0\" cy=\"128.0\" r=\"12\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"190\" y=\"133\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"190\" y=\"158\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I = U/(R + R<tspan dy=\"4\" font-size=\"11\">b</tspan><tspan dy=\"-4\">)</tspan></text></svg><figcaption>Dữ kiện: biến trở nối tiếp với $R$; ampe kế lí tưởng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"biến trở mắc nối tiếp với $R=30\\ \\Omega$\"</td><td>$R=30\\ \\Omega$ ; $R_{max}=50\\ \\Omega$ ; $U=24$ V</td><td>$R_{mach}=R_b+R$ ; ⚠ biến trở nối tiếp, ampe kế lí tưởng không có điện trở</td></tr><tr><td>\"khoảng giá trị cường độ dòng điện điều chỉnh được\"</td><td>Hai đầu mút : $R_b=0$ và $R_b=R_{max}$</td><td>$I_{max}=\\dfrac UR$ ; $I_{min}=\\dfrac U{R_{max}+R}$</td></tr><tr><td>\"chịu được dòng tối đa $1{,}5$ A\"</td><td>$I_{dm}=1{,}5$ A</td><td>⚠ dòng trong mạch không được vượt $I_{dm}$ của biến trở</td></tr><tr><td>\"dòng điện bằng $0{,}6$ A … giá trị biến trở\"</td><td>$I_0=0{,}6$ A</td><td>$R_b=\\dfrac U{I_0}-R$</td></tr><tr><td>\"cách đầu đã mắc bao nhiêu phần trăm … quấn đều\"</td><td>Cần $\\dfrac{R_b}{R_{max}}$</td><td>⚠ cuộn dây quấn đều thì $R_b$ tỉ lệ với chiều dài phần dây có dòng đi qua</td></tr><tr><td>\"nicrom, $d=0{,}4$ mm, ống sứ $D=2$ cm, $R_{max}=50\\ \\Omega$\"</td><td>$\\rho=1{,}1\\cdot10^{-6}$ ; $d=4\\cdot10^{-4}$ m ; $D=2\\cdot10^{-2}$ m</td><td>$S=\\dfrac{\\pi d^2}4$ ; $l=\\dfrac{R_{max}S}{\\rho}$ ; $N=\\dfrac l{\\pi D}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>biến trở nối tiếp, khoảng dòng điều chỉnh</b> → nghĩ tới <b>hai đầu mút $R_b=0$ và $R_b=R_{max}$</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Dòng nhỏ nhất",
+     "hoi": "Cường độ dòng điện nhỏ nhất trong mạch là bao nhiêu?",
+     "dap_so": 0.3,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Chỉ tính $U/R_{max}$ (quên điện trở phụ $R$)."
+    },
+    {
+     "tieu_de": "Dòng lớn nhất",
+     "hoi": "Cường độ dòng điện lớn nhất trong mạch là bao nhiêu?",
+     "dap_so": 0.8,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Cho $R_b=0$ rồi chia $U$ cho $0$ ; điện trở phụ $R$ vẫn còn trong mạch.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_b=0$ nên chỉ còn $R$ : $I_{max}=\\dfrac UR$",
+       "dung": true
+      },
+      {
+       "text": "$I_{max}=\\dfrac U{R_{max}}$",
+       "dung": false,
+       "vi_sao": "Dòng lớn nhất ứng với điện trở <em>nhỏ</em> nhất của biến trở, không phải lớn nhất."
+      },
+      {
+       "text": "$I_{max}=I_{dm}=1{,}5\\ \\text{A}$",
+       "dung": false,
+       "vi_sao": "$1{,}5\\ \\text{A}$ là giới hạn chịu đựng, không phải dòng mạch thực sự đạt được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giá trị biến trở cho dòng $0{,}6\\ \\text{A}$",
+     "hoi": "Biến trở phải có giá trị bao nhiêu để dòng bằng $0{,}6\\ \\text{A}$?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $U/I_0=40\\ \\Omega$ làm luôn $R_b$ mà quên trừ điện trở phụ $R$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R_b=\\dfrac U{I_0}-R$",
+       "dung": true
+      },
+      {
+       "text": "$R_b=\\dfrac U{I_0}$",
+       "dung": false,
+       "vi_sao": "$U/I_0$ là điện trở <em>cả mạch</em> ; còn phải trừ phần của $R$."
+      },
+      {
+       "text": "$R_b=\\dfrac U{I_0}+R$",
+       "dung": false,
+       "vi_sao": "Cộng thay vì trừ : biến trở chỉ là một phần của điện trở cả mạch."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí con chạy",
+     "hoi": "Con chạy cách đầu đã mắc bao nhiêu phần trăm chiều dài cuộn dây?",
+     "dap_so": 20,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Chia $R_b$ cho $R$ thay vì cho $R_{max}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cuộn đều nên $\\dfrac{R_b}{R_{max}}$ bằng tỉ lệ chiều dài",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{R_b}{R}$",
+       "dung": false,
+       "vi_sao": "$R$ là điện trở phụ ngoài biến trở, không liên quan chiều dài cuộn dây."
+      },
+      {
+       "text": "$\\dfrac{R_b}{R_b+R}$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ lệ hiệu điện thế trên biến trở, không phải vị trí con chạy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài dây quấn biến trở",
+     "hoi": "Chiều dài dây nicrom quấn biến trở là bao nhiêu mét?",
+     "dap_so": 5.7,
+     "sai_so": 0.1,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng $S=\\pi d^2$ (quên chia $4$) nên $l$ ra lớn hơn $4$ lần ; hoặc quên đổi $\\text{mm}$ sang $\\text{m}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$S=\\dfrac{\\pi d^2}4$ rồi $l=\\dfrac{R_{max}S}{\\rho}$",
+       "dung": true
+      },
+      {
+       "text": "$S=\\pi d^2$ rồi $l=\\dfrac{R_{max}S}{\\rho}$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số $\\dfrac14$ : $S=\\pi r^2=\\pi d^2/4$."
+      },
+      {
+       "text": "$l=\\dfrac{\\rho S}{R_{max}}$",
+       "dung": false,
+       "vi_sao": "Đảo ngược : từ $R=\\rho l/S$ suy ra $l=RS/\\rho$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số vòng dây",
+     "hoi": "Số vòng dây quấn trên ống sứ là bao nhiêu?",
+     "dap_so": 91,
+     "sai_so": 1,
+     "don_vi": "vòng",
+     "loi_hay_gap": "Chia $l$ cho $\\pi d$ (đường kính dây) thay vì $\\pi D$ (đường kính ống sứ).",
+     "chon_buoc_ke": [
+      {
+       "text": "Mỗi vòng dài $\\pi D$ nên $N=\\dfrac l{\\pi D}$",
+       "dung": true
+      },
+      {
+       "text": "$N=\\dfrac l{\\pi d}$",
+       "dung": false,
+       "vi_sao": "$d$ là đường kính <em>dây</em> ; chiều dài mỗi vòng theo chu vi ống sứ $D$."
+      },
+      {
+       "text": "$N=\\dfrac lD$",
+       "dung": false,
+       "vi_sao": "Thiếu $\\pi$ : chu vi vòng tròn là $\\pi D$."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Khó · Ampe kế và vôn kế có điện trở: số chỉ, độ lệch so với giá trị thật, sai số dụng cụ",
+   "topic": "Định luật Ohm cho một điện trở",
+   "problem_html": "<p>Nguồn có hiệu điện thế không đổi $U=12\\ \\text{V}$. Ampe kế có điện trở $R_A=0{,}5\\ \\Omega$ mắc nối tiếp với $R_1=6\\ \\Omega$ và $R_2=18\\ \\Omega$. Vôn kế có điện trở $R_V=4000\\ \\Omega$ mắc song song với $R_1$.</p><ol type=\"a\"><li>Tính số chỉ của ampe kế và của vôn kế.</li><li>Thay vôn kế bằng một vôn kế khác có $R_V=6\\ \\Omega$. Tính số chỉ của vôn kế đó và độ lệch (theo phần trăm) so với hiệu điện thế thật giữa hai đầu $R_1$ khi <em>không</em> mắc vôn kế.</li><li>Vôn kế $4000\\ \\Omega$ ở câu a có $30$ vạch chia đều, thang $0$–$6\\ \\text{V}$, cấp chính xác $1{,}0$. Tính độ chia nhỏ nhất, sai số tuyệt đối lớn nhất của phép đo và sai số tương đối của số chỉ ở câu a.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-6-0\"><svg viewBox=\"0 0 400 170\" role=\"img\" aria-label=\"Nguồn 12 vôn, ampe kế có điện trở 0,5 ôm nối tiếp R1 và R2, vôn kế mắc song song với R1\"><line x1=\"30.0\" y1=\"44.0\" x2=\"80.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"163.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"217.0\" y1=\"44.0\" x2=\"273.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"327.0\" y1=\"44.0\" x2=\"372.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"372.0\" y1=\"44.0\" x2=\"372.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"150.0\" x2=\"372.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"44.0\" x2=\"30.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"30.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"16.0\" y1=\"92.0\" x2=\"44.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"102.0\" x2=\"38.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><text x=\"50\" y=\"91\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"50\" y=\"111\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U = 12 V</text><circle cx=\"95.0\" cy=\"44.0\" r=\"12\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"95\" y=\"49\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"95\" y=\"24\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"11\">A</tspan><tspan dy=\"-4\"> = 0,5 Ω</tspan></text><rect x=\"163.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"190\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R₁ = 6 Ω</text><rect x=\"273.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"300\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R₂ = 18 Ω</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\" points=\"163.0,44.0 163.0,104.0 178.0,104.0\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\" points=\"202.0,104.0 217.0,104.0 217.0,44.0\"/><circle cx=\"190.0\" cy=\"104.0\" r=\"12\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"190\" y=\"109\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"190\" y=\"136\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"11\">V</tspan><tspan dy=\"-4\"> = ?</tspan></text><circle cx=\"30.0\" cy=\"44.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.3\"><animate attributeName=\"cx\" values=\"30.0;52.4;74.8;97.2;119.6;142.0;164.4;186.8;209.2;231.6;254.0;276.4;298.8;321.2;343.6;366.0;372.0;372.0;372.0;372.0;372.0;349.6;327.2;304.8;282.4;260.0;237.6;215.2;192.8;170.4;148.0;125.6;103.2;80.8;58.4;36.0;30.0;30.0;30.0;30.0;30.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;60.4;82.8;105.2;127.6;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;133.6;111.2;88.8;66.4;44.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: dòng điện chạy một vòng quanh mạch, qua cả ampe kế và các điện trở. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ampe kế, vôn kế thực có điện trở ; chúng là một phần của mạch.</li><li><strong>Công thức:</strong> $R_P=\\dfrac{R_1R_V}{R_1+R_V}$ ; $R_{mach}=R_P+R_2+R_A$ ; $I_A=\\dfrac U{R_{mach}}$ ; $U_V=I_AR_P$.</li><li>Dụng cụ chia vạch : ĐCNN $=\\dfrac{A_{max}}N$ ; $\\Delta A=x\\%\\cdot A_{max}$ ; $\\delta=\\dfrac{\\Delta A}{A}$.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta A$ tính theo giá trị lớn nhất của <strong>thang</strong> đang dùng, không theo số chỉ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở đoạn $R_1$ song song vôn kế</span></p>$$R_P=\\dfrac{R_1R_V}{R_1+R_V}=\\dfrac{6\\cdot4000}{4006}$$<div class=\"bt-ans\">$$R_P\\approx5{,}99\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chỉ ampe kế</span></p>$$R_{mach}=R_P+R_2+R_A\\approx5{,}99+18+0{,}5=24{,}49\\ \\Omega$$$$I_A=\\dfrac U{R_{mach}}=\\dfrac{12}{24{,}49}$$<div class=\"bt-ans\">$$I_A\\approx0{,}490\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chỉ vôn kế</span></p>$$U_V=I_AR_P\\approx0{,}490\\cdot5{,}99$$<div class=\"bt-ans\">$$U_V\\approx2{,}94\\ \\text{V}$$</div><p>Bỏ vôn kế : $I'=\\dfrac{12}{24{,}5}\\approx0{,}4898\\ \\text{A}$ và $U_1=I'R_1\\approx2{,}94\\ \\text{V}$ : vôn kế $4000\\ \\Omega$ hầu như không ảnh hưởng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số chỉ của vôn kế $6\\ \\Omega$</span></p>$$R_P'=\\dfrac{6\\cdot6}{12}=3\\ \\Omega$$$$R_{mach}'=3+18+0{,}5=21{,}5\\ \\Omega$$$$I_A'=\\dfrac{12}{21{,}5}\\approx0{,}558\\ \\text{A}$$$$U_V'=I_A'R_P'\\approx0{,}558\\cdot3$$<div class=\"bt-ans\">$$U_V'\\approx1{,}67\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Độ lệch so với giá trị thật</span></p><p>Giá trị thật (không mắc vôn kế) : $U_1=\\dfrac{12\\cdot6}{24{,}5}\\approx2{,}94\\ \\text{V}$.</p>$$\\dfrac{U_1-U_V'}{U_1}=\\dfrac{2{,}94-1{,}67}{2{,}94}$$<div class=\"bt-ans\">$$\\approx43\\%$$</div><p>Vôn kế phải có điện trở rất lớn so với điện trở đoạn mạch cần đo.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Độ chia nhỏ nhất của vôn kế</span></p>$$\\text{ĐCNN}=\\dfrac{A_{max}}N=\\dfrac6{30}$$<div class=\"bt-ans\">$$\\text{ĐCNN}=0{,}2\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Sai số dụng cụ</span></p><p>Sai số tính theo giá trị lớn nhất của <strong>thang</strong> $6\\ \\text{V}$, không theo số chỉ :</p>$$\\Delta U=1{,}0\\%\\cdot6$$<div class=\"bt-ans\">$$\\Delta U=0{,}06\\ \\text{V}$$</div>$$\\delta=\\dfrac{\\Delta U}{U_V}=\\dfrac{0{,}06}{2{,}94}\\approx2{,}0\\%$$<p>Kết quả ghi : $U=(2{,}94\\pm0{,}06)\\ \\text{V}$, $\\delta\\approx2{,}0\\%$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I_A\\approx0{,}490\\ \\text{A}$ ; $U_V\\approx2{,}94\\ \\text{V}$</p><p>b) $U_V'\\approx1{,}67\\ \\text{V}$ ; lệch khoảng $43\\%$</p><p>c) ĐCNN $=0{,}2\\ \\text{V}$ ; $\\Delta U=0{,}06\\ \\text{V}$ ; $\\delta\\approx2{,}0\\%$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>ampe kế, vôn kế có điện trở</strong> → vẽ chúng thành điện trở trong mạch rồi tính ; thấy <strong>cấp chính xác</strong> → $\\Delta A=x\\%\\cdot A_{max}$ của thang.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c159-6-2\"><svg viewBox=\"0 0 400 170\" role=\"img\" aria-label=\"Nguồn 12 vôn, ampe kế có điện trở 0,5 ôm nối tiếp R1 và R2, vôn kế mắc song song với R1\"><line x1=\"30.0\" y1=\"44.0\" x2=\"80.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"163.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"217.0\" y1=\"44.0\" x2=\"273.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"327.0\" y1=\"44.0\" x2=\"372.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"372.0\" y1=\"44.0\" x2=\"372.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"150.0\" x2=\"372.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"44.0\" x2=\"30.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"110.0\" x2=\"30.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"16.0\" y1=\"92.0\" x2=\"44.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"102.0\" x2=\"38.0\" y2=\"102.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><text x=\"50\" y=\"91\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">+</text><text x=\"50\" y=\"111\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U = 12 V</text><circle cx=\"95.0\" cy=\"44.0\" r=\"12\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\"/><text x=\"95\" y=\"49\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"95\" y=\"24\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"11\">A</tspan><tspan dy=\"-4\"> = 0,5 Ω</tspan></text><rect x=\"163.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"190\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R₁ = 6 Ω</text><rect x=\"273.0\" y=\"36.0\" width=\"54.0\" height=\"16.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"300\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R₂ = 18 Ω</text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\" points=\"163.0,44.0 163.0,104.0 178.0,104.0\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\" points=\"202.0,104.0 217.0,104.0 217.0,44.0\"/><circle cx=\"190.0\" cy=\"104.0\" r=\"12\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"190\" y=\"109\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><text x=\"190\" y=\"136\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"11\">V</tspan></text></svg><figcaption>Dữ kiện: ampe kế nối tiếp, vôn kế (điện trở $R_V$) song song với $R_1$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ampe kế có điện trở $R_A=0{,}5\\ \\Omega$ mắc nối tiếp\"</td><td>$R_A=0{,}5\\ \\Omega$</td><td>⚠ dụng cụ đo là một điện trở trong mạch : đưa $R_A$ vào $R_{mach}$</td></tr><tr><td>\"vôn kế $R_V=4000\\ \\Omega$ song song với $R_1$\"</td><td>$R_V=4000\\ \\Omega$ ; $R_1=6\\ \\Omega$</td><td>$R_P=\\dfrac{R_1R_V}{R_1+R_V}$ ; ⚠ vôn kế song song làm điện trở đoạn đó nhỏ đi</td></tr><tr><td>\"số chỉ của ampe kế và của vôn kế\" (câu a)</td><td>Cần $I_A$ và $U_V$</td><td>$I_A=\\dfrac U{R_P+R_2+R_A}$ ; $U_V=I_AR_P$</td></tr><tr><td>\"thay vôn kế có $R_V=6\\ \\Omega$ … so với khi không mắc vôn kế\"</td><td>$R_V=6\\ \\Omega$ ; giá trị thật : bỏ vôn kế</td><td>Giá trị thật $U_1=\\dfrac{U\\,R_1}{R_1+R_2+R_A}$ ; độ lệch $=\\dfrac{U_1-U_V}{U_1}$</td></tr><tr><td>\"$30$ vạch chia, thang $0$–$6$ V, cấp $1{,}0$\"</td><td>$N=30$ ; $A_{max}=6$ V ; $x=1{,}0$</td><td>ĐCNN $=\\dfrac{A_{max}}N$ ; $\\Delta U=x\\%\\cdot A_{max}$ ; ⚠ lấy theo <strong>thang</strong>, không theo số chỉ</td></tr><tr><td>\"sai số tương đối của số chỉ\"</td><td>$U_{doc}$ ở câu a</td><td>$\\delta=\\dfrac{\\Delta U}{U_{doc}}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ampe kế, vôn kế có điện trở</b> → nghĩ tới <b>coi dụng cụ là một điện trở trong mạch rồi tính $R_{td}$</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện trở đoạn $R_1$ song song vôn kế",
+     "hoi": "Điện trở của đoạn gồm $R_1$ song song với vôn kế là bao nhiêu Ω?",
+     "dap_so": 5.99,
+     "sai_so": 0.02,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Cộng $R_1+R_V$ như nối tiếp, hoặc coi vôn kế không có điện trở."
+    },
+    {
+     "tieu_de": "Số chỉ ampe kế",
+     "hoi": "Số chỉ của ampe kế là bao nhiêu A?",
+     "dap_so": 0.49,
+     "sai_so": 0.002,
+     "don_vi": "A",
+     "loi_hay_gap": "Bỏ $R_A$ ra khỏi điện trở toàn mạch vì coi ampe kế lí tưởng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$I_A=\\dfrac U{R_P+R_2+R_A}$",
+       "dung": true
+      },
+      {
+       "text": "$I_A=\\dfrac U{R_P+R_2}$",
+       "dung": false,
+       "vi_sao": "Đề cho $R_A=0{,}5\\ \\Omega$ thì ampe kế là một điện trở nối tiếp, phải cộng vào."
+      },
+      {
+       "text": "$I_A=\\dfrac U{R_1+R_2+R_A}$",
+       "dung": false,
+       "vi_sao": "Vôn kế song song với $R_1$ làm đoạn đó nhỏ hơn $R_1$ một chút ; dùng $R_1$ là bỏ qua vôn kế."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chỉ vôn kế",
+     "hoi": "Số chỉ của vôn kế là bao nhiêu V?",
+     "dap_so": 2.94,
+     "sai_so": 0.02,
+     "don_vi": "V",
+     "loi_hay_gap": "Nhân $I_A$ với $R_V$ thay vì với điện trở của đoạn song song $R_P$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$U_V=I_AR_P$ (hiệu điện thế hai đầu đoạn song song)",
+       "dung": true
+      },
+      {
+       "text": "$U_V=I_AR_V$",
+       "dung": false,
+       "vi_sao": "Dòng qua vôn kế chỉ là một phần rất nhỏ của $I_A$ ; $I_AR_V$ cho giá trị vô lí."
+      },
+      {
+       "text": "$U_V=U$",
+       "dung": false,
+       "vi_sao": "$12\\ \\text{V}$ là hiệu điện thế cả mạch ; vôn kế chỉ đo hai đầu $R_1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chỉ của vôn kế $6\\ \\Omega$",
+     "hoi": "Số chỉ của vôn kế $6\\ \\Omega$ là bao nhiêu V?",
+     "dap_so": 1.67,
+     "sai_so": 0.02,
+     "don_vi": "V",
+     "loi_hay_gap": "Dùng $R_P=R_1$ như vôn kế lí tưởng, nên vẫn ra gần $2{,}94\\ \\text{V}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $R_P'$, $R_{mach}'$, $I_A'$ rồi $U_V'=I_A'R_P'$",
+       "dung": true
+      },
+      {
+       "text": "Giữ $I_A$ ở câu a rồi nhân với $R_P'$",
+       "dung": false,
+       "vi_sao": "Vôn kế kém làm $R_{mach}$ đổi nên $I_A$ cũng đổi ; phải tính lại."
+      },
+      {
+       "text": "$U_V'=\\dfrac{U_1}2$ vì $R_V=R_1$",
+       "dung": false,
+       "vi_sao": "Điện trở đoạn song song còn một nửa nhưng dòng mạch chính tăng lên nên hiệu điện thế giảm ít hơn một nửa ; phải tính lại cả mạch."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lệch so với giá trị thật",
+     "hoi": "Vôn kế $6\\ \\Omega$ chỉ lệch bao nhiêu phần trăm so với giá trị thật?",
+     "dap_so": 43,
+     "sai_so": 1,
+     "don_vi": "%",
+     "loi_hay_gap": "So với $12\\ \\text{V}$ hoặc so với chính số chỉ thay vì so với giá trị thật khi chưa mắc vôn kế.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{U_1-U_V'}{U_1}$ với $U_1$ khi bỏ vôn kế",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{U_1-U_V'}{U_V'}$",
+       "dung": false,
+       "vi_sao": "Độ lệch đo so với giá trị <em>thật</em> $U_1$, không phải so với số chỉ sai."
+      },
+      {
+       "text": "$\\dfrac{U-U_V'}{U}$",
+       "dung": false,
+       "vi_sao": "$U=12\\ \\text{V}$ là hiệu điện thế cả mạch, không phải giá trị thật trên $R_1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ chia nhỏ nhất của vôn kế",
+     "hoi": "Độ chia nhỏ nhất của vôn kế thang $0$–$6\\ \\text{V}$ là bao nhiêu V?",
+     "dap_so": 0.2,
+     "sai_so": 0.005,
+     "don_vi": "V",
+     "loi_hay_gap": "Chia $6$ cho $6$ hoặc cho số vạch khác ; ĐCNN $=A_{max}/N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{A_{max}}N=\\dfrac6{30}$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{N}{A_{max}}$",
+       "dung": false,
+       "vi_sao": "Đảo ngược : ĐCNN là giá trị mỗi vạch, đơn vị V."
+      },
+      {
+       "text": "$\\dfrac{A_{max}}{N+1}$",
+       "dung": false,
+       "vi_sao": "$30$ vạch chia đều cho $6\\ \\text{V}$ nên mỗi vạch $6/30$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Sai số dụng cụ",
+     "hoi": "Sai số tuyệt đối lớn nhất của phép đo là bao nhiêu V?",
+     "dap_so": 0.06,
+     "sai_so": 0.005,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $1\\%$ của <em>số chỉ</em> $2{,}94\\ \\text{V}$ (được $0{,}03\\ \\text{V}$) thay vì của giá trị lớn nhất của thang $6\\ \\text{V}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta U=x\\%\\cdot A_{max}$ với $A_{max}$ là cả thang",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta U=x\\%\\cdot U_{doc}$",
+       "dung": false,
+       "vi_sao": "Cấp chính xác tính theo giá trị lớn nhất của thang, không theo số chỉ."
+      },
+      {
+       "text": "$\\Delta U=\\text{ĐCNN}$",
+       "dung": false,
+       "vi_sao": "ĐCNN và sai số dụng cụ là hai đại lượng khác nhau (một là khoảng chia, một là mức sai)."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Dòng điện không đổi $I=1{,}2\\ \\text{A}$ chạy qua một dây dẫn trong $15$ phút. a) Tính điện lượng chuyển qua tiết diện dây. b) Muốn có điện lượng $900\\ \\text{C}$ với dòng $0{,}5\\ \\text{A}$ thì cần bao lâu?</p><details><summary>Hướng dẫn giải</summary><p>a) $t=15\\cdot60=900\\ \\text{s}$ ; $q=It=1{,}2\\cdot900=1080\\ \\text{C}$.</p><p>b) $t'=\\dfrac{q'}{I'}=\\dfrac{900}{0{,}5}=1800\\ \\text{s}=30$ phút.</p></details><h4>Bài 2 · Dễ</h4><p>Dây đồng chất, tiết diện đều có $R=24\\ \\Omega$. Cắt dây thành hai đoạn bằng nhau. Tính điện trở mỗi đoạn và điện trở khi nối hai đoạn song song.</p><details><summary>Hướng dẫn giải</summary><p>Mỗi đoạn $\\dfrac{24}2=12\\ \\Omega$.</p><p>Song song : $\\dfrac{12}2=6\\ \\Omega$ (hay $R/4$).</p></details><h4>Bài 3 · Dễ</h4><p>Điện trở $R_1=15\\ \\Omega$ mắc nối tiếp với $R_2$. Đặt vào hai đầu đoạn mạch $12\\ \\text{V}$ thì dòng là $0{,}4\\ \\text{A}$. Tính $R_2$ và hiệu điện thế hai đầu $R_2$.</p><details><summary>Hướng dẫn giải</summary><p>$R_{td}=\\dfrac{12}{0{,}4}=30\\ \\Omega$ nên $R_2=30-15=15\\ \\Omega$.</p><p>$U_2=IR_2=0{,}4\\cdot15=6\\ \\text{V}$.</p></details><h4>Bài 4 · Dễ</h4><p>Đồ thị $U$–$I$ của một vật dẫn là đường thẳng qua gốc toạ độ và điểm $I=0{,}6\\ \\text{A}$, $U=2{,}4\\ \\text{V}$. Tính điện trở. Nếu tăng hiệu điện thế lên $3{,}6\\ \\text{V}$ thì dòng bằng bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p>$R=\\dfrac{2{,}4}{0{,}6}=4\\ \\Omega$.</p><p>$I'=\\dfrac{3{,}6}{4}=0{,}9\\ \\text{A}$.</p></details><h4>Bài 5 · Trung bình</h4><p>Dây dài $50\\ \\text{m}$, tiết diện $0{,}1\\ \\text{mm}^2$ có $R=8{,}5\\ \\Omega$. Tính điện trở suất và cho biết đó có thể là vật liệu gì.</p><details><summary>Hướng dẫn giải</summary><p>$S=0{,}1\\cdot10^{-6}=10^{-7}\\ \\text{m}^2$.</p><p>$\\rho=\\dfrac{RS}{l}=\\dfrac{8{,}5\\cdot10^{-7}}{50}=1{,}7\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$.</p><p>Đây là điện trở suất của đồng.</p></details><h4>Bài 6 · Trung bình</h4><p>Dây đồng chất, tiết diện đều dài $4\\ \\text{m}$ có $R=20\\ \\Omega$. Phải cắt bớt bao nhiêu mét để đoạn còn lại có $R=15\\ \\Omega$?</p><details><summary>Hướng dẫn giải</summary><p>$R\\propto l$ : $l'=4\\cdot\\dfrac{15}{20}=3\\ \\text{m}$.</p><p>Cắt bớt $4-3=1\\ \\text{m}$.</p></details><h4>Bài 7 · Trung bình</h4><p>Dây nhôm dài $120\\ \\text{m}$, đường kính tiết diện $0{,}8\\ \\text{mm}$, $\\rho=2{,}8\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$. Tính điện trở của dây.</p><details><summary>Hướng dẫn giải</summary><p>$S=\\dfrac{\\pi d^2}4=\\dfrac{3{,}14\\cdot(8\\cdot10^{-4})^2}4\\approx5{,}02\\cdot10^{-7}\\ \\text{m}^2$.</p><p>$R=\\dfrac{\\rho l}S=\\dfrac{2{,}8\\cdot10^{-8}\\cdot120}{5{,}02\\cdot10^{-7}}\\approx6{,}7\\ \\Omega$.</p></details><h4>Bài 8 · Trung bình</h4><p>Kéo dãn một dây dẫn đồng chất, tiết diện đều sao cho đường kính còn một nửa (thể tích không đổi). Điện trở tăng bao nhiêu lần?</p><details><summary>Hướng dẫn giải</summary><p>Đường kính giảm $2$ lần thì $S$ giảm $4$ lần, $l$ tăng $4$ lần.</p><p>$R$ tăng $4^2=16$ lần (hay $k^4=2^4$).</p></details><h4>Bài 9 · Trung bình</h4><p>Từ $1\\ \\text{kg}$ đồng ($D=8900\\ \\text{kg/m}^3$) kéo thành sợi dây đường kính $0{,}5\\ \\text{mm}$. Tính chiều dài sợi dây.</p><details><summary>Hướng dẫn giải</summary><p>$V=\\dfrac mD=\\dfrac1{8900}\\approx1{,}12\\cdot10^{-4}\\ \\text{m}^3$.</p><p>$S=\\dfrac{\\pi d^2}4\\approx1{,}96\\cdot10^{-7}\\ \\text{m}^2$.</p><p>$l=\\dfrac VS\\approx572\\ \\text{m}$ (dùng $\\pi=3{,}14$ được $573\\ \\text{m}$ ; cả hai chấp nhận được).</p></details><h4>Bài 10 · Khó</h4><p>Hai dây cùng chiều dài $40\\ \\text{m}$ nối tiếp nhau : dây đồng ($\\rho=1{,}7\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$) tiết diện $1\\ \\text{mm}^2$ và dây nhôm ($\\rho=2{,}8\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$) tiết diện $2{,}5\\ \\text{mm}^2$. a) Tính điện trở mỗi dây và của cả đoạn. b) Vì sao nhôm dẫn điện kém hơn mà dây nhôm này lại có điện trở nhỏ hơn? c) Đặt $6\\ \\text{V}$ vào hai đầu đoạn nối tiếp, tính hiệu điện thế mỗi dây.</p><details><summary>Hướng dẫn giải</summary><p>a) $R_1=\\dfrac{1{,}7\\cdot10^{-8}\\cdot40}{10^{-6}}=0{,}68\\ \\Omega$ ; $R_2=\\dfrac{2{,}8\\cdot10^{-8}\\cdot40}{2{,}5\\cdot10^{-6}}=0{,}448\\ \\Omega$ ; $R_{td}=1{,}128\\ \\Omega$.</p><p>b) $\\dfrac{R_1}{R_2}=\\dfrac{\\rho_1}{\\rho_2}\\cdot\\dfrac{S_2}{S_1}=\\dfrac{1{,}7}{2{,}8}\\cdot2{,}5\\approx1{,}52$ : tiết diện lớn hơn $2{,}5$ lần bù được $\\rho$ lớn hơn $1{,}65$ lần.</p><p>c) $I=\\dfrac6{1{,}128}\\approx5{,}32\\ \\text{A}$ ; $U_1\\approx3{,}62\\ \\text{V}$ ; $U_2\\approx2{,}38\\ \\text{V}$ ; tổng $6{,}00\\ \\text{V}$ ✓.</p></details><h4>Bài 11 · Khó</h4><p>Mạch gồm nguồn $9\\ \\text{V}$, ampe kế có $R_A=0{,}5\\ \\Omega$ nối tiếp với điện trở $R$ và một vôn kế lí tưởng song song với $R$. Ampe kế chỉ $0{,}5\\ \\text{A}$, vôn kế chỉ $8{,}75\\ \\text{V}$. Tính $R$. Nếu vôn kế thật có $R_V=100\\ \\Omega$ thì số chỉ vôn kế bằng bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p>$R=\\dfrac{8{,}75}{0{,}5}=17{,}5\\ \\Omega$. Kiểm : $0{,}5\\cdot(17{,}5+0{,}5)=9\\ \\text{V}$ ✓.</p><p>$R_P=\\dfrac{17{,}5\\cdot100}{117{,}5}\\approx14{,}89\\ \\Omega$ ; $I=\\dfrac9{14{,}89+0{,}5}\\approx0{,}585\\ \\text{A}$.</p><p>$U_V=IR_P\\approx8{,}71\\ \\text{V}$ : thấp hơn $8{,}75\\ \\text{V}$ khoảng $0{,}5\\%$.</p></details><h4>Bài 12 · Nâng cao</h4><p>Mạch như Dạng 5 ($U=24\\ \\text{V}$, $R=30\\ \\Omega$, $R_{max}=50\\ \\Omega$). Muốn dòng nhỏ nhất điều chỉnh được xuống $0{,}2\\ \\text{A}$, nêu hai cách (có tính toán).</p><details><summary>Hướng dẫn giải</summary><p>Cách 1 : thêm $R'$ nối tiếp : $\\dfrac{24}{50+30+R'}=0{,}2$ nên $R'=40\\ \\Omega$.</p><p>Cách 2 : hạ nguồn : $\\dfrac{U'}{80}=0{,}2$ nên $U'=16\\ \\text{V}$.</p></details><h4>Bài 13 · Nâng cao</h4><p>Biến trở bằng nicrom có $R_0=50\\ \\Omega$ ở $20\\ ^\\circ\\text{C}$, $\\alpha=2\\cdot10^{-4}\\ \\text{K}^{-1}$, mắc nối tiếp với $10\\ \\Omega$ vào $12\\ \\text{V}$. Dây nóng lên $120\\ ^\\circ\\text{C}$. a) Tính điện trở dây lúc nóng. b) Dòng điện giảm bao nhiêu phần trăm? c) Mắc thêm ampe kế $R_A=0{,}6\\ \\Omega$ (dây vẫn $120\\ ^\\circ\\text{C}$) : số chỉ ampe kế và sai số tương đối so với khi chưa mắc.</p><details><summary>Hướng dẫn giải</summary><p>a) $R=50\\,[1+2\\cdot10^{-4}\\cdot100]=51\\ \\Omega$.</p><p>b) $I_1=\\dfrac{12}{60}=0{,}2\\ \\text{A}$ ; $I_2=\\dfrac{12}{61}\\approx0{,}1967\\ \\text{A}$ ; giảm $\\dfrac{0{,}2-0{,}1967}{0{,}2}\\approx1{,}64\\%$.</p><p>c) $I_A=\\dfrac{12}{61{,}6}\\approx0{,}1948\\ \\text{A}$ ; $\\delta=\\dfrac{0{,}1967-0{,}1948}{0{,}1967}\\approx0{,}97\\%$ (cũng bằng $\\dfrac{R_A}{R_{mach}+R_A}=\\dfrac{0{,}6}{61{,}6}$).</p></details>"
+ }
+}

@@ -1,0 +1,251 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<ul>
+<li>Thu gọn mạch hỗn hợp theo bốn bước rồi tính ngược về từng điện trở.</li>
+<li>Nhận ra hai điểm cùng điện thế để chập hoặc bỏ nhánh: ampe kế lí tưởng, khoá K đóng, cầu cân bằng.</li>
+<li>Ampe kế và vôn kế thực: $R_A$ nối tiếp, $R_V$ song song; tính sai số của phép đo.</li>
+<li>Biến trở và ẩn số điện trở: viết một phương trình cho mỗi trạng thái của mạch.</li>
+<li>Quy ước: nguồn lí tưởng (không có điện trở trong), dây nối không có điện trở; chỉ dùng định luật Ohm, không dùng định luật Kirchhoff.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài phải tự trả lời được <strong>5 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: cắm thêm một thiết bị</h3>
+<p>Ổ cắm kéo dài đang cấp điện cho một bóng đèn bàn. Em cắm thêm quạt vào cùng ổ: quạt và đèn nối <em>song song</em> với nguồn.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Điện trở tương đương của mạch thay đổi thế nào so với lúc chỉ có đèn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q0" id="tlh04-q0a"><label for="tlh04-q0a" class="tl-opt tl-no">A. Tăng, vì có thêm một thiết bị</label>
+<input type="radio" name="tlh04-q0" id="tlh04-q0b"><label for="tlh04-q0b" class="tl-opt tl-ok">B. Giảm, vì thêm một đường cho dòng điện</label>
+<input type="radio" name="tlh04-q0" id="tlh04-q0c"><label for="tlh04-q0c" class="tl-opt tl-no">C. Không đổi, vì hiệu điện thế ổ cắm không đổi</label>
+<input type="radio" name="tlh04-q0" id="tlh04-q0d"><label for="tlh04-q0d" class="tl-opt tl-no">D. Tuỳ thiết bị cắm thêm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thêm nhánh song song là thêm một đường cho dòng điện, nên $\dfrac1{R_{td}}$ tăng và $R_{td}$ giảm, dù thiết bị cắm thêm là gì. Hai điện trở $60\ \Omega$ song song chỉ còn $30\ \Omega$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy "thêm vật nghĩa là thêm điện trở", chỉ đúng khi mắc <em>nối tiếp</em>. C nhầm hiệu điện thế không đổi với điện trở không đổi: nguồn vẫn giữ $U$, còn dòng tổng thì tăng. D sai vì nhánh nào cũng làm $\dfrac1{R_{td}}$ tăng thêm một số dương.</p></div>
+</div>
+</div>
+
+<h3>II. Nối tiếp và song song: nền để thu gọn</h3>
+
+<p><strong>🔑 Nối tiếp: $I$ chung · $U$ và $R$ cộng</strong></p>
+<p><strong>🔑 Song song: $U$ chung · $I$ và $\tfrac1R$ cộng</strong></p>
+<table class="tl-table">
+<thead><tr><th></th><th>Nối tiếp</th><th>Song song</th></tr></thead>
+<tbody>
+<tr><td>Điện trở</td><td>$R_{td}=R_1+R_2$</td><td>$R_{td}=\dfrac{R_1R_2}{R_1+R_2}$</td></tr>
+<tr><td>Chia</td><td>$\dfrac{U_1}{U_2}=\dfrac{R_1}{R_2}$</td><td>$\dfrac{I_1}{I_2}=\dfrac{R_2}{R_1}$</td></tr>
+<tr><td>So với từng $R$</td><td>lớn hơn điện trở lớn nhất</td><td>nhỏ hơn điện trở nhỏ nhất</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Ba điện trở trở lên song song: $\dfrac1{R_{td}}=\sum\dfrac1{R_k}$, không có công thức "tích chia tổng" cho ba.</li>
+<li>$n$ điện trở giống nhau $r$: nối tiếp $nr$, song song $\dfrac rn$.</li>
+<li>Một điện trở rất nhỏ song song với điện trở khác gần như nối tắt nó.</li>
+</ul>
+<p>Ba điện trở $12\ \Omega$, $4\ \Omega$, $6\ \Omega$ mắc song song. Điện trở tương đương là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q1" id="tlh04-q1a"><label for="tlh04-q1a" class="tl-opt tl-no">A. $22\ \Omega$</label>
+<input type="radio" name="tlh04-q1" id="tlh04-q1b"><label for="tlh04-q1b" class="tl-opt tl-ok">B. $2\ \Omega$</label>
+<input type="radio" name="tlh04-q1" id="tlh04-q1c"><label for="tlh04-q1c" class="tl-opt tl-no">C. $0{,}5\ \Omega$</label>
+<input type="radio" name="tlh04-q1" id="tlh04-q1d"><label for="tlh04-q1d" class="tl-opt tl-no">D. $3\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac1{R_{td}}=\dfrac1{12}+\dfrac14+\dfrac16=\dfrac{1+3+2}{12}=\dfrac12$ nên $R_{td}=2\ \Omega$, nhỏ hơn $4\ \Omega$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A cộng ba điện trở như mạch nối tiếp. C quên lấy nghịch đảo ở bước cuối. D là kết quả của riêng $12\ \Omega$ và $4\ \Omega$ ($\tfrac{12\cdot4}{16}$): bỏ sót điện trở $6\ \Omega$.</p></div>
+</div>
+
+<h3>III. Mạch hỗn hợp: bốn bước</h3>
+
+<p><strong>🔑 Phân tích · Thu gọn từ trong ra · Tính $I$ chính · Tính ngược</strong></p>
+<!--FIG1-->
+<ol class="tl-steps">
+<li><strong>Phân tích:</strong> đánh dấu nút (M, N), tìm đoạn nối tiếp thuần và song song thuần.</li>
+<li><strong>Thu gọn:</strong> thay đoạn sâu nhất bằng một điện trở tương đương, vẽ lại, lặp tới còn một điện trở.</li>
+<li><strong>Dòng chính:</strong> $I=\dfrac U{R_{td}}$.</li>
+<li><strong>Tính ngược:</strong> từ ngoài vào trong, dùng chia thế, chia dòng; kiểm tổng dòng ở nút và tổng thế trên đoạn nối tiếp.</li>
+</ol>
+
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Điện trở $R_1=2\ \Omega$ nối tiếp với đoạn song song gồm $R_2=6\ \Omega$ và $R_3=3\ \Omega$, mắc vào nguồn $U=12\ \text{V}$. Ampe kế lí tưởng ở nhánh chính, vôn kế lí tưởng song song với đoạn song song. Tính số chỉ hai dụng cụ và dòng qua $R_2$, $R_3$.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"$R_1$ nối tiếp với đoạn song song"</td><td>$R_{td}=R_1+R_{23}$</td></tr>
+<tr><td>"$R_2=6$, $R_3=3$"</td><td>$R_{23}=\dfrac{R_2R_3}{R_2+R_3}$</td></tr>
+<tr><td>"ampe kế lí tưởng, nhánh chính"</td><td>số chỉ bằng $I$ chính</td></tr>
+<tr><td>"vôn kế lí tưởng song song"</td><td>số chỉ bằng $U_{23}=U-U_1$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$R_{23}=\dfrac{6\cdot3}{9}=2\ \Omega$ và $R_{td}=2+2=4\ \Omega$.</li>
+<li>$I=\dfrac{12}4=3\ \text{A}$: ampe kế chỉ $3\ \text{A}$.</li>
+<li>$U_1=3\cdot2=6\ \text{V}$ nên $U_{23}=12-6=6\ \text{V}$: vôn kế chỉ $6\ \text{V}$.</li>
+<li>$I_2=\dfrac66=1\ \text{A}$ và $I_3=\dfrac63=2\ \text{A}$.</li>
+<li>Kiểm tra: $I_2+I_3=3\ \text{A}=I$ và $U_1+U_{23}=12\ \text{V}=U$.</li>
+</ol>
+</details>
+</div>
+<details class="tl-details">
+<summary>Biến thể: thay $R_3$ bằng $6\ \Omega$ <small>(tự làm rồi mới bấm)</small></summary>
+<p>$R_{23}=\dfrac{6\cdot6}{12}=3\ \Omega$, $R_{td}=5\ \Omega$, $I=2{,}4\ \text{A}$. $U_1=4{,}8\ \text{V}$ nên $U_{23}=7{,}2\ \text{V}$, $I_2=I_3=1{,}2\ \text{A}$. Kiểm tra: $1{,}2+1{,}2=2{,}4\ \text{A}$.</p>
+</details>
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: bộ lắp mạch điện một chiều</summary>
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Bộ lắp mạch điện một chiều"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Lắp $R_1$ nối tiếp với hai điện trở song song. Đo dòng ở nhánh chính và ở từng nhánh: tổng hai nhánh có bằng dòng chính không?</li>
+<li>Đo hiệu điện thế hai đầu mỗi nhánh song song: có bằng nhau không, dù điện trở khác nhau?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+<p>Giữ nguyên $U$, $R_1$, $R_2$ trong mạch trên rồi <strong>tăng</strong> $R_3$. Dòng điện qua $R_2$ thay đổi thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q2" id="tlh04-q2a"><label for="tlh04-q2a" class="tl-opt tl-no">A. Không đổi, vì $R_2$ không đổi</label>
+<input type="radio" name="tlh04-q2" id="tlh04-q2b"><label for="tlh04-q2b" class="tl-opt tl-ok">B. Tăng</label>
+<input type="radio" name="tlh04-q2" id="tlh04-q2c"><label for="tlh04-q2c" class="tl-opt tl-no">C. Giảm</label>
+<input type="radio" name="tlh04-q2" id="tlh04-q2d"><label for="tlh04-q2d" class="tl-opt tl-no">D. Chưa đủ dữ kiện</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_3$ tăng thì $R_{23}$ tăng, dòng chính giảm nên $U_1$ giảm, còn $U_{23}=U-U_1$ tăng; $I_2=\dfrac{U_{23}}{R_2}$ tăng. Số liệu: $R_3=3$ cho $I_2=1\ \text{A}$, $R_3=12$ cho $I_2=\tfrac43\ \text{A}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi $I_2$ chỉ phụ thuộc $R_2$: sai, vì hiệu điện thế trên $R_2$ cũng đổi. C nhầm với dòng chính và dòng qua $R_3$ (hai dòng này giảm). D thiếu cơ sở: thế được kết luận bằng chuỗi $R_3\to R_{23}\to I\to U_{23}$.</p></div>
+</div>
+
+<h3>IV. Điểm cùng điện thế: dây, ampe kế, khoá K</h3>
+
+<p><strong>🔑 Không chênh thế · Chập lại hoặc bỏ đi</strong></p>
+<table class="tl-table">
+<thead><tr><th>Vật</th><th>Khi tính coi là</th></tr></thead>
+<tbody>
+<tr><td>Dây nối, ampe kế lí tưởng</td><td>dây: hai đầu cùng điện thế</td></tr>
+<tr><td>Vôn kế lí tưởng</td><td>không có: bỏ khỏi sơ đồ</td></tr>
+<tr><td>Khoá K đóng</td><td>dây: chập hai nút</td></tr>
+<tr><td>Khoá K mở</td><td>đứt: bỏ nhánh</td></tr>
+</tbody>
+</table>
+<!--FIG2-->
+<ul>
+<li>Hai điểm cùng điện thế: dòng qua phần tử nối giữa chúng bằng $0$, nên bỏ nó hay chập hai điểm đều cho cùng kết quả.</li>
+<li>Khoá K đóng chập <strong>hai nút</strong> mà hai đầu K nối vào: xác định đúng hai nút đó trước khi tính.</li>
+<li>Điện trở bị nối tắt không có dòng qua.</li>
+</ul>
+<p>Hình 2: $U=12\ \text{V}$, $R_1=4\ \Omega$, $R_2=12\ \Omega$, $R_3=6\ \Omega$, khoá K song song với $R_2$. Khi K mở ampe kế chỉ $1{,}5\ \text{A}$. Khi K đóng, ampe kế chỉ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q3" id="tlh04-q3a"><label for="tlh04-q3a" class="tl-opt tl-no">A. $1{,}5\ \text{A}$</label>
+<input type="radio" name="tlh04-q3" id="tlh04-q3b"><label for="tlh04-q3b" class="tl-opt tl-ok">B. $3\ \text{A}$</label>
+<input type="radio" name="tlh04-q3" id="tlh04-q3c"><label for="tlh04-q3c" class="tl-opt tl-no">C. $1{,}2\ \text{A}$</label>
+<input type="radio" name="tlh04-q3" id="tlh04-q3d"><label for="tlh04-q3d" class="tl-opt tl-no">D. $2\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> K nối hai nút M, N nên $R_2$ và $R_3$ cùng bị nối tắt: $R_{td}=R_1=4\ \Omega$, $I=\dfrac{12}4=3\ \text{A}$. Đóng khoá làm điện trở giảm từ $8$ xuống $4\ \Omega$, dòng tăng gấp đôi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi khoá không ảnh hưởng. C chỉ nối tắt $R_2$ ($R_{td}=4+6=10\ \Omega$): $R_3$ vẫn song song với dây nên cũng bị nối tắt. D không ứng với cách ghép nào của mạch này. Hãy xem K đang nối vào những nút nào.</p></div>
+</div>
+
+<h3>V. Mạch cầu cân bằng</h3>
+
+<p><strong>🔑 Tích chéo bằng nhau · $U_{PQ}=0$ · Bỏ nhánh PQ</strong></p>
+<!--FIG3-->
+<ul>
+<li>Cầu cân bằng khi $\dfrac{R_1}{R_2}=\dfrac{R_3}{R_4}$, tức $R_1R_4=R_2R_3$.</li>
+<li>Khi đó $V_P=V_Q$, nên dòng qua nhánh PQ bằng $0$ (dù đó là vôn kế, dây hay điện trở).</li>
+<li>Tính điện trở: $R_{td}=\dfrac{(R_1+R_3)(R_2+R_4)}{R_1+R_2+R_3+R_4}$.</li>
+<li>Cầu không cân bằng: chỉ nhận biết có dòng qua PQ, không tính ở lớp 9.</li>
+</ul>
+<p>Ví dụ: $R_1=4$, $R_2=6$, $R_3=8$, $R_4=12\ \Omega$ có $4\cdot12=6\cdot8=48$ nên cân bằng. Chập P với Q cho $(4\parallel6)+(8\parallel12)=2{,}4+4{,}8=7{,}2\ \Omega$, trùng $\dfrac{12\cdot18}{30}=7{,}2\ \Omega$.</p>
+<p>Cho $R_1=3\ \Omega$, $R_2=6\ \Omega$, $R_3=5\ \Omega$. Vôn kế lí tưởng giữa P và Q chỉ $0$. Điện trở $R_4$ bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q4" id="tlh04-q4a"><label for="tlh04-q4a" class="tl-opt tl-no">A. $2{,}5\ \Omega$</label>
+<input type="radio" name="tlh04-q4" id="tlh04-q4b"><label for="tlh04-q4b" class="tl-opt tl-ok">B. $10\ \Omega$</label>
+<input type="radio" name="tlh04-q4" id="tlh04-q4c"><label for="tlh04-q4c" class="tl-opt tl-no">C. $3{,}6\ \Omega$</label>
+<input type="radio" name="tlh04-q4" id="tlh04-q4d"><label for="tlh04-q4d" class="tl-opt tl-no">D. $14\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_1R_4=R_2R_3$ nên $R_4=\dfrac{6\cdot5}3=10\ \Omega$. Kiểm tra: $\dfrac36=\dfrac5{10}=0{,}5$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lật ngược tỉ lệ ($R_1R_3/R_2$). C chia $R_1R_2$ cho $R_3$: sai cặp nhân chéo. D cộng các điện trở thay vì nhân. Nhân chéo: hai điện trở <em>cùng nhánh</em> không nhân với nhau.</p></div>
+</div>
+
+<h3>VI. Ampe kế và vôn kế thực</h3>
+
+<p><strong>🔑 $R_A$ nối tiếp · $R_V$ song song · $R_A$ nhỏ, $R_V$ lớn</strong></p>
+<table class="tl-table">
+<thead><tr><th>Dụng cụ</th><th>Lí tưởng</th><th>Thực: đưa vào sơ đồ</th></tr></thead>
+<tbody>
+<tr><td>Ampe kế</td><td>$R_A=0$</td><td>điện trở $R_A$ nối tiếp tại chỗ mắc</td></tr>
+<tr><td>Vôn kế</td><td>$R_V=\infty$</td><td>điện trở $R_V$ song song với đoạn đo</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Ampe kế thực làm dòng đo được nhỏ hơn dòng thật.</li>
+<li>Vôn kế thực làm số chỉ nhỏ hơn hiệu điện thế thật: $\delta=\dfrac{U_{that}-U_{do}}{U_{that}}\cdot100\%$.</li>
+<li>Vôn kế mắc nối tiếp là điện trở rất lớn trên mạch chính: dòng gần bằng $0$, vôn kế chỉ gần bằng $U$ nguồn.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: đo hiệu điện thế trên $R_2$ (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> $R_1=R_2=100\ \Omega$ nối tiếp, $U=12\ \text{V}$; mắc vôn kế vào hai đầu $R_2$, đổi ba vôn kế có $R_V$ khác nhau.</li>
+<li><strong>Quan sát:</strong> bảng bên dưới.</li>
+<li><strong>Rút ra:</strong> giá trị thật là $6\ \text{V}$; vôn kế nào cũng chỉ thiếu, và $R_V$ càng lớn càng gần giá trị thật.</li>
+</ol>
+<table class="tl-table">
+<thead><tr><th>$R_V$</th><th>$U_{do}$</th><th>$\delta$</th></tr></thead>
+<tbody>
+<tr><td>$100\ \Omega$</td><td>$4{,}00\ \text{V}$</td><td>$33{,}3\%$</td></tr>
+<tr><td>$1\,000\ \Omega$</td><td>$5{,}71\ \text{V}$</td><td>$4{,}8\%$</td></tr>
+<tr><td>$10\,000\ \Omega$</td><td>$5{,}97\ \text{V}$</td><td>$0{,}5\%$</td></tr>
+</tbody>
+</table>
+</div>
+<p>Muốn sai số của phép đo trên nhỏ hơn $0{,}1\%$, giá trị $R_V$ <strong>nhỏ nhất</strong> trong các giá trị sau là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q5" id="tlh04-q5a"><label for="tlh04-q5a" class="tl-opt tl-no">A. $1\,000\ \Omega$</label>
+<input type="radio" name="tlh04-q5" id="tlh04-q5b"><label for="tlh04-q5b" class="tl-opt tl-no">B. $10\,000\ \Omega$</label>
+<input type="radio" name="tlh04-q5" id="tlh04-q5c"><label for="tlh04-q5c" class="tl-opt tl-ok">C. $100\,000\ \Omega$</label>
+<input type="radio" name="tlh04-q5" id="tlh04-q5d"><label for="tlh04-q5d" class="tl-opt tl-no">D. $1\,000\,000\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\delta$ giảm gần tỉ lệ nghịch với $R_V$: $R_V$ tăng $10$ lần thì $\delta$ giảm $10$ lần. Từ $0{,}5\%$ ở $10\,000\ \Omega$ xuống $0{,}05\%$ ở $100\,000\ \Omega$ (tính trực tiếp cho $0{,}04998\%$).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B còn $\delta=4{,}8\%$ và $0{,}5\%$, vượt $0{,}1\%$. D cũng đạt ($\delta\approx0{,}005\%$) nhưng không phải giá trị <em>nhỏ nhất</em>. Vôn kế tốt là vôn kế có điện trở lớn.</p></div>
+</div>
+
+<h3>VII. Biến trở, ẩn số và cực trị</h3>
+
+<p><strong>🔑 Mỗi trạng thái một phương trình · Kiểm tra miền giá trị</strong></p>
+<ul>
+<li>Biến trở: chỉ lấy nghiệm trong khoảng $0\le R_b\le R_{max}$.</li>
+<li>Ẩn số điện trở: biết hai số chỉ ở hai trạng thái thì lập hai phương trình rồi trừ hoặc thế.</li>
+<li>Chia điện trở $R$ thành $x$ và $R-x$ rồi mắc song song: $R_{td}=\dfrac{x(R-x)}R\le\dfrac R4$, dấu bằng khi $x=\dfrac R2$.</li>
+</ul>
+<p>Có ba điện trở giống nhau $r=6\ \Omega$, dùng cả ba. Giá trị <strong>không</strong> thể nhận được là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh04-q6" id="tlh04-q6a"><label for="tlh04-q6a" class="tl-opt tl-no">A. $9\ \Omega$</label>
+<input type="radio" name="tlh04-q6" id="tlh04-q6b"><label for="tlh04-q6b" class="tl-opt tl-no">B. $4\ \Omega$</label>
+<input type="radio" name="tlh04-q6" id="tlh04-q6c"><label for="tlh04-q6c" class="tl-opt tl-ok">C. $3\ \Omega$</label>
+<input type="radio" name="tlh04-q6" id="tlh04-q6d"><label for="tlh04-q6d" class="tl-opt tl-no">D. $2\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bốn cách ghép cho $18$, $9$, $4$, $2\ \Omega$ ($3r$, $\tfrac{3r}2$, $\tfrac{2r}3$, $\tfrac r3$). Không có cách nào cho $3\ \Omega$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $9\ \Omega$ là hai điện trở song song ($3\ \Omega$) nối tiếp điện trở thứ ba. $4\ \Omega$ là hai điện trở nối tiếp ($12\ \Omega$) song song điện trở thứ ba. $2\ \Omega$ là ba điện trở song song. Thử từng cách ghép.</p></div>
+</div>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách: tìm $U$ và $R_0$ <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Nguồn $U$ không đổi, điện trở $R_0$ nối tiếp với biến trở. Khi biến trở $4\ \Omega$ ampe kế chỉ $2\ \text{A}$; khi $10\ \Omega$ chỉ $1\ \text{A}$.</p>
+<p>$U=2(R_0+4)=1\cdot(R_0+10)$ nên $R_0=2\ \Omega$, $U=12\ \text{V}$. Kiểm tra: $\dfrac{12}{2+4}=2\ \text{A}$ và $\dfrac{12}{2+10}=1\ \text{A}$.</p>
+</details>
+
+<h3>VIII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Bốn bước giải mạch hỗn hợp? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Phân tích nút.</p><p>Thu gọn trong ra ngoài.</p><p>$I=U/R_{td}$.</p><p>Tính ngược và kiểm tra.</p></details>
+<details class="tl-details"><summary>Ampe kế, vôn kế lí tưởng, khoá K đóng/mở coi như gì?</summary>
+<p>Ampe kế lí tưởng: dây.</p><p>Vôn kế lí tưởng: bỏ khỏi sơ đồ.</p><p>Khoá K đóng: dây.</p><p>Khoá K mở: đứt.</p></details>
+<details class="tl-details"><summary>Điều kiện cầu cân bằng và hệ quả?</summary>
+<p>$R_1R_4=R_2R_3$.</p><p>$U_{PQ}=0$.</p><p>Bỏ nhánh PQ hoặc chập P với Q.</p></details>
+<details class="tl-details"><summary>Dụng cụ đo thực: đưa vào sơ đồ ra sao, chọn thế nào cho chính xác?</summary>
+<p>$R_A$ nối tiếp, $R_V$ song song.</p><p>$R_A$ nhỏ, $R_V$ lớn.</p></details>
+<details class="tl-details"><summary>Bài ẩn số, biến trở: làm theo trình tự nào?</summary>
+<p>Một phương trình cho mỗi trạng thái.</p><p>Giải.</p><p>Kiểm tra miền giá trị của biến trở.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Nối tiếp: $I$ chung. Song song: $U$ chung.</li>
+<li>Thu gọn từ trong ra ngoài, tính ngược từ ngoài vào trong.</li>
+<li>Khoá K đóng chập hai nút nó nối vào.</li>
+<li>Cầu cân bằng: $R_1R_4=R_2R_3$, $U_{PQ}=0$.</li>
+<li>$R_A$ nối tiếp, $R_V$ song song; sai số thiếu.</li>
+<li>Đọc đề: đổi đơn vị, vẽ lại sơ đồ có tên nút, rồi mới tính.</li>
+</ul>
+</div>
