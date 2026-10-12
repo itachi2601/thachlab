@@ -18,6 +18,7 @@ FILES=(
   "supabase/migrations/20261011230000_phu_dao_don_muc_chi_vi_cau_kho.sql|Đóng ~174 mục phụ đạo chỉ mở vì câu Khó (có sao lưu)|lúc nào cũng được"
   "supabase/migrations/20261012120000_kiem_tra_dau_vao.sql|Kiểm tra đầu vào cho em vào lớp trễ: bảng entry_diagnostics + 4 hàm diagnostic_*|lúc nào cũng được"
   "supabase/migrations/20261013100000_lop_avcn_anh_van_chuyen_nganh.sql|Lớp Anh văn chuyên ngành Cơ khí (avcn): môn + lớp + chương + 10 bài, chỉ Chapter 8 công bố (chỉ chèn dữ liệu)|lúc nào cũng được"
+  "supabase/migrations/20261013180000_avcn_de_luyen_tap_mo_cho_moi_nguoi.sql|Gỡ gắn lớp avcn khỏi đề 914 (RLS chặn HS vì lớp vào tự do không có user_classes), có sao lưu|lúc nào cũng được"
 )
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
 # ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung
