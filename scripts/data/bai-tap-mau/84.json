@@ -1,0 +1,418 @@
+{
+ "lesson_id": 84,
+ "lesson_title": "Bài 6. Phản xạ toàn phần",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "notes": "Soạn 12/10/2026 (chặng 3). Kiểm chéo kiem-code 12/10: đáp số 4 dạng đúng, đã sửa 6 mục. Chưa đối chiếu số câu ngân hàng cho chủ đề 82/83 (không có DB trong phiên này)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phản xạ toàn phần là toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.</li><li>Góc tới hạn $i_{th}$: góc tới mà tia khúc xạ đi sát mặt phân cách ($r=90^\\circ$).</li><li>Công thức: $\\sin i_{th}=\\dfrac{n_2}{n_1}$ (nhỏ trên lớn).</li><li>⚠ <strong>Điều kiện:</strong> $n_1\\gt n_2$ (ra môi trường chiết quang kém hơn) và $i\\ge i_{th}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Sin của góc tới hạn khi ra không khí</span></p><p>Nhựa $n_1=1{,}49$ lớn hơn không khí $n_2=1$: có góc tới hạn.</p>$$\\sin i_{th}=\\dfrac{n_2}{n_1}=\\dfrac{1}{1{,}49}$$<div class=\"bt-ans\">$$\\sin i_{th}\\approx0{,}671$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc tới hạn khi ra không khí</span></p><p>Bấm máy ở chế độ độ:</p>$$i_{th}=\\sin^{-1}\\dfrac{1}{1{,}49}$$<div class=\"bt-ans\">$$i_{th}\\approx42{,}2^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc tới hạn khi ra nước</span></p><p>Môi trường thứ hai là nước: $n_2=1{,}33$ ($n_1\\gt n_2$ vẫn đúng).</p>$$\\sin i_{th}=\\dfrac{n_2}{n_1}=\\dfrac{1{,}33}{1{,}49}\\approx0{,}893$$$$i_{th}=\\sin^{-1}\\dfrac{1{,}33}{1{,}49}$$<div class=\"bt-ans\">$$i_{th}\\approx63{,}2^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Hai chiết suất càng gần nhau, góc tới hạn càng lớn:</p>$$63{,}2^\\circ\\gt42{,}2^\\circ\\ ✓$$<p>Cả hai giá trị $\\sin i_{th}$ đều nhỏ hơn $1$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i_{th}\\approx42{,}2^\\circ$ (ra không khí)</p><p>b) $i_{th}\\approx63{,}2^\\circ$ (ra nước)</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>góc tới hạn</strong> và cho <strong>hai chiết suất</strong> → $\\sin i_{th}=\\dfrac{n_2}{n_1}$ (nhỏ trên lớn); đổi môi trường thứ hai thì thế lại $n_2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Tính góc tới hạn khi ra không khí và ra nước",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "problem_html": "<p>Một khối nhựa trong suốt có chiết suất $1{,}49$.</p><ol type=\"a\"><li>Ánh sáng đi từ khối nhựa ra không khí. Tính góc tới hạn.</li><li>Nhúng khối nhựa vào nước (chiết suất $1{,}33$). Tính góc tới hạn khi ánh sáng đi từ nhựa ra nước.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Tia sáng trong khối nhựa tới mặt phân cách với không khí: một phần ló ra, một phần phản xạ lại vào nhựa\"><rect x=\"20\" y=\"125\" width=\"380\" height=\"110\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"20.0\" y1=\"125.0\" x2=\"400.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"25.0\" x2=\"210.0\" y2=\"235.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"165.0\" y1=\"202.9\" x2=\"210.0\" y2=\"125.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M175.7,173.4 L185.2,167.9 L185.2,178.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M193.0,154.4 A34,34 0 0 0 210.0,159.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"177.3\" y=\"165.1\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan></text><line x1=\"210.0\" y1=\"125.0\" x2=\"255.0\" y2=\"202.9\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"0.9\" stroke-linecap=\"round\"/><path d=\"M237.9,162.3 L237.9,173.3 L228.4,167.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"125.0\" x2=\"271.7\" y2=\"69.8\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M241.2,89.7 L251.9,87.4 L248.5,97.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M241.3,97.0 A42,42 0 0 0 210.0,83.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"234.5\" y=\"75.2\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan></text><text x=\"28.0\" y=\"45.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Không khí  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = 1</tspan></text><text x=\"28.0\" y=\"225.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Nhựa  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,49</tspan></text><text x=\"392.0\" y=\"45.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">tia mẫu: <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = 30°</text><circle cx=\"165.0\" cy=\"202.9\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1.0\"><animate attributeName=\"cx\" values=\"165.0;210.0;271.7\" keyTimes=\"0.000;0.521;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"202.9;125.0;69.8\" keyTimes=\"0.000;0.521;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"165.0\" cy=\"202.9\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.85\"><animate attributeName=\"cx\" values=\"165.0;210.0;255.0\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"202.9;125.0;202.9\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): một tia mẫu có góc tới 30°.<br>Tia tới màu cam, tia ló màu đỏ, tia phản xạ màu xanh lá.<br>Chấm sáng chạy một lần theo từng tia.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 225\" role=\"img\" aria-label=\"Hai sơ đồ: ánh sáng đi từ nhựa ra không khí và từ nhựa ra nước; tia khúc xạ đi sát mặt phân cách tại góc tới hạn\"><rect x=\"10\" y=\"120\" width=\"190\" height=\"95\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"10.0\" y1=\"120.0\" x2=\"200.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"105.0\" y1=\"72.0\" x2=\"105.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"55.5\" y1=\"169.5\" x2=\"105.0\" y2=\"120.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M67.2,150.1 L77.8,147.2 L74.9,157.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M81.0,144.0 A34,34 0 0 0 105.0,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"64.3\" y=\"150.4\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan><tspan dy=\"4\" font-size=\"10\">th</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"105.0\" y1=\"120.0\" x2=\"169.4\" y2=\"120.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M139.3,114.5 L148.8,120.0 L139.3,125.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M147.0,120.0 A42,42 0 0 0 105.0,78.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"153.0\" y=\"75.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan> = 90°</text><text x=\"14.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">a) Ra không khí</text><text x=\"14.0\" y=\"60.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = 1</tspan></text><text x=\"14.0\" y=\"208.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nhựa  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,49</tspan></text><rect x=\"220\" y=\"120\" width=\"190\" height=\"95\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"220.0\" y1=\"120.0\" x2=\"410.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"315.0\" y1=\"72.0\" x2=\"315.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"265.5\" y1=\"169.5\" x2=\"315.0\" y2=\"120.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M277.2,150.1 L287.8,147.2 L284.9,157.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M291.0,144.0 A34,34 0 0 0 315.0,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"274.3\" y=\"150.4\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan><tspan dy=\"4\" font-size=\"10\">th</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"315.0\" y1=\"120.0\" x2=\"379.4\" y2=\"120.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M349.3,114.5 L358.8,120.0 L349.3,125.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M357.0,120.0 A42,42 0 0 0 315.0,78.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"363.0\" y=\"75.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan> = 90°</text><text x=\"224.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">b) Ra nước</text><text x=\"224.0\" y=\"60.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nước  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = 1,33</tspan></text><text x=\"224.0\" y=\"208.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nhựa  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,49</tspan></text></svg><figcaption>Dữ kiện: hai trường hợp, cùng khối nhựa.<br>Góc tới hạn: tia khúc xạ đi sát mặt phân cách.<br>Hình minh hoạ, góc vẽ không đúng số đo.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;khối nhựa … chiết suất $1{,}49$&quot;</td><td>$n_1=1{,}49$</td><td>Nhựa chiết quang hơn hay kém hơn không khí? hơn nước?</td></tr><tr><td>&quot;Ánh sáng đi từ khối nhựa ra không khí&quot;</td><td>$n_2=1$</td><td>⚠ Điều kiện: có góc tới hạn khi ánh sáng đi từ môi trường chiết quang hơn sang kém hơn ($n_1\\gt n_2$)</td></tr><tr><td>&quot;Tính góc tới hạn&quot;</td><td>Cần $i_{th}$</td><td>Tia khúc xạ đi sát mặt phân cách ($r=90^\\circ$); $\\sin i_{th}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>&quot;Nhúng khối nhựa vào nước (chiết suất $1{,}33$)&quot;</td><td>$n_2=1{,}33$</td><td>⚠ Môi trường thứ hai không còn là không khí: thế đúng $n_2$ vào công thức</td></tr><tr><td>&quot;từ nhựa ra nước&quot;</td><td>Cần $i_{th}$ mới</td><td>Cùng công thức, đổi $n_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>góc tới hạn</b> và <b>hai chiết suất</b> → nghĩ tới <b>$\\sin i_{th}=\\dfrac{n_2}{n_1}$</b> (nhỏ trên lớn).",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Sin của góc tới hạn khi ra không khí",
+     "hoi": "$\\sin i_{th}$ khi ánh sáng đi từ nhựa ra không khí bằng bao nhiêu?",
+     "dap_so": 0.671,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Hay viết tỉ số lớn trên nhỏ: $\\dfrac{n_1}{n_2}=1{,}49$, lớn hơn $1$ nên không có góc nào. Quy tắc “nhỏ trên lớn”: $\\sin i_{th}=\\dfrac{n_2}{n_1}$."
+    },
+    {
+     "tieu_de": "Góc tới hạn khi ra không khí",
+     "hoi": "Góc tới hạn $i_{th}$ bằng bao nhiêu độ?",
+     "dap_so": 42.2,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Bấm máy sai chế độ (radian) hoặc lấy $\\sin$ thay vì $\\sin^{-1}$ nên ra số lạ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$i_{th}=\\sin^{-1}$ của giá trị vừa tính, máy ở chế độ độ",
+       "dung": true
+      },
+      {
+       "text": "$i_{th}=90^\\circ\\cdot\\sin i_{th}$",
+       "dung": false,
+       "vi_sao": "Góc không tỉ lệ thuận với sin của nó; phải dùng hàm ngược $\\sin^{-1}$."
+      },
+      {
+       "text": "$i_{th}=90^\\circ-\\sin^{-1}(\\ldots)$",
+       "dung": false,
+       "vi_sao": "Đó là góc với mặt phân cách, không phải góc tới (góc tới đo từ pháp tuyến)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc tới hạn khi ra nước",
+     "hoi": "Khi ánh sáng đi từ nhựa ra nước, góc tới hạn bằng bao nhiêu độ?",
+     "dap_so": 63.2,
+     "sai_so": 0.4,
+     "don_vi": "°",
+     "loi_hay_gap": "Dùng lại $\\sin i_{th}=\\dfrac{1}{n_1}$ của câu a: công thức đó chỉ đúng khi môi trường thứ hai là không khí ($n_2=1$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin i_{th}=\\dfrac{n_{nước}}{n_{nhựa}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin i_{th}=\\dfrac{1}{n_{nhựa}}$ như câu a",
+       "dung": false,
+       "vi_sao": "Môi trường thứ hai bây giờ là nước ($n_2=1{,}33$), không phải không khí; chỉ khi $n_2=1$ mới rút về $\\dfrac{1}{n_1}$."
+      },
+      {
+       "text": "$\\sin i_{th}=\\dfrac{n_{nhựa}}{n_{nước}}$",
+       "dung": false,
+       "vi_sao": "Tỉ số lớn trên nhỏ lớn hơn $1$, mà $\\sin$ không vượt quá $1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phản xạ toàn phần là toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.</li><li>Góc tới hạn $i_{th}$: góc tới mà tia khúc xạ đi sát mặt phân cách ($r=90^\\circ$).</li><li>Công thức: $\\sin i_{th}=\\dfrac{n_2}{n_1}$ (nhỏ trên lớn).</li><li>Góc tới đo từ pháp tuyến: tia hợp mặt phân cách (hoặc trục) góc $\\beta$ thì $i=90^\\circ-\\beta$.</li><li>⚠ <strong>Điều kiện:</strong> $n_1\\gt n_2$ (ra môi trường chiết quang kém hơn) và $i\\ge i_{th}$.</li><li>Định luật khúc xạ: $n_1\\sin i=n_2\\sin r$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới của tia thứ nhất</span></p><p>Tia hợp mặt thoáng $40^\\circ$. Góc tới đo từ pháp tuyến:</p>$$i=90^\\circ-40^\\circ$$<div class=\"bt-ans\">$$i=50^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc tới hạn</span></p><p>Chất lỏng $n_1=1{,}40$ ra không khí $n_2=1$:</p>$$\\sin i_{th}=\\dfrac{n_2}{n_1}=\\dfrac{1}{1{,}40}$$<div class=\"bt-ans\">$$i_{th}\\approx45{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tia thứ nhất có phản xạ toàn phần không?</span></p><p>Điều kiện 1: ánh sáng đi từ chất lỏng ra không khí, $n_1\\gt n_2$ ✓.</p><p>Điều kiện 2:</p>$$i=50^\\circ\\gt i_{th}\\approx45{,}6^\\circ$$<div class=\"bt-ans\"><p>Có phản xạ toàn phần, không có tia ló.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tia thứ hai</span></p><p>Hợp mặt thoáng $60^\\circ$ nên góc tới:</p>$$i=90^\\circ-60^\\circ=30^\\circ$$<p>$30^\\circ\\lt45{,}6^\\circ$: tia ló ra không khí. Định luật khúc xạ:</p>$$n_1\\sin i=n_2\\sin r$$$$\\sin r=1{,}40\\cdot\\sin30^\\circ=0{,}70$$<div class=\"bt-ans\">$$r\\approx44{,}4^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Ra môi trường chiết quang kém hơn, tia ló lệch xa pháp tuyến:</p>$$r=44{,}4^\\circ\\gt i=30^\\circ\\ ✓$$<p>$\\sin r=0{,}70\\le1$ nên có nghiệm ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Có phản xạ toàn phần ($50^\\circ\\gt45{,}6^\\circ$)</p><p>b) Tia ló ra không khí, $r\\approx44{,}4^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề cho góc <strong>hợp với mặt</strong> → đổi sang góc với pháp tuyến, rồi so với $i_{th}$; chỉ khi $i\\lt i_{th}$ mới dùng định luật khúc xạ để tính $r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Xét phản xạ toàn phần khi đề cho góc với mặt thoáng",
+   "topic": "Điều kiện xảy ra phản xạ toàn phần",
+   "problem_html": "<p>Một chất lỏng trong suốt có chiết suất $1{,}40$, mặt thoáng tiếp xúc với không khí. Hai tia sáng từ trong chất lỏng tới mặt thoáng.</p><ol type=\"a\"><li>Tia thứ nhất hợp với mặt thoáng góc $40^\\circ$. Tia này có bị phản xạ toàn phần không?</li><li>Tia thứ hai hợp với mặt thoáng góc $60^\\circ$. Tia này có ló ra không khí không? Nếu có, tính góc khúc xạ.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Tia sáng trong chất lỏng tới mặt thoáng: một phần ló ra không khí, một phần phản xạ lại\"><rect x=\"20\" y=\"125\" width=\"380\" height=\"110\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"20.0\" y1=\"125.0\" x2=\"400.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"25.0\" x2=\"210.0\" y2=\"235.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"186.7\" y1=\"211.9\" x2=\"210.0\" y2=\"125.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M189.4,180.6 L197.2,172.8 L200.0,183.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M201.2,157.8 A34,34 0 0 0 210.0,159.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"187.5\" y=\"172.4\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan></text><line x1=\"210.0\" y1=\"125.0\" x2=\"233.3\" y2=\"211.9\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"0.9\" stroke-linecap=\"round\"/><path d=\"M227.3,168.3 L224.4,178.9 L216.7,171.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"125.0\" x2=\"240.0\" y2=\"47.8\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M221.8,79.4 L230.4,72.5 L232.1,83.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M225.2,85.9 A42,42 0 0 0 210.0,83.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"221.1\" y=\"71.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan></text><text x=\"28.0\" y=\"45.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Không khí  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = 1</tspan></text><text x=\"28.0\" y=\"225.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Chất lỏng  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,40</tspan></text><text x=\"392.0\" y=\"45.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">tia mẫu: <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = 15°</text><circle cx=\"186.7\" cy=\"211.9\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1.0\"><animate attributeName=\"cx\" values=\"186.7;210.0;240.0\" keyTimes=\"0.000;0.521;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"211.9;125.0;47.8\" keyTimes=\"0.000;0.521;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"186.7\" cy=\"211.9\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.85\"><animate attributeName=\"cx\" values=\"186.7;210.0;233.3\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"211.9;125.0;211.9\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): một tia mẫu có góc tới 15°.<br>Tia tới màu cam, tia ló màu đỏ, tia phản xạ màu xanh lá.<br>Chấm sáng chạy một lần theo từng tia.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 225\" role=\"img\" aria-label=\"Hai tia trong chất lỏng tới mặt thoáng, hợp với mặt thoáng các góc 40 độ và 60 độ; góc tới chưa biết\"><rect x=\"10\" y=\"120\" width=\"190\" height=\"95\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"10.0\" y1=\"120.0\" x2=\"200.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"105.0\" y1=\"72.0\" x2=\"105.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"49.8\" y1=\"166.3\" x2=\"105.0\" y2=\"120.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M63.8,147.4 L74.7,145.5 L70.9,155.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M79.0,141.9 A34,34 0 0 0 105.0,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"113.0\" y=\"158.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = ?</text><path d=\"M49.0,120.0 A56,56 0 0 0 62.1,156.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"35.5\" y=\"150.3\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">40°</text><text x=\"14.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">a) Tia thứ nhất</text><text x=\"14.0\" y=\"60.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"14.0\" y=\"208.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chất lỏng  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,40</tspan></text><rect x=\"220\" y=\"120\" width=\"190\" height=\"95\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"220.0\" y1=\"120.0\" x2=\"410.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"315.0\" y1=\"72.0\" x2=\"315.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"279.0\" y1=\"182.4\" x2=\"315.0\" y2=\"120.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M285.7,159.8 L295.2,154.3 L295.2,165.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M298.0,149.4 A34,34 0 0 0 315.0,154.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"323.0\" y=\"158.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = ?</text><path d=\"M259.0,120.0 A56,56 0 0 0 287.0,168.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"250.9\" y=\"162.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">60°</text><text x=\"224.0\" y=\"24.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">b) Tia thứ hai</text><text x=\"224.0\" y=\"60.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"224.0\" y=\"208.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chất lỏng  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,40</tspan></text></svg><figcaption>Dữ kiện: góc xanh là góc giữa tia và mặt thoáng.<br>Góc tới cần tìm nằm giữa tia và pháp tuyến (nét đứt).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;chất lỏng … chiết suất $1{,}40$, mặt thoáng tiếp xúc với không khí&quot;</td><td>$n_1=1{,}40$; $n_2=1$</td><td>⚠ Điều kiện 1: ánh sáng đi từ chất lỏng ra không khí, $n_1\\gt n_2$</td></tr><tr><td>&quot;hợp với mặt thoáng góc $40^\\circ$&quot;</td><td>Góc giữa tia và mặt thoáng $=40^\\circ$</td><td>⚠ Góc tới đo từ pháp tuyến (vuông góc với mặt), không đo từ mặt thoáng</td></tr><tr><td>&quot;bị phản xạ toàn phần không?&quot;</td><td>Cần so $i$ với $i_{th}$</td><td>Điều kiện 2: $i\\ge i_{th}$; $\\sin i_{th}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>&quot;hợp với mặt thoáng góc $60^\\circ$&quot;</td><td>Góc giữa tia và mặt thoáng $=60^\\circ$</td><td>Làm như tia thứ nhất: góc tới, rồi so với $i_{th}$</td></tr><tr><td>&quot;Nếu có, tính góc khúc xạ&quot;</td><td>Cần $r$ (chỉ khi có tia ló)</td><td>Định luật khúc xạ: $n_1\\sin i=n_2\\sin r$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tia hợp với mặt</b> (không phải pháp tuyến) → đổi <b>$i=90^\\circ-\\beta$</b>, rồi so $i$ với $i_{th}$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới của tia thứ nhất",
+     "hoi": "Tia hợp mặt thoáng $40^\\circ$. Góc tới $i$ bằng bao nhiêu độ?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy luôn $40^\\circ$ (góc với mặt thoáng) làm góc tới. Góc tới đo từ pháp tuyến, vuông góc với mặt."
+    },
+    {
+     "tieu_de": "Góc tới hạn",
+     "hoi": "Góc tới hạn $i_{th}$ của chất lỏng với không khí bằng bao nhiêu độ?",
+     "dap_so": 45.6,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Viết $\\sin i_{th}=n_1=1{,}40$ (lớn hơn $1$, vô lí) hoặc quên rằng $n_2=1$ nên $\\sin i_{th}=\\dfrac{1}{n_1}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin i_{th}=\\dfrac{1}{1{,}40}$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin i_{th}=1{,}40$",
+       "dung": false,
+       "vi_sao": "$\\sin$ không vượt quá $1$; tỉ số đúng là nhỏ trên lớn."
+      },
+      {
+       "text": "$i_{th}=90^\\circ-i$",
+       "dung": false,
+       "vi_sao": "Góc tới hạn do chiết suất hai môi trường quyết định, không phụ thuộc tia đang xét."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tia thứ nhất có phản xạ toàn phần không?",
+     "hoi": "Tia thứ nhất có bị phản xạ toàn phần không?",
+     "lua_chon": [
+      {
+       "text": "Có: ánh sáng đi từ chất lỏng ra không khí và $i\\gt i_{th}$",
+       "dung": true
+      },
+      {
+       "text": "Không: ánh sáng đi ra không khí nên luôn ló ra",
+       "dung": false,
+       "vi_sao": "Đi ra môi trường chiết quang kém mới là điều kiện 1; còn cần điều kiện 2: $i\\ge i_{th}$."
+      },
+      {
+       "text": "Không: $40^\\circ\\lt i_{th}$",
+       "dung": false,
+       "vi_sao": "$40^\\circ$ là góc với mặt thoáng, chưa phải góc tới; góc tới mới là số cần so với $i_{th}$."
+      }
+     ],
+     "loi_hay_gap": "Chỉ kiểm điều kiện chiều truyền (ra không khí) rồi kết luận, quên so góc tới với góc tới hạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét chiều truyền, rồi so góc tới với $i_{th}$",
+       "dung": true
+      },
+      {
+       "text": "Tính ngay góc khúc xạ rồi bỏ qua việc so với $i_{th}$ và chiều truyền",
+       "dung": false,
+       "vi_sao": "Cách này chỉ đúng nếu nhận ra $\\sin r\\gt1$ (không có tia ló); nhiều bạn tính ra số lạ rồi bỏ dở. So với $i_{th}$ trước cho kết luận rõ hơn."
+      },
+      {
+       "text": "So góc tới với $45^\\circ$ cho tròn số",
+       "dung": false,
+       "vi_sao": "Mốc $45^\\circ$ không có cơ sở; mốc đúng là $i_{th}$, tính từ $\\dfrac{n_2}{n_1}$ của hai môi trường."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tia thứ hai",
+     "hoi": "Nếu có tia ló, góc khúc xạ của tia thứ hai bằng bao nhiêu độ?",
+     "dap_so": 44.4,
+     "sai_so": 0.4,
+     "don_vi": "°",
+     "loi_hay_gap": "Thế thẳng $60^\\circ$ (góc với mặt) vào định luật khúc xạ: khi đó $1{,}40\\cdot\\sin60^\\circ\\gt1$, không có nghiệm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi sang góc tới rồi so với $i_{th}$; nếu nhỏ hơn thì dùng $n_1\\sin i=n_2\\sin r$",
+       "dung": true
+      },
+      {
+       "text": "Góc tới $60^\\circ\\gt i_{th}$ nên không có tia ló",
+       "dung": false,
+       "vi_sao": "$60^\\circ$ là góc với mặt thoáng; góc tới là $90^\\circ-60^\\circ$."
+      },
+      {
+       "text": "$\\sin r=\\dfrac{\\sin i}{1{,}40}$",
+       "dung": false,
+       "vi_sao": "Đảo tỉ số: ra không khí tia lệch xa pháp tuyến nên $r\\gt i$, theo $n_1\\sin i=n_2\\sin r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phản xạ toàn phần là toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.</li><li>Góc tới hạn $i_{th}$: góc tới mà tia khúc xạ đi sát mặt phân cách ($r=90^\\circ$).</li><li>Công thức: $\\sin i_{th}=\\dfrac{n_2}{n_1}$ (nhỏ trên lớn).</li><li>Cùng một khối: đổi môi trường thứ hai thì góc tới hạn đổi.</li><li>⚠ <strong>Điều kiện:</strong> $n_1\\gt n_2$ (ra môi trường chiết quang kém hơn) và $i\\ge i_{th}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiết suất của khối</span></p><p>Khối trong không khí ($n_2=1$), $i_{th}=40^\\circ$:</p>$$\\sin i_{th}=\\dfrac{1}{n}$$$$\\sin40^\\circ\\approx0{,}6428$$$$n=\\dfrac{1}{\\sin40^\\circ}=\\dfrac{1}{0{,}6428}$$<div class=\"bt-ans\">$$n\\approx1{,}556$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Sin góc tới hạn khi nhúng nước</span></p><p>Môi trường thứ hai bây giờ là nước: $n_2=1{,}33$.</p>$$\\sin i'_{th}=\\dfrac{n_2}{n}=\\dfrac{1{,}33}{1{,}556}$$<div class=\"bt-ans\">$$\\sin i'_{th}\\approx0{,}855$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc tới hạn mới</span></p>$$i'_{th}=\\sin^{-1}\\dfrac{1{,}33}{1{,}556}$$<div class=\"bt-ans\">$$i'_{th}\\approx58{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tia tới với góc $50^\\circ$</span></p><p>Khối ($n=1{,}556$) sang nước ($1{,}33$): $n_1\\gt n_2$ ✓.</p><p>Điều kiện 2:</p>$$i=50^\\circ\\lt i'_{th}\\approx58{,}7^\\circ$$<div class=\"bt-ans\"><p>Tia ló ra nước, không phản xạ toàn phần.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Nước chiết quang hơn không khí nên góc tới hạn lớn lên:</p>$$58{,}7^\\circ\\gt40^\\circ\\ ✓$$<p>Tia $50^\\circ$ trong không khí sẽ phản xạ toàn phần ($50^\\circ\\gt40^\\circ$); trong nước thì ló: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n\\approx1{,}556$</p><p>b) $i'_{th}\\approx58{,}7^\\circ$</p><p>c) Tia ló ra nước</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>góc tới hạn đo được</strong> rồi <strong>đổi môi trường</strong> → tìm $n$ trước ($n=\\dfrac{1}{\\sin i_{th}}$), sau đó thay $n_2$ mới; so góc tới với góc tới hạn <em>mới</em>.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Từ góc tới hạn đo được, tìm chiết suất rồi đổi môi trường",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "problem_html": "<p>Một khối bán trụ trong suốt đặt trong không khí. Tia laser đi theo bán kính, tới tâm $I$ của mặt phẳng. Tăng dần góc tới: khi góc tới đạt $40^\\circ$ thì tia ló đi sát mặt phẳng.</p><ol type=\"a\"><li>Tính chiết suất của khối.</li><li>Nhúng khối vào nước (chiết suất $1{,}33$) sao cho mặt phẳng tiếp xúc với nước. Tính góc tới hạn mới.</li><li>Tia laser tới $I$ với góc tới $50^\\circ$. Tia có ló ra nước không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 215\" role=\"img\" aria-label=\"Khối bán trụ: tia laser đi theo bán kính tới tâm I của mặt phẳng; ở góc tới 40 độ tia ló đi sát mặt phẳng\"><path d=\"M80,72 A130,130 0 0 0 340,72 Z\" fill=\"rgba(251,146,60,.16)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"80.0\" y1=\"72.0\" x2=\"340.0\" y2=\"72.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"17.0\" x2=\"210.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"126.4\" y1=\"171.6\" x2=\"210.0\" y2=\"72.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M153.7,130.5 L164.0,126.8 L162.1,137.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M188.1,98.0 A34,34 0 0 0 210.0,106.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"171.7\" y=\"105.9\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = 40°</text><line x1=\"210.0\" y1=\"72.0\" x2=\"293.6\" y2=\"171.6\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"0.9\" stroke-linecap=\"round\"/><path d=\"M259.9,122.9 L261.8,133.7 L251.5,130.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"72.0\" x2=\"333.5\" y2=\"72.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M284.5,66.5 L294.0,72.0 L284.5,77.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M252.0,72.0 A42,42 0 0 0 210.0,30.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"258.0\" y=\"27.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan> = 90°</text><text x=\"28.0\" y=\"50.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"210.0\" y=\"188.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Khối bán trụ</text><circle cx=\"126.4\" cy=\"171.6\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1.0\"><animate attributeName=\"cx\" values=\"126.4;210.0;333.5\" keyTimes=\"0.000;0.513;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"171.6;72.0;72.0\" keyTimes=\"0.000;0.513;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"126.4\" cy=\"171.6\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.85\"><animate attributeName=\"cx\" values=\"126.4;210.0;293.6\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"171.6;72.0;171.6\" keyTimes=\"0.000;0.500;1.000\" dur=\"3.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): khối đặt trong không khí, góc tới 40°.<br>Tia ló (đỏ) đi sát mặt phẳng; tia phản xạ màu xanh lá.<br>Tia laser đi theo bán kính nên không bị lệch ở mặt cong.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 355\" role=\"img\" aria-label=\"Hai sơ đồ khối bán trụ: trong không khí với góc tới hạn 40 độ, và sau khi nhúng nước với tia tới 50 độ\"><path d=\"M160,66 A100,100 0 0 0 360,66 Z\" fill=\"rgba(251,146,60,.16)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160.0\" y1=\"66.0\" x2=\"360.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"260.0\" y1=\"36.0\" x2=\"260.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"195.7\" y1=\"142.6\" x2=\"260.0\" y2=\"66.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M214.3,111.9 L224.6,108.1 L222.7,119.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M238.1,92.0 A34,34 0 0 0 260.0,100.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"221.7\" y=\"99.9\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan><tspan dy=\"4\" font-size=\"10\">th</tspan><tspan dy=\"-4\"> = 40°</tspan></text><line x1=\"260.0\" y1=\"66.0\" x2=\"324.3\" y2=\"142.6\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"0.9\" stroke-linecap=\"round\"/><path d=\"M297.9,102.7 L299.9,113.5 L289.5,109.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260.0\" y1=\"66.0\" x2=\"355.0\" y2=\"66.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M315.1,60.5 L324.6,66.0 L315.1,71.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M302.0,66.0 A42,42 0 0 0 260.0,24.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"308.0\" y=\"21.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">r</tspan> = 90°</text><text x=\"16.0\" y=\"20.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Ban đầu: trong không khí</text><text x=\"16.0\" y=\"60.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Không khí  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\"></tspan><tspan dy=\"-4\"> = 1</tspan></text><text x=\"16.0\" y=\"136.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Khối bán trụ</text><text x=\"16.0\" y=\"158.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\"></tspan><tspan dy=\"-4\"> = ?</tspan></text><rect x=\"160\" y=\"216\" width=\"200\" height=\"30\" fill=\"rgba(56,189,248,.14)\" stroke=\"none\"/><path d=\"M160,246 A100,100 0 0 0 360,246 Z\" fill=\"rgba(251,146,60,.16)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160.0\" y1=\"246.0\" x2=\"360.0\" y2=\"246.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"260.0\" y1=\"216.0\" x2=\"260.0\" y2=\"346.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><line x1=\"183.4\" y1=\"310.3\" x2=\"260.0\" y2=\"246.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M207.0,283.3 L217.9,281.4 L214.1,291.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M234.0,267.9 A34,34 0 0 0 260.0,280.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"217.2\" y=\"272.8\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = 50°</text><text x=\"16.0\" y=\"212.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Sau khi nhúng nước</text><text x=\"16.0\" y=\"240.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Nước  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\"></tspan><tspan dy=\"-4\"> = 1,33</tspan></text><text x=\"284.0\" y=\"234.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">tia ló?</text><text x=\"16.0\" y=\"316.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Khối bán trụ</text><text x=\"16.0\" y=\"338.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\"></tspan><tspan dy=\"-4\"> = ?</tspan></text></svg><figcaption>Dữ kiện: cùng một khối, hai môi trường thứ hai khác nhau.<br>Hình bên phải chưa biết tia có ló ra nước hay không.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;đặt trong không khí&quot;</td><td>$n_2=1$</td><td>Không khí là môi trường thứ hai</td></tr><tr><td>&quot;tia ló đi sát mặt phẳng khi góc tới $40^\\circ$&quot;</td><td>$i_{th}=40^\\circ$</td><td>Tia khúc xạ sát mặt phân cách ($r=90^\\circ$) là dấu hiệu của góc tới hạn</td></tr><tr><td>&quot;Tính chiết suất của khối&quot;</td><td>Cần $n_1$</td><td>$\\sin i_{th}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>&quot;Nhúng khối vào nước (chiết suất $1{,}33$)&quot;</td><td>$n_2=1{,}33$; $n_1$ giữ nguyên</td><td>⚠ Góc tới hạn phụ thuộc cả hai môi trường: sau khi nhúng, $n_2$ không còn bằng $1$</td></tr><tr><td>&quot;Tính góc tới hạn mới&quot;</td><td>Cần $i'_{th}$</td><td>Cùng công thức, thay $n_2$ mới</td></tr><tr><td>&quot;góc tới $50^\\circ$ … có ló ra nước không?&quot;</td><td>$i=50^\\circ$</td><td>⚠ Điều kiện 2: so $i$ với góc tới hạn của cặp môi trường lúc này</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>góc tới hạn đo được</b> rồi <b>đổi môi trường</b> → tìm $n$ trước, thay $n_2$ mới; so với góc tới hạn mới.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chiết suất của khối",
+     "hoi": "Chiết suất $n$ của khối bằng bao nhiêu?",
+     "dap_so": 1.556,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Viết $n=\\sin40^\\circ$ (quên rằng $\\sin i_{th}=\\dfrac{1}{n}$), ra $n\\lt1$: vô lí vì chiết suất luôn lớn hơn hoặc bằng $1$."
+    },
+    {
+     "tieu_de": "Sin góc tới hạn khi nhúng nước",
+     "hoi": "Khi khối ở trong nước, $\\sin i'_{th}$ bằng bao nhiêu?",
+     "dap_so": 0.855,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Dùng lại $\\sin i_{th}=\\dfrac{1}{n}$ (môi trường thứ hai vẫn coi là không khí) nên ra lại đúng góc ban đầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin i'_{th}=\\dfrac{1{,}33}{n}$ với $n$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$\\sin i'_{th}=\\dfrac{1}{n}$",
+       "dung": false,
+       "vi_sao": "Môi trường thứ hai bây giờ là nước ($n_2=1{,}33$), không phải không khí."
+      },
+      {
+       "text": "$\\sin i'_{th}=\\dfrac{n}{1{,}33}$",
+       "dung": false,
+       "vi_sao": "Tỉ số lớn trên nhỏ lớn hơn $1$, mà $\\sin$ không vượt quá $1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc tới hạn mới",
+     "hoi": "Góc tới hạn mới $i'_{th}$ bằng bao nhiêu độ?",
+     "dap_so": 58.7,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Giữ nguyên góc tới hạn cũ vì “khối không đổi”. Góc tới hạn phụ thuộc cả hai môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "$i'_{th}=\\sin^{-1}$ của giá trị vừa tính",
+       "dung": true
+      },
+      {
+       "text": "$i'_{th}=40^\\circ$ vì khối không đổi",
+       "dung": false,
+       "vi_sao": "Góc tới hạn phụ thuộc cả hai môi trường; đổi môi trường thứ hai thì đổi."
+      },
+      {
+       "text": "$i'_{th}=\\sin^{-1}(1{,}33)$",
+       "dung": false,
+       "vi_sao": "$\\sin$ không vượt quá $1$; phải chia $1{,}33$ cho chiết suất của khối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tia tới với góc $50^\\circ$",
+     "hoi": "Tia tới với góc $50^\\circ$ có ló ra nước không?",
+     "lua_chon": [
+      {
+       "text": "Ló ra nước vì $50^\\circ\\lt i'_{th}$",
+       "dung": true
+      },
+      {
+       "text": "Phản xạ toàn phần vì $50^\\circ\\gt40^\\circ$",
+       "dung": false,
+       "vi_sao": "$40^\\circ$ là góc tới hạn khi ở trong không khí; trong nước góc tới hạn đã đổi."
+      },
+      {
+       "text": "Phản xạ toàn phần vì khối chiết quang hơn nước",
+       "dung": false,
+       "vi_sao": "Chiết quang hơn mới là điều kiện 1; còn phải có $i\\ge i_{th}$."
+      }
+     ],
+     "loi_hay_gap": "Còn nhớ “$50^\\circ\\gt40^\\circ$ nên phản xạ toàn phần” mà quên rằng $40^\\circ$ chỉ đúng khi khối ở trong không khí.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $50^\\circ$ với góc tới hạn mới",
+       "dung": true
+      },
+      {
+       "text": "So $50^\\circ$ với $40^\\circ$",
+       "dung": false,
+       "vi_sao": "$40^\\circ$ là góc tới hạn của khối trong không khí, không còn dùng được sau khi nhúng nước."
+      },
+      {
+       "text": "Khối chiết quang hơn nước nên luôn phản xạ toàn phần",
+       "dung": false,
+       "vi_sao": "Đó mới là điều kiện 1; còn phải so góc tới với góc tới hạn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phản xạ toàn phần là toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.</li><li>Góc tới hạn $i_{th}$: góc tới mà tia khúc xạ đi sát mặt phân cách ($r=90^\\circ$).</li><li>Công thức: $\\sin i_{th}=\\dfrac{n_2}{n_1}$ (nhỏ trên lớn).</li><li>Góc tới đo từ pháp tuyến: tia hợp mặt phân cách (hoặc trục) góc $\\beta$ thì $i=90^\\circ-\\beta$.</li><li>Phản xạ toàn phần khi $i\\ge i_{th}$, tức $\\sin i\\ge\\dfrac{n_2}{n_1}$.</li><li>⚠ <strong>Điều kiện:</strong> $n_1\\gt n_2$ (ra môi trường chiết quang kém hơn) và $i\\ge i_{th}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới tại mặt lõi – vỏ</span></p><p>Thành sợi song song với trục, nên góc tới đo từ pháp tuyến:</p>$$i=90^\\circ-30^\\circ$$<div class=\"bt-ans\">$$i=60^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiết suất lớn nhất của vỏ</span></p><p>Để phản xạ toàn phần: $\\sin i\\ge\\dfrac{n_2}{n_1}$, suy ra:</p>$$n_2\\le n_1\\sin i=1{,}50\\cdot\\sin60^\\circ$$<div class=\"bt-ans\">$$n_{2,\\max}\\approx1{,}30$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc tới hạn với vỏ $1{,}40$</span></p><p>Mặt tiếp xúc là lõi – vỏ: $n_1=1{,}50$, $n_2=1{,}40$.</p>$$\\sin i_{th}=\\dfrac{1{,}40}{1{,}50}\\approx0{,}933$$<div class=\"bt-ans\">$$i_{th}\\approx69{,}0^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kết luận cho tia hợp trục $30^\\circ$</span></p>$$i=60^\\circ\\lt i_{th}\\approx69{,}0^\\circ$$<div class=\"bt-ans\"><p>Không phản xạ toàn phần: một phần ánh sáng lọt ra vỏ, tia không được dẫn tốt.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Vỏ $1{,}40\\gt n_{2,\\max}\\approx1{,}30$ nên không thoả: khớp kết luận.</p><p>Với vỏ $1{,}40$, tia chỉ được dẫn khi $i\\ge69{,}0^\\circ$, tức hợp trục tối đa:</p>$$\\alpha_{\\max}=90^\\circ-69{,}0^\\circ\\approx21{,}0^\\circ\\lt30^\\circ\\ ✓$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n_{2,\\max}\\approx1{,}30$</p><p>b) Không: $60^\\circ\\lt69{,}0^\\circ$, ánh sáng lọt ra vỏ</p></div><p class=\"bt-note\">Nhận dạng: <strong>sợi quang</strong> và <strong>góc hợp với trục</strong> → đổi sang góc tới ($90^\\circ-\\alpha$), rồi so với $i_{th}$ của cặp lõi – vỏ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Sợi quang: điều kiện của lớp vỏ để tia được dẫn",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "problem_html": "<p>Một sợi quang có lõi chiết suất $1{,}50$. Tia sáng truyền trong lõi, hợp với trục sợi góc $30^\\circ$.</p><ol type=\"a\"><li>Chiết suất lớn nhất của lớp vỏ là bao nhiêu để tia này vẫn bị phản xạ toàn phần tại mặt lõi – vỏ?</li><li>Thực tế dùng vỏ chiết suất $1{,}40$. Tia hợp trục $30^\\circ$ có còn được dẫn trong lõi không? Giải thích.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Sợi quang: tia sáng hợp với trục sợi một góc nhỏ, phản xạ liên tiếp trên mặt lõi và vỏ\"><rect x=\"10\" y=\"40\" width=\"400\" height=\"50\" fill=\"rgba(160,160,160,.2)\" stroke=\"none\"/><rect x=\"10\" y=\"170\" width=\"400\" height=\"50\" fill=\"rgba(160,160,160,.2)\" stroke=\"none\"/><rect x=\"10\" y=\"90\" width=\"400\" height=\"80\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"10.0\" y1=\"90.0\" x2=\"410.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"10.0\" y1=\"170.0\" x2=\"410.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"10.0\" y1=\"130.0\" x2=\"410.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\" opacity=\"0.5\"/><text x=\"14.0\" y=\"70.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Vỏ  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"14.0\" y=\"200.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Vỏ</text><text x=\"14.0\" y=\"162.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Lõi  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,50</tspan></text><line x1=\"70.0\" y1=\"130.0\" x2=\"139.3\" y2=\"90.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M93.6,110.0 L104.6,110.0 L99.1,119.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"139.3\" y1=\"90.0\" x2=\"277.8\" y2=\"170.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M203.1,120.5 L208.6,130.0 L197.6,130.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"277.8\" y1=\"170.0\" x2=\"405.0\" y2=\"96.6\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M330.4,133.3 L341.4,133.3 L335.9,142.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"70.0\" cy=\"130.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1.0\"><animate attributeName=\"cx\" values=\"70.0;139.3;277.8;405.0\" keyTimes=\"0.000;0.207;0.620;1.000\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"130.0;90.0;170.0;96.6\" keyTimes=\"0.000;0.207;0.620;1.000\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): tia hợp trục 30° đi dọc sợi, phản xạ liên tiếp ở thành.<br>Hình vẽ cho trường hợp vỏ đủ nhỏ chiết suất; trục sợi là nét đứt.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Sợi quang với lõi chiết suất 1,50: tia sáng hợp với trục một góc 30 độ; góc tới tại thành sợi chưa biết\"><rect x=\"10\" y=\"40\" width=\"400\" height=\"50\" fill=\"rgba(160,160,160,.2)\" stroke=\"none\"/><rect x=\"10\" y=\"170\" width=\"400\" height=\"50\" fill=\"rgba(160,160,160,.2)\" stroke=\"none\"/><rect x=\"10\" y=\"90\" width=\"400\" height=\"80\" fill=\"rgba(56,189,248,.16)\" stroke=\"none\"/><line x1=\"10.0\" y1=\"90.0\" x2=\"410.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"10.0\" y1=\"170.0\" x2=\"410.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"10.0\" y1=\"130.0\" x2=\"410.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\" opacity=\"0.5\"/><text x=\"14.0\" y=\"70.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Vỏ  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"14.0\" y=\"200.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Vỏ</text><text x=\"14.0\" y=\"162.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Lõi  <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">n</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 1,50</tspan></text><line x1=\"70.0\" y1=\"130.0\" x2=\"139.3\" y2=\"90.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M93.6,110.0 L104.6,110.0 L99.1,119.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"139.3\" y1=\"90.0\" x2=\"277.8\" y2=\"170.0\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M203.1,120.5 L208.6,130.0 L197.6,130.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"277.8\" y1=\"170.0\" x2=\"405.0\" y2=\"96.6\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1.0\" stroke-linecap=\"round\"/><path d=\"M330.4,133.3 L341.4,133.3 L335.9,142.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"139.3\" y1=\"62.0\" x2=\"139.3\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><path d=\"M116.8,103.0 A26,26 0 0 0 139.3,116.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"131.3\" y=\"142.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">i</tspan> = ?</text><path d=\"M110.0,130.0 A40,40 0 0 0 104.6,110.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"64.0\" y=\"124.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">α</tspan> = 30°</text></svg><figcaption>Dữ kiện: góc xanh là góc giữa tia và trục sợi.<br>Góc tới tại thành sợi nằm giữa tia và pháp tuyến (nét đứt).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;lõi chiết suất $1{,}50$&quot;</td><td>$n_1=1{,}50$; vỏ $n_2$</td><td>⚠ Điều kiện 1: lõi chiết quang hơn vỏ ($n_1\\gt n_2$) thì mới có phản xạ toàn phần ở mặt lõi – vỏ</td></tr><tr><td>&quot;hợp với trục sợi góc $30^\\circ$&quot;</td><td>Góc với trục $=30^\\circ$</td><td>⚠ Góc tới đo từ pháp tuyến (vuông góc với thành sợi), không đo từ trục</td></tr><tr><td>&quot;Chiết suất lớn nhất của lớp vỏ … vẫn bị phản xạ toàn phần&quot;</td><td>Cần $n_{2,\\max}$</td><td>Điều kiện 2: $i\\ge i_{th}$; $\\sin i_{th}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>&quot;vỏ chiết suất $1{,}40$ … còn được dẫn không?&quot;</td><td>$n_2=1{,}40$</td><td>So góc tới với góc tới hạn của cặp lõi – vỏ này</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>sợi quang</b> và <b>góc hợp với trục</b> → đổi thành góc tới ($90^\\circ-\\alpha$), so với $i_{th}$ của lõi – vỏ.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới tại mặt lõi – vỏ",
+     "hoi": "Góc tới $i$ tại thành sợi bằng bao nhiêu độ?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy luôn $30^\\circ$ (góc với trục) làm góc tới. Góc tới đo từ pháp tuyến, vuông góc với thành sợi."
+    },
+    {
+     "tieu_de": "Chiết suất lớn nhất của vỏ",
+     "hoi": "Chiết suất lớn nhất của vỏ để tia còn phản xạ toàn phần bằng bao nhiêu?",
+     "dap_so": 1.3,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Dùng góc hợp trục: $n_2=n_1\\sin30^\\circ$, ra giá trị quá nhỏ. Hoặc đổi chiều bất đẳng thức: vỏ càng chiết quang thì càng khó phản xạ toàn phần.",
+     "chon_buoc_ke": [
+      {
+       "text": "$i\\ge i_{th}$ nên $n_2\\le n_1\\sin i$",
+       "dung": true
+      },
+      {
+       "text": "$n_2\\ge n_1\\sin i$",
+       "dung": false,
+       "vi_sao": "Ngược chiều: vỏ có $n_2$ lớn thì $i_{th}$ lớn, điều kiện $i\\ge i_{th}$ càng khó đạt."
+      },
+      {
+       "text": "$n_2=n_1\\sin\\alpha$ với $\\alpha$ là góc hợp trục",
+       "dung": false,
+       "vi_sao": "$\\alpha$ đo từ trục, không phải từ pháp tuyến; góc tới là $90^\\circ-\\alpha$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc tới hạn với vỏ $1{,}40$",
+     "hoi": "Với vỏ $1{,}40$, góc tới hạn của mặt lõi – vỏ bằng bao nhiêu độ?",
+     "dap_so": 69.0,
+     "sai_so": 0.4,
+     "don_vi": "°",
+     "loi_hay_gap": "Dùng $\\sin i_{th}=\\dfrac{1}{n_1}$ như khi ra không khí: mặt tiếp xúc là lõi – vỏ chứ không phải lõi – không khí.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin i_{th}=\\dfrac{n_{vỏ}}{n_{lõi}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin i_{th}=\\dfrac{1}{n_{lõi}}$",
+       "dung": false,
+       "vi_sao": "Môi trường thứ hai là vỏ ($n_2=1{,}40$), không phải không khí."
+      },
+      {
+       "text": "$\\sin i_{th}=\\dfrac{n_{lõi}}{n_{vỏ}}$",
+       "dung": false,
+       "vi_sao": "Tỉ số lớn trên nhỏ lớn hơn $1$, mà $\\sin$ không vượt quá $1$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kết luận cho tia hợp trục $30^\\circ$",
+     "hoi": "Với vỏ $1{,}40$, tia hợp trục $30^\\circ$ có còn được dẫn không?",
+     "lua_chon": [
+      {
+       "text": "Không: $i\\lt i_{th}$, một phần ánh sáng lọt ra vỏ",
+       "dung": true
+      },
+      {
+       "text": "Vẫn dẫn: lõi chiết quang hơn vỏ nên luôn phản xạ toàn phần",
+       "dung": false,
+       "vi_sao": "Mới thoả điều kiện 1; điều kiện 2 ($i\\ge i_{th}$) không còn."
+      },
+      {
+       "text": "Vẫn dẫn vì $30^\\circ$ nhỏ hơn góc tới hạn",
+       "dung": false,
+       "vi_sao": "$30^\\circ$ là góc với trục, không phải góc tới; phải đổi sang góc tới trước khi so."
+      }
+     ],
+     "loi_hay_gap": "Chỉ thấy lõi chiết quang hơn vỏ ($1{,}50\\gt1{,}40$) rồi kết luận có phản xạ toàn phần, quên điều kiện về góc tới.",
+     "chon_buoc_ke": [
+      {
+       "text": "So góc tới $i$ với $i_{th}$ của cặp lõi – vỏ",
+       "dung": true
+      },
+      {
+       "text": "So góc hợp trục $\\alpha$ với $i_{th}$",
+       "dung": false,
+       "vi_sao": "$\\alpha$ đo từ trục còn $i_{th}$ đo từ pháp tuyến; hai góc khác gốc nên không so trực tiếp được."
+      },
+      {
+       "text": "Chỉ cần lõi chiết quang hơn vỏ là đủ",
+       "dung": false,
+       "vi_sao": "Đó mới là điều kiện 1; còn phải có $i\\ge i_{th}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

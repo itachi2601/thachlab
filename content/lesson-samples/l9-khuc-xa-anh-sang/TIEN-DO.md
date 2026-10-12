@@ -1,0 +1,3 @@
+- 12/10/2026 · Chặng 3 (bài tập mẫu) soạn xong: `scripts/data/bai-tap-mau/83.json` (5 dạng, sinh từ `build-hinh-83.py`, quét dạng ở `83.dang.md`); validate chỉ còn báo `review.checked` chưa true.
+- Treo: kiểm chéo `kiem-code` rồi đặt `review.checked=true`; đếm số câu ngân hàng topic 80/81 trên Mac (chưa có DB); đăng bằng `publish-bai-tap-mau.mts --lesson 83`.
+- 12/10/2026 · Kiểm chéo bài 83 xong (đáp số 5 dạng đúng), đã sửa 6 mục hình/lựa chọn, `review.checked=true`; treo: đếm ngân hàng topic 80/81 trên Mac, rồi đăng.

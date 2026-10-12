@@ -1,0 +1,494 @@
+{
+ "lesson_id": 83,
+ "lesson_title": "Bài 5. Khúc xạ ánh sáng",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "notes": "Soạn 12/10/2026 (chặng 3). Kiểm chéo kiem-code 12/10: đáp số 5 dạng đúng, đã sửa 6 mục hình/lựa chọn. Chưa đối chiếu ngân hàng câu hỏi (topic 80/81): không có DB trong phiên."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chiết suất $n$ cho biết môi trường làm ánh sáng chậm đi bao nhiêu lần so với trong chân không.</li><li>Công thức: $n=\\dfrac{c}{v}$, suy ra $v=\\dfrac{c}{n}$.</li><li>Đơn vị: $c$ và $v$ cùng m/s nên $n$ không có đơn vị; $c=3\\cdot10^8\\ \\text{m/s}$.</li><li>⚠ <strong>Điều kiện:</strong> so độ chiết quang là so $n$ của hai môi trường; $n$ lớn hơn thì chiết quang hơn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ ánh sáng trong rượu</span></p><p>Từ $n=\\dfrac{c}{v}$:</p>$$v=\\dfrac{c}{n}$$$$v=\\dfrac{3\\cdot10^8}{1{,}36}$$<div class=\"bt-ans\">$$v\\approx2{,}21\\cdot10^8\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiết suất của nhựa</span></p>$$n=\\dfrac{c}{v}$$$$n=\\dfrac{3\\cdot10^8}{2{,}0\\cdot10^8}$$<div class=\"bt-ans\">$$n=1{,}5$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Môi trường chiết quang hơn</span></p>$$n_{\\text{nhựa}}=1{,}5\\gt n_{\\text{rượu}}=1{,}36$$<div class=\"bt-ans\"><p>Nhựa chiết quang hơn rượu.</p></div><p>Ánh sáng trong nhựa chậm hơn: $2{,}0\\cdot10^8$ so với $2{,}21\\cdot10^8$ m/s.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cả hai đều có $n\\gt1$ và $v\\lt c$: hợp lí.</p><p>Đơn vị: m/s chia m/s nên $n$ không có đơn vị ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v\\approx2{,}21\\cdot10^8\\ \\text{m/s}$</p><p>b) $n=1{,}5$</p><p>c) Nhựa chiết quang hơn</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>chiết suất</strong> hoặc <strong>tốc độ ánh sáng trong môi trường</strong> → $n=\\dfrac{c}{v}$; $n$ lớn hơn thì chiết quang hơn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Chiết suất và tốc độ ánh sáng trong môi trường",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "problem_html": "<p>Lấy tốc độ ánh sáng trong chân không $c = 3 \\cdot 10^8\\ \\text{m/s}$.</p><ol type=\"a\"><li>Rượu etilic có chiết suất $n = 1{,}36$. Tính tốc độ ánh sáng trong rượu.</li><li>Trong một khối nhựa trong suốt, ánh sáng truyền với tốc độ $2{,}0 \\cdot 10^8\\ \\text{m/s}$. Tính chiết suất của nhựa.</li><li>Trong hai môi trường trên, môi trường nào chiết quang hơn?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hai xung sáng xuất phát cùng lúc, cùng đi một quãng đường: xung trong không khí tới đích trước, xung trong môi trường mẫu tới sau\"><rect x=\"40\" y=\"44\" width=\"340\" height=\"52\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"48\" y=\"38\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><rect x=\"40\" y=\"124\" width=\"340\" height=\"52\" rx=\"6\" fill=\"rgba(56,189,248,.10)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"48\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước (hình mẫu)</text><line x1=\"60.0\" y1=\"36.0\" x2=\"60.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"360.0\" y1=\"36.0\" x2=\"360.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"60\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">xuất phát</text><text x=\"360\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">đích</text><circle cx=\"60\" cy=\"70\" r=\"6\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"60.0;360.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60\" cy=\"150\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"60.0;360.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): hai xung sáng xuất phát cùng lúc, đi cùng quãng đường.<br>Môi trường mẫu là nước, không phải chất trong đề.<br>Xung trong nước chạy chậm đi $\\dfrac{4}{3}$ lần so với trong không khí; tốc độ vẽ chỉ để minh hoạ.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 212\" role=\"img\" aria-label=\"Ba môi trường và dữ kiện của đề: chân không có c, rượu có chiết suất, nhựa có tốc độ ánh sáng\"><rect x=\"16\" y=\"22\" width=\"388\" height=\"48\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"28\" y=\"42\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Không khí (chân không)</text><text x=\"28\" y=\"62\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">c = 3·10⁸ m/s</text><rect x=\"16\" y=\"88\" width=\"388\" height=\"48\" rx=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"28\" y=\"108\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Rượu etilic</text><text x=\"28\" y=\"128\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">n = 1,36;  v = ?</text><rect x=\"16\" y=\"154\" width=\"388\" height=\"48\" rx=\"6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"28\" y=\"174\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Khối nhựa</text><text x=\"28\" y=\"194\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">v = 2,0·10⁸ m/s;  n = ?</text></svg><figcaption>Dữ kiện: mỗi môi trường biết một trong hai đại lượng n hoặc v, cần tìm đại lượng còn lại.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;tốc độ ánh sáng trong chân không $c = 3 \\cdot 10^8$ m/s&quot;</td><td>$c = 3\\cdot10^8\\ \\text{m/s}$</td><td>Chiết suất $n$ so tốc độ trong môi trường với $c$</td></tr><tr><td>&quot;Rượu etilic có chiết suất $n = 1{,}36$. Tính tốc độ&quot;</td><td>$n = 1{,}36$; cần $v$</td><td>$n=\\dfrac{c}{v}$</td></tr><tr><td>&quot;khối nhựa … tốc độ $2{,}0 \\cdot 10^8$ m/s. Tính chiết suất&quot;</td><td>$v = 2{,}0\\cdot10^8\\ \\text{m/s}$; cần $n$</td><td>$n=\\dfrac{c}{v}$</td></tr><tr><td>&quot;môi trường nào chiết quang hơn&quot;</td><td>So hai môi trường</td><td>⚠ Chiết quang hơn là so <strong>chiết suất</strong> $n$ của hai môi trường, không so tốc độ trực tiếp</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chiết suất</b> hoặc <b>tốc độ ánh sáng trong môi trường</b> → nghĩ tới $n=\\dfrac{c}{v}$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ ánh sáng trong rượu",
+     "hoi": "Tốc độ ánh sáng trong rượu bằng bao nhiêu (đơn vị $10^8\\ \\text{m/s}$)?",
+     "dap_so": 2.21,
+     "sai_so": 0.02,
+     "don_vi": "·10⁸ m/s",
+     "loi_hay_gap": "Hay nhân $c$ với $n$. Ánh sáng trong môi trường luôn chậm hơn trong chân không, nên $v$ phải nhỏ hơn $c$."
+    },
+    {
+     "tieu_de": "Chiết suất của nhựa",
+     "hoi": "Chiết suất của nhựa bằng bao nhiêu?",
+     "dap_so": 1.5,
+     "sai_so": 0.03,
+     "loi_hay_gap": "Hay lật tỉ số thành $\\dfrac{v}{c}$. Chiết suất không bao giờ nhỏ hơn $1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n=\\dfrac{c}{v}$",
+       "dung": true
+      },
+      {
+       "text": "$n=\\dfrac{v}{c}$",
+       "dung": false,
+       "vi_sao": "Lật ngược tỉ số: $v\\le c$ nên $\\dfrac{v}{c}\\le1$, mà chiết suất luôn từ $1$ trở lên."
+      },
+      {
+       "text": "$n=c\\cdot v$",
+       "dung": false,
+       "vi_sao": "Tích hai tốc độ không phải đại lượng không có đơn vị như chiết suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Môi trường chiết quang hơn",
+     "hoi": "Môi trường nào chiết quang hơn?",
+     "lua_chon": [
+      {
+       "text": "Nhựa",
+       "dung": true
+      },
+      {
+       "text": "Rượu",
+       "dung": false,
+       "vi_sao": "Tốc độ lớn hơn nghĩa là môi trường làm ánh sáng chậm ít hơn, tức chiết suất nhỏ hơn."
+      },
+      {
+       "text": "Bằng nhau, vì cả hai đều trong suốt",
+       "dung": false,
+       "vi_sao": "Trong suốt chỉ cho ánh sáng đi qua được; độ chiết quang do chiết suất quyết định."
+      }
+     ],
+     "loi_hay_gap": "Hay so tốc độ rồi chọn môi trường có tốc độ lớn hơn. Chiết quang hơn là chiết suất lớn hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai chiết suất vừa có",
+       "dung": true
+      },
+      {
+       "text": "So khối lượng riêng của hai chất",
+       "dung": false,
+       "vi_sao": "Độ chiết quang do chiết suất quyết định, không phải khối lượng riêng."
+      },
+      {
+       "text": "Môi trường có tốc độ ánh sáng lớn hơn thì chiết quang hơn",
+       "dung": false,
+       "vi_sao": "Ngược lại: tốc độ lớn hơn thì chiết suất nhỏ hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> góc tới $i$ và góc khúc xạ $r$ đều đo từ <strong>pháp tuyến</strong>, vuông góc với mặt phân cách.</li><li><strong>Định luật:</strong> tia tới và tia khúc xạ nằm hai bên pháp tuyến, trong cùng một mặt phẳng.</li><li>Vào môi trường chiết quang hơn: $r\\lt i$. Vào môi trường kém chiết quang hơn: $r\\gt i$.</li><li>Tính thuận nghịch: ánh sáng đi ngược lại thì đi đúng đường cũ.</li><li>⚠ <strong>Điều kiện:</strong> đề cho góc hợp với <strong>mặt phân cách</strong> thì đổi sang góc với pháp tuyến trước.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới</span></p><p>Pháp tuyến vuông góc mặt phân cách, nên góc tới cộng góc hợp mặt phân cách bằng $90^\\circ$:</p>$$i=90^\\circ-40^\\circ$$<div class=\"bt-ans\">$$i=50^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc khúc xạ</span></p><p>Làm tương tự cho tia khúc xạ:</p>$$r=90^\\circ-62^\\circ$$<div class=\"bt-ans\">$$r=28^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều lệch và môi trường chiết quang hơn</span></p><p>So sánh: $r=28^\\circ\\lt i=50^\\circ$.</p><div class=\"bt-ans\"><p>Tia khúc xạ lệch <strong>lại gần</strong> pháp tuyến; môi trường (2) chiết quang hơn.</p></div><p>Khớp bảng: vào môi trường chiết quang hơn thì $r\\lt i$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đảo chiều tia sáng</span></p><p>Ánh sáng đi ngược lại thì vẫn đi đúng đường cũ (tính thuận nghịch).</p><p>Tia tới lúc này nằm trong môi trường (2), tia ló trùng với tia tới ban đầu ở môi trường (1).</p><div class=\"bt-ans\">$$i_{\\text{ló}}=50^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đi từ (2) sang (1) là ra môi trường kém chiết quang hơn nên góc ló lớn hơn góc vào.</p>$$50^\\circ\\gt28^\\circ\\ \\checkmark$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=50^\\circ$; $r=28^\\circ$</p><p>b) Lệch lại gần pháp tuyến; môi trường (2) chiết quang hơn</p><p>c) $50^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>góc hợp với mặt phân cách</strong> → lấy $90^\\circ$ trừ đi để được góc với pháp tuyến; so $r$ với $i$ để biết môi trường nào chiết quang hơn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Đọc góc trên hình khúc xạ: góc tới, góc khúc xạ, chiều lệch",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "problem_html": "<p>Tia sáng truyền từ môi trường (1) sang môi trường (2) qua mặt phân cách phẳng nằm ngang như hình. Tia tới hợp với mặt phân cách góc $40^\\circ$; tia khúc xạ hợp với mặt phân cách góc $62^\\circ$.</p><ol type=\"a\"><li>Tính góc tới $i$ và góc khúc xạ $r$.</li><li>Tia khúc xạ lệch lại gần hay ra xa pháp tuyến so với tia tới? Môi trường nào chiết quang hơn?</li><li>Cho tia sáng đi ngược lại, từ môi trường (2) theo đúng đường của tia khúc xạ. Tia ló ra môi trường (1) hợp với pháp tuyến góc bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Một tia sáng đi từ môi trường trên xuống môi trường dưới qua mặt phân cách ngang và bị gãy khúc tại điểm tới\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"48.0\" x2=\"210.0\" y2=\"232.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"54.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"107.8\" y1=\"81.0\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M204.6,130.6 L210.0,140.0 L199.2,140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"278.1\" y2=\"236.3\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M277.1,225.5 L278.1,236.3 L268.3,231.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Môi trường (1)</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Môi trường (2)</text><circle cx=\"107.8\" cy=\"81.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"107.8;210.0;278.1\" keyTimes=\"0.0000;0.4000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"81.0;140.0;236.3\" keyTimes=\"0.0000;0.4000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): hình mẫu, số liệu khác đề.<br>Chấm sáng chạy chậm lại khi vào môi trường (2).</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia tới hợp mặt phân cách góc 40 độ, tia khúc xạ hợp mặt phân cách góc 62 độ; góc tới và góc khúc xạ chưa biết\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"48.0\" x2=\"210.0\" y2=\"232.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"54.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"119.6\" y1=\"64.2\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M206.3,129.8 L210.0,140.0 L199.3,138.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"265.4\" y2=\"244.2\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M265.8,233.4 L265.4,244.2 L256.2,238.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M210.0,106.0 A34,34 0 0 0 184.0,118.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\"/><text x=\"188.0\" y=\"97.9\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">i = ?</text><path d=\"M210.0,174.0 A34,34 0 0 0 226.0,170.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.0\"/><text x=\"190.6\" y=\"195.5\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">r = ?</text><path d=\"M159.4,97.6 A66,66 0 0 0 144.0,140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"129.2\" y=\"115.6\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">40°</text><path d=\"M241.0,198.3 A66,66 0 0 0 276.0,140.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"283.7\" y=\"189.3\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">62°</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Môi trường (1)</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Môi trường (2)</text></svg><figcaption>Dữ kiện: hai góc đề cho đo từ mặt phân cách (nét đứt).<br>Góc tới i và góc khúc xạ r đo từ pháp tuyến.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;mặt phân cách phẳng nằm ngang … pháp tuyến&quot;</td><td>Mặt phân cách ngang</td><td>⚠ $i$ và $r$ đo từ <strong>pháp tuyến</strong>; pháp tuyến vuông góc mặt phân cách</td></tr><tr><td>&quot;Tia tới hợp với mặt phân cách góc $40^\\circ$&quot;</td><td>Góc hợp mặt phân cách: $40^\\circ$</td><td>Đây có phải góc tới không? Pháp tuyến tạo với mặt phân cách góc bao nhiêu?</td></tr><tr><td>&quot;tia khúc xạ hợp với mặt phân cách góc $62^\\circ$&quot;</td><td>Góc hợp mặt phân cách: $62^\\circ$</td><td>Làm tương tự cho tia khúc xạ</td></tr><tr><td>&quot;Tính góc tới $i$ và góc khúc xạ $r$&quot;</td><td>Cần $i$, $r$</td><td>Hai góc đo từ pháp tuyến</td></tr><tr><td>&quot;lệch lại gần hay ra xa pháp tuyến … môi trường nào chiết quang hơn&quot;</td><td>So $r$ với $i$</td><td>Đối chiếu bảng hai trường hợp ở mục định luật khúc xạ</td></tr><tr><td>&quot;Cho tia sáng đi ngược lại … theo đúng đường của tia khúc xạ&quot;</td><td>Đảo chiều truyền</td><td>Tính thuận nghịch của đường truyền ánh sáng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>góc hợp với mặt phân cách</b> → đổi sang <b>góc với pháp tuyến</b> trước, rồi so $r$ với $i$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới",
+     "hoi": "Góc tới $i$ bằng bao nhiêu độ?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay lấy luôn số đo của đề làm góc tới. Góc tới đo từ pháp tuyến, không đo từ mặt phân cách."
+    },
+    {
+     "tieu_de": "Góc khúc xạ",
+     "hoi": "Góc khúc xạ $r$ bằng bao nhiêu độ?",
+     "dap_so": 28,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Đổi sang pháp tuyến cho tia tới nhưng để nguyên số đo của tia khúc xạ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cũng đổi sang pháp tuyến: $r=90^\\circ-$ góc hợp mặt phân cách",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên số đo của đề: góc khúc xạ là góc hợp với mặt phân cách",
+       "dung": false,
+       "vi_sao": "Chỉ góc đo từ pháp tuyến mới là góc khúc xạ."
+      },
+      {
+       "text": "Dùng định luật khúc xạ để tính $r$",
+       "dung": false,
+       "vi_sao": "Đề chưa cho chiết suất nên không dùng được định luật; hình học đã đủ để suy ra $r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều lệch và môi trường chiết quang hơn",
+     "hoi": "Môi trường nào chiết quang hơn?",
+     "lua_chon": [
+      {
+       "text": "Môi trường (2), vì tia khúc xạ lại gần pháp tuyến hơn tia tới",
+       "dung": true
+      },
+      {
+       "text": "Môi trường (1), vì góc tới lớn hơn",
+       "dung": false,
+       "vi_sao": "Góc tới lớn hơn góc khúc xạ nghĩa là tia đi vào môi trường chiết quang hơn, tức môi trường chứa tia khúc xạ."
+      },
+      {
+       "text": "Không so sánh được vì chưa biết chiết suất",
+       "dung": false,
+       "vi_sao": "Không cần giá trị chiết suất: so $r$ với $i$ là đủ để biết môi trường nào chiết quang hơn."
+      }
+     ],
+     "loi_hay_gap": "Hay cho rằng môi trường có góc lớn hơn thì chiết quang hơn. Xem lại bảng hai trường hợp ở mục định luật khúc xạ.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $r$ với $i$ rồi đối chiếu bảng hai trường hợp",
+       "dung": true
+      },
+      {
+       "text": "Môi trường ở phía dưới hình luôn chiết quang hơn",
+       "dung": false,
+       "vi_sao": "Độ chiết quang không phụ thuộc vị trí trên hình; mặt phân cách nằm ngang chỉ là cách đặt hình."
+      },
+      {
+       "text": "So độ dài hai đoạn tia vẽ trong hình",
+       "dung": false,
+       "vi_sao": "Độ dài đoạn tia vẽ không mang ý nghĩa vật lí."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đảo chiều tia sáng",
+     "hoi": "Tia ló ra môi trường (1) hợp với pháp tuyến góc bao nhiêu độ?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay tính lại bằng cách tự đặt chiết suất, hoặc cho rằng góc ló phải giống góc đang có trong môi trường (2).",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng tính thuận nghịch của đường truyền ánh sáng",
+       "dung": true
+      },
+      {
+       "text": "Góc ló bằng góc đang có trong môi trường (2)",
+       "dung": false,
+       "vi_sao": "Hai môi trường có chiết suất khác nhau nên góc ở hai bên mặt phân cách khác nhau."
+      },
+      {
+       "text": "Tia ló đi thẳng, không bị gãy",
+       "dung": false,
+       "vi_sao": "Tia vẫn xiên góc qua mặt phân cách nên vẫn gãy khúc; chỉ chiếu vuông góc mới đi thẳng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> tia sáng gãy khúc khi truyền xiên qua mặt phân cách; $i$, $r$ đo từ pháp tuyến.</li><li><strong>Định luật:</strong> $n_1\\sin i=n_2\\sin r$.</li><li>$n_1$: chiết suất môi trường chứa tia tới; $n_2$: môi trường chứa tia khúc xạ.</li><li>Góc lệch giữa tia khúc xạ và phương tia tới: $D=|i-r|$.</li><li>⚠ <strong>Điều kiện:</strong> đổi góc hợp mặt phân cách sang góc tới; rút $\\sin r$ trước rồi mới bấm $\\sin^{-1}$ (máy để chế độ độ).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới</span></p><p>Góc hợp mặt phân cách là $65^\\circ$, nên góc với pháp tuyến:</p>$$i=90^\\circ-65^\\circ$$<div class=\"bt-ans\">$$i=25^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính sin của góc khúc xạ</span></p><p>Tia tới ở trong thuỷ tinh: $n_1=1{,}5$. Tia khúc xạ ở không khí: $n_2=1$.</p>$$n_1\\sin i=n_2\\sin r$$$$\\sin r=1{,}5\\cdot\\sin25^\\circ$$<div class=\"bt-ans\">$$\\sin r\\approx0{,}634$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc khúc xạ</span></p><p>Bấm $\\sin^{-1}$ (máy ở chế độ độ):</p>$$r=\\sin^{-1}(0{,}634)$$<div class=\"bt-ans\">$$r\\approx39{,}3^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc lệch</span></p>$$D=|i-r|=|25^\\circ-39{,}3^\\circ|$$<div class=\"bt-ans\">$$D\\approx14{,}3^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Ra không khí (kém chiết quang hơn) nên $r\\gt i$:</p>$$39{,}3^\\circ\\gt25^\\circ\\ \\checkmark$$<p>Tia ló hợp mặt phân cách $90^\\circ-39{,}3^\\circ=50{,}7^\\circ$, nghiêng thêm về phía mặt phân cách so với tia tới.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=25^\\circ$</p><p>b) $r\\approx39{,}3^\\circ$</p><p>c) $D\\approx14{,}3^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: tia <strong>đi ra từ môi trường có $n$</strong> và đề cho <strong>góc hợp mặt phân cách</strong> → đổi sang $i$, đặt đúng $n_1$ (môi trường chứa tia tới), rồi bấm $\\sin^{-1}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Tia sáng đi từ thuỷ tinh ra không khí: góc khúc xạ và góc lệch",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "problem_html": "<p>Một tia sáng truyền trong khối thuỷ tinh có chiết suất $n = 1{,}5$ tới mặt phân cách với không khí. Tia tới hợp với mặt phân cách góc $65^\\circ$.</p><ol type=\"a\"><li>Tính góc tới.</li><li>Tính góc khúc xạ của tia ló ra không khí.</li><li>Tính góc lệch $D$ giữa tia ló và phương của tia tới.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia sáng đi từ khối thuỷ tinh ở dưới ra không khí ở trên qua mặt phân cách ngang và bị gãy khúc\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"232.0\" x2=\"210.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"230.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"179.5\" y1=\"254.0\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M202.3,147.7 L210.0,140.0 L212.8,150.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"255.8\" y2=\"31.3\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M247.2,37.8 L255.8,31.3 L257.1,42.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Thuỷ tinh (n = 1,5)</text><circle cx=\"179.5\" cy=\"254.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"179.5;210.0;255.8\" keyTimes=\"0.0000;0.6000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"254.0;140.0;31.3\" keyTimes=\"0.0000;0.6000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): hình mẫu, số liệu khác đề.<br>Chấm sáng chạy nhanh lên khi ra không khí.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia sáng trong thuỷ tinh hợp mặt phân cách góc 65 độ; góc tới chưa biết; tia ló ra không khí cần tìm\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"232.0\" x2=\"210.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"230.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"160.1\" y1=\"246.9\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M201.1,146.2 L210.0,140.0 L210.9,150.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M210.0,174.0 A34,34 0 0 1 195.6,170.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\"/><text x=\"187.5\" y=\"246.5\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">i = ?</text><path d=\"M182.1,199.8 A66,66 0 0 1 144.0,140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"137.5\" y=\"191.2\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">65°</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Thuỷ tinh (n = 1,5)</text><text x=\"300\" y=\"62\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">tia ló: tự vẽ, tìm r</text></svg><figcaption>Dữ kiện: góc đề cho đo từ mặt phân cách (nét đứt).<br>Góc tới i đo từ pháp tuyến.<br>Tia ló và góc khúc xạ r là điều cần tìm.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;khối thuỷ tinh có chiết suất $n = 1{,}5$ tới mặt phân cách với không khí&quot;</td><td>Tia tới trong thuỷ tinh: $n_1 = 1{,}5$; tia khúc xạ trong không khí: $n_2 = 1$</td><td>⚠ $n_1$ là chiết suất của môi trường chứa <strong>tia tới</strong>, $n_2$ của môi trường chứa tia khúc xạ</td></tr><tr><td>&quot;Tia tới hợp với mặt phân cách góc $65^\\circ$&quot;</td><td>Góc hợp mặt phân cách: $65^\\circ$</td><td>⚠ Chưa phải góc tới: đo góc từ pháp tuyến</td></tr><tr><td>&quot;Tính góc tới&quot;</td><td>Cần $i$</td><td>Pháp tuyến vuông góc mặt phân cách</td></tr><tr><td>&quot;Tính góc khúc xạ của tia ló&quot;</td><td>Cần $r$</td><td>$n_1\\sin i=n_2\\sin r$; rút $\\sin r$ trước rồi mới tìm góc</td></tr><tr><td>&quot;góc lệch $D$ giữa tia ló và phương của tia tới&quot;</td><td>Cần $D$</td><td>$D=|i-r|$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy tia <b>đi ra từ thuỷ tinh</b> (hoặc nước) → $n_1\\sin i=n_2\\sin r$ với $n_1$ là của môi trường chứa tia tới.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới",
+     "hoi": "Góc tới $i$ bằng bao nhiêu độ?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay lấy luôn số đo của đề làm góc tới. Góc tới đo từ pháp tuyến, không đo từ mặt phân cách."
+    },
+    {
+     "tieu_de": "Tính sin của góc khúc xạ",
+     "hoi": "$\\sin r$ bằng bao nhiêu?",
+     "dap_so": 0.634,
+     "sai_so": 0.005,
+     "loi_hay_gap": "Hay đặt $n$ nhầm phía. Tia tới nằm trong môi trường nào thì $n_1$ là chiết suất của môi trường đó.",
+     "chon_buoc_ke": [
+      {
+       "text": "$1{,}5\\sin i=1\\cdot\\sin r$: tia tới ở trong thuỷ tinh",
+       "dung": true
+      },
+      {
+       "text": "$1\\cdot\\sin i=1{,}5\\sin r$: coi như tia đi từ không khí vào thuỷ tinh",
+       "dung": false,
+       "vi_sao": "Tia tới ở trong thuỷ tinh nên $n_1=1{,}5$; đặt ngược là tính cho đường đi từ không khí vào thuỷ tinh."
+      },
+      {
+       "text": "$r=\\dfrac{i}{1{,}5}$: chia góc cho chiết suất",
+       "dung": false,
+       "vi_sao": "Định luật liên hệ sin của các góc, không phải bản thân các góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc khúc xạ",
+     "hoi": "Góc khúc xạ $r$ bằng bao nhiêu độ?",
+     "dap_so": 39.3,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay bấm nhầm phím $\\sin$ thay vì $\\sin^{-1}$, hoặc để máy tính ở chế độ radian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bấm $\\sin^{-1}$ của giá trị $\\sin r$ vừa có, máy ở chế độ độ",
+       "dung": true
+      },
+      {
+       "text": "Bấm $\\sin$ của giá trị $\\sin r$ vừa có",
+       "dung": false,
+       "vi_sao": "Đã có $\\sin r$ thì phải bấm $\\sin^{-1}$ để ra góc; bấm $\\sin$ lần nữa sẽ cho kết quả không phải góc."
+      },
+      {
+       "text": "Lấy kết quả rồi cộng thêm $90^\\circ$ vì $r$ đo từ mặt phân cách",
+       "dung": false,
+       "vi_sao": "$r$ đo từ pháp tuyến; $\\sin^{-1}$ cho thẳng góc này, không cần đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch",
+     "hoi": "Góc lệch $D$ bằng bao nhiêu độ?",
+     "dap_so": 14.3,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay trừ góc đo từ hai gốc khác nhau (một góc đo từ mặt phân cách, một góc đo từ pháp tuyến).",
+     "chon_buoc_ke": [
+      {
+       "text": "$D=|i-r|$ với $i$, $r$ cùng đo từ pháp tuyến",
+       "dung": true
+      },
+      {
+       "text": "$D=|65^\\circ-r|$, dùng góc hợp mặt phân cách",
+       "dung": false,
+       "vi_sao": "$65^\\circ$ đo từ mặt phân cách còn $r$ đo từ pháp tuyến: hai góc khác gốc, không trừ cho nhau được."
+      },
+      {
+       "text": "$D=i+r$",
+       "dung": false,
+       "vi_sao": "Phương truyền đổi một lượng bằng hiệu của hai góc cùng đo từ pháp tuyến, không phải tổng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định luật phản xạ:</strong> góc phản xạ bằng góc tới, $i'=i$; tia tới và tia phản xạ nằm hai bên pháp tuyến.</li><li><strong>Định luật khúc xạ:</strong> $n_1\\sin i=n_2\\sin r$.</li><li>Chiết suất: $n=\\dfrac{c}{v}$, $c=3\\cdot10^8\\ \\text{m/s}$.</li><li>⚠ <strong>Điều kiện:</strong> các góc đo từ pháp tuyến; tia tới ở không khí nên $n_1=1$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới</span></p><p>Góc hợp mặt chất lỏng là $35^\\circ$:</p>$$i=90^\\circ-35^\\circ$$<div class=\"bt-ans\">$$i=55^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc khúc xạ</span></p><p>Góc phản xạ: $i'=i=55^\\circ$.</p><p>Hai tia nằm hai bên pháp tuyến, nên góc giữa chúng là $180^\\circ-i'-r$:</p>$$180^\\circ-55^\\circ-r=95^\\circ$$<div class=\"bt-ans\">$$r=30^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiết suất</span></p><p>Tia tới ở không khí, $n_1=1$:</p>$$n_1\\sin i=n_2\\sin r$$$$n=\\dfrac{\\sin55^\\circ}{\\sin30^\\circ}=\\dfrac{0{,}819}{0{,}5}$$<div class=\"bt-ans\">$$n\\approx1{,}64$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ ánh sáng trong chất lỏng</span></p>$$v=\\dfrac{c}{n}$$$$v=\\dfrac{3\\cdot10^8}{1{,}64}$$<div class=\"bt-ans\">$$v\\approx1{,}83\\cdot10^8\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Vào môi trường chiết quang hơn nên $r\\lt i$: $30^\\circ\\lt55^\\circ$ ✓</p><p>$n\\gt1$ và $v\\lt c$: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=55^\\circ$; $r=30^\\circ$</p><p>b) $n\\approx1{,}64$</p><p>c) $v\\approx1{,}83\\cdot10^8\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tia phản xạ</strong> cùng <strong>tia khúc xạ</strong> → $i'=i$, rồi $180^\\circ-i'-r$ là góc giữa hai tia; có $i$, $r$ thì tìm $n$ và $v$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Tia phản xạ và tia khúc xạ: tìm chiết suất và tốc độ ánh sáng",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "problem_html": "<p>Tia laser truyền trong không khí tới mặt một chất lỏng trong suốt, hợp với mặt chất lỏng góc $35^\\circ$. Tia phản xạ và tia khúc xạ hợp nhau góc $95^\\circ$. Lấy $c = 3 \\cdot 10^8\\ \\text{m/s}$.</p><ol type=\"a\"><li>Tính góc tới và góc khúc xạ.</li><li>Tính chiết suất của chất lỏng.</li><li>Tính tốc độ ánh sáng trong chất lỏng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia laser tới mặt chất lỏng: một phần phản xạ lên trên, một phần khúc xạ xuống dưới\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"48.0\" x2=\"210.0\" y2=\"232.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"54.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"119.6\" y1=\"64.2\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M206.3,129.8 L210.0,140.0 L199.3,138.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"270.3\" y2=\"241.5\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M270.2,230.7 L270.3,241.5 L260.8,236.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"300.4\" y2=\"64.2\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M291.1,65.8 L300.4,64.2 L297.2,73.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chất lỏng (hình mẫu)</text><circle cx=\"119.6\" cy=\"64.2\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"119.6;210.0;270.3\" keyTimes=\"0.0000;0.4000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"64.2;140.0;241.5\" keyTimes=\"0.0000;0.4000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"210.0\" cy=\"140.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0\"><animate attributeName=\"cx\" values=\"210.0;210.0;300.4;300.4\" keyTimes=\"0.0000;0.4000;0.8000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"140.0;140.0;64.2;64.2\" keyTimes=\"0.0000;0.4000;0.8000;1.0000\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4000\" calcMode=\"discrete\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): hình mẫu, số liệu khác đề, không có điều kiện góc giữa hai tia.<br>Chấm xanh lá đi vào chất lỏng, chấm cam phản xạ.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia tới hợp mặt chất lỏng góc 35 độ, có tia phản xạ và tia khúc xạ; góc giữa hai tia này là 95 độ\"><rect x=\"10\" y=\"140\" width=\"400\" height=\"130\" fill=\"rgba(56,189,248,.10)\"/><line x1=\"10.0\" y1=\"140.0\" x2=\"410.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"48.0\" x2=\"210.0\" y2=\"232.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"218.0\" y=\"54.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">pháp tuyến</text><line x1=\"113.3\" y1=\"72.3\" x2=\"210\" y2=\"140\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M205.4,130.2 L210.0,140.0 L199.2,139.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"269.0\" y2=\"242.2\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M269.0,231.4 L269.0,242.2 L259.6,236.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210\" y1=\"140\" x2=\"306.7\" y2=\"72.3\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M297.3,73.1 L306.7,72.3 L302.7,80.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M210.0,106.0 A34,34 0 0 0 182.1,120.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\"/><text x=\"186.0\" y=\"98.9\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">i</text><path d=\"M155.9,102.1 A66,66 0 0 0 144.0,140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"128.0\" y=\"119.1\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">35°</text><path d=\"M260.0,226.6 A100,100 0 0 0 291.9,82.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"331.3\" y=\"170.1\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">95°</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"266\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chất lỏng</text></svg><figcaption>Dữ kiện: góc 35° đo từ mặt phân cách, góc 95° giữa tia phản xạ (cam) và tia khúc xạ (xanh).<br>Hình minh hoạ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;truyền trong không khí tới mặt một chất lỏng&quot;</td><td>$n_1 = 1$; chất lỏng: $n_2$ chưa biết</td><td>⚠ Các góc trong định luật đều đo từ <strong>pháp tuyến</strong></td></tr><tr><td>&quot;hợp với mặt chất lỏng góc $35^\\circ$&quot;</td><td>Góc hợp mặt phân cách: $35^\\circ$</td><td>Đổi sang góc với pháp tuyến</td></tr><tr><td>&quot;Tia phản xạ và tia khúc xạ hợp nhau góc $95^\\circ$&quot;</td><td>Góc giữa hai tia: $95^\\circ$</td><td>Góc phản xạ so với góc tới; hai tia nằm hai bên pháp tuyến</td></tr><tr><td>&quot;Tính góc tới và góc khúc xạ&quot;</td><td>Cần $i$, $r$</td><td>Quan hệ giữa $i'$, $r$ và góc giữa hai tia</td></tr><tr><td>&quot;Tính chiết suất&quot;</td><td>Cần $n_2$</td><td>$n_1\\sin i=n_2\\sin r$</td></tr><tr><td>&quot;Tính tốc độ ánh sáng trong chất lỏng&quot;</td><td>$c = 3\\cdot10^8\\ \\text{m/s}$; cần $v$</td><td>$n=\\dfrac{c}{v}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tia phản xạ</b> cùng <b>tia khúc xạ</b> → $i'=i$, rồi $180^\\circ-i'-r$ là góc giữa hai tia.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới",
+     "hoi": "Góc tới $i$ bằng bao nhiêu độ?",
+     "dap_so": 55,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay lấy luôn số đo của đề làm góc tới. Góc tới đo từ pháp tuyến, không đo từ mặt phân cách."
+    },
+    {
+     "tieu_de": "Góc khúc xạ",
+     "hoi": "Góc khúc xạ $r$ bằng bao nhiêu độ?",
+     "dap_so": 30,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay coi góc giữa hai tia bằng tổng $i'+r$, hoặc dùng điều kiện của trường hợp hai tia vuông góc.",
+     "chon_buoc_ke": [
+      {
+       "text": "$i'=i$, rồi $180^\\circ-i'-r$ bằng góc giữa hai tia",
+       "dung": true
+      },
+      {
+       "text": "Góc giữa hai tia bằng $i'+r$, nên $r=95^\\circ-i'$",
+       "dung": false,
+       "vi_sao": "Hai tia nằm hai bên pháp tuyến: góc giữa chúng cộng với $i'$ và $r$ mới bằng $180^\\circ$."
+      },
+      {
+       "text": "$i'+r=90^\\circ$ như khi hai tia vuông góc",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi góc giữa hai tia là $90^\\circ$; đề cho góc khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiết suất",
+     "hoi": "Chiết suất của chất lỏng bằng bao nhiêu?",
+     "dap_so": 1.64,
+     "sai_so": 0.02,
+     "loi_hay_gap": "Hay lật tỉ số hai sin, hoặc dùng góc hợp mặt phân cách thay cho góc tới.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n=\\dfrac{\\sin i}{\\sin r}$ với $n_1=1$",
+       "dung": true
+      },
+      {
+       "text": "$n=\\dfrac{\\sin r}{\\sin i}$",
+       "dung": false,
+       "vi_sao": "Lật ngược tỉ số cho $n$ nhỏ hơn $1$, vô lí với chất lỏng."
+      },
+      {
+       "text": "$n=\\dfrac{\\sin35^\\circ}{\\sin r}$, lấy góc hợp mặt chất lỏng làm góc tới",
+       "dung": false,
+       "vi_sao": "$35^\\circ$ đo từ mặt phân cách, không phải góc tới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ ánh sáng trong chất lỏng",
+     "hoi": "Tốc độ ánh sáng trong chất lỏng bằng bao nhiêu (đơn vị $10^8\\ \\text{m/s}$)?",
+     "dap_so": 1.83,
+     "sai_so": 0.02,
+     "don_vi": "·10⁸ m/s",
+     "loi_hay_gap": "Hay nhân $c$ với $n$. Trong chất lỏng ánh sáng chậm hơn trong chân không.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{c}{n}$",
+       "dung": true
+      },
+      {
+       "text": "$v=c\\cdot n$",
+       "dung": false,
+       "vi_sao": "Ánh sáng trong môi trường chậm hơn trong chân không, nên $v$ phải nhỏ hơn $c$."
+      },
+      {
+       "text": "$v=\\dfrac{n}{c}$",
+       "dung": false,
+       "vi_sao": "Sai đơn vị: kết quả không còn là m/s."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định luật khúc xạ:</strong> $n_1\\sin i=n_2\\sin r$ ở mỗi mặt phân cách.</li><li>Tia khúc xạ ở mặt phân cách này là tia tới của mặt phân cách kế tiếp.</li><li>⚠ <strong>Điều kiện:</strong> các mặt phân cách song song nên các pháp tuyến song song nhau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc trong nước</span></p><p>Mặt nước–thuỷ tinh: tia tới nằm trong nước, góc $r_1$ (cần tìm); tia khúc xạ nằm trong thuỷ tinh, góc $28^\\circ$.</p>$$\\dfrac43\\sin r_1=1{,}5\\sin28^\\circ$$$$\\sin r_1=\\dfrac{1{,}5\\cdot\\sin28^\\circ}{4/3}\\approx0{,}528$$<div class=\"bt-ans\">$$r_1\\approx31{,}9^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc tới ở mặt nước</span></p><p>Mặt không khí–nước: tia khúc xạ nằm trong nước, góc $r_1$ (pháp tuyến song song nên cùng góc với tia tới của mặt dưới).</p>$$1\\cdot\\sin i=\\dfrac43\\sin r_1$$$$\\sin i=\\dfrac43\\cdot0{,}528\\approx0{,}704$$<div class=\"bt-ans\">$$i\\approx44{,}8^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Rút hết nước</span></p><p>Còn một mặt không khí–thuỷ tinh với đúng góc tới $i$ ở câu b:</p>$$\\sin r_2=\\dfrac{\\sin i}{1{,}5}=\\dfrac{0{,}704}{1{,}5}\\approx0{,}469$$<p>Chiết suất nước triệt tiêu giữa hai lần khúc xạ:</p>$$\\sin i=\\dfrac43\\sin r_1=1{,}5\\sin28^\\circ$$<div class=\"bt-ans\"><p>Góc khúc xạ trong thuỷ tinh <strong>không đổi</strong>, vẫn $28^\\circ$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Cách khác, bỏ qua lớp nước:</p>$$\\sin i=1{,}5\\sin28^\\circ\\approx0{,}704\\ \\checkmark$$<p>Mỗi lần vào môi trường chiết quang hơn, tia lại gần pháp tuyến hơn:</p>$$28^\\circ\\lt31{,}9^\\circ\\lt44{,}8^\\circ\\ \\checkmark$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $r_1\\approx31{,}9^\\circ$</p><p>b) $i\\approx44{,}8^\\circ$</p><p>c) Không đổi, vẫn $28^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: <strong>nhiều lớp song song</strong> → áp dụng định luật từng mặt, góc khúc xạ lớp trên là góc tới lớp dưới; chiết suất lớp giữa không ảnh hưởng góc ngoài cùng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 5 · Nhiều lớp song song: không khí, nước, thuỷ tinh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "problem_html": "<p>Chiếu một tia laser từ không khí xuống một bể nước. Đáy bể là một tấm thuỷ tinh phẳng. Các mặt phân cách song song với nhau. Chiết suất của nước là $\\dfrac{4}{3}$, của thuỷ tinh là $1{,}5$.</p><p>Trong tấm thuỷ tinh, tia laser hợp với pháp tuyến góc $28^\\circ$.</p><ol type=\"a\"><li>Trong nước, tia laser hợp với pháp tuyến góc bao nhiêu?</li><li>Tính góc tới của tia laser ở mặt nước.</li><li>Rút hết nước, giữ nguyên góc tới ở câu b. Góc khúc xạ trong thuỷ tinh thay đổi thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Tia sáng đi từ không khí qua lớp nước rồi vào lớp thuỷ tinh, gãy khúc ở hai mặt phân cách song song\"><rect x=\"10\" y=\"108\" width=\"400\" height=\"78\" fill=\"rgba(56,189,248,.10)\"/><rect x=\"10\" y=\"186\" width=\"400\" height=\"82\" fill=\"rgba(56,189,248,.24)\"/><line x1=\"10.0\" y1=\"108.0\" x2=\"410.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"10.0\" y1=\"186.0\" x2=\"410.0\" y2=\"186.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"10.0\" y1=\"268.0\" x2=\"410.0\" y2=\"268.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"190.0\" y1=\"68.0\" x2=\"190.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"256.6\" y1=\"146.0\" x2=\"256.6\" y2=\"226.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"41.0\" y1=\"22.0\" x2=\"190.0\" y2=\"108.0\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M184.6,98.6 L190.0,108.0 L179.2,108.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"190.0\" y1=\"108.0\" x2=\"256.6\" y2=\"186.0\" stroke=\"#38bdf8\" stroke-width=\"2.6\"/><path d=\"M254.6,175.3 L256.6,186.0 L246.4,182.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"256.6\" y1=\"186.0\" x2=\"314.6\" y2=\"268.0\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M313.6,257.2 L314.6,268.0 L304.8,263.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"190.0\" cy=\"108.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"256.6\" cy=\"186.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"330\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước (n = 4/3)</text><text x=\"16\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thuỷ tinh (n = 1,5)</text><circle cx=\"41.0\" cy=\"22.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"41.0;190.0;256.6;314.6\" keyTimes=\"0.0000;0.3744;0.6721;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"22.0;108.0;186.0;268.0\" keyTimes=\"0.0000;0.3744;0.6721;1.0000\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): hình mẫu, tia tới từ không khí với góc khác đề.<br>Chấm sáng chạy chậm dần qua từng lớp.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 280\" role=\"img\" aria-label=\"Ba lớp song song: không khí, nước, thuỷ tinh. Chỉ biết tia trong thuỷ tinh hợp pháp tuyến góc 28 độ; hai góc ở trên cần tìm\"><rect x=\"10\" y=\"108\" width=\"400\" height=\"78\" fill=\"rgba(56,189,248,.10)\"/><rect x=\"10\" y=\"186\" width=\"400\" height=\"82\" fill=\"rgba(56,189,248,.24)\"/><line x1=\"10.0\" y1=\"108.0\" x2=\"410.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"10.0\" y1=\"186.0\" x2=\"410.0\" y2=\"186.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"10.0\" y1=\"268.0\" x2=\"410.0\" y2=\"268.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"124.0\" x2=\"210.0\" y2=\"256.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"186\" x2=\"247.6\" y2=\"256.6\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M248.0,245.8 L247.6,256.6 L238.4,250.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"210.0\" cy=\"186.0\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M210.0,222.0 A36,36 0 0 0 226.9,217.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.0\"/><text x=\"225.5\" y=\"245.3\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">28°</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Không khí</text><text x=\"16\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nước (n = 4/3)</text><text x=\"16\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thuỷ tinh (n = 1,5)</text><line x1=\"130.0\" y1=\"63.0\" x2=\"130.0\" y2=\"143.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"130.0\" cy=\"108.0\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M130.0,78.0 A30,30 0 0 0 115.0,82.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"117.6\" y=\"66.6\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">i = ?</text><path d=\"M210.0,156.0 A30,30 0 0 0 195.0,160.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\"/><text x=\"197.6\" y=\"144.6\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">r<tspan dy=\"4\" font-size=\"11\">1</tspan> = ?</text></svg><figcaption>Dữ kiện: chỉ có tia trong thuỷ tinh (cam) với góc 28° so với pháp tuyến.<br>Các mặt phân cách song song nên pháp tuyến song song.<br>Cung nét đứt đánh dấu hai góc cần tìm: i (góc tới ở mặt nước) và r₁ (góc trong nước); số đo chưa biết.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;Các mặt phân cách song song với nhau&quot;</td><td>Hai mặt phân cách song song</td><td>⚠ Điều kiện: các pháp tuyến cũng song song nhau</td></tr><tr><td>&quot;nước $\\dfrac{4}{3}$, thuỷ tinh $1{,}5$&quot;</td><td>$n_{\\text{nước}}=\\dfrac43$; $n_{\\text{kính}}=1{,}5$; không khí $n=1$</td><td>Mỗi mặt phân cách có một cặp $n_1$, $n_2$ riêng</td></tr><tr><td>&quot;Trong tấm thuỷ tinh, tia laser hợp với pháp tuyến góc $28^\\circ$&quot;</td><td>Góc trong thuỷ tinh: $28^\\circ$</td><td>Đây là góc khúc xạ hay góc tới, ở mặt phân cách nào?</td></tr><tr><td>&quot;Trong nước, tia laser hợp với pháp tuyến góc bao nhiêu&quot;</td><td>Cần góc trong nước</td><td>$n_1\\sin i=n_2\\sin r$ ở mặt nước–thuỷ tinh</td></tr><tr><td>&quot;Tính góc tới của tia laser ở mặt nước&quot;</td><td>Cần $i$ ở mặt không khí–nước</td><td>Tia khúc xạ ở mặt này nằm trong môi trường nào?</td></tr><tr><td>&quot;Rút hết nước, giữ nguyên góc tới ở câu b&quot;</td><td>Còn một mặt không khí–thuỷ tinh</td><td>$n_1\\sin i=n_2\\sin r$ cho mặt phân cách còn lại</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều lớp song song</b> → áp dụng định luật từng mặt phân cách; góc khúc xạ lớp trên là góc tới lớp dưới.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc trong nước",
+     "hoi": "Trong nước, tia laser hợp với pháp tuyến góc bao nhiêu độ?",
+     "dap_so": 31.9,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay dùng cùng một chiết suất cho cả hai phía của mặt phân cách. Ở mặt nước–thuỷ tinh, một phía là nước, một phía là thuỷ tinh."
+    },
+    {
+     "tieu_de": "Góc tới ở mặt nước",
+     "hoi": "Góc tới ở mặt nước bằng bao nhiêu độ?",
+     "dap_so": 44.8,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Hay lấy góc trong thuỷ tinh áp thẳng cho mặt nước. Ở mặt này, tia khúc xạ nằm trong nước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Mặt không khí–nước: $\\sin i=\\dfrac43\\sin r_1$, với $r_1$ là góc trong nước",
+       "dung": true
+      },
+      {
+       "text": "Dùng góc trong thuỷ tinh: $\\sin i=\\dfrac43\\sin28^\\circ$",
+       "dung": false,
+       "vi_sao": "Tia ở mặt nước khúc xạ vào nước, không phải vào thuỷ tinh; góc trong nước mới là góc khúc xạ ở mặt này."
+      },
+      {
+       "text": "$\\sin i=1{,}5\\sin r_1$",
+       "dung": false,
+       "vi_sao": "Mặt nước là mặt phân cách không khí–nước; chiết suất $1{,}5$ là của thuỷ tinh, không có mặt ở đây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Rút hết nước",
+     "hoi": "Rút hết nước, giữ nguyên góc tới ở câu b. Góc khúc xạ trong thuỷ tinh thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Không đổi",
+       "dung": true
+      },
+      {
+       "text": "Lớn hơn, vì không còn nước làm tia lệch thêm",
+       "dung": false,
+       "vi_sao": "Thử tính $\\sin r_2=\\dfrac{\\sin i}{1{,}5}$ với $\\sin i$ ở câu b rồi so với góc đề cho."
+      },
+      {
+       "text": "Nhỏ hơn, vì thuỷ tinh tiếp xúc trực tiếp với không khí",
+       "dung": false,
+       "vi_sao": "Cũng thử tính như trên: kết quả không nhỏ hơn góc đề cho."
+      }
+     ],
+     "loi_hay_gap": "Hay nghĩ bỏ lớp nước thì tia phải lệch khác đi. Thử tính lại với mặt không khí–thuỷ tinh rồi so với góc đề cho.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng định luật cho mặt không khí–thuỷ tinh với $i$ ở câu b",
+       "dung": true
+      },
+      {
+       "text": "Tia vào thuỷ tinh với góc tới bằng góc trong nước vừa tính",
+       "dung": false,
+       "vi_sao": "Khi không còn nước thì góc tới thuỷ tinh là góc đã tính ở mặt không khí, không phải góc trong nước."
+      },
+      {
+       "text": "Không tính được vì thiếu chiết suất của nước",
+       "dung": false,
+       "vi_sao": "Chiết suất nước không còn cần nữa: chỉ còn mặt phân cách không khí–thuỷ tinh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
