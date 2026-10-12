@@ -12,8 +12,9 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 ## Vì sao bài có dạng này (đọc để không phá)
 - Đề cuối kỳ 5 Part: Part 1 (10 câu định nghĩa/ảnh → từ) + Part 2 (Article chép nguyên văn giáo trình → điền 1 từ, Đúng/Sai)
   + Part 3 (điền từ có hộp) = **7 điểm, toàn nhận diện**. Part 4–5 dịch = 3 điểm. Em yếu qua 5 điểm bằng Part 1–3.
-- Vì vậy tab Học = 8 mục: thi gì → đoán ảnh → 20 từ ⭐ (4 cụm × 5 từ, quiz sau mỗi cụm) → Article từng câu (chạm hiện dịch,
-  bài tập kiểu Part 2) → 2 mẫu câu → gắn nhãn hình → SOP kiểu Part 3 → Trả bài. Tab Bài mẫu = đề 5 Part, Part 1–3 là quiz
+- Vì vậy tab Học = 8 mục: thi gì → đoán ảnh → 20 từ ⭐ (4 cụm × 5 từ, quiz sau mỗi cụm) → Article: **đoán nghĩa từ in đậm trước**
+  (cách thầy dạy: em tự dịch từ quan trọng, đoán nghĩa, rồi mới đọc và làm; script tự lấy `<b>` trong câu), từng câu chạm hiện dịch,
+  bài tập kiểu Part 2 → 2 mẫu câu → gắn nhãn hình → SOP kiểu Part 3 → Trả bài. Tab Bài mẫu = đề 5 Part, Part 1–3 là quiz
   tự chấm, Part 4–5 bản dịch mở dần. Tab Luyện tập = 20 trắc nghiệm + 3 đúng/sai (engine đề có sẵn; không có kiểu
   "điền một từ" vì `short_answer` chỉ nhận số).
 - Quy tắc trình bày thầy chốt: **mỗi ý một dòng** (chiến thuật, ghi chú, phản hồi quiz là mảng hoặc tự tách câu);
