@@ -17,7 +17,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
 - Đã chạy 12/10 20:09: `20261012120000_kiem_tra_dau_vao` (bảng entry_diagnostics + diagnostic_get/submit/reset). Code UI chưa deploy, chưa thử HS thật; chưa có nút "cho làm lại" trên UI thầy/TA (RPC `diagnostic_reset` có sẵn).
 - **ĐANG CHỜ 13/10**: `20261013100000_lop_avcn_anh_van_chuyen_nganh` (môn + lớp `avcn` + chương + 10 bài, chỉ chèn dữ liệu) → rồi `npx tsx scripts/upload-lesson.mts content/lesson-samples/avcn-chapter-8-chipping-machining/bundle.json --lesson <id Chapter 8>` → deploy. Skill soạn 9 chương còn lại: `.claude/skills/soan-bai-avcn/`.
-- **ĐANG CHỜ 13/10**: `20261013150000_chapter_mastery_radar` (RPC `get_my_chapter_mastery_pct`, chỉ tạo hàm). UI mạng nhện giao Gemini/Cursor theo `docs/PROMPT-GEMINI-RADAR-NANG-LUC-2026-10-13.md`; Claude `kiem-code` soát trước khi merge.
+- Đã chạy 13/10 00:44: `20261013150000_chapter_mastery_radar` (RPC `get_my_chapter_mastery_pct`). UI mạng nhện giao Gemini/Cursor theo `docs/PROMPT-GEMINI-RADAR-NANG-LUC-2026-10-13.md`; Claude `kiem-code` soát trước khi merge.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 

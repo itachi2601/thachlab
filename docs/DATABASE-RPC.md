@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 314 hàm, sinh tự động 2026-10-12
+# Hàm SQL / RPC (schema public) — 315 hàm, sinh tự động 2026-10-12
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -39,6 +39,7 @@ repo — xem trên Supabase Dashboard).
 - `get_class_topic_matrix(p_students uuid[], p_exam bigint)` → TABLE(topic_id bigint, topic_name text, form text, total integer, wrong integer)
 - `get_exam_rank(p_exam_id bigint)` → TABLE(rnk integer, total integer, my_best numeric)
 - `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
+- `get_my_chapter_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, pct integer, level text)
 - `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
 - `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
