@@ -1,0 +1,111 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 13. Năng lượng của dòng điện và công suất điện",
+ "lesson_id": 91,
+ "nguon_trong_bai": "content/lesson-samples/l9-nang-luong-dong-dien-cong-suat/theory.html",
+ "id": "tn-l9-congsuat-02",
+ "ten": "Đọc công tơ điện khi đun ấm điện 1 000 W trong 30 phút",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "congsuat.a_bang_pt",
+  "congsuat.kwh_cong_to"
+ ],
+ "muc_tieu": "Thấy công tơ đo điện năng theo kWh; số tăng thêm khớp A = P·t với P tính bằng kW, t tính bằng giờ.",
+ "dung_cu": [
+  {
+   "ten": "Công tơ điện của gia đình (có ô số lẻ phần mười)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ấm điện 220 V – 1 000 W",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giờ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Tắt mọi thiết bị khác trong nhà.",
+   "Đọc công tơ, bật ấm ở đúng 220 V trong 30 phút, đọc lại công tơ."
+  ],
+  "quan_sat": [
+   "Công tơ tăng từ 1234,6 lên 1235,1."
+  ],
+  "rut_ra": [
+   "Ấm tiêu thụ 0,5 kWh.",
+   "A = P·t = 1 kW · 0,5 h = 0,5 kWh: khớp số đọc trên công tơ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất thiết bị",
+   "don_vi": "W",
+   "kieu": "dieu_chinh",
+   "min": 100,
+   "max": 2000,
+   "mac_dinh": 1000,
+   "buoc": 100
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian bật",
+   "don_vi": "h",
+   "kieu": "dieu_chinh",
+   "min": 0.25,
+   "max": 3,
+   "mac_dinh": 0.5,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Điện năng tiêu thụ",
+   "don_vi": "kWh",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "A = P·t (P tính bằng kW, t bằng h)",
+   "số công tơ sau = số trước + A"
+  ],
+  "gia_thiet": [
+   "ấm chạy đúng công suất định mức suốt 30 phút",
+   "chỉ có ấm tiêu thụ điện trong thời gian đo"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "P (W)",
+   "t (h)",
+   "Công tơ trước",
+   "Công tơ sau",
+   "A (kWh)"
+  ],
+  "hang": [
+   [
+    1000.0,
+    0.5,
+    1234.6,
+    1235.1,
+    0.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ A = P·t, chưa phải số đọc thật."
+ },
+ "ket_qua_ky_vong": "Công tơ tăng 0,5 số trong 30 phút.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ công tơ đo công suất (W).",
+  "Chia cho 30 phút thay vì 0,5 giờ."
+ ],
+ "an_toan": "Không chạm tay vào công tơ, dây điện; chỉ đọc số.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Chọn thiết bị và thời gian bật, mặt công tơ quay số theo A = P·t.",
+  "diem_nhan": "Cùng thời gian, thiết bị nhiều oát hơn làm công tơ nhảy nhanh hơn."
+ }
+}

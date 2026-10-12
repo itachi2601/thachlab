@@ -1,0 +1,483 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li><strong>Nêu</strong> được dòng điện có năng lượng (điện năng) và <strong>tính</strong> điện năng tiêu thụ $A = UIt,$ đổi $\text{kWh}$ ra $\text{J}.$</li>
+<li><strong>Nêu</strong> được ý nghĩa công suất điện $P = UI$ và số ghi trên thiết bị, ví dụ 220&nbsp;V – 75&nbsp;W.</li>
+<li><strong>Tính</strong> được điện năng tiêu thụ và tiền điện của một thiết bị trong một tháng.</li>
+</ul>
+<p>Đọc khoảng __PHUT__ phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: ai làm tiền điện tăng gấp đôi?</h3>
+
+<p>Tháng 6, hoá đơn tiền điện nhà Minh gấp đôi tháng 3.</p>
+
+<p>Mẹ bảo: "Tại cái điều hoà." Minh cãi: "Điều hoà chỉ bật ban đêm. Củ sạc điện thoại thì cắm cả ngày!"</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Muốn biết thiết bị nào tốn điện hơn, cần biết điều gì về mỗi thiết bị?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q1" id="tl91-q1a"><label for="tl91-q1a" class="tl-opt tl-no">A. Chỉ cần biết thiết bị được bật bao lâu</label>
+<input type="radio" name="tl91-q1" id="tl91-q1b"><label for="tl91-q1b" class="tl-opt tl-no">B. Chỉ cần biết số oát ghi trên thiết bị</label>
+<input type="radio" name="tl91-q1" id="tl91-q1c"><label for="tl91-q1c" class="tl-opt tl-ok">C. Cả số oát ghi trên máy lẫn thời gian bật</label>
+<input type="radio" name="tl91-q1" id="tl91-q1d"><label for="tl91-q1d" class="tl-opt tl-no">D. Thiết bị nào to hơn, nặng hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Tốn điện phụ thuộc cả "mạnh cỡ nào" (công suất) lẫn "dùng bao lâu" (thời gian).<br>Điều hoà khoảng $1\,000\ \text{W},$ củ sạc khoảng $10\ \text{W}$ khi đang sạc.<br>Giả sử củ sạc cắm 24 giờ cho dễ so: điều hoà bật 8 giờ vẫn tốn gấp hơn 30 lần.<br>Bài này cho em công thức để tính.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chỉ xét thời gian (A) thì củ sạc "thắng", nhưng nó yếu hơn điều hoà rất nhiều.<br>Chỉ xét số oát (B) thì quên rằng bật càng lâu càng tốn.<br>Kích thước (D) không quyết định: bếp từ nhỏ mà mỗi giờ tốn điện hơn tủ lạnh to.<br>Thử nghĩ: tốn điện = "mạnh cỡ nào" và "dùng bao lâu".</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: điện năng và công suất điện</h3>
+
+<h4>1. Dòng điện có năng lượng</h4>
+
+<p><strong>🔑 Dòng điện mang năng lượng · điện năng</strong></p>
+
+<ul>
+<li>Dòng điện làm quạt quay, bàn là nóng, đèn sáng: nó có năng lượng, gọi là <strong>điện năng</strong>.</li>
+<li>Thiết bị điện chuyển điện năng thành dạng năng lượng khác:</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Thiết bị</th><th>Điện năng chuyển chủ yếu thành</th></tr>
+</thead>
+<tbody>
+<tr><td>Bàn là, nồi cơm điện</td><td>nhiệt năng</td></tr>
+<tr><td>Quạt, máy bơm</td><td>cơ năng</td></tr>
+<tr><td>Đèn LED</td><td>năng lượng ánh sáng</td></tr>
+<tr><td>Sạc điện thoại</td><td>năng lượng hoá học trong pin</td></tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>Luôn có một phần điện năng thành nhiệt.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🤔 Thử nhanh: máy sấy tóc chuyển điện năng thành gì?</summary>
+<p>Nhiệt năng: luồng gió nóng.<br>Cơ năng: quạt bên trong quay.</p>
+</details>
+
+<h4>2. Công suất điện</h4>
+
+<p><strong>🔑 P = UI · oát · mỗi giây</strong></p>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-congsuat-01">
+<p class="tl-label">🔬 Thí nghiệm đo: bóng đèn ghi 6&nbsp;V – 3&nbsp;W</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc mạch Hình 2, lần lượt đặt $U = __U_TN1__$ vào đèn. Ampe kế có độ chia $0{,}01\ \text{A}.$ Tính tích $U \cdot I.$</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ, chưa phải số đo thật).<br>Dây tóc từ đỏ mờ tới sáng bình thường ở $6\ \text{V}.$</li>
+<li><strong>Rút ra:</strong> tích $U \cdot I$ càng lớn, đèn càng sáng.<br>Ở đúng $6\ \text{V},$ $U \cdot I = 3{,}0\ \text{W}{:}$ khớp số ghi trên đèn.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$U$ (V)</th><th>$I$ (A)</th><th>$U \cdot I$ (W)</th></tr>
+</thead>
+<tbody>
+__BANG_TN1__
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Để các giá trị $U \cdot I$ trong bảng đáng tin hơn, nên làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q2" id="tl91-q2a"><label for="tl91-q2a" class="tl-opt tl-ok">A. Đo lặp vài lần ở mỗi $U,$ lấy trung bình $I$</label>
+<input type="radio" name="tl91-q2" id="tl91-q2b"><label for="tl91-q2b" class="tl-opt tl-no">B. Thay ampe kế loại $10\ \text{A},$ độ chia $0{,}2\ \text{A}$</label>
+<input type="radio" name="tl91-q2" id="tl91-q2c"><label for="tl91-q2c" class="tl-opt tl-no">C. Tính $U : I$ thay cho $U \cdot I$ cho gọn</label>
+<input type="radio" name="tl91-q2" id="tl91-q2d"><label for="tl91-q2d" class="tl-opt tl-no">D. Tăng $U$ lên $9\ \text{V}$ để dòng lớn, dễ đọc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi lần đọc kim có thể lệch chừng nửa vạch. Đo lặp rồi lấy trung bình làm sai lệch ngẫu nhiên nhỏ đi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: độ chia $0{,}2\ \text{A}$ quá thô so với dòng $0{,}22\ \text{A},$ sai số lớn hơn nhiều.<br>C: $U : I$ là điện trở của đèn, không phải đại lượng đang đo.<br>D: $9\ \text{V}$ vượt $6\ \text{V}$ ghi trên đèn, đèn dễ cháy.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem: nhận xét cả bảng</summary>
+<p>__NHAN_XET_TN1__</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Công suất điện</p>
+<p>Công suất điện cho biết điện năng thiết bị tiêu thụ trong mỗi giây.</p>
+$$P = U I$$
+</div>
+
+<ul>
+<li>$P$ đo bằng <strong>oát</strong> (W), $U$ (V), $I$ (A).</li>
+<li>$1\ \text{W} = 1\ \text{J/s}{:}$ mỗi giây tiêu thụ $1\ \text{J}.$</li>
+<li>$1\ \text{kW} = 1\,000\ \text{W}.$</li>
+</ul>
+
+<h4>3. Số ghi trên thiết bị</h4>
+
+<p><strong>🔑 Định mức · đúng U, đúng oát</strong></p>
+
+<p>Ví dụ bóng đèn ghi 220&nbsp;V – 75&nbsp;W:</p>
+<ul>
+<li>220&nbsp;V là <strong>hiệu điện thế định mức</strong>.<br>Dùng đúng mức này, thiết bị chạy bình thường.</li>
+<li>75&nbsp;W là <strong>công suất định mức</strong>.<br>Công suất khi dùng đúng 220&nbsp;V.</li>
+<li>Dùng hiệu điện thế thấp hơn: công suất nhỏ hơn, đèn tối hơn.</li>
+<li>Dùng hiệu điện thế cao hơn nhiều: thiết bị nóng quá mức, dễ hỏng.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: lắp mạch bóng đèn</summary>
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Bộ lắp mạch điện một chiều"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Lắp pin, công tắc, một bóng đèn. Dùng ampe kế (đầu dò) của sim đọc dòng điện, vôn kế đọc hiệu điện thế giữa hai đầu đèn. Tính $P = UI.$</li>
+<li>Tăng hiệu điện thế của pin. $P$ và độ sáng của đèn đổi thế nào?</li>
+</ol>
+<p>Lưu ý: bóng trong sim coi như điện trở không đổi.<br>Số liệu sim sẽ không khớp bảng thí nghiệm ở trên.</p>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Bóng đèn ghi 220&nbsp;V – 60&nbsp;W đang sáng bình thường. Cường độ dòng điện qua đèn là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q3" id="tl91-q3a"><label for="tl91-q3a" class="tl-opt tl-no">A. $13\,200\ \text{A}$</label>
+<input type="radio" name="tl91-q3" id="tl91-q3b"><label for="tl91-q3b" class="tl-opt tl-no">B. $3{,}67\ \text{A}$</label>
+<input type="radio" name="tl91-q3" id="tl91-q3c"><label for="tl91-q3c" class="tl-opt tl-no">C. $0{,}00027\ \text{A}$</label>
+<input type="radio" name="tl91-q3" id="tl91-q3d"><label for="tl91-q3d" class="tl-opt tl-ok">D. $0{,}27\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sáng bình thường nên $U = 220\ \text{V},$ $P = 60\ \text{W}.$<br>$I = \dfrac{P}{U} = \dfrac{60}{220} \approx 0{,}27\ \text{A}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $13\,200\ \text{A}$ (A) là nhân $U \cdot P.$<br>Ra $3{,}67\ \text{A}$ (B) là chia ngược $\dfrac{U}{P}.$<br>Ra $0{,}00027\ \text{A}$ (C) là đổi $60\ \text{W}$ thành $0{,}06\ \text{kW}$ rồi chia: oát mới đi với vôn và ampe.<br>Từ $P = UI$ suy ra $I = \dfrac{P}{U}.$</p></div>
+</div>
+</div>
+
+<h4>4. Điện năng tiêu thụ</h4>
+
+<p><strong>🔑 A = P·t · kWh · công tơ</strong></p>
+
+<ul>
+<li>Điện năng thiết bị tiêu thụ, cũng gọi là <strong>công của dòng điện</strong>:</li>
+</ul>
+
+$$A = P\,t = U I t$$
+
+<ul>
+<li>$A$ (J), $P$ (W), $t$ (s).</li>
+<li>Đơn vị hay dùng: <strong>kilôoát giờ</strong>, $1\ \text{kWh} = 1\,000\ \text{W} \cdot 3\,600\ \text{s} = 3{,}6 \cdot 10^6\ \text{J}.$</li>
+<li><strong>Công tơ điện</strong> đo điện năng tiêu thụ.</li>
+<li>Mỗi "số điện" trên công tơ là $1\ \text{kWh}.$</li>
+<li>Có sách kí hiệu điện năng là $W.$ Đừng nhầm với đơn vị oát (W).</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-congsuat-02">
+<p class="tl-label">🔬 Ví dụ: đọc công tơ khi đun ấm điện</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> chỉ bật một ấm điện 220&nbsp;V – 1&nbsp;000&nbsp;W (ở đúng $220\ \text{V}$) trong $30$ phút. Đọc công tơ trước và sau (Hình 3).</li>
+<li><strong>Quan sát:</strong> số trên công tơ tăng từ $__CT_TRUOC__$ lên $__CT_SAU__.$</li>
+<li><strong>Rút ra:</strong> ấm tiêu thụ $0{,}5\ \text{kWh},$ khớp $A = P\,t = 1\ \text{kW} \cdot 0{,}5\ \text{h}.$</li>
+</ol>
+</div>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Chỉ bật một máy sấy tóc trong $30$ phút, công tơ tăng thêm $0{,}6$ số. Công suất của máy sấy là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q4" id="tl91-q4a"><label for="tl91-q4a" class="tl-opt tl-no">A. $0{,}3\ \text{W}$</label>
+<input type="radio" name="tl91-q4" id="tl91-q4b"><label for="tl91-q4b" class="tl-opt tl-ok">B. $1\,200\ \text{W}$</label>
+<input type="radio" name="tl91-q4" id="tl91-q4c"><label for="tl91-q4c" class="tl-opt tl-no">C. $1{,}2\ \text{W}$</label>
+<input type="radio" name="tl91-q4" id="tl91-q4d"><label for="tl91-q4d" class="tl-opt tl-no">D. $20\ \text{W}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $0{,}6$ số $= 0{,}6\ \text{kWh},$ $t = 0{,}5\ \text{h}.$<br>$P = \dfrac{A}{t} = \dfrac{0{,}6}{0{,}5} = 1{,}2\ \text{kW} = 1\,200\ \text{W}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}3$ (A) là nhân $A \cdot t$ thay vì chia.<br>Ra $1{,}2$ (C) là được $1{,}2\ \text{kW}$ nhưng quên đổi ra oát.<br>Ra $20$ (D) là chia cho $30$ phút: kWh phải đi với giờ, $30$ phút $= 0{,}5\ \text{h}.$</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📈 Xem thêm: hiệu suất</summary>
+<p>Ấm đun nước: phần lớn điện năng làm nóng nước.<br>Một phần làm nóng vỏ ấm và không khí.</p>
+$$H = \frac{A_{\text{có ích}}}{A} \cdot 100\ \%$$
+<p>Ví dụ: ấm tiêu thụ $0{,}5\ \text{kWh},$ nước nhận $0{,}4\ \text{kWh}.$ Hiệu suất $H = 80\ \%.$</p>
+</details>
+
+<h4>5. Công suất theo điện trở</h4>
+
+<p><strong>🔑 P = I²R · P = U²/R · dây nóng lên</strong></p>
+
+<ul>
+<li>Với một điện trở $R{:}$ $U = IR$ (định luật Ohm, Bài 11).</li>
+<li>Thế vào $P = UI{:}$</li>
+</ul>
+
+$$P = I^2 R = \frac{U^2}{R}$$
+
+<ul>
+<li>Dòng điện qua dây dẫn nào cũng làm dây nóng lên.<br>Một phần điện năng thành nhiệt.</li>
+<li>Dây nối có điện trở nhỏ thì ít hao phí.<br>Dây điện trong nhà làm bằng đồng, đủ to.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: ví dụ dây nung ấm điện</summary>
+<p>Dây nung $48{,}4\ \Omega$ dùng ở $220\ \text{V}.$<br>$P = \dfrac{U^2}{R} = \dfrac{220^2}{48{,}4} = 1\,000\ \text{W}.$</p>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: nhầm W với kWh</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl91-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl91-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Nhãn một máy điều hoà ghi $1\,000\ \text{W}.$ Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q5" id="tl91-q5a"><label for="tl91-q5a" class="tl-opt tl-no">A. Mỗi tháng máy tiêu thụ đúng $1\,000\ \text{W}$ điện</label>
+<input type="radio" name="tl91-q5" id="tl91-q5b"><label for="tl91-q5b" class="tl-opt tl-ok">B. Chạy đúng công suất $1$ giờ, máy tiêu thụ $1\ \text{kWh}$</label>
+<input type="radio" name="tl91-q5" id="tl91-q5c"><label for="tl91-q5c" class="tl-opt tl-no">C. Chạy đúng công suất $1$ giờ, máy tiêu thụ $1\,000\ \text{kWh}$</label>
+<input type="radio" name="tl91-q5" id="tl91-q5d"><label for="tl91-q5d" class="tl-opt tl-no">D. Bật càng lâu thì công suất của máy càng tăng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1\,000\ \text{W}$ là công suất: mỗi giây tiêu thụ $1\,000\ \text{J}.$<br>Một giờ: $A = 1\ \text{kW} \cdot 1\ \text{h} = 1\ \text{kWh}.$<br>Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi oát là "lượng điện": oát đo công suất, lượng điện đo bằng kWh hoặc J.<br>C nhầm $1\,000\ \text{W}$ thành $1\,000\ \text{kWh}{:}$ gấp một nghìn lần.<br>D: bật lâu thì điện năng tăng, công suất vẫn vậy.<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Công suất $P$</th><th>Điện năng $A$</th></tr>
+</thead>
+<tbody>
+<tr><td>tốn nhanh hay chậm</td><td>tốn tất cả bao nhiêu</td></tr>
+<tr><td>W, kW</td><td>J, kWh</td></tr>
+<tr><td>ghi trên thiết bị</td><td>đọc trên công tơ</td></tr>
+<tr><td>bật lâu vẫn vậy</td><td>bật càng lâu càng lớn</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 2: đổi đơn vị lẫn lộn</h4>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Quạt trần $75\ \text{W}$ chạy đúng công suất trong $2$ giờ. Điện năng tiêu thụ tính ra jun là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q6" id="tl91-q6a"><label for="tl91-q6a" class="tl-opt tl-no">A. $150\ \text{J}$</label>
+<input type="radio" name="tl91-q6" id="tl91-q6b"><label for="tl91-q6b" class="tl-opt tl-no">B. $9\,000\ \text{J}$</label>
+<input type="radio" name="tl91-q6" id="tl91-q6c"><label for="tl91-q6c" class="tl-opt tl-no">C. $0{,}15\ \text{J}$</label>
+<input type="radio" name="tl91-q6" id="tl91-q6d"><label for="tl91-q6d" class="tl-opt tl-ok">D. ${5{,}4 \cdot 10^{5}}\ \text{J}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t = 2\ \text{h} = 7\,200\ \text{s}.$<br>$A = P\,t = 75 \cdot 7\,200 = 540\,000\ \text{J} = 5{,}4 \cdot 10^5\ \text{J}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: $75\ \text{W} \cdot 2\ \text{h} = 150\ \text{Wh},$ không phải $150\ \text{J}.$<br>B: đổi $2$ giờ ra $120$ phút nhưng chưa ra giây.<br>C: $0{,}15$ là số kWh, ghi đơn vị J là sai.<br>Oát đi với giây ra jun. Kilôoát đi với giờ ra kWh.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tính ra jun</th><th>Tính ra kWh</th></tr>
+</thead>
+<tbody>
+<tr><td>$P$ (W), $t$ (s)</td><td>$P$ (kW), $t$ (h)</td></tr>
+<tr><td>đèn $40\ \text{W},$ $5\ \text{h} = 18\,000\ \text{s}$</td><td>$0{,}04\ \text{kW},$ $5\ \text{h}$</td></tr>
+<tr><td>$A = 720\,000\ \text{J}$</td><td>$A = 0{,}2\ \text{kWh}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 3: "đèn nhiều oát hơn thì sáng hơn"</h4>
+
+<p>Hai bóng đèn sợi đốt Đ1 và Đ2 mắc theo hai cách vào $220\ \text{V}$ (Hình 4).</p>
+
+<!--FIG4-->
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl91-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl91-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Hai đèn mắc nối tiếp (Hình 4a). Coi điện trở mỗi đèn không đổi. Đèn nào sáng hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q7" id="tl91-q7a"><label for="tl91-q7a" class="tl-opt tl-ok">A. Đèn Đ1 (40&nbsp;W)</label>
+<input type="radio" name="tl91-q7" id="tl91-q7b"><label for="tl91-q7b" class="tl-opt tl-no">B. Đèn Đ2 (100&nbsp;W)</label>
+<input type="radio" name="tl91-q7" id="tl91-q7c"><label for="tl91-q7c" class="tl-opt tl-no">C. Hai đèn sáng như nhau</label>
+<input type="radio" name="tl91-q7" id="tl91-q7d"><label for="tl91-q7d" class="tl-opt tl-no">D. Cả hai đèn đều tắt</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_1 = \dfrac{U^2}{P} = \dfrac{220^2}{40} = 1\,210\ \Omega.$<br>$R_2 = \dfrac{220^2}{100} = 484\ \Omega.$<br>Nối tiếp thì cùng $I.$ Theo $P = I^2R,$ đèn có $R$ lớn hơn (Đ1) có công suất lớn hơn, sáng hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: $100\ \text{W}$ chỉ đúng khi đèn có đủ $220\ \text{V}.$ Nối tiếp thì mỗi đèn chỉ nhận một phần của $220\ \text{V}.$<br>C: cùng dòng điện nhưng điện trở khác nhau thì $P = I^2R$ khác nhau.<br>D: mạch kín vẫn có dòng điện, hai đèn vẫn sáng, chỉ yếu hơn.<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Nối tiếp</th><th>Song song vào 220&nbsp;V</th></tr>
+</thead>
+<tbody>
+<tr><td>cùng $I$</td><td>cùng $U = 220\ \text{V}$</td></tr>
+<tr><td>$P = I^2R{:}$ đèn $R$ lớn sáng hơn</td><td>mỗi đèn chạy đúng định mức</td></tr>
+<tr><td>đèn ít oát sáng hơn</td><td>đèn nhiều oát sáng hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-congsuat-03">
+<p class="tl-label">🔬 Thí nghiệm: kiểm chứng với hai bóng 6&nbsp;V</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đèn X ghi 6&nbsp;V – 3&nbsp;W, đèn Y ghi 6&nbsp;V – 6&nbsp;W, nguồn $6\ \text{V}.$ Mắc hai đèn nối tiếp, rồi mắc song song.</li>
+<li><strong>Quan sát:</strong> nối tiếp: X sáng hơn, Y chỉ đỏ mờ.<br>Song song: Y sáng hơn X.</li>
+<li><strong>Rút ra:</strong> "nhiều oát hơn thì sáng hơn" chỉ đúng khi các đèn cùng có đúng hiệu điện thế định mức.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: hai bóng nối tiếp, song song</summary>
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: hai bóng đèn nối tiếp và song song"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Lắp hai bóng giống nhau nối tiếp với pin, rồi song song. Cách nào hai bóng sáng hơn?</li>
+<li>Thay hai bóng bằng hai điện trở thường (Resistor): điện trở thứ nhất $10\ \Omega,$ điện trở thứ hai kéo thanh trượt lên $20\ \Omega.$ Mắc nối tiếp với pin, đọc dòng điện rồi tính $P = I^2R$ cho từng cái. Cái nào lớn hơn?</li>
+<li>Mắc hai điện trở đó song song với pin. Tính $P = \dfrac{U^2}{R}$ cho từng cái. Cái nào lớn hơn?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Điện năng là gì? Kể hai thiết bị và dạng năng lượng nó tạo ra. <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>Năng lượng của dòng điện.<br>Bàn là: nhiệt năng.<br>Quạt: cơ năng.</p>
+</details>
+<details class="tl-details">
+<summary>2. Công suất điện cho biết gì? Công thức, đơn vị? <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>Điện năng tiêu thụ trong mỗi giây.<br>$P = UI,$ đơn vị oát (W).<br>$1\ \text{kW} = 1\,000\ \text{W}.$</p>
+</details>
+<details class="tl-details">
+<summary>3. Bóng đèn ghi 220&nbsp;V – 75&nbsp;W nghĩa là gì? <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>220&nbsp;V: hiệu điện thế định mức.<br>75&nbsp;W: công suất khi dùng đúng 220&nbsp;V.</p>
+</details>
+<details class="tl-details">
+<summary>4. Viết công thức điện năng tiêu thụ. Đổi $1\ \text{kWh}$ ra jun. <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>$A = P\,t = UIt.$<br>$1\ \text{kWh} = 3{,}6 \cdot 10^6\ \text{J}.$<br>Công tơ: mỗi số là $1\ \text{kWh}.$</p>
+</details>
+<details class="tl-details">
+<summary>5. Công suất theo điện trở: hai công thức, suy ra từ đâu? <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>$P = I^2R = \dfrac{U^2}{R}.$<br>Thế $U = IR$ (định luật Ohm) vào $P = UI.$</p>
+</details>
+<details class="tl-details">
+<summary>6. Hai đèn khác số oát mắc nối tiếp: đèn nào sáng hơn? Vì sao? <small>(tự nói trước, rồi mới bấm)</small></summary>
+<p>Đèn ít oát hơn (điện trở lớn hơn).<br>Cùng $I,$ $P = I^2R$ lớn hơn.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một nồi cơm điện ghi 220&nbsp;V – 800&nbsp;W, dùng ở đúng hiệu điện thế $220\ \text{V}.$ Mỗi ngày nồi nấu $1$ giờ $30$ phút. Giá điện coi là $2\,000$&nbsp;đồng cho mỗi $\text{kWh}$ (giá minh hoạ).</p>
+<p>a) Tính cường độ dòng điện qua nồi và điện trở của nồi (coi không đổi).</p>
+<p>b) Tính điện năng nồi tiêu thụ trong $30$ ngày, ra $\text{kWh}.$</p>
+<p>c) Tính tiền điện phải trả cho nồi trong $30$ ngày.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"ghi 220&nbsp;V – 800&nbsp;W"</td><td>$U_{\text{đm}} = 220\ \text{V},$ $P_{\text{đm}} = 800\ \text{W}$</td></tr>
+<tr><td>"dùng ở đúng hiệu điện thế 220&nbsp;V"</td><td>⚠ đúng định mức nên $P = 800\ \text{W}$</td></tr>
+<tr><td>"cường độ dòng điện", "điện trở"</td><td>$P = UI,$ $R = \dfrac{U}{I}$</td></tr>
+<tr><td>"1 giờ 30 phút" mỗi ngày, "30 ngày"</td><td>$t$ tính bằng giờ để ra $\text{kWh}$</td></tr>
+<tr><td>"2&nbsp;000 đồng cho mỗi kWh"</td><td>tiền = số kWh × giá</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>a) Dòng điện:</strong> $I = \dfrac{P}{U} = \dfrac{800}{220} \approx 3{,}64\ \text{A}.$</li>
+<li><strong>a) Điện trở:</strong> $R = \dfrac{U^2}{P} = \dfrac{220^2}{800} = 60{,}5\ \Omega.$</li>
+<li><strong>b) Thời gian:</strong> $t = 1{,}5\ \text{h} \cdot 30 = 45\ \text{h}.$<br>$A = P\,t = 0{,}8\ \text{kW} \cdot 45\ \text{h} = 36\ \text{kWh}.$</li>
+<li><strong>c) Tiền điện:</strong> $36 \cdot 2\,000 = 72\,000$&nbsp;đồng.</li>
+<li><strong>Kiểm tra:</strong> tính bằng jun, $800 \cdot 45 \cdot 3\,600 = 1{,}296 \cdot 10^8\ \text{J}.$<br>Chia cho $3{,}6 \cdot 10^6$ được $36\ \text{kWh}{:}$ khớp.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng mỗi ngày nồi chỉ nấu $45$ phút.</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $t = \;?\ \text{h}$ trong $30$ ngày, $A = \;?\ \text{kWh}$</li>
+<li><strong>Bước 2 (em điền):</strong> tiền điện $= \;?$ đồng</li>
+<li>Kiểm tra: thời gian nấu giảm một nửa thì tiền điện đổi thế nào?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2</summary>
+<p>$t = 0{,}75 \cdot 30 = 22{,}5\ \text{h},$ $A = 0{,}8 \cdot 22{,}5 = 18\ \text{kWh}.$<br>Tiền điện $= 36\,000$&nbsp;đồng.<br>Thời gian giảm một nửa thì tiền điện giảm một nửa.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi điều kiện: điện lưới tụt còn 200&nbsp;V</summary>
+<p>Coi điện trở nồi không đổi, $R = 60{,}5\ \Omega.$<br>$P = \dfrac{U^2}{R} = \dfrac{200^2}{60{,}5} \approx 661\ \text{W}.$<br>Công suất nhỏ hơn $800\ \text{W}$ nên nồi nấu lâu hơn.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl91-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl91-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Một tủ lạnh có công suất trung bình $120\ \text{W},$ chạy suốt $24$ giờ mỗi ngày. Giá điện $2\,000$&nbsp;đồng cho mỗi $\text{kWh}$ (giá minh hoạ). Tiền điện của tủ lạnh trong $30$ ngày là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl91-q8" id="tl91-q8a"><label for="tl91-q8a" class="tl-opt tl-no">A. $172\,800\,000$&nbsp;đồng</label>
+<input type="radio" name="tl91-q8" id="tl91-q8b"><label for="tl91-q8b" class="tl-opt tl-no">B. $7\,200$&nbsp;đồng</label>
+<input type="radio" name="tl91-q8" id="tl91-q8c"><label for="tl91-q8c" class="tl-opt tl-ok">C. $172\,800$&nbsp;đồng</label>
+<input type="radio" name="tl91-q8" id="tl91-q8d"><label for="tl91-q8d" class="tl-opt tl-no">D. $5\,760$&nbsp;đồng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A = 0{,}12\ \text{kW} \cdot 24\ \text{h} \cdot 30 = 86{,}4\ \text{kWh}.$<br>Tiền $= 86{,}4 \cdot 2\,000 = 172\,800$&nbsp;đồng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là giữ $120\ \text{W}$ mà không đổi ra kW: số kWh lớn gấp một nghìn lần.<br>B là quên nhân $24$ giờ mỗi ngày.<br>D là quên nhân $30$ ngày.<br>Đổi W ra kW, nhân đủ giờ và ngày rồi mới nhân giá.<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 3–4 lời giải mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏠 Bấm xem: tiết kiệm điện quanh em</summary>
+<ul>
+<li><strong>Đèn LED 9&nbsp;W</strong> sáng gần bằng đèn sợi đốt 60&nbsp;W.<br>Thay đèn là bớt điện năng hơn 6 lần.</li>
+<li><strong>Điều hoà</strong> đặt khoảng 26&nbsp;°C, đóng kín cửa phòng.</li>
+<li><strong>Tivi, củ sạc</strong>: tắt hẳn, rút phích thay vì để chế độ chờ.</li>
+<li><strong>Dây cấp cho bếp từ, bình nóng lạnh</strong> to hơn dây đèn.<br>Dòng lớn nên dây phải to để ít nóng.</li>
+<li><strong>Aptomat</strong> tự ngắt khi bật quá nhiều thiết bị công suất lớn cùng lúc.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Đổi $2{,}5\ \text{kWh}$ ra jun. <em>($9 \cdot 10^6\ \text{J})$</em></li>
+<li><strong>⭐⭐</strong> Thay 10 bóng sợi đốt 60&nbsp;W bằng 10 bóng LED 9&nbsp;W, mỗi ngày bật 5 giờ. Trong 30 ngày bớt được bao nhiêu kWh? <em>(mỗi bóng bớt $51\ \text{W}.$<br>$10 \cdot 0{,}051 \cdot 5 \cdot 30 = 76{,}5\ \text{kWh})$</em></li>
+<li><strong>⭐⭐⭐</strong> Hai đèn 110&nbsp;V – 100&nbsp;W và 110&nbsp;V – 25&nbsp;W mắc nối tiếp vào 220&nbsp;V. Có nên mắc như vậy không? <em>($R_1 = 121\ \Omega,$ $R_2 = 484\ \Omega.$<br>$I \approx 0{,}36\ \text{A}.$<br>Đèn 25&nbsp;W nhận khoảng $176\ \text{V},$ quá $110\ \text{V}.$<br>Đèn đó dễ cháy: không nên.)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Dòng điện có năng lượng: điện năng.</li>
+<li>Công suất: $P = UI,$ đơn vị oát.</li>
+<li>Số ghi trên máy: hiệu điện thế và công suất định mức.</li>
+<li>Điện năng: $A = P\,t = UIt.$</li>
+<li>$1\ \text{kWh} = 3{,}6 \cdot 10^6\ \text{J}$ = một số điện.</li>
+<li>Có điện trở: $P = I^2R = \dfrac{U^2}{R}.$</li>
+<li>W là tốn nhanh hay chậm, kWh là tốn bao nhiêu.</li>
+<li>Đọc đề: W đi với giây, kW đi với giờ.</li>
+</ul>
+</div>

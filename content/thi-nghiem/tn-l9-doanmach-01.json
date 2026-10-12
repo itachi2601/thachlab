@@ -1,0 +1,168 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+ "lesson_id": 90,
+ "nguon_trong_bai": "content/lesson-samples/l9-doan-mach-noi-tiep-song-song/theory.html",
+ "id": "tn-l9-doanmach-01",
+ "ten": "Đo cường độ dòng điện và hiệu điện thế trong đoạn mạch nối tiếp",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "doan_mach.noi_tiep_i_bang_nhau",
+  "doan_mach.noi_tiep_u_cong",
+  "doan_mach.noi_tiep_r_td",
+  "doan_mach.sai_so_do"
+ ],
+ "muc_tieu": "Thấy trong đoạn mạch nối tiếp, cường độ dòng điện như nhau ở mọi chỗ, U = U1 + U2, và U chia theo tỉ lệ điện trở.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn điện chỉnh được 0–6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở 10 Ω và 20 Ω",
+   "so_luong": 2
+  },
+  {
+   "ten": "Ampe kế (GHĐ 0,5 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế (GHĐ 10 V, ĐCNN 0,1 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc R1 = 10 Ω nối tiếp R2 = 20 Ω, ampe kế nối tiếp, vôn kế giữa A và B (Hình 2).",
+   "Lần lượt chỉnh nguồn khoảng 3 V; 4,5 V; 6 V.",
+   "Mỗi lần: đặt ampe kế ở ba chỗ (trước R1, giữa hai điện trở, sau R2) và đọc.",
+   "Dùng vôn kế đo U1 (giữa A, M), U2 (giữa M, B) và U_AB."
+  ],
+  "quan_sat": [
+   "Ở mỗi lần, ampe kế ở ba chỗ chỉ cùng một số: 0,10 A; 0,15 A; 0,20 A.",
+   "U1 + U2 bằng hoặc gần bằng U_AB; U2 gấp đôi U1."
+  ],
+  "rut_ra": [
+   "Nối tiếp: I = I1 = I2.",
+   "U = U1 + U2.",
+   "U1/U2 = R1/R2: điện trở lớn nhận hiệu điện thế lớn.",
+   "Lệch 0,1 V ở lần 3 nằm trong sai số đọc của ba lần đo (tối đa 0,15 V)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế thật giữa A và B (nguồn chỉnh được)",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6.5,
+   "mac_dinh": 3,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "U_AB",
+   "ten": "Số chỉ vôn kế giữa A và B",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "R1",
+   "ten": "Điện trở 1",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "R2",
+   "ten": "Điện trở 2",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 20.0
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "U1",
+   "ten": "Hiệu điện thế giữa hai đầu R1",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "U2",
+   "ten": "Hiệu điện thế giữa hai đầu R2",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "R_td = R1 + R2",
+   "I = U/R_td",
+   "U1 = I·R1",
+   "U2 = I·R2",
+   "U1_doc = làm tròn(U1, 0,1 V); U2_doc = làm tròn(U2, 0,1 V); U_AB_doc = làm tròn(U, 0,1 V); I_doc = làm tròn(I, 0,01 A)",
+   "ví dụ hàng 3: U = 6,07 V → U1 = 2,023 → 2,0; U2 = 4,047 → 4,0; U_AB → 6,1; I = 0,2023 → 0,20"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện trở ampe kế, dây nối; vôn kế có điện trở rất lớn",
+   "hiệu điện thế thật giữa A, B ba lần: 3,0; 4,5; 6,07 V"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U1 (V)",
+   "U2 (V)",
+   "U_AB (V)",
+   "I (A)"
+  ],
+  "hang": [
+   [
+    1.0,
+    2.0,
+    3.0,
+    0.1
+   ],
+   [
+    1.5,
+    3.0,
+    4.5,
+    0.15
+   ],
+   [
+    2.0,
+    4.0,
+    6.1,
+    0.2
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: giá trị tính từ mô hình rồi làm tròn theo độ chia của dụng cụ; chưa phải số đo thật. Lần 3: nguồn chỉnh khoảng 6 V, đo thực tế 6,07 V. Lần 3 lệch 0,1 V vì mỗi số đọc có sai số tới nửa độ chia (mô hình làm tròn đến 0,1 V)."
+ },
+ "ket_qua_ky_vong": "I như nhau ở ba chỗ; U1 + U2 ≈ U_AB; U2 = 2U1.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dòng điện giảm dần sau mỗi điện trở.",
+  "Nghĩ hiệu điện thế chia đều cho hai điện trở.",
+  "Cho rằng lệch 0,1 V nghĩa là định luật cộng hiệu điện thế sai."
+ ],
+ "sai_so_thuong_gap": "Mỗi lần đọc vôn kế lệch tới nửa vạch (0,05 V); tổng hiệu của ba số đọc có thể lệch tới 0,15 V.",
+ "an_toan": "Không mắc ampe kế song song với điện trở hay nguồn; ngắt khoá giữa các lần đổi chỗ dụng cụ.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo thanh U; kéo ampe kế tới ba vị trí trên mạch, số chỉ không đổi; vôn kế kẹp vào A–M, M–B, A–B.",
+  "diem_nhan": "Số chỉ ampe kế giống nhau ở mọi chỗ; vôn kế chia theo tỉ lệ R."
+ }
+}

@@ -1,0 +1,426 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li><strong>Nêu</strong> được trong đoạn mạch nối tiếp: $I$ như nhau, $U$ cộng lại, $R_{td} = R_1 + R_2.$</li>
+<li><strong>Nêu</strong> được trong đoạn mạch song song: $U$ như nhau, $I$ cộng lại, $\dfrac{1}{R_{td}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}.$</li>
+<li><strong>Tính</strong> được $R_{td},$ $U,$ $I$ trong mạch hỗn hợp đơn giản.</li>
+<li><strong>Mắc</strong> đúng ampe kế, vôn kế để kiểm tra.</li>
+</ul>
+<p>Đọc khoảng __PHUT__ phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: cả dây đèn tắt vì một bóng</h3>
+
+<p>Dây đèn trang trí Tết kiểu cũ: chỉ một bóng cháy là cả dây tắt.</p>
+
+<p>Ở nhà thì khác. Bóng đèn phòng khách cháy, đèn bếp, quạt, tủ lạnh vẫn chạy bình thường.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Vì sao một bóng hỏng làm cả dây đèn tắt, còn bóng phòng khách hỏng thì đèn bếp vẫn sáng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q1" id="tl90-q1a"><label for="tl90-q1a" class="tl-opt tl-no">A. Dây đèn trang trí dùng nguồn yếu hơn điện trong nhà</label>
+<input type="radio" name="tl90-q1" id="tl90-q1b"><label for="tl90-q1b" class="tl-opt tl-ok">B. Các bóng nằm trên cùng một đường đi của dòng điện</label>
+<input type="radio" name="tl90-q1" id="tl90-q1c"><label for="tl90-q1c" class="tl-opt tl-no">C. Bóng hỏng giữ lại hết dòng điện, không cho chạy tiếp</label>
+<input type="radio" name="tl90-q1" id="tl90-q1d"><label for="tl90-q1d" class="tl-opt tl-no">D. Mỗi đèn trong nhà có một nguồn điện riêng của nó</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Các bóng của dây đèn nối liền nhau thành một đường duy nhất: đó là <strong>mắc nối tiếp</strong>. Một bóng đứt là đường đó hở.<br>Đèn trong nhà <strong>mắc song song</strong>: mỗi đèn một nhánh riêng.<br>Bài này cho biết $U,$ $I,$ $R$ trong từng cách mắc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nguồn yếu (A) chỉ làm các bóng sáng mờ, không làm cả dây tắt vì một bóng.<br>Bóng đứt dây tóc thì không có dòng nào qua nó, không "giữ" dòng (C).<br>Đèn trong nhà dùng chung một nguồn điện lưới $220\ \text{V}$ (D).<br>Thử nghĩ: khi một bóng đứt, dòng điện còn đường nào để đi?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: nối tiếp, song song, hỗn hợp</h3>
+
+<h4>1. Đoạn mạch nối tiếp</h4>
+
+<p><strong>🔑 Một đường đi · I như nhau · U cộng lại</strong></p>
+
+<ul>
+<li><strong>Mắc nối tiếp</strong>: nối liền nhau tại một điểm $M$ (Hình 2).</li>
+<li>Dòng điện chỉ có một đường đi.</li>
+</ul>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-doanmach-01">
+<p class="tl-label">🔬 Thí nghiệm đo: hiệu điện thế trong mạch nối tiếp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc $R_1 = 10\ \Omega$ nối tiếp $R_2 = 20\ \Omega$ (Hình 2). Chỉnh nguồn lần lượt khoảng $3\ \text{V},$ rồi $4{,}5\ \text{V},$ rồi $6\ \text{V}.$<br>Mỗi lần: đặt ampe kế ở ba chỗ (trước $R_1,$ giữa hai điện trở, sau $R_2$).<br>Vôn kế (độ chia $0{,}1\ \text{V}$) đo $U_1$ giữa $A$ và $M.$<br>Đo $U_2$ giữa $M$ và $B.$<br>Đo $U_{AB}.$</li>
+<li><strong>Quan sát:</strong> mỗi lần, ampe kế ở ba chỗ chỉ cùng một số.<br>__I_TN1__<br>Bảng dưới: số liệu minh hoạ.</li>
+<li><strong>Rút ra:</strong> dòng điện như nhau ở mọi chỗ.<br>$U_1 + U_2$ gần bằng $U_{AB}.$<br>$U_2$ luôn gấp đôi $U_1.$</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$U_1$ (V)</th><th>$U_2$ (V)</th><th>$U_{AB}$ (V)</th></tr>
+</thead>
+<tbody>
+__BANG_TN1__
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Ở lần đo thứ ba, $U_1 + U_2 = __TONG3__\ \text{V}$ nhưng $U_{AB} = __UAB3__\ \text{V}.$ Lí do hợp lí nhất là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q2" id="tl90-q2a"><label for="tl90-q2a" class="tl-opt tl-ok">A. Đọc kim vôn kế có thể lệch tới nửa vạch chia</label>
+<input type="radio" name="tl90-q2" id="tl90-q2b"><label for="tl90-q2b" class="tl-opt tl-no">B. Vôn kế đo $U_{AB}$ đã bị mắc nối tiếp vào mạch</label>
+<input type="radio" name="tl90-q2" id="tl90-q2c"><label for="tl90-q2c" class="tl-opt tl-no">C. Điện trở $R_1$ nóng lên nên tăng khi nguồn lớn</label>
+<input type="radio" name="tl90-q2" id="tl90-q2d"><label for="tl90-q2d" class="tl-opt tl-no">D. Dòng điện qua $R_2$ nhỏ hơn dòng điện qua $R_1$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> __FB_TN1__</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Vôn kế mắc nối tiếp (B) thì mạch gần như hở, ampe kế chỉ gần $0,$ không phải $0{,}20\ \text{A}.$<br>$R_1$ đổi bao nhiêu (C) thì $U_1 + U_2$ vẫn bằng $U_{AB}{:}$ hai đoạn ghép lại đúng bằng đoạn $AB.$<br>Ampe kế ở ba chỗ chỉ cùng một số, nên D sai.<br>Mỗi số trong bảng là một lần đọc kim. Đọc kim có chính xác tuyệt đối không?</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem: nhận xét sai số cả bảng</summary>
+<p>__NHAN_XET_TN1__</p>
+</details>
+
+<h4>2. Công thức đoạn mạch nối tiếp</h4>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đoạn mạch nối tiếp</p>
+$$I = I_1 = I_2$$
+$$U = U_1 + U_2$$
+$$R_{td} = R_1 + R_2$$
+</div>
+
+<ul>
+<li><strong>Điện trở tương đương</strong> $R_{td}{:}$ một điện trở thay được cả đoạn mạch, cùng $U$ cho cùng $I.$</li>
+<li>Ví dụ: $R_{td} = 10 + 20 = 30\ \Omega.$<br>Nguồn $3\ \text{V}$ cho $I = \dfrac{3}{30} = 0{,}1\ \text{A}$ (khớp lần 1).</li>
+<li>$\dfrac{U_1}{U_2} = \dfrac{R_1}{R_2}{:}$ điện trở lớn hơn, hiệu điện thế lớn hơn.</li>
+<li>Vôn kế mắc song song với đúng đoạn cần đo $U.$</li>
+</ul>
+
+<details class="tl-details">
+<summary>➕ Xem thêm: vì sao điện trở cộng lại?</summary>
+<p>$U = U_1 + U_2 = IR_1 + IR_2 = I(R_1 + R_2).$<br>Một điện trở $R_{td}$ cho cùng $I$ ở cùng $U$ thì $U = IR_{td},$ nên $R_{td} = R_1 + R_2.$</p>
+</details>
+
+<h4>3. Đoạn mạch song song</h4>
+
+<p><strong>🔑 Hai điểm chung · U như nhau · I cộng lại</strong></p>
+
+<ul>
+<li>Hai điện trở <strong>mắc song song</strong>: hai đầu của chúng nối chung vào hai điểm $A, B$ (Hình 3).</li>
+<li>Dòng điện mạch chính tới $A$ thì rẽ thành hai nhánh, tới $B$ nhập lại.</li>
+</ul>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-doanmach-02">
+<p class="tl-label">🔬 Thí nghiệm: dòng điện rẽ nhánh</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc $R_1 = 10\ \Omega$ song song $R_2 = 15\ \Omega$ như Hình 3, nguồn $6\ \text{V}.$<br>Đọc vôn kế và ba ampe kế.</li>
+<li><strong>Quan sát:</strong> vôn kế chỉ $6{,}0\ \text{V}.$<br>$A_1$ chỉ $__I1_TN2__\ \text{A},$ $A_2$ chỉ $__I2_TN2__\ \text{A},$ ampe kế mạch chính chỉ $__I_TN2__\ \text{A}.$</li>
+<li><strong>Rút ra:</strong> dòng mạch chính bằng tổng dòng hai nhánh.<br>Hai nhánh cùng hiệu điện thế.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đoạn mạch song song</p>
+$$U = U_1 = U_2$$
+$$I = I_1 + I_2$$
+$$\frac{1}{R_{td}} = \frac{1}{R_1} + \frac{1}{R_2}$$
+</div>
+
+<ul>
+<li>Hai điện trở: $R_{td} = \dfrac{R_1 R_2}{R_1 + R_2}$ (mẹo: <strong>tích chia tổng</strong>).</li>
+<li>$R_{td}$ <strong>nhỏ hơn mỗi điện trở thành phần</strong>: thêm nhánh là thêm đường cho dòng đi.</li>
+<li>Ví dụ: $R_{td} = \dfrac{10 \cdot 15}{10 + 15} = 6\ \Omega.$<br>$I = \dfrac{6\ \text{V}}{6\ \Omega} = 1\ \text{A}.$<br>Khớp số chỉ ampe kế mạch chính.</li>
+<li>$\dfrac{I_1}{I_2} = \dfrac{R_2}{R_1}{:}$ nhánh có điện trở nhỏ thì dòng lớn.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Mắc $R_1 = 6\ \Omega$ song song $R_2 = 12\ \Omega$ vào nguồn $12\ \text{V}.$ Ampe kế ở mạch chính chỉ</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q3" id="tl90-q3a"><label for="tl90-q3a" class="tl-opt tl-no">A. $0{,}67\ \text{A}$</label>
+<input type="radio" name="tl90-q3" id="tl90-q3b"><label for="tl90-q3b" class="tl-opt tl-no">B. $1{,}5\ \text{A}$</label>
+<input type="radio" name="tl90-q3" id="tl90-q3c"><label for="tl90-q3c" class="tl-opt tl-no">C. $2\ \text{A}$</label>
+<input type="radio" name="tl90-q3" id="tl90-q3d"><label for="tl90-q3d" class="tl-opt tl-ok">D. $3\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi nhánh nhận đủ $12\ \text{V}{:}$ $I_1 = \dfrac{12}{6} = 2\ \text{A},$ $I_2 = \dfrac{12}{12} = 1\ \text{A}.$<br>$I = I_1 + I_2 = 3\ \text{A}.$ Kiểm: $R_{td} = 4\ \Omega,$ $\dfrac{12}{4} = 3\ \text{A}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}67\ \text{A}$ (A) là cộng $R_1 + R_2$ như nối tiếp.<br>Ra $1{,}5\ \text{A}$ (B) là chia đôi $12\ \text{V}$ cho hai nhánh: song song thì mỗi nhánh nhận đủ $U.$<br>Ra $2\ \text{A}$ (C) mới là dòng của nhánh $R_1.$<br>Tính dòng từng nhánh rồi cộng lại.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🧪 Thử với mô phỏng: lắp mạch nối tiếp, song song</summary>
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Bộ lắp mạch điện một chiều"></iframe>
+<p><strong>Thử:</strong></p>
+<ol>
+<li>Lắp hai bóng đèn nối tiếp với pin. Tháo một bóng: bóng kia thế nào?</li>
+<li>Lắp hai bóng song song. Tháo một bóng: bóng kia thế nào?</li>
+<li>Đặt ampe kế ở mạch chính rồi ở từng nhánh. So các số đọc.</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<h4>4. Đoạn mạch hỗn hợp</h4>
+
+<p><strong>🔑 Gộp từng cụm · rồi tính ngược ra</strong></p>
+
+<ul>
+<li>Mạch hỗn hợp có cả nối tiếp lẫn song song, ví dụ Hình 4.</li>
+<li><strong>Bước 1:</strong> gộp cụm song song thành $R_{23}.$</li>
+<li><strong>Bước 2:</strong> gộp nối tiếp: $R_{td} = R_1 + R_{23}.$</li>
+<li><strong>Bước 3:</strong> tính $I = \dfrac{U}{R_{td}},$ rồi đi ngược vào từng phần: $U_1 = IR_1,$ $U_{23} = IR_{23},$ $I_2 = \dfrac{U_{23}}{R_2}.$</li>
+</ul>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Mạch như Hình 4 với $R_1 = 2\ \Omega,$ $R_2 = R_3 = 6\ \Omega.$ Điện trở tương đương của đoạn mạch $AB$ là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q4" id="tl90-q4a"><label for="tl90-q4a" class="tl-opt tl-no">A. $14\ \Omega$</label>
+<input type="radio" name="tl90-q4" id="tl90-q4b"><label for="tl90-q4b" class="tl-opt tl-no">B. $1{,}2\ \Omega$</label>
+<input type="radio" name="tl90-q4" id="tl90-q4c"><label for="tl90-q4c" class="tl-opt tl-ok">C. $5\ \Omega$</label>
+<input type="radio" name="tl90-q4" id="tl90-q4d"><label for="tl90-q4d" class="tl-opt tl-no">D. $3{,}4\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_{23} = \dfrac{6 \cdot 6}{6 + 6} = 3\ \Omega,$ rồi $R_{td} = 2 + 3 = 5\ \Omega.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $14\ \Omega$ (A) là cộng cả ba như nối tiếp.<br>Ra $1{,}2\ \Omega$ (B) là coi cả ba song song.<br>Ra $3{,}4\ \Omega$ (D) là gộp $R_1$ với $R_2$ trước, rồi song song với $R_3.$<br>Nhìn hình: cụm nào nằm giữa hai điểm chung? Gộp cụm đó trước.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "Qua mỗi điện trở, dòng điện bị dùng bớt"</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl90-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl90-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Ba bóng đèn giống nhau mắc nối tiếp. Ampe kế đặt trước bóng thứ nhất chỉ $0{,}3\ \text{A}.$ Ampe kế đặt sau bóng thứ ba chỉ</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q5" id="tl90-q5a"><label for="tl90-q5a" class="tl-opt tl-ok">A. $0{,}3\ \text{A}$</label>
+<input type="radio" name="tl90-q5" id="tl90-q5b"><label for="tl90-q5b" class="tl-opt tl-no">B. $0{,}1\ \text{A}$</label>
+<input type="radio" name="tl90-q5" id="tl90-q5c"><label for="tl90-q5c" class="tl-opt tl-no">C. $0{,}9\ \text{A}$</label>
+<input type="radio" name="tl90-q5" id="tl90-q5d"><label for="tl90-q5d" class="tl-opt tl-no">D. $0\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nối tiếp chỉ có một đường đi, $I$ như nhau ở mọi chỗ. Thứ bị chia ra là <strong>hiệu điện thế</strong>: mỗi bóng nhận một phần $U.$<br>Bóng đèn dùng năng lượng của dòng điện, không "ăn bớt" dòng điện. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}1\ \text{A}$ (B) là nghĩ mỗi bóng lấy đi một phần dòng.<br>Ra $0{,}9\ \text{A}$ (C) là cộng dòng như mạch song song.<br>Ra $0\ \text{A}$ (D) là nghĩ các bóng "dùng hết" dòng điện: khi đó dòng đi đâu, về cực âm bằng đường nào?<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Nối tiếp</th><th>Song song</th></tr>
+</thead>
+<tbody>
+<tr><td>$I$ như nhau</td><td>$U$ như nhau</td></tr>
+<tr><td>$U$ chia cho các điện trở</td><td>$I$ chia cho các nhánh</td></tr>
+<tr><td>$R$ lớn nhận $U$ lớn</td><td>nhánh $R$ nhỏ có $I$ lớn</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 2: quên lấy nghịch đảo</h4>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Mắc $R_1 = 20\ \Omega$ song song $R_2 = 30\ \Omega.$ Điện trở tương đương là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q6" id="tl90-q6a"><label for="tl90-q6a" class="tl-opt tl-no">A. $50\ \Omega$</label>
+<input type="radio" name="tl90-q6" id="tl90-q6b"><label for="tl90-q6b" class="tl-opt tl-no">B. $25\ \Omega$</label>
+<input type="radio" name="tl90-q6" id="tl90-q6c"><label for="tl90-q6c" class="tl-opt tl-no">C. $0{,}083\ \Omega$</label>
+<input type="radio" name="tl90-q6" id="tl90-q6d"><label for="tl90-q6d" class="tl-opt tl-ok">D. $12\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_{td} = \dfrac{20 \cdot 30}{20 + 30} = \dfrac{600}{50} = 12\ \Omega,$ nhỏ hơn cả $20\ \Omega$ lẫn $30\ \Omega.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $50\ \Omega$ (A) là cộng như nối tiếp.<br>Ra $25\ \Omega$ (B) là lấy trung bình.<br>Ra $0{,}083\ \Omega$ (C) mới là $\dfrac{1}{R_{td}},$ chưa lật ngược.<br>Kiểm nhanh: song song thì $R_{td}$ nhỏ hơn điện trở nhỏ nhất, nhưng không thể nhỏ tới mức $0{,}083\ \Omega.$</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Viết sai</th><th>Viết đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>$\dfrac{1}{4} + \dfrac{1}{12} = \dfrac{1}{3},$ ghi $R_{td} = \dfrac{1}{3}\ \Omega$</td><td>$\dfrac{1}{R_{td}} = \dfrac{1}{3},$ nên $R_{td} = 3\ \Omega$</td></tr>
+<tr><td>không kiểm kết quả</td><td>$3\ \Omega$ nhỏ hơn ${4\ \Omega}{:}$ hợp lí</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 3: một bóng hỏng thì các bóng khác thế nào?</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl90-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl90-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Hai bóng đèn $220\ \text{V}$ mắc song song vào điện lưới $220\ \text{V}.$ Bóng 1 đứt dây tóc. Bóng 2 sẽ</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q7" id="tl90-q7a"><label for="tl90-q7a" class="tl-opt tl-no">A. tắt theo, vì mạch điện bị hở</label>
+<input type="radio" name="tl90-q7" id="tl90-q7b"><label for="tl90-q7b" class="tl-opt tl-ok">B. vẫn sáng như cũ</label>
+<input type="radio" name="tl90-q7" id="tl90-q7c"><label for="tl90-q7c" class="tl-opt tl-no">C. sáng hơn, vì nhận thêm dòng của bóng 1</label>
+<input type="radio" name="tl90-q7" id="tl90-q7d"><label for="tl90-q7d" class="tl-opt tl-no">D. sáng yếu đi, vì dòng mạch chính giảm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhánh của bóng 2 vẫn nối thẳng vào hai điểm $220\ \text{V}.$ $U$ của nó không đổi, nên $I_2 = \dfrac{U}{R_2}$ không đổi.<br>Chỉ dòng mạch chính giảm, vì mất một nhánh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đúng với mạch <em>nối tiếp</em>; ở đây bóng 2 có nhánh riêng.<br>C và D quên rằng mỗi nhánh nhận đủ $U$ của nguồn: $U$ không đổi thì $I_2$ không đổi.<br>Dòng mạch chính giảm, nhưng đó là tổng, không phải dòng của bóng 2.<br>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-doanmach-03">
+<p class="tl-label">🔬 Thí nghiệm: tháo một bóng đèn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hai bóng đèn pin giống nhau, nguồn $3\ \text{V}.$<br>Mắc nối tiếp, rồi tháo một bóng.<br>Mắc lại song song, rồi tháo một bóng.</li>
+<li><strong>Quan sát:</strong> nối tiếp: hai bóng sáng mờ.<br>Tháo một bóng: bóng kia tắt.<br>Song song: hai bóng sáng rõ.<br>Tháo một bóng: bóng kia sáng như cũ.</li>
+<li><strong>Rút ra:</strong> đèn, quạt trong nhà mắc song song: mỗi thiết bị nhận đủ $220\ \text{V},$ bật tắt riêng được.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Nối tiếp</th><th>Song song</th></tr>
+</thead>
+<tbody>
+<tr><td>một bóng hỏng: mạch hở, tắt hết</td><td>một bóng hỏng: nhánh khác vẫn sáng</td></tr>
+<tr><td>dây đèn trang trí kiểu cũ</td><td>đèn, quạt, ổ cắm trong nhà</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Đoạn mạch nối tiếp: $I,$ $U,$ $R_{td}$ thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$I = I_1 = I_2.$<br>$U = U_1 + U_2.$<br>$R_{td} = R_1 + R_2.$</p>
+</details>
+<details class="tl-details">
+<summary>2. Đoạn mạch song song: $I,$ $U,$ $R_{td}$ thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$U = U_1 = U_2.$<br>$I = I_1 + I_2.$<br>$\dfrac{1}{R_{td}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}{:}$ hai điện trở thì tích chia tổng.</p>
+</details>
+<details class="tl-details">
+<summary>3. Vì sao $R_{td}$ của đoạn song song nhỏ hơn mỗi điện trở thành phần? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Thêm nhánh là thêm đường cho dòng đi.<br>Cùng $U,$ dòng mạch chính lớn hơn, nên $R_{td}$ nhỏ hơn.</p>
+</details>
+<details class="tl-details">
+<summary>4. Nối tiếp: điện trở nào nhận $U$ lớn hơn? Song song: nhánh nào có $I$ lớn hơn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Nối tiếp: $R$ lớn nhận $U$ lớn, $\dfrac{U_1}{U_2} = \dfrac{R_1}{R_2}.$<br>Song song: nhánh $R$ nhỏ có $I$ lớn, $\dfrac{I_1}{I_2} = \dfrac{R_2}{R_1}.$</p>
+</details>
+<details class="tl-details">
+<summary>5. Ba bước tính mạch $R_1$ nối tiếp ($R_2$ song song $R_3$)? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Gộp $R_2, R_3$ thành $R_{23}.$<br>$R_{td} = R_1 + R_{23}.$<br>$I = \dfrac{U}{R_{td}},$ rồi tính ngược $U_1,$ $U_{23},$ $I_2,$ $I_3.$</p>
+</details>
+<details class="tl-details">
+<summary>6. Vì sao đèn trong nhà mắc song song? Đo $I$ mạch chính, $U$ một điện trở thì mắc dụng cụ thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Mỗi thiết bị nhận đủ $220\ \text{V},$ bật tắt riêng, một cái hỏng không làm tắt cái khác.<br>Ampe kế nối tiếp ở mạch chính.<br>Vôn kế song song với điện trở đó.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box tl-box--de">
+<p class="tl-label">📝 Đề bài</p>
+<p>Cho đoạn mạch $AB$ như Hình 4, với $R_1 = 4\ \Omega,$ $R_2 = 12\ \Omega,$ $R_3 = 6\ \Omega.$ Đặt vào hai đầu đoạn mạch hiệu điện thế $U_{AB} = 12\ \text{V}.$ Coi điện trở của dây nối không đáng kể.</p>
+<p>a) Tính điện trở tương đương của đoạn mạch.</p>
+<p>b) Tính cường độ dòng điện mạch chính và hiệu điện thế giữa hai đầu $R_1.$</p>
+<p>c) Tính cường độ dòng điện qua $R_2$ và qua $R_3.$</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"như Hình 4"</td><td>$R_1$ nối tiếp với cụm ($R_2$ song song $R_3$)</td></tr>
+<tr><td>"R<sub>2</sub> = 12&nbsp;Ω, R<sub>3</sub> = 6&nbsp;Ω"</td><td>cụm song song: tích chia tổng</td></tr>
+<tr><td>"R<sub>1</sub> = 4&nbsp;Ω"</td><td>nối tiếp với cụm: cộng điện trở</td></tr>
+<tr><td>"U<sub>AB</sub> = 12&nbsp;V"</td><td>$I = \dfrac{U_{AB}}{R_{td}}$</td></tr>
+<tr><td>"điện trở của dây nối không đáng kể"</td><td>chỉ tính ba điện trở</td></tr>
+<tr><td>"qua R<sub>2</sub> và qua R<sub>3</sub>"</td><td>cần $U_{23},$ rồi $I = \dfrac{U}{R}$ từng nhánh</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Gộp cụm song song:</strong> $R_{23} = \dfrac{12 \cdot 6}{12 + 6} = 4\ \Omega.$</li>
+<li><strong>a) Gộp nối tiếp:</strong> $R_{td} = R_1 + R_{23} = 4 + 4 = 8\ \Omega.$</li>
+<li><strong>b) Mạch chính:</strong> $I = \dfrac{12}{8} = 1{,}5\ \text{A}.$<br>$U_1 = IR_1 = 1{,}5 \cdot 4 = 6\ \text{V}.$</li>
+<li><strong>c) Hai nhánh:</strong> $U_{23} = U_{AB} - U_1 = 12 - 6 = 6\ \text{V}.$<br>$I_2 = \dfrac{6}{12} = 0{,}5\ \text{A},$ $I_3 = \dfrac{6}{6} = 1\ \text{A}.$</li>
+<li><strong>Kiểm tra:</strong> $I_2 + I_3 = 1{,}5\ \text{A} = I{:}$ khớp. Nhánh $R_3$ nhỏ hơn có dòng lớn hơn: hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng thay $R_3$ bằng điện trở $12\ \Omega.$</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $R_{23} = \;?$ và $R_{td} = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $I = \;?,$ $U_{23} = \;?$</li>
+<li>Kiểm tra: hai nhánh bằng nhau thì dòng mỗi nhánh bằng bao nhiêu phần dòng mạch chính?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2</summary>
+<p>$R_{23} = 6\ \Omega,$ $R_{td} = 10\ \Omega.$<br>$I = 1{,}2\ \text{A},$ $U_{23} = 1{,}2 \cdot 6 = 7{,}2\ \text{V}.$<br>Mỗi nhánh $0{,}6\ \text{A},$ đúng một nửa.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức: điện trở $R_3$ bị đứt</summary>
+<p>Nhánh $R_3$ hở, chỉ còn $R_1$ nối tiếp $R_2{:}$ $R_{td} = 4 + 12 = 16\ \Omega.$<br>$I = \dfrac{12}{16} = 0{,}75\ \text{A}.$<br>$U_2 = 0{,}75 \cdot 12 = 9\ \text{V},$ lớn hơn $6\ \text{V}$ lúc trước.<br>Mất một nhánh: $R_{td}$ tăng, dòng mạch chính giảm.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl90-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl90-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Mạch như Hình 4 với $R_1 = 3\ \Omega,$ $R_2 = 6\ \Omega,$ $R_3 = 3\ \Omega,$ $U_{AB} = 10\ \text{V}.$ Cường độ dòng điện qua $R_2$ là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl90-q8" id="tl90-q8a"><label for="tl90-q8a" class="tl-opt tl-no">A. $1{,}33\ \text{A}$</label>
+<input type="radio" name="tl90-q8" id="tl90-q8b"><label for="tl90-q8b" class="tl-opt tl-no">B. $1{,}0\ \text{A}$</label>
+<input type="radio" name="tl90-q8" id="tl90-q8c"><label for="tl90-q8c" class="tl-opt tl-ok">C. $0{,}67\ \text{A}$</label>
+<input type="radio" name="tl90-q8" id="tl90-q8d"><label for="tl90-q8d" class="tl-opt tl-no">D. $2{,}0\ \text{A}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_{23} = 2\ \Omega,$ $R_{td} = 5\ \Omega,$ $I = 2\ \text{A}.$<br>$U_{23} = 2 \cdot 2 = 4\ \text{V},$ nên $I_2 = \dfrac{4}{6} \approx 0{,}67\ \text{A}.$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $1{,}33\ \text{A}$ (A) là dòng qua $R_3,$ nhầm nhánh.<br>Ra $1{,}0\ \text{A}$ (B) là chia đôi dòng mạch chính: hai nhánh khác điện trở thì không chia đều.<br>Ra $2{,}0\ \text{A}$ (D) là dòng mạch chính.<br>Tìm $U_{23}$ trước, rồi $I_2 = \dfrac{U_{23}}{R_2}.$ Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 4 lời giải mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏠 Bấm xem: nối tiếp, song song quanh em</summary>
+<ul>
+<li><strong>Đèn, quạt, tủ lạnh</strong> trong nhà mắc song song: cùng nhận $220\ \text{V}.$</li>
+<li><strong>Công tắc</strong> mắc nối tiếp với đèn nó điều khiển: ngắt công tắc là hở đúng nhánh đó.</li>
+<li><strong>Cầu chì, aptomat</strong> mắc nối tiếp ở mạch chính: dòng quá lớn thì ngắt cả mạch.</li>
+<li><strong>Ổ cắm nhiều lỗ</strong>: các thiết bị cắm vào là các nhánh song song. Cắm càng nhiều, dòng qua dây ổ cắm càng lớn, dây càng nóng.</li>
+<li>Một số <strong>dây đèn mới</strong> chia thành nhiều đoạn song song: một đoạn hỏng thì các đoạn khác vẫn sáng.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Ba điện trở $10\ \Omega$ mắc nối tiếp. Điện trở tương đương bao nhiêu? <em>($30\ \Omega)$</em></li>
+<li><strong>⭐⭐</strong> Hai điện trở cùng giá trị $R$ mắc song song. $R_{td}$ bằng bao nhiêu? Với $n$ điện trở như thế?<br><em>Hai điện trở: $\dfrac{R}{2}.$</em><br><em>$n$ điện trở: $\dfrac{R}{n}.$</em></li>
+<li><strong>⭐⭐⭐</strong> Có ba điện trở $6\ \Omega.$ Mắc thế nào để được $9\ \Omega?$ Để được $4\ \Omega?$<br><em>${9\ \Omega}{:}$ một cái nối tiếp với cụm hai cái song song.</em><br><em>${4\ \Omega}{:}$ hai cái nối tiếp, rồi cả cụm song song với cái thứ ba.</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Nối tiếp: một đường đi, $I$ như nhau.</li>
+<li>Nối tiếp: $U = U_1 + U_2,$ $R_{td} = R_1 + R_2.$</li>
+<li>Song song: hai điểm chung, $U$ như nhau.</li>
+<li>Song song: $I = I_1 + I_2,$ $\dfrac{1}{R_{td}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}.$</li>
+<li>Hai điện trở song song: tích chia tổng, nhỏ hơn mỗi cái.</li>
+<li>Hỗn hợp: gộp cụm song song, rồi cộng nối tiếp.</li>
+<li>Đèn trong nhà mắc song song.</li>
+<li>Đọc đề: tìm hai điểm chung trước, gộp cụm nằm giữa chúng.</li>
+</ul>
+</div>

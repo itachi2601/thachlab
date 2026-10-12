@@ -1,0 +1,147 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+ "lesson_id": 90,
+ "nguon_trong_bai": "content/lesson-samples/l9-doan-mach-noi-tiep-song-song/theory.html",
+ "id": "tn-l9-doanmach-02",
+ "ten": "Dòng điện rẽ nhánh trong đoạn mạch song song",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "doan_mach.song_song_u_bang_nhau",
+  "doan_mach.song_song_i_cong",
+  "doan_mach.song_song_r_td"
+ ],
+ "muc_tieu": "Thấy dòng mạch chính bằng tổng dòng các nhánh, mỗi nhánh nhận đủ hiệu điện thế và không phụ thuộc nhánh kia.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn điện 6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở 10 Ω và 15 Ω",
+   "so_luong": 2
+  },
+  {
+   "ten": "Ampe kế (GHĐ 1,5 A, ĐCNN 0,02 A)",
+   "so_luong": 3
+  },
+  {
+   "ten": "Vôn kế (GHĐ 10 V, ĐCNN 0,1 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc R1 = 10 Ω song song R2 = 15 Ω giữa A và B, ampe kế A1, A2 trong từng nhánh, ampe kế mạch chính, vôn kế giữa A và B (Hình 3).",
+   "Đóng khoá, đọc vôn kế và ba ampe kế."
+  ],
+  "quan_sat": [
+   "Vôn kế chỉ 6,0 V.",
+   "A1 chỉ 0,60 A.",
+   "A2 chỉ 0,40 A.",
+   "Ampe kế mạch chính chỉ 1,00 A."
+  ],
+  "rut_ra": [
+   "Song song: U = U1 = U2; I = I1 + I2.",
+   "1/R_td = 1/R1 + 1/R2: R_td = 6 Ω nhỏ hơn cả 10 Ω và 15 Ω.",
+   "Hai nhánh cùng hiệu điện thế U."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế giữa A và B",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 6.0
+  },
+  {
+   "ky_hieu": "R1",
+   "ten": "Điện trở nhánh 1",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 30,
+   "mac_dinh": 10.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "R2",
+   "ten": "Điện trở nhánh 2",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 30,
+   "mac_dinh": 15.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "I1",
+   "ten": "Dòng nhánh 1",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "I2",
+   "ten": "Dòng nhánh 2",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Dòng mạch chính",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I1 = U/R1",
+   "I2 = U/R2",
+   "I = I1 + I2",
+   "R_td = R1·R2/(R1 + R2)"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện trở trong của nguồn, ampe kế, dây nối",
+   "vôn kế có điện trở rất lớn",
+   "với khoảng R1, R2 khai ở trên, I lớn nhất = 6/10 + 6/10 = 1,2 A, trong GHĐ 1,5 A của ampe kế"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Trạng thái",
+   "U (V)",
+   "I1 (A)",
+   "I2 (A)",
+   "I (A)"
+  ],
+  "hang": [
+   [
+    "đủ hai nhánh",
+    6.0,
+    0.6,
+    0.4,
+    1.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "I = I1 + I2 = 1,00 A; vôn kế chỉ 6,0 V cho cả hai nhánh.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ hiệu điện thế chia đôi cho hai nhánh.",
+  "Nghĩ tháo một nhánh thì nhánh kia nhận thêm dòng, sáng hơn.",
+  "Cộng R1 + R2 như mạch nối tiếp."
+ ],
+ "an_toan": "Không nối tắt A với B bằng dây trần (gần như nối tắt nguồn).",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Chấm điện tích chạy, tới A rẽ hai nhánh theo tỉ lệ I1 : I2; nút tháo/lắp từng nhánh.",
+  "diem_nhan": "Tháo một nhánh: dòng nhánh kia không đổi, chỉ dòng mạch chính giảm."
+ }
+}

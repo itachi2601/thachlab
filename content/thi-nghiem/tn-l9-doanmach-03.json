@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+ "lesson_id": 90,
+ "nguon_trong_bai": "content/lesson-samples/l9-doan-mach-noi-tiep-song-song/theory.html",
+ "id": "tn-l9-doanmach-03",
+ "ten": "Tháo một bóng đèn trong mạch nối tiếp và song song",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "doan_mach.noi_tiep_mot_duong",
+  "doan_mach.song_song_doc_lap",
+  "doan_mach.mang_dien_gia_dinh"
+ ],
+ "muc_tieu": "Thấy trong mạch nối tiếp một bóng hỏng thì mạch hở, tắt hết; trong mạch song song các nhánh còn lại vẫn hoạt động.",
+ "dung_cu": [
+  {
+   "ten": "Hai pin 1,5 V (nguồn 3 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn pin 3 V giống nhau, có đui",
+   "so_luong": 2
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc hai bóng nối tiếp với nguồn 3 V, đóng khoá.",
+   "Tháo một bóng khỏi đui.",
+   "Mắc lại hai bóng song song, đóng khoá.",
+   "Tháo một bóng khỏi đui."
+  ],
+  "quan_sat": [
+   "Nối tiếp: hai bóng sáng mờ.",
+   "Nối tiếp, tháo một bóng: bóng kia tắt.",
+   "Song song: hai bóng sáng rõ.",
+   "Song song, tháo một bóng: bóng kia sáng như cũ."
+  ],
+  "rut_ra": [
+   "Nối tiếp chỉ có một đường đi: hở một chỗ là hở cả mạch.",
+   "Song song: mỗi nhánh nhận đủ U của nguồn, độc lập với nhánh khác.",
+   "Đèn, quạt trong nhà mắc song song để mỗi thiết bị nhận đủ 220 V và bật tắt riêng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "R_b",
+   "ten": "Điện trở mỗi bóng (coi không đổi)",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 6.0
+  },
+  {
+   "ky_hieu": "cach_mac",
+   "ten": "Cách mắc",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1,
+   "lua_chon": [
+    {
+     "gia_tri": 0,
+     "ten": "nối tiếp"
+    },
+    {
+     "gia_tri": 1,
+     "ten": "song song"
+    }
+   ]
+  },
+  {
+   "ky_hieu": "I_bong",
+   "ten": "Dòng qua mỗi bóng",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "nối tiếp: I = U/(2R_b), mỗi bóng U/2",
+   "song song: mỗi bóng I = U/R_b, nhận đủ U",
+   "tháo một bóng: nối tiếp I = 0; song song bóng còn lại I = U/R_b"
+  ],
+  "gia_thiet": [
+   "coi điện trở bóng không đổi (thực tế dây tóc nguội thì điện trở nhỏ hơn)",
+   "bỏ qua điện trở trong của pin"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Cách mắc",
+   "Dòng mỗi bóng (A)",
+   "Tháo một bóng: dòng bóng còn lại (A)"
+  ],
+  "hang": [
+   [
+    "nối tiếp",
+    0.25,
+    0
+   ],
+   [
+    "song song",
+    0.5,
+    0.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình R bóng = 6 Ω không đổi, chưa phải số đo thật; bài chỉ dùng phần định tính."
+ },
+ "ket_qua_ky_vong": "Nối tiếp: tháo một bóng, bóng kia tắt. Song song: bóng kia sáng như cũ.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ trong mạch song song, tháo một bóng thì bóng kia sáng hơn vì nhận thêm dòng.",
+  "Nghĩ bóng đứt dây tóc vẫn cho dòng đi qua yếu hơn."
+ ],
+ "an_toan": "Dùng pin, không làm với điện lưới 220 V.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Chọn nối tiếp hoặc song song; bấm vào một bóng để tháo; độ sáng các bóng đổi theo dòng tính ra.",
+  "diem_nhan": "Song song: tháo một bóng, bóng còn lại không đổi độ sáng."
+ }
+}

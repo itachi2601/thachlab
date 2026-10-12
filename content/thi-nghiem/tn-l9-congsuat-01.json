@@ -1,0 +1,148 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 13. Năng lượng của dòng điện và công suất điện",
+ "lesson_id": 91,
+ "nguon_trong_bai": "content/lesson-samples/l9-nang-luong-dong-dien-cong-suat/theory.html",
+ "id": "tn-l9-congsuat-01",
+ "ten": "Đo U, I của bóng đèn 6 V – 3 W, tính công suất P = UI",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "congsuat.p_bang_ui",
+  "congsuat.so_dinh_muc",
+  "congsuat.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng U–I của bóng đèn thấy tích U·I càng lớn đèn càng sáng; ở đúng hiệu điện thế định mức, U·I bằng công suất ghi trên đèn.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn điện chỉnh được 0–6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn sợi đốt 6 V – 3 W có đui",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế (GHĐ 1 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế (GHĐ 6 V, ĐCNN 0,1 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc mạch như Hình 2: ampe kế nối tiếp với đèn, vôn kế song song với đèn.",
+   "Lần lượt đặt U = 1,5; 3,0; 4,5; 6,0 V; mỗi lần đọc ampe kế và ghi độ sáng.",
+   "Tính tích U·I cho mỗi lần đo."
+  ],
+  "quan_sat": [
+   "Dây tóc từ đỏ mờ, sáng yếu, khá sáng tới sáng bình thường ở 6 V.",
+   "Tích U·I tăng từ khoảng 0,33 W lên 3,0 W."
+  ],
+  "rut_ra": [
+   "Tích U·I (công suất) càng lớn, đèn càng sáng.",
+   "Ở đúng 6 V, U·I = 3,0 W bằng số ghi trên đèn: đó là công suất định mức.",
+   "I không tăng tỉ lệ với U vì điện trở dây tóc tăng khi nóng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế đặt vào đèn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6,
+   "mac_dinh": 6,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "U_dm",
+   "ten": "Hiệu điện thế định mức",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 6.0
+  },
+  {
+   "ky_hieu": "P_dm",
+   "ten": "Công suất định mức",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện đọc được",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất P = U·I",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = I_dm·(U/U_dm)^0,6 với I_dm = P_dm/U_dm = 0,5 A",
+   "I_doc = lam_tron(I, 0,01 A)",
+   "P = U·I_doc"
+  ],
+  "gia_thiet": [
+   "dây tóc vonfam: điện trở tăng khi nóng, mô hình gần đúng I tỉ lệ U^0,6",
+   "bỏ qua điện trở ampe kế, dây nối; vôn kế có điện trở rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "I (A)",
+   "U·I (W)"
+  ],
+  "hang": [
+   [
+    1.5,
+    0.22,
+    0.33
+   ],
+   [
+    3.0,
+    0.33,
+    0.99
+   ],
+   [
+    4.5,
+    0.42,
+    1.89
+   ],
+   [
+    6.0,
+    0.5,
+    3.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình I = 0,5·(U/6)^0,6, làm tròn 0,01 A; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "U·I ở 6 V bằng 3,0 W đúng số ghi; U tăng 4 lần thì U·I tăng khoảng 9 lần.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ đèn lúc nào cũng có công suất 3 W vì số ghi là 3 W.",
+  "Nghĩ U tăng 4 lần thì công suất cũng tăng 4 lần.",
+  "Dùng ampe kế GHĐ lớn, độ chia thô để 'an toàn' làm sai số lớn."
+ ],
+ "sai_so_thuong_gap": "Đọc kim ampe kế lệch nửa vạch 0,005 A: khoảng 2 % ở 0,22 A, 1 % ở 0,50 A.",
+ "an_toan": "Không đặt quá 6 V vào đèn 6 V – 3 W; bóng đèn nóng, không chạm tay.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thanh U, dây tóc sáng dần, kim ampe kế nhảy theo độ chia; bảng tự tính U·I.",
+  "diem_nhan": "Chỉ ở đúng 6 V, U·I mới bằng 3 W ghi trên đèn."
+ }
+}
