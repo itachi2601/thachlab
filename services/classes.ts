@@ -9,6 +9,10 @@ interface ManagedClassSeed {
   sort_order: number;
 }
 
+/** Lớp Anh văn chuyên ngành Cơ khí (CTTC) — không phải khối THPT: không hiện ở dải "Em học lớp mấy?", môn là 'avcn'. */
+export const AVCN_CLASS_SLUG = "avcn";
+export const AVCN_SUBJECT_CODE = "avcn";
+
 export const MANAGED_CLASSES: ManagedClassSeed[] = [
   {
     name: "KHTN 9",
@@ -37,6 +41,14 @@ export const MANAGED_CLASSES: ManagedClassSeed[] = [
     color: "#8B5CF6",
     icon: "🎓",
     sort_order: 4,
+  },
+  // Lớp CTTC "Anh văn chuyên ngành Cơ khí" (13/10/2026): vào tự do, không duyệt; nội dung = môn academic_subjects 'avcn'.
+  {
+    name: "Anh văn chuyên ngành Cơ khí",
+    slug: AVCN_CLASS_SLUG,
+    color: "#0284C7",
+    icon: "📘",
+    sort_order: 6,
   },
 ];
 

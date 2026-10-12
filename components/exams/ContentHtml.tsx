@@ -240,6 +240,22 @@ export default function ContentHtml({
   /** Bấm nút phát (uỷ quyền sự kiện): đổi đúng nút đó thành player, không tải player trước. */
   function handleClick(event: React.MouseEvent<HTMLSpanElement>) {
     if (!(event.target instanceof Element)) return;
+    // Nút nghe 🔊 của bài Anh văn chuyên ngành: <button data-tl-speak="…"> — HTML lưu DB không chứa JS,
+    // đọc bằng speechSynthesis của trình duyệt (en-US, chậm 0.9). Không lan ra <summary> bao ngoài.
+    const speak = event.target.closest("button[data-tl-speak]");
+    if (speak instanceof HTMLButtonElement) {
+      event.preventDefault();
+      event.stopPropagation();
+      const text = speak.dataset.tlSpeak ?? "";
+      if (text && typeof window !== "undefined" && "speechSynthesis" in window) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = "en-US";
+        u.rate = 0.9;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+      }
+      return;
+    }
     // Mô phỏng SVG (SMIL begin="indefinite"): chạy MỘT lần mỗi lần bấm, không tự chạy khi đang đọc (B4).
     const run = event.target.closest("button[data-bt-run]");
     if (run instanceof HTMLButtonElement) {

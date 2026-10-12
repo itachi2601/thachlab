@@ -471,7 +471,11 @@
           "Mở rộng lỗ được gọi là doa."
         ]
       ],
-      "ghi_chu": "Part 5 hay cho câu \"X được gọi là Y\". Công thức: <strong>X + is called + Y</strong>. Không cần biết thì, không cần chủ ngữ phức tạp."
+      "ghi_chu": [
+        "Part 5 hay cho câu \"X được gọi là Y\".",
+        "Công thức: <strong>X + is called + Y</strong>.",
+        "Không cần biết thì, không cần chủ ngữ phức tạp."
+      ]
     },
     {
       "ten": "Mẫu 2 · bị động: is held / is shaped / is pumped",
@@ -489,7 +493,10 @@
           "Dung dịch cắt gọt được bơm lên phôi."
         ]
       ],
-      "ghi_chu": "Thấy <strong>is/are + V-ed</strong> → dịch \"được…\". Thấy <strong>which + V</strong> → dịch \"mà…\" hoặc bỏ \"which\", dịch tiếp tính chất."
+      "ghi_chu": [
+        "Thấy <strong>is/are + V-ed</strong> → dịch \"được…\".",
+        "Thấy <strong>which + V</strong> → dịch \"mà…\", hoặc bỏ \"which\" và dịch tiếp tính chất."
+      ]
     }
   ],
   "gan_nhan": {
@@ -642,22 +649,42 @@
         {
           "q": "Components which have a circular cross-section are usually shaped by the ______ technique.",
           "ans": "turning",
-          "why": "Câu 1: <em>Turning is a technique for cutting components that have a circular cross-section.</em>"
+          "why": "Câu 1: <em>Turning is a technique for cutting components that have a circular cross-section.</em>",
+          "opts": [
+            "milling",
+            "turning",
+            "sawing"
+          ]
         },
         {
           "q": "During turning, a ______ machine tool is moved against the rotating workpiece.",
           "ans": "fixed",
-          "why": "Câu 3: <em>A fixed machine tool is then moved…</em>"
+          "why": "Câu 3: <em>A fixed machine tool is then moved…</em>",
+          "opts": [
+            "rotating",
+            "fixed",
+            "hollow"
+          ]
         },
         {
           "q": "A drill is fitted with a tool called a drill ______.",
           "ans": "bit",
-          "why": "Câu 5: <em>a tool called a drill bit</em>."
+          "why": "Câu 5: <em>a tool called a drill bit</em>.",
+          "opts": [
+            "blade",
+            "wheel",
+            "bit"
+          ]
         },
         {
           "q": "Enlarging a hole is called ______.",
           "ans": "boring",
-          "why": "Câu cuối, chép nguyên từ."
+          "why": "Câu cuối, chép nguyên từ.",
+          "opts": [
+            "boring",
+            "drilling",
+            "grinding"
+          ]
         }
       ],
       "ds": [
@@ -699,18 +726,44 @@
         "kerf",
         "abrasive"
       ],
-      "chien_thuat": "Đọc cả câu trước khi điền. Chỗ (2) đứng sau <em>piece of</em> → danh từ chất liệu. Chỗ (5) đứng trước <em>wheels</em> → tính từ. Từ nào chắc thì điền trước, gạch khỏi hộp."
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (2) đứng sau <em>piece of</em> → danh từ chất liệu.",
+        "Chỗ (5) đứng trước <em>wheels</em> → tính từ.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
     },
     "part4": {
       "en": "Milling is cutting done by a milling machine, often using toothed cutting discs. When a workpiece is milled, it is held in a fixed position on the machine, and is shaped by cutting tools which rotate while being moved over the surface of the workpiece.",
       "vi": "Phay là cắt gọt bằng máy phay, thường dùng đĩa cắt có răng. Khi phôi được phay, nó được giữ cố định trên máy và được tạo hình bởi dao cắt quay tròn trong lúc di chuyển trên bề mặt phôi.",
-      "chien_thuat": "Cắt câu dài tại dấu phẩy và <em>which</em>. Giữ nguyên thuật ngữ đã học (phay, phôi, dao cắt). Bị động <em>is held / is shaped</em> → \"được giữ / được tạo hình\". Dịch được nửa câu vẫn có điểm thành phần."
+      "chien_thuat": [
+        "Cắt câu dài tại dấu phẩy và <em>which</em>.",
+        "Giữ nguyên thuật ngữ đã học: phay, phôi, dao cắt.",
+        "Bị động <em>is held / is shaped</em> → \"được giữ / được tạo hình\".",
+        "Dịch được nửa câu vẫn có điểm thành phần."
+      ]
     },
     "part5": {
       "vi": "Phế phẩm sinh ra khi cắt kim loại được gọi là phoi.",
       "en": "The waste produced when metal is cut is called swarf (or chips).",
-      "chien_thuat": "Dùng mẫu 1: <strong>X is called Y</strong>. X = \"the waste produced when metal is cut\". Viết ngắn vẫn đúng: <em>The waste is called swarf.</em> đã có nửa điểm."
-    }
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X is called Y</strong>.",
+        "X = \"the waste produced when metal is cut\".",
+        "Viết ngắn vẫn đúng: <em>The waste is called swarf.</em> đã có nửa điểm."
+      ]
+    },
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>rotates</em>, <em>waste</em>, <em>gap</em>, <em>enlarging</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn hình dạng (khung chữ C = hacksaw, bánh đá = grinder).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: rotates ↔ fixed, new ↔ enlarging, small ↔ big."
+    ]
   },
   "luyen_tap": {
     "mc": [

@@ -23,6 +23,8 @@ import {
 import {
   classGrade,
   displayClassesByGrade,
+  AVCN_CLASS_SLUG,
+  AVCN_SUBJECT_CODE,
   expandClassIdsByGrade,
   fetchMyClassRequest,
 } from "@/services/classes";
@@ -229,9 +231,12 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const active = classes?.find((c) =>
     effectiveSlug ? c.slug === effectiveSlug : c.id === activeId,
   );
-  const subjectCode = classGrade(active?.name ?? "") === "9" ? activeSubjectCode : "vat-ly";
+  const isAvcn = active?.slug === AVCN_CLASS_SLUG;
+  const subjectCode = isAvcn ? AVCN_SUBJECT_CODE : classGrade(active?.name ?? "") === "9" ? activeSubjectCode : "vat-ly";
   const activeDisplayName = active
-    ? classGrade(active.name) === "9"
+    ? isAvcn
+      ? active.name
+      : classGrade(active.name) === "9"
       ? subjectCode === HSG_SUBJECT_CODE
         ? academicSubject(subjectCode).label
         : `KHTN 9 · ${academicSubject(subjectCode).label}`

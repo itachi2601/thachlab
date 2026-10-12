@@ -17,6 +17,7 @@ FILES=(
   "supabase/migrations/20261011200000_streak_moi_bai.sql|Chuỗi ngày tính mọi bài đạt điểm tối thiểu (không chỉ bài thuộc nguồn RP)|ngoài giờ học sinh làm bài"
   "supabase/migrations/20261011230000_phu_dao_don_muc_chi_vi_cau_kho.sql|Đóng ~174 mục phụ đạo chỉ mở vì câu Khó (có sao lưu)|lúc nào cũng được"
   "supabase/migrations/20261012120000_kiem_tra_dau_vao.sql|Kiểm tra đầu vào cho em vào lớp trễ: bảng entry_diagnostics + 4 hàm diagnostic_*|lúc nào cũng được"
+  "supabase/migrations/20261013100000_lop_avcn_anh_van_chuyen_nganh.sql|Lớp Anh văn chuyên ngành Cơ khí (avcn): môn + lớp + chương + 10 bài, chỉ Chapter 8 công bố (chỉ chèn dữ liệu)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung
 # ĐÃ CHẠY 11/10/2026 (17:20): 20261011220000_phu_dao_bo_cau_kho

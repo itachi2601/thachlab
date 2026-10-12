@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MANAGED_CLASSES, classGrade } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG, classGrade } from "@/services/classes";
 import type { HomeStats } from "@/components/home/home-stats.server";
 
 // Một hàng chip, đặt ngay dưới mô phỏng — không còn là màn hình đầu.
@@ -35,7 +35,7 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
         <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Em học lớp mấy?</h2>
         <p className="mt-1 text-sm text-ink">Bấm vào lớp của em để vào bài học.</p>
         <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {MANAGED_CLASSES.map((managed) => {
+          {MANAGED_CLASSES.filter((managed) => managed.slug !== AVCN_CLASS_SLUG).map((managed) => {
             const copy = CLASS_COPY[managed.slug] ?? { level: "", grade: classGrade(managed.name) ?? "", title: managed.name };
             const s = statsByGrade.get(classGrade(managed.name));
             return (

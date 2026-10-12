@@ -37,7 +37,8 @@ const COURSES: Course[] = [
   },
   {
     title: "Anh văn chuyên ngành cơ khí",
-    description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và giao tiếp trong ngành cơ khí.",
+    description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và luyện đúng 5 Part của đề cuối kỳ. Vào học tự do.",
+    href: "/lop-hoc/avcn",
     icon: BookOpen,
   },
 ];

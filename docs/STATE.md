@@ -16,7 +16,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Đã chạy 11/10: `20261011180000_ta_doc_ket_qua_lam_bai` (TA đọc exam_results; chờ thầy thử bằng tài khoản trợ giảng); `20261011170000_ta_reminders` (skill kiem-tra-tro-giang-tuan, đã gửi nhắc tuần 05–11/10 cho 6 trợ giảng); `20261011160000_rank_bat_nguon_thuong_chenh_lech` (+30 nguồn, cộng bù 4185 RP/131 HS, max 158/HS); còn cần deploy code thông báo RP ở ExamRunner.
 - Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
 - Đã chạy 12/10 20:09: `20261012120000_kiem_tra_dau_vao` (bảng entry_diagnostics + diagnostic_get/submit/reset). Code UI chưa deploy, chưa thử HS thật; chưa có nút "cho làm lại" trên UI thầy/TA (RPC `diagnostic_reset` có sẵn).
-- Hiện tại không có migration nào trong danh sách chờ `FILES`.
+- **ĐANG CHỜ 13/10**: `20261013100000_lop_avcn_anh_van_chuyen_nganh` (môn + lớp `avcn` + chương + 10 bài, chỉ chèn dữ liệu) → rồi `npx tsx scripts/upload-lesson.mts content/lesson-samples/avcn-chapter-8-chipping-machining/bundle.json --lesson <id Chapter 8>` → deploy. Skill soạn 9 chương còn lại: `.claude/skills/soan-bai-avcn/`.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
