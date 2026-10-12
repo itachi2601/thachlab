@@ -22,6 +22,7 @@ const links: NavLink[] = [
   { label: "Đề thi các năm", href: "/de-thi" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
+  { label: "Chơi", href: "/choi" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
 ];
 
