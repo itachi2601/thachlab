@@ -1,0 +1,150 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 3. Cơ năng",
+ "lesson_id": 130,
+ "nguon_trong_bai": "content/lesson-samples/l9-co-nang/theory.html",
+ "id": "tn-l9-conang-01",
+ "ten": "Khối trượt trên máng đệm khí nghiêng: so thế năng lúc thả với động năng ở chân dốc",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "conang.bao_toan",
+  "conang.wt_bang_10mh",
+  "conang.wd_bang_nua_mv2",
+  "conang.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng số liệu thấy động năng ở chân dốc gần bằng thế năng lúc thả: cơ năng gần như được bảo toàn; phần hụt vài phần trăm do lực cản.",
+ "dung_cu": [
+  {
+   "ten": "Máng đệm khí có thể nghiêng, kèm bơm khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khối trượt 0,20 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian số (đo v tới 0,01 m/s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ cao (ĐCNN 1 mm)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nghiêng máng, đặt cổng quang ở chân dốc.",
+   "Thả khối trượt không vận tốc đầu từ độ cao h = 0,10; 0,20; 0,30; 0,40 m so với chân dốc.",
+   "Ghi vận tốc v ở chân dốc; tính 10mh và ½mv²."
+  ],
+  "quan_sat": [
+   "v đo được: 1,39; 1,96; 2,40; 2,77 m/s.",
+   "½mv² luôn nhỏ hơn 10mh một chút (hụt khoảng 3–4 %)."
+  ],
+  "rut_ra": [
+   "Thế năng lúc thả gần như chuyển hết thành động năng ở chân dốc.",
+   "Cơ năng gần như bảo toàn; phần hụt nhỏ thành nhiệt do lực cản."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao lúc thả so với chân dốc",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng khối trượt",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.2
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Phần cơ năng mất do lực cản",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.04
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc ở chân dốc",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "W_d",
+   "ten": "Động năng ở chân dốc ½mv²",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "W_t = 10·m·h",
+   "v = sqrt(2·10·h·(1 − f)) với f = 0,04",
+   "v_doc = lam_tron(v, 0,01 m/s)",
+   "W_d = ½·m·v_doc²"
+  ],
+  "gia_thiet": [
+   "g ≈ 10 m/s² theo quy ước KHTN 9 (W_t = 10mh)",
+   "lực cản nhỏ, coi lấy đi 4 % cơ năng ở mọi độ cao (số minh hoạ, cố ý lớn cho dễ thấy; máng đệm khí thật thường hụt 1–2 %)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (m)",
+   "v (m/s)",
+   "10mh (J)",
+   "½mv² (J)"
+  ],
+  "hang": [
+   [
+    0.1,
+    1.39,
+    0.2,
+    0.193
+   ],
+   [
+    0.2,
+    1.96,
+    0.4,
+    0.384
+   ],
+   [
+    0.3,
+    2.4,
+    0.6,
+    0.576
+   ],
+   [
+    0.4,
+    2.77,
+    0.8,
+    0.767
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình v = sqrt(20h·0,96), làm tròn 0,01 m/s; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "½mv² ≈ 0,96·10mh ở mọi độ cao; sai số đọc v (≤ 0,7 %) nhỏ hơn phần hụt.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ ở chân dốc thế năng bằng 0 nên cơ năng 'mất'.",
+  "Nghĩ phần hụt là do đọc đồng hồ sai.",
+  "Nghĩ vật nặng hơn thì xuống chân dốc nhanh hơn."
+ ],
+ "sai_so_thuong_gap": "Đọc v tới 0,01 m/s làm ½mv² sai khoảng 0,4–0,7 %; đo h sai 1 mm làm 10mh sai 1 % ở h = 0,10 m.",
+ "an_toan": "Giữ khối trượt ở chân dốc bằng tay hoặc tấm chặn mềm.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thanh h, khối trượt chạy xuống; hai cột 10mh và ½mv² mọc lên cạnh nhau; nút bật/tắt lực cản.",
+  "diem_nhan": "Tắt lực cản thì hai cột bằng nhau đúng."
+ }
+}

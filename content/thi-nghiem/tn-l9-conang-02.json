@@ -1,0 +1,107 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 3. Cơ năng",
+ "lesson_id": 130,
+ "nguon_trong_bai": "content/lesson-samples/l9-co-nang/theory.html",
+ "id": "tn-l9-conang-02",
+ "ten": "Con lắc vướng đinh: vật trở lại đúng độ cao cũ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "conang.bao_toan",
+  "conang.chuyen_hoa"
+ ],
+ "muc_tieu": "Thấy con lắc vẫn lên tới gần đúng độ cao lúc thả dù dây vướng đinh làm đường đi đổi: cơ năng được bảo toàn.",
+ "dung_cu": [
+  {
+   "ten": "Quả nặng 100–200 g treo dây mảnh dài khoảng 1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bảng gỗ có giá treo, một cái đinh đóng dưới điểm treo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ, phấn để kẻ vạch ngang",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo con lắc trước bảng, kẻ vạch ngang ngang tầm vị trí A.",
+   "Đóng đinh trên đường thẳng đứng dưới điểm treo.",
+   "Kéo vật lên A rồi thả nhẹ."
+  ],
+  "quan_sat": [
+   "Dây vướng đinh, vật đi cung tròn bán kính nhỏ hơn.",
+   "Vật lên tới gần đúng vạch ngang."
+  ],
+  "rut_ra": [
+   "Vật trở lại gần đúng độ cao cũ dù đường đi đổi.",
+   "Cơ năng gần như được bảo toàn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao A so với vị trí thấp nhất",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.2,
+   "mac_dinh": 0.15,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách đinh dưới điểm treo",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.3,
+   "max": 0.7,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "h_len",
+   "ten": "Độ cao vật lên được phía bên kia",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "h_len = h (bỏ qua lực cản)",
+   "điều kiện vật còn đi trên cung tròn: h nhỏ hơn bán kính phần dây dưới đinh (L − d)"
+  ],
+  "gia_thiet": [
+   "dây không dãn, bỏ qua lực cản",
+   "dây dài 1 m; giới hạn h ≤ 0,2 m và d ≤ 0,7 m để h nhỏ hơn L − d, dây luôn căng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h lúc thả (m)",
+   "h lên được (m)"
+  ],
+  "hang": [
+   [
+    0.15,
+    0.15
+   ]
+  ],
+  "ghi_chu": "Kết quả lí tưởng; thực tế thấp hơn 1–2 mm do lực cản."
+ },
+ "ket_qua_ky_vong": "Vật lên tới gần đúng vạch ngang ở cả hai phía.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ cung ngắn hơn thì vật lên thấp hơn.",
+  "Nghĩ vướng đinh làm vật 'mất đà' rất nhiều."
+ ],
+ "an_toan": "Không kéo dây quá cao để vật quật vào đinh hoặc người đứng gần.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo đinh lên xuống, thả con lắc; vạch ngang của A luôn hiện.",
+  "diem_nhan": "Mọi vị trí đinh, vật đều chạm lại vạch ngang."
+ }
+}

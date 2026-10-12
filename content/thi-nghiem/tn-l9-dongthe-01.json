@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 2. Động năng. Thế năng",
+ "lesson_id": 129,
+ "nguon_trong_bai": "content/lesson-samples/l9-dong-nang-the-nang/theory.html",
+ "id": "tn-l9-dongthe-01",
+ "ten": "Viên bi lăn xuống máng nghiêng va vào khúc gỗ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dongnang.khai_niem",
+  "dongnang.phu_thuoc_m_v"
+ ],
+ "muc_tieu": "Thấy vật đang chuyển động có năng lượng (đẩy được khúc gỗ); bi càng nặng, tới càng nhanh thì khúc gỗ đi càng xa.",
+ "dung_cu": [
+  {
+   "ten": "Máng nghiêng có thước đo độ cao",
+   "so_luong": 1
+  },
+  {
+   "ten": "Viên bi thép 50 g và 100 g",
+   "so_luong": 2
+  },
+  {
+   "ten": "Khúc gỗ nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo quãng đường",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả bi 50 g từ độ cao 10 cm, đo quãng s khúc gỗ bị đẩy đi.",
+   "Thả bi 50 g từ 20 cm, đo s.",
+   "Thả bi 100 g từ 10 cm, đo s."
+  ],
+  "quan_sat": [
+   "Thả cao hơn: bi tới nhanh hơn, khúc gỗ đi xa hơn.",
+   "Bi nặng hơn, cùng độ cao: khúc gỗ đi xa hơn."
+  ],
+  "rut_ra": [
+   "Vật đang chuyển động có năng lượng: động năng.",
+   "Khối lượng càng lớn, tốc độ càng lớn thì động năng càng lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng bi",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.2,
+   "mac_dinh": 0.05,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả bi",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng khúc gỗ bị đẩy đi",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "s = k·m·h với k = 8 cm/(kg·m) (gần đúng)"
+  ],
+  "gia_thiet": [
+   "coi phần năng lượng bi truyền cho khúc gỗ là như nhau giữa các lần (gần đúng, chỉ dùng để so sánh định tính)",
+   "bi lăn không trượt; không dùng mgh = ½mv² cho bi lăn vì có động năng quay"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (g)",
+   "h (cm)",
+   "s (cm)"
+  ],
+  "hang": [
+   [
+    50,
+    10,
+    4.0
+   ],
+   [
+    50,
+    20,
+    8.0
+   ],
+   [
+    100,
+    10,
+    8.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình gần đúng s tỉ lệ m·h, chỉ để so sánh xa/gần; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Tăng độ cao thả hoặc khối lượng bi thì khúc gỗ đi xa hơn.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ chỉ có tốc độ quyết định, khối lượng bi không quan trọng.",
+  "Nghĩ bi đứng yên ở đỉnh máng không có năng lượng gì."
+ ],
+ "an_toan": "Đặt vật chắn ở cuối bàn để bi không lăn rơi xuống chân.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Thanh trượt m và h; bi lăn xuống, va khúc gỗ, khúc gỗ trượt rồi dừng, ghi s.",
+  "diem_nhan": "Cho học sinh đoán trước: bi nặng gấp đôi thì khúc gỗ đi xa hơn hay như cũ."
+ }
+}

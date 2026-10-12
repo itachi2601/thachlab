@@ -1,0 +1,148 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 2. Động năng. Thế năng",
+ "lesson_id": 129,
+ "nguon_trong_bai": "content/lesson-samples/l9-dong-nang-the-nang/theory.html",
+ "id": "tn-l9-dongthe-02",
+ "ten": "Đo động năng xe lăn bằng cổng quang",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dongnang.cong_thuc",
+  "dongnang.ti_le_v_binh_phuong",
+  "dongnang.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng m, Δt tính v = d/Δt và Wđ = ½mv²; thấy v gấp đôi thì Wđ gấp bốn, m gấp đôi thì Wđ gấp đôi.",
+ "dung_cu": [
+  {
+   "ten": "Máng ngang ít ma sát",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe lăn 0,20 kg và gia trọng 0,20 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm chắn sáng rộng 2,0 cm gắn trên xe",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện và đồng hồ đo thời gian hiện số (độ chia 0,0001 s)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gắn tấm chắn 2,0 cm lên xe, đặt cổng quang giữa máng.",
+   "Đẩy xe cho chạy qua cổng quang, đọc Δt; đẩy mạnh hơn, đọc Δt.",
+   "Thêm gia trọng cho xe nặng 0,40 kg, lặp lại hai lần đẩy.",
+   "Tính v = d/Δt và Wđ = ½mv²."
+  ],
+  "quan_sat": [
+   "Δt: 0,0198; 0,0101; 0,0202; 0,0099 s.",
+   "Wđ: 0,102; 0,392; 0,196; 0,816 J."
+  ],
+  "rut_ra": [
+   "Cùng m, v gần gấp đôi thì Wđ gần gấp bốn.",
+   "Cùng v, m gấp đôi thì Wđ gần gấp đôi.",
+   "Đo lặp và lấy trung bình Δt để kết luận đáng tin hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 0.6,
+   "mac_dinh": 0.2,
+   "buoc": 0.2
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Bề rộng tấm chắn",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.02
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian chắn sáng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.0001
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ v = d/Δt",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "Wd",
+   "ten": "Động năng ½mv²",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v = d/Δt (làm tròn 0,01 m/s)",
+   "Wđ = ½·m·v²"
+  ],
+  "gia_thiet": [
+   "xe chạy gần như đều khi qua cổng quang (máng ngang, tấm chắn hẹp)",
+   "mỗi lượt đẩy tốc độ lệch ngẫu nhiên vài phần trăm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "Δt (s)",
+   "v (m/s)",
+   "Wđ (J)"
+  ],
+  "hang": [
+   [
+    0.2,
+    0.0198,
+    1.01,
+    0.102
+   ],
+   [
+    0.2,
+    0.0101,
+    1.98,
+    0.392
+   ],
+   [
+    0.4,
+    0.0202,
+    0.99,
+    0.196
+   ],
+   [
+    0.4,
+    0.0099,
+    2.02,
+    0.816
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ (Δt chọn lệch nhẹ quanh 0,020 s và 0,010 s), tính đúng theo v = d/Δt, Wđ = ½mv²; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Tỉ số Wđ lần 2/lần 1 ≈ 3,84 (gần 4); lần 3/lần 1 ≈ 1,92 (gần 2).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ v gấp đôi thì động năng gấp đôi.",
+  "Tính v = Δt/d.",
+  "Dùng đồng hồ độ chia 0,01 s cho Δt cỡ 0,01 s."
+ ],
+ "sai_so_thuong_gap": "Δt cỡ 0,01 s mà đồng hồ chỉ tới 0,01 s thì sai số tương đối tới 50 %; độ chia 0,0001 s cho sai số khoảng 1 %.",
+ "an_toan": "Đặt vật chắn ở cuối máng để xe không lao khỏi bàn.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thanh lực đẩy, xe qua cổng quang, đồng hồ hiện Δt; bảng tự tính v và Wđ, vẽ Wđ theo v.",
+  "diem_nhan": "Đồ thị Wđ theo v là đường cong (parabol), không phải đường thẳng."
+ }
+}

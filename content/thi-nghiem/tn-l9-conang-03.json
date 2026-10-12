@@ -1,0 +1,129 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 3. Cơ năng",
+ "lesson_id": 130,
+ "nguon_trong_bai": "content/lesson-samples/l9-co-nang/theory.html",
+ "id": "tn-l9-conang-03",
+ "ten": "Đo độ cao bóng cao su nảy lên sau mỗi lần chạm sàn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "conang.co_luc_can",
+  "conang.bao_toan_nang_luong"
+ ],
+ "muc_tieu": "Thấy cơ năng của bóng giảm sau mỗi lần va sàn; phần giảm thành nhiệt năng và âm thanh, năng lượng toàn phần vẫn bảo toàn.",
+ "dung_cu": [
+  {
+   "ten": "Bóng cao su 50 g",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dài 1 m dựng đứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay video chậm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả bóng từ 1,00 m cạnh thước, quay video.",
+   "Xem lại từng khung, đọc độ cao ba lần nảy đầu."
+  ],
+  "quan_sat": [
+   "Độ cao: 0,80; 0,64; 0,51 m."
+  ],
+  "rut_ra": [
+   "Mỗi lần nảy cơ năng còn khoảng 80 % lần trước.",
+   "Phần mất thành nhiệt năng, âm thanh."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h0",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Tỉ số độ cao hai lần nảy liên tiếp",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 0.95,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng bóng",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "W_n",
+   "ten": "Cơ năng sau lần nảy n",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "h_n = h0·k^n",
+   "W_n = 10·m·h_n"
+  ],
+  "gia_thiet": [
+   "bỏ qua sức cản không khí giữa hai lần chạm",
+   "mỗi lần va sàn mất cùng một tỉ lệ cơ năng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "h (m)",
+   "W = 10mh (J)"
+  ],
+  "hang": [
+   [
+    0,
+    1.0,
+    0.5
+   ],
+   [
+    1,
+    0.8,
+    0.4
+   ],
+   [
+    2,
+    0.64,
+    0.32
+   ],
+   [
+    3,
+    0.51,
+    0.256
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình h_n = 1,00·0,8^n; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Độ cao và cơ năng giảm theo cấp số nhân, mỗi lần còn khoảng 80 %.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ năng lượng của bóng mất đi, trái bảo toàn năng lượng.",
+  "Nghĩ bóng vẫn bảo toàn cơ năng."
+ ],
+ "an_toan": "Thả bóng ở chỗ trống, không gần đồ dễ vỡ.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Bóng nảy với thanh k; cột cơ năng và cột nhiệt năng cộng dồn hiện cạnh nhau.",
+  "diem_nhan": "Cơ năng + nhiệt năng luôn bằng cơ năng lúc thả."
+ }
+}

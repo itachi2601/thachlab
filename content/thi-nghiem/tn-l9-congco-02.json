@@ -1,0 +1,133 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 4. Công và công suất",
+ "lesson_id": 131,
+ "nguon_trong_bai": "content/lesson-samples/l9-cong-cong-suat/theory.html",
+ "id": "tn-l9-congco-02",
+ "ten": "Hai bạn xách bao gạo lên tầng 3: cùng công, khác công suất",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "congco.a_bang_fs",
+  "congsuat.p_bang_a_chia_t"
+ ],
+ "muc_tieu": "Thấy hai người làm cùng một công nhưng mất thời gian khác nhau; công suất P = A/t cho biết ai làm nhanh hơn.",
+ "dung_cu": [
+  {
+   "ten": "Bao gạo 10 kg",
+   "so_luong": 2
+  },
+  {
+   "ten": "Cầu thang cao 6 m (tầng 1 lên tầng 3)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giờ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mỗi bạn xách một bao gạo 10 kg từ tầng 1 lên tầng 3, cao hơn 6 m.",
+   "Bấm giờ: Minh 20 s, Nam 60 s."
+  ],
+  "quan_sat": [
+   "Cả hai: A = 100 N · 6 m = 600 J.",
+   "Minh mất ít thời gian hơn."
+  ],
+  "rut_ra": [
+   "Cùng công chưa cho biết ai nhanh hơn.",
+   "Công suất: Minh 30 W, Nam 10 W."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng bao gạo",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 25,
+   "mac_dinh": 10,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 12,
+   "mac_dinh": 6,
+   "buoc": 3
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 90,
+   "mac_dinh": 20,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công nâng bao gạo",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = 10·m (nâng đều)",
+   "A = F·h",
+   "P = A/t"
+  ],
+  "gia_thiet": [
+   "chỉ tính công đưa bao gạo lên cao, bỏ qua công nâng chính người xách",
+   "đi lên đều"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Bạn",
+   "A (J)",
+   "t (s)",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    "Minh",
+    600,
+    20,
+    30
+   ],
+   [
+    "Nam",
+    600,
+    60,
+    10
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "Cùng 600 J; Minh 30 W gấp ba Nam 10 W.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ người đi nhanh làm nhiều công hơn.",
+  "Lấy khối lượng 10 kg làm lực thay vì trọng lượng 100 N."
+ ],
+ "an_toan": "Không chạy trên cầu thang khi mang vật nặng; ví dụ chỉ để tính.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hai nhân vật leo cầu thang song song với tốc độ chỉnh được; đồng hồ và bảng A, t, P.",
+  "diem_nhan": "Hai cột A bằng nhau, cột P khác nhau."
+ }
+}

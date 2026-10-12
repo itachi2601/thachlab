@@ -1,0 +1,449 @@
+{
+ "lesson_id": 129,
+ "lesson_title": "Bài 2. Động năng. Thế năng",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "checked_at": "2026-10-12",
+  "notes": "Soạn 12/10/2026 (chặng 3). Kiểm chéo kiem-code 12/10/2026: không lỗi chặn, đáp số khớp; đã sửa cỡ chỉ số dưới SVG 14, bỏ câu lấn Bài 3 ở dạng 4. Chưa đối chiếu ngân hàng câu hỏi (topic 74/75)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật đang chuyển động có động năng.</li><li>Vật ở trên cao so với mốc có thế năng.</li><li>Hai câu hỏi độc lập: một vật có thể có một, cả hai hoặc không dạng nào.</li><li>⚠ <strong>Điều kiện:</strong> chuyển động xét so với mặt đất; độ cao đo từ mốc là mặt đất.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Quả táo trên cành</span></p><p>Đứng yên: không có động năng.</p><p>Ở trên cao: có thế năng.</p><div class=\"bt-ans\"><p>Chỉ có thế năng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Xe đạp trên đường ngang</span></p><p>Đang chạy: có động năng.</p><p>Ở mặt đất: $h=0$, không có thế năng.</p><div class=\"bt-ans\"><p>Chỉ có động năng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Máy bay đang bay</span></p><p>Đang chuyển động và ở trên cao.</p><div class=\"bt-ans\"><p>Có cả động năng lẫn thế năng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Quả bóng nằm yên trên sân</span></p><p>Đứng yên và ở mặt đất.</p><div class=\"bt-ans\"><p>Không có động năng, không có thế năng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Mỗi vật đã trả lời đủ hai câu: chuyển động? trên cao? ✓</p><p>Đổi mốc thế năng lên mặt bàn thì kết luận về bóng có thể khác.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Chỉ có thế năng</p><p>b) Chỉ có động năng</p><p>c) Có cả hai</p><p>d) Không có dạng nào</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>vật nào có động năng, thế năng</strong> → hỏi riêng: có chuyển động không? có ở trên cao so với mốc không?</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Nhận biết vật có động năng, thế năng",
+   "topic": "Khái niệm động năng và thế năng trọng trường",
+   "problem_html": "<p>Chọn mốc thế năng ở mặt đất, vật làm mốc của chuyển động là mặt đất. Xét các vật:</p><p>a) quả táo đang treo trên cành;</p><p>b) xe đạp đang chạy trên đường nằm ngang;</p><p>c) máy bay đang bay;</p><p>d) quả bóng nằm yên trên sân.</p><p>Mỗi vật có động năng, thế năng, cả hai hay không có dạng nào? Giải thích.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 304\" role=\"img\" aria-label=\"Bốn ô: a quả táo treo trên cành, b xe đạp chạy trên đường nằm ngang, c máy bay đang bay, d quả bóng nằm yên trên sân\"><line x1=\"210.0\" y1=\"10.0\" x2=\"210.0\" y2=\"300.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 5\" opacity=\"0.5\"/><line x1=\"10.0\" y1=\"155.0\" x2=\"410.0\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 5\" opacity=\"0.5\"/><line x1=\"16.0\" y1=\"140.0\" x2=\"200.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M90,140 L90,70 M90,92 L130,62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"60\" cy=\"58\" r=\"30\" fill=\"rgba(52,211,153,.2)\" stroke=\"#34d399\" stroke-width=\"2\"/><circle cx=\"122\" cy=\"76\" r=\"9\" fill=\"#f87171\"/><text x=\"20\" y=\"30\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">a)</text><line x1=\"220.0\" y1=\"140.0\" x2=\"404.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><circle cx=\"236\" cy=\"126\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"282\" cy=\"126\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M236,126 L254,102 L276,102 L282,126 M254,102 L260,126 L276,102\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0,0;110,0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"226\" y=\"30\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">b)</text><g><path d=\"M30,214 L100,214 Q114,220 100,226 L30,226 Z M60,220 L76,244 L82,244 L76,220 M34,214 L26,200 L36,200 L44,214\" fill=\"rgba(56,189,248,.18)\" stroke=\"currentColor\" stroke-width=\"2\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0,0;80,-20\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"16.0\" y1=\"290.0\" x2=\"200.0\" y2=\"290.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"20\" y=\"184\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">c)</text><line x1=\"220.0\" y1=\"290.0\" x2=\"404.0\" y2=\"290.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"310\" cy=\"276\" r=\"14\" fill=\"rgba(251,146,60,.35)\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"226\" y=\"184\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">d)</text><text x=\"300\" y=\"232\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">nằm yên</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): xe đạp và máy bay chuyển động, táo và bóng đứng yên.<br>Mốc: mặt đất.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 184\" role=\"img\" aria-label=\"Hai câu hỏi cho mỗi vật: có đang chuyển động không thì xét động năng, có ở trên cao không thì xét thế năng\"><rect x=\"10\" y=\"20\" width=\"195\" height=\"116\" rx=\"10\" fill=\"rgba(248,113,113,.10)\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"50\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">Đang chuyển động</text><text x=\"108\" y=\"76\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">so với mặt đất?</text><text x=\"108\" y=\"116\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">→ có động năng</text><rect x=\"215\" y=\"20\" width=\"195\" height=\"116\" rx=\"10\" fill=\"rgba(251,146,60,.12)\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"312\" y=\"50\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">Ở trên cao</text><text x=\"312\" y=\"76\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">so với mặt đất?</text><text x=\"312\" y=\"116\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">→ có thế năng</text><text x=\"210\" y=\"168\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">⚠ Hỏi riêng từng câu, mỗi vật hai câu</text></svg><figcaption>Dữ kiện: mỗi vật xét hai câu hỏi độc lập.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;Chọn mốc thế năng ở mặt đất&quot;</td><td>$h$ đo từ mặt đất</td><td>⚠ Vật ở mặt đất thì $h=0$, không có thế năng</td></tr><tr><td>&quot;vật làm mốc của chuyển động là mặt đất&quot;</td><td>$v$ so với mặt đất</td><td>⚠ Đứng yên so với mặt đất thì $v=0$, không có động năng</td></tr><tr><td>&quot;quả táo đang treo trên cành&quot;</td><td>Đứng yên; ở trên cao</td><td>Thế năng: vật ở trên cao so với mốc</td></tr><tr><td>&quot;xe đạp đang chạy trên đường nằm ngang&quot;</td><td>Đang chạy; ở mặt đường</td><td>Động năng: vật đang chuyển động</td></tr><tr><td>&quot;máy bay đang bay&quot;</td><td>Đang chuyển động; ở trên cao</td><td>Một vật có thể có cả hai dạng</td></tr><tr><td>&quot;quả bóng nằm yên trên sân&quot;</td><td>Đứng yên; ở mặt đất</td><td>Xét cả hai câu hỏi</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật nào có động năng, thế năng</b> → hỏi riêng: <b>đang chuyển động?</b> <b>ở trên cao so với mốc?</b>",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Quả táo trên cành",
+     "hoi": "Quả táo đang treo trên cành có dạng năng lượng nào?",
+     "lua_chon": [
+      {
+       "text": "Chỉ có thế năng",
+       "dung": true
+      },
+      {
+       "text": "Không có dạng nào, vì đang đứng yên",
+       "dung": false,
+       "vi_sao": "Đứng yên chỉ loại động năng. Quả táo ở trên cao so với mặt đất nên có thế năng."
+      },
+      {
+       "text": "Có cả hai dạng",
+       "dung": false,
+       "vi_sao": "Quả táo đứng yên so với mặt đất nên không có động năng."
+      }
+     ],
+     "loi_hay_gap": "Hay nghĩ đứng yên là không có năng lượng. Đứng yên chỉ là không có động năng; ở trên cao vẫn có thế năng."
+    },
+    {
+     "tieu_de": "Xe đạp trên đường ngang",
+     "hoi": "Xe đạp đang chạy trên đường nằm ngang có dạng năng lượng nào?",
+     "lua_chon": [
+      {
+       "text": "Chỉ có động năng",
+       "dung": true
+      },
+      {
+       "text": "Có cả hai dạng",
+       "dung": false,
+       "vi_sao": "Xe ở mặt đường, đúng mốc mặt đất, nên h = 0, không có thế năng."
+      },
+      {
+       "text": "Chỉ có thế năng",
+       "dung": false,
+       "vi_sao": "Xe đang chạy so với mặt đất nên chắc chắn có động năng."
+      }
+     ],
+     "loi_hay_gap": "Hay cho xe đạp có thế năng vì xe có khối lượng. Mốc ở mặt đất, xe ở mặt đường nên h = 0."
+    },
+    {
+     "tieu_de": "Máy bay đang bay",
+     "hoi": "Máy bay đang bay có dạng năng lượng nào?",
+     "lua_chon": [
+      {
+       "text": "Có cả động năng lẫn thế năng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ có động năng",
+       "dung": false,
+       "vi_sao": "Máy bay còn ở trên cao so với mặt đất nên có thêm thế năng."
+      },
+      {
+       "text": "Chỉ có thế năng",
+       "dung": false,
+       "vi_sao": "Máy bay đang chuyển động nên có động năng."
+      }
+     ],
+     "loi_hay_gap": "Hay chỉ chọn một dạng. Một vật có thể vừa chuyển động vừa ở trên cao."
+    },
+    {
+     "tieu_de": "Quả bóng nằm yên trên sân",
+     "hoi": "Quả bóng nằm yên trên sân có dạng năng lượng nào?",
+     "lua_chon": [
+      {
+       "text": "Không có dạng nào",
+       "dung": true
+      },
+      {
+       "text": "Chỉ có thế năng",
+       "dung": false,
+       "vi_sao": "Bóng nằm trên mặt sân, đúng mốc, nên h = 0: thế năng bằng 0."
+      },
+      {
+       "text": "Chỉ có động năng",
+       "dung": false,
+       "vi_sao": "Bóng nằm yên so với mặt đất nên v = 0."
+      }
+     ],
+     "loi_hay_gap": "Hay nghĩ vật nào cũng có thế năng. Bóng ở đúng mốc mặt đất nên h = 0, và đứng yên nên v = 0."
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức:</strong> $W_{\\text{đ}}=\\dfrac{1}{2}mv^2$.</li><li>Đơn vị: $m$ (kg), $v$ (m/s), $W_{\\text{đ}}$ (J).</li><li>Đổi: $1\\ \\text{tấn}=1\\,000\\ \\text{kg}$; km/h chia $3{,}6$ ra m/s.</li><li>Tốc độ gấp $n$ lần thì động năng gấp $n^2$ lần.</li><li>⚠ <strong>Điều kiện:</strong> đổi đơn vị xong mới thế số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị</span></p>$$m=1{,}2\\ \\text{tấn}=1\\,200\\ \\text{kg}$$$$v=\\dfrac{54}{3{,}6}$$<div class=\"bt-ans\">$$v=15\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Động năng của ô tô</span></p>$$W_{\\text{đ}}=\\dfrac{1}{2}mv^2$$$$W_{\\text{đ}}=\\dfrac{1}{2}\\cdot1\\,200\\cdot15^2$$<div class=\"bt-ans\">$$W_{\\text{đ}}=135\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Giảm tốc còn 27 km/h</span></p><p>Tốc độ giảm 2 lần nên $v^2$ giảm $2^2$ lần:</p>$$W_{\\text{đ}}'=\\dfrac{1}{2}\\cdot1\\,200\\cdot7{,}5^2=33\\,750\\ \\text{J}$$$$\\dfrac{135\\,000}{33\\,750}=4$$<div class=\"bt-ans\"><p>Động năng giảm 4 lần.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ của xe máy</span></p>$$v^2=\\dfrac{2W_{\\text{đ}}}{m}=\\dfrac{2\\cdot6\\,000}{120}=100$$$$v=10\\ \\text{m/s}$$$$v=10\\cdot3{,}6$$<div class=\"bt-ans\">$$v=36\\ \\text{km/h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\dfrac{1}{2}\\cdot120\\cdot10^2=6\\,000\\ \\text{J}\\ ✓$$<p>Đơn vị: kg nhân (m/s)² ra J ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_{\\text{đ}}=135\\,000\\ \\text{J}$</p><p>b) Giảm 4 lần</p><p>c) $v=36\\ \\text{km/h}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tấn, km/h</strong> → đổi ra kg, m/s rồi $W_{\\text{đ}}=\\dfrac{1}{2}mv^2$; biết động năng thì $v=\\sqrt{\\dfrac{2W_{\\text{đ}}}{m}}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Tính động năng có đổi đơn vị; tìm tốc độ từ động năng",
+   "topic": "Tính động năng, thế năng của một vật",
+   "problem_html": "<p>Một ô tô khối lượng $1{,}2$ tấn chạy trên đường với tốc độ $54\\ \\text{km/h}$.</p><ol type=\"a\"><li>Tính động năng của ô tô.</li><li>Ô tô giảm tốc còn $27\\ \\text{km/h}$. Động năng giảm đi mấy lần?</li><li>Một xe máy cùng người lái có tổng khối lượng $120\\ \\text{kg}$ và động năng $6\\,000\\ \\text{J}$. Tính tốc độ của xe máy, ra $\\text{km/h}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Ô tô 1,2 tấn chạy trên đường với tốc độ 54 kilômét mỗi giờ; vạch chia mỗi 15 mét\"><line x1=\"10.0\" y1=\"160.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"160.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">0 m</text><line x1=\"175.0\" y1=\"160.0\" x2=\"175.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"175.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">15 m</text><line x1=\"250.0\" y1=\"160.0\" x2=\"250.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"250.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">30 m</text><line x1=\"325.0\" y1=\"160.0\" x2=\"325.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"325.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">45 m</text><line x1=\"400.0\" y1=\"160.0\" x2=\"400.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"400.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">60 m</text><g><path d=\"M10,146 L10,126 L26,126 L38,110 L72,110 L86,126 L100,128 L100,146 Z\" fill=\"rgba(56,189,248,.2)\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"30\" cy=\"148\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"80\" cy=\"148\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0,0;300.0,0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"32\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">Ô tô 1,2 tấn, 54 km/h</text><text x=\"16\" y=\"62\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan><tspan dy=\"5\" font-size=\"14\">đ</tspan><tspan dy=\"-5\"> = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): xe đi hết 60 m trong 4 s, đúng tốc độ thật.<br>Mỗi giây xe đi 15 m.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Dữ kiện ô tô: khối lượng 1,2 tấn và tốc độ 54 kilômét mỗi giờ cần đổi sang kilôgam và mét trên giây\"><line x1=\"10.0\" y1=\"160.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"160.0\" x2=\"100.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">0 m</text><line x1=\"175.0\" y1=\"160.0\" x2=\"175.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"175.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">15 m</text><line x1=\"250.0\" y1=\"160.0\" x2=\"250.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"250.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">30 m</text><line x1=\"325.0\" y1=\"160.0\" x2=\"325.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"325.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">45 m</text><line x1=\"400.0\" y1=\"160.0\" x2=\"400.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"400.0\" y=\"190\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"middle\">60 m</text><path d=\"M10,146 L10,126 L26,126 L38,110 L72,110 L86,126 L100,128 L100,146 Z\" fill=\"rgba(56,189,248,.2)\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"30\" cy=\"148\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"80\" cy=\"148\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"16\" y=\"32\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">m = 1,2 tấn = ? kg</text><text x=\"16\" y=\"62\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">v = 54 km/h = ? m/s</text><text x=\"16\" y=\"92\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">⚠ đổi đơn vị trước khi thế số</text></svg><figcaption>Dữ kiện: tấn ra kg, km/h ra m/s.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;khối lượng 1,2 tấn&quot;</td><td>$m=1{,}2\\ \\text{tấn}$</td><td>⚠ Đổi ra kg: $1\\ \\text{tấn}=1\\,000\\ \\text{kg}$</td></tr><tr><td>&quot;tốc độ 54 km/h&quot;</td><td>$v=54\\ \\text{km/h}$</td><td>⚠ Đổi ra m/s: chia $3{,}6$</td></tr><tr><td>&quot;Tính động năng của ô tô&quot;</td><td>Cần $W_{\\text{đ}}$</td><td>$W_{\\text{đ}}=\\dfrac{1}{2}mv^2$</td></tr><tr><td>&quot;giảm tốc còn 27 km/h. Động năng giảm đi mấy lần?&quot;</td><td>Tốc độ giảm một nửa</td><td>$W_{\\text{đ}}$ tỉ lệ với $v^2$</td></tr><tr><td>&quot;tổng khối lượng 120 kg và động năng 6&nbsp;000 J&quot;</td><td>$m=120\\ \\text{kg}$; $W_{\\text{đ}}=6\\,000\\ \\text{J}$</td><td>Biết $W_{\\text{đ}}$, tìm $v$: $v^2=\\dfrac{2W_{\\text{đ}}}{m}$</td></tr><tr><td>&quot;ra km/h&quot;</td><td>Đổi kết quả</td><td>m/s nhân $3{,}6$ ra km/h</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tấn</b>, <b>km/h</b> trong bài động năng → đổi ra kg, m/s rồi mới thế vào $W_{\\text{đ}}=\\dfrac{1}{2}mv^2$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị",
+     "hoi": "Tốc độ ô tô bằng bao nhiêu m/s?",
+     "dap_so": 15.0,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay giữ nguyên 54 hoặc nhân 3,6. Từ km/h sang m/s phải chia cho 3,6."
+    },
+    {
+     "tieu_de": "Động năng của ô tô",
+     "hoi": "Động năng của ô tô bằng bao nhiêu?",
+     "dap_so": 135000.0,
+     "sai_so": 500,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên bình phương tốc độ hoặc quên hệ số một nửa.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế m = 1 200 kg, v = 15 m/s vào ½mv²",
+       "dung": true
+      },
+      {
+       "text": "Thế m = 1,2 và v = 54 vào ½mv²",
+       "dung": false,
+       "vi_sao": "Chưa đổi đơn vị: kết quả lệch hàng trăm lần."
+      },
+      {
+       "text": "Tính m·v",
+       "dung": false,
+       "vi_sao": "Đó không phải công thức động năng; thiếu bình phương và hệ số ½."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giảm tốc còn 27 km/h",
+     "hoi": "Động năng giảm đi mấy lần?",
+     "dap_so": 4,
+     "sai_so": 0.01,
+     "don_vi": "lần",
+     "loi_hay_gap": "Hay trả lời giảm 2 lần vì tốc độ giảm 2 lần. Động năng tỉ lệ với bình phương tốc độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "So bình phương tốc độ trước và sau",
+       "dung": true
+      },
+      {
+       "text": "So tốc độ trước và sau",
+       "dung": false,
+       "vi_sao": "Động năng tỉ lệ với v², không tỉ lệ với v."
+      },
+      {
+       "text": "So khối lượng trước và sau",
+       "dung": false,
+       "vi_sao": "Khối lượng ô tô không đổi, chỉ tốc độ đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ của xe máy",
+     "hoi": "Tốc độ của xe máy bằng bao nhiêu km/h?",
+     "dap_so": 36,
+     "sai_so": 0.5,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Hay quên nhân 2 trước khi chia cho m, hoặc quên lấy căn bậc hai, hoặc quên đổi m/s ra km/h.",
+     "chon_buoc_ke": [
+      {
+       "text": "v = căn bậc hai của 2W/m, rồi nhân 3,6",
+       "dung": true
+      },
+      {
+       "text": "v = W/m",
+       "dung": false,
+       "vi_sao": "Bỏ mất hệ số 2 và căn bậc hai: W = ½mv² nên v² = 2W/m."
+      },
+      {
+       "text": "v = căn bậc hai của 2W/m, rồi chia 3,6",
+       "dung": false,
+       "vi_sao": "Từ m/s sang km/h phải nhân 3,6, không chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức:</strong> $W_{\\text{t}}=P\\,h=10\\,m\\,h$.</li><li>Đơn vị: $P$ (N), $h$ (m), $W_{\\text{t}}$ (J).</li><li>$h$ là độ cao so với <strong>mốc</strong> (gốc thế năng).</li><li>⚠ <strong>Điều kiện:</strong> đổi mốc thì đo lại $h$ từ mốc mới; vật ở đúng mốc có $W_{\\text{t}}=0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng lượng thùng</span></p>$$P=10m=10\\cdot5$$<div class=\"bt-ans\">$$P=50\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thế năng trên sàn tầng 2, mốc mặt đất</span></p>$$W_{\\text{t1}}=P\\,h_1$$$$W_{\\text{t1}}=50\\cdot3{,}5$$<div class=\"bt-ans\">$$W_{\\text{t1}}=175\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi mốc về sàn tầng 2</span></p><p>Thùng nằm đúng mốc nên $h=0$:</p><div class=\"bt-ans\">$$W_{\\text{t1}}'=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thế năng trên mái, mốc mặt đất</span></p>$$W_{\\text{t2}}=P\\,h_2$$$$W_{\\text{t2}}=50\\cdot8$$<div class=\"bt-ans\">$$W_{\\text{t2}}=400\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Phần tăng thêm</span></p>$$\\Delta W_{\\text{t}}=W_{\\text{t2}}-W_{\\text{t1}}$$$$\\Delta W_{\\text{t}}=400-175$$<div class=\"bt-ans\">$$\\Delta W_{\\text{t}}=225\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thùng được nâng thêm $8-3{,}5=4{,}5$ m:</p>$$50\\cdot4{,}5=225\\ \\text{J}\\ ✓$$<p>Phần tăng thêm không phụ thuộc chọn mốc nào.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $175\\ \\text{J}$</p><p>b) $0$</p><p>c) $400\\ \\text{J}$; tăng thêm $225\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>chọn mốc ở …</strong> → đo $h$ từ đúng mốc đó rồi $W_{\\text{t}}=10\\,m\\,h$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Tính thế năng trọng trường khi đổi mốc",
+   "topic": "Tính động năng, thế năng của một vật",
+   "problem_html": "<p>Một thùng sơn khối lượng $5\\ \\text{kg}$ đặt trên sàn tầng 2, sàn cao $3{,}5\\ \\text{m}$ so với mặt đất. Người thợ dùng ròng rọc kéo thùng lên mái nhà cao $8\\ \\text{m}$ so với mặt đất.</p><ol type=\"a\"><li>Tính thế năng của thùng khi đặt trên sàn tầng 2, chọn mốc ở mặt đất.</li><li>Tính lại thế năng đó nếu chọn mốc ở sàn tầng 2.</li><li>Chọn mốc ở mặt đất. Tính thế năng của thùng khi đã lên mái và phần thế năng tăng thêm.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 290\" role=\"img\" aria-label=\"Thùng sơn 5 kg được kéo bằng ròng rọc từ sàn tầng 2 cao 3,5 mét lên mái cao 8 mét so với mặt đất\"><line x1=\"10.0\" y1=\"276.0\" x2=\"410.0\" y2=\"276.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"178.0\" x2=\"330.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"120.0\" y1=\"52.0\" x2=\"330.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"120.0\" y1=\"276.0\" x2=\"120.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"130\" y=\"170.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 2</text><text x=\"130\" y=\"44.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"start\">mái</text><line x1=\"330.0\" y1=\"52.0\" x2=\"346.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"340\" cy=\"26.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"60.0\" y1=\"178.0\" x2=\"60.0\" y2=\"276.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M55.0,186.7 L60.0,178.0 L65.0,186.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M65.0,267.3 L60.0,276.0 L55.0,267.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"53.0\" y1=\"178.0\" x2=\"67.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"53.0\" y1=\"276.0\" x2=\"67.0\" y2=\"276.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"52\" y=\"233.0\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">3,5 m</text><line x1=\"96.0\" y1=\"52.0\" x2=\"96.0\" y2=\"276.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M91.0,60.7 L96.0,52.0 L101.0,60.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M101.0,267.3 L96.0,276.0 L91.0,267.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"89.0\" y1=\"52.0\" x2=\"103.0\" y2=\"52.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"89.0\" y1=\"276.0\" x2=\"103.0\" y2=\"276.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"88\" y=\"170.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">8 m</text><line x1=\"333\" y1=\"26.0\" x2=\"333\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"y2\" values=\"152.0;26.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><rect x=\"320\" y=\"152.0\" width=\"26\" height=\"26\" rx=\"3\" fill=\"rgba(251,146,60,.45)\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"152.0;26.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"310\" y=\"202.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">5 kg</text><text x=\"250\" y=\"260\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan><tspan dy=\"5\" font-size=\"14\">t</tspan><tspan dy=\"-5\"> = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): ròng rọc kéo thùng từ sàn tầng 2 lên mái.<br>Hình chạy nhanh hơn thật.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 290\" role=\"img\" aria-label=\"Độ cao sàn tầng 2 là 3,5 mét và mái là 8 mét, đo từ mặt đất; hai cách chọn mốc là mặt đất hoặc sàn tầng 2\"><line x1=\"10.0\" y1=\"276.0\" x2=\"410.0\" y2=\"276.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"120.0\" y1=\"178.0\" x2=\"330.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"120.0\" y1=\"52.0\" x2=\"330.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"120.0\" y1=\"276.0\" x2=\"120.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"130\" y=\"170.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"start\">sàn tầng 2</text><text x=\"130\" y=\"44.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"600\" text-anchor=\"start\">mái</text><line x1=\"330.0\" y1=\"52.0\" x2=\"346.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"340\" cy=\"26.0\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"60.0\" y1=\"178.0\" x2=\"60.0\" y2=\"276.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M55.0,186.7 L60.0,178.0 L65.0,186.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M65.0,267.3 L60.0,276.0 L55.0,267.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"53.0\" y1=\"178.0\" x2=\"67.0\" y2=\"178.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"53.0\" y1=\"276.0\" x2=\"67.0\" y2=\"276.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"52\" y=\"233.0\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">3,5 m</text><line x1=\"96.0\" y1=\"52.0\" x2=\"96.0\" y2=\"276.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M91.0,60.7 L96.0,52.0 L101.0,60.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M101.0,267.3 L96.0,276.0 L91.0,267.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"89.0\" y1=\"52.0\" x2=\"103.0\" y2=\"52.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"89.0\" y1=\"276.0\" x2=\"103.0\" y2=\"276.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"88\" y=\"170.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">8 m</text><rect x=\"320\" y=\"152.0\" width=\"26\" height=\"26\" rx=\"3\" fill=\"rgba(251,146,60,.45)\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"250\" y=\"246\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">mốc 1: mặt đất</text><text x=\"250\" y=\"268\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">mốc 2: sàn tầng 2</text></svg><figcaption>Dữ kiện: độ cao ghi trên hình đo từ mặt đất.<br>⚠ Đổi mốc thì đo lại h từ mốc mới.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;thùng sơn khối lượng 5 kg&quot;</td><td>$m=5\\ \\text{kg}$</td><td>Trọng lượng $P=10m$</td></tr><tr><td>&quot;sàn cao 3,5 m so với mặt đất&quot;</td><td>$h_1=3{,}5\\ \\text{m}$ (từ mặt đất)</td><td>$W_{\\text{t}}=P\\,h$</td></tr><tr><td>&quot;chọn mốc ở mặt đất&quot;</td><td>$h$ đo từ mặt đất</td><td>⚠ Độ cao luôn đo từ mốc đã chọn</td></tr><tr><td>&quot;nếu chọn mốc ở sàn tầng 2&quot;</td><td>Mốc mới</td><td>⚠ Thùng nằm đúng mốc thì $h=0$</td></tr><tr><td>&quot;mái nhà cao 8 m so với mặt đất&quot;</td><td>$h_2=8\\ \\text{m}$</td><td>$W_{\\text{t}}=P\\,h_2$</td></tr><tr><td>&quot;phần thế năng tăng thêm&quot;</td><td>Cần hiệu</td><td>Thế năng sau trừ thế năng trước</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chọn mốc ở …</b> → đo $h$ từ đúng mốc đó, rồi $W_{\\text{t}}=10\\,m\\,h$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng lượng thùng",
+     "hoi": "Trọng lượng của thùng bằng bao nhiêu?",
+     "dap_so": 50.0,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Hay dùng thẳng khối lượng 5 làm trọng lượng. Trọng lượng P = 10m tính bằng niutơn."
+    },
+    {
+     "tieu_de": "Thế năng trên sàn tầng 2, mốc mặt đất",
+     "hoi": "Thế năng của thùng trên sàn tầng 2 (mốc mặt đất) bằng bao nhiêu?",
+     "dap_so": 175.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay nhân khối lượng với độ cao, quên nhân 10.",
+     "chon_buoc_ke": [
+      {
+       "text": "W = P·h với h = 3,5 m",
+       "dung": true
+      },
+      {
+       "text": "W = m·h",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số 10: thế năng là trọng lượng nhân độ cao."
+      },
+      {
+       "text": "W = ½·P·h",
+       "dung": false,
+       "vi_sao": "Hệ số ½ thuộc công thức động năng, thế năng không có."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi mốc về sàn tầng 2",
+     "hoi": "Chọn mốc ở sàn tầng 2, thế năng của thùng trên sàn đó bằng bao nhiêu?",
+     "dap_so": 0,
+     "sai_so": 0.01,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay giữ nguyên độ cao 3,5 m. Đổi mốc thì đo lại h từ mốc mới; thùng nằm đúng mốc nên h = 0.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đo lại h từ sàn tầng 2",
+       "dung": true
+      },
+      {
+       "text": "Giữ h = 3,5 m vì thùng không di chuyển",
+       "dung": false,
+       "vi_sao": "Thùng không đổi chỗ nhưng mốc đã đổi, h phải đo từ mốc mới."
+      },
+      {
+       "text": "Lấy h = 8 m",
+       "dung": false,
+       "vi_sao": "8 m là độ cao mái, thùng vẫn đang ở sàn tầng 2."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thế năng trên mái, mốc mặt đất",
+     "hoi": "Thế năng của thùng trên mái (mốc mặt đất) bằng bao nhiêu?",
+     "dap_so": 400.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay đo h từ sàn tầng 2 dù đề đã quay về mốc mặt đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "W = P·h với h = 8 m",
+       "dung": true
+      },
+      {
+       "text": "W = P·h với h = 8 + 3,5 m",
+       "dung": false,
+       "vi_sao": "8 m đã đo từ mặt đất, không cộng thêm độ cao sàn tầng 2."
+      },
+      {
+       "text": "W = P·h với h = 3,5 m",
+       "dung": false,
+       "vi_sao": "Thùng đã lên mái, độ cao mới là 8 m."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần tăng thêm",
+     "hoi": "Thế năng của thùng tăng thêm bao nhiêu?",
+     "dap_so": 225.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay cộng hai giá trị thay vì trừ. Phần tăng thêm là sau trừ trước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy thế năng trên mái trừ thế năng trên sàn tầng 2",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai thế năng",
+       "dung": false,
+       "vi_sao": "Cộng lại không cho phần tăng thêm."
+      },
+      {
+       "text": "Lấy luôn thế năng trên mái",
+       "dung": false,
+       "vi_sao": "Đó là toàn bộ thế năng ở mái, chưa trừ phần thùng đã có."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức:</strong> $W_{\\text{đ}}=\\dfrac{1}{2}mv^2$; $W_{\\text{t}}=10\\,m\\,h$.</li><li>Đứng yên: $W_{\\text{đ}}=0$.</li><li>Một vật vừa chuyển động vừa ở trên cao thì có cả hai dạng.</li><li>⚠ <strong>Điều kiện:</strong> mốc thế năng ở mặt đất: $h$ đo từ mặt đất, không đo từ ngọn cây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trên ngọn cây</span></p><p>Đứng yên: $W_{\\text{đ}A}=0$.</p>$$W_{\\text{t}A}=10\\cdot1{,}5\\cdot8$$<div class=\"bt-ans\">$$W_{\\text{t}A}=120\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thế năng khi cách đất 3 m</span></p>$$W_{\\text{t}B}=10\\cdot1{,}5\\cdot3$$<div class=\"bt-ans\">$$W_{\\text{t}B}=45\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Động năng khi cách đất 3 m</span></p>$$W_{\\text{đ}B}=\\dfrac{1}{2}\\cdot1{,}5\\cdot10^2$$<div class=\"bt-ans\">$$W_{\\text{đ}B}=75\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So sánh tổng</span></p>$$A:\\ 0+120=120\\ \\text{J}$$$$B:\\ 75+45=120\\ \\text{J}$$<div class=\"bt-ans\"><p>Tổng ở hai vị trí bằng nhau.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hai tổng cùng $120$ J ✓</p><p>Vì sao tổng không đổi: học ở Bài 3. Cơ năng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_{\\text{đ}}=0$; $W_{\\text{t}}=120\\ \\text{J}$</p><p>b) $W_{\\text{đ}}=75\\ \\text{J}$; $W_{\\text{t}}=45\\ \\text{J}$</p><p>c) Tổng bằng nhau, cùng $120\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật đang rơi, cho độ cao và tốc độ</strong> → tính riêng $W_{\\text{đ}}$, $W_{\\text{t}}$ ở từng vị trí, $h$ đo từ mốc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Vật rơi: động năng và thế năng ở hai vị trí",
+   "topic": "Tính động năng, thế năng của một vật",
+   "problem_html": "<p>Một quả dừa khối lượng $1{,}5\\ \\text{kg}$ đang đứng yên trên ngọn cây cao $8\\ \\text{m}$ so với mặt đất thì rụng. Khi cách mặt đất $3\\ \\text{m}$, quả dừa có tốc độ $10\\ \\text{m/s}$. Chọn mốc thế năng ở mặt đất.</p><ol type=\"a\"><li>Tính động năng và thế năng của quả dừa lúc còn trên ngọn cây.</li><li>Tính động năng và thế năng của quả dừa khi cách mặt đất $3\\ \\text{m}$.</li><li>So sánh tổng động năng và thế năng ở hai vị trí trên.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Quả dừa 1,5 kg rơi từ ngọn cây cao 8 mét; vạch nét đứt ở độ cao 3 mét, tại đó quả có tốc độ 10 mét trên giây\"><line x1=\"10.0\" y1=\"270.0\" x2=\"410.0\" y2=\"270.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M150,270 L150,74.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5\"/><path d=\"M150,74.0 Q128.3,57.0 106.7,79.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q141.4,45.6 132.9,67.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q158.6,45.6 167.1,67.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q171.7,57.0 193.3,79.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><line x1=\"60.0\" y1=\"70.0\" x2=\"60.0\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M55.0,78.7 L60.0,70.0 L65.0,78.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M65.0,261.3 L60.0,270.0 L55.0,261.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"53.0\" y1=\"70.0\" x2=\"67.0\" y2=\"70.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"53.0\" y1=\"270.0\" x2=\"67.0\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"52\" y=\"176.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">8 m</text><line x1=\"100.0\" y1=\"195.0\" x2=\"100.0\" y2=\"270.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M95.0,203.7 L100.0,195.0 L105.0,203.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M105.0,261.3 L100.0,270.0 L95.0,261.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"93.0\" y1=\"195.0\" x2=\"107.0\" y2=\"195.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"93.0\" y1=\"270.0\" x2=\"107.0\" y2=\"270.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"92\" y=\"238.5\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">3 m</text><line x1=\"110.0\" y1=\"195.0\" x2=\"330.0\" y2=\"195.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><circle cx=\"190.0\" cy=\"61.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0\" dur=\"3.79s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"61.0;62.4;66.6;73.5;83.2;95.7;111.0;129.1;149.9;173.5;199.9;229.1;261.0\" dur=\"3.79s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"208\" y=\"76.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">1,5 kg</text><text x=\"208\" y=\"185.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">tại đây: v = 10 m/s</text><text x=\"208\" y=\"217.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan><tspan dy=\"5\" font-size=\"14\">đ</tspan><tspan dy=\"-5\"> = ?   </tspan></text><text x=\"302\" y=\"217.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan><tspan dy=\"5\" font-size=\"14\">t</tspan><tspan dy=\"-5\"> = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): quả rơi theo đúng quy luật rơi, chạy chậm 3 lần.<br>Mốc: mặt đất.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 284\" role=\"img\" aria-label=\"Hai vị trí của quả dừa: A ở ngọn cây cao 8 mét, đứng yên; B ở độ cao 3 mét, tốc độ 10 mét trên giây\"><line x1=\"10.0\" y1=\"270.0\" x2=\"410.0\" y2=\"270.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M150,270 L150,74.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5\"/><path d=\"M150,74.0 Q128.3,57.0 106.7,79.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q141.4,45.6 132.9,67.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q158.6,45.6 167.1,67.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M150,74.0 Q171.7,57.0 193.3,79.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><line x1=\"60.0\" y1=\"70.0\" x2=\"60.0\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M55.0,78.7 L60.0,70.0 L65.0,78.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M65.0,261.3 L60.0,270.0 L55.0,261.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"53.0\" y1=\"70.0\" x2=\"67.0\" y2=\"70.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"53.0\" y1=\"270.0\" x2=\"67.0\" y2=\"270.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"52\" y=\"176.0\" fill=\"#38bdf8\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">8 m</text><line x1=\"100.0\" y1=\"195.0\" x2=\"100.0\" y2=\"270.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M95.0,203.7 L100.0,195.0 L105.0,203.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M105.0,261.3 L100.0,270.0 L95.0,261.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"93.0\" y1=\"195.0\" x2=\"107.0\" y2=\"195.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"93.0\" y1=\"270.0\" x2=\"107.0\" y2=\"270.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"92\" y=\"238.5\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"end\">3 m</text><line x1=\"110.0\" y1=\"195.0\" x2=\"330.0\" y2=\"195.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><circle cx=\"190.0\" cy=\"61.0\" r=\"7\" fill=\"#34d399\"/><circle cx=\"190.0\" cy=\"186.0\" r=\"7\" fill=\"#34d399\"/><text x=\"206\" y=\"66.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">A: đứng yên</text><text x=\"206\" y=\"179.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\">B: v = 10 m/s</text><text x=\"206\" y=\"256\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">⚠ h đo từ mặt đất</text></svg><figcaption>Dữ kiện: A trên ngọn cây (đứng yên), B cách đất 3 m.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;khối lượng 1,5 kg&quot;</td><td>$m=1{,}5\\ \\text{kg}$</td><td>$P=10m$</td></tr><tr><td>&quot;đứng yên trên ngọn cây cao 8 m&quot;</td><td>$v_A=0$; $h_A=8\\ \\text{m}$</td><td>Đứng yên: $W_{\\text{đ}}=0$</td></tr><tr><td>&quot;Chọn mốc thế năng ở mặt đất&quot;</td><td>$h$ đo từ mặt đất</td><td>⚠ Không đo $h$ từ ngọn cây</td></tr><tr><td>&quot;cách mặt đất 3 m, … tốc độ 10 m/s&quot;</td><td>$h_B=3\\ \\text{m}$; $v_B=10\\ \\text{m/s}$</td><td>$W_{\\text{đ}}=\\dfrac{1}{2}mv^2$; $W_{\\text{t}}=10\\,m\\,h$</td></tr><tr><td>&quot;So sánh tổng động năng và thế năng&quot;</td><td>Cần $W_{\\text{đ}}+W_{\\text{t}}$ ở A và B</td><td>Cộng hai dạng ở mỗi vị trí rồi so</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật đang rơi</b>, cho <b>độ cao và tốc độ</b> → tính riêng $W_{\\text{đ}}$, $W_{\\text{t}}$ ở từng vị trí.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trên ngọn cây",
+     "hoi": "Thế năng của quả dừa trên ngọn cây bằng bao nhiêu?",
+     "dap_so": 120.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên nhân 10 (dùng m thay cho P). Thế năng là P·h với P = 10m."
+    },
+    {
+     "tieu_de": "Thế năng khi cách đất 3 m",
+     "hoi": "Thế năng khi quả cách mặt đất 3 m bằng bao nhiêu?",
+     "dap_so": 45.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay lấy h = 8 − 3 = 5 m (quãng đã rơi). Mốc ở mặt đất nên h là 3 m.",
+     "chon_buoc_ke": [
+      {
+       "text": "W = 10·m·h với h = 3 m",
+       "dung": true
+      },
+      {
+       "text": "W = 10·m·h với h = 5 m",
+       "dung": false,
+       "vi_sao": "5 m là quãng đã rơi, đo từ ngọn cây; mốc là mặt đất nên h = 3 m."
+      },
+      {
+       "text": "Thế năng bằng 0 vì quả đang rơi",
+       "dung": false,
+       "vi_sao": "Đang rơi vẫn ở trên cao so với mặt đất nên vẫn có thế năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Động năng khi cách đất 3 m",
+     "hoi": "Động năng khi quả cách mặt đất 3 m bằng bao nhiêu?",
+     "dap_so": 75.0,
+     "sai_so": 1,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên hệ số ½ hoặc quên bình phương tốc độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "W = ½·m·v² với v = 10 m/s",
+       "dung": true
+      },
+      {
+       "text": "W = m·v²",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số ½."
+      },
+      {
+       "text": "W = ½·m·v",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương tốc độ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh tổng",
+     "hoi": "Tổng động năng và thế năng ở hai vị trí thế nào?",
+     "lua_chon": [
+      {
+       "text": "Bằng nhau",
+       "dung": true
+      },
+      {
+       "text": "Ở trên cây lớn hơn",
+       "dung": false,
+       "vi_sao": "Cộng lại: trên cây 0 + 120, ở độ cao 3 m là 75 + 45, hai tổng như nhau."
+      },
+      {
+       "text": "Ở độ cao 3 m lớn hơn",
+       "dung": false,
+       "vi_sao": "Cộng lại: 0 + 120 = 120 J, còn 75 + 45 = 120 J. Hai tổng bằng nhau."
+      }
+     ],
+     "loi_hay_gap": "Hay so riêng từng dạng rồi kết luận ngay. Phải cộng hai dạng ở mỗi vị trí rồi mới so.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng động năng và thế năng ở mỗi vị trí rồi so",
+       "dung": true
+      },
+      {
+       "text": "Chỉ so hai thế năng",
+       "dung": false,
+       "vi_sao": "Đề hỏi tổng hai dạng, phải cộng cả động năng."
+      },
+      {
+       "text": "Chỉ so hai động năng",
+       "dung": false,
+       "vi_sao": "Đề hỏi tổng hai dạng, phải cộng cả thế năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,482 @@
+{
+ "lesson_id": 130,
+ "lesson_title": "Bài 3. Cơ năng",
+ "generated_at": "2026-10-12",
+ "review": {
+  "checked": true,
+  "checked_at": "2026-10-12",
+  "notes": "Soạn 12/10/2026 (chặng 3). Kiểm chéo kiem-code 12/10/2026: không lỗi chặn, đáp số đúng; đã sửa nhãn a)–d), đáp án nhiễu dạng 3. Chưa đối chiếu ngân hàng câu hỏi (topic 76/77, lesson_id đang null)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đi lên thì động năng chuyển thành thế năng; đi xuống thì ngược lại.</li><li>Công thức: $W=\\frac{1}{2}mv^2+10mh$.</li><li>Đơn vị: $m$ (kg), $v$ (m/s), $h$ (m), $W$ (J).</li><li>⚠ <strong>Điều kiện:</strong> không có lực cản, ma sát thì cơ năng không đổi ở mọi vị trí.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Vị trí thế năng lớn nhất</span></p><p>Thế năng lớn nhất ở chỗ cao nhất:</p><div class=\"bt-ans\"><p>ở hai biên A và B.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chuyển hoá từ A về O</span></p><p>Vật thấp dần, nhanh dần:</p><div class=\"bt-ans\"><p>thế năng chuyển dần thành động năng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cơ năng</span></p><p>Ở A: $v_A=0$, nên $W=W_{tA}$:</p>$$W=10mh_A$$$$W=10\\cdot0{,}2\\cdot0{,}2$$<div class=\"bt-ans\">$$W=0{,}4\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vận tốc ở O</span></p><p>Ở O: $W_t=0$, nên $W=W_{đO}$:</p>$$\\frac{1}{2}mv_O^2=W$$$$v_O^2=\\frac{2\\cdot0{,}4}{0{,}2}=4$$<div class=\"bt-ans\">$$v_O=2\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thử lại: $\\frac{1}{2}\\cdot0{,}2\\cdot2^2=0{,}4\\ \\text{J}$ ✓</p><p>Đơn vị: J chia kg ra m²/s², lấy căn ra m/s ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Ở hai biên A và B</p><p>b) Thế năng chuyển dần thành động năng</p><p>c) $W=0{,}4\\ \\text{J}$</p><p>d) $v_O=2\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>thả nhẹ ở độ cao h, hỏi vận tốc ở chỗ thấp nhất</strong> → $W=10mh$ ở chỗ thả, $=\\frac{1}{2}mv^2$ ở chỗ thấp nhất.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Con lắc đơn: chuyển hoá động năng – thế năng và vận tốc ở vị trí thấp nhất",
+   "topic": "Sự chuyển hoá động năng – thế năng",
+   "problem_html": "<p>Một con lắc đơn có vật nặng $0{,}2\\ \\text{kg}$. Kéo vật lên vị trí A cao $0{,}2\\ \\text{m}$ so với vị trí cân bằng O rồi thả nhẹ. Bỏ qua lực cản. Chọn gốc thế năng tại O.</p><p>a) Ở vị trí nào thế năng của vật lớn nhất?</p><p>b) Khi vật đi từ A về O, năng lượng chuyển hoá thế nào?</p><p>c) Tính cơ năng của con lắc.</p><p>d) Tính vận tốc của vật khi đi qua O.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 276\" role=\"img\" aria-label=\"Con lắc đơn vật 0,2 kg thả từ A cao 0,2 mét so với O, đi qua O tới B; cần tìm vận tốc ở O\"><line x1=\"160.0\" y1=\"34.0\" x2=\"260.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"34.0\" x2=\"158.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"184.0\" y1=\"34.0\" x2=\"176.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"202.0\" y1=\"34.0\" x2=\"194.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"220.0\" y1=\"34.0\" x2=\"212.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"238.0\" y1=\"34.0\" x2=\"230.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"256.0\" y1=\"34.0\" x2=\"248.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M97.6,161.5 L102.2,165.5 L107.1,169.3 L112.0,172.9 L117.1,176.4 L122.3,179.6 L127.6,182.7 L133.0,185.6 L138.6,188.3 L144.2,190.7 L149.9,193.0 L155.7,195.1 L161.5,196.9 L167.5,198.6 L173.4,200.0 L179.5,201.2 L185.5,202.2 L191.6,203.0 L197.7,203.6 L203.9,203.9 L210.0,204.0 L216.1,203.9 L222.3,203.6 L228.4,203.0 L234.5,202.2 L240.5,201.2 L246.6,200.0 L252.5,198.6 L258.5,196.9 L264.3,195.1 L270.1,193.0 L275.8,190.7 L281.4,188.3 L287.0,185.6 L292.4,182.7 L297.7,179.6 L302.9,176.4 L308.0,172.9 L312.9,169.3 L317.8,165.5 L322.4,161.5\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"7 5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"40.0\" y1=\"204.0\" x2=\"400.0\" y2=\"204.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"161.5\" x2=\"85.6\" y2=\"161.5\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><text x=\"81.6\" y=\"149.5\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"338.4\" y=\"149.5\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"210.0\" y=\"238.0\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"210\" y1=\"34\" x2=\"97.6\" y2=\"161.5\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"97.6;97.8;98.7;100.1;102.0;104.6;107.7;111.5;115.8;120.8;126.4;132.6;139.4;146.8;154.8;163.1;172.0;181.2;190.6;200.3;210.0;219.7;229.4;238.8;248.0;256.9;265.3;273.2;280.5;287.4;293.6;299.2;304.2;308.5;312.3;315.4;318.0;319.9;321.3;322.2;322.4\" dur=\"2.76s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"161.5;161.7;162.5;163.7;165.3;167.4;169.8;172.5;175.5;178.7;182.0;185.4;188.7;191.8;194.8;197.4;199.7;201.5;202.9;203.7;204.0;203.7;202.9;201.5;199.7;197.4;194.8;191.8;188.7;185.4;182.0;178.7;175.5;172.5;169.8;167.4;165.3;163.7;162.5;161.7;161.5\" dur=\"2.76s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"97.6\" cy=\"161.5\" r=\"11\" fill=\"rgba(251,146,60,.5)\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"97.6;97.8;98.7;100.1;102.0;104.6;107.7;111.5;115.8;120.8;126.4;132.6;139.4;146.8;154.8;163.1;172.0;181.2;190.6;200.3;210.0;219.7;229.4;238.8;248.0;256.9;265.3;273.2;280.5;287.4;293.6;299.2;304.2;308.5;312.3;315.4;318.0;319.9;321.3;322.2;322.4\" dur=\"2.76s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"161.5;161.7;162.5;163.7;165.3;167.4;169.8;172.5;175.5;178.7;182.0;185.4;188.7;191.8;194.8;197.4;199.7;201.5;202.9;203.7;204.0;203.7;202.9;201.5;199.7;197.4;194.8;191.8;188.7;185.4;182.0;178.7;175.5;172.5;169.8;167.4;165.3;163.7;162.5;161.7;161.5\" dur=\"2.76s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"62.0\" y1=\"163.5\" x2=\"62.0\" y2=\"202.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M57.5,170.3 L62.0,162.5 L66.5,170.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M66.5,195.2 L62.0,203.0 L57.5,195.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"188.8\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">0,2 m</text><text x=\"228.0\" y=\"190.0\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = ?</text><text x=\"20\" y=\"262\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Vật 0,2 kg, thả nhẹ từ A</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): vật đi một lượt từ A qua O tới B.<br>Chạy chậm 3 lần so với thật (dây dài 0,8 m).</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 276\" role=\"img\" aria-label=\"Dữ kiện con lắc: A cao 0,2 mét so với O, gốc thế năng tại O\"><line x1=\"160.0\" y1=\"34.0\" x2=\"260.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"34.0\" x2=\"158.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"184.0\" y1=\"34.0\" x2=\"176.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"202.0\" y1=\"34.0\" x2=\"194.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"220.0\" y1=\"34.0\" x2=\"212.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"238.0\" y1=\"34.0\" x2=\"230.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"256.0\" y1=\"34.0\" x2=\"248.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M97.6,161.5 L102.2,165.5 L107.1,169.3 L112.0,172.9 L117.1,176.4 L122.3,179.6 L127.6,182.7 L133.0,185.6 L138.6,188.3 L144.2,190.7 L149.9,193.0 L155.7,195.1 L161.5,196.9 L167.5,198.6 L173.4,200.0 L179.5,201.2 L185.5,202.2 L191.6,203.0 L197.7,203.6 L203.9,203.9 L210.0,204.0 L216.1,203.9 L222.3,203.6 L228.4,203.0 L234.5,202.2 L240.5,201.2 L246.6,200.0 L252.5,198.6 L258.5,196.9 L264.3,195.1 L270.1,193.0 L275.8,190.7 L281.4,188.3 L287.0,185.6 L292.4,182.7 L297.7,179.6 L302.9,176.4 L308.0,172.9 L312.9,169.3 L317.8,165.5 L322.4,161.5\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"7 5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"40.0\" y1=\"204.0\" x2=\"400.0\" y2=\"204.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\" opacity=\"0.7\"/><line x1=\"40.0\" y1=\"161.5\" x2=\"85.6\" y2=\"161.5\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><text x=\"81.6\" y=\"149.5\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"338.4\" y=\"149.5\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"210.0\" y=\"238.0\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"210.0\" y1=\"34.0\" x2=\"97.6\" y2=\"161.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"97.6\" cy=\"161.5\" r=\"11\" fill=\"rgba(251,146,60,.4)\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"204.0\" r=\"11\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.6\" stroke-dasharray=\"4 3\"/><line x1=\"62.0\" y1=\"163.5\" x2=\"62.0\" y2=\"202.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M57.5,170.3 L62.0,162.5 L66.5,170.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M66.5,195.2 L62.0,203.0 L57.5,195.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56\" y=\"188.8\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">0,2 m</text><text x=\"400\" y=\"196.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"600\" text-anchor=\"end\">gốc thế năng</text><text x=\"20\" y=\"262\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">⚠ Bỏ qua lực cản: cơ năng ở A = ở O</text></svg><figcaption>Dữ kiện: thả nhẹ ở A nên $v_A = 0$.<br>Gốc thế năng tại O nên $W_{t,O} = 0$.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;vật nặng 0,2 kg&quot;</td><td>$m=0{,}2\\ \\text{kg}$</td><td>$W_đ=\\frac{1}{2}mv^2$, $W_t=10mh$</td></tr><tr><td>&quot;cao 0,2 m so với vị trí cân bằng O&quot;</td><td>$h_A=0{,}2\\ \\text{m}$</td><td>Độ cao tính từ gốc thế năng</td></tr><tr><td>&quot;thả nhẹ&quot;</td><td>$v_A=0$</td><td>Ở A chỉ có thế năng</td></tr><tr><td>&quot;Bỏ qua lực cản&quot;</td><td>Không mất cơ năng</td><td>⚠ Điều kiện để cơ năng bảo toàn: $W_A=W_O$</td></tr><tr><td>&quot;Chọn gốc thế năng tại O&quot;</td><td>$h_O=0$</td><td>Ở O thế năng bằng 0</td></tr><tr><td>&quot;Tính vận tốc của vật khi đi qua O&quot;</td><td>Cần $v_O$</td><td>$W=\\frac{1}{2}mv_O^2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thả nhẹ ở độ cao h</b> và <b>bỏ qua lực cản</b> → $10mh=\\frac{1}{2}mv^2$ ở chỗ thấp nhất.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Vị trí thế năng lớn nhất",
+     "hoi": "Thế năng của vật lớn nhất ở đâu?",
+     "lua_chon": [
+      {
+       "text": "Ở hai biên A và B",
+       "dung": true
+      },
+      {
+       "text": "Ở vị trí cân bằng O",
+       "dung": false,
+       "vi_sao": "O là chỗ thấp nhất, thế năng bằng 0 (gốc thế năng)."
+      },
+      {
+       "text": "Ở mọi vị trí như nhau",
+       "dung": false,
+       "vi_sao": "Cơ năng mới không đổi; thế năng thay đổi theo độ cao."
+      }
+     ],
+     "loi_hay_gap": "Hay chọn O vì ở đó vật chạy nhanh nhất. Chạy nhanh nhất là động năng lớn nhất; thế năng lớn nhất ở chỗ cao nhất."
+    },
+    {
+     "tieu_de": "Chuyển hoá từ A về O",
+     "hoi": "Khi vật đi từ A về O, năng lượng chuyển hoá thế nào?",
+     "lua_chon": [
+      {
+       "text": "Thế năng chuyển dần thành động năng",
+       "dung": true
+      },
+      {
+       "text": "Động năng chuyển dần thành thế năng",
+       "dung": false,
+       "vi_sao": "Đó là lúc vật đi từ O lên A hoặc B."
+      },
+      {
+       "text": "Không có chuyển hoá vì cơ năng không đổi",
+       "dung": false,
+       "vi_sao": "Tổng không đổi nhưng từng phần vẫn tăng giảm."
+      }
+     ],
+     "loi_hay_gap": "Hay nói ngược chiều. Từ A về O vật thấp dần (thế năng giảm) và nhanh dần (động năng tăng).",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét độ cao và tốc độ của vật thay đổi thế nào",
+       "dung": true
+      },
+      {
+       "text": "Xét khối lượng vật thay đổi thế nào",
+       "dung": false,
+       "vi_sao": "Khối lượng không đổi khi vật chuyển động."
+      },
+      {
+       "text": "Xét chiều dài dây thay đổi thế nào",
+       "dung": false,
+       "vi_sao": "Dây không dãn, chiều dài không đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cơ năng",
+     "hoi": "Cơ năng của con lắc bằng bao nhiêu jun?",
+     "dap_so": 0.4,
+     "sai_so": 0.005,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên số 10 trong $W_t=10mh$, ra $0{,}04$ J. Thế năng là trọng lượng $P=10m$ nhân độ cao.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính ở A: $W=W_t=10mh$",
+       "dung": true
+      },
+      {
+       "text": "Tính ở A: $W=\\frac{1}{2}mv^2$",
+       "dung": false,
+       "vi_sao": "Ở A vật được thả nhẹ, $v=0$ nên động năng bằng 0."
+      },
+      {
+       "text": "Tính ở O: $W=10mh$ với $h=0{,}2\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "O là gốc thế năng, ở O thì $h=0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc ở O",
+     "hoi": "Vận tốc của vật khi đi qua O bằng bao nhiêu?",
+     "dap_so": 2,
+     "sai_so": 0.02,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay quên lấy căn: $v^2=4$ mới là bình phương vận tốc. Hoặc quên $\\frac{1}{2}$, ra $v^2=2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt $\\frac{1}{2}mv_O^2=W$ rồi lấy căn",
+       "dung": true
+      },
+      {
+       "text": "Đặt $mv_O^2=W$",
+       "dung": false,
+       "vi_sao": "Thiếu $\\frac{1}{2}$: động năng là $\\frac{1}{2}mv^2$."
+      },
+      {
+       "text": "Đặt $v_O=\\frac{W}{m}$",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương: động năng tỉ lệ với $v^2$, không phải $v$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng là tổng động năng và thế năng.</li><li>Công thức: $W=\\frac{1}{2}mv^2+10mh$.</li><li>Đơn vị: $m$ (kg), $v$ (m/s), $h$ (m), $W$ (J).</li><li>⚠ <strong>Điều kiện:</strong> không có lực cản, ma sát thì cơ năng không đổi ở mọi vị trí.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng</span></p><p>Lúc rụng $v=0$, nên $W=W_t$:</p>$$W=10\\cdot1{,}2\\cdot7{,}2$$<div class=\"bt-ans\">$$W=86{,}4\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vận tốc chạm đất</span></p><p>Chạm đất: $W_t=0$, $W=W_đ$:</p>$$v^2=\\frac{2W}{m}=\\frac{2\\cdot86{,}4}{1{,}2}=144$$<div class=\"bt-ans\">$$v=12\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Động năng ở độ cao 3,2 m</span></p>$$W_{t2}=10\\cdot1{,}2\\cdot3{,}2=38{,}4\\ \\text{J}$$$$W_{đ2}=W-W_{t2}=86{,}4-38{,}4$$<div class=\"bt-ans\">$$W_{đ2}=48\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vận tốc ở độ cao 3,2 m</span></p>$$v_2^2=\\frac{2\\cdot48}{1{,}2}=80$$<div class=\"bt-ans\">$$v_2\\approx8{,}94\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$8{,}94\\ \\text{m/s}$ nhỏ hơn $12\\ \\text{m/s}$: chưa tới đất nên chậm hơn ✓</p><p>Cộng lại: $38{,}4+48=86{,}4\\ \\text{J}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W=86{,}4\\ \\text{J}$</p><p>b) $v=12\\ \\text{m/s}$</p><p>c) $v_2\\approx8{,}94\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>rơi không vận tốc đầu, hỏi vận tốc ở độ cao khác</strong> → $W=10mh$ lúc đầu, $W_đ=W-W_t$ ở chỗ cần tìm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Vật rơi không vận tốc đầu: vận tốc chạm đất và ở độ cao giữa chừng",
+   "topic": "Bảo toàn cơ năng trong chuyển động rơi, ném",
+   "problem_html": "<p>Một quả dừa $1{,}2\\ \\text{kg}$ rụng (không vận tốc đầu) từ độ cao $7{,}2\\ \\text{m}$ so với mặt đất. Bỏ qua sức cản không khí. Chọn gốc thế năng ở mặt đất.</p><p>a) Tính cơ năng của quả dừa.</p><p>b) Tính vận tốc của quả dừa lúc chạm đất.</p><p>c) Tính vận tốc của quả dừa khi nó ở độ cao $3{,}2\\ \\text{m}$.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Quả dừa 1,2 kg rụng từ độ cao 7,2 mét, rơi thẳng xuống đất; cần tìm vận tốc chạm đất\"><line x1=\"14.0\" y1=\"236.0\" x2=\"410.0\" y2=\"236.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"236.0\" x2=\"14.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"236.0\" x2=\"32.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"236.0\" x2=\"50.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"236.0\" x2=\"68.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"236.0\" x2=\"86.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"236.0\" x2=\"104.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"236.0\" x2=\"122.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"236.0\" x2=\"140.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"236.0\" x2=\"158.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"236.0\" x2=\"176.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"236.0\" x2=\"194.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"236.0\" x2=\"212.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"236.0\" x2=\"230.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"236.0\" x2=\"248.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"236.0\" x2=\"266.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"236.0\" x2=\"284.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"236.0\" x2=\"302.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"236.0\" x2=\"320.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"236.0\" x2=\"338.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"236.0\" x2=\"356.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"236.0\" x2=\"374.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"236.0\" x2=\"392.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><path d=\"M100,236 C106,156 120,88.79999999999998 128,44.79999999999998\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5\"/><path d=\"M128,44.79999999999998 q-30.0,2 -60,14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q-15.0,-34 -30,-22\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q14.0,-30 28,-18\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q28.0,2 56,14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><line x1=\"180.0\" y1=\"48.8\" x2=\"300.0\" y2=\"48.8\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"150\" cy=\"48.8\" r=\"9\" fill=\"rgba(52,211,153,.5)\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cy\" values=\"48.8;49.0;49.6;50.7;52.1;54.0;56.3;59.0;62.1;65.6;69.6;74.0;78.8;84.0;89.6;95.6;102.0;108.9;116.2;123.9;132.0;140.5;149.5;158.8;168.6;178.8;189.4;200.4;211.9;223.7;227.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"320.0\" y1=\"50.8\" x2=\"320.0\" y2=\"234.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M315.5,57.6 L320.0,49.8 L324.5,57.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M324.5,227.2 L320.0,235.0 L315.5,227.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"330\" y=\"148.4\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">7,2 m</text><text x=\"166\" y=\"222\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = ?</text><text x=\"230\" y=\"30\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Quả dừa 1,2 kg</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): quả dừa rơi tự do từ 7,2 m.<br>Chạy chậm 2 lần so với thật.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Ba vị trí: 1 ở 7,2 mét vận tốc 0; 2 ở 3,2 mét; 3 ở mặt đất\"><line x1=\"14.0\" y1=\"236.0\" x2=\"410.0\" y2=\"236.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"236.0\" x2=\"14.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"236.0\" x2=\"32.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"236.0\" x2=\"50.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"236.0\" x2=\"68.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"236.0\" x2=\"86.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"236.0\" x2=\"104.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"236.0\" x2=\"122.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"236.0\" x2=\"140.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"236.0\" x2=\"158.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"236.0\" x2=\"176.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"236.0\" x2=\"194.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"236.0\" x2=\"212.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"236.0\" x2=\"230.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"236.0\" x2=\"248.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"236.0\" x2=\"266.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"236.0\" x2=\"284.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"236.0\" x2=\"302.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"236.0\" x2=\"320.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"236.0\" x2=\"338.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"236.0\" x2=\"356.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"236.0\" x2=\"374.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"236.0\" x2=\"392.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><path d=\"M100,236 C106,156 120,88.79999999999998 128,44.79999999999998\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5\"/><path d=\"M128,44.79999999999998 q-30.0,2 -60,14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q-15.0,-34 -30,-22\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q14.0,-30 28,-18\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><path d=\"M128,44.79999999999998 q28.0,2 56,14\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"3\"/><line x1=\"180.0\" y1=\"48.8\" x2=\"300.0\" y2=\"48.8\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><circle cx=\"150.0\" cy=\"57.8\" r=\"9\" fill=\"rgba(52,211,153,.5)\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"150.0\" cy=\"152.8\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.7\" stroke-dasharray=\"4 3\"/><circle cx=\"150.0\" cy=\"227.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.7\" stroke-dasharray=\"4 3\"/><line x1=\"164.0\" y1=\"152.8\" x2=\"300.0\" y2=\"152.8\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.7\"/><text x=\"306\" y=\"54.8\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">1: 7,2 m, <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = 0</text><text x=\"306\" y=\"158.8\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">2: 3,2 m, <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = ?</text><text x=\"306\" y=\"226\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">3: đất, <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = ?</text></svg><figcaption>Dữ kiện: gốc thế năng ở mặt đất.<br>Ở vị trí 1 vật chỉ có thế năng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;quả dừa 1,2 kg&quot;</td><td>$m=1{,}2\\ \\text{kg}$</td><td>Dùng trong cả $W_t$ và $W_đ$</td></tr><tr><td>&quot;rụng (không vận tốc đầu) từ độ cao 7,2 m&quot;</td><td>$v_1=0$; $h_1=7{,}2\\ \\text{m}$</td><td>Lúc đầu $W=W_t=10mh$</td></tr><tr><td>&quot;Bỏ qua sức cản không khí&quot;</td><td>Không mất cơ năng</td><td>⚠ Điều kiện: cơ năng như nhau ở mọi độ cao</td></tr><tr><td>&quot;vận tốc lúc chạm đất&quot;</td><td>$h=0$; cần $v$</td><td>$W=\\frac{1}{2}mv^2$</td></tr><tr><td>&quot;ở độ cao 3,2 m&quot;</td><td>$h_2=3{,}2\\ \\text{m}$; cần $v_2$</td><td>$W_{đ2}=W-W_{t2}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>rơi không vận tốc đầu</b> và hỏi <b>vận tốc ở độ cao khác</b> → $W=10mh$, rồi $W_đ=W-W_t$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng",
+     "hoi": "Cơ năng của quả dừa bằng bao nhiêu jun?",
+     "dap_so": 86.4,
+     "sai_so": 0.3,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay cộng thêm động năng lúc rụng. Rụng không vận tốc đầu nên lúc đó $W_đ=0$, $W=W_t$."
+    },
+    {
+     "tieu_de": "Vận tốc chạm đất",
+     "hoi": "Vận tốc lúc chạm đất bằng bao nhiêu?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay dừng ở $v^2=144$ mà quên lấy căn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\frac{1}{2}mv^2=W$ (ở đất $W_t=0$)",
+       "dung": true
+      },
+      {
+       "text": "$\\frac{1}{2}mv^2=W_t$ ở độ cao $3{,}2\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "Chạm đất thì toàn bộ cơ năng là động năng."
+      },
+      {
+       "text": "$v=\\frac{W}{m}$",
+       "dung": false,
+       "vi_sao": "Thiếu $\\frac{1}{2}$ và bình phương của $v$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Động năng ở độ cao 3,2 m",
+     "hoi": "Động năng của quả dừa ở độ cao 3,2 m bằng bao nhiêu jun?",
+     "dap_so": 48,
+     "sai_so": 0.3,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay lấy luôn thế năng ở $3{,}2\\ \\text{m}$ làm động năng. Động năng là phần còn lại: $W-W_t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$W_đ=W-10mh$ với $h=3{,}2\\ \\text{m}$",
+       "dung": true
+      },
+      {
+       "text": "$W_đ=10mh$ với $h=3{,}2\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "Đó là thế năng ở độ cao này, không phải động năng."
+      },
+      {
+       "text": "$W_đ=10m(7{,}2+3{,}2)$",
+       "dung": false,
+       "vi_sao": "Độ cao không cộng dồn; vật đã rơi xuống, còn cách đất $3{,}2\\ \\text{m}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc ở độ cao 3,2 m",
+     "hoi": "Vận tốc ở độ cao 3,2 m bằng bao nhiêu?",
+     "dap_so": 8.94,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay dùng nhầm cơ năng cả vật thay cho động năng ở độ cao này: kết quả sẽ bằng vận tốc chạm đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v_2^2=\\frac{2W_{đ2}}{m}$ rồi lấy căn",
+       "dung": true
+      },
+      {
+       "text": "$v_2^2=\\frac{2W}{m}$",
+       "dung": false,
+       "vi_sao": "$W$ là cả cơ năng; ở độ cao này chỉ một phần là động năng."
+      },
+      {
+       "text": "Lấy nửa vận tốc chạm đất vì đã rơi được hơn nửa đường",
+       "dung": false,
+       "vi_sao": "Vận tốc không tỉ lệ với quãng đường rơi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cơ năng là tổng động năng và thế năng.</li><li>Công thức: $W=\\frac{1}{2}mv^2+10mh$.</li><li>Đơn vị: $m$ (kg), $v$ (m/s), $h$ (m), $W$ (J).</li><li>⚠ <strong>Điều kiện:</strong> không có lực cản, ma sát thì cơ năng không đổi ở mọi vị trí.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng</span></p><p>Ném từ mặt đất: $W_t=0$, $W=W_đ$:</p>$$W=\\frac{1}{2}\\cdot0{,}25\\cdot8^2$$<div class=\"bt-ans\">$$W=8\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ cao lớn nhất</span></p><p>Ở điểm cao nhất $v=0$, $W=W_t$:</p>$$h_{\\max}=\\frac{W}{10m}=\\frac{8}{10\\cdot0{,}25}$$<div class=\"bt-ans\">$$h_{\\max}=3{,}2\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thế năng ở vị trí cần tìm</span></p><p>$W_đ=3W_t$ nên:</p>$$W=W_đ+W_t=4W_t$$$$W_t=\\frac{W}{4}=\\frac{8}{4}$$<div class=\"bt-ans\">$$W_t=2\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ cao ở vị trí đó</span></p>$$h=\\frac{W_t}{10m}=\\frac{2}{2{,}5}$$<div class=\"bt-ans\">$$h=0{,}8\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vận tốc ở vị trí đó</span></p>$$W_đ=3W_t=6\\ \\text{J}$$$$v^2=\\frac{2\\cdot6}{0{,}25}=48$$<div class=\"bt-ans\">$$v\\approx6{,}93\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$h=0{,}8\\ \\text{m}=\\frac{1}{4}h_{\\max}$: đúng vì $W_t=\\frac{1}{4}W$ ✓</p><p>$W_đ+W_t=6+2=8\\ \\text{J}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W=8\\ \\text{J}$</p><p>b) $h_{\\max}=3{,}2\\ \\text{m}$</p><p>c) $h=0{,}8\\ \\text{m}$</p><p>$v\\approx6{,}93\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>động năng bằng n lần thế năng</strong> → $W=(n+1)W_t$, suy ra $W_t$ rồi $h$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Ném thẳng đứng lên: độ cao lớn nhất và vị trí động năng gấp ba thế năng",
+   "topic": "Bảo toàn cơ năng trong chuyển động rơi, ném",
+   "problem_html": "<p>Từ mặt đất, ném một quả bóng $0{,}25\\ \\text{kg}$ thẳng đứng lên với vận tốc $8\\ \\text{m/s}$. Bỏ qua sức cản không khí. Chọn gốc thế năng ở mặt đất.</p><p>a) Tính cơ năng của bóng.</p><p>b) Tính độ cao lớn nhất bóng lên được.</p><p>c) Ở độ cao nào thì động năng của bóng bằng ba lần thế năng? Tính vận tốc của bóng khi đó.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Bóng 0,25 kg ném thẳng đứng lên từ mặt đất với vận tốc 8 m/s, lên tới độ cao lớn nhất rồi rơi về\"><line x1=\"14.0\" y1=\"240.0\" x2=\"410.0\" y2=\"240.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"240.0\" x2=\"14.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"240.0\" x2=\"32.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"240.0\" x2=\"50.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"240.0\" x2=\"68.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"240.0\" x2=\"86.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"240.0\" x2=\"104.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"240.0\" x2=\"122.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"240.0\" x2=\"140.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"240.0\" x2=\"158.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"240.0\" x2=\"176.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"240.0\" x2=\"194.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"240.0\" x2=\"212.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"240.0\" x2=\"230.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"240.0\" x2=\"248.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"240.0\" x2=\"266.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"240.0\" x2=\"284.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"240.0\" x2=\"302.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"240.0\" x2=\"320.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"240.0\" x2=\"338.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"240.0\" x2=\"356.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"240.0\" x2=\"374.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"240.0\" x2=\"392.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><circle cx=\"190\" cy=\"231.0\" r=\"9\" fill=\"rgba(52,211,153,.5)\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cy\" values=\"231.0;207.8;186.0;165.8;147.0;129.8;114.0;99.8;87.0;75.8;66.0;57.8;51.0;45.8;42.0;39.8;39.0;39.8;42.0;45.7;51.0;57.8;66.0;75.7;87.0;99.8;114.0;129.8;147.0;165.8;186.0;207.8;231.0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"156.0\" y1=\"220.0\" x2=\"156.0\" y2=\"160.0\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M150.5,169.5 L156.0,160.0 L161.5,169.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"146\" y=\"194\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan><tspan dy=\"5\" font-size=\"14\">0</tspan><tspan dy=\"-5\"> = 8 m/s</tspan></text><text x=\"214\" y=\"40\" fill=\"#fb923c\" font-size=\"17\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">h</tspan><tspan dy=\"5\" font-size=\"14\">max</tspan><tspan dy=\"-5\"> = ?</tspan></text><text x=\"250\" y=\"228\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Bóng 0,25 kg</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): bóng lên tới điểm cao nhất rồi rơi về.<br>Chạy chậm 2 lần so với thật.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Dữ kiện: ném từ mặt đất với 8 m/s; tìm vị trí động năng bằng ba lần thế năng; điểm cao nhất vận tốc bằng 0\"><line x1=\"14.0\" y1=\"240.0\" x2=\"410.0\" y2=\"240.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"240.0\" x2=\"14.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"240.0\" x2=\"32.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"240.0\" x2=\"50.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"240.0\" x2=\"68.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"240.0\" x2=\"86.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"240.0\" x2=\"104.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"240.0\" x2=\"122.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"240.0\" x2=\"140.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"240.0\" x2=\"158.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"240.0\" x2=\"176.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"240.0\" x2=\"194.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"240.0\" x2=\"212.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"240.0\" x2=\"230.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"240.0\" x2=\"248.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"240.0\" x2=\"266.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"240.0\" x2=\"284.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"240.0\" x2=\"302.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"240.0\" x2=\"320.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"240.0\" x2=\"338.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"240.0\" x2=\"356.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"240.0\" x2=\"374.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"240.0\" x2=\"392.0\" y2=\"249.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><circle cx=\"190.0\" cy=\"231.0\" r=\"9\" fill=\"rgba(52,211,153,.5)\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"156.0\" y1=\"220.0\" x2=\"156.0\" y2=\"160.0\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M150.5,169.5 L156.0,160.0 L161.5,169.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"146\" y=\"194\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan><tspan dy=\"5\" font-size=\"14\">0</tspan><tspan dy=\"-5\"> = 8 m/s</tspan></text><circle cx=\"190.0\" cy=\"140.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.7\" stroke-dasharray=\"4 3\"/><circle cx=\"190.0\" cy=\"48.0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.7\" stroke-dasharray=\"4 3\"/><text x=\"210\" y=\"54\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">cao nhất: <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = 0</text><text x=\"210\" y=\"136\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan><tspan dy=\"5\" font-size=\"14\">đ</tspan><tspan dy=\"-5\"> = 3<tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan></tspan><tspan dy=\"5\" font-size=\"14\">t</tspan><tspan dy=\"-5\"></tspan></text><text x=\"210\" y=\"162\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">h</tspan> = ?</text></svg><figcaption>Dữ kiện: ném từ mặt đất nên lúc ném $W_t = 0$.<br>Hình không vẽ đúng tỉ lệ độ cao.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;Từ mặt đất … ném … với vận tốc 8 m/s&quot;</td><td>$h_0=0$; $v_0=8\\ \\text{m/s}$</td><td>Lúc ném $W=W_đ$</td></tr><tr><td>&quot;quả bóng 0,25 kg&quot;</td><td>$m=0{,}25\\ \\text{kg}$</td><td>$W_đ=\\frac{1}{2}mv^2$, $W_t=10mh$</td></tr><tr><td>&quot;Bỏ qua sức cản không khí&quot;</td><td>Không mất cơ năng</td><td>⚠ Điều kiện để cơ năng bảo toàn</td></tr><tr><td>&quot;độ cao lớn nhất&quot;</td><td>Ở đó $v=0$</td><td>$W=10mh_{\\max}$</td></tr><tr><td>&quot;động năng … bằng ba lần thế năng&quot;</td><td>$W_đ=3W_t$</td><td>$W=W_đ+W_t$: viết $W$ theo $W_t$</td></tr><tr><td>&quot;Tính vận tốc của bóng khi đó&quot;</td><td>Cần $v$</td><td>$W_đ=\\frac{1}{2}mv^2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>động năng bằng n lần thế năng</b> → $W=(n+1)W_t$, tìm $W_t$ rồi $h$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng",
+     "hoi": "Cơ năng của bóng bằng bao nhiêu jun?",
+     "dap_so": 8,
+     "sai_so": 0.05,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên $\\frac{1}{2}$ trong động năng. Ném từ mặt đất nên $W=W_đ=\\frac{1}{2}mv_0^2$."
+    },
+    {
+     "tieu_de": "Độ cao lớn nhất",
+     "hoi": "Độ cao lớn nhất bóng lên được là bao nhiêu mét?",
+     "dap_so": 3.2,
+     "sai_so": 0.03,
+     "don_vi": "m",
+     "loi_hay_gap": "Hay cho rằng ở điểm cao nhất cơ năng bằng 0. Ở đó $W_đ=0$ nhưng $W=W_t=10mh_{\\max}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ở điểm cao nhất $v=0$: $10mh_{\\max}=W$",
+       "dung": true
+      },
+      {
+       "text": "Ở điểm cao nhất $W=0$ vì bóng dừng lại",
+       "dung": false,
+       "vi_sao": "Bóng dừng thì động năng bằng 0, thế năng lúc đó lớn nhất."
+      },
+      {
+       "text": "$h_{\\max}=\\frac{v_0}{10}$",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương: $h_{\\max}=\\frac{v_0^2}{20}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thế năng ở vị trí Wđ = 3Wt",
+     "hoi": "Thế năng của bóng ở vị trí động năng bằng ba lần thế năng là bao nhiêu jun?",
+     "dap_so": 2,
+     "sai_so": 0.02,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay đặt $W_t=\\frac{W}{3}$. Đúng là $W=W_đ+W_t=3W_t+W_t=4W_t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$W=W_đ+W_t=4W_t$",
+       "dung": true
+      },
+      {
+       "text": "$W=3W_t$",
+       "dung": false,
+       "vi_sao": "Quên cộng chính $W_t$: cơ năng gồm cả động năng lẫn thế năng."
+      },
+      {
+       "text": "$W_t=3W_đ$",
+       "dung": false,
+       "vi_sao": "Đảo ngược: đề cho động năng bằng ba lần thế năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao ở vị trí đó",
+     "hoi": "Độ cao của bóng khi động năng bằng ba lần thế năng là bao nhiêu mét?",
+     "dap_so": 0.8,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Hay lấy $\\frac{h_{\\max}}{3}$. Vì $W_t=\\frac{W}{4}$ nên độ cao bằng $\\frac{1}{4}h_{\\max}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$h=\\frac{W_t}{10m}$",
+       "dung": true
+      },
+      {
+       "text": "$h=\\frac{h_{\\max}}{3}$",
+       "dung": false,
+       "vi_sao": "Thế năng chiếm $\\frac{1}{4}$ cơ năng, không phải $\\frac{1}{3}$."
+      },
+      {
+       "text": "$h=\\frac{W_t}{m}$",
+       "dung": false,
+       "vi_sao": "Thiếu số 10: $W_t=10mh$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc ở vị trí đó",
+     "hoi": "Vận tốc của bóng khi đó bằng bao nhiêu?",
+     "dap_so": 6.93,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay lấy $\\frac{3}{4}v_0$. Động năng là $\\frac{3}{4}W$, mà động năng tỉ lệ với $v^2$, không tỉ lệ với $v$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$W_đ=3W_t$, rồi $v^2=\\frac{2W_đ}{m}$",
+       "dung": true
+      },
+      {
+       "text": "$v=\\frac{3}{4}v_0$",
+       "dung": false,
+       "vi_sao": "Động năng tỉ lệ với $v^2$; phải tính qua $W_đ$ rồi lấy căn."
+      },
+      {
+       "text": "$v^2=\\frac{2W}{m}$",
+       "dung": false,
+       "vi_sao": "Đó là vận tốc lúc ném; ở vị trí này chỉ $\\frac{3}{4}W$ là động năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> có ma sát, một phần cơ năng chuyển thành nhiệt năng.</li><li>Công thức: $W=\\frac{1}{2}mv^2+10mh$.</li><li>Nhiệt năng sinh ra: $Q=W_{\\text{đầu}}-W_{\\text{sau}}$.</li><li>⚠ <strong>Điều kiện:</strong> cơ năng chỉ bảo toàn khi không có ma sát, lực cản; năng lượng toàn phần thì luôn bảo toàn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cơ năng ở đỉnh</span></p><p>Ở đỉnh $v=0$:</p>$$W_1=10mh=10\\cdot20\\cdot2{,}5$$<div class=\"bt-ans\">$$W_1=500\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cơ năng ở chân</span></p><p>Ở chân $h=0$:</p>$$W_2=\\frac{1}{2}mv^2=\\frac{1}{2}\\cdot20\\cdot6^2$$<div class=\"bt-ans\">$$W_2=360\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phần thành nhiệt năng</span></p><p>$W_2\\lt W_1$: cơ năng không bảo toàn.</p>$$Q=W_1-W_2=500-360$$<div class=\"bt-ans\">$$Q=140\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Phần trăm so với cơ năng ở đỉnh</span></p>$$\\frac{Q}{W_1}\\cdot100\\ \\%=\\frac{140}{500}\\cdot100\\ \\%$$<div class=\"bt-ans\">$$28\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vận tốc nếu không ma sát</span></p><p>Cơ năng bảo toàn: $\\frac{1}{2}mv^2=W_1$:</p>$$v^2=\\frac{2\\cdot500}{20}=50$$<div class=\"bt-ans\">$$v\\approx7{,}07\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Không ma sát thì nhanh hơn: $7{,}07\\gt6$ ✓</p><p>$360+140=500\\ \\text{J}$: năng lượng toàn phần không mất ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W_1=500\\ \\text{J}$; $W_2=360\\ \\text{J}$</p><p>b) Không bảo toàn; $Q=140\\ \\text{J}$, bằng $28\\ \\%$</p><p>c) $v\\approx7{,}07\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vận tốc thật ở chân dốc</strong> (có ma sát) → tính cơ năng hai đầu, hiệu số là nhiệt năng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Có ma sát: cơ năng giảm, phần chuyển thành nhiệt năng",
+   "topic": "Sự chuyển hoá động năng – thế năng",
+   "problem_html": "<p>Một bé $20\\ \\text{kg}$ ngồi ở đỉnh cầu trượt cao $2{,}5\\ \\text{m}$ rồi trượt xuống (không vận tốc đầu). Tới chân cầu trượt, bé có vận tốc $6\\ \\text{m/s}$. Chọn gốc thế năng ở chân cầu trượt.</p><p>a) Tính cơ năng của bé ở đỉnh và ở chân cầu trượt.</p><p>b) Cơ năng có được bảo toàn không? Tính phần cơ năng đã chuyển thành nhiệt năng và cho biết nó bằng bao nhiêu phần trăm cơ năng ở đỉnh.</p><p>c) Nếu bỏ qua được ma sát, bé tới chân cầu trượt với vận tốc bao nhiêu?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Bé 20 kg trượt từ đỉnh cầu trượt cao 2,5 mét, tới chân với vận tốc 6 m/s\"><line x1=\"14.0\" y1=\"168.0\" x2=\"410.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"168.0\" x2=\"14.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"168.0\" x2=\"32.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"168.0\" x2=\"50.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"168.0\" x2=\"68.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"168.0\" x2=\"86.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"168.0\" x2=\"104.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"168.0\" x2=\"122.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"168.0\" x2=\"140.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"168.0\" x2=\"158.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"168.0\" x2=\"176.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"168.0\" x2=\"194.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"168.0\" x2=\"212.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"168.0\" x2=\"230.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"168.0\" x2=\"248.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"168.0\" x2=\"266.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"168.0\" x2=\"284.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"168.0\" x2=\"302.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"168.0\" x2=\"320.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"168.0\" x2=\"338.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"168.0\" x2=\"356.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"168.0\" x2=\"374.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"168.0\" x2=\"392.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><path d=\"M60,44 L260.52558883257655,154.0 L290.52558883257655,154.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"60.0\" y1=\"44.0\" x2=\"60.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"44.0\" x2=\"40.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"60.0\" x2=\"60.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"82.0\" x2=\"60.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"104.0\" x2=\"60.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"126.0\" x2=\"60.0\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"148.0\" x2=\"60.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"310.5\" y1=\"44.0\" x2=\"310.5\" y2=\"166.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M306.0,52.8 L310.5,45.0 L315.0,52.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M315.0,159.2 L310.5,167.0 L306.0,159.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70.0\" y1=\"44.0\" x2=\"318.5\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><text x=\"318.5\" y=\"109.0\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">2,5 m</text><circle cx=\"75.0\" cy=\"35.3\" r=\"10\" fill=\"rgba(251,146,60,.5)\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"75.0;75.2;75.8;76.9;78.4;80.3;82.6;85.4;88.5;92.1;96.2;100.6;105.5;110.8;116.5;122.6;129.2;136.2;143.6;151.4;159.7;168.4;177.5;187.0;196.9;207.3;218.1;229.3;241.0;253.0;265.5\" dur=\"3.33s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"35.3;35.5;35.8;36.4;37.3;38.4;39.7;41.3;43.2;45.2;47.6;50.1;52.9;56.0;59.3;62.8;66.6;70.7;74.9;79.5;84.2;89.2;94.5;100.0;105.7;111.7;118.0;124.4;131.2;138.1;145.3\" dur=\"3.33s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"230.5\" y=\"194.0\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">v</tspan> = 6 m/s ở chân</text><text x=\"150\" y=\"30\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">Bé 20 kg, thả nhẹ ở đỉnh</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): bé trượt nhanh dần xuống chân cầu.<br>Chạy chậm 2 lần so với thật.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Dữ kiện: cầu trượt cao 2,5 mét, có ma sát; cần cơ năng ở đỉnh, ở chân và phần thành nhiệt\"><line x1=\"14.0\" y1=\"168.0\" x2=\"410.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"22.0\" y1=\"168.0\" x2=\"14.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"168.0\" x2=\"32.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"58.0\" y1=\"168.0\" x2=\"50.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"76.0\" y1=\"168.0\" x2=\"68.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"94.0\" y1=\"168.0\" x2=\"86.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"112.0\" y1=\"168.0\" x2=\"104.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"130.0\" y1=\"168.0\" x2=\"122.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"148.0\" y1=\"168.0\" x2=\"140.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"166.0\" y1=\"168.0\" x2=\"158.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"184.0\" y1=\"168.0\" x2=\"176.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"202.0\" y1=\"168.0\" x2=\"194.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"220.0\" y1=\"168.0\" x2=\"212.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"238.0\" y1=\"168.0\" x2=\"230.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"256.0\" y1=\"168.0\" x2=\"248.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"274.0\" y1=\"168.0\" x2=\"266.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"292.0\" y1=\"168.0\" x2=\"284.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"310.0\" y1=\"168.0\" x2=\"302.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"328.0\" y1=\"168.0\" x2=\"320.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"346.0\" y1=\"168.0\" x2=\"338.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"364.0\" y1=\"168.0\" x2=\"356.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"382.0\" y1=\"168.0\" x2=\"374.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><line x1=\"400.0\" y1=\"168.0\" x2=\"392.0\" y2=\"177.0\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"1\"/><path d=\"M60,44 L260.52558883257655,154.0 L290.52558883257655,154.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"60.0\" y1=\"44.0\" x2=\"60.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"44.0\" x2=\"40.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"60.0\" x2=\"60.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"82.0\" x2=\"60.0\" y2=\"82.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"104.0\" x2=\"60.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"126.0\" x2=\"60.0\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"40.0\" y1=\"148.0\" x2=\"60.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"310.5\" y1=\"44.0\" x2=\"310.5\" y2=\"166.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M306.0,52.8 L310.5,45.0 L315.0,52.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M315.0,159.2 L310.5,167.0 L306.0,159.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70.0\" y1=\"44.0\" x2=\"318.5\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><text x=\"318.5\" y=\"109.0\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">2,5 m</text><text x=\"74\" y=\"32\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">đỉnh: <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan> = ?</text><text x=\"140.5\" y=\"194.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">chân: <tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">W</tspan> = ?</text><text x=\"20\" y=\"238\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">ma sát → nhiệt năng = ?</text></svg><figcaption>Dữ kiện: gốc thế năng ở chân cầu.<br>⚠ Có ma sát: cơ năng ở chân nhỏ hơn ở đỉnh.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;bé 20 kg&quot;</td><td>$m=20\\ \\text{kg}$</td><td>$W_t=10mh$, $W_đ=\\frac{1}{2}mv^2$</td></tr><tr><td>&quot;đỉnh cầu trượt cao 2,5 m … không vận tốc đầu&quot;</td><td>$h=2{,}5\\ \\text{m}$; $v=0$</td><td>Ở đỉnh $W=W_t$</td></tr><tr><td>&quot;Tới chân … vận tốc 6 m/s&quot;</td><td>$v=6\\ \\text{m/s}$; $h=0$</td><td>Ở chân $W=W_đ$</td></tr><tr><td>&quot;Cơ năng có được bảo toàn không?&quot;</td><td>So hai cơ năng</td><td>⚠ Có ma sát thì cơ năng giảm; năng lượng toàn phần vẫn bảo toàn</td></tr><tr><td>&quot;phần cơ năng đã chuyển thành nhiệt năng&quot;</td><td>Cần $Q$</td><td>$Q=W_{\\text{đỉnh}}-W_{\\text{chân}}$</td></tr><tr><td>&quot;Nếu bỏ qua được ma sát&quot;</td><td>Cơ năng bảo toàn</td><td>$W_{\\text{đỉnh}}=\\frac{1}{2}mv^2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vận tốc thật ở chân dốc nhỏ hơn khi không ma sát</b> → cơ năng hai đầu, hiệu là nhiệt năng.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cơ năng ở đỉnh",
+     "hoi": "Cơ năng của bé ở đỉnh cầu trượt là bao nhiêu jun?",
+     "dap_so": 500,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay quên số 10 trong $W_t=10mh$. Ở đỉnh $v=0$ nên $W=10mh$."
+    },
+    {
+     "tieu_de": "Cơ năng ở chân",
+     "hoi": "Cơ năng của bé ở chân cầu trượt là bao nhiêu jun?",
+     "dap_so": 360,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay cho rằng cơ năng ở chân bằng ở đỉnh. Có ma sát nên phải tính lại từ vận tốc thật ở chân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ở chân $h=0$: $W_2=\\frac{1}{2}mv^2$ với vận tốc đề cho",
+       "dung": true
+      },
+      {
+       "text": "$W_2=W_1$ vì cơ năng bảo toàn",
+       "dung": false,
+       "vi_sao": "Đề cho vận tốc thật ở chân; có ma sát nên phải kiểm tra, không được giả sử bảo toàn."
+      },
+      {
+       "text": "$W_2=10mh+\\frac{1}{2}mv^2$ với $h=2{,}5\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "Ở chân cầu trượt (gốc thế năng) $h=0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần thành nhiệt năng",
+     "hoi": "Phần cơ năng đã chuyển thành nhiệt năng là bao nhiêu jun?",
+     "dap_so": 140,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Hay nói năng lượng đã mất. Phần cơ năng giảm không mất đi, nó thành nhiệt năng ở mặt trượt và quần áo.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q=W_1-W_2$",
+       "dung": true
+      },
+      {
+       "text": "$Q=W_1+W_2$",
+       "dung": false,
+       "vi_sao": "Nhiệt năng là phần cơ năng bị hụt, phải trừ, không cộng."
+      },
+      {
+       "text": "$Q=0$ vì năng lượng được bảo toàn",
+       "dung": false,
+       "vi_sao": "Năng lượng toàn phần bảo toàn, nhưng cơ năng thì giảm và phần giảm thành nhiệt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm so với cơ năng ở đỉnh",
+     "hoi": "Nhiệt năng bằng bao nhiêu phần trăm cơ năng ở đỉnh?",
+     "dap_so": 28,
+     "sai_so": 0.3,
+     "don_vi": "%",
+     "loi_hay_gap": "Hay chia cho cơ năng ở chân. Đề hỏi phần trăm so với cơ năng ở đỉnh nên chia cho $W_1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\frac{Q}{W_1}\\cdot100\\ \\%$",
+       "dung": true
+      },
+      {
+       "text": "$\\frac{Q}{W_2}\\cdot100\\ \\%$",
+       "dung": false,
+       "vi_sao": "Đề so với cơ năng ở đỉnh, không phải ở chân."
+      },
+      {
+       "text": "$\\frac{W_2}{W_1}\\cdot100\\ \\%$",
+       "dung": false,
+       "vi_sao": "Đó là phần cơ năng còn lại, không phải phần thành nhiệt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc nếu không ma sát",
+     "hoi": "Nếu bỏ qua ma sát, vận tốc ở chân cầu trượt là bao nhiêu?",
+     "dap_so": 7.07,
+     "sai_so": 0.05,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Hay dùng cơ năng ở chân (đã bị ma sát lấy bớt). Không ma sát thì toàn bộ cơ năng ở đỉnh thành động năng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\frac{1}{2}mv^2=W_1$",
+       "dung": true
+      },
+      {
+       "text": "$\\frac{1}{2}mv^2=W_2$",
+       "dung": false,
+       "vi_sao": "$W_2$ là cơ năng khi có ma sát; ra lại vận tốc đề đã cho."
+      },
+      {
+       "text": "$\\frac{1}{2}mv^2=Q$",
+       "dung": false,
+       "vi_sao": "$Q$ chỉ là phần thành nhiệt, không phải động năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

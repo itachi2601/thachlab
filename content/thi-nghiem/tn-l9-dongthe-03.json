@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 2. Động năng. Thế năng",
+ "lesson_id": 129,
+ "nguon_trong_bai": "content/lesson-samples/l9-dong-nang-the-nang/theory.html",
+ "id": "tn-l9-dongthe-03",
+ "ten": "Thả quả nặng xuống khay cát từ các độ cao khác nhau",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thenang.khai_niem",
+  "thenang.phu_thuoc_m_h"
+ ],
+ "muc_tieu": "Thấy vật ở trên cao có năng lượng (làm lõm cát khi rơi); càng nặng, càng cao thì vết lõm càng sâu.",
+ "dung_cu": [
+  {
+   "ten": "Khay cát mịn, gạt phẳng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng 100 g và 200 g có móc",
+   "so_luong": 2
+  },
+  {
+   "ten": "Thước đo độ cao và thước đo độ sâu",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả quả nặng 100 g từ 20 cm, đo độ sâu vết lõm.",
+   "Gạt phẳng cát, thả quả 100 g từ 40 cm.",
+   "Gạt phẳng cát, thả quả 200 g từ 20 cm."
+  ],
+  "quan_sat": [
+   "Thả cao hơn, vết lõm sâu hơn.",
+   "Quả nặng hơn, cùng độ cao, vết lõm sâu hơn."
+  ],
+  "rut_ra": [
+   "Vật ở trên cao có thế năng.",
+   "Khối lượng càng lớn, độ cao càng lớn thì thế năng càng lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng quả nặng",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả so với mặt cát",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.6,
+   "mac_dinh": 0.2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "Wt",
+   "ten": "Thế năng lúc thả (mốc mặt cát)",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Độ sâu vết lõm",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Wt = 10·m·h",
+   "x = Wt / F_can với F_can = 20 N (gần đúng)"
+  ],
+  "gia_thiet": [
+   "lấy P = 10m (g ≈ 10 m/s²) như SGK KHTN 9",
+   "coi lực cản của cát không đổi; bỏ qua phần độ sâu lõm khi tính h"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "h (m)",
+   "Wt (J)",
+   "x (cm)"
+  ],
+  "hang": [
+   [
+    0.1,
+    0.2,
+    0.2,
+    1.0
+   ],
+   [
+    0.1,
+    0.4,
+    0.4,
+    2.0
+   ],
+   [
+    0.2,
+    0.2,
+    0.4,
+    2.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình lực cản cát không đổi, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Gấp đôi độ cao hoặc gấp đôi khối lượng thì vết lõm sâu gần gấp đôi.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ quả nặng đứng yên trên tay không có năng lượng.",
+  "Nghĩ thế năng chỉ phụ thuộc độ cao, không phụ thuộc khối lượng."
+ ],
+ "an_toan": "Không thả quả nặng gần tay, chân bạn khác; giữ cát không bắn vào mắt.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt m và h; quả nặng rơi, cắm vào cát, hiện độ sâu lõm và Wt.",
+  "diem_nhan": "Cùng Wt (100 g ở 40 cm và 200 g ở 20 cm) cho cùng độ sâu lõm."
+ }
+}

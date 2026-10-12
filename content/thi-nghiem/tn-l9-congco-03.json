@@ -1,0 +1,124 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 4. Công và công suất",
+ "lesson_id": 131,
+ "nguon_trong_bai": "content/lesson-samples/l9-cong-cong-suat/theory.html",
+ "id": "tn-l9-congco-03",
+ "ten": "Ba cách cầm sách: giữ yên, đi ngang, nâng lên",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "congco.dieu_kien_co_cong",
+  "congco.vuong_goc_khong_cong"
+ ],
+ "muc_tieu": "Phân biệt cảm giác mỏi tay với công cơ học: lực tay chỉ thực hiện công khi sách dịch chuyển theo hướng lực.",
+ "dung_cu": [
+  {
+   "ten": "Quyển sách",
+   "so_luong": 2
+  },
+  {
+   "ten": "Thước mét",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cầm hai quyển sách đứng yên 1 phút.",
+   "Cầm sách đi ngang 5 m.",
+   "Nâng sách từ mặt bàn lên cao thêm 0,5 m."
+  ],
+  "quan_sat": [
+   "Cả ba lần tay đều mỏi.",
+   "Chỉ lần thứ ba sách lên cao hơn."
+  ],
+  "rut_ra": [
+   "Giữ yên: s = 0, A = 0.",
+   "Đi ngang: dịch chuyển vuông góc với lực tay, A = 0.",
+   "Nâng lên: A = F·s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực tay (bằng trọng lượng sách)",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "s_ngang",
+   "ten": "Quãng đường đi ngang",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao nâng",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công của lực tay",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "giữ yên: A = 0",
+   "đi ngang đều: A = 0 (lực tay vuông góc dịch chuyển)",
+   "nâng đều: A = F·h"
+  ],
+  "gia_thiet": [
+   "sách nặng khoảng 10 N",
+   "chuyển động đều, lực tay thẳng đứng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Cách cầm",
+   "s theo hướng lực (m)",
+   "A (J)"
+  ],
+  "hang": [
+   [
+    "giữ yên",
+    0,
+    0
+   ],
+   [
+    "đi ngang 5 m",
+    0,
+    0
+   ],
+   [
+    "nâng 0,5 m",
+    0.5,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ với sách 10 N."
+ },
+ "ket_qua_ky_vong": "Chỉ cách nâng lên có công của lực tay (5 J với sách 10 N, nâng 0,5 m).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ mỏi tay là có công cơ học.",
+  "Nhân lực tay với quãng đường đi ngang."
+ ],
+ "an_toan": "Dùng sách nhẹ, không giơ sách quá đầu.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "y_tuong": "Ba nút: giữ yên, đi ngang, nâng lên; vẽ vectơ lực tay và vectơ dịch chuyển, đồng hồ đếm công.",
+  "diem_nhan": "Công chỉ tăng khi vectơ dịch chuyển cùng hướng vectơ lực."
+ }
+}

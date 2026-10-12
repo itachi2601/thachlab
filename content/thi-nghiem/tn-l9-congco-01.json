@@ -1,0 +1,135 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 4. Công và công suất",
+ "lesson_id": 131,
+ "nguon_trong_bai": "content/lesson-samples/l9-cong-cong-suat/theory.html",
+ "id": "tn-l9-congco-01",
+ "ten": "Kéo đều khối gỗ bằng lực kế, tính công A = F·s",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "congco.a_bang_fs",
+  "congco.sai_so_do"
+ ],
+ "muc_tieu": "Từ số đọc lực kế và quãng đường tính công A = F·s; thấy cùng lực thì quãng đường gấp đôi, công gấp đôi; nhận ra sai số khi đọc lực kế.",
+ "dung_cu": [
+  {
+   "ten": "Khối gỗ có móc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế (GHĐ 5 N, ĐCNN 0,1 N)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước mét (ĐCNN 1 cm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn phẳng nằm ngang",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Móc lực kế vào khối gỗ, kéo đều theo phương ngang.",
+   "Ba lần kéo 0,50 m, một lần kéo 1,00 m; mỗi lần đọc lực kế khi khối gỗ đang chạy đều.",
+   "Tính A = F·s cho mỗi lần."
+  ],
+  "quan_sat": [
+   "Kim lực kế rung nhẹ quanh vạch 1,5 N.",
+   "Ba lần cùng 0,50 m cho A từ 0,70 J đến 0,80 J."
+  ],
+  "rut_ra": [
+   "Lực kéo đều gần như không đổi.",
+   "Quãng đường gấp đôi thì công gấp đôi.",
+   "Đo nhiều lần lấy trung bình để giảm sai số khi đọc kim."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường kéo",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "F_that",
+   "ten": "Lực cản (bằng lực kéo khi kéo đều)",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Số đọc lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công của lực kéo",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_doc = F_that ± 0,1 N (kim rung một vạch)",
+   "A = F_doc·s"
+  ],
+  "gia_thiet": [
+   "kéo đều nên lực kéo bằng lực cản",
+   "lực kéo song song mặt bàn, cùng hướng dịch chuyển"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F (N)",
+   "s (m)",
+   "A (J)"
+  ],
+  "hang": [
+   [
+    1.5,
+    0.5,
+    0.75
+   ],
+   [
+    1.6,
+    0.5,
+    0.8
+   ],
+   [
+    1.4,
+    0.5,
+    0.7
+   ],
+   [
+    1.5,
+    1.0,
+    1.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: lực cản 1,5 N, số đọc lệch ±1 vạch; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "A trung bình 0,75 J với s = 0,50 m; 1,50 J với s = 1,00 m.",
+ "hien_tuong_hay_sai": [
+  "Giật mạnh lực kế: số chỉ lớn hơn lực cản và không ổn định.",
+  "Kéo xiên lên: chỉ một phần lực cùng hướng dịch chuyển.",
+  "Dùng lực kế độ chia thô (1 N) làm sai số lớn."
+ ],
+ "sai_so_thuong_gap": "Đọc lệch một vạch 0,1 N trên 1,5 N là khoảng 7 %.",
+ "an_toan": "Kéo nhẹ, không để khối gỗ rơi khỏi bàn.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Kéo thanh s, khối gỗ trượt đều, kim lực kế rung quanh 1,5 N; bảng tự tính A.",
+  "diem_nhan": "Cùng lực, công tỉ lệ với quãng đường theo hướng lực."
+ }
+}
