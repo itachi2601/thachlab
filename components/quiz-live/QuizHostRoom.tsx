@@ -8,7 +8,27 @@ import { useToast } from "@/components/ui/Toast";
 import type { HostState } from "@/features/quiz-live/types";
 import { quizErrorText } from "@/features/quiz-live/types";
 import { advanceRoom, endRoom, getHostState, kickPlayer } from "@/services/quiz-live";
+import { makeQrCode, QR_QUIET_ZONE } from "@/lib/qr";
+import { quizJoinUrl } from "@/lib/quiz-link";
 import { OPTION_STYLE, TimerBar, useCountdown, usePoll } from "./shared";
+
+/** Mã QR vào phòng (nền trắng, chữ đen — máy ảnh chỉ đọc được QR trên nền sáng). */
+function JoinQr({ pin }: { pin: string }) {
+  const { d, count } = makeQrCode(quizJoinUrl(pin));
+  const box = count + QR_QUIET_ZONE * 2;
+  return (
+    <svg
+      viewBox={`${-QR_QUIET_ZONE} ${-QR_QUIET_ZONE} ${box} ${box}`}
+      className="mx-auto block size-56 rounded-2xl border border-line sm:size-64"
+      shapeRendering="crispEdges"
+      role="img"
+      aria-label="Mã QR vào phòng chơi"
+    >
+      <rect x={-QR_QUIET_ZONE} y={-QR_QUIET_ZONE} width={box} height={box} fill="#ffffff" />
+      <path d={d} fill="#000000" />
+    </svg>
+  );
+}
 
 /** Màn hình điều khiển + chiếu lên lớp: PIN lớn, câu hỏi, đếm người trả lời, đáp án + bảng xếp hạng. */
 export default function QuizHostRoom({ roomId }: { roomId: number }) {
@@ -111,6 +131,8 @@ export default function QuizHostRoom({ roomId }: { roomId: number }) {
         <div className="space-y-6 rounded-3xl border border-line bg-panel p-6 text-center sm:p-10">
           <p className="text-ink">Mở <b className="text-ink">{joinUrl}</b> trên điện thoại và nhập mã</p>
           <p className="font-mono text-7xl font-extrabold tracking-[0.2em] text-ink sm:text-8xl">{st.pin}</p>
+          <JoinQr pin={st.pin} />
+          <p className="text-sm text-muted">Hoặc quét mã QR này (ở mục Quét mã trong ThachLab, hoặc bằng camera điện thoại)</p>
           <div className="flex min-h-12 flex-wrap justify-center gap-2">
             {st.players.length === 0 && <span className="text-muted">Chưa có ai vào…</span>}
             {st.players.map((p) => (

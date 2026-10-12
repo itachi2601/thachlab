@@ -9,6 +9,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import { examIdFromScan, examTakePath } from "@/lib/exam-link";
+import { quizJoinPath, quizPinFromScan } from "@/lib/quiz-link";
 
 /**
  * app/quet-ma/page.tsx — mục QUÉT MÃ QR của học sinh.
@@ -43,9 +44,15 @@ export default function ScanExamPage() {
 
   const open = useCallback(
     (raw: string) => {
+      const pin = quizPinFromScan(raw);
+      if (pin) {
+        setError("");
+        router.push(quizJoinPath(pin));
+        return;
+      }
       const id = examIdFromScan(raw);
       if (!id) {
-        setError("Mã này không phải mã đề của ThachLab. Em thử lại, hoặc gõ số đề thầy ghi trên bảng.");
+        setError("Mã này không phải mã của ThachLab. Em thử lại, hoặc gõ số đề thầy ghi trên bảng.");
         return;
       }
       setError("");
@@ -65,7 +72,7 @@ export default function ScanExamPage() {
       <main className="mx-auto min-h-screen w-full max-w-2xl px-6 pt-28 pb-24 lg:px-8">
         <h1 className="font-display text-2xl font-bold text-white sm:text-3xl">Quét mã hoặc nhập mã</h1>
         <p className="mt-2 text-sm text-slate-400">
-          Thầy chiếu mã QR lên bảng, em quét là vào đúng đề đó. Không quét được thì gõ số đề ở ô dưới.
+          Thầy chiếu mã QR lên bảng, em quét là vào đúng đề hoặc đúng hoạt động lớp đó. Không quét được thì gõ số đề ở ô dưới, hoặc nhập mã PIN ở khối cuối trang.
         </p>
 
         <div className="mt-6">

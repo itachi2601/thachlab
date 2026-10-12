@@ -9,6 +9,7 @@
  * Thoát mã 1 nếu có mã nào không giải mã đúng.
  */
 import jsQR from "jsqr";
+import { quizJoinUrl, quizPinFromScan } from "../lib/quiz-link";
 import { makeQrCode, QR_QUIET_ZONE } from "../lib/qr";
 
 const SCALE = 6; // số điểm ảnh mỗi ô — đủ để bộ đọc bắt góc
@@ -41,6 +42,8 @@ const CASES = [
   "https://thachlab.id.vn/kiem-tra/lam/?id=123456",
   // Đề nằm trong một bài học: link kèm cả `item` — vẫn phải đọc được.
   "https://thachlab.id.vn/kiem-tra/lam/?id=770&item=1234",
+  // Mã vào phòng Hoạt động lớp học (lib/quiz-link.ts).
+  quizJoinUrl("123456"),
 ];
 
 let failed = 0;
@@ -57,3 +60,20 @@ if (failed > 0) {
   process.exit(1);
 }
 console.log(`\n✓ ${CASES.length}/${CASES.length} mã QR giải mã đúng.`);
+
+// Nội dung quét → PIN: nhận link /choi, KHÔNG nhận số trần hay link đề.
+const pinCases: [string, string | null][] = [
+  [quizJoinUrl("123456"), "123456"],
+  ["/choi/?pin=000123", "000123"],
+  ["https://thachlab.id.vn/choi?pin=654321", "654321"],
+  ["123456", null],
+  ["https://thachlab.id.vn/kiem-tra/lam/?id=770", null],
+  ["https://thachlab.id.vn/choi/?pin=12345", null],
+  ["https://evil.example/x?pin=123456", null],
+];
+for (const [raw, want] of pinCases) {
+  const got = quizPinFromScan(raw);
+  const ok = got === want;
+  console.log(`${ok ? "✓" : "✕"} quizPinFromScan(${raw}) → ${got}`);
+  if (!ok) process.exit(1);
+}
