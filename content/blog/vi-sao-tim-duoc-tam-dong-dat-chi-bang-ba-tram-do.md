@@ -44,34 +44,37 @@ Chọn một đáp án trong đầu rồi đọc tiếp.
 
 Khi một đứt gãy địa chất trượt mạnh dưới lòng đất (gọi là **chấn tiêu** - focus), năng lượng khổng lồ giải phóng tạo thành các đợt sóng cơ truyền qua đất đá. Có hai loại sóng khối quan trọng nhất:
 
-1. **Sóng P (Primary wave - sóng sơ cấp / sóng dọc):** Các phần tử đất đá dao động dọc theo phương truyền sóng (nén và dãn liên tục). Đây là loại sóng chạy nhanh nhất trong vỏ Trái Đất, vận tốc trung bình khoảng $v_P \approx 6 - 8\text{ km/s}$. Nó luôn đến trạm địa chấn đầu tiên.
-2. **Sóng S (Secondary wave - sóng thứ cấp / sóng ngang):** Các phần tử dao động vuông góc với phương truyền sóng (lắc ngang hoặc trồi sụt). Sóng S chậm hơn, vận tốc trung bình khoảng $v_S \approx 3{,}5 - 4{,}5\text{ km/s}$. Nó luôn đến sau sóng P.
+1. **Sóng P (Primary wave - sóng sơ cấp / sóng dọc):** Các phần tử đất đá dao động dọc theo phương truyền sóng (nén và dãn liên tục). Đây là loại sóng chạy nhanh nhất trong vỏ Trái Đất, vận tốc trung bình khoảng v_P ≈ 6 – 8 km/s. Nó luôn đến trạm địa chấn đầu tiên.
+2. **Sóng S (Secondary wave - sóng thứ cấp / sóng ngang):** Các phần tử dao động vuông góc với phương truyền sóng (lắc ngang hoặc trồi sụt). Sóng S chậm hơn, vận tốc trung bình khoảng v_S ≈ 3,5 – 4,5 km/s. Nó luôn đến sau sóng P.
 
-Vì $v_P > v_S$, quãng đường càng xa thì sóng S càng bị sóng P bỏ lại khoảng cách xa hơn về mặt thời gian.
+Vì tốc độ sóng P lớn hơn sóng S (v_P > v_S), quãng đường càng xa thì sóng S càng bị sóng P bỏ lại khoảng cách xa hơn về mặt thời gian.
 
 ![Đồ thị địa chấn đồ: Sóng P xuất hiện trước, sóng S xuất hiện sau, khoảng cách thời gian giữa hai đỉnh là delta t](/images/blog/vi-sao-tim-duoc-tam-dong-dat-so-do.svg)
 
-*Đường màu xanh: thời điểm sóng P chạm máy đo ($t_P$).*
+*Đường màu xanh: thời điểm sóng P chạm máy đo (t_P).*
 
-*Đường màu đỏ: thời điểm sóng S chạm máy đo ($t_S$).*
+*Đường màu đỏ: thời điểm sóng S chạm máy đo (t_S).*
 
-*Khoảng thời gian chênh lệch $\Delta t = t_S - t_P$ tỉ lệ thuận với khoảng cách đến tâm chấn.*
+*Khoảng thời gian chênh lệch Δt = t_S − t_P tỉ lệ thuận với khoảng cách đến tâm chấn.*
 
-Trạm đo ghi lại độ trễ $\Delta t = t_S - t_P$. Từ công thức quãng đường $d$:
+Trạm đo ghi lại độ trễ Δt = t_S − t_P. Từ công thức quãng đường d:
 
-$$t_P = \frac{d}{v_P}, \quad t_S = \frac{d}{v_S}$$
+- Thời gian sóng P chạy tới trạm: t_P = d / v_P
+- Thời gian sóng S chạy tới trạm: t_S = d / v_S
 
-$$\Delta t = t_S - t_P = d\left(\frac{1}{v_S} - \frac{1}{v_P}\right) = d \cdot \frac{v_P - v_S}{v_P \cdot v_S}$$
+Độ trễ thời gian giữa hai đợt sóng là:
 
-Suy ra khoảng cách $d$ từ trạm đo đến tâm chấn:
+> **Δt = t_S − t_P = d / v_S − d / v_P = d · (v_P − v_S) / (v_P · v_S)**
 
-$$d = \Delta t \cdot \frac{v_P \cdot v_S}{v_P - v_S}$$
+Từ đó, khoảng cách d từ trạm đo đến tâm chấn được tính bằng:
 
-Chỉ cần nhìn vào độ trễ $\Delta t$ trên bản ghi địa chấn, ta tính ngay được tâm chấn cách trạm bao nhiêu kilomet.
+> **d = Δt · (v_P · v_S) / (v_P − v_S)**
+
+Chỉ cần nhìn vào độ trễ Δt trên bản ghi địa chấn, ta tính ngay được tâm chấn cách trạm bao nhiêu kilomet.
 
 ## Vì sao phải cần ít nhất ba trạm đo?
 
-Biết khoảng cách $d$ từ một trạm chỉ mới cho biết: tâm chấn nằm đâu đó trên **đường tròn bán kính $d$** lấy trạm làm tâm.
+Biết khoảng cách d từ một trạm chỉ mới cho biết: tâm chấn nằm đâu đó trên **đường tròn bán kính d** lấy trạm làm tâm.
 
 - **1 trạm:** Có vô số điểm thoả mãn (nguyên cả một đường tròn).
 - **2 trạm:** Hai đường tròn cắt nhau tại tối đa **2 điểm**. Vẫn chưa biết điểm nào là vị trí thật.
@@ -85,17 +88,17 @@ Biết khoảng cách $d$ từ một trạm chỉ mới cho biết: tâm chấn 
 
 ## Thử ước lượng bằng số
 
-Giả sử trong một khu vực địa chất, vận tốc sóng P là $v_P = 8\text{ km/s}$ và sóng S là $v_S = 4{,}5\text{ km/s}$.
+Giả sử trong một khu vực địa chất, vận tốc sóng P là v_P = 8 km/s và sóng S là v_S = 4,5 km/s.
 
 Hệ số quy đổi khoảng cách:
 
-$$\frac{v_P \cdot v_S}{v_P - v_S} = \frac{8 \times 4{,}5}{8 - 4{,}5} \approx 10{,}3\text{ km/s}$$
+> **(v_P · v_S) / (v_P − v_S) = (8 × 4,5) / (8 − 4,5) ≈ 10,3 km/s**
 
 Nghĩa là: **cứ mỗi giây sóng S đến muộn hơn sóng P, tâm chấn cách trạm khoảng 10,3 km**.
 
-Nếu tại trạm Hà Nội ghi nhận sóng S đến sau sóng P một khoảng $\Delta t = 20\text{ s}$:
+Nếu tại trạm Hà Nội ghi nhận sóng S đến sau sóng P một khoảng Δt = 20 giây:
 
-$$d = 20 \times 10{,}3 = 206\text{ km}$$
+> **d = 20 × 10,3 = 206 km**
 
 Nhà khoa học chỉ việc cắm compa ở toạ độ trạm Hà Nội, quay một đường tròn bán kính 206 km trên bản đồ địa lý. Kết hợp thêm dữ liệu bán kính tương tự từ trạm Điện Biên và trạm Lạng Sơn, giao điểm của 3 đường tròn sẽ chỉ ra vị trí đứt gãy vừa phát sinh động đất.
 
@@ -122,7 +125,7 @@ Bạn sẽ thấy ba vòng tròn giao nhau đúng tại điểm X bí mật mà 
 - [Lớp 11 · Bài 8. Mô tả sóng](/lop-hoc/bai?id=30&subject=vat-ly&chapter=7)
 - [Lớp 11 · Bài 9. Sóng ngang. Sóng dọc. Sự truyền năng lượng của sóng cơ](/lop-hoc/bai?id=31&subject=vat-ly&chapter=7)
 
-Khái niệm sóng dọc (phương dao động trùng phương truyền sóng), sóng ngang (phương dao động vuông góc phương truyền sóng) và công thức liên hệ quãng đường - tốc độ truyền sóng $s = v \cdot t$ nằm trọn vẹn trong chương **Sóng** của chương trình Vật lí 11.
+Khái niệm sóng dọc (phương dao động trùng phương truyền sóng), sóng ngang (phương dao động vuông góc phương truyền sóng) và công thức liên hệ quãng đường - tốc độ truyền sóng s = v·t nằm trọn vẹn trong chương **Sóng** của chương trình Vật lí 11.
 
 ## Nghĩ tiếp
 
