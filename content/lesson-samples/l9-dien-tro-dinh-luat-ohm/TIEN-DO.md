@@ -8,3 +8,4 @@
 - Không làm ảnh Gemini: bài toàn sơ đồ/đồ thị, đã có SVG.
 - 2026-10-11 · Clip mở bài m7jXRYHb9R8 đã chèn (thầy duyệt). Chặng 3 XONG: scripts/data/bai-tap-mau/89.json (4 dạng, kiểm chéo Sonnet, 15 mục đã sửa, review.checked=true), build-hinh-89.py, 89.dang.md. Treo: đếm question_bank topic bài 89 trên Mac (<6 câu bai_tap thì báo thầy).
 - Chặng 5 (đăng Mac) chưa chạy: lý thuyết dùng upload-lesson.mts (bài 89 chưa có mục lý thuyết), rồi publish-bai-tap-mau.mts --lesson 89 --dry-run → --giu-cu, rồi deploy.
+- 2026-10-12 · Chặng 5 XONG: DB bài 89 có ly_thuyet (id 341), bai_tap_mau (343, 4 dạng, tạo mục rỗng trước vì publish-bai-tap-mau đòi đúng 1 mục), luyen_tap (342, đề 911 gán lớp 15). Đã deploy từ worktree sạch (commit c62a868a6). Bản build có lý thuyết + PhET + clip + 4 dạng. Treo: thầy xem web thật sau 10 phút; đếm question_bank topic 89/90.
