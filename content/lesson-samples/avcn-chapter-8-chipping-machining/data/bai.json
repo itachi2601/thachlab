@@ -1,0 +1,1007 @@
+{
+  "meta": {
+    "chapter": 8,
+    "prefix": "tl8",
+    "title_en": "Chipping Machining",
+    "title_vi": "Gia công cắt gọt",
+    "minutes": 25,
+    "muc_tieu": [
+      "Nhận ra 16 từ ⭐ của chương khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 và 2 để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được hai mẫu câu bị động để dịch câu định nghĩa (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục 2 Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 2, điền 1 từ + Đúng/Sai",
+        "Mục 3 Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục 6 Vận hành máy tiện"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục 3 + mục 4 mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục 4 mẫu câu"
+      ]
+    ]
+  },
+  "khoi_dong": [
+    {
+      "img": "lathe",
+      "hoi": "Máy này em đã gặp ở xưởng. Trong tiếng Anh nó tên gì?",
+      "lua_chon": [
+        "lathe",
+        "milling machine",
+        "drill"
+      ],
+      "dap": 0,
+      "fb_ok": "Đúng. <em>lathe</em> /leɪð/ là máy tiện: phôi quay, dao đứng yên.",
+      "fb_no": "Nhìn trục chính nằm ngang và mâm cặp ở bên trái: phôi sẽ quay tròn. Máy nào làm phôi quay?"
+    },
+    {
+      "img": "milling-machine",
+      "hoi": "Còn máy đứng này, dao quay còn phôi kẹp trên bàn. Tên tiếng Anh?",
+      "lua_chon": [
+        "grinder",
+        "milling machine",
+        "band saw"
+      ],
+      "dap": 1,
+      "fb_ok": "Đúng. <em>milling machine</em> là máy phay: dao quay, phôi cố định trên bàn máy.",
+      "fb_no": "Trên đầu máy là dao nhiều răng quay tròn, bàn máy kẹp phôi. Đó là máy phay."
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · 5 loại máy",
+      "tu": [
+        {
+          "term": "lathe",
+          "ipa": "/leɪð/",
+          "vi": "máy tiện",
+          "def": "A machine that rotates the workpiece against a fixed cutting tool.",
+          "img": "lathe",
+          "tier": 1
+        },
+        {
+          "term": "milling machine",
+          "ipa": "/ˈmɪlɪŋ məˌʃiːn/",
+          "vi": "máy phay",
+          "def": "A machine with a rotating toothed cutter; the workpiece is held fixed.",
+          "img": "milling-machine",
+          "tier": 1
+        },
+        {
+          "term": "drill",
+          "ipa": "/drɪl/",
+          "vi": "máy khoan",
+          "def": "A machine fitted with a drill bit to cut circular holes.",
+          "img": "drill-press",
+          "tier": 1
+        },
+        {
+          "term": "grinder",
+          "ipa": "/ˈɡraɪndər/",
+          "vi": "máy mài",
+          "def": "A machine that removes material across a surface using an abrasive wheel.",
+          "img": "bench-grinder",
+          "tier": 1
+        },
+        {
+          "term": "saw",
+          "ipa": "/sɔː/",
+          "vi": "máy cưa / cái cưa",
+          "def": "A tool or machine that cuts with a toothed blade: hacksaw, band saw, circular saw.",
+          "img": "band-saw",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A machine that rotates the workpiece against a fixed cutting tool.\"</em>",
+        "lua_chon": [
+          "drill",
+          "lathe",
+          "grinder",
+          "milling machine"
+        ],
+        "dap": 1,
+        "fb_ok": "Đúng. Từ khoá trong định nghĩa là <em>rotates the workpiece</em>: chỉ máy tiện làm phôi quay.",
+        "fb_no": "Gạch từ khoá: <em>rotates the workpiece</em>. Máy phay và máy khoan làm <em>dao</em> quay, không phải phôi."
+      }
+    },
+    {
+      "ten": "Cụm B · Vật liệu, phế phẩm, chất lỏng",
+      "tu": [
+        {
+          "term": "workpiece",
+          "ipa": "/ˈwɜːkpiːs/",
+          "vi": "phôi",
+          "def": "The piece of material being machined.",
+          "img": "turning",
+          "tier": 1
+        },
+        {
+          "term": "machine tool",
+          "ipa": "/məˈʃiːn tuːl/",
+          "vi": "máy công cụ / dụng cụ cắt",
+          "def": "The tool or machine used in machining to make holes, grooves, threads.",
+          "img": "end-mills",
+          "tier": 1
+        },
+        {
+          "term": "swarf / chips",
+          "ipa": "/swɔːf/ /tʃɪps/",
+          "vi": "phoi",
+          "def": "The waste metal produced as the workpiece is cut.",
+          "img": "swarf",
+          "tier": 1
+        },
+        {
+          "term": "cutting fluid",
+          "ipa": "/ˈkʌtɪŋ ˌfluːɪd/",
+          "vi": "dung dịch cắt gọt",
+          "def": "A liquid pumped onto the workpiece during machining.",
+          "img": "boring",
+          "tier": 1
+        },
+        {
+          "term": "coolant",
+          "ipa": "/ˈkuːlənt/",
+          "vi": "chất làm mát",
+          "def": "A liquid that keeps the workpiece cool. Cutting fluid acts as a coolant.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The waste metal produced during machining.\"</em>",
+        "lua_chon": [
+          "workpiece",
+          "coolant",
+          "swarf",
+          "kerf"
+        ],
+        "dap": 2,
+        "fb_ok": "Đúng. <em>swarf</em> (hoặc <em>chips</em>) là phoi, thứ bị cắt bỏ đi.",
+        "fb_no": "Từ khoá là <em>waste</em> (phế phẩm). Phôi là thứ còn lại, chất làm mát là chất lỏng. Thứ bị vứt đi là gì?"
+      }
+    },
+    {
+      "ten": "Cụm C · 5 động từ gia công",
+      "tu": [
+        {
+          "term": "turn",
+          "ipa": "/tɜːn/",
+          "vi": "tiện",
+          "def": "To cut a rotating workpiece on a lathe. Noun: turning.",
+          "img": "turning",
+          "tier": 1
+        },
+        {
+          "term": "mill",
+          "ipa": "/mɪl/",
+          "vi": "phay",
+          "def": "To cut a fixed workpiece with a rotating toothed cutter. Noun: milling.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "drill",
+          "ipa": "/drɪl/",
+          "vi": "khoan",
+          "def": "To cut a new circular hole with a drill bit. Noun: drilling.",
+          "img": "drill-bit",
+          "tier": 1
+        },
+        {
+          "term": "bore",
+          "ipa": "/bɔːr/",
+          "vi": "doa, khoét rộng lỗ",
+          "def": "To enlarge a hole that already exists. Noun: boring.",
+          "img": "boring",
+          "tier": 1
+        },
+        {
+          "term": "grind",
+          "ipa": "/ɡraɪnd/",
+          "vi": "mài",
+          "def": "To remove material across a surface with an abrasive wheel. Noun: grinding.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Chọn động từ đúng: <em>\"In machining, enlarging a hole (making it wider) is called ______.\"</em>",
+        "lua_chon": [
+          "drilling",
+          "boring",
+          "milling",
+          "grinding"
+        ],
+        "dap": 1,
+        "fb_ok": "Đúng. <em>drilling</em> tạo lỗ mới, <em>boring</em> mở rộng lỗ đã có. Đây là bẫy hay gặp trong Part 2.",
+        "fb_no": "Từ khoá: <em>enlarging</em> (mở rộng). Khoan là tạo lỗ <em>mới</em>. Động từ nào là làm lỗ rộng ra?"
+      }
+    },
+    {
+      "ten": "Cụm D · Dụng cụ cắt và mạch cắt",
+      "tu": [
+        {
+          "term": "drill bit",
+          "ipa": "/drɪl bɪt/",
+          "vi": "mũi khoan",
+          "def": "The rotating tool fitted to a drill; also called a bit.",
+          "img": "drill-bit",
+          "tier": 1
+        },
+        {
+          "term": "blade",
+          "ipa": "/bleɪd/",
+          "vi": "lưỡi cưa",
+          "def": "A thin, sharp piece of metal, usually with teeth.",
+          "img": "hacksaw",
+          "tier": 1
+        },
+        {
+          "term": "abrasive wheel",
+          "ipa": "/əˈbreɪsɪv wiːl/",
+          "vi": "đá mài, đĩa cắt",
+          "def": "A thin circular wheel with a tough, hard surface, often industrial diamond.",
+          "img": "bench-grinder",
+          "tier": 1
+        },
+        {
+          "term": "hole saw",
+          "ipa": "/həʊl sɔː/",
+          "vi": "mũi khoét lỗ",
+          "def": "A hollow cylinder with teeth that cuts a large hole and removes a core.",
+          "img": "hole-saw",
+          "tier": 1
+        },
+        {
+          "term": "kerf",
+          "ipa": "/kɜːf/",
+          "vi": "mạch cắt",
+          "def": "The gap left by the blade along the line of the cut.",
+          "img": "circular-saw-blade",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The gap left by the blade along the line of the cut.\"</em>",
+        "lua_chon": [
+          "core",
+          "kerf",
+          "blade",
+          "hole saw"
+        ],
+        "dap": 1,
+        "fb_ok": "Đúng. <em>kerf</em> là mạch cắt, rộng hơn lưỡi cưa một chút.",
+        "fb_no": "Từ khoá: <em>gap</em> (khe hở). Lưỡi cưa là dụng cụ, lõi là phần bị lấy ra. Khe hở để lại là gì?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "headstock",
+      "vi": "ụ trước (chứa động cơ, hộp số, trục chính)"
+    },
+    {
+      "term": "tailstock",
+      "vi": "ụ sau (đỡ phôi dài, giữ mũi khoan tâm)"
+    },
+    {
+      "term": "chuck",
+      "vi": "mâm cặp"
+    },
+    {
+      "term": "spindle",
+      "vi": "trục chính"
+    },
+    {
+      "term": "tool post",
+      "vi": "ổ gá dao"
+    },
+    {
+      "term": "carriage",
+      "vi": "bàn xe dao"
+    },
+    {
+      "term": "bed",
+      "vi": "băng máy"
+    },
+    {
+      "term": "lead screw",
+      "vi": "trục vít me"
+    },
+    {
+      "term": "toothed",
+      "vi": "có răng"
+    },
+    {
+      "term": "rotate / spin",
+      "vi": "quay tròn"
+    },
+    {
+      "term": "circular cross-section",
+      "vi": "tiết diện tròn"
+    },
+    {
+      "term": "core",
+      "vi": "lõi (phần bị khoét ra)"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · Machining",
+      "cau": [
+        [
+          "Machining is the use of machines to cut pieces of material (called <b>workpieces</b>) and shape them into components.",
+          "Gia công cắt gọt là dùng máy để cắt các mẩu vật liệu (gọi là <b>phôi</b>) và tạo hình chúng thành chi tiết máy."
+        ],
+        [
+          "The tools used in machining, to make holes, grooves, threads, etc., are called <b>machine tools</b>.",
+          "Các dụng cụ dùng trong gia công để tạo lỗ, rãnh, ren… được gọi là <b>máy công cụ</b>."
+        ],
+        [
+          "Metal is often machined. As it is cut, waste is produced, called <b>swarf</b> or <b>chips</b>.",
+          "Kim loại thường được gia công. Khi bị cắt, phế phẩm sinh ra được gọi là <b>phoi</b>."
+        ],
+        [
+          "During machining, a liquid called <b>cutting fluid</b> may be pumped onto the workpiece to act as a <b>coolant</b>, keeping the workpiece cool.",
+          "Trong khi gia công, một chất lỏng gọi là <b>dung dịch cắt gọt</b> có thể được bơm lên phôi để làm <b>chất làm mát</b>, giữ phôi không bị nóng."
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Metal gets hot during cutting, so cutting fluid is used as a ______.\"</em>",
+        "lua_chon": [
+          "coolant",
+          "workpiece",
+          "chip"
+        ],
+        "dap": 0,
+        "fb_ok": "Đúng. Câu 4 của bài có đúng cụm <em>act as a coolant</em>. Chiến thuật: tìm từ khoá <em>cutting fluid</em> trong bài rồi chép từ đứng sau <em>as a</em>.",
+        "fb_no": "Tìm trong bài câu có <em>cutting fluid</em>. Từ nào đứng ngay sau <em>act as a</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Swarf is the liquid pumped onto the workpiece.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Swarf là <em>waste</em> (phoi), còn chất lỏng là <em>cutting fluid</em>. Đề thường tráo hai danh từ trong cùng bài.",
+        "fb_no": "Đọc lại câu 3 và câu 4: swarf xuất hiện ở câu nào, liquid ở câu nào?"
+      }
+    },
+    {
+      "ten": "Article 2 · Machining with cutting tools",
+      "cau": [
+        [
+          "<b>Milling</b> is cutting done by a milling machine, often using toothed cutting discs (wheels with teeth that have sharp edges).",
+          "<b>Phay</b> là cắt gọt bằng máy phay, thường dùng đĩa cắt có răng (bánh xe có răng sắc)."
+        ],
+        [
+          "When a workpiece is milled, it is held in a fixed position on the machine, and is shaped by cutting tools which rotate while being moved over the surface of the workpiece.",
+          "Khi phôi được phay, nó được giữ cố định trên máy và được tạo hình bởi dao cắt quay tròn trong lúc di chuyển trên bề mặt phôi."
+        ],
+        [
+          "<b>Turning</b> is a technique for cutting components that have a circular cross-section.",
+          "<b>Tiện</b> là kỹ thuật cắt các chi tiết có tiết diện tròn."
+        ],
+        [
+          "The workpiece is turned by a machine called a lathe, which rotates the workpiece. A fixed machine tool is then moved against the rotating workpiece to cut material from it.",
+          "Phôi được tiện bằng máy gọi là máy tiện, máy này làm phôi quay. Một dao cắt cố định được đưa vào phôi đang quay để cắt vật liệu."
+        ],
+        [
+          "<b>Sawing</b> is cutting using a blade (a thin, sharp piece of metal), which usually has teeth, to remove a thickness of material slightly wider than the blade.",
+          "<b>Cưa</b> là cắt bằng lưỡi cưa (mảnh kim loại mỏng, sắc), thường có răng, lấy đi một lớp vật liệu rộng hơn lưỡi một chút."
+        ],
+        [
+          "The gap left by the blade, along the line of the cut, is called a kerf.",
+          "Khe hở lưỡi cưa để lại dọc theo đường cắt gọi là mạch cắt (kerf)."
+        ],
+        [
+          "Machines that use toothed blades include circular saws, band saws, and power hacksaws. A hacksaw has a blade with very small teeth, for cutting metal.",
+          "Máy dùng lưỡi có răng gồm cưa đĩa, cưa vòng và cưa sắt máy. Cưa sắt có lưỡi răng rất nhỏ để cắt kim loại."
+        ],
+        [
+          "Saws may also use abrasive wheels – thin, circular cutting wheels with tough, hard surfaces – often made of industrial diamond.",
+          "Cưa cũng có thể dùng đĩa mài: đĩa cắt tròn, mỏng, bề mặt cứng và dai, thường làm bằng kim cương công nghiệp."
+        ],
+        [
+          "<b>Drilling</b> is a technique for cutting circular holes. A machine called a drill is fitted with a tool called a drill bit (or bit). The bit rotates and drills into the material.",
+          "<b>Khoan</b> là kỹ thuật cắt lỗ tròn. Máy khoan được lắp dụng cụ gọi là mũi khoan. Mũi khoan quay và khoan vào vật liệu."
+        ],
+        [
+          "Holes with large diameters can be cut using hole saws – hollow cylinders with teeth, which saw circular cuts and remove a core of material.",
+          "Lỗ đường kính lớn có thể cắt bằng mũi khoét: ống trụ rỗng có răng, cưa một vòng tròn và lấy ra một lõi vật liệu."
+        ],
+        [
+          "Usually, drilling refers to making new holes. In machining, enlarging a hole (making it wider) is called boring.",
+          "Thường thì khoan là tạo lỗ mới. Trong gia công, mở rộng một lỗ (làm nó rộng hơn) gọi là doa."
+        ],
+        [
+          "<b>Grinding</b> is removing material across a surface area, using abrasive wheels. The machines used to grind material are called grinders.",
+          "<b>Mài</b> là lấy đi vật liệu trên một vùng bề mặt bằng đá mài. Máy dùng để mài gọi là máy mài."
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"While being milled, the workpiece is held in a ______ position.\"</em>",
+        "lua_chon": [
+          "rotating",
+          "fixed",
+          "circular"
+        ],
+        "dap": 1,
+        "fb_ok": "Đúng. Câu 2 của bài: <em>held in a fixed position</em>. Đề thi lấy nguyên cụm này.",
+        "fb_no": "Tìm câu có <em>milled</em>. Từ nào đứng trước <em>position</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"A hacksaw has a blade with very big teeth, for cutting metal.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>very small teeth</em>. Đề chỉ đổi một chữ: small → big.",
+        "fb_no": "Tìm câu có <em>hacksaw</em> trong bài và so từng chữ với câu hỏi."
+      }
+    }
+  ],
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X is called Y (X được gọi là Y)",
+      "vd": [
+        [
+          "Waste is produced, called swarf.",
+          "Phế phẩm sinh ra, gọi là phoi."
+        ],
+        [
+          "The gap left by the blade is called a kerf.",
+          "Khe hở lưỡi cưa để lại được gọi là mạch cắt."
+        ],
+        [
+          "Enlarging a hole is called boring.",
+          "Mở rộng lỗ được gọi là doa."
+        ]
+      ],
+      "ghi_chu": "Part 5 hay cho câu \"X được gọi là Y\". Công thức: <strong>X + is called + Y</strong>. Không cần biết thì, không cần chủ ngữ phức tạp."
+    },
+    {
+      "ten": "Mẫu 2 · bị động: is held / is shaped / is pumped",
+      "vd": [
+        [
+          "The workpiece is held in a fixed position.",
+          "Phôi được giữ ở vị trí cố định."
+        ],
+        [
+          "It is shaped by cutting tools which rotate.",
+          "Nó được tạo hình bởi dao cắt quay tròn."
+        ],
+        [
+          "Cutting fluid is pumped onto the workpiece.",
+          "Dung dịch cắt gọt được bơm lên phôi."
+        ]
+      ],
+      "ghi_chu": "Thấy <strong>is/are + V-ed</strong> → dịch \"được…\". Thấy <strong>which + V</strong> → dịch \"mà…\" hoặc bỏ \"which\", dịch tiếp tính chất."
+    }
+  ],
+  "gan_nhan": {
+    "hoi": "Bộ phận số 1 (bên trái, chứa động cơ và hộp số) tên là gì?",
+    "lua_chon": [
+      "tailstock",
+      "headstock",
+      "carriage",
+      "tool post"
+    ],
+    "dap": 1,
+    "fb_ok": "Đúng. <em>headstock</em> = ụ trước, chứa động cơ, hộp số và trục chính. Đầu kia là <em>tailstock</em>.",
+    "fb_no": "Head = đầu, tail = đuôi. Bộ phận có động cơ là \"đầu\" của máy."
+  },
+  "sop": {
+    "hop_tu": [
+      "check",
+      "locked",
+      "Locate",
+      "Use",
+      "press"
+    ],
+    "doan": "Before starting the lathe, (1) ______ that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is (2) ______. (3) ______ the master switch on the back of the lathe and turn it to the \"ON\" position; the power lamp will light. (4) ______ the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor, (5) ______ down on the foot brake.",
+    "dap": [
+      "check",
+      "locked",
+      "Locate",
+      "Use",
+      "press"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (5): <em>\"… cut power to the motor, (5) ______ down on the foot brake.\"</em>",
+      "lua_chon": [
+        "Locate",
+        "press",
+        "check",
+        "locked"
+      ],
+      "dap": 1,
+      "fb_ok": "Đúng. <em>press down on</em> = đạp xuống. Dấu hiệu: sau chỗ trống có <em>down on</em>, cần động từ nguyên mẫu.",
+      "fb_no": "Chỗ trống đứng đầu câu lệnh, sau nó là <em>down on the foot brake</em> (đạp phanh chân). Động từ nào đi với <em>down</em>?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Máy nào làm <em>phôi</em> quay? Máy nào làm <em>dao</em> quay?",
+      "Lathe (tiện) quay phôi. Milling machine (phay) và drill (khoan) quay dao."
+    ],
+    [
+      "<em>Swarf</em> và <em>chips</em> khác nhau không?",
+      "Không. Cả hai đều là phoi, phế phẩm sinh ra khi cắt."
+    ],
+    [
+      "<em>Drilling</em> và <em>boring</em> khác nhau chỗ nào?",
+      "Drilling tạo lỗ mới. Boring mở rộng lỗ đã có."
+    ],
+    [
+      "<em>Kerf</em> là gì? Nó rộng hơn hay hẹp hơn lưỡi cưa?",
+      "Mạch cắt do lưỡi cưa để lại, rộng hơn lưỡi cưa một chút."
+    ],
+    [
+      "<em>Hole saw</em> lấy ra cái gì khi cắt?",
+      "Một lõi (core) vật liệu hình trụ."
+    ],
+    [
+      "Dịch: <em>The workpiece is held in a fixed position.</em>",
+      "Phôi được giữ ở vị trí cố định."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Phế phẩm sinh ra khi cắt được gọi là phoi.</em>",
+      "The waste produced during cutting is called swarf (or chips)."
+    ],
+    [
+      "Ba loại cưa dùng lưỡi có răng?",
+      "Circular saw, band saw, power hacksaw."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "A machine that rotates a workpiece against a fixed cutting tool.",
+        "opts": [
+          "drill",
+          "lathe",
+          "grinder",
+          "saw"
+        ],
+        "ans": 1,
+        "why": "Từ khoá <em>rotates a workpiece</em> → lathe."
+      },
+      {
+        "q": "The waste metal produced during machining.",
+        "opts": [
+          "workpiece",
+          "coolant",
+          "kerf",
+          "swarf"
+        ],
+        "ans": 3,
+        "why": "<em>waste</em> → swarf/chips."
+      },
+      {
+        "q": "The piece of material being machined.",
+        "opts": [
+          "workpiece",
+          "machine tool",
+          "blade",
+          "core"
+        ],
+        "ans": 0,
+        "why": "<em>material being machined</em> → workpiece."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer. [hình: cưa sắt tay]",
+        "opts": [
+          "band saw",
+          "hacksaw",
+          "circular saw",
+          "abrasive wheel"
+        ],
+        "ans": 1,
+        "why": "Khung chữ C + lưỡi răng nhỏ → hacksaw."
+      },
+      {
+        "q": "Enlarging a hole that already exists.",
+        "opts": [
+          "drilling",
+          "milling",
+          "boring",
+          "grinding"
+        ],
+        "ans": 2,
+        "why": "<em>enlarging</em> → boring."
+      },
+      {
+        "q": "A hollow cylinder with teeth that removes a core of material.",
+        "opts": [
+          "drill bit",
+          "hole saw",
+          "abrasive wheel",
+          "blade"
+        ],
+        "ans": 1,
+        "why": "<em>hollow cylinder</em> + <em>core</em> → hole saw."
+      }
+    ],
+    "part2": {
+      "doan": "Turning is a technique for cutting components that have a circular cross-section. The workpiece is turned by a machine called a lathe, which rotates the workpiece. A fixed machine tool is then moved against the rotating workpiece to cut material from it. Drilling is a technique for cutting circular holes. A machine called a drill is fitted with a tool called a drill bit. The bit rotates and drills into the material. Usually, drilling refers to making new holes. In machining, enlarging a hole is called boring.",
+      "dien": [
+        {
+          "q": "Components which have a circular cross-section are usually shaped by the ______ technique.",
+          "ans": "turning",
+          "why": "Câu 1: <em>Turning is a technique for cutting components that have a circular cross-section.</em>"
+        },
+        {
+          "q": "During turning, a ______ machine tool is moved against the rotating workpiece.",
+          "ans": "fixed",
+          "why": "Câu 3: <em>A fixed machine tool is then moved…</em>"
+        },
+        {
+          "q": "A drill is fitted with a tool called a drill ______.",
+          "ans": "bit",
+          "why": "Câu 5: <em>a tool called a drill bit</em>."
+        },
+        {
+          "q": "Enlarging a hole is called ______.",
+          "ans": "boring",
+          "why": "Câu cuối, chép nguyên từ."
+        }
+      ],
+      "ds": [
+        {
+          "q": "In turning, the machine tool rotates and the workpiece is fixed.",
+          "ans": false,
+          "why": "Ngược lại: lathe <em>rotates the workpiece</em>, tool <em>fixed</em>."
+        },
+        {
+          "q": "A lathe is used to cut components with a circular cross-section.",
+          "ans": true,
+          "why": "Câu 1 và 2 của đoạn."
+        },
+        {
+          "q": "Drilling usually means enlarging a hole.",
+          "ans": false,
+          "why": "Drilling = <em>making new holes</em>; enlarging = boring."
+        },
+        {
+          "q": "The drill bit rotates and drills into the material.",
+          "ans": true,
+          "why": "Chép nguyên câu trong đoạn."
+        }
+      ]
+    },
+    "part3": {
+      "hop_tu": [
+        "blade",
+        "kerf",
+        "teeth",
+        "abrasive",
+        "metal"
+      ],
+      "doan": "Sawing is cutting using a (1) ______, a thin, sharp piece of (2) ______, which usually has (3) ______. The gap left along the line of the cut is called a (4) ______. Saws may also use (5) ______ wheels made of industrial diamond.",
+      "dap": [
+        "blade",
+        "metal",
+        "teeth",
+        "kerf",
+        "abrasive"
+      ],
+      "chien_thuat": "Đọc cả câu trước khi điền. Chỗ (2) đứng sau <em>piece of</em> → danh từ chất liệu. Chỗ (5) đứng trước <em>wheels</em> → tính từ. Từ nào chắc thì điền trước, gạch khỏi hộp."
+    },
+    "part4": {
+      "en": "Milling is cutting done by a milling machine, often using toothed cutting discs. When a workpiece is milled, it is held in a fixed position on the machine, and is shaped by cutting tools which rotate while being moved over the surface of the workpiece.",
+      "vi": "Phay là cắt gọt bằng máy phay, thường dùng đĩa cắt có răng. Khi phôi được phay, nó được giữ cố định trên máy và được tạo hình bởi dao cắt quay tròn trong lúc di chuyển trên bề mặt phôi.",
+      "chien_thuat": "Cắt câu dài tại dấu phẩy và <em>which</em>. Giữ nguyên thuật ngữ đã học (phay, phôi, dao cắt). Bị động <em>is held / is shaped</em> → \"được giữ / được tạo hình\". Dịch được nửa câu vẫn có điểm thành phần."
+    },
+    "part5": {
+      "vi": "Phế phẩm sinh ra khi cắt kim loại được gọi là phoi.",
+      "en": "The waste produced when metal is cut is called swarf (or chips).",
+      "chien_thuat": "Dùng mẫu 1: <strong>X is called Y</strong>. X = \"the waste produced when metal is cut\". Viết ngắn vẫn đúng: <em>The waste is called swarf.</em> đã có nửa điểm."
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "A machine that rotates the workpiece against a fixed cutting tool.",
+        "opts": [
+          "drill",
+          "lathe",
+          "grinder",
+          "milling machine"
+        ],
+        "ans": 1,
+        "why": "rotates the workpiece → lathe."
+      },
+      {
+        "q": "A machine that uses a rotating toothed cutter while the workpiece is held fixed.",
+        "opts": [
+          "lathe",
+          "band saw",
+          "milling machine",
+          "grinder"
+        ],
+        "ans": 2,
+        "why": "rotating toothed cutter + fixed workpiece → milling machine."
+      },
+      {
+        "q": "A machine fitted with a bit to cut circular holes.",
+        "opts": [
+          "drill",
+          "saw",
+          "grinder",
+          "lathe"
+        ],
+        "ans": 0,
+        "why": "bit + circular holes → drill."
+      },
+      {
+        "q": "A machine that removes material across a surface using an abrasive wheel.",
+        "opts": [
+          "drill",
+          "lathe",
+          "grinder",
+          "hole saw"
+        ],
+        "ans": 2,
+        "why": "abrasive wheel + surface → grinder."
+      },
+      {
+        "q": "The piece of material being machined.",
+        "opts": [
+          "chip",
+          "workpiece",
+          "kerf",
+          "core"
+        ],
+        "ans": 1,
+        "why": "material being machined → workpiece."
+      },
+      {
+        "q": "The waste produced as metal is cut.",
+        "opts": [
+          "swarf",
+          "coolant",
+          "cutting fluid",
+          "blade"
+        ],
+        "ans": 0,
+        "why": "waste → swarf / chips."
+      },
+      {
+        "q": "A liquid pumped onto the workpiece to keep it cool.",
+        "opts": [
+          "swarf",
+          "kerf",
+          "cutting fluid",
+          "core"
+        ],
+        "ans": 2,
+        "why": "liquid + cool → cutting fluid (coolant)."
+      },
+      {
+        "q": "The gap left by the blade along the line of the cut.",
+        "opts": [
+          "kerf",
+          "core",
+          "thread",
+          "groove"
+        ],
+        "ans": 0,
+        "why": "gap left by the blade → kerf."
+      },
+      {
+        "q": "A thin, sharp piece of metal, usually with teeth, used for sawing.",
+        "opts": [
+          "bit",
+          "blade",
+          "wheel",
+          "chuck"
+        ],
+        "ans": 1,
+        "why": "thin sharp piece of metal with teeth → blade."
+      },
+      {
+        "q": "A hollow cylinder with teeth that cuts a large hole and removes a core.",
+        "opts": [
+          "drill bit",
+          "hole saw",
+          "hacksaw",
+          "end mill"
+        ],
+        "ans": 1,
+        "why": "hollow cylinder + core → hole saw."
+      },
+      {
+        "q": "Making an existing hole wider.",
+        "opts": [
+          "drilling",
+          "boring",
+          "turning",
+          "sawing"
+        ],
+        "ans": 1,
+        "why": "enlarging a hole → boring."
+      },
+      {
+        "q": "Making a new circular hole with a rotating bit.",
+        "opts": [
+          "boring",
+          "grinding",
+          "drilling",
+          "milling"
+        ],
+        "ans": 2,
+        "why": "new hole + bit → drilling."
+      },
+      {
+        "q": "A saw with a blade with very small teeth, for cutting metal.",
+        "opts": [
+          "band saw",
+          "circular saw",
+          "hacksaw",
+          "hole saw"
+        ],
+        "ans": 2,
+        "why": "very small teeth, metal → hacksaw."
+      },
+      {
+        "q": "A thin circular cutting wheel with a tough, hard surface, often made of industrial diamond.",
+        "opts": [
+          "abrasive wheel",
+          "toothed disc",
+          "drill bit",
+          "chuck"
+        ],
+        "ans": 0,
+        "why": "hard surface + industrial diamond → abrasive wheel."
+      },
+      {
+        "q": "Components with a circular cross-section are usually made by ______.",
+        "opts": [
+          "milling",
+          "turning",
+          "grinding",
+          "sawing"
+        ],
+        "ans": 1,
+        "why": "circular cross-section → turning."
+      },
+      {
+        "q": "The part of a lathe that holds and rotates the workpiece.",
+        "opts": [
+          "tailstock",
+          "bed",
+          "chuck",
+          "tool post"
+        ],
+        "ans": 2,
+        "why": "holds and rotates the workpiece → chuck."
+      },
+      {
+        "q": "The part of a lathe that contains the motor, gears and spindle.",
+        "opts": [
+          "headstock",
+          "tailstock",
+          "carriage",
+          "lead screw"
+        ],
+        "ans": 0,
+        "why": "motor + gears + spindle → headstock."
+      },
+      {
+        "q": "The part of a lathe that supports the far end of a long workpiece.",
+        "opts": [
+          "headstock",
+          "tailstock",
+          "chuck",
+          "cross slide"
+        ],
+        "ans": 1,
+        "why": "supports the far end → tailstock."
+      },
+      {
+        "q": "Complete: \"When a workpiece is milled, it is held in a ______ position.\"",
+        "opts": [
+          "rotating",
+          "fixed",
+          "circular",
+          "hollow"
+        ],
+        "ans": 1,
+        "why": "Article 2, câu 2."
+      },
+      {
+        "q": "Complete: \"The bit ______ and drills into the material.\"",
+        "opts": [
+          "rotates",
+          "cools",
+          "holds",
+          "removes"
+        ],
+        "ans": 0,
+        "why": "Article 2, phần Drilling."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 2 (Milling, Turning). Mark each statement True or False.",
+        "st": [
+          [
+            "While being milled, the workpiece is rotated to be cut.",
+            false
+          ],
+          [
+            "In milling, the cutting tools rotate while being moved over the workpiece.",
+            true
+          ],
+          [
+            "Turning is used for components with a circular cross-section.",
+            true
+          ],
+          [
+            "In turning, the machine tool rotates and the workpiece is fixed.",
+            false
+          ]
+        ],
+        "why": "Milling: workpiece fixed, tool rotates. Turning: workpiece rotates, tool fixed."
+      },
+      {
+        "q": "Read Article 2 (Sawing). Mark each statement True or False.",
+        "st": [
+          [
+            "A blade removes a thickness of material slightly wider than itself.",
+            true
+          ],
+          [
+            "The kerf is the blade of the saw.",
+            false
+          ],
+          [
+            "A hacksaw has very big teeth for cutting metal.",
+            false
+          ],
+          [
+            "Abrasive wheels are often made of industrial diamond.",
+            true
+          ]
+        ],
+        "why": "Kerf = gap; hacksaw = very small teeth."
+      },
+      {
+        "q": "Read Article 1 and Article 2 (Drilling). Mark each statement True or False.",
+        "st": [
+          [
+            "Swarf is another name for cutting fluid.",
+            false
+          ],
+          [
+            "Cutting fluid acts as a coolant.",
+            true
+          ],
+          [
+            "A hole saw removes a core of material.",
+            true
+          ],
+          [
+            "Boring means making a new hole.",
+            false
+          ]
+        ],
+        "why": "Swarf = waste; boring = enlarging an existing hole."
+      }
+    ]
+  }
+}

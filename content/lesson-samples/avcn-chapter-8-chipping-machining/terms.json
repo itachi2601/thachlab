@@ -1,0 +1,241 @@
+{
+  "chapter": 8,
+  "title": "Chipping Machining (Gia công cắt gọt có phoi)",
+  "source": "Technical English for Mechanical Engineering",
+  "categories": {
+    "equipment_and_parts": [
+      {
+        "term": "machine tool",
+        "ipa": "/məˈʃiːn tuːl/",
+        "vi": "máy công cụ",
+        "def": "A power-driven machine used for cutting or shaping metal."
+      },
+      {
+        "term": "lathe",
+        "ipa": "/leɪð/",
+        "vi": "máy tiện",
+        "def": "Machine that rotates a workpiece against a cutting tool to shape cylindrical parts."
+      },
+      {
+        "term": "milling machine",
+        "ipa": "/ˈmɪl.ɪŋ məˈʃiːn/",
+        "vi": "máy phay",
+        "def": "Machine that uses a rotating multi-tooth cutter to remove metal from a fixed workpiece."
+      },
+      {
+        "term": "drill / drilling machine",
+        "ipa": "/drɪl/",
+        "vi": "máy khoan",
+        "def": "Machine fitted with a drill bit to cut circular holes."
+      },
+      {
+        "term": "grinder / grinding machine",
+        "ipa": "/ˈɡraɪn.dər/",
+        "vi": "máy mài",
+        "def": "Machine using an abrasive wheel for surface finishing and high precision."
+      },
+      {
+        "term": "saw / sawing machine",
+        "ipa": "/sɔː/",
+        "vi": "máy cưa",
+        "def": "Machine using a toothed blade or abrasive disc to cut material to length."
+      },
+      {
+        "term": "headstock",
+        "ipa": "/ˈhed.stɑːk/",
+        "vi": "ụ trước (ụ trục chính)",
+        "def": "Contains the drive motor, gears, and spindle of a lathe."
+      },
+      {
+        "term": "tailstock",
+        "ipa": "/ˈteɪl.stɑːk/",
+        "vi": "ụ sau (ụ động)",
+        "def": "Supports long workpieces and holds tools like center drills and reamers."
+      },
+      {
+        "term": "spindle",
+        "ipa": "/ˈspɪn.dəl/",
+        "vi": "trục chính",
+        "def": "Rotating shaft that drives the chuck and workpiece (lathe) or cutter (mill)."
+      },
+      {
+        "term": "chuck",
+        "ipa": "/tʃʌk/",
+        "vi": "mâm cặp",
+        "def": "Clamping device on the spindle that holds the workpiece firmly."
+      },
+      {
+        "term": "tool post",
+        "ipa": "/tuːl poʊst/",
+        "vi": "đài gá dao",
+        "def": "Mount on the carriage that holds the cutting tool securely."
+      },
+      {
+        "term": "carriage",
+        "ipa": "/ˈker.ɪdʒ/",
+        "vi": "bàn xe dao",
+        "def": "Moves longitudinally along the lathe bed to feed the tool."
+      },
+      {
+        "term": "bed",
+        "ipa": "/bed/",
+        "vi": "băng máy (thân máy)",
+        "def": "Heavy foundation providing precision guideways for carriage and tailstock."
+      },
+      {
+        "term": "cross slide",
+        "ipa": "/krɔːs slaɪd/",
+        "vi": "bàn trượt ngang",
+        "def": "Allows tool movement perpendicular to the lathe bed for facing and depth of cut."
+      },
+      {
+        "term": "lead screw",
+        "ipa": "/liːd skruː/",
+        "vi": "trục vít me",
+        "def": "Precision threaded screw used for thread cutting feeds."
+      },
+      {
+        "term": "feed rod",
+        "ipa": "/fiːd rɑːd/",
+        "vi": "trục trơn",
+        "def": "Drives power carriage feeds during standard turning operations."
+      },
+      {
+        "term": "drill bit",
+        "ipa": "/drɪl bɪt/",
+        "vi": "mũi khoan",
+        "def": "Rotating cutting tool with flutes to make holes."
+      },
+      {
+        "term": "blade",
+        "ipa": "/bleɪd/",
+        "vi": "lưỡi cưa / lưỡi dao",
+        "def": "Thin sharp piece of metal with teeth used for sawing."
+      },
+      {
+        "term": "abrasive wheel",
+        "ipa": "/əˈbreɪ.sɪv wiːl/",
+        "vi": "đá mài",
+        "def": "Wheel made of bonded abrasive grains used in grinders."
+      }
+    ],
+    "operations_and_actions": [
+      {
+        "term": "machine (v)",
+        "ipa": "/məˈʃiːn/",
+        "vi": "gia công cơ khí",
+        "collocation": "machine metal / parts"
+      },
+      {
+        "term": "turn (v)",
+        "ipa": "/tɜːrn/",
+        "vi": "tiện (gia công mặt trụ tròn xoay)",
+        "collocation": "turned by a lathe"
+      },
+      {
+        "term": "mill (v)",
+        "ipa": "/mɪl/",
+        "vi": "phay",
+        "collocation": "mill a flat surface / groove"
+      },
+      {
+        "term": "drill (v)",
+        "ipa": "/drɪl/",
+        "vi": "khoan (tạo lỗ mới)",
+        "collocation": "drill circular holes"
+      },
+      {
+        "term": "bore (v)",
+        "ipa": "/bɔːr/",
+        "vi": "khoét / tiện rộng lỗ",
+        "collocation": "enlarging a hole is called boring"
+      },
+      {
+        "term": "grind (v)",
+        "ipa": "/ɡraɪnd/",
+        "vi": "mài (làm bóng, đạt dung sai bé)",
+        "collocation": "grind with abrasive wheels"
+      },
+      {
+        "term": "saw (v)",
+        "ipa": "/sɔː/",
+        "vi": "cưa (cắt đứt vật liệu)",
+        "collocation": "saw metal using a blade"
+      },
+      {
+        "term": "rotate / spin (v)",
+        "ipa": "/roʊˈteɪt/ - /spɪn/",
+        "vi": "quay tròn (chuyển động quay)",
+        "collocation": "spindle rotates the chuck"
+      },
+      {
+        "term": "mount / clamp (v)",
+        "ipa": "/maʊnt/ - /klæmp/",
+        "vi": "gá kẹp chặt",
+        "collocation": "mount workpiece into the chuck"
+      },
+      {
+        "term": "feed (v)",
+        "ipa": "/fiːd/",
+        "vi": "tiến dao / chạy dao",
+        "collocation": "feed the tool into the material"
+      }
+    ],
+    "materials_parameters_byproducts": [
+      {
+        "term": "workpiece",
+        "ipa": "/ˈwɜːrk.piːs/",
+        "vi": "phôi gia công (vật thể được cắt)",
+        "note": "Piece of material being shaped."
+      },
+      {
+        "term": "chips / swarf",
+        "ipa": "/tʃɪps/ - /swɔːrf/",
+        "vi": "phoi kim loại (phế thải sau cắt gọt)",
+        "note": "Waste metal produced during machining."
+      },
+      {
+        "term": "cutting fluid / coolant",
+        "ipa": "/ˈkʌt.ɪŋ ˈfluː.ɪd/ - /ˈkuː.lənt/",
+        "vi": "dung dịch trơn nguội / chất làm mát",
+        "note": "Liquid pumped to cool and lubricate the cut."
+      },
+      {
+        "term": "kerf",
+        "ipa": "/kɜːrf/",
+        "vi": "mạch cắt (chiều rộng vết cưa)",
+        "note": "Gap or width left by the saw blade cut."
+      },
+      {
+        "term": "hole saw",
+        "ipa": "/hoʊl sɔː/",
+        "vi": "mũi cưa khoét lỗ (dạng ống rỗng)",
+        "note": "Hollow cylinder with teeth to remove a core."
+      },
+      {
+        "term": "core",
+        "ipa": "/kɔːr/",
+        "vi": "lõi phôi lấy ra từ mũi khoét lỗ",
+        "note": "Solid cylinder of material removed by hole saw."
+      },
+      {
+        "term": "spindle speed",
+        "ipa": "/ˈspɪn.dəl spiːd/",
+        "vi": "tốc độ quay trục chính (RPM)",
+        "note": "Rotational speed measured in rpm."
+      },
+      {
+        "term": "feed rate",
+        "ipa": "/fiːd reɪt/",
+        "vi": "lượng tiến dao (mm/vòng, mm/phút)",
+        "note": "Rate at which tool advances along workpiece."
+      },
+      {
+        "term": "depth of cut",
+        "ipa": "/depθ əv kʌt/",
+        "vi": "chiều sâu cắt (tính bằng mm)",
+        "note": "Thickness of material removed in one pass."
+      }
+    ]
+  }
+}

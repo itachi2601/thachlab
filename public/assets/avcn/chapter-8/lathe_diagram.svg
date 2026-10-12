@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="max-width:800px;font-family:system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <filter id="dropShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="420" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#0f172a">CƠ CẤU MÁY TIỆN CƠ BẢN (ENGINE LATHE ANATOMY)</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">Chạm/rà chuột vào các thẻ số để xem thuật ngữ tiếng Anh &amp; chức năng</text>
+
+  <!-- Base & Lathe Bed -->
+  <!-- Legs -->
+  <rect x="110" y="290" width="90" height="80" fill="#334155" rx="4"/>
+  <rect x="600" y="290" width="90" height="80" fill="#334155" rx="4"/>
+  <!-- Chip Pan Tray -->
+  <rect x="90" y="280" width="620" height="16" fill="#475569" rx="2"/>
+  <!-- Lathe Bed -->
+  <rect x="100" y="220" width="600" height="60" fill="url(#metalGrad)" rx="4" filter="url(#dropShadow)"/>
+  <rect x="120" y="230" width="560" height="8" fill="#94a3b8" rx="2"/>
+  <!-- Lead screw & Feed rod -->
+  <line x1="220" y1="255" x2="680" y2="255" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="6,3"/>
+  <line x1="220" y1="268" x2="680" y2="268" stroke="#cbd5e1" stroke-width="3"/>
+
+  <!-- Headstock (Left) -->
+  <rect x="100" y="90" width="140" height="135" fill="url(#metalGrad)" rx="6" filter="url(#dropShadow)"/>
+  <rect x="115" y="105" width="110" height="50" fill="#334155" rx="4" stroke="#64748b"/>
+  <text x="170" y="135" text-anchor="middle" font-size="11" fill="#94a3b8" font-weight="bold">GEARBOX</text>
+
+  <!-- Spindle & Chuck -->
+  <rect x="240" y="130" width="25" height="55" fill="url(#steelGrad)"/>
+  <rect x="265" y="110" width="35" height="95" fill="url(#steelGrad)" rx="3" filter="url(#dropShadow)"/>
+  <!-- Jaws -->
+  <rect x="300" y="120" width="12" height="20" fill="#64748b"/>
+  <rect x="300" y="175" width="12" height="20" fill="#64748b"/>
+
+  <!-- Workpiece -->
+  <rect x="300" y="145" width="190" height="25" fill="url(#brassGrad)" rx="2" stroke="#a16207"/>
+  <!-- Rotating arrow for workpiece -->
+  <path d="M 320,135 A 15,15 0 1,1 320,180" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="345" y="135" font-size="11" fill="#dc2626" font-weight="bold">Rotation (Quay)</text>
+
+  <!-- Tailstock (Right) -->
+  <rect x="550" y="120" width="110" height="105" fill="url(#metalGrad)" rx="6" filter="url(#dropShadow)"/>
+  <rect x="500" y="147" width="50" height="20" fill="url(#steelGrad)"/>
+  <!-- Dead Center point -->
+  <polygon points="490,157 500,147 500,167" fill="#cbd5e1" stroke="#475569"/>
+  <!-- Tailstock handwheel -->
+  <ellipse cx="665" cy="157" rx="8" ry="22" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+
+  <!-- Carriage & Tool Post (Middle) -->
+  <rect x="360" y="190" width="110" height="45" fill="#1e293b" rx="3" filter="url(#dropShadow)"/>
+  <rect x="380" y="165" width="70" height="25" fill="url(#steelGrad)" rx="2"/>
+  <rect x="395" y="135" width="40" height="30" fill="#334155" rx="2"/>
+  <!-- Cutting tool bit -->
+  <rect x="375" y="148" width="20" height="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+  <!-- Tool feed direction arrow -->
+  <path d="M 425,120 L 375,120" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="375,120 383,116 383,124" fill="#2563eb"/>
+  <text x="400" y="112" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">Feed (Tiến dao)</text>
+
+  <!-- Labels / Badges with Leader Lines -->
+  <!-- 1. Headstock -->
+  <line x1="160" y1="90" x2="160" y2="65" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(110, 48)">
+    <rect width="100" height="22" rx="11" fill="#0284c7"/>
+    <text x="50" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">1. Headstock</text>
+  </g>
+
+  <!-- 2. Spindle & Chuck -->
+  <line x1="280" y1="110" x2="280" y2="75" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(240, 58)">
+    <rect width="80" height="22" rx="11" fill="#0284c7"/>
+    <text x="40" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">2. Chuck</text>
+  </g>
+
+  <!-- 3. Tool Post -->
+  <line x1="415" y1="135" x2="415" y2="85" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(370, 68)">
+    <rect width="90" height="22" rx="11" fill="#0284c7"/>
+    <text x="45" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">3. Tool post</text>
+  </g>
+
+  <!-- 4. Tailstock -->
+  <line x1="605" y1="120" x2="605" y2="75" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(560, 58)">
+    <rect width="90" height="22" rx="11" fill="#0284c7"/>
+    <text x="45" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">4. Tailstock</text>
+  </g>
+
+  <!-- 5. Carriage -->
+  <line x1="415" y1="235" x2="415" y2="340" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(370, 335)">
+    <rect width="90" height="22" rx="11" fill="#0284c7"/>
+    <text x="45" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">5. Carriage</text>
+  </g>
+
+  <!-- 6. Bed -->
+  <line x1="540" y1="280" x2="540" y2="340" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(505, 335)">
+    <rect width="70" height="22" rx="11" fill="#0284c7"/>
+    <text x="35" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">6. Bed</text>
+  </g>
+
+  <!-- 7. Lead screw -->
+  <line x1="290" y1="260" x2="290" y2="340" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g transform="translate(235, 335)">
+    <rect width="110" height="22" rx="11" fill="#0284c7"/>
+    <text x="55" y="15" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">7. Lead screw</text>
+  </g>
+</svg>
