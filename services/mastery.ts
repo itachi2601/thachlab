@@ -143,3 +143,53 @@ export async function fetchMyWeakestTopics(limit = 3): Promise<WeakTopic[]> {
     level: r.level,
   }));
 }
+
+// ------------------------------------------------------------
+// Sơ đồ mạng nhện năng lực theo bài trong chương đang học (13/10/2026).
+// RPC: supabase/migrations/20261013150000_chapter_mastery_radar.sql.
+// UI: components/results/ChapterMasteryRadar.tsx (xem docs/PROMPT-GEMINI-RADAR-NANG-LUC-2026-10-13.md).
+// ------------------------------------------------------------
+export interface ChapterLessonMastery {
+  chapterId: number;
+  chapterTitle: string;
+  lessonId: number;
+  lessonTitle: string;
+  sortOrder: number;
+  answeredCount: number;
+  /** 0–100, null khi bài chưa có lượt nào. */
+  pct: number | null;
+  level: MasteryLevel;
+}
+
+interface ChapterMasteryPctRow {
+  chapter_id: number;
+  chapter_title: string;
+  lesson_id: number;
+  lesson_title: string;
+  sort_order: number;
+  answered_count: number;
+  pct: number | null;
+  level: MasteryLevel;
+}
+
+/**
+ * Tỉ lệ đúng từng bài của CHƯƠNG mà học sinh đang đăng nhập làm bài gần nhất (1 RPC).
+ * `before` = mốc thời gian để lấy "chính em lúc đó" (ví dụ 30 ngày trước); bỏ trống = hiện tại.
+ * Trả [] khi chưa làm bài nào. Ném lỗi khi RPC chưa chạy — nơi gọi tự ẩn thẻ.
+ */
+export async function fetchMyChapterMasteryPct(before?: Date): Promise<ChapterLessonMastery[]> {
+  const { data, error } = await getSupabase().rpc("get_my_chapter_mastery_pct", {
+    p_before: before ? before.toISOString() : null,
+  });
+  if (error) throw error;
+  return ((data ?? []) as ChapterMasteryPctRow[]).map((r) => ({
+    chapterId: r.chapter_id,
+    chapterTitle: r.chapter_title,
+    lessonId: r.lesson_id,
+    lessonTitle: r.lesson_title,
+    sortOrder: r.sort_order,
+    answeredCount: r.answered_count,
+    pct: r.pct,
+    level: r.level,
+  }));
+}
