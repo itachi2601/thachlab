@@ -5,3 +5,4 @@
 - Chặng 3 XONG (review.checked=false, chưa kiem-code): scripts/data/bai-tap-mau/91.json (4 dạng), build-hinh-91.py, 91.dang.md. Treo: đếm question_bank topic 93/94 trên Mac.
 - Đăng: bài 91 chưa có lesson_items → lý thuyết dùng upload-lesson.mts; bài tập mẫu cần tạo mục bai_tap_mau trước khi publish-bai-tap-mau.mts. index.json chưa có 3 mục congsuat (chạy thi_nghiem.py một lần khi gom lô).
 - Chưa commit.
+- 2026-10-12 · ĐÃ ĐĂNG + deploy: bài 91 ly_thuyet + bai_tap_mau (4 dạng) + luyen_tap (đề 913, lớp 15). Treo: chọn clip mở bài (công tơ điện); mở sim PhET xem thanh trượt 20 Ω; đếm question_bank topic 93/94.
