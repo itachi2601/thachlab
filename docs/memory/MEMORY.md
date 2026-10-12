@@ -58,7 +58,7 @@
 - [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa được: scripts/data/de-l10-24-25-can-xem.md
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 40 bộ lệch cần vá tay; thầy bật Hiện
 - [Mã QR cho đề](project_thachlab_ma_qr_de_thi.md) — `lib/exam-link.ts` sinh link; treo thử iPhone/Android
-- [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; CĐ01+CĐ02 đã ghi; còn 12 CĐ + đề
+- [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; đã ghi CĐ00/01/02/10/11/13 + Điện CĐ03/04/05 (12/10, ẩn chờ duyệt); còn quang, CĐ08, 12, 15, 16, 09 + đề
 - [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, chưa làm
 ## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap ở docs/ROADMAP.md
 - [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc, mùa thử nghiệm 21/9–25/10
@@ -84,3 +84,6 @@
 - [Skill bài tập tự luận HSG](project_thachlab_khoa_hsg9_vat_ly.md) — soan-bai-tap-tu-luan-hsg: bộ Cơ học 12 bài 10/10 xong, kiểm 12/12; mảng khác chưa soạn
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan đã deploy 12/10; treo nhãn nguồn từng câu, chưa xem 375px
+- [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn + kiểm chéo xong 12/10, chờ thầy duyệt rồi đăng; skill `phet` mới
+- [Hoạt động lớp học](project_thachlab_hoat_dong_lop_hoc.md) — quiz live PIN; migration đã chạy, deploy 12/10
+- [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV

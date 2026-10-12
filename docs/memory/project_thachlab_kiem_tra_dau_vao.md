@@ -1,0 +1,11 @@
+---
+name: project-thachlab-kiem-tra-dau-vao
+description: Kiểm tra đầu vào (chẩn đoán) cho em vào lớp trễ — đã chạy migration + deploy 12/10/2026, chưa thử HS thật
+metadata:
+  type: project
+---
+
+Em vào trễ chưa có bài nào nên không có mục phụ đạo → thẻ `EntryDiagnosticCard` (trang chủ HS + `/phu-huynh`) mời làm bài chẩn đoán: tối đa 6 bài × 3 câu (2 dễ + 1 TB, bỏ câu khó), sai 2 câu thì dừng bài; không tính điểm/xếp hạng. RPC `diagnostic_submit` mở `tutoring_needs` (sai ≥2 và ≥60%, note "chẩn đoán đầu vào") và báo em + phụ huynh + trợ giảng. Mỗi em một lần. Migration `20261012120000_kiem_tra_dau_vao` đã chạy, code deploy 12/10 tối.
+
+**Why:** thầy chốt 12/10: gợi ý chứ không bắt buộc, có gửi phụ huynh.
+**How to apply:** chỉ hiện với em có `thpt_registrations.joined_late` (catchup/active); em thêm thẳng vào lớp không qua đăng ký sẽ không thấy thẻ. Còn thiếu: nút "cho làm lại" trên UI thầy/TA (RPC `diagnostic_reset` có sẵn), cột "đã chẩn đoán" ở danh sách lớp, thử bằng tài khoản HS thật + chụp 375px. Liên quan [[project-thachlab-phu-dao]].
