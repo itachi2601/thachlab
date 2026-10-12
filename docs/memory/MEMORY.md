@@ -60,6 +60,7 @@
 - [Mã QR cho đề](project_thachlab_ma_qr_de_thi.md) — `lib/exam-link.ts` sinh link; treo thử iPhone/Android
 - [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; đã ghi CĐ00/01/02/10/11/13 + Điện CĐ03/04/05 (12/10, ẩn chờ duyệt); còn quang, CĐ08, 12, 15, 16, 09 + đề
 - [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, chưa làm
+- [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do, Chapter 8 đã đăng 13/10; 9 chương còn lại dùng skill soan-bai-avcn
 ## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap ở docs/ROADMAP.md
 - [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc, mùa thử nghiệm 21/9–25/10
 - [Kho bẫy trộn câu ok](project_thachlab_kho_bay_tron_cau_ok.md) — bẫy 0,4–0,7 + câu đã đúng; đầu/cuối là câu ok; chưa thử HS thật
