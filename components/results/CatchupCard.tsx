@@ -15,6 +15,7 @@ import {
   registerForSlot,
   type TutoringSlot,
 } from "@/services/tutoring";
+import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { fetchCatchupForStudent, type MyRegistration } from "@/services/thpt-courses";
 
 /**
@@ -44,6 +45,7 @@ export default function CatchupCard({
   const [mine, setMine] = useState<Set<number>>(new Set());
   const [waitlist, setWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlot, setBusySlot] = useState<number | null>(null);
+  const [pickerSlot, setPickerSlot] = useState<TutoringSlot | null>(null);
 
   const reload = useCallback(() => {
     fetchCatchupForStudent(studentId).then(setReg).catch(() => setReg(null));
@@ -95,13 +97,32 @@ export default function CatchupCard({
       } else if (waitlist.has(slot.id)) {
         await leaveWaitlist(slot.id, studentId);
         toast("success", "Đã rời hàng chờ.");
-      } else if (slot.registeredCount >= slot.capacity) {
-        await joinWaitlist(slot.id, studentId);
+      } else {
+        // Phải chọn chủ đề trước (14/10/2026) → mở khung chọn, xác nhận ở confirmTopics.
+        setPickerSlot(slot);
+        return;
+      }
+      reload();
+    } catch (error) {
+      toast("error", error instanceof Error ? error.message : "Chưa cập nhật được.");
+    } finally {
+      setBusySlot(null);
+    }
+  }
+
+  async function confirmTopics(topicIds: number[]) {
+    const slot = pickerSlot;
+    if (!slot) return;
+    setBusySlot(slot.id);
+    try {
+      if (slot.registeredCount >= slot.capacity) {
+        await joinWaitlist(slot.id, studentId, topicIds);
         toast("success", `Đã vào hàng chờ ca này — có chỗ trống ${who} sẽ được xếp vào.`);
       } else {
-        await registerForSlot(slot.id, studentId);
-        toast("success", "Đã đăng ký ca phụ đạo.");
+        await registerForSlot(slot.id, studentId, topicIds);
+        toast("success", "Đã đăng ký ca phụ đạo, trợ giảng đã được báo chủ đề đã chọn.");
       }
+      setPickerSlot(null);
       reload();
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Chưa cập nhật được.");
@@ -147,6 +168,17 @@ export default function CatchupCard({
 
   return (
     <section className="rounded-2xl border border-amber-400/25 bg-panel p-4 sm:p-5">
+      {pickerSlot && (
+        <SlotTopicPicker
+          slot={pickerSlot}
+          classId={pickerSlot.classId}
+          suggestedTopicIds={pickerSlot.topicIds}
+          waitlist={pickerSlot.registeredCount >= pickerSlot.capacity}
+          busy={busySlot === pickerSlot.id}
+          onConfirm={confirmTopics}
+          onClose={() => setPickerSlot(null)}
+        />
+      )}
       <div className="flex items-center gap-2 text-amber-300">
         <BookOpenCheck size={18} />
         <h2 className="font-display font-bold text-ink">Bù bài trước khi vào lớp chính thức</h2>

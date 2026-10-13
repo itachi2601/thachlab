@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Ban, CalendarPlus, Users } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -9,6 +10,8 @@ import {
   cancelSlot,
   createSlot,
   fetchNeedsForStudents,
+  fetchReadyTopics,
+  markAttendance,
   fetchRegistrationsForSlots,
   fetchSlotsForAssistant,
   fetchWaitlistForSlots,
@@ -83,6 +86,30 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
     if (demo) return;
     fetchNeedsForStudents(studentIds, ACTIVE_NEED_STATUSES).then(setNeeds).catch(() => setNeeds([]));
   }, [studentIds, demo]);
+
+  const [nowMs] = useState(() => Date.now());
+  const started = (slot: TutoringSlot) =>
+    new Date(`${slot.workDate}T${slot.startTime.slice(0, 5)}:00+07:00`).getTime() <= nowMs;
+
+  async function mark(slotId: number, studentId: string, attended: boolean) {
+    setBusy(true);
+    try {
+      await markAttendance(slotId, studentId, attended);
+      load();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa điểm danh được, thử lại.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const [topicNames, setTopicNames] = useState<Map<number, string>>(new Map());
+  useEffect(() => {
+    if (demo || !classId) return;
+    fetchReadyTopics(classId)
+      .then((list) => setTopicNames(new Map(list.map((t) => [t.topicId, t.topicName]))))
+      .catch(() => setTopicNames(new Map()));
+  }, [classId, demo]);
 
   const topicOptions = useMemo(() => {
     const map = new Map<number, string>();
@@ -370,13 +397,56 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
                     )}
                   </div>
                   {slot.note && <p className="mt-1.5 text-xs text-slate-400">{slot.note}</p>}
-                  <p className="mt-2 text-xs text-slate-500">
-                    {regs.length === 0 ? "Chưa có em nào đăng ký." : regs.map((r) => r.studentName).join(", ")}
-                  </p>
+                  {regs.length === 0 ? (
+                    <p className="mt-2 text-xs text-slate-500">Chưa có em nào đăng ký.</p>
+                  ) : (
+                    <ul className="mt-2 space-y-1">
+                      {regs.map((r) => (
+                        <li key={r.id} className="text-xs text-slate-500">
+                          <strong className="text-ink">{r.studentName}</strong>
+                          {r.topicIds.length > 0
+                            ? ` — ${r.topicIds.map((t) => topicNames.get(t) ?? `Chủ đề #${t}`).join(" · ")}`
+                            : " — (đăng ký cũ, chưa chọn chủ đề)"}
+                          {started(slot) && (
+                            <span className="mt-1 flex gap-2">
+                              {([true, false] as const).map((v) => (
+                                <button
+                                  key={String(v)}
+                                  type="button"
+                                  disabled={busy}
+                                  onClick={() => mark(slot.id, r.studentId, v)}
+                                  className={`min-h-11 rounded-full border px-4 text-[13px] font-semibold disabled:opacity-40 ${
+                                    r.attended === v
+                                      ? v
+                                        ? "border-emerald-400 bg-emerald-500/20 text-emerald-200"
+                                        : "border-red-400 bg-red-500/20 text-red-200"
+                                      : "border-white/15 text-slate-300"
+                                  }`}
+                                >
+                                  {v ? "Có mặt" : "Vắng"}
+                                </button>
+                              ))}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {started(slot) && regs.some((r) => r.attended === true) && (
+                    <Link
+                      href={`/tro-giang/ghi?slot=${slot.id}`}
+                      className="mt-2 inline-flex min-h-11 items-center rounded-full border border-blue-400/40 px-4 text-[13px] font-semibold text-blue-200"
+                    >
+                      Ghi phiếu cho buổi này
+                    </Link>
+                  )}
+                  {!started(slot) && regs.length > 0 && (
+                    <p className="mt-1 text-[13px] text-slate-500">Điểm danh mở khi buổi bắt đầu.</p>
+                  )}
                   {waits.length > 0 && (
                     <div className="mt-2 rounded-xl border border-amber-400/30 bg-amber-500/10 p-3">
                       <p className="text-xs font-semibold text-amber-200">
-                        Hàng chờ ({waits.length} em): {waits.map((w, i) => `${i + 1}. ${w.studentName}`).join(" · ")}
+                        Hàng chờ ({waits.length} em): {waits.map((w, i) => `${i + 1}. ${w.studentName}${w.topicIds.length ? ` (${w.topicIds.map((t) => topicNames.get(t) ?? "?").join(", ")})` : ""}`).join(" · ")}
                       </p>
                       {slot.status === "open" &&
                         (nextFor === slot.id ? (

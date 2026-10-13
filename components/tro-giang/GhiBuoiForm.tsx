@@ -21,7 +21,13 @@ import {
 import PolicySessionFields from "./PolicySessionFields";
 import PhudaoPlanner, { type PickedStudent } from "./PhudaoPlanner";
 import { classGrade } from "@/services/classes";
-import { saveSessionCoverage, type CoverageInput } from "@/services/tutoring";
+import {
+  fetchRegistrationsForSlots,
+  fetchSlotById,
+  saveSessionCoverage,
+  type CoverageInput,
+  type TutoringSlot,
+} from "@/services/tutoring";
 import { emptyPolicy, POLICY_START, tutoringFactor, type SessionPolicy } from "@/lib/tro-giang/policy";
 
 const DRAFT_KEY = "tro-giang-ghi-draft-v1";
@@ -246,9 +252,12 @@ export default function GhiBuoiForm({
   initialTopicId,
   initialWorkDate,
   previewDraftScope,
+  initialSlotId,
 }: {
   assistant: TaAssistant;
   initialTopicId?: string | null;
+  /** Đến từ /tro-giang/phu-dao?tab=slots → điền sẵn phiếu từ buổi trong lịch (em có mặt + chủ đề đã đăng ký). */
+  initialSlotId?: number | null;
   initialWorkDate?: string;
   previewDraftScope?: string;
 }) {
@@ -271,6 +280,43 @@ export default function GhiBuoiForm({
   const [submitting, setSubmitting] = useState(false);
   const [justSaved, setJustSaved] = useState(false);
   const hydrated = useRef(false);
+  const [linkedSlot, setLinkedSlot] = useState<TutoringSlot | null>(null);
+  const [slotNote, setSlotNote] = useState<string | null>(null);
+  const slotApplied = useRef(false);
+
+  // Điền sẵn phiếu từ buổi trong lịch: chỉ các em đã đăng ký VÀ được điểm danh có mặt, mỗi em kèm chủ đề đã chọn.
+  useEffect(() => {
+    if (demo || !initialSlotId || slotApplied.current || myClasses.length === 0) return;
+    slotApplied.current = true;
+    (async () => {
+      try {
+        const slot = await fetchSlotById(initialSlotId);
+        if (!slot || slot.assistantId !== assistant.id) {
+          setSlotNote("Không tìm thấy buổi này trong lịch của bạn.");
+          return;
+        }
+        const regs = (await fetchRegistrationsForSlots([slot.id])).filter((r) => r.attended === true);
+        const cls = myClasses.find((c) => c.class_id === slot.classId);
+        setLinkedSlot(slot);
+        if (regs.length === 0) setSlotNote("Chưa có em nào được điểm danh có mặt. Vào Lịch phụ đạo để điểm danh trước.");
+        const coverage: Record<string, number[]> = {};
+        for (const r of regs) coverage[r.studentId] = r.topicIds;
+        setDraft((d) => ({
+          ...d,
+          sessionType: "phudao",
+          workDate: slot.workDate,
+          classLabel: cls?.name ?? d.classLabel,
+          startTime: slot.startTime.slice(0, 5),
+          endTime: slot.endTime.slice(0, 5),
+          phudaoStudents: regs.map((r) => r.studentName),
+          phudaoStudentIds: regs.map((r) => r.studentId),
+          phudaoCoverage: coverage,
+        }));
+      } catch {
+        setSlotNote("Chưa đọc được buổi trong lịch, thử tải lại trang.");
+      }
+    })();
+  }, [initialSlotId, myClasses, assistant.id, demo]);
 
   useEffect(() => {
     if (!initialTopicId || demo) return;
@@ -387,6 +433,7 @@ export default function GhiBuoiForm({
         phudao_students: draft.sessionType === "phudao" ? draft.phudaoStudents : [],
           phudao_student_ids: draft.sessionType === "phudao" ? draft.phudaoStudentIds : [],
           class_id: selectedClassId,
+          slot_id: draft.sessionType === "phudao" ? linkedSlot?.id ?? null : null,
           papers_graded: draft.sessionType === "chambai" ? Number(draft.papersGraded) : null,
           video_url: draft.sessionType === "video" ? draft.videoUrl.trim() : null,
           video_tier: draft.sessionType === "video" ? draft.videoTier : null,
@@ -417,6 +464,8 @@ export default function GhiBuoiForm({
       } catch {}
       const type = draft.sessionType;
       setDraft({ ...emptyDraft(), sessionType: type });
+      setLinkedSlot(null);
+      setSlotNote(null);
       setTopicSourceId(null);
       setTopicInfo(null);
     } catch (error) {
@@ -533,8 +582,20 @@ export default function GhiBuoiForm({
 
         {draft.sessionType === "phudao" && (
           <>
+            {(linkedSlot || slotNote) && (
+              <div className="rounded-xl border border-blue-400/30 bg-blue-500/10 p-3 text-sm text-slate-200">
+                {linkedSlot && (
+                  <p>
+                    Phiếu của buổi {linkedSlot.workDate.split("-").reverse().join("/")} · {linkedSlot.startTime.slice(0, 5)}–
+                    {linkedSlot.endTime.slice(0, 5)}. Chỉ ghi được các em đã đăng ký và được điểm danh có mặt.
+                  </p>
+                )}
+                {slotNote && <p className="text-amber-200">{slotNote}</p>}
+              </div>
+            )}
             <PhudaoPlanner
               assistantId={demo ? null : assistant.id}
+              slotId={linkedSlot?.id ?? null}
               classId={selectedClassId}
               grade={selectedClassName ? classGrade(selectedClassName) : null}
               students={pickedStudents}

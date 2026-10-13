@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { BookOpen, Check, RefreshCw, Users } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
+import TutoringFollowupReport from "@/components/dashboard/TutoringFollowupReport";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchOutcomeGaps, outcomeGapsByNeed, type OutcomeGap } from "@/services/analytics";
@@ -140,6 +141,7 @@ export default function TeacherThptTutoring({
 
   return (
     <div className="space-y-5">
+      <TutoringFollowupReport classId={classId} />
       <section className="rounded-3xl border border-white/10 bg-panel p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>

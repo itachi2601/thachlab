@@ -49,6 +49,7 @@ const DEMO_ROSTER: ClassStudent[] = [
  */
 export default function PhudaoPlanner({
   assistantId,
+  slotId = null,
   classId,
   grade,
   students,
@@ -60,6 +61,8 @@ export default function PhudaoPlanner({
 }: {
   /** id trợ giảng đang ghi buổi — cần để mở bài kiểm tra cuối buổi. */
   assistantId: string | null;
+  /** Buổi trong lịch mà phiếu này ghi lại (nếu có). */
+  slotId?: number | null;
   classId: number | null;
   grade: string | null;
   students: PickedStudent[];
@@ -163,6 +166,7 @@ export default function PhudaoPlanner({
     try {
       const w = await openExitWindow({
         assistantId,
+        slotId,
         classId,
         studentIds: [...new Set(taughtPairs.map((p) => p.studentId))],
         topicIds: [...new Set(taughtPairs.map((p) => p.topicId))],

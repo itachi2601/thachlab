@@ -13,6 +13,8 @@ import { useAssistantOrDemo } from "@/lib/tro-giang/useAssistant";
 function GhiLoader() {
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic");
+  const slotParam = Number(searchParams.get("slot"));
+  const slotId = Number.isInteger(slotParam) && slotParam > 0 ? slotParam : null;
   const { assistant, demo } = useAssistantOrDemo();
 
   if (assistant === undefined) return <p className="text-slate-400">Đang tải…</p>;
@@ -27,7 +29,7 @@ function GhiLoader() {
         <h1 className="font-display text-2xl font-bold text-white">Ghi buổi hôm nay</h1>
         <p className="mt-1 text-sm text-slate-400">Chào {assistant.short_name} — chọn loại buổi rồi điền nhanh.</p>
       </div>
-      <GhiBuoiForm assistant={assistant} initialTopicId={topic} />
+      <GhiBuoiForm assistant={assistant} initialTopicId={topic} initialSlotId={slotId} />
       {demo && <TaDemoBanner raised />}
     </>
   );

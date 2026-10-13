@@ -94,6 +94,8 @@ export interface NewSessionInput {
   /** Khớp thứ tự với phudao_students — buổi phụ đạo từ 01/10/2026 bắt buộc có. */
   phudao_student_ids?: string[];
   class_id?: number | null;
+  /** Buổi trong lịch phụ đạo mà phiếu này ghi lại (DB kiểm: đúng ngày, em đã đăng ký + có mặt). */
+  slot_id?: number | null;
   papers_graded?: number | null;
   video_url?: string | null;
   video_tier?: TaVideoTier | null;
@@ -123,6 +125,7 @@ export async function createSession(input: NewSessionInput): Promise<string> {
     phudao_students: input.phudao_students ?? [],
     phudao_student_ids: input.phudao_student_ids ?? [],
     class_id: input.class_id ?? null,
+    slot_id: input.slot_id ?? null,
     papers_graded: input.papers_graded ?? null,
     video_url: input.video_url ?? null,
     video_tier: input.video_tier ?? null,

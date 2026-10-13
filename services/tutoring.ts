@@ -390,6 +390,10 @@ export interface SlotRegistration {
   studentId: string;
   studentName: string;
   createdAt: string;
+  /** Chủ đề em chọn học trong buổi này (cấp bài); đăng ký cũ trước 14/10/2026 để rỗng. */
+  topicIds: number[];
+  /** Trợ giảng điểm danh: true = có mặt, false = vắng, null = chưa điểm danh. */
+  attended: boolean | null;
 }
 
 interface RegistrationRow {
@@ -397,6 +401,8 @@ interface RegistrationRow {
   slot_id: number;
   student_id: string;
   created_at: string;
+  topic_ids: number[] | null;
+  attended: boolean | null;
   profiles: { full_name: string } | { full_name: string }[] | null;
 }
 
@@ -405,7 +411,7 @@ export async function fetchRegistrationsForSlots(slotIds: number[]): Promise<Slo
   if (slotIds.length === 0) return [];
   const { data, error } = await getSupabase()
     .from("tutoring_registrations")
-    .select("id, slot_id, student_id, created_at, profiles(full_name)")
+    .select("id, slot_id, student_id, created_at, topic_ids, attended, profiles(full_name)")
     .in("slot_id", slotIds);
   if (error) throw error;
   return ((data ?? []) as unknown as RegistrationRow[]).map((row) => ({
@@ -414,6 +420,8 @@ export async function fetchRegistrationsForSlots(slotIds: number[]): Promise<Slo
     studentId: row.student_id,
     studentName: one(row.profiles)?.full_name ?? "",
     createdAt: row.created_at,
+    topicIds: row.topic_ids ?? [],
+    attended: row.attended,
   }));
 }
 
@@ -427,10 +435,10 @@ export async function fetchMyRegistrations(studentId: string): Promise<number[]>
   return (data ?? []).map((row) => row.slot_id as number);
 }
 
-export async function registerForSlot(slotId: number, studentId: string): Promise<void> {
+export async function registerForSlot(slotId: number, studentId: string, topicIds: number[]): Promise<void> {
   const { error } = await getSupabase()
     .from("tutoring_registrations")
-    .insert({ slot_id: slotId, student_id: studentId });
+    .insert({ slot_id: slotId, student_id: studentId, topic_ids: topicIds });
   if (error) throw error;
 }
 
@@ -455,8 +463,10 @@ export interface WaitlistPosition {
   total: number;
 }
 
-export async function joinWaitlist(slotId: number, studentId: string): Promise<void> {
-  const { error } = await getSupabase().from("tutoring_waitlist").insert({ slot_id: slotId, student_id: studentId });
+export async function joinWaitlist(slotId: number, studentId: string, topicIds: number[]): Promise<void> {
+  const { error } = await getSupabase()
+    .from("tutoring_waitlist")
+    .insert({ slot_id: slotId, student_id: studentId, topic_ids: topicIds });
   if (error) throw error;
 }
 
@@ -485,6 +495,7 @@ export interface WaitlistEntry {
   studentId: string;
   studentName: string;
   createdAt: string;
+  topicIds: number[];
 }
 
 /** Danh sách em đang chờ của các buổi cho trước, theo thứ tự vào hàng — trợ giảng xem. */
@@ -492,7 +503,7 @@ export async function fetchWaitlistForSlots(slotIds: number[]): Promise<Waitlist
   if (slotIds.length === 0) return [];
   const { data, error } = await getSupabase()
     .from("tutoring_waitlist")
-    .select("slot_id, student_id, created_at, profiles(full_name)")
+    .select("slot_id, student_id, created_at, topic_ids, profiles(full_name)")
     .in("slot_id", slotIds)
     .order("created_at");
   if (error) throw error;
@@ -500,12 +511,14 @@ export async function fetchWaitlistForSlots(slotIds: number[]): Promise<Waitlist
     slot_id: number;
     student_id: string;
     created_at: string;
+    topic_ids: number[] | null;
     profiles: { full_name: string } | { full_name: string }[] | null;
   }[]).map((row) => ({
     slotId: row.slot_id,
     studentId: row.student_id,
     studentName: one(row.profiles)?.full_name ?? "",
     createdAt: row.created_at,
+    topicIds: row.topic_ids ?? [],
   }));
 }
 
@@ -797,6 +810,8 @@ function toExitWindow(row: ExitWindowRow): ExitWindow {
 /** Trợ giảng mở cửa sổ kiểm tra cuối buổi cho 1–4 em, theo các chủ đề đã dạy (giờ mở/đóng do máy chủ đặt). */
 export async function openExitWindow(input: {
   assistantId: string;
+  /** Buổi trong lịch mà bài kiểm tra thuộc về (chỉ mở được cho em đã điểm danh có mặt). */
+  slotId?: number | null;
   classId: number | null;
   studentIds: string[];
   topicIds: number[];
@@ -805,6 +820,7 @@ export async function openExitWindow(input: {
     .from("tutoring_exit_windows")
     .insert({
       assistant_id: input.assistantId,
+      slot_id: input.slotId ?? null,
       class_id: input.classId,
       student_ids: input.studentIds,
       topic_ids: input.topicIds,
@@ -892,3 +908,125 @@ export const PASS_TIER_LABEL: Record<PassTier, string> = {
   half: "được một nửa điểm phụ đạo (12,5đ)",
   none: "chưa đủ để tính điểm phụ đạo",
 };
+
+
+// --- Chủ đề chọn khi đăng ký buổi (14/10/2026): 1–3 chủ đề cấp bài, mỗi chủ đề phải có đủ câu bài kiểm tra. ---
+
+/** Hạn chốt đăng ký: số giờ trước giờ bắt đầu buổi (khớp tutoring_check_topics). */
+export const REGISTER_DEADLINE_HOURS = 6;
+export const REGISTER_MAX_TOPICS = 3;
+
+export interface ReadyTopic {
+  topicId: number;
+  topicName: string;
+  lessonId: number | null;
+  questionCount: number;
+  ready: boolean;
+}
+
+/** Chủ đề cấp bài của lớp kèm số câu bài kiểm tra (RPC tutoring_ready_topics). */
+export async function fetchReadyTopics(classId: number): Promise<ReadyTopic[]> {
+  const { data, error } = await getSupabase().rpc("tutoring_ready_topics", { p_class_id: classId });
+  if (error) throw error;
+  return ((data ?? []) as {
+    topic_id: number;
+    topic_name: string;
+    lesson_id: number | null;
+    question_count: number;
+    ready: boolean;
+  }[]).map((r) => ({
+    topicId: r.topic_id,
+    topicName: r.topic_name,
+    lessonId: r.lesson_id,
+    questionCount: r.question_count,
+    ready: r.ready,
+  }));
+}
+
+/** Còn đăng ký được không (client chỉ để ẩn nút sớm; DB mới là nơi chặn thật). */
+export function registrationOpen(slot: Pick<TutoringSlot, "workDate" | "startTime">, nowMs: number): boolean {
+  const starts = new Date(`${slot.workDate}T${slot.startTime.slice(0, 5)}:00+07:00`).getTime();
+  return starts - REGISTER_DEADLINE_HOURS * 3600_000 > nowMs;
+}
+
+/** Trợ giảng điểm danh một em của buổi (RPC tutoring_mark_attendance; chỉ khi buổi đã bắt đầu). */
+export async function markAttendance(slotId: number, studentId: string, attended: boolean): Promise<void> {
+  const { error } = await getSupabase().rpc("tutoring_mark_attendance", {
+    p_slot_id: slotId,
+    p_student_id: studentId,
+    p_attended: attended,
+  });
+  if (error) throw error;
+}
+
+/** Một buổi trong lịch theo id — để phiếu ghi buổi điền sẵn từ buổi đó. */
+export async function fetchSlotById(slotId: number): Promise<TutoringSlot | null> {
+  const { data, error } = await getSupabase().from("tutoring_slots").select(SLOT_SELECT).eq("id", slotId).maybeSingle();
+  if (error) throw error;
+  return data ? toSlot(data as unknown as SlotRow) : null;
+}
+
+// --- Bảng theo dõi cho thầy: em × chủ đề đã đăng ký → có mặt → bài kiểm tra → khắc phục (RPC tutoring_followup_report). ---
+
+export interface FollowupRow {
+  registrationId: number;
+  slotId: number;
+  workDate: string;
+  startTime: string;
+  assistantName: string;
+  studentId: string;
+  studentName: string;
+  topicId: number | null;
+  topicName: string;
+  attended: boolean | null;
+  hasSession: boolean;
+  bestPct: number;
+  attempts: number;
+  passed: boolean;
+  cleared: boolean;
+}
+
+export async function fetchFollowupReport(classId: number, days = 30): Promise<FollowupRow[]> {
+  const { data, error } = await getSupabase().rpc("tutoring_followup_report", { p_class_id: classId, p_days: days });
+  if (error) throw error;
+  return ((data ?? []) as Record<string, unknown>[]).map((r) => ({
+    registrationId: r.registration_id as number,
+    slotId: r.slot_id as number,
+    workDate: r.work_date as string,
+    startTime: r.start_time as string,
+    assistantName: (r.assistant_name as string) ?? "",
+    studentId: r.student_id as string,
+    studentName: (r.student_name as string) ?? "",
+    topicId: (r.topic_id as number | null) ?? null,
+    topicName: (r.topic_name as string | null) ?? "(đăng ký cũ, chưa chọn chủ đề)",
+    attended: (r.attended as boolean | null) ?? null,
+    hasSession: Boolean(r.has_session),
+    bestPct: (r.best_pct as number) ?? 0,
+    attempts: (r.attempts as number) ?? 0,
+    passed: Boolean(r.passed),
+    cleared: Boolean(r.cleared),
+  }));
+}
+
+export type FollowupState = "upcoming" | "no_roll" | "absent" | "no_quiz" | "failed" | "passed" | "cleared";
+
+export const FOLLOWUP_LABEL: Record<FollowupState, string> = {
+  upcoming: "Sắp tới",
+  no_roll: "Chưa điểm danh",
+  absent: "Vắng",
+  no_quiz: "Có mặt, chưa làm bài kiểm tra",
+  failed: "Đã học, chưa đạt",
+  passed: "Đạt bài kiểm tra",
+  cleared: "Đã khắc phục",
+};
+
+export function followupState(row: FollowupRow, nowMs: number): FollowupState {
+  const starts = new Date(`${row.workDate}T${row.startTime.slice(0, 5)}:00+07:00`).getTime();
+  if (starts > nowMs) return "upcoming";
+  if (row.attended === false) return "absent";
+  if (row.attended === null) return "no_roll";
+  if (row.cleared) return "cleared";
+  if (row.passed) return "passed";
+  if (row.attempts > 0) return "failed";
+  return "no_quiz";
+}

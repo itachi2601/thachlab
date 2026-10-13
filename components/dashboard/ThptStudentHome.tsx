@@ -16,6 +16,7 @@ import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import TodayCard from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
+import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { rankNextSteps } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
 import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
@@ -131,6 +132,7 @@ export default function ThptStudentHome({
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
   const [myWaitlist, setMyWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
+  const [pickerSlot, setPickerSlot] = useState<TutoringSlot | null>(null);
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
   // Bài kiểm tra cuối buổi do trợ giảng mở: cửa sổ còn mở + các lượt em đã làm trong từng cửa sổ.
@@ -340,13 +342,32 @@ export default function ThptStudentHome({
       } else if (myWaitlist.has(slot.id)) {
         await leaveWaitlist(slot.id, studentId);
         toast("info", "Đã rời hàng chờ.");
-      } else if (slot.registeredCount >= slot.capacity) {
-        await joinWaitlist(slot.id, studentId);
+      } else {
+        // Đăng ký/vào hàng chờ phải chọn chủ đề trước (14/10/2026) → mở khung chọn, xác nhận ở confirmSlotTopics.
+        setPickerSlot(slot);
+        return;
+      }
+      reloadTutoring();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa thực hiện được, thử lại nhé.");
+    } finally {
+      setBusySlotId(null);
+    }
+  }
+
+  async function confirmSlotTopics(topicIds: number[]) {
+    const slot = pickerSlot;
+    if (!slot) return;
+    setBusySlotId(slot.id);
+    try {
+      if (slot.registeredCount >= slot.capacity) {
+        await joinWaitlist(slot.id, studentId, topicIds);
         toast("success", "Đã vào hàng chờ — có bạn huỷ hoặc trợ giảng mở lượt tiếp, em sẽ được xếp vào.");
       } else {
-        await registerForSlot(slot.id, studentId);
-        toast("success", "Đã đăng ký buổi phụ đạo.");
+        await registerForSlot(slot.id, studentId, topicIds);
+        toast("success", "Đã đăng ký buổi phụ đạo, trợ giảng đã được báo chủ đề em chọn.");
       }
+      setPickerSlot(null);
       reloadTutoring();
     } catch (e) {
       toast("error", e instanceof Error ? e.message : "Chưa thực hiện được, thử lại nhé.");
@@ -357,6 +378,17 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
+      {pickerSlot && (
+        <SlotTopicPicker
+          slot={pickerSlot}
+          classId={pickerSlot.classId}
+          suggestedTopicIds={needs.map((n) => n.topicId)}
+          waitlist={pickerSlot.registeredCount >= pickerSlot.capacity}
+          busy={busySlotId === pickerSlot.id}
+          onConfirm={confirmSlotTopics}
+          onClose={() => setPickerSlot(null)}
+        />
+      )}
       <LateNightNudge />
       <section className="relative overflow-hidden rounded-2xl border border-line bg-panel p-4 sm:rounded-3xl sm:p-7">
         <div className="relative flex items-center gap-4">
