@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Bug, Paperclip, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import { useToast } from "@/components/ui/Toast";
@@ -19,6 +20,13 @@ const POSITION_KEY = "bug-fab-bottom";
 const DRAG_THRESHOLD = 6;
 const STEP = 24;
 
+/** Trang đang học / đang làm bài: một thanh đáy là đủ (B2). Nút báo lỗi thu thành icon, không kéo được xuống che "Bài sau". */
+const COMPACT_PREFIXES = ["/lop-hoc/bai", "/kiem-tra/lam"];
+
+function isCompactPath(pathname: string) {
+  return COMPACT_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+}
+
 function clampBottom(px: number): number {
   const min = window.matchMedia("(max-width: 1023px)").matches ? 76 : 8;
   const max = Math.max(min, window.innerHeight - 56);
@@ -26,6 +34,8 @@ function clampBottom(px: number): number {
 }
 
 export default function BugReportWidget() {
+  const pathname = usePathname() ?? "";
+  const compact = isCompactPath(pathname);
   const { session } = useAuth();
   const toast = useToast();
   const [open, setOpen] = useState(false);
@@ -56,6 +66,8 @@ export default function BugReportWidget() {
   }, []);
 
   useEffect(() => {
+    // Trang bài / làm đề: vị trí do CSS (trên thanh công cụ), không lấy chỗ em đã kéo ở trang khác.
+    if (compact) return;
     try {
       const saved = Number(window.localStorage.getItem(POSITION_KEY));
       // Đọc sau khi mount (không đọc lúc render) để HTML server và lần render đầu của client khớp nhau.
@@ -64,7 +76,7 @@ export default function BugReportWidget() {
     } catch {
       // Trình duyệt chặn localStorage thì dùng vị trí mặc định.
     }
-  }, []);
+  }, [compact]);
 
   function currentBottom(): number {
     const rect = fabRef.current?.getBoundingClientRect();
@@ -80,6 +92,7 @@ export default function BugReportWidget() {
   }
 
   function onPointerDown(e: React.PointerEvent<HTMLButtonElement>) {
+    if (compact) return;
     drag.current = { startY: e.clientY, startBottom: currentBottom(), moved: false };
     justDragged.current = false;
   }
@@ -119,6 +132,7 @@ export default function BugReportWidget() {
   }
 
   function onKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
+    if (compact) return;
     if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
     e.preventDefault();
     const next = clampBottom(currentBottom() + (e.key === "ArrowUp" ? STEP : -STEP));
@@ -186,13 +200,17 @@ export default function BugReportWidget() {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         onKeyDown={onKeyDown}
-        style={bottomPx === null ? undefined : { bottom: bottomPx }}
-        title="Kéo lên xuống để dời nút; bấm để báo lỗi"
-        aria-label="Báo lỗi / góp ý. Kéo lên xuống để dời nút, hoặc dùng phím mũi tên."
-        className="bug-fab fixed bottom-5 right-5 z-40 flex min-h-11 min-w-11 touch-none select-none items-center justify-center gap-2 rounded-full border border-white/15 bg-panel/95 px-3 py-2.5 text-xs sm:px-4 font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
+        style={compact || bottomPx === null ? undefined : { bottom: bottomPx }}
+        title={compact ? "Báo lỗi / góp ý" : "Kéo lên xuống để dời nút; bấm để báo lỗi"}
+        aria-label={compact ? "Báo lỗi / góp ý" : "Báo lỗi / góp ý. Kéo lên xuống để dời nút, hoặc dùng phím mũi tên."}
+        className={
+          compact
+            ? "bug-fab bug-fab--compact fixed bottom-5 right-5 z-40 flex h-10 w-10 touch-none select-none items-center justify-center rounded-full border border-white/15 bg-panel/95 p-0 text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
+            : "bug-fab fixed bottom-5 right-5 z-40 flex min-h-11 min-w-11 touch-none select-none items-center justify-center gap-2 rounded-full border border-white/15 bg-panel/95 px-3 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30 sm:px-4"
+        }
       >
         <Bug size={18} className="text-amber-300" />
-        <span className="hidden sm:inline">Báo lỗi / Góp ý</span>
+        {!compact && <span className="hidden sm:inline">Báo lỗi / Góp ý</span>}
       </button>
 
       {open && (
