@@ -308,15 +308,17 @@ export default function MobileTabBar() {
       { key: "class", label: "Bài học", href: classSlug ? `/lop-hoc/${classSlug}` : "/lop-hoc", icon: "class", active: match("/lop-hoc") && !onRank && !onResults },
       { key: "practice", label: "Luyện tập", href: "/luyen-tap", icon: "practice", active: match("/luyen-tap") },
       { key: "rank", label: "Xếp hạng", href: "/lop-hoc/xep-hang", icon: "rank", active: onRank },
-    ];
-    more = [
-      // Quét mã QR của đề (thầy chiếu mã lên bảng) — xem app/quet-ma, components/admin/ExamQrPanel.tsx
-      { href: "/quet-ma", label: "Quét mã · Vào hoạt động lớp" },
-      { href: "/lop-hoc/ket-qua", label: "Kết quả học tập" },
-      { href: "/thong-bao", label: unread > 0 ? `Thông báo (${unread})` : "Thông báo" },
-      { href: "/tin-nhan", label: "Tin nhắn" },
-      { href: "/tin-tuc", label: "Tin tức" },
-      LOGOUT_LINKS.password,
+      // "Thêm" là một trang (tài khoản, kết quả chi tiết, đăng xuất…), không còn menu nổi. Quét QR đã lên thanh đầu cạnh chuông;
+      // thông báo/tin nhắn/tin tức gom vào Hộp thư (mở từ chuông).
+      {
+        key: "more",
+        label: "Thêm",
+        href: "/tai-khoan/them",
+        icon: "more",
+        badge: dotIfUnread,
+        active:
+          match("/tai-khoan/them") || match("/tai-khoan/doi-mat-khau") || onResults || match("/quet-ma") || onNotice || match("/hop-thu") || match("/tin-nhan") || match("/tin-tuc"),
+      },
     ];
   } else if (kind === "cttc") {
     items = [

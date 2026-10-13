@@ -135,12 +135,12 @@ export default function AuthProvider({
 
   // Chỉ ghi đè khi role thật là admin — phòng trường hợp giá trị cũ còn sót trong
   // sessionStorage sau khi đăng xuất/đăng nhập tài khoản khác không phải admin.
-  // Chế độ "cttc" ghi đè luôn track để /tai-khoan đi đúng nhánh sinh viên CTTC
+  // Chế độ "student" ép track="thpt" (không lấy track thật của admin, tránh lẫn nhánh CTTC); "cttc" ghi đè luôn track để /tai-khoan đi đúng nhánh sinh viên CTTC
   // (RPC preview_cttc_enroll đã ghi danh admin vào 3 môn, còn track thật thì giữ nguyên).
   const effectiveProfile: Profile | null = useMemo(
     () =>
       previewMode && profile?.role === "admin"
-        ? { ...profile, role: "student", admin_area: null, track: previewMode === "cttc" ? "cttc" : profile.track }
+        ? { ...profile, role: "student", admin_area: null, track: previewMode === "cttc" ? "cttc" : previewMode === "student" ? "thpt" : profile.track }
         : profile,
     [previewMode, profile],
   );

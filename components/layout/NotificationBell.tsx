@@ -89,7 +89,7 @@ export default function NotificationBell() {
         aria-label={count > 0 ? `${count} thông báo chưa đọc` : "Thông báo"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+        className="relative inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-surface-2 hover:text-primary"
       >
         <Bell size={19} />
         {count > 0 && (
@@ -137,8 +137,8 @@ export default function NotificationBell() {
               </ul>
             )}
           </div>
-          <Link href="/thong-bao" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-3 text-center text-sm font-semibold text-blue-300 hover:bg-surface-2">
-            Xem tất cả
+          <Link href="/hop-thu" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-3 text-center text-sm font-semibold text-blue-300 hover:bg-surface-2">
+            Mở hộp thư
           </Link>
         </div>
       )}

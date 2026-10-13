@@ -3,7 +3,8 @@
 import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Flame, LogOut, QrCode, Trophy } from "lucide-react";
+import dynamic from "next/dynamic";
+import { ChevronRight, Flame, Trophy } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -12,6 +13,7 @@ import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import TodayCard from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import { rankNextSteps } from "@/features/learning/next-steps";
@@ -29,7 +31,6 @@ import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/s
 import { fetchMyAlert, fetchMyScoreHistory, type ScorePoint, type StudentAlert } from "@/services/analytics";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import WornTitle from "@/components/rank/WornTitle";
-import StreakWeek from "@/components/rank/StreakWeek";
 import type { RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus, fetchMyStreakDays, type StreakDay } from "@/services/rank";
 import { fetchMyWeakestTopics, type WeakTopic } from "@/services/mastery";
@@ -56,20 +57,13 @@ import {
 import TutoringExitQuiz from "@/components/results/TutoringExitQuizLazy";
 import { setTodayBadge } from "@/lib/today-badge";
 
+// Mạng nhện năng lực: khối SVG + RPC riêng, tải trễ để không chặn phần đầu trang (AGENTS: khối nặng ở trang HS dùng dynamic).
+const ChapterMasteryRadar = dynamic(() => import("@/components/results/ChapterMasteryRadar"), { ssr: false });
+
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
-function HeroStats({
-  rank,
-  days,
-  weekGain,
-}: {
-  rank: RankStatus | null | undefined;
-  days: StreakDay[] | null;
-  weekGain: number | null;
-}) {
-  const daily = rank?.season ? rank.daily : null;
+function HeroStats({ rank, weekGain }: { rank: RankStatus | null | undefined; weekGain: number | null }) {
   const next = rank?.next;
-  const freezeLeft = daily ? Math.max(0, (daily.freeze_per_week ?? 0) - (daily.freeze_used_week ?? 0)) : 0;
   if (!rank?.season && weekGain === null) return null;
   return (
     <div className="relative mt-4 space-y-3 sm:mt-5">
@@ -92,19 +86,6 @@ function HeroStats({
           </div>
         </div>
       )}
-      {daily && (
-        <div className="space-y-2 border-t border-line pt-3">
-          <p className="flex items-center gap-2 text-sm font-semibold text-ink">
-            <Flame size={18} className={daily.streak > 0 ? "text-warn" : "text-slate-500"} fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
-            {daily.streak > 0 ? `Chuỗi ${daily.streak} ngày` : "Bắt đầu chuỗi ngày"}
-            {daily.today_done && <span className="text-xs font-normal text-ok">đã giữ hôm nay ✓</span>}
-          </p>
-          {days && days.length > 0 && <StreakWeek days={days} />}
-          {daily.streak > 0 && freezeLeft > 0 && !daily.today_done && (
-            <p className="text-[13px] text-muted">Tuần này còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
-          )}
-        </div>
-      )}
       {weekGain !== null && (
         <p className="border-t border-line pt-3 text-[13px] text-ink">
           Tiến bộ so với tuần trước:{" "}
@@ -120,7 +101,6 @@ export default function ThptStudentHome({
   studentId,
   classId,
   className,
-  onSignOut,
 }: {
   profile: Profile | null;
   email?: string;
@@ -379,47 +359,25 @@ export default function ThptStudentHome({
     <div className="space-y-4 sm:space-y-5">
       <LateNightNudge />
       <section className="relative overflow-hidden rounded-2xl border border-line bg-panel p-4 sm:rounded-3xl sm:p-7">
-        <div className="relative flex items-start justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-            <RankAvatarFrame status={rank} size={56}>
-              <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
-            </RankAvatarFrame>
-            <div className="min-w-0">
-              <h1 className="font-display text-xl font-bold leading-tight text-ink sm:text-3xl">
-                Chào {profile?.full_name || "bạn"} quay lại
-              </h1>
-              {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
-              <p className="mt-1 text-[13px] text-muted sm:text-sm">
-                Lớp {className}
-                <span className="text-muted"> · </span>
-                <Link href="/lop-hoc" className="-my-3 inline-flex min-h-11 items-center gap-0.5 text-primary hover:underline">
-                  Chương trình lớp <ChevronRight size={14} />
-                </Link>
+        <div className="relative flex items-center gap-4">
+          <RankAvatarFrame status={rank} size={72}>
+            <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={72} />
+          </RankAvatarFrame>
+          <div className="min-w-0">
+            <h1 className="font-display text-xl font-bold leading-tight text-ink sm:text-3xl">
+              {profile?.full_name || "Bạn"}
+            </h1>
+            <p className="mt-0.5 text-[13px] text-muted sm:text-sm">Lớp {className}</p>
+            {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
+            {rank?.season && rank.daily && (
+              <p className={`mt-1.5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[13px] font-semibold ${rank.daily.streak > 0 ? "bg-warn/10 text-warn" : "bg-surface-2 text-muted"}`}>
+                <Flame size={15} fill={rank.daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
+                {rank.daily.streak > 0 ? `Chuỗi ${rank.daily.streak} ngày` : "Bắt đầu chuỗi ngày"}
               </p>
-            </div>
-          </div>
-          <div className="flex shrink-0 items-center gap-2">
-            {/* Thầy chiếu mã QR của đề lên bảng → em quét là vào đúng đề (app/quet-ma).
-                Hạ cấp thành nút viền như "Đăng xuất" để không tranh chỗ nổi bật với thẻ Hôm nay (B2). */}
-            <Link
-              href="/quet-ma"
-              aria-label="Quét mã QR của đề"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink hover:border-line-strong sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
-            >
-              <QrCode size={16} />
-              <span className="hidden sm:inline">Quét mã</span>
-            </Link>
-            <button
-              onClick={onSignOut}
-              aria-label="Đăng xuất"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-ink hover:border-line-strong sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
-            >
-              <LogOut size={16} />
-              <span className="hidden sm:inline">Đăng xuất</span>
-            </button>
+            )}
           </div>
         </div>
-        <HeroStats rank={rank} days={streakDays} weekGain={weekGain} />
+        <HeroStats rank={rank} weekGain={weekGain} />
       </section>
 
       {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
@@ -429,10 +387,15 @@ export default function ThptStudentHome({
           primary={primaryStep}
           secondary={secondarySteps}
           alertText={alertText}
+          days={streakDays}
           onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
           onQuickPractice={(step) => step.practice && setPractice(step.practice)}
         />
       )}
+
+      <LazyErrorBoundary>
+        <ChapterMasteryRadar studentId={studentId} compact />
+      </LazyErrorBoundary>
 
       <WelcomeBackDialog
         userId={studentId}

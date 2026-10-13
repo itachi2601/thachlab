@@ -151,8 +151,25 @@ function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()
   return null;
 }
 
+const PREVIEW_CLASS_KEY="tl-preview-thpt-class";
+function PreviewThptHome({studentId,profile,onSignOut}:{studentId:string;profile:ReturnType<typeof useAuth>["profile"];onSignOut:()=>void}){
+  const [classes,setClasses]=useState<SchoolClass[]|null>(null);const [classId,setClassId]=useState<number|null>(null);
+  useEffect(()=>{fetchClasses().then(cs=>{setClasses(cs);let saved=0;try{saved=Number(window.sessionStorage.getItem(PREVIEW_CLASS_KEY));}catch{}setClassId(cs.find(c=>c.id===saved)?.id??cs[0]?.id??null);}).catch(()=>setClasses([]));},[]);
+  function pick(id:number){setClassId(id);try{window.sessionStorage.setItem(PREVIEW_CLASS_KEY,String(id));}catch{}}
+  if(classes===null)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Đang tải lớp giả lập…</p>;
+  const current=classes.find(c=>c.id===classId);
+  if(!current)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Chưa có khối lớp nào để xem thử.</p>;
+  return <>
+    <section className="mb-4 rounded-2xl border border-fuchsia-400/30 bg-panel p-3" aria-label="Chọn lớp giả lập">
+      <p className="text-[13px] font-semibold text-ink">Xem thử giao diện học sinh THPT — chọn lớp:</p>
+      <div className="mt-2 flex flex-wrap gap-2">{classes.map(c=><button key={c.id} type="button" onClick={()=>pick(c.id)} aria-pressed={c.id===classId} className={`min-h-11 rounded-xl border px-4 text-sm font-semibold ${c.id===classId?"border-primary bg-primary-soft text-primary":"border-line text-ink hover:border-line-strong"}`}>{c.icon?`${c.icon} `:""}{c.name}</button>)}</div>
+    </section>
+    <ThptStudentHome key={current.id} profile={profile} studentId={studentId} classId={current.id} className={current.name} onSignOut={onSignOut}/>
+  </>;
+}
+
 function Account(){
-  const router=useRouter();const{session,profile,signOut}=useAuth();
+  const router=useRouter();const{session,profile,signOut,previewMode}=useAuth();
   const [enrollments,setEnrollments]=useState<Enrollment[]|undefined>(undefined);
   const [pickedCourseId,setPickedCourseId]=useState<number|null>(null);
   useEffect(()=>{try{const v=Number(window.localStorage.getItem("tl-tai-khoan-lop"));if(v>0)setPickedCourseId(v);}catch{}},[]);
@@ -163,10 +180,10 @@ function Account(){
   const isStaff=profile?.role==="admin"||profile?.role==="instructor";
   const isParent=profile?.role==="parent";
   const reload=useCallback(()=>{
-    if(!session||isStaff||isParent)return;
+    if(!session||isStaff||isParent||previewMode==="student")return;
     fetchMyEnrollments(session.user.id).then(setEnrollments).catch(()=>setEnrollments([]));
     fetchMyClassRequest(session.user.id).then(setClassRequest).catch(()=>setClassRequest(null));
-  },[session,isStaff,isParent]);
+  },[session,isStaff,isParent,previewMode]);
   useEffect(()=>{reload();},[reload]);
   // Link mời vào lớp học phần: /tai-khoan?ma=AVCN-CK23A → tự gửi yêu cầu bằng mã đó (một lần), rồi gỡ ?ma khỏi địa chỉ.
   const inviteDone=useRef(false);
@@ -189,6 +206,8 @@ function Account(){
   const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name} loginKey={v==="welcome_back"?session.user.last_sign_in_at:undefined}/>;
   if(isStaff)return <>{welcome(profile?.role==="admin"?"admin":"instructor")}<StaffAccountCard/></>;
   if(isParent)return <>{welcome("parent")}<ParentAccountCard/></>;
+  // Admin bấm "Xem như học sinh": chỉ đường THPT, chọn lớp giả lập — không đọc/ghi user_classes hay course_enrollments của admin (trước đây lẫn nhánh CTTC).
+  if(previewMode==="student")return <PreviewThptHome studentId={session.user.id} profile={profile} onSignOut={async()=>{await signOut();router.push("/")}}/>;
   if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Đang tải không gian học tập…</p>;
 
   const track=profile?.track??null;
@@ -244,7 +263,7 @@ function Account(){
   return <StudentTrackChooser onSubmitted={reload}/>;
   })();
   const switcher=track==="cttc"&&enrollments&&enrollments.length>0?<CourseSwitcher enrollments={enrollments} currentId={enrollment?.course.id??null} onPick={pickCourse}/>:null;
-  return <>{variant==="thpt_active"?null:welcome(variant)}{switcher}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
+  return <>{variant==="thpt_active"?null:welcome(variant)}{switcher}{body}{variant!=="thpt_active"&&profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}{variant!=="thpt_active"&&<ProfileEditCard/>}</>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer variant="app"/></>}

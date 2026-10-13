@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Bell, CheckCheck, Trash2 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
+import InboxTabs from "@/components/inbox/InboxTabs";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -96,6 +97,7 @@ export default function ThongBaoPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-28">
+        <InboxTabs />
         <RequireAuth>
           <Inbox />
         </RequireAuth>

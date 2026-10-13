@@ -86,11 +86,15 @@ export default function TutoringSection({
   };
 
   return (
-    <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
-      <div className="flex items-center gap-2">
+    <details open={windows.length > 0 || needs.length > 0} className="group rounded-2xl border border-line bg-panel p-4 sm:p-5">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden">
         <Users size={18} className="text-primary" />
         <h2 className="font-display font-bold text-ink">Phụ đạo</h2>
-      </div>
+        <span className="text-[13px] text-muted">
+          {[needs.length > 0 ? `${needs.length} chủ đề` : "", slots.length > 0 ? `${slots.length} buổi sắp tới` : ""].filter(Boolean).join(" · ")}
+        </span>
+        <span className="ml-auto text-[13px] text-primary group-open:hidden">Mở</span>
+      </summary>
       <div className="mt-3 space-y-4">
         {windows.map((w) => {
           const mine = needs.filter((n) => w.topicIds.includes(n.topicId));
@@ -192,6 +196,6 @@ export default function TutoringSection({
           </div>
         )}
       </div>
-    </section>
+    </details>
   );
 }

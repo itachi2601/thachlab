@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -179,6 +179,15 @@ export default function Navbar() {
           <span className="hidden sm:inline-flex">
             <ThemeToggle />
           </span>
+          {profile?.role === "student" && profile.track !== "cttc" && (
+            <Link
+              href="/quet-ma"
+              aria-label="Quét mã QR vào lớp"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+            >
+              <QrCode size={20} />
+            </Link>
+          )}
           <NotificationBell />
           {session ? (
             <div className="relative" ref={accountMenuRef}>
@@ -206,6 +215,15 @@ export default function Navbar() {
                   >
                     <User size={16} /> Tài khoản của tôi
                   </Link>
+                  {profile?.role === "student" && profile.track !== "cttc" && (
+                    <Link
+                      href="/tai-khoan/them"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    >
+                      <User size={16} /> Hồ sơ và nhắc học
+                    </Link>
+                  )}
                   {profile?.role === "parent" && (
                     <Link
                       href="/phu-huynh"

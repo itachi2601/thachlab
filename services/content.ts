@@ -62,6 +62,22 @@ function displayPostField(text: string) {
   return PUBLISHED_POST_FIXES[text.trim()] ?? text;
 }
 
+/** Đầu đề + lớp của các bài mới nhất (không tải thân bài) — Hộp thư chỉ cần tiêu đề, tránh kéo cả HTML mọi bài. */
+export async function fetchRecentPostHeads(limit: number): Promise<Pick<PostMeta, "id" | "created_at" | "title" | "classIds">[]> {
+  const { data } = await getSupabase()
+    .from("posts")
+    .select("id, created_at, title, post_classes(class_id)")
+    .eq("published", true)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  return (data ?? []).map((p) => ({
+    id: p.id as number,
+    created_at: p.created_at as string,
+    title: displayPostField((p.title as string) ?? ""),
+    classIds: ((p.post_classes as ClassRef[]) ?? []).map((c) => c.class_id),
+  }));
+}
+
 export async function fetchPublishedPosts(): Promise<PostMeta[]> {
   const { data } = await getSupabase()
     .from("posts")

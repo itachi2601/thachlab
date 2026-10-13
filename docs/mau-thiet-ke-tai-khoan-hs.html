@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mẫu thiết kế lại tài khoản học sinh</title>
+<style>
+:root{--bg:#f4f5f8;--panel:#fff;--ink:#14213d;--muted:#5b6478;--line:#dfe3ec;--pri:#2457d6;--pri-soft:#e6edfd;--warn:#a65d00;--warn-soft:#fdf0d9;--ok:#1b7a43;--ok-soft:#e3f4ea;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:760px}
+.grid{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.col{width:340px}
+.col h2{font-size:16px;margin:0 0 8px}
+.col ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13px}
+.col li{margin-bottom:6px}.col li b{color:var(--ink)}
+.phone{width:340px;height:700px;background:#1b2234;border-radius:34px;padding:10px}
+.scr{background:var(--panel);border-radius:26px;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.body{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:18px}
+.acts{display:flex;align-items:center;gap:10px}
+.qr{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--ink)}
+.bell{position:relative;font-size:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.bell i{position:absolute;top:-6px;right:-8px;background:var(--bad);color:#fff;font:700 10px/1 sans-serif;border-radius:9px;padding:3px 5px;font-style:normal}
+.card{border:1px solid var(--line);border-radius:14px;padding:12px}
+.h{font-weight:700;font-size:15px}
+.t{font-size:12.5px;color:var(--muted)}
+.av{border-radius:50%;background:var(--pri-soft);color:var(--pri);display:flex;align-items:center;justify-content:center;font-weight:700;flex:none}
+.ring{border:3px solid #e0a52a}
+.chip{display:inline-block;background:var(--warn-soft);color:var(--warn);font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:4px}
+.bar{height:7px;border-radius:5px;background:#e8ebf2;margin-top:5px}.bar>div{height:100%;border-radius:5px;background:var(--pri)}
+.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--line);min-height:46px;font-size:14px}
+.row.f{border-top:0}
+.tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--pri-soft);color:var(--pri);white-space:nowrap}
+.tag.w{background:var(--warn-soft);color:var(--warn)}.tag.s{background:var(--ok-soft);color:var(--ok)}
+.btn{display:block;width:100%;background:var(--pri);color:#fff;border:0;border-radius:12px;padding:12px;font:700 15px sans-serif;min-height:46px;margin-top:6px}
+.dots{display:flex;justify-content:space-between;margin-top:12px}
+.dot{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted)}
+.dot.f{background:var(--warn-soft);border-color:#e0a52a;color:var(--warn);font-weight:700}
+.tabs{display:flex;border-top:1px solid var(--line)}
+.tabs div{flex:1;text-align:center;font-size:11px;color:var(--muted);padding:8px 0 10px;min-height:46px}
+.tabs div b{display:block;font-size:18px;line-height:1.3}
+.tabs .a{color:var(--pri);font-weight:700}
+.pill{display:inline-block;font-size:12.5px;padding:6px 12px;border-radius:20px;background:#eef0f5;color:var(--muted)}
+.pill.on{background:var(--pri-soft);color:var(--pri);font-weight:700}
+.me{background:var(--pri-soft);margin:0 -12px;padding-left:12px;padding-right:12px;color:var(--pri);font-weight:700}
+.ico{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none}
+.out{text-align:center;color:var(--bad);font-size:14px;padding:6px}
+.chev{margin-left:auto;color:var(--muted)}
+</style></head><body>
+<h1>Tài khoản học sinh: mẫu thiết kế lại</h1>
+<p class="lead">Bốn màn hình điện thoại (375px). Mỗi cột có ghi chú: đã gộp gì, bỏ gì. Chưa sửa code thật, đây chỉ là bản mẫu để duyệt.</p>
+<div class="grid">
+
+<div class="col"><h2>1. Hôm nay</h2>
+<div class="phone"><div class="scr"><div class="body">
+<div class="top">Hôm nay<span class="acts"><span class="qr" aria-label="Quét mã vào lớp">▦</span><span class="bell" aria-label="Hộp thư">🔔<i>3</i></span></span></div>
+<div style="display:flex;gap:12px;align-items:center">
+ <div class="av ring" style="width:68px;height:68px;font-size:24px">NA</div>
+ <div><div class="h" style="font-size:17px">Nguyễn Anh</div><div class="t">Lớp 10A2 · Bạch Kim II</div><span class="chip">🔥 Chuỗi 12 ngày</span></div></div>
+<div><div class="t" style="display:flex;justify-content:space-between"><span>1 240 RP</span><span>còn 60 RP lên Kim Cương</span></div><div class="bar"><div style="width:82%"></div></div></div>
+<div class="card"><div style="display:flex;justify-content:space-between"><span class="h">Việc hôm nay</span><span class="t">3 việc · 20 phút</span></div>
+ <div class="row f"><span class="tag">Nhiệm vụ ngày</span><span>Làm 5 câu Định luật II Newton</span><span class="chev">›</span></div>
+ <div class="row"><span class="tag w">Phụ đạo</span><span>Thứ 5 · bài thoát phụ đạo</span><span class="chev">›</span></div>
+ <div class="row"><span class="tag s">Ôn lại</span><span>Lực ma sát · 3 câu từng sai</span><span class="chev">›</span></div>
+ <button class="btn">Bắt đầu việc đầu tiên</button>
+ <div class="dots"><span class="dot f">T2</span><span class="dot f">T3</span><span class="dot f">T4</span><span class="dot f">T5</span><span class="dot f">T6</span><span class="dot">T7</span><span class="dot">CN</span></div></div>
+<div class="card"><div style="display:flex;justify-content:space-between"><span class="h">Bản đồ năng lực</span><span class="t" style="color:var(--pri)">Xem kết quả ›</span></div>
+ <div style="display:flex;align-items:center;gap:8px">
+ <svg viewBox="0 0 150 150" width="140" height="140" aria-label="Mạng nhện 5 chương">
+  <g fill="none" stroke="#cfd5e2" stroke-width="1">
+   <polygon points="75,35 113,63 98,107 52,107 37,63"/><polygon points="75,55 94,69 87,91 63,91 56,69"/>
+   <polygon points="75,15 132,57 110,123 40,123 18,57"/></g>
+  <polygon points="75,25 123,60 90,112 62,100 40,66" fill="#2457d6" fill-opacity=".25" stroke="#2457d6" stroke-width="2"/>
+  <circle cx="62" cy="100" r="4.5" fill="#b3261e"/>
+  <g font-size="10" fill="#5b6478" text-anchor="middle"><text x="75" y="11">Cơ học</text><text x="141" y="58">Nhiệt</text><text x="116" y="136">Điện</text><text x="34" y="136">Sóng</text><text x="9" y="58">Hạt nhân</text></g></svg>
+ <div style="font-size:13px"><span style="color:var(--bad)">Yếu nhất</span><div class="h">Sóng</div><div class="t">35% thành thạo</div><div style="margin-top:6px;color:var(--pri);font-weight:700">Ôn 5 phút ›</div></div></div></div>
+</div>
+<div class="tabs"><div class="a"><b>◉</b>Hôm nay</div><div><b>▤</b>Bài học</div><div><b>✎</b>Luyện tập</div><div><b>♛</b>Xếp hạng</div><div><b>⋯</b>Thêm</div></div></div></div>
+<ul><li><b>Nút quét mã QR cạnh chuông</b> ở đầu mọi màn hình, chạm một lần vào lớp (đích chạm 44px).</li><li><b>Avatar 68px</b> có vòng bậc; trước đây 56px.</li><li><b>Chuỗi ngày</b> chỉ còn 1 chip + dải 7 ngày trong thẻ việc.</li><li><b>Việc hôm nay</b> gộp nhiệm vụ ngày, phụ đạo, kỹ năng yếu, bù bài. Một nút chính.</li><li><b>Mạng nhện</b> lên trang chính, kèm 1 câu chương yếu nhất.</li></ul></div>
+
+<div class="col"><h2>2. Xếp hạng</h2>
+<div class="phone"><div class="scr"><div class="body">
+<div class="top">Xếp hạng<span class="acts"><span class="qr" aria-label="Quét mã vào lớp">▦</span><span class="bell" aria-label="Hộp thư">🔔<i>3</i></span></span></div>
+<div class="card" style="display:flex;gap:12px;align-items:center">
+ <div class="av ring" style="width:56px;height:56px;font-size:20px">NA</div>
+ <div style="flex:1"><div class="h">Bạch Kim II</div><div class="t">1 240 RP · mùa 21/9 – 25/10</div><div class="bar"><div style="width:82%"></div></div></div>
+ <div class="ico" style="background:var(--warn-soft);border-radius:12px;width:44px;height:44px;font-size:22px">🛡</div></div>
+<div class="card"><div class="h" style="margin-bottom:4px">Lên Kim Cương</div>
+ <div class="row f" style="padding:6px 0;min-height:0"><span style="color:var(--ok)">✔</span>Đủ 1 300 RP: còn 60</div>
+ <div class="row f" style="padding:6px 0;min-height:0"><span style="color:var(--ok)">✔</span>Có 3 danh hiệu</div>
+ <div class="row f" style="padding:6px 0;min-height:0"><span class="t">○</span>Thi thăng hạng ≥ 70%</div></div>
+<div class="card"><div style="display:flex;justify-content:space-between"><span class="h">Bảng lớp tuần này</span><span class="t">10A2</span></div>
+ <div class="row f" style="padding:7px 0;min-height:0"><span class="t" style="width:16px">1</span>Minh Khoa<span class="chev">310</span></div>
+ <div class="row" style="padding:7px 0;min-height:0"><span class="t" style="width:16px">2</span>Hà My<span class="chev">290</span></div>
+ <div class="row me" style="padding:7px 12px;min-height:0"><span style="width:16px">5</span>Em<span class="chev" style="color:var(--pri)">240</span></div></div>
+<div class="card"><div style="display:flex;justify-content:space-between"><span class="h">Danh hiệu</span><span class="t" style="color:var(--pri)">Xem tất cả 24 ›</span></div>
+ <div style="margin-top:8px"><span class="tag w">Đang đeo · Bậc thầy Lực</span></div>
+ <div style="margin-top:8px;display:flex;gap:6px"><span class="tag">Mới: Nhanh tay</span><span class="tag">Mới: Kiên trì</span></div></div>
+</div>
+<div class="tabs"><div><b>◉</b>Hôm nay</div><div><b>▤</b>Bài học</div><div><b>✎</b>Luyện tập</div><div class="a"><b>♛</b>Xếp hạng</div><div><b>⋯</b>Thêm</div></div></div></div>
+<ul><li>Đầu trang <b>một hàng</b>: avatar + bậc + RP, bỏ lặp bậc lần hai.</li><li>Danh hiệu: <b>đang đeo + 3 mới</b>, còn lại gập sau "Xem tất cả".</li><li>Điều kiện lên hạng và bảng lớp lên trước bộ sưu tập.</li></ul></div>
+
+<div class="col"><h2>3. Hộp thư (bấm chuông)</h2>
+<div class="phone"><div class="scr"><div class="body">
+<div class="top">Hộp thư<span class="acts"><span class="qr" aria-label="Quét mã vào lớp">▦</span><span class="bell" aria-label="Hộp thư">🔔<i>3</i></span></span></div>
+<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill on">Tất cả</span><span class="pill">Thông báo</span><span class="pill">Tin nhắn</span><span class="pill">Tin tức</span></div>
+<div>
+ <div class="row f" style="align-items:flex-start"><div class="ico" style="background:var(--warn-soft)">📢</div><div style="flex:1"><b>Kiểm tra 15 phút thứ 6</b><div class="t">Thầy Thạch · chương Động lực học</div></div><span class="t">10 phút</span></div>
+ <div class="row" style="align-items:flex-start"><div class="ico" style="background:var(--pri-soft)">💬</div><div style="flex:1"><b>Thầy nhắn: nộp lại bài 3</b><div class="t">Tin nhắn riêng</div></div><span class="t">1 giờ</span></div>
+ <div class="row" style="align-items:flex-start"><div class="ico" style="background:var(--ok-soft)">🏆</div><div style="flex:1"><b>Em lên Bạch Kim II</b><div class="t">Hệ thống</div></div><span class="t">Hôm qua</span></div>
+ <div class="row" style="align-items:flex-start"><div class="ico" style="background:#eef0f5">📰</div><div style="flex:1">Vì sao nhìn thấy cầu vồng kép?<div class="t">Tin tức Vật lí</div></div><span class="t">2 ngày</span></div>
+ <div class="row" style="align-items:flex-start"><div class="ico" style="background:var(--warn-soft)">📅</div><div style="flex:1">Lịch phụ đạo tuần sau<div class="t">Thông báo lớp</div></div><span class="t">3 ngày</span></div>
+</div></div>
+<div class="tabs"><div><b>◉</b>Hôm nay</div><div><b>▤</b>Bài học</div><div><b>✎</b>Luyện tập</div><div><b>♛</b>Xếp hạng</div><div><b>⋯</b>Thêm</div></div></div></div>
+<ul><li><b>Chuông là cửa duy nhất</b>; tin nhắn, thông báo, tin tức gộp một danh sách.</li><li>4 lọc nhanh; chưa đọc in đậm.</li><li>Mỗi dòng có biểu tượng loại.</li></ul></div>
+
+<div class="col"><h2>4. Thêm (tài khoản)</h2>
+<div class="phone"><div class="scr"><div class="body">
+<div class="top">Thêm<span class="acts"><span class="qr" aria-label="Quét mã vào lớp">▦</span><span class="bell" aria-label="Hộp thư">🔔<i>3</i></span></span></div>
+<div class="card" style="display:flex;gap:12px;align-items:center"><div class="av" style="width:56px;height:56px;font-size:20px">NA</div><div><div class="h">Nguyễn Anh</div><div class="t">anh.nguyen@gmail.com</div><div class="t">Lớp 10A2</div></div></div>
+<div class="card" style="padding:0 12px">
+ <div class="row f">✏ Đổi ảnh và tên<span class="chev">›</span></div>
+ <div class="row">🔒 Đổi mật khẩu<span class="chev">›</span></div>
+ <div class="row">⏰ Nhắc học mỗi ngày<span class="chev">20:00 ›</span></div>
+ <div class="row">👪 Liên kết phụ huynh<span class="chev">1 người ›</span></div></div>
+<div class="card" style="padding:0 12px">
+ <div class="row f">📊 Kết quả học tập chi tiết<span class="chev">›</span></div>
+ <div class="row">🐞 Báo lỗi và góp ý<span class="chev">›</span></div></div>
+<div class="out">Đăng xuất</div>
+</div>
+<div class="tabs"><div><b>◉</b>Hôm nay</div><div><b>▤</b>Bài học</div><div><b>✎</b>Luyện tập</div><div><b>♛</b>Xếp hạng</div><div class="a"><b>⋯</b>Thêm</div></div></div></div>
+<ul><li>Thông tin tài khoản, mật khẩu, nhắc học, QR, phụ huynh <b>gom về một chỗ</b>.</li><li>Đăng xuất để cuối, chữ đỏ, tránh bấm nhầm.</li></ul></div>
+
+</div></body></html>

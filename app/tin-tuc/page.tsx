@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
+import InboxTabs from "@/components/inbox/InboxTabs";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
@@ -103,6 +104,7 @@ export default function NewsPage() {
     <>
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pt-28 pb-20 lg:px-8">
+        <InboxTabs />
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
           Thông báo <span className="text-gradient">&amp; học liệu</span>
         </h1>

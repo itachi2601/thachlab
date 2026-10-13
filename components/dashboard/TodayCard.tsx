@@ -4,6 +4,8 @@ import Link from "next/link";
 import { AlertTriangle, ChevronRight } from "lucide-react";
 import type { RankStatus } from "@/features/rank/types";
 import { formatExitWait } from "@/services/tutoring";
+import StreakWeek from "@/components/rank/StreakWeek";
+import type { StreakDay } from "@/services/rank";
 import type { NextStep } from "@/features/learning/next-steps";
 
 /**
@@ -19,6 +21,7 @@ export default function TodayCard({
   secondary,
   alertText,
   rank,
+  days,
   onUnlock,
   onQuickPractice,
 }: {
@@ -26,13 +29,15 @@ export default function TodayCard({
   secondary: NextStep[];
   alertText: string | null;
   rank?: RankStatus | null;
+  /** Dải 7 ngày giữ chuỗi: chỉ hiện ở thẻ này (chuỗi ngày không lặp ở nơi khác trên trang chủ). */
+  days?: StreakDay[] | null;
   onUnlock: (needId: number) => void;
   onQuickPractice: (step: NextStep) => void;
 }) {
   const act = { onUnlock, onQuickPractice };
   return (
     <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
-      <h2 className="font-display font-bold text-ink">Hôm nay em làm gì</h2>
+      <h2 className="font-display font-bold text-ink">Việc hôm nay</h2>
       <div className="mt-3 space-y-2.5">
         {primary && <PrimaryStep step={primary} {...act} />}
 
@@ -48,6 +53,8 @@ export default function TodayCard({
             </ul>
           </>
         )}
+
+        {days && days.length > 0 && <StreakWeek days={days} />}
 
         <RpFoot rank={rank} />
 

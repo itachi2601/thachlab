@@ -6,6 +6,9 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CalendarCheck, ChevronRight, Flag, History, Medal, Route, Target, Trophy } from "lucide-react";
 import EmptyState from "@/components/ui/EmptyState";
+import Avatar from "@/components/ui/Avatar";
+import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
+import { useAuth } from "@/components/auth/auth-context";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import { useToast } from "@/components/ui/Toast";
 import GateEntry from "@/components/rank/GateEntry";
@@ -77,6 +80,7 @@ function Condition({ done, children }: { done: boolean; children: React.ReactNod
 /** classId: lớp đang học (null = chưa có / admin xem thử) → có mới hiện "Bảng tuần của lớp" (chuyển từ trang chủ HS 7/10/2026). */
 export default function RankPage({ studentId, studentName, classId = null }: { studentId: string; studentName: string; classId?: number | null }) {
   const toast = useToast();
+  const { profile } = useAuth();
   const reduceMotion = useReducedMotion();
   const [status, setStatus] = useState<RankStatus | null | undefined>(undefined);
   const [titles, setTitles] = useState<RankTitle[]>([]);
@@ -168,55 +172,53 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
         )}
       </AnimatePresence>
 
-      {/* Huy hiệu + RP + tiến trình */}
+      {/* Đầu trang: MỘT hàng — ảnh đại diện (khung bậc) · bậc + danh hiệu + RP · huy hiệu nhỏ. Trước đây huy hiệu 96px + lặp bậc ở lộ trình chiếm hơn nửa màn hình (C2, N1). */}
       <section
-        className="relative overflow-hidden rounded-3xl border p-5 sm:p-7"
+        className="relative overflow-hidden rounded-3xl border p-4 sm:p-6"
         style={{ borderColor: `${meta.color}55`, background: "var(--color-panel)" }}
       >
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <RankBadge code={status?.tier?.code} division={status?.tier?.division} paragon={paragon} size={96} className="mx-auto sm:mx-0" />
-          <div className="min-w-0 flex-1 text-center sm:text-left">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted">{studentName}</p>
+        <div className="flex items-center gap-4">
+          <RankAvatarFrame status={status} size={64}>
+            <Avatar url={profile?.avatar_url} name={studentName} size={64} />
+          </RankAvatarFrame>
+          <div className="min-w-0 flex-1">
             {status?.season ? (
               <>
-                <h1 className="mt-1">
-                  <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
+                <h1>
+                  <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="md" />
                 </h1>
-                <p className="mt-1 flex justify-center text-sm text-ink sm:justify-start">
-                  {status.display_title ? <WornTitle title={status.display_title} size="md" /> : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}
+                <p className="mt-0.5 flex text-sm text-ink">
+                  {status.display_title ? <WornTitle title={status.display_title} size="md" /> : <span className="text-muted">{studentName}</span>}
                 </p>
-                <p className="mt-3 font-display text-2xl font-bold text-ink">
-                  {formatRp(status.rp)} <span className="text-base font-semibold text-muted">RP</span>
-                </p>
-                <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
-                  <div className="h-full rounded-full transition-[width] motion-reduce:transition-none" style={{ width: `${bar}%`, background: `linear-gradient(90deg, ${meta.color}, ${meta.light})` }} />
-                </div>
-                <p className="mt-1 text-[13px] text-muted">
-                  {paragon
-                    ? "Danh vị Thách Đấu — trên cả Cao Thủ, chỉ dành cho người đã sưu tập trọn bộ danh hiệu"
-                    : status.tier?.div_max !== null && status.tier
-                      ? `Phân bậc hiện tại: ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
-                      : "Bậc cao nhất — không còn phân bậc"}
-                </p>
-                <p className="text-[13px] text-muted">
-                  Mùa {status.season.name} ({new Date(status.season.starts_on).toLocaleDateString("vi-VN")} – {new Date(status.season.ends_on).toLocaleDateString("vi-VN")})
+                <p className="mt-1 font-display text-xl font-bold text-ink">
+                  {formatRp(status.rp)} <span className="text-sm font-semibold text-muted">RP</span>
                 </p>
               </>
             ) : (
               <>
-                <h1 className="font-display text-2xl font-bold text-ink">Chưa mở mùa xếp hạng</h1>
-                <p className="mt-1 text-sm text-muted">
-                  RP sẽ bắt đầu tính khi giáo viên mở mùa cho lớp em. Danh hiệu đã sưu tập vẫn giữ nguyên.
-                </p>
+                <h1 className="font-display text-xl font-bold text-ink">Chưa mở mùa xếp hạng</h1>
+                <p className="mt-1 text-sm text-muted">RP sẽ bắt đầu tính khi giáo viên mở mùa cho lớp em. Danh hiệu đã sưu tập vẫn giữ nguyên.</p>
               </>
             )}
           </div>
+          {status?.season && <RankBadge code={status.tier?.code} division={status.tier?.division} paragon={paragon} size={56} className="shrink-0" />}
         </div>
+        {status?.season && (
+          <>
+            <div className="mt-3 h-2 overflow-hidden rounded-full bg-surface-2">
+              <div className="h-full rounded-full transition-[width] motion-reduce:transition-none" style={{ width: `${bar}%`, background: `linear-gradient(90deg, ${meta.color}, ${meta.light})` }} />
+            </div>
+            <p className="mt-1 text-[13px] text-muted">
+              {paragon
+                ? "Danh vị Thách Đấu — trên cả Cao Thủ"
+                : status.tier?.div_max !== null && status.tier
+                  ? `Phân bậc ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
+                  : "Bậc cao nhất — không còn phân bậc"}
+              {" · "}Mùa {status.season.name} ({new Date(status.season.starts_on).toLocaleDateString("vi-VN")} – {new Date(status.season.ends_on).toLocaleDateString("vi-VN")})
+            </p>
+          </>
+        )}
       </section>
-
-      <Section icon={Route} title="Lộ trình các bậc" aside={<span className="hidden sm:inline">Chạm huy hiệu để xem điều kiện</span>}>
-        <TierLadder status={status} />
-      </Section>
 
       {status?.season && (
         <div className="grid gap-4 sm:grid-cols-2">
@@ -307,7 +309,15 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
           <EmptyState title="Chưa có dữ liệu danh hiệu" description="Danh hiệu tính từ các bài kiểm tra em đã làm." />
         ) : (
           <>
-            <div className="mb-4 inline-flex rounded-full border border-line bg-surface-2 p-1 text-xs">
+            <p className="mb-2 flex flex-wrap items-center gap-2 text-sm text-ink">
+              {status?.display_title ? <><span className="text-muted">Đang đeo</span> <WornTitle title={status.display_title} size="md" /></> : "Chưa đeo danh hiệu — chọn trong bộ sưu tập."}
+            </p>
+            <details className="group">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center text-sm font-semibold text-primary [&::-webkit-details-marker]:hidden">
+              <span className="group-open:hidden">Xem tất cả {titles.length} danh hiệu</span>
+              <span className="hidden group-open:inline">Thu gọn</span>
+            </summary>
+            <div className="mb-4 mt-2 inline-flex rounded-full border border-line bg-surface-2 p-1 text-xs">
               <button
                 type="button"
                 onClick={() => setTitleView("chu_de")}
@@ -338,9 +348,21 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
             ) : (
               <TitleGradeRoadmap titles={titles} />
             )}
+            </details>
           </>
         )}
       </Section>
+
+      <details className="group rounded-2xl border border-line bg-panel p-4 sm:p-6">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden">
+          <Route size={16} className="text-primary" aria-hidden />
+          <h2 className="font-display text-base font-bold text-ink">Lộ trình các bậc</h2>
+          <span className="ml-auto text-[13px] text-primary group-open:hidden">Mở</span>
+        </summary>
+        <div className="mt-4">
+          <TierLadder status={status} />
+        </div>
+      </details>
 
       <HonorVisibilityPicker />
 
