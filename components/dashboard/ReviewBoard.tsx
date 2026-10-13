@@ -23,6 +23,7 @@ const TYPE_LABEL: Record<ExamQuestion["type"], string> = {
   true_false: "Đúng — Sai",
   short_answer: "Trả lời ngắn",
   essay: "Tự luận",
+  translation: "Dịch",
 };
 
 function pctOf(stat: ReviewQuestionStat) {

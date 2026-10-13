@@ -12,6 +12,7 @@ import type { ExamQuestion } from "@/features/exams/types";
  *  - đúng/sai 4 ý: 2′ (mỗi ý phải xét riêng, không đoán được cả câu)
  *  - trả lời ngắn: 2,5′ (phải tính ra số rồi viết, không loại trừ được phương án)
  *  - tự luận: 8′ (trình bày lời giải)
+ *  - dịch (AVCN): 4′ (gõ cả câu)
  * Đây là ƯỚC LƯỢNG để gợi ý, không tự áp đặt: nơi gọi chỉ hiện gợi ý + nút dùng một chạm, và tôn
  * trọng con số thầy đã gõ.
  */
@@ -21,6 +22,7 @@ const MINUTES_PER_QUESTION: Record<ExamQuestion["type"], number> = {
   true_false: 2,
   short_answer: 2.5,
   essay: 8,
+  translation: 4,
 };
 
 const SHORT_LABEL: Record<ExamQuestion["type"], string> = {
@@ -28,9 +30,10 @@ const SHORT_LABEL: Record<ExamQuestion["type"], string> = {
   true_false: "ĐS",
   short_answer: "TLN",
   essay: "tự luận",
+  translation: "dịch",
 };
 
-const ORDER: ExamQuestion["type"][] = ["multiple_choice", "true_false", "short_answer", "essay"];
+const ORDER: ExamQuestion["type"][] = ["multiple_choice", "true_false", "short_answer", "essay", "translation"];
 
 function fmt(n: number): string {
   return String(n).replace(".", ",");

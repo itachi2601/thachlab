@@ -107,6 +107,9 @@ function checkQuestion(q: unknown, i: number, check: BundleCheck) {
     else if (a.length > 4) check.errors.push(`${label}: đáp án "${a}" dài quá 4 ký tự.`);
     else if (!/^-?\d+([.,]\d+)?$/.test(a))
       check.warnings.push(`${label}: đáp án "${a}" không phải dạng số.`);
+  } else if (type === "translation") {
+    if (!Array.isArray(q.answers) || q.answers.length === 0 || !q.answers.every((a) => typeof a === "string" && a.trim()))
+      check.errors.push(`${label}: câu dịch cần mảng answers (bản dịch mẫu) không rỗng.`);
   } else if (type === "essay") {
     check.warnings.push(`${label}: câu tự luận không được chấm tự động.`);
   } else {

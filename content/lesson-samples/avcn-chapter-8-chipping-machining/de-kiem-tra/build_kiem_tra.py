@@ -41,8 +41,19 @@ P2 = "Part 2"
 DET = f'<details open><summary>📖 Passage</summary><p>{PASSAGE}</p></details>'
 def p2(part, q, opts, ans, why):
     mc(part, q + "<br>" + DET, opts, ans, why)
+CLOZE_SWAPS = [("toothed cutting discs", "toothed cutting {1}"), ("held in a fixed position", "held in a {2} position"),
+               ("using a blade (a thin", "using a {3} (a thin"), ("is called a kerf", "is called a {4}"),
+               ("very small teeth", "very small {5}"), ("using abrasive wheels. The machines", "using {6} wheels. The machines")]
+def cloze(n):
+    t = PASSAGE
+    for old, new in CLOZE_SWAPS:
+        assert old in t, old
+        k = int(new[new.index("{") + 1])
+        blank_html = f"<b><u>({k}) ______</u></b>" if k == n else f"<b>({k}) ______</b>"
+        t = t.replace(old, new.replace("{%d}" % k, blank_html), 1)
+    return f'<details open><summary>📖 Passage (blanks 1–6)</summary><p>{t}</p></details>'
 def blank(n, q, opts, ans, why):
-    p2(f"{P2} · 2.1 Fill in the blank ({n}/6)", q, opts, ans, why)
+    mc(f"{P2} · 2.1 Fill in the blanks ({n}/6)", f"Which word fits blank <b>({n})</b>?<br>" + cloze(n), opts, ans, why)
 blank(1, "Milling is cutting done by a milling machine, often using toothed cutting ______.", ["discs", "oils", "tables", "locks"], 0, "Câu 1 của đoạn: <em>toothed cutting discs</em>.")
 blank(2, "When a workpiece is milled, it is held in a ______ position on the machine.", ["moving", "fixed", "hollow", "round"], 1, "Câu 2: <em>held in a fixed position</em>.")
 blank(3, "Sawing uses a ______ to remove a thickness of material slightly wider than itself.", ["bit", "core", "blade", "disc"], 2, "Câu 3: <em>using a blade</em>.")
@@ -81,18 +92,19 @@ mc(P3, "What is the diameter of the smaller step of the shaft?" + DR, ["Ø20 mm"
 mc(P3, "What tolerance is applied to the Ø20 diameter?" + DR, ["±0.2 mm", "±0.1 mm", "±0.02 mm", "±1.6 mm"], 2, "Ghi <em>Ø20 ±0.02</em>; 1.6 là độ nhám Ra.")
 mc(P3, "What is the length of the smaller step (Ø12)?" + DR, ["65 mm", "25 mm", "40 mm", "12 mm"], 1, "Bậc Ø12 dài <em>25</em>; 40 là bậc lớn, 65 là tổng chiều dài.")
 
-# ---- Part 4: dịch (chọn bản dịch đúng)
-P4 = "Part 4 · Choose the best Vietnamese translation."
-mc(P4, "Machining is the use of machines to cut pieces of material (called workpieces) and shape them into components.",
-   ["Gia công cắt gọt là dùng máy để cắt các mảnh vật liệu (gọi là phôi) và tạo hình chúng thành các chi tiết.",
-    "Gia công cắt gọt là dùng tay để cắt các chi tiết và tạo hình chúng thành phôi.",
-    "Máy gia công là các phôi được cắt thành những mảnh vật liệu nhỏ hơn.",
-    "Phôi là công cụ dùng để cắt máy và tạo hình các chi tiết."], 0, "workpieces = phôi; components = chi tiết; machines = máy.")
-mc(P4, "During machining, a liquid called cutting fluid may be pumped onto the workpiece to act as a coolant, keeping the workpiece cool.",
-   ["Trong khi gia công, dung dịch cắt gọt được dùng để làm sạch phoi ra khỏi máy.",
-    "Trong khi gia công, một chất lỏng gọi là dung dịch cắt gọt có thể được bơm lên phôi để làm chất làm mát, giữ cho phôi nguội.",
-    "Khi phôi nguội, người ta bơm dung dịch cắt gọt vào máy để tăng tốc độ cắt.",
-    "Chất làm mát là phôi được bơm lên máy trong lúc gia công."], 1, "cutting fluid = dung dịch cắt gọt; coolant = chất làm mát; pumped = được bơm.")
+# ---- Part 4: dịch tự do, chấm theo % số chữ đúng (type "translation")
+P4 = "Part 4"
+def trans(n, en, answers, why):
+    Q.append({"type": "translation", "question": f"<b>{P4} · Translate into Vietnamese ({n}/2).</b><br>{en}",
+              "answers": answers, "points": 0.5, "explanation": why, "topic": TOPIC, "form": "ly_thuyet", "difficulty": "de"})
+trans(1, "Machining is the use of machines to cut pieces of material (called workpieces) and shape them into components.",
+      ["Gia công cắt gọt là việc sử dụng máy để cắt các mảnh vật liệu (gọi là phôi) và tạo hình chúng thành các chi tiết.",
+       "Gia công cắt gọt là dùng máy để cắt các mảnh vật liệu (gọi là phôi) và tạo hình chúng thành các chi tiết."],
+      "workpieces = phôi; components = chi tiết; machines = máy.")
+trans(2, "During machining, a liquid called cutting fluid may be pumped onto the workpiece to act as a coolant, keeping the workpiece cool.",
+      ["Trong quá trình gia công, một chất lỏng gọi là dung dịch cắt gọt có thể được bơm lên phôi để đóng vai trò chất làm mát, giữ cho phôi nguội.",
+       "Trong khi gia công, một chất lỏng gọi là dung dịch cắt gọt có thể được bơm lên phôi để làm chất làm mát, giữ cho phôi nguội."],
+      "cutting fluid = dung dịch cắt gọt; coolant = chất làm mát; pumped = được bơm.")
 
 bundle = {"schema": "thachlab.lesson-bundle/v1",
  "target": {"class_name": "Anh văn chuyên ngành Cơ khí", "chapter_title": "Technical English for Mechanical Engineering",

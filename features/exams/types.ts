@@ -65,17 +65,30 @@ export interface EssayQuestion extends QuestionTags {
   explanation: string;
 }
 
+/** Câu dịch tự do (AVCN): học sinh gõ bản dịch, máy chấm theo % số chữ khớp với bản dịch mẫu
+ *  (xem `translationScore`). `answers` = các bản dịch chấp nhận được, lấy bản khớp nhất. */
+export interface TranslationQuestion extends QuestionTags {
+  type: "translation";
+  question: string;
+  answers: string[];
+  /** Điểm tối đa của câu (mặc định 0,5). */
+  points?: number;
+  explanation: string;
+}
+
 export type ExamQuestion =
   | MultipleChoiceQuestion
   | TrueFalseQuestion
   | ShortAnswerQuestion
-  | EssayQuestion;
+  | EssayQuestion
+  | TranslationQuestion;
 
 export const QUESTION_TYPE_LABELS: Record<ExamQuestion["type"], string> = {
   multiple_choice: "Trắc nghiệm nhiều phương án",
   true_false: "Đúng – Sai",
   short_answer: "Trả lời ngắn",
   essay: "Tự luận",
+  translation: "Dịch",
 };
 
 /** Thứ tự chuẩn TN 4 đáp án → Đúng–Sai → Trả lời ngắn → Tự luận (cấu trúc đề thi 2025),
@@ -85,6 +98,7 @@ export const QUESTION_TYPE_ORDER: ExamQuestion["type"][] = [
   "true_false",
   "short_answer",
   "essay",
+  "translation",
 ];
 
 /** Gom chỉ số câu (0-based) theo QUESTION_TYPE_ORDER — dùng để vẽ "bảng câu hỏi" chia theo mục
@@ -147,6 +161,44 @@ export interface GradedQuestion {
 // trả lời ngắn 0,25đ/câu. Điểm cuối quy về thang 10.
 const TF_SCALE = [0, 0.1, 0.25, 0.5, 1];
 
+/** Tách bản dịch thành các "chữ" (tiếng): chữ thường, bỏ dấu câu và dấu thanh (em gõ thiếu dấu
+ *  trên điện thoại vẫn được tính — đề kiểm tra nghĩa của từ, không chấm chính tả). */
+export function translationTokens(text: string): string[] {
+  return text
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/đ/g, "d")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+/** Tỉ lệ chữ đúng, 0–1: số chữ trùng (không tính thứ tự, mỗi chữ mẫu chỉ khớp một lần)
+ *  chia cho max(số chữ mẫu, số chữ em viết) — viết thừa chữ thì bị trừ, nên dán cả
+ *  đoạn từ vựng vào cũng không được điểm cao. Lấy bản dịch mẫu khớp nhất. */
+export function translationScore(answers: string[], given: string): number {
+  const g = translationTokens(given);
+  if (g.length === 0) return 0;
+  let best = 0;
+  for (const ref of answers) {
+    const r = translationTokens(ref);
+    if (r.length === 0) continue;
+    const pool = new Map<string, number>();
+    for (const w of r) pool.set(w, (pool.get(w) ?? 0) + 1);
+    let hit = 0;
+    for (const w of g) {
+      const n = pool.get(w) ?? 0;
+      if (n > 0) {
+        hit += 1;
+        pool.set(w, n - 1);
+      }
+    }
+    best = Math.max(best, hit / Math.max(r.length, g.length));
+  }
+  return best;
+}
+
 export function gradeQuestion(
   q: ExamQuestion,
   r: QuestionResponse,
@@ -172,6 +224,11 @@ export function gradeQuestion(
     case "essay":
       // Tự luận do giáo viên chấm; không cộng vào điểm tự động.
       return { earned: 0, max: 0 };
+    case "translation": {
+      const max = q.points ?? 0.5;
+      const given = typeof r === "string" ? r : "";
+      return { earned: Math.round(translationScore(q.answers, given) * max * 100) / 100, max };
+    }
   }
 }
 
@@ -246,7 +303,7 @@ export function questionTopicNames(questions: ExamQuestion[]): string[] {
 export function emptyResponses(questions: ExamQuestion[]): QuestionResponse[] {
   return questions.map((q) => {
     if (q.type === "true_false") return [null, null, null, null];
-    if (q.type === "short_answer" || q.type === "essay") return "";
+    if (q.type === "short_answer" || q.type === "essay" || q.type === "translation") return "";
     return null;
   });
 }

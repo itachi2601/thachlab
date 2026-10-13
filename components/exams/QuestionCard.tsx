@@ -316,6 +316,45 @@ export default function QuestionCard({
         </div>
       )}
 
+      {q.type === "translation" && (
+        <div className="mt-4 space-y-3">
+          {review ? (
+            <>
+              {!selfCheck && (
+                <div className="rounded-xl border border-line bg-surface-2 p-3 text-sm text-ink">
+                  <span className="font-semibold text-muted">Bản dịch của em: </span>
+                  {typeof r === "string" && r.trim() ? r : "—"}
+                  {graded && (
+                    <span className="mt-1 block font-mono text-xs text-muted">
+                      Khớp {Math.round((graded.earned / graded.max) * 100)}% số chữ
+                    </span>
+                  )}
+                </div>
+              )}
+              <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3 text-sm text-ink">
+                <span className="font-semibold text-emerald-300">Bản dịch mẫu: </span>
+                {q.answers[0]}
+              </div>
+            </>
+          ) : (
+            <>
+              <textarea
+                value={typeof r === "string" ? r : ""}
+                onChange={(e) => onChange?.(e.target.value)}
+                rows={4}
+                lang="vi"
+                autoComplete="off"
+                autoCorrect="off"
+                spellCheck={false}
+                placeholder="Gõ bản dịch tiếng Việt…"
+                className="w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-3 text-base leading-6 text-ink placeholder:text-sm placeholder:text-slate-500 focus:border-primary focus:outline-none"
+              />
+              <p className="text-sm text-muted">Điểm tính theo % số chữ đúng so với bản dịch mẫu (không cần gõ đủ dấu).</p>
+            </>
+          )}
+        </div>
+      )}
+
       {review && q.explanation && (
         <details open={status !== "correct"} className="group mt-3">
           <summary className="flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-cyan">
