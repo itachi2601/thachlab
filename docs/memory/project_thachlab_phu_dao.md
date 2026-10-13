@@ -94,3 +94,10 @@ Sửa công buổi đã ghi chưa sửa được phần chủ đề đã dạy.
 
 Liên quan: [[project_thachlab_exam_analytics]], [[project_thachlab_ta_policy]],
 [[project_thachlab_up_de_skill]], [[feedback_thachlab_deploy_scope]]
+
+**2026-10-14 — đăng ký buổi theo chủ đề + điểm danh + theo dõi (c56a0c917, ĐÃ chạy migration + deploy):**
+Thầy chốt: hạn đăng ký 6 giờ trước giờ học, tối đa 3 chủ đề/buổi, TA tự mời em chưa đánh giá giới hạn 6 em/tuần/TA.
+- `20261014100000`: `tutoring_registrations/waitlist.topic_ids`, chủ đề phải cấp bài, thuộc chương của lớp, ≥12 câu `question_bank` (kể cả YCCĐ con); trigger đăng ký báo TA + `class_instructors` qua chuông; trigger xoá `attended` do học sinh tự đặt (lỗi `kiem-code` bắt được); xếp từ hàng chờ / `open_next` bỏ kiểm hạn + số câu (cờ `app.tutoring_skip_deadline`).
+- `20261014110000`: `attended` do TA đặt qua RPC `tutoring_mark_attendance` (chỉ khi buổi đã bắt đầu); `ta_sessions.slot_id` (phiếu chỉ gồm em đăng ký + có mặt), `tutoring_exit_windows.slot_id`; RPC `tutoring_followup_report` (thầy). Bài kiểm tra chỉ tính tới buổi kế tiếp cùng chủ đề của em.
+- UI: `SlotTopicPicker` (HS + phụ huynh qua `CatchupCard`), điểm danh + nút "Ghi phiếu cho buổi này" ở `TutoringSlotsPlanner`, phiếu điền sẵn từ `?slot=`, `TutoringFollowupReport` đầu tab Phụ đạo thầy.
+- Treo: mục 3 và 6; chưa thử UI bằng HS/TA thật; đăng ký cũ (`topic_ids` rỗng) hiện "chưa chọn chủ đề"; trang GV `text-white/slate` chưa kiểm nền sáng.
