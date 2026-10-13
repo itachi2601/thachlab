@@ -10,7 +10,7 @@ import { useToast } from "@/components/ui/Toast";
 import { APPROVAL_CLASS_SLUGS, fetchClasses, requestClassJoin } from "@/services/classes";
 import type { SchoolClass } from "@/features/exams/types";
 
-const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
+const inputCls = "w-full rounded-ui-md border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
 
 function readInternalNext(): string | null {
   if (typeof window === "undefined") return null;
@@ -223,7 +223,7 @@ export default function RegisterPage() {
             Xác <span className="text-gradient">nhận</span>
           </h1>
 
-          <div className="mt-8 space-y-4 rounded-2xl border border-white/10 bg-panel p-6">
+          <div className="mt-8 space-y-4 rounded-ui-md border border-white/10 bg-panel p-6">
             <p className="text-sm text-slate-300">
               <strong className="text-white">Họ và tên:</strong> {fullName}
             </p>
@@ -256,14 +256,14 @@ export default function RegisterPage() {
             <button
               onClick={() => setStep("form")}
               disabled={busy}
-              className="flex-1 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-300 hover:border-white/30"
+              className="flex-1 rounded-ui-md border border-white/15 px-5 py-3 text-sm font-semibold text-slate-300 hover:border-white/30"
             >
               Quay lại sửa
             </button>
             <button
               onClick={handleConfirm}
               disabled={busy}
-              className="flex-1 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+              className="flex-1 rounded-ui-md bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
             >
               {busy ? "Đang xử lý…" : "Xác nhận đăng ký"}
             </button>
@@ -429,7 +429,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+            className="w-full rounded-ui-md bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
           >
             {busy ? "Đang xử lý…" : "Tiếp tục"}
           </button>

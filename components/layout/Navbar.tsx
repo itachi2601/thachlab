@@ -130,12 +130,12 @@ export default function Navbar() {
                 {hasQuick && (
                   // pt-3 làm "cầu" để chuột đi từ chữ xuống menu không bị đóng; hiện khi hover hoặc focus (bàn phím).
                   <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                    <ul className="w-52 overflow-hidden rounded-2xl border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
+                    <ul className="w-52 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
                       {THPT_QUICK_LINKS.map((q) => (
                         <li key={q.href}>
                           <Link
                             href={q.href}
-                            className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                            className="flex items-center justify-between rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                           >
                             {q.label}
                             <ChevronRight size={15} className="text-slate-500" />
@@ -158,12 +158,12 @@ export default function Navbar() {
               <ChevronDown size={14} className="text-slate-500 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
             </button>
             <div className="invisible absolute right-0 top-full pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-              <ul className="w-48 overflow-hidden rounded-2xl border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
+              <ul className="w-48 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
                 {MORE_LINKS.map((q) => (
                   <li key={q.href}>
                     <Link
                       href={q.href}
-                      className="flex items-center justify-between whitespace-nowrap rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center justify-between whitespace-nowrap rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       {q.label}
                       <ChevronRight size={15} className="text-slate-500" />
@@ -206,12 +206,12 @@ export default function Navbar() {
               {accountMenuOpen && (
                 <div
                   role="menu"
-                  className="absolute right-0 top-[calc(100%+8px)] w-56 overflow-hidden rounded-2xl border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50"
+                  className="absolute right-0 top-[calc(100%+8px)] w-56 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50"
                 >
                   <Link
                     href="/tai-khoan"
                     onClick={() => setAccountMenuOpen(false)}
-                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                   >
                     <User size={16} /> Tài khoản của tôi
                   </Link>
@@ -219,7 +219,7 @@ export default function Navbar() {
                     <Link
                       href="/tai-khoan/them"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <User size={16} /> Hồ sơ và nhắc học
                     </Link>
@@ -228,7 +228,7 @@ export default function Navbar() {
                     <Link
                       href="/phu-huynh"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <Users size={16} /> Kết quả của con
                     </Link>
@@ -237,7 +237,7 @@ export default function Navbar() {
                     <Link
                       href="/lop-hoc/ket-qua"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <Target size={16} /> Kết quả học tập
                     </Link>
@@ -246,7 +246,7 @@ export default function Navbar() {
                     <Link
                       href="/dashboard"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <LayoutDashboard size={16} /> Dashboard giáo viên · CTTC
                     </Link>
@@ -255,7 +255,7 @@ export default function Navbar() {
                     <Link
                       href="/dashboard-thpt"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <LayoutDashboard size={16} /> Dashboard giáo viên · THPT
                     </Link>
@@ -265,7 +265,7 @@ export default function Navbar() {
                     <Link
                       href="/dashboard-thpt"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <LayoutDashboard size={16} /> Quản lớp · THPT
                     </Link>
@@ -274,7 +274,7 @@ export default function Navbar() {
                     <Link
                       href="/tro-giang"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <ClipboardList size={16} /> Khu trợ giảng
                     </Link>
@@ -283,7 +283,7 @@ export default function Navbar() {
                     <Link
                       href="/tro-giang/do-vui"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <Gamepad2 size={16} /> Hoạt động lớp học
                     </Link>
@@ -292,7 +292,7 @@ export default function Navbar() {
                     <Link
                       href="/quan-tri"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary-soft"
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary-soft"
                     >
                       <ShieldCheck size={16} /> Quản trị
                     </Link>
@@ -300,14 +300,14 @@ export default function Navbar() {
                   <Link
                     href="/tai-khoan/doi-mat-khau"
                     onClick={() => setAccountMenuOpen(false)}
-                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                   >
                     <KeyRound size={16} /> Đổi mật khẩu
                   </Link>
                   <button
                     type="button"
                     onClick={() => { setAccountMenuOpen(false); void signOut().then(() => router.push("/")); }}
-                    className="flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/10"
+                    className="flex w-full items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-left text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/10"
                   >
                     <LogOut size={16} /> Đăng xuất
                   </button>
@@ -318,13 +318,13 @@ export default function Navbar() {
             <>
               <Link
                 href="/dang-nhap"
-                className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-blue-400/40 bg-blue-500/10 px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-blue-400/70 hover:bg-blue-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] sm:px-4"
+                className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-ui-md border border-blue-400/40 bg-blue-500/10 px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-blue-400/70 hover:bg-blue-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] sm:px-4"
               >
                 Đăng nhập
               </Link>
               <Link
                 href="/dang-ky"
-                className="hidden whitespace-nowrap rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-block sm:px-5"
+                className="hidden min-h-11 items-center whitespace-nowrap rounded-ui-md bg-primary px-3.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-flex sm:px-5"
               >
                 Đăng ký
               </Link>
@@ -338,7 +338,7 @@ export default function Navbar() {
             aria-controls="mobile-main-navigation"
             aria-label={mobileMenuOpen ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
             onClick={() => setMobileMenuOpen((open) => !open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-surface-2 text-ink transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-ui-md border border-line bg-surface-2 text-ink transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] lg:hidden"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -348,7 +348,7 @@ export default function Navbar() {
           <div
             id="mobile-main-navigation"
             ref={mobileMenuRef}
-            className="absolute left-3 right-3 top-[calc(100%+8px)] max-h-[calc(100dvh-80px)] overflow-y-auto rounded-2xl border border-line bg-panel p-2 shadow-2xl shadow-black/50 lg:hidden"
+            className="absolute left-3 right-3 top-[calc(100%+8px)] max-h-[calc(100dvh-80px)] overflow-y-auto rounded-ui-md border border-line bg-panel p-2 shadow-2xl shadow-black/50 lg:hidden"
           >
             <ul className="grid gap-1">
               {mobileLinks.map((link) => {
@@ -367,7 +367,7 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       aria-current={isActive ? "page" : undefined}
-                      className={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors ${
+                      className={`flex min-h-12 items-center justify-between rounded-ui-md px-4 py-3 text-[15px] font-semibold transition-colors ${
                         isActive
                           ? "bg-primary/20 text-primary"
                           : "text-ink hover:bg-surface-2 hover:text-primary"
@@ -395,7 +395,7 @@ export default function Navbar() {
                 );
               })}
               <li className="border-t border-line pt-1 sm:hidden">
-                <div className="flex min-h-12 items-center justify-between rounded-xl px-4 text-[15px] font-semibold text-ink">
+                <div className="flex min-h-12 items-center justify-between rounded-ui-md px-4 text-[15px] font-semibold text-ink">
                   Giao diện sáng/tối
                   <ThemeToggle />
                 </div>
@@ -405,7 +405,7 @@ export default function Navbar() {
                   <Link
                     href="/dang-ky"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-blue-300 transition-colors hover:bg-blue-500/10"
+                    className="flex min-h-12 items-center justify-between rounded-ui-md px-4 py-3 text-[15px] font-semibold text-blue-300 transition-colors hover:bg-blue-500/10"
                   >
                     Đăng ký
                     <ChevronRight size={18} />

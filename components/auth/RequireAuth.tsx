@@ -15,7 +15,7 @@ function subscribeLocation(onChange: () => void) {
 function Notice({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
     <div
-      className={`mx-auto mt-10 rounded-2xl border border-white/10 bg-panel p-6 sm:mt-16 sm:p-8 ${
+      className={`mx-auto mt-10 rounded-ui-md border border-white/10 bg-panel p-6 sm:mt-16 sm:p-8 ${
         wide ? "max-w-3xl text-left text-slate-300" : "max-w-xl text-center text-slate-300"
       }`}
     >
@@ -101,14 +101,14 @@ export default function RequireAuth({
           <div className={`mt-5 flex flex-wrap gap-3 ${guestWide ? "" : "justify-center"}`}>
             <Link
               href={loginTarget}
-              className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
+              className="inline-flex min-h-11 items-center rounded-ui-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
             >
               Đăng nhập
             </Link>
             {showSignUp && (
               <Link
                 href="/dang-ky"
-                className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
+                className="inline-flex min-h-11 items-center rounded-ui-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
               >
                 Đăng ký
               </Link>

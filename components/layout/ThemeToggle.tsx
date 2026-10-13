@@ -47,7 +47,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={`Chuyển sang ${nextThemeLabel}`}
       title={`Chuyển sang ${nextThemeLabel}`}
-      className="theme-toggle inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-surface-2 text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className="theme-toggle inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-ui-md border border-line bg-surface-2 text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </button>

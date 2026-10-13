@@ -90,8 +90,8 @@ export default function LoginPage() {
     }
   }
 
-  const inputCls = "w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-ink focus:border-primary focus:outline-none";
-  const btnCls = "w-full rounded-full px-5 py-3 text-sm font-semibold transition-all disabled:opacity-50";
+  const inputCls = "w-full rounded-ui-md border border-line-strong bg-surface-2 px-4 py-2.5 text-ink focus:border-primary focus:outline-none";
+  const btnCls = "w-full rounded-ui-md px-5 py-3 text-sm font-semibold transition-all disabled:opacity-50";
 
   return (
     <>

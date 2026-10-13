@@ -42,7 +42,7 @@ const RescueDropSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-ui-md border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -56,7 +56,7 @@ const InterferenceSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-ui-md border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -76,7 +76,7 @@ const SoundWavesSimulation = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-line text-sm text-muted sm:h-[26rem]">
+      <div className="flex h-72 items-center justify-center rounded-ui-md border border-dashed border-line text-sm text-muted sm:h-[26rem]">
         Đang tải mô phỏng…
       </div>
     ),
@@ -186,14 +186,14 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/lop-hoc"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark active:scale-[0.98] sm:text-base"
+              className="inline-flex min-h-11 items-center gap-2 rounded-ui-md bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark active:scale-[0.98] sm:text-base"
             >
               Vào lớp học
               <ArrowRight size={18} />
             </Link>
             <Link
               href="#learning-path"
-              className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-ink transition hover:bg-surface-2 active:scale-[0.98] sm:text-base"
+              className="inline-flex min-h-11 items-center gap-2 rounded-ui-md border border-line px-5 py-3 text-sm font-medium text-ink transition hover:bg-surface-2 active:scale-[0.98] sm:text-base"
             >
               Xem lộ trình
             </Link>
@@ -203,7 +203,7 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
             Học miễn phí trên web, theo đúng nhịp lớp trên trường.
           </p>
         </div>
-        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl sm:p-4 lg:p-4 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
+        <div className="relative rounded-ui-md border border-line bg-panel p-2.5 shadow-xl sm:p-4 lg:p-4 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2 sm:mb-3">
             <p className="font-mono text-[13px] uppercase tracking-widest text-muted">
               Thí nghiệm

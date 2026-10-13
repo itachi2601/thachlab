@@ -10,14 +10,14 @@ import { useToast } from "@/components/ui/Toast";
 import { claimPasswordReset, requestPasswordResetEmail } from "@/services/password-reset";
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "w-full rounded-ui-md border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
 function errorMessage(error: unknown, fallback: string) {
   return error instanceof Error ? error.message : fallback;
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
+  return <div className="mx-auto max-w-md rounded-ui-md border border-white/10 bg-panel p-8">{children}</div>;
 }
 
 function EmailReset({ onUseCode }: { onUseCode: () => void }) {
@@ -73,14 +73,14 @@ function EmailReset({ onUseCode }: { onUseCode: () => void }) {
           className={inputCls}
         />
         {state === "no_email" && (
-          <p className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-xs text-amber-200">
+          <p className="rounded-ui-md border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-xs text-amber-200">
             Tài khoản này chưa có email thật nên không gửi được. Em nhờ giáo viên cấp mã rồi bấm “Đã có mã từ giáo viên” bên dưới.
           </p>
         )}
         <button
           type="submit"
           disabled={busy}
-          className="w-full rounded-xl bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
+          className="w-full rounded-ui-md bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
         >
           {busy ? "Đang gửi…" : "Gửi link đặt lại mật khẩu"}
         </button>
@@ -120,7 +120,7 @@ function ResetContent() {
         </p>
         <Link
           href="/dang-nhap"
-          className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
+          className="mt-6 flex items-center justify-center rounded-ui-md bg-primary py-3 text-sm font-bold text-white"
         >
           Đăng nhập
         </Link>
@@ -184,7 +184,7 @@ function ResetContent() {
         <button
           type="submit"
           disabled={busy}
-          className="w-full rounded-xl bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
+          className="w-full rounded-ui-md bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
         >
           {busy ? "Đang đặt lại…" : "Đặt lại mật khẩu"}
         </button>
