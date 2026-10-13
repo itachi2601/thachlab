@@ -30,7 +30,12 @@ function withImageDimensions(html: string): string {
   return html.replace(/<img\b([^>]*)>/g, (tag, attrs: string) => {
     const decoding = /\bdecoding=/.test(attrs) ? "" : ' decoding="async"';
     const lazy = /\bloading=/.test(attrs) ? "" : ' loading="lazy"';
-    if (/\bwidth=/.test(attrs)) return `<img${attrs}${lazy}${decoding}>`;
+    if (/\bwidth=/.test(attrs)) {
+      // Có width mà thiếu height (ảnh AVCN, ảnh dán tay): lazy sẽ để ảnh cao 0px rồi bung ra lúc cuộn tới, kéo theo
+      // cả trang giật khi cuộn/chuyển câu. Không biết tỉ lệ thì tải sớm (ảnh nhỏ, đã nén ≤150 KB).
+      if (!/\bheight=/.test(attrs)) return `<img${attrs}${/\bloading=/.test(attrs) ? "" : ' loading="eager"'}${decoding}>`;
+      return `<img${attrs}${lazy}${decoding}>`;
+    }
     const src = attrs.match(/\bsrc="([^"]+)"/)?.[1];
     const dims = src ? IMAGE_DIMENSIONS[src] : undefined;
     if (!dims) return decoding ? `<img${attrs}${decoding}>` : tag;
@@ -251,6 +256,13 @@ export default function ContentHtml({
         const u = new SpeechSynthesisUtterance(text);
         u.lang = "en-US";
         u.rate = 0.9;
+        // Nhiều trình duyệt (Safari/iOS, Chrome Mac/Android) bỏ qua `lang` nếu không gán voice → đọc bằng giọng mặc định
+        // của máy (tiếng Việt). Chọn giọng en-US tường minh, rơi về bất kỳ giọng en-* nào.
+        const voices = window.speechSynthesis.getVoices();
+        const voice =
+          voices.find((v) => v.lang.replace("_", "-") === "en-US") ??
+          voices.find((v) => v.lang.toLowerCase().startsWith("en"));
+        if (voice) u.voice = voice;
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(u);
       }
