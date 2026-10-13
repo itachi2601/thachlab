@@ -15,6 +15,8 @@ import {
   fetchClassAssessments,
   fetchClassTopicMatrix,
   fetchExamOverview,
+  fetchExamReviewData,
+  type ReviewQuestionStat,
   fetchWrongestQuestions,
   publishClassAssessment,
   type ClassAssessment,
@@ -68,6 +70,7 @@ export default function TeacherThptAnalysis({
   const [matrix, setMatrix] = useState<TopicGap[] | null>(null);
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [openQ, setOpenQ] = useState<number | null>(null);
+  const [reviewStats, setReviewStats] = useState<ReviewQuestionStat[]>([]);
 
   const loadAssessments = useCallback(() => {
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
@@ -123,6 +126,8 @@ export default function TeacherThptAnalysis({
     fetchExamOverview(examId, studentIds).then(setOverview).catch(() => undefined);
     fetchWrongestQuestions(examId, studentIds).then(setWrongest).catch(() => setWrongest([]));
     fetchClassTopicMatrix(studentIds, examId).then(setMatrix).catch(() => setMatrix([]));
+    setReviewStats([]);
+    fetchExamReviewData(examId, studentIds).then((d) => setReviewStats(d.stats)).catch(() => setReviewStats([]));
     getSupabase()
       .from("exams")
       .select("questions")
@@ -366,6 +371,7 @@ export default function TeacherThptAnalysis({
                         )}
                       </ul>
                     )}
+                    <AnswerSpread question={questions[q.questionIndex]} stat={reviewStats[q.questionIndex]} />
                   </div>
                 )}
               </div>
@@ -429,4 +435,59 @@ function Metric({ label, value }: { label: string; value: string }) {
       <p className="mt-2 font-display text-2xl font-bold text-white">{value}</p>
     </div>
   );
+}
+
+/**
+ * Lớp chọn gì: phân bố đáp án (trắc nghiệm) hoặc tỉ lệ đúng từng ý (đúng–sai).
+ * Một phương án sai được ≥30% lớp chọn = quan niệm sai chung, đáng dạy lại trực tiếp.
+ */
+function AnswerSpread({ question, stat }: { question: ExamQuestion; stat?: ReviewQuestionStat }) {
+  if (!stat || stat.attempted < 3) return null;
+  if (question.type === "multiple_choice" && stat.optionCounts) {
+    const answer = (question as { answer: number }).answer;
+    const counts = stat.optionCounts;
+    const topWrong = counts.reduce((best, n, i) => (i !== answer && n > (counts[best] ?? -1) ? i : best), answer === 0 ? 1 : 0);
+    const misconception = counts[topWrong] / stat.attempted >= 0.3 ? topWrong : -1;
+    return (
+      <div className="mt-4 space-y-1.5 border-t border-white/10 pt-3">
+        <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Lớp đã chọn ({stat.attempted} em)</p>
+        {counts.map((n, i) => {
+          const p = Math.round((n / stat.attempted) * 100);
+          const right = i === answer;
+          return (
+            <div key={i} className="flex items-center gap-2 text-xs">
+              <span className={`w-5 shrink-0 font-semibold ${right ? "text-emerald-300" : "text-slate-300"}`}>{"ABCD"[i]}</span>
+              <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/10">
+                <span className={`block h-full rounded-full ${right ? "bg-emerald-400" : i === misconception ? "bg-red-400" : "bg-slate-500"}`} style={{ width: `${p}%` }} />
+              </span>
+              <span className="w-20 shrink-0 text-right tabular-nums text-slate-300">{p}% · {n} em</span>
+            </div>
+          );
+        })}
+        {misconception >= 0 && (
+          <p className="pt-1 text-xs text-red-300">
+            ⚠ {Math.round((counts[misconception] / stat.attempted) * 100)}% lớp cùng chọn {"ABCD"[misconception]} — có thể là một quan niệm sai chung, nên hỏi lại vì sao chọn.
+          </p>
+        )}
+      </div>
+    );
+  }
+  if (question.type === "true_false" && stat.statementCorrectN) {
+    const wrongIdx = stat.statementCorrectN.map((n, i) => ({ i, p: Math.round((n / stat.attempted) * 100) }));
+    return (
+      <div className="mt-4 space-y-1.5 border-t border-white/10 pt-3">
+        <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Tỉ lệ đúng từng ý ({stat.attempted} em)</p>
+        {wrongIdx.map(({ i, p }) => (
+          <div key={i} className="flex items-center gap-2 text-xs">
+            <span className="w-5 shrink-0 font-semibold text-slate-300">{"abcd"[i]})</span>
+            <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/10">
+              <span className={`block h-full rounded-full ${p < 50 ? "bg-red-400" : "bg-emerald-400"}`} style={{ width: `${p}%` }} />
+            </span>
+            <span className="w-20 shrink-0 text-right tabular-nums text-slate-300">{p}% đúng</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return null;
 }

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { CalendarDays, Check, ChevronDown, Eye, EyeOff, Link2, Plus, Trash2, UserCheck, UserX, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import DiagnosticAdmin from "@/components/dashboard/DiagnosticAdmin";
 import { SITE_URL } from "@/lib/site";
 import { currentSchoolYear } from "@/components/dashboard/CreateCourseForm";
 import { classGrade, fetchUnassignedStudents, type ClassStudent, type UnassignedStudent } from "@/services/classes";
@@ -423,6 +424,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
                         <p className="mt-1 text-xs text-slate-400">
                           Kế tiếp: {r.catchup_topic_ids.map((id) => topicName.get(id) ?? `#${id}`).join(" → ") || "—"}
                         </p>
+                        {r.student_id && <p className="mt-1.5"><DiagnosticAdmin studentId={r.student_id} studentName={r.studentName} compact /></p>}
                         <p className="mt-0.5 text-xs text-slate-500">
                           Trợ giảng ghi buổi phụ đạo đúng bài là tự gạch; hết danh sách tự chuyển sang “Đã vào lớp”.
                         </p>
@@ -441,6 +443,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
                         <Check size={14} className="text-emerald-300" />
                         <strong className="text-white">{r.studentName}</strong>
                         {r.joined_late && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-200">vào trễ</span>}
+                        {r.joined_late && r.student_id && <DiagnosticAdmin studentId={r.student_id} studentName={r.studentName} compact />}
                         <select
                           value={r.payment_status}
                           onChange={(e) => pay(r, e.target.value as PaymentStatus)}

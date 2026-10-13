@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 315 hàm, sinh tự động 2026-10-12
+# Hàm SQL / RPC (schema public) — 322 hàm, sinh tự động 2026-10-13
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -16,6 +16,7 @@ repo — xem trên Supabase Dashboard).
 - `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
 - `bank_set_question_figure_svc(p_bank_id bigint, p_img_html text)` → jsonb
+- `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
@@ -194,8 +195,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -245,6 +246,11 @@ repo — xem trên Supabase Dashboard).
 - `ta_video_ledger(p_assistant_id uuid)` → TABLE(session_id uuid, assistant_id uuid, work_date date, video_tier text, video_url text, published_at timestamp with time zone, status text, reject_reason text, topic_source_id uuid, latest_checked_at date, latest_views integer, latest_saves integer, latest_comments integer, view_bonus numeric, production_pay numeric, lead_count integer, lead_bonus numeric, total_pay numeric)
 - `ta_video_topic_suggestions(p_days integer)` → TABLE(session_id uuid, work_date date, class_label text, error_note text)
 - `teaches_student(p_student uuid)` → boolean
+- `teaching_courses(p_class bigint)` → jsonb
+- `teaching_get(p_course bigint)` → jsonb
+- `teaching_note_add(p_course bigint, p_topic bigint, p_body text)` → bigint
+- `teaching_note_delete(p_id bigint)` → void
+- `teaching_set(p_course bigint, p_topic bigint, p_taught boolean, p_on date)` → void
 - `thpt_attach_student(p_id bigint, p_student_id uuid)` → void
 - `thpt_course_grade(p_course_id bigint)` → text
 - `thpt_course_seats(p_course_ids bigint[])` → TABLE(course_id bigint, taken integer)
@@ -262,6 +268,7 @@ repo — xem trên Supabase Dashboard).
 - `thpt_fee_visibility()` → TABLE(staff_visible boolean, family_visible boolean)
 - `thpt_fee_waive(p_charge bigint, p_waived boolean)` → void
 - `thpt_has_registration(p_course_id bigint)` → boolean
+- `thpt_invite_entry_diagnostic(p_course bigint, p_student uuid)` → jsonb
 - `thpt_register(p_course_id bigint, p_student_id uuid, p_child_name text, p_contact text, p_note text)` → jsonb
 - `thpt_registration_display_name(p_reg thpt_registrations)` → text
 - `thpt_review_registration(p_id bigint, p_status text)` → void

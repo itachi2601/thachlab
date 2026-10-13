@@ -11,6 +11,10 @@ import { fetchStudentLearningHistoryFast } from "@/services/student-profile";
 import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 import StudentAccountCard from "@/components/dashboard/StudentAccountCard";
 import ParentDigestCard from "@/components/dashboard/ParentDigestCard";
+import DiagnosticAdmin from "@/components/dashboard/DiagnosticAdmin";
+import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
+import { buildChapterRadar, fetchClassQuestionActivity, fetchCurriculumMeta } from "@/services/class-insights";
+import type { ChapterLessonMastery } from "@/services/mastery";
 import PasswordResetCard from "@/components/dashboard/PasswordResetCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
@@ -41,6 +45,7 @@ export default function TeacherThptStudentProfile({
   const [cttcIds, setCttcIds] = useState<Set<string>>(new Set());
   const [removing, setRemoving] = useState(false);
   const [history, setHistory] = useState<LearningHistoryEntry[]>([]);
+  const [radar, setRadar] = useState<{ id: string; current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] } | null>(null);
   const toast = useToast();
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
@@ -101,6 +106,29 @@ export default function TeacherThptStudentProfile({
   }
 
   const visibleStudents = students.filter((item) => item.full_name.toLocaleLowerCase("vi-VN").includes(search.trim().toLocaleLowerCase("vi-VN")));
+  useEffect(() => {
+    if (!selectedId) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const [rows, meta] = await Promise.all([fetchClassQuestionActivity([selectedId]), fetchCurriculumMeta()]);
+        if (cancelled) return;
+        setRadar({
+          id: selectedId,
+          current: buildChapterRadar(rows, meta),
+          prev: buildChapterRadar(rows, meta, new Date(Date.now() - 30 * 86400e3)),
+        });
+      } catch {
+        if (!cancelled) setRadar(null);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [selectedId]);
+  const radarData = useMemo(
+    () => (radar && radar.id === selectedId ? { current: radar.current, prev: radar.prev.some((i) => i.pct !== null) ? radar.prev : null } : null),
+    [radar, selectedId],
+  );
+
   const selected = students.find((item) => item.id === selectedId) ?? null;
   const selectedResults = results.filter((row) => row.student_id === selectedId).sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
   const selectedAttendance = selectedId ? attendanceByStudent.get(selectedId) ?? new Map<number, string>() : new Map<number, string>();
@@ -191,6 +219,10 @@ export default function TeacherThptStudentProfile({
           <StudentAccountCard key={`acc-${selected.id}`} studentId={selected.id} />
 
           <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
+
+          <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />
+
+          {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} preloaded={radarData} />}
 
           <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
 

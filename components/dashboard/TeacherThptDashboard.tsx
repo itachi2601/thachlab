@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, BarChart3, CalendarCheck, ClipboardPen, GraduationCap, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, GraduationCap, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -33,6 +33,9 @@ const TeacherThptOverview = lazyTab(() => import("@/components/dashboard/Teacher
 const TeacherThptGradebook = lazyTab(() => import("@/components/dashboard/TeacherThptGradebook"));
 const TeacherThptAnalysis = lazyTab(() => import("@/components/dashboard/TeacherThptAnalysis"));
 const TeacherThptAlerts = lazyTab(() => import("@/components/dashboard/TeacherThptAlerts"));
+const TeacherThptMastery = lazyTab(() => import("@/components/dashboard/TeacherThptMastery"));
+const TeacherThptEarlyWarning = lazyTab(() => import("@/components/dashboard/TeacherThptEarlyWarning"));
+const TeachingProgressTree = lazyTab(() => import("@/components/dashboard/TeachingProgressTree"));
 const TeacherThptTutoring = lazyTab(() => import("@/components/dashboard/TeacherThptTutoring"));
 const TeacherThptStudentProfile = lazyTab(() => import("@/components/dashboard/TeacherThptStudentProfile"));
 const TeacherThptProgress = lazyTab(() => import("@/components/dashboard/TeacherThptProgress"));
@@ -45,6 +48,7 @@ type DashboardTab =
   | "overview"
   | "progress"
   | "analysis"
+  | "teaching"
   | "alerts"
   | "tutoring"
   | "announcements"
@@ -58,6 +62,7 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
   { id: "progress", label: "Quá trình học tập", icon: ListChecks },
   { id: "analysis", label: "Phân tích", icon: BarChart3 },
+  { id: "teaching", label: "Tiến trình dạy", icon: BookOpenCheck },
   { id: "alerts", label: "Cảnh báo & phụ đạo", icon: AlertTriangle },
   { id: "announcements", label: "Thông báo", icon: Megaphone },
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
@@ -76,6 +81,7 @@ export default function TeacherThptDashboard() {
   const [students, setStudents] = useState<ClassStudent[]>([]);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [loadError, setLoadError] = useState("");
+  const [analysisView, setAnalysisView] = useState<"exam" | "mastery">("exam");
 
   useEffect(() => {
     if (!profile) return;
@@ -173,9 +179,30 @@ export default function TeacherThptDashboard() {
         <>
           {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={setActiveTab} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
           {activeTab === "progress" && <TeacherThptProgress classId={selectedClassId} students={students} />}
-          {activeTab === "analysis" && <TeacherThptAnalysis classId={selectedClassId} students={students} classes={classes} />}
+          {activeTab === "analysis" && (
+            <div className="space-y-5">
+              <div role="tablist" aria-label="Kiểu phân tích" className="inline-flex rounded-xl border border-line bg-panel-deep p-1">
+                {([["exam", "Theo đề"], ["mastery", "Bản đồ thành thạo"]] as const).map(([id, label]) => (
+                  <button
+                    key={id}
+                    role="tab"
+                    aria-selected={analysisView === id}
+                    onClick={() => setAnalysisView(id)}
+                    className={`rounded-lg px-4 py-2 text-sm font-bold ${analysisView === id ? "bg-blue-600 text-white" : "text-muted hover:text-primary"}`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              {analysisView === "exam"
+                ? <TeacherThptAnalysis classId={selectedClassId} students={students} classes={classes} />
+                : <TeacherThptMastery students={students} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} onOpenTab={setActiveTab} />}
+            </div>
+          )}
+          {activeTab === "teaching" && <TeachingProgressTree key={selectedClassId} classId={selectedClassId} />}
           {activeTab === "alerts" && (
             <div className="space-y-8">
+              <TeacherThptEarlyWarning students={students} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />
               <TeacherThptAlerts classId={selectedClassId} students={students} />
               <section className="space-y-3 border-t border-line pt-6">
                 <h3 className="font-display text-lg font-bold text-ink">Phụ đạo</h3>
