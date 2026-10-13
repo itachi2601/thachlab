@@ -6,14 +6,27 @@ import {
   fetchMyChapterMasteryPct,
   MASTERY_ICON,
   MASTERY_LABEL,
+  fetchLessonMastery,
   type ChapterLessonMastery,
+  type TopicMastery,
 } from "@/services/mastery";
+import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
+
+/** Tối đa 3 YCCĐ yếu nhất của một bài (chỉ Chưa đạt / Cần luyện thêm, đủ ≥4 lượt), thấp nhất lên trước. */
+function weakestTopics(topics: TopicMastery[]): TopicMastery[] {
+  return topics
+    .filter((t) => t.pct !== null && (t.level === "weak" || t.level === "practicing"))
+    .sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0) || a.sortOrder - b.sortOrder)
+    .slice(0, 3);
+}
 
 interface ChapterMasteryRadarProps {
   studentId: string;
   onLoaded?: (hasData: boolean) => void;
   /** Giáo viên xem hồ sơ em: dữ liệu đã tính sẵn (RPC chỉ đọc theo người đang đăng nhập). Có thì không gọi RPC. */
   preloaded?: { current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] | null };
+  /** Bản gọn cho trang chủ HS: chỉ sơ đồ + bài yếu nhất + lối vào kết quả chi tiết (bỏ chú thích dài và bảng số). */
+  compact?: boolean;
 }
 
 function truncateTitle(title: string, maxLen = 14): string {
@@ -25,6 +38,7 @@ export default function ChapterMasteryRadar({
   studentId,
   onLoaded,
   preloaded,
+  compact = false,
 }: ChapterMasteryRadarProps) {
   const [loading, setLoading] = useState(true);
   const [currentData, setCurrentData] = useState<ChapterLessonMastery[] | null>(null);
@@ -104,6 +118,39 @@ export default function ChapterMasteryRadar({
     return map;
   }, [prevData]);
 
+  // Nút chính + bài mở sẵn: bài có pct thấp nhất trong các bài weak/practicing.
+  const weakestLesson = useMemo(() => {
+    const weak = (currentData ?? []).filter(
+      (item) => item.pct !== null && (item.level === "weak" || item.level === "practicing")
+    );
+    if (weak.length === 0) return null;
+    return [...weak].sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0) || a.sortOrder - b.sortOrder)[0];
+  }, [currentData]);
+
+  // Tầng 2 (YCCĐ của một bài) chỉ ở bản đầy đủ của chính em: RPC đọc theo người đang đăng nhập,
+  // và trang chủ (compact) không được thêm round-trip.
+  const drillDown = !compact && !preloaded;
+  const [userOpen, setUserOpen] = useState<number | null | undefined>(undefined);
+  const openId = userOpen !== undefined ? userOpen : drillDown ? (weakestLesson?.lessonId ?? null) : null;
+  const [topicsByLesson, setTopicsByLesson] = useState<Record<number, TopicMastery[] | "error">>({});
+  const [practice, setPractice] = useState<QuickPracticeRequest | null>(null);
+  // Luôn nạp bài yếu nhất (cho nút chính) và bài đang mở; mỗi bài một lần, kết quả giữ trong cache.
+  const wantIds = drillDown
+    ? [weakestLesson?.lessonId, openId].filter((id): id is number => typeof id === "number" && topicsByLesson[id] === undefined)
+    : [];
+  const wantKey = wantIds.join(",");
+  useEffect(() => {
+    if (!wantKey) return;
+    for (const id of wantKey.split(",").map(Number)) {
+      fetchLessonMastery(id)
+        .then((m) => setTopicsByLesson((prev) => ({ ...prev, [id]: m.topics })))
+        .catch(() => setTopicsByLesson((prev) => ({ ...prev, [id]: "error" })));
+    }
+  }, [wantKey]);
+
+  const weakestTopicsList = weakestLesson ? topicsByLesson[weakestLesson.lessonId] : undefined;
+  const weakestTopic = drillDown && Array.isArray(weakestTopicsList) ? (weakestTopics(weakestTopicsList)[0] ?? null) : null;
+
   if (loading) {
     return (
       <div
@@ -133,20 +180,6 @@ export default function ChapterMasteryRadar({
     ? prevData.filter((i) => i.pct !== null).length
     : 0;
   const hasPrevRadar = useRadar && prevLessonsWithDataCount >= 3;
-
-  // Nút Ôn bài yếu nhất: bài có pct thấp nhất trong các bài weak/practicing.
-  const weakLessons = currentData.filter(
-    (item) => item.pct !== null && (item.level === "weak" || item.level === "practicing")
-  );
-  const weakestLesson =
-    weakLessons.length > 0
-      ? [...weakLessons].sort((a, b) => {
-          const pctA = a.pct ?? 0;
-          const pctB = b.pct ?? 0;
-          if (pctA !== pctB) return pctA - pctB;
-          return a.sortOrder - b.sortOrder;
-        })[0]
-      : null;
 
   // Radar geometry
   const cx = 160;
@@ -185,11 +218,18 @@ export default function ChapterMasteryRadar({
 
   return (
     <section className="rounded-2xl border border-line bg-panel p-5">
-      <h2 className="font-display font-semibold text-ink">
-        Năng lực chương: {chapterTitle}
-      </h2>
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 className="font-display font-semibold text-ink">
+          {compact ? "Bản đồ năng lực" : `Năng lực chương: ${chapterTitle}`}
+        </h2>
+        {compact && (
+          <Link href="/lop-hoc/ket-qua" className="-my-3 inline-flex min-h-11 shrink-0 items-center text-[13px] text-primary hover:underline">
+            Xem kết quả ›
+          </Link>
+        )}
+      </div>
       <p className="mt-0.5 text-[13px] text-muted">
-        So với chính em 30 ngày trước và mục tiêu 80%
+        {compact ? chapterTitle : "So với chính em 30 ngày trước và mục tiêu 80%"}
       </p>
 
       {useRadar ? (
@@ -316,7 +356,7 @@ export default function ChapterMasteryRadar({
           </svg>
 
           {/* Chú thích (legend) */}
-          <div className="mt-3 flex flex-col gap-1.5 text-xs text-muted">
+          {!compact && <div className="mt-3 flex flex-col gap-1.5 text-xs text-muted">
             <div className="flex items-center gap-2">
               <svg width="24" height="10" className="shrink-0" aria-hidden="true">
                 <line
@@ -361,7 +401,7 @@ export default function ChapterMasteryRadar({
                 <span>Chính em 30 ngày trước</span>
               </div>
             )}
-          </div>
+          </div>}
         </div>
       ) : (
         /* 1–2 bài có dữ liệu: thanh ngang */
@@ -397,8 +437,8 @@ export default function ChapterMasteryRadar({
         </div>
       )}
 
-      {/* Bảng số */}
-      <div className="mt-5 border-t border-line pt-3">
+      {/* Bảng số; bản đầy đủ của chính em: bấm một bài để xem YCCĐ yếu nhất của bài đó */}
+      {!compact && <div className="mt-5 border-t border-line pt-3">
         <ul className="space-y-2">
           {currentData.map((item) => {
             const icon = MASTERY_ICON[item.level];
@@ -410,9 +450,12 @@ export default function ChapterMasteryRadar({
               else if (diff < 0) deltaStr = `giảm ${Math.abs(diff)} điểm %`;
               else deltaStr = "giữ nguyên";
             }
+            const canOpen = drillDown && item.pct !== null;
+            const isOpen = canOpen && openId === item.lessonId;
+            const topics = isOpen ? topicsByLesson[item.lessonId] : undefined;
 
-            return (
-              <li key={item.lessonId} className="text-sm leading-relaxed text-ink">
+            const label = (
+              <>
                 <span className="mr-1.5" aria-hidden="true">
                   {icon}
                 </span>
@@ -432,27 +475,117 @@ export default function ChapterMasteryRadar({
                 ) : (
                   <span className="text-muted">chưa làm</span>
                 )}
+              </>
+            );
+
+            return (
+              <li key={item.lessonId} className="text-sm leading-relaxed text-ink">
+                {canOpen ? (
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setUserOpen(isOpen ? null : item.lessonId)}
+                    className="flex min-h-11 w-full items-center justify-between gap-2 rounded-lg px-1 text-left hover:bg-surface-2"
+                  >
+                    <span className="min-w-0">{label}</span>
+                    <span className="shrink-0 text-muted" aria-hidden="true">
+                      {isOpen ? "▴" : "▾"}
+                    </span>
+                  </button>
+                ) : (
+                  label
+                )}
+                {isOpen && (
+                  <div className="mt-1 rounded-xl bg-surface-2 p-3">
+                    {topics === undefined && <p className="text-[13px] text-muted">Đang tải kỹ năng…</p>}
+                    {topics === "error" && (
+                      <p className="text-[13px] text-muted">Chưa tải được chi tiết kỹ năng. Em thử lại sau nhé.</p>
+                    )}
+                    {Array.isArray(topics) &&
+                      (() => {
+                        const weak = weakestTopics(topics);
+                        if (weak.length === 0) {
+                          return (
+                            <p className="text-[13px] text-muted">
+                              Chưa có kỹ năng nào của bài này bị sai nhiều. Làm thêm câu để có thêm dữ liệu.
+                            </p>
+                          );
+                        }
+                        return (
+                          <ul className="space-y-2">
+                            {weak.map((t) => (
+                              <li key={t.topicId}>
+                                <button
+                                  type="button"
+                                  onClick={() => setPractice({ lessonId: item.lessonId, topicName: t.topicName })}
+                                  className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg border border-line bg-panel px-3 py-2 text-left hover:border-primary"
+                                >
+                                  <span className="min-w-0">
+                                    <span className="block text-sm font-medium text-ink">{t.topicName}</span>
+                                    <span className="block text-[13px] text-muted">
+                                      {MASTERY_ICON[t.level]} đúng {t.pct}% · {MASTERY_LABEL[t.level]}
+                                    </span>
+                                  </span>
+                                  <span className="shrink-0 text-[13px] font-semibold text-primary">Luyện 10 câu ›</span>
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      })()}
+                  </div>
+                )}
               </li>
             );
           })}
         </ul>
-      </div>
+      </div>}
 
       {/* Nút chính duy nhất hoặc dòng chúc mừng */}
       <div className="mt-5">
         {weakestLesson ? (
-          <Link
-            href={`/lop-hoc/bai/?id=${weakestLesson.lessonId}#secondary-stage-ly_thuyet`}
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
-          >
-            Ôn bài yếu nhất
-          </Link>
+          weakestTopic ? (
+            <>
+              <button
+                type="button"
+                onClick={() => setPractice({ lessonId: weakestLesson.lessonId, topicName: weakestTopic.topicName })}
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
+              >
+                Luyện đúng chỗ yếu
+              </button>
+              <p className="mt-1.5 text-[13px] text-muted">
+                {weakestTopic.topicName} · {weakestLesson.lessonTitle}
+              </p>
+            </>
+          ) : (
+            <Link
+              href={`/lop-hoc/bai/?id=${weakestLesson.lessonId}#secondary-stage-ly_thuyet`}
+              className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
+            >
+              Ôn bài yếu nhất
+            </Link>
+          )
         ) : (
           <p className="text-sm font-medium text-ok">
             Chương này em đã nắm vững, học tiếp bài mới.
           </p>
         )}
       </div>
+
+      {drillDown && (
+        <QuickPractice
+          request={practice}
+          onClose={() => setPractice(null)}
+          onFinished={() => {
+            // Luyện xong: bỏ cache để mở lại bài thấy % mới (làm mới bài đang mở).
+            setTopicsByLesson({});
+          }}
+          onUnavailable={(req) => {
+            setPractice(null);
+            window.location.assign(`/lop-hoc/bai?id=${req.lessonId}`);
+          }}
+        />
+      )}
     </section>
   );
 }

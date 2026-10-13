@@ -35,6 +35,7 @@ import { CONTACT } from "@/lib/contact";
 import ParentScoreBars from "@/components/parent/ParentScoreBars";
 import ParentGoal, { useChildGoal } from "@/components/parent/ParentGoal";
 import { gradeBand } from "@/lib/parent-format";
+import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
 
 /**
  * Bảng kết quả học tập của MỘT học sinh. Dùng ở hai chỗ:
@@ -601,6 +602,7 @@ export default function StudentResultsDashboard({
   const [outcomeGaps, setOutcomeGaps] = useState<OutcomeGap[]>([]);
   const [rankStatus, setRankStatus] = useState<RankStatus | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[] | null>(null);
+  const [radarHasData, setRadarHasData] = useState<boolean | null>(null);
 
   useEffect(() => {
     const uid = studentId;
@@ -801,22 +803,53 @@ export default function StudentResultsDashboard({
         <p className="mt-6 text-sm text-muted">{copy.noExam}</p>
       )}
 
-      {priorityGaps.length > 0 && (
+      {viewer === "parent" && priorityGaps.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-3 font-display font-semibold text-ink">
-            {viewer === "parent" ? "Phần con còn sai" : "Chủ đề cần ôn"}
+            Phần con còn sai
           </h2>
-          {viewer === "parent" && (
-            <p className="parent-copy -mt-1.5 mb-3 text-muted">
-              Để cùng con xem lại phần chưa chắc — không phải để chấm điểm con.
-            </p>
-          )}
+          <p className="parent-copy -mt-1.5 mb-3 text-muted">
+            Để cùng con xem lại phần chưa chắc — không phải để chấm điểm con.
+          </p>
           <div className="space-y-3">
             {shownGaps.map((gap) => (
               <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />
             ))}
           </div>
         </section>
+      )}
+
+      {viewer === "student" && (
+        <div className="mt-6">
+          <ChapterMasteryRadar
+            studentId={studentId}
+            onLoaded={(hasData) => setRadarHasData(hasData)}
+          />
+          {radarHasData === false && priorityGaps.length > 0 && (
+            <section className="mt-6">
+              <h2 className="mb-3 font-display font-semibold text-ink">
+                Chủ đề cần ôn
+              </h2>
+              <div className="space-y-3">
+                {shownGaps.map((gap) => (
+                  <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />
+                ))}
+              </div>
+            </section>
+          )}
+          {radarHasData === true && priorityGaps.length > 0 && (
+            <details className="mt-4 rounded-2xl border border-line bg-panel p-4">
+              <summary className="cursor-pointer font-display text-sm font-semibold text-ink hover:text-primary">
+                Xem các yêu cầu cần đạt còn sai ({priorityGaps.length})
+              </summary>
+              <div className="mt-3 space-y-3">
+                {shownGaps.map((gap) => (
+                  <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />
+                ))}
+              </div>
+            </details>
+          )}
+        </div>
       )}
 
       {needs !== null && needs.length > 0 && (
