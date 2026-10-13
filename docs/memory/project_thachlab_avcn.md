@@ -24,5 +24,8 @@ quyết định soạn bài bám vào đó (`docs/DE-XUAT-AVCN-CHUONG-8-2026-10-
 - Còn treo: 9 chương (1–7, 9, 10) chưa soạn — dùng skill `soan-bai-avcn` (Claude điền hoặc Gemini điền JSON rồi Claude đối
   chiếu); chưa thử với SV thật; chưa có kiểu câu "điền một từ" trong engine đề (short_answer chỉ nhận số); 12 quiz/bài
   vượt hạn 8 của lint Vật lí (cố ý).
+- Chapter 5 (Mechanical Fasteners): 13/10 thầy dán `bai.json` do Gemini điền (chưa lưu vào repo). Kiểm sơ bộ: JSON có thể lỗi
+  dấu `"` trần trong chuỗi, nhiều `fb_no` lộ đáp án, vài câu Article >25 từ, Part 1 có "[hình: …]" bằng chữ, chưa có ảnh Commons.
+  Chưa đối chiếu giáo trình. Việc tiếp: lưu vào `content/lesson-samples/avcn-chapter-5-…/data/bai.json`, sửa, đối chiếu, dựng — hoặc Claude soạn thẳng.
 
 Liên quan: [[feedback-xuong-dong-tung-truong-hop]], [[project-thachlab-cttc-roster-import]].
