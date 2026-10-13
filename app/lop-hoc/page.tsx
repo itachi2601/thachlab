@@ -63,8 +63,7 @@ function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>
 }
 import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOverview";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
-import { fetchMyRankStatus, fetchMyStreakDays, fetchRankStatusOf, type StreakDay } from "@/services/rank";
-import DailyStreakCard from "@/components/rank/DailyStreakCard";
+import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
 import type { RankStatus } from "@/features/rank/types";
 import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
@@ -111,7 +110,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [parentChildren, setParentChildren] = useState<LinkedChild[] | null>(null);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
   const [rank, setRank] = useState<RankStatus | null>(null);
-  const [streakDays, setStreakDays] = useState<StreakDay[] | null>(null);
   // Chờ profile tải xong mới biết đang xem với tư cách nào (tránh đọc nhầm tiến độ của phụ huynh).
   const viewId = !session || !profile ? null : isParent ? selectedChildId : session.user.id;
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
@@ -155,6 +153,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     fetchLessonsStatic(setLessons).then(setLessons);
     fetchPublishedPosts().then(setPosts);
   }, [classSlug]);
+
+  // Sinh viên CTTC không học ở khối THPT: /lop-hoc (không kèm lớp) → hub CTTC.
+  useEffect(() => {
+    if (!classSlug && profile?.role === "student" && profile.track === "cttc") router.replace("/lop-hoc/cttc");
+  }, [classSlug, profile, router]);
 
   // Học sinh THPT đã được duyệt vào lớp thì không cần bộ chọn lớp: vào thẳng lớp của em (thầy chốt 7/10/2026).
   const [classRedirect, setClassRedirect] = useState(false);
@@ -203,7 +206,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     (isParent ? fetchRankStatusOf(viewId) : fetchMyRankStatus())
       .then((r) => { if (!cancelled) setRank(r); })
       .catch(() => { if (!cancelled) setRank(null); });
-    if (!isParent) fetchMyStreakDays().then((d) => { if (!cancelled) setStreakDays(d); });
     return () => { cancelled = true; };
   }, [viewId, isParent]);
 
@@ -516,6 +518,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               <span className="class-chapter-title">
                 <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
               </span>
+              {session && chapterTotal > 0 && (
+                <small className={`class-chapter-count ${chapterCompleted === chapterTotal ? "is-done" : ""}`}>
+                  {chapterCompleted === chapterTotal ? <Check size={13} aria-label="Xong" /> : `${chapterCompleted}/${chapterTotal}`}
+                </small>
+              )}
               <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
             </button>
           )}
@@ -554,7 +561,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {lesson.title}
                         {lesson.description && <small>{lesson.description}</small>}
                       </span>
-                      <span className="class-meta">
+                      <span className={`class-meta ${session && !periodic && !review && !complete && !started ? "class-meta--idle" : ""}`}>
                         {periodic
                           ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
                           : !session
@@ -665,6 +672,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   <>
                     <header className="lesson-head">
                       <h1>{activeDisplayName}</h1>
+                      {!isParent && session && rank?.season && rank.daily && rank.daily.streak > 0 && (
+                        <p className="class-streak-chip">🔥 Chuỗi {rank.daily.streak} ngày</p>
+                      )}
                       {grade && GRADE_DESCRIPTIONS[grade] && (
                         <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
                       )}
@@ -713,10 +723,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {isParent && session && progressMarks && (
                           <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
                         )}
-                        {!isParent && session && rank?.season && (
-                          <DailyStreakCard status={rank} days={streakDays} className="mb-4" />
-                        )}
-                        {!isParent && session && <LiveStudyStrip className="mb-4" />}
                         {renderNextCard()}
 
                         {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}
@@ -741,6 +747,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           </div>
                         )}
                         {!isParent && <MistakeReviewPanel />}
+                        {!isParent && session && <LiveStudyStrip />}
                         {!isParent && rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
                           <p className="class-rank-link">
                             <Link href="/lop-hoc/xep-hang/" className="lesson-link">Xếp hạng</Link>

@@ -1203,6 +1203,9 @@ html[data-theme="light"] .lesson-shell .lesson-sample-actions button.is-ghost { 
 .class-chapter-progress { display: flex; align-items: center; gap: 10px; margin: 8px 0 0; }
 .class-chapter-progress-bar { position: relative; width: 100%; max-width: 180px; height: 4px; flex: 0 1 auto; border-radius: 3px; background: rgba(148,163,184,.2); overflow: hidden; }
 .class-chapter-progress-bar i { position: absolute; inset: 0 auto 0 0; display: block; border-radius: 3px; background: var(--lesson-accent); }
+.class-streak-chip { margin: 0; color: #fbbf24; font-size: 13px; font-weight: 600; }
+.class-chapter-count { flex: 0 0 auto; color: #94a3b8; font-size: 13px; font-variant-numeric: tabular-nums; }
+.class-chapter-count.is-done { color: #6ee7b7; }
 .class-chapter-progress small { flex: 0 0 auto; color: #94a3b8; font-size: 13px; white-space: nowrap; }
 /* Số thứ tự bài học: khoanh tròn, khác kiểu với nhãn chữ "Chương N" ở tiêu đề chương. */
 .class-num { display: flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
@@ -2908,33 +2911,37 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
 }
 
-/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
-  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
   .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
-  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
   .lesson-layout--pick .class-continue--main {
+    position: relative;
     gap: 2px;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    padding: 0;
+    border-radius: 14px;
+    padding: 10px 14px;
   }
-  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
   .lesson-layout--pick .class-toc-toolbar { display: none; }
   .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
   .lesson-layout--pick .class-lesson {
     display: grid;
-    grid-template-columns: 26px minmax(0, 1fr);
-    column-gap: 12px;
-    row-gap: 2px;
-    align-items: start;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
   }
-  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
-  .lesson-layout--pick .class-lesson-title,
-  .lesson-layout--pick .class-meta { grid-column: 2; }
-  .lesson-layout--pick .class-meta { justify-self: start; }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */

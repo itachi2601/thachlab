@@ -227,15 +227,15 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
 
   const shell =
     variant === "account"
-      ? "rounded-2xl border border-line bg-panel p-4"
+      ? ""
       : "bg-bg px-6 pb-8 pt-1 lg:px-12";
 
   return (
     <section className={shell} aria-label="Tìm bài học">
       <div className={variant === "account" ? "" : "mx-auto max-w-6xl"}>
-        <h2 className="font-display text-lg font-bold text-ink sm:text-xl">Tìm bài học</h2>
+        <h2 className={variant === "account" ? "sr-only" : "font-display text-lg font-bold text-ink sm:text-xl"}>Tìm bài học</h2>
         <form
-          className="relative mt-2"
+          className={variant === "account" ? "relative" : "relative mt-2"}
           role="search"
           onSubmit={(event) => {
             event.preventDefault();
