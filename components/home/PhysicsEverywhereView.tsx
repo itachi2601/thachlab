@@ -23,11 +23,10 @@ export default function PhysicsEverywhereView({
     if (today !== initialIndex) setIndex(today);
   }, [initialIndex, posts.length]);
 
-  const { featured } = rotatePhysicsAround(posts, index, 0);
-  const diagram = featured.cover?.endsWith(".svg") ?? false;
+  const { featured, others } = rotatePhysicsAround(posts, index, 2);
 
   return (
-    <section id="physics-everywhere" className="border-t border-line py-20 lg:py-28">
+    <section id="physics-everywhere" className="border-t border-line py-14 lg:py-20">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-xl">
@@ -44,37 +43,40 @@ export default function PhysicsEverywhereView({
           </Link>
         </Reveal>
 
-        <Reveal className="mt-10 grid items-center gap-6 lg:grid-cols-12 lg:gap-10">
-          <Link href={featured.href} className="group contents">
-            {featured.cover ? (
-              <div className="aspect-[16/10] overflow-hidden rounded-xl border border-line bg-panel lg:col-span-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={featured.cover}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className={
-                    diagram
-                      ? "h-full w-full object-contain"
-                      : "h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  }
-                />
-              </div>
-            ) : null}
-            <div className={featured.cover ? "lg:col-span-6" : "lg:col-span-12"}>
-              {featured.tag ? (
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">{featured.tag}</p>
+        <Reveal className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {[featured, ...others].map((post) => (
+            <Link
+              key={post.slug}
+              href={post.href}
+              className="group flex flex-col overflow-hidden rounded-xl border border-line bg-panel transition hover:border-primary"
+            >
+              {post.cover ? (
+                <div className="aspect-[16/10] overflow-hidden border-b border-line bg-surface-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.cover}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className={
+                      post.cover.endsWith(".svg")
+                        ? "h-full w-full object-contain"
+                        : "h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    }
+                  />
+                </div>
               ) : null}
-              <h3 className="mt-2 font-display text-2xl font-bold leading-snug text-ink transition-colors group-hover:text-primary">
-                {featured.title}
-              </h3>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{featured.description}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                Đọc bài <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </div>
-          </Link>
+              <div className="flex flex-1 flex-col p-4">
+                {post.tag ? <p className="font-mono text-xs uppercase tracking-widest text-muted">{post.tag}</p> : null}
+                <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-ink transition-colors group-hover:text-primary">
+                  {post.title}
+                </h3>
+                <span className="mt-auto inline-flex min-h-11 items-center gap-1.5 pt-2 text-sm font-medium text-primary">
+                  Đọc bài <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </div>
+            </Link>
+          ))}
         </Reveal>
 
       </div>

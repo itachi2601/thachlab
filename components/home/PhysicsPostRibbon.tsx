@@ -7,7 +7,7 @@ export type RibbonPost = { slug: string; title: string; href: string };
 
 const READ_STORAGE_KEY = "thachlab:read_ribbon_posts";
 
-/** Dải bài "Vật lý quanh ta" chạy ngang. Dừng khi rê chuột / focus (globals.css), giảm chuyển động → hàng cuộn tay. */
+/** Dải bài "Vật lý quanh ta": hàng thẻ TĨNH vuốt ngang (không chạy tự động — chữ trôi thì không đọc, không bấm trúng được trên 375px). */
 export function PhysicsPostRibbon({ posts, label }: { posts: RibbonPost[]; label?: string }) {
   const [readSlugs, setReadSlugs] = useState<Set<string>>(() => new Set());
 
@@ -43,33 +43,27 @@ export function PhysicsPostRibbon({ posts, label }: { posts: RibbonPost[]; label
   return (
     <div>
       {label ? <p className="font-mono text-xs uppercase tracking-widest text-muted">{label}</p> : null}
-      <div className="marquee-posts-wrap mt-2 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
-        <ul className="marquee marquee-posts">
-          {[0, 1].map((dup) => (
-            <li key={dup} className="flex shrink-0 items-center gap-4" aria-hidden={dup === 1 || undefined}>
-              {posts.map((post) => {
-                const isNew = !readSlugs.has(post.slug);
-                return (
-                  <Link
-                    key={post.slug}
-                    href={post.href}
-                    onClick={() => handlePostClick(post.slug)}
-                    tabIndex={dup === 1 ? -1 : undefined}
-                    className="flex min-h-11 items-center gap-2 rounded-lg border border-line bg-panel px-4 py-2 text-sm font-medium text-ink transition hover:border-primary hover:text-primary"
-                  >
-                    <span className="whitespace-nowrap">{post.title}</span>
-                    {isNew && (
-                      <span className="inline-flex items-center rounded border border-primary/25 bg-primary/10 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">
-                        new
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
+      <ul className="mt-2 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:thin]">
+        {posts.map((post) => {
+          const isNew = !readSlugs.has(post.slug);
+          return (
+            <li key={post.slug} className="w-[82%] shrink-0 snap-start sm:w-72">
+              <Link
+                href={post.href}
+                onClick={() => handlePostClick(post.slug)}
+                className="flex min-h-14 items-center gap-2 rounded-xl border border-line bg-panel px-4 py-3 text-[15px] font-semibold leading-snug text-ink transition hover:border-primary hover:text-primary"
+              >
+                <span className="line-clamp-2 flex-1">{post.title}</span>
+                {isNew && (
+                  <span className="inline-flex shrink-0 items-center rounded border border-primary/25 bg-primary/10 px-1.5 py-0.5 font-mono text-xs font-bold uppercase tracking-wider text-primary">
+                    mới
+                  </span>
+                )}
+              </Link>
             </li>
-          ))}
-        </ul>
-      </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }

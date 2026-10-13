@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useAuth } from "@/components/auth/AuthProvider";
+import AroundReadMore from "@/components/lessons/AroundReadMore";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
@@ -2063,6 +2064,7 @@ function LessonLoader() {
                 aria-labelledby={`lesson-tab-${activeSection.kind}`}
               >
                 <div className="lesson-stack">{renderSectionItems(activeSection)}</div>
+                {activeSection.kind === "ly_thuyet" && <AroundReadMore lessonId={id} />}
                 <div className="lesson-tabfoot">
                   {nextSection ? (
                     <button type="button" className="lesson-next" onClick={() => selectTabAndScroll(nextSection.kind)}>

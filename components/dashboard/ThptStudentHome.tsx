@@ -15,6 +15,7 @@ import { useToast } from "@/components/ui/Toast";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import TodayCard from "@/components/dashboard/TodayCard";
+import CuriosityCard from "@/components/dashboard/CuriosityCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { rankNextSteps } from "@/features/learning/next-steps";
@@ -424,6 +425,8 @@ export default function ThptStudentHome({
           onQuickPractice={(step) => step.practice && setPractice(step.practice)}
         />
       )}
+
+      <CuriosityCard />
 
       <LazyErrorBoundary>
         <ChapterMasteryRadar studentId={studentId} compact />

@@ -23,7 +23,7 @@ export default function Home() {
   const around = getPhysicsAroundPosts();
   const ribbonPosts =
     around.length > 1
-      ? rotatePhysicsAround(around, vietnamDayIndex() % around.length, around.length - 1).others
+      ? rotatePhysicsAround(around, vietnamDayIndex() % around.length, Math.min(3, around.length - 1)).others
       : [];
   return (
     <>
@@ -36,11 +36,11 @@ export default function Home() {
           </div>
         </div>
         <OpenClasses stats={stats} />
+        <PhysicsEverywhere />
         <ContentSearch />
         <ForParents courses={stats?.courses ?? null} />
         <Features />
         <ExamSamples />
-        <PhysicsEverywhere />
         <LearningPath />
         <HonorBoard />
         <AboutFounder />

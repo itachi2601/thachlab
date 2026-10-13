@@ -32,13 +32,17 @@ Slug = tiêu đề không dấu, gạch nối, bỏ "vi-sao" thừa nếu quá d
 3. **1–3 mục giải thích** (`## …` tiêu đề là một ý, không phải "Phần 1"). Đi từ cái thấy được → đại lượng → định luật.
    Mỗi mục một ý chính, in đậm từ khoá 1–2 lần/mục, không hơn. Đặt **hình 2 — sơ đồ vật lí** (có nhãn đại lượng)
    ở mục giải thích chính. Cả bài cần **≥ 2 hình** (tối đa 4).
-4. **`## Thử ước lượng bằng số`** — một phép tính 3–5 dòng bằng công thức trong sách (Unicode, có đơn vị), số làm tròn,
+4. **`## Thử ước lượng bằng số`** — một phép tính 3–5 dòng bằng công thức trong sách (Unicode, có đơn vị; chỉ số dưới dùng `<sub>` như `v<sub>P</sub>`, `v<sub>S</sub>`, `t<sub>P</sub>`, chỉ số trên dùng Unicode hoặc `<sup>`; cấm viết gạch dưới trần `v_P`), số làm tròn,
    kết luận bằng lời ("tức là gấp khoảng 3 lần…"). Đây là chỗ cho em thấy Vật lí *đo được*, không chỉ kể chuyện.
 5. **`## Tự thử ở nhà`** — 3–5 bước đánh số, dụng cụ an toàn, "Em sẽ thấy…", "Vì sao?" (một câu nối lại lý thuyết).
    Không có thí nghiệm an toàn thì thay bằng "Quan sát ở nhà" (quan sát chứ không làm).
 6. **`## Hiểu lầm hay gặp`** — 1–3 gạch đầu dòng dạng "❌ … → ✅ …".
 7. **`## Em đã học ở đâu?`** — gạch đầu dòng, mỗi dòng một bài: `[Lớp 12 · Bài 6. …](/lop-hoc/bai?id=…&subject=vat-ly&chapter=…)`
    (lấy bằng `kiem-bai.py --tim`). Bài chưa có trên web thì ghi tên bài SGK, không link.
+   **Mục này còn là dữ liệu:** `lib/blog.ts` (`relatedLessonIds`) lấy id từ các link `/lop-hoc/bai?id=N` ở đây để
+   tự hiện khung "Đọc thêm · Vật lý quanh ta" ở **cuối tab Lý thuyết** của đúng các bài đó (tối đa 2 bài/bài học).
+   Vì vậy: giữ đúng tiêu đề `## Em đã học ở đâu?`, mỗi bài một link `id=` thật, chọn 2–4 bài **thật sự nền tảng** của hiện tượng
+   (không liệt kê rộng cho đủ — bài đọc xuất hiện sai chỗ làm HS bỏ qua). Không cần khai báo gì thêm ở frontmatter.
 8. **`## Nghĩ tiếp`** — 1–2 câu hỏi mở nối sang hiện tượng khác (giữ tò mò), có thể kèm "Gợi ý:" một dòng. Không đưa đáp án đầy đủ.
 9. **`## Nguồn`** — gạch đầu dòng: `[Tên nguồn — tên bài](https://…) (ngày)`. SGK ghi "SGK Vật lí 12 (KNTT), Bài …".
 

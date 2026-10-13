@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { BarChart3, Bug, ChevronRight, KeyRound, LogOut, QrCode } from "lucide-react";
+import { BarChart3, Bug, Lightbulb, ChevronRight, KeyRound, LogOut, QrCode } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -15,6 +15,7 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 const DailyReminderCard = dynamic(() => import("@/components/pwa/DailyReminderCard"), { ssr: false });
 
 const LINKS = [
+  { href: "/blog/#vat-ly-quanh-ta", label: "Vật lý quanh ta · đọc cho vui", Icon: Lightbulb },
   { href: "/lop-hoc/ket-qua", label: "Kết quả học tập chi tiết", Icon: BarChart3 },
   { href: "/quet-ma", label: "Quét mã QR vào hoạt động lớp", Icon: QrCode },
   { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },

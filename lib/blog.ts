@@ -77,6 +77,8 @@ export interface PhysicsAroundPost {
   href: string;
   cover: string | null;
   date: string;
+  /** id các bài học liên quan, lấy từ link trong mục "Em đã học ở đâu?" — để gắn bài đọc vào cuối bài học. */
+  lessonIds: number[];
 }
 
 const GRADE_TAG = /^(Lớp \d+|KHTN \d+)$/u;
@@ -103,6 +105,14 @@ function resolveCover(cover: string | undefined, markdown: string): string | nul
   return candidates.find((url) => publicFileExists(url)) ?? null;
 }
 
+/** id bài học trong mục "## Em đã học ở đâu?" (link /lop-hoc/bai?id=N). */
+export function relatedLessonIds(markdown: string): number[] {
+  const section = markdown.split(/^## /m).find((part) => part.startsWith("Em đã học ở đâu"));
+  if (!section) return [];
+  const ids = [...section.matchAll(/\/lop-hoc\/bai\?id=(\d+)/g)].map((m) => Number(m[1]));
+  return [...new Set(ids)];
+}
+
 /** Bài "Vật lý quanh ta" đã viết, theo thứ tự đăng — để trang chủ xoay tua. */
 export function getPhysicsAroundPosts(): PhysicsAroundPost[] {
   return getPostSlugs()
@@ -119,6 +129,7 @@ export function getPhysicsAroundPosts(): PhysicsAroundPost[] {
         href: `/blog/${slug}`,
         cover: resolveCover(fm.cover, content),
         date: fm.date,
+        lessonIds: relatedLessonIds(content),
       };
       return post;
     })

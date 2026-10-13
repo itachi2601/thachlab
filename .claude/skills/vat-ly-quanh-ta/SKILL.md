@@ -1,5 +1,44 @@
 ---
 name: vat-ly-quanh-ta
+description: "Soạn bài đọc \"Vật lý quanh ta\" cho blog (content/blog/*.md): giải thích hiện tượng đời sống bằng kiến thức Vật lí THCS/THPT, mở bằng \"Vì sao…?\", có hình, phép ước lượng, thí nghiệm an toàn, nguồn kiểm chứng. Dùng khi thầy nói \"viết bài vật lý quanh ta\", \"vì sao … (hiện tượng đời thường)\". KHÁC dang-tin-tuc-vat-ly và bài lý thuyết."
+---
+
+# Vật lý quanh ta — bài đọc kích thích tò mò
+
+**Đầu ra:** `content/blog/<slug>.md` (+ hình trong `public/images/blog/`). Trang `/blog/<slug>` là trang **tĩnh**
+(`lib/blog.ts`, `marked` GFM) → bài chỉ lên web sau **commit + `bash scripts/deploy.sh`**.
+
+**Mục đích không phải dạy đủ kiến thức mà là gây tò mò** (lý thuyết "khoảng trống thông tin" — Loewenstein 1994:
+tò mò sinh ra khi người đọc thấy mình *gần* biết mà chưa biết). Vì vậy bài luôn: đặt câu hỏi trước, cho đoán,
+trả lời từng tầng, và để lại một câu hỏi mở ở cuối.
+
+Mẫu bài cũ để tham khảo giọng: `content/blog/vi-sao-co-bap-co-lai-khi-nang-ta.md` (thiếu mục Nguồn, Tự thử, liên kết bài
+học — bài mới phải có đủ).
+
+## Quy trình
+
+1. **Chốt đề tài.** Thầy đưa hiện tượng → dùng luôn. Thầy chỉ nói "viết bài" → chọn 3 ứng viên, ưu tiên:
+   (a) học sinh **đã tự gặp** (bếp, điện thoại, xe máy, mưa, thể thao, mạng xã hội);
+   (b) giải thích được bằng kiến thức trong chương trình — tra `references/kho-chu-de.md`;
+   (c) chương đang dạy (xem `docs/STATE.md` / hỏi 1 câu nếu không rõ);
+   (d) chưa viết — `python3 .claude/skills/vat-ly-quanh-ta/scripts/kiem-bai.py --da-viet`.
+   Hai nguồn đề tài: **Hiện tượng** ("Vì sao nồi áp suất nấu nhanh?") hoặc **Tin/nghiên cứu mới** có ứng dụng gần gũi
+   (pin, vật liệu, y học, giao thông, thời tiết, vũ trụ nhìn thấy được). Đưa 3 ứng viên dạng 1 dòng/đề tài, thầy chọn — hoặc tự
+   chọn ứng viên đầu nếu thầy đã bảo "tự chọn".
+2. **Tìm & kiểm chứng.** `WebSearch`/`WebFetch` (nạp qua ToolSearch). Nguồn gốc ưu tiên: bài báo/thông cáo của ĐH–viện
+   (Nature, Science, APS Physics, phys.org đối chiếu bài gốc, NASA, ESA, CERN), sách giáo khoa, trang cơ quan chính thức
+   (NCHMF cho thời tiết, Bộ Y tế cho y học). Mỗi số liệu: ≥ 2 nguồn hoặc 1 nguồn gốc. Preprint / "phá vỡ định luật" /
+   "năng lượng miễn phí" → bỏ hoặc nói rõ là kết quả sơ bộ. Ghi lại link cụ thể + ngày.
+3. **Rút ra chuỗi vật lí** trước khi viết (chỉ để mình dùng): hiện tượng → đại lượng nào thay đổi → định luật/công thức nào
+   → bài nào trên thachlab (`kiem-bai.py --tim <từ khoá>` trả id bài + link). Nếu giải thích đúng cần kiến thức ngoài chương
+   trình, nói gọn đúng mức ("ở đại học em sẽ học…"), **không đơn giản hoá đến mức sai** (vd không nói "nước nóng nhẹ hơn nên
+   nổi lên" khi đúng là "khối lượng riêng nhỏ hơn").
+4. **Viết** theo khung `references/khung-bai.md` (tiêu đề "Vì sao…?" → tình huống → Đoán thử → giải thích từng tầng →
+   Ước lượng bằng số → Tự thử ở nhà → Hiểu lầm hay gặp → Em đã học ở đâu → Nghĩ tiếp → Nguồn). Quy tắc cứng:
+   - 700–1200 chữ (đọc 4–6 phút). Đoạn ≤ 4 câu, câu ngắn, thuật ngữ mới giải nghĩa ngay lần đầu (`docs/QUY-TAC-THIET-KE.md`).
+   - Gọi người đọc là "em"/"chúng ta"; **không tự xưng "thầy"** trong thân bài (frontmatter `author: "Thầy Thạch"` vẫn giữ).
+   - **Blog không có KaTeX**: không dùng `$…---
+name: vat-ly-quanh-ta
 description: Soạn bài đọc "Vật lý quanh ta" cho blog thachlab (content/blog/*.md, category "Vật lý quanh ta") — giải thích một hiện tượng đời sống, hoặc một tin tức/nghiên cứu mới có ứng dụng gần gũi, bằng đúng kiến thức Vật lí THCS (KHTN 6–9) và THPT (10–12), để học sinh đọc cho tò mò, thích môn Vật lí. Mỗi bài mở bằng câu hỏi "Vì sao…?", cho em đoán trước, giải thích từng tầng, có ít nhất 2 hình minh hoạ (cảnh đời sống + sơ đồ vật lí), một phép ước lượng bằng số, một thí nghiệm an toàn tự làm ở nhà, chỉ ra bài học trên thachlab liên quan và có nguồn kiểm chứng. Dùng khi thầy nói "viết bài vật lý quanh ta", "giải thích hiện tượng X cho học sinh", "vì sao … (hiện tượng đời thường)", "tìm nghiên cứu vật lý gần gũi đời sống", "làm bài đọc thêm kích thích tò mò", "lên lịch bài vật lý quanh ta hằng tuần". KHÁC dang-tin-tuc-vat-ly (tin ngắn 80–200 chữ lên /tin-tuc, bảng posts) và soan-bai-ly-thuyet-tuong-tac (bài học chính khoá). Tìm + soạn + kiểm chạy được trên cloud; deploy phải chạy trên Mac.
 ---
 
@@ -37,7 +76,10 @@ học — bài mới phải có đủ).
    Ước lượng bằng số → Tự thử ở nhà → Hiểu lầm hay gặp → Em đã học ở đâu → Nghĩ tiếp → Nguồn). Quy tắc cứng:
    - 700–1200 chữ (đọc 4–6 phút). Đoạn ≤ 4 câu, câu ngắn, thuật ngữ mới giải nghĩa ngay lần đầu (`docs/QUY-TAC-THIET-KE.md`).
    - Gọi người đọc là "em"/"chúng ta"; **không tự xưng "thầy"** trong thân bài (frontmatter `author: "Thầy Thạch"` vẫn giữ).
-   - **Blog không có KaTeX**: không dùng `$…$`. Công thức viết chữ + Unicode: `p = F / S`, `v²`, `½·m·v²`, `Δt`, `≈`, `×10³`.
+   . Công thức viết chữ + Unicode: `p = F / S`, `v²`, `½·m·v²`, `Δt`, `≈`, `×10³`.
+     Chỉ số dưới (subscript) bắt buộc dùng thẻ HTML `<sub>` (ví dụ: `v<sub>P</sub>`, `v<sub>S</sub>`, `t<sub>P</sub>`, `t<sub>S</sub>`, `(v<sub>P</sub> > v<sub>S</sub>)`, `I<sub>thân</sub>`).
+     TUYỆT ĐỐI KHÔNG viết dạng code thô với dấu gạch dưới như `v_P`, `v_S`, `(v_P > v_S)` vì vừa hiển thị xấu, vừa bị parser Markdown ghép đôi `_` thành in nghiêng (`<em>...</em>`) làm lỗi hiển thị text/công thức.
+     Chỉ số trên nếu không có sẵn ký tự Unicode thì dùng thẻ HTML `<sup>`.
      Mỗi đại lượng kèm đơn vị; số thập phân dùng dấu phẩy kiểu Việt (2,5 m/s).
    - Viết **bằng lời mình**; tối đa một trích dẫn < 15 chữ, có ngoặc kép + nguồn. Không chép hình của nguồn.
    - Thí nghiệm ở nhà: chỉ đồ an toàn (nước, chai nhựa, bóng bay, đồng xu, đèn pin, điện thoại). **Cấm**: lửa trần, điện lưới,
@@ -53,6 +95,9 @@ học — bài mới phải có đủ).
    - Chú thích in nghiêng ngay dưới hình, mỗi ý một dòng. Chữ trong hình đọc được ở 375 px (cỡ ≥ 14 px khi hiển thị).
    - Xem hình đã render (Chrome headless hoặc giao subagent đọc ảnh) trước khi báo xong — sai nhãn/chiều mũi tên là lỗi vật lí.
    - Ảnh `cover` (chia sẻ mạng xã hội) là `.png`/`.jpg` ≤ 150 KB, có thể dùng lại hình 1; không có thì bỏ trường `cover`.
+   **Gắn vào bài học (tự động, từ 13/10/2026):** mục `## Em đã học ở đâu?` quyết định bài đọc hiện ở đâu — mỗi link
+   `/lop-hoc/bai?id=N` làm khung "Đọc thêm" xuất hiện cuối tab Lý thuyết bài N (`components/lessons/AroundReadMore.tsx`).
+   Chọn id bằng `kiem-bai.py --tim`; sai id = bài đọc không hiện ở đâu cả.
 6. **Kiểm máy:** `python3 .claude/skills/vat-ly-quanh-ta/scripts/kiem-bai.py content/blog/<slug>.md` — frontmatter, độ dài,
    không `$`, không tự xưng "thầy", đủ mục bắt buộc, link bài thachlab trỏ đúng id có thật, đủ ≥ 2 hình, hình tồn tại + đúng dung lượng,
    có ≥ 1 link nguồn https. Sửa tới khi hết ✗.
@@ -82,3 +127,8 @@ Thầy muốn mỗi tuần một bài: dùng skill `schedule`, tác vụ chạy 
 - 2026-10-11 · Phản biện sư phạm HS THPT & Bổ sung hình ảnh chuẩn bản quyền:
   + Nhận thức học sinh: HS Lớp 10 bỡ ngỡ với mômen quán tính (chưa có trong SGK mới) → thêm ví dụ bắc cầu đời thường (cầm gậy ở giữa xoay nhẹ vs cầm ở đầu mút); HS KHTN 9 & 12 khó kết nối nạp pin với lực hãm xe → nhấn mạnh tính đối xứng hai mặt của cảm ứng điện từ và định luật Lenz (dòng nạp pin rút động năng xe và sinh lực từ ghì xe lại); HS Lớp 11 dễ nhầm quả cầu TMD là đối trọng tĩnh → phân biệt rõ quả cầu dao động lệch pha động và 8 piston dầu dập tắt dao động.
   + Hình ảnh minh họa & bản quyền: Không dùng ảnh ngoài mạng. Tự vẽ 100% vector SVG nâng tổng số hình lên 3 hình/bài (thêm hình thí nghiệm tại nhà ghế xoay chai nước, mô-tơ thắp sáng LED, và đồ thị so sánh dao động tắt dần của đỉnh tháp có/không có TMD). Text trong SVG dùng font hệ thống sans-serif, kích thước ≥ 14px, mã hóa UTF-8 tiếng Việt chuẩn, kích thước nhỏ ~4–5 KB.
+- 2026-10-13 · Quy tắc hiển thị chỉ số dưới (subscript) trong bài viết blog: Blog dùng Markdown thuần (marked), không hỗ trợ KaTeX. Tuyệt đối không viết gạch dưới trần (`v_P`, `v_S`, `t_P`, `(v_P > v_S)`) vì gây hiển thị thô và nguy cơ bị parser Markdown bắt cặp `_` thành in nghiêng (`<em>...</em>`). Bắt buộc dùng thẻ HTML `<sub>` (`v<sub>P</sub>`, `v<sub>S</sub>`, `t<sub>P</sub>`, `t<sub>S</sub>`, `(v<sub>P</sub> > v<sub>S</sub>)`). Chỉ số trên không có Unicode thì dùng `<sup>`.
+- 2026-10-13 · HS phản hồi: bài Vật lý quanh ta "quá nhỏ/biến mất". Đã làm: dải trên hero thành thẻ tĩnh, lưới 3 bài ở trang chủ,
+  thẻ "Góc tò mò" ở `/tai-khoan`, mục menu "Vật lý quanh ta", và khung "Đọc thêm" cuối tab Lý thuyết lấy id từ mục
+  "Em đã học ở đâu?" → mọi bài mới PHẢI có mục này với id thật (không cần trường frontmatter riêng). Bài đọc gắn đúng bài học
+  hiệu quả hơn mọi lối vào chung chung.
