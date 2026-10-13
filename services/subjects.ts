@@ -24,3 +24,11 @@ export const HOMEROOM_SUBJECT_CODE = "gddd-ptnn";
 export function getSubject(code: string): SubjectDefinition {
   return SUBJECTS.find((item) => item.code === code) ?? SUBJECTS[0];
 }
+
+/** Trang học tập của từng môn CTTC (nút "Học tiếp" ở trang chủ, hub CTTC). Môn chưa có trang riêng → /tai-khoan. */
+export function learningHrefOf(subjectCode: string): string {
+  if (subjectCode === "cnc") return "/lop-hoc/cnc";
+  if (subjectCode === "tien-phay") return "/lop-hoc/tien-phay";
+  if (subjectCode === "avcn") return "/lop-hoc/avcn";
+  return "/tai-khoan";
+}
