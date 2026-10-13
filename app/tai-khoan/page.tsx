@@ -1,11 +1,12 @@
 "use client";
+import StudentCodeField from "@/components/dashboard/StudentCodeField";
 import { useCallback,useEffect,useRef,useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import Link from "next/link";
-import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollments,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import { ArrowRight, Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollments,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import CttcStreakCard from "@/components/rank/CttcStreakCard";import {getSubject,HOMEROOM_SUBJECT_CODE,learningHrefOf} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 const DailyReminderCard=dynamic(()=>import("@/components/pwa/DailyReminderCard"),{ssr:false});
 
@@ -212,7 +213,7 @@ function Account(){
     if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;
     // Lớp chủ nhiệm: xem lại nội dung sinh hoạt tuần, điểm danh của mình, và điểm danh hộ cả lớp nếu là lớp trưởng.
     if(enrollment.subjectCode===HOMEROOM_SUBJECT_CODE)return <HomeroomStudentHome courseId={enrollment.course.id} courseName={enrollment.course.name} schoolYear={enrollment.course.school_year} studentId={session.user.id}/>;
-    return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
+    return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><div className="mb-5"><StudentCodeField studentId={session.user.id}/></div>{learningHrefOf(enrollment.subjectCode)!=="/tai-khoan"&&<Link href={learningHrefOf(enrollment.subjectCode)} className="mb-5 flex min-h-14 items-center justify-between rounded-2xl bg-primary px-5 py-3 font-semibold text-white">Vào bài học<ArrowRight size={18}/></Link>}<CttcStreakCard className="mb-5"/><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
   }
 
   // Hệ THPT (profiles.track='thpt') — chỉ nhìn vào user_classes, bỏ qua mọi course_enrollments cũ/lẫn.
@@ -235,7 +236,7 @@ function Account(){
     const subject=getSubject(enrollment.subjectCode);
     if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;
     if(enrollment.subjectCode===HOMEROOM_SUBJECT_CODE)return <HomeroomStudentHome courseId={enrollment.course.id} courseName={enrollment.course.name} schoolYear={enrollment.course.school_year} studentId={session.user.id}/>;
-    return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
+    return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><div className="mb-5"><StudentCodeField studentId={session.user.id}/></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
   }
 
   if(classRequest?.status==="active")return <ThptStudentHome profile={profile} email={session.user.email} studentId={session.user.id} classId={classRequest.classId} className={classRequest.className} onSignOut={async()=>{await signOut();router.push("/")}}/>;
