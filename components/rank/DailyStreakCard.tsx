@@ -15,6 +15,7 @@ export default function DailyStreakCard({
   status,
   suggestion,
   days,
+  hideRp = false,
   className = "",
 }: {
   status: RankStatus | null | undefined;
@@ -22,6 +23,8 @@ export default function DailyStreakCard({
   suggestion?: string | null;
   /** 7 ngày gần nhất; null/undefined (RPC chưa chạy) → không vẽ dải. */
   days?: StreakDay[] | null;
+  /** Sinh viên CTTC: giữ chuỗi nhưng không nhắc điểm RP/hạng. */
+  hideRp?: boolean;
   className?: string;
 }) {
   if (status === undefined) {
@@ -49,8 +52,8 @@ export default function DailyStreakCard({
         </p>
         <p className="mt-0.5 truncate text-sm text-muted">
           {today_done
-            ? `+${rp} RP hôm nay — quay lại ngày mai để chuỗi không gãy.`
-            : suggestion || `Làm 1 bài đạt từ ${String(min_score).replace(".", ",")} điểm hôm nay để giữ chuỗi (+${rp} RP).`}
+            ? (hideRp ? "Quay lại ngày mai để chuỗi không gãy." : `+${rp} RP hôm nay — quay lại ngày mai để chuỗi không gãy.`)
+            : suggestion || `Làm 1 bài đạt từ ${String(min_score).replace(".", ",")} điểm hôm nay để giữ chuỗi${hideRp ? "" : ` (+${rp} RP)`}.`}
         </p>
         {freeze_per_week > 0 && streak > 0 && (
           <p className="mt-1 flex items-center gap-1 text-xs text-muted">
