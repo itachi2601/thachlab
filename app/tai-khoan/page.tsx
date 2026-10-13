@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import Link from "next/link";
 import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollments,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 const DailyReminderCard=dynamic(()=>import("@/components/pwa/DailyReminderCard"),{ssr:false});
 
-type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
+type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollments>>[number];
 
 function StaffAccountCard(){
   const router=useRouter();const{session,profile,signOut}=useAuth();
@@ -121,6 +121,24 @@ function StudentTrackChooser({onSubmitted}:{onSubmitted:()=>void}){
   </section>;
 }
 
+function CourseSwitcher({enrollments,currentId,onPick}:{enrollments:Enrollment[];currentId:number|null;onPick:(id:number)=>void}){
+  const [code,setCode]=useState("");const [busy,setBusy]=useState(false);const [message,setMessage]=useState("");
+  async function submit(event:React.FormEvent){event.preventDefault();if(!code.trim())return;setBusy(true);setMessage("");try{const r=await requestEnrollment(code);try{window.localStorage.setItem("tl-tai-khoan-lop",String(r.course_id));}catch{}window.location.reload();}catch(error){setMessage(error instanceof Error?error.message:"Mã khóa không hợp lệ.");setBusy(false);}}
+  return <section className="mb-5 rounded-2xl border border-line bg-panel p-4">
+    {enrollments.length>1&&<div className="flex flex-wrap gap-2" role="tablist" aria-label="Lớp đang học">
+      {enrollments.map(e=><button key={e.course.id} type="button" role="tab" aria-selected={e.course.id===currentId} onClick={()=>onPick(e.course.id)} className={`min-h-11 rounded-xl border px-4 py-2 text-left text-sm font-semibold ${e.course.id===currentId?"border-primary bg-primary-soft text-ink":"border-line text-ink hover:border-line-strong"}`}>{e.subjectName}<span className="block text-xs font-normal">{e.course.class_label}{e.status==="pending"?" · chờ duyệt":""}</span></button>)}
+    </div>}
+    <details className={enrollments.length>1?"mt-3":""}>
+      <summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-ink">+ Nhập mã để học thêm lớp khác</summary>
+      <form onSubmit={submit} className="flex flex-col gap-2 pt-2 sm:flex-row">
+        <input value={code} onChange={(e)=>setCode(e.target.value.toUpperCase())} placeholder="Ví dụ AVCN-CK23A" className="min-h-11 min-w-0 flex-1 rounded-xl border border-line-strong bg-surface-2 px-4 py-2 font-mono uppercase text-ink"/>
+        <button disabled={busy} className="min-h-11 rounded-xl bg-orange-600 px-5 py-2 text-sm font-bold text-white disabled:opacity-50">{busy?"Đang gửi…":"Gửi yêu cầu"}</button>
+      </form>
+      {message&&<p className="pt-2 text-sm text-amber-200">{message}</p>}
+    </details>
+  </section>;
+}
+
 function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()=>void}){
   if(request.status==="pending")return <TrackStatusCard track="thpt" icon={Clock3} title="Đang chờ giáo viên duyệt" desc={<>Yêu cầu vào lớp <strong className="text-ink">{request.className}</strong> đã được gửi.</>} action={<button onClick={onRetry} className="mt-5 rounded-full border border-line px-5 py-2 text-sm text-ink">Kiểm tra lại</button>}/>;
   if(request.status==="rejected")return <section className="rounded-3xl border border-dashed border-red-500/20 bg-panel p-10 text-center">
@@ -134,17 +152,28 @@ function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()
 
 function Account(){
   const router=useRouter();const{session,profile,signOut}=useAuth();
-  const [enrollment,setEnrollment]=useState<Enrollment|null|undefined>(undefined);
+  const [enrollments,setEnrollments]=useState<Enrollment[]|undefined>(undefined);
+  const [pickedCourseId,setPickedCourseId]=useState<number|null>(null);
+  useEffect(()=>{try{const v=Number(window.localStorage.getItem("tl-tai-khoan-lop"));if(v>0)setPickedCourseId(v);}catch{}},[]);
+  const enrollment:Enrollment|null|undefined=enrollments===undefined?undefined:(enrollments.find(e=>e.course.id===pickedCourseId)??enrollments[0]??null);
+  const pickCourse=(id:number)=>{setPickedCourseId(id);try{window.localStorage.setItem("tl-tai-khoan-lop",String(id));}catch{}};
   const [classRequest,setClassRequest]=useState<MyClassRequest|null|undefined>(undefined);
   const [records,setRecords]=useState<CncLearningRecord[]>([]);
   const isStaff=profile?.role==="admin"||profile?.role==="instructor";
   const isParent=profile?.role==="parent";
   const reload=useCallback(()=>{
     if(!session||isStaff||isParent)return;
-    fetchMyEnrollment(session.user.id).then(async result=>{const own=result?.status==="active"?await fetchCncLearningRecords(result.course.id,session.user.id).catch(()=>[]):[];return{result,own};}).then(({result,own})=>{setEnrollment(result);setRecords(own);}).catch(()=>setEnrollment(null));
+    fetchMyEnrollments(session.user.id).then(setEnrollments).catch(()=>setEnrollments([]));
     fetchMyClassRequest(session.user.id).then(setClassRequest).catch(()=>setClassRequest(null));
   },[session,isStaff,isParent]);
   useEffect(()=>{reload();},[reload]);
+  const activeCourseId=enrollment?.status==="active"?enrollment.course.id:null;
+  useEffect(()=>{
+    if(!session||activeCourseId===null){setRecords([]);return;}
+    let cancelled=false;
+    fetchCncLearningRecords(activeCourseId,session.user.id).catch(()=>[]).then(own=>{if(!cancelled)setRecords(own);});
+    return()=>{cancelled=true;};
+  },[session,activeCourseId]);
 
   if(!session)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Đang tải không gian học tập…</p>;
   const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name} loginKey={v==="welcome_back"?session.user.last_sign_in_at:undefined}/>;
@@ -204,7 +233,8 @@ function Account(){
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
   })();
-  return <>{variant==="thpt_active"?null:welcome(variant)}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
+  const switcher=track==="cttc"&&enrollments&&enrollments.length>0?<CourseSwitcher enrollments={enrollments} currentId={enrollment?.course.id??null} onPick={pickCourse}/>:null;
+  return <>{variant==="thpt_active"?null:welcome(variant)}{switcher}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer variant="app"/></>}
