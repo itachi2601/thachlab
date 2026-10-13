@@ -39,6 +39,12 @@ export default function RegisterPage() {
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [classId, setClassId] = useState("");
   const [error, setError] = useState("");
+  const [nextQuery, setNextQuery] = useState("");
+
+  useEffect(() => {
+    const next = readInternalNext();
+    if (next) setNextQuery(`?next=${encodeURIComponent(next)}`);
+  }, []);
 
   useEffect(() => {
     fetchClasses().then(setClasses).catch(() => setClasses([]));
@@ -173,10 +179,15 @@ export default function RegisterPage() {
       const needsApproval = APPROVAL_CLASS_SLUGS.includes(classes.find((item) => String(item.id) === classId)?.slug ?? "");
 
       const next = readInternalNext();
+      if (authData.session && next && !needsApproval) {
+        toast("success", "Đăng ký thành công! Đang vào lớp…");
+        router.push(next);
+        return;
+      }
       toast(
         "success",
         next
-          ? "Đăng ký thành công. Đăng nhập để làm tiếp đề."
+          ? "Đăng ký thành công. Đăng nhập để vào học tiếp."
           : needsApproval
             ? "Đăng ký thành công! Yêu cầu vào lớp Học sinh giỏi & Chuyên đang chờ thầy duyệt."
             : "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.",
@@ -425,7 +436,7 @@ export default function RegisterPage() {
 
           <p className="text-center text-sm text-slate-400">
             Đã có tài khoản?{" "}
-            <Link href="/dang-nhap" className="text-primary hover:underline">
+            <Link href={`/dang-nhap${nextQuery}`} className="text-primary hover:underline">
               Đăng nhập
             </Link>
           </p>

@@ -19,6 +19,13 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [nextQuery, setNextQuery] = useState("");
+  useEffect(() => {
+    const next = new URLSearchParams(window.location.search).get("next");
+    if (!next || !/^\/(?!\/)/.test(next)) return;
+    const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1];
+    setNextQuery(`?next=${encodeURIComponent(next)}${lop ? `&lop=${lop}` : ""}`);
+  }, []);
   const [busy, setBusy] = useState(false);
 
   // Đã đăng nhập rồi (vd bấm Back, hoặc mở lại tab cũ) -> đưa thẳng vào đúng không gian, không hiện lại form.
@@ -202,7 +209,7 @@ export default function LoginPage() {
             {userType === "student" && (
               <p className="mt-4 text-center text-sm text-muted">
                 Chưa có tài khoản?{" "}
-                <Link href="/dang-ky" className="text-primary hover:underline">
+                <Link href={`/dang-ky${nextQuery}`} className="text-primary hover:underline">
                   Đăng ký ngay
                 </Link>
               </p>
