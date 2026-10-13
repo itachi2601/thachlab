@@ -40,6 +40,7 @@ const CourseRosterPanel = lazyTab(() => import("@/components/dashboard/CourseRos
 const HomeroomAttendancePanel = lazyTab(() => import("@/components/dashboard/HomeroomAttendancePanel"));
 const HomeroomGradebook = lazyTab(() => import("@/components/dashboard/HomeroomGradebook"));
 const HomeroomShcnPanel = lazyTab(() => import("@/components/dashboard/HomeroomShcnPanel"));
+const TeacherAvcnProgress = lazyTab(() => import("@/components/dashboard/TeacherAvcnProgress"));
 const CncMillingLiveMonitor = lazyTab(() => import("@/components/admin/CncMillingLiveMonitor"), false);
 import { SUBJECTS, getSubject, HOMEROOM_SUBJECT_CODE } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -99,6 +100,20 @@ export default function TeacherCourseDashboard() {
   }, []);
   const student = students[activeStudent] ?? null;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
+  // Bộ lọc danh sách lớp: tìm theo tên/mã, năm học, trạng thái.
+  const [courseQuery, setCourseQuery] = useState("");
+  const [courseYear, setCourseYear] = useState("");
+  const [courseStatus, setCourseStatus] = useState<"all" | "open" | "completed" | "archived">("all");
+  const courseYears = Array.from(new Set(courses.map((course) => course.school_year).filter(Boolean)));
+  const filteredCourses = courses.filter((course) => {
+    const query = courseQuery.trim().toLowerCase();
+    if (query && !`${course.class_label} ${course.name} ${course.join_code}`.toLowerCase().includes(query)) return false;
+    if (courseYear && course.school_year !== courseYear) return false;
+    if (courseStatus === "open") return course.status === "active" || course.status === "draft";
+    if (courseStatus !== "all") return course.status === courseStatus;
+    return true;
+  });
+  const courseFiltered = Boolean(courseQuery.trim() || courseYear || courseStatus !== "all");
   const subject = getSubject(subjectCode);
   const isHomeroom = subjectCode === HOMEROOM_SUBJECT_CODE;
 
@@ -114,6 +129,12 @@ export default function TeacherCourseDashboard() {
   };
 
   const [coursesNonce, setCoursesNonce] = useState(0);
+  // Lớp đang chọn bị bộ lọc loại ra thì chuyển sang lớp đầu tiên còn lại.
+  useEffect(() => {
+    if (!courses.length || filteredCourses.some((course) => course.id === selectedCourseId)) return;
+    setStudents([]); setActiveStudent(0);
+    setSelectedCourseId(filteredCourses[0]?.id ?? null);
+  }, [courses, courseQuery, courseYear, courseStatus]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     let cancelled = false;
     fetchCncCourses(subjectCode)
@@ -165,17 +186,31 @@ export default function TeacherCourseDashboard() {
     <section className="grid gap-3 rounded-2xl border border-line bg-panel p-4 sm:grid-cols-2 sm:p-5">
       <label className="block">
         <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><GraduationCap size={14}/> Môn học</span>
-        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
+        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setCourseQuery("");setCourseYear("");setCourseStatus("all");setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
           {availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}
         </select>
       </label>
       <label className="block">
-        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courses.length} lớp`}</span>
+        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courseFiltered ? `${filteredCourses.length}/${courses.length}` : courses.length} lớp`}</span>
         <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
-          <option value="" disabled>{courses.length ? "Chọn lớp đang dạy" : "Chưa có lớp nào"}</option>
-          {courses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
+          <option value="" disabled>{courses.length ? (filteredCourses.length ? "Chọn lớp đang dạy" : "Không có lớp khớp bộ lọc") : "Chưa có lớp nào"}</option>
+          {filteredCourses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
         </select>
       </label>
+      {courses.length>1&&<div className="grid gap-2 sm:col-span-2 sm:grid-cols-[1fr_auto_auto_auto]">
+        <input type="search" aria-label="Tìm lớp" value={courseQuery} onChange={(event)=>setCourseQuery(event.target.value)} placeholder="Tìm theo tên lớp hoặc mã tham gia" className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-2.5 text-sm text-ink"/>
+        <select aria-label="Lọc theo năm học" value={courseYear} onChange={(event)=>setCourseYear(event.target.value)} className="rounded-xl border border-line-strong bg-panel-deep px-3 py-2.5 text-sm font-semibold text-ink">
+          <option value="">Mọi năm học</option>
+          {courseYears.map((year)=><option key={year} value={year}>{year}</option>)}
+        </select>
+        <select aria-label="Lọc theo trạng thái" value={courseStatus} onChange={(event)=>setCourseStatus(event.target.value as typeof courseStatus)} className="rounded-xl border border-line-strong bg-panel-deep px-3 py-2.5 text-sm font-semibold text-ink">
+          <option value="all">Mọi trạng thái</option>
+          <option value="open">Đang dạy</option>
+          <option value="completed">Đã kết thúc</option>
+          <option value="archived">Lưu trữ</option>
+        </select>
+        <button type="button" disabled={!courseFiltered} onClick={()=>{setCourseQuery("");setCourseYear("");setCourseStatus("all");}} className="rounded-xl border border-line-strong px-4 py-2.5 text-sm font-bold text-muted hover:text-primary disabled:opacity-40">Xoá lọc</button>
+      </div>}
     </section>
 
     <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
@@ -186,7 +221,7 @@ export default function TeacherCourseDashboard() {
     {activeTab==="shcn"&&selectedCourseId&&<HomeroomShcnPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
     {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+    {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
 
     {activeTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
 
@@ -195,7 +230,7 @@ export default function TeacherCourseDashboard() {
       {gradeView==="process"
         ? <TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={openProfile}/>
         : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
-    </div>:<CurriculumPending subjectLabel={subject.label}/>)}
+    </div>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
 
     {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<NoCourseYet subjectLabel={subject.label} hasCourses={courses.length>0} isAdmin={isAdmin} subjectCode={subjectCode} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>)}
 
