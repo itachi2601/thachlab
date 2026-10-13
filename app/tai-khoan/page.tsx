@@ -1,5 +1,5 @@
 "use client";
-import { useCallback,useEffect,useState } from "react";
+import { useCallback,useEffect,useRef,useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
@@ -167,6 +167,15 @@ function Account(){
     fetchMyClassRequest(session.user.id).then(setClassRequest).catch(()=>setClassRequest(null));
   },[session,isStaff,isParent]);
   useEffect(()=>{reload();},[reload]);
+  // Link mời vào lớp học phần: /tai-khoan?ma=AVCN-CK23A → tự gửi yêu cầu bằng mã đó (một lần), rồi gỡ ?ma khỏi địa chỉ.
+  const inviteDone=useRef(false);
+  useEffect(()=>{
+    if(!session||isStaff||isParent||enrollments===undefined||inviteDone.current)return;
+    const ma=new URLSearchParams(window.location.search).get("ma")?.trim().toUpperCase();
+    if(!ma)return;
+    inviteDone.current=true;
+    requestEnrollment(ma).then(r=>{try{window.localStorage.setItem("tl-tai-khoan-lop",String(r.course_id));}catch{}}).catch(()=>undefined).finally(()=>{window.history.replaceState(null,"",window.location.pathname);reload();});
+  },[session,isStaff,isParent,enrollments,reload]);
   const activeCourseId=enrollment?.status==="active"?enrollment.course.id:null;
   useEffect(()=>{
     if(!session||activeCourseId===null){setRecords([]);return;}

@@ -23,7 +23,7 @@ export default function LoginPage() {
   useEffect(() => {
     const next = new URLSearchParams(window.location.search).get("next");
     if (!next || !/^\/(?!\/)/.test(next)) return;
-    const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1];
+    const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1] ?? (/[?&]ma=AVCN-/i.test(next) ? "avcn" : undefined);
     setNextQuery(`?next=${encodeURIComponent(next)}${lop ? `&lop=${lop}` : ""}`);
   }, []);
   const [busy, setBusy] = useState(false);
