@@ -9,6 +9,8 @@ import {
   nextExitAttemptAt,
   WINDOW_QUIZ_PASS_PCT,
   WINDOW_QUIZ_QUESTION_COUNT,
+  registrationOpen,
+  REGISTER_DEADLINE_HOURS,
   type ExitWindow,
   type NeedStatus,
   type TutoringNeed,
@@ -153,6 +155,7 @@ export default function TutoringSection({
                 const registered = myRegistrations.has(slot.id);
                 const full = slot.registeredCount >= slot.capacity && !registered;
                 const waiting = myWaitlist.get(slot.id);
+                const closed = !registered && !waiting && !registrationOpen(slot, nowMs);
                 return (
                   <div key={slot.id} className="rounded-xl border border-line bg-surface-2 p-3">
                     <div className="flex flex-wrap items-center gap-2">
@@ -178,16 +181,16 @@ export default function TutoringSection({
                     <button
                       type="button"
                       onClick={() => onToggleSlot(slot)}
-                      disabled={busySlotId === slot.id}
+                      disabled={busySlotId === slot.id || closed}
                       className={`mt-2 min-h-11 w-full rounded-lg border py-2 text-sm font-bold disabled:opacity-40 ${
-                        registered || waiting
+                        closed ? "border-line text-muted" : registered || waiting
                           ? "border-line-strong text-muted"
                           : full
                             ? "border-warn/40 text-warn"
                             : "border-primary text-primary hover:bg-primary-soft"
                       }`}
                     >
-                      {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : "Đăng ký"}
+                      {closed ? `Đã chốt đăng ký (trước giờ học ${REGISTER_DEADLINE_HOURS} giờ)` : registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : "Đăng ký"}
                     </button>
                   </div>
                 );

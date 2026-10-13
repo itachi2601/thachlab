@@ -113,6 +113,7 @@ drop trigger if exists trg_tutoring_exit_window_slot_guard on public.tutoring_ex
 create trigger trg_tutoring_exit_window_slot_guard before insert on public.tutoring_exit_windows
   for each row execute function public.tutoring_exit_window_slot_guard();
 
+-- Lưu ý: cột attended/attended_at nằm ở file 20261014100000 (trigger đăng ký cần). Bài kiểm tra mở KHÔNG kèm slot_id (phiếu/cửa sổ kiểu cũ) không bị ràng điểm danh — cố ý, để dữ liệu cũ chạy.
 -- Bảng theo dõi cho thầy: em × chủ đề đã đăng ký trong N ngày gần đây.
 create or replace function public.tutoring_followup_report(p_class_id bigint, p_days int default 30)
 returns table (
@@ -147,9 +148,17 @@ begin
     from public.tutoring_exit_attempts e
     where e.student_id = r.student_id and e.topic_id = t.id
       and e.created_at >= (s.work_date + s.start_time) at time zone 'Asia/Ho_Chi_Minh'
+      -- chỉ tới buổi kế tiếp em đăng ký cùng chủ đề, để một bài kiểm tra không tính cho hai buổi
+      and e.created_at < coalesce((
+        select min((s2.work_date + s2.start_time) at time zone 'Asia/Ho_Chi_Minh')
+        from public.tutoring_registrations r2
+        join public.tutoring_slots s2 on s2.id = r2.slot_id and s2.status = 'open'
+        where r2.student_id = r.student_id and t.id = any (r2.topic_ids)
+          and (s2.work_date + s2.start_time) > (s.work_date + s.start_time)
+      ), 'infinity'::timestamptz)
   ) x on true
   where s.class_id = p_class_id and s.status = 'open'
-    and s.work_date >= current_date - p_days
+    and s.work_date >= (now() at time zone 'Asia/Ho_Chi_Minh')::date - p_days
   order by s.work_date desc, s.start_time desc, p.full_name;
 end; $$;
 revoke all on function public.tutoring_followup_report(bigint, int) from public, anon;

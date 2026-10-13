@@ -13,6 +13,10 @@
 
 alter table public.tutoring_registrations add column if not exists topic_ids bigint[] not null default '{}';
 alter table public.tutoring_waitlist add column if not exists topic_ids bigint[] not null default '{}';
+-- Điểm danh (trợ giảng đặt qua RPC ở file 20261014110000); khai báo ở đây để trigger bên dưới luôn thấy cột.
+alter table public.tutoring_registrations
+  add column if not exists attended boolean,
+  add column if not exists attended_at timestamptz;
 
 -- Số câu trong ngân hàng cho một chủ đề cấp bài (tính cả các yêu cầu cần đạt con), chưa lưu trữ.
 create or replace function public.tutoring_topic_question_count(p_topic bigint)
@@ -46,10 +50,9 @@ begin
     raise exception 'Không có quyền xem chủ đề của lớp này.';
   end if;
   return query
-    select t.id, t.name, t.lesson_id,
-           public.tutoring_topic_question_count(t.id),
-           public.tutoring_topic_question_count(t.id) >= public.tutoring_topic_min_questions()
+    select t.id, t.name, t.lesson_id, c.n, c.n >= public.tutoring_topic_min_questions()
     from public.question_topics t
+    cross join lateral (select public.tutoring_topic_question_count(t.id) as n) c
     where t.parent_id is null
       and t.chapter_id in (select cc.chapter_id from public.chapter_classes cc where cc.class_id = p_class_id)
     order by t.sort_order, t.id;
@@ -58,7 +61,7 @@ revoke all on function public.tutoring_ready_topics(bigint) from public, anon;
 grant execute on function public.tutoring_ready_topics(bigint) to authenticated;
 
 -- Kiểm chủ đề đăng ký: 1–3 chủ đề khác nhau, cấp bài, thuộc chương của lớp, đủ câu bài kiểm tra.
-create or replace function public.tutoring_check_topics(p_slot_id bigint, p_topics bigint[], p_check_deadline boolean)
+create or replace function public.tutoring_check_topics(p_slot_id bigint, p_topics bigint[], p_check_deadline boolean, p_check_ready boolean default true)
 returns void
 language plpgsql stable security definer set search_path = public
 as $$
@@ -78,6 +81,7 @@ begin
   end if;
 
   foreach t in array p_topics loop
+    if not p_check_ready then continue; end if; -- em đã được kiểm lúc vào hàng chờ; không làm hỏng việc huỷ của người khác
     if not exists (
       select 1 from public.question_topics q
       where q.id = t and q.parent_id is null
@@ -97,7 +101,7 @@ begin
     end if;
   end if;
 end; $$;
-revoke all on function public.tutoring_check_topics(bigint, bigint[], boolean) from public, anon, authenticated;
+revoke all on function public.tutoring_check_topics(bigint, bigint[], boolean, boolean) from public, anon, authenticated;
 
 -- Đăng ký trực tiếp (độ sâu trigger 1) phải chọn chủ đề + còn hạn; xếp từ hàng chờ (độ sâu ≥ 2) chỉ kiểm chủ đề.
 -- Tên bắt đầu bằng "trg_tutoring_reg_" để chạy TRƯỚC trg_tutoring_slot_register (tăng đếm).
@@ -106,8 +110,11 @@ returns trigger
 language plpgsql security definer set search_path = public
 as $$
 begin
+  new.attended := null; -- chỉ trợ giảng điểm danh (RPC tutoring_mark_attendance), học sinh không tự đặt được
+  new.attended_at := null;
   perform public.tutoring_check_topics(
     new.slot_id, new.topic_ids,
+    pg_trigger_depth() <= 1 and coalesce(current_setting('app.tutoring_skip_deadline', true), '') <> '1',
     pg_trigger_depth() <= 1 and coalesce(current_setting('app.tutoring_skip_deadline', true), '') <> '1'
   );
   return new;

@@ -8,4 +8,3 @@ drop function if exists public.tutoring_mark_attendance(bigint, uuid, boolean);
 alter table public.tutoring_exit_windows drop column if exists slot_id;
 drop index if exists public.ta_sessions_slot_unique;
 alter table public.ta_sessions drop column if exists slot_id;
-alter table public.tutoring_registrations drop column if exists attended_at, drop column if exists attended;

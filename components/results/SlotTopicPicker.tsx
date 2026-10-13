@@ -38,6 +38,12 @@ export default function SlotTopicPicker({
   const [picked, setPicked] = useState<number[] | null>(null);
 
   useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  useEffect(() => {
     let alive = true;
     fetchReadyTopics(classId)
       .then((list) => alive && setTopics(list))

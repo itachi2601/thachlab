@@ -14,6 +14,8 @@ import {
   type WaitlistPosition,
   registerForSlot,
   type TutoringSlot,
+  registrationOpen,
+  REGISTER_DEADLINE_HOURS,
 } from "@/services/tutoring";
 import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { fetchCatchupForStudent, type MyRegistration } from "@/services/thpt-courses";
@@ -45,6 +47,7 @@ export default function CatchupCard({
   const [mine, setMine] = useState<Set<number>>(new Set());
   const [waitlist, setWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlot, setBusySlot] = useState<number | null>(null);
+  const [nowMs] = useState(() => Date.now());
   const [pickerSlot, setPickerSlot] = useState<TutoringSlot | null>(null);
 
   const reload = useCallback(() => {
@@ -135,6 +138,7 @@ export default function CatchupCard({
     const registered = mine.has(slot.id);
     const full = slot.registeredCount >= slot.capacity && !registered;
     const waiting = waitlist.get(slot.id);
+    const closed = !registered && !waiting && !registrationOpen(slot, nowMs);
     const date = new Date(`${slot.workDate}T00:00:00`).toLocaleDateString("vi-VN", { weekday: "short", day: "2-digit", month: "2-digit" });
     const slotTopics = slot.topicIds.map((t) => topicName.get(t)).filter(Boolean) as string[];
     return (
@@ -157,10 +161,10 @@ export default function CatchupCard({
         <button
           type="button"
           onClick={() => toggle(slot)}
-          disabled={busySlot === slot.id}
+          disabled={busySlot === slot.id || closed}
           className={`mt-2 min-h-11 w-full rounded-lg border py-2 text-sm font-bold disabled:opacity-40 ${registered || waiting ? "border-line text-ink" : full ? "border-amber-400/40 text-amber-200" : "border-blue-400/50 text-blue-100 hover:bg-blue-500/10"}`}
         >
-          {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
+          {closed ? `Đã chốt đăng ký (trước giờ học ${REGISTER_DEADLINE_HOURS} giờ)` : registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
         </button>
       </div>
     );
