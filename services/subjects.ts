@@ -13,6 +13,7 @@ export interface SubjectDefinition {
 export const SUBJECTS: SubjectDefinition[] = [
   { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2", isPracticum: true },
   { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1", isPracticum: true },
+  { code: "avcn", label: "Anh văn chuyên ngành", joinPrefix: "AVCN", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "khac", label: "Môn khác (lý thuyết)", joinPrefix: "LOP", hasCurriculum: false, workshop: "", isPracticum: false },
   { code: "gddd-ptnn", label: "Giáo dục đạo đức & phát triển nghề nghiệp", joinPrefix: "GDDD", hasCurriculum: false, workshop: "", isPracticum: false },
 ];

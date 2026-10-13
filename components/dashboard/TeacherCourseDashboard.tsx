@@ -86,8 +86,8 @@ export default function TeacherCourseDashboard() {
   // Phòng thi trực tiếp CNC: overlay toàn màn hình, dữ liệu toàn hệ thống (không theo lớp).
   const [liveExamOpen,setLiveExamOpen]=useState(false);
   const [activeStudent, setActiveStudent] = useState(0);
-  // Môn lý thuyết ("khac") không có chương trình học nhưng vẫn cần tab Nhập danh sách & điểm.
-  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac" || item.code === HOMEROOM_SUBJECT_CODE) : SUBJECTS;
+  // Môn lý thuyết ("khac", "avcn") không có chương trình học nhưng vẫn cần tab Nhập danh sách & điểm.
+  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac" || item.code === "avcn" || item.code === HOMEROOM_SUBJECT_CODE) : SUBJECTS;
   const [subjectCode, setSubjectCode] = useState<string>(availableSubjects[0]?.code ?? SUBJECTS[0].code);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);

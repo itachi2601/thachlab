@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { createCncCourse } from "@/services/course-enrollments";
+import { getSubject } from "@/services/subjects";
 
 /** Năm học hiện tại theo mốc khai giảng tháng 8. */
 export function currentSchoolYear() {
@@ -30,7 +31,8 @@ export default function CreateCourseForm({ subjectCode, defaultOpen = false, onC
     if (!form.name.trim()) return;
     setBusy(true);
     try {
-      await createCncCourse({ ...form, enrollment_mode: "approval" }, subjectCode || "khac", "LOP");
+      const prefix = getSubject(subjectCode || "khac").joinPrefix || "LOP";
+      await createCncCourse({ ...form, enrollment_mode: "approval" }, subjectCode || "khac", prefix);
       setOpen(defaultOpen);
       setForm({ name: "", class_label: "", school_year: currentSchoolYear() });
       toast("success", "Đã tạo lớp học phần. Chọn lớp vừa tạo ở bộ chọn phía trên để tiếp tục nhập.");
