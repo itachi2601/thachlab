@@ -30,6 +30,7 @@ BTM_WARN, BTM_ERR = 500, 700          # mục "Bài toán mẫu" — đoạn BU�
 LIEN_WARN, LIEN_ERR = 300, 400        # từ liền không có nhịp   (~2 phút / ~2,9 phút)
 DAU_WARN, DAU_ERR = 150, 250          # từ hiện ngay trước quiz đầu tiên (~1 phút / ~1,8 phút)
 QUIZ_MIN, QUIZ_MAX = 4, 8
+HANH_TRANG_MAX = 3
 MUC_MIN, MUC_MAX = 6, 8               # đếm theo <h3>
 DETAILS_MIN, HINH_MIN = 4, 2
 
@@ -111,6 +112,11 @@ def kiem(path):
     muc = tach_muc(t)
     so_h3 = len([1 for cap, _, _ in muc if cap == 3])
     quiz = len(re.findall(r"tl-quiz", t))
+    # Khối "🧰 Kiểm tra hành trang" (scripts/chen-hanh-trang.py): câu chẩn đoán kiến thức nền ~20 giây/câu,
+    # không phải quiz kiến thức của bài → đếm riêng, trần HANH_TRANG_MAX; số từ vẫn tính đủ vào tổng.
+    ht = re.search(r"<!--hanh-trang-->.*?<!--/hanh-trang-->", t, re.S)
+    quiz_ht = len(re.findall(r"tl-quiz", ht.group(0))) if ht else 0
+    quiz -= quiz_ht
     hinh = len(re.findall(r"<figure\b", t))
     details = len(re.findall(r"<details\b", t))
     loi, canh_bao, hang = [], [], []
@@ -159,6 +165,8 @@ def kiem(path):
                    "đưa câu dự đoán/quiz lên ngay sau tình huống mở bài")
     elif dau > DAU_WARN:
         canh_bao.append(f"{dau} từ hiện ngay trước quiz đầu tiên > {DAU_WARN} — kéo câu dự đoán lên sớm hơn")
+    if quiz_ht > HANH_TRANG_MAX:
+        loi.append(f"{quiz_ht} câu hành trang > {HANH_TRANG_MAX}")
     if quiz > QUIZ_MAX:
         loi.append(f"{quiz} quiz > {QUIZ_MAX} — quá tải, bỏ bớt")
     elif quiz < QUIZ_MIN:
@@ -171,7 +179,7 @@ def kiem(path):
         canh_bao.append(f"chỉ {hinh} hình < {HINH_MIN}")
 
     return dict(file=path, hien=hien, tong=dem_tu(t), toi_viec_dau=dau, so_h3=so_h3, so_muc=len(muc),
-                quiz=quiz, hinh=hinh, details=details, phut=hien / WPM, hang=hang, loi=loi, canh_bao=canh_bao)
+                quiz=quiz, quiz_ht=quiz_ht, hinh=hinh, details=details, phut=hien / WPM, hang=hang, loi=loi, canh_bao=canh_bao)
 
 
 def nghin(n):
@@ -181,7 +189,7 @@ def nghin(n):
 def in_nguoi(kq, chi_loi=False):
     print(f"\n{kq['file']}")
     print(f"  {nghin(kq['hien'])} từ hiện ngay / {nghin(kq['tong'])} từ cả file · ~{kq['phut']:.1f} phút "
-          f"· {kq['so_h3']} mục lớn + mục con · {kq['quiz']} quiz · {kq['hinh']} hình · {kq['details']} details")
+          f"· {kq['so_h3']} mục lớn + mục con · {kq['quiz']} quiz" + (f" + {kq['quiz_ht']} câu hành trang" if kq['quiz_ht'] else "") + f" · {kq['hinh']} hình · {kq['details']} details")
     dau = kq["toi_viec_dau"]
     print(f"  tới việc đầu (quiz đầu tiên): {'không có quiz' if dau is None else f'{dau} từ (~{dau / WPM:.1f} phút)'}")
     print(f"  {'mục':<58} {'hiện':>6} {'nhịp':>5} {'liền':>5}")

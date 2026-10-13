@@ -149,6 +149,20 @@ một mình vẫn có nghĩa: nếu học sinh chỉ đọc dòng 🔑 và bulle
 nhất để giảm bỏ giữa chừng (L2), và cho phép học sinh chọn "học 2 mục rồi mai học tiếp" mà không thấy
 tội lỗi — đúng tinh thần segmenting (N5).
 
+### 4.2b "Kiểm tra hành trang" — kiến thức nền Toán/Lý (đang thử từ 13/10/2026)
+
+Khối 🧰 đặt **sau Mở bài + Dự đoán, ngay trước mục II**: 2–3 quiz tự chấm về kiến thức cũ mà bài sẽ dùng
+(lượng giác, vectơ, công thức chuyển động, đổi đơn vị…), phản hồi sai gọi tên lỗi; phần **Nhắc nhanh** nằm trong
+`<details>` kèm "Xem lại: bài cũ". Vì sao như vậy:
+- Gợi nhớ (retrieval) mạnh hơn đọc lại công thức; đọc trôi dễ tạo ảo giác đã hiểu (Bjork).
+- Em khá không phải đọc lại thứ đã thuộc (expertise reversal, Kalyuga); chỉ em sai mới mở phần nhắc.
+- Đặt sau câu dự đoán để không đẩy lùi "việc đầu tiên" (≤150 từ) và không biến đầu bài thành bài kiểm tra.
+- Câu hỏi chỉ về kiến thức CŨ — không hỏi trước nội dung của bài, không lộ đáp án quiz phía sau.
+Chi phí đo được (chương 3 L10): +~110 từ hiện, +1 phút đọc mỗi bài. `lint_do_dai.py` đếm câu hành trang riêng
+(trần 3), không tính vào trần 8 quiz; số từ vẫn tính đủ. Dữ liệu: `content/hanh-trang/<slug>.json`;
+chèn/đồng bộ: `python3 scripts/chen-hanh-trang.py --bai <slug> --apply [--nen <thư-mục body_html từ DB>]`.
+Khi chèn cạnh bước biến đổi giữa bài ("↩ Nhớ lại tại chỗ") thì làm tay, chỉ ở bài có phản hồi học sinh vướng.
+
 ### 4.3 Viết chống quét
 
 - **Kết luận trước, giải thích sau**, ở mỗi mục: một câu chốt ngay đầu mục rồi mới dẫn dắt.

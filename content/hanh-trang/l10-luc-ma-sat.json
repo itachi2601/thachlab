@@ -1,0 +1,45 @@
+{
+ "lesson_id": 63,
+ "dung_lai": "phân tích lực và điều kiện cân bằng",
+ "cau": [
+  {
+   "hoi": "Kéo một thùng bằng lực $50$ N, dây hợp với phương ngang góc $60^\\circ$. Thành phần nằm ngang của lực kéo là bao nhiêu?",
+   "pa": [
+    "$25$ N",
+    "$43{,}3$ N",
+    "$50$ N",
+    "$100$ N"
+   ],
+   "dung": 0,
+   "ok": "Thành phần ngang kề góc $60^\\circ$: $F_x = F\\cos 60^\\circ = 50 \\cdot 0{,}5 = 25$ N.",
+   "no": [
+    "Ra $43{,}3$ N là dùng sin: đó là thành phần thẳng đứng.",
+    "Ra $50$ N là quên phân tích lực.",
+    "Ra $100$ N là chia cho cos thay vì nhân."
+   ]
+  },
+  {
+   "hoi": "Thùng $3$ kg nằm yên trên sàn ngang, chỉ chịu trọng lực và phản lực của sàn. Lấy $g = 10\\ \\text{m/s}^2$. Phản lực $N$ của sàn là bao nhiêu?",
+   "pa": [
+    "$3$ N",
+    "$0$",
+    "$13$ N",
+    "$30$ N"
+   ],
+   "dung": 3,
+   "ok": "Thùng đứng yên nên hai lực cân bằng: $N = P = mg = 30$ N. Chú ý: chỉ đúng khi không có lực nào khác theo phương thẳng đứng.",
+   "no": [
+    "Ra $3$ N là nhầm khối lượng với trọng lượng.",
+    "Chọn $0$ là nghĩ sàn không tác dụng lực.",
+    "Ra $13$ N là cộng $m$ với $g$."
+   ]
+  }
+ ],
+ "nhac": [
+  "Lực $F$ hợp với phương ngang góc $\\alpha$, thành phần ngang: $F_x = F\\cos\\alpha$.",
+  "Thành phần thẳng đứng: $F_y = F\\sin\\alpha$.",
+  "Vật đứng yên: hợp lực bằng $\\vec 0$, các lực theo mỗi phương triệt tiêu nhau.",
+  "Định luật 2 Newton: $a = \\dfrac{F}{m}$, $F$ là hợp lực."
+ ],
+ "xem_lai": "Vật lí 10 Bài 13 (Tổng hợp và phân tích lực), Bài 14, Bài 15 (Định luật 1, 2 Newton)."
+}

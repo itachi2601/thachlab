@@ -1,0 +1,43 @@
+{
+ "lesson_id": 61,
+ "dung_lai": "định luật 2 Newton và vectơ đối",
+ "cau": [
+  {
+   "hoi": "Một vật $2$ kg chịu hợp lực $6$ N. Gia tốc của vật là bao nhiêu?",
+   "pa": [
+    "$12\\ \\text{m/s}^2$",
+    "$3\\ \\text{m/s}^2$",
+    "$0{,}33\\ \\text{m/s}^2$",
+    "$4\\ \\text{m/s}^2$"
+   ],
+   "dung": 1,
+   "ok": "$a = \\dfrac{F}{m} = \\dfrac{6}{2} = 3\\ \\text{m/s}^2$.",
+   "no": [
+    "Ra $12$ là nhân $F$ với $m$.",
+    "Ra $0{,}33$ là lấy $m$ chia $F$.",
+    "Ra $4$ là trừ $6 - 2$."
+   ]
+  },
+  {
+   "hoi": "Vectơ $-\\vec F$ so với vectơ $\\vec F$ thì:",
+   "pa": [
+    "Cùng độ lớn, cùng chiều",
+    "Có độ lớn bằng 0",
+    "Vuông góc với $\\vec F$",
+    "Cùng độ lớn, cùng phương, ngược chiều"
+   ],
+   "dung": 3,
+   "ok": "$-\\vec F$ là vectơ đối của $\\vec F$: cùng độ lớn, cùng phương, ngược chiều.",
+   "no": [
+    "Chọn A là bỏ qua dấu trừ: dấu trừ đổi chiều vectơ.",
+    "Chọn B là nghĩ dấu trừ làm độ lớn bằng 0.",
+    "Chọn C là nhầm \"ngược chiều\" với \"vuông góc\"."
+   ]
+  }
+ ],
+ "nhac": [
+  "Định luật 2 Newton: $\\vec a = \\dfrac{\\vec F}{m}$, $\\vec a$ cùng hướng hợp lực.",
+  "Vectơ đối $-\\vec F$: cùng độ lớn, cùng phương, ngược chiều với $\\vec F$."
+ ],
+ "xem_lai": "Vật lí 10 Bài 15 (Định luật 2 Newton); Toán 10 (hiệu hai vectơ, vectơ đối)."
+}

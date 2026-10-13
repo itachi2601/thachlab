@@ -1,0 +1,45 @@
+{
+ "lesson_id": 67,
+ "dung_lai": "tổng hợp hai lực và sai số phép đo",
+ "cau": [
+  {
+   "hoi": "Hai lực $F_1 = 3$ N và $F_2 = 4$ N đồng quy, <strong>vuông góc</strong> với nhau. Hợp lực có độ lớn bao nhiêu?",
+   "pa": [
+    "$7$ N",
+    "$1$ N",
+    "$5$ N",
+    "$12$ N"
+   ],
+   "dung": 2,
+   "ok": "Vuông góc nên dùng Pythagore: $F = \\sqrt{3^2 + 4^2} = 5$ N.",
+   "no": [
+    "Ra $7$ N là cộng như hai lực cùng chiều.",
+    "Ra $1$ N là trừ như hai lực ngược chiều.",
+    "Ra $12$ N là nhân hai lực."
+   ]
+  },
+  {
+   "hoi": "Đo một lực được giá trị trung bình $\\overline F = 2{,}0$ N, sai số tuyệt đối $\\Delta F = 0{,}1$ N. Sai số tỉ đối là bao nhiêu?",
+   "pa": [
+    "$0{,}1\\%$",
+    "$5\\%$",
+    "$20\\%$",
+    "$2\\%$"
+   ],
+   "dung": 1,
+   "ok": "$\\delta F = \\dfrac{\\Delta F}{\\overline F}\\cdot 100\\% = \\dfrac{0{,}1}{2{,}0}\\cdot 100\\% = 5\\%$.",
+   "no": [
+    "Ra $0{,}1\\%$ là chép $\\Delta F$ rồi thêm dấu %.",
+    "Ra $20\\%$ là lấy $\\overline F$ chia $\\Delta F$ (được 20) rồi thêm dấu %, ngược tỉ số.",
+    "Ra $2\\%$ là chép $\\overline F$ rồi thêm dấu %."
+   ]
+  }
+ ],
+ "nhac": [
+  "Hợp lực hai lực đồng quy hợp góc $\\alpha$: $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$.",
+  "Vuông góc ($\\alpha = 90^\\circ$): $F = \\sqrt{F_1^2 + F_2^2}$.",
+  "Sai số tỉ đối: $\\delta F = \\dfrac{\\Delta F}{\\overline F}\\cdot 100\\%$.",
+  "Ghi kết quả: $F = \\overline F \\pm \\Delta F$."
+ ],
+ "xem_lai": "Vật lí 10 Bài 3 (Sai số trong phép đo), Bài 13 (Tổng hợp lực)."
+}

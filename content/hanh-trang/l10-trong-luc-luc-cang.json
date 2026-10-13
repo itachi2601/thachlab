@@ -1,0 +1,44 @@
+{
+ "lesson_id": 62,
+ "dung_lai": "công thức trọng lượng và định luật 1, 2 Newton",
+ "cau": [
+  {
+   "hoi": "Một quả cam có khối lượng $200$ g. Lấy $g = 9{,}8\\ \\text{m/s}^2$. Trọng lượng của quả cam là bao nhiêu?",
+   "pa": [
+    "$1960$ N",
+    "$0{,}2$ N",
+    "$1{,}96$ N",
+    "$20{,}4$ N"
+   ],
+   "dung": 2,
+   "ok": "Đổi $200$ g $= 0{,}2$ kg; $P = mg = 0{,}2 \\cdot 9{,}8 = 1{,}96$ N.",
+   "no": [
+    "Ra $1960$ N là để nguyên đơn vị gam.",
+    "Ra $0{,}2$ N là nhầm khối lượng (kg) với trọng lượng (N).",
+    "Ra $20{,}4$ N là chia $200$ cho $9{,}8$."
+   ]
+  },
+  {
+   "hoi": "Hai vật nối với nhau chuyển động cùng gia tốc. Tổng khối lượng $3$ kg, hợp lực tác dụng lên cả hệ là $12$ N. Gia tốc của hệ là bao nhiêu?",
+   "pa": [
+    "$4\\ \\text{m/s}^2$",
+    "$36\\ \\text{m/s}^2$",
+    "$0{,}25\\ \\text{m/s}^2$",
+    "$9\\ \\text{m/s}^2$"
+   ],
+   "dung": 0,
+   "ok": "Coi cả hệ như một vật: $a = \\dfrac{F}{m} = \\dfrac{12}{3} = 4\\ \\text{m/s}^2$. Bài này dùng cách đó cho hệ vật nối dây qua ròng rọc.",
+   "no": [
+    "Ra $36$ là nhân $F$ với $m$.",
+    "Ra $0{,}25$ là lấy $m$ chia $F$.",
+    "Ra $9$ là trừ $12 - 3$."
+   ]
+  }
+ ],
+ "nhac": [
+  "Trọng lượng: $P = mg$, $m$ tính bằng kg, $P$ tính bằng N.",
+  "Định luật 2 Newton: $a = \\dfrac{F}{m}$, $F$ là hợp lực.",
+  "Vật đứng yên hoặc thẳng đều: hợp lực bằng $\\vec 0$ (định luật 1)."
+ ],
+ "xem_lai": "Vật lí 10 Bài 14 (Định luật 1 Newton), Bài 15 (Định luật 2 Newton); KHTN 6 (khối lượng và trọng lượng)."
+}
