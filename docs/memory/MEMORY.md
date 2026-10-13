@@ -34,7 +34,6 @@
 - [Hosting](project_thachlab_hosting.md) — DirectAdmin, Thachlab.id.vn
 - [Cache SGK PDF](reference_sgk_pdf_text_cache.md)
 - [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron
-- [Tối ưu tốc độ](project_thachlab_perf_optimization.md) — 5 đợt xong 27/9
 - [Claude API thinking](reference_anthropic_api_thinking_max_tokens.md) — max_tokens ≥16000
 ## Skill & quy trình đăng nội dung
 - [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de; ⚠ bug tự gắn Luyện tập, soát exam_ids
@@ -76,6 +75,7 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
+- [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công Cursor/Gemini/Claude ở docs/PHAN-CONG-UI-2026-10-13.md
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
@@ -86,5 +86,4 @@
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan đã deploy 12/10; treo nhãn nguồn từng câu, chưa xem 375px
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn + kiểm chéo xong 12/10, chờ thầy duyệt rồi đăng; skill `phet` mới
-- [Hoạt động lớp học](project_thachlab_hoat_dong_lop_hoc.md) — quiz live PIN; migration đã chạy, deploy 12/10
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
