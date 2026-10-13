@@ -1,0 +1,45 @@
+{
+ "lesson_id": 66,
+ "dung_lai": "khoảng cách từ một điểm tới một đường thẳng",
+ "cau": [
+  {
+   "hoi": "Khoảng cách từ điểm $O$ tới đường thẳng $\\Delta$ là:",
+   "pa": [
+    "Độ dài đoạn nối $O$ với một điểm bất kì trên $\\Delta$",
+    "Độ dài đoạn vuông góc kẻ từ $O$ xuống $\\Delta$",
+    "Độ dài đoạn dài nhất nối $O$ với $\\Delta$",
+    "Góc giữa $O$ và $\\Delta$"
+   ],
+   "dung": 1,
+   "ok": "Khoảng cách là độ dài đoạn <strong>vuông góc</strong> kẻ từ $O$ xuống $\\Delta$, đoạn ngắn nhất nối $O$ với $\\Delta$.",
+   "no": [
+    "Chọn A thì mỗi điểm cho một số khác nhau, không phải khoảng cách.",
+    "Chọn C là ngược lại: khoảng cách là đoạn ngắn nhất.",
+    "Chọn D là nhầm khoảng cách (độ dài) với góc."
+   ]
+  },
+  {
+   "hoi": "Đoạn $OA = 0{,}4$ m. Đường thẳng $\\Delta$ đi qua $A$ và hợp với $OA$ góc $30^\\circ$. Khoảng cách từ $O$ tới $\\Delta$ là bao nhiêu?",
+   "pa": [
+    "$0{,}4$ m",
+    "$0{,}35$ m",
+    "$0{,}2$ m",
+    "$0{,}8$ m"
+   ],
+   "dung": 2,
+   "ok": "Kẻ $OH \\perp \\Delta$: tam giác $OHA$ vuông tại $H$, $OA$ là cạnh huyền, $OH$ đối diện góc $30^\\circ$. $OH = OA\\sin 30^\\circ = 0{,}4 \\cdot 0{,}5 = 0{,}2$ m.",
+   "no": [
+    "Ra $0{,}4$ m là lấy luôn $OA$, quên kẻ vuông góc.",
+    "Ra $0{,}35$ m là dùng cos thay vì sin.",
+    "Ra $0{,}8$ m là chia cho sin thay vì nhân."
+   ]
+  }
+ ],
+ "nhac": [
+  "Khoảng cách từ điểm tới đường thẳng = độ dài đoạn vuông góc kẻ từ điểm đó.",
+  "Tam giác vuông: cạnh đối $=$ huyền $\\times \\sin$.",
+  "Tam giác vuông: cạnh kề $=$ huyền $\\times \\cos$.",
+  "Đòn bẩy (KHTN 8): lực nhỏ đặt xa điểm tựa có thể cân bằng lực lớn đặt gần."
+ ],
+ "xem_lai": "Toán 7 (đường vuông góc, khoảng cách), Toán 9 (tỉ số lượng giác); KHTN 8 (đòn bẩy)."
+}

@@ -1,0 +1,44 @@
+{
+ "lesson_id": 59,
+ "dung_lai": "gia tốc và hai lực cân bằng",
+ "cau": [
+  {
+   "hoi": "Một xe chạy thẳng đều với tốc độ $15$ m/s trong $10$ s. Gia tốc của xe là bao nhiêu?",
+   "pa": [
+    "$1{,}5\\ \\text{m/s}^2$",
+    "$15\\ \\text{m/s}^2$",
+    "$150\\ \\text{m/s}^2$",
+    "$0$"
+   ],
+   "dung": 3,
+   "ok": "Gia tốc là độ biến thiên vận tốc chia thời gian. Thẳng đều thì vận tốc không đổi, $\\Delta v = 0$ nên $a = 0$.",
+   "no": [
+    "Ra $1{,}5\\ \\text{m/s}^2$ là lấy $v$ chia $t$: gia tốc phải lấy $\\Delta v$, không lấy $v$.",
+    "Ra $15\\ \\text{m/s}^2$ là nhầm gia tốc với vận tốc.",
+    "Ra $150\\ \\text{m/s}^2$ là nhân $v$ với $t$."
+   ]
+  },
+  {
+   "hoi": "Hai lực cân bằng là hai lực:",
+   "pa": [
+    "Đặt lên hai vật khác nhau, cùng độ lớn, ngược chiều",
+    "Cùng đặt lên một vật, cùng độ lớn, cùng chiều",
+    "Cùng đặt lên một vật, cùng độ lớn, cùng phương, ngược chiều",
+    "Cùng đặt lên một vật, cùng phương, ngược chiều, độ lớn khác nhau"
+   ],
+   "dung": 2,
+   "ok": "Đủ bốn điều: cùng một vật, cùng độ lớn, cùng phương, ngược chiều. Hai lực như vậy có hợp lực bằng $\\vec 0$.",
+   "no": [
+    "Chọn A là nhầm với cặp lực đặt lên hai vật khác nhau (sẽ gặp ở định luật 3 Newton), cặp đó không cân bằng nhau.",
+    "Chọn B là hai lực cùng chiều: chúng cộng thêm vào nhau.",
+    "Chọn D là thiếu điều kiện cùng độ lớn."
+   ]
+  }
+ ],
+ "nhac": [
+  "Gia tốc: $a = \\dfrac{\\Delta v}{\\Delta t}$.",
+  "Chuyển động thẳng đều: $v$ không đổi nên $a = 0$.",
+  "Hai lực cân bằng: cùng đặt lên một vật, cùng độ lớn, cùng phương, ngược chiều."
+ ],
+ "xem_lai": "Vật lí 10 Bài 8 (Chuyển động biến đổi. Gia tốc), Bài 13 (Tổng hợp lực. Cân bằng lực); KHTN 8 (hai lực cân bằng)."
+}

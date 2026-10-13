@@ -1,0 +1,46 @@
+{
+ "lesson_id": 65,
+ "dung_lai": "phân tích trọng lực trên mặt nghiêng và lực ma sát",
+ "cau": [
+  {
+   "hoi": "Vật nằm trên mặt phẳng nghiêng góc $\\alpha$ so với phương ngang. Thành phần của trọng lực $P$ <strong>song song với mặt nghiêng</strong> là:",
+   "pa": [
+    "$P\\cos\\alpha$",
+    "$P\\tan\\alpha$",
+    "$P$",
+    "$P\\sin\\alpha$"
+   ],
+   "dung": 3,
+   "ok": "Thành phần kéo vật trượt xuống dọc mặt nghiêng là $P\\sin\\alpha$; thành phần ép vuông góc mặt nghiêng là $P\\cos\\alpha$. Kiểm nhanh: $\\alpha = 0$ (mặt ngang) thì $P\\sin 0 = 0$, đúng là không có lực kéo trượt.",
+   "no": [
+    "Chọn $P\\cos\\alpha$ là nhầm với thành phần vuông góc mặt nghiêng.",
+    "Chọn $P\\tan\\alpha$ là dùng sai tỉ số lượng giác.",
+    "Chọn $P$ là quên phân tích lực."
+   ]
+  },
+  {
+   "hoi": "Vật trượt trên sàn, áp lực lên sàn $N = 50$ N, hệ số ma sát trượt $\\mu = 0{,}2$. Lực ma sát trượt là bao nhiêu?",
+   "pa": [
+    "$10$ N",
+    "$250$ N",
+    "$0{,}004$ N",
+    "$50{,}2$ N"
+   ],
+   "dung": 0,
+   "ok": "$F_{\\text{mst}} = \\mu N = 0{,}2 \\cdot 50 = 10$ N.",
+   "no": [
+    "Ra $250$ N là chia $N$ cho $\\mu$.",
+    "Ra $0{,}004$ N là chia $\\mu$ cho $N$.",
+    "Ra $50{,}2$ N là cộng."
+   ]
+  }
+ ],
+ "nhac": [
+  "Trên mặt nghiêng góc $\\alpha$, thành phần dọc mặt nghiêng: $P\\sin\\alpha$.",
+  "Thành phần vuông góc mặt nghiêng: $P\\cos\\alpha$.",
+  "Ma sát trượt: $F_{\\text{mst}} = \\mu N$.",
+  "Định luật 2 Newton: $a = \\dfrac{F}{m}$, $F$ là hợp lực.",
+  "$v^2 - v_0^2 = 2as$."
+ ],
+ "xem_lai": "Vật lí 10 Bài 13 (Phân tích lực), Bài 15 (Định luật 2 Newton), Bài 18 (Lực ma sát), Bài 9 (Chuyển động thẳng biến đổi đều)."
+}

@@ -1,0 +1,45 @@
+{
+ "lesson_id": 64,
+ "dung_lai": "đổi đơn vị thể tích và áp suất chất lỏng (KHTN 8)",
+ "cau": [
+  {
+   "hoi": "$1$ lít bằng bao nhiêu mét khối?",
+   "pa": [
+    "$10^{-3}\\ \\text{m}^3$",
+    "$10^{-6}\\ \\text{m}^3$",
+    "$10^{-2}\\ \\text{m}^3$",
+    "$1\\ \\text{m}^3$"
+   ],
+   "dung": 0,
+   "ok": "$1$ lít $= 1\\ \\text{dm}^3 = 10^{-3}\\ \\text{m}^3$. Công thức lực đẩy $F_A = \\rho g V$ cần $V$ tính bằng $\\text{m}^3$.",
+   "no": [
+    "Ra $10^{-6}$ là nhầm lít với $\\text{cm}^3$ ($1\\ \\text{cm}^3 = 10^{-6}\\ \\text{m}^3$).",
+    "Ra $10^{-2}$ là đổi như đơn vị độ dài, quên rằng thể tích có lập phương.",
+    "Ra $1$ là nhầm lít với mét khối."
+   ]
+  },
+  {
+   "hoi": "Áp suất do nước ($\\rho = 1000\\ \\text{kg/m}^3$) gây ra ở độ sâu $2$ m là bao nhiêu? Lấy $g = 10\\ \\text{m/s}^2$.",
+   "pa": [
+    "$2000$ Pa",
+    "$20\\,000$ Pa",
+    "$5000$ Pa",
+    "$20$ Pa"
+   ],
+   "dung": 1,
+   "ok": "$p = \\rho g h = 1000 \\cdot 10 \\cdot 2 = 20\\,000$ Pa.",
+   "no": [
+    "Ra $2000$ Pa là quên nhân $g$.",
+    "Ra $5000$ Pa là chia cho $h$ thay vì nhân.",
+    "Ra $20$ Pa là dùng $\\rho = 1\\ \\text{g/cm}^3$ mà chưa đổi sang $\\text{kg/m}^3$."
+   ]
+  }
+ ],
+ "nhac": [
+  "$1\\ \\text{lít} = 1\\ \\text{dm}^3 = 10^{-3}\\ \\text{m}^3$.",
+  "$1\\ \\text{cm}^3 = 10^{-6}\\ \\text{m}^3$.",
+  "Áp suất chất lỏng ở độ sâu $h$: $p = \\rho g h$ (KHTN 8 viết $p = d\\cdot h$ với $d = 10\\rho$).",
+  "Khối lượng riêng: $\\rho = \\dfrac{m}{V}$."
+ ],
+ "xem_lai": "KHTN 8 (khối lượng riêng, áp suất chất lỏng, lực đẩy Archimedes)."
+}

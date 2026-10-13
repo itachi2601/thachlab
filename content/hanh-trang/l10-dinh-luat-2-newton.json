@@ -1,0 +1,45 @@
+{
+ "lesson_id": 60,
+ "dung_lai": "công thức gia tốc của chuyển động thẳng biến đổi đều",
+ "cau": [
+  {
+   "hoi": "Xe máy tăng tốc đều từ đứng yên lên $10$ m/s trong $5$ s. Gia tốc của xe là bao nhiêu?",
+   "pa": [
+    "$50\\ \\text{m/s}^2$",
+    "$2\\ \\text{m/s}^2$",
+    "$0{,}5\\ \\text{m/s}^2$",
+    "$15\\ \\text{m/s}^2$"
+   ],
+   "dung": 1,
+   "ok": "$a = \\dfrac{v - v_0}{t} = \\dfrac{10 - 0}{5} = 2\\ \\text{m/s}^2$.",
+   "no": [
+    "Ra $50$ là nhân $v$ với $t$.",
+    "Ra $0{,}5$ là lấy $t$ chia $v$.",
+    "Ra $15$ là cộng $v$ với $t$."
+   ]
+  },
+  {
+   "hoi": "Xe đang chạy $10$ m/s thì hãm phanh đều, đi thêm $25$ m thì dừng. Độ lớn gia tốc của xe là bao nhiêu?",
+   "pa": [
+    "$0{,}2\\ \\text{m/s}^2$",
+    "$0{,}4\\ \\text{m/s}^2$",
+    "$4\\ \\text{m/s}^2$",
+    "$2\\ \\text{m/s}^2$"
+   ],
+   "dung": 3,
+   "ok": "$v^2 - v_0^2 = 2as$ nên $a = \\dfrac{0 - 10^2}{2\\cdot 25} = -2\\ \\text{m/s}^2$. Dấu trừ cho biết xe chậm dần, độ lớn là $2\\ \\text{m/s}^2$.",
+   "no": [
+    "Ra $0{,}2$ là quên bình phương vận tốc.",
+    "Ra $0{,}4$ là lấy $10 : 25$, vừa quên bình phương vừa quên số 2.",
+    "Ra $4$ là quên số 2 trong $2as$."
+   ]
+  }
+ ],
+ "nhac": [
+  "$a = \\dfrac{v - v_0}{t}$.",
+  "$v^2 - v_0^2 = 2as$.",
+  "Chọn chiều dương theo chiều chuyển động: chậm dần thì $a$ âm.",
+  "Đổi đơn vị: $1\\ \\text{g} = 10^{-3}\\ \\text{kg}$."
+ ],
+ "xem_lai": "Vật lí 10 Bài 8 (Gia tốc), Bài 9 (Chuyển động thẳng biến đổi đều)."
+}

@@ -1,0 +1,45 @@
+{
+ "lesson_id": 58,
+ "dung_lai": "tỉ số lượng giác và cộng vectơ",
+ "cau": [
+  {
+   "hoi": "Tam giác $ABC$ vuông tại $A$, cạnh huyền $BC = 10$ cm, góc $B = 30^\\circ$. Cạnh $AB$ (cạnh kề góc $B$) dài bao nhiêu?",
+   "pa": [
+    "$5$ cm",
+    "$5{,}8$ cm",
+    "$8{,}7$ cm",
+    "$11{,}5$ cm"
+   ],
+   "dung": 2,
+   "ok": "Cạnh kề = cạnh huyền × cos: $AB = 10\\cos 30^\\circ \\approx 8{,}7$ cm. Bài này phân tích lực đúng như vậy: $F_x = F\\cos\\alpha$.",
+   "no": [
+    "Ra $5$ cm là dùng sin: đó là cạnh đối $AC$.",
+    "Ra $5{,}8$ cm là dùng tan.",
+    "Ra $11{,}5$ cm là chia cho cos thay vì nhân."
+   ]
+  },
+  {
+   "hoi": "$\\cos 120^\\circ$ bằng bao nhiêu?",
+   "pa": [
+    "$0{,}5$",
+    "$-0{,}5$",
+    "$\\dfrac{\\sqrt 3}{2}$",
+    "$-\\dfrac{\\sqrt 3}{2}$"
+   ],
+   "dung": 1,
+   "ok": "Góc tù có cos âm: $\\cos 120^\\circ = -0{,}5$. Hai lực hợp góc $120^\\circ$ sẽ có hợp lực nhỏ hơn mỗi lực.",
+   "no": [
+    "Chọn $0{,}5$ là quên dấu: góc tù thì cos âm.",
+    "Chọn $\\dfrac{\\sqrt 3}{2}$ là nhầm với $\\sin 120^\\circ$.",
+    "Chọn $-\\dfrac{\\sqrt 3}{2}$ là nhầm với $\\cos 150^\\circ$."
+   ]
+  }
+ ],
+ "nhac": [
+  "Tam giác vuông: $\\sin = \\dfrac{\\text{đối}}{\\text{huyền}}$.",
+  "Tam giác vuông: $\\cos = \\dfrac{\\text{kề}}{\\text{huyền}}$.",
+  "$\\cos 0^\\circ = 1$<br>$\\cos 60^\\circ = 0{,}5$<br>$\\cos 90^\\circ = 0$<br>$\\cos 120^\\circ = -0{,}5$<br>$\\cos 180^\\circ = -1$",
+  "Cộng hai vectơ chung gốc theo quy tắc hình bình hành: đường chéo xuất phát từ gốc chung là vectơ tổng."
+ ],
+ "xem_lai": "Toán 9 (tỉ số lượng giác của góc nhọn), Toán 10 (giá trị lượng giác từ 0° đến 180°, tổng hai vectơ)."
+}
