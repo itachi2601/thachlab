@@ -86,7 +86,7 @@ export default function TutoringSection({
   };
 
   return (
-    <details open={windows.length > 0 || needs.length > 0} className="group rounded-2xl border border-line bg-panel p-4 sm:p-5">
+    <details open={windows.length > 0} className="group rounded-2xl border border-line bg-panel p-4 sm:p-5">
       <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden">
         <Users size={18} className="text-primary" />
         <h2 className="font-display font-bold text-ink">Phụ đạo</h2>
@@ -127,8 +127,8 @@ export default function TutoringSection({
         })}
 
         {needs.length > 0 && (
-          <div>
-            <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-muted">Chủ đề cần mở khoá</p>
+          <details>
+            <summary className="flex min-h-11 cursor-pointer items-center text-[13px] font-bold uppercase tracking-wide text-muted">Chủ đề cần mở khoá ({needs.length})</summary>
             <p className="mb-2 text-sm text-muted">
               Mở khoá bằng cách đăng ký buổi bên dưới, hoặc tự kiểm tra (đạt từ 80%, hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ).
             </p>
@@ -143,7 +143,7 @@ export default function TutoringSection({
                 <div className="mt-1.5 space-y-1.5">{needs.slice(VISIBLE_NEEDS).map((need) => renderNeed(need))}</div>
               </details>
             )}
-          </div>
+          </details>
         )}
         {slots.length > 0 && (
           <div>

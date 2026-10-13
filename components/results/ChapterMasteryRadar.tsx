@@ -216,6 +216,68 @@ export default function ChapterMasteryRadar({
     : [];
   const prevPointsString = prevCoords.map((pt) => `${pt.x},${pt.y}`).join(" ");
 
+  if (compact && useRadar) {
+    const shortLabel = (t: string) => t.match(/^Bài\s*\d+/i)?.[0] ?? truncateTitle(t, 6);
+    const lowest = [...lessonsWithData].sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0];
+    const cx2 = 70;
+    const cy2 = 70;
+    const R2 = 46;
+    const at = (i: number, k: number) => {
+      const angle = (i * 2 * Math.PI) / N - Math.PI / 2;
+      return [cx2 + R2 * k * Math.cos(angle), cy2 + R2 * k * Math.sin(angle)] as const;
+    };
+    const poly = (k: (i: number) => number) => radarLessons.map((_, i) => at(i, k(i)).join(",")).join(" ");
+    return (
+      <section className="rounded-2xl border border-line bg-panel p-4">
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 className="font-display font-bold text-ink">Bản đồ năng lực</h2>
+          <Link href="/lop-hoc/ket-qua" className="-my-3 inline-flex min-h-11 shrink-0 items-center text-[13px] text-primary hover:underline">
+            Xem kết quả ›
+          </Link>
+        </div>
+        <p className="text-[13px] text-muted">{chapterTitle}</p>
+        <div className="mt-2 flex items-center gap-3">
+          <svg viewBox="-14 0 168 140" className="h-36 w-[170px] shrink-0" role="img" aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}>
+            {[0.33, 0.66, 1].map((k) => (
+              <polygon key={k} points={poly(() => k)} fill="none" stroke="var(--color-line-strong)" strokeWidth="1" strokeOpacity="0.5" />
+            ))}
+            <polygon points={poly((i) => Math.max(0.03, (radarLessons[i].pct ?? 0) / 100))} fill="var(--color-primary)" fillOpacity="0.2" stroke="var(--color-primary)" strokeWidth="2" />
+            {radarLessons.map((l, i) => {
+              const [x, y] = at(i, Math.max(0.03, (l.pct ?? 0) / 100));
+              const isLow = l.lessonId === lowest.lessonId;
+              return <circle key={l.lessonId} cx={x} cy={y} r={isLow ? 4.5 : 3} fill={isLow ? "var(--color-danger)" : "var(--color-primary)"} />;
+            })}
+            {radarLessons.map((l, i) => {
+              const [x, y] = at(i, 1.3);
+              return (
+                <text key={l.lessonId} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fill="var(--color-muted)">
+                  {shortLabel(l.lessonTitle)}
+                </text>
+              );
+            })}
+          </svg>
+          <div className="min-w-0 text-sm">
+            {weakestLesson ? (
+              <>
+                <p className="text-[13px] font-semibold text-danger">Yếu nhất</p>
+                <p className="font-bold text-ink">{weakestLesson.lessonTitle}</p>
+                <p className="text-[13px] text-muted">{weakestLesson.pct}% thành thạo</p>
+                <Link
+                  href={`/lop-hoc/bai/?id=${weakestLesson.lessonId}#secondary-stage-ly_thuyet`}
+                  className="mt-1 inline-flex min-h-11 items-center font-bold text-primary hover:underline"
+                >
+                  Ôn 5 phút ›
+                </Link>
+              </>
+            ) : (
+              <p className="font-medium text-ok">Chương này em đã nắm vững, học tiếp bài mới.</p>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="rounded-2xl border border-line bg-panel p-5">
       <div className="flex items-baseline justify-between gap-3">

@@ -35,27 +35,27 @@ export default function TodayCard({
   onQuickPractice: (step: NextStep) => void;
 }) {
   const act = { onUnlock, onQuickPractice };
+  const steps = [primary, ...secondary].filter((s): s is NextStep => s !== null);
   return (
     <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
-      <h2 className="font-display font-bold text-ink">Việc hôm nay</h2>
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 className="font-display font-bold text-ink">Việc hôm nay</h2>
+        {steps.length > 0 && <span className="text-[13px] text-muted">{steps.length} việc</span>}
+      </div>
+      {steps.length > 0 && (
+        <ul className="mt-1">
+          {steps.map((step, i) => (
+            <li key={step.key} className={i > 0 ? "border-t border-line" : ""}>
+              <StepRow step={step} {...act} />
+            </li>
+          ))}
+        </ul>
+      )}
+      {primary && <StartButton step={primary} {...act} />}
+
+      {days && days.length > 0 && <StreakWeek days={days} className="mt-4" />}
+
       <div className="mt-3 space-y-2.5">
-        {primary && <PrimaryStep step={primary} {...act} />}
-
-        {secondary.length > 0 && (
-          <>
-            <p className="pt-1 text-[13px] font-bold uppercase tracking-wide text-muted">Hoặc em chọn một việc khác</p>
-            <ul className="space-y-2">
-              {secondary.map((step) => (
-                <li key={step.key}>
-                  <OptionStep step={step} {...act} />
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-
-        {days && days.length > 0 && <StreakWeek days={days} />}
-
         <RpFoot rank={rank} />
 
         {alertText && (
@@ -141,39 +141,39 @@ function StepControl({ step, className, children, onUnlock, onQuickPractice }: {
   );
 }
 
-function PrimaryStep({ step, ...act }: { step: NextStep } & Act) {
+const KIND_TAG: Record<NextStep["kind"], { label: string; cls: string }> = {
+  unlock: { label: "Phụ đạo", cls: "bg-warn/10 text-warn" },
+  weak: { label: "Kỹ năng yếu", cls: "bg-primary-soft text-primary" },
+  retry: { label: "Làm lại", cls: "bg-primary-soft text-primary" },
+  lesson: { label: "Học tiếp", cls: "bg-ok/10 text-ok" },
+  review: { label: "Ôn lại", cls: "bg-ok/10 text-ok" },
+};
+
+/** Một việc = một hàng: nhãn loại · tên việc · gợi ý nhỏ. Cả hàng là vùng bấm (đích chạm ≥56px). */
+function StepRow({ step, ...act }: { step: NextStep } & Act) {
   const hint = stepHint(step);
+  const tag = KIND_TAG[step.kind];
   return (
-    <StepControl
-      step={step}
-      {...act}
-      className="flex min-h-14 w-full items-center justify-between gap-3 rounded-xl bg-primary p-3 text-left text-white hover:bg-primary-dark disabled:opacity-60"
-    >
-      <span className="min-w-0">
-        <small className="block text-[13px] font-bold uppercase tracking-wider text-blue-100">{step.action}</small>
-        <span className="mt-0.5 block text-sm font-bold">{step.title}</span>
-        {hint && <span className="mt-0.5 block text-[13px] leading-snug text-blue-100">{hint}</span>}
+    <StepControl step={step} {...act} className="flex min-h-14 w-full items-center gap-3 py-2.5 text-left disabled:opacity-50">
+      <span className={`shrink-0 rounded-md px-2 py-0.5 text-[12px] font-bold ${tag.cls}`}>{tag.label}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-semibold text-ink">{step.title}</span>
+        {hint && <span className="mt-0.5 block text-[13px] leading-snug text-muted">{hint}</span>}
       </span>
-      <ChevronRight className="shrink-0" size={18} />
+      <ChevronRight size={16} className="shrink-0 text-muted" />
     </StepControl>
   );
 }
 
-function OptionStep({ step, ...act }: { step: NextStep } & Act) {
-  const hint = stepHint(step);
+/** Nút nổi duy nhất của trang (B2): bắt đầu việc đầu tiên. */
+function StartButton({ step, ...act }: { step: NextStep } & Act) {
   return (
     <StepControl
       step={step}
       {...act}
-      className="flex min-h-14 w-full items-center justify-between gap-3 rounded-xl border border-line bg-surface-2 p-3 text-left hover:border-line-strong disabled:opacity-50"
+      className="mt-3 flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-white hover:bg-primary-dark disabled:opacity-60"
     >
-      <span className="min-w-0">
-        <span className="block text-sm font-bold text-ink">
-          {step.action}: {step.title}
-        </span>
-        {hint && <span className="mt-0.5 block text-[13px] leading-snug text-muted">{hint}</span>}
-      </span>
-      <ChevronRight size={16} className="shrink-0 text-slate-500" />
+      Bắt đầu việc đầu tiên
     </StepControl>
   );
 }

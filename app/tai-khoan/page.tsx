@@ -160,10 +160,12 @@ function PreviewThptHome({studentId,profile,onSignOut}:{studentId:string;profile
   const current=classes.find(c=>c.id===classId);
   if(!current)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Chưa có khối lớp nào để xem thử.</p>;
   return <>
-    <section className="mb-4 rounded-2xl border border-fuchsia-400/30 bg-panel p-3" aria-label="Chọn lớp giả lập">
-      <p className="text-[13px] font-semibold text-ink">Xem thử giao diện học sinh THPT — chọn lớp:</p>
-      <div className="mt-2 flex flex-wrap gap-2">{classes.map(c=><button key={c.id} type="button" onClick={()=>pick(c.id)} aria-pressed={c.id===classId} className={`min-h-11 rounded-xl border px-4 text-sm font-semibold ${c.id===classId?"border-primary bg-primary-soft text-primary":"border-line text-ink hover:border-line-strong"}`}>{c.icon?`${c.icon} `:""}{c.name}</button>)}</div>
-    </section>
+    <label className="mb-3 flex items-center gap-3 rounded-2xl border border-fuchsia-400/30 bg-panel px-3 py-2 text-[13px] font-semibold text-ink">
+      Xem thử lớp
+      <select value={current.id} onChange={e=>pick(Number(e.target.value))} className="min-h-11 min-w-0 flex-1 rounded-xl border border-line-strong bg-surface-2 px-3 text-sm text-ink">
+        {classes.map(c=><option key={c.id} value={c.id}>{c.icon?`${c.icon} `:""}{c.name}</option>)}
+      </select>
+    </label>
     <ThptStudentHome key={current.id} profile={profile} studentId={studentId} classId={current.id} className={current.name} onSignOut={onSignOut}/>
   </>;
 }

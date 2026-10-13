@@ -140,7 +140,7 @@ function Feed() {
         )}
       </div>
 
-      <div role="tablist" aria-label="Lọc hộp thư" className="mb-3 flex gap-2 overflow-x-auto">
+      <div role="tablist" aria-label="Lọc hộp thư" className="mb-3 flex gap-1.5 overflow-x-auto">
         {FILTERS.map((f) => (
           <button
             key={f.key}
@@ -148,7 +148,7 @@ function Feed() {
             aria-selected={filter === f.key}
             type="button"
             onClick={() => setFilter(f.key)}
-            className={`inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-sm font-semibold ${
+            className={`inline-flex min-h-11 shrink-0 items-center rounded-full border px-3.5 text-sm font-semibold ${
               filter === f.key ? "border-primary bg-primary-soft text-primary" : "border-line text-ink hover:border-line-strong"
             }`}
           >

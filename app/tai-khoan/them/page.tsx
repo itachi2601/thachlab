@@ -36,7 +36,6 @@ function Content() {
         <AvatarUploader studentId={session.user.id} url={profile?.avatar_url} name={profile?.full_name} size={64} />
         <div className="min-w-0">
           <p className="truncate font-display text-lg font-bold text-ink">{profile?.full_name ?? "Học sinh"}</p>
-          <p className="truncate text-sm text-muted">{session.user.email}</p>
           <p className="text-[13px] text-muted">Bấm vào ảnh để đổi ảnh đại diện.</p>
         </div>
       </section>
