@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 322 hàm, sinh tự động 2026-10-13
+# Hàm SQL / RPC (schema public) — 323 hàm, sinh tự động 2026-10-13
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -212,10 +212,11 @@ repo — xem trên Supabase Dashboard).
 - `similarity(text, text)` → real
 - `similarity_dist(text, text)` → real
 - `similarity_op(text, text)` → boolean
+- `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real

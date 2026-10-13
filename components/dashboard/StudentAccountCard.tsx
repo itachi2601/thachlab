@@ -15,7 +15,7 @@ function fmtDate(value: string | null, withTime = false) {
 }
 
 /**
- * Thẻ "Thông tin tài khoản" trong hồ sơ học sinh: username, email, SĐT, ngày sinh… cho admin/GV phụ trách.
+ * Thẻ "Thông tin tài khoản" trong hồ sơ học sinh: username, email, ngày sinh… cho admin/GV phụ trách.
  * Mật khẩu mã hoá một chiều nên không đọc lại được — dùng thẻ "Mật khẩu" bên dưới để đặt lại.
  */
 export default function StudentAccountCard({ studentId }: { studentId: string }) {
@@ -44,9 +44,6 @@ export default function StudentAccountCard({ studentId }: { studentId: string })
     ? [
         ["Username đăng nhập", info.username],
         ["Email đăng nhập (hệ thống)", info.login_email],
-        ["Email liên hệ", info.contact_email],
-        ["Số điện thoại", info.phone],
-        ["SĐT phụ huynh", info.parent_phone],
         ["Ngày sinh", fmtDate(info.birth_date)],
         ["Giới tính", info.gender ? GENDER_LABEL[info.gender.toLowerCase()] ?? info.gender : null],
         ["Mã học sinh", info.student_code],

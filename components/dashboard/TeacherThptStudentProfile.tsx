@@ -16,6 +16,15 @@ import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
 import { buildChapterRadar, fetchClassQuestionActivity, fetchCurriculumMeta } from "@/services/class-insights";
 import type { ChapterLessonMastery } from "@/services/mastery";
 import PasswordResetCard from "@/components/dashboard/PasswordResetCard";
+import StudentContactCard from "@/components/dashboard/StudentContactCard";
+
+type ProfileTab = "hoc" | "lien-lac" | "quan-ly";
+type LogView = "hoat-dong" | "diem" | "diem-danh";
+
+function daysAgo(iso: string, nowMs: number): string {
+  const d = Math.floor((nowMs - Date.parse(iso)) / 86400e3);
+  return d <= 0 ? "Hôm nay" : `${d} ngày trước`;
+}
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
   theory: "Lý thuyết",
@@ -49,6 +58,13 @@ export default function TeacherThptStudentProfile({
   const [removing, setRemoving] = useState(false);
   const [history, setHistory] = useState<LearningHistoryEntry[]>([]);
   const [radar, setRadar] = useState<{ id: string; current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] } | null>(null);
+  // Tab/bộ lọc nhớ theo từng học sinh: đổi em thì tự về Học tập, không cần effect.
+  const [view, setView] = useState<{ id: string | null; tab: ProfileTab; log: LogView }>({ id: null, tab: "hoc", log: "hoat-dong" });
+  const cur = view.id === selectedId ? view : { id: selectedId, tab: "hoc" as ProfileTab, log: "hoat-dong" as LogView };
+  const tab = cur.tab;
+  const log = cur.log;
+  const setTab = (t: ProfileTab) => setView({ ...cur, tab: t });
+  const setLog = (l: LogView) => setView({ ...cur, log: l });
   const toast = useToast();
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
@@ -108,7 +124,13 @@ export default function TeacherThptStudentProfile({
     }
   }
 
-  const visibleStudents = students.filter((item) => item.full_name.toLocaleLowerCase("vi-VN").includes(search.trim().toLocaleLowerCase("vi-VN")));
+  const [nowMs] = useState(() => Date.now());
+  const [onlyNew, setOnlyNew] = useState(false);
+  const isNew = (s: { joined_at?: string | null }) => !!s.joined_at && nowMs - Date.parse(s.joined_at) < 21 * 86400e3;
+  const newCount = students.filter(isNew).length;
+  const visibleStudents = students
+    .filter((item) => item.full_name.toLocaleLowerCase("vi-VN").includes(search.trim().toLocaleLowerCase("vi-VN")))
+    .filter((item) => !onlyNew || isNew(item));
   useEffect(() => {
     if (!selectedId) return;
     let cancelled = false;
@@ -140,6 +162,11 @@ export default function TeacherThptStudentProfile({
   const absentSessions = sessions.filter((x) => ["absent", "excused"].includes(selectedAttendance.get(x.id) ?? ""));
   const absentCount = absentSessions.length;
 
+  const recentScores = selectedResults.slice(0, 5).map((r) => Number(r.score)).filter((n) => Number.isFinite(n));
+  const avgRecent = recentScores.length ? recentScores.reduce((a, b) => a + b, 0) / recentScores.length : null;
+  const lastActive = history.reduce<string | null>((m, e) => (!m || Date.parse(e.at) > Date.parse(m) ? e.at : m), null);
+  const weakest = radarData?.current.filter((x) => x.pct !== null && x.answeredCount > 0).sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0] ?? null;
+
   return (
     <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
       <aside className="rounded-2xl border border-white/10 bg-panel p-3">
@@ -152,6 +179,15 @@ export default function TeacherThptStudentProfile({
             className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"
           />
         </div>
+        {newCount > 0 && (
+          <button
+            type="button"
+            onClick={() => setOnlyNew((v) => !v)}
+            className={`mb-3 w-full rounded-xl px-3 py-2 text-left text-sm font-bold ${onlyNew ? "bg-emerald-600 text-white" : "bg-emerald-500/15 text-emerald-300"}`}
+          >
+            {onlyNew ? "Đang lọc: " : ""}Mới vào 3 tuần qua · {newCount} em
+          </button>
+        )}
         <div className="max-h-[60vh] space-y-1 overflow-y-auto">
           {visibleStudents.map((student) => (
             <button
@@ -163,13 +199,21 @@ export default function TeacherThptStudentProfile({
             >
               <strong className="block">
                 {student.full_name}
+                {isNew(student) && (
+                  <span className="ml-1.5 rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[12px] font-bold text-emerald-300">
+                    Mới
+                  </span>
+                )}
                 {cttcIds.has(student.id) && (
                   <span className="ml-1.5 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[12px] font-bold text-amber-300">
                     CTTC
                   </span>
                 )}
               </strong>
-              <small className="opacity-70">{student.class_name || "Chưa cập nhật lớp"}</small>
+              <small className="opacity-70">
+                {student.class_name || "Chưa cập nhật lớp"}
+                {isNew(student) && student.joined_at ? ` · vào ${new Date(student.joined_at).toLocaleDateString("vi-VN")}` : ""}
+              </small>
             </button>
           ))}
           {!visibleStudents.length && <p className="p-3 text-center text-sm text-slate-500">Không tìm thấy học sinh.</p>}
@@ -183,130 +227,156 @@ export default function TeacherThptStudentProfile({
       ) : (
         <div className="space-y-4">
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
-                <p className="mt-1 text-sm text-slate-400">Lớp: {selected.class_name || "Chưa cập nhật"}</p>
-                {adminTools && selected.student_code && (
-                  <button
-                    type="button"
-                    onClick={async () => {
-                      try {
-                        await navigator.clipboard.writeText(selected.student_code ?? "");
-                        toast("success", "Đã chép tài khoản đăng nhập.");
-                      } catch {
-                        toast("error", "Trình duyệt không cho chép tự động — bôi đen rồi chép tay nhé.");
-                      }
-                    }}
-                    title="Chép tài khoản đăng nhập"
-                    className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-white/10 px-2.5 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 hover:text-white"
-                  >
-                    Tài khoản: <span className="font-mono text-white">{selected.student_code}</span>
-                    <Copy size={12} />
-                  </button>
-                )}
-              </div>
-              {adminTools && <button
-                type="button"
-                onClick={handleRemove}
-                disabled={removing}
-                className="shrink-0 rounded-xl border border-red-500/30 px-3 py-2 text-xs font-bold text-red-300 hover:bg-red-500/10 disabled:opacity-50"
-              >
-                {removing ? "Đang gỡ…" : "Xóa khỏi lớp"}
-              </button>}
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
+              {isNew(selected) && <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[12px] font-bold text-emerald-300">Mới</span>}
+              {cttcIds.has(selected.id) && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-300">CTTC</span>}
             </div>
-            {adminTools && cttcIds.has(selected.id) && (
-              <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] p-3 text-xs text-amber-200">
-                Học sinh này cũng có tài khoản CTTC (học CNC/tiện phay) — có thể đã bị gán nhầm
-                vào lớp THPT này. Bấm &quot;Xóa khỏi lớp&quot; nếu đúng vậy.
-              </p>
-            )}
+            <p className="mt-1 text-sm text-slate-400">
+              Lớp {selected.class_name || "chưa cập nhật"}
+              {selected.joined_at ? ` · vào lớp ${new Date(selected.joined_at).toLocaleDateString("vi-VN")}` : ""}
+            </p>
+            <dl className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {[
+                ["Điểm đề gần đây", avgRecent === null ? "—" : avgRecent.toLocaleString("vi-VN", { maximumFractionDigits: 1 })],
+                ["Có mặt", sessions.length ? `${presentCount}/${sessions.length}` : "—"],
+                ["Yếu nhất", weakest ? `${weakest.lessonTitle} · ${Math.round(weakest.pct ?? 0)}%` : "—"],
+                ["Hoạt động gần nhất", lastActive ? daysAgo(lastActive, nowMs) : "Chưa có"],
+              ].map(([label, value]) => (
+                <div key={label} className="min-w-0 rounded-xl bg-white/[.04] px-3 py-2">
+                  <dt className="text-[12px] font-bold uppercase tracking-wide text-slate-500">{label}</dt>
+                  <dd className="mt-0.5 truncate text-sm font-bold text-white" title={value}>{value}</dd>
+                </div>
+              ))}
+            </dl>
           </section>
 
-          {adminTools && (
+          <nav className="flex gap-1 overflow-x-auto rounded-2xl border border-white/10 bg-panel p-1" aria-label="Mục hồ sơ">
+            {([["hoc", "Học tập"], ["lien-lac", "Liên lạc gia đình"], ...(adminTools ? [["quan-ly", "Quản lý"]] : [])] as [ProfileTab, string][]).map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setTab(id)}
+                aria-current={tab === id ? "page" : undefined}
+                className={`min-h-11 shrink-0 flex-1 rounded-xl px-4 text-sm font-bold ${tab === id ? "bg-blue-600 text-white" : "text-slate-300 hover:bg-white/5"}`}
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+
+          {tab === "hoc" && (
+            <>
+              {adminTools && <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />}
+              {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} preloaded={radarData} />}
+
+              <section className="rounded-2xl border border-white/10 bg-panel p-5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="mr-auto font-display text-lg font-bold text-white">Lịch sử</h4>
+                  {([["hoat-dong", "Hoạt động"], ["diem", "Điểm đề"], ["diem-danh", "Điểm danh"]] as [LogView, string][]).map(([id, label]) => (
+                    <button
+                      key={id}
+                      type="button"
+                      onClick={() => setLog(id)}
+                      className={`min-h-9 rounded-full px-3 text-xs font-bold ${log === id ? "bg-white text-slate-900" : "border border-white/15 text-slate-300"}`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+
+                {log === "hoat-dong" && (history.length ? (
+                  <div className="mt-3 max-h-80 space-y-2 overflow-y-auto">
+                    {history.map((entry, i) => (
+                      <div key={i} className="rounded-xl bg-white/[.02] p-3 text-sm">
+                        <span className="mr-2 rounded-full border border-white/10 px-2 py-0.5 text-[12px] font-bold uppercase text-slate-400">{ACTIVITY_LABEL[entry.activity]}</span>
+                        <strong className="text-white">{entry.title}</strong>
+                        <small className="mt-1 block text-slate-500">{entry.detail} · {new Date(entry.at).toLocaleString("vi-VN")}</small>
+                      </div>
+                    ))}
+                  </div>
+                ) : <p className="mt-3 text-sm text-slate-500">Chưa có hoạt động học tập nào được ghi nhận.</p>)}
+
+                {log === "diem" && (selectedResults.length ? (
+                  <div className="mt-3 max-h-80 space-y-2 overflow-y-auto pr-1">
+                    {selectedResults.map((row) => (
+                      <div key={row.id} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3">
+                        <div className="min-w-0">
+                          <strong className="text-sm text-white">{row.exams?.title ?? `Đề #${row.exam_id}`}</strong>
+                          <small className="mt-1 block text-slate-500">{new Date(row.created_at).toLocaleString("vi-VN")}</small>
+                        </div>
+                        <span className="font-mono text-lg font-bold text-white">{Number(row.score).toLocaleString("vi-VN")}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : <p className="mt-3 text-sm text-slate-500">Chưa làm bài kiểm tra nào.</p>)}
+
+                {log === "diem-danh" && (sessions.length ? (
+                  <div className="mt-3">
+                    <p className="text-sm text-slate-300">Có mặt {presentCount}/{sessions.length} buổi{absentCount > 0 && <> · vắng {absentCount}</>}</p>
+                    {absentSessions.length > 0 && (
+                      <ul className="mt-2 space-y-1 text-sm text-slate-400">
+                        {absentSessions.map((session) => (
+                          <li key={session.id}>{STATUS_LABEL[selectedAttendance.get(session.id) ?? ""]} · {session.title} · {new Date(session.starts_at).toLocaleDateString("vi-VN")}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ) : <p className="mt-3 text-sm text-slate-500">Lớp chưa có buổi điểm danh nào.</p>)}
+              </section>
+            </>
+          )}
+
+          {tab === "lien-lac" && (
+            <>
+              <StudentContactCard key={`contact-${selected.id}`} studentId={selected.id} />
+              {adminTools && (
+                <>
+                  <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
+                  <ParentDigestCard key={`digest-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
+                </>
+              )}
+            </>
+          )}
+
+          {tab === "quan-ly" && adminTools && (
             <>
               <StudentAccountCard key={`acc-${selected.id}`} studentId={selected.id} />
-
+              {selected.student_code && (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(selected.student_code ?? "");
+                      toast("success", "Đã chép tài khoản đăng nhập.");
+                    } catch {
+                      toast("error", "Trình duyệt không cho chép tự động — bôi đen rồi chép tay nhé.");
+                    }
+                  }}
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-white/10 px-4 text-sm font-semibold text-slate-300 hover:text-white"
+                >
+                  Chép tài khoản đăng nhập: <span className="font-mono text-white">{selected.student_code}</span> <Copy size={14} />
+                </button>
+              )}
               <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
-
-              <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />
-
-            </>
-          )}
-
-          {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} preloaded={radarData} />}
-
-          {adminTools && (
-            <>
-              <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
-
-              <ParentDigestCard key={`digest-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
-
-            </>
-          )}
-
-          <section className="rounded-2xl border border-white/10 bg-panel p-5">
-            <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>
-            {history.length ? (
-              <div className="mt-3 max-h-72 space-y-2 overflow-y-auto">
-                {history.map((entry, i) => (
-                  <div key={i} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 text-sm">
-                    <div className="min-w-0">
-                      <span className="mr-2 rounded-full border border-white/10 px-2 py-0.5 text-[12px] font-bold uppercase text-slate-400">
-                        {ACTIVITY_LABEL[entry.activity]}
-                      </span>
-                      <strong className="text-white">{entry.title}</strong>
-                      <small className="mt-1 block text-slate-500">
-                        {entry.detail} · {new Date(entry.at).toLocaleString("vi-VN")}
-                      </small>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="mt-3 text-sm text-slate-500">Chưa có hoạt động học tập nào được ghi nhận.</p>
-            )}
-          </section>
-
-          <section className="rounded-2xl border border-white/10 bg-panel p-5">
-            <h4 className="font-display text-lg font-bold text-white">Lịch sử làm bài kiểm tra</h4>
-            {selectedResults.length ? (
-              <div className="mt-3 max-h-72 space-y-2 overflow-y-auto pr-1">
-                {selectedResults.map((row) => (
-                  <div key={row.id} className="flex items-center justify-between rounded-xl bg-white/[.02] p-3">
-                    <div>
-                      <strong className="text-sm text-white">{row.exams?.title ?? `Đề #${row.exam_id}`}</strong>
-                      <small className="mt-1 block text-slate-500">{new Date(row.created_at).toLocaleString("vi-VN")}</small>
-                    </div>
-                    <span className="font-mono text-lg font-bold text-white">{Number(row.score).toLocaleString("vi-VN")}</span>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="mt-3 text-sm text-slate-500">Chưa làm bài kiểm tra nào.</p>
-            )}
-          </section>
-
-          <section className="rounded-2xl border border-white/10 bg-panel p-5">
-            <h4 className="font-display text-lg font-bold text-white">Điểm danh</h4>
-            {sessions.length ? (
-              <>
-                <p className="mt-2 text-sm text-slate-300">
-                  Có mặt {presentCount}/{sessions.length} buổi
-                  {absentCount > 0 && <> · vắng {absentCount}</>}
-                </p>
-                {absentSessions.length > 0 && (
-                  <ul className="mt-2 space-y-1 text-sm text-slate-400">
-                    {absentSessions.map((session) => (
-                      <li key={session.id}>{STATUS_LABEL[selectedAttendance.get(session.id) ?? ""]} · {session.title} · {new Date(session.starts_at).toLocaleDateString("vi-VN")}</li>
-                    ))}
-                  </ul>
+              <section className="rounded-2xl border border-red-500/25 bg-red-500/[.04] p-5">
+                <h4 className="font-display text-lg font-bold text-red-200">Khu vực nguy hiểm</h4>
+                {cttcIds.has(selected.id) && (
+                  <p className="mt-2 text-xs text-amber-200">
+                    Em này cũng có tài khoản CTTC (CNC/tiện phay) — có thể đã bị gán nhầm vào lớp THPT này.
+                  </p>
                 )}
-              </>
-            ) : (
-              <p className="mt-3 text-sm text-slate-500">Lớp chưa có buổi điểm danh nào.</p>
-            )}
-          </section>
+                <button
+                  type="button"
+                  onClick={handleRemove}
+                  disabled={removing}
+                  className="mt-3 min-h-11 rounded-xl border border-red-500/40 px-4 text-sm font-bold text-red-300 hover:bg-red-500/10 disabled:opacity-50"
+                >
+                  {removing ? "Đang gỡ…" : "Xóa khỏi lớp"}
+                </button>
+              </section>
+            </>
+          )}
         </div>
       )}
     </div>

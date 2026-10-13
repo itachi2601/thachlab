@@ -24,3 +24,13 @@ export async function fetchStudentAccount(studentId: string): Promise<StudentAcc
   const row = Array.isArray(data) ? data[0] : data;
   return (row as StudentAccountInfo | undefined) ?? null;
 }
+
+/** Sửa SĐT học sinh + SĐT phụ huynh (RPC tự kiểm quyền; để trống = xoá). */
+export async function saveStudentPhones(studentId: string, phone: string, parentPhone: string): Promise<void> {
+  const { error } = await getSupabase().rpc("staff_set_student_phones", {
+    p_student: studentId,
+    p_phone: phone,
+    p_parent_phone: parentPhone,
+  });
+  if (error) throw new Error(error.message || "Chưa lưu được số điện thoại.");
+}

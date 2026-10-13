@@ -24,6 +24,7 @@ FILES=(
   "supabase/migrations/20261013233000_tien_trinh_day_ds_khoa.sql|Hàm teaching_courses: danh sách khoá + lịch tuần mà thầy/trợ giảng được ghi tiến trình dạy|lúc nào cũng được"
   "supabase/migrations/20261014100000_phu_dao_dang_ky_theo_chu_de.sql|Đăng ký phụ đạo chọn 1–3 chủ đề có đủ câu bài kiểm tra, chốt 6 giờ trước, báo trợ giảng + thầy qua chuông|lúc nào cũng được"
   "supabase/migrations/20261014110000_phu_dao_diem_danh_noi_phieu.sql|Phụ đạo: điểm danh có mặt/vắng, phiếu + bài kiểm tra cuối buổi nối với buổi lịch (slot_id), RPC bảng theo dõi cho thầy|lúc nào cũng được (chạy sau 20261014100000)"
+  "supabase/migrations/20261014120000_staff_sua_sdt_hoc_sinh.sql|Hàm staff_set_student_phones: thầy/TA sửa SĐT học sinh + phụ huynh trong hồ sơ|lúc nào cũng được"
 )
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
 # ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung

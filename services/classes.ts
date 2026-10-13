@@ -144,18 +144,23 @@ export interface ClassStudent {
   full_name: string;
   class_name: string;
   student_code: string | null;
+  /** Ngày vào lớp (ngày duyệt, không có thì ngày xin vào) — để nhận ra em mới. */
+  joined_at?: string | null;
 }
 
 /** Học sinh đã được duyệt vào 1 khối lớp — dùng cho dashboard giáo viên THPT. */
 export async function fetchClassStudents(classId: number): Promise<ClassStudent[]> {
   const { data, error } = await getSupabase()
     .from("user_classes")
-    .select("profiles!user_classes_user_id_fkey(id, full_name, class_name, student_code)")
+    .select("reviewed_at, requested_at, profiles!user_classes_user_id_fkey(id, full_name, class_name, student_code)")
     .eq("class_id", classId)
     .eq("status", "active");
   if (error) throw error;
   return (data ?? [])
-    .map((row) => (Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles))
+    .map((row): ClassStudent | null => {
+      const profile = Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles;
+      return profile ? { ...profile, joined_at: (row.reviewed_at ?? row.requested_at ?? null) as string | null } : null;
+    })
     .filter((profile): profile is ClassStudent => Boolean(profile));
 }
 

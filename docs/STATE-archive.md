@@ -654,3 +654,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - 11/10/2026: chạy `20261011170000_ta_reminders` (log scripts/logs/20261011-095954-…ta_reminders.log); gửi nhắc tuần 05–11/10 cho 6 trợ giảng, chạy lại xác nhận không gửi trùng.
 
 - 11/10/2026 đã chạy (10:44): `20261011170000_rank_lop10_bat_nguon` — lớp 10 thuộc mùa 5 (Alpha test) chưa có nguồn RP: bật nguồn + làm lại thưởng chênh lệch + tính lại mùa 5; chạy NGOÀI giờ học. Kết quả: +310 nguồn mùa 5, cộng bù 3305 RP/51 HS (max 207/HS).
+
+- ĐÃ CHẠY 14/10: `20261014120000_staff_sua_sdt_hoc_sinh` — thêm hàm `staff_set_student_phones` (sửa SĐT em + phụ huynh trong tab Liên lạc gia đình); chạy lúc nào cũng được; rollback: `drop function public.staff_set_student_phones(uuid,text,text);`.
