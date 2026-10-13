@@ -22,6 +22,7 @@ import {
 
 import { questionKey } from "@/services/question-context";
 import { isFullyCorrect } from "@/features/lessons/practice-step";
+import { arrangeForMotivation, pickAndArrange, pickByMix } from "@/features/lessons/practice-arrange";
 
 type Phase = "loading" | "empty" | "intro" | "running" | "done";
 
@@ -50,8 +51,6 @@ function allocate(sizes: number[], count: number): number[] {
   return take;
 }
 
-/** Thứ tự dễ → khó để mở đầu bằng câu em làm được, rồi tăng dần (câu "" xếp như trung bình). */
-const DIFF_RANK: Record<string, number> = { de: 0, "": 1, "trung-binh": 1, kho: 2 };
 /** Phần phụ đạo: tối đa 70% số câu thuộc đúng phần em hổng, còn lại là câu khác của bài. */
 const FOCUS_SHARE = 0.7;
 /** Sai từng này câu của phần hổng trong cùng lượt → mời xem lại lý thuyết tương tác. */
@@ -177,29 +176,24 @@ export default function TopicPracticeModal({
           const pools = lessonIdList.map((lid) => collect([...new Set(examIdsByLesson[lid])], seen));
           const take = allocate(pools.map((p) => p.length), count);
           const tagged = pools.flatMap((pool, i) =>
-            pickRandom(pool, take[i]).map((pick) => ({ pick, lessonId: lessonIdList[i] })),
+            pickByMix(pool, take[i], "mid").map((pick) => ({ pick, lessonId: lessonIdList[i] })),
           );
-          const mixed = pickRandom(tagged, tagged.length);
+          const mixed = arrangeForMotivation(tagged, (t) => t.pick.question.difficulty);
           chosen = mixed.map((t) => t.pick);
           lessonOfPick = mixed.map((t) => t.lessonId);
         } else if (topicName.trim() !== "") {
-          // Lượt phụ đạo một phần: ~70% câu đúng phần em hổng (ưu tiên Dễ/TB, xếp dễ → khó), câu đầu và câu cuối
-          // là câu khác của bài (em làm được) để mở đầu và kết thúc không bằng chuỗi câu sai.
+          // Lượt phụ đạo một phần (em yếu chỗ này): ~70% câu đúng phần hổng, còn lại là câu khác của bài (em làm được).
+          // Cả hai nhóm bốc theo tỉ lệ 50% dễ / 40% TB / 10% khó, rồi xếp: 2 câu dễ mở đầu, thang tăng dần, đỉnh khó
+          // sát cuối, kết bằng câu vừa sức (features/lessons/practice-arrange.ts, docs/LUYEN-DUNG-CHO-YEU.md).
           const focusAll = collect(examIds);
           const focusKeys = new Set(focusAll.map((p) => `${p.examId}:${p.sourceIndex}`));
           const others = collect(examIds, undefined, true).filter((p) => !focusKeys.has(`${p.examId}:${p.sourceIndex}`));
           const wantOthers = Math.min(others.length, Math.max(0, count - Math.ceil(count * FOCUS_SHARE)));
           const focusN = Math.min(focusAll.length, count - wantOthers);
           const otherN = Math.min(others.length, count - focusN);
-          const notHard = focusAll.filter((p) => p.question.difficulty !== "kho");
-          const hard = focusAll.filter((p) => p.question.difficulty === "kho");
-          const focus = [...pickRandom(notHard, Math.min(notHard.length, focusN)), ...pickRandom(hard, Math.max(0, focusN - notHard.length))].sort(
-            (a, b) => (DIFF_RANK[a.question.difficulty ?? ""] ?? 1) - (DIFF_RANK[b.question.difficulty ?? ""] ?? 1),
-          );
-          const warm = pickRandom(others, otherN);
-          chosen = otherN >= 2 ? [warm[0], ...focus, ...warm.slice(1)] : [...warm, ...focus];
+          chosen = arrangeForMotivation([...pickByMix(focusAll, focusN, "weak"), ...pickByMix(others, otherN, "weak")]);
         } else {
-          chosen = pickRandom(collect(examIds), count);
+          chosen = pickAndArrange(collect(examIds), count, "mid");
         }
         setPicks(chosen);
         setChecked(chosen.map(() => false));

@@ -7,7 +7,8 @@ import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import TheoryReviewStep from "@/components/results/TheoryReviewStep";
 import { useToast } from "@/components/ui/Toast";
-import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
+import type { Difficulty, ExamQuestion, QuestionResponse } from "@/features/exams/types";
+import { arrangeForMotivation } from "@/features/lessons/practice-arrange";
 import { emptyResponses, gradeExam, isAnswered, pickRandom } from "@/features/exams/types";
 import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/services/question-bank";
 import {
@@ -52,10 +53,8 @@ function pickWindowQuestions(pool: BankQuestion[], seen: Set<number>): BankQuest
     const rest = fresh(pool.filter((q) => !taken.has(q.id)));
     rest.slice(0, WINDOW_QUIZ_QUESTION_COUNT - picked.length).forEach(take);
   }
-  return pickRandom(picked, picked.length);
+  return arrangeForMotivation(picked, (q) => q.difficulty as Difficulty);
 }
-
-const DIFFICULTY_RANK: Record<string, number> = { de: 0, "trung-binh": 1, "": 1, kho: 2 };
 
 /**
  * Bài tự kiểm tra thoát phụ đạo: phần ĐẦU (dễ) lấy từ bộ Kiểm tra nhanh của bài lý thuyết — đúng những câu em vừa
@@ -71,8 +70,8 @@ function pickSelfQuizQuestions(pool: BankQuestion[], theory: BankQuestion[]): { 
   const others = pickRandom(
     pool.filter((q) => !taken.has(q.id)),
     EXIT_QUIZ_QUESTION_COUNT - easy.length,
-  ).sort((a, b) => (DIFFICULTY_RANK[a.difficulty] ?? 1) - (DIFFICULTY_RANK[b.difficulty] ?? 1));
-  return { picked: [...easy, ...others], easyCount: easy.length };
+  );
+  return { picked: [...easy, ...arrangeForMotivation(others, (q) => q.difficulty as Difficulty)], easyCount: easy.length };
 }
 
 /**

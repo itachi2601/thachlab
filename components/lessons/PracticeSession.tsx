@@ -30,6 +30,7 @@ import {
   writeLadderLevel,
   type LadderLevel,
 } from "@/features/lessons/practice-ladder";
+import { arrangeForMotivation, pickAndArrange, pickByMix } from "@/features/lessons/practice-arrange";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   dueQuestionHashes,
@@ -333,11 +334,11 @@ export default function PracticeSession({
       const takenKeys = new Set([...dueKeys, ...weakPicked.map(pickKey)]);
       const restBank = bank.filter((p) => !takenKeys.has(pickKey(p)));
       const need = Math.max(0, count - duePicked.length - weakPicked.length);
-      const rest = ladderOn ? pickForLevel(restBank, level, need) : pickRandom(restBank, need);
+      const rest = ladderOn ? pickForLevel(restBank, level, need) : pickByMix(restBank, need, "mid");
       const all = [...duePicked, ...weakPicked, ...rest];
-      chosen = pickRandom(all, all.length);
+      chosen = arrangeForMotivation(all);
     } else {
-      chosen = ladderOn ? pickForLevel(bank, level, count) : pickRandom(bank, count);
+      chosen = ladderOn ? arrangeForMotivation(pickForLevel(bank, level, count)) : pickAndArrange(bank, count, "mid");
     }
     sessionLevelRef.current = ladderOn ? level : null;
     setLadderNote(null);

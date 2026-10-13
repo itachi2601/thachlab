@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import { getSupabase } from "@/services/supabase";
 import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { emptyResponses, gradeExam, isAnswered } from "@/features/exams/types";
+import { arrangeForMotivation } from "@/features/lessons/practice-arrange";
 
 const COUNT = 3;
 
@@ -61,7 +62,7 @@ export default function SimilarBankPractice({
       setPhase("empty");
       return;
     }
-    const next = ((data ?? []) as SimilarRow[]).filter((r) => r.question && r.question.type !== "essay");
+    const next = arrangeForMotivation(((data ?? []) as SimilarRow[]).filter((r) => r.question && r.question.type !== "essay"));
     if (next.length === 0) {
       setPhase("empty");
       return;
