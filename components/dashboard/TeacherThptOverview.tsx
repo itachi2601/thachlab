@@ -89,25 +89,6 @@ export default function TeacherThptOverview({
     return m;
   }, [alerts]);
 
-  const concern = useMemo(() => {
-    return students
-      .map((student) => {
-        const scores = scoreByStudent.get(student.id) ?? [];
-        const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : null;
-        const rate = attendanceRateByStudent.get(student.id);
-        const alert = openAlertBy.get(student.id);
-        const reasons: string[] = [];
-        if (alert) reasons.push(alert.severity === "urgent" ? "⚠ Cần phụ đạo (khẩn)" : "⚠ Cần phụ đạo");
-        if (avg === null) reasons.push("Chưa làm bài kiểm tra nào");
-        else if (avg < 5) reasons.push(`Điểm trung bình ${avg.toFixed(1)}`);
-        if (rate !== undefined && rate < 75) reasons.push(`Đi học ${rate}%`);
-        return { student, reasons, hasAlert: Boolean(alert) };
-      })
-      .filter((item) => item.reasons.length > 0)
-      .sort((a, b) => Number(b.hasAlert) - Number(a.hasAlert))
-      .slice(0, 10);
-  }, [students, scoreByStudent, attendanceRateByStudent, openAlertBy]);
-
   // Gợi ý việc nên làm trước — chỉ tính từ dữ liệu đã tải ở trên (không thêm truy vấn).
   const todo = useMemo(() => {
     const items: { text: string; onClick: () => void }[] = [];
@@ -157,67 +138,6 @@ export default function TeacherThptOverview({
       </section>
 
       <TeacherLiveLearningPanel classId={classId} studentCount={students.length} onOpenStudent={onOpenStudent} />
-
-      <section className="rounded-2xl border border-white/10 bg-panel p-5">
-        <div className="mb-4 flex items-center gap-2 text-amber-300">
-          <AlertTriangle size={18} />
-          <h3 className="font-display text-lg font-bold text-white">Học sinh cần quan tâm</h3>
-        </div>
-        {concern.length ? (
-          <div className="space-y-2">
-            {concern.map((item) => (
-              <button
-                key={item.student.id}
-                onClick={() => onOpenStudent(item.student.id)}
-                className="flex w-full items-center justify-between rounded-xl border border-red-400/10 bg-red-500/5 p-3 text-left"
-              >
-                <div>
-                  <strong className="text-sm text-white">{item.student.full_name}</strong>
-                  <small className="mt-1 block text-red-200/70">{item.reasons.join(" · ")}</small>
-                </div>
-                <ArrowRight size={16} className="text-red-300" />
-              </button>
-            ))}
-          </div>
-        ) : (
-          <Empty text="Chưa có học sinh thuộc nhóm cần quan tâm." />
-        )}
-      </section>
-
-      <section className="grid gap-3 sm:grid-cols-2">
-        <button
-          onClick={() => onOpenTab("alerts")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
-        >
-          <span>
-            <strong className="block text-lg text-white">Cảnh báo phụ đạo</strong>
-            <small className="text-slate-400">
-              {openAlertBy.size > 0 ? `${openAlertBy.size} học sinh cần xử lý` : "Không có cảnh báo"}
-            </small>
-          </span>
-          <ArrowRight size={18} className="text-amber-300" />
-        </button>
-        <button
-          onClick={() => onOpenTab("gradebook")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
-        >
-          <span>
-            <strong className="block text-lg text-white">Xem bảng điểm</strong>
-            <small className="text-slate-400">{results.length} lượt làm bài của lớp</small>
-          </span>
-          <ArrowRight size={18} className="text-blue-300" />
-        </button>
-        <button
-          onClick={() => onOpenTab("attendance")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
-        >
-          <span>
-            <strong className="block text-lg text-white">Điểm danh buổi học</strong>
-            <small className="text-slate-400">Mở phiên điểm danh mới</small>
-          </span>
-          <ArrowRight size={18} className="text-blue-300" />
-        </button>
-      </section>
     </div>
   );
 }
@@ -238,8 +158,4 @@ function Metric({ icon, value, label, tone }: { icon: React.ReactNode; value: st
       <strong className="mt-3 block text-3xl text-white">{value}</strong>
     </div>
   );
-}
-
-function Empty({ text }: { text: string }) {
-  return <p className="rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500">{text}</p>;
 }

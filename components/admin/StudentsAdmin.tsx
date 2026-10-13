@@ -109,6 +109,7 @@ export default function StudentsAdmin() {
 
           {tab === "profile" && (
             <TeacherThptStudentProfile
+              adminTools
               classId={selectedClassId}
               students={students}
               selectedId={selectedStudentId}

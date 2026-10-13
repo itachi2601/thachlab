@@ -31,12 +31,15 @@ export default function TeacherThptStudentProfile({
   selectedId,
   onSelect,
   onRemoved,
+  adminTools = false,
 }: {
   classId: number;
   students: ClassStudent[];
   selectedId: string | null;
   onSelect: (id: string) => void;
   onRemoved?: () => void;
+  /** Công cụ tài khoản (mật khẩu, phụ huynh, chẩn đoán, gỡ khỏi lớp): chỉ ở /quan-tri/hoc-sinh, dashboard giáo viên không hiện. */
+  adminTools?: boolean;
 }) {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState<ClassExamResult[]>([]);
@@ -133,6 +136,10 @@ export default function TeacherThptStudentProfile({
   const selectedResults = results.filter((row) => row.student_id === selectedId).sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
   const selectedAttendance = selectedId ? attendanceByStudent.get(selectedId) ?? new Map<number, string>() : new Map<number, string>();
 
+  const presentCount = sessions.filter((x) => ["present", "late"].includes(selectedAttendance.get(x.id) ?? "")).length;
+  const absentSessions = sessions.filter((x) => ["absent", "excused"].includes(selectedAttendance.get(x.id) ?? ""));
+  const absentCount = absentSessions.length;
+
   return (
     <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
       <aside className="rounded-2xl border border-white/10 bg-panel p-3">
@@ -180,7 +187,7 @@ export default function TeacherThptStudentProfile({
               <div>
                 <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
                 <p className="mt-1 text-sm text-slate-400">Lớp: {selected.class_name || "Chưa cập nhật"}</p>
-                {selected.student_code && (
+                {adminTools && selected.student_code && (
                   <button
                     type="button"
                     onClick={async () => {
@@ -199,16 +206,16 @@ export default function TeacherThptStudentProfile({
                   </button>
                 )}
               </div>
-              <button
+              {adminTools && <button
                 type="button"
                 onClick={handleRemove}
                 disabled={removing}
                 className="shrink-0 rounded-xl border border-red-500/30 px-3 py-2 text-xs font-bold text-red-300 hover:bg-red-500/10 disabled:opacity-50"
               >
                 {removing ? "Đang gỡ…" : "Xóa khỏi lớp"}
-              </button>
+              </button>}
             </div>
-            {cttcIds.has(selected.id) && (
+            {adminTools && cttcIds.has(selected.id) && (
               <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] p-3 text-xs text-amber-200">
                 Học sinh này cũng có tài khoản CTTC (học CNC/tiện phay) — có thể đã bị gán nhầm
                 vào lớp THPT này. Bấm &quot;Xóa khỏi lớp&quot; nếu đúng vậy.
@@ -216,17 +223,27 @@ export default function TeacherThptStudentProfile({
             )}
           </section>
 
-          <StudentAccountCard key={`acc-${selected.id}`} studentId={selected.id} />
+          {adminTools && (
+            <>
+              <StudentAccountCard key={`acc-${selected.id}`} studentId={selected.id} />
 
-          <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
+              <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
 
-          <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />
+              <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />
+
+            </>
+          )}
 
           {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} preloaded={radarData} />}
 
-          <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
+          {adminTools && (
+            <>
+              <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
 
-          <ParentDigestCard key={`digest-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
+              <ParentDigestCard key={`digest-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
+
+            </>
+          )}
 
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>
@@ -273,17 +290,19 @@ export default function TeacherThptStudentProfile({
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Điểm danh</h4>
             {sessions.length ? (
-              <div className="mt-3 space-y-2">
-                {sessions.map((session) => {
-                  const status = selectedAttendance.get(session.id);
-                  return (
-                    <div key={session.id} className="flex items-center justify-between rounded-xl bg-white/[.02] p-3 text-sm">
-                      <span className="text-slate-300">{session.title} · {new Date(session.starts_at).toLocaleDateString("vi-VN")}</span>
-                      <span className="font-semibold text-white">{status ? STATUS_LABEL[status] : "Chưa điểm danh"}</span>
-                    </div>
-                  );
-                })}
-              </div>
+              <>
+                <p className="mt-2 text-sm text-slate-300">
+                  Có mặt {presentCount}/{sessions.length} buổi
+                  {absentCount > 0 && <> · vắng {absentCount}</>}
+                </p>
+                {absentSessions.length > 0 && (
+                  <ul className="mt-2 space-y-1 text-sm text-slate-400">
+                    {absentSessions.map((session) => (
+                      <li key={session.id}>{STATUS_LABEL[selectedAttendance.get(session.id) ?? ""]} · {session.title} · {new Date(session.starts_at).toLocaleDateString("vi-VN")}</li>
+                    ))}
+                  </ul>
+                )}
+              </>
             ) : (
               <p className="mt-3 text-sm text-slate-500">Lớp chưa có buổi điểm danh nào.</p>
             )}

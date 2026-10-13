@@ -40,7 +40,6 @@ const TeacherThptTutoring = lazyTab(() => import("@/components/dashboard/Teacher
 const TeacherThptStudentProfile = lazyTab(() => import("@/components/dashboard/TeacherThptStudentProfile"));
 const TeacherThptProgress = lazyTab(() => import("@/components/dashboard/TeacherThptProgress"));
 const TeacherThptAttendancePanel = lazyTab(() => import("@/components/attendance/TeacherThptAttendancePanel"));
-const ClassRosterImportPanel = lazyTab(() => import("@/components/dashboard/ClassRosterImportPanel"));
 const ClassAnnouncementsPanel = lazyTab(() => import("@/components/dashboard/ClassAnnouncementsPanel"));
 const TeacherThptEnrollment = lazyTab(() => import("@/components/dashboard/TeacherThptEnrollment"));
 
@@ -55,7 +54,6 @@ type DashboardTab =
   | "gradebook"
   | "profile"
   | "attendance"
-  | "roster"
   | "enrollment";
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
@@ -68,7 +66,7 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
-  { id: "enrollment", label: "Danh sách lớp", icon: ClipboardPen },
+  { id: "enrollment", label: "Ghi danh", icon: ClipboardPen },
 ];
 
 export default function TeacherThptDashboard() {
@@ -215,13 +213,7 @@ export default function TeacherThptDashboard() {
           {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}
           {activeTab === "enrollment" && (
-            <div className="space-y-8">
-              <TeacherThptEnrollment classId={selectedClassId} className={selectedClass?.name ?? ""} students={students} onStudentsChanged={() => setStudentsNonce((n) => n + 1)} />
-              <section className="space-y-3 border-t border-line pt-6">
-                <h3 className="font-display text-lg font-bold text-ink">Nhập danh sách từ Excel</h3>
-                <ClassRosterImportPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onImported={() => setStudentsNonce((n) => n + 1)} />
-              </section>
-            </div>
+            <TeacherThptEnrollment classId={selectedClassId} className={selectedClass?.name ?? ""} students={students} onStudentsChanged={() => setStudentsNonce((n) => n + 1)} />
           )}
         </>
       )}
