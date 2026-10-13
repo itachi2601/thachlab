@@ -126,28 +126,26 @@ def sec_tu_vung() -> str:
 # ---------- Mục 3: bài đọc ----------
 def sec_bai_doc() -> str:
     out = [f'<h3>{ROMAN[3]}. Bài đọc: Part 2 của đề lấy nguyên văn từ đây</h3>',
-           '<p>Đọc từng câu tiếng Anh trước. Chạm vào câu để xem bản dịch, bấm 🔊 để nghe. Mục tiêu không phải dịch hay, mà là <strong>nhớ câu nào nói về cái gì</strong> để khi thi tìm lại được.</p>']
+           '<p>Đọc từng câu tiếng Anh trước. Chạm vào câu: <strong>đoán nghĩa các từ in đậm trước</strong>, rồi mới tự dịch cả câu và mở bản dịch. Bấm 🔊 để nghe. Mục tiêu không phải dịch hay, mà là <strong>nhớ câu nào nói về cái gì</strong> để khi thi tìm lại được.</p>']
     vi_map = {t["term"].lower(): t["vi"] for g in D["tu_vung"] for t in g["tu"]}
     vi_map.update({t["term"].lower(): t["vi"] for t in D["tu_vung_them"]})
     for a in D["bai_doc"]:
         out.append(f'<h4>{a["ten"]}</h4>')
-        # Cách thầy dạy (13/10/2026): trước khi đọc, em tự dịch/đoán nghĩa các từ quan trọng (từ in đậm), rồi mới đọc và làm bài.
-        keys = []
-        for en, _ in a["cau"]:
+        # Cách thầy dạy (13/10/2026): với TỪNG câu, em đoán nghĩa các từ quan trọng (in đậm) trước, rồi mới mở bản dịch cả câu.
+        def key_vi(w):
+            return (a.get("tu_khoa") or {}).get(w) or vi_map.get(w.lower()) or next((v for k, v in vi_map.items() if k in w.lower() or w.lower() in k), "")
+        for i, (en, vi) in enumerate(a["cau"], 1):
+            plain = re.sub(r"<[^>]+>", "", en)
+            keys = []
             for w in re.findall(r"<b>(.*?)</b>", en):
                 if w.lower() not in [k.lower() for k in keys]:
                     keys.append(w)
-        if keys:
-            items = []
-            for w in keys:
-                vi = (a.get("tu_khoa") or {}).get(w) or vi_map.get(w.lower()) or next((v for k, v in vi_map.items() if k in w.lower() or w.lower() in k), "")
-                items.append(details(f'{w} {speak(w)}', f'<p>{vi or "(tra ở mục Từ vựng)"}</p>'))
-            out.append(think("🔍 Đoán nghĩa trước khi đọc",
-                             '<p>Các từ in đậm dưới đây sẽ xuất hiện trong bài. Với mỗi từ: nói nghĩa tiếng Việt theo em nhớ, rồi mới bấm mở để đối chiếu. Đoán sai cũng được, đó là lúc nhớ nhất.</p>'
-                             + "".join(items)))
-        for i, (en, vi) in enumerate(a["cau"], 1):
-            plain = re.sub(r"<[^>]+>", "", en)
-            out.append(details(f'<span class="avcn-n">({i})</span> {en} {speak(plain)}', f'<p class="avcn-trans">{vi}</p>', cls="tl-details avcn-sent"))
+            inner = ""
+            if keys:
+                items = "".join("<li>" + details(f"{w} {speak(w)}", "<p>" + (key_vi(w) or "(tra ở mục Từ vựng)") + "</p>") + "</li>" for w in keys)
+                inner += f'<p><strong>Bước 1.</strong> Đoán nghĩa các từ in đậm, rồi bấm từng từ để đối chiếu.</p><ul class="avcn-list">{items}</ul><p><strong>Bước 2.</strong> Ghép lại, tự dịch cả câu, rồi mở bản dịch.</p>'
+            inner += details("Xem bản dịch cả câu", f'<p class="avcn-trans">{vi}</p>')
+            out.append(details(f'<span class="avcn-n">({i})</span> {en} {speak(plain)}', inner, cls="tl-details avcn-sent"))
         q = a["quiz"]
         out.append(think("🔎 Tập làm Part 2 với bài này",
                          quiz(q["hoi"], q["lua_chon"], q["dap"], q["fb_ok"], q["fb_no"])
