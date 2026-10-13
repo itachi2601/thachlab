@@ -62,6 +62,7 @@ function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>
   );
 }
 import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOverview";
+import { stripHtmlToText } from "@/lib/strip-html";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
@@ -774,7 +775,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                 <span className="class-lesson-title">
                                   {p.title}
                                   {(p.body || p.video_url) && (
-                                    <small className="line-clamp-1">{p.body || "Video bài giảng"}</small>
+                                    <small className="line-clamp-1">{p.body ? stripHtmlToText(p.body) : "Video bài giảng"}</small>
                                   )}
                                 </span>
                               </Link>

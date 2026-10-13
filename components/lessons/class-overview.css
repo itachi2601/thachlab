@@ -27,3 +27,10 @@ html[data-theme="light"] .lesson-shell .class-parent-band a { color: #047857; }
 html[data-theme="light"] .lesson-shell .class-parent-band select { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
 @media (min-width: 640px) { .class-next { grid-template-columns: 1fr auto; align-items: center; } }
+/* Hàng phẳng (thông báo, kệ đề) không có ô số. Dưới 640px lưới 26px | 1fr | auto
+   nhét tiêu đề vào cột 26px nên mỗi chữ một dòng. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .class-lessons--flat .class-lesson {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
