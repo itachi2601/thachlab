@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { BarChart3, ChevronDown, Tv } from "lucide-react";
-import type { ClassStudent } from "@/services/classes";
+import { expandClassIdsByGrade, type ClassStudent } from "@/services/classes";
+import type { SchoolClass } from "@/features/exams/types";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
@@ -45,9 +46,11 @@ function heat(pctVal: number) {
 export default function TeacherThptAnalysis({
   classId,
   students,
+  classes,
 }: {
   classId: number;
   students: ClassStudent[];
+  classes: SchoolClass[];
 }) {
   const toast = useToast();
   const { profile } = useAuth();
@@ -55,7 +58,8 @@ export default function TeacherThptAnalysis({
   const reviewBase = profile?.role === "tro_giang" ? "/tro-giang/chua-bai" : "/dashboard-thpt/chua-bai";
   const studentIds = useMemo(() => students.map((s) => s.id), [students]);
 
-  const [exams, setExams] = useState<{ id: number; title: string }[]>([]);
+  const [exams, setExams] = useState<{ id: number; title: string; own: boolean; done: number }[]>([]);
+  const [search, setSearch] = useState("");
   const [examId, setExamId] = useState<number | null>(null);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
 
@@ -69,18 +73,46 @@ export default function TeacherThptAnalysis({
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
   }, [classId]);
 
+  // Đề của lớp = đề gán cho cùng khối (exam_classes) + đề KT định kỳ; đề HS tự làm ngoài khối xếp vào "khác".
   useEffect(() => {
     loadAssessments();
-    fetchClassExamResults(studentIds)
-      .then((rows) => {
-        const map = new Map<number, string>();
-        rows.forEach((r) => map.set(r.exam_id, r.exams?.title ?? `Đề #${r.exam_id}`));
-        const list = [...map.entries()].map(([id, title]) => ({ id, title }));
+    let cancelled = false;
+    const classIds = expandClassIdsByGrade([classId], classes) ?? [classId];
+    Promise.all([
+      getSupabase()
+        .from("exam_classes")
+        .select("exam_id, exams(title)")
+        .in("class_id", classIds),
+      fetchClassExamResults(studentIds).catch(() => []),
+    ])
+      .then(([assigned, rows]) => {
+        if (cancelled) return;
+        const submitted = new Map<number, Set<string>>();
+        const titles = new Map<number, string>();
+        rows.forEach((r) => {
+          const set = submitted.get(r.exam_id) ?? new Set<string>();
+          set.add(r.student_id);
+          submitted.set(r.exam_id, set);
+          titles.set(r.exam_id, r.exams?.title ?? `Đề #${r.exam_id}`);
+        });
+        const mine = new Map<number, string>();
+        for (const a of (assigned.data ?? []) as { exam_id: number; exams: { title: string } | { title: string }[] | null }[]) {
+          const t = Array.isArray(a.exams) ? a.exams[0]?.title : a.exams?.title;
+          mine.set(a.exam_id, t ?? titles.get(a.exam_id) ?? `Đề #${a.exam_id}`);
+        }
+        const toItem = (id: number, title: string, own: boolean) => ({ id, title, own, done: submitted.get(id)?.size ?? 0 });
+        const list = [
+          ...[...mine.entries()].map(([id, t]) => toItem(id, t, true)),
+          ...[...titles.entries()].filter(([id]) => !mine.has(id)).map(([id, t]) => toItem(id, t, false)),
+        ];
         setExams(list);
-        setExamId((cur) => cur ?? list[0]?.id ?? null);
+        setExamId((cur) => (cur !== null && list.some((e) => e.id === cur) ? cur : list.find((e) => e.own)?.id ?? list[0]?.id ?? null));
       })
       .catch(() => setExams([]));
-  }, [studentIds, loadAssessments]);
+    return () => {
+      cancelled = true;
+    };
+  }, [studentIds, classId, classes, loadAssessments]);
 
   useEffect(() => {
     if (!examId) return;
@@ -100,6 +132,17 @@ export default function TeacherThptAnalysis({
   }, [examId, studentIds]);
 
   const assessment = assessments.find((a) => a.examId === examId) ?? null;
+  const assessmentIds = useMemo(() => new Set(assessments.map((a) => a.examId)), [assessments]);
+  const filtered = useMemo(() => {
+    const kw = search.trim().toLowerCase();
+    return kw ? exams.filter((e) => e.title.toLowerCase().includes(kw) || String(e.id) === kw) : exams;
+  }, [exams, search]);
+  const optionLabel = (e: { id: number; title: string; done: number }) => {
+    const tag = assessmentIds.has(e.id) ? "[Định kỳ] " : "";
+    return `${tag}${e.title} · ${e.done}/${students.length} nộp`;
+  };
+  const ownList = filtered.filter((e) => e.own);
+  const otherList = filtered.filter((e) => !e.own);
 
   const topics = useMemo(() => {
     const set = new Map<string, { ly: TopicGap | null; bt: TopicGap | null }>();
@@ -130,7 +173,7 @@ export default function TeacherThptAnalysis({
   if (exams.length === 0) {
     return (
       <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">
-        Lớp chưa có lượt làm bài kiểm tra nào.
+        Chưa có đề nào gán cho khối này và lớp chưa có lượt làm bài nào.
       </p>
     );
   }
@@ -139,16 +182,34 @@ export default function TeacherThptAnalysis({
     <div className="space-y-5">
       <div className="flex flex-wrap items-center gap-3">
         <BarChart3 size={18} className="text-blue-300" />
+        {exams.length > 8 && (
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Tìm đề…"
+            aria-label="Tìm đề"
+            className="w-36 rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          />
+        )}
         <select
           value={examId ?? ""}
           onChange={(e) => setExamId(Number(e.target.value))}
-          className="min-w-60 rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          className="min-w-60 max-w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
-          {exams.map((e) => (
-            <option key={e.id} value={e.id}>
-              {e.title}
-            </option>
-          ))}
+          {ownList.length > 0 && (
+            <optgroup label="Đề của khối này">
+              {ownList.map((e) => (
+                <option key={e.id} value={e.id}>{optionLabel(e)}</option>
+              ))}
+            </optgroup>
+          )}
+          {otherList.length > 0 && (
+            <optgroup label="Đề khác lớp đã làm (ngoài khối)">
+              {otherList.map((e) => (
+                <option key={e.id} value={e.id}>{optionLabel(e)}</option>
+              ))}
+            </optgroup>
+          )}
         </select>
         {assessment ? (
           <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
@@ -274,6 +335,14 @@ export default function TeacherThptAnalysis({
                 </button>
                 {openQ === q.questionIndex && questions[q.questionIndex] && (
                   <div className="border-t border-white/10 p-4 text-sm text-slate-300">
+                    <a
+                      href={`${reviewBase}?exam=${examId}&class=${classId}&q=${q.questionIndex}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white hover:bg-primary-dark"
+                    >
+                      <Tv size={14} /> Chiếu câu này
+                    </a>
                     <ContentHtml
                       html={questions[q.questionIndex].question}
                       className="exam-content block"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, BarChart3, CalendarCheck, ClipboardPen, FileSpreadsheet, GraduationCap, LayoutDashboard, LifeBuoy, ListChecks, Megaphone, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, CalendarCheck, ClipboardPen, GraduationCap, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -58,14 +58,12 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
   { id: "progress", label: "Quá trình học tập", icon: ListChecks },
   { id: "analysis", label: "Phân tích", icon: BarChart3 },
-  { id: "alerts", label: "Cảnh báo phụ đạo", icon: AlertTriangle },
-  { id: "tutoring", label: "Phụ đạo", icon: LifeBuoy },
+  { id: "alerts", label: "Cảnh báo & phụ đạo", icon: AlertTriangle },
   { id: "announcements", label: "Thông báo", icon: Megaphone },
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
-  { id: "roster", label: "Nhập danh sách", icon: FileSpreadsheet },
-  { id: "enrollment", label: "Ghi danh", icon: ClipboardPen },
+  { id: "enrollment", label: "Danh sách lớp", icon: ClipboardPen },
 ];
 
 export default function TeacherThptDashboard() {
@@ -175,15 +173,29 @@ export default function TeacherThptDashboard() {
         <>
           {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={setActiveTab} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
           {activeTab === "progress" && <TeacherThptProgress classId={selectedClassId} students={students} />}
-          {activeTab === "analysis" && <TeacherThptAnalysis classId={selectedClassId} students={students} />}
-          {activeTab === "alerts" && <TeacherThptAlerts classId={selectedClassId} students={students} />}
-          {activeTab === "tutoring" && <TeacherThptTutoring classId={selectedClassId} students={students} />}
+          {activeTab === "analysis" && <TeacherThptAnalysis classId={selectedClassId} students={students} classes={classes} />}
+          {activeTab === "alerts" && (
+            <div className="space-y-8">
+              <TeacherThptAlerts classId={selectedClassId} students={students} />
+              <section className="space-y-3 border-t border-line pt-6">
+                <h3 className="font-display text-lg font-bold text-ink">Phụ đạo</h3>
+                <TeacherThptTutoring classId={selectedClassId} students={students} />
+              </section>
+            </div>
+          )}
           {activeTab === "announcements" && <ClassAnnouncementsPanel classId={selectedClassId} />}
           {activeTab === "gradebook" && <TeacherThptGradebook students={students} />}
           {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}
-          {activeTab === "enrollment" && <TeacherThptEnrollment classId={selectedClassId} className={selectedClass?.name ?? ""} students={students} onStudentsChanged={() => setStudentsNonce((n) => n + 1)} />}
-          {activeTab === "roster" && <ClassRosterImportPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onImported={() => setStudentsNonce((n) => n + 1)} />}
+          {activeTab === "enrollment" && (
+            <div className="space-y-8">
+              <TeacherThptEnrollment classId={selectedClassId} className={selectedClass?.name ?? ""} students={students} onStudentsChanged={() => setStudentsNonce((n) => n + 1)} />
+              <section className="space-y-3 border-t border-line pt-6">
+                <h3 className="font-display text-lg font-bold text-ink">Nhập danh sách từ Excel</h3>
+                <ClassRosterImportPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onImported={() => setStudentsNonce((n) => n + 1)} />
+              </section>
+            </div>
+          )}
         </>
       )}
     </div>

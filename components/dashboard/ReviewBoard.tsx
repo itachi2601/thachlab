@@ -37,7 +37,11 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
   const router = useRouter();
   const { profile } = useAuth();
   const toast = useToast();
-  const [idx, setIdx] = useState(0);
+  const [idx, setIdx] = useState(() => {
+    if (typeof window === "undefined") return 0;
+    const q = Number(new URLSearchParams(window.location.search).get("q"));
+    return Number.isInteger(q) && q >= 0 && q < data.questions.length ? q : 0;
+  });
   const [reveal, setReveal] = useState(0); // 0 none, 1 answer, 2 explanation
   const [onlyHard, setOnlyHard] = useState(false);
   const [zoom, setZoom] = useState(1);
