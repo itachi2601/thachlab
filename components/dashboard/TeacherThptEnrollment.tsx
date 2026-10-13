@@ -370,7 +370,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
               {pending.length > 0 && (
                 <div>
                   <h4 className="mb-2 text-xs font-bold uppercase tracking-wide text-amber-300">Chờ duyệt · {pending.length}</h4>
-                  <ul className="space-y-2">
+                  <ul className="max-h-80 space-y-2 overflow-y-auto pr-1">
                     {pending.map((r) => (
                       <li key={r.id} className="rounded-xl border border-amber-500/20 bg-amber-500/[.04] p-3 text-sm">
                         <div className="flex flex-wrap items-center gap-2">
@@ -411,7 +411,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
               {catchup.length > 0 && (
                 <div>
                   <h4 className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Đang bù bài · {catchup.length}</h4>
-                  <ul className="space-y-2">
+                  <ul className="max-h-80 space-y-2 overflow-y-auto pr-1">
                     {catchup.map((r) => (
                       <li key={r.id} className="rounded-xl border border-blue-500/20 bg-blue-500/[.04] p-3 text-sm">
                         <div className="flex flex-wrap items-center gap-2">
@@ -437,7 +437,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
               {active.length > 0 && (
                 <div>
                   <h4 className="mb-2 text-xs font-bold uppercase tracking-wide text-emerald-300">Đã vào lớp · {active.length}</h4>
-                  <ul className="space-y-1.5">
+                  <ul className="max-h-80 space-y-1.5 overflow-y-auto pr-1">
                     {active.map((r) => (
                       <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2 text-sm">
                         <Check size={14} className="text-emerald-300" />
@@ -463,7 +463,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
               {others.length > 0 && (
                 <details className="text-sm">
                   <summary className="cursor-pointer text-xs font-bold uppercase tracking-wide text-slate-500">Từ chối / đã nghỉ · {others.length}</summary>
-                  <ul className="mt-2 space-y-1">
+                  <ul className="mt-2 max-h-56 space-y-1 overflow-y-auto pr-1">
                     {others.map((r) => (
                       <li key={r.id} className="flex items-center gap-2 px-3 py-1 text-slate-400">
                         {r.studentName} · {REGISTRATION_STATUS_LABEL[r.status]}

@@ -30,7 +30,6 @@ const EMPTY_COUNTS: Counts = {
 const QUICK_HREFS = [
   "/quan-tri/dang-de",
   "/quan-tri/bai-hoc",
-  "/quan-tri/bang-diem",
   "/quan-tri/cnc-bai-hoc",
   "/quan-tri/tinh-trang-may",
   "/quan-tri/tin-nhan",

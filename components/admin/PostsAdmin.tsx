@@ -102,6 +102,7 @@ export default function PostsAdmin() {
   }, [reload]);
 
   function startEdit(p: Post) {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // form sửa nằm ở đầu trang
     setEditingId(p.id);
     setForm({
       title: p.title,
@@ -303,7 +304,7 @@ export default function PostsAdmin() {
         </button>
       </form>
 
-      <div className="space-y-3">
+      <div className="max-h-[40rem] space-y-3 overflow-y-auto pr-1">
         {posts.map((p) => (
           <div
             key={p.id}

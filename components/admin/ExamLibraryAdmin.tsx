@@ -150,6 +150,11 @@ export default function ExamLibraryAdmin({
   const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
 
   const seedCounter = useRef(0);
+  // Chọn đề xong tự cuộn tới phần sửa — không bắt kéo xuống cuối trang (N1).
+  const editorRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (selectedId !== null) editorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [selectedId]);
   async function selectExam(id: number) {
     if (loadingFull) return;
     setSelectedId(id);
@@ -349,7 +354,7 @@ export default function ExamLibraryAdmin({
         )}
         {!listBusy && !listError && rows.length === 0 && <p className="py-6 text-center text-sm text-muted">Không có đề phù hợp.</p>}
 
-        <div className="divide-y divide-line overflow-hidden rounded-xl border border-line">
+        <div className="max-h-72 divide-y divide-line overflow-y-auto rounded-xl border border-line">
           {rows.map((r) => (
             <button
               key={r.id}
@@ -391,7 +396,7 @@ export default function ExamLibraryAdmin({
       </section>
 
       {selectedId !== null && (
-        <section className="space-y-4 rounded-2xl border border-line bg-surface-2 p-4">
+        <section ref={editorRef} className="scroll-mt-20 space-y-4 rounded-2xl border border-line bg-surface-2 p-4">
           {loadingFull && <p className="text-sm text-muted">Đang tải đề #{selectedId}…</p>}
           {full && (
             <>

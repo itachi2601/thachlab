@@ -213,7 +213,7 @@ export default function TeacherThptTutoring({
           chỉ ra được em hổng phần nào — gắn ở trang Quản trị → Chủ đề, rồi bấm “Rà lại cả lớp”.
         </p>
       ) : (
-        <div className="space-y-3">
+        <div className="max-h-[36rem] space-y-3 overflow-y-auto pr-1">
           {byStudent.map((student) => (
             <article key={student.id} className="rounded-2xl border border-white/10 bg-panel p-4">
               <h3 className="font-semibold text-white">{student.name}</h3>

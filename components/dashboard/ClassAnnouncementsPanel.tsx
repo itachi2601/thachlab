@@ -157,7 +157,7 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
         </div>
         <ExamPicker selected={exam} onSelect={setExam} />
       </div>
-      <div className="mt-3 space-y-2">
+      <div className="mt-3 max-h-96 space-y-2 overflow-y-auto pr-1">
         {items === null ? (
           <p className="text-xs text-slate-500">Đang tải…</p>
         ) : items.length === 0 ? (

@@ -131,7 +131,7 @@ export default function TeacherThptAlerts({
           Không có cảnh báo nào {filter === "active" ? "đang mở" : ""}.
         </p>
       ) : (
-        <div className="space-y-2">
+        <div className="max-h-[32rem] space-y-2 overflow-y-auto pr-1">
           {shown.map((a) => (
             <div
               key={a.id}

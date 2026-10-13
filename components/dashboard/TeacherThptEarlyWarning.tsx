@@ -81,7 +81,7 @@ export default function TeacherThptEarlyWarning({
       ) : byStudent.length === 0 ? (
         <p className="rounded-2xl border border-white/10 bg-panel p-4 text-sm text-emerald-300">Chưa thấy dấu hiệu đáng lo nào.</p>
       ) : (
-        <ul className="space-y-2">
+        <ul className="max-h-[32rem] space-y-2 overflow-y-auto pr-1">
           {byStudent.map(([id, list]) => (
             <li key={id}>
               <button

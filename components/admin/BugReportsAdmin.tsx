@@ -112,7 +112,7 @@ export default function BugReportsAdmin() {
       ) : reports.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có mục nào.</p>
       ) : (
-        <div className="admin-table-wrap">
+        <div className="admin-table-wrap max-h-[36rem] overflow-y-auto">
           <table className="min-w-[900px] text-xs">
             <thead>
               <tr>

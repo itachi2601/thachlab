@@ -54,7 +54,7 @@ export default function UnassignedStudents({
           Không có học sinh nào chưa phân lớp.
         </p>
       ) : (
-        <div className="space-y-2">
+        <div className="max-h-96 space-y-2 overflow-y-auto pr-1">
           {students.map((student) => (
             <div
               key={student.id}

@@ -88,7 +88,7 @@ function EssayGradingQueue({ studentIds, onGraded }: { studentIds: string[]; onG
   return (
     <div className="space-y-3 rounded-2xl border border-violet-500/30 bg-violet-500/5 p-4">
       <p className="text-sm font-bold text-violet-300">Cần chấm ({pending.length})</p>
-      <div className="space-y-3">
+      <div className="max-h-80 space-y-3 overflow-y-auto pr-1">
         {pending.map((item) => {
           const key = `${item.examResultId}-${item.questionIndex}`;
           return (
@@ -251,9 +251,9 @@ export default function TeacherThptProgress({ classId, students }: { classId: nu
       ) : filteredStudents.length === 0 ? (
         <p className="text-sm text-slate-400">Không có học sinh nào khớp bộ lọc.</p>
       ) : (
-        <div className="overflow-x-auto rounded-2xl border border-white/10">
+        <div className="max-h-[32rem] overflow-auto rounded-2xl border border-white/10">
           <table className="w-full min-w-175 text-left text-sm">
-            <thead className="bg-white/5 text-slate-400">
+            <thead className="sticky top-0 bg-panel-deep text-slate-400">
               <tr>
                 <th className="px-4 py-3 font-medium">Học sinh</th>
                 <th className="px-4 py-3 font-medium">Lý thuyết</th>

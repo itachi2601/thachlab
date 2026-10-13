@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, GraduationCap, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
 import { fetchInstructorClasses } from "@/services/class-instructors";
 import dynamic from "next/dynamic";
 import type { ComponentProps, ComponentType } from "react";
+import SegmentedControl from "@/components/ui/SegmentedControl";
 import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
@@ -51,19 +52,17 @@ type DashboardTab =
   | "alerts"
   | "tutoring"
   | "announcements"
-  | "gradebook"
   | "profile"
   | "attendance"
   | "enrollment";
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
-  { id: "progress", label: "Quá trình học tập", icon: ListChecks },
+  { id: "progress", label: "Kết quả học tập", icon: ListChecks },
   { id: "analysis", label: "Phân tích", icon: BarChart3 },
   { id: "teaching", label: "Tiến trình dạy", icon: BookOpenCheck },
   { id: "alerts", label: "Cảnh báo & phụ đạo", icon: AlertTriangle },
   { id: "announcements", label: "Thông báo", icon: Megaphone },
-  { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
   { id: "enrollment", label: "Ghi danh", icon: ClipboardPen },
@@ -80,6 +79,8 @@ export default function TeacherThptDashboard() {
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [loadError, setLoadError] = useState("");
   const [analysisView, setAnalysisView] = useState<"exam" | "mastery">("exam");
+  const [resultsView, setResultsView] = useState<"lessons" | "scores">("lessons");
+  const [alertsView, setAlertsView] = useState<"alerts" | "early" | "tutoring">("alerts");
 
   useEffect(() => {
     if (!profile) return;
@@ -175,23 +176,18 @@ export default function TeacherThptDashboard() {
         </p>
       ) : (
         <>
-          {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={setActiveTab} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
-          {activeTab === "progress" && <TeacherThptProgress classId={selectedClassId} students={students} />}
+          {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={(tab) => { if (tab === "gradebook") { setResultsView("scores"); setActiveTab("progress"); } else setActiveTab(tab); }} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
+          {activeTab === "progress" && (
+            <div className="space-y-5">
+              <SegmentedControl label="Kiểu xem kết quả" value={resultsView} onChange={setResultsView} options={[["lessons", "Theo bài học"], ["scores", "Điểm bài kiểm tra"]] as const} />
+              {resultsView === "lessons"
+                ? <TeacherThptProgress classId={selectedClassId} students={students} />
+                : <TeacherThptGradebook students={students} />}
+            </div>
+          )}
           {activeTab === "analysis" && (
             <div className="space-y-5">
-              <div role="tablist" aria-label="Kiểu phân tích" className="inline-flex rounded-xl border border-line bg-panel-deep p-1">
-                {([["exam", "Theo đề"], ["mastery", "Bản đồ thành thạo"]] as const).map(([id, label]) => (
-                  <button
-                    key={id}
-                    role="tab"
-                    aria-selected={analysisView === id}
-                    onClick={() => setAnalysisView(id)}
-                    className={`rounded-lg px-4 py-2 text-sm font-bold ${analysisView === id ? "bg-blue-600 text-white" : "text-muted hover:text-primary"}`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
+              <SegmentedControl label="Kiểu phân tích" value={analysisView} onChange={setAnalysisView} options={[["exam", "Theo đề"], ["mastery", "Bản đồ thành thạo"]] as const} />
               {analysisView === "exam"
                 ? <TeacherThptAnalysis classId={selectedClassId} students={students} classes={classes} />
                 : <TeacherThptMastery students={students} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} onOpenTab={setActiveTab} />}
@@ -199,18 +195,15 @@ export default function TeacherThptDashboard() {
           )}
           {activeTab === "teaching" && <TeachingProgressTree key={selectedClassId} classId={selectedClassId} />}
           {activeTab === "alerts" && (
-            <div className="space-y-8">
-              <TeacherThptEarlyWarning students={students} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />
-              <TeacherThptAlerts classId={selectedClassId} students={students} />
-              <section className="space-y-3 border-t border-line pt-6">
-                <h3 className="font-display text-lg font-bold text-ink">Phụ đạo</h3>
-                <TeacherThptTutoring classId={selectedClassId} students={students} />
-              </section>
+            <div className="space-y-5">
+              <SegmentedControl label="Nhóm cảnh báo" value={alertsView} onChange={setAlertsView} options={[["alerts", "Cảnh báo"], ["early", "Cần để ý sớm"], ["tutoring", "Phụ đạo"]] as const} />
+              {alertsView === "alerts" && <TeacherThptAlerts classId={selectedClassId} students={students} />}
+              {alertsView === "early" && <TeacherThptEarlyWarning students={students} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
+              {alertsView === "tutoring" && <TeacherThptTutoring classId={selectedClassId} students={students} />}
             </div>
           )}
           {activeTab === "announcements" && <ClassAnnouncementsPanel classId={selectedClassId} />}
-          {activeTab === "gradebook" && <TeacherThptGradebook students={students} />}
-          {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
+                    {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}
           {activeTab === "enrollment" && (
             <TeacherThptEnrollment classId={selectedClassId} className={selectedClass?.name ?? ""} students={students} onStudentsChanged={() => setStudentsNonce((n) => n + 1)} />

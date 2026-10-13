@@ -248,7 +248,7 @@ export default function TeacherThptStudentProfile({
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>
             {history.length ? (
-              <div className="mt-3 max-h-96 space-y-2 overflow-y-auto">
+              <div className="mt-3 max-h-72 space-y-2 overflow-y-auto">
                 {history.map((entry, i) => (
                   <div key={i} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 text-sm">
                     <div className="min-w-0">
@@ -271,7 +271,7 @@ export default function TeacherThptStudentProfile({
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử làm bài kiểm tra</h4>
             {selectedResults.length ? (
-              <div className="mt-3 space-y-2">
+              <div className="mt-3 max-h-72 space-y-2 overflow-y-auto pr-1">
                 {selectedResults.map((row) => (
                   <div key={row.id} className="flex items-center justify-between rounded-xl bg-white/[.02] p-3">
                     <div>

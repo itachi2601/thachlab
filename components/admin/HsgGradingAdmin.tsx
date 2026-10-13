@@ -277,7 +277,7 @@ export default function HsgGradingAdmin() {
             {others.some((q) => q.type === "num") && " Câu đáp số: ghi số (đơn vị tuỳ ý), sai số cho phép 1%."}
           </p>
 
-          <div className="admin-table-wrap">
+          <div className="admin-table-wrap max-h-[36rem] overflow-y-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400">
