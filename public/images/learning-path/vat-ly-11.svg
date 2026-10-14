@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <!-- Nền thẻ chuẩn ThachLab -->
+  <rect width="400" height="300" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Tiêu đề & Nhãn lớp -->
+  <rect x="20" y="18" width="88" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="64" y="34" fill="#1d4ed8" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">VẬT LÝ 11</text>
+  <text x="380" y="34" fill="#64748b" font-size="12" font-weight="500" text-anchor="end">Dao động &amp; Sóng cơ điều hòa</text>
+
+  <!-- Lưới toạ độ nhẹ -->
+  <line x1="65" y1="95" x2="365" y2="95" stroke="#f1f5f9" stroke-width="1.5"/>
+  <line x1="65" y1="205" x2="365" y2="205" stroke="#f1f5f9" stroke-width="1.5"/>
+
+  <!-- Trục toạ độ u (li độ) và x (khoảng cách) -->
+  <line x1="45" y1="150" x2="370" y2="150" stroke="#64748b" stroke-width="1.8"/>
+  <path d="M362 146 L370 150 L362 154" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="370" y="165" fill="#64748b" font-size="12" font-weight="600">x (cm)</text>
+
+  <line x1="65" y1="240" x2="65" y2="60" stroke="#64748b" stroke-width="1.8"/>
+  <path d="M61 68 L65 60 L69 68" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="73" y="65" fill="#64748b" font-size="12" font-weight="600">u (cm)</text>
+
+  <!-- Gốc toạ độ O & vạch biên độ +A, -A -->
+  <text x="54" y="165" fill="#64748b" font-size="12" font-weight="600">O</text>
+
+  <line x1="61" y1="95" x2="69" y2="95" stroke="#64748b" stroke-width="1.5"/>
+  <text x="44" y="99" fill="#1d4ed8" font-size="12" font-weight="700">+A</text>
+  <line x1="65" y1="95" x2="360" y2="95" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <line x1="61" y1="205" x2="69" y2="205" stroke="#64748b" stroke-width="1.5"/>
+  <text x="46" y="209" fill="#64748b" font-size="12" font-weight="600">-A</text>
+  <line x1="65" y1="205" x2="360" y2="205" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Đường sóng hình sin chuẩn xác (2 chu kỳ) -->
+  <path d="M 65 150 C 85 95, 125 95, 145 150 S 185 205, 225 150 S 265 95, 305 150 S 345 205, 365 178" fill="none" stroke="#1d4ed8" stroke-width="3.2" stroke-linecap="round"/>
+
+  <!-- Vạch đo bước sóng lambda giữa hai đỉnh liên tiếp (x = 105 và x = 265) -->
+  <line x1="105" y1="75" x2="265" y2="75" stroke="#0284c7" stroke-width="1.8"/>
+  <path d="M112 71 L105 75 L112 79" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M258 71 L265 75 L258 79" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="105" y1="75" x2="105" y2="95" stroke="#0284c7" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="265" y1="75" x2="265" y2="95" stroke="#0284c7" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="185" y="69" fill="#0284c7" font-size="12" font-weight="700" text-anchor="middle">Bước sóng λ</text>
+
+  <!-- Các phần tử môi trường đang dao động -->
+  <!-- Đỉnh sóng 1 (x=105, y=95) -->
+  <circle cx="105" cy="95" r="4.5" fill="#1d4ed8"/>
+  <text x="105" y="115" fill="#1d4ed8" font-size="10" font-weight="700" text-anchor="middle">v = 0</text>
+
+  <!-- Nút sóng qua VTCB (x=145, y=150) với vectơ vận tốc cực đại hướng xuống -->
+  <circle cx="145" cy="150" r="4" fill="#047857"/>
+  <line x1="145" y1="150" x2="145" y2="182" stroke="#047857" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M141 175 L145 182 L149 175" fill="none" stroke="#047857" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="174" fill="#047857" font-size="11" font-weight="700">v<tspan font-size="9" dy="2">max</tspan></text>
+
+  <!-- Đáy sóng (x=185, y=205) -->
+  <circle cx="185" cy="205" r="4" fill="#b45309"/>
+
+  <!-- Đỉnh sóng 2 (x=265, y=95) -->
+  <circle cx="265" cy="95" r="4.5" fill="#1d4ed8"/>
+
+  <!-- Hướng truyền sóng -->
+  <line x1="285" y1="225" x2="335" y2="225" stroke="#334155" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M328 221 L335 225 L328 229" fill="none" stroke="#334155" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="278" y="229" fill="#334155" font-size="11" font-weight="600" text-anchor="end">truyền sóng v</text>
+
+  <!-- Chân thẻ: Phương trình truyền sóng -->
+  <text x="20" y="282" fill="#0f172a" font-size="12" font-weight="600">Phương trình sóng điều hòa</text>
+  <text x="380" y="282" fill="#475569" font-size="12" font-weight="500" text-anchor="end">u = A·cos(ωt - 2πx/λ)  ·  λ = v·T</text>
+</svg>

@@ -12,7 +12,7 @@ const stages = [
       "Học chắc kiến thức cốt lõi phần Vật lý của KHTN 9, biết liên hệ hiện tượng thực tế và làm quen với bài tổng hợp.",
     topics: ["Vật lý", "Hóa học", "Sinh học", "Ôn tập KHTN"],
     checkpoints: ["Nắm kiến thức trọng tâm", "Biết liên hệ thực tế", "Làm được bài tổng hợp KHTN"],
-    image: "/images/learning-path/khtn-9-vat-ly.webp",
+    image: "/images/learning-path/khtn-9.svg",
   },
   {
     grade: "Lớp 10",
@@ -23,7 +23,7 @@ const stages = [
       "Làm quen cách học mới: ít toán đố, nhiều thực tế. Trọng tâm là đọc – vẽ đồ thị chuyển động và vẽ lực cho đúng.",
     topics: ["Động học", "Định luật Newton", "Năng lượng", "Chuyển động tròn"],
     checkpoints: ["Đọc được đồ thị chuyển động", "Vẽ lực đúng", "Biết dùng bảo toàn năng lượng"],
-    image: "/images/learning-path/vat-ly-10.jpg",
+    image: "/images/learning-path/vat-ly-10.svg",
   },
   {
     grade: "Lớp 11",
@@ -34,7 +34,7 @@ const stages = [
       "Năm có nhiều khái niệm trừu tượng nhất. Học chắc bản chất qua thí nghiệm, mô phỏng và đồ thị.",
     topics: ["Dao động", "Sóng cơ & ánh sáng", "Điện trường", "Dòng điện không đổi"],
     checkpoints: ["Phân tích được dao động", "Hiểu sóng và ánh sáng", "Làm chủ điện trường, mạch DC"],
-    image: "/images/learning-path/vat-ly-11.jpg",
+    image: "/images/learning-path/vat-ly-11.svg",
   },
   {
     grade: "Lớp 12",
@@ -45,7 +45,7 @@ const stages = [
       "Điểm mới của chương trình 2018: Nhiệt học chuyển lên lớp 12, bớt điện xoay chiều phức tạp. Luyện đề theo đúng cấu trúc thi mới.",
     topics: ["Vật lý nhiệt", "Khí lý tưởng", "Từ trường", "Lượng tử & hạt nhân"],
     checkpoints: ["Giải bài nhiệt, khí", "Hiểu từ trường", "Luyện đề theo cấu trúc thi"],
-    image: "/images/learning-path/vat-ly-12.jpg",
+    image: "/images/learning-path/vat-ly-12.svg",
   },
   {
     grade: "Luyện thi chuyên & HSG",
@@ -56,7 +56,7 @@ const stages = [
       "Các chuyên đề theo đề cương HSG KHTN 9: lý thuyết nâng cao, bài tập mẫu từng dạng có hướng dẫn từng bước, rồi luyện đề.",
     topics: ["Công – cơ năng", "Điện", "Quang học", "Nhiệt", "Điện từ"],
     checkpoints: ["Nắm chuyên đề nâng cao", "Làm được từng dạng", "Luyện đề thi chuyên, HSG"],
-    image: "/images/learning-path/khtn-9-vat-ly.webp",
+    image: "/images/learning-path/khtn-9.svg",
   },
 ];
 

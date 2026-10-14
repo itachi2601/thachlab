@@ -6,8 +6,10 @@ export function stripHtmlToText(html: string, max = 160): string {
     .replace(/&lt;/gi, "<")
     .replace(/&gt;/gi, ">")
     .replace(/&quot;/gi, '"')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
     .replace(/&amp;/gi, "&")
     .replace(/\s+/g, " ")
     .trim();
-  return text.length > max ? `${text.slice(0, max)}…` : text;
+  const chars = Array.from(text);
+  return chars.length > max ? `${chars.slice(0, max).join("")}…` : text;
 }
