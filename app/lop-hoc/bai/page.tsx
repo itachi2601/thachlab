@@ -13,6 +13,7 @@ import AroundReadMore from "@/components/lessons/AroundReadMore";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
+import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import PracticeSession from "@/components/lessons/PracticeSessionLazy";
 import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
@@ -1185,6 +1186,37 @@ function LessonLoader() {
     ? activeTab
     : visibleSections[0]?.kind;
   const activeSection = visibleSections.find((s) => s.kind === activeKind);
+  // Ghi chú nhanh của giáo viên (nút "Ghi chú"/phím N): chụp mục đang đọc LÚC MỞ hộp, đọc từ DOM của
+  // phần thân bài — đề mục h2/h3 (lý thuyết) hoặc dạng bài mẫu (.lesson-worked-row) gần dòng mắt nhất.
+  const getNoteContext = useCallback((): LessonNoteContext => {
+    const root = bodyRef.current;
+    const tab = TAB_LABEL[activeKind ?? "ly_thuyet"];
+    if (!root) return { itemId: null, pageKey: "", pageHeading: tab };
+    const line = window.innerHeight * 0.4;
+    const anchors = Array.from(root.querySelectorAll<HTMLElement>("[data-item], h2[id], h3[id], .lesson-worked-row"));
+    let current: HTMLElement | null = null;
+    for (const el of anchors) {
+      if (el.getBoundingClientRect().top <= line) current = el;
+      else break;
+    }
+    const itemEl = current?.closest<HTMLElement>("[data-item]") ?? root.querySelector<HTMLElement>("[data-item]");
+    const itemId = itemEl?.dataset.item ? Number(itemEl.dataset.item) : null;
+    const item = items?.find((it) => it.id === itemId);
+    const parts = [tab];
+    if (item?.title) parts.push(item.title);
+    let pageKey = itemId != null ? `item-${itemId}` : "";
+    if (current?.matches("h2[id], h3[id]")) {
+      const text = current.textContent?.replace(/\s+/g, " ").trim();
+      if (text && text !== item?.title) parts.push(text);
+      pageKey = current.id;
+    } else if (current?.matches(".lesson-worked-row")) {
+      const label = current.querySelector(".lesson-worked-label")?.textContent?.trim();
+      if (label) parts.push(label);
+      const rows = Array.from(current.parentElement?.children ?? []);
+      pageKey = `item-${itemId}-dang-${rows.indexOf(current) + 1}`;
+    }
+    return { itemId, pageKey, pageHeading: parts.join(" › ") };
+  }, [activeKind, items]);
   // Mục lục của TAB đang mở: các h2/h3 có id trong nội dung soạn sẵn. Lấy từ items (không đọc
   // DOM, không gọi mạng) nên hiện được ngay, kể cả trước khi panel kịp paint.
   const tocEntries = useMemo(() => {
@@ -2172,6 +2204,8 @@ function LessonLoader() {
           </div>
         </div>
       )}
+
+      {canPresent && Number.isFinite(id) && <LessonNoteFab lessonId={id} getContext={getNoteContext} />}
 
       {/* Chế độ trình chiếu bài giảng — lớp phủ toàn màn hình, tải chậm, chỉ mount khi bấm nút
           (hoặc mở link có #chieu). Dựng từ theoryItems đã tải sẵn nên không thêm request nào. */}

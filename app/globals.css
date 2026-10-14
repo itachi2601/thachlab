@@ -3140,6 +3140,13 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
 
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
 /* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
 .presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
 .presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
