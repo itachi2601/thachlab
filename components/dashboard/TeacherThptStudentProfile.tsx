@@ -12,6 +12,7 @@ import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 import StudentAccountCard from "@/components/dashboard/StudentAccountCard";
 import ParentDigestCard from "@/components/dashboard/ParentDigestCard";
 import DiagnosticAdmin from "@/components/dashboard/DiagnosticAdmin";
+import { fetchDiagnosticMaps, isGapLevel, levelOf, type DiagnosticTopicResult } from "@/services/diagnostic";
 import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
 import { buildCourseRadar, fetchClassQuestionActivity, fetchCurriculumMeta } from "@/services/class-insights";
 import type { ChapterLessonMastery } from "@/services/mastery";
@@ -34,6 +35,8 @@ const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
 
 const STATUS_LABEL: Record<string, string> = { present: "Có mặt", late: "Đi trễ", excused: "Vắng có phép", absent: "Vắng không phép" };
 
+type StudentFilter = "all" | "new" | "nodiag" | "gap";
+
 export default function TeacherThptStudentProfile({
   classId,
   students,
@@ -47,7 +50,7 @@ export default function TeacherThptStudentProfile({
   selectedId: string | null;
   onSelect: (id: string) => void;
   onRemoved?: () => void;
-  /** Công cụ tài khoản (mật khẩu, phụ huynh, chẩn đoán, gỡ khỏi lớp): chỉ ở /quan-tri/hoc-sinh, dashboard giáo viên không hiện. */
+  /** Công cụ tài khoản (mật khẩu, phụ huynh, gỡ khỏi lớp): chỉ ở /quan-tri/hoc-sinh. Kiểm tra đầu vào + Giao trợ giảng hiện ở cả dashboard giáo viên. */
   adminTools?: boolean;
 }) {
   const [search, setSearch] = useState("");
@@ -125,12 +128,41 @@ export default function TeacherThptStudentProfile({
   }
 
   const [nowMs] = useState(() => Date.now());
-  const [onlyNew, setOnlyNew] = useState(false);
+  const [filter, setFilter] = useState<StudentFilter>("all");
+  const [diagMaps, setDiagMaps] = useState<Map<string, DiagnosticTopicResult[]> | null>(null);
   const isNew = (s: { joined_at?: string | null }) => !!s.joined_at && nowMs - Date.parse(s.joined_at) < 21 * 86400e3;
+  const studentIdsKey = students.map((x) => x.id).join(",");
+  useEffect(() => {
+    if (!studentIdsKey) return;
+    let cancelled = false;
+    fetchDiagnosticMaps(studentIdsKey.split(","))
+      .then((m) => { if (!cancelled) setDiagMaps(m); })
+      .catch(() => { if (!cancelled) setDiagMaps(new Map()); });
+    return () => { cancelled = true; };
+  }, [studentIdsKey]);
+  // Chưa biết kết quả (đang tải/lỗi) thì không coi là "chưa làm" để khỏi báo sai.
+  const diagDone = (id: string) => diagMaps?.has(id) ?? false;
+  const needsDiag = (x: ClassStudent) => isNew(x) && diagMaps !== null && !diagDone(x.id);
+  const hasGap = (id: string) => (diagMaps?.get(id) ?? []).some((r) => isGapLevel(levelOf(r)));
   const newCount = students.filter(isNew).length;
+  const noDiagCount = students.filter(needsDiag).length;
+  const gapCount = students.filter((x) => hasGap(x.id)).length;
+  // Em mới đăng ký lên đầu (mới nhất trước), còn lại giữ thứ tự cũ.
+  const joinedMs = (x: ClassStudent) => (x.joined_at ? Date.parse(x.joined_at) : 0);
   const visibleStudents = students
     .filter((item) => item.full_name.toLocaleLowerCase("vi-VN").includes(search.trim().toLocaleLowerCase("vi-VN")))
-    .filter((item) => !onlyNew || isNew(item));
+    .filter((item) =>
+      filter === "new" ? isNew(item) : filter === "nodiag" ? needsDiag(item) : filter === "gap" ? hasGap(item.id) : true,
+    )
+    .map((item, i) => ({ item, i }))
+    .sort((a, b) => Number(isNew(b.item)) - Number(isNew(a.item)) || (isNew(a.item) && isNew(b.item) ? joinedMs(b.item) - joinedMs(a.item) : 0) || a.i - b.i)
+    .map((x) => x.item);
+  const filterChips: { id: StudentFilter; label: string; count: number | null }[] = [
+    { id: "all", label: "Tất cả", count: students.length },
+    { id: "new", label: "Mới vào 3 tuần", count: newCount },
+    { id: "nodiag", label: "Chưa kiểm tra đầu vào", count: diagMaps === null ? null : noDiagCount },
+    { id: "gap", label: "Có phần hổng", count: diagMaps === null ? null : gapCount },
+  ];
   useEffect(() => {
     if (!selectedId) return;
     let cancelled = false;
@@ -179,15 +211,31 @@ export default function TeacherThptStudentProfile({
             className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"
           />
         </div>
-        {newCount > 0 && (
+        {noDiagCount > 0 && filter !== "nodiag" && (
           <button
             type="button"
-            onClick={() => setOnlyNew((v) => !v)}
-            className={`mb-3 w-full rounded-xl px-3 py-2 text-left text-sm font-bold ${onlyNew ? "bg-emerald-600 text-white" : "bg-emerald-500/15 text-emerald-300"}`}
+            onClick={() => setFilter("nodiag")}
+            className="mb-3 w-full rounded-xl border border-amber-400/40 bg-amber-500/10 px-3 py-2 text-left text-sm font-bold text-amber-200"
           >
-            {onlyNew ? "Đang lọc: " : ""}Mới vào 3 tuần qua · {newCount} em
+            {noDiagCount} em mới vào chưa làm kiểm tra đầu vào — bấm để xem và giao trợ giảng
           </button>
         )}
+        <div className="mb-3 flex flex-wrap gap-1.5" role="group" aria-label="Lọc học sinh">
+          {filterChips.map((chip) => (
+            <button
+              key={chip.id}
+              type="button"
+              aria-pressed={filter === chip.id}
+              onClick={() => setFilter(chip.id)}
+              className={`min-h-11 rounded-full border px-3 text-xs font-semibold ${
+                filter === chip.id ? "border-blue-400/60 bg-blue-600 text-white" : "border-white/10 text-slate-300 hover:bg-white/5"
+              }`}
+            >
+              {chip.label}
+              {chip.count !== null ? ` · ${chip.count}` : ""}
+            </button>
+          ))}
+        </div>
         <div className="max-h-[60vh] space-y-1 overflow-y-auto">
           {visibleStudents.map((student) => (
             <button
@@ -204,6 +252,16 @@ export default function TeacherThptStudentProfile({
                     Mới
                   </span>
                 )}
+                {needsDiag(student) && (
+                  <span className="ml-1.5 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[12px] font-bold text-amber-300">
+                    Chưa KT đầu vào
+                  </span>
+                )}
+                {hasGap(student.id) && (
+                  <span className="ml-1.5 rounded-full bg-rose-500/20 px-1.5 py-0.5 text-[12px] font-bold text-rose-300">
+                    Có phần hổng
+                  </span>
+                )}
                 {cttcIds.has(student.id) && (
                   <span className="ml-1.5 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[12px] font-bold text-amber-300">
                     CTTC
@@ -216,7 +274,7 @@ export default function TeacherThptStudentProfile({
               </small>
             </button>
           ))}
-          {!visibleStudents.length && <p className="p-3 text-center text-sm text-slate-500">Không tìm thấy học sinh.</p>}
+          {!visibleStudents.length && <p className="p-3 text-center text-sm text-slate-500">{filter === "all" ? "Không tìm thấy học sinh." : "Không có em nào khớp bộ lọc này."}</p>}
         </div>
       </aside>
 
@@ -267,7 +325,7 @@ export default function TeacherThptStudentProfile({
 
           {tab === "hoc" && (
             <>
-              {adminTools && <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />}
+              <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} isNew={isNew(selected)} />
               {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} courseData={radarData} />}
 
               <section className="rounded-2xl border border-white/10 bg-panel p-5">

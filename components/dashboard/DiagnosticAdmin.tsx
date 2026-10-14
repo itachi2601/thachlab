@@ -29,12 +29,15 @@ export default function DiagnosticAdmin({
   studentName,
   compact = false,
   classId,
+  isNew = false,
 }: {
   studentId: string;
   studentName: string;
   compact?: boolean;
   /** Có classId (hồ sơ học sinh của thầy) thì hiện nút mời em đã có trong lớp làm bài. */
   classId?: number;
+  /** Em mới vào (3 tuần): nổi bật thẻ khi chưa làm kiểm tra đầu vào. */
+  isNew?: boolean;
 }) {
   const toast = useToast();
   const [status, setStatus] = useState<DiagnosticStatus | null | "error">(null);
@@ -178,9 +181,11 @@ export default function DiagnosticAdmin({
   if (status === null) return null;
   if (status === "error") return null;
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-5">
+    <section className={`rounded-2xl border bg-panel p-5 ${isNew && !done ? "border-amber-400/50" : "border-white/10"}`}>
       <div className="flex flex-wrap items-center gap-3">
-        <h4 className="min-w-0 flex-1 font-display text-lg font-bold text-white">Kiểm tra đầu vào</h4>
+        <h4 className="min-w-0 flex-1 font-display text-lg font-bold text-white">
+          {isNew && !done ? "Em mới vào — chưa làm kiểm tra đầu vào" : "Kiểm tra đầu vào"}
+        </h4>
         {done && (
           <button
             type="button"
