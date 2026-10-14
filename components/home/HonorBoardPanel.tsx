@@ -130,7 +130,11 @@ function Podium({ g }: { g: PublicHonorGrade }) {
                 }`}
               >
                 <div className="flex shrink-0 flex-col items-center gap-2">
-                  <span className={`font-mono text-[12px] uppercase tracking-widest ${first ? "text-primary" : "text-slate-500"}`}>
+                  <span className={`inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-widest ${first ? "text-primary" : "text-slate-500"}`}>
+                    {m.pos >= 1 && m.pos <= 3 && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={`/images/honor/hang-${m.pos}.svg`} alt="" width={32} height={32} className="h-8 w-8" />
+                    )}
                     Hạng {m.pos}
                   </span>
                   <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={first ? 72 : 56}>
