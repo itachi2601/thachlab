@@ -1,4 +1,4 @@
-# ROADMAP ThachLab (cập nhật 28/09/2026 — bản đối chiếu mã nguồn + hệ động lực; kế hoạch lý thuyết tương tác bổ sung 4/10/2026)
+# ROADMAP ThachLab (cập nhật 14/10/2026 — thêm số liệu DB; trước đó 28/09/2026 — bản đối chiếu mã nguồn + hệ động lực; kế hoạch lý thuyết tương tác bổ sung 4/10/2026)
 
 Triết lý: **"Cho hết kiến thức. Bán sự đồng hành."**
 Khác biệt: *Hệ thống biết học sinh đang yếu ở đâu và biết đưa học sinh đi đâu tiếp theo.*
@@ -33,6 +33,24 @@ YCCĐ; thoát phụ đạo bằng tự kiểm tra; chấm BTVN.
 
 **Chưa có: bằng chứng.** Toàn bộ hệ động lực chưa được test bằng tài khoản học sinh thật và
 chưa đo được có làm các em học nhiều hơn không. Đây là việc số 1.
+
+### Số liệu đọc từ DB ngày 14/10/2026 (đọc-chỉ, không ghi; đối chiếu `docs/STATE.md`)
+- **Hoạt động** (HS khác nhau làm bài / lượt, gồm bài kiểm tra + luyện tập): tuần 07/09 50/56 · 14/09 81/82 · 21/09 163/344 ·
+  28/09 164/442 · 05/10 178/430 · 12/10 115/222 (mới tới thứ Ba, chưa đủ tuần). Từ 21/09 số HS gấp ~3, số lượt gấp ~5; chưa thấy độ rơi ở tuần 4–5.
+- **Quy mô**: 457 HS, 6 trợ giảng. Hai mùa đang chạy: mùa 4 "Mùa thử nghiệm" (21/09–25/10) và mùa 5 "Alpha test" (26/09–31/10).
+- **Bậc mùa 4**: Tân binh 71 · Chiến binh 57 · Tinh anh 57 · Tinh nhuệ 6 · Đại sư 5 · Cao thủ 1.
+- **Danh hiệu**: 608 lượt trao, 191 HS có ≥1 (chưa tách "trong 2 tuần đầu" như GĐ 1 yêu cầu).
+- **Phụ đạo**: 477 mở · 313 đã thoát · 18 đã kèm; tự thoát bằng kiểm tra mới 4 lượt (2 đạt) → kênh tự thoát gần như chưa dùng.
+- **Kiểm tra đầu vào**: 0 bản ghi (chưa deploy UI, chưa HS nào làm).
+- **Độ phủ ngân hàng theo danh hiệu** (30 danh hiệu chuyên môn có chủ đề): **15 danh hiệu không thể đạt** vì thiếu câu so với ngưỡng 12/8/5.
+  Rỗng hoàn toàn: `ke_be_cong_anh_sang`, `phap_su_thau_kinh`. Thiếu câu Khó (0–2 câu): `chien_than_newton`, `ke_pha_the_can_bang`, `nguoi_giu_nang_luong`,
+  `ke_dieu_khien_cong_huong`, `tho_san_tan_so`, `ke_tich_tru_loi_dinh`, `bac_thay_chuyen_the`, `ke_thuan_hoa_phan_tu`, `bac_thay_noi_nang`, `chua_te_song`;
+  thiếu cả TB: `ke_pha_the_can_bang`, `nguoi_giu_nut_song`, `tho_san_tan_so`, `chua_te_dong_luong`, `phap_su_giao_thoa`. → Tắt hoặc hạ ngưỡng hoặc soạn thêm câu Khó (GĐ 1).
+  56/19.858 câu chưa gán mức độ. (Giá trị cột `difficulty` trong DB: `de` / `trung-binh` / `kho`.)
+- **Bài học**: 131 bài đã đăng, ~97 có lý thuyết tương tác (ước lượng theo mẫu nhận dạng). Thiếu mục lý thuyết (không kể bài kiểm tra):
+  KHTN 9 Bài 1, 14, 15, 16, 17 (id 128, 92, 93, 94, 95). 42 bài chưa có mục Luyện tập.
+- **Việc GĐ 1 vẫn chưa làm**: test bằng HS thật 375px; so sánh mùa 1 với 4 tuần trước 21/09; chống cày (đếm câu khác nhau); trang Luyện tập lọc theo
+  lớp/chương/bài/YCCĐ/mức độ; mở "3 kỹ năng yếu nhất" cho HS; ~300 đề thi thử.
 
 ---
 
@@ -198,3 +216,5 @@ Cách làm mỗi đợt: 4 bài một lượt, soạn song song, kiểm chéo tr
 - [ ] **Đợt 4 — Lớp 10, phần còn lại.** Mở đầu Bài 1–3 (id 46–48). Động lực học trừ Bài 13 và Bài 16 đã có (id 59, 60, 62–67; Bài 20 và Bài 22 đang trống). Sau đó năng lượng Bài 23–27, động lượng Bài 28–30, chuyển động tròn Bài 31–32, biến dạng và áp suất Bài 33–34.
 - [ ] **Đợt 5 — KHTN 9.** 17 bài, chưa bài nào tương tác. Đã có lý thuyết cũ: Bài 2–6. Đang trống: Bài 1 và Bài 7–17. Làm khi 10–12 đã phủ chương đang dạy.
 - [ ] **Lớp 12, một bài còn lại:** Bài 11 Thực hành đo cảm ứng từ (id 12).
+- 14/10/2026: DB không còn bài lớp 12 nào thiếu mục lý thuyết (kể cả id 12) — các đợt 1–4 cần đối chiếu lại từng `lesson_id` với DB trước khi soạn, vì
+  roadmap chưa tick nhưng nhiều bài có thể đã ghi (STATE: 25 bài L10 đã ghi DB 10/10, chưa deploy). KHTN 9 còn thiếu lý thuyết: Bài 1, 14–17.

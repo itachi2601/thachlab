@@ -66,3 +66,6 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Hero tab 4 "Hình chiếu"](project_thachlab_hero_hinhchieu.md) — bóng của M quay đều đồng nhịp với con lắc lò xo nằm ngang trên CÙNG một trục x (4/10); 34 kiểm toán + ảnh 360/375/1440, JS tải đầu trang chủ không đổi (216 KB gzip); quyết định đã chốt: "đồng nhịp ≠ trùng vị trí" (khớp ω chỉ làm hiệu pha THÔI TĂNG) · treo: chưa deploy, chưa nhúng vào bài 1 lớp 11 (repo chưa có cơ chế mount mô phỏng trong ContentHtml)
 - [Rà soát 18 bài L12 (6/10)](project_thachlab_l12_ra_soat_2026_10_06.md) — đã sửa + vào main; treo: ghi DB, thầy đối chiếu SGK (Boyle/Charles, khí thực, bếp từ), xem 375px
 - [L11: 6 bài lý thuyết còn lại 9/10](project_thachlab_l11_6_bai_con_lai.md) — 6/6 đăng + deploy; treo video + thầy đối chiếu SGK; L10/L11/L12 đã đủ bài tương tác
+
+- [Tối ưu tốc độ](project_thachlab_perf_optimization.md) — 5 đợt xong 27/9
+- [Hoạt động lớp học](project_thachlab_hoat_dong_lop_hoc.md) — quiz live PIN; migration đã chạy, deploy 12/10
