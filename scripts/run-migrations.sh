@@ -27,8 +27,8 @@ FILES=(
   "supabase/migrations/20261014120000_staff_sua_sdt_hoc_sinh.sql|Hàm staff_set_student_phones: thầy/TA sửa SĐT học sinh + phụ huynh trong hồ sơ|lúc nào cũng được"
   "supabase/migrations/20261014140000_chan_doan_ban_do_xuat_phat.sql|Kiểm tra đầu vào có độ chắc (3 mức) → 4 nhóm vững/chưa vững/hiểu sai/chưa biết; phụ huynh chỉ thấy bản cắt; hàm diagnostic_maps cho trợ giảng|chỉ thay hàm, chạy lúc nào cũng được"
   "supabase/migrations/20261014150000_hsg9_cd17_thien_van.sql|Khoá HSG Vật lí: thêm CĐ17 Thiên văn (ẩn), đổi CĐ14 còn gương phẳng + bóng (chỉ chèn/đổi tên)|lúc nào cũng được"
-  "supabase/migrations/20261014160000_course_mastery_radar.sql|Hàm get_my_course_mastery_pct: mạng nhện chuyển được Theo chương / Cả khoá (HSG: đỉnh = mảng Cơ, Nhiệt–Âm, Điện, Quang, Điện từ); chỉ thêm hàm đọc|lúc nào cũng được"
 )
+# ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
 # ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung
 # ĐÃ CHẠY 11/10/2026 (17:20): 20261011220000_phu_dao_bo_cau_kho

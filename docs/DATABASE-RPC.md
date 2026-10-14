@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 323 hàm, sinh tự động 2026-10-13
+# Hàm SQL / RPC (schema public) — 336 hàm, sinh tự động 2026-10-14
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -27,6 +27,7 @@ repo — xem trên Supabase Dashboard).
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
 - `diagnostic_can_read(p_student uuid)` → boolean
 - `diagnostic_get(p_student uuid)` → jsonb
+- `diagnostic_maps(p_students uuid[])` → TABLE(student_id uuid, created_at timestamp with time zone, per_topic jsonb)
 - `diagnostic_reset(p_student uuid)` → void
 - `diagnostic_submit(p_student uuid, p_results jsonb)` → jsonb
 - `evaluate_exam_violation_alert(p_result_id bigint)` → void
@@ -41,6 +42,7 @@ repo — xem trên Supabase Dashboard).
 - `get_exam_rank(p_exam_id bigint)` → TABLE(rnk integer, total integer, my_best numeric)
 - `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
 - `get_my_chapter_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, pct integer, level text)
+- `get_my_course_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, chapter_sort integer, subject_code text, is_latest boolean, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, earned numeric, max numeric, pct integer, level text)
 - `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
 - `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
@@ -195,8 +197,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -238,6 +240,7 @@ repo — xem trên Supabase Dashboard).
 - `ta_policy_session_guard()` → trigger
 - `ta_policy_today()` → date
 - `ta_save_month_review(p_assistant_id uuid, p_month date, p_scores jsonb, p_rate integer, p_note text, p_close boolean)` → jsonb
+- `ta_session_slot_guard()` → trigger
 - `ta_session_student_count(p_students text[])` → integer
 - `ta_session_student_link_guard()` → trigger
 - `ta_team_monthly_hours(p_months integer)` → TABLE(month date, converted_hours numeric, session_count integer)
@@ -307,16 +310,26 @@ repo — xem trên Supabase Dashboard).
 - `trg_ta_sessions_video_topic_check()` → trigger
 - `trg_tutoring_covered()` → trigger
 - `trg_tutoring_exit_attempt_clear()` → trigger
+- `tutoring_check_topics(p_slot_id bigint, p_topics bigint[], p_check_deadline boolean, p_check_ready boolean)` → void
 - `tutoring_exit_attempt_guard()` → trigger
 - `tutoring_exit_window_defaults()` → trigger
+- `tutoring_exit_window_slot_guard()` → trigger
+- `tutoring_followup_report(p_class_id bigint, p_days integer)` → TABLE(registration_id bigint, slot_id bigint, work_date date, start_time time without time zone, assistant_name text, student_id uuid, student_name text, topic_id bigint, topic_name text, attended boolean, has_session boolean, best_pct integer, attempts integer, passed boolean, cleared boolean)
+- `tutoring_mark_attendance(p_slot_id bigint, p_student_id uuid, p_attended boolean)` → void
+- `tutoring_ready_topics(p_class_id bigint)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, question_count integer, ready boolean)
+- `tutoring_registration_guard()` → trigger
+- `tutoring_registration_notify()` → trigger
 - `tutoring_review_ping(p_need bigint, p_delta integer, p_sections_seen integer, p_quiz_answered integer)` → jsonb
 - `tutoring_review_start(p_need bigint, p_sections integer, p_quiz_total integer, p_est_seconds integer)` → jsonb
 - `tutoring_slot_open_next(p_slot_id bigint, p_work_date date, p_start time without time zone, p_end time without time zone)` → bigint
 - `tutoring_slot_register()` → trigger
 - `tutoring_slot_unregister()` → trigger
 - `tutoring_theory_item(p_topic bigint)` → bigint
+- `tutoring_topic_min_questions()` → integer
+- `tutoring_topic_question_count(p_topic bigint)` → integer
 - `tutoring_waitlist_guard()` → trigger
 - `tutoring_waitlist_mine(p_student uuid)` → TABLE(slot_id bigint, queue_pos integer, total integer)
+- `tutoring_waitlist_topics_guard()` → trigger
 - `unread_notification_count()` → integer
 - `update_machine_status_log(p_id bigint, p_status text, p_note text, p_created_at timestamp with time zone)` → void
 - `update_post_with_targets(p_post_id bigint, p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → void
