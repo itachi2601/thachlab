@@ -21,6 +21,7 @@ import {
   Maximize2,
   Minimize2,
   Moon,
+  NotebookPen,
   Pen,
   Sun,
   Trash2,
@@ -32,6 +33,7 @@ import {
 import ContentHtml from "@/components/exams/ContentHtml";
 import { splitTheorySections } from "@/features/lessons/theory-sections";
 import type { LessonItem } from "@/features/lessons/types";
+import PresenterNoteBox from "@/components/lessons/PresenterNoteBox";
 
 /**
  * components/lessons/LessonPresenter.tsx
@@ -229,6 +231,7 @@ export default function LessonPresenter({
   onClose: () => void;
 }) {
   const pages = useMemo(() => buildPresenterDeck(lessonTitle, items), [lessonTitle, items]);
+  const lessonId = items[0]?.lesson_id ?? null;
 
   const [index, setIndex] = useState(0);
   // Cỡ chữ và nền đọc thẳng từ lần dạy trước ngay khi khởi tạo state — component này chỉ mount
@@ -242,6 +245,8 @@ export default function LessonPresenter({
   const [color, setColor] = useState(PEN_COLORS[0].value);
   const [menuOpen, setMenuOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
+  const [noteOpen, setNoteOpen] = useState(false);
+  const [noteSaved, setNoteSaved] = useState(false);
   const [chrome, setChrome] = useState(true);
   const [isFull, setIsFull] = useState(false);
   /**
@@ -567,7 +572,8 @@ export default function LessonPresenter({
         case "Escape":
           // Đang toàn màn hình thì trình duyệt tự lo Esc (không gửi sự kiện xuống trang) —
           // ở đây chỉ xử lý Esc khi đang KHÔNG toàn màn hình.
-          if (menuOpen) setMenuOpen(false);
+          if (noteOpen) setNoteOpen(false);
+          else if (menuOpen) setMenuOpen(false);
           else if (helpOpen) setHelpOpen(false);
           else if (pen !== "off") setPenMode("off");
           else close();
@@ -600,6 +606,11 @@ export default function LessonPresenter({
         case "L":
           setMenuOpen((open) => !open);
           break;
+        case "n":
+        case "N":
+          e.preventDefault();
+          setNoteOpen(true);
+          break;
         case "?":
           setHelpOpen((open) => !open);
           break;
@@ -609,7 +620,7 @@ export default function LessonPresenter({
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [applyZoom, clearPage, close, go, helpOpen, index, menuOpen, pages.length, pen, setPenMode, toggleFullscreen, undoStroke, zoomBy]);
+  }, [applyZoom, clearPage, close, go, helpOpen, index, menuOpen, noteOpen, pages.length, pen, setPenMode, toggleFullscreen, undoStroke, zoomBy]);
 
   // ---------- Vuốt ngang để lật trang (khi không bật bút) ----------
   function onTouchStart(e: ReactTouchEvent<HTMLDivElement>) {
@@ -671,6 +682,10 @@ export default function LessonPresenter({
           <button type="button" onClick={toggleBg} title="Đổi nền chiếu: sáng cho phòng đèn, tối cho phòng tối">
             {bg === "light" ? <Sun size={16} aria-hidden /> : <Moon size={16} aria-hidden />}
             <span className="presenter-btn-text">{bg === "light" ? "Nền sáng" : "Nền tối"}</span>
+          </button>
+          <button type="button" onClick={() => setNoteOpen(true)} title="Ghi chú nhanh cho trang này (N)">
+            <NotebookPen size={16} aria-hidden />
+            <span className="presenter-btn-text">Ghi chú</span>
           </button>
           <button type="button" onClick={() => setHelpOpen((open) => !open)} title="Phím tắt (?)">
             <Keyboard size={16} aria-hidden />
@@ -812,6 +827,12 @@ export default function LessonPresenter({
               </div>
               <div>
                 <dt>
+                  <kbd>N</kbd>
+                </dt>
+                <dd>Ghi chú nhanh cho trang này (Enter lưu)</dd>
+              </div>
+              <div>
+                <dt>
                   <kbd>L</kbd>
                 </dt>
                 <dd>Mở mục lục nhảy nhanh</dd>
@@ -945,6 +966,24 @@ export default function LessonPresenter({
       <div className="presenter-progress" aria-hidden>
         <span style={{ width: `${((index + 1) / pages.length) * 100}%` }} />
       </div>
+
+      {noteOpen && lessonId != null && (
+        <PresenterNoteBox
+          lessonId={lessonId}
+          itemId={page.groupKey.startsWith("item-") ? Number(page.groupKey.slice(5)) : null}
+          pageKey={page.key}
+          pageHeading={page.kind === "cover" ? lessonTitle : `${page.groupTitle} › ${page.heading}`}
+          onClose={(saved) => {
+            setNoteOpen(false);
+            rootRef.current?.focus();
+            if (saved) {
+              setNoteSaved(true);
+              window.setTimeout(() => setNoteSaved(false), 1800);
+            }
+          }}
+        />
+      )}
+      {noteSaved && <p className="presenter-note-saved" role="status">Đã ghi chú</p>}
 
       {drawHint && drawing && (
         <p className="presenter-draw-hint">
