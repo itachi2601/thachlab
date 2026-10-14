@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mẫu mạng nhện có điểm số</title>
+<style>
+:root{--bg:#f5f7fa;--panel:#fff;--surface2:#eef1f6;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.10);--line-strong:#8b93a1;--pri:#1d4ed8;--pri-soft:#eef2ff;--ok:#047857;--warn:#b45309;--bad:#b91c1c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px}.lead{color:var(--muted);margin:0 0 24px;max-width:760px}
+.grid{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.col{width:375px;max-width:100%}.col h2{font-size:16px;margin:0 0 8px}
+.col ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13px}.col li{margin-bottom:6px}.col li b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card h3{margin:0;font-size:17px}.sub{font-size:13px;color:var(--muted);margin:2px 0 0}
+svg{display:block;width:100%;max-width:360px;margin:8px auto 0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:22px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+th{font-size:12px;color:var(--muted);text-align:left;font-weight:600;padding:6px 4px;border-bottom:1px solid var(--line)}
+td{padding:0;border-bottom:1px solid var(--line)}
+tr.r{cursor:pointer}tr.r td>div{min-height:48px;display:flex;align-items:center;padding:6px 4px}
+tr.r.on td{background:var(--pri-soft)}
+.code{width:46px;font-weight:700;color:var(--muted)}
+.num{font-weight:700;font-variant-numeric:tabular-nums}
+.d{font-size:13px;font-weight:600}.up{color:var(--ok)}.dn{color:var(--bad)}.eq{color:var(--muted)}
+.tag{font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px;white-space:nowrap}
+.t-ok{background:#e3f4ea;color:var(--ok)}.t-w{background:#fdf0d9;color:var(--warn)}.t-b{background:#fbe4e2;color:var(--bad)}
+.cta{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:12px;border-radius:12px;background:var(--pri);color:#fff;font-weight:700}
+.tabs{display:flex;gap:6px;margin:10px 0 0}.tabs span{font-size:13px;padding:8px 14px;border-radius:20px;background:var(--surface2);color:var(--muted);min-height:36px}
+.tabs .on{background:var(--pri-soft);color:var(--pri);font-weight:700}
+.big{font-size:15px}
+.note{font-size:12.5px;color:var(--muted);margin-top:8px}
+</style></head><body>
+<h1>Mạng nhện có điểm số: mẫu cho thachlab</h1>
+<p class="lead">Lấy cái hay của biểu đồ UI GreenMetric (điểm in ngay trên đỉnh, bảng chỉ báo kèm điểm, vòng chia thang) nhưng giữ nền thachlab: token màu sáng, vòng mục tiêu 80%, so với chính em 30 ngày trước. Chưa sửa code thật. Bấm một hàng hoặc một đỉnh để xem chúng nối với nhau.</p>
+<div class="grid">
+
+<div class="col">
+<h2>A. Bản đầy đủ (/lop-hoc/ket-qua)</h2>
+<div class="card">
+  <h3>Năng lực chương: Dao động cơ</h3>
+  <p class="sub">6 bài · mục tiêu 80%</p>
+  <svg id="radar" viewBox="0 0 360 340" role="img" aria-label="Sơ đồ năng lực chương"></svg>
+  <div class="legend">
+    <span><i style="border-color:var(--pri)"></i>Hiện tại</span>
+    <span><i style="border-color:var(--muted);border-top-style:dashed"></i>30 ngày trước</span>
+    <span><i style="border-color:var(--ok);border-top-style:dashed"></i>Mục tiêu 80</span>
+  </div>
+  <table><thead><tr><th>Bài</th><th>Điểm</th><th>Vs 30 ngày</th><th>Mức</th></tr></thead><tbody id="tb"></tbody></table>
+  <div class="cta">Ôn 5 phút: Bài 3 ›</div>
+</div>
+<ul>
+<li><b>Điểm ngay trên đỉnh</b> (như ảnh): em đọc số mà không cần rê chuột. Mức vẫn có chữ, không chỉ màu (D3).</li>
+<li><b>Bảng chỉ báo</b> dưới sơ đồ: mã bài, điểm, mũi tên so với tháng trước. Mỗi hàng cao 48px, chạm được (đích chạm).</li>
+<li><b>Chọn hàng ↔ đỉnh</b> sáng cùng nhau, thay cho tooltip rê chuột vốn không có trên điện thoại.</li>
+<li>Nhãn trục chỉ "B1…B6", tên đầy đủ nằm trong bảng, nên không bị cắt chữ như bản hiện tại.</li>
+</ul>
+</div>
+
+<div class="col">
+<h2>B. Bản gọn (trang chủ HS)</h2>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:baseline"><h3>Bản đồ năng lực</h3><span style="color:var(--pri);font-size:13px">Xem kết quả ›</span></div>
+  <p class="sub">Dao động cơ</p>
+  <div style="display:flex;gap:10px;align-items:center">
+    <svg id="mini" viewBox="0 0 200 190" style="max-width:190px;flex:none" aria-label="Sơ đồ rút gọn"></svg>
+    <div style="font-size:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--bad)">Yếu nhất</div>
+      <div style="font-weight:700">Bài 3</div>
+      <div class="sub">42/100</div>
+      <div style="color:var(--pri);font-weight:700;margin-top:6px">Ôn 5 phút ›</div>
+    </div>
+  </div>
+  <div class="note">Chỉ đóng khung điểm của bài yếu nhất, các đỉnh khác để chấm nhỏ, tránh quá tải (N1).</div>
+</div>
+
+<h2 style="margin-top:24px">C. Chuyển chế độ (đề xuất)</h2>
+<div class="card">
+  <div class="tabs"><span class="on">Theo bài</span><span>Theo chủ đề YCCĐ</span><span>Cả năm</span></div>
+  <p class="note">"Cả năm": mỗi trục là một chương, thấy chỗ hổng lớn. "Theo chủ đề": mỗi trục là một nhóm YCCĐ trong chương.</p>
+</div>
+<ul>
+<li><b>Phụ huynh (P1..P27)</b>: bản riêng chữ ≥18px, 4 trục tối đa, câu chữ "Con đang nắm tốt X, cần ôn Y" thay vì số trần.</li>
+<li><b>So với trung bình lớp: không đề xuất cho HS</b> (so sánh xã hội dễ nản với tuổi 14–18). Chỉ cho giáo viên ở hồ sơ em.</li>
+<li><b>Giáo viên</b>: chồng nhiều em lên một sơ đồ lớp để thấy bài cả lớp cùng yếu.</li>
+</ul>
+</div>
+
+</div>
+<script>
+const L=[
+ {c:"B1",n:"Dao động điều hòa",p:86,q:78},
+ {c:"B2",n:"Mô tả dao động",p:74,q:70},
+ {c:"B3",n:"Vận tốc, gia tốc",p:42,q:55},
+ {c:"B4",n:"Bài tập về dao động",p:68,q:60},
+ {c:"B5",n:"Động năng, thế năng",p:57,q:57},
+ {c:"B6",n:"Dao động tắt dần",p:91,q:80}];
+const lvl=p=>p>=80?["Nắm vững","t-ok","var(--ok)"]:p>=50?["Cần luyện","t-w","var(--warn)"]:["Chưa đạt","t-b","var(--bad)"];
+const N=L.length,cx=180,cy=170,R=100;
+const pt=(i,k)=>{const a=i*2*Math.PI/N-Math.PI/2;return[cx+R*k*Math.cos(a),cy+R*k*Math.sin(a)]};
+const poly=f=>L.map((l,i)=>pt(i,f(l)/100).join(",")).join(" ");
+let s="";
+[25,50,75,100].forEach(r=>{s+=`<polygon points="${poly(()=>r)}" fill="none" stroke="var(--line-strong)" stroke-opacity=".45"/>`;
+ const [x,y]=pt(0,r/100);s+=`<text x="${x+4}" y="${y+4}" font-size="11" fill="var(--muted)">${r}</text>`});
+L.forEach((l,i)=>{const [x,y]=pt(i,1);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--line-strong)" stroke-opacity=".4"/>`});
+s+=`<polygon points="${poly(()=>80)}" fill="none" stroke="var(--ok)" stroke-width="1.5" stroke-dasharray="4 4"/>`;
+s+=`<polygon points="${poly(l=>l.q)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 3"/>`;
+s+=`<polygon points="${poly(l=>l.p)}" fill="var(--pri)" fill-opacity=".18" stroke="var(--pri)" stroke-width="2"/>`;
+L.forEach((l,i)=>{const [x,y]=pt(i,1.28);s+=`<text x="${x}" y="${y}" font-size="13" font-weight="600" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">${l.c}</text>`});
+L.forEach((l,i)=>{const [x,y]=pt(i,l.p/100);const c=lvl(l.p)[2];
+ s+=`<g class="v" data-i="${i}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="15" fill="#fff" stroke="${c}" stroke-width="2"/><text x="${x}" y="${y}" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">${l.p}</text></g>`});
+document.getElementById("radar").innerHTML=s;
+document.getElementById("tb").innerHTML=L.map((l,i)=>{const d=l.p-l.q,m=lvl(l.p);
+ return `<tr class="r" data-i="${i}"><td><div class="code">${l.c}</div></td><td><div style="width:100%">${l.n.length?`<span class="num">${l.p}</span><span class="sub">&nbsp;/100</span>`:""}</div></td><td><div class="d ${d>0?"up":d<0?"dn":"eq"}">${d>0?"▲ +"+d:d<0?"▼ "+d:"= 0"}</div></td><td><div><span class="tag ${m[1]}">${m[0]}</span></div></td></tr>`}).join("");
+function sel(i){document.querySelectorAll("tr.r").forEach(r=>r.classList.toggle("on",+r.dataset.i===i));
+ document.querySelectorAll("g.v circle").forEach((c,j)=>c.setAttribute("r",j===i?19:15))}
+document.querySelectorAll("tr.r,g.v").forEach(e=>e.addEventListener("click",()=>sel(+e.dataset.i)));
+sel(2);
+// bản gọn
+const n=N,c2=100,r2=60;const p2=(i,k)=>{const a=i*2*Math.PI/n-Math.PI/2;return[c2+r2*k*Math.cos(a),95+r2*k*Math.sin(a)]};
+const pl=f=>L.map((l,i)=>p2(i,f(l)/100).join(",")).join(" ");
+let m="";[33,66,100].forEach(k=>m+=`<polygon points="${pl(()=>k)}" fill="none" stroke="var(--line-strong)" stroke-opacity=".45"/>`);
+m+=`<polygon points="${pl(l=>l.p)}" fill="var(--pri)" fill-opacity=".2" stroke="var(--pri)" stroke-width="2"/>`;
+L.forEach((l,i)=>{const [x,y]=p2(i,1.32);m+=`<text x="${x}" y="${y}" font-size="11" fill="var(--muted)" text-anchor="middle" dominant-baseline="central">${l.c}</text>`});
+L.forEach((l,i)=>{const [x,y]=p2(i,l.p/100);m+= i===2?`<circle cx="${x}" cy="${y}" r="13" fill="#fff" stroke="var(--bad)" stroke-width="2"/><text x="${x}" y="${y}" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">${l.p}</text>`:`<circle cx="${x}" cy="${y}" r="3" fill="var(--pri)"/>`});
+document.getElementById("mini").innerHTML=m;
+</script></body></html>
