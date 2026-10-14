@@ -13,7 +13,7 @@ import StudentAccountCard from "@/components/dashboard/StudentAccountCard";
 import ParentDigestCard from "@/components/dashboard/ParentDigestCard";
 import DiagnosticAdmin from "@/components/dashboard/DiagnosticAdmin";
 import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
-import { buildChapterRadar, fetchClassQuestionActivity, fetchCurriculumMeta } from "@/services/class-insights";
+import { buildCourseRadar, fetchClassQuestionActivity, fetchCurriculumMeta } from "@/services/class-insights";
 import type { ChapterLessonMastery } from "@/services/mastery";
 import PasswordResetCard from "@/components/dashboard/PasswordResetCard";
 import StudentContactCard from "@/components/dashboard/StudentContactCard";
@@ -140,8 +140,8 @@ export default function TeacherThptStudentProfile({
         if (cancelled) return;
         setRadar({
           id: selectedId,
-          current: buildChapterRadar(rows, meta),
-          prev: buildChapterRadar(rows, meta, new Date(Date.now() - 30 * 86400e3)),
+          current: buildCourseRadar(rows, meta),
+          prev: buildCourseRadar(rows, meta, new Date(Date.now() - 30 * 86400e3)),
         });
       } catch {
         if (!cancelled) setRadar(null);
@@ -165,7 +165,7 @@ export default function TeacherThptStudentProfile({
   const recentScores = selectedResults.slice(0, 5).map((r) => Number(r.score)).filter((n) => Number.isFinite(n));
   const avgRecent = recentScores.length ? recentScores.reduce((a, b) => a + b, 0) / recentScores.length : null;
   const lastActive = history.reduce<string | null>((m, e) => (!m || Date.parse(e.at) > Date.parse(m) ? e.at : m), null);
-  const weakest = radarData?.current.filter((x) => x.pct !== null && x.answeredCount > 0).sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0] ?? null;
+  const weakest = radarData?.current.filter((x) => x.isLatest !== false && x.pct !== null && x.answeredCount > 0).sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0] ?? null;
 
   return (
     <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
@@ -268,7 +268,7 @@ export default function TeacherThptStudentProfile({
           {tab === "hoc" && (
             <>
               {adminTools && <DiagnosticAdmin key={`diag-${selected.id}`} studentId={selected.id} studentName={selected.full_name} classId={classId} />}
-              {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} preloaded={radarData} />}
+              {radarData && <ChapterMasteryRadar key={`radar-${selected.id}`} studentId={selected.id} courseData={radarData} />}
 
               <section className="rounded-2xl border border-white/10 bg-panel p-5">
                 <div className="flex flex-wrap items-center gap-2">

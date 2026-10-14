@@ -79,6 +79,9 @@ export interface ChapterMeta {
   id: number;
   title: string;
   sortOrder: number;
+  subjectCode: string | null;
+  /** Lớp mà chương được gắn (chapter_classes) — để gom "cả khoá" đúng lớp. */
+  classIds: number[];
 }
 export interface CurriculumMeta {
   topics: Map<number, TopicMeta>;
@@ -88,10 +91,11 @@ export interface CurriculumMeta {
 
 export async function fetchCurriculumMeta(): Promise<CurriculumMeta> {
   const supabase = getSupabase();
-  const [t, l, c] = await Promise.all([
+  const [t, l, c, cc] = await Promise.all([
     supabase.from("question_topics").select("id, name, parent_id, lesson_id, sort_order"),
     supabase.from("lessons").select("id, title, chapter_id, sort_order, published"),
-    supabase.from("chapters").select("id, title, sort_order"),
+    supabase.from("chapters").select("id, title, sort_order, subject_code"),
+    supabase.from("chapter_classes").select("chapter_id, class_id"),
   ]);
   const topics = new Map<number, TopicMeta>();
   for (const r of (t.data ?? []) as { id: number; name: string; parent_id: number | null; lesson_id: number | null; sort_order: number }[]) {
@@ -101,9 +105,15 @@ export async function fetchCurriculumMeta(): Promise<CurriculumMeta> {
   for (const r of (l.data ?? []) as { id: number; title: string; chapter_id: number; sort_order: number; published: boolean }[]) {
     lessons.set(r.id, { id: r.id, title: r.title, chapterId: r.chapter_id, sortOrder: r.sort_order, published: r.published });
   }
+  const classIdsOf = new Map<number, number[]>();
+  for (const r of (cc.data ?? []) as { chapter_id: number; class_id: number }[]) {
+    const list = classIdsOf.get(r.chapter_id);
+    if (list) list.push(r.class_id);
+    else classIdsOf.set(r.chapter_id, [r.class_id]);
+  }
   const chapters = new Map<number, ChapterMeta>();
-  for (const r of (c.data ?? []) as { id: number; title: string; sort_order: number }[]) {
-    chapters.set(r.id, { id: r.id, title: r.title, sortOrder: r.sort_order });
+  for (const r of (c.data ?? []) as { id: number; title: string; sort_order: number; subject_code: string | null }[]) {
+    chapters.set(r.id, { id: r.id, title: r.title, sortOrder: r.sort_order, subjectCode: r.subject_code, classIds: classIdsOf.get(r.id) ?? [] });
   }
   return { topics, lessons, chapters };
 }
@@ -327,6 +337,68 @@ export function buildChapterRadar(rows: QuestionActivityRow[], meta: CurriculumM
       answeredCount: n,
       pct: sm === 0 ? null : Math.round((se / sm) * 100),
       level,
+    };
+  });
+}
+
+/**
+ * Như buildChapterRadar nhưng trả MỌI bài đã công bố của khoá (các chương cùng môn, chung lớp với chương
+ * em làm gần nhất) kèm earned/max và chapterSort để radar chuyển được Theo chương / Cả khoá. Cùng công thức
+ * RPC get_my_course_mastery_pct (giáo viên không gọi được vì RPC đọc theo auth.uid()).
+ */
+export function buildCourseRadar(rows: QuestionActivityRow[], meta: CurriculumMeta, before?: Date): ChapterLessonMastery[] {
+  const cutoff = before ? before.toISOString() : null;
+  const usable = rows.filter((r) => !cutoff || r.created_at <= cutoff).sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  let latestId: number | undefined;
+  for (const r of usable) {
+    const lid = meta.topics.get(r.topic_id)?.lessonId;
+    const ch = lid != null ? meta.lessons.get(lid)?.chapterId : undefined;
+    if (ch != null) { latestId = ch; break; }
+  }
+  if (latestId == null) return [];
+  const latest = meta.chapters.get(latestId);
+  const courseIds = new Set<number>([latestId]);
+  for (const c of meta.chapters.values()) {
+    if (c.subjectCode === (latest?.subjectCode ?? null) && c.classIds.some((id) => latest?.classIds.includes(id))) courseIds.add(c.id);
+  }
+  const byTopic = new Map<number, QuestionActivityRow[]>();
+  for (const r of usable) {
+    const l = byTopic.get(r.topic_id) ?? [];
+    if (l.length < 10) l.push(r);
+    byTopic.set(r.topic_id, l);
+  }
+  const lessons = [...meta.lessons.values()]
+    .filter((l) => courseIds.has(l.chapterId) && l.published)
+    .sort((a, b) => (meta.chapters.get(a.chapterId)?.sortOrder ?? 0) - (meta.chapters.get(b.chapterId)?.sortOrder ?? 0) || a.chapterId - b.chapterId || a.sortOrder - b.sortOrder);
+  return lessons.map((lesson) => {
+    let n = 0, se = 0, sm = 0, minRank: number | null = null;
+    for (const t of meta.topics.values()) {
+      if (t.lessonId !== lesson.id) continue;
+      const list = byTopic.get(t.id) ?? [];
+      const e = list.reduce((a, r) => a + r.earned, 0);
+      const m = list.reduce((a, r) => a + r.max, 0);
+      n += list.length; se += e; sm += m;
+      if (list.length >= 4 && m > 0) {
+        const rank = e / m >= 0.8 ? 2 : e / m >= 0.5 ? 1 : 0;
+        minRank = minRank === null ? rank : Math.min(minRank, rank);
+      }
+    }
+    const level: RadarLevel = minRank === null ? "insufficient" : minRank === 0 ? "weak" : minRank === 1 ? "practicing" : "mastered";
+    const chapter = meta.chapters.get(lesson.chapterId);
+    return {
+      chapterId: lesson.chapterId,
+      chapterTitle: chapter?.title ?? "",
+      lessonId: lesson.id,
+      lessonTitle: lesson.title,
+      sortOrder: lesson.sortOrder,
+      answeredCount: n,
+      pct: sm === 0 ? null : Math.round((se / sm) * 100),
+      level,
+      chapterSort: chapter?.sortOrder ?? 0,
+      subjectCode: chapter?.subjectCode ?? null,
+      isLatest: lesson.chapterId === latestId,
+      earned: se,
+      max: sm,
     };
   });
 }

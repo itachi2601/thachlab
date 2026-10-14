@@ -28,6 +28,8 @@ interface ChapterMasteryRadarProps {
   preloaded?: { current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] | null };
   /** Bản gọn cho trang chủ HS: chỉ sơ đồ + bài yếu nhất + lối vào kết quả chi tiết (bỏ chú thích dài và bảng số). */
   compact?: boolean;
+  /** Giáo viên xem hồ sơ em: dữ liệu cả khoá đã tính sẵn (buildCourseRadar) → có bộ chuyển phạm vi, không gọi RPC. */
+  courseData?: { current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] | null };
 }
 
 interface RadarViewProps extends ChapterMasteryRadarProps {
@@ -816,14 +818,18 @@ function rollUpByChapter(rows: ChapterLessonMastery[]): ChapterLessonMastery[] {
  * mảng Cơ / Nhiệt – Âm / Điện / Quang / Điện từ). Giáo viên xem hồ sơ em (preloaded) giữ nguyên bản theo chương.
  */
 export default function ChapterMasteryRadar(props: ChapterMasteryRadarProps) {
-  if (props.preloaded) return <RadarView {...props} />;
+  if (props.preloaded && !props.courseData) return <RadarView {...props} />;
   return <CourseRadar {...props} />;
 }
 
-function CourseRadar({ studentId, onLoaded, compact = false }: ChapterMasteryRadarProps) {
-  const [loading, setLoading] = useState(true);
-  const [cur, setCur] = useState<ChapterLessonMastery[] | null>(null);
-  const [prev, setPrev] = useState<ChapterLessonMastery[] | null>(null);
+function CourseRadar({ studentId, onLoaded, compact = false, courseData }: ChapterMasteryRadarProps) {
+  const [fetchLoading, setLoading] = useState(!courseData);
+  const [fetchedCur, setCur] = useState<ChapterLessonMastery[] | null>(null);
+  const [fetchedPrev, setPrev] = useState<ChapterLessonMastery[] | null>(null);
+  const hasPreloaded = !!courseData && courseData.current.some((r) => r.pct !== null);
+  const loading = courseData ? false : fetchLoading;
+  const cur = courseData ? (hasPreloaded ? courseData.current : null) : fetchedCur;
+  const prev = courseData ? (hasPreloaded ? courseData.prev : null) : fetchedPrev;
   const [scope, setScope] = useState<RadarScope | null>(null);
   const [pickedChapter, setPickedChapter] = useState<number | null>(null);
   const onLoadedRef = useRef(onLoaded);
@@ -832,6 +838,7 @@ function CourseRadar({ studentId, onLoaded, compact = false }: ChapterMasteryRad
   });
 
   useEffect(() => {
+    if (courseData) return;
     let active = true;
     const prevDate = new Date(Date.now() - 30 * 86400e3);
     const finish = (c: ChapterLessonMastery[] | null, p: ChapterLessonMastery[] | null) => {
@@ -853,7 +860,7 @@ function CourseRadar({ studentId, onLoaded, compact = false }: ChapterMasteryRad
     return () => {
       active = false;
     };
-  }, [studentId]);
+  }, [studentId, courseData]);
 
   const chapters = useMemo(() => {
     const seen = new Map<number, { id: number; title: string; sort: number }>();
@@ -954,7 +961,7 @@ function CourseRadar({ studentId, onLoaded, compact = false }: ChapterMasteryRad
       compact={compact}
       onLoaded={onLoaded}
       preloaded={{ current: curView, prev: prevView }}
-      allowDrill={effScope === "chapter"}
+      allowDrill={effScope === "chapter" && !courseData}
       unit={effScope === "course" ? "chapter" : "lesson"}
       title={effScope === "course" ? (isHsg ? "theo mảng kiến thức" : "cả khoá") : undefined}
       subtitle={effScope === "course" ? "Mỗi đỉnh là một chương; so với chính em 30 ngày trước và mục tiêu 80%" : undefined}
