@@ -93,7 +93,7 @@ async function measure(src: string): Promise<Res> {
 }
 const queue = [...jobs];
 const hits: (Res & { label: string; id: number; idx?: number })[] = [];
-const errs: { src: string; loi: string }[] = [];
+const errs: { src: string; loi: string; id: number; idx?: number }[] = [];
 let done = 0;
 async function work() {
   for (;;) {
@@ -101,7 +101,7 @@ async function work() {
     if (!j) return;
     let r = cache.get(j.src);
     if (!r) { r = await measure(j.src); cache.set(j.src, r); }
-    if ("loi" in r) { if (!errs.some((e) => e.src === r!.src)) errs.push(r); }
+    if ("loi" in r) errs.push({ src: r.src, loi: r.loi, id: j.id, idx: j.idx });
     else if (r.frac < MAX_FRAC) hits.push({ ...r, label: j.label, id: j.id, idx: j.idx });
     if (++done % 100 === 0) process.stderr.write(`\r${done}/${jobs.length}`);
   }
