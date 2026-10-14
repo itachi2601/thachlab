@@ -130,7 +130,7 @@ export default function TeacherThptStudentProfile({
   const [nowMs] = useState(() => Date.now());
   const [filter, setFilter] = useState<StudentFilter>("all");
   const [diagMaps, setDiagMaps] = useState<Map<string, DiagnosticTopicResult[]> | null>(null);
-  const isNew = (s: { joined_at?: string | null }) => !!s.joined_at && nowMs - Date.parse(s.joined_at) < 21 * 86400e3;
+  const isNew = (s: { joined_at?: string | null }) => !!s.joined_at && nowMs - Date.parse(s.joined_at) < 7 * 86400e3;
   const studentIdsKey = students.map((x) => x.id).join(",");
   useEffect(() => {
     if (!studentIdsKey) return;
@@ -159,7 +159,7 @@ export default function TeacherThptStudentProfile({
     .map((x) => x.item);
   const filterChips: { id: StudentFilter; label: string; count: number | null }[] = [
     { id: "all", label: "Tất cả", count: students.length },
-    { id: "new", label: "Mới vào 3 tuần", count: newCount },
+    { id: "new", label: "Mới vào 1 tuần", count: newCount },
     { id: "nodiag", label: "Chưa kiểm tra đầu vào", count: diagMaps === null ? null : noDiagCount },
     { id: "gap", label: "Có phần hổng", count: diagMaps === null ? null : gapCount },
   ];
