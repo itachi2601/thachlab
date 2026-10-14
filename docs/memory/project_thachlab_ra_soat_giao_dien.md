@@ -33,3 +33,12 @@ Nền tảng vững (một màu nhấn, tương phản đo bằng script, chữ 
 `scripts/do-bo-cuc.mjs` chụp toàn trang ra khoảng trắng lớn vì `whileInView` chưa kích hoạt → phải cuộn hết trang
 (bước 0,6 viewport, 250 ms/bước) rồi về đầu trước khi `captureScreenshot`. Trên cloud: Chrome ở `/opt/pw-browsers/chromium`
 + `--no-sandbox`. Nên thêm bước cuộn vào script (chưa làm, cần thầy duyệt vì script dùng chung).
+
+## Cập nhật 14/10/2026 (phiên Mac tiếp quản) — K1–K3, K5, K6 xong; K4 mới quét
+- Git: thực tế không có merge dở/stash "truoc-pull-13-10" (đã pop sẵn vào nhánh `cursor/ui-c3`, 115 file dở của phiên khác còn nguyên trong cây). `main` đã merge origin/main + nhánh Cursor (C1–C3 xếp chồng trong `cursor/ui-c3`), đã push (df4966405). Kiểm-code: C1–C3 đạt; sửa thêm `stripHtml` entity số.
+- K6: 4 SVG bìa Gemini (`public/images/learning-path/*.svg`, 400×300) gắn vào `LearningPath`, xoá 4 jpg cũ. **G2 huy hiệu Hạng 1/2/3 chưa có** (`assets/huy-hieu-gemini/` không tồn tại) → HonorBoard chưa đổi. Chữ trong SVG bìa 12px/400 = ~8px khi hiển thị, chỉ là trang trí.
+- K1: trang chủ 12 → 6 khối (Hero+ribbon, Lớp, Tìm, Lộ trình, Phụ huynh, Vinh danh); Features/ExamSamples/AboutFounder/Testimonials sang `/gioi-thieu`; mobile 15.000 → ~9.000px. C4 làm luôn (ribbon dưới hero). Navbar/Footer/ExamSamplePreview đổi link.
+- K2: poster → bảng HTML theo mức điểm, tên viết tắt; K3: 3 câu trích (chép bằng agent đọc ảnh) + ảnh melbourne.jpg; K5: CSS `.tl-box` trung tính, `--think` primary nhạt, `.theory-next` primary đặc (globals.css cuối khối tl-*).
+- **K4 chưa sửa, cần thầy quyết:** `scripts/quet-nhan-svg.mts` (chỉ đọc) → 100/106 bài có SVG; 2699/3669 nhãn <13px khi hiển thị ở 375 (nhỏ nhất 7px), 1446 màu nhạt. Nâng cỡ chữ hàng loạt sẽ làm chữ đè nhau → nên sửa ở `svg_lib.py` cho bài mới + sửa từng bài sau khi xem hình; kết quả ở `scripts/logs/quet-nhan-svg.json`.
+- Việc dở của phiên khác còn trong cây: `HomeByTrack`/`CttcHome` (Navbar, page.tsx đã có hunk riêng, chưa commit) — commit page.tsx/Navbar của tôi bằng blob từ HEAD để không kéo theo.
+- `scripts/do-bo-cuc.mjs --toan-trang` nay tự cuộn hết trang trước khi chụp.
