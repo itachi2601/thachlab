@@ -14,6 +14,13 @@ quiz:
     - "Giữa hai chân chim gần như không có hiệu điện thế"
   answer: 2
   why: "Điện chỉ chạy qua chim khi có hiệu điện thế giữa hai chân, mà hai chân chạm gần nhau trên cùng một dây nên độ chênh rất nhỏ."
+photo: "/images/blog/vi-sao-chim-dau-day-dien-khong-bi-giat-the.webp"
+photoAlt: "Chim sẻ đậu trên sợi dây kim loại trước nền trời xám"
+photoCredit:
+  author: "Alias 0591"
+  license: "CC BY 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Bird_on_a_wire_(7810257764).jpg"
 tags:
   - "Nhà cửa & điện"
   - "KHTN 9"

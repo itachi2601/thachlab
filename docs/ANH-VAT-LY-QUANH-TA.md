@@ -60,3 +60,9 @@ Gemini chỉ **tìm và khai báo**. Claude đối chiếu từng link với tra
 
 ## 8. Mã quy tắc
 H1 (ảnh trả lời một câu hỏi), M5 (nền trắng), M4/E1 (đúng/sai kèm chữ, nhãn A. B. C.), D2 (nút ≥44px), B4 (không chuyển động), N1 (một câu đố/thẻ, không điểm, không xếp hạng), G2 (không màu bão hoà kéo chú ý).
+
+## 9. Vòng 1 (14/10/2026): 7/8 ảnh đã nạp, còn `van-dong-vien-xoay-nhanh-hon-khi-thu-tay`
+Đã đối chiếu từng ảnh bằng API Commons (tác giả + giấy phép khớp 8/8; 3 link `downloadUrl` của Gemini sai mã băm nên Claude lấy link từ API). Dữ liệu gốc Gemini: `scripts/data/anh-vat-ly-quanh-ta/ket-qua.json`.
+Ảnh trượt băng `John_Hamer.JPG` bị loại: 368×640px (quá nhỏ), có logo nhà tài trợ, nhận ra mặt một VĐV cụ thể. Các ảnh thi trượt băng Lillehammer/Youth Olympics cũng loại: tư thế dang tay (ngược với bài, bài nói về **thu tay**) và nhiều VĐV là trẻ vị thành niên.
+**Yêu cầu vòng 2 cho Gemini** (một ảnh duy nhất): người xoay tròn với tay **thu sát người** (spin đứng của trượt băng, hoặc pirouette múa ba lê, hoặc ghế xoay), rộng ≥1600px, CC0/CC BY/CC BY-SA, không logo tài trợ, chụp xa hoặc không rõ mặt, người lớn. Nếu không có ảnh đạt thì để trống, khung "?" vẫn dùng được.
+Ghi chú các ảnh đã nạp: ảnh chim là dây rào kim loại (không phải dây điện cao thế), ảnh xe là xe đang sạc (không thấy phanh tái sinh) — alt đã mô tả đúng cái thấy trong ảnh.

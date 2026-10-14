@@ -14,6 +14,13 @@ quiz:
     - "Phanh tạo thêm năng lượng nên không cần sạc"
   answer: 1
   why: "Bánh xe quay động cơ thành máy phát: dòng điện nạp pin và cũng làm xe chậm lại. Không có năng lượng nào tự sinh ra."
+photo: "/images/blog/vi-sao-phanh-tai-sinh-giup-xe-dien-sac-lai-pin-the.webp"
+photoAlt: "Xe điện nhỏ màu đỏ đang cắm cáp sạc tại cột sạc ven đường"
+photoCredit:
+  author: "Michael Movchin, Felix Müller"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Electric_Car_recharging.jpg"
 tags:
   - "Năng lượng & môi trường"
   - "KHTN 9"

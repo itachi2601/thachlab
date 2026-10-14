@@ -14,6 +14,13 @@ quiz:
     - "Nước sôi ở nhiệt độ cao hơn 100 °C"
   answer: 2
   why: "Nắp kín làm áp suất trong nồi tăng, nước chỉ sôi ở nhiệt độ cao hơn nên thức ăn chín nhanh hơn."
+photo: "/images/blog/vi-sao-noi-ap-suat-nau-chin-nhanh-the.webp"
+photoAlt: "Nồi áp suất kim loại có nắp đỏ, tay cầm và van trên nắp"
+photoCredit:
+  author: "Phrontis"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Fissler_Dampfkochtopf_Vitavit.jpg"
 tags:
   - "Nhà bếp"
   - "Lớp 12"

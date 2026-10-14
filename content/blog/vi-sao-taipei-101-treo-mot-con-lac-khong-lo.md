@@ -14,6 +14,13 @@ quiz:
     - "Nhà nặng thêm 660 tấn nên gió không đẩy nổi"
   answer: 1
   why: "Quả cầu đu lệch so với nhà, piston dầu hấp thụ cơ năng của cú lắc và biến thành nhiệt."
+photo: "/images/blog/vi-sao-taipei-101-treo-mot-con-lac-khong-lo-the.webp"
+photoAlt: "Quả cầu giảm chấn bằng thép nhiều tầng treo bằng cáp bên trong Taipei 101"
+photoCredit:
+  author: "travelwayoflife"
+  license: "CC BY-SA 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Tuned_Mass_Damper_atop_Taipei_101.jpg"
 tags:
   - "Nhà cửa & điện"
   - "Lớp 11"

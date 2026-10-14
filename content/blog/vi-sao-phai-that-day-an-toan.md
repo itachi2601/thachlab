@@ -14,6 +14,13 @@ quiz:
     - "Dây an toàn làm xe dừng nhanh hơn"
   answer: 1
   why: "Xe dừng nhưng người vẫn giữ vận tốc cũ (quán tính), cho tới khi có thứ gì đó chặn lại."
+photo: "/images/blog/vi-sao-phai-that-day-an-toan-the.webp"
+photoAlt: "Hình nộm thử va chạm màu vàng ngồi trên ghế, dây an toàn chéo qua ngực"
+photoCredit:
+  author: "ITU Pictures"
+  license: "CC BY 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Crash_test_dummy_with_three-point_seat_belt_(cropped).jpg"
 tags:
   - "Giao thông"
   - "Lớp 10"

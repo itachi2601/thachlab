@@ -14,6 +14,13 @@ quiz:
     - "Lớn hơn 49 N rất nhiều"
   answer: 2
   why: "Cơ bám rất gần khớp khuỷu, còn quả tạ ở xa khớp, nên cơ phải kéo lớn hơn nhiều so với trọng lượng quả tạ."
+photo: "/images/blog/vi-sao-co-bap-co-lai-khi-nang-ta-the.webp"
+photoAlt: "Cận cảnh bàn tay nắm quả tạ đơn khi cuốn tạ"
+photoCredit:
+  author: "Nenad Stojkovic"
+  license: "CC BY 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Close_up_of_the_woman%27s_hands_while_she%27s_doing_bicep_curls_with_dumbbells._(50425016047).jpg"
 tags:
   - "Gym & Thể thao"
   - "Lớp 10"

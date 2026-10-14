@@ -14,6 +14,13 @@ quiz:
     - "Ít nhất 3 trạm"
   answer: 2
   why: "Mỗi trạm cho một đường tròn khoảng cách. Ba đường tròn cắt nhau tại đúng một điểm: tâm chấn."
+photo: "/images/blog/vi-sao-tim-duoc-tam-dong-dat-chi-bang-ba-tram-do-the.webp"
+photoAlt: "Trống giấy của địa chấn kế ghi những đường rung của một trận động đất"
+photoCredit:
+  author: "Daderot"
+  license: "CC0"
+  licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Seismograph_with_record_of_Bay_of_Plenty_earthquake,_March_2,_1987_-_Faraday_Museum_of_Technology_-_Napier,_NZ_-_DSC05509.jpg"
 tags:
   - "Trái Đất & tự nhiên"
   - "Lớp 11"
