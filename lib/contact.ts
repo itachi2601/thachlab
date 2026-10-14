@@ -21,17 +21,3 @@ export const CONTACT = {
   /** Trường đang công tác. */
   school: "Trường Cao đẳng Kỹ thuật Cao Thắng",
 } as const;
-
-/**
- * Ảnh chụp bảng kết quả thật (public/, .webp ≤ 150 KB) cho khách ở /phu-huynh.
- * Mảng rỗng → bỏ luôn lưới ảnh. Khai width/height đúng bằng kích thước file để next/image
- * trừ sẵn chỗ, tránh nhảy layout (ảnh đang để chế độ unoptimized vì site export tĩnh).
- */
-export const PARENT_SHOTS: { src: string; width: number; height: number; alt: string }[] = [
-  {
-    src: "/images/phu-huynh-ket-qua-1.webp",
-    width: 1000,
-    height: 1042,
-    alt: "Bảng kết quả học sinh đạt điểm cao môn Vật lý, kì thi TNTHPT 2025",
-  },
-];
