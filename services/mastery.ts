@@ -159,6 +159,13 @@ export interface ChapterLessonMastery {
   /** 0–100, null khi bài chưa có lượt nào. */
   pct: number | null;
   level: MasteryLevel;
+  /** Chỉ có từ RPC cả khoá (get_my_course_mastery_pct). */
+  chapterSort?: number;
+  subjectCode?: string | null;
+  isLatest?: boolean;
+  /** Σ điểm đạt / Σ điểm tối đa của bài (để gộp % cả chương đúng công thức). */
+  earned?: number;
+  max?: number;
 }
 
 interface ChapterMasteryPctRow {
@@ -191,5 +198,40 @@ export async function fetchMyChapterMasteryPct(before?: Date): Promise<ChapterLe
     answeredCount: r.answered_count,
     pct: r.pct,
     level: r.level,
+  }));
+}
+
+interface CourseMasteryPctRow extends ChapterMasteryPctRow {
+  chapter_sort: number;
+  subject_code: string | null;
+  is_latest: boolean;
+  earned: number | string;
+  max: number | string;
+}
+
+/**
+ * Như fetchMyChapterMasteryPct nhưng trả MỌI bài đã công bố của khoá (các chương cùng môn, chung lớp
+ * với chương em làm gần nhất) để sơ đồ chuyển được Theo chương / Cả khoá. Ném lỗi khi RPC chưa chạy —
+ * nơi gọi lùi về fetchMyChapterMasteryPct.
+ */
+export async function fetchMyCourseMasteryPct(before?: Date): Promise<ChapterLessonMastery[]> {
+  const { data, error } = await getSupabase().rpc("get_my_course_mastery_pct", {
+    p_before: before ? before.toISOString() : null,
+  });
+  if (error) throw error;
+  return ((data ?? []) as CourseMasteryPctRow[]).map((r) => ({
+    chapterId: r.chapter_id,
+    chapterTitle: r.chapter_title,
+    lessonId: r.lesson_id,
+    lessonTitle: r.lesson_title,
+    sortOrder: r.sort_order,
+    answeredCount: r.answered_count,
+    pct: r.pct,
+    level: r.level,
+    chapterSort: r.chapter_sort,
+    subjectCode: r.subject_code,
+    isLatest: r.is_latest,
+    earned: Number(r.earned),
+    max: Number(r.max),
   }));
 }

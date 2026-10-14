@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
   fetchMyChapterMasteryPct,
+  fetchMyCourseMasteryPct,
   MASTERY_ICON,
   MASTERY_LABEL,
   fetchLessonMastery,
@@ -29,15 +30,40 @@ interface ChapterMasteryRadarProps {
   compact?: boolean;
 }
 
-export default function ChapterMasteryRadar({
+interface RadarViewProps extends ChapterMasteryRadarProps {
+  /** "lesson": đỉnh = bài của một chương (mặc định). "chapter": đỉnh = chương (cả khoá; khoá HSG = mảng). */
+  unit?: "lesson" | "chapter";
+  /** Cho phép mở YCCĐ yếu của bài dù dữ liệu truyền sẵn (chỉ chính em xem, không phải giáo viên). */
+  allowDrill?: boolean;
+  /** Tiêu đề/ghi chú thay mặc định; ReactNode đặt dưới tiêu đề (bộ chuyển phạm vi). */
+  title?: string;
+  subtitle?: string;
+  headerSlot?: ReactNode;
+  /** Chế độ "chapter": chạm một đỉnh/hàng thì chuyển sang xem các bài của chương đó. */
+  onPickChapter?: (chapterId: number) => void;
+}
+
+function RadarView({
   studentId,
   onLoaded,
   preloaded,
   compact = false,
-}: ChapterMasteryRadarProps) {
-  const [loading, setLoading] = useState(true);
-  const [currentData, setCurrentData] = useState<ChapterLessonMastery[] | null>(null);
-  const [prevData, setPrevData] = useState<ChapterLessonMastery[] | null>(null);
+  unit = "lesson",
+  allowDrill = false,
+  title,
+  subtitle,
+  headerSlot,
+  onPickChapter,
+}: RadarViewProps) {
+  const isChapterUnit = unit === "chapter";
+  const unitWord = isChapterUnit ? "mảng" : "bài";
+  const [loading, setLoading] = useState(!preloaded);
+  const [currentData, setCurrentData] = useState<ChapterLessonMastery[] | null>(
+    preloaded && preloaded.current.some((item) => item.pct !== null) ? preloaded.current : null
+  );
+  const [prevData, setPrevData] = useState<ChapterLessonMastery[] | null>(
+    preloaded && preloaded.current.some((item) => item.pct !== null) ? preloaded.prev : null
+  );
   // Giữ callback mới nhất trong ref để effect không nạp lại RPC mỗi lần cha render.
   const onLoadedRef = useRef(onLoaded);
   useEffect(() => {
@@ -124,7 +150,7 @@ export default function ChapterMasteryRadar({
 
   // Tầng 2 (YCCĐ của một bài) chỉ ở bản đầy đủ của chính em: RPC đọc theo người đang đăng nhập,
   // và trang chủ (compact) không được thêm round-trip.
-  const drillDown = !compact && !preloaded;
+  const drillDown = !compact && !isChapterUnit && (!preloaded || allowDrill);
   const [userOpen, setUserOpen] = useState<number | null | undefined>(undefined);
   // Bài đang được nhấn mạnh trên sơ đồ (chạm đỉnh hoặc chạm hàng); mặc định là bài yếu nhất.
   const [focusId, setFocusId] = useState<number | null>(null);
@@ -163,15 +189,13 @@ export default function ChapterMasteryRadar({
   const lessonsWithData = currentData.filter((item) => item.pct !== null);
   if (lessonsWithData.length === 0) return null;
 
-  const chapterTitle = currentData[0]?.chapterTitle || "Chương đang học";
-  const useRadar = lessonsWithData.length >= 3;
+  const chapterTitle = title ?? (currentData[0]?.chapterTitle || "Chương đang học");
+  // Đỉnh theo chương: giữ cả mảng chưa làm (vẽ ở tâm) để em thấy chỗ trống; đỉnh theo bài chỉ lấy bài đã có dữ liệu.
+  const axisItems = isChapterUnit ? currentData : lessonsWithData;
+  const useRadar = axisItems.length >= 3;
 
-  // Radar: Tối đa 8 trục, nếu >8 bài có dữ liệu thì lấy 8 bài gần nhất theo sortOrder.
-  const radarLessons = useRadar
-    ? lessonsWithData.length > 8
-      ? lessonsWithData.slice(-8)
-      : lessonsWithData
-    : [];
+  // Radar: Tối đa 8 trục, nếu >8 thì lấy 8 mục cuối theo sortOrder.
+  const radarLessons = useRadar ? (axisItems.length > 8 ? axisItems.slice(-8) : axisItems) : [];
 
   const prevLessonsWithDataCount = prevData
     ? prevData.filter((i) => i.pct !== null).length
@@ -188,6 +212,7 @@ export default function ChapterMasteryRadar({
   // Mã bài ngắn B1…Bn (theo "Bài N" trong tên, không có thì theo thứ tự) — tên đầy đủ nằm ở bảng bên dưới.
   const codeOf = (lessonId: number): string => {
     const idx = currentData.findIndex((l) => l.lessonId === lessonId);
+    if (isChapterUnit) return `C${idx + 1}`;
     const title = idx >= 0 ? currentData[idx].lessonTitle : "";
     const m = title.match(/^Bài\s*(\d+)/i);
     return m ? `B${m[1]}` : `B${idx + 1}`;
@@ -237,7 +262,7 @@ export default function ChapterMasteryRadar({
   const prevPointsString = prevCoords.map((pt) => `${pt.x},${pt.y}`).join(" ");
 
   if (compact && useRadar) {
-    const lowest = [...lessonsWithData].sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0];
+    const lowest = [...radarLessons].sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0];
     const cx2 = 70;
     const cy2 = 70;
     const R2 = 46;
@@ -256,7 +281,7 @@ export default function ChapterMasteryRadar({
         </div>
         <p className="text-[13px] text-muted">{chapterTitle}</p>
         <div className="mt-2 flex items-center gap-3">
-          <svg viewBox="-18 -4 176 148" className="h-36 w-[176px] shrink-0" role="img" aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}>
+          <svg viewBox="-18 -4 176 148" className="h-36 w-[176px] shrink-0" role="img" aria-label={isChapterUnit ? `Sơ đồ năng lực theo ${unitWord}: ${chapterTitle}` : `Sơ đồ năng lực chương ${chapterTitle}`}>
             {[0.33, 0.66, 1].map((k) => (
               <polygon key={k} points={poly(() => k)} fill="none" stroke="var(--color-line-strong)" strokeWidth="1" strokeOpacity="0.5" />
             ))}
@@ -269,7 +294,7 @@ export default function ChapterMasteryRadar({
                 <g key={l.lessonId}>
                   <circle cx={x} cy={y} r={11} fill="var(--color-panel)" stroke="var(--color-danger)" strokeWidth="2" />
                   <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fontWeight="700" fill="var(--color-ink)">
-                    {l.pct}
+                    {l.pct ?? "–"}
                   </text>
                 </g>
               );
@@ -290,14 +315,16 @@ export default function ChapterMasteryRadar({
                 <p className="font-bold text-ink">{weakestLesson.lessonTitle}</p>
                 <p className="text-[13px] text-muted">{weakestLesson.pct}% thành thạo</p>
                 <Link
-                  href={`/lop-hoc/bai/?id=${weakestLesson.lessonId}#secondary-stage-ly_thuyet`}
+                  href={isChapterUnit ? "/lop-hoc/ket-qua" : `/lop-hoc/bai/?id=${weakestLesson.lessonId}#secondary-stage-ly_thuyet`}
                   className="mt-1 inline-flex min-h-11 items-center font-bold text-primary hover:underline"
                 >
-                  Ôn 5 phút ›
+                  {isChapterUnit ? "Xem các bài ›" : "Ôn 5 phút ›"}
                 </Link>
               </>
             ) : (
-              <p className="font-medium text-ok">Chương này em đã nắm vững, học tiếp bài mới.</p>
+              <p className="font-medium text-ok">
+                {isChapterUnit ? "Các mảng em đã làm đều vững, học tiếp mảng còn trống." : "Chương này em đã nắm vững, học tiếp bài mới."}
+              </p>
             )}
           </div>
         </div>
@@ -309,7 +336,7 @@ export default function ChapterMasteryRadar({
     <section className="rounded-2xl border border-line bg-panel p-5">
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="font-display font-semibold text-ink">
-          {compact ? "Bản đồ năng lực" : `Năng lực chương: ${chapterTitle}`}
+          {compact ? "Bản đồ năng lực" : isChapterUnit ? `Năng lực ${chapterTitle}` : `Năng lực chương: ${chapterTitle}`}
         </h2>
         {compact && (
           <Link href="/lop-hoc/ket-qua" className="-my-3 inline-flex min-h-11 shrink-0 items-center text-[13px] text-primary hover:underline">
@@ -318,8 +345,9 @@ export default function ChapterMasteryRadar({
         )}
       </div>
       <p className="mt-0.5 text-[13px] text-muted">
-        {compact ? chapterTitle : "So với chính em 30 ngày trước và mục tiêu 80%"}
+        {compact ? chapterTitle : (subtitle ?? "So với chính em 30 ngày trước và mục tiêu 80%")}
       </p>
+      {!compact && headerSlot}
 
       {useRadar ? (
         <div className="mt-4">
@@ -327,7 +355,7 @@ export default function ChapterMasteryRadar({
             viewBox="0 0 360 340"
             className="mx-auto block w-full max-w-[360px]"
             role="img"
-            aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}
+            aria-label={isChapterUnit ? `Sơ đồ năng lực theo ${unitWord}: ${chapterTitle}` : `Sơ đồ năng lực chương ${chapterTitle}`}
           >
             {/* Lớp 1: Lưới 4 vòng 25/50/75/100, số chia thang nằm giữa trục 1 và trục 2 */}
             {[0.25, 0.5, 0.75, 1.0].map((ringPct) => {
@@ -444,7 +472,7 @@ export default function ChapterMasteryRadar({
                   key={item.lessonId}
                   role="button"
                   tabIndex={0}
-                  aria-label={`${item.lessonTitle}: ${item.pct}%, ${MASTERY_LABEL[item.level]}`}
+                  aria-label={item.pct === null ? `${item.lessonTitle}: chưa làm` : `${item.lessonTitle}: ${item.pct}%, ${MASTERY_LABEL[item.level]}`}
                   onClick={() => setFocusId(item.lessonId)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -454,7 +482,7 @@ export default function ChapterMasteryRadar({
                   }}
                   className="cursor-pointer outline-none"
                 >
-                  <title>{`${item.lessonTitle}: ${item.pct}%`}</title>
+                  <title>{item.pct === null ? `${item.lessonTitle}: chưa làm` : `${item.lessonTitle}: ${item.pct}%`}</title>
                   {/* Vùng chạm rộng ~44px, không vẽ */}
                   <circle cx={pt.x} cy={pt.y} r={22} fill="transparent" />
                   <circle
@@ -474,7 +502,7 @@ export default function ChapterMasteryRadar({
                     fontWeight="700"
                     fill="var(--color-ink)"
                   >
-                    {item.pct}
+                    {item.pct ?? "–"}
                   </text>
                 </g>
               );
@@ -511,7 +539,11 @@ export default function ChapterMasteryRadar({
               </svg>
               <span>Mục tiêu: Nắm vững (80%)</span>
             </div>
-            <p>Số trong vòng tròn là % thành thạo của bài. Chạm một vòng để xem bài đó trong bảng.</p>
+            <p>
+                {isChapterUnit
+                  ? "Số trong vòng tròn là % thành thạo của cả mảng (dấu – là chưa làm). Chạm một vòng để xem mảng đó trong bảng."
+                  : "Số trong vòng tròn là % thành thạo của bài. Chạm một vòng để xem bài đó trong bảng."}
+              </p>
             {hasPrevRadar && (
               <div className="flex items-center gap-2">
                 <svg width="24" height="10" className="shrink-0" aria-hidden="true">
@@ -578,6 +610,7 @@ export default function ChapterMasteryRadar({
               else deltaStr = "= giữ nguyên";
             }
             const canOpen = drillDown && item.pct !== null;
+            const canPick = isChapterUnit && !!onPickChapter && item.pct !== null;
             const isOpen = canOpen && openId === item.lessonId;
             const topics = isOpen ? topicsByLesson[item.lessonId] : undefined;
 
@@ -611,7 +644,19 @@ export default function ChapterMasteryRadar({
                 key={item.lessonId}
                 className={`rounded-lg text-sm leading-relaxed text-ink ${item.lessonId === activeFocusId && useRadar ? "bg-primary-soft" : ""}`}
               >
-                {canOpen ? (
+                {canPick ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFocusId(item.lessonId);
+                      onPickChapter?.(item.lessonId);
+                    }}
+                    className="flex min-h-11 w-full items-center justify-between gap-2 rounded-lg px-1 text-left hover:bg-surface-2"
+                  >
+                    <span className="min-w-0">{label}</span>
+                    <span className="shrink-0 text-[13px] font-semibold text-primary">Xem các bài ›</span>
+                  </button>
+                ) : canOpen ? (
                   <button
                     type="button"
                     aria-expanded={isOpen}
@@ -677,7 +722,17 @@ export default function ChapterMasteryRadar({
 
       {/* Nút chính duy nhất hoặc dòng chúc mừng */}
       <div className="mt-5">
-        {weakestLesson ? (
+        {weakestLesson && isChapterUnit ? (
+          onPickChapter ? (
+            <button
+              type="button"
+              onClick={() => onPickChapter(weakestLesson.lessonId)}
+              className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
+            >
+              Xem các bài của mảng yếu nhất
+            </button>
+          ) : null
+        ) : weakestLesson ? (
           weakestTopic ? (
             <>
               <button
@@ -701,7 +756,7 @@ export default function ChapterMasteryRadar({
           )
         ) : (
           <p className="text-sm font-medium text-ok">
-            Chương này em đã nắm vững, học tiếp bài mới.
+            {isChapterUnit ? "Các mảng em đã làm đều vững, học tiếp mảng còn trống." : "Chương này em đã nắm vững, học tiếp bài mới."}
           </p>
         )}
       </div>
@@ -721,5 +776,190 @@ export default function ChapterMasteryRadar({
         />
       )}
     </section>
+  );
+}
+
+type RadarScope = "chapter" | "course";
+
+/** Gộp các bài của một chương thành một đỉnh: % = Σđiểm đạt / Σđiểm tối đa (đúng công thức mastery-rules, không lấy trung bình % bài). */
+function rollUpByChapter(rows: ChapterLessonMastery[]): ChapterLessonMastery[] {
+  const byChapter = new Map<number, ChapterLessonMastery[]>();
+  for (const r of rows) {
+    const list = byChapter.get(r.chapterId);
+    if (list) list.push(r);
+    else byChapter.set(r.chapterId, [r]);
+  }
+  const out: ChapterLessonMastery[] = [];
+  for (const [chapterId, list] of byChapter) {
+    const se = list.reduce((acc, r) => acc + (r.earned ?? 0), 0);
+    const sm = list.reduce((acc, r) => acc + (r.max ?? 0), 0);
+    const pct = sm > 0 ? Math.round((se / sm) * 100) : null;
+    out.push({
+      chapterId,
+      chapterTitle: list[0].chapterTitle,
+      lessonId: chapterId,
+      lessonTitle: list[0].chapterTitle,
+      sortOrder: list[0].chapterSort ?? 0,
+      answeredCount: list.reduce((acc, r) => acc + r.answeredCount, 0),
+      pct,
+      level: pct === null ? "insufficient" : pct >= 80 ? "mastered" : pct >= 50 ? "practicing" : "weak",
+      chapterSort: list[0].chapterSort,
+      subjectCode: list[0].subjectCode,
+      isLatest: list.some((r) => r.isLatest),
+    });
+  }
+  return out.sort((a, b) => a.sortOrder - b.sortOrder || a.chapterId - b.chapterId);
+}
+
+/**
+ * Sơ đồ năng lực: theo chương (đỉnh = bài) hoặc cả khoá (đỉnh = chương; khoá HSG KHTN 9 mỗi chương là một
+ * mảng Cơ / Nhiệt – Âm / Điện / Quang / Điện từ). Giáo viên xem hồ sơ em (preloaded) giữ nguyên bản theo chương.
+ */
+export default function ChapterMasteryRadar(props: ChapterMasteryRadarProps) {
+  if (props.preloaded) return <RadarView {...props} />;
+  return <CourseRadar {...props} />;
+}
+
+function CourseRadar({ studentId, onLoaded, compact = false }: ChapterMasteryRadarProps) {
+  const [loading, setLoading] = useState(true);
+  const [cur, setCur] = useState<ChapterLessonMastery[] | null>(null);
+  const [prev, setPrev] = useState<ChapterLessonMastery[] | null>(null);
+  const [scope, setScope] = useState<RadarScope | null>(null);
+  const [pickedChapter, setPickedChapter] = useState<number | null>(null);
+  const onLoadedRef = useRef(onLoaded);
+  useEffect(() => {
+    onLoadedRef.current = onLoaded;
+  });
+
+  useEffect(() => {
+    let active = true;
+    const prevDate = new Date(Date.now() - 30 * 86400e3);
+    const finish = (c: ChapterLessonMastery[] | null, p: ChapterLessonMastery[] | null) => {
+      if (!active) return;
+      const hasData = !!c && c.some((r) => r.pct !== null);
+      setCur(hasData ? c : null);
+      setPrev(hasData ? p : null);
+      setLoading(false);
+      onLoadedRef.current?.(hasData);
+    };
+    // Ưu tiên RPC cả khoá; chưa chạy migration thì lùi về RPC theo chương (không có bộ chuyển).
+    Promise.all([fetchMyCourseMasteryPct(), fetchMyCourseMasteryPct(prevDate).catch(() => null)])
+      .then(([c, p]) => finish(c, p))
+      .catch(() =>
+        Promise.all([fetchMyChapterMasteryPct(), fetchMyChapterMasteryPct(prevDate).catch(() => null)])
+          .then(([c, p]) => finish(c, p))
+          .catch(() => finish(null, null))
+      );
+    return () => {
+      active = false;
+    };
+  }, [studentId]);
+
+  const chapters = useMemo(() => {
+    const seen = new Map<number, { id: number; title: string; sort: number }>();
+    for (const r of cur ?? []) {
+      if (!seen.has(r.chapterId)) seen.set(r.chapterId, { id: r.chapterId, title: r.chapterTitle, sort: r.chapterSort ?? 0 });
+    }
+    return [...seen.values()].sort((a, b) => a.sort - b.sort || a.id - b.id);
+  }, [cur]);
+
+  if (loading) {
+    return (
+      <div
+        className="h-[280px] rounded-2xl border border-line bg-panel p-5"
+        aria-busy="true"
+        aria-label="Đang tải năng lực…"
+      />
+    );
+  }
+  if (!cur) return null;
+
+  const hasCourse = cur.some((r) => r.chapterSort !== undefined) && chapters.length >= 2;
+  const latestChapterId = cur.find((r) => r.isLatest)?.chapterId ?? chapters[0]?.id ?? cur[0].chapterId;
+  const isHsg = (cur[0].subjectCode ?? "").startsWith("hsg");
+  const courseLabel = isHsg ? "Theo mảng" : "Cả khoá";
+  const effScope: RadarScope = !hasCourse ? "chapter" : (scope ?? (isHsg ? "course" : "chapter"));
+  const selChapter = chapters.some((c) => c.id === pickedChapter) ? (pickedChapter as number) : latestChapterId;
+
+  const pickChapter = (id: number) => {
+    setPickedChapter(id);
+    setScope("chapter");
+  };
+
+  let curView: ChapterLessonMastery[];
+  let prevView: ChapterLessonMastery[] | null;
+  if (effScope === "course") {
+    curView = rollUpByChapter(cur);
+    prevView = prev ? rollUpByChapter(prev) : null;
+  } else {
+    curView = hasCourse ? cur.filter((r) => r.chapterId === selChapter) : cur;
+    prevView = prev ? (hasCourse ? prev.filter((r) => r.chapterId === selChapter) : prev) : null;
+  }
+
+  const switcher = hasCourse ? (
+    <div className="mt-3 flex flex-wrap items-center gap-2">
+      <div role="group" aria-label="Phạm vi xem" className="inline-flex overflow-hidden rounded-xl border border-line">
+        {(
+          [
+            ["chapter", "Theo chương"],
+            ["course", courseLabel],
+          ] as const
+        ).map(([val, label]) => (
+          <button
+            key={val}
+            type="button"
+            aria-pressed={effScope === val}
+            onClick={() => setScope(val)}
+            className={`min-h-11 px-4 text-sm font-semibold ${
+              effScope === val ? "bg-primary text-white" : "bg-panel text-ink hover:bg-surface-2"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      {effScope === "chapter" && (
+        <label className="flex min-w-0 items-center gap-2 text-sm text-muted">
+          <span className="shrink-0">Chương</span>
+          <select
+            value={selChapter}
+            onChange={(e) => pickChapter(Number(e.target.value))}
+            className="min-h-11 min-w-0 max-w-[14rem] rounded-xl border border-line bg-panel px-3 text-sm text-ink"
+          >
+            {chapters.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.title}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+    </div>
+  ) : null;
+
+  if (!curView.some((r) => r.pct !== null)) {
+    return (
+      <section className="rounded-2xl border border-line bg-panel p-5">
+        <h2 className="font-display font-semibold text-ink">Năng lực chương</h2>
+        {switcher}
+        <p className="mt-3 text-sm text-muted">Em chưa làm bài nào của chương này nên chưa có sơ đồ.</p>
+      </section>
+    );
+  }
+
+  return (
+    <RadarView
+      key={`${effScope}-${effScope === "chapter" ? selChapter : "all"}`}
+      studentId={studentId}
+      compact={compact}
+      onLoaded={onLoaded}
+      preloaded={{ current: curView, prev: prevView }}
+      allowDrill={effScope === "chapter"}
+      unit={effScope === "course" ? "chapter" : "lesson"}
+      title={effScope === "course" ? (isHsg ? "theo mảng kiến thức" : "cả khoá") : undefined}
+      subtitle={effScope === "course" ? "Mỗi đỉnh là một chương; so với chính em 30 ngày trước và mục tiêu 80%" : undefined}
+      headerSlot={switcher}
+      onPickChapter={effScope === "course" ? pickChapter : undefined}
+    />
   );
 }
