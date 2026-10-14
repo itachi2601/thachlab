@@ -57,7 +57,7 @@
 - [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa được: scripts/data/de-l10-24-25-can-xem.md
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 40 bộ lệch cần vá tay; thầy bật Hiện
 - [Mã QR cho đề](project_thachlab_ma_qr_de_thi.md) — `lib/exam-link.ts` sinh link; treo thử iPhone/Android
-- [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; đã ghi CĐ00/01/02/10/11/13 + Điện CĐ03/04/05 (12/10, ẩn chờ duyệt); còn quang, CĐ08, 12, 15, 16, 09 + đề
+- [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; đã ghi CĐ00–05/10/11/13; còn Âm, Nhiệt, Quang, CĐ08/09 + CĐ17 Thiên văn mới; NHẮC 13h T6 16/10
 - [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, chưa làm
 - [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do, Chapter 8 đã đăng 13/10; 9 chương còn lại dùng skill soan-bai-avcn
 ## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap ở docs/ROADMAP.md
@@ -82,17 +82,12 @@
 - [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — thẻ HS ẩn danh + panel GV; heartbeat mới ở lý thuyết, chưa có ở đề/luyện tập
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
 - [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
-- [Skill bài tập tự luận HSG](project_thachlab_khoa_hsg9_vat_ly.md) — soan-bai-tap-tu-luan-hsg: bộ Cơ học 12 bài 10/10 xong, kiểm 12/12; mảng khác chưa soạn
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan đã deploy 12/10; treo nhãn nguồn từng câu, chưa xem 375px
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn + kiểm chéo xong 12/10, chờ thầy duyệt rồi đăng; skill `phet` mới
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
 - [Dashboard GV THPT](project_thachlab_dashboard_gv_thpt.md) — lọc đề theo khối + gộp tab xong 13/10 (137387c07); chưa thử trình duyệt, chưa push
-- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật + 3 mục mở rộng
-- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — phát hiện 25/9, trạng thái sửa CHƯA RÕ
-- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục đang ẩn, chờ gắn đề
+- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo mảng); treo thử 375px thật
 - [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
 ## Việc mới 30/9
 - [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
-- [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu, soạn khi có token
-- [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
