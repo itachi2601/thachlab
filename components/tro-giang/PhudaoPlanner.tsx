@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AlertTriangle, Check, Loader2, RefreshCw, Search } from "lucide-react";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
+import DiagnosticStartMap from "@/components/tro-giang/DiagnosticStartMap";
+import { fetchDiagnosticMaps, type DiagnosticTopicResult } from "@/services/diagnostic";
 import {
   fetchOutcomeGaps,
   fetchQuestionTopics,
@@ -82,6 +84,7 @@ export default function PhudaoPlanner({
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
+  const [diagMaps, setDiagMaps] = useState<Map<string, DiagnosticTopicResult[]>>(new Map());
   const [query, setQuery] = useState("");
   const toast = useToast();
   const [win, setWin] = useState<ExitWindow | null>(null);
@@ -119,6 +122,9 @@ export default function PhudaoPlanner({
     fetchOutcomeGaps(roster.map((s) => s.id))
       .then(setOutcomes)
       .catch(() => setOutcomes([]));
+    fetchDiagnosticMaps(roster.map((s) => s.id))
+      .then(setDiagMaps)
+      .catch(() => setDiagMaps(new Map()));
   }, [roster, demo]);
 
   useEffect(() => {
@@ -333,6 +339,11 @@ export default function PhudaoPlanner({
                       Bỏ
                     </button>
                   </div>
+
+                  <DiagnosticStartMap
+                    rows={diagMaps.get(student.id) ?? []}
+                    topicName={new Map(topics.map((t) => [t.id, t.name]))}
+                  />
 
                   {list.length > 0 && (
                     <div className="mt-3 flex flex-wrap gap-2">

@@ -4,7 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 import { RotateCcw } from "lucide-react";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import { useToast } from "@/components/ui/Toast";
-import { fetchDiagnostic, resetDiagnostic, type DiagnosticStatus } from "@/services/diagnostic";
+import DiagnosticStartMap from "@/components/tro-giang/DiagnosticStartMap";
+import { fetchDiagnostic, LEVEL_LABEL, levelOf, resetDiagnostic, type DiagnosticStatus } from "@/services/diagnostic";
 import { fetchQuestionTopics } from "@/services/analytics";
 import { fetchTeachingCourses, inviteEntryDiagnostic, type TeachingCourse } from "@/services/teaching-progress";
 
@@ -181,11 +182,13 @@ export default function DiagnosticAdmin({
                 <li key={t.topicId} className="flex items-center gap-2 text-sm">
                   <span className="min-w-0 flex-1 truncate text-slate-200">{topicName.get(t.topicId) ?? `Bài #${t.topicId}`}</span>
                   <span className="shrink-0 tabular-nums text-slate-300">{t.correct}/{t.total}</span>
+                  <span className="shrink-0 text-xs text-slate-400">{LEVEL_LABEL[levelOf(t)]}</span>
                   <span aria-hidden>{pct >= 67 ? "✅" : pct >= 34 ? "🟡" : "🔴"}</span>
                 </li>
               );
             })}
           </ul>
+          <DiagnosticStartMap rows={status.perTopic ?? []} topicName={topicName} defaultOpen />
         </>
       )}
       {dialog}

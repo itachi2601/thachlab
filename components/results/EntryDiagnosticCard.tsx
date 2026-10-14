@@ -6,7 +6,12 @@ import Button from "@/components/ui/Button";
 import EntryDiagnosticQuiz from "@/components/results/EntryDiagnosticQuizLazy";
 import { fetchQuestionTopics, type QuestionTopic } from "@/services/analytics";
 import { fetchMyRegistrations } from "@/services/thpt-courses";
-import { DIAGNOSTIC_MAX_TOPICS, fetchDiagnostic, type DiagnosticStatus } from "@/services/diagnostic";
+import {
+  DIAGNOSTIC_MAX_TOPICS,
+  DIAGNOSTIC_RESERVE_TOPICS,
+  fetchDiagnostic,
+  type DiagnosticStatus,
+} from "@/services/diagnostic";
 
 /**
  * Kiểm tra đầu vào cho em vào lớp trễ (thầy chốt 12/10/2026). Chỉ hiện với em có đăng ký `joined_late`
@@ -35,7 +40,7 @@ export default function EntryDiagnosticCard({ studentId, viewer }: { studentId: 
         );
         // Bài gần nhất trước (catchup_topic_ids đã sắp theo thứ tự đó), bài đã bù nối sau.
         const ids = reg ? [...new Set([...reg.catchup_topic_ids, ...reg.catchup_done_topic_ids])] : [];
-        setScope(ids.slice(0, DIAGNOSTIC_MAX_TOPICS));
+        setScope(ids.slice(0, DIAGNOSTIC_MAX_TOPICS + DIAGNOSTIC_RESERVE_TOPICS));
       })
       .catch(() => setScope([]));
     load();
@@ -49,6 +54,9 @@ export default function EntryDiagnosticCard({ studentId, viewer }: { studentId: 
   }, [status?.done, scope]);
 
   const names = useMemo(() => new Map(topics.map((t) => [t.id, t.name])), [topics]);
+  // Giữ tham chiếu ổn định: bài kiểm tra tải câu hỏi lại mỗi khi topicIds đổi tham chiếu.
+  const mainIds = useMemo(() => (scope ?? []).slice(0, DIAGNOSTIC_MAX_TOPICS), [scope]);
+  const reserveIds = useMemo(() => (scope ?? []).slice(DIAGNOSTIC_MAX_TOPICS), [scope]);
 
   if (!status || scope === null) return null;
 
@@ -115,7 +123,8 @@ export default function EntryDiagnosticCard({ studentId, viewer }: { studentId: 
       {open && (
         <EntryDiagnosticQuiz
           studentId={studentId}
-          topicIds={scope}
+          topicIds={mainIds}
+          reserveIds={reserveIds}
           topicNames={names}
           onClose={() => setOpen(false)}
           onSubmitted={load}

@@ -6,7 +6,9 @@ import { Check, HandHeart, PenLine } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
-import { fetchOutcomeGaps, outcomeGapsByNeed, type OutcomeGap } from "@/services/analytics";
+import DiagnosticStartMap from "@/components/tro-giang/DiagnosticStartMap";
+import { fetchOutcomeGaps, fetchQuestionTopics, outcomeGapsByNeed, type OutcomeGap } from "@/services/analytics";
+import { fetchDiagnosticMaps, type DiagnosticTopicResult } from "@/services/diagnostic";
 import {
   ACTIVE_NEED_STATUSES,
   NEED_STATUS_LABEL,
@@ -49,6 +51,8 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
   const [coverage, setCoverage] = useState<TutoringCoverage[]>([]);
   const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [showDone, setShowDone] = useState(false);
+  const [diagMaps, setDiagMaps] = useState<Map<string, DiagnosticTopicResult[]>>(new Map());
+  const [topicName, setTopicName] = useState<Map<number, string>>(new Map());
 
   useEffect(() => {
     if (demo) return;
@@ -69,6 +73,11 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
     };
   }, [classId, demo]);
 
+  useEffect(() => {
+    if (demo) return;
+    fetchQuestionTopics().then((t) => setTopicName(new Map(t.map((x) => [x.id, x.name])))).catch(() => undefined);
+  }, [demo]);
+
   const studentIds = useMemo(() => students.map((s) => s.id), [students]);
   const nameById = useMemo(() => new Map(students.map((s) => [s.id, s.full_name])), [students]);
 
@@ -79,6 +88,7 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
       .catch(() => setNeeds([]));
     fetchCoverageForStudents(studentIds).then(setCoverage).catch(() => setCoverage([]));
     fetchOutcomeGaps(studentIds).then(setOutcomes).catch(() => setOutcomes([]));
+    fetchDiagnosticMaps(studentIds).then(setDiagMaps).catch(() => setDiagMaps(new Map()));
   }, [studentIds, showDone, demo]);
   useEffect(load, [load]);
 
@@ -171,6 +181,7 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
           {grouped.map((student) => (
             <article key={student.id} className="rounded-2xl border border-white/10 bg-panel p-4">
               <h2 className="font-semibold text-white">{student.name}</h2>
+              <DiagnosticStartMap rows={diagMaps.get(student.id) ?? []} topicName={topicName} />
               <div className="mt-2 space-y-2">
                 {student.list.map((need) => {
                   const taught = taughtByKey.get(`${need.studentId}|${need.topicId}`);
