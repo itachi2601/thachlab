@@ -5,7 +5,17 @@ import { RotateCcw } from "lucide-react";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import { useToast } from "@/components/ui/Toast";
 import DiagnosticStartMap from "@/components/tro-giang/DiagnosticStartMap";
-import { fetchDiagnostic, LEVEL_LABEL, levelOf, resetDiagnostic, type DiagnosticStatus } from "@/services/diagnostic";
+import {
+  assignHandoff,
+  clearHandoff,
+  fetchDiagnostic,
+  fetchHandoffOptions,
+  LEVEL_LABEL,
+  levelOf,
+  resetDiagnostic,
+  type DiagnosticStatus,
+  type HandoffOptions,
+} from "@/services/diagnostic";
 import { fetchQuestionTopics } from "@/services/analytics";
 import { fetchTeachingCourses, inviteEntryDiagnostic, type TeachingCourse } from "@/services/teaching-progress";
 
@@ -34,6 +44,8 @@ export default function DiagnosticAdmin({
   const [courses, setCourses] = useState<TeachingCourse[]>([]);
   const [inviteCourse, setInviteCourse] = useState<number | "">("");
   const [invited, setInvited] = useState(false);
+  const [handoff, setHandoff] = useState<HandoffOptions | null>(null);
+  const [pickTa, setPickTa] = useState("");
 
   useEffect(() => {
     if (compact || classId == null) return;
@@ -48,6 +60,52 @@ export default function DiagnosticAdmin({
       .catch(() => undefined);
     return () => { cancelled = true; };
   }, [compact, classId]);
+
+  const loadHandoff = useCallback(() => {
+    fetchHandoffOptions(studentId)
+      .then((h) => {
+        setHandoff(h);
+        setPickTa((cur) => cur || h.current?.id || h.assistants[0]?.id || "");
+      })
+      .catch(() => setHandoff(null));
+  }, [studentId]);
+
+  useEffect(() => {
+    if (!compact) loadHandoff();
+  }, [compact, loadHandoff]);
+
+  async function giao() {
+    if (!pickTa) return;
+    setBusy(true);
+    try {
+      // Em chưa làm kiểm tra đầu vào và lớp có khoá đang mở thì mời làm luôn.
+      const r = await assignHandoff(studentId, pickTa, !done && inviteCourse !== "" ? inviteCourse : null);
+      toast(
+        "success",
+        `Đã giao ${studentName} cho ${r.assistant}${r.invited ? ", em sẽ thấy bài kiểm tra đầu vào" : ""}${
+          r.assignedNeeds > 0 ? ` (${r.assignedNeeds} phần hổng đã chuyển sang trợ giảng)` : ""
+        }.`,
+      );
+      if (r.invited) setInvited(true);
+      loadHandoff();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa giao được.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function boGiao() {
+    setBusy(true);
+    try {
+      await clearHandoff(studentId);
+      loadHandoff();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa bỏ giao được.");
+    } finally {
+      setBusy(false);
+    }
+  }
 
   async function invite() {
     if (inviteCourse === "") return;
@@ -133,6 +191,46 @@ export default function DiagnosticAdmin({
           </button>
         )}
       </div>
+      {handoff && (
+        <div className="mt-3 rounded-xl border border-white/10 bg-white/3 p-3">
+          <p className="text-sm font-semibold text-white">Trợ giảng phụ trách</p>
+          {handoff.current && (
+            <p className="mt-1 text-sm text-emerald-300">
+              Đang giao cho {handoff.current.name}.{" "}
+              <button type="button" disabled={busy} onClick={() => void boGiao()} className="text-xs text-slate-400 underline hover:text-white">
+                Bỏ giao
+              </button>
+            </p>
+          )}
+          {handoff.assistants.length === 0 ? (
+            <p className="mt-1 text-xs text-slate-500">Chưa có trợ giảng nào được gán lớp của em. Gán lớp ở trang Nhân sự trước.</p>
+          ) : (
+            <div className="mt-2 flex flex-wrap items-center gap-2">
+              <select
+                aria-label="Chọn trợ giảng"
+                value={pickTa}
+                onChange={(e) => setPickTa(e.target.value)}
+                className="min-h-11 min-w-40 rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white"
+              >
+                {handoff.assistants.map((a) => (
+                  <option key={a.id} value={a.id}>{a.name}</option>
+                ))}
+              </select>
+              <button
+                type="button"
+                disabled={busy || !pickTa}
+                onClick={() => void giao()}
+                className="min-h-11 rounded-xl bg-blue-600 px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
+              >
+                {busy ? "Đang giao…" : handoff.current ? "Đổi trợ giảng" : done ? "Giao trợ giảng" : "Giao + mời làm kiểm tra"}
+              </button>
+            </div>
+          )}
+          <p className="mt-2 text-xs text-slate-500">
+            Trợ giảng nhận thông báo, các phần em hổng (hiện có và sắp có sau kiểm tra đầu vào) tự giao cho trợ giảng đó.
+          </p>
+        </div>
+      )}
       {!done ? (
         <div className="mt-2 space-y-3">
           <p className="text-sm text-slate-400">

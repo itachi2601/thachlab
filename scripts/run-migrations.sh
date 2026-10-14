@@ -28,6 +28,7 @@ FILES=(
   "supabase/migrations/20261014140000_chan_doan_ban_do_xuat_phat.sql|Kiểm tra đầu vào có độ chắc (3 mức) → 4 nhóm vững/chưa vững/hiểu sai/chưa biết; phụ huynh chỉ thấy bản cắt; hàm diagnostic_maps cho trợ giảng|chỉ thay hàm, chạy lúc nào cũng được"
   "supabase/migrations/20261014150000_hsg9_cd17_thien_van.sql|Khoá HSG Vật lí: thêm CĐ17 Thiên văn (ẩn), đổi CĐ14 còn gương phẳng + bóng (chỉ chèn/đổi tên)|lúc nào cũng được"
   "supabase/migrations/20261014170000_teacher_lesson_notes.sql|Bảng teacher_lesson_notes: ghi chú giáo viên lúc dạy (RLS chỉ người viết, is_staff), chỉ thêm bảng mới|lúc nào cũng được"
+  "supabase/migrations/20261014150000_giao_em_cho_tro_giang.sql|Nút Giao trợ giảng: bảng ta_student_handoffs + 4 hàm ta_handoff_* + trigger tự gán mục phụ đạo mới cho trợ giảng phụ trách|chạy lúc nào cũng được (chỉ thêm bảng + hàm)"
 )
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
