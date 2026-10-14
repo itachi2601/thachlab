@@ -97,7 +97,7 @@ export default function AboutFounder() {
           {/* Ghi nhận cách làm ra trang web — thầy chốt 5/10/2026: nói rõ vai trò của thầy và của AI,
               để học sinh/phụ huynh hiểu nội dung do người dạy chọn và duyệt, AI chỉ là công cụ hỗ trợ. */}
           <div className="mt-8 rounded-2xl border border-line bg-panel/60 p-5">
-            <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Về ThachLab</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">Về ThachLab</p>
             <p className="mt-3 text-base leading-relaxed text-muted">
               Website này do thầy Ngô Diệu Thạch thiết kế nội dung và xây dựng cùng trợ lý AI Claude
               (Anthropic). Thầy là người dạy, chọn bài, soạn đề và duyệt từng nội dung đăng lên; Claude
