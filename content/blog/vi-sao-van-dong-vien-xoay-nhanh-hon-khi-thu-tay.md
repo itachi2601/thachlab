@@ -4,6 +4,16 @@ description: "Thu tay vào ngực, vận động viên quay nhanh hơn dù khôn
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Đố vui 30s"
+hook: "Vận động viên không được đẩy thêm lần nào, chỉ thu tay lại là quay nhanh hẳn lên. Vì sao?"
+quiz:
+  question: "Vì sao thu tay thì quay nhanh hơn?"
+  options:
+    - "Giảm ma sát với không khí"
+    - "Khối lượng lại gần trục nên tốc độ góc phải tăng"
+    - "Động năng quay được giữ nguyên"
+  answer: 1
+  why: "Thu tay làm khối lượng gần trục hơn; mômen động lượng được bảo toàn nên tốc độ góc tăng lên."
 tags:
   - "Gym & Thể thao"
   - "Lớp 10"

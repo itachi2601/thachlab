@@ -4,6 +4,16 @@ description: "Nước trong nồi hở không thể nóng quá 100 °C, nhưng t
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Đố vui 30s"
+hook: "Vẫn là nước sôi, nhưng trong nồi áp suất nước nóng hơn 100 °C. Nóng hơn bằng cách nào?"
+quiz:
+  question: "Nồi áp suất nấu nhanh hơn vì:"
+  options:
+    - "Nước sôi mạnh hơn, bọt nổi nhiều hơn"
+    - "Nắp kín giữ nhiệt, nước vẫn sôi ở 100 °C"
+    - "Nước sôi ở nhiệt độ cao hơn 100 °C"
+  answer: 2
+  why: "Nắp kín làm áp suất trong nồi tăng, nước chỉ sôi ở nhiệt độ cao hơn nên thức ăn chín nhanh hơn."
 tags:
   - "Nhà bếp"
   - "Lớp 12"

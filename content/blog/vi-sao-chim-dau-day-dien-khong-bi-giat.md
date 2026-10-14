@@ -4,6 +4,16 @@ description: "Dây điện mang dòng 200 A, nhưng chim đậu trên đó vẫn
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Hiện tượng lạ"
+hook: "Dây mang dòng 200 A, vậy mà dòng qua thân chim chỉ cỡ một phần triệu ampe. Vì sao?"
+quiz:
+  question: "Vì sao chim đậu trên dây điện vẫn an toàn?"
+  options:
+    - "Lông và chân chim cách điện hoàn hảo"
+    - "Chim quá nhẹ nên điện không bám vào"
+    - "Giữa hai chân chim gần như không có hiệu điện thế"
+  answer: 2
+  why: "Điện chỉ chạy qua chim khi có hiệu điện thế giữa hai chân, mà hai chân chạm gần nhau trên cùng một dây nên độ chênh rất nhỏ."
 tags:
   - "Nhà cửa & điện"
   - "KHTN 9"

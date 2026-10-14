@@ -4,6 +4,16 @@ description: "Xe dừng lại trong một chớp mắt nhưng người trong xe 
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Tự ước lượng"
+hook: "Xe dừng ngay, còn người thì chưa. Chuyện gì xảy ra trong khoảng chậm đó?"
+quiz:
+  question: "Khi xe va chạm, vì sao người không thắt dây bị thương nặng hơn?"
+  options:
+    - "Có một lực đẩy kéo người về phía trước"
+    - "Người vẫn chuyển động với vận tốc cũ cho tới khi bị chặn"
+    - "Dây an toàn làm xe dừng nhanh hơn"
+  answer: 1
+  why: "Xe dừng nhưng người vẫn giữ vận tốc cũ (quán tính), cho tới khi có thứ gì đó chặn lại."
 tags:
   - "Giao thông"
   - "Lớp 10"

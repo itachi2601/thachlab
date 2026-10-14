@@ -91,3 +91,4 @@
 - [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
 ## Việc mới 30/9
 - [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
+- [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — hook + đố A/B/C + khung ảnh xong 14/10; treo Gemini tìm ảnh, chưa deploy

@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import type { PhotoCredit, PhysicsCardData, PostQuiz } from "@/lib/physics-card";
 
 // Thư mục chứa bài viết Markdown (đọc tại thời điểm build — Server Component).
 const BLOG_DIR = join(process.cwd(), "content", "blog");
@@ -14,6 +15,13 @@ export interface PostFrontmatter {
   category?: string;
   tags?: string[];
   cover?: string; // đường dẫn ảnh đại diện (dùng cho OG/mạng xã hội)
+  // Thẻ "Vật lý quanh ta" (trang chủ + /blog) — xem docs/ANH-VAT-LY-QUANH-TA.md
+  hook?: string;
+  badge?: string;
+  quiz?: PostQuiz;
+  photo?: string; // ảnh thẻ 16:9 thật (webp), khác `cover`
+  photoAlt?: string;
+  photoCredit?: PhotoCredit;
   author?: string;
 }
 
@@ -69,12 +77,9 @@ export function getAllPosts(): PostMeta[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export interface PhysicsAroundPost {
-  slug: string;
-  title: string;
+export interface PhysicsAroundPost extends PhysicsCardData {
   description: string;
   tag: string;
-  href: string;
   cover: string | null;
   date: string;
   /** id các bài học liên quan, lấy từ link trong mục "Em đã học ở đâu?" — để gắn bài đọc vào cuối bài học. */
@@ -105,6 +110,36 @@ function resolveCover(cover: string | undefined, markdown: string): string | nul
   return candidates.find((url) => publicFileExists(url)) ?? null;
 }
 
+function validQuiz(quiz: PostQuiz | undefined): PostQuiz | undefined {
+  if (!quiz || !quiz.question || !quiz.why || !Array.isArray(quiz.options)) return undefined;
+  if (quiz.options.length < 2 || quiz.options.length > 4) return undefined;
+  if (!Number.isInteger(quiz.answer) || quiz.answer < 0 || quiz.answer >= quiz.options.length) return undefined;
+  return quiz;
+}
+
+/** Ảnh thẻ chỉ được dùng khi file có thật VÀ ghi công đủ tác giả, giấy phép, link nguồn (cam kết ở /dieu-khoan). */
+function resolvePhoto(fm: PostFrontmatter): string | null {
+  const credit = fm.photoCredit;
+  if (!fm.photo || !credit?.author || !credit.license || !credit.sourceUrl) return null;
+  return publicFileExists(fm.photo) ? fm.photo : null;
+}
+
+function buildCard(slug: string, fm: PostFrontmatter, markdown: string): PhysicsCardData {
+  const photo = resolvePhoto(fm);
+  return {
+    slug,
+    title: fm.title,
+    href: `/blog/${slug}`,
+    badge: fm.badge,
+    hook: fm.hook,
+    quiz: validQuiz(fm.quiz),
+    photo,
+    photoAlt: photo ? (fm.photoAlt ?? fm.title) : undefined,
+    photoCredit: photo ? fm.photoCredit : undefined,
+    readingMinutes: readingTime(markdown),
+  };
+}
+
 /** id bài học trong mục "## Em đã học ở đâu?" (link /lop-hoc/bai?id=N). */
 export function relatedLessonIds(markdown: string): number[] {
   const section = markdown.split(/^## /m).find((part) => part.startsWith("Em đã học ở đâu"));
@@ -122,11 +157,9 @@ export function getPhysicsAroundPosts(): PhysicsAroundPost[] {
       const fm = data as PostFrontmatter;
       if (fm.category !== "Vật lý quanh ta") return null;
       const post: PhysicsAroundPost = {
-        slug,
-        title: fm.title,
+        ...buildCard(slug, fm, content),
         description: fm.description,
         tag: topicTag(fm.tags),
-        href: `/blog/${slug}`,
         cover: resolveCover(fm.cover, content),
         date: fm.date,
         lessonIds: relatedLessonIds(content),

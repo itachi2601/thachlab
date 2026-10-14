@@ -4,6 +4,16 @@ description: "Sóng P chạy nhanh hơn sóng S. Độ trễ giữa hai đợt s
 date: "2026-10-12"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Đố vui 30s"
+hook: "Mỗi trạm đo cho biết tâm động đất ở xa bao nhiêu. Vậy cần mấy trạm để chỉ ra đúng một điểm?"
+quiz:
+  question: "Cần tối thiểu bao nhiêu trạm để xác định tâm chấn?"
+  options:
+    - "1 trạm, vì máy ghi được hướng rung"
+    - "2 trạm, lấy trung điểm hai trạm"
+    - "Ít nhất 3 trạm"
+  answer: 2
+  why: "Mỗi trạm cho một đường tròn khoảng cách. Ba đường tròn cắt nhau tại đúng một điểm: tâm chấn."
 tags:
   - "Trái Đất & tự nhiên"
   - "Lớp 11"

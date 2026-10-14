@@ -4,6 +4,16 @@ description: "Quả cầu thép 660 tấn trong Taipei 101 treo bằng cáp gi�
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Hiện tượng lạ"
+hook: "Một quả cầu hàng trăm tấn treo lơ lửng giữa tòa nhà, và nó giúp nhà đỡ lắc. Bằng cách nào?"
+quiz:
+  question: "Quả cầu giúp nhà đỡ lắc vì gió bằng cách nào?"
+  options:
+    - "Nó treo yên như đối trọng cố định"
+    - "Nó đu lệch so với nhà, piston dầu biến bớt cơ năng thành nhiệt"
+    - "Nhà nặng thêm 660 tấn nên gió không đẩy nổi"
+  answer: 1
+  why: "Quả cầu đu lệch so với nhà, piston dầu hấp thụ cơ năng của cú lắc và biến thành nhiệt."
 tags:
   - "Nhà cửa & điện"
   - "Lớp 11"

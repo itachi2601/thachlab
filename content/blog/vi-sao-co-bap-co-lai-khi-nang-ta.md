@@ -4,6 +4,16 @@ description: "Quả tạ 5 kg chỉ nặng 49 N, nhưng cơ gập khuỷu phải
 date: "2026-07-08"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Tự ước lượng"
+hook: "Cuốn quả tạ 5 kg chỉ nặng khoảng 49 N, nhưng cơ gập khuỷu phải kéo tới khoảng 430 N. Lực dư đến từ đâu?"
+quiz:
+  question: "Cuốn tạ 5 kg (khoảng 49 N), cơ nhị đầu phải kéo với lực cỡ nào?"
+  options:
+    - "Khoảng 49 N, bằng trọng lượng quả tạ"
+    - "Khoảng 25 N vì xương phụ giúp"
+    - "Lớn hơn 49 N rất nhiều"
+  answer: 2
+  why: "Cơ bám rất gần khớp khuỷu, còn quả tạ ở xa khớp, nên cơ phải kéo lớn hơn nhiều so với trọng lượng quả tạ."
 tags:
   - "Gym & Thể thao"
   - "Lớp 10"

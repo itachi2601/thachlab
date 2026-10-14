@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { getAllPosts, type PostMeta } from "@/lib/blog";
+import { PhysicsCuriosityCard } from "@/components/home/PhysicsCuriosityCard";
+import { getAllPosts, getPhysicsAroundPosts, type PostMeta } from "@/lib/blog";
 import { SITE_URL } from "@/lib/site";
-
-const PHYSICS = "Vật lý quanh ta";
 
 export const metadata: Metadata = {
   title: "Blog Kiến Thức Vật Lý THPT",
@@ -73,8 +72,8 @@ function PostList({ posts }: { posts: PostMeta[] }) {
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
-  const physics = posts.filter((post) => post.category === PHYSICS);
-  const paths = posts.filter((post) => post.category !== PHYSICS);
+  const physics = getPhysicsAroundPosts().reverse(); // mới nhất trước
+  const paths = posts.filter((post) => post.category !== "Vật lý quanh ta");
 
   return (
     <>
@@ -95,7 +94,13 @@ export default function BlogIndexPage() {
           <p className="mt-2 mb-6 max-w-2xl text-sm leading-relaxed text-muted">
             Vì sao một việc em vẫn gặp lại xảy ra như vậy. Mỗi bài một câu hỏi.
           </p>
-          <PostList posts={physics} />
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {physics.map((card) => (
+              <li key={card.slug}>
+                <PhysicsCuriosityCard card={card} />
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="lo-trinh" className="scroll-mt-24 mt-16 border-t border-line pt-12">

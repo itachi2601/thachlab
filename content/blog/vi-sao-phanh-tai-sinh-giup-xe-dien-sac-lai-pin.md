@@ -4,6 +4,16 @@ description: "Khi xe điện chậm lại, bánh xe quay động cơ như một 
 date: "2026-10-10"
 author: "Thầy Thạch"
 category: "Vật lý quanh ta"
+badge: "Hiện tượng lạ"
+hook: "Đạp phanh mà pin lại đầy thêm. Điện đó từ đâu ra?"
+quiz:
+  question: "Điện nạp vào pin lúc xe chậm lại đến từ đâu?"
+  options:
+    - "Nhiệt của má phanh được thu thành điện"
+    - "Bánh xe quay động cơ như một máy phát"
+    - "Phanh tạo thêm năng lượng nên không cần sạc"
+  answer: 1
+  why: "Bánh xe quay động cơ thành máy phát: dòng điện nạp pin và cũng làm xe chậm lại. Không có năng lượng nào tự sinh ra."
 tags:
   - "Năng lượng & môi trường"
   - "KHTN 9"
