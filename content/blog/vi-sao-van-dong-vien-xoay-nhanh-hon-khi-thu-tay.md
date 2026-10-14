@@ -36,8 +36,8 @@ Trên sân băng, vận động viên giơ hai tay ra và xoay chậm. Rồi em 
 
 Vì sao thu tay lại thì quay nhanh hơn?
 
-<figure style="margin:1.5rem auto;max-width:240px">
-<video controls preload="none" playsinline width="576" height="1024" poster="/images/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay-poster.webp" style="width:100%;height:auto;border-radius:12px;background:#000">
+<figure class="blog-clip">
+<video controls preload="none" playsinline width="576" height="1024" poster="/images/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay-poster.webp">
 <source src="/videos/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay.mp4" type="video/mp4">
 </video>
 </figure>

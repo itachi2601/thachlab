@@ -1881,6 +1881,23 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   border-radius: 0.75rem;
   margin: 1.5rem auto;
 }
+/* Clip dọc quay điện thoại: rộng gấp đôi khung 240px cũ, cắt hai dải đen
+   trên/dưới (mỗi dải 12,5% chiều cao) để người trượt băng lớn hơn trong khung. */
+.blog-prose .blog-clip {
+  margin: 1.5rem auto;
+  width: min(100%, 30rem);
+  aspect-ratio: 576 / 768;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #000;
+}
+.blog-prose .blog-clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translateY(-12.5%);
+  background: #000;
+}
 
 .cnc-programming-suite { margin-top: 2px; }
 .cnc-programming-tabs { border: 1px solid #dfe4e7; border-radius: 12px; background: #f4f6f8; padding: 7px; }
