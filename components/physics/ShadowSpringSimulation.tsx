@@ -10,24 +10,9 @@
  *
  * Nguồn: `content/thi-nghiem/tn-l11-daodongdieuhoa-03.json` (Bài 1. Dao động điều
  * hoà, Vật lí 11) — thí nghiệm "bóng của van xe đạp", mục 5 "Liên hệ với chuyển
- * động tròn đều". Spec chỉ có hình chiếu; mô hình này ghép thêm con lắc lò xo thật
- * vào cùng trục để trả lời "cái GÌ quyết định nhịp" — câu mà hình chiếu đơn thuần
- * không trả lời được.
+ * động tròn đều".
  *
- * VÌ SAO HAI BÊN PHẢI NẰM CÙNG MỘT TRỤC: nếu bóng chạy ngang mà con lắc treo thẳng
- * đứng thì "đồng nhịp" chỉ còn là ẩn dụ — không thể thấy hai bên trùng hay lệch.
- * Cùng trục thì vòng tròn nét đứt (bóng chiếu xuống làn con lắc) hoặc trùm khít
- * vật nặng, hoặc tách ra — mắt đọc được ngay mà không cần giải thích.
- *
- * VÌ SAO KHÔNG CÓ ĐỒ THỊ x–t Ở ĐÂY: bằng chứng "cùng nhịp" đã có hai thứ đo được
- * (hiệu pha và số dao động) + hình học trên cùng trục; thêm đồ thị nữa thì vùng vẽ
- * cao 190px trên điện thoại thành 4 lớp chồng nhau (G1/N1). Hình x–t của RIÊNG hình
- * chiếu đã có ở hình tĩnh trong bài học.
- *
- * QUY TẮC THIẾT KẾ: B4 (không tự chạy — HS bấm "Chạy"; ra khỏi tầm mắt thì dừng
- * vòng lặp), D2 (đích chạm ≥ 44px, nhãn nút 1 dòng), M2 (màu cố định trên nền tối),
- * M4 (hai vật khác nhau về HÌNH và NHÃN, không chỉ khác màu), N7 (mỗi đoạn một kiểu
- * nhấn), C1 (chữ ≥ 13px), H3 (nhãn nằm ngay trên hình).
+ * Bảng màu đọc từ StagePalette (stage-theme.ts) tự thích ứng theo theme sáng/tối.
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -44,23 +29,14 @@ import {
   type ProjectionMessageKind,
 } from "@/lib/circularProjection";
 import { useCircularProjection } from "@/hooks/useCircularProjection";
+import {
+  getStagePalette,
+  subscribeStageTheme,
+  withAlpha,
+  type StagePalette,
+} from "./stage-theme";
 
-// --- Màu cố định cho phần vẽ trên nền tối (M2) ---
-const STAGE_BG_TOP = "#070C15";
-const STAGE_BG_BOTTOM = "#04070C";
-const ACCENT = "#22D3EE"; // họ "bóng / hình chiếu"
-const ACCENT_SOFT = "rgba(34,211,238,0.6)";
-const PEND_TOP = "#3B82F6"; // họ "con lắc lò xo"
-const PEND_BOTTOM = "#1D4ED8";
-const PEND_EDGE = "#60A5FA";
-const WARM = "#FBBF24";
-const TEXT = "#E2E8F0";
-const SLATE_400 = "#94A3B8";
-const SLATE_500 = "#64748B";
-const SLATE_600 = "#475569";
-const SLATE_700 = "#334155";
 const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
-
 const TAU = Math.PI * 2;
 
 interface Box {
@@ -85,15 +61,12 @@ interface Stage {
 /**
  * Chia chiều cao khả dụng theo nhu cầu thật của từng phần (nhãn M trên cùng, đường
  * tròn, khe chứa mũi tên Δx, vật nặng, hàng vạch chia dưới cùng), rồi CĂN GIỮA cả
- * nhóm theo chiều dọc — nhờ vậy ở 360px đường tròn to hết cỡ mà không có khoảng
- * trống thừa ở đáy, và ở desktop mọi thứ vẫn cân.
+ * nhóm theo chiều dọc.
  */
 function stageFor(w: number, h: number): Stage {
   const fs = Math.max(10, Math.min(13, w / 26));
   const pad = Math.max(10, w * 0.035);
   const massSize = Math.max(16, Math.min(30, h * 0.13));
-  // Khe giữa đường tròn và vật nặng phải chứa được mũi tên Δx (nằm trên vòng nét
-  // đứt, tức 0,85·massSize trên tâm vật nặng) cộng 5px nữa cho khỏi chạm.
   const gap = 0.35 * massSize + 10;
   const labelRow = fs + 8; // hàng số dưới trục con lắc
   const budget = h - 2 * pad - massSize - gap - fs - labelRow;
@@ -108,7 +81,7 @@ function stageFor(w: number, h: number): Stage {
     h,
     fs,
     pad,
-    cx: cx,
+    cx,
     scale: rShadow / SHADOW_AMPLITUDE,
     rShadow,
     lane1Y,
@@ -153,7 +126,7 @@ interface SceneParams {
   showDots: boolean;
 }
 
-function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
+function drawScene(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalette) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const { w, h, dpr } = p.box;
@@ -169,11 +142,12 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.clearRect(0, 0, w, h);
 
   const bg = ctx.createLinearGradient(0, 0, 0, h);
-  bg.addColorStop(0, STAGE_BG_TOP);
-  bg.addColorStop(1, STAGE_BG_BOTTOM);
+  bg.addColorStop(0, pal.bgTop);
+  bg.addColorStop(1, pal.bgBottom);
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
 
+  const isDark = pal.bgRgb[0] < 50;
   const s = stageFor(w, h);
   ctx.font = `${s.fs}px ${MONO}`;
   ctx.textBaseline = "alphabetic";
@@ -184,13 +158,13 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   const mY = s.lane1Y - Math.sin(p.theta) * r;
 
   // trục chiếu (đường kính ngang) + mũi tên chiều dương
-  ctx.strokeStyle = SLATE_700;
+  ctx.strokeStyle = pal.gridStrong;
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(s.cx - r - 8, s.lane1Y);
   ctx.lineTo(s.cx + r + 24, s.lane1Y);
   ctx.stroke();
-  ctx.fillStyle = SLATE_600;
+  ctx.fillStyle = pal.line;
   ctx.beginPath();
   ctx.moveTo(s.cx + r + 30, s.lane1Y);
   ctx.lineTo(s.cx + r + 22, s.lane1Y - 4);
@@ -199,35 +173,31 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.fill();
 
   // đường tròn quỹ đạo của M
-  ctx.strokeStyle = SLATE_600;
+  ctx.strokeStyle = pal.line;
   ctx.lineWidth = 1.4;
   ctx.beginPath();
   ctx.arc(s.cx, s.lane1Y, r, 0, TAU);
   ctx.stroke();
 
   // bán kính OM + cung góc quay ωt
-  ctx.strokeStyle = ACCENT_SOFT;
+  ctx.strokeStyle = pal.accentSoft;
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(s.cx, s.lane1Y);
   ctx.lineTo(mX, mY);
   ctx.stroke();
 
-  // Cung góc quay: CHỈ vẽ phần góc trong VÒNG QUAY HIỆN TẠI (θ mod 2π). θ tích luỹ
-  // không chặn, nếu vẽ hết thì sau vài chu kì cung quấn thành một vòng tròn đầy quanh
-  // O và nhãn ωt trôi theo — mất hẳn nghĩa "pha đang ở đâu trong vòng này".
   const sweep = p.theta % TAU;
   if (sweep > 0.02) {
     const arcR = r * 0.36;
-    ctx.strokeStyle = "rgba(148,163,184,0.55)";
+    ctx.strokeStyle = withAlpha(pal.muted, 0.55);
     ctx.lineWidth = 1.2;
     ctx.beginPath();
-    // y của canvas hướng xuống nên góc vật lí dương vẽ theo chiều anticlockwise.
     ctx.arc(s.cx, s.lane1Y, arcR, 0, -sweep, true);
     ctx.stroke();
 
     const halfSweep = -sweep / 2;
-    ctx.fillStyle = SLATE_400;
+    ctx.fillStyle = pal.muted;
     ctx.textAlign = "center";
     ctx.fillText(
       "ωt",
@@ -236,9 +206,9 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     );
   }
 
-  // chấm mỗi 0,1 s — chấm dồn ở hai biên, thưa ở giữa
+  // chấm mỗi 0,1 s
   if (p.showDots) {
-    ctx.fillStyle = "rgba(34,211,238,0.5)";
+    ctx.fillStyle = withAlpha(pal.accent, 0.5);
     for (const dot of p.dots) {
       ctx.beginPath();
       ctx.arc(s.cx + dot.x * s.scale, s.lane1Y, 1.8, 0, TAU);
@@ -249,7 +219,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   // đường nét đứt M → Q, rồi M và Q
   ctx.save();
   ctx.setLineDash([3, 3]);
-  ctx.strokeStyle = "rgba(148,163,184,0.5)";
+  ctx.strokeStyle = withAlpha(pal.muted, 0.5);
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(mX, mY);
@@ -258,25 +228,28 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.restore();
 
   ctx.save();
-  ctx.shadowColor = "rgba(34,211,238,0.8)";
+  ctx.shadowColor = pal.accentSoft;
   ctx.shadowBlur = 10;
-  ctx.fillStyle = "#E6FEFF";
+  ctx.fillStyle = pal.accent;
   ctx.beginPath();
   ctx.arc(mX, mY, 4.6, 0, TAU);
   ctx.fill();
+  if (!isDark) {
+    ctx.strokeStyle = pal.gridStrong;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
   ctx.restore();
 
-  // Nhãn M lật theo nửa trên/dưới của đường tròn: luôn đặt trên quả bóng thì khi M ở
-  // nửa dưới nó chồng lên nhãn Q (Q luôn nằm dưới trục).
-  ctx.fillStyle = TEXT;
+  ctx.fillStyle = pal.ink;
   ctx.textAlign = "left";
   ctx.fillText("M", mX + 8, mY <= s.lane1Y ? mY - 6 : mY + s.fs + 4);
 
-  ctx.fillStyle = ACCENT;
+  ctx.fillStyle = pal.accent;
   ctx.beginPath();
   ctx.arc(mX, s.lane1Y, 3.4, 0, TAU);
   ctx.fill();
-  ctx.fillStyle = SLATE_400;
+  ctx.fillStyle = pal.muted;
   ctx.fillText("Q", mX + 7, s.lane1Y + s.fs + 3);
 
   // ================= LÀN 2: con lắc lò xo nằm ngang =================
@@ -284,40 +257,37 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   const bobX = s.cx + p.xPendulum * s.scale;
   const halfMass = s.massSize / 2;
 
-  // đường ray + vạch chia mỗi 1 cm (nhãn ở bội số 5 cm)
-  ctx.strokeStyle = SLATE_700;
+  // đường ray + vạch chia mỗi 1 cm
+  ctx.strokeStyle = pal.gridStrong;
   ctx.lineWidth = 1.1;
   ctx.beginPath();
   ctx.moveTo(wallX, s.lane2Y);
   ctx.lineTo(w - s.pad, s.lane2Y);
   ctx.stroke();
 
-  // vạch chia mỗi 1 cm; NHÃN chỉ ở bội số 5 cm, và ở canvas hẹp (điện thoại) chỉ
-  // ghi mỗi 10 cm — 5 cm trên màn hình 360px chỉ rộng ~25px nên nhãn sẽ chen nhau.
   const labelStep = s.scale * 5 >= 34 ? 5 : 10;
   ctx.textAlign = "center";
   for (let cm = -AXIS_MAX_CM; cm <= AXIS_MAX_CM; cm += 1) {
     const tickX = s.cx + cm * s.scale;
     const major = cm % 5 === 0;
-    ctx.strokeStyle = SLATE_600;
+    ctx.strokeStyle = pal.line;
     ctx.beginPath();
     ctx.moveTo(tickX, s.lane2Y);
     ctx.lineTo(tickX, s.lane2Y + (major ? 6 : 3));
     ctx.stroke();
     if (major && cm % labelStep === 0) {
-      ctx.fillStyle = SLATE_500;
+      ctx.fillStyle = pal.muted;
       ctx.fillText(String(cm), tickX, s.lane2Y + s.fs + 5);
     }
   }
-  ctx.fillStyle = SLATE_500;
+  ctx.fillStyle = pal.muted;
   ctx.textAlign = "right";
   ctx.fillText("x (cm)", w - s.pad, s.lane2Y - s.fs * 0.5);
 
-  // gốc O dùng chung cho hai làn — vẽ TRƯỚC vật nặng/lò xo để chúng che đường nét
-  // đứt, không bị cắt ngang qua như một vết xước.
+  // gốc O dùng chung cho hai làn
   ctx.save();
   ctx.setLineDash([3, 4]);
-  ctx.strokeStyle = "rgba(148,163,184,0.35)";
+  ctx.strokeStyle = withAlpha(pal.muted, 0.35);
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(s.cx, s.lane1Y - r - 4);
@@ -326,7 +296,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.restore();
 
   // tường gắn lò xo
-  ctx.strokeStyle = SLATE_600;
+  ctx.strokeStyle = pal.line;
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(wallX, s.lane2Y - s.massSize);
@@ -341,49 +311,47 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.stroke();
   }
 
-  // lò xo — số vòng co theo độ dài thật: bị nén mạnh (A₂ lớn trên màn hẹp) mà vẫn
-  // 14 vòng thì các vòng dồn thành một khối đặc, không còn ra hình lò xo.
+  // lò xo
   const springLength = Math.max(8, bobX - halfMass - wallX);
   const coils = Math.min(14, Math.max(6, Math.round(springLength / 18)));
   const spring = springPoints(wallX, bobX - halfMass, s.lane2Y, s.massSize * 0.26, coils);
-  ctx.strokeStyle = SLATE_400;
+  ctx.strokeStyle = pal.muted;
   ctx.lineWidth = 1.5;
   ctx.lineJoin = "round";
   ctx.beginPath();
   spring.forEach(([px, py], i) => (i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py)));
   ctx.stroke();
 
-  // vòng tròn nét đứt = chỗ bóng chiếu xuống làn con lắc (vẽ SAU vật nặng để khi
-  // trùng nhau thì nó bao quanh vật, mắt thấy ngay "hai bên là một")
+  // vòng tròn nét đứt = chỗ bóng chiếu xuống làn con lắc
   const ringX = s.cx + p.xShadow * s.scale;
   const ringR = s.massSize * 0.85;
 
   // vật nặng
   const massGrad = ctx.createLinearGradient(0, s.lane2Y - halfMass, 0, s.lane2Y + halfMass);
-  massGrad.addColorStop(0, PEND_TOP);
-  massGrad.addColorStop(1, PEND_BOTTOM);
+  massGrad.addColorStop(0, pal.primary);
+  massGrad.addColorStop(1, pal.primaryEdge);
   ctx.fillStyle = massGrad;
   ctx.beginPath();
   ctx.roundRect(bobX - halfMass, s.lane2Y - halfMass, s.massSize, s.massSize, 6);
   ctx.fill();
-  ctx.strokeStyle = PEND_EDGE;
+  ctx.strokeStyle = pal.primaryEdge;
   ctx.lineWidth = 1;
   ctx.stroke();
 
   ctx.save();
   ctx.setLineDash([4, 3]);
-  ctx.strokeStyle = ACCENT;
+  ctx.strokeStyle = pal.accent;
   ctx.lineWidth = 1.6;
   ctx.beginPath();
   ctx.arc(ringX, s.lane2Y, ringR, 0, TAU);
   ctx.stroke();
   ctx.restore();
 
-  // khoảng lệch giữa bóng và vật nặng: hai mũi tên chỉ vào nhau
+  // khoảng lệch giữa bóng và vật nặng
   const deltaCm = Math.abs(p.xShadow - p.xPendulum);
   if (deltaCm > 0.15) {
     const y = s.lane2Y - ringR - 5;
-    ctx.strokeStyle = p.synced ? SLATE_400 : WARM;
+    ctx.strokeStyle = p.synced ? pal.muted : pal.warm;
     ctx.lineWidth = 1.4;
     ctx.beginPath();
     ctx.moveTo(Math.min(ringX, bobX), y);
@@ -399,27 +367,25 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
       ctx.lineTo(tip + dir * 5, y - 3);
       ctx.lineTo(tip + dir * 5, y + 3);
       ctx.closePath();
-      ctx.fillStyle = p.synced ? SLATE_400 : WARM;
+      ctx.fillStyle = p.synced ? pal.muted : pal.warm;
       ctx.fill();
     }
   }
-
 }
 
 const MESSAGE_STYLE: Record<ProjectionMessageKind, string> = {
-  idle: "border-white/10 bg-white/[0.04] text-slate-300",
-  drift: "border-amber-300/35 bg-amber-300/[0.08] text-amber-100",
-  // Cùng chu kì nhưng còn lệch pha: chưa phải kết luận cuối nên nhấn nhẹ hơn "đồng nhịp" (N7).
-  samePeriod: "border-cyan-300/25 bg-cyan-300/[0.05] text-slate-200",
-  inphase: "border-cyan-300/45 bg-cyan-300/[0.10] text-cyan-50",
-  inphaseEqual: "border-cyan-300/45 bg-cyan-300/[0.10] text-cyan-50",
+  idle: "border-line bg-surface-2 text-ink",
+  drift: "border-amber-300/35 bg-amber-300/[0.08] text-amber-600 dark:text-amber-100",
+  samePeriod: "border-cyan-300/25 bg-cyan-300/[0.05] text-ink",
+  inphase: "border-primary/40 bg-primary-soft text-primary font-medium",
+  inphaseEqual: "border-primary/40 bg-primary-soft text-primary font-medium",
 };
 
 const BUTTON_BASE =
   "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-3 text-sm font-medium transition active:scale-[0.98]";
 
 const sliderClass =
-  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#2563EB] " +
+  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-surface-2 accent-primary " +
   "[&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none " +
   "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary " +
   "[&::-webkit-slider-thumb]:shadow-[0_0_0_3px_rgba(37,99,235,0.25)] " +
@@ -428,18 +394,17 @@ const sliderClass =
 
 export function ShadowSpringSimulation() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const paletteRef = useRef<StagePalette>(getStagePalette());
   const [box, setBox] = useState<Box>({ w: 0, h: 0, dpr: 1 });
   const [inView, setInView] = useState(true);
   const sim = useCircularProjection({ active: inView });
 
-  // Dụng cụ "chấm mỗi 0,1 s": vị trí bóng sau mỗi 0,1 s kể từ bây giờ — xem ghi chú
-  // ở equalTimeDots trong lib/circularProjection.ts.
   const dots = useMemo(
     () => equalTimeDots(sim.shadowAmplitude, sim.wheelOmega, sim.theta, DOT_INTERVAL),
     [sim.shadowAmplitude, sim.wheelOmega, sim.theta]
   );
 
-  // Kích thước thật của vùng vẽ (xoay máy, đổi bề ngang, DPR khác nhau).
+  // Kích thước thật của vùng vẽ
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -464,7 +429,32 @@ export function ShadowSpringSimulation() {
     };
   }, []);
 
-  // Ra khỏi tầm mắt thì dừng vòng lặp — B4 + không đốt pin khi cuộn xuống dưới.
+  // Lắng nghe thay đổi theme và vẽ lại ngay
+  useEffect(() => {
+    paletteRef.current = getStagePalette();
+    const unsubscribe = subscribeStageTheme(() => {
+      paletteRef.current = getStagePalette();
+      const canvas = canvasRef.current;
+      if (canvas && box.w > 0) {
+        drawScene(
+          canvas,
+          {
+            box,
+            theta: sim.theta,
+            xShadow: sim.xShadow,
+            xPendulum: sim.xPendulum,
+            synced: sim.synced,
+            dots,
+            showDots: sim.showDots,
+          },
+          paletteRef.current
+        );
+      }
+    });
+    return unsubscribe;
+  }, [box, dots, sim]);
+
+  // Ra khỏi tầm mắt thì dừng vòng lặp
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || typeof IntersectionObserver === "undefined") return;
@@ -475,25 +465,28 @@ export function ShadowSpringSimulation() {
     return () => observer.disconnect();
   }, []);
 
-  // Vẽ lại mỗi lần render: vòng lặp cập nhật góc/phá mỗi khung hình nên hình luôn
-  // khớp số đọc; lúc dừng thì mọi thao tác trên thanh trượt đều vẽ lại ngay.
+  // Vẽ lại mỗi lần render
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    drawScene(canvas, {
-      box,
-      theta: sim.theta,
-      xShadow: sim.xShadow,
-      xPendulum: sim.xPendulum,
-      synced: sim.synced,
-      dots,
-      showDots: sim.showDots,
-    });
+    drawScene(
+      canvas,
+      {
+        box,
+        theta: sim.theta,
+        xShadow: sim.xShadow,
+        xPendulum: sim.xPendulum,
+        synced: sim.synced,
+        dots,
+        showDots: sim.showDots,
+      },
+      paletteRef.current
+    );
   });
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-xl border border-white/10">
+      <div className="relative overflow-hidden rounded-xl border border-line">
         <canvas
           ref={canvasRef}
           role="img"
@@ -502,13 +495,13 @@ export function ShadowSpringSimulation() {
         />
       </div>
 
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+      <p className="mt-2 text-[13px] leading-relaxed text-muted">
         Bóng Q (làn trên) và vật nặng (làn dưới) chạy trên <strong>cùng một trục x</strong>. Vòng
         tròn nét đứt là chỗ bóng chiếu xuống làn con lắc: hai bên trùng nhau khi cùng ω và cùng
         biên độ.
       </p>
       {sim.showDots && (
-        <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
+        <p className="mt-1 text-[13px] leading-relaxed text-muted">
           Chấm là vị trí bóng sau mỗi 0,1 s kể từ bây giờ: bóng gần biên thì chấm dồn lại, bóng ở giữa
           thì chấm giãn ra — bóng không chuyển động đều, nó chậm lại ở biên.
         </p>
@@ -526,9 +519,9 @@ export function ShadowSpringSimulation() {
 
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <div>
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
+          <div className="mb-1.5 flex items-center justify-between text-xs text-muted">
             <label htmlFor="hc-m">Khối lượng m</label>
-            <span className="font-mono text-slate-200">{formatNumber(sim.mass, 2)} kg</span>
+            <span className="font-mono text-ink">{formatNumber(sim.mass, 2)} kg</span>
           </div>
           <input
             id="hc-m"
@@ -544,9 +537,9 @@ export function ShadowSpringSimulation() {
         </div>
 
         <div>
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
+          <div className="mb-1.5 flex items-center justify-between text-xs text-muted">
             <label htmlFor="hc-a2">Biên độ A₂</label>
-            <span className="font-mono text-slate-200">
+            <span className="font-mono text-ink">
               {formatNumber(sim.pendulumAmplitude, 1)} cm
             </span>
           </div>
@@ -565,9 +558,9 @@ export function ShadowSpringSimulation() {
         </div>
 
         <div className="col-span-2 sm:col-span-1">
-          <div className="mb-1.5 flex items-center justify-between text-xs text-slate-400">
+          <div className="mb-1.5 flex items-center justify-between text-xs text-muted">
             <label htmlFor="hc-w">Tốc độ quay ω</label>
-            <span className="font-mono text-slate-200">
+            <span className="font-mono text-ink">
               {formatNumber(sim.wheelOmega, 2)} rad/s
             </span>
           </div>
@@ -586,7 +579,7 @@ export function ShadowSpringSimulation() {
       </div>
 
       {sim.playing && (
-        <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+        <p className="mt-2 text-[13px] leading-relaxed text-muted">
           Đang chạy nên chỗ thả A₂ bị khoá: đổi giữa chừng thì vật nặng nhảy vị trí. Bấm
           &ldquo;Dừng&rdquo; nếu muốn kéo con lắc ra xa hơn.
         </p>
@@ -630,8 +623,8 @@ export function ShadowSpringSimulation() {
           onClick={sim.toggle}
           className={`${BUTTON_BASE} ${
             sim.playing
-              ? "bg-cyan-300/[0.16] text-cyan-300 hover:bg-cyan-300/[0.22]"
-              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+              ? "bg-primary text-white hover:bg-primary-dark"
+              : "border border-line text-ink hover:bg-surface-2"
           }`}
         >
           {sim.playing ? <Pause size={15} /> : <Play size={15} />}
@@ -640,7 +633,7 @@ export function ShadowSpringSimulation() {
         <button
           type="button"
           onClick={sim.snapRhythm}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+          className={`${BUTTON_BASE} border border-line text-ink hover:bg-surface-2`}
         >
           <Waves size={15} />
           Khớp nhịp
@@ -648,17 +641,17 @@ export function ShadowSpringSimulation() {
         <button
           type="button"
           onClick={sim.reset}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+          className={`${BUTTON_BASE} border border-line text-ink hover:bg-surface-2`}
         >
           <RotateCcw size={15} />
           Đặt lại
         </button>
-        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 px-1 text-[13px] text-slate-400">
+        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 px-1 text-[13px] text-muted">
           <input
             type="checkbox"
             checked={sim.showDots}
             onChange={sim.toggleDots}
-            className="h-4 w-4 accent-[#22D3EE]"
+            className="h-4 w-4 accent-primary"
           />
           Chấm mỗi 0,1 s
         </label>

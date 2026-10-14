@@ -9,6 +9,7 @@
  * đúng 0,1 s (vì vₓ không đổi nên các chấm cách đều theo phương ngang).
  *
  * Mọi trạng thái nằm ở useProjectileMotion; ở đây chỉ vẽ và bắt thao tác.
+ * Bảng màu đọc từ StagePalette (stage-theme.ts) tự thích ứng theo theme sáng/tối.
  */
 
 import {
@@ -37,20 +38,18 @@ import {
   type Point,
   type ProjectilePhase,
 } from "@/hooks/useProjectileMotion";
+import {
+  getStagePalette,
+  subscribeStageTheme,
+  withAlpha,
+  type StagePalette,
+} from "./stage-theme";
 
 // --- Hằng số hình học (đơn vị viewBox canvas, không phải px màn hình) ---
 const PAD_L = 46; // chừa chỗ vẽ bệ phóng
 const PAD_R = 10;
 const PAD_T = 16;
 const PAD_B = 26; // chừa chỗ ghi thước đo dưới mặt đất
-const STAGE_BG_TOP = "#070C15";
-const STAGE_BG_BOTTOM = "#04070C";
-const ACCENT = "#22D3EE";
-const ACCENT_DIM = "rgba(34,211,238,0.55)";
-const WARM = "#FBBF24";
-const SLATE_400 = "#94A3B8";
-const SLATE_600 = "#475569";
-const SLATE_700 = "#334155";
 
 interface Box {
   w: number;
@@ -105,7 +104,7 @@ function scaleFor(width: number): number {
   return Math.max(0.85, Math.min(1.55, width / 520));
 }
 
-function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
+function drawScene(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalette) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const { geo } = p;
@@ -130,14 +129,14 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
 
   // --- nền + lưới ---
   const bg = ctx.createLinearGradient(0, 0, 0, geo.groundY);
-  bg.addColorStop(0, STAGE_BG_TOP);
-  bg.addColorStop(1, STAGE_BG_BOTTOM);
+  bg.addColorStop(0, pal.bgTop);
+  bg.addColorStop(1, pal.bgBottom);
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, geo.w, geo.groundY);
 
   // Lưới mỗi 5 m (Mặt Trăng: 25 m) — cùng tỉ lệ ở cả hai trục nên ô lưới là hình vuông thật.
   const gridStep = geo.xMax > 120 ? 25 : 5;
-  ctx.strokeStyle = "rgba(148,163,184,0.10)";
+  ctx.strokeStyle = pal.grid;
   ctx.lineWidth = 1;
   for (let x = 0; x <= geo.xMax; x += gridStep) {
     ctx.beginPath();
@@ -153,33 +152,30 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   }
 
   // --- thang đo ĐỘ CAO ở lề trái ---
-  // Không chỉ để đẹp: nhờ nó vùng trời phía trên quỹ đạo thành không gian đo được
-  // ("đỉnh cao 10 m" có mốc để đối chiếu) thay vì một khoảng trống.
   ctx.textAlign = "left";
   setFont(fsRuler);
   for (let y = gridStep; Y(y) > PAD_T + 3; y += gridStep) {
     const py = Y(y);
-    // Bỏ qua dải trên cùng: dòng gợi ý "Kéo từ bệ phóng…" nằm đè ở đó (nhãn sẽ bị che).
     if (py < 42) continue;
-    ctx.strokeStyle = "rgba(148,163,184,0.20)";
+    ctx.strokeStyle = pal.line;
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(PAD_L - 5 * k, py);
     ctx.lineTo(PAD_L, py);
     ctx.stroke();
-    ctx.fillStyle = "rgba(100,116,139,0.95)";
+    ctx.fillStyle = pal.muted;
     ctx.fillText(`${y} m`, 6, py + fsRuler * 0.35);
   }
 
   // --- mặt đất + thước đo ngang ---
-  ctx.strokeStyle = SLATE_700;
+  ctx.strokeStyle = pal.gridStrong;
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(0, geo.groundY);
   ctx.lineTo(geo.w, geo.groundY);
   ctx.stroke();
 
-  ctx.strokeStyle = "rgba(51,65,85,0.75)";
+  ctx.strokeStyle = pal.line;
   ctx.lineWidth = 1;
   const hatches = Math.max(12, Math.round(geo.w / 22));
   for (let i = 0; i < hatches; i++) {
@@ -194,12 +190,12 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   setFont(fsRuler);
   ctx.textAlign = "center";
   for (let x = rulerStep; x <= geo.xMax; x += rulerStep) {
-    ctx.strokeStyle = SLATE_600;
+    ctx.strokeStyle = pal.line;
     ctx.beginPath();
     ctx.moveTo(X(x), geo.groundY);
     ctx.lineTo(X(x), geo.groundY + 7 * k);
     ctx.stroke();
-    ctx.fillStyle = SLATE_400;
+    ctx.fillStyle = pal.muted;
     ctx.fillText(`${x} m`, X(x), geo.groundY + 8 * k + fsRuler);
   }
   ctx.textAlign = "left";
@@ -225,25 +221,24 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.restore();
   };
 
-  // Vệt quỹ đạo mờ dần về phía đã đi qua: mắt đọc được chiều chuyển động ngay cả
-  // khi chỉ nhìn một khung hình tĩnh.
+  // Vệt quỹ đạo mờ dần về phía đã đi qua
   const drawMotionTrail = (points: Point[], maxAlpha: number) => {
     if (points.length < 2) return;
     const first = points[0];
     const last = points[points.length - 1];
     const gradient = ctx.createLinearGradient(X(first.x), Y(first.y), X(last.x), Y(last.y));
-    gradient.addColorStop(0, `rgba(34,211,238,${maxAlpha * 0.06})`);
-    gradient.addColorStop(1, `rgba(34,211,238,${maxAlpha})`);
+    gradient.addColorStop(0, withAlpha(pal.accent, maxAlpha * 0.06));
+    gradient.addColorStop(1, withAlpha(pal.accent, maxAlpha));
     drawPath(points, gradient, 2.4 * k);
   };
 
-  // --- vết các lần ném trước (mờ dần theo thứ tự) ---
+  // --- vết các lần ném trước ---
   p.ghosts.forEach((ghost, i) => {
     const alpha = 0.13 + 0.08 * i;
-    drawPath(ghost.dots, `rgba(148,163,184,${alpha})`, 1.5 * k, [5, 5]);
+    drawPath(ghost.dots, withAlpha(pal.muted, alpha), 1.5 * k, [5, 5]);
     const landing = ghost.dots[ghost.dots.length - 1];
     if (!landing) return;
-    ctx.fillStyle = `rgba(148,163,184,${alpha + 0.15})`;
+    ctx.fillStyle = withAlpha(pal.muted, alpha + 0.15);
     ctx.beginPath();
     ctx.arc(X(landing.x), Y(landing.y), 2.5 * k, 0, Math.PI * 2);
     ctx.fill();
@@ -252,15 +247,14 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   // --- nét đứt: quỹ đạo sắp ném (chỉ khi đang ngắm) ---
   if (p.phase === "aim") {
     const preview = trajectoryPoints(p.v0, p.angle, GRAVITIES[p.gKey].g, 70);
-    drawPath(preview, ACCENT_DIM, 1.7 * k, [6, 6]);
+    drawPath(preview, pal.accentSoft, 1.7 * k, [6, 6]);
     const range = rangeOf(p.v0, p.angle, GRAVITIES[p.gKey].g);
-    ctx.fillStyle = "rgba(34,211,238,0.75)";
+    ctx.fillStyle = withAlpha(pal.accent, 0.75);
     ctx.beginPath();
     ctx.arc(X(range), Y(0), 3.5 * k, 0, Math.PI * 2);
     ctx.fill();
-    // Nhãn chỉ hiện trong lúc đang kéo: để thường trực thì nó đè lên nhãn độ cao h ở đỉnh.
     if (p.isAiming) {
-      ctx.fillStyle = "#67E8F9";
+      ctx.fillStyle = pal.accent;
       setFont(fsValue);
       ctx.textAlign = "center";
       ctx.fillText(
@@ -278,14 +272,14 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     if (x < geo.w - 6) {
       ctx.save();
       ctx.setLineDash([4, 4]);
-      ctx.strokeStyle = "rgba(251,191,36,0.55)";
+      ctx.strokeStyle = withAlpha(pal.warm, 0.55);
       ctx.lineWidth = 1.4 * k;
       ctx.beginPath();
       ctx.moveTo(x, geo.groundY);
       ctx.lineTo(x, geo.groundY - 46 * k);
       ctx.stroke();
       ctx.restore();
-      ctx.fillStyle = WARM;
+      ctx.fillStyle = pal.warm;
       setFont(fsRuler);
       const text = `Trái Đất: ${formatNumber(p.earthMarker, 0)} m`;
       ctx.fillText(text, Math.min(x + 5, geo.w - ctx.measureText(text).width - 6), geo.groundY - 50 * k);
@@ -298,7 +292,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     const x = X(Math.min(p.lastShot.range, geo.xMax));
     ctx.save();
     ctx.setLineDash([3, 4]);
-    ctx.strokeStyle = "rgba(34,211,238,0.35)";
+    ctx.strokeStyle = withAlpha(pal.accent, 0.35);
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(x, geo.groundY);
@@ -307,7 +301,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.restore();
     setFont(fsValue);
     const rangeText = `R = ${formatNumber(p.lastShot.range, 1)} m`;
-    ctx.fillStyle = ACCENT;
+    ctx.fillStyle = pal.accent;
     ctx.fillText(rangeText, Math.min(x + 4, geo.w - ctx.measureText(rangeText).width - 4), geo.groundY - 34 * k);
 
     // độ cao cực đại của lần ném đó
@@ -315,13 +309,13 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     const yApex = Y(p.lastShot.apex);
     ctx.save();
     ctx.setLineDash([3, 4]);
-    ctx.strokeStyle = "rgba(148,163,184,0.4)";
+    ctx.strokeStyle = withAlpha(pal.muted, 0.4);
     ctx.beginPath();
     ctx.moveTo(xApex, geo.groundY);
     ctx.lineTo(xApex, yApex);
     ctx.stroke();
     ctx.restore();
-    ctx.fillStyle = SLATE_400;
+    ctx.fillStyle = pal.muted;
     setFont(fsRuler);
     ctx.fillText(`h = ${formatNumber(p.lastShot.apex, 1)} m`, xApex + 5, yApex + 4);
   }
@@ -335,27 +329,24 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
 
     drawMotionTrail(p.trail, 0.9);
 
-    ctx.fillStyle = ACCENT;
+    ctx.fillStyle = pal.accent;
     p.dots.forEach((dot) => {
       ctx.beginPath();
       ctx.arc(X(dot.x), Y(dot.y), 2.4 * k, 0, Math.PI * 2);
       ctx.fill();
     });
 
-    // Hai thành phần vận tốc: vₓ không đổi, v_y giảm dần rồi đổi dấu ở đỉnh.
-    // Lưu ý hệ toạ độ màn hình (y hướng xuống): vy > 0 thì mũi tên phải chỉ LÊN,
-    // nên độ dời trên màn hình là −vy · (px trên mỗi m/s).
     const a = rad(p.angle);
     const vx = p.v0 * Math.cos(a);
     const vy = p.v0 * Math.sin(a) - g * p.t;
     const pxPerVel = 0.26 * geo.s;
-    drawArrow(ctx, bx, by, bx + vx * pxPerVel, by, "rgba(94,234,212,0.95)", "v", "x", k);
-    drawArrow(ctx, bx, by, bx, by - vy * pxPerVel, "rgba(251,191,36,0.95)", "v", "y", k);
+    drawArrow(ctx, bx, by, bx + vx * pxPerVel, by, pal.accent, "v", "x", k);
+    drawArrow(ctx, bx, by, bx, by - vy * pxPerVel, pal.warm, "v", "y", k);
 
     ctx.save();
-    ctx.shadowColor = "rgba(34,211,238,0.75)";
+    ctx.shadowColor = pal.accentSoft;
     ctx.shadowBlur = 12 * k;
-    ctx.fillStyle = "#E6FEFF";
+    ctx.fillStyle = pal.accent;
     ctx.beginPath();
     ctx.arc(bx, by, 6 * k, 0, Math.PI * 2);
     ctx.fill();
@@ -364,9 +355,9 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     const end = p.trail[p.trail.length - 1];
     if (end) {
       ctx.save();
-      ctx.shadowColor = "rgba(34,211,238,0.7)";
+      ctx.shadowColor = pal.accentSoft;
       ctx.shadowBlur = 12 * k;
-      ctx.fillStyle = "#E6FEFF";
+      ctx.fillStyle = pal.accent;
       ctx.beginPath();
       ctx.arc(X(Math.min(end.x, geo.xMax)), Y(end.y), 6 * k, 0, Math.PI * 2);
       ctx.fill();
@@ -379,43 +370,40 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.save();
   ctx.translate(ax, ay);
   ctx.rotate(-rad(p.angle));
-  ctx.fillStyle = "#1E293B";
-  ctx.strokeStyle = SLATE_600;
+  ctx.fillStyle = pal.line;
+  ctx.strokeStyle = pal.gridStrong;
   ctx.lineWidth = 1.5 * k;
   ctx.beginPath();
   ctx.roundRect(-6 * k, -6 * k, 40 * k, 12 * k, 4 * k);
   ctx.fill();
   ctx.stroke();
   ctx.restore();
-  ctx.fillStyle = SLATE_700;
+  ctx.fillStyle = pal.gridStrong;
   ctx.beginPath();
   ctx.roundRect(ax - 12 * k, ay - 2 * k, 24 * k, 16 * k, 3 * k);
   ctx.fill();
-  // Không ghi nhãn "bệ phóng" lên khung: hàng dưới mặt đất đã dành cho thước đo
-  // (nhãn sẽ đè lên "10 m"), còn trên mặt đất thì vướng quỹ đạo. Chú thích đã có
-  // ở dòng gợi ý "Kéo từ bệ phóng…" ngay trên khung.
 
   // --- dây kéo + cung góc khi đang kéo ---
   if (p.pointer) {
     ctx.save();
     ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = "rgba(251,191,36,0.8)";
+    ctx.strokeStyle = withAlpha(pal.warm, 0.8);
     ctx.lineWidth = 1.6 * k;
     ctx.beginPath();
     ctx.moveTo(ax, ay);
     ctx.lineTo(p.pointer.x, p.pointer.y);
     ctx.stroke();
     ctx.restore();
-    ctx.fillStyle = "rgba(251,191,36,0.9)";
+    ctx.fillStyle = withAlpha(pal.warm, 0.9);
     ctx.beginPath();
     ctx.arc(p.pointer.x, p.pointer.y, 5 * k, 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = "rgba(251,191,36,0.5)";
+    ctx.strokeStyle = withAlpha(pal.warm, 0.5);
     ctx.lineWidth = 1.4 * k;
     ctx.beginPath();
     ctx.arc(ax, ay, 30 * k, -rad(p.angle), 0);
     ctx.stroke();
-    ctx.fillStyle = WARM;
+    ctx.fillStyle = pal.warm;
     setFont(fsValue);
     ctx.fillText(`${Math.round(p.angle)}°  ·  ${formatNumber(p.v0, 1)} m/s`, p.pointer.x + 10, p.pointer.y - 8);
   }
@@ -462,9 +450,9 @@ function drawArrow(
 }
 
 const MESSAGE_STYLE: Record<"goal" | "best" | "win", string> = {
-  goal: "border-white/10 bg-white/[0.04] text-slate-300",
-  best: "border-amber-300/35 bg-amber-300/[0.08] text-amber-100",
-  win: "border-cyan-300/45 bg-cyan-300/[0.10] text-cyan-50",
+  goal: "border-line bg-surface-2 text-ink",
+  best: "border-amber-300/35 bg-amber-300/[0.08] text-amber-600 dark:text-amber-100",
+  win: "border-cyan-300/45 bg-cyan-300/[0.10] text-cyan-700 dark:text-cyan-50",
 };
 
 const BUTTON_BASE =
@@ -473,6 +461,7 @@ const BUTTON_BASE =
 export function ProjectileSimulation() {
   const sim = useProjectileMotion();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const paletteRef = useRef<StagePalette>(getStagePalette());
   const [box, setBox] = useState<Box>({ w: 0, h: 0 });
   const [pointer, setPointer] = useState<Point | null>(null);
   const [hint, setHint] = useState("Kéo từ bệ phóng xuống dưới rồi thả tay");
@@ -498,26 +487,62 @@ export function ProjectileSimulation() {
     return () => observer.disconnect();
   }, []);
 
+  // Lắng nghe thay đổi theme và vẽ lại ngay khi bấm ThemeToggle
+  useEffect(() => {
+    paletteRef.current = getStagePalette();
+    const unsubscribe = subscribeStageTheme(() => {
+      paletteRef.current = getStagePalette();
+      const canvas = canvasRef.current;
+      if (canvas && box.w > 0) {
+        drawScene(
+          canvas,
+          {
+            geo,
+            gKey: sim.gKey,
+            phase: sim.phase,
+            angle: sim.angle,
+            v0: sim.v0,
+            t: sim.t,
+            trail: sim.trail,
+            dots: sim.dots,
+            ghosts: sim.ghosts,
+            lastShot: sim.lastShot,
+            showDots: sim.showDots,
+            isAiming: sim.isAiming,
+            pointer,
+            earthMarker: sim.earthMarker,
+          },
+          paletteRef.current
+        );
+      }
+    });
+    return unsubscribe;
+  }, [box.w, geo, pointer, sim]);
+
   // Vẽ lại sau mỗi lần render (mỗi khung hình khi bóng đang bay, còn lại theo thao tác).
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || box.w === 0) return;
-    drawScene(canvas, {
-      geo,
-      gKey: sim.gKey,
-      phase: sim.phase,
-      angle: sim.angle,
-      v0: sim.v0,
-      t: sim.t,
-      trail: sim.trail,
-      dots: sim.dots,
-      ghosts: sim.ghosts,
-      lastShot: sim.lastShot,
-      showDots: sim.showDots,
-      isAiming: sim.isAiming,
-      pointer,
-      earthMarker: sim.earthMarker,
-    });
+    drawScene(
+      canvas,
+      {
+        geo,
+        gKey: sim.gKey,
+        phase: sim.phase,
+        angle: sim.angle,
+        v0: sim.v0,
+        t: sim.t,
+        trail: sim.trail,
+        dots: sim.dots,
+        ghosts: sim.ghosts,
+        lastShot: sim.lastShot,
+        showDots: sim.showDots,
+        isAiming: sim.isAiming,
+        pointer,
+        earthMarker: sim.earthMarker,
+      },
+      paletteRef.current
+    );
   });
 
   const flashHint = useCallback((text: string) => {
@@ -593,7 +618,7 @@ export function ProjectileSimulation() {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-xl border border-white/10">
+      <div className="relative overflow-hidden rounded-xl border border-line">
         <canvas
           ref={canvasRef}
           tabIndex={0}
@@ -604,19 +629,17 @@ export function ProjectileSimulation() {
           onPointerUp={finishPointer}
           onPointerCancel={finishPointer}
           onKeyDown={onKeyDown}
-          className="block aspect-[2.3] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.4] lg:aspect-[2.6]"
+          className="block aspect-[2.3] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:cursor-grabbing sm:aspect-[2.4] lg:aspect-[2.6]"
         />
-        {/* Dòng gợi ý nằm trên nền canvas luôn tối nên phải dùng màu cố định: lớp phủ theme sáng
-            trong globals.css đổi .text-slate-200 thành chữ sẫm → chữ sẫm trên nền tối (M2). */}
         {showHint && (
-          <p className="pointer-events-none absolute left-2.5 top-2.5 rounded-full border border-[#334155] bg-black/70 px-3 py-1 text-[13px] text-[#E2E8F0]">
+          <p className="pointer-events-none absolute left-2.5 top-2.5 rounded-full border border-line bg-panel/90 px-3 py-1 text-[13px] text-ink shadow-sm">
             {hint}
           </p>
         )}
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <div className="flex overflow-hidden rounded-lg border border-white/10" role="group" aria-label="Chọn gia tốc trọng trường">
+        <div className="flex overflow-hidden rounded-lg border border-line" role="group" aria-label="Chọn gia tốc trọng trường">
           {(Object.keys(GRAVITIES) as GravityKey[]).map((key) => (
             <button
               key={key}
@@ -625,8 +648,8 @@ export function ProjectileSimulation() {
               onClick={() => sim.setGravity(key)}
               className={`${BUTTON_BASE} px-3 ${
                 sim.gKey === key
-                  ? "bg-cyan-300/[0.14] text-cyan-300"
-                  : "text-slate-400 hover:bg-white/[0.06]"
+                  ? "bg-primary-soft text-primary font-semibold"
+                  : "text-muted hover:bg-surface-2"
               }`}
             >
               {GRAVITIES[key].label}
@@ -634,12 +657,12 @@ export function ProjectileSimulation() {
           ))}
         </div>
 
-        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-slate-400">
+        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-muted">
           <input
             type="checkbox"
             checked={sim.showDots}
             onChange={sim.toggleDots}
-            className="h-4 w-4 accent-[#22D3EE]"
+            className="h-4 w-4 accent-primary"
           />
           Chấm mỗi 0,1 s
         </label>
@@ -647,7 +670,7 @@ export function ProjectileSimulation() {
         <button
           type="button"
           onClick={sim.clearTrails}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+          className={`${BUTTON_BASE} border border-line text-ink hover:bg-surface-2`}
         >
           Xoá vết ném
         </button>

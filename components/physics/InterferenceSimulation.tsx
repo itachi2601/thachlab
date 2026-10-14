@@ -12,20 +12,9 @@
  *  - Đứng yên (mặc định): vẽ BAO HÌNH biên độ |2a·cos(πΔd/λ)| — đúng cái khay
  *    sóng thật cho thấy: các đường sáng/tối ĐỨNG YÊN.
  *  - Chạy sóng (HS bấm nút): vẽ LI ĐỘ TỨC THỜI u = Σaᵢ·cos(ωt − k·dᵢ) — nước
- *    chạy qua lại, còn vân thì vẫn đứng yên. Đây là hình trả lời đúng cái bẫy
- *    trong spec ("cực tiểu là chỗ không có sóng tới"): cả hai sóng đều tới, chỉ
- *    là chúng triệt tiêu nhau tại đó.
+ *    chạy qua lại, còn vân thì vẫn đứng yên.
  *
- * VÌ SAO ẢNH ĐỘNG KHÔNG TỐN CPU: tách sẵn C = Σaᵢcos(k·dᵢ) và S = Σaᵢsin(k·dᵢ)
- * cho từng điểm ảnh (chỉ tính lại khi đổi f, v, AB — không tính trong vòng lặp
- * vẽ), nên mỗi khung hình chỉ còn u = cosφ·C + sinφ·S (2 phép nhân) + tra bảng
- * màu. Canvas tách 2 lớp: lớp trường chỉ putImageData (không vẽ lại chữ mỗi
- * khung hình), lớp trên vẽ nhãn/điểm M theo React.
- *
- * QUY TẮC THIẾT KẾ: B4 (không tự chạy — HS bấm nút mới chạy; dừng khi khay ra
- * khỏi tầm mắt), D2 (đích chạm ≥ 44px, nhãn nút ≤ 1 dòng), M2 (chữ trên nền tối
- * dùng màu cố định), M4 (cực đại/cực tiểu nói bằng chữ, không chỉ bằng màu),
- * N7 (mỗi đoạn một kiểu nhấn), C1 (chữ đọc được ≥ 13px).
+ * Bảng màu đọc từ StagePalette (stage-theme.ts) tự thích ứng theo theme sáng/tối.
  */
 
 import {
@@ -54,20 +43,14 @@ import {
   useInterferenceTank,
   type TankPoint,
 } from "@/hooks/useInterferenceTank";
+import {
+  getStagePalette,
+  subscribeStageTheme,
+  colorToRgb,
+  withAlpha,
+  type StagePalette,
+} from "./stage-theme";
 
-// --- Màu cố định cho phần vẽ trên nền tối (M2) ---
-const STAGE_BG_TOP = [7, 12, 21] as const; // #070C15
-const STAGE_BG_BOTTOM = [4, 7, 12] as const; // #04070C
-const ACCENT = "#22D3EE";
-const ACCENT_SOFT = "rgba(34,211,238,0.55)";
-const WARM = "#FBBF24";
-const M_MAX = "#E6FEFF";
-const M_MIN = "#93C5FD";
-const TEXT = "#E2E8F0";
-const SLATE_400 = "#94A3B8";
-const SLATE_500 = "#64748B";
-const SLATE_600 = "#475569";
-const SLATE_700 = "#334155";
 const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
 
 /** Bước nhảy khi chỉnh M bằng phím (cm) — D2: bàn phím là đường dự phòng cho ngón tay. */
@@ -103,26 +86,53 @@ function geometryFor(box: Box): Geometry {
   };
 }
 
-/**
- * Bảng màu theo cường độ (0..1) → một số nguyên đóng gói RGB, để mỗi điểm ảnh chỉ
- * tốn một phép tra bảng thay vì gọi pow() — đây là mấu chốt giữ 60 fps.
- */
 const LUT_SIZE = 1024;
-const GLOW_LUT = (() => {
-  const table = new Int32Array(LUT_SIZE + 1);
-  for (let i = 0; i <= LUT_SIZE; i++) {
-    const glow = (i / LUT_SIZE) ** 2.25; // thu hẹp vệt sáng thành đúng đường vân
-    const r = Math.round(5 + 30 * glow);
-    const g = Math.round(8 + 190 * glow);
-    const b = Math.round(14 + 214 * glow);
-    table[i] = (r << 16) | (g << 8) | b;
-  }
-  return table;
-})();
 
-function glowPacked(intensity: number): number {
-  const i = intensity <= 0 ? 0 : intensity >= 1 ? LUT_SIZE : (intensity * LUT_SIZE) | 0;
-  return GLOW_LUT[i];
+/**
+ * Tạo bảng LUT đóng gói màu RGB:
+ * - Nền tối: cực đại phát sáng cyan (#22D3EE), cực tiểu màu nền đen.
+ * - Nền sáng: cực đại đậm hơn nền (waveMax: xanh primary #1d4ed8),
+ *   cực tiểu nhạt hơn nền (trắng #ffffff).
+ */
+function createGlowLut(pal: StagePalette): Int32Array {
+  const table = new Int32Array(LUT_SIZE + 1);
+  const isDark = pal.bgRgb[0] < 50;
+
+  if (isDark) {
+    for (let i = 0; i <= LUT_SIZE; i++) {
+      const glow = (i / LUT_SIZE) ** 2.25;
+      const r = Math.round(5 + 30 * glow);
+      const g = Math.round(8 + 190 * glow);
+      const b = Math.round(14 + 214 * glow);
+      table[i] = (r << 16) | (g << 8) | b;
+    }
+  } else {
+    const bg = pal.bgRgb;
+    const maxRgb = colorToRgb(pal.waveMax, [29, 78, 216]);
+    const minRgb: [number, number, number] = [255, 255, 255]; // nhạt hơn nền
+
+    for (let i = 0; i <= LUT_SIZE; i++) {
+      const u = i / LUT_SIZE;
+      let r: number, g: number, b: number;
+      if (u <= 0.5) {
+        // u từ 0 đến 0.5: từ trắng (cực tiểu) đến màu nền khay
+        const t = (0.5 - u) / 0.5;
+        r = Math.round(bg[0] + (minRgb[0] - bg[0]) * t);
+        g = Math.round(bg[1] + (minRgb[1] - bg[1]) * t);
+        b = Math.round(bg[2] + (minRgb[2] - bg[2]) * t);
+      } else {
+        // u từ 0.5 đến 1.0: từ màu nền đến xanh đậm (cực đại)
+        const t = (u - 0.5) / 0.5;
+        const factor = Math.pow(t, 1.25);
+        r = Math.round(bg[0] + (maxRgb[0] - bg[0]) * factor);
+        g = Math.round(bg[1] + (maxRgb[1] - bg[1]) * factor);
+        b = Math.round(bg[2] + (maxRgb[2] - bg[2]) * factor);
+      }
+      table[i] = (r << 16) | (g << 8) | b;
+    }
+  }
+
+  return table;
 }
 
 interface FieldParams {
@@ -134,18 +144,15 @@ interface FieldParams {
 interface FieldTextures {
   width: number;
   height: number;
-  /** Vùng khay trong hệ điểm ảnh của lớp trường (để mỗi khung hình chỉ quét vùng này). */
   tankX0: number;
   tankY0: number;
   tankX1: number;
   tankY1: number;
-  /** Phasor C, S của từng điểm ảnh trong khay (gộp theo hàng) — không phụ thuộc thời gian. */
   cos: Float32Array;
   sin: Float32Array;
-  /** Ảnh đứng yên (bao hình biên độ) — dựng một lần mỗi khi đổi tham số. */
   envelope: ImageData;
-  /** Ảnh động — ghi lại mỗi khung hình rồi putImageData. */
   wave: ImageData;
+  lut: Int32Array;
 }
 
 /**
@@ -156,7 +163,8 @@ interface FieldTextures {
 function buildFieldTextures(
   geo: Geometry,
   rasterDpr: number,
-  params: FieldParams
+  params: FieldParams,
+  pal: StagePalette
 ): FieldTextures | null {
   if (typeof document === "undefined" || geo.w <= 0 || geo.h <= 0) return null;
   const width = Math.max(1, Math.round(geo.w * rasterDpr));
@@ -168,13 +176,17 @@ function buildFieldTextures(
   const wave = scratch.createImageData(width, height);
   const envData = envelope.data;
   const waveData = wave.data;
+  const lut = createGlowLut(pal);
 
-  // Nền gradient (giống hệt bản vẽ vector trước đây) cho cả hai ảnh.
+  const topRgb = colorToRgb(pal.bgTop, [7, 12, 21]);
+  const bottomRgb = pal.bgRgb;
+
+  // Nền gradient cho cả hai ảnh
   for (let py = 0; py < height; py++) {
     const f = height > 1 ? py / (height - 1) : 0;
-    const r = Math.round(STAGE_BG_TOP[0] + (STAGE_BG_BOTTOM[0] - STAGE_BG_TOP[0]) * f);
-    const g = Math.round(STAGE_BG_TOP[1] + (STAGE_BG_BOTTOM[1] - STAGE_BG_TOP[1]) * f);
-    const b = Math.round(STAGE_BG_TOP[2] + (STAGE_BG_BOTTOM[2] - STAGE_BG_TOP[2]) * f);
+    const r = Math.round(topRgb[0] + (bottomRgb[0] - topRgb[0]) * f);
+    const g = Math.round(topRgb[1] + (bottomRgb[1] - topRgb[1]) * f);
+    const b = Math.round(topRgb[2] + (bottomRgb[2] - topRgb[2]) * f);
     let index = py * width * 4;
     for (let px = 0; px < width; px++, index += 4) {
       envData[index] = r;
@@ -231,19 +243,19 @@ function buildFieldTextures(
         sin[k] = phasor.s;
       }
 
-      const packed = glowPacked(intensity);
+      const lutIdx = intensity <= 0 ? 0 : intensity >= 1 ? LUT_SIZE : (intensity * LUT_SIZE) | 0;
+      const packed = lut[lutIdx];
       envData[index] = (packed >> 16) & 255;
       envData[index + 1] = (packed >> 8) & 255;
       envData[index + 2] = packed & 255;
     }
   }
 
-  return { width, height, tankX0, tankY0, tankX1, tankY1, cos, sin, envelope, wave };
+  return { width, height, tankX0, tankY0, tankX1, tankY1, cos, sin, envelope, wave, lut };
 }
 
 /**
  * Vẽ lớp trường. `phase = null` → ảnh đứng yên (bao hình); có pha → li độ tức thời.
- * Hàm này chạy mỗi khung hình khi đang chạy sóng nên tuyệt đối không cấp phát gì.
  */
 function paintField(
   canvas: HTMLCanvasElement | null,
@@ -263,7 +275,7 @@ function paintField(
     return;
   }
 
-  const { cos, sin, wave, width, tankX0, tankY0, tankX1, tankY1 } = textures;
+  const { cos, sin, wave, width, tankX0, tankY0, tankX1, tankY1, lut } = textures;
   const out = wave.data;
   const cosPhase = phase.cos;
   const sinPhase = phase.sin;
@@ -272,7 +284,9 @@ function paintField(
     let index = (py * width + tankX0) * 4;
     for (let px = tankX0; px < tankX1; px++, k++, index += 4) {
       const u = cos[k] * cosPhase + sin[k] * sinPhase;
-      const packed = glowPacked(u < 0 ? -u : u);
+      const mag = u < 0 ? -u : u;
+      const lutIdx = mag <= 0 ? 0 : mag >= 1 ? LUT_SIZE : (mag * LUT_SIZE) | 0;
+      const packed = lut[lutIdx];
       out[index] = (packed >> 16) & 255;
       out[index + 1] = (packed >> 8) & 255;
       out[index + 2] = packed & 255;
@@ -281,13 +295,14 @@ function paintField(
   ctx.putImageData(wave, 0, 0);
 }
 
-/** Chữ có viền tối để đọc được cả khi nằm trên vệt vân sáng. */
+/** Chữ có viền để đọc được cả khi nằm trên vệt vân sáng hay nền tối. */
 function label(
   ctx: CanvasRenderingContext2D,
   text: string,
   x: number,
   y: number,
-  color: string = TEXT,
+  color: string,
+  haloColor: string,
   align: CanvasTextAlign = "left",
   size = 12
 ) {
@@ -296,18 +311,12 @@ function label(
   ctx.textAlign = align;
   ctx.lineWidth = 3;
   ctx.lineJoin = "round";
-  ctx.strokeStyle = "rgba(4,7,12,0.85)";
+  ctx.strokeStyle = haloColor;
   ctx.strokeText(text, x, y);
   ctx.fillStyle = color;
   ctx.fillText(text, x, y);
   ctx.restore();
 }
-
-const KIND_COLOR: Record<FringeKind, string> = {
-  max: M_MAX,
-  min: M_MIN,
-  mid: WARM,
-};
 
 function kindLabel(kind: FringeKind, order: number): string {
   if (kind === "max") return `cực đại bậc ${Math.abs(order)}`;
@@ -329,7 +338,7 @@ interface SceneParams {
 }
 
 /** Lớp trên: khung khay, đường trung trực, nguồn, thước AB, điểm M và ô số liệu. */
-function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
+function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalette) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const { geo } = p;
@@ -342,42 +351,50 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.setTransform(geo.dpr, 0, 0, geo.dpr, 0, 0);
   ctx.clearRect(0, 0, geo.w, geo.h);
 
+  const isDark = pal.bgRgb[0] < 50;
+  const halo = isDark ? "rgba(4,7,12,0.85)" : "rgba(255,255,255,0.9)";
+  const kindColor: Record<FringeKind, string> = {
+    max: pal.waveMax,
+    min: isDark ? pal.waveMin : pal.accent,
+    mid: pal.warm,
+  };
+
   const X = (cm: number) => geo.offsetX + cm * geo.scale;
   const Y = (cm: number) => geo.offsetY + cm * geo.scale;
   const tankW = TANK.widthCm * geo.scale;
   const tankH = TANK.heightCm * geo.scale;
 
-  ctx.strokeStyle = SLATE_700;
+  ctx.strokeStyle = pal.gridStrong;
   ctx.lineWidth = 1.5;
   ctx.strokeRect(geo.offsetX + 0.5, geo.offsetY + 0.5, tankW - 1, tankH - 1);
 
-  // --- đường trung trực: cực đại k = 0 (chỉ có nghĩa khi hai nguồn cùng phát) ---
+  // --- đường trung trực: cực đại k = 0 ---
   if (p.sourceBOn) {
     const bisectorX = X(TANK.widthCm / 2);
     ctx.save();
     ctx.setLineDash([5, 5]);
-    ctx.strokeStyle = "rgba(148,163,184,0.45)";
+    ctx.strokeStyle = withAlpha(pal.muted, 0.45);
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(bisectorX, geo.offsetY + 2);
     ctx.lineTo(bisectorX, geo.offsetY + tankH - 2);
     ctx.stroke();
     ctx.restore();
-    // Nhãn đặt bên trái hay bên phải đường tuỳ chỗ nào còn chỗ, không để tràn khỏi khay.
     const onRight = bisectorX < geo.offsetX + tankW * 0.55;
     label(
       ctx,
       "k = 0 (trung trực)",
       onRight ? bisectorX + 5 : bisectorX - 5,
       geo.offsetY + 13,
-      SLATE_400,
+      pal.muted,
+      halo,
       onRight ? "left" : "right"
     );
   }
 
   // --- thước AB ---
   const yRuler = Y(p.sources.a.y) - 14;
-  ctx.strokeStyle = SLATE_500;
+  ctx.strokeStyle = pal.line;
   ctx.lineWidth = 1.2;
   ctx.beginPath();
   ctx.moveTo(X(p.sources.a.x), yRuler);
@@ -392,16 +409,16 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
     `AB = ${formatNumber(p.AB, 1)} cm`,
     (X(p.sources.a.x) + X(p.sources.b.x)) / 2,
     yRuler - 6,
-    SLATE_400,
+    pal.muted,
+    halo,
     "center"
   );
 
-  // --- hai đường d₁, d₂ từ nguồn tới M (không ghi số lên từng đường: ở 375px
-  // hai nhãn chồng nhau — số liệu đã nằm trong ô của M và trong dòng nhận xét) ---
+  // --- hai đường d₁, d₂ từ nguồn tới M ---
   const drawSpoke = (from: TankPoint, to: TankPoint) => {
     ctx.save();
     ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = "rgba(226,232,240,0.45)";
+    ctx.strokeStyle = withAlpha(pal.ink, 0.45);
     ctx.lineWidth = 1.2;
     ctx.beginPath();
     ctx.moveTo(X(from.x), Y(from.y));
@@ -418,17 +435,17 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
     const cy = Y(point.y);
     ctx.save();
     if (on) {
-      ctx.shadowColor = ACCENT_SOFT;
+      ctx.shadowColor = pal.accentSoft;
       ctx.shadowBlur = 10;
-      ctx.fillStyle = ACCENT;
+      ctx.fillStyle = pal.accent;
     } else {
-      ctx.fillStyle = "#0B1220";
+      ctx.fillStyle = isDark ? "#0B1220" : pal.bgBottom;
     }
     ctx.beginPath();
     ctx.arc(cx, cy, 5, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
-    ctx.strokeStyle = on ? ACCENT : SLATE_600;
+    ctx.strokeStyle = on ? pal.accent : pal.line;
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(cx, cy, 5, 0, Math.PI * 2);
@@ -439,8 +456,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
       ctx.lineTo(cx + 4, cy - 4);
       ctx.stroke();
     }
-    // Tên nguồn đặt DƯỚI nguồn: phía trên là chỗ của nhãn thước AB, để trên sẽ chồng nhau.
-    label(ctx, name, cx + 8, cy + 17, on ? ACCENT : SLATE_400, "left", 13);
+    label(ctx, name, cx + 8, cy + 17, on ? pal.accent : pal.muted, halo, "left", 13);
   };
   drawSource(p.sources.a, "A", true);
   drawSource(p.sources.b, p.sourceBOn ? "B" : "B tắt", p.sourceBOn);
@@ -448,9 +464,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
   // --- điểm M kéo được ---
   const mx = X(p.marker.x);
   const my = Y(p.marker.y);
-  // Tắt nguồn B thì M không còn là "cực đại/cực tiểu" nữa → dùng màu trung tính,
-  // không mượn màu vàng của trạng thái "ở giữa hai vân" (M4: màu phải khớp nghĩa).
-  const color = p.sourceBOn ? KIND_COLOR[p.kind] : "#CBD5E1";
+  const color = p.sourceBOn ? kindColor[p.kind] : pal.muted;
   ctx.save();
   ctx.shadowColor = color;
   ctx.shadowBlur = 12;
@@ -458,14 +472,16 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.beginPath();
   ctx.arc(mx, my, 6, 0, Math.PI * 2);
   ctx.fill();
+  if (!isDark) {
+    ctx.strokeStyle = pal.gridStrong;
+    ctx.lineWidth = 1.4;
+    ctx.stroke();
+  }
   ctx.restore();
 
-  // Ô số liệu của M. Khay hẹp (điện thoại ~300 px) không đủ chỗ cho ô chữ mà
-  // không đè lên chính chấm M và thước AB → chỉ ghi "M", số liệu nằm ngay dưới
-  // khay trong dòng nhận xét (đủ gần để mắt không phải nhảy xa).
   const delta = p.d2 - p.d1;
   if (tankW < 430) {
-    label(ctx, "M", mx + 9, my - 8, color, "left", 13);
+    label(ctx, "M", mx + 9, my - 8, color, halo, "left", 13);
     return;
   }
 
@@ -483,8 +499,8 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
     Math.max(my - boxH / 2, geo.offsetY + 4),
     geo.offsetY + tankH - boxH - 4
   );
-  ctx.fillStyle = "rgba(4,7,12,0.8)";
-  ctx.strokeStyle = "rgba(148,163,184,0.35)";
+  ctx.fillStyle = isDark ? "rgba(4,7,12,0.85)" : "rgba(255,255,255,0.92)";
+  ctx.strokeStyle = pal.line;
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.roundRect(boxX, boxY, boxW, boxH, 8);
@@ -492,22 +508,22 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.stroke();
   lines.forEach((text, i) => {
     const last = i === lines.length - 1;
-    label(ctx, text, boxX + 8, boxY + 16 + i * 16, last ? color : TEXT);
+    label(ctx, text, boxX + 8, boxY + 16 + i * 16, last ? color : pal.ink, halo);
   });
 }
 
 const MESSAGE_STYLE: Record<"max" | "min" | "mid" | "off", string> = {
-  max: "border-cyan-300/45 bg-cyan-300/[0.10] text-cyan-50",
-  min: "border-white/10 bg-white/[0.04] text-slate-200",
-  mid: "border-amber-300/35 bg-amber-300/[0.08] text-amber-100",
-  off: "border-white/10 bg-white/[0.04] text-slate-300",
+  max: "border-primary/40 bg-primary-soft text-primary font-medium",
+  min: "border-line bg-surface-2 text-ink",
+  mid: "border-amber-300/35 bg-amber-300/[0.08] text-amber-600 dark:text-amber-100",
+  off: "border-line bg-surface-2 text-muted",
 };
 
 const BUTTON_BASE =
   "inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg px-3 text-xs sm:text-sm font-medium transition active:scale-[0.98]";
 
 const sliderClass =
-  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#2563EB] " +
+  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-surface-2 accent-primary " +
   "[&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none " +
   "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary " +
   "[&::-webkit-slider-thumb]:shadow-[0_0_0_3px_rgba(37,99,235,0.25)] " +
@@ -518,31 +534,36 @@ export function InterferenceSimulation() {
   const sim = useInterferenceTank();
   const overlayRef = useRef<HTMLCanvasElement | null>(null);
   const fieldRef = useRef<HTMLCanvasElement | null>(null);
+  const [palette, setPalette] = useState<StagePalette>(getStagePalette);
+  const paletteRef = useRef<StagePalette>(palette);
   const [box, setBox] = useState<Box>({ w: 0, h: 0, dpr: 1 });
   const [playing, setPlaying] = useState(false);
   const [inView, setInView] = useState(true);
-  // Pha ωt giữ trong ref để bấm Dừng rồi Chạy lại thì sóng chạy tiếp, không nhảy.
   const phaseRef = useRef(0);
 
   const geo = useMemo(() => geometryFor(box), [box]);
-  // Lớp trường có thể hạ độ phân giải (màn hình rất nét) để ảnh động giữ 60 fps;
-  // lớp chữ/nhãn luôn vẽ ở độ phân giải thiết bị nên vẫn sắc.
   const rasterDpr = useMemo(() => {
     const area = Math.max(1, box.w * box.h);
     return Math.min(box.dpr, Math.max(1, Math.sqrt(MAX_RASTER_PIXELS / area)));
   }, [box]);
+
   const textures = useMemo(
     () =>
-      buildFieldTextures(geo, rasterDpr, {
-        lambda: sim.lambda,
-        sourceBOn: sim.sourceBOn,
-        sources: sim.sources,
-      }),
-    [geo, rasterDpr, sim.lambda, sim.sourceBOn, sim.sources]
+      buildFieldTextures(
+        geo,
+        rasterDpr,
+        {
+          lambda: sim.lambda,
+          sourceBOn: sim.sourceBOn,
+          sources: sim.sources,
+        },
+        palette
+      ),
+    [geo, rasterDpr, sim.lambda, sim.sourceBOn, sim.sources, palette]
   );
   const period = visualPeriod(sim.lambda);
 
-  // Kích thước thật của khay (xoay máy, đổi bề ngang, đổi màn hình có DPR khác).
+  // Kích thước thật của khay
   useEffect(() => {
     const canvas = overlayRef.current;
     if (!canvas) return;
@@ -567,7 +588,18 @@ export function InterferenceSimulation() {
     };
   }, []);
 
-  // Khay ra khỏi tầm mắt (cuộn xuống dưới) thì dừng vòng lặp — B4 + không đốt pin.
+  // Lắng nghe thay đổi theme: cập nhật bảng màu và vẽ lại ngay
+  useEffect(() => {
+    paletteRef.current = getStagePalette();
+    const unsubscribe = subscribeStageTheme(() => {
+      const updated = getStagePalette();
+      paletteRef.current = updated;
+      setPalette(updated);
+    });
+    return unsubscribe;
+  }, []);
+
+  // Khay ra khỏi tầm mắt thì dừng vòng lặp
   useEffect(() => {
     const canvas = overlayRef.current;
     if (!canvas || typeof IntersectionObserver === "undefined") return;
@@ -579,31 +611,33 @@ export function InterferenceSimulation() {
     return () => observer.disconnect();
   }, []);
 
-  // Vẽ lớp chữ/nhãn sau mỗi lần render; lớp trường lấy đúng pha đang chạy (nếu có)
-  // để một lần render giữa chừng (kéo M) không làm ảnh động đứng hình.
+  // Vẽ lớp chữ/nhãn sau mỗi lần render
   useEffect(() => {
     const canvas = overlayRef.current;
     if (!canvas) return;
-    drawOverlay(canvas, {
-      geo,
-      AB: sim.AB,
-      sourceBOn: sim.sourceBOn,
-      sources: sim.sources,
-      marker: sim.marker,
-      d1: sim.d1,
-      d2: sim.d2,
-      lambda: sim.lambda,
-      kind: sim.kind,
-      order: sim.order,
-    });
+    drawOverlay(
+      canvas,
+      {
+        geo,
+        AB: sim.AB,
+        sourceBOn: sim.sourceBOn,
+        sources: sim.sources,
+        marker: sim.marker,
+        d1: sim.d1,
+        d2: sim.d2,
+        lambda: sim.lambda,
+        kind: sim.kind,
+        order: sim.order,
+      },
+      paletteRef.current
+    );
     const phase = playing
       ? { cos: Math.cos(phaseRef.current), sin: Math.sin(phaseRef.current) }
       : null;
     paintField(fieldRef.current, textures, phase);
   });
 
-  // Vòng lặp ảnh động: CHỈ chạy khi HS bấm "Chạy sóng" và khay đang trong tầm mắt.
-  // Mỗi khung hình chỉ tính u = cosφ·C + sinφ·S và putImageData — không vẽ lại chữ.
+  // Vòng lặp ảnh động khi chạy sóng
   useEffect(() => {
     if (!playing || !inView || !textures) return;
     let rafId = 0;
@@ -669,14 +703,14 @@ export function InterferenceSimulation() {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-xl border border-white/10">
-        {/* Lớp trường: chỉ ảnh, không bắt sự kiện, không chữ (chạy 60 fps khi có sóng). */}
+      <div className="relative overflow-hidden rounded-xl border border-line">
+        {/* Lớp trường: chỉ ảnh, không bắt sự kiện, không chữ */}
         <canvas
           ref={fieldRef}
           aria-hidden
           className="pointer-events-none absolute inset-0 block h-full w-full"
         />
-        {/* Lớp trên: nhãn, nguồn, điểm M — vẽ theo React, bắt mọi thao tác. */}
+        {/* Lớp trên: nhãn, nguồn, điểm M — vẽ theo React, bắt mọi thao tác */}
         <canvas
           ref={overlayRef}
           tabIndex={0}
@@ -685,7 +719,7 @@ export function InterferenceSimulation() {
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onKeyDown={onKeyDown}
-          className="relative block aspect-[1.5] w-full sm:aspect-[2] lg:aspect-[2.3] cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+          className="relative block aspect-[1.5] w-full sm:aspect-[2] lg:aspect-[2.3] cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         />
       </div>
 
@@ -696,8 +730,8 @@ export function InterferenceSimulation() {
           onClick={() => setPlaying((value) => !value)}
           className={`${BUTTON_BASE} ${
             playing
-              ? "bg-cyan-300/[0.16] text-cyan-300 hover:bg-cyan-300/[0.22]"
-              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+              ? "bg-primary text-white hover:bg-primary-dark"
+              : "border border-line text-ink hover:bg-surface-2"
           }`}
         >
           {playing ? <Pause size={14} /> : <Play size={14} />}
@@ -709,8 +743,8 @@ export function InterferenceSimulation() {
           onClick={sim.toggleSourceB}
           className={`${BUTTON_BASE} ${
             sim.sourceBOn
-              ? "bg-cyan-300/[0.14] text-cyan-300 hover:bg-cyan-300/[0.2]"
-              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+              ? "bg-primary-soft text-primary font-semibold hover:bg-primary/20"
+              : "border border-line text-ink hover:bg-surface-2"
           }`}
         >
           {sim.sourceBOn ? "Nguồn B: bật" : "Nguồn B: tắt"}
@@ -718,7 +752,7 @@ export function InterferenceSimulation() {
         <button
           type="button"
           onClick={sim.reset}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+          className={`${BUTTON_BASE} border border-line text-ink hover:bg-surface-2`}
         >
           <RotateCcw size={14} />
           Đặt lại
@@ -726,8 +760,8 @@ export function InterferenceSimulation() {
       </div>
 
       <div className="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-3">
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-          <span className="whitespace-nowrap shrink-0">f: <b className="font-mono text-slate-200">{formatNumber(sim.f, 0)} Hz</b></span>
+        <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">f: <b className="font-mono text-ink">{formatNumber(sim.f, 0)} Hz</b></span>
           <input
             id="gt-f"
             type="range"
@@ -741,8 +775,8 @@ export function InterferenceSimulation() {
           />
         </label>
 
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-          <span className="whitespace-nowrap shrink-0">v: <b className="font-mono text-slate-200">{formatNumber(sim.v, 0)} cm/s</b></span>
+        <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">v: <b className="font-mono text-ink">{formatNumber(sim.v, 0)} cm/s</b></span>
           <input
             id="gt-v"
             type="range"
@@ -756,8 +790,8 @@ export function InterferenceSimulation() {
           />
         </label>
 
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-          <span className="whitespace-nowrap shrink-0">AB: <b className="font-mono text-slate-200">{formatNumber(sim.AB, 1)} cm</b></span>
+        <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">AB: <b className="font-mono text-ink">{formatNumber(sim.AB, 1)} cm</b></span>
           <input
             id="gt-ab"
             type="range"
@@ -772,10 +806,10 @@ export function InterferenceSimulation() {
         </label>
       </div>
 
-      <p className="mt-2 text-xs leading-relaxed text-slate-400">
+      <p className="mt-2 text-xs leading-relaxed text-muted">
         {playing
           ? "Đang chạy sóng: các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau."
-          : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ)."}
+          : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng/đậm: cực đại (d₂ − d₁ = kλ) · đường tối/nhạt: cực tiểu ((k + ½)λ)."}
       </p>
 
       <p

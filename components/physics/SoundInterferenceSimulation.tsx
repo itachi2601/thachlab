@@ -29,7 +29,7 @@ function colour(t: number): [number, number, number] {
 }
 
 const sliderClass =
-  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#2563EB] " +
+  "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-surface-2 accent-primary " +
   "[&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none " +
   "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary " +
   "[&::-webkit-slider-thumb]:shadow-[0_0_0_3px_rgba(37,99,235,0.25)] " +
@@ -146,7 +146,7 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
 
   return (
     <div className={compact ? "space-y-2.5" : "mt-6 space-y-5"}>
-      <div className={`relative w-full overflow-hidden rounded-xl border border-white/10 bg-slate-900 ${compact ? "lg:mx-auto lg:max-w-[560px]" : ""}`} style={{ aspectRatio: `${W_M} / ${H_M}` }}>
+      <div className={`relative w-full overflow-hidden rounded-xl border border-line bg-slate-900 ${compact ? "lg:mx-auto lg:max-w-[560px]" : ""}`} style={{ aspectRatio: `${W_M} / ${H_M}` }}>
         <canvas
           ref={canvasRef}
           className="absolute inset-0 h-full w-full cursor-crosshair touch-none"
@@ -167,13 +167,15 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
             style={{ left: `${x}%` }}
           />
         ))}
-        <span className="pointer-events-none absolute bottom-3 left-2 text-[12px] font-semibold text-white/80">Màn hình · 2 loa (chấm xanh)</span>
+        <span className="pointer-events-none absolute bottom-3 left-2 rounded bg-panel/90 px-2 py-0.5 text-xs font-semibold text-ink border border-line">
+          Màn hình · 2 loa (chấm xanh)
+        </span>
         {/* tai / micro */}
         <span
           className="pointer-events-none absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-emerald-400/90 shadow"
           style={{ left: `${px}%`, top: `${py}%` }}
         />
-        <span className="pointer-events-none absolute right-2 top-2 rounded bg-black/50 px-2 py-1 text-[12px] text-white/80">
+        <span className="pointer-events-none absolute right-2 top-2 rounded bg-panel/90 px-2 py-1 text-xs text-ink border border-line">
           Sáng = to · Tối = nhỏ
         </span>
       </div>
@@ -185,14 +187,14 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
           onClick={playing ? stop : () => setWarn(true)}
           className={`inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg px-3.5 text-xs sm:text-sm font-semibold transition active:scale-[0.98] ${
             playing
-              ? "border border-rose-400/40 bg-rose-500/20 text-rose-200 hover:bg-rose-500/30"
-              : "border border-cyan-400/40 bg-cyan-300/[0.16] text-cyan-200 hover:bg-cyan-300/[0.25]"
+              ? "border border-rose-400/40 bg-rose-500/20 text-rose-600 dark:text-rose-200 hover:bg-rose-500/30"
+              : "border border-line bg-primary-soft text-primary hover:bg-primary/20"
           }`}
         >
           {playing ? "■ Tắt âm" : "▶ Phát âm"}
         </button>
 
-        <div className="flex overflow-hidden rounded-lg border border-white/10" role="group" aria-label="Chế độ phát loa">
+        <div className="flex overflow-hidden rounded-lg border border-line" role="group" aria-label="Chế độ phát loa">
           {(
             [
               ["both", "Cả hai loa"],
@@ -207,8 +209,8 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
               onClick={() => setMode(m)}
               className={`inline-flex min-h-10 items-center px-3 text-xs font-medium transition ${
                 mode === m
-                  ? "bg-cyan-300/[0.14] text-cyan-300"
-                  : "text-slate-400 hover:bg-white/[0.06]"
+                  ? "bg-primary-soft text-primary font-semibold"
+                  : "text-muted hover:bg-surface-2"
               }`}
             >
               {t}
@@ -219,8 +221,8 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
 
       {/* Thông số điều chỉnh: f, vol, d (nếu không compact) */}
       <div className={`grid gap-2 ${compact ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-3"}`}>
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-          <span className="whitespace-nowrap shrink-0">f: <b className="font-mono text-slate-200">{f} Hz</b> <span className="text-[11px] text-slate-500">(λ = {(lambda * 100).toFixed(1)} cm)</span></span>
+        <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">f: <b className="font-mono text-ink">{f} Hz</b> <span className="text-xs text-muted">(λ = {(lambda * 100).toFixed(1)} cm)</span></span>
           <input
             type="range"
             min={1000}
@@ -234,8 +236,8 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
         </label>
 
         {!compact && (
-          <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-            <span className="whitespace-nowrap shrink-0">Khoảng cách d: <b className="font-mono text-slate-200">{dCm} cm</b></span>
+          <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+            <span className="whitespace-nowrap shrink-0">Khoảng cách d: <b className="font-mono text-ink">{dCm} cm</b></span>
             <input
               type="range"
               min={10}
@@ -249,8 +251,8 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
           </label>
         )}
 
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-slate-400 cursor-pointer">
-          <span className="whitespace-nowrap shrink-0">Âm lượng: <b className="font-mono text-slate-200">{Math.round(vol * 100)}%</b></span>
+        <label className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 text-xs text-muted cursor-pointer">
+          <span className="whitespace-nowrap shrink-0">Âm lượng: <b className="font-mono text-ink">{Math.round(vol * 100)}%</b></span>
           <input
             type="range"
             min={0.02}
@@ -265,41 +267,41 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
       </div>
 
       {compact ? (
-        <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-slate-300" aria-live="polite">
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface-2 px-3 py-2 text-xs text-ink" aria-live="polite">
           <div>
             <span>d₂ − d₁ = </span>
-            <b className="font-mono text-white">{delta.toFixed(2)} λ</b>
-            <span className="text-slate-400"> → </span>
-            <b className={ratio > 1.6 ? "text-cyan-300" : ratio < 0.4 ? "text-slate-400" : "text-amber-300"}>{label}</b>
+            <b className="font-mono text-ink">{delta.toFixed(2)} λ</b>
+            <span className="text-muted"> → </span>
+            <b className={ratio > 1.6 ? "text-primary" : ratio < 0.4 ? "text-muted" : "text-amber-600 dark:text-amber-300"}>{label}</b>
           </div>
-          <span className="text-[11px] text-slate-500">Chạm bản đồ để đổi vị trí tai</span>
+          <span className="text-xs text-muted">Chạm bản đồ để đổi vị trí tai</span>
         </div>
       ) : (
-        <div className="grid gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200 sm:grid-cols-2">
+        <div className="grid gap-3 rounded-xl border border-line bg-surface-2 p-4 text-sm text-ink sm:grid-cols-2">
           <div>
-            <span className="text-slate-400">Vị trí tai (chấm xanh lá):</span> ngang {(mic.x * 100).toFixed(0)} cm, cách màn {(mic.y * 100).toFixed(0)} cm
+            <span className="text-muted">Vị trí tai (chấm xanh lá):</span> ngang {(mic.x * 100).toFixed(0)} cm, cách màn {(mic.y * 100).toFixed(0)} cm
           </div>
           <div>
-            <span className="text-slate-400">Hiệu đường đi d₂ − d₁:</span> {delta.toFixed(2)} λ
-            <span className="text-slate-400"> (nguyên λ → to, bán nguyên → nhỏ)</span>
+            <span className="text-muted">Hiệu đường đi d₂ − d₁:</span> {delta.toFixed(2)} λ
+            <span className="text-muted"> (nguyên λ → to, bán nguyên → nhỏ)</span>
           </div>
           <div>
-            <span className="text-slate-400">Cường độ so với hai nguồn không giao thoa:</span> ×{ratio.toFixed(2)} → <b className="text-white">{label}</b>
+            <span className="text-muted">Cường độ so với hai nguồn không giao thoa:</span> ×{ratio.toFixed(2)} → <b className="text-ink">{label}</b>
           </div>
           <div>
-            <span className="text-slate-400">Khoảng vân ở cách màn 1 m:</span> i ≈ λL/d = {(spacing * 100).toFixed(0)} cm
+            <span className="text-muted">Khoảng vân ở cách màn 1 m:</span> i ≈ λL/d = {(spacing * 100).toFixed(0)} cm
           </div>
         </div>
       )}
 
       {/* Hướng dẫn sử dụng: thu gọn tinh tế */}
-      <details className="group rounded-lg border border-white/10 bg-white/[0.02] text-xs text-slate-300">
-        <summary className="flex min-h-8 cursor-pointer items-center justify-between px-3 py-1.5 font-medium text-slate-400 hover:text-slate-200">
+      <details className="group rounded-lg border border-line bg-surface-2 text-xs text-ink">
+        <summary className="flex min-h-8 cursor-pointer items-center justify-between px-3 py-1.5 font-medium text-muted hover:text-ink">
           <span>{compact ? "Cách nghe vân giao thoa âm" : "Cách dùng thí nghiệm"}</span>
-          <span className="text-[11px] text-slate-500 transition-transform group-open:rotate-180">▾</span>
+          <span className="text-xs text-muted transition-transform group-open:rotate-180">▾</span>
         </summary>
-        <div className="border-t border-white/5 p-3 leading-relaxed space-y-2">
-          <ol className="list-decimal space-y-1.5 pl-4 text-slate-300">
+        <div className="border-t border-line p-3 leading-relaxed space-y-2">
+          <ol className="list-decimal space-y-1.5 pl-4 text-ink">
             <li>Dùng loa ngoài của máy tính (laptop hoặc hai loa rời), <b>không đeo tai nghe</b> — mỗi tai nghe chỉ nhận một loa nên không có giao thoa.</li>
             <li>Hạ âm lượng thiết bị xuống thấp, bấm <b>▶ Phát âm</b>, rồi chỉnh thanh âm lượng cho vừa nghe.</li>
             <li>Ngồi thẳng trước màn hình, <b>nghiêng đầu hoặc dịch người sang trái–phải</b> khoảng 10–20 cm: âm lúc to lúc nhỏ là các vân giao thoa.</li>
@@ -308,8 +310,8 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
           </ol>
           {!compact && (
             <>
-              <p className="font-semibold text-white pt-1">Thiết bị cần có hai loa tách trái – phải</p>
-              <p className="leading-relaxed text-slate-400">
+              <p className="font-semibold text-ink pt-1">Thiết bị cần có hai loa tách trái – phải</p>
+              <p className="leading-relaxed text-muted">
                 Thí nghiệm chỉ chạy khi máy phát được âm stereo qua hai loa cách nhau vài chục cm. Máy chỉ có một loa (hoặc hai loa sát nhau) sẽ không có vân giao thoa.
               </p>
             </>
@@ -326,17 +328,17 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
           onClick={() => setWarn(false)}
         >
           <div
-            className="w-full max-w-sm space-y-3 rounded-2xl border border-amber-400/40 bg-slate-900 p-5 text-slate-100 shadow-xl"
+            className="w-full max-w-sm space-y-3 rounded-2xl border border-amber-400/40 bg-panel p-5 text-ink shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 id="snd-warn-title" className="text-lg font-bold text-amber-300">
+            <h3 id="snd-warn-title" className="text-lg font-bold text-amber-600 dark:text-amber-300">
               ⚠ Sắp phát âm thanh
             </h3>
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed text-muted">
               Thí nghiệm sẽ phát âm đơn sắc (có thể chói tai ở tần số cao). Hãy hạ âm lượng thiết bị, không đeo tai nghe sát tai, và tắt âm khi không dùng.
             </p>
             <div className="flex gap-3">
-              <button type="button" onClick={() => setWarn(false)} className="min-h-11 flex-1 rounded-xl border border-white/20 font-bold">
+              <button type="button" onClick={() => setWarn(false)} className="min-h-11 flex-1 rounded-xl border border-line text-ink font-bold hover:bg-surface-2">
                 Huỷ
               </button>
               <button
@@ -346,7 +348,7 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
                   setWarn(false);
                   start();
                 }}
-                className="min-h-11 flex-1 rounded-xl bg-emerald-500 font-bold text-white"
+                className="min-h-11 flex-1 rounded-xl bg-primary font-bold text-white hover:bg-primary-dark"
               >
                 Phát âm
               </button>
