@@ -27,7 +27,6 @@
  * Câu hỏi và câu dẫn (COPY) đổi theo tab đang chọn, không giữ lời của tab "Ném xiên".
  */
 
-import { PhysicsPostRibbon, type RibbonPost } from "@/components/home/PhysicsPostRibbon";
 import { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -134,7 +133,7 @@ const COPY: Record<
   },
 };
 
-export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: RibbonPost[] }) {
+export function PhysicsSimulationHero() {
   const [tab, setTab] = useState<TabKey>("projectile");
   const copy = COPY[tab];
 
@@ -155,12 +154,6 @@ export function PhysicsSimulationHero({ ribbonPosts = [] }: { ribbonPosts?: Ribb
   return (
     <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-10 lg:pt-16 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
-
-      {ribbonPosts && ribbonPosts.length > 0 && (
-        <div className="relative mx-auto mb-6 sm:mb-8 max-w-6xl">
-          <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta · bấm để đọc" />
-        </div>
-      )}
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-8">
         <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">

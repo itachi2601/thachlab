@@ -58,7 +58,7 @@ export default function ExamSamplePreview() {
     return (
       <p className="text-center text-base text-ink">
         Không thấy đề mẫu này.{" "}
-        <Link href="/#de-thi" className="text-primary hover:underline">
+        <Link href="/gioi-thieu#de-thi" className="text-primary hover:underline">
           Về trang chủ
         </Link>
       </p>

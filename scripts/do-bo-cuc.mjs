@@ -108,6 +108,13 @@ try {
   console.log(r.result?.result?.value ?? JSON.stringify(r));
 
   if (shotPath) {
+    if (fullPage) {
+      // whileInView (Reveal) chỉ kích hoạt khi cuộn tới: cuộn hết trang rồi về đầu, không thì ảnh toàn trang ra khoảng trắng.
+      await send("Runtime.evaluate", {
+        expression: `(async () => { const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += innerHeight * 0.6) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 250)); } scrollTo(0, 0); await new Promise((r) => setTimeout(r, 400)); })()`,
+        awaitPromise: true,
+      });
+    }
     const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: fullPage });
     fs.writeFileSync(shotPath, Buffer.from(shot.result.data, "base64"));
     console.log("ảnh:", shotPath);

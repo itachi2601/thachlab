@@ -29,7 +29,7 @@ const links: NavLink[] = [
 const MORE_LINKS: NavLink[] = [
   { label: "Vật lý quanh ta", href: "/blog/#vat-ly-quanh-ta" },
   { label: "Tin tức", href: "/tin-tuc" },
-  { label: "Giới thiệu", href: "/#about" },
+  { label: "Giới thiệu", href: "/gioi-thieu" },
   { label: "Liên hệ", href: "/#contact" },
 ];
 
