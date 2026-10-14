@@ -29,11 +29,6 @@ interface ChapterMasteryRadarProps {
   compact?: boolean;
 }
 
-function truncateTitle(title: string, maxLen = 14): string {
-  if (title.length <= maxLen) return title;
-  return title.slice(0, maxLen - 1) + "…";
-}
-
 export default function ChapterMasteryRadar({
   studentId,
   onLoaded,
@@ -131,6 +126,8 @@ export default function ChapterMasteryRadar({
   // và trang chủ (compact) không được thêm round-trip.
   const drillDown = !compact && !preloaded;
   const [userOpen, setUserOpen] = useState<number | null | undefined>(undefined);
+  // Bài đang được nhấn mạnh trên sơ đồ (chạm đỉnh hoặc chạm hàng); mặc định là bài yếu nhất.
+  const [focusId, setFocusId] = useState<number | null>(null);
   const openId = userOpen !== undefined ? userOpen : drillDown ? (weakestLesson?.lessonId ?? null) : null;
   const [topicsByLesson, setTopicsByLesson] = useState<Record<number, TopicMastery[] | "error">>({});
   const [practice, setPractice] = useState<QuickPracticeRequest | null>(null);
@@ -182,11 +179,34 @@ export default function ChapterMasteryRadar({
   const hasPrevRadar = useRadar && prevLessonsWithDataCount >= 3;
 
   // Radar geometry
-  const cx = 160;
-  const cy = 160;
-  const R = 80;
-  const R_label = 98;
+  const cx = 180;
+  const cy = 170;
+  const R = 100;
+  const R_label = 126;
   const N = radarLessons.length;
+  const activeFocusId = focusId ?? weakestLesson?.lessonId ?? null;
+  // Mã bài ngắn B1…Bn (theo "Bài N" trong tên, không có thì theo thứ tự) — tên đầy đủ nằm ở bảng bên dưới.
+  const codeOf = (lessonId: number): string => {
+    const idx = currentData.findIndex((l) => l.lessonId === lessonId);
+    const title = idx >= 0 ? currentData[idx].lessonTitle : "";
+    const m = title.match(/^Bài\s*(\d+)/i);
+    return m ? `B${m[1]}` : `B${idx + 1}`;
+  };
+  const levelColor = (level: ChapterLessonMastery["level"]) =>
+    level === "mastered"
+      ? "var(--color-ok)"
+      : level === "practicing"
+        ? "var(--color-warn)"
+        : level === "weak"
+          ? "var(--color-danger)"
+          : "var(--color-line-strong)";
+  const ringPoints = (k: number) =>
+    radarLessons
+      .map((_, i) => {
+        const angle = (i * 2 * Math.PI) / N - Math.PI / 2;
+        return `${cx + R * k * Math.cos(angle)},${cy + R * k * Math.sin(angle)}`;
+      })
+      .join(" ");
 
   const curCoords = radarLessons.map((lesson, i) => {
     const angle = (i * 2 * Math.PI) / N - Math.PI / 2;
@@ -217,7 +237,6 @@ export default function ChapterMasteryRadar({
   const prevPointsString = prevCoords.map((pt) => `${pt.x},${pt.y}`).join(" ");
 
   if (compact && useRadar) {
-    const shortLabel = (t: string) => t.match(/^Bài\s*\d+/i)?.[0] ?? truncateTitle(t, 6);
     const lowest = [...lessonsWithData].sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0))[0];
     const cx2 = 70;
     const cy2 = 70;
@@ -237,7 +256,7 @@ export default function ChapterMasteryRadar({
         </div>
         <p className="text-[13px] text-muted">{chapterTitle}</p>
         <div className="mt-2 flex items-center gap-3">
-          <svg viewBox="-14 0 168 140" className="h-36 w-[170px] shrink-0" role="img" aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}>
+          <svg viewBox="-18 -4 176 148" className="h-36 w-[176px] shrink-0" role="img" aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}>
             {[0.33, 0.66, 1].map((k) => (
               <polygon key={k} points={poly(() => k)} fill="none" stroke="var(--color-line-strong)" strokeWidth="1" strokeOpacity="0.5" />
             ))}
@@ -245,13 +264,21 @@ export default function ChapterMasteryRadar({
             {radarLessons.map((l, i) => {
               const [x, y] = at(i, Math.max(0.03, (l.pct ?? 0) / 100));
               const isLow = l.lessonId === lowest.lessonId;
-              return <circle key={l.lessonId} cx={x} cy={y} r={isLow ? 4.5 : 3} fill={isLow ? "var(--color-danger)" : "var(--color-primary)"} />;
+              if (!isLow) return <circle key={l.lessonId} cx={x} cy={y} r={3} fill="var(--color-primary)" />;
+              return (
+                <g key={l.lessonId}>
+                  <circle cx={x} cy={y} r={11} fill="var(--color-panel)" stroke="var(--color-danger)" strokeWidth="2" />
+                  <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fontWeight="700" fill="var(--color-ink)">
+                    {l.pct}
+                  </text>
+                </g>
+              );
             })}
             {radarLessons.map((l, i) => {
               const [x, y] = at(i, 1.3);
               return (
                 <text key={l.lessonId} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fill="var(--color-muted)">
-                  {shortLabel(l.lessonTitle)}
+                  {codeOf(l.lessonId)}
                 </text>
               );
             })}
@@ -297,24 +324,37 @@ export default function ChapterMasteryRadar({
       {useRadar ? (
         <div className="mt-4">
           <svg
-            viewBox="0 0 320 320"
+            viewBox="0 0 360 340"
             className="mx-auto block w-full max-w-[360px]"
             role="img"
             aria-label={`Sơ đồ năng lực chương ${chapterTitle}`}
           >
-            {/* Lớp 1: Lưới 4 vòng 25/50/75/100 */}
-            {[0.25, 0.5, 0.75, 1.0].map((ringPct) => (
-              <circle
-                key={ringPct}
-                cx={cx}
-                cy={cy}
-                r={R * ringPct}
-                fill="none"
-                stroke="var(--color-line-strong)"
-                strokeWidth="1"
-                strokeOpacity="0.4"
-              />
-            ))}
+            {/* Lớp 1: Lưới 4 vòng 25/50/75/100, số chia thang nằm giữa trục 1 và trục 2 */}
+            {[0.25, 0.5, 0.75, 1.0].map((ringPct) => {
+              const a = Math.PI / N - Math.PI / 2;
+              return (
+                <g key={ringPct}>
+                  <polygon
+                    points={ringPoints(ringPct)}
+                    fill="none"
+                    stroke="var(--color-line-strong)"
+                    strokeWidth="1"
+                    strokeOpacity="0.45"
+                  />
+                  <text
+                    x={cx + R * ringPct * Math.cos(a) + 3}
+                    y={cy + R * ringPct * Math.sin(a)}
+                    fontSize="11"
+                    fill="var(--color-muted)"
+                    stroke="var(--color-panel)"
+                    strokeWidth="3"
+                    paintOrder="stroke"
+                  >
+                    {Math.round(ringPct * 100)}
+                  </text>
+                </g>
+              );
+            })}
 
             {/* Trục toả từ tâm */}
             {radarLessons.map((_, i) => {
@@ -355,11 +395,12 @@ export default function ChapterMasteryRadar({
                   y={ly}
                   textAnchor={textAnchor}
                   dominantBaseline={dominantBaseline}
-                  fontSize="11"
-                  fill="var(--color-muted)"
+                  fontSize="13"
+                  fontWeight="600"
+                  fill="var(--color-ink)"
                 >
                   <title>{lesson.lessonTitle}</title>
-                  {truncateTitle(lesson.lessonTitle, 14)}
+                  {codeOf(lesson.lessonId)}
                 </text>
               );
             })}
@@ -397,22 +438,45 @@ export default function ChapterMasteryRadar({
             />
             {curCoords.map((pt, i) => {
               const item = radarLessons[i];
-              const dotColor =
-                item.level === "weak"
-                  ? "var(--color-danger)"
-                  : item.level === "practicing"
-                    ? "var(--color-warn)"
-                    : "var(--color-primary)";
+              const isFocus = item.lessonId === activeFocusId;
               return (
-                <circle
+                <g
                   key={item.lessonId}
-                  cx={pt.x}
-                  cy={pt.y}
-                  r={3}
-                  fill={dotColor}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${item.lessonTitle}: ${item.pct}%, ${MASTERY_LABEL[item.level]}`}
+                  onClick={() => setFocusId(item.lessonId)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setFocusId(item.lessonId);
+                    }
+                  }}
+                  className="cursor-pointer outline-none"
                 >
                   <title>{`${item.lessonTitle}: ${item.pct}%`}</title>
-                </circle>
+                  {/* Vùng chạm rộng ~44px, không vẽ */}
+                  <circle cx={pt.x} cy={pt.y} r={22} fill="transparent" />
+                  <circle
+                    cx={pt.x}
+                    cy={pt.y}
+                    r={isFocus ? 18 : 15}
+                    fill="var(--color-panel)"
+                    stroke={levelColor(item.level)}
+                    strokeWidth={isFocus ? 3 : 2}
+                  />
+                  <text
+                    x={pt.x}
+                    y={pt.y}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontSize="12"
+                    fontWeight="700"
+                    fill="var(--color-ink)"
+                  >
+                    {item.pct}
+                  </text>
+                </g>
               );
             })}
           </svg>
@@ -447,6 +511,7 @@ export default function ChapterMasteryRadar({
               </svg>
               <span>Mục tiêu: Nắm vững (80%)</span>
             </div>
+            <p>Số trong vòng tròn là % thành thạo của bài. Chạm một vòng để xem bài đó trong bảng.</p>
             {hasPrevRadar && (
               <div className="flex items-center gap-2">
                 <svg width="24" height="10" className="shrink-0" aria-hidden="true">
@@ -508,9 +573,9 @@ export default function ChapterMasteryRadar({
             let deltaStr = "";
             if (item.pct !== null && prevItem && prevItem.pct !== null) {
               const diff = item.pct - prevItem.pct;
-              if (diff > 0) deltaStr = `tăng ${diff} điểm %`;
-              else if (diff < 0) deltaStr = `giảm ${Math.abs(diff)} điểm %`;
-              else deltaStr = "giữ nguyên";
+              if (diff > 0) deltaStr = `▲ tăng ${diff} điểm %`;
+              else if (diff < 0) deltaStr = `▼ giảm ${Math.abs(diff)} điểm %`;
+              else deltaStr = "= giữ nguyên";
             }
             const canOpen = drillDown && item.pct !== null;
             const isOpen = canOpen && openId === item.lessonId;
@@ -521,6 +586,7 @@ export default function ChapterMasteryRadar({
                 <span className="mr-1.5" aria-hidden="true">
                   {icon}
                 </span>
+                <span className="mr-1.5 font-bold text-muted">{codeOf(item.lessonId)}</span>
                 <span className="font-medium">{item.lessonTitle}</span>
                 <span className="text-muted"> — </span>
                 {item.pct !== null ? (
@@ -541,12 +607,18 @@ export default function ChapterMasteryRadar({
             );
 
             return (
-              <li key={item.lessonId} className="text-sm leading-relaxed text-ink">
+              <li
+                key={item.lessonId}
+                className={`rounded-lg text-sm leading-relaxed text-ink ${item.lessonId === activeFocusId && useRadar ? "bg-primary-soft" : ""}`}
+              >
                 {canOpen ? (
                   <button
                     type="button"
                     aria-expanded={isOpen}
-                    onClick={() => setUserOpen(isOpen ? null : item.lessonId)}
+                    onClick={() => {
+                      setUserOpen(isOpen ? null : item.lessonId);
+                      setFocusId(item.lessonId);
+                    }}
                     className="flex min-h-11 w-full items-center justify-between gap-2 rounded-lg px-1 text-left hover:bg-surface-2"
                   >
                     <span className="min-w-0">{label}</span>
