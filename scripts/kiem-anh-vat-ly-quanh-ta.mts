@@ -10,7 +10,7 @@ const BLOG = join(process.cwd(), "content", "blog");
 const MAX_BYTES = 150 * 1024;
 // Chỉ giấy phép mở cho phép dùng lại + sửa + đăng thương mại; NC/ND và "all rights reserved" bị loại.
 const LICENSE_OK = /^(CC0( 1\.0)?|Public Domain|CC BY(-SA)? [1-4]\.\d)$/i;
-const HOST_OK = /^https:\/\/(commons\.wikimedia\.org|upload\.wikimedia\.org|phet\.colorado\.edu|openverse\.org|www\.flickr\.com)\//;
+const HOST_OK = /^https:\/\/(thachlab\.id\.vn|commons\.wikimedia\.org|upload\.wikimedia\.org|phet\.colorado\.edu|openverse\.org|www\.flickr\.com)\//;
 
 let errors = 0;
 let warns = 0;

@@ -14,6 +14,13 @@ quiz:
     - "Động năng quay được giữ nguyên"
   answer: 1
   why: "Thu tay làm khối lượng gần trục hơn; mômen động lượng được bảo toàn nên tốc độ góc tăng lên."
+photo: "/images/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay-the.webp"
+photoAlt: "Người trượt băng dang hai tay, một chân duỗi, trên sân băng trong nhà trước khi vào động tác xoay"
+photoCredit:
+  author: "Ngô Diệu Thạch"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+  sourceUrl: "https://thachlab.id.vn/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay/"
 tags:
   - "Gym & Thể thao"
   - "Lớp 10"
@@ -28,6 +35,16 @@ keywords:
 Trên sân băng, vận động viên giơ hai tay ra và xoay chậm. Rồi em thấy một động tác rất gọn: hai tay kéo vào ngực. Người ấy quay nhanh đến mức cánh tay như nhoà, trong khi không ai đẩy thêm một cái nào.
 
 Vì sao thu tay lại thì quay nhanh hơn?
+
+<figure style="margin:1.5rem auto;max-width:240px">
+<video controls preload="none" playsinline width="576" height="1024" poster="/images/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay-poster.webp" style="width:100%;height:auto;border-radius:12px;background:#000">
+<source src="/videos/blog/vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay.mp4" type="video/mp4">
+</video>
+</figure>
+
+**Nhìn vào:** lúc nào người trượt băng quay nhanh hơn, khi tay dang ra hay khi tay thu sát người?
+
+*Video: Ngô Diệu Thạch, CC BY 4.0. Quay ở sân băng trong nhà.*
 
 ![Vận động viên trượt băng: tay duỗi thì quay chậm, tay thu vào ngực thì quay nhanh](/images/blog/vi-sao-van-dong-vien-thu-tay-canh.svg)
 
