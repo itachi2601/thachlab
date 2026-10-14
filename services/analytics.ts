@@ -36,6 +36,23 @@ export interface WrongQuestionRef {
   questionIndex: number;
   topic: string;
   form: string;
+  /** Thời điểm làm sai (exam_question_results.created_at) — để xếp lịch ôn lại giãn cách. */
+  wrongAt?: string;
+}
+
+/** Lịch ôn lại câu sai: lần 1 sau 2 ngày, lần 2 sau 1 tuần, lần 3 sau 1 tháng (giãn cách — Cepeda). */
+export const REVIEW_STEPS_DAYS = [2, 7, 30] as const;
+
+export function reviewDueLabel(wrongAt: string | undefined, now = Date.now()): { due: boolean; text: string } | null {
+  if (!wrongAt) return null;
+  const days = (now - new Date(wrongAt).getTime()) / 86_400_000;
+  if (Number.isNaN(days)) return null;
+  const next = REVIEW_STEPS_DAYS.find((d) => days < d);
+  if (next === undefined) return { due: true, text: "Ôn lại lần cuối (đã hơn 1 tháng)" };
+  const idx = REVIEW_STEPS_DAYS.indexOf(next);
+  // Đã qua mốc trước đó → đang đến hạn; chưa qua mốc đầu → báo còn bao lâu.
+  if (idx === 0) return { due: false, text: `Ôn lại sau ${Math.max(1, Math.ceil(next - days))} ngày nữa` };
+  return { due: true, text: `Đến hạn ôn lần ${idx} · lần sau ${next === 7 ? "1 tuần" : "1 tháng"} kể từ lúc sai` };
 }
 
 interface EqrRow {
@@ -46,6 +63,7 @@ interface EqrRow {
   topic_id: number | null;
   form: string;
   is_correct: boolean;
+  created_at?: string;
 }
 
 interface AssessmentMeta {
@@ -147,7 +165,7 @@ export async function fetchMyWrongQuestions(
   // 1 truy vấn: lượt làm (kèm đề) + chỉ những câu sai đúng (chủ đề, loại) qua nhúng !inner — lọc ở server
   // thay vì kéo toàn bộ exam_question_results của em rồi lọc ở client và tải exam_results ở tầng 2.
   const UNTAGGED = "Chưa gắn chủ đề";
-  const eqrCols = "exam_result_id, exam_id, question_index, topic_name, form, is_correct";
+  const eqrCols = "exam_result_id, exam_id, question_index, topic_name, form, is_correct, created_at";
   let query = getSupabase()
     .from("exam_results")
     .select(`id, exam_id, detail, exams(title, questions), exam_question_results!inner(${eqrCols})`)
@@ -196,6 +214,7 @@ export async function fetchMyWrongQuestions(
         questionIndex: r.question_index,
         topic,
         form,
+        wrongAt: r.created_at,
       },
       question,
       response:

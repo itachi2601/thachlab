@@ -89,3 +89,10 @@
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
 - [Dashboard GV THPT](project_thachlab_dashboard_gv_thpt.md) — lọc đề theo khối + gộp tab xong 13/10 (137387c07); chưa thử trình duyệt, chưa push
 - [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật + 3 mục mở rộng
+- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — phát hiện 25/9, trạng thái sửa CHƯA RÕ
+- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục đang ẩn, chờ gắn đề
+- [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
+## Việc mới 30/9
+- [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
+- [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu, soạn khi có token
+- [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)

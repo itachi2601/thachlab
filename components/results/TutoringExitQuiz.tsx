@@ -9,7 +9,7 @@ import TheoryReviewStep from "@/components/results/TheoryReviewStep";
 import { useToast } from "@/components/ui/Toast";
 import type { Difficulty, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { arrangeForMotivation } from "@/features/lessons/practice-arrange";
-import { emptyResponses, gradeExam, isAnswered, pickRandom } from "@/features/exams/types";
+import { emptyResponses, gradeExam, gradeQuestion, isAnswered, pickRandom } from "@/features/exams/types";
 import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/services/question-bank";
 import {
   EXIT_QUIZ_PASS_PCT,
@@ -97,12 +97,19 @@ export default function TutoringExitQuiz({
   const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("loading");
   const [bankIds, setBankIds] = useState<number[]>([]);
+  const [topicNames, setTopicNames] = useState<string[]>([]);
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
   const [easyCount, setEasyCount] = useState(0);
   const [cur, setCur] = useState(0);
   const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<{ pct: number; passed: boolean; correct: number; total: number } | null>(null);
+  const [result, setResult] = useState<{
+    pct: number;
+    passed: boolean;
+    correct: number;
+    total: number;
+    weak: { name: string; wrong: number; total: number }[];
+  } | null>(null);
 
   const passPct = exitWindow ? WINDOW_QUIZ_PASS_PCT : EXIT_QUIZ_PASS_PCT;
   const theoryHref = need.lessonId ? `/lop-hoc/bai/?id=${need.lessonId}#secondary-stage-ly_thuyet` : null;
@@ -140,6 +147,7 @@ export default function TutoringExitQuiz({
         }
         setEasyCount(easy);
         setBankIds(picked.map((b) => b.id));
+        setTopicNames(picked.map((b) => b.topicName.trim()));
         const examQuestions = picked.map(toExamQuestion);
         setQuestions(examQuestions);
         setResponses(emptyResponses(examQuestions));
@@ -177,7 +185,23 @@ export default function TutoringExitQuiz({
         correct: summary.correctCount,
         windowId: exitWindow?.id,
       });
-      setResult({ pct: attempt.pct, passed: attempt.passed, correct: summary.correctCount, total: questions.length });
+      // Gom câu sai theo YCCĐ (tên chủ đề của câu) để chỉ đúng chỗ em cần ôn lại.
+      const byTopic = new Map<string, { wrong: number; total: number }>();
+      questions.forEach((q, i) => {
+        const name = topicNames[i];
+        if (!name) return;
+        const g = gradeQuestion(q, responses[i]);
+        const cur = byTopic.get(name) ?? { wrong: 0, total: 0 };
+        cur.total += 1;
+        if (!(g.earned === g.max && g.max > 0)) cur.wrong += 1;
+        byTopic.set(name, cur);
+      });
+      const weak = [...byTopic.entries()]
+        .filter(([, v]) => v.wrong > 0)
+        .map(([name, v]) => ({ name, ...v }))
+        .sort((a, b) => b.wrong - a.wrong)
+        .slice(0, 5);
+      setResult({ pct: attempt.pct, passed: attempt.passed, correct: summary.correctCount, total: questions.length, weak });
       setPhase("result");
       if (attempt.passed) {
         toast("success", `Đạt ${attempt.pct}% — đã gỡ khỏi danh sách cần phụ đạo!`);
@@ -313,6 +337,18 @@ export default function TutoringExitQuiz({
                       ? `Chưa đạt ${passPct}% — chưa sao cả. Em nhờ trợ giảng giảng lại phần còn vướng; chủ đề này vẫn còn trong danh sách của em.`
                       : `Chưa đạt ${passPct}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau ${EXIT_COOLDOWN_HOURS} giờ em xem lại lý thuyết rồi thử lượt mới nhé.`}
                   </p>
+                  {result.weak.length > 0 && (
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                      <p className="mb-1 font-semibold text-white">Phần em cần xem lại:</p>
+                      <ul className="list-disc space-y-0.5 pl-5 text-slate-200">
+                        {result.weak.map((w) => (
+                          <li key={w.name}>
+                            {w.name} <span className="text-slate-400">({w.wrong}/{w.total} câu chưa đúng)</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   {theoryHref && (
                     <a href={theoryHref} className="inline-block font-semibold text-primary underline-offset-2 hover:underline">
                       Ôn lại đoạn lý thuyết →
