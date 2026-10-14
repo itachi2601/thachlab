@@ -128,3 +128,41 @@ export function buildStartMap(rows: DiagnosticTopicResult[]): StartMap {
     );
   return { skip, order };
 }
+
+export interface HandoffOptions {
+  assistants: { id: string; name: string }[];
+  current: { id: string; name: string; since: string } | null;
+}
+
+/** Trợ giảng chọn được cho em (đã gán lớp của em) + người đang phụ trách. Chỉ thầy phụ trách lớp / admin gọi được. */
+export async function fetchHandoffOptions(studentId: string): Promise<HandoffOptions> {
+  const { data, error } = await getSupabase().rpc("ta_handoff_options", { p_student: studentId });
+  if (error) throw new Error(error.message);
+  return data as HandoffOptions;
+}
+
+export interface HandoffResult {
+  assistant: string;
+  assignedNeeds: number;
+  invited: boolean;
+}
+
+/** Giao em cho trợ giảng; có `courseId` và em chưa làm kiểm tra đầu vào thì mời em làm luôn. */
+export async function assignHandoff(
+  studentId: string,
+  assistantId: string,
+  courseId: number | null,
+): Promise<HandoffResult> {
+  const { data, error } = await getSupabase().rpc("ta_handoff_assign", {
+    p_student: studentId,
+    p_assistant: assistantId,
+    p_course: courseId,
+  });
+  if (error) throw new Error(error.message);
+  return data as HandoffResult;
+}
+
+export async function clearHandoff(studentId: string): Promise<void> {
+  const { error } = await getSupabase().rpc("ta_handoff_clear", { p_student: studentId });
+  if (error) throw new Error(error.message);
+}
