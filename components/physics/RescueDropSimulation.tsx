@@ -636,7 +636,7 @@ export function RescueDropSimulation() {
         </div>
         <div>
           <dt className="text-[13px] text-slate-500">Còn cao</dt>
-          <dd className="text-sm text-ink">{formatNumber(sim.packagePos.y, 1)} m</dd>
+          <dd className="text-sm text-ink">{sim.packagePos ? `${formatNumber(sim.packagePos.y, 1)} m` : "—"}</dd>
         </div>
         <div>
           <dt className="text-[13px] text-slate-500">Lệch bãi đáp</dt>
