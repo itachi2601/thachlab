@@ -298,3 +298,7 @@ Trang công khai `/dieu-khoan` đã cam kết với người học và chủ s�
 # Sửa hàng loạt ký hiệu trong ngân hàng câu (S1→$S_1$…) — bài học 15/10/2026
 - Chữ+số trần (`t2`, `x2`, `v2/r`, `m2`) có thể là chỉ số dưới HOẶC bình phương/đơn vị: luật regex nào cũng lọt. Quy trình đúng: dry-run → agent `kiem-code` chạy KaTeX trên toàn bộ chuỗi mới + săn ngữ cảnh bình phương → hoàn tác theo id → thêm vào `EXCLUDE_IDS` → chạy lại tới khi dry-run = 0. Mẫu: `scripts/sua-chi-so-duoi-ngan-hang.mts` (`SIM=<sao lưu>` so luật hiện tại với DB; `--undo` ghi đè cả cột nên đừng dùng khi DB đã có khoá backfill mới).
 - Không coi URL/`\dfrac d2` là chuỗi thường; luôn chừa vùng URL và đối số không ngoặc.
+
+# Rà UI bằng tài khoản đăng nhập sẵn trong trình duyệt (bài học 15/10/2026)
+- Trước khi kết luận "bài/đề không có dữ liệu", xác định tài khoản đang đăng nhập là ai, lớp nào, role gì: RLS `exams` giấu đề gán lớp khác, nên trang hiện "trống" chỉ với tài khoản đó. Đối chiếu bằng truy vấn DB chỉ đọc rồi mới báo.
+- Repo không có `.prettierrc`: chạy prettier thì dùng `--print-width 120`, nếu không nó định dạng lại cả file thành diff rác.
