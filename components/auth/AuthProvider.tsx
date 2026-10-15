@@ -145,10 +145,12 @@ export default function AuthProvider({
     [previewMode, profile],
   );
 
-  // Đẩy ảnh chụp cho component ngoài cây Provider (MobileTabBar ở app/layout.tsx) — xem auth-context.tsx.
+  // Đẩy ảnh chụp cho component ngoài cây Provider (MobileTabBar, Navbar trên trang công khai).
+  // Đang đọc phiên/hồ sơ thì chưa ghi — tránh xóa ảnh vừa đăng nhập bằng null trước khi hồ sơ về.
   useEffect(() => {
+    if (loading && !effectiveProfile) return;
     publishAuthSnapshot({ session, profile: effectiveProfile, signOut });
-  }, [session, effectiveProfile, signOut]);
+  }, [loading, session, effectiveProfile, signOut]);
 
   return (
     <AuthContext.Provider

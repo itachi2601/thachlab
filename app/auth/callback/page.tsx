@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
+import { pathAfterLogin, safeNextPath } from "@/lib/after-login";
 
 export default function AuthCallbackPage() {
   const router = useRouter();
@@ -35,7 +36,15 @@ export default function AuthCallbackPage() {
       }
 
       toast("success", "Đăng nhập thành công!");
-      router.replace(userType === "teacher" ? "/quan-tri" : "/tai-khoan");
+      const { data: userData } = await getSupabase().auth.getUser();
+      const userId = userData.user?.id;
+      let role: string | null = userType === "teacher" ? "instructor" : "student";
+      if (userId) {
+        const { data: prof } = await getSupabase().from("profiles").select("role").eq("id", userId).maybeSingle();
+        if (prof?.role) role = prof.role;
+      }
+      const next = safeNextPath(params.get("next"));
+      router.replace(next ?? pathAfterLogin(role));
     }
 
     completeLogin().catch(() => {

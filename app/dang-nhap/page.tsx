@@ -8,41 +8,41 @@ import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
+import { pathAfterLogin, safeNextPath } from "@/lib/after-login";
 
 type UserType = "student" | "teacher";
 
 export default function LoginPage() {
   const router = useRouter();
   const toast = useToast();
-  const { session, profile, loading: authLoading } = useAuth();
+  const { session, realProfile, loading: authLoading } = useAuth();
   const [userType, setUserType] = useState<UserType>("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [nextQuery, setNextQuery] = useState("");
+  const [nextPath, setNextPath] = useState<string | null>(null);
   useEffect(() => {
-    const next = new URLSearchParams(window.location.search).get("next");
-    if (!next || !/^\/(?!\/)/.test(next)) return;
+    const next = safeNextPath(new URLSearchParams(window.location.search).get("next"));
+    setNextPath(next);
+    if (!next) return;
     const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1] ?? (/[?&]ma=AVCN-/i.test(next) ? "avcn" : undefined);
     setNextQuery(`?next=${encodeURIComponent(next)}${lop ? `&lop=${lop}` : ""}`);
   }, []);
   const [busy, setBusy] = useState(false);
 
   // Đã đăng nhập rồi (vd bấm Back, hoặc mở lại tab cũ) -> đưa thẳng vào đúng không gian, không hiện lại form.
-  // ?next=/duong-dan (chỉ nhận đường dẫn nội bộ bắt đầu bằng 1 dấu "/") để quay lại trang vừa bị chặn,
-  // vd /phu-huynh; phụ huynh không có next thì về thẳng trang kết quả của con.
+  // ?next= (đường nội bộ) được giữ. Không có next: admin về trang chủ, giảng viên vào /quan-tri,
+  // phụ huynh vào /phu-huynh, học sinh vào /tai-khoan.
+  const destination = nextPath ?? pathAfterLogin(realProfile?.role);
   useEffect(() => {
     if (authLoading || !session) return;
-    const next = new URLSearchParams(window.location.search).get("next");
-    let to = "/tai-khoan";
-    if (next && /^\/(?!\/)/.test(next)) to = next;
-    else if (profile?.role === "admin" || profile?.role === "instructor") to = "/quan-tri";
-    else if (profile?.role === "parent") to = "/phu-huynh";
+    const to = safeNextPath(new URLSearchParams(window.location.search).get("next")) ?? pathAfterLogin(realProfile?.role);
     router.replace(to);
     // WebView cũ / mạng yếu đôi khi router.replace không chạy (kẹt "đang chuyển hướng"): sau 2,5s chuyển cứng.
     const t = window.setTimeout(() => window.location.assign(to), 2500);
     return () => window.clearTimeout(t);
-  }, [authLoading, session, profile, router]);
+  }, [authLoading, session, realProfile, router]);
 
   async function handleEmailLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -104,10 +104,10 @@ export default function LoginPage() {
         {authLoading || session ? (
           <p className="mt-6 text-muted">
             {session ? "Bạn đã đăng nhập — đang chuyển hướng…" : "Đang kiểm tra đăng nhập…"}
-            {session && (
+            {session && !authLoading && (
               <>
                 {" "}
-                <a href="/tai-khoan" className="font-semibold text-primary underline">Bấm vào đây nếu không tự chuyển</a>
+                <a href={destination} className="font-semibold text-primary underline">Bấm vào đây nếu không tự chuyển</a>
               </>
             )}
           </p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
-import { useAuth } from "@/components/auth/auth-context";
+import { useAuth, useAuthSnapshot } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
@@ -45,7 +45,15 @@ const THPT_QUICK_LINKS = [
 ];
 
 export default function Navbar() {
-  const { session, profile, signOut } = useAuth();
+  const live = useAuth();
+  const snap = useAuthSnapshot();
+  // Trang công khai không có Provider cho đến khi PublicAuthGate nạp xong:
+  // dùng ảnh phiên vừa đăng nhập để thanh hiện tên ngay, không nháy nút "Đăng nhập".
+  const session = live.session ?? snap.session;
+  const profile =
+    live.profile ??
+    (live.session && snap.session && live.session.user.id !== snap.session.user.id ? null : snap.profile);
+  const signOut = live.session ? live.signOut : snap.signOut;
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
