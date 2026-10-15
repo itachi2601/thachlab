@@ -11,7 +11,7 @@ import NotificationBell from "@/components/layout/NotificationBell";
 import Avatar from "@/components/ui/Avatar";
 
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
-const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
+const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay", "/lop-hoc/avcn"];
 
 // Mục "Phụ huynh" chỉ hiện với khách và học sinh: phụ huynh đã có mục "Kết quả của con" trong menu
 // tài khoản, giáo viên/admin không dùng trang đó — thêm cho mọi role sẽ chật thanh điều hướng.

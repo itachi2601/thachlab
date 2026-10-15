@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClassHubPage from "../page";
-import { MANAGED_CLASSES } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG } from "@/services/classes";
 
 export const dynamicParams = false;
 
@@ -16,6 +16,14 @@ export async function generateMetadata({
   const { classSlug } = await params;
   const schoolClass = MANAGED_CLASSES.find((item) => item.slug === classSlug);
   const className = schoolClass?.name === "KHTN 9" ? "KHTN 9" : `Lớp ${schoolClass?.name ?? "học"}`;
+
+  // AVCN là học phần CTTC, không phải "Lớp …" của khối THPT.
+  if (classSlug === AVCN_CLASS_SLUG) {
+    return {
+      title: "Anh văn chuyên ngành Cơ khí — CTTC",
+      description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và luyện đề cuối kỳ Anh văn chuyên ngành Cơ khí cho sinh viên CTTC.",
+    };
+  }
 
   return {
     title: `${className} — Không gian học tập`,

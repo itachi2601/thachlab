@@ -642,7 +642,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       <>
         <Navbar />
         <main className="min-h-screen w-full pt-[76px]">
-          <div className="lesson-shell">
+          <div className={isAvcn ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
             <div className="lesson-layout lesson-layout--pick">
               <aside className="lesson-nav" aria-label="Chương trình lớp">
                 {active && chapters && lessons && classChapters.length > 0 && (
@@ -672,6 +672,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 ) : (
                   <>
                     <header className="lesson-head">
+                      {isAvcn && (
+                        <p className="lesson-eyebrow">
+                          <Link href="/lop-hoc/cttc">Sinh viên CTTC</Link>
+                        </p>
+                      )}
                       <h1>{activeDisplayName}</h1>
                       {!isParent && session && rank?.season && rank.daily && rank.daily.streak > 0 && (
                         <p className="class-streak-chip">🔥 Chuỗi {rank.daily.streak} ngày</p>
@@ -793,9 +798,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 tabbar toàn site được ẩn đi (xem khối CSS cuối globals.css) — hai thanh fixed không thể cùng hiện. */}
             {active && chapters && lessons && classChapters.length > 0 && (
               <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--pick" aria-label="Điều hướng lớp học">
-                <Link href="/lop-hoc" className="lesson-bottom-link">
+                <Link href={isAvcn ? "/lop-hoc/cttc" : "/lop-hoc"} className="lesson-bottom-link">
                   <ArrowLeft size={16} aria-hidden />
-                  <span>Lớp học</span>
+                  <span>{isAvcn ? "CTTC" : "Lớp học"}</span>
                 </Link>
                 {bottomLesson ? (
                   <button

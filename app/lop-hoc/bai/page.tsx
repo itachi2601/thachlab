@@ -55,7 +55,7 @@ import {
 } from "@/services/static-content";
 import { fetchMyLessonPageProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
-import { expandClassIdsByGrade } from "@/services/classes";
+import { expandClassIdsByGrade, AVCN_CLASS_SLUG } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -1316,6 +1316,10 @@ function LessonLoader() {
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
   if (!items) return <LessonSkeleton />;
 
+  // AVCN là học phần CTTC: gốc đường dẫn về hub CTTC, không về bộ chọn lớp THPT.
+  const isAvcn = classSlug === AVCN_CLASS_SLUG;
+  const rootHref = isAvcn ? "/lop-hoc/cttc" : "/lop-hoc";
+  const rootLabel = isAvcn ? "CTTC" : "Lớp học";
   const classHref = classSlug
     ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
     : "/lop-hoc";
@@ -1326,7 +1330,7 @@ function LessonLoader() {
     const examIds = visibleExamIds(kiemTraItems.flatMap((i) => i.exam_ids));
     const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
-      <div className={`lesson-shell lesson-page ${drawerOpen ? "is-drawer-open" : ""}`}>
+      <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
         <div className="lesson-layout lesson-layout--exam">
           <aside className="lesson-nav lesson-nav--compact" aria-label="Điều hướng bài học">
             {prevLesson && (
@@ -1351,7 +1355,7 @@ function LessonLoader() {
               <div className="lesson-head-text">
                 <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
                   <span className="lesson-crumb-class">
-                    <Link href="/lop-hoc">Lớp học</Link>
+                    <Link href={rootHref}>{rootLabel}</Link>
                     <span aria-hidden className="lesson-crumb-sep">›</span>
                   </span>
                   <Link href={classHref} className="lesson-crumb-chapter">
@@ -2006,7 +2010,7 @@ function LessonLoader() {
   if (!nextInCourse) nextInCourse = nextLesson;
 
   return (
-    <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
+    <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
       <div className="lesson-layout">
         {/* Cột trái trong bài chỉ cần: bài trước · bài sau (link về chương đã có ở breadcrumb) (N4: không lặp mục lục cả lớp —
             cây chương đầy đủ nằm trong ngăn kéo "Mục lục" và ở trang lớp). */}
@@ -2033,7 +2037,7 @@ function LessonLoader() {
             <div className="lesson-head-text">
               <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
                 <span className="lesson-crumb-class">
-                  {classSlug ? <Link href="/lop-hoc">Lớp học</Link> : <span>Lớp học</span>}
+                  {classSlug ? <Link href={rootHref}>{rootLabel}</Link> : <span>Lớp học</span>}
                   <span aria-hidden className="lesson-crumb-sep">›</span>
                 </span>
                 <Link href={classHref} className="lesson-crumb-chapter">
