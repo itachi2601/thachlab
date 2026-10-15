@@ -29,3 +29,5 @@ quyết định soạn bài bám vào đó (`docs/DE-XUAT-AVCN-CHUONG-8-2026-10-
   Chưa đối chiếu giáo trình. Việc tiếp: lưu vào `content/lesson-samples/avcn-chapter-5-…/data/bai.json`, sửa, đối chiếu, dựng — hoặc Claude soạn thẳng.
 
 Liên quan: [[feedback-xuong-dong-tung-truong-hop]], [[project-thachlab-cttc-roster-import]].
+
+- 16/10/2026: Article mỗi câu ≤2 từ đố 3 phương án + chạm xem nghĩa, đã đăng Chapter 8 (bài 175) và deploy. Treo: link Flashcard `/flashcard/avcn-chapter-8.html` trong bài đang 404 — chưa rõ ai thêm, chờ thầy.
