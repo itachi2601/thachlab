@@ -49,16 +49,6 @@ export function PhysicsCuriosityCard({
             ?
           </div>
         )}
-        <div className="absolute left-3 top-3 flex items-center gap-2">
-          {card.badge ? (
-            <span className="rounded-full border border-line bg-panel px-2.5 py-1 text-[13px] font-semibold text-ink">{card.badge}</span>
-          ) : null}
-          {isNew ? (
-            <span className="rounded border border-primary/25 bg-panel px-1.5 py-0.5 font-mono text-[13px] font-bold uppercase tracking-wider text-primary">
-              mới
-            </span>
-          ) : null}
-        </div>
       </div>
       {card.photo && credit ? (
         <p className="px-4 pt-1.5 text-[13px] leading-snug text-muted">
@@ -79,8 +69,22 @@ export function PhysicsCuriosityCard({
 
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
-          <h3 className="font-display text-lg font-bold leading-snug text-ink">{card.title}</h3>
-          {card.hook ? <p className={`mt-1.5 text-[15px] leading-relaxed text-muted ${compact ? "line-clamp-3" : ""}`}>{card.hook}</p> : null}
+          {/* Nhãn nằm dưới ảnh, không đè lên hình (H1). */}
+          {card.badge || isNew ? (
+            <p className="mb-1 flex items-center gap-2 text-[13px] font-semibold text-muted">
+              {card.badge ? <span>{card.badge}</span> : null}
+              {isNew ? (
+                <span className="rounded border border-primary/25 px-1.5 py-0.5 font-mono text-[12px] font-bold uppercase tracking-wider text-primary">mới</span>
+              ) : null}
+            </p>
+          ) : null}
+          {/* Dải trang chủ: tiêu đề giữ chỗ đúng 2 dòng, hook đúng 3 dòng → nút "Đoán thử" của các thẻ thẳng hàng. */}
+          <h3 className={`font-display text-lg font-bold leading-snug text-ink ${compact ? "line-clamp-2 min-h-[2lh]" : ""}`} title={compact ? card.title : undefined}>
+            {card.title}
+          </h3>
+          {card.hook ? (
+            <p className={`mt-1.5 text-[15px] leading-relaxed text-muted ${compact ? "line-clamp-3 min-h-[3lh]" : ""}`}>{card.hook}</p>
+          ) : null}
         </div>
 
         {quiz && !open ? (
@@ -88,7 +92,7 @@ export function PhysicsCuriosityCard({
             type="button"
             aria-expanded={false}
             onClick={() => setOpen(true)}
-            className="flex min-h-11 w-full items-center justify-between rounded-lg border border-primary bg-bg px-3 py-2 text-left text-[15px] font-semibold text-primary"
+            className="mt-auto flex min-h-11 w-full items-center justify-between rounded-lg border border-primary bg-bg px-3 py-2 text-left text-[15px] font-semibold text-primary"
           >
             Đoán thử 30 giây
             <span aria-hidden>↓</span>
@@ -138,7 +142,7 @@ export function PhysicsCuriosityCard({
         <Link
           href={card.href}
           onClick={() => onOpen?.(card.slug)}
-          className="mt-auto inline-flex min-h-11 items-center text-[15px] font-semibold text-primary underline-offset-4 hover:underline"
+          className={`${quiz && !open ? "" : "mt-auto "}inline-flex min-h-11 items-center text-[15px] font-semibold text-primary underline-offset-4 hover:underline`}
         >
           {answered ? "Xem vì sao →" : "Đọc bài →"}
           <span className="ml-2 text-[13px] font-normal text-muted">{card.readingMinutes} phút</span>

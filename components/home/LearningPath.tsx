@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -61,8 +64,21 @@ const stages = [
 ];
 
 export default function LearningPath() {
+  // Máy tính: mỗi lần một lớp (tab) để cả khối vừa một màn (N1, N2). Điện thoại: xếp dọc đủ 5 lớp như cũ.
+  const [active, setActive] = useState(0);
+  const onTabKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const next = event.key === "ArrowRight" ? (active + 1) % stages.length : (active - 1 + stages.length) % stages.length;
+    setActive(next);
+    document.getElementById(`lp-tab-${next}`)?.focus();
+  };
+
   return (
-    <section id="learning-path" className="scroll-mt-20 border-t border-line py-20 lg:py-28">
+    <section
+      id="learning-path"
+      className="scroll-mt-[77px] border-t border-line py-20 lg:flex lg:min-h-[calc(100svh-77px)] lg:flex-col lg:justify-center lg:py-10"
+    >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-widest text-primary">Lộ trình lớp 9–12 và thi chuyên</p>
@@ -82,9 +98,29 @@ export default function LearningPath() {
           </p>
         </Reveal>
 
-        <div className="mt-10 divide-y divide-line border-y border-line">
+        <div role="tablist" aria-label="Chọn lớp" onKeyDown={onTabKeyDown} className="mt-8 hidden flex-wrap gap-2 lg:flex">
           {stages.map((s, i) => (
-            <Reveal key={s.grade} delay={i * 0.06}>
+            <button
+              key={s.grade}
+              id={`lp-tab-${i}`}
+              type="button"
+              role="tab"
+              aria-selected={active === i}
+              aria-controls={`lp-panel-${i}`}
+              tabIndex={active === i ? 0 : -1}
+              onClick={() => setActive(i)}
+              className={`min-h-11 rounded-full border px-4 text-sm font-semibold transition-colors ${
+                active === i ? "border-primary bg-primary text-white" : "border-line bg-panel text-ink hover:border-primary hover:text-primary"
+              }`}
+            >
+              {s.grade}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-10 divide-y divide-line border-y border-line lg:mt-4 lg:border-b-0">
+          {stages.map((s, i) => (
+            <div key={s.grade} id={`lp-panel-${i}`} role="tabpanel" aria-labelledby={`lp-tab-${i}`} className={active === i ? "" : "lg:hidden"}>
               <article className="grid gap-6 py-6 md:py-8 md:grid-cols-[220px_1fr] md:gap-8 lg:grid-cols-[260px_1fr]">
                 <Link
                   href={s.classHref}
@@ -139,7 +175,7 @@ export default function LearningPath() {
                   </div>
                 </div>
               </article>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>

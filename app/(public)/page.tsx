@@ -11,6 +11,7 @@ import HonorBoard from "@/components/home/HonorBoard";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import { getPhysicsAroundPosts } from "@/lib/blog";
 import { rotatePhysicsAround, vietnamDayIndex } from "@/lib/physics-around";
+import HomeScreen from "@/components/home/HomeScreen";
 import AdminHomeToday from "@/components/home/AdminHomeToday";
 
 const PINNED_AROUND_SLUG = "vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay";
@@ -30,24 +31,45 @@ export default function Home() {
       <Navbar />
       <main>
         <AdminHomeToday />
-        <PhysicsSimulationHero />
+        {/* Máy tính: mỗi khối một màn (HomeScreen). Điện thoại giữ dòng chảy cũ. */}
+        <HomeScreen first>
+          <PhysicsSimulationHero />
+          {ribbonPosts.length > 0 && (
+            <a
+              href="#vat-ly-quanh-ta"
+              className="mx-auto mb-4 hidden min-h-11 items-center gap-1 text-sm font-medium text-muted hover:text-primary lg:inline-flex"
+            >
+              Vật lý quanh ta <span aria-hidden>↓</span>
+            </a>
+          )}
+        </HomeScreen>
         {ribbonPosts.length > 0 && (
-          <div className="bg-bg px-6 pt-4 lg:px-12">
-            <div className="mx-auto max-w-6xl">
-              <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta" total={around.length} />
+          <HomeScreen id="vat-ly-quanh-ta">
+            <div className="bg-bg px-6 pt-4 lg:px-12 lg:py-8">
+              <div className="mx-auto max-w-6xl">
+                <PhysicsPostRibbon posts={ribbonPosts} label="Vật lý quanh ta" total={around.length} />
+              </div>
             </div>
-          </div>
+          </HomeScreen>
         )}
-        <div className="bg-bg px-6 pt-4 lg:px-12">
+        {/* Thẻ cài app: điện thoại giữ chỗ cũ; máy tính dời xuống cuối trang để không chen giữa hai màn. */}
+        <div className="bg-bg px-6 pt-4 lg:hidden">
+          <PwaInstallCard guideFallback />
+        </div>
+        <HomeScreen>
+          <OpenClasses stats={stats} />
+          <ContentSearch />
+        </HomeScreen>
+        <HomeScreen className="bg-panel">
+          <ForParents courses={stats?.courses ?? null} />
+        </HomeScreen>
+        <LearningPath />
+        <HonorBoard />
+        <div className="hidden bg-bg px-12 pb-8 lg:block">
           <div className="mx-auto max-w-6xl">
             <PwaInstallCard guideFallback />
           </div>
         </div>
-        <OpenClasses stats={stats} />
-        <ContentSearch />
-        <ForParents courses={stats?.courses ?? null} />
-        <LearningPath />
-        <HonorBoard />
       </main>
       <Footer />
     </>

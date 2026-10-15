@@ -163,9 +163,10 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
   ].filter(Boolean);
 
   return (
-    <section className="bg-panel px-6 py-10 text-ink lg:px-12">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[16rem_1fr] lg:items-start lg:gap-12">
-        <div>
+    <section className="bg-panel px-6 py-10 text-ink lg:px-12 lg:py-8">
+      {/* Máy tính: 2 cột (thầy + câu hỏi | lịch lớp) để cả khối vừa một màn (HomeScreen). Điện thoại giữ thứ tự cũ. */}
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-12 lg:gap-y-5">
+        <div className="lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-[10rem_1fr] lg:items-center lg:gap-5">
           {CONTACT.teacherPhoto && (
             <Image
               src={CONTACT.teacherPhoto}
@@ -176,15 +177,17 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
               className="h-auto w-full max-w-64 rounded-2xl"
             />
           )}
-          <p className="mt-4 font-display text-xl font-bold">Thầy Thạch</p>
-          {introLines.map((line) => (
-            <p key={line} className="mt-1 text-lg leading-snug text-ink">
-              {line}
-            </p>
-          ))}
+          <div>
+            <p className="mt-4 font-display text-xl font-bold lg:mt-0">Thầy Thạch</p>
+            {introLines.map((line) => (
+              <p key={line} className="mt-1 text-lg leading-snug text-ink">
+                {line}
+              </p>
+            ))}
+          </div>
         </div>
 
-        <div>
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <h2 className="font-display text-2xl font-bold">Dành cho phụ huynh</h2>
           <p className="mt-3 max-w-xl text-lg leading-relaxed text-ink">
             Bài trên web học miễn phí. Lớp học thêm tại {CONTACT.area.replace(/^Khu vực /i, "khu vực ")}; học phí đóng tại
@@ -192,8 +195,10 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
           </p>
 
           <ClassSchedule courses={courses} />
+        </div>
 
-          <ul className="mt-6 grid gap-5 sm:grid-cols-3">
+        <div className="lg:col-start-1 lg:row-start-2">
+          <ul className="mt-6 grid gap-5 sm:grid-cols-3 lg:mt-0 lg:grid-cols-1 lg:gap-4">
             {QUESTIONS.map((q) => (
               <li key={q.title}>
                 <h3 className="font-display text-lg font-semibold">{q.title}</h3>
