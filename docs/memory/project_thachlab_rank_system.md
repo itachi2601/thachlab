@@ -94,3 +94,10 @@ Cùng lúc chạy `20260928130000_rank_title_code_in_class_rpcs.sql` (xem [[proj
 ## Rút kinh nghiệm 10/10/2026 — thưởng tuần/tiến bộ phải có sàn điểm tuyệt đối
 - Em yếu làm 4,5 điểm mà nhận ~90 RP: `weekly_goal_rp=90` trong config mùa 4 (mặc định 30) + mục tiêu RIÊNG kéo ngưỡng xuống sàn 4 + tiến bộ tuần so mốc rất thấp. Cộng chồng một ngày tới 150–200 RP.
 - Quy tắc: mọi thưởng "so với chính em" (mục tiêu riêng, tiến bộ) phải kèm SÀN TUYỆT ĐỐI (điểm ≥6, đúng ≥60%) và TRẦN RP trong hàm — không chỉ dựa config mùa; đổi `rank_seasons.config` xong phải soát sổ `rank_rp_ledger` theo ngày (tổng RP/ngày/em) trước khi mở cho cả lớp.
+
+**Hồ sơ thành tựu qua các mùa (15/10/2026, thầy duyệt hướng):** spec `docs/THANH-TUU-MUA-VA-AVATAR.md` — khoe năng lực
+(YCCĐ Nắm vững, danh hiệu) hơn thứ hạng; dấu mùa trên khung avatar; tương tác avatar chỉ cổ vũ mẫu sẵn / mục tiêu lớp /
+bạn đồng hành, không chat tự do, không thách đấu 1–1. Dữ liệu mùa 1 KHÔNG mất khi mở mùa 2 (mọi bảng khoá season_id,
+`rank_close_season` vốn đã ghi `rank_season_results`). Migration `20261015200000_rank_ho_so_thanh_tuu_mua.sql` (chờ chạy)
+thêm cột bản chụp + `rank_snapshot_season(p_season)`. Trước khi đóng mùa 4 ngày 25/10: chụp thử, đối chiếu, rồi đóng;
+UI HS chỉ làm sau khi có số A1 (cổng quyết định ở mục 4 spec).
