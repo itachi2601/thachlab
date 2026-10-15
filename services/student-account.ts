@@ -34,3 +34,12 @@ export async function saveStudentPhones(studentId: string, phone: string, parent
   });
   if (error) throw new Error(error.message || "Chưa lưu được số điện thoại.");
 }
+
+/** Sửa ngày sinh học sinh (yyyy-mm-dd; rỗng = xoá). Ghi hồ sơ + metadata — phụ huynh tự nối con dựa vào đây. */
+export async function saveStudentBirth(studentId: string, birth: string): Promise<void> {
+  const { error } = await getSupabase().rpc("staff_set_student_birth", {
+    p_student: studentId,
+    p_birth: birth || null,
+  });
+  if (error) throw new Error(error.message || "Chưa lưu được ngày sinh.");
+}

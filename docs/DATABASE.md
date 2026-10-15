@@ -29,7 +29,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **parent_link_requests** (~-1): id:int8*, parent_id:uuid>profiles, child_name:text, child_birth:date, parent_phone:text, note:text, matched_student_id:uuid>profiles, status:text, reviewed_by:uuid>profiles, reviewed_at:ts, created_at:ts
 - **parent_links** (~-1): id:uuid*, code:text, student_id:uuid>profiles, parent_id:uuid>profiles, label:text, created_by:uuid>profiles, created_at:ts, claimed_at:ts
 - **password_reset_codes** (~27): id:uuid*, code:text, student_id:uuid>profiles, method:text, created_by:uuid>profiles, created_at:ts, expires_at:ts, used_at:ts
-- **profiles** (~488): id:uuid*>users, created_at:ts, full_name:text, class_name:text, role:text, student_code:text, admin_area:text, birth_date:date, track:text, display_title_code:text>rank_titles, display_title_level:text, avatar_url:text, honor_visibility:text
+- **profiles** (~498): id:uuid*>users, created_at:ts, full_name:text, class_name:text, role:text, student_code:text, admin_area:text, birth_date:date, track:text, display_title_code:text>rank_titles, display_title_level:text, avatar_url:text, honor_visibility:text
 - **staff_invites** (~7): id:uuid*, email:text, full_name:text, role:text, admin_area:text, class_id:int8>classes, course_id:int8>course_offerings, tier:text, invited_by:uuid>profiles, invited_at:ts, claimed_at:ts, claimed_user_id:uuid>users, code:text
 - **thpt_attendance_records** (~-1): session_id:int8*>thpt_attendance_sessions, student_id:uuid*>profiles, status:text, note:text, marked_by:uuid>profiles, marked_at:ts
 - **thpt_attendance_sessions** (~-1): id:int8*, class_id:int8>classes, created_by:uuid>profiles, created_at:ts, title:text, session_date:date, starts_at:ts, note:text
@@ -161,9 +161,10 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **ta_video_rates** (~1): id:uuid*, effective_from:date, price_don_gian:int, price_dung_ky:int, view_threshold_1:int, view_bonus_1:int, view_threshold_2:int, view_bonus_2:int, lead_bonus:int, monthly_budget_cap:int
 - **ta_video_stats** (~-1): id:uuid*, session_id:uuid>ta_sessions, checked_at:date, views:int, saves:int, comments:int, created_at:ts
 
-## Khác — 15 bảng
+## Khác — 16 bảng
 
 - **_bak_exam_classes_avcn_20261013** (~-1): exam_id:int8, class_id:int8
+- **_bak_profiles_birth_20261015** (~142): id:uuid*, copied_at:ts
 - **entry_diagnostics** (~-1): id:int8*, student_id:uuid>profiles, per_topic:jsonb, need_count:int, created_at:ts
 - **hsg_grade_sheets** (~-1): id:int8*, test_id:int8>hsg_grade_tests, student_name:text, class_name:text, answers:jsonb, scores:jsonb, total:num, graded_by:uuid>profiles, created_at:ts, updated_at:ts
 - **hsg_grade_tests** (~-1): id:int8*, title:text, kind:text, config:jsonb, created_by:uuid>profiles, created_at:ts, archived:bool

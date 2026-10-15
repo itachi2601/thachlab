@@ -31,6 +31,8 @@ FILES=(
   "supabase/migrations/20261014150000_giao_em_cho_tro_giang.sql|Nút Giao trợ giảng: bảng ta_student_handoffs + 4 hàm ta_handoff_* + trigger tự gán mục phụ đạo mới cho trợ giảng phụ trách|chạy lúc nào cũng được (chỉ thêm bảng + hàm)"
   "supabase/migrations/20261015200000_rank_ho_so_thanh_tuu_mua.sql|Hồ sơ thành tựu mùa: thêm cột vào rank_season_results + hàm rank_snapshot_season, rank_close_season chụp đầy đủ (chỉ thêm cột/thay hàm)|lúc nào cũng được"
   "supabase/migrations/20261015180000_phu_huynh_tu_noi_con.sql|Phụ huynh tự nối với con bằng tên + ngày sinh + SĐT: bảng parent_link_attempts, parent_link_requests + 4 RPC (claim_parent_by_child_info, request_parent_link_review, review_parent_link_request, search_students_for_link)|lúc nào cũng được (chỉ thêm bảng + hàm)"
+  "supabase/migrations/20261015233000_ngay_sinh_tu_dang_ky.sql|Chép ngày sinh HS khai ở /dang-ky (metadata) sang profiles.birth_date (năm 1990–2015, có sao lưu) + handle_new_user tự chép cho tài khoản mới|lúc nào cũng được (chỉ ghi cột đang NULL + thay hàm)"
+  "supabase/migrations/20261015234500_staff_sua_ngay_sinh.sql|Hàm staff_set_student_birth: thầy/TA sửa ngày sinh HS (ghi profiles + metadata) ở thẻ Liên lạc gia đình|lúc nào cũng được (chỉ thêm hàm)"
 )
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar
