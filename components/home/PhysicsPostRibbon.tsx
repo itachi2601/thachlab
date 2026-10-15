@@ -47,20 +47,20 @@ export function PhysicsPostRibbon({ posts, label, total }: { posts: RibbonPost[]
       <div className="flex items-center justify-between gap-3">
         {label ? <p className="font-mono text-xs uppercase tracking-widest text-muted">{label}</p> : <span />}
         <Link href="/blog/#vat-ly-quanh-ta" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline">
-          Xem tất cả{total ? ` ${total} bài` : ""} →
+          Vuốt để xem thêm · Xem tất cả →
         </Link>
       </div>
       {/* Điện thoại: vuốt ngang qua 5 thẻ (thẻ kế lấp ló báo còn nữa). Máy tính: dàn đủ 4 cột, không để trống bên phải. */}
-      <ul className="flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto pb-2 [scrollbar-width:thin] lg:grid lg:grid-cols-4 lg:gap-4 lg:overflow-visible">
-        {posts.map((post, i) => {
+      <ul className="flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto pb-2 [scrollbar-width:thin] lg:gap-4">
+        {posts.map((post) => {
           const isNew = !readSlugs.has(post.slug);
           return (
-            <li key={post.slug} className={`w-[82%] shrink-0 snap-start sm:w-80 lg:w-auto ${i >= 4 ? "lg:hidden" : ""}`}>
+            <li key={post.slug} className={`w-[82%] shrink-0 snap-start sm:w-80 lg:w-[calc(25%-12px)]`}>
               <PhysicsCuriosityCard card={post} isNew={isNew} compact onOpen={handlePostClick} />
             </li>
           );
         })}
-        <li className="flex w-[60%] shrink-0 snap-start sm:w-56 lg:hidden">
+        <li className="flex w-[60%] shrink-0 snap-start sm:w-56 lg:w-56">
           <Link
             href="/blog/#vat-ly-quanh-ta"
             className="flex min-h-44 w-full flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-primary bg-panel p-4 text-center font-semibold text-primary"

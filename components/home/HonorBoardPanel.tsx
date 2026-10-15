@@ -62,7 +62,13 @@ export default function HonorBoardPanel() {
           </div>
         </div>
 
-        <Podium key={active.grade} g={active} />
+        <div className="grid">
+          {grades.map((g) => (
+            <div key={g.grade} className={`[grid-area:1/1] ${g.grade === active.grade ? "" : "pointer-events-none invisible"}`}>
+              <Podium g={g} />
+            </div>
+          ))}
+        </div>
 
         {board.me && <MyWeek me={board.me} />}
 

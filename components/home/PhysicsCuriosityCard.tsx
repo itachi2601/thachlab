@@ -32,7 +32,7 @@ export function PhysicsCuriosityCard({
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-panel">
-      <div className={`relative shrink-0 bg-surface-2 ${compact ? "aspect-[2/1]" : "aspect-[16/9]"}`}>
+      <div className={`relative shrink-0 bg-surface-2 ${compact ? "aspect-[3/2]" : "aspect-[16/9]"}`}>
         {card.photo ? (
           // Ảnh tĩnh (export), webp ≤150 KB do script kiểm; width/height giữ chỗ để không nhảy bố cục.
           <img

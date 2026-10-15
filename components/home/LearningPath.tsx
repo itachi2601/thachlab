@@ -118,9 +118,9 @@ export default function LearningPath() {
           ))}
         </div>
 
-        <div className="mt-10 divide-y divide-line border-y border-line lg:mt-4 lg:border-b-0">
+        <div className="mt-10 divide-y divide-line border-y border-line lg:mt-4 lg:grid lg:divide-y-0 lg:border-b-0">
           {stages.map((s, i) => (
-            <div key={s.grade} id={`lp-panel-${i}`} role="tabpanel" aria-labelledby={`lp-tab-${i}`} className={active === i ? "" : "lg:hidden"}>
+            <div key={s.grade} id={`lp-panel-${i}`} role="tabpanel" aria-labelledby={`lp-tab-${i}`} className={`lg:[grid-area:1/1] ${active === i ? "" : "lg:pointer-events-none lg:invisible"}`}>
               <article className="grid gap-6 py-6 md:py-8 md:grid-cols-[220px_1fr] md:gap-8 lg:grid-cols-[260px_1fr]">
                 <Link
                   href={s.classHref}
