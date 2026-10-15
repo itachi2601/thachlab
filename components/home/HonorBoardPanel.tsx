@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowUpCircle, Flame, TrendingUp, Trophy } from "lucide-react";
+import { ArrowUpCircle, Flame, TrendingUp } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import WornTitle from "@/components/rank/WornTitle";
@@ -81,7 +81,7 @@ export default function HonorBoardPanel() {
 function Podium({ g }: { g: PublicHonorGrade }) {
   // Desktop: hạng 1 đứng giữa (2 · 1 · 3); mobile: danh sách 1 · 2 · 3 theo thứ tự tự nhiên.
   const ORDER = ["sm:order-2", "sm:order-1", "sm:order-3"];
-  // "Tiến bộ nhất" đứng ngay dưới bục, ngang tầm bục: em làm ít mà làm tốt hơn trước cũng được ghi nhận (thầy chốt 15/10/2026).
+  // "Tiến bộ nhất" đứng ngay dưới bục: em làm ít mà làm tốt hơn trước cũng được ghi nhận (thầy chốt 15/10/2026).
   const improved = g.improved_acc
     ? {
         name: g.improved_acc.name,
@@ -89,22 +89,12 @@ function Podium({ g }: { g: PublicHonorGrade }) {
         detail: `Tỉ lệ làm đúng tăng ${String(g.improved_acc.gain).replace(".", ",")}% so với 2 tuần trước`,
       }
     : g.improved && { name: g.improved.name, avatar: g.improved.avatar, detail: `+${g.improved.delta} RP so với tuần trước` };
-  const notes = [
-    g.tier_ups.length > 0 && {
-      key: "tier",
-      Icon: ArrowUpCircle,
-      label: "Lên bậc tuần này",
-      who: g.tier_ups.map((t) => t.name).join(", "),
-      detail: g.tier_ups.map((t) => `${tierMeta(t.tier_code).name} ${divisionLabel(t.division)}`.trim()).filter((v, i, a) => a.indexOf(v) === i).join(" · "),
-    },
-    g.streak && {
-      key: "streak",
-      Icon: Flame,
-      label: "Chuỗi ngày dài nhất",
-      who: g.streak.name,
-      detail: `${g.streak.days} ngày học liên tiếp`,
-    },
-  ].filter(Boolean) as { key: string; Icon: typeof Flame; label: string; who: string; detail: string }[];
+  // Lên bậc: ai đứng trên bục thì gắn nhãn ngay trên thẻ (không lặp tên ở dòng dưới — N4); chỉ người ngoài bục mới ghi riêng.
+  const tierLabel = (t: { tier_code: PublicHonorGrade["tier_ups"][number]["tier_code"]; division: number | null }) =>
+    `${tierMeta(t.tier_code).name} ${divisionLabel(t.division)}`.trim();
+  const upByName = new Map(g.tier_ups.map((t) => [t.name, t]));
+  const onPodium = new Set(g.top.map((m) => m.name));
+  const upsOff = g.tier_ups.filter((t) => !onPodium.has(t.name));
 
   return (
     <>
@@ -117,18 +107,26 @@ function Podium({ g }: { g: PublicHonorGrade }) {
           {g.top.map((m, i) => {
             const first = m.pos === 1;
             const meta = tierMeta(m.tier_code, m.paragon);
+            const up = upByName.get(m.name);
             return (
               <li
                 key={`${m.name}-${i}`}
-                className={`flex items-center gap-4 rounded-2xl border bg-panel p-4 sm:flex-col sm:text-center ${ORDER[i] ?? "sm:order-4"} ${
-                  first ? "border-primary sm:pb-6 sm:pt-7" : "border-line"
+                // Hạng 1 là điểm nổi duy nhất của mục (B2): cao hơn rõ trên desktop + một sắc ấm duy nhất (token accent, M3).
+                className={`flex items-center gap-4 rounded-2xl border p-4 sm:flex-col sm:text-center ${ORDER[i] ?? "sm:order-4"} ${
+                  first ? "border-accent/60 bg-[color-mix(in_srgb,var(--color-accent)_7%,var(--color-panel))] sm:pb-8 sm:pt-10" : "border-line bg-panel"
                 }`}
               >
                 <div className="flex shrink-0 flex-col items-center gap-2">
-                  <span className={`inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-widest ${first ? "text-primary" : "text-slate-500"}`}>
+                  <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${first ? "text-ink" : "text-muted"}`}>
                     {m.pos >= 1 && m.pos <= 3 && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={`/images/honor/hang-${m.pos}.svg`} alt="" width={32} height={32} className="h-8 w-8" />
+                      <img
+                        src={`/images/honor/hang-${m.pos}.svg`}
+                        alt=""
+                        width={first ? 44 : 36}
+                        height={first ? 44 : 36}
+                        className={first ? "h-11 w-11" : "h-9 w-9"}
+                      />
                     )}
                     Hạng {m.pos}
                   </span>
@@ -137,11 +135,17 @@ function Podium({ g }: { g: PublicHonorGrade }) {
                   </RankAvatarFrame>
                 </div>
                 <div className="min-w-0 flex-1 sm:mt-2">
-                  <p className="truncate text-base font-semibold text-ink">{m.name}</p>
+                  <p className={`truncate font-semibold text-ink ${first ? "text-lg" : "text-base"}`}>{m.name}</p>
                   {m.title && <WornTitle title={m.title} className="mt-0.5 sm:justify-center" />}
-                  <p className="mt-1 text-xs text-muted">
-                    {meta.name} {m.paragon ? "" : divisionLabel(m.division)}
-                  </p>
+                  {up ? (
+                    <p className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                      <ArrowUpCircle size={13} aria-hidden /> Lên {tierLabel(up)} tuần này
+                    </p>
+                  ) : (
+                    <p className="mt-1 text-xs text-muted">
+                      {meta.name} {m.paragon ? "" : divisionLabel(m.division)}
+                    </p>
+                  )}
                   <p className="mt-1.5 font-mono text-sm text-primary">+{m.rp_week} RP tuần</p>
                 </div>
               </li>
@@ -155,35 +159,45 @@ function Podium({ g }: { g: PublicHonorGrade }) {
         </p>
       )}
 
-      {improved && (
-        <div className="mt-4 flex items-center gap-4 rounded-2xl border border-primary/50 bg-primary/5 p-4">
-          <Avatar url={improved.avatar} name={improved.name} size={56} />
-          <div className="min-w-0 flex-1">
-            <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
-              <TrendingUp size={14} /> Tiến bộ nhất tuần
-            </p>
-            <p className="mt-1 truncate text-base font-semibold text-ink">{improved.name}</p>
-            <p className="mt-0.5 text-sm text-muted">{improved.detail}</p>
-          </div>
+      {/* Ghi nhận ngoài bục: ô trung tính, không viền nhấn để không giành chú ý với hạng 1 (B2); 2 ô cạnh nhau trên desktop. */}
+      {(improved || g.streak) && (
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {improved && (
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-panel p-4">
+              <Avatar url={improved.avatar} name={improved.name} size={48} />
+              <div className="min-w-0 flex-1">
+                <p className="flex items-center gap-1.5 text-xs font-medium text-muted">
+                  <TrendingUp size={14} className="text-primary" aria-hidden /> Tiến bộ nhất tuần
+                </p>
+                <p className="mt-0.5 truncate text-base font-semibold text-ink">{improved.name}</p>
+                <p className="mt-0.5 text-sm text-muted">{improved.detail}</p>
+              </div>
+            </div>
+          )}
+          {g.streak && (
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-panel p-4">
+              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                <Flame size={22} aria-hidden />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-medium text-muted">Chuỗi ngày dài nhất</p>
+                <p className="mt-0.5 truncate text-base font-semibold text-ink">{g.streak.name}</p>
+                <p className="mt-0.5 text-sm text-muted">{g.streak.days} ngày học liên tiếp</p>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
-      {notes.length > 0 && (
-        <div className="mt-4 rounded-2xl border border-line bg-panel/60 px-4 py-2">
-          <p className="flex items-center gap-2 py-2 text-xs font-semibold uppercase tracking-wide text-muted">
-            <Trophy size={14} className="text-amber-300" /> Ghi nhận tuần
-          </p>
-          <ul className="divide-y divide-line">
-            {notes.map(({ key, Icon, label, who, detail }) => (
-              <li key={key} className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2.5 text-sm">
-                <Icon size={16} className="shrink-0 text-primary" />
-                <span className="w-full text-muted sm:w-40">{label}</span>
-                <span className="font-medium text-ink">{who}</span>
-                <span className="text-muted">{detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {upsOff.length > 0 && (
+        <ul className="mt-3 space-y-1 text-sm text-muted">
+          {upsOff.map((t) => (
+            <li key={t.name} className="flex items-center gap-2">
+              <ArrowUpCircle size={14} className="shrink-0 text-primary" aria-hidden />
+              <span className="font-medium text-ink">{t.name}</span> lên {tierLabel(t)} tuần này
+            </li>
+          ))}
+        </ul>
       )}
     </>
   );
