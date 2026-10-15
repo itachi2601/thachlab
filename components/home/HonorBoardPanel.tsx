@@ -158,10 +158,17 @@ type TierUp = PublicHonorGrade["tier_ups"][number];
 // Sân khấu vinh danh (thầy chốt 15/10/2026): GIỮ CẤU TRÚC mẫu bục trao giải (đèn rọi, 3 bục trụ, bảng tên) nhưng
 // MÀU theo token của site — tự đổi theo nền sáng/tối, một màu nhấn primary (M3, M7). Vàng/bạc/đồng chỉ ở huy chương.
 // Không chuyển động (B4). Bục trụ cao 1 > 2 > 3, hạng 1 đứng giữa ở mọi khổ; hạng 4–5 (khi hoà điểm) xuống hàng gọn bên dưới.
+// Ánh kim lấy từ token có sẵn (không thêm màu mới — M3/M7): vàng = accent, bạc = muted,
+// đồng = accent + danger pha ink (nền tối ra cam đào, nền sáng ra nâu đỏ — tách được với vàng ở cả hai nền).
+const METAL = {
+  1: "var(--color-accent)",
+  2: "var(--color-muted)",
+  3: "color-mix(in srgb, color-mix(in srgb, var(--color-accent) 50%, var(--color-danger)) 75%, var(--color-ink))",
+} as const;
 const PEDESTAL = {
-  1: { body: "h-28 sm:h-36", avatar: 64, avatarSm: 80, num: "text-4xl sm:text-5xl" },
-  2: { body: "h-[88px] sm:h-28", avatar: 48, avatarSm: 64, num: "text-3xl sm:text-4xl" },
-  3: { body: "h-[72px] sm:h-24", avatar: 48, avatarSm: 64, num: "text-3xl sm:text-4xl" },
+  1: { body: "h-32 sm:h-44", avatar: 64, avatarSm: 84, num: "text-5xl sm:text-6xl" },
+  2: { body: "h-24 sm:h-36", avatar: 52, avatarSm: 68, num: "text-4xl sm:text-5xl" },
+  3: { body: "h-[84px] sm:h-32", avatar: 52, avatarSm: 68, num: "text-4xl sm:text-5xl" },
 } as const;
 
 function Stage({
@@ -182,7 +189,7 @@ function Stage({
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_0%,color-mix(in_srgb,var(--color-primary)_16%,transparent),transparent_70%),linear-gradient(115deg,transparent_38%,color-mix(in_srgb,var(--color-primary)_5%,transparent)_45%,transparent_52%),linear-gradient(65deg,transparent_48%,color-mix(in_srgb,var(--color-primary)_4%,transparent)_55%,transparent_62%)]"
       />
-      <ul className="relative grid grid-cols-3 items-end gap-2 sm:gap-6">
+      <ul className="relative mx-auto grid max-w-[720px] grid-cols-3 items-end gap-2 sm:gap-3">
         {podium.map((m) => (
           <PodiumSpot key={`${m.name}-${m.pos}`} m={m} up={upByName.get(m.name)} tierLabel={tierLabel} />
         ))}
@@ -207,23 +214,16 @@ function Stage({
 }
 
 function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; up?: TierUp; tierLabel: (t: TierUp) => string }) {
-  const p = PEDESTAL[(m.pos >= 1 && m.pos <= 3 ? m.pos : 3) as 1 | 2 | 3];
+  const key = (m.pos >= 1 && m.pos <= 3 ? m.pos : 3) as 1 | 2 | 3;
+  const p = PEDESTAL[key];
+  const metal = METAL[key];
   const first = m.pos === 1;
-  // Bỏ huy chương trên đầu + dòng tên bậc trên bục (N7, N4): số hạng in chìm trên thân bục đã nói hạng; bậc là tích luỹ
-  // cả mùa, đặt cạnh RP tuần dễ gây "hạng 1 mà bậc thấp hơn hạng 2". Chỉ giữ nhãn ↑ khi em lên bậc trong tuần.
+  // Bỏ huy chương trên đầu + dòng tên bậc trên bục (N7, N4): số hạng trên thân bục đã nói hạng; bậc là tích luỹ cả mùa,
+  // đặt cạnh RP tuần dễ gây "hạng 1 mà bậc thấp hơn hạng 2". Chỉ giữ nhãn ↑ khi em lên bậc trong tuần.
+  // Thứ tự: tên (+↑) → ảnh đứng đè 1/3 dưới lên miệng bục → số hạng ánh kim + RP trên thân bục (B3: một khối liền).
   return (
-    <li className="flex min-w-0 flex-col items-center text-center">
-      <span className="sm:hidden">
-        <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatar}>
-          <Avatar url={m.avatar} name={m.name} size={p.avatar} />
-        </RankAvatarFrame>
-      </span>
-      <span className="hidden sm:block">
-        <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatarSm}>
-          <Avatar url={m.avatar} name={m.name} size={p.avatarSm} />
-        </RankAvatarFrame>
-      </span>
-      <p className={`mt-2 w-full truncate px-1 font-semibold text-ink ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
+    <li className="flex min-w-0 flex-col items-center text-center" style={{ ["--metal" as string]: metal }}>
+      <p className={`w-full truncate px-1 font-semibold text-ink ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
       {m.title && (
         <span className="hidden max-w-full sm:block">
           <WornTitle title={m.title} className="mt-0.5 justify-center" />
@@ -236,31 +236,42 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
         </p>
       )}
 
-      {/* Bục hình trụ đứng ngay dưới chân cụm ảnh–tên (không khoảng hở — B3). Mặt trên elip: hạng 1 viền vàng (token accent),
-          hạng 2–3 viền primary. Thân đổ bóng hai mép theo nền (bg tối hơn panel ở cả hai giao diện) + bóng tiếp đất. */}
       <div className="relative mt-2 w-full">
+        {/* Bóng tiếp đất — đặt trước để thân bục vẽ đè lên, không che chữ RP. */}
+        <div aria-hidden className="absolute -bottom-2 left-1/2 h-4 w-[115%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),transparent_70%)]" />
+        {/* Ảnh đứng trên bục: đáy ảnh đè xuống mặt elip (z-20 trên mặt bục). */}
+        <div className={`relative z-20 flex justify-center ${first ? "-mb-7 sm:-mb-9" : "-mb-6 sm:-mb-7"}`}>
+          <span className="sm:hidden">
+            <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatar}>
+              <Avatar url={m.avatar} name={m.name} size={p.avatar} />
+            </RankAvatarFrame>
+          </span>
+          <span className="hidden sm:block">
+            <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatarSm}>
+              <Avatar url={m.avatar} name={m.name} size={p.avatarSm} />
+            </RankAvatarFrame>
+          </span>
+        </div>
+        {/* Mặt trên elip: viền ánh kim theo hạng; hạng 1 thêm đèn hắt từ tâm (radial) — điểm nhấn duy nhất của sân khấu (B2). */}
         <div
-          className={`relative z-10 mx-auto h-4 w-full rounded-[50%] bg-[linear-gradient(180deg,color-mix(in_srgb,white_10%,var(--color-panel)),color-mix(in_srgb,black_6%,var(--color-panel)))] sm:h-6 ${
+          className={`relative z-10 mx-auto h-7 w-full rounded-[50%] border-2 border-[var(--metal)] sm:h-10 ${
             first
-              ? "border-2 border-accent shadow-[0_0_14px_color-mix(in_srgb,var(--color-accent)_35%,transparent)]"
-              : "border border-primary/40 shadow-[0_0_10px_color-mix(in_srgb,var(--color-primary)_20%,transparent)]"
+              ? "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-accent)_45%,var(--color-panel))_0%,color-mix(in_srgb,var(--color-accent)_12%,var(--color-panel))_60%,var(--color-panel)_100%)] shadow-[0_0_22px_color-mix(in_srgb,var(--color-accent)_40%,transparent)]"
+              : "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--metal)_18%,var(--color-panel)),color-mix(in_srgb,black_4%,var(--color-panel)))] shadow-[0_0_10px_color-mix(in_srgb,var(--metal)_25%,transparent)]"
           }`}
         />
         <div
-          className={`relative -mt-2 flex w-full flex-col items-center justify-start rounded-b-[50%_14px] border-x border-b border-line bg-[linear-gradient(90deg,color-mix(in_srgb,black_8%,var(--color-bg))_0%,var(--color-panel)_42%,color-mix(in_srgb,white_6%,var(--color-panel))_55%,color-mix(in_srgb,black_8%,var(--color-bg))_100%)] pt-3.5 sm:-mt-3 sm:pt-5 ${p.body}`}
+          className={`relative -mt-3.5 flex w-full flex-col items-center justify-start rounded-b-[50%_14px] border-x border-b border-line bg-[linear-gradient(90deg,color-mix(in_srgb,black_8%,var(--color-bg))_0%,color-mix(in_srgb,white_4%,var(--color-panel))_40%,color-mix(in_srgb,white_12%,var(--color-panel))_55%,color-mix(in_srgb,black_8%,var(--color-bg))_100%)] pt-5 sm:-mt-5 sm:pt-6 ${p.body}`}
         >
-          {/* Số hạng in chìm: chữ cùng màu thân bục đậm hơn + vệt sáng 1px phía dưới; không nền, không trông như nút (M3). */}
+          {/* Số hạng đậm, ánh kim theo hạng (gradient chữ từ token); RP chữ ink cùng hệ, không màu nhấn neon. */}
           <span
             aria-label={`Hạng ${m.pos}`}
-            className={`font-display font-extrabold leading-none text-[color-mix(in_srgb,var(--color-ink)_28%,transparent)] [text-shadow:0_1px_0_color-mix(in_srgb,white_35%,transparent)] ${p.num}`}
+            className={`bg-[linear-gradient(180deg,color-mix(in_srgb,var(--metal)_55%,white),var(--metal)_55%,color-mix(in_srgb,var(--metal)_75%,black))] bg-clip-text font-display font-black leading-none text-transparent ${p.num}`}
           >
             {m.pos}
           </span>
-          <span className={`mt-1 font-mono font-semibold text-[color-mix(in_srgb,var(--color-primary)_75%,var(--color-ink))] ${first ? "text-sm sm:text-base" : "text-xs sm:text-sm"}`}>
-            +{m.rp_week} RP
-          </span>
+          <span className={`mt-1 font-mono font-semibold text-ink ${first ? "text-sm sm:text-base" : "text-xs sm:text-sm"}`}>+{m.rp_week} RP</span>
         </div>
-        <div aria-hidden className="absolute -bottom-2 left-1/2 h-4 w-[115%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),transparent_70%)]" />
       </div>
     </li>
   );
