@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -81,6 +81,15 @@ export default function TeacherThptDashboard() {
   const [analysisView, setAnalysisView] = useState<"exam" | "mastery">("exam");
   const [resultsView, setResultsView] = useState<"lessons" | "scores">("lessons");
   const [alertsView, setAlertsView] = useState<"alerts" | "early" | "tutoring">("alerts");
+  const preferredClassId = useRef<number | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tab = params.get("tab");
+    if (tab && TABS.some((item) => item.id === tab)) setActiveTab(tab as DashboardTab);
+    const lop = Number(params.get("lop"));
+    if (Number.isInteger(lop) && lop > 0) preferredClassId.current = lop;
+  }, []);
 
   useEffect(() => {
     if (!profile) return;
@@ -90,7 +99,12 @@ export default function TeacherThptDashboard() {
       .then((rows) => {
         if (cancelled) return;
         setClasses(rows);
-        setSelectedClassId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));
+        setSelectedClassId((current) => {
+          const preferred = preferredClassId.current;
+          if (preferred && rows.some((item) => item.id === preferred)) return preferred;
+          if (current != null && rows.some((item) => item.id === current)) return current;
+          return rows[0]?.id ?? null;
+        });
         setLoadError("");
       })
       .catch((error: unknown) => {

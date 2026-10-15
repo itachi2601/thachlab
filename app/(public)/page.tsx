@@ -11,6 +11,7 @@ import HonorBoard from "@/components/home/HonorBoard";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import { getPhysicsAroundPosts } from "@/lib/blog";
 import { rotatePhysicsAround, vietnamDayIndex } from "@/lib/physics-around";
+import AdminHomeToday from "@/components/home/AdminHomeToday";
 
 const PINNED_AROUND_SLUG = "vi-sao-van-dong-vien-xoay-nhanh-hon-khi-thu-tay";
 
@@ -28,6 +29,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <AdminHomeToday />
         <PhysicsSimulationHero />
         {ribbonPosts.length > 0 && (
           <div className="bg-bg px-6 pt-4 lg:px-12">

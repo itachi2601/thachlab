@@ -31,6 +31,13 @@ export default function StudentsAdmin() {
   const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("tab");
+    if (requested === "pending" || requested === "profile" || requested === "roster" || requested === "unassigned") {
+      setTab(requested);
+    }
+  }, []);
+
+  useEffect(() => {
     fetchClasses().then((rows) => {
       setClasses(rows);
       setSelectedClassId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));
