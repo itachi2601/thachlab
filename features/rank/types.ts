@@ -442,7 +442,7 @@ export interface PublicHonorGrade {
   top_more?: number;
   improved: { name: string; avatar: string | null; delta: number; rp_week: number } | null;
   /** Tiến bộ theo tỉ lệ đúng so với 2 tuần trước (migration 20260929120000; RPC cũ không trả). Ưu tiên hơn `improved`. */
-  improved_acc?: { name: string; avatar: string | null; gain: number; acc: number } | null;
+  improved_acc?: { name: string; avatar: string | null; gain: number } | null;
   tier_ups: { name: string; tier_code: TierCode; division: number | null }[];
   streak: { name: string; days: number } | null;
 }
@@ -450,6 +450,8 @@ export interface PublicHonorGrade {
 export interface PublicHonorBoard {
   week_start: string;
   grades: PublicHonorGrade[];
+  /** Chỉ có khi người xem là HS đang đăng nhập trong mùa đang chạy (migration 20261015120000). Chỉ em đó thấy. */
+  me?: { rp_week: number; rp_prev: number } | null;
 }
 
 // ---------- Thi thăng hạng thích ứng (rank_gate_*) ----------

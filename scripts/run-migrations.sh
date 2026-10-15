@@ -30,6 +30,7 @@ FILES=(
   "supabase/migrations/20261014170000_teacher_lesson_notes.sql|Bảng teacher_lesson_notes: ghi chú giáo viên lúc dạy (RLS chỉ người viết, is_staff), chỉ thêm bảng mới|lúc nào cũng được"
   "supabase/migrations/20261014150000_giao_em_cho_tro_giang.sql|Nút Giao trợ giảng: bảng ta_student_handoffs + 4 hàm ta_handoff_* + trigger tự gán mục phụ đạo mới cho trợ giảng phụ trách|chạy lúc nào cũng được (chỉ thêm bảng + hàm)"
 )
+# ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
 # ĐÃ CHẠY 12/10/2026 (09:51): 20261012100000_hsg9_dot2_muc_noi_dung

@@ -682,7 +682,7 @@ export async function fetchTierLadder(seasonId: number): Promise<TierLadderStep[
 // ============================================================
 // Trang chủ công khai — Vinh danh tuần theo khối (RPC anon, migration 20260928160000)
 // ============================================================
-const HONOR_CACHE_KEY = "thachlab.honor.v1";
+const HONOR_CACHE_KEY = "thachlab.honor.v2";
 
 /**
  * Một RPC duy nhất cho cả 3 khối; kết quả cache sessionStorage 1 giờ để học sinh quay lại
@@ -690,20 +690,25 @@ const HONOR_CACHE_KEY = "thachlab.honor.v1";
  * RPC chưa tồn tại / lỗi → trả null, mục trên trang chủ tự ẩn.
  */
 export async function fetchPublicHonor(): Promise<PublicHonorBoard | null> {
+  const sb = getSupabase();
+  // RPC trả thêm khối 'me' theo người gọi → cache theo tài khoản; HS đăng nhập cache ngắn để làm bài xong quay lại thấy RP mới.
+  const uid = (await sb.auth.getSession()).data.session?.user.id ?? "anon";
+  const key = `${HONOR_CACHE_KEY}.${uid}`;
+  const ttl = uid === "anon" ? 60 * 60 * 1000 : 5 * 60 * 1000;
   try {
-    const raw = sessionStorage.getItem(HONOR_CACHE_KEY);
+    const raw = sessionStorage.getItem(key);
     if (raw) {
       const cached = JSON.parse(raw) as { at: number; data: PublicHonorBoard };
-      if (Date.now() - cached.at < 60 * 60 * 1000) return cached.data;
+      if (Date.now() - cached.at < ttl) return cached.data;
     }
   } catch {
     /* sessionStorage bị chặn (private mode) — bỏ qua cache */
   }
-  const { data, error } = await getSupabase().rpc("rank_public_honor");
+  const { data, error } = await sb.rpc("rank_public_honor");
   if (error || !data) return null;
   const board = data as PublicHonorBoard;
   try {
-    sessionStorage.setItem(HONOR_CACHE_KEY, JSON.stringify({ at: Date.now(), data: board }));
+    sessionStorage.setItem(key, JSON.stringify({ at: Date.now(), data: board }));
   } catch {
     /* bỏ qua */
   }
@@ -724,7 +729,8 @@ export async function setMyHonorVisibility(value: HonorVisibility): Promise<void
   const { error } = await getSupabase().rpc("rank_set_honor_visibility", { p_value: value });
   if (error) throw error;
   try {
-    sessionStorage.removeItem(HONOR_CACHE_KEY);
+    // Đổi cách hiện tên ảnh hưởng bảng của mọi tài khoản đã cache trong tab này → xoá hết bản cache vinh danh.
+    for (const k of Object.keys(sessionStorage)) if (k.startsWith(HONOR_CACHE_KEY)) sessionStorage.removeItem(k);
   } catch {
     /* bỏ qua */
   }

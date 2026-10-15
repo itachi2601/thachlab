@@ -672,3 +672,4 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - Đã chạy 13/10 00:44: `20261013150000_chapter_mastery_radar` (RPC `get_my_chapter_mastery_pct`). UI mạng nhện giao Gemini/Cursor theo `docs/PROMPT-GEMINI-RADAR-NANG-LUC-2026-10-13.md`; Claude `kiem-code` soát trước khi merge.
 - 25 bài lý thuyết L10 (lesson 46–48, 58–79) đã ghi DB 10/10, **chưa deploy**. Main local có thể ahead origin — xem trước khi push.
 - Nhánh `perf-tach-js` (3 commit, JS theo vai) chưa vào main; chưa kiểm bằng đăng nhập thật.
+- Đã chạy 15/10 19:14: `20261015120000_vinh_danh_hoa_diem_xoay_vong` (rank_public_honor: hoà điểm xoay theo md5(user_id||tuần), bỏ `acc` khỏi RPC công khai, thêm khối `me` cho dòng "Tuần của em"). Đã kiểm: anon không có `me`/`acc`, HS giả lập nhận {rp_week, rp_prev}.

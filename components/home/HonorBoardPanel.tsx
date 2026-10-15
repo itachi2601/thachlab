@@ -39,7 +39,7 @@ export default function HonorBoardPanel() {
               Các bạn học chăm nhất tuần này
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Xếp theo RP kiếm được trong tuần, làm mới sáng Thứ Hai — ai chăm tuần này đều lên bục được.
+              Xếp theo RP kiếm được trong tuần, làm mới sáng Thứ Hai — tuần nào cũng là một cuộc đua mới.
             </p>
           </div>
           <div className="flex gap-2" role="tablist" aria-label="Chọn khối">
@@ -64,6 +64,8 @@ export default function HonorBoardPanel() {
 
         <Podium key={active.grade} g={active} />
 
+        {board.me && <MyWeek me={board.me} />}
+
         <p className="mt-8 text-xs text-slate-500">
           Tên hiện rút gọn theo lựa chọn của từng bạn. Học sinh đổi cách hiện (đầy đủ, rút gọn hoặc ẩn) trong{" "}
           <Link href="/tai-khoan/" className="text-primary underline-offset-4 hover:underline">
@@ -79,22 +81,15 @@ export default function HonorBoardPanel() {
 function Podium({ g }: { g: PublicHonorGrade }) {
   // Desktop: hạng 1 đứng giữa (2 · 1 · 3); mobile: danh sách 1 · 2 · 3 theo thứ tự tự nhiên.
   const ORDER = ["sm:order-2", "sm:order-1", "sm:order-3"];
+  // "Tiến bộ nhất" đứng ngay dưới bục, ngang tầm bục: em làm ít mà làm tốt hơn trước cũng được ghi nhận (thầy chốt 15/10/2026).
+  const improved = g.improved_acc
+    ? {
+        name: g.improved_acc.name,
+        avatar: g.improved_acc.avatar,
+        detail: `Tỉ lệ làm đúng tăng ${String(g.improved_acc.gain).replace(".", ",")}% so với 2 tuần trước`,
+      }
+    : g.improved && { name: g.improved.name, avatar: g.improved.avatar, detail: `+${g.improved.delta} RP so với tuần trước` };
   const notes = [
-    g.improved_acc
-      ? {
-          key: "improved",
-          Icon: TrendingUp,
-          label: "Tiến bộ nhất",
-          who: g.improved_acc.name,
-          detail: `Tỉ lệ đúng +${String(g.improved_acc.gain).replace(".", ",")} điểm % so với 2 tuần trước (đạt ${Math.round(g.improved_acc.acc)}%)`,
-        }
-      : g.improved && {
-          key: "improved",
-          Icon: TrendingUp,
-          label: "Tiến bộ nhất",
-          who: g.improved.name,
-          detail: `+${g.improved.delta} RP so với tuần trước`,
-        },
     g.tier_ups.length > 0 && {
       key: "tier",
       Icon: ArrowUpCircle,
@@ -156,12 +151,25 @@ function Podium({ g }: { g: PublicHonorGrade }) {
       )}
       {(g.top_more ?? 0) > 0 && (
         <p className="mt-3 text-xs text-muted">
-          và {g.top_more} bạn khác cùng hạng với các bạn trên — bục chỉ hiện được 5 bạn, xếp theo tên.
+          và {g.top_more} bạn khác bằng điểm các bạn trên — bục chỉ đủ chỗ 5 bạn, mỗi tuần đổi thứ tự ngẫu nhiên.
         </p>
       )}
 
+      {improved && (
+        <div className="mt-4 flex items-center gap-4 rounded-2xl border border-primary/50 bg-primary/5 p-4">
+          <Avatar url={improved.avatar} name={improved.name} size={56} />
+          <div className="min-w-0 flex-1">
+            <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
+              <TrendingUp size={14} /> Tiến bộ nhất tuần
+            </p>
+            <p className="mt-1 truncate text-base font-semibold text-ink">{improved.name}</p>
+            <p className="mt-0.5 text-sm text-muted">{improved.detail}</p>
+          </div>
+        </div>
+      )}
+
       {notes.length > 0 && (
-        <div className="mt-6 rounded-2xl border border-line bg-panel/60 px-4 py-2">
+        <div className="mt-4 rounded-2xl border border-line bg-panel/60 px-4 py-2">
           <p className="flex items-center gap-2 py-2 text-xs font-semibold uppercase tracking-wide text-muted">
             <Trophy size={14} className="text-amber-300" /> Ghi nhận tuần
           </p>
@@ -178,6 +186,29 @@ function Podium({ g }: { g: PublicHonorGrade }) {
         </div>
       )}
     </>
+  );
+}
+
+/** Chỉ em đang đăng nhập thấy: so RP tuần này với tuần trước của CHÍNH em, không hiện hạng (SDT — so với mình, không so với bạn). */
+function MyWeek({ me }: { me: { rp_week: number; rp_prev: number } }) {
+  const diff = me.rp_week - me.rp_prev;
+  const msg =
+    me.rp_week === 0
+      ? "Em chưa có RP tuần này. Một bài luyện tập là bắt đầu."
+      : diff > 0
+        ? `Nhiều hơn tuần trước ${diff} RP.`
+        : diff === 0
+          ? "Bằng tuần trước."
+          : `Còn ${-diff} RP nữa là bằng tuần trước.`;
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 rounded-2xl border border-line bg-panel px-4 py-3 text-sm">
+      <span className="font-semibold text-ink">Tuần của em</span>
+      <span className="font-mono text-primary">+{me.rp_week} RP</span>
+      <span className="text-muted">{msg}</span>
+      <Link href="/lop-hoc/xep-hang/" className="ml-auto text-primary underline-offset-4 hover:underline">
+        Xem mục tiêu tuần
+      </Link>
+    </div>
   );
 }
 
