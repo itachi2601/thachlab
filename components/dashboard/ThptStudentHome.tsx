@@ -45,6 +45,7 @@ import {
   fetchMyOpenExitWindows,
   fetchMyNeeds,
   fetchMyRegistrations,
+  fetchMyRegistrationTopics,
   fetchMyWaitlist,
   joinWaitlist,
   leaveWaitlist,
@@ -131,6 +132,7 @@ export default function ThptStudentHome({
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
+  const [myRegTopics, setMyRegTopics] = useState<Map<number, string[]>>(new Map());
   const [myWaitlist, setMyWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [pickerSlot, setPickerSlot] = useState<TutoringSlot | null>(null);
@@ -196,6 +198,7 @@ export default function ThptStudentHome({
     fetchMyOpenExitWindows().then(setOpenWindows).catch(() => setOpenWindows([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
     fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
+    fetchMyRegistrationTopics(studentId).then(setMyRegTopics).catch(() => setMyRegTopics(new Map()));
     fetchMyWaitlist(studentId)
       .then((rows) => setMyWaitlist(new Map(rows.map((r) => [r.slotId, r]))))
       .catch(() => setMyWaitlist(new Map()));
@@ -467,6 +470,7 @@ export default function ThptStudentHome({
           nowMs={nowMs}
           lastExitAttempt={lastExitAttempt}
           myRegistrations={myRegistrations}
+          myRegistrationTopics={myRegTopics}
           myWaitlist={myWaitlist}
           busySlotId={busySlotId}
           onQuiz={(need, w) => {

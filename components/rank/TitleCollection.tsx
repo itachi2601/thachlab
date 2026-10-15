@@ -74,8 +74,10 @@ export default function TitleCollection({
   onWear?: (code: string | null, level: TitleLevel | null) => void;
 }) {
   const [showHidden, setShowHidden] = useState(false);
-  const hiddenCount = titles.filter((t) => !t.visible).length;
-  const shown = titles.filter((t) => t.visible || showHidden);
+  // Danh hiệu đã nhận luôn hiện, kể cả ngoài chương trình lớp em (em đã có công thì phải thấy và đeo được).
+  const isHidden = (t: RankTitle) => !t.visible && !t.level;
+  const hiddenCount = titles.filter(isHidden).length;
+  const shown = titles.filter((t) => !isHidden(t) || showHidden);
 
   return (
     <div className="space-y-8">
@@ -146,7 +148,7 @@ export default function TitleCollection({
                             })}
                           </div>
                         )}
-                        <p className="mt-2 text-xs text-muted">{nextRequirement(t)}</p>
+                        {nextRequirement(t) !== t.description && <p className="mt-2 text-xs text-muted">{nextRequirement(t)}</p>}
                         {levelRank(t.level) < 3 && (t.kind !== "achievement") && (
                           <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-2">
                             <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />

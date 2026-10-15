@@ -19,6 +19,7 @@ if (process.argv.includes("--xoa")) {
   await step("xoá exit attempts", sb.from("tutoring_exit_attempts").delete().in("student_id", ids).select("id"));
   await step("xoá registrations", sb.from("tutoring_registrations").delete().in("student_id", ids).select("id"));
   await step("xoá needs", sb.from("tutoring_needs").delete().in("student_id", ids).select("id"));
+  await step("gỡ danh hiệu đang đeo", sb.from("profiles").update({ display_title_code: null, display_title_level: null }).in("id", ids).select("id"));
   await step("xoá awards", sb.from("rank_title_awards").delete().in("student_id", ids).select("id"));
   process.exit(0);
 }

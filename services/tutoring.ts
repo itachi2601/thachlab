@@ -435,6 +435,24 @@ export async function fetchMyRegistrations(studentId: string): Promise<number[]>
   return (data ?? []).map((row) => row.slot_id as number);
 }
 
+/** Tên các chủ đề em đã chọn khi đăng ký từng buổi (slotId → tên chủ đề) — hiện dưới buổi đã đăng ký. */
+export async function fetchMyRegistrationTopics(studentId: string): Promise<Map<number, string[]>> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_registrations")
+    .select("slot_id, topic_ids")
+    .eq("student_id", studentId);
+  if (error) throw error;
+  const rows = (data ?? []) as { slot_id: number; topic_ids: number[] | null }[];
+  const ids = [...new Set(rows.flatMap((r) => r.topic_ids ?? []))];
+  const names = new Map<number, string>();
+  if (ids.length > 0) {
+    const { data: topics, error: topicError } = await getSupabase().from("question_topics").select("id, name").in("id", ids);
+    if (topicError) throw topicError;
+    for (const t of topics ?? []) names.set(t.id as number, t.name as string);
+  }
+  return new Map(rows.map((r) => [r.slot_id, (r.topic_ids ?? []).map((id) => names.get(id)).filter((n): n is string => !!n)]));
+}
+
 export async function registerForSlot(slotId: number, studentId: string, topicIds: number[]): Promise<void> {
   const { error } = await getSupabase()
     .from("tutoring_registrations")

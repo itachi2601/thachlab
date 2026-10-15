@@ -83,13 +83,16 @@ export default function WelcomeBackDialog({
   if (!open || !daily || !primary) return null;
 
   const first = name?.trim().split(/\s+/).pop();
+  // Em mới vào (chưa có RP, chưa ngày nào giữ chuỗi) thì không "quay lại".
+  const isNew = (rank?.rp ?? 0) === 0 && !(days ?? []).some((d) => d.state !== "none");
+  const title = isNew ? (first ? `Chào mừng ${first} đến ThachLab` : "Chào mừng em đến ThachLab") : first ? `Chào mừng ${first} quay lại` : "Chào mừng em quay lại";
   const next = rank?.next;
   const freezeLeft = Math.max(0, (daily.freeze_per_week ?? 0) - (daily.freeze_used_week ?? 0));
   const ctaClass =
     "flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-white hover:bg-primary-dark";
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Chào mừng em quay lại">
+    <div className="fixed inset-0 z-[60] flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label={title}>
       <button type="button" className="absolute inset-0 bg-black/60" aria-label="Đóng" onClick={close} />
       <div className="relative w-full max-w-md rounded-t-3xl border border-line bg-panel p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:rounded-3xl">
         <button
@@ -100,7 +103,7 @@ export default function WelcomeBackDialog({
         >
           <X size={18} />
         </button>
-        <h2 className="pr-10 font-display text-xl font-bold text-ink">{first ? `Chào mừng ${first} quay lại` : "Chào mừng em quay lại"}</h2>
+        <h2 className="pr-10 font-display text-xl font-bold text-ink">{title}</h2>
 
         <div className="mt-4 space-y-3">
           <p className="flex items-center gap-2 text-base text-ink">

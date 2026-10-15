@@ -50,6 +50,7 @@ export default function TutoringSection({
   nowMs,
   lastExitAttempt,
   myRegistrations,
+  myRegistrationTopics,
   myWaitlist,
   busySlotId,
   onQuiz,
@@ -63,6 +64,8 @@ export default function TutoringSection({
   nowMs: number;
   lastExitAttempt: Map<number, string>;
   myRegistrations: Set<number>;
+  /** slotId → tên chủ đề em đã chọn khi đăng ký. */
+  myRegistrationTopics?: Map<number, string[]>;
   myWaitlist: Map<number, WaitlistPosition>;
   busySlotId: number | null;
   onQuiz: (need: TutoringNeed, window?: ExitWindow) => void;
@@ -173,6 +176,9 @@ export default function TutoringSection({
                       </span>
                     </div>
                     {slot.note && <p className="mt-1 text-[13px] text-muted">{slot.note}</p>}
+                    {registered && (myRegistrationTopics?.get(slot.id)?.length ?? 0) > 0 && (
+                      <p className="mt-1 text-[13px] text-ink">Em đã chọn: {myRegistrationTopics!.get(slot.id)!.join(", ")}</p>
+                    )}
                     {waiting && (
                       <p className="mt-1 text-[13px] text-warn">
                         Em đang ở hàng chờ: thứ {waiting.position}/{waiting.total}. Có chỗ trống em sẽ được xếp vào tự động.

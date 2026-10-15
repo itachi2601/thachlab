@@ -19,13 +19,16 @@ import {
 const IDLE_MS = 20_000;
 const PING_EVERY_MS = 8_000;
 
+const isConfGroup = (name: string) => /-conf$/i.test(name);
+
 /** Tên các nhóm radio (mỗi nhóm = một câu tự kiểm tra) trong HTML bài lý thuyết. */
 function quizGroupNames(html: string): string[] {
   const names = new Set<string>();
   for (const tag of html.match(/<input\b[^>]*>/gi) ?? []) {
     if (!/\btype=["']?radio/i.test(tag)) continue;
     const name = tag.match(/\bname=["']([^"']+)["']/i)?.[1];
-    if (name) names.add(name);
+    // Nhóm "-conf" là thang mức tự tin sau mỗi câu, không phải câu hỏi: không tính vào tổng.
+    if (name && !isConfGroup(name)) names.add(name);
   }
   return [...names];
 }
@@ -225,7 +228,7 @@ export default function TheoryReviewStep({
     if (phase !== "viewing" || !box) return;
     const onChange = (e: Event) => {
       const t = e.target;
-      if (!(t instanceof HTMLInputElement) || t.type !== "radio" || !t.name) return;
+      if (!(t instanceof HTMLInputElement) || t.type !== "radio" || !t.name || isConfGroup(t.name)) return;
       if (!answered.current.has(t.name)) {
         answered.current.add(t.name);
         setAnsweredCount(answered.current.size);
@@ -278,7 +281,7 @@ export default function TheoryReviewStep({
       <ul className="space-y-2 rounded-xl border border-line bg-surface-2 p-3" aria-live="polite">
         <Row done={secNow >= secTotal} label="Đọc hết các mốc" value={`${secNow}/${secTotal}`} />
         {quizTotal > 0 && (
-          <Row done={quizNow >= quizNeed} label="Trả lời câu tự kiểm tra" value={`${quizNow}/${quizNeed} câu`} />
+          <Row done={quizNow >= quizNeed} label="Trả lời câu tự kiểm tra" value={`${Math.min(quizNow, quizNeed)}/${quizNeed} câu`} />
         )}
       </ul>
 
