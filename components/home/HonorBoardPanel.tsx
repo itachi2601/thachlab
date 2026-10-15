@@ -155,10 +155,9 @@ function Podium({ g }: { g: PublicHonorGrade }) {
 
 type TierUp = PublicHonorGrade["tier_ups"][number];
 
-// Sân khấu vinh danh đen–vàng (thầy chốt 15/10/2026, theo mẫu bục trao giải): cố ý giữ nền tối ở CẢ hai giao diện
-// như một khung trưng bày (M5 – khung tối có chủ đích, đệm đều), nên màu chữ cố định ở đây thay vì token theme.
-// Chữ chính #F1F5F9 trên #0A0A0D (không trắng tinh trên đen tinh — M2); vàng #E9C46A ~11:1. Không chuyển động (B4).
-// Ba bục hình trụ cao 1 > 2 > 3, hạng 1 đứng giữa ở mọi khổ màn hình; hạng 4–5 (khi hoà điểm) xuống hàng gọn bên dưới.
+// Sân khấu vinh danh (thầy chốt 15/10/2026): GIỮ CẤU TRÚC mẫu bục trao giải (đèn rọi, 3 bục trụ, bảng tên) nhưng
+// MÀU theo token của site — tự đổi theo nền sáng/tối, một màu nhấn primary (M3, M7). Vàng/bạc/đồng chỉ ở huy chương.
+// Không chuyển động (B4). Bục trụ cao 1 > 2 > 3, hạng 1 đứng giữa ở mọi khổ; hạng 4–5 (khi hoà điểm) xuống hàng gọn bên dưới.
 const PEDESTAL = {
   1: { body: "h-20 sm:h-28", avatar: 64, avatarSm: 80, medal: "h-9 w-9 sm:h-11 sm:w-11" },
   2: { body: "h-12 sm:h-[72px]", avatar: 48, avatarSm: 64, medal: "h-7 w-7 sm:h-9 sm:w-9" },
@@ -177,11 +176,11 @@ function Stage({
   const podium = [top[1], top[0], top[2]].filter(Boolean);
   const rest = top.slice(3);
   return (
-    <div className="relative mt-10 overflow-hidden rounded-3xl border border-[#E9C46A]/25 bg-[#0A0A0D] px-2 pb-6 pt-10 sm:px-10 sm:pb-10 sm:pt-14">
+    <div className="relative mt-10 overflow-hidden rounded-3xl border border-line bg-panel px-2 pb-6 pt-10 sm:px-10 sm:pb-10 sm:pt-14">
       {/* Đèn rọi từ trên xuống + vệt sáng chéo mờ: chỉ là nền, aria-hidden. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_0%,rgba(233,196,106,0.28),transparent_70%),linear-gradient(115deg,transparent_38%,rgba(233,196,106,0.07)_45%,transparent_52%),linear-gradient(65deg,transparent_48%,rgba(233,196,106,0.05)_55%,transparent_62%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_0%,color-mix(in_srgb,var(--color-primary)_16%,transparent),transparent_70%),linear-gradient(115deg,transparent_38%,color-mix(in_srgb,var(--color-primary)_5%,transparent)_45%,transparent_52%),linear-gradient(65deg,transparent_48%,color-mix(in_srgb,var(--color-primary)_4%,transparent)_55%,transparent_62%)]"
       />
       <ul className="relative grid grid-cols-3 items-end gap-2 sm:gap-6">
         {podium.map((m) => (
@@ -189,16 +188,16 @@ function Stage({
         ))}
       </ul>
       {/* Mặt sàn sân khấu */}
-      <div aria-hidden className="relative mx-auto -mt-3 h-6 w-[96%] rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(233,196,106,0.18),transparent_70%)]" />
+      <div aria-hidden className="relative mx-auto -mt-3 h-6 w-[96%] rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-primary)_14%,transparent),transparent_70%)]" />
 
       {rest.length > 0 && (
-        <ul className="relative mt-4 divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/[0.03]">
+        <ul className="relative mt-4 divide-y divide-line rounded-2xl border border-line bg-surface-2">
           {rest.map((m) => (
             <li key={`${m.name}-${m.pos}`} className="flex items-center gap-3 px-4 py-2.5 text-sm">
-              <span className="w-14 shrink-0 text-[#CBD5E1]">Hạng {m.pos}</span>
+              <span className="w-14 shrink-0 text-muted">Hạng {m.pos}</span>
               <Avatar url={m.avatar} name={m.name} size={32} />
-              <span className="min-w-0 flex-1 truncate font-medium text-[#F1F5F9]">{m.name}</span>
-              <span className="font-mono text-[#E9C46A]">+{m.rp_week} RP</span>
+              <span className="min-w-0 flex-1 truncate font-medium text-ink">{m.name}</span>
+              <span className="font-mono text-primary">+{m.rp_week} RP</span>
             </li>
           ))}
         </ul>
@@ -225,15 +224,15 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
           <Avatar url={m.avatar} name={m.name} size={p.avatarSm} />
         </RankAvatarFrame>
       </span>
-      <p className={`mt-2 w-full truncate px-1 font-semibold text-[#F1F5F9] ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
+      <p className={`mt-2 w-full truncate px-1 font-semibold text-ink ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
       {m.title && (
         <span className="hidden max-w-full sm:block">
           <WornTitle title={m.title} className="mt-0.5 justify-center" />
         </span>
       )}
-      <p className="mt-0.5 w-full truncate px-1 text-[11px] text-[#CBD5E1] sm:text-xs">
+      <p className="mt-0.5 w-full truncate px-1 text-[11px] text-muted sm:text-xs">
         {up ? (
-          <span className="inline-flex items-center gap-1 text-[#E9C46A]">
+          <span className="inline-flex items-center gap-1 text-primary">
             <ArrowUpCircle size={12} aria-hidden /> <span className="sm:hidden">{tierLabel(up)}</span>
             <span className="hidden sm:inline">Lên {tierLabel(up)} tuần này</span>
           </span>
@@ -241,15 +240,15 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
           `${meta.name} ${m.paragon ? "" : divisionLabel(m.division)}`.trim()
         )}
       </p>
-      <p className="mt-1 font-mono text-xs text-[#E9C46A] sm:text-sm">+{m.rp_week} RP</p>
+      <p className="mt-1 font-mono text-xs text-primary sm:text-sm">+{m.rp_week} RP</p>
 
-      {/* Bục hình trụ: mặt trên elip viền vàng phát sáng, thân đen bóng, bảng tên vàng ở mặt trước. */}
+      {/* Bục hình trụ: mặt trên elip viền primary phát sáng nhẹ, thân đổ bóng hai mép, bảng tên ở mặt trước. */}
       <div className="relative mt-3 w-full">
-        <div className="relative z-10 mx-auto h-4 w-full rounded-[50%] border border-[#E9C46A]/80 bg-[linear-gradient(180deg,#2A2A30,#141418)] shadow-[0_0_16px_rgba(233,196,106,0.45)] sm:h-6" />
+        <div className="relative z-10 mx-auto h-4 w-full rounded-[50%] border border-primary/50 bg-surface-2 shadow-[0_0_14px_color-mix(in_srgb,var(--color-primary)_30%,transparent)] sm:h-6" />
         <div
-          className={`relative -mt-2 flex w-full items-start justify-center rounded-b-[50%_14px] bg-[linear-gradient(90deg,#060607_0%,#1F1F24_35%,#2C2C32_50%,#1F1F24_65%,#060607_100%)] pt-3 sm:-mt-3 sm:pt-5 ${p.body}`}
+          className={`relative -mt-2 flex w-full items-start justify-center rounded-b-[50%_14px] border-x border-b border-line bg-[linear-gradient(90deg,color-mix(in_srgb,var(--color-line-strong)_30%,var(--color-panel))_0%,var(--color-panel)_50%,color-mix(in_srgb,var(--color-line-strong)_30%,var(--color-panel))_100%)] pt-3 sm:-mt-3 sm:pt-5 ${p.body}`}
         >
-          <span className="rounded-md bg-[linear-gradient(180deg,#F6DE97,#C9973A)] px-1.5 py-0.5 text-[11px] font-bold text-[#2A1A05] shadow-sm sm:px-2.5 sm:text-sm">
+          <span className={`rounded-md px-1.5 py-0.5 text-[11px] font-bold shadow-sm sm:px-2.5 sm:text-sm ${first ? "bg-primary text-white" : "bg-primary-soft text-primary"}`}>
             Hạng {m.pos}
           </span>
         </div>
