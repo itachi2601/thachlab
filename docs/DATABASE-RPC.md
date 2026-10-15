@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 341 hàm, sinh tự động 2026-10-15
+# Hàm SQL / RPC (schema public) — 342 hàm, sinh tự động 2026-10-15
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -172,6 +172,7 @@ repo — xem trên Supabase Dashboard).
 - `rank_seed_tiers(p_season bigint)` → void
 - `rank_set_display_title(p_code text, p_level text)` → void
 - `rank_set_honor_visibility(p_value text)` → void
+- `rank_snapshot_season(p_season bigint, p_force boolean)` → integer
 - `rank_status_of(p_student uuid)` → jsonb
 - `rank_streak_day(p_season bigint, p_at timestamp with time zone)` → date
 - `rank_streak_offset(p_season bigint)` → integer
@@ -194,11 +195,11 @@ repo — xem trên Supabase Dashboard).
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb

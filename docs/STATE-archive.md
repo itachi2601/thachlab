@@ -673,3 +673,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - 25 bài lý thuyết L10 (lesson 46–48, 58–79) đã ghi DB 10/10, **chưa deploy**. Main local có thể ahead origin — xem trước khi push.
 - Nhánh `perf-tach-js` (3 commit, JS theo vai) chưa vào main; chưa kiểm bằng đăng nhập thật.
 - Đã chạy 15/10 19:14: `20261015120000_vinh_danh_hoa_diem_xoay_vong` (rank_public_honor: hoà điểm xoay theo md5(user_id||tuần), bỏ `acc` khỏi RPC công khai, thêm khối `me` cho dòng "Tuần của em"). Đã kiểm: anon không có `me`/`acc`, HS giả lập nhận {rp_week, rp_prev}.
+
+- 15/10/2026 23:18 ĐÃ CHẠY `20261015200000_rank_ho_so_thanh_tuu_mua` (log scripts/logs/20261015-231800-…): cột bản chụp hồ sơ mùa + `rank_snapshot_season(p_season, p_force)`. Chụp thử mùa 4 trong transaction tự huỷ: 198 HS, TB 2,3 YCCĐ Nắm vững (max 13), 3 em thiếu lớp. Đóng mùa 4 sau 25/10 bằng `/quan-tri/xep-hang`.
