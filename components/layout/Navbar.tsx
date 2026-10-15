@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -231,6 +231,15 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <Users size={16} /> Kết quả của con
+                    </Link>
+                  )}
+                  {profile?.role === "student" && profile.track !== "cttc" && (
+                    <Link
+                      href="/luyen-tap"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    >
+                      <Dumbbell size={16} /> Luyện tập
                     </Link>
                   )}
                   {!isStaff && profile?.role !== "parent" && (
