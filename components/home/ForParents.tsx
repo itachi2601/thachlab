@@ -16,7 +16,7 @@ import type { HomeCourse, HomeCourseSession } from "@/components/home/home-stats
  * KHÔNG đưa lịch phụ đạo của trợ giảng lên đây: đó là lịch vận hành cho học sinh đã vào lớp
  * (đổi theo tuần, RLS chỉ cho thành viên lớp đọc), không phải thứ để quảng cáo.
  */
-const QUESTIONS = [
+const QUESTIONS: { title: string; desc: string }[] = [
   {
     title: "Con học gì",
     desc: "Lý thuyết, bài tập, đề kiểm tra theo đúng chương trình 2018, bám nhịp lớp trên trường.",
@@ -24,11 +24,6 @@ const QUESTIONS = [
   {
     title: "Thầy theo dõi ra sao",
     desc: "Mỗi bài làm được chấm ngay. Câu sai gắn với phần kiến thức; phần con còn sai nhiều, trợ giảng mở buổi phụ đạo riêng, lịch buổi hiện trong tài khoản của con.",
-  },
-  {
-    title: "Phụ huynh xem kết quả ở đâu",
-    desc: "Tài khoản riêng để xem điểm, phần con còn sai, nhật ký thầy theo dõi con và sơ đồ con nắm bài tới đâu.",
-    href: "/phu-huynh#trang-mau",
   },
 ];
 
@@ -153,6 +148,37 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
   );
 }
 
+/**
+ * Thẻ hé lộ trang mẫu (#trang-mau): ba dòng trích ĐÚNG số liệu của ParentSamplePreview — điểm, phần còn sai,
+ * lời thầy ghi — để phụ huynh tò mò mở xem đủ (khoảng trống thông tin), thay cho câu liệt kê tính năng cũ.
+ * Lời thầy để cuối vì đó là nỗi lo thật: "thầy có để ý con không". Ghi "mẫu" + "không cần đăng nhập" (P14, P26).
+ * Sửa số trong ParentSamplePreview thì sửa cả ở đây.
+ */
+function SampleTeaser() {
+  return (
+    <div className="mt-5 max-w-2xl rounded-2xl border border-line bg-panel px-5 py-4">
+      <h3 className="font-display text-lg font-semibold">Mỗi tuần, phụ huynh sẽ biết gì về con?</h3>
+      <ul className="mt-2 space-y-2 text-lg leading-relaxed text-ink">
+        <li>
+          Bài gần nhất: <b className="tabular-nums">7,75 · Khá</b> (tăng 1,25 điểm)
+        </li>
+        <li>Phần con còn sai: Vận tốc, gia tốc.</li>
+        <li>Trợ giảng đã dạy lại riêng phần này.</li>
+        <li>
+          Thầy ghi: “Con hiểu bài nhưng tính vội, dặn con ghi đơn vị từng bước.”
+        </li>
+      </ul>
+      <p className="mt-3">
+        <Link href="/phu-huynh#trang-mau" className={`${btn} border-2 border-primary bg-panel text-primary hover:bg-surface-2`}>
+          Xem đủ trang mẫu <ArrowRight size={18} />
+        </Link>
+      </p>
+      <p className="mt-2 text-[15px] leading-relaxed text-muted">Số liệu mẫu, không phải của học sinh nào.</p>
+      <p className="text-[15px] leading-relaxed text-muted">Không cần đăng nhập.</p>
+    </div>
+  );
+}
+
 export default function ForParents({ courses = null }: { courses?: HomeCourse[] | null }) {
   const phone = CONTACT.phone ? displayPhone(CONTACT.phone) : "";
   // Hai dòng giới thiệu, cùng thứ tự với khối "Một chút về thầy Thạch": kinh nghiệm THPT trước, nghề chính sau.
@@ -195,22 +221,15 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
           </p>
 
           <ClassSchedule courses={courses} />
+          <SampleTeaser />
         </div>
 
         <div className="lg:col-start-1 lg:row-start-2">
-          <ul className="mt-6 grid gap-5 sm:grid-cols-3 lg:mt-0 lg:grid-cols-1 lg:gap-4">
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-1 lg:gap-4">
             {QUESTIONS.map((q) => (
               <li key={q.title}>
                 <h3 className="font-display text-lg font-semibold">{q.title}</h3>
                 <p className="mt-1.5 text-lg leading-relaxed text-ink">{q.desc}</p>
-                {q.href && (
-                  <Link
-                    href={q.href}
-                    className="mt-2 inline-flex min-h-12 items-center gap-1 text-base font-semibold text-primary hover:underline"
-                  >
-                    Xem trang mẫu cho phụ huynh <ArrowRight size={16} />
-                  </Link>
-                )}
               </li>
             ))}
           </ul>
