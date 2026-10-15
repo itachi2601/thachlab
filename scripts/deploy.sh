@@ -99,4 +99,4 @@ git update-ref refs/heads/deploy "$NEW_COMMIT"
 git -c http.postBuffer=524288000 push -f "$REPO_URL" deploy
 rm -rf .git
 
-echo "✓ Đã push bản build lên nhánh deploy — hosting sẽ cập nhật trong vòng 10 phút."
+echo "✓ Đã push bản build lên nhánh deploy — hosting sẽ cập nhật trong khoảng 1–2 phút (cron chạy mỗi phút)."
