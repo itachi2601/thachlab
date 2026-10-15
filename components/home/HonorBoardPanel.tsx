@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpCircle, Flame, TrendingUp } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
+import RankBadge from "@/components/rank/RankBadge";
 import WornTitle from "@/components/rank/WornTitle";
 import { divisionLabel, tierMeta, type PublicHonorBoard, type PublicHonorGrade } from "@/features/rank/types";
 import { fetchPublicHonor } from "@/services/rank";
@@ -161,20 +162,36 @@ function Podium({ g }: { g: PublicHonorGrade }) {
 
 type TierUp = PublicHonorGrade["tier_ups"][number];
 
-// Sân khấu vinh danh (thầy chốt 15/10/2026): GIỮ CẤU TRÚC mẫu bục trao giải (đèn rọi, 3 bục trụ, bảng tên) nhưng
-// MÀU theo token của site — tự đổi theo nền sáng/tối, một màu nhấn primary (M3, M7). Vàng/bạc/đồng chỉ ở huy chương.
-// Không chuyển động (B4). Bục trụ cao 1 > 2 > 3, hạng 1 đứng giữa ở mọi khổ; hạng 4–5 (khi hoà điểm) xuống hàng gọn bên dưới.
-// Ánh kim lấy từ token có sẵn (không thêm màu mới — M3/M7): vàng = accent, bạc = muted,
-// đồng = accent + danger pha ink (nền tối ra cam đào, nền sáng ra nâu đỏ — tách được với vàng ở cả hai nền).
-const METAL = {
-  1: "var(--color-accent)",
-  2: "var(--color-muted)",
-  3: "color-mix(in srgb, color-mix(in srgb, var(--color-accent) 50%, var(--color-danger)) 75%, var(--color-ink))",
-} as const;
-const PEDESTAL = {
-  1: { body: "h-32 sm:h-44", avatar: 64, avatarSm: 84, num: "text-5xl sm:text-6xl" },
-  2: { body: "h-24 sm:h-36", avatar: 52, avatarSm: 68, num: "text-4xl sm:text-5xl" },
-  3: { body: "h-[84px] sm:h-32", avatar: 52, avatarSm: 68, num: "text-4xl sm:text-5xl" },
+// Sân khấu vinh danh theo thiết kế "Bục vinh danh 2b" (thầy chọn 15/10/2026): ba huy chương treo dây ruy-băng dưới thanh vàng,
+// hạng 1 ở giữa, dây ngắn nhất nên huy chương cao nhất và to nhất. Nền/chữ theo token (nền sáng + tối); chỉ ruy-băng và
+// viền huy chương dùng màu cố định vì là "vật liệu" (vàng/bạc/đồng). Không chuyển động (B4). Hạng 4–5 (hoà điểm) xuống danh sách gọn.
+const GOLD = "linear-gradient(180deg,#FFF1B8,#E9B949 45%,#9A6A18)";
+const SHADE = "linear-gradient(90deg,rgba(0,0,0,0.3),transparent 25%,transparent 75%,rgba(0,0,0,0.3))";
+const MEDAL = {
+  1: {
+    ribbon: "linear-gradient(90deg,#6E111C 0 12%,#A81E2C 12% 42%,#E9B949 42% 58%,#A81E2C 58% 88%,#6E111C 88%)",
+    ring: "linear-gradient(135deg,#FFF6C0,#FFD23F 30%,#E0A100 62%,#FFE98A)",
+    num: "#F2D27A",
+    drop: "h-9 w-[30px] sm:h-12 sm:w-10",
+    size: 76,
+    sizeSm: 100,
+  },
+  2: {
+    ribbon: "linear-gradient(90deg,#14234A 0 12%,#2B4C8C 12% 30%,#DDE6F5 30% 38%,#2B4C8C 38% 62%,#DDE6F5 62% 70%,#2B4C8C 70% 88%,#14234A 88%)",
+    ring: "linear-gradient(135deg,#FFFFFF,#C9D1DC 35%,#7D8796 65%,#E8EDF3)",
+    num: "#DDE3EC",
+    drop: "h-16 w-[26px] sm:h-[84px] sm:w-8",
+    size: 68,
+    sizeSm: 84,
+  },
+  3: {
+    ribbon: "linear-gradient(90deg,#6B2F10 0 12%,#B85A22 12% 32%,#F3D9B5 32% 38%,#B85A22 38% 62%,#F3D9B5 62% 68%,#B85A22 68% 88%,#6B2F10 88%)",
+    ring: "linear-gradient(135deg,#D9966B,#A4531F 35%,#5E2A0E 65%,#B9733F)",
+    num: "#EDB487",
+    drop: "h-[84px] w-[26px] sm:h-[112px] sm:w-8",
+    size: 68,
+    sizeSm: 84,
+  },
 } as const;
 
 function Stage({
@@ -188,23 +205,46 @@ function Stage({
 }) {
   const podium = [top[1], top[0], top[2]].filter(Boolean);
   const rest = top.slice(3);
+  const ref = useRef<HTMLDivElement>(null);
+  const [play, setPlay] = useState(false);
+  // Chạy hiệu ứng đúng một lần khi bục vào khung nhìn (khối ẩn bằng `invisible` không giao nhau nên không chạy sớm).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      (es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          setPlay(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.6 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
   return (
-    <div className="relative mt-10 overflow-hidden rounded-3xl border border-line bg-panel px-2 pb-6 pt-10 sm:px-10 sm:pb-10 sm:pt-14">
-      {/* Đèn rọi từ trên xuống + vệt sáng chéo mờ: chỉ là nền, aria-hidden. */}
+    <div ref={ref} className={`relative mt-10 overflow-hidden rounded-3xl border border-line bg-panel px-2 pb-6 pt-5 sm:px-10 sm:pb-10 sm:pt-6 ${play ? "honor-play" : ""}`}>
+      {/* Đèn rọi từ trên xuống: chỉ là nền, aria-hidden. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_0%,color-mix(in_srgb,var(--color-primary)_16%,transparent),transparent_70%),linear-gradient(115deg,transparent_38%,color-mix(in_srgb,var(--color-primary)_5%,transparent)_45%,transparent_52%),linear-gradient(65deg,transparent_48%,color-mix(in_srgb,var(--color-primary)_4%,transparent)_55%,transparent_62%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_30%,color-mix(in_srgb,var(--color-accent)_10%,transparent),transparent_70%)]"
       />
-      <ul className="relative mx-auto grid max-w-[720px] grid-cols-3 items-end gap-2 sm:gap-3">
+      {/* Sao băng vụt qua một lần; chỉ trang trí. */}
+      <div aria-hidden className="honor-fx pointer-events-none absolute inset-0 overflow-hidden">
+        <span className="honor-shoot absolute left-[8%] top-[6%] h-0.5 w-16 rounded-full bg-gradient-to-r from-transparent to-[#FFF1B8] opacity-0" />
+        <span className="honor-shoot honor-shoot-2 absolute left-[30%] top-[2%] h-0.5 w-12 rounded-full bg-gradient-to-r from-transparent to-white opacity-0" />
+      </div>
+      {/* Thanh vàng treo ba huy chương. */}
+      <div aria-hidden className="relative mx-1.5 h-2 rounded shadow-[0_2px_4px_rgba(0,0,0,0.35)]" style={{ background: GOLD }} />
+      <ul className="relative mx-auto grid max-w-[720px] grid-cols-[1fr_1.2fr_1fr] items-start gap-1 sm:gap-3">
         {podium.map((m) => (
           <PodiumSpot key={`${m.name}-${m.pos}`} m={m} up={upByName.get(m.name)} tierLabel={tierLabel} />
         ))}
       </ul>
-      {/* Mặt sàn sân khấu */}
-      <div aria-hidden className="relative mx-auto -mt-3 h-6 w-[96%] rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-primary)_14%,transparent),transparent_70%)]" />
 
       {rest.length > 0 && (
-        <ul className="relative mt-4 divide-y divide-line rounded-2xl border border-line bg-surface-2">
+        <ul className="relative mt-6 divide-y divide-line rounded-2xl border border-line bg-surface-2">
           {rest.map((m) => (
             <li key={`${m.name}-${m.pos}`} className="flex items-center gap-3 px-4 py-2.5 text-sm">
               <span className="w-14 shrink-0 text-muted">Hạng {m.pos}</span>
@@ -221,64 +261,77 @@ function Stage({
 
 function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; up?: TierUp; tierLabel: (t: TierUp) => string }) {
   const key = (m.pos >= 1 && m.pos <= 3 ? m.pos : 3) as 1 | 2 | 3;
-  const p = PEDESTAL[key];
-  const metal = METAL[key];
+  const d = MEDAL[key];
   const first = m.pos === 1;
-  // Bỏ huy chương trên đầu + dòng tên bậc trên bục (N7, N4): số hạng trên thân bục đã nói hạng; bậc là tích luỹ cả mùa,
-  // đặt cạnh RP tuần dễ gây "hạng 1 mà bậc thấp hơn hạng 2". Chỉ giữ nhãn ↑ khi em lên bậc trong tuần.
-  // Thứ tự: tên (+↑) → ảnh đứng đè 1/3 dưới lên miệng bục → số hạng ánh kim + RP trên thân bục (B3: một khối liền).
+  // Thứ tự dọc: ruy-băng (số hạng) → thanh kẹp vàng → vòng treo → huy chương (ảnh) → tên (+danh hiệu, ↑) → RP.
+  // Bỏ dòng tên bậc dưới tên (N4, N7): bậc tích luỹ cả mùa, đặt cạnh RP tuần dễ thành "hạng 1 mà bậc thấp hơn hạng 2".
   return (
-    <li className="flex min-w-0 flex-col items-center text-center" style={{ ["--metal" as string]: metal }}>
-      <p className={`w-full truncate px-1 font-semibold text-ink ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
-      {m.title && (
-        <span className="hidden max-w-full sm:block">
-          <WornTitle title={m.title} className="mt-0.5 justify-center" />
+    <li className="flex min-w-0 flex-col items-center text-center">
+      <div
+        className={`flex items-center justify-center ${d.drop}`}
+        style={{ background: `${SHADE},${d.ribbon}` }}
+      >
+        <span
+          aria-label={`Hạng ${m.pos}`}
+          className="flex h-5 w-5 items-center justify-center rounded-full bg-[rgba(8,12,22,0.85)] font-display text-[15px] font-bold leading-none sm:h-6 sm:w-6 sm:text-lg"
+          style={{ color: d.num }}
+        >
+          {m.pos}
         </span>
+      </div>
+      <div aria-hidden className="h-1.5 w-[34px] rounded-sm sm:w-11" style={{ background: GOLD }} />
+      <div aria-hidden className="relative z-[2] -mt-px h-3 w-3 rounded-full border-[3px] border-[#E9B949]" />
+      <div
+        className={`relative z-[1] -mt-1.5 rounded-full p-1 ${first ? "shadow-[0_0_34px_rgba(255,210,63,0.75)]" : "shadow-[0_4px_12px_rgba(0,0,0,0.35)]"}`}
+        style={{ background: d.ring }}
+      >
+        <span className="block overflow-hidden rounded-full border-2 border-[#10141D] sm:hidden">
+          <Avatar url={m.avatar} name={m.name} size={d.size} />
+        </span>
+        <span className="hidden overflow-hidden rounded-full border-2 border-[#10141D] sm:block">
+          <Avatar url={m.avatar} name={m.name} size={d.sizeSm} />
+        </span>
+        {first && (
+          <span aria-hidden className="honor-fx pointer-events-none absolute left-1/2 top-1/2 h-0 w-0">
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
+              <span
+                key={a}
+                className="honor-spark absolute -ml-[3px] -mt-[3px] block h-1.5 w-1.5 rounded-full opacity-0"
+                style={{ ["--a" as string]: `${a}deg`, ["--d" as string]: `${i % 2 ? 62 : 82}px`, background: i % 2 ? "#FFF1B8" : "#FFD23F" }}
+              />
+            ))}
+            <span className="honor-glint absolute -left-8 -top-12 block h-3 w-3 rotate-45 bg-[#FFF1B8] opacity-0 [clip-path:polygon(50%_0,62%_38%,100%_50%,62%_62%,50%_100%,38%_62%,0_50%,38%_38%)]" />
+          </span>
+        )}
+        {/* Huy hiệu rank đạt được: ô "rank" ở góc dưới phải huy chương trong thiết kế. */}
+        {m.tier_code && (
+          <RankBadge
+            code={m.tier_code}
+            division={m.division}
+            paragon={m.paragon}
+            size={36}
+            className="pointer-events-none absolute -bottom-2 -right-3 drop-shadow-[0_2px_4px_rgba(0,0,0,.7)]"
+          />
+        )}
+      </div>
+      <p className={`mt-3.5 w-full truncate px-1 font-bold text-ink ${first ? "text-base sm:text-lg" : "text-[15px] sm:text-base"}`}>{m.name}</p>
+      {m.title && <WornTitle title={m.title} className="mt-1 max-w-full justify-center" />}
+      {m.tier_code && !up && (
+        <p className="mt-0.5 max-w-full truncate px-1 text-[11px] text-muted">
+          {`${tierMeta(m.tier_code, m.paragon).name} ${divisionLabel(m.division)}`.trim()}
+        </p>
       )}
       {up && (
-        <p className="mt-0.5 inline-flex max-w-full items-center gap-1 truncate px-1 text-[11px] text-[color-mix(in_srgb,var(--color-primary)_75%,var(--color-ink))] sm:text-xs">
+        <p className="mt-1 inline-flex max-w-full items-center gap-1 truncate px-1 text-[11px] text-[color-mix(in_srgb,var(--color-primary)_75%,var(--color-ink))] sm:text-xs">
           <ArrowUpCircle size={12} className="shrink-0" aria-hidden /> <span className="sm:hidden">{tierLabel(up)}</span>
           <span className="hidden sm:inline">Lên {tierLabel(up)} tuần này</span>
         </p>
       )}
-
-      <div className="relative mt-2 w-full">
-        {/* Bóng tiếp đất — đặt trước để thân bục vẽ đè lên, không che chữ RP. */}
-        <div aria-hidden className="absolute -bottom-2 left-1/2 h-4 w-[115%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),transparent_70%)]" />
-        {/* Ảnh đứng trên bục: đáy ảnh đè xuống mặt elip (z-20 trên mặt bục). */}
-        <div className={`relative z-20 flex justify-center ${first ? "-mb-7 sm:-mb-9" : "-mb-6 sm:-mb-7"}`}>
-          <span className="sm:hidden">
-            <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatar}>
-              <Avatar url={m.avatar} name={m.name} size={p.avatar} />
-            </RankAvatarFrame>
-          </span>
-          <span className="hidden sm:block">
-            <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatarSm}>
-              <Avatar url={m.avatar} name={m.name} size={p.avatarSm} />
-            </RankAvatarFrame>
-          </span>
-        </div>
-        {/* Mặt trên elip: viền ánh kim theo hạng; hạng 1 thêm đèn hắt từ tâm (radial) — điểm nhấn duy nhất của sân khấu (B2). */}
-        <div
-          className={`relative z-10 mx-auto h-7 w-full rounded-[50%] border-2 border-[var(--metal)] sm:h-10 ${
-            first
-              ? "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-accent)_45%,var(--color-panel))_0%,color-mix(in_srgb,var(--color-accent)_12%,var(--color-panel))_60%,var(--color-panel)_100%)] shadow-[0_0_22px_color-mix(in_srgb,var(--color-accent)_40%,transparent)]"
-              : "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--metal)_18%,var(--color-panel)),color-mix(in_srgb,black_4%,var(--color-panel)))] shadow-[0_0_10px_color-mix(in_srgb,var(--metal)_25%,transparent)]"
-          }`}
-        />
-        <div
-          className={`relative -mt-3.5 flex w-full flex-col items-center justify-start rounded-b-[50%_14px] border-x border-b border-line bg-[linear-gradient(90deg,color-mix(in_srgb,black_8%,var(--color-bg))_0%,color-mix(in_srgb,white_4%,var(--color-panel))_40%,color-mix(in_srgb,white_12%,var(--color-panel))_55%,color-mix(in_srgb,black_8%,var(--color-bg))_100%)] pt-5 sm:-mt-5 sm:pt-6 ${p.body}`}
-        >
-          {/* Số hạng đậm, ánh kim theo hạng (gradient chữ từ token); RP chữ ink cùng hệ, không màu nhấn neon. */}
-          <span
-            aria-label={`Hạng ${m.pos}`}
-            className={`bg-[linear-gradient(180deg,color-mix(in_srgb,var(--metal)_55%,white),var(--metal)_55%,color-mix(in_srgb,var(--metal)_75%,black))] bg-clip-text font-display font-black leading-none text-transparent ${p.num}`}
-          >
-            {m.pos}
-          </span>
-          <span className={`mt-1 font-mono font-semibold text-ink ${first ? "text-sm sm:text-base" : "text-xs sm:text-sm"}`}>+{m.rp_week} RP</span>
-        </div>
-      </div>
+      <p
+        className={`mt-2 font-display font-bold tracking-[0.06em] text-ink ${first ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"}`}
+      >
+        +{m.rp_week} RP
+      </p>
     </li>
   );
 }

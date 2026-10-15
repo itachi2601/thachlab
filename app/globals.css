@@ -3653,3 +3653,27 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
 .exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
 .exam-content .avcn-term .tl-speak { margin-left: 2px; }
 .exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
