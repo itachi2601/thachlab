@@ -113,6 +113,11 @@ def term_card(t) -> str:
 def sec_tu_vung() -> str:
     out = [f'<h3>{ROMAN[2]}. 20 từ ⭐ phải nhận ra</h3>',
            '<p>Học theo cụm 5 từ. Mỗi từ: nhìn ảnh, nghe, đọc nghĩa, rồi đọc <em>định nghĩa tiếng Anh</em>, vì Part 1 ra đề bằng chính định nghĩa đó. Sau mỗi cụm có một câu kiểm tra, làm ngay.</p>']
+    if M.get("flashcard"):  # hộp link bộ Flashcard (thêm thẳng trên DB 16/10/2026) — giữ khi dựng lại
+        out.append(rule("🃏 Ôn tập Flashcard tương tác (Nhìn ảnh đoán từ & Leitner 3 Hộp)",
+                        '<p>Luyện phản xạ nhanh với ảnh máy xưởng thật, nghe phát âm 🔊 bản xứ và lặp lại ngắt quãng:</p>'
+                        f'<p><a href="{M["flashcard"]}" target="_blank" class="tl-opt tl-ok" style="display:inline-block; font-weight:700; text-decoration:none; margin-top:4px;">'
+                        f'👉 Mở bộ Flashcard Chapter {CH} (Chế độ chuẩn & Luyện đề nhìn ảnh đoán từ)</a></p>'))
     for g in D["tu_vung"]:
         out.append(f'<h4>{g["ten"]}</h4>')
         out.append('<div class="avcn-cards">' + "".join(term_card(t) for t in g["tu"]) + '</div>')
