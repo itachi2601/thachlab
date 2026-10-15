@@ -287,3 +287,10 @@ Trang công khai `/dieu-khoan` đã cam kết với người học và chủ s�
 - **Tài nguyên ngoài** (hình, mô phỏng, video, phông, mã): ưu tiên giấy phép mở (PhET CC-BY, Wikimedia Commons, CC0…); ghi tác giả + giấy phép + link ngay trong bài hoặc kế hoạch tài nguyên. Không dùng ảnh/clip không rõ giấy phép; video thì nhúng/dẫn link, không tải lại đăng lên.
 - Không rõ giấy phép = **không dùng**, chuyển thành hình tự vẽ SVG hoặc báo thầy.
 - Có khiếu nại bản quyền (email ở `lib/contact.ts`, quy trình ở `/dieu-khoan` mục 4): gỡ hoặc thay nội dung ngay, rồi báo thầy.
+
+# Chất lượng đề & câu hỏi khi nạp vào web — hình rõ, đáp án rõ, dò 2 lần (thầy chốt 15/10/2026)
+Đề sai/mờ/hỏng hình là mất uy tín của cả website; mọi đường nạp (up-de-kiem-tra, dang-de-hang-loat, ngan-hang-cau-hoi, đăng bài, sửa hàng loạt bằng script) phải đạt:
+- **Đề chuẩn**: nhãn như đề thi thật (E1–E3), mỗi câu đủ đề + phương án + **đúng một đáp án đã đối chiếu với lời giải**, có chủ đề/dạng; số câu và phần khớp đề gốc; ghi nguồn nếu trích (mục Bản quyền).
+- **Hình rõ**: nền trắng (không xám/đen do chuyển đổi), không lề trắng thừa (nét vẽ ≥ ~35% khung), đủ độ phân giải để đọc nhãn/số trên 375px (ảnh nguồn quá nhỏ bị phóng to thành mờ thì KHÔNG nạp — vẽ lại SVG hoặc báo thầy), ≤150 KB, URL đầy đủ `https://…` (không dính tiền tố `/lessons/<slug>/`), ảnh tải được (HTTP 200).
+- **Dò 2 lần, độc lập, trước khi bật Hiện**: lần 1 bằng máy (script: ảnh 200/kích thước/tỉ lệ nét, đủ đáp án, đúng một đáp án, không trùng); lần 2 bằng MẮT trên bản thật — xem ảnh các câu mới/sửa (contact sheet hoặc trang xem thử, 375px), người/agent `kiem-code` khác lần 1, tự giải lại câu tính toán. Chưa qua cả hai lần thì để Ẩn, không báo "xong".
+- **Sửa hàng loạt (cắt ảnh, thay URL, đổi đáp án)**: dry-run → xem mẫu bằng mắt → `--apply` có sao lưu → **kiểm lại trên bản đã ghi** (tải ảnh từ Storage/DB, không chỉ file local): mẫu `scripts/kiem-sau-cat-anh.mts`; báo rõ số ảnh lỗi còn lại, không im lặng bỏ qua (các mục `errs` của bản kiểm kê là việc chưa xong).
