@@ -12,7 +12,7 @@ kiểm tra / BTVN) → `exams` ↔ `exam_attempts` (bài làm) ↔ `exam_questio
 Tài khoản: `profiles` (role, track THPT/CTTC, admin_area); ghi danh lớp: `user_classes`.
 Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `attendance_sessions`.
 
-## Tài khoản · lớp · khoá học — 29 bảng
+## Tài khoản · lớp · khoá học — 31 bảng
 
 - **academic_subjects** (~3): code:text*, label:text, icon:text, sort_order:int, active:bool
 - **class_announcements** (~1): id:int8*, class_id:int8>classes, kind:text, body:text, created_by:uuid>profiles, created_at:ts, exam_id:int8>exams
@@ -25,6 +25,8 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **course_grade_overrides** (~11): course_id:int8*>course_offerings, student_id:uuid*>profiles, grade_key:text*, score:numeric(4,2), updated_by:uuid>profiles, updated_at:ts
 - **course_instructors** (~2): course_id:int8*>course_offerings, instructor_id:uuid*>profiles, assigned_by:uuid>profiles, assigned_at:ts
 - **course_offerings** (~3): id:int8*, subject_id:int8>subjects, created_by:uuid>profiles, created_at:ts, name:text, class_label:text, school_year:text, join_code:text, enrollment_mode:text, starts_at:date, ends_at:date, status:text, open_lesson_ids:text[]
+- **parent_link_attempts** (~-1): id:int8*, user_id:uuid>profiles, success:bool, created_at:ts
+- **parent_link_requests** (~-1): id:int8*, parent_id:uuid>profiles, child_name:text, child_birth:date, parent_phone:text, note:text, matched_student_id:uuid>profiles, status:text, reviewed_by:uuid>profiles, reviewed_at:ts, created_at:ts
 - **parent_links** (~-1): id:uuid*, code:text, student_id:uuid>profiles, parent_id:uuid>profiles, label:text, created_by:uuid>profiles, created_at:ts, claimed_at:ts
 - **password_reset_codes** (~27): id:uuid*, code:text, student_id:uuid>profiles, method:text, created_by:uuid>profiles, created_at:ts, expires_at:ts, used_at:ts
 - **profiles** (~488): id:uuid*>users, created_at:ts, full_name:text, class_name:text, role:text, student_code:text, admin_area:text, birth_date:date, track:text, display_title_code:text>rank_titles, display_title_level:text, avatar_url:text, honor_visibility:text
@@ -89,7 +91,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **rank_rp_awards** (~2121): season_id:int8*>rank_seasons, student_id:uuid*>profiles, source_kind:text*, source_ref:text*, awarded:int, best_value:numeric(6,2), updated_at:ts
 - **rank_rp_awards_backup_20261010** (~79): season_id:int8, student_id:uuid, source_kind:text, source_ref:text, awarded:int, best_value:numeric(6,2), updated_at:ts, new_awarded:int, note:text, backed_up_at:ts
 - **rank_rp_ledger** (~2382): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, source_kind:text, source_ref:text, amount:int, reason:text, ref_result_id:int8, actor:uuid>profiles, created_at:ts
-- **rank_season_results** (~-1): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, division:int, titles_count:int, closed_at:ts, tier_sort:int, tier_name:text, class_names:text, season_titles:jsonb, weeks_goal_met:int, weekly_rp:jsonb, mastered_topic_ids:bigint[], mastered_count:int, snapshot_at:ts
+- **rank_season_results** (~0): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, division:int, titles_count:int, closed_at:ts, tier_sort:int, tier_name:text, class_names:text, season_titles:jsonb, weeks_goal_met:int, weekly_rp:jsonb, mastered_topic_ids:bigint[], mastered_count:int, snapshot_at:ts
 - **rank_seasons** (~2): id:int8*, created_at:ts, created_by:uuid>profiles, name:text, starts_on:date, ends_on:date, class_ids:bigint[], status:text, config:jsonb, boss_exam_id:int8>exams, boss_pass_score:numeric(4,2), closed_at:ts
 - **rank_sources** (~491): season_id:int8*>rank_seasons, source_kind:text*, source_id:int8*, max_rp:int, enabled:bool
 - **rank_sources_backup_20261011** (~340): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts

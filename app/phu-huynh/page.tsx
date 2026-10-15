@@ -13,6 +13,7 @@ import ParentChildCards from "@/components/parent/ParentChildCardsLazy";
 import ParentFaq from "@/components/parent/ParentFaq";
 import ParentGuestLanding from "@/components/parent/ParentGuestLanding";
 import TeacherContact from "@/components/parent/TeacherContact";
+import ParentSelfLinkForm from "@/components/parent/ParentSelfLinkForm";
 import ParentTuitionCard from "@/components/parent/ParentTuitionCard";
 import { fetchCoursesByIds } from "@/services/parent-view";
 import type { ThptCourse } from "@/services/thpt-courses-public";
@@ -35,7 +36,7 @@ const ParentSamplePreview = dynamic(() => import("@/components/parent/ParentSamp
  */
 function Notice({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-8 text-center text-ink">{children}</div>
+    <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-5 text-center text-ink sm:p-8">{children}</div>
   );
 }
 
@@ -77,17 +78,20 @@ function RegistrationList({ items }: { items: MyRegistration[] }) {
 }
 
 /** Chưa nối với con nào: phụ huynh cần biết xin mã ở đâu — nút gọi/Zalo phải nằm ngay đây (P9, P10). */
-function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
+function NoChildYet({ registrations, onLinked }: { registrations: MyRegistration[]; onLinked: () => void }) {
   return (
     <>
       <Notice>
         <Users className="mx-auto text-muted" size={36} />
         <h1 className="mt-4 font-display text-xl font-bold text-ink">Tài khoản này chưa nối với con</h1>
         <p className="mt-3 text-left text-muted">
-          Thầy cần gửi phụ huynh một <b>link mời</b> (dạng{" "}
-          <code className="rounded bg-surface-2 px-1.5 py-0.5 text-ink">/loi-moi?ma=PH…</code>) để tài khoản này nối với
-          con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
+          Phụ huynh tự nối ngay bên dưới bằng họ tên, ngày sinh của con và số điện thoại đã ghi khi đăng ký học. Nếu
+          thầy đã gửi <b>link mời</b> (dạng{" "}
+          <code className="rounded bg-surface-2 px-1.5 py-0.5 text-ink">/loi-moi?ma=PH…</code>) thì mở link đó cũng được.
         </p>
+        <div className="mt-5">
+          <ParentSelfLinkForm onLinked={onLinked} />
+        </div>
         <RegistrationList items={registrations} />
         <div className="mt-5 flex flex-wrap justify-center gap-3">
           <Link
@@ -124,6 +128,8 @@ function ParentHome() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [registrations, setRegistrations] = useState<MyRegistration[]>([]);
   const [courses, setCourses] = useState<ThptCourse[]>([]);
+  // Tăng sau khi phụ huynh tự nối con thành công → tải lại danh sách con.
+  const [reload, setReload] = useState(0);
 
   useEffect(() => {
     if (!session) return;
@@ -141,11 +147,11 @@ function ParentHome() {
         setSelectedId((current) => current ?? rows[0]?.studentId ?? null);
       })
       .catch(() => setChildren([]));
-  }, [session]);
+  }, [session, reload]);
 
   if (children === null) return <Notice>Đang tải kết quả của con…</Notice>;
 
-  if (children.length === 0) return <NoChildYet registrations={registrations} />;
+  if (children.length === 0) return <NoChildYet registrations={registrations} onLinked={() => setReload((n) => n + 1)} />;
 
   const selected = children.find((c) => c.studentId === selectedId) ?? children[0];
   const selectedRegistrations = registrations.filter(

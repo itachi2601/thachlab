@@ -43,9 +43,27 @@ function InviteContent() {
   const [password, setPassword] = useState("");
 
   // Mã PHxxxxxx là mã phụ huynh (supabase-migration-phu-huynh.sql) — cùng trang, khác RPC.
-  const parent = isParentCode(code);
+  // ?vai=phu-huynh (không mã, 15/10/2026): phụ huynh tạo tài khoản rồi tự nối con ở /phu-huynh bằng
+  // họ tên + ngày sinh + SĐT (claim_parent_by_child_info) — không cần chờ thầy gửi link.
+  const parentSelf = !code && searchParams.get("vai") === "phu-huynh";
+  const parent = parentSelf || isParentCode(code);
 
-  if (!code)
+  if (parentSelf && session && !loading) {
+    return (
+      <Card>
+        <h1 className="font-display text-xl font-bold text-ink">Đã có tài khoản</h1>
+        <p className="mt-2 text-sm text-muted">
+          Bạn đang đăng nhập bằng <strong className="text-ink">{session.user.email}</strong>. Vào trang phụ huynh để nối
+          với con.
+        </p>
+        <Link href="/phu-huynh" className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white">
+          Vào trang phụ huynh
+        </Link>
+      </Card>
+    );
+  }
+
+  if (!code && !parentSelf)
     return (
       <Card>
         <h1 className="font-display text-xl font-bold text-ink">Thiếu mã mời</h1>
@@ -135,6 +153,10 @@ function InviteContent() {
           setNeedConfirm(true);
           return;
         }
+        if (parentSelf) {
+          window.location.assign("/phu-huynh");
+          return;
+        }
         const child = userId ? await fetchClaimedChild(userId) : null;
         if (child) {
           setDone(`Tài khoản đã tạo xong và đã nối với ${child.student_name}${child.class_name ? ` · lớp ${child.class_name}` : ""}.`);
@@ -214,6 +236,12 @@ function InviteContent() {
   return (
     <Card>
       <h1 className="font-display text-xl font-bold text-ink">{parent ? "Tạo tài khoản phụ huynh" : "Tạo tài khoản"}</h1>
+      {parentSelf ? (
+        <p className="mt-2 text-sm text-muted">
+          Tạo tài khoản xong, phụ huynh nối với con bằng họ tên, ngày sinh của con và số điện thoại đã ghi khi đăng ký
+          học.
+        </p>
+      ) : (
       <p className="mt-2 text-sm text-muted">
         {parent ? "Mã phụ huynh " : "Mã mời "}
         <strong className="font-mono text-ink">{code.toUpperCase()}</strong>
@@ -221,6 +249,7 @@ function InviteContent() {
           ? " — tạo tài khoản xong là xem được ngay kết quả học tập của con."
           : " — tạo tài khoản xong là có ngay quyền được cấp."}
       </p>
+      )}
       <form onSubmit={register} className="mt-5 space-y-3">
         <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Họ và tên" className={inputCls} />
         <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className={inputCls} />
@@ -241,7 +270,10 @@ function InviteContent() {
       </form>
       <p className="mt-4 text-center text-xs text-muted">
         Đã có tài khoản?{" "}
-        <Link href={`/dang-nhap?next=${encodeURIComponent(`/loi-moi?ma=${code}`)}`} className="text-primary">
+        <Link
+          href={`/dang-nhap?next=${encodeURIComponent(parentSelf ? "/phu-huynh" : `/loi-moi?ma=${code}`)}`}
+          className="text-primary"
+        >
           Đăng nhập rồi quay lại đây
         </Link>
       </p>
@@ -250,8 +282,9 @@ function InviteContent() {
 }
 
 function InviteShell() {
-  const code = (useSearchParams().get("ma") ?? "").trim();
-  const parent = isParentCode(code);
+  const params = useSearchParams();
+  const code = (params.get("ma") ?? "").trim();
+  const parent = isParentCode(code) || (!code && params.get("vai") === "phu-huynh");
   return (
     <>
       <Navbar />

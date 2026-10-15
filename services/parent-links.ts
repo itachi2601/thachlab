@@ -143,7 +143,12 @@ export async function signUpParentWithCode(input: {
   const { data, error } = await getSupabase().auth.signUp({
     email: input.email.trim(),
     password: input.password,
-    options: { data: { full_name: input.fullName.trim(), invite_code: input.code.trim().toUpperCase() } },
+    // Không mã (/loi-moi?vai=phu-huynh): không gửi invite_code — phụ huynh tự nối con sau ở /phu-huynh.
+    options: {
+      data: input.code.trim()
+        ? { full_name: input.fullName.trim(), invite_code: input.code.trim().toUpperCase() }
+        : { full_name: input.fullName.trim() },
+    },
   });
   if (error) throw supabaseError(error, "Không tạo được tài khoản.");
   return { needsEmailConfirm: !data.session, userId: data.user?.id ?? null };
@@ -154,4 +159,88 @@ export async function fetchClaimedChild(parentId: string): Promise<ClaimParentRe
   const children = await fetchMyChildren(parentId).catch(() => []);
   const first = children[0];
   return first ? { student_name: first.fullName, class_name: first.className } : null;
+}
+
+/* ---------- Phụ huynh tự nối với con (migration 20261015180000_phu_huynh_tu_noi_con) ---------- */
+
+export type SelfLinkStatus = "linked" | "already" | "no_match" | "locked";
+export interface SelfLinkResult {
+  status: SelfLinkStatus;
+  studentName: string | null;
+  className: string | null;
+}
+
+/** Khớp ĐỦ họ tên con + ngày sinh con + SĐT phụ huynh đã khai lúc đăng ký học. Sai 5 lần/24 giờ → "locked". */
+export async function claimParentByChildInfo(name: string, birth: string, phone: string): Promise<SelfLinkResult> {
+  const { data, error } = await getSupabase().rpc("claim_parent_by_child_info", {
+    p_name: name.trim(),
+    p_birth: birth,
+    p_phone: phone.trim(),
+  });
+  if (error) throw supabaseError(error, "Chưa kiểm tra được thông tin.");
+  const row = (Array.isArray(data) ? data[0] : data) as
+    | { status: SelfLinkStatus; student_name: string | null; class_name: string | null }
+    | undefined;
+  return { status: row?.status ?? "no_match", studentName: row?.student_name ?? null, className: row?.class_name ?? null };
+}
+
+/** Không khớp → gửi yêu cầu để thầy duyệt. */
+export async function requestParentLinkReview(name: string, birth: string, phone: string, note = ""): Promise<number> {
+  const { data, error } = await getSupabase().rpc("request_parent_link_review", {
+    p_name: name.trim(),
+    p_birth: birth || null,
+    p_phone: phone.trim(),
+    p_note: note.trim() || null,
+  });
+  if (error) throw supabaseError(error, "Chưa gửi được yêu cầu.");
+  return data as number;
+}
+
+export interface ParentLinkRequest {
+  id: number;
+  parent_id: string;
+  child_name: string;
+  child_birth: string | null;
+  parent_phone: string;
+  note: string | null;
+  matched_student_id: string | null;
+  status: "pending" | "approved" | "rejected";
+  created_at: string;
+  parent: { full_name: string | null } | null;
+  matched: { full_name: string | null; class_name: string | null } | null;
+}
+
+/** Yêu cầu đang chờ (giáo viên: RLS lọc theo em mình dạy; admin: tất cả; phụ huynh: của mình). */
+export async function fetchPendingParentLinkRequests(): Promise<ParentLinkRequest[]> {
+  const { data, error } = await getSupabase()
+    .from("parent_link_requests")
+    .select(
+      "id, parent_id, child_name, child_birth, parent_phone, note, matched_student_id, status, created_at, parent:profiles!parent_link_requests_parent_id_fkey(full_name), matched:profiles!parent_link_requests_matched_student_id_fkey(full_name, class_name)",
+    )
+    .eq("status", "pending")
+    .order("created_at", { ascending: true });
+  if (error) throw supabaseError(error, "Chưa đọc được yêu cầu nối con.");
+  return (data ?? []) as unknown as ParentLinkRequest[];
+}
+
+export async function reviewParentLinkRequest(id: number, studentId: string | null, approve: boolean): Promise<void> {
+  const { error } = await getSupabase().rpc("review_parent_link_request", {
+    p_id: id,
+    p_student: studentId,
+    p_approve: approve,
+  });
+  if (error) throw supabaseError(error, approve ? "Chưa duyệt được." : "Chưa từ chối được.");
+}
+
+export interface LinkStudentOption {
+  id: string;
+  full_name: string;
+  class_name: string | null;
+  birth_date: string | null;
+}
+
+export async function searchStudentsForLink(query: string): Promise<LinkStudentOption[]> {
+  const { data, error } = await getSupabase().rpc("search_students_for_link", { p_query: query.trim() });
+  if (error) throw supabaseError(error, "Chưa tìm được học sinh.");
+  return (data ?? []) as LinkStudentOption[];
 }

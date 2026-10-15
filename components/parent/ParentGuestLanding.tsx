@@ -137,24 +137,19 @@ export default function ParentGuestLanding() {
         <h2 className="font-display text-lg font-bold text-ink">Lấy quyền xem: 3 bước</h2>
         <ol className="mt-4 space-y-4">
           {[
-            CONTACT.zalo ? (
-              <>
-                Nhắn Zalo cho thầy (hoặc gọi <b>{phone}</b>) và cho biết tên con đang học.
-              </>
-            ) : (
-              <>
-                Gọi cho thầy theo số <b>{phone}</b> và cho biết tên con đang học.
-              </>
-            ),
             <>
-              Thầy gửi lại một <b>link mời</b> dạng{" "}
-              <code className="rounded bg-surface-2 px-1.5 py-0.5 text-[.95em] text-ink">
-                thachlab.id.vn/loi-moi?ma=PH…
-              </code>
+              <Link href="/loi-moi?vai=phu-huynh" className="font-semibold text-primary underline underline-offset-2">
+                Tạo tài khoản phụ huynh
+              </Link>{" "}
+              — chỉ cần họ tên, email và mật khẩu. Phụ huynh <b>không cần mật khẩu của con</b>.
             </>,
             <>
-              Mở link, điền họ tên, email và mật khẩu. Tài khoản tự nối với con — phụ huynh{" "}
-              <b>không cần mật khẩu của con</b>.
+              Điền <b>họ tên, ngày sinh của con</b> và <b>số điện thoại phụ huynh đã ghi khi đăng ký học</b>. Khớp là nối
+              ngay; thầy và con đều nhận thông báo.
+            </>,
+            <>
+              Chưa khớp? Bấm gửi yêu cầu để thầy xác nhận, hoặc nhắn Zalo/gọi <b>{phone}</b> để thầy gửi link mời dạng{" "}
+              <code className="rounded bg-surface-2 px-1.5 py-0.5 text-[.95em] text-ink">thachlab.id.vn/loi-moi?ma=PH…</code>
             </>,
           ].map((step, i) => (
             <li key={i} className="flex gap-4">
@@ -167,12 +162,18 @@ export default function ParentGuestLanding() {
         </ol>
 
         <div className="mt-5 flex flex-wrap items-center gap-3">
+          <Link
+            href="/loi-moi?vai=phu-huynh"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white hover:bg-primary-dark"
+          >
+            Tạo tài khoản
+          </Link>
           {CONTACT.zalo && (
             <a
               href={CONTACT.zalo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white hover:bg-primary-dark"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-5 py-3 text-base font-semibold text-ink hover:border-line-strong"
             >
               {/* Nhãn ≤ 2 từ: ở 375px + chữ 18px, "Nhắn Zalo cho thầy" xuống 2 dòng (D2) — câu
                   hướng dẫn ngay trên đã nói rõ là nhắn cho thầy. */}

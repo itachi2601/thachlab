@@ -9,6 +9,7 @@ import { fetchInstructorClasses } from "@/services/class-instructors";
 import dynamic from "next/dynamic";
 import type { ComponentProps, ComponentType } from "react";
 import SegmentedControl from "@/components/ui/SegmentedControl";
+import ParentLinkRequestsPanel from "@/components/dashboard/ParentLinkRequestsPanel";
 import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
@@ -147,6 +148,8 @@ export default function TeacherThptDashboard() {
           {loadError && <p className="mt-2 text-xs text-red-300">{loadError}</p>}
         </div>
       </section>
+
+      <ParentLinkRequestsPanel />
 
       <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
         <label className="block">

@@ -30,6 +30,7 @@ FILES=(
   "supabase/migrations/20261014170000_teacher_lesson_notes.sql|Bảng teacher_lesson_notes: ghi chú giáo viên lúc dạy (RLS chỉ người viết, is_staff), chỉ thêm bảng mới|lúc nào cũng được"
   "supabase/migrations/20261014150000_giao_em_cho_tro_giang.sql|Nút Giao trợ giảng: bảng ta_student_handoffs + 4 hàm ta_handoff_* + trigger tự gán mục phụ đạo mới cho trợ giảng phụ trách|chạy lúc nào cũng được (chỉ thêm bảng + hàm)"
   "supabase/migrations/20261015200000_rank_ho_so_thanh_tuu_mua.sql|Hồ sơ thành tựu mùa: thêm cột vào rank_season_results + hàm rank_snapshot_season, rank_close_season chụp đầy đủ (chỉ thêm cột/thay hàm)|lúc nào cũng được"
+  "supabase/migrations/20261015180000_phu_huynh_tu_noi_con.sql|Phụ huynh tự nối với con bằng tên + ngày sinh + SĐT: bảng parent_link_attempts, parent_link_requests + 4 RPC (claim_parent_by_child_info, request_parent_link_review, review_parent_link_request, search_students_for_link)|lúc nào cũng được (chỉ thêm bảng + hàm)"
 )
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar

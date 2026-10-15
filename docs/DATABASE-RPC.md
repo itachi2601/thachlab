@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 342 hàm, sinh tự động 2026-10-15
+# Hàm SQL / RPC (schema public) — 352 hàm, sinh tự động 2026-10-15
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -19,6 +19,7 @@ repo — xem trên Supabase Dashboard).
 - `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
+- `claim_parent_by_child_info(p_name text, p_birth date, p_phone text)` → TABLE(status text, student_name text, class_name text)
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
 - `claim_push_reminders_due(p_now timestamp with time zone)` → TABLE(subscription_id bigint, student_id uuid, endpoint text, p256dh text, auth_key text, topic_name text, lesson_id bigint, level text)
 - `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
@@ -87,6 +88,12 @@ repo — xem trên Supabase Dashboard).
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
 - `notify_user(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
 - `parent_attendance_summary(p_student uuid, p_limit integer)` → TABLE(session_id bigint, session_date date, title text, status text)
+- `pl_digits(p text)` → text
+- `pl_fold_name(p text)` → text
+- `pl_link_parent(p_parent uuid, p_student uuid, p_label text, p_by uuid)` → uuid
+- `pl_notify_staff_of_student(p_student uuid, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
+- `pl_student_class_label(p_student uuid)` → text
+- `pl_student_phone_match(p_student uuid, p_phone9 text)` → boolean
 - `preview_cttc_enroll()` → jsonb
 - `preview_cttc_unenroll()` → integer
 - `question_bank_plain_text(q jsonb)` → text
@@ -198,11 +205,14 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
+- `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
+- `review_parent_link_request(p_id bigint, p_student uuid, p_approve boolean)` → void
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
+- `search_students_for_link(p_query text)` → TABLE(id uuid, full_name text, class_name text, birth_date date)
 - `seed_absent_attendance_for_enrollment()` → trigger
 - `seed_absent_attendance_for_session()` → trigger
 - `select_attendance_machine(p_session_id bigint, p_machine_code text)` → void
@@ -218,8 +228,8 @@ repo — xem trên Supabase Dashboard).
 - `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
