@@ -9,10 +9,10 @@ Chỉ xây phần HS nhìn thấy **sau 25/10** (hết mùa thử nghiệm) và 
 - `rank_close_season` ghi `rank_season_results` (rp, bậc, số danh hiệu); `rank_seasons_of` đã đọc lịch sử mùa.
 - Migration `20261015200000_rank_ho_so_thanh_tuu_mua.sql` (chờ chạy) bổ sung bản chụp: tên/thứ tự bậc, lớp lúc đóng,
   danh hiệu nhận **trong mùa**, số tuần đạt mục tiêu, RP theo tuần, YCCĐ đang Nắm vững; thêm `rank_snapshot_season`
-  (chụp lại được bất cứ lúc nào, idempotent). Đã thử trên PGlite: chụp, chạy lại, đóng mùa, rollback.
+  (idempotent; mùa đang mở chỉ chụp khi đóng hoặc p_force). Đã thử trên PGlite: chụp, chạy lại, đóng mùa, rollback.
 
 ## 1. Việc đóng mùa 1 (25/10)
-1. Trước khi đóng: `select rank_snapshot_season(4)` (giả lập JWT staff như `rank_recompute_season`) → đối chiếu vài em.
+1. Trước khi đóng: xem thử trong transaction: `begin; select rank_snapshot_season(4, true); select … from rank_season_results; rollback;` (giả lập JWT staff như `rank_recompute_season`) → đối chiếu vài em. Chụp thường bị chặn khi mùa đang mở (để `rank_seasons_of` không hiện số cũ).
 2. Đóng mùa trên `/quan-tri/xep-hang` (gọi `rank_close_season`, tự chụp lại lần cuối).
 3. Chạy A1 (`scripts/do-mua-1.mts`) → quyết mùa 2 theo mục 4.
 

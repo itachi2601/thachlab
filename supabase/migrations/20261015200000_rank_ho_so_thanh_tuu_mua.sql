@@ -7,7 +7,9 @@
 --   - danh hiệu nhận TRONG mùa (titles_count cũ đếm mọi mùa)
 --   - số tuần đạt mục tiêu, RP theo từng tuần (để tính "tiến bộ nhất" sau này mà không cần ledger)
 --   - YCCĐ đang "Nắm vững" tại thời điểm đóng (luật docs/mastery-rules.md: 10 lượt gần nhất, ≥4 lượt, ≥80%)
--- Thêm hàm rank_snapshot_season: chụp lại bất cứ lúc nào (kể cả mùa đang mở, để xem thử trước 25/10), idempotent.
+-- Thêm hàm rank_snapshot_season (idempotent). Mùa đang mở KHÔNG được chụp thường (rank_seasons_of sẽ hiện số cũ thay
+-- RP live, achievement Huyền Thoại đếm nhầm mùa chưa xong) — chỉ rank_close_season gọi với p_force. Xem thử trước khi
+-- đóng: begin; select rank_snapshot_season(4, true); select ... from rank_season_results ...; rollback;
 -- Chỉ thêm cột + thay hàm; chạy lúc nào cũng được.
 
 alter table public.rank_season_results
@@ -28,8 +30,8 @@ comment on column public.rank_season_results.weekly_rp is
 comment on column public.rank_season_results.mastered_topic_ids is
   'YCCĐ (question_topics.parent_id not null) đang Nắm vững lúc chụp — luật docs/mastery-rules.md';
 
--- Chụp kết quả mùa cho mọi thành viên. p_at = mốc tính YCCĐ (mặc định: now, hoặc hết ngày ends_on nếu đã qua).
-create or replace function public.rank_snapshot_season(p_season bigint)
+-- Chụp kết quả mùa cho mọi thành viên. Mốc tính YCCĐ = now, hoặc hết ngày ends_on nếu đã qua.
+create or replace function public.rank_snapshot_season(p_season bigint, p_force boolean default false)
 returns int
 language plpgsql security definer set search_path = public
 as $$
@@ -41,6 +43,9 @@ begin
   if not public.rank_is_staff() then raise exception 'Không có quyền chụp kết quả mùa'; end if;
   select * into s from public.rank_seasons where id = p_season;
   if not found then raise exception 'Không có mùa %', p_season; end if;
+  if s.status = 'active' and not p_force then
+    raise exception 'Mùa % đang mở — chỉ chụp khi đóng mùa (hoặc p_force trong transaction rồi rollback)', p_season;
+  end if;
   v_at := least(now(), ((s.ends_on + 1)::timestamp) at time zone 'Asia/Ho_Chi_Minh');
 
   insert into public.rank_season_results as r (
@@ -102,7 +107,7 @@ begin
   get diagnostics v_n = row_count;
   return v_n;
 end; $$;
-grant execute on function public.rank_snapshot_season(bigint) to authenticated;
+grant execute on function public.rank_snapshot_season(bigint, boolean) to authenticated;
 
 -- Đóng mùa = chụp đầy đủ + đổi trạng thái + xét thành tích như cũ.
 create or replace function public.rank_close_season(p_season bigint)
@@ -112,7 +117,7 @@ as $$
 declare v_n int; r record;
 begin
   if not public.rank_is_staff() then raise exception 'Không có quyền đóng mùa'; end if;
-  v_n := public.rank_snapshot_season(p_season);
+  v_n := public.rank_snapshot_season(p_season, true);
   update public.rank_season_results set closed_at = now() where season_id = p_season;
   update public.rank_seasons set status = 'closed', closed_at = now() where id = p_season;
   for r in select student_id from public.rank_season_results where season_id = p_season and tier_code = 'thach_dau' loop
@@ -144,7 +149,7 @@ grant execute on function public.rank_close_season(bigint) to authenticated;
 --   end loop;
 --   return v_n;
 -- end; $$;
--- drop function if exists public.rank_snapshot_season(bigint);
+-- drop function if exists public.rank_snapshot_season(bigint, boolean);
 -- alter table public.rank_season_results
 --   drop column if exists tier_sort, drop column if exists tier_name, drop column if exists class_names,
 --   drop column if exists season_titles, drop column if exists weeks_goal_met, drop column if exists weekly_rp,
