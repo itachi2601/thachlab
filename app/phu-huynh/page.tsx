@@ -19,6 +19,11 @@ import type { ThptCourse } from "@/services/thpt-courses-public";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
+import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
+
+// Trang mẫu (radar + nhật ký) cho tài khoản chưa nối con — tải sau, như ở trang khách.
+const ParentSamplePreview = dynamic(() => import("@/components/parent/ParentSamplePreview"), { ssr: false });
 
 /**
  * Trang phụ huynh — người đọc chính là cha/mẹ 45–60 tuổi (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md).
@@ -30,9 +35,7 @@ import { supabaseConfigured } from "@/services/supabase";
  */
 function Notice({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-8 text-center text-ink">
-      {children}
-    </div>
+    <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-8 text-center text-ink">{children}</div>
   );
 }
 
@@ -76,30 +79,37 @@ function RegistrationList({ items }: { items: MyRegistration[] }) {
 /** Chưa nối với con nào: phụ huynh cần biết xin mã ở đâu — nút gọi/Zalo phải nằm ngay đây (P9, P10). */
 function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
   return (
-    <Notice>
-      <Users className="mx-auto text-muted" size={36} />
-      <h1 className="mt-4 font-display text-xl font-bold text-ink">Tài khoản này chưa nối với con</h1>
-      <p className="mt-3 text-left text-muted">
-        Thầy cần gửi phụ huynh một <b>link mời</b> (dạng{" "}
-        <code className="rounded bg-surface-2 px-1.5 py-0.5 text-ink">/loi-moi?ma=PH…</code>) để
-        tài khoản này nối với con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
-      </p>
-      <RegistrationList items={registrations} />
-      <div className="mt-5 flex flex-wrap justify-center gap-3">
-        <Link
-          href="/khoa-hoc"
-          className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
-        >
-          <CalendarPlus size={16} /> Đăng ký học cho con
-        </Link>
-        <Link
-          href="/tai-khoan"
-          className="inline-flex items-center justify-center rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
-        >
-          Về tài khoản
-        </Link>
+    <>
+      <Notice>
+        <Users className="mx-auto text-muted" size={36} />
+        <h1 className="mt-4 font-display text-xl font-bold text-ink">Tài khoản này chưa nối với con</h1>
+        <p className="mt-3 text-left text-muted">
+          Thầy cần gửi phụ huynh một <b>link mời</b> (dạng{" "}
+          <code className="rounded bg-surface-2 px-1.5 py-0.5 text-ink">/loi-moi?ma=PH…</code>) để tài khoản này nối với
+          con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
+        </p>
+        <RegistrationList items={registrations} />
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/khoa-hoc"
+            className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
+          >
+            <CalendarPlus size={16} /> Đăng ký học cho con
+          </Link>
+          <Link
+            href="/tai-khoan"
+            className="inline-flex items-center justify-center rounded-xl border border-line px-5 py-2.5 font-semibold text-ink hover:border-line-strong"
+          >
+            Về tài khoản
+          </Link>
+        </div>
+      </Notice>
+      <div className="mx-auto mt-8 max-w-3xl">
+        <LazyErrorBoundary fallback={null}>
+          <ParentSamplePreview />
+        </LazyErrorBoundary>
       </div>
-    </Notice>
+    </>
   );
 }
 
@@ -185,8 +195,8 @@ function ParentHome() {
 
       {selected.classId === null && (
         <p className="parent-copy mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-warn">
-          {selected.fullName} chưa được thầy duyệt vào lớp trên thachlab, nên chưa có điểm và chưa có
-          hạng trong lớp. Phụ huynh nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
+          {selected.fullName} chưa được thầy duyệt vào lớp trên thachlab, nên chưa có điểm và chưa có hạng trong lớp.
+          Phụ huynh nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
         </p>
       )}
 

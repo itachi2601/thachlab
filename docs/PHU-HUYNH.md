@@ -75,3 +75,26 @@ nguồn ở `docs/NGHIEN-CUU-PHU-HUYNH-45-60.md`.
 
 - Trang khoá học công khai + lịch tuần + ghi danh — `docs/KHOA-HOC.md`.
 - Vào lớp trễ, bù bài trước khi vào lớp — mục cuối `docs/KHOA-HOC.md`.
+
+## Đề xuất 15/10/2026 — phụ huynh tự nối với con (CHỜ THẦY DUYỆT, chưa code)
+
+Hiện nay chỉ có đường **link mời `PH…` do thầy tạo** — chắc chắn nhưng thầy phải làm tay cho từng phụ huynh.
+Đề xuất thêm đường tự phục vụ ở trang "Tài khoản này chưa nối với con":
+
+| Cách khớp | Rủi ro | Kết luận |
+|---|---|---|
+| Họ tên con + ngày sinh con | Bạn cùng lớp biết sinh nhật nhau (Facebook, Zalo) → tự tạo tài khoản "phụ huynh" xem điểm bạn. HS 14–18 rất nhạy chuyện điểm bị bạn biết (Dahl–Steinberg, `DE-XUAT-NGHIEN-CUU-HS-14-22`) | **Không đủ** một mình |
+| SĐT của con | Bạn bè biết số; con có thể đổi số; con có thể tự nối tài khoản giả để "phụ huynh" không phải bố mẹ thật | **Không dùng** |
+| **Họ tên con + ngày sinh con + SĐT phụ huynh đã khai lúc đăng ký học** (`thpt_registration_requests.parent_phone` / `thpt_registrations.contact`) | SĐT phụ huynh là thứ chỉ phụ huynh và thầy có | **Đề xuất** |
+
+Luật đi kèm:
+1. Cả 3 phải khớp (tên so không dấu, bỏ khoảng trắng thừa; SĐT so 9 số cuối). Khớp → nối ngay.
+2. Nối xong **báo cho thầy và cho con** ("Tài khoản phụ huynh Nguyễn Văn A vừa nối với con lúc …") — người lạ nối được thì
+   con/thầy thấy ngay và gỡ một chạm. Đây là lớp bảo vệ chính, không dựa vào việc "đoán không ra".
+3. Tối đa 5 lần thử sai / tài khoản / ngày; sai không nói sai ở ô nào (tránh dò từng trường).
+4. Không khớp (thường do lúc đăng ký chưa khai SĐT phụ huynh) → nút **"Gửi yêu cầu để thầy duyệt"**: tạo yêu cầu chờ,
+   thầy duyệt một chạm trong hồ sơ học sinh. Link mời `PH…` giữ nguyên làm đường nhanh.
+
+Cần làm khi thầy duyệt: migration bảng `parent_link_requests` (RLS + revoke anon), RPC `security definer`
+`claim_parent_by_child_info(p_name, p_birth date, p_phone)` có đếm lượt sai, thông báo qua `notifications`; form 3 ô
+ở `app/phu-huynh/page.tsx` (`NoChildYet`). Trước đó kiểm: bao nhiêu học sinh có `profiles.birth_date` và SĐT phụ huynh.

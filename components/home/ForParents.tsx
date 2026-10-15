@@ -27,8 +27,8 @@ const QUESTIONS = [
   },
   {
     title: "Phụ huynh xem kết quả ở đâu",
-    desc: "Tài khoản riêng để xem điểm, bài đã làm và phần con còn sai.",
-    href: "/phu-huynh",
+    desc: "Tài khoản riêng để xem điểm, phần con còn sai, nhật ký thầy theo dõi con và sơ đồ con nắm bài tới đâu.",
+    href: "/phu-huynh#trang-mau",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
                     href={q.href}
                     className="mt-2 inline-flex min-h-12 items-center gap-1 text-base font-semibold text-primary hover:underline"
                   >
-                    Xem kết quả của con <ArrowRight size={16} />
+                    Xem trang mẫu cho phụ huynh <ArrowRight size={16} />
                   </Link>
                 )}
               </li>

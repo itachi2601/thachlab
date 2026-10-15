@@ -30,6 +30,8 @@ interface ChapterMasteryRadarProps {
   compact?: boolean;
   /** Giáo viên xem hồ sơ em: dữ liệu cả khoá đã tính sẵn (buildCourseRadar) → có bộ chuyển phạm vi, không gọi RPC. */
   courseData?: { current: ChapterLessonMastery[]; prev: ChapterLessonMastery[] | null };
+  /** "parent": phụ huynh xem (xưng "con", bỏ nút luyện/ôn — phụ huynh không vào được bài của lớp). */
+  viewer?: "student" | "parent";
 }
 
 interface RadarViewProps extends ChapterMasteryRadarProps {
@@ -56,8 +58,11 @@ function RadarView({
   subtitle,
   headerSlot,
   onPickChapter,
+  viewer = "student",
 }: RadarViewProps) {
   const isChapterUnit = unit === "chapter";
+  const isParent = viewer === "parent";
+  const who = isParent ? "con" : "em";
   const unitWord = isChapterUnit ? "mảng" : "bài";
   const [loading, setLoading] = useState(!preloaded);
   const [currentData, setCurrentData] = useState<ChapterLessonMastery[] | null>(
@@ -325,7 +330,7 @@ function RadarView({
               </>
             ) : (
               <p className="font-medium text-ok">
-                {isChapterUnit ? "Các mảng em đã làm đều vững, học tiếp mảng còn trống." : "Chương này em đã nắm vững, học tiếp bài mới."}
+                {isChapterUnit ? `Các mảng ${who} đã làm đều vững, học tiếp mảng còn trống.` : `Chương này ${who} đã nắm vững, học tiếp bài mới.`}
               </p>
             )}
           </div>
@@ -347,7 +352,7 @@ function RadarView({
         )}
       </div>
       <p className="mt-0.5 text-[13px] text-muted">
-        {compact ? chapterTitle : (subtitle ?? "So với chính em 30 ngày trước và mục tiêu 80%")}
+        {compact ? chapterTitle : (subtitle ?? `So với chính ${who} 30 ngày trước và mục tiêu 80%`)}
       </p>
       {!compact && headerSlot}
 
@@ -559,7 +564,7 @@ function RadarView({
                     strokeDasharray="3 3"
                   />
                 </svg>
-                <span>Chính em 30 ngày trước</span>
+                <span>Chính {who} 30 ngày trước</span>
               </div>
             )}
           </div>}
@@ -724,7 +729,11 @@ function RadarView({
 
       {/* Nút chính duy nhất hoặc dòng chúc mừng */}
       <div className="mt-5">
-        {weakestLesson && isChapterUnit ? (
+        {isParent && weakestLesson ? (
+          <p className="text-sm text-ink">
+            Cần thêm nhất: <b>{weakestLesson.lessonTitle}</b> — {weakestLesson.pct}% thành thạo.
+          </p>
+        ) : weakestLesson && isChapterUnit ? (
           onPickChapter ? (
             <button
               type="button"
@@ -758,7 +767,7 @@ function RadarView({
           )
         ) : (
           <p className="text-sm font-medium text-ok">
-            {isChapterUnit ? "Các mảng em đã làm đều vững, học tiếp mảng còn trống." : "Chương này em đã nắm vững, học tiếp bài mới."}
+            {isChapterUnit ? `Các mảng ${who} đã làm đều vững, học tiếp mảng còn trống.` : `Chương này ${who} đã nắm vững, học tiếp bài mới.`}
           </p>
         )}
       </div>
@@ -822,7 +831,7 @@ export default function ChapterMasteryRadar(props: ChapterMasteryRadarProps) {
   return <CourseRadar {...props} />;
 }
 
-function CourseRadar({ studentId, onLoaded, compact = false, courseData }: ChapterMasteryRadarProps) {
+function CourseRadar({ studentId, onLoaded, compact = false, courseData, viewer = "student" }: ChapterMasteryRadarProps) {
   const [fetchLoading, setLoading] = useState(!courseData);
   const [fetchedCur, setCur] = useState<ChapterLessonMastery[] | null>(null);
   const [fetchedPrev, setPrev] = useState<ChapterLessonMastery[] | null>(null);
@@ -949,7 +958,9 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData }: Chapt
       <section className="rounded-2xl border border-line bg-panel p-5">
         <h2 className="font-display font-semibold text-ink">Năng lực chương</h2>
         {switcher}
-        <p className="mt-3 text-sm text-muted">Em chưa làm bài nào của chương này nên chưa có sơ đồ.</p>
+        <p className="mt-3 text-sm text-muted">
+          {viewer === "parent" ? "Con" : "Em"} chưa làm bài nào của chương này nên chưa có sơ đồ.
+        </p>
       </section>
     );
   }
@@ -964,7 +975,12 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData }: Chapt
       allowDrill={effScope === "chapter" && !courseData}
       unit={effScope === "course" ? "chapter" : "lesson"}
       title={effScope === "course" ? (isHsg ? "theo mảng kiến thức" : "cả khoá") : undefined}
-      subtitle={effScope === "course" ? "Mỗi đỉnh là một chương; so với chính em 30 ngày trước và mục tiêu 80%" : undefined}
+      subtitle={
+        effScope === "course"
+          ? `Mỗi đỉnh là một chương; so với chính ${viewer === "parent" ? "con" : "em"} 30 ngày trước và mục tiêu 80%`
+          : undefined
+      }
+      viewer={viewer}
       headerSlot={switcher}
       onPickChapter={effScope === "course" ? pickChapter : undefined}
     />

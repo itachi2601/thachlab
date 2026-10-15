@@ -1,10 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, LineChart, ListChecks, MessageCircle, Phone } from "lucide-react";
+import dynamic from "next/dynamic";
+import { Eye, HeartHandshake, LineChart, ListChecks, MessageCircle, Phone } from "lucide-react";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import { CONTACT } from "@/lib/contact";
 import { displayPhone } from "@/components/parent/TeacherContact";
 import ParentFaq from "@/components/parent/ParentFaq";
 import ScrollToHash from "@/components/ui/ScrollToHash";
+
+// Trang mẫu có sơ đồ radar (SVG + logic nặng) → tải sau, giữ chỗ để trang không giật (rule AGENTS mục 2).
+const sampleBox = "flex min-h-[24rem] items-center justify-center rounded-2xl border border-line p-8 text-center text-ink";
+const ParentSamplePreview = dynamic(() => import("@/components/parent/ParentSamplePreview"), {
+  ssr: false,
+  loading: () => <p className={sampleBox}>Đang tải trang mẫu…</p>,
+});
 
 /**
  * Trang khách của /phu-huynh — người xem là PHỤ HUYNH 45–60 tuổi chưa đăng nhập, thường mở link
@@ -29,6 +38,11 @@ const SEES = [
     icon: Eye,
     title: "Con đang được phụ đạo phần nào",
     desc: "Thầy đã nhận phần nào, đã dạy lại chưa, con đã làm đúng lại chưa — cùng bài tập thầy giao.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Thầy đã làm gì cho con",
+    desc: "Nhật ký từng việc thầy và trợ giảng làm riêng cho con, ngày nào con tự học, con nắm bài nào vững.",
   },
 ];
 
@@ -101,7 +115,7 @@ export default function ParentGuestLanding() {
 
       <section id="phu-huynh-thay-gi" className="scroll-mt-24">
         <h2 className="font-display text-lg font-bold text-ink">Phụ huynh sẽ thấy gì</h2>
-        <ul className="mt-3 grid gap-4 sm:grid-cols-3">
+        <ul className="mt-3 grid gap-4 sm:grid-cols-2">
           {SEES.map(({ icon: Icon, title, desc }) => (
             <li key={title} className="rounded-2xl border border-line p-4">
               <Icon size={20} className="text-primary" aria-hidden />
@@ -110,7 +124,14 @@ export default function ParentGuestLanding() {
             </li>
           ))}
         </ul>
+        <a href="#trang-mau" className="mt-3 inline-flex min-h-12 items-center font-semibold text-primary underline-offset-2 hover:underline">
+          Xem trang mẫu ngay bên dưới ↓
+        </a>
       </section>
+
+      <LazyErrorBoundary fallback={<p className={sampleBox}>Chưa tải được trang mẫu. Phụ huynh vui lòng tải lại trang.</p>}>
+        <ParentSamplePreview />
+      </LazyErrorBoundary>
 
       <section className="rounded-2xl border border-line bg-surface-2 p-5 sm:p-6">
         <h2 className="font-display text-lg font-bold text-ink">Lấy quyền xem: 3 bước</h2>

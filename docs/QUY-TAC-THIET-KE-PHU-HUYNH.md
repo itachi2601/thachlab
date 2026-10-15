@@ -334,3 +334,15 @@ nguồn quyết định nhiều nhất:
 Mỗi khối mới thêm request Supabase: khoá học (1), điểm danh (1), việc hôm nay (1); "so với lớp" chỉ gọi khi
 phụ huynh mở. Tổng trang đăng nhập: 8 → 11 request (phần phụ, không chặn nội dung chính). Ghi lại để lần tối ưu
 tốc độ sau có số để so.
+
+## 10. Bổ sung 15/10/2026 — khối "thầy quan tâm con" + radar (thầy chốt)
+
+- **Radar năng lực** đưa sang trang phụ huynh (`ParentRadar`) — ngoại lệ có chủ ý với P20 ("không biểu đồ có trục"):
+  radar không có trục số cần đọc, số % ghi ngay trong vòng tròn mỗi đỉnh, và **hai câu đọc sẵn đứng trên hình**
+  ("Vững nhất… / Cần thêm nhất…") để phụ huynh không phải tự giải nghĩa hình (P6, P19). Bỏ mọi nút của HS (luyện, ôn).
+- **"Thầy theo dõi con"** (`ParentCareLog`): nhật ký 60 ngày, nhãn người làm **Thầy / Web / Con**. Con số đầu khối chỉ
+  đếm việc NGƯỜI làm (dạy lại, kiểm vở, xử lý cảnh báo) — không cộng sự kiện máy tự sinh cho "đẹp số" (P19, trung thực).
+- **"Con tự học 7 ngày qua"** (`ParentWeekRhythm`): 7 ô T2…CN, ô trống là "·" màu trung tính, không tô đỏ (P15 không phán xét).
+- **Trang mẫu** (`ParentSamplePreview`, neo `#trang-mau`): dữ liệu minh hoạ, ghi "Mẫu" trên từng khối và câu "không phải
+  của học sinh nào" ở đầu. Hiện ở trang khách và trang "chưa nối với con"; trang chủ dẫn tới bằng link.
+- Đo: hỏi 5 phụ huynh thật "nhìn trang này, anh chị thấy thầy có theo dõi con không, nhờ chi tiết nào?" — chưa làm.
