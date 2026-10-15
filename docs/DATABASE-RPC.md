@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 336 hàm, sinh tự động 2026-10-14
+# Hàm SQL / RPC (schema public) — 341 hàm, sinh tự động 2026-10-15
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -194,8 +194,8 @@ repo — xem trên Supabase Dashboard).
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
@@ -234,6 +234,10 @@ repo — xem trên Supabase Dashboard).
 - `ta_converted_hours(p_session_type text, p_hours numeric, p_student_count integer)` → numeric
 - `ta_course_total_hours()` → numeric
 - `ta_current_assistant_id()` → uuid
+- `ta_handoff_assign(p_student uuid, p_assistant uuid, p_course bigint)` → jsonb
+- `ta_handoff_can_assign(p_student uuid)` → boolean
+- `ta_handoff_clear(p_student uuid)` → void
+- `ta_handoff_options(p_student uuid)` → jsonb
 - `ta_monthly_policy(p_assistant_id uuid, p_month date)` → jsonb
 - `ta_monthly_score(p_assistant_id uuid, p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
 - `ta_monthly_scores(p_assistant_ids uuid[], p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
@@ -316,6 +320,7 @@ repo — xem trên Supabase Dashboard).
 - `tutoring_exit_window_slot_guard()` → trigger
 - `tutoring_followup_report(p_class_id bigint, p_days integer)` → TABLE(registration_id bigint, slot_id bigint, work_date date, start_time time without time zone, assistant_name text, student_id uuid, student_name text, topic_id bigint, topic_name text, attended boolean, has_session boolean, best_pct integer, attempts integer, passed boolean, cleared boolean)
 - `tutoring_mark_attendance(p_slot_id bigint, p_student_id uuid, p_attended boolean)` → void
+- `tutoring_needs_handoff_assign()` → trigger
 - `tutoring_ready_topics(p_class_id bigint)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, question_count integer, ready boolean)
 - `tutoring_registration_guard()` → trigger
 - `tutoring_registration_notify()` → trigger

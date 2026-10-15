@@ -11,29 +11,17 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
-- `20261014150000_giao_em_cho_tro_giang` (nhánh claude/giao-tro-giang): bảng `ta_student_handoffs` + `ta_handoff_*` + trigger tự gán mục phụ đạo mới cho trợ giảng được giao; nút "Giao trợ giảng" ở hồ sơ học sinh (DiagnosticAdmin). Chạy lúc nào cũng được. Rollback: `perf/rollback/20261014150000_giao_em_cho_tro_giang.down.sql`.
-- `20261014140000_chan_doan_ban_do_xuat_phat` (commit d3e158338, nhánh cursor/ui-c3, CHƯA vào main): chỉ thay hàm `diagnostic_submit`/`diagnostic_get` + thêm `diagnostic_maps` (độ chắc 3 mức → 4 nhóm; phụ huynh chỉ thấy bản cắt). Chạy lúc nào cũng được (không đụng bảng). Rollback: `perf/rollback/20261014140000_chan_doan_ban_do_xuat_phat.down.sql`.
-- Đã chạy 11/10 16:58: `20261011200000_streak_moi_bai` + `20261011210000_live_study_summary` (hàm có trong DB; chưa thử bằng HS thật; heartbeat mới chỉ có ở `InlineLessonAccordion`).
-- Đã chạy 11/10 13:57: `20261011150000` (kho bẫy), `20261011170000_rank_lop10_bat_nguon`, `20261011170000_ta_reminders`, `20261011190000_mistake_review_mix_ok` (lượt ôn trộn bẫy/câu ok, tỉ lệ thích ứng 0,4–0,7). Chưa thử UI bằng HS thật; 2 file `20261006120000/130000_*_l11` chưa trong FILES, chưa rõ đã chạy. Chuỗi ngày nay tính mọi bài (`20261011200000`, đã chạy + deploy 11/10 14:50).
-- Đã chạy 11/10: `20261011180000_ta_doc_ket_qua_lam_bai` (TA đọc exam_results; chờ thầy thử bằng tài khoản trợ giảng); `20261011170000_ta_reminders` (skill kiem-tra-tro-giang-tuan, đã gửi nhắc tuần 05–11/10 cho 6 trợ giảng); `20261011160000_rank_bat_nguon_thuong_chenh_lech` (+30 nguồn, cộng bù 4185 RP/131 HS, max 158/HS); còn cần deploy code thông báo RP ở ExamRunner.
-- Đợt 11/10/2026: Đã chạy xong 9 file (đã chuyển sang `docs/STATE-archive.md`).
-- Đã chạy + deploy 14/10 (c56a0c917): `20261014100000_phu_dao_dang_ky_theo_chu_de` + `20261014110000_phu_dao_diem_danh_noi_phieu` (đăng ký chọn 1–3 chủ đề ≥12 câu, chốt 6 giờ trước, điểm danh, slot_id phiếu/bài kiểm tra, RPC `tutoring_followup_report`). Chưa thử bằng HS/TA thật. Còn làm: mục 3 (TA tự mời em chưa đánh giá, ≤6 em/tuần), mục 6 (giờ lương neo số em có mặt). Chi tiết: `docs/memory/project_thachlab_phu_dao.md`.
-- Đã chạy 13/10 10:01–10:02: `20261013230000_tien_trinh_day_va_moi_chan_doan` (bảng thpt_teaching_progress/notes + teaching_get/set/note_*, thpt_invite_entry_diagnostic) và `20261013233000_tien_trinh_day_ds_khoa` (teaching_courses). Code UI (tab Tiến trình dạy, `/tro-giang/tien-trinh`, nút mời chẩn đoán) chưa deploy, chưa thử bằng tài khoản thầy/TA thật. Rollback ở cuối mỗi file.
-- Đã chạy 12/10 20:09: `20261012120000_kiem_tra_dau_vao` (bảng entry_diagnostics + diagnostic_get/submit/reset). Code UI chưa deploy, chưa thử HS thật; nút "cho làm lại" + chip đã chẩn đoán đã có ở UI thầy (13/10).
-- Đã chạy 13/10 07:02: `20261013200000_mon_va_lop_avcn_cttc.sql` (môn `avcn` trong `subjects` + mở 2 lớp học phần `CĐN CGKL 23A` và `CĐ CK 23A` CTTC năm học 2026-2027). Skill soạn 9 chương còn lại: `.claude/skills/soan-bai-avcn/`.
-- Đã chạy 13/10 00:44: `20261013150000_chapter_mastery_radar` (RPC `get_my_chapter_mastery_pct`). UI mạng nhện giao Gemini/Cursor theo `docs/PROMPT-GEMINI-RADAR-NANG-LUC-2026-10-13.md`; Claude `kiem-code` soát trước khi merge.
+- Không còn migration nào chờ (kiểm 15/10: log `scripts/logs/` khớp hết). Vừa chạy 15/10 10:57: `20261014150000_giao_em_cho_tro_giang` (nút Giao trợ giảng, chưa thử thao tác thật) + `20261014150000_hsg9_cd17_thien_van` (CĐ17 bài 178 đang ẩn). `run-migrations.sh --list` vẫn liệt kê cả file đã chạy — đối chiếu log.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
 - Mạng nhện Theo chương / Cả khoá (HSG: Theo mảng): migration `20261014160000` đã chạy 14/10 17:41, deploy 14/10 (commit 10eed8050). Chờ thầy xem 375px với dữ liệu thật; chưa có "Theo học kì" (DB chưa có trường học kì).
 - Thử "🧰 Kiểm tra hành trang" (2 câu kiến thức nền + Nhắc nhanh) ở 10 bài chương 3 L10 (lesson 58–67), đã đăng DB 13/10, không cần deploy. Chờ đo: tỉ lệ đọc hết bài + đúng quiz giữa bài trước/sau; ổn thì làm chương khác (`scripts/chen-hanh-trang.py`, PHUONG-PHAP §4.2b).
-- 25 bài lý thuyết L10 (lesson 46–48, 58–79) đã ghi DB 10/10, **chưa deploy**. Main local có thể ahead origin — xem trước khi push.
 - Mã QR đề (`ExamQrPanel`, `/quet-ma`): chưa thử iPhone + Android thật; chưa làm QR cho CNC và `LessonImporter`.
 - RP lý thuyết: UI đã gọi `rank_theory_open/submit`; **chưa có khoá** → `npx tsx scripts/sinh-khoa-quiz-ly-thuyet.mts` (xem thử) rồi `--ghi`. Chưa chụp 375px bằng tài khoản HS, chưa thử nộp thật.
 - Chấm nhanh HSG 9: Edge Function `hsg-ai-grade` chưa deploy (cần secret `DEEPSEEK_API_KEY`/`ANTHROPIC_API_KEY`).
 - Nền sáng: đã deploy `9077fbd47`; còn treo việc nhỏ ở `docs/MAU-NEN-SANG.md`.
-- Nhánh `perf-tach-js` (3 commit, JS theo vai) chưa vào main; chưa kiểm bằng đăng nhập thật.
 - Sách in Chương 2 L10 bản v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`; `public/sach-data/*.json` v6 chưa commit/deploy (xem `docs/memory/project_thachlab_sach_in_chuong2.md`).
 - Push nhắc hằng ngày: còn VAPID secrets + deploy `send-daily-push` + cron (`docs/PUSH-NHAC-HANG-NGAY.md`).
 - HTML chưa có `Cache-Control: no-cache` trong `.htaccess` của `scripts/deploy.sh` — chờ thầy gật.
