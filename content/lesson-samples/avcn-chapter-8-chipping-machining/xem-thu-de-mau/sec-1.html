@@ -190,6 +190,18 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
 html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
 html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
 html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
@@ -308,33 +320,41 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
 }
 
-/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
-  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
-  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
   .lesson-layout--pick .class-continue--main {
+    position: relative;
     gap: 2px;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    padding: 0;
+    border-radius: 14px;
+    padding: 10px 14px;
   }
-  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
   .lesson-layout--pick .class-toc-toolbar { display: none; }
   .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
   .lesson-layout--pick .class-lesson {
     display: grid;
-    grid-template-columns: 26px minmax(0, 1fr);
-    column-gap: 12px;
-    row-gap: 2px;
-    align-items: start;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
   }
-  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
-  .lesson-layout--pick .class-lesson-title,
-  .lesson-layout--pick .class-meta { grid-column: 2; }
-  .lesson-layout--pick .class-meta { justify-self: start; }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -508,6 +528,27 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -977,12 +1018,36 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
 .exam-content .avcn-term .tl-speak { margin-left: 2px; }
 .exam-content .avcn-photo figcaption { font-size: .9rem; }
 
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Đề mẫu — Chapter 8: Chipping Machining</h1><p class="sub">5 Part, Part 1–3 tự chấm</p><span class="exam-content"><h3>Part 1 · Chọn từ theo định nghĩa / ảnh</h3><p><strong>Part 1: Choose the correct answer.</strong> (đề thật 10 câu · 2,5 điểm)</p><div class="tl-box tl-box--rule"><p class="tl-label">🎯 Chiến thuật</p><ul class="avcn-list"><li>Gạch từ khoá trong định nghĩa: <em>rotates</em>, <em>waste</em>, <em>gap</em>, <em>enlarging</em>…</li><li>So từ khoá với nghĩa đã học ở mục Từ vựng.</li><li>Câu có ảnh: nhìn hình dạng (khung chữ C = hacksaw, bánh đá = grinder).</li><li>Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn.</li></ul></div><p><strong>1.</strong> A machine that rotates a workpiece against a fixed cutting tool.</p><div class="tl-quiz"><input type="radio" name="tl8m-q13" id="tl8m-q13a"><label for="tl8m-q13a" class="tl-opt tl-no">a. drill</label><input type="radio" name="tl8m-q13" id="tl8m-q13b" checked><label for="tl8m-q13b" class="tl-opt tl-ok">b. lathe</label><input type="radio" name="tl8m-q13" id="tl8m-q13c"><label for="tl8m-q13c" class="tl-opt tl-no">c. grinder</label><input type="radio" name="tl8m-q13" id="tl8m-q13d"><label for="tl8m-q13d" class="tl-opt tl-no">d. saw</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>rotates a workpiece</em> → lathe.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>2.</strong> The waste metal produced during machining.</p><div class="tl-quiz"><input type="radio" name="tl8m-q14" id="tl8m-q14a"><label for="tl8m-q14a" class="tl-opt tl-no">a. workpiece</label><input type="radio" name="tl8m-q14" id="tl8m-q14b"><label for="tl8m-q14b" class="tl-opt tl-no">b. coolant</label><input type="radio" name="tl8m-q14" id="tl8m-q14c"><label for="tl8m-q14c" class="tl-opt tl-no">c. kerf</label><input type="radio" name="tl8m-q14" id="tl8m-q14d" checked><label for="tl8m-q14d" class="tl-opt tl-ok">d. swarf</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>waste</em> → swarf/chips.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>3.</strong> The piece of material being machined.</p><div class="tl-quiz"><input type="radio" name="tl8m-q15" id="tl8m-q15a" checked><label for="tl8m-q15a" class="tl-opt tl-ok">a. workpiece</label><input type="radio" name="tl8m-q15" id="tl8m-q15b"><label for="tl8m-q15b" class="tl-opt tl-no">b. machine tool</label><input type="radio" name="tl8m-q15" id="tl8m-q15c"><label for="tl8m-q15c" class="tl-opt tl-no">c. blade</label><input type="radio" name="tl8m-q15" id="tl8m-q15d"><label for="tl8m-q15d" class="tl-opt tl-no">d. core</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>material being machined</em> → workpiece.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>4.</strong> Look at the picture and choose the correct answer. [hình: cưa sắt tay]</p><div class="tl-quiz"><input type="radio" name="tl8m-q16" id="tl8m-q16a"><label for="tl8m-q16a" class="tl-opt tl-no">a. band saw</label><input type="radio" name="tl8m-q16" id="tl8m-q16b" checked><label for="tl8m-q16b" class="tl-opt tl-ok">b. hacksaw</label><input type="radio" name="tl8m-q16" id="tl8m-q16c"><label for="tl8m-q16c" class="tl-opt tl-no">c. circular saw</label><input type="radio" name="tl8m-q16" id="tl8m-q16d"><label for="tl8m-q16d" class="tl-opt tl-no">d. abrasive wheel</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khung chữ C + lưỡi răng nhỏ → hacksaw.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>5.</strong> Enlarging a hole that already exists.</p><div class="tl-quiz"><input type="radio" name="tl8m-q17" id="tl8m-q17a"><label for="tl8m-q17a" class="tl-opt tl-no">a. drilling</label><input type="radio" name="tl8m-q17" id="tl8m-q17b"><label for="tl8m-q17b" class="tl-opt tl-no">b. milling</label><input type="radio" name="tl8m-q17" id="tl8m-q17c" checked><label for="tl8m-q17c" class="tl-opt tl-ok">c. boring</label><input type="radio" name="tl8m-q17" id="tl8m-q17d"><label for="tl8m-q17d" class="tl-opt tl-no">d. grinding</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>enlarging</em> → boring.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>6.</strong> A hollow cylinder with teeth that removes a core of material.</p><div class="tl-quiz"><input type="radio" name="tl8m-q18" id="tl8m-q18a"><label for="tl8m-q18a" class="tl-opt tl-no">a. drill bit</label><input type="radio" name="tl8m-q18" id="tl8m-q18b" checked><label for="tl8m-q18b" class="tl-opt tl-ok">b. hole saw</label><input type="radio" name="tl8m-q18" id="tl8m-q18c"><label for="tl8m-q18c" class="tl-opt tl-no">c. abrasive wheel</label><input type="radio" name="tl8m-q18" id="tl8m-q18d"><label for="tl8m-q18d" class="tl-opt tl-no">d. blade</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>hollow cylinder</em> + <em>core</em> → hole saw.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Đề mẫu — Chapter 8: Chipping Machining</h1><p class="sub">5 Part, Part 1–3 tự chấm</p><span class="exam-content"><h3>Part 1 · Chọn từ theo định nghĩa / ảnh</h3><p><strong>Part 1: Choose the correct answer.</strong> (đề thật 10 câu · 2,5 điểm)</p><div class="tl-box tl-box--rule"><p class="tl-label">🎯 Chiến thuật</p><ul class="avcn-list"><li>Gạch từ khoá trong định nghĩa: <em>rotates</em>, <em>waste</em>, <em>gap</em>, <em>enlarging</em>…</li><li>So từ khoá với nghĩa đã học ở mục Từ vựng.</li><li>Câu có ảnh: nhìn hình dạng (khung chữ C = hacksaw, bánh đá = grinder).</li><li>Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn.</li></ul></div><p><strong>1.</strong> A machine that rotates a workpiece against a fixed cutting tool.</p><div class="tl-quiz"><input type="radio" name="tl8m-q43" id="tl8m-q43a"><label for="tl8m-q43a" class="tl-opt tl-no">a. drill</label><input type="radio" name="tl8m-q43" id="tl8m-q43b" checked><label for="tl8m-q43b" class="tl-opt tl-ok">b. lathe</label><input type="radio" name="tl8m-q43" id="tl8m-q43c"><label for="tl8m-q43c" class="tl-opt tl-no">c. grinder</label><input type="radio" name="tl8m-q43" id="tl8m-q43d"><label for="tl8m-q43d" class="tl-opt tl-no">d. saw</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>rotates a workpiece</em> → lathe.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>2.</strong> The waste metal produced during machining.</p><div class="tl-quiz"><input type="radio" name="tl8m-q44" id="tl8m-q44a"><label for="tl8m-q44a" class="tl-opt tl-no">a. workpiece</label><input type="radio" name="tl8m-q44" id="tl8m-q44b"><label for="tl8m-q44b" class="tl-opt tl-no">b. coolant</label><input type="radio" name="tl8m-q44" id="tl8m-q44c"><label for="tl8m-q44c" class="tl-opt tl-no">c. kerf</label><input type="radio" name="tl8m-q44" id="tl8m-q44d" checked><label for="tl8m-q44d" class="tl-opt tl-ok">d. swarf</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>waste</em> → swarf/chips.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>3.</strong> The piece of material being machined.</p><div class="tl-quiz"><input type="radio" name="tl8m-q45" id="tl8m-q45a" checked><label for="tl8m-q45a" class="tl-opt tl-ok">a. workpiece</label><input type="radio" name="tl8m-q45" id="tl8m-q45b"><label for="tl8m-q45b" class="tl-opt tl-no">b. machine tool</label><input type="radio" name="tl8m-q45" id="tl8m-q45c"><label for="tl8m-q45c" class="tl-opt tl-no">c. blade</label><input type="radio" name="tl8m-q45" id="tl8m-q45d"><label for="tl8m-q45d" class="tl-opt tl-no">d. core</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>material being machined</em> → workpiece.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>4.</strong> Look at the picture and choose the correct answer. [hình: cưa sắt tay]</p><div class="tl-quiz"><input type="radio" name="tl8m-q46" id="tl8m-q46a"><label for="tl8m-q46a" class="tl-opt tl-no">a. band saw</label><input type="radio" name="tl8m-q46" id="tl8m-q46b" checked><label for="tl8m-q46b" class="tl-opt tl-ok">b. hacksaw</label><input type="radio" name="tl8m-q46" id="tl8m-q46c"><label for="tl8m-q46c" class="tl-opt tl-no">c. circular saw</label><input type="radio" name="tl8m-q46" id="tl8m-q46d"><label for="tl8m-q46d" class="tl-opt tl-no">d. abrasive wheel</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khung chữ C + lưỡi răng nhỏ → hacksaw.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>5.</strong> Enlarging a hole that already exists.</p><div class="tl-quiz"><input type="radio" name="tl8m-q47" id="tl8m-q47a"><label for="tl8m-q47a" class="tl-opt tl-no">a. drilling</label><input type="radio" name="tl8m-q47" id="tl8m-q47b"><label for="tl8m-q47b" class="tl-opt tl-no">b. milling</label><input type="radio" name="tl8m-q47" id="tl8m-q47c" checked><label for="tl8m-q47c" class="tl-opt tl-ok">c. boring</label><input type="radio" name="tl8m-q47" id="tl8m-q47d"><label for="tl8m-q47d" class="tl-opt tl-no">d. grinding</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>enlarging</em> → boring.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div><p><strong>6.</strong> A hollow cylinder with teeth that removes a core of material.</p><div class="tl-quiz"><input type="radio" name="tl8m-q48" id="tl8m-q48a"><label for="tl8m-q48a" class="tl-opt tl-no">a. drill bit</label><input type="radio" name="tl8m-q48" id="tl8m-q48b" checked><label for="tl8m-q48b" class="tl-opt tl-ok">b. hole saw</label><input type="radio" name="tl8m-q48" id="tl8m-q48c"><label for="tl8m-q48c" class="tl-opt tl-no">c. abrasive wheel</label><input type="radio" name="tl8m-q48" id="tl8m-q48d"><label for="tl8m-q48d" class="tl-opt tl-no">d. blade</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>hollow cylinder</em> + <em>core</em> → hole saw.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.</p></div></div></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>

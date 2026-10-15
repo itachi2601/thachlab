@@ -22,6 +22,9 @@ Quy tắc bắt buộc:
    viết đúng kiểu câu hỏi Part 1. 12 từ ⭐⭐ ở `tu_vung_them`.
 2. `bai_doc`: chép ĐÚNG từng câu Article của giáo trình (chỉ sửa lỗi chính tả hiển nhiên), mỗi câu ≤ 25 từ (tách câu dài ở
    dấu chấm), bọc từ ⭐ bằng `<b>`; bản dịch tiếng Việt tự soạn, sát nghĩa, dùng thuật ngữ xưởng.
+   Mỗi câu là `[en, vi, {"doan": [...], "nghia": {...}}]`: `doan` tối đa 2 từ chuyên ngành/từ thi (đã bọc `<b>`), mỗi từ
+   `{tu, lua_chon: 3 nghĩa tiếng Việt, dap, giai: 1 câu}`, phương án sai có lý (nghĩa đời thường của từ, từ gần nghĩa), xoay vị trí
+   đáp án; `nghia` = 2–5 từ/cụm thường mà sinh viên yếu không biết → nghĩa ngắn.
 3. Mọi quiz: 3–4 lựa chọn, `dap` là chỉ số 0-based; `fb_ok` giải thích bằng từ khoá trong định nghĩa; `fb_no` là gợi ý
    cách nghĩ lại, KHÔNG lộ đáp án. Không mở đầu phản hồi bằng "Đúng."/"Chưa đúng.".
 4. Chỗ có nhiều ý (`chien_thuat`, `ghi_chu`) viết thành MẢNG, mỗi phần tử một ý ngắn.

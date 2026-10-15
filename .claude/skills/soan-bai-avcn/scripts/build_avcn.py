@@ -126,7 +126,7 @@ def sec_tu_vung() -> str:
 # ---------- Mục 3: bài đọc ----------
 def sec_bai_doc() -> str:
     out = [f'<h3>{ROMAN[3]}. Bài đọc: Part 2 của đề lấy nguyên văn từ đây</h3>',
-           '<p>Đọc từng câu tiếng Anh trước. Chạm vào câu: <strong>đoán nghĩa các từ in đậm trước</strong>, rồi mới tự dịch cả câu và mở bản dịch. Bấm 🔊 để nghe. Mục tiêu không phải dịch hay, mà là <strong>nhớ câu nào nói về cái gì</strong> để khi thi tìm lại được.</p>']
+           '<p>Đọc từng câu tiếng Anh trước. Chạm vào câu: <strong>đoán nghĩa từ in đậm trước</strong> (chọn 1 trong 3), từ khác chưa biết thì chạm xem nghĩa, rồi mới tự dịch cả câu và mở bản dịch. Bấm 🔊 để nghe. Mục tiêu không phải dịch hay, mà là <strong>nhớ câu nào nói về cái gì</strong> để khi thi tìm lại được.</p>']
     vi_map = {t["term"].lower(): t["vi"] for g in D["tu_vung"] for t in g["tu"]}
     vi_map.update({t["term"].lower(): t["vi"] for t in D["tu_vung_them"]})
     for a in D["bai_doc"]:
@@ -134,16 +134,36 @@ def sec_bai_doc() -> str:
         # Cách thầy dạy (13/10/2026): với TỪNG câu, em đoán nghĩa các từ quan trọng (in đậm) trước, rồi mới mở bản dịch cả câu.
         def key_vi(w):
             return (a.get("tu_khoa") or {}).get(w) or vi_map.get(w.lower()) or next((v for k, v in vi_map.items() if k in w.lower() or w.lower() in k), "")
-        for i, (en, vi) in enumerate(a["cau"], 1):
+        for i, cau in enumerate(a["cau"], 1):
+            en, vi = cau[0], cau[1]
+            them = cau[2] if len(cau) > 2 else {}
             plain = re.sub(r"<[^>]+>", "", en)
-            keys = []
-            for w in re.findall(r"<b>(.*?)</b>", en):
-                if w.lower() not in [k.lower() for k in keys]:
-                    keys.append(w)
             inner = ""
-            if keys:
-                items = "".join("<li>" + details(f"{w} {speak(w)}", "<p>" + (key_vi(w) or "(tra ở mục Từ vựng)") + "</p>") + "</li>" for w in keys)
-                inner += f'<p><strong>Bước 1.</strong> Đoán nghĩa các từ in đậm, rồi bấm từng từ để đối chiếu.</p><ul class="avcn-list">{items}</ul><p><strong>Bước 2.</strong> Ghép lại, tự dịch cả câu, rồi mở bản dịch.</p>'
+            doan = them.get("doan") or []
+            # Thầy chốt 16/10/2026: mỗi câu đố tối đa 2 từ chuyên ngành/từ thi (3 phương án, đoán trước rồi mới biết đáp án);
+            # từ thường em không biết thì chạm hiện nghĩa, không đố (G1/N2 — tránh quá tải lựa chọn).
+            if doan:
+                assert len(doan) <= 2, f"{a['ten']} câu {i}: tối đa 2 từ đố"
+                qs = []
+                for d in doan:
+                    assert len(d["lua_chon"]) == 3, f"{a['ten']} câu {i} '{d['tu']}': cần đúng 3 phương án"
+                    dung = d["lua_chon"][d["dap"]]
+                    qs.append(quiz(f'<b>{d["tu"]}</b> {speak(d["tu"])} nghĩa là gì?', d["lua_chon"], d["dap"],
+                                   d["giai"], f"Nghĩa đúng: <b>{dung}</b>. {d['giai']}"))
+                inner += '<p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p>' + "".join(qs)
+                nghia = them.get("nghia") or {}
+                if nghia:
+                    items = "".join("<li>" + details(f"{w} {speak(w)}", f"<p>{v}</p>") + "</li>" for w, v in nghia.items())
+                    inner += f'<p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list">{items}</ul>'
+                inner += f'<p><strong>Bước {3 if nghia else 2}.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p>'
+            else:
+                keys = []
+                for w in re.findall(r"<b>(.*?)</b>", en):
+                    if w.lower() not in [k.lower() for k in keys]:
+                        keys.append(w)
+                if keys:
+                    items = "".join("<li>" + details(f"{w} {speak(w)}", "<p>" + (key_vi(w) or "(tra ở mục Từ vựng)") + "</p>") + "</li>" for w in keys)
+                    inner += f'<p><strong>Bước 1.</strong> Đoán nghĩa các từ in đậm, rồi bấm từng từ để đối chiếu.</p><ul class="avcn-list">{items}</ul><p><strong>Bước 2.</strong> Ghép lại, tự dịch cả câu, rồi mở bản dịch.</p>'
             inner += details("Xem bản dịch cả câu", f'<p class="avcn-trans">{vi}</p>')
             out.append(details(f'<span class="avcn-n">({i})</span> {en} {speak(plain)}', inner, cls="tl-details avcn-sent"))
         q = a["quiz"]

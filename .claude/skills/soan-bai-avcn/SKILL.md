@@ -13,7 +13,9 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - Đề cuối kỳ 5 Part: Part 1 (10 câu định nghĩa/ảnh → từ) + Part 2 (Article chép nguyên văn giáo trình → điền 1 từ, Đúng/Sai)
   + Part 3 (điền từ có hộp) = **7 điểm, toàn nhận diện**. Part 4–5 dịch = 3 điểm. Em yếu qua 5 điểm bằng Part 1–3.
 - Vì vậy tab Học = 8 mục: thi gì → đoán ảnh → 20 từ ⭐ (4 cụm × 5 từ, quiz sau mỗi cụm) → Article: **đoán nghĩa từ in đậm trước**
-  (cách thầy dạy: em tự dịch từ quan trọng, đoán nghĩa, rồi mới đọc và làm; script tự lấy `<b>` trong câu), từng câu chạm hiện dịch,
+  (cách thầy dạy: em tự dịch từ quan trọng, đoán nghĩa, rồi mới đọc và làm). Mỗi câu (thầy chốt 16/10/2026): **tối đa 2 từ đố**
+  (từ ⭐/từ dễ bị đục ở Part 2), mỗi từ trắc nghiệm **3 phương án**, chọn rồi mới hiện đáp án + giải thích; **từ thường** em
+  yếu cũng không biết (remove, surface, hollow…) chỉ chạm hiện nghĩa, không đố (G1/N2: đố hết thì quá tải, em bỏ). Từng câu chạm hiện dịch,
   bài tập kiểu Part 2 → 2 mẫu câu → gắn nhãn hình → SOP kiểu Part 3 → Trả bài. Tab Bài mẫu = đề 5 Part, Part 1–3 là quiz
   tự chấm, Part 4–5 bản dịch mở dần. Tab Luyện tập = 20 trắc nghiệm + 3 đúng/sai (engine đề có sẵn; không có kiểu
   "điền một từ" vì `short_answer` chỉ nhận số).
@@ -36,6 +38,8 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
      bịa IPA và đổi nghĩa). Dữ liệu định danh sinh viên không bao giờ vào prompt.
    Chọn từ: 20 từ ⭐ = từ **chắc chắn ra Part 1** (có trong bài tập giáo trình/đề cũ), 12 từ ⭐⭐ = bộ phận/từ mô tả.
    Article: chép đúng câu giáo trình (đề Part 2 copy nguyên văn), chỉ sửa lỗi chính tả rõ ràng (sward→swarf); dịch tự soạn.
+   Từ đố mỗi câu: phương án sai phải có lý (nghĩa đời thường của từ: thread = sợi chỉ, boring = nhàm chán, mill = cối xay;
+   từ gần nghĩa: phôi/phoi) — không lố, không trùng nghĩa; xoay vị trí đáp án đúng a/b/c; `giai` một câu nói vì sao.
 3. **Ảnh**: tìm Wikimedia Commons bằng API (mẫu lệnh trong `references/anh-commons.md`), chỉ nhận CC0 / CC BY / CC BY-SA /
    Public domain (loại NC, ND), tải bản 1000 px → WebP ≤ 150 KB vào `public/assets/avcn/chapter-<n>/<key>.webp`, ghi
    `credits.json` (file, license, author, page, w, h). Ảnh giáo trình gốc không rõ nguồn → **không dùng**. Xem ảnh bằng mắt
@@ -68,3 +72,4 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - 2026-10-13 · Ảnh chụp headless thấy ô ảnh trắng vì `loading="lazy"` → `xem_thu.sh` bỏ `loading="lazy"` trong bản xem thử (site thật vẫn lazy).
 - 2026-10-13 · Phản hồi quiz bị "Đúng. Đúng." vì data lặp từ mở đầu → script tự cắt tiền tố; viết phản hồi không mở bằng "Đúng."/"Chưa đúng.".
 - 2026-10-13 · Thầy nhắc lần hai quy tắc mỗi ý một dòng (chiến thuật, ghi chú) → `nl()` trong script: mảng → `<ul>`, chuỗi nhiều câu → `<br>`; khi viết JSON, chỗ nhiều ý dùng mảng.
+- 2026-10-16 · Thầy góp ý: mỗi câu chỉ một từ đoán là quá ít với em yếu (cần biết ~95% từ mới hiểu câu) → mỗi câu ≤2 từ đố 3 phương án + gloss chạm-hiện cho từ thường (`cau[i][2] = {doan, nghia}`); `lint_do_dai.py` đếm sai khi `<details>` lồng nhau (báo Article dài hơn thật) — bỏ qua lỗi đó ở mục Article.
