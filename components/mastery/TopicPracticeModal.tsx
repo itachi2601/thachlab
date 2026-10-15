@@ -101,6 +101,8 @@ export default function TopicPracticeModal({
   examIdsByLesson,
   lessonTitles,
   onPickLesson,
+  heading,
+  timeLimitMinutes,
   onClose,
   onFinished,
 }: {
@@ -116,6 +118,10 @@ export default function TopicPracticeModal({
   lessonTitles?: Record<number, string>;
   /** Màn kết quả nhiều bài: nút "Luyện riêng bài này". */
   onPickLesson?: (lessonId: number) => void;
+  /** Tiêu đề thay cho "Ôn tổng hợp"/"Luyện thêm" (vd. "Kiểm tra 15 phút"). */
+  heading?: string;
+  /** Có giá trị = làm như kiểm tra thật: đếm ngược từ lúc bấm Bắt đầu, hết giờ tự nộp. */
+  timeLimitMinutes?: number;
   onClose: () => void;
   onFinished?: () => void;
 }) {
@@ -136,6 +142,11 @@ export default function TopicPracticeModal({
   // Token giữ nguyên suốt phiên: bấm "Nộp bài" hai lần nhanh (hoặc thử lại sau lỗi mạng) không lưu trùng.
   const clientToken = useRef<string | null>(null);
   const submitting = useRef(false);
+  const startedAt = useRef<number | null>(null);
+  const [secondsLeft, setSecondsLeft] = useState<number | null>(null);
+  const [timedOut, setTimedOut] = useState(false);
+  // Hết giờ gọi bản submit mới nhất (đọc đúng câu trả lời hiện tại, không dính closure cũ).
+  const submitRef = useRef<() => void>(() => {});
   const multi = examIdsByLesson !== undefined;
   const guided = !multi && topicName.trim() !== "";
 
@@ -234,8 +245,18 @@ export default function TopicPracticeModal({
     });
   }
 
+  function start() {
+    startedAt.current = Date.now();
+    if (timeLimitMinutes) setSecondsLeft(timeLimitMinutes * 60);
+    setPhase("running");
+  }
+
   async function submit() {
     if (!session || picks.length === 0 || submitting.current) return;
+    // Hết giờ suy từ mốc bắt đầu (không từ chỗ gọi): lần tự nộp lỗi mạng rồi em bấm "Nộp bài" lại vẫn ghi đúng là hết giờ.
+    const limit = timeLimitMinutes ? timeLimitMinutes * 60 : Infinity;
+    const elapsed = startedAt.current ? Math.round((Date.now() - startedAt.current) / 1000) : 0;
+    const timeUp = elapsed >= limit;
     submitting.current = true;
     setSaving(true);
     try {
@@ -249,8 +270,8 @@ export default function TopicPracticeModal({
         responses,
         score10: summary.score10,
         correctCount: summary.correctCount,
-        durationSeconds: 0,
-        timedOut: false,
+        durationSeconds: Math.min(elapsed, limit),
+        timedOut: timeUp,
         clientToken: clientToken.current,
       });
       markFirstPracticeDone();
@@ -267,6 +288,7 @@ export default function TopicPracticeModal({
         setByLesson([...acc.values()]);
       }
       setResult({ score10: summary.score10, correctCount: summary.correctCount, total: questions.length });
+      setTimedOut(timeUp);
       setPhase("done");
       onFinished?.();
     } catch {
@@ -277,12 +299,37 @@ export default function TopicPracticeModal({
     }
   }
 
+  useEffect(() => {
+    submitRef.current = () => void submit();
+  });
+
+  // Đồng hồ đếm ngược: tính lại từ mốc bắt đầu mỗi giây (không trôi khi tab ngủ), về 0 thì tự nộp.
+  useEffect(() => {
+    if (phase !== "running" || !timeLimitMinutes) return;
+    const id = window.setInterval(() => {
+      const left = Math.max(0, timeLimitMinutes * 60 - Math.floor((Date.now() - (startedAt.current ?? Date.now())) / 1000));
+      setSecondsLeft(left);
+      if (left === 0) {
+        window.clearInterval(id);
+        submitRef.current();
+      }
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [phase, timeLimitMinutes]);
+
+  // Đang làm bài có bấm giờ: chạm nhầm ra ngoài không được làm mất bài; nút đóng hỏi lại một lần.
+  const lockedRun = phase === "running" && !!timeLimitMinutes;
+  function requestClose() {
+    if (lockedRun && !window.confirm("Thoát bây giờ sẽ bỏ bài đang làm. Em vẫn muốn thoát?")) return;
+    onClose();
+  }
+
   const wide = phase === "running" || (phase === "done" && byLesson.length > 1);
 
   return (
     <div
       className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm animate-modal-backdrop-in"
-      onClick={onClose}
+      onClick={lockedRun ? undefined : onClose}
       role="presentation"
     >
       <div
@@ -294,10 +341,10 @@ export default function TopicPracticeModal({
         aria-modal="true"
       >
           <div className="mb-3 flex items-start justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-white">{multi ? "Ôn tổng hợp" : "Luyện thêm"}: {label}</h2>
+            <h2 className="font-display text-lg font-semibold text-white">{heading ?? `${multi ? "Ôn tổng hợp" : "Luyện thêm"}: ${label}`}</h2>
             <button
               type="button"
-              onClick={onClose}
+              onClick={requestClose}
               aria-label="Đóng"
               className="-mr-2 -mt-2 flex h-11 w-11 shrink-0 items-center justify-center text-slate-400 hover:text-white"
             >
@@ -331,8 +378,14 @@ export default function TopicPracticeModal({
                   Chỉ có {questions.length} câu phù hợp (em chọn {count} câu).
                 </p>
               )}
+              {timeLimitMinutes && (
+                <p className="text-sm text-slate-300">
+                  Thời gian <strong className="text-white">{timeLimitMinutes} phút</strong>, tính từ lúc bấm Bắt đầu. Hết giờ bài tự
+                  nộp, câu chưa làm tính là sai.
+                </p>
+              )}
               <p className="text-xs text-slate-500">Làm xong sẽ tính vào mức độ thành thạo của em ở phần này.</p>
-              <Button onClick={() => setPhase("running")} className="w-full">
+              <Button onClick={start} className="w-full">
                 Bắt đầu
               </Button>
             </div>
@@ -345,6 +398,15 @@ export default function TopicPracticeModal({
                   Câu {cur + 1}/{questions.length}
                 </p>
                 <p className="text-xs text-slate-500">
+                  {secondsLeft !== null && (
+                    <span
+                      role="timer"
+                      aria-label="Thời gian còn lại"
+                      className={`mr-2 font-semibold tabular-nums ${secondsLeft <= 60 ? "text-amber-300" : "text-slate-300"}`}
+                    >
+                      {String(Math.floor(secondsLeft / 60)).padStart(2, "0")}:{String(secondsLeft % 60).padStart(2, "0")}
+                    </span>
+                  )}
                   Đã trả lời {answeredCount}/{questions.length}
                 </p>
               </div>
@@ -392,6 +454,7 @@ export default function TopicPracticeModal({
 
           {phase === "done" && result && (
             <div className="space-y-4">
+              {timedOut && <p className="text-sm text-amber-300">Hết giờ, bài đã tự nộp.</p>}
               <div
                 className={`rounded-xl border p-4 text-center ${
                   result.correctCount === result.total
