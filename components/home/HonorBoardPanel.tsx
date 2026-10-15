@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowUpCircle, Flame, TrendingUp } from "lucide-react";
+import { ArrowUpCircle, Crown, Flame, TrendingUp } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import WornTitle from "@/components/rank/WornTitle";
@@ -183,7 +183,7 @@ function Stage({
   const podium = [top[1], top[0], top[2]].filter(Boolean);
   const rest = top.slice(3);
   return (
-    <div className="relative mt-10 overflow-hidden rounded-3xl border border-line bg-panel px-2 pb-6 pt-10 sm:px-10 sm:pb-10 sm:pt-14">
+    <div className="relative mt-10 overflow-hidden rounded-3xl border border-line bg-panel px-2 pb-6 pt-12 shadow-[0_0_48px_-12px_color-mix(in_srgb,var(--color-primary)_45%,transparent)] sm:px-10 sm:pb-10 sm:pt-16">
       {/* Đèn rọi từ trên xuống + vệt sáng chéo mờ: chỉ là nền, aria-hidden. */}
       <div
         aria-hidden
@@ -222,7 +222,8 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
   // đặt cạnh RP tuần dễ gây "hạng 1 mà bậc thấp hơn hạng 2". Chỉ giữ nhãn ↑ khi em lên bậc trong tuần.
   // Thứ tự: tên (+↑) → ảnh đứng đè 1/3 dưới lên miệng bục → số hạng ánh kim + RP trên thân bục (B3: một khối liền).
   return (
-    <li className="flex min-w-0 flex-col items-center text-center" style={{ ["--metal" as string]: metal }}>
+    <li className="relative flex min-w-0 flex-col items-center text-center" style={{ ["--metal" as string]: metal }}>
+      <Sparkles pos={key} />
       <p className={`w-full truncate px-1 font-semibold text-ink ${first ? "text-base sm:text-lg" : "text-sm sm:text-base"}`}>{m.name}</p>
       {m.title && (
         <span className="hidden max-w-full sm:block">
@@ -236,11 +237,18 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
         </p>
       )}
 
-      <div className="relative mt-2 w-full">
+      <div className={`relative w-full ${first ? "mt-5 sm:mt-10" : "mt-2"}`}>
         {/* Bóng tiếp đất — đặt trước để thân bục vẽ đè lên, không che chữ RP. */}
         <div aria-hidden className="absolute -bottom-2 left-1/2 h-4 w-[115%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),transparent_70%)]" />
         {/* Ảnh đứng trên bục: đáy ảnh đè xuống mặt elip (z-20 trên mặt bục). */}
-        <div className={`relative z-20 flex justify-center ${first ? "-mb-7 sm:-mb-9" : "-mb-6 sm:-mb-7"}`}>
+        <div className={`relative z-20 mx-auto flex w-fit justify-center ${first ? "-mb-7 sm:-mb-9" : "-mb-6 sm:-mb-7"}`}>
+          {first && (
+            <Crown
+              aria-hidden
+              strokeWidth={1.75}
+              className="absolute -right-3 -top-4 z-30 h-7 w-7 rotate-[18deg] fill-[var(--color-accent)] text-[color-mix(in_srgb,var(--color-accent)_70%,black)] drop-shadow-[0_0_6px_color-mix(in_srgb,var(--color-accent)_60%,transparent)] sm:-right-4 sm:-top-4 sm:h-8 sm:w-8"
+            />
+          )}
           <span className="sm:hidden">
             <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={p.avatar}>
               <Avatar url={m.avatar} name={m.name} size={p.avatar} />
@@ -257,12 +265,17 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
           className={`relative z-10 mx-auto h-7 w-full rounded-[50%] border-2 border-[var(--metal)] sm:h-10 ${
             first
               ? "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-accent)_45%,var(--color-panel))_0%,color-mix(in_srgb,var(--color-accent)_12%,var(--color-panel))_60%,var(--color-panel)_100%)] shadow-[0_0_22px_color-mix(in_srgb,var(--color-accent)_40%,transparent)]"
-              : "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--metal)_18%,var(--color-panel)),color-mix(in_srgb,black_4%,var(--color-panel)))] shadow-[0_0_10px_color-mix(in_srgb,var(--metal)_25%,transparent)]"
+              : "bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--metal)_30%,var(--color-panel)),color-mix(in_srgb,var(--metal)_10%,var(--color-panel)))] shadow-[0_0_14px_color-mix(in_srgb,var(--metal)_35%,transparent)]"
           }`}
         />
         <div
-          className={`relative -mt-3.5 flex w-full flex-col items-center justify-start rounded-b-[50%_14px] border-x border-b border-line bg-[linear-gradient(90deg,color-mix(in_srgb,black_8%,var(--color-bg))_0%,color-mix(in_srgb,white_4%,var(--color-panel))_40%,color-mix(in_srgb,white_12%,var(--color-panel))_55%,color-mix(in_srgb,black_8%,var(--color-bg))_100%)] pt-5 sm:-mt-5 sm:pt-6 ${p.body}`}
+          className={`relative -mt-3.5 flex w-full flex-col items-center justify-start overflow-hidden rounded-b-[50%_14px] border-x-2 border-b-2 border-[color-mix(in_srgb,var(--metal)_70%,transparent)] bg-[linear-gradient(90deg,color-mix(in_srgb,var(--metal)_40%,var(--color-bg))_0%,color-mix(in_srgb,var(--metal)_10%,var(--color-panel))_30%,color-mix(in_srgb,var(--metal)_6%,var(--color-panel))_50%,color-mix(in_srgb,var(--metal)_10%,var(--color-panel))_70%,color-mix(in_srgb,var(--metal)_40%,var(--color-bg))_100%)] pt-5 sm:-mt-5 sm:pt-6 ${
+            first ? "shadow-[0_0_28px_color-mix(in_srgb,var(--metal)_45%,transparent)]" : "shadow-[0_0_14px_color-mix(in_srgb,var(--metal)_25%,transparent)]"
+          } ${p.body}`}
         >
+          {/* Hai vạch đèn dọc ở mép thân bục (như bục trao giải), màu kim loại của hạng. */}
+          <span aria-hidden className="absolute bottom-3 left-[9%] top-4 w-[3px] rounded-full bg-[var(--metal)] opacity-80 shadow-[0_0_8px_var(--metal)]" />
+          <span aria-hidden className="absolute bottom-3 right-[9%] top-4 w-[3px] rounded-full bg-[var(--metal)] opacity-80 shadow-[0_0_8px_var(--metal)]" />
           {/* Số hạng đậm, ánh kim theo hạng (gradient chữ từ token); RP chữ ink cùng hệ, không màu nhấn neon. */}
           <span
             aria-label={`Hạng ${m.pos}`}
@@ -274,6 +287,42 @@ function PodiumSpot({ m, up, tierLabel }: { m: PublicHonorGrade["top"][number]; 
         </div>
       </div>
     </li>
+  );
+}
+
+// Trang trí TĨNH quanh bục (thầy chốt 15/10/2026 theo ảnh mẫu): hạng 1 có pháo hoa + hoa giấy, hạng 2–3 vài ngôi sao lấp lánh.
+// Không chuyển động (B4), aria-hidden, màu từ token. Giữ thưa để không lấn tên/ảnh (N7) và không thổi phồng thứ hạng.
+const STAR = "M0,-6 L1.4,-1.4 L6,0 L1.4,1.4 L0,6 L-1.4,1.4 L-6,0 L-1.4,-1.4Z";
+function Sparkles({ pos }: { pos: 1 | 2 | 3 }) {
+  if (pos !== 1) {
+    const stars = pos === 2 ? [[14, 62, 1], [88, 74, 0.7], [20, 92, 0.55]] : [[86, 60, 1], [12, 76, 0.7], [82, 92, 0.55]];
+    return (
+      <svg aria-hidden viewBox="0 0 100 120" className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[60%] w-full overflow-visible">
+        {stars.map(([x, y, k], i) => (
+          <path key={i} d={STAR} transform={`translate(${x} ${y}) scale(${k})`} style={{ fill: "var(--metal)" }} opacity={0.9} />
+        ))}
+      </svg>
+    );
+  }
+  const rays = Array.from({ length: 12 }, (_, i) => (i * Math.PI) / 6);
+  const confetti: [number, number, number, string][] = [
+    [80, 34, 25, "var(--color-accent)"], [84, 48, -30, "var(--color-primary)"], [92, 26, 60, "var(--color-muted)"],
+    [72, 30, 10, "var(--color-accent)"], [6, 26, -20, "var(--color-primary)"], [94, 42, 45, "var(--color-muted)"],
+    [24, 54, 35, "var(--color-accent)"],
+  ];
+  return (
+    <svg aria-hidden viewBox="0 0 100 120" className="pointer-events-none absolute -inset-x-6 top-2 z-0 h-[62%] w-[calc(100%+3rem)] overflow-visible">
+      <g transform="translate(14 40)" style={{ stroke: "var(--color-accent)" }} strokeWidth={1.1} strokeLinecap="round">
+        {rays.map((a, i) => (
+          <line key={i} x1={Math.cos(a) * 4} y1={Math.sin(a) * 4} x2={Math.cos(a) * 10} y2={Math.sin(a) * 10} />
+        ))}
+      </g>
+      {confetti.map(([x, y, r, c], i) => (
+        <rect key={i} x={-1.6} y={-0.7} width={3.2} height={1.4} rx={0.4} transform={`translate(${x} ${y}) rotate(${r})`} style={{ fill: c }} />
+      ))}
+      <path d={STAR} transform="translate(84 58) scale(0.8)" style={{ fill: "var(--color-accent)" }} />
+      <path d={STAR} transform="translate(10 66) scale(0.6)" style={{ fill: "var(--color-accent)" }} />
+    </svg>
   );
 }
 
