@@ -46,3 +46,5 @@ học thêm năm học …" gom buổi theo khối 10/11/12, đọc `thpt_course
 Quyết định: KHÔNG đưa lịch phụ đạo trợ giảng (`tutoring_slots`, đang 0 dòng) lên trang chủ làm quảng cáo — đó là
 lịch vận hành theo tuần cho HS đã vào lớp, RLS theo lớp; chỉ nhắc một câu "trợ giảng mở buổi phụ đạo riêng".
 **4/10/2026 22:58:** lớp 12 tách buổi A (T4|T5) / B (T7|CN), bắt chọn 1A+1B ở `/khoa-hoc` + `/khoa-hoc/dang-ky` (commit 765eb0dcd, đã deploy); migration `20261004230000_thpt_course_pairs` ĐÃ CHẠY (pair_key/pair_slot điền xong). Treo: RPC `thpt_register` chưa ép 1A+1B ở server; chưa test gửi đăng ký bằng tài khoản thật; tab Ghi danh chưa có ô nhập buổi A/B (đặt tên theo mẫu).
+
+**15/10/2026 (1423bc70e, CHƯA deploy):** thêm Thầy theo dõi con / Con tự học 7 ngày / radar (`ParentRadar`, ngoại lệ P20) + trang mẫu `#trang-mau` (khách + chưa nối con; trang chủ dẫn tới). Chưa xem với tài khoản phụ huynh thật có dữ liệu. Đề xuất tự nối con bằng tên + ngày sinh + SĐT phụ huynh đã khai ở `docs/PHU-HUYNH.md` cuối file — CHỜ THẦY DUYỆT.
