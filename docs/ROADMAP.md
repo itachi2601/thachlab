@@ -231,3 +231,10 @@ các việc dưới đây **nối vào** mục 5 của `docs/DE-XUAT-NGHIEN-CUU-
 - [ ] **DT-05/06** gợi ý bài tiếp theo + mở khoá theo ngưỡng — sau số mùa 1. **M**
 - [ ] **DT-15** chế độ chỉ-xem-tiến-bộ-cá-nhân — quyết cùng C5 (mùa 2) sau 25/10, không chen mùa 1.
 - Giữ nguyên: DT-04 lịch ôn 2/4/7 (đo một chương rồi mới xét); DT-08 AI tutor theo GĐ 4; DT-10/11/13/14 ưu tiên thấp.
+
+### Vấn đề gốc đã chốt (16/10/2026) — bước Define của Design Thinking
+- **Vấn đề**: HS rơi vào "đang mở khoá" (phụ đạo) nhưng kênh tự thoát bằng bài tự kiểm tra 20 câu gần như không dùng (số liệu 14/10: 477 mở · 313 đã thoát · 4 lượt tự kiểm tra, 2 đạt) — vòng lặp "hụt → có lối ra" đứt đúng chỗ nhóm 25% thấp cần nhất.
+- **Chưa biết nguyên nhân**: không biết / không hiểu nhãn / ngại / bài quá dài / không biết ôn gì. Không đoán — phỏng vấn trước: `docs/PHIEU-PHONG-VAN-PHU-DAO-2026-10-16.md` (5 HS, bước Empathize).
+- **Chỉ số thành công** (đo cùng cách từ đầu và sau mỗi thay đổi): (1) % HS đang "mở khoá" có ≥1 lượt mở bài tự kiểm tra trong 7 ngày; (2) % lượt mở làm đến câu cuối; (3) % lượt đạt ≥80%; (4) tỉ lệ thoát bằng tự kiểm tra so với bằng buổi học. Mốc nền: bảng `tutoring_needs` + lượt tự kiểm tra tới 25/10.
+- **Ràng buộc**: không đổi giao diện / thêm lớp động lực trước 25/10 (GĐ 1); nhãn phụ đạo chỉ GV/TA thấy; đo bằng DT-01 `learning_events` (chưa có) hoặc truy vấn bảng sẵn có.
+- **Bước kế**: bảng phỏng vấn → viết câu "Làm sao để…" → 1 bản thử trên MỘT lớp (DT-12) → so chỉ số hành vi trước/sau cùng lớp.
