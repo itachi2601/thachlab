@@ -31,3 +31,4 @@ quyết định soạn bài bám vào đó (`docs/DE-XUAT-AVCN-CHUONG-8-2026-10-
 Liên quan: [[feedback-xuong-dong-tung-truong-hop]], [[project-thachlab-cttc-roster-import]].
 
 - 16/10/2026: Article mỗi câu ≤2 từ đố 3 phương án + chạm xem nghĩa, đã đăng Chapter 8 (bài 175) và deploy. Hộp Flashcard (link 404) đã gỡ theo thầy; muốn thêm lại thì đặt `meta.flashcard` trong bai.json khi trang flashcard có thật.
+- 16/10/2026: Chapter 5 Mechanical Fasteners do Claude soạn thẳng (bỏ nháp Gemini), thầy duyệt → đăng bài 172 (đề luyện tập 920), published, deploy; `content/lesson-samples/avcn-chapter-5-mechanical-fasteners/`. Còn 8 chương (1–4, 6, 7, 9, 10).
