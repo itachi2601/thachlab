@@ -1,0 +1,770 @@
+{
+ "lesson_id": 153,
+ "lesson_title": "Chuyên đề 12. Nhiệt học nâng cao: cân bằng nhiệt và chuyển thể",
+ "generated_at": "2026-10-16",
+ "review": {
+  "checked": true,
+  "by": "kiem-code ×2 (giải độc lập + soát nội dung/hình) + dò lần 2 bằng mắt 375px",
+  "date": "2026-10-16",
+  "notes": "Đáp số 6 dạng + 8 tự luận khớp lời giải độc lập; đã sửa góp ý (ký hiệu, cỡ chữ SVG ≥14, khung cuối mô phỏng, \\text trong math)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Cân bằng nhiệt có kể nhiệt lượng kế: nhiệt độ cân bằng và sai lệch khi quên bình",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Một nhiệt lượng kế bằng nhôm khối lượng $150\\ \\text{g}$ chứa $400\\ \\text{g}$ nước; nhiệt lượng kế và nước cùng ở $20\\ ^{\\circ}\\text{C}$. Thả vào nước một miếng đồng khối lượng $500\\ \\text{g}$ đã nung tới $120\\ ^{\\circ}\\text{C}$. Bỏ qua sự trao đổi nhiệt với môi trường; nhiệt lượng kế có tham gia trao đổi nhiệt. Nhiệt dung riêng của nước, nhôm, đồng lần lượt là $4200$; $880$; $380\\ \\text{J/(kg·K)}$.</p><ol type=\"a\"><li>Tìm nhiệt độ của hệ khi có cân bằng nhiệt.</li><li>Nhiệt lượng kế đã thu vào bao nhiêu nhiệt lượng?</li><li>Một bạn quên nhiệt lượng kế khi lập phương trình cân bằng nhiệt. Bạn đó tính ra nhiệt độ cân bằng bằng bao nhiêu, lệch bao nhiêu so với câu a?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-1-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Nhiệt lượng kế nhôm chứa nước, miếng đồng nóng rơi vào, cột nhiệt kế dâng dần rồi dừng ở nhiệt độ cân bằng chưa biết\"><rect x=\"72\" y=\"128\" width=\"196\" height=\"84\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"/><line x1=\"72.0\" y1=\"128.0\" x2=\"268.0\" y2=\"128.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M70,74 L70,214 L270,214 L270,74\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"62\" y=\"208\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">nhôm</text><text x=\"80\" y=\"148\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nước</text><rect x=\"140\" y=\"24\" width=\"44\" height=\"30\" rx=\"3\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"2\" fill-opacity=\"0.9\"><animate attributeName=\"y\" values=\"24;176;176\" keyTimes=\"0;0.16;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0.9;0.9;0.15\" keyTimes=\"0;0.16;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"192\" y=\"44\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\">đồng 120 °C<animate attributeName=\"opacity\" values=\"1;0;0\" keyTimes=\"0;0.1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><rect x=\"230\" y=\"40\" width=\"12\" height=\"148\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"236\" cy=\"196\" r=\"9\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"233.5\" y=\"168\" width=\"5\" height=\"28\" fill=\"#f87171\" stroke=\"none\"><animate attributeName=\"y\" values=\"168.0;168.0;168.0;168.0;162.0;156.2;151.7;148.3;145.7;143.7;142.2;141.0;140.1;139.5;139.0;138.6;138.3;138.0;137.9;137.7;137.6\" keyTimes=\"0.00;0.05;0.10;0.15;0.20;0.25;0.30;0.35;0.40;0.45;0.50;0.55;0.60;0.65;0.70;0.75;0.80;0.85;0.90;0.95;1.00\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"28.0;28.0;28.0;28.0;34.0;39.8;44.3;47.7;50.3;52.3;53.8;55.0;55.9;56.5;57.0;57.4;57.7;58.0;58.1;58.3;58.4\" keyTimes=\"0.00;0.05;0.10;0.15;0.20;0.25;0.30;0.35;0.40;0.45;0.50;0.55;0.60;0.65;0.70;0.75;0.80;0.85;0.90;0.95;1.00\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"242.0\" y1=\"168.0\" x2=\"252.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"252.0\" y1=\"168.0\" x2=\"284.0\" y2=\"168.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"1\"/><text x=\"288\" y=\"172\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">20 °C (lúc đầu)</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.97;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"242.0\" y1=\"137.6\" x2=\"284.0\" y2=\"137.6\" stroke=\"#34d399\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\" opacity=\"1\"/><text x=\"288\" y=\"141.6\" fill=\"#34d399\" font-size=\"15\" font-weight=\"700\">t = ?</text></g><text x=\"300\" y=\"60\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">nhiệt kế</text><line x1=\"296.0\" y1=\"56.0\" x2=\"244.0\" y2=\"60.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy nhanh (quá trình thật kéo dài vài phút): miếng đồng nguội dần, cột nhiệt kế dâng rồi đứng yên khi cân bằng. Nhiệt kế chỉ ghi mốc lúc đầu, không có thang để đọc.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt truyền từ vật nóng hơn sang vật lạnh hơn tới khi nhiệt độ bằng nhau.</li><li><strong>Định luật:</strong> phương trình cân bằng nhiệt $Q_{\\text{toả}}=Q_{\\text{thu}}$.</li><li><strong>Công thức:</strong> $Q=mc\\,\\Delta t$; nhiệt dung của vật $C=mc$.</li><li><strong>Điều kiện:</strong> bỏ qua trao đổi nhiệt với môi trường; kể đủ mọi vật thu nhiệt, kể cả bình.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt dung của từng vật</span></p><p>Đổi ra kg rồi tính $C=mc$:</p>$$C_{\\text{đ}}=0{,}5\\cdot380=190\\ \\text{J/K}$$$$C_n=0{,}4\\cdot4200=1680\\ \\text{J/K}$$$$C_b=0{,}15\\cdot880=132\\ \\text{J/K}$$<div class=\"bt-ans\">$$C_{\\text{thu}}=C_n+C_b=1812\\ \\text{J/K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phương trình cân bằng nhiệt</span></p><p>Đồng toả nhiệt; nước và bình thu nhiệt:</p>$$C_{\\text{đ}}\\,(120-t)=C_{\\text{thu}}\\,(t-20)$$$$190\\,(120-t)=1812\\,(t-20)$$$$t=\\dfrac{190\\cdot120+1812\\cdot20}{190+1812}=\\dfrac{59\\,040}{2002}$$<div class=\"bt-ans\">$$t\\approx29{,}5\\ ^{\\circ}\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt lượng bình nhôm thu</span></p><p>Bình nóng lên từ $20\\ ^{\\circ}\\text{C}$ tới $t\\approx29{,}49\\ ^{\\circ}\\text{C}$:</p>$$Q_b=m_b c_b\\,(t-20)=132\\cdot(29{,}49-20)$$<div class=\"bt-ans\">$$Q_b\\approx1253\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nếu quên nhiệt lượng kế</span></p><p>Phương trình mất số hạng của bình:</p>$$190\\,(120-t')=1680\\,(t'-20)$$$$t'=\\dfrac{190\\cdot120+1680\\cdot20}{190+1680}=\\dfrac{56\\,400}{1870}$$<div class=\"bt-ans\">$$t'\\approx30{,}2\\ ^{\\circ}\\text{C}$$</div><p>Lệch $t'-t\\approx0{,}7\\ ^{\\circ}\\text{C}$: quên bình thì phía thu ít đi, tính ra nhiệt độ cao hơn thật.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$20\\ ^{\\circ}\\text{C}\\lt t\\lt120\\ ^{\\circ}\\text{C}$ ✓; $t$ gần $20\\ ^{\\circ}\\text{C}$ vì nhiệt dung phía thu ($1812\\ \\text{J/K}$) lớn gấp gần $10$ lần của đồng ✓.</p><p>Nhiệt đồng toả $190\\cdot(120-29{,}49)\\approx17\\,197\\ \\text{J}$; nhiệt nước và bình thu $1812\\cdot(29{,}49-20)\\approx17\\,197\\ \\text{J}$ ✓.</p><p>Đơn vị: $\\text{kg}\\cdot\\dfrac{\\text{J}}{\\text{kg·K}}\\cdot\\text{K}=\\text{J}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t\\approx29{,}5\\ ^{\\circ}\\text{C}$</p><p>b) $Q_b\\approx1253\\ \\text{J}$ (khoảng $1{,}25\\ \\text{kJ}$)</p><p>c) $t'\\approx30{,}2\\ ^{\\circ}\\text{C}$, lệch khoảng $0{,}7\\ ^{\\circ}\\text{C}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nhiệt lượng kế, thả vật nóng vào</strong> → $Q_{\\text{toả}}=Q_{\\text{thu}}$, phía thu kể cả bình.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-1-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Sơ đồ trao đổi nhiệt: miếng đồng toả nhiệt cho nước và cho bình nhôm, cả ba cùng tới nhiệt độ t\"><rect x=\"20\" y=\"20\" width=\"150\" height=\"62\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"95\" y=\"42\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Miếng đồng</text><text x=\"95\" y=\"62\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,5 kg · 120 °C → t</text><rect x=\"250\" y=\"12\" width=\"156\" height=\"56\" rx=\"8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"328\" y=\"34\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Nước</text><text x=\"328\" y=\"54\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,4 kg · 20 °C → t</text><rect x=\"250\" y=\"86\" width=\"156\" height=\"56\" rx=\"8\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.2\"/><text x=\"328\" y=\"108\" fill=\"#94a3b8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">Bình nhôm</text><text x=\"328\" y=\"128\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0,15 kg · 20 °C → t</text><line x1=\"170\" y1=\"46\" x2=\"246\" y2=\"40\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M236.8,35.6 L246.0,40.0 L237.6,45.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"170\" y1=\"60\" x2=\"246\" y2=\"112\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M241.6,102.8 L246.0,112.0 L235.9,111.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"200\" y=\"30\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">toả</text><text x=\"190\" y=\"98\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">toả</text><text x=\"20\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Vật toả: nhiệt độ giảm</text><text x=\"20\" y=\"138\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Vật thu: nhiệt độ tăng</text><text x=\"20\" y=\"166\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Cùng dừng ở một nhiệt độ t</text></svg><figcaption>Dữ kiện: hai vật thu nhiệt (nước và bình) cùng bắt đầu ở 20 °C.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"nhiệt lượng kế bằng nhôm khối lượng $150\\ \\text{g}$ chứa $400\\ \\text{g}$ nước; … cùng ở $20\\ ^{\\circ}\\text{C}$\"</td><td>$m_b=0{,}15\\ \\text{kg}$; $m_n=0{,}4\\ \\text{kg}$; $t_1=20\\ ^{\\circ}\\text{C}$</td><td>Bình và nước cùng nhiệt độ đầu, cùng nóng lên tới $t$<br>Cả hai là vật thu nhiệt</td></tr><tr><td>\"miếng đồng khối lượng $500\\ \\text{g}$ đã nung tới $120\\ ^{\\circ}\\text{C}$\"</td><td>$m_{\\text{đ}}=0{,}5\\ \\text{kg}$; $t_2=120\\ ^{\\circ}\\text{C}$</td><td>Vật nóng toả nhiệt: $Q=mc\\,(t_2-t)$</td></tr><tr><td>\"Bỏ qua sự trao đổi nhiệt với môi trường; nhiệt lượng kế có tham gia trao đổi nhiệt\"</td><td>Hệ kín gồm đồng, nước, bình</td><td>⚠ chỉ khi bỏ qua môi trường mới có $Q_{\\text{toả}}=Q_{\\text{thu}}$<br>⚠ phía thu phải kể cả bình</td></tr><tr><td>\"Nhiệt dung riêng … $4200$; $880$; $380\\ \\text{J/(kg·K)}$\"</td><td>$c_n$; $c_b$; $c_{\\text{đ}}$</td><td>Nhiệt dung của vật $C=mc$<br>Đổi g ra kg trước khi nhân</td></tr><tr><td>\"Tìm nhiệt độ của hệ khi có cân bằng nhiệt\"</td><td>Cần $t$</td><td>$Q_{\\text{toả}}=Q_{\\text{thu}}$<br>$t$ phải nằm giữa $20$ và $120\\ ^{\\circ}\\text{C}$</td></tr><tr><td>\"Nhiệt lượng kế đã thu vào bao nhiêu\"</td><td>Cần $Q_b$</td><td>$Q_b=m_b c_b\\,(t-t_1)$</td></tr><tr><td>\"quên nhiệt lượng kế khi lập phương trình\"</td><td>Cần $t'$ và $t'-t$</td><td>Phương trình mất số hạng nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiệt lượng kế, thả vật nóng vào</b> → $Q_{\\text{toả}}=Q_{\\text{thu}}$, phía thu kể cả bình.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt dung của từng vật",
+     "hoi": "Tổng nhiệt dung của nước và nhiệt lượng kế là bao nhiêu J/K?",
+     "dap_so": 1812,
+     "sai_so": 2,
+     "don_vi": "J/K",
+     "loi_hay_gap": "Để khối lượng theo gam khi nhân với nhiệt dung riêng, hoặc chỉ tính riêng nước mà bỏ bình."
+    },
+    {
+     "tieu_de": "Phương trình cân bằng nhiệt",
+     "hoi": "Nhiệt độ cân bằng là bao nhiêu °C?",
+     "dap_so": 29.5,
+     "sai_so": 0.1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Lấy trung bình cộng của hai nhiệt độ đầu; trung bình cộng chỉ đúng khi hai bên có nhiệt dung bằng nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $190\\,(120-t)=1812\\,(t-20)$ rồi giải tìm $t$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $t=\\dfrac{120+20}{2}$",
+       "dung": false,
+       "vi_sao": "Nhiệt dung hai phía chênh nhau gần $10$ lần, nên $t$ không phải trung bình cộng."
+      },
+      {
+       "text": "Lấy trung bình theo khối lượng $t=\\dfrac{0{,}5\\cdot120+0{,}4\\cdot20}{0{,}5+0{,}4}$",
+       "dung": false,
+       "vi_sao": "Các vật khác chất nên phải dùng nhiệt dung $mc$, khối lượng thôi chưa đủ; cách này còn bỏ sót bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng bình nhôm thu",
+     "hoi": "Nhiệt lượng kế đã thu vào bao nhiêu jun?",
+     "dap_so": 1253,
+     "sai_so": 15,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân với nhiệt độ cân bằng thay vì độ tăng nhiệt độ của bình.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $Q_b=m_b c_b\\,(t-20)$",
+       "dung": true
+      },
+      {
+       "text": "Tính $Q_b=m_b c_b\\,t$",
+       "dung": false,
+       "vi_sao": "Nhiệt lượng tính theo độ tăng nhiệt độ $t-20$, không theo nhiệt độ cuối."
+      },
+      {
+       "text": "Tính $Q_b=m_b c_b\\,(120-t)$",
+       "dung": false,
+       "vi_sao": "$120\\ ^{\\circ}\\text{C}$ là nhiệt độ đầu của đồng; bình bắt đầu ở $20\\ ^{\\circ}\\text{C}$ cùng nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nếu quên nhiệt lượng kế",
+     "hoi": "Bạn quên bình tính ra nhiệt độ cân bằng bao nhiêu °C?",
+     "dap_so": 30.2,
+     "sai_so": 0.1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Bỏ số hạng của bình nhưng vẫn giữ tổng nhiệt dung cũ ở mẫu số.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bỏ số hạng của bình: $190\\,(120-t')=1680\\,(t'-20)$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên kết quả câu a vì bình chỉ để đựng nước",
+       "dung": false,
+       "vi_sao": "Bình nóng lên cùng nước nên cũng thu nhiệt; bỏ nó thì phương trình thay đổi."
+      },
+      {
+       "text": "Chuyển nhiệt dung của bình sang phía toả",
+       "dung": false,
+       "vi_sao": "Bình bắt đầu ở $20\\ ^{\\circ}\\text{C}$ và nóng lên, nó thu nhiệt chứ không toả."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Biện luận chuyển thể: thả nước đá vào nước, đá tan hết hay chỉ tan một phần",
+   "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+   "problem_html": "<p>Một bình cách nhiệt chứa $1\\ \\text{kg}$ nước ở $30\\ ^{\\circ}\\text{C}$. Bỏ qua nhiệt dung của bình và sự trao đổi nhiệt với môi trường. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, của nước đá là $2100\\ \\text{J/(kg·K)}$; nhiệt nóng chảy riêng của nước đá là $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Thả vào bình $300\\ \\text{g}$ nước đá ở $-10\\ ^{\\circ}\\text{C}$. Đá có tan hết không? Tìm nhiệt độ của bình khi cân bằng nhiệt.</li><li>Khi đã cân bằng, thả tiếp vào bình $300\\ \\text{g}$ nước đá ở $-10\\ ^{\\circ}\\text{C}$. Tìm nhiệt độ cuối cùng của bình và khối lượng nước đá còn lại.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-2-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Ba viên nước đá rơi vào bình nước, nước truyền nhiệt cho đá, mô phỏng dừng ở câu hỏi đá tan hết hay còn\"><rect x=\"112\" y=\"120\" width=\"196\" height=\"92\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"/><line x1=\"112.0\" y1=\"120.0\" x2=\"308.0\" y2=\"120.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M110,70 L110,214 L310,214 L310,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"102\" y=\"142\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">nước</text><text x=\"102\" y=\"160\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">1 kg · 30 °C</text><rect x=\"150\" y=\"20\" width=\"26\" height=\"26\" rx=\"3\" fill=\"#a5f3fc\" fill-opacity=\"0.55\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"20;112;112\" keyTimes=\"0;0.25;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0.55;0.55;0.12\" keyTimes=\"0;0.6;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"196\" y=\"24\" width=\"26\" height=\"26\" rx=\"3\" fill=\"#a5f3fc\" fill-opacity=\"0.55\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"24;118;118\" keyTimes=\"0;0.25;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0.55;0.55;0.12\" keyTimes=\"0;0.6;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"242\" y=\"28\" width=\"26\" height=\"26\" rx=\"3\" fill=\"#a5f3fc\" fill-opacity=\"0.55\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"y\" values=\"28;124;124\" keyTimes=\"0;0.25;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"fill-opacity\" values=\"0.55;0.55;0.12\" keyTimes=\"0;0.6;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"318\" y=\"40\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đá 300 g</text><text x=\"318\" y=\"58\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">−10 °C</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.3;0.45;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"140\" y1=\"196\" x2=\"166\" y2=\"158\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M157.5,162.1 L166.0,158.0 L165.3,167.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"300\" y1=\"196\" x2=\"270\" y2=\"160\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M271.6,169.3 L270.0,160.0 L278.9,163.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"150\" y=\"208\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nhiệt</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.96;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"210\" y=\"100\" fill=\"#34d399\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">Tan hết hay còn đá ?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng dừng trước trạng thái cuối: tan hết hay còn đá phải biện luận bằng nhiệt lượng, không đoán theo hình.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nước đá ở dưới $0\\ ^{\\circ}\\text{C}$ phải nóng lên tới $0\\ ^{\\circ}\\text{C}$ rồi mới tan; trong lúc tan nhiệt độ giữ ở $0\\ ^{\\circ}\\text{C}$.</li><li><strong>Công thức:</strong> $Q=mc\\,\\Delta t$ (một thể); $Q=\\lambda m$ (nóng chảy); đá tan hết cần $Q_2=Q_1+Q_{\\text{tan}}$, với $Q_1$ đưa đá lên $0\\ ^{\\circ}\\text{C}$, $Q_{\\text{tan}}=\\lambda m_{\\text{đ}}$.</li><li><strong>Biện luận:</strong> so nhiệt nước toả tối đa khi về $0\\ ^{\\circ}\\text{C}$ với nhiệt đưa đá lên $0\\ ^{\\circ}\\text{C}$ và nhiệt làm tan hết đá.</li><li><strong>Điều kiện:</strong> bỏ qua nhiệt dung bình và môi trường: $Q_{\\text{toả}}=Q_{\\text{thu}}$ chỉ gồm nước và đá.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt nước toả tối đa</span></p><p>Giả sử nước hạ hẳn về $0\\ ^{\\circ}\\text{C}$:</p>$$Q_{\\text{toả,max}}=m_n c_n\\,(30-0)=1\\cdot4200\\cdot30$$<div class=\"bt-ans\">$$Q_{\\text{toả,max}}=126\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt cần để đá tan hết</span></p>$$Q_1=m_{\\text{đ}} c_{\\text{đ}}\\,(0-(-10))=0{,}3\\cdot2100\\cdot10=6300\\ \\text{J}$$$$Q_{\\text{tan}}=\\lambda m_{\\text{đ}}=3{,}4\\cdot10^5\\cdot0{,}3=102\\,000\\ \\text{J}$$<div class=\"bt-ans\">$$Q_2=Q_1+Q_{\\text{tan}}=108\\,300\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Biện luận câu a</span></p><p>$Q_{\\text{toả,max}}=126\\,000\\ \\text{J}\\gt Q_2=108\\,300\\ \\text{J}$: nước còn dư nhiệt sau khi làm tan hết đá.</p><p>Kết luận: <strong>đá tan hết</strong>, nhiệt độ cân bằng $t\\gt0\\ ^{\\circ}\\text{C}$. Lúc này mới viết phương trình.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt độ cân bằng câu a</span></p><p>Nước ban đầu toả từ $30\\ ^{\\circ}\\text{C}$ xuống $t$; đá lên $0\\ ^{\\circ}\\text{C}$, tan, rồi nước do đá tan nóng lên tới $t$:</p>$$1\\cdot4200\\,(30-t)=6300+102\\,000+0{,}3\\cdot4200\\,t$$$$t=\\dfrac{126\\,000-108\\,300}{1{,}3\\cdot4200}=\\dfrac{17\\,700}{5460}$$<div class=\"bt-ans\">$$t\\approx3{,}24\\ ^{\\circ}\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Biện luận câu b</span></p><p>Trong bình có $1{,}3\\ \\text{kg}$ nước ở $t\\approx3{,}24\\ ^{\\circ}\\text{C}$. Hạ về $0\\ ^{\\circ}\\text{C}$, nước toả tối đa:</p>$$Q'_{\\text{toả,max}}=1{,}3\\cdot4200\\cdot3{,}24\\approx17\\,700\\ \\text{J}$$<p>Đưa $300\\ \\text{g}$ đá mới lên $0\\ ^{\\circ}\\text{C}$ cần $Q_1=6300\\ \\text{J}$; làm tan hết cần $108\\,300\\ \\text{J}$.</p><p>$6300\\ \\text{J}\\lt17\\,700\\ \\text{J}\\lt108\\,300\\ \\text{J}$: đá lên được $0\\ ^{\\circ}\\text{C}$ nhưng chỉ <strong>tan một phần</strong>, nhiệt độ cuối $t''=0\\ ^{\\circ}\\text{C}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Khối lượng đá tan</span></p><p>Nhiệt còn lại sau khi đưa đá lên $0\\ ^{\\circ}\\text{C}$ dùng để làm tan $\\Delta m$ đá:</p>$$\\lambda\\,\\Delta m=Q'_{\\text{toả,max}}-Q_1=17\\,700-6300=11\\,400\\ \\text{J}$$$$\\Delta m=\\dfrac{11\\,400}{3{,}4\\cdot10^5}\\ \\text{kg}$$<div class=\"bt-ans\">$$\\Delta m\\approx33{,}5\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Khối lượng đá còn lại</span></p><p>Đá của câu a đã tan hết, chỉ còn đá của lần thả sau:</p>$$m_{\\text{còn}}=300-33{,}5$$<div class=\"bt-ans\">$$m_{\\text{còn}}\\approx266{,}5\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Câu a: $0\\lt3{,}24\\lt30\\ ^{\\circ}\\text{C}$ ✓.</p><p>Câu b: nếu giả sử ngay $t''\\gt0\\ ^{\\circ}\\text{C}$ rồi giải phương trình sẽ ra $t''$ âm, vô lí; đó là lí do phải biện luận trước.</p><p>Nếu nước toả tối đa còn nhỏ hơn $Q_1$ thì đá chưa lên tới $0\\ ^{\\circ}\\text{C}$ và một phần nước sẽ đông lại: khả năng này không xảy ra ở đây ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Đá tan hết; $t\\approx3{,}24\\ ^{\\circ}\\text{C}$</p><p>b) $t''=0\\ ^{\\circ}\\text{C}$; còn khoảng $266{,}5\\ \\text{g}$ nước đá</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>thả nước đá vào nước</strong> → tính $Q_{\\text{toả,max}}$ về $0\\ ^{\\circ}\\text{C}$, so với $Q_1$, $Q_2$ rồi mới viết phương trình.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-2-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Thang nhiệt độ: nước từ 30 độ hạ về 0 độ, đá từ âm 10 độ lên 0 độ rồi tan, ba nhiệt lượng chưa biết\"><line x1=\"70.0\" y1=\"18.0\" x2=\"70.0\" y2=\"168.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"65.0\" y1=\"30.0\" x2=\"75.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"34\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">30 °C</text><line x1=\"65.0\" y1=\"120.0\" x2=\"75.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"124\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">0 °C</text><line x1=\"65.0\" y1=\"150.0\" x2=\"75.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"154\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">−10 °C</text><line x1=\"70.0\" y1=\"120.0\" x2=\"404.0\" y2=\"120.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"120\" y1=\"30\" x2=\"120\" y2=\"116\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M125.1,107.2 L120.0,116.0 L114.9,107.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130\" y=\"66\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nước hạ về 0 °C</text><text x=\"130\" y=\"84\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"400\">toả tối đa Q<tspan dy=\"4\" font-size=\"12\">toả,max</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"120\" y1=\"150\" x2=\"120\" y2=\"124\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M114.9,132.8 L120.0,124.0 L125.1,132.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130\" y=\"148\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"400\">đá lên 0 °C: Q<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"130\" y1=\"178\" x2=\"250\" y2=\"178\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M241.2,172.9 L250.0,178.0 L241.2,183.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"258\" y=\"183\" fill=\"#f87171\" font-size=\"14\" font-weight=\"400\">Q<tspan dy=\"4\" font-size=\"12\">tan</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"130\" y=\"168\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">rồi tan hết ở 0 °C</text><text x=\"16\" y=\"212\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\">Đá tan hết cần Q<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = Q</tspan><tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> + Q</tspan><tspan dy=\"4\" font-size=\"12\">tan</tspan></text></svg><figcaption>Dữ kiện: mốc so sánh là 0 °C. Tính ba nhiệt lượng rồi so trước khi viết phương trình. Hình không theo tỉ lệ nhiệt lượng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bình cách nhiệt … Bỏ qua nhiệt dung của bình và sự trao đổi nhiệt với môi trường\"</td><td>Chỉ có nước và đá trao đổi nhiệt</td><td>⚠ $Q_{\\text{toả}}=Q_{\\text{thu}}$ chỉ gồm nước và đá</td></tr><tr><td>\"$1\\ \\text{kg}$ nước ở $30\\ ^{\\circ}\\text{C}$\"</td><td>$m_n=1\\ \\text{kg}$; $t_n=30\\ ^{\\circ}\\text{C}$</td><td>Nếu nước hạ hẳn về $0\\ ^{\\circ}\\text{C}$ thì toả ra nhiều nhất bao nhiêu?</td></tr><tr><td>\"$300\\ \\text{g}$ nước đá ở $-10\\ ^{\\circ}\\text{C}$\"</td><td>$m_{\\text{đ}}=0{,}3\\ \\text{kg}$; $t_{\\text{đ}}=-10\\ ^{\\circ}\\text{C}$</td><td>Đá nóng lên tới $0\\ ^{\\circ}\\text{C}$: $Q_1=m_{\\text{đ}} c_{\\text{đ}}\\cdot10$<br>Rồi mới tan ở $0\\ ^{\\circ}\\text{C}$: $Q_{\\text{tan}}=\\lambda m_{\\text{đ}}$<br>Tan hết cần $Q_2=Q_1+Q_{\\text{tan}}$</td></tr><tr><td>\"Đá có tan hết không?\"</td><td>Chưa biết trạng thái cuối</td><td>⚠ chưa biết đá tan hết hay không thì chưa viết được phương trình<br>So $Q_{\\text{toả,max}}$ với $Q_1$ và với $Q_2$</td></tr><tr><td>\"Tìm nhiệt độ của bình khi cân bằng\"</td><td>Cần $t$</td><td>Nếu đá tan hết: nước do đá tan ra cũng phải nóng lên từ $0\\ ^{\\circ}\\text{C}$</td></tr><tr><td>\"thả tiếp vào bình $300\\ \\text{g}$ nước đá ở $-10\\ ^{\\circ}\\text{C}$\"</td><td>Nước lúc này: lượng và nhiệt độ của câu a</td><td>Biện luận lại từ đầu với lượng nước mới</td></tr><tr><td>\"khối lượng nước đá còn lại\"</td><td>Cần $m_{\\text{còn}}$</td><td>Đá tan được bao nhiêu? Lượng còn lại tính từ khối đá nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thả nước đá vào nước</b> → biện luận đá tan hết hay không trước, rồi mới viết phương trình.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt nước toả tối đa",
+     "hoi": "Nếu nước hạ hẳn về 0 °C thì toả ra bao nhiêu jun?",
+     "dap_so": 126000,
+     "sai_so": 500,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy độ giảm nhiệt độ của nước tới tận nhiệt độ của đá; trong phép thử này nước chỉ hạ về $0\\ ^{\\circ}\\text{C}$, mốc chuyển thể."
+    },
+    {
+     "tieu_de": "Nhiệt cần để đá tan hết",
+     "hoi": "Đưa đá lên 0 °C rồi làm tan hết cần tổng cộng Q₂ bao nhiêu jun?",
+     "dap_so": 108300,
+     "sai_so": 300,
+     "don_vi": "J",
+     "loi_hay_gap": "Chỉ tính nhiệt làm tan $\\lambda m$, quên đá phải nóng lên tới $0\\ ^{\\circ}\\text{C}$ trước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng $Q_1=m_{\\text{đ}} c_{\\text{đ}}\\cdot10$ (đá lên $0\\ ^{\\circ}\\text{C}$) với $Q_{\\text{tan}}=\\lambda m_{\\text{đ}}$ (tan hết)",
+       "dung": true
+      },
+      {
+       "text": "Chỉ tính $Q_{\\text{tan}}=\\lambda m_{\\text{đ}}$",
+       "dung": false,
+       "vi_sao": "Đá đang ở $-10\\ ^{\\circ}\\text{C}$, phải nhận nhiệt để lên $0\\ ^{\\circ}\\text{C}$ rồi mới bắt đầu tan."
+      },
+      {
+       "text": "Tính $Q_1$ với nhiệt dung riêng của nước rồi cộng $Q_{\\text{tan}}$",
+       "dung": false,
+       "vi_sao": "Lúc nóng từ $-10$ lên $0\\ ^{\\circ}\\text{C}$ chất vẫn là nước đá, phải dùng $c_{\\text{đ}}=2100\\ \\text{J/(kg·K)}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Biện luận câu a",
+     "hoi": "Kết luận nào đúng về trạng thái cuối ở câu a?",
+     "lua_chon": [
+      {
+       "text": "Đá tan hết, nhiệt độ cân bằng lớn hơn $0\\ ^{\\circ}\\text{C}$",
+       "dung": true
+      },
+      {
+       "text": "Đá chỉ tan một phần, nhiệt độ cân bằng là $0\\ ^{\\circ}\\text{C}$",
+       "dung": false,
+       "vi_sao": "Nhiệt nước toả khi về $0\\ ^{\\circ}\\text{C}$ lớn hơn nhiệt cần để tan hết đá, nên còn dư nhiệt."
+      },
+      {
+       "text": "Chưa kết luận được, cứ giả sử nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$ rồi giải",
+       "dung": false,
+       "vi_sao": "Hai nhiệt lượng vừa tính đã đủ để kết luận; giả sử trước dễ ra nhiệt độ âm vô lí."
+      }
+     ],
+     "loi_hay_gap": "Bỏ qua bước so sánh, viết ngay phương trình với nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So nhiệt nước toả tối đa với nhiệt cần để đá tan hết",
+       "dung": true
+      },
+      {
+       "text": "Viết ngay phương trình $Q_{\\text{toả}}=Q_{\\text{thu}}$ với $t\\gt0\\ ^{\\circ}\\text{C}$",
+       "dung": false,
+       "vi_sao": "Chưa biết đá tan hết hay không; nếu đá chỉ tan một phần, phương trình đó sai và cho nhiệt độ âm."
+      },
+      {
+       "text": "So khối lượng đá với khối lượng nước",
+       "dung": false,
+       "vi_sao": "Đá tan hết hay không phụ thuộc nhiệt lượng, không phụ thuộc riêng khối lượng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ cân bằng câu a",
+     "hoi": "Nhiệt độ cân bằng ở câu a là bao nhiêu °C?",
+     "dap_so": 3.24,
+     "sai_so": 0.06,
+     "don_vi": "°C",
+     "loi_hay_gap": "Chia phần nhiệt dư cho riêng khối lượng nước ban đầu, quên nước do đá tan ra cũng phải nóng lên từ $0\\ ^{\\circ}\\text{C}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Phần nhiệt dư làm nóng toàn bộ nước trong bình (nước cũ và nước do đá tan) từ $0\\ ^{\\circ}\\text{C}$",
+       "dung": true
+      },
+      {
+       "text": "Chia phần nhiệt dư cho nhiệt dung của $1\\ \\text{kg}$ nước ban đầu",
+       "dung": false,
+       "vi_sao": "Nước do đá tan ra cũng ở trong bình và cũng nóng lên tới cùng nhiệt độ."
+      },
+      {
+       "text": "Chia phần nhiệt dư cho nhiệt dung của $0{,}3\\ \\text{kg}$ nước do đá tan",
+       "dung": false,
+       "vi_sao": "Nước ban đầu cũng ở nhiệt độ cuối đó; phần dư chia cho cả $1{,}3\\ \\text{kg}$ nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Biện luận câu b",
+     "hoi": "Khi thả tiếp đá, trạng thái cuối là gì?",
+     "lua_chon": [
+      {
+       "text": "Đá tan một phần, nhiệt độ cuối $0\\ ^{\\circ}\\text{C}$",
+       "dung": true
+      },
+      {
+       "text": "Đá tan hết, nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$",
+       "dung": false,
+       "vi_sao": "Nước giờ chỉ hơn $0\\ ^{\\circ}\\text{C}$ vài độ, nhiệt toả tối đa nhỏ hơn nhiều so với nhiệt cần để tan hết đá."
+      },
+      {
+       "text": "Đá không tan chút nào, nhiệt độ cuối dưới $0\\ ^{\\circ}\\text{C}$",
+       "dung": false,
+       "vi_sao": "Nhiệt toả tối đa vẫn lớn hơn nhiệt cần để đưa đá lên $0\\ ^{\\circ}\\text{C}$, nên còn dư để làm tan một phần."
+      }
+     ],
+     "loi_hay_gap": "Dùng lại nhiệt toả tối đa của câu a, quên nước lúc này chỉ còn hơn $0\\ ^{\\circ}\\text{C}$ vài độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại nhiệt toả tối đa của toàn bộ nước hiện có khi hạ về $0\\ ^{\\circ}\\text{C}$, rồi so",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại nhiệt toả tối đa đã tính ở câu a",
+       "dung": false,
+       "vi_sao": "Sau câu a nước đã nguội tới gần $0\\ ^{\\circ}\\text{C}$ và có khối lượng mới; phải tính lại."
+      },
+      {
+       "text": "Giả sử nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$ rồi viết phương trình",
+       "dung": false,
+       "vi_sao": "Giải ra nhiệt độ âm, mâu thuẫn với giả sử; phải biện luận trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng đá tan",
+     "hoi": "Khối lượng đá tan thêm là bao nhiêu gam?",
+     "dap_so": 33.5,
+     "sai_so": 0.5,
+     "don_vi": "g",
+     "loi_hay_gap": "Cho toàn bộ nhiệt nước toả tối đa vào việc làm tan đá, quên phần nhiệt đưa đá từ $-10\\ ^{\\circ}\\text{C}$ lên $0\\ ^{\\circ}\\text{C}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt toả tối đa trừ nhiệt đưa đá lên $0\\ ^{\\circ}\\text{C}$",
+       "dung": true
+      },
+      {
+       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt toả tối đa",
+       "dung": false,
+       "vi_sao": "Một phần nhiệt đó phải dùng để đưa đá lên $0\\ ^{\\circ}\\text{C}$ trước khi đá tan."
+      },
+      {
+       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt đưa đá lên $0\\ ^{\\circ}\\text{C}$",
+       "dung": false,
+       "vi_sao": "Đó là phần nhiệt đá nhận để nóng lên, không phải phần nhiệt còn lại để làm tan."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng đá còn lại",
+     "hoi": "Trong bình còn lại bao nhiêu gam nước đá?",
+     "dap_so": 266.5,
+     "sai_so": 1,
+     "don_vi": "g",
+     "loi_hay_gap": "Trừ phần tan khỏi tổng hai lần thả đá, quên đá của câu a đã tan hết.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy khối lượng đá của lần thả sau trừ phần đã tan",
+       "dung": true
+      },
+      {
+       "text": "Lấy tổng đá của hai lần thả trừ phần đã tan",
+       "dung": false,
+       "vi_sao": "Đá của lần thả đầu đã tan hết ở câu a, chỉ còn đá của lần sau."
+      },
+      {
+       "text": "Cộng phần đã tan vào khối lượng đá lần sau",
+       "dung": false,
+       "vi_sao": "Phần tan biến thành nước, nên khối đá giảm đi chứ không tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Đọc đồ thị nhiệt độ – thời gian đun: nhiệt dung riêng và nhiệt nóng chảy riêng",
+   "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+   "problem_html": "<p>Một nguồn nhiệt cung cấp đều đặn cho $0{,}5\\ \\text{kg}$ một chất rắn, mỗi giây chất nhận được $200\\ \\text{J}$ (công suất có ích $200\\ \\text{W}$; bỏ qua nhiệt lượng hao phí ra môi trường). Đồ thị nhiệt độ $t$ của chất theo thời gian đun $\\tau$ như hình dưới, các mốc ghi trên trục.</p><ol type=\"a\"><li>Trên đoạn nào chất đang nóng chảy? Nhiệt độ nóng chảy của chất là bao nhiêu?</li><li>Tính nhiệt dung riêng của chất ở thể rắn.</li><li>Tính nhiệt nóng chảy riêng $\\lambda$ của chất.</li><li>Tính nhiệt dung riêng của chất ở thể lỏng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-3-0\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Đồ thị nhiệt độ theo thời gian đun: A 0 phút 20 độ, B 2 phút 80 độ, C 7 phút 80 độ, D 9 phút 120 độ\"><line x1=\"62.0\" y1=\"214.0\" x2=\"407.6\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M399.8,209.5 L407.6,214.0 L399.8,218.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62.0\" y1=\"214.0\" x2=\"62.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M57.5,29.8 L62.0,22.0 L66.5,29.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"407.6\" y=\"252\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">τ (min)</text><text x=\"70\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">t (°C)</text><line x1=\"134.0\" y1=\"106.0\" x2=\"134.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.1\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"314.0\" y1=\"106.0\" x2=\"314.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.1\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"386.0\" y1=\"52.0\" x2=\"386.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.1\" stroke-dasharray=\"4 3\" opacity=\"1\"/><text x=\"62\" y=\"232\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0</text><text x=\"134\" y=\"232\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">2</text><text x=\"314\" y=\"232\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">7</text><text x=\"386\" y=\"232\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">9</text><text x=\"56\" y=\"191.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">20</text><line x1=\"62.0\" y1=\"106.0\" x2=\"134.0\" y2=\"106.0\" stroke=\"#94a3b8\" stroke-width=\"1.1\" stroke-dasharray=\"4 3\" opacity=\"1\"/><text x=\"56\" y=\"110.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">80</text><line x1=\"62.0\" y1=\"52.0\" x2=\"386.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1.1\" stroke-dasharray=\"4 3\" opacity=\"1\"/><text x=\"56\" y=\"56.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">120</text><text x=\"70\" y=\"201.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"140\" y=\"98.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"310\" y=\"98.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">C</text><text x=\"392\" y=\"44.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">D</text><polyline fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\" points=\"62.0,187.0 134.0,106.0 314.0,106.0 386.0,52.0\" stroke-dasharray=\"380.4\" stroke-dashoffset=\"0\"><animate attributeName=\"stroke-dashoffset\" values=\"378.4;270.0;90.0;0.0\" keyTimes=\"0.0000;0.2222;0.7778;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline><circle cx=\"62.0\" cy=\"187.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"62.0;134.0;314.0;386.0\" keyTimes=\"0.0000;0.2222;0.7778;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"187.0;106.0;106.0;52.0\" keyTimes=\"0.0000;0.2222;0.7778;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"150\" y=\"168\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nguồn cấp đều 200 W</text><text x=\"150\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">chất: 0,5 kg</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm chạy dọc đồ thị, chạy nhanh 60 lần (1 s mô phỏng = 1 min thật). Trục chỉ ghi các mốc đề cho.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trong lúc nóng chảy nhiệt độ không đổi dù chất vẫn nhận nhiệt.</li><li><strong>Công thức:</strong> nhiệt nhận được $Q=P\\,\\Delta\\tau$.</li><li><strong>Đoạn dốc:</strong> $P\\,\\Delta\\tau=mc\\,\\Delta t$; <strong>đoạn ngang:</strong> $P\\,\\Delta\\tau=\\lambda m$.</li><li><strong>Điều kiện:</strong> bỏ qua hao phí, $\\Delta\\tau$ đổi ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đoạn nóng chảy</span></p><p>Trên đoạn BC (từ phút $2$ tới phút $7$) chất vẫn nhận nhiệt nhưng nhiệt độ không đổi: đó là lúc nóng chảy.</p><div class=\"bt-ans\">$$\\text{BC},\\ t_{\\text{nc}}=80\\ ^{\\circ}\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt nhận được trên đoạn AB</span></p><p>Đoạn AB kéo dài $2\\ \\text{min}=120\\ \\text{s}$:</p>$$Q_{AB}=P\\,\\Delta\\tau=200\\cdot120$$<div class=\"bt-ans\">$$Q_{AB}=24\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt dung riêng thể rắn</span></p><p>Trên AB chất còn rắn, nóng từ $20$ lên $80\\ ^{\\circ}\\text{C}$: $\\Delta t=60\\ ^{\\circ}\\text{C}$.</p>$$c_r=\\dfrac{Q_{AB}}{m\\,\\Delta t}=\\dfrac{24\\,000}{0{,}5\\cdot60}$$<div class=\"bt-ans\">$$c_r=800\\ \\text{J/(kg·K)}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt nóng chảy riêng</span></p><p>Đoạn BC kéo dài $7-2=5\\ \\text{min}=300\\ \\text{s}$:</p>$$\\lambda=\\dfrac{P\\,\\Delta\\tau}{m}=\\dfrac{200\\cdot300}{0{,}5}$$<div class=\"bt-ans\">$$\\lambda=1{,}2\\cdot10^5\\ \\text{J/kg}=120\\ \\text{kJ/kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Nhiệt dung riêng thể lỏng</span></p><p>Trên CD chất đã lỏng hoàn toàn: $\\Delta\\tau=9-7=2\\ \\text{min}=120\\ \\text{s}$; $\\Delta t=120-80=40\\ ^{\\circ}\\text{C}$.</p>$$c_l=\\dfrac{P\\,\\Delta\\tau}{m\\,\\Delta t}=\\dfrac{200\\cdot120}{0{,}5\\cdot40}$$<div class=\"bt-ans\">$$c_l=1200\\ \\text{J/(kg·K)}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>AB và CD cùng kéo dài $2\\ \\text{min}$ (cùng nhiệt lượng) nhưng CD tăng ít độ hơn ($40$ so với $60\\ ^{\\circ}\\text{C}$): nhiệt dung riêng thể lỏng phải lớn hơn ✓, đúng tỉ lệ $\\dfrac{c_l}{c_r}=\\dfrac{60}{40}=1{,}5$ ✓.</p><p>Đơn vị: $\\dfrac{\\text{W}\\cdot\\text{s}}{\\text{kg}}=\\dfrac{\\text{J}}{\\text{kg}}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Đoạn BC; $t_{\\text{nc}}=80\\ ^{\\circ}\\text{C}$</p><p>b) $c_r=800\\ \\text{J/(kg·K)}$</p><p>c) $\\lambda=1{,}2\\cdot10^5\\ \\text{J/kg}$</p><p>d) $c_l=1200\\ \\text{J/(kg·K)}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>đồ thị nhiệt độ theo thời gian đun có đoạn nằm ngang</strong> → đoạn ngang: $P\\Delta\\tau=\\lambda m$; đoạn dốc: $P\\Delta\\tau=mc\\Delta t$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-3-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Đồ thị mẫu gồm đoạn dốc và đoạn nằm ngang, nhắc cách đọc thời gian và độ tăng nhiệt độ của từng đoạn\"><line x1=\"40.0\" y1=\"150.0\" x2=\"390.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"150.0\" x2=\"40.0\" y2=\"14.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" opacity=\"1\" points=\"40.0,150.0 130.0,70.0 260.0,70.0 370.0,22.0\"/><text x=\"86\" y=\"124\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đoạn dốc:</text><text x=\"86\" y=\"140\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">nhiệt độ thay đổi</text><text x=\"175.0\" y=\"60\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">đoạn ngang: nhiệt độ không đổi</text><text x=\"195.0\" y=\"96\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">chất vẫn đang nhận nhiệt</text><text x=\"16\" y=\"174\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Mỗi đoạn: Δτ trên trục ngang, Δt trên trục đứng</text></svg><figcaption>Hình mẫu cách đọc đồ thị (không theo số liệu của đề).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mỗi giây chất nhận được $200\\ \\text{J}$ (… bỏ qua nhiệt lượng hao phí ra môi trường)\"</td><td>$P=200\\ \\text{W}$</td><td>⚠ bỏ qua hao phí: toàn bộ nhiệt nguồn cấp đều vào chất<br>Nhiệt nhận được $Q=P\\,\\Delta\\tau$, $\\Delta\\tau$ tính bằng giây</td></tr><tr><td>\"$0{,}5\\ \\text{kg}$ một chất rắn\"</td><td>$m=0{,}5\\ \\text{kg}$</td><td>Khối lượng không đổi trong suốt quá trình</td></tr><tr><td>\"Trên đoạn nào chất đang nóng chảy?\"</td><td>Ba đoạn AB, BC, CD</td><td>Đoạn nào nhiệt độ không đổi dù chất vẫn nhận nhiệt?</td></tr><tr><td>\"nhiệt dung riêng của chất ở thể rắn\"</td><td>Cần $c_r$</td><td>$Q=mc\\,\\Delta t$ trên đoạn chất còn rắn</td></tr><tr><td>\"nhiệt nóng chảy riêng $\\lambda$\"</td><td>Cần $\\lambda$</td><td>$Q=\\lambda m$ trên đoạn chuyển thể</td></tr><tr><td>\"nhiệt dung riêng của chất ở thể lỏng\"</td><td>Cần $c_l$</td><td>Đoạn nào chất đã lỏng hoàn toàn? Đọc $\\Delta\\tau$ và $\\Delta t$ của đoạn đó</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đồ thị nhiệt độ theo thời gian đun có đoạn nằm ngang</b> → đoạn ngang: $Q=\\lambda m$; đoạn dốc: $Q=mc\\Delta t$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đoạn nóng chảy",
+     "hoi": "Chất nóng chảy trên đoạn nào?",
+     "lua_chon": [
+      {
+       "text": "Đoạn BC, nhiệt độ không đổi dù vẫn nhận nhiệt",
+       "dung": true
+      },
+      {
+       "text": "Đoạn AB, vì nhiệt độ tăng nhanh nhất",
+       "dung": false,
+       "vi_sao": "Nhiệt độ đang tăng nghĩa là chất chưa chuyển thể; khi nóng chảy nhiệt độ giữ nguyên."
+      },
+      {
+       "text": "Đoạn CD, vì lúc đó chất đã thành chất lỏng",
+       "dung": false,
+       "vi_sao": "Trên CD chất đã chảy hết và đang nóng lên ở thể lỏng; quá trình chảy đã xong trước đó."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng nhiệt độ không đổi thì chất không nhận nhiệt nên không có gì xảy ra."
+    },
+    {
+     "tieu_de": "Nhiệt nhận được trên đoạn AB",
+     "hoi": "Trên đoạn AB chất nhận bao nhiêu jun?",
+     "dap_so": 24000,
+     "sai_so": 100,
+     "don_vi": "J",
+     "loi_hay_gap": "Để thời gian theo phút khi nhân với công suất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $Q=P\\,\\Delta\\tau$ với $\\Delta\\tau$ đổi ra giây",
+       "dung": true
+      },
+      {
+       "text": "Tính $Q=P\\,\\Delta\\tau$ với $\\Delta\\tau$ để theo phút",
+       "dung": false,
+       "vi_sao": "Oát là jun trên giây; để thời gian theo phút thì nhiệt lượng nhỏ đi $60$ lần."
+      },
+      {
+       "text": "Tính $Q=mc\\,\\Delta t$",
+       "dung": false,
+       "vi_sao": "Nhiệt dung riêng thể rắn chưa biết, đó chính là ẩn; nhiệt lượng phải lấy từ nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt dung riêng thể rắn",
+     "hoi": "Nhiệt dung riêng của chất ở thể rắn là bao nhiêu J/(kg·K)?",
+     "dap_so": 800,
+     "sai_so": 10,
+     "don_vi": "J/(kg·K)",
+     "loi_hay_gap": "Lấy nhiệt độ cuối của đoạn làm độ tăng nhiệt độ thay vì hiệu hai mốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia nhiệt lượng cho $m\\,\\Delta t$ với $\\Delta t$ là hiệu hai mốc nhiệt độ của đoạn AB",
+       "dung": true
+      },
+      {
+       "text": "Chia nhiệt lượng cho $m$ nhân nhiệt độ ở B",
+       "dung": false,
+       "vi_sao": "Cần độ tăng nhiệt độ của đoạn, không phải nhiệt độ cuối."
+      },
+      {
+       "text": "Chia nhiệt lượng cho $m$ (không có $\\Delta t$)",
+       "dung": false,
+       "vi_sao": "Thương đó có đơn vị J/kg, là dạng của $\\lambda$, không phải nhiệt dung riêng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt nóng chảy riêng",
+     "hoi": "Nhiệt nóng chảy riêng của chất là bao nhiêu kJ/kg?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "kJ/kg",
+     "loi_hay_gap": "Lấy thời gian là mốc cuối của đoạn BC thay vì hiệu hai mốc thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho $P\\,\\Delta\\tau=\\lambda m$ với $\\Delta\\tau$ là hiệu hai mốc thời gian của BC",
+       "dung": true
+      },
+      {
+       "text": "Cho $P\\,\\Delta\\tau=mc\\,\\Delta t$ trên BC",
+       "dung": false,
+       "vi_sao": "Trên BC nhiệt độ không đổi, $\\Delta t=0$; nhiệt nhận được dùng để chuyển thể."
+      },
+      {
+       "text": "Cho $P\\,\\Delta\\tau=\\lambda m$ với $\\Delta\\tau$ tính từ lúc bắt đầu đun tới C",
+       "dung": false,
+       "vi_sao": "Thời gian đó gồm cả đoạn AB, khi chất còn đang nóng lên chưa chảy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt dung riêng thể lỏng",
+     "hoi": "Nhiệt dung riêng của chất ở thể lỏng là bao nhiêu J/(kg·K)?",
+     "dap_so": 1200,
+     "sai_so": 10,
+     "don_vi": "J/(kg·K)",
+     "loi_hay_gap": "Lấy độ tăng nhiệt độ của đoạn CD từ $0\\ ^{\\circ}\\text{C}$ thay vì từ nhiệt độ nóng chảy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trên CD, chia $P\\,\\Delta\\tau$ cho $m\\,\\Delta t$, mỗi đại lượng lấy hiệu hai mốc của CD",
+       "dung": true
+      },
+      {
+       "text": "Trên CD, lấy $\\Delta t$ bằng nhiệt độ ở D",
+       "dung": false,
+       "vi_sao": "Chất bắt đầu nóng lên ở thể lỏng từ nhiệt độ nóng chảy, không phải từ $0\\ ^{\\circ}\\text{C}$."
+      },
+      {
+       "text": "Trên CD, lấy $\\Delta\\tau$ bằng toàn bộ thời gian đun",
+       "dung": false,
+       "vi_sao": "Chỉ đoạn CD chất ở thể lỏng; các đoạn trước chất còn rắn hoặc đang chảy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Nâng cao · Hiệu suất bếp nhiên liệu: đun sôi rồi cho nước hoá hơi",
+   "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+   "problem_html": "<p>Một nồi nhôm khối lượng $0{,}5\\ \\text{kg}$ chứa $2$ lít nước ở 20 °C được đun bằng bếp gas. Hiệu suất của bếp là $40\\,\\%$: chỉ $40\\,\\%$ nhiệt lượng do gas cháy toả ra được nồi và nước hấp thụ. Cho nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, của nhôm là $880\\ \\text{J/(kg·K)}$; khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$; nước sôi ở 100 °C; nhiệt hoá hơi riêng của nước là $2{,}3\\cdot10^6\\ \\text{J/kg}$; năng suất toả nhiệt của gas là $4{,}4\\cdot10^7\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Tính nhiệt lượng nồi và nước cần nhận để nước bắt đầu sôi.</li><li>Tính khối lượng gas cần đốt để đun nước tới sôi (theo gam).</li><li>Đun tiếp cho tới khi $10\\,\\%$ lượng nước trong nồi hoá hơi. Coi hiệu suất của bếp vẫn là $40\\,\\%$. Phải đốt thêm bao nhiêu gam gas?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-4-0\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Bếp gas đun nồi nước: nhiệt kế tăng từ 20 °C tới 100 °C rồi đứng yên khi nước sôi\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Bếp gas đun nồi nhôm chứa nước</text><rect x=\"110.0\" y=\"186.0\" width=\"160.0\" height=\"10.0\" rx=\"2\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M143,184 Q150,166 157,184 Z\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M168,184 Q175,166 182,184 Z\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M193,184 Q200,166 207,184 Z\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M218,184 Q225,166 232,184 Z\" fill=\"#fb923c\" fill-opacity=\".55\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M104,92 L112,176 L268,176 L276,92\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\"/><path d=\"M110,108 L114,172 L266,172 L270,108 Z\" fill=\"#38bdf8\" fill-opacity=\".22\" stroke=\"none\"/><circle cx=\"140\" cy=\"156\" r=\"4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"172\" cy=\"146\" r=\"5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5714\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"205\" cy=\"160\" r=\"4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5929\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"236\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6143\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"190\" cy=\"130\" r=\"4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6357\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"156\" cy=\"126\" r=\"5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6571\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><path d=\"M160,84 C150,72 170,62 160,48\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4 4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5929\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M192,84 C182,72 202,62 192,48\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4 4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6214\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><path d=\"M224,84 C214,72 234,62 224,48\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"4 4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><rect x=\"330.0\" y=\"48.0\" width=\"14.0\" height=\"128.0\" rx=\"7\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"337\" cy=\"182\" r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"333\" y=\"146.0\" width=\"8\" height=\"34.0\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"146.0;58.0;58.0\" keyTimes=\"0.0000;0.5500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"34.0;122.0;122.0\" keyTimes=\"0.0000;0.5500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"346.0\" y1=\"146.0\" x2=\"354.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"358\" y=\"151.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">20 °C</text><line x1=\"346.0\" y1=\"58.0\" x2=\"354.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"358\" y=\"63.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">100 °C</text><text opacity=\"0\" x=\"16\" y=\"214\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đang nóng lên<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0000;0.5500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"214\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">sôi: nhiệt độ đứng yên, nước hoá hơi dần<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy nhanh hơn thật rất nhiều lần. Nhiệt kế tăng tới 100 °C rồi đứng yên trong lúc nước sôi và hoá hơi.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nhiệt lượng:</strong> làm nóng $Q=mc\\Delta t$ ; hoá hơi ở nhiệt độ sôi $Q=Lm$.</li><li><strong>Nhiên liệu:</strong> đốt $m_{gas}$ toả ra $Q_{tp}=q\\,m_{gas}$.</li><li><strong>Hiệu suất:</strong> $H=\\dfrac{Q_{\\text{ích}}}{Q_{tp}}$, $Q_{\\text{ích}}$ là nhiệt mà nồi và nước nhận.</li><li><strong>Điều kiện:</strong> trong lúc sôi nhiệt độ không đổi ; $1$ lít nước $=0{,}001\\ \\text{m}^3$ nặng $1\\ \\text{kg}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt lượng có ích tới khi sôi</span></p><p>Khối lượng nước : $m_n=DV=1000\\cdot0{,}002=2\\ \\text{kg}$. Cả nồi và nước nóng từ 20 °C tới 100 °C :</p>$$Q_{\\text{ích}}=m_nc_n\\Delta t+m_{nh}c_{nh}\\Delta t$$$$Q_{\\text{ích}}=2\\cdot4200\\cdot80+0{,}5\\cdot880\\cdot80$$$$Q_{\\text{ích}}=672\\,000+35\\,200$$<div class=\"bt-ans\">$$Q_{\\text{ích}}=707\\,200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt lượng gas toả ra</span></p><p>Chỉ $40\\,\\%$ nhiệt của gas là có ích :</p>$$Q_{tp}=\\dfrac{Q_{\\text{ích}}}{H}=\\dfrac{707\\,200}{0{,}4}$$<div class=\"bt-ans\">$$Q_{tp}=1\\,768\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khối lượng gas</span></p>$$m_{gas}=\\dfrac{Q_{tp}}{q}=\\dfrac{1\\,768\\,000}{4{,}4\\cdot10^7}\\approx0{,}0402\\ \\text{kg}$$<div class=\"bt-ans\">$$m_{gas}\\approx40{,}2\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt lượng để $10\\,\\%$ nước hoá hơi</span></p><p>Đang sôi : nồi và nước giữ 100 °C nên không cần nhiệt để làm nóng thêm ; chỉ cần nhiệt hoá hơi :</p>$$Q'=L\\cdot0{,}1\\,m_n=2{,}3\\cdot10^6\\cdot0{,}2$$<div class=\"bt-ans\">$$Q'=460\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lượng gas đốt thêm</span></p>$$\\Delta m_{gas}=\\dfrac{Q'}{H\\,q}=\\dfrac{460\\,000}{0{,}4\\cdot4{,}4\\cdot10^7}\\approx0{,}0261\\ \\text{kg}$$<div class=\"bt-ans\">$$\\Delta m_{gas}\\approx26{,}1\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Đơn vị : $\\dfrac{\\text{J}}{\\text{J/kg}}=\\text{kg}$ ✓.</p><p>Làm $0{,}2\\ \\text{kg}$ nước hoá hơi tốn $460\\,000\\ \\text{J}$, cỡ $\\tfrac23$ nhiệt đun $2\\ \\text{kg}$ nước từ 20 °C tới sôi : nhiệt hoá hơi riêng rất lớn ✓.</p><p>Nồi nhôm chỉ chiếm khoảng $5\\,\\%$ nhiệt có ích, nhưng bỏ qua thì đáp số lệch ✓ (đề có cho thì phải tính).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $Q_{\\text{ích}}=707\\,200\\ \\text{J}$</p><p>b) $m_{gas}\\approx40{,}2\\ \\text{g}$</p><p>c) đốt thêm khoảng $26{,}1\\ \\text{g}$ gas</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>bếp có hiệu suất H</strong> và <strong>năng suất toả nhiệt q</strong> → tính $Q_{\\text{ích}}$ cho mọi vật nhận nhiệt, chia $H$ ra $Q_{tp}$, rồi $m=Q_{tp}/q$ ; lúc sôi chỉ còn $Q=Lm$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-4-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Sơ đồ dòng nhiệt: gas cháy toả nhiệt lượng toàn phần, 40 % có ích cho nước và nồi, 60 % hao phí\"><text x=\"16\" y=\"18\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nhiệt lượng gas toả ra đi về đâu?</text><rect x=\"20.0\" y=\"50.0\" width=\"170.0\" height=\"60.0\" rx=\"4\" fill=\"#fb923c\" fill-opacity=\"0.22\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"105\" y=\"76\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">gas cháy toả ra</text><text x=\"105\" y=\"96\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Q<tspan dy=\"4\" font-size=\"12\">tp</tspan><tspan dy=\"-4\"> (100 %)</tspan></text><polygon points=\"190,50 300,50 300,44 326,62 300,80 300,74 190,74\" fill=\"#34d399\" fill-opacity=\".3\" stroke=\"#34d399\" stroke-width=\"2\"/><polygon points=\"190,74 240,124 300,124 300,112 330,142 300,172 300,160 240,160 190,110\" fill=\"#94a3b8\" fill-opacity=\".25\" stroke=\"#94a3b8\" stroke-width=\"2\"/><text x=\"196\" y=\"38\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">có ích: 40 % (nước + nồi)</text><text x=\"246\" y=\"192\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">hao phí: 60 %</text><text x=\"16\" y=\"140\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">nước: 2 lít</text><text x=\"16\" y=\"158\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">20 °C → 100 °C</text><text x=\"16\" y=\"176\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">nồi nhôm 0,5 kg</text><text x=\"16\" y=\"200\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">m<tspan dy=\"4\" font-size=\"12\">gas</tspan><tspan dy=\"-4\"> = ?</tspan></text></svg><figcaption>Dữ kiện: độ rộng mỗi dải theo phần trăm đề cho; phần có ích gồm cả nước và nồi.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Một nồi nhôm khối lượng $0{,}5\\ \\text{kg}$ chứa $2$ lít nước ở 20 °C\"</td><td>$m_{nh}=0{,}5\\ \\text{kg}$ ; $V=2$ lít ; $t_0=20$ °C</td><td>Vật nào nhận nhiệt ? Đổi lít ra kilôgam bằng khối lượng riêng : $m=DV$</td></tr><tr><td>\"chỉ $40\\,\\%$ nhiệt lượng do gas cháy toả ra được nồi và nước hấp thụ\"</td><td>$H=40\\,\\%$</td><td>⚠ phần có ích gồm những vật nào ? Hiệu suất : $H=\\dfrac{Q_{\\text{ích}}}{Q_{tp}}$</td></tr><tr><td>\"nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, của nhôm là $880\\ \\text{J/(kg·K)}$\"</td><td>$c_n=4200$ ; $c_{nh}=880\\ \\text{J/(kg·K)}$</td><td>$Q=mc\\Delta t$ cho từng vật</td></tr><tr><td>\"nhiệt hoá hơi riêng của nước là $2{,}3\\cdot10^6\\ \\text{J/kg}$; năng suất toả nhiệt của gas là $4{,}4\\cdot10^7\\ \\text{J/kg}$\"</td><td>$L=2{,}3\\cdot10^6\\ \\text{J/kg}$ ; $q=4{,}4\\cdot10^7\\ \\text{J/kg}$</td><td>Hoá hơi : $Q=Lm$ ; đốt nhiên liệu : $Q_{tp}=q\\,m_{gas}$</td></tr><tr><td>\"Tính khối lượng gas cần đốt để đun nước tới sôi (theo gam)\"</td><td>$m_{gas}=?$</td><td>Nhiệt lượng nào do gas toả ra : $Q_{\\text{ích}}$ hay $Q_{tp}$ ?</td></tr><tr><td>\"Đun tiếp cho tới khi $10\\,\\%$ lượng nước trong nồi hoá hơi\"</td><td>$m_{\\text{hơi}}=10\\,\\%\\,m_n$</td><td>⚠ trong lúc sôi, nhiệt độ của nước và nồi có tăng nữa không ? Nồi còn cần nhận nhiệt không ?</td></tr><tr><td>\"Coi hiệu suất của bếp vẫn là $40\\,\\%$. Phải đốt thêm bao nhiêu gam gas?\"</td><td>$H=40\\,\\%$ ; $\\Delta m_{gas}=?$</td><td>Đề hỏi lượng gas thêm hay tổng lượng gas ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hiệu suất bếp</b>, <b>năng suất toả nhiệt</b> → <b>Q có ích chia H, rồi chia q</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt lượng có ích tới khi sôi",
+     "hoi": "Nồi và nước cần nhận bao nhiêu jun để nước bắt đầu sôi?",
+     "dap_so": 707200.0,
+     "sai_so": 1000,
+     "don_vi": "J",
+     "loi_hay_gap": "Chỉ tính nhiệt cho nước, quên nồi nhôm cũng nóng lên ; hoặc lấy $2$ lít là $2000\\ \\text{kg}$ vì đổi sai thể tích."
+    },
+    {
+     "tieu_de": "Nhiệt lượng gas toả ra",
+     "hoi": "Gas cháy phải toả ra bao nhiêu jun?",
+     "dap_so": 1768000.0,
+     "sai_so": 5000,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân $Q_{\\text{ích}}$ với $H$ : kết quả nhỏ hơn nhiệt có ích là vô lí, vì gas phải toả nhiều hơn phần nồi và nước nhận.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q_{tp}=\\dfrac{Q_{\\text{ích}}}{H}$",
+       "dung": true
+      },
+      {
+       "text": "$Q_{tp}=H\\cdot Q_{\\text{ích}}$",
+       "dung": false,
+       "vi_sao": "Như vậy nhiệt gas toả ra còn ít hơn nhiệt có ích ; phải chia cho $H$ mới đúng định nghĩa $H=Q_{\\text{ích}}/Q_{tp}$."
+      },
+      {
+       "text": "$Q_{tp}=Q_{\\text{ích}}$",
+       "dung": false,
+       "vi_sao": "Bỏ qua hiệu suất : $60\\,\\%$ nhiệt của gas bị hao phí nên gas phải toả nhiều hơn nhiệt có ích."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng gas",
+     "hoi": "Cần đốt bao nhiêu gam gas?",
+     "dap_so": 40.18181818181818,
+     "sai_so": 0.3,
+     "don_vi": "g",
+     "loi_hay_gap": "Chia nhiệt có ích cho $q$ (quên hiệu suất), hoặc để kết quả theo kilôgam mà đề hỏi gam.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m_{gas}=\\dfrac{Q_{tp}}{q}$ rồi đổi ra gam",
+       "dung": true
+      },
+      {
+       "text": "$m_{gas}=\\dfrac{Q_{\\text{ích}}}{q}$",
+       "dung": false,
+       "vi_sao": "Gas toả ra $Q_{tp}$, không phải $Q_{\\text{ích}}$ ; chia $Q_{\\text{ích}}$ cho $q$ là coi bếp không hao phí."
+      },
+      {
+       "text": "$m_{gas}=\\dfrac{H\\cdot Q_{\\text{ích}}}{q}$",
+       "dung": false,
+       "vi_sao": "Nhân thêm $H$ làm lượng gas còn nhỏ hơn cả khi không hao phí ; hiệu suất phải làm tăng lượng gas."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng để $10\\,\\%$ nước hoá hơi",
+     "hoi": "Để 10 % lượng nước hoá hơi, nồi và nước cần nhận thêm bao nhiêu jun?",
+     "dap_so": 460000.0,
+     "sai_so": 2000,
+     "don_vi": "J",
+     "loi_hay_gap": "Cộng thêm nhiệt làm nóng nồi và nước như đoạn trước, hoặc cho toàn bộ nước hoá hơi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$Q'=L\\cdot0{,}1\\,m_n$ vì nồi và nước giữ nhiệt độ sôi",
+       "dung": true
+      },
+      {
+       "text": "$Q'=L\\cdot0{,}1\\,m_n+(m_nc_n+m_{nh}c_{nh})\\Delta t$",
+       "dung": false,
+       "vi_sao": "Khi sôi nhiệt độ đứng yên nên nồi và nước không cần nhận nhiệt để nóng thêm."
+      },
+      {
+       "text": "$Q'=L\\cdot m_n$",
+       "dung": false,
+       "vi_sao": "Đề chỉ cho $10\\,\\%$ lượng nước hoá hơi, không phải toàn bộ nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lượng gas đốt thêm",
+     "hoi": "Phải đốt thêm bao nhiêu gam gas?",
+     "dap_so": 26.136363636363637,
+     "sai_so": 0.3,
+     "don_vi": "g",
+     "loi_hay_gap": "Quên chia hiệu suất lần nữa, hoặc trả lời tổng lượng gas từ đầu thay vì lượng đốt thêm.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta m_{gas}=\\dfrac{Q'}{H\\,q}$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta m_{gas}=\\dfrac{Q'}{q}$",
+       "dung": false,
+       "vi_sao": "Hiệu suất vẫn là $40\\,\\%$ khi đun tiếp ; gas phải toả $Q'/H$."
+      },
+      {
+       "text": "$\\Delta m_{gas}=\\dfrac{Q_{\\text{ích}}+Q'}{H\\,q}$",
+       "dung": false,
+       "vi_sao": "Đó là tổng lượng gas từ đầu ; đề hỏi lượng đốt thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Rót qua lại hai bình: tìm lượng nước đã rót",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Bình 1 chứa $2\\ \\text{kg}$ nước ở 60 °C, bình 2 chứa $1\\ \\text{kg}$ nước ở 20 °C. Dùng một ca múc một lượng nước $m$ từ bình 1 đổ sang bình 2. Khi bình 2 đã cân bằng nhiệt, lại múc đúng lượng $m$ từ bình 2 đổ về bình 1. Khi cân bằng, nhiệt độ của bình 1 là 56 °C. Coi các bình cách nhiệt hoàn toàn với môi trường, bỏ qua nhiệt dung của các bình và của ca múc, bỏ qua sự trao đổi nhiệt khi đang múc.</p><ol type=\"a\"><li>Tính nhiệt độ của bình 2 sau lần múc thứ nhất.</li><li>Tính lượng nước $m$ đã múc mỗi lần.</li><li>Từ trạng thái cuối, múc thêm một lần lượng $m$ từ bình 1 đổ sang bình 2. Tính nhiệt độ của bình 2 khi cân bằng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-5-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Ca múc nước từ bình 1 sang bình 2, chờ cân bằng, rồi múc cùng lượng từ bình 2 về bình 1\"><text opacity=\"0\" x=\"16\" y=\"22\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Lần 1: múc m từ bình 1 sang bình 2<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0000;0.5000\" calcMode=\"discrete\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chờ cân bằng nhiệt<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5000;0.6400\" calcMode=\"discrete\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"22\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Lần 2: múc m từ bình 2 về bình 1<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6400;0.9700\" calcMode=\"discrete\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"22\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Bình 1 cuối: 56 °C; bình 2 cuối: ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9700\" calcMode=\"discrete\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><rect x=\"42\" y=\"100.0\" width=\"126\" height=\"90.0\" fill=\"#fb923c\" fill-opacity=\".25\"><animate attributeName=\"y\" values=\"100.0;100.0;114.0;114.0;100.0;100.0\" keyTimes=\"0.0000;0.0500;0.0900;0.9000;0.9400;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"90.0;90.0;76.0;76.0;90.0;90.0\" keyTimes=\"0.0000;0.0500;0.0900;0.9000;0.9400;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"252\" y=\"145.0\" width=\"126\" height=\"45.0\" fill=\"#38bdf8\" fill-opacity=\".25\"><animate attributeName=\"y\" values=\"145.0;145.0;131.0;131.0;145.0;145.0\" keyTimes=\"0.0000;0.3700;0.4100;0.6600;0.7000;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"45.0;45.0;59.0;59.0;45.0;45.0\" keyTimes=\"0.0000;0.3700;0.4100;0.6600;0.7000;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><path d=\"M40,70 L40,190 L170,190 L170,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M250,70 L250,190 L380,190 L380,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><g transform=\"translate(105 66)\"><rect x=\"-12\" y=\"-4\" width=\"24\" height=\"12\" fill=\"#38bdf8\" fill-opacity=\".8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1;0;1;0\" keyTimes=\"0;.08;.42;.68;.94\" calcMode=\"discrete\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"-14.0\" y=\"-10.0\" width=\"28.0\" height=\"20.0\" rx=\"3\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"14.0\" y1=\"-10.0\" x2=\"32.0\" y2=\"-34.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"105 66;105 112;105 66;315 66;315 118;315 118;315 66;315 66;315 136;315 66;105 66;105 106;105 66\" keyTimes=\"0.0000;0.0800;0.1600;0.3400;0.4000;0.4600;0.5200;0.6200;0.6800;0.7400;0.8800;0.9400;1.0000\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"105\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Bình 1</text><text x=\"105\" y=\"226\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">2 kg, 60 °C</text><text x=\"315\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Bình 2</text><text x=\"315\" y=\"226\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">1 kg, 20 °C</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lần múc cùng một lượng m. Mực nước và cỡ ca không theo tỉ lệ; khung cuối chỉ ghi số đề cho.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nguyên lí:</strong> nhiệt truyền từ vật nóng sang vật lạnh tới khi bằng nhiệt độ.</li><li><strong>Phương trình cân bằng nhiệt:</strong> $Q_{\\text{toả}}=Q_{thu}$, với $Q=mc\\Delta t$.</li><li><strong>Múc bớt nước:</strong> phần nước còn lại giữ nguyên nhiệt độ.</li><li><strong>Điều kiện:</strong> bình cách nhiệt, bỏ qua nhiệt dung bình và ca ; mọi nước cùng $c$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt độ bình 2 sau lần múc thứ nhất</span></p><p>Lần múc thứ hai chỉ lấy bớt nước nên bình 2 vẫn ở nhiệt độ $t_2'$ sau lần 1. Lúc cuối : bình 1 có $2\\ \\text{kg}$ ở 56 °C, bình 2 có $1\\ \\text{kg}$ ở $t_2'$.</p><p>Cả hệ cách nhiệt : nhiệt $2\\ \\text{kg}$ nước của bình 1 toả ra bằng nhiệt $1\\ \\text{kg}$ nước của bình 2 thu vào :</p>$$m_1c(t_1-t_1')=m_2c(t_2'-t_2)$$$$2\\cdot(60-56)=1\\cdot(t_2'-20)$$<div class=\"bt-ans\">$$t_2'=28\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lượng nước $m$</span></p><p>Lần 1 : lượng $m$ ở 60 °C nguội tới $t_2'$, $1\\ \\text{kg}$ nước bình 2 nóng từ 20 °C tới $t_2'$ :</p>$$mc(t_1-t_2')=m_2c(t_2'-t_2)$$$$m\\cdot(60-28)=1\\cdot(28-20)\\ \\Rightarrow\\ m=\\dfrac{8}{32}$$<div class=\"bt-ans\">$$m=0{,}25\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt độ bình 2 sau lần múc thứ ba</span></p><p>Lúc đó bình 2 có $1\\ \\text{kg}$ ở 28 °C, nhận thêm $0{,}25\\ \\text{kg}$ ở 56 °C :</p>$$t_2''=\\dfrac{m_2t_2'+m\\,t_1'}{m_2+m}=\\dfrac{1\\cdot28+0{,}25\\cdot56}{1{,}25}$$<div class=\"bt-ans\">$$t_2''=33{,}6\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Lần 2 : bình 1 còn $1{,}75\\ \\text{kg}$ ở 60 °C, nhận $0{,}25\\ \\text{kg}$ ở 28 °C :</p>$$\\dfrac{1{,}75\\cdot60+0{,}25\\cdot28}{2}=\\dfrac{105+7}{2}=56\\ ^\\circ\\text{C}\\ ✓$$<p>$t_2''$ nằm giữa 28 °C và 56 °C, gần 28 °C hơn vì bình 2 nhiều nước hơn ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t_2'=28$ °C</p><p>b) $m=0{,}25\\ \\text{kg}$</p><p>c) $t_2''=33{,}6$ °C</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>rót qua lại</strong> giữa hai bình cách nhiệt → viết cân bằng nhiệt cho <strong>cả hệ</strong> (đầu và cuối) để ra nhiệt độ, rồi cân bằng cho <strong>một lần rót</strong> để ra $m$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-5-2\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Hai bình nước: múc lượng m từ bình 1 sang bình 2, cân bằng, rồi múc lượng m từ bình 2 về bình 1\"><rect x=\"42\" y=\"100\" width=\"126\" height=\"90\" fill=\"#fb923c\" fill-opacity=\".22\"/><rect x=\"252\" y=\"145\" width=\"126\" height=\"45\" fill=\"#38bdf8\" fill-opacity=\".22\"/><path d=\"M40,70 L40,190 L170,190 L170,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M250,70 L250,190 L380,190 L380,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M120,64 Q210,0 300,64\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M295.8,54.9 L300.0,64.0 L290.0,63.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"22\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">lần 1: m</text><path d=\"M300,86 Q210,44 120,86\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\"/><path d=\"M130.0,86.9 L120.0,86.0 L125.7,77.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"100\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">lần 2: m</text><text x=\"48\" y=\"130\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">m<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 2 kg</tspan></text><text x=\"48\" y=\"148\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 60 °C</tspan></text><text x=\"258\" y=\"166\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">m<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 1 kg</tspan></text><text x=\"258\" y=\"182\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 20 °C</tspan></text><text x=\"105\" y=\"212\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">cuối: t<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\">' = 56 °C</tspan></text><text x=\"315\" y=\"212\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">cuối: t<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">' = ?</tspan></text><text x=\"210\" y=\"236\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">m = ?</text></svg><figcaption>Dữ kiện: bình cách nhiệt, bỏ qua nhiệt dung của bình và ca; hai lần múc cùng lượng m. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Bình 1 chứa $2\\ \\text{kg}$ nước ở 60 °C, bình 2 chứa $1\\ \\text{kg}$ nước ở 20 °C\"</td><td>$m_1=2\\ \\text{kg}$, $t_1=60$ °C ; $m_2=1\\ \\text{kg}$, $t_2=20$ °C</td><td>Nhiệt lượng : $Q=mc\\Delta t$ ; cùng là nước nên $c$ như nhau</td></tr><tr><td>\"Coi các bình cách nhiệt hoàn toàn với môi trường, bỏ qua nhiệt dung của các bình và của ca múc\"</td><td>không mất nhiệt ra ngoài</td><td>⚠ điều kiện để viết $Q_{\\text{toả}}=Q_{thu}$ cho cả hệ hai bình, qua mọi lần múc</td></tr><tr><td>\"múc một lượng nước $m$ từ bình 1 đổ sang bình 2\"</td><td>lần 1 : $m$ ở $t_1$ sang bình 2</td><td>Sau lần 1, bình 2 có bao nhiêu nước, cân bằng ở nhiệt độ nào (ẩn) ?</td></tr><tr><td>\"lại múc đúng lượng $m$ từ bình 2 đổ về bình 1\"</td><td>lần 2 : $m$ ở nhiệt độ của bình 2</td><td>⚠ khi múc bớt nước ra, nhiệt độ phần còn lại trong bình 2 có đổi không ?</td></tr><tr><td>\"Khi cân bằng, nhiệt độ của bình 1 là 56 °C\"</td><td>$t_1'=56$ °C</td><td>Lúc cuối, mỗi bình có bao nhiêu nước ? So với lúc đầu, nước của bình 1 toả ra bao nhiêu nhiệt ?</td></tr><tr><td>\"Tính lượng nước $m$ đã múc mỗi lần\"</td><td>$m=?$</td><td>Viết cân bằng nhiệt cho lần múc nào thì chỉ còn ẩn $m$ ?</td></tr><tr><td>\"múc thêm một lần lượng $m$ từ bình 1 đổ sang bình 2\"</td><td>$t_2''=?$</td><td>Lúc đó mỗi bình có bao nhiêu nước, ở nhiệt độ nào ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>rót qua lại</b> hai bình → <b>cân bằng cả hệ</b>, rồi <b>cân bằng một lần rót</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt độ bình 2 sau lần múc thứ nhất",
+     "hoi": "Sau lần múc thứ nhất, bình 2 cân bằng ở bao nhiêu độ C?",
+     "dap_so": 28.0,
+     "sai_so": 0.2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Lấy trung bình cộng nhiệt độ, hoặc nghĩ bình 2 đổi nhiệt độ khi múc bớt nước ra ; cũng hay quên lúc cuối bình 1 lại có đủ $2\\ \\text{kg}$."
+    },
+    {
+     "tieu_de": "Lượng nước $m$",
+     "hoi": "Mỗi lần múc bao nhiêu kilôgam nước?",
+     "dap_so": 0.25,
+     "sai_so": 0.01,
+     "don_vi": "kg",
+     "loi_hay_gap": "Cho lượng $m$ nguội tới nhiệt độ cuối của bình 1, hoặc lấy bên thu nhiệt là cả nước bình 2 lẫn $m$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cân bằng lần 1 : $m\\,c\\,(t_1-t_2')=m_2c\\,(t_2'-t_2)$",
+       "dung": true
+      },
+      {
+       "text": "$m\\,c\\,(t_1-t_2')=(m_2+m)\\,c\\,(t_2'-t_2)$",
+       "dung": false,
+       "vi_sao": "Lượng $m$ là bên toả nhiệt ; bên thu chỉ là $1\\ \\text{kg}$ nước ban đầu của bình 2."
+      },
+      {
+       "text": "$m\\,c\\,(t_1-t_1')=m_2c\\,(t_2'-t_2)$",
+       "dung": false,
+       "vi_sao": "Ở lần 1, lượng $m$ nguội tới $t_2'$ của bình 2, không phải tới nhiệt độ cuối của bình 1."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ bình 2 sau lần múc thứ ba",
+     "hoi": "Sau lần múc thứ ba, bình 2 cân bằng ở bao nhiêu độ C?",
+     "dap_so": 33.6,
+     "sai_so": 0.1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Quên bình 2 đã múc về một lượng $m$ nên chỉ còn $1\\ \\text{kg}$, hoặc lấy nước múc sang ở 60 °C như lúc đầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trộn $1\\ \\text{kg}$ ở $t_2'$ với $m$ ở $t_1'$",
+       "dung": true
+      },
+      {
+       "text": "Trộn $(m_2+m)$ ở $t_2'$ với $m$ ở $t_1'$",
+       "dung": false,
+       "vi_sao": "Lần 2 đã múc $m$ từ bình 2 về bình 1, nên bình 2 chỉ còn $1\\ \\text{kg}$."
+      },
+      {
+       "text": "Trộn $1\\ \\text{kg}$ ở $t_2'$ với $m$ ở 60 °C",
+       "dung": false,
+       "vi_sao": "Bình 1 đã nguội còn 56 °C ; nước múc sang lần này ở nhiệt độ đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Vận dụng cao · Mở rộng HSG: Cơ năng chuyển thành nhiệt năng",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "problem_html": "<p>Lấy $g=10\\ \\text{m/s}^2$. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, của chì là $130\\ \\text{J/(kg·K)}$; chì nóng chảy ở 327 °C với nhiệt nóng chảy riêng $2{,}5\\cdot10^4\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Nước chảy từ đỉnh một thác cao $100\\ \\text{m}$ xuống chân thác. Giả sử toàn bộ thế năng của nước chuyển thành nhiệt làm nóng chính lượng nước đó. Nước ở chân thác nóng hơn ở đỉnh thác bao nhiêu độ?</li><li>Một viên đạn chì đang ở 27 °C bay với tốc độ $300\\ \\text{m/s}$ thì cắm vào một bức tường và dừng lại. Có $60\\,\\%$ động năng của viên đạn chuyển thành nhiệt làm nóng riêng viên đạn, phần còn lại truyền cho tường và không khí. Tính nhiệt độ của viên đạn ngay sau va chạm. Viên đạn có bị nóng chảy không?</li><li>Vẫn với viên đạn ở 27 °C và tỉ lệ $60\\,\\%$ như câu b, viên đạn phải bay với tốc độ tối thiểu bằng bao nhiêu để nó nóng chảy hoàn toàn khi cắm vào tường?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-6-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Giọt nước rơi từ đỉnh thác cao 100 m xuống chân thác; viên đạn chì bay 300 m/s cắm vào tường\"><rect x=\"16.0\" y=\"40.0\" width=\"50.0\" height=\"160.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"16.0\" y1=\"40.0\" x2=\"80.0\" y2=\"40.0\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"20.0\" y=\"196.0\" width=\"130.0\" height=\"12.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.25\" stroke=\"#38bdf8\" stroke-width=\"2\"/><line x1=\"100.0\" y1=\"40.0\" x2=\"100.0\" y2=\"196.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M96.0,46.9 L100.0,40.0 L104.0,46.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M104.0,189.1 L100.0,196.0 L96.0,189.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"106\" y=\"122\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">h = 100 m</text><circle cx=\"76\" cy=\"44\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cy\" values=\"44.0;44.3;45.0;46.3;48.2;50.5;53.4;56.8;60.7;65.1;70.0;75.5;81.5;88.0;95.0;102.6;110.7;119.3;128.4;138.0;148.2;158.8;170.0;181.8;194.0;194.0\" keyTimes=\"0.0000;0.0229;0.0458;0.0688;0.0917;0.1146;0.1375;0.1604;0.1833;0.2063;0.2292;0.2521;0.2750;0.2979;0.3208;0.3438;0.3667;0.3896;0.4125;0.4354;0.4583;0.4813;0.5042;0.5271;0.5500;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text opacity=\"0\" x=\"20\" y=\"226\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nóng hơn: Δt = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5500\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><rect x=\"380.0\" y=\"70.0\" width=\"22.0\" height=\"130.0\" rx=\"0\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"380.0\" y1=\"90.0\" x2=\"402.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"104.0\" x2=\"402.0\" y2=\"94.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"118.0\" x2=\"402.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"132.0\" x2=\"402.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"146.0\" x2=\"402.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"160.0\" x2=\"402.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"174.0\" x2=\"402.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"188.0\" x2=\"402.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><line x1=\"380.0\" y1=\"202.0\" x2=\"402.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.7\"/><text x=\"196\" y=\"100\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">v = 300 m/s</text><text x=\"196\" y=\"154\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\"> = 27 °C</tspan></text><g transform=\"translate(196 124)\"><ellipse cx=\"0\" cy=\"0\" rx=\"10\" ry=\"5\" fill=\"#94a3b8\" fill-opacity=\"0.6\" stroke=\"currentColor\" stroke-width=\"1.6\"/><g opacity=\"0\"><ellipse cx=\"0\" cy=\"0\" rx=\"10\" ry=\"5\" fill=\"#fb923c\" fill-opacity=\"0.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7500\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"196 124;196 124;370 124;370 124\" keyTimes=\"0;.6;.75;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text opacity=\"0\" x=\"404\" y=\"226\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">đạn nóng lên: t = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7500\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nước rơi từ đỉnh thác; đạn chì cắm vào tường</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: không theo thời gian thật, không theo tỉ lệ. Khung cuối không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hai cách làm biến đổi nội năng:</strong> thực hiện công (va chạm, ma sát) và truyền nhiệt.</li><li><strong>Cơ năng:</strong> $W_t=mgh$ ; $W_{\\text{đ}}=\\dfrac12mv^2$.</li><li><strong>Phần thành nhiệt:</strong> $Q=H\\cdot W$ ; làm nóng $Q=mc\\Delta t$ ; nóng chảy $Q=\\lambda m$.</li><li><strong>Điều kiện:</strong> chì chỉ bắt đầu chảy khi đã tới 327 °C ; nhiệt chỉ vào vật đang xét.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nước nóng thêm ở chân thác</span></p><p>Toàn bộ thế năng thành nhiệt của chính lượng nước đó :</p>$$mgh=mc_n\\Delta t_n\\ \\Rightarrow\\ \\Delta t_n=\\dfrac{gh}{c_n}$$$$\\Delta t_n=\\dfrac{10\\cdot100}{4200}$$<div class=\"bt-ans\">$$\\Delta t_n\\approx0{,}24\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đạn nóng thêm</span></p><p>$60\\,\\%$ động năng làm nóng viên đạn ; $m$ ở hai vế giản ước :</p>$$0{,}6\\cdot\\dfrac12mv^2=mc\\,\\Delta t\\ \\Rightarrow\\ \\Delta t=\\dfrac{0{,}3\\,v^2}{c}$$$$\\Delta t=\\dfrac{0{,}3\\cdot300^2}{130}$$<div class=\"bt-ans\">$$\\Delta t\\approx208\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt độ đạn sau va chạm</span></p>$$t=t_0+\\Delta t\\approx27+207{,}7$$<div class=\"bt-ans\">$$t\\approx235\\ ^\\circ\\text{C}$$</div><div class=\"bt-ans\"><p>$t\\lt327$ °C nên viên đạn chưa nóng chảy.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt lượng cho mỗi kilôgam chì chảy hết</span></p><p>Hai giai đoạn : nóng từ 27 °C tới 327 °C, rồi nóng chảy ở 327 °C :</p>$$\\dfrac{Q}{m}=c\\,(t_{nc}-t_0)+\\lambda=130\\cdot300+25\\,000$$<div class=\"bt-ans\">$$\\dfrac{Q}{m}=64\\,000\\ \\text{J/kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tốc độ tối thiểu</span></p>$$0{,}6\\cdot\\dfrac12v^2=\\dfrac{Q}{m}\\ \\Rightarrow\\ v=\\sqrt{\\dfrac{2\\cdot64\\,000}{0{,}6}}$$<div class=\"bt-ans\">$$v_{min}\\approx462\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Câu a không cần khối lượng nước : $m$ giản ước ✓ ; thực tế nước còn toả nhiệt, bay hơi nên nóng thêm ít hơn $0{,}24$ °C.</p><p>$v_{min}\\gt300\\ \\text{m/s}$, đúng với câu b (ở $300\\ \\text{m/s}$ đạn chưa chảy) ✓.</p><p>Đơn vị : $\\dfrac{(\\text{m/s})^2}{\\text{J/(kg·K)}}=\\text{K}$ vì $1\\ \\text{J/kg}=1\\ (\\text{m/s})^2$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) nước ở chân thác nóng hơn khoảng $0{,}24$ °C</p><p>b) $t\\approx235$ °C, chưa nóng chảy</p><p>c) $v_{min}\\approx462\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>rơi, va chạm, cắm vào tường</strong> kèm <strong>phần trăm chuyển thành nhiệt</strong> → $H\\cdot W_{\\text{cơ}}=Q$ ; muốn chảy hết thì $Q$ gồm làm nóng tới $t_{nc}$ cộng $\\lambda m$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c12-6-2\"><svg viewBox=\"0 0 420 252\" role=\"img\" aria-label=\"Sơ đồ: thế năng của nước chuyển hết thành nhiệt; 60 % động năng của đạn làm nóng viên đạn, phần còn lại sang tường và âm\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Năng lượng chuyển từ dạng nào sang dạng nào?</text><rect x=\"10.0\" y=\"36.0\" width=\"146.0\" height=\"56.0\" rx=\"6\" fill=\"#fb923c\" fill-opacity=\"0.12\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"83.0\" y=\"58\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">thế năng của nước</text><text x=\"83.0\" y=\"78\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">h = 100 m</text><line x1=\"160\" y1=\"64\" x2=\"214\" y2=\"64\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M205.8,59.3 L214.0,64.0 L205.8,68.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"187\" y=\"54\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">100 %</text><rect x=\"218.0\" y=\"36.0\" width=\"196.0\" height=\"56.0\" rx=\"6\" fill=\"#f87171\" fill-opacity=\"0.08\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"316.0\" y=\"58\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">nhiệt làm nóng nước</text><text x=\"316.0\" y=\"78\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Δt = ?</text><rect x=\"10.0\" y=\"112.0\" width=\"146.0\" height=\"56.0\" rx=\"6\" fill=\"#fb923c\" fill-opacity=\"0.12\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"83.0\" y=\"134\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">động năng của đạn</text><text x=\"83.0\" y=\"154\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">v = 300 m/s</text><line x1=\"160\" y1=\"130\" x2=\"214\" y2=\"130\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M205.8,125.3 L214.0,130.0 L205.8,134.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"187\" y=\"122\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">60 %</text><rect x=\"218.0\" y=\"108.0\" width=\"196.0\" height=\"56.0\" rx=\"6\" fill=\"#f87171\" fill-opacity=\"0.08\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"316.0\" y=\"130\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">làm nóng riêng viên đạn</text><text x=\"316.0\" y=\"150\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">27 °C → t = ?</text><g opacity=\".7\"><line x1=\"160\" y1=\"154\" x2=\"214\" y2=\"184\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><path d=\"M209.8,177.0 L214.0,184.0 L205.9,184.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"222\" y=\"190\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">40 %: tường, âm, …</text><text x=\"10\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">chì: c = 130 J/(kg·K); nóng chảy ở 327 °C</text><text x=\"10\" y=\"240\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">λ = 2,5·10<tspan dy=\"-6\" font-size=\"12\">4</tspan><tspan dy=\"6\"> J/kg</tspan></text></svg><figcaption>Dữ kiện: phần trăm ghi trên mũi tên là phần năng lượng chuyển sang nhiệt của vật đang xét. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Giả sử toàn bộ thế năng của nước chuyển thành nhiệt làm nóng chính lượng nước đó\"</td><td>$H=100\\,\\%$, nhiệt chỉ vào nước</td><td>⚠ điều kiện : không có nhiệt toả ra không khí, đá. Thế năng : $W_t=mgh$</td></tr><tr><td>\"Nước chảy từ đỉnh một thác cao $100\\ \\text{m}$\"</td><td>$h=100\\ \\text{m}$ ; $g=10\\ \\text{m/s}^2$</td><td>Đề không cho khối lượng nước : có cần không ?</td></tr><tr><td>\"Nước ở chân thác nóng hơn ở đỉnh thác bao nhiêu độ?\"</td><td>$\\Delta t_n=?$</td><td>$Q=mc\\Delta t$ ; nối $Q$ với thế năng</td></tr><tr><td>\"Một viên đạn chì đang ở 27 °C bay với tốc độ $300\\ \\text{m/s}$\"</td><td>$t_0=27$ °C ; $v=300\\ \\text{m/s}$</td><td>Động năng : $W_{\\text{đ}}=\\dfrac12mv^2$</td></tr><tr><td>\"Có $60\\,\\%$ động năng của viên đạn chuyển thành nhiệt làm nóng riêng viên đạn\"</td><td>$H=60\\,\\%$</td><td>⚠ chỉ phần $60\\,\\%$ vào viên đạn ; tường và không khí nhận phần còn lại</td></tr><tr><td>\"Viên đạn có bị nóng chảy không?\"</td><td>$t_{nc}=327$ °C</td><td>So sánh đại lượng nào với nhiệt độ nóng chảy ?</td></tr><tr><td>\"phải bay với tốc độ tối thiểu bằng bao nhiêu để nó nóng chảy hoàn toàn\"</td><td>$\\lambda=2{,}5\\cdot10^4\\ \\text{J/kg}$ ; $v_{min}=?$</td><td>Để chảy hết, chì phải qua những giai đoạn nào ? Mỗi giai đoạn cần nhiệt lượng tính bằng công thức nào ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>rơi, va chạm</b> và <b>phần trăm thành nhiệt</b> → <b>H·W = Q</b>, chảy hết thì cộng <b>λm</b>",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nước nóng thêm ở chân thác",
+     "hoi": "Nước ở chân thác nóng hơn ở đỉnh bao nhiêu độ?",
+     "dap_so": 0.23809523809523808,
+     "sai_so": 0.01,
+     "don_vi": "°C",
+     "loi_hay_gap": "Cho rằng thiếu khối lượng nên không giải được ; thật ra $m$ có ở cả thế năng lẫn nhiệt lượng nên giản ước."
+    },
+    {
+     "tieu_de": "Đạn nóng thêm",
+     "hoi": "Viên đạn nóng thêm bao nhiêu độ?",
+     "dap_so": 207.69230769230768,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Dùng cả động năng làm nóng đạn (bỏ $60\\,\\%$), hoặc viết động năng là $mv^2$ (quên $\\tfrac12$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$0{,}6\\cdot\\dfrac12mv^2=mc\\,\\Delta t$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac12mv^2=mc\\,\\Delta t$",
+       "dung": false,
+       "vi_sao": "Chỉ $60\\,\\%$ động năng vào viên đạn ; phần còn lại sang tường và không khí."
+      },
+      {
+       "text": "$0{,}6\\cdot mv^2=mc\\,\\Delta t$",
+       "dung": false,
+       "vi_sao": "Động năng là $\\dfrac12mv^2$ ; thiếu $\\dfrac12$ làm độ tăng nhiệt độ gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ đạn sau va chạm",
+     "hoi": "Ngay sau va chạm, viên đạn có nhiệt độ bao nhiêu độ C?",
+     "dap_so": 234.69230769230768,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Lấy độ tăng nhiệt độ làm nhiệt độ cuối, quên cộng nhiệt độ ban đầu của viên đạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=t_0+\\Delta t$, rồi so với $t_{nc}$",
+       "dung": true
+      },
+      {
+       "text": "$t=\\Delta t$",
+       "dung": false,
+       "vi_sao": "$\\Delta t$ là độ tăng ; viên đạn ban đầu đã ở 27 °C."
+      },
+      {
+       "text": "So $\\Delta t$ với $t_{nc}$ để kết luận",
+       "dung": false,
+       "vi_sao": "Phải so nhiệt độ cuối, không phải độ tăng nhiệt độ, với nhiệt độ nóng chảy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt lượng cho mỗi kilôgam chì chảy hết",
+     "hoi": "Mỗi kilôgam chì cần nhận bao nhiêu jun để từ 27 °C nóng chảy hoàn toàn?",
+     "dap_so": 64000.0,
+     "sai_so": 500,
+     "don_vi": "J/kg",
+     "loi_hay_gap": "Chỉ tính nhiệt nóng chảy, quên phải đưa chì lên nhiệt độ nóng chảy trước ; hoặc tính độ tăng từ 0 °C.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{Q}{m}=c\\,(t_{nc}-t_0)+\\lambda$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{Q}{m}=\\lambda$",
+       "dung": false,
+       "vi_sao": "Chì ở 27 °C chưa chảy được ; phải nóng tới 327 °C trước rồi mới nóng chảy."
+      },
+      {
+       "text": "$\\dfrac{Q}{m}=c\\,t_{nc}+\\lambda$",
+       "dung": false,
+       "vi_sao": "Chì bắt đầu từ 27 °C, không phải từ 0 °C ; độ tăng nhiệt độ là $t_{nc}-t_0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ tối thiểu",
+     "hoi": "Tốc độ tối thiểu của viên đạn là bao nhiêu m/s?",
+     "dap_so": 461.8802153517006,
+     "sai_so": 1.5,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Lại bỏ $60\\,\\%$ hoặc quên $\\tfrac12$ trong động năng như câu b ; quên lấy căn bậc hai.",
+     "chon_buoc_ke": [
+      {
+       "text": "$0{,}6\\cdot\\dfrac12v^2=\\dfrac{Q}{m}$ rồi lấy căn",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac12v^2=\\dfrac{Q}{m}$",
+       "dung": false,
+       "vi_sao": "Vẫn chỉ $60\\,\\%$ động năng làm nóng đạn ; bỏ hệ số này sẽ ra tốc độ nhỏ hơn thực tế cần."
+      },
+      {
+       "text": "$0{,}6\\cdot v^2=\\dfrac{Q}{m}$",
+       "dung": false,
+       "vi_sao": "Động năng có $\\dfrac12$ ; thiếu nó làm tốc độ tìm được nhỏ đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Mẹ cần $30$ lít nước ấm ở $40\\ ^\\circ\\text{C}$ để tắm cho em bé, pha từ nước sôi $100\\ ^\\circ\\text{C}$ và nước lạnh $25\\ ^\\circ\\text{C}$. Bỏ qua sự trao đổi nhiệt với chậu và môi trường; $1$ lít nước có khối lượng $1\\ \\text{kg}$.</p>\n<p>a) Cần bao nhiêu lít nước sôi và bao nhiêu lít nước lạnh?</p>\n<p>b) Trong phích chỉ còn $5$ lít nước sôi, nước lạnh có đủ. Pha được nhiều nhất bao nhiêu lít nước $40\\ ^\\circ\\text{C}$?</p>\n<p>c) Thực tế nước trong phích chỉ còn $90\\ ^\\circ\\text{C}$. Muốn có đủ $30$ lít nước $40\\ ^\\circ\\text{C}$ thì phải lấy bao nhiêu lít mỗi loại?</p><details><summary>Hướng dẫn giải</summary><p>a) Gọi $m_1$, $m_2$ là khối lượng nước sôi và nước lạnh: $m_1+m_2=30\\ \\text{kg}$.</p>\n<p>Nước sôi toả: $Q_{\\text{toả}}=m_1c\\,(100-40)=60\\,m_1c$.</p>\n<p>Nước lạnh thu: $Q_{\\text{thu}}=m_2c\\,(40-25)=15\\,m_2c$.</p>\n<p>$Q_{\\text{toả}}=Q_{\\text{thu}}$ nên $60m_1=15m_2$, tức $m_2=4m_1$.</p>\n<p>Suy ra $5m_1=30$: $m_1=6\\ \\text{kg}$ (6 lít nước sôi), $m_2=24\\ \\text{kg}$ (24 lít nước lạnh).</p>\n<p>b) Tỉ lệ vẫn là $m_2=4m_1$: với $m_1=5$ lít thì $m_2=20$ lít, pha được nhiều nhất $25$ lít.</p>\n<p>c) $m_1(90-40)=m_2(40-25)$ nên $50m_1=15m_2$, tức $m_2=\\dfrac{10}{3}m_1$.</p>\n<p>$m_1+\\dfrac{10}{3}m_1=30$ nên $m_1=\\dfrac{90}{13}\\approx6{,}9$ lít và $m_2\\approx23{,}1$ lít.</p>\n<p>Lỗi hay gặp: lấy trung bình cộng, nghĩ \"nửa sôi nửa lạnh\" — trộn $15$ lít mỗi loại được $62{,}5\\ ^\\circ\\text{C}$, bỏng da em bé.</p>\n<p>Lỗi hay gặp: viết $60m_1=15\\cdot30$, quên $m_2=30-m_1$ chứ không phải $30$.</p></details><h4>Bài 2 · Dễ</h4><p>Để xác định nhiệt dung riêng của một kim loại, một nhóm học sinh dùng nhiệt lượng kế bằng đồng khối lượng $120\\ \\text{g}$ chứa $250\\ \\text{g}$ nước ở $18\\ ^\\circ\\text{C}$. Thỏi kim loại $200\\ \\text{g}$ được ngâm lâu trong nồi nước đang sôi (coi là $100\\ ^\\circ\\text{C}$) rồi thả nhanh vào nhiệt lượng kế. Khi cân bằng, nhiệt kế chỉ $24\\ ^\\circ\\text{C}$. Coi như bỏ qua trao đổi nhiệt với môi trường. Cho $c_{\\text{đồng}}=380$, $c_{\\text{nước}}=4200\\ \\text{J/(kg·K)}$.</p>\n<p>a) Tính nhiệt dung riêng của kim loại.</p>\n<p>b) Kim loại đó gần với chất nào nhất trong ba chất: đồng ($380$), thép ($460$), nhôm ($880\\ \\text{J/(kg·K)}$)? Giả sử kim loại đúng là chất vừa nhận ra, nêu hai nguyên nhân làm kết quả đo nhỏ hơn giá trị trong bảng.</p>\n<p>c) Một bạn quên tính nhiệt lượng kế. Bạn đó thu được kết quả bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p>a) Nhiệt lượng kế và nước thu nhiệt, tăng từ $18$ lên $24\\ ^\\circ\\text{C}$:</p>\n<p>$Q_{\\text{thu}}=(0{,}12\\cdot380+0{,}25\\cdot4200)(24-18)=1095{,}6\\cdot6=6573{,}6\\ \\text{J}$.</p>\n<p>Kim loại toả nhiệt, giảm từ $100$ xuống $24\\ ^\\circ\\text{C}$: $Q_{\\text{toả}}=0{,}2\\cdot c\\cdot76=15{,}2\\,c$.</p>\n<p>$15{,}2\\,c=6573{,}6$ nên $c\\approx432\\ \\text{J/(kg·K)}$.</p>\n<p>b) $432$ gần $460$ nhất nên kim loại có thể là thép.</p>\n<p>Kết quả nhỏ hơn bảng vì: thỏi kim loại nguội bớt trong lúc chuyển từ nồi sang nhiệt lượng kế (thực tế dưới $100\\ ^\\circ\\text{C}$).</p>\n<p>Và: một phần nhiệt toả ra không khí qua nắp, thành bình nên $Q_{\\text{thu}}$ đo được nhỏ hơn nhiệt kim loại thật sự toả ra.</p>\n<p>c) Quên nhiệt lượng kế: $c'=\\dfrac{0{,}25\\cdot4200\\cdot6}{15{,}2}\\approx414\\ \\text{J/(kg·K)}$, lệch thêm gần $4\\,\\%$.</p>\n<p>Lỗi hay gặp: lấy $\\Delta t$ của kim loại là $100-18$ (nhiệt độ ban đầu của nước) thay vì $100-24$.</p></details><h4>Bài 3 · Trung bình</h4><p>Một cốc nhôm khối lượng $200\\ \\text{g}$ chứa $500\\ \\text{g}$ nước ở $15\\ ^\\circ\\text{C}$. Dẫn hơi nước ở $100\\ ^\\circ\\text{C}$ (áp suất chuẩn) vào cốc; toàn bộ hơi dẫn vào đều ngưng tụ trong cốc. Ngừng dẫn hơi khi nước trong cốc đạt $60\\ ^\\circ\\text{C}$. Bỏ qua trao đổi nhiệt với môi trường. Cho $c_{\\text{nhôm}}=880$, $c_{\\text{nước}}=4200\\ \\text{J/(kg·K)}$, $L=2{,}3\\cdot10^6\\ \\text{J/kg}$.</p>\n<p>a) Tính khối lượng hơi nước đã dẫn vào.</p>\n<p>b) Lúc đó trong cốc có bao nhiêu gam nước?</p>\n<p>c) Muốn cốc nước tăng lên $60\\ ^\\circ\\text{C}$ như trên bằng cách rót thêm nước sôi $100\\ ^\\circ\\text{C}$ thì cần bao nhiêu gam? So sánh với câu a) và giải thích vì sao bỏng hơi nước thường nặng hơn bỏng nước sôi.</p><details><summary>Hướng dẫn giải</summary><p>a) Cốc và nước thu nhiệt: $Q_{\\text{thu}}=(0{,}2\\cdot880+0{,}5\\cdot4200)(60-15)=2276\\cdot45=102\\,420\\ \\text{J}$.</p>\n<p>Hơi nước toả nhiệt qua hai giai đoạn: ngưng tụ ở $100\\ ^\\circ\\text{C}$, rồi nước vừa ngưng nguội từ $100$ xuống $60\\ ^\\circ\\text{C}$.</p>\n<p>$Q_{\\text{toả}}=m(L+4200\\cdot40)=m\\cdot2\\,468\\,000$.</p>\n<p>$m=\\dfrac{102\\,420}{2\\,468\\,000}\\approx0{,}0415\\ \\text{kg}\\approx41{,}5\\ \\text{g}$.</p>\n<p>b) Nước trong cốc: $500+41{,}5\\approx541{,}5\\ \\text{g}$.</p>\n<p>c) Nước sôi chỉ toả nhiệt khi nguội: $m'\\cdot4200\\cdot40=102\\,420$ nên $m'\\approx0{,}610\\ \\text{kg}=610\\ \\text{g}$.</p>\n<p>Cần lượng nước sôi gấp khoảng $15$ lần lượng hơi. Mỗi gam hơi khi ngưng tụ trên da toả thêm nhiệt hoá hơi $L$ rất lớn, nên bỏng hơi nặng hơn.</p>\n<p>Lỗi hay gặp: chỉ viết $Q_{\\text{toả}}=mL$, quên phần nước ngưng tụ nguội tiếp xuống $60\\ ^\\circ\\text{C}$ (ra $44{,}5\\ \\text{g}$).</p>\n<p>Lỗi hay gặp: quên cốc nhôm.</p></details><h4>Bài 4 · Trung bình</h4><p>Thả một cục nước đá ở $-20\\ ^\\circ\\text{C}$ vào bình cách nhiệt chứa $1{,}4\\ \\text{kg}$ nước ở $28\\ ^\\circ\\text{C}$ (áp suất chuẩn). Bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường. Khi có cân bằng nhiệt, trong bình còn $100\\ \\text{g}$ nước đá chưa tan. Cho $c_{\\text{nước}}=4200$, $c_{\\text{đá}}=2100\\ \\text{J/(kg·K)}$, $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.</p>\n<p>a) Nhiệt độ cân bằng là bao nhiêu? Vì sao?</p>\n<p>b) Tính khối lượng cục đá ban đầu.</p>\n<p>c) Sau đó rót thêm nước $40\\ ^\\circ\\text{C}$ vào bình. Cần rót ít nhất bao nhiêu gam để đá vừa tan hết?</p><details><summary>Hướng dẫn giải</summary><p>a) Trong bình còn cả nước và đá nên nhiệt độ cân bằng bắt buộc là $0\\ ^\\circ\\text{C}$.</p>\n<p>b) Nước toả nhiệt khi hạ từ $28$ về $0\\ ^\\circ\\text{C}$: $Q_{\\text{toả}}=1{,}4\\cdot4200\\cdot28=164\\,640\\ \\text{J}$.</p>\n<p>Gọi $m$ là khối lượng đá ban đầu. Toàn bộ đá tăng từ $-20$ lên $0\\ ^\\circ\\text{C}$: $Q_1=m\\cdot2100\\cdot20=42\\,000\\,m$.</p>\n<p>Chỉ $(m-0{,}1)$ kg đá tan: $Q_2=(m-0{,}1)\\cdot3{,}4\\cdot10^5$.</p>\n<p>$42\\,000m+340\\,000m-34\\,000=164\\,640$ nên $382\\,000m=198\\,640$.</p>\n<p>$m=0{,}52\\ \\text{kg}=520\\ \\text{g}$.</p>\n<p>c) Chỉ cần làm tan $100\\ \\text{g}$ đá còn lại, hệ vẫn ở $0\\ ^\\circ\\text{C}$: $m'\\cdot4200\\cdot40=0{,}1\\cdot3{,}4\\cdot10^5=34\\,000$.</p>\n<p>$m'\\approx0{,}202\\ \\text{kg}\\approx202\\ \\text{g}$.</p>\n<p>Lỗi hay gặp: viết $Q_2=m\\lambda$ (cho cả cục đá tan) rồi mới trừ $100\\ \\text{g}$.</p>\n<p>Lỗi hay gặp: chỉ cho phần đá tan được nóng lên từ $-20\\ ^\\circ\\text{C}$ — thật ra cả $100\\ \\text{g}$ đá còn lại cũng đã lên $0\\ ^\\circ\\text{C}$.</p></details><h4>Bài 5 · Khó</h4><p>Đổ $300\\ \\text{g}$ nước ở $20\\ ^\\circ\\text{C}$ vào khay đá rồi đặt vào ngăn đá tủ lạnh. Coi như ngăn đá lấy nhiệt của khay nước đều đặn (công suất lấy nhiệt không đổi), bỏ qua nhiệt dung của khay; áp suất chuẩn, bỏ qua hiện tượng nước quá lạnh (nước bắt đầu đông đặc ngay khi tới $0\\ ^\\circ\\text{C}$). Đồ thị nhiệt độ theo thời gian của nước gồm ba đoạn thẳng: đoạn AB đi từ $(0\\ \\text{min};\\ 20\\ ^\\circ\\text{C})$ đến $(4\\ \\text{min};\\ 0\\ ^\\circ\\text{C})$, đoạn BC nằm ngang ở $0\\ ^\\circ\\text{C}$, đoạn CD đi xuống tới $-10\\ ^\\circ\\text{C}$ tại điểm D. Cho $c_{\\text{nước}}=4200$, $c_{\\text{đá}}=2100\\ \\text{J/(kg·K)}$, $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.</p>\n<p>a) Tính công suất lấy nhiệt của ngăn đá.</p>\n<p>b) Trên đoạn BC nước ở thể nào? Nhiệt độ không đổi thì nước có toả nhiệt không? Tính thời điểm $\\tau_C$ kết thúc đoạn BC.</p>\n<p>c) Tính thời điểm $\\tau_D$.</p>\n<p>d) So sánh độ dốc (số độ giảm mỗi phút) của đoạn AB và CD, giải thích.</p><details><summary>Hướng dẫn giải</summary><p>a) Đoạn AB: nước lỏng nguội từ $20$ về $0\\ ^\\circ\\text{C}$ trong $4\\ \\text{min}=240\\ \\text{s}$.</p>\n<p>$P\\cdot240=0{,}3\\cdot4200\\cdot20=25\\,200$ nên $P=105\\ \\text{W}$.</p>\n<p>b) Đoạn BC: nước đang đông đặc, trong khay có cả nước và đá.</p>\n<p>Nhiệt độ không đổi nhưng nước vẫn toả nhiệt (nhiệt đông đặc), ngăn đá vẫn lấy nhiệt đều.</p>\n<p>Thời gian đông đặc hết: $\\Delta\\tau=\\dfrac{\\lambda m}{P}=\\dfrac{3{,}4\\cdot10^5\\cdot0{,}3}{105}\\approx971\\ \\text{s}\\approx16{,}2\\ \\text{min}$.</p>\n<p>$\\tau_C\\approx4+16{,}2=20{,}2\\ \\text{min}$.</p>\n<p>c) Đoạn CD: đá nguội từ $0$ xuống $-10\\ ^\\circ\\text{C}$: $\\Delta\\tau'=\\dfrac{0{,}3\\cdot2100\\cdot10}{105}=60\\ \\text{s}=1\\ \\text{min}$.</p>\n<p>$\\tau_D\\approx21{,}2\\ \\text{min}$.</p>\n<p>d) AB giảm $20:4=5\\ ^\\circ\\text{C/min}$; CD giảm $10:1=10\\ ^\\circ\\text{C/min}$, dốc gấp đôi.</p>\n<p>Cùng khối lượng, cùng công suất lấy nhiệt thì độ giảm nhiệt độ mỗi phút $\\dfrac{P}{mc}$ tỉ lệ nghịch với $c$; $c_{\\text{đá}}=\\tfrac12c_{\\text{nước}}$ nên đoạn CD dốc gấp đôi.</p>\n<p>Lỗi hay gặp: cho rằng trên đoạn BC \"nhiệt độ không đổi nên nước không toả nhiệt\".</p>\n<p>Lỗi hay gặp: dùng $c_{\\text{nước}}$ cho đoạn CD (ra $2\\ \\text{min}$).</p></details><h4>Bài 6 · Khó</h4><p>Hai bình cách nhiệt, mỗi bình chứa $1\\ \\text{kg}$ nước: bình 1 ở $80\\ ^\\circ\\text{C}$, bình 2 ở $20\\ ^\\circ\\text{C}$. Bỏ qua nhiệt dung của bình, của ca múc và trao đổi nhiệt với môi trường. Một <em>lượt</em> gồm: múc $250\\ \\text{g}$ nước từ bình 1 đổ sang bình 2, chờ cân bằng; rồi múc $250\\ \\text{g}$ nước từ bình 2 đổ về bình 1, chờ cân bằng.</p>\n<p>a) Tính nhiệt độ mỗi bình sau lượt 1 và sau lượt 2.</p>\n<p>b) Chứng minh sau mỗi lượt, hiệu nhiệt độ hai bình giảm theo cùng một tỉ số. Tìm tỉ số đó và nhiệt độ mà cả hai bình tiến tới.</p>\n<p>c) Sau ít nhất bao nhiêu lượt thì hiệu nhiệt độ hai bình nhỏ hơn $1\\ ^\\circ\\text{C}$?</p><details><summary>Hướng dẫn giải</summary><p>a) Lượt 1, rót sang bình 2: $1\\cdot(t_2'-20)=0{,}25\\,(80-t_2')$ nên $t_2'=\\dfrac{20+20}{1{,}25}=32\\ ^\\circ\\text{C}$.</p>\n<p>Rót về bình 1 (còn $0{,}75\\ \\text{kg}$ ở $80\\ ^\\circ\\text{C}$): $t_1'=\\dfrac{0{,}75\\cdot80+0{,}25\\cdot32}{1}=68\\ ^\\circ\\text{C}$.</p>\n<p>Lượt 2: $t_2''=\\dfrac{1\\cdot32+0{,}25\\cdot68}{1{,}25}=39{,}2\\ ^\\circ\\text{C}$.</p>\n<p>$t_1''=0{,}75\\cdot68+0{,}25\\cdot39{,}2=60{,}8\\ ^\\circ\\text{C}$.</p>\n<p>b) Gọi $M=1\\ \\text{kg}$, $m=0{,}25\\ \\text{kg}$, đầu lượt hai bình ở $t_1$, $t_2$, hiệu $\\Delta=t_1-t_2$.</p>\n<p>Cuối lượt mỗi bình lại có $M$ kg và tổng nhiệt lượng không đổi, nên $t_1'+t_2'=t_1+t_2$: tổng (và trung bình $50\\ ^\\circ\\text{C}$) giữ nguyên.</p>\n<p>$t_2'=\\dfrac{Mt_2+mt_1}{M+m}$, do đó $\\Delta'=t_1'-t_2'=t_1+t_2-2t_2'=\\dfrac{(M-m)(t_1-t_2)}{M+m}$.</p>\n<p>Tỉ số $k=\\dfrac{M-m}{M+m}=\\dfrac{0{,}75}{1{,}25}=0{,}6$, không phụ thuộc lượt. Kiểm tra: $60\\to36\\to21{,}6$ ✓.</p>\n<p>Sau $n$ lượt: $\\Delta_n=60\\cdot0{,}6^n$, $t_1=50+\\tfrac{\\Delta_n}{2}$, $t_2=50-\\tfrac{\\Delta_n}{2}$; cả hai tiến tới $50\\ ^\\circ\\text{C}$.</p>\n<p>c) Cần $60\\cdot0{,}6^n\\lt1$. Thử: $60\\cdot0{,}6^8\\approx1{,}008$ (chưa đạt), $60\\cdot0{,}6^9\\approx0{,}60$.</p>\n<p>Vậy cần ít nhất $9$ lượt.</p>\n<p>Lỗi hay gặp: nghĩ sau một lượt hai bình đã bằng nhau, hoặc nhiệt độ chung là trung bình có trọng số của lần rót đầu.</p>\n<p>Lỗi hay gặp: khi rót về bình 1 vẫn dùng $1\\ \\text{kg}$ ở $80\\ ^\\circ\\text{C}$, quên bình 1 chỉ còn $0{,}75\\ \\text{kg}$.</p></details><h4>Bài 7 · Nâng cao</h4><p>Có ba chất lỏng không tác dụng hoá học với nhau, đựng trong ba bình: chất 1 ở $12\\ ^\\circ\\text{C}$, chất 2 ở $36\\ ^\\circ\\text{C}$, chất 3 ở $72\\ ^\\circ\\text{C}$ (khối lượng và nhiệt dung riêng của chúng chưa biết, có thể khác nhau). Làm thí nghiệm với các lượng chất lỏng như trong ba bình: nếu đổ toàn bộ chất 1 với toàn bộ chất 2 vào một bình thì được $20\\ ^\\circ\\text{C}$; nếu đổ toàn bộ chất 1 với toàn bộ chất 3 thì được $32\\ ^\\circ\\text{C}$. Bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường.</p>\n<p>a) Đổ cả ba chất lỏng (toàn bộ lượng ban đầu) vào chung một bình thì nhiệt độ cân bằng là bao nhiêu?</p>\n<p>b) Một bạn trả lời \"$40\\ ^\\circ\\text{C}$ vì là trung bình cộng của ba nhiệt độ\". Chỉ ra chỗ sai.</p>\n<p>c) Biết chất 1 là $0{,}4\\ \\text{kg}$ nước ($4200\\ \\text{J/(kg·K)}$), chất 3 là dầu có nhiệt dung riêng $2100\\ \\text{J/(kg·K)}$. Tính khối lượng dầu.</p><details><summary>Hướng dẫn giải</summary><p>a) Đặt $C_i=m_ic_i$ là nhiệt dung của lượng chất $i$.</p>\n<p>Trộn 1 với 2: $C_1(20-12)=C_2(36-20)$ nên $C_2=\\dfrac{8}{16}C_1=\\dfrac{C_1}{2}$.</p>\n<p>Trộn 1 với 3: $C_1(32-12)=C_3(72-32)$ nên $C_3=\\dfrac{20}{40}C_1=\\dfrac{C_1}{2}$.</p>\n<p>Trộn cả ba: $t=\\dfrac{C_1t_1+C_2t_2+C_3t_3}{C_1+C_2+C_3}=\\dfrac{12+\\tfrac12\\cdot36+\\tfrac12\\cdot72}{1+\\tfrac12+\\tfrac12}=\\dfrac{66}{2}=33\\ ^\\circ\\text{C}$.</p>\n<p>b) Trung bình cộng chỉ đúng khi ba lượng chất lỏng có nhiệt dung $mc$ bằng nhau. Ở đây chất 1 có nhiệt dung gấp đôi mỗi chất còn lại nên kéo nhiệt độ chung xuống gần $12\\ ^\\circ\\text{C}$ hơn.</p>\n<p>c) $C_3=\\dfrac{C_1}{2}=\\dfrac{0{,}4\\cdot4200}{2}=840\\ \\text{J/K}$, nên $m_3=\\dfrac{840}{2100}=0{,}4\\ \\text{kg}$.</p>\n<p>Lỗi hay gặp: cố đi tìm từng $m_i$ và $c_i$ — không đủ dữ kiện; chỉ cần tỉ số các nhiệt dung $C_i$.</p>\n<p>Kiểm tra thêm: trộn 2 với 3 (nhiệt dung bằng nhau) được $\\dfrac{36+72}{2}=54\\ ^\\circ\\text{C}$.</p></details><h4>Bài 8 · Nâng cao</h4><p>Một bình nhôm khối lượng $250\\ \\text{g}$ chứa $400\\ \\text{g}$ nước, bình và nước cùng ở $10\\ ^\\circ\\text{C}$. Bỏ qua trao đổi nhiệt với môi trường; bình nhôm có tham gia trao đổi nhiệt. Cho $c_{\\text{nhôm}}=880$, $c_{\\text{nước}}=4200$, $c_{\\text{đá}}=2100\\ \\text{J/(kg·K)}$; $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$; $L=2{,}3\\cdot10^6\\ \\text{J/kg}$; áp suất chuẩn.</p>\n<p>a) Thả vào bình $600\\ \\text{g}$ nước đá ở $-20\\ ^\\circ\\text{C}$. Biện luận để xác định nhiệt độ cân bằng và khối lượng nước, nước đá trong bình khi cân bằng.</p>\n<p>b) Sau đó dẫn hơi nước ở $100\\ ^\\circ\\text{C}$ vào bình (hơi ngưng tụ hết trong bình) cho đến khi nhiệt độ cân bằng là $20\\ ^\\circ\\text{C}$. Tính khối lượng hơi nước đã dẫn vào.</p><details><summary>Hướng dẫn giải</summary><p>a) Bình và nước toả tối đa khi hạ từ $10$ về $0\\ ^\\circ\\text{C}$: $Q_{\\text{toả}}=(0{,}25\\cdot880+0{,}4\\cdot4200)\\cdot10=1900\\cdot10=19\\,000\\ \\text{J}$.</p>\n<p>Đưa đá từ $-20$ lên $0\\ ^\\circ\\text{C}$ cần $Q_1=0{,}6\\cdot2100\\cdot20=25\\,200\\ \\text{J}$.</p>\n<p>$Q_{\\text{toả}}\\lt Q_1$: chưa đủ đưa đá lên $0\\ ^\\circ\\text{C}$, nên đá không thể tan chút nào; phần nhiệt còn thiếu do một phần nước đông đặc toả ra.</p>\n<p>Nhiệt còn thiếu: $25\\,200-19\\,000=6200\\ \\text{J}$; nếu cả $400\\ \\text{g}$ nước đông đặc sẽ toả $0{,}4\\cdot3{,}4\\cdot10^5=136\\,000\\ \\text{J}\\gt6200\\ \\text{J}$, nên chỉ một phần nước đông.</p>\n<p>Khối lượng nước đông đặc: $\\dfrac{6200}{3{,}4\\cdot10^5}\\approx0{,}0182\\ \\text{kg}=18{,}2\\ \\text{g}$.</p>\n<p>Cân bằng ở $0\\ ^\\circ\\text{C}$; nước đá $600+18{,}2\\approx618{,}2\\ \\text{g}$; nước $400-18{,}2\\approx381{,}8\\ \\text{g}$.</p>\n<p>b) Để từ trạng thái ở câu a) lên $20\\ ^\\circ\\text{C}$, cần làm tan toàn bộ $618{,}2\\ \\text{g}$ đá rồi đun $1\\ \\text{kg}$ nước cùng bình từ $0$ lên $20\\ ^\\circ\\text{C}$.</p>\n<p>Làm tan đá: $Q_2=0{,}6\\cdot3{,}4\\cdot10^5+6200=210\\,200\\ \\text{J}$.</p>\n<p>Đun nước và bình: $Q_3=(1\\cdot4200+0{,}25\\cdot880)\\cdot20=4420\\cdot20=88\\,400\\ \\text{J}$.</p>\n<p>$Q_{\\text{thu}}=Q_2+Q_3=298\\,600\\ \\text{J}$.</p>\n<p>Hơi ngưng tụ rồi nguội từ $100$ xuống $20\\ ^\\circ\\text{C}$: $Q_{\\text{toả}}=m_h(2{,}3\\cdot10^6+4200\\cdot80)=2\\,636\\,000\\,m_h$.</p>\n<p>$m_h=\\dfrac{298\\,600}{2\\,636\\,000}\\approx0{,}1133\\ \\text{kg}\\approx113\\ \\text{g}$.</p>\n<p>Lỗi hay gặp ở a): giả sử ngay đá tan một phần rồi tính khối lượng đá tan ra số âm; phải so $Q_{\\text{toả}}$ với $Q_1$ trước.</p>\n<p>Lỗi hay gặp ở b): chỉ làm tan $600\\ \\text{g}$ đá, quên $18{,}2\\ \\text{g}$ nước đã đông ở câu a); hoặc quên bình nhôm.</p></details>"
+ }
+}

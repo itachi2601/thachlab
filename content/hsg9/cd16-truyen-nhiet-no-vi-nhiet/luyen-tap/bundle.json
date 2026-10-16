@@ -1,0 +1,176 @@
+{
+  "schema": "thachlab.lesson-bundle/v1",
+  "theory_html": "",
+  "worked_examples": [],
+  "exam": {
+    "title": "Luyện tập — Truyền nhiệt và sự nở vì nhiệt",
+    "topic": "Nhiệt độ và cân bằng nhiệt",
+    "difficulty": "trung-binh",
+    "duration_minutes": 20,
+    "subject_code": "hsg-vat-ly",
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Đun nước trong nồi bằng bếp đặt dưới đáy. Nước ở phía trên cũng nhanh chóng nóng lên, chủ yếu nhờ cách truyền nhiệt nào?",
+        "options": [
+          "Dẫn nhiệt, vì nước dẫn nhiệt tốt như kim loại",
+          "Bức xạ nhiệt từ đáy nồi xuyên qua lớp nước",
+          "Đối lưu: nước nóng ở đáy nở ra, nhẹ hơn nên đi lên, nước lạnh hơn chìm xuống",
+          "Lạnh từ lớp nước trên truyền xuống đáy nồi và bị bếp làm mất đi"
+        ],
+        "answer": 2,
+        "explanation": "Chất lỏng dẫn nhiệt kém, nên lớp nước trên không nóng nhanh nhờ dẫn nhiệt.<br>Nước ở đáy nhận nhiệt, nở ra, khối lượng riêng giảm nên nổi lên; nước lạnh hơn ở trên nặng hơn chìm xuống thế chỗ.<br>Dòng tuần hoàn đó là đối lưu, là cách truyền nhiệt chủ yếu trong chất lỏng và chất khí.<br>Đáp án C.",
+        "distractorNotes": {
+          "A": "Chất lỏng (trừ thuỷ ngân) dẫn nhiệt kém; nước không dẫn nhiệt tốt như kim loại.",
+          "B": "Bức xạ có xảy ra nhưng rất ít; trong chất lỏng đối lưu mới là chủ yếu.",
+          "D": "Không có \"lạnh\" truyền đi; chỉ có nhiệt truyền từ vật nóng hơn sang vật lạnh hơn."
+        },
+        "topic": "Nội năng và hai cách làm biến đổi nội năng",
+        "form": "ly_thuyet",
+        "difficulty": "de"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong phích (bình thuỷ) giữ nước nóng, lớp chân không giữa hai vỏ thuỷ tinh có tác dụng chính là gì?",
+        "options": [
+          "Phản xạ bức xạ nhiệt trở lại nước",
+          "Ngăn truyền nhiệt bằng dẫn nhiệt và đối lưu",
+          "Ngăn hơi lạnh bên ngoài truyền vào nước",
+          "Chỉ ngăn đối lưu, còn dẫn nhiệt vẫn truyền qua được"
+        ],
+        "answer": 1,
+        "explanation": "Dẫn nhiệt và đối lưu đều cần hạt vật chất (rắn, lỏng, khí); chân không không có hạt nên chặn cả hai.<br>Bức xạ nhiệt truyền được qua chân không; phích chặn bức xạ bằng mặt tráng bạc sáng bóng.<br>Đáp án B.",
+        "distractorNotes": {
+          "A": "Phản xạ bức xạ là việc của mặt tráng bạc; bức xạ vẫn đi qua chân không được.",
+          "C": "Không có \"hơi lạnh\" truyền vào; phích giữ nhiệt của nước không thoát ra ngoài.",
+          "D": "Chân không không có hạt vật chất nên chặn cả dẫn nhiệt chứ không riêng đối lưu."
+        },
+        "topic": "Nội năng và hai cách làm biến đổi nội năng",
+        "form": "ly_thuyet",
+        "difficulty": "de"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Một băng kép gồm lá đồng và lá thép tán chặt vào nhau, thẳng ở nhiệt độ phòng. Biết đồng nở vì nhiệt nhiều hơn thép. Phát biểu nào sau đây đúng?",
+        "options": [
+          "Khi hơ nóng, băng kép cong về phía lá đồng",
+          "Khi hơ nóng, băng kép vẫn thẳng, chỉ dài ra",
+          "Khi làm lạnh, băng kép cong về phía lá thép",
+          "Khi hơ nóng, băng kép cong về phía lá thép"
+        ],
+        "answer": 3,
+        "explanation": "Khi nóng, lá đồng dài ra nhiều hơn lá thép; hai lá tán chặt nên băng phải cong, lá dài hơn (đồng) nằm ở mặt lồi.<br>Vậy khi hơ nóng băng kép cong về phía lá thép.<br>Khi làm lạnh, lá đồng co nhiều hơn, ngắn hơn, nên băng kép cong về phía lá đồng.<br>Đáp án D.",
+        "distractorNotes": {
+          "A": "Lá nở nhiều (đồng) dài hơn nên nằm ở mặt lồi; băng cong về phía lá nở ít.",
+          "B": "Hai lá nở khác nhau nhưng bị tán chặt, nên băng buộc phải cong chứ không thẳng.",
+          "C": "Khi lạnh đồng co nhiều hơn nên ngắn hơn; băng cong về phía đồng, ngược với khi nóng."
+        },
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "ly_thuyet",
+        "difficulty": "de"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mỗi thanh ray thép dài $15\\ \\text{m}$ được lắp ở $25\\ ^\\circ\\text{C}$. Nhiệt độ ray cao nhất có thể tới $55\\ ^\\circ\\text{C}$. Hệ số nở dài của thép là $12\\cdot10^{-6}\\ \\text{K}^{-1}$. Khe hở tối thiểu giữa hai đầu ray liền nhau là bao nhiêu?",
+        "options": [
+          "$5{,}4\\ \\text{mm}$",
+          "$9{,}9\\ \\text{mm}$",
+          "$16{,}2\\ \\text{mm}$",
+          "$0{,}54\\ \\text{mm}$"
+        ],
+        "answer": 0,
+        "explanation": "Độ dãn của một thanh ray: $\\Delta l = l_0\\alpha\\Delta t$.<br>$\\Delta t = 55 - 25 = 30\\ ^\\circ\\text{C}$.<br>$\\Delta l = 15\\cdot12\\cdot10^{-6}\\cdot30 = 5{,}4\\cdot10^{-3}\\ \\text{m} = 5{,}4\\ \\text{mm}$.<br>Khe hở phải ít nhất bằng độ dãn này. Đáp án A.",
+        "distractorNotes": {
+          "B": "Dùng nhiệt độ $55\\ ^\\circ\\text{C}$ thay cho độ tăng nhiệt độ $\\Delta t = 30\\ ^\\circ\\text{C}$.",
+          "C": "Dùng hệ số nở khối $3\\alpha$; chiều dài ray chỉ cần hệ số nở dài $\\alpha$.",
+          "D": "Đổi đơn vị sai: $5{,}4\\cdot10^{-3}\\ \\text{m}$ là $5{,}4\\ \\text{mm}$, không phải $0{,}54\\ \\text{mm}$."
+        },
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "bai_tap",
+        "difficulty": "trung-binh"
+      },
+      {
+        "type": "true_false",
+        "question": "Xét sự nở vì nhiệt đặc biệt của nước và hiện tượng hồ nước ở xứ lạnh vào mùa đông.",
+        "statements": [
+          {
+            "text": "Khối lượng riêng của nước lớn nhất ở $0\\ ^\\circ\\text{C}$.",
+            "answer": false
+          },
+          {
+            "text": "Khi nước nóng lên từ $0\\ ^\\circ\\text{C}$ đến $4\\ ^\\circ\\text{C}$ thì thể tích của nó giảm.",
+            "answer": true
+          },
+          {
+            "text": "Khi mặt hồ sâu đã đóng băng, nước ở đáy hồ có nhiệt độ khoảng $4\\ ^\\circ\\text{C}$.",
+            "answer": true
+          },
+          {
+            "text": "Hồ đóng băng từ đáy lên, vì nước càng lạnh thì càng nặng và chìm xuống.",
+            "answer": false
+          }
+        ],
+        "explanation": "a) Sai: từ $0$ đến $4\\ ^\\circ\\text{C}$ nước co lại nên khối lượng riêng lớn nhất ở $4\\ ^\\circ\\text{C}$, không phải $0\\ ^\\circ\\text{C}$.<br>b) Đúng: đây là sự nở bất thường của nước, nóng lên trong khoảng $0$–$4\\ ^\\circ\\text{C}$ mà lại co lại.<br>c) Đúng: nước $4\\ ^\\circ\\text{C}$ nặng nhất chìm xuống đáy; lớp băng trên mặt dẫn nhiệt kém che cho nước bên dưới.<br>d) Sai: nước dưới $4\\ ^\\circ\\text{C}$ nhẹ hơn nên nổi lên trên, hồ đóng băng từ mặt xuống.",
+        "distractorNotes": {
+          "0": "Nước co lại từ 0 °C đến 4 °C nên nặng nhất ở 4 °C, không phải 0 °C.",
+          "1": "Trong khoảng 0–4 °C nước nóng lên lại co lại; đây là điểm bất thường của nước.",
+          "2": "Nước 4 °C nặng nhất nên chìm xuống đáy, đáy hồ giữ khoảng 4 °C.",
+          "3": "Nước lạnh dưới 4 °C nhẹ hơn, nổi lên mặt và đóng băng ở mặt trước."
+        },
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "ly_thuyet",
+        "difficulty": "de"
+      },
+      {
+        "type": "true_false",
+        "question": "Một tủ ấp trứng mini được sưởi bằng một bóng đèn sưởi công suất $60\\ \\text{W}$ bật liên tục. Khi phòng ở $22\\ ^\\circ\\text{C}$ thì nhiệt độ trong tủ ổn định ở $37\\ ^\\circ\\text{C}$. Coi công suất hao phí từ tủ ra phòng tỉ lệ với hiệu nhiệt độ trong tủ – phòng: $P_{hp} = k(t - t_0)$, không khí trong tủ có nhiệt độ đều.",
+        "statements": [
+          {
+            "text": "Hệ số $k = 4\\ \\text{W/}^\\circ\\text{C}$.",
+            "answer": true
+          },
+          {
+            "text": "Phòng lạnh xuống $17\\ ^\\circ\\text{C}$, vẫn dùng đèn $60\\ \\text{W}$ thì trong tủ vẫn ổn định ở $37\\ ^\\circ\\text{C}$ vì công suất đèn không đổi.",
+            "answer": false
+          },
+          {
+            "text": "Phòng ở $17\\ ^\\circ\\text{C}$, muốn trong tủ vẫn ổn định ở $37\\ ^\\circ\\text{C}$ thì cần đèn sưởi công suất $80\\ \\text{W}$.",
+            "answer": true
+          },
+          {
+            "text": "Phòng ở $22\\ ^\\circ\\text{C}$, cứ để đèn $60\\ \\text{W}$ bật lâu hơn nữa thì trong tủ sẽ nóng vượt $37\\ ^\\circ\\text{C}$.",
+            "answer": false
+          }
+        ],
+        "explanation": "Khi ổn định, công suất cấp bằng công suất hao phí.<br>a) Đúng: $60 = k(37 - 22)$, nên $k = 4\\ \\text{W/}^\\circ\\text{C}$.<br>b) Sai: $60 = 4(t - 17)$, nên $t = 32\\ ^\\circ\\text{C}$; phòng lạnh hơn thì nhiệt độ ổn định trong tủ thấp hơn.<br>c) Đúng: $P = 4\\cdot(37 - 17) = 80\\ \\text{W}$.<br>d) Sai: ở $37\\ ^\\circ\\text{C}$ nhiệt cấp vào bằng nhiệt mất đi, tủ không nóng thêm dù bật bao lâu.",
+        "distractorNotes": {
+          "0": "Ổn định thì 60 = k(37 − 22), nên k = 4 W/°C.",
+          "1": "Nhiệt độ ổn định phụ thuộc cả nhiệt độ phòng: 60 = 4(t − 17) cho t = 32 °C.",
+          "2": "Cần bù hao phí ở hiệu nhiệt độ 20 °C: 4 · 20 = 80 W.",
+          "3": "Khi đã ổn định, nhiệt cấp bằng nhiệt mất nên tủ không nóng thêm dù bật lâu."
+        },
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "bai_tap",
+        "difficulty": "trung-binh"
+      },
+      {
+        "type": "short_answer",
+        "question": "Một bình thuỷ tinh có dung tích $1$ lít ở $10\\ ^\\circ\\text{C}$, chứa đầy rượu tới miệng ở cùng nhiệt độ đó. Đặt bình cạnh lò sưởi, cả bình và rượu nóng lên tới $40\\ ^\\circ\\text{C}$. Hệ số nở khối của rượu $1{,}1\\cdot10^{-3}\\ \\text{K}^{-1}$, hệ số nở khối của thuỷ tinh $27\\cdot10^{-6}\\ \\text{K}^{-1}$. Thể tích rượu tràn ra là bao nhiêu $\\text{cm}^3$? (Làm tròn đến một chữ số sau dấu phẩy.)",
+        "answer": "32,2",
+        "explanation": "Cả rượu và bình đều nở; phần tràn là hiệu hai độ tăng thể tích.<br>$\\Delta t = 40 - 10 = 30\\ ^\\circ\\text{C}$, $V_0 = 1000\\ \\text{cm}^3$.<br>$\\Delta V = V_0(\\beta_r - \\beta_b)\\Delta t = 1000\\cdot(1{,}1\\cdot10^{-3} - 27\\cdot10^{-6})\\cdot30 \\approx 32{,}2\\ \\text{cm}^3$.<br>Sai hay gặp: bỏ qua bình nở ra được $33\\ \\text{cm}^3$; dùng $40\\ ^\\circ\\text{C}$ thay cho $\\Delta t$ ra $42{,}9\\ \\text{cm}^3$.<br>Đáp số: $32{,}2$.",
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "bai_tap",
+        "difficulty": "trung-binh"
+      },
+      {
+        "type": "short_answer",
+        "question": "Kho lạnh thứ nhất có vách bằng tấm panel cách nhiệt dày $5\\ \\text{cm}$, tổng diện tích vách $40\\ \\text{m}^2$; khi trong kho lạnh hơn ngoài trời $30\\ ^\\circ\\text{C}$ thì nhiệt truyền qua vách vào kho với công suất $360\\ \\text{W}$. Kho thứ hai dùng panel cùng vật liệu nhưng dày $8\\ \\text{cm}$, tổng diện tích vách $64\\ \\text{m}^2$, trong kho lạnh hơn ngoài trời $35\\ ^\\circ\\text{C}$. Coi nhiệt chỉ truyền vào kho bằng dẫn nhiệt qua vách, với công suất tỉ lệ thuận với diện tích vách và hiệu nhiệt độ, tỉ lệ nghịch với bề dày vách. Công suất nhiệt truyền vào kho thứ hai là bao nhiêu oát?",
+        "answer": "420",
+        "explanation": "$P \\propto \\dfrac{S\\,\\Delta t}{d}$, nên $\\dfrac{P_2}{P_1} = \\dfrac{S_2}{S_1}\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}\\cdot\\dfrac{d_1}{d_2}$.<br>$P_2 = 360\\cdot\\dfrac{64}{40}\\cdot\\dfrac{35}{30}\\cdot\\dfrac{5}{8} = 420\\ \\text{W}$.<br>Sai hay gặp: nhân với $\\dfrac{d_2}{d_1}$ (vách dày hơn lại cho nhiệt qua nhiều hơn) ra $1075{,}2\\ \\text{W}$.<br>Đáp số: $420$.",
+        "topic": "Nhiệt độ và cân bằng nhiệt",
+        "form": "bai_tap",
+        "difficulty": "trung-binh"
+      }
+    ]
+  }
+}

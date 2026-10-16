@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Nhiệt học nâng cao: cân bằng nhiệt và chuyển thể",
+  "topic": "Nhiệt độ và cân bằng nhiệt",
+  "difficulty": "trung-binh",
+  "duration_minutes": 25,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Nhiệt dung riêng của nhôm là $880\\ \\text{J/(kg·K)}$. Con số này cho biết điều gì?</p>",
+    "options": [
+     "Một kilôgam nhôm ở $1\\ ^\\circ\\text{C}$ chứa nhiệt lượng $880\\ \\text{J}$.",
+     "Muốn $880\\ \\text{kg}$ nhôm tăng thêm $1\\ ^\\circ\\text{C}$ cần cung cấp $1\\ \\text{J}$.",
+     "Muốn $1\\ \\text{kg}$ nhôm nóng chảy hoàn toàn ở nhiệt độ nóng chảy cần $880\\ \\text{J}$.",
+     "Muốn $1\\ \\text{kg}$ nhôm tăng thêm $1\\ ^\\circ\\text{C}$ (hay $1\\ \\text{K}$) cần cung cấp $880\\ \\text{J}$."
+    ],
+    "answer": 3,
+    "explanation": "<p>Nhiệt dung riêng $c$ là nhiệt lượng cần để $1\\ \\text{kg}$ chất tăng thêm $1\\ ^\\circ\\text{C}$: $Q=mc\\Delta t=1\\cdot880\\cdot1=880\\ \\text{J}$. Đáp án D.</p><p>A sai: nhiệt lượng là phần năng lượng trao đổi khi nhiệt độ thay đổi, không phải thứ vật \"chứa\" ở một nhiệt độ.</p><p>B đảo ngược vai trò của khối lượng và nhiệt lượng.</p><p>C là ý nghĩa của nhiệt nóng chảy riêng $\\lambda$, không phải $c$.</p>",
+    "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Nhầm nhiệt lượng (năng lượng trao đổi) với thứ vật chứa ở một nhiệt độ.",
+     "B": "Đảo vai trò: 880 J ứng với 1 kg tăng 1 °C, không phải 880 kg.",
+     "C": "Đó là ý nghĩa của nhiệt nóng chảy riêng λ, không phải nhiệt dung riêng c."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Thả một miếng đồng $500\\ \\text{g}$ ở $90\\ ^\\circ\\text{C}$ vào $300\\ \\text{g}$ nước ở $20\\ ^\\circ\\text{C}$. Bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường. Cho $c_{\\text{đồng}}=380$, $c_{\\text{nước}}=4200\\ \\text{J/(kg·K)}$. Nhiệt độ khi cân bằng xấp xỉ bằng</p>",
+    "options": [
+     "$11{,}8\\ ^\\circ\\text{C}$.",
+     "$29{,}2\\ ^\\circ\\text{C}$.",
+     "$55\\ ^\\circ\\text{C}$.",
+     "$63{,}8\\ ^\\circ\\text{C}$."
+    ],
+    "answer": 1,
+    "explanation": "<p>Đồng toả: $0{,}5\\cdot380\\cdot(90-t)=190\\,(90-t)$. Nước thu: $0{,}3\\cdot4200\\cdot(t-20)=1260\\,(t-20)$.</p><p>$190(90-t)=1260(t-20)$ nên $t=\\dfrac{17\\,100+25\\,200}{1450}\\approx29{,}2\\ ^\\circ\\text{C}$. Đáp án B.</p><p>Nhiệt dung của nước ($1260\\ \\text{J/K}$) lớn gấp gần $7$ lần của đồng ($190\\ \\text{J/K}$) nên nhiệt độ chung gần $20\\ ^\\circ\\text{C}$, xa trung bình cộng $55\\ ^\\circ\\text{C}$.</p>",
+    "topic": "Nhiệt độ và cân bằng nhiệt",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Viết phần nước thu là 1260·t, quên trừ nhiệt độ ban đầu 20 °C của nước.",
+     "C": "Lấy trung bình cộng hai nhiệt độ — chỉ đúng khi hai vật có cùng nhiệt dung mc.",
+     "D": "Chỉ lấy trọng số theo khối lượng, quên nhiệt dung riêng của đồng nhỏ hơn nước nhiều."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đun một cục nước đá ở $-10\\ ^\\circ\\text{C}$ bằng bếp cấp nhiệt đều cho tới khi nước sôi được một lúc (áp suất chuẩn). Phát biểu nào sau đây đúng?</p>",
+    "options": [
+     "Trong lúc nước sôi, nhiệt độ giữ ở $100\\ ^\\circ\\text{C}$ dù bếp vẫn cấp nhiệt; nhiệt nhận vào dùng để hoá hơi.",
+     "Trong lúc đá tan, nhiệt độ tăng dần từ $0\\ ^\\circ\\text{C}$ vì đá vẫn đang nhận nhiệt.",
+     "Trong lúc đá tan, nhiệt độ không đổi nên đá không nhận nhiệt của bếp.",
+     "Đoạn đun nước lỏng từ $0$ lên $100\\ ^\\circ\\text{C}$ dốc hơn đoạn đun đá từ $-10$ lên $0\\ ^\\circ\\text{C}$ vì nước có nhiệt dung riêng lớn hơn đá."
+    ],
+    "answer": 0,
+    "explanation": "<p>Khi chuyển thể (nóng chảy, sôi), nhiệt độ không đổi nhưng chất vẫn nhận nhiệt: $Q=\\lambda m$ khi nóng chảy, $Q=Lm$ khi hoá hơi. Đáp án A.</p><p>B và C sai vì trong suốt thời gian đá tan, nhiệt độ giữ $0\\ ^\\circ\\text{C}$ và đá vẫn nhận nhiệt.</p><p>D sai: với cùng khối lượng và công suất, nhiệt độ tăng mỗi giây là $\\dfrac{P}{mc}$; $c_{\\text{nước}}=2c_{\\text{đá}}$ nên đoạn nước lỏng <em>thoải</em> hơn.</p>",
+    "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Lúc nóng chảy, nhiệt độ giữ không đổi ở 0 °C dù vẫn nhận nhiệt.",
+     "C": "Nhiệt độ không đổi không có nghĩa là không nhận nhiệt: nhiệt dùng để làm tan đá (λm).",
+     "D": "c lớn thì nhiệt độ tăng chậm hơn, nên đoạn nước lỏng thoải hơn chứ không dốc hơn."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đun $3$ lít nước ở $15\\ ^\\circ\\text{C}$ đựng trong nồi thép $0{,}8\\ \\text{kg}$ tới sôi ($100\\ ^\\circ\\text{C}$) bằng bếp dầu có hiệu suất $35\\,\\%$. Cho $c_{\\text{nước}}=4200$, $c_{\\text{thép}}=460\\ \\text{J/(kg·K)}$, năng suất toả nhiệt của dầu $q=4{,}4\\cdot10^7\\ \\text{J/kg}$. Khối lượng dầu cần đốt xấp xỉ</p>",
+    "options": [
+     "$8{,}8\\ \\text{g}$.",
+     "$69{,}5\\ \\text{g}$.",
+     "$71{,}6\\ \\text{g}$.",
+     "$84{,}2\\ \\text{g}$."
+    ],
+    "answer": 2,
+    "explanation": "<p>$Q_{\\text{ích}}=(3\\cdot4200+0{,}8\\cdot460)(100-15)=12\\,968\\cdot85=1\\,102\\,280\\ \\text{J}$.</p><p>$Q_{\\text{tp}}=\\dfrac{Q_{\\text{ích}}}{H}=\\dfrac{1\\,102\\,280}{0{,}35}\\approx3{,}15\\cdot10^6\\ \\text{J}$.</p><p>$m=\\dfrac{Q_{\\text{tp}}}{q}\\approx0{,}0716\\ \\text{kg}\\approx71{,}6\\ \\text{g}$. Đáp án C.</p>",
+    "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Nhân Q_ích với H thay vì chia: nhiệt toàn phần phải lớn hơn nhiệt có ích.",
+     "B": "Quên nhiệt lượng làm nóng nồi thép.",
+     "D": "Lấy Δt = 100 °C thay vì 100 − 15 = 85 °C."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Thả $300\\ \\text{g}$ nước đá ở $-12\\ ^\\circ\\text{C}$ vào bình cách nhiệt chứa $800\\ \\text{g}$ nước ở $15\\ ^\\circ\\text{C}$. Bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường. Cho $c_{\\text{nước}}=4200$, $c_{\\text{đá}}=2100\\ \\text{J/(kg·K)}$, $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.</p>",
+    "statements": [
+     {
+      "text": "Nhiệt lượng tối đa mà nước toả ra khi hạ nhiệt độ về $0\\ ^\\circ\\text{C}$ là $50\\,400\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Nhiệt lượng cần để đưa toàn bộ đá lên $0\\ ^\\circ\\text{C}$ và làm tan hết là $102\\,000\\ \\text{J}$.",
+      "answer": false
+     },
+     {
+      "text": "Đá tan hết và nhiệt độ cân bằng lớn hơn $0\\ ^\\circ\\text{C}$.",
+      "answer": false
+     },
+     {
+      "text": "Khi cân bằng, trong bình còn $174\\ \\text{g}$ nước đá.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: $Q_{\\text{toả,max}}=0{,}8\\cdot4200\\cdot15=50\\,400\\ \\text{J}$.</p><p>b) Sai: đưa đá lên $0\\ ^\\circ\\text{C}$ cần $0{,}3\\cdot2100\\cdot12=7560\\ \\text{J}$, làm tan hết cần $0{,}3\\cdot3{,}4\\cdot10^5=102\\,000\\ \\text{J}$, tổng $109\\,560\\ \\text{J}$; con số $102\\,000\\ \\text{J}$ mới chỉ là phần làm tan.</p><p>c) Sai: $7560\\lt50\\,400\\lt109\\,560$ nên đá lên được $0\\ ^\\circ\\text{C}$ nhưng chỉ tan một phần; hệ cân bằng ở đúng $0\\ ^\\circ\\text{C}$.</p><p>d) Đúng: khối lượng đá tan $\\dfrac{50\\,400-7560}{3{,}4\\cdot10^5}=0{,}126\\ \\text{kg}=126\\ \\text{g}$, còn $300-126=174\\ \\text{g}$.</p>",
+    "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Q_toả,max = m·c·(15 − 0) = 0,8·4200·15 = 50 400 J.",
+     "1": "Quên phần nhiệt đưa đá từ −12 °C lên 0 °C (7560 J); chỉ tính phần làm tan.",
+     "2": "Phải so Q_toả,max với nhiệt cần để tan hết trước; 50 400 J < 109 560 J nên đá không tan hết.",
+     "3": "Đá tan (50 400 − 7560)/340 000 = 126 g, còn lại 174 g."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Đun $0{,}4\\ \\text{kg}$ chất rắn X bằng nguồn cấp nhiệt có ích đều $100\\ \\text{W}$. Đồ thị nhiệt độ theo thời gian gồm ba đoạn thẳng nối lần lượt các điểm $(0\\ \\text{min};\\ 30\\ ^\\circ\\text{C})$, $(4\\ \\text{min};\\ 70\\ ^\\circ\\text{C})$, $(10\\ \\text{min};\\ 70\\ ^\\circ\\text{C})$, $(12\\ \\text{min};\\ 110\\ ^\\circ\\text{C})$. Bỏ qua mọi hao phí.</p>",
+    "statements": [
+     {
+      "text": "Nhiệt độ nóng chảy của X là $70\\ ^\\circ\\text{C}$.",
+      "answer": true
+     },
+     {
+      "text": "Từ phút $4$ đến phút $10$, X không nhận nhiệt nên nhiệt độ không đổi.",
+      "answer": false
+     },
+     {
+      "text": "Nhiệt nóng chảy riêng của X là $9\\cdot10^4\\ \\text{J/kg}$.",
+      "answer": true
+     },
+     {
+      "text": "Nhiệt dung riêng của X ở thể lỏng lớn hơn ở thể rắn.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: đoạn nằm ngang ở $70\\ ^\\circ\\text{C}$ là lúc X nóng chảy.</p><p>b) Sai: nguồn vẫn cấp nhiệt đều; nhiệt nhận vào dùng để nóng chảy nên nhiệt độ không đổi.</p><p>c) Đúng: $P\\,\\Delta\\tau=\\lambda m$ nên $\\lambda=\\dfrac{100\\cdot360}{0{,}4}=9\\cdot10^4\\ \\text{J/kg}$.</p><p>d) Sai: thể rắn $c_r=\\dfrac{100\\cdot240}{0{,}4\\cdot40}=1500$; thể lỏng $c_l=\\dfrac{100\\cdot120}{0{,}4\\cdot40}=750\\ \\text{J/(kg·K)}$. Đoạn lỏng dốc hơn (tăng $40\\ ^\\circ\\text{C}$ trong $2$ phút so với $4$ phút) nên $c$ nhỏ hơn.</p>",
+    "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Đoạn nằm ngang trên đồ thị đun là lúc chuyển thể; ở đây là nóng chảy tại 70 °C.",
+     "1": "Nguồn vẫn cấp nhiệt đều; nhiệt dùng để nóng chảy nên nhiệt độ không đổi.",
+     "2": "λ = PΔτ/m = 100·360/0,4 = 90 000 J/kg; nhớ đổi phút ra giây.",
+     "3": "Đoạn dốc hơn thì c nhỏ hơn: c_lỏng = 750 < c_rắn = 1500 J/(kg·K)."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Bình 1 chứa $3\\ \\text{kg}$ nước ở $50\\ ^\\circ\\text{C}$, bình 2 chứa $1\\ \\text{kg}$ nước ở $10\\ ^\\circ\\text{C}$. Rót một lượng nước $m$ từ bình 1 sang bình 2; khi bình 2 cân bằng thì nhiệt độ của nó là $25\\ ^\\circ\\text{C}$. Sau đó rót đúng lượng $m$ từ bình 2 về bình 1. Bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường. Nhiệt độ của bình 1 khi cân bằng là bao nhiêu $^\\circ\\text{C}$?</p>",
+    "answer": "45",
+    "explanation": "<p>Lần 1 (bình 2): $m(50-25)=1\\cdot(25-10)$ nên $m=0{,}6\\ \\text{kg}$.</p><p>Lần 2 (bình 1 còn $2{,}4\\ \\text{kg}$ ở $50\\ ^\\circ\\text{C}$): $2{,}4(50-t)=0{,}6(t-25)$ nên $4(50-t)=t-25$, $t=45\\ ^\\circ\\text{C}$.</p><p>Kiểm tra bằng bảo toàn: $3\\cdot45+1\\cdot25=160=3\\cdot50+1\\cdot10$ ✓.</p><p>Bẫy: dùng $3\\ \\text{kg}$ thay vì $2{,}4\\ \\text{kg}$ cho bình 1 ở lần rót về.</p>",
+    "topic": "Nhiệt độ và cân bằng nhiệt",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Cần dẫn bao nhiêu gam hơi nước ở $100\\ ^\\circ\\text{C}$ (áp suất chuẩn) vào bình cách nhiệt chứa $1\\ \\text{kg}$ nước ở $20\\ ^\\circ\\text{C}$ để nước trong bình đạt $50\\ ^\\circ\\text{C}$? Hơi ngưng tụ hết trong bình; bỏ qua nhiệt dung của bình và trao đổi nhiệt với môi trường. Cho $c_{\\text{nước}}=4200\\ \\text{J/(kg·K)}$, $L=2{,}3\\cdot10^6\\ \\text{J/kg}$. Làm tròn đến gam.</p>",
+    "answer": "50",
+    "explanation": "<p>Nước thu: $1\\cdot4200\\cdot(50-20)=126\\,000\\ \\text{J}$.</p><p>Hơi toả khi ngưng tụ rồi nguội từ $100$ xuống $50\\ ^\\circ\\text{C}$: $m(2{,}3\\cdot10^6+4200\\cdot50)=2\\,510\\,000\\,m$.</p><p>$m=\\dfrac{126\\,000}{2\\,510\\,000}\\approx0{,}0502\\ \\text{kg}\\approx50\\ \\text{g}$.</p><p>Bẫy: chỉ viết $mL$ (quên phần nước ngưng tụ nguội tiếp) sẽ ra $\\approx54{,}8\\ \\text{g}$.</p>",
+    "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   }
+  ]
+ }
+}

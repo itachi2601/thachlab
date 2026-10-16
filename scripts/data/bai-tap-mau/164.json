@@ -1,0 +1,722 @@
+{
+ "lesson_id": 164,
+ "lesson_title": "Chuyên đề 16. Truyền nhiệt và sự nở vì nhiệt",
+ "generated_at": "2026-10-16",
+ "review": {
+  "checked": true,
+  "by": "kiem-code ×2 (giải độc lập + soát nội dung/hình) + dò lần 2 bằng mắt 375px",
+  "date": "2026-10-16",
+  "notes": "Đáp số 6 dạng + 8 tự luận khớp lời giải độc lập; đã sửa góp ý (ký hiệu, cỡ chữ SVG ≥14, khung cuối mô phỏng, \\text trong math)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Dẫn nhiệt qua vách: tỉ số công suất theo độ dày và độ chênh nhiệt độ",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Một hộp xốp kín đựng một khối đá ở $0\\ ^\\circ\\text{C}$. Thành hộp dày $2\\ \\text{cm}$ ; để hộp trong phòng $30\\ ^\\circ\\text{C}$ thì đá tan hết sau $6$ giờ. Trong khi đá tan, bên trong hộp luôn ở $0\\ ^\\circ\\text{C}$ ; đá chỉ nhận nhiệt truyền qua thành hộp từ không khí trong phòng. Biết công suất nhiệt truyền qua một vách tỉ lệ thuận với diện tích vách và với độ chênh nhiệt độ hai mặt vách, tỉ lệ nghịch với độ dày vách.</p><ol type=\"a\"><li>Một hộp thứ hai cùng vật liệu, cùng diện tích thành, đựng cùng lượng đá ở $0\\ ^\\circ\\text{C}$ nhưng thành dày $3\\ \\text{cm}$ và để trong phòng $25\\ ^\\circ\\text{C}$. Sau bao lâu thì đá trong hộp thứ hai tan hết?</li><li>Muốn một hộp cùng vật liệu, cùng diện tích thành, đựng cùng lượng đá, để trong phòng $25\\ ^\\circ\\text{C}$ mà đá tan hết sau đúng $6$ giờ thì thành hộp phải dày bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-1-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hai hộp xốp đựng đá: hộp 1 thành mỏng trong phòng 30 độ, hộp 2 thành dày hơn trong phòng 25 độ; nhiệt từ phòng truyền qua thành vào đá\"><path d=\"M30,52 h150 v110 h-150 Z M40,62 v90 h130 v-90 Z\" fill=\"#94a3b8\" fill-opacity=\"0.35\" fill-rule=\"evenodd\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M240,52 h150 v110 h-150 Z M255,67 v80 h120 v-80 Z\" fill=\"#94a3b8\" fill-opacity=\"0.35\" fill-rule=\"evenodd\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"105.0\" y=\"22.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Hộp 1 · phòng 30 °C</text><text x=\"315.0\" y=\"22.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Hộp 2 · phòng 25 °C</text><text x=\"105.0\" y=\"40.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">đá 0 °C</text><text x=\"315.0\" y=\"40.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">đá 0 °C</text><rect x=\"77.0\" y=\"96\" width=\"56\" height=\"56\" rx=\"4\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"width\" values=\"56.0;55.2;54.4;53.6;52.7;51.8;50.9;49.9;48.9;47.9;46.8;45.6;44.4;43.2;41.8;40.4;38.8;37.1;35.3;33.2;30.8;28.0;24.5;19.4;0.0\" keyTimes=\"0.000;0.042;0.083;0.125;0.167;0.208;0.250;0.292;0.333;0.375;0.417;0.458;0.500;0.542;0.583;0.625;0.667;0.708;0.750;0.792;0.833;0.875;0.917;0.958;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"56.0;55.2;54.4;53.6;52.7;51.8;50.9;49.9;48.9;47.9;46.8;45.6;44.4;43.2;41.8;40.4;38.8;37.1;35.3;33.2;30.8;28.0;24.5;19.4;0.0\" keyTimes=\"0.000;0.042;0.083;0.125;0.167;0.208;0.250;0.292;0.333;0.375;0.417;0.458;0.500;0.542;0.583;0.625;0.667;0.708;0.750;0.792;0.833;0.875;0.917;0.958;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x\" values=\"77.0;77.4;77.8;78.2;78.7;79.1;79.6;80.0;80.5;81.1;81.6;82.2;82.8;83.4;84.1;84.8;85.6;86.4;87.4;88.4;89.6;91.0;92.8;95.3;105.0\" keyTimes=\"0.000;0.042;0.083;0.125;0.167;0.208;0.250;0.292;0.333;0.375;0.417;0.458;0.500;0.542;0.583;0.625;0.667;0.708;0.750;0.792;0.833;0.875;0.917;0.958;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"96.0;96.8;97.6;98.4;99.3;100.2;101.1;102.1;103.1;104.1;105.2;106.4;107.6;108.8;110.2;111.6;113.2;114.9;116.7;118.8;121.2;124.0;127.5;132.6;152.0\" keyTimes=\"0.000;0.042;0.083;0.125;0.167;0.208;0.250;0.292;0.333;0.375;0.417;0.458;0.500;0.542;0.583;0.625;0.667;0.708;0.750;0.792;0.833;0.875;0.917;0.958;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"287.0\" y=\"91\" width=\"56\" height=\"56\" rx=\"4\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"#38bdf8\" stroke-width=\"2\"/><line x1=\"10\" y1=\"88\" x2=\"44\" y2=\"88\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M35.8,83.3 L44.0,88.0 L35.8,92.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"200\" y1=\"88\" x2=\"166\" y2=\"88\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M174.2,92.7 L166.0,88.0 L174.2,83.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"220\" y1=\"88\" x2=\"259\" y2=\"88\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M250.8,83.3 L259.0,88.0 L250.8,92.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"410\" y1=\"88\" x2=\"371\" y2=\"88\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M379.2,92.7 L371.0,88.0 L379.2,83.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"105.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">thành 2 cm</text><text x=\"315.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">thành 3 cm</text><line x1=\"40.0\" y1=\"212.0\" x2=\"170.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"40.0\" y1=\"208.0\" x2=\"40.0\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"61.7\" y1=\"208.0\" x2=\"61.7\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"83.3\" y1=\"208.0\" x2=\"83.3\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"105.0\" y1=\"208.0\" x2=\"105.0\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"126.7\" y1=\"208.0\" x2=\"126.7\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"148.3\" y1=\"208.0\" x2=\"148.3\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"170.0\" y1=\"208.0\" x2=\"170.0\" y2=\"216.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"40.0\" y=\"230.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">0</text><text x=\"170.0\" y=\"230.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">6 h</text><circle cx=\"40\" cy=\"212\" r=\"5\" fill=\"#34d399\"><animate attributeName=\"cx\" values=\"40;170\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"315.0\" y=\"216.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">tan hết sau ? h</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy nhanh: 1 s = 1 h thật. Chỉ chạy hộp 1: khối đá nhỏ dần đều rồi tan hết sau 6 h. Hộp 2 là điều cần tìm nên không chạy. Độ dày thành vẽ theo tỉ lệ 2 : 3 ; mũi tên cam chỉ chiều truyền nhiệt, không chỉ độ lớn.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt tự truyền từ vật nóng hơn sang vật lạnh hơn ; công suất truyền nhiệt $P$ là nhiệt lượng truyền qua trong $1\\ \\text{s}$.</li><li><strong>Dẫn nhiệt qua vách:</strong> $P\\sim\\dfrac{S\\,\\Delta t}{d}$ (tỉ lệ thuận với diện tích và độ chênh nhiệt độ, tỉ lệ nghịch với độ dày).</li><li><strong>Công thức:</strong> $P$ không đổi thì $Q=P\\,t$.</li><li><strong>Điều kiện:</strong> trong hộp giữ $0\\ ^\\circ\\text{C}$ suốt lúc đá tan nên $\\Delta t$ và $P$ không đổi ; đá chỉ nhận nhiệt qua thành.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tỉ số công suất truyền nhiệt vào hai hộp</span></p><p>Cùng vật liệu, cùng $S$ nên chỉ còn $\\Delta t$ và $d$ khác nhau :</p>$$\\dfrac{P_1}{P_2}=\\dfrac{\\Delta t_1}{\\Delta t_2}\\cdot\\dfrac{d_2}{d_1}$$$$\\dfrac{P_1}{P_2}=\\dfrac{30}{25}\\cdot\\dfrac{3}{2}$$<div class=\"bt-ans\">$$\\dfrac{P_1}{P_2}=1{,}8$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thời gian đá tan hết ở hộp thứ hai</span></p><p>Cùng lượng đá ở $0\\ ^\\circ\\text{C}$ nên cần cùng nhiệt lượng $Q$ để tan hết :</p>$$Q=P_1t_1=P_2t_2$$$$t_2=t_1\\cdot\\dfrac{P_1}{P_2}=6\\cdot1{,}8$$<div class=\"bt-ans\">$$t_2=10{,}8\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ dày thành để đá tan hết sau 6 giờ</span></p><p>Cùng $Q$, cùng thời gian $6\\ \\text{h}$ như hộp đầu nên công suất phải bằng $P_1$ :</p>$$\\dfrac{\\Delta t_2}{d}=\\dfrac{\\Delta t_1}{d_1}$$$$d=d_1\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}=2\\cdot\\dfrac{25}{30}$$<div class=\"bt-ans\">$$d\\approx1{,}67\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Hộp thứ hai thành dày hơn và phòng mát hơn, cả hai điều đều làm nhiệt vào chậm hơn : $t_2\\gt6\\ \\text{h}$ là hợp lí ✓.</p><p>Phòng mát hơn thì thành mỏng hơn vẫn giữ được $6\\ \\text{h}$ : $d\\lt2\\ \\text{cm}$ ✓.</p><p>Tỉ số công suất không có đơn vị ; $d$ cùng đơn vị cm với $d_1$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t_2=10{,}8\\ \\text{h}$ (10 giờ 48 phút)</p><p>b) $d\\approx1{,}67\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>cùng vật liệu, đổi độ dày thành hoặc nhiệt độ bên ngoài</strong> → lập tỉ số $P\\sim\\dfrac{S\\,\\Delta t}{d}$ ; cùng $Q$ thì thời gian tỉ lệ nghịch với $P$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-1-2\"><svg viewBox=\"0 0 420 228\" role=\"img\" aria-label=\"Hai vách cắt ngang: vách 1 dày 2 cm, chênh 30 độ; vách 2 dày 3 cm, chênh 25 độ; mũi tên nhiệt đi từ phòng vào đá\"><rect x=\"95.0\" y=\"40\" width=\"30\" height=\"100\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"87.0\" y=\"60.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">30 °C</text><text x=\"87.0\" y=\"76.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">phòng</text><text x=\"133.0\" y=\"60.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">0 °C</text><text x=\"133.0\" y=\"76.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">đá</text><line x1=\"65.0\" y1=\"104\" x2=\"155.0\" y2=\"104\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M146.2,98.9 L155.0,104.0 L146.2,109.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"110.0\" y=\"124.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\">​</tspan></text><line x1=\"110\" y1=\"152\" x2=\"95.0\" y2=\"152\" stroke=\"#34d399\" stroke-width=\"1.4\"/><path d=\"M100.9,155.4 L95.0,152.0 L100.9,148.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"110\" y1=\"152\" x2=\"125.0\" y2=\"152\" stroke=\"#34d399\" stroke-width=\"1.4\"/><path d=\"M119.1,148.6 L125.0,152.0 L119.1,155.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"110.0\" y=\"170.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">d<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\">​</tspan> = 2 cm</text><text x=\"110.0\" y=\"190.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Δt<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\">​</tspan> = 30 − 0 = 30 °C</text><rect x=\"287.5\" y=\"40\" width=\"45\" height=\"100\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"279.5\" y=\"60.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">25 °C</text><text x=\"279.5\" y=\"76.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">phòng</text><text x=\"340.5\" y=\"60.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">0 °C</text><text x=\"340.5\" y=\"76.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">đá</text><line x1=\"257.5\" y1=\"104\" x2=\"362.5\" y2=\"104\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M353.7,98.9 L362.5,104.0 L353.7,109.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"310.0\" y=\"124.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">​</tspan> = ?</text><line x1=\"310\" y1=\"152\" x2=\"287.5\" y2=\"152\" stroke=\"#34d399\" stroke-width=\"1.4\"/><path d=\"M293.4,155.4 L287.5,152.0 L293.4,148.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"310\" y1=\"152\" x2=\"332.5\" y2=\"152\" stroke=\"#34d399\" stroke-width=\"1.4\"/><path d=\"M326.6,148.6 L332.5,152.0 L326.6,155.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"310.0\" y=\"170.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">d<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">​</tspan> = 3 cm</text><text x=\"310.0\" y=\"190.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Δt<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">​</tspan> = 25 − 0 = 25 °C</text><text x=\"16.0\" y=\"218.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Cùng vật liệu, cùng diện tích S, cùng lượng đá.</text></svg><figcaption>Dữ kiện: độ chênh nhiệt độ hai mặt vách = nhiệt độ phòng − 0 °C ; mũi tên không vẽ theo độ lớn công suất.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Thành hộp dày $2\\ \\text{cm}$ ; để hộp trong phòng $30\\ ^\\circ\\text{C}$ thì đá tan hết sau $6$ giờ\"</td><td>$d_1=2\\ \\text{cm}$ ; $\\Delta t_1=30-0=30\\ ^\\circ\\text{C}$ ; $t_1=6\\ \\text{h}$</td><td>Nhiệt tự truyền từ không khí nóng hơn vào đá lạnh hơn<br>Công suất truyền nhiệt $P$ : nhiệt lượng truyền qua trong $1\\ \\text{s}$</td></tr><tr><td>\"bên trong hộp luôn ở $0\\ ^\\circ\\text{C}$ ; đá chỉ nhận nhiệt truyền qua thành hộp\"</td><td>$\\Delta t$ giữ nguyên suốt lúc đá tan</td><td>⚠ $\\Delta t$ không đổi nên $P$ không đổi : $Q=P\\,t$<br>⚠ không có đường nhận nhiệt nào khác</td></tr><tr><td>\"tỉ lệ thuận với diện tích vách và với độ chênh nhiệt độ … tỉ lệ nghịch với độ dày vách\"</td><td>$P\\sim\\dfrac{S\\,\\Delta t}{d}$</td><td>Cùng vật liệu, cùng $S$ : chỉ còn $\\Delta t$ và $d$ quyết định tỉ số công suất</td></tr><tr><td>\"thành dày $3\\ \\text{cm}$ và để trong phòng $25\\ ^\\circ\\text{C}$ … cùng lượng đá\"</td><td>$d_2=3\\ \\text{cm}$ ; $\\Delta t_2=25\\ ^\\circ\\text{C}$ ; cùng $Q$</td><td>Cùng lượng đá ở $0\\ ^\\circ\\text{C}$ : nhiệt lượng cần để tan hết như nhau</td></tr><tr><td>\"Sau bao lâu thì đá trong hộp thứ hai tan hết?\"</td><td>Cần $t_2$</td><td>$P_1t_1=P_2t_2$</td></tr><tr><td>\"phòng $25\\ ^\\circ\\text{C}$ mà đá tan hết sau đúng $6$ giờ thì thành hộp phải dày bao nhiêu?\"</td><td>$\\Delta t=25\\ ^\\circ\\text{C}$ ; $t=6\\ \\text{h}$ ; cần $d$</td><td>Cùng $Q$, cùng thời gian thì công suất so với hộp nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cùng vật liệu, đổi độ dày thành hoặc nhiệt độ ngoài</b> → lập tỉ số $P\\sim\\dfrac{S\\,\\Delta t}{d}$, cùng $Q$ thì $t\\sim\\dfrac{1}{P}$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tỉ số công suất truyền nhiệt vào hai hộp",
+     "hoi": "Công suất nhiệt truyền vào hộp đầu gấp bao nhiêu lần hộp thứ hai?",
+     "dap_so": 1.8,
+     "sai_so": 0.02,
+     "don_vi": "lần",
+     "loi_hay_gap": "Chỉ xét độ dày mà quên độ chênh nhiệt độ cũng đổi, hoặc nhân tỉ số độ dày theo chiều thuận (coi vách dày thì nhiệt vào nhanh)."
+    },
+    {
+     "tieu_de": "Thời gian đá tan hết ở hộp thứ hai",
+     "hoi": "Đá trong hộp thứ hai tan hết sau bao nhiêu giờ?",
+     "dap_so": 10.8,
+     "sai_so": 0.1,
+     "don_vi": "h",
+     "loi_hay_gap": "Đặt ngược tỉ số công suất : cùng nhiệt lượng thì thời gian tỉ lệ nghịch với công suất, không tỉ lệ thuận.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng nhiệt lượng $Q$ : $P_1t_1=P_2t_2$, rồi giải $t_2$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $t_2=t_1\\cdot\\dfrac{P_2}{P_1}$",
+       "dung": false,
+       "vi_sao": "Công suất nhỏ thì phải lâu mới đủ nhiệt lượng ; thời gian tỉ lệ nghịch với công suất nên tỉ số phải là $\\dfrac{P_1}{P_2}$."
+      },
+      {
+       "text": "Lấy $t_2=t_1\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$",
+       "dung": false,
+       "vi_sao": "Bỏ mất ảnh hưởng của độ dày thành ; hơn nữa chênh nhiệt độ nhỏ thì nhiệt vào chậm, thời gian phải tỉ lệ nghịch với $\\Delta t$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ dày thành để đá tan hết sau 6 giờ",
+     "hoi": "Thành hộp phải dày bao nhiêu xentimét?",
+     "dap_so": 1.67,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Đặt tỉ số độ chênh nhiệt độ theo chiều ngược, hoặc so với hộp thứ hai thay vì hộp đầu (hộp đã biết thời gian 6 giờ).",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng $Q$, cùng thời gian nên $P$ bằng $P_1$ : $\\dfrac{\\Delta t_2}{d}=\\dfrac{\\Delta t_1}{d_1}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d=d_1\\cdot\\dfrac{\\Delta t_1}{\\Delta t_2}$",
+       "dung": false,
+       "vi_sao": "$P$ tỉ lệ thuận với $\\Delta t$, tỉ lệ nghịch với $d$ ; giữ $P$ không đổi thì $d$ phải tỉ lệ thuận với $\\Delta t$, không phải tỉ lệ nghịch."
+      },
+      {
+       "text": "Lấy $d=d_2\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$",
+       "dung": false,
+       "vi_sao": "Hộp thứ hai không tan hết sau 6 giờ ; mốc so sánh phải là hộp đầu (dày $d_1$, tan hết sau đúng 6 giờ)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Hao phí không đổi: đun hai lần để khử nhiệt dung chưa biết của ấm",
+   "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+   "problem_html": "<p>Dùng một ấm điện đun nước từ $20\\ ^\\circ\\text{C}$ tới sôi ($100\\ ^\\circ\\text{C}$). Đun $1$ lít nước mất $10$ phút ; đun $2$ lít nước (cùng ấm, cùng nguồn điện, cùng nhiệt độ ban đầu) mất $18$ phút. Coi công suất điện của ấm và công suất hao phí ra môi trường không đổi trong mọi lần đun. Vỏ ấm có nhiệt dung $C$ (nhiệt lượng để vỏ ấm nóng thêm $1\\ ^\\circ\\text{C}$) chưa biết ; lần nào vỏ ấm cũng nóng từ $20\\ ^\\circ\\text{C}$ lên $100\\ ^\\circ\\text{C}$ cùng với nước. Nước có $c=4200\\ \\text{J/(kg·K)}$ ; $1$ lít nước có khối lượng $1\\ \\text{kg}$.</p><ol type=\"a\"><li>Tìm phần công suất dùng để làm nóng nước và vỏ ấm, $P_{ci}=P-P_{hp}$.</li><li>Tìm nhiệt dung $C$ của vỏ ấm.</li><li>Đun $3$ lít nước từ $20\\ ^\\circ\\text{C}$ tới sôi thì mất bao nhiêu phút?</li><li>Trên ấm ghi $875\\ \\text{W}$ (coi là công suất điện ấm tiêu thụ). Tìm công suất hao phí $P_{hp}$ và hiệu suất của lần đun $1$ lít nước nếu chỉ tính nhiệt lượng nước nhận là có ích.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-2-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Ba ấm điện giống nhau đựng 1 lít, 2 lít và 3 lít nước; nhiệt kế cạnh mỗi ấm chỉ nhiệt độ nước tăng từ 20 lên 100 độ\"><text x=\"210.0\" y=\"18.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Cùng ấm, cùng nguồn điện, hao phí không đổi</text><text x=\"210.0\" y=\"38.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Đun từ 20 °C tới sôi (100 °C)</text><path d=\"M22.0,154 L86.0,154 L83.57142857142857,139 L24.42857142857143,139 Z\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"/><path d=\"M19.0,156 L89.0,156 L79.0,86 L29.0,86 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"42.0\" y1=\"80.0\" x2=\"66.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><path d=\"M25.0,134 L5.0,106\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M77.0,96 Q107.0,100 87.0,138\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"100\" y=\"64\" width=\"8\" height=\"92\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"110.0\" y1=\"68.0\" x2=\"116.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"118.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">100</text><line x1=\"110.0\" y1=\"148.0\" x2=\"116.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"118.0\" y=\"152.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">20</text><rect x=\"101.5\" y=\"148\" width=\"5\" height=\"8\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"148;68\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"8;88\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"54.0\" y=\"178.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">1 lít</text><text x=\"54.0\" y=\"198.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">10 phút</text><path d=\"M152.0,154 L216.0,154 L211.14285714285714,122 L156.85714285714286,122 Z\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"/><path d=\"M149.0,156 L219.0,156 L209.0,86 L159.0,86 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"172.0\" y1=\"80.0\" x2=\"196.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><path d=\"M155.0,134 L135.0,106\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M207.0,96 Q237.0,100 217.0,138\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"230\" y=\"64\" width=\"8\" height=\"92\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"240.0\" y1=\"68.0\" x2=\"246.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"248.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">100</text><line x1=\"240.0\" y1=\"148.0\" x2=\"246.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"248.0\" y=\"152.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">20</text><rect x=\"231.5\" y=\"148\" width=\"5\" height=\"8\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"148;68\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"8;88\" dur=\"9.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"184.0\" y=\"178.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">2 lít</text><text x=\"184.0\" y=\"198.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">18 phút</text><path d=\"M282.0,154 L346.0,154 L338.7142857142857,105 L289.2857142857143,105 Z\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"/><path d=\"M279.0,156 L349.0,156 L339.0,86 L289.0,86 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"302.0\" y1=\"80.0\" x2=\"326.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><path d=\"M285.0,134 L265.0,106\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M337.0,96 Q367.0,100 347.0,138\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"360\" y=\"64\" width=\"8\" height=\"92\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"370.0\" y1=\"68.0\" x2=\"376.0\" y2=\"68.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"378.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">100</text><line x1=\"370.0\" y1=\"148.0\" x2=\"376.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"378.0\" y=\"152.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">20</text><rect x=\"361.5\" y=\"148\" width=\"5\" height=\"8\" fill=\"#f87171\"/><text x=\"314.0\" y=\"178.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">3 lít</text><text x=\"314.0\" y=\"198.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">? phút</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy nhanh: 1 s = 2 phút thật. Cột đỏ là nhiệt độ nước, tăng đều từ 20 °C tới 100 °C. Ấm 3 lít là điều cần tìm nên không chạy.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt dung $C$ của một vật là nhiệt lượng làm vật nóng thêm $1\\ ^\\circ\\text{C}$ (đơn vị J/K).</li><li><strong>Công thức:</strong> nước nhận $Q=m\\,c\\,\\Delta t$ ; vỏ ấm nhận $C\\,\\Delta t$ ; hao phí $Q_{hp}=P_{hp}\\,t$.</li><li><strong>Bảo toàn năng lượng:</strong> $P\\,t=m\\,c\\,\\Delta t+C\\,\\Delta t+P_{hp}\\,t$, tức $P_{ci}\\,t=(mc+C)\\,\\Delta t$ với $P_{ci}=P-P_{hp}$.</li><li><strong>Hiệu suất:</strong> $H=\\dfrac{Q_{ci}}{P\\,t}$.</li><li><strong>Điều kiện:</strong> $P$ và $P_{hp}$ không đổi ; thời gian đổi ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhiệt lượng cho một lít nước thêm</span></p><p>Lần 2 hơn lần 1 đúng $1$ lít nước ; vỏ ấm và $\\Delta t=80\\ ^\\circ\\text{C}$ như nhau :</p>$$Q_n=m\\,c\\,\\Delta t=1\\cdot4200\\cdot80$$<div class=\"bt-ans\">$$Q_n=336\\,000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất làm nóng nước và vỏ ấm</span></p><p>Trừ phương trình lần 1 khỏi lần 2 : phần vỏ ấm $C\\,\\Delta t$ triệt tiêu.</p>$$P_{ci}\\,(t_2-t_1)=Q_n$$$$P_{ci}=\\dfrac{336\\,000}{1080-600}=\\dfrac{336\\,000}{480}$$<div class=\"bt-ans\">$$P_{ci}=700\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhiệt dung của vỏ ấm</span></p><p>Phương trình lần 1 :</p>$$P_{ci}\\,t_1=(m_1c+C)\\,\\Delta t$$$$700\\cdot600=(4200+C)\\cdot80$$$$4200+C=5250$$<div class=\"bt-ans\">$$C=1050\\ \\text{J/K}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian đun 3 lít nước</span></p>$$t_3=\\dfrac{(m_3c+C)\\,\\Delta t}{P_{ci}}$$$$t_3=\\dfrac{(3\\cdot4200+1050)\\cdot80}{700}$$<div class=\"bt-ans\">$$t_3=1560\\ \\text{s}=26\\ \\text{phút}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Công suất hao phí</span></p>$$P_{hp}=P-P_{ci}=875-700$$<div class=\"bt-ans\">$$P_{hp}=175\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Hiệu suất lần đun 1 lít</span></p><p>Có ích chỉ là nhiệt lượng nước nhận ; điện năng toàn phần tính trong $t_1=600\\ \\text{s}$ :</p>$$H=\\dfrac{m_1c\\,\\Delta t}{P\\,t_1}=\\dfrac{336\\,000}{875\\cdot600}$$<div class=\"bt-ans\">$$H=0{,}64=64\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Mỗi lít thêm cần thêm $8$ phút : $18+8=26$ phút, khớp câu c ✓.</p><p>Lần 1 : nước $336\\,000\\ \\text{J}$ + vỏ ấm $1050\\cdot80=84\\,000\\ \\text{J}$ + hao phí $175\\cdot600=105\\,000\\ \\text{J}$ $=525\\,000\\ \\text{J}=875\\cdot600$ ✓.</p><p>Đơn vị : $\\dfrac{\\text{J}}{\\text{s}}=\\text{W}$ ; $C$ tính bằng $\\dfrac{\\text{J}}{\\text{K}}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_{ci}=700\\ \\text{W}$</p><p>b) $C=1050\\ \\text{J/K}$</p><p>c) $t_3=26$ phút</p><p>d) $P_{hp}=175\\ \\text{W}$ ; $H=64\\ \\%$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>đun hai lượng nước khác nhau, hao phí không đổi</strong> → trừ hai phương trình năng lượng để khử nhiệt dung chưa biết của ấm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-2-2\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Sơ đồ điện năng của ấm chia thành ba phần: làm nóng nước, làm nóng vỏ ấm, hao phí ra môi trường\"><rect x=\"16\" y=\"64\" width=\"120\" height=\"56\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"76.0\" y=\"88.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Điện năng</text><text x=\"76.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">P·t</text><line x1=\"138\" y1=\"92\" x2=\"222\" y2=\"34\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><path d=\"M212.6,34.8 L222.0,34.0 L217.9,42.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"226\" y=\"12\" width=\"178\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"236.0\" y=\"30.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nước nóng lên</text><text x=\"236.0\" y=\"48.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">m·c·Δt</text><line x1=\"138\" y1=\"92\" x2=\"222\" y2=\"92\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M213.8,87.3 L222.0,92.0 L213.8,96.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"226\" y=\"70\" width=\"178\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"236.0\" y=\"88.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Vỏ ấm nóng lên</text><text x=\"236.0\" y=\"106.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C·Δt</text><line x1=\"138\" y1=\"92\" x2=\"222\" y2=\"150\" stroke=\"#f87171\" stroke-width=\"2.2\"/><path d=\"M217.9,141.4 L222.0,150.0 L212.6,149.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"226\" y=\"128\" width=\"178\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"236.0\" y=\"146.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ra môi trường</text><text x=\"236.0\" y=\"164.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"12\">hp</tspan><tspan dy=\"-4\">​</tspan>·t</text><text x=\"16.0\" y=\"198.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Lần 1: m = 1 kg, t<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\">​</tspan> = 600 s · Lần 2: m = 2 kg, t<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">​</tspan> = 1080 s</text><text x=\"16.0\" y=\"218.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Cả nước và vỏ ấm nóng từ 20 °C lên 100 °C: Δt = 80 °C</text></svg><figcaption>Dữ kiện: điện năng ấm nhận chia ba phần ; phần hao phí tỉ lệ với thời gian đun vì công suất hao phí không đổi.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Đun $1$ lít nước mất $10$ phút\"</td><td>$m_1=1\\ \\text{kg}$ ; $t_1=600\\ \\text{s}$ ; $\\Delta t=80\\ ^\\circ\\text{C}$</td><td>Nước nhận $Q=m\\,c\\,\\Delta t$<br>⚠ đổi phút ra giây trước khi tính công suất</td></tr><tr><td>\"đun $2$ lít nước … mất $18$ phút\"</td><td>$m_2=2\\ \\text{kg}$ ; $t_2=1080\\ \\text{s}$</td><td>Hai lần đun khác nhau đúng $1$ lít nước</td></tr><tr><td>\"công suất điện của ấm và công suất hao phí ra môi trường không đổi\"</td><td>$P$, $P_{hp}$ như nhau mọi lần</td><td>⚠ hao phí tỉ lệ với thời gian : $Q_{hp}=P_{hp}\\,t$<br>Phần còn lại $P_{ci}=P-P_{hp}$ làm nóng nước và vỏ ấm</td></tr><tr><td>\"Vỏ ấm có nhiệt dung $C$ … chưa biết\"</td><td>Vỏ ấm nhận $C\\,\\Delta t$, lần nào cũng như nhau</td><td>Nhiệt dung : nhiệt lượng làm vật nóng thêm $1\\ ^\\circ\\text{C}$ (J/K)<br>$P_{ci}\\,t=(mc+C)\\,\\Delta t$</td></tr><tr><td>\"Đun $3$ lít nước … mất bao nhiêu phút?\"</td><td>$m_3=3\\ \\text{kg}$ ; cần $t_3$</td><td>$t_3=\\dfrac{(m_3c+C)\\,\\Delta t}{P_{ci}}$</td></tr><tr><td>\"Trên ấm ghi $875\\ \\text{W}$ … công suất hao phí\"</td><td>$P=875\\ \\text{W}$</td><td>$P_{hp}=P-P_{ci}$</td></tr><tr><td>\"hiệu suất của lần đun $1$ lít nước nếu chỉ tính nhiệt lượng nước nhận là có ích\"</td><td>Cần $H$</td><td>Phần có ích là nhiệt lượng nào? Điện năng toàn phần tính trong thời gian của lần đun nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đun hai lần, hao phí không đổi, ấm có nhiệt dung chưa biết</b> → trừ hai phương trình năng lượng.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhiệt lượng cho một lít nước thêm",
+     "hoi": "Nhiệt lượng để đun 1 lít nước từ 20 °C tới sôi là bao nhiêu jun?",
+     "dap_so": 336000,
+     "sai_so": 1000,
+     "don_vi": "J",
+     "loi_hay_gap": "Lấy độ tăng nhiệt độ bằng 100 °C, quên nước bắt đầu từ 20 °C."
+    },
+    {
+     "tieu_de": "Công suất làm nóng nước và vỏ ấm",
+     "hoi": "Phần công suất làm nóng nước và vỏ ấm là bao nhiêu oát?",
+     "dap_so": 700,
+     "sai_so": 5,
+     "don_vi": "W",
+     "loi_hay_gap": "Chia nhiệt lượng của 1 lít nước cho thời gian lần đun đầu, quên rằng trong lần đó ấm còn làm nóng vỏ ấm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia nhiệt lượng đó cho hiệu thời gian $t_2-t_1$ (đổi ra giây)",
+       "dung": true
+      },
+      {
+       "text": "Chia nhiệt lượng đó cho $t_1=600\\ \\text{s}$",
+       "dung": false,
+       "vi_sao": "Trong $600\\ \\text{s}$ đầu, phần công suất này làm nóng cả nước lẫn vỏ ấm ; nhiệt lượng của riêng 1 lít nước không ứng với $600\\ \\text{s}$."
+      },
+      {
+       "text": "Chia nhiệt lượng đó cho $t_2-t_1=8$ (để nguyên phút)",
+       "dung": false,
+       "vi_sao": "Oát là jun trên giây ; để thời gian theo phút thì kết quả lớn gấp $60$ lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt dung của vỏ ấm",
+     "hoi": "Nhiệt dung C của vỏ ấm là bao nhiêu J/K?",
+     "dap_so": 1050,
+     "sai_so": 10,
+     "don_vi": "J/K",
+     "loi_hay_gap": "Quên trừ phần nhiệt lượng của nước, coi toàn bộ phần làm nóng là của vỏ ấm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $P_{ci}\\,t_1=(m_1c+C)\\,\\Delta t$ cho lần 1 rồi giải ra $C$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $C=\\dfrac{P_{ci}\\,t_1}{\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Đó là nhiệt dung của cả nước lẫn vỏ ấm ; phải trừ phần của nước $m_1c$."
+      },
+      {
+       "text": "Viết phương trình lần 1 với $\\Delta t=100\\ ^\\circ\\text{C}$",
+       "dung": false,
+       "vi_sao": "Nước và vỏ ấm nóng từ $20\\ ^\\circ\\text{C}$ lên $100\\ ^\\circ\\text{C}$ ; độ tăng nhiệt độ không phải $100\\ ^\\circ\\text{C}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian đun 3 lít nước",
+     "hoi": "Đun 3 lít nước tới sôi mất bao nhiêu phút?",
+     "dap_so": 26,
+     "sai_so": 0.2,
+     "don_vi": "phút",
+     "loi_hay_gap": "Cho thời gian tỉ lệ thuận với lượng nước, quên rằng vỏ ấm chỉ có một và nhận nhiệt lượng như nhau mọi lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $t_3=\\dfrac{(m_3c+C)\\,\\Delta t}{P_{ci}}$ rồi đổi ra phút",
+       "dung": true
+      },
+      {
+       "text": "Lấy $t_3=3\\,t_1$ vì nước gấp 3 lần",
+       "dung": false,
+       "vi_sao": "Nhiệt lượng làm nóng vỏ ấm không tăng theo lượng nước nên thời gian không tỉ lệ thuận với khối lượng nước."
+      },
+      {
+       "text": "Tính $t_3=\\dfrac{m_3c\\,\\Delta t}{P_{ci}}$",
+       "dung": false,
+       "vi_sao": "Quên phần nhiệt lượng làm nóng vỏ ấm $C\\,\\Delta t$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất hao phí",
+     "hoi": "Công suất hao phí của ấm là bao nhiêu oát?",
+     "dap_so": 175,
+     "sai_so": 2,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy công suất ghi trên ấm trừ phần chỉ làm nóng nước, coi phần làm nóng vỏ ấm là hao phí ra môi trường.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_{hp}=P-P_{ci}$",
+       "dung": true
+      },
+      {
+       "text": "$P_{hp}=P-\\dfrac{m_1c\\,\\Delta t}{t_1}$",
+       "dung": false,
+       "vi_sao": "Phần $\\dfrac{m_1c\\,\\Delta t}{t_1}$ chỉ tính nước ; vỏ ấm nóng lên không phải là hao phí ra môi trường."
+      },
+      {
+       "text": "$P_{hp}=(P-P_{ci})\\cdot t_1$",
+       "dung": false,
+       "vi_sao": "Nhân với thời gian cho ra nhiệt lượng hao phí (đơn vị J), không phải công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất lần đun 1 lít",
+     "hoi": "Hiệu suất của lần đun 1 lít nước là bao nhiêu phần trăm?",
+     "dap_so": 64,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Coi phần làm nóng vỏ ấm cũng là có ích, hoặc lấy thời gian của lần đun 2 lít.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H=\\dfrac{m_1c\\,\\Delta t}{P\\,t_1}$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{P_{ci}}{P}$",
+       "dung": false,
+       "vi_sao": "Tỉ số này coi cả phần làm nóng vỏ ấm là có ích ; đề chỉ tính nhiệt lượng nước nhận."
+      },
+      {
+       "text": "$H=\\dfrac{m_1c\\,\\Delta t}{P\\,t_2}$",
+       "dung": false,
+       "vi_sao": "Lần đun 1 lít kéo dài $t_1$ ; $t_2$ là thời gian của lần đun 2 lít."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khá · Hao phí tỉ lệ hiệu nhiệt độ: nhiệt độ ổn định của căn phòng có máy sưởi",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Một căn phòng được sưởi bằng máy sưởi điện công suất $1200\\ \\text{W}$ ; máy biến toàn bộ điện năng thành nhiệt và phòng chỉ nhận nhiệt từ máy sưởi. Công suất nhiệt phòng mất ra ngoài trời tỉ lệ thuận với hiệu nhiệt độ trong phòng và ngoài trời : $P_{hp}=k\\,(t-t_0)$, với $t$ là nhiệt độ phòng, $t_0$ là nhiệt độ ngoài trời, $k$ không đổi. Khi ngoài trời $10\\ ^\\circ\\text{C}$, bật máy sưởi liên tục thì nhiệt độ phòng tăng dần rồi ổn định ở $22\\ ^\\circ\\text{C}$.</p><ol type=\"a\"><li>Tìm hệ số $k$.</li><li>Một hôm ngoài trời $4\\ ^\\circ\\text{C}$. Muốn giữ phòng ở $22\\ ^\\circ\\text{C}$ thì máy sưởi phải có công suất bao nhiêu?</li><li>Nếu hôm đó vẫn dùng máy sưởi $1200\\ \\text{W}$ thì nhiệt độ phòng ổn định ở bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-3-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Căn phòng có máy sưởi; nhiệt độ phòng tăng dần rồi dừng ở 22 độ, mũi tên nhiệt mất ra ngoài dài dần\"><rect x=\"20\" y=\"44\" width=\"170\" height=\"130\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"105.0\" y=\"30.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">ngoài trời 10 °C</text><rect x=\"34\" y=\"124\" width=\"36\" height=\"42\" rx=\"3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><polyline points=\"40,134 46,156 52,134 58,156 64,134\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"52.0\" y=\"116.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">1200 W</text><rect x=\"146\" y=\"66\" width=\"8\" height=\"100\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"147.5\" y=\"136.0\" width=\"5\" height=\"30.0\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"136.0;131.5;127.6;124.1;121.1;118.5;116.2;114.2;112.4;110.8;109.5;108.3;107.3;106.4;105.6;104.9;104.3;103.7;103.3;102.9;102.5;102.2;101.9;101.7;101.5;101.3;101.1;101.0;100.9;100.8;100.7\" keyTimes=\"0.000;0.033;0.067;0.100;0.133;0.167;0.200;0.233;0.267;0.300;0.333;0.367;0.400;0.433;0.467;0.500;0.533;0.567;0.600;0.633;0.667;0.700;0.733;0.767;0.800;0.833;0.867;0.900;0.933;0.967;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"30.0;34.5;38.4;41.9;44.9;47.5;49.8;51.8;53.6;55.2;56.5;57.7;58.7;59.6;60.4;61.1;61.7;62.3;62.7;63.1;63.5;63.8;64.1;64.3;64.5;64.7;64.9;65.0;65.1;65.2;65.3\" keyTimes=\"0.000;0.033;0.067;0.100;0.133;0.167;0.200;0.233;0.267;0.300;0.333;0.367;0.400;0.433;0.467;0.500;0.533;0.567;0.600;0.633;0.667;0.700;0.733;0.767;0.800;0.833;0.867;0.900;0.933;0.967;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"140.0\" y=\"62.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">phòng</text><line x1=\"192\" y1=\"100\" x2=\"192\" y2=\"100\" stroke=\"#fb923c\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"192.0;198.0;203.2;207.8;211.8;215.4;218.4;221.1;223.5;225.5;227.3;228.9;230.3;231.5;232.6;233.5;234.3;235.0;235.6;236.2;236.7;237.1;237.4;237.8;238.0;238.3;238.5;238.7;238.9;239.0;239.1\" keyTimes=\"0.000;0.033;0.067;0.100;0.133;0.167;0.200;0.233;0.267;0.300;0.333;0.367;0.400;0.433;0.467;0.500;0.533;0.567;0.600;0.633;0.667;0.700;0.733;0.767;0.800;0.833;0.867;0.900;0.933;0.967;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0,0;6.0,0;11.2,0;15.8,0;19.8,0;23.4,0;26.4,0;29.1,0;31.5,0;33.5,0;35.3,0;36.9,0;38.3,0;39.5,0;40.6,0;41.5,0;42.3,0;43.0,0;43.6,0;44.2,0;44.7,0;45.1,0;45.4,0;45.8,0;46.0,0;46.3,0;46.5,0;46.7,0;46.9,0;47.0,0;47.1,0\" keyTimes=\"0.000;0.033;0.067;0.100;0.133;0.167;0.200;0.233;0.267;0.300;0.333;0.367;0.400;0.433;0.467;0.500;0.533;0.567;0.600;0.633;0.667;0.700;0.733;0.767;0.800;0.833;0.867;0.900;0.933;0.967;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M183.3,95.0 L192.0,100.0 L183.3,105.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"198.0\" y=\"124.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">nhiệt</text><text x=\"198.0\" y=\"138.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">mất ra</text><line x1=\"276.0\" y1=\"176.0\" x2=\"410.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M403.1,172.0 L410.0,176.0 L403.1,180.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"276.0\" y1=\"176.0\" x2=\"276.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M272.0,56.9 L276.0,50.0 L280.0,56.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"282.0\" y=\"52.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">t (°C)</text><text x=\"410.0\" y=\"192.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">thời gian</text><line x1=\"276.0\" y1=\"136.0\" x2=\"404.0\" y2=\"136.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"272.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">10</text><line x1=\"276.0\" y1=\"88.0\" x2=\"404.0\" y2=\"88.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"272.0\" y=\"92.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">22</text><polyline fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" opacity=\"1\" points=\"276.0,136.0 280.1,130.0 284.1,124.8 288.2,120.2 292.3,116.2 296.3,112.6 300.4,109.6 304.5,106.9 308.5,104.5 312.6,102.5 316.7,100.7 320.7,99.1 324.8,97.7 328.9,96.5 332.9,95.4 337.0,94.5 341.1,93.7 345.1,93.0 349.2,92.4 353.3,91.8 357.3,91.3 361.4,90.9 365.5,90.6 369.5,90.2 373.6,90.0 377.7,89.7 381.7,89.5 385.8,89.3 389.9,89.1 393.9,89.0 398.0,88.9\" stroke-dasharray=\"139.4\" stroke-dashoffset=\"139.4\"><animate attributeName=\"stroke-dashoffset\" values=\"139.4;132.2;125.5;119.4;113.7;108.3;103.2;98.3;93.6;89.1;84.6;80.2;76.0;71.7;67.5;63.3;59.2;55.1;50.9;46.8;42.8;38.7;34.6;30.5;26.4;22.4;18.3;14.2;10.1;6.1;2.0\" keyTimes=\"0.000;0.033;0.067;0.100;0.133;0.167;0.200;0.233;0.267;0.300;0.333;0.367;0.400;0.433;0.467;0.500;0.533;0.567;0.600;0.633;0.667;0.700;0.733;0.767;0.800;0.833;0.867;0.900;0.933;0.967;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng định tính, thời gian không theo tỉ lệ (giả sử lúc bật máy phòng đang 10 °C): nhiệt độ phòng tăng nhanh rồi chậm dần, dừng ở 22 °C. Mũi tên cam dài dần vì phòng càng ấm hơn ngoài trời thì nhiệt mất ra ngoài càng nhanh.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt độ phòng ổn định khi nhiệt lượng nhận vào và nhiệt lượng mất đi trong mỗi giây bằng nhau.</li><li><strong>Giả thiết hao phí:</strong> $P_{hp}=k\\,(t-t_0)$ ; phòng càng ấm hơn ngoài trời thì mất nhiệt càng nhanh.</li><li><strong>Phương trình cân bằng:</strong> $P=k\\,(t-t_0)$.</li><li><strong>Điều kiện:</strong> phòng chỉ nhận nhiệt từ máy sưởi ; máy biến toàn bộ điện năng thành nhiệt ; $k$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điều kiện nhiệt độ ổn định</span></p><p>Nhiệt độ phòng không đổi nữa nên nhiệt lượng vào bằng nhiệt lượng ra trong mỗi giây :</p>$$P=P_{hp}=k\\,(t-t_0)$$<p>Máy vẫn sưởi, phòng vẫn mất nhiệt ; hai dòng nhiệt bằng nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hệ số k</span></p>$$k=\\dfrac{P}{t-t_0}=\\dfrac{1200}{22-10}$$<div class=\"bt-ans\">$$k=100\\ \\text{W/}^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất cần khi ngoài trời 4 °C</span></p><p>$k$ chỉ phụ thuộc căn phòng (tường, cửa), không đổi :</p>$$P'=k\\,(22-4)=100\\cdot18$$<div class=\"bt-ans\">$$P'=1800\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nhiệt độ ổn định mới với máy 1200 W</span></p>$$1200=k\\,(t'-4)$$$$t'-4=\\dfrac{1200}{100}=12$$<div class=\"bt-ans\">$$t'=16\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Với máy $1200\\ \\text{W}$, hiệu nhiệt độ trong – ngoài lúc ổn định luôn là $\\dfrac{P}{k}=12\\ ^\\circ\\text{C}$ : $10+12=22$ ✓ ; $4+12=16$ ✓.</p><p>Phòng vẫn ấm hơn ngoài trời ($16\\gt4$) nhưng không giữ được $22\\ ^\\circ\\text{C}$ ✓.</p><p>Đơn vị : $\\dfrac{\\text{W}}{^\\circ\\text{C}}\\cdot{}^\\circ\\text{C}=\\text{W}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $k=100\\ \\text{W/}^\\circ\\text{C}$</p><p>b) $P'=1800\\ \\text{W}$</p><p>c) $t'=16\\ ^\\circ\\text{C}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nhiệt độ ổn định</strong> và <strong>hao phí tỉ lệ hiệu nhiệt độ</strong> → cân bằng $P=k\\,(t-t_0)$ ; hiệu nhiệt độ lúc ổn định là $P/k$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-3-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Đồ thị định tính: công suất hao phí tăng theo nhiệt độ phòng, cắt đường công suất máy sưởi tại nhiệt độ ổn định\"><line x1=\"50.0\" y1=\"180.0\" x2=\"404.0\" y2=\"180.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M397.1,176.0 L404.0,180.0 L397.1,184.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"50.0\" y1=\"180.0\" x2=\"50.0\" y2=\"26.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M46.0,32.9 L50.0,26.0 L54.0,32.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"56.0\" y=\"30.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">công suất</text><text x=\"404.0\" y=\"198.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">nhiệt độ phòng t</text><text x=\"100.0\" y=\"198.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">t<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\">​</tspan></text><line x1=\"100.0\" y1=\"180.0\" x2=\"390.0\" y2=\"50.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"386.0\" y=\"42.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"12\">hp</tspan><tspan dy=\"-4\">​</tspan> = k(t − t<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\">​</tspan>)</text><line x1=\"50.0\" y1=\"110.0\" x2=\"396.0\" y2=\"110.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"56.0\" y=\"102.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P máy sưởi</text><line x1=\"256.2\" y1=\"110.0\" x2=\"256.2\" y2=\"180.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"256.2\" cy=\"110\" r=\"5\" fill=\"#34d399\"/><text x=\"256.2\" y=\"198.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">t ổn định</text><text x=\"244.2\" y=\"164.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">phòng nóng lên</text><text x=\"268.2\" y=\"164.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">phòng nguội đi</text></svg><figcaption>Hình định tính, không theo số của đề: bên trái giao điểm, máy sưởi cấp nhiều hơn phần mất đi ; bên phải thì ngược lại.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"máy biến toàn bộ điện năng thành nhiệt và phòng chỉ nhận nhiệt từ máy sưởi\"</td><td>$P=1200\\ \\text{W}$ là toàn bộ nhiệt phòng nhận mỗi giây</td><td>⚠ bỏ qua nhiệt từ người, đèn, nắng chiếu vào</td></tr><tr><td>\"tỉ lệ thuận với hiệu nhiệt độ trong phòng và ngoài trời : $P_{hp}=k\\,(t-t_0)$\"</td><td>$k$ không đổi</td><td>⚠ không phải hao phí không đổi : phòng càng ấm hơn ngoài trời thì mất nhiệt càng nhanh</td></tr><tr><td>\"ngoài trời $10\\ ^\\circ\\text{C}$ … ổn định ở $22\\ ^\\circ\\text{C}$\"</td><td>$t_0=10\\ ^\\circ\\text{C}$ ; $t=22\\ ^\\circ\\text{C}$</td><td>Nhiệt độ không đổi nữa thì nhiệt lượng vào và ra mỗi giây so với nhau thế nào?</td></tr><tr><td>\"Tìm hệ số $k$\"</td><td>Cần $k$ (W/°C)</td><td>Phương trình nào nối $P$, $k$ và hiệu nhiệt độ lúc ổn định?</td></tr><tr><td>\"ngoài trời $4\\ ^\\circ\\text{C}$. Muốn giữ phòng ở $22\\ ^\\circ\\text{C}$\"</td><td>$t_0'=4\\ ^\\circ\\text{C}$ ; $t=22\\ ^\\circ\\text{C}$ ; cần $P'$</td><td>$k$ có đổi khi trời lạnh hơn không? Hiệu nhiệt độ mới là bao nhiêu?</td></tr><tr><td>\"vẫn dùng máy sưởi $1200\\ \\text{W}$\"</td><td>$P=1200\\ \\text{W}$ ; $t_0'=4\\ ^\\circ\\text{C}$ ; cần $t'$</td><td>Trong phương trình cân bằng, đại lượng nào bây giờ là ẩn?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiệt độ ổn định</b> và <b>hao phí tỉ lệ hiệu nhiệt độ</b> → cân bằng $P=k\\,(t-t_0)$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điều kiện nhiệt độ ổn định",
+     "hoi": "Khi nhiệt độ phòng đã ổn định, phát biểu nào đúng?",
+     "lua_chon": [
+      {
+       "text": "Công suất máy sưởi bằng công suất nhiệt phòng mất ra ngoài",
+       "dung": true
+      },
+      {
+       "text": "Máy sưởi đã ngừng truyền nhiệt cho phòng",
+       "dung": false,
+       "vi_sao": "Máy vẫn chạy và vẫn cấp nhiệt ; nhiệt độ đứng yên vì nhiệt mất ra ngoài nhanh đúng bằng thế."
+      },
+      {
+       "text": "Phòng không còn mất nhiệt ra ngoài trời",
+       "dung": false,
+       "vi_sao": "Phòng còn ấm hơn ngoài trời thì nhiệt vẫn truyền ra ngoài."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng nhiệt độ đứng yên vì không còn nhiệt truyền vào hoặc ra."
+    },
+    {
+     "tieu_de": "Hệ số k",
+     "hoi": "Hệ số k bằng bao nhiêu W/°C?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "W/°C",
+     "loi_hay_gap": "Chia công suất cho nhiệt độ phòng hoặc nhiệt độ ngoài trời thay vì cho hiệu hai nhiệt độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $P=k\\,(t-t_0)$ với $t-t_0$ là hiệu nhiệt độ lúc ổn định",
+       "dung": true
+      },
+      {
+       "text": "Lấy $k=\\dfrac{P}{t}$ với $t$ là nhiệt độ phòng",
+       "dung": false,
+       "vi_sao": "Hao phí tỉ lệ với hiệu nhiệt độ trong – ngoài, không phải với nhiệt độ phòng."
+      },
+      {
+       "text": "Lấy $k=P\\cdot(t-t_0)$",
+       "dung": false,
+       "vi_sao": "$P=k\\,(t-t_0)$ nên $k$ là thương chứ không phải tích ; đơn vị của $k$ phải là W/°C."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất cần khi ngoài trời 4 °C",
+     "hoi": "Máy sưởi phải có công suất bao nhiêu oát?",
+     "dap_so": 1800,
+     "sai_so": 10,
+     "don_vi": "W",
+     "loi_hay_gap": "Áp giả thiết hao phí không đổi, giữ nguyên công suất cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ $k$, tính $P'=k\\,(22-4)$",
+       "dung": true
+      },
+      {
+       "text": "Vẫn $1200\\ \\text{W}$ vì vẫn giữ phòng $22\\ ^\\circ\\text{C}$",
+       "dung": false,
+       "vi_sao": "Hao phí phụ thuộc hiệu nhiệt độ trong – ngoài ; hiệu này đã đổi nên công suất cần cũng đổi."
+      },
+      {
+       "text": "Lấy $P'=1200\\cdot\\dfrac{10}{4}$",
+       "dung": false,
+       "vi_sao": "Hao phí tỉ lệ với hiệu nhiệt độ, không tỉ lệ nghịch với nhiệt độ ngoài trời."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ ổn định mới với máy 1200 W",
+     "hoi": "Phòng ổn định ở bao nhiêu °C?",
+     "dap_so": 16,
+     "sai_so": 0.2,
+     "don_vi": "°C",
+     "loi_hay_gap": "Quên cộng nhiệt độ ngoài trời, lấy luôn hiệu nhiệt độ làm nhiệt độ phòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cân bằng $1200=k\\,(t'-4)$ rồi giải $t'$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $t'=\\dfrac{P}{k}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{P}{k}$ là hiệu nhiệt độ trong – ngoài, chưa phải nhiệt độ phòng."
+      },
+      {
+       "text": "Lấy $t'=22\\cdot\\dfrac{4}{10}$",
+       "dung": false,
+       "vi_sao": "Nhiệt độ phòng không tỉ lệ thuận với nhiệt độ ngoài trời ; mốc $0\\ ^\\circ\\text{C}$ là quy ước nên tỉ số hai nhiệt độ không có ý nghĩa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Nâng cao · Nở dài: khe hở đường ray, độ dãn của cầu, thước bị nở",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Thép có hệ số nở dài $\\alpha=12\\cdot10^{-6}\\ \\text{K}^{-1}$. Trong cả bài, coi mỗi vật nóng đều, có cùng nhiệt độ ở mọi chỗ và được dãn tự do.</p><ol type=\"a\"><li>Một đường ray lắp bằng các thanh thép giống nhau, mỗi thanh dài $12{,}5\\ \\text{m}$, lắp lúc nhiệt độ $15\\ ^\\circ\\text{C}$. Mùa hè ray nóng nhất tới $55\\ ^\\circ\\text{C}$. Lúc lắp, khe hở giữa đầu hai thanh liền nhau phải tối thiểu bao nhiêu milimét để ray không bị cong?</li><li>Một cây cầu thép dài $500\\ \\text{m}$ ở $10\\ ^\\circ\\text{C}$, một đầu đặt trên con lăn. Nhiệt độ trong năm thay đổi từ $10\\ ^\\circ\\text{C}$ đến $50\\ ^\\circ\\text{C}$. Chiều dài cầu thay đổi nhiều nhất bao nhiêu xentimét?</li><li>Một thước thép có vạch chia khắc đúng ở $20\\ ^\\circ\\text{C}$. Ở $45\\ ^\\circ\\text{C}$, thước và ống cùng nhiệt độ, dùng thước đo một ống thì đọc được $2{,}000\\ \\text{m}$. Số đọc này lớn hơn hay nhỏ hơn chiều dài thật của ống lúc đó? Tính chiều dài thật.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-4-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Hai thanh ray nóng lên, dãn dài ra và khe hở giữa chúng hẹp dần\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ray nóng dần từ lúc lắp tới lúc nóng nhất</text><rect x=\"22.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"60.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"98.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"136.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"174.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"212.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"250.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"288.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"326.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"364.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"402.0\" y=\"126.0\" width=\"18.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"1.4\"></rect><rect x=\"10.0\" y=\"112.0\" width=\"188.0\" height=\"14.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"width\" values=\"188.0;200.0\" keyTimes=\"0.0000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"222.0\" y=\"112.0\" width=\"188.0\" height=\"14.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"2\"><animate attributeName=\"x\" values=\"222.0;210.0\" keyTimes=\"0.0000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"width\" values=\"188.0;200.0\" keyTimes=\"0.0000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"210\" y=\"96\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">khe hở</text><line x1=\"210.0\" y1=\"100.0\" x2=\"210.0\" y2=\"108.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M213.0,102.8 L210.0,108.0 L207.0,102.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"387.0\" y=\"30.0\" width=\"10.0\" height=\"54.0\" rx=\"5\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.6\"></rect><circle cx=\"392\" cy=\"90\" r=\"8\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"389.5\" y=\"80.0\" width=\"5.0\" height=\"4.0\" rx=\"0\" fill=\"#f87171\" fill-opacity=\"1\" stroke=\"#f87171\" stroke-width=\"0\"><animate attributeName=\"y\" values=\"80.0;34.0;34.0\" keyTimes=\"0.0000;1.0000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"4.0;50.0;50.0\" keyTimes=\"0.0000;1.0000;1.0000\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"380\" y=\"38\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">55 °C</text><text x=\"380\" y=\"84\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">15 °C</text><text opacity=\"0\" x=\"16\" y=\"160\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">hai đầu ray vừa chạm nhau<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9950\" calcMode=\"discrete\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"16\" y=\"184\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Mỗi thanh dài l<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\"> = 12,5 m lúc lắp</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nhiệt kế dâng từ lúc lắp tới lúc nóng nhất, hai thanh ray dãn về phía khe. Độ dãn và khe hở vẽ phóng đại rất nhiều lần, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật rắn nóng lên thì dài ra ; $\\alpha$ là độ dãn của $1\\ \\text{m}$ khi tăng $1\\ ^\\circ\\text{C}$.</li><li><strong>Công thức:</strong> $\\Delta l=l_0\\alpha\\Delta t$ ; $l=l_0(1+\\alpha\\Delta t)$.</li><li><strong>Hiệu nhiệt độ:</strong> $\\Delta t$ tính từ lúc vật có chiều dài $l_0$ ; $1\\ ^\\circ\\text{C}$ chênh lệch $=1\\ \\text{K}$.</li><li><strong>Điều kiện:</strong> vật nóng đều, dãn tự do.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khe hở tối thiểu</span></p><p>Mỗi thanh dãn thêm $\\Delta l$, nửa về mỗi đầu. Một khe nhận nửa độ dãn của hai thanh liền nhau, tổng đúng $\\Delta l$ :</p>$$\\Delta l=l_0\\alpha\\Delta t$$$$\\Delta l=12{,}5\\cdot12\\cdot10^{-6}\\cdot(55-15)$$<div class=\"bt-ans\">$$\\Delta l=6\\cdot10^{-3}\\ \\text{m}=6\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ thay đổi chiều dài cầu</span></p><p>Nhiệt độ thay đổi nhiều nhất $\\Delta t=50-10=40\\ ^\\circ\\text{C}$ :</p>$$\\Delta l=500\\cdot12\\cdot10^{-6}\\cdot40$$<div class=\"bt-ans\">$$\\Delta l=0{,}24\\ \\text{m}=24\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số đọc lớn hay nhỏ hơn</span></p><p>Ở $45\\ ^\\circ\\text{C}$ thước dãn : mỗi khoảng chia dài hơn giá trị ghi trên vạch.</p><p>Cùng một ống, số khoảng chia đặt vừa ít hơn.</p><div class=\"bt-ans\"><p>Số đọc nhỏ hơn chiều dài thật (thước đọc thiếu).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều dài thật của ống</span></p><p>Đoạn thước ghi $2{,}000\\ \\text{m}$ đã dãn từ $20\\ ^\\circ\\text{C}$ tới $45\\ ^\\circ\\text{C}$ :</p>$$l=l_{\\text{đọc}}(1+\\alpha\\Delta t)$$$$l=2{,}000\\cdot(1+12\\cdot10^{-6}\\cdot25)$$<div class=\"bt-ans\">$$l=2{,}0006\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>a) $\\dfrac{6\\ \\text{mm}}{12{,}5\\ \\text{m}}\\approx0{,}05\\%$ : độ dãn nhỏ, khe ray vài milimét là hợp lí ✓.</p><p>b) Cùng $\\Delta t=40\\ ^\\circ\\text{C}$ như câu a, cầu dài gấp $40$ lần một thanh ray nên dãn gấp $40$ lần : $40\\cdot6\\ \\text{mm}=240\\ \\text{mm}$ ✓.</p><p>c) Thước đọc thiếu $0{,}6\\ \\text{mm}$ trên $2\\ \\text{m}$ : chỉ đáng kể khi cần đo rất chính xác ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Khe hở tối thiểu $6\\ \\text{mm}$</p><p>b) Chiều dài cầu thay đổi nhiều nhất $24\\ \\text{cm}$</p><p>c) Số đọc nhỏ hơn chiều dài thật ; $l=2{,}0006\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>khe hở, độ dãn, thước khắc đúng ở một nhiệt độ</strong> → $\\Delta l=l_0\\alpha\\Delta t$, $\\Delta t$ tính từ lúc vật có chiều dài $l_0$ ; thước nóng thì đọc thiếu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-4-2\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Ba tình huống nở dài: khe hở ray, cầu thép đặt trên con lăn, thước thép đo một ống\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">a) Ray: lắp ở 15 °C ; nóng nhất 55 °C</text><text x=\"106\" y=\"40\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">l<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\"> = 12,5 m</tspan></text><rect x=\"16.0\" y=\"46.0\" width=\"180.0\" height=\"12.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"2\"></rect><rect x=\"224.0\" y=\"46.0\" width=\"180.0\" height=\"12.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"2\"></rect><line x1=\"196.0\" y1=\"70.0\" x2=\"224.0\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M202.9,74.0 L196.0,70.0 L202.9,66.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M217.1,66.0 L224.0,70.0 L217.1,74.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"196.0\" y1=\"64.0\" x2=\"196.0\" y2=\"76.0\" stroke=\"#f87171\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"224.0\" y1=\"64.0\" x2=\"224.0\" y2=\"76.0\" stroke=\"#f87171\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"210.0\" y=\"90\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">khe tối thiểu = ?</text><text x=\"16\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">b) Cầu thép dài 500 m ; trong năm từ 10 °C đến 50 °C</text><text x=\"205\" y=\"134\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Δl = ?</text><rect x=\"40.0\" y=\"140.0\" width=\"330.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"2\"></rect><rect x=\"40.0\" y=\"150.0\" width=\"16.0\" height=\"26.0\" rx=\"0\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"></rect><circle cx=\"356\" cy=\"155\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"370\" cy=\"155\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"346.0\" y=\"160.0\" width=\"34.0\" height=\"16.0\" rx=\"0\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"></rect><text x=\"363\" y=\"192\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">con lăn</text><text x=\"16\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">c) Thước thép khắc vạch đúng ở 20 °C, dùng ở 45 °C</text><rect x=\"40.0\" y=\"228.0\" width=\"300.0\" height=\"10.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.6\"></rect><text x=\"348\" y=\"237\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">ống</text><rect x=\"40.0\" y=\"242.0\" width=\"300.0\" height=\"14.0\" rx=\"0\" fill=\"#fb923c\" fill-opacity=\"0.15\" stroke=\"#fb923c\" stroke-width=\"1.8\"></rect><line x1=\"40.0\" y1=\"242.0\" x2=\"40.0\" y2=\"251.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"55.0\" y1=\"242.0\" x2=\"55.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"242.0\" x2=\"70.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"85.0\" y1=\"242.0\" x2=\"85.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"100.0\" y1=\"242.0\" x2=\"100.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"115.0\" y1=\"242.0\" x2=\"115.0\" y2=\"251.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"242.0\" x2=\"130.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"145.0\" y1=\"242.0\" x2=\"145.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"160.0\" y1=\"242.0\" x2=\"160.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"175.0\" y1=\"242.0\" x2=\"175.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"190.0\" y1=\"242.0\" x2=\"190.0\" y2=\"251.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"205.0\" y1=\"242.0\" x2=\"205.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"220.0\" y1=\"242.0\" x2=\"220.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"235.0\" y1=\"242.0\" x2=\"235.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"250.0\" y1=\"242.0\" x2=\"250.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"265.0\" y1=\"242.0\" x2=\"265.0\" y2=\"251.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"280.0\" y1=\"242.0\" x2=\"280.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"295.0\" y1=\"242.0\" x2=\"295.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"310.0\" y1=\"242.0\" x2=\"310.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"325.0\" y1=\"242.0\" x2=\"325.0\" y2=\"247.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"340.0\" y1=\"242.0\" x2=\"340.0\" y2=\"251.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"40\" y=\"272\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"340\" y=\"272\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">đọc: 2,000 m</text><text x=\"16\" y=\"292\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chiều dài thật của ống l = ?</text></svg><figcaption>Dữ kiện: nhiệt độ lúc lắp, lúc khắc vạch và lúc dùng ghi trên hình ; dấu ? là đại lượng cần tìm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"coi mỗi vật nóng đều, có cùng nhiệt độ ở mọi chỗ và được dãn tự do\"</td><td>vật dãn tự do, nóng đều</td><td>⚠ điều kiện để dùng $\\Delta l=l_0\\alpha\\Delta t$ cho cả vật. Nếu bị chặn hai đầu thì sao ?</td></tr><tr><td>\"Thép có hệ số nở dài $\\alpha=12\\cdot10^{-6}\\ \\text{K}^{-1}$\"</td><td>$\\alpha=12\\cdot10^{-6}\\ \\text{K}^{-1}$</td><td>$\\alpha$ cho biết điều gì về $1\\ \\text{m}$ thép khi tăng $1\\ ^\\circ\\text{C}$ ?</td></tr><tr><td>\"mỗi thanh dài $12{,}5\\ \\text{m}$, lắp lúc nhiệt độ $15\\ ^\\circ\\text{C}$\", \"nóng nhất tới $55\\ ^\\circ\\text{C}$\"</td><td>$l_0=12{,}5\\ \\text{m}$ ; $15\\ ^\\circ\\text{C}$ ; $55\\ ^\\circ\\text{C}$</td><td>$\\Delta t$ tính từ nhiệt độ nào tới nhiệt độ nào ?</td></tr><tr><td>\"khe hở giữa đầu hai thanh liền nhau phải tối thiểu\"</td><td>khe $=?$</td><td>Mỗi thanh dãn về cả hai đầu. Một khe nhận phần dãn của những thanh nào ?</td></tr><tr><td>\"cầu thép dài $500\\ \\text{m}$\", \"từ $10\\ ^\\circ\\text{C}$ đến $50\\ ^\\circ\\text{C}$\"</td><td>$l_0=500\\ \\text{m}$ ; $\\Delta l=?$</td><td>Cùng công thức nở dài. So với ray, $\\Delta t$ và $l_0$ khác gì ?</td></tr><tr><td>\"vạch chia khắc đúng ở $20\\ ^\\circ\\text{C}$\", \"Ở $45\\ ^\\circ\\text{C}$ … đọc được $2{,}000\\ \\text{m}$\"</td><td>$20\\ ^\\circ\\text{C}$ ; $45\\ ^\\circ\\text{C}$ ; $l_{\\text{đọc}}=2{,}000\\ \\text{m}$ ; $l=?$</td><td>Ở $45\\ ^\\circ\\text{C}$ một khoảng chia ghi “$1\\ \\text{cm}$” thật dài bao nhiêu ? Cùng ống thì đặt được nhiều hay ít khoảng chia hơn ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khe hở</b>, <b>độ dãn</b>, <b>thước khắc đúng ở … °C</b> → nghĩ tới <b>$\\Delta l=l_0\\alpha\\Delta t$</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khe hở tối thiểu",
+     "hoi": "Khe hở tối thiểu lúc lắp bằng bao nhiêu milimét?",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "mm",
+     "loi_hay_gap": "Lấy $\\Delta t$ bằng nhiệt độ nóng nhất (tính từ $0\\ ^\\circ\\text{C}$) thay vì từ lúc lắp ; hoặc quên đổi mét sang milimét."
+    },
+    {
+     "tieu_de": "Độ thay đổi chiều dài cầu",
+     "hoi": "Chiều dài cầu thay đổi nhiều nhất bao nhiêu xentimét?",
+     "dap_so": 24.0,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy chiều dài lúc nóng $l_0(1+\\alpha\\Delta t)$ làm đáp số, trong khi đề hỏi phần thay đổi $\\Delta l$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta l=l_0\\alpha\\Delta t$ với $\\Delta t$ là chênh lệch giữa nhiệt độ cao nhất và thấp nhất",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta l=l_0\\alpha t$ với $t$ là nhiệt độ cao nhất",
+       "dung": false,
+       "vi_sao": "$\\alpha$ nhân với độ tăng nhiệt độ tính từ lúc cầu dài $l_0$, không nhân với nhiệt độ cuối."
+      },
+      {
+       "text": "$\\Delta l=l_0(1+\\alpha\\Delta t)$",
+       "dung": false,
+       "vi_sao": "Đó là chiều dài cầu lúc nóng, không phải phần thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số đọc lớn hay nhỏ hơn",
+     "hoi": "Ở 45 °C, số đọc trên thước so với chiều dài thật của ống thế nào?",
+     "lua_chon": [
+      {
+       "text": "Nhỏ hơn chiều dài thật, vì mỗi khoảng chia của thước đã dãn dài ra",
+       "dung": true
+      },
+      {
+       "text": "Lớn hơn chiều dài thật, vì thước dài ra nên đo được nhiều hơn",
+       "dung": false,
+       "vi_sao": "Thước dài ra thì mỗi khoảng chia dài hơn giá trị ghi ; cùng một ống chỉ chứa được ít khoảng chia hơn."
+      },
+      {
+       "text": "Bằng chiều dài thật, vì thước và ống cùng nóng lên",
+       "dung": false,
+       "vi_sao": "Đề chỉ cho thước khắc đúng ở một nhiệt độ ; chiều dài thật của ống lúc đó là thứ cần tìm, so với thước đã dãn."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ thước dài ra thì số đọc lớn hơn ; thật ra mỗi vạch ghi một giá trị cố định mà khoảng chia đã dài ra.",
+     "chon_buoc_ke": [
+      {
+       "text": "So sánh độ dài thật của một khoảng chia lúc dãn với giá trị ghi trên vạch",
+       "dung": true
+      },
+      {
+       "text": "Tính luôn $l=l_{\\text{đọc}}(1-\\alpha\\Delta t)$",
+       "dung": false,
+       "vi_sao": "Chưa xét thước dãn làm số đọc lệch về phía nào đã chọn dấu ; cần lập luận trước rồi mới viết công thức."
+      },
+      {
+       "text": "Coi thước không đổi vì thép nở rất ít",
+       "dung": false,
+       "vi_sao": "Độ nở nhỏ nhưng đề hỏi đúng phần lệch nhỏ đó ; bỏ qua thì không trả lời được câu c."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dài thật của ống",
+     "hoi": "Chiều dài thật của ống bằng bao nhiêu mét?",
+     "dap_so": 2.0006,
+     "sai_so": 5e-05,
+     "don_vi": "m",
+     "loi_hay_gap": "Chia số đọc cho $(1+\\alpha\\Delta t)$ — làm chiều dài thật ngắn hơn số đọc, ngược với bước trước ; hoặc lấy $\\Delta t$ tính từ $0\\ ^\\circ\\text{C}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$l=l_{\\text{đọc}}(1+\\alpha\\Delta t)$, $\\Delta t$ tính từ nhiệt độ khắc vạch",
+       "dung": true
+      },
+      {
+       "text": "$l=\\dfrac{l_{\\text{đọc}}}{1+\\alpha\\Delta t}$",
+       "dung": false,
+       "vi_sao": "Kết quả nhỏ hơn số đọc, trái với bước trước : thước dãn thì số đọc nhỏ hơn chiều dài thật."
+      },
+      {
+       "text": "$l=l_{\\text{đọc}}(1+\\alpha\\cdot45)$",
+       "dung": false,
+       "vi_sao": "Vạch khắc đúng ở $20\\ ^\\circ\\text{C}$ nên độ tăng nhiệt độ tính từ $20\\ ^\\circ\\text{C}$, không từ $0\\ ^\\circ\\text{C}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Nở khối: khối lượng riêng theo nhiệt độ và thể tích chất lỏng tràn khỏi bình",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Dầu hoả có khối lượng riêng $800\\ \\text{kg/m}^3$ ở $20\\ ^\\circ\\text{C}$ và hệ số nở khối $\\beta=1\\cdot10^{-3}\\ \\text{K}^{-1}$. Khi dầu nở ra, khối lượng của lượng dầu đó không đổi.</p><ol type=\"a\"><li>Tính khối lượng riêng của dầu ở $35\\ ^\\circ\\text{C}$.</li><li>Một người mua $1000$ lít dầu, đong lúc dầu ở $35\\ ^\\circ\\text{C}$. So với mua $1000$ lít đong lúc dầu ở $20\\ ^\\circ\\text{C}$, người đó nhận ít hơn bao nhiêu kilôgam dầu?</li><li>Một can thép có dung tích $20$ lít ở $20\\ ^\\circ\\text{C}$, được đổ đầy dầu tới miệng ở $20\\ ^\\circ\\text{C}$. Để can ngoài nắng, cả can và dầu cùng nóng lên tới $40\\ ^\\circ\\text{C}$. Hệ số nở khối của thép là $36\\cdot10^{-6}\\ \\text{K}^{-1}$. Bỏ qua sự bay hơi, tính thể tích dầu tràn ra khỏi can.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-5-0\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Can thép đựng đầy dầu tới miệng; khi nóng lên, mặt dầu dâng quá miệng và dầu tràn ra ngoài\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Can đầy dầu tới miệng, nóng dần từ 20 °C lên 40 °C</text><line x1=\"96.0\" y1=\"200.0\" x2=\"360.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"152.0\" y=\"70.0\" width=\"116.0\" height=\"129.0\" rx=\"0\" fill=\"#f59e0b\" fill-opacity=\"0.35\" stroke=\"#f59e0b\" stroke-width=\"0\"><animate attributeName=\"y\" values=\"70.0;63.0;63.0\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"129.0;136.0;136.0\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></rect><path d=\"M150,70 L150,200 L270,200 L270,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M180,70 C180,46 240,46 240,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M268,64 C284,64 286,78 284,96 L284,197\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5000\" calcMode=\"discrete\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></path><ellipse cx=\"306\" cy=\"200\" rx=\"0\" ry=\"3.5\" fill=\"#f59e0b\" fill-opacity=\".7\"><animate attributeName=\"rx\" values=\"0.0;0.0;26.0\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></ellipse><text opacity=\"0\" x=\"306\" y=\"222\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"12\">tràn</tspan><tspan dy=\"-4\"> = ?</tspan><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9950\" calcMode=\"discrete\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></text><rect x=\"65.0\" y=\"60.0\" width=\"10.0\" height=\"110.0\" rx=\"5\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.6\"></rect><circle cx=\"70\" cy=\"176\" r=\"8\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"67.5\" y=\"166.0\" width=\"5.0\" height=\"4.0\" rx=\"0\" fill=\"#f87171\" fill-opacity=\"1\" stroke=\"#f87171\" stroke-width=\"0\"><animate attributeName=\"y\" values=\"166.0;64.0;64.0\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"4.0;106.0;106.0\" keyTimes=\"0.0000;0.5000;1.0000\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"58\" y=\"68\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">40 °C</text><text x=\"58\" y=\"170\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">20 °C</text><text x=\"210\" y=\"140\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">dầu</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: cả can và dầu nóng lên cùng lúc ; dầu nở nhiều hơn dung tích can nên tràn ra. Phần dầu dâng và tràn vẽ phóng đại, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chất lỏng nóng lên thì thể tích tăng, khối lượng giữ nguyên.</li><li><strong>Công thức:</strong> $V=V_0(1+\\beta\\Delta t)$ ; $\\Delta V=V_0\\beta\\Delta t$.</li><li><strong>Khối lượng riêng:</strong> $m$ không đổi nên $D=\\dfrac{D_0}{1+\\beta\\Delta t}$.</li><li><strong>Bình chứa:</strong> dung tích bình nở như một khối đặc cùng chất làm bình.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng riêng ở 35 °C</span></p><p>Cùng lượng dầu : $m=D_{20}V_0=D_{35}V_0(1+\\beta\\Delta t)$ :</p>$$D_{35}=\\dfrac{D_{20}}{1+\\beta\\Delta t}=\\dfrac{800}{1+10^{-3}\\cdot15}$$<div class=\"bt-ans\">$$D_{35}\\approx788{,}2\\ \\text{kg/m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lượng dầu nhận thiếu</span></p><p>$1000\\ \\text{L}=1\\ \\text{m}^3$. Đong ở $35\\ ^\\circ\\text{C}$ được $m_{35}=788{,}2\\ \\text{kg}$, đong ở $20\\ ^\\circ\\text{C}$ được $800\\ \\text{kg}$ :</p>$$\\Delta m=(D_{20}-D_{35})V=(800-788{,}2)\\cdot1$$<div class=\"bt-ans\">$$\\Delta m\\approx11{,}8\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dầu nở thêm</span></p><p>Dầu tăng từ $20\\ ^\\circ\\text{C}$ lên $40\\ ^\\circ\\text{C}$, $\\Delta t=20\\ ^\\circ\\text{C}$ :</p>$$\\Delta V_{\\text{dầu}}=V_0\\beta\\Delta t=20\\cdot10^{-3}\\cdot20$$<div class=\"bt-ans\">$$\\Delta V_{\\text{dầu}}=0{,}4\\ \\text{L}=400\\ \\text{mL}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dung tích can tăng thêm</span></p><p>Dung tích can nở như một khối thép đặc cùng hình dạng :</p>$$\\Delta V_{can}=V_0\\beta_{\\text{thép}}\\Delta t=20\\cdot36\\cdot10^{-6}\\cdot20$$<div class=\"bt-ans\">$$\\Delta V_{can}=0{,}0144\\ \\text{L}=14{,}4\\ \\text{mL}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thể tích dầu tràn</span></p><p>Phần dầu nở vượt quá phần dung tích can tăng thêm thì tràn ra :</p>$$V_{\\text{tràn}}=\\Delta V_{\\text{dầu}}-\\Delta V_{can}=400-14{,}4$$<div class=\"bt-ans\">$$V_{\\text{tràn}}\\approx386\\ \\text{mL}\\approx0{,}39\\ \\text{L}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Câu b : lượng thiếu bằng khoảng $\\dfrac{11{,}8}{800}\\approx1{,}5\\%$, đúng cỡ $\\beta\\Delta t=1{,}5\\%$ ✓ ; ứng với $\\dfrac{11{,}8}{0{,}8}\\approx14{,}8$ lít dầu đong ở $20\\ ^\\circ\\text{C}$.</p><p>Câu c : $\\dfrac{\\beta_{\\text{dầu}}}{\\beta_{\\text{thép}}}\\approx28$ nên can nở rất ít so với dầu, phần trừ đi nhỏ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $D_{35}\\approx788{,}2\\ \\text{kg/m}^3$</p><p>b) Nhận ít hơn khoảng $11{,}8\\ \\text{kg}$</p><p>c) $V_{\\text{tràn}}\\approx0{,}39\\ \\text{L}$ (khoảng $386\\ \\text{mL}$)</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>đong chất lỏng ở nhiệt độ khác</strong> → $D=\\dfrac{D_0}{1+\\beta\\Delta t}$ ; thấy <strong>bình đầy tới miệng rồi nóng lên</strong> → tràn = phần chất lỏng nở − phần dung tích bình nở.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-5-2\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Hai thùng 1000 lít dầu ở 20 và 35 độ C, và một can thép đầy dầu được nung nóng\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Cùng 1000 L dầu, đong ở hai nhiệt độ</text><text x=\"70\" y=\"44\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">1000 L ở 20 °C</text><rect x=\"30.0\" y=\"52.0\" width=\"80.0\" height=\"80.0\" rx=\"0\" fill=\"#f59e0b\" fill-opacity=\"0.12\" stroke=\"currentColor\" stroke-width=\"2\"></rect><circle cx=\"38.8\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"38.8\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"38.8\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"38.8\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"38.8\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"38.8\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"51.2\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"63.8\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"76.2\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"88.8\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"60.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"73.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"85.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"98.2\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"110.8\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"101.2\" cy=\"123.2\" r=\"2.6\" fill=\"#f59e0b\"/><text x=\"70\" y=\"152\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">D<tspan dy=\"4\" font-size=\"12\">20</tspan><tspan dy=\"-4\"> = 800 kg/m</tspan><tspan dy=\"-6\" font-size=\"12\">3</tspan></text><text x=\"210\" y=\"44\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">1000 L ở 35 °C</text><rect x=\"170.0\" y=\"52.0\" width=\"80.0\" height=\"80.0\" rx=\"0\" fill=\"#f59e0b\" fill-opacity=\"0.12\" stroke=\"currentColor\" stroke-width=\"2\"></rect><circle cx=\"180.0\" cy=\"62.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"180.0\" cy=\"77.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"180.0\" cy=\"92.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"180.0\" cy=\"107.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"180.0\" cy=\"122.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"195.0\" cy=\"62.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"195.0\" cy=\"77.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"195.0\" cy=\"92.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"195.0\" cy=\"107.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"195.0\" cy=\"122.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"210.0\" cy=\"62.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"210.0\" cy=\"77.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"210.0\" cy=\"92.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"210.0\" cy=\"107.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"210.0\" cy=\"122.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"225.0\" cy=\"62.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"225.0\" cy=\"77.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"225.0\" cy=\"92.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"225.0\" cy=\"107.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"225.0\" cy=\"122.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"240.0\" cy=\"62.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"240.0\" cy=\"77.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"240.0\" cy=\"92.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"240.0\" cy=\"107.0\" r=\"2.6\" fill=\"#f59e0b\"/><circle cx=\"240.0\" cy=\"122.0\" r=\"2.6\" fill=\"#f59e0b\"/><text x=\"210\" y=\"152\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">D<tspan dy=\"4\" font-size=\"12\">35</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"270\" y=\"84\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">β<tspan dy=\"4\" font-size=\"12\">dầu</tspan><tspan dy=\"-4\"> = 1·10</tspan><tspan dy=\"-6\" font-size=\"12\">-3</tspan><tspan dy=\"6\"> K</tspan><tspan dy=\"-6\" font-size=\"12\">-1</tspan></text><text x=\"270\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">m không đổi khi nở</text><text x=\"16\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Can thép đầy dầu tới miệng ở 20 °C</text><rect x=\"32.0\" y=\"214.0\" width=\"66.0\" height=\"72.0\" rx=\"0\" fill=\"#f59e0b\" fill-opacity=\"0.35\" stroke=\"#f59e0b\" stroke-width=\"0\"></rect><path d=\"M30,214 L30,288 L100,288 L100,214\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"120\" y=\"214\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">V<tspan dy=\"4\" font-size=\"12\">0</tspan><tspan dy=\"-4\"> = 20 L ; nung cả can và dầu tới 40 °C</tspan></text><text x=\"120\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">β<tspan dy=\"4\" font-size=\"12\">thép</tspan><tspan dy=\"-4\"> = 36·10</tspan><tspan dy=\"-6\" font-size=\"12\">-6</tspan><tspan dy=\"6\"> K</tspan><tspan dy=\"-6\" font-size=\"12\">-1</tspan></text><text x=\"120\" y=\"266\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">V<tspan dy=\"4\" font-size=\"12\">tràn</tspan><tspan dy=\"-4\"> = ?</tspan></text></svg><figcaption>Dữ kiện: cùng thể tích 1000 L nhưng đong ở hai nhiệt độ ; can đầy tới miệng ở 20 °C. Chấm tròn chỉ để gợi các phân tử xa nhau hơn khi nóng, không đếm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Khi dầu nở ra, khối lượng của lượng dầu đó không đổi\"</td><td>$m$ không đổi</td><td>⚠ điều kiện để nối $D$ với $V$ : $D=\\dfrac{m}{V}$. $V$ tăng thì $D$ thế nào ?</td></tr><tr><td>\"khối lượng riêng $800\\ \\text{kg/m}^3$ ở $20\\ ^\\circ\\text{C}$\", \"hệ số nở khối $\\beta=1\\cdot10^{-3}\\ \\text{K}^{-1}$\"</td><td>$D_{20}=800\\ \\text{kg/m}^3$ ; $\\beta=1\\cdot10^{-3}\\ \\text{K}^{-1}$</td><td>Nở khối : $V=V_0(1+\\beta\\Delta t)$</td></tr><tr><td>\"Tính khối lượng riêng của dầu ở $35\\ ^\\circ\\text{C}$\"</td><td>$D_{35}=?$</td><td>Viết $m$ ở hai nhiệt độ rồi cho bằng nhau. $\\Delta t$ bằng bao nhiêu ?</td></tr><tr><td>\"mua $1000$ lít dầu, đong lúc dầu ở $35\\ ^\\circ\\text{C}$\"</td><td>$V=1000\\ \\text{L}$ ; $\\Delta m=?$</td><td>Cùng $1000\\ \\text{L}$, ở nhiệt độ nào nặng hơn ? $1000\\ \\text{L}$ bằng bao nhiêu $\\text{m}^3$ ?</td></tr><tr><td>\"đổ đầy dầu tới miệng ở $20\\ ^\\circ\\text{C}$\"</td><td>$V_{\\text{dầu}}=V_{can}=20\\ \\text{L}$ lúc đầu</td><td>⚠ lúc đầu dầu vừa đúng bằng dung tích can</td></tr><tr><td>\"cả can và dầu cùng nóng lên tới $40\\ ^\\circ\\text{C}$\", \"nở khối của thép là $36\\cdot10^{-6}\\ \\text{K}^{-1}$\"</td><td>$\\Delta t$ chung ; $\\beta_{\\text{thép}}=36\\cdot10^{-6}\\ \\text{K}^{-1}$</td><td>Dung tích của can có đổi khi can nóng lên không ? Nở theo hệ số nào ?</td></tr><tr><td>\"tính thể tích dầu tràn ra khỏi can\"</td><td>$V_{\\text{tràn}}=?$</td><td>Sau khi nóng, so sánh thể tích dầu với dung tích can. Phần nào không còn chỗ chứa ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đong ở nhiệt độ khác</b> hoặc <b>bình đầy tới miệng rồi nóng lên</b> → nghĩ tới <b>nở khối của chất lỏng và bình</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng riêng ở 35 °C",
+     "hoi": "Khối lượng riêng của dầu ở 35 °C bằng bao nhiêu kg/m³?",
+     "dap_so": 788.1773399014778,
+     "sai_so": 0.2,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Nhân $D_0$ với $(1+\\beta\\Delta t)$ như công thức thể tích ; dầu nở ra thì khối lượng riêng phải giảm."
+    },
+    {
+     "tieu_de": "Lượng dầu nhận thiếu",
+     "hoi": "Mua 1000 L đong lúc 35 °C, người đó nhận ít hơn bao nhiêu kg so với đong lúc 20 °C?",
+     "dap_so": 11.822660098522167,
+     "sai_so": 0.2,
+     "don_vi": "kg",
+     "loi_hay_gap": "Lấy khối lượng nhận được làm đáp số, hoặc đổi $1000\\ \\text{L}$ thành $1000\\ \\text{m}^3$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta m=(D_{20}-D_{35})V$ với $V=1000\\ \\text{L}=1\\ \\text{m}^3$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta m=D_{35}V$",
+       "dung": false,
+       "vi_sao": "Đó là khối lượng dầu nhận được, đề hỏi phần nhận ít hơn."
+      },
+      {
+       "text": "$\\Delta m=(D_{20}-D_{35})V$ với $V=1000\\ \\text{m}^3$",
+       "dung": false,
+       "vi_sao": "$1\\ \\text{m}^3=1000\\ \\text{L}$ nên $1000\\ \\text{L}$ chỉ là $1\\ \\text{m}^3$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dầu nở thêm",
+     "hoi": "Từ 20 °C lên 40 °C, thể tích dầu tăng thêm bao nhiêu mL?",
+     "dap_so": 400.0,
+     "sai_so": 2,
+     "don_vi": "mL",
+     "loi_hay_gap": "Lấy $\\Delta t$ bằng nhiệt độ cuối, hoặc lấy thể tích mới $V_0(1+\\beta\\Delta t)$ làm phần tăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta V_{\\text{dầu}}=V_0\\beta\\Delta t$ với $\\Delta t$ tính từ lúc đổ đầy",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta V_{\\text{dầu}}=V_0\\beta t$ với $t$ là nhiệt độ cuối",
+       "dung": false,
+       "vi_sao": "Độ nở tính theo độ tăng nhiệt độ từ lúc dầu có thể tích $V_0$, không theo nhiệt độ cuối."
+      },
+      {
+       "text": "$\\Delta V_{\\text{dầu}}=V_0(1+\\beta\\Delta t)$",
+       "dung": false,
+       "vi_sao": "Đó là thể tích dầu lúc nóng, không phải phần tăng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dung tích can tăng thêm",
+     "hoi": "Dung tích can tăng thêm bao nhiêu mL?",
+     "dap_so": 14.4,
+     "sai_so": 0.2,
+     "don_vi": "mL",
+     "loi_hay_gap": "Coi dung tích can giữ nguyên, hoặc cho rằng thép nở lấn vào trong làm dung tích giảm.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta V_{can}=V_0\\beta_{\\text{thép}}\\Delta t$ : dung tích nở như khối thép đặc cùng hình dạng",
+       "dung": true
+      },
+      {
+       "text": "Dung tích can giữ nguyên vì thành can mỏng",
+       "dung": false,
+       "vi_sao": "Mọi kích thước của can đều dãn theo thép, kể cả khoảng trống bên trong ; thành mỏng hay dày không đổi điều đó."
+      },
+      {
+       "text": "Dung tích can giảm vì thép nở lấn vào phía trong",
+       "dung": false,
+       "vi_sao": "Thép dãn đều mọi phía nên khoảng trống bên trong cũng lớn lên, như khi phóng to cả can."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích dầu tràn",
+     "hoi": "Thể tích dầu tràn ra bằng bao nhiêu mL?",
+     "dap_so": 385.6,
+     "sai_so": 4.5,
+     "don_vi": "mL",
+     "loi_hay_gap": "Lấy phần dầu nở làm thể tích tràn (quên can cũng nở), hoặc cộng thêm phần can nở.",
+     "chon_buoc_ke": [
+      {
+       "text": "$V_{\\text{tràn}}=\\Delta V_{\\text{dầu}}-\\Delta V_{can}$",
+       "dung": true
+      },
+      {
+       "text": "$V_{\\text{tràn}}=\\Delta V_{\\text{dầu}}$",
+       "dung": false,
+       "vi_sao": "Can cũng nở nên giữ thêm được một phần dầu ; phải trừ phần dung tích tăng thêm."
+      },
+      {
+       "text": "$V_{\\text{tràn}}=\\Delta V_{\\text{dầu}}+\\Delta V_{can}$",
+       "dung": false,
+       "vi_sao": "Can nở tạo thêm chỗ chứa, làm dầu tràn ít đi chứ không nhiều thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Vận dụng cao · Mở rộng HSG: Hai vật khác chất cùng nở vì nhiệt",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "problem_html": "<p>Hệ số nở dài: đồng $\\alpha_{Cu}=17\\cdot10^{-6}\\ \\text{K}^{-1}$, thép $\\alpha_{Fe}=12\\cdot10^{-6}\\ \\text{K}^{-1}$, nhôm $\\alpha_{Al}=24\\cdot10^{-6}\\ \\text{K}^{-1}$. Các vật luôn có cùng nhiệt độ với nhau và dãn tự do.</p><ol type=\"a\"><li>Một thanh đồng và một thanh thép được chọn sao cho ở mọi nhiệt độ, hiệu chiều dài của hai thanh luôn bằng $5\\ \\text{cm}$. Tính chiều dài mỗi thanh ở $0\\ ^\\circ\\text{C}$. Thanh nào dài hơn?</li><li>Ở $20\\ ^\\circ\\text{C}$, một vòng nhôm có đường kính trong $4{,}990\\ \\text{cm}$, một quả cầu thép có đường kính $5{,}000\\ \\text{cm}$. Nung nóng cả vòng và cầu tới cùng một nhiệt độ $t$ thì quả cầu vừa lọt qua vòng. Tính $t$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-6-0\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Quả cầu thép nằm trên lỗ vòng nhôm; khi nung, lỗ rộng ra nhanh hơn quả cầu và quả cầu lọt qua\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nung vòng nhôm và quả cầu thép cùng lúc</text><rect x=\"136.0\" y=\"150.0\" width=\"46.0\" height=\"14.0\" rx=\"2\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"#94a3b8\" stroke-width=\"2\"><animate attributeName=\"x\" values=\"136.0;130.0;130.0\" keyTimes=\"0.0000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"258.0\" y=\"150.0\" width=\"46.0\" height=\"14.0\" rx=\"2\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"#94a3b8\" stroke-width=\"2\"><animate attributeName=\"x\" values=\"258.0;264.0;264.0\" keyTimes=\"0.0000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"220\" cy=\"137.5\" r=\"40\" fill=\"#38bdf8\" fill-opacity=\".25\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"r\" values=\"40.0;44.0;44.0\" keyTimes=\"0.0000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"137.5;138.1;138.7;139.4;140.1;140.9;141.8;142.9;144.1;145.8;150.0;212.0\" keyTimes=\"0.0000;0.0750;0.1500;0.2250;0.3000;0.3750;0.4500;0.5250;0.6000;0.6750;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"145\" y=\"184\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">vòng nhôm</text><text x=\"260\" y=\"92\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">cầu thép</text><rect x=\"51.0\" y=\"50.0\" width=\"10.0\" height=\"100.0\" rx=\"5\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.6\"></rect><circle cx=\"56\" cy=\"156\" r=\"8\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"53.5\" y=\"146.0\" width=\"5.0\" height=\"4.0\" rx=\"0\" fill=\"#f87171\" fill-opacity=\"1\" stroke=\"#f87171\" stroke-width=\"0\"><animate attributeName=\"y\" values=\"146.0;54.0;54.0\" keyTimes=\"0.0000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"4.0;96.0;96.0\" keyTimes=\"0.0000;0.7500;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"44\" y=\"58\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">t = ?</text><text x=\"44\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">20 °C</text><text opacity=\"0\" x=\"276\" y=\"236\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">cầu lọt qua vòng<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9950\" calcMode=\"discrete\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hình cắt ngang vòng nhôm, quả cầu đặt trên lỗ ; nung cả hai cùng lúc. Độ nở vẽ phóng đại rất nhiều lần, không theo tỉ lệ ; không ghi nhiệt độ lúc lọt.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> các chất khác nhau có hệ số nở khác nhau.</li><li><strong>Công thức:</strong> $l=l_0(1+\\alpha\\Delta t)$, $\\Delta l=l_0\\alpha\\Delta t$, áp dụng cho từng vật.</li><li><strong>Lỗ trong vật:</strong> lỗ nở như một miếng đặc cùng chất, cùng cỡ.</li><li><strong>Điều kiện:</strong> các vật cùng nhiệt độ, cùng tăng $\\Delta t$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điều kiện hiệu không đổi</span></p><p>Hiệu chiều dài giữ nguyên khi cùng tăng $\\Delta t$ nghĩa là hai thanh dãn thêm đúng bằng nhau.</p><div class=\"bt-ans\"><p>Hai độ dãn bằng nhau: $l_{Cu}\\alpha_{Cu}\\Delta t=l_{Fe}\\alpha_{Fe}\\Delta t$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều dài hai thanh</span></p>$$l_{Cu}\\alpha_{Cu}=l_{Fe}\\alpha_{Fe}\\ \\Rightarrow\\ 17\\,l_{Cu}=12\\,l_{Fe}$$<p>Thanh đồng có $\\alpha$ lớn hơn nên phải ngắn hơn : $l_{Fe}=l_{Cu}+5$ :</p>$$17\\,l_{Cu}=12\\,(l_{Cu}+5)\\ \\Rightarrow\\ 5\\,l_{Cu}=60$$<div class=\"bt-ans\">$$l_{Cu}=12\\ \\text{cm}\\ ;\\ l_{Fe}=17\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phần chênh giảm sau mỗi độ</span></p><p>Lỗ của vòng nở theo nhôm, cầu nở theo thép. Mỗi khi tăng $1\\ ^\\circ\\text{C}$ :</p>$$\\Delta d_{\\text{lỗ}}=4{,}990\\cdot24\\cdot10^{-6}=1{,}1976\\cdot10^{-4}\\ \\text{cm}$$$$\\Delta d_{\\text{cầu}}=5{,}000\\cdot12\\cdot10^{-6}=0{,}6\\cdot10^{-4}\\ \\text{cm}$$<p>Lỗ rộng nhanh hơn cầu, phần chênh giảm ($10^{-4}\\ \\text{cm}=1\\ \\mu\\text{m}$) :</p><div class=\"bt-ans\">$$(1{,}1976-0{,}6)\\cdot10^{-4}\\ \\text{cm}\\approx0{,}598\\ \\mu\\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ tăng nhiệt độ</span></p><p>Vừa lọt khi hai đường kính bằng nhau :</p>$$4{,}990(1+24\\cdot10^{-6}\\Delta t)=5{,}000(1+12\\cdot10^{-6}\\Delta t)$$<p>Phần chênh ban đầu $5{,}000-4{,}990=0{,}010\\ \\text{cm}=100\\ \\mu\\text{m}$, mỗi độ giảm $0{,}5976\\ \\mu\\text{m}$ :</p>$$\\Delta t=\\dfrac{100}{0{,}5976}$$<div class=\"bt-ans\">$$\\Delta t\\approx167\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Nhiệt độ nung</span></p>$$t=20+\\Delta t=20+167$$<div class=\"bt-ans\">$$t\\approx187\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>a) $12\\cdot17\\cdot10^{-6}=17\\cdot12\\cdot10^{-6}$ : hai thanh dãn bằng nhau ✓ ; $17-12=5\\ \\text{cm}$ ✓.</p><p>b) Với $\\Delta t\\approx167{,}3\\ ^\\circ\\text{C}$ : $d_{\\text{lỗ}}\\approx4{,}990\\cdot1{,}004016\\approx5{,}0100\\ \\text{cm}$ ; $d_{\\text{cầu}}\\approx5{,}000\\cdot1{,}002008\\approx5{,}0100\\ \\text{cm}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $l_{Cu}=12\\ \\text{cm}$, $l_{Fe}=17\\ \\text{cm}$ ; thanh thép dài hơn</p><p>b) $t\\approx187\\ ^\\circ\\text{C}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>hai vật khác chất cùng nung</strong> → viết kích thước từng vật theo $l_0(1+\\alpha\\Delta t)$ rồi đặt điều kiện của đề (độ dãn bằng nhau, kích thước bằng nhau) ; lỗ nở như miếng đặc.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c16-6-2\"><svg viewBox=\"0 0 420 286\" role=\"img\" aria-label=\"Hai thanh đồng và thép; quả cầu thép đặt trên lỗ của một vòng nhôm\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">a) Hai thanh luôn cùng nhiệt độ</text><text x=\"30\" y=\"46\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Thanh đồng: α<tspan dy=\"4\" font-size=\"12\">Cu</tspan><tspan dy=\"-4\"> = 17·10</tspan><tspan dy=\"-6\" font-size=\"12\">-6</tspan><tspan dy=\"6\"> K</tspan><tspan dy=\"-6\" font-size=\"12\">-1</tspan><tspan dy=\"6\"> ; l</tspan><tspan dy=\"4\" font-size=\"12\">Cu</tspan><tspan dy=\"-4\"> = ?</tspan></text><rect x=\"30.0\" y=\"54.0\" width=\"165.0\" height=\"12.0\" rx=\"0\" fill=\"#fb923c\" fill-opacity=\"0.2\" stroke=\"#fb923c\" stroke-width=\"2\"></rect><rect x=\"205.0\" y=\"54.0\" width=\"165.0\" height=\"12.0\" rx=\"0\" fill=\"#fb923c\" fill-opacity=\"0.2\" stroke=\"#fb923c\" stroke-width=\"2\"></rect><line x1=\"193.0\" y1=\"69.0\" x2=\"199.0\" y2=\"51.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"203.0\" y1=\"69.0\" x2=\"209.0\" y2=\"51.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"30\" y=\"92\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Thanh thép: α<tspan dy=\"4\" font-size=\"12\">Fe</tspan><tspan dy=\"-4\"> = 12·10</tspan><tspan dy=\"-6\" font-size=\"12\">-6</tspan><tspan dy=\"6\"> K</tspan><tspan dy=\"-6\" font-size=\"12\">-1</tspan><tspan dy=\"6\"> ; l</tspan><tspan dy=\"4\" font-size=\"12\">Fe</tspan><tspan dy=\"-4\"> = ?</tspan></text><rect x=\"30.0\" y=\"100.0\" width=\"165.0\" height=\"12.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"2\"></rect><rect x=\"205.0\" y=\"100.0\" width=\"165.0\" height=\"12.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.3\" stroke=\"#94a3b8\" stroke-width=\"2\"></rect><line x1=\"193.0\" y1=\"115.0\" x2=\"199.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"203.0\" y1=\"115.0\" x2=\"209.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"30\" y=\"136\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ở mọi nhiệt độ: hiệu chiều dài hai thanh luôn là 5 cm</text><text x=\"16\" y=\"170\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">b) Ở 20 °C, trước khi nung</text><rect x=\"52.0\" y=\"222.0\" width=\"42.0\" height=\"12.0\" rx=\"2\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"#94a3b8\" stroke-width=\"2\"></rect><rect x=\"126.0\" y=\"222.0\" width=\"42.0\" height=\"12.0\" rx=\"2\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"#94a3b8\" stroke-width=\"2\"></rect><circle cx=\"110\" cy=\"213.8\" r=\"18\" fill=\"#38bdf8\" fill-opacity=\".25\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"200\" y=\"196\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Quả cầu thép: d<tspan dy=\"4\" font-size=\"12\">cầu</tspan><tspan dy=\"-4\"> = 5,000 cm</tspan></text><text x=\"200\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Vòng nhôm: d<tspan dy=\"4\" font-size=\"12\">lỗ</tspan><tspan dy=\"-4\"> = 4,990 cm</tspan></text><text x=\"200\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">α<tspan dy=\"4\" font-size=\"12\">Al</tspan><tspan dy=\"-4\"> = 24·10</tspan><tspan dy=\"-6\" font-size=\"12\">-6</tspan><tspan dy=\"6\"> K</tspan><tspan dy=\"-6\" font-size=\"12\">-1</tspan></text><text x=\"16\" y=\"274\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nung cả hai tới cùng nhiệt độ t thì cầu vừa lọt: t = ?</text></svg><figcaption>Dữ kiện: hai thanh vẽ bằng nhau và có dấu ngắt, không cho biết thanh nào dài hơn ; độ chênh giữa quả cầu và lỗ vẽ phóng đại. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Các vật luôn có cùng nhiệt độ với nhau và dãn tự do\"</td><td>cùng $\\Delta t$</td><td>⚠ hai vật cùng tăng một $\\Delta t$ thì mới so được độ dãn</td></tr><tr><td>\"ở mọi nhiệt độ, hiệu chiều dài của hai thanh luôn bằng $5\\ \\text{cm}$\"</td><td>$|l_{Fe}-l_{Cu}|=5\\ \\text{cm}$ ở mọi $t$</td><td>Hiệu không đổi khi cùng tăng $\\Delta t$ thì độ dãn hai thanh phải thế nào ?</td></tr><tr><td>\"đồng $\\alpha_{Cu}=17\\cdot10^{-6}$\", \"thép $\\alpha_{Fe}=12\\cdot10^{-6}$\"</td><td>$\\alpha_{Cu}$ ; $\\alpha_{Fe}$</td><td>Độ dãn $\\Delta l=l_0\\alpha\\Delta t$. Thanh có $\\alpha$ lớn thì cần dài hay ngắn để dãn bằng thanh kia ?</td></tr><tr><td>\"vòng nhôm có đường kính trong $4{,}990\\ \\text{cm}$\"</td><td>$d_{\\text{lỗ}}=4{,}990\\ \\text{cm}$ ; $\\alpha_{Al}$</td><td>Khi vòng nóng lên, lỗ của vòng rộng ra, hẹp lại hay giữ nguyên ?</td></tr><tr><td>\"quả cầu thép có đường kính $5{,}000\\ \\text{cm}$\"</td><td>$d_{\\text{cầu}}=5{,}000\\ \\text{cm}$ ; $\\alpha_{Fe}$</td><td>Cầu có nở không ? Đường kính cầu viết theo $\\Delta t$ thế nào ?</td></tr><tr><td>\"Nung nóng cả vòng và cầu tới cùng một nhiệt độ $t$ thì quả cầu vừa lọt\"</td><td>$t=?$</td><td>“Vừa lọt” là điều kiện gì giữa hai đường kính ? Nhớ $t=20\\ ^\\circ\\text{C}+\\Delta t$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai vật khác chất cùng nung nóng</b> → viết <b>kích thước từng vật theo $l_0(1+\\alpha\\Delta t)$</b> rồi đặt điều kiện đề cho",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điều kiện hiệu không đổi",
+     "hoi": "Hiệu chiều dài hai thanh không đổi ở mọi nhiệt độ khi nào?",
+     "lua_chon": [
+      {
+       "text": "Khi cùng tăng nhiệt độ, hai thanh dãn thêm đúng bằng nhau",
+       "dung": true
+      },
+      {
+       "text": "Khi hai thanh có cùng hệ số nở dài",
+       "dung": false,
+       "vi_sao": "Đồng và thép có hệ số nở khác nhau ; điều kiện phải nói về độ dãn $l_0\\alpha\\Delta t$, không chỉ về $\\alpha$."
+      },
+      {
+       "text": "Khi hai thanh dài bằng nhau",
+       "dung": false,
+       "vi_sao": "Hai thanh bằng nhau thì hiệu bằng $0$, không phải $5\\ \\text{cm}$ ; dài bằng nhau mà khác $\\alpha$ thì dãn khác nhau."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ chỉ cần cùng chất (cùng $\\alpha$) ; thật ra độ dãn còn tỉ lệ với chiều dài ban đầu."
+    },
+    {
+     "tieu_de": "Chiều dài hai thanh",
+     "hoi": "Chiều dài thanh đồng ở 0 °C bằng bao nhiêu cm?",
+     "dap_so": 12.0,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Viết tỉ lệ thuận $\\dfrac{l_{Cu}}{l_{Fe}}=\\dfrac{\\alpha_{Cu}}{\\alpha_{Fe}}$, cho thanh có $\\alpha$ lớn dài hơn — khi đó thanh đó dãn nhiều hơn, hiệu thay đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$l_{Cu}\\alpha_{Cu}=l_{Fe}\\alpha_{Fe}$ kết hợp hiệu chiều dài, thanh có $\\alpha$ lớn hơn là thanh ngắn hơn",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{l_{Cu}}{l_{Fe}}=\\dfrac{\\alpha_{Cu}}{\\alpha_{Fe}}$ kết hợp hiệu chiều dài",
+       "dung": false,
+       "vi_sao": "Tỉ lệ ngược : thanh dài hơn lại có $\\alpha$ lớn hơn thì dãn nhiều hơn hẳn, hiệu không giữ nguyên."
+      },
+      {
+       "text": "$l_{Cu}\\alpha_{Cu}=l_{Fe}\\alpha_{Fe}$ và coi thanh đồng dài hơn thanh thép $5\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Thay vào sẽ ra chiều dài âm : thanh có $\\alpha$ lớn hơn phải ngắn hơn mới dãn bằng thanh kia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần chênh giảm sau mỗi độ",
+     "hoi": "Mỗi khi tăng thêm 1 °C, phần chênh (đường kính cầu − đường kính lỗ) giảm bao nhiêu µm? (1 µm = 10⁻⁴ cm)",
+     "dap_so": 0.5976,
+     "sai_so": 0.01,
+     "don_vi": "µm",
+     "loi_hay_gap": "Cho lỗ hẹp lại khi nung vì nhôm nở lấn vào trong, hoặc quên cầu thép cũng nở.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lỗ nở theo $\\alpha_{Al}$ như miếng nhôm đặc, cầu nở theo $\\alpha_{Fe}$ ; lấy hiệu hai độ tăng đường kính",
+       "dung": true
+      },
+      {
+       "text": "Chỉ tính lỗ nở theo $\\alpha_{Al}$, coi cầu giữ nguyên",
+       "dung": false,
+       "vi_sao": "Cầu thép cũng nóng lên cùng nhiệt độ nên cũng nở, làm phần chênh giảm chậm hơn."
+      },
+      {
+       "text": "Lỗ hẹp lại theo $\\alpha_{Al}$ vì nhôm nở lấn vào trong",
+       "dung": false,
+       "vi_sao": "Vòng dãn đều mọi phía như phóng to cả vòng ; lỗ rộng ra như một đĩa nhôm đặc cùng cỡ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ tăng nhiệt độ",
+     "hoi": "Cần tăng nhiệt độ thêm bao nhiêu °C thì cầu vừa lọt?",
+     "dap_so": 167.33601070950468,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Chỉ cho vòng nở (quên cầu nở), hoặc đổi chỗ hệ số nở của nhôm và thép.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho hai đường kính lúc nung bằng nhau : $d_{\\text{lỗ}}(1+\\alpha_{Al}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Fe}\\Delta t)$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta t=\\dfrac{d_{\\text{cầu}}-d_{\\text{lỗ}}}{d_{\\text{lỗ}}\\alpha_{Al}}$",
+       "dung": false,
+       "vi_sao": "Bỏ quên cầu thép cũng nở ; nhiệt độ tìm được thấp quá, cầu chưa lọt."
+      },
+      {
+       "text": "$d_{\\text{lỗ}}(1+\\alpha_{Fe}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Al}\\Delta t)$",
+       "dung": false,
+       "vi_sao": "Đổi chỗ hệ số : vòng là nhôm, cầu là thép ; viết như vậy ra $\\Delta t$ âm, cầu không bao giờ lọt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhiệt độ nung",
+     "hoi": "Nhiệt độ nung t bằng bao nhiêu °C?",
+     "dap_so": 187.33601070950468,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Lấy luôn $\\Delta t$ làm nhiệt độ nung, quên nhiệt độ ban đầu của vòng và cầu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=t_0+\\Delta t$ với $t_0$ là nhiệt độ lúc đo hai đường kính",
+       "dung": true
+      },
+      {
+       "text": "$t=\\Delta t$",
+       "dung": false,
+       "vi_sao": "$\\Delta t$ là độ tăng nhiệt độ ; vòng và cầu bắt đầu từ nhiệt độ ban đầu chứ không từ $0\\ ^\\circ\\text{C}$."
+      },
+      {
+       "text": "$t=\\Delta t-t_0$",
+       "dung": false,
+       "vi_sao": "Nung nóng thì nhiệt độ tăng thêm $\\Delta t$ so với lúc đầu, phải cộng chứ không trừ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>a) Phích (bình thuỷ) giữ nước nóng được lâu. Nêu tác dụng của từng bộ phận: lớp chân không giữa hai vỏ thuỷ tinh, mặt tráng bạc sáng bóng của hai vỏ, nút phích. Mỗi bộ phận chặn cách truyền nhiệt nào?</p>\n<p>b) Mùa đông, mặc hai áo mỏng chồng lên nhau thấy ấm hơn mặc một áo dày có cùng khối lượng vải. Giải thích.</p>\n<p>c) Trong một căn phòng để lâu, tay nắm cửa bằng đồng và cánh cửa gỗ có cùng nhiệt độ. Vì sao sờ vào tay nắm đồng lại thấy lạnh hơn? Bạn Bình nói \"vì đồng truyền lạnh sang tay\". Câu nói đó sai ở đâu?</p><details><summary>Hướng dẫn giải</summary><p>a) Lớp chân không: chân không không có hạt vật chất nên chặn dẫn nhiệt và đối lưu giữa hai vỏ.</p>\n<p>Mặt tráng bạc: phản xạ bức xạ nhiệt trở lại nước, chặn truyền nhiệt bằng bức xạ.</p>\n<p>Nút phích: ngăn không khí nóng trên mặt nước bay ra ngoài, chặn đối lưu (và bay hơi) qua miệng phích.</p>\n<p>b) Giữa hai áo có một lớp không khí bị giữ lại; không khí dẫn nhiệt rất kém và bị kẹp nên khó đối lưu.</p>\n<p>Lớp không khí này cản nhiệt từ người truyền ra ngoài tốt hơn phần vải dày thêm.</p>\n<p>c) Đồng dẫn nhiệt tốt hơn gỗ rất nhiều. Tay ấm hơn tay nắm nên nhiệt truyền từ tay sang đồng, rồi lan nhanh đi khắp tay nắm, nên chỗ tiếp xúc luôn nguội và tay mất nhiệt nhanh: cảm giác lạnh.</p>\n<p>Gỗ dẫn nhiệt kém, chỗ tiếp xúc nhanh chóng ấm lên bằng tay nên tay mất nhiệt chậm.</p>\n<p>Câu của Bình sai: không có \"lạnh\" truyền đi; chỉ có nhiệt truyền từ vật nóng hơn (tay) sang vật lạnh hơn (đồng).</p>\n<p>Lỗi hay gặp: kết luận tay nắm đồng có nhiệt độ thấp hơn cánh cửa — cảm giác nóng lạnh là tốc độ tay mất nhiệt, không phải nhiệt độ của vật.</p></details><h4>Bài 2 · Dễ</h4><p>a) Trong bàn là có một băng kép gồm một lá đồng và một lá thép tán chặt vào nhau (đồng nở vì nhiệt nhiều hơn thép), đầu tự do của băng kép tì lên một tiếp điểm nằm <b>phía dưới</b> nó để dòng điện chạy qua. Khi bàn là quá nóng, băng kép phải cong <b>lên trên</b>, rời tiếp điểm để ngắt điện. Phải đặt lá đồng ở trên hay ở dưới? Giải thích.</p>\n<p>b) Ở xứ lạnh, mùa đông mặt hồ đóng băng nhưng cá dưới đáy hồ sâu vẫn sống. Giải thích dựa vào sự nở vì nhiệt đặc biệt của nước.</p>\n<p>c) Vì sao giữa hai đầu thanh ray xe lửa phải chừa khe hở, còn ống dẫn hơi nóng dài thường có đoạn uốn cong?</p><details><summary>Hướng dẫn giải</summary><p>a) Khi nóng, lá nở nhiều hơn dài hơn nên nằm ở mặt lồi; băng kép cong về phía lá nở ít (thép).</p>\n<p>Muốn băng kép cong lên trên thì mặt lồi ở dưới, tức lá đồng ở dưới, lá thép ở trên.</p>\n<p>b) Nước từ $0\\ ^\\circ\\text{C}$ đến $4\\ ^\\circ\\text{C}$ co lại, nên khối lượng riêng của nước lớn nhất ở $4\\ ^\\circ\\text{C}$.</p>\n<p>Khi trời lạnh dần, nước ở $4\\ ^\\circ\\text{C}$ nặng nhất chìm xuống đáy; nước lạnh hơn ($0$–$4\\ ^\\circ\\text{C}$) nhẹ hơn nổi lên trên và đóng băng ở mặt.</p>\n<p>Lớp băng ở mặt dẫn nhiệt kém, che cho nước bên dưới, đáy hồ giữ khoảng $4\\ ^\\circ\\text{C}$ nên cá sống được.</p>\n<p>c) Thanh ray, ống dẫn nở ra khi nóng; nếu bị giữ chặt không cho nở thì sinh lực rất lớn làm cong vênh ray, nứt ống.</p>\n<p>Khe hở cho ray chỗ để dài ra; đoạn uốn cong của ống co giãn được, hấp thụ phần dài thêm.</p>\n<p>Lỗi hay gặp: nghĩ băng kép cong về phía kim loại nở nhiều — ngược lại, kim loại nở nhiều nằm ở mặt lồi.</p>\n<p>Lỗi hay gặp: cho rằng nước càng lạnh càng nặng nên chìm xuống, hồ đóng băng từ đáy.</p></details><h4>Bài 3 · Trung bình</h4><p>Một thước nhôm được khắc vạch chính xác ở $20\\ ^\\circ\\text{C}$. Ở $50\\ ^\\circ\\text{C}$, dùng thước này đo một thanh đồng thì đọc được $80{,}00\\ \\text{cm}$. Hệ số nở dài của nhôm $\\alpha_{Al} = 24\\cdot10^{-6}\\ \\text{K}^{-1}$, của đồng $\\alpha_{Cu} = 17\\cdot10^{-6}\\ \\text{K}^{-1}$, của thép $\\alpha_{Fe} = 12\\cdot10^{-6}\\ \\text{K}^{-1}$. Thước và thanh đồng có cùng nhiệt độ lúc đo.</p>\n<p>a) Tính chiều dài thật của thanh đồng ở $50\\ ^\\circ\\text{C}$.</p>\n<p>b) Tính chiều dài của thanh đồng ở $20\\ ^\\circ\\text{C}$.</p>\n<p>c) Nếu dùng thước thép (khắc đúng ở $20\\ ^\\circ\\text{C}$) đo thanh đồng đó ở $50\\ ^\\circ\\text{C}$ thì đọc được bao nhiêu? Nên chọn thước bằng vật liệu thế nào để đo chính xác khi nhiệt độ thay đổi?</p><details><summary>Hướng dẫn giải</summary><p>a) Ở $50\\ ^\\circ\\text{C}$ mỗi vạch \"1 cm\" của thước nhôm dài thật $1\\cdot(1 + 24\\cdot10^{-6}\\cdot30) = 1{,}00072\\ \\text{cm}$.</p>\n<p>Thanh đồng dài $80{,}00$ vạch, nên chiều dài thật $l_{50} = 80\\cdot1{,}00072 \\approx 80{,}058\\ \\text{cm}$.</p>\n<p>Thước dãn ra nên mỗi vạch dài hơn 1 cm, số đọc nhỏ hơn chiều dài thật.</p>\n<p>b) $l_{50} = l_{20}(1 + \\alpha_{Cu}\\cdot30)$, nên $l_{20} = \\dfrac{80{,}0576}{1{,}00051} \\approx 80{,}017\\ \\text{cm}$.</p>\n<p>c) Mỗi vạch thước thép ở $50\\ ^\\circ\\text{C}$ dài $1{,}00036\\ \\text{cm}$, số đọc $= \\dfrac{80{,}0576}{1{,}00036} \\approx 80{,}029\\ \\text{cm}$.</p>\n<p>Thước nở càng ít thì số đọc càng sát chiều dài thật: nên dùng vật liệu có hệ số nở dài nhỏ (hoặc hiệu chỉnh theo nhiệt độ).</p>\n<p>Lỗi hay gặp: chia $80$ cho $1{,}00072$ (ra $79{,}942\\ \\text{cm}$) — thước dãn thì đọc thiếu, chiều dài thật phải lớn hơn số đọc.</p>\n<p>Lỗi hay gặp: ở câu b lấy luôn số đọc $80{,}00\\ \\text{cm}$ làm chiều dài ở $50\\ ^\\circ\\text{C}$ (ra $79{,}959\\ \\text{cm}$), quên hiệu chỉnh thước trước.</p></details><h4>Bài 4 · Trung bình</h4><p>Dùng một ấm điện đun $1{,}2$ lít nước từ $20\\ ^\\circ\\text{C}$ đến sôi. Lần thứ nhất bếp có công suất $1000\\ \\text{W}$, nước sôi sau $8$ phút. Lần thứ hai (cùng ấm, cùng lượng nước, cùng nhiệt độ đầu $20\\ ^\\circ\\text{C}$) điện yếu, bếp chỉ còn công suất $700\\ \\text{W}$, nước sôi sau $12$ phút. Coi công suất hao phí ra môi trường không đổi và như nhau ở hai lần đun; vỏ ấm có nhiệt dung $C$ chưa biết và luôn cùng nhiệt độ với nước.</p>\n<p>a) Tính công suất hao phí.</p>\n<p>b) Tính nhiệt dung $C$ của vỏ ấm.</p>\n<p>c) Tính hiệu suất của lần đun thứ nhất (chỉ tính phần nhiệt nước nhận).</p>\n<p>d) Theo giả thiết hao phí không đổi của đề, nếu điện yếu tới mức bếp chỉ còn $400\\ \\text{W}$ thì sau bao lâu nước sôi? Bếp có công suất bao nhiêu thì không bao giờ đun sôi được?</p><details><summary>Hướng dẫn giải</summary><p>Nhiệt cần đun ấm và nước tới sôi là $Q$, như nhau ở hai lần. Phần công suất làm nóng ấm và nước là $P - P_{hp}$.</p>\n<p>a) $(1000 - P_{hp})\\cdot480 = (700 - P_{hp})\\cdot720$.</p>\n<p>$480\\,000 - 480P_{hp} = 504\\,000 - 720P_{hp}$, nên $240P_{hp} = 24\\,000$ và $P_{hp} = 100\\ \\text{W}$.</p>\n<p>b) $Q = (1000 - 100)\\cdot480 = 432\\,000\\ \\text{J}$.</p>\n<p>Nước nhận $Q_n = 1{,}2\\cdot4200\\cdot80 = 403\\,200\\ \\text{J}$, vỏ ấm nhận $Q - Q_n = 28\\,800\\ \\text{J}$.</p>\n<p>$C = \\dfrac{28\\,800}{80} = 360\\ \\text{J/K}$.</p>\n<p>c) $H = \\dfrac{403\\,200}{1000\\cdot480} = 0{,}84 = 84\\%$.</p>\n<p>d) Bếp $400\\ \\text{W}$: $t = \\dfrac{432\\,000}{400 - 100} = 1440\\ \\text{s} = 24$ phút.</p>\n<p>Bếp có công suất $P \\le 100\\ \\text{W}$ thì toàn bộ nhiệt bị hao phí, nước không nóng thêm được tới sôi.</p>\n<p>Ghi chú: thực tế hao phí tăng khi nước nóng hơn; \"hao phí không đổi\" là giả thiết đề cho để tính gần đúng.</p>\n<p>Lỗi hay gặp: viết $1000\\cdot480 = 700\\cdot720$ (bỏ hao phí) — hai vế không bằng nhau, chứng tỏ phải có hao phí.</p>\n<p>Lỗi hay gặp: tính hao phí dưới dạng nhiệt lượng chung cho hai lần — hao phí không đổi về công suất, lần đun lâu hơn mất nhiều nhiệt hơn.</p></details><h4>Bài 5 · Khó</h4><p>Một ấm điện chứa $1{,}5$ lít nước, vỏ ấm có nhiệt dung $700\\ \\text{J/K}$ và luôn cùng nhiệt độ với nước. Phòng luôn ở $25\\ ^\\circ\\text{C}$. Ở chế độ giữ ấm, bếp cấp đều $120\\ \\text{W}$ thì nhiệt độ nước ổn định ở $85\\ ^\\circ\\text{C}$. Coi công suất hao phí ra môi trường tỉ lệ với hiệu nhiệt độ nước – phòng, ấm đậy kín (bỏ qua bay hơi).</p>\n<p>a) Tìm hệ số $k$ trong $P_{hp} = k(t - t_0)$.</p>\n<p>b) Ngắt điện khi nước ở $95\\ ^\\circ\\text{C}$. Tính tốc độ giảm nhiệt độ (°C/phút) ngay lúc ngắt điện, và khi nước còn $40\\ ^\\circ\\text{C}$. Nhận xét.</p>\n<p>c) Ước lượng thời gian nước nguội từ $95\\ ^\\circ\\text{C}$ xuống $93\\ ^\\circ\\text{C}$.</p>\n<p>d) Muốn giữ ấm ở $70\\ ^\\circ\\text{C}$ thì bếp phải cấp đều bao nhiêu oát?</p><details><summary>Hướng dẫn giải</summary><p>a) Khi ổn định, công suất cấp bằng công suất hao phí: $120 = k(85 - 25)$, nên $k = 2\\ \\text{W/}^\\circ\\text{C}$.</p>\n<p>b) Nhiệt dung của ấm và nước: $C_{tp} = 1{,}5\\cdot4200 + 700 = 7000\\ \\text{J/K}$.</p>\n<p>Đã ngắt điện, nhiệt mất mỗi giây là $P_{hp}$, nên nhiệt độ giảm mỗi giây $\\dfrac{P_{hp}}{C_{tp}}$.</p>\n<p>Ở $95\\ ^\\circ\\text{C}$: $P_{hp} = 2\\cdot70 = 140\\ \\text{W}$, tốc độ $\\dfrac{140}{7000} = 0{,}02\\ ^\\circ\\text{C/s} = 1{,}2\\ ^\\circ\\text{C/phút}$.</p>\n<p>Ở $40\\ ^\\circ\\text{C}$: $P_{hp} = 2\\cdot15 = 30\\ \\text{W}$, tốc độ $\\dfrac{30}{7000}\\ ^\\circ\\text{C/s} \\approx 0{,}26\\ ^\\circ\\text{C/phút}$.</p>\n<p>Nhận xét: nước càng gần nhiệt độ phòng thì nguội càng chậm (tốc độ giảm $\\tfrac{70}{15} \\approx 4{,}7$ lần).</p>\n<p>c) Từ $95$ xuống $93\\ ^\\circ\\text{C}$ hiệu nhiệt độ thay đổi ít, lấy giá trị trung bình $t = 94\\ ^\\circ\\text{C}$: $P_{hp} \\approx 2\\cdot69 = 138\\ \\text{W}$.</p>\n<p>Nhiệt mất: $Q = 7000\\cdot2 = 14\\,000\\ \\text{J}$, nên $t \\approx \\dfrac{14\\,000}{138} \\approx 101\\ \\text{s}$ (khoảng $1{,}7$ phút).</p>\n<p>d) $P = k(70 - 25) = 2\\cdot45 = 90\\ \\text{W}$.</p>\n<p>Lỗi hay gặp: dùng $k = \\dfrac{120}{85}$ (lấy nhiệt độ nước thay cho hiệu nhiệt độ nước – phòng).</p>\n<p>Lỗi hay gặp: coi hao phí không đổi rồi tính tốc độ nguội ở $40\\ ^\\circ\\text{C}$ bằng ở $95\\ ^\\circ\\text{C}$ — đề cho hao phí tỉ lệ hiệu nhiệt độ.</p>\n<p>Lỗi hay gặp: quên nhiệt dung vỏ ấm, chỉ chia cho $6300\\ \\text{J/K}$ của nước.</p></details><h4>Bài 6 · Khó</h4><p>Một bình thuỷ tinh có dung tích $500\\ \\text{cm}^3$ ở $0\\ ^\\circ\\text{C}$, chứa đầy thuỷ ngân tới miệng. Hệ số nở khối của thuỷ ngân $\\beta_{Hg} = 1{,}8\\cdot10^{-4}\\ \\text{K}^{-1}$, hệ số nở dài của thuỷ tinh $\\alpha = 9\\cdot10^{-6}\\ \\text{K}^{-1}$ (lấy $\\beta \\approx 3\\alpha$). Khối lượng riêng thuỷ ngân ở $0\\ ^\\circ\\text{C}$ là $13{,}6\\ \\text{g/cm}^3$. Đun nóng cả bình và thuỷ ngân lên $100\\ ^\\circ\\text{C}$.</p>\n<p>a) Tính thể tích thuỷ ngân tràn ra.</p>\n<p>b) Tính khối lượng thuỷ ngân tràn ra.</p>\n<p>c) Ở $0\\ ^\\circ\\text{C}$ chỉ được rót bao nhiêu $\\text{cm}^3$ thuỷ ngân vào bình để khi nóng tới $100\\ ^\\circ\\text{C}$ thuỷ ngân vừa đầy tới miệng, không tràn?</p>\n<p>d) Nếu bỏ qua sự nở của bình thì tính được thể tích tràn bao nhiêu? Sai lệch bao nhiêu phần trăm so với câu a?</p><details><summary>Hướng dẫn giải</summary><p>a) Ở $100\\ ^\\circ\\text{C}$, thuỷ ngân chiếm $500(1 + 1{,}8\\cdot10^{-4}\\cdot100) = 509\\ \\text{cm}^3$.</p>\n<p>Bình nở theo $\\beta_b = 3\\alpha = 27\\cdot10^{-6}\\ \\text{K}^{-1}$, dung tích mới $500(1 + 27\\cdot10^{-6}\\cdot100) = 501{,}35\\ \\text{cm}^3$.</p>\n<p>Thể tích tràn: $\\Delta V = 509 - 501{,}35 = 7{,}65\\ \\text{cm}^3$ (cũng bằng $V_0(\\beta_{Hg} - \\beta_b)\\Delta t$).</p>\n<p>b) Ở $100\\ ^\\circ\\text{C}$: $D = \\dfrac{13{,}6}{1 + 1{,}8\\cdot10^{-4}\\cdot100} = \\dfrac{13{,}6}{1{,}018} \\approx 13{,}36\\ \\text{g/cm}^3$.</p>\n<p>$m = 13{,}36\\cdot7{,}65 \\approx 102\\ \\text{g}$.</p>\n<p>c) Gọi $V_1$ là thể tích rót ở $0\\ ^\\circ\\text{C}$: $V_1\\cdot1{,}018 = 501{,}35$, nên $V_1 \\approx 492{,}5\\ \\text{cm}^3$.</p>\n<p>d) Bỏ qua nở của bình: $\\Delta V' = 509 - 500 = 9\\ \\text{cm}^3$, lớn hơn $1{,}35\\ \\text{cm}^3$, tức lệch khoảng $17{,}6\\%$.</p>\n<p>Lỗi hay gặp: lấy $\\beta_b = \\alpha = 9\\cdot10^{-6}$ (quên bình nở theo cả ba chiều), ra $\\Delta V = 8{,}55\\ \\text{cm}^3$.</p>\n<p>Lỗi hay gặp: dùng $13{,}6\\ \\text{g/cm}^3$ cho thuỷ ngân ở $100\\ ^\\circ\\text{C}$ (ra $104\\ \\text{g}$) — thuỷ ngân nóng nở ra nên nhẹ hơn trên mỗi $\\text{cm}^3$.</p></details><h4>Bài 7 · Nâng cao</h4><p>Một thanh thép và một thanh nhôm được hàn nối đầu với nhau thành một thanh thẳng dài $1{,}000\\ \\text{m}$ ở $20\\ ^\\circ\\text{C}$. Khi nung cả thanh tới $120\\ ^\\circ\\text{C}$ thì thanh dài thêm $1{,}68\\ \\text{mm}$. Hệ số nở dài của thép $12\\cdot10^{-6}\\ \\text{K}^{-1}$, của nhôm $24\\cdot10^{-6}\\ \\text{K}^{-1}$, của đồng $17\\cdot10^{-6}\\ \\text{K}^{-1}$.</p>\n<p>a) Tính chiều dài mỗi đoạn ở $20\\ ^\\circ\\text{C}$.</p>\n<p>b) Coi thanh ghép như một thanh đồng chất, tính hệ số nở dài \"trung bình\" của nó.</p>\n<p>c) Ở $20\\ ^\\circ\\text{C}$, đặt thanh ghép giữa hai bức tường cố định, hai tường cách nhau $1{,}0005\\ \\text{m}$. Nung nóng đều thanh tới nhiệt độ nào thì thanh bắt đầu chạm cả hai tường?</p>\n<p>d) Muốn thanh ghép thép – nhôm dài $1\\ \\text{m}$ nở giống hệt một thanh đồng dài $1\\ \\text{m}$ thì đoạn nhôm phải dài bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p>a) Gọi $l_1$, $l_2$ là chiều dài đoạn thép, đoạn nhôm: $l_1 + l_2 = 1\\ \\text{m}$.</p>\n<p>Độ dãn: $(12 l_1 + 24 l_2)\\cdot10^{-6}\\cdot100 = 1{,}68\\cdot10^{-3}$, tức $12 l_1 + 24 l_2 = 16{,}8$.</p>\n<p>Thay $l_1 = 1 - l_2$: $12 + 12 l_2 = 16{,}8$, nên $l_2 = 0{,}4\\ \\text{m}$ và $l_1 = 0{,}6\\ \\text{m}$.</p>\n<p>b) $\\alpha_{tb} = \\dfrac{\\Delta l}{l_0\\,\\Delta t} = \\dfrac{1{,}68\\cdot10^{-3}}{1\\cdot100} = 16{,}8\\cdot10^{-6}\\ \\text{K}^{-1}$.</p>\n<p>c) Khe hở tổng $0{,}5\\ \\text{mm}$: $1\\cdot16{,}8\\cdot10^{-6}\\cdot\\Delta t = 0{,}5\\cdot10^{-3}$, nên $\\Delta t \\approx 29{,}8\\ ^\\circ\\text{C}$.</p>\n<p>Thanh chạm hai tường ở khoảng $20 + 29{,}8 \\approx 50\\ ^\\circ\\text{C}$; nóng hơn nữa thanh bị cản nở, ép lên tường một lực rất lớn.</p>\n<p>d) Cần $12(1 - x) + 24x = 17$, nên $12x = 5$ và $x = \\dfrac{5}{12} \\approx 0{,}417\\ \\text{m}$ (khoảng $41{,}7\\ \\text{cm}$ nhôm).</p>\n<p>Lỗi hay gặp: lấy trung bình cộng $\\dfrac{12 + 24}{2} = 18\\cdot10^{-6}$ làm hệ số của thanh ghép — chỉ đúng khi hai đoạn dài bằng nhau.</p>\n<p>Lỗi hay gặp: dùng $\\Delta t = 120\\ ^\\circ\\text{C}$ thay vì $100\\ ^\\circ\\text{C}$.</p></details><h4>Bài 8 · Nâng cao</h4><p>Một ấm điện có hai dây điện trở: dây 1 ghi $220\\ \\text{V} - 400\\ \\text{W}$, dây 2 ghi $220\\ \\text{V} - 600\\ \\text{W}$. Ấm luôn dùng ở hiệu điện thế $220\\ \\text{V}$, phòng ở $20\\ ^\\circ\\text{C}$. Coi điện trở các dây không đổi theo nhiệt độ, công suất hao phí ra môi trường tỉ lệ với hiệu nhiệt độ nước – phòng (kể cả khi nước đang sôi). Chỉ dùng dây 1 thì đun mãi nước cũng chỉ nóng tới $60\\ ^\\circ\\text{C}$ rồi giữ nguyên.</p>\n<p>a) Tìm hệ số hao phí $k$ (W/°C). Chỉ dùng dây 2 thì nhiệt độ nước ổn định ở bao nhiêu?</p>\n<p>b) Mắc hai dây nối tiếp vào $220\\ \\text{V}$: nước ổn định ở bao nhiêu độ?</p>\n<p>c) Mắc hai dây song song vào $220\\ \\text{V}$: nước có sôi không? Nếu sôi, mỗi phút có bao nhiêu gam nước hoá hơi? Nhiệt hoá hơi của nước $L = 2{,}3\\cdot10^6\\ \\text{J/kg}$.</p><details><summary>Hướng dẫn giải</summary><p>a) Dây 1 dùng đúng $220\\ \\text{V}$ nên $P_1 = 400\\ \\text{W}$. Khi ổn định: $400 = k(60 - 20)$, nên $k = 10\\ \\text{W/}^\\circ\\text{C}$.</p>\n<p>Dây 2: $600 = 10(t_2 - 20)$, nên $t_2 = 80\\ ^\\circ\\text{C}$.</p>\n<p>b) $R_1 = \\dfrac{U^2}{P_1}$, $R_2 = \\dfrac{U^2}{P_2}$. Nối tiếp: $P_{nt} = \\dfrac{U^2}{R_1 + R_2} = \\dfrac{P_1P_2}{P_1 + P_2} = \\dfrac{400\\cdot600}{1000} = 240\\ \\text{W}$.</p>\n<p>$240 = 10(t - 20)$, nên $t = 44\\ ^\\circ\\text{C}$.</p>\n<p>c) Song song, mỗi dây vẫn chịu $220\\ \\text{V}$: $P_{ss} = 400 + 600 = 1000\\ \\text{W}$.</p>\n<p>Muốn giữ nước ở $100\\ ^\\circ\\text{C}$ chỉ cần bù hao phí $10\\cdot(100 - 20) = 800\\ \\text{W}$ $\\lt 1000\\ \\text{W}$, nên nước sôi.</p>\n<p>Khi sôi nhiệt độ không tăng nữa; phần dư $200\\ \\text{W}$ làm nước hoá hơi.</p>\n<p>Mỗi phút: $Q = 200\\cdot60 = 12\\,000\\ \\text{J}$, $m = \\dfrac{12\\,000}{2{,}3\\cdot10^6} \\approx 5{,}2\\cdot10^{-3}\\ \\text{kg} \\approx 5{,}2\\ \\text{g}$.</p>\n<p>Lỗi hay gặp: cộng công suất khi mắc nối tiếp ($1000\\ \\text{W}$) — nối tiếp thì điện trở tăng, công suất giảm.</p>\n<p>Lỗi hay gặp: tính nhiệt độ ổn định song song $= 20 + \\dfrac{1000}{10} = 120\\ ^\\circ\\text{C}$ — nước sôi ở $100\\ ^\\circ\\text{C}$ và không nóng hơn; phần dư thành nhiệt hoá hơi.</p></details>"
+ }
+}

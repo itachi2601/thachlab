@@ -1,0 +1,342 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Có phần vượt chuẩn lớp 9</strong>, gắn nhãn <strong>Mở rộng HSG</strong>: tốc độ truyền nhiệt, hao phí ra môi trường, nhiệt độ ổn định, thể tích tràn, hai thanh nở khác nhau.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Phân biệt dẫn nhiệt, đối lưu, bức xạ nhiệt.</li>
+<li>Giải thích phích, áo nhiều lớp, điều hoà lắp cao.</li>
+<li>So sánh tốc độ dẫn nhiệt qua vách: $P\propto\dfrac{S\,\Delta t}{d}$ (<strong>Mở rộng HSG</strong>).</li>
+<li>Dùng đúng giả thiết hao phí: không đổi, hay tỉ lệ hiệu nhiệt độ (<strong>Mở rộng HSG</strong>).</li>
+<li>Tính độ nở dài, nở khối, khối lượng riêng khi nóng lên.</li>
+<li>Giải thích khe hở đường ray, băng kép, hồ đóng băng từ mặt.</li>
+<li>Quy ước: hiệu nhiệt độ $1\ ^\circ\text{C}=1\ \text{K}$, không cần đổi sang K.</li>
+</ul>
+<p>Khoảng 14 phút · 6 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: chiếc thìa và khe hở đường ray</h3>
+<p>Em thả một chiếc thìa inox vào cốc trà nóng. Một lúc sau, cầm cán thìa thấy ấm, dù cán không chạm vào trà.</p>
+<p>Đi dọc đường sắt, em thấy giữa hai thanh ray luôn chừa một khe nhỏ. Hai chuyện này cùng nói về nhiệt: nhiệt đi đâu, và vật làm gì khi nóng lên.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Một thanh sắt và một tấm gỗ để cùng trong phòng từ hôm qua. Em áp hai bàn tay lên hai vật. Điều gì xảy ra?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q0" id="hsg16-q0a"><label for="hsg16-q0a" class="tl-opt tl-no">A. Sắt thấy lạnh hơn, vì nhiệt độ của sắt thấp hơn gỗ</label>
+<input type="radio" name="hsg16-q0" id="hsg16-q0b"><label for="hsg16-q0b" class="tl-opt tl-no">B. Thấy như nhau, vì hai vật cùng nhiệt độ</label>
+<input type="radio" name="hsg16-q0" id="hsg16-q0c"><label for="hsg16-q0c" class="tl-opt tl-ok">C. Sắt thấy lạnh hơn dù cùng nhiệt độ, vì sắt lấy nhiệt khỏi tay nhanh hơn</label>
+<input type="radio" name="hsg16-q0" id="hsg16-q0d"><label for="hsg16-q0d" class="tl-opt tl-no">D. Sắt thấy lạnh hơn, vì sắt truyền hơi lạnh sang tay</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Để lâu trong phòng thì hai vật cùng nhiệt độ phòng.</p><p>Tay ấm hơn nên nhiệt đi từ tay sang vật. Sắt dẫn nhiệt tốt, kéo nhiệt đi nhanh, nên da nguội nhanh và thấy lạnh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: cùng ở trong phòng lâu thì cùng nhiệt độ. Cảm giác "lạnh" không đo được nhiệt độ.</p><p>B: cùng nhiệt độ nhưng tốc độ lấy nhiệt khỏi tay khác nhau, nên cảm giác khác nhau.</p><p>D: không có "hơi lạnh" truyền đi. Chỉ có nhiệt truyền từ vật nóng hơn (tay) sang vật lạnh hơn.</p></div>
+</div>
+</div>
+
+<h3>II. Ba cách truyền nhiệt</h3>
+
+<p><strong>🔑 Nóng sang lạnh · Tự đi một chiều</strong></p>
+<ul>
+<li>Nhiệt tự truyền từ vật nóng hơn sang vật lạnh hơn.</li>
+<li>Dừng khi hai vật bằng nhiệt độ.</li>
+</ul>
+
+<p><strong>🔑 Dẫn nhiệt · Rắn · Kim loại tốt</strong></p>
+<ul>
+<li>Nhiệt truyền dần từ phần nóng sang phần lạnh của vật, vật không di chuyển.</li>
+<li>Kim loại dẫn nhiệt tốt. Gỗ, nhựa, thuỷ tinh dẫn kém.</li>
+<li>Chất lỏng, chất khí dẫn nhiệt kém.</li>
+<li>Chân không không dẫn nhiệt.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: ba que gắn đinh bằng sáp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lấy ba que cùng cỡ bằng đồng, nhôm, thuỷ tinh. Gắn vài đinh nhỏ dọc mỗi que bằng sáp nến. Hơ một đầu ba que trên cùng ngọn lửa.</li>
+<li><strong>Quan sát:</strong> đinh trên que đồng rơi trước và rơi xa nhất. Que nhôm chậm hơn. Que thuỷ tinh gần như chưa rơi chiếc nào.</li>
+<li><strong>Rút ra:</strong> nhiệt đi dọc que từ đầu nóng. Đồng dẫn tốt nhất, thuỷ tinh dẫn kém nhất.</li>
+</ol>
+</div>
+
+<p><strong>🔑 Đối lưu · Lỏng, khí · Nóng lên, lạnh xuống</strong></p>
+<ul>
+<li>Phần chất lỏng, khí bị đun nóng nở ra, nhẹ hơn, đi lên.</li>
+<li>Phần lạnh nặng hơn chìm xuống thế chỗ, tạo thành dòng.</li>
+<li>Chất rắn và chân không không có đối lưu.</li>
+</ul>
+
+<p><strong>🔑 Bức xạ nhiệt · Đi cả chân không</strong></p>
+<ul>
+<li>Nhiệt truyền bằng tia nhiệt đi thẳng, như nắng Mặt Trời tới Trái Đất.</li>
+<li>Mặt sẫm màu, xù xì hấp thụ và bức xạ mạnh.</li>
+<li>Mặt sáng, bóng phản xạ phần lớn tia nhiệt.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 58 440 248" role="img" aria-label="Bên trái: nồi nước trên bếp, nhiệt dẫn dọc cán, đối lưu trong nước, bức xạ từ ngọn lửa ra xung quanh. Bên phải: mặt cắt phích gồm nắp, nút, hai lớp thuỷ tinh tráng bạc kẹp chân không, vỏ"><rect x="32" y="136" width="136" height="62" fill="rgba(56,189,248,.18)"/><path d="M30.0,120.0 L30.0,200.0 L170.0,200.0 L170.0,120.0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><line x1="32.0" y1="136.0" x2="168.0" y2="136.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><line x1="170.0" y1="128.0" x2="216.0" y2="128.0" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="176" y1="116" x2="214" y2="116" stroke="#f87171" stroke-width="2.4"/><path d="M205.2,110.9 L214.0,116.0 L205.2,121.1" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="195" y="104" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">dẫn nhiệt</text><line x1="100" y1="192" x2="100" y2="146" stroke="#f87171" stroke-width="2.4"/><path d="M94.9,154.8 L100.0,146.0 L105.1,154.8" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M100.0,146.0 L100.0,142.0" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="round"/><line x1="48" y1="146" x2="48" y2="190" stroke="#38bdf8" stroke-width="2.2"/><path d="M52.7,181.8 L48.0,190.0 L43.3,181.8" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="152" y1="146" x2="152" y2="190" stroke="#38bdf8" stroke-width="2.2"/><path d="M156.7,181.8 L152.0,190.0 L147.3,181.8" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M92.0,144.0 L56.0,144.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="4 3"/><path d="M108.0,144.0 L144.0,144.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="4 3"/><path d="M62.9,148.0 L56.0,144.0 L62.9,140.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M137.1,140.0 L144.0,144.0 L137.1,148.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="100" y="112" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">đối lưu</text><rect x="36" y="222" width="128" height="10" rx="2" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><path d="M56.0,220 Q56.0,210.4 62.0,204.0 Q68.0,210.4 68.0,220 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M80.0,220 Q80.0,210.4 86.0,204.0 Q92.0,210.4 92.0,220 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M104.0,220 Q104.0,210.4 110.0,204.0 Q116.0,210.4 116.0,220 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M128.0,220 Q128.0,210.4 134.0,204.0 Q140.0,210.4 140.0,220 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M40.0,214.0 L39.0,214.0 L38.0,214.0 L37.1,214.1 L36.2,214.2 L35.5,214.4 L34.8,214.7 L34.2,215.1 L33.7,215.6 L33.4,216.2 L33.1,216.9 L33.0,217.6 L32.9,218.5 L32.9,219.4 L33.0,220.4 L33.0,221.4 L33.1,222.4 L33.1,223.4 L33.1,224.3 L33.1,225.2 L32.9,226.0 L32.7,226.7 L32.3,227.3 L31.8,227.7 L31.3,228.1 L30.6,228.4 L29.8,228.6 L28.9,228.7 L28.0,228.8 L27.1,228.8 L26.1,228.8 L25.1,228.8 L24.1,228.8 L23.2,228.9 L22.3,229.0 L21.5,229.2 L20.8,229.5 L20.3,229.9 L19.8,230.4 L19.4,231.0 L19.2,231.7 L19.0,232.5 L19.0,233.3 L19.0,234.3 L19.0,235.2 L19.1,236.2 L19.1,237.2 L19.2,238.2 L19.2,239.1 L19.1,240.0 L19.0,240.8 L18.7,241.5 L18.4,242.1 L17.9,242.6 L17.3,242.9 L16.6,243.2 L15.9,243.4 L15.0,243.6 L14.1,243.6 L13.1,243.6 L12.1,243.6 L8.0,248.0" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-linejoin="round"/><path d="M16.6,245.4 L8.0,248.0 L10.1,239.2" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M160.0,214.0 L160.1,215.0 L160.3,216.1 L160.5,217.0 L160.7,217.9 L161.0,218.7 L161.5,219.4 L161.9,220.0 L162.5,220.5 L163.2,220.8 L164.0,221.1 L164.8,221.2 L165.8,221.3 L166.8,221.2 L167.8,221.2 L168.8,221.1 L169.9,221.0 L170.9,220.9 L171.9,220.9 L172.8,220.9 L173.7,221.1 L174.4,221.3 L175.1,221.6 L175.7,222.1 L176.2,222.7 L176.6,223.4 L176.9,224.2 L177.2,225.1 L177.4,226.1 L177.5,227.1 L177.7,228.1 L177.8,229.2 L177.9,230.2 L178.1,231.1 L178.4,232.0 L178.7,232.8 L179.1,233.6 L179.6,234.1 L180.2,234.6 L180.9,235.0 L181.6,235.2 L182.5,235.3 L183.4,235.4 L184.4,235.4 L185.4,235.3 L186.5,235.2 L187.5,235.1 L188.6,235.0 L189.5,235.0 L190.5,235.0 L191.3,235.2 L192.1,235.4 L192.8,235.8 L193.4,236.2 L193.9,236.8 L194.3,237.5 L194.6,238.3 L194.8,239.2 L195.0,240.2 L195.2,241.2 L195.3,242.3 L200.0,246.0" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-linejoin="round"/><path d="M196.7,237.6 L200.0,246.0 L191.1,244.6" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="10" y="272" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">bức xạ</text><text x="204" y="270" fill="#fb923c" font-size="15" font-weight="700" text-anchor="end">bức xạ</text><rect x="252" y="86" width="80" height="190" rx="8" fill="none" stroke="currentColor" stroke-width="2.2"/><rect x="263" y="98" width="58" height="168" rx="14" fill="rgba(148,163,184,.10)" stroke="#94a3b8" stroke-width="3"/><rect x="273" y="108" width="38" height="148" rx="10" fill="rgba(56,189,248,.18)" stroke="#94a3b8" stroke-width="3"/><rect x="276" y="108" width="32" height="18" rx="3" fill="rgba(251,146,60,.30)" stroke="#fb923c" stroke-width="1.8"/><rect x="262" y="68" width="60" height="18" rx="4" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><line x1="322.0" y1="77.0" x2="342.0" y2="77.0" stroke="currentColor" stroke-width="1.2" opacity="0.7"/><text x="346" y="82" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">nắp</text><line x1="308.0" y1="117.0" x2="342.0" y2="117.0" stroke="currentColor" stroke-width="1.2" opacity="0.7"/><text x="346" y="122" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">nút</text><line x1="316.0" y1="160.0" x2="342.0" y2="160.0" stroke="currentColor" stroke-width="1.2" opacity="0.7"/><text x="346" y="165" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">chân không</text><line x1="322.0" y1="206.0" x2="342.0" y2="206.0" stroke="currentColor" stroke-width="1.2" opacity="0.7"/><text x="346" y="211" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">tráng bạc</text><line x1="332.0" y1="262.0" x2="342.0" y2="262.0" stroke="currentColor" stroke-width="1.2" opacity="0.7"/><text x="346" y="267" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">vỏ</text><text x="292" y="296" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">phích</text><text x="100" y="296" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">nồi nước trên bếp</text></svg><figcaption>Hình 1. Bên trái: ba cách nhiệt đi ra từ bếp và nồi nước.<br>Bên phải: mặt cắt phích, chỉ ghi tên bộ phận.</figcaption></figure>
+<p>Giữa hai lớp thuỷ tinh của ruột phích là chân không. Qua lớp chân không đó, nhiệt của nước nóng vẫn thoát ra được theo cách nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q1" id="hsg16-q1a"><label for="hsg16-q1a" class="tl-opt tl-no">A. Dẫn nhiệt</label>
+<input type="radio" name="hsg16-q1" id="hsg16-q1b"><label for="hsg16-q1b" class="tl-opt tl-no">B. Đối lưu</label>
+<input type="radio" name="hsg16-q1" id="hsg16-q1c"><label for="hsg16-q1c" class="tl-opt tl-no">C. Không cách nào, chân không chặn hết</label>
+<input type="radio" name="hsg16-q1" id="hsg16-q1d"><label for="hsg16-q1d" class="tl-opt tl-ok">D. Bức xạ nhiệt</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bức xạ đi được trong chân không.</p><p>Vì vậy thuỷ tinh được tráng bạc: mặt bóng hắt tia nhiệt trở lại nước.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: dẫn nhiệt cần các hạt chất truyền cho nhau, chân không không có chất.</p><p>B: đối lưu cần chất lỏng hoặc khí di chuyển, chân không cũng không có.</p><p>C: nắng Mặt Trời vẫn tới Trái Đất qua khoảng chân không, đó là bức xạ.</p></div>
+</div>
+<details class="tl-details">
+<summary>Mỗi bộ phận của phích chặn cách truyền nào? <small>(đoán trước rồi mới bấm)</small></summary>
+<p>Lớp chân không: chặn dẫn nhiệt và đối lưu.</p>
+<p>Mặt tráng bạc: hắt bức xạ trở lại.</p>
+<p>Nút phích: chặn đối lưu của hơi nóng ra miệng.</p>
+<p>Áo nhiều lớp cũng vậy: lớp không khí kẹp giữa dẫn nhiệt kém, lại bị vải giữ không cho đối lưu.</p>
+</details>
+<p>Điều hoà nhiệt độ dùng để làm mát phòng nên lắp ở đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q2" id="hsg16-q2a"><label for="hsg16-q2a" class="tl-opt tl-no">A. Sát sàn, vì khí lạnh bay lên phủ khắp phòng</label>
+<input type="radio" name="hsg16-q2" id="hsg16-q2b"><label for="hsg16-q2b" class="tl-opt tl-ok">B. Gần trần, vì khí lạnh nặng hơn chìm xuống, tạo dòng đối lưu</label>
+<input type="radio" name="hsg16-q2" id="hsg16-q2c"><label for="hsg16-q2c" class="tl-opt tl-no">C. Ở đâu cũng như nhau, vì không khí dẫn nhiệt tốt</label>
+<input type="radio" name="hsg16-q2" id="hsg16-q2d"><label for="hsg16-q2d" class="tl-opt tl-no">D. Gần trần, để hơi lạnh bức xạ thẳng xuống người</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khí lạnh co lại, nặng hơn, chìm xuống. Khí ấm dưới thấp bị đẩy lên, gặp máy lại được làm lạnh.</p><p>Lò sưởi thì ngược lại: đặt thấp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A đảo chiều đối lưu: khí <em>nóng</em> mới đi lên.</p><p>C: không khí dẫn nhiệt rất kém, phòng mát đều là nhờ đối lưu.</p><p>D: không có "hơi lạnh" bức xạ. Người ấm hơn mới là bên mất nhiệt.</p></div>
+</div>
+
+<h3>III. Tốc độ truyền nhiệt và hao phí <em>(Mở rộng HSG)</em></h3>
+
+<p><strong>🔑 Rộng · Chênh nhiều · Mỏng → nhanh</strong></p>
+<ul>
+<li>Nhiệt dẫn qua vách mỗi giây: $P\propto\dfrac{S\,\Delta t}{d}$.</li>
+<li>$S$: diện tích vách, $\Delta t$: hiệu nhiệt độ hai bên, $d$: bề dày.</li>
+<li>Cùng vật liệu thì chỉ cần lập tỉ số, không cần hệ số dẫn nhiệt.</li>
+</ul>
+
+<p><strong>🔑 Hao phí: không đổi, hay tỉ lệ hiệu nhiệt độ</strong></p>
+<ul>
+<li>(a) Công suất hao phí không đổi: $Q_{hp}=P_{hp}\,t$.</li>
+<li>(b) Hao phí tỉ lệ hiệu nhiệt độ vật – môi trường: $P_{hp}=k\,(t-t_0)$.</li>
+<li>Đề luôn nói rõ dùng giả thiết nào. Đọc kỹ trước khi lập phương trình.</li>
+<li>Với (a): đun hai lượng nước khác nhau trên cùng ấm, trừ hai phương trình để khử ẩn (nhiệt dung ấm, hao phí).</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: cốc nước nguội dần (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> rót nước nóng vào cốc, để trong phòng $30\ ^\circ\text{C}$. Cứ mỗi phút đọc nhiệt kế (vạch chia $0{,}5\ ^\circ\text{C}$), tính nhiệt độ giảm trong một phút ở ba thời điểm.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> tốc độ nguội gần tỉ lệ với $t-30$: nước càng nóng so với phòng, mất nhiệt càng nhanh. Đó là giả thiết (b).</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$t$ (°C)</th><th>Giảm mỗi phút ($^\circ$C)</th><th>Tỉ số với $t-30$</th></tr></thead>
+<tbody>
+<tr><td>90</td><td>3,1</td><td>0,052</td></tr>
+<tr><td>70</td><td>1,9</td><td>0,048</td></tr>
+<tr><td>50</td><td>1,0</td><td>0,050</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Lần đo nào khó chính xác nhất? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Lần ở $50\ ^\circ\text{C}$.</p>
+<p>Nước chỉ giảm $1\ ^\circ\text{C}$ mỗi phút, mà đọc lệch một vạch là $0{,}5\ ^\circ\text{C}$, tới $50\%$.</p>
+<p>Muốn chính xác hơn: đo thời gian dài hơn rồi chia ra mỗi phút.</p>
+</details>
+</div>
+
+<p><strong>🔑 Cấp = hao phí → nhiệt độ ổn định</strong></p>
+<ul>
+<li>Vật được cấp công suất $P$ không đổi, hao phí theo (b).</li>
+<li>Vật nóng dần, hao phí tăng dần.</li>
+<li>Tới khi $P=k\,(t_{\text{ođ}}-t_0)$ thì nhiệt độ đứng yên: vật không nóng mãi.</li>
+</ul>
+<p>Bể cá có máy sưởi $50\ \text{W}$, phòng $20\ ^\circ\text{C}$, nước ổn định ở $25\ ^\circ\text{C}$. Hao phí tỉ lệ hiệu nhiệt độ. Thay máy $80\ \text{W}$, nước ổn định ở:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg16-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg16-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q3" id="hsg16-q3a"><label for="hsg16-q3a" class="tl-opt tl-ok">A. $28\ ^\circ\text{C}$</label>
+<input type="radio" name="hsg16-q3" id="hsg16-q3b"><label for="hsg16-q3b" class="tl-opt tl-no">B. $40\ ^\circ\text{C}$</label>
+<input type="radio" name="hsg16-q3" id="hsg16-q3c"><label for="hsg16-q3c" class="tl-opt tl-no">C. Không ổn định, nước nóng mãi</label>
+<input type="radio" name="hsg16-q3" id="hsg16-q3d"><label for="hsg16-q3d" class="tl-opt tl-no">D. $33\ ^\circ\text{C}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k=\dfrac{50}{25-20}=10\ \text{W/}^\circ\text{C}$.</p><p>$80=10\,(t-20)$, nên $t=28\ ^\circ\text{C}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B lấy $25\cdot\dfrac{80}{50}$: tỉ lệ với <em>nhiệt độ</em>, trong khi hao phí tỉ lệ với <em>hiệu</em> nhiệt độ.</p><p>C quên rằng hao phí tăng theo nhiệt độ nước, tới lúc bằng $80\ \text{W}$ thì dừng.</p><p>D cộng hiệu $8\ ^\circ\text{C}$ vào $25$, nhưng hiệu phải tính từ nhiệt độ phòng $20\ ^\circ\text{C}$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Đề nói</th><th>Viết</th></tr></thead>
+<tbody>
+<tr><td>"hao phí không đổi"</td><td>$Q_{hp}=P_{hp}\,t$, tăng theo thời gian đun</td></tr>
+<tr><td>"tỉ lệ hiệu nhiệt độ"</td><td>$P_{hp}=k\,(t-t_0)$, tăng theo nhiệt độ vật</td></tr>
+<tr><td>"vật nóng lên mãi?"</td><td>Theo (b): không, dừng ở $t_{\text{ođ}}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Sự nở vì nhiệt</h3>
+
+<p><strong>🔑 Nóng nở · Lạnh co · Khí &gt; lỏng &gt; rắn</strong></p>
+<ul>
+<li>Rắn, lỏng, khí đều nở khi nóng, co khi lạnh.</li>
+<li>Khí nở nhiều nhất, rồi đến lỏng, ít nhất là rắn.</li>
+<li>Nở dài: $l=l_0(1+\alpha\Delta t)$, độ dãn $\Delta l=l_0\,\alpha\,\Delta t$.</li>
+<li>Nở khối: $V=V_0(1+\beta\Delta t)$. Chất rắn: $\beta\approx3\alpha$.</li>
+<li>Khối lượng giữ nguyên nên $D=\dfrac{D_0}{1+\beta\Delta t}$: nóng lên thì nhẹ đi.</li>
+</ul>
+<details class="tl-details"><summary>Hệ số nở dài hay gặp</summary>
+<p>Thép $\alpha=12\cdot10^{-6}\ \text{K}^{-1}$.</p>
+<p>Đồng $17\cdot10^{-6}\ \text{K}^{-1}$.</p>
+<p>Nhôm $24\cdot10^{-6}\ \text{K}^{-1}$.</p></details>
+<p>Thanh nhôm dài $2\ \text{m}$ ở $20\ ^\circ\text{C}$, $\alpha=24\cdot10^{-6}\ \text{K}^{-1}$. Ở $70\ ^\circ\text{C}$ thanh dài:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q4" id="hsg16-q4a"><label for="hsg16-q4a" class="tl-opt tl-no">A. $2{,}0034\ \text{m}$</label>
+<input type="radio" name="hsg16-q4" id="hsg16-q4b"><label for="hsg16-q4b" class="tl-opt tl-no">B. $2{,}0012\ \text{m}$</label>
+<input type="radio" name="hsg16-q4" id="hsg16-q4c"><label for="hsg16-q4c" class="tl-opt tl-ok">C. $2{,}0024\ \text{m}$</label>
+<input type="radio" name="hsg16-q4" id="hsg16-q4d"><label for="hsg16-q4d" class="tl-opt tl-no">D. $2{,}0165\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta l=2\cdot24\cdot10^{-6}\cdot50=0{,}0024\ \text{m}=2{,}4\ \text{mm}$.</p><p>$l=2{,}0024\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A dùng $70$ thay cho $\Delta t=70-20=50$.</p><p>B quên nhân $l_0=2\ \text{m}$: $24\cdot10^{-6}\cdot50$ mới là độ dãn của mỗi mét.</p><p>D đổi $70\ ^\circ\text{C}$ ra $343\ \text{K}$ rồi dùng làm $\Delta t$. Hiệu nhiệt độ thì $^\circ$C hay K như nhau, vẫn là $50$.</p></div>
+</div>
+
+<p><strong>🔑 Cản nở → lực rất lớn</strong></p>
+<ul>
+<li>Vật bị giữ chặt mà vẫn nóng lên thì đẩy vật cản bằng lực rất lớn.</li>
+<li>Chừa khe hở giữa hai thanh ray, đặt một đầu cầu trên con lăn.</li>
+</ul>
+<details class="tl-details"><summary>Thêm một ví dụ</summary>
+<p>Ống dẫn hơi nóng làm uốn khúc để có chỗ dãn.</p></details>
+<figure class="fig" data-tl="1"><svg viewBox="0 18 440 168" role="img" aria-label="Hai thanh ray đặt nối tiếp trên tà vẹt: mùa đông khe giữa hai thanh rộng, mùa hè ray nở ra nên khe hẹp lại"><text x="16" y="36" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">mùa đông: ray co lại, khe rộng</text><rect x="30" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="64" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="98" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="132" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="166" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="200" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="234" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="268" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="302" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="336" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="370" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="404" y="72" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="16" y="58" width="193.0" height="14" rx="1" fill="rgba(148,163,184,.45)" stroke="currentColor" stroke-width="2"/><rect x="231.0" y="58" width="193.0" height="14" rx="1" fill="rgba(148,163,184,.45)" stroke="currentColor" stroke-width="2"/><line x1="209.0" y1="48.0" x2="231.0" y2="48.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><line x1="209.0" y1="43.0" x2="209.0" y2="53.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><line x1="231.0" y1="43.0" x2="231.0" y2="53.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><text x="240" y="54" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">khe</text><text x="16" y="126" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">mùa hè: ray nở ra, khe hẹp</text><rect x="30" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="64" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="98" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="132" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="166" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="200" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="234" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="268" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="302" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="336" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="370" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="404" y="162" width="22" height="8" rx="1" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="1.2"/><rect x="16" y="148" width="200.0" height="14" rx="1" fill="rgba(148,163,184,.45)" stroke="currentColor" stroke-width="2"/><rect x="224.0" y="148" width="200.0" height="14" rx="1" fill="rgba(148,163,184,.45)" stroke="currentColor" stroke-width="2"/><line x1="216.0" y1="138.0" x2="224.0" y2="138.0" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="216.0" y1="133.0" x2="216.0" y2="143.0" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="224.0" y1="133.0" x2="224.0" y2="143.0" stroke="#f87171" stroke-width="1.6" opacity="1"/><text x="240" y="144" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">khe</text></svg><figcaption>Hình 2. Chừa khe để ray có chỗ dãn.<br>Không có khe, ray nóng lên sẽ đẩy nhau và cong vênh.</figcaption></figure>
+
+<p><strong>🔑 Băng kép · Nở nhiều ở mặt lồi</strong></p>
+<ul>
+<li>Hai lá kim loại khác nhau tán chặt vào nhau.</li>
+<li>Nóng lên: lá nở nhiều dài hơn, băng cong để lá đó nằm phía ngoài.</li>
+<li>Dùng làm công tắc tự ngắt trong bàn là, nồi cơm điện.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 38 440 128" role="img" aria-label="Băng kép gồm lá đồng ở trên và lá thép ở dưới tán chặt vào nhau, một đầu kẹp vào ngàm, ở nhiệt độ phòng băng thẳng; bên dưới có ngọn lửa"><rect x="18" y="44" width="34" height="82" rx="2" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><line x1="20.0" y1="60.0" x2="50.0" y2="50.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="72.0" x2="50.0" y2="62.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="84.0" x2="50.0" y2="74.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="96.0" x2="50.0" y2="86.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="108.0" x2="50.0" y2="98.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="120.0" x2="50.0" y2="110.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><line x1="20.0" y1="132.0" x2="50.0" y2="122.0" stroke="currentColor" stroke-width="1.1" opacity="0.5"/><text x="35" y="146" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">ngàm</text><rect x="52" y="72" width="330" height="11" rx="0" fill="rgba(251,146,60,.45)" stroke="#fb923c" stroke-width="1.8"/><rect x="52" y="83" width="330" height="11" rx="0" fill="rgba(148,163,184,.55)" stroke="currentColor" stroke-width="1.8"/><text x="216" y="62" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">lá đồng: α lớn hơn</text><text x="216" y="116" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">lá thép: α nhỏ hơn</text><path d="M183.5,158 Q183.5,147.2 190.0,140.0 Q196.5,147.2 196.5,158 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M209.5,158 Q209.5,147.2 216.0,140.0 Q222.5,147.2 222.5,158 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><path d="M235.5,158 Q235.5,147.2 242.0,140.0 Q248.5,147.2 248.5,158 Z" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><text x="262" y="154" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">nung nóng</text></svg><figcaption>Hình 3. Băng kép ở nhiệt độ phòng: thẳng.<br>Lá đồng ở trên, lá thép ở dưới.</figcaption></figure>
+<p>Băng kép trong Hình 3 được nung nóng. Băng sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q5" id="hsg16-q5a"><label for="hsg16-q5a" class="tl-opt tl-ok">A. Cong về phía lá thép, lá đồng ở mặt lồi</label>
+<input type="radio" name="hsg16-q5" id="hsg16-q5b"><label for="hsg16-q5b" class="tl-opt tl-no">B. Cong về phía lá đồng, vì đồng nở nhiều kéo băng về phía mình</label>
+<input type="radio" name="hsg16-q5" id="hsg16-q5c"><label for="hsg16-q5c" class="tl-opt tl-no">C. Vẫn thẳng, vì hai lá nóng như nhau</label>
+<input type="radio" name="hsg16-q5" id="hsg16-q5d"><label for="hsg16-q5d" class="tl-opt tl-no">D. Cong về phía lá đồng, vì đồng dẫn nhiệt tốt nên nóng trước</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đồng có $\alpha$ lớn hơn thép nên dài ra nhiều hơn. Lá dài hơn phải nằm ở mặt cong phía ngoài.</p><p>Làm lạnh thì ngược lại: cong về phía lá đồng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B: lá nở nhiều không "kéo" mà dài ra, nên nằm ở mặt lồi (phía ngoài), không phải phía trong.</p><p>C: cùng nhiệt độ nhưng khác $\alpha$, nên dài ra khác nhau.</p><p>D: chiều cong do $\alpha$ quyết định, không do dẫn nhiệt nhanh hay chậm. Nung lâu cho cả băng cùng nhiệt độ, băng vẫn cong.</p></div>
+</div>
+
+<p><strong>🔑 Nước bất thường · Nặng nhất ở 4 °C</strong></p>
+<ul>
+<li>Từ $0\ ^\circ\text{C}$ đến $4\ ^\circ\text{C}$, nước nóng lên lại co lại.</li>
+<li>Trên $4\ ^\circ\text{C}$, nước nở như mọi chất.</li>
+<li>Khối lượng riêng của nước lớn nhất ở $4\ ^\circ\text{C}$.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 28 440 262" role="img" aria-label="Đồ thị khối lượng riêng của nước theo nhiệt độ từ 0 đến 10 độ C: tăng từ 999,84 lên 999,97 kilôgam trên mét khối ở 4 độ C rồi giảm còn 999,70 ở 10 độ C"><line x1="72.0" y1="50.0" x2="72.0" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="106.6" y1="50.0" x2="106.6" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="141.2" y1="50.0" x2="141.2" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="175.8" y1="50.0" x2="175.8" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="210.4" y1="50.0" x2="210.4" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="245.0" y1="50.0" x2="245.0" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="279.6" y1="50.0" x2="279.6" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="314.2" y1="50.0" x2="314.2" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="348.8" y1="50.0" x2="348.8" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="383.4" y1="50.0" x2="383.4" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="418.0" y1="50.0" x2="418.0" y2="240.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="72.0" y1="212.9" x2="418.0" y2="212.9" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="72.0" y1="158.6" x2="418.0" y2="158.6" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="72.0" y1="104.3" x2="418.0" y2="104.3" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="72.0" y1="50.0" x2="418.0" y2="50.0" stroke="currentColor" stroke-width="1" opacity="0.22"/><line x1="72.0" y1="240.0" x2="426.0" y2="240.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="72.0" y1="240.0" x2="72.0" y2="42.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><path d="M72.0,136.9 L73.7,135.2 L75.8,133.2 L78.2,130.7 L81.0,128.0 L84.0,125.0 L87.1,121.9 L90.4,118.7 L93.8,115.5 L97.1,112.4 L100.4,109.5 L103.6,106.7 L106.6,104.3 L109.5,102.1 L112.4,99.9 L115.2,97.8 L118.1,95.8 L121.0,93.9 L123.9,92.1 L126.8,90.3 L129.7,88.6 L132.5,87.0 L135.4,85.4 L138.3,84.0 L141.2,82.6 L144.1,81.3 L147.0,80.1 L149.8,79.0 L152.7,77.9 L155.6,77.0 L158.5,76.1 L161.4,75.3 L164.3,74.5 L167.1,73.8 L170.0,73.1 L172.9,72.4 L175.8,71.7 L178.7,71.0 L181.6,70.4 L184.5,69.7 L187.3,69.1 L190.2,68.5 L193.1,68.0 L196.0,67.5 L198.9,67.1 L201.8,66.8 L204.6,66.5 L207.5,66.3 L210.4,66.3 L213.3,66.3 L216.2,66.5 L219.1,66.8 L221.9,67.1 L224.8,67.5 L227.7,68.0 L230.6,68.5 L233.5,69.1 L236.3,69.7 L239.2,70.4 L242.1,71.0 L245.0,71.7 L247.9,72.4 L250.8,73.1 L253.7,73.8 L256.5,74.5 L259.4,75.3 L262.3,76.1 L265.2,77.0 L268.1,77.9 L270.9,79.0 L273.8,80.1 L276.7,81.3 L279.6,82.6 L282.5,84.0 L285.4,85.5 L288.2,87.1 L291.1,88.8 L294.0,90.6 L296.9,92.4 L299.8,94.3 L302.7,96.2 L305.6,98.2 L308.4,100.2 L311.3,102.3 L314.2,104.3 L317.1,106.3 L320.0,108.4 L322.8,110.4 L325.7,112.5 L328.6,114.7 L331.5,116.8 L334.4,119.1 L337.3,121.4 L340.1,123.8 L343.0,126.2 L345.9,128.8 L348.8,131.4 L351.7,134.2 L354.6,137.1 L357.4,140.0 L360.3,143.1 L363.2,146.2 L366.1,149.4 L369.0,152.7 L371.9,156.0 L374.8,159.3 L377.6,162.7 L380.5,166.0 L383.4,169.4 L386.4,173.0 L389.6,176.9 L392.9,180.9 L396.2,185.1 L399.6,189.3 L402.9,193.5 L406.0,197.6 L409.0,201.4 L411.8,204.9 L414.2,208.1 L416.3,210.7 L418.0,212.9" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="round"/><circle cx="72.0" cy="136.9" r="3" fill="#38bdf8"/><circle cx="106.6" cy="104.3" r="3" fill="#38bdf8"/><circle cx="141.2" cy="82.6" r="3" fill="#38bdf8"/><circle cx="175.8" cy="71.7" r="3" fill="#38bdf8"/><circle cx="210.4" cy="66.3" r="3" fill="#38bdf8"/><circle cx="245.0" cy="71.7" r="3" fill="#38bdf8"/><circle cx="279.6" cy="82.6" r="3" fill="#38bdf8"/><circle cx="314.2" cy="104.3" r="3" fill="#38bdf8"/><circle cx="348.8" cy="131.4" r="3" fill="#38bdf8"/><circle cx="383.4" cy="169.4" r="3" fill="#38bdf8"/><circle cx="418.0" cy="212.9" r="3" fill="#38bdf8"/><line x1="210.4" y1="72.3" x2="210.4" y2="240.0" stroke="#fb923c" stroke-width="1.6" stroke-dasharray="5 4" opacity="1"/><text x="72.0" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">0</text><text x="141.2" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">2</text><text x="210.4" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">4</text><text x="279.6" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">6</text><text x="348.8" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">8</text><text x="418.0" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">10</text><text x="66" y="217.8571428571076" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">999,7</text><text x="66" y="163.5714285714462" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">999,8</text><text x="66" y="109.28571428572309" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">999,9</text><text x="66" y="55.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">1000,0</text><text x="418" y="280" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">t (°C)</text><text x="78" y="40" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">D (kg/m³)</text></svg><figcaption>Hình 4. Khối lượng riêng của nước từ 0 °C đến 10 °C.<br>Trục dọc đã phóng to: cả đồ thị chỉ chênh nhau 0,3 kg/m³.</figcaption></figure>
+<p>Một lượng nước được đun từ $0\ ^\circ\text{C}$ đến $8\ ^\circ\text{C}$. Thể tích của nó:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q6" id="hsg16-q6a"><label for="hsg16-q6a" class="tl-opt tl-no">A. Tăng đều, như mọi chất lỏng</label>
+<input type="radio" name="hsg16-q6" id="hsg16-q6b"><label for="hsg16-q6b" class="tl-opt tl-no">B. Tăng tới $4\ ^\circ\text{C}$ rồi giảm</label>
+<input type="radio" name="hsg16-q6" id="hsg16-q6c"><label for="hsg16-q6c" class="tl-opt tl-no">C. Không đổi, vì nước rất khó nén</label>
+<input type="radio" name="hsg16-q6" id="hsg16-q6d"><label for="hsg16-q6d" class="tl-opt tl-ok">D. Giảm tới $4\ ^\circ\text{C}$ rồi tăng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khối lượng không đổi, $V=\dfrac{m}{D}$.</p><p>$D$ tăng tới $4\ ^\circ\text{C}$ rồi giảm, nên $V$ giảm rồi tăng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A bỏ qua đoạn bất thường $0$–$4\ ^\circ\text{C}$ trên Hình 4.</p><p>B đọc đồ thị khối lượng riêng như đồ thị thể tích. $D$ lớn thì $V$ nhỏ.</p><p>C: khó nén là chuyện bị ép, còn nở vì nhiệt vẫn có (dù nhỏ).</p></div>
+</div>
+<details class="tl-details">
+<summary>Vì sao hồ đóng băng từ mặt, cá dưới đáy vẫn sống?</summary>
+<p>Trời lạnh, lớp nước mặt nguội tới $4\ ^\circ\text{C}$ thì nặng nhất, chìm xuống.</p>
+<p>Nguội tiếp dưới $4\ ^\circ\text{C}$ thì nhẹ hơn, nằm lại trên mặt rồi đóng băng.</p>
+<p>Lớp băng phủ mặt hồ che chắn nước bên dưới khỏi khí lạnh.</p>
+<p>Băng và nước dẫn nhiệt kém hơn kim loại nhiều, nên nhiệt dưới đáy thoát chậm, đáy hồ giữ khoảng $4\ ^\circ\text{C}$.</p>
+</details>
+
+<h3>V. Mở rộng HSG: thước nở, thể tích tràn, hai thanh</h3>
+
+<p><strong>🔑 Thước dãn → đọc thiếu</strong></p>
+<ul>
+<li>Thước khắc đúng ở $t_0$, đem đo lúc nóng hơn: mỗi vạch dài ra.</li>
+<li>Số đọc nhỏ hơn chiều dài thật: $l_{\text{thật}}=l_{\text{đọc}}(1+\alpha\Delta t)$.</li>
+</ul>
+
+<p><strong>🔑 Tràn = phần lỏng nở hơn bình</strong></p>
+<ul>
+<li>Bình đầy chất lỏng, cùng nóng lên: cả hai đều nở.</li>
+<li>$\Delta V_{\text{tràn}}=V_0\,(\beta_l-\beta_b)\,\Delta t$.</li>
+</ul>
+<p>Can nhôm ($\beta_b=72\cdot10^{-6}\ \text{K}^{-1}$) chứa đầy $10\ \text{L}$ dầu hoả ($\beta=1\cdot10^{-3}\ \text{K}^{-1}$) ở $15\ ^\circ\text{C}$. Để ngoài nắng tới $35\ ^\circ\text{C}$, dầu tràn ra:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg16-q7" id="hsg16-q7a"><label for="hsg16-q7a" class="tl-opt tl-no">A. $0{,}20\ \text{L}$</label>
+<input type="radio" name="hsg16-q7" id="hsg16-q7b"><label for="hsg16-q7b" class="tl-opt tl-ok">B. $\approx0{,}19\ \text{L}$</label>
+<input type="radio" name="hsg16-q7" id="hsg16-q7c"><label for="hsg16-q7c" class="tl-opt tl-no">C. $\approx0{,}21\ \text{L}$</label>
+<input type="radio" name="hsg16-q7" id="hsg16-q7d"><label for="hsg16-q7d" class="tl-opt tl-no">D. $\approx0{,}32\ \text{L}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta V=10\cdot(10^{-3}-72\cdot10^{-6})\cdot20$.</p><p>$\Delta V=10\cdot0{,}000\,928\cdot20\approx0{,}19\ \text{L}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A quên can cũng nở: $10\cdot10^{-3}\cdot20=0{,}20$.</p><p>C cộng hai hệ số. Can nở ra là có thêm chỗ chứa, phải trừ.</p><p>D dùng $35$ thay cho $\Delta t=20$.</p></div>
+</div>
+
+<p><strong>🔑 Hiệu không đổi ⇔ $l_1\alpha_1=l_2\alpha_2$</strong></p>
+<ul>
+<li>Hai thanh cùng nóng lên, độ dãn bằng nhau thì hiệu chiều dài giữ nguyên.</li>
+<li>Thanh có $\alpha$ nhỏ phải dài hơn.</li>
+</ul>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — thanh thép và thanh nhôm có hiệu chiều dài luôn là $6\ \text{cm}$ ở mọi nhiệt độ. Tìm chiều dài mỗi thanh.</p>
+<ol class="tl-steps">
+<li>Độ dãn bằng nhau: $l_{Fe}\cdot12=l_{Al}\cdot24$, nên $l_{Fe}=2\,l_{Al}$.</li>
+<li><strong>Bước 2 (em điền):</strong> thanh nào dài hơn? Viết phương trình hiệu $6\ \text{cm}$.</li>
+<li>Kết luận: $l_{Al}=\;?$, $l_{Fe}=\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary>
+<p>Thép có $\alpha$ nhỏ nên dài hơn: $l_{Fe}-l_{Al}=6$.</p>
+<p>$2\,l_{Al}-l_{Al}=6$, nên $l_{Al}=6\ \text{cm}$, $l_{Fe}=12\ \text{cm}$.</p></details>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: ray thép dài $10\ \text{m}$ lắp ở $20\ ^\circ\text{C}$, nóng nhất $60\ ^\circ\text{C}$. Khe hở tối thiểu?</summary>
+<p>$\Delta l=10\cdot12\cdot10^{-6}\cdot40=0{,}0048\ \text{m}=4{,}8\ \text{mm}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: vì sao rót nước sôi vào cốc thuỷ tinh thành dày dễ nứt hơn cốc thành mỏng?</summary>
+<p>Thuỷ tinh dẫn nhiệt kém.</p>
+<p>Mặt trong nóng và nở ngay, mặt ngoài còn nguội chưa nở.</p>
+<p>Thành dày thì chênh lệch này lớn và kéo dài, sinh lực làm nứt. Thành mỏng nóng đều nhanh hơn.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: lồng ấp trứng có điện trở sưởi $30\ \text{W}$, đặt trong phòng $22\ ^\circ\text{C}$ thì giữ ổn định ở $37\ ^\circ\text{C}$ (hao phí tỉ lệ hiệu nhiệt độ). Đêm phòng xuống $17\ ^\circ\text{C}$, muốn giữ $37\ ^\circ\text{C}$ phải tăng công suất sưởi thêm bao nhiêu?</summary>
+<p>$k=\dfrac{30}{37-22}=2\ \text{W/}^\circ\text{C}$.</p>
+<p>Cần $P=2\cdot(37-17)=40\ \text{W}$, tức thêm $10\ \text{W}$.</p>
+</details>
+
+<h3>VI. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Ba cách truyền nhiệt là gì, mỗi cách xảy ra chủ yếu ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Dẫn nhiệt: chủ yếu ở rắn.</p>
+<p>Đối lưu: lỏng, khí.</p>
+<p>Bức xạ: cả chân không.</p></details>
+<details class="tl-details"><summary>Vì sao sờ sắt thấy lạnh hơn gỗ dù cùng nhiệt độ?</summary>
+<p>Sắt dẫn nhiệt tốt, lấy nhiệt khỏi tay nhanh.</p>
+<p>Cảm giác không đo nhiệt độ.</p></details>
+<details class="tl-details"><summary>Phích chặn ba cách truyền nhiệt thế nào?</summary>
+<p>Chân không: chặn dẫn nhiệt, đối lưu.</p>
+<p>Tráng bạc: hắt bức xạ.</p>
+<p>Nút: chặn đối lưu ra ngoài.</p></details>
+<details class="tl-details"><summary>Hai giả thiết hao phí? Khi nào có nhiệt độ ổn định? (Mở rộng HSG)</summary>
+<p>Không đổi: $Q_{hp}=P_{hp}t$.</p>
+<p>Tỉ lệ hiệu: $P_{hp}=k(t-t_0)$.</p>
+<p>Ổn định khi $P=k(t_{\text{ođ}}-t_0)$.</p></details>
+<details class="tl-details"><summary>Công thức nở dài, nở khối, khối lượng riêng khi nóng?</summary>
+<p>$l=l_0(1+\alpha\Delta t)$.</p>
+<p>$V=V_0(1+\beta\Delta t)$, rắn $\beta\approx3\alpha$.</p>
+<p>$D=D_0/(1+\beta\Delta t)$.</p></details>
+<details class="tl-details"><summary>Băng kép cong về phía nào? Nước đặc biệt ở đâu?</summary>
+<p>Nóng: lá nở nhiều ở mặt lồi.</p>
+<p>Nước: $D$ lớn nhất ở $4\ ^\circ\text{C}$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Nhiệt đi từ nóng sang lạnh.</li>
+<li>Không có "hơi lạnh" truyền sang.</li>
+<li>Dẫn nhiệt: rắn, kim loại tốt.</li>
+<li>Đối lưu: lỏng, khí, nóng đi lên.</li>
+<li>Bức xạ: đi cả chân không.</li>
+<li>Qua vách: $P\propto S\Delta t/d$.</li>
+<li>Hao phí: đọc đề, không đổi hay tỉ lệ hiệu.</li>
+<li>Cấp = hao phí: nhiệt độ ổn định.</li>
+<li>$\Delta l=l_0\alpha\Delta t$, nhân $l_0$ ban đầu.</li>
+<li>Hiệu nhiệt độ: $^\circ$C hay K như nhau.</li>
+<li>Băng kép: nở nhiều ở mặt lồi.</li>
+<li>Nước nặng nhất ở $4\ ^\circ\text{C}$.</li>
+<li>Tràn $=V_0(\beta_l-\beta_b)\Delta t$.</li>
+<li>Đọc đề: hao phí theo giả thiết nào? $\Delta t$ là hiệu hay nhiệt độ cuối?</li>
+</ul>
+</div>

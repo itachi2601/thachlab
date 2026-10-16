@@ -1,0 +1,537 @@
+Chuyên đề 12. Nhiệt học nâng cao: Phương trình cân bằng nhiệt và chuyển thể
+A. Yêu cầu cần đạt và phạm vi
+Chuyên đề này bù đắp mảng kiến thức trọng tâm thứ hai của mạch Năng lượng và sự biến đổi (phần Nhiệt học lớp 8 nâng cao) vốn chiếm từ 15% đến 20% tổng số điểm trong các đề thi học sinh giỏi Khoa học tự nhiên 9 cấp Tỉnh/Thành phố và kỳ thi tuyển sinh vào lớp 10 chuyên Vật lí.
+Sau khi học xong chuyên đề, học sinh cần đạt:
+1. Viết và vận dụng thành thạo công thức tính nhiệt lượng thu vào hay toả ra khi nhiệt độ thay đổi: Q = m.c.Δt.
+2. Thiết lập và giải chính xác Phương trình cân bằng nhiệt cho hệ nhiều vật: Qtoả = Qthu hay ΣQ = 0.
+3. Vận dụng công thức tính nhiệt lượng trong các quá trình chuyển thể của chất: nóng chảy và đông đặc (Q = λ.m), hoá hơi và ngưng tụ (Q = L.m).
+4. Phân tích và xử lí đồ thị nhiệt độ theo thời gian (T–t), xác định được các giai đoạn truyền nhiệt, giai đoạn chuyển pha và công suất cung cấp nhiệt.
+5. Giải quyết các bài toán nhiệt lượng hao phí toả ra môi trường xung quanh theo thời gian hoặc theo hiệu suất nhiệt H = Qích/Qtoàn × 100%.
+6. Giải bài toán rót chất lỏng nhiều lần liên tiếp giữa các bình chứa (bài toán bình A rót sang bình B rồi rót ngược lại) bằng phương pháp lập phương trình hoặc phương pháp bảo toàn nhiệt lượng.
+7. Giải bài toán nhiệt cơ kết hợp: công của lực ma sát, thế năng biến thành nhiệt năng làm nóng vật hoặc làm tan chảy nước đá.
+Quy ước dùng trong chuyên đề:
+Nhiệt dung riêng của nước: cn = 4 200 J/(kg.K).
+Nhiệt dung riêng của nước đá: cđ = 2 100 J/(kg.K).
+Nhiệt dung riêng của nhôm: cAl = 880 J/(kg.K); của đồng: cCu = 380 J/(kg.K); của sắt/thép: cFe = 460 J/(kg.K).
+Nhiệt nóng chảy của nước đá ở 0 °C: λ = 3,4 × 105 J/kg.
+Nhiệt hoá hơi của nước ở 100 °C: L = 2,3 × 106 J/kg.
+Khối lượng riêng của nước: Dn = 1 000 kg/m3 (1 lít nước có khối lượng 1 kg).
+B. Lý thuyết trọng tâm
+B1. Kiến thức nền về nhiệt học
+Lưu ý phạm vi: các khái niệm nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng và các công thức Q = m.c.Δt, Q = λ.m, Q = L.m không nằm trong YCCĐ lớp 8 CT 2018 (đối chiếu tài liệu 42). Đây là kiến thức bổ sung cho bồi dưỡng HSG; khi ra đề nên cho sẵn các hằng số c, λ, L.
+1. Nhiệt lượng và phương trình cân bằng nhiệt
+Nhiệt lượng là phần nhiệt năng mà vật nhận được hay mất đi trong quá trình truyền nhiệt.
+Nhiệt lượng vật thu vào để tăng nhiệt độ từ t₁ lên t₂ (t₂ > t₁):
+Qthu = m.c.(t₂ − t₁)
+Nhiệt lượng vật toả ra khi hạ nhiệt độ từ t₁ xuống t₂ (t₁ > t₂):
+Qtoả = m.c.(t₁ − t₂)
+Trong đó:
+m là khối lượng của vật (kg).
+c là nhiệt dung riêng của chất cấu tạo nên vật (J/(kg.K)). Nhiệt dung riêng cho biết nhiệt lượng cần cung cấp để 1 kg chất đó tăng thêm 1 °C (hoặc 1 K).
+Δt là độ biến thiên nhiệt độ (°C hoặc K).
+Nguyên lí truyền nhiệt giữa các vật:
+Nhiệt truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn.
+Sự truyền nhiệt xảy ra cho đến khi nhiệt độ của các vật bằng nhau thì dừng lại (đạt trạng thái cân bằng nhiệt).
+Nhiệt lượng do vật này toả ra bằng nhiệt lượng do vật kia thu vào (nếu bỏ qua sự thất thoát nhiệt ra môi trường).
+Phương trình cân bằng nhiệt:
+Qtoả = Qthu
+2. Nhiệt nóng chảy và nhiệt đông đặc
+Sự chuyển từ thể rắn sang thể lỏng gọi là sự nóng chảy. Sự chuyển ngược lại gọi là sự đông đặc.
+Mỗi chất nóng chảy ở một nhiệt độ xác định gọi là nhiệt độ nóng chảy (với nước đá là 0 °C ở áp suất chuẩn). Trong suốt thời gian nóng chảy hay đông đặc, nhiệt độ của chất không thay đổi.
+Nhiệt lượng cần cung cấp để m kg chất rắn nóng chảy hoàn toàn ở nhiệt độ nóng chảy:
+Qnc = λ.m
+Trong đó λ là nhiệt nóng chảy riêng của chất (J/kg).
+Khi đông đặc hoàn toàn ở nhiệt độ đông đặc, chất lỏng toả ra nhiệt lượng đúng bằng Qđđ = λ.m.
+3. Nhiệt hoá hơi và nhiệt ngưng tụ
+Sự chuyển từ thể lỏng sang thể hơi gọi là sự hoá hơi (gồm bay hơi trên mặt thoáng và sôi trong lòng chất lỏng). Sự chuyển ngược lại gọi là sự ngưng tụ.
+Mỗi chất sôi ở một nhiệt độ xác định gọi là nhiệt độ sôi (với nước là 100 °C ở áp suất chuẩn). Trong suốt thời gian sôi, nhiệt độ của chất không đổi.
+Nhiệt lượng cần cung cấp để m kg chất lỏng hoá hơi hoàn toàn ở nhiệt độ sôi:
+Qhh = L.m
+Trong đó L là nhiệt hoá hơi riêng của chất (J/kg).
+Khi ngưng tụ hoàn toàn ở nhiệt độ sôi, chất hơi toả ra nhiệt lượng đúng bằng Qnt = L.m.
+B2. Mở rộng – nâng cao cho HSG
+1. Phương pháp đại số (Quy ước dấu của nhiệt lượng)
+Khi hệ có nhiều vật trao đổi nhiệt, việc phân chia vật nào toả, vật nào thu đôi khi phức tạp vì chưa biết nhiệt độ cân bằng tcb cao hơn hay thấp hơn nhiệt độ ban đầu của một số vật trung gian.
+Phương pháp đại số: Quy ước Δti = tcb − ti (luôn lấy nhiệt độ cân bằng trừ nhiệt độ ban đầu).
+Nếu vật thu nhiệt (tcb > ti) thì Qi = mi.ci.(tcb − ti) > 0.
+Nếu vật toả nhiệt (tcb < ti) thì Qi = mi.ci.(tcb − ti) < 0.
+Phương trình cân bằng nhiệt toàn hệ cô lập viết dưới dạng đại số:
+ΣQi = 0
+Tương đương:
+m₁.c₁.(tcb − t₁) + m₂.c₂.(tcb − t₂) + … + mn.cn.(tcb − tn) = 0
+Từ đây giải phương trình bậc nhất một ẩn tcb cực kỳ nhanh chóng và không sợ nhầm lẫn chiều truyền nhiệt:
+tcb = (m₁.c₁.t₁ + m₂.c₂.t₂ + … + mn.cn.tn)/(m₁.c₁ + m₂.c₂ + … + mn.cn)
+Đại lượng C = m.c được gọi là nhiệt dung của vật (J/K). Khi đó:
+tcb = (ΣCi.ti)/(ΣCi)
+2. Bài toán chuyển thể chưa rõ trạng thái cuối cùng
+Khi thả một khối nước đá ở t₁ < 0 °C vào một lượng nước ở t₂ > 0 °C, trạng thái cuối cùng có thể là:
+Toàn bộ đá tan hết và nhiệt độ hỗn hợp tcb > 0 °C.
+Toàn bộ nước bị đông đặc và nhiệt độ hỗn hợp tcb < 0 °C.
+Hệ đạt cân bằng nhiệt ở đúng 0 °C, trong bình tồn tại cả nước và nước đá (đá chỉ tan một phần hoặc nước chỉ đông đặc một phần).
+Thuật toán 4 nhánh xét trạng thái chuyển thể (đá ở t₁ < 0 °C thả vào nước ở t₂ > 0 °C):
+Bước 1: Nhiệt lượng cực đại nước toả ra khi hạ xuống đúng 0 °C:
+Qtoả(max) = mn.cn.(t₂ − 0)
+Bước 2: Nhiệt lượng đưa toàn bộ đá lên 0 °C, và để đá tan hoàn toàn:
+Qa = mđ.cđ.(0 − t₁)
+Qthu(cần) = Qa + λ.mđ
+Bước 3: So sánh Qtoả(max) với các mốc trên:
+Nhánh 1. Nếu Qtoả(max) ≥ Qthu(cần): đá tan hết, tcb ≥ 0 °C. Giải: Qtoả(max) − Qthu(cần) = (mn + mđ).cn.tcb.
+Nhánh 2. Nếu Qa ≤ Qtoả(max) < Qthu(cần): hệ cân bằng ở đúng 0 °C, đá tan một phần: mtan = [Qtoả(max) − Qa]/λ.
+Nhánh 3. Nếu Qtoả(max) < Qa nhưng Qtoả(max) + λ.mn > Qa: nước về 0 °C vẫn chưa đủ làm đá lên 0 °C, nên một phần nước đông đặc và toả nhiệt. Hệ cân bằng ở đúng 0 °C, nước đông đặc một phần: mđđ = [Qa − Qtoả(max)]/λ.
+Nhánh 4. Nếu Qtoả(max) + λ.mn ≤ Qa: toàn bộ nước đông đặc, tcb < 0 °C. Giải: Qtoả(max) + λ.mn + mn.cđ.(0 − tcb) = mđ.cđ.(tcb − t₁).
+3. Đồ thị nhiệt độ – thời gian (T–t)
+Trên đồ thị biểu diễn nhiệt độ T theo thời gian t khi đun nóng đều bằng một nguồn nhiệt có công suất P không đổi:
+Đoạn nghiêng lên ứng với quá trình tăng nhiệt độ của chất rắn hoặc chất lỏng: hệ số góc (độ dốc) k = ΔT/Δt = P/(m.c). Chất nào có nhiệt dung m.c lớn hơn thì đường biểu diễn ít dốc hơn (nhiệt độ tăng chậm hơn).
+Đoạn nằm ngang ứng với quá trình chuyển pha (nóng chảy hoặc sôi) vì trong suốt quá trình này nhiệt độ không đổi dù nguồn vẫn cung cấp nhiệt:
+Nhiệt lượng cung cấp trong giai đoạn nằm ngang: Q = P.Δtngang = λ.m (hoặc L.m).
+4. Hao phí nhiệt ra môi trường xung quanh
+Trong thực tế, nhiệt lượng hao phí ra môi trường xung quanh thường tỉ lệ với thời gian truyền nhiệt hoặc tỉ lệ với độ chênh lệch nhiệt độ giữa hệ và môi trường:
+Hao phí tỉ lệ với thời gian: qhp = k.t (k là công suất hao phí nhiệt trung bình, J/s = W).
+Phương trình cân bằng nhiệt có hao phí: Qtoả = Qthu + Qhp.
+Hiệu suất nhiệt của quá trình:
+H = Qích/Qtoàn × 100% = Qích/(Qích + Qhp) × 100%
+5. Bài toán rót chất lỏng nhiều lần (chu kỳ rót)
+Rót một lượng chất lỏng có khối lượng m từ bình 1 (chứa m₁, nhiệt độ t₁) sang bình 2 (chứa m₂, nhiệt độ t₂), đợi cân bằng nhiệt rồi rót ngược lại một lượng m từ bình 2 về bình 1:
+Cách giải chuẩn mực: Viết phương trình cân bằng nhiệt cho lần rót 1 (tìm nhiệt độ tcb1 của bình 2). Sau đó viết phương trình cân bằng nhiệt cho lần rót 2 (tìm nhiệt độ tcb2 của bình 1).
+Nếu lặp lại vô số lần, nhiệt độ cuối cùng của hai bình sẽ tiến tới nhiệt độ cân bằng chung:
+tvôcùng = (m₁.c₁.t₁ + m₂.c₂.t₂)/(m₁.c₁ + m₂.c₂)
+B3. Bảng công thức và hằng số cần nhớ
+STT
+Quá trình / Đại lượng
+Công thức
+Ghi chú
+1
+Nhiệt lượng đun nóng / hạ nhiệt
+Q = m.c.Δt
+c tính bằng J/(kg.K)
+2
+Phương trình cân bằng nhiệt
+Qtoả = Qthu
+không tính hao phí
+3
+Cân bằng nhiệt tổng quát
+Σ mi.ci.(tcb − ti) = 0
+phương pháp đại số
+4
+Nhiệt nóng chảy
+Qnc = λ.m
+λ = 3,4 × 105 J/kg (nước đá)
+5
+Nhiệt hoá hơi
+Qhh = L.m
+L = 2,3 × 106 J/kg (nước sôi)
+6
+Nhiệt lượng đốt cháy nhiên liệu
+Q = q.m
+q là năng suất toả nhiệt (J/kg)
+7
+Cân bằng nhiệt có hao phí
+Qtoả = Qthu + Qhp
+Qhp = Php.t
+8
+Hiệu suất nhiệt
+H = Qích/Qtoàn × 100%
+luôn nhỏ hơn 100%
+9
+Độ dốc đồ thị T–t
+k = ΔT/Δt = P/(m.c)
+P là công suất cấp nhiệt
+10
+Công cơ học chuyển thành nhiệt
+Q = A = Fms.s
+định luật bảo toàn năng lượng
+
+C. Các dạng bài và phương pháp giải
+Dạng 1. Phương trình cân bằng nhiệt cơ bản và hệ nhiều vật
+Nhận dạng: Trộn các lượng chất lỏng hoặc thả các miếng kim loại có nhiệt độ khác nhau vào bình chứa nước; hỏi nhiệt độ cân bằng hoặc khối lượng một chất.
+Phương pháp:
+1. Xác định vật toả nhiệt (nhiệt độ ban đầu cao hơn tcb) và vật thu nhiệt (nhiệt độ ban đầu thấp hơn tcb). Kể cả bình chứa (nhiệt lượng do bình thu hoặc toả).
+2. Viết biểu thức Qtoả cho từng vật toả: Qtoả = Σ mtoả.ctoả.(ttoả − tcb).
+3. Viết biểu thức Qthu cho từng vật thu: Qthu = Σ mthu.cthu.(tcb − tthu).
+4. Cho Qtoả = Qthu và giải phương trình tìm ẩn số.
+Ví dụ mẫu: Một nhiệt lượng kế bằng đồng có khối lượng mb = 200 g chứa mn = 500 g nước ở nhiệt độ t₁ = 20 °C. Người ta thả vào nhiệt lượng kế một thỏi nhôm có khối lượng mAl = 300 g ở nhiệt độ t₂ = 100 °C. Bỏ qua sự truyền nhiệt ra môi trường xung quanh. Cho cCu = 380 J/(kg.K), cn = 4 200 J/(kg.K), cAl = 880 J/(kg.K). Tính nhiệt độ cân bằng của hệ.
+Lời giải
+Nhiệt lượng kế và nước ban đầu ở t₁ = 20 °C nhận nhiệt lượng để tăng lên tcb. Thỏi nhôm ở t₂ = 100 °C toả nhiệt lượng để hạ xuống tcb.
+Nhiệt lượng thỏi nhôm toả ra là:
+Qtoả = mAl.cAl.(t₂ − tcb) = 0,3 × 880 × (100 − tcb) = 264 × (100 − tcb) = 26 400 − 264.tcb
+Nhiệt lượng do nước thu vào là:
+Qnước = mn.cn.(tcb − t₁) = 0,5 × 4 200 × (tcb − 20) = 2 100 × (tcb − 20) = 2 100.tcb − 42 000
+Nhiệt lượng do nhiệt lượng kế thu vào là:
+Qbình = mb.cCu.(tcb − t₁) = 0,2 × 380 × (tcb − 20) = 76 × (tcb − 20) = 76.tcb − 1 520
+Tổng nhiệt lượng hệ thu vào:
+Qthu = Qnước + Qbình = (2 100 + 76).tcb − (42 000 + 1 520) = 2 176.tcb − 43 520
+Phương trình cân bằng nhiệt:
+Qtoả = Qthu
+26 400 − 264.tcb = 2 176.tcb − 43 520
+(2 176 + 264).tcb = 26 400 + 43 520
+2 440.tcb = 69 920
+tcb = 69 920 / 2 440 ≈ 28,66 °C
+Đáp số: Nhiệt độ cân bằng xấp xỉ 28,66 °C.
+Dạng 2. Quá trình chuyển thể và bài toán biện luận trạng thái
+Nhận dạng: Thả nước đá vào nước ấm hoặc dẫn hơi nước sôi vào cốc nước đá; đề bài hỏi nhiệt độ cuối cùng của hệ hoặc khối lượng nước đá tan/nước đông đặc.
+Phương pháp:
+1. Luôn tính nhiệt lượng tối đa mà bên nóng có thể toả ra khi hạ về 0 °C: Qtoả(max).
+2. Tính nhiệt lượng cần thiết để đưa đá lên 0 °C: Q₁ = mđ.cđ.(0 − tđá).
+3. Tính nhiệt lượng cần để làm nóng chảy toàn bộ đá ở 0 °C: Q₂ = λ.mđ.
+4. Biện luận theo thuật toán 4 nhánh (mục B2.2) để kết luận trạng thái cuối cùng rồi mới viết phương trình chi tiết.
+Ví dụ mẫu: Thả một khối nước đá có khối lượng m₁ = 2 kg ở nhiệt độ t₁ = −10 °C vào một thùng chứa m₂ = 5 kg nước ở nhiệt độ t₂ = 20 °C. Bỏ qua sự trao đổi nhiệt với thùng và môi trường. Cho cđ = 2 100 J/(kg.K), cn = 4 200 J/(kg.K), λ = 3,4 × 105 J/kg. a) Chứng minh rằng toàn bộ khối nước đá không thể tan hết. b) Tìm nhiệt độ cân bằng của hệ và khối lượng nước đá còn lại chưa tan.
+Lời giải
+a) Nhiệt lượng cực đại mà 5 kg nước có thể toả ra khi hạ nhiệt độ từ 20 °C xuống 0 °C là:
+Qtoả(max) = m₂.cn.(t₂ − 0) = 5 × 4 200 × (20 − 0) = 420 000 J
+Nhiệt lượng cần cung cấp để 2 kg nước đá tăng từ −10 °C lên 0 °C là:
+Q₁ = m₁.cđ.[0 − (−10)] = 2 × 2 100 × 10 = 42 000 J
+Nhiệt lượng cần cung cấp để 2 kg nước đá nóng chảy hoàn toàn ở 0 °C là:
+Q₂ = λ.m₁ = 3,4 × 105 × 2 = 680 000 J
+Tổng nhiệt lượng cần thiết để toàn bộ nước đá chuyển thành nước ở 0 °C là:
+Qthu(cần) = Q₁ + Q₂ = 42 000 + 680 000 = 722 000 J
+So sánh: Qtoả(max) = 420 000 J < Qthu(cần) = 722 000 J.
+Do đó, lượng nhiệt do nước toả ra không đủ để làm tan hết khối nước đá.
+Mặt khác, Qtoả(max) = 420 000 J > Q₁ = 42 000 J, do đó nhiệt lượng này đủ để đưa toàn bộ khối đá lên 0 °C và làm tan một phần đá.
+b) Vì trong bình còn cả nước và nước đá chưa tan hết nên nhiệt độ cân bằng của hệ bắt buộc phải là tcb = 0 °C.
+Phần nhiệt lượng còn lại dùng để làm tan một phần nước đá là:
+Qcòn = Qtoả(max) − Q₁ = 420 000 − 42 000 = 378 000 J
+Khối lượng nước đá đã bị nóng chảy là:
+mtan = Qcòn / λ = 378 000 / (3,4 × 105) ≈ 1,112 kg
+Khối lượng nước đá còn lại chưa tan trong thùng là:
+mcòn = m₁ − mtan = 2 − 1,112 = 0,888 kg = 888 g
+Đáp số: a) Đá không tan hết vì Qtoả(max) < Qthu(cần). b) tcb = 0 °C; khối lượng đá còn lại là 0,888 kg.
+Dạng 3. Phân tích đồ thị nhiệt độ – thời gian (T–t)
+Nhận dạng: Đề bài cho đồ thị biểu diễn sự thay đổi nhiệt độ theo thời gian của một chất khi được đun nóng hoặc làm nguội đều đặn.
+Phương pháp:
+1. Nhận diện các đoạn trên đồ thị:
+Đoạn dốc lên (hoặc xuống): chất ở trạng thái đơn pha (rắn, lỏng hoặc hơi).
+Đoạn nằm ngang: chất đang chuyển pha (nóng chảy, đông đặc hoặc sôi). Giá trị nhiệt độ của đoạn nằm ngang chính là nhiệt độ chuyển pha.
+2. Áp dụng Q = P.t = m.c.ΔT cho đoạn dốc để tìm nhiệt dung riêng c hoặc công suất cấp nhiệt P.
+3. Áp dụng Q = P.t = λ.m (hoặc L.m) cho đoạn nằm ngang để tìm ẩn nhiệt chuyển thể λ hoặc L.
+Sơ đồ minh họa đồ thị T–t:  T (°C) 100 |                     ------------- (Sôi: Q = L.m)
+|                    /
+|                   / (Nước lỏng tăng nhiệt: Q = m.cn.ΔT) 0 |          --------/ (Nóng chảy: Q = λ.m)
+|         /
+-10 |________/ (Đá tăng nhiệt: Q = m.cđ.ΔT) 0       t₁        t₂  t₃           t₄   Thời gian t (phút) 
+Ví dụ mẫu: Người ta dùng một bếp điện có công suất không đổi để đun một khối nước đá đựng trong một nhiệt lượng kế. Đồ thị biểu diễn nhiệt độ theo thời gian cho thấy:
+Từ phút thứ 0 đến phút thứ 1: nhiệt độ tăng từ −10 °C lên 0 °C.
+Từ phút thứ 1 đến phút thứ 17: nhiệt độ giữ không đổi ở 0 °C.
+Biết cđ = 2 100 J/(kg.K). Hãy tính nhiệt nóng chảy riêng của nước đá từ đồ thị trên.
+Lời giải
+Gọi m là khối lượng khối nước đá, P là công suất nhiệt mà bếp truyền cho khối đá. Bỏ qua hao phí nhiệt.
+Trong giai đoạn 1 (từ 0 đến 1 phút, tức Δt₁ = 1 phút = 60 s):
+Nhiệt lượng khối đá nhận được dùng để tăng nhiệt độ từ −10 °C lên 0 °C:
+Q₁ = P.Δt₁ = m.cđ.[0 − (−10)] = 10.m.cđ
+Trong giai đoạn 2 (từ 1 đến 17 phút, tức Δt₂ = 16 phút = 960 s):
+Nhiệt độ không đổi ở 0 °C chứng tỏ khối đá đang nóng chảy hoàn toàn. Nhiệt lượng nhận được là:
+Q₂ = P.Δt₂ = λ.m
+Lập tỉ số giữa hai phương trình:
+Q₂ / Q₁ = (P.Δt₂) / (P.Δt₁) = (λ.m) / (10.m.cđ)
+Δt₂ / Δt₁ = λ / (10.cđ)
+Suy ra nhiệt nóng chảy riêng của nước đá là:
+λ = 10.cđ × (Δt₂ / Δt₁)
+Thay số:
+λ = 10 × 2 100 × (16 / 1) = 21 000 × 16 = 336 000 J/kg
+Nhận xét: Công thức λ = 10.cđ.(Δt₂/Δt₁) cho phép tính trực tiếp λ mà không cần biết khối lượng m của đá hay công suất P của bếp!
+Đáp số: λ = 336 000 J/kg (xấp xỉ 3,4 × 105 J/kg).
+Dạng 4. Hao phí nhiệt ra môi trường và hiệu suất đun nấu
+Nhận dạng: Bài toán đun nước bằng bếp dầu, bếp gas, bếp than hoặc ấm điện có hao phí nhiệt ra không khí xung quanh; hỏi thời gian đun, lượng nhiên liệu cần dùng hoặc nhiệt độ ổn định cực đại.
+Phương pháp:
+1. Nhiệt lượng có ích: Qích = m.c.Δt (+ λ.m nếu có chuyển thể).
+2. Nhiệt lượng toàn phần: Qtoàn = Pđiện.t hoặc Qtoàn = q.mnhiên liệu.
+3. Liên hệ qua hiệu suất: H = Qích / Qtoàn.
+4. Nếu đề bài cho công suất hao phí nhiệt Php không đổi ra môi trường:
+Pcung cấp = Pích + Php, trong đó Pích = m.c.(Δt/t).
+Ví dụ mẫu: Dùng một bếp dầu để đun sôi 2 lít nước ở nhiệt độ ban đầu 25 °C đựng trong một ấm nhôm khối lượng 400 g. Hiệu suất của bếp là 40%. Năng suất toả nhiệt của dầu hoả là q = 4,4 × 107 J/kg. Cho cn = 4 200 J/(kg.K), cAl = 880 J/(kg.K). a) Tính nhiệt lượng có ích cần thiết để đun sôi nước. b) Tính lượng dầu hoả cần dùng để đun lượng nước trên.
+Lời giải
+a) Khối lượng nước là mn = 2 kg. Khối lượng ấm nhôm mAl = 0,4 kg. Độ tăng nhiệt độ: Δt = 100 − 25 = 75 °C.
+Nhiệt lượng để làm nóng nước từ 25 °C lên 100 °C:
+Qn = mn.cn.Δt = 2 × 4 200 × 75 = 630 000 J
+Nhiệt lượng để làm nóng ấm nhôm từ 25 °C lên 100 °C:
+QAl = mAl.cAl.Δt = 0,4 × 880 × 75 = 26 400 J
+Tổng nhiệt lượng có ích:
+Qích = Qn + QAl = 630 000 + 26 400 = 656 400 J
+b) Hiệu suất của bếp là H = 40% = 0,4. Nhiệt lượng toàn phần do dầu hoả toả ra là:
+Qtoàn = Qích / H = 656 400 / 0,4 = 1 641 000 J
+Khối lượng dầu hoả cần đốt cháy là:
+mdầu = Qtoàn / q = 1 641 000 / (4,4 × 107) ≈ 0,0373 kg = 37,3 g
+Đáp số: a) Qích = 656 400 J. b) mdầu ≈ 37,3 g.
+Dạng 5. Bài toán rót chất lỏng qua lại nhiều lần
+Nhận dạng: Có hai bình chứa chất lỏng ở nhiệt độ khác nhau. Người ta múc một ca chất lỏng từ bình 1 đổ sang bình 2, sau khi cân bằng nhiệt lại múc một ca từ bình 2 đổ trả về bình 1.
+Phương pháp:
+1. Gọi khối lượng mỗi ca chất lỏng múc ra là m.
+2. Lần rót 1 (từ bình 1 sang bình 2): Lượng chất lỏng m ở nhiệt độ t₁ truyền nhiệt cho lượng chất lỏng m₂ ở nhiệt độ t₂ trong bình 2, đạt nhiệt độ cân bằng tcb1:
+m.c.(t₁ − tcb1) = m₂.c.(tcb1 − t₂)
+3. Lần rót 2 (từ bình 2 về bình 1): Lượng chất lỏng m ở nhiệt độ tcb1 truyền nhiệt cho lượng chất lỏng còn lại (m₁ − m) ở nhiệt độ t₁ trong bình 1, đạt nhiệt độ cân bằng tcb2:
+(m₁ − m).c.(t₁ − tcb2) = m.c.(tcb2 − tcb1)
+4. Khử c và giải hệ phương trình tìm ẩn số.
+Ví dụ mẫu: Bình 1 chứa m₁ = 4 kg nước ở nhiệt độ t₁ = 80 °C. Bình 2 chứa m₂ = 2 kg nước ở nhiệt độ t₂ = 20 °C. Người ta múc một ca nước có khối lượng m từ bình 1 đổ sang bình 2. Khi bình 2 đã cân bằng nhiệt, người ta lại múc một ca nước có cùng khối lượng m từ bình 2 đổ trở lại bình 1. Nhiệt độ cân bằng ở bình 1 lúc này là t₁' = 74 °C. Bỏ qua sự truyền nhiệt ra môi trường và nhiệt dung của ca, bình. Tính khối lượng m của mỗi ca nước và nhiệt độ cân bằng t₂' ở bình 2 sau lần rót thứ nhất.
+Lời giải
+Xét lần rót thứ nhất (rót m kg từ bình 1 ở t₁ = 80 °C sang bình 2 chứa m₂ = 2 kg ở t₂ = 20 °C):
+Gọi t₂' là nhiệt độ cân bằng ở bình 2. Phương trình cân bằng nhiệt ở bình 2:
+m.c.(t₁ − t₂') = m₂.c.(t₂' − t₂)
+m.(80 − t₂') = 2.(t₂' − 20)   (Phương trình 1)
+Xét lần rót thứ hai (rót m kg từ bình 2 ở t₂' về bình 1 chứa (m₁ − m) = (4 − m) kg ở nhiệt độ t₁ = 80 °C):
+Nhiệt độ cân bằng sau cùng của bình 1 là t₁' = 74 °C. Phương trình cân bằng nhiệt ở bình 1:
+(4 − m).c.(80 − 74) = m.c.(74 − t₂')
+6.(4 − m) = m.(74 − t₂')
+24 − 6.m = 74.m − m.t₂'
+m.t₂' = 80.m − 24
+m.(80 − t₂') = 24   (Phương trình 2)
+So sánh (Phương trình 1) và (Phương trình 2):
+2.(t₂' − 20) = 24
+t₂' − 20 = 12
+t₂' = 32 °C
+Thay t₂' = 32 °C vào (Phương trình 2):
+m.(80 − 32) = 24
+m.48 = 24
+m = 24 / 48 = 0,5 kg
+Đáp số: m = 0,5 kg; t₂' = 32 °C.
+D. Bài tập ví dụ có lời giải
+Bài D1. Để xác định nhiệt dung riêng của một kim loại, người ta bỏ một thỏi kim loại đó khối lượng 400 g được nung nóng đến 100 °C vào một nhiệt lượng kế chứa 500 g nước ở 20 °C. Nhiệt độ cân bằng của hệ là 26 °C. Bỏ qua nhiệt dung của nhiệt lượng kế và hao phí ra môi trường. Tính nhiệt dung riêng của kim loại và cho biết đó có thể là kim loại gì.
+Lời giải
+Khối lượng kim loại: m₁ = 0,4 kg, nhiệt độ ban đầu t₁ = 100 °C.
+Khối lượng nước: m₂ = 0,5 kg, nhiệt độ ban đầu t₂ = 20 °C.
+Nhiệt độ cân bằng: tcb = 26 °C.
+Nhiệt lượng thỏi kim loại toả ra:
+Qtoả = m₁.c₁.(t₁ − tcb) = 0,4 × c₁ × (100 − 26) = 29,6.c₁
+Nhiệt lượng nước thu vào:
+Qthu = m₂.cn.(tcb − t₂) = 0,5 × 4 200 × (26 − 20) = 2 100 × 6 = 12 600 J
+Phương trình cân bằng nhiệt:
+29,6.c₁ = 12 600
+c₁ = 12 600 / 29,6 ≈ 425,7 J/(kg.K)
+Tra bảng nhiệt dung riêng: giá trị này gần với nhiệt dung riêng của thép/sắt (khoảng 460 J/(kg.K)) hoặc hợp kim đồng thau.
+Đáp số: c₁ ≈ 425,7 J/(kg.K).
+Bài D2. Thả 500 g nước đá ở −5 °C vào một bình chứa 1 kg nước ở 40 °C. Cho cđ = 2 100 J/(kg.K), cn = 4 200 J/(kg.K), λ = 3,4 × 105 J/kg. Xác định nhiệt độ và thành phần của hệ khi có cân bằng nhiệt.
+Lời giải
+Nhiệt lượng nước toả ra khi hạ về 0 °C:
+Qtoả(max) = 1 × 4 200 × (40 − 0) = 168 000 J
+Nhiệt lượng cần để đưa 500 g đá từ −5 °C lên 0 °C:
+Q₁ = 0,5 × 2 100 × 5 = 5 250 J
+Nhiệt lượng cần để làm tan hết 500 g đá ở 0 °C:
+Q₂ = 0,5 × 3,4 × 105 = 170 000 J
+Tổng nhiệt lượng để đá tan hoàn toàn thành nước ở 0 °C:
+Qthu(cần) = Q₁ + Q₂ = 175 250 J
+So sánh: Q₁ = 5 250 J < Qtoả(max) = 168 000 J < Qthu(cần) = 175 250 J.
+Do đó, nước đá được tăng lên 0 °C và tan một phần lớn, hệ đạt trạng thái cân bằng nhiệt ở tcb = 0 °C.
+Nhiệt lượng còn lại để làm tan đá:
+Qdư = Qtoả(max) − Q₁ = 168 000 − 5 250 = 162 750 J
+Khối lượng đá đã tan:
+mtan = Qdư / λ = 162 750 / (3,4 × 105) ≈ 0,4787 kg = 478,7 g
+Thành phần hệ khi cân bằng nhiệt:
+Nhiệt độ hệ: 0 °C.
+Khối lượng nước: mntổng = 1 000 + 478,7 = 1 478,7 g.
+Khối lượng nước đá còn lại: mđcòn = 500 − 478,7 = 21,3 g.
+Đáp số: tcb = 0 °C; gồm 1 478,7 g nước và 21,3 g nước đá.
+Bài D3. Dẫn mh gam hơi nước ở 100 °C vào một cốc chứa 200 g nước ở 20 °C. Nhiệt độ cuối cùng của cốc nước là 40 °C. Bỏ qua nhiệt dung của cốc và hao phí nhiệt ra môi trường. Cho cn = 4 200 J/(kg.K), L = 2,3 × 106 J/kg. Tính mh.
+Lời giải
+Hơi nước ở 100 °C ngưng tụ thành nước ở 100 °C toả ra nhiệt lượng:
+Q₁ = mh.L
+Nước nóng 100 °C mới tạo thành tiếp tục hạ nhiệt độ từ 100 °C xuống 40 °C toả ra:
+Q₂ = mh.cn.(100 − 40) = 60.mh.cn
+Tổng nhiệt lượng toả ra:
+Qtoả = mh.(L + 60.cn) = mh.(2,3 × 106 + 60 × 4 200) = mh.(2 300 000 + 252 000) = 2 552 000.mh
+Nhiệt lượng nước trong cốc thu vào để tăng từ 20 °C lên 40 °C:
+Qthu = 0,2 × 4 200 × (40 − 20) = 0,2 × 4 200 × 20 = 16 800 J
+Phương trình cân bằng nhiệt:
+2 552 000.mh = 16 800
+mh = 16 800 / 2 552 000 ≈ 0,00658 kg = 6,58 g
+Đáp số: mh ≈ 6,58 g.
+Bài D4. Một ấm điện có công suất 1 000 W đun 1,5 lít nước ở 20 °C. Sau 12 phút nước sôi ở 100 °C. Tính hiệu suất của ấm điện và lượng điện năng đã tiêu thụ (theo kWh).
+Lời giải
+Khối lượng nước m = 1,5 kg. Độ tăng nhiệt độ Δt = 100 − 20 = 80 °C.
+Nhiệt lượng có ích để đun sôi nước:
+Qích = m.cn.Δt = 1,5 × 4 200 × 80 = 504 000 J
+Thời gian đun: t = 12 phút = 12 × 60 = 720 s.
+Điện năng ấm tiêu thụ:
+Atoàn = P.t = 1 000 × 720 = 720 000 J
+Đổi sang kWh:
+Atoàn = 720 000 / 3 600 000 = 0,2 kWh
+Hiệu suất của ấm điện:
+H = Qích / Atoàn × 100% = 504 000 / 720 000 × 100% = 70%
+Đáp số: H = 70%; Atoàn = 0,2 kWh.
+Bài D5. Một vật có khối lượng m = 2 kg trượt từ đỉnh một mặt phẳng nghiêng dài l = 10 m, cao h = 2 m xuống đến chân dốc với vận tốc tại chân dốc là v = 4 m/s. Lấy g = 10 m/s2. Giả sử toàn bộ công của lực ma sát chuyển thành nhiệt làm nóng vật và mặt phẳng nghiêng, trong đó vật nhận 60% lượng nhiệt này. Tính nhiệt lượng mà vật nhận được.
+Lời giải
+Thế năng của vật ở đỉnh dốc:
+Wt = m.g.h = 2 × 10 × 2 = 40 J
+Động năng của vật ở chân dốc:
+Wđ = 0,5.m.v2 = 0,5 × 2 × 42 = 16 J
+Theo định luật bảo toàn và chuyển hoá năng lượng, độ giảm cơ năng bằng công của lực ma sát:
+Ams = Wt − Wđ = 40 − 16 = 24 J
+Nhiệt lượng toả ra do ma sát bằng đúng công cản: Qtổng = 24 J.
+Nhiệt lượng vật nhận được là:
+Qvật = 60% × Qtổng = 0,6 × 24 = 14,4 J
+Đáp số: Qvật = 14,4 J.
+Bài D6. Hai bình cách nhiệt giống nhau chứa cùng một khối lượng nước m. Bình 1 ở nhiệt độ t₁ = 60 °C, bình 2 ở nhiệt độ t₂ = 20 °C. Người ta rót một nửa lượng nước từ bình 1 sang bình 2, quấy đều cho cân bằng nhiệt, rồi lại rót ngược một lượng nước đúng bằng lượng nước đã lấy từ bình 2 về bình 1. Tính nhiệt độ cân bằng cuối cùng ở mỗi bình.
+Lời giải
+Gọi khối lượng nước ban đầu ở mỗi bình là m.
+Lần rót 1: Rót m/2 nước ở t₁ = 60 °C từ bình 1 sang bình 2 (đang có m nước ở t₂ = 20 °C).
+Nhiệt độ cân bằng tcb1 của bình 2:
+(m/2).c.(60 − tcb1) = m.c.(tcb1 − 20)
+0,5.(60 − tcb1) = tcb1 − 20
+30 − 0,5.tcb1 = tcb1 − 20
+1,5.tcb1 = 50 → tcb1 = 50 / 1,5 = 100/3 °C ≈ 33,33 °C
+Lúc này bình 2 có tổng khối lượng là 1,5.m ở nhiệt độ 100/3 °C.
+Lần rót 2: Rót m/2 nước ở tcb1 = 100/3 °C từ bình 2 về lại bình 1 (bình 1 đang còn m/2 nước ở 60 °C).
+Vì hai phần nước trộn vào bình 1 có khối lượng bằng nhau (cùng bằng m/2) nên nhiệt độ cân bằng tcb2 ở bình 1 là trung bình cộng:
+tcb2 = (60 + 100/3) / 2 = (280/3) / 2 = 140/3 °C ≈ 46,67 °C
+Nhiệt độ cuối cùng ở bình 2 vẫn là nhiệt độ sau lần trộn thứ nhất: tcb1 = 100/3 °C ≈ 33,33 °C.
+Đáp số: Bình 1: 46,67 °C; Bình 2: 33,33 °C.
+E. Bài tập tự luyện
+Bài E1. Tính nhiệt lượng cần thiết để đun nóng 5 lít nước từ 20 °C lên 80 °C trong một nồi nhôm có khối lượng 500 g.
+Bài E2. Trộn 300 g nước ở 10 °C với 500 g nước ở 60 °C và 200 g nước ở 90 °C. Tính nhiệt độ cân bằng của hỗn hợp (bỏ qua bình chứa và môi trường).
+Bài E3. Thả một quả cầu bằng đồng có khối lượng 600 g nung nóng đến 150 °C vào 1 lít nước ở 25 °C. Tính nhiệt độ khi có cân bằng nhiệt.
+Bài E4. Một khối nước đá khối lượng 1 kg ở −10 °C được cấp một nhiệt lượng 450 000 J. Hỏi nước đá có tan hết không? Nếu tan hết thì nhiệt độ cuối cùng là bao nhiêu?
+Bài E5. Cần trộn bao nhiêu lít nước sôi (100 °C) với bao nhiêu lít nước lạnh (20 °C) để thu được 120 lít nước ấm ở 40 °C tắm cho trẻ em?
+Bài E6. Một bếp gas có hiệu suất 50% đốt cháy 200 g khí gas để đun nước từ 25 °C lên 100 °C. Biết năng suất toả nhiệt của gas là q = 4,5 × 107 J/kg. Tính khối lượng nước đun sôi được.
+Bài E7. Thả một thỏi nhôm 200 g ở 100 °C vào cốc chứa 400 g nước ở 20 °C. Nhiệt độ cân bằng đo được là 27 °C. Tính nhiệt lượng đã thất thoát ra môi trường xung quanh.
+Bài E8. Một khối băng có khối lượng 5 kg ở 0 °C nổi trên biển. Tính nhiệt lượng cần thiết để làm tan hoàn toàn khối băng này thành nước ở 0 °C.
+Bài E9. Đun 2 lít nước bằng ấm điện 1 500 W. Biết nhiệt độ ban đầu là 20 °C và hiệu suất ấm là 85%. Sau bao lâu thì nước sôi?
+Bài E10. Rót 100 g nước ở 100 °C vào một nhiệt lượng kế chứa 200 g nước đá ở 0 °C. Khối lượng nước đá còn lại sau khi cân bằng là bao nhiêu?
+Bài E11. Đồ thị nhiệt độ – thời gian khi đun một chất rắn cho thấy chất nóng chảy ở 80 °C và thời gian nóng chảy kéo dài gấp đôi thời gian tăng nhiệt độ từ 20 °C lên 80 °C. Tính tỉ số giữa nhiệt nóng chảy riêng và nhiệt dung riêng của chất đó.
+Bài E12. Bình A chứa nước ở 60 °C, bình B chứa nước ở 20 °C. Rót m kg nước từ bình A sang bình B, nhiệt độ bình B tăng thêm 10 °C. Hỏi nếu rót tiếp m kg nước nữa từ A sang B thì nhiệt độ bình B tăng thêm bao nhiêu độ nữa?
+F. Đáp án bài tập tự luyện
+Bài E1: Q = (5 × 4 200 + 0,5 × 880) × (80 − 20) = (21 000 + 440) × 60 = 1 286 400 J.
+Bài E2: tcb = (0,3 × 10 + 0,5 × 60 + 0,2 × 90)/(0,3 + 0,5 + 0,2) = (3 + 30 + 18)/1 = 51 °C.
+Bài E3: 0,6 × 380 × (150 − t) = 1 × 4 200 × (t − 25) → 228.(150 − t) = 4 200.(t − 25) → t ≈ 31,43 °C.
+Bài E4: Qcần = 1 × 2 100 × 10 + 3,4 × 105 = 361 000 J < 450 000 J → đá tan hết! Qdư = 450 000 − 361 000 = 89 000 J. Nhiệt độ cuối t = 89 000 / (1 × 4 200) ≈ 21,19 °C.
+Bài E5: Vsôi = 120 × (40 − 20)/(100 − 20) = 30 lít; Vlạnh = 120 − 30 = 90 lít.
+Bài E6: Qích = 0,5 × 0,2 × 4,5 × 107 = 4,5 × 106 J. m = Qích / (c.Δt) = 4,5 × 106 / (4 200 × 75) ≈ 14,29 kg (xấp xỉ 14,3 lít).
+Bài E7: Qtoả = 0,2 × 880 × (100 − 27) = 12 848 J; Qthu = 0,4 × 4 200 × (27 − 20) = 11 760 J. Qthất thoát = 12 848 − 11 760 = 1 088 J.
+Bài E8: Q = λ.m = 3,4 × 105 × 5 = 1 700 000 J = 1,7 MJ.
+Bài E9: Qích = 2 × 4 200 × 80 = 672 000 J. Qtoàn = 672 000 / 0,85 = 790 588 J. t = 790 588 / 1 500 ≈ 527 s (khoảng 8 phút 47 giây).
+Bài E10: Qtoả(max) = 0,1 × 4 200 × 100 = 42 000 J. mtan = 42 000 / 3,4 × 105 ≈ 0,1235 kg = 123,5 g. Khối lượng đá còn lại: 200 − 123,5 = 76,5 g.
+Bài E11: P.Δt₁ = m.c.(80 − 20) = 60.m.c; P.Δt₂ = λ.m với Δt₂ = 2.Δt₁. Tỉ số λ/c = 120 (K).
+Bài E12: Lần 1: m.(60 − 30) = mB.(30 − 20) → 30.m = 10.mB → mB = 3.m. Lần 2: m.(60 − t) = (mB + m).(t − 30) = 4.m.(t − 30) → 60 − t = 4.t − 120 → 5.t = 180 → t = 36 °C. Nhiệt độ tăng thêm: 36 − 30 = 6 °C.
+G. Bài tập nâng cao kiểu đề HSG (có lời giải chi tiết)
+Bài G1. Khảo sát chu trình đun nước đá có kể hao phí nhiệt
+Đề bài: Một nhiệt lượng kế chứa mđ = 1 kg nước đá ở t₁ = −20 °C. Người ta dùng một thiết bị đun nhiệt có công suất P = 500 W đặt ngập trong nhiệt lượng kế để đun nóng hệ. Biết nhiệt dung của nhiệt lượng kế là Ck = 100 J/K. Trong suốt quá trình đun, nhiệt lượng bị toả ra môi trường xung quanh với công suất hao phí trung bình không đổi Php = 50 W. a) Tính thời gian từ lúc bật máy đun đến khi nước đá bắt đầu nóng chảy. b) Tính thời gian diễn ra quá trình nóng chảy hoàn toàn. c) Tính tổng thời gian từ lúc bật máy đến khi toàn bộ khối lượng chuyển thành nước ở 50 °C.
+Lời giải
+Công suất nhiệt có ích cung cấp cho hệ (sau khi trừ hao phí):
+Pích = P − Php = 500 − 50 = 450 W
+a) Giai đoạn 1: Nước đá và nhiệt lượng kế tăng từ −20 °C lên 0 °C (Δt₁ = 20 K).
+Nhiệt lượng cần cung cấp:
+Q₁ = (mđ.cđ + Ck).Δt₁ = (1 × 2 100 + 100) × 20 = 2 200 × 20 = 44 000 J
+Thời gian đun giai đoạn 1:
+t₁ = Q₁ / Pích = 44 000 / 450 ≈ 97,8 s (khoảng 1 phút 38 giây)
+b) Giai đoạn 2: Nước đá nóng chảy hoàn toàn ở 0 °C.
+Trong quá trình này nhiệt độ không đổi nên nhiệt lượng kế không thu nhiệt. Nhiệt lượng chỉ cung cấp để làm tan nước đá:
+Q₂ = λ.mđ = 3,4 × 105 × 1 = 340 000 J
+Thời gian nóng chảy hoàn toàn:
+t₂ = Q₂ / Pích = 340 000 / 450 ≈ 755,6 s (khoảng 12 phút 36 giây)
+c) Giai đoạn 3: Nước lỏng (1 kg) và nhiệt lượng kế tăng từ 0 °C lên 50 °C (Δt₃ = 50 K).
+Nhiệt lượng cần cung cấp:
+Q₃ = (mđ.cn + Ck).Δt₃ = (1 × 4 200 + 100) × 50 = 4 300 × 50 = 215 000 J
+Thời gian đun giai đoạn 3:
+t₃ = Q₃ / Pích = 215 000 / 450 ≈ 477,8 s (khoảng 7 phút 58 giây)
+Tổng thời gian toàn bộ quá trình:
+ttổng = t₁ + t₂ + t₃ = 97,8 + 755,6 + 477,8 = 1 331,2 s ≈ 22,2 phút
+Đáp số: a) t₁ ≈ 97,8 s. b) t₂ ≈ 755,6 s. c) ttổng ≈ 1 331,2 s (22,2 phút).
+Bài G2. Rót chất lỏng tuần hoàn giữa hai bình
+Đề bài: Có hai bình cách nhiệt. Bình 1 chứa m₁ = 2 kg nước ở t₁ = 40 °C, bình 2 chứa m₂ = 1 kg nước ở t₂ = 10 °C. Người ta trích ra từ bình 1 một lượng nước m rồi đổ vào bình 2. Sau khi bình 2 cân bằng nhiệt ở t₂', người ta lại trích đúng khối lượng m nước từ bình 2 đổ trở lại bình 1. Khi bình 1 cân bằng nhiệt thì nhiệt độ của nó là t₁' = 35 °C. Bỏ qua mọi hao phí nhiệt. a) Tính khối lượng m và nhiệt độ t₂'. b) Tiếp tục lặp lại quá trình trích m từ bình 1 sang bình 2 rồi từ bình 2 về bình 1 lần thứ hai. Tính nhiệt độ cân bằng ở mỗi bình sau lần rót thứ hai này. c) Nếu lặp lại quá trình trên vô số lần, nhiệt độ cuối cùng ở hai bình bằng bao nhiêu?
+Lời giải
+a) Lần 1: Rót m từ bình 1 sang bình 2:
+m.(40 − t₂') = 1.(t₂' − 10)   (1)
+Rót m từ bình 2 (ở t₂') về bình 1 (đang có 2 − m ở 40 °C), đạt t₁' = 35 °C:
+(2 − m).(40 − 35) = m.(35 − t₂')
+5.(2 − m) = 35.m − m.t₂'
+10 − 5.m = 35.m − m.t₂' → m.(40 − t₂') = 10   (2)
+Thay (2) vào (1):
+1.(t₂' − 10) = 10 → t₂' = 20 °C
+Thay t₂' = 20 °C vào (2):
+m.(40 − 20) = 10 → 20.m = 10 → m = 0,5 kg
+b) Sau chu kỳ 1, bình 1 có m₁ = 2 kg ở 35 °C; bình 2 có m₂ = 1 kg ở 20 °C.
+Chu kỳ 2:
+Rót m = 0,5 kg từ bình 1 (35 °C) sang bình 2 (đang có 1 kg ở 20 °C), đạt nhiệt độ t₂'':
+0,5.(35 − t₂'') = 1.(t₂'' − 20)
+17,5 − 0,5.t₂'' = t₂'' − 20
+1,5.t₂'' = 37,5 → t₂'' = 25 °C
+Rót m = 0,5 kg từ bình 2 (25 °C) về bình 1 (đang còn 1,5 kg ở 35 °C), đạt nhiệt độ t₁'':
+1,5.(35 − t₁'') = 0,5.(t₁'' − 25)
+3.(35 − t₁'') = t₁'' − 25
+105 − 3.t₁'' = t₁'' − 25
+4.t₁'' = 130 → t₁'' = 32,5 °C
+c) Khi quá trình lặp lại vô số lần, nhiệt độ hai bình san bằng và tiến tới nhiệt độ cân bằng nhiệt toàn hệ:
+tvôcùng = (m₁.t₁ + m₂.t₂) / (m₁ + m₂) = (2 × 40 + 1 × 10) / (2 + 1) = 90 / 3 = 30 °C
+Đáp số: a) m = 0,5 kg; t₂' = 20 °C. b) t₁'' = 32,5 °C; t₂'' = 25 °C. c) tvôcùng = 30 °C.
+Bài G3. Xác định nhiệt hoá hơi bằng phương pháp đồ thị
+Đề bài: Một bình đun nước công suất P = 1 200 W chứa 1,2 kg nước ở 20 °C. Người ta bật ấm đun đến khi nước sôi ở 100 °C rồi tiếp tục để ấm sôi cho nước bốc hơi. Cứ sau mỗi khoảng thời gian 2 phút, người ta đặt ấm lên cân điện tử có độ chính xác cao và ghi lại khối lượng tổng cộng của ấm và nước. Bảng số liệu thu được như sau (thời điểm t = 0 là lúc nước vừa bắt đầu sôi ở 100 °C):
+Thời gian sôi t (phút)
+0
+2
+4
+6
+8
+Khối lượng m (g)
+1 500
+1 437
+1 375
+1 312
+1 250
+
+Biết nhiệt dung riêng của nước cn = 4 200 J/(kg.K). Bỏ qua hao phí nhiệt trong lúc nước đang sôi. a) Nhận xét về tốc độ hoá hơi của nước theo thời gian. b) Vẽ đồ thị khối lượng nước bốc hơi Δm theo thời gian t. c) Từ hệ số góc của đồ thị, xác định nhiệt hoá hơi riêng L của nước.
+Lời giải
+a) Từ bảng số liệu, khối lượng nước giảm sau mỗi khoảng thời gian Δt = 2 phút = 120 s:
+Khoảng 1 (0 đến 2 phút): Δm₁ = 1 500 − 1 437 = 63 g.
+Khoảng 2 (2 đến 4 phút): Δm₂ = 1 437 − 1 375 = 62 g.
+Khoảng 3 (4 đến 6 phút): Δm₃ = 1 375 − 1 312 = 63 g.
+Khoảng 4 (6 đến 8 phút): Δm₄ = 1 312 − 1 250 = 62 g.
+Nhận xét: Trong các khoảng thời gian bằng nhau (2 phút), khối lượng nước bốc hơi gần như không đổi (xấp xỉ 62,5 g). Tốc độ hoá hơi của nước là không đổi:
+vhh = Δm / Δt ≈ 62,5 / 120 ≈ 0,521 g/s
+b) Lập bảng khối lượng nước đã bốc hơi tích luỹ Δm (g) theo thời gian t (s):
+t (s)
+0
+120
+240
+360
+480
+Δm (g)
+0
+63
+125
+188
+250
+
+Đồ thị biểu diễn Δm theo t là một đường thẳng đi qua gốc toạ độ O(0; 0). Hệ số góc của đường thẳng là:
+k = Δm / t = 250 / 480 ≈ 0,5208 g/s = 5,208 × 10^(−4) kg/s
+c) Nhiệt lượng do ấm cung cấp trong thời gian t:
+Q = P.t
+Nhiệt lượng này làm hoá hơi khối lượng nước Δm ở 100 °C:
+Q = L.Δm
+Suy ra:
+P.t = L.Δm → L = P / (Δm / t) = P / k
+Thay số P = 1 200 W và k = 5,208 × 10^(−4) kg/s:
+L = 1 200 / (5,208 × 10^(−4)) ≈ 2,304 × 106 J/kg
+Giá trị này rất sát với giá trị lý thuyết của nhiệt hoá hơi của nước (2,3 × 106 J/kg).
+Đáp số: a) Tốc độ hoá hơi không đổi ≈ 0,521 g/s. b) Đồ thị là đường thẳng qua gốc toạ độ. c) L ≈ 2,304 × 106 J/kg.
+Bài G4. Thí nghiệm thực hành: Xác định nhiệt dung riêng của một chất lỏng không rõ tên
+Đề bài: Trong phòng thí nghiệm có: một nhiệt lượng kế đã biết nhiệt dung Ck; một nhiệt kế có ĐCNN 0,1 °C; một đồng hồ bấm giây; một bếp điện có công suất toả nhiệt ổn định P; một bình nước cất (đã biết nhiệt dung riêng cn); và một bình chất lỏng X cần xác định nhiệt dung riêng cX. a) Trình bày phương án thí nghiệm xác định cX mà không cần dùng đến cân khối lượng. b) Nêu công thức tính cX và biện pháp triệt tiêu sai số do nhiệt toả ra môi trường.
+Lời giải
+a) Phương án thí nghiệm không dùng cân:
+Dùng bình chia độ lấy cùng một thể tích V của nước cất và chất lỏng X (hoặc đo thể tích bằng cách đánh dấu mực chất lỏng trên cùng một nhiệt lượng kế).
+Đổ thể tích V nước vào nhiệt lượng kế, đo nhiệt độ ban đầu t0n. Bật bếp điện và bấm giờ. Sau thời gian t₁, đo nhiệt độ cuối t₁n của nước.
+Đổ hết nước, để nhiệt lượng kế nguội về nhiệt độ phòng. Đổ cùng thể tích V chất lỏng X vào nhiệt lượng kế, đo nhiệt độ ban đầu t0X. Bật bếp điện và đo thời gian t₂ để chất lỏng X tăng nhiệt độ từ t0X lên t₂X.
+Đo khối lượng riêng Dn và DX bằng ống chữ U hoặc tỉ trọng kế. Khi đó mn = Dn.V và mX = DX.V.
+b) Thiết lập công thức và triệt tiêu sai số môi trường: Để triệt tiêu sai số do toả nhiệt ra môi trường, ta chọn khoảng tăng nhiệt độ đối xứng qua nhiệt độ phòng tphòng: Cho chất lỏng bắt đầu đun từ (tphòng − Δt) lên đến (tphòng + Δt). Khi đó nhiệt lượng hệ thu từ môi trường ở giai đoạn dưới tphòng sẽ bù trừ cho nhiệt lượng hệ toả ra môi trường ở giai đoạn trên tphòng.
+Khi cùng cung cấp một khoảng tăng nhiệt độ Δt cho cả hai chất lỏng:
+Với nước: P.t₁ = (Dn.V.cn + Ck).Δt
+Với chất lỏng X: P.t₂ = (DX.V.cX + Ck).Δt
+Lập tỉ số hai phương trình:
+t₂ / t₁ = (DX.V.cX + Ck) / (Dn.V.cn + Ck)
+Suy ra:
+DX.V.cX + Ck = (t₂ / t₁).(Dn.V.cn + Ck)
+cX = [(t₂ / t₁).(Dn.V.cn + Ck) − Ck] / (DX.V)
+H. Câu hỏi trắc nghiệm nhanh
+Câu 1. Đơn vị nào sau đây là đơn vị của nhiệt dung riêng? A. J. B. J/kg. C. J/(kg.K). D. W/(kg.K).
+Câu 2. Thả một quả cầu kim loại 500 g ở 100 °C vào 500 g nước ở 20 °C. Nhiệt độ cân bằng của hệ sẽ A. đúng bằng 60 °C. B. lớn hơn 60 °C. C. nhỏ hơn 60 °C vì nhiệt dung riêng của kim loại nhỏ hơn nước. D. không xác định được.
+Câu 3. Trong suốt quá trình một chất lỏng đang sôi, nhiệt độ của chất lỏng A. tiếp tục tăng dần. B. giảm dần do bay hơi. C. không thay đổi. D. dao động liên tục.
+Câu 4. Nhiệt lượng cần cung cấp để làm nóng chảy hoàn toàn 2 kg nước đá ở 0 °C là (cho λ = 3,4 × 105 J/kg) A. 1,7 × 105 J. B. 3,4 × 105 J. C. 6,8 × 105 J. D. 6,8 × 104 J.
+Câu 5. Khi hơi nước ngưng tụ thành nước lỏng ở 100 °C thì hơi nước A. thu nhiệt lượng từ môi trường. B. toả nhiệt lượng ra môi trường. C. không toả cũng không thu nhiệt. D. giảm nhiệt độ xuống dưới 100 °C.
+Câu 6. Một ấm nước đun sôi được 1 lít nước trong 10 phút. Nếu đun 2 lít nước cùng nhiệt độ ban đầu bằng ấm đó thì thời gian đun (bỏ qua hao phí) là A. 10 phút. B. 15 phút. C. 20 phút. D. 40 phút.
+Câu 7. Rót nước nóng ở 80 °C vào cốc thuỷ tinh dày dễ vỡ hơn cốc thuỷ tinh mỏng là do A. thuỷ tinh dày hấp thụ nhiều nhiệt hơn. B. lớp trong nở vì nhiệt nhanh trong khi lớp ngoài chưa kịp nở gây ra ứng suất phá vỡ cốc. C. cốc dày có nhiệt dung riêng lớn hơn. D. nhiệt độ cốc dày tăng nhanh hơn.
+Câu 8. Trên đồ thị T–t của quá trình đun nóng nước đá từ −10 °C lên 50 °C, đoạn nằm ngang tương ứng với quá trình A. tăng nhiệt độ của đá. B. tăng nhiệt độ của nước. C. nóng chảy của nước đá. D. nước bốc hơi.
+Câu 9. Trộn hai chất lỏng cùng khối lượng và cùng nhiệt dung riêng ở nhiệt độ t₁ và t₂ (t₁ > t₂). Nhiệt độ cân bằng của hỗn hợp là A. tcb = (t₁ + t₂)/2. B. tcb = t₁ − t₂. C. tcb = √(t₁.t₂). D. tcb = 2.t₁.t₂/(t₁ + t₂).
+Câu 10. Khi cọ xát hai miếng kim loại vào nhau, chúng nóng lên. Quá trình này thể hiện sự A. truyền nhiệt trực tiếp. B. chuyển hoá từ cơ năng thành nhiệt năng. C. hoá hơi một phần kim loại. D. ngưng tụ nhiệt lượng.
+Đáp án trắc nghiệm:
+1. C · 2. C · 3. C · 4. C · 5. B · 6. C · 7. B · 8. C · 9. A · 10. B.
+I. Lỗi thường gặp và ghi chú sư phạm
+1. Nhầm lẫn giữa nhiệt lượng Q và nhiệt độ t: Nhiệt độ là đại lượng đo bằng độ C (°C) đặc trưng cho mức độ chuyển động nhiệt của phân tử; nhiệt lượng Q đo bằng jun (J) là phần nhiệt năng truyền đi. Không bao giờ được nói "vật có nhiệt lượng lớn".
+2. Quên đổi đơn vị khối lượng ra kilôgam (kg): Khi đề cho khối lượng bằng gam (g), học sinh thường quên chia cho 1 000 trước khi thay vào công thức Q = m.c.Δt dẫn đến kết quả sai 1 000 lần.
+3. Bỏ qua nhiệt lượng của bình chứa (nhiệt lượng kế): Nhiều học sinh chỉ tính nhiệt lượng toả của kim loại và nhiệt lượng thu của nước mà quên mất chính nhiệt lượng kế cũng tham gia quá trình truyền nhiệt với Qbình = mb.cb.Δt.
+4. Không biện luận trạng thái chuyển thể: Khi gặp bài toán hỗn hợp đá và nước, sai lầm phổ biến nhất là giả sử ngay nhiệt độ cân bằng tcb > 0 °C rồi viết phương trình, dẫn đến giải ra tcb < 0 °C vô lý. Phải luôn so sánh Qtoả(max) với Qthu(cần) để xác định xem đá có tan hết hay không.
+5. Sai lầm về thời gian chuyển pha: Trong quá trình nóng chảy hoặc sôi, nhiệt độ không đổi nhưng hệ vẫn liên tục nhận nhiệt lượng từ nguồn. Không được nhầm "nhiệt độ không đổi nghĩa là không nhận nhiệt".
