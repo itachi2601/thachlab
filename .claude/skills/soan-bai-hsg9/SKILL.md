@@ -36,7 +36,7 @@ góc dây đo so với phương thẳng đứng (bài dùng góc với phương 
 | B, C | Bài tập mẫu theo `soan-bai-tap-mau`, **mỗi agent một module** (`btm<id>_d123.py`, `btm<id>_d456.py`), main `build-hinh-<id>.py` gom | `<id>.json` phần dạng + mô phỏng |
 | D | Tự luận E+G (module `btm<id>_tl.py`) + **≥6 câu luyện tập** tự chấm (Phần I A–D / Phần II a)–d) Đ/S / Phần III đáp số, E1–E3) | `luyen-tap/bundle.json` |
 
-Brief mỗi agent gồm: đường dẫn `nguon.md`, số liệu đã chốt, quy ước ở mục 0, file được phép ghi (không ghi file của agent khác), lệnh chạy thử riêng.
+Brief mỗi agent gồm (và với mọi bài tự luận: soát điều kiện phụ — mục 8): đường dẫn `nguon.md`, số liệu đã chốt, quy ước ở mục 0, file được phép ghi (không ghi file của agent khác), lệnh chạy thử riêng.
 Phiên chính không sửa file của agent khi agent còn có thể được gọi lại — sửa sau cùng.
 
 Luyện tập: bundle `thachlab.lesson-bundle/v1` chỉ có `exam` (để `theory_html` rỗng và `worked_examples: []` → `upload-lesson.mts` giữ nguyên lý thuyết và bài tập mẫu).
@@ -62,7 +62,15 @@ Dựng bản xem thử (`xem-thu/`), chụp 375px các hình + mục có tương
 3. Commit theo đường dẫn (`git commit -- <path>…`), mô tả nêu mã quy tắc thiết kế nếu có.
 4. Rút kinh nghiệm (bắt buộc theo AGENTS.md) → ghi vào mục dưới, hoặc vào skill chặng tương ứng nếu thuộc chặng đó.
 
+## 8. Dòng "Bộ 12 câu tự luyện" trong lịch (bài tập tuần, không phải chuyên đề)
+Mẫu đã chạy: bài 167 "Bài tập tuần này" (Cơ học VD–VDC, 11/10).
+1. Soạn bộ đề in theo `soan-bai-tap-tu-luan-hsg` (12 bài, 3–4 ý khó dần, gợi ý 3 tầng, lời giải tập riêng, PDF bằng `_tools/trang-mau-sach`), lưu gốc ở `01_Chuyen_de/<tên bộ>/` thư mục Documents.
+2. Kiểm: `kiem-code` giải độc lập từ đề không đáp án + soát **điều kiện phụ** (bình đủ cao, dây không giãn, công suất nào, lực cản áp cho đoạn nào); soát hình.
+3. Số hoá: tạo bài ẩn ở đầu chương (mẫu `scripts/tao-bai-bt-tuan-hsg.mts`, đổi TITLE/CHAPTER), mỗi bài tự luận thành một dạng `buoc[]` (mẫu `scripts/data/bai-tap-mau/hsg-tuan/` + `167.json`), ghi bằng `publish-bai-tap-mau.mts`; PDF để ở `public/hsg9/` làm bản in.
+4. Thêm id bài vào `lessons` của tuần tương ứng trong `tuan.json`; bật Hiện trước `gui_ngay`.
+
 ## Nhật ký rút kinh nghiệm
+- 2026-10-10 · Bộ tự luận Cơ học VD–VDC: đáp số đúng 12/12 nhưng 9 lỗi là điều kiện phụ thiếu trong đề → soát đề kín là bước riêng, không gộp vào "giải lại khớp". Agent xem ảnh nhỏ báo sai hình → in toạ độ SVG kiểm trước khi vẽ lại. Soát lại vài hình thì render từng SVG bằng Chrome headless xem ở phiên chính, không cho agent soát lại cả bộ trang.
 - 2026-10-10 · CĐ01/02, đợt 1: kiểm chéo bắt lỗi dù agent soạn đã tự giải (thiếu nghiệm bài nhiều trường hợp, hình lộ đáp số, `chon_buoc_ke` sai thật ra đúng) → giữ 2×kiem-code, không bỏ khi vội.
 - 2026-10-16 · CĐ15: chia bài tập mẫu cho 3 agent theo module + main gom, chạy thử riêng bằng biến môi trường để không ghi đè nhau; mục rỗng phải có trên DB trước khi ghi (migration tạo mục).
 - 2026-10-16 · Lịch dạy 17 buổi: nội dung web phải Hiện trước ngày gửi BTVN; các bài đang Hiện còn thiếu luyện tập tự chấm → mỗi CĐ mới soạn luôn ≥6 câu luyện tập, không để đợt sau.
