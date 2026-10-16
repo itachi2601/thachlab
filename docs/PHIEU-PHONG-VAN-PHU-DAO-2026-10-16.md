@@ -1,14 +1,16 @@
-# Phiếu phỏng vấn HS — vì sao kênh tự thoát phụ đạo ít được dùng (16/10/2026)
+# Phiếu phỏng vấn HS + khảo sát 1 câu — vì sao kênh tự thoát phụ đạo ít được dùng (16/10/2026)
+
+**Hướng kết hợp (thầy chốt 16/10):** (A) 3 buổi phỏng vấn ngắn do **trợ giảng** làm — để lấy ĐÚNG các lựa chọn cho (B) khảo sát 1 câu
+trong web, rồi đối chiếu với hành vi thật. Thầy không tự phỏng vấn (em dễ nói điều thầy muốn nghe). Lý do và phản biện: hội thoại 16/10.
 
 Bước **Thấu cảm** của Design Thinking (`docs/thachlab-design-thinking-audit.md`). Vấn đề gốc và chỉ số: `docs/ROADMAP.md`
 mục "Vấn đề gốc đã chốt". Mục đích: **hiểu**, không phải thuyết phục em dùng. Phỏng vấn xong mới bàn cách sửa.
 
-## Chọn 5 em (không ghi tên vào file này)
-- 2 em đang ở trạng thái "đang mở khoá" (có `tutoring_needs` mở) mà **chưa mở** bài tự kiểm tra 20 câu.
+## A. Chọn 3 em, trợ giảng phỏng vấn (không ghi tên vào file này)
+- 1 em đang "đang mở khoá" (có `tutoring_needs` mở) mà **chưa mở** bài tự kiểm tra 20 câu.
 - 1 em đã mở bài tự kiểm tra nhưng bỏ giữa chừng hoặc trượt.
-- 1 em đã thoát bằng bài tự kiểm tra (đạt ≥80%).
-- 1 em đã thoát bằng buổi học với trợ giảng.
-Trộn lớp 10/11/12 nếu được. Ghi mỗi em bằng mã `E1..E5`, không lưu tên/SĐT ở đây (dữ liệu định danh chỉ đi qua Claude, không gửi model ngoài).
+- 1 em đã thoát bằng bài tự kiểm tra (đạt ≥80%) — nói được điều gì khiến làm đến cùng.
+Khác lớp nếu được. Trợ giảng do thầy chọn, hỏi riêng từng em; thầy không có mặt. Ghi mỗi em bằng mã `E1..E3`, không lưu tên/SĐT ở đây (dữ liệu định danh chỉ đi qua Claude, không gửi model ngoài).
 
 ## Cách hỏi (≈10 phút/em, hỏi riêng, không có bạn cùng lớp bên cạnh)
 - Mở đầu: "Thầy đang sửa web cho dễ học hơn. Em nói thật, em nói chê cũng được, không bị trừ điểm gì."
@@ -33,12 +35,19 @@ Trộn lớp 10/11/12 nếu được. Ghi mỗi em bằng mã `E1..E5`, không l
 | Em | Nhóm | Hiểu "mở khoá" thế nào | Biết có bài tự kiểm tra? | Rào cản (nguyên văn) | Điều muốn thay đổi |
 |---|---|---|---|---|---|
 | E1 | chưa mở | | | | |
-| E2 | chưa mở | | | | |
-| E3 | bỏ/trượt | | | | |
-| E4 | thoát bằng tự kiểm tra | | | | |
-| E5 | thoát bằng buổi học | | | | |
+| E2 | bỏ/trượt | | | | |
+| E3 | thoát bằng tự kiểm tra | | | | |
 
 ## Sau khi xong (bước Define → Ideate)
 - Gom các câu nguyên văn thành nhóm rào cản (không biết / không hiểu nghĩa / ngại nhãn / quá dài / không biết ôn gì / khác).
 - Nhóm nào ≥3/5 em thì mới đáng sửa. Viết lại một câu "Điểm nhìn" (HMW) vào ROADMAP trước khi đề xuất giải pháp.
 - Chưa đổi giao diện trước khi có bảng này và trước 25/10 (GĐ 1: không thêm lớp động lực mới).
+
+## B. Khảo sát 1 câu trong web (làm SAU khi có bảng A; chưa sửa code)
+Lựa chọn của câu hỏi lấy từ bảng A, không đoán. Quy tắc (phản biện 16/10: ngắt giữa chừng làm hỏng thứ đang đo; nhóm bỏ ngang ít trả lời nhất):
+- **Ai thấy**: chỉ em đang "đang mở khoá" mà chưa mở bài tự kiểm tra; **tối đa 1 lần/tuần/em**; không hiện nếu em đã bấm Bỏ qua 2 lần.
+- **Khi nào**: ở điểm ngắt tự nhiên — ngay sau khi nộp xong một bài, hoặc lần mở trang chủ kế tiếp. **Không** hiện lúc đang làm bài hay đọc lý thuyết (tải nhận thức, N/C trong `docs/QUY-TAC-THIET-KE.md`).
+- **Hỏi gì**: 1 câu, bấm 1 lần: "Vì sao chưa làm bài tự kiểm tra?" + 4–5 lựa chọn từ bảng A + "Khác (gõ)" + nút "Bỏ qua" rõ, đích chạm ≥44px, đọc được ở 375px.
+- **Lưu**: bảng mới nhỏ (mã HS, lý do, thời điểm), RLS chỉ HS tự ghi, GV/TA đọc gộp; retention ngắn; không gửi ra model ngoài. Migration chỉ viết file, chạy theo `run-migrations.sh`.
+- **Đối chiếu**: so câu trả lời với hành vi thật (mở bài lúc nào, dừng ở câu nào) — dùng `learning_events` DT-01 khi có; câu trả lời chỉ là giả thuyết.
+- **Cắt lỗ**: tỉ lệ bấm Bỏ qua >60% hoặc số HS than phiền → gỡ ngay.

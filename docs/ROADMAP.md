@@ -234,7 +234,7 @@ các việc dưới đây **nối vào** mục 5 của `docs/DE-XUAT-NGHIEN-CUU-
 
 ### Vấn đề gốc đã chốt (16/10/2026) — bước Define của Design Thinking
 - **Vấn đề**: HS rơi vào "đang mở khoá" (phụ đạo) nhưng kênh tự thoát bằng bài tự kiểm tra 20 câu gần như không dùng (số liệu 14/10: 477 mở · 313 đã thoát · 4 lượt tự kiểm tra, 2 đạt) — vòng lặp "hụt → có lối ra" đứt đúng chỗ nhóm 25% thấp cần nhất.
-- **Chưa biết nguyên nhân**: không biết / không hiểu nhãn / ngại / bài quá dài / không biết ôn gì. Không đoán — phỏng vấn trước: `docs/PHIEU-PHONG-VAN-PHU-DAO-2026-10-16.md` (5 HS, bước Empathize).
+- **Chưa biết nguyên nhân**: không biết / không hiểu nhãn / ngại / bài quá dài / không biết ôn gì. Không đoán — làm theo hướng kết hợp (16/10): 3 buổi phỏng vấn do trợ giảng làm → khảo sát 1 câu trong web ở điểm ngắt tự nhiên (không chen giữa lúc làm bài) → đối chiếu hành vi. Phiếu + đặc tả: `docs/PHIEU-PHONG-VAN-PHU-DAO-2026-10-16.md` (bước Empathize).
 - **Chỉ số thành công** (đo cùng cách từ đầu và sau mỗi thay đổi): (1) % HS đang "mở khoá" có ≥1 lượt mở bài tự kiểm tra trong 7 ngày; (2) % lượt mở làm đến câu cuối; (3) % lượt đạt ≥80%; (4) tỉ lệ thoát bằng tự kiểm tra so với bằng buổi học. Mốc nền: bảng `tutoring_needs` + lượt tự kiểm tra tới 25/10.
 - **Ràng buộc**: không đổi giao diện / thêm lớp động lực trước 25/10 (GĐ 1); nhãn phụ đạo chỉ GV/TA thấy; đo bằng DT-01 `learning_events` (chưa có) hoặc truy vấn bảng sẵn có.
-- **Bước kế**: bảng phỏng vấn → viết câu "Làm sao để…" → 1 bản thử trên MỘT lớp (DT-12) → so chỉ số hành vi trước/sau cùng lớp.
+- **Bước kế**: bảng phỏng vấn (3 em, TA) → khảo sát 1 câu (DT-02 mở rộng, cần migration + UI nhỏ) → viết câu "Làm sao để…" → 1 bản thử trên MỘT lớp (DT-12) → so chỉ số hành vi trước/sau cùng lớp.
