@@ -292,7 +292,11 @@ export default function ContentHtml({
         window.speechSynthesis?.cancel();
         const a = new Audio(audioUrl);
         speakingAudio = a;
-        a.play().catch(() => speakBrowser(text));
+        // Bấm nút khác khi mp3 này chưa kịp phát → pause() làm play() bị huỷ (AbortError); khi đó KHÔNG rơi về giọng
+        // trình duyệt, nếu không giọng máy đọc câu cũ song song với mp3 mới (2 giọng cùng lúc).
+        a.play().catch((e: unknown) => {
+          if (speakingAudio === a && (e as { name?: string })?.name !== "AbortError") speakBrowser(text);
+        });
         return;
       }
       speakBrowser(text);

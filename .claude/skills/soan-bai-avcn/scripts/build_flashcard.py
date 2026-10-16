@@ -121,10 +121,11 @@ function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch 
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
 function speak(text) {
   if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
   if (AUDIO[text]) {
     const a = new Audio(AUDIO[text]);
     curAudio = a;
-    a.play().catch(() => speakBrowser(text));
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
     return;
   }
   speakBrowser(text);
