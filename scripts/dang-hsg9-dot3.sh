@@ -16,7 +16,9 @@ for pair in "${PAIRS[@]}"; do
   lt="content/hsg9/$d/luyen-tap/bundle.json"
   if [ -f "$lt" ]; then
     # upload-lesson không có dry-run: chỉ chạy khi --yes; bundle chỉ có exam nên lý thuyết + bài tập mẫu giữ nguyên
-    if [ -n "$Y" ]; then npx tsx scripts/upload-lesson.mts "$lt" --lesson "$id" --target luyen_tap
+    if [ -n "$Y" ]; then
+      SUPABASE_SERVICE_ROLE_KEY="$(grep '^SUPABASE_SERVICE_ROLE_KEY=' .env.local | cut -d= -f2-)" \
+        npx tsx scripts/upload-lesson.mts "$lt" --lesson "$id" --target luyen_tap
     else echo "  (luyện tập $lt: chỉ ghi khi chạy với --yes)"; fi
   fi
 done
