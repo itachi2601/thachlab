@@ -581,3 +581,30 @@ for b in BAI:
 (HERE / "de-chi-de.md").write_text(md)
 json.dump({b["n"]: b["dap"] for b in BAI}, open(HERE / "dap-an.json", "w"), ensure_ascii=False, indent=1)
 print("OK", len(BAI), "bài;", FIGN, "hình")
+
+# ---------------- xuất cho web thachlab (mục Tự luận của bài tập mẫu khoá HSG 9) ----------------
+# Mỗi bài → một khối HTML theo idiom web (<h4>, <figure class="fig">, <details class="tl-details">); SVG tự mang <defs> marker.
+WEB_MAP = {162: [1, 2, 3, 4], 155: [5, 6], 154: [7, 8, 9], 161: [10, 12], 166: [11]}   # lesson_id → bài
+DEFS = '<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>'
+def web_bai(b, k):
+    h = f'<h4>Bài {k} · {b["lvl"]} — {b["ten"]}</h4>'
+    if b["fig"]:
+        svg = b["fig"].replace(">", ">" + DEFS, 1).replace('width="', 'style="max-width:100%;height:auto" width="', 1)
+        h += f'<figure class="fig" data-tl="1">{svg}</figure>'
+    h += "".join(f"<p>{s}</p>" for s in b["de"])
+    h += '<details class="tl-details"><summary>Gợi ý (mở từng tầng, bí quá 10 phút mới mở)</summary>' + "".join(f"<p><b>{i+1}.</b> {s}</p>" for i, s in enumerate(b["goi_y"])) + "</details>"
+    g = ""
+    for tit, lines in b["giai"]:
+        g += f"<p><b>{tit}</b></p>" + "".join(f"<p>{l}</p>" for l in lines)
+    g += '<div class="tl-box"><span class="tl-label">Đáp số</span>' + "".join(f"<p>{s}</p>" for s in b["dap"]) + "</div>"
+    g += f'<p><b>Nhận dạng:</b> {b["nhan_dang"]}</p>' + "".join(f"<p>Lỗi hay gặp: {s}</p>" for s in b["bay"])
+    g += "<p>Đối chiếu xong, gấp lại và tự trình bày từ đầu; 3 ngày sau che lời giải giải lại.</p>"
+    h += f'<details class="tl-details"><summary>Lời giải (chỉ mở sau khi đã làm xong)</summary>{g}</details>'
+    return h
+BY_N = {b["n"]: b for b in BAI}
+web = {}
+for lid, ns in WEB_MAP.items():
+    web[str(lid)] = ('<p>Bộ bài tập tự luận Cơ học Vận dụng – Vận dụng cao (bản in: <i>Bai_tap_tu_luan_Co_hoc_VD-VDC</i>, 10/10/2026). Trước khi giải, viết ra giấy 3 dòng: kiến thức dùng, điều kiện áp dụng, công thức.</p>'
+                     + "".join(web_bai(BY_N[n], i + 1) for i, n in enumerate(ns)))
+json.dump(web, open(HERE / "web-tu-luan.json", "w"), ensure_ascii=False)
+print("web-tu-luan.json:", {k: len(v) for k, v in web.items()})

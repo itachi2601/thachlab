@@ -1,6 +1,6 @@
 ---
 name: soan-bai-tap-tu-luan-hsg
-description: Soạn BỘ BÀI TẬP TỰ LUẬN in giấy (PDF A4, không ghi DB) mức Vận dụng → Vận dụng cao cho lớp 9 chuyên / đội tuyển HSG KHTN 9 Vật lí (và lớp 10–12 ôn chuyên) — mỗi bài 3–4 ý khó dần, hình SVG trong script sinh, gợi ý 3 tầng theo phong cách thầy Thạch (kiến thức → điều kiện áp dụng → hướng tính), lời giải tập riêng (chữ trước số sau, Đáp số, Nhận dạng, Bẫy), số liệu tính bằng Python, kiểm chéo bắt buộc bằng agent kiem-code giải độc lập từ đề không đáp án, dàn trang bằng _tools/trang-mau-sach. Dùng khi thầy nói "soạn bài tập tự luận vận dụng cao cho lớp 9 chuyên", "ra bộ bài tập cơ học/điện/quang cho đội tuyển", "làm bài tập có gợi ý và đáp án kiểu pre-test", "soạn chuyên đề bài tập HSG có hình". KHÁC soan-bai-tap-mau (mục Bài tập mẫu trên web, có mô phỏng, ghi DB), de-vat-ly-thpt (đề thi trắc nghiệm Azota), up-de-kiem-tra (đăng đề lên web). Chạy trên Mac (cần Chrome + book/node_modules để dựng PDF).
+description: Soạn BỘ BÀI TẬP TỰ LUẬN in giấy (PDF A4) và tuỳ chọn đưa cùng nội dung vào mục Tự luận của khoá HSG 9 trên thachlab mức Vận dụng → Vận dụng cao cho lớp 9 chuyên / đội tuyển HSG KHTN 9 Vật lí (và lớp 10–12 ôn chuyên) — mỗi bài 3–4 ý khó dần, hình SVG trong script sinh, gợi ý 3 tầng theo phong cách thầy Thạch (kiến thức → điều kiện áp dụng → hướng tính), lời giải tập riêng (chữ trước số sau, Đáp số, Nhận dạng, Bẫy), số liệu tính bằng Python, kiểm chéo bắt buộc bằng agent kiem-code giải độc lập từ đề không đáp án, dàn trang bằng _tools/trang-mau-sach. Dùng khi thầy nói "soạn bài tập tự luận vận dụng cao cho lớp 9 chuyên", "ra bộ bài tập cơ học/điện/quang cho đội tuyển", "làm bài tập có gợi ý và đáp án kiểu pre-test", "soạn chuyên đề bài tập HSG có hình". KHÁC soan-bai-tap-mau (mục Bài tập mẫu trên web, có mô phỏng, ghi DB), de-vat-ly-thpt (đề thi trắc nghiệm Azota), up-de-kiem-tra (đăng đề lên web). Chạy trên Mac (cần Chrome + book/node_modules để dựng PDF).
 ---
 
 # Soạn bộ bài tập tự luận VD–VDC cho lớp chuyên / HSG (thầy chốt 10/10/2026)
@@ -47,6 +47,17 @@ Mẫu đầy đủ đã duyệt: `references/mau-sinh-bai-tap.py` (bộ Cơ họ
 7. Viết `README.md` (file nào là gì, mảng → bài, mức, bài ngoài chuẩn, cách kiểm), xoá `.xem-thu/`. Báo thầy ngắn: bảng bài–mức–đáp số,
    việc chưa làm, rút kinh nghiệm. Số hoá lên thachlab chỉ khi thầy bảo (theo `docs/DANG-DE-TU-WORD.md`).
 
+## Bước 8 (tuỳ chọn, khi thầy bảo "đăng lên web") — đưa bộ tự luận vào khoá HSG 9 trên thachlab (chốt 16/10/2026)
+Bộ in giấy và bản web dùng **cùng một nguồn** `sinh-bai-tap.py`: mục cuối script xuất `web-tu-luan.json` = `{lesson_id: html}`
+(`WEB_MAP` chia bài theo chuyên đề — lesson_id ở `docs/HSG9-KHUNG.md`; mỗi bài = `<h4>` + `<figure class="fig">` SVG tự mang `<defs>` marker
++ đề + `<details class="tl-details">` Gợi ý + `<details>` Lời giải/Đáp số `tl-box`/Nhận dạng/Lỗi hay gặp). Rồi trên Mac:
+1. `python3 scripts/gop-tu-luan-hsg9.py <web-tu-luan.json> <tag>` — nối khối vào `tu_luan.body_html` của `scripts/data/bai-tap-mau/<id>.json`
+   giữa marker `<!-- tag:start/end -->` (idempotent, chạy lại thì thay). Dùng `--dry-run` xem trước.
+2. Tab terminal: `publish-bai-tap-mau.mts --lesson <id> --dry-run` từng bài → `--yes` → `bash scripts/deploy.sh` (bài tập mẫu là file tĩnh).
+3. Kiểm lại sau ghi: truy vấn chỉ đọc `lesson_items` (mục `bai_tap_mau`, dạng cuối có marker) + mở bài trên web xem `<details>`/hình.
+4. Commit `scripts/data/bai-tap-mau/<id>.json` + `scripts/gop-tu-luan-hsg9.py`; ghi memory `project_thachlab_khoa_hsg9_vat_ly.md`.
+Không tạo bài/lesson mới cho bộ tự luận; không đưa vào `dang_bai` (mục đó cần mô phỏng + `buoc[]`).
+
 ## Lỗi hay gặp khi dựng (đã gặp 10/10/2026)
 - `fig()` đánh số hình theo thứ tự gọi: dựng đề xong mới reset `FIGN` nếu lời giải cũng chèn hình.
 - Ký tự toán Unicode (𝒫, ½, ·, ⇒, ₁) hiện tốt với font Be Vietnam Pro + Times; tránh LaTeX vì trang mẫu không có KaTeX.
@@ -59,3 +70,4 @@ Mẫu đầy đủ đã duyệt: `references/mau-sinh-bai-tap.py` (bộ Cơ họ
 - 2026-10-10 · Soát hình lần 2 chỉ cần 3–4 hình → render riêng từng SVG bằng Chrome headless (`--screenshot --window-size=340,210`) rồi xem ở phiên chính (≈ 300 token/ảnh), rẻ hơn 100 k token của một agent soát cả 18 trang. Agent soát cả trang chỉ dùng một lần đầu.
 - 2026-10-10 · Thay chuỗi trong script bằng danh sách `(cũ, mới)` + `assert count==1`: một mục "không đổi gì" làm assert fail và **không ghi file** mà lệnh dựng sau vẫn chạy → nhìn kỹ "edited N" trước khi dựng lại.
 - 2026-10-10 · Token: đọc cả `sinh-pretest` (28 KB) để lấy phong cách là thừa — chỉ cần 60 dòng helper + 2 câu mẫu; lần sau `sed -n` đúng đoạn.
+- 2026-10-16 · Đăng web: marker `#ah` của trang in nằm ở `sach_mau.MARKER` ngoài SVG → bản web phải chèn `<defs>` vào từng SVG, nếu không mũi tên mất đầu. Dùng `fill="currentColor"` cho đầu mũi tên để hợp cả hai nền.
