@@ -258,10 +258,22 @@ export default function ContentHtml({
         u.rate = 0.9;
         // Nhiều trình duyệt (Safari/iOS, Chrome Mac/Android) bỏ qua `lang` nếu không gán voice → đọc bằng giọng mặc định
         // của máy (tiếng Việt). Chọn giọng en-US tường minh, rơi về bất kỳ giọng en-* nào.
-        const voices = window.speechSynthesis.getVoices();
-        const voice =
-          voices.find((v) => v.lang.replace("_", "-") === "en-US") ??
-          voices.find((v) => v.lang.toLowerCase().startsWith("en"));
+        // Xếp hạng giọng: ưu tiên loại Premium/Enhanced/Neural/Natural và các giọng tự nhiên đã biết,
+        // tránh giọng nén/robot (Fred, Albert, Zarvox…); en-US hơn en-khác.
+        const score = (v: SpeechSynthesisVoice) => {
+          const lang = v.lang.replace("_", "-").toLowerCase();
+          if (!lang.startsWith("en")) return -1;
+          let s = lang === "en-us" ? 10 : 5;
+          if (/premium|enhanced|neural|natural|online/i.test(v.name)) s += 30;
+          if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(v.name)) s += 20;
+          if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(v.name)) s -= 40;
+          if (v.localService === false) s += 5;
+          return s;
+        };
+        const voice = window.speechSynthesis
+          .getVoices()
+          .filter((v) => score(v) >= 0)
+          .sort((a, b) => score(b) - score(a))[0];
         if (voice) u.voice = voice;
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(u);
