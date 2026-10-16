@@ -6,7 +6,6 @@ const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL"), env("SUPABASE_SERVICE_R
 const SP: [RegExp, string][] = [[/(\d{2}(?:,\d)?) 0C/g, "$1°C"]];
 const FIX: Record<number, [RegExp, string][]> = {
   656431: [[/3270C/, "327°C"], [/16130C/, "1613°C"], [/Bước 00C/, "Bước 0°C"], [/1000C/, "100°C"]],
-  656431: [[/3270C/, "327°C"], [/16130C/, "1613°C"], [/Bước 00C/, "Bước 0°C"], [/1000C/, "100°C"]],
 };
 const { data } = await sb.from("question_bank").select("id, question").in("id", Object.keys(FIX).map(Number));
 fs.writeFileSync(`scripts/logs/backup-do-c-le-${Date.now()}.json`, JSON.stringify(data));
