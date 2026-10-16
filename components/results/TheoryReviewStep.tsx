@@ -302,6 +302,17 @@ export default function TheoryReviewStep({
         ))}
       </div>
 
+      {needMoreTime && !done && (
+        <div aria-live="polite">
+          <p className="text-sm text-ink">
+            Em đã xong các mục trên. Em đọc lại bài ở khung trên thêm một lát (cuộn xem lại từng phần) — nút bên dưới sẽ tự mở, em không cần bấm gì thêm.
+          </p>
+          <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2" role="progressbar" aria-label="Tiến độ xem lại bài" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round((timeNow / Math.max(1, reqSec)) * 100)}>
+            <div className="h-full bg-primary transition-all" style={{ width: `${Math.min(100, (timeNow / Math.max(1, reqSec)) * 100)}%` }} />
+          </div>
+        </div>
+      )}
+
       <Button onClick={() => onReadyRef.current()} disabled={!done} className="w-full">
         {done ? "Sang bài thoát phụ đạo" : needMoreTime ? "Em đọc kỹ thêm một chút nữa nhé" : "Hoàn thành các mục trên để mở bài thoát"}
       </Button>

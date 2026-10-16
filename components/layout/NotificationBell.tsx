@@ -100,7 +100,7 @@ export default function NotificationBell() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-[calc(100%+8px)] w-[22rem] overflow-hidden rounded-2xl border border-line bg-panel/95 shadow-2xl shadow-black/50 sm:w-[26rem]">
+        <div className="fixed inset-x-3 top-16 overflow-hidden rounded-2xl border border-line bg-panel/95 shadow-2xl shadow-black/50 sm:absolute sm:inset-x-auto sm:right-0 sm:top-[calc(100%+8px)] sm:w-[26rem]">
           <div className="flex items-center justify-between border-b border-line px-4 py-3">
             <span className="text-base font-bold text-ink">Thông báo</span>
             {count > 0 && (

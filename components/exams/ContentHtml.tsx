@@ -191,6 +191,10 @@ function loadKatex(): Promise<KatexModule> {
     katexPromise = Promise.all([import("katex"), import("katex/dist/katex.min.css")]).then(
       ([mod]) => (("default" in mod ? mod.default : mod) as unknown as KatexModule),
     );
+    // Tải chunk lỗi (mạng di động chập chờn) thì bỏ promise hỏng để lần sau tải lại, đừng giữ công thức thô cả phiên.
+    katexPromise.catch(() => {
+      katexPromise = null;
+    });
   }
   return katexPromise;
 }
@@ -253,15 +257,21 @@ export default function ContentHtml({
   useEffect(() => {
     if (!needsMath) return; // không có công thức thì không đụng tới KaTeX chút nào
     let cancelled = false;
-    loadKatex()
-      .then((katex) => {
-        if (!cancelled) setKatexResult({ forHtml: cleaned, rendered: renderWithKatex(cleaned, katex) });
-      })
-      .catch(() => {
-        // Tải chunk lỗi (mất mạng, 404…) — giữ nguyên fallback văn bản thô, không kẹt trắng.
-      });
+    let timer: number | undefined;
+    const attempt = (left: number) => {
+      loadKatex()
+        .then((katex) => {
+          if (!cancelled) setKatexResult({ forHtml: cleaned, rendered: renderWithKatex(cleaned, katex) });
+        })
+        .catch(() => {
+          // Tải chunk lỗi (mất mạng, 404…) — giữ fallback văn bản thô, thử lại vài lần thay vì kẹt công thức thô.
+          if (!cancelled && left > 0) timer = window.setTimeout(() => attempt(left - 1), 2500);
+        });
+    };
+    attempt(3);
     return () => {
       cancelled = true;
+      window.clearTimeout(timer);
     };
   }, [cleaned, needsMath]);
 

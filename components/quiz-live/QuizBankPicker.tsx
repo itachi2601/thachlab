@@ -57,7 +57,8 @@ export default function QuizBankPicker({
   const [topicId, setTopicId] = useState<number | null>(null);
   const [difficulty, setDifficulty] = useState("");
   const [search, setSearch] = useState("");
-  const [count, setCount] = useState(10);
+  const [countText, setCountText] = useState("10");
+  const count = Math.max(1, Math.min(50, Math.floor(Number(countText)) || 1));
   const [ramp, setRamp] = useState(true);
   const [hits, setHits] = useState<BankHit[]>([]);
   const [picked, setPicked] = useState<Set<number>>(new Set());
@@ -136,7 +137,7 @@ export default function QuizBankPicker({
       <div className="flex flex-wrap items-center gap-2">
         <label className="flex items-center gap-2 text-sm text-ink">
           Số câu
-          <input type="number" min={1} max={50} className={`${field} w-20`} value={count} onChange={(e) => setCount(Math.max(1, Math.min(50, Number(e.target.value) || 1)))} />
+          <input type="number" min={1} max={50} className={`${field} w-20`} inputMode="numeric" value={countText} onChange={(e) => setCountText(e.target.value.replace(/\D/g, "").slice(0, 2))} onBlur={() => setCountText(String(count))} />
         </label>
         <label className="flex min-h-11 items-center gap-2 text-sm text-ink">
           <input type="checkbox" className="size-5" checked={ramp} onChange={(e) => setRamp(e.target.checked)} />
