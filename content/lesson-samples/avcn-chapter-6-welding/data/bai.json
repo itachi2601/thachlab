@@ -1,0 +1,2198 @@
+{
+  "meta": {
+    "chapter": 6,
+    "prefix": "tl6",
+    "title_en": "Welding",
+    "title_vi": "Hàn",
+    "minutes": 30,
+    "flashcard": "/flashcard/avcn-chapter-6.html",
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (đồ nghề hàn, mối hàn, vùng hàn, điện cực và khí bảo vệ) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 (Welding) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X which V</em> và <em>X is used to V</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục 2 Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 1, điền 1 từ + Đúng/Sai",
+        "Mục 3 Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục 6 Hàn hai kim loại khác loại"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục 3 + mục 4 mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục 4 mẫu câu"
+      ]
+    ],
+    "doan_tieu_de": "thứ này làm gì?",
+    "doan_mo_dau": "Hai hình dưới đây là cảnh em có thể đã thấy ở xưởng hàn hoặc ngoài công trình. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "đồ bảo hộ, khí và kỹ thuật hàn"
+  },
+  "khoi_dong": [
+    {
+      "img": "stick-welding",
+      "hoi": "Thợ này đội mặt nạ, đầu que sáng chói và bắn tia lửa. Công việc này tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "drilling",
+        "welding",
+        "grinding"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>welding</em> /ˈweldɪŋ/ là hàn: nối kim loại bằng cách làm nóng chảy chỗ nối.",
+      "fb_no": "Nhìn chỗ sáng chói ở đầu que: kim loại ở đó đang chảy và dính lại với nhau. Việc đó gọi là gì?"
+    },
+    {
+      "img": "oxy-torch",
+      "hoi": "Thợ này cầm một cái mỏ phun ngọn lửa rất nóng để làm chảy kim loại. Tiếng Anh gọi dụng cụ này là gì?",
+      "lua_chon": [
+        "torch",
+        "hammer",
+        "pliers"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>torch</em> /tɔːtʃ/ là mỏ hàn, đèn khò. Ở Anh, torch còn là đèn pin.",
+      "fb_no": "Dụng cụ này phun lửa, không dùng để đập hay kẹp. Trong hàn khí, người ta gọi nó là gì?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Đồ nghề và bảo hộ khi hàn",
+      "tu": [
+        {
+          "term": "welding machine",
+          "ipa": "/ˈweldɪŋ məˈʃiːn/",
+          "vi": "máy hàn",
+          "def": "A machine that supplies electric current for welding.",
+          "img": "welding-machine",
+          "tier": 1
+        },
+        {
+          "term": "welding clamp",
+          "ipa": "/ˈweldɪŋ klæmp/",
+          "vi": "kẹp mát (kẹp nối phôi với máy hàn)",
+          "def": "A clamp that connects the work piece to the welding machine.",
+          "img": "welding-clamp",
+          "tier": 1
+        },
+        {
+          "term": "welding mask",
+          "ipa": "/ˈweldɪŋ mɑːsk/",
+          "vi": "mặt nạ hàn",
+          "def": "A mask that protects the face and eyes from the arc light.",
+          "img": "welding-mask",
+          "tier": 1
+        },
+        {
+          "term": "welding rod",
+          "ipa": "/ˈweldɪŋ rɒd/",
+          "vi": "que hàn",
+          "def": "A stick of metal that provides filler.",
+          "img": "welding-rod",
+          "tier": 1
+        },
+        {
+          "term": "welding gloves",
+          "ipa": "/ˈweldɪŋ ɡlʌvz/",
+          "vi": "găng tay hàn",
+          "def": "Thick gloves that protect the hands from heat and sparks.",
+          "img": "welding-gloves",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A mask that protects the face and eyes from the arc light.\"</em>",
+        "lua_chon": [
+          "welding clamp",
+          "welding mask",
+          "welding gloves",
+          "welding rod"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>face and eyes</em> (mặt và mắt): mặt nạ hàn che mặt khỏi ánh sáng chói của hồ quang.",
+        "fb_no": "Gạch từ khoá <em>face and eyes</em>. Thứ nào đội lên mặt?"
+      }
+    },
+    {
+      "ten": "Cụm B · Hàn là gì",
+      "tu": [
+        {
+          "term": "weld",
+          "ipa": "/weld/",
+          "vi": "hàn; mối hàn",
+          "def": "A solid joint formed when melted metal cools.",
+          "img": "weld-bead",
+          "tier": 1
+        },
+        {
+          "term": "molten",
+          "ipa": "/ˈməʊltən/",
+          "vi": "nóng chảy, ở dạng lỏng",
+          "def": "Heated until it becomes liquid.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "filler",
+          "ipa": "/ˈfɪlə/",
+          "vi": "vật liệu bổ sung (vật liệu đắp)",
+          "def": "New material that is melted into the weld pool.",
+          "img": "filler-wire",
+          "tier": 1
+        },
+        {
+          "term": "base metal",
+          "ipa": "/beɪs ˈmetl/",
+          "vi": "kim loại nền",
+          "def": "The metal that the components are made of.",
+          "img": "steel-plate",
+          "tier": 1
+        },
+        {
+          "term": "weld pool",
+          "ipa": "/weld puːl/",
+          "vi": "vũng hàn (kim loại lỏng tại mối nối)",
+          "def": "The molten metal at the joint during welding.",
+          "img": "weld-pool-diagram",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The molten metal at the joint during welding.\"</em>",
+        "lua_chon": [
+          "weld",
+          "filler",
+          "weld pool",
+          "base metal"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>molten metal at the joint</em>: kim loại lỏng ngay chỗ đang hàn là <em>weld pool</em>.",
+        "fb_no": "Gạch từ khoá <em>molten metal</em>. Cái gì là kim loại lỏng ở mối nối?"
+      }
+    },
+    {
+      "ten": "Cụm C · Vùng hàn và các lỗi",
+      "tu": [
+        {
+          "term": "dissimilar materials",
+          "ipa": "/dɪˈsɪmɪlə məˈtɪəriəlz/",
+          "vi": "vật liệu khác loại",
+          "def": "Materials that are not of the same type.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "discontinuity",
+          "ipa": "/ˌdɪskɒntɪˈnjuːəti/",
+          "vi": "chỗ không liền khối (khuyết tật mối hàn)",
+          "def": "A place where a joint is not completely solid.",
+          "img": "weld-crack",
+          "tier": 1
+        },
+        {
+          "term": "residual stress",
+          "ipa": "/rɪˈzɪdjuəl stres/",
+          "vi": "ứng suất dư",
+          "def": "Force that is trapped around a joint after welding.",
+          "img": "weld-stress",
+          "tier": 1
+        },
+        {
+          "term": "weld zone",
+          "ipa": "/weld zəʊn/",
+          "vi": "vùng mối hàn (còn gọi fusion zone)",
+          "def": "The area that was the weld pool.",
+          "img": "weld-zone",
+          "tier": 1
+        },
+        {
+          "term": "heat-affected zone",
+          "ipa": "/hiːt əˈfektɪd zəʊn/",
+          "vi": "vùng ảnh hưởng nhiệt (HAZ)",
+          "def": "The material close to the weld pool that was changed by heat.",
+          "img": "haz-pipe",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A place where a joint is not completely solid.\"</em>",
+        "lua_chon": [
+          "residual stress",
+          "discontinuity",
+          "heat-affected zone",
+          "weld zone"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>not completely solid</em> (không đặc hoàn toàn): chỗ mối nối bị hở, nứt gọi là <em>discontinuity</em>.",
+        "fb_no": "Gạch từ khoá <em>not completely solid</em>. Hai đáp án có chữ zone là vùng, không phải chỗ hở. Còn lại thứ nào?"
+      }
+    },
+    {
+      "ten": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ",
+      "tu": [
+        {
+          "term": "electrode",
+          "ipa": "/ɪˈlektrəʊd/",
+          "vi": "điện cực (que hàn gắn trên kìm hàn)",
+          "def": "An electrical conductor used to strike an arc.",
+          "img": "electrode-holder",
+          "tier": 1
+        },
+        {
+          "term": "flux",
+          "ipa": "/flʌks/",
+          "vi": "thuốc hàn (lớp bọc que hàn)",
+          "def": "A material that coats the welding rod and produces a shielding gas.",
+          "img": "flux-coating",
+          "tier": 1
+        },
+        {
+          "term": "shielding gas",
+          "ipa": "/ˈʃiːldɪŋ ɡæs/",
+          "vi": "khí bảo vệ",
+          "def": "A gas that protects the molten metal from oxygen.",
+          "img": "gas-cylinders",
+          "tier": 1
+        },
+        {
+          "term": "tungsten electrode",
+          "ipa": "/ˈtʌŋstən ɪˈlektrəʊd/",
+          "vi": "điện cực vonfram",
+          "def": "An electrode which does not melt and is not consumed during welding.",
+          "img": "tungsten-electrodes",
+          "tier": 1
+        },
+        {
+          "term": "consumable",
+          "ipa": "/kənˈsjuːməbl/",
+          "vi": "bị tiêu hao (dùng hết khi hàn)",
+          "def": "Used up during the welding process.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A material which coats the welding rod and produces a shielding gas.\"</em>",
+        "lua_chon": [
+          "electrode",
+          "flux",
+          "tungsten electrode",
+          "consumable"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>coats</em> (phủ ngoài) và <em>produces a shielding gas</em>: lớp thuốc bọc que hàn là <em>flux</em>. Câu này đã ra trong đề cuối kỳ.",
+        "fb_no": "Gạch từ khoá <em>coats</em>. Thứ gì phủ quanh que hàn rồi sinh ra khí?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "welding apron",
+      "vi": "tạp dề hàn (yếm da chống tia lửa)",
+      "img": "welding-apron"
+    },
+    {
+      "term": "electrode holder",
+      "vi": "kìm hàn (tay cầm kẹp que hàn)",
+      "img": "electrode-holder"
+    },
+    {
+      "term": "chipping hammer",
+      "vi": "búa gõ xỉ hàn",
+      "img": "chipping-hammer"
+    },
+    {
+      "term": "wire brush",
+      "vi": "bàn chải sắt (chải sạch xỉ và gỉ)",
+      "img": "wire-brush"
+    },
+    {
+      "term": "gas regulator",
+      "vi": "van giảm áp (đồng hồ khí)",
+      "img": "gas-regulator"
+    },
+    {
+      "term": "arc",
+      "vi": "hồ quang",
+      "img": "arc-light"
+    },
+    {
+      "term": "torch",
+      "vi": "mỏ hàn, đèn khò (tiếng Anh Anh còn là đèn pin)",
+      "img": "oxy-torch"
+    },
+    {
+      "term": "oxyfuel / oxyacetylene",
+      "vi": "hỗn hợp oxy và khí đốt / oxy và axetylen",
+      "img": "oxy-set"
+    },
+    {
+      "term": "acetylene",
+      "vi": "khí axetylen (C₂H₂)"
+    },
+    {
+      "term": "argon",
+      "vi": "khí argon (Ar), khí trơ"
+    },
+    {
+      "term": "carbon dioxide",
+      "vi": "khí cacbonic (CO₂)"
+    },
+    {
+      "term": "stick welding (SMAW)",
+      "vi": "hàn que, hàn hồ quang tay",
+      "img": "stick-welding"
+    },
+    {
+      "term": "MIG welding (GMAW)",
+      "vi": "hàn MIG, hàn dây trong khí bảo vệ",
+      "img": "mig-gun"
+    },
+    {
+      "term": "TIG welding (GTAW)",
+      "vi": "hàn TIG, điện cực vonfram",
+      "img": "tig-torch"
+    },
+    {
+      "term": "fusion",
+      "vi": "sự nóng chảy kết dính"
+    },
+    {
+      "term": "non-consumable",
+      "vi": "không bị tiêu hao"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · What is welding?",
+      "cau": [
+        [
+          "<b>Welding</b> means <b>permanently</b> joining two pieces of material by heating the joint between them.",
+          "Hàn nghĩa là nối vĩnh viễn hai mảnh vật liệu bằng cách làm nóng mối nối giữa chúng.",
+          {
+            "doan": [
+              {
+                "tu": "Welding",
+                "lua_chon": [
+                  "hàn",
+                  "cắt",
+                  "khoan"
+                ],
+                "dap": 0,
+                "giai": "weld là hàn: nối kim loại bằng nhiệt. Welding là danh từ, nghĩa là việc hàn."
+              },
+              {
+                "tu": "permanently",
+                "lua_chon": [
+                  "tạm thời",
+                  "vĩnh viễn",
+                  "nhanh chóng"
+                ],
+                "dap": 1,
+                "giai": "permanent là vĩnh viễn; thêm -ly thành trạng từ. Đề Part 2 đã đục chữ này."
+              }
+            ],
+            "nghia": {
+              "means": "nghĩa là",
+              "joining": "nối",
+              "pieces of material": "mảnh vật liệu",
+              "heating": "làm nóng",
+              "joint": "mối nối",
+              "between": "giữa"
+            }
+          }
+        ],
+        [
+          "The heat <b>melts</b> the edges of the components being welded together, and once the material has become <b>molten</b> (liquid), fusion occurs.",
+          "Nhiệt làm chảy các mép của các chi tiết đang được hàn với nhau, và khi vật liệu đã nóng chảy (ở dạng lỏng) thì xảy ra sự kết dính.",
+          {
+            "doan": [
+              {
+                "tu": "melts",
+                "lua_chon": [
+                  "làm lạnh",
+                  "làm cong",
+                  "làm chảy"
+                ],
+                "dap": 2,
+                "giai": "melt là chảy, tan. Đề Part 2 đã đục chữ này."
+              },
+              {
+                "tu": "molten",
+                "lua_chon": [
+                  "nóng chảy (đang ở dạng lỏng)",
+                  "rất cứng",
+                  "đã nguội"
+                ],
+                "dap": 0,
+                "giai": "molten là kim loại bị nung chảy thành lỏng. Bài giải thích ngay trong ngoặc: liquid."
+              }
+            ],
+            "nghia": {
+              "heat": "nhiệt",
+              "edges": "các mép",
+              "components": "chi tiết",
+              "being welded": "đang được hàn",
+              "once": "khi, một khi",
+              "fusion": "sự nóng chảy kết dính",
+              "occurs": "xảy ra"
+            }
+          }
+        ],
+        [
+          "When the joint <b>fuses</b>, material from each component is mixed together, joining to form a solid <b>weld</b>.",
+          "Khi mối nối kết dính, vật liệu của từng chi tiết trộn lẫn với nhau, nối lại thành một mối hàn đặc.",
+          {
+            "doan": [
+              {
+                "tu": "fuses",
+                "lua_chon": [
+                  "đứt cầu chì",
+                  "nóng chảy và dính liền",
+                  "vỡ vụn"
+                ],
+                "dap": 1,
+                "giai": "fuse đời thường là cầu chì; ở đây là nóng chảy rồi dính liền thành một khối."
+              },
+              {
+                "tu": "weld",
+                "lua_chon": [
+                  "tia lửa",
+                  "vết nứt",
+                  "mối hàn"
+                ],
+                "dap": 2,
+                "giai": "weld là mối hàn (danh từ) hoặc hàn (động từ). Part 2 hỏi: to form a solid weld."
+              }
+            ],
+            "nghia": {
+              "mixed together": "trộn lẫn",
+              "joining to form": "nối lại thành",
+              "solid": "đặc, liền khối",
+              "each": "mỗi"
+            }
+          }
+        ],
+        [
+          "Metal is often <b>welded</b>.",
+          "Kim loại thường được hàn.",
+          {
+            "doan": [
+              {
+                "tu": "welded",
+                "lua_chon": [
+                  "được hàn",
+                  "bị gỉ",
+                  "bị cong"
+                ],
+                "dap": 0,
+                "giai": "weld + ed: được hàn. Is welded là bị động."
+              }
+            ],
+            "nghia": {
+              "metal": "kim loại",
+              "often": "thường"
+            }
+          }
+        ],
+        [
+          "It is also possible to weld <b>plastic</b>.",
+          "Cũng có thể hàn nhựa.",
+          {
+            "doan": [
+              {
+                "tu": "plastic",
+                "lua_chon": [
+                  "kim loại",
+                  "nhựa",
+                  "gỗ"
+                ],
+                "dap": 1,
+                "giai": "plastic là nhựa. Đề Đúng/Sai hay hỏi chỗ này: nhựa cũng hàn được."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "possible": "có thể",
+              "weld": "hàn"
+            }
+          }
+        ],
+        [
+          "Welding is usually used to join components of the same <b>base metal</b> – that is, the metal the components are made of.",
+          "Hàn thường được dùng để nối các chi tiết cùng một kim loại nền, nghĩa là kim loại mà các chi tiết được làm ra từ đó.",
+          {
+            "doan": [
+              {
+                "tu": "base metal",
+                "lua_chon": [
+                  "kim loại rẻ",
+                  "kim loại nặng",
+                  "kim loại nền"
+                ],
+                "dap": 2,
+                "giai": "base là nền, gốc. Base metal là kim loại của chính các chi tiết được hàn. Đề Part 2 đục chữ này."
+              }
+            ],
+            "nghia": {
+              "usually": "thường",
+              "join": "nối",
+              "the same": "cùng một",
+              "that is": "nghĩa là",
+              "made of": "làm từ",
+              "components": "chi tiết"
+            }
+          }
+        ],
+        [
+          "It is possible – though more difficult – to weld certain <b>dissimilar</b> materials.",
+          "Có thể hàn một số vật liệu khác loại, dù khó hơn.",
+          {
+            "doan": [
+              {
+                "tu": "dissimilar",
+                "lua_chon": [
+                  "khác loại",
+                  "giống nhau",
+                  "rất mỏng"
+                ],
+                "dap": 0,
+                "giai": "dis- là không: dissimilar là không giống nhau, khác loại."
+              }
+            ],
+            "nghia": {
+              "possible": "có thể",
+              "though": "dù",
+              "more difficult": "khó hơn",
+              "certain": "một số",
+              "materials": "vật liệu"
+            }
+          }
+        ],
+        [
+          "For example, <b>copper</b> can be welded to <b>steel</b>.",
+          "Ví dụ, đồng có thể được hàn với thép.",
+          {
+            "doan": [
+              {
+                "tu": "copper",
+                "lua_chon": [
+                  "nhôm",
+                  "đồng",
+                  "chì"
+                ],
+                "dap": 1,
+                "giai": "copper là đồng (kim loại đỏ, dẫn điện tốt)."
+              },
+              {
+                "tu": "steel",
+                "lua_chon": [
+                  "gang",
+                  "đồng",
+                  "thép"
+                ],
+                "dap": 2,
+                "giai": "steel là thép, kim loại hay gặp nhất ở xưởng cơ khí."
+              }
+            ],
+            "nghia": {
+              "for example": "ví dụ",
+              "can be": "có thể được"
+            }
+          }
+        ],
+        [
+          "Often, a <b>filler</b> is added during welding.",
+          "Thường thì người ta thêm vật liệu phụ trong lúc hàn.",
+          {
+            "doan": [
+              {
+                "tu": "filler",
+                "lua_chon": [
+                  "vật liệu bổ sung vào mối hàn",
+                  "chất làm sạch",
+                  "chất làm nguội"
+                ],
+                "dap": 0,
+                "giai": "fill là lấp đầy, filler là vật liệu thêm vào để lấp mối hàn. Đề Part 2 đục chữ này."
+              }
+            ],
+            "nghia": {
+              "often": "thường",
+              "is added": "được thêm vào",
+              "during": "trong lúc"
+            }
+          }
+        ],
+        [
+          "This is new material, of the same type as the base metal, which is melted into the <b>weld pool</b>",
+          "Đó là vật liệu mới, cùng loại với kim loại nền, được nấu chảy vào vũng hàn",
+          {
+            "doan": [
+              {
+                "tu": "weld pool",
+                "lua_chon": [
+                  "hồ bơi",
+                  "vũng hàn (kim loại lỏng tại mối nối)",
+                  "vết hàn nguội"
+                ],
+                "dap": 1,
+                "giai": "pool đời thường là hồ bơi, vũng nước; weld pool là vũng kim loại lỏng ngay chỗ đang hàn."
+              }
+            ],
+            "nghia": {
+              "new material": "vật liệu mới",
+              "of the same type as": "cùng loại với",
+              "melted into": "được nấu chảy vào"
+            }
+          }
+        ],
+        [
+          "– the <b>molten</b> metal at the joint during welding.",
+          "– chính là kim loại nóng chảy tại mối nối trong lúc hàn.",
+          {
+            "doan": [
+              {
+                "tu": "molten",
+                "lua_chon": [
+                  "đã đông cứng",
+                  "bị gỉ",
+                  "nóng chảy"
+                ],
+                "dap": 2,
+                "giai": "molten là đang lỏng vì bị nung chảy. Đề Part 2 hỏi: the molten metal at the joint."
+              }
+            ],
+            "nghia": {
+              "at the joint": "tại mối nối",
+              "during welding": "trong lúc hàn"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Welding means ______ joining two pieces of material by heating the joint between them.\"</em>",
+        "lua_chon": [
+          "permanently",
+          "temporarily",
+          "quickly"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 1 của bài: <em>Welding means permanently joining…</em>. Đề cuối kỳ đã đục đúng chữ này.",
+        "fb_no": "Tìm câu đầu tiên của bài. Từ nào đứng ngay trước <em>joining</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Only metals can be welded; plastics cannot be welded.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Câu 5 viết <em>It is also possible to weld plastic.</em> Đề chỉ thêm chữ \"only\".",
+        "fb_no": "Đọc lại câu 4 và câu 5: ngoài kim loại còn hàn được thứ gì?"
+      }
+    },
+    {
+      "ten": "Article 1 (tiếp) · Problems in welding",
+      "cau": [
+        [
+          "One problem in welding is <b>discontinuity</b>, where joints are not completely solid.",
+          "Một vấn đề khi hàn là sự gián đoạn, tức là mối nối không đặc hoàn toàn.",
+          {
+            "doan": [
+              {
+                "tu": "discontinuity",
+                "lua_chon": [
+                  "chỗ không liền khối (khuyết tật)",
+                  "độ cứng",
+                  "sự nóng chảy"
+                ],
+                "dap": 0,
+                "giai": "continuity là liên tục, dis- là không: discontinuity là chỗ không liền khối, ví dụ vết nứt."
+              }
+            ],
+            "nghia": {
+              "problem": "vấn đề",
+              "where": "tức là, ở chỗ",
+              "completely": "hoàn toàn",
+              "solid": "đặc, liền khối"
+            }
+          }
+        ],
+        [
+          "Another problem is <b>residual stress</b>.",
+          "Một vấn đề khác là ứng suất dư.",
+          {
+            "doan": [
+              {
+                "tu": "residual stress",
+                "lua_chon": [
+                  "độ cứng",
+                  "ứng suất dư",
+                  "lực kéo đứt"
+                ],
+                "dap": 1,
+                "giai": "residual là còn dư lại, stress là ứng suất (lực bên trong vật liệu): ứng suất còn lại sau khi hàn."
+              }
+            ],
+            "nghia": {
+              "another": "khác, nữa"
+            }
+          }
+        ],
+        [
+          "This is force – for example, <b>tension</b> – which is “<b>trapped</b>” around the joint.",
+          "Đó là lực, ví dụ lực căng, bị “mắc kẹt” quanh mối nối.",
+          {
+            "doan": [
+              {
+                "tu": "tension",
+                "lua_chon": [
+                  "nhiệt độ",
+                  "tia lửa",
+                  "lực căng (lực kéo)"
+                ],
+                "dap": 2,
+                "giai": "tension là lực kéo căng vật liệu."
+              },
+              {
+                "tu": "trapped",
+                "lua_chon": [
+                  "bị mắc kẹt",
+                  "bị đốt cháy",
+                  "bị cắt đứt"
+                ],
+                "dap": 0,
+                "giai": "trap là bẫy, trapped là bị giữ lại, mắc kẹt bên trong."
+              }
+            ],
+            "nghia": {
+              "force": "lực",
+              "for example": "ví dụ",
+              "around": "quanh"
+            }
+          }
+        ],
+        [
+          "This problem occurs after welding, as a result of <b>contraction</b> in the <b>weld zone</b> (or fusion zone) – the area that was the weld pool.",
+          "Vấn đề này xảy ra sau khi hàn, do sự co lại ở vùng mối hàn (hay vùng nóng chảy), tức là vùng từng là vũng hàn.",
+          {
+            "doan": [
+              {
+                "tu": "contraction",
+                "lua_chon": [
+                  "sự giãn nở",
+                  "sự co lại",
+                  "sự nóng lên"
+                ],
+                "dap": 1,
+                "giai": "contract là co lại, ngược với expand (giãn ra)."
+              },
+              {
+                "tu": "weld zone",
+                "lua_chon": [
+                  "vùng đã nguội",
+                  "mối nối",
+                  "vùng mối hàn (vùng nóng chảy)"
+                ],
+                "dap": 2,
+                "giai": "zone là vùng. Weld zone, còn gọi fusion zone, là vùng từng là weld pool."
+              }
+            ],
+            "nghia": {
+              "occurs": "xảy ra",
+              "after": "sau",
+              "as a result of": "do, vì",
+              "area": "vùng"
+            }
+          }
+        ],
+        [
+          "It can also occur in the <b>heat-affected zone</b> (HAZ)",
+          "Nó cũng có thể xảy ra ở vùng ảnh hưởng nhiệt (HAZ)",
+          {
+            "doan": [
+              {
+                "tu": "heat-affected zone",
+                "lua_chon": [
+                  "vùng ảnh hưởng nhiệt",
+                  "vùng nóng nhất",
+                  "vùng chịu lạnh"
+                ],
+                "dap": 0,
+                "giai": "heat là nhiệt, affected là bị ảnh hưởng, zone là vùng. Viết tắt HAZ."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "occur": "xảy ra"
+            }
+          }
+        ],
+        [
+          "– the material close to the weld pool which was <b>subjected to</b> high temperature, and was <b>modified</b> by the heat.",
+          "– phần vật liệu gần vũng hàn, bị tác động bởi nhiệt độ cao và bị nhiệt làm biến đổi.",
+          {
+            "doan": [
+              {
+                "tu": "subjected to",
+                "lua_chon": [
+                  "được cắt bởi",
+                  "chịu (tác động của)",
+                  "được thay bằng"
+                ],
+                "dap": 1,
+                "giai": "be subjected to là phải chịu một tác động, ở đây là nhiệt độ cao."
+              },
+              {
+                "tu": "modified",
+                "lua_chon": [
+                  "bị phá huỷ",
+                  "bị hàn thêm",
+                  "bị biến đổi"
+                ],
+                "dap": 2,
+                "giai": "modify là sửa đổi, làm biến đổi. Vật liệu vẫn còn, chỉ đổi tính chất."
+              }
+            ],
+            "nghia": {
+              "material": "vật liệu",
+              "close to": "gần",
+              "high temperature": "nhiệt độ cao",
+              "heat": "nhiệt"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"One problem in welding is ______, where joints are not completely solid.\"</em>",
+        "lua_chon": [
+          "contraction",
+          "discontinuity",
+          "tension"
+        ],
+        "dap": 1,
+        "fb_ok": "Câu 1: <em>One problem in welding is discontinuity</em>. Giải thích đi liền sau: where joints are not completely solid.",
+        "fb_no": "Tìm câu có <em>One problem in welding</em>. Từ nào đứng ngay sau <em>is</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Residual stress occurs before welding begins.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>This problem occurs after welding</em>. Đề chỉ đổi after thành before.",
+        "fb_no": "Đọc lại câu 4: residual stress xảy ra trước hay sau khi hàn?"
+      }
+    },
+    {
+      "ten": "Article 2 · Common gas and arc welding techniques",
+      "cau": [
+        [
+          "Shielded metal arc welding (SMAW), generally called arc welding or stick welding, involves striking an electric <b>arc</b> between the work piece and an <b>electrode</b>",
+          "Hàn hồ quang tay có thuốc bọc (SMAW), thường gọi là hàn hồ quang hay hàn que, là tạo ra một hồ quang điện giữa phôi và một điện cực",
+          {
+            "doan": [
+              {
+                "tu": "arc",
+                "lua_chon": [
+                  "hồ quang",
+                  "cái cung",
+                  "tia nước"
+                ],
+                "dap": 0,
+                "giai": "arc đời thường là cung tròn; trong hàn là hồ quang, tia điện sáng chói giữa hai vật."
+              },
+              {
+                "tu": "electrode",
+                "lua_chon": [
+                  "vật cách điện",
+                  "điện cực",
+                  "dây an toàn"
+                ],
+                "dap": 1,
+                "giai": "electr- là điện, electrode là điện cực, đầu dẫn điện."
+              }
+            ],
+            "nghia": {
+              "stick welding": "hàn que",
+              "involves": "bao gồm, là",
+              "striking an arc": "tạo (đánh) hồ quang",
+              "work piece": "phôi, chi tiết đang hàn"
+            }
+          }
+        ],
+        [
+          "– an electrical <b>conductor</b>.",
+          "– một vật dẫn điện.",
+          {
+            "doan": [
+              {
+                "tu": "conductor",
+                "lua_chon": [
+                  "vật cách điện",
+                  "vật cản nhiệt",
+                  "vật dẫn điện"
+                ],
+                "dap": 2,
+                "giai": "conductor là vật dẫn (điện, nhiệt). Ngược lại là insulator, vật cách điện."
+              }
+            ],
+            "nghia": {
+              "electrical": "thuộc về điện"
+            }
+          }
+        ],
+        [
+          "The heat from the arc melts the <b>base metal</b>.",
+          "Nhiệt từ hồ quang làm chảy kim loại nền.",
+          {
+            "doan": [
+              {
+                "tu": "base metal",
+                "lua_chon": [
+                  "kim loại nền",
+                  "kim loại thừa",
+                  "kim loại lỏng"
+                ],
+                "dap": 0,
+                "giai": "base metal là kim loại của chi tiết đang hàn, không phải que hàn."
+              }
+            ],
+            "nghia": {
+              "heat": "nhiệt",
+              "arc": "hồ quang",
+              "melts": "làm chảy"
+            }
+          }
+        ],
+        [
+          "The electrode consists of a <b>welding rod</b> – a stick of metal of the same type as the work piece – which provides filler.",
+          "Điện cực gồm một que hàn, tức là một thanh kim loại cùng loại với phôi, cung cấp vật liệu bổ sung.",
+          {
+            "doan": [
+              {
+                "tu": "welding rod",
+                "lua_chon": [
+                  "máy hàn",
+                  "que hàn",
+                  "mặt nạ hàn"
+                ],
+                "dap": 1,
+                "giai": "rod là thanh, que. Welding rod là que hàn, vừa là điện cực vừa là vật liệu bổ sung."
+              }
+            ],
+            "nghia": {
+              "consists of": "gồm có",
+              "a stick of metal": "một thanh kim loại",
+              "of the same type as": "cùng loại với",
+              "provides": "cung cấp"
+            }
+          }
+        ],
+        [
+          "The welding rod is therefore <b>consumable</b> – it is <b>used up</b>.",
+          "Vì vậy que hàn là loại bị tiêu hao: nó bị dùng hết.",
+          {
+            "doan": [
+              {
+                "tu": "consumable",
+                "lua_chon": [
+                  "không bị mòn",
+                  "chịu nhiệt tốt",
+                  "bị tiêu hao (dùng hết)"
+                ],
+                "dap": 2,
+                "giai": "consume là dùng hết, tiêu thụ. Consumable là loại bị dùng hết khi hàn."
+              },
+              {
+                "tu": "used up",
+                "lua_chon": [
+                  "dùng hết",
+                  "giữ lại",
+                  "tái chế"
+                ],
+                "dap": 0,
+                "giai": "use up là dùng cho tới hết, không còn lại gì."
+              }
+            ],
+            "nghia": {
+              "therefore": "vì vậy"
+            }
+          }
+        ],
+        [
+          "The rod is also <b>coated with</b> a material called <b>flux</b>.",
+          "Que cũng được bọc một lớp vật liệu gọi là thuốc hàn.",
+          {
+            "doan": [
+              {
+                "tu": "flux",
+                "lua_chon": [
+                  "chất làm lạnh",
+                  "thuốc hàn (lớp bọc que hàn)",
+                  "dầu bôi trơn"
+                ],
+                "dap": 1,
+                "giai": "flux là lớp thuốc bọc que hàn, khi nóng sẽ sinh ra khí bảo vệ. Đề Part 1 đã hỏi chữ này."
+              },
+              {
+                "tu": "coated with",
+                "lua_chon": [
+                  "được cắt bằng",
+                  "được nối với",
+                  "được bọc bằng"
+                ],
+                "dap": 2,
+                "giai": "coat là áo khoác, lớp phủ; coated with là được phủ một lớp."
+              }
+            ],
+            "nghia": {
+              "rod": "que",
+              "also": "cũng",
+              "material": "vật liệu",
+              "called": "gọi là"
+            }
+          }
+        ],
+        [
+          "When heated, this produces a <b>shielding gas</b>, which protects the molten metal from <b>oxygen</b>.",
+          "Khi bị nung nóng, nó tạo ra khí bảo vệ, khí này bảo vệ kim loại nóng chảy khỏi oxy.",
+          {
+            "doan": [
+              {
+                "tu": "shielding gas",
+                "lua_chon": [
+                  "khí bảo vệ",
+                  "khí đốt",
+                  "khí độc"
+                ],
+                "dap": 0,
+                "giai": "shield là cái khiên, che chắn. Shielding gas là khí che chắn mối hàn khỏi không khí."
+              },
+              {
+                "tu": "oxygen",
+                "lua_chon": [
+                  "hydro",
+                  "oxy",
+                  "nitơ"
+                ],
+                "dap": 1,
+                "giai": "oxygen là oxy (O₂), khí trong không khí làm mối hàn nóng bị yếu đi."
+              }
+            ],
+            "nghia": {
+              "when heated": "khi bị nung nóng",
+              "produces": "tạo ra",
+              "protects": "bảo vệ",
+              "molten metal": "kim loại nóng chảy"
+            }
+          }
+        ],
+        [
+          "Without this gas, the hot metal would <b>combine</b> with the oxygen in the air, and this would <b>weaken</b> the weld.",
+          "Nếu không có khí này, kim loại nóng sẽ kết hợp với oxy trong không khí, và điều đó sẽ làm yếu mối hàn.",
+          {
+            "doan": [
+              {
+                "tu": "combine",
+                "lua_chon": [
+                  "tách ra",
+                  "bay hơi",
+                  "kết hợp (phản ứng)"
+                ],
+                "dap": 2,
+                "giai": "combine là kết hợp, hoà vào nhau."
+              },
+              {
+                "tu": "weaken",
+                "lua_chon": [
+                  "làm yếu",
+                  "làm sáng",
+                  "làm nguội"
+                ],
+                "dap": 0,
+                "giai": "weak là yếu, weaken là làm cho yếu đi."
+              }
+            ],
+            "nghia": {
+              "without": "nếu không có",
+              "hot": "nóng",
+              "air": "không khí"
+            }
+          }
+        ],
+        [
+          "In <b>gas welding</b>, heat comes from a <b>torch</b> which burns oxyfuel – a mixture of oxygen (O₂) and a gas fuel.",
+          "Trong hàn khí, nhiệt đến từ một mỏ hàn đốt oxyfuel, tức là hỗn hợp của oxy (O₂) và một loại khí đốt.",
+          {
+            "doan": [
+              {
+                "tu": "gas welding",
+                "lua_chon": [
+                  "hàn hồ quang",
+                  "hàn khí",
+                  "hàn điểm"
+                ],
+                "dap": 1,
+                "giai": "gas là khí. Gas welding là hàn bằng ngọn lửa khí đốt."
+              },
+              {
+                "tu": "torch",
+                "lua_chon": [
+                  "đèn pin",
+                  "cái búa",
+                  "mỏ hàn (đèn khò)"
+                ],
+                "dap": 2,
+                "giai": "torch đời thường (tiếng Anh Anh) là đèn pin; trong hàn khí là mỏ hàn phun lửa."
+              }
+            ],
+            "nghia": {
+              "heat": "nhiệt",
+              "comes from": "đến từ",
+              "burns": "đốt cháy",
+              "oxyfuel": "hỗn hợp oxy và khí đốt",
+              "a mixture of": "hỗn hợp của",
+              "gas fuel": "khí đốt"
+            }
+          }
+        ],
+        [
+          "The gas fuel burns much <b>hotter</b> in oxygen than it would in the air.",
+          "Khí đốt cháy nóng hơn nhiều trong oxy so với khi cháy trong không khí.",
+          {
+            "doan": [
+              {
+                "tu": "hotter",
+                "lua_chon": [
+                  "nóng hơn",
+                  "lạnh hơn",
+                  "sáng hơn"
+                ],
+                "dap": 0,
+                "giai": "hot là nóng, hotter là nóng hơn."
+              }
+            ],
+            "nghia": {
+              "burns": "cháy",
+              "much": "nhiều",
+              "in the air": "trong không khí"
+            }
+          }
+        ],
+        [
+          "The most common fuel is <b>acetylene</b> (C₂H₂) – called <b>oxyacetylene</b> when mixed with oxygen.",
+          "Nhiên liệu phổ biến nhất là axetylen (C₂H₂), gọi là oxy-axetylen khi trộn với oxy.",
+          {
+            "doan": [
+              {
+                "tu": "acetylene",
+                "lua_chon": [
+                  "khí heli",
+                  "khí axetylen (khí đá)",
+                  "khí metan"
+                ],
+                "dap": 1,
+                "giai": "acetylene (C₂H₂) là khí đốt cháy rất nóng khi trộn với oxy."
+              },
+              {
+                "tu": "oxyacetylene",
+                "lua_chon": [
+                  "hỗn hợp oxy và argon",
+                  "hỗn hợp oxy và nước",
+                  "hỗn hợp oxy và axetylen"
+                ],
+                "dap": 2,
+                "giai": "oxy + acetylene = hỗn hợp oxy và axetylen."
+              }
+            ],
+            "nghia": {
+              "the most common": "phổ biến nhất",
+              "fuel": "nhiên liệu",
+              "mixed with": "trộn với"
+            }
+          }
+        ],
+        [
+          "Welding rods provide filler but flux is not <b>required</b>, as the burning oxyfuel produces <b>carbon dioxide</b> (CO₂) which acts as a shielding gas.",
+          "Que hàn cung cấp vật liệu bổ sung nhưng không cần thuốc hàn, vì oxyfuel cháy tạo ra khí cacbonic (CO₂) đóng vai trò khí bảo vệ.",
+          {
+            "doan": [
+              {
+                "tu": "required",
+                "lua_chon": [
+                  "cần thiết (bắt buộc)",
+                  "bị cấm",
+                  "đã dùng hết"
+                ],
+                "dap": 0,
+                "giai": "require là đòi hỏi; not required là không cần."
+              },
+              {
+                "tu": "carbon dioxide",
+                "lua_chon": [
+                  "khí oxy",
+                  "khí cacbonic (CO₂)",
+                  "khí hydro"
+                ],
+                "dap": 1,
+                "giai": "carbon dioxide là CO₂, khí cacbonic. Trong hàn khí, oxyfuel cháy sinh ra khí này để bảo vệ."
+              }
+            ],
+            "nghia": {
+              "filler": "vật liệu bổ sung",
+              "flux": "thuốc hàn",
+              "burning": "đang cháy",
+              "acts as": "đóng vai trò"
+            }
+          }
+        ],
+        [
+          "In gas metal arc welding (GMAW) – often called <b>MIG welding</b> (metal inert gas) –",
+          "Trong hàn hồ quang kim loại có khí bảo vệ (GMAW), thường gọi là hàn MIG (kim loại, khí trơ),",
+          {
+            "doan": [
+              {
+                "tu": "MIG welding",
+                "lua_chon": [
+                  "hàn que",
+                  "hàn điểm",
+                  "hàn MIG (dây kim loại, khí trơ)"
+                ],
+                "dap": 2,
+                "giai": "MIG là Metal Inert Gas. Phân biệt với TIG là Tungsten Inert Gas."
+              }
+            ],
+            "nghia": {
+              "often called": "thường gọi là",
+              "inert": "trơ (không phản ứng)"
+            }
+          }
+        ],
+        [
+          "an arc is <b>struck</b> between the work piece and a <b>wire</b> which is made of the same metal as the base metal.",
+          "một hồ quang được tạo ra giữa phôi và một sợi dây làm từ cùng kim loại với kim loại nền.",
+          {
+            "doan": [
+              {
+                "tu": "struck",
+                "lua_chon": [
+                  "được tạo ra (được đánh)",
+                  "bị gãy",
+                  "bị cắt"
+                ],
+                "dap": 0,
+                "giai": "strike an arc là đánh hồ quang, tạo ra tia hồ quang."
+              },
+              {
+                "tu": "wire",
+                "lua_chon": [
+                  "ống nhựa",
+                  "dây kim loại",
+                  "thanh gỗ"
+                ],
+                "dap": 1,
+                "giai": "wire là dây kim loại. Trong hàn MIG, dây này vừa là điện cực vừa là vật liệu bổ sung."
+              }
+            ],
+            "nghia": {
+              "between": "giữa",
+              "work piece": "phôi",
+              "made of": "làm từ",
+              "the same … as": "giống … như"
+            }
+          }
+        ],
+        [
+          "The wire <b>acts as</b> a consumable electrode, <b>supplying</b> filler.",
+          "Dây đóng vai trò điện cực tiêu hao, cung cấp vật liệu bổ sung.",
+          {
+            "doan": [
+              {
+                "tu": "acts as",
+                "lua_chon": [
+                  "dừng lại",
+                  "nối với",
+                  "đóng vai trò"
+                ],
+                "dap": 2,
+                "giai": "act as là đóng vai trò, làm nhiệm vụ của."
+              },
+              {
+                "tu": "supplying",
+                "lua_chon": [
+                  "cung cấp",
+                  "tiêu thụ",
+                  "lọc bỏ"
+                ],
+                "dap": 0,
+                "giai": "supply là cung cấp. Supplying filler là cấp thêm vật liệu cho mối hàn."
+              }
+            ],
+            "nghia": {
+              "consumable electrode": "điện cực tiêu hao",
+              "filler": "vật liệu bổ sung"
+            }
+          }
+        ],
+        [
+          "A shielding gas, often <b>argon</b> (Ar), is <b>blown</b> onto the weld pool.",
+          "Khí bảo vệ, thường là argon (Ar), được thổi lên vũng hàn.",
+          {
+            "doan": [
+              {
+                "tu": "argon",
+                "lua_chon": [
+                  "khí oxy",
+                  "khí argon (khí trơ)",
+                  "khí hydro"
+                ],
+                "dap": 1,
+                "giai": "argon (Ar) là khí trơ, không phản ứng với kim loại nóng nên rất hợp để bảo vệ mối hàn."
+              },
+              {
+                "tu": "blown",
+                "lua_chon": [
+                  "được hút",
+                  "được nén",
+                  "được thổi"
+                ],
+                "dap": 2,
+                "giai": "blow là thổi; blown là được thổi."
+              }
+            ],
+            "nghia": {
+              "shielding gas": "khí bảo vệ",
+              "often": "thường",
+              "weld pool": "vũng hàn"
+            }
+          }
+        ],
+        [
+          "In gas tungsten arc welding (GTAW) – often called <b>TIG welding</b> (Tungsten Inert Gas) –",
+          "Trong hàn hồ quang vonfram có khí bảo vệ (GTAW), thường gọi là hàn TIG (vonfram, khí trơ),",
+          {
+            "doan": [
+              {
+                "tu": "TIG welding",
+                "lua_chon": [
+                  "hàn TIG (điện cực vonfram, khí trơ)",
+                  "hàn MIG",
+                  "hàn que"
+                ],
+                "dap": 0,
+                "giai": "TIG là Tungsten Inert Gas: điện cực làm bằng vonfram."
+              }
+            ],
+            "nghia": {
+              "tungsten": "vonfram (kim loại chịu nhiệt rất cao)",
+              "often called": "thường gọi là"
+            }
+          }
+        ],
+        [
+          "an arc comes from an electrode made of <b>tungsten</b> (W).",
+          "một hồ quang phát ra từ điện cực làm bằng vonfram (W).",
+          {
+            "doan": [
+              {
+                "tu": "tungsten",
+                "lua_chon": [
+                  "thiếc",
+                  "vonfram",
+                  "chì"
+                ],
+                "dap": 1,
+                "giai": "tungsten (W) là vonfram, kim loại nóng chảy ở nhiệt độ rất cao nên không bị mòn khi hàn."
+              }
+            ],
+            "nghia": {
+              "arc": "hồ quang",
+              "comes from": "phát ra từ",
+              "made of": "làm bằng"
+            }
+          }
+        ],
+        [
+          "However, the tungsten is <b>non-consumable</b> – it does not <b>melt</b>, and is not consumed as filler during the welding process.",
+          "Tuy nhiên, vonfram không bị tiêu hao: nó không nóng chảy và không bị dùng hết làm vật liệu bổ sung trong quá trình hàn.",
+          {
+            "doan": [
+              {
+                "tu": "non-consumable",
+                "lua_chon": [
+                  "bị tiêu hao",
+                  "dễ nóng chảy",
+                  "không bị tiêu hao"
+                ],
+                "dap": 2,
+                "giai": "non- là không: non-consumable là không bị dùng hết. Ngược với consumable. Đề Part 1 đã hỏi."
+              },
+              {
+                "tu": "melt",
+                "lua_chon": [
+                  "nóng chảy",
+                  "đóng băng",
+                  "gãy"
+                ],
+                "dap": 0,
+                "giai": "melt là chảy, tan."
+              }
+            ],
+            "nghia": {
+              "however": "tuy nhiên",
+              "consumed": "bị dùng hết",
+              "welding process": "quá trình hàn"
+            }
+          }
+        ],
+        [
+          "A <b>separate</b> welding rod is used to <b>supply</b> filler, if required.",
+          "Một que hàn riêng được dùng để cung cấp vật liệu bổ sung, nếu cần.",
+          {
+            "doan": [
+              {
+                "tu": "separate",
+                "lua_chon": [
+                  "giống nhau",
+                  "riêng biệt",
+                  "bọc kín"
+                ],
+                "dap": 1,
+                "giai": "separate là riêng, tách rời. Que hàn này không phải là điện cực."
+              },
+              {
+                "tu": "supply",
+                "lua_chon": [
+                  "tiêu thụ",
+                  "giữ lại",
+                  "cung cấp"
+                ],
+                "dap": 2,
+                "giai": "supply là cung cấp, đưa thêm vào."
+              }
+            ],
+            "nghia": {
+              "is used to": "được dùng để",
+              "if required": "nếu cần"
+            }
+          }
+        ],
+        [
+          "As with MIG welding, a shielding gas <b>such as</b> argon is blown onto the weld.",
+          "Giống như hàn MIG, một khí bảo vệ như argon được thổi lên mối hàn.",
+          {
+            "doan": [
+              {
+                "tu": "such as",
+                "lua_chon": [
+                  "chẳng hạn như",
+                  "thay vì",
+                  "trước khi"
+                ],
+                "dap": 0,
+                "giai": "such as dùng để đưa ví dụ: argon là một ví dụ về khí bảo vệ."
+              }
+            ],
+            "nghia": {
+              "as with": "giống như với",
+              "blown onto": "được thổi lên"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"The welding rod is therefore ______ – it is used up.\"</em>",
+        "lua_chon": [
+          "consumable",
+          "non-consumable",
+          "separate"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 5 của bài: <em>The welding rod is therefore consumable – it is used up.</em> Giải thích đi liền sau dấu gạch ngang.",
+        "fb_no": "Tìm câu có <em>used up</em>. Từ nào đứng ngay sau <em>therefore</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"In TIG welding, the tungsten electrode is used up as filler.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết tungsten is <em>non-consumable</em>: it does not melt, and is not consumed as filler.",
+        "fb_no": "Đọc đoạn cuối về TIG welding: vonfram có bị dùng hết không?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "4 kỹ thuật hàn: dùng gì? (Article 2, hay ra Đúng/Sai)",
+    "cot": [
+      "Kỹ thuật",
+      "Điện cực, khí bảo vệ"
+    ],
+    "hang": [
+      [
+        "stick welding (SMAW)",
+        "<strong>consumable</strong> electrode<br>flux sinh khí bảo vệ"
+      ],
+      [
+        "gas welding",
+        "ngọn lửa oxyfuel<br>khí CO₂ từ oxyfuel, không cần flux"
+      ],
+      [
+        "MIG welding (GMAW)",
+        "dây là <strong>consumable</strong> electrode<br>argon thổi lên"
+      ],
+      [
+        "TIG welding (GTAW)",
+        "điện cực tungsten <strong>non-consumable</strong><br>que hàn riêng, argon thổi lên"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X which V (X mà …)",
+      "vd": [
+        [
+          "In gas welding, heat comes from a torch which burns oxyfuel.",
+          "Trong hàn khí, nhiệt đến từ một mỏ hàn đốt oxyfuel."
+        ],
+        [
+          "An arc is struck between the work piece and a wire which is made of the same metal as the base metal.",
+          "Một hồ quang được tạo ra giữa phôi và một sợi dây làm từ cùng kim loại với kim loại nền."
+        ],
+        [
+          "The rod is coated with a material called flux, which produces a shielding gas.",
+          "Que được bọc một lớp vật liệu gọi là thuốc hàn, lớp này tạo ra khí bảo vệ."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>danh từ + which + động từ</strong>.",
+        "Dịch: \"…mà…\", hoặc bỏ <em>which</em> và dịch liền: \"mỏ hàn đốt oxyfuel\".",
+        "Part 4 hay có một câu dài với <em>which</em>: cắt trước <em>which</em> rồi dịch từng đoạn."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · bị động + to V (được dùng để …)",
+      "vd": [
+        [
+          "A separate welding rod is used to supply filler.",
+          "Một que hàn riêng được dùng để cung cấp vật liệu bổ sung."
+        ],
+        [
+          "Welding is used to join components of the same base metal.",
+          "Hàn được dùng để nối các chi tiết cùng kim loại nền."
+        ],
+        [
+          "A shielding gas is blown onto the weld.",
+          "Khí bảo vệ được thổi lên mối hàn."
+        ]
+      ],
+      "ghi_chu": [
+        "Thấy <strong>is/are + V-ed</strong> → dịch \"được…\".",
+        "Thấy <strong>is used to + V</strong> → dịch \"được dùng để…\".",
+        "<strong>onto</strong> → \"lên\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "arc_welding_diagram.svg",
+    "tieu_de": "Hàn hồ quang que (SMAW): gọi tên 7 bộ phận",
+    "mo_ta": "Article 2 tả các bộ phận này, đề Part 1 và Part 2 hay hỏi. Nhìn hình, tự gọi tên 7 bộ phận trước, rồi mở đáp án.",
+    "chu_thich": "Mặt cắt: que hàn đang hàn trên kim loại nền, 7 bộ phận đánh số.",
+    "bo_phan": [
+      [
+        "welding rod",
+        "que hàn"
+      ],
+      [
+        "flux",
+        "lớp thuốc hàn bọc quanh que"
+      ],
+      [
+        "arc",
+        "hồ quang"
+      ],
+      [
+        "shielding gas",
+        "khí bảo vệ"
+      ],
+      [
+        "weld pool",
+        "vũng hàn (kim loại đang chảy lỏng)"
+      ],
+      [
+        "weld",
+        "mối hàn đã nguội đặc lại"
+      ],
+      [
+        "base metal",
+        "kim loại nền (phôi)"
+      ]
+    ],
+    "hoi": "Bộ phận số 5 (vùng màu cam, kim loại đang chảy lỏng ngay dưới hồ quang) tên là gì?",
+    "lua_chon": [
+      "weld",
+      "weld pool",
+      "base metal",
+      "flux"
+    ],
+    "dap": 1,
+    "fb_ok": "<em>weld pool</em> = vũng hàn, kim loại đang lỏng. Phần số 6 đã nguội đặc lại mới là <em>weld</em>.",
+    "fb_no": "Phần nào đang lỏng (<em>molten</em>)? Phần đã nguội thành mối hàn đặc ở bên trái là một bộ phận khác."
+  },
+  "sop": {
+    "tieu_de": "Hàn hai kim loại khác loại: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn viết lại từ Article 1:",
+    "hop_tu": [
+      "welded",
+      "molten",
+      "fuse",
+      "discontinuities",
+      "stress"
+    ],
+    "doan": "Different metals can be (1) ______ together, but it is more difficult than welding the same base metal. Both metals become (2) ______ in the weld pool. When the pool cools, the metals may not (3) ______ properly. This can leave (4) ______, such as cracks, in the weld zone. As the metals contract at different rates, residual (5) ______ builds up around the joint.",
+    "dap": [
+      "welded",
+      "molten",
+      "fuse",
+      "discontinuities",
+      "stress"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (3): <em>\"the metals may not (3) ______ properly.\"</em>",
+      "lua_chon": [
+        "welded",
+        "molten",
+        "fuse",
+        "stress"
+      ],
+      "dap": 2,
+      "fb_ok": "<em>fuse</em> = kết dính. Sau <em>may not</em> phải là động từ nguyên mẫu, và hai kim loại phải dính vào nhau.",
+      "fb_no": "Sau <em>may not</em> cần động từ nguyên mẫu (không có -ed). Từ nào là động từ, nghĩa là kết dính?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Welding nối vật liệu thế nào? Bằng cách làm gì?",
+      "Nối <em>permanently</em> (vĩnh viễn), bằng cách <em>heating</em> (làm nóng) mối nối."
+    ],
+    [
+      "<em>Filler</em> là gì? Làm từ vật liệu nào?",
+      "Vật liệu mới thêm vào mối hàn, cùng loại với base metal."
+    ],
+    [
+      "<em>Weld pool</em> là gì?",
+      "Molten metal at the joint during welding: kim loại lỏng tại mối nối khi đang hàn."
+    ],
+    [
+      "Hai vấn đề khi hàn là gì?",
+      "Discontinuity (chỗ không liền khối) và residual stress (lực bị kẹt quanh mối nối sau khi hàn)."
+    ],
+    [
+      "<em>Flux</em> dùng làm gì?",
+      "Bọc que hàn. Khi nóng nó tạo shielding gas, bảo vệ kim loại nóng chảy khỏi oxy."
+    ],
+    [
+      "Điện cực MIG và TIG khác nhau chỗ nào?",
+      "MIG: dây là consumable electrode. TIG: điện cực tungsten non-consumable, que hàn riêng cấp filler."
+    ],
+    [
+      "Dịch: <em>The welding rod is therefore consumable.</em>",
+      "Vì vậy que hàn là loại bị tiêu hao."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Que hàn cung cấp vật liệu bổ sung.</em>",
+      "The welding rod provides filler."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "A material which coats the welding rod and produces a shielding gas.",
+        "opts": [
+          "filler",
+          "flux",
+          "argon",
+          "tungsten"
+        ],
+        "ans": 1,
+        "why": "<em>coats the welding rod</em> + <em>shielding gas</em> → flux."
+      },
+      {
+        "q": "An electrode which does not melt and is not consumed during welding.",
+        "opts": [
+          "tungsten electrode",
+          "welding rod",
+          "wire electrode",
+          "flux"
+        ],
+        "ans": 0,
+        "why": "<em>does not melt</em>, <em>not consumed</em> → tungsten electrode (TIG)."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "welding clamp",
+          "welding rod",
+          "welding machine",
+          "welding mask"
+        ],
+        "ans": 0,
+        "why": "Hai hàm kẹp nối bằng dây dẫn → welding clamp (kẹp mát).",
+        "img": "welding-clamp"
+      },
+      {
+        "q": "The molten metal at the joint during welding.",
+        "opts": [
+          "weld pool",
+          "filler",
+          "base metal",
+          "weld zone"
+        ],
+        "ans": 0,
+        "why": "<em>molten metal at the joint</em> → weld pool."
+      },
+      {
+        "q": "A place where a joint is not completely solid.",
+        "opts": [
+          "residual stress",
+          "discontinuity",
+          "weld zone",
+          "filler"
+        ],
+        "ans": 1,
+        "why": "<em>not completely solid</em> → discontinuity."
+      },
+      {
+        "q": "A machine that supplies electric current for welding.",
+        "opts": [
+          "welding machine",
+          "welding clamp",
+          "welding mask",
+          "welding rod"
+        ],
+        "ans": 0,
+        "why": "<em>machine</em> + <em>electric current</em> → welding machine."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>coats</em>, <em>does not melt</em>, <em>molten</em>, <em>not completely solid</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn hình dạng (hai hàm kẹp = clamp, hộp có dây điện = machine, che mặt = mask, que dài = rod).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "Welding means permanently joining two pieces of material by heating the joint between them. The heat melts the edges of the components being welded together, and once the material has become molten (liquid), fusion occurs. When the joint fuses, material from each component is mixed together, joining to form a solid weld. Metal is often welded. It is also possible to weld plastic. Welding is usually used to join components of the same base metal – that is, the metal the components are made of. It is possible – though more difficult – to weld certain dissimilar materials. For example, copper can be welded to steel. Often, a filler is added during welding. This is new material, of the same type as the base metal, which is melted into the weld pool – the molten metal at the joint during welding.",
+      "dien": [
+        {
+          "q": "Welding joins two pieces of material ______ by heating the joint between them.",
+          "ans": "permanently",
+          "opts": [
+            "permanently",
+            "temporarily",
+            "quickly"
+          ],
+          "why": "Câu 1: <em>Welding means permanently joining…</em>"
+        },
+        {
+          "q": "The heat ______ the edges of the components being welded together.",
+          "ans": "melts",
+          "opts": [
+            "melts",
+            "cools",
+            "bends"
+          ],
+          "why": "Câu 2: <em>The heat melts the edges…</em>"
+        },
+        {
+          "q": "Once the material has become ______ (liquid), fusion occurs.",
+          "ans": "molten",
+          "opts": [
+            "solid",
+            "molten",
+            "cold"
+          ],
+          "why": "Câu 2: <em>has become molten (liquid)</em>. Giải thích nằm ngay trong ngoặc."
+        },
+        {
+          "q": "Often, a ______ is added during welding.",
+          "ans": "filler",
+          "opts": [
+            "plastic",
+            "copper",
+            "filler"
+          ],
+          "why": "Câu 9: <em>Often, a filler is added during welding.</em>"
+        }
+      ],
+      "ds": [
+        {
+          "q": "Only metals can be welded; plastics cannot be welded.",
+          "ans": false,
+          "why": "Bài viết <em>It is also possible to weld plastic</em>."
+        },
+        {
+          "q": "Welding two dissimilar materials is possible, but more difficult.",
+          "ans": true,
+          "why": "<em>possible – though more difficult – to weld certain dissimilar materials</em>."
+        },
+        {
+          "q": "The weld pool is the molten metal at the joint during welding.",
+          "ans": true,
+          "why": "Chép gần nguyên câu cuối của đoạn."
+        },
+        {
+          "q": "A filler is made of a completely different material from the base metal.",
+          "ans": false,
+          "why": "<em>new material, of the same type as the base metal</em>: filler cùng loại, không khác hẳn."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: only, completely different, before ↔ after, same ↔ different."
+    ],
+    "part3": {
+      "hop_tu": [
+        "flux",
+        "torch",
+        "argon",
+        "consumable",
+        "tungsten"
+      ],
+      "doan": "In stick welding, the rod is coated with (1) ______, which produces a shielding gas. The rod melts and is used up, so it is (2) ______. In gas welding, heat comes from a (3) ______ which burns oxyfuel. In MIG welding, a shielding gas such as (4) ______ is blown onto the weld pool. In TIG welding, the electrode is made of (5) ______.",
+      "dap": [
+        "flux",
+        "consumable",
+        "torch",
+        "argon",
+        "tungsten"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng sau <em>coated with</em> và có <em>produces a shielding gas</em> → lớp bọc que hàn.",
+        "Chỗ (2) đứng sau <em>so it is</em> và có <em>is used up</em> → tính từ chỉ \"bị dùng hết\".",
+        "Chỗ (3) đứng sau <em>a</em> và trước <em>which burns oxyfuel</em> → dụng cụ phun lửa.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "In gas welding, heat comes from a torch which burns oxyfuel – a mixture of oxygen (O₂) and a gas fuel. The gas fuel burns much hotter in oxygen than it would in the air. The most common fuel is acetylene (C₂H₂) – called oxyacetylene when mixed with oxygen. Welding rods provide filler but flux is not required, as the burning oxyfuel produces carbon dioxide (CO₂) which acts as a shielding gas.",
+      "vi": "Trong hàn khí, nhiệt đến từ một mỏ hàn đốt oxyfuel, tức là hỗn hợp của oxy (O₂) và một loại khí đốt. Khí đốt cháy nóng hơn nhiều trong oxy so với trong không khí. Nhiên liệu phổ biến nhất là axetylen (C₂H₂), gọi là oxy-axetylen khi trộn với oxy. Que hàn cung cấp vật liệu bổ sung nhưng không cần thuốc hàn, vì oxyfuel cháy tạo ra khí cacbonic (CO₂) đóng vai trò khí bảo vệ.",
+      "chien_thuat": [
+        "Cắt câu dài tại dấu gạch ngang và trước <em>which</em>.",
+        "Giữ nguyên thuật ngữ đã học: mỏ hàn, que hàn, thuốc hàn, vật liệu bổ sung, khí bảo vệ.",
+        "<em>burns oxyfuel</em> → \"đốt oxyfuel\", <em>a mixture of</em> → \"hỗn hợp của\".",
+        "<em>flux is not required</em> → \"không cần thuốc hàn\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Que hàn là một thanh kim loại cung cấp vật liệu bổ sung.",
+      "en": "The welding rod is a stick of metal which provides filler.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>danh từ + which + động từ</strong>.",
+        "Danh từ = a stick of metal, động từ = provides.",
+        "Viết <em>The welding rod provides filler.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "A mask that protects the face and eyes from the arc light.",
+        "opts": [
+          "welding clamp",
+          "welding mask",
+          "welding gloves",
+          "welding rod"
+        ],
+        "ans": 1,
+        "why": "face and eyes → welding mask."
+      },
+      {
+        "q": "A stick of metal that provides filler.",
+        "opts": [
+          "welding rod",
+          "welding clamp",
+          "welding machine",
+          "flux"
+        ],
+        "ans": 0,
+        "why": "stick of metal + filler → welding rod."
+      },
+      {
+        "q": "A clamp that connects the work piece to the welding machine.",
+        "opts": [
+          "welding mask",
+          "welding rod",
+          "welding clamp",
+          "welding gloves"
+        ],
+        "ans": 2,
+        "why": "connects the work piece → welding clamp."
+      },
+      {
+        "q": "Thick gloves that protect the hands from heat and sparks.",
+        "opts": [
+          "welding gloves",
+          "welding mask",
+          "welding clamp",
+          "welding machine"
+        ],
+        "ans": 0,
+        "why": "hands → welding gloves."
+      },
+      {
+        "q": "Heated until it becomes liquid.",
+        "opts": [
+          "dissimilar",
+          "molten",
+          "consumable",
+          "residual"
+        ],
+        "ans": 1,
+        "why": "liquid → molten."
+      },
+      {
+        "q": "New material that is melted into the weld pool.",
+        "opts": [
+          "flux",
+          "filler",
+          "argon",
+          "electrode"
+        ],
+        "ans": 1,
+        "why": "new material melted into the weld pool → filler."
+      },
+      {
+        "q": "The metal that the components are made of.",
+        "opts": [
+          "base metal",
+          "filler",
+          "weld zone",
+          "electrode"
+        ],
+        "ans": 0,
+        "why": "the metal the components are made of → base metal."
+      },
+      {
+        "q": "The molten metal at the joint during welding.",
+        "opts": [
+          "weld",
+          "base metal",
+          "weld pool",
+          "filler"
+        ],
+        "ans": 2,
+        "why": "molten metal at the joint → weld pool."
+      },
+      {
+        "q": "A place where a joint is not completely solid.",
+        "opts": [
+          "discontinuity",
+          "residual stress",
+          "consumable",
+          "flux"
+        ],
+        "ans": 0,
+        "why": "not completely solid → discontinuity."
+      },
+      {
+        "q": "Force that is trapped around a joint after welding.",
+        "opts": [
+          "contraction",
+          "discontinuity",
+          "residual stress",
+          "filler"
+        ],
+        "ans": 2,
+        "why": "trapped around the joint after welding → residual stress."
+      },
+      {
+        "q": "A material that coats the welding rod and produces a shielding gas.",
+        "opts": [
+          "argon",
+          "flux",
+          "filler",
+          "tungsten"
+        ],
+        "ans": 1,
+        "why": "coats the welding rod → flux."
+      },
+      {
+        "q": "A gas that protects the molten metal from oxygen.",
+        "opts": [
+          "acetylene",
+          "shielding gas",
+          "base metal",
+          "flux"
+        ],
+        "ans": 1,
+        "why": "protects the molten metal from oxygen → shielding gas."
+      },
+      {
+        "q": "An electrode which does not melt and is not consumed during welding.",
+        "opts": [
+          "welding rod",
+          "wire electrode",
+          "tungsten electrode",
+          "flux"
+        ],
+        "ans": 2,
+        "why": "does not melt → tungsten electrode (TIG)."
+      },
+      {
+        "q": "Used up during the welding process.",
+        "opts": [
+          "consumable",
+          "non-consumable",
+          "molten",
+          "dissimilar"
+        ],
+        "ans": 0,
+        "why": "used up → consumable."
+      },
+      {
+        "q": "The area that was the weld pool.",
+        "opts": [
+          "heat-affected zone",
+          "weld zone",
+          "base metal",
+          "filler"
+        ],
+        "ans": 1,
+        "why": "area that was the weld pool → weld zone (fusion zone)."
+      },
+      {
+        "q": "The material close to the weld pool that was changed by heat.",
+        "opts": [
+          "weld zone",
+          "base metal",
+          "heat-affected zone",
+          "weld pool"
+        ],
+        "ans": 2,
+        "why": "changed by heat → heat-affected zone (HAZ)."
+      },
+      {
+        "q": "A solid joint formed when melted metal cools.",
+        "opts": [
+          "weld",
+          "filler",
+          "flux",
+          "clamp"
+        ],
+        "ans": 0,
+        "why": "solid joint → weld."
+      },
+      {
+        "q": "Complete: \"Welding means ______ joining two pieces of material by heating the joint.\"",
+        "opts": [
+          "temporarily",
+          "quickly",
+          "permanently",
+          "slowly"
+        ],
+        "ans": 2,
+        "why": "Article 1, câu 1."
+      },
+      {
+        "q": "Complete: \"In gas welding, heat comes from a ______ which burns oxyfuel.\"",
+        "opts": [
+          "clamp",
+          "torch",
+          "wire",
+          "rod"
+        ],
+        "ans": 1,
+        "why": "Article 2, đoạn gas welding."
+      },
+      {
+        "q": "Complete: \"In MIG welding, a shielding gas such as ______ is blown onto the weld pool.\"",
+        "opts": [
+          "copper",
+          "steel",
+          "argon",
+          "plastic"
+        ],
+        "ans": 2,
+        "why": "Article 2, đoạn MIG welding."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (What is welding?). Mark each statement True or False.",
+        "st": [
+          [
+            "Welding joins two pieces of material permanently.",
+            true
+          ],
+          [
+            "Plastic cannot be welded.",
+            false
+          ],
+          [
+            "Copper can be welded to steel.",
+            true
+          ],
+          [
+            "A filler is a completely different material from the base metal.",
+            false
+          ]
+        ],
+        "why": "Welding is permanent; plastic can also be welded; copper can be welded to steel; filler is of the same type as the base metal."
+      },
+      {
+        "q": "Read Article 1 (Problems in welding). Mark each statement True or False.",
+        "st": [
+          [
+            "Discontinuity is a place where a joint is completely solid.",
+            false
+          ],
+          [
+            "Residual stress occurs before welding.",
+            false
+          ],
+          [
+            "The heat-affected zone is the material close to the weld pool.",
+            true
+          ],
+          [
+            "Residual stress is a force trapped around the joint.",
+            true
+          ]
+        ],
+        "why": "Discontinuity = not completely solid; residual stress occurs after welding; HAZ is close to the weld pool; stress is trapped around the joint."
+      },
+      {
+        "q": "Read Article 2 (Welding techniques). Mark each statement True or False.",
+        "st": [
+          [
+            "Flux produces a shielding gas when it is heated.",
+            true
+          ],
+          [
+            "In gas welding, flux is always required.",
+            false
+          ],
+          [
+            "In MIG welding, the wire is a consumable electrode.",
+            true
+          ],
+          [
+            "In TIG welding, the tungsten electrode is used up as filler.",
+            false
+          ]
+        ],
+        "why": "Flux makes shielding gas; gas welding does not need flux; MIG wire is consumable; tungsten is non-consumable."
+      }
+    ]
+  }
+}

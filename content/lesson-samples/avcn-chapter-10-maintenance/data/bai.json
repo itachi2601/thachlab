@@ -1,0 +1,1890 @@
+{
+  "meta": {
+    "chapter": 10,
+    "prefix": "tl10",
+    "title_en": "Maintenance",
+    "title_vi": "Bảo dưỡng máy",
+    "minutes": 30,
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (bảo dưỡng, bôi trơn, thay thế, hỏng hóc, rò rỉ…) khi đọc định nghĩa hoặc nhìn ảnh (Part 1).",
+      "Tìm được câu trả lời trong 3 bài đọc (hai kiểu bảo dưỡng và sự cố chuyến bay 236) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X is the … of …</em> và <em>to + V</em> (để…) để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục III Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại một bài đọc, điền 1 từ + Đúng/Sai",
+        "Mục IV Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục VII Kế hoạch bảo dưỡng"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục IV + mục V mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục V mẫu câu"
+      ]
+    ],
+    "doan_tieu_de": "việc này tên gì?",
+    "doan_mo_dau": "Hai hình dưới đây là việc làm và hiện tượng em hay gặp ở xưởng. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "từ dùng khi kiểm tra và bảo dưỡng máy",
+    "flashcard": "/flashcard/avcn-chapter-10.html"
+  },
+  "khoi_dong": [
+    {
+      "img": "lubrication",
+      "hoi": "Một tay đang nhỏ dầu lên xích xe đạp cho trơn. Việc này tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "lubrication",
+        "replacement",
+        "detection"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>lubrication</em> /ˌluːbrɪˈkeɪʃn/ là bôi trơn: bôi dầu hoặc mỡ để các bộ phận trượt nhẹ, ít ma sát.",
+      "fb_no": "Chất lỏng vàng nhỏ lên mắt xích để làm gì? Từ nào nói về việc làm cho các bộ phận trượt trơn?"
+    },
+    {
+      "img": "corrosion",
+      "hoi": "Lớp màu nâu cam bám trên ống kim loại này tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "leak",
+        "corrosion",
+        "clearance"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>corrosion</em> /kəˈrəʊʒn/ là sự ăn mòn, gỉ sét: kim loại bị hỏng dần vì nước hoặc hoá chất.",
+      "fb_no": "Nhìn màu nâu cam và vẻ mục nát của kim loại. Bỏ từ nói về chất lỏng chảy ra và từ nói về khoảng trống, còn lại từ nào?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Các kiểu bảo dưỡng và ổ bi",
+      "tu": [
+        {
+          "term": "maintenance",
+          "ipa": "/ˈmeɪntənəns/",
+          "vi": "bảo dưỡng, bảo trì",
+          "def": "Any activity that keeps a machine working, such as checks and repairs.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "mechanical maintenance",
+          "ipa": "/məˈkænɪkl ˈmeɪntənəns/",
+          "vi": "bảo dưỡng cơ khí",
+          "def": "The process of keeping machinery in good working condition.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "corrective maintenance",
+          "ipa": "/kəˈrektɪv ˈmeɪntənəns/",
+          "vi": "bảo dưỡng sửa chữa (làm khi máy đã hỏng)",
+          "def": "Maintenance done only after a machine has broken down.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "preventive maintenance",
+          "ipa": "/prɪˈventɪv ˈmeɪntənəns/",
+          "vi": "bảo dưỡng phòng ngừa (làm trước khi hỏng)",
+          "def": "Routine maintenance done to stop unplanned equipment failures.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "bearing",
+          "ipa": "/ˈbeərɪŋ/",
+          "vi": "ổ bi, ổ trục",
+          "def": "A part that lets a shaft or wheel turn smoothly.",
+          "img": "bearing",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Routine maintenance done to stop unplanned equipment failures.\"</em>",
+        "lua_chon": [
+          "corrective maintenance",
+          "preventive maintenance",
+          "mechanical maintenance",
+          "bearing"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>routine</em> (định kỳ) và <em>stop … failures</em> (ngăn hỏng): preventive = phòng ngừa.",
+        "fb_no": "Gạch từ khoá <em>stop</em> (ngăn chặn). Kiểu bảo dưỡng nào làm trước khi máy hỏng, theo lịch?"
+      }
+    },
+    {
+      "ten": "Cụm B · Việc làm khi bảo dưỡng",
+      "tu": [
+        {
+          "term": "lubrication",
+          "ipa": "/ˌluːbrɪˈkeɪʃn/",
+          "vi": "bôi trơn (tra dầu, mỡ)",
+          "def": "The action of applying oil or grease to reduce friction.",
+          "img": "lubrication",
+          "tier": 1
+        },
+        {
+          "term": "replacement",
+          "ipa": "/rɪˈpleɪsmənt/",
+          "vi": "sự thay thế",
+          "def": "The process of replacing something with something else.",
+          "img": "replacement",
+          "tier": 1
+        },
+        {
+          "term": "spare part",
+          "ipa": "/speə pɑːt/",
+          "vi": "phụ tùng thay thế",
+          "def": "An extra piece that can be used to replace a piece that breaks.",
+          "img": "spare-part",
+          "tier": 1
+        },
+        {
+          "term": "detection",
+          "ipa": "/dɪˈtekʃn/",
+          "vi": "sự phát hiện",
+          "def": "The process of noticing something that is not easy to see or hear.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "risk",
+          "ipa": "/rɪsk/",
+          "vi": "rủi ro, nguy cơ",
+          "def": "The possibility of something bad happening in the future.",
+          "img": "risk",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"An extra piece that can be used to replace a piece that breaks, esp. in a machine.\"</em>",
+        "lua_chon": [
+          "lubrication",
+          "replacement",
+          "detection",
+          "spare part"
+        ],
+        "dap": 3,
+        "fb_ok": "Từ khoá <em>extra piece</em> (miếng dự phòng): spare part. Câu này đã ra trong đề cuối kỳ.",
+        "fb_no": "Gạch từ khoá <em>extra piece</em>. Replacement là việc thay, còn thứ đem ra để thay là gì?"
+      }
+    },
+    {
+      "ten": "Cụm C · Hỏng hóc, chi phí và kiểm tra",
+      "tu": [
+        {
+          "term": "failure",
+          "ipa": "/ˈfeɪljə/",
+          "vi": "sự hỏng, sự cố",
+          "def": "The moment when a machine stops working properly.",
+          "img": "failure",
+          "tier": 1
+        },
+        {
+          "term": "downtime",
+          "ipa": "/ˈdaʊntaɪm/",
+          "vi": "thời gian máy ngừng chạy",
+          "def": "The time when a machine or production line is not working.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "repair",
+          "ipa": "/rɪˈpeə/",
+          "vi": "sửa chữa",
+          "def": "Work done to fix a machine that is broken or damaged.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "inspection",
+          "ipa": "/ɪnˈspekʃn/",
+          "vi": "kiểm tra, khám xét",
+          "def": "A careful check of a machine or part to look for problems.",
+          "img": "inspection",
+          "tier": 1
+        },
+        {
+          "term": "schedule",
+          "ipa": "/ˈʃedjuːl/",
+          "vi": "lịch trình, kế hoạch bảo dưỡng",
+          "def": "A plan that lists what work will be done and when.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The time when a machine or production line is not working.\"</em>",
+        "lua_chon": [
+          "failure",
+          "downtime",
+          "repair",
+          "inspection"
+        ],
+        "dap": 1,
+        "fb_ok": "<em>down</em> (ngừng) + <em>time</em> (thời gian): downtime là thời gian máy không chạy.",
+        "fb_no": "Từ khoá <em>the time</em>. Từ nào là một khoảng thời gian, không phải một việc làm?"
+      }
+    },
+    {
+      "ten": "Cụm D · Dấu hiệu hỏng trên máy",
+      "tu": [
+        {
+          "term": "leak",
+          "ipa": "/liːk/",
+          "vi": "rò rỉ",
+          "def": "A hole or crack through which liquid or gas escapes.",
+          "img": "leak",
+          "tier": 1
+        },
+        {
+          "term": "clearance",
+          "ipa": "/ˈklɪərəns/",
+          "vi": "khe hở",
+          "def": "The empty space between two parts so that they do not touch.",
+          "img": "clearance",
+          "tier": 1
+        },
+        {
+          "term": "corrosion",
+          "ipa": "/kəˈrəʊʒn/",
+          "vi": "sự ăn mòn, gỉ sét",
+          "def": "Damage to metal caused by rust or chemicals.",
+          "img": "corrosion",
+          "tier": 1
+        },
+        {
+          "term": "wear",
+          "ipa": "/weə/",
+          "vi": "mòn (do cọ xát)",
+          "def": "To damage or remove a surface slowly by rubbing.",
+          "img": "wear",
+          "tier": 1
+        },
+        {
+          "term": "adjust",
+          "ipa": "/əˈdʒʌst/",
+          "vi": "điều chỉnh, chỉnh lại",
+          "def": "To change a part a little to get the right setting.",
+          "img": "adjust",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The empty space between two parts so that they do not touch.\"</em>",
+        "lua_chon": [
+          "leak",
+          "clearance",
+          "corrosion",
+          "wear"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>empty space</em> (khoảng trống): clearance. Article 3 nói khe hở này quá nhỏ nên hai ống cọ vào nhau.",
+        "fb_no": "Gạch từ khoá <em>empty space</em>. Ba từ kia nói về chất lỏng thoát ra, gỉ sét, mòn. Từ nào nói về khoảng trống?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "routine",
+      "vi": "định kỳ, thường lệ"
+    },
+    {
+      "term": "asset",
+      "vi": "tài sản, thiết bị của công ty"
+    },
+    {
+      "term": "overtime",
+      "vi": "làm thêm giờ"
+    },
+    {
+      "term": "inventory",
+      "vi": "hàng tồn kho"
+    },
+    {
+      "term": "mitigate",
+      "vi": "giảm bớt (rủi ro, thiệt hại)"
+    },
+    {
+      "term": "reliability",
+      "vi": "độ tin cậy"
+    },
+    {
+      "term": "casing",
+      "vi": "vỏ máy, vỏ bọc"
+    },
+    {
+      "term": "roller",
+      "vi": "con lăn (của băng tải)",
+      "img": "roller"
+    },
+    {
+      "term": "expense",
+      "vi": "khoản chi phí (expensive là đắt)"
+    },
+    {
+      "term": "align",
+      "vi": "căn chỉnh thẳng hàng"
+    },
+    {
+      "term": "tension",
+      "vi": "độ căng (của dây đai)"
+    },
+    {
+      "term": "shutdown",
+      "vi": "dừng máy để bảo dưỡng"
+    },
+    {
+      "term": "belt",
+      "vi": "dây đai (V-belt: đai chữ V)",
+      "img": "belt"
+    },
+    {
+      "term": "oil filter",
+      "vi": "bộ lọc dầu",
+      "img": "oil-filter"
+    },
+    {
+      "term": "gasket",
+      "vi": "gioăng đệm (làm kín mặt ghép)",
+      "img": "gasket"
+    },
+    {
+      "term": "oil seal",
+      "vi": "phớt chắn dầu",
+      "img": "oil-seal"
+    },
+    {
+      "term": "hydraulic hose",
+      "vi": "ống mềm thuỷ lực",
+      "img": "hydraulic-hose"
+    },
+    {
+      "term": "motor oil",
+      "vi": "dầu nhớt động cơ",
+      "img": "motor-oil"
+    },
+    {
+      "term": "crack",
+      "vi": "vết nứt",
+      "img": "crack"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · Maintenance philosophies: corrective maintenance (giáo trình: Article 1)",
+      "cau": [
+        [
+          "<b>Maintenance</b> is defined as any activity such as tests, measurements, replacements, adjustments, <b>lubrication</b> and repairs",
+          "Bảo dưỡng được định nghĩa là mọi hoạt động như thử nghiệm, đo đạc, thay thế, điều chỉnh, bôi trơn và sửa chữa",
+          {
+            "doan": [
+              {
+                "tu": "Maintenance",
+                "lua_chon": [
+                  "bảo hành",
+                  "bảo mật",
+                  "bảo dưỡng"
+                ],
+                "dap": 2,
+                "giai": "maintain là giữ cho tốt; maintenance là bảo dưỡng, bảo trì máy móc."
+              },
+              {
+                "tu": "lubrication",
+                "lua_chon": [
+                  "bôi trơn",
+                  "làm sạch",
+                  "lắp ráp"
+                ],
+                "dap": 0,
+                "giai": "lubrication là bôi dầu, mỡ cho trơn: giảm ma sát giữa các chi tiết."
+              }
+            ],
+            "nghia": {
+              "Maintenace": "giáo trình viết sai chính tả, đã sửa thành Maintenance",
+              "defined as": "được định nghĩa là",
+              "activity": "hoạt động",
+              "tests": "thử nghiệm",
+              "measurements": "đo đạc",
+              "replacements": "việc thay thế",
+              "adjustments": "việc điều chỉnh",
+              "repairs": "việc sửa chữa"
+            }
+          }
+        ],
+        [
+          "which is intended to <b>retain</b> or restore a functional unit in or to a specified state in which it can perform its required functions.",
+          "nhằm giữ lại hoặc khôi phục một thiết bị về trạng thái quy định mà ở đó nó thực hiện được các chức năng cần có.",
+          {
+            "doan": [
+              {
+                "tu": "retain",
+                "lua_chon": [
+                  "giữ lại",
+                  "bỏ đi",
+                  "tăng thêm"
+                ],
+                "dap": 0,
+                "giai": "retain là giữ lại, duy trì (không để mất đi)."
+              }
+            ],
+            "nghia": {
+              "which intended … in can perform": "giáo trình viết sai ngữ pháp, đã sửa thành “which is intended … in which it can perform”",
+              "intended to": "nhằm để",
+              "restore": "khôi phục",
+              "functional": "có chức năng, dùng được",
+              "unit": "thiết bị, bộ phận",
+              "specified state": "trạng thái quy định",
+              "perform": "thực hiện",
+              "required": "cần có"
+            }
+          }
+        ],
+        [
+          "Plants typically utilize two types of maintenance management: (1) <b>corrective</b> maintenance, or (2) <b>preventive</b> maintenance.",
+          "Các nhà máy thường dùng hai kiểu quản lý bảo dưỡng: (1) bảo dưỡng sửa chữa, hoặc (2) bảo dưỡng phòng ngừa.",
+          {
+            "doan": [
+              {
+                "tu": "corrective",
+                "lua_chon": [
+                  "phòng ngừa, làm trước khi hỏng",
+                  "định kỳ, làm hằng tuần",
+                  "sửa chữa, làm sau khi hỏng"
+                ],
+                "dap": 2,
+                "giai": "correct là sửa cho đúng; corrective maintenance là bảo dưỡng sửa chữa, làm sau khi máy hỏng."
+              },
+              {
+                "tu": "preventive",
+                "lua_chon": [
+                  "phòng ngừa",
+                  "sửa chữa",
+                  "khẩn cấp"
+                ],
+                "dap": 0,
+                "giai": "prevent là ngăn chặn; preventive maintenance là bảo dưỡng phòng ngừa, làm trước khi hỏng."
+              }
+            ],
+            "nghia": {
+              "plants": "nhà máy",
+              "typically": "thường",
+              "utilize": "sử dụng",
+              "types": "kiểu, loại",
+              "management": "việc quản lý"
+            }
+          }
+        ],
+        [
+          "Corrective maintenance, also known as <b>breakdown maintenance</b> or <b>run-to-failure</b> maintenance.",
+          "Bảo dưỡng sửa chữa, còn được gọi là bảo dưỡng khi hỏng máy hoặc bảo dưỡng chạy đến khi hỏng.",
+          {
+            "doan": [
+              {
+                "tu": "breakdown maintenance",
+                "lua_chon": [
+                  "bảo dưỡng khi máy hỏng hẳn",
+                  "bảo dưỡng trước ca làm",
+                  "bảo dưỡng của hãng"
+                ],
+                "dap": 0,
+                "giai": "breakdown là sự hỏng hẳn, máy dừng; breakdown maintenance là tên khác của corrective maintenance."
+              },
+              {
+                "tu": "run-to-failure",
+                "lua_chon": [
+                  "dừng máy để kiểm tra",
+                  "chạy cho đến khi hỏng",
+                  "chạy thử nhanh"
+                ],
+                "dap": 1,
+                "giai": "run là chạy, failure là hỏng: cứ chạy đến khi hỏng mới sửa."
+              }
+            ],
+            "nghia": {
+              "also known as": "còn được gọi là"
+            }
+          }
+        ],
+        [
+          "The logic of corrective maintenance management is simple and <b>straightforward</b>. When a machine <b>breaks</b>, fix it.",
+          "Cách nghĩ của việc quản lý bảo dưỡng sửa chữa rất đơn giản và dễ hiểu. Khi máy hỏng thì sửa nó.",
+          {
+            "doan": [
+              {
+                "tu": "straightforward",
+                "lua_chon": [
+                  "phức tạp",
+                  "quanh co",
+                  "đơn giản, dễ hiểu"
+                ],
+                "dap": 2,
+                "giai": "straightforward là thẳng thắn, đơn giản, không rắc rối; câu dùng simple and straightforward."
+              },
+              {
+                "tu": "breaks",
+                "lua_chon": [
+                  "nghỉ giải lao",
+                  "bị hỏng",
+                  "được bán"
+                ],
+                "dap": 1,
+                "giai": "break đời thường là nghỉ, làm vỡ; nói về máy là bị hỏng, ngừng chạy."
+              }
+            ],
+            "nghia": {
+              "logic": "cách nghĩ, lý lẽ",
+              "simple": "đơn giản",
+              "fix": "sửa",
+              "when": "khi"
+            }
+          }
+        ],
+        [
+          "Corrective maintenance is a technique that waits for machine or equipment <b>failure</b> before any maintenance action is taken.",
+          "Bảo dưỡng sửa chữa là kỹ thuật chờ máy hoặc thiết bị hỏng rồi mới có hành động bảo dưỡng.",
+          {
+            "doan": [
+              {
+                "tu": "failure",
+                "lua_chon": [
+                  "sự thành công",
+                  "sự hỏng, sự cố",
+                  "sự bảo hành"
+                ],
+                "dap": 1,
+                "giai": "fail là hỏng, không làm được; failure là sự hỏng, sự cố của máy."
+              }
+            ],
+            "nghia": {
+              "technique": "kỹ thuật, phương pháp",
+              "waits for": "chờ",
+              "equipment": "thiết bị",
+              "action": "hành động, biện pháp",
+              "is taken": "được thực hiện"
+            }
+          }
+        ],
+        [
+          "A plant using run-to-failure management does not <b>spend</b> any money on maintenance until a machine or system <b>fails</b> to operate.",
+          "Nhà máy dùng cách quản lý chạy đến khi hỏng sẽ không chi đồng nào cho bảo dưỡng cho đến khi máy hoặc hệ thống không hoạt động được.",
+          {
+            "doan": [
+              {
+                "tu": "spend",
+                "lua_chon": [
+                  "kiếm",
+                  "tiết kiệm",
+                  "tiêu (tiền)"
+                ],
+                "dap": 2,
+                "giai": "spend money là tiêu tiền, chi tiền."
+              },
+              {
+                "tu": "fails to operate",
+                "lua_chon": [
+                  "hoạt động tốt",
+                  "không hoạt động được",
+                  "được nâng cấp"
+                ],
+                "dap": 1,
+                "giai": "fail to là không làm được; fails to operate là không vận hành được."
+              }
+            ],
+            "nghia": {
+              "plant": "nhà máy",
+              "system": "hệ thống",
+              "until": "cho đến khi",
+              "operate": "vận hành"
+            }
+          }
+        ],
+        [
+          "It is also the most <b>expensive</b> method of maintenance management.",
+          "Đó cũng là phương pháp quản lý bảo dưỡng tốn kém nhất.",
+          {
+            "doan": [
+              {
+                "tu": "expensive",
+                "lua_chon": [
+                  "nhanh",
+                  "đắt tiền, tốn kém",
+                  "đơn giản"
+                ],
+                "dap": 1,
+                "giai": "expensive là đắt, tốn tiền. Bài nói corrective là kiểu đắt nhất."
+              }
+            ],
+            "nghia": {
+              "method": "phương pháp",
+              "most": "nhất"
+            }
+          }
+        ],
+        [
+          "The major expenses associated with this type of maintenance management are:",
+          "Các khoản chi phí chính liên quan đến kiểu quản lý bảo dưỡng này là:",
+          {
+            "doan": [],
+            "nghia": {}
+          }
+        ],
+        [
+          "(1) high <b>spare parts</b> inventory cost, (2) high overtime labor costs, (3) high machine <b>downtime</b>, and (4) low production availability.",
+          "(1) chi phí tồn kho phụ tùng cao, (2) chi phí nhân công làm thêm giờ cao, (3) thời gian máy ngừng chạy nhiều, và (4) khả năng sản xuất thấp.",
+          {
+            "doan": [
+              {
+                "tu": "spare parts",
+                "lua_chon": [
+                  "phụ tùng thay thế",
+                  "dụng cụ cầm tay",
+                  "máy dự phòng"
+                ],
+                "dap": 0,
+                "giai": "spare là dự phòng; spare parts là phụ tùng để thay khi chi tiết hỏng."
+              },
+              {
+                "tu": "downtime",
+                "lua_chon": [
+                  "giờ làm thêm",
+                  "thời gian máy ngừng chạy",
+                  "thời gian bảo hành"
+                ],
+                "dap": 1,
+                "giai": "down là ngừng, time là thời gian: downtime là lúc máy không chạy."
+              }
+            ],
+            "nghia": {
+              "overtime": "làm thêm giờ",
+              "inventory": "hàng tồn kho",
+              "labor": "nhân công",
+              "production availability": "khả năng sản xuất (máy sẵn sàng chạy)"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"It is also the most ______ method of maintenance management.\"</em>",
+        "lua_chon": [
+          "expensive",
+          "cheap",
+          "simple"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 8 của bài: <em>the most expensive method of maintenance management</em>. Tìm từ khoá <em>method of maintenance management</em> rồi chép từ đứng trước.",
+        "fb_no": "Tìm câu có <em>method of maintenance management</em>. Từ nào đứng ngay sau <em>the most</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Corrective maintenance is the cheapest method of maintenance management.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết corrective là <em>the most expensive method</em> (đắt nhất). Đề hay đổi một từ thành nghĩa ngược lại.",
+        "fb_no": "Đọc lại câu 8: bài dùng từ nào để nói về chi phí của corrective maintenance?"
+      }
+    },
+    {
+      "ten": "Article 2 · Preventive maintenance (giáo trình: Article 1, phần sau)",
+      "cau": [
+        [
+          "Preventive maintenance (PM) is the <b>routine</b> maintenance of different assets, equipment and machinery to <b>ensure</b> smooth operations and reduce any unplanned equipment failures.",
+          "Bảo dưỡng phòng ngừa (PM) là việc bảo dưỡng định kỳ nhiều loại tài sản, thiết bị và máy móc để đảm bảo hoạt động trơn tru và giảm mọi hỏng hóc thiết bị ngoài kế hoạch.",
+          {
+            "doan": [
+              {
+                "tu": "routine",
+                "lua_chon": [
+                  "bất ngờ",
+                  "đắt tiền",
+                  "định kỳ, thường lệ"
+                ],
+                "dap": 2,
+                "giai": "routine là việc làm thường xuyên theo lệ, không phải bất thường."
+              },
+              {
+                "tu": "ensure",
+                "lua_chon": [
+                  "đảm bảo",
+                  "bỏ qua",
+                  "đo đạc"
+                ],
+                "dap": 0,
+                "giai": "ensure là đảm bảo, bảo đảm cho chắc chắn xảy ra."
+              }
+            ],
+            "nghia": {
+              "assets": "tài sản, thiết bị",
+              "smooth operations": "hoạt động trơn tru",
+              "reduce": "giảm",
+              "unplanned": "ngoài kế hoạch",
+              "failures": "sự hỏng hóc"
+            }
+          }
+        ],
+        [
+          "Most companies often follow an established <b>schedule</b> for carrying out preventive maintenance to <b>mitigate</b> the chances of any unplanned downtime that could affect output.",
+          "Hầu hết các công ty thường theo một lịch trình đã định để thực hiện bảo dưỡng phòng ngừa, nhằm giảm khả năng máy ngừng ngoài kế hoạch làm ảnh hưởng sản lượng.",
+          {
+            "doan": [
+              {
+                "tu": "schedule",
+                "lua_chon": [
+                  "hoá đơn",
+                  "giá tiền",
+                  "lịch trình"
+                ],
+                "dap": 2,
+                "giai": "schedule là lịch trình, kế hoạch làm việc theo thời gian."
+              },
+              {
+                "tu": "mitigate",
+                "lua_chon": [
+                  "tăng thêm",
+                  "giảm bớt",
+                  "bỏ qua"
+                ],
+                "dap": 1,
+                "giai": "mitigate là làm giảm nhẹ (rủi ro, thiệt hại)."
+              }
+            ],
+            "nghia": {
+              "established": "đã định sẵn",
+              "carrying out": "thực hiện",
+              "chances": "khả năng",
+              "unplanned downtime": "máy ngừng ngoài kế hoạch",
+              "affect": "ảnh hưởng",
+              "output": "sản lượng"
+            }
+          }
+        ],
+        [
+          "Preventive maintenance offers companies a number of important <b>benefits</b> including:",
+          "Bảo dưỡng phòng ngừa đem lại cho công ty nhiều lợi ích quan trọng, bao gồm:",
+          {
+            "doan": [
+              {
+                "tu": "benefits",
+                "lua_chon": [
+                  "rủi ro",
+                  "lợi ích",
+                  "chi phí"
+                ],
+                "dap": 1,
+                "giai": "benefit là lợi ích, điều tốt đem lại."
+              }
+            ],
+            "nghia": {
+              "offers": "đem lại",
+              "a number of": "một số, nhiều",
+              "important": "quan trọng",
+              "including": "bao gồm"
+            }
+          }
+        ],
+        [
+          "<b>Prolonged</b> life of company equipment; Less <b>unplanned</b> downtime caused by equipment failure;",
+          "Kéo dài tuổi thọ thiết bị của công ty; Ít thời gian máy ngừng ngoài kế hoạch do thiết bị hỏng;",
+          {
+            "doan": [
+              {
+                "tu": "Prolonged",
+                "lua_chon": [
+                  "bị rút ngắn",
+                  "được kéo dài",
+                  "bị bỏ đi"
+                ],
+                "dap": 1,
+                "giai": "long là dài; prolonged là được kéo dài thêm."
+              },
+              {
+                "tu": "unplanned",
+                "lua_chon": [
+                  "đúng kế hoạch",
+                  "ngoài kế hoạch",
+                  "đã dừng"
+                ],
+                "dap": 1,
+                "giai": "plan là kế hoạch; un-planned là không có trong kế hoạch."
+              }
+            ],
+            "nghia": {
+              "life": "tuổi thọ",
+              "company": "công ty",
+              "equipment": "thiết bị",
+              "less": "ít hơn",
+              "downtime": "thời gian máy ngừng chạy",
+              "caused by": "do, gây ra bởi",
+              "failure": "sự hỏng"
+            }
+          }
+        ],
+        [
+          "Less unnecessary maintenance and <b>inspections</b>; Fewer <b>errors</b> in day-to-day operations;",
+          "Ít phải bảo dưỡng và kiểm tra không cần thiết; Ít sai sót hơn trong hoạt động hằng ngày;",
+          {
+            "doan": [
+              {
+                "tu": "inspections",
+                "lua_chon": [
+                  "các lần sửa",
+                  "các lần mua",
+                  "các lần kiểm tra"
+                ],
+                "dap": 2,
+                "giai": "inspection là kiểm tra, khám xét kỹ một máy hoặc chi tiết."
+              },
+              {
+                "tu": "errors",
+                "lua_chon": [
+                  "máy móc",
+                  "lỗi, sai sót",
+                  "hoá đơn"
+                ],
+                "dap": 1,
+                "giai": "error là lỗi, sai sót."
+              }
+            ],
+            "nghia": {
+              "unnecessary": "không cần thiết",
+              "fewer": "ít hơn",
+              "day-to-day": "hằng ngày",
+              "operations": "hoạt động"
+            }
+          }
+        ],
+        [
+          "Improved <b>reliability</b> of equipment; Fewer expensive <b>repairs</b> caused by unexpected equipment failure that must be fixed quickly;",
+          "Độ tin cậy của thiết bị được cải thiện; Ít phải sửa chữa đắt tiền do thiết bị hỏng bất ngờ mà phải sửa gấp;",
+          {
+            "doan": [
+              {
+                "tu": "reliability",
+                "lua_chon": [
+                  "độ cứng",
+                  "độ nóng",
+                  "độ tin cậy"
+                ],
+                "dap": 2,
+                "giai": "reliable là đáng tin; reliability là độ tin cậy, máy ít hỏng bất ngờ."
+              },
+              {
+                "tu": "repairs",
+                "lua_chon": [
+                  "việc sửa chữa",
+                  "việc thay dầu",
+                  "việc kiểm kê"
+                ],
+                "dap": 0,
+                "giai": "repair là sửa chữa chi tiết hoặc máy bị hỏng."
+              }
+            ],
+            "nghia": {
+              "improved": "được cải thiện",
+              "fewer": "ít hơn",
+              "expensive": "đắt tiền",
+              "unexpected": "bất ngờ",
+              "must be fixed": "phải được sửa",
+              "quickly": "nhanh"
+            }
+          }
+        ],
+        [
+          "Reduced <b>risk</b> of <b>injury</b>.",
+          "Giảm nguy cơ bị thương.",
+          {
+            "doan": [
+              {
+                "tu": "risk",
+                "lua_chon": [
+                  "lợi nhuận",
+                  "rủi ro, nguy cơ",
+                  "tốc độ"
+                ],
+                "dap": 1,
+                "giai": "risk là khả năng xảy ra điều xấu trong tương lai."
+              },
+              {
+                "tu": "injury",
+                "lua_chon": [
+                  "chấn thương",
+                  "thiệt hại máy",
+                  "sự chậm trễ"
+                ],
+                "dap": 0,
+                "giai": "injury là chấn thương, bị thương (nói về người)."
+              }
+            ],
+            "nghia": {
+              "reduced": "được giảm"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Preventive maintenance is the ______ maintenance of different assets, equipment and machinery.\"</em>",
+        "lua_chon": [
+          "corrective",
+          "routine",
+          "unplanned"
+        ],
+        "dap": 1,
+        "fb_ok": "Câu 1 của bài: <em>the routine maintenance of different assets</em>. Tìm từ khoá <em>different assets</em> rồi chép từ đứng trước <em>maintenance</em>.",
+        "fb_no": "Tìm câu có <em>different assets</em>. Từ nào đứng ngay sau <em>the</em> và trước <em>maintenance</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Preventive maintenance causes more unplanned downtime.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>less unplanned downtime</em> (ít hơn). Đề hay tráo more ↔ less.",
+        "fb_no": "Đọc lại các lợi ích: trước chữ <em>unplanned downtime</em> là more hay less?"
+      }
+    },
+    {
+      "ten": "Article 3 · “We have a problem”, chuyến bay 236 (giáo trình: Article 2)",
+      "cau": [
+        [
+          "This is the true story of Air Trasant <b>Flight</b> 236.",
+          "Đây là câu chuyện có thật về chuyến bay 236 của hãng Air Trasant.",
+          {
+            "doan": [
+              {
+                "tu": "Flight",
+                "lua_chon": [
+                  "chuyến bay",
+                  "chuyến tàu",
+                  "đồ chơi"
+                ],
+                "dap": 0,
+                "giai": "flight là chuyến bay; Flight 236 là chuyến bay số hiệu 236."
+              }
+            ],
+            "nghia": {
+              "true story": "câu chuyện có thật"
+            }
+          }
+        ],
+        [
+          "The chain of events began during <b>routine</b> maintenance work on an Air Trasant Airbus A330.",
+          "Chuỗi sự việc bắt đầu trong lúc bảo dưỡng định kỳ một chiếc Airbus A330 của hãng Air Trasant.",
+          {
+            "doan": [
+              {
+                "tu": "routine",
+                "lua_chon": [
+                  "định kỳ",
+                  "khẩn cấp",
+                  "miễn phí"
+                ],
+                "dap": 0,
+                "giai": "routine là định kỳ, thường lệ. Giống chữ trong routine maintenance ở Article 2."
+              }
+            ],
+            "nghia": {
+              "chain of events": "chuỗi sự việc",
+              "began": "bắt đầu",
+              "work": "công việc"
+            }
+          }
+        ],
+        [
+          "An incorrect <b>hydraulic</b> pipe was <b>fitted</b> to the right-hand engine.",
+          "Một ống thuỷ lực không đúng loại đã được lắp vào động cơ bên phải.",
+          {
+            "doan": [
+              {
+                "tu": "hydraulic",
+                "lua_chon": [
+                  "điện",
+                  "thuỷ lực",
+                  "hơi nước"
+                ],
+                "dap": 1,
+                "giai": "hydraulic là thuỷ lực: dùng chất lỏng (dầu) có áp để truyền lực."
+              },
+              {
+                "tu": "fitted",
+                "lua_chon": [
+                  "được tháo ra",
+                  "được sơn",
+                  "được lắp vào"
+                ],
+                "dap": 2,
+                "giai": "fit là lắp vừa vào; was fitted to là được lắp vào."
+              }
+            ],
+            "nghia": {
+              "incorrect": "sai, không đúng loại",
+              "pipe": "ống",
+              "right-hand": "bên phải",
+              "engine": "động cơ"
+            }
+          }
+        ],
+        [
+          "The component was <b>oversized</b>, leaving inadequate <b>clearance</b> with an adjacent fuel line.",
+          "Chi tiết này quá cỡ, để lại khe hở không đủ với đường ống nhiên liệu bên cạnh.",
+          {
+            "doan": [
+              {
+                "tu": "oversized",
+                "lua_chon": [
+                  "quá cỡ, to hơn quy định",
+                  "nhỏ hơn quy định",
+                  "bị hỏng"
+                ],
+                "dap": 0,
+                "giai": "over là quá, size là cỡ: oversized là quá cỡ."
+              },
+              {
+                "tu": "clearance",
+                "lua_chon": [
+                  "tiếng ồn",
+                  "nhiệt độ",
+                  "khe hở"
+                ],
+                "dap": 2,
+                "giai": "clearance là khe hở giữa hai chi tiết để chúng không chạm nhau."
+              }
+            ],
+            "nghia": {
+              "component": "chi tiết",
+              "leaving": "để lại",
+              "inadequate": "không đủ",
+              "adjacent": "bên cạnh, sát kề",
+              "fuel line": "đường ống nhiên liệu"
+            }
+          }
+        ],
+        [
+          "Subsequently, the two pipes rubbed together, causing the fuel line to <b>wear</b> <b>progressively</b>.",
+          "Sau đó, hai ống cọ vào nhau, làm đường ống nhiên liệu mòn dần.",
+          {
+            "doan": [
+              {
+                "tu": "wear",
+                "lua_chon": [
+                  "bị mòn",
+                  "được mặc",
+                  "bị đóng băng"
+                ],
+                "dap": 0,
+                "giai": "wear đời thường là mặc; về máy móc là bị mòn do cọ xát."
+              },
+              {
+                "tu": "progressively",
+                "lua_chon": [
+                  "đột ngột",
+                  "dần dần",
+                  "nhanh chóng"
+                ],
+                "dap": 1,
+                "giai": "progress là tiến lên từng bước; progressively là dần dần, từng chút một."
+              }
+            ],
+            "nghia": {
+              "subsequently": "sau đó",
+              "rubbed together": "cọ vào nhau",
+              "causing": "làm cho"
+            }
+          }
+        ],
+        [
+          "The problem went <b>undetected</b>, until the night of August 24, 2001, at 35.000 feet above the Atlantic.",
+          "Vấn đề không bị phát hiện cho đến đêm 24 tháng 8 năm 2001, ở độ cao 35.000 feet phía trên Đại Tây Dương.",
+          {
+            "doan": [
+              {
+                "tu": "undetected",
+                "lua_chon": [
+                  "được báo trước",
+                  "bị loại bỏ",
+                  "không bị phát hiện"
+                ],
+                "dap": 2,
+                "giai": "detect là phát hiện; un-detected là chưa bị phát hiện."
+              }
+            ],
+            "nghia": {
+              "went": "diễn ra (như vậy)",
+              "until": "cho đến",
+              "feet": "feet (đơn vị độ cao)",
+              "above": "phía trên",
+              "Atlantic": "Đại Tây Dương"
+            }
+          }
+        ],
+        [
+          "With Flight 236 en route from Toronto to Lisbon, carrying 306 people, the fuel line <b>ruptured</b>, resulting in a major <b>leak</b>.",
+          "Khi chuyến bay 236 đang bay từ Toronto tới Lisbon, chở 306 người, đường ống nhiên liệu bị vỡ, gây ra rò rỉ lớn.",
+          {
+            "doan": [
+              {
+                "tu": "ruptured",
+                "lua_chon": [
+                  "được thay",
+                  "bị vỡ, đứt",
+                  "bị gỉ"
+                ],
+                "dap": 1,
+                "giai": "rupture là vỡ, đứt do áp lực; the fuel line ruptured là đường ống nhiên liệu bị vỡ."
+              },
+              {
+                "tu": "leak",
+                "lua_chon": [
+                  "sự rò rỉ",
+                  "sự cháy",
+                  "sự rung"
+                ],
+                "dap": 0,
+                "giai": "leak là sự rò rỉ: chất lỏng hoặc khí thoát ra ngoài."
+              }
+            ],
+            "nghia": {
+              "en route": "đang trên đường bay",
+              "carrying": "chở",
+              "resulting in": "dẫn đến",
+              "major": "lớn"
+            }
+          }
+        ],
+        [
+          "Less than two hours later, the aircraft was completely out of fuel, <b>gliding</b> silently through the night sky.",
+          "Chưa đầy hai giờ sau, máy bay hết sạch nhiên liệu, lướt lặng lẽ qua bầu trời đêm.",
+          {
+            "doan": [
+              {
+                "tu": "gliding",
+                "lua_chon": [
+                  "bốc cháy",
+                  "lượn, bay không cần động cơ",
+                  "hạ cánh"
+                ],
+                "dap": 1,
+                "giai": "glide là lượn: bay không cần động cơ, như tàu lượn."
+              }
+            ],
+            "nghia": {
+              "less than": "chưa đến",
+              "aircraft": "máy bay",
+              "completely": "hoàn toàn",
+              "out of fuel": "hết nhiên liệu",
+              "silently": "lặng lẽ",
+              "sky": "bầu trời"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"An incorrect ______ pipe was fitted to the right-hand engine.\"</em>",
+        "lua_chon": [
+          "fuel",
+          "hydraulic",
+          "water"
+        ],
+        "dap": 1,
+        "fb_ok": "Câu 3 của bài: <em>An incorrect hydraulic pipe was fitted to the right-hand engine</em>. Tìm từ khoá <em>right-hand engine</em> rồi chép từ đứng trước <em>pipe</em>.",
+        "fb_no": "Tìm câu có <em>right-hand engine</em>. Từ nào đứng ngay trước <em>pipe</em>? Lưu ý fuel line xuất hiện ở câu khác."
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"The two pipes had adequate clearance.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>inadequate clearance</em> (khe hở không đủ). Đề hay thêm hoặc bớt tiền tố in-/un-.",
+        "fb_no": "Đọc lại câu 4: trước chữ clearance là adequate hay inadequate?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "So sánh hai kiểu bảo dưỡng (Article 1 và 2, hay ra Đúng/Sai)",
+    "cot": [
+      "Hỏi gì",
+      "Corrective",
+      "Preventive"
+    ],
+    "hang": [
+      [
+        "Làm khi nào",
+        "<strong>after</strong> failure",
+        "<strong>before</strong> failure"
+      ],
+      [
+        "Lập kế hoạch",
+        "requires <strong>less</strong> planning",
+        "requires planning"
+      ],
+      [
+        "Máy ngừng",
+        "often <strong>unplanned</strong> downtime",
+        "<strong>less</strong> unplanned downtime"
+      ],
+      [
+        "Chi phí",
+        "the most <strong>expensive</strong>",
+        "fewer expensive repairs"
+      ],
+      [
+        "An toàn",
+        "poses safety <strong>risks</strong>",
+        "reduced <strong>risk</strong> of injury"
+      ],
+      [
+        "Tuổi thọ máy",
+        "–",
+        "<strong>prolonged</strong> life"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X is the … of … (X là việc / sự … của …)",
+      "vd": [
+        [
+          "Preventive maintenance is the routine maintenance of machinery and equipment.",
+          "Bảo dưỡng phòng ngừa là việc bảo dưỡng định kỳ máy móc và thiết bị."
+        ],
+        [
+          "Lubrication is the action of applying oil or grease to a component.",
+          "Bôi trơn là việc bôi dầu hoặc mỡ lên một chi tiết."
+        ],
+        [
+          "Detection is the process of noticing something that is not easy to see.",
+          "Phát hiện là quá trình nhận ra điều khó nhìn thấy."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + is + the + danh từ + of + Y</strong>.",
+        "Dịch: \"X là việc / sự / quá trình … của Y\".",
+        "Part 5 hay ra câu định nghĩa: \"Bảo dưỡng phòng ngừa là sự bảo dưỡng định kỳ của máy móc…\" → dùng mẫu này."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · làm gì + to + V (để…)",
+      "vd": [
+        [
+          "Preventive maintenance is done to reduce unplanned equipment failures.",
+          "Bảo dưỡng phòng ngừa được làm để giảm hỏng hóc thiết bị ngoài kế hoạch."
+        ],
+        [
+          "Companies follow a schedule to mitigate the chances of unplanned downtime.",
+          "Các công ty theo một lịch trình để giảm khả năng máy ngừng ngoài kế hoạch."
+        ],
+        [
+          "We check the casing regularly to find signs of corrosion.",
+          "Chúng tôi kiểm tra vỏ máy thường xuyên để tìm dấu hiệu ăn mòn."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>làm gì + to + V</strong>.",
+        "<em>to + V</em> chỉ mục đích, dịch \"để …\".",
+        "Hay đi với <em>ensure</em> (đảm bảo), <em>reduce</em> (giảm), <em>mitigate</em> (giảm bớt)."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "fuel_line_diagram.svg",
+    "tieu_de": "Sự cố chuyến bay 236: gọi tên 6 phần",
+    "mo_ta": "Article 3 kể sự cố này, đề Part 2 hay hỏi các từ trong hình. Nhìn hình, tự gọi tên 6 phần trước, rồi mở đáp án.",
+    "chu_thich": "Hình mô phỏng: ống thuỷ lực lắp sai cỡ cọ vào đường ống nhiên liệu. 6 phần đánh số. Khe hở (số 4) nhỏ dần về bên phải.",
+    "bo_phan": [
+      [
+        "engine",
+        "động cơ"
+      ],
+      [
+        "hydraulic pipe",
+        "ống thuỷ lực, lắp sai và quá cỡ"
+      ],
+      [
+        "fuel line",
+        "đường ống nhiên liệu"
+      ],
+      [
+        "clearance",
+        "khe hở giữa hai ống"
+      ],
+      [
+        "wear",
+        "chỗ mòn do hai ống cọ vào nhau"
+      ],
+      [
+        "leak",
+        "chỗ rò nhiên liệu sau khi ống vỡ"
+      ]
+    ],
+    "hoi": "Phần số 4 (khoảng trống giữa hai ống, càng về bên phải càng hẹp) tên là gì?",
+    "lua_chon": [
+      "corrosion",
+      "clearance",
+      "schedule",
+      "adjust"
+    ],
+    "dap": 1,
+    "fb_ok": "<em>clearance</em> = khe hở. Hai ống phải có khe hở đủ rộng để không chạm nhau. Ở chuyến bay 236, khe hở này quá hẹp (<em>inadequate</em>).",
+    "fb_no": "Số 4 nằm giữa hai ống và không có gì lấp vào. Từ nào nói về khoảng trống giữa hai chi tiết?"
+  },
+  "sop": {
+    "tieu_de": "Kế hoạch bảo dưỡng ở xưởng: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn viết lại từ phần Vocabulary và Reading:",
+    "hop_tu": [
+      "lubrication",
+      "spare part",
+      "detection",
+      "replacement",
+      "risk"
+    ],
+    "doan": "A good maintenance plan starts with early (1) ______ of problems, before the machine stops. Putting oil or grease on moving parts is called (2) ______. When a bearing is worn out, (3) ______ is needed. The technician takes a (4) ______ from the store and fits it. Doing these jobs on time reduces the (5) ______ of accidents.",
+    "dap": [
+      "detection",
+      "lubrication",
+      "replacement",
+      "spare part",
+      "risk"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (2): <em>\"Putting oil or grease on moving parts is called (2) ______.\"</em>",
+      "lua_chon": [
+        "replacement",
+        "lubrication",
+        "detection",
+        "risk"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>lubrication</em> = bôi trơn. Từ khoá <em>oil or grease</em> (dầu hoặc mỡ). Sau <em>is called</em> cần một danh từ.",
+      "fb_no": "Gạch từ khoá <em>oil or grease</em>. Từ nào trong hộp nói về việc bôi dầu mỡ?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Corrective maintenance làm vào lúc nào? Còn tên gọi nào khác?",
+      "Sau khi máy hỏng (after failure). Còn gọi là breakdown maintenance hoặc run-to-failure maintenance."
+    ],
+    [
+      "Preventive maintenance làm vào lúc nào?",
+      "Trước khi máy hỏng, theo một lịch trình định sẵn (established schedule)."
+    ],
+    [
+      "Kể hai khoản chi phí lớn của corrective maintenance.",
+      "High spare parts inventory cost, high overtime labor costs, high machine downtime (chọn hai trong số này)."
+    ],
+    [
+      "Kể hai lợi ích của preventive maintenance.",
+      "Prolonged life of equipment, less unplanned downtime, improved reliability, reduced risk of injury (chọn hai trong số này)."
+    ],
+    [
+      "Chuyến bay 236: vấn đề bắt đầu thế nào?",
+      "Khi bảo dưỡng định kỳ, một ống thuỷ lực (hydraulic pipe) sai loại, quá cỡ, được lắp vào động cơ bên phải; khe hở (clearance) với đường ống nhiên liệu không đủ, nên hai ống cọ vào nhau."
+    ],
+    [
+      "Khi đường ống nhiên liệu vỡ thì chuyện gì xảy ra?",
+      "Nhiên liệu rò rỉ nhiều (major leak). Chưa đầy hai giờ sau máy bay hết nhiên liệu và lượn không có động cơ."
+    ],
+    [
+      "Dịch: <em>Preventive maintenance is the routine maintenance of machinery.</em>",
+      "Bảo dưỡng phòng ngừa là việc bảo dưỡng định kỳ máy móc."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Bôi trơn là việc bôi dầu hoặc mỡ lên một chi tiết.</em>",
+      "Lubrication is the action of applying oil or grease to a component."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "An extra piece that can be used to replace a piece that breaks, esp. in a machine.",
+        "opts": [
+          "Lubrication",
+          "Replacement",
+          "Detection",
+          "Spare part"
+        ],
+        "ans": 3,
+        "why": "<em>extra piece … replace</em> → spare part."
+      },
+      {
+        "q": "The process of replacing something with something else.",
+        "opts": [
+          "Lubrication",
+          "Replacement",
+          "Detection",
+          "Risk"
+        ],
+        "ans": 1,
+        "why": "<em>replacing something with something else</em> → replacement."
+      },
+      {
+        "q": "The action of applying a substance such as oil or grease to an engine or component so as to minimize friction and allow smooth movement.",
+        "opts": [
+          "Detection",
+          "Spare part",
+          "Lubrication",
+          "Replacement"
+        ],
+        "ans": 2,
+        "why": "<em>oil or grease</em> + <em>minimize friction</em> → lubrication."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer:",
+        "opts": [
+          "Leak",
+          "Clearance",
+          "Schedule",
+          "Adjust"
+        ],
+        "ans": 0,
+        "why": "Nước rỉ ra ở chỗ nối của vòi và ống → leak.",
+        "img": "leak"
+      },
+      {
+        "q": "The possibility of something bad happening at some time in the future; a situation that could be dangerous or have a bad result.",
+        "opts": [
+          "Failure",
+          "Risk",
+          "Detection",
+          "Leak"
+        ],
+        "ans": 1,
+        "why": "<em>possibility of something bad</em> → risk."
+      },
+      {
+        "q": "It is the process of keeping machinery and mechanical equipment in good working condition.",
+        "opts": [
+          "Lubrication",
+          "Detection",
+          "Mechanical maintenance",
+          "Spare part"
+        ],
+        "ans": 2,
+        "why": "<em>keeping machinery … in good working condition</em> → mechanical maintenance."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>extra piece</em>, <em>replacing</em>, <em>oil or grease</em>, <em>something bad</em>, <em>keeping</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn việc gì đang xảy ra (chất lỏng chảy ra = leak, vết nâu cam trên kim loại = corrosion, nhỏ dầu = lubrication).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "The chain of events began during routine maintenance work on an Air Trasant Airbus A330. An incorrect hydraulic pipe was fitted to the right-hand engine. The component was oversized, leaving inadequate clearance with an adjacent fuel line. Subsequently, the two pipes rubbed together, causing the fuel line to wear progressively. The problem went undetected, until the night of August 24, 2001, at 35.000 feet above the Atlantic. With Flight 236 en route from Toronto to Lisbon, carrying 306 people, the fuel line ruptured, resulting in a major leak. Less than two hours later, the aircraft was completely out of fuel, gliding silently through the night sky.",
+      "dien": [
+        {
+          "q": "An incorrect ______ pipe was fitted to the right-hand engine.",
+          "ans": "hydraulic",
+          "opts": [
+            "hydraulic",
+            "fuel",
+            "water"
+          ],
+          "why": "Câu 2: <em>An incorrect hydraulic pipe was fitted</em>."
+        },
+        {
+          "q": "The oversized component left inadequate ______ with an adjacent fuel line.",
+          "ans": "clearance",
+          "opts": [
+            "power",
+            "clearance",
+            "oil"
+          ],
+          "why": "Câu 3: <em>leaving inadequate clearance</em>."
+        },
+        {
+          "q": "The two pipes rubbed together, causing the fuel line to ______ progressively.",
+          "ans": "wear",
+          "opts": [
+            "glide",
+            "rupture",
+            "wear"
+          ],
+          "why": "Câu 4: <em>causing the fuel line to wear progressively</em>."
+        },
+        {
+          "q": "The problem went ______ until the night of August 24, 2001.",
+          "ans": "undetected",
+          "opts": [
+            "unplanned",
+            "undetected",
+            "unexpected"
+          ],
+          "why": "Câu 5: <em>The problem went undetected</em>."
+        }
+      ],
+      "ds": [
+        {
+          "q": "The chain of events began during routine maintenance work.",
+          "ans": true,
+          "why": "Chép gần nguyên câu 1: <em>began during routine maintenance work</em>."
+        },
+        {
+          "q": "The hydraulic pipe was too small.",
+          "ans": false,
+          "why": "Bài viết <em>The component was oversized</em> (quá cỡ, tức quá to)."
+        },
+        {
+          "q": "The fuel line ruptured, resulting in a major leak.",
+          "ans": true,
+          "why": "Câu 6: <em>the fuel line ruptured, resulting in a major leak</em>."
+        },
+        {
+          "q": "The aircraft was carrying 306 people from Lisbon to Toronto.",
+          "ans": false,
+          "why": "Bài viết <em>from Toronto to Lisbon</em>: hai thành phố bị đảo chỗ."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: small ↔ oversized, adequate ↔ inadequate, Toronto ↔ Lisbon, more ↔ less."
+    ],
+    "part3": {
+      "hop_tu": [
+        "routine",
+        "schedule",
+        "downtime",
+        "risk",
+        "parts"
+      ],
+      "doan": "Preventive maintenance is the (1) ______ maintenance of machines. Companies follow a (2) ______ to reduce unplanned (3) ______. It also reduces the (4) ______ of injury. With corrective maintenance, a plant must pay for expensive spare (5) ______ and overtime.",
+      "dap": [
+        "routine",
+        "schedule",
+        "downtime",
+        "risk",
+        "parts"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng sau <em>the</em> và trước <em>maintenance</em> → tính từ chỉ \"định kỳ\".",
+        "Chỗ (2) đứng sau <em>a</em> → danh từ số ít: một cái lịch.",
+        "Chỗ (2): <em>routine</em> cũng có thể là danh từ, nhưng <em>follow a routine to reduce downtime</em> không hợp nghĩa ở đây; cần một cái lịch → schedule.",
+        "Chỗ (4) đứng sau <em>the</em> và trước <em>of injury</em> → danh từ.",
+        "Chỗ (5) đứng sau <em>spare</em> và trước <em>and overtime</em> → danh từ số nhiều.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "Most companies often follow an established schedule for carrying out preventive maintenance to mitigate the chances of any unplanned downtime that could affect output. Preventive maintenance offers companies a number of important benefits.",
+      "vi": "Hầu hết các công ty thường theo một lịch trình đã định để thực hiện bảo dưỡng phòng ngừa, nhằm giảm khả năng máy ngừng ngoài kế hoạch làm ảnh hưởng sản lượng. Bảo dưỡng phòng ngừa đem lại cho công ty nhiều lợi ích quan trọng.",
+      "chien_thuat": [
+        "Cắt câu dài tại <em>for carrying out</em> và <em>to mitigate</em>.",
+        "Giữ nguyên thuật ngữ đã học: bảo dưỡng phòng ngừa, lịch trình, máy ngừng ngoài kế hoạch.",
+        "<em>to mitigate</em> → \"nhằm giảm\" (mẫu 2: to + V).",
+        "<em>a number of</em> → \"nhiều\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Bảo dưỡng phòng ngừa là sự bảo dưỡng định kỳ của những máy móc và thiết bị để đảm bảo sự hoạt động trơn tru và giảm sự hỏng hóc thiết bị ngoài kế hoạch.",
+      "en": "Preventive maintenance is the routine maintenance of machinery and equipment to ensure smooth operations and reduce unplanned equipment failures.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X is the … of …</strong>.",
+        "X = preventive maintenance; \"sự bảo dưỡng định kỳ\" = the routine maintenance of …",
+        "\"để đảm bảo … và giảm …\" → mẫu 2: <strong>to ensure … and reduce …</strong>.",
+        "Viết được <em>Preventive maintenance is the routine maintenance of machinery.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "Maintenance that waits for a machine to fail before any action is taken.",
+        "opts": [
+          "preventive maintenance",
+          "corrective maintenance",
+          "mechanical maintenance",
+          "lubrication"
+        ],
+        "ans": 1,
+        "why": "<em>waits … to fail</em> → corrective maintenance."
+      },
+      {
+        "q": "Routine maintenance of equipment to reduce unplanned failures.",
+        "opts": [
+          "corrective maintenance",
+          "mechanical maintenance",
+          "preventive maintenance",
+          "replacement"
+        ],
+        "ans": 2,
+        "why": "<em>routine</em> + <em>reduce unplanned failures</em> → preventive maintenance."
+      },
+      {
+        "q": "The action of applying oil or grease to a component to reduce friction.",
+        "opts": [
+          "detection",
+          "lubrication",
+          "inspection",
+          "replacement"
+        ],
+        "ans": 1,
+        "why": "<em>oil or grease</em> → lubrication."
+      },
+      {
+        "q": "The process of replacing something with something else.",
+        "opts": [
+          "replacement",
+          "repair",
+          "detection",
+          "adjustment"
+        ],
+        "ans": 0,
+        "why": "<em>replacing something with something else</em> → replacement."
+      },
+      {
+        "q": "An extra piece that can be used to replace a piece that breaks.",
+        "opts": [
+          "risk",
+          "failure",
+          "spare part",
+          "schedule"
+        ],
+        "ans": 2,
+        "why": "<em>extra piece</em> → spare part."
+      },
+      {
+        "q": "The process of noticing something that is not easy to see or hear.",
+        "opts": [
+          "detection",
+          "downtime",
+          "clearance",
+          "corrosion"
+        ],
+        "ans": 0,
+        "why": "<em>noticing something</em> → detection."
+      },
+      {
+        "q": "The possibility of something bad happening in the future.",
+        "opts": [
+          "leak",
+          "risk",
+          "repair",
+          "wear"
+        ],
+        "ans": 1,
+        "why": "<em>possibility of something bad</em> → risk."
+      },
+      {
+        "q": "The time when a machine or production line is not working.",
+        "opts": [
+          "failure",
+          "inspection",
+          "downtime",
+          "schedule"
+        ],
+        "ans": 2,
+        "why": "<em>time … not working</em> → downtime."
+      },
+      {
+        "q": "A careful check of a machine or part to look for problems.",
+        "opts": [
+          "inspection",
+          "lubrication",
+          "schedule",
+          "risk"
+        ],
+        "ans": 0,
+        "why": "<em>careful check</em> → inspection."
+      },
+      {
+        "q": "A plan that lists what maintenance work will be done and when.",
+        "opts": [
+          "failure",
+          "leak",
+          "schedule",
+          "repair"
+        ],
+        "ans": 2,
+        "why": "<em>plan … and when</em> → schedule."
+      },
+      {
+        "q": "A hole or crack through which liquid or gas escapes.",
+        "opts": [
+          "wear",
+          "leak",
+          "clearance",
+          "corrosion"
+        ],
+        "ans": 1,
+        "why": "<em>liquid or gas escapes</em> → leak."
+      },
+      {
+        "q": "Damage to metal caused by rust or chemicals.",
+        "opts": [
+          "corrosion",
+          "clearance",
+          "adjust",
+          "downtime"
+        ],
+        "ans": 0,
+        "why": "<em>rust or chemicals</em> → corrosion."
+      },
+      {
+        "q": "To change a part a little to get the right setting.",
+        "opts": [
+          "repair",
+          "adjust",
+          "detect",
+          "lubricate"
+        ],
+        "ans": 1,
+        "why": "<em>change a little to get the right setting</em> → adjust."
+      },
+      {
+        "q": "The empty space between two parts so that they do not touch.",
+        "opts": [
+          "leak",
+          "wear",
+          "clearance",
+          "failure"
+        ],
+        "ans": 2,
+        "why": "<em>empty space between two parts</em> → clearance."
+      },
+      {
+        "q": "On Flight 236, the pipe that was fitted wrongly and was too big was the ______ pipe.",
+        "opts": [
+          "fuel",
+          "hydraulic",
+          "water",
+          "steam"
+        ],
+        "ans": 1,
+        "why": "Article 3, câu 3: <em>An incorrect hydraulic pipe</em>."
+      },
+      {
+        "q": "The pipe that carries fuel to the engine is called a fuel ______.",
+        "opts": [
+          "belt",
+          "roller",
+          "line",
+          "shaft"
+        ],
+        "ans": 2,
+        "why": "Article 3: <em>an adjacent fuel line</em>."
+      },
+      {
+        "q": "A cylinder that turns to move the belt of a conveyor is called a ______.",
+        "opts": [
+          "brush",
+          "roller",
+          "casing",
+          "bearing"
+        ],
+        "ans": 1,
+        "why": "Bài Listening: <em>replace the rollers</em>; roller = con lăn."
+      },
+      {
+        "q": "Complete: \"A plant using run-to-failure management does not ______ any money on maintenance until a machine fails.\"",
+        "opts": [
+          "spend",
+          "earn",
+          "save",
+          "borrow"
+        ],
+        "ans": 0,
+        "why": "Article 1, câu 7: <em>does not spend any money on maintenance</em>."
+      },
+      {
+        "q": "Complete: \"Preventive maintenance gives a reduced ______ of injury.\"",
+        "opts": [
+          "colour",
+          "risk",
+          "music",
+          "price"
+        ],
+        "ans": 1,
+        "why": "Article 2: <em>Reduced risk of injury</em>."
+      },
+      {
+        "q": "Complete: \"The two pipes rubbed together, causing the fuel line to ______ progressively.\"",
+        "opts": [
+          "glide",
+          "rupture",
+          "wear",
+          "fit"
+        ],
+        "ans": 2,
+        "why": "Article 3, câu 5: <em>causing the fuel line to wear progressively</em>."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (corrective maintenance). Mark each statement True or False.",
+        "st": [
+          [
+            "Corrective maintenance waits for a machine to fail.",
+            true
+          ],
+          [
+            "Run-to-failure maintenance is the cheapest method.",
+            false
+          ],
+          [
+            "High spare parts inventory cost is an expense of corrective maintenance.",
+            true
+          ],
+          [
+            "Corrective maintenance means fixing the machine before it breaks.",
+            false
+          ]
+        ],
+        "why": "Corrective = sửa sau khi hỏng, và là kiểu đắt nhất (<em>the most expensive</em>)."
+      },
+      {
+        "q": "Read Article 2 (preventive maintenance). Mark each statement True or False.",
+        "st": [
+          [
+            "Most companies follow an established schedule for preventive maintenance.",
+            true
+          ],
+          [
+            "Preventive maintenance causes more unplanned downtime.",
+            false
+          ],
+          [
+            "Preventive maintenance improves the reliability of equipment.",
+            true
+          ],
+          [
+            "Preventive maintenance increases the risk of injury.",
+            false
+          ]
+        ],
+        "why": "PM theo lịch, ít máy ngừng ngoài kế hoạch (<em>less unplanned downtime</em>), tăng độ tin cậy và giảm nguy cơ chấn thương."
+      },
+      {
+        "q": "Read Article 3 (Flight 236). Mark each statement True or False.",
+        "st": [
+          [
+            "The fuel line ruptured at night, 35.000 feet above the Atlantic.",
+            true
+          ],
+          [
+            "The hydraulic pipe was the correct size.",
+            false
+          ],
+          [
+            "The aircraft was carrying 306 people.",
+            true
+          ],
+          [
+            "The aircraft ran out of fuel more than two hours after the leak.",
+            false
+          ]
+        ],
+        "why": "Ống thuỷ lực <em>oversized</em> (quá cỡ); máy bay hết nhiên liệu <em>less than two hours later</em> (chưa đầy hai giờ)."
+      }
+    ]
+  }
+}

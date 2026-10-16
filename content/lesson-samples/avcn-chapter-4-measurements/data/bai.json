@@ -1,0 +1,1814 @@
+{
+  "meta": {
+    "chapter": 4,
+    "prefix": "tl4",
+    "title_en": "Measurements",
+    "title_vi": "Đo lường: hệ đo, dụng cụ đo và dung sai",
+    "minutes": 30,
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (hệ mét/imperial, đơn vị, dụng cụ đo, dung sai) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 (hệ đo) và Article 3 (Dimensional accuracy, dung sai) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>prevent … from V-ing</em> và <em>If …, use X to V</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh dụng cụ đo",
+        "Mục 2 Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 1 hoặc 3, điền 1 từ + Đúng/Sai",
+        "Mục 3 Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn (dung sai, kích thước cầu Millau)",
+        "Mục 6 Điền từ"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục 3 + mục 4 mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục 4 mẫu câu"
+      ]
+    ],
+    "doan_tieu_de": "dụng cụ và đơn vị này tên gì?",
+    "doan_mo_dau": "Hai thứ dưới đây em đã thấy ở xưởng hoặc trong bếp. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "đơn vị, kích thước, dung sai và các dụng cụ đo khác",
+    "flashcard": "/flashcard/avcn-chapter-4.html"
+  },
+  "khoi_dong": [
+    {
+      "img": "caliper-dial",
+      "hoi": "Thợ cơ khí kẹp dụng cụ này vào chi tiết rồi đọc số trên đồng hồ (mỗi vạch 0,02 mm). Tên tiếng Anh?",
+      "lua_chon": [
+        "compass",
+        "caliper",
+        "wrench"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>caliper</em> /ˈkælɪpə/ là thước cặp: hai hàm kẹp vào chi tiết, đọc kích thước trên thước hoặc đồng hồ.",
+      "fb_no": "Dụng cụ này có hai hàm kẹp và một đồng hồ đọc số. Không phải dụng cụ vẽ vòng tròn, cũng không vặn đai ốc."
+    },
+    {
+      "img": "liter",
+      "hoi": "Ca nhựa này có vạch từ 100 đến 1000 ml. Một ca đầy 1000 ml là một đơn vị thể tích của hệ mét. Tên tiếng Anh?",
+      "lua_chon": [
+        "liter",
+        "pound",
+        "inch"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>liter</em> /ˈliːtə/ là lít: 1 liter = 1000 ml, đơn vị thể tích của hệ mét.",
+      "fb_no": "Pound đo khối lượng, inch đo chiều dài. Đơn vị nào đo thể tích nước trong ca?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Hệ đo và đổi đơn vị",
+      "tu": [
+        {
+          "term": "metric",
+          "ipa": "/ˈmetrɪk/",
+          "vi": "hệ mét (mét, lít, kilôgam)",
+          "def": "The system based on the meter.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "imperial",
+          "ipa": "/ɪmˈpɪəriəl/",
+          "vi": "hệ imperial (inch, quart, pound)",
+          "def": "The system that uses inches and quarts.",
+          "img": "imperial",
+          "tier": 1
+        },
+        {
+          "term": "conversion",
+          "ipa": "/kənˈvɜːʃn/",
+          "vi": "sự đổi (từ hệ đo này sang hệ đo khác)",
+          "def": "Changing from one system into another.",
+          "img": "conversion",
+          "tier": 1
+        },
+        {
+          "term": "round off",
+          "ipa": "/ˌraʊnd ˈɒf/",
+          "vi": "làm hỏng, làm mòn tròn (bu lông, vít)",
+          "def": "To damage a screw or bolt.",
+          "img": "round-off",
+          "tier": 1
+        },
+        {
+          "term": "quart",
+          "ipa": "/kwɔːt/",
+          "vi": "quart (đơn vị thể tích imperial, gần 1 lít)",
+          "def": "An imperial unit of liquid volume.",
+          "img": "quart",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The system that uses inches and quarts.\"</em>",
+        "lua_chon": [
+          "metric",
+          "imperial",
+          "conversion",
+          "round off"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>inches and quarts</em>: hai đơn vị đó thuộc hệ imperial.",
+        "fb_no": "Gạch từ khoá <em>inches</em>, <em>quarts</em>. Inch và quart không thuộc hệ mét. Hệ nào dùng chúng?"
+      }
+    },
+    {
+      "ten": "Cụm B · Đơn vị đo",
+      "tu": [
+        {
+          "term": "liter",
+          "ipa": "/ˈliːtə/",
+          "vi": "lít",
+          "def": "A metric measure of volume.",
+          "img": "liter",
+          "tier": 1
+        },
+        {
+          "term": "centimeter",
+          "ipa": "/ˈsentɪmiːtə/",
+          "vi": "xentimét",
+          "def": "A metric measure of length or distance.",
+          "img": "centimeter",
+          "tier": 1
+        },
+        {
+          "term": "pound",
+          "ipa": "/paʊnd/",
+          "vi": "pound, cân Anh (≈ 0,45 kg)",
+          "def": "An imperial measure of weight.",
+          "img": "pound",
+          "tier": 1
+        },
+        {
+          "term": "kilogram",
+          "ipa": "/ˈkɪləɡræm/",
+          "vi": "kilôgam",
+          "def": "A metric measure of weight.",
+          "img": "kilogram",
+          "tier": 1
+        },
+        {
+          "term": "cubic inch",
+          "ipa": "/ˌkjuːbɪk ˈɪntʃ/",
+          "vi": "inch khối",
+          "def": "An imperial measure of volume.",
+          "img": "cubic-inch",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"An imperial measure of weight.\"</em>",
+        "lua_chon": [
+          "liter",
+          "centimeter",
+          "pound",
+          "kilogram"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>imperial</em> + <em>weight</em>: pound là khối lượng hệ imperial. Kilogram cũng đo khối lượng nhưng thuộc hệ mét.",
+        "fb_no": "Gạch hai từ khoá: <em>imperial</em> (hệ nào?) và <em>weight</em> (đo cái gì?). Loại đơn vị hệ mét trước."
+      }
+    },
+    {
+      "ten": "Cụm C · Dụng cụ đo",
+      "tu": [
+        {
+          "term": "micrometer",
+          "ipa": "/maɪˈkrɒmɪtə/",
+          "vi": "panme (dụng cụ đo khoảng cách rất nhỏ)",
+          "def": "A tool that measures small distances.",
+          "img": "micrometer",
+          "tier": 1
+        },
+        {
+          "term": "vernier caliper",
+          "ipa": "/ˌvɜːniə ˈkælɪpə/",
+          "vi": "thước cặp",
+          "def": "A tool with a sliding jaw for measuring the size of an item.",
+          "img": "vernier-caliper",
+          "tier": 1
+        },
+        {
+          "term": "outside micrometer",
+          "ipa": "/ˌaʊtˈsaɪd maɪˈkrɒmɪtə/",
+          "vi": "panme đo ngoài (khung chữ C)",
+          "def": "A micrometer that measures the outer width of a part.",
+          "img": "outside-micrometer",
+          "tier": 1
+        },
+        {
+          "term": "inside micrometer",
+          "ipa": "/ˌɪnˈsaɪd maɪˈkrɒmɪtə/",
+          "vi": "panme đo trong",
+          "def": "A micrometer that measures the inner width of a hole.",
+          "img": "inside-micrometer",
+          "tier": 1
+        },
+        {
+          "term": "depth micrometer",
+          "ipa": "/ˈdepθ maɪˈkrɒmɪtə/",
+          "vi": "panme đo sâu",
+          "def": "A micrometer that measures how deep a hole is.",
+          "img": "depth-micrometer",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A micrometer that measures the inner width of a hole.\"</em>",
+        "lua_chon": [
+          "outside micrometer",
+          "inside micrometer",
+          "depth micrometer",
+          "vernier caliper"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>inner</em> = bên trong: inside micrometer. Còn outside là bên ngoài, depth là chiều sâu.",
+        "fb_no": "Gạch từ khoá <em>inner</em> (bên trong). Trái nghĩa với inner là outer (bên ngoài)."
+      }
+    },
+    {
+      "ten": "Cụm D · Dung sai và sai số",
+      "tu": [
+        {
+          "term": "tolerance",
+          "ipa": "/ˈtɒlərəns/",
+          "vi": "dung sai",
+          "def": "A range of acceptable size.",
+          "img": "tolerance",
+          "tier": 1
+        },
+        {
+          "term": "deviation",
+          "ipa": "/ˌdiːviˈeɪʃn/",
+          "vi": "độ lệch, sai lệch",
+          "def": "A difference from a precise size.",
+          "img": "deviation",
+          "tier": 1
+        },
+        {
+          "term": "permissible",
+          "ipa": "/pəˈmɪsəbl/",
+          "vi": "được phép, chấp nhận được",
+          "def": "Allowed.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "accurate",
+          "ipa": "/ˈækjərət/",
+          "vi": "chính xác (đúng 100%)",
+          "def": "Exactly correct.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "variation",
+          "ipa": "/ˌveəriˈeɪʃn/",
+          "vi": "sự khác nhau về kích thước",
+          "def": "A difference between parts made from the same design.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A difference from a precise size.\"</em>",
+        "lua_chon": [
+          "tolerance",
+          "accurate",
+          "deviation",
+          "variation"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>difference from a precise size</em> = độ lệch so với kích thước chuẩn: deviation. Tolerance là cả <em>khoảng</em> được phép.",
+        "fb_no": "Gạch <em>difference from</em> (lệch so với). Tolerance là khoảng chấp nhận, còn từ này là độ lệch của một chi tiết."
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "millimeter",
+      "vi": "milimét"
+    },
+    {
+      "term": "inch",
+      "vi": "inch (2,54 cm)"
+    },
+    {
+      "term": "dimension",
+      "vi": "kích thước (dài, rộng, cao, đường kính…)"
+    },
+    {
+      "term": "precise",
+      "vi": "chính xác, tinh (đúng đến từng chi tiết nhỏ)"
+    },
+    {
+      "term": "vary",
+      "vi": "thay đổi, khác nhau"
+    },
+    {
+      "term": "overall",
+      "vi": "tổng thể, tính cả hai đầu"
+    },
+    {
+      "term": "span",
+      "vi": "nhịp, sải (khoảng giữa hai đầu mút)"
+    },
+    {
+      "term": "height / width / thickness",
+      "vi": "chiều cao / chiều rộng / độ dày"
+    },
+    {
+      "term": "tight tolerance",
+      "vi": "dung sai chặt (độ lệch cho phép rất nhỏ)"
+    },
+    {
+      "term": "loose tolerance",
+      "vi": "dung sai rộng (độ lệch cho phép lớn)"
+    },
+    {
+      "term": "plus or minus (±)",
+      "vi": "cộng hoặc trừ"
+    },
+    {
+      "term": "within",
+      "vi": "trong phạm vi, trong khoảng"
+    },
+    {
+      "term": "range",
+      "vi": "khoảng, phạm vi"
+    },
+    {
+      "term": "clearance",
+      "vi": "khe hở lắp ghép giữa hai chi tiết"
+    },
+    {
+      "term": "feeler gauge",
+      "vi": "thước lá đo khe hở",
+      "img": "feeler-gauge"
+    },
+    {
+      "term": "dial indicator",
+      "vi": "đồng hồ so",
+      "img": "dial-indicator"
+    },
+    {
+      "term": "tape measure",
+      "vi": "thước cuộn",
+      "img": "tape-measure"
+    },
+    {
+      "term": "spirit level",
+      "vi": "thước thuỷ (ni vô)",
+      "img": "spirit-level"
+    },
+    {
+      "term": "compass",
+      "vi": "compa (dụng cụ vẽ vòng tròn)",
+      "img": "compass"
+    },
+    {
+      "term": "angle square",
+      "vi": "thước êke (kiểm tra góc vuông)",
+      "img": "angle-square"
+    },
+    {
+      "term": "combination square",
+      "vi": "thước đa năng (đầu vuông kèm thước lá)",
+      "img": "combination-square"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · Imperial and metric",
+      "cau": [
+        [
+          "<b>Fasteners</b> and tools use <b>imperial</b> measurements or <b>metric</b>, and knowing the difference is important.",
+          "Chốt nối và dụng cụ dùng cỡ đo hệ imperial hoặc hệ mét, và biết sự khác nhau là điều quan trọng.",
+          {
+            "doan": [
+              {
+                "tu": "imperial",
+                "lua_chon": [
+                  "hệ mét",
+                  "hệ inch, pound (Anh–Mỹ)",
+                  "thuộc hoàng gia"
+                ],
+                "dap": 1,
+                "giai": "imperial đời thường là thuộc hoàng gia; trong đo lường là hệ inch, quart, pound."
+              },
+              {
+                "tu": "metric",
+                "lua_chon": [
+                  "hệ inch",
+                  "hệ đếm giờ",
+                  "hệ mét"
+                ],
+                "dap": 2,
+                "giai": "metric là hệ mét: mét, lít, kilôgam."
+              }
+            ],
+            "nghia": {
+              "Fasteners": "chốt nối (vít, bu lông…)",
+              "tools": "dụng cụ",
+              "measurements": "cỡ đo",
+              "difference": "sự khác nhau",
+              "important": "quan trọng"
+            }
+          }
+        ],
+        [
+          "It prevents you from <b>rounding off</b> a fastener, damaging tools, or causing injury.",
+          "Điều đó giúp bạn khỏi làm hỏng bu lông, hỏng dụng cụ hoặc gây thương tích.",
+          {
+            "doan": [
+              {
+                "tu": "rounding off",
+                "lua_chon": [
+                  "làm tròn một con số",
+                  "làm hỏng bu lông hoặc vít",
+                  "đo kích thước"
+                ],
+                "dap": 1,
+                "giai": "round off đời thường là làm tròn số; ở xưởng là làm mòn tròn đầu bu lông, vít nên cờ lê bị trượt."
+              }
+            ],
+            "nghia": {
+              "prevents … from": "ngăn … khỏi",
+              "damaging": "làm hỏng",
+              "causing": "gây ra",
+              "injury": "thương tích"
+            }
+          }
+        ],
+        [
+          "If you don't know an item's size, use a <b>micrometer</b> or other <b>caliper</b> to measure it.",
+          "Nếu bạn không biết kích thước của một chi tiết, hãy dùng panme hoặc thước cặp khác để đo.",
+          {
+            "doan": [
+              {
+                "tu": "micrometer",
+                "lua_chon": [
+                  "kính hiển vi",
+                  "thước dây",
+                  "panme"
+                ],
+                "dap": 2,
+                "giai": "micrometer là panme: dụng cụ đo khoảng cách rất nhỏ, chính xác tới 0,01 mm."
+              },
+              {
+                "tu": "caliper",
+                "lua_chon": [
+                  "thước cặp",
+                  "la bàn",
+                  "kìm"
+                ],
+                "dap": 0,
+                "giai": "caliper là thước cặp: hai hàm kẹp vào chi tiết rồi đọc kích thước."
+              }
+            ],
+            "nghia": {
+              "item": "chi tiết, món đồ",
+              "size": "kích thước",
+              "measure": "đo"
+            }
+          }
+        ],
+        [
+          "Check <b>centimeters</b> or millimeters for metric tools.",
+          "Hãy xem xentimét hoặc milimét trên dụng cụ hệ mét.",
+          {
+            "doan": [
+              {
+                "tu": "centimeters",
+                "lua_chon": [
+                  "inch",
+                  "xentimét",
+                  "cân Anh"
+                ],
+                "dap": 1,
+                "giai": "centimeter là xentimét, đơn vị chiều dài hệ mét (1 cm = 10 mm)."
+              }
+            ],
+            "nghia": {
+              "Check": "xem, kiểm tra",
+              "millimeters": "milimét",
+              "metric tools": "dụng cụ hệ mét"
+            }
+          }
+        ],
+        [
+          "Look at <b>inches</b> for imperial tools.",
+          "Hãy xem inch trên dụng cụ hệ imperial.",
+          {
+            "doan": [
+              {
+                "tu": "inches",
+                "lua_chon": [
+                  "xentimét",
+                  "mét",
+                  "inch"
+                ],
+                "dap": 2,
+                "giai": "inch là đơn vị chiều dài hệ imperial, 1 inch = 2,54 cm."
+              }
+            ],
+            "nghia": {
+              "Look at": "nhìn, xem",
+              "imperial tools": "dụng cụ hệ imperial"
+            }
+          }
+        ],
+        [
+          "<b>Volume</b> and <b>weight</b> are also very different in the two systems.",
+          "Thể tích và khối lượng cũng rất khác nhau giữa hai hệ.",
+          {
+            "doan": [
+              {
+                "tu": "Volume",
+                "lua_chon": [
+                  "âm lượng",
+                  "thể tích",
+                  "chiều dài"
+                ],
+                "dap": 1,
+                "giai": "volume đời thường là âm lượng (to nhỏ); trong đo lường là thể tích."
+              },
+              {
+                "tu": "weight",
+                "lua_chon": [
+                  "thể tích",
+                  "chiều dài",
+                  "khối lượng, cân nặng"
+                ],
+                "dap": 2,
+                "giai": "weight là khối lượng, cân nặng: pound hoặc kilôgam."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "different": "khác nhau",
+              "systems": "hệ đo"
+            }
+          }
+        ],
+        [
+          "Using <b>quarts</b> when a formula calls for <b>liters</b> is very dangerous.",
+          "Dùng quart khi công thức cần lít thì rất nguy hiểm.",
+          {
+            "doan": [
+              {
+                "tu": "quarts",
+                "lua_chon": [
+                  "đơn vị cân nặng imperial",
+                  "đơn vị thể tích imperial",
+                  "đơn vị chiều dài imperial"
+                ],
+                "dap": 1,
+                "giai": "quart là đơn vị thể tích chất lỏng của hệ imperial, gần 1 lít."
+              },
+              {
+                "tu": "liters",
+                "lua_chon": [
+                  "lít",
+                  "kilôgam",
+                  "mét"
+                ],
+                "dap": 0,
+                "giai": "liter là lít, đơn vị thể tích hệ mét."
+              }
+            ],
+            "nghia": {
+              "formula": "công thức",
+              "calls for": "đòi hỏi, cần",
+              "dangerous": "nguy hiểm"
+            }
+          }
+        ],
+        [
+          "A <b>cubic inch</b> is totally different from a cubic meter.",
+          "Một inch khối hoàn toàn khác với một mét khối.",
+          {
+            "doan": [
+              {
+                "tu": "cubic inch",
+                "lua_chon": [
+                  "inch khối (thể tích)",
+                  "inch vuông (diện tích)",
+                  "mét khối"
+                ],
+                "dap": 0,
+                "giai": "cubic là lập phương, nên cubic inch là inch khối, đơn vị thể tích hệ imperial."
+              }
+            ],
+            "nghia": {
+              "totally": "hoàn toàn",
+              "different from": "khác với",
+              "cubic meter": "mét khối"
+            }
+          }
+        ],
+        [
+          "For weights, a <b>pound</b> cannot substitute for a <b>kilogram</b>.",
+          "Về khối lượng, pound không thể thay cho kilôgam.",
+          {
+            "doan": [
+              {
+                "tu": "pound",
+                "lua_chon": [
+                  "tiền Anh",
+                  "đơn vị chiều dài",
+                  "cân Anh (đơn vị khối lượng)"
+                ],
+                "dap": 2,
+                "giai": "pound đời thường là đồng bảng Anh; trong đo lường là cân Anh, khoảng 0,45 kg."
+              },
+              {
+                "tu": "kilogram",
+                "lua_chon": [
+                  "kilôgam",
+                  "kilômét",
+                  "lít"
+                ],
+                "dap": 0,
+                "giai": "kilogram là kilôgam, đơn vị khối lượng hệ mét."
+              }
+            ],
+            "nghia": {
+              "substitute for": "thay thế cho",
+              "cannot": "không thể"
+            }
+          }
+        ],
+        [
+          "Always pay close attention to which system is <b>required</b>.",
+          "Luôn chú ý kỹ xem cần dùng hệ đo nào.",
+          {
+            "doan": [],
+            "nghia": {}
+          }
+        ],
+        [
+          "If you must use tools from the other system, refer to a table of <b>conversion</b>.",
+          "Nếu buộc phải dùng dụng cụ của hệ kia, hãy tra bảng quy đổi.",
+          {
+            "doan": [
+              {
+                "tu": "conversion",
+                "lua_chon": [
+                  "bảng giá",
+                  "sự đổi từ hệ này sang hệ khác",
+                  "sự chuyển nhà"
+                ],
+                "dap": 1,
+                "giai": "conversion là sự đổi (quy đổi); table of conversion là bảng quy đổi đơn vị."
+              }
+            ],
+            "nghia": {
+              "must": "buộc phải",
+              "the other system": "hệ còn lại",
+              "refer to": "tra cứu"
+            }
+          }
+        ]
+      ],
+      "tu_khoa": {
+        "required": "bắt buộc, cần dùng"
+      },
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Check centimeters or millimeters for ______ tools.\"</em>",
+        "lua_chon": [
+          "metric",
+          "imperial",
+          "wooden"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 4 của bài: <em>Check centimeters or millimeters for metric tools</em>. Xentimét, milimét là hệ mét.",
+        "fb_no": "Tìm câu có <em>centimeters</em>. Từ nào đứng ngay trước <em>tools</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"A pound can substitute for a kilogram.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết: <em>a pound cannot substitute for a kilogram</em>. Hai đơn vị thuộc hai hệ khác nhau.",
+        "fb_no": "Tìm câu có <em>pound</em> và <em>kilogram</em>. Nó dùng <em>can</em> hay <em>cannot</em>?"
+      }
+    },
+    {
+      "ten": "Article 3 · Dimensional accuracy (1)",
+      "cau": [
+        [
+          "It is impossible to produce components with dimensions that are absolutely <b>precise</b>,",
+          "Không thể sản xuất các chi tiết có kích thước chính xác tuyệt đối,",
+          {
+            "doan": [
+              {
+                "tu": "precise",
+                "lua_chon": [
+                  "chính xác, đúng từng chi tiết nhỏ",
+                  "lớn",
+                  "nặng"
+                ],
+                "dap": 0,
+                "giai": "precise là chính xác, đúng đến từng chi tiết nhỏ."
+              }
+            ],
+            "nghia": {
+              "impossible": "không thể",
+              "produce": "sản xuất",
+              "components": "chi tiết",
+              "absolutely": "tuyệt đối"
+            }
+          }
+        ],
+        [
+          "with sizes exactly the same as those specified in a design.",
+          "với kích thước giống hệt kích thước ghi trong bản thiết kế.",
+          {
+            "doan": [],
+            "nghia": {}
+          }
+        ],
+        [
+          "This is because all production processes are <b>imprecise</b> to a certain extent.",
+          "Đó là vì mọi quá trình sản xuất đều có độ chính xác chưa hoàn hảo ở một mức nào đó.",
+          {
+            "doan": [
+              {
+                "tu": "imprecise",
+                "lua_chon": [
+                  "không chính xác",
+                  "rất nhanh",
+                  "rất an toàn"
+                ],
+                "dap": 0,
+                "giai": "im- là phủ định: imprecise là không chính xác (trái nghĩa với precise)."
+              }
+            ],
+            "nghia": {
+              "production processes": "quá trình sản xuất",
+              "to a certain extent": "ở một mức độ nào đó"
+            }
+          }
+        ],
+        [
+          "Therefore, the sizes of several components produced from the same design will <b>vary</b> (differ).",
+          "Vì vậy, kích thước của nhiều chi tiết làm từ cùng một thiết kế sẽ khác nhau.",
+          {
+            "doan": [
+              {
+                "tu": "vary",
+                "lua_chon": [
+                  "khác nhau, thay đổi",
+                  "giống nhau",
+                  "bị gãy"
+                ],
+                "dap": 0,
+                "giai": "vary là khác nhau, thay đổi; trong ngoặc có differ cùng nghĩa."
+              }
+            ],
+            "nghia": {
+              "Therefore": "vì vậy",
+              "several": "nhiều",
+              "produced from": "được làm từ",
+              "same design": "cùng thiết kế"
+            }
+          }
+        ],
+        [
+          "Although the <b>variation</b> may only be a few hundredths of a millimeter, sizes will not be 100% <b>accurate</b> (exact) compared with the design.",
+          "Dù sự khác nhau có thể chỉ vài phần trăm milimét, kích thước vẫn không chính xác 100% so với thiết kế.",
+          {
+            "doan": [
+              {
+                "tu": "variation",
+                "lua_chon": [
+                  "sự khác nhau về kích thước",
+                  "sự giống nhau",
+                  "tốc độ"
+                ],
+                "dap": 0,
+                "giai": "variation là sự khác nhau giữa các chi tiết làm từ cùng một thiết kế (danh từ của vary)."
+              },
+              {
+                "tu": "accurate",
+                "lua_chon": [
+                  "to",
+                  "chính xác",
+                  "nhẹ"
+                ],
+                "dap": 1,
+                "giai": "accurate là chính xác, đúng 100%; trong ngoặc có exact (đúng, chính xác)."
+              }
+            ],
+            "nghia": {
+              "Although": "mặc dù",
+              "a few hundredths": "vài phần trăm",
+              "compared with": "so với"
+            }
+          }
+        ],
+        [
+          "Because engineers know that accuracy cannot be perfect, in design they often specify <b>tolerances</b> – that is, acceptable <b>variations</b> in precision.",
+          "Vì kỹ sư biết độ chính xác không thể hoàn hảo, khi thiết kế họ thường quy định dung sai, tức là những khác biệt chấp nhận được về độ chính xác.",
+          {
+            "doan": [
+              {
+                "tu": "tolerances",
+                "lua_chon": [
+                  "dung sai",
+                  "kích thước lớn nhất",
+                  "màu sơn"
+                ],
+                "dap": 0,
+                "giai": "tolerance là dung sai: khoảng kích thước chấp nhận được. Đời thường còn là sự chịu đựng, khoan dung."
+              },
+              {
+                "tu": "variations",
+                "lua_chon": [
+                  "khác biệt",
+                  "dụng cụ",
+                  "lỗ khoan"
+                ],
+                "dap": 0,
+                "giai": "variation là sự khác biệt; acceptable variations là những khác biệt chấp nhận được."
+              }
+            ],
+            "nghia": {
+              "engineers": "kỹ sư",
+              "accuracy": "độ chính xác",
+              "specify": "quy định",
+              "acceptable": "chấp nhận được"
+            }
+          }
+        ],
+        [
+          "Instead of giving one precise size, a <b>tolerance</b> specifies a <b>range</b> of acceptable size – an allowed amount of variation.",
+          "Thay vì cho một kích thước chính xác, dung sai quy định một khoảng kích thước chấp nhận được, tức một mức khác biệt được cho phép.",
+          {
+            "doan": [
+              {
+                "tu": "tolerance",
+                "lua_chon": [
+                  "độ nặng",
+                  "khoảng kích thước chấp nhận được",
+                  "kích thước nhỏ nhất"
+                ],
+                "dap": 1,
+                "giai": "tolerance là dung sai: cho phép kích thước nằm trong một khoảng, không bắt buộc đúng một số."
+              },
+              {
+                "tu": "range",
+                "lua_chon": [
+                  "một khoảng, phạm vi",
+                  "một con số",
+                  "một chiếc nhẫn"
+                ],
+                "dap": 0,
+                "giai": "range là khoảng, phạm vi từ nhỏ nhất đến lớn nhất."
+              }
+            ],
+            "nghia": {
+              "Instead of": "thay vì",
+              "allowed amount": "mức được cho phép"
+            }
+          }
+        ],
+        [
+          "This is often given as a <b>deviation</b> (difference) from a precise size.",
+          "Mức đó thường được cho dưới dạng độ lệch so với một kích thước chính xác.",
+          {
+            "doan": [
+              {
+                "tu": "deviation",
+                "lua_chon": [
+                  "độ lệch, sai lệch",
+                  "đường kính",
+                  "cân nặng"
+                ],
+                "dap": 0,
+                "giai": "deviation là độ lệch so với kích thước chuẩn; trong ngoặc có difference (sự khác biệt)."
+              }
+            ],
+            "nghia": {
+              "often": "thường",
+              "given as": "được cho dưới dạng"
+            }
+          }
+        ]
+      ],
+      "tu_khoa": {},
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"A tolerance specifies a ______ of acceptable size.\"</em>",
+        "lua_chon": [
+          "range",
+          "pound",
+          "copy"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 7 của bài: <em>a tolerance specifies a range of acceptable size</em>. Tìm từ khoá <em>tolerance specifies</em> rồi chép từ đứng sau <em>a</em>.",
+        "fb_no": "Tìm câu có <em>Instead of giving one precise size</em>. Từ nào đứng giữa <em>a</em> và <em>of acceptable size</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Engineers specify tolerances because accuracy is always perfect.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết: <em>Because engineers know that accuracy cannot be perfect</em>. Chính vì không hoàn hảo nên mới cần dung sai.",
+        "fb_no": "Đọc lại câu có <em>Because engineers know</em>: accuracy <em>can</em> hay <em>cannot</em> be perfect?"
+      }
+    },
+    {
+      "ten": "Article 3 · Dimensional accuracy (2): shaft and tolerance",
+      "cau": [
+        [
+          "The drawing below shows a shaft with a specified diameter of 88mm, <b>plus or minus</b> (±) 0.05 mm.",
+          "Bản vẽ bên dưới cho thấy một trục có đường kính quy định 88 mm, cộng hoặc trừ 0,05 mm.",
+          {
+            "doan": [
+              {
+                "tu": "plus or minus",
+                "lua_chon": [
+                  "cộng hoặc trừ",
+                  "nhân hoặc chia",
+                  "nhanh hoặc chậm"
+                ],
+                "dap": 0,
+                "giai": "plus là cộng, minus là trừ; ký hiệu ± đọc là plus or minus."
+              }
+            ],
+            "nghia": {
+              "drawing": "bản vẽ",
+              "shaft": "trục",
+              "specified": "được quy định",
+              "diameter": "đường kính"
+            }
+          }
+        ],
+        [
+          "This means the diameter may <b>deviate</b> 0.05mm either side of this size.",
+          "Điều này có nghĩa đường kính có thể lệch 0,05 mm về mỗi phía so với kích thước này.",
+          {
+            "doan": [
+              {
+                "tu": "deviate",
+                "lua_chon": [
+                  "lệch khỏi",
+                  "tăng gấp đôi",
+                  "sơn lại"
+                ],
+                "dap": 0,
+                "giai": "deviate là lệch khỏi; deviation là danh từ tương ứng."
+              }
+            ],
+            "nghia": {
+              "means": "có nghĩa là",
+              "either side": "mỗi phía"
+            }
+          }
+        ],
+        [
+          "Therefore, diameters of 87.95mm and 88.05mm, which are slightly <b>inaccurate</b>, are still <b>permissible</b> (allowed), as they are within tolerance.",
+          "Vì vậy, đường kính 87,95 mm và 88,05 mm, tuy hơi không chính xác, vẫn được phép vì nằm trong dung sai.",
+          {
+            "doan": [
+              {
+                "tu": "inaccurate",
+                "lua_chon": [
+                  "không chính xác",
+                  "rất chính xác",
+                  "rất nặng"
+                ],
+                "dap": 0,
+                "giai": "in- là phủ định: inaccurate là không chính xác (trái nghĩa với accurate)."
+              },
+              {
+                "tu": "permissible",
+                "lua_chon": [
+                  "bị cấm",
+                  "được phép",
+                  "rất to"
+                ],
+                "dap": 1,
+                "giai": "permissible là được phép, chấp nhận được; trong ngoặc có allowed."
+              }
+            ],
+            "nghia": {
+              "slightly": "hơi, một chút",
+              "within tolerance": "trong dung sai"
+            }
+          }
+        ],
+        [
+          "However, diameters of 87.94mm or 88.06mm are not <b>permissible</b> – they are <b>outside</b> tolerance.",
+          "Tuy nhiên, đường kính 87,94 mm hoặc 88,06 mm không được phép, vì nằm ngoài dung sai.",
+          {
+            "doan": [
+              {
+                "tu": "outside",
+                "lua_chon": [
+                  "bên trong",
+                  "bên ngoài, vượt ra ngoài",
+                  "bên dưới"
+                ],
+                "dap": 1,
+                "giai": "outside tolerance là nằm ngoài dung sai, vượt quá mức cho phép."
+              }
+            ],
+            "nghia": {
+              "However": "tuy nhiên",
+              "not permissible": "không được phép"
+            }
+          }
+        ],
+        [
+          "When the permissible <b>deviation</b> in the size is very small, we say it is a <b>tight</b> tolerance (or a close tolerance).",
+          "Khi độ lệch cho phép về kích thước rất nhỏ, ta gọi đó là dung sai chặt (hoặc dung sai sát).",
+          {
+            "doan": [
+              {
+                "tu": "tight",
+                "lua_chon": [
+                  "rộng",
+                  "chặt, hẹp (rất nhỏ)",
+                  "dài"
+                ],
+                "dap": 1,
+                "giai": "tight đời thường là chật, chặt; tight tolerance là dung sai chặt, độ lệch cho phép rất nhỏ."
+              }
+            ],
+            "nghia": {
+              "permissible": "được phép",
+              "very small": "rất nhỏ",
+              "close": "sát"
+            }
+          }
+        ],
+        [
+          "A large permissible deviation is a <b>loose</b> tolerance.",
+          "Độ lệch cho phép lớn gọi là dung sai rộng.",
+          {
+            "doan": [
+              {
+                "tu": "loose",
+                "lua_chon": [
+                  "lỏng, rộng rãi",
+                  "hẹp",
+                  "nặng"
+                ],
+                "dap": 0,
+                "giai": "loose là lỏng, rộng; loose tolerance là dung sai rộng, độ lệch cho phép lớn."
+              }
+            ],
+            "nghia": {
+              "large": "lớn"
+            }
+          }
+        ],
+        [
+          "Machining a metal component to a tolerance of ±0.1mm is relatively ways to do, so this tolerance is <b>loose</b>.",
+          "Gia công một chi tiết kim loại với dung sai ±0,1 mm là tương đối dễ làm (giáo trình gõ \"ways to do\", ý là \"easy to do\"), nên dung sai này là rộng.",
+          {
+            "doan": [
+              {
+                "tu": "loose",
+                "lua_chon": [
+                  "chặt",
+                  "lỏng, rộng rãi",
+                  "dài"
+                ],
+                "dap": 1,
+                "giai": "ở đây ±0,1 mm dễ đạt nên là loose tolerance (dung sai rộng)."
+              }
+            ],
+            "nghia": {
+              "Machining": "gia công cắt gọt",
+              "metal component": "chi tiết kim loại",
+              "relatively": "tương đối",
+              "ways to do": "(sách gõ thiếu) ý là: dễ làm"
+            }
+          }
+        ],
+        [
+          "But a tolerance of just ±0.01mm is a <b>tight</b> tolerance in metal working.",
+          "Nhưng dung sai chỉ ±0,01 mm là dung sai chặt khi gia công kim loại.",
+          {
+            "doan": [
+              {
+                "tu": "tight",
+                "lua_chon": [
+                  "rộng",
+                  "dài",
+                  "chặt, hẹp"
+                ],
+                "dap": 2,
+                "giai": "±0,01 mm khó đạt hơn nhiều nên là tight tolerance (dung sai chặt)."
+              }
+            ],
+            "nghia": {
+              "just": "chỉ",
+              "metal working": "gia công kim loại"
+            }
+          }
+        ]
+      ],
+      "tu_khoa": {},
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"A large permissible deviation is a ______ tolerance.\"</em>",
+        "lua_chon": [
+          "tight",
+          "round",
+          "loose"
+        ],
+        "dap": 2,
+        "fb_ok": "Câu 6 của bài: <em>A large permissible deviation is a loose tolerance</em>. Large (lớn) đi với loose (rộng); very small (rất nhỏ) mới đi với tight (chặt).",
+        "fb_no": "Tìm câu có <em>A large permissible deviation</em>. Từ nào đứng ngay trước <em>tolerance</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"A diameter of 88.06 mm is within tolerance for a shaft of 88 mm ± 0.05 mm.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết: <em>diameters of 87.94mm or 88.06mm are not permissible – they are outside tolerance</em>. Giới hạn trên là 88,05 mm.",
+        "fb_no": "Tính giới hạn: 88 + 0,05 = ? Rồi so 88,06 với giới hạn đó."
+      }
+    }
+  ],
+  "bang": {
+    "ten": "Đơn vị nào của hệ nào? (Part 1 hay hỏi)",
+    "cot": [
+      "Đo gì",
+      "Metric",
+      "Imperial"
+    ],
+    "hang": [
+      [
+        "length (dài)",
+        "centimeter<br>millimeter",
+        "inch"
+      ],
+      [
+        "volume (thể tích)",
+        "liter",
+        "quart<br>cubic inch"
+      ],
+      [
+        "weight (khối lượng)",
+        "kilogram",
+        "pound"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · prevent … from V-ing (ngăn … khỏi việc …)",
+      "vd": [
+        [
+          "It prevents you from rounding off a fastener.",
+          "Điều đó giúp bạn khỏi làm hỏng bu lông, vít."
+        ],
+        [
+          "A table of conversion prevents you from making mistakes.",
+          "Bảng quy đổi giúp bạn khỏi mắc lỗi."
+        ],
+        [
+          "A washer prevents the nut from damaging the surface.",
+          "Vòng đệm giúp đai ốc không làm hỏng bề mặt."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + prevents + Y + from + V-ing</strong>.",
+        "Dịch: \"X giúp Y không …\" hoặc \"X ngăn Y …\".",
+        "Sau <em>from</em> luôn là V-ing: rounding off, damaging, making."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · If …, use X to V (nếu …, hãy dùng X để …)",
+      "vd": [
+        [
+          "If you don't know an item's size, use a micrometer to measure it.",
+          "Nếu bạn không biết kích thước của chi tiết, hãy dùng panme để đo."
+        ],
+        [
+          "If the hole is deep, use a depth micrometer to measure it.",
+          "Nếu lỗ sâu, hãy dùng panme đo sâu để đo."
+        ],
+        [
+          "If you must use tools from the other system, refer to a table of conversion.",
+          "Nếu buộc phải dùng dụng cụ của hệ kia, hãy tra bảng quy đổi."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>If + mệnh đề, + V (mệnh lệnh) + X + to + V</strong>.",
+        "Vế sau không có chủ ngữ: bắt đầu thẳng bằng <em>use</em>, <em>check</em>, <em>refer to</em>.",
+        "<strong>use + dụng cụ + to + V</strong> → dịch \"dùng … để …\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "measuring_tools.svg",
+    "tieu_de": "Dụng cụ đo: gọi tên 7 dụng cụ",
+    "mo_ta": "Part 1 hay cho ảnh dụng cụ đo và hỏi tên. Nhìn hình dạng, tự gọi tên 7 dụng cụ trước, rồi mở đáp án.",
+    "chu_thich": "Bảy dụng cụ đo và vẽ, vẽ đơn giản và đánh số. Chỉ nhận dạng hình dạng.",
+    "bo_phan": [
+      [
+        "outside micrometer",
+        "panme đo ngoài: khung chữ C, ống vặn tròn"
+      ],
+      [
+        "inside micrometer",
+        "panme đo trong: hai hàm nhỏ ở một đầu"
+      ],
+      [
+        "depth micrometer",
+        "panme đo sâu: đế phẳng và thanh que"
+      ],
+      [
+        "vernier caliper",
+        "thước cặp: hai hàm, thân thước, đồng hồ"
+      ],
+      [
+        "compass",
+        "compa vẽ: một chân kim, một chân bút chì"
+      ],
+      [
+        "angle square",
+        "thước êke tam giác: góc vuông và hai góc 45°"
+      ],
+      [
+        "combination square",
+        "thước đa năng: đầu vuông và thước lá"
+      ]
+    ],
+    "hoi": "Dụng cụ số 1 (khung chữ C, có ống vặn tròn ở một bên) tên là gì?",
+    "lua_chon": [
+      "inside micrometer",
+      "depth micrometer",
+      "outside micrometer",
+      "vernier caliper"
+    ],
+    "dap": 2,
+    "fb_ok": "<em>outside micrometer</em> = panme đo ngoài: kẹp bên ngoài chi tiết giữa đe và đầu đo, khung có hình chữ C. Panme đo trong (số 2) thì nhỏ gọn để đưa vào lỗ.",
+    "fb_no": "Chữ <em>outside</em> là đo bên ngoài chi tiết, nên khung phải ôm lấy chi tiết từ ngoài. Hình nào ôm được, có dạng chữ C?"
+  },
+  "sop": {
+    "tieu_de": "Kích thước cầu Millau: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn tả kích thước một cây cầu (viết lại từ bài Millau Viaduct):",
+    "hop_tu": [
+      "thickness",
+      "overall",
+      "width",
+      "height",
+      "span"
+    ],
+    "doan": "The Millau Viaduct is a big bridge in France. Its (1) ______ length is 2,460 m. The maximum (2) ______ between two supports is 342 m. The tallest support has a (3) ______ of 245 m, measured from the ground to the deck. The deck has a (4) ______ of 32 m and a (5) ______ of 4.2 m.",
+    "dap": [
+      "overall",
+      "span",
+      "height",
+      "width",
+      "thickness"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (3): <em>\"The tallest support has a (3) ______ of 245 m, measured from the ground to the deck.\"</em>",
+      "lua_chon": [
+        "width",
+        "span",
+        "height",
+        "thickness"
+      ],
+      "dap": 2,
+      "fb_ok": "<em>height</em> = chiều cao, đo từ mặt đất lên mặt cầu. Dấu hiệu: <em>tallest</em> (cao nhất) và <em>from the ground to the deck</em>.",
+      "fb_no": "Gạch từ <em>tallest</em> và cụm <em>from the ground to the deck</em>: đo theo phương thẳng đứng thì gọi là gì?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Không biết kích thước một chi tiết thì dùng dụng cụ nào để đo?",
+      "A micrometer or other caliper."
+    ],
+    [
+      "Quart và liter: cái nào thuộc hệ imperial, cái nào thuộc hệ mét?",
+      "Quart: imperial. Liter: metric."
+    ],
+    [
+      "<em>Round off</em> một bu lông nghĩa là gì?",
+      "Làm hỏng, làm mòn tròn bu lông hoặc vít."
+    ],
+    [
+      "Pound và kilogram: thuộc hệ nào? Có thay nhau được không?",
+      "Pound: imperial. Kilogram: metric. Không thay nhau được."
+    ],
+    [
+      "<em>Tolerance</em> khác <em>deviation</em> chỗ nào?",
+      "Tolerance: cả khoảng kích thước chấp nhận được. Deviation: độ lệch của một chi tiết so với kích thước chuẩn."
+    ],
+    [
+      "Trục 88 mm ± 0,05: 87,96 mm có được phép không? 88,06 mm thì sao?",
+      "87,96: permissible (within tolerance). 88,06: not permissible (outside tolerance)."
+    ],
+    [
+      "Dịch: <em>Always pay close attention to which system is required.</em>",
+      "Luôn chú ý kỹ xem cần dùng hệ đo nào."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Độ lệch cho phép rất nhỏ gọi là dung sai chặt.</em>",
+      "A very small permissible deviation is a tight tolerance."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "A metric measure of volume.",
+        "opts": [
+          "centimeter",
+          "pound",
+          "liter",
+          "kilogram"
+        ],
+        "ans": 2,
+        "why": "<em>metric</em> + <em>volume</em> → liter."
+      },
+      {
+        "q": "An imperial measure of weight.",
+        "opts": [
+          "liter",
+          "pound",
+          "centimeter",
+          "kilogram"
+        ],
+        "ans": 1,
+        "why": "<em>imperial</em> + <em>weight</em> → pound."
+      },
+      {
+        "q": "To damage a screw or bolt.",
+        "opts": [
+          "round off",
+          "measure",
+          "convert",
+          "tighten"
+        ],
+        "ans": 0,
+        "why": "<em>damage</em> một bu lông hoặc vít → round off."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "Compass",
+          "Inside micrometer",
+          "Outside micrometer",
+          "Angle square"
+        ],
+        "ans": 2,
+        "why": "Khung chữ C kẹp ngoài chi tiết → outside micrometer.",
+        "img": "outside-micrometer"
+      },
+      {
+        "q": "A tool that measures small distances.",
+        "opts": [
+          "wrench",
+          "hacksaw",
+          "micrometer",
+          "spanner"
+        ],
+        "ans": 2,
+        "why": "<em>measures small distances</em> → micrometer."
+      },
+      {
+        "q": "The system that uses inches and quarts.",
+        "opts": [
+          "metric",
+          "imperial",
+          "conversion",
+          "tolerance"
+        ],
+        "ans": 1,
+        "why": "<em>inches and quarts</em> → imperial."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>metric</em>, <em>imperial</em>, <em>volume</em>, <em>weight</em>, <em>damage</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn hình dạng (khung chữ C = outside micrometer, hai hàm kẹp + đồng hồ = caliper, tam giác vuông = angle square).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "It is impossible to produce components with dimensions that are absolutely precise, with sizes exactly the same as those specified in a design. This is because all production processes are imprecise to a certain extent. Therefore, the sizes of several components produced from the same design will vary (differ). Although the variation may only be a few hundredths of a millimeter, sizes will not be 100% accurate (exact) compared with the design. Because engineers know that accuracy cannot be perfect, in design they often specify tolerances – that is, acceptable variations in precision. Instead of giving one precise size, a tolerance specifies a range of acceptable size – an allowed amount of variation. This is often given as a deviation (difference) from a precise size.",
+      "dien": [
+        {
+          "q": "Components with dimensions that are absolutely ______ are impossible to produce.",
+          "ans": "precise",
+          "opts": [
+            "precise",
+            "cheap",
+            "large"
+          ],
+          "why": "Câu 1: <em>dimensions that are absolutely precise</em>."
+        },
+        {
+          "q": "The sizes of components made from the same design will ______.",
+          "ans": "vary",
+          "opts": [
+            "match",
+            "vary",
+            "break"
+          ],
+          "why": "Câu 3: <em>will vary (differ)</em>. Differ là cùng nghĩa với vary."
+        },
+        {
+          "q": "Engineers specify ______ because accuracy cannot be perfect.",
+          "ans": "tolerances",
+          "opts": [
+            "designs",
+            "tolerances",
+            "shafts"
+          ],
+          "why": "Câu 5: <em>in design they often specify tolerances</em>."
+        },
+        {
+          "q": "A tolerance specifies a ______ of acceptable size.",
+          "ans": "range",
+          "opts": [
+            "range",
+            "pound",
+            "copy"
+          ],
+          "why": "Câu 6: <em>a tolerance specifies a range of acceptable size</em>."
+        }
+      ],
+      "ds": [
+        {
+          "q": "All production processes are imprecise to a certain extent.",
+          "ans": true,
+          "why": "Câu 2: <em>all production processes are imprecise to a certain extent</em>."
+        },
+        {
+          "q": "Components made from the same design always have exactly the same size.",
+          "ans": false,
+          "why": "Câu 3: sizes <em>will vary</em>. Câu 4: <em>will not be 100% accurate</em>."
+        },
+        {
+          "q": "A tolerance is an allowed amount of variation.",
+          "ans": true,
+          "why": "Câu 6: <em>an allowed amount of variation</em>."
+        },
+        {
+          "q": "Engineers specify tolerances because accuracy is always perfect.",
+          "ans": false,
+          "why": "Câu 5: <em>accuracy cannot be perfect</em>. Chính vì không hoàn hảo nên cần dung sai."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: can ↔ cannot, precise ↔ imprecise, always ↔ often, same ↔ different."
+    ],
+    "part3": {
+      "hop_tu": [
+        "variation",
+        "precise",
+        "tolerances",
+        "within",
+        "clearances"
+      ],
+      "doan": "No two engines are exactly identical. There is always a slight (1) ______ in the size of engine parts, because parts are made not to perfectly (2) ______ dimensions, but to specified (3) ______. The size of every part stays (4) ______ these limits, so the process is legal. A carefully built engine has almost perfect (5) ______ between moving parts.",
+      "dap": [
+        "variation",
+        "precise",
+        "tolerances",
+        "within",
+        "clearances"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng sau <em>a slight</em> và trước <em>in the size</em> → danh từ chỉ \"sự khác nhau\".",
+        "Chỗ (2) đứng trước <em>dimensions</em> → tính từ chỉ \"chính xác\".",
+        "Chỗ (4) đứng trước <em>these limits</em> → giới từ \"trong\".",
+        "Chỗ (5) có <em>almost perfect … between moving parts</em> → khe hở giữa các chi tiết chuyển động.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "It is impossible to produce components with dimensions that are absolutely precise. This is because all production processes are imprecise to a certain extent.",
+      "vi": "Không thể sản xuất các chi tiết có kích thước chính xác tuyệt đối. Đó là vì mọi quá trình sản xuất đều có độ chính xác chưa hoàn hảo ở một mức nào đó.",
+      "chien_thuat": [
+        "Cắt câu tại dấu chấm, dịch từng câu.",
+        "Giữ nguyên thuật ngữ đã học: chi tiết (components), kích thước (dimensions), quá trình sản xuất.",
+        "<em>It is impossible to V</em> → \"không thể …\".",
+        "<em>to a certain extent</em> → \"ở một mức độ nào đó\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Nếu bạn không biết kích thước của chi tiết, hãy dùng thước cặp để đo.",
+      "en": "If you don't know the size of the part, use a caliper to measure it.",
+      "chien_thuat": [
+        "Dùng mẫu 2: <strong>If …, use X to V</strong>.",
+        "Vế điều kiện: <em>you don't know the size</em>. Vế mệnh lệnh: <em>use a caliper to measure it</em>.",
+        "Viết <em>Use a caliper to measure the part.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "A metric measure of length or distance.",
+        "opts": [
+          "liter",
+          "pound",
+          "centimeter",
+          "quart"
+        ],
+        "ans": 2,
+        "why": "<em>metric</em> + <em>length</em> → centimeter."
+      },
+      {
+        "q": "An imperial measure of volume.",
+        "opts": [
+          "cubic inch",
+          "centimeter",
+          "kilogram",
+          "conversion"
+        ],
+        "ans": 0,
+        "why": "<em>imperial</em> + <em>volume</em> → cubic inch."
+      },
+      {
+        "q": "An imperial unit of liquid volume.",
+        "opts": [
+          "pound",
+          "quart",
+          "liter",
+          "inch"
+        ],
+        "ans": 1,
+        "why": "<em>imperial</em> + <em>liquid volume</em> → quart."
+      },
+      {
+        "q": "The system based on the meter.",
+        "opts": [
+          "imperial",
+          "tolerance",
+          "metric",
+          "conversion"
+        ],
+        "ans": 2,
+        "why": "<em>based on the meter</em> → metric."
+      },
+      {
+        "q": "Changing from one system into another.",
+        "opts": [
+          "deviation",
+          "conversion",
+          "variation",
+          "tolerance"
+        ],
+        "ans": 1,
+        "why": "<em>changing … into another</em> → conversion."
+      },
+      {
+        "q": "A metric measure of weight.",
+        "opts": [
+          "pound",
+          "liter",
+          "centimeter",
+          "kilogram"
+        ],
+        "ans": 3,
+        "why": "<em>metric</em> + <em>weight</em> → kilogram. Pound cũng là khối lượng nhưng thuộc hệ imperial."
+      },
+      {
+        "q": "A tool with a sliding jaw for measuring the size of an item.",
+        "opts": [
+          "vernier caliper",
+          "compass",
+          "angle square",
+          "hacksaw"
+        ],
+        "ans": 0,
+        "why": "<em>sliding jaw</em> (hàm trượt) → vernier caliper."
+      },
+      {
+        "q": "A micrometer that measures the inner width of a hole.",
+        "opts": [
+          "outside micrometer",
+          "depth micrometer",
+          "inside micrometer",
+          "caliper"
+        ],
+        "ans": 2,
+        "why": "<em>inner</em> (bên trong) → inside micrometer."
+      },
+      {
+        "q": "A micrometer that measures how deep a hole is.",
+        "opts": [
+          "depth micrometer",
+          "outside micrometer",
+          "inside micrometer",
+          "compass"
+        ],
+        "ans": 0,
+        "why": "<em>how deep</em> → depth micrometer."
+      },
+      {
+        "q": "A range of acceptable size.",
+        "opts": [
+          "deviation",
+          "accurate",
+          "variation",
+          "tolerance"
+        ],
+        "ans": 3,
+        "why": "<em>range of acceptable size</em> → tolerance."
+      },
+      {
+        "q": "A difference from a precise size.",
+        "opts": [
+          "permissible",
+          "deviation",
+          "conversion",
+          "quart"
+        ],
+        "ans": 1,
+        "why": "<em>difference from a precise size</em> → deviation."
+      },
+      {
+        "q": "Allowed.",
+        "opts": [
+          "accurate",
+          "precise",
+          "permissible",
+          "imprecise"
+        ],
+        "ans": 2,
+        "why": "<em>allowed</em> → permissible (trong bài: permissible (allowed))."
+      },
+      {
+        "q": "Exactly correct.",
+        "opts": [
+          "accurate",
+          "permissible",
+          "loose",
+          "tight"
+        ],
+        "ans": 0,
+        "why": "<em>exactly correct</em> → accurate (trong bài: accurate (exact))."
+      },
+      {
+        "q": "A difference between parts made from the same design.",
+        "opts": [
+          "tolerance",
+          "variation",
+          "conversion",
+          "kilogram"
+        ],
+        "ans": 1,
+        "why": "<em>difference between parts</em> → variation."
+      },
+      {
+        "q": "A tool shaped like a C that measures the outer width of a small part.",
+        "opts": [
+          "compass",
+          "angle square",
+          "depth micrometer",
+          "outside micrometer"
+        ],
+        "ans": 3,
+        "why": "Khung chữ C, đo bên ngoài → outside micrometer."
+      },
+      {
+        "q": "A tool with a needle leg and a pencil leg that is used to draw circles.",
+        "opts": [
+          "caliper",
+          "compass",
+          "micrometer",
+          "angle square"
+        ],
+        "ans": 1,
+        "why": "<em>two legs … draw circles</em> → compass (compa)."
+      },
+      {
+        "q": "A triangular tool used to check a right angle.",
+        "opts": [
+          "compass",
+          "caliper",
+          "angle square",
+          "micrometer"
+        ],
+        "ans": 2,
+        "why": "triangular + right angle → angle square."
+      },
+      {
+        "q": "If you don't know an item's size, use a micrometer or other ______ to measure it.",
+        "opts": [
+          "hammer",
+          "pound",
+          "caliper",
+          "liter"
+        ],
+        "ans": 2,
+        "why": "Article 1, câu 3: <em>a micrometer or other caliper</em>."
+      },
+      {
+        "q": "Using ______ when a formula calls for liters is very dangerous.",
+        "opts": [
+          "inches",
+          "quarts",
+          "pounds",
+          "kilograms"
+        ],
+        "ans": 1,
+        "why": "Article 1, câu 7: <em>Using quarts when a formula calls for liters</em>. Quart và liter đều là thể tích."
+      },
+      {
+        "q": "A diameter of 87.94 mm is not permissible: it is outside ______.",
+        "opts": [
+          "tolerance",
+          "conversion",
+          "a table",
+          "the range of liters"
+        ],
+        "ans": 0,
+        "why": "Article 3, câu 11: <em>they are outside tolerance</em>."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (Imperial and metric). Mark each statement True or False.",
+        "st": [
+          [
+            "Using the wrong measurement system can damage tools.",
+            true
+          ],
+          [
+            "On imperial tools, you should look at centimeters.",
+            false
+          ],
+          [
+            "A pound can substitute for a kilogram.",
+            false
+          ],
+          [
+            "A table of conversion helps when you must use tools from the other system.",
+            true
+          ]
+        ],
+        "why": "Hệ sai làm hỏng dụng cụ (đúng); dụng cụ imperial xem inch, không phải centimeter; pound không thay kilogram; bảng quy đổi giúp khi dùng hệ kia."
+      },
+      {
+        "q": "Read Article 3, part 1 (Dimensional accuracy). Mark each statement True or False.",
+        "st": [
+          [
+            "All production processes are perfectly precise.",
+            false
+          ],
+          [
+            "Components made from the same design will vary in size.",
+            true
+          ],
+          [
+            "A tolerance specifies a range of acceptable size.",
+            true
+          ],
+          [
+            "Deviation means the difference from a precise size.",
+            true
+          ]
+        ],
+        "why": "Quy trình sản xuất đều imprecise; kích thước sẽ vary; tolerance là một khoảng; deviation là độ lệch so với kích thước chuẩn."
+      },
+      {
+        "q": "Read Article 3, part 2 (Dimensional accuracy). A shaft has a diameter of 88 mm ± 0.05 mm. Mark each statement True or False.",
+        "st": [
+          [
+            "A diameter of 87.95 mm is permissible.",
+            true
+          ],
+          [
+            "A diameter of 88.06 mm is within tolerance.",
+            false
+          ],
+          [
+            "A very small permissible deviation is a tight tolerance.",
+            true
+          ],
+          [
+            "A tolerance of ±0.1 mm in metal machining is a tight tolerance.",
+            false
+          ]
+        ],
+        "why": "87,95 nằm trong 87,95 đến 88,05 (được phép); 88,06 nằm ngoài; độ lệch rất nhỏ là tight; ±0,1 mm là loose, ±0,01 mm mới là tight."
+      }
+    ]
+  }
+}

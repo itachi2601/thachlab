@@ -52,7 +52,10 @@ def speak(text: str) -> str:
 def photo(key: str, caption: str, small=False) -> str:
     c = CREDITS[key]
     cls = "fig avcn-photo avcn-photo--sm" if small else "fig avcn-photo"
-    credit = f'Ảnh: {esc(c["author"])}, {esc(c["license"])}, <a href="{esc(c["page"])}" target="_blank" rel="noopener">Wikimedia Commons</a>'
+    if "wikimedia.org" in str(c.get("page", "")):
+        credit = f'Ảnh: {esc(c["author"])}, {esc(c["license"])}, <a href="{esc(c["page"])}" target="_blank" rel="noopener">Wikimedia Commons</a>'
+    else:  # hình tự vẽ (SVG) — không có trang Commons
+        credit = f'Hình tự vẽ, {esc(c["license"])}'
     return (f'<figure class="{cls}"><img src="{ASSET_URL}/{key}.webp" alt="{esc(caption)}" loading="lazy" '
             f'width="{c["w"]}" height="{c["h"]}"><figcaption>{caption} · {credit}</figcaption></figure>')
 
@@ -131,8 +134,18 @@ def sec_tu_vung() -> str:
         out.append('<div class="avcn-cards">' + "".join(term_card(t) for t in g["tu"]) + '</div>')
         q = g["quiz"]
         out.append(think("✅ Kiểm tra cụm này", quiz(q["hoi"], q["lua_chon"], q["dap"], q["fb_ok"], q["fb_no"])))
-    them = "".join(f'<li><strong>{t["term"]}</strong> {speak(t["term"])} — {t["vi"]}</li>' for t in D["tu_vung_them"])
-    out.append(details(f'⭐⭐ {len(D["tu_vung_them"])} từ thêm cho em muốn trên 7 điểm ({M.get("them_nhan", "bộ phận máy tiện, từ mô tả")})', f'<ul class="avcn-list">{them}</ul>'))
+    # ⭐⭐: từ có `img` hiện thẻ ảnh (thêm 16/10/2026, khoá tuỳ chọn); từ không ảnh giữ dạng danh sách
+    with_img = [t for t in D["tu_vung_them"] if t.get("img")]
+    plain = [t for t in D["tu_vung_them"] if not t.get("img")]
+    inner = ""
+    if with_img:
+        inner += '<div class="avcn-cards">' + "".join(
+            f'<div class="avcn-card"><img src="{ASSET_URL}/{t["img"]}.webp" alt="{esc(t["term"])}" loading="lazy" width="{CREDITS[t["img"]]["w"]}" height="{CREDITS[t["img"]]["h"]}">'
+            f'<div class="avcn-card__body"><p class="avcn-term">{t["term"]} {speak(t["term"])}</p><p class="avcn-vi">{t["vi"]}</p></div></div>'
+            for t in with_img) + '</div>'
+    if plain:
+        inner += '<ul class="avcn-list">' + "".join(f'<li><strong>{t["term"]}</strong> {speak(t["term"])} — {t["vi"]}</li>' for t in plain) + '</ul>'
+    out.append(details(f'⭐⭐ {len(D["tu_vung_them"])} từ thêm cho em muốn trên 7 điểm ({M.get("them_nhan", "bộ phận máy tiện, từ mô tả")})', inner))
     return "".join(out)
 
 
@@ -269,7 +282,25 @@ def sec_tra_bai() -> str:
 
 def build_theory() -> str:
     parts = [sec_thi(), sec_doan(), sec_tu_vung(), sec_bai_doc(), sec_mau_cau(), sec_gan_nhan(), sec_sop(), sec_tra_bai()]
-    return "\n".join(parts) + "\n"
+    html = "\n".join(parts) + "\n"
+    return html + sec_nguon_anh(html)
+
+
+# ---------- Nguồn ảnh (CC BY / BY-SA đòi ghi tác giả; thêm 16/10/2026) ----------
+def sec_nguon_anh(html: str) -> str:
+    used = []
+    for k in re.findall(rf'{re.escape(ASSET_URL)}/([\w\-]+)\.webp', html):
+        if k in CREDITS and k not in used:
+            used.append(k)
+    rows = []
+    for k in used:
+        c = CREDITS[k]
+        if not c.get("author") or "wikimedia.org" not in str(c.get("page", "")):
+            continue  # hình tự vẽ không cần ghi nguồn
+        rows.append(f'<li>{esc(k.replace("-", " "))}: {esc(c["author"])}, {esc(c["license"])}, <a href="{esc(c["page"])}" target="_blank" rel="noopener">Wikimedia Commons</a></li>')
+    if not rows:
+        return ""
+    return details(f"Nguồn ảnh ({len(rows)} ảnh)", '<ul class="avcn-list">' + "".join(rows) + "</ul>")
 
 
 # ---------- Đề mẫu (tab Bài mẫu) ----------

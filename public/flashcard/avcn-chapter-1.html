@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 1 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 1</span></div>
+  <h1>Flashcard: Engineering and the Mechanical Engineer</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "mechanical engineer", "ipa": "", "vi": "kỹ sư cơ khí", "def": "A person who studies, builds, and works with machines.", "img": "/assets/avcn/chapter-1/engineer.webp", "group": "Cụm A · Kỹ sư làm gì"}, {"term": "design", "ipa": "/dɪˈzaɪn/", "vi": "thiết kế (đời thường: kiểu dáng, bản thiết kế)", "def": "To plan how a machine or part will look and work.", "img": "/assets/avcn/chapter-1/design.webp", "group": "Cụm A · Kỹ sư làm gì"}, {"term": "invent", "ipa": "/ɪnˈvent/", "vi": "phát minh, sáng chế", "def": "To make a completely new thing for the first time.", "img": "", "group": "Cụm A · Kỹ sư làm gì"}, {"term": "improve", "ipa": "/ɪmˈpruːv/", "vi": "cải tiến, làm cho tốt hơn", "def": "To make something better.", "img": "", "group": "Cụm A · Kỹ sư làm gì"}, {"term": "assess", "ipa": "/əˈses/", "vi": "đánh giá", "def": "To study and evaluate something.", "img": "", "group": "Cụm A · Kỹ sư làm gì"}, {"term": "qualified", "ipa": "/ˈkwɒlɪfaɪd/", "vi": "đủ trình độ, đủ điều kiện", "def": "Having the degree or training needed for a job.", "img": "", "group": "Cụm B · Nghề và trình độ"}, {"term": "specialize", "ipa": "/ˈspeʃəlaɪz/", "vi": "chuyên về, chuyên sâu", "def": "To work mainly in one particular field.", "img": "", "group": "Cụm B · Nghề và trình độ"}, {"term": "broad", "ipa": "/brɔːd/", "vi": "rộng, bao quát", "def": "Involving a wide variety of topics or disciplines.", "img": "", "group": "Cụm B · Nghề và trình độ"}, {"term": "quality", "ipa": "/ˈkwɒləti/", "vi": "chất lượng", "def": "How good or bad something is.", "img": "", "group": "Cụm B · Nghề và trình độ"}, {"term": "degree", "ipa": "/dɪˈɡriː/", "vi": "bằng cấp (đời thường: độ)", "def": "A qualification given by a college or university.", "img": "/assets/avcn/chapter-1/degree.webp", "group": "Cụm B · Nghề và trình độ"}, {"term": "hardware", "ipa": "/ˈhɑːdweə/", "vi": "máy móc, chi tiết cơ khí (đời thường: đồ kim khí)", "def": "Machinery or mechanical components.", "img": "/assets/avcn/chapter-1/hardware.webp", "group": "Cụm C · Thứ kỹ sư học và làm"}, {"term": "manufacturing", "ipa": "/ˌmænjuˈfæktʃərɪŋ/", "vi": "sản xuất, chế tạo", "def": "To build something in a factory.", "img": "/assets/avcn/chapter-1/manufacturing.webp", "group": "Cụm C · Thứ kỹ sư học và làm"}, {"term": "power transmission", "ipa": "", "vi": "truyền động, truyền công suất", "def": "The transfer of energy from one place to another to perform work.", "img": "/assets/avcn/chapter-1/gearbox.webp", "group": "Cụm C · Thứ kỹ sư học và làm"}, {"term": "test", "ipa": "/test/", "vi": "kiểm tra, thử nghiệm máy", "def": "To observe a machine's operations in order to determine its functionality.", "img": "/assets/avcn/chapter-1/test.webp", "group": "Cụm C · Thứ kỹ sư học và làm"}, {"term": "friction", "ipa": "/ˈfrɪkʃn/", "vi": "ma sát", "def": "The force that resists two surfaces sliding against each other.", "img": "/assets/avcn/chapter-1/brake.webp", "group": "Cụm C · Thứ kỹ sư học và làm"}, {"term": "civil engineering", "ipa": "", "vi": "kỹ thuật xây dựng", "def": "The branch of engineering that makes bridges, roads, and airports.", "img": "/assets/avcn/chapter-1/bridge.webp", "group": "Cụm D · Các ngành kỹ thuật"}, {"term": "electrical engineering", "ipa": "", "vi": "kỹ thuật điện", "def": "The branch of engineering about making and sending electricity.", "img": "/assets/avcn/chapter-1/pylon.webp", "group": "Cụm D · Các ngành kỹ thuật"}, {"term": "electronics engineering", "ipa": "", "vi": "kỹ thuật điện tử", "def": "The branch of engineering about parts and equipment for communications and computing.", "img": "/assets/avcn/chapter-1/pcb.webp", "group": "Cụm D · Các ngành kỹ thuật"}, {"term": "automobile", "ipa": "/ˈɔːtəməbiːl/", "vi": "ô tô (tiếng Mỹ của car)", "def": "A road vehicle with an engine.", "img": "/assets/avcn/chapter-1/car.webp", "group": "Cụm D · Các ngành kỹ thuật"}, {"term": "installation", "ipa": "/ˌɪnstəˈleɪʃn/", "vi": "việc lắp đặt", "def": "Fitting equipment in place so that it can be used.", "img": "/assets/avcn/chapter-1/electrician.webp", "group": "Cụm D · Các ngành kỹ thuật"}];
+const AUDIO = {"mechanical engineer": "/assets/avcn/chapter-1/audio/4cf9ca5945.mp3", "A person who studies, builds, and works with machines.": "/assets/avcn/chapter-1/audio/93cec97b7c.mp3", "design": "/assets/avcn/chapter-1/audio/9958a35b42.mp3", "To plan how a machine or part will look and work.": "/assets/avcn/chapter-1/audio/b32e81c174.mp3", "invent": "/assets/avcn/chapter-1/audio/d9e8e31264.mp3", "To make a completely new thing for the first time.": "/assets/avcn/chapter-1/audio/2f1fc9e207.mp3", "improve": "/assets/avcn/chapter-1/audio/a0e33acd18.mp3", "To make something better.": "/assets/avcn/chapter-1/audio/4f661b1dc5.mp3", "assess": "/assets/avcn/chapter-1/audio/a1721f54f8.mp3", "To study and evaluate something.": "/assets/avcn/chapter-1/audio/fd4abbb6e0.mp3", "qualified": "/assets/avcn/chapter-1/audio/3ef1afc717.mp3", "Having the degree or training needed for a job.": "/assets/avcn/chapter-1/audio/fb8ec4fc35.mp3", "specialize": "/assets/avcn/chapter-1/audio/32d1dafa6a.mp3", "To work mainly in one particular field.": "/assets/avcn/chapter-1/audio/75077b7332.mp3", "broad": "/assets/avcn/chapter-1/audio/069961ad8a.mp3", "Involving a wide variety of topics or disciplines.": "/assets/avcn/chapter-1/audio/a03ff39d37.mp3", "quality": "/assets/avcn/chapter-1/audio/d62aefa95d.mp3", "How good or bad something is.": "/assets/avcn/chapter-1/audio/e9659bdaa7.mp3", "degree": "/assets/avcn/chapter-1/audio/1bd43cc063.mp3", "A qualification given by a college or university.": "/assets/avcn/chapter-1/audio/d047fb3448.mp3", "hardware": "/assets/avcn/chapter-1/audio/2782a00d69.mp3", "Machinery or mechanical components.": "/assets/avcn/chapter-1/audio/0db4d14772.mp3", "manufacturing": "/assets/avcn/chapter-1/audio/890c2b79c7.mp3", "To build something in a factory.": "/assets/avcn/chapter-1/audio/aaa56ffc66.mp3", "power transmission": "/assets/avcn/chapter-1/audio/34a3a18464.mp3", "The transfer of energy from one place to another to perform work.": "/assets/avcn/chapter-1/audio/63c64a1c3d.mp3", "test": "/assets/avcn/chapter-1/audio/0197bc8136.mp3", "To observe a machine's operations in order to determine its functionality.": "/assets/avcn/chapter-1/audio/cd399b2f6c.mp3", "friction": "/assets/avcn/chapter-1/audio/6210bb3f51.mp3", "The force that slows things sliding against each other.": "/assets/avcn/chapter-1/audio/9dee3837e0.mp3", "civil engineering": "/assets/avcn/chapter-1/audio/404c42761b.mp3", "The branch of engineering that makes bridges, roads, and airports.": "/assets/avcn/chapter-1/audio/f2c11dff29.mp3", "electrical engineering": "/assets/avcn/chapter-1/audio/35912ce124.mp3", "The branch of engineering about making and sending electricity.": "/assets/avcn/chapter-1/audio/d273ec7e08.mp3", "electronics engineering": "/assets/avcn/chapter-1/audio/fc7e9eaec8.mp3", "The branch of engineering about parts and equipment for communications and computing.": "/assets/avcn/chapter-1/audio/1b322a1203.mp3", "automobile": "/assets/avcn/chapter-1/audio/da4574fc4a.mp3", "A road vehicle with an engine.": "/assets/avcn/chapter-1/audio/ada868d4f8.mp3", "installation": "/assets/avcn/chapter-1/audio/c98a1e61c7.mp3", "Fitting equipment in place so that it can be used.": "/assets/avcn/chapter-1/audio/0bdc167f6c.mp3", "practical": "/assets/avcn/chapter-1/audio/a1495d7c71.mp3", "discipline": "/assets/avcn/chapter-1/audio/70552b58b1.mp3", "kinematics": "/assets/avcn/chapter-1/audio/b05588de0c.mp3", "materials science": "/assets/avcn/chapter-1/audio/652b6ae15b.mp3", "fluid mechanics": "/assets/avcn/chapter-1/audio/ff987f3be5.mp3", "generation": "/assets/avcn/chapter-1/audio/2b568ace6c.mp3", "distribution": "/assets/avcn/chapter-1/audio/de6a54216e.mp3", "medical": "/assets/avcn/chapter-1/audio/d3769a1974.mp3", "mining": "/assets/avcn/chapter-1/audio/879b4ed463.mp3", "marine": "/assets/avcn/chapter-1/audio/ddfa92ae80.mp3", "aeronautical": "/assets/avcn/chapter-1/audio/c157dba30a.mp3", "heating and ventilating": "/assets/avcn/chapter-1/audio/0c352c9a5d.mp3", "Do you want to become a mechanical engineer?": "/assets/avcn/chapter-1/audio/4b41ea9a9e.mp3", "Do you want to": "/assets/avcn/chapter-1/audio/319cae2f78.mp3", "become": "/assets/avcn/chapter-1/audio/384d6ec54a.mp3", "Mechanical engineers design and build machines.": "/assets/avcn/chapter-1/audio/ad30e91309.mp3", "build": "/assets/avcn/chapter-1/audio/ca5e03c7aa.mp3", "machines": "/assets/avcn/chapter-1/audio/f46f6832ff.mp3", "They also assess the quality of existing machines.": "/assets/avcn/chapter-1/audio/9563f8c361.mp3", "also": "/assets/avcn/chapter-1/audio/5ca58b6879.mp3", "existing": "/assets/avcn/chapter-1/audio/bc5cf3e0d2.mp3", "They adjust and improve the designs as needed.": "/assets/avcn/chapter-1/audio/c9b1af83db.mp3", "adjust": "/assets/avcn/chapter-1/audio/747d34a789.mp3", "designs": "/assets/avcn/chapter-1/audio/98ede10ff5.mp3", "as needed": "/assets/avcn/chapter-1/audio/f9c4da80a1.mp3", "Sometimes mechanical engineers even invent new types of hardware.": "/assets/avcn/chapter-1/audio/8882bcd986.mp3", "sometimes": "/assets/avcn/chapter-1/audio/71f475d0a4.mp3", "even": "/assets/avcn/chapter-1/audio/1374ab4c1a.mp3", "new types of": "/assets/avcn/chapter-1/audio/1a48dcbf17.mp3", "A qualified mechanical engineer has an engineering degree.": "/assets/avcn/chapter-1/audio/f0bcbe9a77.mp3", "has": "/assets/avcn/chapter-1/audio/1f5e7a1459.mp3", "engineering": "/assets/avcn/chapter-1/audio/39fcbc9e9b.mp3", "Mechanical engineering is a very broad discipline.": "/assets/avcn/chapter-1/audio/f0b719cb87.mp3", "very": "/assets/avcn/chapter-1/audio/ca5c4963f9.mp3", "Most mechanical engineers specialize in a particular field.": "/assets/avcn/chapter-1/audio/15d1416625.mp3", "most": "/assets/avcn/chapter-1/audio/b95adb3400.mp3", "particular": "/assets/avcn/chapter-1/audio/bbca33bc9a.mp3", "field": "/assets/avcn/chapter-1/audio/9b00d7e99a.mp3", "Areas of specialization include Materials science, Fluid mechanics, Manufacturing,…": "/assets/avcn/chapter-1/audio/a38e6815e0.mp3", "science": "/assets/avcn/chapter-1/audio/f241831d60.mp3", "areas of specialization": "/assets/avcn/chapter-1/audio/3057d7f48a.mp3", "include": "/assets/avcn/chapter-1/audio/ba734f367a.mp3", "Students of mechanical engineering study physics and kinematics.": "/assets/avcn/chapter-1/audio/fcf94cd127.mp3", "students": "/assets/avcn/chapter-1/audio/9f19ae7362.mp3", "study": "/assets/avcn/chapter-1/audio/d14108616b.mp3", "physics": "/assets/avcn/chapter-1/audio/46ac692b10.mp3", "Concepts like friction and power transmission are essential.": "/assets/avcn/chapter-1/audio/4ee82ddc2e.mp3", "concepts": "/assets/avcn/chapter-1/audio/509b547640.mp3", "like": "/assets/avcn/chapter-1/audio/ed1361eb84.mp3", "essential": "/assets/avcn/chapter-1/audio/55b63dd2c7.mp3", "Students learn how to manufacture machines and components.": "/assets/avcn/chapter-1/audio/8bd8d3a8bc.mp3", "manufacture": "/assets/avcn/chapter-1/audio/61b8256424.mp3", "learn how to": "/assets/avcn/chapter-1/audio/35e9dc6d99.mp3", "components": "/assets/avcn/chapter-1/audio/4954265316.mp3", "They also learn how to test machines effectively.": "/assets/avcn/chapter-1/audio/5124701e2d.mp3", "effectively": "/assets/avcn/chapter-1/audio/544b2df552.mp3", "Engineering is largely a practical activity.": "/assets/avcn/chapter-1/audio/20146bbf0d.mp3", "largely": "/assets/avcn/chapter-1/audio/5c32401668.mp3", "activity": "/assets/avcn/chapter-1/audio/adc3ae9239.mp3", "It is about putting ideas into action.": "/assets/avcn/chapter-1/audio/968e6b1a15.mp3", "Civil engineering is concerned with making bridges, roads, airports, etc.": "/assets/avcn/chapter-1/audio/36cdb95d2b.mp3", "Civil engineering": "/assets/avcn/chapter-1/audio/2167825c6a.mp3", "is concerned with": "/assets/avcn/chapter-1/audio/95ffc37285.mp3", "bridges": "/assets/avcn/chapter-1/audio/078fbbd09e.mp3", "roads": "/assets/avcn/chapter-1/audio/94b2dd8975.mp3", "airports": "/assets/avcn/chapter-1/audio/08c93cddf8.mp3", "etc.": "/assets/avcn/chapter-1/audio/344e4a096a.mp3", "Mechanical engineering deals with the design and manufacture of tools and machines.": "/assets/avcn/chapter-1/audio/ad1fcfb0f6.mp3", "deals with": "/assets/avcn/chapter-1/audio/6854ee119c.mp3", "tools": "/assets/avcn/chapter-1/audio/f267f9d977.mp3", "Electrical engineering is about the generation and distribution of electricity and its many applications.": "/assets/avcn/chapter-1/audio/df3514ac32.mp3", "Electrical engineering": "/assets/avcn/chapter-1/audio/45a0caa1ec.mp3", "electricity": "/assets/avcn/chapter-1/audio/c3ce18fcfe.mp3", "applications": "/assets/avcn/chapter-1/audio/9f8df087ae.mp3", "Electronics engineering is concerned with developing components and equipment for communications, computing, and so on.": "/assets/avcn/chapter-1/audio/fd3275e0fc.mp3", "Electronics engineering": "/assets/avcn/chapter-1/audio/3e3c01391f.mp3", "developing": "/assets/avcn/chapter-1/audio/447916a3c0.mp3", "equipment": "/assets/avcn/chapter-1/audio/abde12756d.mp3", "communications": "/assets/avcn/chapter-1/audio/3b50acf76c.mp3", "computing": "/assets/avcn/chapter-1/audio/ce2d95a13b.mp3", "and so on": "/assets/avcn/chapter-1/audio/8e9958b85b.mp3", "Mechanical engineering includes marine, automobile, aeronautical, heating and ventilating, and others.": "/assets/avcn/chapter-1/audio/58a3d4b1da.mp3", "includes": "/assets/avcn/chapter-1/audio/ca6354bcff.mp3", "others": "/assets/avcn/chapter-1/audio/05dac27c41.mp3", "Electrical engineering includes electricity generating, electrical installation, lighting, etc.": "/assets/avcn/chapter-1/audio/6b449c70c9.mp3", "generating": "/assets/avcn/chapter-1/audio/ebd5626111.mp3", "lighting": "/assets/avcn/chapter-1/audio/db438bc6f7.mp3", "Mining and medical engineering belong partly to mechanical and partly to electrical.": "/assets/avcn/chapter-1/audio/2e6f3a0347.mp3", "belong to": "/assets/avcn/chapter-1/audio/0d55be6ca9.mp3", "partly … partly": "/assets/avcn/chapter-1/audio/4d9b5a1cb2.mp3", "Civil engineering is concerned with making bridges, roads, airports.": "/assets/avcn/chapter-1/audio/e5867ce564.mp3", "Electronics engineering is concerned with developing components and equipment.": "/assets/avcn/chapter-1/audio/4973a2ba1e.mp3", "Mechanical engineering includes marine, automobile, aeronautical, and others.": "/assets/avcn/chapter-1/audio/f0ed0f65fb.mp3", "Areas of specialization include Materials science and Fluid mechanics.": "/assets/avcn/chapter-1/audio/beb5667621.mp3", "mechanical engineering": "/assets/avcn/chapter-1/audio/f48553619f.mp3", "A  mechanical engineer has an engineering degree. The engineer will  the quality of old machines and then  the design where needed. Some engineers even  new hardware. Most of them  in one field.": "/assets/avcn/chapter-1/audio/ae0757163d.mp3", "The force that resists two surfaces sliding against each other.": "/assets/avcn/chapter-1/audio/c14ae10e06.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch1";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch(() => speakBrowser(text));
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>

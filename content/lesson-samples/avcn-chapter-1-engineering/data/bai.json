@@ -1,0 +1,1618 @@
+{
+  "meta": {
+    "chapter": 1,
+    "prefix": "tl1",
+    "title_en": "Engineering and the Mechanical Engineer",
+    "title_vi": "Ngành kỹ thuật và kỹ sư cơ khí",
+    "minutes": 25,
+    "flashcard": "/flashcard/avcn-chapter-1.html",
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (nghề kỹ sư, việc kỹ sư làm, các ngành kỹ thuật) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 (The Mechanical Engineer) và Article 2 (Engineering) để điền một từ và chọn Đúng/Sai (Part 2, Part 3).",
+      "Dùng được mẫu câu <em>X is concerned with…</em> và <em>X includes A, B, C</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục III Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 1 hoặc 2, điền 1 từ + Đúng/Sai",
+        "Mục IV Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào Article 1 hoặc Article 2",
+        "Mục VI Sơ đồ + mục VII Điền từ"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục IV Bài đọc + mục V Mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục V Mẫu câu"
+      ]
+    ],
+    "doan_tieu_de": "thứ này thuộc ngành nào?",
+    "doan_mo_dau": "Hai hình dưới đây là sản phẩm của kỹ sư. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "môn học, ngành và từ mô tả"
+  },
+  "khoi_dong": [
+    {
+      "img": "engine",
+      "hoi": "Cắt dọc thấy các piston chạy lên xuống: đây là thứ kỹ sư cơ khí thiết kế và chế tạo. Tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "engine",
+        "bridge",
+        "battery"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>engine</em> /ˈendʒɪn/ là động cơ: máy biến nhiên liệu thành chuyển động. Đây là loại sản phẩm mà kỹ sư cơ khí làm ra.",
+      "fb_no": "Nhìn các piston trong xi lanh: đây là một cỗ máy tạo ra chuyển động, không phải cây cầu hay cục pin."
+    },
+    {
+      "img": "bridge",
+      "hoi": "Cây cầu thép này do một ngành kỹ thuật khác xây. Ngành nào lo cầu, đường, sân bay?",
+      "lua_chon": [
+        "civil engineering",
+        "medical engineering",
+        "electronics engineering"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>civil engineering</em> là kỹ thuật xây dựng dân dụng: cầu, đường, sân bay. Article 2 nói đúng điều này.",
+      "fb_no": "Cầu, đường, sân bay là công trình xây dựng ngoài trời, không phải linh kiện điện tử hay thiết bị y tế."
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Kỹ sư làm gì",
+      "tu": [
+        {
+          "term": "mechanical engineer",
+          "ipa": "",
+          "vi": "kỹ sư cơ khí",
+          "def": "A person who studies, builds, and works with machines.",
+          "img": "engineer",
+          "tier": 1
+        },
+        {
+          "term": "design",
+          "ipa": "/dɪˈzaɪn/",
+          "vi": "thiết kế (đời thường: kiểu dáng, bản thiết kế)",
+          "def": "To plan how a machine or part will look and work.",
+          "img": "design",
+          "tier": 1
+        },
+        {
+          "term": "invent",
+          "ipa": "/ɪnˈvent/",
+          "vi": "phát minh, sáng chế",
+          "def": "To make a completely new thing for the first time.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "improve",
+          "ipa": "/ɪmˈpruːv/",
+          "vi": "cải tiến, làm cho tốt hơn",
+          "def": "To make something better.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "assess",
+          "ipa": "/əˈses/",
+          "vi": "đánh giá",
+          "def": "To study and evaluate something.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A person who studies, builds, and works with machines.\"</em>",
+        "lua_chon": [
+          "assess",
+          "mechanical engineer",
+          "invent",
+          "design"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>a person</em> và <em>machines</em>: đây là một nghề, là kỹ sư cơ khí. Câu này nằm trong đề cuối kỳ.",
+        "fb_no": "Từ khoá <em>a person</em> (một người). Trong 4 từ, chỉ một từ là danh từ chỉ người."
+      }
+    },
+    {
+      "ten": "Cụm B · Nghề và trình độ",
+      "tu": [
+        {
+          "term": "qualified",
+          "ipa": "/ˈkwɒlɪfaɪd/",
+          "vi": "đủ trình độ, đủ điều kiện",
+          "def": "Having the degree or training needed for a job.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "specialize",
+          "ipa": "/ˈspeʃəlaɪz/",
+          "vi": "chuyên về, chuyên sâu",
+          "def": "To work mainly in one particular field.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "broad",
+          "ipa": "/brɔːd/",
+          "vi": "rộng, bao quát",
+          "def": "Involving a wide variety of topics or disciplines.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "quality",
+          "ipa": "/ˈkwɒləti/",
+          "vi": "chất lượng",
+          "def": "How good or bad something is.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "degree",
+          "ipa": "/dɪˈɡriː/",
+          "vi": "bằng cấp (đời thường: độ)",
+          "def": "A qualification given by a college or university.",
+          "img": "degree",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Involving a wide variety of topics or disciplines.\"</em>",
+        "lua_chon": [
+          "specialize",
+          "quality",
+          "broad",
+          "degree"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>wide variety</em> (rất nhiều loại): <em>broad</em> là rộng. Cơ khí là một ngành rất rộng. Câu này nằm trong đề cuối kỳ.",
+        "fb_no": "Từ khoá <em>wide</em> (rộng). Từ nào cũng có nghĩa là rộng, bao quát?"
+      }
+    },
+    {
+      "ten": "Cụm C · Thứ kỹ sư học và làm",
+      "tu": [
+        {
+          "term": "hardware",
+          "ipa": "/ˈhɑːdweə/",
+          "vi": "máy móc, chi tiết cơ khí (đời thường: đồ kim khí)",
+          "def": "Machinery or mechanical components.",
+          "img": "hardware",
+          "tier": 1
+        },
+        {
+          "term": "manufacturing",
+          "ipa": "/ˌmænjuˈfæktʃərɪŋ/",
+          "vi": "sản xuất, chế tạo",
+          "def": "To build something in a factory.",
+          "img": "manufacturing",
+          "tier": 1
+        },
+        {
+          "term": "power transmission",
+          "ipa": "",
+          "vi": "truyền động, truyền công suất",
+          "def": "The transfer of energy from one place to another to perform work.",
+          "img": "gearbox",
+          "tier": 1
+        },
+        {
+          "term": "test",
+          "ipa": "/test/",
+          "vi": "kiểm tra, thử nghiệm máy",
+          "def": "To observe a machine's operations in order to determine its functionality.",
+          "img": "test",
+          "tier": 1
+        },
+        {
+          "term": "friction",
+          "ipa": "/ˈfrɪkʃn/",
+          "vi": "ma sát",
+          "def": "The force that resists two surfaces sliding against each other.",
+          "img": "brake",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The transfer of energy from one place to another to perform work.\"</em>",
+        "lua_chon": [
+          "hardware",
+          "manufacturing",
+          "friction",
+          "power transmission"
+        ],
+        "dap": 3,
+        "fb_ok": "Từ khoá <em>transfer of energy</em> (truyền năng lượng): <em>power transmission</em>. Hộp số trong ảnh là một ví dụ. Câu này nằm trong đề cuối kỳ.",
+        "fb_no": "Từ khoá <em>transfer</em> (truyền đi) và <em>energy</em>. Từ nào là hai từ ghép nói về truyền công suất?"
+      }
+    },
+    {
+      "ten": "Cụm D · Các ngành kỹ thuật",
+      "tu": [
+        {
+          "term": "civil engineering",
+          "ipa": "",
+          "vi": "kỹ thuật xây dựng",
+          "def": "The branch of engineering that makes bridges, roads, and airports.",
+          "img": "bridge",
+          "tier": 1
+        },
+        {
+          "term": "electrical engineering",
+          "ipa": "",
+          "vi": "kỹ thuật điện",
+          "def": "The branch of engineering about making and sending electricity.",
+          "img": "pylon",
+          "tier": 1
+        },
+        {
+          "term": "electronics engineering",
+          "ipa": "",
+          "vi": "kỹ thuật điện tử",
+          "def": "The branch of engineering about parts and equipment for communications and computing.",
+          "img": "pcb",
+          "tier": 1
+        },
+        {
+          "term": "automobile",
+          "ipa": "/ˈɔːtəməbiːl/",
+          "vi": "ô tô (tiếng Mỹ của car)",
+          "def": "A road vehicle with an engine.",
+          "img": "car",
+          "tier": 1
+        },
+        {
+          "term": "installation",
+          "ipa": "/ˌɪnstəˈleɪʃn/",
+          "vi": "việc lắp đặt",
+          "def": "Fitting equipment in place so that it can be used.",
+          "img": "electrician",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The branch of engineering that makes bridges, roads, and airports.\"</em>",
+        "lua_chon": [
+          "electrical engineering",
+          "civil engineering",
+          "electronics engineering",
+          "automobile"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>bridges, roads, airports</em>: <em>civil engineering</em>. Article 2 viết đúng ý này.",
+        "fb_no": "Từ khoá <em>bridges, roads</em>: công trình xây dựng. Ngành nào lo chuyện đó, không phải điện?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "practical",
+      "vi": "thực tế, thiên về thực hành"
+    },
+    {
+      "term": "discipline",
+      "vi": "ngành, lĩnh vực học (đời thường: kỷ luật)"
+    },
+    {
+      "term": "kinematics",
+      "vi": "động học"
+    },
+    {
+      "term": "materials science",
+      "vi": "khoa học vật liệu"
+    },
+    {
+      "term": "fluid mechanics",
+      "vi": "cơ học chất lỏng"
+    },
+    {
+      "term": "generation",
+      "vi": "sự phát (điện), sự tạo ra",
+      "img": "power-plant"
+    },
+    {
+      "term": "distribution",
+      "vi": "sự phân phối, truyền tải",
+      "img": "pylon"
+    },
+    {
+      "term": "medical",
+      "vi": "thuộc y tế, y học",
+      "img": "medical"
+    },
+    {
+      "term": "mining",
+      "vi": "khai thác mỏ",
+      "img": "mining"
+    },
+    {
+      "term": "marine",
+      "vi": "thuộc biển, tàu thuyền",
+      "img": "marine"
+    },
+    {
+      "term": "aeronautical",
+      "vi": "thuộc hàng không",
+      "img": "aero"
+    },
+    {
+      "term": "heating and ventilating",
+      "vi": "sưởi và thông gió",
+      "img": "hvac"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · The Mechanical Engineer",
+      "cau": [
+        [
+          "Do you want to become a <b>mechanical engineer</b>?",
+          "Bạn có muốn trở thành một kỹ sư cơ khí không?",
+          {
+            "doan": [
+              {
+                "tu": "mechanical engineer",
+                "lua_chon": [
+                  "kỹ sư cơ khí",
+                  "thợ máy",
+                  "giáo viên cơ khí"
+                ],
+                "dap": 0,
+                "giai": "engineer là kỹ sư, mechanical là cơ khí. Mechanical engineer là kỹ sư cơ khí."
+              }
+            ],
+            "nghia": {
+              "Do you want to": "Bạn có muốn",
+              "become": "trở thành"
+            }
+          }
+        ],
+        [
+          "Mechanical engineers <b>design</b> and build machines.",
+          "Kỹ sư cơ khí thiết kế và chế tạo máy móc.",
+          {
+            "doan": [
+              {
+                "tu": "design",
+                "lua_chon": [
+                  "thiết kế",
+                  "sửa chữa",
+                  "bán"
+                ],
+                "dap": 0,
+                "giai": "design là thiết kế: lên kế hoạch máy sẽ trông và hoạt động ra sao. Đi cùng build (chế tạo)."
+              }
+            ],
+            "nghia": {
+              "build": "chế tạo, xây dựng",
+              "machines": "máy móc"
+            }
+          }
+        ],
+        [
+          "They also <b>assess</b> the <b>quality</b> of existing machines.",
+          "Họ cũng đánh giá chất lượng của các máy hiện có.",
+          {
+            "doan": [
+              {
+                "tu": "assess",
+                "lua_chon": [
+                  "đánh giá",
+                  "lắp ráp",
+                  "sơn"
+                ],
+                "dap": 0,
+                "giai": "assess là đánh giá: xem xét rồi nhận xét tốt hay chưa tốt. Giáo trình giải thích: to study and evaluate."
+              },
+              {
+                "tu": "quality",
+                "lua_chon": [
+                  "số lượng",
+                  "chất lượng",
+                  "giá tiền"
+                ],
+                "dap": 1,
+                "giai": "quality là chất lượng: máy tốt hay kém. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "existing": "hiện có"
+            }
+          }
+        ],
+        [
+          "They adjust and <b>improve</b> the designs as needed.",
+          "Họ điều chỉnh và cải tiến các thiết kế khi cần.",
+          {
+            "doan": [
+              {
+                "tu": "improve",
+                "lua_chon": [
+                  "cải tiến",
+                  "xoá bỏ",
+                  "sao chép"
+                ],
+                "dap": 0,
+                "giai": "improve là làm cho tốt hơn. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "adjust": "điều chỉnh",
+              "designs": "các bản thiết kế",
+              "as needed": "khi cần"
+            }
+          }
+        ],
+        [
+          "Sometimes mechanical engineers even <b>invent</b> new types of <b>hardware</b>.",
+          "Đôi khi kỹ sư cơ khí còn phát minh ra những loại máy móc thiết bị mới.",
+          {
+            "doan": [
+              {
+                "tu": "invent",
+                "lua_chon": [
+                  "bắt chước",
+                  "phát minh",
+                  "bán lại"
+                ],
+                "dap": 1,
+                "giai": "invent là phát minh: làm ra cái chưa từng có. Đề cũ đục từ này ở Part 3."
+              },
+              {
+                "tu": "hardware",
+                "lua_chon": [
+                  "phần mềm",
+                  "phần cứng, máy móc thiết bị",
+                  "đồ chơi"
+                ],
+                "dap": 1,
+                "giai": "hardware ở đây là máy móc, chi tiết cơ khí (ngược với software là phần mềm). Part 1 hỏi: machinery or mechanical components."
+              }
+            ],
+            "nghia": {
+              "sometimes": "đôi khi",
+              "even": "thậm chí",
+              "new types of": "các loại mới của"
+            }
+          }
+        ],
+        [
+          "A <b>qualified</b> mechanical engineer has an engineering <b>degree</b>.",
+          "Một kỹ sư cơ khí đủ trình độ có bằng kỹ sư.",
+          {
+            "doan": [
+              {
+                "tu": "qualified",
+                "lua_chon": [
+                  "đủ trình độ",
+                  "đủ tuổi",
+                  "đủ tiền"
+                ],
+                "dap": 0,
+                "giai": "qualified là đủ điều kiện, đủ trình độ làm một nghề. Đề cũ đục từ này ở Part 3."
+              },
+              {
+                "tu": "degree",
+                "lua_chon": [
+                  "độ nóng",
+                  "bằng cấp",
+                  "chức vụ"
+                ],
+                "dap": 1,
+                "giai": "degree đời thường là độ (độ C); ở đây là bằng cấp của trường đại học, cao đẳng."
+              }
+            ],
+            "nghia": {
+              "has": "có",
+              "engineering": "kỹ thuật"
+            }
+          }
+        ],
+        [
+          "Mechanical engineering is a very <b>broad</b> discipline.",
+          "Kỹ thuật cơ khí là một ngành rất rộng.",
+          {
+            "doan": [
+              {
+                "tu": "broad",
+                "lua_chon": [
+                  "hẹp",
+                  "rộng",
+                  "sâu"
+                ],
+                "dap": 1,
+                "giai": "broad là rộng. Đề cũ đục từ này ở Part 3; Part 1 hỏi: involving a wide variety of topics."
+              }
+            ],
+            "nghia": {
+              "very": "rất",
+              "discipline": "ngành, lĩnh vực"
+            }
+          }
+        ],
+        [
+          "Most mechanical engineers <b>specialize</b> in a particular field.",
+          "Hầu hết kỹ sư cơ khí chuyên về một lĩnh vực nhất định.",
+          {
+            "doan": [
+              {
+                "tu": "specialize",
+                "lua_chon": [
+                  "chuyên về",
+                  "bỏ nghề",
+                  "học thêm"
+                ],
+                "dap": 0,
+                "giai": "specialize in là chuyên về. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "most": "hầu hết",
+              "particular": "nhất định, riêng",
+              "field": "lĩnh vực"
+            }
+          }
+        ],
+        [
+          "Areas of specialization include Materials <b>science</b>, Fluid mechanics, Manufacturing,…",
+          "Các lĩnh vực chuyên sâu gồm khoa học vật liệu, cơ học chất lỏng, chế tạo…",
+          {
+            "doan": [
+              {
+                "tu": "science",
+                "lua_chon": [
+                  "khoa học",
+                  "nghệ thuật",
+                  "thể thao"
+                ],
+                "dap": 0,
+                "giai": "science là khoa học. Materials science là khoa học vật liệu. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "areas of specialization": "các lĩnh vực chuyên sâu",
+              "include": "gồm có",
+              "fluid mechanics": "cơ học chất lỏng",
+              "manufacturing": "chế tạo"
+            }
+          }
+        ],
+        [
+          "Students of mechanical engineering study physics and <b>kinematics</b>.",
+          "Sinh viên ngành cơ khí học vật lý và động học.",
+          {
+            "doan": [
+              {
+                "tu": "kinematics",
+                "lua_chon": [
+                  "động học",
+                  "nhiệt học",
+                  "điện học"
+                ],
+                "dap": 0,
+                "giai": "kinematics là động học: môn mô tả chuyển động của chi tiết máy."
+              }
+            ],
+            "nghia": {
+              "students": "sinh viên",
+              "study": "học",
+              "physics": "vật lý"
+            }
+          }
+        ],
+        [
+          "Concepts like <b>friction</b> and <b>power transmission</b> are essential.",
+          "Các khái niệm như ma sát và truyền động là thiết yếu.",
+          {
+            "doan": [
+              {
+                "tu": "friction",
+                "lua_chon": [
+                  "lực kéo",
+                  "ma sát",
+                  "trọng lượng"
+                ],
+                "dap": 1,
+                "giai": "friction là ma sát: lực cản khi hai bề mặt trượt lên nhau. Bánh xe hãm lại nhờ ma sát."
+              },
+              {
+                "tu": "power transmission",
+                "lua_chon": [
+                  "truyền động",
+                  "phát điện",
+                  "sản xuất"
+                ],
+                "dap": 0,
+                "giai": "power transmission là truyền công suất từ nơi này sang nơi khác: hộp số, xích, dây đai."
+              }
+            ],
+            "nghia": {
+              "concepts": "khái niệm",
+              "like": "như",
+              "essential": "thiết yếu, cần thiết"
+            }
+          }
+        ],
+        [
+          "Students learn how to <b>manufacture</b> machines and components.",
+          "Sinh viên học cách chế tạo máy móc và các chi tiết.",
+          {
+            "doan": [
+              {
+                "tu": "manufacture",
+                "lua_chon": [
+                  "chế tạo",
+                  "sử dụng",
+                  "vận chuyển"
+                ],
+                "dap": 0,
+                "giai": "manufacture là chế tạo, sản xuất trong nhà máy. Danh từ là manufacturing."
+              }
+            ],
+            "nghia": {
+              "learn how to": "học cách",
+              "components": "các chi tiết, bộ phận"
+            }
+          }
+        ],
+        [
+          "They also learn how to <b>test</b> machines effectively.",
+          "Họ cũng học cách kiểm tra máy một cách hiệu quả.",
+          {
+            "doan": [
+              {
+                "tu": "test",
+                "lua_chon": [
+                  "kiểm tra, thử máy",
+                  "sơn máy",
+                  "tháo máy"
+                ],
+                "dap": 0,
+                "giai": "test là thử, kiểm tra máy chạy có đúng chức năng không (giáo trình: to observe a machine's operations)."
+              }
+            ],
+            "nghia": {
+              "effectively": "một cách hiệu quả"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"A qualified mechanical engineer has an engineering ______.\"</em>",
+        "lua_chon": [
+          "degree",
+          "discipline",
+          "field"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 6 của bài: <em>A qualified mechanical engineer has an engineering degree.</em> Tìm từ khoá <em>qualified</em>, chép từ cuối câu.",
+        "fb_no": "Tìm câu có <em>qualified</em>. Từ nào đứng ngay sau <em>engineering</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Mechanical engineers never invent new types of hardware.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>Sometimes mechanical engineers even invent new types of hardware</em>. Đề đổi <em>sometimes</em> thành <em>never</em>.",
+        "fb_no": "Đọc lại câu 5: chữ <em>sometimes</em> (đôi khi) có giống <em>never</em> (không bao giờ) không?"
+      }
+    },
+    {
+      "ten": "Article 2 · Engineering",
+      "cau": [
+        [
+          "Engineering is largely a <b>practical</b> activity.",
+          "Kỹ thuật chủ yếu là một hoạt động thực tế.",
+          {
+            "doan": [
+              {
+                "tu": "practical",
+                "lua_chon": [
+                  "thực tế, thiên về thực hành",
+                  "lý thuyết",
+                  "nguy hiểm"
+                ],
+                "dap": 0,
+                "giai": "practical là thực tế, làm được việc. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "largely": "phần lớn, chủ yếu",
+              "activity": "hoạt động"
+            }
+          }
+        ],
+        [
+          "It is about putting ideas into action.",
+          "Nó là việc biến ý tưởng thành hành động.",
+          {
+            "nghia": {
+              "is about": "nói về",
+              "putting … into action": "đưa … vào thực hiện",
+              "ideas": "ý tưởng"
+            }
+          }
+        ],
+        [
+          "<b>Civil engineering</b> is concerned with making bridges, roads, airports, etc.",
+          "Kỹ thuật xây dựng liên quan đến việc làm cầu, đường, sân bay, v.v.",
+          {
+            "doan": [
+              {
+                "tu": "Civil engineering",
+                "lua_chon": [
+                  "kỹ thuật dân sự",
+                  "kỹ thuật xây dựng",
+                  "kỹ thuật quân sự"
+                ],
+                "dap": 1,
+                "giai": "civil engineering là kỹ thuật xây dựng: cầu, đường, sân bay. Đề cũ đục từ Civil ở Part 3."
+              }
+            ],
+            "nghia": {
+              "is concerned with": "liên quan đến, lo về",
+              "bridges": "cầu",
+              "roads": "đường",
+              "airports": "sân bay",
+              "etc.": "v.v."
+            }
+          }
+        ],
+        [
+          "<b>Mechanical engineering</b> deals with the design and <b>manufacture</b> of tools and machines.",
+          "Kỹ thuật cơ khí lo việc thiết kế và chế tạo dụng cụ và máy móc.",
+          {
+            "doan": [
+              {
+                "tu": "manufacture",
+                "lua_chon": [
+                  "chế tạo",
+                  "sử dụng",
+                  "bán"
+                ],
+                "dap": 0,
+                "giai": "manufacture là chế tạo. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "deals with": "lo về, xử lý",
+              "design": "thiết kế",
+              "tools": "dụng cụ",
+              "machines": "máy móc"
+            }
+          }
+        ],
+        [
+          "<b>Electrical engineering</b> is about the <b>generation</b> and distribution of electricity and its many applications.",
+          "Kỹ thuật điện nói về việc phát và truyền tải điện, cùng nhiều ứng dụng của điện.",
+          {
+            "doan": [
+              {
+                "tu": "Electrical engineering",
+                "lua_chon": [
+                  "kỹ thuật điện",
+                  "kỹ thuật điện tử",
+                  "kỹ thuật cơ khí"
+                ],
+                "dap": 0,
+                "giai": "electrical là thuộc về điện. Electrical engineering là kỹ thuật điện."
+              },
+              {
+                "tu": "generation",
+                "lua_chon": [
+                  "thế hệ",
+                  "sự phát (điện)",
+                  "sự phân phối"
+                ],
+                "dap": 1,
+                "giai": "generation đời thường là thế hệ; về điện là sự phát điện, tạo ra điện. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "distribution": "sự phân phối, truyền tải",
+              "electricity": "điện",
+              "applications": "ứng dụng"
+            }
+          }
+        ],
+        [
+          "<b>Electronics engineering</b> is concerned with developing components and equipment for communications, computing, and so on.",
+          "Kỹ thuật điện tử liên quan đến việc phát triển linh kiện và thiết bị cho truyền thông, máy tính, v.v.",
+          {
+            "doan": [
+              {
+                "tu": "Electronics engineering",
+                "lua_chon": [
+                  "kỹ thuật điện tử",
+                  "kỹ thuật điện",
+                  "kỹ thuật xây dựng"
+                ],
+                "dap": 0,
+                "giai": "electronics là điện tử: linh kiện nhỏ như bo mạch, chip. Đề cũ đục từ Electronics ở Part 3."
+              }
+            ],
+            "nghia": {
+              "developing": "phát triển",
+              "components": "linh kiện",
+              "equipment": "thiết bị",
+              "communications": "truyền thông",
+              "computing": "điện toán, máy tính",
+              "and so on": "và vân vân"
+            }
+          }
+        ],
+        [
+          "Mechanical engineering includes marine, <b>automobile</b>, <b>aeronautical</b>, heating and ventilating, and others.",
+          "Kỹ thuật cơ khí gồm cơ khí tàu biển, ô tô, hàng không, sưởi và thông gió, và các ngành khác.",
+          {
+            "doan": [
+              {
+                "tu": "automobile",
+                "lua_chon": [
+                  "ô tô",
+                  "máy bay",
+                  "tàu thuỷ"
+                ],
+                "dap": 0,
+                "giai": "automobile là ô tô, xe hơi. Đề cũ đục từ này ở Part 3."
+              },
+              {
+                "tu": "aeronautical",
+                "lua_chon": [
+                  "thuộc hàng không",
+                  "thuộc đường sắt",
+                  "thuộc nông nghiệp"
+                ],
+                "dap": 0,
+                "giai": "aero là không khí, bay: aeronautical là thuộc hàng không (máy bay)."
+              }
+            ],
+            "nghia": {
+              "includes": "gồm có",
+              "marine": "thuộc biển, tàu thuyền",
+              "heating and ventilating": "sưởi và thông gió",
+              "others": "những ngành khác"
+            }
+          }
+        ],
+        [
+          "Electrical engineering includes electricity generating, electrical <b>installation</b>, lighting, etc.",
+          "Kỹ thuật điện gồm phát điện, lắp đặt điện, chiếu sáng, v.v.",
+          {
+            "doan": [
+              {
+                "tu": "installation",
+                "lua_chon": [
+                  "việc lắp đặt",
+                  "việc sửa chữa",
+                  "việc thiết kế"
+                ],
+                "dap": 0,
+                "giai": "install là lắp đặt; installation là việc lắp đặt. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "generating": "phát (điện)",
+              "lighting": "chiếu sáng"
+            }
+          }
+        ],
+        [
+          "Mining and <b>medical</b> engineering belong partly to mechanical and partly to electrical.",
+          "Kỹ thuật khai thác mỏ và kỹ thuật y tế thuộc một phần về cơ khí, một phần về điện.",
+          {
+            "doan": [
+              {
+                "tu": "medical",
+                "lua_chon": [
+                  "thuộc y tế",
+                  "thuộc quân sự",
+                  "thuộc thể thao"
+                ],
+                "dap": 0,
+                "giai": "medical là thuộc y tế, y học. Đề cũ đục từ này ở Part 3."
+              }
+            ],
+            "nghia": {
+              "mining": "khai thác mỏ",
+              "belong to": "thuộc về",
+              "partly … partly": "một phần … một phần"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Civil engineering is concerned with making bridges, roads, ______, etc.\"</em>",
+        "lua_chon": [
+          "airports",
+          "machines",
+          "tools"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 3 của bài: <em>Civil engineering is concerned with making bridges, roads, airports, etc.</em> Chép từ đứng trước <em>etc.</em>",
+        "fb_no": "Tìm câu có <em>Civil engineering</em>. Từ nào đứng ngay trước <em>etc.</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Electrical engineering deals with the design and manufacture of tools and machines.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. <em>Design and manufacture of tools and machines</em> là của <em>mechanical</em> engineering. Electrical lo việc phát và truyền tải điện.",
+        "fb_no": "Đọc lại câu 4 và câu 5: <em>design and manufacture of tools and machines</em> thuộc ngành nào?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "Kỹ sư cơ khí: làm gì, cần gì, học gì (Article 1, hay ra Đúng/Sai)",
+    "cot": [
+      "Mục",
+      "Nội dung"
+    ],
+    "hang": [
+      [
+        "Responsibilities (việc làm)",
+        "<strong>design</strong> and build machines<br><strong>assess</strong> the quality<br><strong>improve</strong> the designs<br>sometimes <strong>invent</strong> new hardware"
+      ],
+      [
+        "Qualifications (trình độ)",
+        "an engineering <strong>degree</strong><br>a <strong>broad</strong> discipline, then <strong>specialize</strong> in one field"
+      ],
+      [
+        "Students study (học gì)",
+        "physics, <strong>kinematics</strong><br><strong>friction</strong>, <strong>power transmission</strong><br><strong>manufacture</strong> and <strong>test</strong> machines"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X is concerned with / deals with Y (X lo về, liên quan đến Y)",
+      "vd": [
+        [
+          "Civil engineering is concerned with making bridges, roads, airports.",
+          "Kỹ thuật xây dựng liên quan đến việc làm cầu, đường, sân bay."
+        ],
+        [
+          "Mechanical engineering deals with the design and manufacture of tools and machines.",
+          "Kỹ thuật cơ khí lo việc thiết kế và chế tạo dụng cụ và máy móc."
+        ],
+        [
+          "Electronics engineering is concerned with developing components and equipment.",
+          "Kỹ thuật điện tử liên quan đến việc phát triển linh kiện và thiết bị."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + is concerned with / deals with + danh từ hoặc V-ing</strong>.",
+        "Dịch: \"X lo về…\", \"X liên quan đến…\", \"X nói về…\"."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · X includes A, B, and C (X gồm có A, B và C)",
+      "vd": [
+        [
+          "Mechanical engineering includes marine, automobile, aeronautical, and others.",
+          "Kỹ thuật cơ khí gồm cơ khí tàu biển, ô tô, hàng không và các ngành khác."
+        ],
+        [
+          "Areas of specialization include Materials science and Fluid mechanics.",
+          "Các lĩnh vực chuyên sâu gồm khoa học vật liệu và cơ học chất lỏng."
+        ],
+        [
+          "Most mechanical engineers specialize in a particular field.",
+          "Hầu hết kỹ sư cơ khí chuyên về một lĩnh vực nhất định."
+        ]
+      ],
+      "ghi_chu": [
+        "Thấy <strong>includes / include</strong> → dịch \"gồm có\" rồi liệt kê.",
+        "Thấy <strong>and others</strong> hoặc <strong>etc.</strong> → dịch \"và các ngành khác\", \"v.v.\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "engineering_branches.svg",
+    "tieu_de": "Các ngành kỹ thuật: gọi tên 7 ô đánh số",
+    "mo_ta": "Đề Part 3 hay đục đúng các từ này. Tự gọi tên 7 ô trước, rồi mở đáp án.",
+    "chu_thich": "Các ngành kỹ thuật theo Article 2. Ô 5, 6, 7 nằm trong ngành lớn.",
+    "bo_phan": [
+      [
+        "civil engineering",
+        "kỹ thuật xây dựng"
+      ],
+      [
+        "mechanical engineering",
+        "kỹ thuật cơ khí"
+      ],
+      [
+        "electrical engineering",
+        "kỹ thuật điện"
+      ],
+      [
+        "electronics engineering",
+        "kỹ thuật điện tử"
+      ],
+      [
+        "automobile",
+        "ô tô (nằm trong cơ khí)"
+      ],
+      [
+        "installation",
+        "lắp đặt (nằm trong kỹ thuật điện)"
+      ],
+      [
+        "medical",
+        "y tế (kỹ thuật y tế, một phần cơ khí, một phần điện)"
+      ]
+    ],
+    "hoi": "Ô số 5 nằm cạnh <em>marine</em> và <em>aeronautical</em> trong khung kỹ thuật cơ khí (tàu biển, ?, máy bay). Từ còn thiếu là gì?",
+    "lua_chon": [
+      "automobile",
+      "installation",
+      "medical",
+      "lighting"
+    ],
+    "dap": 0,
+    "fb_ok": "<em>automobile</em> = ô tô. Marine (tàu biển), automobile (ô tô), aeronautical (máy bay) là ba loại phương tiện của cơ khí.",
+    "fb_no": "Tàu biển, máy bay, và còn một phương tiện chạy trên đường nữa. Đó là loại nào?"
+  },
+  "sop": {
+    "tieu_de": "Việc của kỹ sư cơ khí: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn tóm tắt Article 1:",
+    "hop_tu": [
+      "qualified",
+      "assess",
+      "improve",
+      "invent",
+      "specialize"
+    ],
+    "doan": "A (1) ______ mechanical engineer has an engineering degree. The engineer will (2) ______ the quality of old machines and then (3) ______ the design where needed. Some engineers even (4) ______ new hardware. Most of them (5) ______ in one field.",
+    "dap": [
+      "qualified",
+      "assess",
+      "improve",
+      "invent",
+      "specialize"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (4): <em>\"Some engineers even (4) ______ new hardware.\"</em>",
+      "lua_chon": [
+        "qualified",
+        "improve",
+        "invent",
+        "assess"
+      ],
+      "dap": 2,
+      "fb_ok": "<em>invent</em> = phát minh: làm ra thiết bị mới. Dấu hiệu: <em>even</em> (thậm chí) và <em>new hardware</em>.",
+      "fb_no": "Thiết bị <em>new</em> (mới) chưa từng có thì kỹ sư làm gì với nó: cải tiến cái cũ hay phát minh cái mới?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Kỹ sư cơ khí làm những việc gì? Kể ít nhất ba động từ.",
+      "Design (thiết kế), build (chế tạo), assess (đánh giá), improve (cải tiến), invent (phát minh), test (kiểm tra)."
+    ],
+    [
+      "<em>Qualified</em> nghĩa là gì? Một kỹ sư qualified có gì?",
+      "Đủ trình độ. Có bằng kỹ sư (engineering degree)."
+    ],
+    [
+      "Cơ khí là ngành rộng hay hẹp? Từ tiếng Anh? Rồi kỹ sư làm gì với phần rộng đó?",
+      "Broad (rộng). Họ specialize (chuyên) in a particular field."
+    ],
+    [
+      "Ba chuyên ngành ví dụ trong Article 1?",
+      "Materials science, Fluid mechanics, Manufacturing."
+    ],
+    [
+      "Ngành nào lo cầu, đường, sân bay? Ngành nào lo phát và truyền tải điện?",
+      "Civil engineering. Electrical engineering."
+    ],
+    [
+      "Mechanical engineering gồm những ngành nào (Article 2)?",
+      "Marine, automobile, aeronautical, heating and ventilating, and others."
+    ],
+    [
+      "Dịch: <em>Mechanical engineers design and build machines.</em>",
+      "Kỹ sư cơ khí thiết kế và chế tạo máy móc."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Kỹ thuật xây dựng liên quan đến việc làm cầu và đường.</em>",
+      "Civil engineering is concerned with making bridges and roads."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "The transfer of energy from one place to another to perform work.",
+        "opts": [
+          "manufacturing",
+          "hardware",
+          "power transmission",
+          "assess"
+        ],
+        "ans": 2,
+        "why": "<em>transfer of energy</em> → power transmission."
+      },
+      {
+        "q": "To build something in a factory.",
+        "opts": [
+          "assess",
+          "manufacturing",
+          "test",
+          "improve"
+        ],
+        "ans": 1,
+        "why": "<em>in a factory</em> → manufacturing."
+      },
+      {
+        "q": "Involving a wide variety of topics or disciplines.",
+        "opts": [
+          "manufacturing",
+          "test",
+          "improve",
+          "broad"
+        ],
+        "ans": 3,
+        "why": "<em>wide variety</em> → broad."
+      },
+      {
+        "q": "To observe a machine's operations in order to determine its functionality.",
+        "opts": [
+          "design",
+          "test",
+          "invent",
+          "hardware"
+        ],
+        "ans": 1,
+        "why": "<em>observe a machine's operations</em> → test."
+      },
+      {
+        "q": "Machinery or mechanical components.",
+        "opts": [
+          "quality",
+          "degree",
+          "hardware",
+          "friction"
+        ],
+        "ans": 2,
+        "why": "<em>machinery or mechanical components</em> → hardware."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "civil engineering",
+          "electronics engineering",
+          "automobile",
+          "installation"
+        ],
+        "ans": 1,
+        "why": "Bo mạch có điện trở, tụ điện → electronics engineering (linh kiện và thiết bị điện tử).",
+        "img": "pcb"
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>transfer of energy</em>, <em>in a factory</em>, <em>wide variety</em>, <em>machinery</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn vật trong ảnh, nghĩ nó thuộc ngành nào.",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "Do you want to become a mechanical engineer? Mechanical engineers design and build machines. They also assess the quality of existing machines. They adjust and improve the designs as needed. Sometimes mechanical engineers even invent new types of hardware. A qualified mechanical engineer has an engineering degree. Mechanical engineering is a very broad discipline. Most mechanical engineers specialize in a particular field. Areas of specialization include Materials science, Fluid mechanics, Manufacturing,… Students of mechanical engineering study physics and kinematics. Concepts like friction and power transmission are essential. Students learn how to manufacture machines and components. They also learn how to test machines effectively.",
+      "dien": [
+        {
+          "q": "A qualified mechanical engineer has an engineering ______.",
+          "ans": "degree",
+          "opts": [
+            "degree",
+            "discipline",
+            "machine"
+          ],
+          "why": "Câu 6: <em>has an engineering degree</em>."
+        },
+        {
+          "q": "Mechanical engineering is a very ______ discipline.",
+          "ans": "broad",
+          "opts": [
+            "narrow",
+            "broad",
+            "short"
+          ],
+          "why": "Câu 7: <em>a very broad discipline</em>."
+        },
+        {
+          "q": "Most mechanical engineers ______ in a particular field.",
+          "ans": "specialize",
+          "opts": [
+            "invent",
+            "assess",
+            "specialize"
+          ],
+          "why": "Câu 8: <em>specialize in a particular field</em>."
+        },
+        {
+          "q": "They also learn how to test machines ______.",
+          "ans": "effectively",
+          "opts": [
+            "effectively",
+            "slowly",
+            "alone"
+          ],
+          "why": "Câu cuối của bài: <em>They also learn how to test machines effectively.</em>"
+        }
+      ],
+      "ds": [
+        {
+          "q": "Mechanical engineers design and build machines.",
+          "ans": true,
+          "why": "Câu 2, chép gần nguyên văn."
+        },
+        {
+          "q": "Mechanical engineers never invent new types of hardware.",
+          "ans": false,
+          "why": "Bài viết <em>sometimes … even invent</em>, không phải never."
+        },
+        {
+          "q": "Friction and power transmission are essential concepts.",
+          "ans": true,
+          "why": "Câu 11: <em>are essential</em>."
+        },
+        {
+          "q": "Mechanical engineering is a narrow discipline.",
+          "ans": false,
+          "why": "Bài viết <em>very broad</em> (rất rộng), ngược với narrow."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: sometimes ↔ never, broad ↔ narrow, mechanical ↔ electrical."
+    ],
+    "part3": {
+      "hop_tu": [
+        "practical",
+        "manufacture",
+        "generation",
+        "automobile",
+        "medical"
+      ],
+      "doan": "Engineering is largely a (1) ______ activity. Mechanical engineering deals with the design and (2) ______ of tools and machines. Electrical engineering is about the (3) ______ and distribution of electricity. Mechanical engineering includes marine, (4) ______, aeronautical, heating and ventilating, and others. Mining and (5) ______ engineering belong partly to mechanical and partly to electrical.",
+      "dap": [
+        "practical",
+        "manufacture",
+        "generation",
+        "automobile",
+        "medical"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng sau <em>a</em> và trước <em>activity</em> → tính từ.",
+        "Chỗ (2) đứng sau <em>design and</em> → danh từ đi cặp với design.",
+        "Chỗ (3) đứng sau <em>the</em>, trước <em>and distribution</em> → danh từ đi cặp với distribution.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "Civil engineering is concerned with making bridges, roads, airports, etc. Mechanical engineering deals with the design and manufacture of tools and machines. Electrical engineering is about the generation and distribution of electricity and its many applications.",
+      "vi": "Kỹ thuật xây dựng liên quan đến việc làm cầu, đường, sân bay, v.v. Kỹ thuật cơ khí lo việc thiết kế và chế tạo dụng cụ và máy móc. Kỹ thuật điện nói về việc phát và truyền tải điện cùng nhiều ứng dụng của điện.",
+      "chien_thuat": [
+        "Cắt đoạn thành từng câu, dịch từng câu.",
+        "Giữ nguyên thuật ngữ đã học: kỹ thuật xây dựng, cơ khí, điện.",
+        "<em>is concerned with</em> → \"liên quan đến\"; <em>deals with</em> → \"lo về\".",
+        "<em>etc.</em> → \"v.v.\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Kỹ thuật cơ khí liên quan đến việc thiết kế và chế tạo máy móc.",
+      "en": "Mechanical engineering is concerned with the design and manufacture of machines.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X is concerned with Y</strong>.",
+        "X = mechanical engineering, Y = the design and manufacture of machines.",
+        "Viết <em>Mechanical engineering deals with machines.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "A person who studies, builds, and works with machines.",
+        "opts": [
+          "mechanical engineer",
+          "qualified",
+          "degree",
+          "hardware"
+        ],
+        "ans": 0,
+        "why": "studies, builds, works with machines → mechanical engineer."
+      },
+      {
+        "q": "To study and evaluate something.",
+        "opts": [
+          "improve",
+          "design",
+          "assess",
+          "test"
+        ],
+        "ans": 2,
+        "why": "study and evaluate → assess."
+      },
+      {
+        "q": "Machinery or mechanical components.",
+        "opts": [
+          "hardware",
+          "friction",
+          "quality",
+          "degree"
+        ],
+        "ans": 0,
+        "why": "mechanical components → hardware."
+      },
+      {
+        "q": "To build something in a factory.",
+        "opts": [
+          "invent",
+          "assess",
+          "design",
+          "manufacturing"
+        ],
+        "ans": 3,
+        "why": "in a factory → manufacturing."
+      },
+      {
+        "q": "Involving a wide variety of topics or disciplines.",
+        "opts": [
+          "broad",
+          "qualified",
+          "test",
+          "hardware"
+        ],
+        "ans": 0,
+        "why": "wide variety → broad."
+      },
+      {
+        "q": "To observe a machine's operations in order to determine its functionality.",
+        "opts": [
+          "assess",
+          "improve",
+          "test",
+          "invent"
+        ],
+        "ans": 2,
+        "why": "observe a machine's operations → test."
+      },
+      {
+        "q": "The transfer of energy from one place to another to perform work.",
+        "opts": [
+          "friction",
+          "power transmission",
+          "manufacturing",
+          "quality"
+        ],
+        "ans": 1,
+        "why": "transfer of energy → power transmission."
+      },
+      {
+        "q": "To make something better.",
+        "opts": [
+          "assess",
+          "improve",
+          "invent",
+          "test"
+        ],
+        "ans": 1,
+        "why": "make something better → improve."
+      },
+      {
+        "q": "To make a completely new thing for the first time.",
+        "opts": [
+          "design",
+          "improve",
+          "invent",
+          "assess"
+        ],
+        "ans": 2,
+        "why": "completely new, first time → invent."
+      },
+      {
+        "q": "Having the degree or training needed for a job.",
+        "opts": [
+          "broad",
+          "qualified",
+          "hardware",
+          "friction"
+        ],
+        "ans": 1,
+        "why": "degree or training needed → qualified."
+      },
+      {
+        "q": "To work mainly in one particular field.",
+        "opts": [
+          "specialize",
+          "design",
+          "invent",
+          "manufacture"
+        ],
+        "ans": 0,
+        "why": "one particular field → specialize."
+      },
+      {
+        "q": "A qualification given by a college or university.",
+        "opts": [
+          "quality",
+          "degree",
+          "hardware",
+          "friction"
+        ],
+        "ans": 1,
+        "why": "given by a college → degree."
+      },
+      {
+        "q": "The force that resists two surfaces sliding against each other.",
+        "opts": [
+          "friction",
+          "hardware",
+          "degree",
+          "quality"
+        ],
+        "ans": 0,
+        "why": "slows sliding → friction."
+      },
+      {
+        "q": "How good or bad something is.",
+        "opts": [
+          "degree",
+          "hardware",
+          "quality",
+          "friction"
+        ],
+        "ans": 2,
+        "why": "how good or bad → quality."
+      },
+      {
+        "q": "The branch of engineering that makes bridges, roads, and airports.",
+        "opts": [
+          "electrical engineering",
+          "civil engineering",
+          "electronics engineering",
+          "mechanical engineering"
+        ],
+        "ans": 1,
+        "why": "bridges, roads, airports → civil engineering."
+      },
+      {
+        "q": "The branch of engineering about making and sending electricity.",
+        "opts": [
+          "civil engineering",
+          "electronics engineering",
+          "electrical engineering",
+          "mechanical engineering"
+        ],
+        "ans": 2,
+        "why": "generation and distribution of electricity → electrical engineering."
+      },
+      {
+        "q": "The branch of engineering about parts and equipment for communications and computing.",
+        "opts": [
+          "electronics engineering",
+          "civil engineering",
+          "electrical engineering",
+          "mechanical engineering"
+        ],
+        "ans": 0,
+        "why": "components for communications and computing → electronics engineering."
+      },
+      {
+        "q": "Complete: \"Mechanical engineers ______ and build machines.\"",
+        "opts": [
+          "quality",
+          "design",
+          "broad",
+          "degree"
+        ],
+        "ans": 1,
+        "why": "Article 1, câu 2: <em>design and build</em>. Chỗ trống cần một động từ."
+      },
+      {
+        "q": "Complete: \"Most mechanical engineers ______ in a particular field.\"",
+        "opts": [
+          "specialize",
+          "manufacture",
+          "design",
+          "assess"
+        ],
+        "ans": 0,
+        "why": "Article 1, câu 8."
+      },
+      {
+        "q": "Complete: \"Engineering is largely a ______ activity.\"",
+        "opts": [
+          "broad",
+          "qualified",
+          "practical",
+          "medical"
+        ],
+        "ans": 2,
+        "why": "Article 2, câu 1."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (The Mechanical Engineer). Mark each statement True or False.",
+        "st": [
+          [
+            "Mechanical engineers assess the quality of existing machines.",
+            true
+          ],
+          [
+            "Mechanical engineers can only repair machines.",
+            false
+          ],
+          [
+            "Mechanical engineers adjust and improve designs as needed.",
+            true
+          ],
+          [
+            "A qualified mechanical engineer has an engineering degree.",
+            true
+          ]
+        ],
+        "why": "Đúng ba ý trong bài; \"chỉ sửa máy\" không có trong bài, họ còn thiết kế, chế tạo, phát minh."
+      },
+      {
+        "q": "Read Article 1 again (what students study). Mark each statement True or False.",
+        "st": [
+          [
+            "Students study physics and kinematics.",
+            true
+          ],
+          [
+            "Friction and power transmission are not important.",
+            false
+          ],
+          [
+            "Students learn how to manufacture machines and components.",
+            true
+          ],
+          [
+            "Students never learn how to test machines.",
+            false
+          ]
+        ],
+        "why": "Bài viết: study physics and kinematics; friction, power transmission are essential; learn to manufacture and test."
+      },
+      {
+        "q": "Read Article 2 (Engineering). Mark each statement True or False.",
+        "st": [
+          [
+            "Civil engineering is concerned with making bridges, roads, and airports.",
+            true
+          ],
+          [
+            "Electronics engineering is about the generation of electricity.",
+            false
+          ],
+          [
+            "Mechanical engineering includes automobile and aeronautical engineering.",
+            true
+          ],
+          [
+            "Mining and medical engineering belong only to electrical engineering.",
+            false
+          ]
+        ],
+        "why": "Electronics lo linh kiện và thiết bị; phát điện là của electrical. Mining và medical thuộc một phần cơ khí, một phần điện."
+      }
+    ]
+  }
+}

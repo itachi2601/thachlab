@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 4 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 4</span></div>
+  <h1>Flashcard: Measurements</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "metric", "ipa": "/ˈmetrɪk/", "vi": "hệ mét (mét, lít, kilôgam)", "def": "The system based on the meter.", "img": "", "group": "Cụm A · Hệ đo và đổi đơn vị"}, {"term": "imperial", "ipa": "/ɪmˈpɪəriəl/", "vi": "hệ imperial (inch, quart, pound)", "def": "The system that uses inches and quarts.", "img": "/assets/avcn/chapter-4/imperial.webp", "group": "Cụm A · Hệ đo và đổi đơn vị"}, {"term": "conversion", "ipa": "/kənˈvɜːʃn/", "vi": "sự đổi (từ hệ đo này sang hệ đo khác)", "def": "Changing from one system into another.", "img": "/assets/avcn/chapter-4/conversion.webp", "group": "Cụm A · Hệ đo và đổi đơn vị"}, {"term": "round off", "ipa": "/ˌraʊnd ˈɒf/", "vi": "làm hỏng, làm mòn tròn (bu lông, vít)", "def": "To damage a screw or bolt.", "img": "/assets/avcn/chapter-4/round-off.webp", "group": "Cụm A · Hệ đo và đổi đơn vị"}, {"term": "quart", "ipa": "/kwɔːt/", "vi": "quart (đơn vị thể tích imperial, gần 1 lít)", "def": "An imperial unit of liquid volume.", "img": "/assets/avcn/chapter-4/quart.webp", "group": "Cụm A · Hệ đo và đổi đơn vị"}, {"term": "liter", "ipa": "/ˈliːtə/", "vi": "lít", "def": "A metric measure of volume.", "img": "/assets/avcn/chapter-4/liter.webp", "group": "Cụm B · Đơn vị đo"}, {"term": "centimeter", "ipa": "/ˈsentɪmiːtə/", "vi": "xentimét", "def": "A metric measure of length or distance.", "img": "/assets/avcn/chapter-4/centimeter.webp", "group": "Cụm B · Đơn vị đo"}, {"term": "pound", "ipa": "/paʊnd/", "vi": "pound, cân Anh (≈ 0,45 kg)", "def": "An imperial measure of weight.", "img": "/assets/avcn/chapter-4/pound.webp", "group": "Cụm B · Đơn vị đo"}, {"term": "kilogram", "ipa": "/ˈkɪləɡræm/", "vi": "kilôgam", "def": "A metric measure of weight.", "img": "/assets/avcn/chapter-4/kilogram.webp", "group": "Cụm B · Đơn vị đo"}, {"term": "cubic inch", "ipa": "/ˌkjuːbɪk ˈɪntʃ/", "vi": "inch khối", "def": "An imperial measure of volume.", "img": "/assets/avcn/chapter-4/cubic-inch.webp", "group": "Cụm B · Đơn vị đo"}, {"term": "micrometer", "ipa": "/maɪˈkrɒmɪtə/", "vi": "panme (dụng cụ đo khoảng cách rất nhỏ)", "def": "A tool that measures small distances.", "img": "/assets/avcn/chapter-4/micrometer.webp", "group": "Cụm C · Dụng cụ đo"}, {"term": "vernier caliper", "ipa": "/ˌvɜːniə ˈkælɪpə/", "vi": "thước cặp", "def": "A tool with a sliding jaw for measuring the size of an item.", "img": "/assets/avcn/chapter-4/vernier-caliper.webp", "group": "Cụm C · Dụng cụ đo"}, {"term": "outside micrometer", "ipa": "/ˌaʊtˈsaɪd maɪˈkrɒmɪtə/", "vi": "panme đo ngoài (khung chữ C)", "def": "A micrometer that measures the outer width of a part.", "img": "/assets/avcn/chapter-4/outside-micrometer.webp", "group": "Cụm C · Dụng cụ đo"}, {"term": "inside micrometer", "ipa": "/ˌɪnˈsaɪd maɪˈkrɒmɪtə/", "vi": "panme đo trong", "def": "A micrometer that measures the inner width of a hole.", "img": "/assets/avcn/chapter-4/inside-micrometer.webp", "group": "Cụm C · Dụng cụ đo"}, {"term": "depth micrometer", "ipa": "/ˈdepθ maɪˈkrɒmɪtə/", "vi": "panme đo sâu", "def": "A micrometer that measures how deep a hole is.", "img": "/assets/avcn/chapter-4/depth-micrometer.webp", "group": "Cụm C · Dụng cụ đo"}, {"term": "tolerance", "ipa": "/ˈtɒlərəns/", "vi": "dung sai", "def": "A range of acceptable size.", "img": "/assets/avcn/chapter-4/tolerance.webp", "group": "Cụm D · Dung sai và sai số"}, {"term": "deviation", "ipa": "/ˌdiːviˈeɪʃn/", "vi": "độ lệch, sai lệch", "def": "A difference from a precise size.", "img": "/assets/avcn/chapter-4/deviation.webp", "group": "Cụm D · Dung sai và sai số"}, {"term": "permissible", "ipa": "/pəˈmɪsəbl/", "vi": "được phép, chấp nhận được", "def": "Allowed.", "img": "", "group": "Cụm D · Dung sai và sai số"}, {"term": "accurate", "ipa": "/ˈækjərət/", "vi": "chính xác (đúng 100%)", "def": "Exactly correct.", "img": "", "group": "Cụm D · Dung sai và sai số"}, {"term": "variation", "ipa": "/ˌveəriˈeɪʃn/", "vi": "sự khác nhau về kích thước", "def": "A difference between parts made from the same design.", "img": "", "group": "Cụm D · Dung sai và sai số"}];
+const AUDIO = {"metric": "/assets/avcn/chapter-4/audio/5f181f76dd.mp3", "The system based on the meter.": "/assets/avcn/chapter-4/audio/b42720dfa4.mp3", "imperial": "/assets/avcn/chapter-4/audio/c2a5dcaed8.mp3", "The system that uses inches and quarts.": "/assets/avcn/chapter-4/audio/c3a520d7e1.mp3", "conversion": "/assets/avcn/chapter-4/audio/1a6af5a081.mp3", "Changing from one system into another.": "/assets/avcn/chapter-4/audio/2df201d82b.mp3", "round off": "/assets/avcn/chapter-4/audio/f1d450d873.mp3", "To damage a screw or bolt.": "/assets/avcn/chapter-4/audio/139dbaa041.mp3", "quart": "/assets/avcn/chapter-4/audio/424f00d863.mp3", "An imperial unit of liquid volume.": "/assets/avcn/chapter-4/audio/fa88056097.mp3", "liter": "/assets/avcn/chapter-4/audio/bb0111475e.mp3", "A metric measure of volume.": "/assets/avcn/chapter-4/audio/175d94a404.mp3", "centimeter": "/assets/avcn/chapter-4/audio/9c206450e8.mp3", "A metric measure of length or distance.": "/assets/avcn/chapter-4/audio/10bb04f976.mp3", "pound": "/assets/avcn/chapter-4/audio/5be22f25f9.mp3", "An imperial measure of weight.": "/assets/avcn/chapter-4/audio/12b557880c.mp3", "kilogram": "/assets/avcn/chapter-4/audio/5026dea1e2.mp3", "A metric measure of weight.": "/assets/avcn/chapter-4/audio/12dc5d70c7.mp3", "cubic inch": "/assets/avcn/chapter-4/audio/9c88610a7e.mp3", "An imperial measure of volume.": "/assets/avcn/chapter-4/audio/3183f13690.mp3", "micrometer": "/assets/avcn/chapter-4/audio/4967b8e525.mp3", "A tool that measures small distances.": "/assets/avcn/chapter-4/audio/156db0968e.mp3", "vernier caliper": "/assets/avcn/chapter-4/audio/96bc07f8f2.mp3", "A tool with a sliding jaw for measuring the size of an item.": "/assets/avcn/chapter-4/audio/c4647ac9fc.mp3", "outside micrometer": "/assets/avcn/chapter-4/audio/e4bc940d37.mp3", "A micrometer that measures the outer width of a part.": "/assets/avcn/chapter-4/audio/653188777e.mp3", "inside micrometer": "/assets/avcn/chapter-4/audio/8c1e75b367.mp3", "A micrometer that measures the inner width of a hole.": "/assets/avcn/chapter-4/audio/c53f8e8e63.mp3", "depth micrometer": "/assets/avcn/chapter-4/audio/a267884e37.mp3", "A micrometer that measures how deep a hole is.": "/assets/avcn/chapter-4/audio/8f231dfeb8.mp3", "tolerance": "/assets/avcn/chapter-4/audio/06d241065f.mp3", "A range of acceptable size.": "/assets/avcn/chapter-4/audio/786f6d8fda.mp3", "deviation": "/assets/avcn/chapter-4/audio/8a6a2af348.mp3", "A difference from a precise size.": "/assets/avcn/chapter-4/audio/8e7609ca72.mp3", "permissible": "/assets/avcn/chapter-4/audio/77651faf24.mp3", "Allowed.": "/assets/avcn/chapter-4/audio/30508cefcd.mp3", "accurate": "/assets/avcn/chapter-4/audio/bb3ff1cb27.mp3", "Exactly correct.": "/assets/avcn/chapter-4/audio/0f04c91b76.mp3", "variation": "/assets/avcn/chapter-4/audio/7e3d07cb9d.mp3", "A difference between parts made from the same design.": "/assets/avcn/chapter-4/audio/71d795c506.mp3", "millimeter": "/assets/avcn/chapter-4/audio/39af03d38a.mp3", "inch": "/assets/avcn/chapter-4/audio/e4e36cfc3f.mp3", "dimension": "/assets/avcn/chapter-4/audio/caee3b2a19.mp3", "precise": "/assets/avcn/chapter-4/audio/5ecfa4dc08.mp3", "vary": "/assets/avcn/chapter-4/audio/203c285811.mp3", "overall": "/assets/avcn/chapter-4/audio/0dd561789b.mp3", "span": "/assets/avcn/chapter-4/audio/9ef5705a4d.mp3", "height / width / thickness": "/assets/avcn/chapter-4/audio/53c76a3de0.mp3", "tight tolerance": "/assets/avcn/chapter-4/audio/fe93731afe.mp3", "loose tolerance": "/assets/avcn/chapter-4/audio/be7633fdee.mp3", "plus or minus (±)": "/assets/avcn/chapter-4/audio/4c91f04d04.mp3", "within": "/assets/avcn/chapter-4/audio/9795d76d67.mp3", "range": "/assets/avcn/chapter-4/audio/1fed59f307.mp3", "clearance": "/assets/avcn/chapter-4/audio/cdf7474743.mp3", "compass": "/assets/avcn/chapter-4/audio/4353a2889c.mp3", "angle square": "/assets/avcn/chapter-4/audio/51347454b7.mp3", "combination square": "/assets/avcn/chapter-4/audio/eb90d4a701.mp3", "Fasteners and tools use imperial measurements or metric, and knowing the difference is important.": "/assets/avcn/chapter-4/audio/3551b59787.mp3", "Fasteners": "/assets/avcn/chapter-4/audio/f205b2b293.mp3", "tools": "/assets/avcn/chapter-4/audio/f267f9d977.mp3", "measurements": "/assets/avcn/chapter-4/audio/da7f0ba55f.mp3", "difference": "/assets/avcn/chapter-4/audio/8486456eb3.mp3", "important": "/assets/avcn/chapter-4/audio/6e949d1d8c.mp3", "It prevents you from rounding off a fastener, damaging tools, or causing injury.": "/assets/avcn/chapter-4/audio/3f64214419.mp3", "rounding off": "/assets/avcn/chapter-4/audio/16dabda15e.mp3", "prevents … from": "/assets/avcn/chapter-4/audio/07127195bd.mp3", "damaging": "/assets/avcn/chapter-4/audio/097debfa11.mp3", "causing": "/assets/avcn/chapter-4/audio/e13e555be2.mp3", "injury": "/assets/avcn/chapter-4/audio/456bfb9f84.mp3", "If you don't know an item's size, use a micrometer or other caliper to measure it.": "/assets/avcn/chapter-4/audio/8c697d975e.mp3", "caliper": "/assets/avcn/chapter-4/audio/eba548ba76.mp3", "item": "/assets/avcn/chapter-4/audio/7cffb444d2.mp3", "size": "/assets/avcn/chapter-4/audio/80779a016f.mp3", "measure": "/assets/avcn/chapter-4/audio/9166f9e833.mp3", "Check centimeters or millimeters for metric tools.": "/assets/avcn/chapter-4/audio/c649abdbf6.mp3", "centimeters": "/assets/avcn/chapter-4/audio/a69be6c3f3.mp3", "Check": "/assets/avcn/chapter-4/audio/5a77682aea.mp3", "millimeters": "/assets/avcn/chapter-4/audio/2d28243353.mp3", "metric tools": "/assets/avcn/chapter-4/audio/d9f4f3320a.mp3", "Look at inches for imperial tools.": "/assets/avcn/chapter-4/audio/b3e9b3d84f.mp3", "inches": "/assets/avcn/chapter-4/audio/6140d07c47.mp3", "Look at": "/assets/avcn/chapter-4/audio/c4d32ea2c1.mp3", "imperial tools": "/assets/avcn/chapter-4/audio/43138822a9.mp3", "Volume and weight are also very different in the two systems.": "/assets/avcn/chapter-4/audio/a23f955737.mp3", "Volume": "/assets/avcn/chapter-4/audio/2bc0b86a6a.mp3", "weight": "/assets/avcn/chapter-4/audio/bbd9e14dc0.mp3", "also": "/assets/avcn/chapter-4/audio/5ca58b6879.mp3", "different": "/assets/avcn/chapter-4/audio/fdcecaf11c.mp3", "systems": "/assets/avcn/chapter-4/audio/b719125119.mp3", "Using quarts when a formula calls for liters is very dangerous.": "/assets/avcn/chapter-4/audio/74674d3d95.mp3", "quarts": "/assets/avcn/chapter-4/audio/2e52123237.mp3", "liters": "/assets/avcn/chapter-4/audio/129f248ef5.mp3", "formula": "/assets/avcn/chapter-4/audio/59a57410a7.mp3", "calls for": "/assets/avcn/chapter-4/audio/cb186f9c85.mp3", "dangerous": "/assets/avcn/chapter-4/audio/1829b059fc.mp3", "A cubic inch is totally different from a cubic meter.": "/assets/avcn/chapter-4/audio/414b8fd1b6.mp3", "totally": "/assets/avcn/chapter-4/audio/cf5994fc7f.mp3", "different from": "/assets/avcn/chapter-4/audio/fbe7acde41.mp3", "cubic meter": "/assets/avcn/chapter-4/audio/4c9f409ecd.mp3", "For weights, a pound cannot substitute for a kilogram.": "/assets/avcn/chapter-4/audio/9fec3c9012.mp3", "substitute for": "/assets/avcn/chapter-4/audio/1b844ff5b7.mp3", "cannot": "/assets/avcn/chapter-4/audio/b2b8f9cde0.mp3", "Always pay close attention to which system is required.": "/assets/avcn/chapter-4/audio/48ab707b94.mp3", "required": "/assets/avcn/chapter-4/audio/abea7c4178.mp3", "If you must use tools from the other system, refer to a table of conversion.": "/assets/avcn/chapter-4/audio/af4cb98896.mp3", "must": "/assets/avcn/chapter-4/audio/d8d78d3703.mp3", "the other system": "/assets/avcn/chapter-4/audio/69aa92043d.mp3", "refer to": "/assets/avcn/chapter-4/audio/f498f8646d.mp3", "It is impossible to produce components with dimensions that are absolutely precise,": "/assets/avcn/chapter-4/audio/36e0d59c76.mp3", "impossible": "/assets/avcn/chapter-4/audio/f9ced450b7.mp3", "produce": "/assets/avcn/chapter-4/audio/8a5275aa5b.mp3", "components": "/assets/avcn/chapter-4/audio/4954265316.mp3", "absolutely": "/assets/avcn/chapter-4/audio/8e60a2a029.mp3", "with sizes exactly the same as those specified in a design.": "/assets/avcn/chapter-4/audio/d4231d4712.mp3", "This is because all production processes are imprecise to a certain extent.": "/assets/avcn/chapter-4/audio/a469a4b34e.mp3", "imprecise": "/assets/avcn/chapter-4/audio/3ad3b9220e.mp3", "production processes": "/assets/avcn/chapter-4/audio/1c10e7fc2f.mp3", "to a certain extent": "/assets/avcn/chapter-4/audio/c167fc9d18.mp3", "Therefore, the sizes of several components produced from the same design will vary (differ).": "/assets/avcn/chapter-4/audio/fad3db7a43.mp3", "Therefore": "/assets/avcn/chapter-4/audio/3c5c88eb72.mp3", "several": "/assets/avcn/chapter-4/audio/0291f93512.mp3", "produced from": "/assets/avcn/chapter-4/audio/60c4d67cc9.mp3", "same design": "/assets/avcn/chapter-4/audio/f6d4f67f10.mp3", "Although the variation may only be a few hundredths of a millimeter, sizes will not be 100% accurate (exact) compared with the design.": "/assets/avcn/chapter-4/audio/7b94b20d61.mp3", "Although": "/assets/avcn/chapter-4/audio/b88b4480dd.mp3", "a few hundredths": "/assets/avcn/chapter-4/audio/a58ae571c7.mp3", "compared with": "/assets/avcn/chapter-4/audio/e4dbd19c72.mp3", "Because engineers know that accuracy cannot be perfect, in design they often specify tolerances – that is, acceptable variations in precision.": "/assets/avcn/chapter-4/audio/18f9ffa73c.mp3", "tolerances": "/assets/avcn/chapter-4/audio/9aca1cb405.mp3", "variations": "/assets/avcn/chapter-4/audio/9761a434c9.mp3", "engineers": "/assets/avcn/chapter-4/audio/e94711f302.mp3", "accuracy": "/assets/avcn/chapter-4/audio/426e326ffd.mp3", "specify": "/assets/avcn/chapter-4/audio/f01faaf7d7.mp3", "acceptable": "/assets/avcn/chapter-4/audio/69a9f07e04.mp3", "Instead of giving one precise size, a tolerance specifies a range of acceptable size – an allowed amount of variation.": "/assets/avcn/chapter-4/audio/0c729b04d7.mp3", "Instead of": "/assets/avcn/chapter-4/audio/19dd3a5de3.mp3", "allowed amount": "/assets/avcn/chapter-4/audio/e356b82f25.mp3", "This is often given as a deviation (difference) from a precise size.": "/assets/avcn/chapter-4/audio/6e4ba0a9d8.mp3", "often": "/assets/avcn/chapter-4/audio/6c99118b16.mp3", "given as": "/assets/avcn/chapter-4/audio/78500c7fe3.mp3", "The drawing below shows a shaft with a specified diameter of 88mm, plus or minus (±) 0.05 mm.": "/assets/avcn/chapter-4/audio/01a35d0ca8.mp3", "plus or minus": "/assets/avcn/chapter-4/audio/828777dc85.mp3", "drawing": "/assets/avcn/chapter-4/audio/7d8e86e6fa.mp3", "shaft": "/assets/avcn/chapter-4/audio/3ff16b96cf.mp3", "specified": "/assets/avcn/chapter-4/audio/1c1eeb45d7.mp3", "diameter": "/assets/avcn/chapter-4/audio/f5399e57d0.mp3", "This means the diameter may deviate 0.05mm either side of this size.": "/assets/avcn/chapter-4/audio/a133391b8e.mp3", "deviate": "/assets/avcn/chapter-4/audio/a8f3c36cc0.mp3", "means": "/assets/avcn/chapter-4/audio/d4b0f96c50.mp3", "either side": "/assets/avcn/chapter-4/audio/e0b61f4fcc.mp3", "Therefore, diameters of 87.95mm and 88.05mm, which are slightly inaccurate, are still permissible (allowed), as they are within tolerance.": "/assets/avcn/chapter-4/audio/acb031dd86.mp3", "inaccurate": "/assets/avcn/chapter-4/audio/df741ccdbc.mp3", "slightly": "/assets/avcn/chapter-4/audio/b1402c2865.mp3", "within tolerance": "/assets/avcn/chapter-4/audio/7e3092b331.mp3", "However, diameters of 87.94mm or 88.06mm are not permissible – they are outside tolerance.": "/assets/avcn/chapter-4/audio/0e131d90f5.mp3", "outside": "/assets/avcn/chapter-4/audio/bd13008179.mp3", "However": "/assets/avcn/chapter-4/audio/117db74148.mp3", "not permissible": "/assets/avcn/chapter-4/audio/cf86198806.mp3", "When the permissible deviation in the size is very small, we say it is a tight tolerance (or a close tolerance).": "/assets/avcn/chapter-4/audio/ed1607e302.mp3", "tight": "/assets/avcn/chapter-4/audio/ccc0c1492f.mp3", "very small": "/assets/avcn/chapter-4/audio/e339fff555.mp3", "close": "/assets/avcn/chapter-4/audio/a2154dcca6.mp3", "A large permissible deviation is a loose tolerance.": "/assets/avcn/chapter-4/audio/02425debac.mp3", "loose": "/assets/avcn/chapter-4/audio/932b76d089.mp3", "large": "/assets/avcn/chapter-4/audio/38413ab6d9.mp3", "Machining a metal component to a tolerance of ±0.1mm is relatively easy to do, so this tolerance is loose.": "/assets/avcn/chapter-4/audio/0075477b2d.mp3", "Machining": "/assets/avcn/chapter-4/audio/7ba930bf17.mp3", "metal component": "/assets/avcn/chapter-4/audio/717765dad2.mp3", "relatively": "/assets/avcn/chapter-4/audio/d1999da5e8.mp3", "easy to do": "/assets/avcn/chapter-4/audio/230b7211b6.mp3", "But a tolerance of just ±0.01mm is a tight tolerance in metal working.": "/assets/avcn/chapter-4/audio/5f1af4ab76.mp3", "just": "/assets/avcn/chapter-4/audio/f4be1509df.mp3", "metal working": "/assets/avcn/chapter-4/audio/8aee93ce29.mp3", "It prevents you from rounding off a fastener.": "/assets/avcn/chapter-4/audio/bf775b3c81.mp3", "A table of conversion prevents you from making mistakes.": "/assets/avcn/chapter-4/audio/b348fff255.mp3", "A washer prevents the nut from damaging the surface.": "/assets/avcn/chapter-4/audio/cd0289b2c6.mp3", "If you don't know an item's size, use a micrometer to measure it.": "/assets/avcn/chapter-4/audio/284e488152.mp3", "If the hole is deep, use a depth micrometer to measure it.": "/assets/avcn/chapter-4/audio/e67bb36672.mp3", "The Millau Viaduct is a big bridge in France. Its  length is 2,460 m. The maximum  between two supports is 342 m. The tallest support has a  of 245 m, measured from the ground to the deck. The deck has a  of 32 m and a  of 4.2 m.": "/assets/avcn/chapter-4/audio/596463c8b8.mp3", "feeler gauge": "/assets/avcn/chapter-4/audio/43ee9ab716.mp3", "dial indicator": "/assets/avcn/chapter-4/audio/ae5ae27807.mp3", "tape measure": "/assets/avcn/chapter-4/audio/4a2d268fc2.mp3", "spirit level": "/assets/avcn/chapter-4/audio/678a57fb40.mp3", "Machining a metal component to a tolerance of ±0.1mm is relatively ways to do, so this tolerance is loose.": "/assets/avcn/chapter-4/audio/dd26f40cc0.mp3", "ways to do": "/assets/avcn/chapter-4/audio/5dbc93382a.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch4";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch(() => speakBrowser(text));
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>
