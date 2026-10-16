@@ -20,6 +20,7 @@ const columns = [
       { label: "Cách học trên ThachLab", href: "/gioi-thieu#features" },
       { label: "Blog", href: "/blog" },
       { label: "Phụ huynh xem kết quả của con", href: "/phu-huynh" },
+      { label: "Quy chế học tập", href: "/quy-che-hoc-tap" },
       { label: "Điều khoản & Bản quyền", href: "/dieu-khoan" },
     ],
   },

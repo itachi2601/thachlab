@@ -4,7 +4,7 @@ import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { ChevronRight, Flame, Trophy } from "lucide-react";
+import { BookOpen, ChevronRight, Flame, Trophy } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -414,6 +414,12 @@ export default function ThptStudentHome({
           </div>
         </div>
         <HeroStats rank={rank} weekGain={weekGain} />
+        <Link
+          href="/quy-che-hoc-tap"
+          className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
+        >
+          <BookOpen size={16} aria-hidden /> Quy tắc học tập
+        </Link>
       </section>
 
       {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
