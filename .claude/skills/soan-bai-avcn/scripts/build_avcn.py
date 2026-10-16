@@ -4,7 +4,7 @@
 Chạy từ gốc repo:  python3 .claude/skills/soan-bai-avcn/scripts/build_avcn.py content/lesson-samples/avcn-chapter-<n>-<slug>
 Mọi nội dung nằm trong data/bai.json (từ vựng, bài đọc, quiz, đề mẫu, luyện tập); file này chỉ dàn trang.
 Quy ước: HTML lưu DB không được chứa <script>/on*= — mọi tương tác là radio + :checked, <details>.
-Nút nghe 🔊 là <button data-tl-speak="…">, trang bài học xử lý uỷ quyền (speechSynthesis).
+Nút nghe 🔊 là <button data-tl-speak="…">, trang bài học xử lý uỷ quyền: phát mp3 ở data-tl-audio (nếu có), không thì speechSynthesis.
 Ảnh: public/assets/avcn/chapter-<n>/<key>.webp, nguồn + giấy phép trong credits.json cùng thư mục.
 """
 import html as H
@@ -38,8 +38,15 @@ def esc(s: str) -> str:
     return H.escape(s, quote=True)
 
 
+_AUDIO_F = ASSET_DIR / "audio.json"
+AUDIO = json.loads(_AUDIO_F.read_text(encoding="utf-8")) if _AUDIO_F.exists() else {}
+
+
 def speak(text: str) -> str:
-    return f'<button type="button" class="tl-speak" data-tl-speak="{esc(text)}" aria-label="Nghe">🔊</button>'
+    """Nút 🔊. Có mp3 neural (tao_giong_doc.py → audio.json) thì thêm data-tl-audio; thiếu thì trang tự đọc bằng giọng trình duyệt."""
+    f = AUDIO.get(H.unescape(text).strip())
+    au = f' data-tl-audio="{ASSET_URL}/audio/{f}"' if f else ""
+    return f'<button type="button" class="tl-speak" data-tl-speak="{esc(text)}"{au} aria-label="Nghe">🔊</button>'
 
 
 def photo(key: str, caption: str, small=False) -> str:

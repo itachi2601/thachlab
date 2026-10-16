@@ -6,6 +6,37 @@ import imageDimensions from "@/features/lessons/image-dimensions.json";
 
 const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
 
+/** Nút 🔊 bài Anh văn chuyên ngành: mp3 neural đang phát (nếu có), để bấm nút khác thì dừng cái cũ. */
+let speakingAudio: HTMLAudioElement | null = null;
+
+/** Đọc bằng giọng của trình duyệt (en-US, chậm 0.9) — dự phòng khi bài chưa có mp3 hoặc mp3 không tải được. */
+function speakBrowser(text: string) {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US";
+  u.rate = 0.9;
+  // Nhiều trình duyệt (Safari/iOS, Chrome Mac/Android) bỏ qua `lang` nếu không gán voice → đọc bằng giọng mặc định
+  // của máy (tiếng Việt). Chọn giọng en tường minh, xếp hạng: ưu tiên Premium/Enhanced/Neural/Natural và các giọng
+  // tự nhiên đã biết, tránh giọng nén/robot (Fred, Albert, Zarvox…); en-US hơn en-khác.
+  const score = (v: SpeechSynthesisVoice) => {
+    const lang = v.lang.replace("_", "-").toLowerCase();
+    if (!lang.startsWith("en")) return -1;
+    let s = lang === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(v.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(v.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(v.name)) s -= 40;
+    if (v.localService === false) s += 5;
+    return s;
+  };
+  const voice = window.speechSynthesis
+    .getVoices()
+    .filter((v) => score(v) >= 0)
+    .sort((a, b) => score(b) - score(a))[0];
+  if (voice) u.voice = voice;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
 /** Hình SVG có hoạt hình SMIL (`<animate>`): người dùng bật "giảm chuyển động" thì bỏ hoạt hình, hình đứng yên ở khung đầu. */
 function withoutAnimationIfReduced(html: string): string {
   if (!html.includes("<animate")) return html;
@@ -252,32 +283,19 @@ export default function ContentHtml({
       event.preventDefault();
       event.stopPropagation();
       const text = speak.dataset.tlSpeak ?? "";
-      if (text && typeof window !== "undefined" && "speechSynthesis" in window) {
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = "en-US";
-        u.rate = 0.9;
-        // Nhiều trình duyệt (Safari/iOS, Chrome Mac/Android) bỏ qua `lang` nếu không gán voice → đọc bằng giọng mặc định
-        // của máy (tiếng Việt). Chọn giọng en-US tường minh, rơi về bất kỳ giọng en-* nào.
-        // Xếp hạng giọng: ưu tiên loại Premium/Enhanced/Neural/Natural và các giọng tự nhiên đã biết,
-        // tránh giọng nén/robot (Fred, Albert, Zarvox…); en-US hơn en-khác.
-        const score = (v: SpeechSynthesisVoice) => {
-          const lang = v.lang.replace("_", "-").toLowerCase();
-          if (!lang.startsWith("en")) return -1;
-          let s = lang === "en-us" ? 10 : 5;
-          if (/premium|enhanced|neural|natural|online/i.test(v.name)) s += 30;
-          if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(v.name)) s += 20;
-          if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(v.name)) s -= 40;
-          if (v.localService === false) s += 5;
-          return s;
-        };
-        const voice = window.speechSynthesis
-          .getVoices()
-          .filter((v) => score(v) >= 0)
-          .sort((a, b) => score(b) - score(a))[0];
-        if (voice) u.voice = voice;
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(u);
+      const audioUrl = speak.dataset.tlAudio;
+      if (!text) return;
+      speakingAudio?.pause();
+      speakingAudio = null;
+      if (audioUrl) {
+        // mp3 giọng neural dựng sẵn (Azure Aria); tải lỗi/không phát được thì rơi về giọng trình duyệt
+        window.speechSynthesis?.cancel();
+        const a = new Audio(audioUrl);
+        speakingAudio = a;
+        a.play().catch(() => speakBrowser(text));
+        return;
       }
+      speakBrowser(text);
       return;
     }
     // Mô phỏng SVG (SMIL begin="indefinite"): chạy MỘT lần mỗi lần bấm, không tự chạy khi đang đọc (B4).

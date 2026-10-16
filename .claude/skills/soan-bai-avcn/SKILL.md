@@ -46,6 +46,12 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    (ghép contact sheet) trước khi gắn `img` trong JSON. Hình kỹ thuật (gắn nhãn) vẽ SVG, nhãn chỉ số.
 4. **Dựng**: `python3 .claude/skills/soan-bai-avcn/scripts/build_avcn.py content/lesson-samples/avcn-chapter-<n>-<slug>`
    → `theory.html` + `bundle.json`. (Thư mục bài có thể giữ `build.py` 4 dòng gọi script này.)
+4b. **Giọng đọc neural (từ 16/10/2026, thầy chọn en-US-AriaNeural)**: nút 🔊 phát mp3 dựng sẵn bằng Azure Speech, thiếu file thì
+   tự rơi về giọng trình duyệt. Sau bước 4: `python3 .claude/skills/soan-bai-avcn/scripts/tao_giong_doc.py content/lesson-samples/avcn-chapter-<n>-<slug>`
+   (ghi `public/assets/avcn/chapter-<n>/audio/*.mp3` + `audio.json`; chạy lại không sinh trùng) rồi **dựng lại** bước 4 để nút có `data-tl-audio`;
+   dựng lại flashcard nếu có. Cần `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION` trong `.env.local` (tầng F0 miễn phí ~500 nghìn ký tự/tháng,
+   một chương ~5.000). `--dry-run` đếm ký tự không gọi Azure. mp3 nằm trong `public/` nên phải **commit + deploy** mới nghe được; sửa chữ trong
+   bài thì chạy lại script (chuỗi mới được sinh thêm). Không dùng edge-tts trong pipeline (không chính thức, chỉ dùng thử giọng).
 5. **Kiểm** (từ gốc repo; `S=.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts`):
    `python3 $S/lint_theory.py theory.html` · `python3 $S/check_quizzes.py theory.html` · `python3 $S/lint_do_dai.py theory.html`
    (bài từ vựng 10–13 quiz là bình thường, lỗi "quiz > 8" bỏ qua; tổng từ hiện ngay ≤ 2.200) ·
@@ -77,3 +83,4 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - 2026-10-16 · Sửa lý thuyết bài đã đăng: dry-run `update-ly-thuyet-from-bundle.mts` lộ hộp Flashcard ai đó thêm thẳng trên DB (link `/flashcard/avcn-chapter-8.html` đang 404) → luôn đọc khác biệt dry-run trước khi ghi, đưa phần thêm-tay vào `bai.json` thay vì ghi đè. Trang bài chỉ đối chiếu DB theo tiêu đề/cấu trúc mục, KHÔNG theo `body_html` → đổi lý thuyết xong phải `bash scripts/deploy.sh` mới hiện.
 - 2026-10-16 · Chapter 5 (Fasteners) không có máy tiện → mục gắn nhãn/SOP/bảng so sánh/tiêu đề Đoán đang viết cứng cho Chapter 8 → thêm khoá tuỳ chọn (`gan_nhan.svg`, `bang`, `sop.tieu_de`, `meta.doan_tieu_de`…, xem schema); dựng lại Chapter 8 phải ra file y hệt (`cmp`) trước khi commit script.
 - 2026-10-16 · Chọn 20 từ ⭐: grep đề cũ (`AVCN (tổng hợp)/đề thi 2026`, `TACN (đáp án)`) trước — Part 2 chương 5 lấy nguyên Article 2 (Bolts)/3 (Rivets) và đục grooves, helical, clockwise, Allen… → các từ đó phải là từ đố trong Article; đề mẫu câu ảnh dùng `img` thật (kiểm chéo bắt `[hình: …]` lộ đáp án); ảnh Commons cho khái niệm trừu tượng (grade, clockwise) thường không rõ ở 128 px → để thẻ không ảnh.
+- 2026-10-16 · Giọng 🔊 nghe máy móc vì chỉ lấy giọng en-US đầu tiên của máy → xếp hạng giọng (Premium/Neural…) làm dự phòng, giọng chính là mp3 Azure Aria dựng sẵn (bước 4b). Thử giọng bằng trang HTML nhúng base64 ≤ 512 KB (Browser pane không mở file lớn hơn, mp3 rời không nạp được trong file pane).

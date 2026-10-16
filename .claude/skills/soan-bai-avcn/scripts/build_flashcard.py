@@ -32,8 +32,13 @@ def main() -> None:
         if t["img"]:
             assert (ROOT / "public" / t["img"].lstrip("/")).exists(), f"thiếu ảnh {t['img']}"
     title = meta.get("title_en") or meta.get("title") or f"Chapter {ch}"
+    # mp3 giọng neural (tao_giong_doc.py): chuỗi → URL; thiếu thì trình duyệt tự đọc
+    man_f = ROOT / "public" / "assets" / "avcn" / f"chapter-{ch}" / "audio.json"
+    man = json.loads(man_f.read_text(encoding="utf-8")) if man_f.exists() else {}
+    audio = {t: f"/assets/avcn/chapter-{ch}/audio/{f}" for t, f in man.items()}
     html = TEMPLATE.replace("__CH__", str(ch)).replace("__TITLE__", title).replace(
-        "__DATA__", json.dumps(terms, ensure_ascii=False).replace("</", "<\\/"))
+        "__DATA__", json.dumps(terms, ensure_ascii=False).replace("</", "<\\/")).replace(
+        "__AUDIO__", json.dumps(audio, ensure_ascii=False).replace("</", "<\\/"))
     out = ROOT / "public" / href.lstrip("/")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
@@ -101,6 +106,8 @@ h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
 </main>
 <script>
 const TERMS = __DATA__;
+const AUDIO = __AUDIO__;
+let curAudio = null;
 const KEY = "avcn-flashcard-ch__CH__";
 TERMS.forEach((t, i) => { t.id = i; });
 // Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
@@ -113,6 +120,16 @@ const boxOf = (t) => box[t.id] || 1;
 function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
 function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch(() => speakBrowser(text));
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
