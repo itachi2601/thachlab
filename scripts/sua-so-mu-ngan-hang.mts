@@ -14,6 +14,9 @@ function env(key: string): string | undefined {
 }
 const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL")!, env("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
 const APPLY = process.argv.includes("--apply");
+const ONLY = process.argv.find((a) => a.startsWith("--only="))?.slice(7); // --only=mu10 : chỉ sửa số mũ 10, bỏ qua đơn vị m2/m3
+// Mất dấu trừ chứ không chỉ mất ^ (10.103 m3 = 10.10^-3 m3; câu anh em 1476080 viết 10.10-3): không tự sửa, dò tay
+const EXCLUDE_IDS = new Set([1475529]);
 
 const MATH_OR_TAG = /\$\$[\s\S]*?\$\$|\$[^$]*\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|<[^>]*>/g;
 // Trả về: "math" | "text" | "tag" cho vị trí i
@@ -26,11 +29,13 @@ type Rule = { name: string; re: RegExp; make: (m: RegExpExecArray, math: boolean
 const RULES: Rule[] = [
   {
     name: "mu10",
-    re: /(\d)(\s*(?:[.·×x*]|\\cdot|\\times)\s*)10([-−–]?)(\d{1,2})(?![\d^_{]|[,.]\d)/g,
+    re: /(\d|(?<![A-Za-z0-9_\\])[xXyYzZaAbBN])(\s*(?:[.·×x*]|\\cdot|\\times)\s*)10([-−–]?)(\d{1,2})(?![\d^_{]|[,.]\d)/g,
     make: (m, math) => {
       const [, d, op, sign, e] = m;
       if (e.startsWith("0")) return null;
       const n = Number(e);
+      // hệ số là chữ cái (x.105 Pa, a.109 Hz): chắc chắn là a·10^n; chỉ bỏ ca "x.102%" (ký tự rác của Word)
+      if (/[A-Za-z]/.test(d)) return /^\s*%/.test(m.input.slice(m.index + m[0].length)) ? null : `${d}${op}10${sup((sign ? (math ? "-" : "−") : "") + e, math)}`;
       const before = m.input.slice(Math.max(0, m.index - 12), m.index + 1);
       const after = m.input.slice(m.index + m[0].length, m.index + m[0].length + 6);
       const mantissaThapPhan = /,\d*$/.test(before); // 1,3.102 — có dấu phẩy thập phân → chắc là dạng khoa học
@@ -60,6 +65,7 @@ const AMBIG: Rule[] = [
 type Change = { rule: string; before: string; after: string };
 function fixString(s: string, changes: Change[], ambig: Change[]): string {
   for (const rule of RULES) {
+    if (ONLY && rule.name !== ONLY) continue;
     const z = zones(s);
     let out = "", last = 0, any = false;
     for (const m of s.matchAll(new RegExp(rule.re.source, "g"))) {
@@ -74,6 +80,7 @@ function fixString(s: string, changes: Change[], ambig: Change[]): string {
     }
     if (any) s = out + s.slice(last);
   }
+  if (ONLY) return s;
   // mơ hồ riêng của đơn vị: "m2 =" (có thể là khối lượng m2)
   for (const m of s.matchAll(AMBIG[1].re)) {
     const i = m.index!;
@@ -98,6 +105,7 @@ for (;;) {
   if (!data?.length) break;
   for (const r of data) {
     scanned++;
+    if (EXCLUDE_IDS.has(r.id)) continue;
     const changes: Change[] = [], ambig: Change[] = [];
     const nq = mapStrings(r.question, (s) => fixString(s, changes, ambig));
     if (changes.length || ambig.length) report.push({ id: r.id, changes, ambig });

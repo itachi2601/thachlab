@@ -302,3 +302,8 @@ Trang công khai `/dieu-khoan` đã cam kết với người học và chủ s�
 # Rà UI bằng tài khoản đăng nhập sẵn trong trình duyệt (bài học 15/10/2026)
 - Trước khi kết luận "bài/đề không có dữ liệu", xác định tài khoản đang đăng nhập là ai, lớp nào, role gì: RLS `exams` giấu đề gán lớp khác, nên trang hiện "trống" chỉ với tài khoản đó. Đối chiếu bằng truy vấn DB chỉ đọc rồi mới báo.
 - Repo không có `.prettierrc`: chạy prettier thì dùng `--print-width 120`, nếu không nó định dạng lại cả file thành diff rác.
+
+# Rà lỗi hàng loạt ngân hàng câu hỏi: ca chắc thì sửa, ca nghi ngờ đưa thầy duyệt bằng HTML (thầy chốt 16/10/2026)
+- Số mũ mất `^` (`x.105 Pa`, `a.109 Hz`, `3.108 m/s`): hệ số có thể là **chữ cái** chứ không chỉ chữ số; có khi mất cả dấu trừ (`10.103` = `10.10^-3`) — đối chiếu lời giải/câu anh em trước khi sửa. Script: `scripts/sua-so-mu-ngan-hang.mts --only=mu10` (dry-run → `--apply`, tự sao lưu), quét lại bằng `scripts/quet-so-mu-mo-rong.mts` tới khi chỉ còn ca nghi ngờ.
+- **Ca nghi ngờ KHÔNG tự đoán, không chỉ liệt kê trong chat**: ghi `scripts/data/duyet/<đợt>/items.json` (`id`, `ghiChu`, `deXuat`) → `npx tsx scripts/lap-duyet-html.mts <thư-mục>` dựng `duyet.html` (có KaTeX, 4 lựa chọn Sửa theo đề xuất / Sửa theo ý thầy / Bỏ / Giữ + ô yêu cầu sửa, tự lưu `phan-hoi.json` khi thầy chọn file lưu một lần) → gửi/mở cho thầy. Thầy xong thì đọc `phan-hoi.json`, chạy `scripts/ap-dung-duyet.mts <thư-mục>` ("Bỏ" = ẩn `archived=true`, có sao lưu), tự sửa các câu "Sửa" theo đề xuất/ý thầy rồi quét lại và báo.
+- Đơn vị mất `^` (`m/s2`, `cm3`) tách đợt riêng: `m2` có thể là khối lượng.
