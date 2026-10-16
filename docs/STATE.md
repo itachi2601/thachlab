@@ -13,7 +13,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
 - Không còn migration nào chờ (kiểm 15/10: log `scripts/logs/` khớp hết). Vừa chạy 15/10 10:57: `20261014150000_giao_em_cho_tro_giang` (nút Giao trợ giảng, chưa thử thao tác thật) + `20261014150000_hsg9_cd17_thien_van` (CĐ17 bài 178 đang ẩn). `run-migrations.sh --list` vẫn liệt kê cả file đã chạy — đối chiếu log.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
-- **Chờ chạy 16/10:** `20261016120000_ta_phong_van_phu_dao` (bảng `ta_interviews` + 2 hàm; trang `/tro-giang/phong-van` cho TA ghi phỏng vấn phụ đạo). Chưa chạy, chưa deploy, chưa thử đăng nhập TA/375px. Rollback: `perf/rollback/20261016120000_ta_phong_van_phu_dao.down.sql`.
+- **Đã chạy 16/10 14:19:** `20261016120000_ta_phong_van_phu_dao` (bảng `ta_interviews` RLS bật, 2 hàm security definer chỉ `authenticated`; trang `/tro-giang/phong-van` cho TA ghi phỏng vấn phụ đạo). Chưa deploy, chưa thử đăng nhập TA/375px. Rollback: `perf/rollback/20261016120000_ta_phong_van_phu_dao.down.sql`.
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
