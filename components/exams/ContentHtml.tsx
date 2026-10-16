@@ -200,7 +200,9 @@ function renderWithKatex(html: string, katex: KatexModule): string {
     const tex = display ?? inline ?? parenInline ?? bracketDisplay;
     const displayMode = display !== undefined || bracketDisplay !== undefined;
     try {
-      return katex.renderToString(tex, { displayMode, throwOnError: false });
+      // Dấu phẩy thập phân kiểu Việt (3,25): KaTeX coi là dấu câu và chèn khoảng trắng ("3, 25") → bọc {,}
+      const fixed = tex.replace(/(\d),(?=\d)/g, "$1{,}");
+      return katex.renderToString(fixed, { displayMode, throwOnError: false });
     } catch {
       return match; // giữ nguyên văn bản nếu LaTeX lỗi
     }
