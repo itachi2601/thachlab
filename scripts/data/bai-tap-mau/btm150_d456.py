@@ -217,13 +217,13 @@ BUILD = [d4, d5, d6]
 
 # ═════════════ ĐỀ ═════════════
 DANG = [
-dict(label="Dạng 4 · Hai tiếng qua hai môi trường: tìm chiều dài hoặc tốc độ âm",
+dict(label="Dạng 4 · Nâng cao · Hai tiếng qua hai môi trường: tìm chiều dài hoặc tốc độ âm",
      topic=TOPIC,
      problem_html=r"""<p>Một bạn áp tai vào một đầu của một đường ray thép thẳng. Ở đầu kia, cách đó một khoảng $L$, một bạn khác gõ mạnh búa vào thanh ray. Bạn áp tai nghe thấy hai tiếng gõ, tiếng sau cách tiếng trước $\Delta t=0{,}85\ \text{s}$. Tốc độ âm trong không khí là $340\ \text{m/s}$, trong thép là $6120\ \text{m/s}$. Coi âm đi thẳng dọc theo ray trong cả hai môi trường.</p><ol type="a"><li>Vì sao nghe được hai tiếng? Tiếng nào tới trước?</li><li>Tính $L$.</li><li>Làm lại thí nghiệm với một ống gang thẳng dài $952\ \text{m}$ thì hai tiếng cách nhau $2{,}6\ \text{s}$. Tính tốc độ âm trong gang.</li></ol>"""),
-dict(label="Dạng 5 · Nguồn âm chuyển động và tiếng vang: tìm tốc độ xe từ tiếng còi",
+dict(label="Dạng 5 · Vận dụng cao · Nguồn âm chuyển động và tiếng vang: tìm tốc độ xe từ tiếng còi",
      topic=TOPIC,
      problem_html=r"""<p>Một ô tô chạy thẳng đều trên một đoạn đường thẳng, hướng thẳng về phía một vách núi. Khi xe cách vách núi $875\ \text{m}$, người lái bóp một hồi còi ngắn. Sau $5\ \text{s}$ kể từ lúc bóp còi, người lái nghe thấy tiếng vang từ vách núi. Tốc độ âm trong không khí là $340\ \text{m/s}$, coi như không có gió.</p><ol type="a"><li>Tính tốc độ của xe theo $\text{km/h}$.</li><li>Tính khoảng cách từ xe đến vách núi lúc người lái nghe thấy tiếng vang.</li><li>Ngay lúc nghe tiếng vang, người lái bóp còi lần thứ hai, xe vẫn chạy như cũ. Sau bao lâu kể từ lần bóp còi thứ hai thì người lái nghe tiếng vang lần thứ hai?</li></ol>"""),
-dict(label="Dạng 6 · Mở rộng HSG · Bước sóng khi âm đổi môi trường, kết hợp tiếng vang",
+dict(label="Dạng 6 · Vận dụng cao · Mở rộng HSG: Bước sóng khi âm đổi môi trường, kết hợp tiếng vang",
      topic=TOPIC,
      problem_html=r"""<p>Một chiếc loa đặt sát mặt nước của một hồ phát ra âm có tần số $500\ \text{Hz}$. Tốc độ âm trong không khí là $340\ \text{m/s}$, trong nước là $1500\ \text{m/s}$.</p><ol type="a"><li>Tính bước sóng của âm này trong không khí.</li><li>Âm truyền vào nước. Trong nước, tần số và bước sóng của âm bằng bao nhiêu?</li><li>Trong nước, âm đi thẳng đứng xuống đáy hồ, phản xạ rồi trở lại mặt nước sau $0{,}04\ \text{s}$ kể từ lúc vào nước. Tính độ sâu của hồ. Quãng từ mặt nước xuống đáy dài bằng bao nhiêu bước sóng của âm trong nước?</li></ol>"""),
 ]

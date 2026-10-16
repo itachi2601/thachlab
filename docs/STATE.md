@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **Đã chạy 16/10 22:43:** `20261016130000_hsg9_dot3_muc_noi_dung` (mục rỗng Lý thuyết + BTM cho bài 150/153/164). CĐ15 Âm (150) đã ghi nội dung, bài ẩn, chờ deploy + thầy duyệt.
 - Không còn migration nào chờ (kiểm 15/10: log `scripts/logs/` khớp hết). Vừa chạy 15/10 10:57: `20261014150000_giao_em_cho_tro_giang` (nút Giao trợ giảng, chưa thử thao tác thật) + `20261014150000_hsg9_cd17_thien_van` (CĐ17 bài 178 đang ẩn). `run-migrations.sh --list` vẫn liệt kê cả file đã chạy — đối chiếu log.
 - Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
 - **Đã chạy 16/10 14:19:** `20261016120000_ta_phong_van_phu_dao` (bảng `ta_interviews` RLS bật, 2 hàm security definer chỉ `authenticated`; trang `/tro-giang/phong-van` cho TA ghi phỏng vấn phụ đạo). Chưa deploy, chưa thử đăng nhập TA/375px. Rollback: `perf/rollback/20261016120000_ta_phong_van_phu_dao.down.sql`.
