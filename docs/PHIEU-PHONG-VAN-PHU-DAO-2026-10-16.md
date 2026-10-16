@@ -12,6 +12,8 @@ mục "Vấn đề gốc đã chốt". Mục đích: **hiểu**, không phải t
 - 1 em đã thoát bằng bài tự kiểm tra (đạt ≥80%) — nói được điều gì khiến làm đến cùng.
 Khác lớp nếu được. Trợ giảng do thầy chọn, hỏi riêng từng em; thầy không có mặt. Ghi mỗi em bằng mã `E1..E3`, không lưu tên/SĐT ở đây (dữ liệu định danh chỉ đi qua Claude, không gửi model ngoài).
 
+**Nơi ghi:** trợ giảng mở `/tro-giang/phong-van` (nút "Phỏng vấn học sinh" ở trang chủ trợ giảng), hỏi trực tiếp rồi gõ nguyên văn. Cần chạy migration `20261016120000_ta_phong_van_phu_dao` trước. Bảng trong file này chỉ là bản giấy dự phòng.
+
 ## Cách hỏi (≈10 phút/em, hỏi riêng, không có bạn cùng lớp bên cạnh)
 - Mở đầu: "Thầy đang sửa web cho dễ học hơn. Em nói thật, em nói chê cũng được, không bị trừ điểm gì."
 - Hỏi mở, để em kể; không gợi đáp án; không nói "phụ đạo" nếu em nói "mở khoá" thì dùng đúng từ của em.

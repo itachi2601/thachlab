@@ -33,6 +33,7 @@ FILES=(
   "supabase/migrations/20261015180000_phu_huynh_tu_noi_con.sql|Phụ huynh tự nối với con bằng tên + ngày sinh + SĐT: bảng parent_link_attempts, parent_link_requests + 4 RPC (claim_parent_by_child_info, request_parent_link_review, review_parent_link_request, search_students_for_link)|lúc nào cũng được (chỉ thêm bảng + hàm)"
   "supabase/migrations/20261015233000_ngay_sinh_tu_dang_ky.sql|Chép ngày sinh HS khai ở /dang-ky (metadata) sang profiles.birth_date (năm 1990–2015, có sao lưu) + handle_new_user tự chép cho tài khoản mới|lúc nào cũng được (chỉ ghi cột đang NULL + thay hàm)"
   "supabase/migrations/20261015234500_staff_sua_ngay_sinh.sql|Hàm staff_set_student_birth: thầy/TA sửa ngày sinh HS (ghi profiles + metadata) ở thẻ Liên lạc gia đình|lúc nào cũng được (chỉ thêm hàm)"
+  "supabase/migrations/20261016120000_ta_phong_van_phu_dao.sql|Bảng ta_interviews + hàm ta_interview_save/list: trợ giảng ghi phỏng vấn HS về kênh tự thoát phụ đạo (trang /tro-giang/phong-van)|lúc nào cũng được (chỉ thêm bảng/hàm)"
 )
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar

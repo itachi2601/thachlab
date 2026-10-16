@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Gamepad2, Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv, ClipboardCheck } from "lucide-react";
+import { Gamepad2, Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus, Tv, ClipboardCheck, MessagesSquare } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import TaSessionQuickEdit from "@/components/tro-giang/TaSessionQuickEdit";
@@ -160,6 +160,14 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
       >
         <CalendarPlus size={16} />
         Đăng lịch phụ đạo cho học sinh đặt
+      </Link>
+
+      <Link
+        href="/tro-giang/phong-van"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
+      >
+        <MessagesSquare size={16} />
+        Phỏng vấn học sinh
       </Link>
 
       <Link
