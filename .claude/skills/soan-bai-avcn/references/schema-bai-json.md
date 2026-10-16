@@ -11,6 +11,7 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `meta.prefix` | str | ✓ | tiền tố id radio, `tl<n>`; tab Bài mẫu tự dùng `tl<n>m` |
 | `meta.title_en`, `meta.title_vi` | str | ✓ | |
 | `meta.minutes` | int | ✓ | ước lượng đọc (20–30) |
+| `meta.doan_tieu_de`, `meta.doan_mo_dau`, `meta.them_nhan` | str | | tiêu đề/lời dẫn mục Đoán và nhãn hộp từ ⭐⭐ khi chương không nói về máy (mặc định = bản Chapter 8) |
 | `meta.muc_tieu` | str[] | ✓ | 3 mục tiêu đo được, gắn Part |
 | `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part · điểm, đề hỏi gì, học ở mục nào |
 | `khoi_dong` | obj[] (2) | ✓ | `{img, hoi, lua_chon[3], dap, fb_ok, fb_no}` — ảnh máy/dụng cụ quen ở xưởng |
@@ -18,10 +19,11 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `tu_vung_them` | `{term, vi}[]` (≈12) | ✓ | từ ⭐⭐: bộ phận, từ mô tả; dùng cho mục gắn nhãn (`vi` tra theo `term`) |
 | `bai_doc` | obj[] (1–3) | ✓ | mỗi Article `{ten, cau[[en, vi]...], quiz, dung_sai}`; `cau` chép **đúng câu giáo trình**, tách ≤ 25 từ/câu, từ ⭐ bọc `<b>`; `quiz` = điền-1-từ 3 lựa chọn; `dung_sai = {hoi, dap:bool, fb_ok, fb_no}`; mỗi câu nên có phần tử thứ 3 `{doan:[{tu, lua_chon[3], dap, giai}] (≤2, từ ⭐/từ thi, bọc `<b>` trong câu), nghia:{từ thường: nghĩa}}` → đố trắc nghiệm rồi chạm xem nghĩa (từ 16/10/2026); câu thiếu phần tử 3 dùng cách cũ: `tu_khoa` (tuỳ chọn) `{từ in đậm: nghĩa}` cho hộp "Đoán nghĩa trước khi đọc" khi nghĩa khác mục Từ vựng (vd Milling = phay, không phải máy phay) |
 | `mau_cau` | obj[] (2) | ✓ | `{ten, vd[[en, vi]×3], ghi_chu: str[]}` — chỉ mẫu câu xuất hiện trong Part 4–5 của chương |
-| `gan_nhan` | obj | ✓ | quiz về bộ phận số 1 của hình gắn nhãn; hình: `lathe_diagram.svg` (hoặc SVG riêng của chương, số thay tên) — sửa `sec_gan_nhan()` nếu chương không có hình gắn nhãn |
-| `sop` | obj | ✓ | `{hop_tu[5], doan (có "(1) ______"…), dap[5], quiz}` — đoạn điền từ kiểu Part 3 lấy từ Vocabulary/Reading của chương, viết lại bằng lời mình |
+| `bang` | obj | | bảng so sánh cuối mục Bài đọc `{ten, cot[], hang[][]}`; thiếu thì dùng bảng 5 phương pháp của Chapter 8. Ở 375 px giữ ≤ 2–3 cột ngắn, ý thứ hai xuống dòng bằng `<br>` (cột hẹp bẻ chữ giữa từ) |
+| `gan_nhan` | obj | ✓ | quiz về một bộ phận của hình gắn nhãn. Chương có SVG riêng (chỉ số, không tên): thêm `svg` (tên file trong `public/assets/avcn/chapter-<n>/`), `bo_phan [[term, vi]…]`, `tieu_de`, `mo_ta`, `chu_thich`; thiếu `svg` thì dùng hình máy tiện Chapter 8 |
+| `sop` | obj | ✓ | `{hop_tu[5], doan (có "(1) ______"…), dap[5], quiz, tieu_de?, mo_ta?}` — đoạn điền từ kiểu Part 3 lấy từ Vocabulary/Reading của chương, viết lại bằng lời mình |
 | `tra_bai` | [hoi, dap][] (6–8) | ✓ | câu hỏi gọi lại, có 1 câu dịch xuôi + 1 câu dịch ngược |
-| `de_mau.part1` | obj[] (6) | ✓ | `{q, opts[4], ans, why}`; 1 câu "Look at the picture…" ghi `[hình: …]` |
+| `de_mau.part1` | obj[] (6) | ✓ | `{q, opts[4], ans, why, img?}`; 1 câu "Look at the picture…" có `img` (khoá ảnh trong credits.json) — không ghi `[hình: …]` vào `q` vì lộ đáp án |
 | `de_mau.part1_chien_thuat`, `part2_chien_thuat` | str[] | ✓ | mỗi ý một dòng |
 | `de_mau.part2` | obj | ✓ | `{doan, dien:[{q, ans, opts[3], why}×4], ds:[{q, ans:bool, why}×4]}` — `doan` là đoạn Article; `opts` chứa `ans` |
 | `de_mau.part3` | obj | ✓ | `{hop_tu[5], doan, dap[5], chien_thuat: str[]}` — `dap[i]` ∈ `hop_tu` |

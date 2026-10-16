@@ -1,0 +1,1900 @@
+{
+  "meta": {
+    "chapter": 5,
+    "prefix": "tl5",
+    "title_en": "Mechanical Fasteners",
+    "title_vi": "Chi tiết kẹp chặt (chốt nối cơ khí)",
+    "minutes": 30,
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (chốt nối, ren, đinh tán, dụng cụ vặn) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 2 (Bolts) và Article 3 (Rivets) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X allows Y to…</em> và bị động <em>are screwed on by turning…</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục 2 Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 2 hoặc 3, điền 1 từ + Đúng/Sai",
+        "Mục 3 Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục 6 Chọn chốt nối"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục 3 + mục 4 mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục 4 mẫu câu"
+      ]
+    ],
+    "doan_tieu_de": "thứ này tên gì?",
+    "doan_mo_dau": "Hai thứ dưới đây em đã thấy ở xưởng hoặc ngoài đường. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "loại vít, bộ phận bu lông và đinh tán"
+  },
+  "khoi_dong": [
+    {
+      "img": "screws-box",
+      "hoi": "Hộp này đầy thứ em vẫn vặn bằng tua vít. Tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "screws",
+        "nails",
+        "rivets"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>screw</em> /skruː/ là vít: thân có ren, đầu có rãnh cho tua vít.",
+      "fb_no": "Nhìn thân có ren xoắn và đầu có rãnh chữ thập: thứ này được vặn vào, không đóng bằng búa."
+    },
+    {
+      "img": "rivets-bridge",
+      "hoi": "Trên dầm cầu sắt cũ có hàng trăm \"cái nút tròn\" này giữ các tấm thép. Tên tiếng Anh?",
+      "lua_chon": [
+        "nuts",
+        "rivets",
+        "nails"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>rivet</em> /ˈrɪvɪt/ là đinh tán: chốt nối vĩnh viễn, không vặn ra được.",
+      "fb_no": "Không có cạnh lục giác để vặn, nên không phải nut. Đầu tròn được tán chặt vào thép là loại chốt nào?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · 5 loại chốt nối",
+      "tu": [
+        {
+          "term": "fastener",
+          "ipa": "/ˈfɑːsnə/",
+          "vi": "chốt nối, chi tiết kẹp chặt (vít, bu lông, đinh…)",
+          "def": "A device used to hold two or more things together.",
+          "img": "fastener",
+          "tier": 1
+        },
+        {
+          "term": "nail",
+          "ipa": "/neɪl/",
+          "vi": "cái đinh (đời thường còn là móng tay)",
+          "def": "A long, narrow fastener with a smooth rod.",
+          "img": "nail",
+          "tier": 1
+        },
+        {
+          "term": "screw",
+          "ipa": "/skruː/",
+          "vi": "đinh vít, vít",
+          "def": "A fastener with a thread that is turned into a surface.",
+          "img": "wood-screw",
+          "tier": 1
+        },
+        {
+          "term": "bolt",
+          "ipa": "/bəʊlt/",
+          "vi": "bu lông",
+          "def": "A threaded fastener used with a nut to press pieces together.",
+          "img": "bolt",
+          "tier": 1
+        },
+        {
+          "term": "pin",
+          "ipa": "/pɪn/",
+          "vi": "chốt, ghim",
+          "def": "A small, simple fastener used for temporary jobs.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A long, narrow fastener with a smooth rod.\"</em>",
+        "lua_chon": [
+          "screw",
+          "nail",
+          "bolt",
+          "pin"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>smooth rod</em> (thân trơn): đinh không có ren.",
+        "fb_no": "Gạch từ khoá <em>smooth</em> (trơn, nhẵn). Vít và bu lông đều có ren. Loại nào thân trơn?"
+      }
+    },
+    {
+      "ten": "Cụm B · Đi kèm bu lông và vít",
+      "tu": [
+        {
+          "term": "nut",
+          "ipa": "/nʌt/",
+          "vi": "đai ốc, con tán (đời thường: quả hạch)",
+          "def": "A piece of metal with a hole in the middle.",
+          "img": "nut",
+          "tier": 1
+        },
+        {
+          "term": "washer",
+          "ipa": "/ˈwɒʃə/",
+          "vi": "vòng đệm, long đền",
+          "def": "A flat ring placed between the nut and the surface.",
+          "img": "washer",
+          "tier": 1
+        },
+        {
+          "term": "anchor",
+          "ipa": "/ˈæŋkə/",
+          "vi": "tắc kê, nở (đời thường: mỏ neo)",
+          "def": "A device that adds support to a screw.",
+          "img": "anchor",
+          "tier": 1
+        },
+        {
+          "term": "clamp",
+          "ipa": "/klæmp/",
+          "vi": "cái kẹp, vam kẹp",
+          "def": "A device that tightly presses things together.",
+          "img": "clamp",
+          "tier": 1
+        },
+        {
+          "term": "grade",
+          "ipa": "/ɡreɪd/",
+          "vi": "cấp bền của bu lông",
+          "def": "The measurement of a bolt's strength.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A device that adds support to a screw.\"</em>",
+        "lua_chon": [
+          "washer",
+          "nut",
+          "anchor",
+          "nail"
+        ],
+        "dap": 2,
+        "fb_ok": "<em>anchor</em> (tắc kê) nằm trong tường, giúp vít bám chắc hơn. Câu này đã ra trong đề cuối kỳ.",
+        "fb_no": "Từ khoá <em>adds support</em> (đỡ thêm). Vòng đệm và đai ốc đi với bu lông. Thứ gì giúp vít bám chắc vào tường?"
+      }
+    },
+    {
+      "ten": "Cụm C · Ren và đầu bu lông",
+      "tu": [
+        {
+          "term": "thread",
+          "ipa": "/θred/",
+          "vi": "ren (đời thường: sợi chỉ)",
+          "def": "The helical grooves on the outside of a bolt or screw.",
+          "img": "thread",
+          "tier": 1
+        },
+        {
+          "term": "metric thread",
+          "ipa": "/ˈmetrɪk θred/",
+          "vi": "ren hệ mét",
+          "def": "A thread measured in millimeters.",
+          "img": "metric-gauge",
+          "tier": 1
+        },
+        {
+          "term": "hex head",
+          "ipa": "/heks hed/",
+          "vi": "đầu lục giác",
+          "def": "A bolt head with six sides, turned by a spanner.",
+          "img": "hex-head",
+          "tier": 1
+        },
+        {
+          "term": "socket head",
+          "ipa": "/ˈsɒkɪt hed/",
+          "vi": "đầu lục giác chìm",
+          "def": "A bolt head with a hexagonal hole in its top.",
+          "img": "socket-head",
+          "tier": 1
+        },
+        {
+          "term": "clockwise",
+          "ipa": "/ˈklɒkwaɪz/",
+          "vi": "theo chiều kim đồng hồ",
+          "def": "In the direction of clock hands; a nut is screwed on this way.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A thread measured in millimeters.\"</em>",
+        "lua_chon": [
+          "UTS thread",
+          "right-hand thread",
+          "metric thread",
+          "helical thread"
+        ],
+        "dap": 2,
+        "fb_ok": "<em>metric</em> = hệ mét (đo bằng mm). UTS thread là ren hệ inch.",
+        "fb_no": "Từ khoá <em>millimeters</em>. Hệ đo nào dùng mm?"
+      }
+    },
+    {
+      "ten": "Cụm D · Đinh tán và dụng cụ vặn",
+      "tu": [
+        {
+          "term": "rivet",
+          "ipa": "/ˈrɪvɪt/",
+          "vi": "đinh tán",
+          "def": "A permanent fastener that cannot be unscrewed.",
+          "img": "rivets-bridge",
+          "tier": 1
+        },
+        {
+          "term": "blind rivet",
+          "ipa": "/blaɪnd ˈrɪvɪt/",
+          "vi": "đinh tán rút, đinh rive (còn gọi pop rivet)",
+          "def": "A hollow rivet fitted with a rivet gun.",
+          "img": "blind-rivet",
+          "tier": 1
+        },
+        {
+          "term": "rivet gun",
+          "ipa": "/ˈrɪvɪt ɡʌn/",
+          "vi": "kìm rút đinh tán, súng bắn rive",
+          "def": "A tool used for installing blind rivets.",
+          "img": "rivet-gun",
+          "tier": 1
+        },
+        {
+          "term": "spanner",
+          "ipa": "/ˈspænə/",
+          "vi": "cờ lê (tiếng Mỹ: wrench)",
+          "def": "A hand tool that tightens and loosens nuts and bolts.",
+          "img": "spanner",
+          "tier": 1
+        },
+        {
+          "term": "hex key / Allen key",
+          "ipa": "/heks kiː/ /ˈælən kiː/",
+          "vi": "chìa lục giác",
+          "def": "An L-shaped tool that fits into a socket head.",
+          "img": "hex-key",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A tool used for installing a type of fastener (blind rivets).\"</em>",
+        "lua_chon": [
+          "spanner",
+          "rivet gun",
+          "hex key",
+          "clamp"
+        ],
+        "dap": 1,
+        "fb_ok": "Article 3 viết: blind rivets are fitted using a tool called a <em>rivet gun</em>.",
+        "fb_no": "Cờ lê và chìa lục giác dùng để vặn, không để lắp đinh tán. Article 3 nhắc dụng cụ nào cho blind rivets?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "sheet metal screw",
+      "vi": "vít tôn, vít tự ren (ren suốt thân, bắt được cả gỗ và kim loại)"
+    },
+    {
+      "term": "wood screw",
+      "vi": "vít gỗ"
+    },
+    {
+      "term": "UTS thread",
+      "vi": "ren hệ inch (chuẩn Mỹ)"
+    },
+    {
+      "term": "groove",
+      "vi": "rãnh"
+    },
+    {
+      "term": "helical",
+      "vi": "xoắn ốc"
+    },
+    {
+      "term": "shaft / shank",
+      "vi": "thân (bu lông, đinh tán)"
+    },
+    {
+      "term": "right-hand thread",
+      "vi": "ren phải (vặn vào theo chiều kim đồng hồ)"
+    },
+    {
+      "term": "anticlockwise",
+      "vi": "ngược chiều kim đồng hồ"
+    },
+    {
+      "term": "solid rivet",
+      "vi": "đinh tán đặc"
+    },
+    {
+      "term": "factory head",
+      "vi": "đầu có sẵn của đinh tán (đầu nhà máy)"
+    },
+    {
+      "term": "shop head",
+      "vi": "đầu tán (tạo ra khi tán ở xưởng)"
+    },
+    {
+      "term": "temporary / permanent",
+      "vi": "tạm thời / vĩnh viễn"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · Choosing fasteners",
+      "cau": [
+        [
+          "If you need a <b>temporary</b> <b>fastener</b>, go with a pin or clamp.",
+          "Nếu bạn cần một chốt nối tạm thời, hãy chọn chốt hoặc kẹp.",
+          {
+            "doan": [
+              {
+                "tu": "temporary",
+                "lua_chon": [
+                  "tạm thời",
+                  "vĩnh viễn",
+                  "chắc chắn"
+                ],
+                "dap": 0,
+                "giai": "temporary là tạm thời, ngược nghĩa với permanent (vĩnh viễn)."
+              },
+              {
+                "tu": "fastener",
+                "lua_chon": [
+                  "dây buộc",
+                  "chốt nối",
+                  "máy kẹp"
+                ],
+                "dap": 1,
+                "giai": "fasten là gắn chặt, fastener là chốt nối: vít, bu lông, đinh, đinh tán…"
+              }
+            ],
+            "nghia": {
+              "need": "cần",
+              "go with": "chọn",
+              "pin": "chốt",
+              "clamp": "cái kẹp"
+            }
+          }
+        ],
+        [
+          "<b>Nails</b> are a quick and <b>long-lasting</b> fastener. They are ideal for walls and wood surfaces.",
+          "Đinh là loại chốt nối nhanh và bền lâu. Chúng rất hợp với tường và bề mặt gỗ.",
+          {
+            "doan": [
+              {
+                "tu": "Nails",
+                "lua_chon": [
+                  "móng tay",
+                  "đinh",
+                  "đinh vít"
+                ],
+                "dap": 1,
+                "giai": "nail đời thường là móng tay, ở xưởng là cái đinh."
+              },
+              {
+                "tu": "long-lasting",
+                "lua_chon": [
+                  "dài",
+                  "bền lâu",
+                  "nhanh"
+                ],
+                "dap": 1,
+                "giai": "last là kéo dài, long-lasting là dùng được lâu, bền lâu."
+              }
+            ],
+            "nghia": {
+              "quick": "nhanh",
+              "ideal for": "rất hợp với",
+              "walls": "tường",
+              "wood surfaces": "bề mặt gỗ"
+            }
+          }
+        ],
+        [
+          "<b>Screws</b> are a more <b>secure</b> fastener. Wood screws are best for solid wood surfaces.",
+          "Vít là loại chốt nối chắc chắn hơn. Vít gỗ tốt nhất cho bề mặt gỗ đặc.",
+          {
+            "doan": [
+              {
+                "tu": "Screws",
+                "lua_chon": [
+                  "vít",
+                  "đai ốc",
+                  "đinh tán"
+                ],
+                "dap": 0,
+                "giai": "screw là vít: thân có ren, vặn vào bằng tua vít."
+              },
+              {
+                "tu": "secure",
+                "lua_chon": [
+                  "bảo mật",
+                  "nguy hiểm",
+                  "chắc chắn"
+                ],
+                "dap": 2,
+                "giai": "secure đời thường là an toàn, bảo mật; nói về chốt nối là giữ chắc chắn."
+              }
+            ],
+            "nghia": {
+              "more": "hơn",
+              "wood screws": "vít gỗ",
+              "best for": "tốt nhất cho",
+              "solid wood": "gỗ đặc"
+            }
+          }
+        ],
+        [
+          "But <b>sheet metal screws</b> work on wood as well as other surfaces.",
+          "Nhưng vít tôn dùng được trên gỗ cũng như các bề mặt khác.",
+          {
+            "doan": [
+              {
+                "tu": "sheet metal screws",
+                "lua_chon": [
+                  "tấm kim loại",
+                  "vít tôn",
+                  "vít gỗ"
+                ],
+                "dap": 1,
+                "giai": "sheet metal là tôn, kim loại tấm. Sheet metal screw là vít tôn, ren chạy suốt thân."
+              }
+            ],
+            "nghia": {
+              "work on": "dùng được trên",
+              "as well as": "cũng như",
+              "other surfaces": "các bề mặt khác"
+            }
+          }
+        ],
+        [
+          "Remember to check the correct <b>thread</b> for your project.",
+          "Nhớ kiểm tra đúng loại ren cho công việc của bạn.",
+          {
+            "doan": [
+              {
+                "tu": "thread",
+                "lua_chon": [
+                  "sợi chỉ",
+                  "rãnh",
+                  "ren"
+                ],
+                "dap": 2,
+                "giai": "thread đời thường là sợi chỉ, trong cơ khí là ren của vít, bu lông."
+              }
+            ],
+            "nghia": {
+              "remember to": "nhớ",
+              "check": "kiểm tra",
+              "correct": "đúng",
+              "project": "công việc, công trình"
+            }
+          }
+        ],
+        [
+          "This store carries both <b>UTS thread</b> and <b>metric thread</b> measurements.",
+          "Cửa hàng này có bán cả cỡ ren hệ inch (UTS) lẫn ren hệ mét.",
+          {
+            "doan": [
+              {
+                "tu": "UTS thread",
+                "lua_chon": [
+                  "ren hệ inch (chuẩn Mỹ)",
+                  "ren hệ mét",
+                  "ren trái"
+                ],
+                "dap": 0,
+                "giai": "UTS là chuẩn ren thống nhất của Mỹ, đo bằng inch."
+              },
+              {
+                "tu": "metric thread",
+                "lua_chon": [
+                  "ren hệ inch",
+                  "ren hệ mét",
+                  "ren phải"
+                ],
+                "dap": 1,
+                "giai": "metric là hệ mét. Metric thread đo bằng milimét."
+              }
+            ],
+            "nghia": {
+              "store": "cửa hàng",
+              "carries": "có bán",
+              "both … and": "cả … lẫn",
+              "measurements": "cỡ, số đo"
+            }
+          }
+        ],
+        [
+          "Use an <b>anchor</b> for situations requiring extra support.",
+          "Dùng tắc kê cho những trường hợp cần đỡ thêm.",
+          {
+            "doan": [
+              {
+                "tu": "anchor",
+                "lua_chon": [
+                  "mỏ neo",
+                  "đai ốc",
+                  "tắc kê"
+                ],
+                "dap": 2,
+                "giai": "anchor đời thường là mỏ neo tàu; ở xưởng là tắc kê, giúp vít bám chắc vào tường."
+              }
+            ],
+            "nghia": {
+              "situations": "trường hợp",
+              "requiring": "cần",
+              "extra support": "đỡ thêm, chịu lực thêm"
+            }
+          }
+        ],
+        [
+          "Use <b>bolts</b> when pressing pieces together from both sides.",
+          "Dùng bu lông khi ép các chi tiết lại với nhau từ hai phía.",
+          {
+            "doan": [
+              {
+                "tu": "bolts",
+                "lua_chon": [
+                  "bu lông",
+                  "chốt cửa",
+                  "tia sét"
+                ],
+                "dap": 0,
+                "giai": "bolt đời thường là then cài cửa hoặc tia sét; trong cơ khí là bu lông, đi với đai ốc."
+              }
+            ],
+            "nghia": {
+              "pressing … together": "ép … lại với nhau",
+              "pieces": "chi tiết, tấm",
+              "from both sides": "từ hai phía"
+            }
+          }
+        ],
+        [
+          "Select a bolt with the appropriate <b>grade</b>. Otherwise, the bolt may break.",
+          "Hãy chọn bu lông có cấp bền phù hợp. Nếu không, bu lông có thể bị gãy.",
+          {
+            "doan": [
+              {
+                "tu": "grade",
+                "lua_chon": [
+                  "điểm số",
+                  "cấp bền",
+                  "lớp học"
+                ],
+                "dap": 1,
+                "giai": "grade đời thường là điểm, lớp; với bu lông là cấp bền (ví dụ 8.8)."
+              }
+            ],
+            "nghia": {
+              "select": "chọn",
+              "appropriate": "phù hợp",
+              "otherwise": "nếu không thì",
+              "break": "gãy"
+            }
+          }
+        ],
+        [
+          "Get the right <b>washers</b> and <b>nuts</b> to add strength and prevent damage to surfaces.",
+          "Hãy lấy đúng loại vòng đệm và đai ốc để tăng độ chắc và tránh làm hỏng bề mặt.",
+          {
+            "doan": [
+              {
+                "tu": "washers",
+                "lua_chon": [
+                  "máy giặt",
+                  "vòng đệm",
+                  "người rửa"
+                ],
+                "dap": 1,
+                "giai": "washer đời thường là máy giặt; trong cơ khí là vòng đệm (long đền) đặt dưới đai ốc."
+              },
+              {
+                "tu": "nuts",
+                "lua_chon": [
+                  "quả hạch",
+                  "bu lông",
+                  "đai ốc"
+                ],
+                "dap": 2,
+                "giai": "nut đời thường là quả hạch; ở xưởng là đai ốc, vặn vào bu lông."
+              }
+            ],
+            "nghia": {
+              "right": "đúng loại",
+              "add strength": "tăng độ chắc",
+              "prevent damage": "tránh hư hại",
+              "surfaces": "bề mặt"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Nails are ideal for walls and ______ surfaces.\"</em>",
+        "lua_chon": [
+          "wood",
+          "metal",
+          "glass"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 2 của bài: <em>ideal for walls and wood surfaces</em>. Tìm từ khoá <em>ideal for</em> rồi chép từ đứng trước <em>surfaces</em>.",
+        "fb_no": "Tìm câu có <em>Nails</em> và <em>ideal for</em>. Từ nào đứng ngay trước <em>surfaces</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Clamps are long-lasting fasteners.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết pin hoặc clamp cho chốt nối <em>temporary</em> (tạm thời). <em>Long-lasting</em> là nói về nails.",
+        "fb_no": "Đọc lại câu 1 và câu 2: clamp đi với chữ nào, long-lasting đi với chữ nào?"
+      }
+    },
+    {
+      "ten": "Article 2 · Bolts",
+      "cau": [
+        [
+          "A bolt with a nut is a very common fastener (or <b>fixing</b>).",
+          "Bu lông với đai ốc là loại chốt nối (đồ cố định) rất phổ biến.",
+          {
+            "doan": [
+              {
+                "tu": "fixing",
+                "lua_chon": [
+                  "việc sửa chữa",
+                  "đồ để cố định, chốt nối",
+                  "giá đỡ cố định"
+                ],
+                "dap": 1,
+                "giai": "fix đời thường là sửa, nhưng fixing ở đây là đồ dùng để gắn cố định, cùng nghĩa với fastener."
+              }
+            ],
+            "nghia": {
+              "bolt": "bu lông",
+              "nut": "đai ốc",
+              "very common": "rất phổ biến"
+            }
+          }
+        ],
+        [
+          "Bolts have threads – <b>grooves</b> on the outside of the bolt's shaft (or shank), which run around the shaft in a <b>helical</b> pattern.",
+          "Bu lông có ren: những rãnh ở mặt ngoài thân bu lông, chạy quanh thân theo dạng xoắn ốc.",
+          {
+            "doan": [
+              {
+                "tu": "grooves",
+                "lua_chon": [
+                  "gờ nổi",
+                  "rãnh",
+                  "lỗ"
+                ],
+                "dap": 1,
+                "giai": "groove là rãnh. Ren chính là các rãnh chạy quanh thân bu lông. Đề Part 2 đã hỏi đúng từ này."
+              },
+              {
+                "tu": "helical",
+                "lua_chon": [
+                  "xoắn ốc",
+                  "lục giác",
+                  "thẳng"
+                ],
+                "dap": 0,
+                "giai": "helical là xoắn ốc (như lò xo). Đừng nhầm với hexagonal (lục giác)."
+              }
+            ],
+            "nghia": {
+              "threads": "ren",
+              "outside": "mặt ngoài",
+              "shaft (or shank)": "thân bu lông",
+              "run around": "chạy quanh",
+              "pattern": "dạng, kiểu"
+            }
+          }
+        ],
+        [
+          "The threaded shaft allows a nut, which has a thread inside it, to be screwed onto the bolt (by a turning motion).",
+          "Thân có ren cho phép đai ốc, vốn có ren bên trong, được vặn vào bu lông (bằng chuyển động xoay).",
+          {
+            "doan": [
+              {
+                "tu": "threaded",
+                "lua_chon": [
+                  "có ren",
+                  "được khâu chỉ",
+                  "có lỗ"
+                ],
+                "dap": 0,
+                "giai": "thread + ed: có ren. Threaded shaft là thân có ren."
+              },
+              {
+                "tu": "screwed onto",
+                "lua_chon": [
+                  "đóng vào",
+                  "vặn vào",
+                  "dán vào"
+                ],
+                "dap": 1,
+                "giai": "screw là vít, screwed onto là được vặn vào (xoay vào)."
+              }
+            ],
+            "nghia": {
+              "allows": "cho phép",
+              "inside": "bên trong",
+              "turning motion": "chuyển động xoay"
+            }
+          }
+        ],
+        [
+          "Nuts usually have a <b>right-hand thread</b> – they are screwed on by turning them <b>clockwise</b> (in the direction of clock hands)",
+          "Đai ốc thường có ren phải: chúng được vặn vào bằng cách xoay theo chiều kim đồng hồ",
+          {
+            "doan": [
+              {
+                "tu": "right-hand thread",
+                "lua_chon": [
+                  "ren tay phải",
+                  "ren phải",
+                  "ren trái"
+                ],
+                "dap": 1,
+                "giai": "right-hand thread là ren phải: vặn vào theo chiều kim đồng hồ. Đa số bu lông là ren phải."
+              },
+              {
+                "tu": "clockwise",
+                "lua_chon": [
+                  "theo chiều kim đồng hồ",
+                  "ngược chiều kim đồng hồ",
+                  "lên xuống"
+                ],
+                "dap": 0,
+                "giai": "clock là đồng hồ, clockwise là theo chiều kim đồng hồ."
+              }
+            ],
+            "nghia": {
+              "usually": "thường",
+              "screwed on": "được vặn vào",
+              "turning": "xoay",
+              "direction": "chiều, hướng",
+              "clock hands": "kim đồng hồ"
+            }
+          }
+        ],
+        [
+          "and unscrewed by turning them <b>anticlockwise</b>.",
+          "và được tháo ra bằng cách xoay ngược chiều kim đồng hồ.",
+          {
+            "doan": [
+              {
+                "tu": "anticlockwise",
+                "lua_chon": [
+                  "theo chiều kim đồng hồ",
+                  "qua lại",
+                  "ngược chiều kim đồng hồ"
+                ],
+                "dap": 2,
+                "giai": "anti là ngược. Anticlockwise là ngược chiều kim đồng hồ (tiếng Mỹ: counterclockwise)."
+              }
+            ],
+            "nghia": {
+              "unscrewed": "được tháo (vặn) ra"
+            }
+          }
+        ],
+        [
+          "However, in some situations, <b>left-hand threads</b> are used.",
+          "Tuy nhiên, trong một số trường hợp, người ta dùng ren trái.",
+          {
+            "doan": [
+              {
+                "tu": "left-hand threads",
+                "lua_chon": [
+                  "ren trái",
+                  "ren phải",
+                  "ren tay"
+                ],
+                "dap": 0,
+                "giai": "left-hand thread là ren trái: vặn vào ngược chiều kim đồng hồ, ví dụ bàn đạp xe đạp bên trái."
+              }
+            ],
+            "nghia": {
+              "however": "tuy nhiên",
+              "some situations": "một số trường hợp",
+              "are used": "được dùng"
+            }
+          }
+        ],
+        [
+          "Most bolts have heads with <b>hexagonal</b> perimeters (hexagonal heads or <b>hex heads</b>).",
+          "Hầu hết bu lông có đầu với đường viền sáu cạnh (đầu lục giác).",
+          {
+            "doan": [
+              {
+                "tu": "hexagonal",
+                "lua_chon": [
+                  "bát giác",
+                  "vuông",
+                  "lục giác"
+                ],
+                "dap": 2,
+                "giai": "hexa = sáu. Hexagonal là sáu cạnh, lục giác."
+              },
+              {
+                "tu": "hex heads",
+                "lua_chon": [
+                  "đầu tròn",
+                  "đầu lục giác",
+                  "đầu chìm"
+                ],
+                "dap": 1,
+                "giai": "hex head là cách gọi ngắn của hexagonal head: đầu lục giác."
+              }
+            ],
+            "nghia": {
+              "most": "hầu hết",
+              "heads": "đầu",
+              "perimeters": "đường viền ngoài, chu vi"
+            }
+          }
+        ],
+        [
+          "These allow a <b>spanner</b> to turn them.",
+          "Đầu lục giác giúp cờ lê vặn được chúng.",
+          {
+            "doan": [
+              {
+                "tu": "spanner",
+                "lua_chon": [
+                  "tua vít",
+                  "cờ lê",
+                  "kìm"
+                ],
+                "dap": 1,
+                "giai": "spanner là cờ lê (tiếng Mỹ: wrench). Cờ lê ôm cạnh lục giác để vặn."
+              }
+            ],
+            "nghia": {
+              "allow … to": "cho phép … làm",
+              "turn": "vặn, xoay"
+            }
+          }
+        ],
+        [
+          "Heads can also have a hexagonal hole in their top, called a <b>socket head</b>.",
+          "Đầu bu lông cũng có thể có một lỗ sáu cạnh ở mặt trên, gọi là đầu lục giác chìm.",
+          {
+            "doan": [
+              {
+                "tu": "socket head",
+                "lua_chon": [
+                  "ổ cắm điện",
+                  "đầu lục giác chìm",
+                  "đầu có sẵn"
+                ],
+                "dap": 1,
+                "giai": "socket đời thường là ổ cắm điện; socket head là đầu bu lông có lỗ lục giác ở trên."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "hole": "lỗ",
+              "top": "mặt trên",
+              "called": "gọi là"
+            }
+          }
+        ],
+        [
+          "This allows a <b>hex key</b> (or Allen key) to fit into them.",
+          "Lỗ này cho phép chìa lục giác (chìa Allen) cắm vừa vào.",
+          {
+            "doan": [
+              {
+                "tu": "hex key",
+                "lua_chon": [
+                  "chìa khoá cửa",
+                  "cờ lê",
+                  "chìa lục giác"
+                ],
+                "dap": 2,
+                "giai": "hex key (hay Allen key) là chìa lục giác hình chữ L, cắm vào socket head. Đề đã hỏi chữ Allen."
+              }
+            ],
+            "nghia": {
+              "Allen key": "chìa Allen (tên khác của hex key)",
+              "fit into": "cắm vừa vào"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Threads are ______ on the outside of the bolt's shaft.\"</em>",
+        "lua_chon": [
+          "grooves",
+          "heads",
+          "holes"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 2 của bài: <em>threads – grooves on the outside of the bolt's shaft</em>. Đề cuối kỳ hỏi đúng chỗ này.",
+        "fb_no": "Tìm câu có <em>outside of the bolt's shaft</em>. Từ nào đứng ngay trước <em>on the outside</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"A nut with a right-hand thread is unscrewed by turning it clockwise.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>screwed on … clockwise</em>, còn <em>unscrewed … anticlockwise</em>. Đề chỉ tráo một chữ.",
+        "fb_no": "Đọc lại câu 4 và câu 5: tháo ra (unscrewed) thì xoay chiều nào?"
+      },
+      "tu_khoa": {}
+    },
+    {
+      "ten": "Article 3 · Rivets",
+      "cau": [
+        [
+          "<b>Rivets</b> are <b>permanent</b> fasteners – they cannot be unscrewed.",
+          "Đinh tán là chốt nối vĩnh viễn: không thể vặn ra được.",
+          {
+            "doan": [
+              {
+                "tu": "Rivets",
+                "lua_chon": [
+                  "đinh vít",
+                  "đinh tán",
+                  "đinh ghim"
+                ],
+                "dap": 1,
+                "giai": "rivet là đinh tán: đóng một lần, không tháo ra được như vít."
+              },
+              {
+                "tu": "permanent",
+                "lua_chon": [
+                  "tạm thời",
+                  "thường xuyên",
+                  "vĩnh viễn"
+                ],
+                "dap": 2,
+                "giai": "permanent là vĩnh viễn, lâu dài. Ngược lại là temporary (tạm thời) ở Article 1."
+              }
+            ],
+            "nghia": {
+              "cannot be": "không thể bị",
+              "unscrewed": "vặn ra"
+            }
+          }
+        ],
+        [
+          "A <b>solid rivet</b> consists of a short, solid shaft of metal with a head at one end, called the <b>factory head</b>.",
+          "Đinh tán đặc gồm một thân kim loại ngắn, đặc, có một đầu ở một phía, gọi là đầu nhà máy (đầu có sẵn).",
+          {
+            "doan": [
+              {
+                "tu": "solid rivet",
+                "lua_chon": [
+                  "đinh tán rỗng",
+                  "đinh tán đặc",
+                  "đinh tán lỏng"
+                ],
+                "dap": 1,
+                "giai": "solid là đặc (không rỗng). Solid rivet là đinh tán đặc."
+              },
+              {
+                "tu": "factory head",
+                "lua_chon": [
+                  "đầu có sẵn từ nhà máy",
+                  "đầu tạo ra khi tán",
+                  "nhà máy chính"
+                ],
+                "dap": 0,
+                "giai": "factory là nhà máy: đầu này có sẵn khi mua đinh tán."
+              }
+            ],
+            "nghia": {
+              "consists of": "gồm có",
+              "short": "ngắn",
+              "shaft": "thân",
+              "at one end": "ở một đầu"
+            }
+          }
+        ],
+        [
+          "The rivet is inserted through a <b>pre-drilled</b> hole,",
+          "Đinh tán được luồn qua một lỗ đã khoan sẵn,",
+          {
+            "doan": [
+              {
+                "tu": "pre-drilled",
+                "lua_chon": [
+                  "chưa khoan",
+                  "đã khoan sẵn",
+                  "khoan sau"
+                ],
+                "dap": 1,
+                "giai": "pre- là trước. Pre-drilled là đã khoan trước, khoan sẵn."
+              }
+            ],
+            "nghia": {
+              "is inserted through": "được luồn qua",
+              "hole": "lỗ"
+            }
+          }
+        ],
+        [
+          "then a special tool is used to <b>deform</b> (change the shape of) the other end of the rivet,",
+          "rồi một dụng cụ chuyên dùng được dùng để làm biến dạng (đổi hình dạng) đầu còn lại của đinh tán,",
+          {
+            "doan": [
+              {
+                "tu": "deform",
+                "lua_chon": [
+                  "định dạng",
+                  "làm biến dạng",
+                  "làm thủng"
+                ],
+                "dap": 1,
+                "giai": "de- + form (hình dạng): làm mất hình dạng cũ, làm biến dạng. Bài giải thích ngay trong ngoặc: change the shape of."
+              }
+            ],
+            "nghia": {
+              "then": "rồi",
+              "special tool": "dụng cụ chuyên dùng",
+              "the other end": "đầu còn lại"
+            }
+          }
+        ],
+        [
+          "<b>flattening</b> and widening it to form a second head, called the <b>shop head</b>.",
+          "làm nó dẹt và bè rộng ra để tạo thành đầu thứ hai, gọi là đầu tán.",
+          {
+            "doan": [
+              {
+                "tu": "flattening",
+                "lua_chon": [
+                  "làm dẹt",
+                  "làm nhọn",
+                  "làm tròn"
+                ],
+                "dap": 0,
+                "giai": "flat là phẳng, dẹt. Flattening là làm dẹt ra."
+              },
+              {
+                "tu": "shop head",
+                "lua_chon": [
+                  "đầu có sẵn từ nhà máy",
+                  "cửa hàng chính",
+                  "đầu tán tạo ra ở xưởng"
+                ],
+                "dap": 2,
+                "giai": "shop ở đây là xưởng. Shop head là đầu tạo ra sau khi tán, khác factory head có sẵn."
+              }
+            ],
+            "nghia": {
+              "widening": "làm rộng ra",
+              "to form": "để tạo thành",
+              "second head": "đầu thứ hai"
+            }
+          }
+        ],
+        [
+          "Solid rivets are widely used in <b>aircraft</b>.",
+          "Đinh tán đặc được dùng rộng rãi trong máy bay.",
+          {
+            "doan": [
+              {
+                "tu": "aircraft",
+                "lua_chon": [
+                  "tàu thuỷ",
+                  "máy bay",
+                  "xe tải"
+                ],
+                "dap": 1,
+                "giai": "air là không khí, craft là phương tiện: aircraft là máy bay."
+              }
+            ],
+            "nghia": {
+              "widely used": "được dùng rộng rãi"
+            }
+          }
+        ],
+        [
+          "<b>Blind rivets</b> (or pop rivets) are made from <b>hollow</b> tubes,",
+          "Đinh tán rút (đinh rive) được làm từ ống rỗng,",
+          {
+            "doan": [
+              {
+                "tu": "Blind rivets",
+                "lua_chon": [
+                  "đinh tán bị hỏng",
+                  "đinh tán đặc",
+                  "đinh tán rút (tán từ một phía)"
+                ],
+                "dap": 2,
+                "giai": "blind đời thường là mù; blind rivet tán được khi chỉ thấy một phía tấm, gọi là đinh rút, đinh rive."
+              },
+              {
+                "tu": "hollow",
+                "lua_chon": [
+                  "rỗng",
+                  "đặc",
+                  "cong"
+                ],
+                "dap": 0,
+                "giai": "hollow là rỗng, ngược với solid (đặc). Đề Part 1 hỏi: A type of fastener that is hollow → blind rivet."
+              }
+            ],
+            "nghia": {
+              "pop rivets": "đinh rive (tên khác)",
+              "made from": "làm từ",
+              "tubes": "ống"
+            }
+          }
+        ],
+        [
+          "and are fitted using a tool called a <b>rivet gun</b>.",
+          "và được lắp bằng một dụng cụ gọi là kìm rút đinh tán.",
+          {
+            "doan": [
+              {
+                "tu": "rivet gun",
+                "lua_chon": [
+                  "súng hơi",
+                  "kìm rút đinh tán",
+                  "máy khoan"
+                ],
+                "dap": 1,
+                "giai": "rivet gun là kìm rút (súng bắn) đinh tán, dùng để lắp blind rivets."
+              }
+            ],
+            "nghia": {
+              "are fitted": "được lắp",
+              "using": "bằng cách dùng",
+              "called": "gọi là"
+            }
+          }
+        ],
+        [
+          "Blind rivets are not suitable for <b>high-strength</b> joints.",
+          "Đinh tán rút không phù hợp cho mối ghép cần chịu lực cao.",
+          {
+            "doan": [
+              {
+                "tu": "high-strength",
+                "lua_chon": [
+                  "nhiệt độ cao",
+                  "chịu lực cao",
+                  "tốc độ cao"
+                ],
+                "dap": 1,
+                "giai": "strength là độ bền, sức chịu lực. High-strength là chịu lực cao."
+              }
+            ],
+            "nghia": {
+              "not suitable for": "không phù hợp cho",
+              "joints": "mối ghép"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Solid rivets are widely used in ______.\"</em>",
+        "lua_chon": [
+          "aircraft",
+          "furniture",
+          "walls"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 6 của bài: <em>Solid rivets are widely used in aircraft.</em> Chép nguyên từ.",
+        "fb_no": "Tìm câu có <em>widely used</em>. Từ cuối câu là gì?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Blind rivets are made from solid shafts of metal.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Blind rivets làm từ <em>hollow tubes</em> (ống rỗng). Thân đặc (<em>solid shaft</em>) là của solid rivet.",
+        "fb_no": "Đọc lại câu 2 và câu 7: solid rivet làm từ gì, blind rivet làm từ gì?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "Chọn chốt nối nào? (Article 1, hay ra Đúng/Sai)",
+    "cot": [
+      "Fastener",
+      "Dùng khi · ghi nhớ"
+    ],
+    "hang": [
+      [
+        "pin, clamp",
+        "chốt <strong>temporary</strong> (tạm thời)"
+      ],
+      [
+        "nail",
+        "tường, gỗ<br>quick, <strong>long-lasting</strong>"
+      ],
+      [
+        "wood screw",
+        "gỗ đặc<br>screw <strong>more secure</strong> hơn nail"
+      ],
+      [
+        "sheet metal screw",
+        "gỗ và bề mặt khác<br>ren suốt thân"
+      ],
+      [
+        "anchor",
+        "cần <strong>extra support</strong>"
+      ],
+      [
+        "bolt + nut + washer",
+        "ép hai phía<br>chọn đúng <strong>grade</strong>, không thì gãy"
+      ],
+      [
+        "rivet",
+        "<strong>permanent</strong> (vĩnh viễn)<br>không vặn ra được"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X allows Y to V (X cho phép / giúp Y làm…)",
+      "vd": [
+        [
+          "These allow a spanner to turn them.",
+          "Đầu lục giác giúp cờ lê vặn được chúng."
+        ],
+        [
+          "This allows a hex key to fit into them.",
+          "Lỗ này cho phép chìa lục giác cắm vừa vào."
+        ],
+        [
+          "The threaded shaft allows a nut to be screwed onto the bolt.",
+          "Thân có ren cho phép đai ốc được vặn vào bu lông."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + allows + Y + to + V</strong>.",
+        "Dịch: \"X cho phép Y…\" hoặc tự nhiên hơn \"X giúp Y…\".",
+        "Part 5 hay cho câu \"… giúp cờ lê vặn bu lông\" → dùng mẫu này."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · bị động + by V-ing (được… bằng cách…)",
+      "vd": [
+        [
+          "Nuts are screwed on by turning them clockwise.",
+          "Đai ốc được vặn vào bằng cách xoay theo chiều kim đồng hồ."
+        ],
+        [
+          "They are unscrewed by turning them anticlockwise.",
+          "Chúng được tháo ra bằng cách xoay ngược chiều kim đồng hồ."
+        ],
+        [
+          "Blind rivets are fitted using a rivet gun.",
+          "Đinh tán rút được lắp bằng kìm rút đinh tán."
+        ]
+      ],
+      "ghi_chu": [
+        "Thấy <strong>is/are + V-ed</strong> → dịch \"được…\".",
+        "Thấy <strong>by + V-ing</strong> → dịch \"bằng cách…\".",
+        "<strong>using + dụng cụ</strong> → dịch \"bằng…\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "fastener_diagram.svg",
+    "tieu_de": "Bu lông và đinh tán: gọi tên 7 bộ phận",
+    "mo_ta": "Article 2 và Article 3 tả các bộ phận này, đề Part 2 hay hỏi. Nhìn hình, tự gọi tên 7 bộ phận trước, rồi mở đáp án.",
+    "chu_thich": "A: bu lông bắt qua hai tấm thép. B: đinh tán đặc sau khi tán. 7 bộ phận đánh số.",
+    "bo_phan": [
+      [
+        "hex head",
+        "đầu lục giác"
+      ],
+      [
+        "shank (shaft)",
+        "thân bu lông, phần trơn"
+      ],
+      [
+        "thread",
+        "ren"
+      ],
+      [
+        "washer",
+        "vòng đệm"
+      ],
+      [
+        "nut",
+        "đai ốc"
+      ],
+      [
+        "factory head",
+        "đầu có sẵn của đinh tán"
+      ],
+      [
+        "shop head",
+        "đầu tán, tạo ra khi tán"
+      ]
+    ],
+    "hoi": "Bộ phận số 7 (đầu dẹt phía dưới đinh tán, tạo ra sau khi tán) tên là gì?",
+    "lua_chon": [
+      "factory head",
+      "shop head",
+      "socket head",
+      "hex head"
+    ],
+    "dap": 1,
+    "fb_ok": "<em>shop head</em> = đầu tán, tạo ra ở xưởng khi tán. Đầu số 6 có sẵn từ nhà máy là <em>factory head</em>.",
+    "fb_no": "Factory head là đầu có sẵn khi mua (từ nhà máy). Đầu được tạo ra sau, ở xưởng (shop), là đầu nào?"
+  },
+  "sop": {
+    "tieu_de": "Chọn chốt nối ở cửa hàng: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn tư vấn chọn chốt nối (viết lại từ Article 1):",
+    "hop_tu": [
+      "temporary",
+      "nails",
+      "anchor",
+      "grade",
+      "washers"
+    ],
+    "doan": "Choosing the right fastener is easy if you know the job. A pin or a clamp is good for a (1) ______ job. For walls and wood, (2) ______ are quick and long-lasting. If a screw needs extra support, add an (3) ______. When you use a bolt, choose the correct (4) ______, or the bolt may break. Put (5) ______ under the nuts to protect the surface.",
+    "dap": [
+      "temporary",
+      "nails",
+      "anchor",
+      "grade",
+      "washers"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (3): <em>\"If a screw needs extra support, add an (3) ______.\"</em>",
+      "lua_chon": [
+        "temporary",
+        "anchor",
+        "grade",
+        "nails"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>anchor</em> = tắc kê, đỡ thêm cho vít. Dấu hiệu: trước chỗ trống là <em>an</em>, nên từ cần điền bắt đầu bằng nguyên âm.",
+      "fb_no": "Trước chỗ trống là <em>an</em>: từ cần điền là danh từ số ít, bắt đầu bằng nguyên âm. Thứ gì đỡ thêm cho vít?"
+    }
+  },
+  "tra_bai": [
+    [
+      "Cần chốt nối <em>tạm thời</em> thì chọn gì?",
+      "Pin hoặc clamp."
+    ],
+    [
+      "Nail và screw: cái nào giữ chắc hơn?",
+      "Screw (more secure). Nail thì nhanh và bền lâu."
+    ],
+    [
+      "Ren phải vặn vào theo chiều nào? Tháo ra theo chiều nào?",
+      "Vặn vào: clockwise. Tháo ra: anticlockwise."
+    ],
+    [
+      "Hex head vặn bằng gì? Socket head vặn bằng gì?",
+      "Hex head: spanner. Socket head: hex key (Allen key)."
+    ],
+    [
+      "<em>Factory head</em> và <em>shop head</em> khác nhau chỗ nào?",
+      "Factory head có sẵn khi mua. Shop head tạo ra sau khi tán đầu còn lại."
+    ],
+    [
+      "<em>Blind rivet</em> khác <em>solid rivet</em> chỗ nào?",
+      "Blind rivet rỗng, lắp bằng rivet gun, không dùng cho mối ghép chịu lực cao. Solid rivet đặc, dùng nhiều trong máy bay."
+    ],
+    [
+      "Dịch: <em>These allow a spanner to turn them.</em>",
+      "Đầu lục giác giúp cờ lê vặn được chúng."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Đinh tán là chốt nối vĩnh viễn.</em>",
+      "Rivets are permanent fasteners."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "A device that adds support to a screw.",
+        "opts": [
+          "washer",
+          "nut",
+          "anchor",
+          "nail"
+        ],
+        "ans": 2,
+        "why": "<em>adds support to a screw</em> → anchor."
+      },
+      {
+        "q": "A thread measured in millimeters.",
+        "opts": [
+          "UTS thread",
+          "right-hand thread",
+          "metric thread",
+          "helical thread"
+        ],
+        "ans": 2,
+        "why": "<em>millimeters</em> → metric thread."
+      },
+      {
+        "q": "A piece of metal with a hole in the middle.",
+        "opts": [
+          "nut",
+          "bolt",
+          "pin",
+          "clamp"
+        ],
+        "ans": 0,
+        "why": "Định nghĩa của giáo trình cho <em>nut</em>."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "spanner",
+          "hex key",
+          "screwdriver",
+          "rivet gun"
+        ],
+        "ans": 1,
+        "why": "Thanh chữ L, đầu sáu cạnh → hex key (Allen key).",
+        "img": "hex-key"
+      },
+      {
+        "q": "A device that tightly presses things together.",
+        "opts": [
+          "clamp",
+          "anchor",
+          "washer",
+          "grade"
+        ],
+        "ans": 0,
+        "why": "<em>tightly presses</em> → clamp."
+      },
+      {
+        "q": "The measurement of a bolt's strength.",
+        "opts": [
+          "thread",
+          "grade",
+          "nail",
+          "washer"
+        ],
+        "ans": 1,
+        "why": "<em>bolt's strength</em> → grade."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>support</em>, <em>millimeters</em>, <em>presses</em>, <em>strength</em>, <em>hollow</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn hình dạng (chữ L = hex key, miệng mở = spanner, ống rỗng = blind rivet).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "A bolt with a nut is a very common fastener (or fixing). Bolts have threads – grooves on the outside of the bolt's shaft (or shank), which run around the shaft in a helical pattern. The threaded shaft allows a nut, which has a thread inside it, to be screwed onto the bolt (by a turning motion). Nuts usually have a right-hand thread – they are screwed on by turning them clockwise (in the direction of clock hands) and unscrewed by turning them anticlockwise. However, in some situations, left-hand threads are used. Most bolts have heads with hexagonal perimeters (hexagonal heads or hex heads). These allow a spanner to turn them. Heads can also have a hexagonal hole in their top, called a socket head. This allows a hex key (or Allen key) to fit into them.",
+      "dien": [
+        {
+          "q": "Threads are ______ on the outside of the bolt's shaft.",
+          "ans": "grooves",
+          "opts": [
+            "grooves",
+            "heads",
+            "holes"
+          ],
+          "why": "Câu 2: <em>threads – grooves on the outside of the bolt's shaft</em>."
+        },
+        {
+          "q": "The threads run around the shaft in a ______ pattern.",
+          "ans": "helical",
+          "opts": [
+            "hexagonal",
+            "helical",
+            "circular"
+          ],
+          "why": "Câu 2: <em>in a helical pattern</em>. Hexagonal là của đầu bu lông."
+        },
+        {
+          "q": "A nut with a right-hand thread is screwed on by turning it ______.",
+          "ans": "clockwise",
+          "opts": [
+            "anticlockwise",
+            "inside",
+            "clockwise"
+          ],
+          "why": "Câu 4: <em>screwed on by turning them clockwise</em>."
+        },
+        {
+          "q": "A hex key, also called an ______ key, fits into a socket head.",
+          "ans": "Allen",
+          "opts": [
+            "Allen",
+            "socket",
+            "spanner"
+          ],
+          "why": "Câu cuối: <em>a hex key (or Allen key)</em>."
+        }
+      ],
+      "ds": [
+        {
+          "q": "Nuts always have a left-hand thread.",
+          "ans": false,
+          "why": "Bài viết <em>usually … right-hand thread</em>; left-hand chỉ dùng <em>in some situations</em>."
+        },
+        {
+          "q": "A spanner is used to turn a bolt with a hex head.",
+          "ans": true,
+          "why": "<em>hex heads … allow a spanner to turn them</em>."
+        },
+        {
+          "q": "A socket head has a hexagonal hole in its top.",
+          "ans": true,
+          "why": "Chép gần nguyên câu trong đoạn."
+        },
+        {
+          "q": "The shank of a bolt is another name for its head.",
+          "ans": false,
+          "why": "<em>shaft (or shank)</em>: shank là thân, không phải đầu."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ: clockwise ↔ anticlockwise, right-hand ↔ left-hand, solid ↔ hollow, usually ↔ always."
+    ],
+    "part3": {
+      "hop_tu": [
+        "permanent",
+        "hole",
+        "shop",
+        "aircraft",
+        "hollow"
+      ],
+      "doan": "Rivets are (1) ______ fasteners; they cannot be unscrewed. A solid rivet is put through a pre-drilled (2) ______. Then a tool deforms the other end to form the (3) ______ head. Solid rivets are widely used in (4) ______. Blind rivets are made from (5) ______ tubes.",
+      "dap": [
+        "permanent",
+        "hole",
+        "shop",
+        "aircraft",
+        "hollow"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng trước <em>fasteners</em> và có <em>cannot be unscrewed</em> → tính từ chỉ \"lâu dài\".",
+        "Chỗ (3) đứng trước <em>head</em>: đầu tạo ra sau khi tán.",
+        "Chỗ (5) đứng trước <em>tubes</em> → tính từ; đinh tán rút làm từ ống rỗng → hollow.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "Rivets are permanent fasteners – they cannot be unscrewed. A solid rivet consists of a short, solid shaft of metal with a head at one end, called the factory head.",
+      "vi": "Đinh tán là chốt nối vĩnh viễn: chúng không thể vặn ra được. Đinh tán đặc gồm một thân kim loại ngắn, đặc, có một đầu ở một phía, gọi là đầu nhà máy (đầu có sẵn).",
+      "chien_thuat": [
+        "Cắt câu dài tại dấu gạch ngang và dấu phẩy.",
+        "Giữ nguyên thuật ngữ đã học: đinh tán, chốt nối, thân, đầu.",
+        "<em>cannot be unscrewed</em> → \"không thể vặn ra\".",
+        "<em>consists of</em> → \"gồm\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Đầu lục giác giúp cờ lê vặn bu lông.",
+      "en": "Hex heads allow a spanner to turn the bolt.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X allows Y to V</strong>.",
+        "X = hex heads, Y = a spanner, V = turn.",
+        "Viết <em>A spanner turns the bolt.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "A device that adds support to a screw.",
+        "opts": [
+          "washer",
+          "nut",
+          "anchor",
+          "nail"
+        ],
+        "ans": 2,
+        "why": "adds support to a screw → anchor."
+      },
+      {
+        "q": "A piece of metal with a hole in the middle.",
+        "opts": [
+          "nail",
+          "nut",
+          "pin",
+          "clamp"
+        ],
+        "ans": 1,
+        "why": "Định nghĩa giáo trình → nut."
+      },
+      {
+        "q": "A long, narrow fastener with a smooth rod.",
+        "opts": [
+          "nail",
+          "bolt",
+          "sheet metal screw",
+          "nut"
+        ],
+        "ans": 0,
+        "why": "smooth rod (thân trơn) → nail."
+      },
+      {
+        "q": "A device that tightly presses things together.",
+        "opts": [
+          "anchor",
+          "washer",
+          "clamp",
+          "pin"
+        ],
+        "ans": 2,
+        "why": "tightly presses → clamp."
+      },
+      {
+        "q": "A thread measured in millimeters.",
+        "opts": [
+          "UTS thread",
+          "metric thread",
+          "left-hand thread",
+          "helical thread"
+        ],
+        "ans": 1,
+        "why": "millimeters → metric thread."
+      },
+      {
+        "q": "The measurement of a bolt's strength.",
+        "opts": [
+          "grade",
+          "thread",
+          "shank",
+          "head"
+        ],
+        "ans": 0,
+        "why": "bolt's strength → grade."
+      },
+      {
+        "q": "A fastener with threads along the entire rod.",
+        "opts": [
+          "nail",
+          "pin",
+          "sheet metal screw",
+          "washer"
+        ],
+        "ans": 2,
+        "why": "threads along the entire rod → sheet metal screw."
+      },
+      {
+        "q": "A flat ring placed between the nut and the surface.",
+        "opts": [
+          "washer",
+          "anchor",
+          "clamp",
+          "rivet"
+        ],
+        "ans": 0,
+        "why": "between the nut and surface → washer."
+      },
+      {
+        "q": "A small, simple fastener used for temporary jobs.",
+        "opts": [
+          "rivet",
+          "pin",
+          "nail",
+          "bolt"
+        ],
+        "ans": 1,
+        "why": "temporary → pin (hoặc clamp)."
+      },
+      {
+        "q": "A hand tool that tightens and loosens nuts and bolts.",
+        "opts": [
+          "screwdriver",
+          "rivet gun",
+          "spanner",
+          "clamp"
+        ],
+        "ans": 2,
+        "why": "nuts and bolts → spanner (wrench)."
+      },
+      {
+        "q": "An L-shaped tool that fits into a socket head.",
+        "opts": [
+          "spanner",
+          "hex key",
+          "rivet gun",
+          "screwdriver"
+        ],
+        "ans": 1,
+        "why": "fits into a socket head → hex key (Allen key)."
+      },
+      {
+        "q": "A permanent fastener that cannot be unscrewed.",
+        "opts": [
+          "screw",
+          "bolt",
+          "rivet",
+          "nut"
+        ],
+        "ans": 2,
+        "why": "permanent, cannot be unscrewed → rivet."
+      },
+      {
+        "q": "A type of rivet that is hollow.",
+        "opts": [
+          "solid rivet",
+          "blind rivet",
+          "anchor",
+          "socket head"
+        ],
+        "ans": 1,
+        "why": "hollow → blind rivet (pop rivet)."
+      },
+      {
+        "q": "A tool used for installing blind rivets.",
+        "opts": [
+          "rivet gun",
+          "hex key",
+          "spanner",
+          "clamp"
+        ],
+        "ans": 0,
+        "why": "installing blind rivets → rivet gun."
+      },
+      {
+        "q": "The wide part at the top of a rivet, present when the rivet is supplied.",
+        "opts": [
+          "shop head",
+          "factory head",
+          "hex head",
+          "socket head"
+        ],
+        "ans": 1,
+        "why": "present when supplied → factory head."
+      },
+      {
+        "q": "The wide part at the bottom of a rivet, formed after the rivet is inserted.",
+        "opts": [
+          "factory head",
+          "socket head",
+          "shop head",
+          "hex head"
+        ],
+        "ans": 2,
+        "why": "formed after it is inserted → shop head."
+      },
+      {
+        "q": "Grooves on the outside of a bolt's shaft, in a helical pattern.",
+        "opts": [
+          "heads",
+          "threads",
+          "washers",
+          "holes"
+        ],
+        "ans": 1,
+        "why": "grooves … helical → threads."
+      },
+      {
+        "q": "Complete: \"Nuts are screwed on by turning them ______.\"",
+        "opts": [
+          "clockwise",
+          "anticlockwise",
+          "inside",
+          "upward"
+        ],
+        "ans": 0,
+        "why": "Article 2, câu 4."
+      },
+      {
+        "q": "Complete: \"If you need a ______ fastener, go with a pin or clamp.\"",
+        "opts": [
+          "permanent",
+          "temporary",
+          "secure",
+          "metric"
+        ],
+        "ans": 1,
+        "why": "Article 1, câu 1."
+      },
+      {
+        "q": "Complete: \"Blind rivets are not suitable for high-______ joints.\"",
+        "opts": [
+          "speed",
+          "colour",
+          "strength",
+          "price"
+        ],
+        "ans": 2,
+        "why": "Article 3, câu cuối."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (Choosing fasteners). Mark each statement True or False.",
+        "st": [
+          [
+            "Clamps are long-lasting fasteners.",
+            false
+          ],
+          [
+            "Sheet metal screws will damage wood surfaces.",
+            false
+          ],
+          [
+            "Washers protect surfaces from damage.",
+            true
+          ],
+          [
+            "Screws are a more secure fastener than nails.",
+            true
+          ]
+        ],
+        "why": "Clamp = temporary; sheet metal screws work on wood; washers prevent damage to surfaces; screws are more secure."
+      },
+      {
+        "q": "Read Article 2 (Bolts). Mark each statement True or False.",
+        "st": [
+          [
+            "Socket heads have a square hole in their top.",
+            false
+          ],
+          [
+            "In most cases, nuts are screwed onto bolts by turning them anticlockwise.",
+            false
+          ],
+          [
+            "Most bolts have hexagonal heads.",
+            true
+          ],
+          [
+            "A hex key fits into a socket head.",
+            true
+          ]
+        ],
+        "why": "Socket head has a hexagonal hole; nuts are screwed on clockwise."
+      },
+      {
+        "q": "Read Article 3 (Rivets). Mark each statement True or False.",
+        "st": [
+          [
+            "Rivets can be unscrewed.",
+            false
+          ],
+          [
+            "The shop head is formed after the rivet is inserted.",
+            true
+          ],
+          [
+            "Solid rivets are widely used in aircraft.",
+            true
+          ],
+          [
+            "Blind rivets are good for high-strength joints.",
+            false
+          ]
+        ],
+        "why": "Rivets are permanent; blind rivets are not suitable for high-strength joints."
+      }
+    ]
+  }
+}

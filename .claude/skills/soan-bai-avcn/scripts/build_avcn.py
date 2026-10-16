@@ -93,8 +93,9 @@ def sec_thi() -> str:
 
 # ---------- Mục 1: đoán ----------
 def sec_doan() -> str:
-    out = [f'<h3>{ROMAN[1]}. Đoán trước khi học: máy này tên gì?</h3>',
-           '<p>Hai máy dưới đây em đã thấy ở xưởng. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.</p>']
+    # Tiêu đề/lời dẫn theo chương (meta.doan_tieu_de, meta.doan_mo_dau); mặc định là bản Chapter 8.
+    out = [f'<h3>{ROMAN[1]}. Đoán trước khi học: {M.get("doan_tieu_de", "máy này tên gì?")}</h3>',
+           f'<p>{M.get("doan_mo_dau", "Hai máy dưới đây em đã thấy ở xưởng. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.")}</p>']
     for k in D["khoi_dong"]:
         out.append(photo(k["img"], CREDITS[k["img"]]["file"].rsplit(".", 1)[0].replace("_", " ")))
         out.append(think("🤔 Dự đoán", quiz(k["hoi"], k["lua_chon"], k["dap"], k["fb_ok"], k["fb_no"])))
@@ -124,7 +125,7 @@ def sec_tu_vung() -> str:
         q = g["quiz"]
         out.append(think("✅ Kiểm tra cụm này", quiz(q["hoi"], q["lua_chon"], q["dap"], q["fb_ok"], q["fb_no"])))
     them = "".join(f'<li><strong>{t["term"]}</strong> {speak(t["term"])} — {t["vi"]}</li>' for t in D["tu_vung_them"])
-    out.append(details("⭐⭐ 12 từ thêm cho em muốn trên 7 điểm (bộ phận máy tiện, từ mô tả)", f'<ul class="avcn-list">{them}</ul>'))
+    out.append(details(f'⭐⭐ {len(D["tu_vung_them"])} từ thêm cho em muốn trên 7 điểm ({M.get("them_nhan", "bộ phận máy tiện, từ mô tả")})', f'<ul class="avcn-list">{them}</ul>'))
     return "".join(out)
 
 
@@ -175,6 +176,12 @@ def sec_bai_doc() -> str:
         out.append(think("🔎 Tập làm Part 2 với bài này",
                          quiz(q["hoi"], q["lua_chon"], q["dap"], q["fb_ok"], q["fb_no"])
                          + quiz_tf(a["dung_sai"]["hoi"], a["dung_sai"]["dap"], a["dung_sai"]["fb_ok"], a["dung_sai"]["fb_no"])))
+    if D.get("bang"):  # bảng so sánh của chương: {ten, cot[], hang[][]}
+        b = D["bang"]
+        head = "".join(f"<th>{c}</th>" for c in b["cot"])
+        body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in b["hang"])
+        out.append(rule(f'📘 {b["ten"]}', f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'))
+        return "".join(out)
     out.append(rule("📘 Bảng so sánh 5 phương pháp (hay ra Đúng/Sai)",
                     '<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Method</th><th>Workpiece (phôi)</th><th>Tool (dao)</th></tr></thead><tbody>'
                     '<tr><td>Turning</td><td><strong>rotates</strong></td><td>fixed</td></tr>'
@@ -212,6 +219,14 @@ def lathe_svg(numbers_only: bool) -> str:
 
 def sec_gan_nhan() -> str:
     g = D["gan_nhan"]
+    if g.get("svg"):  # hình gắn nhãn riêng của chương (SVG chỉ có số) + bo_phan [[term, vi], ...]
+        svg = (ASSET_DIR / g["svg"]).read_text(encoding="utf-8")
+        n = len(g["bo_phan"])
+        ans = "".join(f'<li><strong>{i}. {t}</strong> {speak(t)} — {v}</li>' for i, (t, v) in enumerate(g["bo_phan"], 1))
+        return (f'<h3>{ROMAN[5]}. {g["tieu_de"]}</h3><p>{g["mo_ta"]}</p>'
+                f'<figure class="fig" data-tl="1">{svg}<figcaption>Hình 1. {g["chu_thich"]}</figcaption></figure>'
+                + think("✅ Kiểm tra", quiz(g["hoi"], g["lua_chon"], g["dap"], g["fb_ok"], g["fb_no"]))
+                + details(f"Xem đáp án {n} bộ phận", f'<ul class="avcn-list">{ans}</ul>'))
     names = ["headstock", "chuck", "tool post", "tailstock", "carriage", "bed", "lead screw"]
     vi = dict((t["term"], t["vi"]) for t in D["tu_vung_them"])
     ans = "".join(f'<li><strong>{i}. {n}</strong> {speak(n)} — {vi.get(n, "")}</li>' for i, n in enumerate(names, 1))
@@ -229,8 +244,8 @@ def sec_sop() -> str:
     dap = "".join(f"<li>({i}) {w}</li>" for i, w in enumerate(s["dap"], 1))  # <ul>
     q = s["quiz"]
     doan_noi = re.sub(r"\(\d\) ______", "", s["doan"])
-    return (f'<h3>{ROMAN[6]}. Vận hành máy tiện: điền động từ (kiểu Part 3)</h3>'
-            '<p>Part 3 cho một hộp từ và một đoạn văn có chỗ trống. Cách làm: đọc cả câu, nhìn từ đứng <em>ngay sau</em> chỗ trống, rồi chọn từ trong hộp. Thử với đoạn hướng dẫn vận hành máy tiện:</p>'
+    return (f'<h3>{ROMAN[6]}. {s.get("tieu_de", "Vận hành máy tiện: điền động từ (kiểu Part 3)")}</h3>'
+            f'<p>Part 3 cho một hộp từ và một đoạn văn có chỗ trống. Cách làm: đọc cả câu, nhìn từ đứng <em>ngay sau</em> chỗ trống, rồi chọn từ trong hộp. {s.get("mo_ta", "Thử với đoạn hướng dẫn vận hành máy tiện:")}</p>'
             f'<p class="avcn-box">Hộp từ: {box}</p>'
             f'<div class="avcn-passage"><p>{s["doan"]} {speak(doan_noi)}</p></div>'
             + think("✅ Kiểm tra", quiz(q["hoi"], q["lua_chon"], q["dap"], q["fb_ok"], q["fb_no"]))
@@ -263,6 +278,8 @@ def worked_examples():
     # Part 1
     body = ['<p><strong>Part 1: Choose the correct answer.</strong> (đề thật 10 câu · 2,5 điểm)</p>', tactic(e["part1_chien_thuat"])]
     for i, q in enumerate(e["part1"], 1):
+        if q.get("img"):  # câu "Look at the picture": nhúng ảnh thật (khoá ảnh trong credits.json), không ghi chú [hình: …] lộ đáp án
+            body.append(photo(q["img"], f"Hình câu {i}", small=True))
         body.append(quiz(f'<strong>{i}.</strong> {q["q"]}', q["opts"], q["ans"], q["why"], "Gạch từ khoá trong định nghĩa rồi so với nghĩa đã học.", prefix=X))
     out.append({"label": "Part 1 · Chọn từ theo định nghĩa / ảnh", "body_html": "".join(body)})
     # Part 2
@@ -323,7 +340,7 @@ def main():
         "target": {"class_name": "Anh văn chuyên ngành Cơ khí", "chapter_title": "Technical English for Mechanical Engineering",
                    "lesson_title": f"Chapter {CH}: {M['title_en']} — {M['title_vi']}"},
         "theory_title": "Học",
-        "theory_subtitle": f"{M['minutes']} phút · 20 từ ⭐ · 2 bài đọc",
+        "theory_subtitle": f"{M['minutes']} phút · 20 từ ⭐ · {len(D['bai_doc'])} bài đọc",
         "theory_html": theory,
         "worked_examples": worked_examples(),
         "exam": {"title": f"Luyện tập Chapter {CH}: {M['title_en']}", "topic": topic, "difficulty": "de",
