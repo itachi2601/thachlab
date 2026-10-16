@@ -35,6 +35,7 @@ FILES=(
   "supabase/migrations/20261015234500_staff_sua_ngay_sinh.sql|Hàm staff_set_student_birth: thầy/TA sửa ngày sinh HS (ghi profiles + metadata) ở thẻ Liên lạc gia đình|lúc nào cũng được (chỉ thêm hàm)"
   "supabase/migrations/20261016120000_ta_phong_van_phu_dao.sql|Bảng ta_interviews + hàm ta_interview_save/list: trợ giảng ghi phỏng vấn HS về kênh tự thoát phụ đạo (trang /tro-giang/phong-van)|lúc nào cũng được (chỉ thêm bảng/hàm)"
   "supabase/migrations/20261016150000_ta_diem_thay_mac_dinh_day.sql|Điểm Thầy quan sát mặc định 10 (hàm ta_monthly_policy), không còn chặn chốt tháng vì thiếu điểm này|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại bản trong 20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql"
+  "supabase/migrations/20261016170000_ta_he_so_phu_dao_1_1_1_2.sql|Hệ số phụ đạo trợ giảng 1,1 (1–2 em) / 1,2 (3–4 em) để chi phí tăng tối đa ~10% (hàm ta_monthly_policy)|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại bản trong 20261016150000_ta_diem_thay_mac_dinh_day.sql"
 )
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar

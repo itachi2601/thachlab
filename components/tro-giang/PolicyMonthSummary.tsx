@@ -13,7 +13,7 @@ export default function PolicyMonthSummary({ score }: { score: MonthPolicy }) {
    <div className="flex justify-between"><dt>Đơn giá giờ</dt><dd>{money(score.hourly_rate)}</dd></div>
    <div className="flex justify-between"><dt>Lên lớp · {formatHours(score.class_hours)} giờ × {score.class_factor??'?'}</dt><dd>{money(score.class_pay)}</dd></div>
    <div className="flex justify-between"><dt>Chữa bài · {formatHours(score.teaching_hours*60)} phút × 1,6</dt><dd>{money(score.teaching_pay)}</dd></div>
-   <div className="flex justify-between"><dt>Phụ đạo · {formatHours(score.tutoring_hours)} giờ (×1,2 / ×1,4)</dt><dd>{money(score.tutoring_pay)}</dd></div>
+   <div className="flex justify-between"><dt>Phụ đạo · {formatHours(score.tutoring_hours)} giờ (×1,1 / ×1,2)</dt><dd>{money(score.tutoring_pay)}</dd></div>
    <div className="flex justify-between"><dt>Chấm kiểm tra · {score.papers} bài × 1.500 đ</dt><dd>{money(score.grading_pay)}</dd></div>
    <div className="flex justify-between border-t border-white/10 pt-3 text-lg font-bold text-white"><dt>{score.closed_at?'Tiền đã chốt':'Tiền tạm tính'}</dt><dd>{money(score.total_pay)}</dd></div>
   </dl>
