@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 5 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 5</span></div>
+  <h1>Flashcard: Mechanical Fasteners</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "fastener", "ipa": "/ˈfɑːsnə/", "vi": "chốt nối, chi tiết kẹp chặt (vít, bu lông, đinh…)", "def": "A device used to hold two or more things together.", "img": "/assets/avcn/chapter-5/fastener.webp", "group": "Cụm A · 5 loại chốt nối"}, {"term": "nail", "ipa": "/neɪl/", "vi": "cái đinh (đời thường còn là móng tay)", "def": "A long, narrow fastener with a smooth rod.", "img": "/assets/avcn/chapter-5/nail.webp", "group": "Cụm A · 5 loại chốt nối"}, {"term": "screw", "ipa": "/skruː/", "vi": "đinh vít, vít", "def": "A fastener with a thread that is turned into a surface.", "img": "/assets/avcn/chapter-5/wood-screw.webp", "group": "Cụm A · 5 loại chốt nối"}, {"term": "bolt", "ipa": "/bəʊlt/", "vi": "bu lông", "def": "A threaded fastener used with a nut to press pieces together.", "img": "/assets/avcn/chapter-5/bolt.webp", "group": "Cụm A · 5 loại chốt nối"}, {"term": "pin", "ipa": "/pɪn/", "vi": "chốt, ghim", "def": "A small, simple fastener used for temporary jobs.", "img": "", "group": "Cụm A · 5 loại chốt nối"}, {"term": "nut", "ipa": "/nʌt/", "vi": "đai ốc, con tán (đời thường: quả hạch)", "def": "A piece of metal with a hole in the middle.", "img": "/assets/avcn/chapter-5/nut.webp", "group": "Cụm B · Đi kèm bu lông và vít"}, {"term": "washer", "ipa": "/ˈwɒʃə/", "vi": "vòng đệm, long đền", "def": "A flat ring placed between the nut and the surface.", "img": "/assets/avcn/chapter-5/washer.webp", "group": "Cụm B · Đi kèm bu lông và vít"}, {"term": "anchor", "ipa": "/ˈæŋkə/", "vi": "tắc kê, nở (đời thường: mỏ neo)", "def": "A device that adds support to a screw.", "img": "/assets/avcn/chapter-5/anchor.webp", "group": "Cụm B · Đi kèm bu lông và vít"}, {"term": "clamp", "ipa": "/klæmp/", "vi": "cái kẹp, vam kẹp", "def": "A device that tightly presses things together.", "img": "/assets/avcn/chapter-5/clamp.webp", "group": "Cụm B · Đi kèm bu lông và vít"}, {"term": "grade", "ipa": "/ɡreɪd/", "vi": "cấp bền của bu lông", "def": "The measurement of a bolt's strength.", "img": "", "group": "Cụm B · Đi kèm bu lông và vít"}, {"term": "thread", "ipa": "/θred/", "vi": "ren (đời thường: sợi chỉ)", "def": "The helical grooves on the outside of a bolt or screw.", "img": "/assets/avcn/chapter-5/thread.webp", "group": "Cụm C · Ren và đầu bu lông"}, {"term": "metric thread", "ipa": "/ˈmetrɪk θred/", "vi": "ren hệ mét", "def": "A thread measured in millimeters.", "img": "/assets/avcn/chapter-5/metric-gauge.webp", "group": "Cụm C · Ren và đầu bu lông"}, {"term": "hex head", "ipa": "/heks hed/", "vi": "đầu lục giác", "def": "A bolt head with six sides, turned by a spanner.", "img": "/assets/avcn/chapter-5/hex-head.webp", "group": "Cụm C · Ren và đầu bu lông"}, {"term": "socket head", "ipa": "/ˈsɒkɪt hed/", "vi": "đầu lục giác chìm", "def": "A bolt head with a hexagonal hole in its top.", "img": "/assets/avcn/chapter-5/socket-head.webp", "group": "Cụm C · Ren và đầu bu lông"}, {"term": "clockwise", "ipa": "/ˈklɒkwaɪz/", "vi": "theo chiều kim đồng hồ", "def": "In the direction of clock hands; a nut is screwed on this way.", "img": "", "group": "Cụm C · Ren và đầu bu lông"}, {"term": "rivet", "ipa": "/ˈrɪvɪt/", "vi": "đinh tán", "def": "A permanent fastener that cannot be unscrewed.", "img": "/assets/avcn/chapter-5/rivets-bridge.webp", "group": "Cụm D · Đinh tán và dụng cụ vặn"}, {"term": "blind rivet", "ipa": "/blaɪnd ˈrɪvɪt/", "vi": "đinh tán rút, đinh rive (còn gọi pop rivet)", "def": "A hollow rivet fitted with a rivet gun.", "img": "/assets/avcn/chapter-5/blind-rivet.webp", "group": "Cụm D · Đinh tán và dụng cụ vặn"}, {"term": "rivet gun", "ipa": "/ˈrɪvɪt ɡʌn/", "vi": "kìm rút đinh tán, súng bắn rive", "def": "A tool used for installing blind rivets.", "img": "/assets/avcn/chapter-5/rivet-gun.webp", "group": "Cụm D · Đinh tán và dụng cụ vặn"}, {"term": "spanner", "ipa": "/ˈspænə/", "vi": "cờ lê (tiếng Mỹ: wrench)", "def": "A hand tool that tightens and loosens nuts and bolts.", "img": "/assets/avcn/chapter-5/spanner.webp", "group": "Cụm D · Đinh tán và dụng cụ vặn"}, {"term": "hex key / Allen key", "ipa": "/heks kiː/ /ˈælən kiː/", "vi": "chìa lục giác", "def": "An L-shaped tool that fits into a socket head.", "img": "/assets/avcn/chapter-5/hex-key.webp", "group": "Cụm D · Đinh tán và dụng cụ vặn"}];
+const AUDIO = {"fastener": "/assets/avcn/chapter-5/audio/03a3923ce9.mp3", "A device used to hold two or more things together.": "/assets/avcn/chapter-5/audio/d1685594fa.mp3", "nail": "/assets/avcn/chapter-5/audio/a832d9db76.mp3", "A long, narrow fastener with a smooth rod.": "/assets/avcn/chapter-5/audio/62c0cf4209.mp3", "screw": "/assets/avcn/chapter-5/audio/e27f5dd386.mp3", "A fastener with a thread that is turned into a surface.": "/assets/avcn/chapter-5/audio/7820f1ca4d.mp3", "bolt": "/assets/avcn/chapter-5/audio/55e75232d0.mp3", "A threaded fastener used with a nut to press pieces together.": "/assets/avcn/chapter-5/audio/a53d137146.mp3", "pin": "/assets/avcn/chapter-5/audio/4392e2b546.mp3", "A small, simple fastener used for temporary jobs.": "/assets/avcn/chapter-5/audio/3912d12b5a.mp3", "nut": "/assets/avcn/chapter-5/audio/06d720a568.mp3", "A piece of metal with a hole in the middle.": "/assets/avcn/chapter-5/audio/744e321f9f.mp3", "washer": "/assets/avcn/chapter-5/audio/254d546dfe.mp3", "A flat ring placed between the nut and the surface.": "/assets/avcn/chapter-5/audio/3ddc6b870e.mp3", "anchor": "/assets/avcn/chapter-5/audio/eeb805f917.mp3", "A device that adds support to a screw.": "/assets/avcn/chapter-5/audio/8aeedadc18.mp3", "clamp": "/assets/avcn/chapter-5/audio/cd913cb269.mp3", "A device that tightly presses things together.": "/assets/avcn/chapter-5/audio/5b912c3487.mp3", "grade": "/assets/avcn/chapter-5/audio/bb77b64376.mp3", "The measurement of a bolt's strength.": "/assets/avcn/chapter-5/audio/339bf23651.mp3", "thread": "/assets/avcn/chapter-5/audio/7cdb3c65dd.mp3", "The helical grooves on the outside of a bolt or screw.": "/assets/avcn/chapter-5/audio/54a8a8b1ef.mp3", "metric thread": "/assets/avcn/chapter-5/audio/c74da46ccb.mp3", "A thread measured in millimeters.": "/assets/avcn/chapter-5/audio/2ad5360885.mp3", "hex head": "/assets/avcn/chapter-5/audio/f93bf0c27c.mp3", "A bolt head with six sides, turned by a spanner.": "/assets/avcn/chapter-5/audio/03d66d03f8.mp3", "socket head": "/assets/avcn/chapter-5/audio/95db2b6f91.mp3", "A bolt head with a hexagonal hole in its top.": "/assets/avcn/chapter-5/audio/331af94e12.mp3", "clockwise": "/assets/avcn/chapter-5/audio/64c7cf5031.mp3", "In the direction of clock hands; a nut is screwed on this way.": "/assets/avcn/chapter-5/audio/77b27ab8cc.mp3", "rivet": "/assets/avcn/chapter-5/audio/d8a5c966a7.mp3", "A permanent fastener that cannot be unscrewed.": "/assets/avcn/chapter-5/audio/c758041f13.mp3", "blind rivet": "/assets/avcn/chapter-5/audio/0dbed0291f.mp3", "A hollow rivet fitted with a rivet gun.": "/assets/avcn/chapter-5/audio/e79b467128.mp3", "rivet gun": "/assets/avcn/chapter-5/audio/4987603ff1.mp3", "A tool used for installing blind rivets.": "/assets/avcn/chapter-5/audio/3bf4a15d48.mp3", "spanner": "/assets/avcn/chapter-5/audio/21eaf3be37.mp3", "A hand tool that tightens and loosens nuts and bolts.": "/assets/avcn/chapter-5/audio/4bde7bb599.mp3", "hex key / Allen key": "/assets/avcn/chapter-5/audio/c0bd383c2c.mp3", "An L-shaped tool that fits into a socket head.": "/assets/avcn/chapter-5/audio/93bf5e3e1d.mp3", "sheet metal screw": "/assets/avcn/chapter-5/audio/7f5cbf7c4d.mp3", "wood screw": "/assets/avcn/chapter-5/audio/09fba3c3c8.mp3", "UTS thread": "/assets/avcn/chapter-5/audio/a8e80ee977.mp3", "groove": "/assets/avcn/chapter-5/audio/aa7362f7e7.mp3", "helical": "/assets/avcn/chapter-5/audio/9f44ff5d57.mp3", "shaft / shank": "/assets/avcn/chapter-5/audio/a1e073afb6.mp3", "right-hand thread": "/assets/avcn/chapter-5/audio/a33fa0b31d.mp3", "anticlockwise": "/assets/avcn/chapter-5/audio/6bd2d48b3a.mp3", "solid rivet": "/assets/avcn/chapter-5/audio/9d26f1bb62.mp3", "factory head": "/assets/avcn/chapter-5/audio/6b14c15ac7.mp3", "shop head": "/assets/avcn/chapter-5/audio/9da5654501.mp3", "temporary / permanent": "/assets/avcn/chapter-5/audio/5150929a4f.mp3", "If you need a temporary fastener, go with a pin or clamp.": "/assets/avcn/chapter-5/audio/145703cbd4.mp3", "temporary": "/assets/avcn/chapter-5/audio/5a36363cc7.mp3", "need": "/assets/avcn/chapter-5/audio/cca7bb0ea8.mp3", "go with": "/assets/avcn/chapter-5/audio/b17ad21727.mp3", "Nails are a quick and long-lasting fastener. They are ideal for walls and wood surfaces.": "/assets/avcn/chapter-5/audio/34ee7fd02c.mp3", "Nails": "/assets/avcn/chapter-5/audio/4e1463fbb7.mp3", "long-lasting": "/assets/avcn/chapter-5/audio/b4c63aef6f.mp3", "quick": "/assets/avcn/chapter-5/audio/9d55233b0b.mp3", "ideal for": "/assets/avcn/chapter-5/audio/03f32fe700.mp3", "walls": "/assets/avcn/chapter-5/audio/6c06a48eae.mp3", "wood surfaces": "/assets/avcn/chapter-5/audio/f3b46f5877.mp3", "Screws are a more secure fastener. Wood screws are best for solid wood surfaces.": "/assets/avcn/chapter-5/audio/b51bf61866.mp3", "Screws": "/assets/avcn/chapter-5/audio/df45944caf.mp3", "secure": "/assets/avcn/chapter-5/audio/aeb4dfbe60.mp3", "more": "/assets/avcn/chapter-5/audio/29ff1606b3.mp3", "wood screws": "/assets/avcn/chapter-5/audio/457d6fe074.mp3", "best for": "/assets/avcn/chapter-5/audio/2067dea3a5.mp3", "solid wood": "/assets/avcn/chapter-5/audio/4c30871597.mp3", "But sheet metal screws work on wood as well as other surfaces.": "/assets/avcn/chapter-5/audio/cfdbd99212.mp3", "sheet metal screws": "/assets/avcn/chapter-5/audio/8d7891a24b.mp3", "work on": "/assets/avcn/chapter-5/audio/8075d969d5.mp3", "as well as": "/assets/avcn/chapter-5/audio/b7fb0d6026.mp3", "other surfaces": "/assets/avcn/chapter-5/audio/38e79ff6d6.mp3", "Remember to check the correct thread for your project.": "/assets/avcn/chapter-5/audio/6021b186c8.mp3", "remember to": "/assets/avcn/chapter-5/audio/7d2e5c6802.mp3", "check": "/assets/avcn/chapter-5/audio/8d7be6524c.mp3", "correct": "/assets/avcn/chapter-5/audio/64b01ebae4.mp3", "project": "/assets/avcn/chapter-5/audio/510a5654b0.mp3", "This store carries both UTS thread and metric thread measurements.": "/assets/avcn/chapter-5/audio/9d58568dfb.mp3", "store": "/assets/avcn/chapter-5/audio/1437f5c228.mp3", "carries": "/assets/avcn/chapter-5/audio/79a1221620.mp3", "both … and": "/assets/avcn/chapter-5/audio/58ae012c15.mp3", "measurements": "/assets/avcn/chapter-5/audio/da7f0ba55f.mp3", "Use an anchor for situations requiring extra support.": "/assets/avcn/chapter-5/audio/ddf8867e4f.mp3", "situations": "/assets/avcn/chapter-5/audio/edd342d212.mp3", "requiring": "/assets/avcn/chapter-5/audio/610cd58947.mp3", "extra support": "/assets/avcn/chapter-5/audio/42a0d86ed2.mp3", "Use bolts when pressing pieces together from both sides.": "/assets/avcn/chapter-5/audio/e455ff93f7.mp3", "bolts": "/assets/avcn/chapter-5/audio/20f07bc6b7.mp3", "pressing … together": "/assets/avcn/chapter-5/audio/ac89415e84.mp3", "pieces": "/assets/avcn/chapter-5/audio/736e8eb79f.mp3", "from both sides": "/assets/avcn/chapter-5/audio/480056b988.mp3", "Select a bolt with the appropriate grade. Otherwise, the bolt may break.": "/assets/avcn/chapter-5/audio/4ddcbb44af.mp3", "select": "/assets/avcn/chapter-5/audio/d08902cb4c.mp3", "appropriate": "/assets/avcn/chapter-5/audio/d487ac6f86.mp3", "otherwise": "/assets/avcn/chapter-5/audio/23706990ee.mp3", "break": "/assets/avcn/chapter-5/audio/b194b05ec4.mp3", "Get the right washers and nuts to add strength and prevent damage to surfaces.": "/assets/avcn/chapter-5/audio/ee4ff0a0f1.mp3", "washers": "/assets/avcn/chapter-5/audio/815c20a199.mp3", "nuts": "/assets/avcn/chapter-5/audio/9ffcfcc0f9.mp3", "right": "/assets/avcn/chapter-5/audio/eaf177f78b.mp3", "add strength": "/assets/avcn/chapter-5/audio/1714f832f0.mp3", "prevent damage": "/assets/avcn/chapter-5/audio/b337535df4.mp3", "surfaces": "/assets/avcn/chapter-5/audio/bec9764dd8.mp3", "A bolt with a nut is a very common fastener (or fixing).": "/assets/avcn/chapter-5/audio/64ab3ae26c.mp3", "fixing": "/assets/avcn/chapter-5/audio/fa151b7b0f.mp3", "very common": "/assets/avcn/chapter-5/audio/42fe6a121b.mp3", "Bolts have threads – grooves on the outside of the bolt's shaft (or shank), which run around the shaft in a helical pattern.": "/assets/avcn/chapter-5/audio/ba63ee68dd.mp3", "grooves": "/assets/avcn/chapter-5/audio/9be0739afc.mp3", "threads": "/assets/avcn/chapter-5/audio/0df3fdf43b.mp3", "outside": "/assets/avcn/chapter-5/audio/bd13008179.mp3", "shaft (or shank)": "/assets/avcn/chapter-5/audio/f3e3ecf8de.mp3", "run around": "/assets/avcn/chapter-5/audio/f02b5bb431.mp3", "pattern": "/assets/avcn/chapter-5/audio/da17bb8f1d.mp3", "The threaded shaft allows a nut, which has a thread inside it, to be screwed onto the bolt (by a turning motion).": "/assets/avcn/chapter-5/audio/12fd868ab0.mp3", "threaded": "/assets/avcn/chapter-5/audio/27b3722e9d.mp3", "screwed onto": "/assets/avcn/chapter-5/audio/0b55db9608.mp3", "allows": "/assets/avcn/chapter-5/audio/18485a31d5.mp3", "inside": "/assets/avcn/chapter-5/audio/67fb0baa1c.mp3", "turning motion": "/assets/avcn/chapter-5/audio/f23d98dd99.mp3", "Nuts usually have a right-hand thread – they are screwed on by turning them clockwise (in the direction of clock hands)": "/assets/avcn/chapter-5/audio/c0af738576.mp3", "usually": "/assets/avcn/chapter-5/audio/90dcbf10ea.mp3", "screwed on": "/assets/avcn/chapter-5/audio/bfd7e57063.mp3", "turning": "/assets/avcn/chapter-5/audio/abdeabbfcf.mp3", "direction": "/assets/avcn/chapter-5/audio/3d6bfcc873.mp3", "clock hands": "/assets/avcn/chapter-5/audio/091df33d84.mp3", "and unscrewed by turning them anticlockwise.": "/assets/avcn/chapter-5/audio/2dc0b9d363.mp3", "unscrewed": "/assets/avcn/chapter-5/audio/7fe1fce9c3.mp3", "However, in some situations, left-hand threads are used.": "/assets/avcn/chapter-5/audio/08970a0149.mp3", "left-hand threads": "/assets/avcn/chapter-5/audio/10469e2986.mp3", "however": "/assets/avcn/chapter-5/audio/28d95e09f4.mp3", "some situations": "/assets/avcn/chapter-5/audio/401dcaf693.mp3", "are used": "/assets/avcn/chapter-5/audio/dcd8c6586d.mp3", "Most bolts have heads with hexagonal perimeters (hexagonal heads or hex heads).": "/assets/avcn/chapter-5/audio/d4d9e337a8.mp3", "hexagonal": "/assets/avcn/chapter-5/audio/9988256706.mp3", "hex heads": "/assets/avcn/chapter-5/audio/3026f2fa2d.mp3", "most": "/assets/avcn/chapter-5/audio/b95adb3400.mp3", "heads": "/assets/avcn/chapter-5/audio/9e4bc87a8a.mp3", "perimeters": "/assets/avcn/chapter-5/audio/40a5874cc6.mp3", "These allow a spanner to turn them.": "/assets/avcn/chapter-5/audio/08a0e52ef8.mp3", "allow … to": "/assets/avcn/chapter-5/audio/49fa3935b9.mp3", "turn": "/assets/avcn/chapter-5/audio/3f2947cc57.mp3", "Heads can also have a hexagonal hole in their top, called a socket head.": "/assets/avcn/chapter-5/audio/075c4adfdf.mp3", "also": "/assets/avcn/chapter-5/audio/5ca58b6879.mp3", "hole": "/assets/avcn/chapter-5/audio/a996732e6d.mp3", "top": "/assets/avcn/chapter-5/audio/8e8027531d.mp3", "called": "/assets/avcn/chapter-5/audio/d275c7b966.mp3", "This allows a hex key (or Allen key) to fit into them.": "/assets/avcn/chapter-5/audio/d0a3b0d63c.mp3", "hex key": "/assets/avcn/chapter-5/audio/3fcb5fc47a.mp3", "Allen key": "/assets/avcn/chapter-5/audio/309905fa1c.mp3", "fit into": "/assets/avcn/chapter-5/audio/9e739d8beb.mp3", "Rivets are permanent fasteners – they cannot be unscrewed.": "/assets/avcn/chapter-5/audio/6345bef9b3.mp3", "Rivets": "/assets/avcn/chapter-5/audio/d0122b255a.mp3", "permanent": "/assets/avcn/chapter-5/audio/a61e978e36.mp3", "cannot be": "/assets/avcn/chapter-5/audio/d169d7ad46.mp3", "A solid rivet consists of a short, solid shaft of metal with a head at one end, called the factory head.": "/assets/avcn/chapter-5/audio/0f7af2c825.mp3", "consists of": "/assets/avcn/chapter-5/audio/1bc5fef763.mp3", "short": "/assets/avcn/chapter-5/audio/5bb93193f5.mp3", "shaft": "/assets/avcn/chapter-5/audio/3ff16b96cf.mp3", "at one end": "/assets/avcn/chapter-5/audio/da7699b5cc.mp3", "The rivet is inserted through a pre-drilled hole,": "/assets/avcn/chapter-5/audio/25a2488c16.mp3", "pre-drilled": "/assets/avcn/chapter-5/audio/3cff051f72.mp3", "is inserted through": "/assets/avcn/chapter-5/audio/f524376b87.mp3", "then a special tool is used to deform (change the shape of) the other end of the rivet,": "/assets/avcn/chapter-5/audio/8bb28d3724.mp3", "deform": "/assets/avcn/chapter-5/audio/7416b6c66a.mp3", "then": "/assets/avcn/chapter-5/audio/c02c47ad8d.mp3", "special tool": "/assets/avcn/chapter-5/audio/d07f2c35b3.mp3", "the other end": "/assets/avcn/chapter-5/audio/d4e0712349.mp3", "flattening and widening it to form a second head, called the shop head.": "/assets/avcn/chapter-5/audio/e094dc4624.mp3", "flattening": "/assets/avcn/chapter-5/audio/5e964024ab.mp3", "widening": "/assets/avcn/chapter-5/audio/14610c9544.mp3", "to form": "/assets/avcn/chapter-5/audio/5b952c1129.mp3", "second head": "/assets/avcn/chapter-5/audio/8b766df57b.mp3", "Solid rivets are widely used in aircraft.": "/assets/avcn/chapter-5/audio/d073f87e4f.mp3", "aircraft": "/assets/avcn/chapter-5/audio/a49970565a.mp3", "widely used": "/assets/avcn/chapter-5/audio/2555852e80.mp3", "Blind rivets (or pop rivets) are made from hollow tubes,": "/assets/avcn/chapter-5/audio/de163607a5.mp3", "Blind rivets": "/assets/avcn/chapter-5/audio/30e63dc80b.mp3", "hollow": "/assets/avcn/chapter-5/audio/253e85a85f.mp3", "pop rivets": "/assets/avcn/chapter-5/audio/789be49b67.mp3", "made from": "/assets/avcn/chapter-5/audio/3c9b96c0f3.mp3", "tubes": "/assets/avcn/chapter-5/audio/03bd71356a.mp3", "and are fitted using a tool called a rivet gun.": "/assets/avcn/chapter-5/audio/a436bd833d.mp3", "are fitted": "/assets/avcn/chapter-5/audio/ad37f3ee71.mp3", "using": "/assets/avcn/chapter-5/audio/4e9103a85d.mp3", "Blind rivets are not suitable for high-strength joints.": "/assets/avcn/chapter-5/audio/09266899f7.mp3", "high-strength": "/assets/avcn/chapter-5/audio/45e57ff9e7.mp3", "not suitable for": "/assets/avcn/chapter-5/audio/a7eedcf29d.mp3", "joints": "/assets/avcn/chapter-5/audio/21550a1241.mp3", "This allows a hex key to fit into them.": "/assets/avcn/chapter-5/audio/9f5dfd329d.mp3", "The threaded shaft allows a nut to be screwed onto the bolt.": "/assets/avcn/chapter-5/audio/a4de56f255.mp3", "Nuts are screwed on by turning them clockwise.": "/assets/avcn/chapter-5/audio/df645ece1e.mp3", "They are unscrewed by turning them anticlockwise.": "/assets/avcn/chapter-5/audio/a1bef74f12.mp3", "Blind rivets are fitted using a rivet gun.": "/assets/avcn/chapter-5/audio/a5f80e6886.mp3", "shank (shaft)": "/assets/avcn/chapter-5/audio/d7f043d054.mp3", "Choosing the right fastener is easy if you know the job. A pin or a clamp is good for a  job. For walls and wood,  are quick and long-lasting. If a screw needs extra support, add an . When you use a bolt, choose the correct , or the bolt may break. Put  under the nuts to protect the surface.": "/assets/avcn/chapter-5/audio/85d53f93a7.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch5";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch(() => speakBrowser(text));
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>
