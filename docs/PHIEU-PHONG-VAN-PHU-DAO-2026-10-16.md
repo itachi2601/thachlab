@@ -40,7 +40,7 @@ Khác lớp nếu được. Trợ giảng do thầy chọn, hỏi riêng từng 
 
 ## Sau khi xong (bước Define → Ideate)
 - Gom các câu nguyên văn thành nhóm rào cản (không biết / không hiểu nghĩa / ngại nhãn / quá dài / không biết ôn gì / khác).
-- Nhóm nào ≥3/5 em thì mới đáng sửa. Viết lại một câu "Điểm nhìn" (HMW) vào ROADMAP trước khi đề xuất giải pháp.
+- Với 3 em chỉ là gợi ý lựa chọn cho khảo sát: nhóm nào ≥2/3 em nhắc thì đưa vào lựa chọn, còn lại để ô "Khác" bắt. Viết lại một câu "Điểm nhìn" (HMW) vào ROADMAP trước khi đề xuất giải pháp.
 - Chưa đổi giao diện trước khi có bảng này và trước 25/10 (GĐ 1: không thêm lớp động lực mới).
 
 ## B. Khảo sát 1 câu trong web (làm SAU khi có bảng A; chưa sửa code)
