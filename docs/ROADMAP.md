@@ -218,3 +218,16 @@ Cách làm mỗi đợt: 4 bài một lượt, soạn song song, kiểm chéo tr
 - [ ] **Lớp 12, một bài còn lại:** Bài 11 Thực hành đo cảm ứng từ (id 12).
 - 14/10/2026: DB không còn bài lớp 12 nào thiếu mục lý thuyết (kể cả id 12) — các đợt 1–4 cần đối chiếu lại từng `lesson_id` với DB trước khi soạn, vì
   roadmap chưa tick nhưng nhiều bài có thể đã ghi (STATE: 25 bài L10 đã ghi DB 10/10, chưa deploy). KHTN 9 còn thiếu lý thuyết: Bài 1, 14–17.
+
+## Design Thinking — rà 16 hạng mục (16/10/2026, chỉ đọc code)
+Nguồn: `docs/thachlab-design-thinking-audit.md` (kết quả: Đã có 3/16 · Một phần 8/16 · Chưa có 5/16). Không phải roadmap riêng —
+các việc dưới đây **nối vào** mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`, giữ nguyên nguyên tắc GĐ 1
+(không thêm lớp động lực mới trước 25/10; đo trước, sửa sau).
+- [ ] **DT-01** `learning_events` (mở/rời mục, nộp) có rollup ngày + retention — làm chung với A2/A3 bản 11/10, không song song. **M**
+- [ ] **DT-07** `student_alerts` thêm kind `inactive_7d`, `absent_streak` (hiện chỉ 3 kind) + `evaluate_student_alerts`. **S–M**
+- [ ] **DT-03** quiz cuối mục lý thuyết cho đúng chương sẽ thử nghiệm. **M**
+- [ ] **DT-16** chốt bỏ/giữ nhánh DeepSeek trong `hsg-ai-grade` (mặc định đã là Sonnet); soát `pg_policies` bảng hành vi. **S**
+- [ ] **DT-12** feature flag theo lớp — chỉ sau DT-01; đo trước–sau cùng lớp, không so điểm hai lớp khác GV. **M**
+- [ ] **DT-05/06** gợi ý bài tiếp theo + mở khoá theo ngưỡng — sau số mùa 1. **M**
+- [ ] **DT-15** chế độ chỉ-xem-tiến-bộ-cá-nhân — quyết cùng C5 (mùa 2) sau 25/10, không chen mùa 1.
+- Giữ nguyên: DT-04 lịch ôn 2/4/7 (đo một chương rồi mới xét); DT-08 AI tutor theo GĐ 4; DT-10/11/13/14 ưu tiên thấp.
