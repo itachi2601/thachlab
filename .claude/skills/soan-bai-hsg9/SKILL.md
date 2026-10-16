@@ -37,6 +37,7 @@ góc dây đo so với phương thẳng đứng (bài dùng góc với phương 
 | D | Tự luận E+G (module `btm<id>_tl.py`) + **≥6 câu luyện tập** tự chấm (Phần I A–D / Phần II a)–d) Đ/S / Phần III đáp số, E1–E3) | `luyen-tap/bundle.json` |
 
 Brief mỗi agent gồm (và với mọi bài tự luận: soát điều kiện phụ — mục 8): đường dẫn `nguon.md`, số liệu đã chốt, quy ước ở mục 0, file được phép ghi (không ghi file của agent khác), lệnh chạy thử riêng.
+Brief cũng ghi: chữ SVG ≥ 14 đơn vị (chỉ số dưới 12), số thập phân trong $…$ viết `a{,}b`, chữ có dấu trong $…$ bọc `\text{}`, thư mục scratch RIÊNG cho từng agent (`scratchpad/<id>-<module>/`), và cấp độ từng dạng lấy đúng theo nguon.md (đặt cấp không giảm ngay trong dàn ý, tránh agent tự nâng cấp lệch nhau).
 Phiên chính không sửa file của agent khi agent còn có thể được gọi lại — sửa sau cùng.
 
 Luyện tập: bundle `thachlab.lesson-bundle/v1` chỉ có `exam` (để `theory_html` rỗng và `worked_examples: []` → `upload-lesson.mts` giữ nguyên lý thuyết và bài tập mẫu).
@@ -70,6 +71,7 @@ Mẫu đã chạy: bài 167 "Bài tập tuần này" (Cơ học VD–VDC, 11/10)
 4. Thêm id bài vào `lessons` của tuần tương ứng trong `tuan.json`; bật Hiện trước `gui_ngay`.
 
 ## Nhật ký rút kinh nghiệm
+- 2026-10-16 · CĐ16 + CĐ12 cùng lúc (8 agent soạn → 4 kiem-code → gửi sửa về đúng agent soạn bằng SendMessage → 1 agent dò lần 2): chạy trơn, kiểm chéo không ra lỗi đáp số, chỉ ra trùng số giữa thử thách lý thuyết và luyện tập, chữ SVG cỡ 9–12, KaTeX "4,8" thành "4, 8", ký hiệu $Q_2$ lệch giữa lý thuyết và bài tập mẫu → đưa các điểm này vào brief (mục 3); dàn ý nên ghi sẵn ký hiệu dùng chung. `upload-lesson.mts` hỏi dán service key → `dang-hsg9-dot3.sh` tự đọc từ `.env.local`; không bao giờ dán khoá tay.
 - 2026-10-10 · Bộ tự luận Cơ học VD–VDC: đáp số đúng 12/12 nhưng 9 lỗi là điều kiện phụ thiếu trong đề → soát đề kín là bước riêng, không gộp vào "giải lại khớp". Agent xem ảnh nhỏ báo sai hình → in toạ độ SVG kiểm trước khi vẽ lại. Soát lại vài hình thì render từng SVG bằng Chrome headless xem ở phiên chính, không cho agent soát lại cả bộ trang.
 - 2026-10-10 · CĐ01/02, đợt 1: kiểm chéo bắt lỗi dù agent soạn đã tự giải (thiếu nghiệm bài nhiều trường hợp, hình lộ đáp số, `chon_buoc_ke` sai thật ra đúng) → giữ 2×kiem-code, không bỏ khi vội.
 - 2026-10-16 · CĐ15: chia bài tập mẫu cho 3 agent theo module + main gom, chạy thử riêng bằng biến môi trường để không ghi đè nhau; mục rỗng phải có trên DB trước khi ghi (migration tạo mục).
