@@ -1,6 +1,6 @@
 # Lịch soạn nội dung web cho khoá HSG Vật lí 9 (giao Opus, thầy duyệt)
 
-Lập 16/10/2026 từ `31_lo-trinh-17-buoi-thu-7.md`. Quy trình mỗi chuyên đề: xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md` (4 subagent song song → 2×kiem-code → sửa → ghi bằng `cap-nhat-ly-thuyet.sh` + `publish-bai-tap-mau.mts`). Bật Hiện sau khi thầy duyệt, TRƯỚC ngày `gui_ngay` của tuần dùng bài đó (xem `tuan.json`), vì thông báo chỉ gắn link bài đã Hiện.
+Lập 16/10/2026 từ `31_lo-trinh-17-buoi-thu-7.md`. Quy trình mỗi chuyên đề: skill `soan-bai-hsg9` (`.claude/skills/soan-bai-hsg9/SKILL.md`) (4 subagent song song → 2×kiem-code → sửa → ghi bằng `cap-nhat-ly-thuyet.sh` + `publish-bai-tap-mau.mts`). Bật Hiện sau khi thầy duyệt, TRƯỚC ngày `gui_ngay` của tuần dùng bài đó (xem `tuan.json`), vì thông báo chỉ gắn link bài đã Hiện.
 
 | Hạn bật Hiện | Bài (id) | Cần có | Dùng ở buổi |
 |---|---|---|---|
