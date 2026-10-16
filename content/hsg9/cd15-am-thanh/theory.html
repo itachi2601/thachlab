@@ -1,0 +1,352 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Có phần vượt chuẩn lớp 9</strong>, gắn nhãn <strong>Mở rộng HSG</strong>: sóng dọc và bước sóng, âm đổi môi trường, hai tiếng qua hai môi trường, nguồn âm chuyển động về phía vách.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Giải thích âm sinh ra và truyền đi thế nào.</li>
+<li>Dùng $s=vt$ cho âm.</li>
+<li>Tính $f=N/t$, $T=1/f$.</li>
+<li>Đọc chu kì và biên độ trên đồ thị dao động.</li>
+<li>Phân biệt độ to (biên độ) và độ cao (tần số).</li>
+<li>Xếp loại hạ âm, âm nghe được, siêu âm.</li>
+<li>Nêu điều kiện nghe tiếng vang.</li>
+<li>Đo độ sâu bằng tiếng vang: $d=\dfrac{vt}{2}$.</li>
+<li>Tính bước sóng $\lambda=v/f$ và $\lambda$ mới khi âm sang môi trường khác (<strong>Mở rộng HSG</strong>).</li>
+<li>Giải bài ống thép nghe hai tiếng và bài xe bóp còi tiến về vách (<strong>Mở rộng HSG</strong>).</li>
+<li>Quy ước: không khí $v=340\ \text{m/s}$, nước $1500\ \text{m/s}$.</li>
+<li>Ánh sáng coi như tới tức thời.</li>
+</ul>
+<p>Khoảng 14 phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: thấy chớp rồi mới nghe sấm</h3>
+<p>Chiều mưa, em đứng ở cửa sổ. Một tia chớp loé sáng phía xa. Em đếm nhẩm: một, hai, ba… đúng $3$ giây sau mới nghe tiếng sấm ầm ầm.</p>
+<p>Chớp và sấm sinh ra cùng một lúc. Vì sao tới tai em lại lệch nhau?</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Chỗ có tia chớp cách em khoảng bao xa?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q0" id="hsg15-q0a"><label for="hsg15-q0a" class="tl-opt tl-no">A. Khoảng $113\ \text{m}$</label>
+<input type="radio" name="hsg15-q0" id="hsg15-q0b"><label for="hsg15-q0b" class="tl-opt tl-ok">B. Khoảng $1\ \text{km}$</label>
+<input type="radio" name="hsg15-q0" id="hsg15-q0c"><label for="hsg15-q0c" class="tl-opt tl-no">C. Khoảng $9\cdot10^8\ \text{m}$</label>
+<input type="radio" name="hsg15-q0" id="hsg15-q0d"><label for="hsg15-q0d" class="tl-opt tl-no">D. Khoảng $340\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ánh sáng tới gần như tức thời, còn âm đi $340\ \text{m}$ mỗi giây.</p><p>Sau $3\ \text{s}$: $s=340\cdot3=1020\ \text{m}\approx1\ \text{km}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy $340:3$, phải nhân chứ không chia: $s=vt$.</p><p>C dùng tốc độ ánh sáng, mà ánh sáng tới gần như ngay lập tức.</p><p>D là quãng đường âm đi trong $1\ \text{s}$, chưa nhân với $3\ \text{s}$.</p></div>
+</div>
+</div>
+
+<h3>II. Nguồn âm và sóng âm</h3>
+
+<p><strong>🔑 Vật dao động · Cần môi trường · Thường rắn &gt; lỏng &gt; khí</strong></p>
+<ul>
+<li>Mọi nguồn âm đều dao động: dây đàn, màng loa, dây thanh quản.</li>
+<li>Âm truyền qua chất rắn, lỏng, khí.</li>
+<li>Âm không truyền được trong chân không.</li>
+<li>Tốc độ thường: rắn &gt; lỏng &gt; khí (cao su mềm là ngoại lệ).</li>
+<li>Không khí $340\ \text{m/s}$, nước $1500\ \text{m/s}$, thép $\approx6000\ \text{m/s}$.</li>
+<li>Quãng đường âm đi: $s=vt$.</li>
+</ul>
+<p>Ví dụ: áp tai xuống đường ray, nghe tiếng tàu sớm hơn.</p>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: âm thoa chạm mặt nước</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> gõ âm thoa vào gót giày, rồi chạm nhẹ một nhánh vào mặt cốc nước.</li>
+<li><strong>Quan sát:</strong> nước bắn tia nhỏ. Giữ chặt nhánh thì tiếng tắt ngay.</li>
+<li><strong>Rút ra:</strong> âm thoa đang kêu là đang dao động. Hết dao động thì hết âm.</li>
+</ol>
+</div>
+<p>Hai nhà du hành đứng cạnh nhau trên Mặt Trăng, không bật bộ đàm. Vì sao không nói chuyện trực tiếp được?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q1" id="hsg15-q1a"><label for="hsg15-q1a" class="tl-opt tl-no">A. Mặt Trăng quá lạnh, dây thanh quản không dao động</label>
+<input type="radio" name="hsg15-q1" id="hsg15-q1b"><label for="hsg15-q1b" class="tl-opt tl-no">B. Âm truyền quá nhanh, tai không kịp nghe</label>
+<input type="radio" name="hsg15-q1" id="hsg15-q1c"><label for="hsg15-q1c" class="tl-opt tl-ok">C. Không có không khí để truyền âm</label>
+<input type="radio" name="hsg15-q1" id="hsg15-q1d"><label for="hsg15-q1d" class="tl-opt tl-no">D. Âm chỉ truyền được trong chất rắn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giữa hai mũ là chân không, âm không truyền qua được.</p><p>Chạm hai mũ vào nhau thì nghe được, vì âm đi qua vỏ mũ rắn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: trong bộ đồ du hành vẫn ấm, dây thanh quản vẫn dao động.</p><p>B: âm nhanh hay chậm thì tai vẫn nghe, chỉ cần có môi trường truyền.</p><p>D: âm truyền được cả trong lỏng và khí. Trên Trái Đất ta nghe nhau qua không khí.</p></div>
+</div>
+
+<p><strong>🔑 Sóng dọc · $\lambda=v/f$ · Đổi môi trường giữ $f$</strong> <em>(Mở rộng HSG)</em></p>
+<figure class="fig" data-tl="1"><svg viewBox="0 30 440 228" role="img" aria-label="Loa đẩy các lớp khí thành chỗ nén và chỗ dãn xen kẽ, bước sóng là khoảng cách hai chỗ nén liền nhau, lớp khí dao động dọc theo phương truyền"><rect x="16" y="66" width="34" height="72" rx="3" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><path d="M50,78 L74,56 L74,148 L50,126 Z" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><text x="14" y="164" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">loa</text><line x1="84.0" y1="62.0" x2="84.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="94.4" y1="62.0" x2="94.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="104.4" y1="62.0" x2="104.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="113.6" y1="62.0" x2="113.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="121.6" y1="62.0" x2="121.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="128.3" y1="62.0" x2="128.3" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="133.6" y1="62.0" x2="133.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="137.6" y1="62.0" x2="137.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="140.4" y1="62.0" x2="140.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="142.4" y1="62.0" x2="142.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="144.0" y1="62.0" x2="144.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="145.6" y1="62.0" x2="145.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="147.6" y1="62.0" x2="147.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="150.4" y1="62.0" x2="150.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="154.4" y1="62.0" x2="154.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="159.7" y1="62.0" x2="159.7" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="166.4" y1="62.0" x2="166.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="174.4" y1="62.0" x2="174.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="183.6" y1="62.0" x2="183.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="193.6" y1="62.0" x2="193.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="204.0" y1="62.0" x2="204.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="214.4" y1="62.0" x2="214.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="224.4" y1="62.0" x2="224.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="233.6" y1="62.0" x2="233.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="241.6" y1="62.0" x2="241.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="248.3" y1="62.0" x2="248.3" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="253.6" y1="62.0" x2="253.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="257.6" y1="62.0" x2="257.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="260.4" y1="62.0" x2="260.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="262.4" y1="62.0" x2="262.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="264.0" y1="62.0" x2="264.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="265.6" y1="62.0" x2="265.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="267.6" y1="62.0" x2="267.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="270.4" y1="62.0" x2="270.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="274.4" y1="62.0" x2="274.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="279.7" y1="62.0" x2="279.7" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="286.4" y1="62.0" x2="286.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="294.4" y1="62.0" x2="294.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="303.6" y1="62.0" x2="303.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="313.6" y1="62.0" x2="313.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="324.0" y1="62.0" x2="324.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="334.4" y1="62.0" x2="334.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="344.4" y1="62.0" x2="344.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="353.6" y1="62.0" x2="353.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="361.6" y1="62.0" x2="361.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="368.3" y1="62.0" x2="368.3" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="373.6" y1="62.0" x2="373.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="377.6" y1="62.0" x2="377.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="380.4" y1="62.0" x2="380.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="382.4" y1="62.0" x2="382.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="384.0" y1="62.0" x2="384.0" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="385.6" y1="62.0" x2="385.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="387.6" y1="62.0" x2="387.6" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="390.4" y1="62.0" x2="390.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="394.4" y1="62.0" x2="394.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="399.7" y1="62.0" x2="399.7" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="406.4" y1="62.0" x2="406.4" y2="142.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><text x="144.0" y="52" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">nén</text><text x="204" y="52" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">dãn</text><text x="264.0" y="52" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">nén</text><text x="324" y="52" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">dãn</text><line x1="144.0" y1="166.0" x2="264.0" y2="166.0" stroke="#f87171" stroke-width="1.8" opacity="1"/><path d="M151.8,170.5 L144.0,166.0 L151.8,161.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M256.2,161.5 L264.0,166.0 L256.2,170.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="144.0" y1="159.0" x2="144.0" y2="173.0" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="264.0" y1="159.0" x2="264.0" y2="173.0" stroke="#f87171" stroke-width="1.6" opacity="1"/><text x="204.0" y="186" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">λ</text><line x1="300" y1="214" x2="400" y2="214" stroke="#fb923c" stroke-width="2.4"/><path d="M391.2,208.9 L400.0,214.0 L391.2,219.1" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="296" y="219" fill="currentColor" font-size="16" font-weight="600" text-anchor="end">phương truyền</text><line x1="342.0" y1="242.0" x2="382.0" y2="242.0" stroke="#38bdf8" stroke-width="2.4" opacity="1"/><path d="M374.2,237.5 L382.0,242.0 L374.2,246.5" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M349.8,246.5 L342.0,242.0 L349.8,237.5" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="296" y="247" fill="currentColor" font-size="16" font-weight="600" text-anchor="end">lớp khí dao động</text></svg><figcaption>Hình 1. Chỗ nén và chỗ dãn nối tiếp nhau đi ra xa loa. Lớp khí dao động dọc theo phương truyền: sóng dọc.</figcaption></figure>
+<ul>
+<li>Màng loa làm lớp khí trước nó nén rồi dãn.</li>
+<li>Các lớp khí dao động dọc theo phương truyền: sóng âm trong khí là <strong>sóng dọc</strong>.</li>
+<li>Bước sóng $\lambda$: khoảng cách hai chỗ nén liền nhau.</li>
+<li>$\lambda=\dfrac{v}{f}=vT$.</li>
+<li>Sang môi trường khác: $f$ giữ nguyên (do nguồn quyết định).</li>
+<li>$v$ đổi nên $\lambda$ đổi theo, tỉ lệ thuận với $v$.</li>
+</ul>
+<p>Âm $680\ \text{Hz}$ đi từ không khí vào nước. Điều gì xảy ra?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q2" id="hsg15-q2a"><label for="hsg15-q2a" class="tl-opt tl-ok">A. $f$ vẫn $680\ \text{Hz}$, $\lambda$ từ $0{,}5\ \text{m}$ thành $\approx2{,}2\ \text{m}$</label>
+<input type="radio" name="hsg15-q2" id="hsg15-q2b"><label for="hsg15-q2b" class="tl-opt tl-no">B. $\lambda$ giữ $0{,}5\ \text{m}$, $f$ tăng lên $3000\ \text{Hz}$</label>
+<input type="radio" name="hsg15-q2" id="hsg15-q2c"><label for="hsg15-q2c" class="tl-opt tl-no">C. $f$ và $\lambda$ giữ nguyên, chỉ $v$ đổi</label>
+<input type="radio" name="hsg15-q2" id="hsg15-q2d"><label for="hsg15-q2d" class="tl-opt tl-no">D. $f$ giữ nguyên, $\lambda$ giảm còn $\approx0{,}11\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trong khí: $\lambda=340/680=0{,}5\ \text{m}$.</p><p>Trong nước: $\lambda=1500/680\approx2{,}2\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B giữ $\lambda$, nhưng thứ không đổi là $f$: nguồn dao động bao nhiêu lần mỗi giây thì nước cũng dao động bấy nhiêu lần.</p><p>C trái với $v=\lambda f$: $v$ đổi mà $f$ giữ thì $\lambda$ phải đổi.</p><p>D chia ngược: $v$ tăng thì $\lambda$ tăng, không giảm.</p></div>
+</div>
+
+<h3>III. Độ cao và độ to</h3>
+
+<p><strong>🔑 Tần số → cao thấp · Biên độ → to nhỏ</strong></p>
+<ul>
+<li>Tần số: số dao động trong $1\ \text{s}$, $f=\dfrac{N}{t}$ (Hz).</li>
+<li>Chu kì: thời gian một dao động, $T=\dfrac{1}{f}$.</li>
+<li>$f$ lớn: âm cao (bổng). $f$ nhỏ: âm thấp (trầm).</li>
+<li>Biên độ lớn: âm to.</li>
+<li>Tai người nghe được $20\ \text{Hz}$ đến $20\,000\ \text{Hz}$.</li>
+<li>Dưới $20\ \text{Hz}$: hạ âm (động đất).</li>
+<li>Trên $20\,000\ \text{Hz}$: siêu âm (dơi, máy siêu âm y khoa).</li>
+</ul>
+<div class="tl-box tl-box--exp" data-exp="tn-l9-hsgamthanh-01">
+<p class="tl-label">🔬 Thí nghiệm: thước nhựa trên mép bàn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đè chặt thước lên bàn, gảy đầu thò ra. Lần lượt cho đầu thò ra dài, rồi ngắn. Sau đó gảy nhẹ, rồi gảy mạnh.</li>
+<li><strong>Quan sát:</strong> đầu thò ngắn rung nhanh hơn, tiếng cao hơn. Gảy mạnh thì thước rung rộng hơn, tiếng to hơn.</li>
+<li><strong>Rút ra:</strong> rung nhanh (tần số lớn) cho âm cao. Rung rộng (biên độ lớn) cho âm to.</li>
+</ol>
+</div>
+<figure class="fig" data-tl="1"><svg viewBox="0 28 440 262" role="img" aria-label="Đồ thị dao động của hai âm trong 4 mili giây: âm 1 biên độ 2 ô, chu kì 2 ms; âm 2 biên độ 1 ô, chu kì 1 ms"><line x1="64.0" y1="36.0" x2="64.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="109.0" y1="36.0" x2="109.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="154.0" y1="36.0" x2="154.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="199.0" y1="36.0" x2="199.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="244.0" y1="36.0" x2="244.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="289.0" y1="36.0" x2="289.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="334.0" y1="36.0" x2="334.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="379.0" y1="36.0" x2="379.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="424.0" y1="36.0" x2="424.0" y2="116.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="64.0" y1="44.0" x2="424.0" y2="44.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="60.0" x2="424.0" y2="60.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="92.0" x2="424.0" y2="92.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="108.0" x2="424.0" y2="108.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="76.0" x2="430.0" y2="76.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="64.0" y1="36.0" x2="64.0" y2="116.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><path d="M64.0,76.0 L64.9,75.0 L65.8,74.0 L66.7,73.0 L67.6,72.0 L68.5,71.0 L69.4,70.0 L70.3,69.0 L71.2,68.0 L72.1,67.1 L73.0,66.1 L73.9,65.2 L74.8,64.2 L75.7,63.3 L76.6,62.4 L77.5,61.5 L78.4,60.6 L79.3,59.7 L80.2,58.9 L81.1,58.0 L82.0,57.2 L82.9,56.4 L83.8,55.6 L84.7,54.8 L85.6,54.1 L86.5,53.4 L87.4,52.7 L88.3,52.0 L89.2,51.3 L90.1,50.7 L91.0,50.1 L91.9,49.5 L92.8,49.0 L93.7,48.5 L94.6,48.0 L95.5,47.5 L96.4,47.0 L97.3,46.6 L98.2,46.2 L99.1,45.9 L100.0,45.6 L100.9,45.3 L101.8,45.0 L102.7,44.8 L103.6,44.6 L104.5,44.4 L105.4,44.3 L106.3,44.1 L107.2,44.1 L108.1,44.0 L109.0,44.0 L109.9,44.0 L110.8,44.1 L111.7,44.1 L112.6,44.3 L113.5,44.4 L114.4,44.6 L115.3,44.8 L116.2,45.0 L117.1,45.3 L118.0,45.6 L118.9,45.9 L119.8,46.2 L120.7,46.6 L121.6,47.0 L122.5,47.5 L123.4,48.0 L124.3,48.5 L125.2,49.0 L126.1,49.5 L127.0,50.1 L127.9,50.7 L128.8,51.3 L129.7,52.0 L130.6,52.7 L131.5,53.4 L132.4,54.1 L133.3,54.8 L134.2,55.6 L135.1,56.4 L136.0,57.2 L136.9,58.0 L137.8,58.9 L138.7,59.7 L139.6,60.6 L140.5,61.5 L141.4,62.4 L142.3,63.3 L143.2,64.2 L144.1,65.2 L145.0,66.1 L145.9,67.1 L146.8,68.0 L147.7,69.0 L148.6,70.0 L149.5,71.0 L150.4,72.0 L151.3,73.0 L152.2,74.0 L153.1,75.0 L154.0,76.0 L154.9,77.0 L155.8,78.0 L156.7,79.0 L157.6,80.0 L158.5,81.0 L159.4,82.0 L160.3,83.0 L161.2,84.0 L162.1,84.9 L163.0,85.9 L163.9,86.8 L164.8,87.8 L165.7,88.7 L166.6,89.6 L167.5,90.5 L168.4,91.4 L169.3,92.3 L170.2,93.1 L171.1,94.0 L172.0,94.8 L172.9,95.6 L173.8,96.4 L174.7,97.2 L175.6,97.9 L176.5,98.6 L177.4,99.3 L178.3,100.0 L179.2,100.7 L180.1,101.3 L181.0,101.9 L181.9,102.5 L182.8,103.0 L183.7,103.5 L184.6,104.0 L185.5,104.5 L186.4,105.0 L187.3,105.4 L188.2,105.8 L189.1,106.1 L190.0,106.4 L190.9,106.7 L191.8,107.0 L192.7,107.2 L193.6,107.4 L194.5,107.6 L195.4,107.7 L196.3,107.9 L197.2,107.9 L198.1,108.0 L199.0,108.0 L199.9,108.0 L200.8,107.9 L201.7,107.9 L202.6,107.7 L203.5,107.6 L204.4,107.4 L205.3,107.2 L206.2,107.0 L207.1,106.7 L208.0,106.4 L208.9,106.1 L209.8,105.8 L210.7,105.4 L211.6,105.0 L212.5,104.5 L213.4,104.0 L214.3,103.5 L215.2,103.0 L216.1,102.5 L217.0,101.9 L217.9,101.3 L218.8,100.7 L219.7,100.0 L220.6,99.3 L221.5,98.6 L222.4,97.9 L223.3,97.2 L224.2,96.4 L225.1,95.6 L226.0,94.8 L226.9,94.0 L227.8,93.1 L228.7,92.3 L229.6,91.4 L230.5,90.5 L231.4,89.6 L232.3,88.7 L233.2,87.8 L234.1,86.8 L235.0,85.9 L235.9,84.9 L236.8,84.0 L237.7,83.0 L238.6,82.0 L239.5,81.0 L240.4,80.0 L241.3,79.0 L242.2,78.0 L243.1,77.0 L244.0,76.0 L244.9,75.0 L245.8,74.0 L246.7,73.0 L247.6,72.0 L248.5,71.0 L249.4,70.0 L250.3,69.0 L251.2,68.0 L252.1,67.1 L253.0,66.1 L253.9,65.2 L254.8,64.2 L255.7,63.3 L256.6,62.4 L257.5,61.5 L258.4,60.6 L259.3,59.7 L260.2,58.9 L261.1,58.0 L262.0,57.2 L262.9,56.4 L263.8,55.6 L264.7,54.8 L265.6,54.1 L266.5,53.4 L267.4,52.7 L268.3,52.0 L269.2,51.3 L270.1,50.7 L271.0,50.1 L271.9,49.5 L272.8,49.0 L273.7,48.5 L274.6,48.0 L275.5,47.5 L276.4,47.0 L277.3,46.6 L278.2,46.2 L279.1,45.9 L280.0,45.6 L280.9,45.3 L281.8,45.0 L282.7,44.8 L283.6,44.6 L284.5,44.4 L285.4,44.3 L286.3,44.1 L287.2,44.1 L288.1,44.0 L289.0,44.0 L289.9,44.0 L290.8,44.1 L291.7,44.1 L292.6,44.3 L293.5,44.4 L294.4,44.6 L295.3,44.8 L296.2,45.0 L297.1,45.3 L298.0,45.6 L298.9,45.9 L299.8,46.2 L300.7,46.6 L301.6,47.0 L302.5,47.5 L303.4,48.0 L304.3,48.5 L305.2,49.0 L306.1,49.5 L307.0,50.1 L307.9,50.7 L308.8,51.3 L309.7,52.0 L310.6,52.7 L311.5,53.4 L312.4,54.1 L313.3,54.8 L314.2,55.6 L315.1,56.4 L316.0,57.2 L316.9,58.0 L317.8,58.9 L318.7,59.7 L319.6,60.6 L320.5,61.5 L321.4,62.4 L322.3,63.3 L323.2,64.2 L324.1,65.2 L325.0,66.1 L325.9,67.1 L326.8,68.0 L327.7,69.0 L328.6,70.0 L329.5,71.0 L330.4,72.0 L331.3,73.0 L332.2,74.0 L333.1,75.0 L334.0,76.0 L334.9,77.0 L335.8,78.0 L336.7,79.0 L337.6,80.0 L338.5,81.0 L339.4,82.0 L340.3,83.0 L341.2,84.0 L342.1,84.9 L343.0,85.9 L343.9,86.8 L344.8,87.8 L345.7,88.7 L346.6,89.6 L347.5,90.5 L348.4,91.4 L349.3,92.3 L350.2,93.1 L351.1,94.0 L352.0,94.8 L352.9,95.6 L353.8,96.4 L354.7,97.2 L355.6,97.9 L356.5,98.6 L357.4,99.3 L358.3,100.0 L359.2,100.7 L360.1,101.3 L361.0,101.9 L361.9,102.5 L362.8,103.0 L363.7,103.5 L364.6,104.0 L365.5,104.5 L366.4,105.0 L367.3,105.4 L368.2,105.8 L369.1,106.1 L370.0,106.4 L370.9,106.7 L371.8,107.0 L372.7,107.2 L373.6,107.4 L374.5,107.6 L375.4,107.7 L376.3,107.9 L377.2,107.9 L378.1,108.0 L379.0,108.0 L379.9,108.0 L380.8,107.9 L381.7,107.9 L382.6,107.7 L383.5,107.6 L384.4,107.4 L385.3,107.2 L386.2,107.0 L387.1,106.7 L388.0,106.4 L388.9,106.1 L389.8,105.8 L390.7,105.4 L391.6,105.0 L392.5,104.5 L393.4,104.0 L394.3,103.5 L395.2,103.0 L396.1,102.5 L397.0,101.9 L397.9,101.3 L398.8,100.7 L399.7,100.0 L400.6,99.3 L401.5,98.6 L402.4,97.9 L403.3,97.2 L404.2,96.4 L405.1,95.6 L406.0,94.8 L406.9,94.0 L407.8,93.1 L408.7,92.3 L409.6,91.4 L410.5,90.5 L411.4,89.6 L412.3,88.7 L413.2,87.8 L414.1,86.8 L415.0,85.9 L415.9,84.9 L416.8,84.0 L417.7,83.0 L418.6,82.0 L419.5,81.0 L420.4,80.0 L421.3,79.0 L422.2,78.0 L423.1,77.0 L424.0,76.0" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="round"/><text x="12" y="81" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">Âm 1</text><text x="58" y="48" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">+2</text><text x="58" y="112" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">−2</text><line x1="64.0" y1="156.0" x2="64.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="109.0" y1="156.0" x2="109.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="154.0" y1="156.0" x2="154.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="199.0" y1="156.0" x2="199.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="244.0" y1="156.0" x2="244.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="289.0" y1="156.0" x2="289.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="334.0" y1="156.0" x2="334.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="379.0" y1="156.0" x2="379.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="424.0" y1="156.0" x2="424.0" y2="236.0" stroke="currentColor" stroke-width="1" opacity="0.45"/><line x1="64.0" y1="164.0" x2="424.0" y2="164.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="180.0" x2="424.0" y2="180.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="212.0" x2="424.0" y2="212.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="228.0" x2="424.0" y2="228.0" stroke="currentColor" stroke-width="1" opacity="0.28"/><line x1="64.0" y1="196.0" x2="430.0" y2="196.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="64.0" y1="156.0" x2="64.0" y2="236.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><path d="M64.0,196.0 L64.9,195.0 L65.8,194.0 L66.7,193.0 L67.6,192.0 L68.5,191.1 L69.4,190.1 L70.3,189.2 L71.2,188.3 L72.1,187.4 L73.0,186.6 L73.9,185.8 L74.8,185.0 L75.7,184.3 L76.6,183.7 L77.5,183.1 L78.4,182.5 L79.3,182.0 L80.2,181.5 L81.1,181.1 L82.0,180.8 L82.9,180.5 L83.8,180.3 L84.7,180.1 L85.6,180.0 L86.5,180.0 L87.4,180.0 L88.3,180.1 L89.2,180.3 L90.1,180.5 L91.0,180.8 L91.9,181.1 L92.8,181.5 L93.7,182.0 L94.6,182.5 L95.5,183.1 L96.4,183.7 L97.3,184.3 L98.2,185.0 L99.1,185.8 L100.0,186.6 L100.9,187.4 L101.8,188.3 L102.7,189.2 L103.6,190.1 L104.5,191.1 L105.4,192.0 L106.3,193.0 L107.2,194.0 L108.1,195.0 L109.0,196.0 L109.9,197.0 L110.8,198.0 L111.7,199.0 L112.6,200.0 L113.5,200.9 L114.4,201.9 L115.3,202.8 L116.2,203.7 L117.1,204.6 L118.0,205.4 L118.9,206.2 L119.8,207.0 L120.7,207.7 L121.6,208.3 L122.5,208.9 L123.4,209.5 L124.3,210.0 L125.2,210.5 L126.1,210.9 L127.0,211.2 L127.9,211.5 L128.8,211.7 L129.7,211.9 L130.6,212.0 L131.5,212.0 L132.4,212.0 L133.3,211.9 L134.2,211.7 L135.1,211.5 L136.0,211.2 L136.9,210.9 L137.8,210.5 L138.7,210.0 L139.6,209.5 L140.5,208.9 L141.4,208.3 L142.3,207.7 L143.2,207.0 L144.1,206.2 L145.0,205.4 L145.9,204.6 L146.8,203.7 L147.7,202.8 L148.6,201.9 L149.5,200.9 L150.4,200.0 L151.3,199.0 L152.2,198.0 L153.1,197.0 L154.0,196.0 L154.9,195.0 L155.8,194.0 L156.7,193.0 L157.6,192.0 L158.5,191.1 L159.4,190.1 L160.3,189.2 L161.2,188.3 L162.1,187.4 L163.0,186.6 L163.9,185.8 L164.8,185.0 L165.7,184.3 L166.6,183.7 L167.5,183.1 L168.4,182.5 L169.3,182.0 L170.2,181.5 L171.1,181.1 L172.0,180.8 L172.9,180.5 L173.8,180.3 L174.7,180.1 L175.6,180.0 L176.5,180.0 L177.4,180.0 L178.3,180.1 L179.2,180.3 L180.1,180.5 L181.0,180.8 L181.9,181.1 L182.8,181.5 L183.7,182.0 L184.6,182.5 L185.5,183.1 L186.4,183.7 L187.3,184.3 L188.2,185.0 L189.1,185.8 L190.0,186.6 L190.9,187.4 L191.8,188.3 L192.7,189.2 L193.6,190.1 L194.5,191.1 L195.4,192.0 L196.3,193.0 L197.2,194.0 L198.1,195.0 L199.0,196.0 L199.9,197.0 L200.8,198.0 L201.7,199.0 L202.6,200.0 L203.5,200.9 L204.4,201.9 L205.3,202.8 L206.2,203.7 L207.1,204.6 L208.0,205.4 L208.9,206.2 L209.8,207.0 L210.7,207.7 L211.6,208.3 L212.5,208.9 L213.4,209.5 L214.3,210.0 L215.2,210.5 L216.1,210.9 L217.0,211.2 L217.9,211.5 L218.8,211.7 L219.7,211.9 L220.6,212.0 L221.5,212.0 L222.4,212.0 L223.3,211.9 L224.2,211.7 L225.1,211.5 L226.0,211.2 L226.9,210.9 L227.8,210.5 L228.7,210.0 L229.6,209.5 L230.5,208.9 L231.4,208.3 L232.3,207.7 L233.2,207.0 L234.1,206.2 L235.0,205.4 L235.9,204.6 L236.8,203.7 L237.7,202.8 L238.6,201.9 L239.5,200.9 L240.4,200.0 L241.3,199.0 L242.2,198.0 L243.1,197.0 L244.0,196.0 L244.9,195.0 L245.8,194.0 L246.7,193.0 L247.6,192.0 L248.5,191.1 L249.4,190.1 L250.3,189.2 L251.2,188.3 L252.1,187.4 L253.0,186.6 L253.9,185.8 L254.8,185.0 L255.7,184.3 L256.6,183.7 L257.5,183.1 L258.4,182.5 L259.3,182.0 L260.2,181.5 L261.1,181.1 L262.0,180.8 L262.9,180.5 L263.8,180.3 L264.7,180.1 L265.6,180.0 L266.5,180.0 L267.4,180.0 L268.3,180.1 L269.2,180.3 L270.1,180.5 L271.0,180.8 L271.9,181.1 L272.8,181.5 L273.7,182.0 L274.6,182.5 L275.5,183.1 L276.4,183.7 L277.3,184.3 L278.2,185.0 L279.1,185.8 L280.0,186.6 L280.9,187.4 L281.8,188.3 L282.7,189.2 L283.6,190.1 L284.5,191.1 L285.4,192.0 L286.3,193.0 L287.2,194.0 L288.1,195.0 L289.0,196.0 L289.9,197.0 L290.8,198.0 L291.7,199.0 L292.6,200.0 L293.5,200.9 L294.4,201.9 L295.3,202.8 L296.2,203.7 L297.1,204.6 L298.0,205.4 L298.9,206.2 L299.8,207.0 L300.7,207.7 L301.6,208.3 L302.5,208.9 L303.4,209.5 L304.3,210.0 L305.2,210.5 L306.1,210.9 L307.0,211.2 L307.9,211.5 L308.8,211.7 L309.7,211.9 L310.6,212.0 L311.5,212.0 L312.4,212.0 L313.3,211.9 L314.2,211.7 L315.1,211.5 L316.0,211.2 L316.9,210.9 L317.8,210.5 L318.7,210.0 L319.6,209.5 L320.5,208.9 L321.4,208.3 L322.3,207.7 L323.2,207.0 L324.1,206.2 L325.0,205.4 L325.9,204.6 L326.8,203.7 L327.7,202.8 L328.6,201.9 L329.5,200.9 L330.4,200.0 L331.3,199.0 L332.2,198.0 L333.1,197.0 L334.0,196.0 L334.9,195.0 L335.8,194.0 L336.7,193.0 L337.6,192.0 L338.5,191.1 L339.4,190.1 L340.3,189.2 L341.2,188.3 L342.1,187.4 L343.0,186.6 L343.9,185.8 L344.8,185.0 L345.7,184.3 L346.6,183.7 L347.5,183.1 L348.4,182.5 L349.3,182.0 L350.2,181.5 L351.1,181.1 L352.0,180.8 L352.9,180.5 L353.8,180.3 L354.7,180.1 L355.6,180.0 L356.5,180.0 L357.4,180.0 L358.3,180.1 L359.2,180.3 L360.1,180.5 L361.0,180.8 L361.9,181.1 L362.8,181.5 L363.7,182.0 L364.6,182.5 L365.5,183.1 L366.4,183.7 L367.3,184.3 L368.2,185.0 L369.1,185.8 L370.0,186.6 L370.9,187.4 L371.8,188.3 L372.7,189.2 L373.6,190.1 L374.5,191.1 L375.4,192.0 L376.3,193.0 L377.2,194.0 L378.1,195.0 L379.0,196.0 L379.9,197.0 L380.8,198.0 L381.7,199.0 L382.6,200.0 L383.5,200.9 L384.4,201.9 L385.3,202.8 L386.2,203.7 L387.1,204.6 L388.0,205.4 L388.9,206.2 L389.8,207.0 L390.7,207.7 L391.6,208.3 L392.5,208.9 L393.4,209.5 L394.3,210.0 L395.2,210.5 L396.1,210.9 L397.0,211.2 L397.9,211.5 L398.8,211.7 L399.7,211.9 L400.6,212.0 L401.5,212.0 L402.4,212.0 L403.3,211.9 L404.2,211.7 L405.1,211.5 L406.0,211.2 L406.9,210.9 L407.8,210.5 L408.7,210.0 L409.6,209.5 L410.5,208.9 L411.4,208.3 L412.3,207.7 L413.2,207.0 L414.1,206.2 L415.0,205.4 L415.9,204.6 L416.8,203.7 L417.7,202.8 L418.6,201.9 L419.5,200.9 L420.4,200.0 L421.3,199.0 L422.2,198.0 L423.1,197.0 L424.0,196.0" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round"/><text x="12" y="201" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">Âm 2</text><text x="58" y="168" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">+2</text><text x="58" y="232" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">−2</text><text x="64.0" y="262" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">0</text><text x="154.0" y="262" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">1</text><text x="244.0" y="262" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">2</text><text x="334.0" y="262" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">3</text><text x="424.0" y="262" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">4</text><text x="424" y="282" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">t (ms)</text><text x="64" y="282" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">1 ô ngang = 0,5 ms</text></svg><figcaption>Hình 2. Đồ thị dao động của hai âm, cùng trục thời gian. Mỗi ô ngang 0,5 ms, mỗi ô dọc là một đơn vị li độ.</figcaption></figure>
+<p>Theo Hình 2, phát biểu nào đúng?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg15-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg15-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q3" id="hsg15-q3a"><label for="hsg15-q3a" class="tl-opt tl-no">A. Âm 1 cao hơn, vì đỉnh sóng cao hơn</label>
+<input type="radio" name="hsg15-q3" id="hsg15-q3b"><label for="hsg15-q3b" class="tl-opt tl-no">B. Âm 2 to hơn, vì dao động nhiều lần hơn</label>
+<input type="radio" name="hsg15-q3" id="hsg15-q3c"><label for="hsg15-q3c" class="tl-opt tl-no">C. Hai âm cao bằng nhau, chỉ khác độ to</label>
+<input type="radio" name="hsg15-q3" id="hsg15-q3d"><label for="hsg15-q3d" class="tl-opt tl-ok">D. Âm 1 to hơn, âm 2 cao hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Âm 1: biên độ 2 ô, $T=2\ \text{ms}$, $f=500\ \text{Hz}$.</p><p>Âm 2: biên độ 1 ô, $T=1\ \text{ms}$, $f=1000\ \text{Hz}$.</p><p>To hơn chưa chắc cao hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy chiều cao đỉnh (biên độ) để xét độ cao, mà độ cao do tần số quyết định.</p><p>B lấy số dao động (tần số) để xét độ to, mà độ to do biên độ quyết định.</p><p>C bỏ qua trục thời gian: âm 2 có 4 dao động, âm 1 chỉ 2 dao động trong cùng $4\ \text{ms}$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Hai cái bẫy của mục này</p>
+<p><strong>Bẫy 1: "âm to" khác "âm cao".</strong></p>
+<table class="tl-table">
+<thead><tr><th>Tiêu chí</th><th>Độ to</th><th>Độ cao</th></tr></thead>
+<tbody>
+<tr><td>Do gì quyết định</td><td>Biên độ</td><td>Tần số</td></tr>
+<tr><td>Đọc trên đồ thị</td><td>Trục li độ</td><td>Trục thời gian</td></tr>
+<tr><td>Từ đi kèm</td><td>to, nhỏ</td><td>cao (bổng), thấp (trầm)</td></tr>
+</tbody>
+</table>
+<p><strong>Bẫy 2: chu kì phải đếm trọn một dao động.</strong></p>
+<ul>
+<li>Từ đỉnh tới đỉnh kế tiếp: $T$.</li>
+<li>Từ đỉnh tới đáy liền sau: chỉ $T/2$.</li>
+<li>Đổi ms ra s trước khi tính $f=1/T$.</li>
+</ul>
+<p>Trên một đồ thị, từ một đỉnh tới đáy liền sau mất $0{,}5\ \text{ms}$. Tần số của âm là:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q4" id="hsg15-q4a"><label for="hsg15-q4a" class="tl-opt tl-no">A. $2000\ \text{Hz}$</label>
+<input type="radio" name="hsg15-q4" id="hsg15-q4b"><label for="hsg15-q4b" class="tl-opt tl-ok">B. $1000\ \text{Hz}$</label>
+<input type="radio" name="hsg15-q4" id="hsg15-q4c"><label for="hsg15-q4c" class="tl-opt tl-no">C. $500\ \text{Hz}$</label>
+<input type="radio" name="hsg15-q4" id="hsg15-q4d"><label for="hsg15-q4d" class="tl-opt tl-no">D. $2\ \text{Hz}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đỉnh tới đáy là nửa chu kì, nên $T=1\ \text{ms}=0{,}001\ \text{s}$.</p><p>$f=1/0{,}001=1000\ \text{Hz}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy $0{,}5\ \text{ms}$ làm cả chu kì, trong khi đỉnh tới đáy mới là nửa dao động.</p><p>C lấy $T=2\ \text{ms}$, gấp bốn lần $0{,}5\ \text{ms}$: đó là hai dao động, không phải một.</p><p>D quên đổi ms ra s: $1/0{,}5=2$.</p></div>
+</div>
+</div>
+
+<h3>IV. Phản xạ âm và tiếng vang</h3>
+
+<p><strong>🔑 Cứng nhẵn phản xạ · Mềm xốp hấp thụ · Đi về: chia 2</strong></p>
+<ul>
+<li>Âm gặp vật cản bị dội lại: phản xạ âm.</li>
+<li>Vật cứng, mặt nhẵn phản xạ tốt: tường gạch, kính, vách đá.</li>
+<li>Vật mềm, xốp hấp thụ tốt: rèm, thảm, tấm mút.</li>
+<li>Tiếng vang: âm phản xạ tới tai chậm hơn âm trực tiếp ít nhất $\tfrac{1}{15}\ \text{s}$.</li>
+<li>Trong không khí, cần đứng cách vật cản $d\ge\dfrac{340}{2\cdot15}\approx11{,}3\ \text{m}$.</li>
+<li>Đo khoảng cách bằng tiếng vang: $d=\dfrac{vt}{2}$, với $t$ là thời gian đi và về.</li>
+</ul>
+<p>Ví dụ: phòng thu âm dán mút lên tường để hết tiếng vang.</p>
+<p>Dơi, cá heo phát siêu âm rồi nghe tiếng dội để định vị.</p>
+<figure class="fig" data-tl="1"><svg viewBox="0 28 440 248" role="img" aria-label="Tàu phát siêu âm xuống đáy biển và thu âm phản xạ, độ sâu bằng tốc độ nhân thời gian chia hai"><line x1="10.0" y1="74.0" x2="430.0" y2="74.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><text x="424" y="66" fill="#38bdf8" font-size="15" font-weight="600" text-anchor="end">mặt biển</text><path d="M70,56 L190,56 L176,82 L84,82 Z" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><rect x="110" y="36" width="42" height="20" rx="2" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><line x1="10.0" y1="236.0" x2="430.0" y2="236.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><line x1="14.0" y1="236.0" x2="5.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="30.0" y1="236.0" x2="21.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="46.0" y1="236.0" x2="37.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="62.0" y1="236.0" x2="53.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="78.0" y1="236.0" x2="69.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="94.0" y1="236.0" x2="85.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="110.0" y1="236.0" x2="101.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="126.0" y1="236.0" x2="117.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="142.0" y1="236.0" x2="133.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="158.0" y1="236.0" x2="149.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="174.0" y1="236.0" x2="165.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="190.0" y1="236.0" x2="181.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="206.0" y1="236.0" x2="197.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="222.0" y1="236.0" x2="213.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="238.0" y1="236.0" x2="229.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="254.0" y1="236.0" x2="245.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="270.0" y1="236.0" x2="261.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="286.0" y1="236.0" x2="277.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="302.0" y1="236.0" x2="293.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="318.0" y1="236.0" x2="309.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="334.0" y1="236.0" x2="325.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="350.0" y1="236.0" x2="341.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="366.0" y1="236.0" x2="357.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="382.0" y1="236.0" x2="373.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="398.0" y1="236.0" x2="389.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><line x1="414.0" y1="236.0" x2="405.0" y2="246.0" stroke="currentColor" stroke-width="1.3" opacity="0.55"/><text x="12" y="266" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">đáy biển</text><line x1="116" y1="86" x2="116" y2="232" stroke="#f87171" stroke-width="2.6"/><path d="M121.4,222.6 L116.0,232.0 L110.6,222.6" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="146" y1="232" x2="146" y2="86" stroke="#34d399" stroke-width="2.6"/><path d="M140.6,95.4 L146.0,86.0 L151.4,95.4" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="108" y="150" fill="#f87171" font-size="16" font-weight="700" text-anchor="end">phát</text><text x="156" y="150" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">thu</text><line x1="250.0" y1="74.0" x2="250.0" y2="236.0" stroke="#fb923c" stroke-width="1.8" opacity="1"/><path d="M245.5,81.8 L250.0,74.0 L254.5,81.8" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M254.5,228.2 L250.0,236.0 L245.5,228.2" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="262" y="150" fill="#fb923c" font-size="16" font-weight="700" text-anchor="start">d = ?</text><text x="262" y="120" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">nước: v = 1500 m/s</text><text x="262" y="182" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">t: thời gian đi và về</text><text x="262" y="202" fill="#fb923c" font-size="16" font-weight="700" text-anchor="start">d = v·t / 2</text></svg><figcaption>Hình 3. Âm đi xuống rồi dội lên, đi hai lần độ sâu d. Nên d = vt/2.</figcaption></figure>
+<div class="tl-box tl-box--exp" data-exp="tn-l9-hsgamthanh-02">
+<p class="tl-label">🔬 Thí nghiệm: đo tốc độ âm bằng tiếng vang (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đứng trước bức tường lớn của nhà thi đấu, vỗ tay một cái. Điện thoại ghi âm, đọc khoảng thời gian $t$ giữa tiếng vỗ và tiếng vang trên đồ thị âm. Đo ở ba khoảng cách $d$.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $v=\dfrac{2d}{t}$ cho xấp xỉ $330$–$340\ \text{m/s}$.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$d$ (m)</th><th>$t$ (s)</th><th>$v=2d/t$ (m/s)</th></tr></thead>
+<tbody>
+<tr><td>34</td><td>0,21</td><td>324</td></tr>
+<tr><td>51</td><td>0,30</td><td>340</td></tr>
+<tr><td>68</td><td>0,41</td><td>332</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Vì sao lần đo ở $34\ \text{m}$ lệch nhiều nhất? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Đọc lệch $0{,}01\ \text{s}$ là như nhau ở mọi lần đo.</p>
+<p>Với $t=0{,}21\ \text{s}$, lệch đó là khoảng $5\%$.</p>
+<p>Với $t=0{,}41\ \text{s}$ chỉ khoảng $2\%$.</p>
+<p>Muốn đo chính xác hơn: đứng xa tường để $t$ lớn, và đo nhiều lần rồi lấy trung bình.</p>
+</details>
+</div>
+<p>Tàu phát siêu âm xuống đáy biển, sau $0{,}8\ \text{s}$ thu được âm phản xạ. Tốc độ âm trong nước $1500\ \text{m/s}$. Độ sâu chỗ đó là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg15-q5c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg15-q5c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q5" id="hsg15-q5a"><label for="hsg15-q5a" class="tl-opt tl-ok">A. $600\ \text{m}$</label>
+<input type="radio" name="hsg15-q5" id="hsg15-q5b"><label for="hsg15-q5b" class="tl-opt tl-no">B. $1200\ \text{m}$</label>
+<input type="radio" name="hsg15-q5" id="hsg15-q5c"><label for="hsg15-q5c" class="tl-opt tl-no">C. $136\ \text{m}$</label>
+<input type="radio" name="hsg15-q5" id="hsg15-q5d"><label for="hsg15-q5d" class="tl-opt tl-no">D. $1875\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $0{,}8\ \text{s}$ là thời gian đi xuống và đi lên.</p><p>$d=\dfrac{1500\cdot0{,}8}{2}=600\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B quên chia 2: $1200\ \text{m}$ là cả quãng đi lẫn về.</p><p>C dùng tốc độ âm trong không khí, trong khi siêu âm đi trong nước.</p><p>D lấy $1500:0{,}8$, sai công thức $s=vt$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h3>V. Mở rộng HSG: âm qua hai môi trường, chống ồn</h3>
+
+<p><strong>🔑 Cùng quãng đường · Hai tiếng · Lấy hiệu thời gian</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Gõ một đầu ống thép dài $L$.</li>
+<li>Tai ở đầu kia nghe hai tiếng.</li>
+<li>Tiếng đầu đi qua thép ($v_2$ lớn), tiếng sau đi qua không khí ($v_1$ nhỏ).</li>
+<li>$\Delta t=\dfrac{L}{v_1}-\dfrac{L}{v_2}$.</li>
+<li>Suy ra $L=\dfrac{\Delta t}{\dfrac{1}{v_1}-\dfrac{1}{v_2}}$.</li>
+</ul>
+<p>Hai tiếng cách nhau $\Delta t=2\ \text{s}$. Cho $v_1=340\ \text{m/s}$, $v_2=6000\ \text{m/s}$. Ống dài:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q6" id="hsg15-q6a"><label for="hsg15-q6a" class="tl-opt tl-no">A. $680\ \text{m}$</label>
+<input type="radio" name="hsg15-q6" id="hsg15-q6b"><label for="hsg15-q6b" class="tl-opt tl-no">B. $12\,000\ \text{m}$</label>
+<input type="radio" name="hsg15-q6" id="hsg15-q6c"><label for="hsg15-q6c" class="tl-opt tl-ok">C. $\approx721\ \text{m}$</label>
+<input type="radio" name="hsg15-q6" id="hsg15-q6d"><label for="hsg15-q6d" class="tl-opt tl-no">D. $\approx643\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{1}{340}-\dfrac{1}{6000}\approx0{,}002\,775\ \text{s/m}$.</p><p>$L=2:0{,}002\,775\approx721\ \text{m}$.</p><p>Kiểm tra: qua khí $2{,}12\ \text{s}$, qua thép $0{,}12\ \text{s}$, hiệu đúng $2\ \text{s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A coi $2\ \text{s}$ là thời gian âm đi qua không khí, nhưng $2\ \text{s}$ chỉ là hiệu hai thời gian.</p><p>B nhân với tốc độ trong thép, cũng hiểu sai $\Delta t$.</p><p>D cộng hai nghịch đảo thay vì trừ: tiếng qua thép tới <em>trước</em>, nên phải lấy hiệu.</p></div>
+</div>
+
+<p><strong>🔑 Nguồn chạy về vách · Âm + xe $=2d$</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Xe bóp còi khi cách vách $d$, rồi vẫn chạy tiếp về phía vách.</li>
+<li>Âm đi tới vách rồi dội về gặp xe.</li>
+<li>Trong cùng thời gian $t$, xe cũng đi được một đoạn.</li>
+<li>Quãng âm đi cộng quãng xe đi bằng $2d$: $vt+v_xt=2d$.</li>
+<li>Xe chạy ra xa vách thì trừ: $vt-v_xt=2d$.</li>
+</ul>
+<p>Xem bài toán mẫu mục VI.</p>
+
+<p><strong>🔑 Giảm ở nguồn · Chặn đường truyền · Hấp thụ</strong></p>
+<ul>
+<li>Giảm ở nguồn: lắp ống giảm thanh, cấm bóp còi gần bệnh viện, trường học.</li>
+<li>Chặn đường truyền: tường cách âm, hàng cây, kính hai lớp.</li>
+<li>Hấp thụ: rèm dày, thảm, tấm mút trong phòng.</li>
+<li>Tiếng ồn quá lớn làm hại tai.</li>
+<li>Cỡ $130\ \text{dB}$ đã gây đau tai.</li>
+</ul>
+
+<h3>VI. Bài toán mẫu: xe bóp còi tiến về vách núi</h3>
+
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Ô tô chạy thẳng đều với tốc độ $20\ \text{m/s}$ về phía một vách núi. Người lái bóp còi, sau $4\ \text{s}$ thì nghe tiếng vang. Tốc độ âm trong không khí $340\ \text{m/s}$.</p>
+<p>a) Lúc bóp còi, xe cách vách bao xa?</p>
+<p>b) Lúc nghe tiếng vang, xe cách vách bao xa?</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"chạy thẳng đều … về phía vách"</td><td>$v_x=20\ \text{m/s}$</td><td>$s_{xe}=v_xt$, xe lại gần vách</td></tr>
+<tr><td>"bóp còi, sau $4\ \text{s}$ thì nghe tiếng vang"</td><td>$t=4\ \text{s}$</td><td>âm và xe cùng chạy trong $4\ \text{s}$</td></tr>
+<tr><td>"tiếng vang"</td><td>âm tới vách rồi dội về</td><td>phản xạ âm</td></tr>
+<tr><td>"$340\ \text{m/s}$"</td><td>$v=340\ \text{m/s}$</td><td>$s_{\text{âm}}=vt$</td></tr>
+<tr><td>"người lái … nghe"</td><td>tai đi cùng xe</td><td>âm phải đuổi kịp chỗ xe ở lúc $t$</td></tr>
+<tr><td>"lúc bóp còi" / "lúc nghe"</td><td>$d$ / $d'$</td><td>$s_{\text{âm}}+s_{xe}=2d$<br>$d'=d-s_{xe}$</td></tr>
+</tbody>
+</table></div>
+</div>
+<figure class="fig" data-tl="1"><svg viewBox="0 22 440 276" role="img" aria-label="Xe bóp còi ở A, âm đi tới vách rồi dội về gặp xe ở B; quãng âm đi cộng quãng xe đi bằng hai lần khoảng cách d"><line x1="10.0" y1="196.0" x2="412.0" y2="196.0" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="412" y="40" width="20" height="156" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><line x1="414.0" y1="56.0" x2="430.0" y2="48.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="70.0" x2="430.0" y2="62.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="84.0" x2="430.0" y2="76.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="98.0" x2="430.0" y2="90.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="112.0" x2="430.0" y2="104.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="126.0" x2="430.0" y2="118.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="140.0" x2="430.0" y2="132.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="154.0" x2="430.0" y2="146.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="168.0" x2="430.0" y2="160.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="182.0" x2="430.0" y2="174.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="414.0" y1="196.0" x2="430.0" y2="188.0" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><text x="408" y="34" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">vách núi</text><g opacity="1.0"><rect x="74.0" y="178" width="28" height="11" rx="2" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.8"/><path d="M80.0,178 L84.0,171 L94.0,171 L98.0,178" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="80.0" cy="191" r="4" fill="currentColor"/><circle cx="96.0" cy="191" r="4" fill="currentColor"/></g><g opacity="0.5"><rect x="110.0" y="178" width="28" height="11" rx="2" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.8"/><path d="M116.0,178 L120.0,171 L130.0,171 L134.0,178" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="116.0" cy="191" r="4" fill="currentColor"/><circle cx="132.0" cy="191" r="4" fill="currentColor"/></g><text x="88.0" y="164" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">A</text><text x="126.0" y="164" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">B</text><line x1="88.0" y1="84" x2="410" y2="84" stroke="#f87171" stroke-width="2.4"/><path d="M401.2,78.9 L410.0,84.0 L401.2,89.1" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="250.0" y="75" fill="#f87171" font-size="16" font-weight="700" text-anchor="middle">âm đi tới vách</text><line x1="410.0" y1="84.0" x2="410.0" y2="124.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/><line x1="410" y1="124" x2="124.0" y2="124" stroke="#34d399" stroke-width="2.4"/><path d="M132.8,129.1 L124.0,124.0 L132.8,118.9" fill="none" stroke="#34d399" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="268.0" y="115" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">âm dội về gặp xe</text><line x1="88.0" y1="84.0" x2="88.0" y2="146.0" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/><line x1="124.0" y1="124.0" x2="124.0" y2="146.0" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/><line x1="88.0" y1="214.0" x2="124.0" y2="214.0" stroke="#fb923c" stroke-width="1.8" opacity="1"/><path d="M95.8,218.5 L88.0,214.0 L95.8,209.5" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M116.2,209.5 L124.0,214.0 L116.2,218.5" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="88.0" y1="207.0" x2="88.0" y2="221.0" stroke="#fb923c" stroke-width="1.6" opacity="1"/><line x1="124.0" y1="207.0" x2="124.0" y2="221.0" stroke="#fb923c" stroke-width="1.6" opacity="1"/><text x="106.0" y="0" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle"></text><text x="136.0" y="219" fill="#fb923c" font-size="16" font-weight="700" text-anchor="start">xe đi: s = vₓt</text><line x1="88.0" y1="240.0" x2="412.0" y2="240.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M95.8,244.5 L88.0,240.0 L95.8,235.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M404.2,235.5 L412.0,240.0 L404.2,244.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="88.0" y1="233.0" x2="88.0" y2="247.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="412.0" y1="233.0" x2="412.0" y2="247.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="250.0" y="0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle"></text><text x="250.0" y="258" fill="currentColor" font-size="16" font-weight="600" text-anchor="middle">d: lúc bóp còi (xe ở A)</text><line x1="124.0" y1="272.0" x2="412.0" y2="272.0" stroke="#38bdf8" stroke-width="1.8" opacity="1"/><path d="M131.8,276.5 L124.0,272.0 L131.8,267.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M404.2,267.5 L412.0,272.0 L404.2,276.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="124.0" y1="265.0" x2="124.0" y2="279.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><line x1="412.0" y1="265.0" x2="412.0" y2="279.0" stroke="#38bdf8" stroke-width="1.6" opacity="1"/><text x="268.0" y="0" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle"></text><text x="268.0" y="290" fill="#38bdf8" font-size="16" font-weight="600" text-anchor="middle">d′: lúc nghe (xe ở B)</text></svg><figcaption>Hình 4. Vẽ đúng tỉ lệ số liệu bài toán mẫu.<br>Âm đi + xe đi = 2d.</figcaption></figure>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>Âm đi: $s_{\text{âm}}=340\cdot4=1360\ \text{m}$.</li>
+<li>Xe đi: $s_{xe}=20\cdot4=80\ \text{m}$.</li>
+<li>a) $2d=1360+80=1440$, nên $d=720\ \text{m}$.</li>
+<li>b) $d'=720-80=640\ \text{m}$.</li>
+<li>Kiểm tra: âm đi tới vách $720\ \text{m}$, dội về $640\ \text{m}$, cộng lại đúng $1360\ \text{m}$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — xe $10\ \text{m/s}$ chạy <em>ra xa</em> vách, bóp còi, sau $4\ \text{s}$ nghe tiếng vang.</p>
+<ol class="tl-steps">
+<li>$s_{\text{âm}}=1360\ \text{m}$, $s_{xe}=40\ \text{m}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $2d=\;?$ — gợi ý: âm phải đi thêm đoạn nào để đuổi kịp xe?</li>
+<li>Kết luận: $d=\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary>
+<p>Xe chạy ra xa nên $s_{\text{âm}}-s_{xe}=2d$.</p>
+<p>$2d=1360-40=1320$, nên $d=660\ \text{m}$.</p></details>
+</div>
+
+<p>Thử sức đổi số: xe $10\ \text{m/s}$ chạy về phía vách, bóp còi, sau $3\ \text{s}$ nghe tiếng vang. Lúc bóp còi xe cách vách:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg15-q7" id="hsg15-q7a"><label for="hsg15-q7a" class="tl-opt tl-no">A. $510\ \text{m}$</label>
+<input type="radio" name="hsg15-q7" id="hsg15-q7b"><label for="hsg15-q7b" class="tl-opt tl-no">B. $1050\ \text{m}$</label>
+<input type="radio" name="hsg15-q7" id="hsg15-q7c"><label for="hsg15-q7c" class="tl-opt tl-no">C. $495\ \text{m}$</label>
+<input type="radio" name="hsg15-q7" id="hsg15-q7d"><label for="hsg15-q7d" class="tl-opt tl-ok">D. $525\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $2d=(340+10)\cdot3=1050$, nên $d=525\ \text{m}$.</p><p>Lúc nghe, xe còn cách vách $525-30=495\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A bỏ quãng xe đi: $340\cdot3:2=510$.</p><p>B quên chia 2.</p><p>C là khoảng cách lúc <em>nghe</em>, hoặc trừ quãng xe như khi xe chạy ra xa.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: đứng cách vách $170\ \text{m}$ vỗ tay, sau bao lâu nghe tiếng vang?</summary>
+<p>$t=\dfrac{2\cdot170}{340}=1\ \text{s}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: đứng giữa hai vách song song, nghe tiếng vang thứ nhất sau $0{,}4\ \text{s}$, thứ hai sau $0{,}6\ \text{s}$. Hai vách cách nhau bao xa?</summary>
+<p>Tới vách gần: $340\cdot0{,}4:2=68\ \text{m}$.</p>
+<p>Tới vách xa: $340\cdot0{,}6:2=102\ \text{m}$.</p>
+<p>Hai vách cách nhau $68+102=170\ \text{m}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3 (Mở rộng HSG): tàu phát siêu âm $50\ \text{kHz}$, sau $1{,}2\ \text{s}$ thu tiếng vang từ đáy. Tìm độ sâu và bước sóng siêu âm trong nước.</summary>
+<p>Độ sâu: $d=\dfrac{1500\cdot1{,}2}{2}=900\ \text{m}$.</p>
+<p>Bước sóng: $\lambda=\dfrac{1500}{50\,000}=0{,}03\ \text{m}=3\ \text{cm}$.</p>
+<p>Cùng tần số đó trong không khí, $\lambda$ chỉ còn $6{,}8\ \text{mm}$.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Âm sinh ra thế nào, truyền qua đâu, nhanh nhất trong chất nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Do vật dao động.</p>
+<p>Truyền qua rắn, lỏng, khí.</p>
+<p>Không qua chân không.</p>
+<p>Thường: rắn &gt; lỏng &gt; khí.</p></details>
+<details class="tl-details"><summary>Độ cao và độ to do đại lượng nào quyết định?</summary>
+<p>Độ cao: tần số $f$.</p>
+<p>Độ to: biên độ.</p></details>
+<details class="tl-details"><summary>Đọc chu kì và tần số trên đồ thị dao động thế nào?</summary>
+<p>Đỉnh tới đỉnh kế tiếp là $T$.</p>
+<p>Đổi ra giây, rồi $f=1/T$.</p></details>
+<details class="tl-details"><summary>Khi nào nghe được tiếng vang? Đo độ sâu bằng tiếng vang ra sao?</summary>
+<p>Âm phản xạ chậm hơn ít nhất $\tfrac{1}{15}\ \text{s}$, tức $d\ge11{,}3\ \text{m}$ trong không khí.</p>
+<p>$d=vt/2$.</p></details>
+<details class="tl-details"><summary>Âm sang môi trường khác: đại lượng nào giữ nguyên? (Mở rộng HSG)</summary>
+<p>$f$ giữ nguyên.</p>
+<p>$v$ và $\lambda=v/f$ đổi.</p></details>
+<details class="tl-details"><summary>Công thức ống thép hai tiếng và xe bóp còi về phía vách? (Mở rộng HSG)</summary>
+<p>$\Delta t=L/v_1-L/v_2$.</p>
+<p>$vt+v_xt=2d$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Nguồn âm dao động.</li>
+<li>Không truyền trong chân không.</li>
+<li>Thường $v_{\text{rắn}}\gt v_{\text{lỏng}}\gt v_{\text{khí}}$.</li>
+<li>$s=vt$.</li>
+<li>Tần số → cao thấp.</li>
+<li>Biên độ → to nhỏ.</li>
+<li>$20$ Hz – $20\,000$ Hz: nghe được.</li>
+<li>Dưới là hạ âm, trên là siêu âm.</li>
+<li>Tiếng vang: chậm $\ge\tfrac{1}{15}\ \text{s}$.</li>
+<li>Đo khoảng cách: $d=vt/2$.</li>
+<li>Đổi môi trường: $f$ giữ nguyên.</li>
+<li>$\lambda$ tỉ lệ với $v$.</li>
+<li>Xe về phía vách: âm + xe $=2d$.</li>
+<li>Đọc đề: thời gian là đi một chiều hay đi và về? Âm đi trong môi trường nào?</li>
+</ul>
+</div>

@@ -1,0 +1,128 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "CĐ15. Âm thanh (Vật lí HSG & chuyên KHTN 9)",
+ "lesson_id": 150,
+ "nguon_trong_bai": "content/hsg9/cd15-am-thanh/theory.html",
+ "id": "tn-l9-hsgamthanh-02",
+ "ten": "Đo tốc độ âm bằng tiếng vang trước bức tường lớn",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "amthanh.tieng_vang",
+  "amthanh.do_khoang_cach_d_bang_vt_chia_2",
+  "amthanh.sai_so_do"
+ ],
+ "muc_tieu": "Dùng d = vt/2 ngược lại để đo tốc độ âm; thấy đứng xa tường thì sai số tỉ đối nhỏ hơn.",
+ "dung_cu": [
+  {
+   "ten": "Bức tường lớn, phẳng (nhà thi đấu)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dây 50 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có ứng dụng ghi âm hiện dạng sóng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đo khoảng cách d từ chỗ đứng tới tường.",
+   "Vỗ tay một cái, điện thoại ghi âm.",
+   "Đọc khoảng thời gian t giữa tiếng vỗ và tiếng vang trên dạng sóng.",
+   "Lặp ở d = 34, 51, 68 m."
+  ],
+  "quan_sat": [
+   "t tăng gần tỉ lệ với d.",
+   "v = 2d/t ra 324, 340, 332 m/s."
+  ],
+  "rut_ra": [
+   "Tốc độ âm trong không khí xấp xỉ 330–340 m/s.",
+   "Cùng sai lệch đọc 0,01 s, t càng nhỏ thì sai số tỉ đối càng lớn: nên đứng xa và đo nhiều lần."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách tới tường",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 12,
+   "max": 100,
+   "mac_dinh": 51,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ âm trong không khí",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 340
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đi và về đọc trên dạng sóng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "v_do",
+   "ten": "Tốc độ âm tính được 2d/t",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t = 2d/v",
+   "t_doc = t + sai lệch ngẫu nhiên trong ±0,01 s, làm tròn 0,01 s",
+   "v_do = 2d/t_doc"
+  ],
+  "gia_thiet": [
+   "tường đủ lớn, phẳng, phản xạ tốt",
+   "d ≥ 11,3 m để tách được tiếng vang",
+   "v = 340 m/s, không có gió"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (m)",
+   "t (s)",
+   "v = 2d/t (m/s)"
+  ],
+  "hang": [
+   [
+    34,
+    0.21,
+    324
+   ],
+   [
+    51,
+    0.3,
+    340
+   ],
+   [
+    68,
+    0.41,
+    332
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: t lý thuyết 0,20; 0,30; 0,40 s cộng sai lệch đọc ±0,01 s; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "v trung bình khoảng 332 m/s, gần 340 m/s; lần đo ở 34 m lệch nhiều nhất (khoảng 5 %).",
+ "hien_tuong_hay_sai": [
+  "Dùng v = d/t, quên âm đi và về.",
+  "Đứng quá gần tường (dưới 11,3 m) nên không tách được tiếng vang.",
+  "Nghĩ sai lệch 0,01 s ảnh hưởng như nhau ở mọi khoảng cách."
+ ],
+ "sai_so_thuong_gap": "Đọc lệch 0,01 s: khoảng 5 % ở t = 0,21 s, khoảng 2 % ở t = 0,41 s.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo d, người vỗ tay, xung âm đi tới tường và dội về; dạng sóng hiện hai xung cách nhau t; bảng tự tính 2d/t.",
+  "diem_nhan": "Đứng gần tường thì hai xung gần như dính nhau."
+ }
+}

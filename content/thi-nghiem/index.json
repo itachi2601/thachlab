@@ -2885,7 +2885,7 @@
    "amthanh.sai_so_nhieu_lan_do"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "k",
@@ -2944,7 +2944,7 @@
    "am.xu_ly_so_lieu_sai_so"
   ],
   "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "t",
@@ -2964,7 +2964,7 @@
    "am.do_cao_tan_so"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "l"
   ]
@@ -3261,7 +3261,7 @@
    "songdientu.truyen_qua_vat_lieu"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "vat_lieu",
    "khe"
@@ -3281,7 +3281,7 @@
    "do_luong.sai_so_ngau_nhien"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f"
   ]
@@ -3300,7 +3300,7 @@
    "songdientu.anh_sang_nhin_thay_dai_hep"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "λ",
    "r"
@@ -3396,7 +3396,7 @@
    "song.phan_tu_dao_dong_tai_cho"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "v"
@@ -3416,7 +3416,7 @@
    "song.phan_tu_dao_dong_tai_cho"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "a"
@@ -3436,7 +3436,7 @@
    "do_luong.sai_so_ngau_nhien"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v"
   ]
@@ -5172,6 +5172,333 @@
   ]
  },
  {
+  "id": "tn-l9-conang-01",
+  "ten": "Khối trượt trên máng đệm khí nghiêng: so thế năng lúc thả với động năng ở chân dốc",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 3. Cơ năng",
+  "lesson_id": 130,
+  "kien_thuc": [
+   "conang.bao_toan",
+   "conang.wt_bang_10mh",
+   "conang.wd_bang_nua_mv2",
+   "conang.sai_so_do"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h"
+  ]
+ },
+ {
+  "id": "tn-l9-conang-02",
+  "ten": "Con lắc vướng đinh: vật trở lại đúng độ cao cũ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 3. Cơ năng",
+  "lesson_id": 130,
+  "kien_thuc": [
+   "conang.bao_toan",
+   "conang.chuyen_hoa"
+  ],
+  "mo_phong": "2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h",
+   "d"
+  ]
+ },
+ {
+  "id": "tn-l9-conang-03",
+  "ten": "Đo độ cao bóng cao su nảy lên sau mỗi lần chạm sàn",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 3. Cơ năng",
+  "lesson_id": 130,
+  "kien_thuc": [
+   "conang.co_luc_can",
+   "conang.bao_toan_nang_luong"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h0",
+   "k"
+  ]
+ },
+ {
+  "id": "tn-l9-congco-01",
+  "ten": "Kéo đều khối gỗ bằng lực kế, tính công A = F·s",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 4. Công và công suất",
+  "lesson_id": 131,
+  "kien_thuc": [
+   "congco.a_bang_fs",
+   "congco.sai_so_do"
+  ],
+  "mo_phong": "bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "s"
+  ]
+ },
+ {
+  "id": "tn-l9-congco-02",
+  "ten": "Hai bạn xách bao gạo lên tầng 3: cùng công, khác công suất",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 4. Công và công suất",
+  "lesson_id": 131,
+  "kien_thuc": [
+   "congco.a_bang_fs",
+   "congsuat.p_bang_a_chia_t"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m",
+   "h",
+   "t"
+  ]
+ },
+ {
+  "id": "tn-l9-congco-03",
+  "ten": "Ba cách cầm sách: giữ yên, đi ngang, nâng lên",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 4. Công và công suất",
+  "lesson_id": 131,
+  "kien_thuc": [
+   "congco.dieu_kien_co_cong",
+   "congco.vuong_goc_khong_cong"
+  ],
+  "mo_phong": "so_do_luc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "s_ngang",
+   "h"
+  ]
+ },
+ {
+  "id": "tn-l9-congsuat-01",
+  "ten": "Đo U, I của bóng đèn 6 V – 3 W, tính công suất P = UI",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 13. Năng lượng của dòng điện và công suất điện",
+  "lesson_id": 91,
+  "kien_thuc": [
+   "congsuat.p_bang_ui",
+   "congsuat.so_dinh_muc",
+   "congsuat.sai_so_do"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U"
+  ]
+ },
+ {
+  "id": "tn-l9-congsuat-02",
+  "ten": "Đọc công tơ điện khi đun ấm điện 1 000 W trong 30 phút",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 13. Năng lượng của dòng điện và công suất điện",
+  "lesson_id": 91,
+  "kien_thuc": [
+   "congsuat.a_bang_pt",
+   "congsuat.kwh_cong_to"
+  ],
+  "mo_phong": "bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "P",
+   "t"
+  ]
+ },
+ {
+  "id": "tn-l9-congsuat-03",
+  "ten": "Hai bóng 6 V – 3 W và 6 V – 6 W mắc nối tiếp rồi song song",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 13. Năng lượng của dòng điện và công suất điện",
+  "lesson_id": 91,
+  "kien_thuc": [
+   "congsuat.noi_tiep_song_song",
+   "congsuat.p_bang_i2r",
+   "congsuat.so_dinh_muc"
+  ],
+  "mo_phong": "so_do_luc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U",
+   "cach_mac"
+  ]
+ },
+ {
+  "id": "tn-l9-doanmach-01",
+  "ten": "Đo cường độ dòng điện và hiệu điện thế trong đoạn mạch nối tiếp",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+  "lesson_id": 90,
+  "kien_thuc": [
+   "doan_mach.noi_tiep_i_bang_nhau",
+   "doan_mach.noi_tiep_u_cong",
+   "doan_mach.noi_tiep_r_td",
+   "doan_mach.sai_so_do"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U"
+  ]
+ },
+ {
+  "id": "tn-l9-doanmach-02",
+  "ten": "Dòng điện rẽ nhánh trong đoạn mạch song song",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+  "lesson_id": 90,
+  "kien_thuc": [
+   "doan_mach.song_song_u_bang_nhau",
+   "doan_mach.song_song_i_cong",
+   "doan_mach.song_song_r_td"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "R1",
+   "R2"
+  ]
+ },
+ {
+  "id": "tn-l9-doanmach-03",
+  "ten": "Tháo một bóng đèn trong mạch nối tiếp và song song",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 12. Đoạn mạch nối tiếp, song song",
+  "lesson_id": 90,
+  "kien_thuc": [
+   "doan_mach.noi_tiep_mot_duong",
+   "doan_mach.song_song_doc_lap",
+   "doan_mach.mang_dien_gia_dinh"
+  ],
+  "mo_phong": "2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "cach_mac"
+  ]
+ },
+ {
+  "id": "tn-l9-dongthe-01",
+  "ten": "Viên bi lăn xuống máng nghiêng va vào khúc gỗ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 2. Động năng. Thế năng",
+  "lesson_id": 129,
+  "kien_thuc": [
+   "dongnang.khai_niem",
+   "dongnang.phu_thuoc_m_v"
+  ],
+  "mo_phong": "2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m",
+   "h"
+  ]
+ },
+ {
+  "id": "tn-l9-dongthe-02",
+  "ten": "Đo động năng xe lăn bằng cổng quang",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 2. Động năng. Thế năng",
+  "lesson_id": 129,
+  "kien_thuc": [
+   "dongnang.cong_thuc",
+   "dongnang.ti_le_v_binh_phuong",
+   "dongnang.sai_so_do"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m"
+  ]
+ },
+ {
+  "id": "tn-l9-dongthe-03",
+  "ten": "Thả quả nặng xuống khay cát từ các độ cao khác nhau",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 2. Động năng. Thế năng",
+  "lesson_id": 129,
+  "kien_thuc": [
+   "thenang.khai_niem",
+   "thenang.phu_thuoc_m_h"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m",
+   "h"
+  ]
+ },
+ {
+  "id": "tn-l9-hsgamthanh-01",
+  "ten": "Thước nhựa rung trên mép bàn: độ cao theo tần số, độ to theo biên độ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "CĐ15. Âm thanh (Vật lí HSG & chuyên KHTN 9)",
+  "lesson_id": 150,
+  "kien_thuc": [
+   "amthanh.do_cao_tan_so",
+   "amthanh.do_to_bien_do"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "L",
+   "A"
+  ]
+ },
+ {
+  "id": "tn-l9-hsgamthanh-02",
+  "ten": "Đo tốc độ âm bằng tiếng vang trước bức tường lớn",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "CĐ15. Âm thanh (Vật lí HSG & chuyên KHTN 9)",
+  "lesson_id": 150,
+  "kien_thuc": [
+   "amthanh.tieng_vang",
+   "amthanh.do_khoang_cach_d_bang_vt_chia_2",
+   "amthanh.sai_so_do"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "d"
+  ]
+ },
+ {
   "id": "tn-l9-khucxa-01",
   "ten": "Tia laser đi từ không khí vào bể nước có pha sữa",
   "loai": "thi_nghiem",
@@ -5334,6 +5661,65 @@
   "co_video": false,
   "tham_so_dieu_chinh": [
    "i"
+  ]
+ },
+ {
+  "id": "tn-l9-ohm-01",
+  "ten": "Cùng hiệu điện thế, hai dây cho hai dòng điện khác nhau",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 9,
+  "bai": "Bài 11. Điện trở. Định luật Ohm",
+  "lesson_id": 89,
+  "kien_thuc": [
+   "ohm.dien_tro",
+   "ohm.r_bang_u_chia_i",
+   "ohm.ampe_von_ke"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U"
+  ]
+ },
+ {
+  "id": "tn-l9-ohm-02",
+  "ten": "Đo U và I của một dây constantan, vẽ đồ thị I theo U",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 11. Điện trở. Định luật Ohm",
+  "lesson_id": 89,
+  "kien_thuc": [
+   "ohm.dinh_luat",
+   "ohm.do_thi_iu",
+   "ohm.sai_so_do"
+  ],
+  "mo_phong": "do_thi+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U"
+  ]
+ },
+ {
+  "id": "tn-l9-ohm-03",
+  "ten": "Điện trở dây dẫn theo chiều dài, tiết diện, vật liệu",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 9,
+  "bai": "Bài 11. Điện trở. Định luật Ohm",
+  "lesson_id": 89,
+  "kien_thuc": [
+   "ohm.phu_thuoc_chieu_dai",
+   "ohm.phu_thuoc_tiet_dien",
+   "ohm.dien_tro_suat"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "l",
+   "S",
+   "vat_lieu"
   ]
  },
  {

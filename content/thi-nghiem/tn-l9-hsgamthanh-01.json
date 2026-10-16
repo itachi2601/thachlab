@@ -1,0 +1,118 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "CĐ15. Âm thanh (Vật lí HSG & chuyên KHTN 9)",
+ "lesson_id": 150,
+ "nguon_trong_bai": "content/hsg9/cd15-am-thanh/theory.html",
+ "id": "tn-l9-hsgamthanh-01",
+ "ten": "Thước nhựa rung trên mép bàn: độ cao theo tần số, độ to theo biên độ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "amthanh.do_cao_tan_so",
+  "amthanh.do_to_bien_do"
+ ],
+ "muc_tieu": "Thấy đầu thước thò ngắn rung nhanh hơn, phát âm cao hơn; gảy mạnh thì biên độ lớn, âm to hơn.",
+ "dung_cu": [
+  {
+   "ten": "Thước nhựa dẻo dài 30 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn phẳng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đè chặt thước lên mép bàn, gảy đầu thò ra.",
+   "Đổi chiều dài phần thò ra: dài rồi ngắn.",
+   "Giữ chiều dài, gảy nhẹ rồi gảy mạnh."
+  ],
+  "quan_sat": [
+   "Phần thò ngắn rung nhanh hơn, tiếng cao hơn.",
+   "Gảy mạnh thì đầu thước rung rộng hơn, tiếng to hơn."
+  ],
+  "rut_ra": [
+   "Tần số lớn cho âm cao.",
+   "Biên độ lớn cho âm to.",
+   "Độ cao và độ to là hai đặc tính độc lập."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài phần thước thò ra",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 25,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ dao động đầu thước",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số dao động",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "f = f_15·(15/L)^2 với f_15 ≈ 25 Hz (thanh công-xôn: f tỉ lệ 1/L²)",
+   "độ to tăng theo A"
+  ],
+  "gia_thiet": [
+   "thước đồng chất, kẹp chặt",
+   "bỏ qua lực cản không khí",
+   "f_15 là giá trị minh hoạ, tuỳ loại thước"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "L (cm)",
+   "f (Hz)"
+  ],
+  "hang": [
+   [
+    25,
+    9.0
+   ],
+   [
+    15,
+    25.0
+   ],
+   [
+    10,
+    56.3
+   ],
+   [
+    5,
+    225.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình f = 25·(15/L)², chưa phải số đo thật; L dài, f dưới 20 Hz là hạ âm, chỉ thấy rung mà khó nghe."
+ },
+ "ket_qua_ky_vong": "Phần thò ra ngắn đi một nửa thì tần số tăng khoảng bốn lần, âm cao hơn rõ; gảy mạnh hơn không đổi độ cao.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ gảy mạnh thì âm cao hơn.",
+  "Nghĩ thước dài rung mạnh nên kêu to và cao hơn.",
+  "Không nhận ra khi thò rất dài, thước rung mà gần như không nghe thấy (hạ âm)."
+ ],
+ "an_toan": "Gảy vừa phải, không để thước bật vào mặt.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Kéo thanh L và A, đầu thước rung, đồ thị dao động vẽ theo thời gian kèm âm phát ra.",
+  "diem_nhan": "Đổi A chỉ đổi chiều cao đồ thị; đổi L mới đổi số dao động trong cùng thời gian."
+ }
+}
