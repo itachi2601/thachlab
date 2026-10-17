@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 354 hàm, sinh tự động 2026-10-15
+# Hàm SQL / RPC (schema public) — 369 hàm, sinh tự động 2026-10-17
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -26,6 +26,7 @@ repo — xem trên Supabase Dashboard).
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `count_question_types(qs jsonb)` → jsonb
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
+- `diagnostic_bank_topic_ids()` → bigint[]
 - `diagnostic_can_read(p_student uuid)` → boolean
 - `diagnostic_get(p_student uuid)` → jsonb
 - `diagnostic_maps(p_students uuid[])` → TABLE(student_id uuid, created_at timestamp with time zone, per_topic jsonb)
@@ -33,7 +34,9 @@ repo — xem trên Supabase Dashboard).
 - `diagnostic_submit(p_student uuid, p_results jsonb)` → jsonb
 - `evaluate_exam_violation_alert(p_result_id bigint)` → void
 - `evaluate_student_alerts(p_student uuid)` → void
+- `exam_is_assessment(p_exam bigint)` → boolean
 - `exam_open_to_student(p_exam_id bigint, p_user_id uuid)` → boolean
+- `feature_enabled(p_flag text)` → boolean
 - `find_similar_bank_questions(p_grade text, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
 - `find_similar_bank_questions_in_topic(p_grade text, p_topic_id bigint, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
 - `get_chapter_mastery(p_chapter bigint)` → TABLE(lesson_id bigint, lesson_title text, sort_order integer, level text)
@@ -78,11 +81,14 @@ repo — xem trên Supabase Dashboard).
 - `is_staff()` → boolean
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
 - `live_study_summary()` → jsonb
+- `log_learning_events(p_events jsonb)` → integer
 - `manages_class(p_class bigint)` → boolean
 - `mistake_q_public(p_key bigint, p_exam bigint, p_idx integer, p_stage integer, p_kind text, q jsonb)` → jsonb
 - `mistake_review_quiz_start(p_count integer)` → jsonb
 - `mistake_review_quiz_submit(p_attempt_id bigint, p_responses jsonb)` → jsonb
+- `mistake_spaced_137(p_student uuid)` → boolean
 - `mistake_stats_of(p_student uuid)` → jsonb
+- `my_pending_homework()` → TABLE(id bigint, exam_id bigint, exam_title text, due_at timestamp with time zone, note text, assigned_at timestamp with time zone, assigner_name text)
 - `notify_class_staff(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
 - `notify_class_students(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text)` → void
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
@@ -97,6 +103,7 @@ repo — xem trên Supabase Dashboard).
 - `pl_student_phone_match(p_student uuid, p_phone9 text)` → boolean
 - `preview_cttc_enroll()` → jsonb
 - `preview_cttc_unenroll()` → integer
+- `purge_learning_events(p_before timestamp with time zone)` → bigint
 - `question_bank_plain_text(q jsonb)` → text
 - `question_content_hash(q jsonb)` → text
 - `question_topic_sync_children()` → trigger
@@ -212,6 +219,8 @@ repo — xem trên Supabase Dashboard).
 - `resolve_login_email(p_login text)` → text
 - `review_parent_link_request(p_id bigint, p_student uuid, p_approve boolean)` → void
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
+- `rl_allow(p_key text, p_max integer, p_window interval)` → boolean
+- `rl_client_ip()` → text
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
 - `search_students_for_link(p_query text)` → TABLE(id uuid, full_name text, class_name text, birth_date date)
 - `seed_absent_attendance_for_enrollment()` → trigger
@@ -241,6 +250,7 @@ repo — xem trên Supabase Dashboard).
 - `submit_attendance_code(p_course_id bigint, p_code text)` → jsonb
 - `submit_attendance_machine_photo(p_session_id bigint, p_machine_code text, p_checkpoint text, p_storage_path text, p_note text)` → void
 - `submit_checklist_result(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text, p_item_results jsonb, p_score numeric, p_critical_ok boolean, p_zero_tolerance_ok boolean, p_passed boolean)` → jsonb
+- `sweep_engagement_alerts(p_class bigint, p_days integer, p_absent_min integer)` → jsonb
 - `sweep_missed_assessments(p_class bigint, p_days integer)` → integer
 - `sync_exam_to_bank(p_exam_id bigint)` → integer
 - `ta_accrued_hours(p_assistant_id uuid)` → numeric
@@ -251,6 +261,10 @@ repo — xem trên Supabase Dashboard).
 - `ta_handoff_can_assign(p_student uuid)` → boolean
 - `ta_handoff_clear(p_student uuid)` → void
 - `ta_handoff_options(p_student uuid)` → jsonb
+- `ta_homework_assign(p_class_id bigint, p_student_ids uuid[], p_exam_id bigint, p_due_at timestamp with time zone, p_note text)` → integer
+- `ta_homework_overview(p_class_id bigint, p_days integer)` → TABLE(id bigint, student_id uuid, student_name text, exam_id bigint, exam_title text, due_at timestamp with time zone, assigned_at timestamp with time zone, done boolean, best_score numeric, late boolean)
+- `ta_interview_list()` → jsonb
+- `ta_interview_save(p_code text, p_grp text, p_answers jsonb, p_barrier text, p_wish text)` → uuid
 - `ta_monthly_policy(p_assistant_id uuid, p_month date)` → jsonb
 - `ta_monthly_score(p_assistant_id uuid, p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
 - `ta_monthly_scores(p_assistant_ids uuid[], p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
@@ -308,6 +322,7 @@ repo — xem trên Supabase Dashboard).
 - `trg_exams_sync_bank()` → trigger
 - `trg_ingest_exam_question_mistake()` → trigger
 - `trg_ingest_practice_question_mistake()` → trigger
+- `trg_mistake_lich_137()` → trigger
 - `trg_notify_assessment_assigned()` → trigger
 - `trg_notify_homework_announcement()` → trigger
 - `trg_notify_homework_assigned()` → trigger
