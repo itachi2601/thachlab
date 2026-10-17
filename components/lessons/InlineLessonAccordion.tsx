@@ -25,6 +25,7 @@ import {
   type LessonExamMeta,
 } from "@/services/lessons";
 import { heartbeatLearningPresence } from "@/services/learning-presence";
+import { logLearningEvent } from "@/services/learning-events";
 import { fetchLessonItemsStatic } from "@/services/static-content";
 
 const lessonItemsCache = new Map<number, LessonItem[]>();
@@ -49,7 +50,8 @@ export default function InlineLessonAccordion({
   progress?: InlineLessonProgress;
   onItemCompleted?: () => void;
 }) {
-  const { session } = useAuth();
+  const { session, profile } = useAuth();
+  const isStudent = profile?.role === "student";
   const articleRef = useRef<HTMLElement>(null);
   const presenceOpenedAt = useRef("");
   const [items, setItems] = useState<LessonItem[] | null>(() => lessonItemsCache.get(lesson.id) ?? null);
@@ -101,6 +103,28 @@ export default function InlineLessonAccordion({
       document.removeEventListener("visibilitychange", beat);
     };
   }, [open, session, lesson.id]);
+
+  // DT-01: open/leave của bài (thời lượng = giây tab hiển thị). Chỉ ghi cho học sinh; gom lô, xem services/learning-events.ts.
+  useEffect(() => {
+    if (!open || !session || !isStudent) return;
+    logLearningEvent({ lessonId: lesson.id, kind: "open" });
+    let visibleMs = 0;
+    let visibleSince = document.visibilityState === "visible" ? Date.now() : 0;
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") {
+        if (!visibleSince) visibleSince = Date.now();
+      } else if (visibleSince) {
+        visibleMs += Date.now() - visibleSince;
+        visibleSince = 0;
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      if (visibleSince) visibleMs += Date.now() - visibleSince;
+      logLearningEvent({ lessonId: lesson.id, kind: "leave", durationS: visibleMs / 1000 });
+    };
+  }, [open, session, isStudent, lesson.id]);
 
   useEffect(() => {
     if (!open || !session || !items) return;
@@ -154,6 +178,7 @@ export default function InlineLessonAccordion({
     setDone((current) => new Set(current).add(item.id));
     onItemCompleted?.();
     void markItemDone(session.user.id, item.id);
+    if (isStudent) logLearningEvent({ lessonId: lesson.id, itemId: item.id, kind: "submit" });
   }
 
   return (
