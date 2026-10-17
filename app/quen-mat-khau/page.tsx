@@ -164,7 +164,7 @@ function ResetContent() {
         <input
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
-          placeholder="Mã giáo viên cấp (RSxxxxxx)"
+          placeholder="Mã giáo viên cấp (bắt đầu bằng RS)"
           className={`${inputCls} font-mono uppercase`}
         />
         <input
