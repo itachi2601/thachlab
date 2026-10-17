@@ -12,6 +12,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
 - **Đã chạy 17/10 17:52:** `20261017230000_learning_events` (DT-01) + `20261017231000_feature_flags` (DT-12); hậu kiểm RLS/grant/cron/hàm đạt, thử hàm trong giao dịch rollback. Chưa có code client gọi `log_learning_events`/`feature_enabled`; kế hoạch ở `docs/thachlab-design-thinking-audit.md`. Còn: chạy `node scripts/gen-database-doc.mjs`.
+- **DT-01 client deploy 17/10 (563d50df6), chưa xác nhận bằng dữ liệu thật:** sau vài ngày có HS dùng, chạy `select kind, count(*), avg(duration_s) from learning_events group by 1` (qua `supabase db query --linked`); không thấy dòng nào thì kiểm `InlineLessonAccordion` + `services/learning-events.ts`. Deploy phải build từ worktree sạch khi `scripts/` có file `.mts` chưa commit làm `next build` lỗi typecheck.
 - **Đã chạy 17/10 14:28:** `20261017150000_reset_code_manh_hon` (mã reset RS+10 hex, CHECK hạn ≤7 ngày; đã hậu kiểm default + ràng buộc).
 - **Đã chạy 17/10 14:22:** `20261017120000_rate_limit_hardening` (rate_hits + rl_allow, trần resolve_login_email/quiz_join, vá search_path; hậu kiểm definer thiếu = 0) + deploy lại reset-password. Còn lại của rà soát: `docs/RA-SOAT-MA-NGUON-2026-10-17.md` mục D (Đợt 4–6); chưa kiểm entropy mã reset (`scripts/sql/kiem-do-manh-ma-reset.sql`).
 - **Đã chạy 16/10 22:43:** `20261016130000_hsg9_dot3_muc_noi_dung` (mục rỗng Lý thuyết + BTM cho bài 150/153/164). CĐ15 Âm (150) đã ghi nội dung, bài ẩn, chờ deploy + thầy duyệt.
