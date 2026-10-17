@@ -17,7 +17,8 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") ?? "https://thachlab.id.vn",
+  Vary: "Origin",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
@@ -36,6 +37,22 @@ interface ResultRow {
   index: number;
   verdict: Verdict;
   note: string;
+}
+
+// Trần lượt gọi mỗi người/giờ (bộ nhớ của instance — chặn vòng lặp/script chạy lố, không thay cho
+// giới hạn cứng ở DB). Đặt AI_CALLS_PER_HOUR để đổi.
+const CALLS_PER_HOUR = Number(Deno.env.get("AI_CALLS_PER_HOUR") ?? "40");
+const callLog = new Map<string, number[]>();
+function overQuota(userId: string): boolean {
+  const now = Date.now();
+  const recent = (callLog.get(userId) ?? []).filter((t) => now - t < 3_600_000);
+  if (recent.length >= CALLS_PER_HOUR) {
+    callLog.set(userId, recent);
+    return true;
+  }
+  recent.push(now);
+  callLog.set(userId, recent);
+  return false;
 }
 
 function jsonResponse(body: unknown, status = 200) {
@@ -77,6 +94,9 @@ Deno.serve(async (req) => {
   });
   const { data: authUser, error: authError } = await callerClient.auth.getUser();
   if (authError || !authUser?.user) return jsonResponse({ error: "Phiên đăng nhập không hợp lệ." }, 401);
+  const { data: isStaff } = await callerClient.rpc("is_staff");
+  if (!isStaff) return jsonResponse({ error: "Chỉ giáo viên/trợ giảng được dùng chức năng AI này." }, 403);
+  if (overQuota(authUser.user.id)) return jsonResponse({ error: "Đã quá số lượt AI trong 1 giờ — thử lại sau." }, 429);
 
   const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
   if (!apiKey) return jsonResponse({ error: "Server chưa cấu hình ANTHROPIC_API_KEY." }, 500);
