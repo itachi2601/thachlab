@@ -29,7 +29,7 @@ người dùng dán vào Gemini (gói Pro, không dùng API) rồi tải ảnh v
 | Dạng tương tác mà PhET không có | Widget HTML/JS thanh trượt tự viết | Claude |
 | Hình cần đúng số liệu, nhãn, ký hiệu (sơ đồ lực, mạch, đồ thị, quang hình, bản vẽ kỹ thuật) | TikZ / matplotlib / SVG | Claude |
 | Hình minh hoạ đời sống, không cần đúng số (người trượt băng, xe phanh, máy phay, dụng cụ) | **Ảnh Gemini** | Người dùng dán prompt |
-| Thí nghiệm thật khó mô phỏng, thao tác thực hành | Video YouTube ngắn, nhúng kèm mốc thời gian cần xem | Gemini tìm link, Claude kiểm tra |
+| Thí nghiệm thật khó mô phỏng, thao tác thực hành | Video YouTube ngắn, nhúng kèm mốc thời gian cần xem | Claude tìm + kiểm; không ra hoặc thiếu mốc thì ghi `prompts-video.md` cho thầy dán Gemini |
 | Hiện tượng động nhẹ | Video ngắn Gemini (nếu còn hạn mức) | Người dùng dán prompt |
 
 Quy tắc chọn: nếu PhET có mô phỏng khớp thì dùng PhET, đừng sinh ảnh. Ảnh AI chỉ dùng khi hình **không**
@@ -56,6 +56,7 @@ thachlab-media/
     hinh-01-<mo-ta>.png   (đánh số theo thứ tự xuất hiện trong bài)
     hinh-02-<mo-ta>.png
     video-links.md
+    prompts-video.md  <- chỉ khi có video Claude không tìm ra/thiếu mốc
 ```
 
 Khi đăng, ảnh được copy vào repo theo quy ước của skill `dang-bai-hoc-thachlab`:
@@ -113,13 +114,34 @@ báo người dùng và đưa phương án thay: đặt nút liên kết mở m�
 
 ## Video thí nghiệm
 
-- Gemini tìm link, nhưng **không tin link chưa kiểm**. Claude mở/fetch từng link: video còn tồn tại, đúng
-  nội dung, thời lượng hợp lý (ưu tiên dưới 5 phút), cho phép nhúng.
-- Nhúng bằng iframe YouTube, ghi rõ **mốc thời gian cần xem** và câu hỏi quan sát:
-  `https://www.youtube.com/embed/<id>?start=<giây>`
-- Video đặt vào mục `video` của bài (một trong 6 mục cố định), không chèn lẫn vào lý thuyết trừ khi nó là
-  một bước của lập luận.
-- Ghi vào `video-links.md`: link, tên kênh, mốc thời gian, lý do chọn.
+**Claude tìm trước** (thầy chốt 17/10/2026), Gemini chỉ là đường dự phòng do thầy dán tay.
+
+1. Tìm bằng WebSearch/WebFetch, mỗi chỗ cần video 3–5 ứng viên. Với mỗi ứng viên, mở trang thật và kiểm:
+   video còn tồn tại, đúng hiện tượng, thời lượng hợp lý (ưu tiên dưới 5 phút), cho phép nhúng, tên kênh.
+   Link chỉ lấy từ kết quả tìm/fetch thật, không viết id từ trí nhớ.
+2. **Mốc thời gian** chỉ ghi khi lấy được từ transcript, chương (chapter) hoặc mô tả của video.
+   Claude không xem được hình, nên không đoán mốc. Không có căn cứ thì ghi "chưa có mốc".
+3. Chọn 1 video tốt nhất cho mỗi chỗ; ghi các ứng viên còn lại vào `video-links.md` để thầy đổi nếu muốn.
+4. **Phải chuyển sang Gemini khi** (a) không tìm ra video đạt bước 1, hoặc (b) tìm ra video nhưng chưa có mốc
+   thời gian cần xem. Khi đó Claude viết khối prompt vào file `prompts-video.md` (cùng thư mục bài), thầy chép
+   cả file vào Gemini, dán kết quả về, Claude kiểm lại link như bước 1 rồi mới dùng. Link Gemini trả về chưa
+   kiểm thì ghi "chưa kiểm", không nhúng.
+5. Nhúng bằng iframe YouTube, kèm **câu hỏi quan sát**: `https://www.youtube.com/embed/<id>?start=<giây>`
+   (bỏ `?start=` nếu chưa có mốc). Video đặt vào mục `video` của bài, không chèn lẫn vào lý thuyết trừ khi
+   nó là một bước của lập luận. Chỉ nhúng hoặc dẫn link, không tải lại video.
+6. Ghi vào `video-links.md`: link, kênh, mốc (hoặc "chưa có mốc"), lý do chọn, trạng thái đã kiểm.
+
+### Mẫu `prompts-video.md` (mỗi video một khối, tự đủ ý để dán cả file một lượt)
+
+```
+### video-02  (bài <tên bài>, §<mục>)
+Cần: video thí nghiệm "<hiện tượng/thao tác>", tiếng Việt hoặc tiếng Anh, dưới 5 phút, cho phép nhúng YouTube.
+Học sinh cần quan sát: <1 câu>.
+Lý do hỏi Gemini: <không tìm ra | đã có link <url> nhưng thiếu mốc>.
+Trả lời theo mẫu, mỗi video một dòng, KHÔNG bịa: link YouTube đầy đủ | tên kênh | thời lượng |
+mốc thời gian (mm:ss) của đoạn cần xem và nội dung đoạn đó | còn xem được không.
+Nếu không chắc link còn sống hoặc không nhớ mốc, ghi "không chắc" thay vì đoán.
+```
 
 ## Checklist kiểm tra ảnh Gemini (bước 5)
 
@@ -147,6 +169,6 @@ skill đó vẫn áp dụng: không tự nhập mật khẩu, không tự deploy
 
 - Không tự gọi Gemini API hay tự động hoá giao diện gemini.google.com. Người dùng dán prompt thủ công.
 - Không dùng ảnh AI cho hình có số liệu hoặc ký hiệu.
-- Không bịa link video/mô phỏng. Chưa kiểm được thì ghi "chưa kiểm".
+- Không bịa link video/mô phỏng hay mốc thời gian. Chưa kiểm được thì ghi "chưa kiểm" / "chưa có mốc".
 - Không bỏ qua bước duyệt kế hoạch.
 - Không dùng ảnh, video có bản quyền không rõ; ưu tiên PhET (CC BY) và nguồn cho phép nhúng.
