@@ -1,0 +1,1713 @@
+Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc
+
+A. Yêu cầu cần đạt và phạm vi
+
+A1. Yêu cầu cần đạt theo Chương trình GDPT 2018 (phần Vật lí, mạch "Năng lượng và sự biến đổi")
+
+Sau khi học xong chuyên đề này, học sinh cần đạt được các yêu cầu sau.
+
+Về kiến thức
+
+1. Nêu được hiện tượng khúc xạ ánh sáng là gì; nhận ra hiện tượng này trong các tình huống thực tế quen thuộc: cái cọc cắm xiên xuống nước trông như bị gãy khúc ở mặt nước, đáy bể bơi trông nông hơn thực tế, con cá dưới nước nhìn thấy ở vị trí khác vị trí thật.
+
+2. Mô tả được thí nghiệm đơn giản quan sát hiện tượng khúc xạ; chỉ ra đúng các yếu tố trên hình vẽ: tia tới, điểm tới, pháp tuyến, tia khúc xạ, góc tới i, góc khúc xạ r.
+
+3. Phát biểu được kết luận định tính: khi ánh sáng truyền từ không khí vào nước (môi trường chiết quang hơn) thì góc khúc xạ nhỏ hơn góc tới, tia khúc xạ lệch gần pháp tuyến hơn tia tới; khi truyền theo chiều ngược lại thì góc khúc xạ lớn hơn góc tới, tia khúc xạ lệch xa pháp tuyến hơn tia tới.
+
+4. Nêu được khái niệm chiết suất: chiết suất của một môi trường trong suốt đặc trưng cho mức độ làm chậm ánh sáng của môi trường đó; biết chiết suất của không khí xấp xỉ bằng 1, của nước xấp xỉ 4/3, của thủy tinh thường xấp xỉ 1,5.
+
+5. Viết và vận dụng được công thức liên hệ giữa chiết suất và vận tốc ánh sáng n = c/v; suy ra v = c/n.
+
+6. Nêu được hiện tượng phản xạ toàn phần và hai điều kiện xảy ra hiện tượng: ánh sáng truyền từ môi trường chiết quang hơn sang môi trường chiết quang kém, và góc tới lớn hơn hoặc bằng góc giới hạn.
+
+7. Nêu được khái niệm góc giới hạn phản xạ toàn phần; viết và vận dụng được công thức sin i_(gh) = n₂/n₁.
+
+8. Kể tên và giải thích được nguyên tắc hoạt động của một số ứng dụng của phản xạ toàn phần: sợi quang học, lăng kính phản xạ toàn phần dùng trong ống nhòm và kính tiềm vọng, hiện tượng ảo ảnh trên mặt đường nhựa nóng.
+
+9. Mô tả được lăng kính là gì; nêu được tác dụng của lăng kính đối với một tia sáng đơn sắc (tia ló lệch về phía đáy lăng kính) và đối với chùm ánh sáng trắng (bị tách thành dải nhiều màu).
+
+10. Kể đúng thứ tự bảy màu trong dải quang phổ do lăng kính tạo ra: đỏ, cam, vàng, lục, lam, chàm, tím.
+
+11. Giải thích được vì sao tia tím lệch nhiều nhất còn tia đỏ lệch ít nhất khi truyền qua lăng kính, dựa trên sự phụ thuộc của chiết suất vào màu sắc ánh sáng.
+
+12. Giải thích được sơ lược sự tạo thành cầu vồng.
+
+13. Vẽ được đường truyền của tia sáng qua mặt phân cách hai môi trường và qua lăng kính trong các trường hợp đơn giản.
+
+14. Vận dụng được định luật khúc xạ dạng sin i / sin r = n₂/n₁ để tính góc tới, góc khúc xạ và chiết suất.
+
+Về kĩ năng
+
+- Đọc và vẽ hình quang học đúng quy ước: nét liền cho tia sáng, nét đứt cho pháp tuyến và cho tia kéo dài, mũi tên chỉ chiều truyền của tia sáng.
+
+- Luôn đo góc so với pháp tuyến, không đo so với mặt phân cách.
+
+- Dùng máy tính bỏ túi thành thạo hai phép tính sin và arcsin (sin⁻¹) khi làm bài toán định lượng.
+
+- Đổi đơn vị vận tốc, viết kết quả với số chữ số có nghĩa hợp lí và kèm đơn vị.
+
+- Ước lượng kết quả trước khi tính: nếu ánh sáng đi vào môi trường chiết quang hơn thì góc khúc xạ phải nhỏ hơn góc tới.
+
+A2. Phạm vi và bối cảnh kì thi học sinh giỏi
+
+Từ năm học 2024–2025, học sinh giỏi lớp 9 không còn thi môn Vật lí riêng. Môn thi là Khoa học tự nhiên (KHTN), gồm phần chung (khoảng 20–30% số điểm, kiểm tra kiến thức tích hợp của cả ba mạch) và phần riêng, trong đó học sinh chọn một trong ba mạch. Mạch Vật lí mang tên "Năng lượng và sự biến đổi", bao gồm cả phần quang học và nội dung "Trái Đất và bầu trời".
+
+Một số đặc điểm cần lưu ý khi ôn luyện:
+
+- Thành phố Hồ Chí Minh (năm học 2025–2026): đề tự luận, thời gian 120 phút.
+
+- Hà Nội: đề gồm tự luận kết hợp trắc nghiệm, thời gian 150 phút, phạm vi kiến thức đến hết học kì 1 lớp 9. Vì phần Quang học của học kì 2 có thể chưa nằm trong phạm vi này, học sinh dự thi ở Hà Nội cần theo dõi thông báo chính thức hằng năm để biết nội dung khúc xạ, phản xạ toàn phần và tán sắc có được đưa vào hay không. Bản thân các em vẫn nên học đầy đủ chuyên đề này, vì đây là phần kiến thức nền cho bậc Trung học phổ thông.
+
+- Đề thi có câu hỏi gắn với thực hành, thí nghiệm: yêu cầu mô tả phương án thí nghiệm, nêu hiện tượng quan sát được, đọc số liệu và xử lí kết quả. Vì vậy học sinh phải nắm cả phần "làm" chứ không chỉ phần "tính".
+
+A3. Phạm vi mở rộng cho học sinh giỏi và giới hạn kiến thức
+
+Phần chuẩn của Yêu cầu cần đạt lớp 9 đã bao gồm: mô tả định tính hiện tượng khúc xạ; chiết suất và hệ thức n = c/v; định luật khúc xạ dạng sin i / sin r = n₂/n₁ (vận dụng trong trường hợp đơn giản); điều kiện xảy ra phản xạ toàn phần và việc xác định góc tới hạn; đường truyền tia sáng qua lăng kính; sự tán sắc và màu sắc của vật. Ngoài phần đó, chuyên đề mở rộng thêm cho đội tuyển:
+
+- Bài toán định lượng về góc tới hạn và điều kiện xảy ra phản xạ toàn phần (phần chuẩn chỉ yêu cầu làm thí nghiệm để rút ra điều kiện và xác định góc tới hạn).
+
+- Bài toán ảnh của vật qua mặt phân cách: quan sát cá dưới nước, cọc cắm xuống nước trông như bị gãy, ảnh của đáy bể, vùng sáng trên mặt nước.
+
+- Hình học đường truyền tia sáng qua lăng kính trong các trường hợp đơn giản (tia tới vuông góc với mặt bên) và bài toán tán sắc định lượng đơn giản.
+
+Những nội dung không dùng trong chuyên đề này (vì vượt quá chương trình Trung học cơ sở): công thức lăng kính tổng quát có góc chiết quang A và góc lệch D, định luật khúc xạ dạng vectơ, các công thức về thấu kính và hệ quang học, đạo hàm và tích phân. Mọi bài toán trong chuyên đề đều giải được bằng hình học phẳng, định lí sin trong tam giác vuông và các phép biến đổi đại số đơn giản.
+
+Quy ước dùng trong toàn chuyên đề
+
+- Chiết suất: không khí lấy xấp xỉ 1,00; nước lấy 4/3 ≈ 1,33; thủy tinh thường lấy 1,50; kim cương lấy 2,42.
+
+- Vận tốc ánh sáng trong chân không và trong không khí: c = 3·10⁸ m/s.
+
+- Giá trị lượng giác của góc đặc biệt: sin 30° = 0,5; sin 45° = √2/2 ≈ 0,7071; sin 60° = √3/2 ≈ 0,8660.
+
+- Giá trị arcsin thường dùng: arcsin 0,6 ≈ 36,9°; arcsin 0,8 ≈ 53,1°; arcsin 0,75 ≈ 48,6°; arcsin 0,667 ≈ 41,8°; arcsin 0,413 ≈ 24,4°.
+
+- Góc làm tròn đến 0,1°; sin làm tròn đến bốn chữ số thập phân; vận tốc làm tròn đến ba chữ số có nghĩa. Mọi chỗ dùng giá trị làm tròn đều được ghi chú rõ.
+
+B. Lý thuyết trọng tâm
+
+B1. Kiến thức chuẩn theo SGK
+
+1. Hiện tượng khúc xạ ánh sáng
+
+Khúc xạ ánh sáng là hiện tượng tia sáng bị gãy khúc (đổi hướng đột ngột) tại mặt phân cách giữa hai môi trường trong suốt. Hiện tượng này xảy ra với mọi tia sáng chiếu xiên tới mặt phân cách, không phụ thuộc vào việc tia sáng đi theo chiều nào.
+
+Các yếu tố cần gọi đúng tên trên hình vẽ:
+
+- Mặt phân cách là mặt phẳng ngăn cách hai môi trường trong suốt, ví dụ mặt thoáng của nước.
+
+- Điểm tới I là giao điểm của tia tới với mặt phân cách.
+
+- Pháp tuyến là đường thẳng vuông góc với mặt phân cách tại điểm tới; pháp tuyến được vẽ bằng nét đứt.
+
+- Tia tới SI nằm trong môi trường thứ nhất, hợp với pháp tuyến một góc gọi là góc tới, kí hiệu i.
+
+- Tia khúc xạ IR nằm trong môi trường thứ hai, hợp với pháp tuyến một góc gọi là góc khúc xạ, kí hiệu r.
+
+- Mặt phẳng tới là mặt phẳng chứa tia tới và pháp tuyến tại điểm tới.
+
+2. Kết luận về đường truyền của tia sáng khi khúc xạ
+
+Khi ánh sáng truyền từ không khí vào nước, ta quan sát được:
+
+- Tia khúc xạ nằm trong mặt phẳng tới và ở bên kia pháp tuyến so với tia tới.
+
+- Góc khúc xạ nhỏ hơn góc tới: r < i. Ta nói tia khúc xạ lệch gần pháp tuyến hơn so với tia tới.
+
+Khi ánh sáng truyền từ nước ra không khí, ta quan sát được:
+
+- Tia khúc xạ vẫn nằm trong mặt phẳng tới và ở bên kia pháp tuyến so với tia tới.
+
+- Góc khúc xạ lớn hơn góc tới: r > i. Ta nói tia khúc xạ lệch xa pháp tuyến hơn so với tia tới.
+
+Trường hợp riêng rất quan trọng: nếu tia sáng tới vuông góc với mặt phân cách (i = 0°) thì nó truyền thẳng, không bị gãy khúc, tức là r = 0°.
+
+Cách nhớ gọn: hễ ánh sáng đi vào môi trường "đặc quang hơn" thì nó bị bẻ về phía pháp tuyến; đi ra môi trường "loãng quang hơn" thì nó bị bẻ ra xa pháp tuyến.
+
+3. Chiết suất
+
+Chiết suất của một môi trường trong suốt (gọi đầy đủ là chiết suất tuyệt đối) là đại lượng đặc trưng cho mức độ làm chậm ánh sáng của môi trường đó, được xác định bằng tỉ số giữa vận tốc ánh sáng trong chân không và vận tốc ánh sáng trong môi trường:
+
+n = c/v
+
+Trong đó:
+
+- n là chiết suất của môi trường, không có đơn vị.
+
+- c = 3·10⁸ m/s là vận tốc ánh sáng trong chân không (và gần đúng trong không khí).
+
+- v là vận tốc ánh sáng trong môi trường, đơn vị mét trên giây (m/s).
+
+Vì ánh sáng truyền trong mọi môi trường vật chất đều chậm hơn trong chân không, nên v ≤ c và do đó n ≥ 1. Môi trường có chiết suất càng lớn thì ánh sáng truyền trong đó càng chậm; người ta nói môi trường đó càng "chiết quang" hơn.
+
+Bảng chiết suất và vận tốc ánh sáng thường dùng:
+
+  --------------------------------------------------------------------------
+  Môi trường              Chiết suất n            Vận tốc ánh sáng v (m/s)
+  ----------------------- ----------------------- --------------------------
+  Không khí               ≈ 1,00                  ≈ 3,00·10⁸
+
+  Nước                    4/3 ≈ 1,33              2,25·10⁸
+
+  Thủy tinh thường        1,50                    2,00·10⁸
+
+  Kim cương               2,42                    1,24·10⁸
+  --------------------------------------------------------------------------
+
+4. Hiện tượng phản xạ toàn phần (mức định tính)
+
+Ở mặt phân cách giữa hai môi trường trong suốt, ánh sáng vừa bị khúc xạ (đi qua môi trường thứ hai) vừa bị phản xạ (trở lại môi trường thứ nhất). Khi tia sáng truyền từ môi trường chiết quang hơn sang môi trường chiết quang kém, góc khúc xạ lớn hơn góc tới. Nếu ta tăng dần góc tới thì góc khúc xạ tăng nhanh hơn và đạt tới 90° trước. Lúc đó tia khúc xạ đi là là trên mặt phân cách.
+
+Góc tới ứng với trường hợp tia khúc xạ đi là là trên mặt phân cách (r = 90°) được gọi là góc giới hạn phản xạ toàn phần, kí hiệu i_(gh). Nếu tiếp tục tăng góc tới vượt quá i_(gh) thì không còn tia khúc xạ nữa: toàn bộ ánh sáng bị phản xạ trở lại môi trường ban đầu. Hiện tượng đó gọi là hiện tượng phản xạ toàn phần.
+
+Hai điều kiện để xảy ra phản xạ toàn phần:
+
+- Ánh sáng đang truyền từ môi trường chiết quang hơn sang môi trường chiết quang kém (n₁ > n₂).
+
+- Góc tới lớn hơn hoặc bằng góc giới hạn: i ≥ i_(gh).
+
+5. Lăng kính và hiện tượng tán sắc ánh sáng
+
+Lăng kính là một khối chất trong suốt (thủy tinh, nhựa trong) được giới hạn bởi hai mặt phẳng không song song với nhau. Hai mặt phẳng đó gọi là hai mặt bên, chúng gặp nhau theo một cạnh gọi là cạnh của lăng kính; góc nhị diện giữa hai mặt bên gọi là góc chiết quang của lăng kính. Tiết diện thẳng của lăng kính thường là một tam giác. Lăng kính đặt trong không khí.
+
+Khi chiếu một tia sáng đơn sắc vào một mặt bên của lăng kính, tia sáng bị khúc xạ hai lần: một lần khi đi từ không khí vào thủy tinh, một lần khi đi từ thủy tinh ra không khí. Kết quả là tia ló ra khỏi lăng kính bị lệch về phía đáy lăng kính so với phương của tia tới.
+
+Khi chiếu một chùm ánh sáng trắng hẹp vào mặt bên của lăng kính, chùm sáng ló ra không còn là một chùm trắng nữa mà bị trải rộng thành một dải gồm nhiều màu nối tiếp nhau: đỏ, cam, vàng, lục, lam, chàm, tím. Hiện tượng này gọi là hiện tượng tán sắc ánh sáng. Trong dải màu đó, tia đỏ lệch ít nhất (nằm ở phía đỉnh lăng kính) và tia tím lệch nhiều nhất (nằm ở phía đáy lăng kính).
+
+B2. Mở rộng – nâng cao cho HSG
+
+1. Định luật khúc xạ ánh sáng dạng sin
+
+Đối với hai môi trường trong suốt nhất định, tỉ số giữa sin của góc tới và sin của góc khúc xạ là một số không đổi. Tỉ số đó bằng tỉ số giữa chiết suất tuyệt đối của môi trường chứa tia khúc xạ và chiết suất tuyệt đối của môi trường chứa tia tới.
+
+sin i / sin r = n₂/n₁
+
+Trong đó:
+
+- i là góc tới, đo trong môi trường 1 có chiết suất n₁.
+
+- r là góc khúc xạ, đo trong môi trường 2 có chiết suất n₂.
+
+Từ công thức trên suy ra hai hệ thức rất hay dùng:
+
+sin r = (n₁/n₂)·sin i
+
+sin i = (n₂/n₁)·sin r
+
+Dạng viết đối xứng (dùng khi đổi chiều truyền của tia sáng):
+
+n₁·sin i = n₂·sin r
+
+Hệ quả định tính quan trọng:
+
+- Nếu n₂ > n₁ (đi vào môi trường chiết quang hơn) thì sin r < sin i, tức là r < i.
+
+- Nếu n₂ < n₁ (đi ra môi trường chiết quang kém hơn) thì r > i.
+
+- Nếu i = 0° thì r = 0° với mọi cặp môi trường.
+
+2. Tỉ số chiết suất và chiết suất tỉ đối
+
+Đại lượng n₂₁ = n₂/n₁ được gọi là chiết suất tỉ đối của môi trường 2 so với môi trường 1. Theo định luật khúc xạ ta có n₂₁ = sin i / sin r.
+
+- Nếu n₂₁ > 1 thì môi trường 2 chiết quang hơn môi trường 1.
+
+- Nếu n₂₁ < 1 thì môi trường 2 chiết quang kém hơn môi trường 1.
+
+3. Chiết suất và vận tốc ánh sáng
+
+Từ n = c/v suy ra v = c/n. Ghi nhớ nhanh:
+
+- Trong không khí: v ≈ 3·10⁸ m/s.
+
+- Trong nước: v = 3·10⁸ : (4/3) = 2,25·10⁸ m/s.
+
+- Trong thủy tinh: v = 3·10⁸ : 1,5 = 2,00·10⁸ m/s.
+
+- Trong kim cương: v = 3·10⁸ : 2,42 ≈ 1,24·10⁸ m/s.
+
+Nhận xét: chiết suất càng lớn thì ánh sáng truyền càng chậm. Trong cùng một thời gian, quãng đường ánh sáng đi được trong nước bằng 3/4 quãng đường đi được trong không khí.
+
+4. Góc giới hạn phản xạ toàn phần
+
+Xét ánh sáng truyền từ môi trường 1 (chiết suất n₁) sang môi trường 2 (chiết suất n₂), với n₁ > n₂. Theo định luật khúc xạ:
+
+sin r = (n₁/n₂)·sin i
+
+Vì n₁/n₂ > 1 nên khi i tăng thì r tăng nhanh hơn i. Khi r đạt 90° (tia khúc xạ đi là là trên mặt phân cách) thì góc tới lúc đó chính là góc giới hạn i_(gh). Thay r = 90°, sin r = 1 vào công thức, ta được:
+
+sin i_(gh) = n₂/n₁
+
+Suy ra điều kiện để có phản xạ toàn phần:
+
+n₁ > n₂
+
+i ≥ i_(gh)
+
+Chú ý: nếu ánh sáng đi từ môi trường chiết quang kém sang môi trường chiết quang hơn thì n₂/n₁ > 1, công thức sin i_(gh) = n₂/n₁ cho sin i_(gh) > 1, vô lí. Điều đó khẳng định: không thể có phản xạ toàn phần khi ánh sáng đi vào môi trường chiết quang hơn.
+
+Bảng góc giới hạn thường dùng:
+
+  ------------------------------------------------------------------------------------------
+  Trường hợp                            sin i_(gh)              Góc giới hạn i_(gh)
+  ------------------------------------- ----------------------- ----------------------------
+  Nước (4/3) sang không khí (1)         3/4 = 0,7500            ≈ 48,6°
+
+  Thủy tinh (1,5) sang không khí (1)    2/3 ≈ 0,6667            ≈ 41,8°
+
+  Kim cương (2,42) sang không khí (1)   ≈ 0,4132                ≈ 24,4°
+
+  Thủy tinh (1,5) sang nước (4/3)       8/9 ≈ 0,8889            ≈ 62,7°
+
+  Nước (4/3) sang thủy tinh (1,5)       1,125 > 1               Không có phản xạ toàn phần
+  ------------------------------------------------------------------------------------------
+
+5. Ảnh của một vật qua mặt phân cách phẳng (độ sâu biểu kiến)
+
+Đây là dạng bài mở rộng quan trọng, giải thích được nhiều hiện tượng thực tế.
+
+Xét một vật ở đáy một bể nước sâu h, mắt người đặt trong không khí và nhìn gần như vuông góc với mặt nước.
+
+Mô tả hình vẽ: vật O nằm dưới mặt nước, cách mặt nước một đoạn h theo phương thẳng đứng. Vẽ pháp tuyến tại điểm tới A trên mặt nước. Một tia sáng từ O đi tới A, hợp với pháp tuyến góc i (trong nước). Tại A tia sáng khúc xạ ra không khí, hợp với pháp tuyến góc r, với r > i. Kéo dài tia khúc xạ ngược trở lại vào trong nước (nét đứt), đường kéo dài này cắt đường thẳng đứng qua O tại điểm O'. Điểm O' chính là ảnh biểu kiến của O, và độ sâu biểu kiến là h' = O'A.
+
+Từ hai tam giác vuông có chung cạnh nằm ngang d:
+
+d = h·tan i
+
+d = h'·tan r
+
+Suy ra:
+
+h' = h·tan i / tan r
+
+Với góc nhìn nhỏ (mắt nhìn gần như vuông góc), ta dùng xấp xỉ tan i ≈ sin i và tan r ≈ sin r. Giá trị làm tròn này chỉ đúng khi các góc nhỏ hơn khoảng 10°; đây là giá trị làm tròn được dùng trong toàn chuyên đề.
+
+h' = h·sin i / sin r
+
+Theo định luật khúc xạ, sin i / sin r = n₂/n₁ = 1/(4/3) = 3/4 với nước.
+
+h' = h·(n₂/n₁) = h/n
+
+Với n là chiết suất của môi trường chứa vật (ở đây là nước), khi mắt đặt trong không khí.
+
+Kết luận: nhìn từ không khí xuống nước, vật ở độ sâu h trông như chỉ còn cách mặt nước một đoạn h/n = 3h/4. Vật trông nông hơn thực tế.
+
+Lập luận hoàn toàn tương tự cho trường hợp vật ở trong không khí và mắt đặt trong nước (ví dụ con cá nhìn con chim trên bờ). Khi đó, với góc nhìn nhỏ:
+
+H' = n·H
+
+Trong đó H là độ cao thật của vật so với mặt nước và H' là độ cao biểu kiến mà mắt dưới nước thấy. Vật trông cao hơn (xa mặt nước hơn) thực tế.
+
+Quy tắc chung dễ nhớ: ảnh của vật qua mặt phân cách phẳng luôn bị dịch chuyển về phía môi trường chiết quang kém hơn (tức là phía không khí) so với vị trí thật của vật. Vì thế cá trông nông hơn, chim trông cao hơn, cọc cắm xuống nước trông như bị gãy khúc và ngắn lại ở phần chìm.
+
+Với một chồng nhiều lớp trong suốt phẳng song song, độ sâu biểu kiến bằng tổng độ sâu biểu kiến của từng lớp (khi các lớp đều được nhìn gần như vuông góc):
+
+h' = h₁/n₁ + h₂/n₂ + ...
+
+6. Đường truyền tia sáng qua lăng kính – hình học đơn giản
+
+Với một tia sáng đơn sắc truyền qua lăng kính, đường truyền gồm ba đoạn: tia tới trong không khí, tia khúc xạ thứ nhất bên trong lăng kính, tia ló ra ngoài không khí. Tia ló bị lệch về phía đáy lăng kính.
+
+Trường hợp đơn giản và hay gặp nhất trong đề thi là tia tới vuông góc với mặt bên thứ nhất. Khi đó:
+
+- Góc tới ở mặt thứ nhất i₁ = 0°, nên góc khúc xạ r₁ = 0°: tia sáng truyền thẳng vào lăng kính, không bị đổi hướng.
+
+- Tia sáng đi thẳng đến mặt bên thứ hai. Góc tới ở mặt thứ hai được xác định bằng hình học tam giác, không cần công thức lăng kính.
+
+Cách xác định góc tới ở mặt thứ hai: gọi A là góc chiết quang của lăng kính (góc giữa hai mặt bên). Vì tia sáng vuông góc với mặt thứ nhất, nó song song với pháp tuyến của mặt thứ nhất. Mặt thứ hai hợp với mặt thứ nhất một góc A, nên tia sáng hợp với mặt thứ hai một góc bằng 90° − A; do đó góc tới ở mặt thứ hai bằng:
+
+i₂ = 90° − (90° − A) = A
+
+Nói cách khác, với tia tới vuông góc với mặt bên thứ nhất, góc tới ở mặt bên thứ hai đúng bằng góc chiết quang A của lăng kính.
+
+Ví dụ kiểm chứng với lăng kính tam giác đều (A = 60°): tia sáng vuông góc với mặt bên AB. Vì góc giữa AB và AC là 60°, tia sáng (vuông góc với AB) hợp với mặt AC một góc 90° − 60° = 30°. Vậy góc tới tại mặt AC là 90° − 30° = 60°. Kết quả đúng bằng A = 60°.
+
+Ví dụ kiểm chứng với lăng kính tiết diện tam giác vuông cân (A = 90°, hai góc nhọn bằng 45°): tia sáng vuông góc với một mặt bên (một cạnh góc vuông). Góc giữa hai mặt bên là 90°, nên tia sáng hợp với mặt huyền một góc 45°, do đó góc tới ở mặt huyền là 45°.
+
+Nhận xét: với lăng kính thủy tinh (n = 1,5) có góc chiết quang lớn, góc tới ở mặt thứ hai (bằng A) rất dễ vượt quá góc giới hạn 41,8°, khi đó tia sáng bị phản xạ toàn phần bên trong lăng kính thay vì ló ra ngoài.
+
+7. Chiết suất phụ thuộc màu sắc – giải thích tán sắc
+
+Ánh sáng trắng không phải là ánh sáng đơn sắc mà là hỗn hợp của rất nhiều ánh sáng màu, từ đỏ đến tím. Chiết suất của cùng một chất trong suốt đối với các ánh sáng màu khác nhau thì khác nhau:
+
+- Đối với ánh sáng đỏ, chiết suất nhỏ nhất: n_(đỏ) ≈ 1,50 với thủy tinh, ≈ 1,33 với nước.
+
+- Đối với ánh sáng tím, chiết suất lớn nhất: n_(tím) ≈ 1,54 với thủy tinh, ≈ 1,34 với nước.
+
+Vì n_(đỏ) < n_(tím) nên theo định luật khúc xạ, với cùng một góc tới i:
+
+- Tia đỏ có sin r_(đỏ) = (n₁/n_(đỏ))·sin i lớn hơn, tức là r_(đỏ) lớn hơn.
+
+- Tia tím có sin r_(tím) = (n₁/n_(tím))·sin i nhỏ hơn, tức là r_(tím) nhỏ hơn.
+
+Tia tím bị bẻ gần pháp tuyến hơn tia đỏ, nên sau hai lần khúc xạ qua lăng kính nó lệch nhiều hơn. Đó là lí do tia tím nằm ở phía đáy, tia đỏ nằm ở phía đỉnh của dải quang phổ.
+
+8. Cầu vồng
+
+Sau mưa, trong không khí có rất nhiều giọt nước nhỏ li ti. Mỗi giọt nước trong suốt đóng vai trò như một lăng kính rất nhỏ. Ánh sáng Mặt Trời chiếu vào giọt nước bị:
+
+- Khúc xạ khi đi từ không khí vào nước ở mặt trước giọt nước.
+
+- Phản xạ (một phần, và trong điều kiện thuận lợi có thể là phản xạ toàn phần) ở mặt sau trong của giọt nước.
+
+- Khúc xạ lần thứ hai khi đi từ nước ra không khí ở mặt trước.
+
+Sau hai lần khúc xạ và một lần phản xạ, các ánh sáng màu bị tách ra theo những phương khác nhau. Mắt người đứng quay lưng về phía Mặt Trời, nhìn vào đám mây mưa, sẽ thu được đồng thời các tia màu từ nhiều giọt nước khác nhau và thấy một dải cung nhiều màu. Trong cầu vồng chính, màu đỏ ở phía ngoài cùng và màu tím ở phía trong cùng.
+
+9. Ứng dụng của phản xạ toàn phần
+
+Sợi quang học. Sợi quang gồm một lõi bằng thủy tinh hoặc nhựa trong có chiết suất lớn, được bao quanh bởi một lớp vỏ có chiết suất nhỏ hơn. Ánh sáng được đưa vào lõi với góc tới ở mặt tiếp giáp lõi – vỏ lớn hơn góc giới hạn, nên bị phản xạ toàn phần liên tiếp và truyền dọc theo sợi, kể cả khi sợi bị uốn cong. Nhờ đó ánh sáng truyền đi rất xa mà hầu như không mất mát. Sợi quang được dùng trong cáp quang viễn thông, trong nội soi y tế và trong trang trí.
+
+Ví dụ số liệu: lõi có n₁ = 1,50, vỏ có n₂ = 1,45. Góc giới hạn tại mặt tiếp giáp lõi – vỏ là sin i_(gh) = 1,45/1,50 ≈ 0,9667, suy ra i_(gh) ≈ 75,2°. Các tia sáng tới mặt tiếp giáp với góc tới lớn hơn 75,2° đều bị giữ lại trong lõi.
+
+Lăng kính phản xạ toàn phần. Đây là lăng kính thủy tinh có tiết diện thẳng là tam giác vuông cân. Tia sáng tới vuông góc với một mặt bên, truyền thẳng tới mặt huyền dưới góc tới 45°. Vì 45° lớn hơn góc giới hạn của thủy tinh (41,8°), tia sáng bị phản xạ toàn phần tại mặt huyền và ló ra khỏi lăng kính theo phương vuông góc với phương tia tới ban đầu. Lăng kính loại này được dùng thay gương trong ống nhòm, kính tiềm vọng và máy ảnh. Ưu điểm so với gương: không cần lớp tráng bạc nên không bị mờ hay bong tráng theo thời gian, và hệ số phản xạ gần như đạt 100%.
+
+Ảo ảnh trên đường nhựa nóng. Vào ngày nắng nóng, lớp không khí sát mặt đường nhựa bị đốt nóng, nở ra, trở nên loãng hơn nên có chiết suất nhỏ hơn lớp không khí mát ở phía trên. Ánh sáng từ bầu trời đi xiên xuống, lần lượt qua các lớp không khí có chiết suất giảm dần nên bị khúc xạ cong dần. Khi tới lớp không khí sát mặt đường, tia sáng có thể gặp điều kiện phản xạ toàn phần và bị hắt ngược lên trên, đi vào mắt người quan sát. Mắt ta nhận tia sáng đó và có cảm giác như mặt đường đang ướt, có vũng nước phản chiếu bầu trời. Hiện tượng này gọi là ảo ảnh.
+
+B3. Công thức cần nhớ (bảng)
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  STT               Nội dung                                                         Công thức                  Ghi chú
+  ----------------- ---------------------------------------------------------------- -------------------------- --------------------------------------------------------
+  1                 Định luật khúc xạ ánh sáng                                       sin i / sin r = n₂/n₁      i ở môi trường 1, r ở môi trường 2
+
+  2                 Dạng tính góc khúc xạ                                            sin r = (n₁/n₂)·sin i      n₂ > n₁ thì r < i
+
+  3                 Dạng tính góc tới                                                sin i = (n₂/n₁)·sin r      n₂ < n₁ thì i < r
+
+  4                 Dạng đối xứng                                                    n₁·sin i = n₂·sin r        Tiện khi đổi chiều truyền
+
+  5                 Chiết suất tuyệt đối                                             n = c/v                    c = 3·10⁸ m/s; n ≥ 1
+
+  6                 Vận tốc ánh sáng trong môi trường                                v = c/n                    n càng lớn, v càng nhỏ
+
+  7                 Góc giới hạn phản xạ toàn phần                                   sin i_(gh) = n₂/n₁         Chỉ dùng khi n₁ > n₂
+
+  8                 Điều kiện phản xạ toàn phần                                      n₁ > n₂ và i ≥ i_(gh)      Thiếu một điều kiện là không có
+
+  9                 Độ sâu biểu kiến (nhìn từ không khí xuống)                       h' = h/n                   n là chiết suất môi trường chứa vật
+
+  10                Độ cao biểu kiến (nhìn từ nước lên không khí)                    H' = n·H                   Vật trong không khí trông cao hơn
+
+  11                Độ sâu biểu kiến của nhiều lớp                                   h' = h₁/n₁ + h₂/n₂ + ...   Mắt nhìn gần vuông góc
+
+  12                Bán kính vùng sáng trên mặt nước                                 R = h·tan i_(gh)           Nguồn điểm ở đáy, sâu h
+
+  13                Góc tới ở mặt bên thứ hai (tia vào vuông góc mặt bên thứ nhất)   i₂ = A                     A là góc chiết quang của lăng kính
+
+  14                Quy tắc lệch của tia khúc xạ                                     n₂ > n₁ → r < i            Vào môi trường chiết quang hơn thì lệch gần pháp tuyến
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. Các dạng bài và phương pháp giải
+
+Dạng 1. Nhận dạng hiện tượng khúc xạ, vẽ và mô tả đường truyền tia sáng
+
+Nhận dạng. Đề bài cho một tình huống chiếu tia sáng xiên tới mặt phân cách hai môi trường, hoặc một hiện tượng thực tế (cọc cắm xuống nước, đáy bể, cá dưới nước) và yêu cầu: vẽ hình, mô tả đường truyền của tia sáng, cho biết tia khúc xạ lệch gần hay lệch xa pháp tuyến, so sánh góc tới với góc khúc xạ. Đây là dạng "mở bài" của hầu hết các đề thi, thường chiếm 1,0 đến 1,5 điểm.
+
+Phương pháp.
+
+- Bước 1. Xác định rõ môi trường 1 (chứa tia tới) và môi trường 2 (chứa tia khúc xạ); so sánh n₁ với n₂.
+
+- Bước 2. Vẽ mặt phân cách là một đường nằm ngang, vẽ pháp tuyến là đường thẳng đứng vuông góc với mặt phân cách tại điểm tới I, dùng nét đứt.
+
+- Bước 3. Vẽ tia tới SI nằm trong môi trường 1, hợp với pháp tuyến một góc i; đánh dấu mũi tên chỉ chiều truyền của ánh sáng.
+
+- Bước 4. Vẽ tia khúc xạ IR nằm trong môi trường 2, ở bên kia pháp tuyến so với tia tới. Nếu n₂ > n₁ thì vẽ tia khúc xạ gần pháp tuyến hơn tia tới (r < i); nếu n₂ < n₁ thì vẽ tia khúc xạ xa pháp tuyến hơn tia tới (r > i).
+
+- Bước 5. Kết luận bằng một câu: tia khúc xạ nằm trong mặt phẳng tới, ở bên kia pháp tuyến, và lệch gần (hoặc xa) pháp tuyến hơn tia tới.
+
+Ví dụ mẫu. Chiếu một tia sáng từ không khí vào mặt nước yên tĩnh dưới góc tới i = 60°. Biết chiết suất của nước là 4/3, của không khí xấp xỉ 1.
+
+a) Tính góc khúc xạ r.
+
+b) Mô tả bằng lời cách vẽ hình và cho biết tia khúc xạ lệch gần hay xa pháp tuyến so với tia tới.
+
+Tóm tắt.
+
+i = 60°
+
+n₁ = 1 (không khí)
+
+n₂ = 4/3 (nước)
+
+Tính r
+
+Lời giải
+
+Bước 1. Xác định môi trường. Môi trường 1 là không khí (n₁ = 1), môi trường 2 là nước (n₂ = 4/3). Vì n₂ > n₁ nên tia khúc xạ lệch gần pháp tuyến hơn tia tới, tức là r < i.
+
+Bước 2. Viết định luật khúc xạ dạng sin.
+
+sin i / sin r = n₂/n₁
+
+Bước 3. Suy ra công thức tính sin r.
+
+sin r = (n₁/n₂)·sin i
+
+Bước 4. Thay số với sin 60° = √3/2 ≈ 0,8660 (giá trị làm tròn).
+
+sin r = (1 : (4/3)) × 0,8660
+
+sin r = (3/4) × 0,8660
+
+sin r = 0,6495
+
+Bước 5. Tính góc khúc xạ.
+
+r = arcsin 0,6495 ≈ 40,5°
+
+Bước 6. Kiểm tra tính hợp lí: r = 40,5° < i = 60°, phù hợp với việc ánh sáng đi vào môi trường chiết quang hơn. Góc lệch so với phương tia tới là 60° − 40,5° = 19,5°.
+
+Bước 7. Mô tả hình vẽ. Vẽ mặt phân cách là đường nằm ngang, phía trên là không khí, phía dưới là nước. Tại điểm tới I trên mặt phân cách, vẽ pháp tuyến là đường thẳng đứng nét đứt. Vẽ tia tới SI ở phía trên, bên trái pháp tuyến, hợp với pháp tuyến góc 60°. Vẽ tia khúc xạ IR ở phía dưới, bên phải pháp tuyến, hợp với pháp tuyến góc 40,5°, tức là gần pháp tuyến hơn tia tới. Tia khúc xạ nằm trong mặt phẳng tới, là mặt phẳng chứa tia tới và pháp tuyến.
+
+Đáp số. r ≈ 40,5°; tia khúc xạ lệch gần pháp tuyến hơn tia tới.
+
+Lưu ý.
+
+- Góc tới và góc khúc xạ đều phải đo so với pháp tuyến; đo so với mặt phân cách là lỗi phổ biến nhất.
+
+- Tia khúc xạ luôn ở bên kia pháp tuyến so với tia tới; không bao giờ vẽ hai tia cùng phía pháp tuyến.
+
+- Nếu tia sáng tới vuông góc với mặt phân cách thì vẽ nó truyền thẳng, không gãy khúc.
+
+Dạng 2. Vận dụng định luật khúc xạ dạng sin i / sin r = n₂/n₁
+
+Nhận dạng. Đề cho biết góc tới (hoặc sin góc tới) và chiết suất của hai môi trường, yêu cầu tính góc khúc xạ; hoặc cho hai góc và yêu cầu tìm chiết suất. Đây là dạng tính toán chủ lực, thường có 1 đến 2 câu trong đề.
+
+Phương pháp.
+
+- Bước 1. Gọi tên môi trường 1 (chứa tia tới) và môi trường 2 (chứa tia khúc xạ); gán n₁, n₂ cho đúng, tránh nhầm khi tia sáng đổi chiều truyền.
+
+- Bước 2. Viết định luật khúc xạ: sin i / sin r = n₂/n₁.
+
+- Bước 3. Biến đổi để tách đại lượng cần tìm: sin r = (n₁/n₂)·sin i hoặc sin i = (n₂/n₁)·sin r.
+
+- Bước 4. Thay số, dùng giá trị sin của góc đặc biệt.
+
+- Bước 5. Tính góc bằng phím arcsin trên máy tính bỏ túi, làm tròn đến 0,1°.
+
+- Bước 6. Kiểm tra dấu hiệu vật lí: n₂ > n₁ thì phải có r < i; nếu kết quả ngược lại thì đã viết sai tỉ số.
+
+Ví dụ mẫu. Một tia sáng truyền từ không khí vào nước. Biết sin góc tới bằng 0,8 (tương ứng i ≈ 53,1°).
+
+a) Tính sin góc khúc xạ và góc khúc xạ r.
+
+b) Nếu giữ nguyên tia tới nhưng thay nước bằng thủy tinh có chiết suất 1,5 thì góc khúc xạ tăng hay giảm?
+
+Tóm tắt.
+
+sin i = 0,8; i ≈ 53,1°
+
+n₁ = 1 (không khí)
+
+n₂ = 4/3 (nước), sau đó n₂' = 1,5 (thủy tinh)
+
+Tính sin r, r
+
+Lời giải
+
+Bước 1. Với nước, áp dụng định luật khúc xạ.
+
+sin i / sin r = n₂/n₁
+
+Bước 2. Suy ra sin r.
+
+sin r = (n₁/n₂)·sin i
+
+Bước 3. Thay số.
+
+sin r = (1 : (4/3)) × 0,8
+
+sin r = (3/4) × 0,8 = 0,6
+
+Bước 4. Tính góc khúc xạ.
+
+r = arcsin 0,6 ≈ 36,9°
+
+Bước 5. Kiểm tra: r ≈ 36,9° < i ≈ 53,1°, đúng vì ánh sáng đi vào môi trường chiết quang hơn.
+
+Bước 6. Với thủy tinh có n = 1,5.
+
+sin r' = (1 : 1,5) × 0,8
+
+sin r' = 0,8 : 1,5 ≈ 0,5333
+
+r' = arcsin 0,5333 ≈ 32,2°
+
+Bước 7. So sánh: r' ≈ 32,2° < r ≈ 36,9°. Thủy tinh có chiết suất lớn hơn nước nên bẻ tia sáng mạnh hơn; góc khúc xạ giảm.
+
+Đáp số. a) sin r = 0,6; r ≈ 36,9°. b) Góc khúc xạ giảm còn khoảng 32,2° (giá trị 0,5333 là số làm tròn của 0,8 : 1,5).
+
+Lưu ý.
+
+- Tỉ số luôn là n₂/n₁ (môi trường chứa tia khúc xạ chia cho môi trường chứa tia tới), không phải ngược lại.
+
+- Khi đề cho "góc có sin bằng 0,6" thì nên làm việc với sin trước, chỉ đổi ra góc ở bước cuối; cách này tránh sai số tích lũy.
+
+- Nếu tính ra sin r > 1 thì hoặc là đã nhầm tỉ số, hoặc là bài toán thuộc trường hợp phản xạ toàn phần (xem Dạng 4).
+
+Dạng 3. Chiết suất và vận tốc ánh sáng trong môi trường
+
+Nhận dạng. Đề cho chiết suất và yêu cầu tính vận tốc ánh sáng trong môi trường, hoặc cho vận tốc và yêu cầu tính chiết suất, hoặc yêu cầu so sánh độ "chiết quang" của hai môi trường thông qua vận tốc.
+
+Phương pháp.
+
+- Bước 1. Nhớ công thức gốc n = c/v với c = 3·10⁸ m/s.
+
+- Bước 2. Tùy đại lượng cần tìm mà dùng n = c/v hay v = c/n.
+
+- Bước 3. Thay số; chú ý giữ đúng lũy thừa của 10.
+
+- Bước 4. Kết luận: môi trường có chiết suất lớn hơn thì ánh sáng truyền chậm hơn, và môi trường đó chiết quang hơn.
+
+Ví dụ mẫu. Một môi trường trong suốt có chiết suất n = 1,6.
+
+a) Tính vận tốc ánh sáng trong môi trường đó.
+
+b) So sánh vận tốc ánh sáng trong môi trường này với vận tốc ánh sáng trong nước (n = 4/3). Môi trường nào chiết quang hơn?
+
+Tóm tắt.
+
+n = 1,6
+
+c = 3·10⁸ m/s
+
+n_(nước) = 4/3
+
+Tính v và so sánh
+
+Lời giải
+
+Bước 1. Áp dụng công thức liên hệ giữa chiết suất và vận tốc.
+
+n = c/v
+
+Bước 2. Suy ra vận tốc.
+
+v = c/n
+
+Bước 3. Thay số.
+
+v = (3·10⁸) : 1,6
+
+v = 1,875·10⁸ m/s
+
+Bước 4. Tính vận tốc ánh sáng trong nước.
+
+v_(nước) = (3·10⁸) : (4/3)
+
+v_(nước) = (3·10⁸) × (3/4) = 2,25·10⁸ m/s
+
+Bước 5. So sánh: v = 1,875·10⁸ m/s < v_(nước) = 2,25·10⁸ m/s. Vì môi trường có n = 1,6 lớn hơn nước (1,6 > 1,33) nên ánh sáng truyền trong đó chậm hơn; môi trường n = 1,6 chiết quang hơn nước.
+
+Đáp số. a) v = 1,875·10⁸ m/s. b) v < v_(nước); môi trường có n = 1,6 chiết quang hơn nước.
+
+Lưu ý.
+
+- Chiết suất không có đơn vị; đừng ghi "n = 1,6 m/s".
+
+- Trong mọi môi trường vật chất, v luôn nhỏ hơn c; nếu tính ra v > 3·10⁸ m/s thì chắc chắn đã lấy nghịch đảo sai.
+
+- Có thể dùng tỉ số cho nhanh: v₁/v₂ = n₂/n₁, tức vận tốc tỉ lệ nghịch với chiết suất.
+
+Dạng 4. Góc giới hạn và điều kiện xảy ra phản xạ toàn phần
+
+Nhận dạng. Đề cho chiết suất của hai môi trường và hỏi: góc giới hạn bằng bao nhiêu; với một góc tới cụ thể thì có xảy ra phản xạ toàn phần không; hoặc tìm điều kiện của chiết suất để xảy ra phản xạ toàn phần. Ngoài ra dạng này còn xuất hiện trong các bài về sợi quang, lăng kính phản xạ toàn phần, vùng sáng trên mặt nước.
+
+Phương pháp.
+
+- Bước 1. Kiểm tra chiều truyền: ánh sáng phải đi từ môi trường chiết quang hơn sang môi trường chiết quang kém, tức n₁ > n₂. Nếu không thỏa mãn thì kết luận ngay là không thể có phản xạ toàn phần.
+
+- Bước 2. Tính góc giới hạn theo công thức sin i_(gh) = n₂/n₁.
+
+- Bước 3. So sánh góc tới i với i_(gh): nếu i ≥ i_(gh) thì có phản xạ toàn phần; nếu i < i_(gh) thì tia sáng vẫn khúc xạ ra ngoài (đồng thời có một phần phản xạ).
+
+- Bước 4. Nếu đề hỏi điều kiện của n, hãy viết bất đẳng thức i ≥ i_(gh) dưới dạng sin, rồi giải bất đẳng thức đó.
+
+Ví dụ mẫu. Cho biết chiết suất của thủy tinh là 1,5 và của nước là 4/3.
+
+a) Tính góc giới hạn phản xạ toàn phần khi ánh sáng truyền từ thủy tinh ra không khí và khi truyền từ nước ra không khí.
+
+b) Một tia sáng truyền trong thủy tinh tới mặt tiếp giáp với không khí dưới góc tới 45°. Hiện tượng gì xảy ra tại mặt tiếp giáp?
+
+c) Ánh sáng truyền từ nước sang thủy tinh có thể xảy ra phản xạ toàn phần được không? Vì sao?
+
+Tóm tắt.
+
+n_(thủy) tinh = 1,5
+
+n_(nước) = 4/3
+
+n_(không) khí = 1
+
+Tính i_(gh) và xét hiện tượng
+
+Lời giải
+
+Bước 1. Với thủy tinh ra không khí: n₁ = 1,5; n₂ = 1; n₁ > n₂ nên có thể có phản xạ toàn phần. Áp dụng công thức.
+
+sin i_(gh) = n₂/n₁ = 1 : 1,5
+
+sin i_(gh) = 0,6667
+
+i_(gh) = arcsin 0,6667 ≈ 41,8°
+
+Bước 2. Với nước ra không khí: n₁ = 4/3; n₂ = 1.
+
+sin i_(gh) = 1 : (4/3) = 3/4 = 0,75
+
+i_(gh) = arcsin 0,75 ≈ 48,6°
+
+Bước 3. Xét tia sáng trong thủy tinh tới mặt tiếp giáp với không khí dưới góc i = 45°. So sánh: i = 45° > i_(gh) = 41,8°. Vậy tại mặt tiếp giáp xảy ra hiện tượng phản xạ toàn phần: toàn bộ tia sáng bị phản xạ trở lại trong thủy tinh, không có tia khúc xạ ra không khí.
+
+Bước 4. Xét chiều truyền từ nước sang thủy tinh: n₁ = 4/3; n₂ = 1,5. Ta có n₁ < n₂, tức là ánh sáng đi từ môi trường chiết quang kém sang môi trường chiết quang hơn. Kiểm tra bằng công thức: sin i_(gh) = 1,5 : (4/3) = 1,125 > 1, vô lí. Vậy không thể xảy ra phản xạ toàn phần theo chiều này; ánh sáng luôn khúc xạ vào thủy tinh, chỉ có một phần bị phản xạ thông thường.
+
+Đáp số. a) Thủy tinh ra không khí: i_(gh) ≈ 41,8°; nước ra không khí: i_(gh) ≈ 48,6°. b) Có phản xạ toàn phần vì 45° > 41,8°. c) Không, vì ánh sáng đi vào môi trường chiết quang hơn.
+
+Lưu ý.
+
+- Đừng nhầm sin i_(gh) = n₂/n₁ với sin i_(gh) = n₁/n₂. Kết quả phải luôn nhỏ hơn 1.
+
+- Phản xạ toàn phần không có nghĩa là "không có phản xạ thông thường". Ở mọi mặt phân cách luôn có một phần ánh sáng phản xạ; "toàn phần" ý nói toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.
+
+- Góc giới hạn càng nhỏ thì hiện tượng phản xạ toàn phần càng dễ xảy ra. Kim cương có góc giới hạn chỉ 24,4° nên ánh sáng bị phản xạ toàn phần nhiều lần bên trong, tạo nên vẻ lấp lánh đặc trưng.
+
+Dạng 5. Ảnh của vật qua mặt phân cách: cá dưới nước, cọc cắm xuống nước, ảnh của đáy bể
+
+Nhận dạng. Đề mô tả một vật ở trong nước (hoặc trong không khí) và một mắt quan sát ở môi trường kia, hỏi vật trông nông hơn hay sâu hơn, cách mặt phân cách bao nhiêu, hoặc yêu cầu giải thích hiện tượng cọc gãy khúc, đáy bể nông hơn. Đây là dạng bài gắn với thực tế, rất hay gặp trong phần vận dụng.
+
+Phương pháp.
+
+- Bước 1. Xác định vật nằm trong môi trường nào (chiết suất n_(vật)) và mắt nằm trong môi trường nào.
+
+- Bước 2. Nếu mắt ở không khí, vật ở trong nước: dùng h' = h/n_(vật) (độ sâu biểu kiến nhỏ hơn độ sâu thật).
+
+- Bước 3. Nếu mắt ở trong nước, vật ở trong không khí: dùng H' = n_(nước)·H (độ cao biểu kiến lớn hơn độ cao thật).
+
+- Bước 4. Vẽ hình: dựng tia tới từ vật tới mặt phân cách, dựng tia khúc xạ ra môi trường của mắt, kéo dài tia khúc xạ ngược về phía vật bằng nét đứt; giao điểm của đường kéo dài với đường thẳng đứng qua vật là ảnh.
+
+- Bước 5. Trả lời định tính và định lượng, kèm câu giải thích ngắn dựa trên quy tắc: ảnh dịch về phía môi trường chiết quang kém hơn.
+
+Ví dụ mẫu. Một con cá bơi ở độ sâu 1,2 m dưới mặt hồ phẳng lặng. Một người đứng trên bờ nhìn xuống theo phương gần như vuông góc với mặt nước. Chiết suất của nước là 4/3.
+
+a) Người đó thấy con cá ở độ sâu bao nhiêu?
+
+b) Vẽ hình mô tả đường truyền của một tia sáng từ cá tới mắt người.
+
+c) Nếu người đó lùi ra xa bờ và nhìn xiên một góc lớn thì cá trông nông hơn hay sâu hơn so với trường hợp nhìn vuông góc? Giải thích ngắn.
+
+Tóm tắt.
+
+h = 1,2 m
+
+n_(nước) = 4/3
+
+Tính h'
+
+Lời giải
+
+Bước 1. Vật (con cá) nằm trong nước có chiết suất n = 4/3; mắt người nằm trong không khí. Áp dụng công thức độ sâu biểu kiến khi nhìn từ không khí xuống.
+
+h' = h/n
+
+Bước 2. Thay số.
+
+h' = 1,2 : (4/3)
+
+h' = 1,2 × (3/4) = 0,9 m
+
+Bước 3. Kết luận: người thấy con cá ở độ sâu biểu kiến 0,9 m, tức là nông hơn độ sâu thật 1,2 m một đoạn 0,3 m.
+
+Bước 4. Mô tả cách vẽ hình. Vẽ mặt nước là đường nằm ngang, phía trên là không khí, phía dưới là nước. Đặt điểm O (con cá) trên đường thẳng đứng, cách mặt nước 1,2 m. Từ O vẽ tia tới OA xiên lên gặp mặt nước tại A, hợp với pháp tuyến tại A một góc i. Tại A vẽ pháp tuyến nét đứt. Tia khúc xạ AR đi vào không khí, hợp với pháp tuyến một góc r lớn hơn i, hướng tới mắt người R. Kéo dài tia AR ngược trở lại vào trong nước bằng nét đứt; đường kéo dài này cắt đường thẳng đứng qua O tại điểm O'. Điểm O' chính là ảnh biểu kiến của cá, nằm trên đường thẳng đứng qua O, cách mặt nước 0,9 m.
+
+Bước 5. Khi nhìn xiên một góc lớn, công thức h' = h/n không còn chính xác về mặt định lượng (vì đã dùng xấp xỉ góc nhỏ). Tuy nhiên kết luận định tính vẫn đúng: cá luôn trông nông hơn thực tế, đồng thời ảnh bị dịch ngang về phía người quan sát.
+
+Đáp số. a) h' = 0,9 m. c) Cá vẫn trông nông hơn; ảnh còn bị dịch ngang.
+
+Lưu ý.
+
+- Công thức h' = h/n chỉ đúng khi mắt nhìn gần như vuông góc với mặt phân cách; khi nhìn xiên nhiều thì chỉ dùng để kết luận định tính.
+
+- Đừng nhân thay vì chia: vật ở trong nước nhìn từ không khí thì ảnh nông hơn, nên kết quả phải nhỏ hơn h.
+
+- Với bài "cọc cắm xuống nước": phần cọc chìm trong nước trông ngắn hơn và như bị gãy khúc tại mặt nước, vì mỗi điểm của phần chìm đều có ảnh biểu kiến nâng lên cao hơn, và các ảnh đó không còn thẳng hàng với phần cọc ở trên không.
+
+Dạng 6. Lăng kính và tán sắc ánh sáng
+
+Nhận dạng. Đề cho một tia sáng (đơn sắc hoặc trắng) chiếu vào lăng kính và yêu cầu: vẽ đường truyền, xác định tia ló lệch về phía nào, tính góc khúc xạ của các màu khác nhau, giải thích vì sao có dải màu, hoặc giải thích cầu vồng.
+
+Phương pháp.
+
+- Bước 1. Xác định góc chiết quang A của lăng kính và vị trí của hai mặt bên.
+
+- Bước 2. Xét lần khúc xạ thứ nhất tại mặt bên thứ nhất: áp dụng sin i₁ / sin r₁ = n₂/n₁ với môi trường 1 là không khí, môi trường 2 là thủy tinh.
+
+- Bước 3. Nếu tia tới vuông góc với mặt bên thứ nhất thì i₁ = 0° và r₁ = 0°: tia truyền thẳng; góc tới ở mặt thứ hai đúng bằng góc chiết quang A (xem mục B2.6).
+
+- Bước 4. Với ánh sáng trắng, làm hai lần tính riêng cho tia đỏ (n nhỏ nhất) và tia tím (n lớn nhất), rồi so sánh góc khúc xạ: tia nào có góc khúc xạ nhỏ hơn thì lệch nhiều hơn.
+
+- Bước 5. Kết luận: tia ló lệch về phía đáy lăng kính; trong dải màu, đỏ lệch ít nhất, tím lệch nhiều nhất.
+
+Ví dụ mẫu. Chiếu một tia sáng trắng hẹp vào mặt bên của một lăng kính thủy tinh dưới góc tới i = 45°. Chiết suất của thủy tinh đối với ánh sáng đỏ là n_(đ) = 1,50 và đối với ánh sáng tím là n_(t) = 1,54.
+
+a) Tính góc khúc xạ của tia đỏ và của tia tím ở lần khúc xạ thứ nhất.
+
+b) Cho biết màu nào lệch nhiều hơn so với phương tia tới. Giải thích.
+
+Tóm tắt.
+
+i = 45°
+
+n_(đ) = 1,50
+
+n_(t) = 1,54
+
+Tính r_(đ), r_(t)
+
+Lời giải
+
+Bước 1. Môi trường 1 là không khí (n₁ = 1), môi trường 2 là thủy tinh (n₂ = n_(đ) hoặc n₂ = n_(t)). Áp dụng định luật khúc xạ.
+
+sin i / sin r = n₂/n₁
+
+Bước 2. Suy ra công thức tính sin r.
+
+sin r = (1/n₂)·sin i
+
+Bước 3. Với tia đỏ, sin 45° = √2/2 ≈ 0,7071 (giá trị làm tròn).
+
+sin r_(đ) = 0,7071 : 1,50
+
+sin r_(đ) = 0,4714
+
+r_(đ) = arcsin 0,4714 ≈ 28,1°
+
+Bước 4. Với tia tím.
+
+sin r_(t) = 0,7071 : 1,54
+
+sin r_(t) = 0,4592
+
+r_(t) = arcsin 0,4592 ≈ 27,3°
+
+Bước 5. So sánh: r_(t) ≈ 27,3° < r_(đ) ≈ 28,1°. Tia tím bị bẻ gần pháp tuyến hơn tia đỏ, tức là lệch nhiều hơn. Góc lệch giữa hai tia ở lần khúc xạ thứ nhất là 28,1° − 27,3° = 0,8°. Tuy góc này nhỏ, nhưng sau lần khúc xạ thứ hai ở mặt bên kia, độ tách giữa các màu lớn hơn nhiều nên mắt nhìn thấy rõ dải màu.
+
+Đáp số. a) r_(đ) ≈ 28,1°; r_(t) ≈ 27,3° (đã dùng √2/2 ≈ 0,7071). b) Tia tím lệch nhiều hơn vì chiết suất của thủy tinh đối với ánh sáng tím lớn hơn đối với ánh sáng đỏ.
+
+Lưu ý.
+
+- Chiết suất phụ thuộc màu sắc ánh sáng, không phụ thuộc góc tới.
+
+- Đừng nhầm: chiết suất lớn hơn làm tia sáng bị bẻ mạnh hơn, tức là lệch nhiều hơn về phía đáy.
+
+- Tia đỏ luôn ở phía đỉnh lăng kính, tia tím luôn ở phía đáy, trong dải quang phổ thu được trên màn.
+
+Dạng 7. Ứng dụng phản xạ toàn phần: sợi quang, lăng kính phản xạ toàn phần, ảo ảnh
+
+Nhận dạng. Đề cho một dụng cụ (sợi quang, lăng kính phản xạ toàn phần, ống nhòm, kính tiềm vọng) hoặc một hiện tượng tự nhiên (ảo ảnh) và yêu cầu giải thích nguyên tắc hoạt động, kiểm tra xem có xảy ra phản xạ toàn phần hay không, hoặc tìm điều kiện về chiết suất cho dụng cụ hoạt động được.
+
+Phương pháp.
+
+- Bước 1. Xác định mặt tiếp giáp nơi cần xét phản xạ toàn phần và hai môi trường ở hai bên mặt đó.
+
+- Bước 2. Kiểm tra điều kiện thứ nhất: ánh sáng phải đi từ môi trường chiết quang hơn sang môi trường chiết quang kém.
+
+- Bước 3. Tính góc tới tại mặt tiếp giáp bằng hình học (thường nhờ tính chất của tam giác vuông, tam giác vuông cân, tam giác đều).
+
+- Bước 4. Tính góc giới hạn bằng sin i_(gh) = n₂/n₁ rồi so sánh với góc tới.
+
+- Bước 5. Nếu đề hỏi điều kiện của chiết suất, viết bất đẳng thức i ≥ i_(gh) dưới dạng sin và rút ra điều kiện của n.
+
+Ví dụ mẫu. Một lăng kính thủy tinh có tiết diện thẳng là tam giác vuông cân ABC, vuông tại A (AB = AC), mặt huyền là BC. Chiếu một tia sáng đơn sắc vào mặt AB theo phương vuông góc với mặt AB.
+
+a) Xác định góc tới của tia sáng tại mặt huyền BC.
+
+b) Biết góc giới hạn của thủy tinh đối với không khí là 41,8°. Hỏi tại BC xảy ra hiện tượng gì?
+
+c) Sau khi tới mặt BC, tia sáng tiếp tục đi tới mặt AC dưới góc tới bao nhiêu? Nó ló ra hay bị phản xạ toàn phần?
+
+Tóm tắt.
+
+Lăng kính tam giác vuông cân tại A
+
+Tia tới vuông góc với mặt AB
+
+n_(thủy) tinh = 1,5; i_(gh) ≈ 41,8°
+
+Lời giải
+
+Bước 1. Tia sáng tới vuông góc với mặt AB nên góc tới ở mặt AB là i₁ = 0°, suy ra góc khúc xạ r₁ = 0°. Tia sáng truyền thẳng vào lăng kính, không đổi hướng.
+
+Bước 2. Vì tam giác ABC vuông cân tại A nên AB vuông góc với AC. Tia sáng vuông góc với AB thì song song với AC. Mặt huyền BC tạo với AC một góc 45° (do góc C = 45°). Vậy tia sáng tạo với mặt BC một góc 45°, suy ra góc tới tại BC (góc với pháp tuyến của BC) là:
+
+i₂ = 90° − 45° = 45°
+
+Bước 3. So sánh góc tới với góc giới hạn: i₂ = 45° > i_(gh) = 41,8°. Vậy tại mặt huyền BC xảy ra hiện tượng phản xạ toàn phần. Tia sáng không ló ra ngoài qua mặt BC mà bị phản xạ trở lại bên trong lăng kính.
+
+Bước 4. Sau khi phản xạ tại BC, phương của tia sáng đổi hướng. Vì tia tới BC hợp với pháp tuyến 45° nên sau phản xạ, phương tia sáng quay đi một góc 90°. Trước khi tới BC, tia sáng song song với AC; sau khi phản xạ, nó song song với AB.
+
+Bước 5. Tia sáng song song với AB thì vuông góc với AC. Vậy góc tới tại mặt AC là i₃ = 0°, suy ra góc khúc xạ bằng 0°: tia sáng ló thẳng ra khỏi lăng kính qua mặt AC, theo phương vuông góc với AC. Phương của tia ló vuông góc với phương của tia tới ban đầu. Hiện tượng phản xạ toàn phần không xảy ra ở mặt AC vì góc tới bằng 0° (nhỏ hơn góc giới hạn).
+
+Đáp số. a) i₂ = 45°. b) Có phản xạ toàn phần tại BC vì 45° > 41,8°. c) Tại AC: i₃ = 0°, tia sáng ló thẳng ra ngoài; tia ló vuông góc với tia tới ban đầu.
+
+Lưu ý.
+
+- Muốn kết luận có phản xạ toàn phần hay không, luôn phải làm đủ hai bước: kiểm tra chiều truyền (từ môi trường chiết quang hơn sang kém) và so sánh góc tới với góc giới hạn.
+
+- Góc tới tại mặt huyền không phải lúc nào cũng bằng 45°; phải suy ra từ hình học của tiết diện lăng kính, không được đoán.
+
+- Với ảo ảnh, cần nêu được nguyên nhân có nhiều lớp không khí có chiết suất giảm dần và tia sáng bị uốn cong dần rồi phản xạ toàn phần.
+
+D. Bài tập ví dụ có lời giải (6 bài, độ khó tăng dần)
+
+Bài D1. Khúc xạ từ không khí vào nước
+
+Đề bài. Chiếu một tia sáng từ không khí vào mặt nước phẳng lặng dưới góc tới i = 30°. Chiết suất của nước là 4/3.
+
+a) Tính sin góc khúc xạ và góc khúc xạ r.
+
+b) Cho biết tia khúc xạ lệch gần hay xa pháp tuyến so với tia tới.
+
+Tóm tắt.
+
+i = 30°
+
+n₁ = 1 (không khí)
+
+n₂ = 4/3 (nước)
+
+Tính sin r, r
+
+Lời giải
+
+Bước 1. Môi trường 1 là không khí (n₁ = 1), môi trường 2 là nước (n₂ = 4/3). Vì n₂ > n₁ nên tia khúc xạ lệch gần pháp tuyến hơn tia tới, nghĩa là r < i.
+
+Bước 2. Áp dụng định luật khúc xạ.
+
+sin i / sin r = n₂/n₁
+
+Bước 3. Suy ra sin r.
+
+sin r = (n₁/n₂)·sin i
+
+Bước 4. Thay số với sin 30° = 0,5.
+
+sin r = (1 : (4/3)) × 0,5 = 0,375
+
+Bước 5. Tính góc khúc xạ.
+
+r = arcsin 0,375 ≈ 22,0°
+
+Bước 6. Kiểm tra: r = 22,0° < i = 30°. Phù hợp.
+
+Bước 7. Hướng dẫn vẽ hình: vẽ mặt nước nằm ngang, phía trên là không khí, phía dưới là nước; dựng pháp tuyến nét đứt tại điểm tới; vẽ tia tới ở phía trên hợp với pháp tuyến 30°; vẽ tia khúc xạ ở phía dưới, bên kia pháp tuyến, hợp với pháp tuyến 22,0°, tức là gần pháp tuyến hơn.
+
+Đáp số. sin r = 0,375; r ≈ 22,0°. Tia khúc xạ lệch gần pháp tuyến hơn tia tới.
+
+Nhận xét sư phạm. Bài cơ bản nhất, dùng để kiểm tra học sinh đã nắm chiều lệch của tia khúc xạ và biết dùng phím arcsin.
+
+Bài D2. Chiết suất và vận tốc ánh sáng
+
+Đề bài.
+
+a) Ánh sáng truyền trong một môi trường trong suốt với vận tốc v = 1,5·10⁸ m/s. Tính chiết suất của môi trường đó.
+
+b) Tính vận tốc ánh sáng trong kim cương có chiết suất 2,42.
+
+c) Trong hai môi trường trên, môi trường nào chiết quang hơn?
+
+Tóm tắt.
+
+v = 1,5·10⁸ m/s
+
+n_(kim) cương = 2,42
+
+c = 3·10⁸ m/s
+
+Tính n, v_(kim) cương
+
+Lời giải
+
+Bước 1. Áp dụng công thức chiết suất.
+
+n = c/v
+
+Bước 2. Thay số.
+
+n = (3·10⁸) : (1,5·10⁸) = 2
+
+Bước 3. Với kim cương, suy ra vận tốc.
+
+v = c/n
+
+Bước 4. Thay số.
+
+v = (3·10⁸) : 2,42 ≈ 1,24·10⁸ m/s
+
+Bước 5. So sánh: n = 2 < n_(kim) cương = 2,42. Kim cương có chiết suất lớn hơn nên chiết quang hơn, và ánh sáng truyền trong kim cương chậm hơn (1,24·10⁸ m/s so với 1,5·10⁸ m/s).
+
+Đáp số. a) n = 2. b) v ≈ 1,24·10⁸ m/s. c) Kim cương chiết quang hơn.
+
+Nhận xét sư phạm. Nhắc học sinh không được viết vận tốc lớn hơn 3·10⁸ m/s; đây là lỗi hay gặp khi lấy nghịch đảo sai.
+
+Bài D3. Khúc xạ từ nước ra không khí
+
+Đề bài. Một tia sáng truyền từ trong nước ra không khí. Góc tới i có sin i = 0,6, tương ứng i ≈ 36,9°. Chiết suất của nước là 4/3.
+
+a) Tính sin góc khúc xạ và góc khúc xạ r.
+
+b) Trong trường hợp này, nếu tăng dần góc tới thì đến một lúc nào đó tia khúc xạ biến mất. Hãy tính góc tới đó.
+
+Tóm tắt.
+
+sin i = 0,6; i ≈ 36,9°
+
+n₁ = 4/3 (nước)
+
+n₂ = 1 (không khí)
+
+Tính sin r, r và i_(gh)
+
+Lời giải
+
+Bước 1. Môi trường 1 là nước (n₁ = 4/3), môi trường 2 là không khí (n₂ = 1). Vì n₂ < n₁ nên r > i: tia khúc xạ lệch xa pháp tuyến hơn tia tới.
+
+Bước 2. Áp dụng định luật khúc xạ.
+
+sin i / sin r = n₂/n₁
+
+Bước 3. Suy ra sin r.
+
+sin r = (n₁/n₂)·sin i
+
+Bước 4. Thay số.
+
+sin r = ((4/3) : 1) × 0,6 = (4/3) × 0,6 = 0,8
+
+Bước 5. Tính góc khúc xạ.
+
+r = arcsin 0,8 ≈ 53,1°
+
+Bước 6. Kiểm tra: r ≈ 53,1° > i ≈ 36,9°. Phù hợp với việc ánh sáng đi ra môi trường chiết quang kém hơn.
+
+Bước 7. Tia khúc xạ biến mất khi nó đi là là trên mặt phân cách, tức là r = 90°. Góc tới tương ứng là góc giới hạn.
+
+sin i_(gh) = n₂/n₁ = 1 : (4/3) = 0,75
+
+i_(gh) = arcsin 0,75 ≈ 48,6°
+
+Đáp số. a) sin r = 0,8; r ≈ 53,1°. b) i_(gh) ≈ 48,6°.
+
+Nhận xét sư phạm. Với cùng một cặp góc có sin là 0,6 và 0,8, chiều truyền quyết định góc nào là góc tới. Đây là chỗ học sinh rất hay lẫn.
+
+Bài D4. Góc giới hạn của các môi trường
+
+Đề bài. Tính góc giới hạn phản xạ toàn phần khi ánh sáng truyền từ mỗi môi trường sau ra không khí:
+
+a) Nước có chiết suất 4/3.
+
+b) Thủy tinh có chiết suất 1,5.
+
+c) Kim cương có chiết suất 2,42.
+
+d) Với thủy tinh ở câu b, một tia sáng tới mặt tiếp giáp với không khí dưới góc tới 50°. Hiện tượng gì xảy ra?
+
+e) Nhận xét về mối liên hệ giữa chiết suất và góc giới hạn.
+
+Tóm tắt.
+
+n₁ lần lượt là 4/3; 1,5; 2,42
+
+n₂ = 1 (không khí)
+
+Tính i_(gh)
+
+Lời giải
+
+Bước 1. Với cả ba trường hợp đều có n₁ > n₂ = 1 nên có thể xảy ra phản xạ toàn phần. Công thức chung.
+
+sin i_(gh) = n₂/n₁ = 1/n₁
+
+Bước 2. Với nước.
+
+sin i_(gh) = 1 : (4/3) = 0,75
+
+i_(gh) = arcsin 0,75 ≈ 48,6°
+
+Bước 3. Với thủy tinh.
+
+sin i_(gh) = 1 : 1,5 = 0,6667
+
+i_(gh) = arcsin 0,6667 ≈ 41,8°
+
+Bước 4. Với kim cương.
+
+sin i_(gh) = 1 : 2,42 ≈ 0,4132
+
+i_(gh) = arcsin 0,4132 ≈ 24,4°
+
+Bước 5. Với thủy tinh, so sánh góc tới 50° với góc giới hạn 41,8°: vì 50° > 41,8° nên xảy ra phản xạ toàn phần. Toàn bộ tia sáng bị phản xạ trở lại trong thủy tinh, không có tia khúc xạ ra không khí.
+
+Bước 6. Nhận xét: chiết suất càng lớn thì sin i_(gh) = 1/n₁ càng nhỏ, do đó góc giới hạn càng nhỏ và hiện tượng phản xạ toàn phần càng dễ xảy ra. Kim cương có góc giới hạn nhỏ nhất trong ba môi trường trên.
+
+Đáp số. a) ≈ 48,6°. b) ≈ 41,8°. c) ≈ 24,4°. d) Phản xạ toàn phần. e) Chiết suất càng lớn thì góc giới hạn càng nhỏ.
+
+Nhận xét sư phạm. Nên cho học sinh ghi nhớ ba con số 48,6°; 41,8°; 24,4° vì chúng xuất hiện rất nhiều trong đề.
+
+Bài D5. Cá dưới nước và chim trên bờ
+
+Đề bài. Một con cá bơi ở độ sâu 1,2 m dưới mặt hồ phẳng lặng. Trên bờ, một con chim đậu trên cành cây cao 2,4 m so với mặt nước, gần như ngay phía trên con cá. Chiết suất của nước là 4/3; của không khí xấp xỉ 1. Coi mắt người và mắt cá đều nhìn gần như vuông góc với mặt nước.
+
+a) Người quan sát trên bờ thấy con cá ở độ sâu bao nhiêu?
+
+b) Con cá nhìn lên thấy con chim ở độ cao bao nhiêu so với mặt nước?
+
+c) Giải thích vì sao trong cả hai trường hợp ảnh đều bị dịch chuyển so với vật.
+
+Tóm tắt.
+
+h = 1,2 m (độ sâu của cá)
+
+H = 2,4 m (độ cao của chim)
+
+n_(nước) = 4/3
+
+Tính h' và H'
+
+Lời giải
+
+Bước 1. Người trên bờ nhìn cá ở trong nước. Áp dụng công thức độ sâu biểu kiến.
+
+h' = h/n
+
+Bước 2. Thay số.
+
+h' = 1,2 : (4/3) = 1,2 × (3/4) = 0,9 m
+
+Bước 3. Vậy người thấy cá ở độ sâu 0,9 m, nông hơn độ sâu thật 0,3 m.
+
+Bước 4. Cá nhìn chim ở trong không khí. Áp dụng công thức độ cao biểu kiến cho mắt đặt trong nước.
+
+H' = n·H
+
+Bước 5. Thay số.
+
+H' = (4/3) × 2,4 = 3,2 m
+
+Bước 6. Vậy cá thấy chim ở độ cao 3,2 m, cao hơn độ cao thật 0,8 m.
+
+Bước 7. Giải thích: ánh sáng từ vật tới mắt bị khúc xạ tại mặt nước, và tia khúc xạ lệch về phía pháp tuyến khi đi vào môi trường chiết quang hơn. Mắt luôn nhìn theo phương của tia sáng đi vào mắt, tức là kéo dài tia khúc xạ ngược về phía vật. Kết quả là ảnh luôn bị dịch chuyển về phía môi trường chiết quang kém hơn, tức là phía không khí. Cá ở dưới nước nên ảnh bị đẩy lên gần mặt nước; chim ở trên không nên ảnh bị đẩy lên cao hơn nữa.
+
+Bước 8. Hướng dẫn vẽ hình: vẽ mặt nước nằm ngang; đặt cá O dưới mặt nước 1,2 m và chim B trên không 2,4 m, cả hai trên cùng một đường thẳng đứng. Vẽ một tia sáng từ cá tới mặt nước rồi khúc xạ ra không khí (góc khúc xạ lớn hơn góc tới); kéo dài tia khúc xạ ngược xuống nước bằng nét đứt, cắt đường thẳng đứng tại ảnh O' cách mặt nước 0,9 m. Làm tương tự theo chiều ngược lại với chim: tia sáng từ chim đi xuống, khúc xạ vào nước với góc khúc xạ nhỏ hơn góc tới; kéo dài tia khúc xạ ngược lên trên bằng nét đứt, cắt đường thẳng đứng tại ảnh B' cách mặt nước 3,2 m.
+
+Đáp số. a) h' = 0,9 m. b) H' = 3,2 m. c) Ảnh luôn dịch về phía môi trường chiết quang kém hơn (không khí).
+
+Nhận xét sư phạm. Câu c) là phần "ăn điểm" vì kiểm tra hiểu bản chất chứ không chỉ thay số.
+
+Bài D6. Tán sắc ánh sáng qua lăng kính
+
+Đề bài. Chiếu một tia sáng trắng hẹp vào mặt bên của một lăng kính thủy tinh dưới góc tới i = 60°. Chiết suất của thủy tinh đối với ánh sáng đỏ là 1,50, đối với ánh sáng tím là 1,54.
+
+a) Tính góc khúc xạ của tia đỏ và tia tím trong thủy tinh.
+
+b) Cho biết tia nào lệch nhiều hơn so với phương tia tới và vì sao.
+
+c) Giải thích vì sao khi tia sáng ló ra khỏi lăng kính, ta thu được một dải màu.
+
+Tóm tắt.
+
+i = 60°
+
+n_(đ) = 1,50
+
+n_(t) = 1,54
+
+Tính r_(đ), r_(t)
+
+Lời giải
+
+Bước 1. Áp dụng định luật khúc xạ tại mặt bên thứ nhất, với môi trường 1 là không khí (n₁ = 1) và môi trường 2 là thủy tinh.
+
+sin i / sin r = n₂/n₁
+
+Bước 2. Suy ra công thức tính sin r.
+
+sin r = sin i / n₂
+
+Bước 3. Với tia đỏ, dùng sin 60° = √3/2 ≈ 0,8660 (giá trị làm tròn).
+
+sin r_(đ) = 0,8660 : 1,50 = 0,5774
+
+r_(đ) = arcsin 0,5774 ≈ 35,3°
+
+Bước 4. Với tia tím.
+
+sin r_(t) = 0,8660 : 1,54 = 0,5624
+
+r_(t) = arcsin 0,5624 ≈ 34,2°
+
+Bước 5. So sánh: r_(t) ≈ 34,2° < r_(đ) ≈ 35,3°. Tia tím bị bẻ gần pháp tuyến hơn, tức là lệch nhiều hơn so với phương tia tới. Góc tách giữa hai tia trong thủy tinh vào khoảng 1,0°.
+
+Bước 6. Giải thích tán sắc: ánh sáng trắng là hỗn hợp của nhiều ánh sáng màu. Chiết suất của thủy tinh đối với ánh sáng tím lớn hơn đối với ánh sáng đỏ. Vì vậy khi đi qua lăng kính, mỗi màu bị lệch một góc khác nhau: đỏ lệch ít nhất, tím lệch nhiều nhất. Kết quả là chùm sáng trắng bị trải ra thành một dải màu liên tục từ đỏ đến tím.
+
+Bước 7. Hướng dẫn vẽ hình: vẽ lăng kính có tiết diện là tam giác, đáy nằm ngang, đỉnh ở trên. Vẽ tia tới trắng ở phía ngoài, chiếu vào mặt bên trái, hợp với pháp tuyến của mặt này góc 60°. Bên trong lăng kính, vẽ hai tia: tia đỏ lệch ít hơn (gần mặt bên trái hơn) và tia tím lệch nhiều hơn (gần đáy hơn). Cả hai tia đều hướng về phía đáy lăng kính. Khi ló ra ở mặt bên phải, vẽ dải màu với tia đỏ ở trên cùng (phía đỉnh) và tia tím ở dưới cùng (phía đáy).
+
+Đáp số. a) r_(đ) ≈ 35,3°; r_(t) ≈ 34,2°. b) Tia tím lệch nhiều hơn. c) Vì chiết suất phụ thuộc màu sắc ánh sáng nên mỗi màu lệch một góc khác nhau.
+
+Nhận xét sư phạm. Bài này cho thấy chỉ cần dùng định luật khúc xạ và hai giá trị chiết suất là đã giải thích được tán sắc, không cần công thức lăng kính tổng quát.
+
+E. Bài tập tự luyện (12 bài)
+
+Bài 1. Chiếu một tia sáng từ không khí vào nước dưới góc tới 45°. Chiết suất của nước là 4/3. Tính sin góc khúc xạ và góc khúc xạ.
+
+Bài 2. Ánh sáng truyền trong một môi trường trong suốt với vận tốc 1,5·10⁸ m/s. Tính chiết suất của môi trường đó. Ánh sáng truyền trong một môi trường khác với vận tốc 2,25·10⁸ m/s; tính chiết suất của môi trường thứ hai.
+
+Bài 3. Một tia sáng truyền từ nước (chiết suất 4/3) ra không khí với góc tới 40°. Tính góc khúc xạ. Cho biết tia khúc xạ lệch gần hay xa pháp tuyến.
+
+Bài 4. Tính góc giới hạn phản xạ toàn phần của kim cương (chiết suất 2,42) đối với không khí.
+
+Bài 5. Một tia sáng truyền từ thủy tinh (chiết suất 1,5) ra không khí với góc tới 30°. Tính góc khúc xạ.
+
+Bài 6. Một tia sáng truyền từ thủy tinh (chiết suất 1,5) ra không khí với góc tới 45°. Hỏi hiện tượng gì xảy ra tại mặt phân cách? Vì sao?
+
+Bài 7. Một con cá ở độ sâu 0,8 m dưới mặt nước. Một người nhìn xuống theo phương gần như vuông góc với mặt nước. Chiết suất của nước là 4/3. Tính độ sâu biểu kiến của con cá.
+
+Bài 8. Giải thích vì sao một chiếc cọc thẳng cắm xiên xuống nước lại trông như bị gãy khúc ngay tại mặt nước, và phần chìm trong nước trông ngắn hơn thực tế. Mô tả bằng lời hình vẽ mà em dùng để giải thích.
+
+Bài 9. Một bể nước sâu 1,6 m. Tính độ sâu biểu kiến của đáy bể khi nhìn từ trên xuống theo phương gần như vuông góc. Chiết suất của nước là 4/3.
+
+Bài 10. Một sợi quang có lõi chiết suất 1,50 và vỏ chiết suất 1,45. Tính góc giới hạn tại mặt tiếp giáp lõi – vỏ và giải thích vì sao ánh sáng bị "nhốt" trong lõi sợi.
+
+Bài 11. Một lăng kính thủy tinh có chiết suất 1,5 và tiết diện thẳng là tam giác đều. Chiếu một tia sáng vuông góc với mặt bên thứ nhất. Chứng tỏ rằng tia sáng bị phản xạ toàn phần tại mặt bên thứ hai. Biết góc giới hạn của thủy tinh đối với không khí là 41,8°.
+
+Bài 12. Vì sao khi chiếu một chùm ánh sáng trắng qua lăng kính ta thu được một dải nhiều màu? Nêu thứ tự các màu trong dải đó và cho biết màu nào lệch nhiều nhất, màu nào lệch ít nhất.
+
+F. Đáp án và hướng dẫn ngắn cho mục E
+
+Bài 1. sin r = (1 : (4/3)) × sin 45° = (3/4) × 0,7071 ≈ 0,5303 (đã dùng √2/2 ≈ 0,7071). r = arcsin 0,5303 ≈ 32,0°.
+
+Bài 2. Môi trường thứ nhất: n = (3·10⁸) : (1,5·10⁸) = 2. Môi trường thứ hai: n = (3·10⁸) : (2,25·10⁸) = 4/3 ≈ 1,33.
+
+Bài 3. sin r = ((4/3) : 1) × sin 40° = (4/3) × 0,6428 ≈ 0,8571. r = arcsin 0,8571 ≈ 59,0°. Vì tia đi ra môi trường chiết quang kém hơn nên r > i: tia khúc xạ lệch xa pháp tuyến hơn tia tới.
+
+Bài 4. sin i_(gh) = 1 : 2,42 ≈ 0,4132. i_(gh) = arcsin 0,4132 ≈ 24,4°.
+
+Bài 5. sin r = 1,5 × sin 30° = 1,5 × 0,5 = 0,75. r = arcsin 0,75 ≈ 48,6°.
+
+Bài 6. Góc giới hạn của thủy tinh đối với không khí là i_(gh) ≈ 41,8°. Vì góc tới 45° > 41,8° nên xảy ra hiện tượng phản xạ toàn phần: toàn bộ tia sáng bị phản xạ trở lại trong thủy tinh, không có tia khúc xạ ra không khí.
+
+Bài 7. h' = h/n = 0,8 : (4/3) = 0,8 × (3/4) = 0,6 m. Con cá trông ở độ sâu 0,6 m.
+
+Bài 8. Ánh sáng từ phần cọc chìm trong nước đi tới mặt nước rồi khúc xạ ra không khí, lệch xa pháp tuyến. Mắt nhìn theo tia khúc xạ nên thấy ảnh của mỗi điểm trên phần chìm bị nâng lên cao hơn vị trí thật, tức là gần mặt nước hơn; do đó phần chìm trông ngắn hơn. Ngoài ra, ảnh của phần chìm không còn thẳng hàng với phần cọc ở trên không, tạo cảm giác cọc bị gãy khúc tại mặt nước. Hình vẽ cần có: mặt nước nằm ngang, cọc xiên, pháp tuyến nét đứt tại điểm tới, tia khúc xạ ra không khí lệch xa pháp tuyến, và tia kéo dài nét đứt xuống nước cắt cọc tại vị trí ảnh nâng cao hơn.
+
+Bài 9. h' = h/n = 1,6 : (4/3) = 1,6 × (3/4) = 1,2 m. Đáy bể trông cách mặt nước 1,2 m, nông hơn thực tế 0,4 m.
+
+Bài 10. sin i_(gh) = n₂/n₁ = 1,45 : 1,50 ≈ 0,9667. i_(gh) = arcsin 0,9667 ≈ 75,2°. Ánh sáng được đưa vào lõi theo phương gần song song với trục sợi; khi tới mặt tiếp giáp lõi – vỏ, góc tới lớn hơn 75,2° nên bị phản xạ toàn phần liên tiếp, không ló ra ngoài, nhờ đó bị "nhốt" trong lõi và truyền đi xa.
+
+Bài 11. Vì tia tới vuông góc với mặt bên thứ nhất nên nó truyền thẳng trong lăng kính. Lăng kính tam giác đều có góc chiết quang A = 60°; tia sáng hợp với mặt bên thứ hai một góc 90° − 60° = 30°, do đó góc tới tại mặt bên thứ hai là 60°. So sánh: 60° > i_(gh) = 41,8° nên tia sáng bị phản xạ toàn phần tại mặt bên thứ hai (không ló ra ngoài).
+
+Bài 12. Ánh sáng trắng là hỗn hợp nhiều ánh sáng màu; chiết suất của thủy tinh đối với mỗi màu khác nhau (nhỏ nhất với màu đỏ, lớn nhất với màu tím), nên khi qua lăng kính mỗi màu bị lệch một góc khác nhau và chùm sáng bị tách thành dải màu. Thứ tự từ trên xuống (phía đỉnh đến phía đáy lăng kính): đỏ, cam, vàng, lục, lam, chàm, tím. Tia tím lệch nhiều nhất, tia đỏ lệch ít nhất.
+
+G. Bài tập nâng cao kiểu đề thi HSG (4 bài, có lời giải đầy đủ)
+
+Bài G1. Lăng kính phản xạ toàn phần và điều kiện về chiết suất
+
+Đề bài. Một lăng kính thủy tinh có tiết diện thẳng là tam giác vuông cân ABC, vuông tại A (AB = AC), mặt huyền là BC. Chiếu một tia sáng đơn sắc vào mặt AB theo phương vuông góc với mặt AB. Lăng kính đặt trong không khí.
+
+a) Vẽ (mô tả bằng lời) đường truyền của tia sáng trong lăng kính và tính góc tới của tia sáng tại mặt huyền BC.
+
+b) Biết chiết suất của thủy tinh là n = 1,5. Hỏi tại BC xảy ra hiện tượng gì? Tính góc giới hạn để chứng minh.
+
+c) Tìm điều kiện của chiết suất n để tại mặt huyền BC xảy ra phản xạ toàn phần.
+
+d) Sau khi phản xạ tại BC, tia sáng đi tới mặt AC dưới góc tới bao nhiêu? Nó ló ra ngoài hay bị phản xạ toàn phần? Phương của tia ló hợp với phương của tia tới ban đầu một góc bao nhiêu?
+
+Tóm tắt.
+
+Lăng kính tam giác vuông cân tại A
+
+Tia tới vuông góc với mặt AB
+
+n = 1,5 (câu b); n chưa biết (câu c)
+
+n_(không) khí = 1
+
+Lời giải
+
+Câu a. Đường truyền và góc tới tại BC.
+
+Bước 1. Tia sáng tới vuông góc với mặt AB nên góc tới tại AB là i₁ = 0°. Theo định luật khúc xạ, sin r₁ = (n₁/n₂)·sin i₁ = 0, suy ra r₁ = 0°. Tia sáng truyền thẳng vào lăng kính, không bị đổi hướng.
+
+Bước 2. Vì tam giác ABC vuông cân tại A nên AB vuông góc với AC. Tia sáng vuông góc với AB thì song song với AC.
+
+Bước 3. Trong tam giác vuông cân, hai góc ở đáy B và C đều bằng 45°. Do đó mặt huyền BC hợp với AC một góc 45°, và cũng hợp với AB một góc 45°.
+
+Bước 4. Tia sáng song song với AC nên nó hợp với mặt BC một góc 45°. Góc tới tại BC là góc giữa tia sáng và pháp tuyến của BC, do đó:
+
+i₂ = 90° − 45° = 45°
+
+Bước 5. Mô tả hình vẽ: vẽ tam giác vuông cân ABC, góc vuông tại A đặt ở phía trên, cạnh huyền BC nằm ở phía dưới. Vẽ tia tới SI vuông góc với AB, đi vào lăng kính và truyền thẳng (song song với AC) tới điểm J trên BC. Tại J vẽ pháp tuyến nét đứt của BC và tia phản xạ JR. Tia JR song song với AB, tới điểm K trên AC và ló thẳng ra ngoài.
+
+Câu b. Kiểm tra hiện tượng tại BC với n = 1,5.
+
+Bước 1. Tính góc giới hạn của thủy tinh đối với không khí.
+
+sin i_(gh) = n₂/n₁ = 1 : 1,5 = 0,6667
+
+i_(gh) = arcsin 0,6667 ≈ 41,8°
+
+Bước 2. So sánh: i₂ = 45° > i_(gh) = 41,8°. Vậy tại mặt huyền BC xảy ra hiện tượng phản xạ toàn phần.
+
+Bước 3. Kết luận: tia sáng không ló ra ngoài qua mặt BC mà bị phản xạ hoàn toàn trở lại bên trong lăng kính.
+
+Câu c. Điều kiện của chiết suất n.
+
+Bước 1. Điều kiện để có phản xạ toàn phần tại BC, khi ánh sáng đi từ thủy tinh (n₁ = n) sang không khí (n₂ = 1), là:
+
+n > 1 và i₂ ≥ i_(gh)
+
+Bước 2. Với i₂ = 45°, viết điều kiện dưới dạng sin. Vì hàm sin tăng trong khoảng từ 0° đến 90° nên bất đẳng thức giữ nguyên chiều.
+
+sin i₂ ≥ sin i_(gh)
+
+Bước 3. Thay sin i₂ = sin 45° = √2/2 và sin i_(gh) = 1/n.
+
+√2/2 ≥ 1/n
+
+Bước 4. Vì n > 0, nhân hai vế với 2n (là số dương) ta được.
+
+n·√2 ≥ 2
+
+Bước 5. Suy ra điều kiện.
+
+n ≥ 2/√2
+
+n ≥ √2
+
+n ≥ 1,414
+
+Bước 6. Vậy muốn xảy ra phản xạ toàn phần tại mặt huyền thì chiết suất của lăng kính phải lớn hơn hoặc bằng √2 ≈ 1,414. Thủy tinh thường có n = 1,5 > 1,414 nên thỏa mãn, đó là lí do lăng kính phản xạ toàn phần được chế tạo bằng thủy tinh.
+
+Câu d. Tia sáng tại mặt AC và phương của tia ló.
+
+Bước 1. Trước khi tới BC, tia sáng song song với AC. Sau khi phản xạ tại BC, phương của tia sáng đổi hướng. Vì tia tới BC hợp với pháp tuyến một góc 45° nên sau phản xạ, phương của tia sáng quay đi một góc bằng 2 × 45° = 90°. Do đó sau phản xạ, tia sáng song song với AB.
+
+Bước 2. Tia sáng song song với AB thì vuông góc với AC, nên góc tới tại mặt AC là i₃ = 0°.
+
+Bước 3. Với i₃ = 0°, góc khúc xạ cũng bằng 0°: tia sáng ló thẳng ra khỏi lăng kính qua mặt AC, theo phương vuông góc với AC.
+
+Bước 4. Vì tia tới ban đầu vuông góc với AB còn tia ló vuông góc với AC, mà AB vuông góc với AC, nên phương của tia ló vuông góc với phương của tia tới ban đầu. Tia sáng đã bị "bẻ" một góc 90°.
+
+Đáp số. a) i₂ = 45°. b) Có phản xạ toàn phần vì 45° > 41,8°. c) n ≥ √2 ≈ 1,414. d) i₃ = 0°; tia ló vuông góc với tia tới ban đầu.
+
+Nhận xét sư phạm. Đây là bài "đinh" của phần phản xạ toàn phần. Câu c) yêu cầu học sinh chuyển từ so sánh góc sang bất đẳng thức của chiết suất; nhiều em quên chiều của bất đẳng thức khi lấy sin.
+
+Bài G2. Cá nhìn chim và chim nhìn cá
+
+Đề bài. Một con cá bơi ở độ sâu 1,2 m dưới mặt hồ phẳng lặng. Một con chim đậu trên cành cao 2,4 m so với mặt nước, gần như ngay phía trên con cá. Chiết suất của nước là 4/3, của không khí xấp xỉ 1. Coi mọi tia sáng tới mắt đều gần vuông góc với mặt nước.
+
+a) Người quan sát trên bờ thấy con cá ở độ sâu bao nhiêu?
+
+b) Con cá nhìn lên thấy con chim ở độ cao bao nhiêu so với mặt nước?
+
+c) Phát biểu một quy tắc chung về chiều dịch chuyển của ảnh qua mặt phân cách phẳng và kiểm tra quy tắc đó với hai kết quả vừa tính.
+
+d) Nếu mắt người quan sát nhìn theo phương xiên một góc lớn (chẳng hạn 60° so với pháp tuyến) thì các công thức h' = h/n và H' = n·H có còn đúng không? Vì sao? Kết luận định tính "cá trông nông hơn" còn đúng không?
+
+Tóm tắt.
+
+h = 1,2 m
+
+H = 2,4 m
+
+n_(nước) = 4/3
+
+Tính h' và H'
+
+Lời giải
+
+Câu a.
+
+Bước 1. Vật (cá) ở trong nước, mắt ở trong không khí. Áp dụng công thức độ sâu biểu kiến.
+
+h' = h/n
+
+Bước 2. Thay số.
+
+h' = 1,2 : (4/3) = 0,9 m
+
+Bước 3. Vậy cá trông ở độ sâu 0,9 m, nông hơn thực tế 0,3 m.
+
+Câu b.
+
+Bước 1. Vật (chim) ở trong không khí, mắt ở trong nước. Áp dụng công thức độ cao biểu kiến.
+
+H' = n·H
+
+Bước 2. Thay số.
+
+H' = (4/3) × 2,4 = 3,2 m
+
+Bước 3. Vậy cá thấy chim ở độ cao 3,2 m, cao hơn thực tế 0,8 m.
+
+Câu c.
+
+Bước 1. Quy tắc chung: ảnh của một vật qua mặt phân cách phẳng luôn bị dịch chuyển về phía môi trường chiết quang kém hơn (phía không khí) so với vị trí thật của vật.
+
+Bước 2. Kiểm tra với cá: cá ở trong nước (môi trường chiết quang hơn). Ảnh bị dịch về phía không khí, tức là đi lên phía mặt nước. Kết quả h' = 0,9 m < h = 1,2 m, đúng là ảnh nâng lên.
+
+Bước 3. Kiểm tra với chim: chim ở trong không khí (môi trường chiết quang kém). Ảnh bị dịch tiếp về phía không khí, tức là đi lên cao hơn nữa. Kết quả H' = 3,2 m > H = 2,4 m, đúng là ảnh nâng lên.
+
+Câu d.
+
+Bước 1. Các công thức h' = h/n và H' = n·H được suy ra với xấp xỉ góc nhỏ (tan i ≈ sin i, tan r ≈ sin r). Khi góc nhìn lớn (ví dụ 60°), xấp xỉ này sai đáng kể, nên các công thức không còn đúng về mặt định lượng.
+
+Bước 2. Chính xác hơn, tỉ số độ sâu biểu kiến và độ sâu thật là h'/h = tan i / tan r, trong đó i là góc của tia sáng trong nước (tại vật) và r là góc của tia ló trong không khí. Biến đổi:
+
+h'/h = (sin i / sin r) × (cos r / cos i)
+
+Theo định luật khúc xạ, sin r = n × sin i với n = 4/3, nên sin i / sin r = 1/n = 0,75. Vì ánh sáng đi từ nước ra không khí nên r > i, do đó cos r < cos i và tỉ số cos r / cos i < 1. Suy ra:
+
+h'/h = 0,75 × (cos r / cos i) < 0,75
+
+nghĩa là h' < 0,75 × h = 0,9 m. Cụ thể h' giảm dần khi góc nhìn xiên tăng: i = 30° cho h' ≈ 0,775 m; i = 40° cho h' ≈ 0,605 m; và khi i tiến tới góc tới hạn 48,6° (tia ló là là mặt nước) thì h' tiến tới 0. Ảnh còn bị dịch chuyển ngang, không còn nằm trên cùng phương thẳng đứng với vật.
+
+Bước 3. Kết luận định tính "cá trông nông hơn thực tế" vẫn đúng, và thực ra còn mạnh hơn: vì r > i nên tan i / tan r = (1/n) × (cos r / cos i) < 1/n < 1, tức ảnh luôn được nâng lên và càng nâng nhiều khi nhìn càng xiên. Giá trị cụ thể h' = h/n = 0,9 m chỉ đúng khi nhìn gần vuông góc.
+
+Đáp số. a) h' = 0,9 m. b) H' = 3,2 m. c) Ảnh dịch về phía môi trường chiết quang kém hơn. d) Không còn đúng định lượng; kết luận định tính vẫn đúng.
+
+Nhận xét sư phạm. Câu d) rèn luyện thói quen kiểm tra điều kiện áp dụng của công thức, một kĩ năng mà đề HSG rất hay khai thác.
+
+Bài G3. Vùng sáng trên mặt nước
+
+Đề bài. Một nguồn sáng điểm S đặt tại đáy một bể nước sâu h = 1,2 m. Nước có chiết suất 4/3, mặt nước phẳng và rộng. Nguồn S phát ánh sáng theo mọi hướng.
+
+a) Tính góc giới hạn phản xạ toàn phần tại mặt nước.
+
+b) Hỏi trên mặt nước có một vùng sáng hay không? Nếu có thì vùng đó có hình dạng gì? Tính kích thước của nó.
+
+c) Những tia sáng tới mặt nước với góc tới lớn hơn góc giới hạn thì đi đâu?
+
+d) Nếu thay nước bằng một chất lỏng trong suốt có chiết suất lớn hơn thì vùng sáng trên mặt nước sẽ rộng ra hay thu hẹp lại? Giải thích.
+
+Tóm tắt.
+
+h = 1,2 m
+
+n₁ = 4/3 (nước)
+
+n₂ = 1 (không khí)
+
+Tính i_(gh), bán kính vùng sáng R
+
+Lời giải
+
+Câu a.
+
+Bước 1. Ánh sáng đi từ nước (n₁ = 4/3) ra không khí (n₂ = 1), có n₁ > n₂ nên có thể xảy ra phản xạ toàn phần.
+
+Bước 2. Áp dụng công thức góc giới hạn.
+
+sin i_(gh) = n₂/n₁ = 1 : (4/3) = 0,75
+
+i_(gh) = arcsin 0,75 ≈ 48,6°
+
+Câu b.
+
+Bước 1. Xét một tia sáng từ S tới mặt nước tại điểm A, cách chân đường vuông góc H (hình chiếu của S lên mặt nước) một đoạn HA = d. Góc tới tại A là góc giữa SA và pháp tuyến.
+
+Bước 2. Trong tam giác vuông SHA, ta có:
+
+d = h·tan i
+
+Bước 3. Nếu tia sáng tới mặt nước với i < i_(gh) thì nó khúc xạ ra ngoài không khí, tạo ra ánh sáng trên mặt nước. Nếu i ≥ i_(gh) thì tia sáng bị phản xạ toàn phần trở lại trong nước, không ló ra ngoài. Vậy ánh sáng chỉ thoát ra trong một vùng giới hạn bởi các tia có i = i_(gh).
+
+Bước 4. Do tính đối xứng trục quanh đường thẳng đứng SH, vùng sáng trên mặt nước là một hình tròn tâm H.
+
+Bước 5. Bán kính của vùng sáng ứng với i = i_(gh).
+
+R = h·tan i_(gh)
+
+Bước 6. Thay số với tan 48,6° ≈ 1,1339 (giá trị làm tròn).
+
+R = 1,2 × 1,1339 ≈ 1,36 m
+
+Bước 7. Vậy trên mặt nước có một vùng sáng hình tròn, tâm nằm ngay trên nguồn sáng, bán kính khoảng 1,36 m.
+
+Câu c.
+
+Bước 1. Những tia sáng tới mặt nước với góc tới lớn hơn i_(gh) = 48,6° bị phản xạ toàn phần.
+
+Bước 2. Chúng bị hắt trở lại trong nước, không thoát ra ngoài. Vì vậy, nếu nhìn từ trên xuống, phần mặt nước nằm ngoài vòng tròn bán kính 1,36 m sẽ tối (không nhận được ánh sáng trực tiếp từ nguồn S).
+
+Câu d.
+
+Bước 1. Nếu chiết suất n₁ của chất lỏng tăng lên, thì sin i_(gh) = 1/n₁ giảm xuống.
+
+Bước 2. Vì hàm sin tăng trong khoảng từ 0° đến 90°, sin i_(gh) giảm nghĩa là i_(gh) giảm.
+
+Bước 3. Do đó tan i_(gh) cũng giảm và bán kính R = h·tan i_(gh) giảm.
+
+Bước 4. Kết luận: vùng sáng trên mặt nước thu hẹp lại khi chiết suất của chất lỏng tăng.
+
+Đáp số. a) i_(gh) ≈ 48,6°. b) Vùng sáng là hình tròn bán kính R ≈ 1,36 m. c) Bị phản xạ toàn phần trở lại trong nước. d) Vùng sáng thu hẹp lại.
+
+Nhận xét sư phạm. Đây là dạng bài rất "đề HSG": một hiện tượng quang học đơn giản nhưng phải dựng hình và dùng lượng giác. Cần nhắc học sinh bước vẽ hình và bước lập luận về tính đối xứng trục trước khi tính.
+
+Bài G4. Ảnh của vật qua hai lớp trong suốt
+
+Đề bài. Đáy một bể nước phẳng được lát một tấm thủy tinh trong suốt dày 0,4 m có chiết suất 1,5. Trên tấm thủy tinh là một lớp nước dày 0,6 m có chiết suất 4/3. Một vật nhỏ nằm sát mặt dưới của tấm thủy tinh, tức là sát đáy bể. Một người quan sát từ trên cao nhìn xuống theo phương gần như vuông góc với mặt nước.
+
+a) Tính độ sâu biểu kiến của vật.
+
+b) Nếu cả bể sâu 1,0 m đều chứa nước (không có tấm thủy tinh) và vật vẫn ở đáy bể thì độ sâu biểu kiến là bao nhiêu? So sánh với kết quả câu a) và giải thích.
+
+c) Vật nằm đúng tại mặt phân cách giữa nước và thủy tinh (cách mặt nước 0,6 m). Tính độ sâu biểu kiến của vật khi đó.
+
+d) Vì sao có thể cộng trực tiếp các độ sâu biểu kiến của từng lớp?
+
+Tóm tắt.
+
+Lớp nước: h₁ = 0,6 m; n₁ = 4/3
+
+Lớp thủy tinh: h₂ = 0,4 m; n₂ = 1,5
+
+Tính h' của vật ở đáy
+
+Lời giải
+
+Câu a.
+
+Bước 1. Vật được nhìn qua hai lớp trong suốt phẳng song song: lớp thủy tinh dày h₂ = 0,4 m (n₂ = 1,5) và lớp nước dày h₁ = 0,6 m (n₁ = 4/3). Mắt đặt trong không khí.
+
+Bước 2. Áp dụng công thức cộng độ sâu biểu kiến của các lớp.
+
+h' = h₁/n₁ + h₂/n₂
+
+Bước 3. Tính độ sâu biểu kiến gây ra bởi lớp nước.
+
+h₁/n₁ = 0,6 : (4/3) = 0,45 m
+
+Bước 4. Tính độ sâu biểu kiến gây ra bởi lớp thủy tinh.
+
+h₂/n₂ = 0,4 : 1,5 ≈ 0,2667 m
+
+Bước 5. Cộng lại.
+
+h' = 0,45 + 0,2667 ≈ 0,7167 m
+
+Bước 6. Vậy vật ở đáy bể trông như cách mặt nước khoảng 0,72 m, trong khi độ sâu thật là 0,6 + 0,4 = 1,0 m.
+
+Câu b.
+
+Bước 1. Nếu cả bể sâu 1,0 m đều là nước thì độ sâu biểu kiến là:
+
+h'_nước = 1,0 : (4/3) = 0,75 m
+
+Bước 2. So sánh: h' ≈ 0,7167 m < h'_nước = 0,75 m. Vậy với tấm thủy tinh ở đáy, vật trông nông hơn một chút so với trường hợp toàn bộ bể là nước.
+
+Bước 3. Giải thích: thủy tinh có chiết suất 1,5 lớn hơn chiết suất của nước 4/3 ≈ 1,33. Môi trường có chiết suất càng lớn thì "nén" ảnh càng mạnh, làm độ sâu biểu kiến càng nhỏ. Vì vậy lớp thủy tinh ở đáy làm vật trông nông hơn so với khi lớp đó cũng là nước.
+
+Câu c.
+
+Bước 1. Vật nằm tại mặt phân cách nước – thủy tinh, cách mặt nước 0,6 m. Như vậy vật nằm trong nước và chỉ được nhìn qua lớp nước dày 0,6 m.
+
+Bước 2. Áp dụng công thức độ sâu biểu kiến cho một lớp.
+
+h' = 0,6 : (4/3) = 0,45 m
+
+Bước 3. Vậy độ sâu biểu kiến của vật là 0,45 m.
+
+Câu d.
+
+Bước 1. Khi mắt nhìn gần như vuông góc, các tia sáng được xét đều có góc rất nhỏ, nên có thể dùng xấp xỉ tan ≈ sin cho mọi tia.
+
+Bước 2. Với hai lớp phẳng song song, ảnh tạo bởi lớp dưới (thủy tinh – nước) lại đóng vai trò vật đối với lớp trên (nước – không khí). Vì mỗi lần qua một mặt phân cách, độ sâu biểu kiến chỉ bị chia cho chiết suất của lớp tương ứng, nên các hệ số nhân lại đúng bằng việc cộng trực tiếp các độ sâu biểu kiến.
+
+Bước 3. Cụ thể, xét lần lượt: qua mặt thủy tinh – nước, vật ở sâu h₂ trong thủy tinh cho ảnh cách mặt phân cách đó một đoạn h₂·(4/3)/1,5 = h₂ × 8/9 ≈ 0,3556 m (với h₂ = 0,4 m). Ảnh này nằm trong nước, cách mặt nước một đoạn 0,6 + 0,3556 = 0,9556 m. Qua mặt nước – không khí, độ sâu biểu kiến cuối cùng là 0,9556 : (4/3) ≈ 0,7167 m. Kết quả trùng với cách cộng trực tiếp, chứng tỏ công thức cộng là đúng.
+
+Đáp số. a) h' ≈ 0,72 m. b) 0,75 m; tấm thủy tinh làm vật trông nông hơn một chút. c) 0,45 m. d) Vì ảnh của lớp dưới đóng vai trò vật của lớp trên và phép xấp xỉ góc nhỏ cho phép nhân liên tiếp các hệ số.
+
+Nhận xét sư phạm. Bài này kiểm tra khả năng chia bài toán nhiều lớp thành các bước đơn giản. Học sinh nên trình bày theo kiểu "xét lần lượt từng mặt phân cách" để ăn điểm trình bày.
+
+H. Câu hỏi trắc nghiệm nhanh (10 câu, 4 lựa chọn A/B/C/D, kèm đáp án và giải thích 1 dòng)
+
+Câu 1. Khi một tia sáng truyền từ không khí vào nước thì
+
+A. tia khúc xạ lệch xa pháp tuyến hơn so với tia tới.
+
+B. tia khúc xạ lệch gần pháp tuyến hơn so với tia tới.
+
+C. tia khúc xạ trùng với tia tới.
+
+D. tia khúc xạ vuông góc với tia tới.
+
+Câu 2. Chiết suất của nước là 4/3. Vận tốc ánh sáng trong nước là
+
+A. 2,25·10⁸ m/s.
+
+B. 4,00·10⁸ m/s.
+
+C. 3,00·10⁸ m/s.
+
+D. 1,50·10⁸ m/s.
+
+Câu 3. Điều kiện để xảy ra hiện tượng phản xạ toàn phần là
+
+A. ánh sáng truyền từ môi trường chiết quang kém sang môi trường chiết quang hơn.
+
+B. ánh sáng truyền từ môi trường chiết quang hơn sang môi trường chiết quang kém và góc tới lớn hơn hoặc bằng góc giới hạn.
+
+C. góc tới nhỏ hơn góc giới hạn.
+
+D. hai môi trường có cùng chiết suất.
+
+Câu 4. Góc giới hạn phản xạ toàn phần khi ánh sáng truyền từ thủy tinh (chiết suất 1,5) ra không khí xấp xỉ bằng
+
+A. 30,0°.
+
+B. 41,8°.
+
+C. 48,6°.
+
+D. 62,7°.
+
+Câu 5. Một tia sáng truyền từ nước (chiết suất 4/3) ra không khí với góc tới 30°. Góc khúc xạ bằng
+
+A. 22,0°.
+
+B. 30,0°.
+
+C. 41,8°.
+
+D. 53,1°.
+
+Câu 6. Một con cá ở độ sâu 0,9 m dưới mặt nước (chiết suất 4/3). Nhìn từ trên xuống theo phương gần như vuông góc, người ta thấy con cá cách mặt nước
+
+A. 0,45 m.
+
+B. 0,675 m.
+
+C. 0,90 m.
+
+D. 1,20 m.
+
+Câu 7. Khi chiếu một chùm ánh sáng trắng qua lăng kính, tia lệch nhiều nhất là tia
+
+A. đỏ.
+
+B. vàng.
+
+C. lục.
+
+D. tím.
+
+Câu 8. Trong sợi quang học, ánh sáng được truyền đi xa chủ yếu nhờ
+
+A. hiện tượng phản xạ toàn phần liên tiếp tại mặt tiếp giáp giữa lõi và vỏ.
+
+B. hiện tượng khúc xạ liên tiếp qua nhiều lớp.
+
+C. hiện tượng tán sắc ánh sáng.
+
+D. hiện tượng hấp thụ rồi phát lại ánh sáng.
+
+Câu 9. Vì sao tia tím lệch nhiều hơn tia đỏ khi truyền qua lăng kính thủy tinh?
+
+A. Vì tia tím có tần số nhỏ hơn tia đỏ.
+
+B. Vì chiết suất của thủy tinh đối với ánh sáng tím lớn hơn đối với ánh sáng đỏ.
+
+C. Vì tia tím truyền nhanh hơn tia đỏ trong thủy tinh.
+
+D. Vì tia tím có bước sóng dài hơn tia đỏ.
+
+Câu 10. Phát biểu nào sau đây đúng?
+
+A. Hiện tượng khúc xạ chỉ xảy ra khi ánh sáng truyền từ không khí vào nước.
+
+B. Khi góc tới bằng 0° thì góc khúc xạ cũng bằng 0° với mọi cặp môi trường trong suốt.
+
+C. Hiện tượng phản xạ toàn phần xảy ra với mọi giá trị của góc tới.
+
+D. Chiết suất của mọi môi trường trong suốt đều nhỏ hơn 1.
+
+Đáp án và giải thích
+
+Câu 1. Đáp án B. Nước có chiết suất lớn hơn không khí nên tia khúc xạ lệch gần pháp tuyến hơn, tức r < i.
+
+Câu 2. Đáp án A. v = c/n = (3·10⁸) : (4/3) = 2,25·10⁸ m/s.
+
+Câu 3. Đáp án B. Phản xạ toàn phần cần đủ hai điều kiện: đi từ môi trường chiết quang hơn sang kém và i ≥ i_(gh).
+
+Câu 4. Đáp án B. sin i_(gh) = 1 : 1,5 ≈ 0,6667 nên i_(gh) ≈ 41,8°.
+
+Câu 5. Đáp án C. sin r = (4/3) × sin 30° = 0,6667 nên r ≈ 41,8°.
+
+Câu 6. Đáp án B. h' = h/n = 0,9 : (4/3) = 0,675 m; cá trông nông hơn thực tế.
+
+Câu 7. Đáp án D. Chiết suất đối với ánh sáng tím lớn nhất nên tia tím lệch nhiều nhất.
+
+Câu 8. Đáp án A. Ánh sáng bị phản xạ toàn phần liên tiếp ở mặt tiếp giáp lõi – vỏ nên bị giữ trong lõi.
+
+Câu 9. Đáp án B. n_(tím) > n_(đỏ) nên tia tím bị bẻ mạnh hơn và lệch nhiều hơn.
+
+Câu 10. Đáp án B. Với i = 0°, định luật khúc xạ cho sin r = 0 nên r = 0° trong mọi trường hợp.
+
+I. Lỗi thường gặp và ghi chú sư phạm
+
+I1. Lỗi thường gặp của học sinh
+
+1. Đo góc sai quy ước. Đo góc tới và góc khúc xạ so với mặt phân cách thay vì so với pháp tuyến. Đây là lỗi phổ biến nhất và làm sai toàn bộ bài. Cách sửa: luôn vẽ pháp tuyến nét đứt trước, rồi mới vẽ tia.
+
+2. Viết ngược tỉ số chiết suất. Viết sin i / sin r = n₁/n₂ thay vì n₂/n₁. Cách sửa: nhớ "tử là môi trường khúc xạ". Kiểm tra bằng dấu hiệu vật lí: nếu ánh sáng đi vào môi trường chiết quang hơn mà tính ra r > i thì chắc chắn đã viết ngược.
+
+3. Tưởng rằng vào nước thì góc khúc xạ lớn hơn góc tới. Học sinh hay nhớ nhầm "vào nước thì tia sáng bị bẻ ra". Thực tế ngược lại: vào môi trường chiết quang hơn thì lệch gần pháp tuyến.
+
+4. Nghĩ rằng phản xạ toàn phần xảy ra với mọi góc tới. Phản xạ toàn phần chỉ xảy ra khi i ≥ i_(gh); với góc tới nhỏ hơn thì tia sáng vẫn khúc xạ ra ngoài.
+
+5. Nghĩ rằng phản xạ toàn phần xảy ra khi ánh sáng đi từ không khí vào nước. Sai. Điều kiện bắt buộc là ánh sáng phải đi từ môi trường chiết quang hơn sang môi trường chiết quang kém.
+
+6. Lẫn "phản xạ toàn phần" với "phản xạ thông thường". Ở mọi mặt phân cách, luôn có một phần ánh sáng bị phản xạ trở lại. "Toàn phần" có nghĩa là toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ nào.
+
+7. Nhầm sin i_(gh) = n₁/n₂. Kết quả phải luôn nhỏ hơn 1; nếu tính ra lớn hơn 1 thì đã nhầm (hoặc trường hợp đó không có phản xạ toàn phần).
+
+8. Cho rằng chiết suất phụ thuộc góc tới. Chiết suất là tính chất của môi trường (và phụ thuộc màu sắc ánh sáng), không phụ thuộc góc tới.
+
+9. Nghĩ rằng môi trường chiết quang hơn thì ánh sáng truyền nhanh hơn. Ngược lại: chiết suất lớn thì ánh sáng truyền chậm hơn.
+
+10. Nhầm thứ tự màu trong dải quang phổ. Nhiều em tưởng tia đỏ lệch nhiều nhất. Thực tế tia đỏ lệch ít nhất, tia tím lệch nhiều nhất.
+
+11. Áp dụng h' = h/n cho mọi trường hợp nhìn xiên. Công thức này chỉ đúng khi nhìn gần vuông góc; nhìn xiên nhiều thì chỉ kết luận được định tính.
+
+12. Nhầm "tia khúc xạ đi là là trên mặt phân cách" với "không có tia khúc xạ". Khi r = 90° vẫn còn tia khúc xạ (nằm sát mặt phân cách); chỉ khi i > i_(gh) thì tia khúc xạ mới biến mất hoàn toàn.
+
+13. Sai đơn vị vận tốc. Ghi vận tốc ánh sáng bằng m/s mà quên lũy thừa 10, hoặc gán đơn vị cho chiết suất.
+
+14. Không kiểm tra điều kiện áp dụng công thức. Với bài nhiều lớp trong suốt, học sinh hay quên rằng các công thức cộng độ sâu biểu kiến chỉ đúng khi mắt nhìn gần vuông góc.
+
+I2. Ghi chú sư phạm
+
+Về trình tự dạy học. Nên dạy theo trình tự: quan sát hiện tượng thực tế, làm thí nghiệm, rút ra kết luận định tính, rồi mới đưa công thức dạng sin. Học sinh lớp 9 tiếp thu công thức sin dễ dàng hơn nhiều nếu đã "thấy" hiện tượng trước.
+
+Về thí nghiệm nên làm. Ba thí nghiệm rẻ tiền và hiệu quả:
+
+- Đặt một đồng xu ở đáy chậu, lùi ra xa cho đến khi vừa mất dấu đồng xu, rồi đổ nước từ từ vào chậu: đồng xu "hiện ra" trở lại. Thí nghiệm này giải thích được cả hiện tượng khúc xạ.
+
+- Chiếu tia laser vào bể nước có pha vài giọt sữa để nhìn rõ đường truyền tia sáng; thay đổi góc tới và đo góc khúc xạ. Có thể dùng bể thủy tinh và đèn laser.
+
+- Chiếu chùm sáng trắng hẹp (đèn pin có khe hẹp, hoặc ánh sáng Mặt Trời) qua lăng kính, hứng dải màu lên màn trắng.
+
+Về an toàn. Tuyệt đối không chiếu tia laser vào mắt người khác, không soi gương phản chiếu tia laser. Nhắc học sinh điều này trước mỗi buổi thực hành.
+
+Về câu hỏi thực hành trong đề thi. Đề HSG thường yêu cầu: nêu dụng cụ, nêu các bước tiến hành, nêu hiện tượng quan sát, ghi bảng số liệu và xử lí. Học sinh cần được luyện cách trả lời đủ bốn phần đó, và phải nêu được một biện pháp giảm sai số (ví dụ: đo nhiều lần rồi lấy trung bình, giữ mặt nước yên tĩnh, đánh dấu phương tia sáng ở xa để giảm sai số góc).
+
+Về liên hệ thực tế. Nên dành thời gian cho các câu hỏi mở: vì sao người đi câu dùng lao phải phóng thấp hơn vị trí nhìn thấy con cá; vì sao bể bơi lúc nào cũng trông nông hơn thực tế; vì sao kim cương lấp lánh hơn thủy tinh; vì sao cầu vồng chỉ xuất hiện khi ta quay lưng về phía Mặt Trời. Những câu này giúp học sinh nhớ bản chất vật lí thay vì nhớ công thức máy móc.
+
+Về phân bổ thời lượng. Với một buổi bồi dưỡng 3 giờ, nên dành khoảng 60 phút cho lý thuyết và thí nghiệm, 60 phút cho các dạng bài (tập trung vào Dạng 2, Dạng 4 và Dạng 5), 45 phút cho luyện đề nâng cao và 15 phút chữa lỗi thường gặp.
+
+Về lưu ý riêng cho từng địa phương. Với học sinh dự thi tại Hà Nội, do phạm vi có thể chỉ đến hết học kì 1 lớp 9, cần kiểm tra thông báo chính thức hằng năm để biết phần Quang học (thường thuộc học kì 2) có nằm trong đề hay không. Dù vậy, vẫn nên dạy đủ chuyên đề vì đây là kiến thức nền quan trọng. Với học sinh Thành phố Hồ Chí Minh, đề tự luận 120 phút thường có 4 đến 5 câu, trong đó phần quang học chiếm khoảng 2 điểm và hay gắn với thực tế.
+
+Về mức độ đề. Khi ra đề, nên giữ tỉ lệ khoảng 50% câu ở mức nhận biết và thông hiểu (dạng 1, 2, 3), 30% ở mức vận dụng (dạng 4, 5, 6) và 20% ở mức vận dụng cao (dạng 7 và các bài G). Các bài vận dụng cao nên là bài tổng hợp nhiều bước, ví dụ kết hợp phản xạ toàn phần với hình học lăng kính, hoặc kết hợp độ sâu biểu kiến với nhiều lớp môi trường.
+
+Về ngôn ngữ. Khi chấm bài, cần yêu cầu học sinh viết đúng thuật ngữ: "pháp tuyến", "mặt phẳng tới", "góc giới hạn phản xạ toàn phần", "chiết suất", "tán sắc". Nhiều em hiểu đúng nhưng diễn đạt mơ hồ nên mất điểm ở câu hỏi lí thuyết.

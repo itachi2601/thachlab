@@ -1,0 +1,2527 @@
+Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều
+
+A. Yêu cầu cần đạt và phạm vi
+
+A1. Yêu cầu cần đạt theo Chương trình GDPT 2018 (phần Vật lí, mạch nội dung Năng lượng và sự biến đổi)
+
+  Lưu ý phạm vi (đã đối chiếu Yêu cầu cần đạt môn KHTN – Chương trình GDPT 2018, phần lớp 9, mục Điện từ): Yêu cầu cần đạt của chương trình cho mạch Điện từ chỉ có ba dòng: (1) thực hiện thí nghiệm rút ra kết luận khi số đường sức từ xuyên qua tiết diện của cuộn dây dẫn kín biến thiên thì trong cuộn dây xuất hiện dòng điện cảm ứng; (2) thực hiện thí nghiệm nêu được nguyên tắc tạo ra dòng điện xoay chiều; (3) lấy được ví dụ chứng tỏ dòng điện xoay chiều có tác dụng nhiệt, phát sáng, tác dụng từ, tác dụng sinh lí. Vì vậy trong chuyên đề này:
+
+  - Các nội dung về nam châm, từ trường, từ phổ, lực từ, quy tắc bàn tay trái, định luật Len-xơ, công thức f = n.p và máy phát điện là phần ôn tập và mở rộng, không nằm trong ba yêu cầu cần đạt nói trên.
+
+  - Máy biến thế và truyền tải điện năng KHÔNG có trong mục lục cả ba bộ sách giáo khoa hiện hành (đã kiểm chứng), nhưng đề thi học sinh giỏi và đề thi vào lớp 10 chuyên vẫn thường ra. Đây là NỘI DUNG BỔ SUNG NGOÀI YÊU CẦU CẦN ĐẠT LỚP 9 — được dạy trong tài liệu này nhưng phải nói rõ với học sinh. Các mục A1.12, A1.13, A1.15, các mục B1.13 – B1.14, hai Dạng 4 – 5 và các bài D1 – D3, D5 – D6, G1 – G2, G4, H5 – H8 đều thuộc nhóm này.
+
+  - Cảm ứng điện từ chỉ dạy ở mức ĐỊNH TÍNH. Tuyệt đối không dùng công thức suất điện động cảm ứng, từ thông hay tích phân ở lớp 9.
+
+Sau khi học xong chuyên đề này, học sinh cần:
+
+1. Nêu được nam châm nào cũng có hai cực; hai cực cùng tên thì đẩy nhau, hai cực khác tên thì hút nhau; mô tả được tương tác giữa hai nam châm và giữa nam châm với dòng điện.
+
+2. Nêu được từ trường tồn tại trong không gian bao quanh nam châm, quanh dây dẫn có dòng điện và quanh Trái Đất; từ trường tác dụng lực lên nam châm thử đặt trong nó.
+
+3. Nêu được từ phổ là hình ảnh các mạt sắt sắp xếp trong từ trường; đường sức từ là những đường có chiều xác định, chiều của đường sức từ tại một điểm là chiều của từ trường tại điểm đó.
+
+4. Nêu được chiều đường sức từ của nam châm thẳng (ra ở cực Bắc, vào ở cực Nam), của ống dây có dòng điện (xác định bằng quy tắc nắm tay phải) và của nam châm chữ U.
+
+5. Phát biểu và vận dụng được quy tắc bàn tay trái để xác định chiều của lực từ tác dụng lên dây dẫn thẳng có dòng điện đặt trong từ trường đều.
+
+6. Nêu được cấu tạo của nam châm điện và cách làm tăng lực từ của nam châm điện; giải thích được vai trò của lõi sắt non.
+
+7. Nêu được hiện tượng cảm ứng điện từ là hiện tượng xuất hiện dòng điện cảm ứng trong một mạch kín khi có sự biến thiên của từ trường qua mạch; nêu được điều kiện xuất hiện dòng điện cảm ứng: số đường sức từ xuyên qua tiết diện của cuộn dây biến thiên.
+
+8. Phát biểu được định luật Len-xơ ở mức định tính: dòng điện cảm ứng có chiều sao cho từ trường do nó sinh ra chống lại sự biến thiên của từ trường đã sinh ra nó.
+
+9. Nêu được dòng điện xoay chiều là dòng điện có chiều luân phiên thay đổi theo thời gian; nêu được nguyên tắc tạo ra dòng điện xoay chiều bằng cách cho khung dây quay trong từ trường (hoặc cho nam châm quay trước khung dây).
+
+10. Viết và vận dụng được công thức tần số của dòng điện xoay chiều f = n.p, trong đó n là số vòng quay mỗi giây của rôto và p là số cặp cực.
+
+11. Nêu được cấu tạo và hoạt động của máy phát điện xoay chiều; phân biệt được rôto và stato; biết hai loại máy phát điện xoay chiều thường gặp.
+
+12. Nêu được cấu tạo và nguyên tắc hoạt động của máy biến thế; viết và vận dụng được công thức U₁/U₂ = N₁/N₂; phân biệt máy tăng thế và máy hạ thế; giải thích được vì sao máy biến thế chỉ hoạt động với dòng điện xoay chiều. (Nội dung bổ sung ngoài YCCĐ lớp 9 — xem ghi chú đầu mục A1.)
+
+13. Nêu được vì sao phải tăng hiệu điện thế trước khi truyền tải điện năng đi xa; viết và vận dụng được công thức công suất hao phí trên đường dây tải điện P_(hp) = R.I², từ đó nêu được kết luận P_(hp) tỉ lệ nghịch với bình phương hiệu điện thế truyền tải. (Nội dung bổ sung ngoài YCCĐ lớp 9 — xem ghi chú đầu mục A1.)
+
+14. Nêu được các tác dụng nhiệt, quang, từ của dòng điện xoay chiều và lấy được ví dụ ứng dụng tương ứng trong đời sống; nêu được một số biện pháp an toàn khi sử dụng điện.
+
+15. Thực hiện được thí nghiệm quan sát hiện tượng cảm ứng điện từ (phần này thuộc YCCĐ), thí nghiệm chế tạo máy biến thế đơn giản và đo hiệu điện thế sơ cấp – thứ cấp (phần máy biến thế là nội dung bổ sung ngoài YCCĐ lớp 9 — xem ghi chú đầu mục A1); ghi kết quả kèm sai số và rút ra nhận xét về tỉ số U₁/U₂ so với tỉ số N₁/N₂.
+
+A2. Phạm vi mở rộng cho học sinh giỏi
+
+Chuyên đề mở rộng thêm các nội dung:
+
+- Khái niệm từ thông Φ ở mức mô tả – định tính (số đường sức từ xuyên qua một diện tích) để nói chính xác bản chất của "sự biến thiên", nhưng không dùng biểu thức định lượng của từ thông và không dùng định luật Faraday dạng e = −ΔΦ/Δt.
+
+- Phân biệt quy tắc nắm tay phải (tìm chiều đường sức từ của ống dây) và quy tắc bàn tay trái (tìm chiều lực từ) – đây là cặp quy tắc học sinh hay lẫn nhất.
+
+- Định luật Len-xơ phát biểu định tính và mối liên hệ với định luật bảo toàn năng lượng; phân tích chiều dòng điện cảm ứng trong các tình huống: nam châm lại gần, nam châm ra xa, đóng – ngắt mạch, thay đổi cường độ dòng điện bằng biến trở, khung dây quay trong từ trường.
+
+- Máy biến thế thực tế: hao phí do điện trở cuộn dây, do dòng Fu-cô trong lõi, do từ thông rò; hiệu suất máy biến thế; vì sao lõi thép phải ghép từ các lá thép mỏng cách điện với nhau.
+
+- Mở rộng tỉ lệ dòng điện ở máy biến thế lí tưởng: U₁.I₁ = U₂.I₂ và I₁/I₂ = N₂/N₁ (chỉ dùng cho đội tuyển, kèm giả thiết bỏ qua hao phí).
+
+- Độ giảm thế trên đường dây ΔU = I.R và hiệu điện thế thực tế ở nơi tiêu thụ U_(tt) = U_(tr) − ΔU; bài toán chọn tiết diện dây dẫn và chiều dài đường dây từ công suất hao phí cho phép.
+
+- Hệ thống truyền tải nhiều cấp: máy tăng thế ở nhà máy – đường dây cao thế – máy hạ thế ở trạm biến áp khu vực – máy hạ thế ở khu dân cư, với các mức điện áp thực tế của Việt Nam (500 kV, 220 kV, 110 kV, 35 kV, 22 kV, 10 kV, 0,4 kV và 220 V trong hộ gia đình).
+
+- Tần số f = n.p vận dụng cho máy phát có rôto quay qua hệ truyền động đai hoặc bánh răng (tỉ số truyền), giải thích vì sao nhà máy điện buộc phải giữ tần số lưới ổn định ở 50 Hz.
+
+- Giá trị hiệu dụng ở mức định tính và ghi chú mở rộng về giá trị cực đại (U₀ ≈ √2.U ≈ 1,41.U, với lưới 220 V thì U₀ ≈ 311 V).
+
+- Dòng điện xoay chiều ba pha, dòng điện xoay chiều tần số cao dùng trong lò cảm ứng, nấu chảy kim loại (chỉ giới thiệu, không tính toán).
+
+- Bài toán thực nghiệm – thiết kế: chế tạo máy biến thế đơn giản, xử lí số liệu đo, đánh giá nguyên nhân sai lệch giữa tỉ số hiệu điện thế đo được và tỉ số vòng dây.
+
+Ranh giới kiến thức bắt buộc của chuyên đề này (cần ghi rõ cho học sinh):
+
+- Phần cảm ứng điện từ: chỉ ở mức ĐỊNH TÍNH. Chỉ dùng các phát biểu: "khi số đường sức từ xuyên qua tiết diện cuộn dây biến thiên thì trong cuộn dây xuất hiện dòng điện cảm ứng"; "chiều dòng điện cảm ứng chống lại sự biến thiên của từ thông". Tuyệt đối không dùng suất điện động cảm ứng dạng e = −ΔΦ/Δt, không dùng định luật Faraday dạng định lượng, không dùng tích phân và không dùng biểu thức Φ = B.S.cosα để tính toán.
+
+- Phần máy biến thế và hao phí truyền tải: được phép tính ĐỊNH LƯỢNG, nhưng phải nhớ đây là nội dung bổ sung ngoài Yêu cầu cần đạt lớp 9 (máy biến thế và truyền tải điện năng không có trong mục lục cả ba bộ sách giáo khoa hiện hành; đề thi học sinh giỏi và đề thi vào lớp 10 chuyên vẫn ra). Được dùng các công thức: U₁/U₂ = N₁/N₂; P_(hp) = R.I²; và dạng tỉ lệ mở rộng P_(hp) = P².R/U² (hệ quả theo tỉ lệ, khi công suất truyền đi và điện trở dây không đổi).
+
+- Các bài toán đều giải bằng biến đổi đại số, tỉ lệ thuận – tỉ lệ nghịch, không dùng đạo hàm, không dùng vectơ, không dùng số phức.
+
+B. Lý thuyết trọng tâm
+
+B1. Kiến thức chuẩn theo SGK
+
+1. Nam châm và tương tác từ
+
+Nam châm là vật có từ tính. Mỗi nam châm có hai cực: cực Bắc (kí hiệu N) và cực Nam (kí hiệu S). Hiện nay thường dùng nam châm vĩnh cửu làm bằng hợp kim hoặc nam châm ferit, nam châm đất hiếm (neodymium) có từ tính rất mạnh.
+
+Tương tác giữa hai nam châm:
+
+- Hai cực cùng tên (Bắc – Bắc hoặc Nam – Nam) thì đẩy nhau.
+
+- Hai cực khác tên (Bắc – Nam) thì hút nhau.
+
+Lực tương tác đó gọi là lực từ. Lực từ không cần vật tiếp xúc, nó truyền qua khoảng không gian giữa hai nam châm.
+
+Một nam châm thẳng được treo tự do, cân bằng theo phương Bắc – Nam của Trái Đất: đầu quay về phía Bắc địa lí là cực Bắc, đầu quay về phía Nam địa lí là cực Nam. Đó là nguyên lí của la bàn.
+
+Khi bẻ đôi một nam châm, mỗi mảnh lại trở thành một nam châm mới có đủ hai cực. Không thể tách riêng một cực của nam châm. Đây là điểm khác biệt căn bản giữa từ tính và điện tích.
+
+2. Từ trường
+
+Không gian xung quanh nam châm, xung quanh dây dẫn có dòng điện và xung quanh Trái Đất có từ trường. Từ trường là dạng vật chất tồn tại khách quan, tác dụng lực từ lên nam châm thử hoặc lên dây dẫn có dòng điện đặt trong nó.
+
+Cách nhận biết từ trường: đặt một kim nam châm thử (nam châm nhỏ, quay tự do quanh trục) tại một điểm; nếu kim nam châm bị lệch khỏi phương Bắc – Nam thì tại điểm đó có từ trường.
+
+Từ trường tại một điểm được đặc trưng bằng chiều và độ mạnh yếu (mức độ mạnh yếu của từ trường). Tại một điểm, chiều của từ trường là chiều mà cực Bắc của kim nam châm thử chỉ tới khi cân bằng.
+
+3. Từ phổ và đường sức từ
+
+Rắc mạt sắt lên một tấm bìa đặt trên một nam châm, gõ nhẹ tấm bìa rồi quan sát, ta thấy các mạt sắt sắp xếp thành những đường cong nối từ cực này sang cực kia của nam châm. Hình ảnh đó gọi là từ phổ.
+
+Từ phổ cho ta hình dạng bên ngoài của từ trường. Nơi mạt sắt xếp dày đặc là nơi từ trường mạnh; nơi mạt sắt thưa là nơi từ trường yếu. Hai cực của nam châm là hai nơi từ trường mạnh nhất.
+
+Đường sức từ là những đường được vẽ sao cho tiếp tuyến tại mỗi điểm trùng với chiều của từ trường tại điểm đó. Quy ước chiều đường sức từ:
+
+- Ở bên ngoài nam châm, đường sức từ đi ra từ cực Bắc và đi vào cực Nam.
+
+- Ở bên trong nam châm, đường sức từ đi từ cực Nam sang cực Bắc để tạo thành đường cong kín.
+
+- Đường sức từ của nam châm thẳng có dạng những đường cong nối hai cực; càng gần cực, các đường sức càng mau (từ trường càng mạnh).
+
+- Đường sức từ của nam châm chữ U: trong khoảng giữa hai cực, các đường sức gần như song song và cách đều nhau, đều hướng từ cực Bắc sang cực Nam. Từ trường ở đây là từ trường đều – rất thuận lợi để làm thí nghiệm về lực từ.
+
+- Các đường sức từ của hai cực khác tên đặt gần nhau thì hút nhau (đường sức nối liền hai cực); của hai cực cùng tên đặt gần nhau thì đẩy nhau (đường sức có dạng "đẩy ra", uốn cong sang hai bên).
+
+Hướng dẫn học sinh tự vẽ hình (không có hình in sẵn trong tài liệu này):
+
+1. Vẽ một hình chữ nhật dài, tô đậm nửa trái và ghi chữ N, tô đậm nửa phải và ghi chữ S – được nam châm thẳng.
+
+2. Từ đầu ngoài phía cực Bắc (đầu có chữ N) vẽ bốn đến sáu đường cong vòng ra ngoài rồi quay vào đầu ngoài phía cực Nam (đầu có chữ S). Vẽ các đường cong đối xứng qua trục dọc của nam châm. Chú ý: đường sức đi ra ở đầu ngoài cực Bắc và đi vào ở đầu ngoài cực Nam, không phát ra ở mặt giữa hai nửa nam châm.
+
+3. Trên mỗi đường cong, đặt mũi tên chỉ chiều đi ra khỏi N, đi vào S. Mũi tên phải nằm dọc theo đường cong, không vẽ vuông góc.
+
+4. Vẽ thêm một đường thẳng đi xuyên qua thân nam châm nối S với N, đặt mũi tên chỉ từ S sang N và ghi chú "bên trong nam châm".
+
+5. Muốn vẽ nam châm chữ U: vẽ một chữ U, nhánh trái là cực N, nhánh phải là cực S; trong khe giữa hai nhánh vẽ các đường thẳng song song cách đều nhau, mũi tên hướng từ nhánh N sang nhánh S. Chú thích: "từ trường đều trong khe chữ U".
+
+4. Từ trường của ống dây có dòng điện – quy tắc nắm tay phải
+
+Khi cho dòng điện chạy qua một ống dây (cuộn dây), trong lòng ống dây có từ trường. Từ phổ của ống dây có dòng điện rất giống từ phổ của một nam châm thẳng: bên ngoài ống dây, đường sức từ đi ra ở một đầu và đi vào ở đầu kia. Đầu có đường sức từ đi ra là cực Bắc, đầu có đường sức từ đi vào là cực Nam của ống dây.
+
+Quy tắc nắm tay phải: nắm bàn tay phải, đặt sao cho bốn ngón tay khum lại chỉ chiều dòng điện chạy qua các vòng dây, khi đó ngón tay cái choãi ra chỉ chiều của đường sức từ trong lòng ống dây (cũng là chiều từ cực Nam sang cực Bắc bên trong ống dây).
+
+Cách trình bày lời giải định tính cho dạng bài này: (1) xác định chiều dòng điện trên các vòng dây; (2) nắm tay phải theo chiều đó; (3) ngón cái chỉ chiều đường sức từ trong lòng ống dây; (4) suy ra đầu nào là cực Bắc (đầu mà đường sức từ đi ra ngoài).
+
+Nam châm điện gồm một ống dây dẫn quấn quanh một lõi sắt non. Khi có dòng điện chạy qua, lõi sắt non bị nhiễm từ và làm từ trường của ống dây mạnh lên rất nhiều. Khi ngắt dòng điện, lõi sắt non mất hết từ tính (nếu dùng lõi thép thì còn giữ được từ tính – đó là cách chế tạo nam châm vĩnh cửu nhân tạo). Muốn tăng lực từ của nam châm điện, ta có thể:
+
+- Tăng cường độ dòng điện chạy qua ống dây.
+
+- Tăng số vòng dây của ống dây.
+
+- Dùng lõi sắt non có kích thước phù hợp (tăng tiết diện lõi) và đặt lõi sát vật cần hút.
+
+- Giảm khoảng cách giữa nam châm điện và vật bị hút.
+
+Ứng dụng: cần cẩu điện trong nhà máy thép, chuông điện, rơle điện từ, loa điện, van điện từ trong máy giặt và ô tô.
+
+5. Lực từ – quy tắc bàn tay trái
+
+Đặt một dây dẫn thẳng có dòng điện trong từ trường (ví dụ trong khe giữa hai cực của nam châm chữ U), dây dẫn chịu một lực gọi là lực từ. Lực từ có phương vuông góc với dây dẫn và vuông góc với đường sức từ (tức vuông góc với mặt phẳng chứa dây dẫn và đường sức từ).
+
+Quy tắc bàn tay trái: đặt bàn tay trái sao cho các đường sức từ hướng vào lòng bàn tay, chiều từ cổ tay đến ngón tay giữa chỉ chiều dòng điện chạy trong dây dẫn, khi đó ngón tay cái choãi ra 90° chỉ chiều của lực từ tác dụng lên dây dẫn.
+
+Mô tả cách thao tác cho học sinh (để tự kiểm tra bằng tay thật):
+
+1. Duỗi thẳng bàn tay trái, bốn ngón tay khép lại, ngón cái mở ra tạo góc vuông với bốn ngón.
+
+2. Đặt lòng bàn tay hứng lấy các đường sức từ (đường sức từ "chui vào" lòng bàn tay).
+
+3. Quay cổ tay sao cho bốn ngón tay chỉ đúng chiều dòng điện chạy trong đoạn dây.
+
+4. Ngón cái chỉ chiều lực từ. Nếu kết quả ngón cái chỉ ngược với đáp án dự kiến, ta đã dùng nhầm bàn tay phải hoặc đặt ngược chiều dòng điện.
+
+Lực từ có độ lớn phụ thuộc vào: độ mạnh của từ trường, cường độ dòng điện trong dây và chiều dài đoạn dây nằm trong từ trường. Ở lớp 9 ta chỉ cần nhận biết chiều lực từ và biết rằng lực từ mạnh lên khi dòng điện mạnh hơn hoặc từ trường mạnh hơn.
+
+Ứng dụng của lực từ: động cơ điện một chiều, loa điện, điện kế, máy bơm điện, ổ cứng máy tính.
+
+6. Hiện tượng cảm ứng điện từ
+
+Cho một nam châm chuyển động lại gần hoặc ra xa một cuộn dây dẫn kín có mắc điện kế (galvanô kế). Khi nam châm đang chuyển động, kim điện kế lệch, chứng tỏ trong cuộn dây có dòng điện. Khi nam châm dừng lại, kim điện kế trở về số 0.
+
+Hiện tượng đó gọi là hiện tượng cảm ứng điện từ; dòng điện sinh ra trong cuộn dây gọi là dòng điện cảm ứng.
+
+Các cách tạo ra dòng điện cảm ứng (đều là cách làm biến thiên từ trường qua mạch):
+
+1. Di chuyển nam châm lại gần hoặc ra xa cuộn dây.
+
+2. Di chuyển cuộn dây lại gần hoặc ra xa nam châm (chuyển động tương đối giữa nam châm và cuộn dây).
+
+3. Đóng hoặc ngắt mạch điện của một nam châm điện đặt gần cuộn dây.
+
+4. Thay đổi cường độ dòng điện trong nam châm điện bằng cách dịch chuyển con chạy của biến trở (dòng điện biến thiên làm từ trường biến thiên).
+
+5. Quay khung dây trong từ trường (hoặc quay nam châm trước khung dây) – cách này tạo ra dòng điện xoay chiều, là nguyên tắc của máy phát điện.
+
+6. Thay đổi tiết diện của mạch (kéo giãn hoặc bóp méo khung dây) trong từ trường không đổi – giới thiệu thêm cho HSG.
+
+7. Điều kiện xuất hiện dòng điện cảm ứng
+
+Điều kiện: dòng điện cảm ứng xuất hiện trong mạch kín khi số đường sức từ xuyên qua tiết diện của mạch (cuộn dây) biến thiên (tăng lên hoặc giảm đi).
+
+Chú ý phân tích kĩ câu chữ:
+
+- "Biến thiên" nghĩa là phải thay đổi theo thời gian: tăng lên hoặc giảm đi. Nếu số đường sức từ xuyên qua cuộn dây tuy lớn nhưng không đổi thì không có dòng điện cảm ứng. Ví dụ: đặt nam châm đứng yên trong lòng cuộn dây, hoặc đặt cuộn dây trong từ trường đều không đổi và không cử động – kim điện kế đứng ở số 0.
+
+- Không cần nam châm chuyển động, chỉ cần sự biến thiên của từ trường qua mạch. Đây là điểm cốt lõi: nguyên nhân trực tiếp là sự biến thiên từ trường, chuyển động chỉ là một cách gây ra biến thiên.
+
+- Mạch phải kín. Nếu cuộn dây bị cắt (hở mạch), dù có biến thiên từ trường cũng không có dòng điện chạy trong mạch; ở hai đầu cuộn dây xuất hiện hiệu điện thế cảm ứng nhưng không có dòng (đây là ghi chú mở rộng).
+
+- Trong mỗi chu kì biến thiên, dòng điện cảm ứng đổi chiều hai lần. Đó chính là cơ sở để tạo ra dòng điện xoay chiều.
+
+8. Định luật Len-xơ (phát biểu định tính)
+
+Phát biểu định tính: dòng điện cảm ứng xuất hiện trong mạch kín có chiều sao cho từ trường do nó sinh ra chống lại sự biến thiên của từ trường đã sinh ra nó.
+
+Diễn giải bằng lời dễ hiểu cho học sinh lớp 9: dòng điện cảm ứng "không muốn" từ trường qua cuộn dây thay đổi, nên nó tự tạo ra từ trường để cản trở sự thay đổi đó.
+
+Cách vận dụng định luật Len-xơ theo bốn bước:
+
+1. Xác định chiều từ trường ngoài xuyên qua cuộn dây (từ trường này đang tăng hay đang giảm).
+
+2. Suy ra chiều từ trường mà dòng điện cảm ứng phải tạo ra: nếu từ trường ngoài đang tăng thì từ trường cảm ứng ngược chiều với nó; nếu từ trường ngoài đang giảm thì từ trường cảm ứng cùng chiều với nó.
+
+3. Dùng quy tắc nắm tay phải "theo chiều ngược" để từ chiều từ trường cảm ứng suy ra chiều dòng điện cảm ứng trong cuộn dây.
+
+4. Kiểm tra lại bằng hình ảnh cực: dòng điện cảm ứng làm mặt cuộn dây đối diện nam châm trở thành cực cùng tên với cực nam châm đang lại gần (đẩy ra) và thành cực khác tên với cực nam châm đang ra xa (hút lại).
+
+Hai trường hợp mẫu cần nhớ:
+
+- Nam châm lại gần cuộn dây: từ trường qua cuộn dây tăng lên. Dòng điện cảm ứng tạo từ trường ngược chiều, mặt cuộn dây đối diện nam châm trở thành cực cùng tên với cực nam châm đang lại gần, nên có lực đẩy nam châm ra. Ta phải đẩy nam châm vào thì mới có dòng điện, do đó đã tiêu tốn công – phù hợp định luật bảo toàn năng lượng.
+
+- Nam châm ra xa cuộn dây: từ trường qua cuộn dây giảm đi. Dòng điện cảm ứng tạo từ trường cùng chiều, mặt cuộn dây đối diện nam châm trở thành cực khác tên với cực nam châm đang ra xa, nên có lực hút nam châm lại.
+
+Liên hệ bảo toàn năng lượng: dòng điện cảm ứng luôn chống lại nguyên nhân sinh ra nó, nên ta luôn phải tốn công để tạo ra điện năng. Điện năng không tự sinh ra từ hư không. Đây là cách lí giải vì sao phải chống lại sự biến thiên chứ không phải thuận theo: nếu thuận theo, năng lượng sẽ tự sinh ra vô hạn – trái với định luật bảo toàn năng lượng.
+
+9. Dòng điện xoay chiều và nguyên tắc tạo ra dòng điện xoay chiều
+
+Dòng điện xoay chiều (viết tắt là dòng điện AC, alternating current) là dòng điện có chiều luân phiên thay đổi theo thời gian, chạy theo chiều này rồi lại chạy theo chiều ngược lại, lặp đi lặp lại một cách tuần hoàn.
+
+Phân biệt với dòng điện một chiều (DC): dòng điện một chiều có chiều không đổi (ví dụ dòng từ pin, acquy).
+
+Nguyên tắc tạo ra dòng điện xoay chiều: cho một khung dây dẫn kín quay đều trong một từ trường (hoặc cho nam châm quay trước một khung dây đứng yên). Khi khung dây quay, số đường sức từ xuyên qua tiết diện khung dây luôn biến thiên một cách tuần hoàn:
+
+- Khi mặt phẳng khung dây vuông góc với đường sức từ, số đường sức từ xuyên qua khung là lớn nhất, nhưng lúc đó dòng điện cảm ứng đổi chiều (kim điện kế ở vị trí 0).
+
+- Khi mặt phẳng khung dây song song với đường sức từ, số đường sức từ xuyên qua khung bằng 0, dòng điện cảm ứng có cường độ lớn nhất.
+
+- Cứ sau mỗi nửa vòng quay, chiều dòng điện cảm ứng trong khung lại đổi một lần. Vậy trong mỗi vòng quay, dòng điện đổi chiều hai lần, tạo thành dòng điện xoay chiều.
+
+Hướng dẫn tự vẽ để hiểu: vẽ một vòng tròn tượng trưng cho khung dây, các đường sức từ là những mũi tên nằm ngang. Vẽ bốn vị trí của khung cách nhau 90°:
+
+1. Vị trí 1: khung thẳng đứng, số đường sức từ xuyên qua nhiều nhất, ghi "Φ lớn nhất, dòng đổi chiều".
+
+2. Vị trí 2: khung nằm ngang, số đường sức từ xuyên qua bằng 0, ghi "Φ = 0, dòng mạnh nhất".
+
+3. Vị trí 3: khung thẳng đứng trở lại, ghi "Φ lớn nhất, dòng đổi chiều".
+
+4. Vị trí 4: khung nằm ngang trở lại, ghi "Φ = 0, dòng mạnh nhất theo chiều ngược lại".
+
+5. Vẽ mũi tên cong theo chiều quay ở giữa bốn vị trí.
+
+10. Máy phát điện xoay chiều
+
+Cấu tạo: máy phát điện xoay chiều có hai bộ phận chính:
+
+- Nam châm: tạo ra từ trường (có thể là nam châm vĩnh cửu hoặc nam châm điện).
+
+- Cuộn dây dẫn: đặt trong từ trường của nam châm, có thể là một cuộn dây hoặc nhiều cuộn dây.
+
+Một trong hai bộ phận đó đứng yên gọi là stato; bộ phận còn lại quay gọi là rôto.
+
+Hai loại máy phát điện xoay chiều thường gặp:
+
+- Loại 1 – rôto là cuộn dây, stato là nam châm. Cuộn dây quay trong từ trường của nam châm đứng yên. Vì cuộn dây quay nên phải dùng thêm bộ góp: hai vành khuyên gắn với hai đầu cuộn dây và hai thanh quét (chổi quét) tì lên vành khuyên để dẫn dòng điện ra mạch ngoài.
+
+- Loại 2 – rôto là nam châm, stato là cuộn dây. Nam châm quay trước cuộn dây đứng yên. Loại này không cần bộ góp để lấy điện ra, nhưng nếu rôto là nam châm điện thì vẫn cần bộ góp để đưa dòng điện một chiều vào nuôi nam châm điện.
+
+Thực tế, các máy phát điện trong nhà máy thủy điện, nhiệt điện thường có rôto là nam châm điện (được nuôi bằng dòng một chiều) và stato là các cuộn dây đặt trong các rãnh của lõi thép. Cách bố trí này cho phép lấy dòng điện công suất lớn ra ngoài mà không phải dùng vành khuyên chịu dòng lớn.
+
+Các máy phát điện trong nhà máy đều được chế tạo để phát ra dòng điện có tần số 50 Hz – tần số quy định của lưới điện Việt Nam.
+
+11. Tần số của dòng điện xoay chiều – công thức f = n.p
+
+Trong một máy phát điện xoay chiều:
+
+- Mỗi cặp cực gồm một cực Bắc và một cực Nam đặt đối diện nhau.
+
+- Khi rôto quay được một vòng, số đường sức từ xuyên qua một cuộn dây biến thiên tuần hoàn p lần (p là số cặp cực), do đó dòng điện thực hiện p chu kì.
+
+Vậy tần số của dòng điện do máy phát ra là:
+
+f = n.p
+
+Trong đó:
+
+- f là tần số của dòng điện xoay chiều, đơn vị hec (Hz).
+
+- n là số vòng quay của rôto trong mỗi giây, đơn vị vòng/giây (vòng/s).
+
+- p là số cặp cực của máy, không có đơn vị (p = 1, 2, 3, 4, …).
+
+Lưu ý chuyển đổi đơn vị rất quan trọng:
+
+n (vòng/giây) = n (vòng/phút)/60
+
+Suy ra hai hệ quả hay dùng:
+
+p = f/n
+
+n = f/p
+
+Số vòng quay mỗi phút của rôto = 60.f/p
+
+Ví dụ định hướng: để có f = 50 Hz, nếu máy có p = 1 cặp cực thì rôto phải quay 50 vòng/s = 3 000 vòng/phút (rất nhanh, dùng cho máy phát tuabin hơi nhỏ); nếu p = 2 thì quay 25 vòng/s = 1 500 vòng/phút; nếu p = 4 thì quay 12,5 vòng/s = 750 vòng/phút (phù hợp tuabin nước). Máy càng nhiều cặp cực thì rôto quay càng chậm mà vẫn giữ tần số 50 Hz.
+
+12. Giá trị hiệu dụng của dòng điện xoay chiều (mức định tính)
+
+Vì dòng điện xoay chiều liên tục đổi chiều và đổi độ lớn, người ta không thể nói "cường độ dòng điện xoay chiều bằng bao nhiêu ampe" theo nghĩa tức thời. Thay vào đó, người ta dùng giá trị hiệu dụng.
+
+Ý nghĩa định tính: giá trị hiệu dụng của dòng điện xoay chiều là giá trị của một dòng điện một chiều có cùng tác dụng (chủ yếu là tác dụng nhiệt) như dòng điện xoay chiều đang xét.
+
+Các số 220 V, 5 A, 100 W ghi trên thiết bị điện gia dụng đều là các giá trị hiệu dụng. Khi nói "điện áp lưới là 220 V", ta hiểu đó là giá trị hiệu dụng.
+
+Hệ quả định tính cần nhớ: dòng điện xoay chiều có tác dụng nhiệt, tác dụng quang, tác dụng từ giống như dòng điện một chiều có cùng giá trị hiệu dụng. Vì vậy bóng đèn sợi đốt mắc vào lưới xoay chiều sáng bình thường, bàn ủi nóng lên bình thường, nam châm điện hoạt động bình thường.
+
+Ghi chú mở rộng cho HSG: giá trị hiệu dụng nhỏ hơn giá trị cực đại. Với lưới điện 220 V, giá trị cực đại của hiệu điện thế vào khoảng U₀ ≈ 1,41 × 220 ≈ 311 V. Con số này chỉ dùng để hiểu bản chất, không dùng trong bài tính của đề thi lớp 9.
+
+13. Máy biến thế
+
+Cấu tạo: máy biến thế (còn gọi là máy biến áp) gồm:
+
+- Một lõi sắt (thường là lõi thép kĩ thuật điện ghép từ nhiều lá thép mỏng, hai mặt có lớp cách điện) tạo thành một khung kín.
+
+- Hai cuộn dây dẫn có số vòng khác nhau, quấn cách điện với nhau và cùng quấn trên lõi sắt: cuộn sơ cấp (nối với nguồn, có N₁ vòng) và cuộn thứ cấp (nối với tải, có N₂ vòng).
+
+Nguyên tắc hoạt động: dựa trên hiện tượng cảm ứng điện từ.
+
+1. Đặt vào hai đầu cuộn sơ cấp một hiệu điện thế xoay chiều, trong cuộn sơ cấp có dòng điện xoay chiều.
+
+2. Dòng điện xoay chiều trong cuộn sơ cấp tạo ra trong lõi sắt một từ trường biến thiên tuần hoàn.
+
+3. Từ trường biến thiên đó chạy trong lõi sắt và xuyên qua cuộn thứ cấp, làm số đường sức từ xuyên qua tiết diện cuộn thứ cấp biến thiên.
+
+4. Do đó trong cuộn thứ cấp xuất hiện dòng điện cảm ứng xoay chiều. Nếu cuộn thứ cấp để hở, giữa hai đầu cuộn thứ cấp có hiệu điện thế xoay chiều.
+
+Công thức máy biến thế (bỏ qua hao phí):
+
+U₁/U₂ = N₁/N₂
+
+Trong đó:
+
+- U₁ là hiệu điện thế hai đầu cuộn sơ cấp, đơn vị vôn (V).
+
+- U₂ là hiệu điện thế hai đầu cuộn thứ cấp (khi cuộn thứ cấp hở), đơn vị vôn (V).
+
+- N₁ là số vòng dây của cuộn sơ cấp, đơn vị vòng.
+
+- N₂ là số vòng dây của cuộn thứ cấp, đơn vị vòng.
+
+Hệ quả:
+
+- Nếu N₂ > N₁ (tức N₁/N₂ < 1) thì U₂ > U₁: máy tăng thế.
+
+- Nếu N₂ < N₁ (tức N₁/N₂ > 1) thì U₂ < U₁: máy hạ thế.
+
+- Muốn tìm số vòng: N₂ = N₁.U₂/U₁ và N₁ = N₂.U₁/U₂.
+
+Vì sao máy biến thế chỉ hoạt động với dòng điện xoay chiều? Vì máy biến thế hoạt động dựa trên sự biến thiên của từ trường qua cuộn thứ cấp. Nếu đặt vào cuộn sơ cấp một hiệu điện thế không đổi (dòng một chiều), từ trường trong lõi sắt có thể rất mạnh nhưng không biến thiên, số đường sức từ xuyên qua cuộn thứ cấp không đổi, nên không có dòng điện cảm ứng ở cuộn thứ cấp. Khi đó máy biến thế không có tác dụng biến đổi hiệu điện thế, và nếu cuộn sơ cấp mắc trực tiếp vào nguồn một chiều, dòng điện có thể rất lớn làm cháy cuộn dây.
+
+14. Truyền tải điện năng đi xa – công suất hao phí
+
+Khi truyền tải điện năng đi xa bằng dây dẫn, một phần điện năng bị hao phí vì dây dẫn có điện trở và nóng lên (tác dụng nhiệt của dòng điện). Gọi:
+
+- P là công suất điện cần truyền đi, đơn vị oát (W).
+
+- U là hiệu điện thế đặt vào hai đầu đường dây tải điện (hiệu điện thế truyền tải), đơn vị vôn (V).
+
+- R là tổng điện trở của toàn bộ dây dẫn tải điện (cả dây đi và dây về), đơn vị ôm (Ω).
+
+- I là cường độ dòng điện chạy trên đường dây, đơn vị ampe (A).
+
+Cường độ dòng điện trên đường dây:
+
+I = P/U
+
+Công suất hao phí do tỏa nhiệt trên đường dây (công thức SGK):
+
+P_(hp) = R.I²
+
+Kết luận quan trọng: khi công suất truyền đi P và điện trở dây R không đổi, P_(hp) tỉ lệ thuận với điện trở R của dây và tỉ lệ nghịch với bình phương hiệu điện thế truyền tải U. Cụ thể, nếu tăng hiệu điện thế truyền tải lên k lần thì công suất hao phí giảm đi k² lần.
+
+Vì vậy, muốn giảm hao phí trên đường dây tải điện, cách hiệu quả nhất là tăng hiệu điện thế trước khi truyền tải (dùng máy tăng thế ở nhà máy điện). Cách khác là tăng tiết diện dây dẫn để giảm R, nhưng cách này rất tốn kém vật liệu và làm dây nặng, không kinh tế; nếu tăng tiết diện lên 2 lần thì R giảm 2 lần, hao phí chỉ giảm 2 lần, trong khi tăng U lên 2 lần thì hao phí giảm tới 4 lần.
+
+Dạng tỉ lệ mở rộng (dùng cho HSG):
+
+Vì I = P/U nên
+
+P_(hp) = R.I² = P².R/U²
+
+Đây là công thức mở rộng dạng tỉ lệ, suy ra từ P_(hp) = R.I² và I = P/U (với giả thiết công suất truyền đi P không đổi). Nó cho thấy ngay: P_(hp) tỉ lệ thuận với R và với P², tỉ lệ nghịch với U².
+
+Ví dụ định hướng: nếu cùng công suất P và cùng điện trở dây R, khi U tăng 10 lần thì P_(hp) giảm 100 lần.
+
+Hiệu suất truyền tải:
+
+H = (P − P_(hp))/P = 1 − P_(hp)/P
+
+Độ giảm thế trên đường dây: ΔU = I.R. Hiệu điện thế thực tế đến nơi tiêu thụ là U_(tt) = U_(tr) − ΔU.
+
+Trong đó U_(tr) là hiệu điện thế truyền tải ở đầu đường dây và U_(tt) là hiệu điện thế nơi tiêu thụ (ở cuối đường dây). Tương tự, P_(tr) là công suất truyền đi ở đầu đường dây và P_(tt) là công suất nhận được ở nơi tiêu thụ.
+
+Vì sao phải hạ thế trước khi dùng? Hiệu điện thế cao rất nguy hiểm cho người sử dụng và không phù hợp với thiết bị gia dụng. Vì vậy ở nơi tiêu thụ phải dùng máy hạ thế để đưa hiệu điện thế từ hàng trăm kilôvôn xuống 220 V (hoặc 380 V cho sản xuất). Hệ thống điện Việt Nam thường theo các cấp: nhà máy phát ra 10–20 kV → máy tăng thế lên 110 kV, 220 kV hoặc 500 kV → truyền đi xa → máy hạ thế xuống 22 kV hoặc 10 kV ở trạm khu vực → máy hạ thế tiếp xuống 0,4 kV (tức 400 V) → đưa về hộ gia đình dùng 220 V.
+
+15. Tác dụng của dòng điện xoay chiều
+
+Dòng điện xoay chiều có đầy đủ các tác dụng của dòng điện nói chung. Ở lớp 9 cần nắm ba tác dụng chính:
+
+- Tác dụng nhiệt. Dòng điện xoay chiều chạy qua vật dẫn có điện trở làm vật dẫn nóng lên. Vì dòng điện đổi chiều liên tục nhưng năng lượng tỏa ra không phụ thuộc chiều dòng điện, nên dây đốt nóng vẫn nóng lên bình thường. Ứng dụng: bàn ủi, bếp điện, ấm đun nước siêu tốc, nồi cơm điện, máy sấy tóc, bóng đèn sợi đốt, lò sưởi.
+
+- Tác dụng quang. Dòng điện xoay chiều làm phát sáng các bóng đèn. Ứng dụng: đèn sợi đốt (nóng lên rồi phát sáng), đèn huỳnh quang, đèn compact, đèn LED (đèn LED cần bộ nguồn để biến đổi dòng xoay chiều thành dòng một chiều trước khi nuôi đèn).
+
+- Tác dụng từ. Dòng điện xoay chiều chạy qua ống dây làm lõi sắt non bị nhiễm từ, tạo ra nam châm điện, và làm cho dây dẫn chuyển động khi đặt trong từ trường. Ứng dụng: nam châm điện, chuông điện, động cơ điện xoay chiều (quạt điện, máy bơm, máy giặt, tủ lạnh), loa điện, rơle điện từ. (Máy biến thế hoạt động nhờ cảm ứng điện từ, không phải nhờ lực từ — không xếp vào nhóm này.)
+
+Ngoài ra dòng điện xoay chiều còn có tác dụng sinh lí (giật điện, gây co cơ, gây bỏng, ảnh hưởng tim) và tác dụng hóa học (ít dùng với dòng xoay chiều vì chiều đổi liên tục).
+
+Điểm cần khẳng định với học sinh: tác dụng từ của dòng điện xoay chiều là tác dụng đặc trưng được khai thác nhiều nhất trong công nghiệp, vì nó cho phép chế tạo động cơ điện và máy biến thế xoay chiều, từ đó điện năng mới truyền tải đi xa được.
+
+16. An toàn điện
+
+Dòng điện có thể gây nguy hiểm đến tính mạng. Một số biện pháp và nguyên tắc cần nhớ:
+
+- Ngắt nguồn trước khi chạm vào thiết bị điện để sửa chữa: rút phích cắm hoặc ngắt cầu dao/áptômát.
+
+- Không chạm vào dây dẫn trần, dây bị hở vỏ, ổ cắm bị vỡ; không đưa vật kim loại vào ổ điện.
+
+- Không dùng thiết bị điện khi tay ướt hoặc đứng nơi ẩm ướt, vì nước làm giảm điện trở của cơ thể người, tăng nguy cơ bị điện giật.
+
+- Không cắm quá nhiều thiết bị công suất lớn vào một ổ cắm hoặc một dây dẫn, vì dòng điện quá lớn làm dây nóng chảy, chập cháy. Mỗi ổ cắm và dây dẫn chỉ chịu được một dòng điện định mức nhất định.
+
+- Dùng cầu chì hoặc áptômát đúng trị số để tự động ngắt mạch khi có sự cố ngắn mạch hoặc quá tải.
+
+- Dùng dây nối đất và phích cắm ba chấu cho các thiết bị có vỏ kim loại (tủ lạnh, máy giặt, bình nóng lạnh) để dòng điện rò chạy xuống đất thay vì qua người.
+
+- Giữ khoảng cách an toàn với đường dây cao thế; tuyệt đối không trèo cột điện, không câu móc điện, không thả diều gần đường dây cao thế vì có thể xảy ra phóng điện qua khoảng không khí.
+
+- Khi cứu người bị điện giật: việc đầu tiên là ngắt nguồn điện (ngắt cầu dao, rút phích cắm) hoặc dùng vật cách điện khô (gậy gỗ khô, cán chổi nhựa) để tách người khỏi dây điện. Tuyệt đối không dùng tay trần kéo người bị nạn, vì người cứu cũng sẽ bị điện giật. Sau đó gọi cấp cứu và hô hấp nhân tạo nếu nạn nhân ngừng thở.
+
+- Không tự ý tháo lắp, sửa chữa thiết bị điện và mạng điện trong nhà nếu không có hiểu biết và dụng cụ bảo hộ.
+
+B2. Mở rộng – nâng cao cho HSG
+
+1. Từ thông Φ – nói chính xác bản chất "sự biến thiên" (chỉ định tính)
+
+Ta đã dùng cách nói "số đường sức từ xuyên qua tiết diện cuộn dây". Cách nói đó tương ứng với khái niệm từ thông, kí hiệu là Φ (đọc là "phi"). Từ thông qua một diện tích là đại lượng mô tả lượng từ trường xuyên qua diện tích đó: diện tích càng lớn, từ trường càng mạnh và mặt diện tích càng vuông góc với đường sức từ thì từ thông càng lớn.
+
+Ranh giới bắt buộc: ở lớp 9, ta chỉ dùng Φ như một cách gọi tên cho "số đường sức từ xuyên qua tiết diện". Không viết Φ = B.S.cosα và không dùng bất kì biểu thức định lượng nào của Φ. Mọi lập luận vẫn là định tính: Φ tăng, Φ giảm, Φ không đổi, Φ đổi chiều.
+
+Điều kiện xuất hiện dòng điện cảm ứng phát biểu lại cho gọn: khi từ thông qua mạch kín biến thiên thì trong mạch xuất hiện dòng điện cảm ứng. Định luật Len-xơ phát biểu lại: dòng điện cảm ứng chống lại sự biến thiên của từ thông sinh ra nó.
+
+Với cách phát biểu này, bài toán định tính trở nên rất rõ: câu hỏi luôn là "từ thông đang tăng hay đang giảm?".
+
+2. Vì sao Len-xơ phải là "chống lại" – lập luận bảo toàn năng lượng
+
+Giả sử ngược lại: khi đưa nam châm lại gần, dòng điện cảm ứng lại sinh ra từ trường hút nam châm vào. Khi đó nam châm tự chạy vào, dòng điện tự sinh ra, ta có thể lấy điện năng vô hạn mà không tốn công nào – vô lí. Vậy dòng điện cảm ứng bắt buộc phải đẩy nam châm ra, và ta phải tốn công đẩy nam châm vào. Công ta bỏ ra chính là nguồn gốc của điện năng thu được. Đây là một trong những lập luận đẹp nhất của Vật lí phổ thông, rất hay được hỏi trong đề HSG.
+
+3. Từ trường Trái Đất và la bàn
+
+Trái Đất là một "nam châm khổng lồ". Từ trường Trái Đất có tác dụng định hướng kim la bàn. Lưu ý tinh tế thường bị hỏi: cực Bắc địa lí của Trái Đất thực chất nằm gần cực Nam từ của Trái Đất, vì đầu Bắc của kim nam châm (cực Bắc từ) bị hút về phía bắc địa lí, mà hai cực hút nhau phải khác tên. Từ trường Trái Đất còn bảo vệ sự sống khỏi bức xạ vũ trụ và tạo ra cực quang.
+
+4. Dòng điện Fu-cô (Phu-cô) – định tính
+
+Khi một khối kim loại chuyển động trong từ trường hoặc đặt trong từ trường biến thiên, trong khối kim loại xuất hiện những dòng điện cảm ứng khép kín gọi là dòng điện Fu-cô. Tác dụng có hại: làm nóng khối kim loại, gây hao phí năng lượng (nên lõi máy biến thế, lõi động cơ phải ghép từ các lá thép mỏng cách điện để dòng Fu-cô bị "chặn" lại, giảm hao phí). Tác dụng có lợi: dùng để hãm chuyển động (phanh điện từ của xe buýt, cân điện tử, công tơ điện), dùng trong lò cảm ứng để nấu chảy kim loại mà không cần tiếp xúc.
+
+5. Máy biến thế trong thực tế – hao phí và hiệu suất
+
+Máy biến thế thực tế không lí tưởng, hao phí do ba nguyên nhân chính:
+
+- Điện trở của các cuộn dây làm tỏa nhiệt (P_(hp) = R.I²).
+
+- Dòng điện Fu-cô trong lõi sắt làm nóng lõi; khắc phục bằng cách ghép lõi từ nhiều lá thép mỏng sơn cách điện.
+
+- Từ thông rò ra ngoài không qua hết cuộn thứ cấp; khắc phục bằng cách quấn các cuộn dây trên cùng một lõi kín và quấn xen kẽ.
+
+Hệ quả thực nghiệm quan trọng: hiệu điện thế thứ cấp đo được thường nhỏ hơn giá trị tính theo U₁.N₂/N₁. Đây là cơ sở để phân tích số liệu trong bài thực hành (xem Dạng 7).
+
+Hiệu suất của máy biến thế: H = P₂/P₁ (với P₂ là công suất ra ở cuộn thứ cấp, P₁ là công suất vào cuộn sơ cấp). Ở mức lớp 9 chỉ cần hiểu: bỏ qua hao phí thì P₁ = P₂.
+
+6. Máy biến thế lí tưởng: tỉ lệ dòng điện
+
+Bỏ qua hao phí, công suất ở cuộn sơ cấp bằng công suất ở cuộn thứ cấp:
+
+U₁.I₁ = U₂.I₂
+
+Kết hợp với U₁/U₂ = N₁/N₂, suy ra:
+
+I₁/I₂ = N₂/N₁
+
+Nghĩa là: máy tăng thế bao nhiêu lần về hiệu điện thế thì giảm đi bấy nhiêu lần về cường độ dòng điện. Đây là lí do vì sao tăng hiệu điện thế trước khi truyền tải lại có tác dụng "kép": vừa giảm cường độ dòng điện trên đường dây, vừa giảm hao phí theo R.I². Công thức này chỉ dùng cho đội tuyển, kèm giả thiết bỏ qua hao phí.
+
+7. Tổng hợp truyền tải: ba công thức phải đi liền nhau
+
+Trong bài toán truyền tải, ba đại lượng sau luôn đi cùng nhau và học sinh hay dùng lẫn:
+
+- Cường độ dòng điện trên đường dây: I = P/U (U là hiệu điện thế truyền tải, không phải hiệu điện thế nơi tiêu thụ).
+
+- Công suất hao phí: P_(hp) = R.I².
+
+- Độ giảm thế: ΔU = I.R, suy ra U_(tt) = U_(tr) − ΔU.
+
+Cạm bẫy: nếu đề cho "công suất nơi tiêu thụ" P_(tt) mà không nói rõ, phải hết sức chú ý: hao phí tính theo công suất truyền đi ở đầu đường dây. Nếu P_(hp) nhỏ (vài phần trăm) thì có thể coi P_(tr) ≈ P_(tt), nhưng phải nêu rõ giả thiết khi làm bài.
+
+8. Vì sao tần số lưới điện phải là 50 Hz?
+
+Các thiết bị điện, động cơ, máy biến thế đều được thiết kế cho tần số 50 Hz. Nếu tần số lệch nhiều, động cơ quay sai tốc độ, thiết bị điện tử hoạt động sai, máy biến thế nóng hơn. Vì vậy trong nhà máy điện, người ta phải điều chỉnh lưu lượng nước (thủy điện) hoặc lưu lượng hơi (nhiệt điện) để giữ tốc độ quay của tuabin – máy phát đúng giá trị thiết kế, từ đó giữ f = 50 Hz. Đây là ví dụ đẹp về quan hệ giữa cơ học và điện học.
+
+9. Truyền động đai và bánh răng (mở rộng cho bài toán máy phát)
+
+Nếu rôto máy phát được quay nhờ một puli nối với tuabin bằng dây đai, giữa các puli có hệ thức (bỏ qua trượt đai):
+
+n₁.d₁ = n₂.d₂
+
+Trong đó n₁, n₂ là số vòng quay trong cùng một đơn vị thời gian của hai puli; d₁, d₂ là đường kính hai puli. Puli nhỏ quay nhanh hơn, puli lớn quay chậm hơn. Với hai bánh răng ăn khớp, thay đường kính bằng số răng: n₁.Z₁ = n₂.Z₂. Công thức này rất hữu ích khi đề cho "tuabin quay chậm, máy phát phải quay nhanh".
+
+10. Dòng điện xoay chiều ba pha (giới thiệu)
+
+Trong công nghiệp dùng dòng điện xoay chiều ba pha: ba dòng điện xoay chiều cùng tần số, cùng biên độ nhưng lệch pha nhau một phần ba chu kì. Động cơ ba pha mạnh, êm và hiệu suất cao hơn động cơ một pha; máy phát ba pha cũng cho công suất lớn hơn. Ở cấp độ lớp 9 chỉ cần biết tên gọi và ứng dụng, không tính toán.
+
+11. Phân biệt hai quy tắc – bảng chống lẫn
+
+- Quy tắc nắm tay phải: dùng bàn tay phải; dùng để tìm chiều đường sức từ (chiều từ trường) khi đã biết chiều dòng điện trong ống dây. Kết quả là một chiều của từ trường.
+
+- Quy tắc bàn tay trái: dùng bàn tay trái; dùng để tìm chiều lực từ khi đã biết cả chiều dòng điện và chiều đường sức từ. Kết quả là một chiều của lực cơ học.
+
+Mẹo nhớ: "Phải – Phát ra từ trường" (nắm tay phải tìm từ trường), "Trái – lực" (bàn tay trái tìm lực).
+
+12. Giá trị hiệu dụng – vì sao không dùng giá trị cực đại
+
+Nếu dùng giá trị cực đại để ghi trên thiết bị thì thiết bị phải chịu được 311 V trong khi giá trị " làm việc" chỉ 220 V, gây lãng phí cách điện. Dùng giá trị hiệu dụng thì con số ghi trên thiết bị phản ánh đúng tác dụng nhiệt và công suất tiêu thụ thực tế. Đó là lí do mọi thông số trên thiết bị điện gia dụng đều là giá trị hiệu dụng.
+
+B3. Công thức cần nhớ (bảng)
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  STT               Đại lượng / Định luật                    Công thức                       Đơn vị và ghi chú
+  ----------------- ---------------------------------------- ------------------------------- ----------------------------------------------
+  1                 Tần số dòng điện xoay chiều              f = n.p                         f (Hz), n (vòng/s), p (số cặp cực)
+
+  2                 Số cặp cực                               p = f/n                         p là số nguyên dương
+
+  3                 Số vòng quay mỗi giây                    n = f/p                         Đơn vị vòng/s
+
+  4                 Đổi vòng/phút sang vòng/s                n (vòng/s) = n (vòng/phút)/60   Bắt buộc đổi trước khi thay vào f = n.p
+
+  5                 Số vòng quay mỗi phút                    n (vòng/phút) = 60.f/p          Dùng khi đề hỏi tốc độ quay
+
+  6                 Tỉ số hiệu điện thế máy biến thế         U₁/U₂ = N₁/N₂                   U (V), N (vòng); bỏ qua hao phí
+
+  7                 Tìm số vòng thứ cấp                      N₂ = N₁.U₂/U₁                   Dùng để thiết kế cuộn dây
+
+  8                 Tìm số vòng sơ cấp                       N₁ = N₂.U₁/U₂                   Dùng khi biết cuộn thứ cấp
+
+  9                 Điều kiện máy tăng thế                   N₂ > N₁ ⇔ U₂ > U₁               Ngược lại là máy hạ thế
+
+  10                Bảo toàn công suất (lí tưởng)            U₁.I₁ = U₂.I₂                   Mở rộng cho HSG
+
+  11                Tỉ lệ nghịch dòng điện                   I₁/I₂ = N₂/N₁                   Mở rộng cho HSG
+
+  12                Dòng điện trên đường dây tải             I = P/U                         P (W), U (V) là hiệu điện thế truyền tải
+
+  13                Công suất hao phí (SGK)                  P_(hp) = R.I²                   R (Ω) là tổng điện trở cả hai dây
+
+  14                Công suất hao phí dạng tỉ lệ (mở rộng)   P_(hp) = P².R/U²                Suy ra từ P_(hp) = R.I² và I = P/U
+
+  15                Hao phí khi tăng thế k lần               P_(hp)' = P_(hp)/k²             Tỉ lệ nghịch với U², khi P và R không đổi
+
+  16                Hiệu suất truyền tải                     H = 1 − P_(hp)/P                Thường tính theo %
+
+  17                Độ giảm thế trên dây                     ΔU = I.R                        Mở rộng cho HSG
+
+  18                Hiệu điện thế nơi tiêu thụ               U_(tt) = U_(tr) − ΔU            Mở rộng cho HSG
+
+  19                Điện năng hao phí                        A_(hp) = P_(hp).t               1 kWh = 3,6·10⁶ J
+
+  20                Truyền động đai, bánh răng               n₁.d₁ = n₂.d₂                   Mở rộng; d là đường kính puli (hoặc số răng)
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+C. Các dạng bài và phương pháp giải
+
+Dạng 1. Nam châm – từ trường – từ phổ – đường sức từ (định tính và vẽ hình)
+
+Nhận dạng
+
+Đề yêu cầu: xác định cực của nam châm, xác định chiều đường sức từ tại một điểm, vẽ đường sức từ của nam châm thẳng hoặc nam châm chữ U, so sánh độ mạnh của từ trường tại hai điểm dựa vào mật độ đường sức, giải thích hiện tượng hai nam châm hút hoặc đẩy nhau, giải thích hoạt động của la bàn. Đề cũng có thể cho hình mô tả bằng lời và hỏi kim nam châm thử sẽ chỉ hướng nào.
+
+Phương pháp
+
+1. Nhớ quy ước gốc: đường sức từ đi ra ở cực Bắc, đi vào ở cực Nam (xét ở bên ngoài nam châm).
+
+2. Nếu đề cho chiều đường sức từ thì suy ra cực: nơi đường sức từ đi ra là cực Bắc, nơi đường sức từ đi vào là cực Nam.
+
+3. Nếu đề cho cực thì vẽ đường sức từ đúng chiều: bắt đầu từ cực Bắc, vòng ra ngoài, kết thúc ở cực Nam.
+
+4. Đặt kim nam châm thử tại điểm cần xét: cực Bắc của kim sẽ chỉ theo chiều đường sức từ tại điểm đó.
+
+5. So sánh độ mạnh từ trường: nơi đường sức từ mau hơn (dày hơn) thì từ trường mạnh hơn.
+
+6. Khi hai nam châm đặt gần nhau, xét lực tương tác theo quy tắc cùng tên đẩy – khác tên hút; đồng thời có thể kiểm tra bằng hình dạng đường sức từ.
+
+Ví dụ mẫu
+
+Đề bài. Một nam châm thẳng được đặt nằm ngang, đầu bên trái là cực Bắc, đầu bên phải là cực Nam.
+
+a) Vẽ (mô tả bằng lời) chiều các đường sức từ ở bên ngoài nam châm.
+
+b) Đặt một kim nam châm thử tại điểm M nằm phía trên, cách đều hai cực. Hỏi cực Bắc của kim nam châm thử chỉ theo hướng nào? Giải thích.
+
+c) So sánh độ mạnh của từ trường tại điểm A (sát cực Bắc) và điểm B (cách xa nam châm một khoảng lớn). Giải thích dựa vào từ phổ.
+
+d) Đưa cực Nam của một nam châm thứ hai lại gần cực Nam của nam châm đã cho. Hiện tượng gì xảy ra?
+
+Tóm tắt.
+
+Nam châm thẳng: trái là cực Bắc, phải là cực Nam
+
+Điểm M ở phía trên, cách đều hai cực
+
+Điểm A sát cực Bắc, điểm B ở xa
+
+Nam châm thứ hai có cực Nam đưa lại gần cực Nam của nam châm thứ nhất
+
+Lời giải
+
+Bước 1. Xác định chiều đường sức từ ở bên ngoài nam châm.
+
+Theo quy ước, ở bên ngoài nam châm, đường sức từ đi ra từ cực Bắc và đi vào cực Nam.
+
+Vậy các đường sức từ xuất phát từ đầu bên trái (cực Bắc), vòng qua phía trên và phía dưới nam châm rồi đi vào đầu bên phải (cực Nam).
+
+Bên trong nam châm, đường sức từ đi từ đầu bên phải (cực Nam) sang đầu bên trái (cực Bắc), tạo thành các đường cong kín.
+
+Bước 2. Tìm hướng của cực Bắc kim nam châm thử tại M.
+
+Điểm M nằm phía trên, cách đều hai cực, tức là nằm trong vùng có đường sức từ chạy từ trái sang phải (từ Bắc sang Nam).
+
+Chiều của từ trường tại M là chiều của đường sức từ tại đó, tức hướng từ trái sang phải.
+
+Cực Bắc của kim nam châm thử luôn chỉ theo chiều của từ trường tại điểm đặt nó.
+
+Vậy cực Bắc của kim nam châm thử chỉ theo hướng từ trái sang phải (hướng về phía cực Nam của nam châm đã cho).
+
+Bước 3. So sánh độ mạnh của từ trường tại A và tại B.
+
+Theo từ phổ, các mạt sắt (và do đó các đường sức từ) tập trung dày đặc ở gần hai cực và thưa dần khi ra xa nam châm.
+
+Nơi đường sức từ dày đặc hơn thì từ trường mạnh hơn.
+
+Điểm A sát cực Bắc nên nằm trong vùng đường sức từ rất dày; điểm B ở xa nên nằm trong vùng đường sức từ rất thưa.
+
+Vậy từ trường tại A mạnh hơn từ trường tại B rất nhiều.
+
+Bước 4. Xét tương tác giữa hai nam châm.
+
+Cực Nam của nam châm thứ hai đặt gần cực Nam của nam châm thứ nhất.
+
+Hai cực cùng tên thì đẩy nhau.
+
+Vậy hai nam châm đẩy nhau: nam châm thứ hai bị đẩy ra xa nam châm thứ nhất.
+
+Đáp số. a) Đường sức từ đi ra ở cực Bắc (đầu trái), vòng ra ngoài và đi vào cực Nam (đầu phải); bên trong nam châm đi từ phải sang trái. b) Cực Bắc kim nam châm thử chỉ từ trái sang phải. c) Từ trường tại A mạnh hơn tại B vì đường sức từ dày hơn. d) Hai nam châm đẩy nhau.
+
+Lưu ý
+
+- Tuyệt đối không được vẽ đường sức từ đi vào cực Bắc hoặc đi ra ở cực Nam (sai chiều). Đây là lỗi phổ biến nhất của dạng bài này.
+
+- Đường sức từ không cắt nhau. Nếu hình vẽ có hai đường sức từ cắt nhau thì hình đó sai, vì tại một điểm từ trường chỉ có một chiều xác định.
+
+- Khi so sánh từ trường, phải nói rõ căn cứ là mật độ đường sức từ, không được chỉ nói "gần nam châm thì mạnh hơn" mà không giải thích.
+
+- Với nam châm chữ U, từ trường trong khe giữa hai cực là từ trường đều: các đường sức song song, cách đều, hướng từ cực Bắc sang cực Nam. Học sinh hay vẽ sai thành các đường cong như nam châm thẳng.
+
+- Bên trong nam châm và bên trong ống dây có dòng điện, đường sức từ đi từ cực Nam sang cực Bắc. Đây là chi tiết hay bị bỏ qua khi vẽ hình.
+
+Dạng 2. Lực từ và quy tắc bàn tay trái
+
+Nhận dạng
+
+Đề cho một đoạn dây dẫn thẳng có dòng điện đặt trong từ trường (thường mô tả bằng lời: "dây dẫn đặt trong khe giữa hai cực của nam châm chữ U"), cho biết chiều dòng điện hoặc chiều đường sức từ, yêu cầu xác định chiều của lực từ; hoặc cho chiều lực từ và chiều từ trường để suy ra chiều dòng điện; hoặc hỏi dây dẫn sẽ bị kéo lệch về phía nào.
+
+Phương pháp
+
+1. Vẽ (hoặc hình dung) rõ ba yếu tố: chiều dòng điện trong dây, chiều đường sức từ, và phương của dây dẫn.
+
+2. Áp dụng quy tắc bàn tay trái: đường sức từ hướng vào lòng bàn tay trái, chiều từ cổ tay đến ngón tay giữa chỉ chiều dòng điện, ngón tay cái choãi ra 90° chỉ chiều lực từ.
+
+3. Nếu đề cho chiều lực từ và chiều từ trường mà hỏi chiều dòng điện: đặt tay sao cho đường sức từ vào lòng bàn tay và ngón cái chỉ đúng chiều lực từ đã cho, khi đó bốn ngón tay chỉ chiều dòng điện.
+
+4. Nếu đề cho chiều lực từ và chiều dòng điện mà hỏi chiều từ trường: đặt tay sao cho bốn ngón tay chỉ chiều dòng điện và ngón cái chỉ đúng chiều lực từ, khi đó lòng bàn tay hứng chiều đường sức từ.
+
+5. Nhận xét thêm: lực từ có phương vuông góc với cả dây dẫn và đường sức từ, tức vuông góc với mặt phẳng chứa hai yếu tố đó.
+
+Ví dụ mẫu
+
+Đề bài. Một đoạn dây dẫn thẳng AB được treo nằm ngang trong khe giữa hai cực của một nam châm chữ U. Cực Bắc của nam châm ở phía trên, cực Nam ở phía dưới, nên các đường sức từ trong khe hướng thẳng đứng từ trên xuống dưới. Cho dòng điện chạy trong dây dẫn theo chiều từ A đến B, biết rằng khi nhìn từ phía trước, dòng điện chạy từ trái sang phải.
+
+a) Xác định chiều của lực từ tác dụng lên đoạn dây dẫn.
+
+b) Đoạn dây dẫn sẽ bị kéo lệch về phía nào (ra trước hay ra sau, so với người quan sát)?
+
+c) Nếu đổi chiều dòng điện (cho dòng điện chạy từ B đến A) và đồng thời đổi cực của nam châm (cực Nam ở trên, cực Bắc ở dưới) thì chiều lực từ có đổi không? Giải thích.
+
+Tóm tắt.
+
+Đường sức từ: thẳng đứng, hướng xuống (từ cực Bắc trên xuống cực Nam dưới)
+
+Dòng điện trong dây AB: từ trái sang phải (nhìn từ phía trước)
+
+Đoạn dây nằm ngang
+
+Lời giải
+
+Bước 1. Xác định ba yếu tố của bài toán.
+
+Dòng điện chạy trong dây theo chiều từ trái sang phải (nhìn từ phía trước).
+
+Các đường sức từ hướng thẳng đứng từ trên xuống dưới.
+
+Đoạn dây dẫn nằm ngang, vuông góc với đường sức từ.
+
+Bước 2. Áp dụng quy tắc bàn tay trái.
+
+Đặt bàn tay trái sao cho các đường sức từ hướng vào lòng bàn tay: lòng bàn tay phải hướng lên trên (để đường sức từ đi từ trên xuống chui vào lòng bàn tay).
+
+Bốn ngón tay chỉ chiều dòng điện: bốn ngón tay hướng từ trái sang phải.
+
+Ngón tay cái choãi ra 90° chỉ chiều lực từ.
+
+Với lòng bàn tay hướng lên và bốn ngón tay hướng sang phải, ngón tay cái choãi ra chỉ về phía xa người quan sát (ra phía sau, tức đi vào mặt phẳng hình vẽ).
+
+Bước 3. Kết luận về chiều chuyển động của dây.
+
+Lực từ hướng ra phía sau (xa người quan sát), vuông góc với cả dây dẫn và đường sức từ. Có thể kiểm lại bằng tích có hướng: dòng điện theo phương sang phải, đường sức từ hướng xuống dưới, nên lực từ hướng vào mặt phẳng hình vẽ.
+
+Vậy đoạn dây dẫn bị kéo lệch ra phía sau, xa người quan sát.
+
+Bước 4. Xét trường hợp đổi đồng thời cả chiều dòng điện và chiều từ trường.
+
+Khi đổi chiều dòng điện, lực từ đổi chiều (theo quy tắc bàn tay trái, bốn ngón tay đổi hướng thì ngón cái cũng đổi hướng).
+
+Khi đồng thời đổi chiều đường sức từ, lực từ lại đổi chiều một lần nữa.
+
+Hai lần đổi chiều liên tiếp đưa lực từ trở về chiều ban đầu.
+
+Vậy nếu đổi đồng thời cả chiều dòng điện và chiều từ trường thì chiều lực từ không đổi.
+
+Đáp số. a) Lực từ hướng ra phía sau (xa người quan sát), vuông góc với dây dẫn và với đường sức từ. b) Dây bị kéo lệch ra phía sau. c) Chiều lực từ không đổi, vì đổi chiều cả dòng điện lẫn từ trường thì lực từ đổi chiều hai lần, trở về chiều cũ.
+
+Lưu ý
+
+- Phải dùng bàn tay trái, không dùng bàn tay phải. Nhiều học sinh dùng nhầm tay rồi ra kết quả ngược.
+
+- "Đường sức từ hướng vào lòng bàn tay" nghĩa là lòng bàn tay phải hứng lấy đường sức từ, không phải mu bàn tay.
+
+- Chiều từ cổ tay đến ngón tay giữa chỉ chiều dòng điện (chiều dòng điện quy ước là chiều chuyển động của điện tích dương).
+
+- Ngón tay cái phải choãi ra tạo góc 90° với bốn ngón tay; không choãi ngang 180°.
+
+- Kết luận về chiều lực từ phải nêu rõ phương và chiều trong không gian (ví dụ "hướng thẳng đứng lên trên", "hướng ra phía trước"), không nói chung chung là "lệch đi".
+
+- Lực từ luôn vuông góc với dây dẫn; nếu học sinh kết luận lực từ cùng phương với dây dẫn thì chắc chắn sai.
+
+- Khi đề cho "từ trường đều hướng từ trên xuống" và dây dẫn nằm ngang, nếu dây dẫn song song với đường sức từ thì lực từ bằng 0 và dây không bị lệch. Đây là câu hỏi lí thuyết hay gặp.
+
+Dạng 3. Hiện tượng cảm ứng điện từ – điều kiện xuất hiện dòng điện cảm ứng – định luật Len-xơ (định tính)
+
+Nhận dạng
+
+Đề mô tả một thí nghiệm bằng lời (đưa nam châm lại gần hoặc ra xa cuộn dây, đóng ngắt mạch, dịch chuyển con chạy biến trở, quay khung dây trong từ trường) và yêu cầu: dự đoán hiện tượng (kim điện kế có lệch không, lệch về phía nào), xác định chiều dòng điện cảm ứng, giải thích bằng điều kiện xuất hiện dòng điện cảm ứng và định luật Len-xơ, hoặc nêu cách làm cho dòng điện cảm ứng mạnh hơn / đổi chiều.
+
+Phương pháp
+
+1. Xác định rõ mạch có kín không. Nếu mạch hở thì không có dòng điện cảm ứng.
+
+2. Xác định từ thông Φ qua cuộn dây đang tăng, đang giảm hay không đổi. Đây là bước quyết định.
+
+3. Nếu Φ không đổi (nam châm và cuộn dây đứng yên tương đối với nhau, dòng điện trong nam châm điện không đổi) thì kết luận không có dòng điện cảm ứng, kim điện kế chỉ số 0.
+
+4. Nếu Φ biến thiên, dùng định luật Len-xơ: dòng điện cảm ứng tạo ra từ trường chống lại sự biến thiên đó:
+
+- Φ đang tăng → từ trường cảm ứng ngược chiều từ trường ngoài.
+
+- Φ đang giảm → từ trường cảm ứng cùng chiều từ trường ngoài.
+
+5. Dùng quy tắc nắm tay phải để từ chiều từ trường cảm ứng suy ra chiều dòng điện cảm ứng trong cuộn dây.
+
+6. Kiểm tra lại bằng hình ảnh cực: nam châm lại gần thì mặt cuộn dây đối diện trở thành cực cùng tên (đẩy ra); nam châm ra xa thì mặt cuộn dây đối diện trở thành cực khác tên (hút vào).
+
+7. Nếu đề hỏi cách làm dòng điện cảm ứng mạnh hơn: di chuyển nam châm nhanh hơn, dùng nam châm mạnh hơn, tăng số vòng dây, đưa nam châm sát cuộn dây hoặc lồng nam châm vào trong lõi cuộn dây, tăng tiết diện cuộn dây. Nếu đề hỏi cách đổi chiều dòng điện cảm ứng: đổi chiều chuyển động tương đối (đang lại gần thì chuyển sang ra xa) hoặc đổi cực nam châm.
+
+Ví dụ mẫu
+
+Đề bài. Một cuộn dây dẫn kín được nối với một điện kế nhạy. Đưa cực Bắc của một nam châm thẳng lại gần một đầu cuộn dây dọc theo trục của cuộn dây (đầu đó gọi là đầu P).
+
+a) Trong cuộn dây có dòng điện cảm ứng không? Vì sao?
+
+b) Xác định chiều dòng điện cảm ứng trong cuộn dây và cho biết đầu P của cuộn dây trở thành cực từ gì.
+
+c) Nếu sau đó kéo cực Bắc của nam châm ra xa cuộn dây thì chiều dòng điện cảm ứng có đổi không? Giải thích.
+
+d) Nếu giữ nam châm đứng yên sát đầu P của cuộn dây thì kim điện kế chỉ thế nào? Vì sao?
+
+Tóm tắt.
+
+Cuộn dây dẫn kín nối điện kế
+
+Cực Bắc nam châm đưa lại gần đầu P của cuộn dây
+
+Khảo sát: có dòng cảm ứng không, chiều dòng, cực từ của đầu P
+
+Sau đó kéo nam châm ra xa
+
+Cuối cùng giữ nam châm đứng yên
+
+Lời giải
+
+Bước 1. Xét câu a – có dòng điện cảm ứng hay không.
+
+Khi đưa cực Bắc của nam châm lại gần cuộn dây, số đường sức từ xuyên qua tiết diện cuộn dây tăng lên.
+
+Mạch cuộn dây là mạch kín (nối với điện kế thành mạch kín).
+
+Theo điều kiện xuất hiện dòng điện cảm ứng, từ thông qua mạch kín biến thiên thì trong mạch xuất hiện dòng điện cảm ứng.
+
+Vậy trong cuộn dây có dòng điện cảm ứng, kim điện kế lệch khỏi vị trí 0.
+
+Bước 2. Xét câu b – chiều dòng điện cảm ứng và cực từ của đầu P.
+
+Từ trường ngoài xuyên qua cuộn dây có chiều từ đầu P vào trong lòng cuộn dây (vì cực Bắc của nam châm đưa lại gần đầu P, đường sức từ đi ra từ cực Bắc rồi đi vào đầu P của cuộn dây).
+
+Từ thông này đang tăng (nam châm lại gần).
+
+Theo định luật Len-xơ, dòng điện cảm ứng phải tạo ra từ trường ngược chiều với từ trường ngoài, tức từ trường cảm ứng trong lòng cuộn dây hướng từ trong ra ngoài qua đầu P (hướng từ phải sang trái, nếu nhìn dọc trục cuộn dây với đầu P ở bên trái).
+
+Áp dụng quy tắc nắm tay phải: nắm bàn tay phải sao cho bốn ngón tay chỉ chiều dòng điện cảm ứng, ngón tay cái choãi ra chỉ chiều từ trường cảm ứng trong lòng cuộn dây.
+
+Từ trường cảm ứng hướng ra phía đầu P, vậy ngón tay cái hướng về phía đầu P, suy ra chiều dòng điện cảm ứng trong cuộn dây là chiều sao cho khi nhìn từ phía đầu P, dòng điện chạy theo chiều ngược chiều kim đồng hồ (vectơ cảm ứng hướng về phía người quan sát thì dòng điện nhìn thấy chạy ngược chiều kim đồng hồ).
+
+Đầu P của cuộn dây là nơi đường sức từ của từ trường cảm ứng đi ra ngoài, nên đầu P trở thành cực Bắc.
+
+Kiểm tra bằng hình ảnh cực: đầu P trở thành cực Bắc, cùng tên với cực Bắc của nam châm đang lại gần, nên có lực đẩy nam châm ra – phù hợp với định luật Len-xơ (chống lại sự lại gần).
+
+Bước 3. Xét câu c – kéo nam châm ra xa.
+
+Khi kéo cực Bắc của nam châm ra xa đầu P, số đường sức từ xuyên qua cuộn dây giảm đi.
+
+Theo định luật Len-xơ, dòng điện cảm ứng phải tạo ra từ trường cùng chiều với từ trường ngoài để chống lại sự giảm đó.
+
+Từ trường cảm ứng đổi chiều so với trường hợp ở câu b, do đó chiều dòng điện cảm ứng cũng đổi chiều.
+
+Đầu P lúc này trở thành cực Nam (vì đường sức từ của từ trường cảm ứng đi vào đầu P), và đầu P hút cực Bắc của nam châm – phù hợp với định luật Len-xơ (chống lại sự ra xa).
+
+Vậy chiều dòng điện cảm ứng có đổi so với câu b.
+
+Bước 4. Xét câu d – giữ nam châm đứng yên.
+
+Khi nam châm đứng yên sát đầu P, số đường sức từ xuyên qua tiết diện cuộn dây không đổi (dù rất lớn).
+
+Từ thông qua mạch kín không biến thiên.
+
+Vậy không có dòng điện cảm ứng, kim điện kế trở về vị trí số 0.
+
+Đáp số. a) Có dòng điện cảm ứng, vì từ thông qua cuộn dây biến thiên. b) Dòng điện cảm ứng có chiều sao cho từ trường cảm ứng ngược chiều từ trường ngoài; đầu P trở thành cực Bắc. c) Có đổi chiều, vì từ thông đang giảm nên từ trường cảm ứng phải cùng chiều từ trường ngoài; đầu P trở thành cực Nam. d) Kim điện kế chỉ số 0, vì từ thông không biến thiên.
+
+Lưu ý
+
+- Câu hỏi then chốt luôn là: từ thông đang tăng hay đang giảm? Học sinh hay nhảy ngay vào việc "xác định chiều dòng điện" mà bỏ qua bước này nên rất dễ sai.
+
+- Phải phân biệt rõ hai câu hỏi khác nhau: "có dòng điện cảm ứng không?" (phụ thuộc từ thông có biến thiên không) và "dòng điện cảm ứng có chiều thế nào?" (phụ thuộc từ thông đang tăng hay giảm).
+
+- Từ thông lớn không có nghĩa là có dòng điện cảm ứng. Chỉ cần từ thông biến thiên, dù giá trị nhỏ, vẫn có dòng điện cảm ứng.
+
+- Không được viết bất kì công thức định lượng nào của suất điện động cảm ứng. Lời giải phải hoàn toàn định tính.
+
+- Trong lập luận, nên dùng cả hai cách kiểm tra: bằng định luật Len-xơ và bằng hình ảnh cực từ của cuộn dây. Hai cách này phải cho kết quả nhất quán; nếu mâu thuẫn thì đã sai ở đâu đó.
+
+- Với bài "quay khung dây trong từ trường", phải nhớ dòng điện đổi chiều hai lần trong mỗi vòng quay.
+
+- Với bài "dịch chuyển con chạy của biến trở trong mạch của nam châm điện", từ trường biến thiên không do chuyển động cơ học mà do cường độ dòng điện thay đổi. Học sinh hay cho rằng "không có vật nào chuyển động nên không có dòng cảm ứng" – đó là hiểu sai.
+
+Dạng 4. Máy biến thế – tính hiệu điện thế, số vòng dây, cường độ dòng điện
+
+Nhận dạng
+
+Đề cho số vòng dây của hai cuộn và một trong hai hiệu điện thế, yêu cầu tìm hiệu điện thế còn lại; hoặc cho hiệu điện thế vào – ra và số vòng một cuộn, yêu cầu tìm số vòng cuộn kia; hoặc hỏi máy đó là máy tăng thế hay hạ thế; hoặc hỏi vì sao máy biến thế không hoạt động với dòng điện một chiều; hoặc kết hợp tìm cường độ dòng điện ở hai cuộn (mức mở rộng).
+
+Phương pháp
+
+1. Xác định rõ cuộn nào là sơ cấp (nối với nguồn) và cuộn nào là thứ cấp (nối với tải), tương ứng với N₁ và N₂.
+
+2. Viết công thức gốc U₁/U₂ = N₁/N₂ rồi suy ra đại lượng cần tìm trước khi thay số. Việc này giúp tránh nhầm vị trí các đại lượng.
+
+3. Thay số, giữ nguyên đơn vị (thường U theo V, N theo vòng).
+
+4. Kiểm tra tính hợp lí: nếu N₂ > N₁ thì phải có U₂ > U₁; nếu kết quả ngược lại là sai. Với máy hạ thế dùng trong gia đình, U₂ thường nhỏ hơn 220 V.
+
+5. Nếu đề hỏi cường độ dòng điện và cho phép bỏ qua hao phí, dùng U₁.I₁ = U₂.I₂ hoặc I₁/I₂ = N₂/N₁.
+
+6. Nếu đề hỏi "vì sao máy biến thế chỉ dùng với dòng xoay chiều", trả lời dựa trên sự biến thiên của từ trường: dòng một chiều cho từ trường không biến thiên nên không có dòng điện cảm ứng ở cuộn thứ cấp.
+
+Ví dụ mẫu
+
+Đề bài. Một máy biến thế có cuộn sơ cấp gồm N₁ = 2 000 vòng, cuộn thứ cấp gồm N₂ = 500 vòng. Đặt vào hai đầu cuộn sơ cấp một hiệu điện thế xoay chiều U₁ = 220 V. Cuộn thứ cấp để hở.
+
+a) Tính hiệu điện thế U₂ giữa hai đầu cuộn thứ cấp. Máy này là máy tăng thế hay hạ thế?
+
+b) Muốn hiệu điện thế ở cuộn thứ cấp là 110 V (với U₁ vẫn là 220 V) thì phải quấn cuộn thứ cấp bao nhiêu vòng?
+
+c) Máy biến thế trên có hoạt động được khi mắc vào nguồn điện một chiều không đổi 220 V không? Vì sao?
+
+Tóm tắt.
+
+N₁ = 2 000 vòng
+
+N₂ = 500 vòng
+
+U₁ = 220 V
+
+Tính U₂; để U₂' = 110 V thì N₂' bằng bao nhiêu; khảo sát trường hợp nguồn một chiều
+
+Lời giải
+
+Bước 1. Viết công thức gốc của máy biến thế.
+
+U₁/U₂ = N₁/N₂
+
+Suy ra
+
+U₂ = U₁.N₂/N₁
+
+Bước 2. Thay số tính U₂.
+
+U₂ = 220 × 500/2 000
+
+U₂ = 220 × 0,25
+
+U₂ = 55 V
+
+Vì N₂ < N₁ nên U₂ < U₁: máy này là máy hạ thế (hạ từ 220 V xuống 55 V).
+
+Bước 3. Tìm số vòng cuộn thứ cấp để có U₂' = 110 V.
+
+Từ công thức máy biến thế suy ra
+
+N₂' = N₁.U₂'/U₁
+
+N₂' = 2 000 × 110/220
+
+N₂' = 2 000 × 0,5
+
+N₂' = 1 000 vòng
+
+Kiểm tra lại: U₁/U₂' = 220/110 = 2 và N₁/N₂' = 2 000/1 000 = 2. Hai tỉ số bằng nhau, kết quả đúng.
+
+Bước 4. Xét câu c.
+
+Khi mắc cuộn sơ cấp vào nguồn một chiều không đổi 220 V, dòng điện trong cuộn sơ cấp là dòng một chiều nên từ trường do nó tạo ra trong lõi sắt là từ trường không đổi.
+
+Số đường sức từ xuyên qua tiết diện cuộn thứ cấp không biến thiên.
+
+Vì không có sự biến thiên của từ thông nên trong cuộn thứ cấp không xuất hiện dòng điện cảm ứng: U₂ = 0.
+
+Vậy máy biến thế không hoạt động với nguồn một chiều.
+
+Hơn nữa, vì cuộn sơ cấp có điện trở nhỏ, dòng một chiều sẽ rất lớn và làm nóng, thậm chí cháy cuộn dây.
+
+Đáp số. a) U₂ = 55 V; máy hạ thế. b) N₂' = 1 000 vòng. c) Không hoạt động, vì từ trường trong lõi không biến thiên nên không có dòng điện cảm ứng ở cuộn thứ cấp; ngoài ra cuộn sơ cấp có thể bị nóng cháy.
+
+Lưu ý
+
+- Phải xác định cuộn nào nối với nguồn. Nếu đề đổi vai trò hai cuộn (đưa hiệu điện thế vào cuộn 500 vòng), kết quả sẽ khác hẳn. Học sinh rất hay thay số vào đúng vị trí nhưng gán nhầm cuộn.
+
+- Tỉ số U₁/U₂ bằng tỉ số N₁/N₂, không bằng tỉ số nghịch đảo. Lỗi viết U₁/U₂ = N₂/N₁ là lỗi phổ biến.
+
+- Kiểm tra hợp lí là bước bắt buộc: máy hạ thế thì N₂ phải nhỏ hơn N₁.
+
+- Công thức U₁/U₂ = N₁/N₂ chỉ đúng khi cuộn thứ cấp để hở (không tải) và bỏ qua hao phí. Nếu cuộn thứ cấp có tải, hiệu điện thế thứ cấp giảm đôi chút; ở lớp 9 ta bỏ qua.
+
+- Khi đề hỏi cường độ dòng điện, phải nêu rõ giả thiết "bỏ qua hao phí" thì mới được dùng U₁.I₁ = U₂.I₂.
+
+- Câu hỏi "vì sao không dùng được với dòng một chiều" là câu hỏi lí thuyết rất hay gặp trong đề thi; câu trả lời phải có từ khoá "biến thiên" hoặc "không đổi".
+
+- Cần phân biệt máy biến thế với máy phát điện: máy biến thế không tạo ra điện năng, nó chỉ biến đổi hiệu điện thế của dòng điện xoay chiều đã có.
+
+Dạng 5. Hao phí trên đường dây tải điện – vì sao phải tăng hiệu điện thế
+
+Nhận dạng
+
+Đề cho công suất cần truyền đi P, hiệu điện thế truyền tải U, điện trở (hoặc chiều dài, tiết diện, vật liệu) của đường dây; yêu cầu tính công suất hao phí, hiệu suất truyền tải, độ giảm thế; hoặc so sánh hao phí khi thay đổi hiệu điện thế truyền tải; hoặc hỏi vì sao phải tăng hiệu điện thế trước khi truyền tải.
+
+Phương pháp
+
+1. Xác định rõ ba đại lượng gốc: P (công suất truyền đi ở đầu đường dây), U (hiệu điện thế truyền tải, tức hiệu điện thế đặt vào hai đầu đường dây), R (tổng điện trở của cả hai dây dẫn).
+
+2. Tính cường độ dòng điện trên đường dây: I = P/U.
+
+3. Tính công suất hao phí: P_(hp) = R.I². Có thể dùng ngay dạng tỉ lệ P_(hp) = P².R/U² (công thức mở rộng) để tính nhanh.
+
+4. Tính hiệu suất truyền tải: H = 1 − P_(hp)/P (đổi ra % nếu đề yêu cầu).
+
+5. Nếu đề hỏi độ giảm thế và hiệu điện thế nơi tiêu thụ: ΔU = I.R và U_(tt) = U − ΔU.
+
+6. Nếu đề hỏi "tăng U lên k lần thì hao phí thay đổi thế nào" (với công suất truyền đi và điện trở dây không đổi): dùng tỉ lệ P_(hp) tỉ lệ nghịch với U², tức P_(hp) giảm k² lần, không cần tính lại từ đầu.
+
+7. Nếu đề hỏi ngược lại (cần tăng U lên bao nhiêu lần để hao phí giảm n lần): suy ra k = √n.
+
+8. Nếu đề hỏi tiết diện dây: từ R suy ra S nhờ R = ρ.L/S (nhớ L là tổng chiều dài dây dẫn cả hai dây, thường bằng hai lần khoảng cách).
+
+9. Kết luận định tính: tăng U là cách giảm hao phí rẻ và hiệu quả nhất, vì hao phí giảm theo bình phương của U.
+
+Ví dụ mẫu
+
+Đề bài. Một nhà máy điện cần truyền đi công suất P = 500 kW bằng đường dây có tổng điện trở R = 20 Ω.
+
+a) Tính công suất hao phí trên đường dây khi hiệu điện thế truyền tải là U = 10 kV. Tính hiệu suất truyền tải.
+
+b) Nếu dùng máy tăng thế để nâng hiệu điện thế truyền tải lên U' = 100 kV (giữ nguyên công suất P và đường dây), tính công suất hao phí mới và cho biết hao phí giảm bao nhiêu lần.
+
+c) Nếu vẫn giữ hiệu điện thế truyền tải U = 10 kV mà muốn giảm hao phí xuống còn 5 kW thì phải làm đường dây có điện trở bằng bao nhiêu? So sánh lượng vật liệu cần dùng với cách tăng hiệu điện thế ở câu b.
+
+Tóm tắt.
+
+P = 500 kW = 500 000 W
+
+R = 20 Ω
+
+a) U = 10 kV = 10 000 V
+
+b) U' = 100 kV = 100 000 V
+
+c) Với U = 10 kV, muốn P_(hp) = 5 kW
+
+Lời giải
+
+Bước 1. Tính cường độ dòng điện trên đường dây ở câu a.
+
+I = P/U
+
+I = 500 000/10 000
+
+I = 50 A
+
+Bước 2. Tính công suất hao phí ở câu a.
+
+P_(hp) = R.I²
+
+P_(hp) = 20 × 50²
+
+P_(hp) = 20 × 2 500
+
+P_(hp) = 50 000 W = 50 kW
+
+Kiểm tra bằng dạng tỉ lệ:
+
+P_(hp) = P².R/U²
+
+P_(hp) = (500 000)² × 20/(10 000)²
+
+P_(hp) = (2,5·10¹¹ × 20)/(10⁸)
+
+P_(hp) = 5·10¹²/10⁸ = 5·10⁴ W = 50 kW
+
+Hai cách cho cùng kết quả.
+
+Bước 3. Tính hiệu suất truyền tải ở câu a.
+
+H = 1 − P_(hp)/P
+
+H = 1 − 50/500
+
+H = 1 − 0,1
+
+H = 0,9 = 90%
+
+Vậy hao phí chiếm 10% công suất truyền đi – quá lớn, không thể chấp nhận trong thực tế.
+
+Bước 4. Tính công suất hao phí ở câu b.
+
+Vì P và R không đổi, công suất hao phí tỉ lệ nghịch với bình phương hiệu điện thế truyền tải.
+
+Hiệu điện thế tăng từ 10 kV lên 100 kV, tức tăng k = 10 lần.
+
+Vậy công suất hao phí giảm k² = 100 lần.
+
+P_(hp)' = 50 000/100 = 500 W
+
+Kiểm tra trực tiếp: I' = P/U' = 500 000/100 000 = 5 A; P_(hp)' = R.I'² = 20 × 25 = 500 W. Kết quả phù hợp.
+
+Hiệu suất truyền tải mới: H' = 1 − 500/500 000 = 1 − 0,001 = 99,9%.
+
+Bước 5. Tính điện trở đường dây cần thiết ở câu c.
+
+Vẫn giữ U = 10 000 V nên cường độ dòng điện vẫn là I = 50 A.
+
+Muốn P_(hp) = 5 000 W thì
+
+R' = P_(hp)/I²
+
+R' = 5 000/2 500
+
+R' = 2 Ω
+
+Vậy điện trở đường dây phải giảm từ 20 Ω xuống 2 Ω, tức giảm 10 lần.
+
+Vì R = ρ.L/S nên khi giữ nguyên vật liệu và chiều dài, muốn giảm R 10 lần phải tăng tiết diện dây lên 10 lần.
+
+Bước 6. So sánh hai cách.
+
+Cách tăng hiệu điện thế lên 10 lần chỉ cần thêm một máy biến thế, chi phí nhỏ, hao phí giảm 100 lần.
+
+Cách tăng tiết diện dây lên 10 lần làm khối lượng đồng tăng 10 lần, dây nặng hơn nhiều, cột điện phải chịu tải lớn hơn, chi phí rất lớn mà hao phí chỉ giảm 10 lần.
+
+Kết luận: tăng hiệu điện thế trước khi truyền tải là cách hiệu quả và kinh tế nhất.
+
+Đáp số. a) I = 50 A; P_(hp) = 50 kW; H = 90%. b) P_(hp)' = 500 W, giảm 100 lần; H' = 99,9%. c) R' = 2 Ω, tức phải tăng tiết diện dây lên 10 lần – tốn kém hơn nhiều so với việc tăng hiệu điện thế.
+
+Lưu ý
+
+- Trong công thức P_(hp) = P².R/U², U là hiệu điện thế truyền tải (hiệu điện thế ở đầu đường dây), không phải hiệu điện thế nơi tiêu thụ. Đây là lỗi nguy hiểm nhất của dạng bài này.
+
+- R là tổng điện trở của cả hai dây dẫn (dây đi và dây về). Nếu đề cho khoảng cách từ nhà máy đến nơi tiêu thụ là L thì tổng chiều dài dây dẫn là 2L. Bỏ qua chi tiết này sẽ ra kết quả sai 2 lần.
+
+- Công suất hao phí tính theo công suất truyền đi, không tính theo công suất nhận được ở cuối đường dây. Khi hao phí nhỏ (dưới vài phần trăm) có thể coi gần đúng hai công suất này bằng nhau, nhưng phải nêu rõ giả thiết.
+
+- Không được lấy công suất truyền đi trừ đi hao phí rồi lại dùng chính hiệu đó để tính I (vòng lặp sai). Hãy xác định P là công suất ở đầu đường dây.
+
+- Hiệu suất truyền tải luôn nhỏ hơn 100%.
+
+- Mẹo kiểm tra: khi U tăng 10 lần thì hao phí phải giảm 100 lần (không phải 10 lần). Nếu tính ra giảm 10 lần là đã nhầm giữa bậc một và bậc hai.
+
+Dạng 6. Máy phát điện xoay chiều – tần số f = n.p, tốc độ quay và số cặp cực
+
+Nhận dạng
+
+Đề cho số cặp cực p và tốc độ quay của rôto, yêu cầu tính tần số dòng điện phát ra; hoặc cho tần số cần có (thường là 50 Hz) và số cặp cực, yêu cầu tính tốc độ quay; hoặc cho tốc độ quay và tần số, yêu cầu tìm số cặp cực. Đề cũng có thể mô tả hệ truyền động đai hoặc bánh răng giữa tuabin và rôto.
+
+Phương pháp
+
+1. Xác định p là số cặp cực (không phải số cực). Nếu đề cho "4 cực" thì p = 2 cặp cực; nếu cho "4 cặp cực" thì p = 4.
+
+2. Đổi tốc độ quay về vòng/giây: n (vòng/s) = n (vòng/phút)/60. Bước này bắt buộc, vì công thức f = n.p tính theo vòng/giây.
+
+3. Áp dụng f = n.p; hoặc suy ra p = f/n; hoặc n = f/p.
+
+4. Nếu đề hỏi số vòng quay mỗi phút thì đổi ngược lại: n (vòng/phút) = 60 × n (vòng/s) = 60.f/p.
+
+5. Nếu rôto quay nhờ đai truyền hoặc bánh răng, dùng hệ thức n₁.d₁ = n₂.d₂ để liên hệ tốc độ quay của tuabin và của rôto.
+
+6. Kiểm tra hợp lí: với f = 50 Hz, nếu p = 2 thì rôto quay 1 500 vòng/phút (máy phát tuabin hơi); nếu p = 4 thì 750 vòng/phút (tuabin nước); nếu p = 1 thì 3 000 vòng/phút. Các giá trị này rất hay gặp trong thực tế.
+
+Ví dụ mẫu
+
+Đề bài. Một máy phát điện xoay chiều có rôto là nam châm điện gồm 3 cặp cực. Máy được thiết kế để phát ra dòng điện có tần số 50 Hz – tần số của lưới điện Việt Nam.
+
+a) Tính số vòng quay mỗi giây và số vòng quay mỗi phút của rôto.
+
+b) Nếu vì sự cố, rôto quay với tốc độ 1 200 vòng/phút thì tần số dòng điện phát ra là bao nhiêu? Tần số này có phù hợp với lưới điện không?
+
+c) Một máy phát điện khác có 5 cặp cực, cũng phát ra dòng điện 50 Hz. Rôto của máy này quay bao nhiêu vòng mỗi phút?
+
+d) Giải thích ngắn gọn vì sao máy có nhiều cặp cực hơn lại có thể quay chậm hơn mà vẫn cho cùng tần số.
+
+Tóm tắt.
+
+Máy 1: p = 3 cặp cực, f = 50 Hz
+
+b) n = 1 200 vòng/phút, tính f
+
+c) Máy 2: p = 5 cặp cực, f = 50 Hz, tính n
+
+Lời giải
+
+Bước 1. Tính số vòng quay mỗi giây của rôto máy 1.
+
+Từ công thức f = n.p suy ra
+
+n = f/p
+
+n = 50/3 ≈ 16,67 vòng/s
+
+Bước 2. Đổi sang số vòng quay mỗi phút.
+
+n (vòng/phút) = 60 × n (vòng/s)
+
+n (vòng/phút) = 60 × 50/3
+
+n (vòng/phút) = 1 000 vòng/phút
+
+Vậy rôto quay 1 000 vòng mỗi phút, tức khoảng 16,7 vòng mỗi giây.
+
+Bước 3. Tính tần số khi rôto quay 1 200 vòng/phút.
+
+Đổi tốc độ quay sang vòng/giây:
+
+n' = 1 200/60 = 20 vòng/s
+
+Áp dụng công thức:
+
+f' = n'.p
+
+f' = 20 × 3 = 60 Hz
+
+Tần số phát ra là 60 Hz, không phù hợp với lưới điện Việt Nam (quy định 50 Hz).
+
+Nếu duy trì tình trạng này, các thiết bị điện và động cơ sẽ hoạt động sai (động cơ quay nhanh hơn thiết kế, thiết bị điện tử có thể hỏng), nên phải điều chỉnh tốc độ tuabin về đúng giá trị thiết kế.
+
+Bước 4. Tính tốc độ quay của máy 2.
+
+Với p = 5 cặp cực và f = 50 Hz:
+
+n = f/p = 50/5 = 10 vòng/s
+
+n (vòng/phút) = 60 × 10 = 600 vòng/phút
+
+Vậy rôto máy 2 quay 600 vòng mỗi phút.
+
+Bước 5. Giải thích câu d.
+
+Trong một vòng quay của rôto, số đường sức từ xuyên qua một cuộn dây biến thiên tuần hoàn đúng p lần, nên dòng điện thực hiện p chu kì.
+
+Vì vậy tích n.p quyết định tần số: máy có nhiều cặp cực thì chỉ cần quay chậm hơn cũng đủ tạo ra tần số 50 Hz.
+
+Máy nhiều cặp cực phù hợp với tuabin nước (quay chậm, mômen lớn); máy ít cặp cực phù hợp với tuabin hơi (quay nhanh).
+
+Đáp số. a) n ≈ 16,67 vòng/s = 1 000 vòng/phút. b) f' = 60 Hz, không phù hợp với lưới 50 Hz. c) n = 10 vòng/s = 600 vòng/phút. d) Vì trong mỗi vòng quay, từ thông qua cuộn dây biến thiên p lần nên tần số tỉ lệ với tích n.p.
+
+Lưu ý
+
+- Nhầm giữa số cực và số cặp cực là lỗi phổ biến nhất. Một nam châm luôn có hai cực, nên p cặp cực ứng với 2p cực.
+
+- Quên đổi vòng/phút sang vòng/giây sẽ cho kết quả sai 60 lần. Luôn viết dòng đổi đơn vị.
+
+- Cần phân biệt rõ rôto (phần quay) và stato (phần đứng yên). Đề có thể mô tả "cuộn dây đặt trên stato, nam châm quay" – vẫn dùng công thức f = n.p với n là tốc độ quay của rôto (tức nam châm).
+
+- Khi đề cho "nam châm có 4 cực" thì p = 2; khi cho "4 cặp cực" thì p = 4. Phải đọc kĩ.
+
+- Trong hệ truyền động đai, dùng n₁.d₁ = n₂.d₂; trong hệ bánh răng, dùng n₁.Z₁ = n₂.Z₂ với Z là số răng. Tốc độ quay tỉ lệ nghịch với đường kính puli (hoặc số răng), không được cộng trừ.
+
+- Nếu tần số phát ra khác 50 Hz, cần nêu hậu quả thực tế (động cơ sai tốc độ, thiết bị điện tử hoạt động sai) và biện pháp (điều chỉnh lưu lượng nước hoặc hơi để giữ tốc độ quay).
+
+Dạng 7. Câu hỏi thực hành – thí nghiệm và xử lí số liệu về cảm ứng điện từ, máy biến thế
+
+Nhận dạng
+
+Đề mô tả một phương án thí nghiệm (quan sát hiện tượng cảm ứng điện từ, chế tạo máy biến thế đơn giản, đo hiệu điện thế sơ cấp – thứ cấp), yêu cầu: nêu dụng cụ, nêu cách tiến hành, lập bảng số liệu, xử lí số liệu để rút ra kết luận, giải thích sai lệch giữa tỉ số hiệu điện thế đo được và tỉ số vòng dây, hoặc đề xuất cải tiến phương án.
+
+Phương pháp
+
+1. Nêu rõ dụng cụ: nguồn điện xoay chiều hạ áp an toàn (6 V, 12 V hoặc 24 V xoay chiều), hai cuộn dây có số vòng đã biết (hoặc dây đồng quấn được), lõi sắt non hình chữ U hoặc hình chữ O, vôn kế xoay chiều, dây nối; nếu làm thí nghiệm cảm ứng điện từ thì thêm nam châm và điện kế nhạy.
+
+2. Nêu cách tiến hành theo đúng trình tự: mắc cuộn sơ cấp vào nguồn xoay chiều; mắc vôn kế song song với cuộn sơ cấp để đo U₁; mắc vôn kế song song với cuộn thứ cấp (để hở) để đo U₂; ghi N₁, N₂, U₁, U₂ vào bảng.
+
+3. Làm nhiều lần với các cặp cuộn dây khác nhau để tăng độ tin cậy; lập bảng số liệu có cột N₁, N₂, U₁, U₂, tỉ số N₁/N₂, tỉ số U₁/U₂.
+
+4. Xử lí số liệu: so sánh tỉ số N₁/N₂ với tỉ số U₁/U₂. Nếu hai tỉ số gần bằng nhau thì công thức U₁/U₂ = N₁/N₂ được nghiệm đúng.
+
+5. Giải thích sai lệch: U₂ đo được thường nhỏ hơn giá trị tính theo lí thuyết. Nguyên nhân: hao phí do điện trở cuộn dây, do dòng Fu-cô trong lõi, do từ thông rò ra ngoài không qua hết cuộn thứ cấp; ngoài ra còn do sai số của vôn kế, do cuộn thứ cấp chưa đặt đúng trên cùng một lõi kín, do nguồn không ổn định.
+
+6. Đề xuất cải tiến: quấn hai cuộn trên cùng một lõi kín, quấn nhiều vòng hơn để giảm từ thông rò, dùng lõi ghép lá thép mỏng cách điện, giữ hiệu điện thế nguồn ổn định, dùng vôn kế có độ chia nhỏ nhất phù hợp và đọc số nhiều lần rồi lấy trung bình.
+
+7. Nêu kết luận dạng một câu: tỉ số hiệu điện thế giữa hai cuộn dây xấp xỉ bằng tỉ số số vòng dây; máy biến thế hoạt động với dòng điện xoay chiều và không hoạt động với dòng điện một chiều.
+
+Ví dụ mẫu
+
+Đề bài. Một nhóm học sinh chế tạo một máy biến thế đơn giản: cuộn sơ cấp có N₁ = 1 000 vòng, cuộn thứ cấp có N₂ = 100 vòng, cả hai cuộn quấn trên cùng một lõi sắt non kín. Cuộn sơ cấp được mắc vào nguồn xoay chiều hạ áp an toàn đã được thầy giáo kiểm tra, hiệu điện thế U₁ = 220 V. Dùng vôn kế xoay chiều đo được hiệu điện thế hai đầu cuộn thứ cấp (để hở) là U₂ = 21 V.
+
+a) Tính hiệu điện thế thứ cấp theo lí thuyết.
+
+b) So sánh với kết quả đo được và giải thích nguyên nhân sai lệch.
+
+c) Muốn hiệu điện thế đo được ở cuộn thứ cấp đúng bằng giá trị lí thuyết thì phải quấn thêm khoảng bao nhiêu vòng vào cuộn thứ cấp?
+
+d) Nếu vô ý mắc nguồn 220 V vào cuộn 100 vòng và lấy điện ra ở cuộn 1 000 vòng (để hở) thì hiệu điện thế thứ cấp là bao nhiêu? Từ đó rút ra lưu ý an toàn gì?
+
+Tóm tắt.
+
+N₁ = 1 000 vòng, N₂ = 100 vòng
+
+U₁ = 220 V
+
+Đo được U₂ = 21 V
+
+Lời giải
+
+Bước 1. Tính hiệu điện thế thứ cấp theo lí thuyết.
+
+U₁/U₂ = N₁/N₂ suy ra U₂ = U₁.N₂/N₁
+
+U₂ = 220 × 100/1 000
+
+U₂ = 22 V
+
+Bước 2. So sánh với kết quả đo.
+
+Giá trị lí thuyết là 22 V, giá trị đo được là 21 V, nhỏ hơn 1 V.
+
+Độ lệch tương đối = (22 − 21)/22 ≈ 4,5%.
+
+Đây là mức lệch hoàn toàn bình thường với một máy biến thế tự chế.
+
+Bước 3. Giải thích nguyên nhân sai lệch.
+
+Một phần từ thông do cuộn sơ cấp sinh ra bị rò ra ngoài không xuyên qua cuộn thứ cấp, nên từ thông qua cuộn thứ cấp nhỏ hơn so với tính toán lí thuyết.
+
+Các cuộn dây có điện trở nên một phần điện áp bị mất trên chính cuộn dây.
+
+Trong lõi sắt có dòng điện Fu-cô làm nóng lõi, gây hao phí.
+
+Ngoài ra còn có sai số của vôn kế và sự không ổn định của nguồn điện.
+
+Bước 4. Tính số vòng cần quấn thêm ở cuộn thứ cấp.
+
+Từ số liệu thực nghiệm, hiệu điện thế trên mỗi vòng dây của cuộn thứ cấp là
+
+k = U₂/N₂ = 21/100 = 0,21 V/vòng
+
+Muốn có U₂' = 22 V thì số vòng cần thiết là
+
+N₂' = U₂'/k = 22/0,21 ≈ 105 vòng
+
+Vậy phải quấn thêm khoảng 105 − 100 = 5 vòng.
+
+Kiểm tra: 105 × 0,21 = 22,05 V ≈ 22 V. Kết quả phù hợp.
+
+Bước 5. Xét câu d.
+
+Nếu mắc nguồn 220 V vào cuộn 100 vòng thì cuộn này trở thành cuộn sơ cấp với N₁' = 100 vòng và U₁' = 220 V.
+
+Cuộn 1 000 vòng trở thành cuộn thứ cấp với N₂' = 1 000 vòng.
+
+U₂' = U₁'.N₂'/N₁'
+
+U₂' = 220 × 1 000/100
+
+U₂' = 2 200 V
+
+Đây là hiệu điện thế cực kì nguy hiểm, có thể gây điện giật chết người và làm cháy cách điện cuộn dây.
+
+Lưu ý an toàn: phải xác định đúng cuộn sơ cấp trước khi mắc nguồn; không bao giờ mắc nguồn 220 V vào cuộn dây ít vòng; khi thí nghiệm, chỉ dùng nguồn hạ áp an toàn và có sự giám sát của giáo viên.
+
+Đáp số. a) U₂ = 22 V theo lí thuyết. b) Đo được 21 V, lệch khoảng 4,5% do từ thông rò, điện trở cuộn dây, dòng Fu-cô, sai số dụng cụ. c) Quấn thêm khoảng 5 vòng (tổng khoảng 105 vòng). d) U₂' = 2 200 V – cực kì nguy hiểm, phải tuyệt đối tránh.
+
+Lưu ý
+
+- Trong thí nghiệm cảm ứng điện từ, phải nêu rõ kim điện kế lệch khi nam châm đang chuyển động và trở về 0 khi nam châm dừng lại; nếu chỉ nói "kim lệch" mà không nói điều kiện chuyển động là thiếu.
+
+- Trong thí nghiệm máy biến thế, phải đo hiệu điện thế thứ cấp khi cuộn thứ cấp để hở; nếu mắc tải vào, U₂ sẽ giảm thêm và kết quả không còn so sánh được với công thức lí thuyết.
+
+- Vôn kế phải là vôn kế xoay chiều (hoặc đồng hồ vạn năng ở chế độ AC). Dùng chế độ DC sẽ cho số chỉ sai hoặc bằng 0.
+
+- Không được dùng nguồn điện lưới 220 V trực tiếp cho thí nghiệm học sinh. An toàn là yêu cầu bắt buộc, phải nêu trong phần phương án.
+
+- Khi trình bày số liệu, phải ghi kèm đơn vị và nêu độ chia nhỏ nhất của vôn kế.
+
+- Phải phân biệt hai loại sai lệch: sai lệch do hao phí thật của máy biến thế (có tính quy luật, luôn làm U₂ nhỏ hơn lí thuyết) và sai lệch do đọc số (ngẫu nhiên, có thể lớn hơn hoặc nhỏ hơn).
+
+- Trong bảng số liệu nên có cột tỉ số N₁/N₂ và U₁/U₂ để học sinh thấy rõ hai tỉ số xấp xỉ bằng nhau – đây chính là bằng chứng thực nghiệm của công thức máy biến thế.
+
+D. Bài tập ví dụ có lời giải (6 bài, độ khó tăng dần)
+
+Bài D1. Máy biến thế hạ thế đơn giản
+
+Đề bài. Một máy biến thế có cuộn sơ cấp N₁ = 4 400 vòng, cuộn thứ cấp N₂ = 200 vòng. Đặt vào hai đầu cuộn sơ cấp hiệu điện thế xoay chiều U₁ = 220 V. Cuộn thứ cấp để hở.
+
+a) Tính hiệu điện thế U₂ giữa hai đầu cuộn thứ cấp. Máy này là máy tăng thế hay hạ thế?
+
+b) Muốn hiệu điện thế thứ cấp là 12 V (với U₁ = 220 V) thì cuộn thứ cấp phải có bao nhiêu vòng?
+
+Tóm tắt.
+
+N₁ = 4 400 vòng
+
+N₂ = 200 vòng
+
+U₁ = 220 V
+
+Tính U₂
+
+Để U₂' = 12 V, tính N₂'
+
+Lời giải
+
+Bước 1. Áp dụng công thức máy biến thế.
+
+U₁/U₂ = N₁/N₂
+
+Suy ra
+
+U₂ = U₁.N₂/N₁
+
+Bước 2. Thay số.
+
+U₂ = 220 × 200/4 400
+
+U₂ = 220/22
+
+U₂ = 10 V
+
+Vì N₂ = 200 vòng nhỏ hơn N₁ = 4 400 vòng nên U₂ < U₁.
+
+Vậy đây là máy hạ thế.
+
+Bước 3. Tìm số vòng cuộn thứ cấp để có U₂' = 12 V.
+
+N₂' = N₁.U₂'/U₁
+
+N₂' = 4 400 × 12/220
+
+N₂' = 20 × 12
+
+N₂' = 240 vòng
+
+Kiểm tra: 220 × 240/4 400 = 220 × 0,05454 ≈ 12 V. Kết quả đúng.
+
+Đáp số. a) U₂ = 10 V; đây là máy hạ thế. b) N₂' = 240 vòng.
+
+Nhận xét sư phạm. Bài này củng cố công thức cơ bản và thói quen kiểm tra tính hợp lí của máy tăng thế – hạ thế. Điểm cần lưu ý: tỉ số 220/4 400 = 1/20 rất dễ tính nhẩm, nên bài này phù hợp để luyện kĩ năng ước lượng.
+
+Bài D2. Máy biến thế tăng thế dùng cho trạm biến áp
+
+Đề bài. Một máy biến thế có cuộn sơ cấp N₁ = 250 vòng được mắc vào nguồn xoay chiều U₁ = 220 V. Cuộn thứ cấp có N₂ = 5 000 vòng, để hở.
+
+a) Tính hiệu điện thế hai đầu cuộn thứ cấp.
+
+b) Nếu hiệu điện thế nguồn giảm còn 110 V thì hiệu điện thế thứ cấp bằng bao nhiêu?
+
+c) Với máy biến thế này, nếu coi hao phí không đáng kể và công suất truyền qua máy là 1,1 kW thì cường độ dòng điện hiệu dụng ở cuộn sơ cấp và cuộn thứ cấp lần lượt là bao nhiêu?
+
+Tóm tắt.
+
+N₁ = 250 vòng
+
+N₂ = 5 000 vòng
+
+a) U₁ = 220 V
+
+b) U₁' = 110 V
+
+c) P = 1,1 kW = 1 100 W, bỏ qua hao phí
+
+Lời giải
+
+Bước 1. Tính hiệu điện thế thứ cấp ở câu a.
+
+U₂ = U₁.N₂/N₁
+
+U₂ = 220 × 5 000/250
+
+U₂ = 220 × 20
+
+U₂ = 4 400 V
+
+Vì N₂ > N₁ nên U₂ > U₁: máy tăng thế, đúng với chức năng của máy tăng thế ở trạm biến áp.
+
+Bước 2. Tính hiệu điện thế thứ cấp khi nguồn giảm còn 110 V.
+
+Với cùng một máy biến thế, tỉ số U₁/U₂ = N₁/N₂ không đổi, nên U₂ tỉ lệ thuận với U₁.
+
+Nguồn giảm 2 lần (từ 220 V xuống 110 V) thì U₂ cũng giảm 2 lần.
+
+U₂' = 4 400/2 = 2 200 V
+
+Kiểm tra trực tiếp: U₂' = 110 × 5 000/250 = 110 × 20 = 2 200 V. Kết quả phù hợp.
+
+Bước 3. Tính cường độ dòng điện ở hai cuộn (câu c).
+
+Bỏ qua hao phí, công suất ở cuộn sơ cấp bằng công suất ở cuộn thứ cấp:
+
+P = U₁.I₁
+
+Suy ra
+
+I₁ = P/U₁
+
+I₁ = 1 100/220 = 5 A
+
+Và
+
+I₂ = P/U₂
+
+I₂ = 1 100/4 400 = 0,25 A
+
+Kiểm tra theo tỉ lệ nghịch:
+
+I₁/I₂ = 5/0,25 = 20
+
+N₂/N₁ = 5 000/250 = 20
+
+Hai tỉ số bằng nhau, phù hợp với hệ thức I₁/I₂ = N₂/N₁.
+
+Đáp số. a) U₂ = 4 400 V. b) U₂' = 2 200 V. c) I₁ = 5 A; I₂ = 0,25 A.
+
+Nhận xét sư phạm. Câu c là nội dung mở rộng cho HSG (dùng U₁.I₁ = U₂.I₂). Điều cần nhấn mạnh: máy tăng thế lên 20 lần về hiệu điện thế thì giảm 20 lần về cường độ dòng điện – chính là lí do tăng thế có tác dụng "kép" khi truyền tải.
+
+Bài D3. Công suất hao phí trên đường dây tải điện
+
+Đề bài. Người ta truyền đi một công suất điện P = 200 kW bằng đường dây có tổng điện trở R = 15 Ω. Hiệu điện thế truyền tải là U = 20 kV.
+
+a) Tính cường độ dòng điện trên đường dây và công suất hao phí do tỏa nhiệt.
+
+b) Tính hiệu suất truyền tải.
+
+c) Nếu tăng hiệu điện thế truyền tải lên 40 kV (giữ nguyên P và R) thì công suất hao phí bằng bao nhiêu? Hao phí giảm bao nhiêu lần?
+
+Tóm tắt.
+
+P = 200 kW = 200 000 W
+
+R = 15 Ω
+
+a) U = 20 kV = 20 000 V
+
+c) U' = 40 kV = 40 000 V
+
+Lời giải
+
+Bước 1. Tính cường độ dòng điện trên đường dây.
+
+I = P/U
+
+I = 200 000/20 000
+
+I = 10 A
+
+Bước 2. Tính công suất hao phí.
+
+P_(hp) = R.I²
+
+P_(hp) = 15 × 10²
+
+P_(hp) = 15 × 100
+
+P_(hp) = 1 500 W = 1,5 kW
+
+Kiểm tra bằng dạng tỉ lệ:
+
+P_(hp) = P².R/U²
+
+P_(hp) = (2·10⁵)² × 15/(2·10⁴)²
+
+P_(hp) = (4·10¹⁰ × 15)/(4·10⁸)
+
+P_(hp) = (6·10¹¹)/(4·10⁸) = 1,5·10³ W = 1 500 W
+
+Kết quả phù hợp.
+
+Bước 3. Tính hiệu suất truyền tải.
+
+H = 1 − P_(hp)/P
+
+H = 1 − 1 500/200 000
+
+H = 1 − 0,0075
+
+H = 0,9925 = 99,25%
+
+Bước 4. Tính công suất hao phí khi tăng hiệu điện thế lên 40 kV.
+
+Hiệu điện thế tăng từ 20 kV lên 40 kV, tức tăng k = 2 lần.
+
+Vì P_(hp) tỉ lệ nghịch với U² nên hao phí giảm k² = 4 lần.
+
+P_(hp)' = 1 500/4 = 375 W
+
+Kiểm tra trực tiếp: I' = 200 000/40 000 = 5 A; P_(hp)' = 15 × 25 = 375 W. Kết quả phù hợp.
+
+Đáp số. a) I = 10 A; P_(hp) = 1 500 W = 1,5 kW. b) H = 99,25%. c) P_(hp)' = 375 W, giảm 4 lần.
+
+Nhận xét sư phạm. Đây là dạng bài "xương sống" của chuyên đề. Cần cho học sinh thấy rõ: tăng U 2 lần thì hao phí giảm 4 lần (chứ không phải 2 lần) – đây là điểm phân biệt học sinh hiểu bản chất với học sinh chỉ nhớ máy móc.
+
+Bài D4. Máy phát điện xoay chiều – tần số và tốc độ quay
+
+Đề bài. Một máy phát điện xoay chiều có rôto gồm 4 cặp cực.
+
+a) Muốn máy phát ra dòng điện có tần số 50 Hz thì rôto phải quay bao nhiêu vòng mỗi giây và bao nhiêu vòng mỗi phút?
+
+b) Nếu rôto quay với tốc độ 900 vòng/phút thì tần số dòng điện phát ra là bao nhiêu?
+
+c) Một máy phát điện khác quay với tốc độ 3 000 vòng/phút và cũng phát ra dòng điện 50 Hz. Máy đó có bao nhiêu cặp cực?
+
+Tóm tắt.
+
+a) p = 4 cặp cực; f = 50 Hz; tính n
+
+b) n' = 900 vòng/phút; tính f'
+
+c) n'' = 3 000 vòng/phút; f = 50 Hz; tính p''
+
+Lời giải
+
+Bước 1. Tính số vòng quay mỗi giây ở câu a.
+
+Từ f = n.p suy ra
+
+n = f/p
+
+n = 50/4
+
+n = 12,5 vòng/s
+
+Bước 2. Đổi sang số vòng quay mỗi phút.
+
+n (vòng/phút) = 60 × 12,5 = 750 vòng/phút
+
+Nhận xét: tốc độ quay 750 vòng/phút là tốc độ điển hình của máy phát trong nhà máy thủy điện.
+
+Bước 3. Tính tần số ở câu b.
+
+Đổi tốc độ quay sang vòng/giây:
+
+n' = 900/60 = 15 vòng/s
+
+f' = n'.p
+
+f' = 15 × 4 = 60 Hz
+
+Tần số phát ra là 60 Hz, cao hơn tần số lưới 50 Hz, nên phải giảm tốc độ quay.
+
+Bước 4. Tính số cặp cực ở câu c.
+
+Đổi tốc độ quay sang vòng/giây:
+
+n'' = 3 000/60 = 50 vòng/s
+
+Từ f = n''.p'' suy ra
+
+p'' = f/n''
+
+p'' = 50/50 = 1 cặp cực
+
+Vậy máy đó chỉ có 1 cặp cực (2 cực).
+
+Đáp số. a) n = 12,5 vòng/s = 750 vòng/phút. b) f' = 60 Hz. c) p'' = 1 cặp cực.
+
+Nhận xét sư phạm. Học sinh cần thành thạo hai chiều: từ p và n tìm f, và từ f và p tìm n. Đặc biệt phải nhớ đổi vòng/phút sang vòng/giây; đây là nguồn sai sót phổ biến nhất của dạng bài này.
+
+Bài D5. Tổng hợp: máy tăng thế và truyền tải điện năng
+
+Đề bài. Một nhà máy phát điện có công suất P = 2,5 MW. Hiệu điện thế ở hai cực máy phát là U₁ = 5 000 V, được đưa vào cuộn sơ cấp của một máy tăng thế có N₁ = 500 vòng. Cuộn thứ cấp của máy tăng thế có N₂ = 10 000 vòng và được nối với đường dây tải điện có tổng điện trở R = 8 Ω. Coi máy biến thế lí tưởng (bỏ qua hao phí).
+
+a) Tính hiệu điện thế U₂ ở đầu đường dây tải điện.
+
+b) Tính cường độ dòng điện trên đường dây, độ giảm thế trên đường dây và công suất hao phí.
+
+c) Tính hiệu suất truyền tải và hiệu điện thế ở nơi tiêu thụ.
+
+d) Muốn công suất hao phí giảm 4 lần (giữ nguyên P và R) thì phải nâng hiệu điện thế U₂ lên bao nhiêu? Khi đó cần quấn cuộn thứ cấp bao nhiêu vòng?
+
+Tóm tắt.
+
+P = 2,5 MW = 2,5·10⁶ W
+
+U₁ = 5 000 V; N₁ = 500 vòng
+
+N₂ = 10 000 vòng
+
+R = 8 Ω
+
+Lời giải
+
+Bước 1. Tính hiệu điện thế U₂ ở đầu đường dây.
+
+U₂ = U₁.N₂/N₁
+
+U₂ = 5 000 × 10 000/500
+
+U₂ = 5 000 × 20
+
+U₂ = 100 000 V = 100 kV
+
+Bước 2. Tính cường độ dòng điện trên đường dây.
+
+Coi công suất truyền đi trên đường dây bằng công suất của nhà máy (bỏ qua hao phí ở máy tăng thế):
+
+I = P/U₂
+
+I = 2,5·10⁶/1·10⁵
+
+I = 25 A
+
+Bước 3. Tính độ giảm thế trên đường dây.
+
+ΔU = I.R
+
+ΔU = 25 × 8
+
+ΔU = 200 V
+
+Bước 4. Tính công suất hao phí.
+
+P_(hp) = R.I²
+
+P_(hp) = 8 × 25²
+
+P_(hp) = 8 × 625
+
+P_(hp) = 5 000 W = 5 kW
+
+Kiểm tra bằng dạng tỉ lệ:
+
+P_(hp) = P².R/U₂²
+
+P_(hp) = (2,5·10⁶)² × 8/(1·10⁵)²
+
+P_(hp) = (6,25·10¹² × 8)/(1·10¹⁰)
+
+P_(hp) = 5·10¹³/1·10¹⁰ = 5·10³ W = 5 kW
+
+Bước 5. Tính hiệu suất truyền tải.
+
+H = 1 − P_(hp)/P
+
+H = 1 − 5 000/2 500 000
+
+H = 1 − 0,002
+
+H = 0,998 = 99,8%
+
+Bước 6. Tính hiệu điện thế ở nơi tiêu thụ.
+
+U_(tt) = U₂ − ΔU
+
+U_(tt) = 100 000 − 200
+
+U_(tt) = 99 800 V ≈ 99,8 kV
+
+Nhận xét: độ giảm thế chỉ 200 V trên 100 kV, tức 0,2% – nhỏ và chấp nhận được.
+
+Bước 7. Tìm hiệu điện thế mới để hao phí giảm 4 lần.
+
+Vì P_(hp) tỉ lệ nghịch với U², muốn hao phí giảm 4 lần thì hiệu điện thế phải tăng √4 = 2 lần.
+
+U₂' = 2 × 100 000 = 200 000 V = 200 kV
+
+Bước 8. Tìm số vòng cuộn thứ cấp mới.
+
+Giữ nguyên U₁ = 5 000 V và N₁ = 500 vòng, ta có
+
+N₂' = N₁.U₂'/U₁
+
+N₂' = 500 × 200 000/5 000
+
+N₂' = 500 × 40
+
+N₂' = 20 000 vòng
+
+Kiểm tra: 5 000 × 20 000/500 = 5 000 × 40 = 200 000 V. Kết quả phù hợp.
+
+Đáp số. a) U₂ = 100 kV. b) I = 25 A; ΔU = 200 V; P_(hp) = 5 kW. c) H = 99,8%; U_(tt) = 99 800 V. d) U₂' = 200 kV; N₂' = 20 000 vòng.
+
+Nhận xét sư phạm. Bài toán tổng hợp này nối liền hai chủ đề lớn của chuyên đề: máy biến thế và hao phí truyền tải. Câu d đòi hỏi học sinh dùng tỉ lệ bình phương (không cần tính lại từ đầu), đây chính là kĩ năng mà đề HSG muốn kiểm tra.
+
+Bài D6. Thực hành: đo hiệu điện thế sơ cấp – thứ cấp của máy biến thế tự chế
+
+Đề bài. Trong giờ thực hành, một nhóm học sinh quấn máy biến thế trên lõi sắt non kín: cuộn sơ cấp N₁ = 880 vòng, cuộn thứ cấp N₂ = 40 vòng. Nguồn dùng là nguồn xoay chiều hạ áp an toàn do thầy giáo đặt ở U₁ = 220 V. Vôn kế xoay chiều đo hiệu điện thế hai đầu cuộn thứ cấp (để hở) chỉ 9,6 V.
+
+a) Tính hiệu điện thế thứ cấp theo lí thuyết.
+
+b) So sánh với số chỉ thực tế và tính độ lệch tương đối. Nêu hai nguyên nhân chính gây ra độ lệch.
+
+c) Từ kết quả thực nghiệm, muốn hiệu điện thế thứ cấp đúng bằng 12 V thì phải quấn cuộn thứ cấp bao nhiêu vòng?
+
+Tóm tắt.
+
+N₁ = 880 vòng; N₂ = 40 vòng
+
+U₁ = 220 V
+
+Số chỉ vôn kế: U₂ đo = 9,6 V
+
+Lời giải
+
+Bước 1. Tính hiệu điện thế thứ cấp theo lí thuyết.
+
+U₂ (lí thuyết) = U₁.N₂/N₁
+
+U₂ (lí thuyết) = 220 × 40/880
+
+U₂ (lí thuyết) = 220/22
+
+U₂ (lí thuyết) = 10 V
+
+Bước 2. So sánh với số chỉ thực tế.
+
+Số chỉ thực tế: U₂ (đo) = 9,6 V, nhỏ hơn giá trị lí thuyết 10 V.
+
+Độ lệch tuyệt đối: ΔU₂ = 10 − 9,6 = 0,4 V
+
+Độ lệch tương đối:
+
+δ = 0,4/10 = 0,04 = 4%
+
+Hai nguyên nhân chính:
+
+- Một phần từ thông do cuộn sơ cấp sinh ra bị rò ra ngoài, không xuyên qua cuộn thứ cấp.
+
+- Cuộn dây có điện trở và trong lõi sắt có dòng điện Fu-cô nên có hao phí năng lượng.
+
+Kiểm tra bằng tỉ số: nếu máy lí tưởng thì U₁/U₂ = 220/10 = 22, còn theo số đo thì 220/9,6 ≈ 22,9 – hai tỉ số gần nhau, chứng tỏ công thức U₁/U₂ = N₁/N₂ được nghiệm đúng ở mức gần đúng.
+
+Bước 3. Tính số vòng cần quấn cho cuộn thứ cấp để có U₂ = 12 V.
+
+Từ số liệu thực nghiệm, hiệu điện thế trên mỗi vòng dây của cuộn thứ cấp là
+
+k = 9,6/40 = 0,24 V/vòng
+
+Số vòng cần thiết:
+
+N₂' = 12/0,24
+
+N₂' = 50 vòng
+
+Vậy phải quấn cuộn thứ cấp 50 vòng, tức quấn thêm 10 vòng so với ban đầu.
+
+Kiểm tra: 50 × 0,24 = 12 V. Kết quả đúng.
+
+Đáp số. a) U₂ (lí thuyết) = 10 V. b) Số chỉ 9,6 V, lệch 0,4 V tức 4%; do từ thông rò và hao phí (điện trở cuộn dây, dòng Fu-cô). c) N₂' = 50 vòng (quấn thêm 10 vòng).
+
+Nhận xét sư phạm. Bài này rèn kĩ năng xử lí số liệu thực nghiệm – một kĩ năng ngày càng được chú trọng trong đề thi HSG KHTN 9 (đề có câu thực hành/thí nghiệm). Cần nhấn mạnh: kết quả thực nghiệm luôn nhỏ hơn lí thuyết một chút là bình thường, học sinh không nên "sửa số" cho khớp công thức.
+
+E. Bài tập tự luyện (12 bài)
+
+Bài 1. Một nam châm thẳng đặt nằm ngang, đầu bên trái là cực Nam, đầu bên phải là cực Bắc. Hãy mô tả bằng lời chiều các đường sức từ ở bên ngoài và bên trong nam châm. Đặt kim nam châm thử tại một điểm nằm phía dưới, cách đều hai cực; cực Bắc của kim nam châm thử chỉ hướng nào?
+
+Bài 2. Một đoạn dây dẫn thẳng được treo nằm ngang trong khe giữa hai cực của nam châm chữ U. Các đường sức từ trong khe hướng thẳng đứng từ dưới lên trên. Dòng điện chạy trong dây theo chiều từ trái sang phải (nhìn từ phía trước). Xác định chiều lực từ tác dụng lên dây dẫn bằng quy tắc bàn tay trái và cho biết dây bị kéo lệch về phía nào.
+
+Bài 3. Một cuộn dây dẫn kín nối với điện kế nhạy. Trong các trường hợp sau, trường hợp nào trong cuộn dây không xuất hiện dòng điện cảm ứng? Giải thích ngắn gọn.
+
+a) Đưa nam châm lại gần cuộn dây.
+
+b) Kéo nam châm ra xa cuộn dây.
+
+c) Giữ nam châm đứng yên trong lòng cuộn dây.
+
+d) Đóng rồi ngắt khóa K của mạch điện của một nam châm điện đặt gần cuộn dây.
+
+Bài 4. Một máy biến thế có cuộn sơ cấp N₁ = 1 100 vòng được mắc vào nguồn xoay chiều 220 V, cuộn thứ cấp N₂ = 50 vòng để hở.
+
+a) Tính hiệu điện thế hai đầu cuộn thứ cấp.
+
+b) Muốn có hiệu điện thế thứ cấp là 15 V thì phải quấn cuộn thứ cấp bao nhiêu vòng?
+
+Bài 5. Một máy biến thế có cuộn sơ cấp 200 vòng được mắc vào nguồn xoay chiều 24 V.
+
+a) Muốn lấy ra ở cuộn thứ cấp hiệu điện thế 600 V thì cuộn thứ cấp phải có bao nhiêu vòng?
+
+b) Nếu đưa hiệu điện thế 600 V vào cuộn 5 000 vòng thì hiệu điện thế lấy ra ở cuộn 200 vòng bằng bao nhiêu? Máy đó là máy tăng thế hay hạ thế khi dùng theo chiều này?
+
+Bài 6. Một máy phát điện xoay chiều có rôto gồm 3 cặp cực, quay với tốc độ 20 vòng mỗi giây.
+
+a) Tính tần số của dòng điện phát ra.
+
+b) Tốc độ quay đó bằng bao nhiêu vòng mỗi phút?
+
+c) Muốn phát ra dòng điện 50 Hz thì phải điều chỉnh tốc độ quay của rôto đến giá trị nào?
+
+Bài 7. Một máy phát điện xoay chiều có 4 cặp cực.
+
+a) Để phát ra dòng điện 50 Hz thì rôto phải quay bao nhiêu vòng mỗi phút?
+
+b) Nếu cho rôto quay 1 000 vòng mỗi phút thì tần số dòng điện phát ra là bao nhiêu? Theo em, tần số đó có ảnh hưởng gì đến các thiết bị điện trong nhà?
+
+Bài 8. Người ta truyền đi công suất điện P = 100 kW bằng đường dây có tổng điện trở R = 40 Ω. Hiệu điện thế truyền tải là U = 20 kV.
+
+a) Tính cường độ dòng điện trên đường dây và công suất hao phí.
+
+b) Tính hiệu suất truyền tải.
+
+Bài 9. Với đường dây và công suất như Bài 8, nếu nâng hiệu điện thế truyền tải lên 40 kV thì công suất hao phí bằng bao nhiêu? So sánh với kết quả Bài 8 và rút ra nhận xét về quan hệ giữa công suất hao phí và hiệu điện thế truyền tải.
+
+Bài 10. Đường dây truyền tải điện cao thế Bắc – Nam của Việt Nam có hiệu điện thế 500 kV. Coi công suất truyền đi là P = 500 MW và tổng điện trở của đường dây là R = 10 Ω.
+
+a) Tính cường độ dòng điện trên đường dây.
+
+b) Tính công suất hao phí và tỉ lệ phần trăm hao phí so với công suất truyền đi.
+
+Bài 11. Cần truyền đi một công suất điện P = 40 kW bằng đường dây có tổng điện trở R = 5 Ω.
+
+a) Tính công suất hao phí khi hiệu điện thế truyền tải là 2 000 V.
+
+b) Tính công suất hao phí khi hiệu điện thế truyền tải là 20 000 V.
+
+c) So sánh hai kết quả và cho biết hao phí giảm bao nhiêu lần khi hiệu điện thế tăng 10 lần.
+
+Bài 12. Một đường dây tải điện có công suất hao phí là 2 kW khi làm việc liên tục. Đường dây hoạt động 24 giờ mỗi ngày.
+
+a) Tính điện năng hao phí trên đường dây trong 30 ngày (theo đơn vị kWh).
+
+b) Nếu giá điện là 2 000 đồng cho mỗi kWh thì số tiền bị mất do hao phí trong 30 ngày là bao nhiêu? Từ đó nêu nhận xét về ý nghĩa kinh tế của việc giảm hao phí trên đường dây tải điện.
+
+F. Đáp án và hướng dẫn ngắn cho mục E
+
+Bài 1. Bên ngoài nam châm, đường sức từ đi từ cực Bắc (đầu bên phải) vòng ra ngoài rồi đi vào cực Nam (đầu bên trái); bên trong nam châm, đường sức từ đi từ cực Nam sang cực Bắc (từ trái sang phải). Kim nam châm thử đặt phía dưới, cách đều hai cực nằm trong vùng đường sức từ hướng từ phải sang trái, nên cực Bắc của kim chỉ từ phải sang trái.
+
+Bài 2. Lòng bàn tay trái hướng xuống dưới (để đường sức từ đi từ dưới lên chui vào lòng bàn tay), bốn ngón tay hướng từ trái sang phải, ngón cái choãi ra chỉ về phía người quan sát. Vậy dây bị kéo lệch ra phía trước (kiểm lại bằng tích có hướng: dòng điện sang phải, đường sức từ hướng lên, nên lực từ hướng ra khỏi mặt phẳng hình vẽ, tức về phía người quan sát).
+
+Bài 3. Trường hợp c không có dòng điện cảm ứng, vì nam châm và cuộn dây không chuyển động tương đối với nhau nên số đường sức từ xuyên qua cuộn dây không biến thiên. Ba trường hợp a, b, d đều làm từ thông biến thiên nên có dòng điện cảm ứng (câu d: đóng hoặc ngắt mạch làm dòng điện trong nam châm điện biến thiên, do đó từ trường biến thiên).
+
+Bài 4. a) U₂ = U₁.N₂/N₁ = 220 × 50/1 100 = 10 V. b) N₂' = N₁.U₂'/U₁ = 1 100 × 15/220 = 75 vòng.
+
+Bài 5. a) N₂ = N₁.U₂/U₁ = 200 × 600/24 = 5 000 vòng. b) Khi dùng ngược lại, cuộn 5 000 vòng là sơ cấp và cuộn 200 vòng là thứ cấp: U₂ = 600 × 200/5 000 = 24 V. Lúc này máy là máy hạ thế (hạ từ 600 V xuống 24 V).
+
+Bài 6. a) f = n.p = 20 × 3 = 60 Hz. b) n = 20 vòng/s = 20 × 60 = 1 200 vòng/phút. c) Muốn f = 50 Hz thì n = f/p = 50/3 ≈ 16,67 vòng/s = 1 000 vòng/phút.
+
+Bài 7. a) n = f/p = 50/4 = 12,5 vòng/s = 750 vòng/phút. b) n' = 1 000 vòng/phút = 16,67 vòng/s, suy ra f' = 16,67 × 4 ≈ 66,7 Hz. Tần số cao hơn 50 Hz làm động cơ điện quay nhanh hơn thiết kế, thiết bị điện tử có thể hoạt động sai hoặc hỏng, máy biến thế nóng hơn – cần điều chỉnh tốc độ quay về đúng giá trị thiết kế.
+
+Bài 8. a) I = P/U = 100 000/20 000 = 5 A. P_(hp) = R.I² = 40 × 25 = 1 000 W = 1 kW. b) H = 1 − 1 000/100 000 = 1 − 0,01 = 0,99 = 99%.
+
+Bài 9. Hiệu điện thế tăng 2 lần nên hao phí giảm 4 lần: P_(hp)' = 1 000/4 = 250 W. Kiểm tra: I' = P/U' = 100 000/40 000 = 2,5 A; P_(hp)' = 40 × 6,25 = 250 W. Nhận xét: công suất hao phí tỉ lệ nghịch với bình phương hiệu điện thế truyền tải, nên tăng hiệu điện thế là biện pháp giảm hao phí hiệu quả nhất.
+
+Bài 10. a) I = P/U = 500·10⁶/500·10³ = 1 000 A. b) P_(hp) = R.I² = 10 × 1 000² = 10 000 000 W = 10 MW. Tỉ lệ hao phí = 10/500 = 0,02 = 2%.
+
+Bài 11. a) P_(hp) = P².R/U² = (4·10⁴)² × 5/(2·10³)² = (1,6·10⁹ × 5)/(4·10⁶) = 8·10⁹/4·10⁶ = 2 000 W = 2 kW. b) P_(hp) = (4·10⁴)² × 5/(2·10⁴)² = 8·10⁹/4·10⁸ = 20 W. c) Hiệu điện thế tăng 10 lần thì hao phí giảm 10² = 100 lần (từ 2 000 W xuống 20 W).
+
+Bài 12. a) P_(hp) = 2 kW; t = 24 × 30 = 720 h; A_(hp) = P_(hp).t = 2 × 720 = 1 440 kWh. b) Số tiền = 1 440 × 2 000 = 2 880 000 đồng (gần 2,9 triệu đồng). Nhận xét: hao phí trên đường dây gây thiệt hại kinh tế rất lớn, nên việc tăng hiệu điện thế truyền tải (dùng máy tăng thế) và chọn dây dẫn hợp lí có ý nghĩa kinh tế quan trọng.
+
+G. Bài tập nâng cao kiểu đề thi HSG (4 bài, có lời giải đầy đủ)
+
+Bài G1. Thiết kế đường dây theo hao phí cho phép
+
+Đề bài. Một trạm phát điện cần truyền đi công suất P = 2,5 MW đến một nơi tiêu thụ cách xa 25 km theo đường dây tải điện hai dây. Hiệu điện thế truyền tải được chọn là U = 50 kV. Yêu cầu công suất hao phí trên đường dây không vượt quá 2% công suất truyền đi. Dây dẫn làm bằng đồng có điện trở suất ρ = 1,7·10⁻⁸ Ω.m.
+
+a) Tính cường độ dòng điện trên đường dây.
+
+b) Tính điện trở lớn nhất cho phép của toàn bộ đường dây.
+
+c) Tính tiết diện nhỏ nhất của dây dẫn cần dùng (theo mm²).
+
+d) Tính độ giảm thế trên đường dây và cho biết nhận xét.
+
+e) Nếu chỉ truyền ở hiệu điện thế 25 kV thì hao phí là bao nhiêu? Nếu truyền ở 5 kV thì sao? Từ đó rút ra kết luận.
+
+Tóm tắt.
+
+P = 2,5 MW = 2,5·10⁶ W
+
+Khoảng cách 25 km ⇒ tổng chiều dài dây dẫn L = 2 × 25 km = 50 km = 5·10⁴ m
+
+U = 50 000 V
+
+Hao phí cho phép ≤ 2% ⇒ P_(hp) ≤ 50 000 W
+
+ρ = 1,7·10⁻⁸ Ω.m
+
+Lời giải
+
+Bước 1. Tính cường độ dòng điện trên đường dây.
+
+I = P/U
+
+I = 2,5·10⁶/5·10⁴
+
+I = 50 A
+
+Bước 2. Tính điện trở lớn nhất cho phép.
+
+Công suất hao phí cho phép:
+
+P_(hp) = 2% × P = 0,02 × 2,5·10⁶ = 5·10⁴ W = 50 kW
+
+Từ P_(hp) = R.I² suy ra
+
+R = P_(hp)/I²
+
+R = 5·10⁴/50²
+
+R = 5·10⁴/2 500
+
+R = 20 Ω
+
+Vậy điện trở toàn bộ đường dây không được vượt quá 20 Ω.
+
+Bước 3. Tính tiết diện nhỏ nhất của dây dẫn.
+
+Chú ý: dây tải điện gồm hai dây (dây đi và dây về), nên tổng chiều dài dây dẫn là
+
+L = 2 × 25 = 50 km = 5·10⁴ m
+
+Từ R = ρ.L/S suy ra
+
+S = ρ.L/R
+
+S = (1,7·10⁻⁸ × 5·10⁴)/20
+
+S = (8,5·10⁻⁴)/20
+
+S = 4,25·10⁻⁵ m²
+
+Đổi sang mm²:
+
+S = 4,25·10⁻⁵ × 10⁶ = 42,5 mm²
+
+Vậy tiết diện dây đồng phải từ 42,5 mm² trở lên (thực tế chọn dây tiêu chuẩn 50 mm² hoặc dùng dây nhôm lõi thép).
+
+Bước 4. Tính độ giảm thế trên đường dây.
+
+ΔU = I.R
+
+ΔU = 50 × 20
+
+ΔU = 1 000 V
+
+So với hiệu điện thế truyền tải 50 000 V, độ giảm thế chiếm 1 000/50 000 = 2%.
+
+Vậy hiệu điện thế đến nơi tiêu thụ là U_(tt) = 50 000 − 1 000 = 49 000 V.
+
+Nhận xét: độ giảm thế 2% là chấp nhận được, phù hợp với yêu cầu hao phí 2%.
+
+Bước 5. Xét hai phương án hiệu điện thế thấp hơn.
+
+Với U' = 25 kV (giảm 2 lần so với 50 kV): vì P_(hp) tỉ lệ nghịch với U² nên hao phí tăng 2² = 4 lần.
+
+P_(hp)' = 50 000 × 4 = 200 000 W = 200 kW
+
+Tỉ lệ hao phí = 200/2 500 = 0,08 = 8% – quá lớn.
+
+Với U'' = 5 kV (giảm 10 lần): hao phí tăng 10² = 100 lần.
+
+P_(hp)'' = 50 000 × 100 = 5 000 000 W = 5 MW
+
+Kết quả này lớn hơn cả công suất truyền đi (2,5 MW), tức là vô lí – không thể truyền tải được. Thực tế khi đó điện áp gần như bị "sụt" hết trên đường dây và nơi tiêu thụ không nhận được điện.
+
+Kiểm tra trực tiếp: I'' = P/U'' = 2,5·10⁶/5·10³ = 500 A; P_(hp)'' = R.I''² = 20 × 500² = 20 × 250 000 = 5·10⁶ W. Phù hợp.
+
+Kết luận: muốn truyền tải công suất lớn đi xa, bắt buộc phải dùng hiệu điện thế cao (đường dây cao thế). Đây là lí do thực tế phải có các đường dây 110 kV, 220 kV, 500 kV.
+
+Đáp số. a) I = 50 A. b) R ≤ 20 Ω. c) S ≥ 42,5 mm². d) ΔU = 1 000 V (2%); U_(tt) = 49 000 V. e) Ở 25 kV: P_(hp) = 200 kW (8%). Ở 5 kV: P_(hp) = 5 MW > P – vô lí, không thể truyền tải.
+
+Nhận xét sư phạm. Bài này dạy ba điều: (1) nhớ nhân đôi chiều dài dây; (2) biết dùng công suất hao phí cho phép để tìm R rồi tìm tiết diện; (3) biết kiểm tra tính hợp lí của kết quả (hao phí không thể vượt quá công suất truyền đi).
+
+Bài G2. Hai máy biến thế mắc liên tiếp
+
+Đề bài. Một máy biến thế thứ nhất có N₁ = 200 vòng và N₂ = 4 000 vòng, được dùng để tăng hiệu điện thế từ 220 V lên cao thế để truyền tải. Sau đường dây tải điện có tổng điện trở R = 4 Ω, người ta dùng máy biến thế thứ hai (máy hạ thế) có N₁' = 2 000 vòng và N₂' = 100 vòng để đưa hiệu điện thế về mức sử dụng. Coi cả hai máy biến thế đều lí tưởng và bỏ qua độ giảm thế trên đường dây khi tính hiệu điện thế vào máy hạ thế.
+
+a) Tính hiệu điện thế ở đầu ra của máy tăng thế.
+
+b) Tính hiệu điện thế ở đầu ra của máy hạ thế.
+
+c) Công suất truyền đến nơi tiêu thụ (sau máy hạ thế) là P = 11 kW. Tính cường độ dòng điện trên đường dây và công suất hao phí trên đường dây. Tính hiệu suất truyền tải (kể cả hai máy biến thế coi như lí tưởng).
+
+d) Nếu bỏ hai máy biến thế mà truyền trực tiếp công suất 11 kW ở hiệu điện thế 220 V trên cùng đường dây R = 4 Ω thì công suất hao phí là bao nhiêu? So sánh với câu c và rút ra kết luận.
+
+Tóm tắt.
+
+Máy 1 (tăng thế): N₁ = 200 vòng; N₂ = 4 000 vòng; U₁ = 220 V
+
+Máy 2 (hạ thế): N₁' = 2 000 vòng; N₂' = 100 vòng
+
+Đường dây: R = 4 Ω
+
+P = 11 kW = 11 000 W
+
+Lời giải
+
+Bước 1. Tính hiệu điện thế ra của máy tăng thế.
+
+U₂ = U₁.N₂/N₁
+
+U₂ = 220 × 4 000/200
+
+U₂ = 220 × 20
+
+U₂ = 4 400 V
+
+Bước 2. Tính hiệu điện thế ra của máy hạ thế.
+
+Coi hiệu điện thế vào cuộn sơ cấp của máy hạ thế bằng U₂ = 4 400 V (bỏ qua độ giảm thế trên đường dây).
+
+U₃ = U₂.N₂'/N₁'
+
+U₃ = 4 400 × 100/2 000
+
+U₃ = 4 400 × 0,05
+
+U₃ = 220 V
+
+Nhận xét thú vị: hiệu điện thế trở về đúng 220 V như ban đầu; tích hai tỉ số biến đổi bằng 1 (20 × 0,05 = 1).
+
+Bước 3. Tính cường độ dòng điện trên đường dây.
+
+Trên đường dây, công suất truyền đi là P = 11 000 W ở hiệu điện thế U₂ = 4 400 V:
+
+I = P/U₂
+
+I = 11 000/4 400
+
+I = 2,5 A
+
+Bước 4. Tính công suất hao phí trên đường dây.
+
+P_(hp) = R.I²
+
+P_(hp) = 4 × 2,5²
+
+P_(hp) = 4 × 6,25
+
+P_(hp) = 25 W
+
+Bước 5. Tính hiệu suất truyền tải.
+
+H = 1 − P_(hp)/P
+
+H = 1 − 25/11 000
+
+H = 1 − 0,00227…
+
+H ≈ 0,9977 = 99,77%
+
+Bước 6. Xét phương án truyền trực tiếp ở 220 V (câu d).
+
+Cường độ dòng điện trên đường dây:
+
+I' = P/U = 11 000/220 = 50 A
+
+Công suất hao phí:
+
+P_(hp)' = R.I'² = 4 × 50² = 4 × 2 500 = 10 000 W = 10 kW
+
+So với P = 11 kW, hao phí 10 kW chiếm tới 10/11 ≈ 91% công suất truyền đi.
+
+Vậy nếu truyền trực tiếp ở 220 V thì gần như toàn bộ điện năng bị mất trên đường dây, nơi tiêu thụ chỉ nhận được khoảng 1 kW.
+
+Kết luận: việc dùng máy tăng thế trước khi truyền tải và máy hạ thế ở nơi tiêu thụ là bắt buộc để truyền tải điện năng đi xa một cách hiệu quả.
+
+Đáp số. a) U₂ = 4 400 V. b) U₃ = 220 V. c) I = 2,5 A; P_(hp) = 25 W; H ≈ 99,77%. d) P_(hp)' = 10 kW (khoảng 91% công suất truyền đi) – gần như không thể truyền tải.
+
+Nhận xét sư phạm. Bài này cho học sinh thấy rõ vai trò của hai máy biến thế trong hệ thống truyền tải: một để nâng thế, một để hạ thế về mức an toàn cho người dùng. Câu c và câu d đặt cạnh nhau tạo ấn tượng mạnh về hiệu quả của việc tăng hiệu điện thế.
+
+Bài G3. Máy phát điện và hệ truyền động đai
+
+Đề bài. Một máy phát điện xoay chiều trong nhà máy thủy điện nhỏ có rôto gồm 2 cặp cực. Rôto được nối với trục tuabin nước thông qua một bộ truyền động đai: puli gắn trên trục rôto có đường kính d₁ = 10 cm, puli gắn trên trục tuabin có đường kính d₂ = 50 cm.
+
+a) Để máy phát ra dòng điện có tần số 50 Hz thì rôto phải quay bao nhiêu vòng mỗi phút?
+
+b) Với bộ truyền động trên, tuabin phải quay bao nhiêu vòng mỗi phút?
+
+c) Nếu nước chảy mạnh làm tuabin quay 360 vòng mỗi phút thì tần số dòng điện phát ra là bao nhiêu? Tần số này có ảnh hưởng gì đến hoạt động của các thiết bị điện?
+
+d) Nếu thay rôto bằng loại có 4 cặp cực (giữ nguyên bộ truyền động và tần số 50 Hz) thì tuabin phải quay bao nhiêu vòng mỗi phút? Nêu nhận xét về quan hệ giữa số cặp cực và tốc độ quay của tuabin.
+
+Tóm tắt.
+
+p = 2 cặp cực
+
+Puli rôto: d₁ = 10 cm
+
+Puli tuabin: d₂ = 50 cm
+
+a) f = 50 Hz, tính n_(rôto) và n_(tuabin)
+
+c) n_(tuabin) = 360 vòng/phút, tính f
+
+d) p = 4 cặp cực, f = 50 Hz, tính n_(tuabin)
+
+Lời giải
+
+Bước 1. Tính tốc độ quay của rôto ở câu a.
+
+Từ f = n.p suy ra
+
+n = f/p
+
+n = 50/2 = 25 vòng/s
+
+n (vòng/phút) = 60 × 25 = 1 500 vòng/phút
+
+Vậy rôto phải quay 1 500 vòng mỗi phút.
+
+Bước 2. Tính tốc độ quay của tuabin.
+
+Bỏ qua sự trượt của dây đai, hai puli quay với tốc độ tỉ lệ nghịch với đường kính:
+
+n₁.d₁ = n₂.d₂
+
+Trong đó n₁ là tốc độ quay của puli rôto, n₂ là tốc độ quay của puli tuabin.
+
+Suy ra
+
+n₂ = n₁.d₁/d₂
+
+n₂ = 1 500 × 10/50
+
+n₂ = 1 500 × 0,2
+
+n₂ = 300 vòng/phút
+
+Vậy tuabin chỉ cần quay 300 vòng mỗi phút (chậm hơn rôto 5 lần) nhờ puli tuabin lớn gấp 5 lần puli rôto.
+
+Bước 3. Tính tần số khi tuabin quay 360 vòng/phút (câu c).
+
+Trước hết tính tốc độ quay của rôto:
+
+n₁' = n₂'.d₂/d₁
+
+n₁' = 360 × 50/10
+
+n₁' = 360 × 5 = 1 800 vòng/phút
+
+Đổi sang vòng/giây:
+
+n₁' = 1 800/60 = 30 vòng/s
+
+Tần số phát ra:
+
+f' = n₁'.p = 30 × 2 = 60 Hz
+
+Tần số 60 Hz cao hơn 50 Hz. Hậu quả: động cơ điện xoay chiều quay nhanh hơn tốc độ thiết kế, thiết bị điện tử (tivi, tủ lạnh inverter, máy tính) có thể hoạt động sai hoặc hỏng, máy biến thế nóng hơn do tổn hao sắt từ tăng theo tần số.
+
+Vì vậy trong nhà máy điện, người ta luôn phải điều chỉnh lưu lượng nước để giữ tốc độ quay đúng giá trị thiết kế, nhằm giữ tần số lưới ổn định ở 50 Hz.
+
+Bước 4. Xét trường hợp rôto có 4 cặp cực (câu d).
+
+Từ f = n.p suy ra
+
+n = f/p = 50/4 = 12,5 vòng/s
+
+n (vòng/phút) = 60 × 12,5 = 750 vòng/phút
+
+Tốc độ quay của tuabin:
+
+n₂'' = n₁''.d₁/d₂
+
+n₂'' = 750 × 10/50
+
+n₂'' = 150 vòng/phút
+
+Nhận xét: khi số cặp cực tăng từ 2 lên 4 (tăng 2 lần) thì tốc độ quay cần thiết của rôto và của tuabin giảm 2 lần (từ 1 500 xuống 750 vòng/phút, từ 300 xuống 150 vòng/phút). Nhờ vậy có thể dùng tuabin nước quay chậm, cánh tuabin lớn, hiệu suất cao và ít mài mòn.
+
+Đáp số. a) n_(rôto) = 25 vòng/s = 1 500 vòng/phút. b) n_(tuabin) = 300 vòng/phút. c) f' = 60 Hz, không phù hợp với lưới 50 Hz và gây hại cho thiết bị. d) n_(rôto) = 750 vòng/phút; n_(tuabin) = 150 vòng/phút – tăng số cặp cực cho phép tuabin quay chậm hơn.
+
+Nhận xét sư phạm. Bài này tích hợp kiến thức cơ học (truyền động đai) với điện học (tần số máy phát). Đây là dạng bài "liên môn" rất phù hợp với định hướng của chương trình GDPT 2018 và với câu hỏi vận dụng cao gắn thực tiễn trong đề HSG. Chú ý: học sinh dễ dùng sai công thức truyền động (dùng tỉ lệ thuận thay vì tỉ lệ nghịch).
+
+Bài G4. Thiết kế hệ thống truyền tải – chọn hiệu điện thế và máy biến thế
+
+Đề bài. Một xưởng sản xuất cần truyền đi công suất điện P = 100 kW đến khu chế xuất cách xa 10 km bằng đường dây hai dây làm bằng đồng có tiết diện S = 34 mm². Điện trở suất của đồng là ρ = 1,7·10⁻⁸ Ω.m. Hiệu điện thế ở nguồn phát là 500 V. Yêu cầu công suất hao phí trên đường dây không vượt quá 1% công suất truyền đi.
+
+a) Tính tổng điện trở của đường dây.
+
+b) Tính hiệu điện thế truyền tải nhỏ nhất để thỏa mãn yêu cầu về hao phí.
+
+c) Cần dùng máy tăng thế có tỉ số vòng dây bằng bao nhiêu? Nếu cuộn sơ cấp của máy tăng thế có N₁ = 250 vòng thì cuộn thứ cấp phải có bao nhiêu vòng?
+
+d) Với phương án ở câu b, tính cường độ dòng điện trên đường dây và kiểm tra lại công suất hao phí. Tính điện năng bị hao phí trong một ngày đêm (24 giờ).
+
+Tóm tắt.
+
+P = 100 kW = 1·10⁵ W
+
+Khoảng cách 10 km ⇒ tổng chiều dài dây dẫn L = 2 × 10 km = 20 000 m
+
+S = 34 mm² = 34·10⁻⁶ m²
+
+ρ = 1,7·10⁻⁸ Ω.m
+
+U_(nguồn) = 500 V
+
+Hao phí cho phép ≤ 1% P = 1 000 W
+
+Lời giải
+
+Bước 1. Tính tổng điện trở của đường dây.
+
+R = ρ.L/S
+
+R = (1,7·10⁻⁸ × 2·10⁴)/(34·10⁻⁶)
+
+R = (3,4·10⁻⁴)/(34·10⁻⁶)
+
+R = 10 Ω
+
+Bước 2. Tính hiệu điện thế truyền tải nhỏ nhất.
+
+Công suất hao phí cho phép:
+
+P_(hp) = 1% × P = 0,01 × 1·10⁵ = 1 000 W
+
+Dùng công thức dạng tỉ lệ P_(hp) = P².R/U², suy ra
+
+U² = P².R/P_(hp)
+
+U² = (1·10⁵)² × 10/1 000
+
+U² = (1·10¹⁰ × 10)/(1·10³)
+
+U² = 1·10⁸
+
+U = 1·10⁴ V = 10 000 V = 10 kV
+
+Vậy hiệu điện thế truyền tải tối thiểu là 10 kV, tức phải tăng hiệu điện thế lên ít nhất 20 lần so với nguồn 500 V.
+
+Bước 3. Tính tỉ số vòng dây và số vòng cuộn thứ cấp.
+
+Tỉ số vòng dây của máy tăng thế:
+
+N₁/N₂ = U₁/U₂ = 500/10 000 = 1/20
+
+Suy ra N₂/N₁ = 20, tức cuộn thứ cấp phải có số vòng gấp 20 lần cuộn sơ cấp (máy tăng thế).
+
+Với N₁ = 250 vòng:
+
+N₂ = 20 × N₁ = 20 × 250 = 5 000 vòng
+
+Bước 4. Kiểm tra lại công suất hao phí và tính điện năng hao phí.
+
+Cường độ dòng điện trên đường dây:
+
+I = P/U = 1·10⁵/1·10⁴ = 10 A
+
+Công suất hao phí:
+
+P_(hp) = R.I² = 10 × 10² = 1 000 W = 1 kW
+
+Đúng bằng mức cho phép 1% – phương án đạt yêu cầu.
+
+Hiệu suất truyền tải: H = 1 − 1 000/100 000 = 0,99 = 99%.
+
+Điện năng hao phí trong 24 giờ:
+
+A_(hp) = P_(hp).t = 1 kW × 24 h = 24 kWh
+
+Nhận xét: 24 kWh mỗi ngày, tương đương khoảng 720 kWh mỗi tháng – một con số không nhỏ. Nếu dùng hiệu điện thế thấp hơn, thiệt hại sẽ tăng theo bình phương, rất tốn kém.
+
+Đáp số. a) R = 10 Ω. b) U ≥ 10 kV. c) N₁/N₂ = 1/20 (máy tăng thế); N₂ = 5 000 vòng. d) I = 10 A; P_(hp) = 1 kW (đạt yêu cầu 1%); A_(hp) = 24 kWh mỗi ngày.
+
+Nhận xét sư phạm. Đây là bài "thiết kế" điển hình: từ yêu cầu kĩ thuật, học sinh phải đi ngược từ công suất hao phí cho phép để tìm hiệu điện thế, rồi tìm số vòng dây của máy biến thế. Bài này rèn năng lực vận dụng tổng hợp và rất gần với câu hỏi vận dụng cao gắn thực tiễn trong đề HSG KHTN 9.
+
+H. Câu hỏi trắc nghiệm nhanh (10 câu, 4 lựa chọn A/B/C/D, kèm đáp án và giải thích 1 dòng)
+
+Câu 1. Ở bên ngoài một nam châm thẳng, chiều của đường sức từ là
+
+A. đi vào cực Bắc và đi ra ở cực Nam.
+
+B. đi ra ở cực Bắc và đi vào ở cực Nam.
+
+C. luôn hướng từ cực Nam sang cực Bắc.
+
+D. luôn hướng từ trên xuống dưới.
+
+Câu 2. Quy tắc bàn tay trái dùng để xác định
+
+A. chiều của đường sức từ trong lòng ống dây có dòng điện.
+
+B. chiều của dòng điện cảm ứng trong cuộn dây.
+
+C. chiều của lực từ tác dụng lên dây dẫn có dòng điện đặt trong từ trường.
+
+D. chiều của lực hút giữa hai nam châm đặt gần nhau.
+
+Câu 3. Trường hợp nào sau đây trong cuộn dây dẫn kín không xuất hiện dòng điện cảm ứng?
+
+A. Đưa nam châm lại gần cuộn dây.
+
+B. Kéo nam châm ra xa cuộn dây.
+
+C. Giữ nam châm đứng yên trong lòng cuộn dây.
+
+D. Ngắt mạch điện của một nam châm điện đặt gần cuộn dây.
+
+Câu 4. Đưa cực Bắc của nam châm lại gần đầu P của một cuộn dây dẫn kín (đầu P hướng về phía nam châm). Theo định luật Len-xơ, đầu P của cuộn dây trở thành
+
+A. cực Bắc, vì từ trường cảm ứng ngược chiều từ trường ngoài.
+
+B. cực Nam, vì từ trường cảm ứng ngược chiều từ trường ngoài.
+
+C. cực Bắc, vì từ trường cảm ứng cùng chiều từ trường ngoài.
+
+D. cực Nam, vì từ trường cảm ứng cùng chiều từ trường ngoài.
+
+Câu 5. Máy biến thế không hoạt động được khi mắc vào nguồn điện một chiều không đổi, vì
+
+A. dòng điện một chiều có cường độ quá nhỏ.
+
+B. từ trường trong lõi sắt không biến thiên nên không có dòng điện cảm ứng ở cuộn thứ cấp.
+
+C. dòng điện một chiều không tạo ra từ trường trong lõi sắt.
+
+D. cuộn thứ cấp không được nối với tải.
+
+Câu 6. Một máy biến thế có cuộn sơ cấp 500 vòng, cuộn thứ cấp 100 vòng. Đặt vào cuộn sơ cấp hiệu điện thế xoay chiều 220 V (cuộn thứ cấp để hở). Hiệu điện thế hai đầu cuộn thứ cấp là
+
+A. 1 100 V.
+
+B. 220 V.
+
+C. 44 V.
+
+D. 20 V.
+
+Câu 7. Một đường dây tải điện có tổng điện trở 10 Ω, cường độ dòng điện chạy trên dây là 20 A. Công suất hao phí do tỏa nhiệt trên đường dây là
+
+A. 200 W.
+
+B. 2 000 W.
+
+C. 4 000 W.
+
+D. 400 W.
+
+Câu 8. Với cùng công suất truyền đi và cùng đường dây, nếu tăng hiệu điện thế truyền tải lên 10 lần thì công suất hao phí
+
+A. giảm 10 lần.
+
+B. giảm 100 lần.
+
+C. tăng 10 lần.
+
+D. không thay đổi.
+
+Câu 9. Một máy phát điện xoay chiều có rôto gồm 2 cặp cực, quay với tốc độ 25 vòng mỗi giây. Tần số của dòng điện phát ra là
+
+A. 25 Hz.
+
+B. 50 Hz.
+
+C. 100 Hz.
+
+D. 12,5 Hz.
+
+Câu 10. Khi phát hiện một người bị điện giật, việc làm đầu tiên và quan trọng nhất là
+
+A. dùng tay kéo người bị nạn ra khỏi dây điện.
+
+B. đổ nước lên người bị nạn.
+
+C. ngắt nguồn điện (ngắt cầu dao, rút phích cắm) hoặc dùng vật cách điện khô để tách người khỏi dây điện.
+
+D. gọi điện thoại cấp cứu trước rồi mới xử lí.
+
+Đáp án và giải thích
+
+Câu 1 – B. Quy ước: ở bên ngoài nam châm, đường sức từ đi ra ở cực Bắc và đi vào ở cực Nam.
+
+Câu 2 – C. Quy tắc bàn tay trái dùng để xác định chiều lực từ tác dụng lên dây dẫn có dòng điện trong từ trường.
+
+Câu 3 – C. Khi nam châm và cuộn dây đứng yên tương đối với nhau thì từ thông qua cuộn dây không biến thiên, nên không có dòng điện cảm ứng.
+
+Câu 4 – A. Từ thông qua cuộn dây đang tăng nên từ trường cảm ứng ngược chiều từ trường ngoài; đường sức từ của từ trường cảm ứng đi ra ở đầu P nên P là cực Bắc (đẩy nam châm ra – phù hợp Len-xơ).
+
+Câu 5 – B. Máy biến thế dựa trên sự biến thiên của từ trường; dòng một chiều cho từ trường không đổi nên cuộn thứ cấp không có dòng điện cảm ứng.
+
+Câu 6 – C. U₂ = U₁.N₂/N₁ = 220 × 100/500 = 44 V.
+
+Câu 7 – C. P_(hp) = R.I² = 10 × 20² = 10 × 400 = 4 000 W.
+
+Câu 8 – B. P_(hp) tỉ lệ nghịch với bình phương hiệu điện thế truyền tải, nên tăng U 10 lần thì hao phí giảm 10² = 100 lần.
+
+Câu 9 – B. f = n.p = 25 × 2 = 50 Hz.
+
+Câu 10 – C. Phải ngắt nguồn điện hoặc dùng vật cách điện khô để tách nạn nhân trước, tuyệt đối không chạm tay trần vào người bị nạn vì sẽ bị điện giật theo.
+
+I. Lỗi thường gặp và ghi chú sư phạm
+
+I1. Lỗi thường gặp của học sinh
+
+1. Vẽ sai chiều đường sức từ. Nhiều học sinh vẽ đường sức từ đi vào cực Bắc và đi ra ở cực Nam. Cần khắc sâu quy ước "ra Bắc – vào Nam" bằng cách cho học sinh vẽ lại nhiều lần và tự kiểm tra bằng kim nam châm thử.
+
+2. Lẫn giữa quy tắc bàn tay trái và quy tắc nắm tay phải. Dùng tay phải để tìm lực từ hoặc dùng tay trái để tìm chiều đường sức từ. Mẹo chữa: "Phải – Phát ra từ trường; Trái – Lực", và cho học sinh làm động tác tay thật trước khi viết.
+
+3. Cho rằng hễ có nam châm gần cuộn dây là có dòng điện cảm ứng. Sai. Phải có sự biến thiên của từ thông. Trường hợp nam châm đứng yên trong lòng cuộn dây là câu hỏi "bẫy" rất hay gặp.
+
+4. Cho rằng phải có vật chuyển động cơ học mới có dòng điện cảm ứng. Sai. Đóng – ngắt mạch hoặc dịch chuyển con chạy biến trở của nam châm điện cũng làm từ trường biến thiên và sinh ra dòng điện cảm ứng.
+
+5. Không phân biệt "từ thông lớn" và "từ thông biến thiên". Từ thông có thể rất lớn nhưng không đổi thì vẫn không có dòng điện cảm ứng.
+
+6. Phát biểu sai định luật Len-xơ. Hay nói "dòng điện cảm ứng cùng chiều với từ trường ngoài" hoặc "chống lại từ trường ngoài". Đúng phải là "chống lại sự biến thiên của từ thông (từ trường) sinh ra nó". Cần nhấn mạnh chữ "biến thiên".
+
+7. Dùng công thức Faraday hoặc biểu thức từ thông định lượng. Đây là lỗi vượt phạm vi chương trình lớp 9. Trong bài làm phải hoàn toàn định tính ở phần cảm ứng điện từ.
+
+8. Viết sai tỉ số máy biến thế. Viết U₁/U₂ = N₂/N₁ (nghịch đảo) hoặc gán nhầm cuộn nào là sơ cấp. Cách phòng: viết công thức gốc trước, xác định rõ cuộn nối với nguồn, rồi mới thay số.
+
+9. Nhầm số cực với số cặp cực. Đề cho "4 cực" thì p = 2; cho "4 cặp cực" thì p = 4. Đây là lỗi làm sai cả bài.
+
+10. Quên đổi vòng/phút sang vòng/giây khi dùng f = n.p, dẫn đến kết quả sai 60 lần. Luôn viết dòng đổi đơn vị.
+
+11. Nhầm vai trò của U trong công thức hao phí. Dùng hiệu điện thế nơi tiêu thụ thay vì hiệu điện thế truyền tải, hoặc dùng hiệu điện thế của một thiết bị. Cần ghi rõ "U là hiệu điện thế ở đầu đường dây tải điện".
+
+12. Quên nhân đôi chiều dài dây. Đề cho khoảng cách L₀ nhưng dây tải điện gồm hai dây nên tổng chiều dài là 2L₀. Lỗi này làm sai kết quả 2 lần và rất khó phát hiện nếu không kiểm tra.
+
+13. Nhầm bậc của tỉ lệ hao phí. Tăng U 10 lần thì tưởng hao phí giảm 10 lần (đúng phải là 100 lần). Cần nhấn mạnh "bình phương".
+
+14. Không kiểm tra tính hợp lí. Ra công suất hao phí lớn hơn công suất truyền đi (vô lí) hoặc máy hạ thế mà U₂ > U₁ (vô lí) mà không nhận ra. Cần rèn thói quen kiểm tra ngay sau khi tính.
+
+15. Cho rằng dòng điện xoay chiều đổi chiều mỗi lần trong một chu kì. Sai: trong mỗi chu kì dòng điện đổi chiều hai lần. Với lưới 50 Hz, dòng điện đổi chiều 100 lần mỗi giây.
+
+16. Nhầm rôto và stato. Đề mô tả "nam châm quay, cuộn dây đứng yên" nhưng học sinh vẫn tính tốc độ quay cho cuộn dây. Cần đọc kĩ để xác định đúng phần quay.
+
+17. Cho rằng máy biến thế tạo ra điện năng. Sai. Máy biến thế chỉ biến đổi hiệu điện thế của dòng điện xoay chiều đã có, không tạo ra điện năng; nó còn gây hao phí chứ không sinh thêm năng lượng.
+
+18. Bỏ qua yêu cầu an toàn trong câu hỏi thực hành. Nhiều học sinh đề xuất dùng trực tiếp điện lưới 220 V cho thí nghiệm. Phải luôn dùng nguồn hạ áp an toàn như 6 V, 12 V, 24 V xoay chiều.
+
+I2. Ghi chú sư phạm
+
+1. Thứ tự dạy đề xuất. Tiết 1: nam châm, từ trường, từ phổ, đường sức từ (mục B1 phần 1–3, Dạng 1). Tiết 2: từ trường của ống dây, nam châm điện, quy tắc nắm tay phải (B1 phần 4). Tiết 3: lực từ và quy tắc bàn tay trái (B1 phần 5, Dạng 2). Tiết 4: hiện tượng cảm ứng điện từ, điều kiện xuất hiện dòng điện cảm ứng, định luật Len-xơ (B1 phần 6–8, Dạng 3). Tiết 5: dòng điện xoay chiều, máy phát điện, tần số (B1 phần 9–12, Dạng 6). Tiết 6: máy biến thế (B1 phần 13, Dạng 4). Tiết 7: truyền tải điện năng, hao phí (B1 phần 14, Dạng 5). Tiết 8: tác dụng của dòng điện xoay chiều, an toàn điện, thực hành (B1 phần 15–16, Dạng 7). Tiết 9–10: luyện đề tổng hợp (mục D, G).
+
+2. Trọng tâm cho đội tuyển HSG. Ba dạng ra thi nhiều nhất là: (1) định luật Len-xơ định tính (Dạng 3); (2) máy biến thế kết hợp truyền tải, đặc biệt là dạng tỉ lệ với bình phương hiệu điện thế (Dạng 4 và 5); (3) tần số máy phát f = n.p kết hợp hệ truyền động (Dạng 6). Nên dành thời gian luyện kĩ ba dạng này.
+
+3. Kĩ năng cần rèn song song. Đổi đơn vị (kW ↔ W, kV ↔ V, vòng/phút ↔ vòng/s, mm² ↔ m², kWh ↔ J); biến đổi theo tỉ lệ thuận – tỉ lệ nghịch; trình bày lập luận định tính có lí lẽ; đọc và ghi số liệu thực nghiệm kèm đơn vị.
+
+4. Đặc thù kì thi KHTN 9. Từ năm học 2024–2025, HSG lớp 9 thi môn Khoa học tự nhiên, gồm phần chung (khoảng 20–30%) và phần riêng chọn một trong ba mạch; mạch Vật lí là "Năng lượng và sự biến đổi". Vì vậy chuyên đề này có thể xuất hiện dưới dạng câu riêng của mạch Vật lí hoặc lồng trong câu liên môn (ví dụ: máy phát điện – chuyển hóa cơ năng thành điện năng; truyền tải – hiệu suất và năng lượng). Giáo viên nên luyện cho học sinh cách diễn đạt liên môn.
+
+5. Đặc thù theo địa phương. TP.HCM (2025–2026): đề tự luận, 120 phút, không giới hạn ở học kì I, thường có câu thực hành/thí nghiệm và câu vận dụng cao gắn thực tiễn. Hà Nội: đề tự luận kết hợp trắc nghiệm, 150 phút, giới hạn đến hết học kì I lớp 9. Với TP.HCM cần chú trọng kĩ năng trình bày lời giải và xử lí số liệu thực nghiệm; với Hà Nội cần rèn thêm tốc độ làm trắc nghiệm.
+
+6. Cách dạy định luật Len-xơ cho hiệu quả. Bắt đầu bằng câu hỏi "vì sao dòng điện cảm ứng phải chống lại?" và để học sinh tự phát hiện mâu thuẫn với định luật bảo toàn năng lượng. Sau đó mới cho quy trình bốn bước. Cách này giúp học sinh nhớ bản chất thay vì học vẹt.
+
+7. Cách chữa lỗi lẫn hai quy tắc tay. Cho học sinh đứng dậy, làm động tác tay thật với một nam châm chữ U và một đoạn dây, rồi tự kiểm tra bằng thực nghiệm (dây bị hút lệch về phía nào). Kinh nghiệm cho thấy chỉ đọc lí thuyết thì học sinh vẫn lẫn, còn làm động tác tay hai đến ba lần thì nhớ rất bền.
+
+8. Không được dùng tài liệu nâng cao vượt phạm vi. Giáo viên tuyệt đối tránh đưa công thức suất điện động cảm ứng e = −ΔΦ/Δt, biểu thức Φ = B.S.cosα hay biểu diễn vectơ cảm ứng từ vào bài giảng lớp 9. Việc dùng sớm sẽ làm học sinh mất gốc định tính và dễ sai khi gặp câu hỏi định tính thuần túy.
+
+9. Khai thác yếu tố thực tiễn của Việt Nam. Đường dây 500 kV Bắc – Nam, các trạm biến áp 220 kV/110 kV, trạm biến áp khu dân cư 22 kV/0,4 kV, công tơ điện trong nhà, tủ lạnh và máy giặt ghi 220 V – 50 Hz, đèn LED dùng bộ nguồn chuyển AC thành DC. Những ví dụ này làm bài học sinh động và đúng định hướng "vận dụng cao gắn thực tiễn".
+
+10. Rèn an toàn điện như một phần bắt buộc của chuyên đề. Nên cho học sinh tìm hiểu một vụ tai nạn điện thật (qua báo chí, không nêu tên cá nhân) và phân tích nguyên nhân. Đây là nội dung giáo dục kĩ năng sống quan trọng, không nên xem là phần phụ.
+
+11. Bài tập về nhà nên giao theo cụm. Cụm 1 (Bài 1–3): định tính nam châm – từ trường – cảm ứng điện từ. Cụm 2 (Bài 4–7): máy biến thế và tần số máy phát. Cụm 3 (Bài 8–12): hao phí và truyền tải. Cụm 4 (mục G): dành cho đội tuyển, làm ở nhà rồi chữa trên lớp.
+
+12. Cách chấm điểm câu định tính. Thang điểm nên tách: nêu đúng hiện tượng hoặc kết luận (0,5 điểm); lí giải có căn cứ (1,0 điểm); dùng đúng thuật ngữ "biến thiên của từ thông" hoặc "chống lại sự biến thiên" (0,5 điểm). Nhiều học sinh kết luận đúng nhưng lí giải sai bản chất, cần trừ điểm để rèn tư duy.
+
+13. Cách chấm điểm câu tính toán truyền tải. Bắt buộc trừ điểm nếu thiếu đơn vị hoặc thiếu dòng đổi đơn vị. Đặc biệt với bài có "khoảng cách 25 km", phải kiểm tra học sinh có nhân đôi chiều dài dây hay không; đây là bước phân loại học sinh giỏi rõ nhất.
+
+14. Kiểm tra chéo kết quả. Khuyến khích học sinh kiểm tra bằng ba cách: dùng tỉ lệ (tăng U hai lần thì hao phí giảm bốn lần), dùng đơn vị, và kiểm tra tính hợp lí thực tế (hao phí phải nhỏ hơn công suất truyền đi; máy hạ thế phải cho U₂ < U₁; tiết diện dây vài chục mm² là hợp lí cho đường dây vài chục kilômét).

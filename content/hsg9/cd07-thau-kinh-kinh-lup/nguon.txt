@@ -1,0 +1,1509 @@
+Chuyên đề 07. Thấu kính mỏng và kính lúp
+
+A. Yêu cầu cần đạt và phạm vi
+
+  Lưu ý phạm vi (đã đối chiếu Yêu cầu cần đạt môn KHTN – Chương trình GDPT 2018, phần lớp 9): Yêu cầu cần đạt của chương trình về phần thấu kính – kính lúp chỉ gồm: nêu các khái niệm quang tâm, trục chính, tiêu điểm, tiêu cự; vẽ được ảnh qua thấu kính; thực hiện thí nghiệm khẳng định ảnh thật hứng được trên màn còn ảnh ảo thì không; vẽ sơ đồ tỉ lệ để giải các bài tập đơn giản về thấu kính hội tụ; mô tả cấu tạo và sử dụng kính lúp; đo được tiêu cự của thấu kính hội tụ. Chương trình không yêu cầu thuộc công thức thấu kính 1/f = 1/d + 1/d', không có số bội giác G = 25/f, không có hệ hai thấu kính ghép và không có phần cấu tạo mắt. Vì vậy trong chuyên đề này, các mục A1.8, A1.9, A1.10, A1.11 cùng toàn bộ bài tập định lượng ở mục C, D, E, G, H là NỘI DUNG BỔ SUNG NGOÀI YÊU CẦU CẦN ĐẠT LỚP 9, dùng để phân loại học sinh giỏi — khi dạy phải nói rõ điều này. Sách bài tập KHTN 9 bộ Kết nối tri thức dùng công thức thấu kính ở dạng 1/f = 1/d − 1/d' cho ảnh ảo; chuyên đề này dùng quy ước d' âm cho ảnh ảo (xem mục B1), cần nhắc học sinh đọc kỹ quy ước của từng đề.
+
+A1. Yêu cầu cần đạt theo Chương trình GDPT 2018 (phần Vật lí, mạch nội dung Năng lượng và sự biến đổi)
+
+Sau khi học xong chuyên đề này, học sinh cần:
+
+1. Nêu được thấu kính là một môi trường trong suốt được giới hạn bởi hai mặt cầu (hoặc một mặt cầu và một mặt phẳng); phân biệt được thấu kính hội tụ và thấu kính phân kì theo hình dạng và theo đường truyền của chùm tia sáng qua thấu kính.
+
+2. Nhận dạng được thấu kính hội tụ (rìa mỏng, chùm tia tới song song cho chùm tia ló hội tụ) và thấu kính phân kì (rìa dày, chùm tia tới song song cho chùm tia ló loe rộng ra).
+
+3. Nêu được các khái niệm: trục chính, quang tâm, tiêu điểm chính, tiêu cự; chỉ ra được trên hình vẽ ba yếu tố này khi biết đường truyền của một vài tia sáng.
+
+4. Mô tả được đường truyền của ba tia sáng đặc biệt qua thấu kính hội tụ và qua thấu kính phân kì (Yêu cầu cần đạt chỉ nêu tia qua quang tâm và tia song song với trục chính — tia thứ ba là phần bổ sung).
+
+5. Dựng được ảnh của một vật sáng nhỏ, phẳng, đặt vuông góc với trục chính của thấu kính hội tụ và thấu kính phân kì bằng hai trong ba tia đặc biệt.
+
+6. Nêu được tính chất của ảnh tạo bởi thấu kính hội tụ trong các trường hợp: vật ở ngoài khoảng tiêu cự (ảnh thật, ngược chiều) và vật ở trong khoảng tiêu cự (ảnh ảo, cùng chiều, lớn hơn vật).
+
+7. Nêu được tính chất ảnh tạo bởi thấu kính phân kì: với vật thật, ảnh luôn là ảnh ảo, cùng chiều, nhỏ hơn vật và nằm trong khoảng tiêu cự.
+
+8. Viết và vận dụng được công thức thấu kính 1/f = 1/d + 1/d' cùng với tỉ số độ cao ảnh h'/h = d'/d để giải các bài toán về ảnh của một vật qua thấu kính. (Bổ sung ngoài Yêu cầu cần đạt lớp 9 — chương trình chỉ yêu cầu vẽ sơ đồ tỉ lệ để giải các bài tập đơn giản về thấu kính hội tụ, không yêu cầu thuộc công thức.)
+
+9. Nêu được dòng chảy của năng lượng ánh sáng trong việc tạo ảnh, vai trò của thấu kính trong các dụng cụ quang học thông dụng (máy ảnh, kính lúp, kính hiển vi, kính thiên văn ở mức giới thiệu). (Bổ sung ngoài Yêu cầu cần đạt lớp 9.)
+
+10. Nêu được cấu tạo của mắt về phương diện quang học (thể thuỷ tinh đóng vai trò thấu kính hội tụ, màng lưới đóng vai trò màn hứng ảnh); nêu được sự điều tiết của mắt, điểm cực cận, điểm cực viễn, khoảng nhìn rõ của mắt ở mức định tính. (Bổ sung ngoài Yêu cầu cần đạt lớp 9.)
+
+11. Nêu được công dụng của kính lúp, viết được công thức số bội giác G = 25/f (f tính bằng cm), mô tả được cách ngắm chừng ảnh qua kính lúp. (Bổ sung ngoài Yêu cầu cần đạt lớp 9 — chương trình chỉ yêu cầu mô tả cấu tạo và sử dụng kính lúp.)
+
+12. Thực hiện được thí nghiệm đo tiêu cự của thấu kính hội tụ bằng cách hứng ảnh thật trên màn, ghi kết quả đo kèm sai số và xử lí số liệu để tính tiêu cự.
+
+A2. Phạm vi mở rộng cho học sinh giỏi
+
+Chuyên đề mở rộng thêm các nội dung sau:
+
+- Chứng minh công thức thấu kính bằng tam giác đồng dạng trong trường hợp ảnh thật, đó là cách trình bày được đề HSG ưu tiên chấm điểm.
+
+- Ảnh ảo của thấu kính hội tụ khi vật nằm trong khoảng tiêu cự; cách dùng quy ước dấu để không phải viết lại công thức.
+
+- Thấu kính phân kì với các bài toán định lượng; chứng minh ảnh luôn nằm trong khoảng tiêu cự.
+
+- Dựng ảnh của vật ngoài trục chính và của điểm sáng nằm trên trục chính, dùng tia bất kì và tia phụ.
+
+- Bài toán dịch chuyển vật – ảnh: vật lại gần thấu kính hội tụ (còn ngoài tiêu cự) thì ảnh thật ra xa và lớn dần; khảo sát quy luật bằng bảng giá trị.
+
+- Hai vị trí của thấu kính cho ảnh rõ trên màn (phương pháp Bessel cổ điển): trường hợp đặc biệt d = d' = 2f ứng với khoảng cách vật – màn nhỏ nhất L = 4f, và trường hợp tổng quát hai vị trí.
+
+- Hệ hai thấu kính đồng trục ghép sát và ghép cách nhau ở mức đơn giản: ảnh của thấu kính thứ nhất đóng vai trò vật của thấu kính thứ hai.
+
+- Kính lúp: số bội giác, cách ngắm chừng, quan hệ với khoảng nhìn rõ của mắt.
+
+- Thực hành đo tiêu cự bằng ba phương pháp: vật ở rất xa (ảnh ở tiêu điểm), d = d' = 2f, và hai vị trí Bessel; xử lí sai số và sai số của phép đo.
+
+Không dùng trong chuyên đề này: công thức độ tụ của hệ hai thấu kính ghép cách nhau một khoảng a, công thức Newton dạng tích số khoảng cách, các công thức thấu kính của chương trình lớp 11 – 12, đạo hàm và công cụ giải tích. Mọi bài toán trong chuyên đề đều giải được bằng biến đổi đại số bậc nhất và tỉ số tam giác đồng dạng.
+
+B. Lý thuyết trọng tâm
+
+B1. Kiến thức chuẩn theo SGK
+
+1. Thấu kính và cách nhận dạng
+
+Thấu kính là một khối chất trong suốt (thuỷ tinh, nhựa trong) được giới hạn bởi hai mặt cong, thường là hai mặt cầu. Trong chương trình lớp 9, ta xét hai loại thấu kính mỏng, có bề dày ở giữa không đáng kể so với bán kính mặt cầu.
+
+- Thấu kính hội tụ có phần rìa mỏng hơn phần giữa. Chiếu một chùm tia sáng song song tới thấu kính hội tụ, chùm tia ló hội tụ tại một điểm.
+
+- Thấu kính phân kì có phần rìa dày hơn phần giữa. Chiếu một chùm tia sáng song song tới thấu kính phân kì, chùm tia ló loe rộng ra, đường kéo dài của các tia ló gặp nhau tại một điểm.
+
+Cách nhận dạng nhanh trong phòng thí nghiệm: đưa thấu kính lại gần một dòng chữ. Nếu nhìn thấy ảnh cùng chiều và lớn hơn dòng chữ thì đó là thấu kính hội tụ; nếu ảnh cùng chiều và nhỏ hơn dòng chữ thì đó là thấu kính phân kì.
+
+2. Trục chính, quang tâm, tiêu điểm, tiêu cự
+
+- Trục chính là đường thẳng đi qua quang tâm và vuông góc với mặt thấu kính, kí hiệu là Δ.
+
+- Quang tâm O là điểm nằm giữa thấu kính, mọi tia sáng tới quang tâm đều truyền thẳng theo phương của nó.
+
+- Tiêu điểm ảnh F' là điểm mà các tia ló (hoặc đường kéo dài của các tia ló) của chùm tia tới song song với trục chính gặp nhau. Tiêu điểm vật F là điểm đối xứng với F' qua quang tâm; tia tới (hoặc đường kéo dài của tia tới) đi qua F thì tia ló song song với trục chính. Mỗi thấu kính có hai tiêu điểm chính F và F' đối xứng nhau qua quang tâm.
+
+- Tiêu cự f là khoảng cách từ quang tâm tới tiêu điểm: OF = OF' = f. Đơn vị của tiêu cự thường dùng là xentimét (cm) hoặc mét (m).
+
+3. Đường truyền của ba tia sáng đặc biệt
+
+Với thấu kính hội tụ:
+
+- Tia tới song song với trục chính thì tia ló đi qua tiêu điểm F' (nằm khác phía vật so với thấu kính).
+
+- Tia tới đi qua tiêu điểm F thì tia ló song song với trục chính.
+
+- Tia tới đi qua quang tâm O thì truyền thẳng, không đổi hướng.
+
+Với thấu kính phân kì:
+
+- Tia tới song song với trục chính thì tia ló có đường kéo dài đi qua tiêu điểm F' (nằm cùng phía vật so với thấu kính).
+
+- Tia tới có đường kéo dài đi qua tiêu điểm F thì tia ló song song với trục chính.
+
+- Tia tới đi qua quang tâm O thì truyền thẳng.
+
+Như vậy, với thấu kính hội tụ thì F nằm cùng phía với vật còn F' nằm khác phía; với thấu kính phân kì thì ngược lại, F' nằm cùng phía với vật còn F nằm khác phía. Một số sách giáo khoa đánh dấu tiêu điểm theo cách khác, vì vậy học sinh cần đọc kĩ quy ước của từng đề bài, nhưng bản chất quy tắc đường truyền tia sáng thì luôn như trên: tia tới song song với trục chính cho tia ló (hoặc đường kéo dài của tia ló) đi qua F'.
+
+4. Quy ước dấu dùng thống nhất trong toàn bộ chuyên đề
+
+Đây là phần học sinh phải ghi vào vở ngay từ bài đầu tiên, vì mọi bài toán về sau đều dùng đúng quy ước này.
+
+- d là khoảng cách từ vật tới quang tâm, luôn lấy d > 0 (vật thật đặt trước thấu kính).
+
+- d' là khoảng cách từ ảnh tới quang tâm, mang dấu: d' > 0 khi ảnh là ảnh thật (ảnh nằm khác phía vật so với thấu kính); d' < 0 khi ảnh là ảnh ảo (ảnh nằm cùng phía vật so với thấu kính), và độ lớn của d' chính là khoảng cách từ ảnh tới thấu kính.
+
+- f là tiêu cự, mang dấu: f > 0 với thấu kính hội tụ; f < 0 với thấu kính phân kì.
+
+- Công thức thấu kính dùng chung cho mọi trường hợp: 1/f = 1/d + 1/d'.
+
+- Độ cao ảnh: |h'|/h = |d'|/d. Nếu lấy d' là độ lớn (một số dương) thì viết gọn thành h'/h = d'/d (cách viết này có trong lời giải của Sách bài tập KHTN 9, câu 10.8).
+
+- Chiều của ảnh: d' > 0 cho ảnh ngược chiều vật; d' < 0 cho ảnh cùng chiều vật.
+
+Hai ví dụ kiểm tra quy ước, học sinh nên tự làm lại:
+
+Với f = 10 cm và d = 30 cm, ta có 1/d' = 1/10 − 1/30 = 2/30, suy ra d' = 15 cm > 0, vậy ảnh thật, ngược chiều, cao bằng một nửa vật.
+
+Với f = 10 cm và d = 5 cm, ta có 1/d' = 1/10 − 1/5 = −1/10, suy ra d' = −10 cm < 0, vậy ảnh ảo, cùng chiều, cách thấu kính 10 cm và cao gấp đôi vật.
+
+5. Ảnh của một vật qua thấu kính hội tụ
+
+Vật sáng AB đặt vuông góc với trục chính, A nằm trên trục chính, h là chiều cao của vật.
+
+- Nếu d > 2f: ảnh thật, ngược chiều, nhỏ hơn vật.
+
+- Nếu d = 2f: ảnh thật, ngược chiều, cao bằng vật, ảnh cách thấu kính đúng 2f.
+
+- Nếu f < d < 2f: ảnh thật, ngược chiều, lớn hơn vật.
+
+- Nếu d = f: các tia ló song song với nhau, không tạo được ảnh rõ trên màn.
+
+- Nếu d < f: ảnh ảo, cùng chiều, lớn hơn vật và nằm cùng phía với vật.
+
+6. Ảnh của một vật qua thấu kính phân kì
+
+Với vật thật đặt trước thấu kính phân kì, ảnh luôn là ảnh ảo, cùng chiều, nhỏ hơn vật, nằm trong khoảng tiêu cự và ở gần thấu kính hơn vật. Thấu kính phân kì không bao giờ tạo được ảnh thật của một vật thật, do đó không thể hứng ảnh của nó trên màn.
+
+7. Cách dựng ảnh bằng lời
+
+Muốn dựng ảnh A'B' của vật AB, học sinh làm theo đúng bốn bước sau:
+
+1. Vẽ trục chính Δ, vẽ thấu kính bằng một đoạn thẳng vuông góc với Δ, đánh dấu quang tâm O, hai tiêu điểm F và F' đối xứng nhau qua O với OF = OF' = f.
+
+2. Từ B vẽ tia thứ nhất song song với trục chính, tia ló (hoặc đường kéo dài của tia ló) đi qua F'.
+
+3. Từ B vẽ tia thứ hai đi qua quang tâm O, tia này truyền thẳng.
+
+4. Giao điểm của hai tia ló (hoặc giao điểm của đường kéo dài hai tia ló) chính là B'; hạ vuông góc từ B' xuống trục chính ta được A'. Nếu hai tia ló cắt nhau thật thì A'B' là ảnh thật, vẽ bằng nét liền; nếu phải kéo dài hai tia ló về phía sau thấu kính mới cắt nhau thì A'B' là ảnh ảo, vẽ bằng nét đứt.
+
+8. Mắt và sự điều tiết (mức định tính)
+
+Về phương diện quang học, mắt có cấu tạo gồm thể thuỷ tinh đóng vai trò như một thấu kính hội tụ và màng lưới đóng vai trò như màn hứng ảnh. Ảnh của vật mà mắt nhìn rõ là ảnh thật, ngược chiều, hiện trên màng lưới.
+
+- Sự điều tiết là sự thay đổi tiêu cự của thể thuỷ tinh để ảnh của vật luôn hiện rõ trên màng lưới. Khi nhìn vật ở xa, thể thuỷ tinh dẹt xuống, tiêu cự lớn; khi nhìn vật ở gần, thể thuỷ tinh phồng lên, tiêu cự nhỏ.
+
+- Điểm cực viễn là điểm xa nhất mà mắt còn nhìn rõ khi không phải điều tiết. Với mắt tốt, điểm cực viễn ở rất xa (coi như vô cực).
+
+- Điểm cực cận là điểm gần nhất mà mắt còn nhìn rõ khi đã điều tiết tối đa. Với mắt tốt của người trưởng thành, điểm cực cận cách mắt khoảng 25 cm; con số 25 cm này chính là mẫu số trong công thức số bội giác của kính lúp.
+
+- Khoảng nhìn rõ là khoảng cách từ điểm cực cận đến điểm cực viễn. Muốn nhìn rõ một vật, mắt phải đặt vật trong khoảng nhìn rõ của mình.
+
+9. Kính lúp
+
+Kính lúp là một thấu kính hội tụ có tiêu cự ngắn, dùng để quan sát các vật nhỏ. Vật cần quan sát phải đặt trong khoảng tiêu cự của kính (d < f) để thu được ảnh ảo, cùng chiều và lớn hơn vật.
+
+Số bội giác của kính lúp, kí hiệu G, cho biết góc trông ảnh qua kính lớn gấp bao nhiêu lần góc trông vật lớn nhất khi nhìn trực tiếp vật tại điểm cực cận (khoảng cực cận lấy bằng 25 cm). Công thức G = 25/f ứng với trường hợp ngắm chừng ở vô cực (ảnh ở vô cực, mắt không phải điều tiết) — cần nói rõ hai điều kiện này vì góc chuẩn và vị trí ảnh là hai chuyện khác nhau. Công thức liên hệ giữa số bội giác và tiêu cự:
+
+G = 25/f
+
+trong đó f tính bằng xentimét. Trên vành kính lúp thường ghi các giá trị 2×, 3×, 5×; muốn biết tiêu cự ta lấy 25 chia cho số bội giác.
+
+Ngắm chừng là việc điều chỉnh vị trí của kính (hoặc của vật) sao cho ảnh ảo của vật hiện ra trong khoảng nhìn rõ của mắt. Có hai cách ngắm chừng thường dùng: ngắm chừng ở điểm cực cận (ảnh ảo hiện ngay tại điểm cực cận, mắt phải điều tiết nhiều nhất nhưng ảnh lớn nhất) và ngắm chừng ở điểm cực viễn (ảnh ảo hiện tại điểm cực viễn, mắt không phải điều tiết nhưng góc trông nhỏ hơn so với khi ngắm chừng ở điểm cực cận).
+
+10. Thực hành đo tiêu cự của thấu kính hội tụ
+
+Ba phương pháp dùng được ở lớp 9:
+
+1. Phương pháp vật ở rất xa. Hướng thấu kính về phía một vật ở rất xa (cửa sổ, cột điện, ngọn cây) sao cho chùm tia tới coi như song song với trục chính; hứng ảnh trên màn và dịch màn đến khi ảnh hiện rõ nét nhất. Khoảng cách từ thấu kính tới màn lúc đó chính là tiêu cự f.
+
+2. Phương pháp d = d' = 2f. Đặt vật và màn cố định, cách nhau một khoảng L. Chỉ có một vị trí của thấu kính cho ảnh rõ nét khi L = 4f; khi đó d = d' = 2f và f = L/4.
+
+3. Phương pháp hai vị trí (Bessel). Giữ vật và màn cách nhau L > 4f. Dịch thấu kính trong khoảng giữa, ta tìm được hai vị trí của thấu kính cho ảnh rõ nét; hai vị trí này cho hai ảnh có kích thước khác nhau (một ảnh lớn hơn vật, một ảnh nhỏ hơn vật). Đo khoảng cách ℓ giữa hai vị trí đó rồi tính tiêu cự theo công thức suy ra ở mục B2.
+
+B2. Mở rộng – nâng cao cho HSG
+
+1. Chứng minh công thức thấu kính bằng tam giác đồng dạng (trường hợp ảnh thật)
+
+Đây là nội dung quan trọng nhất của chuyên đề, vì đề HSG chấm theo cách dựng hình và tỉ số đồng dạng.
+
+Xét vật AB vuông góc với trục chính, A nằm trên trục chính, ảnh A'B' là ảnh thật. Xét hai cặp tam giác đồng dạng:
+
+- Cặp thứ nhất: tam giác OAB và tam giác OA'B' đồng dạng (hai tam giác vuông có chung góc đỉnh O, do A, O, A' thẳng hàng và AB song song với A'B'). Suy ra A'B'/AB = OA'/OA, tức là h'/h = d'/d.
+
+- Cặp thứ hai: tam giác F'IO và tam giác F'A'B' đồng dạng, trong đó I là giao điểm của tia tới song song với trục chính với mặt thấu kính, và OI = AB. Suy ra A'B'/OI = F'A'/F'O, tức là h'/h = (d' − f)/f.
+
+Từ hai tỉ số bằng nhau, ta có:
+
+d'/d = (d' − f)/f
+
+Nhân chéo: f·d' = d·d' − d·f.
+
+Chia cả hai vế cho tích d·d'·f:
+
+1/d = 1/f − 1/d'
+
+Chuyển vế:
+
+1/f = 1/d + 1/d'
+
+Vậy công thức thấu kính đã được chứng minh bằng hình học thuần tuý, không cần dùng kiến thức ngoài chương trình lớp 9.
+
+2. Vì sao công thức vẫn đúng với ảnh ảo
+
+Khi vật nằm trong khoảng tiêu cự, hai tia ló không cắt nhau ở phía sau thấu kính mà chỉ có đường kéo dài của chúng cắt nhau ở phía trước, tạo ảnh ảo. Nếu vẫn làm đúng các bước chứng minh trên nhưng chú ý rằng ảnh nằm cùng phía vật, ta thu được biểu thức 1/d' = 1/f − 1/d với d' mang giá trị âm, tức là công thức 1/f = 1/d + 1/d' vẫn nghiệm đúng. Vì vậy học sinh chỉ cần nhớ một công thức duy nhất kèm quy ước dấu ở mục B1.4.
+
+3. Dựng ảnh khi vật ngoài trục chính và khi điểm sáng nằm trên trục chính
+
+- Vật AB đặt vuông góc với trục chính, A nằm trên trục chính: chỉ cần dựng ảnh B' của B bằng hai tia đặc biệt, rồi hạ vuông góc từ B' xuống trục chính được A'. Vì AB vuông góc với trục chính nên A'B' cũng vuông góc với trục chính.
+
+- Vật AB không vuông góc với trục chính: dựng ảnh của hai điểm đầu A và B rồi nối lại. Cách này dùng cho bài toán ảnh của một đoạn thẳng nghiêng hoặc ảnh của một mũi tên xiên.
+
+- Điểm sáng S nằm ngay trên trục chính: tia tới trùng với trục chính truyền thẳng, nên không dùng được tia qua quang tâm để xác định ảnh. Học sinh phải dùng một tia bất kì: vẽ tia tới SI bất kì, rồi vẽ tia phụ là đường thẳng qua O và song song với tia tới SI; tia phụ này cắt tiêu diện (mặt phẳng vuông góc với trục chính tại F') tại một điểm, và tia ló của tia SI phải đi qua điểm đó. Ảnh S' là giao điểm của tia ló với trục chính.
+
+4. Bài toán dịch chuyển vật – ảnh (quy luật định tính và định lượng)
+
+Với thấu kính hội tụ và ảnh thật (d > f), khi giữ thấu kính cố định và dịch vật lại gần thấu kính thì ảnh thật dịch ra xa thấu kính và lớn dần. Quy luật này suy trực tiếp từ công thức thấu kính: từ 1/d' = 1/f − 1/d, khi d giảm (vẫn lớn hơn f) thì 1/d tăng, do đó 1/d' giảm, tức là d' tăng; đồng thời tỉ số |h'|/h = d'/d tăng nhanh hơn vì cả tử số tăng lẫn mẫu số giảm. Học sinh nên lập bảng giá trị để thấy quy luật, ví dụ với f = 10 cm:
+
+  -----------------------------------------------------------------------
+  d (cm)      40          30          20          15          12
+  ----------- ----------- ----------- ----------- ----------- -----------
+  d' (cm)     13,3        15          20          30          60
+
+  d'/d        0,33        0,5         1           2           5
+  -----------------------------------------------------------------------
+
+Bảng này cho thấy khi d tiến dần tới f = 10 cm thì d' tiến ra rất xa và độ phóng đại tăng rất mạnh. Khi d = 2f = 20 cm, ảnh ở đúng 2f và cao bằng vật — đây là trường hợp trung tâm của phương pháp đo tiêu cự.
+
+5. Phương pháp Bessel: hai vị trí của thấu kính cho ảnh rõ trên màn
+
+Giữ vật và màn cố định, cách nhau L, thấu kính đặt trong khoảng giữa. Ảnh rõ nét trên màn khi d + d' = L và 1/d + 1/d' = 1/f. Đặt d' = L − d, ta được:
+
+1/d + 1/(L − d) = 1/f
+
+Quy đồng mẫu số: L/(d(L − d)) = 1/f.
+
+Suy ra: d(L − d) = L·f, hay d² − L·d + L·f = 0.
+
+Phương trình bậc hai này có hai nghiệm d₁ và d₂ (tương ứng hai vị trí của thấu kính) thoả mãn:
+
+d₁ + d₂ = L và d₁·d₂ = L·f
+
+Khoảng cách giữa hai vị trí là ℓ = |d₂ − d₁|. Từ hằng đẳng thức (d₂ − d₁)² = (d₁ + d₂)² − 4·d₁·d₂, ta có:
+
+ℓ² = L² − 4·L·f
+
+Suy ra công thức tính tiêu cự:
+
+f = (L² − ℓ²)/(4L)
+
+Hai trường hợp đặc biệt cần nhớ:
+
+- Nếu L = 4f thì ℓ = 0: chỉ có một vị trí duy nhất của thấu kính cho ảnh rõ, đó là vị trí d = d' = 2f. Đây là vị trí trung tâm, ứng với ảnh cao bằng vật.
+
+- Nếu L > 4f thì có hai vị trí; vị trí gần vật cho ảnh lớn hơn vật, vị trí xa vật cho ảnh nhỏ hơn vật.
+
+6. Hệ hai thấu kính đồng trục ở mức đơn giản
+
+Nguyên tắc chung: ảnh tạo bởi thấu kính thứ nhất đóng vai trò vật đối với thấu kính thứ hai. Ta giải lần lượt từng thấu kính theo quy ước dấu, rồi dùng tính chất: số phóng đại của cả hệ bằng tích các số phóng đại thành phần, tức là h'/h = (|d'₁|/d₁)·(|d'₂|/d₂).
+
+- Ghép sát (hai thấu kính đặt sát nhau, khoảng cách giữa chúng không đáng kể): có thể coi hệ tương đương với một thấu kính có tiêu cự f thoả mãn 1/f = 1/f₁ + 1/f₂. Hệ hai thấu kính hội tụ ghép sát cho một thấu kính hội tụ mạnh hơn; ghép sát một thấu kính hội tụ với một thấu kính phân kì cho thấu kính hội tụ yếu hơn, hoặc phân kì nếu độ phân kì lớn hơn.
+
+- Ghép cách nhau một khoảng a: ảnh A'₁B'₁ của thấu kính thứ nhất là vật của thấu kính thứ hai, với khoảng cách tới thấu kính thứ hai là d₂ = a − d'₁ (nếu A'₁B'₁ là ảnh thật nằm giữa hai thấu kính thì d₂ > 0 và đây là vật thật của thấu kính thứ hai). Sau đó tiếp tục dùng 1/f₂ = 1/d₂ + 1/d'₂.
+
+7. Phân tích sai số trong bài thực hành đo tiêu cự
+
+- Sai số chủ yếu đến từ việc xác định vị trí ảnh rõ nét nhất, vì độ nét thay đổi chậm quanh vị trí đúng.
+
+- Nên đo ba lần ở mỗi vị trí rồi lấy giá trị trung bình; ghi kết quả dạng f = f_(tb) ± Δf.
+
+- Khi dùng phương pháp Bessel, sai số của L ảnh hưởng mạnh hơn sai số của ℓ. Lí do: từ f = (L² − ℓ²)/(4L) = L/4 − ℓ²/(4L), khi ℓ nhỏ thì f ≈ L/4, tức f tỉ lệ với L (bậc nhất); còn độ nhạy với ℓ là ∂f/∂ℓ = −ℓ/(2L), tiến tới 0 khi ℓ nhỏ (bậc hai theo ℓ). Vì vậy đo L phải cẩn thận hơn đo ℓ.
+
+- Cần đặt vật và màn luôn vuông góc với trục chính, dùng vật có dạng mũi tên hoặc chữ thập để dễ xác định chiều ảnh.
+
+8. Vì sao kính lúp giúp nhìn rõ vật nhỏ
+
+Mắt chỉ nhìn rõ vật khi ảnh của vật hiện đúng trên màng lưới và vật nằm trong khoảng nhìn rõ. Với một vật rất nhỏ, muốn tăng góc trông thì phải đưa vật lại gần mắt, nhưng mắt chỉ tiến được tới điểm cực cận cách mắt 25 cm. Kính lúp đặt trong khoảng từ mắt tới điểm cực cận tạo ra một ảnh ảo cùng chiều, lớn hơn vật, nằm xa mắt hơn vật ban đầu; nhờ vậy mắt có thể quan sát ảnh đó với góc trông lớn hơn hẳn, và số bội giác G = 25/f chính là số lần góc trông được tăng lên.
+
+B3. Công thức cần nhớ (bảng)
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  STT               Công thức                                         Ý nghĩa                                                         Ghi chú dùng đúng
+  ----------------- ------------------------------------------------- --------------------------------------------------------------- ----------------------------------------------------------------------------------------
+  1                 1/f = 1/d + 1/d'                                  Công thức thấu kính, dùng cho mọi trường hợp                    f > 0: hội tụ; f < 0: phân kì; d' > 0: ảnh thật; d' < 0: ảnh ảo
+
+  2                 h'/h = d'/d (lấy độ lớn)                          Tỉ số độ cao ảnh và vật                                         Khi d' âm thì dùng độ lớn của d'; viết đủ là độ cao ảnh chia độ cao vật bằng d' chia d
+
+  3                 d = d' = 2f                                       Vật cách thấu kính 2f cho ảnh thật cao bằng vật                 Ảnh cũng cách thấu kính 2f, ảnh ngược chiều
+
+  4                 L = d + d' ≥ 4f                                   Khoảng cách vật – ảnh (ảnh thật) nhỏ nhất bằng 4f               Đạt dấu bằng khi d = d' = 2f
+
+  5                 f = L/4                                           Tiêu cự khi vật – màn cách nhau L và chỉ có một vị trí ảnh rõ   Ứng với trường hợp d = d' = 2f
+
+  6                 f = (L² − ℓ²)/(4L)                                Tiêu cự theo phương pháp hai vị trí Bessel                      ℓ là khoảng cách giữa hai vị trí thấu kính, L là khoảng cách vật – màn
+
+  7                 G = 25/f                                          Số bội giác của kính lúp                                        f tính bằng cm; 25 cm là khoảng cực cận của mắt tốt
+
+  8                 d < f                                             Điều kiện để kính lúp cho ảnh ảo cùng chiều lớn hơn vật         Vật phải nằm trong khoảng tiêu cự của kính
+
+  9                 Ảnh thật: khoảng cách vật – ảnh bằng d + d'       Kiểm tra kết quả bài toán                                       Ảnh ảo: khoảng cách vật – ảnh bằng hiệu hai khoảng cách tới thấu kính
+
+  10                d' > 0: ảnh ngược chiều; d' < 0: ảnh cùng chiều   Xác định chiều ảnh                                              Chỉ cần tra dấu của d', không cần vẽ hình
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. Các dạng bài và phương pháp giải
+
+Dạng 1. Nhận dạng thấu kính; xác định trục chính, quang tâm, tiêu điểm, tiêu cự
+
+Nhận dạng. Đề cho hình dạng thấu kính, hoặc cho đường truyền của một chùm tia sáng, hoặc cho biết khoảng cách từ thấu kính tới điểm hội tụ của chùm tia ló, yêu cầu xác định loại thấu kính, quang tâm, tiêu điểm và tiêu cự.
+
+Phương pháp.
+
+1. Nếu chùm tia tới song song cho chùm tia ló hội tụ tại một điểm thật, thấu kính là hội tụ; điểm hội tụ đó là tiêu điểm ảnh F' và tiêu cự f = OF'.
+
+2. Nếu chùm tia ló loe rộng ra và đường kéo dài của chúng gặp nhau, thấu kính là phân kì; điểm gặp nhau của các đường kéo dài là tiêu điểm ảnh F' nằm cùng phía với chùm tia tới.
+
+3. Muốn tìm quang tâm O khi biết trục chính và một cặp tia ló: dùng tính chất tia tới quang tâm truyền thẳng, hoặc dùng tính chất hai tiêu điểm đối xứng nhau qua quang tâm.
+
+4. Sau khi đã biết f, chuyển sang bài toán định lượng bằng công thức 1/f = 1/d + 1/d'.
+
+Ví dụ mẫu.
+
+Đề bài. Chiếu một chùm tia sáng song song với trục chính tới một thấu kính đặt trong không khí. Chùm tia ló hội tụ tại một điểm nằm sau thấu kính và cách quang tâm 12 cm. Vật sáng AB cao 2 cm được đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 18 cm. Hãy cho biết loại thấu kính và tiêu cự của nó, dựng ảnh A'B', rồi tính khoảng cách từ ảnh tới thấu kính và chiều cao của ảnh.
+
+Tóm tắt.
+
+- Chùm tia tới song song cho chùm tia ló hội tụ tại điểm cách quang tâm 12 cm.
+
+- Vật AB cao h = 2 cm, vuông góc với trục chính, A nằm trên trục chính.
+
+- Khoảng cách từ vật tới thấu kính d = 18 cm.
+
+- Cần tìm: loại thấu kính, f, cách dựng ảnh, d', h'.
+
+Lời giải
+
+Chùm tia tới song song cho chùm tia ló hội tụ tại một điểm thật, vậy thấu kính là thấu kính hội tụ và điểm hội tụ chính là tiêu điểm ảnh F'. Do đó:
+
+f = OF' = 12 cm
+
+Cách dựng ảnh A'B' bằng lời, tiến hành theo bốn bước:
+
+1. Vẽ trục chính Δ nằm ngang, vẽ thấu kính hội tụ bằng một đoạn thẳng đứng cắt Δ tại quang tâm O.
+
+2. Lấy hai tiêu điểm F và F' đối xứng nhau qua O, mỗi điểm cách O một khoảng 12 cm; F nằm cùng phía với vật, F' nằm khác phía với vật.
+
+3. Đặt vật AB cao 2 cm tại vị trí cách O một khoảng 18 cm về phía F. Từ B vẽ tia thứ nhất song song với trục chính tới thấu kính tại I, tia ló của tia này đi qua F'.
+
+4. Từ B vẽ tia thứ hai đi qua quang tâm O, tia này truyền thẳng. Hai tia ló cắt nhau tại B' nằm khác phía vật so với thấu kính; hạ vuông góc từ B' xuống trục chính được A'. Vì hai tia ló cắt nhau thật nên A'B' là ảnh thật, vẽ bằng nét liền.
+
+Áp dụng công thức thấu kính với d = 18 cm và f = 12 cm:
+
+1/f = 1/d + 1/d'
+
+1/12 = 1/18 + 1/d'
+
+1/d' = 1/12 − 1/18
+
+1/d' = (3 − 2)/36 = 1/36
+
+d' = 36 cm
+
+Vì d' > 0 nên ảnh là ảnh thật, nằm khác phía vật, cách thấu kính 36 cm.
+
+Tỉ số độ cao của ảnh và vật:
+
+|h'|/h = |d'|/d
+
+|h'| = h·|d'|/d = 2·36/18 = 4 cm
+
+Kết luận về tính chất ảnh: ảnh thật, ngược chiều với vật, cao 4 cm, tức là lớn gấp đôi vật.
+
+Đáp số. Thấu kính hội tụ, f = 12 cm; d' = 36 cm; h' = 4 cm; ảnh thật, ngược chiều, lớn gấp đôi vật.
+
+Lưu ý. Khi đề chỉ cho "điểm hội tụ cách thấu kính 12 cm", học sinh phải tự hiểu đó là tiêu điểm ảnh F'. Nếu chùm tia ló loe rộng thì điểm đó là tiêu điểm ảo và tiêu cự vẫn lấy độ lớn 12 cm nhưng thấu kính là phân kì. Trong bài này vì d > f nên ảnh là ảnh thật; nếu đề cho d < 12 cm thì bắt buộc phải dùng d' âm theo quy ước ở mục B1.4.
+
+Dạng 2. Vật nằm ngoài khoảng tiêu cự của thấu kính hội tụ (ảnh thật)
+
+Nhận dạng. Đề cho thấu kính hội tụ có tiêu cự f và vật cách thấu kính một khoảng d > f; yêu cầu dựng ảnh, tính d', tính h' và nêu tính chất ảnh. Đây là dạng chủ lực, xuất hiện ở hầu hết các đề.
+
+Phương pháp.
+
+1. Kiểm tra điều kiện d > f để khẳng định ảnh là ảnh thật, ngược chiều.
+
+2. Dựng ảnh bằng hai trong ba tia đặc biệt: tia song song với trục chính và tia đi qua quang tâm là cặp tia dễ vẽ nhất; tia đi qua tiêu điểm F dùng khi cần kiểm tra lại.
+
+3. Tính d' từ 1/f = 1/d + 1/d', sau đó tính |h'| = h·|d'|/d.
+
+4. Nêu tính chất ảnh theo dấu của d' và theo tỉ số |d'|/d: d > 2f cho ảnh nhỏ hơn vật, f < d < 2f cho ảnh lớn hơn vật, d = 2f cho ảnh cao bằng vật.
+
+Ví dụ mẫu.
+
+Đề bài. Một thấu kính hội tụ có tiêu cự f = 12 cm. Vật sáng AB cao 4 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 36 cm. Dựng ảnh A'B' và tính khoảng cách từ ảnh tới thấu kính, chiều cao ảnh. Sau đó giữ nguyên thấu kính, dịch vật lại gần thấu kính sao cho vật cách thấu kính 24 cm; nhận xét về ảnh mới.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 12 cm.
+
+- Vật AB cao h = 4 cm, vuông góc với trục chính, A trên trục chính.
+
+- Trường hợp a: d₁ = 36 cm. Trường hợp b: d₂ = 24 cm.
+
+- Cần tìm: d'₁, h'₁, d'₂, h'₂ và nhận xét.
+
+Lời giải
+
+Trường hợp a: vì d₁ = 36 cm > f = 12 cm nên ảnh là ảnh thật, ngược chiều.
+
+Cách dựng ảnh: vẽ trục chính Δ, vẽ thấu kính tại O, lấy F và F' cách O 12 cm về hai phía. Đặt AB cách O 36 cm về phía F. Từ B vẽ tia song song với Δ tới thấu kính tại I, tia ló đi qua F'. Từ B vẽ tia thứ hai qua O, tia này truyền thẳng. Hai tia ló cắt nhau tại B' ở phía sau thấu kính; hạ vuông góc xuống Δ được A'. Ảnh thật, vẽ nét liền.
+
+Áp dụng công thức thấu kính:
+
+1/f = 1/d₁ + 1/d'₁
+
+1/12 = 1/36 + 1/d'₁
+
+1/d'₁ = 1/12 − 1/36 = (3 − 1)/36 = 2/36 = 1/18
+
+d'₁ = 18 cm
+
+|h'₁| = h·d'₁/d₁ = 4·18/36 = 2 cm
+
+Vậy ở trường hợp a, ảnh thật, ngược chiều, cách thấu kính 18 cm, cao 2 cm, nhỏ hơn vật.
+
+Trường hợp b: dịch vật lại gần để d₂ = 24 cm = 2f. Ta có:
+
+1/d'₂ = 1/12 − 1/24 = (2 − 1)/24 = 1/24
+
+d'₂ = 24 cm
+
+|h'₂| = h·d'₂/d₂ = 4·24/24 = 4 cm
+
+Vậy ở trường hợp b, ảnh thật, ngược chiều, cách thấu kính 24 cm và cao đúng bằng vật. Đây là trường hợp đặc biệt d = d' = 2f.
+
+Nhận xét: khi dịch vật lại gần thấu kính (từ 36 cm còn 24 cm), ảnh thật dịch ra xa thấu kính (từ 18 cm tới 24 cm) và lớn dần (từ 2 cm lên 4 cm).
+
+Đáp số. a) d'₁ = 18 cm, h'₁ = 2 cm, ảnh thật ngược chiều nhỏ hơn vật. b) d'₂ = 24 cm = 2f, h'₂ = 4 cm bằng vật; vật lại gần thì ảnh thật ra xa và lớn dần.
+
+Lưu ý. Trường hợp d = 2f là trường hợp duy nhất ảnh cao bằng vật, đồng thời khoảng cách vật – ảnh đạt giá trị nhỏ nhất L = 4f. Học sinh phải nhớ kết quả này vì nó là cơ sở của phương pháp đo tiêu cự ở Dạng 6. Ngoài ra, khi tính |h'|, học sinh hay quên lấy giá trị tuyệt đối dẫn đến chiều cao ảnh âm; cần nhấn mạnh rằng h' là độ cao hình học, luôn dương, còn chiều ảnh xác định qua dấu của d'.
+
+Dạng 3. Vật nằm trong khoảng tiêu cự của thấu kính hội tụ (ảnh ảo)
+
+Nhận dạng. Thấu kính hội tụ, vật cách thấu kính một khoảng d < f. Đề yêu cầu dựng ảnh, tính d' và h', nêu tính chất ảnh.
+
+Phương pháp.
+
+1. Kiểm tra d < f để khẳng định ảnh là ảnh ảo, cùng chiều, lớn hơn vật.
+
+2. Dựng ảnh: hai tia ló không cắt nhau ở sau thấu kính, phải kéo dài chúng về phía trước thấu kính; ảnh vẽ bằng nét đứt.
+
+3. Tính d' từ 1/f = 1/d + 1/d'; vì d < f nên 1/d > 1/f, do đó 1/d' < 0 và d' < 0. Kết quả âm là dấu hiệu báo đúng ảnh ảo.
+
+4. Tính |h'| = h·|d'|/d; chú ý |d'| > d nên ảnh luôn lớn hơn vật.
+
+5. Chú ý vị trí: ảnh ảo nằm cùng phía với vật, cách thấu kính một khoảng |d'|.
+
+Ví dụ mẫu.
+
+Đề bài. Một thấu kính hội tụ có tiêu cự f = 15 cm. Vật sáng AB cao 5 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 10 cm. Dựng ảnh A'B', tính khoảng cách từ ảnh tới thấu kính và chiều cao ảnh, cho biết tính chất ảnh.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 15 cm.
+
+- Vật AB cao h = 5 cm, vuông góc với trục chính, A trên trục chính.
+
+- d = 10 cm < f.
+
+- Cần tìm: d', h', tính chất ảnh.
+
+Lời giải
+
+Vì d = 10 cm < f = 15 cm nên vật nằm trong khoảng tiêu cự; ảnh thu được là ảnh ảo, cùng chiều và lớn hơn vật.
+
+Cách dựng ảnh bằng lời: vẽ trục chính Δ, vẽ thấu kính tại O, lấy F cách O 15 cm về phía vật và F' cách O 15 cm về phía đối diện. Đặt AB cách O 10 cm, tức là nằm giữa O và F. Từ B vẽ tia song song với Δ tới thấu kính tại I; tia ló đi qua F' và chếch xuống dưới. Từ B vẽ tia thứ hai đi qua O, truyền thẳng và chếch xuống dưới. Hai tia ló này không cắt nhau ở phía sau thấu kính; kéo dài hai tia ló về phía trước thấu kính, chúng cắt nhau tại B' nằm cùng phía với vật và xa thấu kính hơn vật. Hạ vuông góc từ B' xuống Δ được A'. Vì phải kéo dài tia ló mới có giao điểm nên A'B' là ảnh ảo, vẽ bằng nét đứt.
+
+Áp dụng công thức thấu kính với d = 10 cm và f = 15 cm:
+
+1/f = 1/d + 1/d'
+
+1/15 = 1/10 + 1/d'
+
+1/d' = 1/15 − 1/10 = (2 − 3)/30 = −1/30
+
+d' = −30 cm
+
+Vì d' < 0 nên ảnh là ảnh ảo, cách thấu kính 30 cm và nằm cùng phía với vật.
+
+|h'| = h·|d'|/d = 5·30/10 = 15 cm
+
+Ảnh cao 15 cm, lớn gấp ba lần vật.
+
+Đáp số. d' = −30 cm (ảnh ảo cách thấu kính 30 cm, cùng phía vật); h' = 15 cm; ảnh ảo, cùng chiều, lớn gấp ba lần vật.
+
+Lưu ý. Sai lầm phổ biến nhất ở dạng này là học sinh thay d' = 30 cm vào công thức, dẫn tới kết luận sai rằng ảnh thật. Cần nhấn mạnh: dấu trừ là thông tin vật lí, không được bỏ. Một cách kiểm tra chéo: ảnh ảo phải nằm xa thấu kính hơn vật, tức |d'| > d; ở đây 30 cm > 10 cm, thoả mãn. Ngoài ra không thể hứng ảnh này trên màn, và khi nhìn qua thấu kính ta thấy ảnh cùng chiều lớn hơn vật — đúng với quan sát thực tế khi dùng thấu kính hội tụ làm kính lúp.
+
+Dạng 4. Thấu kính phân kì
+
+Nhận dạng. Đề cho thấu kính phân kì (thường ghi "thấu kính phân kì có tiêu cự 15 cm", cần hiểu f = −15 cm theo quy ước dấu) và vật thật đặt trước thấu kính. Yêu cầu dựng ảnh, tính d', h'.
+
+Phương pháp.
+
+1. Ghi ngay f mang dấu âm: f = −|f|.
+
+2. Vì vật thật và thấu kính phân kì, ảnh luôn là ảnh ảo, cùng chiều, nhỏ hơn vật và nằm trong khoảng tiêu cự; có thể dùng nhận xét này để kiểm tra kết quả.
+
+3. Dựng ảnh: tia tới song song trục chính cho tia ló có đường kéo dài đi qua F' nằm cùng phía vật; tia tới quang tâm truyền thẳng. Giao điểm của hai đường kéo dài là B'.
+
+4. Tính d' từ 1/f = 1/d + 1/d' với f âm, kiểm tra d' luôn âm và |d'| < |f|.
+
+5. Tính |h'| = h·|d'|/d; kiểm tra |h'| < h.
+
+Ví dụ mẫu.
+
+Đề bài. Một thấu kính phân kì có tiêu cự 15 cm. Vật sáng AB cao 6 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 30 cm. Dựng ảnh A'B', tính khoảng cách từ ảnh tới thấu kính và chiều cao ảnh. Ảnh cách vật bao nhiêu xentimét?
+
+Tóm tắt.
+
+- Thấu kính phân kì, |f| = 15 cm, theo quy ước dấu f = −15 cm.
+
+- Vật AB cao h = 6 cm, vuông góc với trục chính, A trên trục chính.
+
+- d = 30 cm.
+
+- Cần tìm: d', h', khoảng cách giữa vật và ảnh.
+
+Lời giải
+
+Vì thấu kính phân kì nên tiêu cự mang dấu âm: f = −15 cm. Vật thật đặt trước thấu kính phân kì luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật.
+
+Cách dựng ảnh bằng lời: vẽ trục chính Δ, vẽ thấu kính tại O. Với thấu kính phân kì, tiêu điểm ảnh F' nằm cùng phía với vật (vì đường kéo dài của chùm tia ló gặp nhau ở đó), còn tiêu điểm vật F nằm ở phía bên kia thấu kính; do đó ta lấy F' cách O 15 cm về phía vật và F cách O 15 cm về phía sau thấu kính. Đặt AB cách O 30 cm. Từ B vẽ tia song song với Δ tới thấu kính tại I; tia ló qua I loe ra xa trục chính, đường kéo dài của nó đi qua F'. Từ B vẽ tia thứ hai đi qua O, truyền thẳng. Kéo dài hai tia ló về phía trước thấu kính, chúng cắt nhau tại B' nằm cùng phía vật và ở gần thấu kính hơn vật; hạ vuông góc xuống Δ được A'. A'B' là ảnh ảo, vẽ nét đứt.
+
+Áp dụng công thức thấu kính với f = −15 cm và d = 30 cm:
+
+1/f = 1/d + 1/d'
+
+−1/15 = 1/30 + 1/d'
+
+1/d' = −1/15 − 1/30
+
+1/d' = −(2 + 1)/30 = −3/30 = −1/10
+
+d' = −10 cm
+
+Vì d' < 0 nên ảnh là ảnh ảo, cách thấu kính 10 cm, nằm cùng phía với vật. Kiểm tra: |d'| = 10 cm < |f| = 15 cm, đúng với tính chất của thấu kính phân kì.
+
+|h'| = h·|d'|/d = 6·10/30 = 2 cm
+
+Ảnh cao 2 cm, nhỏ hơn vật ba lần.
+
+Vì vật và ảnh nằm cùng phía thấu kính nên khoảng cách giữa chúng bằng hiệu hai khoảng cách tới thấu kính:
+
+L_(vật)–ảnh = d − |d'| = 30 − 10 = 20 cm
+
+Đáp số. d' = −10 cm (ảnh ảo cách thấu kính 10 cm, cùng phía vật); h' = 2 cm; ảnh cách vật 20 cm.
+
+Lưu ý. Học sinh rất hay quên dấu âm của f và ra kết quả d' = +10 cm sai bản chất. Cần khắc sâu: "phân kì thì f âm, và kết quả d' phải âm". Cũng cần phân biệt vị trí hai tiêu điểm: với thấu kính phân kì, tiêu điểm ảnh F' nằm cùng phía với vật còn tiêu điểm vật F nằm khác phía; với thấu kính hội tụ thì ngược lại. Nếu vẽ nhầm vị trí F', học sinh sẽ dựng sai tia ló và sai cả hình lẫn kết quả.
+
+Dạng 5. Dịch chuyển vật – ảnh
+
+Nhận dạng. Đề cho một thấu kính hội tụ cố định, vật dịch chuyển lại gần hoặc ra xa; yêu cầu xác định sự thay đổi của vị trí và độ lớn ảnh, hoặc tìm quãng đường ảnh dịch chuyển.
+
+Phương pháp.
+
+1. Giải bài toán ở vị trí đầu để tìm d₁, d'₁, h'₁.
+
+2. Giải bài toán ở vị trí sau để tìm d₂, d'₂, h'₂.
+
+3. So sánh: quãng đường ảnh dịch chuyển bằng |d'₂ − d'₁|; độ lớn ảnh thay đổi theo tỉ số h'₂/h'₁.
+
+4. Kết luận theo quy luật: vật lại gần thấu kính hội tụ (vẫn ngoài tiêu cự) thì ảnh thật ra xa và lớn dần; vật ra xa thì ảnh thật lại gần và nhỏ dần. Ngược lại, với ảnh ảo của thấu kính phân kì, vật lại gần thì ảnh ảo cũng lại gần và nhỏ dần.
+
+5. Nếu đề hỏi "phải dịch vật bao nhiêu để ảnh có kích thước cho trước", giải theo ẩn d rồi lấy hiệu hai giá trị.
+
+Ví dụ mẫu.
+
+Đề bài. Một thấu kính hội tụ có tiêu cự f = 10 cm. Vật sáng AB cao 3 cm đặt vuông góc với trục chính, A nằm trên trục chính. Ban đầu vật cách thấu kính 30 cm. Sau đó giữ nguyên thấu kính và dịch vật lại gần thấu kính thêm 15 cm. Hãy tính vị trí và chiều cao của ảnh trong hai trường hợp, cho biết ảnh đã dịch chuyển bao nhiêu và độ lớn của ảnh thay đổi thế nào. Tiếp tục dịch vật tới cách thấu kính 12 cm thì ảnh ở đâu?
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 10 cm; vật cao h = 3 cm.
+
+- Vị trí 1: d₁ = 30 cm. Vị trí 2: d₂ = 30 − 15 = 15 cm. Vị trí 3: d₃ = 12 cm.
+
+- Cần tìm: d'₁, h'₁, d'₂, h'₂, quãng đường ảnh dịch chuyển, d'₃, h'₃.
+
+Lời giải
+
+Ở vị trí 1, với d₁ = 30 cm:
+
+1/d'₁ = 1/10 − 1/30 = (3 − 1)/30 = 2/30 = 1/15
+
+d'₁ = 15 cm
+
+|h'₁| = h·d'₁/d₁ = 3·15/30 = 1,5 cm
+
+Ở vị trí 2, với d₂ = 15 cm:
+
+1/d'₂ = 1/10 − 1/15 = (3 − 2)/30 = 1/30
+
+d'₂ = 30 cm
+
+|h'₂| = h·d'₂/d₂ = 3·30/15 = 6 cm
+
+Ảnh dịch chuyển một quãng:
+
+Δd' = d'₂ − d'₁ = 30 − 15 = 15 cm
+
+Độ lớn ảnh tăng: h'₂/h'₁ = 6/1,5 = 4 lần.
+
+Ở vị trí 3, với d₃ = 12 cm:
+
+1/d'₃ = 1/10 − 1/12 = (6 − 5)/60 = 1/60
+
+d'₃ = 60 cm
+
+|h'₃| = h·d'₃/d₃ = 3·60/12 = 15 cm
+
+Kết luận: khi vật lại gần thấu kính hội tụ (nhưng vẫn ngoài khoảng tiêu cự), ảnh thật dịch ra xa thấu kính và lớn dần rất nhanh; khi d tiến sát tới f thì d' tiến ra rất xa.
+
+Đáp số. d'₁ = 15 cm, h'₁ = 1,5 cm; d'₂ = 30 cm, h'₂ = 6 cm; ảnh dịch ra xa thêm 15 cm và lớn gấp 4 lần; d'₃ = 60 cm, h'₃ = 15 cm.
+
+Lưu ý. Ba giá trị d = 30 cm, 15 cm, 12 cm cho ba giá trị d' = 15 cm, 30 cm, 60 cm rất "đẹp", học sinh nên nhớ bộ số này để kiểm tra nhanh. Cần lưu ý điều kiện d > f; nếu đề cho vật dịch vào trong khoảng tiêu cự thì phải đổi sang bài toán ảnh ảo và quy luật sẽ ngược lại (vật lại gần thì ảnh ảo lại gần và nhỏ dần).
+
+Dạng 6. Hai vị trí của thấu kính cho ảnh rõ trên màn — phương pháp Bessel và thực hành đo tiêu cự
+
+Nhận dạng. Đề cho vật và màn cố định cách nhau một khoảng L, dịch thấu kính hội tụ trong khoảng giữa và cho biết có hai vị trí cho ảnh rõ nét (khoảng cách giữa hai vị trí là ℓ), hoặc cho trường hợp đặc biệt chỉ có một vị trí. Yêu cầu tính tiêu cự, tính vị trí thấu kính, tính chiều cao các ảnh.
+
+Phương pháp.
+
+1. Nhận xét điều kiện có ảnh rõ trên màn: L ≥ 4f. Nếu L = 4f thì d = d' = 2f và f = L/4.
+
+2. Nếu L > 4f, dùng công thức suy ra từ công thức thấu kính: f = (L² − ℓ²)/(4L), với ℓ là khoảng cách giữa hai vị trí thấu kính.
+
+3. Tìm hai vị trí bằng cách giải d + d' = L và d·d' = L·f, tức là giải phương trình bậc hai d² − L·d + L·f = 0.
+
+4. Tính chiều cao ảnh ở từng vị trí bằng |h'| = h·d'/d; lưu ý hai ảnh có kích thước khác nhau, một lớn hơn vật và một nhỏ hơn vật.
+
+5. Trong bài thực hành, ghi rõ dụng cụ, các bước tiến hành, bảng số liệu và cách tính sai số.
+
+Ví dụ mẫu.
+
+Đề bài. Một thấu kính hội tụ được đặt trong khoảng giữa một vật sáng AB cao 2 cm và một màn ảnh. Vật và màn cách nhau L = 45 cm. Dịch chuyển thấu kính dọc theo trục chính, người ta thấy có hai vị trí của thấu kính cho ảnh rõ nét trên màn, hai vị trí này cách nhau ℓ = 15 cm. Hãy tính tiêu cự của thấu kính, xác định vị trí của thấu kính trong hai lần đó và tính chiều cao ảnh trong mỗi lần.
+
+Tóm tắt.
+
+- Vật AB cao h = 2 cm, vuông góc với trục chính.
+
+- Vật và màn cách nhau L = 45 cm.
+
+- Hai vị trí thấu kính cho ảnh rõ, cách nhau ℓ = 15 cm.
+
+- Cần tìm: f, hai giá trị d, hai giá trị h'.
+
+Lời giải
+
+Kiểm tra: L = 45 cm > 4f chưa biết, nhưng vì có hai vị trí ảnh rõ nên chắc chắn L > 4f, tức f < L/4 = 11,25 cm.
+
+Áp dụng công thức Bessel suy ra ở mục B2.5:
+
+f = (L² − ℓ²)/(4L)
+
+f = (45² − 15²)/(4·45)
+
+f = (2025 − 225)/180
+
+f = 1800/180 = 10 cm
+
+Vậy tiêu cự của thấu kính là f = 10 cm, thoả mãn f < 11,25 cm.
+
+Tìm hai vị trí của thấu kính. Gọi d là khoảng cách từ vật tới thấu kính, ta có d + d' = 45 và d·d' = L·f = 450. Do đó d và d' là hai nghiệm của phương trình:
+
+d² − 45d + 450 = 0
+
+Δ = 45² − 4·450 = 2025 − 1800 = 225
+
+√Δ = 15
+
+d = (45 + 15)/2 = 30 cm hoặc d = (45 − 15)/2 = 15 cm
+
+Hai vị trí của thấu kính cách vật lần lượt là 15 cm và 30 cm; khoảng cách giữa hai vị trí đúng bằng 30 − 15 = 15 cm, khớp với giả thiết.
+
+Chiều cao ảnh ở vị trí thứ nhất (d = 15 cm, d' = 30 cm):
+
+|h'| = h·d'/d = 2·30/15 = 4 cm
+
+Chiều cao ảnh ở vị trí thứ hai (d = 30 cm, d' = 15 cm):
+
+|h'| = h·d'/d = 2·15/30 = 1 cm
+
+Vậy một vị trí cho ảnh lớn gấp đôi vật, vị trí kia cho ảnh nhỏ bằng một nửa vật; cả hai ảnh đều là ảnh thật, ngược chiều.
+
+Đáp số. f = 10 cm; thấu kính cách vật 15 cm (ảnh cao 4 cm) hoặc cách vật 30 cm (ảnh cao 1 cm).
+
+Lưu ý. Cần kiểm tra điều kiện L > 4f sau khi tính xong; nếu kết quả cho L < 4f thì chắc chắn đã tính sai. Học sinh cũng cần nhớ trường hợp đặc biệt: khi L = 4f chỉ có một vị trí ảnh rõ, ứng với d = d' = 2f và ảnh cao bằng vật. Trong bài thực hành, nên đo cả ba đại lượng L, ℓ, h để kiểm tra chéo lẫn nhau thay vì chỉ tin vào một phép đo.
+
+Dạng 7. Hệ hai thấu kính đồng trục (ghép sát và ghép cách nhau)
+
+Nhận dạng. Đề cho hai thấu kính đặt đồng trục, hoặc ghép sát nhau, hoặc cách nhau một khoảng a, và một vật đặt trước hệ. Yêu cầu xác định ảnh cuối cùng của hệ.
+
+Phương pháp.
+
+1. Vẽ sơ đồ tạo ảnh: vật AB qua thấu kính 1 cho ảnh A'₁B'₁; ảnh này là vật của thấu kính 2, qua thấu kính 2 cho ảnh cuối A'₂B'₂.
+
+2. Với thấu kính thứ nhất: dùng d₁ (đã biết) và f₁ để tìm d'₁ bằng 1/f₁ = 1/d₁ + 1/d'₁.
+
+3. Xác định khoảng cách từ ảnh trung gian tới thấu kính thứ hai: nếu hai thấu kính cách nhau a thì d₂ = a − d'₁ khi ảnh trung gian là ảnh thật.
+
+4. Với thấu kính thứ hai: dùng d₂ và f₂ để tìm d'₂ bằng 1/f₂ = 1/d₂ + 1/d'₂.
+
+5. Chiều cao ảnh cuối: |h'₂| = h·(|d'₁|/d₁)·(|d'₂|/d₂). Chiều của ảnh cuối so với vật xác định bằng số lần đảo chiều: mỗi lần ảnh thật thì đảo chiều một lần so với vật của nó.
+
+6. Nếu hai thấu kính ghép sát, có thể dùng tiêu cự tương đương với 1/f = 1/f₁ + 1/f₂ rồi giải một bài toán thấu kính duy nhất; cách này nhanh nhưng phải kiểm tra lại bằng sơ đồ từng thấu kính.
+
+Ví dụ mẫu.
+
+Đề bài. Hai thấu kính hội tụ có tiêu cự f₁ = 30 cm và f₂ = 60 cm được ghép sát nhau (khoảng cách giữa chúng không đáng kể), cùng đặt trên một trục chính. Vật sáng AB cao 3 cm đặt vuông góc với trục chính, A trên trục chính, cách hệ một khoảng 30 cm về phía thấu kính thứ nhất. Hãy xác định vị trí, chiều và chiều cao của ảnh cuối cùng.
+
+Sau đó, hai thấu kính được tách ra cách nhau một khoảng a = 60 cm, thấu kính thứ nhất vẫn là f₁ = 15 cm, thấu kính thứ hai có tiêu cự f₂ = 20 cm. Vật AB cao 2 cm vẫn cách thấu kính thứ nhất 30 cm. Xác định ảnh cuối cùng.
+
+Tóm tắt.
+
+- Phần a: f₁ = 30 cm, f₂ = 60 cm, ghép sát; h = 3 cm, d₁ = 30 cm.
+
+- Phần b: f₁ = 15 cm, f₂ = 20 cm, a = 60 cm; h = 2 cm, d₁ = 30 cm.
+
+- Cần tìm: ảnh cuối của hệ trong hai trường hợp.
+
+Lời giải
+
+Phần a: hai thấu kính ghép sát, tiêu cự tương đương thoả mãn:
+
+1/f = 1/f₁ + 1/f₂
+
+1/f = 1/30 + 1/60 = 2/60 + 1/60 = 3/60 = 1/20
+
+f = 20 cm
+
+Coi hệ tương đương một thấu kính hội tụ f = 20 cm. Vật cách hệ 30 cm:
+
+1/d' = 1/20 − 1/30 = (3 − 2)/60 = 1/60
+
+d' = 60 cm
+
+|h'| = h·d'/d = 3·60/30 = 6 cm
+
+Vì d' > 0 nên ảnh cuối là ảnh thật, ngược chiều vật, cách hệ 60 cm về phía sau thấu kính thứ hai, cao 6 cm.
+
+Kiểm tra lại bằng sơ đồ hai thấu kính: ảnh của thấu kính thứ nhất có d'₁ thoả 1/d'₁ = 1/30 − 1/30 = 0, tức chùm tia ló ra khỏi thấu kính thứ nhất là chùm song song. Chùm song song chiếu vào thấu kính thứ hai (f₂ = 60 cm) sẽ hội tụ tại tiêu diện ảnh của thấu kính thứ hai, tức cách thấu kính thứ hai 60 cm — đúng bằng kết quả d' = 60 cm. Độ cao ảnh: chùm song song hợp với trục chính một góc ứng với độ cao h/f₁ = 3/30 = 0,1, nên ảnh cao f₂ × 0,1 = 6 cm, gấp đôi vật. Hai cách tính khớp nhau.
+
+Phần b: giải lần lượt qua từng thấu kính.
+
+Với thấu kính thứ nhất (f₁ = 15 cm, d₁ = 30 cm):
+
+1/d'₁ = 1/15 − 1/30 = (2 − 1)/30 = 1/30
+
+d'₁ = 30 cm
+
+Ảnh trung gian là ảnh thật, ngược chiều vật, cách thấu kính thứ nhất 30 cm, cao:
+
+|h₁| = h·d'₁/d₁ = 2·30/30 = 2 cm
+
+Khoảng cách từ ảnh trung gian tới thấu kính thứ hai:
+
+d₂ = a − d'₁ = 60 − 30 = 30 cm
+
+Vì d₂ > 0 nên ảnh trung gian đóng vai trò vật thật của thấu kính thứ hai. Với f₂ = 20 cm:
+
+1/d'₂ = 1/20 − 1/30 = (3 − 2)/60 = 1/60
+
+d'₂ = 60 cm
+
+|h'₂| = |h₁|·d'₂/d₂ = 2·60/30 = 4 cm
+
+Ảnh cuối cùng là ảnh thật, cách thấu kính thứ hai 60 cm. Về chiều: ảnh trung gian ngược chiều vật (một lần đảo chiều), ảnh cuối lại ngược chiều ảnh trung gian (đảo chiều lần thứ hai), nên ảnh cuối cùng cùng chiều với vật và cao gấp đôi vật.
+
+Đáp số. a) Ảnh thật, cách hệ 60 cm, ngược chiều, cao 6 cm. b) Ảnh thật, cách thấu kính thứ hai 60 cm, cùng chiều với vật, cao 4 cm.
+
+Lưu ý. Với hệ hai thấu kính, học sinh phải luôn vẽ sơ đồ tạo ảnh và ghi rõ vai trò "vật của thấu kính 2" trước khi thay số, nếu không sẽ nhầm d₂ với a. Kết quả "ảnh thật nhưng cùng chiều với vật" ở phần b không hề vô lí: hai lần đảo chiều cho kết quả cùng chiều. Cũng cần lưu ý trong chương trình lớp 9, ta không dùng công thức độ tụ cho hệ ghép cách nhau; mọi bài toán hệ hai thấu kính đều giải bằng cách lần lượt qua từng thấu kính.
+
+Dạng 8. Kính lúp: số bội giác, ngắm chừng và liên hệ với mắt
+
+Nhận dạng. Đề cho kính lúp có ghi số bội giác, hoặc cho tiêu cự của kính lúp, hoặc cho vật đặt trong khoảng tiêu cự của kính; yêu cầu tính G, tính f, tính vị trí và độ lớn ảnh, hoặc hỏi về cách ngắm chừng.
+
+Phương pháp.
+
+1. Dùng công thức G = 25/f với f tính bằng cm để chuyển đổi giữa số bội giác và tiêu cự.
+
+2. Để kính lúp cho ảnh ảo cùng chiều lớn hơn vật, vật phải đặt trong khoảng tiêu cự (d < f).
+
+3. Tính vị trí và độ lớn ảnh bằng công thức thấu kính với chú ý f > 0; kết quả d' < 0 là ảnh ảo.
+
+4. Với câu hỏi ngắm chừng: ảnh ảo phải nằm trong khoảng nhìn rõ của mắt. Nếu ngắm chừng ở điểm cực cận thì ảnh ảo cách mắt đúng khoảng cực cận; nếu ngắm chừng ở điểm cực viễn thì ảnh ảo ở xa vô cùng (đối với mắt tốt) và mắt không phải điều tiết.
+
+5. Chú ý nếu kính đặt sát mắt thì khoảng cách từ ảnh tới mắt bằng khoảng cách từ ảnh tới kính.
+
+Ví dụ mẫu.
+
+Đề bài. Một kính lúp có tiêu cự f = 5 cm. a) Tính số bội giác của kính. b) Một người có điểm cực cận cách mắt 20 cm, đặt kính sát mắt và ngắm chừng ở điểm cực cận. Hỏi phải đặt vật cách kính bao nhiêu và ảnh cao gấp mấy lần vật? Cho vật nhỏ cao 1 mm. c) Một kính lúp khác ghi trên vành kính là 4×, hỏi tiêu cự của kính đó bằng bao nhiêu?
+
+Tóm tắt.
+
+- Kính lúp f = 5 cm.
+
+- Mắt có điểm cực cận cách mắt 20 cm, kính đặt sát mắt.
+
+- Vật cao h = 1 mm.
+
+- Cần tìm: G, d, h', và tiêu cự của kính ghi 4×.
+
+Lời giải
+
+a) Số bội giác của kính lúp:
+
+G = 25/f = 25/5 = 5
+
+Vậy kính lúp có số bội giác 5×.
+
+b) Ngắm chừng ở điểm cực cận: ảnh ảo của vật phải hiện ra tại điểm cực cận của mắt. Vì kính đặt sát mắt nên ảnh ảo cách kính 20 cm về phía vật (ảnh ảo của vật nằm trong khoảng tiêu cự luôn ở cùng phía với vật, tức xa mắt hơn), do đó theo quy ước dấu thì d' = −20 cm:
+
+d' = −20 cm
+
+Áp dụng công thức thấu kính với f = 5 cm:
+
+1/f = 1/d + 1/d'
+
+1/5 = 1/d + 1/(−20)
+
+1/d = 1/5 + 1/20 = 4/20 + 1/20 = 5/20 = 1/4
+
+d = 4 cm
+
+Độ lớn ảnh so với vật:
+
+|h'|/h = |d'|/d = 20/4 = 5
+
+|h'| = 5·1 = 5 mm
+
+Vậy vật đặt cách kính 4 cm, ảnh ảo cao 5 mm tức là lớn gấp 5 lần vật, đúng bằng số bội giác của kính.
+
+c) Với kính lúp ghi 4×, tiêu cự của kính là:
+
+f = 25/G = 25/4 = 6,25 cm
+
+Đáp số. a) G = 5×. b) d = 4 cm, ảnh cao 5 mm, lớn gấp 5 lần vật. c) f = 6,25 cm.
+
+Lưu ý. Cần phân biệt hai khái niệm. Số bội giác G = 25/f ghi trên vành kính là quy ước thông dụng, ứng với mắt có khoảng cực cận 25 cm và cách ngắm chừng ở điểm cực viễn (ảnh ảo ở rất xa, mắt không phải điều tiết). Độ phóng đại |d'|/d là tỉ số hình học giữa chiều cao ảnh và chiều cao vật. Khi ngắm chừng ở điểm cực cận với kính đặt sát mắt, độ phóng đại cũng chính là số lần góc trông được tăng lên so với khi nhìn vật trực tiếp tại điểm cực cận, nên trong ví dụ này hai số tình cờ bằng nhau (đều bằng 5). Khi làm bài, học sinh cần đọc kĩ đề hỏi đại lượng nào. Cũng phải nhớ điều kiện d < f; ở đây d = 4 cm < 5 cm, thoả mãn.
+
+D. Bài tập ví dụ có lời giải (6 bài, độ khó tăng dần)
+
+Bài D1. Ảnh thật nhỏ hơn vật qua thấu kính hội tụ
+
+Đề bài. Một thấu kính hội tụ có tiêu cự 12 cm. Vật sáng AB cao 3 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 36 cm. Dựng ảnh A'B' và tính khoảng cách từ ảnh tới thấu kính, chiều cao của ảnh. Nêu tính chất của ảnh.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 12 cm.
+
+- Vật AB cao h = 3 cm, vuông góc với trục chính, A trên trục chính.
+
+- d = 36 cm.
+
+- Cần tìm: d', h', tính chất ảnh.
+
+Lời giải
+
+Vì d = 36 cm > f = 12 cm nên ảnh là ảnh thật, ngược chiều với vật.
+
+Cách dựng ảnh: vẽ trục chính Δ, vẽ thấu kính tại O, lấy F cách O 12 cm về phía vật và F' cách O 12 cm về phía đối diện. Đặt AB vuông góc với Δ tại A, cách O 36 cm. Từ B vẽ tia song song với Δ tới thấu kính tại I; tia ló qua F'. Từ B vẽ tia qua O, truyền thẳng. Hai tia ló cắt nhau tại B' nằm khác phía vật; hạ vuông góc xuống Δ được A'. Ảnh thật vẽ nét liền.
+
+Áp dụng công thức thấu kính:
+
+1/12 = 1/36 + 1/d'
+
+1/d' = 1/12 − 1/36 = 2/36 = 1/18
+
+d' = 18 cm
+
+|h'| = h·d'/d = 3·18/36 = 1,5 cm
+
+Vì d' = 18 cm > 0 nên ảnh thật; tỉ số |d'|/d = 0,5 < 1 nên ảnh nhỏ hơn vật.
+
+Đáp số. d' = 18 cm; h' = 1,5 cm; ảnh thật, ngược chiều, nhỏ hơn vật.
+
+Bài D2. Ảnh thật lớn hơn vật
+
+Đề bài. Một thấu kính hội tụ có tiêu cự 20 cm. Vật sáng AB cao 4 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 30 cm. Hãy xác định vị trí và chiều cao của ảnh, cho biết ảnh có hứng được trên màn không.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 20 cm.
+
+- Vật AB cao h = 4 cm, A trên trục chính.
+
+- d = 30 cm, nằm trong khoảng f < d < 2f.
+
+- Cần tìm: d', h', khả năng hứng ảnh trên màn.
+
+Lời giải
+
+Vì f = 20 cm < d = 30 cm < 2f = 40 cm nên ảnh là ảnh thật, ngược chiều và lớn hơn vật.
+
+Áp dụng công thức thấu kính:
+
+1/20 = 1/30 + 1/d'
+
+1/d' = 1/20 − 1/30 = (3 − 2)/60 = 1/60
+
+d' = 60 cm
+
+|h'| = h·d'/d = 4·60/30 = 8 cm
+
+Ảnh nằm khác phía vật, cách thấu kính 60 cm, cao 8 cm, lớn gấp đôi vật. Vì là ảnh thật nên hứng được trên màn đặt tại vị trí cách thấu kính 60 cm.
+
+Đáp số. d' = 60 cm; h' = 8 cm; ảnh thật, ngược chiều, lớn gấp đôi vật, hứng được trên màn.
+
+Bài D3. Ảnh ảo qua thấu kính hội tụ
+
+Đề bài. Một thấu kính hội tụ có tiêu cự 15 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 10 cm. Xác định vị trí, chiều, độ lớn của ảnh và cho biết có thể hứng ảnh này trên màn không. Giải thích.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 15 cm.
+
+- Vật AB cao h = 2 cm, A trên trục chính.
+
+- d = 10 cm < f.
+
+- Cần tìm: d', h', tính chất ảnh.
+
+Lời giải
+
+Vì d = 10 cm < f = 15 cm nên vật nằm trong khoảng tiêu cự, ảnh là ảnh ảo, cùng chiều và lớn hơn vật.
+
+Áp dụng công thức thấu kính:
+
+1/15 = 1/10 + 1/d'
+
+1/d' = 1/15 − 1/10 = (2 − 3)/30 = −1/30
+
+d' = −30 cm
+
+Vì d' < 0 nên ảnh là ảnh ảo, nằm cùng phía với vật, cách thấu kính 30 cm.
+
+|h'| = h·|d'|/d = 2·30/10 = 6 cm
+
+Ảnh cao 6 cm, lớn gấp ba lần vật.
+
+Không thể hứng ảnh này trên màn, vì các tia ló không thực sự đi qua vị trí ảnh; ảnh chỉ là giao điểm của các đường kéo dài của tia ló. Muốn quan sát ảnh, phải đặt mắt ở phía sau thấu kính (phía đối diện vật) để nhìn vào thấu kính.
+
+Đáp số. d' = −30 cm (ảnh ảo cách thấu kính 30 cm, cùng phía vật); h' = 6 cm; ảnh ảo, cùng chiều, lớn gấp ba lần vật, không hứng được trên màn.
+
+Bài D4. Ảnh qua thấu kính phân kì
+
+Đề bài. Một thấu kính phân kì có tiêu cự 15 cm. Vật sáng AB cao 6 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 30 cm. Xác định vị trí, chiều, độ lớn của ảnh và khoảng cách giữa vật và ảnh. Vì sao không thể hứng được ảnh này trên màn dù đặt màn ở bất kì vị trí nào?
+
+Tóm tắt.
+
+- Thấu kính phân kì, |f| = 15 cm, do đó f = −15 cm.
+
+- Vật AB cao h = 6 cm, A trên trục chính.
+
+- d = 30 cm.
+
+- Cần tìm: d', h', khoảng cách vật – ảnh và giải thích.
+
+Lời giải
+
+Vì thấu kính phân kì nên f = −15 cm. Áp dụng công thức thấu kính:
+
+−1/15 = 1/30 + 1/d'
+
+1/d' = −1/15 − 1/30 = −(2 + 1)/30 = −3/30 = −1/10
+
+d' = −10 cm
+
+Vì d' < 0 nên ảnh là ảnh ảo, cùng phía với vật, cách thấu kính 10 cm. Kiểm tra: |d'| = 10 cm < |f| = 15 cm, đúng với tính chất của thấu kính phân kì.
+
+|h'| = h·|d'|/d = 6·10/30 = 2 cm
+
+Ảnh cao 2 cm, nhỏ hơn vật ba lần và cùng chiều với vật.
+
+Khoảng cách giữa vật và ảnh, vì hai vật cùng phía thấu kính:
+
+L = d − |d'| = 30 − 10 = 20 cm
+
+Với thấu kính phân kì và vật thật, ảnh luôn là ảnh ảo nằm trong khoảng tiêu cự, nên các tia ló luôn loe rộng ra và không bao giờ hội tụ thật ở phía sau thấu kính; do đó không có vị trí nào của màn hứng được ảnh rõ nét.
+
+Đáp số. d' = −10 cm; h' = 2 cm; ảnh cách vật 20 cm; ảnh ảo, cùng chiều, nhỏ hơn vật.
+
+Bài D5. Hai vị trí của thấu kính cho ảnh rõ trên màn
+
+Đề bài. Một vật sáng AB cao 2 cm được đặt vuông góc với trục chính và cách một màn ảnh một khoảng L = 100 cm. Một thấu kính hội tụ được đặt trong khoảng giữa vật và màn, dịch chuyển thấu kính dọc theo trục chính người ta thấy có hai vị trí của thấu kính cho ảnh rõ nét trên màn, hai vị trí này cách nhau 60 cm. a) Tính tiêu cự của thấu kính. b) Xác định khoảng cách từ vật tới thấu kính và chiều cao ảnh trong mỗi lần. c) Nhận xét về kích thước của hai ảnh.
+
+Tóm tắt.
+
+- Vật AB cao h = 2 cm, vuông góc với trục chính.
+
+- Khoảng cách vật – màn L = 100 cm.
+
+- Hai vị trí thấu kính cho ảnh rõ, cách nhau ℓ = 60 cm.
+
+- Cần tìm: f, hai giá trị d, hai giá trị h'.
+
+Lời giải
+
+a) Áp dụng công thức của phương pháp hai vị trí:
+
+f = (L² − ℓ²)/(4L)
+
+f = (100² − 60²)/(4·100)
+
+f = (10000 − 3600)/400
+
+f = 6400/400 = 16 cm
+
+Kiểm tra điều kiện: 4f = 64 cm < L = 100 cm, thoả mãn vì có hai vị trí ảnh rõ.
+
+b) Gọi d là khoảng cách từ vật tới thấu kính. Ta có d + d' = 100 và d·d' = L·f = 1600. Do đó d là nghiệm của:
+
+d² − 100d + 1600 = 0
+
+Δ = 100² − 4·1600 = 10000 − 6400 = 3600
+
+√Δ = 60
+
+d = (100 + 60)/2 = 80 cm hoặc d = (100 − 60)/2 = 20 cm
+
+Với d = 20 cm thì d' = 80 cm:
+
+|h'| = h·d'/d = 2·80/20 = 8 cm
+
+Với d = 80 cm thì d' = 20 cm:
+
+|h'| = h·d'/d = 2·20/80 = 0,5 cm
+
+c) Vị trí thấu kính gần vật cho ảnh lớn hơn vật 4 lần; vị trí thấu kính xa vật cho ảnh nhỏ hơn vật 4 lần. Tích hai chiều cao ảnh bằng 8·0,5 = 4 cm² = h², phù hợp với tính chất đối xứng của hai vị trí.
+
+Đáp số. a) f = 16 cm. b) d = 20 cm với h' = 8 cm, hoặc d = 80 cm với h' = 0,5 cm. c) Hai ảnh có kích thước nghịch đảo nhau.
+
+Bài D6. Hệ hai thấu kính ghép sát và so sánh với một thấu kính
+
+Đề bài. Hai thấu kính được ghép sát nhau và đặt đồng trục: thấu kính thứ nhất hội tụ có tiêu cự f₁ = 20 cm, thấu kính thứ hai phân kì có tiêu cự 60 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A trên trục chính, cách hệ 45 cm. a) Xác định vị trí, chiều và chiều cao của ảnh tạo bởi hệ. b) Nếu bỏ thấu kính thứ hai, chỉ giữ thấu kính thứ nhất thì ảnh của vật sẽ ở đâu và cao bao nhiêu? So sánh hai kết quả.
+
+Tóm tắt.
+
+- Hệ ghép sát: f₁ = 20 cm (hội tụ), f₂ = −60 cm (phân kì).
+
+- Vật AB cao h = 2 cm, A trên trục chính, d = 45 cm.
+
+- Cần tìm: ảnh của hệ và ảnh khi chỉ dùng thấu kính thứ nhất.
+
+Lời giải
+
+a) Với hai thấu kính ghép sát, tiêu cự tương đương thoả mãn:
+
+1/f = 1/f₁ + 1/f₂
+
+1/f = 1/20 + 1/(−60) = 3/60 − 1/60 = 2/60 = 1/30
+
+f = 30 cm
+
+Coi hệ tương đương một thấu kính hội tụ có f = 30 cm. Vật cách hệ 45 cm:
+
+1/d' = 1/30 − 1/45 = (3 − 2)/90 = 1/90
+
+d' = 90 cm
+
+|h'| = h·d'/d = 2·90/45 = 4 cm
+
+Vì d' > 0 nên ảnh là ảnh thật, ngược chiều vật, cách hệ 90 cm, cao 4 cm.
+
+b) Khi chỉ giữ thấu kính thứ nhất (f₁ = 20 cm) với d = 45 cm:
+
+1/d'₁ = 1/20 − 1/45 = (9 − 4)/180 = 5/180 = 1/36
+
+d'₁ = 36 cm
+
+|h'₁| = h·d'₁/d = 2·36/45 = 1,6 cm
+
+So sánh: khi ghép thêm thấu kính phân kì, ảnh vẫn là ảnh thật nhưng bị đẩy ra xa hơn (từ 36 cm lên 90 cm) và lớn hơn (từ 1,6 cm lên 4 cm). Điều này hợp lí vì hệ ghép sát gồm một thấu kính hội tụ mạnh và một thấu kính phân kì yếu cho một thấu kính hội tụ yếu hơn thấu kính thứ nhất (f = 30 cm > 20 cm); thấu kính yếu hơn thì ảnh ra xa hơn và lớn hơn.
+
+Đáp số. a) d' = 90 cm; h' = 4 cm; ảnh thật, ngược chiều. b) d'₁ = 36 cm; h'₁ = 1,6 cm; ghép thêm thấu kính phân kì làm ảnh ra xa và lớn hơn.
+
+E. Bài tập tự luyện (12 bài)
+
+Bài E1. Một thấu kính hội tụ có tiêu cự 12 cm. Vật sáng AB cao 3 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính 36 cm. Tính khoảng cách từ ảnh tới thấu kính và chiều cao ảnh. Nêu tính chất ảnh.
+
+Bài E2. Một thấu kính hội tụ có tiêu cự 20 cm. Vật sáng AB cao 4 cm đặt vuông góc với trục chính, A trên trục chính, cách thấu kính 30 cm. Xác định vị trí, chiều và chiều cao của ảnh.
+
+Bài E3. Một thấu kính hội tụ có tiêu cự 15 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A trên trục chính, cách thấu kính 10 cm. Xác định vị trí và chiều cao của ảnh. Ảnh là ảnh thật hay ảnh ảo?
+
+Bài E4. Một thấu kính phân kì có tiêu cự 15 cm. Vật sáng AB cao 6 cm đặt vuông góc với trục chính, A trên trục chính, cách thấu kính 30 cm. Xác định vị trí và chiều cao của ảnh. Ảnh cách vật bao nhiêu xentimét?
+
+Bài E5. Một thấu kính hội tụ có tiêu cự 10 cm. Vật sáng AB cao 3 cm đặt vuông góc với trục chính, A trên trục chính, cách thấu kính 15 cm. Tính khoảng cách từ ảnh tới thấu kính, chiều cao ảnh và khoảng cách giữa vật và ảnh.
+
+Bài E6. Một thấu kính hội tụ có tiêu cự 20 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A trên trục chính, ban đầu cách thấu kính 60 cm. Giữ nguyên thấu kính và dịch vật lại gần thấu kính 20 cm. Tính vị trí và chiều cao ảnh trong hai trường hợp. Ảnh đã dịch chuyển bao nhiêu xentimét và theo chiều nào?
+
+Bài E7. Một vật sáng AB cao 2 cm đặt vuông góc với trục chính, cách một màn ảnh một khoảng L = 90 cm. Một thấu kính hội tụ đặt trong khoảng giữa cho ảnh rõ nét trên màn. Dịch chuyển thấu kính, người ta thấy có hai vị trí cho ảnh rõ nét, hai vị trí cách nhau 30 cm. Tính tiêu cự của thấu kính và khoảng cách từ vật tới thấu kính trong mỗi lần.
+
+Bài E8. a) Một kính lúp có tiêu cự 5 cm. Tính số bội giác của kính. b) Một kính lúp khác có số bội giác 2,5×. Tính tiêu cự của kính đó.
+
+Bài E9. Một kính lúp có tiêu cự 10 cm. Vật nhỏ cao 1 cm được đặt vuông góc với trục chính, cách kính 8 cm. Xác định vị trí, chiều và chiều cao của ảnh. Vì sao phải đặt vật trong khoảng tiêu cự của kính?
+
+Bài E10. Một thấu kính hội tụ cho ảnh thật cao bằng một nửa vật. Vật cách thấu kính 30 cm. Tính tiêu cự của thấu kính và khoảng cách từ ảnh tới thấu kính.
+
+Bài E11. Hai thấu kính được đặt đồng trục và cách nhau một khoảng a = 60 cm. Thấu kính thứ nhất hội tụ có tiêu cự f₁ = 15 cm, thấu kính thứ hai hội tụ có tiêu cự f₂ = 20 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A trên trục chính, cách thấu kính thứ nhất 30 cm. Xác định vị trí, chiều và chiều cao của ảnh cuối cùng.
+
+Bài E12. Trong giờ thực hành, một học sinh giữ cố định vật sáng và màn ảnh cách nhau 90 cm, đặt một thấu kính hội tụ vào khoảng giữa và tìm được một vị trí của thấu kính cho ảnh rõ nét trên màn, khi đó thấu kính cách vật 30 cm. Hãy tính tiêu cự của thấu kính. Nếu học sinh dịch thấu kính ra xa vật thêm 5 cm thì ảnh có còn rõ nét trên màn hay không? Vì sao?
+
+F. Đáp án và hướng dẫn ngắn cho mục E
+
+E1. d' = 18 cm; h' = 1,5 cm; ảnh thật, ngược chiều, nhỏ hơn vật. Hướng dẫn: 1/d' = 1/12 − 1/36 = 1/18.
+
+E2. d' = 60 cm; h' = 8 cm; ảnh thật, ngược chiều, lớn gấp đôi vật. Hướng dẫn: 1/d' = 1/20 − 1/30 = 1/60.
+
+E3. d' = −30 cm; h' = 6 cm; ảnh ảo, cùng chiều, lớn gấp ba lần vật, cách thấu kính 30 cm cùng phía vật. Hướng dẫn: 1/d' = 1/15 − 1/10 = −1/30.
+
+E4. d' = −10 cm; h' = 2 cm; ảnh ảo, cùng chiều, nhỏ hơn vật; ảnh cách vật 30 − 10 = 20 cm. Hướng dẫn: dùng f = −15 cm.
+
+E5. d' = 30 cm; h' = 6 cm; khoảng cách vật – ảnh bằng 15 + 30 = 45 cm. Hướng dẫn: 1/d' = 1/10 − 1/15 = 1/30.
+
+E6. Ban đầu d₁ = 60 cm cho d'₁ = 30 cm, h'₁ = 1 cm. Sau khi dịch vật lại gần 20 cm, d₂ = 40 cm cho d'₂ = 40 cm, h'₂ = 2 cm. Ảnh thật dịch ra xa thấu kính thêm 10 cm và lớn gấp đôi. Hướng dẫn: 1/d' = 1/20 − 1/d cho từng trường hợp.
+
+E7. f = 20 cm; hai vị trí ứng với d = 30 cm và d = 60 cm. Hướng dẫn: f = (L² − ℓ²)/(4L) = (8100 − 900)/360 = 20 cm; sau đó giải d² − 90d + 1800 = 0.
+
+E8. a) G = 25/5 = 5×. b) f = 25/2,5 = 10 cm.
+
+E9. d' = −40 cm; ảnh ảo, cùng chiều, cách kính 40 cm, cao 5 cm. Vật phải nằm trong khoảng tiêu cự (d = 8 cm < f = 10 cm) để chùm tia ló không hội tụ thật mà chỉ có đường kéo dài cắt nhau, tạo ảnh ảo cùng chiều lớn hơn vật mà mắt có thể nhìn thấy.
+
+E10. Vì ảnh thật nên |h'|/h = d'/d = 0,5, suy ra d' = 15 cm. Tiêu cự: 1/f = 1/30 + 1/15 = 3/30 = 1/10, do đó f = 10 cm. Ảnh cách thấu kính 15 cm.
+
+E11. Qua thấu kính thứ nhất: d'₁ = 30 cm, ảnh trung gian cao 2 cm. Khoảng cách tới thấu kính thứ hai: d₂ = 60 − 30 = 30 cm. Qua thấu kính thứ hai: d'₂ = 60 cm, chiều cao ảnh cuối |h'₂| = 2·60/30 = 4 cm; ảnh thật, cách thấu kính thứ hai 60 cm, cùng chiều với vật (hai lần đảo chiều), cao gấp đôi vật.
+
+E12. Vì d + d' = L = 90 cm và d = 30 cm nên d' = 60 cm. Tiêu cự: 1/f = 1/30 + 1/60 = 3/60 = 1/20, do đó f = 20 cm. Vì L = 90 cm > 4f = 80 cm nên có hai vị trí cho ảnh rõ; vị trí thứ hai ứng với d = 60 cm. Khi dịch thấu kính ra xa vật thêm 5 cm thì d = 35 cm và d' = 55 cm; kiểm tra 1/35 + 1/55 ≈ 0,0286 + 0,0182 = 0,0468, trong khi 1/f = 1/20 = 0,05, hai giá trị khác nhau nên ảnh không còn rõ nét. Muốn có ảnh rõ trở lại phải dịch màn tới vị trí mới hoặc dịch thấu kính về vị trí cũ.
+
+G. Bài tập nâng cao kiểu đề thi HSG (4 bài, có lời giải đầy đủ)
+
+Bài G1. Bài toán ngược: biết tỉ số độ cao ảnh và khoảng cách vật – ảnh
+
+Đề bài. Một thấu kính hội tụ cho ảnh thật cao gấp ba lần vật. Khoảng cách giữa vật và ảnh là 80 cm. Hãy xác định tiêu cự của thấu kính, khoảng cách từ vật tới thấu kính và khoảng cách từ ảnh tới thấu kính. Kiểm tra lại kết quả bằng cách dùng tam giác đồng dạng.
+
+Tóm tắt.
+
+- Thấu kính hội tụ; ảnh thật cao gấp ba lần vật, tức |h'| = 3h.
+
+- Khoảng cách vật – ảnh: d + d' = 80 cm (vì ảnh thật nằm khác phía vật).
+
+- Cần tìm: f, d, d'.
+
+Lời giải
+
+Vì ảnh là ảnh thật nên d' > 0, và tỉ số độ cao cho ta:
+
+|h'|/h = d'/d = 3
+
+Suy ra: d' = 3d
+
+Ảnh thật nằm khác phía vật so với thấu kính nên khoảng cách vật – ảnh bằng tổng hai khoảng cách:
+
+d + d' = 80
+
+Thay d' = 3d vào:
+
+d + 3d = 80
+
+4d = 80
+
+d = 20 cm
+
+Suy ra: d' = 3·20 = 60 cm
+
+Áp dụng công thức thấu kính:
+
+1/f = 1/d + 1/d'
+
+1/f = 1/20 + 1/60 = 3/60 + 1/60 = 4/60 = 1/15
+
+f = 15 cm
+
+Kiểm tra bằng tam giác đồng dạng: cặp tam giác OAB và OA'B' cho h'/h = d'/d = 60/20 = 3, đúng giả thiết. Cặp tam giác F'IO và F'A'B' cho h'/h = (d' − f)/f = (60 − 15)/15 = 45/15 = 3, cũng đúng. Hai cách cho cùng kết quả, chứng tỏ phép tính chính xác.
+
+Đáp số. f = 15 cm; d = 20 cm; d' = 60 cm; ảnh thật, ngược chiều, cao gấp ba lần vật.
+
+Bài G2. Ảnh có độ phóng đại cho trước và sự dịch chuyển của thấu kính
+
+Đề bài. Một thấu kính hội tụ có tiêu cự f = 10 cm. a) Đặt vật sáng AB vuông góc với trục chính sao cho ảnh của nó là ảnh thật cao gấp hai lần vật. Tìm khoảng cách từ vật tới thấu kính và từ ảnh tới thấu kính. b) Giữ nguyên vật, dịch thấu kính ra xa vật thêm 5 cm. Xác định ảnh mới và cho biết ảnh đã dịch chuyển lại gần hay ra xa thấu kính so với trước. Giải thích quy luật bằng công thức.
+
+Tóm tắt.
+
+- Thấu kính hội tụ, f = 10 cm.
+
+- Phần a: ảnh thật, |h'| = 2h.
+
+- Phần b: dịch thấu kính ra xa vật 5 cm.
+
+- Cần tìm: d, d' ở phần a; ảnh mới và nhận xét ở phần b.
+
+Lời giải
+
+a) Vì ảnh là ảnh thật nên:
+
+|h'|/h = d'/d = 2
+
+Suy ra: d' = 2d
+
+Thay vào công thức thấu kính:
+
+1/f = 1/d + 1/d'
+
+1/10 = 1/d + 1/(2d)
+
+1/10 = 2/(2d) + 1/(2d) = 3/(2d)
+
+2d = 30
+
+d = 15 cm
+
+d' = 2·15 = 30 cm
+
+Vậy vật cách thấu kính 15 cm và ảnh thật cách thấu kính 30 cm, cao gấp đôi vật.
+
+b) Khi dịch thấu kính ra xa vật thêm 5 cm, khoảng cách từ vật tới thấu kính trở thành:
+
+d₂ = 15 + 5 = 20 cm
+
+Áp dụng công thức thấu kính:
+
+1/d'₂ = 1/10 − 1/20 = (2 − 1)/20 = 1/20
+
+d'₂ = 20 cm
+
+Ảnh mới vẫn là ảnh thật, cách thấu kính 20 cm và cao bằng vật.
+
+Ảnh đã dịch lại gần thấu kính: từ 30 cm xuống 20 cm.
+
+Giải thích quy luật bằng công thức: từ 1/d' = 1/f − 1/d, khi d tăng (vật ra xa thấu kính) thì 1/d giảm, do đó 1/d' tăng, tức là d' giảm; đồng thời tỉ số d'/d giảm nên ảnh nhỏ đi. Ở đây tỉ số giảm từ 2 xuống 1, đúng với kết quả tính được.
+
+Đáp số. a) d = 15 cm, d' = 30 cm, ảnh cao gấp đôi vật. b) d'₂ = 20 cm, ảnh cao bằng vật, ảnh dịch lại gần thấu kính 10 cm.
+
+Bài G3. Phương pháp hai vị trí và việc xác định tiêu cự trong phòng thí nghiệm
+
+Đề bài. Trong một bài thí nghiệm, người ta giữ cố định một vật sáng AB và một màn ảnh, khoảng cách giữa chúng là L = 100 cm. Một thấu kính hội tụ đặt trong khoảng giữa. Dịch chuyển thấu kính dọc theo trục chính, người ta nhận thấy có hai vị trí của thấu kính cho ảnh rõ nét trên màn và hai vị trí này cách nhau 60 cm. Vật cao 2 cm. a) Tính tiêu cự của thấu kính. b) Xác định khoảng cách từ vật tới thấu kính và chiều cao ảnh trong hai lần. c) Chứng minh công thức f = (L² − ℓ²)/(4L) xuất phát từ công thức thấu kính. d) Nếu muốn chỉ có một vị trí thấu kính cho ảnh rõ nét thì phải đặt màn cách vật bao nhiêu?
+
+Tóm tắt.
+
+- L = 100 cm; ℓ = 60 cm; h = 2 cm.
+
+- Cần tìm: f; d và h' trong hai lần; chứng minh công thức; L để chỉ có một vị trí.
+
+Lời giải
+
+a) Áp dụng công thức phương pháp hai vị trí:
+
+f = (L² − ℓ²)/(4L)
+
+f = (100² − 60²)/(4·100) = 6400/400 = 16 cm
+
+b) Với d là khoảng cách từ vật tới thấu kính, ta có d + d' = L = 100 cm và d·d' = L·f = 1600. Do đó:
+
+d² − 100d + 1600 = 0
+
+Δ = 10000 − 6400 = 3600
+
+√Δ = 60
+
+d₁ = (100 + 60)/2 = 80 cm; d₂ = (100 − 60)/2 = 20 cm
+
+Với d = 20 cm, d' = 80 cm:
+
+|h'| = h·d'/d = 2·80/20 = 8 cm
+
+Với d = 80 cm, d' = 20 cm:
+
+|h'| = h·d'/d = 2·20/80 = 0,5 cm
+
+c) Chứng minh. Từ điều kiện ảnh rõ nét trên màn:
+
+d + d' = L, suy ra d' = L − d
+
+Thay vào công thức thấu kính:
+
+1/d + 1/(L − d) = 1/f
+
+Quy đồng mẫu số:
+
+(L − d + d)/(d(L − d)) = 1/f
+
+L/(d(L − d)) = 1/f
+
+d(L − d) = L·f
+
+d² − L·d + L·f = 0
+
+Phương trình bậc hai này có hai nghiệm d₁, d₂ thoả mãn:
+
+d₁ + d₂ = L và d₁·d₂ = L·f
+
+Khoảng cách giữa hai vị trí là ℓ = |d₂ − d₁|. Bình phương hai vế:
+
+ℓ² = (d₂ − d₁)² = (d₁ + d₂)² − 4·d₁·d₂ = L² − 4·L·f
+
+Do đó:
+
+4·L·f = L² − ℓ²
+
+f = (L² − ℓ²)/(4L)
+
+Điều phải chứng minh.
+
+d) Chỉ có một vị trí thấu kính cho ảnh rõ nét khi phương trình bậc hai có nghiệm kép, tức ℓ = 0, khi đó:
+
+L² = 4·L·f, suy ra L = 4f
+
+Với f = 16 cm thì L = 4·16 = 64 cm. Lúc đó d = d' = 2f = 32 cm và ảnh cao bằng vật.
+
+Đáp số. a) f = 16 cm. b) d = 20 cm với h' = 8 cm, hoặc d = 80 cm với h' = 0,5 cm. d) L = 64 cm.
+
+Bài G4. Hệ hai thấu kính đồng trục ghép cách nhau
+
+Đề bài. Hai thấu kính hội tụ có tiêu cự f₁ = 15 cm và f₂ = 20 cm được đặt đồng trục, cách nhau một khoảng a = 60 cm. Vật sáng AB cao 2 cm đặt vuông góc với trục chính, A nằm trên trục chính, cách thấu kính thứ nhất 30 cm. a) Xác định vị trí, chiều, độ lớn và tính chất của ảnh cuối cùng. b) Giữ nguyên vị trí thấu kính thứ nhất, thay thấu kính thứ hai bằng một thấu kính phân kì có tiêu cự 20 cm (vẫn đặt cách thấu kính thứ nhất 60 cm). Xác định ảnh cuối cùng trong trường hợp này.
+
+Tóm tắt.
+
+- Phần a: f₁ = 15 cm, f₂ = 20 cm, a = 60 cm; h = 2 cm, d₁ = 30 cm.
+
+- Phần b: f₁ = 15 cm, f₂ = −20 cm, a = 60 cm; d₁ = 30 cm.
+
+- Cần tìm: ảnh cuối cùng trong hai trường hợp.
+
+Lời giải
+
+a) Sơ đồ tạo ảnh: vật AB qua thấu kính 1 cho ảnh A'₁B'₁; ảnh này là vật của thấu kính 2, qua thấu kính 2 cho ảnh cuối A'₂B'₂.
+
+Qua thấu kính thứ nhất với d₁ = 30 cm, f₁ = 15 cm:
+
+1/d'₁ = 1/15 − 1/30 = (2 − 1)/30 = 1/30
+
+d'₁ = 30 cm
+
+Vì d'₁ = 30 cm > 0 nên A'₁B'₁ là ảnh thật, nằm sau thấu kính thứ nhất 30 cm, ngược chiều vật, cao:
+
+|h₁| = h·d'₁/d₁ = 2·30/30 = 2 cm
+
+Ảnh trung gian nằm trong khoảng giữa hai thấu kính (vì a = 60 cm > d'₁ = 30 cm). Khoảng cách từ A'₁B'₁ tới thấu kính thứ hai:
+
+d₂ = a − d'₁ = 60 − 30 = 30 cm
+
+Vì d₂ > 0 nên A'₁B'₁ là vật thật của thấu kính thứ hai.
+
+Qua thấu kính thứ hai với d₂ = 30 cm, f₂ = 20 cm:
+
+1/d'₂ = 1/20 − 1/30 = (3 − 2)/60 = 1/60
+
+d'₂ = 60 cm
+
+Chiều cao ảnh cuối:
+
+|h'₂| = |h₁|·d'₂/d₂ = 2·60/30 = 4 cm
+
+Về chiều: A'₁B'₁ ngược chiều AB (đảo chiều lần thứ nhất); A'₂B'₂ ngược chiều A'₁B'₁ vì d'₂ > 0 (đảo chiều lần thứ hai). Hai lần đảo chiều nên ảnh cuối cùng cùng chiều với vật.
+
+Vậy ảnh cuối cùng là ảnh thật, nằm sau thấu kính thứ hai 60 cm, cùng chiều với vật, cao 4 cm, tức là lớn gấp đôi vật. Số phóng đại của hệ bằng tích hai số phóng đại thành phần: (30/30)·(60/30) = 2, khớp với kết quả.
+
+b) Vẫn dùng ảnh trung gian A'₁B'₁ như ở phần a: d₂ = 30 cm, |h₁| = 2 cm. Nhưng thấu kính thứ hai bây giờ là phân kì, f₂ = −20 cm:
+
+1/d'₂ = 1/f₂ − 1/d₂
+
+1/d'₂ = −1/20 − 1/30 = −(3 + 2)/60 = −5/60 = −1/12
+
+d'₂ = −12 cm
+
+Vì d'₂ < 0 nên ảnh cuối cùng là ảnh ảo, nằm trước thấu kính thứ hai 12 cm (tức là trong khoảng giữa hai thấu kính), cách thấu kính thứ nhất 60 − 12 = 48 cm.
+
+|h'₂| = |h₁|·|d'₂|/d₂ = 2·12/30 = 0,8 cm
+
+Về chiều: A'₁B'₁ ngược chiều AB; ảnh ảo tạo bởi thấu kính phân kì cùng chiều với vật của nó là A'₁B'₁, nên ảnh cuối cùng ngược chiều với AB.
+
+Vậy ảnh cuối cùng là ảnh ảo, ngược chiều vật, cao 0,8 cm, nằm trong khoảng giữa hai thấu kính.
+
+Đáp số. a) Ảnh thật, cách thấu kính thứ hai 60 cm, cùng chiều vật, cao 4 cm. b) Ảnh ảo, cách thấu kính thứ hai 12 cm, ngược chiều vật, cao 0,8 cm.
+
+H. Câu hỏi trắc nghiệm nhanh (10 câu)
+
+Câu 1. Chiếu một chùm tia sáng song song với trục chính tới một thấu kính hội tụ. Chùm tia ló có đặc điểm nào sau đây?
+
+A. Loe rộng ra, đường kéo dài của các tia ló đi qua tiêu điểm F'. B. Hội tụ tại tiêu điểm ảnh F' nằm khác phía với chùm tia tới. C. Hội tụ tại quang tâm O của thấu kính. D. Truyền thẳng, không đổi hướng.
+
+Câu 2. Phát biểu nào sau đây đúng về ảnh của một vật thật tạo bởi thấu kính phân kì?
+
+A. Ảnh thật, ngược chiều, lớn hơn vật. B. Ảnh thật, cùng chiều, nhỏ hơn vật. C. Ảnh ảo, cùng chiều, nhỏ hơn vật, nằm trong khoảng tiêu cự. D. Ảnh ảo, ngược chiều, lớn hơn vật.
+
+Câu 3. Một thấu kính hội tụ có tiêu cự 10 cm. Vật sáng đặt vuông góc với trục chính, cách thấu kính 20 cm. Ảnh của vật cách thấu kính bao nhiêu?
+
+A. 10 cm. B. 20 cm. C. 30 cm. D. 40 cm.
+
+Câu 4. Một thấu kính hội tụ có tiêu cự 12 cm. Vật sáng cao 1 cm đặt vuông góc với trục chính, cách thấu kính 6 cm. Ảnh của vật có đặc điểm nào sau đây?
+
+A. Ảnh ảo, cùng chiều, cao 2 cm. B. Ảnh thật, ngược chiều, cao 2 cm. C. Ảnh ảo, cùng chiều, cao 0,5 cm. D. Ảnh thật, ngược chiều, cao 0,5 cm.
+
+Câu 5. Một thấu kính phân kì có tiêu cự 12 cm. Vật sáng cao 4 cm đặt vuông góc với trục chính, cách thấu kính 36 cm. Ảnh của vật có đặc điểm nào sau đây?
+
+A. Ảnh ảo, cách thấu kính 9 cm, cao 1 cm. B. Ảnh thật, cách thấu kính 9 cm, cao 1 cm. C. Ảnh ảo, cách thấu kính 18 cm, cao 2 cm. D. Ảnh thật, cách thấu kính 18 cm, cao 2 cm.
+
+Câu 6. Giữ cố định một thấu kính hội tụ, dịch vật lại gần thấu kính nhưng vẫn giữ vật ngoài khoảng tiêu cự. Nhận xét nào sau đây đúng về ảnh thật?
+
+A. Ảnh dịch lại gần thấu kính và nhỏ dần. B. Ảnh dịch ra xa thấu kính và lớn dần. C. Ảnh dịch ra xa thấu kính và nhỏ dần. D. Ảnh giữ nguyên vị trí và chỉ thay đổi chiều cao.
+
+Câu 7. Một kính lúp có tiêu cự 5 cm. Số bội giác của kính là
+
+A. 2×. B. 2,5×. C. 5×. D. 10×.
+
+Câu 8. Một vật sáng và một màn ảnh được giữ cách nhau 80 cm. Một thấu kính hội tụ đặt trong khoảng giữa cho ảnh rõ nét trên màn, và chỉ có đúng một vị trí của thấu kính làm được điều đó. Tiêu cự của thấu kính là
+
+A. 10 cm. B. 15 cm. C. 20 cm. D. 40 cm.
+
+Câu 9. Hai thấu kính hội tụ có tiêu cự f₁ = 30 cm và f₂ = 60 cm được ghép sát nhau. Tiêu cự tương đương của hệ là
+
+A. 10 cm. B. 20 cm. C. 45 cm. D. 90 cm.
+
+Câu 10. Để quan sát một vật nhỏ qua kính lúp và thấy ảnh cùng chiều, lớn hơn vật, ta phải đặt vật
+
+A. ngoài khoảng tiêu cự, cách kính hơn 2f. B. đúng tại tiêu điểm F của kính. C. trong khoảng tiêu cự của kính. D. cách kính đúng một khoảng bằng 2f.
+
+Đáp án và giải thích câu hỏi trắc nghiệm
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+  Câu                     Đáp án                  Giải thích một dòng
+  ----------------------- ----------------------- ------------------------------------------------------------------------------------------------------
+  1                       B                       Chùm tia tới song song cho chùm tia ló hội tụ tại tiêu điểm ảnh F' của thấu kính hội tụ.
+
+  2                       C                       Thấu kính phân kì với vật thật luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật và nằm trong khoảng tiêu cự.
+
+  3                       B                       Với f = 10 cm và d = 2f = 20 cm, ảnh thật ở đúng d' = 2f = 20 cm.
+
+  4                       A                       1/d' = 1/12 − 1/6 = −1/12 nên d' = −12 cm, ảnh ảo cao bằng 12/6 = 2 lần vật, tức 2 cm.
+
+  5                       A                       1/d' = −1/12 − 1/36 = −1/9 nên d' = −9 cm, ảnh ảo cao bằng 9/36 = 1/4 lần vật, tức 1 cm.
+
+  6                       B                       Khi d giảm (vẫn lớn hơn f) thì 1/d' giảm nên d' tăng, đồng thời tỉ số d'/d tăng.
+
+  7                       C                       G = 25/f = 25/5 = 5×.
+
+  8                       C                       Một vị trí duy nhất nghĩa là L = 4f, suy ra f = 80/4 = 20 cm.
+
+  9                       B                       1/f = 1/30 + 1/60 = 1/20 nên f = 20 cm.
+
+  10                      C                       Vật đặt trong khoảng tiêu cự cho ảnh ảo cùng chiều lớn hơn vật, đó là nguyên tắc dùng kính lúp.
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+I. Lỗi thường gặp và ghi chú sư phạm
+
+I1. Lỗi thường gặp của học sinh
+
+1. Quên dấu của d' khi ảnh là ảnh ảo. Học sinh tính ra 1/d' = −1/30 rồi vẫn kết luận d' = 30 cm, dẫn tới khẳng định sai rằng ảnh thật. Cách chữa: bắt học sinh viết rõ "vì 1/d' < 0 nên d' = −30 cm, ảnh ảo" trước khi kết luận.
+
+2. Quên dấu âm của tiêu cự thấu kính phân kì. Đây là lỗi phổ biến nhất ở dạng 4. Cách chữa: yêu cầu học sinh ghi dòng đầu tiên của bài là "f = −15 cm (vì thấu kính phân kì)".
+
+3. Nhầm giữa ảnh thật và ảnh ảo khi hứng trên màn. Nhiều học sinh cố hứng ảnh ảo trên màn. Cần nhấn mạnh: chỉ ảnh thật mới hứng được trên màn, vì chỉ khi đó các tia ló mới thực sự đi qua vị trí ảnh.
+
+4. Lẫn khoảng cách vật – ảnh. Với ảnh thật thì khoảng cách vật – ảnh bằng d + d'; với ảnh ảo thì bằng |d − |d'||, hai ảnh cùng phía thấu kính. Cách chữa: cho học sinh vẽ hình và đánh dấu vị trí vật, ảnh trên cùng một trục trước khi tính.
+
+5. Nhầm số phóng đại với số bội giác. Số bội giác G = 25/f chỉ dùng cho kính lúp và gắn với mắt người quan sát; độ phóng đại |d'|/d là đại lượng hình học của ảnh.
+
+6. Áp dụng công thức Bessel mà không kiểm tra điều kiện. Công thức f = (L² − ℓ²)/(4L) chỉ dùng khi L > 4f. Cần yêu cầu học sinh kiểm tra lại điều kiện sau khi tính xong.
+
+7. Bỏ qua điều kiện d < f của kính lúp. Nếu đề cho vật cách kính lớn hơn tiêu cự thì kết quả sẽ là ảnh thật, trái với chức năng của kính lúp.
+
+8. Dựng ảnh sai với điểm sáng trên trục chính. Học sinh cứ lấy tia qua quang tâm cho điểm sáng nằm trên trục chính, dẫn tới không xác định được ảnh. Cần nhắc dùng tia bất kì kèm tia phụ.
+
+9. Làm tròn quá sớm. Ở các bài có phân số, nếu làm tròn ở bước giữa sẽ sai kết quả cuối. Khuyến khích giữ phân số đến bước cuối mới đổi ra số thập phân.
+
+10. Thay số vào công thức thấu kính bằng "khoảng cách" mà quên quy ước dấu. Học sinh viết 1/f = 1/d + 1/|d'| cho ảnh ảo rồi kết luận d' dương. Cách chữa: yêu cầu ghi quy ước dấu ở đầu mỗi bài làm, đúng như mục B1.4.
+
+I2. Ghi chú sư phạm
+
+1. Dạy học sinh hai cách giải song song. Đây là yêu cầu bắt buộc của chuyên đề. Với mỗi bài toán ảnh, giáo viên phải trình bày cả hai cách:
+
+- Cách 1 – dùng công thức thấu kính: viết 1/f = 1/d + 1/d', giải ra d', rồi dùng |h'|/h = |d'|/d. Cách này nhanh, chính xác và luôn dùng được cho mọi trường hợp kể cả ảnh ảo.
+
+- Cách 2 – dùng tam giác đồng dạng hình học: dựng ảnh bằng hai tia đặc biệt, chỉ ra hai cặp tam giác đồng dạng, lập tỉ số h'/h = d'/d và h'/h = (d' − f)/f (với ảnh thật), rồi giải hệ để tìm d' và h'.
+
+Lí do phải dạy cả hai cách: đề thi HSG thường chấm theo cách dựng hình kèm tỉ số đồng dạng, vì cách đó thể hiện được hiểu biết hình học quang học chứ không chỉ là thay số. Nếu học sinh chỉ biết thay công thức, các em vẫn ra đáp số đúng nhưng dễ mất điểm phần dựng hình và phần lập luận tính chất ảnh. Ngược lại, nếu chỉ biết dựng hình thì bài sẽ rất dài ở những câu hỏi ngược (biết tỉ số độ cao, tìm f). Vì vậy giáo viên nên yêu cầu học sinh trình bày cách 2 trước để thể hiện tư duy hình học, rồi dùng cách 1 để kiểm tra chéo kết quả.
+
+2. Rèn kĩ năng dựng hình bằng lời. Vì tài liệu này không có hình vẽ, giáo viên cần hướng dẫn học sinh tự vẽ ra giấy nháp theo đúng trình tự: trục chính trước, thấu kính sau, rồi tới hai tiêu điểm, cuối cùng mới tới vật và các tia. Học sinh cần được luyện nói lại bốn bước dựng ảnh ở mục B1.7 thành lời trôi chảy.
+
+3. Nhấn mạnh bản chất "điểm ảnh là giao điểm của các tia ló". Học sinh hiểu được điều này thì sẽ tự phân biệt ảnh thật (giao điểm thật, vẽ nét liền, hứng được trên màn) với ảnh ảo (giao điểm của đường kéo dài, vẽ nét đứt, không hứng được trên màn) mà không cần học thuộc.
+
+4. Chọn số liệu "đẹp" khi ra đề. Kinh nghiệm soạn đề cho thấy nên chọn f, d sao cho d' là số nguyên: bộ số (f; d; d') = (10; 30; 15), (10; 15; 30), (10; 12; 60), (12; 36; 18), (20; 30; 60), (15; 10; −30), (−15; 30; −10) rất tiện dùng. Với thực hành, chọn L = 4f để có vị trí trung tâm d = d' = 2f dễ tìm.
+
+5. Gắn chuyên đề với thực hành và đời sống. Nên cho học sinh tự đo tiêu cự của một kính lúp thật bằng phương pháp vật ở rất xa, sau đó kiểm tra lại bằng số bội giác ghi trên vành kính. Ví dụ kính ghi 5× thì tiêu cự phải xấp xỉ 5 cm. Đây là hoạt động vừa rèn kĩ năng đo, vừa giúp học sinh thấy ý nghĩa của công thức G = 25/f.
+
+6. Phân bổ thời lượng gợi ý (4 buổi, mỗi buổi 90 phút). Buổi 1: khái niệm thấu kính, ba tia đặc biệt, quy ước dấu, dựng ảnh (dạng 1, 2). Buổi 2: vật trong khoảng tiêu cự, thấu kính phân kì, luyện dựng hình (dạng 3, 4). Buổi 3: dịch chuyển vật – ảnh, phương pháp hai vị trí và thực hành đo tiêu cự (dạng 5, 6). Buổi 4: hệ hai thấu kính, kính lúp và mắt, chữa đề tổng hợp (dạng 7, 8, phần G).
+
+7. Kiểm tra miệng nhanh. Ba câu hỏi nên hỏi đầu mỗi buổi: "Thấu kính phân kì thì f âm hay dương?", "d' âm nghĩa là gì?", "Khi d = 2f thì ảnh ở đâu và cao bao nhiêu?". Ba câu này bao quát hầu hết lỗi tính toán của học sinh.
