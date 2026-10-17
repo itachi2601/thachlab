@@ -142,6 +142,7 @@ function StepControl({ step, className, children, onUnlock, onQuickPractice }: {
 }
 
 const KIND_TAG: Record<NextStep["kind"], { label: string; cls: string }> = {
+  homework: { label: "Bài về nhà", cls: "bg-primary-soft text-primary" },
   unlock: { label: "Phụ đạo", cls: "bg-warn/10 text-warn" },
   weak: { label: "Kỹ năng yếu", cls: "bg-primary-soft text-primary" },
   retry: { label: "Làm lại", cls: "bg-primary-soft text-primary" },

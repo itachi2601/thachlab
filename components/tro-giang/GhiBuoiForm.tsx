@@ -20,6 +20,7 @@ import {
 
 import PolicySessionFields from "./PolicySessionFields";
 import PhudaoPlanner, { type PickedStudent } from "./PhudaoPlanner";
+import TaAssignHomework from "./TaAssignHomework";
 import { classGrade } from "@/services/classes";
 import {
   fetchRegistrationsForSlots,
@@ -617,6 +618,12 @@ export default function GhiBuoiForm({
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
               />
             </div>
+            <TaAssignHomework
+              classId={selectedClassId}
+              students={pickedStudents}
+              taughtTopicIds={Array.from(new Set(Object.values(draft.phudaoCoverage).flat()))}
+              demo={demo}
+            />
             {!newPolicy && (
               <button
                 type="button"

@@ -2,7 +2,7 @@
 // trang chủ đã tải sẵn (tutoring_needs, điểm bài làm, kỹ năng yếu, tiến độ bài). Không có RPC/migration mới. Xem docs/ROADMAP.md, Giai đoạn 2.
 // Thầy chốt 8/10/2026: trang chủ chỉ gợi việc THÍCH ỨNG theo hồ sơ em, không còn việc/bài giao chung cho cả lớp.
 
-export type NextStepKind = "unlock" | "weak" | "retry" | "lesson" | "review";
+export type NextStepKind = "homework" | "unlock" | "weak" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
@@ -30,7 +30,17 @@ export interface WeakInput {
   pct: number;
 }
 
+export interface HomeworkInput {
+  examId: number;
+  examTitle: string;
+  /** ISO; null = không đặt hạn. */
+  dueAt: string | null;
+  note: string;
+}
+
 export interface NextStepInput {
+  /** BTVN trợ giảng giao riêng cho em và em chưa nộp — việc đầu tiên (giao đích danh, có hạn). */
+  homework?: HomeworkInput[];
   need: { id: number; label: string } | null;
   /** Thời điểm được làm lượt tiếp theo của chủ đề (null = làm được ngay). */
   needAvailableAt: Date | null;
@@ -43,6 +53,17 @@ export interface NextStepInput {
   reviewLesson?: { id: number; chapterId: number; title: string } | null;
 }
 
+/** "Hạn 21:00 thứ Sáu 23/10" / "Quá hạn, làm bù vẫn được" / "" khi không đặt hạn. */
+export function homeworkDueText(dueAt: string | null, now: Date = new Date()): string {
+  if (!dueAt) return "";
+  const due = new Date(dueAt);
+  if (Number.isNaN(due.getTime())) return "";
+  if (due.getTime() < now.getTime()) return "Quá hạn, làm bù vẫn được";
+  const day = due.toLocaleDateString("vi-VN", { weekday: "long", day: "2-digit", month: "2-digit" });
+  const hm = due.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit", hour12: false });
+  return `Hạn ${hm} ${day}`;
+}
+
 /** Điểm tốt nhất của đề dưới ngưỡng này mới gợi ý làm lại. */
 export const RETRY_BELOW_SCORE = 6.5;
 
@@ -53,13 +74,25 @@ export const MAX_STEPS = 4;
 export const ENCOURAGE = "Em đang học rất tốt, hãy tiếp tục tăng tốc. Thử sức mình với những bài thầy chưa dạy nhé.";
 
 /**
- * Thứ tự: mở khoá chủ đề phụ đạo → kỹ năng yếu (tối đa 2) → làm lại đề điểm thấp → học bài kế.
+ * Thứ tự: BTVN trợ giảng giao riêng → mở khoá chủ đề phụ đạo → kỹ năng yếu (tối đa 2) → làm lại đề điểm thấp → học bài kế.
  * Việc sửa lỗi đứng đầu khi có; không có thì "Học tiếp" đứng đầu kèm lời động viên. "Học tiếp" luôn có mặt khi còn bài
  * (còn trong 4 việc), để em không toàn việc sửa lỗi. Chủ đề đang chờ giãn cách bị đẩy xuống cuối.
  */
 export function rankNextSteps(input: NextStepInput): NextStep[] {
   const steps: NextStep[] = [];
   let locked: NextStep | null = null;
+
+  // Tối đa 2 bài BTVN đứng đầu (bài hạn gần nhất trước, do my_pending_homework đã sắp). Còn chỗ cho việc thích ứng.
+  for (const h of (input.homework ?? []).slice(0, 2)) {
+    steps.push({
+      kind: "homework",
+      key: `homework-${h.examId}`,
+      action: "Bài tập về nhà",
+      title: h.examTitle,
+      hint: [homeworkDueText(h.dueAt), h.note].filter(Boolean).join(". "),
+      href: `/kiem-tra/lam?id=${h.examId}`,
+    });
+  }
 
   if (input.need) {
     const step: NextStep = {
@@ -75,7 +108,9 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
   }
 
   const weak = input.weak ?? [];
-  for (const w of weak.slice(0, 2)) {
+  // Có BTVN thì chỉ 1 kỹ năng yếu, để "Học tiếp" không bị cắt khỏi 4 việc.
+  const homeworkCount = Math.min((input.homework ?? []).length, 2);
+  for (const w of weak.slice(0, homeworkCount > 0 ? 1 : 2)) {
     steps.push({
       kind: "weak",
       key: `weak-${w.topicId}`,
@@ -87,7 +122,8 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     });
   }
 
-  if (input.retryExam && input.retryExam.score < RETRY_BELOW_SCORE) {
+  const retryIsHomework = (input.homework ?? []).some((h) => h.examId === input.retryExam?.examId);
+  if (input.retryExam && !retryIsHomework && input.retryExam.score < RETRY_BELOW_SCORE) {
     steps.push({
       kind: "retry",
       key: `retry-${input.retryExam.examId}`,

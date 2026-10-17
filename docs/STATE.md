@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- `20261017180000_ta_giao_btvn_rieng` — bảng + 3 hàm BTVN giao riêng từng em (trợ giảng giao ở phiếu phụ đạo, thẻ Hôm nay của HS, tổng quan ở Thông báo lớp). Code đã commit và chạy được trước migration (RPC lỗi thì thẻ chỉ thiếu việc này). Chưa làm: nhắc 1 lần trước hạn, bộ chọn câu 3 lớp ôn giữa kì.
 - **Đã chạy 17/10 14:28:** `20261017150000_reset_code_manh_hon` (mã reset RS+10 hex, CHECK hạn ≤7 ngày; đã hậu kiểm default + ràng buộc).
 - **Đã chạy 17/10 14:22:** `20261017120000_rate_limit_hardening` (rate_hits + rl_allow, trần resolve_login_email/quiz_join, vá search_path; hậu kiểm definer thiếu = 0) + deploy lại reset-password. Còn lại của rà soát: `docs/RA-SOAT-MA-NGUON-2026-10-17.md` mục D (Đợt 4–6); chưa kiểm entropy mã reset (`scripts/sql/kiem-do-manh-ma-reset.sql`).
 - **Đã chạy 16/10 22:43:** `20261016130000_hsg9_dot3_muc_noi_dung` (mục rỗng Lý thuyết + BTM cho bài 150/153/164). CĐ15 Âm (150) đã ghi nội dung, bài ẩn, chờ deploy + thầy duyệt.

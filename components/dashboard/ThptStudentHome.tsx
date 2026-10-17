@@ -19,6 +19,7 @@ import CuriosityCard from "@/components/dashboard/CuriosityCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { rankNextSteps } from "@/features/learning/next-steps";
+import { fetchMyPendingHomework, type PendingHomework } from "@/services/ta-homework";
 import CatchupCard from "@/components/results/CatchupCard";
 import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
 import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
@@ -137,6 +138,8 @@ export default function ThptStudentHome({
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [pickerSlot, setPickerSlot] = useState<TutoringSlot | null>(null);
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
+  const [pendingHomework, setPendingHomework] = useState<PendingHomework[]>([]);
+  const [homeworkLoaded, setHomeworkLoaded] = useState(false);
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
   // Bài kiểm tra cuối buổi do trợ giảng mở: cửa sổ còn mở + các lượt em đã làm trong từng cửa sổ.
   const [openWindows, setOpenWindows] = useState<ExitWindow[]>([]);
@@ -173,6 +176,8 @@ export default function ThptStudentHome({
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
     fetchMyStreakDays().then(setStreakDays);
     fetchMyWeakestTopics(3).then(setWeakTopics).catch(() => setWeakTopics([]));
+    // BTVN trợ giảng giao riêng: chạy song song với các truy vấn trên; lỗi thì thẻ Hôm nay chỉ thiếu việc này.
+    fetchMyPendingHomework().then(setPendingHomework).catch(() => setPendingHomework([])).finally(() => setHomeworkLoaded(true));
   }, [studentId]);
 
   function reloadTutoring() {
@@ -296,6 +301,7 @@ export default function ThptStudentHome({
   const nextSteps = useMemo(
     () =>
       rankNextSteps({
+        homework: pendingHomework.map((h) => ({ examId: h.examId, examTitle: h.examTitle, dueAt: h.dueAt, note: h.note })),
         need: needs[0] ? { id: needs[0].id, label: needLabel(needs[0]) } : null,
         needAvailableAt: needs[0] ? nextExitAttemptAt(lastExitAttempt.get(needs[0].id), nowMs) : null,
         retryExam,
@@ -312,12 +318,12 @@ export default function ThptStudentHome({
         weak: weakList,
         reviewLesson,
       }),
-    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
+    [pendingHomework, needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
   );
 
   // Thẻ "Hôm nay em làm gì": chỉ việc thích ứng theo hồ sơ em (rankNextSteps). Việc đầu là nút nổi duy nhất của trang (B2, L5);
   // tối đa 3 lựa chọn khác (N2). Chờ đủ điểm + kỹ năng yếu + danh mục mới vẽ (tránh chớp "Ôn lại").
-  const attentionReady = scoresLoaded && catalogLoaded && weakTopics !== undefined;
+  const attentionReady = scoresLoaded && catalogLoaded && homeworkLoaded && weakTopics !== undefined;
   const todaySteps = attentionReady ? nextSteps : [];
   const primaryStep = todaySteps[0] ?? null;
   const secondarySteps = todaySteps.slice(1);

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ClassAnnouncementsPanel from "@/components/dashboard/ClassAnnouncementsPanel";
+import TaHomeworkOverview from "./TaHomeworkOverview";
 import { fetchMyAssistantClasses, type TaAssistant, type TaAssistantClass } from "@/lib/tro-giang/queries";
 import { demoClasses, isDemoAssistant } from "@/lib/tro-giang/demo";
 
@@ -55,6 +56,7 @@ export default function TaClassAnnouncements({ assistant }: { assistant: TaAssis
         </div>
       )}
       {classId && <ClassAnnouncementsPanel classId={classId} />}
+      {classId && <TaHomeworkOverview classId={classId} />}
     </div>
   );
 }
