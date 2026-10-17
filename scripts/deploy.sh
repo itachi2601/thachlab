@@ -51,6 +51,18 @@ RedirectMatch 404 /\.git
   <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
+
+  # Header bảo mật (Đợt 2 rà soát 17/10/2026, docs/RA-SOAT-MA-NGUON-2026-10-17.md mục A7).
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=15552000"
+  # CSP ở chế độ Report-Only: CHỈ ghi cảnh báo vào Console trình duyệt, KHÔNG chặn gì. Mở một vài
+  # trang (bài học, làm bài, quản trị) với DevTools, nếu không còn cảnh báo "[Report Only]" thì đổi
+  # tên header thành Content-Security-Policy để chặn thật. Giữ 'unsafe-inline' vì Next xuất tĩnh
+  # chèn script/style inline; siết dần bằng nonce/hash sau.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://phet.colorado.edu https://drive.google.com https://view.officeapps.live.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 <IfModule mod_brotli.c>
