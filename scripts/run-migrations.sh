@@ -39,8 +39,8 @@ FILES=(
   "supabase/migrations/20261016130000_hsg9_dot3_muc_noi_dung.sql|Khoá HSG Vật lí: tạo mục Lý thuyết + Bài tập mẫu (rỗng) cho CĐ15 Âm (150), CĐ16 (164), CĐ12 (153), bài vẫn ẩn|lúc nào cũng được (chỉ chèn)"
   "supabase/migrations/20261017120000_rate_limit_hardening.sql|Giới hạn tần suất: bảng rate_hits + rl_allow, chặn dò resolve_login_email/quiz_join, vá search_path hàm definer|lúc nào cũng được, nhưng nên ngoài giờ HS làm bài"
   "supabase/migrations/20261017150000_reset_code_manh_hon.sql|Mã đặt lại mật khẩu RS + 10 hex (trước 6), CHECK hạn tối đa 7 ngày cho bản ghi mới|lúc nào cũng được"
-  "supabase/migrations/20261017180000_ta_giao_btvn_rieng.sql|Bảng ta_homework_assignments + 3 hàm: trợ giảng giao BTVN riêng từng em/nhóm trên web (chuông chỉ báo em được giao), em xem bài chưa làm, trợ giảng xem tổng quan|lúc nào cũng được"
 )
+# ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar
 # ĐÃ CHẠY 13/10/2026 (00:44): 20261013150000_chapter_mastery_radar
