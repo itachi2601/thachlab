@@ -8,6 +8,7 @@
 - [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc docs/DATABASE.md thay vì dò schema; giữ STATE.md/MEMORY.md gọn
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`; nhánh claude/* tự gộp vào main (kiểm origin/main==HEAD)
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
+- [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — box có câu hỏi đóng lượt, nhận xét phải nằm trong tin nhắn trước
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — lệnh thầy chạy đặt trong khối bash
 - [Chạy script giúp thầy](feedback_chay_script_giup.md) — có script thì Claude chạy trong tab terminal rồi tự kiểm, không chỉ in lệnh
 - [Deploy autonomy](feedback_deploy_autonomy.md) — test local xong tự deploy prod
@@ -27,6 +28,7 @@
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi thầy bảo
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải/đề: mỗi trường hợp một dòng
+- [Chặng commit + ra-soat.md + bàn giao](feedback_chang_commit_ra_soat_ban_giao.md) — commit sau mỗi chặng, lỗi ghi ra ra-soat.md, "tiếp bài X" thì đọc nó
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f`
@@ -34,6 +36,7 @@
 - [Cache SGK PDF](reference_sgk_pdf_text_cache.md)
 - [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron
 - [Claude API thinking](reference_anthropic_api_thinking_max_tokens.md) — max_tokens ≥16000
+- [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task trong app, không đổi được bằng tool/SKILL.md
 ## Skill & quy trình đăng nội dung
 - [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de; ⚠ bug tự gắn Luyện tập, soát exam_ids
 - [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
@@ -73,6 +76,7 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
+- [Chương trình DT 16/10](project_thachlab_dt_audit.md) — làm DT-01/03/04/07/12/16; còn dữ liệu thật + RLS + deploy hsg-ai-grade
 - [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công Cursor/Gemini/Claude ở docs/PHAN-CONG-UI-2026-10-13.md
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
@@ -85,6 +89,9 @@
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật; còn nhắc trước hạn + bộ chọn câu ôn giữa kì
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
 - [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo mảng); treo thử 375px thật
-- [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 15/10: thử luồng danh hiệu/phụ đạo, 5 lỗi đã sửa (5a977bddd), chờ deploy
+- [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 2 tài khoản lớp 12, đổi mật khẩu bằng scripts/doi-mk-hs-test.mjs
+- [Rà UI HS tìm bài/ôn tập/hôm nay 17/10](project_thachlab_ui_hs_tim_bai_on_tap.md) — 4 đợt đã lên site; treo 2 điểm nhỏ (radar "nắm vững", nhãn Đề đã xóa)
+- [Gán lớp cho đề](project_thachlab_gan_lop_de.md) — 17/10 gán hết trừ 10 đề AVCN (cố ý trống); RLS giấu đề lớp khác
 ## Việc mới 30/9
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — hook + đố A/B/C + khung ảnh xong 14/10; treo Gemini tìm ảnh, chưa deploy
+- [Giải lại ngân hàng bằng Haiku/Sonnet](project_thachlab_giai_lai_ngan_hang.md) — 17/10: 349 câu lệch đã ghi; ~6.700 câu khớp ĐANG ghi (Terminal), còn 1.070 ghi chú + 1.922 câu ảnh
