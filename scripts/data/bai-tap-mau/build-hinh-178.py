@@ -45,5 +45,14 @@ d = json.load(open(J))
 d["generated_at"] = "2026-10-17"
 REVIEW = os.path.join(HERE, "review-178.json")   # phiên chính ghi sau kiểm chéo
 d["review"] = json.load(open(REVIEW)) if os.path.exists(REVIEW) else {"checked": False, "notes": "chờ kiểm chéo"}
+import re
+_TXT = {"#fbbf24": "#b45309", "#fb923c": "#c2410c", "#38bdf8": "#0369a1", "#34d399": "#047857", "#f87171": "#b91c1c"}
+def _dam(o):   # chữ trong SVG: màu đậm đọc rõ trên nền sáng (giống CĐ14); khối hình giữ màu
+    if isinstance(o, str):
+        return re.sub(r"<(?:text|tspan)\b[^>]*>", lambda m: re.sub(r"#(?:fbbf24|fb923c|38bdf8|34d399|f87171)\b", lambda c: _TXT[c.group(0)], m.group(0)), o)
+    if isinstance(o, list): return [_dam(x) for x in o]
+    if isinstance(o, dict): return {k: _dam(v) for k, v in o.items()}
+    return o
+d = _dam(d)
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
 print("ghi", J, len(d["dang_bai"]), "dạng")

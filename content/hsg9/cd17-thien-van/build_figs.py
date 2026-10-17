@@ -6,6 +6,11 @@ from math import pi, sin, cos, tan, atan, radians, degrees, hypot, sqrt
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import RED, BLUE, ORG, GRN, text, wrap, chevron
+from svg_lib import text as _text
+# Màu CHỮ đậm cho nền sáng (giống CĐ14); khối hình vẫn giữ màu svg_lib.
+_TXT = {"#fbbf24": "#b45309", "#fb923c": "#c2410c", "#38bdf8": "#0369a1", "#34d399": "#047857", "#f87171": "#b91c1c"}
+def text(x, y, s, c="currentColor", *a, **k):
+    return _text(x, y, s, _TXT.get(c, c), *a, **k)
 
 PHUT = 17          # theo lint_do_dai.py (17,2 phút)
 SUN = "#fbbf24"
@@ -303,7 +308,7 @@ b += text(round(A[0] + (rh + 14) * cos(mid), 1), round(A[1] - (rh + 14) * sin(mi
 rc = 46
 arc = [(OX + rc * cos(radians(t)), OY - rc * sin(radians(t))) for t in [aS + i * (aA - aS) / 20 for i in range(21)]]
 b += path(arc, ORG, 2)
-b += f'<text x="{OX + 52:.1f}" y="{OY - 4:.1f}" fill="{ORG}" font-size="15" font-weight="700">φ − δ</text>'
+b += f'<text x="{OX + 52:.1f}" y="{OY - 4:.1f}" fill="{_TXT[ORG]}" font-size="15" font-weight="700">φ − δ</text>'
 b += circ(*A, 3.4, "currentColor", "currentColor", 1)
 b += circ(*S, 3.4, "currentColor", "currentColor", 1)
 b += text(round(A[0] + 8, 1), round(A[1] - 8, 1), "A", "currentColor", 16, "start", "700")

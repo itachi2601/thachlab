@@ -88,7 +88,7 @@ TL = [
 <p>Chỉ một dải rất hẹp thấy hình khuyên; nơi khác trong nửa tối chỉ thấy nhật thực một phần.</p>
 <p>c) Điều kiện toàn phần: $\alpha_M\ge\alpha_S$, tức $\dfrac{D_M}{d-R_E}\ge\dfrac{D_S}{1{,}47\cdot10^8}$.</p>
 <p>$d-R_E\le\dfrac{3470\cdot1{,}47\cdot10^8}{1{,}39\cdot10^6}\approx367\,000\ \text{km}$, nên $d\le373\,000\ \text{km}$ (xấp xỉ).</p>
-<p>Với $1\ \text{AU}$ thì giới hạn là $d\le374\,000+6370\approx380\,000\ \text{km}$. Tháng 1 Mặt Trời trông to hơn nên Mặt Trăng phải ở gần hơn mới che kín: nhật thực toàn phần khó xảy ra hơn vào tháng 1, dễ hơn vào tháng 7 (Trái Đất xa Mặt Trời nhất).</p>
+<p>Với $1\ \text{AU}$ thì giới hạn là $d\le\ell_{\max}+R_E\approx374\,000+6370\approx381\,000\ \text{km}$ (tính đủ chữ số). Tháng 1 Mặt Trời trông to hơn nên Mặt Trăng phải ở gần hơn mới che kín: nhật thực toàn phần khó xảy ra hơn vào tháng 1, dễ hơn vào tháng 7 (Trái Đất xa Mặt Trời nhất).</p>
 <p>Bẫy: quên trừ $R_E$ (dùng khoảng cách tới tâm Trái Đất); quên bình phương khi tính phần diện tích; dùng góc ở độ trong công thức $\alpha=D/d$ (công thức cho rad).</p>"""),
 
  # ── Bài 6 · Trung bình: mô hình Hệ Mặt Trời trên sân trường
@@ -189,7 +189,7 @@ def kiem_so():
     assert r(x - L, -1) == 3190
     assert r(D_M * (x - L) / L) == 30
     thr = D_M * 1.47e8 / D_S; assert r(thr, -3) == 367_000 and r(thr + R_E, -3) == 373_000
-    assert r(D_M * AU / D_S, -3) == 374_000 and r(374_000 + R_E, -4) == 380_000
+    assert r(D_M * AU / D_S, -3) == 374_000 and r(D_M * AU / D_S + R_E, -3) == 381_000
     # Bài 6
     k = 100 / 30; N = 1.5e11 / k
     assert r(k, 2) == 3.33 and r(N / 1e10, 2) == 4.5

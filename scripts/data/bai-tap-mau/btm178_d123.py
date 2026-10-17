@@ -403,7 +403,7 @@ SOLS = [
      M(r"L_E=\dfrac{1\ \text{AU}\cdot D_E}{D_S-D_E}=\dfrac{1{,}5\cdot10^8\cdot12\,740}{1{,}39\cdot10^6-12\,740}"), A(r"L_E\approx1{,}39\cdot10^6\ \text{km}")]),
   ("Vùng tối tại quỹ đạo Mặt Trăng", [M(r"D'_{\text{tối}}=D_E\,\dfrac{L_E-d}{L_E}=12\,740\cdot\dfrac{1\,387\,538-384\,000}{1\,387\,538}"),
      A(r"D'_{\text{tối}}\approx9210\ \text{km}"), M(r"\dfrac{D'_{\text{tối}}}{D_M}=\dfrac{9214}{3470}\approx2{,}66")]),
-  ("Kiểm tra", [P(r"$L\approx374\,000\ \text{km}$ khớp khoảng cách giới hạn che kín tìm bằng góc trông ở Dạng 2 ($374\,460\ \text{km}$, cũng làm tròn thành $374\,000\ \text{km}$): hai cách cho cùng kết quả ✓."),
+  ("Kiểm tra", [P(r"$L\approx374\,000\ \text{km}$ khớp khoảng cách giới hạn che kín tìm bằng góc trông ở Dạng 2 (cũng $\approx374\,000\ \text{km}$, làm tròn nghìn km): hai cách cho cùng kết quả ✓."),
      P(r"Vùng tối nhật thực chỉ khoảng $165\ \text{km}$: một nơi rất hiếm khi thấy nhật thực toàn phần ✓."),
      P(r"Bóng Trái Đất tại quỹ đạo rộng gấp $2{,}66$ lần Mặt Trăng: Mặt Trăng nằm gọn trong bóng, mọi nơi đang là đêm đều thấy nguyệt thực ✓.")])],
   [r"a) $L\approx374\,000\ \text{km}$", r"b) Có, toàn phần; vùng tối $\approx165\ \text{km}$; vùng nửa tối $\approx6790\ \text{km}$",
@@ -478,7 +478,7 @@ STEPS = [
        ke=[(r"Tính $\left(\dfrac{\alpha'_M}{\alpha_S}\right)^2$", True),
            (r"Tính $\dfrac{\alpha'_M}{\alpha_S}$", r"Đó là tỉ số đường kính; diện tích hình tròn tỉ lệ bình phương đường kính."),
            (r"Tính $1-\dfrac{\alpha'_M}{\alpha_S}$", r"Đó là phần đường kính còn hở, không phải phần diện tích bị che.")]),
-  buoc("Khoảng cách lớn nhất để còn che kín", "Khoảng cách đó bằng bao nhiêu nghìn km?", 374.5, "nghìn km", 0.6,
+  buoc("Khoảng cách lớn nhất để còn che kín", "Khoảng cách đó bằng bao nhiêu nghìn km?", 374.0, "nghìn km", 0.6,
        loi=r"Đảo tỉ số thành $D_S\cdot\text{AU}/D_M$, ra khoảng cách lớn hơn cả $1\ \text{AU}$, vô lí.",
        ke=[(r"Cho góc trông Mặt Trăng bằng góc trông Mặt Trời rồi giải ra $\ell$", True),
            (r"Tính $\ell=D_S\,\dfrac{1\ \text{AU}}{D_M}$", r"Đảo ngược tỉ số; kết quả lớn hơn cả khoảng cách tới Mặt Trời là vô lí."),
@@ -487,7 +487,7 @@ STEPS = [
  # ── Dạng 3 ──
  dict(nhan_dang=r"Thấy <b>bóng Mặt Trăng, bóng Trái Đất, vùng tối rộng bao nhiêu</b> → tam giác đồng dạng, so $x$ với $L$.",
   cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 1}, buoc=[
-  buoc("Chiều dài nón bóng tối Mặt Trăng", "L bằng bao nhiêu nghìn km?", 374.5, "nghìn km", 0.6,
+  buoc("Chiều dài nón bóng tối Mặt Trăng", "L bằng bao nhiêu nghìn km?", 374.0, "nghìn km", 0.6,
        loi=r"Lấy $a=1\ \text{AU}+d$ như thể Mặt Trăng ở xa Mặt Trời hơn Trái Đất; ngày nhật thực Mặt Trăng nằm giữa."),
   buoc("Vùng tối lúc gần nhất", "Đường kính vùng tối trên mặt đất bằng bao nhiêu km?", 165, "km", 4,
        loi=r"Lấy khoảng cách tới tâm Trái Đất ($363\,000\ \text{km}$) thay vì tới mặt đất; vì $L-x$ nhỏ nên sai này làm kết quả lệch rất nhiều.",
@@ -546,12 +546,12 @@ def kiem_so():
     assert A_GAN > A_S > A_XA
     assert round(TI_LE * 100) == 88 and abs(A_XA / A_S * 100 - 88) > 1 and abs((1 - A_XA / A_S) * 100 - 88) > 1
     assert abs(L_MAX - 374460) < 1 and round(L_MAX, -3) == 374_000
-    assert abs(D_S * AU / D_M / 1000 - 374.5) > 0.6 and abs((L_GAN + L_XA) / 2000 - 374.5) > 0.6
+    assert abs(D_S * AU / D_M / 1000 - 374.0) > 0.6 and abs((L_GAN + L_XA) / 2000 - 374.0) > 0.6 and abs(L_MAX / 1000 - 374.0) < 0.6
     assert L_GAN < L_MAX < L_XA
     assert abs(L_MAX / D_M - XU / 0.02) < 0.01 and round(XU / 0.02) == 108
     # D3
-    assert abs(L3G - 374489) < 1 and abs(L3G / 1000 - 374.5) < 0.6
-    assert abs((AU + D_GAN) * D_M / (D_S - D_M) / 1000 - 374.5) > 0.6
+    assert abs(L3G - 374489) < 1 and abs(L3G / 1000 - 374.0) < 0.6
+    assert abs((AU + D_GAN) * D_M / (D_S - D_M) / 1000 - 374.0) > 0.6
     assert X3G == 356630 and X3G < L3G and abs(TOI_GAN - 165.5) < 0.1 and abs(TOI_GAN - 165) < 4
     assert abs(D_M * (L3G - D_GAN) / L3G - 165) > 4 and abs(D_M * X3G / L3G - 165) > 4
     assert abs(NUA_GAN - 6791) < 1 and abs(D_M - 6791) > 60 and abs(D_S * X3G / A3G - 6791) > 60
