@@ -37,6 +37,7 @@ FILES=(
   "supabase/migrations/20261016150000_ta_diem_thay_mac_dinh_day.sql|Điểm Thầy quan sát mặc định 10 (hàm ta_monthly_policy), không còn chặn chốt tháng vì thiếu điểm này|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại bản trong 20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql"
   "supabase/migrations/20261016170000_ta_he_so_phu_dao_1_1_1_2.sql|Hệ số phụ đạo trợ giảng 1,1 (1–2 em) / 1,2 (3–4 em) để chi phí tăng tối đa ~10% (hàm ta_monthly_policy)|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại bản trong 20261016150000_ta_diem_thay_mac_dinh_day.sql"
   "supabase/migrations/20261016130000_hsg9_dot3_muc_noi_dung.sql|Khoá HSG Vật lí: tạo mục Lý thuyết + Bài tập mẫu (rỗng) cho CĐ15 Âm (150), CĐ16 (164), CĐ12 (153), bài vẫn ẩn|lúc nào cũng được (chỉ chèn)"
+  "supabase/migrations/20261017120000_rate_limit_hardening.sql|Giới hạn tần suất: bảng rate_hits + rl_allow, chặn dò resolve_login_email/quiz_join, vá search_path hàm definer|lúc nào cũng được, nhưng nên ngoài giờ HS làm bài"
 )
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
 # ĐÃ CHẠY 14/10/2026 17:41: 20261014160000_course_mastery_radar

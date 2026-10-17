@@ -99,6 +99,22 @@ Deno.serve(async (req) => {
     if (!code) return jsonResponse({ error: "Thiếu mã." }, 400);
     if (newPassword.length < 6) return jsonResponse({ error: "Mật khẩu mới phải từ 6 ký tự trở lên." }, 400);
 
+    // Giới hạn thử mã: 10 lượt/15 phút/IP (nhánh này không cần đăng nhập nên dò mã là vector thật).
+    // Cần migration 20261017120000_rate_limit_hardening (hàm rl_allow); chưa chạy migration thì bỏ qua giới hạn.
+    const ip =
+      req.headers.get("cf-connecting-ip") ??
+      req.headers.get("x-real-ip") ??
+      (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() ??
+      "unknown";
+    const { data: allowed, error: rlError } = await admin.rpc("rl_allow", {
+      p_key: `reset_claim:${ip || "unknown"}`,
+      p_max: 10,
+      p_window: "15 minutes",
+    });
+    if (!rlError && allowed === false) {
+      return jsonResponse({ error: "Thử mã quá nhiều lần — đợi 15 phút rồi thử lại, hoặc nhờ giáo viên cấp lại." }, 429);
+    }
+
     const { data: reset, error: lookupError } = await admin
       .from("password_reset_codes")
       .select("id, student_id, used_at, expires_at")
