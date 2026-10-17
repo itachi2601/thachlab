@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Cảm ứng điện từ và dòng điện xoay chiều",
+  "topic": "Máy biến áp",
+  "difficulty": "trung-binh",
+  "duration_minutes": 25,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một cuộn dây dẫn kín được nối với một điện kế. Trường hợp nào sau đây <strong>không</strong> xuất hiện dòng điện cảm ứng trong cuộn dây?</p>",
+    "options": [
+     "Đưa một cực của nam châm thẳng lại gần một đầu cuộn dây, nam châm nằm trên trục của cuộn dây.",
+     "Kéo nam châm thẳng đang nằm trong lòng cuộn dây ra xa cuộn dây.",
+     "Quay nam châm thẳng quanh chính trục dọc của nó, trục này trùng với trục của cuộn dây.",
+     "Đặt yên một nam châm điện trước cuộn dây rồi ngắt khoá của mạch nam châm điện."
+    ],
+    "answer": 2,
+    "explanation": "<p>Dòng cảm ứng chỉ xuất hiện khi số đường sức từ xuyên qua tiết diện cuộn dây kín biến thiên.</p><p>Khi quay nam châm quanh chính trục dọc của nó (trùng trục cuộn dây), hình dạng từ trường quanh trục không thay đổi nên số đường sức xuyên qua cuộn dây không đổi: không có dòng. Đáp án C.</p><p>A: nam châm lại gần, số đường sức tăng — có dòng.</p><p>B: kéo ra xa, số đường sức giảm — có dòng.</p><p>D: ngắt khoá, từ trường của nam châm điện mất đi, số đường sức giảm về 0 — có dòng (thoáng qua), dù không có vật nào chuyển động.</p>",
+    "topic": "Điều kiện xuất hiện dòng điện cảm ứng",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Lại gần thì số đường sức qua cuộn dây tăng nên có dòng cảm ứng.",
+     "B": "Ra xa thì số đường sức qua cuộn dây giảm nên có dòng cảm ứng.",
+     "D": "Nghĩ phải có chuyển động mới có dòng; ngắt khoá làm từ trường mất đi, số đường sức biến thiên nên vẫn có dòng."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ống dây nằm ngang có dòng điện một chiều chạy qua như hình (nét liền là các vòng dây ở phía trước, nét đứt là phần khuất phía sau). Phát biểu nào sau đây đúng?</p><svg viewBox=\"0 0 400 162\" width=\"400\" style=\"max-width:100%;height:auto;display:block;margin:8px auto\" role=\"img\" aria-label=\"Ống dây nằm ngang, đầu A bên trái, đầu B bên phải, mũi tên chỉ chiều dòng điện trên các vòng dây phía trước hướng xuống\"><line x1=\"78\" y1=\"120\" x2=\"96\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"62\" y1=\"40\" x2=\"78\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M63 77.0 L70.6 88.0 L76 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"112\" y1=\"120\" x2=\"130\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"96\" y1=\"40\" x2=\"112\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M97 77.0 L104.6 88.0 L110 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"146\" y1=\"120\" x2=\"164\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"130\" y1=\"40\" x2=\"146\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M131 77.0 L138.6 88.0 L144 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"180\" y1=\"120\" x2=\"198\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"164\" y1=\"40\" x2=\"180\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M165 77.0 L172.6 88.0 L178 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"214\" y1=\"120\" x2=\"232\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"198\" y1=\"40\" x2=\"214\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M199 77.0 L206.6 88.0 L212 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"248\" y1=\"120\" x2=\"266\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" opacity=\"0.55\"/><line x1=\"232\" y1=\"40\" x2=\"248\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M233 77.0 L240.6 88.0 L246 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"266\" y1=\"40\" x2=\"282\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M267 77.0 L274.6 88.0 L280 76.0\" fill=\"none\" stroke=\"#d9480f\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"62\" y1=\"40\" x2=\"32\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"282\" y1=\"120\" x2=\"312\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"28\" y=\"86.0\" font-size=\"20\" font-weight=\"700\" fill=\"currentColor\" text-anchor=\"end\">A</text><text x=\"316\" y=\"86.0\" font-size=\"20\" font-weight=\"700\" fill=\"currentColor\">B</text><text x=\"200\" y=\"152\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"middle\">Mũi tên: chiều dòng điện ở các vòng phía trước</text></svg>",
+    "options": [
+     "Đầu A là cực Bắc, đầu B là cực Nam.",
+     "Đầu B là cực Bắc, đầu A là cực Nam.",
+     "Cả hai đầu đều là cực Bắc vì dòng điện đi vào ở cả hai đầu ống.",
+     "Ống dây không có cực từ vì trong lòng ống không có lõi sắt."
+    ],
+    "answer": 1,
+    "explanation": "<p>Nắm tay phải sao cho bốn ngón tay chỉ theo chiều dòng điện trong các vòng dây (phía trước đi xuống); ngón cái choãi ra chỉ sang phải: đường sức trong lòng ống đi từ A sang B.</p><p>Đường sức đi ra ở đầu B nên B là cực Bắc, A là cực Nam. Đáp án B.</p><p>Kiểm tra: nhìn từ đầu B vào lòng ống, dòng ở các vòng phía trước (bên trái người nhìn) đi xuống, phía sau đi lên — ngược chiều kim đồng hồ, nên B là cực Bắc ✓.</p><p>Ống dây không có lõi sắt vẫn có từ trường như một nam châm thẳng; lõi sắt non chỉ làm từ trường mạnh hơn.</p>",
+    "topic": "Điều kiện xuất hiện dòng điện cảm ứng",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Dùng ngược quy tắc (hoặc dùng tay trái): ngón cái chỉ chiều đường sức trong lòng ống, tức hướng về cực Bắc.",
+     "C": "Một nam châm (kể cả ống dây) luôn có hai cực khác tên ở hai đầu.",
+     "D": "Ống dây có dòng điện đã là một nam châm; lõi sắt non chỉ làm nó mạnh hơn."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một máy biến áp lí tưởng có cuộn sơ cấp $1200$ vòng, cuộn thứ cấp $60$ vòng. Đặt vào hai đầu cuộn sơ cấp hiệu điện thế xoay chiều $220\\ \\text{V}$. Hiệu điện thế ở hai đầu cuộn thứ cấp để hở là</p>",
+    "options": [
+     "$0\\ \\text{V}$.",
+     "$220\\ \\text{V}$.",
+     "$4400\\ \\text{V}$.",
+     "$11\\ \\text{V}$."
+    ],
+    "answer": 3,
+    "explanation": "<p>$\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}$ nên $U_2=U_1\\dfrac{N_2}{N_1}=220\\cdot\\dfrac{60}{1200}=11\\ \\text{V}$. Đáp án D.</p><p>Cuộn thứ cấp ít vòng hơn nên đây là máy hạ áp: $U_2\\lt U_1$.</p>",
+    "topic": "Máy biến áp",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Nghĩ hai cuộn cách điện nhau nên không có điện ở thứ cấp; thật ra từ trường biến thiên trong lõi gây cảm ứng ở cuộn thứ cấp.",
+     "B": "Nghĩ máy biến áp chỉ đổi cường độ dòng điện, giữ nguyên hiệu điện thế.",
+     "C": "Viết ngược tỉ số: U₂ = U₁·N₁/N₂."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Truyền tải một công suất điện không đổi trên cùng một đường dây. Nếu tăng hiệu điện thế ở đầu đường dây lên $3$ lần thì công suất hao phí trên dây</p>",
+    "options": [
+     "giảm $9$ lần.",
+     "giảm $3$ lần.",
+     "tăng $9$ lần.",
+     "giảm $6$ lần."
+    ],
+    "answer": 0,
+    "explanation": "<p>$I=\\dfrac{P}{U}$ giảm $3$ lần, nên $P_{\\text{hp}}=RI^2=\\dfrac{P^2R}{U^2}$ giảm $3^2=9$ lần. Đáp án A.</p>",
+    "topic": "Máy biến áp",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "B": "Quên bình phương: hao phí tỉ lệ với I², tức với 1/U².",
+     "C": "Dùng nhầm P_hp = U²/R với U ở đầu đường dây; hiệu điện thế đặt lên dây chỉ là ΔU = IR.",
+     "D": "Nhân 2 thay vì bình phương: 3·2 = 6."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một máy phát điện xoay chiều có rôto là nam châm gồm $4$ cặp cực, quay đều với tốc độ $750$ vòng/phút.</p>",
+    "statements": [
+     {
+      "text": "Tần số dòng điện do máy phát ra là $50\\ \\text{Hz}$.",
+      "answer": true
+     },
+     {
+      "text": "Dòng điện do máy phát ra đổi chiều $50$ lần mỗi giây.",
+      "answer": false
+     },
+     {
+      "text": "Một máy phát có rôto $2$ cặp cực muốn phát ra cùng tần số thì phải quay $1500$ vòng/phút.",
+      "answer": true
+     },
+     {
+      "text": "Dòng điện xoay chiều không có tác dụng từ vì nó đổi chiều liên tục.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $n=\\dfrac{750}{60}=12{,}5$ vòng/s, $f=np=12{,}5\\cdot4=50\\ \\text{Hz}$.</p><p>b) Sai: mỗi chu kì dòng điện đổi chiều $2$ lần, nên đổi chiều $2\\cdot50=100$ lần mỗi giây.</p><p>c) Đúng: $n=\\dfrac{f}{p}=\\dfrac{50}{2}=25$ vòng/s $=1500$ vòng/phút.</p><p>d) Sai: dòng xoay chiều vẫn có tác dụng từ (nam châm điện, máy biến áp, chuông điện); từ trường của nó đổi chiều theo dòng điện, nên nó hút được sắt và làm kim nam châm dao động.</p>",
+    "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Đổi 750 vòng/phút = 12,5 vòng/s rồi nhân với số cặp cực p = 4.",
+     "1": "Mỗi chu kì dòng điện đổi chiều 2 lần: 50 Hz ⇒ 100 lần mỗi giây.",
+     "2": "Cùng f thì n tỉ lệ nghịch với p: p giảm 2 lần, n tăng 2 lần.",
+     "3": "Dòng xoay chiều vẫn có tác dụng từ; chỉ có điều từ trường đổi chiều theo dòng."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một đường dây truyền đi công suất $500\\ \\text{kW}$ và hiệu điện thế $25\\ \\text{kV}$, cả hai đo ở đầu đường dây. Điện trở tổng cộng của cả hai dây là $50\\ \\Omega$. Bỏ qua hệ số công suất.</p>",
+    "statements": [
+     {
+      "text": "Cường độ dòng điện trên dây là $20\\ \\text{A}$.",
+      "answer": true
+     },
+     {
+      "text": "Công suất hao phí trên dây là $20\\ \\text{kW}$.",
+      "answer": true
+     },
+     {
+      "text": "Hiệu suất truyền tải là $98\\,\\%$.",
+      "answer": false
+     },
+     {
+      "text": "Nếu truyền cùng công suất đó ở $50\\ \\text{kV}$ thì công suất hao phí còn $10\\ \\text{kW}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $I=\\dfrac{P}{U}=\\dfrac{500\\,000}{25\\,000}=20\\ \\text{A}$.</p><p>b) Đúng: $P_{\\text{hp}}=RI^2=50\\cdot20^2=20\\,000\\ \\text{W}=20\\ \\text{kW}$.</p><p>c) Sai: $H=1-\\dfrac{20}{500}=0{,}96=96\\,\\%$.</p><p>d) Sai: $U$ tăng $2$ lần thì hao phí giảm $2^2=4$ lần, còn $5\\ \\text{kW}$.</p>",
+    "topic": "Máy biến áp",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Dòng trên dây I = P/U với P, U ở đầu đường dây.",
+     "1": "P_hp = R·I² = 50·400 = 20 000 W.",
+     "2": "Tỉ lệ hao phí 20/500 = 4 % nên H = 96 %, không phải 98 %.",
+     "3": "Hao phí tỉ lệ với 1/U²: tăng U 2 lần thì hao phí giảm 4 lần (5 kW), không phải 2 lần."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một máy biến áp lí tưởng có cuộn sơ cấp $880$ vòng nối với nguồn xoay chiều $220\\ \\text{V}$, cuộn thứ cấp $48$ vòng cung cấp dòng điện $2{,}5\\ \\text{A}$ cho một thiết bị. Cường độ dòng điện qua cuộn sơ cấp là bao nhiêu ampe? Làm tròn đến hai chữ số sau dấu phẩy.</p>",
+    "answer": "0,14",
+    "explanation": "<p>$U_2=220\\cdot\\dfrac{48}{880}=12\\ \\text{V}$.</p><p>Máy lí tưởng: $U_1I_1=U_2I_2$ nên $I_1=\\dfrac{12\\cdot2{,}5}{220}\\approx0{,}136\\ \\text{A}\\approx0{,}14\\ \\text{A}$.</p><p>Cách khác: $\\dfrac{I_1}{I_2}=\\dfrac{N_2}{N_1}$ nên $I_1=2{,}5\\cdot\\dfrac{48}{880}\\approx0{,}14\\ \\text{A}$.</p><p>Bẫy: viết $\\dfrac{I_1}{I_2}=\\dfrac{N_1}{N_2}$ sẽ ra $\\approx45{,}8\\ \\text{A}$ — máy hạ áp thì dòng sơ cấp phải nhỏ hơn dòng thứ cấp.</p>",
+    "topic": "Máy biến áp",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Cần truyền công suất $1\\ \\text{MW}$ (công suất đo ở đầu đường dây) trên đường dây có điện trở tổng cộng $12\\ \\Omega$ sao cho công suất hao phí trên dây không vượt quá $4\\,\\%$ công suất truyền đi. Hiệu điện thế ở đầu đường dây ít nhất là bao nhiêu kilôvôn? Bỏ qua hệ số công suất. Làm tròn đến một chữ số sau dấu phẩy.</p>",
+    "answer": "17,3",
+    "explanation": "<p>$P_{\\text{hp}}=\\dfrac{P^2R}{U^2}\\le0{,}04P$ nên $U^2\\ge\\dfrac{PR}{0{,}04}=\\dfrac{10^6\\cdot12}{0{,}04}=3\\cdot10^8$.</p><p>$U\\ge\\sqrt{3\\cdot10^8}\\approx17\\,321\\ \\text{V}\\approx17{,}3\\ \\text{kV}$.</p><p>Bẫy: viết $P_{\\text{hp}}=\\dfrac{U^2}{R}$ (coi $U$ ở đầu dây đặt lên hai đầu dây) — sai vì hiệu điện thế trên dây chỉ là $\\Delta U=IR$.</p>",
+    "topic": "Máy biến áp",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

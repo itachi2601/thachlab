@@ -1,0 +1,407 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ đường sức từ, tìm cực ống dây bằng nắm tay phải.</li>
+<li>Nêu điều kiện xuất hiện dòng điện cảm ứng.</li>
+<li>Tìm chiều dòng cảm ứng (định luật Lenz, <strong>Mở rộng HSG</strong>).</li>
+<li>Nêu nguyên tắc tạo dòng xoay chiều và các tác dụng của nó.</li>
+<li>Tính máy biến áp, hao phí truyền tải (<strong>Mở rộng HSG</strong>: ngoài chuẩn lớp 9, đề HSG hay ra).</li>
+<li>Quy ước: $U$, $I$ xoay chiều là giá trị hiệu dụng, công suất $P=UI$.</li>
+<li>$R$ của đường dây là điện trở tổng cả hai dây.</li>
+</ul>
+<p>Khoảng 18 phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: điện đi hàng trăm km về ổ cắm</h3>
+<p>Nhà máy thuỷ điện cách thành phố hàng trăm km, vậy mà cắm sạc là có điện ngay.</p>
+<p>Cột điện dọc đường cao tốc ghi "500 kV", ổ cắm nhà em chỉ 220 V. Vì sao phải đẩy lên cao thế rồi lại hạ xuống?</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Câu 1. Giữ nguyên công suất cần truyền và đường dây. Tăng hiệu điện thế đầu đường dây lên gấp đôi thì phần điện năng mất trên dây:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q0" id="hsg8-q0a"><label for="hsg8-q0a" class="tl-opt tl-no">A. Giảm 2 lần</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0b"><label for="hsg8-q0b" class="tl-opt tl-ok">B. Giảm 4 lần</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0c"><label for="hsg8-q0c" class="tl-opt tl-no">C. Không đổi</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0d"><label for="hsg8-q0d" class="tl-opt tl-no">D. Tăng 4 lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng công suất, $U$ gấp đôi thì dòng trên dây $I=P/U$ chỉ còn một nửa.</p><p>Dây nóng theo $RI^2$, nên hao phí còn $\tfrac14$. Mục VI chứng minh kĩ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nghĩ hao phí tỉ lệ với $I$. Dây nóng theo $I^2$.</p><p>C nghĩ dây không đổi thì hao phí không đổi. Hao phí còn tuỳ dòng chạy qua dây.</p><p>D dùng $U^2/R$ với $U$ đầu dây. Hiệu điện thế giữa hai đầu <em>dây</em> chỉ là phần sụt áp nhỏ, không phải $U$ đầu đường dây.</p></div>
+</div>
+<p>Câu 2. Một nam châm nằm yên trong lòng cuộn dây nối với điện kế. Kim điện kế:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q1" id="hsg8-q1a"><label for="hsg8-q1a" class="tl-opt tl-no">A. Lệch mạnh vì từ trường trong cuộn dây rất mạnh</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1b"><label for="hsg8-q1b" class="tl-opt tl-no">B. Lệch về một phía và đứng yên ở đó</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1c"><label for="hsg8-q1c" class="tl-opt tl-ok">C. Không lệch</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1d"><label for="hsg8-q1d" class="tl-opt tl-no">D. Dao động qua lại liên tục</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ trường mạnh nhưng <em>không đổi</em> thì không sinh dòng.</p><p>Mục III cho biết cần điều kiện gì.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A và B nghĩ "có nam châm mạnh là có dòng". Nam châm nằm yên thì kim về số 0.</p><p>D nhầm với dòng xoay chiều. Dòng đổi chiều chỉ khi từ trường qua cuộn dây thay đổi liên tục.</p></div>
+</div>
+</div>
+
+<h3>II. Nam châm, từ trường, đường sức từ</h3>
+
+<h4>1. Nam châm và đường sức từ (ôn tập)</h4>
+<p><strong>🔑 Cùng tên đẩy · Khác tên hút</strong></p>
+<ul>
+<li>Nam châm nào cũng có hai cực: Bắc (N), Nam (S).</li>
+<li>Bẻ đôi vẫn được hai nam châm, mỗi mảnh đủ hai cực.</li>
+<li>Quanh nam châm, quanh dòng điện, quanh Trái Đất có từ trường.</li>
+<li>Nhận biết từ trường: kim nam châm thử đặt vào thì bị quay.</li>
+</ul>
+<p>Ví dụ: rắc mạt sắt lên bìa đặt trên nam châm, gõ nhẹ. Mạt sắt xếp thành từ phổ nối hai cực.</p>
+<p><strong>🔑 Ra Bắc · Vào Nam · Khép kín</strong></p>
+<ul>
+<li>Bên ngoài nam châm, đường sức đi ra ở cực Bắc, đi vào ở cực Nam.</li>
+<li>Trong lòng nam châm, đường sức đi từ S sang N: đường khép kín.</li>
+<li>Chỗ đường sức dày: từ trường mạnh.</li>
+<li>Khe nam châm chữ U: đường sức song song, cách đều (từ trường đều).</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 12 400 300" role="img" aria-label="Đường sức từ của nam châm thẳng: nét đứt đi ra ở cực Bắc, vòng ra ngoài rồi đi vào cực Nam, trong lòng nam châm đi từ cực Nam sang cực Bắc"><path d="M140.0,142.0 C106.0,80.0 294.0,80.0 260.0,142.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M190.5,90.0 L200.0,95.5 L190.5,101.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M140.0,158.0 C106.0,220.0 294.0,220.0 260.0,158.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M190.5,199.0 L200.0,204.5 L190.5,210.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M140.0,136.0 C80.0,24.0 320.0,24.0 260.0,136.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M190.5,46.5 L200.0,52.0 L190.5,57.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M140.0,164.0 C80.0,276.0 320.0,276.0 260.0,164.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M190.5,242.5 L200.0,248.0 L190.5,253.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="140" y1="150" x2="34" y2="150" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M43.5,155.5 L34.0,150.0 L43.5,144.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="366" y1="150" x2="260" y2="150" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M269.5,155.5 L260.0,150.0 L269.5,144.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><rect x="140" y="130" width="60.0" height="40" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="200.0" y="130" width="60.0" height="40" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="170.0" y="156.0" fill="#f87171" font-size="18" font-weight="800" text-anchor="middle">N</text><text x="230.0" y="156.0" fill="#38bdf8" font-size="18" font-weight="800" text-anchor="middle">S</text><line x1="246" y1="162" x2="162" y2="162" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M169.8,166.5 L162.0,162.0 L169.8,157.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="200" y="34" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">chỗ đường sức dày: từ trường mạnh</text><text x="24" y="278" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">bên ngoài: ra ở N, vào ở S</text><text x="24" y="300" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">bên trong: từ S sang N (nét mảnh)</text></svg><figcaption>Hình 1. Đường sức từ của nam châm thẳng là những đường khép kín.<br>Ở gần hai cực, đường sức dày nhất.</figcaption></figure>
+
+<h4>2. Ống dây có dòng điện, quy tắc nắm tay phải</h4>
+<p><strong>🔑 Ngón theo dòng · Cái chỉ Bắc</strong></p>
+<ul>
+<li>Ống dây có dòng điện: từ phổ giống nam châm thẳng.</li>
+<li>Nắm tay phải, bốn ngón khum theo chiều dòng điện trong các vòng.</li>
+<li>Ngón cái choãi ra chỉ chiều đường sức trong lòng ống, chỉ về cực Bắc.</li>
+<li>Mẹo: nhìn vào đầu ống thấy dòng ngược chiều kim đồng hồ thì đầu đó là cực Bắc.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 40 400 292" role="img" aria-label="Ống dây có dòng điện: dòng ở mặt trước các vòng đi xuống, đường sức trong lòng ống hướng sang phải nên đầu phải là cực Bắc, đầu trái là cực Nam"><line x1="110" y1="120" x2="314" y2="120" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M304.5,114.5 L314.0,120.0 L304.5,125.5" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M298.0,98.0 L299.5,96.7 L300.9,95.4 L302.2,94.1 L303.4,92.9 L304.5,91.6 L305.5,90.4 L306.4,89.2 L307.2,88.0 L308.0,86.9 L308.6,85.7" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M308.7,70.3 L308.2,69.4 L307.5,68.5 L306.8,67.7 L306.0,66.8 L305.2,66.0 L304.3,65.2 L303.3,64.4 L302.3,63.6 L301.2,62.9 L300.1,62.1 L298.9,61.4 L297.6,60.7 L296.3,60.0 L295.0,59.3 L293.6,58.6 L292.1,58.0 L290.6,57.3 L289.1,56.7 L287.5,56.1 L285.8,55.5 L284.1,55.0 L282.4,54.4 L280.6,53.9 L278.8,53.4 L277.0,52.9 L275.1,52.4 L273.2,51.9 L271.3,51.5 L269.3,51.0 L267.2,50.6 L265.2,50.2 L263.1,49.8 L261.0,49.5 L258.9,49.1 L256.7,48.8 L254.5,48.5 L252.3,48.2 L250.1,47.9 L247.9,47.6 L245.6,47.3 L243.3,47.1 L241.0,46.9 L238.7,46.7 L236.3,46.5 L234.0,46.3 L231.6,46.2 L229.2,46.0 L226.9,45.9 L224.5,45.8 L222.1,45.7 L219.7,45.6 L217.3,45.6 L214.8,45.5 L212.4,45.5 L210.0,45.5 L207.6,45.5 L205.2,45.5 L202.7,45.6 L200.3,45.6 L197.9,45.7 L195.5,45.8 L193.1,45.9 L190.8,46.0 L188.4,46.2 L186.0,46.3 L183.7,46.5 L181.3,46.7 L179.0,46.9 L176.7,47.1 L174.4,47.3 L172.1,47.6 L169.9,47.9 L167.7,48.2 L165.5,48.5 L163.3,48.8 L161.1,49.1 L159.0,49.5 L156.9,49.8 L154.8,50.2 L152.8,50.6 L150.7,51.0 L148.7,51.5 L146.8,51.9 L144.9,52.4 L143.0,52.9 L141.2,53.4 L139.4,53.9 L137.6,54.4 L135.9,55.0 L134.2,55.5 L132.5,56.1 L130.9,56.7 L129.4,57.3 L127.9,58.0 L126.4,58.6 L125.0,59.3 L123.7,60.0 L122.4,60.7 L121.1,61.4 L119.9,62.1 L118.8,62.9 L117.7,63.6 L116.7,64.4 L115.7,65.2 L114.8,66.0 L114.0,66.8 L113.2,67.7 L112.5,68.5 L111.8,69.4 L111.3,70.3" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M111.4,85.7 L112.0,86.9 L112.8,88.0 L113.6,89.2 L114.5,90.4 L115.5,91.6 L116.6,92.9 L117.8,94.1 L119.1,95.4 L120.5,96.7 L122.0,98.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M219.5,51.0 L210.0,45.5 L219.5,40.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M298.0,142.0 L299.5,143.3 L300.9,144.6 L302.2,145.9 L303.4,147.1 L304.5,148.4 L305.5,149.6 L306.4,150.8 L307.2,152.0 L308.0,153.1 L308.6,154.3 L309.2,155.4 L309.7,156.6 L310.1,157.7 L310.4,158.8 L310.6,159.8 L310.8,160.9 L310.9,161.9 L310.9,163.0 L310.8,164.0 L310.6,165.0 L310.4,165.9 L310.1,166.9 L309.7,167.8 L309.3,168.8 L308.7,169.7 L308.2,170.6 L307.5,171.5 L306.8,172.3 L306.0,173.2 L305.2,174.0 L304.3,174.8 L303.3,175.6 L302.3,176.4 L301.2,177.1 L300.1,177.9 L298.9,178.6 L297.6,179.3 L296.3,180.0 L295.0,180.7 L293.6,181.4 L292.1,182.0 L290.6,182.7 L289.1,183.3 L287.5,183.9 L285.8,184.5 L284.1,185.0 L282.4,185.6 L280.6,186.1 L278.8,186.6 L277.0,187.1 L275.1,187.6 L273.2,188.1 L271.3,188.5 L269.3,189.0 L267.2,189.4 L265.2,189.8 L263.1,190.2 L261.0,190.5 L258.9,190.9 L256.7,191.2 L254.5,191.5 L252.3,191.8 L250.1,192.1 L247.9,192.4 L245.6,192.7 L243.3,192.9 L241.0,193.1 L238.7,193.3 L236.3,193.5 L234.0,193.7 L231.6,193.8 L229.2,194.0 L226.9,194.1 L224.5,194.2 L222.1,194.3 L219.7,194.4 L217.3,194.4 L214.8,194.5 L212.4,194.5 L210.0,194.5 L207.6,194.5 L205.2,194.5 L202.7,194.4 L200.3,194.4 L197.9,194.3 L195.5,194.2 L193.1,194.1 L190.8,194.0 L188.4,193.8 L186.0,193.7 L183.7,193.5 L181.3,193.3 L179.0,193.1 L176.7,192.9 L174.4,192.7 L172.1,192.4 L169.9,192.1 L167.7,191.8 L165.5,191.5 L163.3,191.2 L161.1,190.9 L159.0,190.5 L156.9,190.2 L154.8,189.8 L152.8,189.4 L150.7,189.0 L148.7,188.5 L146.8,188.1 L144.9,187.6 L143.0,187.1 L141.2,186.6 L139.4,186.1 L137.6,185.6 L135.9,185.0 L134.2,184.5 L132.5,183.9 L130.9,183.3 L129.4,182.7 L127.9,182.0 L126.4,181.4 L125.0,180.7 L123.7,180.0 L122.4,179.3 L121.1,178.6 L119.9,177.9 L118.8,177.1 L117.7,176.4 L116.7,175.6 L115.7,174.8 L114.8,174.0 L114.0,173.2 L113.2,172.3 L112.5,171.5 L111.8,170.6 L111.3,169.7 L110.7,168.8 L110.3,167.8 L109.9,166.9 L109.6,165.9 L109.4,165.0 L109.2,164.0 L109.1,163.0 L109.1,161.9 L109.2,160.9 L109.4,159.8 L109.6,158.8 L109.9,157.7 L110.3,156.6 L110.8,155.4 L111.4,154.3 L112.0,153.1 L112.8,152.0 L113.6,150.8 L114.5,149.6 L115.5,148.4 L116.6,147.1 L117.8,145.9 L119.1,144.6 L120.5,143.3 L122.0,142.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M219.5,200.0 L210.0,194.5 L219.5,189.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="143.3" y1="162.0" x2="156.7" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="130.0" y1="78.0" x2="143.3" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M142.5,124.7 L138.9,134.0 L132.6,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="170.0" y1="162.0" x2="183.3" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="156.7" y1="78.0" x2="170.0" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M169.1,124.7 L165.6,134.0 L159.3,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="196.7" y1="162.0" x2="210.0" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="183.3" y1="78.0" x2="196.7" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M195.8,124.7 L192.2,134.0 L185.9,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="223.3" y1="162.0" x2="236.7" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="210.0" y1="78.0" x2="223.3" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M222.5,124.7 L218.9,134.0 L212.6,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="250.0" y1="162.0" x2="263.3" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="236.7" y1="78.0" x2="250.0" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M249.1,124.7 L245.6,134.0 L239.3,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="276.7" y1="162.0" x2="290.0" y2="78.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="263.3" y1="78.0" x2="276.7" y2="162.0" stroke="#fb923c" stroke-width="3" opacity="1"/><path d="M275.8,124.7 L272.2,134.0 L265.9,126.2" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="130.0" y1="78.0" x2="100.0" y2="78.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="100.0" y1="78.0" x2="100.0" y2="236.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="290.0" y1="78.0" x2="320.0" y2="78.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="320.0" y1="78.0" x2="320.0" y2="236.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="100.0" y1="236.0" x2="192.0" y2="236.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="208.0" y1="236.0" x2="320.0" y2="236.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="192.0" y1="222.0" x2="192.0" y2="250.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="208.0" y1="228.0" x2="208.0" y2="244.0" stroke="currentColor" stroke-width="5" opacity="1"/><text x="184" y="218" fill="currentColor" font-size="16" font-weight="700" text-anchor="end">+</text><text x="216" y="218" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">−</text><path d="M95.0,208.7 L100.0,200.0 L105.0,208.7" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="92" y="126" fill="#38bdf8" font-size="20" font-weight="800" text-anchor="end">S</text><text x="342" y="112" fill="#f87171" font-size="20" font-weight="800" text-anchor="start">N</text><text x="20" y="276" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">4 ngón tay: theo chiều dòng điện</text><text x="20" y="298" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">ngón cái: chiều đường sức trong lòng ống</text><text x="20" y="320" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">đầu ngón cái chỉ ra là cực Bắc</text></svg><figcaption>Hình 2. Ống dây có dòng điện giống một nam châm thẳng.<br>Nhìn từ đầu phải: dòng chạy ngược chiều kim đồng hồ, đầu phải là cực Bắc.</figcaption></figure>
+<p><strong>🔑 Lõi sắt non · Có dòng mới hút</strong></p>
+<ul>
+<li>Nam châm điện: ống dây có lõi sắt non, mạnh hơn nhiều.</li>
+<li>Làm mạnh hơn: tăng cường độ dòng điện hoặc tăng số vòng dây.</li>
+<li>Ngắt dòng là sắt non hết từ tính.</li>
+</ul>
+<p>Ví dụ: cần cẩu bãi phế liệu đóng điện thì hút sắt thép, ngắt điện thì thả.</p>
+<p>Nhìn vào đầu A của một ống dây, thấy dòng điện chạy ngược chiều kim đồng hồ. Đặt một kim nam châm gần đầu A:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q2" id="hsg8-q2a"><label for="hsg8-q2a" class="tl-opt tl-ok">A. A là cực Bắc, cực Nam của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2b"><label for="hsg8-q2b" class="tl-opt tl-no">B. A là cực Bắc, cực Bắc của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2c"><label for="hsg8-q2c" class="tl-opt tl-no">C. A là cực Nam, cực Bắc của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2d"><label for="hsg8-q2d" class="tl-opt tl-no">D. Chưa biết được vì chưa biết chiều quấn dây</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ngược chiều kim đồng hồ nhìn từ A: A là cực Bắc.</p><p>Khác tên hút nhau, nên cực Nam của kim quay về A.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B nhớ ngược: cùng tên thì <em>đẩy</em>, không hút.</p><p>C đảo mẹo. Ngược chiều kim đồng hồ là cực Bắc, cùng chiều mới là cực Nam.</p><p>D thừa điều kiện. Đã biết chiều dòng nhìn từ đầu ống là đủ, chiều quấn đã nằm trong đó.</p></div>
+</div>
+
+<h3>III. Hiện tượng cảm ứng điện từ</h3>
+
+<h4>1. Khi nào có dòng điện cảm ứng?</h4>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: nam châm và cuộn dây kín</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối cuộn dây với điện kế G thành mạch kín, làm lần lượt các việc ở bảng.</li>
+<li><strong>Quan sát:</strong> kim có lệch không.</li>
+<li><strong>Rút ra:</strong> kim chỉ lệch khi số đường sức qua cuộn dây đang thay đổi.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Việc làm</th><th>Kim điện kế</th></tr></thead>
+<tbody>
+<tr><td>Đưa nam châm lại gần</td><td>lệch</td></tr>
+<tr><td>Giữ nam châm yên trong cuộn dây</td><td>không lệch</td></tr>
+<tr><td>Kéo nam châm ra xa</td><td>lệch ngược lại</td></tr>
+<tr><td>Quay nam châm quanh trục dọc của chính nó</td><td>không lệch</td></tr>
+<tr><td>Thay bằng nam châm điện: đóng khoá K</td><td>lệch thoáng qua</td></tr>
+<tr><td>Giữ K đóng</td><td>không lệch</td></tr>
+<tr><td>Ngắt K</td><td>lệch thoáng qua, ngược lúc đóng</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Quay nam châm quanh trục của nó, nam châm vẫn chuyển động. Vì sao kim không lệch? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Từ phổ của nam châm thẳng đối xứng quanh trục dọc.</p>
+<p>Quay quanh trục đó, đường sức qua cuộn dây vẫn y như cũ.</p>
+<p>Số đường sức không đổi thì không có dòng, dù có chuyển động.</p>
+</details>
+</div>
+<p><strong>🔑 Mạch kín · Đường sức biến thiên</strong></p>
+<ul>
+<li>Cuộn dây <em>kín</em> có dòng cảm ứng khi số đường sức xuyên qua tiết diện của nó <em>biến thiên</em>.</li>
+<li>Số đường sức qua tiết diện còn gọi là từ thông.</li>
+<li>Đó là hiện tượng cảm ứng điện từ.</li>
+</ul>
+
+<h4>2. Chiều dòng cảm ứng: định luật Lenz</h4>
+<p><strong>🔑 Chống biến thiên · Gần đẩy · Xa hút</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Dòng cảm ứng sinh ra từ trường chống lại <em>sự biến thiên</em> đã sinh ra nó.</li>
+<li>Nam châm lại gần: mặt cuộn dây đối diện thành cực cùng tên, đẩy ra.</li>
+<li>Nam châm ra xa: mặt đó thành cực khác tên, hút lại.</li>
+<li>Vì sao chống lại? Nếu "giúp" nam châm lao vào, điện năng tự sinh ra không tốn công: trái bảo toàn năng lượng.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 34 400 294" role="img" aria-label="Đưa cực Bắc của nam châm lại gần đầu A của cuộn dây kín nối điện kế: kim điện kế lệch, đầu A trở thành cực Bắc để đẩy nam châm"><rect x="24" y="92" width="60.0" height="36" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="84.0" y="92" width="60.0" height="36" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><text x="54.0" y="116.0" fill="#38bdf8" font-size="18" font-weight="800" text-anchor="middle">S</text><text x="114.0" y="116.0" fill="#f87171" font-size="18" font-weight="800" text-anchor="middle">N</text><line x1="84.0" y1="150.0" x2="142.0" y2="150.0" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M133.3,145.0 L142.0,150.0 L133.3,155.0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="84" y="174" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">lại gần</text><line x1="222.0" y1="144.0" x2="234.0" y2="76.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="210.0" y1="76.0" x2="222.0" y2="144.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><line x1="246.0" y1="144.0" x2="258.0" y2="76.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="234.0" y1="76.0" x2="246.0" y2="144.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><path d="M235.9,111.4 L239.3,102.0 L245.7,109.7" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="270.0" y1="144.0" x2="282.0" y2="76.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="258.0" y1="76.0" x2="270.0" y2="144.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><line x1="294.0" y1="144.0" x2="306.0" y2="76.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="282.0" y1="76.0" x2="294.0" y2="144.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><path d="M283.9,111.4 L287.3,102.0 L293.7,109.7" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="318.0" y1="144.0" x2="330.0" y2="76.0" stroke="currentColor" stroke-width="1.4" opacity="0.45"/><line x1="306.0" y1="76.0" x2="318.0" y2="144.0" stroke="currentColor" stroke-width="2.6" opacity="1"/><line x1="146" y1="104" x2="196" y2="104" stroke="#f87171" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M187.3,99.0 L196.0,104.0 L187.3,109.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="300" y1="118" x2="222" y2="118" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4"/><path d="M231.5,123.5 L222.0,118.0 L231.5,112.5" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="204" y="80" fill="currentColor" font-size="18" font-weight="800" text-anchor="end">A</text><text x="204" y="58" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">đầu A: thành cực N</text><line x1="222.0" y1="144.0" x2="222.0" y2="210.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="330.0" y1="76.0" x2="352.0" y2="76.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="352.0" y1="76.0" x2="352.0" y2="210.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="222.0" y1="210.0" x2="256.0" y2="210.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="284.0" y1="210.0" x2="352.0" y2="210.0" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="270" cy="210" r="16" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><text x="270" y="216" fill="currentColor" font-size="16" font-weight="800" text-anchor="middle">G</text><line x1="270.0" y1="210.0" x2="279.0" y2="199.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><text x="24" y="252" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">đỏ: đường sức của nam châm</text><text x="24" y="274" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">xanh: từ trường của dòng cảm ứng</text><text x="24" y="296" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">hai cực N đối diện: đẩy nhau</text><text x="24" y="318" fill="#38bdf8" font-size="15" font-weight="600" text-anchor="start">mũi tên xanh trên vòng dây: chiều dòng cảm ứng</text></svg><figcaption>Hình 3. Nam châm đang lại gần: số đường sức qua cuộn dây tăng.<br>Dòng cảm ứng làm đầu A thành cực Bắc, cản nam châm tiến vào.</figcaption></figure>
+<p>Cực Nam của nam châm quay về đầu A của một cuộn dây kín. Đưa nam châm lại gần. Khi đó:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg8-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg8-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q3" id="hsg8-q3a"><label for="hsg8-q3a" class="tl-opt tl-no">A. A thành cực Bắc, hút nam châm vào</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3b"><label for="hsg8-q3b" class="tl-opt tl-no">B. A thành cực Nam, hút nam châm vào</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3c"><label for="hsg8-q3c" class="tl-opt tl-no">C. Không có dòng vì cực Nam không sinh dòng</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3d"><label for="hsg8-q3d" class="tl-opt tl-ok">D. A thành cực Nam, đẩy nam châm ra</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lại gần thì cuộn dây chống lại bằng cách đẩy.</p><p>Muốn đẩy cực Nam, A phải là cực Nam.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A làm dòng cảm ứng "giúp" nam châm lao vào. Như thế là tự sinh năng lượng.</p><p>B nhầm: hai cực Nam đối diện thì <em>đẩy</em>, không hút.</p><p>C sai: cực nào lại gần cũng làm số đường sức qua cuộn dây tăng.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Có nam châm gần là có dòng</td><td>Số đường sức phải đang thay đổi</td></tr>
+<tr><td>Có chuyển động là có dòng</td><td>Quay quanh trục đối xứng: không có dòng</td></tr>
+<tr><td>Từ thông lớn thì dòng lớn</td><td>Từ thông thay đổi nhanh thì dòng lớn</td></tr>
+<tr><td>Lenz: chống lại từ trường ngoài</td><td>Chống lại <em>sự biến thiên</em>: ra xa thì lại hút</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Dòng điện xoay chiều và máy phát điện</h3>
+<p><strong>🔑 Biến thiên đều · Đổi chiều liên tục</strong></p>
+<ul>
+<li>Nam châm quay trước cuộn dây, hoặc khung dây quay trong từ trường.</li>
+<li>Số đường sức qua cuộn dây lúc tăng, lúc giảm, lặp lại đều.</li>
+<li>Dòng cảm ứng đổi chiều liên tục: dòng xoay chiều.</li>
+<li>Mỗi chu kì, dòng đổi chiều 2 lần.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 20 400 244" role="img" aria-label="Đồ thị cường độ dòng điện xoay chiều theo thời gian: hình sin, trong một chu kì dòng điện đổi chiều hai lần"><line x1="56.0" y1="120.0" x2="384.0" y2="120.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M375.3,115.0 L384.0,120.0 L375.3,125.0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="56.0" y1="214.0" x2="56.0" y2="30.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M51.0,38.7 L56.0,30.0 L61.0,38.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="64" y="38" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">i</text><text x="384" y="144" fill="currentColor" font-size="16" font-weight="700" text-anchor="end">t</text><path d="M56.0,120.0 L58.0,116.0 L60.0,112.0 L62.0,108.0 L64.0,104.1 L66.0,100.2 L68.0,96.4 L70.0,92.8 L72.0,89.2 L74.0,85.7 L76.0,82.4 L78.0,79.2 L80.0,76.2 L82.0,73.3 L84.0,70.7 L86.0,68.2 L88.0,66.0 L90.0,63.9 L92.0,62.1 L94.0,60.5 L96.0,59.1 L98.0,58.0 L100.0,57.1 L102.0,56.5 L104.0,56.1 L106.0,56.0 L108.0,56.1 L110.0,56.5 L112.0,57.1 L114.0,58.0 L116.0,59.1 L118.0,60.5 L120.0,62.1 L122.0,63.9 L124.0,66.0 L126.0,68.2 L128.0,70.7 L130.0,73.3 L132.0,76.2 L134.0,79.2 L136.0,82.4 L138.0,85.7 L140.0,89.2 L142.0,92.8 L144.0,96.4 L146.0,100.2 L148.0,104.1 L150.0,108.0 L152.0,112.0 L154.0,116.0 L156.0,120.0 L158.0,124.0 L160.0,128.0 L162.0,132.0 L164.0,135.9 L166.0,139.8 L168.0,143.6 L170.0,147.2 L172.0,150.8 L174.0,154.3 L176.0,157.6 L178.0,160.8 L180.0,163.8 L182.0,166.7 L184.0,169.3 L186.0,171.8 L188.0,174.0 L190.0,176.1 L192.0,177.9 L194.0,179.5 L196.0,180.9 L198.0,182.0 L200.0,182.9 L202.0,183.5 L204.0,183.9 L206.0,184.0 L208.0,183.9 L210.0,183.5 L212.0,182.9 L214.0,182.0 L216.0,180.9 L218.0,179.5 L220.0,177.9 L222.0,176.1 L224.0,174.0 L226.0,171.8 L228.0,169.3 L230.0,166.7 L232.0,163.8 L234.0,160.8 L236.0,157.6 L238.0,154.3 L240.0,150.8 L242.0,147.2 L244.0,143.6 L246.0,139.8 L248.0,135.9 L250.0,132.0 L252.0,128.0 L254.0,124.0 L256.0,120.0 L258.0,116.0 L260.0,112.0 L262.0,108.0 L264.0,104.1 L266.0,100.2 L268.0,96.4 L270.0,92.8 L272.0,89.2 L274.0,85.7 L276.0,82.4 L278.0,79.2 L280.0,76.2 L282.0,73.3 L284.0,70.7 L286.0,68.2 L288.0,66.0 L290.0,63.9 L292.0,62.1 L294.0,60.5 L296.0,59.1 L298.0,58.0 L300.0,57.1 L302.0,56.5 L304.0,56.1 L306.0,56.0 L308.0,56.1 L310.0,56.5 L312.0,57.1 L314.0,58.0 L316.0,59.1 L318.0,60.5 L320.0,62.1 L322.0,63.9 L324.0,66.0 L326.0,68.2 L328.0,70.7 L330.0,73.3 L332.0,76.2 L334.0,79.2 L336.0,82.4 L338.0,85.7 L340.0,89.2 L342.0,92.8 L344.0,96.4 L346.0,100.2 L348.0,104.1 L350.0,108.0 L352.0,112.0 L354.0,116.0 L356.0,120.0 L358.0,124.0 L360.0,128.0 L362.0,132.0 L364.0,135.9 L366.0,139.8" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="156.0" cy="120" r="4.5" fill="#fb923c"/><circle cx="256.0" cy="120" r="4.5" fill="#fb923c"/><text x="148.0" y="146" fill="#fb923c" font-size="15" font-weight="700" text-anchor="end">đổi chiều</text><text x="264" y="146" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">đổi chiều</text><text x="106.0" y="46" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">chiều 1</text><text x="206.0" y="206" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">chiều 2</text><line x1="56.0" y1="232.0" x2="256.0" y2="232.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><path d="M249.1,228.0 L256.0,232.0 L249.1,236.0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M62.9,236.0 L56.0,232.0 L62.9,228.0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="256.0" y1="214.0" x2="256.0" y2="240.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7"/><text x="156.0" y="254" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">một chu kì T (rôto quay một vòng)</text></svg><figcaption>Hình 4. Dòng xoay chiều: lúc theo chiều 1, lúc theo chiều 2.<br>Trong một chu kì, dòng đổi chiều hai lần.<br>Máy phát một cặp cực: một chu kì ứng với một vòng quay.</figcaption></figure>
+<p><strong>🔑 Rôto quay · Stato đứng yên</strong></p>
+<ul>
+<li>Máy phát gồm nam châm và cuộn dây. Phần quay: rôto. Phần đứng yên: stato.</li>
+<li>Cuộn dây quay: lấy điện qua vành khuyên và chổi quét.</li>
+<li>Nam châm quay: lấy điện thẳng từ cuộn dây đứng yên. Nhà máy dùng loại này.</li>
+<li>Tần số $f=np$ (<strong>Mở rộng HSG</strong>): $n$ là số vòng quay mỗi giây, $p$ là số <em>cặp</em> cực.</li>
+<li>Lưới điện Việt Nam: $f=50\ \text{Hz}$, dòng đổi chiều 100 lần mỗi giây.</li>
+</ul>
+<p>Ví dụ: dinamô xe đạp có núm cọ vào lốp làm nam châm quay. Đi càng nhanh, đèn càng sáng.</p>
+<p>Một máy phát có rôto 6 cực từ, quay $1000$ vòng/phút. Tần số dòng điện là:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q4" id="hsg8-q4a"><label for="hsg8-q4a" class="tl-opt tl-no">A. $100\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4b"><label for="hsg8-q4b" class="tl-opt tl-ok">B. $50\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4c"><label for="hsg8-q4c" class="tl-opt tl-no">C. $3000\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4d"><label for="hsg8-q4d" class="tl-opt tl-no">D. $\approx16{,}7\ \text{Hz}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> 6 cực là $p=3$ cặp cực.</p><p>$n=1000:60\ \text{vòng/s}$, nên $f=\dfrac{1000}{60}\cdot3=50\ \text{Hz}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy $p=6$. Phải đếm số <em>cặp</em> cực: 6 cực là 3 cặp.</p><p>C quên đổi vòng/phút ra vòng/giây.</p><p>D quên nhân với số cặp cực.</p></div>
+</div>
+<p><strong>🔑 Nhiệt · Sáng · Từ · Sinh lí</strong></p>
+<ul>
+<li>Nhiệt: ấm điện, bàn là.</li>
+<li>Phát sáng: đèn LED, đèn ống.</li>
+<li>Từ: nam châm điện của chuông, rơ-le vẫn hút sắt.</li>
+<li>Sinh lí: điện giật làm co cơ, có thể chết người.</li>
+<li>$220\ \text{V}$ là giá trị hiệu dụng: nóng như dòng một chiều $220\ \text{V}$.</li>
+</ul>
+<details class="tl-details">
+<summary>Xem thêm: hiệu điện thế lưới lúc lớn nhất là bao nhiêu? (Mở rộng)</summary>
+<p>Hiệu điện thế lưới thay đổi liên tục, lúc lớn nhất khoảng $311\ \text{V}$.</p>
+<p>Bài tính lớp 9 chỉ dùng giá trị hiệu dụng $220\ \text{V}$.</p>
+</details>
+
+<h3>V. Máy biến áp (Mở rộng HSG)</h3>
+<p><strong>🔑 Lõi thép · Hai cuộn · Chỉ xoay chiều</strong></p>
+<ul>
+<li>Máy biến áp (còn gọi máy biến thế): hai cuộn dây trên một lõi thép kín.</li>
+<li>Lõi ghép từ lá thép mỏng cách điện.</li>
+<li>Cuộn sơ cấp $N_1$ nối nguồn, cuộn thứ cấp $N_2$ nối tải.</li>
+<li>Dòng xoay chiều ở sơ cấp tạo từ trường biến thiên trong lõi, sinh dòng cảm ứng ở thứ cấp.</li>
+<li>Nguồn một chiều: từ trường không đổi, thứ cấp không có điện (trừ lúc đóng, ngắt).</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 22 400 278" role="img" aria-label="Máy biến áp: lõi thép kín, cuộn sơ cấp nhiều vòng nối nguồn xoay chiều, cuộn thứ cấp ít vòng nối bóng đèn, từ trường biến thiên chạy vòng trong lõi"><rect x="110" y="40" width="180" height="170" rx="4" fill="none" stroke="currentColor" stroke-width="22"/><rect x="110" y="40" width="180" height="170" rx="4" fill="none" stroke="rgba(148,163,184,.25)" stroke-width="18"/><path d="M110,72 L110,40 L290,40 L290,210 L110,210 L110,178" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M190.5,34.5 L200.0,40.0 L190.5,45.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M209.5,215.5 L200.0,210.0 L209.5,204.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="94.0" y1="78.0" x2="126.0" y2="84.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="90.0" x2="126.0" y2="96.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="102.0" x2="126.0" y2="108.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="114.0" x2="126.0" y2="120.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="126.0" x2="126.0" y2="132.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="138.0" x2="126.0" y2="144.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="150.0" x2="126.0" y2="156.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="94.0" y1="162.0" x2="126.0" y2="168.0" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="274.0" y1="96.0" x2="306.0" y2="102.0" stroke="#34d399" stroke-width="3" opacity="1"/><line x1="274.0" y1="114.0" x2="306.0" y2="120.0" stroke="#34d399" stroke-width="3" opacity="1"/><line x1="274.0" y1="132.0" x2="306.0" y2="138.0" stroke="#34d399" stroke-width="3" opacity="1"/><line x1="274.0" y1="150.0" x2="306.0" y2="156.0" stroke="#34d399" stroke-width="3" opacity="1"/><line x1="94.0" y1="78.0" x2="50.0" y2="78.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="94.0" y1="168.0" x2="50.0" y2="168.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="306.0" y1="102.0" x2="352.0" y2="102.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="306.0" y1="156.0" x2="352.0" y2="156.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><circle cx="40" cy="123" r="16" fill="none" stroke="#fb923c" stroke-width="2"/><text x="40" y="129" fill="#fb923c" font-size="22" font-weight="800" text-anchor="middle">~</text><line x1="40.0" y1="78.0" x2="50.0" y2="78.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="40.0" y1="78.0" x2="40.0" y2="107.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="40.0" y1="139.0" x2="40.0" y2="168.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="40.0" y1="168.0" x2="50.0" y2="168.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><circle cx="362" cy="129" r="14" fill="none" stroke="#34d399" stroke-width="2"/><line x1="352.0" y1="119.0" x2="372.0" y2="139.0" stroke="#34d399" stroke-width="1.6" opacity="1"/><line x1="372.0" y1="119.0" x2="352.0" y2="139.0" stroke="#34d399" stroke-width="1.6" opacity="1"/><line x1="352.0" y1="102.0" x2="362.0" y2="102.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="362.0" y1="102.0" x2="362.0" y2="115.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="362.0" y1="143.0" x2="362.0" y2="156.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="352.0" y1="156.0" x2="362.0" y2="156.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><text x="24" y="244" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">cam: cuộn sơ cấp N₁, nối nguồn xoay chiều U₁</text><text x="24" y="266" fill="#34d399" font-size="15" font-weight="700" text-anchor="start">xanh lá: cuộn thứ cấp N₂, nối tải U₂</text><text x="24" y="288" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">xanh: từ trường biến thiên trong lõi</text><text x="200" y="132" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">lõi thép</text></svg><figcaption>Hình 5. Máy biến áp (ở đây là máy hạ áp vì N₂&nbsp;&lt;&nbsp;N₁).<br>Hai cuộn không nối điện với nhau.<br>Năng lượng truyền sang cuộn thứ cấp nhờ từ trường biến thiên trong lõi.</figcaption></figure>
+<p><strong>🔑 Áp theo vòng · Dòng ngược vòng</strong></p>
+<ul>
+<li>$\dfrac{U_1}{U_2}=\dfrac{N_1}{N_2}$.</li>
+<li>$N_2\gt N_1$: máy tăng áp. $N_2\lt N_1$: máy hạ áp.</li>
+<li>Máy lí tưởng: $U_1I_1=U_2I_2$, nên $\dfrac{I_1}{I_2}=\dfrac{N_2}{N_1}$.</li>
+<li>Tăng áp bao nhiêu lần thì dòng giảm bấy nhiêu lần.</li>
+<li>Máy biến áp không tạo ra năng lượng. Máy thực: $H_{\text{BA}}=\dfrac{P_2}{P_1}\lt1$.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: đo hiệu điện thế thứ cấp (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> sơ cấp $400$ vòng nối nguồn xoay chiều học sinh $12\ \text{V}$. Đổi thứ cấp $100$, $200$, $400$ vòng, đo $U_2$.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $U_2$ tỉ lệ $N_2$, số đo nhỏ hơn lí thuyết khoảng $3\%$.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$N_2$ (vòng)</th><th>Lí thuyết (V)</th><th>Đo được (V)</th></tr></thead>
+<tbody>
+<tr><td>100</td><td>3</td><td>2,9</td></tr>
+<tr><td>200</td><td>6</td><td>5,8</td></tr>
+<tr><td>400</td><td>12</td><td>11,6</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Vì sao số đo luôn nhỏ hơn lí thuyết, không lúc lớn lúc nhỏ? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Lệch về một phía là sai số hệ thống, không phải do đọc vôn kế.</p>
+<p>Cuộn dây có điện trở, nên nóng lên.</p>
+<p>Lõi thép có dòng Fu-cô (dòng cảm ứng xoáy trong lõi), cũng làm lõi nóng.</p>
+<p>Một ít đường sức đi ra ngoài lõi, không qua cuộn thứ cấp.</p>
+<p>Vì sao dùng nguồn học sinh $12\ \text{V}$? Điện lưới $220\ \text{V}$ không an toàn cho thí nghiệm của học sinh.</p>
+</details>
+</div>
+<p>Máy biến áp lí tưởng hạ $220\ \text{V}$ xuống $12\ \text{V}$, đèn $12\ \text{V}-36\ \text{W}$ sáng bình thường. Dòng qua cuộn sơ cấp:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q5" id="hsg8-q5a"><label for="hsg8-q5a" class="tl-opt tl-ok">A. $\approx0{,}16\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5b"><label for="hsg8-q5b" class="tl-opt tl-no">B. $3\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5c"><label for="hsg8-q5c" class="tl-opt tl-no">C. $55\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5d"><label for="hsg8-q5d" class="tl-opt tl-no">D. Không tính được vì chưa biết số vòng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Máy lí tưởng: $P_1=P_2=36\ \text{W}$.</p><p>$I_1=\dfrac{36}{220}\approx0{,}16\ \text{A}$. Bên hạ áp dòng lớn ($3\ \text{A}$), bên cao áp dòng nhỏ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B coi dòng hai cuộn bằng nhau. Đó là dòng thứ cấp $I_2$.</p><p>C nhân ngược tỉ số. Bên hiệu điện thế cao phải có dòng <em>nhỏ</em>.</p><p>D thừa dữ kiện: tỉ số vòng đã nằm trong $U_1:U_2$, hoặc dùng thẳng $U_1I_1=U_2I_2$.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>$\dfrac{U_1}{U_2}=\dfrac{N_2}{N_1}$</td><td>Hiệu điện thế cùng chiều với số vòng</td></tr>
+<tr><td>Sơ cấp là cuộn nhiều vòng</td><td>Sơ cấp là cuộn nối <em>nguồn</em></td></tr>
+<tr><td>Tăng áp là thêm năng lượng</td><td>Áp tăng, dòng giảm, $P$ giữ nguyên</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>VI. Truyền tải điện năng đi xa (Mở rộng HSG)</h3>
+
+<h4>1. Hao phí trên đường dây</h4>
+<p><strong>🔑 Hao phí theo $I^2$ · $U$ gấp $k$, giảm $k^2$</strong></p>
+<ul>
+<li>Dây nóng lên: $P_{\text{hp}}=RI^2$ (Joule–Lenz).</li>
+<li>Dòng trên dây: $I=\dfrac{P}{U}$, với $P$ và $U$ ở <em>đầu</em> đường dây.</li>
+<li>Vậy $P_{\text{hp}}=\dfrac{P^2R}{U^2}$.</li>
+<li>Tăng $U$ lên $k$ lần thì hao phí giảm $k^2$ lần.</li>
+<li>Điện trở cả hai dây: $R=\rho\dfrac{2\ell}{S}$, $\ell$ là khoảng cách truyền.</li>
+<li>Hiệu suất truyền tải: $H=1-\dfrac{P_{\text{hp}}}{P}$.</li>
+<li>Độ giảm thế trên dây: $\Delta U=IR$. Nơi tiêu thụ: $U_{\text{tt}}=U-\Delta U$.</li>
+</ul>
+<ul>
+<li>Tăng $S$: tốn kim loại, cột to, hao phí chỉ giảm bậc nhất.</li>
+<li>Tăng $U$ bằng máy tăng áp: giảm theo bình phương, rẻ nhất.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 10 400 384" role="img" aria-label="Sơ đồ truyền tải điện từ nhà máy: máy phát, trạm tăng áp, đường dây cao thế 500, 220 hoặc 110 kV, trạm hạ áp, đường dây 22 kV, máy hạ áp khu dân cư, ổ cắm 220 V"><rect x="40" y="20" width="200" height="34" rx="8" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><text x="140.0" y="43" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Nhà máy: máy phát</text><line x1="70.0" y1="54.0" x2="70.0" y2="98.0" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M74.5,90.2 L70.0,98.0 L65.5,90.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="84" y="83.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">10–20 kV</text><rect x="40" y="100" width="200" height="34" rx="8" fill="none" stroke="#fb923c" stroke-width="2"/><text x="140.0" y="123" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">Trạm tăng áp</text><line x1="70.0" y1="134.0" x2="70.0" y2="178.0" stroke="#f87171" stroke-width="3" opacity="1"/><path d="M74.5,170.2 L70.0,178.0 L65.5,170.2" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="84" y="163.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">dây cao thế 500, 220, 110 kV</text><rect x="40" y="180" width="200" height="34" rx="8" fill="none" stroke="#34d399" stroke-width="2"/><text x="140.0" y="203" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">Trạm hạ áp khu vực</text><line x1="70.0" y1="214.0" x2="70.0" y2="258.0" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M74.5,250.2 L70.0,258.0 L65.5,250.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="84" y="243.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">dây trung thế 22 kV</text><rect x="40" y="260" width="200" height="34" rx="8" fill="none" stroke="#34d399" stroke-width="2"/><text x="140.0" y="283" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">Máy hạ áp khu dân cư</text><line x1="70.0" y1="294.0" x2="70.0" y2="338.0" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M74.5,330.2 L70.0,338.0 L65.5,330.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="84" y="323.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">0,4 kV (220 V mỗi pha)</text><rect x="40" y="340" width="200" height="34" rx="8" fill="none" stroke="#38bdf8" stroke-width="2"/><text x="140.0" y="363" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">Nhà em: ổ cắm</text></svg><figcaption>Hình 6. Điện đi xa ở hiệu điện thế rất cao, tới gần nơi dùng mới hạ dần.<br>Mỗi lần đổi hiệu điện thế là một máy biến áp.</figcaption></figure>
+<p>An toàn: không thả diều, câu cá gần dây cao thế.</p>
+<p>Giữ $P$, $U$, chiều dài. Thay dây cùng chất, tiết diện gấp đôi. Hao phí:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q6" id="hsg8-q6a"><label for="hsg8-q6a" class="tl-opt tl-no">A. Giảm 4 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6b"><label for="hsg8-q6b" class="tl-opt tl-no">B. Tăng 2 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6c"><label for="hsg8-q6c" class="tl-opt tl-ok">C. Giảm 2 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6d"><label for="hsg8-q6d" class="tl-opt tl-no">D. Không đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $S$ gấp đôi thì $R$ còn một nửa.</p><p>$I=P/U$ không đổi, nên $P_{\text{hp}}=RI^2$ giảm 2 lần. Tốn gấp đôi kim loại mà chỉ lợi 2 lần.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nhầm với khi tăng $U$. Bình phương nằm ở $U$, còn $R$ chỉ bậc nhất.</p><p>B nghĩ dây to thì dòng lớn hơn. Dòng do $P$ và $U$ quyết định.</p><p>D quên rằng $R$ giảm khi $S$ tăng.</p></div>
+</div>
+
+<h4>2. Bài toán mẫu: đường dây 10 km</h4>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Trạm truyền $400\ \text{kW}$ tới khu dân cư cách $10\ \text{km}$ bằng hai dây đồng, mỗi dây tiết diện $34\ \text{mm}^2$, $\rho=1{,}7\cdot10^{-8}\ \Omega\cdot\text{m}$. Hiệu điện thế đầu đường dây $20\ \text{kV}$.</p>
+<p>a) Tính $R$, $I$, $P_{\text{hp}}$, $H$.</p>
+<p>b) Tính $\Delta U$ và $U_{\text{tt}}$.</p>
+<p>c) Nếu chỉ truyền ở $5\ \text{kV}$ thì hao phí bao nhiêu?</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"cách $10\ \text{km}$ bằng hai dây"</td><td>$\ell=10^4\ \text{m}$</td><td>dây dài $2\ell$</td></tr>
+<tr><td>"tiết diện $34\ \text{mm}^2$"</td><td>$S=34\cdot10^{-6}\ \text{m}^2$</td><td>$R=\rho\dfrac{2\ell}{S}$</td></tr>
+<tr><td>"công suất $400\ \text{kW}$", "đầu đường dây $20\ \text{kV}$"</td><td>$P$, $U$ ở đầu dây</td><td>$I=\dfrac{P}{U}$</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$R=1{,}7\cdot10^{-8}\cdot\dfrac{2\cdot10^4}{34\cdot10^{-6}}=10\ \Omega$.</li>
+<li>$I=\dfrac{400\,000}{20\,000}=20\ \text{A}$.</li>
+<li>$P_{\text{hp}}=10\cdot20^2=4000\ \text{W}=4\ \text{kW}$, nên $H=1-\dfrac{4}{400}=99\%$.</li>
+<li>$\Delta U=20\cdot10=200\ \text{V}$, $U_{\text{tt}}=20\,000-200=19\,800\ \text{V}$.</li>
+<li>Ở $5\ \text{kV}$: $I=80\ \text{A}$, $P_{\text{hp}}=10\cdot80^2=64\ \text{kW}$, chỉ còn $H=84\%$.</li>
+<li>Kiểm tra: $U$ giảm 4 lần, hao phí tăng $4^2=16$ lần ($4\to64\ \text{kW}$). Khớp.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: vẫn đường dây trên, muốn hao phí không quá $0{,}25\%$ công suất truyền đi.</p>
+<ol class="tl-steps">
+<li>Điều kiện: $\dfrac{P^2R}{U^2}\le0{,}0025P$.</li>
+<li><strong>Em điền:</strong> $U^2\ge\;?$</li>
+<li>Kết luận: $U\ge\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$U^2\ge\dfrac{PR}{0{,}0025}=\dfrac{4\cdot10^5\cdot10}{0{,}0025}=1{,}6\cdot10^9$.</p>
+<p>$U\ge40\,000\ \text{V}=40\ \text{kV}$: gấp đôi $20\ \text{kV}$, hao phí giảm 4 lần còn $1\ \text{kW}$.</p></details>
+</div>
+<p>Biến thể: vẫn đường dây và $P$ trên, truyền ở $10\ \text{kV}$. Hiệu suất:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg8-q7c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg8-q7c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q7" id="hsg8-q7a"><label for="hsg8-q7a" class="tl-opt tl-no">A. $98\%$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7b"><label for="hsg8-q7b" class="tl-opt tl-no">B. $99{,}5\%$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7c"><label for="hsg8-q7c" class="tl-opt tl-no">C. Không truyền được, vì $\dfrac{U^2}{R}=10\ \text{MW}\gt P$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7d"><label for="hsg8-q7d" class="tl-opt tl-ok">D. $96\%$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $I=\dfrac{400\,000}{10\,000}=40\ \text{A}$.</p><p>$P_{\text{hp}}=10\cdot40^2=16\ \text{kW}$, $H=1-\dfrac{16}{400}=96\%$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nghĩ $U$ giảm 2 lần thì hao phí tăng 2 lần ($1\%\to2\%$). Phải tăng $2^2=4$ lần.</p><p>B nghĩ hạ $U$ thì hao phí giảm. Ngược lại: $U$ nhỏ, dòng lớn, dây nóng hơn.</p><p>C dùng $\dfrac{U^2}{R}$ với $U$ đầu đường dây. Hai đầu <em>dây</em> chỉ có $\Delta U=IR=400\ \text{V}$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Tăng $U$ 10 lần, hao phí giảm 10 lần</td><td>Giảm $10^2=100$ lần</td></tr>
+<tr><td>$I=\dfrac{P}{U_{\text{tt}}}$ hay $\dfrac{P}{220}$</td><td>$I=\dfrac{P}{U}$, $U$ ở đầu đường dây</td></tr>
+<tr><td>Dây dài $\ell$</td><td>Hai dây: dài $2\ell$</td></tr>
+<tr><td>Ra $P_{\text{hp}}\gt P$ vẫn ghi</td><td>Vô lí: xem lại $U$, đơn vị</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>3. Thử sức</h4>
+<details class="tl-details">
+<summary>⭐ Thử thách 1: máy tăng áp lí tưởng $500/10\,000$ vòng, $U_1=1\ \text{kV}$, truyền $400\ \text{kW}$. Tìm $U_2$, $I_1$, $I_2$.</summary>
+<p>$U_2=1000\cdot\dfrac{10\,000}{500}=20\,000\ \text{V}$.</p>
+<p>$I_1=\dfrac{400\,000}{1000}=400\ \text{A}$.</p>
+<p>$I_2=\dfrac{400\,000}{20\,000}=20\ \text{A}$: dòng giảm 20 lần đúng bằng số lần tăng áp.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: thay dây cùng chất, cùng chiều dài, đường kính gấp đôi. Hao phí đổi thế nào? Giữ dây cũ thì tăng $U$ mấy lần để được như vậy?</summary>
+<p>Đường kính gấp đôi thì tiết diện gấp $2^2=4$ lần, $R$ còn $\tfrac14$.</p>
+<p>Hao phí giảm 4 lần.</p>
+<p>Giữ dây cũ: cần $k^2=4$, tức tăng $U$ lên 2 lần. Rẻ hơn nhiều so với tốn gấp 4 lần kim loại.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: quay tay máy phát nhỏ. Để hở hai đầu ra thì quay nhẹ, nối bóng đèn thì nặng hẳn. Vì sao?</summary>
+<p>Để hở: mạch không kín, không có dòng cảm ứng, không có gì cản.</p>
+<p>Nối đèn: có dòng cảm ứng. Theo Lenz, từ trường của dòng này chống lại chuyển động quay.</p>
+<p>Về năng lượng: đèn sáng và nóng lên cần điện năng. Điện năng đó lấy từ công của tay.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Điều kiện xuất hiện dòng điện cảm ứng? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cuộn dây kín.</p>
+<p>Số đường sức qua tiết diện cuộn dây biến thiên.</p></details>
+<details class="tl-details"><summary>Kéo nam châm ra xa cuộn dây kín, mặt cuộn dây đối diện thành cực gì?</summary>
+<p>Cực khác tên với cực nam châm đối diện.</p>
+<p>Hút lại, chống lại sự giảm.</p></details>
+<details class="tl-details"><summary>Vì sao máy biến áp phải dùng dòng xoay chiều?</summary>
+<p>Cần từ trường biến thiên trong lõi.</p>
+<p>Một chiều: từ trường không đổi, thứ cấp không có điện.</p></details>
+<details class="tl-details"><summary>Giữ nguyên $P$ và đường dây, tăng $U$ lên 5 lần thì hao phí thế nào?</summary>
+<p>Giảm $5^2=25$ lần.</p></details>
+<details class="tl-details"><summary>Vì sao phải hạ áp trước khi vào nhà?</summary>
+<p>Cao thế rất nguy hiểm.</p>
+<p>Đồ dùng trong nhà chỉ chịu $220\ \text{V}$.</p></details>
+<details class="tl-details"><summary>Máy phát 2 cặp cực quay 1500 vòng/phút cho tần số bao nhiêu?</summary>
+<p>$n=25\ \text{vòng/s}$.</p>
+<p>$f=np=25\cdot2=50\ \text{Hz}$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Ra Bắc, vào Nam, khép kín.</li>
+<li>Nắm tay phải: bốn ngón theo dòng, ngón cái chỉ Bắc.</li>
+<li>Cảm ứng: mạch kín, số đường sức biến thiên.</li>
+<li>Lenz: lại gần đẩy, ra xa hút.</li>
+<li>Xoay chiều: đổi chiều 2 lần mỗi chu kì, $f=np$.</li>
+<li>Biến áp: áp theo vòng, dòng ngược vòng.</li>
+<li>Hao phí $\dfrac{P^2R}{U^2}$: tăng $U$ $k$ lần, giảm $k^2$ lần.</li>
+<li>Đọc đề: $P$, $U$ ở đầu hay cuối dây? $R$ đủ hai dây chưa? Máy lí tưởng không?</li>
+</ul>
+</div>

@@ -1,0 +1,407 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ đường sức từ, tìm cực ống dây bằng nắm tay phải.</li>
+<li>Nêu điều kiện xuất hiện dòng điện cảm ứng.</li>
+<li>Tìm chiều dòng cảm ứng (định luật Lenz, <strong>Mở rộng HSG</strong>).</li>
+<li>Nêu nguyên tắc tạo dòng xoay chiều và các tác dụng của nó.</li>
+<li>Tính máy biến áp, hao phí truyền tải (<strong>Mở rộng HSG</strong>: ngoài chuẩn lớp 9, đề HSG hay ra).</li>
+<li>Quy ước: $U$, $I$ xoay chiều là giá trị hiệu dụng, công suất $P=UI$.</li>
+<li>$R$ của đường dây là điện trở tổng cả hai dây.</li>
+</ul>
+<p>Khoảng __PHUT__ phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: điện đi hàng trăm km về ổ cắm</h3>
+<p>Nhà máy thuỷ điện cách thành phố hàng trăm km, vậy mà cắm sạc là có điện ngay.</p>
+<p>Cột điện dọc đường cao tốc ghi "500 kV", ổ cắm nhà em chỉ 220 V. Vì sao phải đẩy lên cao thế rồi lại hạ xuống?</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Câu 1. Giữ nguyên công suất cần truyền và đường dây. Tăng hiệu điện thế đầu đường dây lên gấp đôi thì phần điện năng mất trên dây:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q0" id="hsg8-q0a"><label for="hsg8-q0a" class="tl-opt tl-no">A. Giảm 2 lần</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0b"><label for="hsg8-q0b" class="tl-opt tl-ok">B. Giảm 4 lần</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0c"><label for="hsg8-q0c" class="tl-opt tl-no">C. Không đổi</label>
+<input type="radio" name="hsg8-q0" id="hsg8-q0d"><label for="hsg8-q0d" class="tl-opt tl-no">D. Tăng 4 lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng công suất, $U$ gấp đôi thì dòng trên dây $I=P/U$ chỉ còn một nửa.</p><p>Dây nóng theo $RI^2$, nên hao phí còn $\tfrac14$. Mục VI chứng minh kĩ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nghĩ hao phí tỉ lệ với $I$. Dây nóng theo $I^2$.</p><p>C nghĩ dây không đổi thì hao phí không đổi. Hao phí còn tuỳ dòng chạy qua dây.</p><p>D dùng $U^2/R$ với $U$ đầu dây. Hiệu điện thế giữa hai đầu <em>dây</em> chỉ là phần sụt áp nhỏ, không phải $U$ đầu đường dây.</p></div>
+</div>
+<p>Câu 2. Một nam châm nằm yên trong lòng cuộn dây nối với điện kế. Kim điện kế:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q1" id="hsg8-q1a"><label for="hsg8-q1a" class="tl-opt tl-no">A. Lệch mạnh vì từ trường trong cuộn dây rất mạnh</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1b"><label for="hsg8-q1b" class="tl-opt tl-no">B. Lệch về một phía và đứng yên ở đó</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1c"><label for="hsg8-q1c" class="tl-opt tl-ok">C. Không lệch</label>
+<input type="radio" name="hsg8-q1" id="hsg8-q1d"><label for="hsg8-q1d" class="tl-opt tl-no">D. Dao động qua lại liên tục</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ trường mạnh nhưng <em>không đổi</em> thì không sinh dòng.</p><p>Mục III cho biết cần điều kiện gì.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A và B nghĩ "có nam châm mạnh là có dòng". Nam châm nằm yên thì kim về số 0.</p><p>D nhầm với dòng xoay chiều. Dòng đổi chiều chỉ khi từ trường qua cuộn dây thay đổi liên tục.</p></div>
+</div>
+</div>
+
+<h3>II. Nam châm, từ trường, đường sức từ</h3>
+
+<h4>1. Nam châm và đường sức từ (ôn tập)</h4>
+<p><strong>🔑 Cùng tên đẩy · Khác tên hút</strong></p>
+<ul>
+<li>Nam châm nào cũng có hai cực: Bắc (N), Nam (S).</li>
+<li>Bẻ đôi vẫn được hai nam châm, mỗi mảnh đủ hai cực.</li>
+<li>Quanh nam châm, quanh dòng điện, quanh Trái Đất có từ trường.</li>
+<li>Nhận biết từ trường: kim nam châm thử đặt vào thì bị quay.</li>
+</ul>
+<p>Ví dụ: rắc mạt sắt lên bìa đặt trên nam châm, gõ nhẹ. Mạt sắt xếp thành từ phổ nối hai cực.</p>
+<p><strong>🔑 Ra Bắc · Vào Nam · Khép kín</strong></p>
+<ul>
+<li>Bên ngoài nam châm, đường sức đi ra ở cực Bắc, đi vào ở cực Nam.</li>
+<li>Trong lòng nam châm, đường sức đi từ S sang N: đường khép kín.</li>
+<li>Chỗ đường sức dày: từ trường mạnh.</li>
+<li>Khe nam châm chữ U: đường sức song song, cách đều (từ trường đều).</li>
+</ul>
+<!--FIG1-->
+
+<h4>2. Ống dây có dòng điện, quy tắc nắm tay phải</h4>
+<p><strong>🔑 Ngón theo dòng · Cái chỉ Bắc</strong></p>
+<ul>
+<li>Ống dây có dòng điện: từ phổ giống nam châm thẳng.</li>
+<li>Nắm tay phải, bốn ngón khum theo chiều dòng điện trong các vòng.</li>
+<li>Ngón cái choãi ra chỉ chiều đường sức trong lòng ống, chỉ về cực Bắc.</li>
+<li>Mẹo: nhìn vào đầu ống thấy dòng ngược chiều kim đồng hồ thì đầu đó là cực Bắc.</li>
+</ul>
+<!--FIG2-->
+<p><strong>🔑 Lõi sắt non · Có dòng mới hút</strong></p>
+<ul>
+<li>Nam châm điện: ống dây có lõi sắt non, mạnh hơn nhiều.</li>
+<li>Làm mạnh hơn: tăng cường độ dòng điện hoặc tăng số vòng dây.</li>
+<li>Ngắt dòng là sắt non hết từ tính.</li>
+</ul>
+<p>Ví dụ: cần cẩu bãi phế liệu đóng điện thì hút sắt thép, ngắt điện thì thả.</p>
+<p>Nhìn vào đầu A của một ống dây, thấy dòng điện chạy ngược chiều kim đồng hồ. Đặt một kim nam châm gần đầu A:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q2" id="hsg8-q2a"><label for="hsg8-q2a" class="tl-opt tl-ok">A. A là cực Bắc, cực Nam của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2b"><label for="hsg8-q2b" class="tl-opt tl-no">B. A là cực Bắc, cực Bắc của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2c"><label for="hsg8-q2c" class="tl-opt tl-no">C. A là cực Nam, cực Bắc của kim quay về phía A</label>
+<input type="radio" name="hsg8-q2" id="hsg8-q2d"><label for="hsg8-q2d" class="tl-opt tl-no">D. Chưa biết được vì chưa biết chiều quấn dây</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ngược chiều kim đồng hồ nhìn từ A: A là cực Bắc.</p><p>Khác tên hút nhau, nên cực Nam của kim quay về A.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B nhớ ngược: cùng tên thì <em>đẩy</em>, không hút.</p><p>C đảo mẹo. Ngược chiều kim đồng hồ là cực Bắc, cùng chiều mới là cực Nam.</p><p>D thừa điều kiện. Đã biết chiều dòng nhìn từ đầu ống là đủ, chiều quấn đã nằm trong đó.</p></div>
+</div>
+
+<h3>III. Hiện tượng cảm ứng điện từ</h3>
+
+<h4>1. Khi nào có dòng điện cảm ứng?</h4>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: nam châm và cuộn dây kín</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối cuộn dây với điện kế G thành mạch kín, làm lần lượt các việc ở bảng.</li>
+<li><strong>Quan sát:</strong> kim có lệch không.</li>
+<li><strong>Rút ra:</strong> kim chỉ lệch khi số đường sức qua cuộn dây đang thay đổi.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Việc làm</th><th>Kim điện kế</th></tr></thead>
+<tbody>
+<tr><td>Đưa nam châm lại gần</td><td>lệch</td></tr>
+<tr><td>Giữ nam châm yên trong cuộn dây</td><td>không lệch</td></tr>
+<tr><td>Kéo nam châm ra xa</td><td>lệch ngược lại</td></tr>
+<tr><td>Quay nam châm quanh trục dọc của chính nó</td><td>không lệch</td></tr>
+<tr><td>Thay bằng nam châm điện: đóng khoá K</td><td>lệch thoáng qua</td></tr>
+<tr><td>Giữ K đóng</td><td>không lệch</td></tr>
+<tr><td>Ngắt K</td><td>lệch thoáng qua, ngược lúc đóng</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Quay nam châm quanh trục của nó, nam châm vẫn chuyển động. Vì sao kim không lệch? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Từ phổ của nam châm thẳng đối xứng quanh trục dọc.</p>
+<p>Quay quanh trục đó, đường sức qua cuộn dây vẫn y như cũ.</p>
+<p>Số đường sức không đổi thì không có dòng, dù có chuyển động.</p>
+</details>
+</div>
+<p><strong>🔑 Mạch kín · Đường sức biến thiên</strong></p>
+<ul>
+<li>Cuộn dây <em>kín</em> có dòng cảm ứng khi số đường sức xuyên qua tiết diện của nó <em>biến thiên</em>.</li>
+<li>Số đường sức qua tiết diện còn gọi là từ thông.</li>
+<li>Đó là hiện tượng cảm ứng điện từ.</li>
+</ul>
+
+<h4>2. Chiều dòng cảm ứng: định luật Lenz</h4>
+<p><strong>🔑 Chống biến thiên · Gần đẩy · Xa hút</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Dòng cảm ứng sinh ra từ trường chống lại <em>sự biến thiên</em> đã sinh ra nó.</li>
+<li>Nam châm lại gần: mặt cuộn dây đối diện thành cực cùng tên, đẩy ra.</li>
+<li>Nam châm ra xa: mặt đó thành cực khác tên, hút lại.</li>
+<li>Vì sao chống lại? Nếu "giúp" nam châm lao vào, điện năng tự sinh ra không tốn công: trái bảo toàn năng lượng.</li>
+</ul>
+<!--FIG3-->
+<p>Cực Nam của nam châm quay về đầu A của một cuộn dây kín. Đưa nam châm lại gần. Khi đó:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg8-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg8-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q3" id="hsg8-q3a"><label for="hsg8-q3a" class="tl-opt tl-no">A. A thành cực Bắc, hút nam châm vào</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3b"><label for="hsg8-q3b" class="tl-opt tl-no">B. A thành cực Nam, hút nam châm vào</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3c"><label for="hsg8-q3c" class="tl-opt tl-no">C. Không có dòng vì cực Nam không sinh dòng</label>
+<input type="radio" name="hsg8-q3" id="hsg8-q3d"><label for="hsg8-q3d" class="tl-opt tl-ok">D. A thành cực Nam, đẩy nam châm ra</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lại gần thì cuộn dây chống lại bằng cách đẩy.</p><p>Muốn đẩy cực Nam, A phải là cực Nam.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A làm dòng cảm ứng "giúp" nam châm lao vào. Như thế là tự sinh năng lượng.</p><p>B nhầm: hai cực Nam đối diện thì <em>đẩy</em>, không hút.</p><p>C sai: cực nào lại gần cũng làm số đường sức qua cuộn dây tăng.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Có nam châm gần là có dòng</td><td>Số đường sức phải đang thay đổi</td></tr>
+<tr><td>Có chuyển động là có dòng</td><td>Quay quanh trục đối xứng: không có dòng</td></tr>
+<tr><td>Từ thông lớn thì dòng lớn</td><td>Từ thông thay đổi nhanh thì dòng lớn</td></tr>
+<tr><td>Lenz: chống lại từ trường ngoài</td><td>Chống lại <em>sự biến thiên</em>: ra xa thì lại hút</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Dòng điện xoay chiều và máy phát điện</h3>
+<p><strong>🔑 Biến thiên đều · Đổi chiều liên tục</strong></p>
+<ul>
+<li>Nam châm quay trước cuộn dây, hoặc khung dây quay trong từ trường.</li>
+<li>Số đường sức qua cuộn dây lúc tăng, lúc giảm, lặp lại đều.</li>
+<li>Dòng cảm ứng đổi chiều liên tục: dòng xoay chiều.</li>
+<li>Mỗi chu kì, dòng đổi chiều 2 lần.</li>
+</ul>
+<!--FIG4-->
+<p><strong>🔑 Rôto quay · Stato đứng yên</strong></p>
+<ul>
+<li>Máy phát gồm nam châm và cuộn dây. Phần quay: rôto. Phần đứng yên: stato.</li>
+<li>Cuộn dây quay: lấy điện qua vành khuyên và chổi quét.</li>
+<li>Nam châm quay: lấy điện thẳng từ cuộn dây đứng yên. Nhà máy dùng loại này.</li>
+<li>Tần số $f=np$ (<strong>Mở rộng HSG</strong>): $n$ là số vòng quay mỗi giây, $p$ là số <em>cặp</em> cực.</li>
+<li>Lưới điện Việt Nam: $f=50\ \text{Hz}$, dòng đổi chiều 100 lần mỗi giây.</li>
+</ul>
+<p>Ví dụ: dinamô xe đạp có núm cọ vào lốp làm nam châm quay. Đi càng nhanh, đèn càng sáng.</p>
+<p>Một máy phát có rôto 6 cực từ, quay $1000$ vòng/phút. Tần số dòng điện là:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q4" id="hsg8-q4a"><label for="hsg8-q4a" class="tl-opt tl-no">A. $100\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4b"><label for="hsg8-q4b" class="tl-opt tl-ok">B. $50\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4c"><label for="hsg8-q4c" class="tl-opt tl-no">C. $3000\ \text{Hz}$</label>
+<input type="radio" name="hsg8-q4" id="hsg8-q4d"><label for="hsg8-q4d" class="tl-opt tl-no">D. $\approx16{,}7\ \text{Hz}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> 6 cực là $p=3$ cặp cực.</p><p>$n=1000:60\ \text{vòng/s}$, nên $f=\dfrac{1000}{60}\cdot3=50\ \text{Hz}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy $p=6$. Phải đếm số <em>cặp</em> cực: 6 cực là 3 cặp.</p><p>C quên đổi vòng/phút ra vòng/giây.</p><p>D quên nhân với số cặp cực.</p></div>
+</div>
+<p><strong>🔑 Nhiệt · Sáng · Từ · Sinh lí</strong></p>
+<ul>
+<li>Nhiệt: ấm điện, bàn là.</li>
+<li>Phát sáng: đèn LED, đèn ống.</li>
+<li>Từ: nam châm điện của chuông, rơ-le vẫn hút sắt.</li>
+<li>Sinh lí: điện giật làm co cơ, có thể chết người.</li>
+<li>$220\ \text{V}$ là giá trị hiệu dụng: nóng như dòng một chiều $220\ \text{V}$.</li>
+</ul>
+<details class="tl-details">
+<summary>Xem thêm: hiệu điện thế lưới lúc lớn nhất là bao nhiêu? (Mở rộng)</summary>
+<p>Hiệu điện thế lưới thay đổi liên tục, lúc lớn nhất khoảng $311\ \text{V}$.</p>
+<p>Bài tính lớp 9 chỉ dùng giá trị hiệu dụng $220\ \text{V}$.</p>
+</details>
+
+<h3>V. Máy biến áp (Mở rộng HSG)</h3>
+<p><strong>🔑 Lõi thép · Hai cuộn · Chỉ xoay chiều</strong></p>
+<ul>
+<li>Máy biến áp (còn gọi máy biến thế): hai cuộn dây trên một lõi thép kín.</li>
+<li>Lõi ghép từ lá thép mỏng cách điện.</li>
+<li>Cuộn sơ cấp $N_1$ nối nguồn, cuộn thứ cấp $N_2$ nối tải.</li>
+<li>Dòng xoay chiều ở sơ cấp tạo từ trường biến thiên trong lõi, sinh dòng cảm ứng ở thứ cấp.</li>
+<li>Nguồn một chiều: từ trường không đổi, thứ cấp không có điện (trừ lúc đóng, ngắt).</li>
+</ul>
+<!--FIG5-->
+<p><strong>🔑 Áp theo vòng · Dòng ngược vòng</strong></p>
+<ul>
+<li>$\dfrac{U_1}{U_2}=\dfrac{N_1}{N_2}$.</li>
+<li>$N_2\gt N_1$: máy tăng áp. $N_2\lt N_1$: máy hạ áp.</li>
+<li>Máy lí tưởng: $U_1I_1=U_2I_2$, nên $\dfrac{I_1}{I_2}=\dfrac{N_2}{N_1}$.</li>
+<li>Tăng áp bao nhiêu lần thì dòng giảm bấy nhiêu lần.</li>
+<li>Máy biến áp không tạo ra năng lượng. Máy thực: $H_{\text{BA}}=\dfrac{P_2}{P_1}\lt1$.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: đo hiệu điện thế thứ cấp (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> sơ cấp $400$ vòng nối nguồn xoay chiều học sinh $12\ \text{V}$. Đổi thứ cấp $100$, $200$, $400$ vòng, đo $U_2$.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $U_2$ tỉ lệ $N_2$, số đo nhỏ hơn lí thuyết khoảng $3\%$.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$N_2$ (vòng)</th><th>Lí thuyết (V)</th><th>Đo được (V)</th></tr></thead>
+<tbody>
+<tr><td>100</td><td>3</td><td>2,9</td></tr>
+<tr><td>200</td><td>6</td><td>5,8</td></tr>
+<tr><td>400</td><td>12</td><td>11,6</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Vì sao số đo luôn nhỏ hơn lí thuyết, không lúc lớn lúc nhỏ? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Lệch về một phía là sai số hệ thống, không phải do đọc vôn kế.</p>
+<p>Cuộn dây có điện trở, nên nóng lên.</p>
+<p>Lõi thép có dòng Fu-cô (dòng cảm ứng xoáy trong lõi), cũng làm lõi nóng.</p>
+<p>Một ít đường sức đi ra ngoài lõi, không qua cuộn thứ cấp.</p>
+<p>Vì sao dùng nguồn học sinh $12\ \text{V}$? Điện lưới $220\ \text{V}$ không an toàn cho thí nghiệm của học sinh.</p>
+</details>
+</div>
+<p>Máy biến áp lí tưởng hạ $220\ \text{V}$ xuống $12\ \text{V}$, đèn $12\ \text{V}-36\ \text{W}$ sáng bình thường. Dòng qua cuộn sơ cấp:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q5" id="hsg8-q5a"><label for="hsg8-q5a" class="tl-opt tl-ok">A. $\approx0{,}16\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5b"><label for="hsg8-q5b" class="tl-opt tl-no">B. $3\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5c"><label for="hsg8-q5c" class="tl-opt tl-no">C. $55\ \text{A}$</label>
+<input type="radio" name="hsg8-q5" id="hsg8-q5d"><label for="hsg8-q5d" class="tl-opt tl-no">D. Không tính được vì chưa biết số vòng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Máy lí tưởng: $P_1=P_2=36\ \text{W}$.</p><p>$I_1=\dfrac{36}{220}\approx0{,}16\ \text{A}$. Bên hạ áp dòng lớn ($3\ \text{A}$), bên cao áp dòng nhỏ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B coi dòng hai cuộn bằng nhau. Đó là dòng thứ cấp $I_2$.</p><p>C nhân ngược tỉ số. Bên hiệu điện thế cao phải có dòng <em>nhỏ</em>.</p><p>D thừa dữ kiện: tỉ số vòng đã nằm trong $U_1:U_2$, hoặc dùng thẳng $U_1I_1=U_2I_2$.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>$\dfrac{U_1}{U_2}=\dfrac{N_2}{N_1}$</td><td>Hiệu điện thế cùng chiều với số vòng</td></tr>
+<tr><td>Sơ cấp là cuộn nhiều vòng</td><td>Sơ cấp là cuộn nối <em>nguồn</em></td></tr>
+<tr><td>Tăng áp là thêm năng lượng</td><td>Áp tăng, dòng giảm, $P$ giữ nguyên</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>VI. Truyền tải điện năng đi xa (Mở rộng HSG)</h3>
+
+<h4>1. Hao phí trên đường dây</h4>
+<p><strong>🔑 Hao phí theo $I^2$ · $U$ gấp $k$, giảm $k^2$</strong></p>
+<ul>
+<li>Dây nóng lên: $P_{\text{hp}}=RI^2$ (Joule–Lenz).</li>
+<li>Dòng trên dây: $I=\dfrac{P}{U}$, với $P$ và $U$ ở <em>đầu</em> đường dây.</li>
+<li>Vậy $P_{\text{hp}}=\dfrac{P^2R}{U^2}$.</li>
+<li>Tăng $U$ lên $k$ lần thì hao phí giảm $k^2$ lần.</li>
+<li>Điện trở cả hai dây: $R=\rho\dfrac{2\ell}{S}$, $\ell$ là khoảng cách truyền.</li>
+<li>Hiệu suất truyền tải: $H=1-\dfrac{P_{\text{hp}}}{P}$.</li>
+<li>Độ giảm thế trên dây: $\Delta U=IR$. Nơi tiêu thụ: $U_{\text{tt}}=U-\Delta U$.</li>
+</ul>
+<ul>
+<li>Tăng $S$: tốn kim loại, cột to, hao phí chỉ giảm bậc nhất.</li>
+<li>Tăng $U$ bằng máy tăng áp: giảm theo bình phương, rẻ nhất.</li>
+</ul>
+<!--FIG6-->
+<p>An toàn: không thả diều, câu cá gần dây cao thế.</p>
+<p>Giữ $P$, $U$, chiều dài. Thay dây cùng chất, tiết diện gấp đôi. Hao phí:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q6" id="hsg8-q6a"><label for="hsg8-q6a" class="tl-opt tl-no">A. Giảm 4 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6b"><label for="hsg8-q6b" class="tl-opt tl-no">B. Tăng 2 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6c"><label for="hsg8-q6c" class="tl-opt tl-ok">C. Giảm 2 lần</label>
+<input type="radio" name="hsg8-q6" id="hsg8-q6d"><label for="hsg8-q6d" class="tl-opt tl-no">D. Không đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $S$ gấp đôi thì $R$ còn một nửa.</p><p>$I=P/U$ không đổi, nên $P_{\text{hp}}=RI^2$ giảm 2 lần. Tốn gấp đôi kim loại mà chỉ lợi 2 lần.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nhầm với khi tăng $U$. Bình phương nằm ở $U$, còn $R$ chỉ bậc nhất.</p><p>B nghĩ dây to thì dòng lớn hơn. Dòng do $P$ và $U$ quyết định.</p><p>D quên rằng $R$ giảm khi $S$ tăng.</p></div>
+</div>
+
+<h4>2. Bài toán mẫu: đường dây 10 km</h4>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Trạm truyền $400\ \text{kW}$ tới khu dân cư cách $10\ \text{km}$ bằng hai dây đồng, mỗi dây tiết diện $34\ \text{mm}^2$, $\rho=1{,}7\cdot10^{-8}\ \Omega\cdot\text{m}$. Hiệu điện thế đầu đường dây $20\ \text{kV}$.</p>
+<p>a) Tính $R$, $I$, $P_{\text{hp}}$, $H$.</p>
+<p>b) Tính $\Delta U$ và $U_{\text{tt}}$.</p>
+<p>c) Nếu chỉ truyền ở $5\ \text{kV}$ thì hao phí bao nhiêu?</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"cách $10\ \text{km}$ bằng hai dây"</td><td>$\ell=10^4\ \text{m}$</td><td>dây dài $2\ell$</td></tr>
+<tr><td>"tiết diện $34\ \text{mm}^2$"</td><td>$S=34\cdot10^{-6}\ \text{m}^2$</td><td>$R=\rho\dfrac{2\ell}{S}$</td></tr>
+<tr><td>"công suất $400\ \text{kW}$", "đầu đường dây $20\ \text{kV}$"</td><td>$P$, $U$ ở đầu dây</td><td>$I=\dfrac{P}{U}$</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$R=1{,}7\cdot10^{-8}\cdot\dfrac{2\cdot10^4}{34\cdot10^{-6}}=10\ \Omega$.</li>
+<li>$I=\dfrac{400\,000}{20\,000}=20\ \text{A}$.</li>
+<li>$P_{\text{hp}}=10\cdot20^2=4000\ \text{W}=4\ \text{kW}$, nên $H=1-\dfrac{4}{400}=99\%$.</li>
+<li>$\Delta U=20\cdot10=200\ \text{V}$, $U_{\text{tt}}=20\,000-200=19\,800\ \text{V}$.</li>
+<li>Ở $5\ \text{kV}$: $I=80\ \text{A}$, $P_{\text{hp}}=10\cdot80^2=64\ \text{kW}$, chỉ còn $H=84\%$.</li>
+<li>Kiểm tra: $U$ giảm 4 lần, hao phí tăng $4^2=16$ lần ($4\to64\ \text{kW}$). Khớp.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: vẫn đường dây trên, muốn hao phí không quá $0{,}25\%$ công suất truyền đi.</p>
+<ol class="tl-steps">
+<li>Điều kiện: $\dfrac{P^2R}{U^2}\le0{,}0025P$.</li>
+<li><strong>Em điền:</strong> $U^2\ge\;?$</li>
+<li>Kết luận: $U\ge\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$U^2\ge\dfrac{PR}{0{,}0025}=\dfrac{4\cdot10^5\cdot10}{0{,}0025}=1{,}6\cdot10^9$.</p>
+<p>$U\ge40\,000\ \text{V}=40\ \text{kV}$: gấp đôi $20\ \text{kV}$, hao phí giảm 4 lần còn $1\ \text{kW}$.</p></details>
+</div>
+<p>Biến thể: vẫn đường dây và $P$ trên, truyền ở $10\ \text{kV}$. Hiệu suất:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg8-q7c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg8-q7c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg8-q7" id="hsg8-q7a"><label for="hsg8-q7a" class="tl-opt tl-no">A. $98\%$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7b"><label for="hsg8-q7b" class="tl-opt tl-no">B. $99{,}5\%$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7c"><label for="hsg8-q7c" class="tl-opt tl-no">C. Không truyền được, vì $\dfrac{U^2}{R}=10\ \text{MW}\gt P$</label>
+<input type="radio" name="hsg8-q7" id="hsg8-q7d"><label for="hsg8-q7d" class="tl-opt tl-ok">D. $96\%$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $I=\dfrac{400\,000}{10\,000}=40\ \text{A}$.</p><p>$P_{\text{hp}}=10\cdot40^2=16\ \text{kW}$, $H=1-\dfrac{16}{400}=96\%$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nghĩ $U$ giảm 2 lần thì hao phí tăng 2 lần ($1\%\to2\%$). Phải tăng $2^2=4$ lần.</p><p>B nghĩ hạ $U$ thì hao phí giảm. Ngược lại: $U$ nhỏ, dòng lớn, dây nóng hơn.</p><p>C dùng $\dfrac{U^2}{R}$ với $U$ đầu đường dây. Hai đầu <em>dây</em> chỉ có $\Delta U=IR=400\ \text{V}$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Tăng $U$ 10 lần, hao phí giảm 10 lần</td><td>Giảm $10^2=100$ lần</td></tr>
+<tr><td>$I=\dfrac{P}{U_{\text{tt}}}$ hay $\dfrac{P}{220}$</td><td>$I=\dfrac{P}{U}$, $U$ ở đầu đường dây</td></tr>
+<tr><td>Dây dài $\ell$</td><td>Hai dây: dài $2\ell$</td></tr>
+<tr><td>Ra $P_{\text{hp}}\gt P$ vẫn ghi</td><td>Vô lí: xem lại $U$, đơn vị</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>3. Thử sức</h4>
+<details class="tl-details">
+<summary>⭐ Thử thách 1: máy tăng áp lí tưởng $500/10\,000$ vòng, $U_1=1\ \text{kV}$, truyền $400\ \text{kW}$. Tìm $U_2$, $I_1$, $I_2$.</summary>
+<p>$U_2=1000\cdot\dfrac{10\,000}{500}=20\,000\ \text{V}$.</p>
+<p>$I_1=\dfrac{400\,000}{1000}=400\ \text{A}$.</p>
+<p>$I_2=\dfrac{400\,000}{20\,000}=20\ \text{A}$: dòng giảm 20 lần đúng bằng số lần tăng áp.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: thay dây cùng chất, cùng chiều dài, đường kính gấp đôi. Hao phí đổi thế nào? Giữ dây cũ thì tăng $U$ mấy lần để được như vậy?</summary>
+<p>Đường kính gấp đôi thì tiết diện gấp $2^2=4$ lần, $R$ còn $\tfrac14$.</p>
+<p>Hao phí giảm 4 lần.</p>
+<p>Giữ dây cũ: cần $k^2=4$, tức tăng $U$ lên 2 lần. Rẻ hơn nhiều so với tốn gấp 4 lần kim loại.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: quay tay máy phát nhỏ. Để hở hai đầu ra thì quay nhẹ, nối bóng đèn thì nặng hẳn. Vì sao?</summary>
+<p>Để hở: mạch không kín, không có dòng cảm ứng, không có gì cản.</p>
+<p>Nối đèn: có dòng cảm ứng. Theo Lenz, từ trường của dòng này chống lại chuyển động quay.</p>
+<p>Về năng lượng: đèn sáng và nóng lên cần điện năng. Điện năng đó lấy từ công của tay.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Điều kiện xuất hiện dòng điện cảm ứng? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cuộn dây kín.</p>
+<p>Số đường sức qua tiết diện cuộn dây biến thiên.</p></details>
+<details class="tl-details"><summary>Kéo nam châm ra xa cuộn dây kín, mặt cuộn dây đối diện thành cực gì?</summary>
+<p>Cực khác tên với cực nam châm đối diện.</p>
+<p>Hút lại, chống lại sự giảm.</p></details>
+<details class="tl-details"><summary>Vì sao máy biến áp phải dùng dòng xoay chiều?</summary>
+<p>Cần từ trường biến thiên trong lõi.</p>
+<p>Một chiều: từ trường không đổi, thứ cấp không có điện.</p></details>
+<details class="tl-details"><summary>Giữ nguyên $P$ và đường dây, tăng $U$ lên 5 lần thì hao phí thế nào?</summary>
+<p>Giảm $5^2=25$ lần.</p></details>
+<details class="tl-details"><summary>Vì sao phải hạ áp trước khi vào nhà?</summary>
+<p>Cao thế rất nguy hiểm.</p>
+<p>Đồ dùng trong nhà chỉ chịu $220\ \text{V}$.</p></details>
+<details class="tl-details"><summary>Máy phát 2 cặp cực quay 1500 vòng/phút cho tần số bao nhiêu?</summary>
+<p>$n=25\ \text{vòng/s}$.</p>
+<p>$f=np=25\cdot2=50\ \text{Hz}$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Ra Bắc, vào Nam, khép kín.</li>
+<li>Nắm tay phải: bốn ngón theo dòng, ngón cái chỉ Bắc.</li>
+<li>Cảm ứng: mạch kín, số đường sức biến thiên.</li>
+<li>Lenz: lại gần đẩy, ra xa hút.</li>
+<li>Xoay chiều: đổi chiều 2 lần mỗi chu kì, $f=np$.</li>
+<li>Biến áp: áp theo vòng, dòng ngược vòng.</li>
+<li>Hao phí $\dfrac{P^2R}{U^2}$: tăng $U$ $k$ lần, giảm $k^2$ lần.</li>
+<li>Đọc đề: $P$, $U$ ở đầu hay cuối dây? $R$ đủ hai dây chưa? Máy lí tưởng không?</li>
+</ul>
+</div>

@@ -1,0 +1,427 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Vượt chuẩn lớp 9</strong>: định luật $n_1\sin i=n_2\sin r$ dùng để tính, ảnh qua mặt phân cách, bản mặt song song, góc lệch qua lăng kính là phần mở rộng HSG. Đề luôn cho sẵn bảng sin hoặc số.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ tia khúc xạ, tính $n$, $v$, $i$, $r$.</li>
+<li>Tính độ sâu biểu kiến, ảnh qua bản mặt song song.</li>
+<li>Nêu hai điều kiện phản xạ toàn phần, tính $i_{gh}$, vùng sáng tròn.</li>
+<li>Tính góc lệch qua lăng kính khi tia tới vuông góc mặt bên.</li>
+<li>Giải thích tán sắc, màu vật, tấm lọc, trộn ánh sáng.</li>
+</ul>
+<p>Quy ước: mọi góc đo so với <strong>pháp tuyến</strong>.</p>
+<p>Chiết suất: không khí $1$, nước $\frac43$, thuỷ tinh $1{,}5$, kim cương $2{,}42$. $c=3\cdot10^8\ \text{m/s}$.</p>
+<p>Khoảng 18 phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: đồng xu hiện ra trong chậu</h3>
+<p>Đặt một đồng xu ở đáy chậu rỗng. Lùi dần tới khi thành chậu vừa che mất đồng xu, rồi đứng yên.</p>
+<p>Nhờ bạn rót nước từ từ vào chậu. Đồng xu lại hiện ra, dù không ai dịch nó. Ánh sáng từ đồng xu đã đổi hướng khi ra khỏi mặt nước.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Chiếu tia laser từ không khí xuống mặt nước, góc tới $50^\circ$. Trong nước, tia sáng sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q0" id="hsg06-q0a"><label for="hsg06-q0a" class="tl-opt tl-no">A. Lệch xa pháp tuyến hơn, góc lớn hơn $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0b"><label for="hsg06-q0b" class="tl-opt tl-no">B. Đi thẳng, vẫn hợp với pháp tuyến $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0c"><label for="hsg06-q0c" class="tl-opt tl-ok">C. Lệch lại gần pháp tuyến, góc nhỏ hơn $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0d"><label for="hsg06-q0d" class="tl-opt tl-no">D. Đi dọc theo pháp tuyến, góc bằng $0^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ánh sáng đi vào nước, nơi nó truyền chậm hơn, thì lệch lại gần pháp tuyến.</p><p>Mục II sẽ tính ra góc trong nước $r\approx35{,}1^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A là chiều ngược lại: lệch xa pháp tuyến khi ánh sáng đi <em>ra</em> khỏi nước.</p><p>B: chỉ đi thẳng khi chiếu vuông góc mặt nước ($i=0$).</p><p>D: tia có lệch, nhưng không lệch hẳn về pháp tuyến.</p></div>
+</div>
+</div>
+<details class="tl-details">
+<summary>Dự đoán 2: người đâm cá nhìn thấy cá ở điểm X. Phải phóng lao nhắm cao hơn hay thấp hơn X? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Nhắm <strong>thấp hơn</strong> X.</p>
+<p>Ảnh của cá mà mắt thấy nông hơn chỗ cá thật (mục III). Cá thật nằm sâu hơn.</p>
+</details>
+
+<h3>II. Khúc xạ và chiết suất</h3>
+
+<h4>1. Hiện tượng và chiết suất</h4>
+<p><strong>🔑 Qua mặt phân cách · Tia gãy khúc</strong></p>
+<ul>
+<li>Khúc xạ: tia sáng đổi hướng khi qua mặt phân cách hai môi trường trong suốt.</li>
+<li>Pháp tuyến: đường vuông góc mặt phân cách tại điểm tới $I$.</li>
+<li>Mặt phẳng tới: chứa tia tới và pháp tuyến.</li>
+<li>Góc tới $i$, góc khúc xạ $r$: đo so với pháp tuyến.</li>
+<li>Luôn có một phần ánh sáng phản xạ cùng lúc.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 14 400 284" role="img" aria-label="Tia sáng từ không khí tới mặt nước tại điểm I: góc tới i và góc khúc xạ r đo so với pháp tuyến, có thêm tia phản xạ yếu"><rect x="20" y="150" width="360" height="140" fill="rgba(56,189,248,.16)"/><line x1="20.0" y1="150.0" x2="380.0" y2="150.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="200.0" y1="26.0" x2="200.0" y2="284.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><line x1="101.9" y1="67.7" x2="200.0" y2="150.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M152.1,102.6 L155.9,113.0 L145.0,111.1" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="200.0" y1="150.0" x2="273.5" y2="254.8" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M239.5,196.7 L240.5,207.6 L230.5,203.0" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="200.0" y1="150.0" x2="291.9" y2="72.9" stroke="#fb923c" stroke-width="2" opacity="0.45"/><path d="M239.7,109.5 L250.6,107.6 L246.8,117.9" fill="none" stroke="#fb923c" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="0.45"/><path d="M200.0,110.0 L198.5,110.0 L197.1,110.1 L195.6,110.2 L194.2,110.4 L192.8,110.7 L191.3,110.9 L189.9,111.3 L188.5,111.7 L187.1,112.1 L185.8,112.6 L184.4,113.2 L183.1,113.7 L181.8,114.4 L180.5,115.1 L179.2,115.8 L178.0,116.6 L176.8,117.4 L175.6,118.3 L174.5,119.2 L173.4,120.1 L172.3,121.1 L171.3,122.1 L170.3,123.2 L169.4,124.3" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="179.8" y="99.9" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">i</text><path d="M200.0,194.0 L201.1,194.0 L202.2,193.9 L203.4,193.9 L204.5,193.8 L205.6,193.6 L206.7,193.5 L207.8,193.3 L208.9,193.1 L210.0,192.8 L211.1,192.6 L212.2,192.3 L213.3,192.0 L214.3,191.6 L215.4,191.2 L216.4,190.8 L217.5,190.4 L218.5,189.9 L219.5,189.4 L220.5,188.9 L221.5,188.4 L222.5,187.8 L223.4,187.3 L224.4,186.6 L225.3,186.0" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="218.5" y="207.1" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">r</text><circle cx="200" cy="150" r="3.4" fill="currentColor"/><text x="188" y="170" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">I</text><text x="93.9" y="61.7" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">S</text><text x="208" y="38" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">pháp tuyến</text><text x="287.92533317427734" y="62.86548683761529" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">tia phản xạ (yếu)</text><text x="281.5458292546659" y="256.7616866952968" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">tia khúc xạ</text><text x="28.0" y="140.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">không khí, n<tspan font-size="12" dy="4">1</tspan><tspan dy="-4"></tspan></text><text x="28.0" y="280.0" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">nước, n<tspan font-size="12" dy="4">2</tspan><tspan dy="-4"></tspan></text></svg><figcaption>Hình 1. Khúc xạ ở mặt không khí – nước.<br>Góc i và r đo so với pháp tuyến, không đo so với mặt nước.<br>Luôn có thêm một phần ánh sáng phản xạ.</figcaption></figure>
+
+<p><strong>🔑 $n=\dfrac cv$ · $n$ lớn, ánh sáng chậm</strong></p>
+<ul>
+<li>$c$: vận tốc ánh sáng trong chân không, $v$: trong môi trường.</li>
+<li>$n\ge1$. Không khí coi $n=1$.</li>
+<li>Môi trường có $n$ lớn hơn gọi là <em>chiết quang hơn</em>.</li>
+</ul>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Môi trường</th><th>$n$</th><th>$v$ ($10^8$ m/s)</th></tr></thead>
+<tbody>
+<tr><td>Nước</td><td>$\frac43$</td><td>$2{,}25$</td></tr>
+<tr><td>Thuỷ tinh</td><td>$1{,}5$</td><td>$2{,}00$</td></tr>
+<tr><td>Kim cương</td><td>$2{,}42$</td><td>$\approx1{,}24$</td></tr>
+</tbody>
+</table></div>
+
+<h4>2. Định luật khúc xạ</h4>
+<p><strong>🔑 $n_1\sin i=n_2\sin r$</strong> <em>(dùng để tính: Mở rộng HSG)</em></p>
+<ul>
+<li>Môi trường 1 chứa tia tới, môi trường 2 chứa tia khúc xạ.</li>
+<li>Tia khúc xạ nằm trong mặt phẳng tới, ở bên kia pháp tuyến.</li>
+<li>Vào môi trường chiết quang hơn: $r\lt i$, lệch gần pháp tuyến.</li>
+<li>Ra môi trường chiết quang kém: $r\gt i$, lệch xa pháp tuyến.</li>
+<li>$i=0$: truyền thẳng.</li>
+<li>Đổi chiều tia sáng, nó đi ngược lại đúng đường cũ.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: khối bán trụ thuỷ tinh (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> chiếu laser vào tâm mặt phẳng của khối bán trụ đặt trên bảng chia độ, đổi góc tới, đọc góc khúc xạ.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $\dfrac{\sin i}{\sin r}$ gần như không đổi, $\approx1{,}51$: chiết suất thuỷ tinh.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$i$</th><th>$r$</th><th>$\sin i:\sin r$</th></tr></thead>
+<tbody>
+<tr><td>$20^\circ$</td><td>$13^\circ$</td><td>$1{,}52$</td></tr>
+<tr><td>$40^\circ$</td><td>$25^\circ$</td><td>$1{,}52$</td></tr>
+<tr><td>$70^\circ$</td><td>$39^\circ$</td><td>$1{,}49$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Tỉ số $i:r$ có không đổi không? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Không: $20:13\approx1{,}54$ nhưng $70:39\approx1{,}79$.</p>
+<p>Chỉ tỉ số các <em>sin</em> mới giữ nguyên. Góc nhỏ thì $\sin$ gần tỉ lệ với góc, nên hai tỉ số gần nhau.</p>
+</details>
+</div>
+<p>Chiếu tia sáng từ không khí vào thuỷ tinh ($n=1{,}5$) với góc tới $45^\circ$ ($\sin45^\circ\approx0{,}7071$). Góc khúc xạ:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q1" id="hsg06-q1a"><label for="hsg06-q1a" class="tl-opt tl-no">A. $30^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1b"><label for="hsg06-q1b" class="tl-opt tl-ok">B. $\approx28{,}1^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1c"><label for="hsg06-q1c" class="tl-opt tl-no">C. $\approx61{,}9^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1d"><label for="hsg06-q1d" class="tl-opt tl-no">D. Không có tia khúc xạ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1\cdot\sin45^\circ=1{,}5\sin r$.</p><p>$\sin r\approx0{,}4714$, nên $r\approx28{,}1^\circ\lt45^\circ$: lệch gần pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A chia thẳng góc cho $n$: $45:1{,}5$. Định luật áp cho <em>sin</em> của góc.</p><p>C là góc giữa tia khúc xạ và <em>mặt</em> kính ($90^\circ-28{,}1^\circ$). Phải đo so với pháp tuyến.</p><p>D: ánh sáng đi vào môi trường chiết quang hơn thì luôn có tia khúc xạ.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Đo góc so với mặt phân cách</td><td>Đo so với pháp tuyến</td></tr>
+<tr><td>Viết $n_2\sin i=n_1\sin r$</td><td>$n$ nào đi với góc ở môi trường đó</td></tr>
+<tr><td>$n$ lớn thì ánh sáng nhanh</td><td>$v=\dfrac cn$: $n$ lớn thì chậm</td></tr>
+</tbody>
+</table>
+<p>Tự kiểm: vào nước mà ra $r\gt i$ là viết ngược.</p>
+</div>
+
+<h3>III. Ảnh qua mặt phân cách, bản mặt song song</h3>
+
+<h4>1. Độ sâu biểu kiến</h4>
+<p><strong>🔑 Nhìn từ trên · Đáy nâng lên · $h'=\dfrac hn$</strong></p>
+<ul>
+<li>Tia từ vật $S$ dưới nước ló ra lệch xa pháp tuyến.</li>
+<li>Mắt thấy tia như phát ra từ ảnh $S'$, nông hơn $S$.</li>
+<li>Nhìn gần vuông góc mặt nước: $h'=\dfrac hn$.</li>
+<li>Nhiều lớp chất lỏng: $h'=\dfrac{h_1}{n_1}+\dfrac{h_2}{n_2}+\dots$</li>
+<li>Vật trong không khí, mắt dưới nước nhìn lên: $H'=nH$, vật trông <em>xa hơn</em>.</li>
+<li>Quy tắc nhớ: ảnh luôn dịch về phía môi trường chiết quang kém.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 4 400 278" role="img" aria-label="Vật S ở đáy nước, tia từ S ló ra mặt nước tại I lệch xa pháp tuyến tới mắt; đường kéo dài nét đứt gặp đường thẳng đứng qua S tại ảnh S' nông hơn"><rect x="20" y="100" width="360" height="170" fill="rgba(56,189,248,.16)"/><line x1="20.0" y1="100.0" x2="380.0" y2="100.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="20.0" y1="270.0" x2="380.0" y2="270.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="190.0" y1="260.0" x2="190.0" y2="100.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M184.5,181.5 L190.0,172.0 L195.5,181.5" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="190.0" y1="100.0" x2="190.0" y2="26.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M184.5,72.5 L190.0,63.0 L195.5,72.5" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="190.0" y1="260.0" x2="248.2" y2="100.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M213.6,179.1 L222.0,172.0 L223.9,182.8" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="248.2" y1="100.0" x2="282.9" y2="32.4" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M258.1,68.8 L267.3,62.8 L267.8,73.8" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="248.2" y1="100.0" x2="190.0" y2="213.6" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.9"/><line x1="248.2" y1="36.0" x2="248.2" y2="182.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><ellipse cx="292.9" cy="24.4" rx="13" ry="7" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="292.9" cy="24.4" r="3" fill="currentColor"/><text x="310.8932786729268" y="29.362582982131244" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">mắt</text><circle cx="190" cy="260.0" r="5" fill="#fb923c"/><text x="206" y="254" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">S</text><circle cx="190" cy="213.6" r="4" fill="none" stroke="#fb923c" stroke-width="2"/><text x="180" y="218.64984596542092" fill="#fb923c" font-size="15" font-weight="700" text-anchor="end">S'</text><circle cx="190" cy="100" r="3" fill="currentColor"/><text x="178" y="92" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">H</text><text x="254.2" y="90" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">I</text><line x1="70.0" y1="100.0" x2="70.0" y2="260.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M66.0,106.9 L70.0,100.0 L74.0,106.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M74.0,253.1 L70.0,260.0 L66.0,253.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="60" y="185.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">h</text><line x1="118.0" y1="100.0" x2="118.0" y2="213.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M114.0,106.9 L118.0,100.0 L122.0,106.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M122.0,206.7 L118.0,213.6 L114.0,206.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="128" y="161.8" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">h'</text><line x1="70.0" y1="260.0" x2="190.0" y2="260.0" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4" opacity="0.5"/><line x1="118.0" y1="213.6" x2="190.0" y2="213.6" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4" opacity="0.5"/><text x="372" y="260" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">đáy</text><text x="372" y="122" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="end">nước</text></svg><figcaption>Hình 2. Mắt nhìn thấy S tại ảnh S', nông hơn vật thật.<br>Góc vẽ phóng to cho dễ nhìn.<br>Tia ló kéo dài ngược (nét đứt) đi qua S'.</figcaption></figure>
+<details class="tl-details">
+<summary>📐 Chứng minh $h'\approx\dfrac hn$ bằng hai tam giác vuông</summary>
+<p>Ở đây tia đi từ nước ra: $i$ là góc trong nước, $r$ là góc trong không khí.</p>
+<p>Hai tam giác vuông $SHI$ và $S'HI$ chung cạnh $HI$ (Hình 2).</p>
+<p>Góc tại $S$ bằng $i$, góc tại $S'$ bằng $r$ (đồng vị với góc $r$ tại $I$).</p>
+<p>$HI=h\tan i=h'\tan r$, nên $h'=h\,\dfrac{\tan i}{\tan r}$.</p>
+<p>Nhìn gần vuông góc thì $i$, $r$ rất nhỏ. Xấp xỉ góc nhỏ: $\tan\approx\sin$.</p>
+<p>$h'\approx h\,\dfrac{\sin i}{\sin r}=\dfrac hn$, vì $n\sin i=1\cdot\sin r$.</p>
+<p>Nhìn xiên thì $\dfrac{\tan i}{\tan r}\lt\dfrac{\sin i}{\sin r}$: đáy trông còn <strong>nông hơn nữa</strong>.</p>
+</details>
+<p>Vì thế cọc cắm xiên xuống ao trông như gãy ở mặt nước.</p>
+<p>Chim đậu cao $1{,}5\ \text{m}$ trên mặt hồ. Cá ngay bên dưới nhìn thẳng lên, thấy chim cách mặt nước:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q2" id="hsg06-q2a"><label for="hsg06-q2a" class="tl-opt tl-no">A. $1{,}125\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2b"><label for="hsg06-q2b" class="tl-opt tl-no">B. $1{,}5\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2c"><label for="hsg06-q2c" class="tl-opt tl-ok">C. $2{,}0\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2d"><label for="hsg06-q2d" class="tl-opt tl-no">D. Không thấy được, vì ánh sáng phản xạ toàn phần ở mặt nước</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vật trong không khí, mắt dưới nước: $H'=nH=\frac43\cdot1{,}5=2{,}0\ \text{m}$.</p><p>Ảnh dịch về phía không khí (chiết quang kém), tức ra xa mặt nước.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A chia cho $n$ như khi nhìn từ trên xuống. Ở đây mắt ở trong nước, phải nhân.</p><p>B bỏ qua khúc xạ. Tia từ chim có đổi hướng khi vào nước.</p><p>D: ánh sáng đi từ không khí <em>vào</em> nước, không thể phản xạ toàn phần.</p></div>
+</div>
+
+<h4>2. Bản mặt song song</h4>
+<p><strong>🔑 Tia ló song song tia tới · Chỉ dời ngang</strong></p>
+<ul>
+<li>Bản mặt song song: lớp trong suốt dày $e$, hai mặt song song.</li>
+<li>Khúc xạ hai lần: $\sin i=n\sin r$ rồi $n\sin r=\sin i'$, nên $i'=i$.</li>
+<li>Tia ló song song tia tới, chỉ dời ngang một đoạn $d=\dfrac{e\sin(i-r)}{\cos r}$.</li>
+<li>Nhìn vuông góc qua bản kính: vật trông gần hơn $\Delta=e\left(1-\dfrac1n\right)$.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 18 400 276" role="img" aria-label="Tia sáng qua tấm kính hai mặt song song dày e: tia ló song song với tia tới, chỉ dời ngang một đoạn d so với đường kéo dài của tia tới"><rect x="20" y="110" width="360" height="86" fill="rgba(148,163,184,.20)" stroke="currentColor" stroke-width="2"/><line x1="140.0" y1="30.0" x2="140.0" y2="176.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><line x1="191.1" y1="128.0" x2="191.1" y2="278.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><line x1="48.1" y1="32.9" x2="140.0" y2="110.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M94.9,65.0 L98.6,75.3 L87.8,73.4" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="140.0" y1="110.0" x2="191.1" y2="196.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M168.0,146.3 L168.1,157.3 L158.5,151.9" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="191.1" y1="196.0" x2="267.7" y2="260.3" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M229.5,221.0 L233.2,231.4 L222.4,229.4" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="140.0" y1="110.0" x2="277.9" y2="225.7" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.8"/><line x1="258.3" y1="209.3" x2="237.0" y2="234.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M250.8,212.0 L258.3,209.3 L256.9,217.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M244.6,231.8 L237.0,234.6 L238.4,226.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="269.7" y="231.9" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">d</text><path d="M140.0,74.0 L138.7,74.0 L137.4,74.1 L136.1,74.2 L134.8,74.4 L133.5,74.6 L132.2,74.9 L130.9,75.2 L129.7,75.5 L128.4,75.9 L127.2,76.4 L126.0,76.8 L124.8,77.4 L123.6,77.9 L122.5,78.6 L121.3,79.2 L120.2,79.9 L119.1,80.7 L118.1,81.4 L117.1,82.3 L116.1,83.1 L115.1,84.0 L114.2,84.9 L113.3,85.9 L112.4,86.9" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="118.9" y="64.7" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">i</text><path d="M140.0,156.0 L141.0,156.0 L142.1,156.0 L143.1,155.9 L144.1,155.8 L145.1,155.7 L146.1,155.6 L147.2,155.4 L148.2,155.3 L149.2,155.1 L150.2,154.9 L151.2,154.6 L152.2,154.4 L153.2,154.1 L154.1,153.8 L155.1,153.4 L156.1,153.1 L157.0,152.7 L158.0,152.3 L158.9,151.9 L159.9,151.5 L160.8,151.0 L161.7,150.6 L162.6,150.1 L163.5,149.5" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="155.0" y="170.2" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">r</text><text x="154" y="102" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">I</text><text x="179.1" y="216" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">J</text><line x1="360.0" y1="110.0" x2="360.0" y2="196.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M356.0,116.9 L360.0,110.0 L364.0,116.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M364.0,189.1 L360.0,196.0 L356.0,189.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="350" y="158.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">e</text><text x="30" y="184" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">kính, n</text><text x="273.6882594605305" y="264.27876096865396" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">tia ló</text></svg><figcaption>Hình 3. Bản mặt song song.<br>Tia ló song song tia tới.<br>Nét đứt cam: đường tia sẽ đi nếu không có kính.<br>d: độ dời ngang.</figcaption></figure>
+<p>Ví dụ: đặt khối kính dày $7{,}5\ \text{cm}$ ($n=1{,}5$) lên trang sách, nhìn thẳng xuống. Chữ trông nổi lên $7{,}5\left(1-\dfrac1{1{,}5}\right)=2{,}5\ \text{cm}$.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<ul>
+<li>Dùng $h'=\dfrac hn$ khi nhìn xiên. Công thức chỉ đúng khi nhìn gần vuông góc.</li>
+<li>Nhân $n$ thay vì chia khi mắt ở trên không khí.</li>
+<li>Tưởng tấm kính làm tia đổi hướng. Tia ló song song tia tới.</li>
+</ul>
+</div>
+
+<h3>IV. Phản xạ toàn phần</h3>
+
+<h4>1. Góc giới hạn và hai điều kiện</h4>
+<p><strong>🔑 Ra môi trường kém · $i\ge i_{gh}$ · Không ló</strong></p>
+<ul>
+<li>Ánh sáng đi từ nước ra không khí: $r\gt i$.</li>
+<li>Tăng dần $i$: $r$ chạm $90^\circ$ trước, tia ló đi là là mặt nước.</li>
+<li>Góc tới lúc đó là góc giới hạn: $\sin i_{gh}=\dfrac{n_2}{n_1}$.</li>
+<li>$i\gt i_{gh}$: không còn tia khúc xạ, mọi ánh sáng phản xạ lại.</li>
+<li>Điều kiện 1: đi từ môi trường chiết quang hơn sang kém hơn ($n_1\gt n_2$).</li>
+<li>Điều kiện 2: $i\ge i_{gh}$. Cần <strong>cả hai</strong> cùng lúc.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 40 400 252" role="img" aria-label="Nguồn sáng S ở đáy nước: tia 1 góc tới nhỏ ló ra ngoài, tia 2 tới với góc giới hạn ló ra đi là là mặt nước, tia 3 góc tới lớn hơn bị phản xạ toàn phần; trên mặt nước có vùng sáng tròn bán kính R"><rect x="10" y="160" width="380" height="112" fill="rgba(56,189,248,.16)"/><line x1="10.0" y1="160.0" x2="390.0" y2="160.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><line x1="10.0" y1="272.0" x2="390.0" y2="272.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="84.3" y1="160.0" x2="315.7" y2="160.0" stroke="#facc15" stroke-width="6" opacity="0.85"/><line x1="200.0" y1="262.0" x2="158.8" y2="160.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M175.8,216.8 L177.3,205.9 L186.0,212.7" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="158.8" y1="160.0" x2="110.8" y2="76.8" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M132.4,125.3 L132.4,114.3 L141.9,119.8" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><text x="128.8" y="90" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">(1)</text><line x1="200.0" y1="262.0" x2="84.3" y2="160.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M139.9,216.3 L136.4,205.9 L147.2,208.1" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="84.3" y1="160.0" x2="22.0" y2="157.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M56.2,164.2 L46.9,158.2 L56.7,153.2" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="84.3" y1="90.0" x2="84.3" y2="268.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><path d="M84.3,200.0 L85.8,200.0 L87.2,199.9 L88.6,199.8 L90.0,199.6 L91.4,199.4 L92.8,199.1 L94.1,198.8 L95.5,198.4 L96.9,198.0 L98.2,197.5 L99.5,197.0 L100.8,196.5 L102.1,195.9 L103.3,195.2 L104.6,194.5 L105.8,193.8 L107.0,193.0 L108.1,192.2 L109.2,191.3 L110.3,190.4 L111.4,189.5 L112.4,188.5 L113.4,187.5 L114.3,186.5" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="92.3" y="218.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">i<tspan font-size="12" dy="4">gh</tspan><tspan dy="-4"></tspan></text><text x="58.3" y="148" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">(2)</text><line x1="200.0" y1="262.0" x2="351.2" y2="160.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M272.2,206.7 L283.2,205.9 L278.3,215.8" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="351.2" y1="160.0" x2="394.3" y2="189.1" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M370.1,166.1 L374.9,176.0 L364.0,175.2" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="351.2" y1="110.0" x2="351.2" y2="268.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><text x="361.2" y="148" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">(3)</text><circle cx="200" cy="262" r="5" fill="#fb923c"/><text x="200" y="284" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">S</text><line x1="200.0" y1="134.0" x2="315.7" y2="134.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M308.7,130.0 L315.7,134.0 L308.7,138.0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="200.0" y1="128.0" x2="200.0" y2="262.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/><text x="257.8" y="126" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">R</text><text x="380" y="108" fill="#ca8a04" font-size="15" font-weight="700" text-anchor="end">vùng sáng</text><text x="380" y="262" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="end">nước</text><line x1="34.0" y1="160.0" x2="34.0" y2="262.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><path d="M30.0,166.9 L34.0,160.0 L38.0,166.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M38.0,255.1 L34.0,262.0 L30.0,255.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="42" y="216.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">h</text></svg><figcaption>Hình 4. Nguồn S ở đáy nước, độ sâu h.<br>(1) i nhỏ: khúc xạ ra ngoài.<br>(2) i = i<sub>gh</sub>: tia ló đi là là mặt nước.<br>(3) i &gt; i<sub>gh</sub>: phản xạ toàn phần.<br>Chỉ vùng tròn bán kính R có ánh sáng ló ra.</figcaption></figure>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Ánh sáng đi từ → sang</th><th>$i_{gh}$</th></tr></thead>
+<tbody>
+<tr><td>Nước → không khí</td><td>$48{,}6^\circ$</td></tr>
+<tr><td>Thuỷ tinh → không khí</td><td>$41{,}8^\circ$</td></tr>
+<tr><td>Kim cương → không khí</td><td>$24{,}4^\circ$</td></tr>
+<tr><td>Thuỷ tinh → nước</td><td>$62{,}7^\circ$</td></tr>
+<tr><td>Nước → thuỷ tinh</td><td>không có</td></tr>
+</tbody>
+</table></div>
+<p>Tia sáng đi từ thuỷ tinh ($n=1{,}5$) sang nước ($n=\frac43$) với góc tới $55^\circ$ ($\sin55^\circ\approx0{,}8192$). Điều gì xảy ra?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg06-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg06-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q3" id="hsg06-q3a"><label for="hsg06-q3a" class="tl-opt tl-no">A. Phản xạ toàn phần</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3b"><label for="hsg06-q3b" class="tl-opt tl-ok">B. Khúc xạ vào nước, $r\approx67{,}2^\circ$</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3c"><label for="hsg06-q3c" class="tl-opt tl-no">C. Khúc xạ vào nước, $r\approx46{,}7^\circ$</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3d"><label for="hsg06-q3d" class="tl-opt tl-no">D. Đi thẳng vào nước, $r=55^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thuỷ tinh sang nước: $i_{gh}\approx62{,}7^\circ$, mà $55^\circ\lt62{,}7^\circ$ nên vẫn ló.</p><p>$1{,}5\cdot0{,}8192=\frac43\sin r$, nên $\sin r\approx0{,}9216$, $r\approx67{,}2^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A so với $41{,}8^\circ$: đó là $i_{gh}$ thuỷ tinh → <em>không khí</em>. Sang nước thì $i_{gh}$ lớn hơn.</p><p>C viết ngược tỉ số. Ra môi trường kém hơn mà $r\lt i$ là sai.</p><p>D: hai môi trường khác chiết suất thì tia xiên luôn bị lệch.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>2. Ứng dụng</h4>
+<p><strong>🔑 Vùng sáng tròn · Sợi quang · Kim cương</strong></p>
+<ul>
+<li>Nguồn điểm sâu $h$: chỉ vùng tròn $R=h\tan i_{gh}$ có ánh sáng ló ra (Hình 4).</li>
+<li>Sợi quang: lõi chiết suất lớn hơn vỏ, tia phản xạ toàn phần liên tục ở vỏ, đi rất xa.</li>
+<li>Kim cương: $i_{gh}$ nhỏ, ánh sáng phản xạ toàn phần nhiều lần mới ló ra, nên lấp lánh.</li>
+<li>Ảo ảnh đường nóng: không khí sát mặt đường có chiết suất nhỏ hơn, tia từ trời cong dần rồi hướng lên mắt.</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Một bóng đèn nhỏ đặt ở đáy bể nước sâu $0{,}75\ \text{m}$. Tìm bán kính và diện tích vùng mặt nước có ánh sáng ló ra.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"bóng đèn nhỏ"</td><td>nguồn điểm, tia đi mọi hướng</td></tr>
+<tr><td>"đáy bể nước"</td><td>nước → không khí: có thể phản xạ toàn phần</td></tr>
+<tr><td>"sâu $0{,}75\ \text{m}$"</td><td>$h$, cạnh góc vuông đứng</td></tr>
+<tr><td>"vùng có ánh sáng ló ra"</td><td>tia có $i\lt i_{gh}$; biên vùng ứng với $i=i_{gh}$</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$\sin i_{gh}=\dfrac1{4/3}=0{,}75$.</li>
+<li>$\cos i_{gh}=\sqrt{1-0{,}75^2}=\dfrac{\sqrt7}4$, nên $\tan i_{gh}=\dfrac3{\sqrt7}\approx1{,}134$.</li>
+<li>Tam giác vuông: đèn, chân đường thẳng đứng, mép vùng sáng. $R=h\tan i_{gh}\approx0{,}75\cdot1{,}134\approx0{,}85\ \text{m}$.</li>
+<li>Diện tích $\pi R^2\approx2{,}27\ \text{m}^2$.</li>
+<li>Kiểm: đổi $\tan$ thành $\sin$ ra $0{,}56\ \text{m}$, sai vì $h$ là cạnh kề, không phải cạnh huyền.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: đổ thêm nước cho bể sâu $1{,}0\ \text{m}$, đèn vẫn ở đáy.</p>
+<ol class="tl-steps">
+<li><strong>Em điền:</strong> $i_{gh}$ có đổi không? $R=\;?$</li>
+<li>Kết luận: vùng sáng rộng ra hay thu hẹp?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$i_{gh}$ chỉ phụ thuộc hai chiết suất, không đổi.</p>
+<p>$R=1{,}0\cdot1{,}134\approx1{,}13\ \text{m}$: $R$ tỉ lệ với $h$, vùng sáng rộng ra.</p></details>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Vào nước cũng phản xạ toàn phần</td><td>Chỉ khi sang môi trường chiết quang <em>kém</em> hơn</td></tr>
+<tr><td>Chỉ cần $i$ lớn</td><td>Cần đủ cả hai điều kiện</td></tr>
+<tr><td>$\sin i_{gh}=\dfrac{n_1}{n_2}$</td><td>$\dfrac{n_2}{n_1}$; ra số lớn hơn $1$ là viết ngược</td></tr>
+<tr><td>$r=90^\circ$ là đã hết tia khúc xạ</td><td>Chưa: tia đi là là mặt phân cách</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>V. Lăng kính</h3>
+
+<p><strong>🔑 Khối tam giác trong suốt · Lệch về đáy</strong></p>
+<ul>
+<li>Lăng kính: khối trong suốt có tiết diện tam giác $ABC$.</li>
+<li>Góc chiết quang $A$: góc giữa hai mặt bên $AB$, $AC$. Cạnh $BC$ là đáy.</li>
+<li>Tia ló luôn lệch về phía đáy so với tia tới.</li>
+</ul>
+<p><strong>🔑 Tia tới ⊥ $AB$ · $i_2=A$ · $D=r_2-A$</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Ở mặt $AB$: tia vuông góc nên đi thẳng.</li>
+<li>Ở mặt $AC$: góc tới $i_2=A$. Hai góc có cạnh tương ứng vuông góc: tia ⊥ $AB$, pháp tuyến ⊥ $AC$.</li>
+<li>Nếu $A\ge i_{gh}$: phản xạ toàn phần ở $AC$, không ló.</li>
+<li>Nếu $A\lt i_{gh}$: ló với $\sin r_2=n\sin A$.</li>
+<li>Góc lệch giữa tia ló và tia tới: $D=r_2-A$.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 20 400 290" role="img" aria-label="Lăng kính ABC, tia tới vuông góc mặt AB đi thẳng tới mặt AC tại J với góc tới i2 bằng góc chiết quang A, ló ra với góc r2, lệch về phía đáy một góc D so với phương tia tới"><path d="M120,34 L120,282 L300.2,282 Z" fill="rgba(148,163,184,.20)" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><text x="110" y="38" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">A</text><text x="110" y="286" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">B</text><text x="310.2" y="286" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">C</text><path d="M120.0,74.0 L121.0,74.0 L122.1,73.9 L123.1,73.9 L124.2,73.8 L125.2,73.7 L126.3,73.5 L127.3,73.3 L128.3,73.1 L129.3,72.9 L130.4,72.6 L131.4,72.4 L132.4,72.0 L133.4,71.7 L134.3,71.3 L135.3,71.0 L136.3,70.5 L137.2,70.1 L138.2,69.6 L139.1,69.2 L140.0,68.6 L140.9,68.1 L141.8,67.5 L142.7,67.0 L143.5,66.4" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="137.3" y="87.3" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">A</text><line x1="20.0" y1="196.0" x2="120.0" y2="196.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M65.5,190.5 L75.0,196.0 L65.5,201.5" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="120.0" y1="196.0" x2="237.7" y2="196.0" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M175.2,190.5 L184.7,196.0 L175.2,201.5" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="237.7" y1="196.0" x2="345.7" y2="248.3" stroke="#fb923c" stroke-width="2.6" opacity="1"/><path d="M290.9,215.7 L297.1,224.8 L286.1,225.6" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt" opacity="1"/><line x1="294.3" y1="154.9" x2="189.2" y2="231.3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.75"/><line x1="237.7" y1="196.0" x2="347.7" y2="196.0" stroke="#fb923c" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><path d="M211.8,214.8 L211.3,214.1 L210.9,213.4 L210.4,212.7 L210.0,212.0 L209.6,211.3 L209.2,210.5 L208.8,209.8 L208.5,209.0 L208.1,208.2 L207.8,207.5 L207.5,206.7 L207.3,205.9 L207.0,205.1 L206.8,204.3 L206.6,203.5 L206.4,202.7 L206.2,201.8 L206.1,201.0 L206.0,200.2 L205.9,199.3 L205.8,198.5 L205.7,197.7 L205.7,196.8 L205.7,196.0" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="193.7" y="188.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">i<tspan font-size="12" dy="4">2</tspan><tspan dy="-4"></tspan></text><path d="M278.2,166.6 L279.4,168.5 L280.6,170.4 L281.7,172.3 L282.8,174.3 L283.7,176.4 L284.5,178.5 L285.3,180.6 L285.9,182.7 L286.5,184.9 L286.9,187.1 L287.3,189.3 L287.5,191.6 L287.7,193.8 L287.7,196.1 L287.6,198.3 L287.5,200.6 L287.2,202.8 L286.9,205.0 L286.4,207.2 L285.9,209.4 L285.2,211.5 L284.5,213.7 L283.6,215.8 L282.7,217.8" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="303.7" y="175.4" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">r<tspan font-size="12" dy="4">2</tspan><tspan dy="-4"></tspan></text><path d="M329.7,196.0 L329.7,197.7 L329.6,199.5 L329.6,201.2 L329.4,202.9 L329.3,204.6 L329.1,206.4 L328.9,208.1 L328.7,209.8 L328.4,211.5 L328.1,213.2 L327.7,214.9 L327.4,216.6 L327.0,218.3 L326.5,219.9 L326.1,221.6 L325.6,223.3 L325.0,224.9 L324.5,226.5 L323.9,228.2 L323.3,229.8 L322.6,231.4 L321.9,233.0 L321.2,234.5 L320.5,236.1" fill="none" stroke="#f87171" stroke-width="1.6"/><text x="345.1" y="225.3" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">D</text><text x="132" y="186" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">I</text><text x="261.7" y="230" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">J</text><text x="24" y="184" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">tia tới ⊥ AB</text><text x="290.3310791431148" y="146.85503233952687" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">pháp tuyến</text></svg><figcaption>Hình 5. Tia tới vuông góc mặt AB.<br>Ở AB: đi thẳng, không lệch.<br>Ở AC: góc tới i<sub>2</sub> bằng góc chiết quang A.<br>D: góc lệch, tia ló lệch về phía đáy BC.</figcaption></figure>
+<p>Lăng kính thuỷ tinh $n=1{,}5$, góc chiết quang $35^\circ$ ($\sin35^\circ\approx0{,}5736$). Tia sáng tới vuông góc mặt $AB$. Góc lệch $D$:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg06-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg06-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q4" id="hsg06-q4a"><label for="hsg06-q4a" class="tl-opt tl-no">A. $\approx59{,}4^\circ$</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4b"><label for="hsg06-q4b" class="tl-opt tl-no">B. Không ló, phản xạ toàn phần</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4c"><label for="hsg06-q4c" class="tl-opt tl-ok">C. $\approx24{,}4^\circ$</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4d"><label for="hsg06-q4d" class="tl-opt tl-no">D. $35^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $i_2=35^\circ\lt41{,}8^\circ$ nên ló.</p><p>$\sin r_2=1{,}5\cdot0{,}5736\approx0{,}8604$, $r_2\approx59{,}4^\circ$.</p><p>$D=59{,}4^\circ-35^\circ\approx24{,}4^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A là $r_2$, góc giữa tia ló và pháp tuyến. Góc lệch phải trừ đi $A$.</p><p>B: chỉ phản xạ toàn phần khi $A\ge41{,}8^\circ$.</p><p>D lấy góc lệch bằng góc chiết quang. $A$ chỉ là góc tới ở mặt $AC$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<p><strong>🔑 Lăng kính phản xạ toàn phần · Vuông cân · $n\ge\sqrt2$</strong></p>
+<ul>
+<li>Tia ⊥ cạnh góc vuông: tới mặt huyền với góc $45^\circ\gt41{,}8^\circ$, quay $90^\circ$ (kính tiềm vọng).</li>
+<li>Tia ⊥ mặt huyền: phản xạ toàn phần hai lần, quay $180^\circ$ (ống nhòm).</li>
+<li>Điều kiện: $\sin45^\circ\ge\dfrac1n$, tức $n\ge\sqrt2\approx1{,}414$.</li>
+</ul>
+<details class="tl-details">
+<summary>📖 Đọc thêm (chuyên): tia tới xiên mặt $AB$</summary>
+<p>Ở $AB$: $\sin i_1=n\sin r_1$. Ở $AC$: $n\sin i_2=\sin r_2$.</p>
+<p>Hai pháp tuyến cùng mặt $AB$, $AC$ tạo tứ giác với đỉnh $A$, suy ra $r_1+i_2=A$.</p>
+<p>Lệch ở $AB$ là $i_1-r_1$, ở $AC$ là $r_2-i_2$. Cộng lại: $D=i_1+r_2-A$.</p>
+<p>Tia tới vuông góc: $i_1=r_1=0$, quay về $i_2=A$, $D=r_2-A$.</p>
+<p>Đề HSG 9 chỉ cho tia tới vuông góc mặt bên. Phần này để biết, không cần thuộc.</p>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<ul>
+<li>Lăng kính vuông cân: lấy $90^\circ$ làm $i_2$. Phải lấy góc giữa cạnh góc vuông và cạnh huyền: $45^\circ$.</li>
+<li>Lấy $r_2$ làm góc lệch, quên trừ $A$.</li>
+</ul>
+</div>
+
+<h3>VI. Tán sắc và màu sắc</h3>
+
+<h4>1. Tán sắc qua lăng kính</h4>
+<p><strong>🔑 Trắng là hỗn hợp · Tím lệch nhất</strong></p>
+<ul>
+<li>Ánh sáng trắng là hỗn hợp nhiều ánh sáng màu.</li>
+<li>Chiết suất phụ thuộc màu: thuỷ tinh $n_{\text{đ}}=1{,}50\lt n_{t}=1{,}54$.</li>
+<li>Qua lăng kính: đỏ lệch ít nhất, tím lệch nhiều nhất.</li>
+<li>Trên màn, từ phía đỉnh xuống phía đáy: đỏ, da cam, vàng, lục, lam, chàm, tím.</li>
+<li>Ánh sáng một màu qua lăng kính chỉ bị lệch, không tách tiếp.</li>
+<li>Cầu vồng: trong giọt mưa ánh sáng khúc xạ, phản xạ (một phần) ở mặt sau, khúc xạ ra; mỗi màu ló một góc.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 20 400 296" role="img" aria-label="Chùm ánh sáng trắng tới vuông góc mặt AB của lăng kính, ló ra ở mặt AC tách thành dải màu, tia đỏ lệch ít nhất ở phía trên, tia tím lệch nhiều nhất ở phía dưới, gần đáy"><path d="M120,34 L120,282 L300.2,282 Z" fill="rgba(148,163,184,.20)" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><text x="110" y="38" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">A</text><text x="110" y="286" fill="currentColor" font-size="15" font-weight="700" text-anchor="end">B</text><text x="310.2" y="286" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">C</text><line x1="20.0" y1="196.0" x2="120.0" y2="196.0" stroke="currentColor" stroke-width="4.4" opacity="1"/><path d="M60.5,190.5 L70.0,196.0 L60.5,201.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="120.0" y1="196.0" x2="237.7" y2="196.0" stroke="currentColor" stroke-width="3.4" opacity="0.8"/><line x1="237.7" y1="196.0" x2="352.0" y2="237.3" stroke="#f87171" stroke-width="2.4" opacity="1"/><line x1="237.7" y1="196.0" x2="352.0" y2="244.2" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="237.7" y1="196.0" x2="352.0" y2="249.9" stroke="#facc15" stroke-width="2.4" opacity="1"/><line x1="237.7" y1="196.0" x2="352.0" y2="254.4" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="237.7" y1="196.0" x2="352.0" y2="260.5" stroke="#38bdf8" stroke-width="2.4" opacity="1"/><line x1="237.7" y1="196.0" x2="352.0" y2="267.0" stroke="#a78bfa" stroke-width="2.4" opacity="1"/><line x1="352.0" y1="226.0" x2="352.0" y2="296.0" stroke="currentColor" stroke-width="3" opacity="1"/><text x="360" y="242.25298149952457" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">đỏ</text><text x="360" y="271.9946079294944" fill="#a78bfa" font-size="15" font-weight="700" text-anchor="start">tím</text><text x="24" y="182" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">ánh sáng trắng</text><text x="352" y="216" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">màn</text></svg><figcaption>Hình 6. Tán sắc qua lăng kính (góc tách vẽ phóng to).<br>Đỏ lệch ít nhất, gần đỉnh A.<br>Tím lệch nhiều nhất, gần đáy BC.</figcaption></figure>
+<p>Chiếu chùm sáng trắng hẹp qua lăng kính lên màn. Nhận xét nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q5" id="hsg06-q5a"><label for="hsg06-q5a" class="tl-opt tl-no">A. Tia đỏ lệch nhiều nhất vì đỏ "mạnh" nhất</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5b"><label for="hsg06-q5b" class="tl-opt tl-ok">B. Tia tím lệch nhiều nhất, nằm gần phía đáy</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5c"><label for="hsg06-q5c" class="tl-opt tl-no">C. Lăng kính nhuộm màu cho ánh sáng trắng</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5d"><label for="hsg06-q5d" class="tl-opt tl-no">D. Mọi màu lệch như nhau, chỉ khác độ sáng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thuỷ tinh có chiết suất với tím lớn nhất, nên tím lệch nhiều nhất về phía đáy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A ngược: đỏ có chiết suất nhỏ nhất, lệch ít nhất.</p><p>C: các màu có sẵn trong ánh sáng trắng, lăng kính chỉ tách chúng ra.</p><p>D: nếu lệch như nhau thì đã không tách thành dải màu.</p></div>
+</div>
+
+<h4>2. Màu của vật, tấm lọc màu, trộn ánh sáng</h4>
+<p><strong>🔑 Màu vật = màu ánh sáng nó hắt lại</strong></p>
+<ul>
+<li>Vật trắng hắt lại mọi màu. Vật đen hấp thụ gần hết.</li>
+<li>Vật màu nào hắt mạnh màu đó. Thiếu màu đó trong ánh sáng chiếu tới: vật trông tối.</li>
+<li>Tấm lọc màu cho màu của nó đi qua, hấp thụ màu khác.</li>
+<li>Lọc đỏ chồng lọc lục: gần như không còn ánh sáng.</li>
+</ul>
+<p><strong>🔑 Trộn ánh sáng khác pha sơn</strong></p>
+<ul>
+<li>Đỏ + lục → vàng.</li>
+<li>Đỏ + lam → đỏ tím.</li>
+<li>Lục + lam → lam lục.</li>
+<li>Đỏ + lục + lam → trắng.</li>
+<li>Pha sơn thì ngược: càng pha càng hấp thụ, càng tối.</li>
+</ul>
+<p>Chiếu đèn lục và đèn lam chồng lên nhau trên bức tường trắng. Vùng chồng có màu:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q6" id="hsg06-q6a"><label for="hsg06-q6a" class="tl-opt tl-no">A. Lục sẫm, như pha hai màu sơn</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6b"><label for="hsg06-q6b" class="tl-opt tl-no">B. Trắng</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6c"><label for="hsg06-q6c" class="tl-opt tl-ok">C. Lam lục, sáng hơn từng đèn</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6d"><label for="hsg06-q6d" class="tl-opt tl-no">D. Đen, vì hai màu triệt nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trộn ánh sáng là cộng thêm: tường hắt lại cả lục lẫn lam, mắt thấy lam lục.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nhầm với pha sơn. Ánh sáng chồng lên thì cộng, không hấp thụ bớt.</p><p>B cần đủ ba màu đỏ, lục, lam.</p><p>D: ánh sáng chồng lên chỉ sáng hơn, không tối đi.</p></div>
+</div>
+<p>Áo vàng (hắt đỏ, vàng, lục; hấp thụ lam) dưới đèn lam thuần trông:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q7" id="hsg06-q7a"><label for="hsg06-q7a" class="tl-opt tl-no">A. Vàng</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7b"><label for="hsg06-q7b" class="tl-opt tl-no">B. Lục, vì vàng với lam ra lục</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7c"><label for="hsg06-q7c" class="tl-opt tl-no">C. Lam</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7d"><label for="hsg06-q7d" class="tl-opt tl-ok">D. Tối, gần như đen</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đèn chỉ có lam, mà áo hấp thụ lam. Gần như không có ánh sáng hắt về mắt.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: màu vật không cố định, phụ thuộc ánh sáng chiếu tới.</p><p>B dùng quy tắc pha sơn. Ở đây không có ánh sáng vàng hay lục nào để hắt lại.</p><p>C: áo hấp thụ lam chứ không hắt lam.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: từ không khí vào chất $n=\sqrt2$, $i=45^\circ$. Tìm $r$ và góc giữa tia phản xạ với tia khúc xạ.</summary>
+<p>$\sin r=\dfrac{\sin45^\circ}{\sqrt2}=0{,}5$, nên $r=30^\circ$.</p>
+<p>Tia phản xạ hợp với mặt phân cách $45^\circ$, tia khúc xạ hợp với mặt $60^\circ$.</p>
+<p>Góc giữa hai tia: $180^\circ-45^\circ-30^\circ=105^\circ$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: nước sâu $60\ \text{cm}$ trên đáy kính dày $15\ \text{cm}$ ($n=1{,}5$). Nhìn vuông góc, vạch ở mặt dưới tấm kính trông sâu bao nhiêu?</summary>
+<p>Nhiều lớp: $h'=\dfrac{60}{4/3}+\dfrac{15}{1{,}5}=45+10=55\ \text{cm}$.</p>
+<p>Thật là $75\ \text{cm}$, vạch trông nâng lên $20\ \text{cm}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: lăng kính $n=1{,}5$, tia tới ⊥ $AB$. Tìm $A$ để góc lệch $D=A$.</summary>
+<p>$D=A$ nghĩa là $r_2-A=A$, tức $r_2=2A$.</p>
+<p>$\sin2A=1{,}5\sin A$, mà $\sin2A=2\sin A\cos A$, nên $\cos A=0{,}75$.</p>
+<p>$A\approx41{,}4^\circ$. Kiểm: $41{,}4^\circ\lt i_{gh}=41{,}8^\circ$ nên tia vẫn ló, $r_2\approx82{,}8^\circ$.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Định luật khúc xạ? Khi nào lệch gần, lệch xa pháp tuyến? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$n_1\sin i=n_2\sin r$, góc đo so với pháp tuyến.</p>
+<p>Vào môi trường chiết quang hơn: gần pháp tuyến.</p>
+<p>Ra môi trường chiết quang kém: xa pháp tuyến.</p></details>
+<details class="tl-details"><summary>Chiết suất liên hệ với vận tốc ánh sáng thế nào?</summary>
+<p>$n=\dfrac cv$.</p>
+<p>$n$ lớn thì ánh sáng chậm.</p></details>
+<details class="tl-details"><summary>Độ sâu biểu kiến: một lớp, nhiều lớp, mắt dưới nước?</summary>
+<p>$h'=\dfrac hn$.</p>
+<p>Nhiều lớp: $h'=\sum\dfrac{h_k}{n_k}$.</p>
+<p>Mắt dưới nước nhìn vật trong không khí: $H'=nH$.</p></details>
+<details class="tl-details"><summary>Hai điều kiện phản xạ toàn phần và công thức góc giới hạn?</summary>
+<p>Từ môi trường chiết quang hơn sang kém hơn.</p>
+<p>$i\ge i_{gh}$, với $\sin i_{gh}=\dfrac{n_2}{n_1}$.</p></details>
+<details class="tl-details"><summary>Lăng kính, tia ⊥ $AB$: góc tới ở $AC$, góc lệch?</summary>
+<p>$i_2=A$.</p>
+<p>Ló khi $A\lt i_{gh}$: $\sin r_2=n\sin A$, $D=r_2-A$.</p></details>
+<details class="tl-details"><summary>Vì sao lăng kính tách ánh sáng trắng? Màu vật do đâu?</summary>
+<p>Chiết suất phụ thuộc màu: tím lệch nhiều nhất, đỏ ít nhất.</p>
+<p>Màu vật là màu ánh sáng nó hắt lại mạnh.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Mọi góc đo so với pháp tuyến.</li>
+<li>$n_1\sin i=n_2\sin r$; $n=\dfrac cv$.</li>
+<li>Vào nước, vào kính: $r\lt i$. Ra ngoài: $r\gt i$.</li>
+<li>Nhìn vuông góc: $h'=\dfrac hn$. Nhìn xiên: còn nông hơn.</li>
+<li>Phản xạ toàn phần: đủ cả hai điều kiện, $\sin i_{gh}=\dfrac{n_2}{n_1}$.</li>
+<li>Vùng sáng tròn: $R=h\tan i_{gh}$.</li>
+<li>Lăng kính, tia ⊥ $AB$: $i_2=A$, $D=r_2-A$.</li>
+<li>Tím lệch nhiều nhất. Trộn ánh sáng là cộng, pha sơn là trừ.</li>
+<li>Đọc đề: tia đi từ đâu sang đâu? Nhìn thẳng hay xiên?</li>
+</ul>
+</div>

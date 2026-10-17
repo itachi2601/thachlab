@@ -1,0 +1,860 @@
+{
+ "lesson_id": 163,
+ "lesson_title": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+ "generated_at": "2026-10-17",
+ "review": {
+  "checked": true,
+  "by": "kiem-code ×2 (giải độc lập + soát nội dung/hình) + dò lần 2 (KaTeX, ký tự điều khiển, 375px)",
+  "date": "2026-10-17",
+  "notes": "Đáp số bài tập mẫu, tự luận, luyện tập khớp lời giải độc lập; đã sửa góp ý kiểm chéo (sai_so, đề kín, trùng số giữa các mục, hình)."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Chuỗi hiệu suất nhà máy nhiệt điện than: công suất nhiên liệu, hao phí từng khâu, than và CO₂",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "problem_html": "<p>Một nhà máy nhiệt điện đốt than gồm ba khâu nối tiếp: lò hơi (hiệu suất $H_1=90\\,\\%$) biến năng lượng của than thành nhiệt của hơi nước; tuabin ($H_2=42\\,\\%$) biến nhiệt của hơi thành cơ năng; máy phát ($H_3=96\\,\\%$) biến cơ năng thành điện năng. Nhà máy chạy liên tục, phát lên lưới công suất điện $330\\ \\text{MW}$. Than có năng suất toả nhiệt $q=2{,}7\\cdot10^7\\ \\text{J/kg}$; mỗi kilôgam than cháy hết thải ra $k=2{,}5\\ \\text{kg}$ khí CO₂. Bỏ qua hao phí trên đường dây tải điện.</p><ol type=\"a\"><li>Tính hiệu suất của cả nhà máy.</li><li>Tính công suất nhiên liệu (năng lượng than toả ra trong mỗi giây), tổng công suất hao phí và công suất hao phí ở từng khâu. Khâu nào hao phí nhiều nhất?</li><li>Tính khối lượng than nhà máy đốt trong một giờ, trong một ngày, và khối lượng CO₂ thải ra trong một ngày.</li><li>Cải tiến tuabin để hiệu suất tuabin tăng lên $45\\,\\%$ (hai khâu kia giữ nguyên), nhà máy vẫn phát $330\\ \\text{MW}$. Mỗi ngày nhà máy đốt bớt được bao nhiêu tấn than?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-1-0\"><svg viewBox=\"0 0 420 212\" role=\"img\" aria-label=\"Sơ đồ nhà máy nhiệt điện: than, lò hơi, tuabin, máy phát nối tiếp; chấm năng lượng chạy sang phải, một phần rẽ xuống thành nhiệt hao phí ở mỗi khâu\"><rect x=\"6\" y=\"72\" width=\"52\" height=\"46\" rx=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"32.0\" y=\"100.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Than</text><rect x=\"78\" y=\"62\" width=\"68\" height=\"68\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"112.0\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Lò hơi</text><text x=\"112.0\" y=\"122\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">90 %</text><rect x=\"178\" y=\"62\" width=\"68\" height=\"68\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"212.0\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Tuabin</text><text x=\"212.0\" y=\"122\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">42 %</text><rect x=\"278\" y=\"62\" width=\"68\" height=\"68\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"312.0\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Máy phát</text><text x=\"312.0\" y=\"122\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">96 %</text><line x1=\"58.0\" y1=\"95.0\" x2=\"78.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"146.0\" y1=\"95.0\" x2=\"178.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"246.0\" y1=\"95.0\" x2=\"278.0\" y2=\"95.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"346\" y1=\"95\" x2=\"410\" y2=\"95\" stroke=\"#fb923c\" stroke-width=\"2.6\"/><path d=\"M400.6,89.6 L410.0,95.0 L400.6,100.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"380\" y=\"86\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">330 MW</text><text x=\"380\" y=\"114\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">lưới</text><text x=\"8.0\" y=\"56.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"12\">nl</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"112.0\" y1=\"130\" x2=\"112.0\" y2=\"178\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M116.7,169.8 L112.0,178.0 L107.3,169.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"120.0\" y=\"164\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"212.0\" y1=\"130\" x2=\"212.0\" y2=\"178\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M216.7,169.8 L212.0,178.0 L207.3,169.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220.0\" y=\"164\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"312.0\" y1=\"130\" x2=\"312.0\" y2=\"178\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M316.7,169.8 L312.0,178.0 L307.3,169.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"320.0\" y=\"164\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><text x=\"212\" y=\"200\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">nhiệt toả ra môi trường (hao phí)</text><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;408.0;408.0\" keyTimes=\"0;0.0300;0.4100;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;95.0\" keyTimes=\"0;0.0300;0.4100;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.0300;0.0400;0.4100;0.4250;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;212.0;212.0;212.0\" keyTimes=\"0;0.1050;0.3631;0.4850;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.1050;0.3631;0.4850;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.1050;0.1150;0.4850;0.5000;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;112.0;112.0;112.0\" keyTimes=\"0;0.1800;0.3642;0.5600;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.1800;0.3642;0.5600;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.1800;0.1900;0.5600;0.5750;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;212.0;212.0;212.0\" keyTimes=\"0;0.2550;0.5131;0.6350;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.2550;0.5131;0.6350;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.2550;0.2650;0.6350;0.6500;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;312.0;312.0;312.0\" keyTimes=\"0;0.3300;0.6215;0.7100;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.3300;0.6215;0.7100;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.3300;0.3400;0.7100;0.7250;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;212.0;212.0;212.0\" keyTimes=\"0;0.4050;0.6631;0.7850;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.4050;0.6631;0.7850;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.4050;0.4150;0.7850;0.8000;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;408.0;408.0\" keyTimes=\"0;0.4800;0.8600;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;95.0\" keyTimes=\"0;0.4800;0.8600;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.4800;0.4900;0.8600;0.8750;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"32\" cy=\"95\" r=\"5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"cx\" values=\"32.0;32.0;212.0;212.0;212.0\" keyTimes=\"0;0.5550;0.8131;0.9350;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"95.0;95.0;95.0;180.0;180.0\" keyTimes=\"0;0.5550;0.8131;0.9350;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.5550;0.5650;0.9350;0.9500;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: mỗi chấm là một phần năng lượng của than; ở mỗi khâu một phần rẽ xuống thành nhiệt toả ra môi trường. Số chấm không theo tỉ lệ công suất.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> năng lượng không tự mất đi; phần hao phí ở mỗi khâu biến thành nhiệt toả ra môi trường.</li><li><strong>Định nghĩa:</strong> hiệu suất $H=\\dfrac{P_{\\text{ích}}}{P_{\\text{tp}}}\\lt1$; hao phí $P_{hp}=P_{\\text{tp}}-P_{\\text{ích}}$.</li><li><strong>Công thức:</strong> nhiều khâu nối tiếp $H=H_1H_2H_3$; than toả $Q=qm$; $m_{\\text{CO}_2}=k\\,m$.</li><li><strong>Điều kiện:</strong> khâu sau chỉ nhận phần có ích của khâu trước; công suất (W) nhân thời gian (s) ra năng lượng (J).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hiệu suất cả nhà máy</span></p><p>Ba khâu nối tiếp nên nhân các hiệu suất:</p>$$H=H_1H_2H_3=0{,}90\\cdot0{,}42\\cdot0{,}96=0{,}36288$$<div class=\"bt-ans\">$$H\\approx36{,}3\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất nhiên liệu và tổng hao phí</span></p><p>Công suất có ích là công suất điện, công suất toàn phần là của than:</p>$$P_{nl}=\\dfrac{P_{\\text{đ}}}{H}=\\dfrac{330}{0{,}36288}$$<div class=\"bt-ans\">$$P_{nl}\\approx909{,}4\\ \\text{MW}$$</div>$$P_{hp}=P_{nl}-P_{\\text{đ}}\\approx909{,}4-330$$<div class=\"bt-ans\">$$P_{hp}\\approx579{,}4\\ \\text{MW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hao phí từng khâu</span></p><p>Mỗi khâu hao $(1-H_i)$ nhân công suất <b>vào</b> khâu đó:</p>$$\\text{Lò hơi: }0{,}10\\cdot909{,}4\\approx90{,}9\\ \\text{MW};\\quad P_1=0{,}90\\cdot909{,}4\\approx818{,}5\\ \\text{MW}$$$$\\text{Tuabin: }0{,}58\\cdot818{,}5\\approx474{,}7\\ \\text{MW};\\quad P_2=0{,}42\\cdot818{,}5\\approx343{,}8\\ \\text{MW}$$$$\\text{Máy phát: }0{,}04\\cdot343{,}8\\approx13{,}75\\ \\text{MW}$$<div class=\"bt-ans\">$$\\text{Tuabin hao nhiều nhất}\\ (\\approx474{,}7\\ \\text{MW})$$</div><p>Cộng lại: $90{,}9+474{,}7+13{,}75\\approx579{,}4\\ \\text{MW}$, khớp tổng hao phí.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Than đốt trong một giờ, một ngày</span></p><p>Mỗi giây than toả $P_{nl}$ jun:</p>$$\\dfrac{m}{t}=\\dfrac{P_{nl}}{q}=\\dfrac{909{,}4\\cdot10^6}{2{,}7\\cdot10^7}\\approx33{,}68\\ \\text{kg/s}$$$$m_{\\text{giờ}}=33{,}68\\cdot3600\\approx121\\,250\\ \\text{kg}\\approx121{,}3\\ \\text{tấn}$$$$m_{\\text{ngày}}=33{,}68\\cdot86\\,400\\ \\text{kg}$$<div class=\"bt-ans\">$$m_{\\text{ngày}}\\approx2910\\ \\text{tấn}$$</div><p>Cùng một ngày nhà máy phát $A=330\\ \\text{MW}\\cdot24\\ \\text{h}=7920\\ \\text{MWh}$ điện.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>CO₂ thải trong một ngày</span></p>$$m_{\\text{CO}_2}=k\\,m_{\\text{ngày}}=2{,}5\\cdot2910$$<div class=\"bt-ans\">$$m_{\\text{CO}_2}\\approx7275\\ \\text{tấn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Cải tiến tuabin</span></p>$$H'=0{,}90\\cdot0{,}45\\cdot0{,}96=0{,}3888$$<p>Cùng công suất điện, lượng than tỉ lệ nghịch với $H$:</p>$$m'_{\\text{ngày}}=2910\\cdot\\dfrac{0{,}36288}{0{,}3888}\\approx2716\\ \\text{tấn}$$$$\\Delta m=2910-2716$$<div class=\"bt-ans\">$$\\Delta m\\approx194\\ \\text{tấn/ngày}\\ (\\approx6{,}7\\,\\%)$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>$H\\approx36\\,\\%\\lt1$, đúng cỡ hiệu suất nhà máy nhiệt điện than thực tế ($30$–$40\\,\\%$) ✓.</p><p>Tổng hao phí ba khâu bằng $P_{nl}-P_{\\text{đ}}$ ✓. Hao phí lớn nhất ở khâu nhiệt → cơ (tuabin), không phải máy phát ✓.</p><p>Đơn vị: $\\dfrac{\\text{W}\\cdot\\text{s}}{\\text{J/kg}}=\\dfrac{\\text{J}}{\\text{J/kg}}=\\text{kg}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $H\\approx36{,}3\\,\\%$</p><p>b) $P_{nl}\\approx909{,}4\\ \\text{MW}$; $P_{hp}\\approx579{,}4\\ \\text{MW}$</p><p>b) Lò hơi $\\approx90{,}9\\ \\text{MW}$; tuabin $\\approx474{,}7\\ \\text{MW}$ (nhiều nhất); máy phát $\\approx13{,}75\\ \\text{MW}$</p><p>c) Khoảng $121{,}3$ tấn than mỗi giờ; $2910$ tấn mỗi ngày</p><p>c) Khoảng $7275$ tấn CO₂ mỗi ngày</p><p>d) Bớt khoảng $194$ tấn than mỗi ngày</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nhiều khâu nối tiếp, mỗi khâu một hiệu suất</strong> → nhân các hiệu suất; công suất than $=P_{\\text{ích}}/H$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-1-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Ba khâu nối tiếp, công suất ra của khâu trước là công suất vào của khâu sau; mỗi khâu hao phí một phần bằng một trừ hiệu suất nhân công suất vào\"><rect x=\"60\" y=\"60\" width=\"80\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"100.0\" y=\"80.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Lò hơi</text><text x=\"100.0\" y=\"98.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">H<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\"> = 90 %</tspan></text><line x1=\"100.0\" y1=\"108\" x2=\"100.0\" y2=\"146\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M104.7,137.8 L100.0,146.0 L95.3,137.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"170\" y=\"60\" width=\"80\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"210.0\" y=\"80.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Tuabin</text><text x=\"210.0\" y=\"98.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">H<tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\"> = 42 %</tspan></text><line x1=\"210.0\" y1=\"108\" x2=\"210.0\" y2=\"146\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M214.7,137.8 L210.0,146.0 L205.3,137.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><rect x=\"280\" y=\"60\" width=\"80\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"320.0\" y=\"80.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Máy phát</text><text x=\"320.0\" y=\"98.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">H<tspan dy=\"4\" font-size=\"11\">3</tspan><tspan dy=\"-4\"> = 96 %</tspan></text><line x1=\"320.0\" y1=\"108\" x2=\"320.0\" y2=\"146\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><path d=\"M324.7,137.8 L320.0,146.0 L315.3,137.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"8\" y1=\"84\" x2=\"58\" y2=\"84\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M49.2,78.9 L58.0,84.0 L49.2,89.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"140\" y1=\"84\" x2=\"168\" y2=\"84\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M159.2,78.9 L168.0,84.0 L159.2,89.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"250\" y1=\"84\" x2=\"278\" y2=\"84\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M269.2,78.9 L278.0,84.0 L269.2,89.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"360\" y1=\"84\" x2=\"412\" y2=\"84\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M403.2,78.9 L412.0,84.0 L403.2,89.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"10.0\" y=\"74.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"11\">nl</tspan></text><text x=\"155.0\" y=\"74.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"11\">1</tspan></text><text x=\"265.0\" y=\"74.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"11\">2</tspan></text><text x=\"414.0\" y=\"46.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"11\">đ</tspan><tspan dy=\"-4\"> = 330 MW</tspan></text><text x=\"100.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">(1 − H<tspan dy=\"4\" font-size=\"11\">1</tspan><tspan dy=\"-4\">)·P</tspan><tspan dy=\"4\" font-size=\"11\">nl</tspan></text><text x=\"210.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">(1 − H<tspan dy=\"4\" font-size=\"11\">2</tspan><tspan dy=\"-4\">)·P</tspan><tspan dy=\"4\" font-size=\"11\">1</tspan></text><text x=\"320.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">(1 − H<tspan dy=\"4\" font-size=\"11\">3</tspan><tspan dy=\"-4\">)·P</tspan><tspan dy=\"4\" font-size=\"11\">2</tspan></text><text x=\"210\" y=\"194\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Ra của khâu trước = vào của khâu sau</text></svg><figcaption>Dữ kiện: hiệu suất ba khâu và công suất điện ra cuối cùng.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ba khâu nối tiếp: lò hơi ($H_1=90\\,\\%$) … tuabin ($H_2=42\\,\\%$) … máy phát ($H_3=96\\,\\%$)\"</td><td>$H_1$; $H_2$; $H_3$</td><td>⚠ khâu sau chỉ nhận phần năng lượng có ích của khâu trước: nối tiếp thì $H=H_1H_2H_3$<br>Không cộng, không lấy trung bình</td></tr><tr><td>\"phát lên lưới công suất điện $330\\ \\text{MW}$\"</td><td>$P_{\\text{đ}}=330\\ \\text{MW}$ (có ích)</td><td>$H=\\dfrac{P_{\\text{ích}}}{P_{\\text{tp}}}$, công suất toàn phần là của than</td></tr><tr><td>\"Bỏ qua hao phí trên đường dây\"</td><td>Điện ra khỏi máy phát tới lưới đủ</td><td>⚠ hao phí chỉ tính trong ba khâu của nhà máy</td></tr><tr><td>\"$q=2{,}7\\cdot10^7\\ \\text{J/kg}$; mỗi kilôgam than … thải ra $k=2{,}5\\ \\text{kg}$ CO₂\"</td><td>$q$; $k$</td><td>Năng lượng than toả $Q=qm$<br>$m_{\\text{CO}_2}=k\\,m$</td></tr><tr><td>\"hiệu suất của cả nhà máy\"</td><td>Cần $H$</td><td>$H=H_1H_2H_3$</td></tr><tr><td>\"công suất nhiên liệu … hao phí ở từng khâu\"</td><td>Cần $P_{nl}$, $P_{hp}$ và hao phí mỗi khâu</td><td>$P_{nl}=\\dfrac{P_{\\text{đ}}}{H}$<br>Mỗi khâu hao $(1-H_i)\\times$ công suất <b>vào</b> khâu đó</td></tr><tr><td>\"khối lượng than … trong một giờ, trong một ngày\"</td><td>Cần $m$; $t=3600\\ \\text{s}$; $t=86\\,400\\ \\text{s}$</td><td>$m=\\dfrac{P_{nl}\\,t}{q}$ (W = J/s nên $t$ tính bằng giây)</td></tr><tr><td>\"hiệu suất tuabin tăng lên $45\\,\\%$ … vẫn phát $330\\ \\text{MW}$\"</td><td>$H_2'=45\\,\\%$</td><td>$H$ cả nhà máy thay đổi thế nào? Lượng than mới so với lượng than cũ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều khâu nối tiếp, mỗi khâu một hiệu suất</b> → nhân các hiệu suất; công suất than bằng công suất có ích chia $H$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hiệu suất cả nhà máy",
+     "hoi": "Hiệu suất của cả nhà máy là bao nhiêu %?",
+     "dap_so": 36.3,
+     "sai_so": 0.1,
+     "don_vi": "%",
+     "loi_hay_gap": "Cộng ba hiệu suất hoặc lấy trung bình cộng; năng lượng đi qua lần lượt từng khâu, khâu sau chỉ nhận phần có ích của khâu trước, nên phải nhân."
+    },
+    {
+     "tieu_de": "Công suất nhiên liệu và tổng hao phí",
+     "hoi": "Công suất nhiên liệu P_nl bằng bao nhiêu MW?",
+     "dap_so": 909.4,
+     "sai_so": 8,
+     "don_vi": "MW",
+     "loi_hay_gap": "Nhân công suất điện với $H$ thay vì chia; công suất vào phải lớn hơn công suất ra.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $P_{nl}=\\dfrac{P_{\\text{đ}}}{H}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $P_{nl}=P_{\\text{đ}}\\cdot H$",
+       "dung": false,
+       "vi_sao": "Nhân với $H\\lt1$ cho số nhỏ hơn công suất điện, vô lí: than phải cấp nhiều hơn điện thu được."
+      },
+      {
+       "text": "Tính $P_{nl}=\\dfrac{P_{\\text{đ}}}{H_3}$",
+       "dung": false,
+       "vi_sao": "Chia cho riêng $H_3$ mới lùi về đầu vào máy phát, chưa lùi qua tuabin và lò hơi tới than."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hao phí từng khâu",
+     "hoi": "Công suất hao phí ở tuabin bằng bao nhiêu MW?",
+     "dap_so": 474.7,
+     "sai_so": 1.5,
+     "don_vi": "MW",
+     "loi_hay_gap": "Nhân $(1-H_2)$ với công suất của than; tuabin chỉ nhận phần lò hơi đưa ra, không nhận toàn bộ $P_{nl}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $(1-H_2)$ với công suất vào tuabin $P_1=H_1P_{nl}$",
+       "dung": true
+      },
+      {
+       "text": "Nhân $(1-H_2)$ với $P_{nl}$",
+       "dung": false,
+       "vi_sao": "Lò hơi đã hao một phần trước đó, nên công suất vào tuabin nhỏ hơn $P_{nl}$."
+      },
+      {
+       "text": "Nhân $(1-H_2)$ với $P_{\\text{đ}}$",
+       "dung": false,
+       "vi_sao": "Công suất điện là đầu ra của máy phát, khâu cuối; tuabin nhận công suất lớn hơn nhiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Than đốt trong một giờ, một ngày",
+     "hoi": "Mỗi ngày nhà máy đốt bao nhiêu tấn than?",
+     "dap_so": 2910,
+     "sai_so": 5,
+     "don_vi": "tấn",
+     "loi_hay_gap": "Dùng công suất điện để tính than; than phải cấp cả phần năng lượng hao phí.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $m=\\dfrac{P_{nl}\\,t}{q}$ với $t=86\\,400\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $m=\\dfrac{P_{\\text{đ}}\\,t}{q}$",
+       "dung": false,
+       "vi_sao": "Công suất điện chỉ là phần có ích; than phải cấp toàn bộ công suất nhiên liệu."
+      },
+      {
+       "text": "Tính $m=\\dfrac{P_{nl}\\,t}{q}$ với $t=24$",
+       "dung": false,
+       "vi_sao": "Oát là jun trên giây, nên thời gian phải đổi ra giây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "CO₂ thải trong một ngày",
+     "hoi": "Mỗi ngày nhà máy thải ra bao nhiêu tấn CO₂?",
+     "dap_so": 7275,
+     "sai_so": 15,
+     "don_vi": "tấn",
+     "loi_hay_gap": "Chia khối lượng than cho $k$; $k$ là số kilôgam CO₂ ứng với mỗi kilôgam than nên phải nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $m_{\\text{CO}_2}=k\\,m_{\\text{than}}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $m_{\\text{CO}_2}=\\dfrac{m_{\\text{than}}}{k}$",
+       "dung": false,
+       "vi_sao": "$k=2{,}5$ kg CO₂ trên mỗi kg than: than càng nhiều CO₂ càng nhiều, nên nhân."
+      },
+      {
+       "text": "Lấy $m_{\\text{CO}_2}=m_{\\text{than}}$",
+       "dung": false,
+       "vi_sao": "Khi cháy, than kết hợp thêm khí oxi của không khí nên khối lượng CO₂ khác khối lượng than; dùng hệ số $k$ đề cho."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cải tiến tuabin",
+     "hoi": "Mỗi ngày nhà máy đốt bớt được bao nhiêu tấn than?",
+     "dap_so": 194,
+     "sai_so": 3,
+     "don_vi": "tấn",
+     "loi_hay_gap": "Lấy lượng than cũ nhân với mức tăng 3 điểm phần trăm của tuabin; lượng than tỉ lệ nghịch với hiệu suất cả nhà máy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $H'=H_1\\cdot0{,}45\\cdot H_3$, tính lượng than mới rồi trừ khỏi lượng cũ",
+       "dung": true
+      },
+      {
+       "text": "Lấy lượng than cũ nhân $(45\\,\\%-42\\,\\%)$",
+       "dung": false,
+       "vi_sao": "Mức tăng 3 điểm phần trăm là của riêng tuabin, không phải tỉ lệ than giảm."
+      },
+      {
+       "text": "Cộng thêm 3 điểm phần trăm vào hiệu suất cả nhà máy rồi tính lại than",
+       "dung": false,
+       "vi_sao": "Tuabin chỉ là một khâu; $H$ cả nhà máy còn nhân với $H_1$, $H_3$ nên tăng ít hơn 3 điểm phần trăm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Công suất thuỷ điện từ lưu lượng và độ cao cột nước; so với nhiệt điện than",
+   "topic": "Các dạng năng lượng tái tạo và nguồn gốc",
+   "problem_html": "<p>Một nhà máy thuỷ điện lấy nước từ hồ chứa qua ống dẫn xuống tuabin. Mùa mưa, độ cao cột nước (từ mặt hồ tới tuabin) là $h=95\\ \\text{m}$, lưu lượng nước qua tuabin là $L=250\\ \\text{m}^3\\text{/s}$. Hiệu suất của tuabin là $92\\,\\%$, của máy phát là $96\\,\\%$. Khối lượng riêng của nước $D=1000\\ \\text{kg/m}^3$, trọng lượng riêng $d=10\\,000\\ \\text{N/m}^3$. Bỏ qua hao phí trên đường dây tải điện.</p><ol type=\"a\"><li>Tính công suất của dòng nước và công suất điện của nhà máy trong mùa mưa.</li><li>Mùa khô, độ cao cột nước giảm còn $80\\ \\text{m}$ và lưu lượng giảm còn $160\\ \\text{m}^3\\text{/s}$. Tính công suất điện; công suất này bằng bao nhiêu phần trăm công suất mùa mưa?</li><li>Mùa khô (độ cao cột nước $80\\ \\text{m}$), muốn nhà máy giữ công suất điện $150\\ \\text{MW}$ thì lưu lượng nước qua tuabin phải bằng bao nhiêu?</li><li>Trong một ngày mùa mưa nhà máy chạy liên tục. Tính điện năng phát ra (MWh) và thể tích nước đã chảy qua tuabin. Nếu cùng lượng điện đó do nhà máy nhiệt điện than ở Dạng 1 làm ra (hiệu suất $36{,}288\\,\\%$; $q=2{,}7\\cdot10^7\\ \\text{J/kg}$; mỗi kilôgam than thải $2{,}5\\ \\text{kg}$ CO₂) thì phải đốt bao nhiêu tấn than và thải ra bao nhiêu tấn CO₂?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-2-0\"><svg viewBox=\"0 0 420 272\" role=\"img\" aria-label=\"Hồ chứa sau đập, nước chảy qua ống dẫn xuống tuabin đặt thấp hơn mặt hồ một độ cao h, tuabin quay máy phát\"><path d=\"M10,52 L150,52 L150,150 L10,150 Z\" fill=\"#38bdf8\" opacity=\"0.22\" stroke=\"none\"/><line x1=\"10.0\" y1=\"52.0\" x2=\"150.0\" y2=\"52.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M150,36 L178,36 L206,224 L150,224 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"16\" y=\"74\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">hồ chứa</text><line x1=\"156.0\" y1=\"131.0\" x2=\"282.0\" y2=\"199.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"156.0\" y1=\"145.0\" x2=\"282.0\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"214\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">ống dẫn</text><text x=\"16\" y=\"174\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">L = 250 m³/s</text><rect x=\"282\" y=\"180\" width=\"70\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><g><circle cx=\"305\" cy=\"202\" r=\"11\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><line x1=\"294.0\" y1=\"202.0\" x2=\"316.0\" y2=\"202.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"305.0\" y1=\"191.0\" x2=\"305.0\" y2=\"213.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 305 202;1440 305 202\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"332\" y=\"206\" fill=\"#fb923c\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">~</text><text x=\"282\" y=\"246\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">tuabin 92 %</text><text x=\"282\" y=\"264\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">máy phát 96 %</text><line x1=\"352\" y1=\"196\" x2=\"386\" y2=\"196\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><path d=\"M377.2,190.9 L386.0,196.0 L377.2,201.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"388.0\" y=\"178.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"11\">đ</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"352.0\" y1=\"226.0\" x2=\"392.0\" y2=\"226.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"150.0\" y1=\"52.0\" x2=\"410.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"390.0\" y1=\"214.0\" x2=\"410.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"404\" y1=\"54\" x2=\"404\" y2=\"212\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M408.1,205.0 L404.0,212.0 L399.9,205.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"404\" y1=\"212\" x2=\"404\" y2=\"54\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M399.9,61.0 L404.0,54.0 L408.1,61.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"112\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">h = 95 m</text><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.0400;0.0610;0.2190;0.2400;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.0400;0.0610;0.2190;0.2400;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.0400;0.0500;0.2400;0.2550;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.1800;0.2010;0.3590;0.3800;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.1800;0.2010;0.3590;0.3800;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.1800;0.1900;0.3800;0.3950;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.3200;0.3410;0.4990;0.5200;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.3200;0.3410;0.4990;0.5200;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.3200;0.3300;0.5200;0.5350;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.4600;0.4810;0.6390;0.6600;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.4600;0.4810;0.6390;0.6600;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.4600;0.4700;0.6600;0.6750;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.6000;0.6210;0.7790;0.8000;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.6000;0.6210;0.7790;0.8000;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.6000;0.6100;0.8000;0.8150;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"150\" cy=\"120\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"cx\" values=\"150.0;150.0;156.0;282.0;300.0;300.0\" keyTimes=\"0;0.7400;0.7610;0.9190;0.9400;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;138.0;206.0;212.0;212.0\" keyTimes=\"0;0.7400;0.7610;0.9190;0.9400;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1;0;0\" keyTimes=\"0;0.7400;0.7500;0.9400;0.9550;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nước từ hồ chảy qua ống xuống làm quay tuabin. Hình không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nước trên hồ có thế năng; khi chảy xuống độ cao $h$, trọng lực sinh công làm quay tuabin.</li><li><strong>Công thức:</strong> mỗi giây trọng lượng nước chảy qua là $d\\,L$, nên công suất dòng nước $P_n=d\\,L\\,h$.</li><li><strong>Hiệu suất:</strong> $P_{\\text{đ}}=H\\,P_n$ với $H=H_tH_m$ (tuabin nối tiếp máy phát).</li><li><strong>Điều kiện:</strong> $d=10D=10\\,000\\ \\text{N/m}^3$; bỏ qua hao phí trên đường dây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công suất dòng nước mùa mưa</span></p><p>Mỗi giây có $250\\ \\text{m}^3$ nước nặng $d\\,L$ rơi độ cao $95\\ \\text{m}$:</p>$$P_n=d\\,L\\,h=10\\,000\\cdot250\\cdot95$$<div class=\"bt-ans\">$$P_n=2{,}375\\cdot10^8\\ \\text{W}=237{,}5\\ \\text{MW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất điện mùa mưa</span></p>$$H=0{,}92\\cdot0{,}96=0{,}8832$$$$P_{\\text{đ}}=H\\,P_n=0{,}8832\\cdot237{,}5$$<div class=\"bt-ans\">$$P_{\\text{đ}}\\approx209{,}8\\ \\text{MW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất điện mùa khô</span></p><p>Cả $h$ lẫn $L$ cùng giảm:</p>$$P'_{\\text{đ}}=0{,}8832\\cdot10\\,000\\cdot160\\cdot80$$<div class=\"bt-ans\">$$P'_{\\text{đ}}\\approx113{,}0\\ \\text{MW}$$</div>$$\\dfrac{P'_{\\text{đ}}}{P_{\\text{đ}}}=\\dfrac{160\\cdot80}{250\\cdot95}\\approx0{,}539$$<p>Mùa khô chỉ còn khoảng $54\\,\\%$ công suất mùa mưa.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lưu lượng để giữ 150 MW</span></p>$$L=\\dfrac{P_{\\text{đ}}}{H\\,d\\,h}=\\dfrac{150\\cdot10^6}{0{,}8832\\cdot10\\,000\\cdot80}$$<div class=\"bt-ans\">$$L\\approx212{,}3\\ \\text{m}^3\\text{/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện năng trong một ngày</span></p>$$A=P_{\\text{đ}}\\,t=209{,}76\\ \\text{MW}\\cdot24\\ \\text{h}$$<div class=\"bt-ans\">$$A\\approx5034\\ \\text{MWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Thể tích nước trong một ngày</span></p><p>Mỗi giây có $L$ mét khối chảy qua, một ngày có $86\\,400\\ \\text{s}$:</p>$$V=L\\,t=250\\cdot86\\,400$$<div class=\"bt-ans\">$$V=2{,}16\\cdot10^7\\ \\text{m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Than nếu dùng nhiệt điện</span></p><p>Đổi $A$ ra jun: $A\\approx5034\\cdot3{,}6\\cdot10^9\\approx1{,}812\\cdot10^{13}\\ \\text{J}$. Than phải toả $A/H_{than}$:</p>$$m=\\dfrac{A}{H_{than}\\,q}=\\dfrac{1{,}812\\cdot10^{13}}{0{,}36288\\cdot2{,}7\\cdot10^7}\\ \\text{kg}$$<div class=\"bt-ans\">$$m\\approx1850\\ \\text{tấn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>CO₂ thải ra</span></p>$$m_{\\text{CO}_2}=k\\,m=2{,}5\\cdot1849{,}7$$<div class=\"bt-ans\">$$m_{\\text{CO}_2}\\approx4624\\ \\text{tấn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">9</span><span>Kiểm tra</span></p><p>$P_{\\text{đ}}\\lt P_n$ ✓. Mùa khô $h$ giảm $16\\,\\%$, $L$ giảm $36\\,\\%$, công suất giảm gần một nửa: hai thừa số cùng giảm ✓.</p><p>Đơn vị: $\\dfrac{\\text{N}}{\\text{m}^3}\\cdot\\dfrac{\\text{m}^3}{\\text{s}}\\cdot\\text{m}=\\dfrac{\\text{N·m}}{\\text{s}}=\\text{W}$ ✓.</p><p>Một ngày mùa mưa nhà máy thuỷ điện này giúp tránh đốt gần $2$ nghìn tấn than ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_n=237{,}5\\ \\text{MW}$; $P_{\\text{đ}}\\approx209{,}8\\ \\text{MW}$</p><p>b) $P'_{\\text{đ}}\\approx113{,}0\\ \\text{MW}$, khoảng $54\\,\\%$ mùa mưa</p><p>c) $L\\approx212{,}3\\ \\text{m}^3\\text{/s}$</p><p>d) $A\\approx5034\\ \\text{MWh}$; $V=2{,}16\\cdot10^7\\ \\text{m}^3$</p><p>d) Khoảng $1850$ tấn than; khoảng $4624$ tấn CO₂</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>lưu lượng nước và độ cao cột nước</strong> → $P_n=d\\,L\\,h$, rồi nhân hiệu suất ra công suất điện.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-2-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Chuỗi tính công suất thuỷ điện: trọng lượng nước chảy mỗi giây nhân độ cao ra công suất dòng nước, nhân hiệu suất ra công suất điện; số liệu hai mùa\"><rect x=\"10\" y=\"14\" width=\"120\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.2\"/><text x=\"70.0\" y=\"34.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Mỗi giây</text><text x=\"70.0\" y=\"52.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">nước nặng d·L</text><rect x=\"150\" y=\"14\" width=\"120\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"210.0\" y=\"34.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">× h</text><text x=\"210.0\" y=\"52.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">→ công suất P<tspan dy=\"4\" font-size=\"11\">n</tspan></text><rect x=\"290\" y=\"14\" width=\"120\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><text x=\"350.0\" y=\"34.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">× H</text><text x=\"350.0\" y=\"52.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">→ công suất P<tspan dy=\"4\" font-size=\"11\">đ</tspan></text><line x1=\"130\" y1=\"38\" x2=\"148\" y2=\"38\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M139.8,33.3 L148.0,38.0 L139.8,42.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"38\" x2=\"288\" y2=\"38\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M279.8,33.3 L288.0,38.0 L279.8,42.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"16\" y=\"96\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Mùa mưa</text><text x=\"16\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">h = 95 m</text><text x=\"16\" y=\"138\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">L = 250 m³/s</text><text x=\"220\" y=\"96\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Mùa khô</text><text x=\"220\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">h = 80 m</text><text x=\"220\" y=\"138\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">L = 160 m³/s</text><text x=\"16\" y=\"170\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Hai khâu nối tiếp: tuabin rồi máy phát</text><text x=\"16\" y=\"190\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">H = H(tuabin) × H(máy phát)</text></svg><figcaption>Dữ kiện hai mùa; chưa tính công suất.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"độ cao cột nước (từ mặt hồ tới tuabin) là $h=95\\ \\text{m}$\"</td><td>$h=95\\ \\text{m}$</td><td>Nước rơi độ cao $h$: trọng lực sinh công $A=P\\,h$ (trọng lượng nhân độ cao)</td></tr><tr><td>\"lưu lượng … $L=250\\ \\text{m}^3\\text{/s}$\"; \"$d=10\\,000\\ \\text{N/m}^3$\"</td><td>$L$; $d$</td><td>Mỗi giây có thể tích $L$ chảy qua, trọng lượng $d\\,L$<br>Công suất dòng nước $P_n=d\\,L\\,h$</td></tr><tr><td>\"Hiệu suất của tuabin là $92\\,\\%$, của máy phát là $96\\,\\%$\"</td><td>$H_t$; $H_m$</td><td>⚠ hai khâu nối tiếp: $H=H_tH_m$, rồi $P_{\\text{đ}}=H\\,P_n$<br>⚠ dùng $d=10D$, không dùng $D$</td></tr><tr><td>\"Mùa khô … $80\\ \\text{m}$ … $160\\ \\text{m}^3\\text{/s}$\"</td><td>$h'$; $L'$</td><td>$P_{\\text{đ}}$ tỉ lệ với cả $h$ lẫn $L$</td></tr><tr><td>\"giữ công suất điện $150\\ \\text{MW}$\"</td><td>Cần $L$</td><td>Rút $L$ từ $P_{\\text{đ}}=H\\,d\\,L\\,h$</td></tr><tr><td>\"một ngày … điện năng phát ra (MWh) và thể tích nước\"</td><td>$t=24\\ \\text{h}=86\\,400\\ \\text{s}$</td><td>$A=P_{\\text{đ}}\\,t$ (MW nhân giờ ra MWh)<br>$V=L\\,t$</td></tr><tr><td>\"do nhà máy nhiệt điện than … hiệu suất $36{,}288\\,\\%$ … phải đốt bao nhiêu tấn than\"</td><td>Cần $m$, $m_{\\text{CO}_2}$</td><td>Cùng lượng điện thì than phải toả nhiều hơn hay ít hơn điện năng? $H$ của nhà máy than vào chỗ nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lưu lượng nước và độ cao cột nước</b> → $P_n=d\\,L\\,h$, rồi nhân hiệu suất ra công suất điện.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công suất dòng nước mùa mưa",
+     "hoi": "Công suất của dòng nước mùa mưa là bao nhiêu MW?",
+     "dap_so": 237.5,
+     "sai_so": 0.5,
+     "don_vi": "MW",
+     "loi_hay_gap": "Dùng khối lượng riêng $D$ thay cho trọng lượng riêng $d=10D$: công là trọng lượng (N) nhân độ cao, không phải khối lượng nhân độ cao."
+    },
+    {
+     "tieu_de": "Công suất điện mùa mưa",
+     "hoi": "Công suất điện mùa mưa bằng bao nhiêu MW?",
+     "dap_so": 209.8,
+     "sai_so": 0.3,
+     "don_vi": "MW",
+     "loi_hay_gap": "Chỉ nhân hiệu suất tuabin, quên máy phát cũng hao một phần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $P_n$ với $H=0{,}92\\cdot0{,}96$",
+       "dung": true
+      },
+      {
+       "text": "Nhân $P_n$ với $0{,}92$",
+       "dung": false,
+       "vi_sao": "Điện lấy ra ở máy phát, nên còn hao ở máy phát; phải nhân cả $0{,}96$."
+      },
+      {
+       "text": "Nhân $P_n$ với trung bình $\\dfrac{0{,}92+0{,}96}{2}$",
+       "dung": false,
+       "vi_sao": "Hai khâu nối tiếp thì hiệu suất nhân với nhau, không lấy trung bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất điện mùa khô",
+     "hoi": "Công suất điện mùa khô bằng bao nhiêu MW?",
+     "dap_so": 113.05,
+     "sai_so": 0.6,
+     "don_vi": "MW",
+     "loi_hay_gap": "Chỉ đổi một trong hai đại lượng $h$, $L$; mùa khô cả hai cùng giảm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $P_{\\text{đ}}=H\\,d\\,L\\,h$ với cả $h$ và $L$ mới",
+       "dung": true
+      },
+      {
+       "text": "Chỉ đổi $h$, giữ $L=250\\ \\text{m}^3\\text{/s}$",
+       "dung": false,
+       "vi_sao": "Mùa khô lưu lượng cũng giảm; công suất tỉ lệ với cả hai thừa số."
+      },
+      {
+       "text": "Chỉ đổi $L$, giữ $h=95\\ \\text{m}$",
+       "dung": false,
+       "vi_sao": "Mực hồ hạ nên độ cao cột nước cũng giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lưu lượng để giữ 150 MW",
+     "hoi": "Lưu lượng cần thiết là bao nhiêu m³/s?",
+     "dap_so": 212.3,
+     "sai_so": 0.5,
+     "don_vi": "m³/s",
+     "loi_hay_gap": "Quên chia cho hiệu suất: công suất cho trước là công suất điện, dòng nước phải cấp nhiều hơn thế.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $L=\\dfrac{P_{\\text{đ}}}{H\\,d\\,h}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $L=\\dfrac{P_{\\text{đ}}}{d\\,h}$",
+       "dung": false,
+       "vi_sao": "Bỏ mất hiệu suất: phần hao ở tuabin và máy phát cũng phải do dòng nước cấp."
+      },
+      {
+       "text": "Tính $L=\\dfrac{H\\,P_{\\text{đ}}}{d\\,h}$",
+       "dung": false,
+       "vi_sao": "Nhân $H$ làm lưu lượng nhỏ đi; muốn ra đủ điện thì nước vào phải nhiều hơn, nên chia cho $H$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng trong một ngày",
+     "hoi": "Điện năng phát ra trong một ngày mùa mưa là bao nhiêu MWh?",
+     "dap_so": 5034,
+     "sai_so": 5,
+     "don_vi": "MWh",
+     "loi_hay_gap": "Nhân công suất với số giây nhưng vẫn ghi đơn vị MWh; MW nhân giây ra MJ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $A=P_{\\text{đ}}\\cdot24\\ \\text{h}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $A=P_n\\cdot24\\ \\text{h}$",
+       "dung": false,
+       "vi_sao": "$P_n$ là công suất của dòng nước, chưa trừ hao phí ở tuabin và máy phát."
+      },
+      {
+       "text": "Tính $A=P_{\\text{đ}}\\cdot86\\,400$ rồi ghi đơn vị MWh",
+       "dung": false,
+       "vi_sao": "MW nhân giây ra MJ; muốn có MWh phải nhân với số giờ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích nước trong một ngày",
+     "hoi": "Thể tích nước qua tuabin trong một ngày là a·10⁷ m³. Hệ số a bằng bao nhiêu?",
+     "dap_so": 2.16,
+     "sai_so": 0.02,
+     "loi_hay_gap": "Nhân lưu lượng với số giờ thay vì số giây; lưu lượng tính theo mét khối mỗi giây.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $V=L\\,t$ với $t=86\\,400\\ \\text{s}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $V=L\\cdot24$",
+       "dung": false,
+       "vi_sao": "$L$ là mét khối trong mỗi giây, nên thời gian phải đổi ra giây."
+      },
+      {
+       "text": "Tính lưu lượng từ công suất điện $\\dfrac{P_{\\text{đ}}}{d\\,h}$ rồi nhân $t$",
+       "dung": false,
+       "vi_sao": "Công suất điện đã trừ hao phí; lượng nước thật chảy qua tuabin chính là $L$ đề cho."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Than nếu dùng nhiệt điện",
+     "hoi": "Nhà máy than phải đốt bao nhiêu tấn than?",
+     "dap_so": 1850,
+     "sai_so": 6,
+     "don_vi": "tấn",
+     "loi_hay_gap": "Quên chia cho hiệu suất của nhà máy than; chỉ một phần năng lượng than toả ra thành điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $m=\\dfrac{A}{H_{than}\\,q}$ với $A$ đổi ra jun",
+       "dung": true
+      },
+      {
+       "text": "Tính $m=\\dfrac{H_{than}\\,A}{q}$",
+       "dung": false,
+       "vi_sao": "Than phải toả nhiều năng lượng hơn điện thu được, nên chia cho $H_{than}$ chứ không nhân."
+      },
+      {
+       "text": "Tính $m=\\dfrac{A}{q}$",
+       "dung": false,
+       "vi_sao": "Bỏ qua hao phí của nhà máy than; phần lớn năng lượng than thành nhiệt thải."
+      }
+     ]
+    },
+    {
+     "tieu_de": "CO₂ thải ra",
+     "hoi": "Nhà máy than thải ra bao nhiêu tấn CO₂?",
+     "dap_so": 4624,
+     "sai_so": 15,
+     "don_vi": "tấn",
+     "loi_hay_gap": "Chia khối lượng than cho $k$ hoặc nhân $k$ với điện năng; $k$ là số kilôgam CO₂ trên mỗi kilôgam than.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $m_{\\text{CO}_2}=k\\,m_{\\text{than}}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $m_{\\text{CO}_2}=\\dfrac{m_{\\text{than}}}{k}$",
+       "dung": false,
+       "vi_sao": "Than càng nhiều thì CO₂ càng nhiều; $k$ kg CO₂ ứng với mỗi kg than nên phải nhân."
+      },
+      {
+       "text": "Nhân $k$ với điện năng tính bằng MWh",
+       "dung": false,
+       "vi_sao": "$k$ tính trên khối lượng than đốt, không tính trên điện năng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Pin Mặt Trời cho một gia đình: giờ nắng đỉnh, số tấm làm tròn lên, thời gian hoàn vốn",
+   "topic": "Sử dụng năng lượng tiết kiệm, hiệu quả",
+   "problem_html": "<p>Một gia đình dùng trung bình $375\\ \\text{kWh}$ điện mỗi tháng (tính $30$ ngày) và muốn lắp pin Mặt Trời trên mái. Mỗi tấm pin có diện tích $2{,}0\\ \\text{m}^2$, hiệu suất $20\\,\\%$. Ở nơi đó nắng mạnh nhất có cường độ $I=1000\\ \\text{W/m}^2$, và số giờ nắng đỉnh trung bình là $t_{\\text{đ}}=4{,}0$ giờ mỗi ngày (năng lượng nắng cả ngày trên mỗi mét vuông bằng năng lượng nhận được nếu nắng $1000\\ \\text{W/m}^2$ chiếu đều trong $4$ giờ). Điện từ pin phải qua bộ biến tần có hiệu suất $95\\,\\%$ mới dùng được trong nhà.</p><ol type=\"a\"><li>Tính công suất đỉnh của một tấm pin và điện năng một tấm cho mỗi ngày (sau biến tần).</li><li>Cần ít nhất bao nhiêu tấm để đủ điện cho gia đình? Công suất đỉnh của cả hệ là bao nhiêu?</li><li>Mái nhà chỉ đặt được $14\\ \\text{m}^2$ pin. Mỗi tháng gia đình còn phải mua của lưới điện bao nhiêu kWh?</li><li>Lắp đủ số tấm ở câu b hết $67{,}5$ triệu đồng; giá điện lưới là $2\\,800$ đồng/kWh. Coi toàn bộ $375\\ \\text{kWh}$ mỗi tháng do hệ pin cấp, phần điện dư không bán được. Sau bao nhiêu năm thì tiền điện tiết kiệm được đủ bù tiền lắp đặt?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-3-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Cường độ nắng tăng từ sáng tới trưa rồi giảm tới chiều; vùng dưới đường cong được tô dần, sau đó hiện hình chữ nhật cao 1000 oát trên mét vuông rộng 4 giờ có cùng diện tích\"><line x1=\"52.0\" y1=\"200.0\" x2=\"408.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M400.2,195.5 L408.0,200.0 L400.2,204.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"52.0\" y1=\"200.0\" x2=\"52.0\" y2=\"36.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><path d=\"M47.5,43.8 L52.0,36.0 L56.5,43.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"58\" y=\"34\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">I (W/m²)</text><text x=\"408\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">giờ trong ngày</text><line x1=\"52.0\" y1=\"200.0\" x2=\"52.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"52.0\" y=\"219\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">6 h</text><line x1=\"137.0\" y1=\"200.0\" x2=\"137.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"137.0\" y=\"219\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">9 h</text><line x1=\"222.0\" y1=\"200.0\" x2=\"222.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"222.0\" y=\"219\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">12 h</text><line x1=\"307.0\" y1=\"200.0\" x2=\"307.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"307.0\" y=\"219\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">15 h</text><line x1=\"392.0\" y1=\"200.0\" x2=\"392.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"392.0\" y=\"219\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">18 h</text><line x1=\"52.0\" y1=\"60.0\" x2=\"392.0\" y2=\"60.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><text x=\"46\" y=\"65.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">1000</text><text x=\"46\" y=\"205\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">0</text><clipPath id=\"c9-3-clip\"><rect x=\"52\" y=\"30\" width=\"0\" height=\"180\"><animate attributeName=\"width\" values=\"0;340;340\" keyTimes=\"0;0.6;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect></clipPath><path d=\"M52.0,200.0 L57.7,196.2 L63.3,192.3 L69.0,188.5 L74.7,184.8 L80.3,181.0 L86.0,177.3 L91.7,173.7 L97.3,170.2 L103.0,166.7 L108.7,163.3 L114.3,160.1 L120.0,156.9 L125.7,153.9 L131.3,151.0 L137.0,148.2 L142.7,145.5 L148.3,143.0 L154.0,140.7 L159.7,138.5 L165.3,136.5 L171.0,134.7 L176.7,133.0 L182.3,131.6 L188.0,130.3 L193.7,129.2 L199.3,128.3 L205.0,127.6 L210.7,127.1 L216.3,126.8 L222.0,126.7 L227.7,126.8 L233.3,127.1 L239.0,127.6 L244.7,128.3 L250.3,129.2 L256.0,130.3 L261.7,131.6 L267.3,133.0 L273.0,134.7 L278.7,136.5 L284.3,138.5 L290.0,140.7 L295.7,143.0 L301.3,145.5 L307.0,148.2 L312.7,151.0 L318.3,153.9 L324.0,156.9 L329.7,160.1 L335.3,163.3 L341.0,166.7 L346.7,170.2 L352.3,173.7 L358.0,177.3 L363.7,181.0 L369.3,184.8 L375.0,188.5 L380.7,192.3 L386.3,196.2 L392.0,200.0 L392.0,200 L52.0,200 Z\" fill=\"#f59e0b\" opacity=\"0.30\" stroke=\"none\" clip-path=\"url(#c9-3-clip)\"/><polyline fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"2.6\" opacity=\"1\" points=\"52.0,200.0 57.7,196.2 63.3,192.3 69.0,188.5 74.7,184.8 80.3,181.0 86.0,177.3 91.7,173.7 97.3,170.2 103.0,166.7 108.7,163.3 114.3,160.1 120.0,156.9 125.7,153.9 131.3,151.0 137.0,148.2 142.7,145.5 148.3,143.0 154.0,140.7 159.7,138.5 165.3,136.5 171.0,134.7 176.7,133.0 182.3,131.6 188.0,130.3 193.7,129.2 199.3,128.3 205.0,127.6 210.7,127.1 216.3,126.8 222.0,126.7 227.7,126.8 233.3,127.1 239.0,127.6 244.7,128.3 250.3,129.2 256.0,130.3 261.7,131.6 267.3,133.0 273.0,134.7 278.7,136.5 284.3,138.5 290.0,140.7 295.7,143.0 301.3,145.5 307.0,148.2 312.7,151.0 318.3,153.9 324.0,156.9 329.7,160.1 335.3,163.3 341.0,166.7 346.7,170.2 352.3,173.7 358.0,177.3 363.7,181.0 369.3,184.8 375.0,188.5 380.7,192.3 386.3,196.2 392.0,200.0\"/><circle cx=\"52.0\" cy=\"200.0\" r=\"7\" fill=\"#f59e0b\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"52.0;57.7;63.3;69.0;74.7;80.3;86.0;91.7;97.3;103.0;108.7;114.3;120.0;125.7;131.3;137.0;142.7;148.3;154.0;159.7;165.3;171.0;176.7;182.3;188.0;193.7;199.3;205.0;210.7;216.3;222.0;227.7;233.3;239.0;244.7;250.3;256.0;261.7;267.3;273.0;278.7;284.3;290.0;295.7;301.3;307.0;312.7;318.3;324.0;329.7;335.3;341.0;346.7;352.3;358.0;363.7;369.3;375.0;380.7;386.3;392.0;392.0\" keyTimes=\"0.0000;0.0100;0.0200;0.0300;0.0400;0.0500;0.0600;0.0700;0.0800;0.0900;0.1000;0.1100;0.1200;0.1300;0.1400;0.1500;0.1600;0.1700;0.1800;0.1900;0.2000;0.2100;0.2200;0.2300;0.2400;0.2500;0.2600;0.2700;0.2800;0.2900;0.3000;0.3100;0.3200;0.3300;0.3400;0.3500;0.3600;0.3700;0.3800;0.3900;0.4000;0.4100;0.4200;0.4300;0.4400;0.4500;0.4600;0.4700;0.4800;0.4900;0.5000;0.5100;0.5200;0.5300;0.5400;0.5500;0.5600;0.5700;0.5800;0.5900;0.6000;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"200.0;196.2;192.3;188.5;184.8;181.0;177.3;173.7;170.2;166.7;163.3;160.1;156.9;153.9;151.0;148.2;145.5;143.0;140.7;138.5;136.5;134.7;133.0;131.6;130.3;129.2;128.3;127.6;127.1;126.8;126.7;126.8;127.1;127.6;128.3;129.2;130.3;131.6;133.0;134.7;136.5;138.5;140.7;143.0;145.5;148.2;151.0;153.9;156.9;160.1;163.3;166.7;170.2;173.7;177.3;181.0;184.8;188.5;192.3;196.2;200.0;200.0\" keyTimes=\"0.0000;0.0100;0.0200;0.0300;0.0400;0.0500;0.0600;0.0700;0.0800;0.0900;0.1000;0.1100;0.1200;0.1300;0.1400;0.1500;0.1600;0.1700;0.1800;0.1900;0.2000;0.2100;0.2200;0.2300;0.2400;0.2500;0.2600;0.2700;0.2800;0.2900;0.3000;0.3100;0.3200;0.3300;0.3400;0.3500;0.3600;0.3700;0.3800;0.3900;0.4000;0.4100;0.4200;0.4300;0.4400;0.4500;0.4600;0.4700;0.4800;0.4900;0.5000;0.5100;0.5200;0.5300;0.5400;0.5500;0.5600;0.5700;0.5800;0.5900;0.6000;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.68;0.82;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"165.3\" y=\"60.0\" width=\"113.3\" height=\"140.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\"/><text x=\"222.0\" y=\"52.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">t<tspan dy=\"4\" font-size=\"11\">đ</tspan><tspan dy=\"-4\"> = 4 h</tspan></text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng một ngày nắng: diện tích tô màu (năng lượng nắng cả ngày trên 1 m²) bằng diện tích hình chữ nhật nét đứt cao 1000 W/m², rộng bằng số giờ nắng đỉnh.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> số giờ nắng đỉnh $t_{\\text{đ}}$ là số giờ quy đổi: năng lượng nắng cả ngày bằng nắng $1000\\ \\text{W/m}^2$ chiếu trong $t_{\\text{đ}}$ giờ.</li><li><strong>Công thức:</strong> $P_{\\text{đỉnh}}=H_{pin}\\,I\\,S$; điện một tấm mỗi ngày $A_1=P_{\\text{đỉnh}}\\,t_{\\text{đ}}\\,H_{bt}$.</li><li><strong>Số tấm:</strong> $n=\\dfrac{A_{\\text{ngày}}}{A_1}$, làm tròn <b>lên</b> để đủ điện.</li><li><strong>Điều kiện:</strong> nhu cầu và sản lượng phải cùng một khoảng thời gian (cùng một ngày hoặc cùng một tháng).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhu cầu mỗi ngày</span></p>$$A_{\\text{ngày}}=\\dfrac{375}{30}$$<div class=\"bt-ans\">$$A_{\\text{ngày}}=12{,}5\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công suất đỉnh một tấm</span></p>$$P_{\\text{đỉnh}}=H_{pin}\\,I\\,S=0{,}20\\cdot1000\\cdot2{,}0$$<div class=\"bt-ans\">$$P_{\\text{đỉnh}}=400\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện một tấm mỗi ngày</span></p><p>Nhân với số giờ nắng đỉnh rồi với hiệu suất biến tần:</p>$$A_1=P_{\\text{đỉnh}}\\,t_{\\text{đ}}\\,H_{bt}=400\\cdot4\\cdot0{,}95=1520\\ \\text{Wh}$$<div class=\"bt-ans\">$$A_1=1{,}52\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số tấm tối thiểu</span></p>$$n=\\dfrac{A_{\\text{ngày}}}{A_1}=\\dfrac{12{,}5}{1{,}52}\\approx8{,}22$$<p>$8$ tấm cho $8\\cdot1{,}52=12{,}16\\ \\text{kWh}\\lt12{,}5\\ \\text{kWh}$: thiếu. Phải làm tròn <b>lên</b>:</p><div class=\"bt-ans\">$$n=9\\ \\text{tấm}$$</div>$$P_{\\text{hệ}}=9\\cdot400\\ \\text{W}=3{,}6\\ \\text{kW}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Mái chỉ có 14 m²</span></p>$$n_{\\text{mái}}=\\dfrac{14}{2{,}0}=7\\ \\text{tấm};\\quad A_{\\text{mái}}=7\\cdot1{,}52=10{,}64\\ \\text{kWh/ngày}$$$$\\text{Thiếu mỗi ngày: }12{,}5-10{,}64=1{,}86\\ \\text{kWh}$$$$\\text{Mỗi tháng: }1{,}86\\cdot30$$<div class=\"bt-ans\">$$55{,}8\\ \\text{kWh/tháng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Thời gian hoàn vốn</span></p><p>Phần điện dư không bán nên mỗi tháng chỉ tiết kiệm tiền của đúng $375\\ \\text{kWh}$:</p>$$\\text{Tiết kiệm mỗi tháng}=375\\cdot2800=1\\,050\\,000\\ \\text{đồng}$$$$\\text{Số tháng}=\\dfrac{67\\,500\\,000}{1\\,050\\,000}\\approx64{,}3$$<div class=\"bt-ans\">$$\\approx5{,}4\\ \\text{năm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>$9$ tấm cho $9\\cdot1{,}52=13{,}68\\ \\text{kWh/ngày}\\ge12{,}5$ ✓; chiếm $18\\ \\text{m}^2$ mái.</p><p>Nếu lấy $12$ giờ trời sáng thay cho $4$ giờ nắng đỉnh sẽ ra chưa tới $3$ tấm: quá ít, vì nắng chỉ mạnh vào giữa trưa.</p><p>Hoàn vốn khoảng $5$ năm, ngắn hơn tuổi thọ thường gặp của tấm pin (khoảng $20$ năm trở lên) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_{\\text{đỉnh}}=400\\ \\text{W}$; mỗi tấm $1{,}52\\ \\text{kWh/ngày}$</p><p>b) $9$ tấm; công suất đỉnh hệ $3{,}6\\ \\text{kW}$</p><p>c) Mua thêm $55{,}8\\ \\text{kWh}$ mỗi tháng</p><p>d) Khoảng $64$ tháng, tức khoảng $5{,}4$ năm</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>số giờ nắng đỉnh, diện tích tấm, hiệu suất pin</strong> → $A_1=H\\,I\\,S\\,t_{\\text{đ}}H_{bt}$; số tấm làm tròn lên.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c9-3-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Chuỗi năng lượng từ nắng qua tấm pin và biến tần tới gia đình, kèm công thức công suất đỉnh và điện năng một tấm mỗi ngày\"><rect x=\"10\" y=\"12\" width=\"122\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"2.2\"/><text x=\"71.0\" y=\"32.0\" fill=\"#f59e0b\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Nắng</text><text x=\"71.0\" y=\"50.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">I = 1000 W/m²</text><rect x=\"150\" y=\"12\" width=\"120\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><text x=\"210.0\" y=\"32.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Tấm pin</text><text x=\"210.0\" y=\"50.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">S = 2 m², 20 %</text><rect x=\"288\" y=\"12\" width=\"122\" height=\"48\" rx=\"7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.2\"/><text x=\"349.0\" y=\"32.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Biến tần</text><text x=\"349.0\" y=\"50.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">95 %</text><line x1=\"132\" y1=\"36\" x2=\"148\" y2=\"36\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M139.8,31.3 L148.0,36.0 L139.8,40.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"270\" y1=\"36\" x2=\"286\" y2=\"36\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M277.8,31.3 L286.0,36.0 L277.8,40.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"16.0\" y=\"96.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Công suất đỉnh 1 tấm: P<tspan dy=\"4\" font-size=\"11\">đỉnh</tspan><tspan dy=\"-4\"> = H</tspan><tspan dy=\"4\" font-size=\"11\">pin</tspan><tspan dy=\"-4\">·I·S</tspan></text><text x=\"16.0\" y=\"120.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Điện 1 tấm/ngày = P<tspan dy=\"4\" font-size=\"11\">đỉnh</tspan><tspan dy=\"-4\">·t</tspan><tspan dy=\"4\" font-size=\"11\">đ</tspan><tspan dy=\"-4\">·H</tspan><tspan dy=\"4\" font-size=\"11\">bt</tspan></text><text x=\"16\" y=\"144\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Nhu cầu: 375 kWh/tháng (30 ngày)</text><text x=\"16\" y=\"172\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">So cùng một khoảng thời gian</text></svg><figcaption>Dữ kiện của một tấm và nhu cầu của gia đình.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$375\\ \\text{kWh}$ điện mỗi tháng (tính $30$ ngày)\"</td><td>$A_{\\text{th}}=375\\ \\text{kWh}$</td><td>So với điện một tấm cho trong <b>một ngày</b> thì phải đổi về cùng khoảng thời gian</td></tr><tr><td>\"tấm pin … $2{,}0\\ \\text{m}^2$, hiệu suất $20\\,\\%$\"; \"$I=1000\\ \\text{W/m}^2$\"</td><td>$S$; $H_{pin}$; $I$</td><td>Công suất đỉnh $P_{\\text{đỉnh}}=H_{pin}\\,I\\,S$</td></tr><tr><td>\"số giờ nắng đỉnh … $t_{\\text{đ}}=4{,}0$ giờ mỗi ngày\"</td><td>$t_{\\text{đ}}=4\\ \\text{h}$</td><td>⚠ năng lượng nắng cả ngày đã quy về $1000\\ \\text{W/m}^2$ trong $t_{\\text{đ}}$ giờ: không dùng số giờ trời sáng</td></tr><tr><td>\"qua bộ biến tần có hiệu suất $95\\,\\%$\"</td><td>$H_{bt}=0{,}95$</td><td>⚠ điện dùng được $=H_{bt}\\times$ điện pin phát: phải nhân thêm</td></tr><tr><td>\"Cần ít nhất bao nhiêu tấm\"</td><td>Cần $n$ (số nguyên)</td><td>$n=\\dfrac{\\text{nhu cầu ngày}}{\\text{điện 1 tấm/ngày}}$; làm tròn theo hướng nào thì mới đủ điện?</td></tr><tr><td>\"Mái nhà chỉ đặt được $14\\ \\text{m}^2$\"</td><td>$S_{\\text{mái}}=14\\ \\text{m}^2$</td><td>Đặt được bao nhiêu tấm? Phần thiếu so với nhu cầu, rồi nhân số ngày</td></tr><tr><td>\"hết $67{,}5$ triệu đồng; giá điện … $2\\,800$ đồng/kWh … phần điện dư không bán\"</td><td>Cần thời gian hoàn vốn</td><td>Mỗi tháng tiết kiệm tiền của bao nhiêu kWh? Đổi số tháng ra năm thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số giờ nắng đỉnh, diện tích tấm, hiệu suất pin</b> → điện một tấm $=H\\,I\\,S\\,t_{\\text{đ}}H_{bt}$; số tấm làm tròn lên.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhu cầu mỗi ngày",
+     "hoi": "Mỗi ngày gia đình cần bao nhiêu kWh?",
+     "dap_so": 12.5,
+     "sai_so": 0.05,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Chia cho số giờ hoặc số tháng thay vì số ngày đề cho trong tháng."
+    },
+    {
+     "tieu_de": "Công suất đỉnh một tấm",
+     "hoi": "Công suất đỉnh của một tấm pin là bao nhiêu W?",
+     "dap_so": 400,
+     "sai_so": 2,
+     "don_vi": "W",
+     "loi_hay_gap": "Quên nhân hiệu suất pin: tấm chỉ biến một phần năng lượng nắng thành điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $P_{\\text{đỉnh}}=H_{pin}\\,I\\,S$",
+       "dung": true
+      },
+      {
+       "text": "Tính $P=I\\,S$",
+       "dung": false,
+       "vi_sao": "Đó là công suất nắng chiếu lên tấm; pin chỉ biến $20\\,\\%$ thành điện."
+      },
+      {
+       "text": "Tính $P=H_{pin}\\,I$",
+       "dung": false,
+       "vi_sao": "Đó là công suất điện trên $1\\ \\text{m}^2$; tấm có diện tích $2\\ \\text{m}^2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện một tấm mỗi ngày",
+     "hoi": "Mỗi ngày một tấm cho bao nhiêu kWh sau biến tần?",
+     "dap_so": 1.52,
+     "sai_so": 0.02,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Lấy số giờ trời sáng thay cho số giờ nắng đỉnh; nắng chỉ mạnh vào giữa trưa, số giờ nắng đỉnh đã quy đổi sẵn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân $P_{\\text{đỉnh}}$ với $t_{\\text{đ}}=4\\ \\text{h}$ rồi với $0{,}95$",
+       "dung": true
+      },
+      {
+       "text": "Nhân $P_{\\text{đỉnh}}$ với $12\\ \\text{h}$ trời sáng rồi với $0{,}95$",
+       "dung": false,
+       "vi_sao": "Nắng không giữ $1000\\ \\text{W/m}^2$ suốt 12 giờ; công suất đỉnh chỉ đạt khi nắng mạnh nhất."
+      },
+      {
+       "text": "Nhân $P_{\\text{đỉnh}}$ với $4\\ \\text{h}$, không nhân $0{,}95$",
+       "dung": false,
+       "vi_sao": "Điện phải qua biến tần mới dùng được, biến tần hao $5\\,\\%$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số tấm tối thiểu",
+     "hoi": "Cần ít nhất bao nhiêu tấm pin?",
+     "dap_so": 9,
+     "sai_so": 0,
+     "don_vi": "tấm",
+     "loi_hay_gap": "Làm tròn xuống (hoặc làm tròn theo quy tắc thông thường) khiến hệ thiếu điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia nhu cầu ngày cho điện một tấm mỗi ngày, làm tròn lên",
+       "dung": true
+      },
+      {
+       "text": "Chia nhu cầu ngày cho điện một tấm mỗi ngày, làm tròn theo quy tắc thông thường",
+       "dung": false,
+       "vi_sao": "Làm tròn xuống thì tổng điện nhỏ hơn nhu cầu; số tấm tối thiểu phải làm tròn lên."
+      },
+      {
+       "text": "Chia nhu cầu cả tháng cho điện một tấm mỗi ngày",
+       "dung": false,
+       "vi_sao": "Hai đại lượng phải cùng một khoảng thời gian; tháng chia ngày ra số vô nghĩa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mái chỉ có 14 m²",
+     "hoi": "Mỗi tháng gia đình phải mua của lưới bao nhiêu kWh?",
+     "dap_so": 55.8,
+     "sai_so": 0.5,
+     "don_vi": "kWh",
+     "loi_hay_gap": "So với số tấm của câu b thay vì so với nhu cầu: hệ ở câu b đã dư điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm số tấm đặt vừa mái, điện các tấm đó cho mỗi ngày; lấy nhu cầu ngày trừ đi rồi nhân $30$",
+       "dung": true
+      },
+      {
+       "text": "Lấy số tấm còn thiếu so với câu b nhân điện một tấm, rồi nhân $30$",
+       "dung": false,
+       "vi_sao": "Hệ ở câu b cho dư điện, nên phần thiếu phải so với nhu cầu chứ không so với số tấm câu b."
+      },
+      {
+       "text": "Lấy nhu cầu ngày trừ điện các tấm đặt vừa mái, không nhân thêm",
+       "dung": false,
+       "vi_sao": "Đó là phần thiếu trong một ngày; đề hỏi cả tháng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian hoàn vốn",
+     "hoi": "Sau bao nhiêu năm thì hoàn vốn?",
+     "dap_so": 5.36,
+     "sai_so": 0.1,
+     "don_vi": "năm",
+     "loi_hay_gap": "Tính tiền tiết kiệm theo toàn bộ điện hệ pin phát ra; phần dư không bán nên không thành tiền.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tiền tiết kiệm mỗi tháng là tiền của $375\\ \\text{kWh}$; chia tiền lắp đặt cho số đó rồi đổi tháng ra năm",
+       "dung": true
+      },
+      {
+       "text": "Tính tiền tiết kiệm theo toàn bộ điện năng 9 tấm phát ra mỗi tháng",
+       "dung": false,
+       "vi_sao": "Phần điện dư không bán được nên không tiết kiệm thêm đồng nào."
+      },
+      {
+       "text": "Chia tiền lắp đặt cho tiền điện một ngày rồi chia cho $12$",
+       "dung": false,
+       "vi_sao": "Thương đó là số ngày; đổi ngày ra năm phải chia cho $365$, không chia cho $12$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Nâng cao · Điện gió: công suất theo lập phương tốc độ gió và vùng làm việc của tuabin",
+   "topic": "Các dạng năng lượng tái tạo và nguồn gốc",
+   "problem_html": "<p>Một tuabin gió có cánh quạt quét thành vòng tròn đường kính $80\\ \\text{m}$. Tuabin bắt đầu phát điện khi tốc độ gió đạt $3\\ \\text{m/s}$; đạt công suất định mức $2{,}0\\ \\text{MW}$ khi gió $12\\ \\text{m/s}$ và được điều khiển giữ đúng công suất định mức khi gió từ $12\\ \\text{m/s}$ tới $25\\ \\text{m/s}$; gió mạnh hơn $25\\ \\text{m/s}$ thì tuabin dừng để an toàn. Khi gió từ $3\\ \\text{m/s}$ tới dưới $12\\ \\text{m/s}$, coi công suất điện tỉ lệ với lập phương tốc độ gió. Khối lượng riêng của không khí là $1{,}2\\ \\text{kg/m}^3$; công suất của dòng gió đi qua vòng quét là $P_{\\text{gió}}=\\dfrac12D_{kk}Sv^3$ với $S$ là diện tích vòng quét.</p><ol type=\"a\"><li>Tính công suất của dòng gió khi gió $12\\ \\text{m/s}$ và hiệu suất của tuabin lúc đó. So sánh với giới hạn Betz $59{,}3\\,\\%$.</li><li>Trong một ngày, gió thổi: $4$ h ở $2\\ \\text{m/s}$; $8$ h ở $6\\ \\text{m/s}$; $6$ h ở $9\\ \\text{m/s}$; $4$ h ở $12\\ \\text{m/s}$; $2$ h ở $15\\ \\text{m/s}$. Tính điện năng tuabin phát trong ngày (theo MWh) và hệ số công suất (tỉ số giữa điện năng thực phát và điện năng nếu tuabin chạy định mức suốt $24$ h).</li><li>Một nhà máy nhiệt điện công suất điện $330\\ \\text{MW}$ chạy liên tục cả ngày. Cần ít nhất bao nhiêu tuabin như trên, với gió như câu b, để phát được lượng điện bằng nhà máy đó trong một ngày? Bỏ qua hao phí trên đường dây tải điện.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c09-4-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Tuabin gió quay theo gió thay đổi trong 24 giờ; thanh thời gian ghi tốc độ gió từng khoảng\"><path d=\"M118,214 L122,106 L128,106 L132,214 Z\" fill=\"#94a3b8\" fill-opacity=\".35\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"16.0\" y1=\"214.0\" x2=\"180.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><g transform=\"translate(125 100)\"><g><path d=\"M0,0 L0.0,-54.0\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M0,0 L46.8,27.0\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M0,0 L-46.8,27.0\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linecap=\"round\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0;0;864;1836;2700;3132\" keyTimes=\"0.0000;0.1667;0.5000;0.7500;0.9167;1.0000\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle r=\"7\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"2\"/></g><text x=\"125\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">d<tspan dy=\"4\" font-size=\"12\">q</tspan><tspan dy=\"-4\"> = 80 m</tspan></text><g opacity=\"1\"><line x1=\"10\" y1=\"70\" x2=\"17.0\" y2=\"70\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M12.7,67.5 L17.0,70.0 L12.7,72.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;0.1667\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><line x1=\"10\" y1=\"100\" x2=\"17.0\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M12.7,97.5 L17.0,100.0 L12.7,102.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;0.1667\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><line x1=\"10\" y1=\"130\" x2=\"17.0\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M12.7,127.5 L17.0,130.0 L12.7,132.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;0.1667\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"70\" x2=\"31.0\" y2=\"70\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M22.2,64.9 L31.0,70.0 L22.2,75.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1667;0.5000\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"100\" x2=\"31.0\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M22.2,94.9 L31.0,100.0 L22.2,105.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1667;0.5000\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"130\" x2=\"31.0\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M22.2,124.9 L31.0,130.0 L22.2,135.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1667;0.5000\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"70\" x2=\"41.5\" y2=\"70\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M32.7,64.9 L41.5,70.0 L32.7,75.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5000;0.7500\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"100\" x2=\"41.5\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M32.7,94.9 L41.5,100.0 L32.7,105.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5000;0.7500\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"130\" x2=\"41.5\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M32.7,124.9 L41.5,130.0 L32.7,135.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5000;0.7500\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"70\" x2=\"52.0\" y2=\"70\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M43.2,64.9 L52.0,70.0 L43.2,75.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7500;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"100\" x2=\"52.0\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M43.2,94.9 L52.0,100.0 L43.2,105.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7500;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"130\" x2=\"52.0\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M43.2,124.9 L52.0,130.0 L43.2,135.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7500;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"70\" x2=\"62.5\" y2=\"70\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M53.7,64.9 L62.5,70.0 L53.7,75.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"100\" x2=\"62.5\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M53.7,94.9 L62.5,100.0 L53.7,105.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"10\" y1=\"130\" x2=\"62.5\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M53.7,124.9 L62.5,130.0 L53.7,135.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><rect x=\"200.0\" y=\"172.0\" width=\"28.7\" height=\"18.0\" rx=\"0\" fill=\"#94a3b8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"214.3\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">2</text><rect x=\"228.7\" y=\"172.0\" width=\"57.3\" height=\"18.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"257.3\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">6</text><rect x=\"286.0\" y=\"172.0\" width=\"43.0\" height=\"18.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"307.5\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">9</text><rect x=\"329.0\" y=\"172.0\" width=\"28.7\" height=\"18.0\" rx=\"0\" fill=\"#34d399\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"343.3\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">12</text><rect x=\"357.7\" y=\"172.0\" width=\"14.3\" height=\"18.0\" rx=\"0\" fill=\"#fb923c\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"364.8\" y=\"210\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">15</text><text x=\"196\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">0 h</text><text x=\"376\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">24 h</text><text x=\"200\" y=\"232\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">v (m/s) từng khoảng</text><path d=\"M200,170 l-6,-10 h12 z\" fill=\"#f87171\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;172 0\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><text opacity=\"1\" x=\"200\" y=\"70\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">gió 2 m/s<animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;0.1667\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"70\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">gió 6 m/s<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1667;0.5000\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"70\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">gió 9 m/s<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5000;0.7500\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"70\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">gió 12 m/s<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7500;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"70\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">gió 15 m/s<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9167\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"100\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P từng khoảng = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9990\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"200\" y=\"124\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A cả ngày = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9990\" calcMode=\"discrete\" dur=\"12.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Một ngày gió thổi qua tuabin</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: 1 s ứng với 2 h thật; tốc độ quay và độ dài mũi tên gió chỉ minh hoạ. Khung cuối không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hiệu suất:</strong> $H=\\dfrac{P_{\\text{ích}}}{P_{tp}}$ ; với tuabin, $P_{tp}$ là công suất dòng gió, $P_{\\text{ích}}$ là công suất điện.</li><li><strong>Gió:</strong> $P_{\\text{gió}}=\\dfrac12D_{kk}Sv^3$, $S=\\dfrac{\\pi d_q^2}{4}$ ; giới hạn Betz $59{,}3\\,\\%$ là mức tối đa.</li><li><strong>Vùng làm việc:</strong> $v\\lt v_{\\text{kđ}}$ hoặc $v\\gt v_{\\text{ngắt}}$ : $P=0$ ; $v_{\\text{kđ}}\\le v\\lt v_{\\text{đm}}$ : $P=P_{\\text{đm}}\\left(\\dfrac{v}{v_{\\text{đm}}}\\right)^3$ ; $v_{\\text{đm}}\\le v\\le v_{\\text{ngắt}}$ : $P=P_{\\text{đm}}$.</li><li><strong>Điện năng:</strong> $A=Pt$ ; $1\\ \\text{MW}\\cdot1\\ \\text{h}=1\\ \\text{MWh}$.</li><li><strong>Điều kiện:</strong> bỏ qua hao phí đường dây ; số tuabin là số nguyên.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công suất dòng gió ở 12 m/s</span></p><p>Diện tích vòng quét (đề cho đường kính) :</p>$$S=\\dfrac{\\pi d_q^2}{4}=\\dfrac{\\pi\\cdot80^2}{4}\\approx5027\\ \\text{m}^2$$$$P_{\\text{gió}}=\\dfrac12D_{kk}Sv^3=\\dfrac12\\cdot1{,}2\\cdot5027\\cdot12^3$$<div class=\"bt-ans\">$$P_{\\text{gió}}\\approx5{,}21\\cdot10^6\\ \\text{W}=5{,}21\\ \\text{MW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hiệu suất của tuabin ở 12 m/s</span></p><p>Công suất điện lúc này là công suất định mức :</p>$$H=\\dfrac{P_{\\text{đm}}}{P_{\\text{gió}}}=\\dfrac{2{,}0}{5{,}21}$$<div class=\"bt-ans\">$$H\\approx38{,}4\\,\\%$$</div><div class=\"bt-ans\"><p>$38{,}4\\,\\%\\lt59{,}3\\,\\%$ : đúng với giới hạn Betz, tuabin thật chỉ đạt khoảng một nửa đến hai phần ba mức đó.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất khi gió 9 m/s</span></p><p>$9\\ \\text{m/s}$ nằm giữa $v_{\\text{kđ}}$ và $v_{\\text{đm}}$ : công suất tỉ lệ $v^3$, so với mức định mức :</p>$$P_9=P_{\\text{đm}}\\left(\\dfrac{9}{12}\\right)^3=2{,}0\\cdot0{,}421875$$<div class=\"bt-ans\">$$P_9\\approx0{,}844\\ \\text{MW}$$</div><p>Tương tự $6\\ \\text{m/s}$ : $P_6=2{,}0\\cdot\\left(\\dfrac{6}{12}\\right)^3=0{,}25\\ \\text{MW}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất khi gió 2 m/s và 15 m/s</span></p><p>$2\\ \\text{m/s}\\lt v_{\\text{kđ}}=3\\ \\text{m/s}$ : tuabin chưa phát điện, $P_2=0$.</p><p>$12\\le15\\le25\\ \\text{m/s}$ : bộ điều khiển giữ công suất định mức, không dùng $v^3$ :</p><div class=\"bt-ans\">$$P_{15}=P_{\\text{đm}}=2{,}0\\ \\text{MW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Điện năng cả ngày</span></p><p>Cộng điện năng từng khoảng $A=\\sum P_it_i$ :</p>$$A=4\\cdot0+8\\cdot0{,}25+6\\cdot0{,}844+4\\cdot2{,}0+2\\cdot2{,}0$$$$A=0+2+5{,}0625+8+4$$<div class=\"bt-ans\">$$A\\approx19{,}06\\ \\text{MWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Hệ số công suất</span></p>$$\\dfrac{A}{P_{\\text{đm}}\\cdot24\\ \\text{h}}=\\dfrac{19{,}06}{2{,}0\\cdot24}=\\dfrac{19{,}06}{48}$$<div class=\"bt-ans\">$$\\text{hệ số}\\approx39{,}7\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Số tuabin</span></p><p>Điện năng nhà máy than trong một ngày :</p>$$A_{nm}=330\\cdot24=7920\\ \\text{MWh}$$$$n=\\dfrac{A_{nm}}{A}=\\dfrac{7920}{19{,}06}\\approx415{,}5$$<div class=\"bt-ans\"><p>Cần ít nhất $416$ tuabin (làm tròn lên : $415$ tuabin phát thiếu).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Đơn vị : $\\text{kg/m}^3\\cdot\\text{m}^2\\cdot(\\text{m/s})^3=\\text{kg}\\cdot\\text{m}^2/\\text{s}^3=\\text{W}$ ✓.</p><p>Gió $9\\ \\text{m/s}$ so với $6\\ \\text{m/s}$ : $\\left(\\dfrac96\\right)^3\\approx3{,}4$ lần công suất, khớp $0{,}844:0{,}25$ ✓.</p><p>Hệ số công suất cỡ $25$–$45\\,\\%$ là mức thường gặp của điện gió ; vì vậy cần rất nhiều tuabin mới thay được một nhà máy than chạy liên tục ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_{\\text{gió}}\\approx5{,}21\\ \\text{MW}$ ; $H\\approx38{,}4\\,\\%\\lt59{,}3\\,\\%$</p><p>b) $A\\approx19{,}06\\ \\text{MWh}$ ; hệ số công suất $\\approx39{,}7\\,\\%$</p><p>c) ít nhất $416$ tuabin</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>tuabin gió, tốc độ khởi động, định mức, ngắt</strong> → xếp từng tốc độ gió vào vùng làm việc ; chỉ vùng giữa dùng $P\\propto v^3$, rồi $A=\\sum P_it_i$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c09-4-2\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Đồ thị bậc thang tốc độ gió theo thời gian trong 24 giờ, kèm ba đường ngưỡng khởi động, định mức và ngắt\"><text x=\"16\" y=\"18\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tốc độ gió trong ngày và ba ngưỡng của tuabin</text><rect x=\"50.0\" y=\"214.8\" width=\"48.3\" height=\"15.2\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"74.2\" y=\"208.8\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">2</text><rect x=\"98.3\" y=\"184.4\" width=\"96.7\" height=\"45.6\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"146.7\" y=\"178.4\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">6</text><rect x=\"195.0\" y=\"161.6\" width=\"72.5\" height=\"68.4\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"231.2\" y=\"155.6\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">9</text><rect x=\"267.5\" y=\"138.8\" width=\"48.3\" height=\"91.2\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"291.7\" y=\"156.8\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">12</text><rect x=\"315.8\" y=\"116.0\" width=\"24.2\" height=\"114.0\" rx=\"0\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.6\"/><text x=\"327.9\" y=\"110.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">15</text><line x1=\"50.0\" y1=\"207.2\" x2=\"340.0\" y2=\"207.2\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"346\" y=\"212.2\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"12\">kđ</tspan><tspan dy=\"-4\"></tspan></text><text x=\"44\" y=\"212.2\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">3</text><line x1=\"50.0\" y1=\"138.8\" x2=\"340.0\" y2=\"138.8\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"346\" y=\"143.8\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"12\">đm</tspan><tspan dy=\"-4\"></tspan></text><text x=\"44\" y=\"143.8\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">12</text><line x1=\"50.0\" y1=\"40.0\" x2=\"340.0\" y2=\"40.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"346\" y=\"45.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"12\">ngắt</tspan><tspan dy=\"-4\"></tspan></text><text x=\"44\" y=\"45.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">25</text><line x1=\"50.0\" y1=\"230.0\" x2=\"350.0\" y2=\"230.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M342.2,225.5 L350.0,230.0 L342.2,234.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"50.0\" y1=\"230.0\" x2=\"50.0\" y2=\"26.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M45.5,33.8 L50.0,26.0 L54.5,33.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"58\" y=\"40\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">v (m/s)</text><text x=\"50.0\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"98.3\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">4</text><text x=\"195.0\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">12</text><text x=\"267.5\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">18</text><text x=\"315.8\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">22</text><text x=\"340.0\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">24</text><text x=\"358\" y=\"250\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">t (h)</text></svg><figcaption>Dữ kiện: số trên mỗi cột là tốc độ gió (m/s) trong khoảng đó; ba đường nét đứt là ba ngưỡng của tuabin.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cánh quạt quét thành vòng tròn đường kính $80\\ \\text{m}$\"</td><td>$d_q=80\\ \\text{m}$</td><td>Diện tích hình tròn theo đường kính : $S=\\dfrac{\\pi d_q^2}{4}$</td></tr><tr><td>\"công suất của dòng gió đi qua vòng quét là $P_{\\text{gió}}=\\dfrac12D_{kk}Sv^3$\"</td><td>$D_{kk}=1{,}2\\ \\text{kg/m}^3$</td><td>Công thức đề cho sẵn ; $v$ có số mũ mấy ?</td></tr><tr><td>\"đạt công suất định mức $2{,}0\\ \\text{MW}$ khi gió $12\\ \\text{m/s}$\"</td><td>$P_{\\text{đm}}=2{,}0\\ \\text{MW}$ ; $v_{\\text{đm}}=12\\ \\text{m/s}$</td><td>Hiệu suất : $H=\\dfrac{P_{\\text{ích}}}{P_{tp}}$ ; ở đây phần nào là có ích, phần nào là toàn phần ?</td></tr><tr><td>\"Tuabin bắt đầu phát điện khi tốc độ gió đạt $3\\ \\text{m/s}$\"</td><td>$v_{\\text{kđ}}=3\\ \\text{m/s}$</td><td>⚠ gió dưới ngưỡng này thì tuabin có phát điện không ?</td></tr><tr><td>\"được điều khiển giữ đúng công suất định mức khi gió từ $12\\ \\text{m/s}$ tới $25\\ \\text{m/s}$\"</td><td>$v_{\\text{ngắt}}=25\\ \\text{m/s}$</td><td>⚠ mỗi tốc độ gió trong bảng nằm ở vùng nào : dưới $v_{\\text{kđ}}$, giữa $v_{\\text{kđ}}$ và $v_{\\text{đm}}$, hay giữa $v_{\\text{đm}}$ và $v_{\\text{ngắt}}$ ?</td></tr><tr><td>\"coi công suất điện tỉ lệ với lập phương tốc độ gió\"</td><td>$P\\propto v^3$ khi $3\\le v\\lt12\\ \\text{m/s}$</td><td>Gió nhỏ đi $k$ lần so với $v_{\\text{đm}}$ thì công suất nhỏ đi mấy lần ?</td></tr><tr><td>\"Trong một ngày, gió thổi\"</td><td>năm khoảng, tổng $24$ h</td><td>Mỗi khoảng có công suất riêng : điện năng cả ngày ghép từ các khoảng thế nào ?</td></tr><tr><td>\"hệ số công suất (tỉ số giữa điện năng thực phát và điện năng nếu tuabin chạy định mức suốt $24$ h)\"</td><td>hệ số $=?$</td><td>$\\dfrac{A}{P_{\\text{đm}}\\cdot24\\ \\text{h}}$</td></tr><tr><td>\"Cần ít nhất bao nhiêu tuabin như trên\"</td><td>$P_{nm}=330\\ \\text{MW}$, chạy $24$ h ; $n=?$</td><td>So sánh đại lượng nào của nhà máy và của một tuabin : công suất hay điện năng trong ngày ? Số tuabin làm tròn thế nào ?</td></tr><tr><td>\"Bỏ qua hao phí trên đường dây tải điện\"</td><td>không mất điện năng khi truyền tải</td><td>⚠ điều kiện để coi điện tuabin phát ra bằng điện tới nơi dùng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tốc độ khởi động, định mức, ngắt</b> của tuabin → <b>xếp từng tốc độ gió vào vùng</b>, chỉ vùng giữa dùng $v^3$",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công suất dòng gió ở 12 m/s",
+     "hoi": "Khi gió 12 m/s, công suất của dòng gió qua vòng quét là bao nhiêu MW?",
+     "dap_so": 5.211525221187037,
+     "sai_so": 0.03,
+     "don_vi": "MW",
+     "loi_hay_gap": "Lấy $80\\ \\text{m}$ làm bán kính nên diện tích lớn gấp $4$ lần, hoặc quên hệ số $\\tfrac12$ trong công thức đề cho."
+    },
+    {
+     "tieu_de": "Hiệu suất của tuabin ở 12 m/s",
+     "hoi": "Hiệu suất của tuabin khi gió 12 m/s là bao nhiêu phần trăm?",
+     "dap_so": 38.37648126251334,
+     "sai_so": 0.4,
+     "don_vi": "%",
+     "loi_hay_gap": "Chia ngược công suất dòng gió cho công suất điện nên ra hơn $100\\,\\%$ ; hoặc lấy luôn giới hạn Betz làm hiệu suất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H=\\dfrac{P_{\\text{đm}}}{P_{\\text{gió}}}$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{P_{\\text{gió}}}{P_{\\text{đm}}}$",
+       "dung": false,
+       "vi_sao": "Tỉ số này lớn hơn $1$ : điện phát ra không thể nhiều hơn năng lượng gió mang tới."
+      },
+      {
+       "text": "Lấy $H=59{,}3\\,\\%$ theo giới hạn Betz",
+       "dung": false,
+       "vi_sao": "Betz chỉ là mức tối đa lí thuyết ; hiệu suất thật phải tính từ số liệu của tuabin."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất khi gió 9 m/s",
+     "hoi": "Khi gió 9 m/s, tuabin phát công suất bao nhiêu MW?",
+     "dap_so": 0.84375,
+     "sai_so": 0.006,
+     "don_vi": "MW",
+     "loi_hay_gap": "Dùng tỉ lệ bình phương như động năng, quên rằng lượng không khí qua vòng quét mỗi giây cũng tăng theo $v$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_9=P_{\\text{đm}}\\left(\\dfrac{9}{12}\\right)^3$",
+       "dung": true
+      },
+      {
+       "text": "$P_9=P_{\\text{đm}}\\left(\\dfrac{9}{12}\\right)^2$",
+       "dung": false,
+       "vi_sao": "Công suất gió tỉ lệ $v^3$, không phải $v^2$ : động năng mỗi kilôgam $\\propto v^2$ nhân lượng khí mỗi giây $\\propto v$."
+      },
+      {
+       "text": "$P_9=\\dfrac12D_{kk}S\\cdot9^3$",
+       "dung": false,
+       "vi_sao": "Đó là công suất của dòng gió, chưa tính hiệu suất ; tuabin chỉ biến một phần thành điện."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất khi gió 2 m/s và 15 m/s",
+     "hoi": "Khi gió 2 m/s và khi gió 15 m/s, tuabin phát công suất lần lượt bao nhiêu?",
+     "lua_chon": [
+      {
+       "text": "$0$ và $2{,}0\\ \\text{MW}$",
+       "dung": true
+      },
+      {
+       "text": "$P_{\\text{đm}}\\left(\\dfrac{2}{12}\\right)^3$ và $P_{\\text{đm}}\\left(\\dfrac{15}{12}\\right)^3$",
+       "dung": false,
+       "vi_sao": "Công thức $v^3$ chỉ đúng khi gió từ $3\\ \\text{m/s}$ tới dưới $12\\ \\text{m/s}$."
+      },
+      {
+       "text": "$0$ và $0$",
+       "dung": false,
+       "vi_sao": "Tuabin chỉ dừng khi gió mạnh hơn $25\\ \\text{m/s}$ ; gió $15\\ \\text{m/s}$ vẫn phát công suất định mức."
+      }
+     ],
+     "loi_hay_gap": "Dùng $v^3$ cho cả hai tốc độ : dưới $3\\ \\text{m/s}$ tuabin chưa phát điện, từ $12\\ \\text{m/s}$ trở lên bộ điều khiển giữ công suất định mức.",
+     "chon_buoc_ke": [
+      {
+       "text": "So từng tốc độ gió với $3$, $12$, $25\\ \\text{m/s}$ để biết nó ở vùng nào",
+       "dung": true
+      },
+      {
+       "text": "Dùng $P=P_{\\text{đm}}\\left(\\dfrac{v}{12}\\right)^3$ cho mọi tốc độ gió",
+       "dung": false,
+       "vi_sao": "Ngoài vùng $3$–$12\\ \\text{m/s}$ tuabin không làm việc theo $v^3$."
+      },
+      {
+       "text": "Lấy công suất dòng gió $\\dfrac12D_{kk}Sv^3$ làm công suất điện",
+       "dung": false,
+       "vi_sao": "Tuabin chỉ biến một phần năng lượng gió thành điện, và còn bị giới hạn ở mức định mức."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng cả ngày",
+     "hoi": "Điện năng tuabin phát trong ngày là bao nhiêu MWh?",
+     "dap_so": 19.0625,
+     "sai_so": 0.06,
+     "don_vi": "MWh",
+     "loi_hay_gap": "Lấy tốc độ gió trung bình cả ngày rồi tính công suất một lần ; hoặc coi tuabin chạy định mức suốt $24$ h.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=\\sum P_it_i$ cho năm khoảng gió",
+       "dung": true
+      },
+      {
+       "text": "$A=P_{\\text{đm}}\\cdot24\\ \\text{h}$",
+       "dung": false,
+       "vi_sao": "Tuabin chỉ chạy định mức khi gió từ $12\\ \\text{m/s}$ trở lên ; phần lớn thời gian phát ít hơn."
+      },
+      {
+       "text": "Tính gió trung bình cả ngày rồi $A=P(v_{tb})\\cdot24\\ \\text{h}$",
+       "dung": false,
+       "vi_sao": "Công suất theo $v^3$ không tuyến tính : công suất ở gió trung bình khác trung bình các công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hệ số công suất",
+     "hoi": "Hệ số công suất của tuabin trong ngày đó là bao nhiêu phần trăm?",
+     "dap_so": 39.71354166666667,
+     "sai_so": 0.4,
+     "don_vi": "%",
+     "loi_hay_gap": "Chia điện năng cho công suất dòng gió nhân $24$ h, hoặc chỉ chia cho $24$ h (ra công suất trung bình, chưa so với định mức).",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\dfrac{A}{P_{\\text{đm}}\\cdot24\\ \\text{h}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\dfrac{A}{P_{\\text{gió}}\\cdot24\\ \\text{h}}$",
+       "dung": false,
+       "vi_sao": "Hệ số công suất so với chạy định mức, mẫu số là điện năng định mức $P_{\\text{đm}}\\cdot24\\ \\text{h}$."
+      },
+      {
+       "text": "$\\dfrac{A}{24\\ \\text{h}}$",
+       "dung": false,
+       "vi_sao": "Đó là công suất trung bình (theo MW), chưa chia cho công suất định mức nên chưa là tỉ số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số tuabin",
+     "hoi": "Cần ít nhất bao nhiêu tuabin?",
+     "dap_so": 416,
+     "sai_so": 0,
+     "don_vi": "tuabin",
+     "loi_hay_gap": "So công suất nhà máy với công suất định mức của một tuabin (coi tuabin chạy định mức cả ngày), hoặc làm tròn xuống nên phát thiếu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$n=\\dfrac{A_{nm}}{A}$ rồi làm tròn lên",
+       "dung": true
+      },
+      {
+       "text": "$n=\\dfrac{P_{nm}}{P_{\\text{đm}}}$",
+       "dung": false,
+       "vi_sao": "Tuabin không chạy định mức suốt ngày ; phải so điện năng trong ngày, không so công suất."
+      },
+      {
+       "text": "$n=\\dfrac{A_{nm}}{A}$ rồi làm tròn xuống",
+       "dung": false,
+       "vi_sao": "Làm tròn xuống thì tổng điện năng còn thiếu so với nhà máy ; “ít nhất để đủ” phải làm tròn lên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Vận dụng cao · So sánh phương án: xe máy xăng và xe máy điện, tính từ nguồn tới bánh xe",
+   "topic": "Ưu nhược điểm của nhiên liệu hoá thạch",
+   "problem_html": "<p>Một học sinh mỗi ngày đi xe máy tổng cộng $40\\ \\text{km}$; lực cản trung bình tác dụng lên xe là $70\\ \\text{N}$, coi lực kéo bằng lực cản. Bỏ qua hao phí trên đường dây tải điện. So sánh hai phương án:</p><ul><li>Xe xăng: hiệu suất động cơ $15\\,\\%$; xăng có năng suất toả nhiệt $4{,}6\\cdot10^7\\ \\text{J/kg}$, khối lượng riêng $0{,}70\\ \\text{kg/L}$, giá $24\\,000$ đồng/L; đốt $1\\ \\text{kg}$ xăng thải ra $3{,}2\\ \\text{kg}$ khí CO₂.</li><li>Xe điện: hiệu suất động cơ điện $80\\,\\%$, hiệu suất sạc (từ ổ điện vào acquy) $90\\,\\%$; giá điện $3\\,000$ đồng/kWh; mỗi kWh điện lưới ứng với $0{,}65\\ \\text{kg}$ khí CO₂ thải ra ở các nhà máy điện.</li></ul><ol type=\"a\"><li>Tính thể tích xăng xe xăng dùng mỗi ngày và khối lượng khí CO₂ thải ra.</li><li>Tính điện năng xe điện lấy từ ổ điện mỗi ngày (theo kWh) và khối lượng khí CO₂ tương ứng. Một năm ($365$ ngày) dùng xe điện thay xe xăng thì tiết kiệm được bao nhiêu tiền?</li><li>Giả sử toàn bộ điện sạc xe lấy từ một nhà máy nhiệt điện than có hiệu suất $36{,}3\\,\\%$; than có năng suất toả nhiệt $2{,}7\\cdot10^7\\ \\text{J/kg}$, đốt $1\\ \\text{kg}$ than thải ra $2{,}5\\ \\text{kg}$ khí CO₂. Tính hiệu suất của cả chuỗi từ than tới bánh xe và khối lượng khí CO₂ thải ra mỗi ngày. Khi đó xe điện còn thải ít CO₂ hơn xe xăng không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c09-5-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Xe máy xăng và xe máy điện cùng chạy quãng đường 40 km mỗi ngày\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Cùng quãng đường 40 km, lực cản 70 N</text><line x1=\"16.0\" y1=\"106.0\" x2=\"404.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"16.0\" y1=\"110.0\" x2=\"404.0\" y2=\"110.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"6 6\" opacity=\"1\"/><text x=\"16\" y=\"56\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">xe xăng</text><g transform=\"translate(60 96)\"><circle cx=\"-34\" cy=\"-4\" r=\"4\" fill=\"#94a3b8\" fill-opacity=\".55\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1;1\" keyTimes=\"0;0.04;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"-46\" cy=\"-8\" r=\"6\" fill=\"#94a3b8\" fill-opacity=\".55\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1;1\" keyTimes=\"0;0.07;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"-58\" cy=\"-12\" r=\"8\" fill=\"#94a3b8\" fill-opacity=\".55\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1;1\" keyTimes=\"0;0.10;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"-16\" cy=\"0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"18\" cy=\"0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M-16,0 L-4,-14 L14,-14 L18,0 M10,-14 L14,-26 L20,-26\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"-8\" y=\"-22\" width=\"18\" height=\"9\" rx=\"3\" fill=\"#fb923c\" fill-opacity=\".7\" stroke=\"currentColor\" stroke-width=\"1.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"60 96;370 96\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"16.0\" y1=\"196.0\" x2=\"404.0\" y2=\"196.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"16.0\" y1=\"200.0\" x2=\"404.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"6 6\" opacity=\"1\"/><text x=\"16\" y=\"146\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">xe điện</text><g transform=\"translate(60 186)\"><path d=\"M-2,-40 l-6,10 h6 l-4,9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><circle cx=\"-16\" cy=\"0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"18\" cy=\"0\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M-16,0 L-4,-14 L14,-14 L18,0 M10,-14 L14,-26 L20,-26\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"-8\" y=\"-22\" width=\"18\" height=\"9\" rx=\"3\" fill=\"#38bdf8\" fill-opacity=\".7\" stroke=\"currentColor\" stroke-width=\"1.4\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"60 186;370 186\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text opacity=\"0\" x=\"404\" y=\"134\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">xăng: ? L ; CO<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">: ? kg</tspan><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9990\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"404\" y=\"224\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">điện: ? kWh ; CO<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\">: ? kg</tspan><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9990\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: không theo thời gian thật, không theo tỉ lệ. Khung cuối không ghi kết quả.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công có ích:</strong> $A_{\\text{ích}}=Fs$, lực kéo bằng lực cản.</li><li><strong>Hiệu suất:</strong> $H=\\dfrac{A_{\\text{ích}}}{A_{tp}}$ ; chuỗi nhiều khâu nối tiếp $H=H_1H_2H_3\\dots$</li><li><strong>Nhiên liệu:</strong> $Q=qm$ ; $m=DV$ ; khí thải $m_{CO_2}=k\\,m$ hoặc $k_eA$.</li><li><strong>Đổi đơn vị:</strong> $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ ; tiền $=$ lượng dùng $\\times$ đơn giá.</li><li><strong>Điều kiện:</strong> bỏ qua hao phí đường dây ; hai xe cùng quãng đường, cùng lực cản.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thể tích xăng mỗi ngày</span></p><p>Công có ích ở bánh xe (như nhau cho hai xe) :</p>$$A_{\\text{ích}}=Fs=70\\cdot40\\,000=2{,}8\\cdot10^6\\ \\text{J}$$$$Q=\\dfrac{A_{\\text{ích}}}{H_x}=\\dfrac{2{,}8\\cdot10^6}{0{,}15}\\approx1{,}867\\cdot10^7\\ \\text{J}$$$$m_x=\\dfrac{Q}{q_x}=\\dfrac{1{,}867\\cdot10^7}{4{,}6\\cdot10^7}\\approx0{,}406\\ \\text{kg}$$$$V=\\dfrac{m_x}{D_x}=\\dfrac{0{,}406}{0{,}70}$$<div class=\"bt-ans\">$$V\\approx0{,}580\\ \\text{L}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>CO₂ của xe xăng</span></p><p>Hệ số tính theo kilôgam xăng :</p>$$m_{CO_2}=k_xm_x=3{,}2\\cdot0{,}406$$<div class=\"bt-ans\">$$m_{CO_2}\\approx1{,}30\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện năng lấy từ ổ điện</span></p><p>Chuỗi hai khâu : sạc rồi động cơ, hiệu suất nhân nhau :</p>$$H_e=H_sH_{\\text{đc}}=0{,}9\\cdot0{,}8=0{,}72$$$$A=\\dfrac{A_{\\text{ích}}}{H_e}=\\dfrac{2{,}8\\cdot10^6}{0{,}72}\\approx3{,}89\\cdot10^6\\ \\text{J}$$$$A=\\dfrac{3{,}89\\cdot10^6}{3{,}6\\cdot10^6}\\ \\text{kWh}$$<div class=\"bt-ans\">$$A\\approx1{,}08\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>CO₂ ứng với điện của xe điện</span></p>$$m_{CO_2}'=k_eA=0{,}65\\cdot1{,}080$$<div class=\"bt-ans\">$$m_{CO_2}'\\approx0{,}702\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tiền tiết kiệm một năm</span></p>$$\\text{xăng}:\\ 0{,}580\\cdot24\\,000\\approx13\\,913\\ \\text{đồng/ngày}$$$$\\text{điện}:\\ 1{,}080\\cdot3000\\approx3241\\ \\text{đồng/ngày}$$$$(13\\,913-3241)\\cdot365\\approx3{,}90\\cdot10^6\\ \\text{đồng}$$<div class=\"bt-ans\">$$\\text{tiết kiệm}\\approx3{,}90\\ \\text{triệu đồng/năm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Hiệu suất từ than tới bánh xe</span></p><p>Bỏ qua đường dây : ba khâu nối tiếp nhà máy → sạc → động cơ :</p>$$H_c=H_{nm}H_sH_{\\text{đc}}=0{,}363\\cdot0{,}72$$<div class=\"bt-ans\">$$H_c\\approx26{,}1\\,\\%$$</div><p>Vẫn cao hơn $15\\,\\%$ của xe xăng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>CO₂ khi điện lấy từ than</span></p>$$m_t=\\dfrac{A_{\\text{ích}}}{H_c\\,q_t}=\\dfrac{2{,}8\\cdot10^6}{0{,}2614\\cdot2{,}7\\cdot10^7}\\approx0{,}397\\ \\text{kg}$$$$m_{CO_2}''=k_tm_t=2{,}5\\cdot0{,}397$$<div class=\"bt-ans\">$$m_{CO_2}''\\approx0{,}992\\ \\text{kg}$$</div><div class=\"bt-ans\"><p>$0{,}992\\ \\text{kg}\\lt1{,}30\\ \\text{kg}$ : xe điện vẫn thải ít hơn, nhưng chỉ ít hơn khoảng $1{,}3$ lần thay vì khoảng $1{,}85$ lần ở câu b.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Đơn vị : $\\dfrac{\\text{J}}{\\text{J/kg}}=\\text{kg}$ ; $\\dfrac{\\text{kg}}{\\text{kg/L}}=\\text{L}$ ✓.</p><p>Điện từ than tương đương $k_e=\\dfrac{k_t}{H_{nm}q_t/3{,}6\\cdot10^6}=\\dfrac{2{,}5}{0{,}363\\cdot7{,}5}\\approx0{,}92\\ \\text{kg/kWh}$, lớn hơn $0{,}65$ của lưới (lưới còn thuỷ điện, điện gió, điện Mặt Trời) ✓.</p><p>Kết luận : xe điện “sạch” tới đâu phụ thuộc nguồn sinh ra điện ; tiền điện rẻ hơn tiền xăng khoảng $4{,}3$ lần.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V\\approx0{,}580\\ \\text{L}$ ; $m_{CO_2}\\approx1{,}30\\ \\text{kg}$</p><p>b) $A\\approx1{,}08\\ \\text{kWh}$ ; $m_{CO_2}\\approx0{,}702\\ \\text{kg}$ ; tiết kiệm khoảng $3{,}90$ triệu đồng/năm</p><p>c) $H_c\\approx26{,}1\\,\\%$ ; $m_{CO_2}\\approx0{,}992\\ \\text{kg}$, vẫn ít hơn xe xăng</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>so sánh hai phương án</strong> cùng một <strong>công có ích</strong> → tính $A_{\\text{ích}}$ một lần, đi ngược từng chuỗi (chia tích hiệu suất) về nhiên liệu, rồi đổi ra lít, kWh, tiền, CO₂.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c09-5-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Ba chuỗi năng lượng: xăng qua động cơ tới bánh xe; ổ điện qua sạc và động cơ; than qua nhà máy điện rồi tới xe điện\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Năng lượng đi qua những khâu nào tới bánh xe?</text><rect x=\"8.0\" y=\"34.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#fb923c\" fill-opacity=\"0.12\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"50.0\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">xăng</text><text x=\"50.0\" y=\"74\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Q = q·m</text><line x1=\"96\" y1=\"58.0\" x2=\"324\" y2=\"58.0\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M315.8,53.3 L324.0,58.0 L315.8,62.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210.0\" y=\"50.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">động cơ</text><text x=\"210.0\" y=\"78.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">15 %</text><rect x=\"328.0\" y=\"34.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#34d399\" fill-opacity=\"0.12\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"370.0\" y=\"55\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">bánh xe</text><text x=\"370.0\" y=\"74\" fill=\"#34d399\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"12\">ích</tspan><tspan dy=\"-4\"></tspan></text><rect x=\"8.0\" y=\"104.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#38bdf8\" fill-opacity=\"0.12\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"50.0\" y=\"125\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">ổ điện</text><text x=\"50.0\" y=\"144\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">A = ?</text><line x1=\"96\" y1=\"128.0\" x2=\"164\" y2=\"128.0\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M155.8,123.3 L164.0,128.0 L155.8,132.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130.0\" y=\"120.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">sạc</text><text x=\"130.0\" y=\"148.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">90 %</text><rect x=\"168.0\" y=\"104.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#38bdf8\" fill-opacity=\"0.06\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"210.0\" y=\"125\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">acquy</text><line x1=\"256\" y1=\"128.0\" x2=\"324\" y2=\"128.0\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M315.8,123.3 L324.0,128.0 L315.8,132.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"290.0\" y=\"120.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">động cơ</text><text x=\"290.0\" y=\"148.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">80 %</text><rect x=\"328.0\" y=\"104.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#34d399\" fill-opacity=\"0.12\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"370.0\" y=\"125\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">bánh xe</text><text x=\"370.0\" y=\"144\" fill=\"#34d399\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"12\">ích</tspan><tspan dy=\"-4\"></tspan></text><rect x=\"8.0\" y=\"174.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#fb923c\" fill-opacity=\"0.12\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"50.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">than</text><text x=\"50.0\" y=\"214\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">k = 2,5</text><line x1=\"96\" y1=\"198.0\" x2=\"164\" y2=\"198.0\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M155.8,193.3 L164.0,198.0 L155.8,202.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130.0\" y=\"190.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">nhà máy</text><text x=\"130.0\" y=\"218.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">36,3 %</text><rect x=\"168.0\" y=\"174.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#38bdf8\" fill-opacity=\"0.06\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"210.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">ổ điện</text><line x1=\"256\" y1=\"198.0\" x2=\"324\" y2=\"198.0\" stroke=\"#fb923c\" stroke-width=\"2.2\"/><path d=\"M315.8,193.3 L324.0,198.0 L315.8,202.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"290.0\" y=\"190.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">sạc và</text><text x=\"290.0\" y=\"218.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">động cơ</text><rect x=\"328.0\" y=\"174.0\" width=\"84.0\" height=\"48.0\" rx=\"6\" fill=\"#34d399\" fill-opacity=\"0.12\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"370.0\" y=\"195\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">bánh xe</text><text x=\"370.0\" y=\"214\" fill=\"#34d399\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"12\">ích</tspan><tspan dy=\"-4\"></tspan></text></svg><figcaption>Dữ kiện: phần trăm trên mũi tên là hiệu suất của khâu đó; ba chuỗi cùng cần một công có ích ở bánh xe. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lực cản trung bình tác dụng lên xe là $70\\ \\text{N}$, coi lực kéo bằng lực cản\"</td><td>$F=70\\ \\text{N}$ ; $s=40\\ \\text{km}$</td><td>⚠ công có ích ở bánh xe như nhau cho hai xe : $A_{\\text{ích}}=Fs$, đổi $s$ ra mét</td></tr><tr><td>\"hiệu suất động cơ $15\\,\\%$\"</td><td>$H_x=15\\,\\%$</td><td>$H=\\dfrac{A_{\\text{ích}}}{Q}$ : biết $A_{\\text{ích}}$ và $H$, tìm $Q$ bằng phép tính nào ?</td></tr><tr><td>\"năng suất toả nhiệt $4{,}6\\cdot10^7\\ \\text{J/kg}$, khối lượng riêng $0{,}70\\ \\text{kg/L}$\"</td><td>$q_x=4{,}6\\cdot10^7\\ \\text{J/kg}$ ; $D_x=0{,}70\\ \\text{kg/L}$</td><td>$Q=qm$ ; $D=\\dfrac{m}{V}$</td></tr><tr><td>\"đốt $1\\ \\text{kg}$ xăng thải ra $3{,}2\\ \\text{kg}$ khí CO₂\"</td><td>$k_x=3{,}2$</td><td>⚠ hệ số tính cho mỗi kilôgam hay mỗi lít xăng ?</td></tr><tr><td>\"hiệu suất động cơ điện $80\\,\\%$, hiệu suất sạc (từ ổ điện vào acquy) $90\\,\\%$\"</td><td>$H_{\\text{đc}}=80\\,\\%$ ; $H_s=90\\,\\%$</td><td>Hai khâu nối tiếp : hiệu suất chung của chuỗi tính thế nào ?</td></tr><tr><td>\"mỗi kWh điện lưới ứng với $0{,}65\\ \\text{kg}$ khí CO₂\"</td><td>$k_e=0{,}65\\ \\text{kg/kWh}$</td><td>$1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$</td></tr><tr><td>\"Một năm ($365$ ngày) dùng xe điện thay xe xăng thì tiết kiệm được bao nhiêu tiền?\"</td><td>$24\\,000$ đồng/L ; $3\\,000$ đồng/kWh</td><td>Tiền $=$ lượng dùng $\\times$ đơn giá ; lượng dùng phải cùng đơn vị với đơn giá (L, kWh)</td></tr><tr><td>\"nhà máy nhiệt điện than có hiệu suất $36{,}3\\,\\%$\"</td><td>$H_{nm}=36{,}3\\,\\%$ ; $q_t=2{,}7\\cdot10^7\\ \\text{J/kg}$ ; $k_t=2{,}5$</td><td>⚠ đã bỏ qua hao phí đường dây : từ than tới bánh xe năng lượng qua những khâu nào ?</td></tr><tr><td>\"Khi đó xe điện còn thải ít CO₂ hơn xe xăng không?\"</td><td>so sánh $m_{CO_2}$</td><td>So sánh hai khối lượng CO₂ cho cùng quãng đường $40\\ \\text{km}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>so sánh hai phương án</b> cùng quãng đường → <b>tính công có ích một lần</b>, chia tích hiệu suất từng chuỗi",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thể tích xăng mỗi ngày",
+     "hoi": "Xe xăng dùng bao nhiêu lít xăng mỗi ngày?",
+     "dap_so": 0.5797101449275363,
+     "sai_so": 0.006,
+     "don_vi": "L",
+     "loi_hay_gap": "Nhân công có ích với hiệu suất thay vì chia ; hoặc nhân khối lượng với khối lượng riêng thay vì chia khi đổi ra lít."
+    },
+    {
+     "tieu_de": "CO₂ của xe xăng",
+     "hoi": "Xe xăng thải ra bao nhiêu kilôgam CO₂ mỗi ngày?",
+     "dap_so": 1.298550724637681,
+     "sai_so": 0.012,
+     "don_vi": "kg",
+     "loi_hay_gap": "Nhân hệ số với số lít xăng, trong khi đề cho hệ số theo mỗi kilôgam xăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m_{CO_2}=k_x\\,m_x$ với $m_x$ theo kg",
+       "dung": true
+      },
+      {
+       "text": "$m_{CO_2}=k_x\\,V$ với $V$ theo lít",
+       "dung": false,
+       "vi_sao": "Hệ số $3{,}2$ tính cho $1\\ \\text{kg}$ xăng ; một lít xăng nặng chưa tới $1\\ \\text{kg}$."
+      },
+      {
+       "text": "$m_{CO_2}=\\dfrac{m_x}{k_x}$",
+       "dung": false,
+       "vi_sao": "Mỗi kilôgam xăng thải ra $3{,}2\\ \\text{kg}$ CO₂ nên phải nhân, không chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện năng lấy từ ổ điện",
+     "hoi": "Xe điện lấy từ ổ điện bao nhiêu kWh mỗi ngày?",
+     "dap_so": 1.0802469135802468,
+     "sai_so": 0.012,
+     "don_vi": "kWh",
+     "loi_hay_gap": "Chỉ chia cho hiệu suất động cơ, quên khâu sạc ; hoặc lấy trung bình cộng hai hiệu suất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=\\dfrac{A_{\\text{ích}}}{H_sH_{\\text{đc}}}$ rồi đổi ra kWh",
+       "dung": true
+      },
+      {
+       "text": "$A=\\dfrac{A_{\\text{ích}}}{H_{\\text{đc}}}$",
+       "dung": false,
+       "vi_sao": "Quên khâu sạc : ổ điện phải cấp nhiều hơn phần đi vào acquy."
+      },
+      {
+       "text": "$A=\\dfrac{A_{\\text{ích}}}{(H_s+H_{\\text{đc}})/2}$",
+       "dung": false,
+       "vi_sao": "Hai khâu nối tiếp thì hiệu suất nhân nhau, không lấy trung bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "CO₂ ứng với điện của xe điện",
+     "hoi": "Điện xe điện dùng mỗi ngày ứng với bao nhiêu kilôgam CO₂?",
+     "dap_so": 0.7021604938271605,
+     "sai_so": 0.006,
+     "don_vi": "kg",
+     "loi_hay_gap": "Nhân hệ số với công có ích ở bánh xe thay vì với điện lấy từ ổ ; hoặc nhân với điện năng tính theo MJ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m_{CO_2}'=k_eA$ với $A$ theo kWh",
+       "dung": true
+      },
+      {
+       "text": "$m_{CO_2}'=k_eA_{\\text{ích}}$ với $A_{\\text{ích}}$ đổi ra kWh",
+       "dung": false,
+       "vi_sao": "Nhà máy phải làm ra cả phần hao phí ở sạc và động cơ ; tính theo điện lấy từ ổ."
+      },
+      {
+       "text": "$m_{CO_2}'=k_eA$ với $A$ theo MJ",
+       "dung": false,
+       "vi_sao": "Hệ số cho theo kWh ; phải đổi điện năng ra kWh trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tiền tiết kiệm một năm",
+     "hoi": "Một năm dùng xe điện tiết kiệm được bao nhiêu triệu đồng?",
+     "dap_so": 3.895390499194847,
+     "sai_so": 0.02,
+     "don_vi": "triệu đồng",
+     "loi_hay_gap": "Quên nhân $365$ ngày, hoặc lấy tiền xăng cả năm mà không trừ tiền điện vẫn phải trả.",
+     "chon_buoc_ke": [
+      {
+       "text": "(tiền xăng $-$ tiền điện mỗi ngày) $\\times365$",
+       "dung": true
+      },
+      {
+       "text": "tiền xăng $-$ tiền điện mỗi ngày",
+       "dung": false,
+       "vi_sao": "Đó là số tiết kiệm một ngày ; đề hỏi một năm."
+      },
+      {
+       "text": "tiền xăng mỗi ngày $\\times365$",
+       "dung": false,
+       "vi_sao": "Dùng xe điện vẫn phải trả tiền điện ; tiết kiệm là phần chênh lệch."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất từ than tới bánh xe",
+     "hoi": "Hiệu suất của cả chuỗi từ than tới bánh xe là bao nhiêu phần trăm?",
+     "dap_so": 26.136,
+     "sai_so": 0.2,
+     "don_vi": "%",
+     "loi_hay_gap": "Chỉ lấy hiệu suất nhà máy, quên hai khâu sạc và động cơ ; hoặc lấy trung bình các hiệu suất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H_c=H_{nm}H_sH_{\\text{đc}}$",
+       "dung": true
+      },
+      {
+       "text": "$H_c=H_{nm}$",
+       "dung": false,
+       "vi_sao": "Điện ra khỏi nhà máy còn qua sạc và động cơ mới thành công ở bánh xe."
+      },
+      {
+       "text": "$H_c=\\dfrac{H_{nm}+H_sH_{\\text{đc}}}{2}$",
+       "dung": false,
+       "vi_sao": "Các khâu nối tiếp nên hiệu suất nhân nhau, không lấy trung bình."
+      }
+     ]
+    },
+    {
+     "tieu_de": "CO₂ khi điện lấy từ than",
+     "hoi": "Khi đó mỗi ngày thải ra bao nhiêu kilôgam CO₂?",
+     "dap_so": 0.9919622714235509,
+     "sai_so": 0.012,
+     "don_vi": "kg",
+     "loi_hay_gap": "Vẫn dùng hệ số $0{,}65$ của lưới, hoặc tính khối lượng than từ công có ích mà không chia hiệu suất cả chuỗi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$m_t=\\dfrac{A_{\\text{ích}}}{H_c\\,q_t}$ rồi $m_{CO_2}''=k_tm_t$",
+       "dung": true
+      },
+      {
+       "text": "$m_{CO_2}''=0{,}65\\cdot A$",
+       "dung": false,
+       "vi_sao": "$0{,}65$ là hệ số trung bình của lưới nhiều nguồn ; ở đây toàn bộ điện từ than."
+      },
+      {
+       "text": "$m_t=\\dfrac{A_{\\text{ích}}}{q_t}$ rồi $m_{CO_2}''=k_tm_t$",
+       "dung": false,
+       "vi_sao": "Bỏ qua mọi hao phí : than phải toả nhiều hơn công có ích, chia cho hiệu suất cả chuỗi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>a) Viết chuỗi biến đổi năng lượng, bắt đầu từ nguồn gốc đầu tiên, cho bốn trường hợp sau:</p>\n<p>(1) điện do tuabin gió phát ra;</p>\n<p>(2) điện do nhà máy thuỷ điện phát ra;</p>\n<p>(3) nhiệt toả ra khi đốt củi;</p>\n<p>(4) điện do nhà máy nhiệt điện than phát ra.</p>\n<p>b) Phân loại tám nguồn năng lượng: gió, than đá, thuỷ triều, địa nhiệt, sinh khối, dầu mỏ, urani, sóng biển theo hai tiêu chí: có nguồn gốc từ bức xạ Mặt Trời hay không; có phải năng lượng tái tạo hay không. Trình bày thành bảng.</p>\n<p>c) Sóng biển và thuỷ triều đều là chuyển động của nước biển. Vì sao phải xếp chúng vào hai ô khác nhau ở câu b)?</p><details><summary>Hướng dẫn giải</summary><p>a) (1) Bức xạ Mặt Trời → nhiệt làm nóng không khí không đều → động năng của gió → cơ năng của cánh quạt tuabin → điện năng.</p>\n<p>(2) Bức xạ Mặt Trời → nhiệt làm nước bốc hơi → hơi nước bay lên, ngưng thành mây, mưa xuống vùng cao → thế năng của nước trong hồ chứa → động năng dòng nước → cơ năng tuabin → điện năng.</p>\n<p>(3) Bức xạ Mặt Trời → quang hợp, tích trữ thành hoá năng trong gỗ → đốt củi → nhiệt năng.</p>\n<p>(4) Bức xạ Mặt Trời → quang hợp của thực vật cổ → sinh khối bị chôn vùi hàng trăm triệu năm thành than (hoá năng) → đốt than, nhiệt làm nước thành hơi → cơ năng tuabin → điện năng.</p>\n<p>b) Bảng phân loại:</p>\n<table>\n<tr><th>Nguồn</th><th>Gốc Mặt Trời?</th><th>Tái tạo?</th></tr>\n<tr><td>Gió</td><td>Có</td><td>Có</td></tr>\n<tr><td>Sóng biển</td><td>Có</td><td>Có</td></tr>\n<tr><td>Sinh khối</td><td>Có</td><td>Có</td></tr>\n<tr><td>Than đá</td><td>Có</td><td>Không</td></tr>\n<tr><td>Dầu mỏ</td><td>Có</td><td>Không</td></tr>\n<tr><td>Thuỷ triều</td><td>Không</td><td>Có</td></tr>\n<tr><td>Địa nhiệt</td><td>Không</td><td>Có</td></tr>\n<tr><td>Urani</td><td>Không</td><td>Không</td></tr>\n</table>\n<p>c) Sóng biển do gió thổi trên mặt biển, mà gió có gốc từ bức xạ Mặt Trời.</p>\n<p>Thuỷ triều do lực hấp dẫn của Mặt Trăng (và Mặt Trời) kết hợp với chuyển động tự quay của Trái Đất, không do bức xạ Mặt Trời.</p>\n<p>Lỗi hay gặp: viết \"mọi nguồn năng lượng đều từ Mặt Trời\" — có ba ngoại lệ: địa nhiệt, hạt nhân (urani), thuỷ triều.</p>\n<p>Lỗi hay gặp: xếp than, dầu vào \"không có gốc Mặt Trời\" vì quên chúng là năng lượng Mặt Trời được thực vật cổ tích trữ.</p></details><h4>Bài 2 · Dễ</h4><p>Sao Hoả ở xa Mặt Trời hơn Trái Đất. Ở rìa khí quyển Sao Hoả, bức xạ Mặt Trời chiếu vuông góc lên mỗi mét vuông với công suất khoảng $I=590\\ \\text{W/m}^2$. Coi chùm tia Mặt Trời tới Sao Hoả là chùm song song; bán kính Sao Hoả $R=3390\\ \\text{km}$. Để so sánh: toàn bộ loài người hiện tiêu thụ năng lượng với công suất trung bình khoảng $2{,}0\\cdot10^{13}\\ \\text{W}$. Một năm có $365$ ngày.</p>\n<p>a) Tính công suất bức xạ Mặt Trời chiếu tới Sao Hoả (ngay ngoài khí quyển).</p>\n<p>b) Công suất đó gấp bao nhiêu lần công suất loài người tiêu thụ?</p>\n<p>c) Năng lượng loài người dùng trong một năm, Mặt Trời gửi tới Sao Hoả trong bao lâu?</p>\n<p>d) Khoảng $25\\,\\%$ bức xạ tới bị Sao Hoả phản xạ ngược về vũ trụ, phần còn lại được hấp thụ. Tính trung bình mỗi mét vuông của quả cầu Sao Hoả (tính chung ngày và đêm, mọi vĩ độ) hấp thụ công suất bao nhiêu.</p>\n<p>e) Ở Trái Đất, con số tương ứng với $I$ là $1360\\ \\text{W/m}^2$. Giải thích định tính vì sao ở Sao Hoả nhỏ hơn nhiều.</p><details><summary>Hướng dẫn giải</summary><p>a) Chùm tia song song bị Sao Hoả chặn lại đúng bằng phần đi qua một hình tròn bán kính $R$ (hình chiếu của hành tinh), không phải cả mặt cầu.</p>\n<p>$S=\\pi R^2=\\pi\\cdot(3{,}39\\cdot10^6)^2\\approx3{,}61\\cdot10^{13}\\ \\text{m}^2$.</p>\n<p>$P=IS\\approx590\\cdot3{,}61\\cdot10^{13}\\approx2{,}13\\cdot10^{16}\\ \\text{W}$.</p>\n<p>b) $\\dfrac{2{,}13\\cdot10^{16}}{2{,}0\\cdot10^{13}}\\approx1065$ lần.</p>\n<p>c) Năng lượng loài người dùng một năm: $A=2{,}0\\cdot10^{13}\\cdot365\\cdot86\\,400\\approx6{,}31\\cdot10^{20}\\ \\text{J}$.</p>\n<p>Thời gian: $t=\\dfrac{A}{P}=\\dfrac{365\\cdot86\\,400}{1065}\\approx2{,}96\\cdot10^4\\ \\text{s}\\approx8{,}2$ giờ.</p>\n<p>d) Công suất hấp thụ $0{,}75P$ được chia đều trên toàn mặt cầu $4\\pi R^2$:</p>\n<p>$\\dfrac{0{,}75\\,I\\,\\pi R^2}{4\\pi R^2}=\\dfrac{0{,}75\\cdot590}{4}\\approx111\\ \\text{W/m}^2$.</p>\n<p>e) Năng lượng Mặt Trời phát ra mỗi giây toả đều ra mọi phía; càng xa Mặt Trời, cùng năng lượng đó trải trên mặt cầu càng lớn nên mỗi mét vuông nhận càng ít. Sao Hoả xa Mặt Trời khoảng $1{,}5$ lần Trái Đất nên mỗi mét vuông chỉ nhận chưa tới một nửa ($1360:590\\approx2{,}3$ lần).</p>\n<p>Lỗi hay gặp ở a): dùng diện tích mặt cầu $4\\pi R^2$, ra $8{,}5\\cdot10^{16}\\ \\text{W}$ (gấp 4 lần) — nửa hành tinh là ban đêm, nửa còn lại phần lớn bị chiếu xiên.</p>\n<p>Lỗi hay gặp: quên đổi $3390\\ \\text{km}$ ra mét.</p></details><h4>Bài 3 · Trung bình</h4><p>Một trường học thay $120$ bóng đèn ống huỳnh quang $40\\ \\text{W}$ bằng $120$ bóng đèn LED $18\\ \\text{W}$ sáng tương đương. Mỗi ngày đèn bật $8$ giờ, mỗi tháng học $22$ ngày; coi các đèn hoạt động đúng công suất định mức.</p>\n<p>Điện của trường do một nhà máy nhiệt điện than có hiệu suất $36\\,\\%$ cung cấp; bỏ qua hao phí trên đường dây tải điện. Than có năng suất toả nhiệt $q=2{,}7\\cdot10^7\\ \\text{J/kg}$; cứ đốt $1\\ \\text{kg}$ than thì thải ra $2{,}5\\ \\text{kg}$ khí CO₂. Đơn giá điện của trường là $2900$ đồng/kWh (một giá cố định).</p>\n<p>a) Mỗi tháng trường tiết kiệm được bao nhiêu kWh điện?</p>\n<p>b) Nhờ đó nhà máy bớt đốt bao nhiêu kilôgam than và bớt thải bao nhiêu kilôgam CO₂ mỗi tháng?</p>\n<p>c) Mỗi tháng trường bớt bao nhiêu tiền điện? Một năm học $9$ tháng tiết kiệm bao nhiêu kWh?</p>\n<p>d) Cùng độ sáng mà đèn LED tốn ít điện hơn. Giải thích bằng hiệu suất chuyển hoá năng lượng.</p><details><summary>Hướng dẫn giải</summary><p>a) Mỗi bóng giảm $40-18=22\\ \\text{W}=0{,}022\\ \\text{kW}$.</p>\n<p>$\\Delta A=120\\cdot0{,}022\\cdot8\\cdot22=464{,}64\\ \\text{kWh}$ mỗi tháng.</p>\n<p>b) Đổi ra jun: $464{,}64\\cdot3{,}6\\cdot10^6\\approx1{,}673\\cdot10^9\\ \\text{J}$.</p>\n<p>Ở nhà máy, nhiệt than toả ra phải lớn hơn điện năng: $Q=\\dfrac{\\Delta A}{H}=\\dfrac{1{,}673\\cdot10^9}{0{,}36}\\approx4{,}646\\cdot10^9\\ \\text{J}$.</p>\n<p>$m=\\dfrac{Q}{q}=\\dfrac{4{,}646\\cdot10^9}{2{,}7\\cdot10^7}\\approx172{,}1\\ \\text{kg}$ than.</p>\n<p>$m_{CO_2}=2{,}5\\cdot172{,}1\\approx430\\ \\text{kg}$ CO₂.</p>\n<p>c) Tiền: $464{,}64\\cdot2900\\approx1\\,347\\,000$ đồng mỗi tháng.</p>\n<p>Năm học: $464{,}64\\cdot9\\approx4182\\ \\text{kWh}$.</p>\n<p>d) Cả hai đèn đều biến điện năng thành quang năng (có ích) và nhiệt năng (hao phí).</p>\n<p>Đèn LED có hiệu suất phát sáng cao hơn: phần điện năng biến thành nhiệt ít hơn, nên để cho cùng một lượng ánh sáng nó cần điện năng toàn phần nhỏ hơn.</p>\n<p>Lỗi hay gặp ở b): nhân với $H$ ($\\Delta A\\cdot0{,}36$) thay vì chia — nhiệt toàn phần ở nhà máy phải lớn hơn điện năng có ích.</p>\n<p>Lỗi hay gặp: tính tiết kiệm bằng $120\\cdot18$ W (công suất đèn mới) thay vì hiệu $40-18$.</p></details><h4>Bài 4 · Trung bình</h4><p>Một nhà máy thuỷ điện tích năng có hồ trên cao hơn hồ dưới $h=300\\ \\text{m}$. Ban đêm, khi lưới điện thừa điện, máy bơm đưa $3{,}6\\cdot10^6\\ \\text{m}^3$ nước từ hồ dưới lên hồ trên với hiệu suất bơm $85\\,\\%$. Ban ngày, toàn bộ lượng nước đó được xả qua tuabin để phát điện, hiệu suất phát (tuabin và máy phát) $88\\,\\%$.</p>\n<p>Coi độ chênh mực nước $300\\ \\text{m}$ không đổi trong suốt quá trình; trọng lượng riêng của nước $d=10\\,000\\ \\text{N/m}^3$; bỏ qua hao phí trên đường dây tải điện.</p>\n<p>a) Tính phần thế năng mà nước nhận thêm sau khi bơm (đơn vị J và MWh).</p>\n<p>b) Tính điện năng tiêu thụ để bơm, điện năng phát lại ban ngày và hiệu suất của cả chu trình bơm – phát.</p>\n<p>c) Nếu xả đều trong $6$ giờ thì công suất điện trung bình và lưu lượng nước qua tuabin là bao nhiêu?</p>\n<p>d) Cả chu trình \"lỗ\" khoảng một phần tư điện năng. Vì sao người ta vẫn xây nhà máy loại này? Nêu hai lí do.</p><details><summary>Hướng dẫn giải</summary><p>a) Trọng lượng nước được bơm: $P=dV=10^4\\cdot3{,}6\\cdot10^6=3{,}6\\cdot10^{10}\\ \\text{N}$.</p>\n<p>Thế năng tăng: $W_t=Ph=3{,}6\\cdot10^{10}\\cdot300=1{,}08\\cdot10^{13}\\ \\text{J}$.</p>\n<p>Đổi: $\\dfrac{1{,}08\\cdot10^{13}}{3{,}6\\cdot10^6}=3\\cdot10^6\\ \\text{kWh}=3000\\ \\text{MWh}$.</p>\n<p>b) Thế năng là phần có ích của máy bơm: $A_{bơm}=\\dfrac{W_t}{H_{bơm}}=\\dfrac{3000}{0{,}85}\\approx3529\\ \\text{MWh}$.</p>\n<p>Khi phát, thế năng là phần toàn phần: $A_{phát}=H_{phát}W_t=0{,}88\\cdot3000=2640\\ \\text{MWh}$.</p>\n<p>Hiệu suất chu trình: $H=H_{bơm}H_{phát}=0{,}85\\cdot0{,}88=0{,}748=74{,}8\\,\\%$ (kiểm tra: $\\dfrac{2640}{3529}\\approx0{,}748$).</p>\n<p>c) $P_đ=\\dfrac{2640\\ \\text{MWh}}{6\\ \\text{h}}=440\\ \\text{MW}$.</p>\n<p>$L=\\dfrac{V}{t}=\\dfrac{3{,}6\\cdot10^6}{6\\cdot3600}\\approx166{,}7\\ \\text{m}^3/\\text{s}$.</p>\n<p>d) Điện ban đêm đang thừa: nhà máy nhiệt điện than, điện hạt nhân không giảm công suất nhanh được, nên điện đêm rẻ; trữ lại để dùng lúc cao điểm ban ngày, khi điện thiếu và đắt.</p>\n<p>Tuabin thuỷ điện khởi động trong vài phút, bù kịp lúc lưới điện thiếu đột ngột; hồ chứa giống một \"acquy khổng lồ\", giúp dùng được nhiều hơn điện gió, điện Mặt Trời vốn lúc thừa lúc thiếu.</p>\n<p>Lỗi hay gặp: tính điện bơm bằng $0{,}85\\cdot3000$ (nhân thay vì chia) — máy bơm phải tiêu thụ nhiều hơn thế năng nó tạo ra.</p>\n<p>Lỗi hay gặp: lấy hiệu suất chu trình bằng trung bình cộng $\\dfrac{85+88}{2}\\,\\%$.</p></details><h4>Bài 5 · Khó</h4><p>Một nhà máy điện hạt nhân có công suất điện $1000\\ \\text{MW}$, hiệu suất $33\\,\\%$, chạy liên tục đủ $365$ ngày. Biết $1\\ \\text{g}$ U-235 phân hạch hết toả ra khoảng $8{,}2\\cdot10^{10}\\ \\text{J}$. Bỏ qua hao phí trên đường dây tải điện.</p>\n<p>a) Tính điện năng nhà máy phát ra trong một năm và năng lượng nhiên liệu hạt nhân cần cung cấp.</p>\n<p>b) Mỗi năm nhà máy cần bao nhiêu kilôgam U-235 phân hạch?</p>\n<p>c) Một nhà máy nhiệt điện than hiệu suất $36\\,\\%$ phát cùng lượng điện năng đó. Than có $q=2{,}7\\cdot10^7\\ \\text{J/kg}$, mỗi kilôgam than cháy thải $2{,}5\\ \\text{kg}$ CO₂. Tính khối lượng than đốt và CO₂ thải ra mỗi năm. Khối lượng than gấp bao nhiêu lần khối lượng U-235 ở câu b)?</p>\n<p>d) Nêu hai ưu điểm và hai nhược điểm của điện hạt nhân. Vì sao năng lượng hạt nhân không được xếp vào năng lượng tái tạo? Nhà máy điện hạt nhân dùng phản ứng phân hạch hay nhiệt hạch, hai phản ứng đó khác nhau thế nào?</p><details><summary>Hướng dẫn giải</summary><p>a) $t=365\\cdot86\\,400=3{,}1536\\cdot10^7\\ \\text{s}$.</p>\n<p>Điện năng: $A=P_đt=10^9\\cdot3{,}1536\\cdot10^7\\approx3{,}15\\cdot10^{16}\\ \\text{J}$.</p>\n<p>Năng lượng nhiên liệu: $E=\\dfrac{A}{H}=\\dfrac{3{,}1536\\cdot10^{16}}{0{,}33}\\approx9{,}56\\cdot10^{16}\\ \\text{J}$.</p>\n<p>b) $m_U=\\dfrac{9{,}56\\cdot10^{16}}{8{,}2\\cdot10^{10}}\\approx1{,}165\\cdot10^6\\ \\text{g}\\approx1165\\ \\text{kg}$ — khoảng $1{,}2$ tấn mỗi năm.</p>\n<p>c) Nhiệt than toả: $Q=\\dfrac{A}{0{,}36}\\approx8{,}76\\cdot10^{16}\\ \\text{J}$.</p>\n<p>$m_{than}=\\dfrac{Q}{q}\\approx3{,}24\\cdot10^9\\ \\text{kg}\\approx3{,}24$ triệu tấn.</p>\n<p>$m_{CO_2}=2{,}5\\cdot3{,}24\\cdot10^9\\approx8{,}11\\cdot10^9\\ \\text{kg}\\approx8{,}11$ triệu tấn.</p>\n<p>Tỉ số: $\\dfrac{3{,}24\\cdot10^9}{1165}\\approx2{,}8\\cdot10^6$ — than nặng gấp khoảng $2{,}8$ triệu lần.</p>\n<p>(Riêng về nhiên liệu, $1\\ \\text{g}$ U-235 toả bằng khoảng $3$ tấn than; tỉ số ở đây nhỏ hơn $3$ triệu một chút vì nhà máy than có hiệu suất cao hơn: $36\\,\\%$ so với $33\\,\\%$.)</p>\n<p>d) Ưu điểm: khi vận hành không thải CO₂; nhiên liệu cực gọn (hơn một tấn mỗi năm thay cho hàng triệu tấn than), phát điện ổn định ngày đêm.</p>\n<p>Nhược điểm: chất thải phóng xạ phải cất giữ an toàn rất lâu; nguy cơ sự cố gây ô nhiễm phóng xạ; vốn xây dựng lớn.</p>\n<p>Không tái tạo vì urani là khoáng chất có hạn trong vỏ Trái Đất, dùng tới đâu hết tới đó, tự nhiên không bổ sung lại.</p>\n<p>Nhà máy dùng phân hạch: hạt nhân nặng (U-235) hấp thụ nơtron rồi vỡ thành hai hạt nhân nhẹ hơn và vài nơtron, toả năng lượng; phản ứng dây chuyền được điều khiển trong lò.</p>\n<p>Nhiệt hạch là các hạt nhân nhẹ (hiđrô) kết hợp thành hạt nhân nặng hơn (heli) ở nhiệt độ hàng chục triệu độ — xảy ra trong lõi Mặt Trời, chưa dùng phát điện thương mại.</p>\n<p>Lỗi hay gặp: dùng $1000\\ \\text{MW}$ làm công suất nhiên liệu (quên chia $H$), ra $385\\ \\text{kg}$ U-235.</p>\n<p>Lỗi hay gặp: nói nhà máy \"đốt\" urani — không có sự cháy, năng lượng đến từ biến đổi hạt nhân.</p></details><h4>Bài 6 · Nâng cao</h4><p>Một đảo nhỏ có $200$ hộ, trung bình mỗi hộ dùng $5\\ \\text{kWh}$ điện mỗi ngày. Hệ điện của đảo gồm:</p>\n<p>• một tuabin gió có công suất định mức $100\\ \\text{kW}$ tại tốc độ gió $12\\ \\text{m/s}$, bắt đầu quay khi gió từ $3\\ \\text{m/s}$; khi gió từ $3$ đến dưới $12\\ \\text{m/s}$ thì công suất tỉ lệ với lập phương tốc độ gió;</p>\n<p>• một dàn pin Mặt Trời hiệu suất $19\\,\\%$, nối qua biến tần hiệu suất $95\\,\\%$; ở đảo, mỗi ngày tương đương $4{,}5$ giờ nắng đỉnh với cường độ bức xạ $1000\\ \\text{W/m}^2$;</p>\n<p>• một dàn acquy và một máy phát điện chạy dầu diesel dự phòng.</p>\n<p>Điện năng gió và pin phát ra trong ngày: $60\\,\\%$ được dùng ngay, $40\\,\\%$ phải nạp vào acquy rồi mới dùng vào ban đêm; hiệu suất nạp – xả của acquy là $85\\,\\%$. Bỏ qua hao phí trên đường dây tải điện và mọi hao phí khác.</p>\n<p>a) Hôm khảo sát có $10$ giờ gió $6\\ \\text{m/s}$ và $14$ giờ gió $9\\ \\text{m/s}$. Tính điện năng tuabin gió phát ra trong ngày.</p>\n<p>b) Để các hộ nhận đủ điện, gió và pin phải phát ra tổng cộng bao nhiêu kWh mỗi ngày?</p>\n<p>c) Với ngày gió như câu a), dàn pin phải có diện tích tối thiểu bao nhiêu mét vuông?</p>\n<p>d) Một ngày lặng gió, trời u ám (coi gió và pin không phát điện), máy diesel chạy trực tiếp theo nhu cầu, không qua acquy. Máy có hiệu suất $35\\,\\%$; dầu có $q=4{,}4\\cdot10^7\\ \\text{J/kg}$, khối lượng riêng $0{,}84\\ \\text{kg/L}$; đốt $1\\ \\text{kg}$ dầu thải $3{,}2\\ \\text{kg}$ CO₂. Tính khối lượng dầu, thể tích dầu và lượng CO₂ thải ra trong ngày đó.</p><details><summary>Hướng dẫn giải</summary><p>a) Công suất theo lập phương tốc độ (cả $6$ và $9\\ \\text{m/s}$ đều trong khoảng $3$ đến dưới $12\\ \\text{m/s}$):</p>\n<p>$P(6)=100\\cdot\\left(\\dfrac{6}{12}\\right)^3=12{,}5\\ \\text{kW}$.</p>\n<p>$P(9)=100\\cdot\\left(\\dfrac{9}{12}\\right)^3\\approx42{,}19\\ \\text{kW}$.</p>\n<p>$A_{gió}=12{,}5\\cdot10+42{,}1875\\cdot14=125+590{,}6\\approx715{,}6\\ \\text{kWh}$.</p>\n<p>b) Nhu cầu: $E=200\\cdot5=1000\\ \\text{kWh}$. Gọi $G$ là tổng điện năng gió và pin phát ra.</p>\n<p>Phần dùng ngay: $0{,}6G$. Phần qua acquy chỉ còn $0{,}4G\\cdot0{,}85=0{,}34G$.</p>\n<p>$0{,}6G+0{,}34G=1000$ nên $G=\\dfrac{1000}{0{,}94}\\approx1063{,}8\\ \\text{kWh}$.</p>\n<p>c) Pin phải phát: $1063{,}8-715{,}6\\approx348{,}2\\ \\text{kWh}$.</p>\n<p>Mỗi mét vuông pin mỗi ngày cho: $0{,}19\\cdot1\\ \\text{kW}\\cdot4{,}5\\ \\text{h}\\cdot0{,}95\\approx0{,}812\\ \\text{kWh}$.</p>\n<p>$S=\\dfrac{348{,}2}{0{,}812}\\approx428{,}7\\ \\text{m}^2$, làm tròn lên: tối thiểu khoảng $429\\ \\text{m}^2$.</p>\n<p>d) Điện năng: $1000\\ \\text{kWh}=3{,}6\\cdot10^9\\ \\text{J}$. Nhiệt dầu toả: $Q=\\dfrac{3{,}6\\cdot10^9}{0{,}35}\\approx1{,}029\\cdot10^{10}\\ \\text{J}$.</p>\n<p>$m=\\dfrac{Q}{q}\\approx233{,}8\\ \\text{kg}$.</p>\n<p>$V=\\dfrac{233{,}8}{0{,}84}\\approx278\\ \\text{L}$.</p>\n<p>$m_{CO_2}=3{,}2\\cdot233{,}8\\approx748\\ \\text{kg}$.</p>\n<p>Lỗi hay gặp ở a): dùng bình phương tốc độ gió (ra $25$ và $56{,}25\\ \\text{kW}$).</p>\n<p>Lỗi hay gặp ở b): chia cả $1000\\ \\text{kWh}$ cho $0{,}85$ (ra $1176\\ \\text{kWh}$) — chỉ phần đi qua acquy mới chịu hao phí.</p>\n<p>Lỗi hay gặp ở c): lấy cả ngày $12$ giờ trời sáng thay cho $4{,}5$ giờ nắng đỉnh.</p></details>"
+ }
+}

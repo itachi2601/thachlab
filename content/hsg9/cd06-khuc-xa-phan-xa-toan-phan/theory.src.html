@@ -1,0 +1,427 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Vượt chuẩn lớp 9</strong>: định luật $n_1\sin i=n_2\sin r$ dùng để tính, ảnh qua mặt phân cách, bản mặt song song, góc lệch qua lăng kính là phần mở rộng HSG. Đề luôn cho sẵn bảng sin hoặc số.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ tia khúc xạ, tính $n$, $v$, $i$, $r$.</li>
+<li>Tính độ sâu biểu kiến, ảnh qua bản mặt song song.</li>
+<li>Nêu hai điều kiện phản xạ toàn phần, tính $i_{gh}$, vùng sáng tròn.</li>
+<li>Tính góc lệch qua lăng kính khi tia tới vuông góc mặt bên.</li>
+<li>Giải thích tán sắc, màu vật, tấm lọc, trộn ánh sáng.</li>
+</ul>
+<p>Quy ước: mọi góc đo so với <strong>pháp tuyến</strong>.</p>
+<p>Chiết suất: không khí $1$, nước $\frac43$, thuỷ tinh $1{,}5$, kim cương $2{,}42$. $c=3\cdot10^8\ \text{m/s}$.</p>
+<p>Khoảng __PHUT__ phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: đồng xu hiện ra trong chậu</h3>
+<p>Đặt một đồng xu ở đáy chậu rỗng. Lùi dần tới khi thành chậu vừa che mất đồng xu, rồi đứng yên.</p>
+<p>Nhờ bạn rót nước từ từ vào chậu. Đồng xu lại hiện ra, dù không ai dịch nó. Ánh sáng từ đồng xu đã đổi hướng khi ra khỏi mặt nước.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Chiếu tia laser từ không khí xuống mặt nước, góc tới $50^\circ$. Trong nước, tia sáng sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q0" id="hsg06-q0a"><label for="hsg06-q0a" class="tl-opt tl-no">A. Lệch xa pháp tuyến hơn, góc lớn hơn $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0b"><label for="hsg06-q0b" class="tl-opt tl-no">B. Đi thẳng, vẫn hợp với pháp tuyến $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0c"><label for="hsg06-q0c" class="tl-opt tl-ok">C. Lệch lại gần pháp tuyến, góc nhỏ hơn $50^\circ$</label>
+<input type="radio" name="hsg06-q0" id="hsg06-q0d"><label for="hsg06-q0d" class="tl-opt tl-no">D. Đi dọc theo pháp tuyến, góc bằng $0^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ánh sáng đi vào nước, nơi nó truyền chậm hơn, thì lệch lại gần pháp tuyến.</p><p>Mục II sẽ tính ra góc trong nước $r\approx35{,}1^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A là chiều ngược lại: lệch xa pháp tuyến khi ánh sáng đi <em>ra</em> khỏi nước.</p><p>B: chỉ đi thẳng khi chiếu vuông góc mặt nước ($i=0$).</p><p>D: tia có lệch, nhưng không lệch hẳn về pháp tuyến.</p></div>
+</div>
+</div>
+<details class="tl-details">
+<summary>Dự đoán 2: người đâm cá nhìn thấy cá ở điểm X. Phải phóng lao nhắm cao hơn hay thấp hơn X? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Nhắm <strong>thấp hơn</strong> X.</p>
+<p>Ảnh của cá mà mắt thấy nông hơn chỗ cá thật (mục III). Cá thật nằm sâu hơn.</p>
+</details>
+
+<h3>II. Khúc xạ và chiết suất</h3>
+
+<h4>1. Hiện tượng và chiết suất</h4>
+<p><strong>🔑 Qua mặt phân cách · Tia gãy khúc</strong></p>
+<ul>
+<li>Khúc xạ: tia sáng đổi hướng khi qua mặt phân cách hai môi trường trong suốt.</li>
+<li>Pháp tuyến: đường vuông góc mặt phân cách tại điểm tới $I$.</li>
+<li>Mặt phẳng tới: chứa tia tới và pháp tuyến.</li>
+<li>Góc tới $i$, góc khúc xạ $r$: đo so với pháp tuyến.</li>
+<li>Luôn có một phần ánh sáng phản xạ cùng lúc.</li>
+</ul>
+<!--FIG1-->
+
+<p><strong>🔑 $n=\dfrac cv$ · $n$ lớn, ánh sáng chậm</strong></p>
+<ul>
+<li>$c$: vận tốc ánh sáng trong chân không, $v$: trong môi trường.</li>
+<li>$n\ge1$. Không khí coi $n=1$.</li>
+<li>Môi trường có $n$ lớn hơn gọi là <em>chiết quang hơn</em>.</li>
+</ul>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Môi trường</th><th>$n$</th><th>$v$ ($10^8$ m/s)</th></tr></thead>
+<tbody>
+<tr><td>Nước</td><td>$\frac43$</td><td>$2{,}25$</td></tr>
+<tr><td>Thuỷ tinh</td><td>$1{,}5$</td><td>$2{,}00$</td></tr>
+<tr><td>Kim cương</td><td>$2{,}42$</td><td>$\approx1{,}24$</td></tr>
+</tbody>
+</table></div>
+
+<h4>2. Định luật khúc xạ</h4>
+<p><strong>🔑 $n_1\sin i=n_2\sin r$</strong> <em>(dùng để tính: Mở rộng HSG)</em></p>
+<ul>
+<li>Môi trường 1 chứa tia tới, môi trường 2 chứa tia khúc xạ.</li>
+<li>Tia khúc xạ nằm trong mặt phẳng tới, ở bên kia pháp tuyến.</li>
+<li>Vào môi trường chiết quang hơn: $r\lt i$, lệch gần pháp tuyến.</li>
+<li>Ra môi trường chiết quang kém: $r\gt i$, lệch xa pháp tuyến.</li>
+<li>$i=0$: truyền thẳng.</li>
+<li>Đổi chiều tia sáng, nó đi ngược lại đúng đường cũ.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: khối bán trụ thuỷ tinh (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> chiếu laser vào tâm mặt phẳng của khối bán trụ đặt trên bảng chia độ, đổi góc tới, đọc góc khúc xạ.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $\dfrac{\sin i}{\sin r}$ gần như không đổi, $\approx1{,}51$: chiết suất thuỷ tinh.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$i$</th><th>$r$</th><th>$\sin i:\sin r$</th></tr></thead>
+<tbody>
+<tr><td>$20^\circ$</td><td>$13^\circ$</td><td>$1{,}52$</td></tr>
+<tr><td>$40^\circ$</td><td>$25^\circ$</td><td>$1{,}52$</td></tr>
+<tr><td>$70^\circ$</td><td>$39^\circ$</td><td>$1{,}49$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Tỉ số $i:r$ có không đổi không? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Không: $20:13\approx1{,}54$ nhưng $70:39\approx1{,}79$.</p>
+<p>Chỉ tỉ số các <em>sin</em> mới giữ nguyên. Góc nhỏ thì $\sin$ gần tỉ lệ với góc, nên hai tỉ số gần nhau.</p>
+</details>
+</div>
+<p>Chiếu tia sáng từ không khí vào thuỷ tinh ($n=1{,}5$) với góc tới $45^\circ$ ($\sin45^\circ\approx0{,}7071$). Góc khúc xạ:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q1" id="hsg06-q1a"><label for="hsg06-q1a" class="tl-opt tl-no">A. $30^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1b"><label for="hsg06-q1b" class="tl-opt tl-ok">B. $\approx28{,}1^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1c"><label for="hsg06-q1c" class="tl-opt tl-no">C. $\approx61{,}9^\circ$</label>
+<input type="radio" name="hsg06-q1" id="hsg06-q1d"><label for="hsg06-q1d" class="tl-opt tl-no">D. Không có tia khúc xạ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1\cdot\sin45^\circ=1{,}5\sin r$.</p><p>$\sin r\approx0{,}4714$, nên $r\approx28{,}1^\circ\lt45^\circ$: lệch gần pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A chia thẳng góc cho $n$: $45:1{,}5$. Định luật áp cho <em>sin</em> của góc.</p><p>C là góc giữa tia khúc xạ và <em>mặt</em> kính ($90^\circ-28{,}1^\circ$). Phải đo so với pháp tuyến.</p><p>D: ánh sáng đi vào môi trường chiết quang hơn thì luôn có tia khúc xạ.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Đo góc so với mặt phân cách</td><td>Đo so với pháp tuyến</td></tr>
+<tr><td>Viết $n_2\sin i=n_1\sin r$</td><td>$n$ nào đi với góc ở môi trường đó</td></tr>
+<tr><td>$n$ lớn thì ánh sáng nhanh</td><td>$v=\dfrac cn$: $n$ lớn thì chậm</td></tr>
+</tbody>
+</table>
+<p>Tự kiểm: vào nước mà ra $r\gt i$ là viết ngược.</p>
+</div>
+
+<h3>III. Ảnh qua mặt phân cách, bản mặt song song</h3>
+
+<h4>1. Độ sâu biểu kiến</h4>
+<p><strong>🔑 Nhìn từ trên · Đáy nâng lên · $h'=\dfrac hn$</strong></p>
+<ul>
+<li>Tia từ vật $S$ dưới nước ló ra lệch xa pháp tuyến.</li>
+<li>Mắt thấy tia như phát ra từ ảnh $S'$, nông hơn $S$.</li>
+<li>Nhìn gần vuông góc mặt nước: $h'=\dfrac hn$.</li>
+<li>Nhiều lớp chất lỏng: $h'=\dfrac{h_1}{n_1}+\dfrac{h_2}{n_2}+\dots$</li>
+<li>Vật trong không khí, mắt dưới nước nhìn lên: $H'=nH$, vật trông <em>xa hơn</em>.</li>
+<li>Quy tắc nhớ: ảnh luôn dịch về phía môi trường chiết quang kém.</li>
+</ul>
+<!--FIG2-->
+<details class="tl-details">
+<summary>📐 Chứng minh $h'\approx\dfrac hn$ bằng hai tam giác vuông</summary>
+<p>Ở đây tia đi từ nước ra: $i$ là góc trong nước, $r$ là góc trong không khí.</p>
+<p>Hai tam giác vuông $SHI$ và $S'HI$ chung cạnh $HI$ (Hình 2).</p>
+<p>Góc tại $S$ bằng $i$, góc tại $S'$ bằng $r$ (đồng vị với góc $r$ tại $I$).</p>
+<p>$HI=h\tan i=h'\tan r$, nên $h'=h\,\dfrac{\tan i}{\tan r}$.</p>
+<p>Nhìn gần vuông góc thì $i$, $r$ rất nhỏ. Xấp xỉ góc nhỏ: $\tan\approx\sin$.</p>
+<p>$h'\approx h\,\dfrac{\sin i}{\sin r}=\dfrac hn$, vì $n\sin i=1\cdot\sin r$.</p>
+<p>Nhìn xiên thì $\dfrac{\tan i}{\tan r}\lt\dfrac{\sin i}{\sin r}$: đáy trông còn <strong>nông hơn nữa</strong>.</p>
+</details>
+<p>Vì thế cọc cắm xiên xuống ao trông như gãy ở mặt nước.</p>
+<p>Chim đậu cao $1{,}5\ \text{m}$ trên mặt hồ. Cá ngay bên dưới nhìn thẳng lên, thấy chim cách mặt nước:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q2" id="hsg06-q2a"><label for="hsg06-q2a" class="tl-opt tl-no">A. $1{,}125\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2b"><label for="hsg06-q2b" class="tl-opt tl-no">B. $1{,}5\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2c"><label for="hsg06-q2c" class="tl-opt tl-ok">C. $2{,}0\ \text{m}$</label>
+<input type="radio" name="hsg06-q2" id="hsg06-q2d"><label for="hsg06-q2d" class="tl-opt tl-no">D. Không thấy được, vì ánh sáng phản xạ toàn phần ở mặt nước</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vật trong không khí, mắt dưới nước: $H'=nH=\frac43\cdot1{,}5=2{,}0\ \text{m}$.</p><p>Ảnh dịch về phía không khí (chiết quang kém), tức ra xa mặt nước.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A chia cho $n$ như khi nhìn từ trên xuống. Ở đây mắt ở trong nước, phải nhân.</p><p>B bỏ qua khúc xạ. Tia từ chim có đổi hướng khi vào nước.</p><p>D: ánh sáng đi từ không khí <em>vào</em> nước, không thể phản xạ toàn phần.</p></div>
+</div>
+
+<h4>2. Bản mặt song song</h4>
+<p><strong>🔑 Tia ló song song tia tới · Chỉ dời ngang</strong></p>
+<ul>
+<li>Bản mặt song song: lớp trong suốt dày $e$, hai mặt song song.</li>
+<li>Khúc xạ hai lần: $\sin i=n\sin r$ rồi $n\sin r=\sin i'$, nên $i'=i$.</li>
+<li>Tia ló song song tia tới, chỉ dời ngang một đoạn $d=\dfrac{e\sin(i-r)}{\cos r}$.</li>
+<li>Nhìn vuông góc qua bản kính: vật trông gần hơn $\Delta=e\left(1-\dfrac1n\right)$.</li>
+</ul>
+<!--FIG3-->
+<p>Ví dụ: đặt khối kính dày $7{,}5\ \text{cm}$ ($n=1{,}5$) lên trang sách, nhìn thẳng xuống. Chữ trông nổi lên $7{,}5\left(1-\dfrac1{1{,}5}\right)=2{,}5\ \text{cm}$.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<ul>
+<li>Dùng $h'=\dfrac hn$ khi nhìn xiên. Công thức chỉ đúng khi nhìn gần vuông góc.</li>
+<li>Nhân $n$ thay vì chia khi mắt ở trên không khí.</li>
+<li>Tưởng tấm kính làm tia đổi hướng. Tia ló song song tia tới.</li>
+</ul>
+</div>
+
+<h3>IV. Phản xạ toàn phần</h3>
+
+<h4>1. Góc giới hạn và hai điều kiện</h4>
+<p><strong>🔑 Ra môi trường kém · $i\ge i_{gh}$ · Không ló</strong></p>
+<ul>
+<li>Ánh sáng đi từ nước ra không khí: $r\gt i$.</li>
+<li>Tăng dần $i$: $r$ chạm $90^\circ$ trước, tia ló đi là là mặt nước.</li>
+<li>Góc tới lúc đó là góc giới hạn: $\sin i_{gh}=\dfrac{n_2}{n_1}$.</li>
+<li>$i\gt i_{gh}$: không còn tia khúc xạ, mọi ánh sáng phản xạ lại.</li>
+<li>Điều kiện 1: đi từ môi trường chiết quang hơn sang kém hơn ($n_1\gt n_2$).</li>
+<li>Điều kiện 2: $i\ge i_{gh}$. Cần <strong>cả hai</strong> cùng lúc.</li>
+</ul>
+<!--FIG4-->
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Ánh sáng đi từ → sang</th><th>$i_{gh}$</th></tr></thead>
+<tbody>
+<tr><td>Nước → không khí</td><td>$48{,}6^\circ$</td></tr>
+<tr><td>Thuỷ tinh → không khí</td><td>$41{,}8^\circ$</td></tr>
+<tr><td>Kim cương → không khí</td><td>$24{,}4^\circ$</td></tr>
+<tr><td>Thuỷ tinh → nước</td><td>$62{,}7^\circ$</td></tr>
+<tr><td>Nước → thuỷ tinh</td><td>không có</td></tr>
+</tbody>
+</table></div>
+<p>Tia sáng đi từ thuỷ tinh ($n=1{,}5$) sang nước ($n=\frac43$) với góc tới $55^\circ$ ($\sin55^\circ\approx0{,}8192$). Điều gì xảy ra?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg06-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg06-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q3" id="hsg06-q3a"><label for="hsg06-q3a" class="tl-opt tl-no">A. Phản xạ toàn phần</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3b"><label for="hsg06-q3b" class="tl-opt tl-ok">B. Khúc xạ vào nước, $r\approx67{,}2^\circ$</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3c"><label for="hsg06-q3c" class="tl-opt tl-no">C. Khúc xạ vào nước, $r\approx46{,}7^\circ$</label>
+<input type="radio" name="hsg06-q3" id="hsg06-q3d"><label for="hsg06-q3d" class="tl-opt tl-no">D. Đi thẳng vào nước, $r=55^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thuỷ tinh sang nước: $i_{gh}\approx62{,}7^\circ$, mà $55^\circ\lt62{,}7^\circ$ nên vẫn ló.</p><p>$1{,}5\cdot0{,}8192=\frac43\sin r$, nên $\sin r\approx0{,}9216$, $r\approx67{,}2^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A so với $41{,}8^\circ$: đó là $i_{gh}$ thuỷ tinh → <em>không khí</em>. Sang nước thì $i_{gh}$ lớn hơn.</p><p>C viết ngược tỉ số. Ra môi trường kém hơn mà $r\lt i$ là sai.</p><p>D: hai môi trường khác chiết suất thì tia xiên luôn bị lệch.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>2. Ứng dụng</h4>
+<p><strong>🔑 Vùng sáng tròn · Sợi quang · Kim cương</strong></p>
+<ul>
+<li>Nguồn điểm sâu $h$: chỉ vùng tròn $R=h\tan i_{gh}$ có ánh sáng ló ra (Hình 4).</li>
+<li>Sợi quang: lõi chiết suất lớn hơn vỏ, tia phản xạ toàn phần liên tục ở vỏ, đi rất xa.</li>
+<li>Kim cương: $i_{gh}$ nhỏ, ánh sáng phản xạ toàn phần nhiều lần mới ló ra, nên lấp lánh.</li>
+<li>Ảo ảnh đường nóng: không khí sát mặt đường có chiết suất nhỏ hơn, tia từ trời cong dần rồi hướng lên mắt.</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Một bóng đèn nhỏ đặt ở đáy bể nước sâu $0{,}75\ \text{m}$. Tìm bán kính và diện tích vùng mặt nước có ánh sáng ló ra.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"bóng đèn nhỏ"</td><td>nguồn điểm, tia đi mọi hướng</td></tr>
+<tr><td>"đáy bể nước"</td><td>nước → không khí: có thể phản xạ toàn phần</td></tr>
+<tr><td>"sâu $0{,}75\ \text{m}$"</td><td>$h$, cạnh góc vuông đứng</td></tr>
+<tr><td>"vùng có ánh sáng ló ra"</td><td>tia có $i\lt i_{gh}$; biên vùng ứng với $i=i_{gh}$</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$\sin i_{gh}=\dfrac1{4/3}=0{,}75$.</li>
+<li>$\cos i_{gh}=\sqrt{1-0{,}75^2}=\dfrac{\sqrt7}4$, nên $\tan i_{gh}=\dfrac3{\sqrt7}\approx1{,}134$.</li>
+<li>Tam giác vuông: đèn, chân đường thẳng đứng, mép vùng sáng. $R=h\tan i_{gh}\approx0{,}75\cdot1{,}134\approx0{,}85\ \text{m}$.</li>
+<li>Diện tích $\pi R^2\approx2{,}27\ \text{m}^2$.</li>
+<li>Kiểm: đổi $\tan$ thành $\sin$ ra $0{,}56\ \text{m}$, sai vì $h$ là cạnh kề, không phải cạnh huyền.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: đổ thêm nước cho bể sâu $1{,}0\ \text{m}$, đèn vẫn ở đáy.</p>
+<ol class="tl-steps">
+<li><strong>Em điền:</strong> $i_{gh}$ có đổi không? $R=\;?$</li>
+<li>Kết luận: vùng sáng rộng ra hay thu hẹp?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$i_{gh}$ chỉ phụ thuộc hai chiết suất, không đổi.</p>
+<p>$R=1{,}0\cdot1{,}134\approx1{,}13\ \text{m}$: $R$ tỉ lệ với $h$, vùng sáng rộng ra.</p></details>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Vào nước cũng phản xạ toàn phần</td><td>Chỉ khi sang môi trường chiết quang <em>kém</em> hơn</td></tr>
+<tr><td>Chỉ cần $i$ lớn</td><td>Cần đủ cả hai điều kiện</td></tr>
+<tr><td>$\sin i_{gh}=\dfrac{n_1}{n_2}$</td><td>$\dfrac{n_2}{n_1}$; ra số lớn hơn $1$ là viết ngược</td></tr>
+<tr><td>$r=90^\circ$ là đã hết tia khúc xạ</td><td>Chưa: tia đi là là mặt phân cách</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>V. Lăng kính</h3>
+
+<p><strong>🔑 Khối tam giác trong suốt · Lệch về đáy</strong></p>
+<ul>
+<li>Lăng kính: khối trong suốt có tiết diện tam giác $ABC$.</li>
+<li>Góc chiết quang $A$: góc giữa hai mặt bên $AB$, $AC$. Cạnh $BC$ là đáy.</li>
+<li>Tia ló luôn lệch về phía đáy so với tia tới.</li>
+</ul>
+<p><strong>🔑 Tia tới ⊥ $AB$ · $i_2=A$ · $D=r_2-A$</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Ở mặt $AB$: tia vuông góc nên đi thẳng.</li>
+<li>Ở mặt $AC$: góc tới $i_2=A$. Hai góc có cạnh tương ứng vuông góc: tia ⊥ $AB$, pháp tuyến ⊥ $AC$.</li>
+<li>Nếu $A\ge i_{gh}$: phản xạ toàn phần ở $AC$, không ló.</li>
+<li>Nếu $A\lt i_{gh}$: ló với $\sin r_2=n\sin A$.</li>
+<li>Góc lệch giữa tia ló và tia tới: $D=r_2-A$.</li>
+</ul>
+<!--FIG5-->
+<p>Lăng kính thuỷ tinh $n=1{,}5$, góc chiết quang $35^\circ$ ($\sin35^\circ\approx0{,}5736$). Tia sáng tới vuông góc mặt $AB$. Góc lệch $D$:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg06-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg06-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q4" id="hsg06-q4a"><label for="hsg06-q4a" class="tl-opt tl-no">A. $\approx59{,}4^\circ$</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4b"><label for="hsg06-q4b" class="tl-opt tl-no">B. Không ló, phản xạ toàn phần</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4c"><label for="hsg06-q4c" class="tl-opt tl-ok">C. $\approx24{,}4^\circ$</label>
+<input type="radio" name="hsg06-q4" id="hsg06-q4d"><label for="hsg06-q4d" class="tl-opt tl-no">D. $35^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $i_2=35^\circ\lt41{,}8^\circ$ nên ló.</p><p>$\sin r_2=1{,}5\cdot0{,}5736\approx0{,}8604$, $r_2\approx59{,}4^\circ$.</p><p>$D=59{,}4^\circ-35^\circ\approx24{,}4^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A là $r_2$, góc giữa tia ló và pháp tuyến. Góc lệch phải trừ đi $A$.</p><p>B: chỉ phản xạ toàn phần khi $A\ge41{,}8^\circ$.</p><p>D lấy góc lệch bằng góc chiết quang. $A$ chỉ là góc tới ở mặt $AC$.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<p><strong>🔑 Lăng kính phản xạ toàn phần · Vuông cân · $n\ge\sqrt2$</strong></p>
+<ul>
+<li>Tia ⊥ cạnh góc vuông: tới mặt huyền với góc $45^\circ\gt41{,}8^\circ$, quay $90^\circ$ (kính tiềm vọng).</li>
+<li>Tia ⊥ mặt huyền: phản xạ toàn phần hai lần, quay $180^\circ$ (ống nhòm).</li>
+<li>Điều kiện: $\sin45^\circ\ge\dfrac1n$, tức $n\ge\sqrt2\approx1{,}414$.</li>
+</ul>
+<details class="tl-details">
+<summary>📖 Đọc thêm (chuyên): tia tới xiên mặt $AB$</summary>
+<p>Ở $AB$: $\sin i_1=n\sin r_1$. Ở $AC$: $n\sin i_2=\sin r_2$.</p>
+<p>Hai pháp tuyến cùng mặt $AB$, $AC$ tạo tứ giác với đỉnh $A$, suy ra $r_1+i_2=A$.</p>
+<p>Lệch ở $AB$ là $i_1-r_1$, ở $AC$ là $r_2-i_2$. Cộng lại: $D=i_1+r_2-A$.</p>
+<p>Tia tới vuông góc: $i_1=r_1=0$, quay về $i_2=A$, $D=r_2-A$.</p>
+<p>Đề HSG 9 chỉ cho tia tới vuông góc mặt bên. Phần này để biết, không cần thuộc.</p>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<ul>
+<li>Lăng kính vuông cân: lấy $90^\circ$ làm $i_2$. Phải lấy góc giữa cạnh góc vuông và cạnh huyền: $45^\circ$.</li>
+<li>Lấy $r_2$ làm góc lệch, quên trừ $A$.</li>
+</ul>
+</div>
+
+<h3>VI. Tán sắc và màu sắc</h3>
+
+<h4>1. Tán sắc qua lăng kính</h4>
+<p><strong>🔑 Trắng là hỗn hợp · Tím lệch nhất</strong></p>
+<ul>
+<li>Ánh sáng trắng là hỗn hợp nhiều ánh sáng màu.</li>
+<li>Chiết suất phụ thuộc màu: thuỷ tinh $n_{\text{đ}}=1{,}50\lt n_{t}=1{,}54$.</li>
+<li>Qua lăng kính: đỏ lệch ít nhất, tím lệch nhiều nhất.</li>
+<li>Trên màn, từ phía đỉnh xuống phía đáy: đỏ, da cam, vàng, lục, lam, chàm, tím.</li>
+<li>Ánh sáng một màu qua lăng kính chỉ bị lệch, không tách tiếp.</li>
+<li>Cầu vồng: trong giọt mưa ánh sáng khúc xạ, phản xạ (một phần) ở mặt sau, khúc xạ ra; mỗi màu ló một góc.</li>
+</ul>
+<!--FIG6-->
+<p>Chiếu chùm sáng trắng hẹp qua lăng kính lên màn. Nhận xét nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q5" id="hsg06-q5a"><label for="hsg06-q5a" class="tl-opt tl-no">A. Tia đỏ lệch nhiều nhất vì đỏ "mạnh" nhất</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5b"><label for="hsg06-q5b" class="tl-opt tl-ok">B. Tia tím lệch nhiều nhất, nằm gần phía đáy</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5c"><label for="hsg06-q5c" class="tl-opt tl-no">C. Lăng kính nhuộm màu cho ánh sáng trắng</label>
+<input type="radio" name="hsg06-q5" id="hsg06-q5d"><label for="hsg06-q5d" class="tl-opt tl-no">D. Mọi màu lệch như nhau, chỉ khác độ sáng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thuỷ tinh có chiết suất với tím lớn nhất, nên tím lệch nhiều nhất về phía đáy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A ngược: đỏ có chiết suất nhỏ nhất, lệch ít nhất.</p><p>C: các màu có sẵn trong ánh sáng trắng, lăng kính chỉ tách chúng ra.</p><p>D: nếu lệch như nhau thì đã không tách thành dải màu.</p></div>
+</div>
+
+<h4>2. Màu của vật, tấm lọc màu, trộn ánh sáng</h4>
+<p><strong>🔑 Màu vật = màu ánh sáng nó hắt lại</strong></p>
+<ul>
+<li>Vật trắng hắt lại mọi màu. Vật đen hấp thụ gần hết.</li>
+<li>Vật màu nào hắt mạnh màu đó. Thiếu màu đó trong ánh sáng chiếu tới: vật trông tối.</li>
+<li>Tấm lọc màu cho màu của nó đi qua, hấp thụ màu khác.</li>
+<li>Lọc đỏ chồng lọc lục: gần như không còn ánh sáng.</li>
+</ul>
+<p><strong>🔑 Trộn ánh sáng khác pha sơn</strong></p>
+<ul>
+<li>Đỏ + lục → vàng.</li>
+<li>Đỏ + lam → đỏ tím.</li>
+<li>Lục + lam → lam lục.</li>
+<li>Đỏ + lục + lam → trắng.</li>
+<li>Pha sơn thì ngược: càng pha càng hấp thụ, càng tối.</li>
+</ul>
+<p>Chiếu đèn lục và đèn lam chồng lên nhau trên bức tường trắng. Vùng chồng có màu:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q6" id="hsg06-q6a"><label for="hsg06-q6a" class="tl-opt tl-no">A. Lục sẫm, như pha hai màu sơn</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6b"><label for="hsg06-q6b" class="tl-opt tl-no">B. Trắng</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6c"><label for="hsg06-q6c" class="tl-opt tl-ok">C. Lam lục, sáng hơn từng đèn</label>
+<input type="radio" name="hsg06-q6" id="hsg06-q6d"><label for="hsg06-q6d" class="tl-opt tl-no">D. Đen, vì hai màu triệt nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trộn ánh sáng là cộng thêm: tường hắt lại cả lục lẫn lam, mắt thấy lam lục.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nhầm với pha sơn. Ánh sáng chồng lên thì cộng, không hấp thụ bớt.</p><p>B cần đủ ba màu đỏ, lục, lam.</p><p>D: ánh sáng chồng lên chỉ sáng hơn, không tối đi.</p></div>
+</div>
+<p>Áo vàng (hắt đỏ, vàng, lục; hấp thụ lam) dưới đèn lam thuần trông:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg06-q7" id="hsg06-q7a"><label for="hsg06-q7a" class="tl-opt tl-no">A. Vàng</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7b"><label for="hsg06-q7b" class="tl-opt tl-no">B. Lục, vì vàng với lam ra lục</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7c"><label for="hsg06-q7c" class="tl-opt tl-no">C. Lam</label>
+<input type="radio" name="hsg06-q7" id="hsg06-q7d"><label for="hsg06-q7d" class="tl-opt tl-ok">D. Tối, gần như đen</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đèn chỉ có lam, mà áo hấp thụ lam. Gần như không có ánh sáng hắt về mắt.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: màu vật không cố định, phụ thuộc ánh sáng chiếu tới.</p><p>B dùng quy tắc pha sơn. Ở đây không có ánh sáng vàng hay lục nào để hắt lại.</p><p>C: áo hấp thụ lam chứ không hắt lam.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: từ không khí vào chất $n=\sqrt2$, $i=45^\circ$. Tìm $r$ và góc giữa tia phản xạ với tia khúc xạ.</summary>
+<p>$\sin r=\dfrac{\sin45^\circ}{\sqrt2}=0{,}5$, nên $r=30^\circ$.</p>
+<p>Tia phản xạ hợp với mặt phân cách $45^\circ$, tia khúc xạ hợp với mặt $60^\circ$.</p>
+<p>Góc giữa hai tia: $180^\circ-45^\circ-30^\circ=105^\circ$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: nước sâu $60\ \text{cm}$ trên đáy kính dày $15\ \text{cm}$ ($n=1{,}5$). Nhìn vuông góc, vạch ở mặt dưới tấm kính trông sâu bao nhiêu?</summary>
+<p>Nhiều lớp: $h'=\dfrac{60}{4/3}+\dfrac{15}{1{,}5}=45+10=55\ \text{cm}$.</p>
+<p>Thật là $75\ \text{cm}$, vạch trông nâng lên $20\ \text{cm}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: lăng kính $n=1{,}5$, tia tới ⊥ $AB$. Tìm $A$ để góc lệch $D=A$.</summary>
+<p>$D=A$ nghĩa là $r_2-A=A$, tức $r_2=2A$.</p>
+<p>$\sin2A=1{,}5\sin A$, mà $\sin2A=2\sin A\cos A$, nên $\cos A=0{,}75$.</p>
+<p>$A\approx41{,}4^\circ$. Kiểm: $41{,}4^\circ\lt i_{gh}=41{,}8^\circ$ nên tia vẫn ló, $r_2\approx82{,}8^\circ$.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Định luật khúc xạ? Khi nào lệch gần, lệch xa pháp tuyến? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$n_1\sin i=n_2\sin r$, góc đo so với pháp tuyến.</p>
+<p>Vào môi trường chiết quang hơn: gần pháp tuyến.</p>
+<p>Ra môi trường chiết quang kém: xa pháp tuyến.</p></details>
+<details class="tl-details"><summary>Chiết suất liên hệ với vận tốc ánh sáng thế nào?</summary>
+<p>$n=\dfrac cv$.</p>
+<p>$n$ lớn thì ánh sáng chậm.</p></details>
+<details class="tl-details"><summary>Độ sâu biểu kiến: một lớp, nhiều lớp, mắt dưới nước?</summary>
+<p>$h'=\dfrac hn$.</p>
+<p>Nhiều lớp: $h'=\sum\dfrac{h_k}{n_k}$.</p>
+<p>Mắt dưới nước nhìn vật trong không khí: $H'=nH$.</p></details>
+<details class="tl-details"><summary>Hai điều kiện phản xạ toàn phần và công thức góc giới hạn?</summary>
+<p>Từ môi trường chiết quang hơn sang kém hơn.</p>
+<p>$i\ge i_{gh}$, với $\sin i_{gh}=\dfrac{n_2}{n_1}$.</p></details>
+<details class="tl-details"><summary>Lăng kính, tia ⊥ $AB$: góc tới ở $AC$, góc lệch?</summary>
+<p>$i_2=A$.</p>
+<p>Ló khi $A\lt i_{gh}$: $\sin r_2=n\sin A$, $D=r_2-A$.</p></details>
+<details class="tl-details"><summary>Vì sao lăng kính tách ánh sáng trắng? Màu vật do đâu?</summary>
+<p>Chiết suất phụ thuộc màu: tím lệch nhiều nhất, đỏ ít nhất.</p>
+<p>Màu vật là màu ánh sáng nó hắt lại mạnh.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Mọi góc đo so với pháp tuyến.</li>
+<li>$n_1\sin i=n_2\sin r$; $n=\dfrac cv$.</li>
+<li>Vào nước, vào kính: $r\lt i$. Ra ngoài: $r\gt i$.</li>
+<li>Nhìn vuông góc: $h'=\dfrac hn$. Nhìn xiên: còn nông hơn.</li>
+<li>Phản xạ toàn phần: đủ cả hai điều kiện, $\sin i_{gh}=\dfrac{n_2}{n_1}$.</li>
+<li>Vùng sáng tròn: $R=h\tan i_{gh}$.</li>
+<li>Lăng kính, tia ⊥ $AB$: $i_2=A$, $D=r_2-A$.</li>
+<li>Tím lệch nhiều nhất. Trộn ánh sáng là cộng, pha sơn là trừ.</li>
+<li>Đọc đề: tia đi từ đâu sang đâu? Nhìn thẳng hay xiên?</li>
+</ul>
+</div>

@@ -1,0 +1,436 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Chỉ phần Vật lí</strong> của chủ đề Năng lượng: không viết phương trình hoá học. Mọi hằng số ($q$, hệ số phát thải $k$, năng lượng urani) đề luôn cho sẵn.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Tính hiệu suất chuỗi $H=H_1H_2H_3$.</li>
+<li>Viết chuỗi năng lượng từ Mặt Trời tới một nguồn bất kì.</li>
+<li>Kể ba nguồn không có gốc bức xạ Mặt Trời.</li>
+<li>Tính nhiên liệu $Q=qm$, CO₂ $=k\,m$; giải thích hiệu ứng nhà kính.</li>
+<li>Tính công suất thuỷ điện, pin Mặt Trời, điện gió.</li>
+<li>Nêu cách nhà máy điện hạt nhân hoạt động (định tính).</li>
+<li>Quy ước: $d_{\text{nước}}=10\,000\ \text{N/m}^3$, $1\ \text{kWh}=3{,}6\cdot10^6\ \text{J}$, bỏ qua hao phí trên đường dây.</li>
+</ul>
+<p>Khoảng __PHUT__ phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: bóng đèn này lấy năng lượng từ đâu?</h3>
+<p>Bóng đèn trong phòng đang sáng. Đi ngược dây điện: tới trạm biến áp, tới nhà máy điện, tới đống than, tới khu rừng cổ bị vùi lấp, và cuối cùng tới Mặt Trời.</p>
+<p>Dọc đường, năng lượng đổi dạng nhiều lần, mỗi lần "rơi rớt" một phần. Rơi đi đâu, bao nhiêu?</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Câu 1. Nhà máy nhiệt điện đốt than toả ra $100\ \text{J}$. Tới bóng đèn còn khoảng bao nhiêu jun điện năng?</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q0" id="cd09-q0a"><label for="cd09-q0a" class="tl-opt tl-no">A. $100\ \text{J}$, vì năng lượng được bảo toàn</label>
+<input type="radio" name="cd09-q0" id="cd09-q0b"><label for="cd09-q0b" class="tl-opt tl-no">B. $90\ \text{J}$</label>
+<input type="radio" name="cd09-q0" id="cd09-q0c"><label for="cd09-q0c" class="tl-opt tl-ok">C. $35\ \text{J}$</label>
+<input type="radio" name="cd09-q0" id="cd09-q0d"><label for="cd09-q0d" class="tl-opt tl-no">D. $60\ \text{J}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhà máy nhiệt điện chỉ biến khoảng một phần ba nhiệt của nhiên liệu thành điện.</p><p>Phần lớn còn lại toả ra môi trường ở dạng nhiệt, nhiều nhất ở khâu tuabin (mục II).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A nhầm "bảo toàn" với "có ích hết". Tổng năng lượng vẫn là $100\ \text{J}$, nhưng phần lớn đã thành nhiệt toả ra ngoài.</p><p>B chỉ tính hao phí ở lò hơi, quên khâu biến nhiệt thành cơ ở tuabin.</p><p>D vẫn quá lạc quan: khâu nhiệt → cơ mất hơn nửa.</p></div>
+</div>
+<p>Câu 2. Trong bốn nguồn sau, nguồn nào <em>không</em> có gốc từ bức xạ Mặt Trời?</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q0x" id="cd09-q0xa"><label for="cd09-q0xa" class="tl-opt tl-no">A. Gió</label>
+<input type="radio" name="cd09-q0x" id="cd09-q0xb"><label for="cd09-q0xb" class="tl-opt tl-no">B. Than đá</label>
+<input type="radio" name="cd09-q0x" id="cd09-q0xc"><label for="cd09-q0xc" class="tl-opt tl-no">C. Thuỷ điện</label>
+<input type="radio" name="cd09-q0x" id="cd09-q0xd"><label for="cd09-q0xd" class="tl-opt tl-ok">D. Thuỷ triều</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thuỷ triều do lực hút của Mặt Trăng (và Mặt Trời) cùng sự tự quay của Trái Đất, không do ánh nắng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: gió do nắng làm nóng mặt đất không đều.</p><p>B: than là thực vật cổ, sống nhờ quang hợp.</p><p>C: nắng làm nước bốc hơi, mưa trên cao rồi chảy xuống thành sông.</p><p>Cả ba đều có gốc từ nắng. Mục III viết đủ chuỗi.</p></div>
+</div>
+</div>
+
+<h3>II. Bảo toàn năng lượng và hiệu suất chuỗi</h3>
+
+<p><strong>🔑 Không mất đi · Chỉ đổi dạng · Hao phí thành nhiệt</strong></p>
+<ul>
+<li>Không tự sinh ra, không tự mất đi: chỉ đổi dạng hoặc truyền sang vật khác.</li>
+<li>Phần "hao phí" thành nhiệt toả ra môi trường.</li>
+<li>Hiệu suất $H=\dfrac{A_{\text{ích}}}{A_{\text{tp}}}\lt1$, cũng bằng $\dfrac{P_{\text{ích}}}{P_{\text{tp}}}$.</li>
+<li>Hao phí: $A_{\text{hp}}=A_{\text{tp}}-A_{\text{ích}}=(1-H)A_{\text{tp}}$.</li>
+</ul>
+<p>Ví dụ: cục sạc điện thoại ấm lên: phần điện không vào pin thành nhiệt.</p>
+
+<p><strong>🔑 Nhiều khâu · Nhân hiệu suất</strong></p>
+<ul>
+<li>Nối tiếp: đầu ra khâu trước là đầu vào khâu sau.</li>
+<li>$H=H_1H_2H_3\dots$, nhỏ hơn khâu kém nhất.</li>
+<li>Nhiệt điện: lò hơi $88\%$, tuabin $40\%$, máy phát $95\%$: $H\approx33{,}4\%$.</li>
+<li>Hao phí lớn nhất ở tuabin (nhiệt → cơ), không phải máy phát.</li>
+</ul>
+<!--FIG1-->
+<p>Một máy bơm gồm ba khâu: động cơ điện $85\%$, hộp số $90\%$, bơm $70\%$. Hiệu suất cả máy bơm là:</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q1" id="cd09-q1a"><label for="cd09-q1a" class="tl-opt tl-no">A. $\approx81{,}7\%$</label>
+<input type="radio" name="cd09-q1" id="cd09-q1b"><label for="cd09-q1b" class="tl-opt tl-ok">B. $\approx53{,}6\%$</label>
+<input type="radio" name="cd09-q1" id="cd09-q1c"><label for="cd09-q1c" class="tl-opt tl-no">C. $70\%$</label>
+<input type="radio" name="cd09-q1" id="cd09-q1d"><label for="cd09-q1d" class="tl-opt tl-no">D. $85\%$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H=0{,}85\cdot0{,}9\cdot0{,}7\approx0{,}536$.</p><p>Thấp hơn cả khâu kém nhất ($70\%$): mỗi khâu lại lấy bớt phần đã còn lại.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy trung bình cộng ba hiệu suất. Hiệu suất nối tiếp phải nhân.</p><p>C nghĩ cả máy chỉ kém bằng khâu yếu nhất. Hai khâu kia cũng hao phí thêm.</p><p>D chỉ tính khâu đầu tiên.</p></div>
+</div>
+
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Trạm điện diesel trên đảo: động cơ hiệu suất $38\%$, máy phát $92\%$. Trạm cấp công suất điện $46\ \text{kW}$ trong $10$ giờ. Dầu: $q=4{,}4\cdot10^7\ \text{J/kg}$, $D=0{,}84\ \text{kg/L}$, $k=3{,}2$. Tính khối lượng, thể tích dầu và CO₂ thải ra.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"động cơ $38\%$, máy phát $92\%$"</td><td>$H_1$, $H_2$</td><td>nối tiếp → nhân</td></tr>
+<tr><td>"$46\ \text{kW}$ trong $10$ giờ"</td><td>$P_{\text{ích}}$, $t$</td><td>$A_{\text{ích}}=Pt$, đổi ra J</td></tr>
+<tr><td>"$q$, $D$, $k$"</td><td>đề cho</td><td>$m=\dfrac{A_{\text{tp}}}{q}$, $V=\dfrac mD$, $m_{\text{CO}_2}=km$</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$H=0{,}38\cdot0{,}92=0{,}3496$.</li>
+<li>$A_{\text{ích}}=46\,000\cdot36\,000=1{,}656\cdot10^9\ \text{J}$.</li>
+<li>$A_{\text{tp}}=\dfrac{A_{\text{ích}}}{H}\approx4{,}74\cdot10^9\ \text{J}$. Có hao phí nên phải <em>chia</em> cho $H$.</li>
+<li>$m=\dfrac{4{,}74\cdot10^9}{4{,}4\cdot10^7}\approx107{,}7\ \text{kg}$.</li>
+<li>$V=\dfrac{107{,}7}{0{,}84}\approx128\ \text{L}$.</li>
+<li>CO₂: $3{,}2\cdot107{,}7\approx344\ \text{kg}$.</li>
+<li>Kiểm tra: mỗi lít dầu cho $460:128\approx3{,}6\ \text{kWh}$ điện. Còn nhỏ hơn $\dfrac{0{,}84\cdot4{,}4\cdot10^7}{3{,}6\cdot10^6}\approx10{,}3\ \text{kWh}$ nhiệt của lít dầu đó: hợp lí.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: thay động cơ mới hiệu suất $42\%$, giữ máy phát và nhu cầu điện. Bớt được bao nhiêu kg dầu?</p>
+<ol class="tl-steps">
+<li><strong>Em điền:</strong> $H'=\;?$</li>
+<li>$m'=\dfrac{1{,}656\cdot10^9}{H'\cdot4{,}4\cdot10^7}=\;?$, bớt $107{,}7-m'=\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$H'=0{,}42\cdot0{,}92=0{,}3864$.</p>
+<p>$m'\approx97{,}4\ \text{kg}$, bớt $\approx10{,}3\ \text{kg}$ dầu (khoảng $9{,}5\%$).</p></details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>$A_{\text{tp}}=A_{\text{ích}}\cdot H$</td><td>$A_{\text{tp}}=A_{\text{ích}}:H$</td></tr>
+<tr><td>Cộng hay lấy trung bình các $H$</td><td>Nhân các $H$ của khâu nối tiếp</td></tr>
+<tr><td>Hao phí là năng lượng mất đi</td><td>Hao phí thành nhiệt toả ra môi trường</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>III. Vòng năng lượng trên Trái Đất</h3>
+
+<p><strong>🔑 Nhiệt hạch lõi Mặt Trời · Bức xạ · Ba nhánh</strong></p>
+<ul>
+<li>Lõi Mặt Trời: phản ứng nhiệt hạch sinh năng lượng, toả ra thành bức xạ.</li>
+<li>Khoảng $30\%$ bức xạ tới bị phản xạ về vũ trụ.</li>
+<li>Phần còn lại được hấp thụ, rồi đi theo ba nhánh (Hình 2).</li>
+<li>Nhánh a: mặt đất nóng không đều → gió → sóng biển.</li>
+<li>Nhánh b: nước bốc hơi → mây → mưa trên cao → thế năng nước sông → thuỷ điện.</li>
+<li>Nhánh c: quang hợp → sinh khối → vùi lấp hàng trăm triệu năm → than, dầu, khí.</li>
+<li>Trái Đất lại bức xạ nhiệt (hồng ngoại) ra vũ trụ: thu và toả cân bằng.</li>
+</ul>
+<!--FIG2-->
+<p><strong>🔑 Ba ngoại lệ · Địa nhiệt · Hạt nhân · Thuỷ triều</strong></p>
+<ul>
+<li>Địa nhiệt: nhiệt sẵn có trong lòng Trái Đất.</li>
+<li>Hạt nhân: urani có sẵn trong vỏ Trái Đất từ khi hình thành.</li>
+<li>Thuỷ triều: lực hút của Mặt Trăng, Mặt Trời và sự tự quay của Trái Đất.</li>
+</ul>
+<details class="tl-details">
+<summary>Mặt Trời gửi tới Trái Đất công suất bao nhiêu? ($I_0=1360\ \text{W/m}^2$ ở rìa khí quyển, $R=6400\ \text{km}$)</summary>
+<p>Trái Đất hứng nắng như một <em>đĩa</em> bán kính $R$ chắn ánh sáng, diện tích $\pi R^2$.</p>
+<p>$P=I_0\pi R^2\approx1{,}75\cdot10^{17}\ \text{W}$.</p>
+<p>Gấp khoảng $9000$ lần công suất loài người đang dùng (cỡ $2\cdot10^{13}\ \text{W}$).</p>
+</details>
+<p>Năng lượng trong than đá có gốc từ đâu?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cd09-q3-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="cd09-q3-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q3" id="cd09-q3a"><label for="cd09-q3a" class="tl-opt tl-ok">A. Bức xạ Mặt Trời mà thực vật cổ tích trữ qua quang hợp</label>
+<input type="radio" name="cd09-q3" id="cd09-q3b"><label for="cd09-q3b" class="tl-opt tl-no">B. Nhiệt lòng đất nung chảy đất đá thành than</label>
+<input type="radio" name="cd09-q3" id="cd09-q3c"><label for="cd09-q3c" class="tl-opt tl-no">C. Lực hút của Mặt Trăng nén chặt lớp đất</label>
+<input type="radio" name="cd09-q3" id="cd09-q3d"><label for="cd09-q3d" class="tl-opt tl-no">D. Phản ứng hạt nhân trong vỏ Trái Đất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chuỗi: Mặt Trời → quang hợp → sinh khối → vùi lấp → than.</p><p>Than là năng lượng Mặt Trời "đóng hộp" từ hàng trăm triệu năm trước.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B: nhiệt và áp suất lòng đất chỉ biến đổi xác thực vật thành than. Năng lượng chứa trong than vốn đến từ nắng.</p><p>C nhầm sang nguồn gốc thuỷ triều.</p><p>D nhầm sang nguồn gốc năng lượng hạt nhân.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy viết lại cả chuỗi trên Hình 2.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Diện tích hứng nắng $4\pi R^2$</td><td>Trái Đất chắn nắng như một đĩa tròn bán kính $R$, diện tích $\pi R^2$</td></tr>
+<tr><td>Sóng biển và thuỷ triều cùng một loại</td><td>Sóng do gió (gốc Mặt Trời), triều do lực hút</td></tr>
+<tr><td>Trả lời "có gốc Mặt Trời" là đủ</td><td>Phải viết đủ chuỗi từ Mặt Trời tới nguồn đó</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Nhiên liệu hoá thạch và ấm lên toàn cầu</h3>
+
+<p><strong>🔑 Triệu năm hình thành · Không tái tạo · $Q=qm$</strong></p>
+<ul>
+<li>Than, dầu, khí hình thành qua hàng triệu năm, ta khai thác mỗi ngày: không tái tạo.</li>
+<li>Năng suất toả nhiệt $q$ (J/kg): nhiệt toả ra khi đốt cháy hết $1\ \text{kg}$.</li>
+<li>Ví dụ: than đá $2{,}7\cdot10^7$, xăng $4{,}6\cdot10^7$ J/kg.</li>
+<li>Ưu điểm thật: năng lượng trong mỗi kg cao, cấp ổn định ngày đêm, dễ chở và cất giữ.</li>
+<li>Giá phụ thuộc chi phí khai thác, vận chuyển, thuế phí và cung cầu.</li>
+<li>Đốt thải CO₂: $m_{\text{CO}_2}=k\,m$, hệ số $k$ đề cho (xăng $3{,}2$).</li>
+<li>Tác hại khác: bụi, khói, mưa acid.</li>
+</ul>
+<details class="tl-details">
+<summary>Tự kiểm tra: đốt hết $20$ lít xăng ($D=0{,}70\ \text{kg/L}$, $k=3{,}2$) thải ra bao nhiêu kg CO₂? <small>(tính trước rồi mới bấm)</small></summary>
+<p>$m=0{,}70\cdot20=14\ \text{kg}$ xăng, $m_{\text{CO}_2}=3{,}2\cdot14=44{,}8\ \text{kg}$.</p>
+<p>Ra $64\ \text{kg}$ là nhân $k$ với số lít: $k$ tính trên mỗi kg.</p>
+</details>
+
+<p><strong>🔑 Ánh sáng đi qua · Hồng ngoại bị giữ</strong></p>
+<ul>
+<li>Ánh sáng Mặt Trời đi qua khí quyển, làm nóng mặt đất.</li>
+<li>Mặt đất nóng bức xạ hồng ngoại ngược lên.</li>
+<li>CO₂, hơi nước, CH₄ hấp thụ một phần hồng ngoại rồi toả lại về mặt đất (Hình 3).</li>
+<li>Hiệu ứng tự nhiên là cần thiết: không có nó, Trái Đất trung bình khoảng $-18\,^\circ\text{C}$.</li>
+<li>Đốt nhiên liệu làm tăng CO₂ → hiệu ứng <em>tăng cường</em> → ấm lên toàn cầu.</li>
+<li>Hậu quả: băng tan, nước biển dâng, thời tiết cực đoan.</li>
+</ul>
+<!--FIG3-->
+<details class="tl-details">
+<summary>Tự kiểm tra: CO₂ làm Trái Đất ấm thêm vì chặn bớt ánh sáng Mặt Trời, đúng không?</summary>
+<p>Sai. Chặn ánh sáng thì Trái Đất phải lạnh đi. CO₂ hầu như cho ánh sáng qua.</p>
+<p>CO₂ giữ lại một phần hồng ngoại mặt đất phát ra. Mặt đất phải nóng hơn mới toả ra đủ, nên cân bằng ở mức ấm hơn.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Dễ lẫn</th><th>Phân biệt</th></tr></thead>
+<tbody>
+<tr><td>Hiệu ứng nhà kính / thủng ozone</td><td>Giữ hồng ngoại làm ấm / mất lớp chắn tia tử ngoại</td></tr>
+<tr><td>CO₂ chặn ánh sáng</td><td>CO₂ cho ánh sáng qua, giữ hồng ngoại</td></tr>
+<tr><td>$q$ (J/kg) / $c$ (J/(kg·K))</td><td>$q$: đốt cháy hết / $c$: nóng thêm $1\,^\circ\text{C}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>V. Năng lượng tái tạo: bốn nguồn có công thức</h3>
+<p><strong>🔑 Bổ sung liên tục · Không ổn định · Cần lưu trữ</strong></p>
+<ul>
+<li>Tái tạo: được tự nhiên bổ sung liên tục (nắng, gió, nước, sinh khối…).</li>
+<li>Nhược chung: phụ thuộc thời tiết, vốn lớn, tốn diện tích.</li>
+</ul>
+
+<h4>1. Thuỷ điện</h4>
+<p><strong>🔑 Trọng lượng nước mỗi giây · Nhân độ cao</strong></p>
+<ul>
+<li>Lưu lượng $L$ (m³/s): thể tích nước chảy qua tuabin mỗi giây.</li>
+<li>Mỗi giây, nước nặng $d\,L$ (N) rơi qua độ cao $h$ (m).</li>
+<li>Công suất dòng nước: $P_n=d\,L\,h$, với $d=10D=10\,000\ \text{N/m}^3$.</li>
+<li>Công suất điện: $P_{\text{đ}}=H\,d\,L\,h$, $H$ thường $80$–$90\%$.</li>
+</ul>
+<p>Ví dụ: mùa khô, hồ cạn làm $h$ giảm, sông ít nước làm $L$ giảm. Hai thừa số cùng giảm nên công suất tụt mạnh.</p>
+<p>Đập có $h=50\ \text{m}$, $L=40\ \text{m}^3/\text{s}$, $H=90\%$. Công suất điện là:</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q6" id="cd09-q6a"><label for="cd09-q6a" class="tl-opt tl-no">A. $20\ \text{MW}$</label>
+<input type="radio" name="cd09-q6" id="cd09-q6b"><label for="cd09-q6b" class="tl-opt tl-no">B. $1{,}8\ \text{MW}$</label>
+<input type="radio" name="cd09-q6" id="cd09-q6c"><label for="cd09-q6c" class="tl-opt tl-no">C. $\approx22{,}2\ \text{MW}$</label>
+<input type="radio" name="cd09-q6" id="cd09-q6d"><label for="cd09-q6d" class="tl-opt tl-ok">D. $18\ \text{MW}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $P_n=10\,000\cdot40\cdot50=2\cdot10^7\ \text{W}$.</p><p>$P_{\text{đ}}=0{,}9\cdot2\cdot10^7=1{,}8\cdot10^7\ \text{W}=18\ \text{MW}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A quên hiệu suất: đó mới là công suất dòng nước.</p><p>B dùng $D=1000$ thay cho $d=10\,000$: tính khối lượng mà quên nhân $10$ để ra trọng lượng.</p><p>C chia cho $H$. Điện ra phải <em>nhỏ hơn</em> công suất dòng nước.</p></div>
+</div>
+
+<h4>2. Pin Mặt Trời</h4>
+<p><strong>🔑 Công suất đỉnh · Giờ nắng đỉnh · Làm tròn lên</strong></p>
+<ul>
+<li>Bức xạ tới $I$ (W/m²): trời nắng tốt ở mặt đất $I\approx1000\ \text{W/m}^2$.</li>
+<li>Công suất đỉnh một tấm: $P_{\text{đỉnh}}=H_{\text{pin}}\,I\,S$, $H_{\text{pin}}$ khoảng $15$–$22\%$.</li>
+<li>Giờ nắng đỉnh $t_{\text{đ}}$: quy cả ngày nắng yếu mạnh về số giờ có $I=1000\ \text{W/m}^2$.</li>
+<li>Ở Việt Nam $t_{\text{đ}}$ khoảng $4$–$5$ h, không phải $12$ h trời sáng.</li>
+<li>Sản lượng ngày: $A=P_{\text{đỉnh}}\,t_{\text{đ}}\,H_{\text{bt}}$ ($H_{\text{bt}}$: hiệu suất bộ biến tần, nếu đề cho).</li>
+<li>Số tấm luôn làm tròn <em>lên</em>, nếu không sẽ thiếu điện.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: đo hiệu suất một tấm pin Mặt Trời mini (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tấm pin $10\ \text{cm}\times6\ \text{cm}$ vuông góc ánh nắng, máy đo bức xạ chỉ $I=800\ \text{W/m}^2$. Nối pin với điện trở, đo $U$ và dòng $I_{\text{d}}$. Ba lần.</li>
+<li><strong>Quan sát:</strong> bảng dưới. Công suất nắng tới: $800\cdot0{,}006=4{,}8\ \text{W}$.</li>
+<li><strong>Rút ra:</strong> $H=\dfrac{UI_{\text{d}}}{IS}$, trung bình $\approx18{,}5\%$: đúng khoảng của pin thương mại.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lần</th><th>$U$ (V) · $I_{\text{d}}$ (A)</th><th>$H$</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>$2{,}40$ · $0{,}37$</td><td>$18{,}5\%$</td></tr>
+<tr><td>2</td><td>$2{,}38$ · $0{,}36$</td><td>$17{,}9\%$</td></tr>
+<tr><td>3</td><td>$2{,}42$ · $0{,}38$</td><td>$19{,}2\%$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Vì sao ba lần đo lệch nhau gần $1{,}3\%$? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Mây mỏng bay qua làm $I$ thay đổi trong lúc đọc đồng hồ.</p>
+<p>Pin nóng dần dưới nắng, hiệu suất giảm nhẹ.</p>
+<p>Máy đo bức xạ cũng có sai số vài phần trăm.</p>
+<p>Muốn chính xác hơn: đọc $U$, $I_{\text{d}}$ và $I$ cùng lúc, đo nhiều lần, che mát pin giữa các lần.</p>
+</details>
+</div>
+<p>Hộ gia đình cần $7\ \text{kWh}$ mỗi ngày. Tấm pin $1{,}6\ \text{m}^2$, $H_{\text{pin}}=21\%$, $I=1000\ \text{W/m}^2$, $t_{\text{đ}}=5\ \text{h}$, bỏ qua hao phí khác. Số tấm tối thiểu là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cd09-q7-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="cd09-q7-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q7" id="cd09-q7a"><label for="cd09-q7a" class="tl-opt tl-no">A. $4$ tấm</label>
+<input type="radio" name="cd09-q7" id="cd09-q7b"><label for="cd09-q7b" class="tl-opt tl-ok">B. $5$ tấm</label>
+<input type="radio" name="cd09-q7" id="cd09-q7c"><label for="cd09-q7c" class="tl-opt tl-no">C. $2$ tấm</label>
+<input type="radio" name="cd09-q7" id="cd09-q7d"><label for="cd09-q7d" class="tl-opt tl-no">D. $1$ tấm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi tấm: $0{,}21\cdot1000\cdot1{,}6=336\ \text{W}$, cho $336\cdot5=1{,}68\ \text{kWh}$ mỗi ngày.</p><p>$n=7:1{,}68\approx4{,}17$, làm tròn lên $5$ tấm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A làm tròn xuống: $4$ tấm chỉ cho $6{,}72\ \text{kWh}$, thiếu điện.</p><p>C lấy $12$ giờ trời sáng thay cho $5$ giờ nắng đỉnh.</p><p>D quên hiệu suất pin, coi mọi bức xạ đều thành điện.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đọc lại dòng "giờ nắng đỉnh".</p></div>
+</div>
+
+<h4>3. Điện gió</h4>
+<p><strong>🔑 Gió gấp đôi · Công suất gấp tám</strong></p>
+<ul>
+<li>Mỗi giây, khối không khí $D\,S\,v$ đi qua vòng quét diện tích $S$.</li>
+<li>Khối đó mang động năng $\tfrac12(DSv)v^2$, nên $P_{\text{gió}}=\tfrac12 D S v^3$ (đề cho sẵn).</li>
+<li>$S=\dfrac{\pi d_q^2}{4}$, $d_q$: đường kính vòng quét.</li>
+<li>Tuabin lấy được tối đa $59{,}3\%$ (giới hạn Betz), thực tế khoảng $35$–$45\%$.</li>
+<li>Ba vùng làm việc (Hình 4): dưới $v_{\text{kđ}}$ đứng yên; tới $v_{\text{đm}}$ thì $P\sim v^3$; từ $v_{\text{đm}}$ tới $v_{\text{ngắt}}$ giữ $P_{\text{đm}}$; quá $v_{\text{ngắt}}$ thì dừng để an toàn.</li>
+</ul>
+<!--FIG4-->
+<p>Gió tăng từ $6\ \text{m/s}$ lên $9\ \text{m/s}$ (vẫn dưới tốc độ định mức). Công suất tuabin tăng:</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q8" id="cd09-q8a"><label for="cd09-q8a" class="tl-opt tl-ok">A. $3{,}375$ lần</label>
+<input type="radio" name="cd09-q8" id="cd09-q8b"><label for="cd09-q8b" class="tl-opt tl-no">B. $2{,}25$ lần</label>
+<input type="radio" name="cd09-q8" id="cd09-q8c"><label for="cd09-q8c" class="tl-opt tl-no">C. $1{,}5$ lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\left(\dfrac96\right)^3=1{,}5^3=3{,}375$.</p><p>Vì thế điện gió rất thất thường: gió dao động chút ít, công suất dao động mạnh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B dùng $v^2$ như động năng của một vật. Ở đây khối khí đi qua mỗi giây cũng tăng theo $v$, nên thêm một thừa số $v$.</p><p>C nghĩ công suất tỉ lệ thuận với $v$.</p></div>
+</div>
+<details class="tl-details">
+<summary>Tự kiểm tra: tuabin định mức $3\ \text{MW}$ tại $12\ \text{m/s}$, ngắt ở $25\ \text{m/s}$. Gió $18\ \text{m/s}$ thì công suất bao nhiêu?</summary>
+<p>$3\ \text{MW}$: $18\ \text{m/s}$ nằm giữa $v_{\text{đm}}$ và $v_{\text{ngắt}}$, tuabin xoay cánh bớt đón gió để giữ định mức.</p>
+<p>Ra $\approx10{,}1\ \text{MW}$ là dùng $v^3$ cả khi đã vượt định mức.</p>
+</details>
+
+<h4>4. Nguồn khác và lưu trữ</h4>
+<p><strong>🔑 Ngày thừa · Đêm thiếu · Tích năng</strong></p>
+<ul>
+<li>Lưu trữ: acquy; hoặc thuỷ điện tích năng: đêm thừa điện thì bơm nước lên hồ cao, ngày cao điểm xả xuống phát điện.</li>
+<li>Tích năng có hao phí ở cả hai chiều, nhưng biến điện đêm rẻ thành điện ngày cao điểm.</li>
+</ul>
+<details class="tl-details">
+<summary>Ba nguồn tái tạo khác (định tính)</summary>
+<p>Sinh khối: củi, rơm, bã mía, khí sinh học. Tái tạo nếu trồng lại kịp.</p>
+<p>Sóng biển: phao nhấp nhô kéo máy phát. Gốc từ gió.</p>
+<p>Địa nhiệt: hơi nóng lòng đất quay tuabin.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Gió: $P\sim v^2$</td><td>$P\sim v^3$ (thêm khối khí qua mỗi giây)</td></tr>
+<tr><td>Dùng $v^3$ cả khi vượt $v_{\text{đm}}$</td><td>Từ $v_{\text{đm}}$ tới $v_{\text{ngắt}}$: $P=P_{\text{đm}}$</td></tr>
+<tr><td>Pin: nhân $12$ giờ trời sáng</td><td>Nhân số giờ nắng đỉnh $t_{\text{đ}}$</td></tr>
+<tr><td>Thuỷ điện: $P=D\,L\,h$</td><td>$P=d\,L\,h$, $d=10D$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>VI. Năng lượng hạt nhân (định tính)</h3>
+<p><strong>🔑 Phân hạch urani · Nhiệt · Tuabin · Điện</strong></p>
+<ul>
+<li>Phân hạch: hạt nhân nặng (urani 235) hấp thụ một nơtron, vỡ thành hai hạt nhân nhẹ hơn và vài nơtron, toả năng lượng lớn.</li>
+<li>Nơtron mới sinh lại làm vỡ hạt nhân khác: phản ứng dây chuyền, trong lò được điều khiển.</li>
+<li>Nhà máy: năng lượng hạt nhân → nhiệt (hơi nước) → cơ (tuabin) → điện.</li>
+<li>Nửa sau giống hệt nhiệt điện, nên $H$ cũng chỉ khoảng $33\%$.</li>
+<li>Ví dụ: $1\ \text{g}$ urani 235 phân hạch hết toả cỡ $8{,}2\cdot10^{10}\ \text{J}$, bằng đốt khoảng $3$ tấn than.</li>
+<li>Ưu: không thải CO₂ khi vận hành, khối lượng nhiên liệu nhỏ.</li>
+<li>Nhược: chất thải phóng xạ lâu dài, nguy cơ sự cố, vốn lớn.</li>
+<li>Urani có hạn: <em>không</em> tái tạo.</li>
+</ul>
+<p><strong>🔑 Nhiệt hạch · Nhẹ ghép nặng · Lõi Mặt Trời</strong></p>
+<ul>
+<li>Nhiệt hạch: hạt nhân hiđrô kết hợp thành heli ở hàng chục triệu độ.</li>
+<li>Đó là nguồn năng lượng của Mặt Trời; chưa dùng phát điện thương mại.</li>
+</ul>
+<p>Chuỗi chuyển hoá đúng trong nhà máy điện hạt nhân hiện nay là:</p>
+<div class="tl-quiz">
+<input type="radio" name="cd09-q10" id="cd09-q10a"><label for="cd09-q10a" class="tl-opt tl-no">A. Năng lượng hạt nhân → điện năng trực tiếp, không cần hơi nước</label>
+<input type="radio" name="cd09-q10" id="cd09-q10b"><label for="cd09-q10b" class="tl-opt tl-no">B. Hoá năng (đốt cháy urani) → nhiệt → cơ → điện</label>
+<input type="radio" name="cd09-q10" id="cd09-q10c"><label for="cd09-q10c" class="tl-opt tl-ok">C. Năng lượng phân hạch → nhiệt → cơ → điện</label>
+<input type="radio" name="cd09-q10" id="cd09-q10d"><label for="cd09-q10d" class="tl-opt tl-no">D. Năng lượng nhiệt hạch hiđrô → nhiệt → cơ → điện</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lò phản ứng chỉ thay cho lò đốt than: nó đun nước thành hơi. Từ hơi nước trở đi giống nhiệt điện.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: nhà máy hiện nay vẫn cần hơi nước quay tuabin.</p><p>B: urani không cháy. Năng lượng đến từ hạt nhân vỡ ra, không phải phản ứng với oxi.</p><p>D: nhiệt hạch là chuyện của Mặt Trời, chưa có nhà máy thương mại.</p></div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Cái bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Phân hạch</th><th>Nhiệt hạch</th></tr></thead>
+<tbody>
+<tr><td>Hạt nhân nặng vỡ ra</td><td>Hạt nhân nhẹ ghép lại</td></tr>
+<tr><td>Urani 235</td><td>Hiđrô thành heli</td></tr>
+<tr><td>Trong nhà máy điện hạt nhân</td><td>Trong lõi Mặt Trời</td></tr>
+</tbody>
+</table>
+<p>Thêm hai chỗ hay nhầm: điện hạt nhân <em>không</em> tái tạo; nhà máy không "đốt" urani.</p>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: thuỷ điện nhỏ có $h=20\ \text{m}$, $L=2\ \text{m}^3/\text{s}$, $H=80\%$. Công suất điện?</summary>
+<p>$P_{\text{đ}}=0{,}8\cdot10\,000\cdot2\cdot20=320\,000\ \text{W}=320\ \text{kW}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: điện năng một ngày của tuabin gió</summary>
+<p><strong>Đề:</strong> tuabin định mức $1{,}5\ \text{MW}$ tại $12\ \text{m/s}$, khởi động $3\ \text{m/s}$, ngắt $25\ \text{m/s}$. Một ngày: $10$ h gió $8\ \text{m/s}$, $6$ h gió $14\ \text{m/s}$, $8$ h gió $2\ \text{m/s}$. Điện năng cả ngày?</p>
+<p><strong>Giải:</strong></p>
+<p>$8\ \text{m/s}$: $P=1{,}5\cdot\left(\dfrac8{12}\right)^3\approx0{,}444\ \text{MW}$, cho $\approx4{,}44\ \text{MWh}$.</p>
+<p>$14\ \text{m/s}$: vượt định mức, $P=1{,}5\ \text{MW}$, cho $9\ \text{MWh}$.</p>
+<p>$2\ \text{m/s}$: dưới khởi động, $P=0$.</p>
+<p>Tổng $\approx13{,}4\ \text{MWh}$. Dùng $v^3$ cho cả $14\ \text{m/s}$ sẽ ra sai $\approx18{,}7\ \text{MWh}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: một héc-ta đất, lắp pin hay trồng cây đốt phát điện?</summary>
+<p><strong>Đề:</strong> một héc-ta đất ($10^4\ \text{m}^2$). Cách 1: phủ kín pin $H=20\%$, $t_{\text{đ}}=4\ \text{h}$, bỏ hao phí khác. Cách 2: trồng cây năng lượng, mỗi năm $20$ tấn sinh khối khô, $q=1{,}6\cdot10^7\ \text{J/kg}$, đốt phát điện $H=25\%$. Mỗi năm cách nào cho nhiều điện hơn, gấp bao nhiêu lần?</p>
+<p><strong>Giải:</strong></p>
+<p>Pin: $0{,}2\cdot1000\cdot10^4\cdot4=8000\ \text{kWh}$ mỗi ngày, cả năm $2{,}92\cdot10^6\ \text{kWh}$.</p>
+<p>Sinh khối: $0{,}25\cdot2\cdot10^4\cdot1{,}6\cdot10^7=8\cdot10^{10}\ \text{J}\approx2{,}22\cdot10^4\ \text{kWh}$.</p>
+<p>Pin gấp khoảng $130$ lần. Lí do: nắng tới cả năm là $1000\cdot10^4\cdot4\cdot3600\cdot365\approx5{,}3\cdot10^{13}\ \text{J}$, cây chỉ giữ lại $3{,}2\cdot10^{11}\ \text{J}$ (cỡ $0{,}6\%$). Khâu đốt lại mất thêm $75\%$.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Viết chuỗi năng lượng cho điện gió, thuỷ điện, điện than. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Gió: Mặt Trời → mặt đất nóng không đều → gió → tuabin → điện.</p>
+<p>Thuỷ điện: Mặt Trời → bốc hơi → mưa trên cao → thế năng nước → tuabin → điện.</p>
+<p>Than: Mặt Trời → quang hợp → sinh khối → than → nhiệt → cơ → điện.</p></details>
+<details class="tl-details"><summary>Ba nguồn không có gốc bức xạ Mặt Trời?</summary>
+<p>Địa nhiệt.</p>
+<p>Hạt nhân (urani).</p>
+<p>Thuỷ triều.</p></details>
+<details class="tl-details"><summary>Hiệu suất của máy nhiều khâu nối tiếp?</summary>
+<p>$H=H_1H_2H_3\dots$</p>
+<p>$A_{\text{tp}}=A_{\text{ích}}:H$.</p></details>
+<details class="tl-details"><summary>Vì sao điện gió thất thường?</summary>
+<p>$P\sim v^3$: gió đổi ít, công suất đổi nhiều.</p>
+<p>Gió quá yếu hay quá mạnh: tuabin dừng.</p></details>
+<details class="tl-details"><summary>Giờ nắng đỉnh là gì?</summary>
+<p>Số giờ quy đổi về $I=1000\ \text{W/m}^2$.</p>
+<p>Khoảng $4$–$5$ h, không phải $12$ h.</p></details>
+<details class="tl-details"><summary>Hiệu ứng nhà kính tự nhiên khác hiệu ứng tăng cường thế nào?</summary>
+<p>Tự nhiên: giữ Trái Đất ấm, không có thì $-18\,^\circ\text{C}$.</p>
+<p>Tăng cường: thêm CO₂ do đốt nhiên liệu → ấm lên toàn cầu.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Năng lượng không mất: hao phí thành nhiệt.</li>
+<li>Nhiều khâu: nhân hiệu suất; toàn phần = có ích chia $H$.</li>
+<li>Hầu hết nguồn có gốc Mặt Trời, trừ địa nhiệt, hạt nhân, thuỷ triều.</li>
+<li>Nhiên liệu: $Q=qm$, CO₂ $=km$.</li>
+<li>Nhà kính: ánh sáng vào, hồng ngoại bị giữ.</li>
+<li>Thuỷ điện: $P=H\,d\,L\,h$, $d=10D$.</li>
+<li>Pin: $P_{\text{đỉnh}}=HIS$, nhân giờ nắng đỉnh, làm tròn lên.</li>
+<li>Gió: $P\sim v^3$, bão hoà ở định mức, dừng khi quá mạnh.</li>
+<li>Hạt nhân: phân hạch, không tái tạo, không thải CO₂ khi chạy.</li>
+<li>Đọc đề: có hiệu suất từng khâu không? Gió đã vượt định mức chưa? Lít hay kg?</li>
+</ul>
+</div>

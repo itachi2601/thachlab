@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Năng lượng với cuộc sống",
+  "topic": "Các dạng năng lượng tái tạo và nguồn gốc",
+  "difficulty": "trung-binh",
+  "duration_minutes": 30,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Dạng năng lượng nào sau đây <strong>không</strong> có nguồn gốc từ bức xạ Mặt Trời?</p>",
+    "options": [
+     "Năng lượng gió.",
+     "Năng lượng thuỷ triều.",
+     "Năng lượng sinh khối.",
+     "Năng lượng từ dầu mỏ."
+    ],
+    "answer": 1,
+    "explanation": "<p>Thuỷ triều do lực hấp dẫn của Mặt Trăng (và Mặt Trời) cùng chuyển động tự quay của Trái Đất gây ra, không do bức xạ Mặt Trời. Đáp án B.</p><p>Gió: bức xạ Mặt Trời làm không khí nóng không đều.</p><p>Sinh khối: thực vật quang hợp nhờ ánh sáng Mặt Trời.</p><p>Dầu mỏ: sinh vật cổ (sống nhờ quang hợp) bị chôn vùi hàng triệu năm — năng lượng Mặt Trời được tích trữ.</p><p>Ba ngoại lệ cần nhớ: thuỷ triều, địa nhiệt, hạt nhân.</p>",
+    "topic": "Vòng năng lượng trên Trái Đất",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Gió sinh ra do bức xạ Mặt Trời làm nóng không khí không đều.",
+     "C": "Sinh khối tích trữ năng lượng Mặt Trời qua quang hợp.",
+     "D": "Dầu mỏ là năng lượng Mặt Trời được sinh vật cổ tích trữ, rồi bị chôn vùi."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một máy biến đổi năng lượng gồm ba khâu nối tiếp nhau, hiệu suất lần lượt là $90\\,\\%$, $40\\,\\%$ và $95\\,\\%$. Hiệu suất của cả máy là</p>",
+    "options": [
+     "$34{,}2\\,\\%$.",
+     "$40\\,\\%$.",
+     "$75\\,\\%$.",
+     "$95\\,\\%$."
+    ],
+    "answer": 0,
+    "explanation": "<p>Năng lượng ra của khâu trước là năng lượng vào của khâu sau, nên hiệu suất chung là tích:</p><p>$H=H_1H_2H_3=0{,}90\\cdot0{,}40\\cdot0{,}95=0{,}342=34{,}2\\,\\%$. Đáp án A.</p><p>Hiệu suất chung luôn nhỏ hơn hiệu suất của khâu kém nhất ($40\\,\\%$).</p>",
+    "topic": "Tính hiệu suất của máy và động cơ",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "B": "Chỉ lấy hiệu suất của khâu kém nhất, bỏ qua hao phí ở hai khâu còn lại.",
+     "C": "Lấy trung bình cộng ba hiệu suất thay vì nhân.",
+     "D": "Chỉ lấy hiệu suất khâu cuối, quên các khâu phía trước."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một tuabin gió đang làm việc dưới tốc độ định mức, công suất tỉ lệ với lập phương tốc độ gió. Khi tốc độ gió giảm từ $10\\ \\text{m/s}$ xuống $8\\ \\text{m/s}$ thì công suất của tuabin</p>",
+    "options": [
+     "giảm $20\\,\\%$.",
+     "giảm $36\\,\\%$.",
+     "giảm $48{,}8\\,\\%$.",
+     "giảm $51{,}2\\,\\%$."
+    ],
+    "answer": 2,
+    "explanation": "<p>$\\dfrac{P'}{P}=\\left(\\dfrac{8}{10}\\right)^3=0{,}512$: công suất còn $51{,}2\\,\\%$.</p><p>Vậy công suất giảm $100\\,\\%-51{,}2\\,\\%=48{,}8\\,\\%$. Đáp án C.</p><p>Gió chỉ giảm $20\\,\\%$ mà công suất giảm gần một nửa — vì thế điện gió rất thất thường.</p>",
+    "topic": "Các dạng năng lượng tái tạo và nguồn gốc",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Coi công suất tỉ lệ bậc nhất với tốc độ gió.",
+     "B": "Dùng bình phương tốc độ (nhầm với động năng của 1 kg không khí), quên lượng không khí qua cánh mỗi giây cũng tỉ lệ với v.",
+     "D": "51,2 % là phần công suất còn lại, không phải phần giảm."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Phát biểu nào sau đây về năng lượng hạt nhân là <strong>đúng</strong>?</p>",
+    "options": [
+     "Năng lượng hạt nhân là năng lượng tái tạo vì urani có rất nhiều trong tự nhiên.",
+     "Nhà máy điện hạt nhân hiện nay dùng phản ứng nhiệt hạch giống như trong lõi Mặt Trời.",
+     "Khi vận hành, nhà máy điện hạt nhân thải nhiều khí CO₂ như nhà máy nhiệt điện than.",
+     "Nhà máy điện hạt nhân dùng phản ứng phân hạch urani; phần sau (hơi nước → tuabin → máy phát) giống nhà máy nhiệt điện."
+    ],
+    "answer": 3,
+    "explanation": "<p>Năng lượng phân hạch làm nóng nước thành hơi, hơi quay tuabin, tuabin quay máy phát — nửa sau giống hệt nhà máy nhiệt điện. Đáp án D.</p><p>A sai: urani là khoáng chất có hạn, tự nhiên không bổ sung lại nên không tái tạo.</p><p>B sai: nhiệt hạch (hạt nhân nhẹ kết hợp) chưa dùng phát điện thương mại; nhà máy dùng phân hạch (hạt nhân nặng vỡ ra).</p><p>C sai: không có sự cháy nên khi vận hành gần như không thải CO₂.</p>",
+    "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Urani có hạn trong vỏ Trái Đất, không được bổ sung — không tái tạo.",
+     "B": "Nhầm phân hạch (nhà máy điện) với nhiệt hạch (Mặt Trời).",
+     "C": "Nhà máy hạt nhân không đốt nhiên liệu nên khi vận hành không thải CO₂ như nhà máy than."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một nhà máy thuỷ điện có độ cao cột nước $h=60\\ \\text{m}$, lưu lượng nước qua tuabin $L=100\\ \\text{m}^3/\\text{s}$, hiệu suất cả nhà máy $85\\,\\%$. Trọng lượng riêng của nước $d=10\\,000\\ \\text{N/m}^3$.</p>",
+    "statements": [
+     {
+      "text": "Công suất của dòng nước chảy qua tuabin là $60\\ \\text{MW}$.",
+      "answer": true
+     },
+     {
+      "text": "Công suất điện của nhà máy là $51\\ \\text{MW}$.",
+      "answer": true
+     },
+     {
+      "text": "Nếu mực nước hạ làm $h$ còn $30\\ \\text{m}$ (giữ nguyên $L$ và hiệu suất) thì công suất điện giảm $4$ lần.",
+      "answer": false
+     },
+     {
+      "text": "Trong $1$ giờ có $3{,}6\\cdot10^5\\ \\text{m}^3$ nước chảy qua tuabin.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: mỗi giây có trọng lượng nước $dL=10^4\\cdot100=10^6\\ \\text{N}$ rơi qua độ cao $60\\ \\text{m}$, nên $P_n=dLh=10^6\\cdot60=6\\cdot10^7\\ \\text{W}=60\\ \\text{MW}$.</p><p>b) Đúng: $P_đ=HP_n=0{,}85\\cdot60=51\\ \\text{MW}$.</p><p>c) Sai: $P_đ=HdLh$ tỉ lệ bậc nhất với $h$; $h$ giảm $2$ lần thì $P_đ$ giảm $2$ lần (còn $25{,}5\\ \\text{MW}$).</p><p>d) Đúng: $V=Lt=100\\cdot3600=3{,}6\\cdot10^5\\ \\text{m}^3$.</p>",
+    "topic": "Các dạng năng lượng tái tạo và nguồn gốc",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "P_n = d·L·h = 10 000·100·60 = 6·10⁷ W.",
+     "1": "P_đ = H·P_n = 0,85·60 MW = 51 MW.",
+     "2": "Công suất tỉ lệ bậc nhất với h, không phải bình phương: h giảm 2 lần thì P giảm 2 lần.",
+     "3": "V = L·t = 100 m³/s · 3600 s = 360 000 m³."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một nhà máy nhiệt điện có hiệu suất $35\\,\\%$ đốt hết $1$ tấn than đá có năng suất toả nhiệt $q=2{,}7\\cdot10^7\\ \\text{J/kg}$; cứ $1\\ \\text{kg}$ than cháy thải ra $2{,}5\\ \\text{kg}$ khí CO₂.</p>",
+    "statements": [
+     {
+      "text": "Than toả ra nhiệt lượng $2{,}7\\cdot10^{10}\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Điện năng nhà máy thu được là $7500\\ \\text{kWh}$.",
+      "answer": false
+     },
+     {
+      "text": "Tính trung bình, mỗi kWh điện nhà máy làm ra kèm theo khoảng $0{,}95\\ \\text{kg}$ khí CO₂ thải ra.",
+      "answer": true
+     },
+     {
+      "text": "Nếu khí quyển hoàn toàn không có hiệu ứng nhà kính thì Trái Đất sẽ ấm áp và thuận lợi cho sự sống hơn.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $Q=qm=2{,}7\\cdot10^7\\cdot1000=2{,}7\\cdot10^{10}\\ \\text{J}$.</p><p>b) Sai: $A=HQ=0{,}35\\cdot2{,}7\\cdot10^{10}=9{,}45\\cdot10^9\\ \\text{J}=2625\\ \\text{kWh}$. Con số $7500\\ \\text{kWh}$ là toàn bộ nhiệt lượng đổi ra kWh, chưa nhân hiệu suất.</p><p>c) Đúng: CO₂ thải ra $2{,}5\\cdot1000=2500\\ \\text{kg}$; chia cho điện năng $2625\\ \\text{kWh}$ được $\\dfrac{2500}{2625}\\approx0{,}95\\ \\text{kg/kWh}$. (Nếu quên hiệu suất, chia cho $7500\\ \\text{kWh}$ sẽ ra $0{,}33\\ \\text{kg/kWh}$ — sai.)</p><p>d) Sai: hiệu ứng nhà kính tự nhiên là cần thiết; không có nó nhiệt độ trung bình của Trái Đất chỉ khoảng $-18\\ ^\\circ\\text{C}$. Điều đáng lo là hiệu ứng bị con người <em>tăng cường</em>.</p>",
+    "topic": "Ưu nhược điểm của nhiên liệu hoá thạch",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Q = q·m với m = 1000 kg.",
+     "1": "Phải nhân hiệu suất: chỉ 35 % nhiệt lượng thành điện năng, 2625 kWh.",
+     "2": "m_CO₂ = 2,5·1000 = 2500 kg; chia cho 2625 kWh (đã nhân hiệu suất) được ≈ 0,95 kg/kWh.",
+     "3": "Không có hiệu ứng nhà kính, Trái Đất trung bình chỉ khoảng −18 °C."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một hộ gia đình cần $9\\ \\text{kWh}$ điện mỗi ngày và muốn lắp pin Mặt Trời. Mỗi tấm pin có diện tích $1{,}8\\ \\text{m}^2$, hiệu suất $20\\,\\%$. Nơi đó mỗi ngày tương đương $4{,}5$ giờ nắng đỉnh với cường độ bức xạ $1000\\ \\text{W/m}^2$. Bỏ qua mọi hao phí khác. Cần lắp tối thiểu bao nhiêu tấm pin?</p>",
+    "answer": "6",
+    "explanation": "<p>Công suất đỉnh mỗi tấm: $P=HIS=0{,}2\\cdot1000\\cdot1{,}8=360\\ \\text{W}$.</p><p>Điện năng mỗi tấm mỗi ngày: $360\\ \\text{W}\\cdot4{,}5\\ \\text{h}=1620\\ \\text{Wh}=1{,}62\\ \\text{kWh}$.</p><p>$n=\\dfrac{9}{1{,}62}\\approx5{,}56$; số tấm phải làm tròn <em>lên</em>: $6$ tấm (5 tấm chỉ cho $8{,}1\\ \\text{kWh}$, thiếu).</p><p>Bẫy: làm tròn thành $5$ hoặc nhân với $12$ giờ trời sáng thay vì $4{,}5$ giờ nắng đỉnh.</p>",
+    "topic": "Sử dụng năng lượng tiết kiệm, hiệu quả",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một nhà máy nhiệt điện có công suất điện $450\\ \\text{MW}$, hiệu suất cả nhà máy $37{,}5\\,\\%$, đốt than có năng suất toả nhiệt $q=2{,}7\\cdot10^7\\ \\text{J/kg}$. Bỏ qua hao phí trên đường dây tải điện. Mỗi giờ nhà máy đốt bao nhiêu tấn than?</p>",
+    "answer": "160",
+    "explanation": "<p>Công suất nhiệt than cung cấp: $P_{nl}=\\dfrac{P_đ}{H}=\\dfrac{450}{0{,}375}=1200\\ \\text{MW}$.</p><p>Nhiệt lượng trong $1$ giờ: $Q=1{,}2\\cdot10^9\\cdot3600=4{,}32\\cdot10^{12}\\ \\text{J}$.</p><p>$m=\\dfrac{Q}{q}=\\dfrac{4{,}32\\cdot10^{12}}{2{,}7\\cdot10^7}=1{,}6\\cdot10^5\\ \\text{kg}=160$ tấn.</p><p>Bẫy: nhân $450\\ \\text{MW}$ với $H$ thay vì chia (ra $22{,}5$ tấn).</p>",
+    "topic": "Tính hiệu suất của máy và động cơ",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   }
+  ]
+ }
+}
