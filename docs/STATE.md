@@ -36,6 +36,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - HTML chưa có `Cache-Control: no-cache` trong `.htaccess` của `scripts/deploy.sh` — chờ thầy gật.
 
 ## Nội dung đang treo
+- 17/10/2026: đã gán lớp cho 664/687 đề published chưa có exam_classes (`scripts/gan-lop-de-chua-gan.mts`, suy theo bài học chứa đề; sao lưu + hoàn tác trong `scripts/logs/gan-lop-de-*.json`). Kệ đề lớp 10/11/12 giờ lọc đúng bằng DB; vá tạm bằng tiêu đề ở `features/exams/exam-grade.ts` có thể gỡ sau.
+- Còn 23 đề chưa gán (không suy được: 19 "Kiểm tra nhanh"/"Luyện tập" mồ côi bài học #99–101, #209, #239–257 + vài đề khác): danh sách `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`, chờ thầy chọn lớp.
 - Bài tập mẫu L12 còn soạn lại 12 bài: 9, 11, 13–19, 125–127; kế hoạch 42 bài L10/L11 chờ thầy duyệt (`docs/memory/project_thachlab_btm_quet_dang.md`).
 - Bài 11 L12 Thực hành: chưa ghi DB (`upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`); 4 bài L12 sửa đường sức chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14` — kiểm `so-file-voi-db.mts` trước vì có thể đã đăng.
 - Lỗi nội dung quiz lý thuyết L12 chưa sửa: bài 8 `summary_html` (273 K ↔ 298 K), bài 19 Xofigo Z=88, bài 10 "d gấp đôi → B còn 1/8", bài 126 mục tiêu 8 câu thực tế 7, bài 13 còn vai "Thầy". Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
