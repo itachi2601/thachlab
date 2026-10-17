@@ -19,3 +19,5 @@ metadata:
 **Còn chờ:** deploy 5a977bddd; thử đường đạt ≥80% (xoá lượt thử hoặc chờ 24 giờ, cần giải đúng 20 câu hỗn hợp trắc nghiệm + đáp số); chụp 375px; cổng xem lại lý thuyết tối đa 480 giây là thiết kế (40% thời gian đọc ước tính, `tutoring_review_start`) — thầy muốn giảm thì sửa hằng số bằng migration.
 
 Liên quan: [[project_thachlab_phu_dao]], [[project_thachlab_rank_system]], [[project_thachlab_title_showcase]]
+
+**17/10/2026:** `node --env-file=.env.local scripts/doi-mk-hs-test.mjs <email>` đặt lại mật khẩu tạm (in ra console) — không cần `--xoa` rồi tạo lại. HS Test 1 có 1 lượt làm đề 908 (result 1248, 4 điểm) + 1 mục phụ đạo sinh ra từ đó; dọn bằng `gieo-hs-test.mjs --xoa` không xoá exam_results.
