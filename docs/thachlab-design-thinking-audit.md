@@ -101,3 +101,37 @@ mục DT-xx dưới đây được ghi thêm vào `docs/ROADMAP.md` mục "Desig
 Lộ trình 6 tuần ở trên giữ nguyên trình tự; điểm không được bỏ là **tuần 3: chọn MỘT vấn đề gốc** — không làm cả 9 mục cùng lúc.
 
 **Giới hạn lần rà**: chỉ grep + đọc docs/DATABASE.md và vài migration; chưa truy vấn DB thật, chưa đọc từng policy RLS, chưa mở UI. Mức "Đã có" của DT-02/03/04 dựa trên schema/migration, chưa thử bằng HS thật.
+
+---
+
+## TỔNG KẾT TRIỂN KHAI (18/10/2026)
+
+### Đã làm (theo đợt trong kế hoạch)
+| Đợt | ID | Việc | Trạng thái |
+|---|---|---|---|
+| 0 | DT-16 | `hsg-ai-grade` bỏ DeepSeek, bài làm HS chỉ đi qua Claude (commit e1a9ca706) | Code xong; **thầy tự deploy Edge Function** |
+| 1 | DT-01 | Bảng `learning_events` + RPC `log_learning_events` + purge 12 tháng; client ghi open/leave/submit ở `InlineLessonAccordion` (hàng đợi 60 giây, chỉ HS) | Migration đã chạy, client đã deploy; **chưa có dữ liệu thật** (0 dòng lúc 18/10) |
+| 1 | DT-12 | Bảng `feature_flags` theo lớp + `feature_enabled()` | Đã chạy; đang dùng cho DT-04 |
+| 2 | DT-07 | Cảnh báo `inactive_7d` + `absent_streak` (`sweep_engagement_alerts`, cron 6:00 VN); nhãn trên trang cảnh báo GV; HS không thấy 2 loại này; nhật ký phụ huynh bỏ cảnh báo tự đóng | Đã chạy + deploy; cron **chưa chạy lần đầu**; thử quét ra 95 cảnh báo inactive (64 urgent), 0 absent |
+| 2 | DT-04 | Lịch ôn câu sai 1/3/7 ngày theo cờ `on_tap_1_3_7`, **bật cho lớp 12 (class_id 18)**, lớp 11 làm đối chứng | Đã chạy; lớp 12 cần 3 lần đúng để xoá bẫy (lớp thường 2) |
+| 3 | DT-03 | Bộ 20 câu Kiểm tra nhanh: bài 12 (lớp 12) + 34 bài lớp 10 (exam 937, 941–974, 666 câu), kiểm chéo bởi agent khác, đã đăng + deploy; gán YCCĐ 196/212 câu | Xong |
+
+Phát hiện/sửa lỗi dọc đường: (1) lọc HS Test ở DT-07 loại nhầm ~153 HS thật dùng email `@thachlab.local` → đã sửa (migration `20261018131000`) trước khi cron chạy; (2) `next build` ở main lỗi typecheck do 4 script "giải lại" của phiên khác (deploy phải build từ worktree sạch).
+
+### Trạng thái 16 hạng mục sau triển khai
+Đã có: DT-01\*, 02, 03\*\*, 04, 07\*, 12 · Một phần: DT-05, 06, 09, 11, 13, 14, 15, 16 · Chưa có: DT-08 (hoãn Q2/2027), DT-10.
+\* chạy được nhưng chưa có/xác nhận dữ liệu thật. \*\* lớp 12 + lớp 10 đủ; còn L11 (bài 23, 26, 29), KHTN 9 (20 bài) và AVCN chưa có bộ 20 câu.
+
+### Việc còn lại (ưu tiên giảm dần)
+1. **Xác nhận dữ liệu thật**: sau vài ngày HS dùng, chạy `select kind, count(*), avg(duration_s) from learning_events group by 1`; còn 0 thì kiểm `InlineLessonAccordion` + `services/learning-events.ts`. Sau 6:00 sáng xem 95 cảnh báo inactive có hợp lý với GV/TA không (lớp 12: 41).
+2. **DT-16 còn dở**: deploy `hsg-ai-grade`; chạy `pg_policies` (chỉ đọc) soát RLS các bảng hành vi (chưa làm).
+3. **DT-12 phần đo**: chưa có trang/báo cáo chỉ số trước–sau lớp 12 vs lớp 11 (tỉ lệ đúng khi ôn, số bẫy cleared sau ~3 tuần).
+4. **DT-07 UI**: nút "Rà lại" trên dashboard (RPC `sweep_engagement_alerts(p_class)` đã sẵn).
+5. **DT-03 phủ nốt**: KHTN 9 (20 bài), L11 (3 bài), AVCN; 16 câu NONE (L10) chờ thầy thêm YCCĐ mới; đáp án đúng là phương án dài nhất ở 40% câu trắc nghiệm L10 (thầy chọn không sửa).
+6. **DT-05 / DT-06**: gợi ý bài tiếp theo theo dạng yếu; mở khoá theo ngưỡng làm chủ — nên làm sau khi có dữ liệu DT-01 và kết quả thử DT-04.
+7. **DT-15**: chế độ xem tiến bộ cá nhân + giới hạn bài/ngày (xem rủi ro nhạy địa vị 14–18 tuổi); chờ hết mùa xếp hạng thử nghiệm (25/10).
+8. Thấp: DT-10, 11, 13, 14, 09; DT-08 hoãn.
+9. Hạ tầng: `next build` ở main phải sửa/loại 4 script giải lại (phiên sở hữu), hoặc thêm `scripts` vào `exclude` tsconfig.
+
+### Lộ trình thử nghiệm (đối chiếu mục cuối file gốc)
+Tuần 1–2: ghi sự kiện (xong, chờ dữ liệu) · Tuần 3: chọn MỘT vấn đề gốc (**chưa làm** — chưa phỏng vấn 5 HS lớp 12) · Tuần 4–5: bản mẫu DT-03+04 trên lớp thử bằng cờ (đang chạy: lớp 12) · Tuần 6: so điểm kiểm tra chương lớp thử vs lớp cũ.
