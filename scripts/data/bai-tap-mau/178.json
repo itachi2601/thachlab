@@ -1,0 +1,1057 @@
+{
+ "lesson_id": 178,
+ "lesson_title": "Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà",
+ "generated_at": "2026-10-17",
+ "review": {
+  "checked": true,
+  "by": "kiem-code ×2 (giải độc lập + soát nội dung/hình) + dò lần 2 (KaTeX, ký tự điều khiển, nền sáng, giải lại, sự kiện thiên văn)",
+  "date": "2026-10-17",
+  "notes": "Đáp số khớp lời giải độc lập; nón tối Mặt Trăng ghi ≈374 000 km thống nhất (thầy chốt 17/10), dap_so 374.0 nghìn km; chữ trong hình đổi màu đậm cho nền sáng."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Pha Mặt Trăng và lịch thực: từ ngày rằm suy ra các pha, ngày có thể có nhật thực",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "problem_html": "<p>Ngày 3/3 là ngày trăng tròn (rằm) và đêm đó có nguyệt thực toàn phần. Lấy một Tuần Trăng (tháng giao hội) $S=29{,}5$ ngày; tháng 3 có $31$ ngày. Coi Mặt Trăng chuyển động đều quanh Trái Đất.</p><ol type=\"a\"><li>Tìm ngày có trăng hạ huyền gần nhất sau đó, ngày không trăng kế tiếp và ngày trăng tròn kế tiếp. Nếu trong khoảng này có nhật thực thì nhật thực chỉ có thể rơi vào ngày nào? Vì sao?</li><li>Trăng thượng huyền mọc vào khoảng mấy giờ? Lúc $18$ h, người ở Việt Nam thấy nó ở đâu trên bầu trời, phần sáng quay về phía nào?</li><li>Vì sao đêm trăng tròn kế tiếp thường không có nguyệt thực nữa?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-1-0\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Mặt Trăng đi một vòng quanh Trái Đất bắt đầu từ vị trí rằm ngày 3 tháng 3, nửa được chiếu sáng luôn quay về phía Mặt Trời ở bên trái\"><text x=\"16\" y=\"24\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ánh sáng Mặt Trời</text><line x1=\"16.0\" y1=\"60.0\" x2=\"70.0\" y2=\"60.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M62.2,55.5 L70.0,60.0 L62.2,64.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16.0\" y1=\"110.0\" x2=\"70.0\" y2=\"110.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M62.2,105.5 L70.0,110.0 L62.2,114.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16.0\" y1=\"160.0\" x2=\"70.0\" y2=\"160.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M62.2,155.5 L70.0,160.0 L62.2,164.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16.0\" y1=\"210.0\" x2=\"70.0\" y2=\"210.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M62.2,205.5 L70.0,210.0 L62.2,214.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"16.0\" y1=\"260.0\" x2=\"70.0\" y2=\"260.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M62.2,255.5 L70.0,260.0 L62.2,264.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"250\" cy=\"150\" r=\"104\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><circle cx=\"354.0\" cy=\"150.0\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"323.5\" cy=\"76.5\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"250.0\" cy=\"46.0\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"176.5\" cy=\"76.5\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"146.0\" cy=\"150.0\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"176.5\" cy=\"223.5\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"250.0\" cy=\"254.0\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"323.5\" cy=\"223.5\" r=\"2.6\" fill=\"#94a3b8\"/><circle cx=\"250\" cy=\"150\" r=\"17\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M250,133 A17,17 0 0,1 250,167 Z\" fill=\"#475569\" fill-opacity=\"0.75\" stroke=\"none\"/><text x=\"250\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Trái Đất</text><path d=\"M187.1,73.6 L176.5,76.5 L179.3,65.8\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"368\" y=\"155\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">rằm 3/3</text><text x=\"250\" y=\"34\" fill=\"#047857\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"136\" y=\"155\" fill=\"#047857\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">?</text><g transform=\"translate(354.0,150.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M0,-11 A11,11 0 0,0 0,11 Z\" fill=\"#facc15\" stroke=\"none\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"354.0,150.0;352.4,131.9;347.7,114.4;340.1,98.0;329.7,83.2;316.8,70.3;302.0,59.9;285.6,52.3;268.1,47.6;250.0,46.0;231.9,47.6;214.4,52.3;198.0,59.9;183.2,70.3;170.3,83.2;159.9,98.0;152.3,114.4;147.6,131.9;146.0,150.0;147.6,168.1;152.3,185.6;159.9,202.0;170.3,216.8;183.2,229.7;198.0,240.1;214.4,247.7;231.9,252.4;250.0,254.0;268.1,252.4;285.6,247.7;302.0,240.1;316.8,229.7;329.7,216.8;340.1,202.0;347.7,185.6;352.4,168.1;354.0,150.0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"292\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Nhìn từ phía Bắc, không theo tỉ lệ</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chạy nhanh: Mặt Trăng đi trọn một vòng ứng với một Tuần Trăng, bắt đầu từ rằm 3/3. Nửa sáng luôn quay về phía Mặt Trời. Các vị trí dấu ? là ngày cần tìm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> Mặt Trăng không tự phát sáng; nửa quay về Mặt Trời luôn sáng, phần ta thấy tuỳ góc Mặt Trời – Trái Đất – Mặt Trăng.</li><li><strong>Chu kì:</strong> sau một Tuần Trăng $S$ pha lặp lại; các pha chính cách nhau $\\dfrac{S}{4}$.</li><li><strong>Điều kiện thực:</strong> nhật thực chỉ vào ngày không trăng, nguyệt thực chỉ vào đêm rằm.</li><li><strong>Vì sao hiếm:</strong> quỹ đạo Mặt Trăng nghiêng $5°$, chỉ thẳng hàng khi gần giao tuyến (mùa thực).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Ngày hạ huyền</span></p><p>Từ rằm tới hạ huyền là một phần tư vòng:</p>$$\\dfrac{S}{4}=\\dfrac{29{,}5}{4}\\approx7{,}4\\ \\text{ngày}$$$$3+7{,}4=10{,}4$$<div class=\"bt-ans\"><p>Hạ huyền khoảng ngày 10/3</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ngày không trăng</span></p><p>Không trăng ở phía đối diện rằm, cách nửa vòng:</p>$$\\dfrac{S}{2}=14{,}75\\ \\text{ngày}$$$$3+14{,}75=17{,}75$$<div class=\"bt-ans\"><p>Không trăng khoảng ngày 17–18/3</p></div><p>Nhật thực cần Mặt Trăng nằm giữa Mặt Trời và Trái Đất, tức ngày không trăng, nên chỉ có thể rơi vào khoảng 17–18/3.</p><p>Ngày đó chỉ cách rằm có nguyệt thực nửa tháng, vẫn trong mùa thực, nên có khả năng xảy ra nhật thực (thường chỉ thấy ở một dải hẹp trên Trái Đất).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ngày rằm kế tiếp</span></p><p>Sau một Tuần Trăng thì trở lại rằm:</p>$$3+29{,}5=32{,}5$$<p>Tháng 3 có $31$ ngày:</p>$$32{,}5-31=1{,}5$$<div class=\"bt-ans\"><p>Rằm kế tiếp khoảng ngày 1–2/4</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Trăng thượng huyền</span></p><p>Thượng huyền: Mặt Trăng lệch $90°$ về phía Đông so với Mặt Trời. Trái Đất quay $15°$ mỗi giờ:</p>$$\\dfrac{90°}{15°/\\text{h}}=6\\ \\text{h}$$<p>Mặt Trăng mọc sau Mặt Trời khoảng $6$ h, tức khoảng $12$ h trưa.</p><p>Lúc $18$ h Mặt Trời lặn ở phía Tây; Mặt Trăng đã mọc được $6$ h nên lên cao nhất, gần kinh tuyến (ở Việt Nam thường lệch về phía Nam).</p><div class=\"bt-ans\"><p>Mọc khoảng 12 h; lúc 18 h ở cao nhất, phần sáng quay về phía Tây (phía Mặt Trời)</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vì sao rằm tháng 4 thường không có nguyệt thực</span></p><p>Quỹ đạo Mặt Trăng nghiêng $5°$ so với mặt phẳng quỹ đạo Trái Đất. Rằm 3/3 có nguyệt thực vì lúc đó trăng tròn ở gần giao tuyến.</p><p>Sau một Tuần Trăng, Trái Đất đã đi thêm trên quỹ đạo, hướng Mặt Trời quay đi so với giao tuyến:</p>$$\\dfrac{360°}{365{,}25}\\cdot29{,}5\\approx29°$$<p>Trăng tròn lần sau không còn ở giao tuyến nên đi phía trên hoặc phía dưới bóng Trái Đất: không có nguyệt thực. Mùa thực kế tiếp đến sau khoảng $6$ tháng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thứ tự pha: rằm 3/3 → hạ huyền 10/3 → không trăng 17–18/3 → thượng huyền khoảng 25/3 → rằm 1–2/4; mỗi khoảng khoảng $7{,}4$ ngày ✓.</p><p>Ước lượng (giả sử rằm 3/3 nằm đúng giao tuyến): rằm 1–2/4 lệch khỏi mặt phẳng quỹ đạo Trái Đất khoảng $5°\\cdot\\sin29°\\approx2{,}4°$; cả vùng nửa tối của bóng Trái Đất chỉ trải khoảng $1{,}2°$ quanh trục bóng, cộng bán kính góc Mặt Trăng $0{,}26°$ vẫn nhỏ hơn $2{,}4°$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Hạ huyền khoảng 10/3; không trăng khoảng 17–18/3; rằm kế tiếp khoảng 1–2/4</p><p>a) Nhật thực (nếu có) chỉ có thể vào khoảng 17–18/3, ngày không trăng</p><p>b) Mọc khoảng 12 h; lúc 18 h ở cao nhất trên bầu trời, phần sáng quay về phía Tây</p><p>c) Quỹ đạo Mặt Trăng nghiêng 5°; một tháng sau trăng tròn không còn gần giao tuyến nên đi lệch khỏi bóng Trái Đất</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>cho một ngày rằm hoặc ngày không trăng, hỏi ngày pha khác</strong> → cộng bội của $S/4$; nhật thực chỉ ngày không trăng, nguyệt thực chỉ đêm rằm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-1-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Bên trái: từ rằm đi một phần tư vòng quỹ đạo ứng với một phần tư Tuần Trăng. Bên phải: quỹ đạo Mặt Trăng nghiêng 5 độ so với mặt phẳng quỹ đạo Trái Đất, cắt nhau ở giao tuyến\"><circle cx=\"100\" cy=\"120\" r=\"70\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><circle cx=\"100\" cy=\"120\" r=\"12\" fill=\"#38bdf8\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"4.0\" y1=\"80.0\" x2=\"22.0\" y2=\"80.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M14.2,75.5 L22.0,80.0 L14.2,84.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"4.0\" y1=\"120.0\" x2=\"22.0\" y2=\"120.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M14.2,115.5 L22.0,120.0 L14.2,124.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"4.0\" y1=\"160.0\" x2=\"22.0\" y2=\"160.0\" stroke=\"#facc15\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M14.2,155.5 L22.0,160.0 L14.2,164.5\" fill=\"none\" stroke=\"#facc15\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"4\" y=\"24\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ánh sáng Mặt Trời</text><circle cx=\"170\" cy=\"120\" r=\"8\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"182\" y=\"125\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">rằm</text><circle cx=\"100\" cy=\"50\" r=\"6\" fill=\"#94a3b8\"/><line x1=\"100.0\" y1=\"120.0\" x2=\"170.0\" y2=\"120.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"100.0\" y1=\"120.0\" x2=\"100.0\" y2=\"50.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"1\"/><path d=\"M130,120 A30,30 0 0,0 100,90\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"126\" y=\"94\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">90°</text><text x=\"100\" y=\"222\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">1/4 vòng ↔ S/4</text><line x1=\"220.0\" y1=\"120.0\" x2=\"410.0\" y2=\"120.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"220\" y=\"90\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">mặt phẳng quỹ đạo</text><text x=\"220\" y=\"108\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Trái Đất</text><line x1=\"227.7\" y1=\"141.8\" x2=\"402.3\" y2=\"98.2\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><text x=\"410\" y=\"66\" fill=\"#047857\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">quỹ đạo Mặt Trăng</text><circle cx=\"315.0\" cy=\"120\" r=\"4.5\" fill=\"#f87171\"/><text x=\"321.0\" y=\"152\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">giao tuyến</text><path d=\"M365.0,120 A50,50 0 0,0 363.5,107.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"371.0\" y=\"116\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">5°</text><text x=\"220\" y=\"222\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">góc 5° vẽ phóng đại</text></svg><figcaption>Dữ kiện: mỗi phần tư vòng ứng với S/4. Quỹ đạo Mặt Trăng chỉ cắt mặt phẳng quỹ đạo Trái Đất ở giao tuyến.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Ngày 3/3 là ngày trăng tròn (rằm) và đêm đó có nguyệt thực toàn phần\"</td><td>Mốc: rằm 3/3</td><td>Trăng tròn: Mặt Trời – Trái Đất – Mặt Trăng thẳng hàng, Trái Đất ở giữa<br>Có nguyệt thực: đang trong mùa thực</td></tr><tr><td>\"Tuần Trăng … $S=29{,}5$ ngày; tháng 3 có $31$ ngày\"</td><td>$S=29{,}5$ ngày</td><td>Một Tuần Trăng thì trở lại pha cũ<br>Sang tháng 4 phải trừ số ngày tháng 3</td></tr><tr><td>\"Coi Mặt Trăng chuyển động đều\"</td><td>Góc tỉ lệ với thời gian</td><td>⚠ chỉ khi coi đều mới chia thời gian theo góc; thực tế các pha lệch được khoảng $\\pm1$ ngày</td></tr><tr><td>\"ngày … hạ huyền …, ngày không trăng …, ngày trăng tròn kế tiếp\"</td><td>Cần ba ngày</td><td>Rằm → hạ huyền → không trăng → thượng huyền → rằm<br>Mỗi pha chính cách nhau $\\dfrac{S}{4}$</td></tr><tr><td>\"nhật thực chỉ có thể rơi vào ngày nào?\"</td><td>Điều kiện nhật thực</td><td>Nhật thực: Mặt Trăng nằm giữa Mặt Trời và Trái Đất</td></tr><tr><td>\"Trăng thượng huyền mọc vào khoảng mấy giờ? … Lúc $18$ h\"</td><td>Thượng huyền</td><td>Thượng huyền: góc Mặt Trăng – Trái Đất – Mặt Trời là $90°$<br>Trái Đất tự quay $15°$ mỗi giờ</td></tr><tr><td>\"thường không có nguyệt thực nữa\"</td><td>Một Tuần Trăng sau</td><td>Quỹ đạo Mặt Trăng nghiêng $5°$; chỉ thẳng hàng khi trăng tròn ở gần giao tuyến</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cho ngày rằm, hỏi ngày các pha khác, ngày có thể có thực</b> → cộng bội của $S/4$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Ngày hạ huyền",
+     "hoi": "Trăng hạ huyền gần nhất rơi vào ngày nào của tháng 3 (ghi số ngày)?",
+     "dap_so": 10.4,
+     "sai_so": 0.6,
+     "loi_hay_gap": "Cộng nửa Tuần Trăng: từ rằm tới hạ huyền chỉ mới một phần tư vòng."
+    },
+    {
+     "tieu_de": "Ngày không trăng",
+     "hoi": "Ngày không trăng kế tiếp rơi vào ngày nào của tháng 3 (ghi số ngày)?",
+     "dap_so": 17.75,
+     "sai_so": 0.8,
+     "loi_hay_gap": "Cộng cả một Tuần Trăng; sau một Tuần Trăng thì trở lại rằm, không phải không trăng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng thêm $\\dfrac{S}{2}$ vào ngày rằm",
+       "dung": true
+      },
+      {
+       "text": "Cộng thêm $\\dfrac{S}{4}$ vào ngày rằm",
+       "dung": false,
+       "vi_sao": "Một phần tư Tuần Trăng mới tới hạ huyền; không trăng ở phía đối diện rằm, cách nửa vòng."
+      },
+      {
+       "text": "Cộng thêm $S$ vào ngày rằm",
+       "dung": false,
+       "vi_sao": "Sau một Tuần Trăng Mặt Trăng trở lại đúng pha cũ, tức lại là rằm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ngày rằm kế tiếp",
+     "hoi": "Trăng tròn kế tiếp rơi vào ngày nào của tháng 4 (ghi số ngày)?",
+     "dap_so": 1.5,
+     "sai_so": 0.6,
+     "loi_hay_gap": "Cộng $S$ rồi trừ $30$ ngày; tháng 3 có $31$ ngày.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng $S$ vào ngày 3/3 rồi trừ $31$ ngày của tháng 3",
+       "dung": true
+      },
+      {
+       "text": "Cộng $S$ rồi trừ $30$ ngày",
+       "dung": false,
+       "vi_sao": "Tháng 3 có $31$ ngày; trừ $30$ thì lệch sang một ngày sau."
+      },
+      {
+       "text": "Cộng $2S$ vào ngày 3/3",
+       "dung": false,
+       "vi_sao": "Chỉ cần một Tuần Trăng là trở lại rằm; $2S$ là rằm của tháng sau nữa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Trăng thượng huyền",
+     "hoi": "Câu nào mô tả đúng trăng thượng huyền?",
+     "lua_chon": [
+      {
+       "text": "Mọc khoảng $12$ h; lúc $18$ h ở cao nhất trên bầu trời, phần sáng quay về phía Tây",
+       "dung": true
+      },
+      {
+       "text": "Mọc khoảng $18$ h; lúc $18$ h vừa nhô lên ở phía Đông",
+       "dung": false,
+       "vi_sao": "Đó là trăng tròn: đối diện Mặt Trời nên mọc lúc Mặt Trời lặn."
+      },
+      {
+       "text": "Mọc khoảng $12$ h; lúc $18$ h ở cao nhất, phần sáng quay về phía Đông",
+       "dung": false,
+       "vi_sao": "Phần sáng luôn quay về phía Mặt Trời; lúc $18$ h Mặt Trời đang lặn ở phía Tây."
+      }
+     ],
+     "loi_hay_gap": "Nhầm thượng huyền với hạ huyền: hạ huyền mọc khoảng nửa đêm và sáng nửa phía Đông.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng góc $90°$ giữa Mặt Trăng và Mặt Trời, Trái Đất quay $15°$ mỗi giờ",
+       "dung": true
+      },
+      {
+       "text": "Dùng giờ mọc của trăng tròn cho mọi pha",
+       "dung": false,
+       "vi_sao": "Mỗi ngày trăng mọc trễ khoảng $49$ phút, mỗi pha có giờ mọc riêng tuỳ góc với Mặt Trời."
+      },
+      {
+       "text": "Cho rằng phần sáng quay về phía Mặt Trăng mọc",
+       "dung": false,
+       "vi_sao": "Phần sáng do Mặt Trời chiếu nên quay về phía Mặt Trời, không phụ thuộc phía mọc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vì sao rằm tháng 4 thường không có nguyệt thực",
+     "hoi": "Nguyên nhân chính là gì?",
+     "lua_chon": [
+      {
+       "text": "Quỹ đạo Mặt Trăng nghiêng khoảng $5°$; một tháng sau trăng tròn không còn ở gần giao tuyến nên đi lệch khỏi bóng Trái Đất",
+       "dung": true
+      },
+      {
+       "text": "Trái Đất tự quay nên bóng Trái Đất quay sang chỗ khác",
+       "dung": false,
+       "vi_sao": "Tự quay không đổi hướng bóng; bóng Trái Đất luôn nằm phía đối diện Mặt Trời."
+      },
+      {
+       "text": "Quỹ đạo Mặt Trăng là elip nên tháng sau Mặt Trăng ở quá xa, không chạm bóng",
+       "dung": false,
+       "vi_sao": "Khoảng cách Mặt Trăng chỉ đổi khoảng $10\\ \\%$, chưa đủ ra khỏi bóng; nguyên nhân là Mặt Trăng lệch lên hoặc xuống."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng đêm rằm nào cũng có nguyệt thực, quên quỹ đạo Mặt Trăng nghiêng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét vị trí trăng tròn so với mặt phẳng quỹ đạo Trái Đất",
+       "dung": true
+      },
+      {
+       "text": "Xét khoảng cách Trái Đất – Mặt Trời trong năm",
+       "dung": false,
+       "vi_sao": "Khoảng cách đó chỉ đổi vài phần trăm và không quyết định ba thiên thể có thẳng hàng hay không."
+      },
+      {
+       "text": "Xét tốc độ tự quay của Trái Đất",
+       "dung": false,
+       "vi_sao": "Tự quay chỉ quyết định nơi nào đang là đêm, không làm Mặt Trăng vào hay ra khỏi bóng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Góc trông: Mặt Trăng che kín Mặt Trời hay chỉ tạo nhật thực hình khuyên",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "problem_html": "<p>Đường kính Mặt Trời $D_S=1{,}39\\cdot10^6\\ \\text{km}$, khoảng cách Trái Đất – Mặt Trời $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$; đường kính Mặt Trăng $D_M=3470\\ \\text{km}$; bán kính Trái Đất $R_E=6370\\ \\text{km}$. Khoảng cách tâm Trái Đất – tâm Mặt Trăng lúc gần nhất là $363\\,000\\ \\text{km}$, lúc xa nhất là $405\\,000\\ \\text{km}$. Coi góc trông nhỏ: $\\alpha\\approx\\dfrac{D}{\\ell}$ (rad), với $D$ là đường kính vật, $\\ell$ là khoảng cách từ mắt tới vật.</p><ol type=\"a\"><li>Nhìn Mặt Trời qua kính lọc chuyên dụng (không bao giờ nhìn bằng mắt thường hay kính râm), một bạn giơ đồng xu đường kính $2\\ \\text{cm}$ trước mắt. Phải đặt đồng xu cách mắt bao xa để nó vừa che kín đĩa Mặt Trời?</li><li>Tính góc trông Mặt Trời theo độ.</li><li>Người quan sát đứng ở điểm mặt đất ngay dưới Mặt Trăng. Tính góc trông Mặt Trăng lúc gần nhất và lúc xa nhất. Nếu khi đó xảy ra nhật thực trung tâm (tâm ba thiên thể thẳng hàng) thì mỗi trường hợp là nhật thực toàn phần hay hình khuyên?</li><li>Khi Mặt Trăng ở xa nhất, đĩa Mặt Trời bị che tối đa bao nhiêu phần trăm diện tích?</li><li>Khoảng cách từ người quan sát tới Mặt Trăng không được vượt quá bao nhiêu thì Mặt Trăng còn che kín được Mặt Trời?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-2-0\"><svg viewBox=\"0 0 420 220\" role=\"img\" aria-label=\"Đồng xu dịch dần ra xa mắt cho tới khi vừa che kín đĩa Mặt Trời, khoảng cách từ mắt tới đồng xu chưa biết\"><circle cx=\"356\" cy=\"110\" r=\"52\" fill=\"#facc15\" fill-opacity=\"0.85\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"356\" y=\"182\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Mặt Trời</text><path d=\"M20,110 Q34,98 48,110 Q34,122 20,110 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"37\" cy=\"110\" r=\"4.5\" fill=\"currentColor\"/><line x1=\"40.0\" y1=\"110.0\" x2=\"356.0\" y2=\"58.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"110.0\" x2=\"356.0\" y2=\"162.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"270.0\" y1=\"174.0\" x2=\"278.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"278.0\" y1=\"174.0\" x2=\"286.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"274\" y=\"194\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">không theo tỉ lệ</text><rect x=\"64\" y=\"90\" width=\"7\" height=\"40\" rx=\"3\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"x\" values=\"64;158.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"66\" y=\"80\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">đồng xu 2 cm</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.97;1\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"40\" y1=\"150\" x2=\"161.53846153846155\" y2=\"150\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M154.5,145.9 L161.5,150.0 L154.5,154.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"161.53846153846155\" y1=\"150\" x2=\"40\" y2=\"150\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M47.0,154.1 L40.0,150.0 L47.0,145.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#047857\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"97.8\" y=\"170\" fill=\"#047857\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">ℓ = ?</text></g><text x=\"16\" y=\"24\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chỉ nhìn qua kính lọc chuyên dụng</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đồng xu dời ra xa tới khi vừa lấp kín hai tia nhìn tới mép đĩa Mặt Trời. Khoảng cách và góc vẽ phóng đại, không đo trên hình được.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> góc trông là góc giữa hai tia nhìn tới hai mép vật.</li><li><strong>Công thức:</strong> $\\alpha\\approx\\dfrac{D}{\\ell}$ (rad); đổi ra độ nhân $\\dfrac{180}{\\pi}$.</li><li><strong>Điều kiện toàn phần:</strong> $\\alpha_M\\ge\\alpha_S$; $\\alpha_M\\lt\\alpha_S$ thì nhật thực hình khuyên.</li><li><strong>Lưu ý:</strong> người đứng trên mặt đất nên $\\ell=d-R_E$; diện tích đĩa tỉ lệ bình phương góc trông.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khoảng cách đồng xu</span></p><p>Vừa che kín khi góc trông đồng xu bằng góc trông Mặt Trời:</p>$$\\dfrac{D_x}{\\ell_x}=\\dfrac{D_S}{1\\ \\text{AU}}\\Rightarrow\\ell_x=D_x\\,\\dfrac{1\\ \\text{AU}}{D_S}$$$$\\ell_x=0{,}02\\ \\text{m}\\cdot\\dfrac{1{,}5\\cdot10^8}{1{,}39\\cdot10^6}$$<div class=\"bt-ans\">$$\\ell_x\\approx2{,}16\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc trông Mặt Trời</span></p>$$\\alpha_S\\approx\\dfrac{1{,}39\\cdot10^6}{1{,}5\\cdot10^8}\\approx9{,}27\\cdot10^{-3}\\ \\text{rad}$$$$\\alpha_S\\approx9{,}27\\cdot10^{-3}\\cdot\\dfrac{180}{\\pi}$$<div class=\"bt-ans\">$$\\alpha_S\\approx0{,}531°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc trông Mặt Trăng lúc gần nhất</span></p><p>Người đứng trên mặt đất ngay dưới Mặt Trăng:</p>$$\\ell=363\\,000-6370=356\\,630\\ \\text{km}$$$$\\alpha_M=\\dfrac{3470}{356\\,630}\\cdot\\dfrac{180}{\\pi}$$<div class=\"bt-ans\">$$\\alpha_M\\approx0{,}557°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc trông Mặt Trăng lúc xa nhất</span></p>$$\\ell=405\\,000-6370=398\\,630\\ \\text{km}$$$$\\alpha'_M=\\dfrac{3470}{398\\,630}\\cdot\\dfrac{180}{\\pi}$$<div class=\"bt-ans\">$$\\alpha'_M\\approx0{,}499°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Toàn phần hay hình khuyên</span></p><p>Lúc gần nhất $0{,}557°\\gt0{,}531°$: đĩa Mặt Trăng trông lớn hơn, che kín Mặt Trời: <strong>nhật thực toàn phần</strong>.</p><p>Lúc xa nhất $0{,}499°\\lt0{,}531°$: đĩa Mặt Trăng trông nhỏ hơn, còn một viền sáng: <strong>nhật thực hình khuyên</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Phần trăm diện tích bị che</span></p><p>Diện tích đĩa tỉ lệ bình phương đường kính, tức bình phương góc trông:</p>$$\\dfrac{S_{\\text{che}}}{S_{\\text{đĩa}}}=\\left(\\dfrac{\\alpha'_M}{\\alpha_S}\\right)^2=\\left(\\dfrac{0{,}499}{0{,}531}\\right)^2$$<div class=\"bt-ans\">$$\\approx0{,}88=88\\ \\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Khoảng cách lớn nhất để còn che kín</span></p><p>Ở khoảng cách giới hạn, hai góc trông bằng nhau:</p>$$\\dfrac{D_M}{\\ell_{\\max}}=\\dfrac{D_S}{1\\ \\text{AU}}\\Rightarrow\\ell_{\\max}=D_M\\,\\dfrac{1\\ \\text{AU}}{D_S}$$$$\\ell_{\\max}=3470\\cdot\\dfrac{1{,}5\\cdot10^8}{1{,}39\\cdot10^6}$$<div class=\"bt-ans\">$$\\ell_{\\max}\\approx374\\,000\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$356\\,630\\ \\text{km}\\lt374\\,000\\ \\text{km}\\lt398\\,630\\ \\text{km}$: khớp kết luận toàn phần lúc gần, hình khuyên lúc xa ✓.</p><p>Đồng xu và Mặt Trăng cùng che vừa Mặt Trời khi khoảng cách gấp khoảng $108$ lần đường kính: $\\dfrac{2{,}16\\ \\text{m}}{0{,}02\\ \\text{m}}\\approx\\dfrac{374\\,000}{3470}\\approx108$ ✓.</p><p>Mặt Trời to gấp khoảng $400$ lần Mặt Trăng nhưng cũng xa gấp khoảng $400$ lần, nên hai đĩa trông gần bằng nhau.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\ell_x\\approx2{,}16\\ \\text{m}$</p><p>b) $\\alpha_S\\approx0{,}531°$</p><p>c) Gần nhất $\\alpha_M\\approx0{,}557°$: toàn phần</p><p>c) Xa nhất $\\alpha'_M\\approx0{,}499°$: hình khuyên</p><p>d) Khoảng $88\\ \\%$</p><p>e) $\\ell_{\\max}\\approx374\\,000\\ \\text{km}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>toàn phần hay hình khuyên, che vừa kín</strong> → so góc trông $\\alpha\\approx D/\\ell$, khoảng cách tính từ chỗ người đứng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-2-2\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Người quan sát đứng trên mặt đất ngay dưới Mặt Trăng; khoảng cách tới Mặt Trăng bằng khoảng cách tâm trừ bán kính Trái Đất; góc trông alpha bằng đường kính chia khoảng cách\"><circle cx=\"120\" cy=\"262\" r=\"92\" fill=\"#38bdf8\" fill-opacity=\"0.18\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><circle cx=\"120\" cy=\"262\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"120\" cy=\"34\" r=\"13\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"120\" y=\"16\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Mặt Trăng, đường kính D</text><circle cx=\"120\" cy=\"170\" r=\"4\" fill=\"#f87171\"/><text x=\"128\" y=\"164\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">mắt</text><line x1=\"120.0\" y1=\"170.0\" x2=\"107.0\" y2=\"34.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"120.0\" y1=\"170.0\" x2=\"133.0\" y2=\"34.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"128\" y=\"140\" fill=\"#c2410c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">α</text><line x1=\"80\" y1=\"34\" x2=\"80\" y2=\"262\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M84.1,255.0 L80.0,262.0 L75.9,255.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"80\" y1=\"262\" x2=\"80\" y2=\"34\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M75.9,41.0 L80.0,34.0 L84.1,41.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#0369a1\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"72\" y=\"150\" fill=\"#0369a1\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">d</text><line x1=\"160\" y1=\"34\" x2=\"160\" y2=\"170\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M164.1,163.0 L160.0,170.0 L155.9,163.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"160\" y1=\"170\" x2=\"160\" y2=\"34\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M155.9,41.0 L160.0,34.0 L164.1,41.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#047857\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"168\" y=\"110\" fill=\"#047857\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">ℓ = d − R</text><text x=\"126\" y=\"226\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">R</text><line x1=\"120.0\" y1=\"262.0\" x2=\"120.0\" y2=\"170.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"1\"/><text x=\"250\" y=\"200\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">α ≈ D / ℓ (rad)</text><text x=\"250\" y=\"222\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">độ = rad × 180/π</text></svg><figcaption>Dữ kiện: khoảng cách từ mắt tới Mặt Trăng tính từ mặt đất, không từ tâm Trái Đất. Hình không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$D_S=1{,}39\\cdot10^6\\ \\text{km}$ … $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$; … $D_M=3470\\ \\text{km}$; … $R_E=6370\\ \\text{km}$\"</td><td>$D_S$; AU; $D_M$; $R_E$</td><td>Đổi mọi khoảng cách về cùng đơn vị trước khi chia</td></tr><tr><td>\"Coi góc trông nhỏ: $\\alpha\\approx\\dfrac{D}{\\ell}$ (rad)\"</td><td></td><td>⚠ chỉ dùng khi $D$ rất nhỏ so với $\\ell$<br>⚠ kết quả ra rad; đổi sang độ nhân $\\dfrac{180}{\\pi}$</td></tr><tr><td>\"đồng xu đường kính $2\\ \\text{cm}$ … vừa che kín đĩa Mặt Trời\"</td><td>$D_x=2\\ \\text{cm}$; cần $\\ell_x$</td><td>Vừa che kín khi hai góc trông bằng nhau</td></tr><tr><td>\"kính lọc chuyên dụng (không bao giờ nhìn bằng mắt thường hay kính râm)\"</td><td></td><td>⚠ an toàn: nhìn thẳng Mặt Trời làm hỏng võng mạc, kính râm không đủ lọc</td></tr><tr><td>\"Tính góc trông Mặt Trời theo độ\"</td><td>Cần $\\alpha_S$</td><td>$\\alpha_S\\approx\\dfrac{D_S}{1\\ \\text{AU}}$ rồi đổi ra độ</td></tr><tr><td>\"đứng ở điểm mặt đất ngay dưới Mặt Trăng\"</td><td>Người đứng gần Mặt Trăng hơn tâm Trái Đất</td><td>Khoảng cách từ mắt: $\\ell=d-R_E$</td></tr><tr><td>\"lúc gần nhất là $363\\,000\\ \\text{km}$, lúc xa nhất là $405\\,000\\ \\text{km}$\"</td><td>$d_{\\text{gần}}$; $d_{\\text{xa}}$</td><td>Đường kính không đổi, khoảng cách đổi thì góc trông đổi</td></tr><tr><td>\"toàn phần hay hình khuyên?\"</td><td>So hai góc trông</td><td>Toàn phần khi đĩa Mặt Trăng trông lớn hơn đĩa Mặt Trời; nhỏ hơn thì còn viền sáng</td></tr><tr><td>\"che tối đa bao nhiêu phần trăm diện tích?\"</td><td>Cần tỉ lệ diện tích</td><td>Diện tích hình tròn tỉ lệ với bình phương đường kính</td></tr><tr><td>\"không được vượt quá bao nhiêu thì … còn che kín được\"</td><td>Cần $\\ell_{\\max}$</td><td>Ở khoảng cách giới hạn, hai góc trông quan hệ thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>toàn phần hay hình khuyên, che vừa kín</b> → so góc trông $D/\\ell$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khoảng cách đồng xu",
+     "hoi": "Đồng xu phải cách mắt bao nhiêu mét?",
+     "dap_so": 2.16,
+     "sai_so": 0.05,
+     "don_vi": "m",
+     "loi_hay_gap": "Để đường kính đồng xu theo cm, khoảng cách Mặt Trời theo km rồi không đổi đơn vị, kết quả sai hàng trăm lần."
+    },
+    {
+     "tieu_de": "Góc trông Mặt Trời",
+     "hoi": "Góc trông Mặt Trời bằng bao nhiêu độ?",
+     "dap_so": 0.531,
+     "sai_so": 0.003,
+     "don_vi": "°",
+     "loi_hay_gap": "Quên đổi rad sang độ, ghi luôn tỉ số $D_S/\\text{AU}$ là số độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\dfrac{D_S}{1\\ \\text{AU}}$ rồi nhân $\\dfrac{180}{\\pi}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\dfrac{D_S}{1\\ \\text{AU}}$ và coi đó là số độ",
+       "dung": false,
+       "vi_sao": "Tỉ số đường kính trên khoảng cách cho góc theo rad, phải đổi sang độ."
+      },
+      {
+       "text": "Tính $\\dfrac{D_S/2}{1\\ \\text{AU}}$ rồi đổi ra độ",
+       "dung": false,
+       "vi_sao": "Đó là góc nhìn một bán kính; góc trông tính giữa hai mép, ứng với cả đường kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc trông Mặt Trăng lúc gần nhất",
+     "hoi": "Góc trông Mặt Trăng lúc gần nhất bằng bao nhiêu độ?",
+     "dap_so": 0.557,
+     "sai_so": 0.003,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy khoảng cách tâm – tâm $363\\,000\\ \\text{km}$, quên người đứng trên mặt đất gần Mặt Trăng hơn một bán kính Trái Đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $\\ell=363\\,000-6370\\ \\text{km}$ rồi tính $\\dfrac{D_M}{\\ell}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\ell=363\\,000\\ \\text{km}$",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách từ tâm Trái Đất; người quan sát đứng trên mặt đất, ngay dưới Mặt Trăng."
+      },
+      {
+       "text": "Lấy $\\ell=363\\,000-12\\,740\\ \\text{km}$",
+       "dung": false,
+       "vi_sao": "Từ tâm ra mặt đất chỉ là một bán kính, không phải cả đường kính Trái Đất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc trông Mặt Trăng lúc xa nhất",
+     "hoi": "Góc trông Mặt Trăng lúc xa nhất bằng bao nhiêu độ?",
+     "dap_so": 0.499,
+     "sai_so": 0.003,
+     "don_vi": "°",
+     "loi_hay_gap": "Cộng thêm $R_E$ vào khoảng cách vì nghĩ người đứng xa hơn tâm Trái Đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Làm như bước trước với $\\ell=405\\,000-6370\\ \\text{km}$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên góc trông của lúc gần nhất vì đường kính Mặt Trăng không đổi",
+       "dung": false,
+       "vi_sao": "Góc trông phụ thuộc cả khoảng cách; ở xa hơn thì trông nhỏ hơn."
+      },
+      {
+       "text": "Lấy $\\ell=405\\,000+6370\\ \\text{km}$",
+       "dung": false,
+       "vi_sao": "Người đứng giữa tâm Trái Đất và Mặt Trăng nên khoảng cách giảm đi $R_E$, không tăng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Toàn phần hay hình khuyên",
+     "hoi": "Kết luận nào đúng?",
+     "lua_chon": [
+      {
+       "text": "Lúc gần nhất: toàn phần; lúc xa nhất: hình khuyên",
+       "dung": true
+      },
+      {
+       "text": "Cả hai lần đều toàn phần vì Mặt Trăng nằm chắn giữa",
+       "dung": false,
+       "vi_sao": "Chắn giữa chưa đủ: đĩa Mặt Trăng phải trông lớn hơn đĩa Mặt Trời mới che kín."
+      },
+      {
+       "text": "Lúc gần nhất: hình khuyên; lúc xa nhất: toàn phần",
+       "dung": false,
+       "vi_sao": "Ngược chiều: ở gần thì góc trông lớn hơn, dễ che kín hơn."
+      }
+     ],
+     "loi_hay_gap": "So đường kính thật $D_M$ với $D_S$ rồi kết luận Mặt Trăng không bao giờ che kín được.",
+     "chon_buoc_ke": [
+      {
+       "text": "So góc trông Mặt Trăng với góc trông Mặt Trời trong từng trường hợp",
+       "dung": true
+      },
+      {
+       "text": "So đường kính thật của Mặt Trăng với Mặt Trời",
+       "dung": false,
+       "vi_sao": "Đường kính thật chênh khoảng $400$ lần; phải so góc trông vì nó đã kể cả khoảng cách."
+      },
+      {
+       "text": "So khoảng cách tới Mặt Trăng với khoảng cách tới Mặt Trời",
+       "dung": false,
+       "vi_sao": "Thiếu đường kính; vật gần hơn chưa chắc trông lớn hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phần trăm diện tích bị che",
+     "hoi": "Đĩa Mặt Trời bị che tối đa bao nhiêu phần trăm diện tích?",
+     "dap_so": 88,
+     "sai_so": 1,
+     "don_vi": "%",
+     "loi_hay_gap": "Lấy tỉ số góc trông mà không bình phương; diện tích tỉ lệ bình phương đường kính.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\left(\\dfrac{\\alpha'_M}{\\alpha_S}\\right)^2$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\dfrac{\\alpha'_M}{\\alpha_S}$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ số đường kính; diện tích hình tròn tỉ lệ bình phương đường kính."
+      },
+      {
+       "text": "Tính $1-\\dfrac{\\alpha'_M}{\\alpha_S}$",
+       "dung": false,
+       "vi_sao": "Đó là phần đường kính còn hở, không phải phần diện tích bị che."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách lớn nhất để còn che kín",
+     "hoi": "Khoảng cách đó bằng bao nhiêu nghìn km?",
+     "dap_so": 374.0,
+     "sai_so": 0.6,
+     "don_vi": "nghìn km",
+     "loi_hay_gap": "Đảo tỉ số thành $D_S\\cdot\\text{AU}/D_M$, ra khoảng cách lớn hơn cả $1\\ \\text{AU}$, vô lí.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho góc trông Mặt Trăng bằng góc trông Mặt Trời rồi giải ra $\\ell$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\ell=D_S\\,\\dfrac{1\\ \\text{AU}}{D_M}$",
+       "dung": false,
+       "vi_sao": "Đảo ngược tỉ số; kết quả lớn hơn cả khoảng cách tới Mặt Trời là vô lí."
+      },
+      {
+       "text": "Lấy trung bình hai khoảng cách $356\\,630$ và $398\\,630\\ \\text{km}$",
+       "dung": false,
+       "vi_sao": "Giới hạn do điều kiện hai góc trông bằng nhau quyết định, không phải trung bình cộng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Nâng cao · Nón bóng Mặt Trăng và Trái Đất: vùng tối, vùng nửa tối, nhật thực hình khuyên, nguyệt thực",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "problem_html": "<p>Một quả cầu chắn sáng đường kính $D$ đặt cách một nguồn sáng hình cầu đường kính $D_0\\gt D$ một khoảng $a$ (tính giữa hai tâm) thì phía sau nó có một nón bóng tối thu nhỏ dần, bao quanh là vùng nửa tối (bài Gương phẳng, bóng tối và nửa tối). Áp dụng cho nhật thực và nguyệt thực với số liệu: $D_S=1{,}39\\cdot10^6\\ \\text{km}$; $D_M=3470\\ \\text{km}$; $D_E=12\\,740\\ \\text{km}$ ($R_E=6370\\ \\text{km}$); khoảng cách Mặt Trời – Trái Đất $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$. Khoảng cách tâm Trái Đất – tâm Mặt Trăng: gần nhất $363\\,000\\ \\text{km}$, trung bình $384\\,000\\ \\text{km}$, xa nhất $405\\,000\\ \\text{km}$. Chỉ xét nhật thực, nguyệt thực trung tâm (tâm ba thiên thể thẳng hàng); coi chỗ mặt đất hứng bóng là mặt phẳng vuông góc với trục nón.</p><ol type=\"a\"><li>Ngày nhật thực, Mặt Trăng ở gần nhất. Tính chiều dài $L$ của nón bóng tối Mặt Trăng.</li><li>Chóp nón bóng tối có tới được mặt đất không? Tính đường kính vùng tối và vùng nửa tối trên mặt đất, tại điểm gần Mặt Trăng nhất.</li><li>Ngày nhật thực khác, Mặt Trăng ở xa nhất. Người ở điểm ngay dưới Mặt Trăng thấy nhật thực loại gì? Tính đường kính vùng mặt đất thấy được loại nhật thực đó.</li><li>Ngày nguyệt thực, Mặt Trăng ở khoảng cách trung bình. Tính chiều dài nón bóng tối của Trái Đất và đường kính vùng tối tại quỹ đạo Mặt Trăng. Vùng tối đó gấp bao nhiêu lần đường kính Mặt Trăng?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-3-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Mặt Trăng đi ngang qua đường nối Mặt Trời và Trái Đất, kéo theo nón bóng tối và vùng nửa tối; chóp nón bóng tối có chạm mặt đất hay không là điều cần tìm\"><defs><linearGradient id=\"c17g3\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" stop-color=\"#475569\" stop-opacity=\"0.85\"/><stop offset=\"1\" stop-color=\"#475569\" stop-opacity=\"0\"/></linearGradient></defs><circle cx=\"-70\" cy=\"120\" r=\"112\" fill=\"#facc15\" fill-opacity=\"0.85\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"8\" y=\"228\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Mặt Trời</text><line x1=\"82.0\" y1=\"214.0\" x2=\"90.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"90.0\" y1=\"214.0\" x2=\"98.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"90\" y=\"190\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"middle\">rất xa</text><circle cx=\"510\" cy=\"120\" r=\"180\" fill=\"#38bdf8\" fill-opacity=\"0.22\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"412\" y=\"30\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">Trái Đất</text><g transform=\"translate(0,70)\"><path d=\"M176,-13 L340,-56 L340,56 L176,13 Z\" fill=\"#94a3b8\" fill-opacity=\"0.28\" stroke=\"none\"/><path d=\"M176,-13 L292,-3 L292,3 L176,13 Z\" fill=\"url(#c17g3)\" stroke=\"none\"/><circle cx=\"176\" cy=\"0\" r=\"13\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M176,-13 A13,13 0 0,0 176,13 Z\" fill=\"#facc15\" stroke=\"none\"/><text x=\"306\" y=\"5\" fill=\"#047857\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">?</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0,70;0,120;0,170\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"176\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Mặt Trăng</text><text x=\"250\" y=\"228\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">nửa tối</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ngày không trăng</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: Mặt Trăng đi trên quỹ đạo, bóng của nó quét qua Trái Đất. Bóng tối vẽ mờ dần ở gần mặt đất: chóp nón ở trước hay sau mặt đất phải tính. Không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nón bóng tối:</strong> $\\dfrac{D}{L}=\\dfrac{D_0}{a+L}\\Rightarrow L=\\dfrac{aD}{D_0-D}$.</li><li><strong>Vùng tối cách vật chắn $x$:</strong> $D\\,\\dfrac{L-x}{L}$ khi $x\\lt L$; sau chóp ($x\\gt L$) vùng hình khuyên rộng $D\\,\\dfrac{x-L}{L}$.</li><li><strong>Vùng nửa tối:</strong> $D+x\\,\\dfrac{D_0+D}{a}$.</li><li><strong>Áp dụng:</strong> nhật thực: $D_0=D_S$, $D=D_M$, $a=1\\ \\text{AU}-d$, $x=d-R_E$; nguyệt thực: $D=D_E$, $a=1\\ \\text{AU}$, $x=d$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiều dài nón bóng tối Mặt Trăng</span></p><p>Ngày nhật thực Mặt Trăng nằm giữa:</p>$$a=1{,}5\\cdot10^8-363\\,000=1{,}49637\\cdot10^8\\ \\text{km}$$$$L=\\dfrac{a\\,D_M}{D_S-D_M}=\\dfrac{1{,}49637\\cdot10^8\\cdot3470}{1{,}39\\cdot10^6-3470}$$<div class=\"bt-ans\">$$L\\approx374\\,000\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vùng tối lúc gần nhất</span></p><p>Từ Mặt Trăng tới mặt đất (chỗ gần nhất):</p>$$x=363\\,000-6370=356\\,630\\ \\text{km}$$<p>$x\\lt L$: chóp nón xuyên qua mặt đất, người trong vùng tối thấy <strong>nhật thực toàn phần</strong>.</p>$$D_{\\text{tối}}=D_M\\,\\dfrac{L-x}{L}=3470\\cdot\\dfrac{374\\,489-356\\,630}{374\\,489}$$<div class=\"bt-ans\">$$D_{\\text{tối}}\\approx165\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vùng nửa tối lúc gần nhất</span></p>$$D_{\\text{nửa}}=D_M+x\\,\\dfrac{D_S+D_M}{a}=3470+356\\,630\\cdot\\dfrac{1{,}39347\\cdot10^6}{1{,}49637\\cdot10^8}$$<div class=\"bt-ans\">$$D_{\\text{nửa}}\\approx6790\\ \\text{km}$$</div><p>Trong vùng này người ta thấy nhật thực một phần.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Loại nhật thực lúc xa nhất</span></p>$$a'=1{,}5\\cdot10^8-405\\,000=1{,}49595\\cdot10^8\\ \\text{km}$$$$L'=\\dfrac{a'D_M}{D_S-D_M}\\approx374\\,384\\ \\text{km}$$$$x'=405\\,000-6370=398\\,630\\ \\text{km}$$<p>$x'\\gt L'$: chóp nón dừng trước mặt đất; người ngay dưới Mặt Trăng thấy đĩa Mặt Trời còn viền sáng: <strong>nhật thực hình khuyên</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vùng thấy nhật thực hình khuyên</span></p><p>Sau chóp, hai tia mép đi tiếp và loe ra với cùng độ dốc:</p>$$D_{\\text{khuyên}}=D_M\\,\\dfrac{x'-L'}{L'}=3470\\cdot\\dfrac{398\\,630-374\\,384}{374\\,384}$$<div class=\"bt-ans\">$$D_{\\text{khuyên}}\\approx225\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Nón bóng tối Trái Đất</span></p><p>Ngày nguyệt thực vật chắn là Trái Đất, cách Mặt Trời $1\\ \\text{AU}$:</p>$$L_E=\\dfrac{1\\ \\text{AU}\\cdot D_E}{D_S-D_E}=\\dfrac{1{,}5\\cdot10^8\\cdot12\\,740}{1{,}39\\cdot10^6-12\\,740}$$<div class=\"bt-ans\">$$L_E\\approx1{,}39\\cdot10^6\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Vùng tối tại quỹ đạo Mặt Trăng</span></p>$$D'_{\\text{tối}}=D_E\\,\\dfrac{L_E-d}{L_E}=12\\,740\\cdot\\dfrac{1\\,387\\,538-384\\,000}{1\\,387\\,538}$$<div class=\"bt-ans\">$$D'_{\\text{tối}}\\approx9210\\ \\text{km}$$</div>$$\\dfrac{D'_{\\text{tối}}}{D_M}=\\dfrac{9214}{3470}\\approx2{,}66$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$L\\approx374\\,000\\ \\text{km}$ khớp khoảng cách giới hạn che kín tìm bằng góc trông ở Dạng 2 (cũng $\\approx374\\,000\\ \\text{km}$, làm tròn nghìn km): hai cách cho cùng kết quả ✓.</p><p>Vùng tối nhật thực chỉ khoảng $165\\ \\text{km}$: một nơi rất hiếm khi thấy nhật thực toàn phần ✓.</p><p>Bóng Trái Đất tại quỹ đạo rộng gấp $2{,}66$ lần Mặt Trăng: Mặt Trăng nằm gọn trong bóng, mọi nơi đang là đêm đều thấy nguyệt thực ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $L\\approx374\\,000\\ \\text{km}$</p><p>b) Có, toàn phần; vùng tối $\\approx165\\ \\text{km}$; vùng nửa tối $\\approx6790\\ \\text{km}$</p><p>c) Nhật thực hình khuyên; vùng rộng $\\approx225\\ \\text{km}$</p><p>d) $L_E\\approx1{,}39\\cdot10^6\\ \\text{km}$; vùng tối $\\approx9210\\ \\text{km}\\approx2{,}66\\,D_M$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>bóng của Mặt Trăng, bóng Trái Đất, vùng tối rộng bao nhiêu</strong> → tam giác đồng dạng: $L=\\dfrac{aD}{D_0-D}$, so $x$ với $L$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-3-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Sơ đồ tam giác đồng dạng: nguồn sáng đường kính D0, vật chắn đường kính D cách nguồn khoảng a, nón bóng tối dài L, nơi quan sát cách vật chắn khoảng x, các tia chéo giới hạn vùng nửa tối\"><line x1=\"40.0\" y1=\"40.0\" x2=\"40.0\" y2=\"200.0\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\"/><text x=\"34\" y=\"32\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\">nguồn D<tspan dy=\"4\" font-size=\"12\">0</tspan></text><line x1=\"180.0\" y1=\"90.0\" x2=\"180.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"180\" y=\"74\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">vật chắn D</text><path d=\"M180,90 L264.0,120 L180,150 Z\" fill=\"#475569\" fill-opacity=\"0.35\" stroke=\"none\"/><line x1=\"40.0\" y1=\"40.0\" x2=\"264.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"264.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"40.0\" x2=\"400.0\" y2=\"322.9\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"400.0\" y2=\"-82.9\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"120.0\" x2=\"410.0\" y2=\"120.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2 3\" opacity=\"1\"/><line x1=\"40\" y1=\"214\" x2=\"180\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M173.0,209.9 L180.0,214.0 L173.0,218.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"180\" y1=\"214\" x2=\"40\" y2=\"214\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M47.0,218.1 L40.0,214.0 L47.0,209.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#c2410c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"110.0\" y=\"232\" fill=\"#c2410c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">a</text><line x1=\"180\" y1=\"192\" x2=\"264.0\" y2=\"192\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M257.0,187.9 L264.0,192.0 L257.0,196.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"264.0\" y1=\"192\" x2=\"180\" y2=\"192\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M187.0,196.1 L180.0,192.0 L187.0,187.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#0369a1\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"272.0\" y=\"197\" fill=\"#0369a1\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">L</text><line x1=\"236.0\" y1=\"22.0\" x2=\"236.0\" y2=\"214.0\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"242\" y=\"34\" fill=\"#047857\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nơi quan sát</text><line x1=\"180\" y1=\"204\" x2=\"236\" y2=\"204\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M229.0,199.9 L236.0,204.0 L229.0,208.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"236\" y1=\"204\" x2=\"180\" y2=\"204\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M187.0,208.1 L180.0,204.0 L187.0,199.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#047857\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"244\" y=\"222\" fill=\"#047857\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">x</text><text x=\"330\" y=\"110\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">nửa tối</text></svg><figcaption>Sơ đồ chung cho cả nhật thực (vật chắn là Mặt Trăng) và nguyệt thực (vật chắn là Trái Đất). Không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"quả cầu chắn sáng đường kính $D$ … nguồn sáng hình cầu đường kính $D_0$ … khoảng $a$\"</td><td>$D_0$; $D$; $a$</td><td>Hai tia nối mép nguồn với mép vật chắn gặp nhau ở chóp nón<br>Tam giác đồng dạng: $\\dfrac{D}{L}=\\dfrac{D_0}{a+L}$</td></tr><tr><td>\"Chỉ xét nhật thực, nguyệt thực trung tâm …; coi chỗ mặt đất hứng bóng là mặt phẳng vuông góc với trục nón\"</td><td></td><td>⚠ chỉ khi tâm ba thiên thể thẳng hàng và mặt hứng bóng vuông góc trục mới tính được đường kính vùng tối bằng tam giác đồng dạng</td></tr><tr><td>\"Ngày nhật thực, Mặt Trăng ở gần nhất\"</td><td>$d=363\\,000\\ \\text{km}$</td><td>Nguồn: Mặt Trời; vật chắn: Mặt Trăng nằm giữa<br>Khoảng cách nguồn – vật chắn: $a=1\\ \\text{AU}-d$</td></tr><tr><td>\"Chóp nón bóng tối có tới được mặt đất không?\"</td><td>Cần so sánh</td><td>Từ Mặt Trăng tới mặt đất (chỗ gần nhất) là bao xa? So với $L$ thế nào?</td></tr><tr><td>\"đường kính vùng tối và vùng nửa tối trên mặt đất\"</td><td>Cần hai đường kính</td><td>Đi thêm một đoạn sau vật chắn, nón bóng tối hẹp lại bao nhiêu?<br>Hai tia chéo của vùng nửa tối loe ra thế nào?</td></tr><tr><td>\"Mặt Trăng ở xa nhất … thấy nhật thực loại gì?\"</td><td>$d=405\\,000\\ \\text{km}$</td><td>$L$ và khoảng cách tới mặt đất thay đổi thế nào? Chóp nón nằm ở đâu?</td></tr><tr><td>\"đường kính vùng mặt đất thấy được loại nhật thực đó\"</td><td>Cần một đường kính</td><td>Sau chóp nón, các tia mép tiếp tục đi thế nào?</td></tr><tr><td>\"Ngày nguyệt thực, Mặt Trăng ở khoảng cách trung bình\"</td><td>$d=384\\,000\\ \\text{km}$</td><td>Vật chắn bây giờ là thiên thể nào? Nó cách nguồn bao xa?</td></tr><tr><td>\"gấp bao nhiêu lần đường kính Mặt Trăng?\"</td><td>Cần tỉ số</td><td>So vùng tối với $D_M$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bóng Mặt Trăng, bóng Trái Đất, vùng tối rộng bao nhiêu</b> → tam giác đồng dạng, so $x$ với $L$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chiều dài nón bóng tối Mặt Trăng",
+     "hoi": "L bằng bao nhiêu nghìn km?",
+     "dap_so": 374.0,
+     "sai_so": 0.6,
+     "don_vi": "nghìn km",
+     "loi_hay_gap": "Lấy $a=1\\ \\text{AU}+d$ như thể Mặt Trăng ở xa Mặt Trời hơn Trái Đất; ngày nhật thực Mặt Trăng nằm giữa."
+    },
+    {
+     "tieu_de": "Vùng tối lúc gần nhất",
+     "hoi": "Đường kính vùng tối trên mặt đất bằng bao nhiêu km?",
+     "dap_so": 165,
+     "sai_so": 4,
+     "don_vi": "km",
+     "loi_hay_gap": "Lấy khoảng cách tới tâm Trái Đất ($363\\,000\\ \\text{km}$) thay vì tới mặt đất; vì $L-x$ nhỏ nên sai này làm kết quả lệch rất nhiều.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $x=d-R_E$, so với $L$, rồi lấy $D_M\\,\\dfrac{L-x}{L}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $x=d$ rồi tính $D_M\\,\\dfrac{L-x}{L}$",
+       "dung": false,
+       "vi_sao": "Bóng rơi lên mặt đất, gần Mặt Trăng hơn tâm Trái Đất một bán kính."
+      },
+      {
+       "text": "Tính $D_M\\,\\dfrac{x}{L}$",
+       "dung": false,
+       "vi_sao": "Đó là phần đường kính nón đã thu hẹp đi sau đoạn $x$, không phải phần còn lại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vùng nửa tối lúc gần nhất",
+     "hoi": "Đường kính vùng nửa tối bằng bao nhiêu km?",
+     "dap_so": 6791,
+     "sai_so": 60,
+     "don_vi": "km",
+     "loi_hay_gap": "Coi vùng nửa tối rộng đúng bằng Mặt Trăng như khi chiếu bằng chùm sáng song song.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $D_M+x\\,\\dfrac{D_S+D_M}{a}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy đúng bằng $D_M$",
+       "dung": false,
+       "vi_sao": "Tia từ mép trên Mặt Trời qua mép dưới Mặt Trăng đi chéo, nên vùng nửa tối loe rộng ra."
+      },
+      {
+       "text": "Tính $x\\,\\dfrac{D_S}{a}$",
+       "dung": false,
+       "vi_sao": "Thiếu chính đường kính Mặt Trăng ở gốc nón; công thức đúng còn phải cộng $D_M$ và dùng $D_S+D_M$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Loại nhật thực lúc xa nhất",
+     "hoi": "Người ngay dưới Mặt Trăng thấy gì?",
+     "lua_chon": [
+      {
+       "text": "Nhật thực hình khuyên: chóp nón bóng tối dừng trước mặt đất",
+       "dung": true
+      },
+      {
+       "text": "Nhật thực toàn phần vì ba thiên thể vẫn thẳng hàng",
+       "dung": false,
+       "vi_sao": "Thẳng hàng chưa đủ; phải xét chóp nón bóng tối có tới mặt đất không."
+      },
+      {
+       "text": "Không thấy nhật thực vì ở ngoài nón bóng tối",
+       "dung": false,
+       "vi_sao": "Ngay dưới Mặt Trăng, phần giữa đĩa Mặt Trời vẫn bị che, chỉ còn viền sáng quanh."
+      }
+     ],
+     "loi_hay_gap": "Dùng lại khoảng cách tới mặt đất của câu b; khoảng cách Mặt Trăng đã đổi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $L$ với $a=1\\ \\text{AU}-405\\,000$ và $x=405\\,000-6370$ rồi so",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại khoảng cách $x$ của câu b",
+       "dung": false,
+       "vi_sao": "Mặt Trăng đã ra xa thêm $42\\,000\\ \\text{km}$, khoảng cách tới mặt đất phải tính lại."
+      },
+      {
+       "text": "So $D_M$ với $D_S$",
+       "dung": false,
+       "vi_sao": "So đường kính thật không đủ; chóp nón phụ thuộc cả khoảng cách."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vùng thấy nhật thực hình khuyên",
+     "hoi": "Đường kính vùng đó bằng bao nhiêu km?",
+     "dap_so": 225,
+     "sai_so": 4,
+     "don_vi": "km",
+     "loi_hay_gap": "Vẫn dùng $D_M\\,\\dfrac{L-x}{L}$ nên ra số âm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $D_M\\,\\dfrac{x-L}{L}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $D_M\\,\\dfrac{L-x}{L}$",
+       "dung": false,
+       "vi_sao": "Lúc này $x\\gt L$ nên biểu thức âm; sau chóp, các tia mép loe ra và độ rộng là $D_M\\,\\dfrac{x-L}{L}$."
+      },
+      {
+       "text": "Tính $D_M+x\\,\\dfrac{D_S+D_M}{a}$",
+       "dung": false,
+       "vi_sao": "Đó là vùng nửa tối, nơi chỉ thấy nhật thực một phần, rộng hàng nghìn km."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nón bóng tối Trái Đất",
+     "hoi": "Nón bóng tối Trái Đất dài bao nhiêu triệu km?",
+     "dap_so": 1.39,
+     "sai_so": 0.01,
+     "don_vi": "triệu km",
+     "loi_hay_gap": "Dùng đường kính Mặt Trăng thay cho đường kính Trái Đất; ngày nguyệt thực vật chắn là Trái Đất.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $\\dfrac{1\\ \\text{AU}\\cdot D_E}{D_S-D_E}$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\dfrac{1\\ \\text{AU}\\cdot D_M}{D_S-D_M}$",
+       "dung": false,
+       "vi_sao": "Ngày nguyệt thực vật chắn sáng là Trái Đất, không phải Mặt Trăng."
+      },
+      {
+       "text": "Tính $\\dfrac{1\\ \\text{AU}\\cdot D_E}{D_S+D_E}$",
+       "dung": false,
+       "vi_sao": "Dấu cộng ứng với điểm giao của các tia nửa tối; chóp nón bóng tối dùng $D_S-D_E$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vùng tối tại quỹ đạo Mặt Trăng",
+     "hoi": "Đường kính vùng tối tại quỹ đạo Mặt Trăng bằng bao nhiêu km?",
+     "dap_so": 9214,
+     "sai_so": 60,
+     "don_vi": "km",
+     "loi_hay_gap": "Coi bóng Trái Đất rộng bằng Trái Đất; nón bóng tối hẹp dần nên tại quỹ đạo Mặt Trăng nhỏ hơn $D_E$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $D_E\\,\\dfrac{L_E-d}{L_E}$ với $d=384\\,000\\ \\text{km}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy đúng bằng $D_E$",
+       "dung": false,
+       "vi_sao": "Nón bóng tối thu nhỏ dần về chóp, nên càng xa Trái Đất càng hẹp."
+      },
+      {
+       "text": "Tính $D_E\\,\\dfrac{d}{L_E}$",
+       "dung": false,
+       "vi_sao": "Đó là phần đường kính đã thu hẹp đi, không phải phần còn lại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Nâng cao · Tháng giao hội, ngày sao và thời gian nguyệt thực toàn phần",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "problem_html": "<p>Tháng thiên văn (thời gian Mặt Trăng quay một vòng quanh Trái Đất so với các ngôi sao) là $T=27{,}32$ ngày; một năm có $365{,}25$ ngày. Coi các quỹ đạo là đường tròn, nằm trong cùng một mặt phẳng; Mặt Trăng quay quanh Trái Đất, Trái Đất quay quanh Mặt Trời và tự quay quanh trục đều cùng một chiều.</p><ol type=\"a\"><li>Tính tốc độ góc của Mặt Trăng quanh Trái Đất và của Trái Đất quanh Mặt Trời (theo độ/ngày). Từ đó tính tháng giao hội $S$ (thời gian giữa hai lần trăng non liên tiếp).</li><li>Bắt đầu từ một lần trăng non. Sau đúng một tháng thiên văn, Mặt Trăng còn phải đi thêm bao nhiêu ngày nữa mới tới lần trăng non kế tiếp?</li><li>Ngày Mặt Trời (thời gian giữa hai lần liên tiếp Mặt Trời lên cao nhất) dài $24$ h. Ngày sao (thời gian Trái Đất tự quay đúng một vòng so với các ngôi sao) ngắn hơn ngày Mặt Trời bao nhiêu phút?</li><li>Trong một lần nguyệt thực, Mặt Trăng đi xuyên qua đúng giữa vùng tối của bóng Trái Đất. Tại quỹ đạo Mặt Trăng, vùng tối rộng $9200$ km; Mặt Trăng có đường kính $3470$ km và cách Trái Đất $384\\,000$ km. Bóng Trái Đất luôn nằm trên đường thẳng nối Mặt Trời với Trái Đất. Coi Mặt Trăng chuyển động thẳng đều trong lúc đi qua bóng. Tính tốc độ của Mặt Trăng so với bóng Trái Đất và thời gian nguyệt thực toàn phần dài nhất.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-4-0\"><svg viewBox=\"0 0 420 274\" role=\"img\" aria-label=\"Trái Đất đi một cung trên quỹ đạo quanh Mặt Trời, Mặt Trăng quay quanh Trái Đất từ trăng non tới trăng non kế tiếp\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Nhìn từ phía Bắc: Trái Đất quanh Mặt Trời,</text><text x=\"16\" y=\"40\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Mặt Trăng quanh Trái Đất</text><circle cx=\"22.0\" cy=\"130.0\" r=\"16.0\" fill=\"#facc15\" fill-opacity=\"0.9\" stroke=\"#fb923c\" stroke-width=\"2\"/><line x1=\"42.0\" y1=\"130.0\" x2=\"48.0\" y2=\"130.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.1\" y1=\"115.9\" x2=\"40.4\" y2=\"111.6\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"110.0\" x2=\"22.0\" y2=\"104.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"7.9\" y1=\"115.9\" x2=\"3.6\" y2=\"111.6\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"2.0\" y1=\"130.0\" x2=\"-4.0\" y2=\"130.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"7.9\" y1=\"144.1\" x2=\"3.6\" y2=\"148.4\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"150.0\" x2=\"22.0\" y2=\"156.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"36.1\" y1=\"144.1\" x2=\"40.4\" y2=\"148.4\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 5\" opacity=\"1\" points=\"297.0,222.0 297.8,219.6 298.6,217.2 299.3,214.8 300.1,212.4 300.8,209.9 301.5,207.5 302.1,205.1 302.8,202.6 303.4,200.2 304.0,197.7 304.6,195.2 305.1,192.8 305.7,190.3 306.2,187.8 306.7,185.3 307.1,182.8 307.6,180.4 308.0,177.9 308.4,175.4 308.8,172.9 309.2,170.4 309.5,167.9 309.8,165.3 310.1,162.8 310.4,160.3 310.7,157.8 310.9,155.3 311.1,152.8 311.3,150.2 311.5,147.7 311.6,145.2 311.7,142.6 311.8,140.1 311.9,137.6 312.0,135.1 312.0,132.5 312.0,130.0 312.0,127.5 312.0,124.9 311.9,122.4 311.8,119.9 311.7,117.4 311.6,114.8 311.5,112.3 311.3,109.8 311.1,107.2 310.9,104.7 310.7,102.2 310.4,99.7 310.1,97.2 309.8,94.7 309.5,92.1 309.2,89.6 308.8,87.1 308.4,84.6 308.0,82.1 307.6,79.6 307.1,77.2 306.7,74.7 306.2,72.2 305.7,69.7 305.1,67.2 304.6,64.8 304.0,62.3 303.4,59.8 302.8,57.4 302.1,54.9 301.5,52.5 300.8,50.1\"/><line x1=\"302.8\" y1=\"202.6\" x2=\"186.6\" y2=\"172.6\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 4\" opacity=\"1\"/><text x=\"178.7\" y=\"189.6\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">hướng sao xa</text><line x1=\"305.2\" y1=\"67.6\" x2=\"189.0\" y2=\"37.6\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"3 4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9252\" calcMode=\"discrete\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"302.8\" cy=\"202.6\" r=\"46\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"2 4\"><animate attributeName=\"cx\" values=\"302.8;303.1;303.4;303.7;304.0;304.2;304.5;304.8;305.1;305.3;305.6;305.8;306.1;306.3;306.6;306.8;307.0;307.3;307.5;307.7;307.9;308.1;308.3;308.5;308.7;308.9;309.0;309.2;309.4;309.5;309.7;309.8;310.0;310.1;310.3;310.4;310.5;310.7;310.8;310.9;311.0;311.1;311.2;311.3;311.4;311.4;311.5;311.6;311.6;311.7;311.8;311.8;311.8;311.9;311.9;311.9;312.0;312.0;312.0;312.0;312.0;312.0;312.0;312.0;312.0;311.9;311.9;311.9;311.8;311.8;311.7;311.7;311.6;311.5;311.5;311.4;311.3;311.2;311.1;311.0;310.9;310.8;310.7;310.6;310.5;310.3;310.2;310.1;309.9;309.8;309.6;309.5;309.3;309.1;309.0;308.8;308.6;308.4;308.2;308.0;307.8;307.6;307.4;307.2;306.9;306.7;306.5;306.2;306.0;305.7;305.5;305.2;304.9;304.7;304.4;304.1;303.8;303.5;303.2;302.9;302.6\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"202.6;201.4;200.2;199.0;197.8;196.7;195.5;194.3;193.1;191.9;190.7;189.5;188.3;187.1;185.9;184.6;183.4;182.2;181.0;179.8;178.6;177.4;176.2;175.0;173.8;172.5;171.3;170.1;168.9;167.7;166.5;165.2;164.0;162.8;161.6;160.4;159.1;157.9;156.7;155.5;154.3;153.0;151.8;150.6;149.4;148.1;146.9;145.7;144.5;143.2;142.0;140.8;139.6;138.3;137.1;135.9;134.6;133.4;132.2;131.0;129.7;128.5;127.3;126.1;124.8;123.6;122.4;121.1;119.9;118.7;117.5;116.2;115.0;113.8;112.6;111.3;110.1;108.9;107.7;106.4;105.2;104.0;102.8;101.5;100.3;99.1;97.9;96.7;95.4;94.2;93.0;91.8;90.6;89.4;88.1;86.9;85.7;84.5;83.3;82.1;80.9;79.7;78.5;77.2;76.0;74.8;73.6;72.4;71.2;70.0;68.8;67.6;66.4;65.2;64.0;62.8;61.6;60.4;59.3;58.1;56.9\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"302.8\" cy=\"202.6\" r=\"10\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"302.8;303.1;303.4;303.7;304.0;304.2;304.5;304.8;305.1;305.3;305.6;305.8;306.1;306.3;306.6;306.8;307.0;307.3;307.5;307.7;307.9;308.1;308.3;308.5;308.7;308.9;309.0;309.2;309.4;309.5;309.7;309.8;310.0;310.1;310.3;310.4;310.5;310.7;310.8;310.9;311.0;311.1;311.2;311.3;311.4;311.4;311.5;311.6;311.6;311.7;311.8;311.8;311.8;311.9;311.9;311.9;312.0;312.0;312.0;312.0;312.0;312.0;312.0;312.0;312.0;311.9;311.9;311.9;311.8;311.8;311.7;311.7;311.6;311.5;311.5;311.4;311.3;311.2;311.1;311.0;310.9;310.8;310.7;310.6;310.5;310.3;310.2;310.1;309.9;309.8;309.6;309.5;309.3;309.1;309.0;308.8;308.6;308.4;308.2;308.0;307.8;307.6;307.4;307.2;306.9;306.7;306.5;306.2;306.0;305.7;305.5;305.2;304.9;304.7;304.4;304.1;303.8;303.5;303.2;302.9;302.6\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"202.6;201.4;200.2;199.0;197.8;196.7;195.5;194.3;193.1;191.9;190.7;189.5;188.3;187.1;185.9;184.6;183.4;182.2;181.0;179.8;178.6;177.4;176.2;175.0;173.8;172.5;171.3;170.1;168.9;167.7;166.5;165.2;164.0;162.8;161.6;160.4;159.1;157.9;156.7;155.5;154.3;153.0;151.8;150.6;149.4;148.1;146.9;145.7;144.5;143.2;142.0;140.8;139.6;138.3;137.1;135.9;134.6;133.4;132.2;131.0;129.7;128.5;127.3;126.1;124.8;123.6;122.4;121.1;119.9;118.7;117.5;116.2;115.0;113.8;112.6;111.3;110.1;108.9;107.7;106.4;105.2;104.0;102.8;101.5;100.3;99.1;97.9;96.7;95.4;94.2;93.0;91.8;90.6;89.4;88.1;86.9;85.7;84.5;83.3;82.1;80.9;79.7;78.5;77.2;76.0;74.8;73.6;72.4;71.2;70.0;68.8;67.6;66.4;65.2;64.0;62.8;61.6;60.4;59.3;58.1;56.9\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"258.2\" cy=\"191.1\" r=\"6\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"258.2;258.0;257.8;257.8;258.0;258.3;258.7;259.3;260.0;260.8;261.8;262.9;264.2;265.6;267.1;268.7;270.5;272.3;274.3;276.4;278.5;280.8;283.1;285.5;288.0;290.6;293.2;295.8;298.5;301.2;303.9;306.7;309.4;312.1;314.9;317.6;320.3;322.9;325.5;328.1;330.6;333.0;335.3;337.6;339.8;341.9;343.8;345.7;347.5;349.1;350.6;352.0;353.2;354.3;355.3;356.1;356.8;357.3;357.7;357.9;358.0;357.9;357.7;357.3;356.8;356.1;355.3;354.3;353.2;351.9;350.5;349.0;347.4;345.6;343.7;341.8;339.7;337.5;335.2;332.9;330.5;328.0;325.4;322.8;320.1;317.5;314.7;312.0;309.3;306.5;303.8;301.0;298.3;295.6;293.0;290.4;287.9;285.4;283.0;280.6;278.4;276.2;274.2;272.2;270.3;268.6;267.0;265.4;264.1;262.8;261.7;260.7;259.8;259.1;258.6;258.1;257.8;257.7;257.7;257.8;258.1\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"191.1;192.4;193.8;195.2;196.6;198.0;199.4;200.8;202.2;203.5;204.8;206.1;207.3;208.4;209.5;210.5;211.4;212.2;212.9;213.5;214.0;214.4;214.7;214.8;214.9;214.8;214.5;214.1;213.6;212.9;212.1;211.1;210.0;208.8;207.4;205.8;204.1;202.3;200.3;198.1;195.9;193.5;191.0;188.3;185.5;182.6;179.6;176.5;173.3;170.0;166.6;163.2;159.6;156.0;152.4;148.7;144.9;141.1;137.3;133.5;129.7;125.9;122.0;118.2;114.5;110.7;107.0;103.4;99.8;96.2;92.8;89.4;86.1;82.9;79.8;76.8;73.9;71.1;68.5;66.0;63.6;61.3;59.2;57.2;55.4;53.7;52.1;50.7;49.5;48.3;47.4;46.6;45.9;45.4;45.0;44.8;44.7;44.7;44.8;45.1;45.5;46.0;46.6;47.4;48.2;49.1;50.1;51.1;52.3;53.5;54.7;56.0;57.4;58.7;60.1;61.5;63.0;64.4;65.8;67.1;68.5\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text opacity=\"0\" x=\"16\" y=\"246\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ngày 0: trăng non<animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0000;0.1200\" calcMode=\"discrete\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"228\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ngày 27,32: Mặt Trăng về lại hướng sao,<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9252\" calcMode=\"discrete\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"246\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nhưng chưa tới trăng non<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9252\" calcMode=\"discrete\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"264\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">trăng non kế tiếp: ngày ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9950\" calcMode=\"discrete\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nhìn từ phía Bắc, không theo tỉ lệ khoảng cách; chạy nhanh hơn thật rất nhiều lần, không ghi tỉ lệ thời gian.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tốc độ góc:</strong> quay đều một vòng hết chu kì $T$ thì $\\omega=\\dfrac{360°}{T}$.</li><li><strong>Đuổi nhau cùng chiều</strong> (như hai kim đồng hồ): góc lệch tăng với tốc độ $\\omega_1-\\omega_2$ ; hơn nhau một vòng sau $\\dfrac{360°}{\\omega_1-\\omega_2}$.</li><li><strong>Trăng non:</strong> Mặt Trăng nằm trên hướng Trái Đất → Mặt Trời ; bóng Trái Đất nằm trên đường Mặt Trời – Trái Đất.</li><li><strong>Chuyển động đều:</strong> $v=\\dfrac{2\\pi d}{\\text{chu kì}}$ ; $t=\\dfrac{s}{v}$.</li><li><strong>Điều kiện:</strong> quỹ đạo tròn, đồng phẳng, cùng chiều quay ; $1$ ngày $=86\\,400$ s.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ góc của Mặt Trăng</span></p>$$\\omega_M=\\dfrac{360°}{T}=\\dfrac{360°}{27{,}32\\ \\text{ngày}}$$<div class=\"bt-ans\">$$\\omega_M\\approx13{,}18°/\\text{ngày}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ Mặt Trăng đuổi theo hướng Mặt Trời</span></p><p>Trái Đất quay quanh Mặt Trời cùng chiều, nên hướng Mặt Trời (nhìn từ Trái Đất) cũng quay :</p>$$\\omega_E=\\dfrac{360°}{365{,}25\\ \\text{ngày}}\\approx0{,}986°/\\text{ngày}$$$$\\omega_M-\\omega_E\\approx13{,}177-0{,}986$$<div class=\"bt-ans\">$$\\omega_M-\\omega_E\\approx12{,}19°/\\text{ngày}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tháng giao hội</span></p><p>Giữa hai lần trăng non, Mặt Trăng hơn hướng Mặt Trời đúng một vòng :</p>$$S=\\dfrac{360°}{\\omega_M-\\omega_E}=\\dfrac{360°}{12{,}19°/\\text{ngày}}$$<div class=\"bt-ans\">$$S\\approx29{,}53\\ \\text{ngày}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian Mặt Trăng đi thêm</span></p><p>Sau $T$, Mặt Trăng về lại hướng sao cũ. Trong thời gian đó hướng Mặt Trời đã lệch đi đúng góc Trái Đất đi trên quỹ đạo :</p>$$\\alpha=\\omega_E\\,T=0{,}986\\cdot27{,}32\\approx26{,}9°$$<p>Trong lúc Mặt Trăng đuổi, hướng Mặt Trời vẫn tiếp tục quay, nên dùng tốc độ đuổi :</p>$$\\Delta t=\\dfrac{\\alpha}{\\omega_M-\\omega_E}=\\dfrac{26{,}9°}{12{,}19°/\\text{ngày}}$$<div class=\"bt-ans\">$$\\Delta t\\approx2{,}21\\ \\text{ngày}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Ngày sao</span></p><p>Trong một ngày Mặt Trời, Trái Đất đi thêm $0{,}986°$ trên quỹ đạo nên phải tự quay $360°+0{,}986°$ thì Mặt Trời mới lên cao nhất lần nữa :</p>$$\\omega_{tq}=\\dfrac{360{,}986°}{24\\ \\text{h}}$$$$T_{sao}=\\dfrac{360°}{\\omega_{tq}}=24\\cdot\\dfrac{360}{360{,}986}\\approx23{,}934\\ \\text{h}$$$$24\\ \\text{h}-T_{sao}\\approx0{,}0655\\ \\text{h}$$<div class=\"bt-ans\">$$\\text{ngắn hơn}\\approx3{,}93\\ \\text{phút}\\ (\\approx3\\ \\text{min}\\ 56\\ \\text{s})$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Tốc độ Mặt Trăng so với bóng</span></p><p>Bóng quay theo hướng Mặt Trời, nên so với bóng Mặt Trăng đi một vòng hết $S$, không phải $T$ :</p>$$v=\\dfrac{2\\pi d}{S}=\\dfrac{2\\pi\\cdot384\\,000\\ \\text{km}}{29{,}53\\cdot86\\,400\\ \\text{s}}$$<div class=\"bt-ans\">$$v\\approx0{,}946\\ \\text{km/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Thời gian toàn phần dài nhất</span></p><p>Toàn phần từ lúc mép sau vừa vào hẳn vùng tối tới lúc mép trước bắt đầu ra : tâm Mặt Trăng đi được</p>$$s=9200-3470=5730\\ \\text{km}$$$$t_{tp}=\\dfrac{s}{v}=\\dfrac{5730}{0{,}946}\\approx6060\\ \\text{s}$$<div class=\"bt-ans\">$$t_{tp}\\approx101\\ \\text{phút}\\approx1{,}7\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$T+\\Delta t=27{,}32+2{,}21=29{,}53$ ngày, khớp câu a ✓.</p><p>$S\\gt T$ : Mặt Trăng phải đuổi theo hướng Mặt Trời đang quay cùng chiều ✓ ; tương tự ngày sao ngắn hơn ngày Mặt Trời ✓.</p><p>Từ lúc bắt đầu chạm tới lúc rời hẳn vùng tối : $\\dfrac{9200+3470}{0{,}946}\\approx13\\,400$ s $\\approx3{,}7$ h, dài hơn toàn phần, hợp lí ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega_M\\approx13{,}18°$/ngày ; $\\omega_E\\approx0{,}986°$/ngày ; $S\\approx29{,}53$ ngày</p><p>b) đi thêm khoảng $2{,}21$ ngày</p><p>c) ngày sao ngắn hơn khoảng $3{,}93$ phút (ngày sao $\\approx23$ h $56$ min)</p><p>d) $v\\approx0{,}946$ km/s ; toàn phần dài nhất khoảng $101$ phút $\\approx1{,}7$ h</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>hai chuyển động quay cùng chiều</strong> và hỏi <strong>chu kì lặp lại vị trí tương đối</strong> → tốc độ góc đuổi $\\omega_1-\\omega_2$, chu kì $360°/(\\omega_1-\\omega_2)$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-4-2\"><svg viewBox=\"0 0 420 383\" role=\"img\" aria-label=\"Trên: hai vị trí Trái Đất cách nhau một tháng thiên văn, Mặt Trăng cùng chỉ một hướng sao; dưới: Mặt Trăng đi qua dải vùng tối của bóng Trái Đất\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">a), b) Hai lần Mặt Trăng ở cùng hướng sao</text><circle cx=\"22.0\" cy=\"118.0\" r=\"14.0\" fill=\"#facc15\" fill-opacity=\"0.9\" stroke=\"#fb923c\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"118.0\" x2=\"46.0\" y2=\"118.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"34.7\" y1=\"105.3\" x2=\"39.0\" y2=\"101.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"100.0\" x2=\"22.0\" y2=\"94.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"9.3\" y1=\"105.3\" x2=\"5.0\" y2=\"101.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"4.0\" y1=\"118.0\" x2=\"-2.0\" y2=\"118.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"9.3\" y1=\"130.7\" x2=\"5.0\" y2=\"135.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"136.0\" x2=\"22.0\" y2=\"142.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"34.7\" y1=\"130.7\" x2=\"39.0\" y2=\"135.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"22.0\" y1=\"118.0\" x2=\"285.1\" y2=\"178.7\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"22.0\" y1=\"118.0\" x2=\"284.0\" y2=\"52.7\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><path d=\"M90.2,133.7 A70,70 0 0 0 89.9,101.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"98\" y=\"123\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">?</text><circle cx=\"285.1\" cy=\"178.7\" r=\"9.0\" fill=\"#38bdf8\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"284.0\" cy=\"52.7\" r=\"9.0\" fill=\"#38bdf8\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"285.1\" y1=\"178.7\" x2=\"242.2\" y2=\"168.8\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"284.0\" y1=\"52.7\" x2=\"241.1\" y2=\"42.8\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><circle cx=\"242.2\" cy=\"168.8\" r=\"6.0\" fill=\"#94a3b8\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"241.1\" cy=\"42.8\" r=\"6.0\" fill=\"#94a3b8\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M254.7,45.9 A30,30 0 0 0 254.9,59.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"240.0\" y=\"59.0\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">?</text><text x=\"299.1\" y=\"184.7\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">trăng non</text><text x=\"299.1\" y=\"202.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">(ngày 0)</text><text x=\"298.0\" y=\"54.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">sau T =</text><text x=\"298.0\" y=\"72.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">27,32 ngày</text><text x=\"16\" y=\"200\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">d) Mặt Trăng đi xuyên tâm vùng tối</text><rect x=\"95.0\" y=\"236.0\" width=\"230.0\" height=\"98.8\" fill=\"#94a3b8\" fill-opacity=\".35\" stroke=\"#94a3b8\" stroke-width=\"1.6\"/><circle cx=\"138.4\" cy=\"285.4\" r=\"43.4\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"281.6\" cy=\"285.4\" r=\"43.4\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><line x1=\"138.4\" y1=\"285.4\" x2=\"281.6\" y2=\"285.4\" stroke=\"#f87171\" stroke-width=\"2.2\"/><path d=\"M273.4,280.7 L281.6,285.4 L273.4,290.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"277.4\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">v = ?</text><line x1=\"95.0\" y1=\"352.75\" x2=\"325.0\" y2=\"352.75\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M318.0,348.7 L325.0,352.8 L318.0,356.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"325.0\" y1=\"352.75\" x2=\"95.0\" y2=\"352.75\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M102.0,356.8 L95.0,352.8 L102.0,348.7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#0369a1\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"210\" y=\"372.8\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">vùng tối: 9200 km</text><text x=\"89.0\" y=\"290.4\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">D<tspan dy=\"4\" font-size=\"12\">M</tspan><tspan dy=\"-4\"></tspan></text><text x=\"331.0\" y=\"271.4\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">bắt đầu</text><text x=\"331.0\" y=\"289.4\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">và hết</text><text x=\"331.0\" y=\"307.4\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">toàn phần</text></svg><figcaption>Dữ kiện: góc hai dấu ? cần tìm (vẽ minh hoạ). Dải vùng tối và Mặt Trăng vẽ cùng tỉ lệ; hai vòng nét đứt là lúc bắt đầu và lúc hết toàn phần.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Tháng thiên văn (thời gian Mặt Trăng quay một vòng quanh Trái Đất so với các ngôi sao) là $T=27{,}32$ ngày; một năm có $365{,}25$ ngày\"</td><td>$T=27{,}32$ ngày ; $1$ năm $=365{,}25$ ngày</td><td>Tốc độ góc đều : $\\omega=\\dfrac{360°}{\\text{chu kì}}$</td></tr><tr><td>\"Mặt Trăng quay quanh Trái Đất, Trái Đất quay quanh Mặt Trời và tự quay quanh trục đều cùng một chiều\"</td><td>cùng chiều quay</td><td>⚠ hai chuyển động cùng chiều : hướng Mặt Trời (nhìn từ Trái Đất) cũng quay. Mặt Trăng phải đuổi theo hướng đó với tốc độ góc nào ?</td></tr><tr><td>\"tính tháng giao hội $S$ (thời gian giữa hai lần trăng non liên tiếp)\"</td><td>$S=?$</td><td>Trăng non : Mặt Trăng ở giữa Mặt Trời và Trái Đất. Giữa hai lần, Mặt Trăng hơn hướng Mặt Trời đúng một vòng</td></tr><tr><td>\"Sau đúng một tháng thiên văn, Mặt Trăng còn phải đi thêm bao nhiêu ngày nữa\"</td><td>$\\Delta t=?$</td><td>Lúc đó Mặt Trăng về lại hướng sao cũ ; hướng Mặt Trời đã lệch đi một góc bằng góc nào ?</td></tr><tr><td>\"Ngày sao (thời gian Trái Đất tự quay đúng một vòng so với các ngôi sao) ngắn hơn ngày Mặt Trời bao nhiêu phút?\"</td><td>ngày Mặt Trời $=24$ h ; chênh lệch $=?$</td><td>Cùng ý tưởng câu a : trong một ngày Mặt Trời, Trái Đất tự quay bao nhiêu độ so với sao ?</td></tr><tr><td>\"Tại quỹ đạo Mặt Trăng, vùng tối rộng $9200$ km; Mặt Trăng có đường kính $3470$ km và cách Trái Đất $384\\,000$ km\"</td><td>vùng tối $9200$ km ; $D_M=3470$ km ; $d=384\\,000$ km</td><td>Quãng đường trên quỹ đạo tròn : chu vi $2\\pi d$</td></tr><tr><td>\"Bóng Trái Đất luôn nằm trên đường thẳng nối Mặt Trời với Trái Đất\"</td><td>bóng quay theo hướng Mặt Trời</td><td>⚠ so với bóng, Mặt Trăng quay một vòng hết thời gian nào : $T$ hay $S$ ?</td></tr><tr><td>\"thời gian nguyệt thực toàn phần dài nhất\"</td><td>$t_{tp}=?$</td><td>Toàn phần bắt đầu khi Mặt Trăng vừa nằm gọn trong vùng tối, kết thúc khi bắt đầu ló ra : tâm Mặt Trăng đi được bao xa ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>trăng non lặp lại</b>, <b>cùng chiều quay</b> → nghĩ tới <b>tốc độ góc đuổi ω₁ − ω₂</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 5
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ góc của Mặt Trăng",
+     "hoi": "Mặt Trăng quay quanh Trái Đất (so với các sao) bao nhiêu độ mỗi ngày?",
+     "dap_so": 13.177,
+     "sai_so": 0.02,
+     "don_vi": "°/ngày",
+     "loi_hay_gap": "Chia $360°$ cho $29{,}5$ ngày (tháng âm lịch) — đó là tốc độ so với hướng Mặt Trời, không phải so với sao."
+    },
+    {
+     "tieu_de": "Tốc độ Mặt Trăng đuổi theo hướng Mặt Trời",
+     "hoi": "Mỗi ngày, góc giữa hướng Mặt Trăng và hướng Mặt Trời (nhìn từ Trái Đất) tăng thêm bao nhiêu độ?",
+     "dap_so": 12.192,
+     "sai_so": 0.02,
+     "don_vi": "°/ngày",
+     "loi_hay_gap": "Cộng hai tốc độ góc: Trái Đất quay cùng chiều nên hướng Mặt Trời chạy theo cùng chiều với Mặt Trăng, khoảng cách góc tăng chậm hơn chứ không nhanh hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy $\\omega_M-\\omega_E$ với $\\omega_E=\\dfrac{360°}{365{,}25\\ \\text{ngày}}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\omega_M+\\omega_E$",
+       "dung": false,
+       "vi_sao": "Hai chuyển động cùng chiều: hướng Mặt Trời quay cùng chiều với Mặt Trăng nên phải trừ, như kim phút đuổi kim giờ."
+      },
+      {
+       "text": "Lấy luôn $\\omega_M$",
+       "dung": false,
+       "vi_sao": "Bỏ qua chuyển động của Trái Đất quanh Mặt Trời; hướng Mặt Trời không đứng yên so với các sao."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tháng giao hội",
+     "hoi": "Tháng giao hội S dài bao nhiêu ngày?",
+     "dap_so": 29.529,
+     "sai_so": 0.02,
+     "don_vi": "ngày",
+     "loi_hay_gap": "Lấy $\\dfrac1S=\\dfrac1T+\\dfrac1{365{,}25}$ (cộng) nên ra $S$ ngắn hơn $T$ — vô lí, vì Mặt Trăng phải đi thêm mới đuổi kịp hướng Mặt Trời.",
+     "chon_buoc_ke": [
+      {
+       "text": "$S=\\dfrac{360°}{\\omega_M-\\omega_E}$",
+       "dung": true
+      },
+      {
+       "text": "$S=\\dfrac{360°}{\\omega_M}$",
+       "dung": false,
+       "vi_sao": "Đó chính là tháng thiên văn $T$; trăng non lặp lại khi Mặt Trăng hơn hướng Mặt Trời một vòng."
+      },
+      {
+       "text": "$S=\\dfrac{360°}{\\omega_M+\\omega_E}$",
+       "dung": false,
+       "vi_sao": "Cộng tốc độ góc cho $S$ ngắn hơn $T$; Mặt Trăng phải đuổi theo hướng Mặt Trời nên $S$ dài hơn $T$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian Mặt Trăng đi thêm",
+     "hoi": "Sau một tháng thiên văn, Mặt Trăng còn phải đi thêm bao nhiêu ngày?",
+     "dap_so": 2.209,
+     "sai_so": 0.03,
+     "don_vi": "ngày",
+     "loi_hay_gap": "Chia góc Trái Đất đã đi cho $\\omega_M$: quên rằng trong lúc Mặt Trăng đi thêm thì hướng Mặt Trời vẫn tiếp tục quay.",
+     "chon_buoc_ke": [
+      {
+       "text": "Góc Trái Đất đã đi $\\omega_E T$, chia cho tốc độ đuổi $\\omega_M-\\omega_E$",
+       "dung": true
+      },
+      {
+       "text": "Góc Trái Đất đã đi $\\omega_E T$, chia cho $\\omega_M$",
+       "dung": false,
+       "vi_sao": "Trong lúc Mặt Trăng đi thêm, hướng Mặt Trời vẫn quay tiếp; phải dùng tốc độ đuổi."
+      },
+      {
+       "text": "Góc Trái Đất đã đi $\\omega_E T$, chia cho $\\omega_E$",
+       "dung": false,
+       "vi_sao": "Như vậy chỉ tính lại được chính thời gian $T$ Trái Đất đi góc ấy, không phải thời gian Mặt Trăng đuổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ngày sao",
+     "hoi": "Ngày sao ngắn hơn ngày Mặt Trời bao nhiêu phút?",
+     "dap_so": 3.932,
+     "sai_so": 0.05,
+     "don_vi": "phút",
+     "loi_hay_gap": "Dùng tháng giao hội của Mặt Trăng để tính, hoặc coi $15°$/h là tốc độ tự quay so với sao.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trong một ngày Mặt Trời, Trái Đất tự quay $360°+\\omega_E\\cdot1\\ \\text{ngày}$; từ đó tính thời gian quay đúng $360°$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $24$ h chia cho $29{,}53$ ngày như trăng mọc trễ",
+       "dung": false,
+       "vi_sao": "Ngày Mặt Trời liên quan tới chuyển động của Trái Đất quanh Mặt Trời, không liên quan tới Mặt Trăng."
+      },
+      {
+       "text": "Trái Đất quay $15°$/h nên một vòng so với sao đúng $24$ h",
+       "dung": false,
+       "vi_sao": "$15°$/h là tốc độ so với hướng Mặt Trời; so với sao Trái Đất quay nhanh hơn một chút vì hướng Mặt Trời dịch theo quỹ đạo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ Mặt Trăng so với bóng",
+     "hoi": "Mặt Trăng chuyển động so với bóng Trái Đất với tốc độ bao nhiêu km/s?",
+     "dap_so": 0.9457,
+     "sai_so": 0.005,
+     "don_vi": "km/s",
+     "loi_hay_gap": "Lấy chu kì $T=27{,}32$ ngày: bóng quay theo hướng Mặt Trời nên Mặt Trăng trở lại bóng sau tháng giao hội, không phải tháng thiên văn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{2\\pi d}{S}$, $S$ đổi ra giây",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{2\\pi d}{T}$, $T$ đổi ra giây",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ so với các sao; bóng Trái Đất quay theo hướng Mặt Trời nên phải dùng $S$."
+      },
+      {
+       "text": "$v=\\dfrac{2\\pi d}{S}$, đổi $S$ ra giây bằng $S\\cdot3600$",
+       "dung": false,
+       "vi_sao": "Một ngày có $24\\cdot3600=86\\,400$ s; nhân $3600$ là đổi theo giờ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian toàn phần dài nhất",
+     "hoi": "Nguyệt thực toàn phần kéo dài nhiều nhất bao nhiêu phút?",
+     "dap_so": 100.98,
+     "sai_so": 1.5,
+     "don_vi": "phút",
+     "loi_hay_gap": "Chia cả bề rộng vùng tối cho $v$, hoặc cộng thêm đường kính Mặt Trăng — đó là các mốc của pha một phần, không phải toàn phần.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{\\text{vùng tối}-D_M}{v}$",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{\\text{vùng tối}+D_M}{v}$",
+       "dung": false,
+       "vi_sao": "Đó là từ lúc Mặt Trăng bắt đầu chạm vùng tối tới lúc rời hẳn, gồm cả hai pha che một phần."
+      },
+      {
+       "text": "$t=\\dfrac{\\text{vùng tối}}{v}$",
+       "dung": false,
+       "vi_sao": "Toàn phần chỉ bắt đầu khi cả đĩa Mặt Trăng đã vào trong vùng tối; tâm đi ít hơn bề rộng vùng tối đúng một đường kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Góc cao Mặt Trời buổi trưa và phép đo của Eratosthenes",
+   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+   "problem_html": "<p>Trục Trái Đất nghiêng $23{,}5°$. Lúc giữa trưa, tia nắng chiếu vuông góc với mặt đất tại nơi có vĩ độ bằng xích vĩ $\\delta$ của Mặt Trời: ngày xuân phân $\\delta=0°$, ngày hạ chí $\\delta=+23{,}5°$ (phía Bắc), ngày đông chí $\\delta=-23{,}5°$ (phía Nam). Hà Nội ở vĩ độ $21{,}0°$ Bắc, TP.HCM ở vĩ độ $10{,}8°$ Bắc. Các cọc đều cắm thẳng đứng trên mặt đất nằm ngang.</p><ol type=\"a\"><li>Tính góc cao của Mặt Trời lúc giữa trưa ở Hà Nội ngày xuân phân và ngày hạ chí. Trưa hạ chí, bóng cọc ở Hà Nội ngả về phía Bắc hay phía Nam?</li><li>Tính chiều dài bóng của một cọc cao $1$ m lúc giữa trưa ở Hà Nội ngày đông chí, và ở TP.HCM ngày hạ chí.</li><li>Trưa ngày xuân phân, tại điểm A trên xích đạo, cọc không có bóng. Cùng lúc đó, tại điểm B cùng kinh tuyến với A và cách A $556$ km về phía Bắc, cọc cao $1$ m có bóng dài $0{,}0875$ m. Coi tia nắng tới Trái Đất là song song. Tính góc lệch giữa tia nắng và cọc ở B, rồi tính chu vi và bán kính Trái Đất.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-5-0\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Tia nắng song song tới hai điểm A và B trên cùng kinh tuyến; cọc ở A không có bóng, cọc ở B có bóng ngắn\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Trưa xuân phân: tia nắng song song tới A và B</text><path d=\"M140,50 A100,100 0 0 1 140,250\" fill=\"#38bdf8\" fill-opacity=\".12\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"240.0\" y1=\"150.0\" x2=\"266.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"232.7\" y1=\"112.5\" x2=\"256.8\" y2=\"102.8\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"240.0\" cy=\"150.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"232.7\" cy=\"112.5\" r=\"3.5\" fill=\"currentColor\"/><text x=\"244.0\" y=\"172.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">A (xích đạo)</text><text x=\"226.7\" y=\"82.5\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><line x1=\"410\" y1=\"102.8\" x2=\"410\" y2=\"102.8\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;256.8;256.8\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><g opacity=\"0\"><path d=\"M332.1,107.8 L323.4,102.8 L332.1,97.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.3600\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"410\" y1=\"98.0\" x2=\"410\" y2=\"98.0\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;225.4;225.4\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"410\" y1=\"130.0\" x2=\"410\" y2=\"130.0\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;238.0;238.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"410\" y1=\"150.0\" x2=\"410\" y2=\"150.0\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;266.0;266.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><g opacity=\"0\"><path d=\"M336.7,155.0 L328.0,150.0 L336.7,145.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.3600\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><line x1=\"410\" y1=\"180.0\" x2=\"410\" y2=\"180.0\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;235.4;235.4\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"410\" y1=\"210.0\" x2=\"410\" y2=\"210.0\" stroke=\"#fb923c\" stroke-width=\"2\"><animate attributeName=\"x2\" values=\"410.0;220.0;220.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"256.8\" y1=\"102.8\" x2=\"228.2\" y2=\"102.8\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><path d=\"M232.7,112.5 A100,100 0 0 1 228.2,102.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5000\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></path><text opacity=\"0\" x=\"224.7\" y=\"102.5\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">bóng<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5000\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"250\" y=\"196\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A: không có bóng<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5000\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><g opacity=\"0\"><line x1=\"140.0\" y1=\"150.0\" x2=\"266.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"140.0\" y1=\"150.0\" x2=\"256.8\" y2=\"102.8\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><path d=\"M174.0,150.0 A34,34 0 0 0 171.5,137.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7000\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text opacity=\"0\" x=\"180\" y=\"148\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">θ = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7000\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><circle cx=\"140.0\" cy=\"150.0\" r=\"3\" fill=\"currentColor\"/><text x=\"132\" y=\"155\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"410\" y=\"248\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">tia nắng từ Mặt Trời</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: góc giữa A và B vẽ phóng to nhiều lần để dễ nhìn; không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Góc cao Mặt Trời</strong> $h$: góc giữa tia nắng và mặt đất nằm ngang.</li><li><strong>Buổi trưa:</strong> $h=90°-|\\varphi-\\delta|$ ; $\\delta\\lt\\varphi$ thì Mặt Trời ở phía Nam thiên đỉnh, bóng ngả về Bắc ; $\\delta\\gt\\varphi$ thì ngược lại.</li><li><strong>Bóng cọc:</strong> $\\tan h=\\dfrac{\\text{cọc}}{\\text{bóng}}$.</li><li><strong>Eratosthenes:</strong> tia song song cắt hai bán kính, góc ở tâm $=\\theta$ (so le trong) ; $\\dfrac{s}{C}=\\dfrac{\\theta}{360°}$, $C=2\\pi R$.</li><li><strong>Điều kiện:</strong> tia nắng song song ; A, B cùng kinh tuyến ; cọc thẳng đứng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc cao ở Hà Nội ngày xuân phân</span></p>$$h=90°-|\\varphi-\\delta|=90°-|21{,}0°-0°|$$<div class=\"bt-ans\">$$h=69{,}0°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc cao ở Hà Nội ngày hạ chí</span></p>$$h=90°-|21{,}0°-23{,}5°|=90°-2{,}5°$$<div class=\"bt-ans\">$$h=87{,}5°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hướng bóng ở Hà Nội trưa hạ chí</span></p><p>$\\delta=23{,}5°\\gt\\varphi=21{,}0°$ : tia nắng vuông góc với mặt đất ở một nơi xa hơn về phía Bắc, nên Mặt Trời lệch $2{,}5°$ về phía Bắc so với thiên đỉnh.</p><div class=\"bt-ans\"><p>Bóng ngả về phía Nam (rất ngắn).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bóng cọc ở Hà Nội ngày đông chí</span></p>$$h=90°-|21{,}0°-(-23{,}5°)|=90°-44{,}5°=45{,}5°$$$$\\text{bóng}=\\dfrac{1\\ \\text{m}}{\\tan45{,}5°}$$<div class=\"bt-ans\">$$\\text{bóng}\\approx0{,}98\\ \\text{m}\\ (\\text{về phía Bắc})$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Bóng cọc ở TP.HCM ngày hạ chí</span></p>$$h=90°-|10{,}8°-23{,}5°|=90°-12{,}7°=77{,}3°$$$$\\text{bóng}=\\dfrac{1\\ \\text{m}}{\\tan77{,}3°}$$<div class=\"bt-ans\">$$\\text{bóng}\\approx0{,}23\\ \\text{m}\\ (\\text{về phía Nam vì}\\ \\delta\\gt\\varphi)$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Góc lệch giữa tia nắng và cọc ở B</span></p>$$\\tan\\theta=\\dfrac{\\text{bóng}}{\\text{cọc}}=\\dfrac{0{,}0875}{1}$$<div class=\"bt-ans\">$$\\theta\\approx5{,}00°$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Chu vi và bán kính Trái Đất</span></p><p>Ở A tia nắng trùng phương cọc (hướng về tâm O). Tia ở B song song với tia ở A, nên góc ở tâm $\\widehat{AOB}=\\theta$ (so le trong) :</p>$$C=s\\cdot\\dfrac{360°}{\\theta}=556\\cdot\\dfrac{360°}{5{,}00°}$$<div class=\"bt-ans\">$$C\\approx40\\,000\\ \\text{km}$$</div>$$R=\\dfrac{C}{2\\pi}$$<div class=\"bt-ans\">$$R\\approx6370\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Hà Nội : góc cao trưa lớn nhất vào hạ chí, nhỏ nhất vào đông chí ✓ ; $45{,}5°\\lt69{,}0°\\lt87{,}5°$ ✓.</p><p>Góc cao gần $45°$ thì bóng gần bằng cọc ✓ ; góc cao gần $90°$ thì bóng rất ngắn ✓.</p><p>B cách xích đạo $5°$ vĩ độ, khớp với góc lệch tia nắng ở B ngày xuân phân ($\\delta=0$) ✓ ; $R$ khớp giá trị $6370$ km quen dùng ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Hà Nội : xuân phân $h=69{,}0°$ ; hạ chí $h=87{,}5°$, bóng ngả về phía Nam</p><p>b) Hà Nội đông chí : bóng $\\approx0{,}98$ m (về Bắc) ; TP.HCM hạ chí : bóng $\\approx0{,}23$ m (về Nam)</p><p>c) $\\theta\\approx5{,}00°$ ; $C\\approx40\\,000$ km ; $R\\approx6370$ km</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>vĩ độ, xuân phân / hạ chí / đông chí</strong> → $h=90°-|\\varphi-\\delta|$, so $\\delta$ với $\\varphi$ để biết hướng bóng ; thấy <strong>hai cọc cùng kinh tuyến</strong> → góc ở tâm $=\\theta$, $C=s\\cdot360°/\\theta$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-5-2\"><svg viewBox=\"0 0 420 272\" role=\"img\" aria-label=\"Mặt cắt kinh tuyến: điểm P ở vĩ độ φ, tia nắng tới lệch δ so với mặt phẳng xích đạo, góc cao h giữa tia nắng và đường chân trời; bên cạnh là cọc và bóng\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Mặt cắt Trái Đất theo kinh tuyến, lúc giữa trưa</text><circle cx=\"150.0\" cy=\"140.0\" r=\"92.0\" fill=\"#38bdf8\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"48.0\" y1=\"140.0\" x2=\"282.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"64\" y=\"160\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">xích đạo</text><line x1=\"150.0\" y1=\"140.0\" x2=\"222.5\" y2=\"83.4\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M176.0,140.0 A26,26 0 0 0 170.5,124.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"180\" y=\"132\" fill=\"#0369a1\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">φ</text><line x1=\"188.6\" y1=\"40.0\" x2=\"265.6\" y2=\"138.5\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"222.5\" y1=\"83.4\" x2=\"263.5\" y2=\"51.3\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\" opacity=\"1\"/><text x=\"269.5\" y=\"49.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">thiên đỉnh</text><text x=\"184.6\" y=\"44.0\" fill=\"#047857\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">chân trời</text><line x1=\"368.0\" y1=\"47.1\" x2=\"222.5\" y2=\"83.4\" stroke=\"#fb923c\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M304.9,68.0 L295.3,65.2 L302.5,58.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M241.0,107.0 A30,30 0 0 0 251.6,76.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"262.3\" y=\"102.4\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">h = ?</text><line x1=\"150.0\" y1=\"140.0\" x2=\"289.7\" y2=\"105.2\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><path d=\"M212.0,140.0 A62,62 0 0 0 210.2,125.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"216\" y=\"136\" fill=\"#c2410c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">δ</text><circle cx=\"150.0\" cy=\"140.0\" r=\"3\" fill=\"currentColor\"/><text x=\"144\" y=\"158\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"222.5\" cy=\"83.4\" r=\"3.5\" fill=\"currentColor\"/><text x=\"214.5\" y=\"87.4\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">P</text><text x=\"300\" y=\"198\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">cọc và bóng:</text><line x1=\"300.0\" y1=\"252.0\" x2=\"300.0\" y2=\"212.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"294.0\" y1=\"252.0\" x2=\"410.0\" y2=\"252.0\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"300.0\" y1=\"212.0\" x2=\"380.0\" y2=\"252.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"300.0\" y1=\"252.0\" x2=\"380.0\" y2=\"252.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><path d=\"M363.9,243.9 A18,18 0 0 0 362.0,252.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"352\" y=\"246\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">h</text><text x=\"294\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">1 m</text><text x=\"340\" y=\"270\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">bóng = ?</text></svg><figcaption>Dữ kiện: các góc vẽ minh hoạ, không phải số của đề. Tia nắng coi là song song.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Lúc giữa trưa, tia nắng chiếu vuông góc với mặt đất tại nơi có vĩ độ bằng xích vĩ $\\delta$ của Mặt Trời\"</td><td>xuân phân $0°$ ; hạ chí $+23{,}5°$ ; đông chí $-23{,}5°$</td><td>Góc cao buổi trưa : $h=90°-|\\varphi-\\delta|$</td></tr><tr><td>\"Hà Nội ở vĩ độ $21{,}0°$ Bắc, TP.HCM ở vĩ độ $10{,}8°$ Bắc\"</td><td>$\\varphi_{HN}=21{,}0°$ ; $\\varphi_{HCM}=10{,}8°$</td><td>⚠ $\\delta$ và $\\varphi$ mang dấu (Bắc dương, Nam âm) ; lấy hiệu rồi trị tuyệt đối</td></tr><tr><td>\"Trưa hạ chí, bóng cọc ở Hà Nội ngả về phía Bắc hay phía Nam?\"</td><td>hướng bóng $=?$</td><td>Mặt Trời ở phía nào của thiên đỉnh ? So sánh $\\delta$ với $\\varphi$</td></tr><tr><td>\"Tính chiều dài bóng của một cọc cao $1$ m lúc giữa trưa\"</td><td>cọc $1$ m ; bóng $=?$</td><td>Tam giác vuông cọc – bóng – tia nắng : $\\tan h=\\dfrac{\\text{cọc}}{\\text{bóng}}$</td></tr><tr><td>\"tại điểm B cùng kinh tuyến với A và cách A $556$ km về phía Bắc, cọc cao $1$ m có bóng dài $0{,}0875$ m\"</td><td>cung $AB=556$ km ; cọc $1$ m, bóng $0{,}0875$ m</td><td>Góc lệch $\\theta$ giữa tia nắng và cọc : $\\tan\\theta=\\dfrac{\\text{bóng}}{\\text{cọc}}$</td></tr><tr><td>\"Coi tia nắng tới Trái Đất là song song\"</td><td>tia ở A và tia ở B song song</td><td>⚠ cọc ở A, ở B đều hướng về tâm Trái Đất. Góc ở tâm giữa OA và OB liên hệ với $\\theta$ thế nào ?</td></tr><tr><td>\"rồi tính chu vi và bán kính Trái Đất\"</td><td>$C=?$ ; $R=?$</td><td>Độ dài cung tỉ lệ với góc ở tâm : $\\dfrac{s}{C}=\\dfrac{\\theta}{360°}$ ; $C=2\\pi R$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vĩ độ</b> và <b>hạ chí / đông chí</b> → nghĩ tới <b>h = 90° − |φ − δ|</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc cao ở Hà Nội ngày xuân phân",
+     "hoi": "Trưa xuân phân, Mặt Trời ở Hà Nội có góc cao bao nhiêu độ?",
+     "dap_so": 69.0,
+     "sai_so": 0.1,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy góc cao bằng vĩ độ: vĩ độ là góc lệch của tia nắng so với phương thẳng đứng (thiên đỉnh) ngày xuân phân, góc cao là phần còn lại tới $90°$."
+    },
+    {
+     "tieu_de": "Góc cao ở Hà Nội ngày hạ chí",
+     "hoi": "Trưa hạ chí, Mặt Trời ở Hà Nội có góc cao bao nhiêu độ?",
+     "dap_so": 87.5,
+     "sai_so": 0.1,
+     "don_vi": "°",
+     "loi_hay_gap": "Cộng $\\varphi$ với $\\delta$: hạ chí Mặt Trời và Hà Nội cùng ở phía Bắc xích đạo, Mặt Trời gần thiên đỉnh hơn chứ không xa hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=+23{,}5°$",
+       "dung": true
+      },
+      {
+       "text": "$h=90°-(\\varphi+\\delta)$",
+       "dung": false,
+       "vi_sao": "$\\delta$ hạ chí cùng phía Bắc với Hà Nội; khoảng cách góc tới thiên đỉnh là hiệu $|\\varphi-\\delta|$, không phải tổng."
+      },
+      {
+       "text": "$h=90°-\\varphi+\\delta$",
+       "dung": false,
+       "vi_sao": "Góc cao không vượt quá $90°$; khi $\\delta\\gt\\varphi$ Mặt Trời đã qua phía Bắc thiên đỉnh nên phải lấy trị tuyệt đối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hướng bóng ở Hà Nội trưa hạ chí",
+     "hoi": "Trưa hạ chí, bóng cọc ở Hà Nội ngả về phía nào?",
+     "lua_chon": [
+      {
+       "text": "Phía Nam",
+       "dung": true
+      },
+      {
+       "text": "Phía Bắc",
+       "dung": false,
+       "vi_sao": "Bóng ngả về phía Bắc khi Mặt Trời ở phía Nam thiên đỉnh ($\\delta\\lt\\varphi$); trưa hạ chí ở Hà Nội thì $\\delta\\gt\\varphi$."
+      },
+      {
+       "text": "Không có bóng",
+       "dung": false,
+       "vi_sao": "Cọc không có bóng chỉ khi $\\delta=\\varphi$ đúng bằng nhau."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ ở bán cầu Bắc bóng trưa luôn ngả về phía Bắc: điều đó chỉ đúng khi Mặt Trời ở phía Nam thiên đỉnh.",
+     "chon_buoc_ke": [
+      {
+       "text": "So sánh $\\delta$ với $\\varphi$ để biết Mặt Trời ở phía nào của thiên đỉnh",
+       "dung": true
+      },
+      {
+       "text": "Ở bán cầu Bắc, bóng trưa luôn ngả về phía Bắc",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi $\\delta\\lt\\varphi$; vùng giữa hai chí tuyến có lúc Mặt Trời ở phía Bắc thiên đỉnh."
+      },
+      {
+       "text": "Xem góc cao lớn hay nhỏ hơn $45°$",
+       "dung": false,
+       "vi_sao": "Độ lớn góc cao không cho biết Mặt Trời lệch về phía Bắc hay phía Nam thiên đỉnh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bóng cọc ở Hà Nội ngày đông chí",
+     "hoi": "Trưa đông chí ở Hà Nội, bóng cọc 1 m dài bao nhiêu mét?",
+     "dap_so": 0.983,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy $\\delta=+23{,}5°$ cho đông chí (đông chí Mặt Trời ở phía Nam, $\\delta$ âm), hoặc tính bóng $=1\\ \\text{m}\\cdot\\tan h$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=-23{,}5°$, rồi bóng $=\\dfrac{1\\ \\text{m}}{\\tan h}$",
+       "dung": true
+      },
+      {
+       "text": "$h$ như trên, rồi bóng $=1\\ \\text{m}\\cdot\\tan h$",
+       "dung": false,
+       "vi_sao": "$\\tan h=\\dfrac{\\text{cọc}}{\\text{bóng}}$ nên bóng $=\\dfrac{\\text{cọc}}{\\tan h}$."
+      },
+      {
+       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=+23{,}5°$",
+       "dung": false,
+       "vi_sao": "Đông chí Mặt Trời chiếu vuông góc ở chí tuyến Nam nên $\\delta$ mang dấu âm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bóng cọc ở TP.HCM ngày hạ chí",
+     "hoi": "Trưa hạ chí ở TP.HCM, bóng cọc 1 m dài bao nhiêu mét?",
+     "dap_so": 0.225,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Cộng $\\varphi$ với $\\delta$ như khi tính sai ở Hà Nội, hoặc dùng $\\sin h$ thay cho $\\tan h$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$h=90°-|10{,}8°-23{,}5°|$, rồi bóng $=\\dfrac{1\\ \\text{m}}{\\tan h}$",
+       "dung": true
+      },
+      {
+       "text": "$h=90°-(10{,}8°+23{,}5°)$, rồi bóng $=\\dfrac{1\\ \\text{m}}{\\tan h}$",
+       "dung": false,
+       "vi_sao": "Hạ chí Mặt Trời và TP.HCM cùng phía Bắc; phải lấy hiệu $|\\varphi-\\delta|$."
+      },
+      {
+       "text": "$h=90°-|10{,}8°-23{,}5°|$, rồi bóng $=\\dfrac{1\\ \\text{m}}{\\sin h}$",
+       "dung": false,
+       "vi_sao": "Bóng là cạnh góc vuông kề góc $h$; $\\dfrac{\\text{cọc}}{\\sin h}$ là độ dài tia nắng từ đỉnh cọc tới đất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch giữa tia nắng và cọc ở B",
+     "hoi": "Góc lệch θ giữa tia nắng và cọc ở B bằng bao nhiêu độ?",
+     "dap_so": 5.001,
+     "sai_so": 0.05,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy $\\tan\\theta=\\dfrac{\\text{cọc}}{\\text{bóng}}$: đó là góc cao của Mặt Trời ở B, không phải góc giữa tia nắng và cọc.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\tan\\theta=\\dfrac{\\text{bóng}}{\\text{cọc}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\tan\\theta=\\dfrac{\\text{cọc}}{\\text{bóng}}$",
+       "dung": false,
+       "vi_sao": "Đó là góc giữa tia nắng và mặt đất (góc cao); góc giữa tia và cọc đối diện cạnh bóng."
+      },
+      {
+       "text": "Lấy luôn $\\theta$ bằng số $0{,}0875$, coi là độ",
+       "dung": false,
+       "vi_sao": "$0{,}0875$ là tỉ số bóng/cọc, tức $\\tan\\theta$, chưa phải số đo góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chu vi Trái Đất",
+     "hoi": "Chu vi Trái Đất tính được khoảng bao nhiêu kilômét?",
+     "dap_so": 40027,
+     "sai_so": 150,
+     "don_vi": "km",
+     "loi_hay_gap": "Nghĩ góc ở tâm gấp đôi $\\theta$, hoặc viết ngược tỉ lệ $C=s\\cdot\\dfrac{\\theta}{360°}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Góc ở tâm $=\\theta$ (so le trong); $C=s\\cdot\\dfrac{360°}{\\theta}$",
+       "dung": true
+      },
+      {
+       "text": "$C=s\\cdot\\dfrac{\\theta}{360°}$",
+       "dung": false,
+       "vi_sao": "Ngược tỉ lệ: cung $s$ ứng với góc $\\theta$ nhỏ nên cả vòng $360°$ phải dài hơn $s$ rất nhiều lần."
+      },
+      {
+       "text": "Góc ở tâm $=2\\theta$; $C=s\\cdot\\dfrac{360°}{2\\theta}$",
+       "dung": false,
+       "vi_sao": "Tia nắng ở A và B song song, cọc A và cọc B là hai bán kính; góc ở tâm bằng $\\theta$ (so le trong), không gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Vận dụng cao · Hệ Mặt Trời và Ngân Hà: khoảng cách, thời gian, tốc độ",
+   "topic": "Hệ Mặt Trời và Ngân Hà",
+   "problem_html": "<p>Cho tốc độ ánh sáng $c=3\\cdot10^5$ km/s; $1$ AU $=1{,}5\\cdot10^8$ km (khoảng cách Trái Đất – Mặt Trời); một năm có $365{,}25$ ngày; $1$ năm ánh sáng (ly) $=9{,}46\\cdot10^{12}$ km. Coi các quỹ đạo là đường tròn.</p><ol type=\"a\"><li>Ánh sáng Mặt Trời tới Trái Đất mất bao lâu? Tới Sao Hải Vương (cách Mặt Trời $30$ AU) mất bao nhiêu giờ?</li><li>Khoảng cách Trái Đất – Sao Hoả thay đổi từ $0{,}52$ AU đến $2{,}52$ AU. Sóng vô tuyến (truyền với tốc độ ánh sáng) đi từ Trái Đất tới một xe tự hành trên Sao Hoả mất ít nhất và nhiều nhất bao nhiêu phút? Vì sao người ta không lái xe đó trực tiếp như lái xe đồ chơi điều khiển từ xa?</li><li>Tính tốc độ của Trái Đất trên quỹ đạo quanh Mặt Trời (km/s).</li><li>Ngôi sao gần nhất (Proxima Centauri) cách ta $4{,}24$ ly. Đổi khoảng cách này ra AU. Một tàu vũ trụ bay đều với tốc độ $17$ km/s thì mất bao nhiêu năm để tới đó?</li><li>Mặt Trời cách tâm Ngân Hà khoảng $26\\,000$ ly và quay một vòng quanh tâm mất khoảng $230$ triệu năm. Tính tốc độ của Mặt Trời quanh tâm Ngân Hà (km/s). Trong $4{,}6$ tỉ năm tuổi của mình, Mặt Trời đã đi được khoảng bao nhiêu vòng?</li><li>Thu nhỏ Hệ Mặt Trời theo tỉ lệ $1:10^{10}$ thì Mặt Trời thành quả bóng đường kính $14$ cm. Mặt Trăng cách Trái Đất $384\\,000$ km. Trong mô hình đó, Mặt Trăng cách Trái Đất bao nhiêu xentimét?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-6-0\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Mặt sóng ánh sáng lan ra từ Mặt Trời, lần lượt tới Trái Đất, Sao Hoả (khung phóng to), Sao Mộc, Sao Thổ, Sao Hải Vương\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ánh sáng rời Mặt Trời, lan ra các hành tinh</text><defs><clipPath id=\"c17-6-cl\"><rect x=\"0\" y=\"122\" width=\"420\" height=\"78\"/></clipPath><clipPath id=\"c17-6-ci\"><rect x=\"16\" y=\"50\" width=\"250\" height=\"62\"/></clipPath></defs><rect x=\"16\" y=\"50\" width=\"250\" height=\"62\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"262\" y=\"66\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">phóng to ×10</text><line x1=\"24.0\" y1=\"92.0\" x2=\"258.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 4\" opacity=\"1\"/><circle cx=\"24.0\" cy=\"92.0\" r=\"8.0\" fill=\"#facc15\" fill-opacity=\"0.9\" stroke=\"#fb923c\" stroke-width=\"2\"/><line x1=\"36.0\" y1=\"92.0\" x2=\"42.0\" y2=\"92.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"32.5\" y1=\"83.5\" x2=\"36.7\" y2=\"79.3\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"24.0\" y1=\"80.0\" x2=\"24.0\" y2=\"74.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"15.5\" y1=\"83.5\" x2=\"11.3\" y2=\"79.3\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"12.0\" y1=\"92.0\" x2=\"6.0\" y2=\"92.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"15.5\" y1=\"100.5\" x2=\"11.3\" y2=\"104.7\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"24.0\" y1=\"104.0\" x2=\"24.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"32.5\" y1=\"100.5\" x2=\"36.7\" y2=\"104.7\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"24\" cy=\"92\" r=\"1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" clip-path=\"url(#c17-6-ci)\"><animate attributeName=\"r\" values=\"1.0;3648.0\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"144.0\" cy=\"92\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"144.0\" cy=\"92\" r=\"10\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.0329\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"144.0\" y=\"78\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Trái Đất</text><circle cx=\"206.4\" cy=\"92\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"206.4\" cy=\"92\" r=\"10\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.0500\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"206.4\" y=\"78\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Sao Hoả</text><text x=\"144\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">1 AU</text><line x1=\"24.0\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"3 4\" opacity=\"1\"/><circle cx=\"24.0\" cy=\"160.0\" r=\"5.0\" fill=\"#facc15\" fill-opacity=\"0.9\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><line x1=\"18.0\" y1=\"152.0\" x2=\"18.0\" y2=\"168.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"47.4\" y1=\"152.0\" x2=\"47.4\" y2=\"168.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"18.0\" y1=\"112.0\" x2=\"18.0\" y2=\"152.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><line x1=\"266.0\" y1=\"112.0\" x2=\"47.4\" y2=\"152.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"1\"/><circle cx=\"24\" cy=\"160\" r=\"1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" clip-path=\"url(#c17-6-cl)\"><animate attributeName=\"r\" values=\"1.0;368.9\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"87.1\" cy=\"160\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"87.1\" cy=\"160\" r=\"10\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.1711\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"87.1\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Sao Mộc</text><circle cx=\"139.3\" cy=\"160\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"139.3\" cy=\"160\" r=\"10\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.3125\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"139.3\" y=\"186\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">Sao Thổ</text><circle cx=\"388.0\" cy=\"160\" r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"388.0\" cy=\"160\" r=\"10\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9868\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"378.0\" y=\"148\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">Sao Hải Vương, 30 AU</text><text opacity=\"0\" x=\"378.0\" y=\"190\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">tới Sao Hải Vương: t = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9990\" calcMode=\"discrete\" dur=\"8.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khoảng cách đúng tỉ lệ AU (khung trên phóng to 10 lần), ánh sáng đi đều; chạy chậm hơn thật nhiều lần, không ghi tỉ lệ thời gian. Cỡ hành tinh không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Chuyển động đều:</strong> $t=\\dfrac{s}{v}$ ; ánh sáng và sóng vô tuyến đi với $c=3\\cdot10^5$ km/s.</li><li><strong>Quỹ đạo tròn:</strong> $v=\\dfrac{2\\pi r}{T}$.</li><li><strong>Đơn vị khoảng cách:</strong> $1$ AU $=1{,}5\\cdot10^8$ km ; $1$ ly $=9{,}46\\cdot10^{12}$ km (quãng đường ánh sáng đi trong một năm).</li><li><strong>Đổi thời gian:</strong> $1$ năm $=365{,}25\\cdot86\\,400\\approx3{,}156\\cdot10^7$ s.</li><li><strong>Mô hình tỉ lệ $1:k$:</strong> mọi độ dài chia cho $k$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Ánh sáng tới Sao Hải Vương</span></p>$$t_E=\\dfrac{1{,}5\\cdot10^8\\ \\text{km}}{3\\cdot10^5\\ \\text{km/s}}=500\\ \\text{s}\\approx8{,}3\\ \\text{phút}$$$$t_N=\\dfrac{30\\cdot1{,}5\\cdot10^8}{3\\cdot10^5}=15\\,000\\ \\text{s}$$<div class=\"bt-ans\">$$t_N\\approx4{,}17\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tín hiệu tới Sao Hoả</span></p>$$t_{min}=\\dfrac{0{,}52\\cdot1{,}5\\cdot10^8}{3\\cdot10^5}=260\\ \\text{s}\\approx4{,}3\\ \\text{phút}$$$$t_{max}=\\dfrac{2{,}52\\cdot1{,}5\\cdot10^8}{3\\cdot10^5}=1260\\ \\text{s}$$<div class=\"bt-ans\">$$t_{max}=21{,}0\\ \\text{phút}$$</div><p>Lệnh đi mất $4$–$21$ phút, hình ảnh từ xe về lại mất chừng đó nữa : khi người lái thấy vật cản thì xe đã đi qua từ lâu. Vì vậy xe phải tự lái, người ở Trái Đất chỉ gửi lộ trình.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ quỹ đạo Trái Đất</span></p>$$T=365{,}25\\cdot86\\,400\\approx3{,}156\\cdot10^7\\ \\text{s}$$$$v=\\dfrac{2\\pi\\cdot1{,}5\\cdot10^8\\ \\text{km}}{3{,}156\\cdot10^7\\ \\text{s}}$$<div class=\"bt-ans\">$$v\\approx29{,}9\\ \\text{km/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khoảng cách tới Proxima theo AU</span></p>$$s=4{,}24\\cdot9{,}46\\cdot10^{12}\\approx4{,}01\\cdot10^{13}\\ \\text{km}$$$$\\dfrac{4{,}01\\cdot10^{13}}{1{,}5\\cdot10^8}$$<div class=\"bt-ans\">$$s\\approx2{,}67\\cdot10^5\\ \\text{AU}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian bay tới Proxima</span></p>$$t=\\dfrac{4{,}01\\cdot10^{13}\\ \\text{km}}{17\\ \\text{km/s}}\\approx2{,}36\\cdot10^{12}\\ \\text{s}$$$$t=\\dfrac{2{,}36\\cdot10^{12}}{3{,}156\\cdot10^7}\\ \\text{năm}$$<div class=\"bt-ans\">$$t\\approx7{,}5\\cdot10^4\\ \\text{năm}\\ (\\text{khoảng}\\ 75\\,000\\ \\text{năm})$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Tốc độ Mặt Trời quanh tâm Ngân Hà</span></p>$$r=26\\,000\\cdot9{,}46\\cdot10^{12}\\approx2{,}46\\cdot10^{17}\\ \\text{km}$$$$T=2{,}3\\cdot10^8\\cdot3{,}156\\cdot10^7\\approx7{,}26\\cdot10^{15}\\ \\text{s}$$$$v=\\dfrac{2\\pi r}{T}$$<div class=\"bt-ans\">$$v\\approx213\\ \\text{km/s}$$</div>$$\\text{số vòng}=\\dfrac{4{,}6\\cdot10^9\\ \\text{năm}}{2{,}3\\cdot10^8\\ \\text{năm}}$$<div class=\"bt-ans\">$$\\text{khoảng}\\ 20\\ \\text{vòng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Mặt Trăng trong mô hình</span></p>$$384\\,000\\ \\text{km}=3{,}84\\cdot10^{10}\\ \\text{cm}$$$$\\dfrac{3{,}84\\cdot10^{10}\\ \\text{cm}}{10^{10}}$$<div class=\"bt-ans\">$$3{,}84\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>Mô hình : Mặt Trời $1{,}39\\cdot10^6$ km $\\to13{,}9$ cm, khớp quả bóng $14$ cm đề cho ✓.</p><p>Ánh sáng đi $4{,}24$ năm thì tàu chậm hơn ánh sáng $\\dfrac{3\\cdot10^5}{17}\\approx1{,}8\\cdot10^4$ lần đi mất $4{,}24\\cdot1{,}8\\cdot10^4\\approx7{,}5\\cdot10^4$ năm ✓ (cách tính thứ hai).</p><p>Mặt Trời quanh tâm Ngân Hà nhanh gấp khoảng $7$ lần Trái Đất quanh Mặt Trời, nhưng một vòng vẫn mất hàng trăm triệu năm vì quỹ đạo quá lớn ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) tới Trái Đất $500$ s $\\approx8{,}3$ phút ; tới Sao Hải Vương $\\approx4{,}17$ h</p><p>b) ít nhất $\\approx4{,}3$ phút, nhiều nhất $21{,}0$ phút ; trễ quá lớn nên xe phải tự lái</p><p>c) $v\\approx29{,}9$ km/s</p><p>d) $\\approx2{,}67\\cdot10^5$ AU ; khoảng $75\\,000$ năm</p><p>e) $v\\approx213$ km/s ; khoảng $20$ vòng</p><p>f) Mặt Trăng cách Trái Đất $3{,}84$ cm</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>AU, năm ánh sáng, triệu năm</strong> → đổi hết ra km và giây, rồi dùng $t=s/v$ hoặc $v=2\\pi r/T$ ; năm ánh sáng là khoảng cách.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c17-6-2\"><svg viewBox=\"0 0 420 252\" role=\"img\" aria-label=\"Ngân Hà nhìn nghiêng: Mặt Trời ở cách tâm 26 000 năm ánh sáng, quay một vòng mất 230 triệu năm; bên dưới là các đơn vị và dữ kiện\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Ngân Hà nhìn nghiêng (đường kính ~100 000 ly)</text><ellipse cx=\"210\" cy=\"104\" rx=\"186\" ry=\"48\" fill=\"#94a3b8\" fill-opacity=\".18\" stroke=\"#94a3b8\" stroke-width=\"1.6\"/><ellipse cx=\"210\" cy=\"104\" rx=\"34\" ry=\"16\" fill=\"#facc15\" fill-opacity=\".35\" stroke=\"#fb923c\" stroke-width=\"1.4\"/><ellipse cx=\"210\" cy=\"104\" rx=\"96.7\" ry=\"25.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/><circle cx=\"306.7\" cy=\"104.0\" r=\"5.0\" fill=\"#facc15\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M301.7,100.7 L306.7,92.0 L311.7,100.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"104.0\" x2=\"306.7\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"104.0\" r=\"3\" fill=\"currentColor\"/><text x=\"258.4\" y=\"146\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">r = 26 000 ly</text><text x=\"314.7\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Mặt Trời</text><text x=\"314.7\" y=\"108\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">v = ?</text><text x=\"210\" y=\"174\" fill=\"#047857\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">một vòng: T = 230 triệu năm</text><text x=\"16\" y=\"196\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">1 AU = 1,5·10<tspan dy=\"-6\" font-size=\"12\">8</tspan><tspan dy=\"6\"> km</tspan></text><text x=\"16\" y=\"218\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">1 ly = 9,46·10<tspan dy=\"-6\" font-size=\"12\">12</tspan><tspan dy=\"6\"> km</tspan></text><text x=\"16\" y=\"240\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">c = 3·10<tspan dy=\"-6\" font-size=\"12\">5</tspan><tspan dy=\"6\"> km/s</tspan></text><text x=\"230\" y=\"196\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Proxima: 4,24 ly</text><text x=\"230\" y=\"218\" fill=\"#b91c1c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">tàu 17 km/s: t = ?</text><text x=\"230\" y=\"240\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">mô hình 1 : 10<tspan dy=\"-6\" font-size=\"12\">10</tspan><tspan dy=\"6\"></tspan></text></svg><figcaption>Dữ kiện: Ngân Hà và quỹ đạo Mặt Trời vẽ minh hoạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Cho tốc độ ánh sáng $c=3\\cdot10^5$ km/s; $1$ AU $=1{,}5\\cdot10^8$ km\"</td><td>$c=3\\cdot10^5$ km/s ; $1$ AU $=1{,}5\\cdot10^8$ km</td><td>Chuyển động đều : $t=\\dfrac{s}{v}$ ; đổi khoảng cách ra km trước</td></tr><tr><td>\"Tới Sao Hải Vương (cách Mặt Trời $30$ AU) mất bao nhiêu giờ?\"</td><td>$s=30$ AU ; $t=?$ (h)</td><td>$1$ h $=3600$ s</td></tr><tr><td>\"Sóng vô tuyến (truyền với tốc độ ánh sáng) đi từ Trái Đất tới một xe tự hành trên Sao Hoả\"</td><td>$0{,}52$ AU … $2{,}52$ AU</td><td>⚠ đề hỏi một chiều Trái Đất → xe ; khi điều khiển cần cả lệnh đi lẫn hình ảnh về</td></tr><tr><td>\"Tính tốc độ của Trái Đất trên quỹ đạo quanh Mặt Trời (km/s)\"</td><td>$r=1$ AU ; $T=1$ năm</td><td>Quỹ đạo tròn : $v=\\dfrac{2\\pi r}{T}$, $T$ đổi ra giây</td></tr><tr><td>\"Ngôi sao gần nhất (Proxima Centauri) cách ta $4{,}24$ ly\"</td><td>$s=4{,}24$ ly</td><td>⚠ năm ánh sáng là đơn vị đo đại lượng nào ? $1$ ly $=9{,}46\\cdot10^{12}$ km</td></tr><tr><td>\"Một tàu vũ trụ bay đều với tốc độ $17$ km/s thì mất bao nhiêu năm để tới đó?\"</td><td>$v=17$ km/s ; $t=?$ (năm)</td><td>$t=\\dfrac{s}{v}$ rồi đổi giây ra năm</td></tr><tr><td>\"Mặt Trời cách tâm Ngân Hà khoảng $26\\,000$ ly và quay một vòng quanh tâm mất khoảng $230$ triệu năm\"</td><td>$r=26\\,000$ ly ; $T=2{,}3\\cdot10^8$ năm</td><td>$v=\\dfrac{2\\pi r}{T}$ với $r$ theo km, $T$ theo giây ; số vòng $=\\dfrac{\\text{tuổi}}{T}$</td></tr><tr><td>\"Thu nhỏ Hệ Mặt Trời theo tỉ lệ $1:10^{10}$\"</td><td>tỉ lệ $1:10^{10}$ ; $d=384\\,000$ km</td><td>Độ dài trong mô hình $=\\dfrac{\\text{độ dài thật}}{10^{10}}$ ; $1$ km $=10^5$ cm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>AU, năm ánh sáng, triệu năm</b> → <b>đổi ra km, giây</b> rồi dùng <b>t = s/v, v = 2πr/T</b>",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Ánh sáng tới Sao Hải Vương",
+     "hoi": "Ánh sáng Mặt Trời tới Sao Hải Vương mất bao nhiêu giờ?",
+     "dap_so": 4.167,
+     "sai_so": 0.03,
+     "don_vi": "h",
+     "loi_hay_gap": "Quên đổi AU ra km nên chia $30$ cho $3\\cdot10^5$; hoặc đổi giây ra giờ bằng cách chia $60$."
+    },
+    {
+     "tieu_de": "Tín hiệu tới Sao Hoả",
+     "hoi": "Khi Sao Hoả ở xa nhất, sóng vô tuyến từ Trái Đất tới xe mất bao nhiêu phút?",
+     "dap_so": 21.0,
+     "sai_so": 0.2,
+     "don_vi": "phút",
+     "loi_hay_gap": "Cộng thêm $1$ AU khoảng cách Trái Đất – Mặt Trời: $2{,}52$ AU đã là khoảng cách Trái Đất – Sao Hoả.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{2{,}52\\cdot1{,}5\\cdot10^8\\ \\text{km}}{3\\cdot10^5\\ \\text{km/s}}$ rồi đổi ra phút",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{(2{,}52+1)\\cdot1{,}5\\cdot10^8\\ \\text{km}}{3\\cdot10^5\\ \\text{km/s}}$",
+       "dung": false,
+       "vi_sao": "$2{,}52$ AU là khoảng cách giữa hai hành tinh, không cần cộng khoảng cách Trái Đất – Mặt Trời."
+      },
+      {
+       "text": "Tính như trên rồi nhân $2$ cho đi và về",
+       "dung": false,
+       "vi_sao": "Đề hỏi một chiều từ Trái Đất tới xe; đi và về là để giải thích vì sao không lái trực tiếp."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ quỹ đạo Trái Đất",
+     "hoi": "Trái Đất chuyển động quanh Mặt Trời với tốc độ bao nhiêu km/s?",
+     "dap_so": 29.87,
+     "sai_so": 0.2,
+     "don_vi": "km/s",
+     "loi_hay_gap": "Chia $1$ AU cho một năm (quên chu vi $2\\pi r$), hoặc đổi một năm ra giây bằng $365{,}25\\cdot3600$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{2\\pi\\cdot1\\ \\text{AU}}{365{,}25\\cdot86\\,400\\ \\text{s}}$",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{1\\ \\text{AU}}{365{,}25\\cdot86\\,400\\ \\text{s}}$",
+       "dung": false,
+       "vi_sao": "Một năm Trái Đất đi hết cả vòng quỹ đạo, quãng đường là chu vi $2\\pi r$, không phải bán kính."
+      },
+      {
+       "text": "$v=\\dfrac{2\\pi\\cdot1\\ \\text{AU}}{365{,}25\\cdot3600\\ \\text{s}}$",
+       "dung": false,
+       "vi_sao": "Một ngày có $86\\,400$ s; $365{,}25\\cdot3600$ chỉ là số giây trong $365{,}25$ giờ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách tới Proxima theo AU",
+     "hoi": "Khoảng cách tới Proxima Centauri bằng bao nhiêu AU?",
+     "dap_so": 267403,
+     "sai_so": 2500,
+     "don_vi": "AU",
+     "loi_hay_gap": "Coi năm ánh sáng là đơn vị thời gian ($4{,}24$ năm) rồi nhân với số ngày: năm ánh sáng là quãng đường ánh sáng đi trong một năm.",
+     "chon_buoc_ke": [
+      {
+       "text": "$s=4{,}24\\cdot9{,}46\\cdot10^{12}$ km, rồi chia cho $1{,}5\\cdot10^8$ km",
+       "dung": true
+      },
+      {
+       "text": "$s=4{,}24\\cdot9{,}46\\cdot10^{12}$ km, rồi nhân với $1{,}5\\cdot10^8$",
+       "dung": false,
+       "vi_sao": "Đổi km ra AU phải chia cho số km của $1$ AU; nhân làm số lớn vô lí."
+      },
+      {
+       "text": "$4{,}24$ ly $=4{,}24\\cdot365{,}25$ ngày, rồi đổi ra AU",
+       "dung": false,
+       "vi_sao": "Năm ánh sáng là đơn vị khoảng cách, không phải thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bay tới Proxima",
+     "hoi": "Tàu bay đều 17 km/s mất khoảng bao nhiêu năm để tới Proxima?",
+     "dap_so": 74766,
+     "sai_so": 1500,
+     "don_vi": "năm",
+     "loi_hay_gap": "Trả lời $4{,}24$ năm (thời gian của ánh sáng), hoặc đổi giây ra năm mà quên nhân $365{,}25$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{s\\ (\\text{km})}{17\\ \\text{km/s}}$, rồi chia cho số giây của một năm",
+       "dung": true
+      },
+      {
+       "text": "$t=4{,}24$ năm vì khoảng cách là $4{,}24$ ly",
+       "dung": false,
+       "vi_sao": "Đó là thời gian của ánh sáng; tàu chậm hơn ánh sáng hàng vạn lần."
+      },
+      {
+       "text": "$t=\\dfrac{s}{17}$ rồi chia cho $86\\,400$",
+       "dung": false,
+       "vi_sao": "Chia $86\\,400$ chỉ đổi giây ra ngày; còn phải chia tiếp cho $365{,}25$ để ra năm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ Mặt Trời quanh tâm Ngân Hà",
+     "hoi": "Mặt Trời quay quanh tâm Ngân Hà với tốc độ bao nhiêu km/s?",
+     "dap_so": 212.9,
+     "sai_so": 3,
+     "don_vi": "km/s",
+     "loi_hay_gap": "Lấy $r/T$ (quên $2\\pi$), hoặc tính $2\\pi r/T$ theo ly/năm rồi đọc luôn là km/s.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{2\\pi r}{T}$ với $r$ đổi ra km, $T$ đổi ra giây",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{r}{T}$ với $r$ theo km, $T$ theo giây",
+       "dung": false,
+       "vi_sao": "Một vòng quanh tâm là chu vi $2\\pi r$, không phải bán kính."
+      },
+      {
+       "text": "$v=\\dfrac{2\\pi r}{T}$ với $r$ theo ly, $T$ theo năm, đọc kết quả là km/s",
+       "dung": false,
+       "vi_sao": "Đơn vị ly/năm khác km/s; $1$ ly/năm chính bằng tốc độ ánh sáng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mặt Trăng trong mô hình",
+     "hoi": "Trong mô hình 1: 10¹⁰, Mặt Trăng cách Trái Đất bao nhiêu xentimét?",
+     "dap_so": 3.84,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia $384\\,000$ cho $10^{10}$ mà quên đổi km ra cm, nên ra một số cực nhỏ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $384\\,000$ km ra cm, rồi chia cho $10^{10}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $384\\,000$ chia $10^{10}$, coi kết quả là cm",
+       "dung": false,
+       "vi_sao": "Kết quả của phép chia vẫn theo km; phải đổi $1$ km $=10^5$ cm."
+      },
+      {
+       "text": "So với quả bóng: lấy $384\\,000$ nhân $14$ cm",
+       "dung": false,
+       "vi_sao": "Tỉ lệ $1:10^{10}$ áp cho mọi độ dài; không nhân với đường kính quả bóng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Lúc $0$ giờ ngày $5/10$ là thời điểm không trăng (Mặt Trăng ở giữa Mặt Trời và Trái Đất). Lấy Tuần Trăng $S=29{,}5$ ngày; coi các pha cách đều nhau $\\dfrac{S}{4}$.</p>\n<p>a) Tìm ngày (và giờ gần đúng) có trăng thượng huyền, trăng tròn, trăng hạ huyền và lần không trăng tiếp theo. Tháng 10 có $31$ ngày.</p>\n<p>b) Mỗi ngày Mặt Trăng mọc trễ hơn hôm trước khoảng bao nhiêu phút?</p>\n<p>c) Hôm trăng tròn, Mặt Trăng mọc khoảng $18$ giờ. Ba ngày sau, Mặt Trăng mọc khoảng mấy giờ? Đêm hôm đó, đầu hôm (khoảng $19$ giờ) có nhìn thấy trăng không?</p><details><summary>Hướng dẫn giải</summary><p>a) Mỗi pha chính cách nhau $\\dfrac{S}{4}=\\dfrac{29{,}5}{4}\\approx7{,}4$ ngày.</p>\n<p>Thượng huyền: $5+7{,}4=12{,}4$, tức khoảng $9$ giờ ngày $12/10$.</p>\n<p>Trăng tròn: $5+14{,}75=19{,}75$, tức khoảng $18$ giờ ngày $19/10$.</p>\n<p>Hạ huyền: $5+22{,}1=27{,}1$, tức khoảng $3$ giờ ngày $27/10$.</p>\n<p>Không trăng tiếp theo: $5+29{,}5=34{,}5$; trừ $31$ ngày của tháng 10 được $3{,}5$, tức khoảng $12$ giờ ngày $3/11$.</p>\n<p>b) Sau một Tuần Trăng, giờ mọc lùi trọn một vòng $24$ giờ, nên mỗi ngày trễ $\\dfrac{24\\cdot60}{29{,}5}\\approx49$ phút.</p>\n<p>c) Ba ngày sau trăng tròn, trăng mọc trễ $3\\cdot49\\approx146$ phút $\\approx2$ giờ $26$ phút: khoảng $20$ giờ $30$.</p>\n<p>Lúc $19$ giờ trăng chưa mọc nên chưa thấy; phải chờ sau $20$ giờ $30$ mới thấy trăng (khuyết dần) ló lên ở phía Đông.</p>\n<p>Giả thiết đã dùng: các pha cách đều nhau và giờ mọc trễ đều mỗi ngày (thực tế thay đổi trong khoảng $30$–$70$ phút tuỳ mùa và vĩ độ).</p></details><h4>Bài 2 · Dễ</h4><p>Trái Đất tự quay một vòng ($360^\\circ$) trong $24$ giờ. Cả Việt Nam dùng chung giờ múi $+7$, tức giờ của kinh tuyến chuẩn $105^\\circ$Đ. Bỏ qua sự chênh lệch nhỏ của giữa trưa thật theo mùa.</p>\n<p>a) Trái Đất quay $1^\\circ$ mất bao nhiêu phút? Huế ở kinh độ $107{,}6^\\circ$Đ, Hà Nội ở $105{,}8^\\circ$Đ. Nơi nào có giữa trưa (Mặt Trời lên cao nhất) sớm hơn, sớm hơn bao nhiêu phút?</p>\n<p>b) TP.HCM ở kinh độ $106{,}7^\\circ$Đ. Đồng hồ ở TP.HCM chỉ mấy giờ lúc giữa trưa thật?</p>\n<p>c) Một chuyến bay cất cánh ở Hà Nội lúc $23$ giờ $30$ ngày $1/7$ (giờ Việt Nam), bay $13$ giờ tới Paris. Mùa hè Paris dùng giờ múi $+2$. Máy bay hạ cánh lúc mấy giờ, ngày nào theo giờ Paris?</p><details><summary>Hướng dẫn giải</summary><p>a) $1^\\circ$ ứng với $\\dfrac{24\\cdot60}{360}=4$ phút.</p>\n<p>Trái Đất quay từ Tây sang Đông nên nơi ở phía Đông thấy Mặt Trời qua đỉnh trước: Huế sớm hơn Hà Nội.</p>\n<p>Chênh lệch: $(107{,}6-105{,}8)\\cdot4=1{,}8\\cdot4\\approx7{,}2$ phút.</p>\n<p>b) TP.HCM ở phía Đông kinh tuyến chuẩn $106{,}7-105=1{,}7^\\circ$, nên giữa trưa thật đến sớm hơn $12$ giờ đồng hồ một khoảng $1{,}7\\cdot4\\approx6{,}8$ phút.</p>\n<p>Đồng hồ chỉ khoảng $11$ giờ $53$ phút.</p>\n<p>c) Theo giờ Việt Nam, máy bay hạ cánh lúc $23$ giờ $30 + 13$ giờ $= 12$ giờ $30$ ngày $2/7$.</p>\n<p>Paris chậm hơn Việt Nam $7-2=5$ giờ, nên giờ Paris là $7$ giờ $30$ ngày $2/7$.</p>\n<p>Bẫy: cộng $5$ giờ thay vì trừ (Paris ở phía Tây nên giờ chậm hơn, tức đồng hồ chỉ số nhỏ hơn).</p></details><h4>Bài 3 · Trung bình</h4><p>Huế ở vĩ độ $\\varphi=16{,}5^\\circ$B. Cắm thẳng đứng một cọc cao $1\\ \\text{m}$ trên sân phẳng. Góc cao Mặt Trời buổi trưa $h=90^\\circ-|\\varphi-\\delta|$, với xích vĩ Mặt Trời $\\delta=0^\\circ$ (xuân phân, thu phân), $+23{,}5^\\circ$ (hạ chí), $-23{,}5^\\circ$ (đông chí). Coi tia nắng song song, bỏ qua khúc xạ khí quyển.</p>\n<p>a) Tính góc cao Mặt Trời buổi trưa ở Huế vào xuân phân, hạ chí và đông chí.</p>\n<p>b) Tính độ dài bóng cọc buổi trưa trong ba ngày đó và cho biết bóng ngả về phía nào.</p>\n<p>c) Ở một nơi khác trên Bắc bán cầu, trưa ngày xuân phân bóng của cọc $1\\ \\text{m}$ dài $0{,}16\\ \\text{m}$, ngả về phía Bắc. Nơi đó ở vĩ độ bao nhiêu?</p><details><summary>Hướng dẫn giải</summary><p>a) Xuân phân: $h=90^\\circ-16{,}5^\\circ=73{,}5^\\circ$.</p>\n<p>Hạ chí: $h=90^\\circ-|16{,}5^\\circ-23{,}5^\\circ|=90^\\circ-7^\\circ=83{,}0^\\circ$.</p>\n<p>Đông chí: $h=90^\\circ-|16{,}5^\\circ+23{,}5^\\circ|=90^\\circ-40^\\circ=50{,}0^\\circ$.</p>\n<p>b) Bóng cọc cao $1\\ \\text{m}$ dài $\\ell=\\dfrac{1}{\\tan h}$.</p>\n<p>Xuân phân: $\\ell=\\dfrac{1}{\\tan73{,}5^\\circ}\\approx0{,}30\\ \\text{m}$, ngả về Bắc ($\\delta\\lt\\varphi$: Mặt Trời ở phía Nam).</p>\n<p>Hạ chí: $\\ell=\\dfrac{1}{\\tan83^\\circ}\\approx0{,}12\\ \\text{m}$, ngả về <strong>Nam</strong> ($\\delta=23{,}5^\\circ\\gt\\varphi$: Mặt Trời ở phía Bắc đỉnh đầu).</p>\n<p>Đông chí: $\\ell=\\dfrac{1}{\\tan50^\\circ}\\approx0{,}84\\ \\text{m}$, ngả về Bắc.</p>\n<p>c) Ngày xuân phân $\\delta=0$ nên $h=90^\\circ-\\varphi$, tức góc giữa tia nắng và cọc bằng đúng $\\varphi$.</p>\n<p>$\\tan\\varphi=\\dfrac{0{,}16}{1}$ nên $\\varphi\\approx9{,}1^\\circ$B (gần vĩ độ Cà Mau).</p>\n<p>Bẫy: lấy $h=90^\\circ-(\\varphi+\\delta)$ cho ngày hạ chí sẽ ra $50^\\circ$ (sai); quên đổi hướng bóng khi $\\delta\\gt\\varphi$.</p></details><h4>Bài 4 · Trung bình</h4><p>Khoảng năm $240$ TCN, Eratosthenes biết: trưa ngày hạ chí ở Syene (Ai Cập) Mặt Trời ở ngay đỉnh đầu (đáy giếng sâu được chiếu sáng), còn cùng lúc đó ở Alexandria, xa hơn về phía Bắc, tia nắng lệch phương thẳng đứng $7{,}2^\\circ$. Khoảng cách Syene – Alexandria ước khoảng $5000$ stadia. Coi hai nơi cùng kinh tuyến, tia nắng tới Trái Đất song song, Trái Đất là quả cầu.</p>\n<p>a) Vẽ hình, chứng minh góc ở tâm Trái Đất chắn cung Syene – Alexandria bằng $7{,}2^\\circ$.</p>\n<p>b) Giả thiết $1$ stadion $=157{,}5\\ \\text{m}$. Tính chu vi và bán kính Trái Đất theo cách của Eratosthenes.</p>\n<p>c) Ở Alexandria, cọc thẳng đứng $1\\ \\text{m}$ có bóng dài bao nhiêu lúc đó?</p>\n<p>d) Bàn về sai số: ngày nay ta biết chu vi kinh tuyến khoảng $40\\,000\\ \\text{km}$. Nếu độ dài stadion thật ra là $185\\ \\text{m}$ thì kết quả thay đổi thế nào? Nêu thêm hai nguồn sai số khác của phép đo.</p><details><summary>Hướng dẫn giải</summary><p>a) Ở Syene tia nắng đi theo bán kính (thẳng đứng). Ở Alexandria, phương thẳng đứng là bán kính $OA$. Tia nắng tới $A$ song song với tia tới Syene.</p>\n<p>Góc giữa tia nắng và $OA$ tại $A$ và góc ở tâm $\\widehat{SOA}$ là hai góc so le trong của hai đường song song cắt bởi đường $OA$, nên $\\widehat{SOA}=7{,}2^\\circ$.</p>\n<p>b) $7{,}2^\\circ=\\dfrac{360^\\circ}{50}$, nên cung Syene – Alexandria bằng $\\dfrac{1}{50}$ chu vi.</p>\n<p>$s=5000\\cdot157{,}5\\ \\text{m}=787\\,500\\ \\text{m}=787{,}5\\ \\text{km}$.</p>\n<p>Chu vi $C=50\\cdot787{,}5=39\\,375\\ \\text{km}\\approx39\\,400\\ \\text{km}$.</p>\n<p>Bán kính $R=\\dfrac{C}{2\\pi}\\approx6270\\ \\text{km}$.</p>\n<p>c) Bóng dài $\\ell=1\\cdot\\tan7{,}2^\\circ\\approx0{,}126\\ \\text{m}\\approx12{,}6\\ \\text{cm}$.</p>\n<p>d) Với $1$ stadion $=157{,}5\\ \\text{m}$: sai số so với $40\\,000\\ \\text{km}$ chỉ $\\dfrac{40\\,000-39\\,375}{40\\,000}\\approx1{,}6\\,\\%$.</p>\n<p>Với $1$ stadion $=185\\ \\text{m}$: $C=50\\cdot5000\\cdot0{,}185=46\\,250\\ \\text{km}$, lớn hơn thực tế khoảng $16\\,\\%$.</p>\n<p>Vậy độ chính xác \"nổi tiếng\" của Eratosthenes phụ thuộc nhiều vào việc ta tin stadion dài bao nhiêu; các sử gia chưa thống nhất con số này.</p>\n<p>Nguồn sai số khác: Syene không nằm đúng trên chí tuyến và không cùng kinh tuyến với Alexandria (lệch khoảng $3^\\circ$ kinh độ); khoảng cách $5000$ stadia chỉ là ước lượng theo thời gian đi đường; đo góc $7{,}2^\\circ$ bằng bóng cọc có sai số vì Mặt Trời không phải điểm sáng (bóng nhoè mép).</p>\n<p>Phương pháp vẫn đúng: chỉ cần một góc và một quãng đường đo trên mặt đất là ước được kích thước Trái Đất.</p></details><h4>Bài 5 · Khó</h4><p>Xét nhật thực khi tâm Mặt Trời, tâm Mặt Trăng và mắt người quan sát thẳng hàng; người quan sát đứng ở điểm mặt đất ngay dưới Mặt Trăng, nên khoảng cách từ mắt tới Mặt Trăng là $d-R_E$ ($d$: khoảng cách tâm Trái Đất – tâm Mặt Trăng). Góc trông nhỏ: $\\alpha\\approx\\dfrac{D}{\\text{khoảng cách}}$ (rad). Cho $D_S=1{,}39\\cdot10^6\\ \\text{km}$, $D_M=3470\\ \\text{km}$, $R_E=6370\\ \\text{km}$; khoảng cách Trái Đất – Mặt Trời $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$. Bỏ qua khí quyển.</p>\n<p>a) Tính góc trông Mặt Trời và góc trông Mặt Trăng (ra độ) khi $d=395\\,000\\ \\text{km}$. Đó là nhật thực loại gì? Phần trăm diện tích đĩa Mặt Trời bị che là bao nhiêu?</p>\n<p>b) Khi $d=384\\,000\\ \\text{km}$ (khoảng cách trung bình), nhật thực là toàn phần hay hình khuyên? Dùng nón bóng tối của Mặt Trăng (dài $L=\\dfrac{a\\,D_M}{D_S-D_M}$ với $a=\\text{AU}-d$, như bài Bóng tối – nửa tối) để tính bề rộng vùng trên mặt đất thấy hình khuyên.</p>\n<p>c) Đầu tháng 1, Trái Đất ở gần Mặt Trời nhất, cách $1{,}47\\cdot10^8\\ \\text{km}$. Khi đó $d$ lớn nhất bằng bao nhiêu thì vẫn có thể có nhật thực toàn phần? Nhật thực toàn phần dễ xảy ra hơn vào tháng 1 hay tháng 7?</p><details><summary>Hướng dẫn giải</summary><p>a) Mặt Trời: $\\alpha_S=\\dfrac{1{,}39\\cdot10^6}{1{,}5\\cdot10^8}\\approx9{,}27\\cdot10^{-3}\\ \\text{rad}\\approx0{,}531^\\circ$.</p>\n<p>Mặt Trăng: $\\alpha_M=\\dfrac{3470}{395\\,000-6370}=\\dfrac{3470}{388\\,630}\\ \\text{rad}\\approx0{,}512^\\circ$.</p>\n<p>$\\alpha_M\\lt\\alpha_S$: đĩa Mặt Trăng trông nhỏ hơn, che không kín, còn một vành sáng — nhật thực hình khuyên.</p>\n<p>Diện tích đĩa tỉ lệ với bình phương góc trông: phần bị che $\\left(\\dfrac{0{,}512}{0{,}531}\\right)^2\\approx0{,}93=93\\,\\%$.</p>\n<p>b) $\\alpha_M=\\dfrac{3470}{377\\,630}\\ \\text{rad}\\approx0{,}526^\\circ\\lt0{,}531^\\circ$: vẫn là hình khuyên (che khoảng $98\\,\\%$).</p>\n<p>Nón bóng tối: $a=1{,}5\\cdot10^8-384\\,000\\approx1{,}496\\cdot10^8\\ \\text{km}$, $L=\\dfrac{a\\cdot3470}{1{,}39\\cdot10^6-3470}\\approx374\\,400\\ \\text{km}$.</p>\n<p>Từ Mặt Trăng tới mặt đất $x=377\\,630\\ \\text{km}\\gt L$: chóp nón bóng tối không chạm đất.</p>\n<p>Sau chóp, các tia mép kéo dài loe ra thành nón ngược; tại mặt đất bề rộng vùng hình khuyên (tam giác đồng dạng) là $D_M\\dfrac{x-L}{L}=3470\\cdot\\dfrac{3190}{374\\,400}\\approx30\\ \\text{km}$.</p>\n<p>Chỉ một dải rất hẹp thấy hình khuyên; nơi khác trong nửa tối chỉ thấy nhật thực một phần.</p>\n<p>c) Điều kiện toàn phần: $\\alpha_M\\ge\\alpha_S$, tức $\\dfrac{D_M}{d-R_E}\\ge\\dfrac{D_S}{1{,}47\\cdot10^8}$.</p>\n<p>$d-R_E\\le\\dfrac{3470\\cdot1{,}47\\cdot10^8}{1{,}39\\cdot10^6}\\approx367\\,000\\ \\text{km}$, nên $d\\le373\\,000\\ \\text{km}$ (xấp xỉ).</p>\n<p>Với $1\\ \\text{AU}$ thì giới hạn là $d\\le\\ell_{\\max}+R_E\\approx374\\,000+6370\\approx381\\,000\\ \\text{km}$ (tính đủ chữ số). Tháng 1 Mặt Trời trông to hơn nên Mặt Trăng phải ở gần hơn mới che kín: nhật thực toàn phần khó xảy ra hơn vào tháng 1, dễ hơn vào tháng 7 (Trái Đất xa Mặt Trời nhất).</p>\n<p>Bẫy: quên trừ $R_E$ (dùng khoảng cách tới tâm Trái Đất); quên bình phương khi tính phần diện tích; dùng góc ở độ trong công thức $\\alpha=D/d$ (công thức cho rad).</p></details><h4>Bài 6 · Trung bình</h4><p>Lớp em muốn dựng mô hình Hệ Mặt Trời theo đúng tỉ lệ khoảng cách trên một sân trường dài $100\\ \\text{m}$: Mặt Trời đặt ở đầu sân, Sao Hải Vương ($30\\ \\text{AU}$) ở cuối sân. Cho $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$, $D_S=1{,}39\\cdot10^6\\ \\text{km}$, $D_E=12\\,740\\ \\text{km}$, khoảng cách Trái Đất – Mặt Trăng $384\\,000\\ \\text{km}$; Sao Hoả $1{,}52$; Sao Mộc $5{,}2$; Sao Thổ $9{,}5\\ \\text{AU}$; sao gần nhất (Proxima Centauri) cách khoảng $2{,}67\\cdot10^5\\ \\text{AU}$. Dùng cùng một tỉ lệ cho cả kích thước và khoảng cách.</p>\n<p>a) Tìm tỉ lệ của mô hình ($1\\ \\text{AU}$ ứng với bao nhiêu mét; tỉ lệ $1:N$, tìm $N$).</p>\n<p>b) Đặt Trái Đất, Sao Hoả, Sao Mộc, Sao Thổ cách Mặt Trời bao nhiêu mét?</p>\n<p>c) Mô hình Mặt Trời và Trái Đất to bằng bao nhiêu? Mặt Trăng đặt cách Trái Đất bao xa?</p>\n<p>d) Mô hình Proxima Centauri phải đặt cách sân trường bao xa? Rút ra nhận xét về \"độ trống\" của Hệ Mặt Trời.</p><details><summary>Hướng dẫn giải</summary><p>a) $30\\ \\text{AU}\\leftrightarrow100\\ \\text{m}$ nên $1\\ \\text{AU}\\leftrightarrow\\dfrac{100}{30}\\approx3{,}33\\ \\text{m}$.</p>\n<p>$N=\\dfrac{1{,}5\\cdot10^{11}\\ \\text{m}}{3{,}33\\ \\text{m}}=4{,}5\\cdot10^{10}$: tỉ lệ $1:4{,}5\\cdot10^{10}$.</p>\n<p>b) Trái Đất $3{,}3\\ \\text{m}$; Sao Hoả $1{,}52\\cdot3{,}33\\approx5{,}1\\ \\text{m}$; Sao Mộc $5{,}2\\cdot3{,}33\\approx17\\ \\text{m}$; Sao Thổ $9{,}5\\cdot3{,}33\\approx32\\ \\text{m}$.</p>\n<p>Bốn hành tinh đất đá chen trong khoảng $5\\ \\text{m}$ đầu sân; các hành tinh khổng lồ rải ra tới cuối sân.</p>\n<p>c) Mặt Trời: $\\dfrac{1{,}39\\cdot10^9\\ \\text{m}}{4{,}5\\cdot10^{10}}\\approx0{,}031\\ \\text{m}=3{,}1\\ \\text{cm}$ (nhỏ hơn quả bóng bàn).</p>\n<p>Trái Đất: $\\dfrac{1{,}274\\cdot10^7\\ \\text{m}}{4{,}5\\cdot10^{10}}\\approx2{,}8\\cdot10^{-4}\\ \\text{m}=0{,}28\\ \\text{mm}$ (một hạt bụi).</p>\n<p>Mặt Trăng cách Trái Đất $\\dfrac{3{,}84\\cdot10^8\\ \\text{m}}{4{,}5\\cdot10^{10}}\\approx8{,}5\\ \\text{mm}$.</p>\n<p>d) Proxima: $2{,}67\\cdot10^5\\cdot3{,}33\\ \\text{m}\\approx8{,}9\\cdot10^5\\ \\text{m}\\approx890\\ \\text{km}$ — ở một tỉnh khác.</p>\n<p>Nhận xét: trên sân $100\\ \\text{m}$ chỉ có một viên bi $3\\ \\text{cm}$ và vài hạt bụi nhỏ hơn milimét; gần như toàn bộ là khoảng trống. Còn từ Mặt Trời tới sao gần nhất là cả chặng gần $900\\ \\text{km}$ không có gì.</p>\n<p>Lưu ý: không thể vẽ cùng lúc kích thước và khoảng cách đúng tỉ lệ trên một trang sách — các hình Hệ Mặt Trời quen thuộc đều phóng to hành tinh.</p></details><h4>Bài 7 · Khó</h4><p>Ngày sao (thời gian Trái Đất tự quay đúng $360^\\circ$ so với các ngôi sao xa) dài $23$ h $56$ min $4$ s, ngắn hơn ngày Mặt Trời $24$ h. Xét một ngôi sao nằm trên xích đạo trời: ở mọi nơi nó mọc đúng hướng Đông và giờ mọc không phụ thuộc vĩ độ. Bỏ qua khúc xạ khí quyển; cả nước dùng giờ múi $+7$.</p>\n<p>a) Vẽ Trái Đất ở hai vị trí trên quỹ đạo cách nhau một ngày, giải thích (không cần tính) vì sao ngày sao ngắn hơn ngày Mặt Trời.</p>\n<p>b) Đêm $1/1$, ở Hà Nội ngôi sao mọc lúc $20$ giờ (giờ đồng hồ). Mỗi đêm nó mọc sớm hơn bao nhiêu? Ngày $1/4$ (sau $90$ ngày) nó mọc lúc mấy giờ? Đầu hôm ngày $1/4$ có thấy cảnh nó mọc không?</p>\n<p>c) Cũng đêm $1/1$, một bạn ở Đà Nẵng (kinh độ $108{,}2^\\circ$Đ) quan sát cùng ngôi sao; Hà Nội ở $105{,}8^\\circ$Đ. Theo đồng hồ, ở Đà Nẵng sao mọc sớm hơn hay muộn hơn Hà Nội, bao nhiêu phút?</p>\n<p>d) Vì sao chòm sao thấy được lúc đầu hôm thay đổi theo mùa? Sau bao lâu thì bầu trời đầu hôm lặp lại như cũ?</p><details><summary>Hướng dẫn giải</summary><p>a) Trong một ngày Trái Đất đi được $\\dfrac{360^\\circ}{365{,}25}\\approx0{,}986^\\circ$ trên quỹ đạo, cùng chiều tự quay.</p>\n<p>Sao ở rất xa nên hướng tới sao không đổi: quay đủ $360^\\circ$ là sao về lại chỗ cũ.</p>\n<p>Hướng tới Mặt Trời đã lệch đi $0{,}986^\\circ$, nên Trái Đất phải quay thêm chừng ấy (khoảng $4$ phút) Mặt Trời mới lại qua đỉnh: ngày Mặt Trời dài hơn ngày sao.</p>\n<p>b) Mỗi đêm sao mọc sớm hơn $24\\ \\text{h}-23\\ \\text{h}\\ 56\\ \\text{min}\\ 4\\ \\text{s}=3$ min $56$ s $=236\\ \\text{s}$ (gần $4$ phút).</p>\n<p>Sau $90$ ngày: $90\\cdot236\\ \\text{s}=21\\,240\\ \\text{s}\\approx5{,}9$ giờ $\\approx5$ giờ $54$ phút.</p>\n<p>Ngày $1/4$ sao mọc khoảng $20$ giờ $-\\ 5$ giờ $54$ phút $=14$ giờ $06$, lúc đang ban ngày: không thấy cảnh mọc; đầu hôm nó đã lên khá cao ở phía Đông.</p>\n<p>c) Bầu trời \"quay\" từ Đông sang Tây, $1^\\circ$ kinh độ ứng với khoảng $4$ phút. Đà Nẵng ở phía Đông Hà Nội $108{,}2^\\circ-105{,}8^\\circ=2{,}4^\\circ$ nên thấy sao mọc trước.</p>\n<p>Sớm hơn khoảng $2{,}4\\cdot4\\approx9{,}6$ phút: ở Đà Nẵng sao mọc lúc khoảng $19$ giờ $50$ (đồng hồ hai nơi chỉ cùng giờ $+7$).</p>\n<p>d) Sau $30$ ngày sao mọc sớm hơn $30\\cdot236\\ \\text{s}\\approx118$ phút $\\approx2$ giờ; sau nửa năm sớm khoảng $12$ giờ: chòm sao lúc đầu hôm mùa đông thì mùa hè lại ở trên trời ban ngày.</p>\n<p>Sau một năm ($365{,}25$ ngày) tổng độ sớm là $365{,}25\\cdot236\\ \\text{s}\\approx24$ h, tức trọn một vòng: bầu trời đầu hôm lặp lại sau $1$ năm.</p>\n<p>Bẫy: tưởng sao mọc muộn dần (lấy ngày sao $=24$ h $+4$ min); ở c) cho rằng phía Tây thấy trước.</p></details><h4>Bài 8 · Khó (HSG)</h4><p>Khoảng năm $270$ TCN, Aristarchus đã dùng bóng Trái Đất trong nguyệt thực để so kích thước Mặt Trăng với Trái Đất (ông ước bóng rộng khoảng $2$ lần Mặt Trăng). Bài này làm lại cách nghĩ đó với số liệu tốt hơn. Giả sử khi nguyệt thực đo được bề rộng vùng bóng tối của Trái Đất tại quỹ đạo Mặt Trăng bằng $k=2{,}6$ lần đường kính Mặt Trăng, và góc trông Mặt Trăng xấp xỉ góc trông Mặt Trời (khoảng $0{,}52^\\circ$). Coi tia sáng từ Mặt Trời tới là các tia thẳng, Mặt Trời ở rất xa so với Mặt Trăng; lấy $D_E=12\\,740\\ \\text{km}$ (đo được bằng phương pháp Eratosthenes).</p>\n<p>a) Chứng minh: khi đi ra xa Trái Đất một quãng $x$, bề rộng nón bóng tối của Trái Đất hẹp đi xấp xỉ $\\alpha_S\\,x$ ($\\alpha_S$: góc trông Mặt Trời, tính bằng rad).</p>\n<p>b) Suy ra tại quỹ đạo Mặt Trăng, bóng tối hẹp hơn $D_E$ đúng bằng $D_M$, từ đó $D_M\\approx\\dfrac{D_E}{1+k}$. Tính $D_M$.</p>\n<p>c) Từ góc trông $0{,}52^\\circ$, tính khoảng cách Trái Đất – Mặt Trăng.</p>\n<p>d) So với giá trị ngày nay ($D_M=3470\\ \\text{km}$; $d=384\\,000\\ \\text{km}$), sai số tương đối của mỗi kết quả là bao nhiêu? Đại lượng nào đo trong nguyệt thực ảnh hưởng nhiều nhất tới kết quả?</p><details><summary>Hướng dẫn giải</summary><p>a) Hai tia đi qua mép trên Mặt Trời – mép trên Trái Đất và mép dưới Mặt Trời – mép dưới Trái Đất giới hạn nón bóng tối.</p>\n<p>Mỗi tia nghiêng vào trong so với trục một góc $\\dfrac{\\alpha_S}{2}$ (nửa góc trông Mặt Trời nhìn từ Trái Đất, vì Mặt Trời rất xa).</p>\n<p>Đi thêm quãng $x$, mỗi mép tiến vào trục $\\dfrac{\\alpha_S}{2}x$, nên bề rộng giảm $\\alpha_S x$.</p>\n<p>b) Tại quỹ đạo Mặt Trăng ($x=d$): bóng tối rộng $D_E-\\alpha_S d$.</p>\n<p>Vì $\\alpha_S\\approx\\alpha_M=\\dfrac{D_M}{d}$ nên $\\alpha_S d\\approx D_M$: bóng tối rộng $D_E-D_M$.</p>\n<p>Theo quan sát $D_E-D_M=k\\,D_M$, nên $D_M=\\dfrac{D_E}{1+k}=\\dfrac{12\\,740}{3{,}6}\\approx3540\\ \\text{km}$.</p>\n<p>c) $0{,}52^\\circ=0{,}52\\cdot\\dfrac{\\pi}{180}\\approx9{,}08\\cdot10^{-3}\\ \\text{rad}$.</p>\n<p>$d=\\dfrac{D_M}{\\alpha_M}=\\dfrac{3540}{9{,}08\\cdot10^{-3}}\\approx390\\,000\\ \\text{km}$.</p>\n<p>d) $D_M$: $\\dfrac{3540-3470}{3470}\\approx2\\,\\%$; $d$: $\\dfrac{390\\,000-384\\,000}{384\\,000}\\approx1{,}6\\,\\%$.</p>\n<p>Kết quả nhạy nhất với $k$: chẳng hạn $k=2{,}5$ cho $D_M\\approx3640\\ \\text{km}$ (sai $5\\,\\%$). Mép bóng tối nhoè (do nửa tối và khí quyển Trái Đất) nên $k$ khó đo chính xác.</p>\n<p>Bẫy: lấy luôn $D_M=\\dfrac{D_E}{k}\\approx4900\\ \\text{km}$, quên rằng bóng tối đã hẹp đi một đoạn $D_M$ khi tới Mặt Trăng.</p></details>"
+ }
+}
