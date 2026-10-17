@@ -82,6 +82,7 @@
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan đã deploy 12/10; treo nhãn nguồn từng câu, chưa xem 375px
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn + kiểm chéo xong 12/10, chờ thầy duyệt rồi đăng; skill `phet` mới
+- [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật; còn nhắc trước hạn + bộ chọn câu ôn giữa kì
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
 - [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo mảng); treo thử 375px thật
 - [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 15/10: thử luồng danh hiệu/phụ đạo, 5 lỗi đã sửa (5a977bddd), chờ deploy
