@@ -43,6 +43,7 @@ FILES=(
   "supabase/migrations/20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql|Chuông báo em được cộng bù RP + nâng min_rp mọi bậc mùa 4, 5 lên ×1,07 rồi tính lại, báo em tụt bậc, có sao lưu rank_tiers|ngoài giờ học sinh làm bài (chạy sau 20261017190000)"
   "supabase/migrations/20261017210000_rank_giu_bac_sau_nang_nguong.sql|Bảng rank_tier_floor + rank_refresh_student giữ bậc cho 13 em tụt do nâng ngưỡng, chuông cải chính|ngoài giờ học sinh làm bài (chạy sau 20261017200000)"
   "supabase/migrations/20261017220000_chan_doan_doc_ngan_hang.sql|Policy cho em vào trễ đọc câu ngân hàng của các bài cần bù khi chưa nộp kiểm tra đầu vào (sửa lỗi \"không có câu nào\")|lúc nào cũng được"
+  "supabase/migrations/20261017230000_phu_dao_bo_de_luyen_tap.sql|Phụ đạo không sinh từ đề luyện tập: hàm exam_is_assessment + refresh_tutoring_needs chỉ xét đề kiểm tra/BTVN, dọn mục auto đang mở (có rollback)|lúc nào cũng được"
   "supabase/migrations/20261017230000_learning_events.sql|DT-01: bảng learning_events + log_learning_events(jsonb) + purge 12 tháng (pg_cron)|lúc nào cũng được"
   "supabase/migrations/20261017231000_feature_flags.sql|DT-12: bảng feature_flags theo lớp + feature_enabled(text)|lúc nào cũng được"
   "supabase/migrations/20261018100000_canh_bao_vang_mat_inactive_absent.sql|DT-07: student_alerts thêm inactive_7d + absent_streak, hàm sweep_engagement_alerts, pg_cron 6:00 VN hằng ngày|lúc nào cũng được; lần quét đầu có thể tạo nhiều cảnh báo"
