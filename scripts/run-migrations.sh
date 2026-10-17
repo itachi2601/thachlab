@@ -41,6 +41,7 @@ FILES=(
   "supabase/migrations/20261017150000_reset_code_manh_hon.sql|Mã đặt lại mật khẩu RS + 10 hex (trước 6), CHECK hạn tối đa 7 ngày cho bản ghi mới|lúc nào cũng được"
   "supabase/migrations/20261017190000_rank_bat_het_de_kiem_tra.sql|Bật nguồn RP mọi đề Kiểm tra/BTVN còn thiếu + đề đã nộp (mùa 4, 5) rồi tính lại mùa, có sao lưu|ngoài giờ học sinh làm bài"
   "supabase/migrations/20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql|Chuông báo em được cộng bù RP + nâng min_rp mọi bậc mùa 4, 5 lên ×1,07 rồi tính lại, báo em tụt bậc, có sao lưu rank_tiers|ngoài giờ học sinh làm bài (chạy sau 20261017190000)"
+  "supabase/migrations/20261017210000_rank_giu_bac_sau_nang_nguong.sql|Bảng rank_tier_floor + rank_refresh_student giữ bậc cho 13 em tụt do nâng ngưỡng, chuông cải chính|ngoài giờ học sinh làm bài (chạy sau 20261017200000)"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
