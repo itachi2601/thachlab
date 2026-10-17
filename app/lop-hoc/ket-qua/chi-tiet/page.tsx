@@ -13,6 +13,8 @@ import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import FixQuizModal from "@/components/rank/FixQuizModal";
 import type { FixableTopic, RankStatus } from "@/features/rank/types";
 import { fetchMyExamResultDetail, type MyExamAttemptDetail } from "@/services/analytics";
+import { gradeExam } from "@/features/exams/types";
+import { shouldOfferRetry } from "@/features/learning/next-steps";
 import { fetchFixableTopics, fetchMyRankStatus, fetchResultRpContext, type ResultRpContext } from "@/services/rank";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -87,7 +89,8 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
         }
       />
 
-      {!fromParent && (
+      {/* Chỉ mời làm lại khi điểm ở vùng giữa (cùng ngưỡng với thẻ Hôm nay và màn nộp bài); điểm thấp → ôn lại trước. */}
+      {!fromParent && shouldOfferRetry(gradeExam(detail.questions, detail.responses).score10) && (
         <p className="mt-4">
           <Link
             href={`/kiem-tra/lam?id=${detail.examId}`}

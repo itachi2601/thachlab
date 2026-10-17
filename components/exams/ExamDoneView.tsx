@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
 import ExamAdaptiveFeedback from "@/components/exams/ExamAdaptiveFeedback";
+import { shouldOfferRetry } from "@/features/learning/next-steps";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import Button from "@/components/ui/Button";
 import type { Exam, QuestionResponse } from "@/features/exams/types";
@@ -131,10 +132,13 @@ export default function ExamDoneView({
         <Link href="/lop-hoc" className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
           ← Về danh sách đề
         </Link>
-        {/* <a> thay Link: cùng đường dẫn /kiem-tra/lam nên cần tải lại trang để ExamRunner bắt đầu lượt mới. */}
-        <a href={`/kiem-tra/lam?id=${exam.id}`} className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
-          Làm lại đề này (không cộng thêm RP)
-        </a>
+        {/* Chỉ mời làm lại khi điểm ở vùng giữa (shouldOfferRetry) — điểm thấp thì ExamAdaptiveFeedback đã khuyên ôn lý thuyết trước,
+            không bày nút làm lại cạnh lời khuyên ngược lại. <a> thay Link: cùng đường dẫn /kiem-tra/lam nên cần tải lại trang. */}
+        {shouldOfferRetry(finalSummary.score10) && (
+          <a href={`/kiem-tra/lam?id=${exam.id}`} className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
+            Làm lại đề này (không cộng thêm RP)
+          </a>
+        )}
       </p>
 
       <h2

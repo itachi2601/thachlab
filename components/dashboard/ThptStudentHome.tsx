@@ -9,7 +9,7 @@ import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { expandClassIdsByGrade } from "@/services/classes";
+import { expandClassIdsByGrade, fetchMyClassIds } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
@@ -18,7 +18,7 @@ import TodayCard from "@/components/dashboard/TodayCard";
 import CuriosityCard from "@/components/dashboard/CuriosityCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import SlotTopicPicker from "@/components/results/SlotTopicPicker";
-import { rankNextSteps } from "@/features/learning/next-steps";
+import { rankNextSteps, shouldOfferRetry } from "@/features/learning/next-steps";
 import { fetchMyPendingHomework, type PendingHomework } from "@/services/ta-homework";
 import CatchupCard from "@/components/results/CatchupCard";
 import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
@@ -219,9 +219,13 @@ export default function ThptStudentHome({
       .catch(() => setMyWaitlist(new Map()));
   }
   useEffect(reloadTutoring, [studentId, classId]);
+  // Cùng nguồn với khối "Cần chú ý" ở trang Kết quả (mọi lớp em đang học, không giới hạn ngày) để hai chỗ không nói khác nhau.
   useEffect(() => {
-    fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
-  }, [classId]);
+    fetchMyClassIds(studentId)
+      .then((ids) => Promise.all((ids.length ? ids : [classId]).map((id) => fetchClassAssessments(id))))
+      .then((lists) => setAssessments(lists.flat()))
+      .catch(() => setAssessments([]));
+  }, [studentId, classId]);
 
   const classChapters = useMemo(() => {
     if (!classes || !chapters) return null;
@@ -287,7 +291,8 @@ export default function ThptStudentHome({
       const cur = worst.get(point.examId);
       if (!cur || point.score > cur.score) worst.set(point.examId, point); // điểm tốt nhất của đề
     }
-    return [...worst.values()].filter((p) => p.score < 6.5).sort((a, b) => a.score - b.score)[0] ?? null;
+    // Chỉ đề ở vùng giữa (shouldOfferRetry): điểm quá thấp thì việc đúng là ôn lý thuyết/kỹ năng yếu, không phải làm lại đề.
+    return [...worst.values()].filter((p) => shouldOfferRetry(p.score)).sort((a, b) => a.score - b.score)[0] ?? null;
   }, [scores]);
 
   // Kỹ năng yếu nhất (chỉ khi bài chứa nó có trong lớp để dựng được liên kết) và bài đã học xong gần nhất (để ôn cách quãng).
@@ -311,21 +316,21 @@ export default function ThptStudentHome({
     return last ? { id: last.id, chapterId: last.chapter_id, title: last.title } : null;
   }, [classLessons, progress]);
 
-  // Đề lớp đã giao trong 21 ngày gần nhất mà em chưa làm, mới giao trước. Đề cũ hơn vẫn ở "Cần chú ý" trang Kết quả.
+  // Đề lớp đã giao mà em chưa làm, mới giao trước — đúng danh sách "Cần chú ý" ở trang Kết quả (17/10/2026: bỏ cửa sổ 21 ngày
+  // vì trang Kết quả báo "còn 1 bài chưa làm" mà thẻ Hôm nay im lặng). rankNextSteps chỉ lấy tối đa 2 đề.
   const assignedTodo = useMemo(() => {
     if (!assessments) return [];
     const done = new Set(scores.map((p) => p.examId));
-    const since = nowMs - 21 * 86_400_000;
     const seen = new Set<number>();
     return assessments
       .filter((a) => {
         // Đề đã xoá/ẩn với em (RLS trả exams = null → "(Đề đã xóa)") thì không bày ra.
-        if (!a.examTitleKnown || done.has(a.examId) || seen.has(a.examId) || new Date(a.publishedAt).getTime() < since) return false;
+        if (!a.examTitleKnown || done.has(a.examId) || seen.has(a.examId)) return false;
         seen.add(a.examId);
         return true;
       })
       .map((a) => ({ examId: a.examId, examTitle: a.examTitle, publishedAt: a.publishedAt, kindLabel: KIND_LABEL[a.kind] ?? "" }));
-  }, [assessments, scores, nowMs]);
+  }, [assessments, scores]);
   const doneToday = useMemo(() => {
     const start = new Date(nowMs);
     start.setHours(0, 0, 0, 0);

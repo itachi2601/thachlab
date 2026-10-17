@@ -157,12 +157,7 @@ export default function ExamResultSummary({
                 {summary.correctCount}/{questions.length}
               </dd>
             </div>
-            <div className="flex items-center justify-between gap-3">
-              <dt className="text-muted">Điểm đã đạt</dt>
-              <dd className="font-mono font-semibold text-ink">
-                {num(summary.earned)}/{num(summary.max)}
-              </dd>
-            </div>
+            {/* 17/10/2026: bỏ dòng "Điểm đã đạt 0,5/1,25" — điểm thô theo thang của đề đứng cạnh thang 10 làm em rối (N1). */}
           </dl>
         </div>
 
@@ -212,7 +207,7 @@ export default function ExamResultSummary({
                   </li>
                 </ul>
               </div>
-              {s.max > 0 ? (
+              {s.max > 0 && summary.max === 10 ? (
                 <div className="rounded-xl bg-surface-2 px-4 py-2 text-center">
                   <p className="text-xs text-muted">Điểm</p>
                   <p className="font-mono font-bold text-ink">
@@ -220,7 +215,7 @@ export default function ExamResultSummary({
                     <span className="text-muted"> / {num(s.max)}</span>
                   </p>
                 </div>
-              ) : (
+              ) : s.max > 0 ? null : (
                 <p className="rounded-xl bg-warn/5 px-4 py-2 text-xs text-warn">
                   Thầy chấm tay
                 </p>

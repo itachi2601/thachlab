@@ -78,6 +78,15 @@ export function homeworkDueText(dueAt: string | null, now: Date = new Date()): s
 
 /** Điểm tốt nhất của đề dưới ngưỡng này mới gợi ý làm lại. */
 export const RETRY_BELOW_SCORE = 6.5;
+/**
+ * Dưới ngưỡng này KHÔNG gợi ý làm lại (17/10/2026): màn nộp bài đã khuyên "đọc lại lý thuyết trước, đừng làm lại đề ngay"
+ * (ExamAdaptiveFeedback, pct < 0,5), nên thẻ Hôm nay và các nút "Làm lại" phải nói cùng một ý. Cùng ngưỡng cho cả ba chỗ.
+ */
+export const RETRY_FROM_SCORE = 5;
+/** Có nên mời em làm lại đề này ngay không: chỉ khi điểm ở vùng giữa — đã nắm được một nửa nhưng chưa đạt. */
+export function shouldOfferRetry(score10: number): boolean {
+  return score10 >= RETRY_FROM_SCORE && score10 < RETRY_BELOW_SCORE;
+}
 
 /** Số việc tối đa trên thẻ: 1 nút nổi + 3 lựa chọn. */
 export const MAX_STEPS = 4;
@@ -151,7 +160,7 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
   }
 
   const retryIsHomework = steps.some((st) => st.href === `/kiem-tra/lam?id=${input.retryExam?.examId}`);
-  if (input.retryExam && !retryIsHomework && input.retryExam.score < RETRY_BELOW_SCORE) {
+  if (input.retryExam && !retryIsHomework && shouldOfferRetry(input.retryExam.score)) {
     steps.push({
       kind: "retry",
       key: `retry-${input.retryExam.examId}`,
