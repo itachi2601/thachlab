@@ -3,13 +3,14 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ChevronLeft, RotateCcw, Sparkles, Wrench } from "lucide-react";
+import { ChevronLeft,Sparkles, Wrench } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import Button from "@/components/ui/Button";
 import ExamResultSummary from "@/components/exams/ExamResultSummary";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
+import ExamNextSteps from "@/components/exams/ExamNextSteps";
 import FixQuizModal from "@/components/rank/FixQuizModal";
 import type { FixableTopic, RankStatus } from "@/features/rank/types";
 import { fetchMyExamResultDetail, type MyExamAttemptDetail } from "@/services/analytics";
@@ -89,18 +90,6 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
         }
       />
 
-      {/* Chỉ mời làm lại khi điểm ở vùng giữa (cùng ngưỡng với thẻ Hôm nay và màn nộp bài); điểm thấp → ôn lại trước. */}
-      {!fromParent && shouldOfferRetry(gradeExam(detail.questions, detail.responses).score10) && (
-        <p className="mt-4">
-          <Link
-            href={`/kiem-tra/lam?id=${detail.examId}`}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-line px-4 text-sm font-semibold text-ink hover:border-primary hover:text-primary"
-          >
-            <RotateCcw size={16} aria-hidden /> Làm lại đề này
-          </Link>
-          <span className="ml-2 text-[13px] text-muted">Làm lại không cộng thêm RP bài này</span>
-        </p>
-      )}
 
       {showFix && (
         <section className="mt-8 rounded-2xl border border-line bg-panel p-4 sm:p-5">
@@ -146,7 +135,23 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
       <p className="mb-4 text-sm text-slate-500">
         Bấm số câu ở bảng bên dưới để xem nhanh — bảng luôn ghim trên đầu khi em cuộn trang.
       </p>
-      <ExamReviewPager questions={detail.questions} responses={detail.responses} examId={detail.examId} />
+      <ExamReviewPager
+        questions={detail.questions}
+        responses={detail.responses}
+        examId={detail.examId}
+        footer={
+          fromParent ? undefined : (
+            <ExamNextSteps
+              // Chỉ mời làm lại khi điểm ở vùng giữa (cùng ngưỡng với thẻ Hôm nay và màn nộp bài); điểm thấp → ôn lại trước.
+              retryHref={
+                shouldOfferRetry(gradeExam(detail.questions, detail.responses).score10)
+                  ? `/kiem-tra/lam?id=${detail.examId}`
+                  : undefined
+              }
+            />
+          )
+        }
+      />
 
       {fixing && (
         <FixQuizModal

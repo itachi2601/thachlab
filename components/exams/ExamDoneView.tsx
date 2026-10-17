@@ -7,6 +7,7 @@ import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResu
 import ExamAdaptiveFeedback from "@/components/exams/ExamAdaptiveFeedback";
 import { shouldOfferRetry } from "@/features/learning/next-steps";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
+import ExamNextSteps from "@/components/exams/ExamNextSteps";
 import Button from "@/components/ui/Button";
 import type { Exam, QuestionResponse } from "@/features/exams/types";
 import {
@@ -128,18 +129,6 @@ export default function ExamDoneView({
           </>
         )}
       </div>
-      <p className="mt-2 flex flex-wrap items-center justify-center gap-x-5 text-center">
-        <Link href="/lop-hoc" className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
-          ← Về danh sách đề
-        </Link>
-        {/* Chỉ mời làm lại khi điểm ở vùng giữa (shouldOfferRetry) — điểm thấp thì ExamAdaptiveFeedback đã khuyên ôn lý thuyết trước,
-            không bày nút làm lại cạnh lời khuyên ngược lại. <a> thay Link: cùng đường dẫn /kiem-tra/lam nên cần tải lại trang. */}
-        {shouldOfferRetry(finalSummary.score10) && (
-          <a href={`/kiem-tra/lam?id=${exam.id}`} className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
-            Làm lại đề này (không cộng thêm RP)
-          </a>
-        )}
-      </p>
 
       <h2
         id="xem-lai-bai-lam"
@@ -173,10 +162,25 @@ export default function ExamDoneView({
                 })
                 .filter((c): c is TheoryReviewContext => c !== null)
             : [];
+        // "Ôn chủ đề này": bài lý thuyết của chủ đề đầu tiên em sai mà tra được bài.
+        let firstReviewHref: string | undefined;
+        for (let qi = 0; qi < exam.questions.length && !firstReviewHref; qi++) {
+          const q = exam.questions[qi];
+          const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
+          const lid = g && g.earned < g.max ? lessonByTopic.get((q.topic ?? "").trim()) : undefined;
+          if (lid) firstReviewHref = `/lop-hoc/bai/?id=${lid}`;
+        }
         return (
           <ExamReviewPager
             questions={exam.questions}
             responses={responses}
+            footer={
+              <ExamNextSteps
+                // Chỉ mời làm lại khi điểm ở vùng giữa (shouldOfferRetry) — điểm thấp thì ExamAdaptiveFeedback đã khuyên ôn lý thuyết trước.
+                retryHref={shouldOfferRetry(finalSummary.score10) ? `/kiem-tra/lam?id=${exam.id}` : undefined}
+                reviewHref={firstReviewHref}
+              />
+            }
             renderAbove={(qi) => {
               const q = exam.questions[qi];
               const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;

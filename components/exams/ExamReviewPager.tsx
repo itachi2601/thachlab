@@ -29,13 +29,15 @@ interface Props {
   renderAbove?: (index: number) => ReactNode;
   /** Có thì hiện nút "Báo lỗi câu này" (thiếu = không rõ đề nào, ẩn nút). */
   examId?: number | null;
+  /** Hàng nút đi tiếp đặt ngay dưới nút Câu trước/sau (không để trang kết thúc cụt). */
+  footer?: ReactNode;
 }
 
 /**
  * Xem lại bài làm giống lúc làm bài: bảng câu hỏi ghim trên đầu, mỗi lần chỉ
  * hiện 1 câu — dễ lần theo câu sai hơn là cuộn qua một danh sách dài.
  */
-export default function ExamReviewPager({ questions, responses, renderAbove, examId }: Props) {
+export default function ExamReviewPager({ questions, responses, renderAbove, examId, footer }: Props) {
   const firstWrong = questions.findIndex((q, i) => questionStatus(q, responses[i]) !== "correct");
   const [cur, setCur] = useState(firstWrong >= 0 ? firstWrong : 0);
   const [paletteOpen, setPaletteOpen] = useState(true);
@@ -49,6 +51,16 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
 
   function goTo(idx: number) {
     setCur(Math.min(questions.length - 1, Math.max(0, idx)));
+  }
+
+  // Đề đã bị xoá (không còn câu hỏi): không có gì để xem lại, chỉ giữ lối đi tiếp thay vì sập trang.
+  if (questions.length === 0) {
+    return (
+      <div>
+        <p className="text-sm text-muted">Đề này không còn câu hỏi để xem lại.</p>
+        {footer}
+      </div>
+    );
   }
 
   return (
@@ -156,7 +168,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           type="button"
           disabled={prevIdx === undefined}
           onClick={() => prevIdx !== undefined && goTo(prevIdx)}
-          className="rounded-xl border border-line px-4 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-40"
+          className="min-h-11 rounded-xl border border-line px-4 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-40"
         >
           ← {onlyWrong ? "Câu sai trước" : "Câu trước"}
         </button>
@@ -164,11 +176,12 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           type="button"
           disabled={nextIdx === undefined}
           onClick={() => nextIdx !== undefined && goTo(nextIdx)}
-          className="ml-auto rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
+          className="ml-auto min-h-11 rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
         >
           {onlyWrong ? "Câu sai sau" : "Câu sau"} →
         </button>
       </div>
+      {footer}
     </div>
   );
 }
