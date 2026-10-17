@@ -82,7 +82,8 @@ for (const e of todo) {
   } else if (g) {
     classes = [hsg && g === "9" ? 19 : GRADE_CLASS[g]]; rule = "2-tieu-de";
   } else if (e.subject_code === "avcn") {
-    classes = [20]; rule = "3-subject-avcn";
+    // Lớp AVCN vào tự do, đề KHÔNG gán lớp (migration 20261013180000; gỡ lại ngày 17/10 bằng go-gan-lop-de-avcn.mts) → bỏ qua.
+    continue;
   } else if (/^khtn/i.test(e.subject_code ?? "")) {
     classes = [hsg ? 19 : 15]; rule = "3-subject-khtn";
   }
