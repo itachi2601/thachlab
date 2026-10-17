@@ -14,6 +14,7 @@ import {
   todayVn,
   upcomingSession,
 } from "@/features/hsg9/lo-trinh";
+import NenKhtn9 from "./NenKhtn9";
 import { SessionLessons, TaskList, type LessonProgressMap } from "./Hsg9Parts";
 
 /**
@@ -78,6 +79,7 @@ export default function Hsg9WeekCard({
 
       <div className="mt-2">
         <SessionLessons session={session} lessons={lessons} progress={progress} />
+        <NenKhtn9 lessonIds={session.lessons} compact />
       </div>
 
       <div className="mt-2 flex items-center justify-between gap-3">

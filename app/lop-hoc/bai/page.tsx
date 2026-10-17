@@ -15,6 +15,8 @@ import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import PracticeSession from "@/components/lessons/PracticeSessionLazy";
+import NenKhtn9 from "@/components/lop-hoc/NenKhtn9";
+import { HSG_SUBJECT_CODE } from "@/services/academic-subjects";
 import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
@@ -2085,6 +2087,8 @@ function LessonLoader() {
 
             <div className="lesson-body" ref={bodyRef}>
             {reviewBanner}
+
+            {subjectCode === HSG_SUBJECT_CODE && activeSection?.kind === "ly_thuyet" && <NenKhtn9 lessonIds={[id]} />}
 
             {visibleSections.length === 0 && <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>}
 
