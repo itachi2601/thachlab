@@ -1,0 +1,386 @@
+{
+  "lesson_id": 76,
+  "lesson_title": "Bài 31. Động học của chuyển động tròn đều",
+  "item_id": 254,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một radian là",
+      "options": [
+        "góc ở tâm chắn cung có độ dài bằng đường kính",
+        "góc ở tâm chắn cung có độ dài bằng bán kính",
+        "góc ở tâm chắn cung bằng $\\dfrac{1}{360}$ đường tròn",
+        "góc ở tâm chắn cung có độ dài bằng $1\\ \\text{m}$"
+      ],
+      "answer": 1,
+      "explanation": "$\\theta=s/r=1\\ \\text{rad}$ khi $s=r$ (khoảng $57{,}3^\\circ$), không phụ thuộc cỡ đường tròn. Phương án C là $1^\\circ$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trong chuyển động tròn đều, đại lượng nào sau đây không đổi theo thời gian?",
+      "options": [
+        "Hướng của vận tốc",
+        "Vector vận tốc",
+        "Phương của vận tốc",
+        "Độ lớn của vận tốc"
+      ],
+      "answer": 3,
+      "explanation": "Tốc độ $v$ không đổi nhưng phương tiếp tuyến thay đổi theo vị trí nên vector vận tốc luôn đổi hướng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Giọt nước văng khỏi vành một bánh xe đang quay, ngay lúc vừa rời vành nó bay theo hướng",
+      "options": [
+        "tiếp tuyến với vành bánh tại điểm rời",
+        "dọc theo bán kính, hướng ra xa tâm",
+        "dọc theo bán kính, hướng vào tâm",
+        "cong theo vành bánh thêm một đoạn rồi mới bay thẳng"
+      ],
+      "answer": 0,
+      "explanation": "Vận tốc luôn tiếp tuyến, vuông góc với bán kính. Giọt nước giữ vận tốc ở chỗ rời; rời vành rồi thì không còn gì kéo nó cong theo vành."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hai điểm ở những khoảng cách khác nhau tới trục của cùng một đĩa đang quay đều. Hai đại lượng nào giống nhau ở hai điểm?",
+      "options": [
+        "Tốc độ và chu kì",
+        "Tốc độ và tốc độ góc",
+        "Tốc độ góc và chu kì",
+        "Quãng đường đi được trong một vòng và tần số"
+      ],
+      "answer": 2,
+      "explanation": "Mọi điểm trên cùng một vật quay quét cùng góc trong cùng thời gian nên chung $\\omega$, $T$, $f$. Tốc độ $v=\\omega r$ và quãng đường một vòng $2\\pi r$ phụ thuộc $r$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tần số của chuyển động tròn đều là",
+      "options": [
+        "góc mà bán kính quét được trong một giây",
+        "thời gian vật đi hết một vòng",
+        "quãng đường vật đi được trong một giây",
+        "số vòng vật đi được trong một giây"
+      ],
+      "answer": 3,
+      "explanation": "$f=\\dfrac{n}{\\Delta t}=\\dfrac1T$, đơn vị Hz (vòng/s). Phương án A là tốc độ góc, B là chu kì, C là tốc độ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tốc độ góc liên hệ với chu kì $T$ theo hệ thức",
+      "options": [
+        "$\\omega=\\dfrac{T}{2\\pi}$",
+        "$\\omega=\\dfrac{2\\pi}{T}$",
+        "$\\omega=2\\pi T$",
+        "$\\omega=\\dfrac{\\pi}{T}$"
+      ],
+      "answer": 1,
+      "explanation": "Một vòng là $2\\pi\\ \\text{rad}$ đi hết trong $T$ nên $\\omega=2\\pi/T$. Phương án A đảo tỉ số, C nhân sai $T$; phương án D quên hệ số $2$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Điểm cách trục $r$ trên vật quay đều với chu kì $T$ có tốc độ",
+      "options": [
+        "$v=\\dfrac{2\\pi r}{T}$",
+        "$v=2\\pi rT$",
+        "$v=\\dfrac{\\pi r}{T}$",
+        "$v=\\dfrac{2\\pi T}{r}$"
+      ],
+      "answer": 0,
+      "explanation": "Một vòng dài $2\\pi r$ đi hết trong $T$. Phương án $\\dfrac{\\pi r}{T}$ quên hệ số $2$; hai phương án còn lại nhân $T$ hoặc đặt $r$ ở mẫu, sai thứ nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quạt quay đều $600$ vòng/phút. Tốc độ góc của cánh quạt là",
+      "options": [
+        "$10\\ \\text{rad/s}$",
+        "$3\\,770\\ \\text{rad/s}$",
+        "$62{,}8\\ \\text{rad/s}$",
+        "$31{,}4\\ \\text{rad/s}$"
+      ],
+      "answer": 2,
+      "explanation": "$f=600/60=10\\ \\text{Hz}$, $\\omega=2\\pi\\cdot10\\approx62{,}8$. $10$ là mới ra $f$; $3\\,770$ là quên chia $60$; $31{,}4$ là dùng $\\pi$ thay vì $2\\pi$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Bánh xe đường kính $80\\ \\text{cm}$ quay đều với tốc độ góc $10\\ \\text{rad/s}$. Điểm trên vành có tốc độ",
+      "options": [
+        "$8{,}0\\ \\text{m/s}$",
+        "$25\\ \\text{m/s}$",
+        "$4{,}0\\ \\text{m/s}$",
+        "$400\\ \\text{m/s}$"
+      ],
+      "answer": 2,
+      "explanation": "$r=40\\ \\text{cm}=0{,}4\\ \\text{m}$, $v=\\omega r=4{,}0$. $8{,}0$ là dùng đường kính làm bán kính; $25$ là chia $\\omega$ cho $r$; $400$ là quên đổi cm sang m."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Giữ nguyên tốc độ $v$ của điểm trên vành nhưng giảm bán kính đi một nửa. Từ $v=\\omega r$, tốc độ góc phải",
+      "options": [
+        "giảm một nửa",
+        "tăng gấp bốn",
+        "giữ nguyên",
+        "tăng gấp đôi"
+      ],
+      "answer": 3,
+      "explanation": "$\\omega=v/r$: $r$ giảm một nửa thì $\\omega$ gấp đôi. Giữ nguyên $\\omega$ thì $v$ giảm một nửa; $v$ không tỉ lệ với $r^2$."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về góc và các đại lượng đặc trưng của chuyển động tròn đều, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$180^\\circ$ tương ứng $\\pi\\ \\text{rad}$.",
+          "answer": true
+        },
+        {
+          "text": "$1\\ \\text{rad}$ xấp xỉ $57{,}3^\\circ$.",
+          "answer": true
+        },
+        {
+          "text": "Chu kì là số vòng vật đi được trong một giây.",
+          "answer": false
+        },
+        {
+          "text": "Trong chuyển động tròn đều, tốc độ góc thay đổi theo thời gian.",
+          "answer": false
+        }
+      ],
+      "explanation": "Chu kì là thời gian đi một vòng, số vòng trong một giây là tần số. Chuyển động tròn đều có $\\omega$ không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về vector vận tốc trong chuyển động tròn đều, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Vận tốc không đổi vì tốc độ không đổi.",
+          "answer": false
+        },
+        {
+          "text": "Vector vận tốc vuông góc với bán kính tại điểm đó.",
+          "answer": true
+        },
+        {
+          "text": "Vector vận tốc luôn hướng vào tâm đường tròn.",
+          "answer": false
+        },
+        {
+          "text": "Độ lớn của vận tốc không đổi.",
+          "answer": true
+        }
+      ],
+      "explanation": "$\\vec v$ tiếp tuyến, vuông góc với bán kính, độ lớn không đổi nhưng hướng liên tục đổi nên vận tốc đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hai kim giây, một kim dài $2\\ \\text{cm}$ và một kim dài $20\\ \\text{cm}$, cùng quay đều. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Hai kim có cùng tốc độ góc.",
+          "answer": true
+        },
+        {
+          "text": "Đầu kim dài có tốc độ lớn hơn đầu kim ngắn.",
+          "answer": true
+        },
+        {
+          "text": "Hai đầu kim có cùng tốc độ vì cùng chu kì.",
+          "answer": false
+        },
+        {
+          "text": "Điểm càng gần trục thì chu kì quay càng nhỏ.",
+          "answer": false
+        }
+      ],
+      "explanation": "Cùng chu kì $60\\ \\text{s}$ nên cùng $\\omega$, nhưng $v=\\omega r$ nên đầu kim dài nhanh gấp $10$ lần. Chu kì chung cho mọi điểm."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Đĩa bán kính $0{,}2\\ \\text{m}$ quay đều $3$ vòng mỗi giây. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Chu kì quay xấp xỉ $0{,}33\\ \\text{s}$.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ góc bằng $3\\ \\text{rad/s}$.",
+          "answer": false
+        },
+        {
+          "text": "Tốc độ của điểm trên vành xấp xỉ $3{,}77\\ \\text{m/s}$.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ của điểm trên vành xấp xỉ $18{,}8\\ \\text{m/s}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$T=1/3\\approx0{,}33$; $\\omega=2\\pi\\cdot3\\approx18{,}8\\ \\text{rad/s}$ (không phải $3$); $v=\\omega r=18{,}8\\cdot0{,}2\\approx3{,}77\\ \\text{m/s}$. $18{,}8$ là $\\omega$, đã quên nhân $r$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hai điểm A và B nằm trên cùng một thanh quay đều quanh một đầu, A cách trục $30\\ \\text{cm}$, B cách trục $10\\ \\text{cm}$. Tỉ số $v_A/v_B$ bằng bao nhiêu?",
+      "answer": "3",
+      "explanation": "Cùng $\\omega$ nên $v=\\omega r$ tỉ lệ với $r$: $30/10=3$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trên đường tròn bán kính $0{,}5\\ \\text{m}$, vật đi được cung dài $0{,}5\\ \\text{m}$. Độ dịch chuyển góc của vật là bao nhiêu rad?",
+      "answer": "1",
+      "explanation": "$\\theta=\\dfrac{s}{r}=\\dfrac{0{,}5}{0{,}5}=1\\ \\text{rad}$, đúng định nghĩa $1$ radian."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một đĩa quay đều $90$ vòng trong $30\\ \\text{s}$. Tần số quay là bao nhiêu Hz?",
+      "answer": "3",
+      "explanation": "$f=\\dfrac{n}{\\Delta t}=\\dfrac{90}{30}=3\\ \\text{Hz}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tốc độ góc, chu kì, tần số",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quạt quay đều $300$ vòng/phút. Tốc độ góc của quạt là bao nhiêu rad/s (làm tròn đến số nguyên)?",
+      "answer": "31",
+      "explanation": "$f=300/60=5\\ \\text{Hz}$, $\\omega=2\\pi\\cdot5=10\\pi\\approx31{,}4$, làm tròn $31$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật chuyển động tròn đều với tốc độ góc $6\\ \\text{rad/s}$ trên đường tròn bán kính $0{,}25\\ \\text{m}$. Tốc độ của vật là bao nhiêu m/s (viết dạng số thập phân)?",
+      "answer": "1,5",
+      "explanation": "$v=\\omega r=6\\cdot0{,}25=1{,}5\\ \\text{m/s}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Liên hệ tốc độ dài và tốc độ góc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật chuyển động tròn đều với tốc độ $6\\ \\text{m/s}$ trên đường tròn bán kính $0{,}5\\ \\text{m}$. Tốc độ góc là bao nhiêu rad/s?",
+      "answer": "12",
+      "explanation": "$\\omega=\\dfrac{v}{r}=\\dfrac{6}{0{,}5}=12\\ \\text{rad/s}$."
+    }
+  ]
+}

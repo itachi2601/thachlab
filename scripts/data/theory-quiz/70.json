@@ -1,0 +1,386 @@
+{
+  "lesson_id": 70,
+  "lesson_title": "Bài 25. Động năng, thế năng",
+  "item_id": 237,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Động năng của một vật là",
+      "options": [
+        "năng lượng vật có do đang chuyển động",
+        "năng lượng vật có do ở độ cao so với mặt đất",
+        "năng lượng vật có do bị nén hay dãn",
+        "công mà trọng lực sinh ra khi vật rơi"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa động năng là năng lượng của vật do đang chuyển động, tính bằng $W_\\text{d} = \\frac{1}{2}mv^2$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai xe cùng khối lượng cùng chạy với tốc độ $10\\ \\text{m/s}$, một xe đi về phía bắc, một xe đi về phía nam. So sánh động năng hai xe:",
+      "options": [
+        "xe đi phía bắc lớn hơn vì đi ngược chiều xe kia",
+        "bằng nhau, vì động năng không phụ thuộc hướng vận tốc",
+        "xe đi phía nam lớn hơn vì đi ngược chiều xe kia",
+        "bằng nhau nhưng một xe mang dấu âm vì ngược hướng"
+      ],
+      "answer": 1,
+      "explanation": "Động năng là đại lượng vô hướng, không âm; với vật cho trước chỉ phụ thuộc độ lớn tốc độ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Định lí động năng cho biết độ biến thiên động năng của vật bằng",
+      "options": [
+        "công của riêng lực phát động",
+        "công của riêng lực kéo của động cơ",
+        "tổng công của mọi ngoại lực tác dụng lên vật, kể cả công âm",
+        "hiệu giữa thế năng đầu và thế năng cuối"
+      ],
+      "answer": 2,
+      "explanation": "Phải cộng công của mọi ngoại lực kể cả ma sát, lực cản. Hiệu thế năng đầu trừ cuối là công của lực thế, chưa phải tổng công mọi lực."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi đổi mốc thế năng thì đại lượng nào dưới đây KHÔNG thay đổi?",
+      "options": [
+        "Thế năng của vật tại một vị trí",
+        "Dấu của thế năng tại một vị trí",
+        "Độ cao $z$ của vật tính từ mốc",
+        "Công của trọng lực khi vật đi từ vị trí này sang vị trí kia"
+      ],
+      "answer": 3,
+      "explanation": "Thế năng và toạ độ $z$ phụ thuộc mốc, còn hiệu thế năng, tức công của trọng lực giữa hai điểm, thì không."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực nào sau đây KHÔNG phải lực thế?",
+      "options": [
+        "Lực ma sát",
+        "Trọng lực",
+        "Lực đàn hồi của lò xo",
+        "Lực tĩnh điện"
+      ],
+      "answer": 0,
+      "explanation": "Lực thế có công chỉ phụ thuộc điểm đầu, điểm cuối. Công của ma sát phụ thuộc đường đi nên ma sát không phải lực thế."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong thí nghiệm con lắc vướng đinh, quả nặng vẫn lên gần đúng vạch cũ vì",
+      "options": [
+        "đinh truyền thêm năng lượng cho quả nặng",
+        "lực căng dây sinh công dương bù lại phần mất đi",
+        "lực căng dây vuông góc đường đi nên không sinh công, công của trọng lực chỉ phụ thuộc độ cao",
+        "công của trọng lực phụ thuộc hình dạng quỹ đạo"
+      ],
+      "answer": 2,
+      "explanation": "Lực căng không sinh công. Trọng lực là lực thế nên công lúc xuống và lúc lên bằng nhau, trái dấu, chỉ phụ thuộc độ cao."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về các tính chất của động năng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Động năng là đại lượng vô hướng và không âm.",
+          "answer": true
+        },
+        {
+          "text": "Vật chuyển động ngược chiều dương của trục toạ độ thì động năng âm.",
+          "answer": false
+        },
+        {
+          "text": "Động năng có tính tương đối, phụ thuộc hệ quy chiếu.",
+          "answer": true
+        },
+        {
+          "text": "Vali nằm yên trên tàu có động năng bằng 0 đối với toa tàu nhưng khác 0 đối với mặt đất.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 2 sai: $v^2 \\ge 0$ nên $W_\\text{d} \\ge 0$ với mọi hướng chuyển động."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về thế năng trọng trường và mốc thế năng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Vật ở dưới mốc thế năng thì thế năng âm.",
+          "answer": true
+        },
+        {
+          "text": "Đổi mốc thế năng thì thế năng của vật tại một vị trí có thể đổi.",
+          "answer": true
+        },
+        {
+          "text": "Đổi mốc thế năng thì công của trọng lực giữa hai vị trí cũng đổi theo.",
+          "answer": false
+        },
+        {
+          "text": "Vật đi từ cao xuống thấp thì công trọng lực dương và thế năng giảm.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 3 sai: công của trọng lực bằng hiệu thế năng nên không phụ thuộc mốc."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Trong các lực: trọng lực, lực đàn hồi, lực tĩnh điện, lực ma sát, có bao nhiêu lực là lực thế?",
+      "answer": "3",
+      "explanation": "Bài nêu ba lực thế ở phổ thông là trọng lực, lực đàn hồi, lực tĩnh điện; ma sát không phải lực thế."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Cùng lực phanh, tốc độ xe tăng gấp đôi thì quãng đường phanh dài gấp bao nhiêu lần?",
+      "answer": "4",
+      "explanation": "$s = \\dfrac{mv^2}{2F_\\text{h}}$ tỉ lệ với $v^2$, nên $v$ gấp đôi thì $s$ gấp $2^2 = 4$ lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Công thức tính động năng của vật khối lượng $m$, tốc độ $v$ là",
+      "options": [
+        "$W_\\text{d} = mv^2$",
+        "$W_\\text{d} = \\dfrac{1}{2}mv^2$",
+        "$W_\\text{d} = \\dfrac{1}{2}mv$",
+        "$W_\\text{d} = \\dfrac{1}{2}m^2v$"
+      ],
+      "answer": 1,
+      "explanation": "Động năng là $\\frac{1}{2}mv^2$. $mv^2$ quên hệ số $\\frac{1}{2}$; $\\frac{1}{2}mv$ quên bình phương tốc độ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật đi từ M đến N trong trọng trường. Theo định lí thế năng, công của trọng lực là",
+      "options": [
+        "$A_{MN} = W_{\\text{t}N} - W_{\\text{t}M}$",
+        "$A_{MN} = W_{\\text{t}M} + W_{\\text{t}N}$",
+        "$A_{MN} = mg\\,z_N$",
+        "$A_{MN} = W_{\\text{t}M} - W_{\\text{t}N}$"
+      ],
+      "answer": 3,
+      "explanation": "Công bằng thế năng đầu trừ thế năng cuối. Đảo thứ tự làm sai dấu: đi xuống phải cho công dương."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật $2\\ \\text{kg}$ chuyển động với tốc độ $5\\ \\text{m/s}$. Động năng của vật là",
+      "options": [
+        "$50\\ \\text{J}$",
+        "$5\\ \\text{J}$",
+        "$25\\ \\text{J}$",
+        "$12{,}5\\ \\text{J}$"
+      ],
+      "answer": 2,
+      "explanation": "$W_\\text{d} = \\frac{1}{2}\\cdot 2\\cdot 5^2 = 25\\ \\text{J}$. $50\\ \\text{J}$ quên hệ số $\\frac{1}{2}$; $5\\ \\text{J}$ quên bình phương; $12{,}5\\ \\text{J}$ quên khối lượng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Quả bóng $0{,}4\\ \\text{kg}$ nằm trên kệ cao $3\\ \\text{m}$ so với sàn. Chọn mốc thế năng tại mặt bàn cao $0{,}8\\ \\text{m}$ so với sàn, $g = 10\\ \\text{m/s}^2$. Thế năng của bóng là",
+      "options": [
+        "$12\\ \\text{J}$",
+        "$8{,}8\\ \\text{J}$",
+        "$-8{,}8\\ \\text{J}$",
+        "$3{,}2\\ \\text{J}$"
+      ],
+      "answer": 1,
+      "explanation": "Độ cao so với mốc $z = 3 - 0{,}8 = 2{,}2\\ \\text{m}$, $W_\\text{t} = 0{,}4\\cdot 10\\cdot 2{,}2 = 8{,}8\\ \\text{J}$. $12\\ \\text{J}$ lấy mốc ở sàn; $3{,}2\\ \\text{J}$ chỉ lấy $0{,}8\\ \\text{m}$; dấu âm chỉ đúng khi vật dưới mốc."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về định lí động năng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$\\frac{1}{2}mv^2 - \\frac{1}{2}mv_0^2$ bằng tổng công của mọi ngoại lực tác dụng lên vật.",
+          "answer": true
+        },
+        {
+          "text": "Tổng công âm thì động năng của vật giảm.",
+          "answer": true
+        },
+        {
+          "text": "Khi dùng định lí động năng chỉ cần tính công của lực kéo, có thể bỏ qua công của ma sát.",
+          "answer": false
+        },
+        {
+          "text": "Xe dừng sau khi phanh với lực hãm không đổi $F_\\text{h}$ thì quãng phanh $s = \\dfrac{mv^2}{2F_\\text{h}}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 3 sai: phải cộng công của mọi ngoại lực, kể cả công âm của ma sát và lực cản."
+    },
+    {
+      "type": "true_false",
+      "kind": "bien_doi",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cuốn sách $0{,}5\\ \\text{kg}$ trên giá cao $2{,}0\\ \\text{m}$ so với sàn (lấy $g = 10\\ \\text{m/s}^2$). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Chọn mốc ở sàn thì thế năng của sách là $10\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Chọn mốc ở mặt bàn cao $0{,}8\\ \\text{m}$ thì thế năng của sách là $6\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Chọn mốc ở trần cao $3{,}0\\ \\text{m}$ thì thế năng của sách là $+5\\ \\text{J}$.",
+          "answer": false
+        },
+        {
+          "text": "Dù chọn mốc nào, hiệu thế năng giữa hai vị trí của sách vẫn không đổi.",
+          "answer": true
+        }
+      ],
+      "explanation": "Mốc ở trần: sách dưới mốc, $z = -1{,}0\\ \\text{m}$ nên $W_\\text{t} = 0{,}5\\cdot 10\\cdot(-1{,}0) = -5\\ \\text{J}$, không phải $+5\\ \\text{J}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xe $800\\ \\text{kg}$ chạy với tốc độ $36\\ \\text{km/h}$. Động năng của xe bằng bao nhiêu kJ?",
+      "answer": "40",
+      "explanation": "$36\\ \\text{km/h} = 10\\ \\text{m/s}$; $W_\\text{d} = \\frac{1}{2}\\cdot 800\\cdot 10^2 = 40\\,000\\ \\text{J} = 40\\ \\text{kJ}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Thế năng trọng trường và mốc thế năng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật $3\\ \\text{kg}$ ở độ cao $4\\ \\text{m}$ so với mốc thế năng, $g = 10\\ \\text{m/s}^2$. Thế năng của vật bằng bao nhiêu jun?",
+      "answer": "120",
+      "explanation": "$W_\\text{t} = mgz = 3\\cdot 10\\cdot 4 = 120\\ \\text{J}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Tốc độ của vật tăng từ $2\\ \\text{m/s}$ lên $10\\ \\text{m/s}$. Động năng của vật tăng gấp bao nhiêu lần?",
+      "answer": "25",
+      "explanation": "Tỉ số tốc độ $10/2 = 5$ nên tỉ số động năng $5^2 = 25$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Động năng và định lí động năng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật $2\\ \\text{kg}$ trượt với tốc độ $6\\ \\text{m/s}$ thì dừng lại nhờ lực ma sát không đổi $9\\ \\text{N}$. Quãng đường vật trượt đến khi dừng bằng bao nhiêu mét?",
+      "answer": "4",
+      "explanation": "$0 - \\frac{1}{2}mv^2 = -F s$ nên $s = \\dfrac{mv^2}{2F} = \\dfrac{2\\cdot 36}{2\\cdot 9} = 4\\ \\text{m}$."
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "lesson_id": 67,
+  "lesson_title": "Bài 22. Thực hành: Tổng hợp lực",
+  "item_id": 298,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vì sao số chỉ của lực kế thứ ba (treo vật) cho biết độ lớn lực tổng hợp của hai lực kia?",
+      "options": [
+        "Vì lực $\\vec F_3$ cùng chiều với lực tổng hợp $\\vec F$",
+        "Nút O đứng yên nên lực $\\vec F_3$ cân bằng với lực tổng hợp $\\vec F$: cùng độ lớn, cùng phương, ngược chiều",
+        "Vì lực kế thứ ba chính xác hơn hai lực kế còn lại",
+        "Vì lực $\\vec F_3$ luôn bằng tổng hai số chỉ $F_1 + F_2$"
+      ],
+      "answer": 1,
+      "explanation": "Nút O đứng yên thì hợp lực lên nó bằng 0: $\\vec F + \\vec F_3 = \\vec 0$. Vì vậy $F_3$ đọc trực tiếp là độ lớn của $\\vec F$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trước khi đo bằng lực kế, việc cần làm đúng là",
+      "options": [
+        "Treo sẵn vật nặng rồi mới chỉnh số $0$",
+        "Chỉ chỉnh số $0$ cho lực kế thứ ba",
+        "Không cần chỉnh nếu số chỉ lệch ít",
+        "Chỉnh số $0$ từng lực kế ở đúng tư thế sẽ dùng (treo thẳng đứng, hay nằm ngang, hay nghiêng)"
+      ],
+      "answer": 3,
+      "explanation": "Bài yêu cầu chỉnh số $0$ từng lực kế ở đúng tư thế dùng, lúc chưa móc vật. Số lệch là sai số hệ thống, cộng vào mọi lần đọc."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Trong bài, độ lệch $\\delta$ giữa lực vẽ và lực đo được định nghĩa là",
+      "options": [
+        "$\\delta = |F_{\\text{vẽ}} - F_3|$, tính bằng niutơn",
+        "$\\delta = F_{\\text{vẽ}} + F_3$",
+        "$\\delta = F_1 + F_2 - F_3$",
+        "$\\delta = \\Delta F_1 + \\Delta F_2 + \\Delta F_3$"
+      ],
+      "answer": 0,
+      "explanation": "$\\delta$ là hiệu (lấy trị tuyệt đối) giữa $F$ đo trên hình vẽ và $F_3$ đọc trên lực kế. Tổng $\\Delta F_1 + \\Delta F_2 + \\Delta F_3$ là sai số $\\Delta$ để so sánh với $\\delta$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Theo bài, kết luận \"hợp quy tắc hình bình hành trong sai số\" khi",
+      "options": [
+        "$\\delta = 0$ chính xác",
+        "$\\delta \\gt \\Delta$",
+        "$\\delta \\le \\Delta$",
+        "Hai lực $F_1$ và $F_2$ vuông góc với nhau"
+      ],
+      "answer": 2,
+      "explanation": "Bài chốt: $\\delta \\le \\Delta$ thì hợp quy tắc trong sai số. Không đòi $\\delta = 0$ vì mọi phép đo đều có sai số."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hai lực kế còn nguyên số lệch $+0{,}1$ N khi chưa móc vật, nhóm vẫn đo và vẽ hình bình hành từ số đọc. Cách hiểu đúng về số lệch này là",
+      "options": [
+        "Sai số ngẫu nhiên: đo nhiều lần rồi lấy trung bình sẽ tự triệt tiêu",
+        "Không đáng kể vì chỉ $0{,}1$ N",
+        "Hai số lệch luôn bù trừ nhau nên không ảnh hưởng",
+        "Sai số hệ thống: nó cộng vào mọi lần đọc, đo nhiều lần cũng không làm nó biến mất"
+      ],
+      "answer": 3,
+      "explanation": "Số $0$ lệch làm mọi số đọc lệch cùng phía; hai lệch cùng dấu thì cộng dồn chứ không bù trừ. Phải trừ số lệch trước khi vẽ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thanh nhẹ $AB$ treo vào hai lực kế ở hai đầu, vật nặng treo gần đầu $A$ hơn đầu $B$. Số chỉ của hai lực kế là",
+      "options": [
+        "Lực kế ở $A$ chỉ lớn hơn lực kế ở $B$, và tổng hai số chỉ bằng trọng lượng vật",
+        "Lực kế ở $A$ chỉ nhỏ hơn lực kế ở $B$",
+        "Hai lực kế chỉ bằng nhau",
+        "Tổng hai số chỉ lớn hơn trọng lượng vật"
+      ],
+      "answer": 0,
+      "explanation": "Hai lực song song cùng chiều có $F_A + F_B = P$ và $F_Ad_A = F_Bd_B$: vật gần đầu nào thì đầu đó gánh nhiều hơn."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về cách bố trí và đo trong thí nghiệm tổng hợp hai lực đồng quy, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi nút O đứng yên, $\\vec F_3$ cân bằng với lực tổng hợp $\\vec F$.",
+          "answer": true
+        },
+        {
+          "text": "Hình bình hành vẽ với hai lực chung gốc O, đường chéo qua O là lực tổng hợp.",
+          "answer": true
+        },
+        {
+          "text": "Góc $\\alpha$ được đo ở nút O, giữa hai dây của lực kế 1 và 2.",
+          "answer": true
+        },
+        {
+          "text": "Có thể lấy $\\alpha$ là góc giữa mỗi dây và đường thẳng đứng.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài nhấn mạnh $\\alpha$ là góc giữa hai lực ở nút O, không phải góc giữa dây với đường thẳng đứng. Nhầm góc sẽ ra sai kết quả tổng hợp."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Mỗi lực kế có sai số $\\Delta F = 0{,}1$ N. Về xử lí số liệu, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Sai số gộp $\\Delta = \\Delta F_1 + \\Delta F_2 + \\Delta F_3 = 0{,}3$ N.",
+          "answer": true
+        },
+        {
+          "text": "Nếu $\\delta \\le \\Delta$ thì hợp quy tắc hình bình hành trong sai số.",
+          "answer": true
+        },
+        {
+          "text": "Chỉ cần một lần đo có $\\delta \\gt \\Delta$ là đủ kết luận quy tắc hình bình hành sai.",
+          "answer": false
+        },
+        {
+          "text": "Số $0$ lệch của lực kế là sai số hệ thống: đo nhiều lần cũng không làm nó biến mất.",
+          "answer": true
+        }
+      ],
+      "explanation": "Khi $\\delta$ vượt $\\Delta$ cần kiểm số $0$, góc, phương dây và thao tác trước khi nghi ngờ quy tắc; một lần vượt chưa đủ để bác bỏ."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thí nghiệm tổng hợp hai lực đồng quy trong bài dùng tất cả bao nhiêu lực kế?",
+      "answer": "3",
+      "explanation": "Hai lực kế đo $F_1$, $F_2$ và lực kế thứ ba (treo vật) đo $F_3$, nên dùng $3$ lực kế."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nút O đứng yên. Hợp lực của $\\vec F_1$, $\\vec F_2$ và $\\vec F_3$ lên nút O bằng bao nhiêu niutơn?",
+      "answer": "0",
+      "explanation": "Đứng yên nên hợp lực lên nút O bằng $0$: $\\vec F_1 + \\vec F_2 + \\vec F_3 = \\vec 0$, hay $\\vec F_3$ cân bằng với $\\vec F$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai lực đồng quy $F_1$, $F_2$ vẽ chung gốc, hợp nhau góc $\\alpha$. Độ lớn của lực tổng hợp là",
+      "options": [
+        "$F = \\sqrt{F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha}$",
+        "$F = \\sqrt{F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha}$",
+        "$F = F_1 + F_2$",
+        "$F = \\sqrt{F_1^2 + F_2^2}$"
+      ],
+      "answer": 1,
+      "explanation": "Với hai lực chung gốc, dấu trước $2F_1F_2\\cos\\alpha$ là dấu cộng. Dấu trừ là dùng góc bù (nối đuôi); $F_1 + F_2$ chỉ đúng khi $\\alpha = 0^\\circ$; $\\sqrt{F_1^2 + F_2^2}$ chỉ đúng khi $\\alpha = 90^\\circ$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai lực $F_1 = 2{,}4$ N và $F_2 = 3{,}2$ N đồng quy, vuông góc nhau. Lực tổng hợp có độ lớn",
+      "options": [
+        "$5{,}6$ N",
+        "$0{,}8$ N",
+        "$4{,}0$ N",
+        "$2{,}8$ N"
+      ],
+      "answer": 2,
+      "explanation": "Vuông góc nên $F = \\sqrt{2{,}4^2 + 3{,}2^2} = \\sqrt{16} = 4{,}0$ N. $5{,}6$ N là cộng hai lực; $0{,}8$ N là trừ; $2{,}8$ N là lấy trung bình."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai lực bằng nhau, mỗi lực $3{,}0$ N, hợp nhau góc $\\alpha = 120^\\circ$. Độ lớn lực tổng hợp là",
+      "options": [
+        "$6{,}0$ N",
+        "$4{,}2$ N",
+        "$5{,}2$ N",
+        "$3{,}0$ N"
+      ],
+      "answer": 3,
+      "explanation": "$F^2 = 9 + 9 + 2\\cdot 3\\cdot 3\\cos 120^\\circ = 18 - 9 = 9$ nên $F = 3{,}0$ N. $6{,}0$ N là cộng hai lực; $4{,}2$ N là coi hai lực vuông góc; $5{,}2$ N là dùng $\\cos 60^\\circ$ (góc bù) thay cho $\\cos 120^\\circ$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vẽ hình bình hành theo tỉ lệ xích $1$ cm ứng với $0{,}5$ N. Đường chéo qua O đo được $5{,}4$ cm. Lực tổng hợp \"vẽ\" là",
+      "options": [
+        "$10{,}8$ N",
+        "$2{,}7$ N",
+        "$5{,}4$ N",
+        "$5{,}9$ N"
+      ],
+      "answer": 1,
+      "explanation": "$F = \\text{chéo}\\cdot 0{,}5 = 5{,}4\\cdot 0{,}5 = 2{,}7$ N. $10{,}8$ N là chia cho $0{,}5$ (ngược tỉ lệ xích); $5{,}4$ N là quên tỉ lệ xích; $5{,}9$ N là cộng thêm $0{,}5$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về các trường hợp riêng của $F = \\sqrt{F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha}$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi $\\alpha = 0^\\circ$ thì $F = F_1 + F_2$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha = 180^\\circ$ thì $F = |F_1 - F_2|$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha = 90^\\circ$ thì $F = \\sqrt{F_1^2 + F_2^2}$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $F_1 = F_2$ và $\\alpha = 120^\\circ$ thì $F = 2F_1$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Với $F_1 = F_2$: $F = 2F_1\\cos(\\alpha/2)$. Khi $\\alpha = 120^\\circ$ thì $F = 2F_1\\cos 60^\\circ = F_1$, không phải $2F_1$."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thanh nhẹ $AB$ dài $60$ cm treo vào hai lực kế ở hai đầu; vật $P = 3{,}0$ N treo cách $A$ đoạn $10$ cm. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$F_A + F_B = 3{,}0$ N.",
+          "answer": true
+        },
+        {
+          "text": "$F_A = 2{,}5$ N.",
+          "answer": true
+        },
+        {
+          "text": "$F_B = 0{,}5$ N.",
+          "answer": true
+        },
+        {
+          "text": "$F_A$ nhỏ hơn $F_B$ vì vật gần $A$ hơn.",
+          "answer": false
+        }
+      ],
+      "explanation": "$F_A = P\\dfrac{d_B}{AB} = 3{,}0\\cdot\\dfrac{50}{60} = 2{,}5$ N và $F_B = 3{,}0 - 2{,}5 = 0{,}5$ N. Vật gần đầu nào thì đầu đó gánh nhiều hơn, nên $F_A > F_B$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai lực $F_1 = 0{,}9$ N và $F_2 = 1{,}2$ N đồng quy, vuông góc nhau. Độ lớn lực tổng hợp bằng bao nhiêu niutơn? (viết dạng số thập phân)",
+      "answer": "1,5",
+      "explanation": "$F = \\sqrt{0{,}9^2 + 1{,}2^2} = \\sqrt{2{,}25} = 1{,}5$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Mỗi lực kế có sai số $0{,}05$ N. Sai số gộp $\\Delta = \\Delta F_1 + \\Delta F_2 + \\Delta F_3$ bằng bao nhiêu niutơn? (viết dạng số thập phân)",
+      "answer": "0,15",
+      "explanation": "$\\Delta = 3\\cdot 0{,}05 = 0{,}15$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Lực tổng hợp vẽ được $F_{\\text{vẽ}} = 2{,}8$ N, lực kế thứ ba chỉ $F_3 = 3{,}0$ N. Độ lệch $\\delta$ bằng bao nhiêu niutơn? (viết dạng số thập phân)",
+      "answer": "0,2",
+      "explanation": "$\\delta = |F_{\\text{vẽ}} - F_3| = |2{,}8 - 3{,}0| = 0{,}2$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 22. Thực hành: Tổng hợp lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Đo một lực được giá trị trung bình $\\overline F = 2{,}5$ N với sai số tuyệt đối $\\Delta F = 0{,}1$ N. Sai số tỉ đối bằng bao nhiêu phần trăm?",
+      "answer": "4",
+      "explanation": "$\\delta F = \\dfrac{\\Delta F}{\\overline F}\\cdot 100\\% = \\dfrac{0{,}1}{2{,}5}\\cdot 100\\% = 4\\%$."
+    }
+  ]
+}

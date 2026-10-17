@@ -1,0 +1,386 @@
+{
+  "lesson_id": 57,
+  "lesson_title": "Bài 12. Chuyển động ném",
+  "item_id": 105,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "kind": "dinh_nghia",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Chuyển động ném ngang là chuyển động của vật:",
+      "options": [
+        "Bay ngang với vận tốc không đổi và không chịu lực nào",
+        "Được thả không vận tốc đầu và chỉ chịu trọng lực",
+        "Chịu cả trọng lực và một lực đẩy nằm ngang trong suốt chuyển động",
+        "Được ném với vận tốc đầu theo phương ngang, sau đó chỉ chịu tác dụng của trọng lực (bỏ qua lực cản)"
+      ],
+      "answer": 3,
+      "explanation": "Ném ngang: có vận tốc đầu $\\vec v_0$ nằm ngang, sau đó chỉ còn trọng lực. Thả không vận tốc đầu là rơi tự do; không có lực đẩy ngang nên $a_x = 0$."
+    },
+    {
+      "kind": "dinh_luat",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Khi phân tích chuyển động ném ngang, chọn Ox nằm ngang và Oy thẳng đứng hướng xuống, vật chuyển động thế nào theo mỗi phương?",
+      "options": [
+        "Ox: nhanh dần đều; Oy: thẳng đều",
+        "Ox: thẳng đều; Oy: rơi tự do",
+        "Ox: thẳng đều; Oy: thẳng đều",
+        "Ox: rơi tự do; Oy: thẳng đều"
+      ],
+      "answer": 1,
+      "explanation": "Trọng lực hướng xuống nên chỉ gây gia tốc theo Oy ($a_y = g$); $a_x = 0$ nên theo Ox vận tốc không đổi $v_x = v_0$. Các nhiễu đảo hoặc nhầm hai phương."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Thí nghiệm bắn ngang một viên bi, đồng thời thả rơi viên bi kia từ cùng độ cao với mép bàn, cho thấy điều gì?",
+      "options": [
+        "Chuyển động ngang không làm đổi chuyển động rơi theo phương thẳng đứng",
+        "Viên bắn ngang rơi chậm hơn vì phải đi thêm quãng đường ngang",
+        "Chuyển động rơi làm viên bi bắn ngang chuyển động chậm dần theo phương ngang",
+        "Hai viên bi luôn có cùng vận tốc tại mọi thời điểm"
+      ],
+      "answer": 0,
+      "explanation": "Ở mỗi nhịp hai viên luôn nằm trên cùng một đường ngang và chạm sàn cùng lúc: phần rơi giống hệt nhau. Vận tốc hai viên khác nhau vì viên bắn ngang còn có $v_x = v_0$."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Một vật được ném ngang từ độ cao $h$ (bỏ qua lực cản). Thời gian bay của vật phụ thuộc vào:",
+      "options": [
+        "Cả vận tốc ném $v_0$ và độ cao $h$",
+        "Chỉ vận tốc ném $v_0$",
+        "Chỉ độ cao $h$ (và $g$), không phụ thuộc $v_0$",
+        "Khối lượng của vật và độ cao $h$"
+      ],
+      "answer": 2,
+      "explanation": "Chạm đất khi $h = \\tfrac12 g t^2$ nên $t = \\sqrt{2h/g}$, không chứa $v_0$ hay khối lượng. $v_0$ chỉ làm đổi tầm xa $L = v_0 t$."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Quỹ đạo của vật trong chuyển động ném ngang là:",
+      "options": [
+        "Đường thẳng xiên xuống",
+        "Cả hai nhánh của một đường parabol",
+        "Một phần đường parabol có đỉnh tại điểm ném",
+        "Một phần đường tròn tâm tại điểm ném"
+      ],
+      "answer": 2,
+      "explanation": "Khử $t$ giữa $x = v_0 t$ và $y = \\tfrac12 g t^2$ được $y = \\dfrac{g}{2v_0^2}x^2$: parabol đỉnh tại điểm ném. Vật chạm đất là hết chuyển động nên chỉ vẽ một nhánh."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "type": "true_false",
+      "question": "Về chuyển động ném ngang (bỏ qua lực cản), các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Theo phương ngang vật chuyển động thẳng đều với $v_x = v_0$.",
+          "answer": true
+        },
+        {
+          "text": "Vật ra xa dần theo phương ngang vì $v_x$ tăng dần.",
+          "answer": false
+        },
+        {
+          "text": "Sau những khoảng thời gian bằng nhau, đoạn rơi theo Oy tăng dần theo tỉ lệ $1 : 3 : 5 : \\dots$",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ $v$ của vật tăng đều theo thời gian.",
+          "answer": false
+        }
+      ],
+      "explanation": "Vật ra xa dần vì thời gian trôi chứ không phải vì $v_x$ tăng. Chỉ $v_y = gt$ tăng đều; $v = \\sqrt{v_0^2 + (gt)^2}$ tăng không đều."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "type": "true_false",
+      "question": "Về chuyển động ném xiên (bỏ qua lực cản), các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tại điểm cao nhất, thành phần vận tốc thẳng đứng $v_y = 0$.",
+          "answer": true
+        },
+        {
+          "text": "Tại điểm cao nhất, vận tốc của vật bằng $0$.",
+          "answer": false
+        },
+        {
+          "text": "Tại điểm cao nhất, gia tốc của vật vẫn bằng $g$ và hướng xuống.",
+          "answer": true
+        },
+        {
+          "text": "Cùng $v_0$, hai góc ném phụ nhau cho cùng tầm xa.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ở đỉnh vật chỉ mất thành phần thẳng đứng; còn $v = v_0\\cos\\alpha \\ne 0$ theo phương ngang. Trọng lực vẫn tác dụng nên $a = g$."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "type": "short_answer",
+      "question": "Với cùng vận tốc ném $v_0$ (bỏ qua lực cản, ném từ mặt đất), tầm xa lớn nhất khi góc ném bằng bao nhiêu độ?",
+      "answer": "45",
+      "explanation": "$L = \\dfrac{v_0^2 \\sin 2\\alpha}{g}$ lớn nhất khi $\\sin 2\\alpha = 1$, tức $\\alpha = 45^\\circ$."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "type": "short_answer",
+      "question": "Với cùng độ cao ném, vận tốc ném $v_0$ tăng gấp $5$ lần thì tầm xa tăng gấp bao nhiêu lần?",
+      "answer": "5",
+      "explanation": "Thời gian bay $t = \\sqrt{2h/g}$ không đổi, tầm xa $L = v_0 t$ tỉ lệ thuận với $v_0$, nên gấp $5$ lần."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Ném ngang từ độ cao gấp $9$ lần thì thời gian bay của vật gấp bao nhiêu lần?",
+      "answer": "3",
+      "explanation": "$t = \\sqrt{2h/g}$ tỉ lệ với $\\sqrt{h}$, nên $h$ gấp $9$ thì $t$ gấp $\\sqrt{9} = 3$ lần."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Ném ngang một vật từ độ cao $125\\ \\text{m}$ với $v_0 = 12\\ \\text{m/s}$, lấy $g = 10\\ \\text{m/s}^2$. Tầm xa của vật là:",
+      "options": [
+        "$60\\ \\text{m}$",
+        "$150\\ \\text{m}$",
+        "$300\\ \\text{m}$",
+        "$42\\ \\text{m}$"
+      ],
+      "answer": 0,
+      "explanation": "$t = \\sqrt{2\\cdot125/10} = 5\\ \\text{s}$, $L = v_0 t = 60\\ \\text{m}$. Ra $150$ là lấy $t = h/g$; ra $300$ là lấy $t = 2h/g$ (quên căn); ra $42$ là $t = \\sqrt{h/g}$ (quên số $2$)."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Một vật ném ngang với $v_0 = 24\\ \\text{m/s}$ từ độ cao $h = 5\\ \\text{m}$, lấy $g = 10\\ \\text{m/s}^2$. Độ lớn vận tốc khi chạm đất là:",
+      "options": [
+        "$34\\ \\text{m/s}$",
+        "$24\\ \\text{m/s}$",
+        "$10\\ \\text{m/s}$",
+        "$26\\ \\text{m/s}$"
+      ],
+      "answer": 3,
+      "explanation": "$v = \\sqrt{v_0^2 + 2gh} = \\sqrt{576 + 100} = 26\\ \\text{m/s}$. Ra $34$ là cộng số học $24 + 10$ (hai thành phần vuông góc, phải cộng bình phương); ra $24$ chỉ có $v_x$; ra $10$ chỉ có $v_y$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Ném ngang với $v_0 = 20\\ \\text{m/s}$, $g = 10\\ \\text{m/s}^2$. Tại $t = 1{,}5\\ \\text{s}$, vận tốc của vật hợp với phương ngang một góc xấp xỉ:",
+      "options": [
+        "$53^\\circ$",
+        "$37^\\circ$",
+        "$49^\\circ$",
+        "$41^\\circ$"
+      ],
+      "answer": 1,
+      "explanation": "$v_y = gt = 15\\ \\text{m/s}$, $\\tan\\alpha = \\dfrac{v_y}{v_x} = \\dfrac{15}{20} = 0{,}75$ nên $\\alpha \\approx 37^\\circ$. Ra $53^\\circ$ là lấy $v_x/v_y$; ra $49^\\circ$ là nhầm $0{,}75$ là $\\sin\\alpha$; ra $41^\\circ$ là nhầm là $\\cos\\alpha$."
+    },
+    {
+      "kind": "bien_doi",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Phương trình quỹ đạo của chuyển động ném ngang (gốc tại điểm ném, Oy hướng xuống) là:",
+      "options": [
+        "$y = \\dfrac{g}{2v_0}\\,x^2$",
+        "$y = \\dfrac{g}{2v_0^2}\\,x^2$",
+        "$y = \\dfrac{2v_0^2}{g}\\,x^2$",
+        "$y = \\dfrac{g}{2v_0^2}\\,x$"
+      ],
+      "answer": 1,
+      "explanation": "Thế $t = x/v_0$ vào $y = \\tfrac12 g t^2$ được $y = \\dfrac{g}{2v_0^2}x^2$. Nhiễu là quên bình phương $v_0$, đảo tử và mẫu, hoặc quên bình phương $x$ (khi đó không còn là parabol)."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "type": "multiple_choice",
+      "question": "Vật ném xiên từ mặt đất với $v_0 = 30\\ \\text{m/s}$, góc $30^\\circ$, $g = 10\\ \\text{m/s}^2$. Tầm cao $H$ là:",
+      "options": [
+        "$22{,}5\\ \\text{m}$",
+        "$45\\ \\text{m}$",
+        "$11{,}25\\ \\text{m}$",
+        "$33{,}75\\ \\text{m}$"
+      ],
+      "answer": 2,
+      "explanation": "$H = \\dfrac{v_0^2\\sin^2\\alpha}{2g} = \\dfrac{900\\cdot 0{,}25}{20} = 11{,}25\\ \\text{m}$. Ra $22{,}5$ là dùng $\\sin\\alpha$ thay vì $\\sin^2\\alpha$; ra $45$ là quên thành phần $\\sin^2\\alpha$; ra $33{,}75$ là dùng $\\cos^2\\alpha$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "type": "true_false",
+      "question": "Vật ném xiên từ mặt đất với $v_0 = 30\\ \\text{m/s}$, góc ném $45^\\circ$, $g = 10\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tầm xa là $90\\ \\text{m}$.",
+          "answer": true
+        },
+        {
+          "text": "Tầm cao là $22{,}5\\ \\text{m}$.",
+          "answer": true
+        },
+        {
+          "text": "Thời gian bay khoảng $4{,}2\\ \\text{s}$.",
+          "answer": true
+        },
+        {
+          "text": "Với cùng $v_0$, ném góc $60^\\circ$ cũng cho tầm xa $90\\ \\text{m}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$L = 900\\sin 90^\\circ/10 = 90$; $H = 900\\cdot 0{,}5/20 = 22{,}5$; $t = 2\\cdot30\\cdot 0{,}707/10 \\approx 4{,}2$. Góc $60^\\circ$ cho $L = 900\\sin120^\\circ/10 \\approx 77{,}9\\ \\text{m}$; góc phụ nhau với $45^\\circ$ là chính $45^\\circ$."
+    },
+    {
+      "kind": "cong_thuc",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "true_false",
+      "question": "Ném ngang từ độ cao $h$ với vận tốc $v_0$ (bỏ qua lực cản). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Với cùng $h$, tầm xa tỉ lệ thuận với $v_0$.",
+          "answer": true
+        },
+        {
+          "text": "Độ cao ném gấp $4$ lần thì thời gian bay gấp $2$ lần.",
+          "answer": true
+        },
+        {
+          "text": "Độ cao ném gấp $4$ lần thì thành phần $v_y$ lúc chạm đất gấp $4$ lần.",
+          "answer": false
+        },
+        {
+          "text": "Vận tốc chạm đất tính bằng $v = \\sqrt{v_0^2 + 2gh}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "$v_y = \\sqrt{2gh}$ tỉ lệ với $\\sqrt{h}$ nên $h$ gấp $4$ thì $v_y$ gấp $2$, không phải $4$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Ném ngang với $v_0 = 5\\ \\text{m/s}$ từ độ cao $1{,}8\\ \\text{m}$, lấy $g = 10\\ \\text{m/s}^2$. Tầm xa là bao nhiêu mét?",
+      "answer": "3",
+      "explanation": "$t = \\sqrt{\\dfrac{2\\cdot1{,}8}{10}} = 0{,}6\\ \\text{s}$, $L = 5 \\cdot 0{,}6 = 3\\ \\text{m}$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Phân tích chuyển động ném ngang theo hai phương",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "type": "short_answer",
+      "question": "Vật ném ngang với $v_0 = 6\\ \\text{m/s}$, $g = 10\\ \\text{m/s}^2$. Độ lớn vận tốc tại $t = 0{,}8\\ \\text{s}$ là bao nhiêu $\\text{m/s}$?",
+      "answer": "10",
+      "explanation": "$v_y = gt = 8\\ \\text{m/s}$, $v = \\sqrt{6^2 + 8^2} = 10\\ \\text{m/s}$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Tầm xa, thời gian bay của vật bị ném",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "type": "short_answer",
+      "question": "Vật ném xiên từ mặt đất với $v_0 = 40\\ \\text{m/s}$, góc $30^\\circ$, $g = 10\\ \\text{m/s}^2$. Thời gian bay là bao nhiêu giây?",
+      "answer": "4",
+      "explanation": "$t = \\dfrac{2v_0\\sin\\alpha}{g} = \\dfrac{2\\cdot40\\cdot0{,}5}{10} = 4\\ \\text{s}$."
+    }
+  ]
+}

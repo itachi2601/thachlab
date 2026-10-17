@@ -1,0 +1,386 @@
+{
+  "lesson_id": 64,
+  "lesson_title": "Bài 19. Lực cản và lực nâng",
+  "item_id": 126,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực cản của chất lưu tác dụng lên một vật đang chuyển động có đặc điểm nào sau đây?",
+      "options": [
+        "Cùng phương, cùng chiều chuyển động của vật",
+        "Luôn hướng thẳng đứng từ dưới lên",
+        "Cùng phương, ngược chiều chuyển động của vật; phụ thuộc hình dạng và tốc độ của vật",
+        "Chỉ phụ thuộc khối lượng của vật, không phụ thuộc hình dạng"
+      ],
+      "answer": 2,
+      "explanation": "Bài nêu lực cản vẽ tại trọng tâm vật, cùng phương và ngược chiều chuyển động, độ lớn phụ thuộc hình dạng và tốc độ của vật."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một vật rơi trong không khí. Ở giai đoạn thứ hai, chuyển động của vật là",
+      "options": [
+        "Nhanh dần nhưng gia tốc giảm dần vì lực cản tăng dần",
+        "Nhanh dần đều với $a = g$",
+        "Chuyển động đều với tốc độ giới hạn",
+        "Chậm dần vì lực cản lớn hơn trọng lượng"
+      ],
+      "answer": 0,
+      "explanation": "Giai đoạn 2: tốc độ tăng nên lực cản tăng, hợp lực giảm, vật nhanh dần không đều. Nhanh dần đều gần $a \\approx g$ là giai đoạn 1; rơi đều là giai đoạn 3."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Vật rơi trong không khí đạt tốc độ giới hạn khi nào?",
+      "options": [
+        "Lực cản của không khí bằng 0",
+        "Lực cản của không khí lớn hơn trọng lượng của vật",
+        "Vật không còn chịu tác dụng của trọng lực",
+        "Lực cản của không khí bằng trọng lượng của vật, hợp lực bằng 0"
+      ],
+      "answer": 3,
+      "explanation": "Rơi đều nghĩa là gia tốc bằng 0 nên hợp lực bằng 0: trọng lực vẫn còn, lực cản đúng bằng trọng lượng. Lực cản lớn hơn trọng lượng thì vật phải chậm dần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực đẩy Archimedes tác dụng lên vật nhúng trong chất lỏng có",
+      "options": [
+        "Phương thẳng đứng, chiều từ trên xuống, điểm đặt ở trọng tâm của vật",
+        "Phương thẳng đứng, chiều từ dưới lên, điểm đặt ở trọng tâm phần chất lỏng bị vật chiếm chỗ",
+        "Phương ngang, ngược chiều chuyển động của vật",
+        "Phương thẳng đứng, chiều từ dưới lên, điểm đặt ở đáy bình"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu: điểm đặt tại trọng tâm phần chất lỏng bị chiếm chỗ, phương thẳng đứng, chiều từ dưới lên."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quả nặng đã chìm hẳn trong nước được hạ sâu thêm (chưa chạm đáy). Lực đẩy Archimedes lên nó",
+      "options": [
+        "Tăng lên vì áp suất tăng theo độ sâu",
+        "Không đổi",
+        "Giảm đi vì nước phía trên đè nặng hơn",
+        "Tăng thêm một lượng bằng áp suất khí quyển"
+      ],
+      "answer": 1,
+      "explanation": "Hai mặt trên và dưới cùng chịu thêm áp suất khi hạ sâu, chênh lệch $\\rho g \\Delta h$ không đổi; $F_A = \\rho g V$ không chứa độ sâu $h$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tàu thép nặng vẫn nổi trên mặt nước. Khi tàu nổi yên, điều nào sau đây đúng?",
+      "options": [
+        "Lực đẩy Archimedes lớn hơn trọng lượng tàu",
+        "Thép làm tàu có khối lượng riêng nhỏ hơn nước",
+        "Phần lớn trọng lượng tàu được không khí nâng đỡ",
+        "Thân tàu rỗng chiếm chỗ nhiều nước và lực đẩy Archimedes bằng trọng lượng tàu"
+      ],
+      "answer": 3,
+      "explanation": "$F_A$ tính theo thể tích nước bị chiếm chỗ, không theo thể tích thép. Vật đứng yên thì hợp lực bằng 0, nên $F_A = P$; nếu $F_A > P$ tàu còn đang nổi lên."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về người nhảy dù rơi trong không khí, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Lúc vừa nhảy, lực cản còn nhỏ nên gia tốc gần bằng $g$.",
+          "answer": true
+        },
+        {
+          "text": "Khi rơi đều, lực cản bằng trọng lượng.",
+          "answer": true
+        },
+        {
+          "text": "Khi rơi đều, người không còn chịu lực nào tác dụng.",
+          "answer": false
+        },
+        {
+          "text": "Mở dù làm tốc độ giới hạn nhỏ hơn so với khi chưa mở dù.",
+          "answer": true
+        }
+      ],
+      "explanation": "Rơi đều không có nghĩa hết lực: trọng lực vẫn còn và bị lực cản cân bằng, hợp lực bằng 0. Dù rộng làm lực cản lớn nên tốc độ giới hạn nhỏ."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về nguồn gốc của lực đẩy Archimedes (chênh lệch áp suất), các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Mặt dưới của vật nằm sâu hơn nên áp lực lên mặt dưới lớn hơn mặt trên.",
+          "answer": true
+        },
+        {
+          "text": "Áp lực lên các mặt bên của khối hộp chìm cân bằng nhau.",
+          "answer": true
+        },
+        {
+          "text": "Áp suất khí quyển $p_0$ làm lực đẩy Archimedes tăng thêm.",
+          "answer": false
+        },
+        {
+          "text": "Hiệu hai áp suất ở hai độ sâu cách nhau $\\Delta h$ là $\\Delta p = \\rho g \\Delta h$.",
+          "answer": true
+        }
+      ],
+      "explanation": "$p_0$ ép lên cả mặt trên lẫn mặt dưới như nhau nên triệt tiêu trong $\\Delta p$; lực đẩy chỉ phụ thuộc $\\rho$ và $V$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Theo bài, vật rơi trong không khí trải qua mấy giai đoạn chuyển động?",
+      "answer": "3",
+      "explanation": "Bài mô tả ba giai đoạn: gần nhanh dần đều, nhanh dần không đều, rồi rơi đều với tốc độ giới hạn."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quả nặng chìm hẳn trong bể được hạ từ độ sâu $20$ cm xuống $60$ cm (chưa chạm đáy). Lực đẩy Archimedes lên nó tăng gấp bao nhiêu lần?",
+      "answer": "1",
+      "explanation": "$F_A = \\rho g V$ không phụ thuộc độ sâu nên lực đẩy không đổi, tức gấp $1$ lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Khối gỗ nổi một phần trên nước. Công thức đúng cho độ lớn lực đẩy Archimedes là",
+      "options": [
+        "$F_A = \\rho_{\\text{nước}}\\, g\\, V_{\\text{chìm}}$",
+        "$F_A = \\rho_{\\text{gỗ}}\\, g\\, V_{\\text{chìm}}$",
+        "$F_A = \\rho_{\\text{nước}}\\, g\\, V_{\\text{cả khối}}$",
+        "$F_A = \\rho_{\\text{nước}}\\, g\\, h$"
+      ],
+      "answer": 0,
+      "explanation": "Phải lấy $\\rho$ của chất lỏng và $V$ của phần chìm. Dùng $\\rho$ của vật, hay thể tích cả khối khi vật chưa chìm hẳn, đều sai; $\\rho g h$ là áp suất, không phải lực."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Thể tích $200\\ \\text{cm}^3$ bằng bao nhiêu mét khối?",
+      "options": [
+        "$2\\cdot 10^{-2}\\ \\text{m}^3$",
+        "$2\\cdot 10^{-3}\\ \\text{m}^3$",
+        "$2\\cdot 10^{-4}\\ \\text{m}^3$",
+        "$2\\cdot 10^{-6}\\ \\text{m}^3$"
+      ],
+      "answer": 2,
+      "explanation": "$1\\ \\text{cm}^3 = 10^{-6}\\ \\text{m}^3$ nên $200\\ \\text{cm}^3 = 2\\cdot 10^{-4}\\ \\text{m}^3$. $10^{-2}$ là đổi như độ dài, quên lập phương; $10^{-3}$ là nhầm với lít hoặc $\\text{dm}^3$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật chìm hẳn trong nước, thể tích $2$ lít. Lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes là",
+      "options": [
+        "$2$ N",
+        "$20$ N",
+        "$20\\,000$ N",
+        "$200$ N"
+      ],
+      "answer": 1,
+      "explanation": "$V = 2\\ \\text{lít} = 2\\cdot 10^{-3}\\ \\text{m}^3$; $F_A = 1000\\cdot 10\\cdot 2\\cdot 10^{-3} = 20$ N. $2$ N là quên nhân $g$; $20\\,000$ N là quên đổi lít ra $\\text{m}^3$; $200$ N là đổi lít bằng $10^{-2}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Khối gỗ thể tích $4{,}0\\ \\text{dm}^3$ nổi trên nước, phần chìm $2{,}5\\ \\text{dm}^3$. Lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes là",
+      "options": [
+        "$40$ N",
+        "$15$ N",
+        "$25\\,000$ N",
+        "$25$ N"
+      ],
+      "answer": 3,
+      "explanation": "Chỉ phần chìm chiếm chỗ nước: $F_A = 1000\\cdot 10\\cdot 2{,}5\\cdot 10^{-3} = 25$ N. $40$ N là lấy cả khối; $15$ N là lấy phần nổi; $25\\,000$ N là quên đổi $\\text{dm}^3$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về $\\Delta p = \\rho g \\Delta h$ và $p = p_0 + \\rho g h$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Chênh lệch áp suất giữa hai điểm không phụ thuộc áp suất khí quyển $p_0$.",
+          "answer": true
+        },
+        {
+          "text": "Với cùng chất lỏng, $\\Delta p$ tỉ lệ thuận với $\\Delta h$.",
+          "answer": true
+        },
+        {
+          "text": "Áp suất ở độ sâu $h$ trong chất lỏng là $p = p_0 + \\rho g h$.",
+          "answer": true
+        },
+        {
+          "text": "Chênh lệch áp suất giữa hai điểm phụ thuộc vào $p_0$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$p_0$ có mặt trong cả hai áp suất nên khi lấy hiệu thì triệt tiêu: $\\Delta p = \\rho g \\Delta h$ chỉ phụ thuộc $\\rho$ và $\\Delta h$."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Khối gỗ có $\\rho_{\\text{gỗ}} = 800\\ \\text{kg/m}^3$, thể tích $5\\ \\text{dm}^3$, nổi yên trên nước ($\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Lực đẩy Archimedes bằng trọng lượng khối gỗ.",
+          "answer": true
+        },
+        {
+          "text": "Phần chìm chiếm $80\\,\\%$ thể tích khối gỗ.",
+          "answer": true
+        },
+        {
+          "text": "Thể tích phần chìm là $4\\ \\text{dm}^3$.",
+          "answer": true
+        },
+        {
+          "text": "Lực đẩy Archimedes lớn hơn trọng lượng khối gỗ, nên gỗ nổi.",
+          "answer": false
+        }
+      ],
+      "explanation": "Nổi yên thì $F_A = P$: $\\rho_{\\text{nước}} V_c = \\rho_{\\text{gỗ}} V$ nên $V_c = 0{,}8V = 4\\ \\text{dm}^3$. Nếu $F_A > P$ thì khối gỗ còn đang đi lên chứ chưa nổi yên."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Người và dù có tổng khối lượng $60$ kg đang rơi đều; lấy $g = 10\\ \\text{m/s}^2$, bỏ qua lực đẩy Archimedes của không khí. Lực cản của không khí bằng bao nhiêu niutơn?",
+      "answer": "600",
+      "explanation": "Rơi đều nên lực cản bằng trọng lượng: $F_c = mg = 60\\cdot 10 = 600$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật chìm hẳn trong nước có thể tích $0{,}5$ lít; lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes bằng bao nhiêu niutơn?",
+      "answer": "5",
+      "explanation": "$V = 0{,}5\\ \\text{lít} = 5\\cdot 10^{-4}\\ \\text{m}^3$; $F_A = 1000\\cdot 10\\cdot 5\\cdot 10^{-4} = 5$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai điểm trong nước cách nhau $0{,}5$ m theo phương thẳng đứng; lấy $\\rho = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Độ chênh áp suất giữa hai điểm là bao nhiêu pascal?",
+      "answer": "5000",
+      "explanation": "$\\Delta p = \\rho g \\Delta h = 1000\\cdot 10\\cdot 0{,}5 = 5000$ Pa, không phụ thuộc áp suất khí quyển."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Bài 19. Lực cản và lực nâng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật treo vào lực kế, ngoài không khí chỉ $7{,}5$ N. Nhúng chìm hẳn vào nước, thể tích vật $300\\ \\text{cm}^3$; lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực kế chỉ bao nhiêu niutơn? (viết dạng số thập phân)",
+      "answer": "4,5",
+      "explanation": "$V = 3\\cdot 10^{-4}\\ \\text{m}^3$ nên $F_A = 1000\\cdot 10\\cdot 3\\cdot 10^{-4} = 3$ N. Vật đứng yên: $T + F_A = P$, nên $T = 7{,}5 - 3 = 4{,}5$ N."
+    }
+  ]
+}

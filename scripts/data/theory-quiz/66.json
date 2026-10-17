@@ -1,0 +1,386 @@
+{
+  "lesson_id": 66,
+  "lesson_title": "Bài 21. Moment lực. Cân bằng của vật rắn",
+  "item_id": 129,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Moment lực đối với một trục quay đặc trưng cho",
+      "options": [
+        "Tác dụng làm vật chuyển động tịnh tiến của lực",
+        "Độ lớn của lực tác dụng lên vật",
+        "Tác dụng làm quay của lực quanh trục đó",
+        "Khối lượng của vật bị lực tác dụng"
+      ],
+      "answer": 2,
+      "explanation": "Bài nêu moment lực đặc trưng cho tác dụng làm quay của lực quanh một trục, bằng lực nhân cánh tay đòn: $M = F\\cdot d$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cánh tay đòn của một lực đối với trục quay là",
+      "options": [
+        "Khoảng cách từ trục quay tới giá của lực, đo vuông góc",
+        "Khoảng cách từ trục quay tới điểm đặt của lực",
+        "Chiều dài của vật chịu lực",
+        "Góc giữa lực và đường nối trục quay với điểm đặt"
+      ],
+      "answer": 0,
+      "explanation": "Cánh tay đòn $d$ đo từ trục tới đường thẳng chứa lực (giá của lực) theo phương vuông góc. Chỉ khi lực vuông góc với cán thì $d$ mới bằng khoảng cách tới điểm đặt."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đẩy mép cánh cửa bằng một lực mạnh hướng dọc mặt cửa thẳng vào bản lề. Hiện tượng xảy ra là",
+      "options": [
+        "Cửa quay nhanh nhất vì lực đặt xa bản lề nhất",
+        "Cửa quay chậm vì lực đặt gần bản lề",
+        "Cửa quay ngược chiều với chiều đẩy",
+        "Cửa không quay vì giá của lực đi qua trục bản lề nên moment bằng 0"
+      ],
+      "answer": 3,
+      "explanation": "Giá lực đi qua trục thì $d = 0$ nên $M = 0$: lực chỉ ép cửa vào bản lề, không làm quay. Xa hay gần bản lề chỉ có ý nghĩa khi tính theo cánh tay đòn vuông góc."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai điều kiện để một vật rắn cân bằng là",
+      "options": [
+        "Chỉ cần tổng các lực tác dụng bằng $\\vec 0$",
+        "Tổng các lực tác dụng bằng $\\vec 0$ và tổng các moment lực đối với một điểm bất kì bằng 0",
+        "Chỉ cần tổng các moment lực bằng 0",
+        "Có hai lực bằng nhau tác dụng lên vật"
+      ],
+      "answer": 1,
+      "explanation": "Tổng lực bằng 0 thì vật không tịnh tiến, tổng moment bằng 0 thì vật không quay. Thiếu một điều kiện (ví dụ ngẫu lực lên vô lăng) vật vẫn có thể quay."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ngẫu lực là hệ gồm hai lực",
+      "options": [
+        "Song song, ngược chiều, có độ lớn bằng nhau và cùng đặt vào một vật",
+        "Song song, cùng chiều, có độ lớn bằng nhau và cùng đặt vào một vật",
+        "Cùng giá, ngược chiều, có độ lớn bằng nhau",
+        "Vuông góc nhau, có độ lớn bằng nhau"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa: hai lực song song, ngược chiều, cùng độ lớn, cùng đặt vào một vật. Tổng hai lực bằng 0 nên ngẫu lực chỉ làm biến đổi chuyển động quay."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đặt thước lên mặt bàn nhẵn rồi dùng hai ngón tay đẩy hai đầu thước theo hai chiều ngược nhau, vuông góc thước, lực như nhau. Thước sẽ",
+      "options": [
+        "Trượt thẳng theo chiều của một trong hai lực",
+        "Đứng yên vì hai lực triệt tiêu nhau",
+        "Quay tại chỗ quanh trục đi qua trọng tâm của thước",
+        "Quay quanh một đầu thước"
+      ],
+      "answer": 2,
+      "explanation": "Hai lực tạo thành ngẫu lực: hợp lực bằng 0 nên thước không tịnh tiến, nhưng có moment nên quay. Vật không có trục cố định quay quanh trục qua trọng tâm."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về quy tắc moment và cân bằng vật rắn, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Quy tắc moment áp dụng cho vật có trục quay cố định.",
+          "answer": true
+        },
+        {
+          "text": "Vật cân bằng khi tổng moment thuận chiều kim đồng hồ bằng tổng moment ngược chiều kim đồng hồ.",
+          "answer": true
+        },
+        {
+          "text": "Đặt trục quay ở chỗ có lực chưa biết thì lực đó biến mất khỏi phương trình moment.",
+          "answer": true
+        },
+        {
+          "text": "Chỉ cần tổng các lực bằng 0 là vật rắn đã cân bằng.",
+          "answer": false
+        }
+      ],
+      "explanation": "Lực có giá đi qua trục thì $d = 0$ nên không xuất hiện trong phương trình moment. Tổng lực bằng 0 chưa đủ: vật vẫn có thể quay, như vô lăng chịu ngẫu lực."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về ngẫu lực, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tổng hai lực của một ngẫu lực bằng 0.",
+          "answer": true
+        },
+        {
+          "text": "Ngẫu lực chỉ làm biến đổi chuyển động quay của vật.",
+          "answer": true
+        },
+        {
+          "text": "Moment của ngẫu lực thay đổi khi dời vị trí trục quay (vuông góc mặt phẳng ngẫu lực).",
+          "answer": false
+        },
+        {
+          "text": "Hai tay xoay vô lăng bằng hai lực song song, ngược chiều, bằng nhau là tạo ngẫu lực.",
+          "answer": true
+        }
+      ],
+      "explanation": "Bài chứng minh: dù trục nằm giữa hay ngoài hai giá, biến $x$ triệt tiêu và $M = F d$ không đổi. Moment ngẫu lực không phụ thuộc vị trí trục."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một lực có giá đi qua trục quay có moment bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+      "answer": "0",
+      "explanation": "Giá của lực đi qua trục thì cánh tay đòn $d = 0$, nên $M = F\\cdot 0 = 0$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Điều kiện cân bằng tổng quát của vật rắn gồm mấy điều kiện?",
+      "answer": "2",
+      "explanation": "Hai điều kiện: tổng các lực bằng $\\vec 0$ và tổng các moment lực đối với một điểm bất kì bằng 0."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Lực $F$ đặt tại điểm cách trục quay đoạn $r$, giá của lực hợp với đường nối trục và điểm đặt góc $\\alpha$. Moment của lực đối với trục là",
+      "options": [
+        "$M = F\\,r\\cos\\alpha$",
+        "$M = F\\,r$",
+        "$M = \\dfrac{F\\sin\\alpha}{r}$",
+        "$M = F\\,r\\sin\\alpha$"
+      ],
+      "answer": 3,
+      "explanation": "Cánh tay đòn $d = r\\sin\\alpha$ nên $M = F r\\sin\\alpha$. Dùng $\\cos\\alpha$ là nhầm cạnh kề với cạnh đối; $F r$ chỉ đúng khi $\\alpha = 90^\\circ$; chia cho $r$ là sai thứ nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhổ một chiếc đinh cần moment $45\\ \\text{N}\\cdot\\text{m}$ quanh điểm tì. Cầm búa cách điểm tì $50$ cm, ấn vuông góc cán. Lực cần dùng là",
+      "options": [
+        "$22{,}5$ N",
+        "$90$ N",
+        "$2250$ N",
+        "$0{,}9$ N"
+      ],
+      "answer": 1,
+      "explanation": "$d = 0{,}5$ m nên $F = M/d = 45/0{,}5 = 90$ N. $22{,}5$ N là nhân $M\\cdot d$ thay vì chia; $2250$ N là nhân với $50$ cm; $0{,}9$ N là chia cho $50$ mà chưa đổi cm ra m."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bập bênh có trục ở giữa, bỏ qua khối lượng ván. An $50$ kg ngồi cách trục $0{,}8$ m. Bình $40$ kg phải ngồi bên kia cách trục bao xa để ván cân bằng?",
+      "options": [
+        "$0{,}8$ m",
+        "$1{,}0$ m",
+        "$0{,}64$ m",
+        "$1{,}25$ m"
+      ],
+      "answer": 1,
+      "explanation": "$50g\\cdot 0{,}8 = 40g\\cdot x$ nên $x = 1{,}0$ m. $0{,}8$ m là cho ngồi đối xứng; $0{,}64$ m là làm ngược tỉ lệ ($0{,}8\\cdot 40/50$); $1{,}25$ m là quên nhân $0{,}8$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một ngẫu lực gồm hai lực $25$ N, khoảng cách giữa hai giá là $0{,}4$ m. Moment của ngẫu lực là",
+      "options": [
+        "$5\\ \\text{N}\\cdot\\text{m}$",
+        "$20\\ \\text{N}\\cdot\\text{m}$",
+        "$62{,}5\\ \\text{N}\\cdot\\text{m}$",
+        "$10\\ \\text{N}\\cdot\\text{m}$"
+      ],
+      "answer": 3,
+      "explanation": "$M = F d = 25\\cdot 0{,}4 = 10\\ \\text{N}\\cdot\\text{m}$. $5$ là chỉ tính một lực với nửa khoảng cách; $20$ là cộng hai lực rồi nhân $d$; $62{,}5$ là chia $F/d$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về công thức $M = F\\cdot d$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đơn vị của moment lực trong hệ SI là $\\text{N}\\cdot\\text{m}$.",
+          "answer": true
+        },
+        {
+          "text": "Lực $20$ N có cánh tay đòn $0{,}3$ m thì moment là $6\\ \\text{N}\\cdot\\text{m}$.",
+          "answer": true
+        },
+        {
+          "text": "Lực hợp với đường nối trục và điểm đặt (dài $r$) góc $\\alpha$ có cánh tay đòn $d = r\\sin\\alpha$.",
+          "answer": true
+        },
+        {
+          "text": "Dùng $d = 30$ (đang tính bằng cm) trực tiếp trong $M = F d$ vẫn cho kết quả đúng đơn vị $\\text{N}\\cdot\\text{m}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Muốn kết quả bằng $\\text{N}\\cdot\\text{m}$ thì $d$ phải đổi ra mét: $30$ cm $= 0{,}30$ m. Nếu giữ cm thì kết quả có đơn vị $\\text{N}\\cdot\\text{cm}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "bien_doi",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Với ngẫu lực có moment $M = F\\cdot d$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Giữ nguyên $F$, tăng $d$ lên gấp đôi thì $M$ tăng gấp đôi.",
+          "answer": true
+        },
+        {
+          "text": "Giữ nguyên $d$, giảm $F$ đi một nửa thì $M$ giảm đi một nửa.",
+          "answer": true
+        },
+        {
+          "text": "Dời trục quay sang vị trí khác (vuông góc mặt phẳng ngẫu lực) thì $M$ không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Giữ nguyên $F$, muốn $M$ tăng lên 4 lần chỉ cần tăng $d$ lên 2 lần.",
+          "answer": false
+        }
+      ],
+      "explanation": "$M$ tỉ lệ thuận với $d$ (khi $F$ không đổi): muốn tăng $4$ lần thì phải tăng $d$ lên $4$ lần, không phải $2$ lần."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực $60$ N vuông góc với tay quay, giá của lực cách trục quay $25$ cm. Moment của lực bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+      "answer": "15",
+      "explanation": "$d = 0{,}25$ m nên $M = F d = 60\\cdot 0{,}25 = 15\\ \\text{N}\\cdot\\text{m}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Lực $80$ N đặt tại điểm cách trục $0{,}5$ m, hợp với cán góc $30^\\circ$. Moment của lực bằng bao nhiêu $\\text{N}\\cdot\\text{m}$?",
+      "answer": "20",
+      "explanation": "$d = 0{,}5\\sin 30^\\circ = 0{,}25$ m; $M = 80\\cdot 0{,}25 = 20\\ \\text{N}\\cdot\\text{m}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Moment lực và quy tắc moment",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thước nhẹ có trục quay ở giữa. Bên trái treo vật $30$ N cách trục $0{,}5$ m. Bên phải treo vật cách trục $0{,}3$ m để thước cân bằng. Trọng lượng vật bên phải bằng bao nhiêu niutơn?",
+      "answer": "50",
+      "explanation": "Quy tắc moment: $30\\cdot 0{,}5 = P_2\\cdot 0{,}3$ nên $P_2 = 15/0{,}3 = 50$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Ngẫu lực, cân bằng của vật rắn có trục quay",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thanh nhẹ $AB$ dài $2$ m kê trên hai giá ở hai đầu. Treo vật $80$ N cách $A$ đoạn $0{,}5$ m. Lực giá đỡ tại $B$ tác dụng lên thanh bằng bao nhiêu niutơn?",
+      "answer": "20",
+      "explanation": "Moment quanh $A$ (loại $N_A$): $N_B\\cdot 2 = 80\\cdot 0{,}5$ nên $N_B = 20$ N. Kiểm: $N_A = 80 - 20 = 60$ N."
+    }
+  ]
+}

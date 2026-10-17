@@ -1,0 +1,386 @@
+{
+  "lesson_id": 78,
+  "lesson_title": "Bài 33. Biến dạng của vật rắn",
+  "item_id": 260,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một thanh chịu hai lực ngược chiều, vuông góc với hai mặt đầu và hướng vào phía trong thanh. Thanh bị biến dạng như thế nào?",
+      "options": [
+        "Biến dạng kéo, thanh dài ra",
+        "Biến dạng dẻo, vì lực hướng vào trong",
+        "Biến dạng nén, thanh ngắn lại",
+        "Không biến dạng, vì hai lực ngược chiều triệt tiêu nhau"
+      ],
+      "answer": 2,
+      "explanation": "Cặp lực hướng vào trong vật gây biến dạng nén. Hai lực triệt tiêu chỉ khiến thanh không chuyển động, còn thanh vẫn bị ép ngắn lại."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Biến dạng dẻo là biến dạng mà khi thôi tác dụng lực thì vật",
+      "options": [
+        "không trở lại hình dạng, kích thước ban đầu",
+        "trở lại đúng hình dạng, kích thước ban đầu",
+        "dài ra thêm cho tới khi đứt",
+        "luôn bị nén chứ không bị kéo"
+      ],
+      "answer": 0,
+      "explanation": "Đàn hồi thì thôi lực vật về như cũ; dẻo thì thôi lực vật không về. Kéo hay nén là chuyện khác, chỉ nói về chiều của cặp lực."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bẻ cong chiếc kẹp giấy rồi thả tay, kẹp giấy giữ nguyên dạng cong. Đây là",
+      "options": [
+        "biến dạng đàn hồi, vì kẹp giấy làm bằng kim loại",
+        "biến dạng đàn hồi, vì hình dạng mới vẫn giữ ổn định",
+        "chưa phải biến dạng, vì kẹp giấy không bị đứt",
+        "biến dạng dẻo, vì thôi lực mà không về như cũ"
+      ],
+      "answer": 3,
+      "explanation": "Thôi lực mà vật không trở lại hình dạng cũ là biến dạng dẻo (ví dụ trong bài: đất nặn, kẹp giấy bị bẻ cong)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Giới hạn đàn hồi của một vật là",
+      "options": [
+        "độ dãn lớn nhất mà vật đạt được trước khi đứt",
+        "mức lực lớn nhất mà vật còn giữ được tính đàn hồi",
+        "chiều dài của vật khi không có ngoại lực",
+        "độ cứng lớn nhất mà vật có thể đạt"
+      ],
+      "answer": 1,
+      "explanation": "Giới hạn đàn hồi là ranh giới của tính đàn hồi, thường đến sớm hơn lúc đứt. Vượt nó, biến dạng chuyển thành dẻo."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một lò xo đang bị nén. Lực đàn hồi của nó tác dụng lên vật tiếp xúc ở đầu lò xo có chiều",
+      "options": [
+        "kéo vật về phía lò xo",
+        "vuông góc với trục lò xo",
+        "đẩy vật ra xa lò xo",
+        "hướng vào trong lò xo, cùng chiều biến dạng"
+      ],
+      "answer": 2,
+      "explanation": "Lực đàn hồi luôn ngược chiều biến dạng, nén thì đẩy ra, dãn thì kéo vào, phương trùng trục lò xo."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ thức $F_{\\text{đh}} = k\\left|\\Delta l\\right|$ chỉ dùng được khi",
+      "options": [
+        "lò xo được treo thẳng đứng",
+        "lò xo bị dãn, không dùng cho lò xo bị nén",
+        "lò xo làm bằng thép",
+        "lò xo còn nằm trong giới hạn đàn hồi"
+      ],
+      "answer": 3,
+      "explanation": "Định luật Hooke đòi hỏi trong giới hạn đàn hồi; treo đứng hay nằm không quyết định. Dùng $\\left|\\Delta l\\right|$ nên áp dụng được cho cả dãn lẫn nén."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Độ cứng $k$ của một lò xo phụ thuộc vào",
+      "options": [
+        "vật liệu, độ dày dây và kích thước lò xo",
+        "độ lớn lực kéo đang tác dụng",
+        "độ dãn của lò xo lúc đó",
+        "khối lượng vật treo vào lò xo"
+      ],
+      "answer": 0,
+      "explanation": "$k$ là đặc trưng riêng của lò xo; đổi lực hay đổi vật treo chỉ làm đổi độ dãn, không đổi $k$."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Biến dạng kéo, nén và giới hạn đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về biến dạng của vật rắn, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi không có ngoại lực, vật rắn có hình dạng và kích thước xác định.",
+          "answer": true
+        },
+        {
+          "text": "Trong biến dạng kéo, cặp lực hướng vào phía trong vật.",
+          "answer": false
+        },
+        {
+          "text": "Lực tác dụng càng lớn thì biến dạng càng nhiều.",
+          "answer": true
+        },
+        {
+          "text": "Khi vượt quá giới hạn đàn hồi, thôi lực thì vật vẫn trở lại hình dạng ban đầu.",
+          "answer": false
+        }
+      ],
+      "explanation": "Kéo ứng với cặp lực hướng ra ngoài (nén mới hướng vào trong). Vượt giới hạn đàn hồi, biến dạng thành dẻo nên vật không về như cũ."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về lực đàn hồi của lò xo, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Điểm đặt ở hai đầu lò xo, lên vật tiếp xúc với lò xo.",
+          "answer": true
+        },
+        {
+          "text": "Phương của lực trùng với trục lò xo.",
+          "answer": true
+        },
+        {
+          "text": "Khi lò xo dãn, lực đàn hồi đẩy vật ra xa lò xo.",
+          "answer": false
+        },
+        {
+          "text": "Lực đàn hồi xuất hiện khi lò xo biến dạng và có xu hướng đưa lò xo về chiều dài tự nhiên.",
+          "answer": true
+        }
+      ],
+      "explanation": "Lò xo dãn thì lực đàn hồi kéo vật về phía lò xo (ngược chiều biến dạng); chỉ lò xo nén mới đẩy vật ra."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về độ biến dạng và độ cứng trong định luật Hooke, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$\\left|\\Delta l\\right|$ là phần dài thêm hoặc ngắn đi so với chiều dài tự nhiên, không phải chiều dài $l$ đọc trên thước.",
+          "answer": true
+        },
+        {
+          "text": "Trong giới hạn đàn hồi, lực kéo tăng gấp đôi thì độ cứng $k$ cũng tăng gấp đôi.",
+          "answer": false
+        },
+        {
+          "text": "Hai lò xo cùng vật liệu, dây to hơn thì dãn ít hơn khi treo cùng một vật (cứng hơn).",
+          "answer": true
+        },
+        {
+          "text": "Với mọi lực kéo, kể cả vượt giới hạn đàn hồi, vẫn dùng được $F = k\\left|\\Delta l\\right|$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Lực tăng thì độ dãn tăng theo, $k$ giữ nguyên. Quá giới hạn đàn hồi thì lực không còn tỉ lệ với độ dãn nên hệ thức không dùng được."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Độ lớn lực đàn hồi của lò xo trong giới hạn đàn hồi, với $l_0$ là chiều dài tự nhiên và $l$ là chiều dài lúc biến dạng, được tính bằng",
+      "options": [
+        "$F = k\\,l$",
+        "$F = k\\left|l - l_0\\right|$",
+        "$F = \\dfrac{\\left|l - l_0\\right|}{k}$",
+        "$F = \\dfrac{k}{\\left|l - l_0\\right|}$"
+      ],
+      "answer": 1,
+      "explanation": "Lực tỉ lệ với độ biến dạng $\\left|l - l_0\\right|$. Dùng $l$ là nhầm với chiều dài; hai nhiễu còn lại đảo vị trí $k$ và $\\Delta l$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong hệ SI, đơn vị của độ cứng lò xo $k$ là",
+      "options": [
+        "N$\\cdot$m",
+        "m/N",
+        "N/m",
+        "N/m$^2$"
+      ],
+      "answer": 2,
+      "explanation": "Từ $k = F/\\left|\\Delta l\\right|$ có đơn vị N/m. N/m$^2$ là đơn vị áp suất, m/N là đảo tử mẫu, N$\\cdot$m là nhân thay vì chia."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Lò xo có chiều dài tự nhiên $40\\ \\text{cm}$ và độ cứng $50\\ \\text{N/m}$. Kéo cho lò xo dài $46\\ \\text{cm}$ (trong giới hạn đàn hồi). Độ lớn lực đàn hồi là",
+      "options": [
+        "$3\\ \\text{N}$",
+        "$300\\ \\text{N}$",
+        "$23\\ \\text{N}$",
+        "$20\\ \\text{N}$"
+      ],
+      "answer": 0,
+      "explanation": "$\\left|\\Delta l\\right| = 6\\ \\text{cm} = 0{,}06\\ \\text{m}$ nên $F = 50 \\cdot 0{,}06 = 3\\ \\text{N}$. $300$ là quên đổi cm ra m; $23$ là lấy $l = 0{,}46\\ \\text{m}$; $20$ là lấy $l_0 = 0{,}4\\ \\text{m}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Treo vật $1{,}5\\ \\text{N}$ vào một lò xo thì lò xo dãn $3\\ \\text{cm}$ (trong giới hạn đàn hồi). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Độ cứng của lò xo là $50\\ \\text{N/m}$.",
+          "answer": true
+        },
+        {
+          "text": "Treo vật $3\\ \\text{N}$ thì lò xo dãn $6\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Treo vật $3\\ \\text{N}$ thì độ cứng tăng lên $100\\ \\text{N/m}$.",
+          "answer": false
+        },
+        {
+          "text": "Nếu chiều dài tự nhiên là $10\\ \\text{cm}$ thì lúc treo vật $1{,}5\\ \\text{N}$ lò xo dài $3\\ \\text{cm}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$k = 1{,}5/0{,}03 = 50\\ \\text{N/m}$ và không đổi; lực gấp đôi nên độ dãn gấp đôi. Lò xo dãn $3\\ \\text{cm}$ thì chiều dài là $10 + 3 = 13\\ \\text{cm}$, không phải $3\\ \\text{cm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực $6\\ \\text{N}$ làm một lò xo dãn $4\\ \\text{cm}$ (trong giới hạn đàn hồi). Độ cứng của lò xo là bao nhiêu N/m?",
+      "answer": "150",
+      "explanation": "$k = F/\\left|\\Delta l\\right| = 6/0{,}04 = 150\\ \\text{N/m}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Lò xo có $l_0 = 15\\ \\text{cm}$, $k = 40\\ \\text{N/m}$ bị kéo bởi lực $6\\ \\text{N}$ (trong giới hạn đàn hồi). Chiều dài lò xo lúc đó là bao nhiêu cm?",
+      "answer": "30",
+      "explanation": "$\\left|\\Delta l\\right| = F/k = 6/40 = 0{,}15\\ \\text{m} = 15\\ \\text{cm}$; lò xo dãn nên $l = 15 + 15 = 30\\ \\text{cm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Lò xo có $l_0 = 28\\ \\text{cm}$, $k = 200\\ \\text{N/m}$ bị ép bởi lực $10\\ \\text{N}$ (trong giới hạn đàn hồi). Chiều dài lò xo lúc đó là bao nhiêu cm?",
+      "answer": "23",
+      "explanation": "$\\left|\\Delta l\\right| = 10/200 = 0{,}05\\ \\text{m} = 5\\ \\text{cm}$; lò xo bị nén nên ngắn đi: $l = 28 - 5 = 23\\ \\text{cm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Treo vật $500\\ \\text{g}$ vào một lò xo, lò xo dãn $2\\ \\text{cm}$ khi vật đứng yên. Lấy $g = 10\\ \\text{m/s}^2$. Độ cứng của lò xo là bao nhiêu N/m?",
+      "answer": "250",
+      "explanation": "Vật đứng yên nên $F_{\\text{đh}} = mg = 0{,}5 \\cdot 10 = 5\\ \\text{N}$; $k = 5/0{,}02 = 250\\ \\text{N/m}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Treo vật $100\\ \\text{g}$ thì một lò xo dãn $2\\ \\text{cm}$. Treo vật $400\\ \\text{g}$ vào cùng lò xo (vẫn trong giới hạn đàn hồi) thì lò xo dãn bao nhiêu cm?",
+      "answer": "8",
+      "explanation": "Trong giới hạn đàn hồi, độ dãn tỉ lệ với lực. Lực gấp 4 lần nên độ dãn là $4 \\cdot 2 = 8\\ \\text{cm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lò xo có $k = 150\\ \\text{N/m}$ bị dãn $3\\ \\text{cm}$. Độ lớn lực đàn hồi là bao nhiêu N?",
+      "answer": "4,5",
+      "explanation": "$F = k\\left|\\Delta l\\right| = 150 \\cdot 0{,}03 = 4{,}5\\ \\text{N}$ (nhớ đổi cm ra m)."
+    }
+  ]
+}

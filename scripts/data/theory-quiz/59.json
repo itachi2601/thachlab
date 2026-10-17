@@ -1,0 +1,371 @@
+{
+  "lesson_id": 59,
+  "lesson_title": "Bài 14. Định luật 1 Newton",
+  "item_id": 111,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 14,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 12,
+      "cong_thuc": 6
+    },
+    "removed": [
+      {
+        "question": "Trạng thái cân bằng của một vật gồm mấy trạng thái (đứng yên, chuyển động thẳng đều, ...)?",
+        "reason": "Đề liệt kê \"(đứng yên, chuyển động thẳng đều, ...)\" có dấu ba chấm mâu thuẫn với đáp án 2; câu chỉ đếm số mục, mơ hồ và không đo kiến thức"
+      },
+      {
+        "question": "Hai lực cân bằng phải thoả mấy điều kiện: cùng đặt lên một vật, cùng độ lớn, cùng phương, …",
+        "reason": "Đáp án 4 chỉ là số mục liệt kê ngay trong đề (đếm lại danh sách), không kiểm tra kiến thức"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào đúng với định luật 1 Newton?",
+      "options": [
+        "Muốn vật chuyển động thẳng đều thì phải luôn có lực tác dụng cùng chiều chuyển động",
+        "Hợp lực lên vật bằng không thì vật đứng yên giữ nguyên đứng yên, vật chuyển động giữ nguyên chuyển động thẳng đều",
+        "Vật không chịu lực nào thì chuyển động chậm dần rồi dừng lại",
+        "Vật chuyển động thẳng đều thì hợp lực bằng lực cản"
+      ],
+      "answer": 1,
+      "explanation": "Định luật 1: $\\vec F_{hl} = \\vec 0 \\Rightarrow \\vec v$ không đổi. Cách nghĩ \"muốn chuyển động thẳng đều phải luôn có lực cùng chiều\" là của Aristotle; vật không chịu lực không chậm dần mà giữ nguyên vận tốc; khi thẳng đều lực cản bị lực kéo cân bằng nên hợp lực bằng $\\vec 0$ chứ không bằng lực cản."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quả bóng đá đã rời chân cầu thủ, đang bay trong không khí (bỏ qua lực cản không khí). Lực tác dụng lên bóng là",
+      "options": [
+        "lực đá của chân và trọng lực",
+        "lực đá còn lại, giảm dần theo thời gian",
+        "không có lực nào, vì bóng đang bay",
+        "chỉ có trọng lực"
+      ],
+      "answer": 3,
+      "explanation": "Lực chỉ có khi hai vật còn tương tác; chân đã rời bóng thì không còn lực đá. Trái Đất vẫn hút bóng nên trọng lực luôn có mặt. Bóng tiếp tục bay nhờ quán tính."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quán tính là",
+      "options": [
+        "tính chất của mọi vật có xu hướng bảo toàn vận tốc cả về hướng và độ lớn",
+        "một lực giữ cho vật tiếp tục chuyển động",
+        "lực đẩy người về phía trước khi xe phanh gấp",
+        "tính chất chỉ có ở những vật đang chuyển động"
+      ],
+      "answer": 0,
+      "explanation": "Quán tính là tính chất, không phải lực, và mọi vật đều có, kể cả vật đứng yên (xu hướng giữ nguyên $v = 0$)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xe tải chở đầy hàng khó dừng hơn xe máy dù cùng tốc độ, vì",
+      "options": [
+        "xe tải có một lực quán tính đẩy về phía trước",
+        "xe tải luôn chịu lực cản nhỏ hơn xe máy",
+        "khối lượng lớn hơn nên mức quán tính lớn hơn",
+        "xe tải bao giờ cũng chạy nhanh hơn xe máy"
+      ],
+      "answer": 2,
+      "explanation": "Khối lượng là số đo mức quán tính: khối lượng càng lớn càng khó đổi vận tốc. Quán tính là tính chất chứ không phải một lực đẩy."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Chiếc đèn treo yên lặng trên trần bằng một sợi dây. Phát biểu đúng là",
+      "options": [
+        "không có lực nào tác dụng lên đèn",
+        "đèn chỉ chịu lực căng của dây",
+        "lực căng của dây lớn hơn trọng lực nên đèn không rơi",
+        "lực căng của dây cân bằng với trọng lực nên hợp lực lên đèn bằng $\\vec 0$"
+      ],
+      "answer": 3,
+      "explanation": "Đứng yên nghĩa là hợp lực bằng $\\vec 0$, không phải không có lực. Nếu lực căng lớn hơn trọng lực thì hợp lực hướng lên và đèn sẽ bị kéo lên."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tàu thăm dò Voyager 1 ở rất xa Mặt Trời vẫn bay đi với tốc độ gần như không đổi vì",
+      "options": [
+        "động cơ của nó vẫn đẩy liên tục để duy trì chuyển động",
+        "ở rất xa thiên thể, hầu như không có lực nào làm vận tốc của nó thay đổi nên nó chuyển động theo quán tính",
+        "có một lực quán tính đẩy nó đi",
+        "Mặt Trời vẫn đẩy nó cùng chiều chuyển động"
+      ],
+      "answer": 1,
+      "explanation": "Chuyển động thẳng đều không cần lực duy trì. Quán tính là tính chất của vật chứ không phải lực nào đẩy nó."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về thí nghiệm hai máng nghiêng của Galilei, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Máng (2) càng thoải thì bi lăn càng xa.",
+          "answer": true
+        },
+        {
+          "text": "Bi luôn lên thấp hơn độ cao ban đầu vì có ma sát.",
+          "answer": true
+        },
+        {
+          "text": "Máng (2) càng thoải thì bi lên càng cao.",
+          "answer": false
+        },
+        {
+          "text": "Kết luận \"bi lăn mãi khi không ma sát\" là suy luận, không đo trực tiếp được.",
+          "answer": true
+        }
+      ],
+      "explanation": "Máng thoải thì ma sát \"lấy\" nhiều hơn nên bi lên thấp hơn, nhưng lăn xa hơn. Từ đó Galilei suy luận: nếu không ma sát và máng nằm ngang, bi lăn mãi với vận tốc không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về hiện tượng quán tính trên xe buýt, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Xe phanh gấp, người đứng không vịn chúi về phía trước.",
+          "answer": true
+        },
+        {
+          "text": "Xe đứng yên rồi tăng tốc đột ngột, người ngả ra phía sau.",
+          "answer": true
+        },
+        {
+          "text": "Xe rẽ gấp sang trái, người đứng không vịn bị xô sang phải.",
+          "answer": true
+        },
+        {
+          "text": "Khi xe phanh gấp, có một \"lực quán tính\" đẩy người về phía trước.",
+          "answer": false
+        }
+      ],
+      "explanation": "Chân bị sàn xe kéo chậm lại cùng xe, thân người giữ vận tốc cũ nên chúi tới. Không có vật nào tác dụng một \"lực quán tính\": quán tính là tính chất, không phải lực."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về vai trò của lực và trạng thái cân bằng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Lực là nguyên nhân làm thay đổi vận tốc của vật.",
+          "answer": true
+        },
+        {
+          "text": "Vật chuyển động thẳng đều bắt buộc phải có lực tác dụng theo chiều chuyển động.",
+          "answer": false
+        },
+        {
+          "text": "Vật đứng yên thì không chịu lực nào.",
+          "answer": false
+        },
+        {
+          "text": "Mọi vật đều có quán tính.",
+          "answer": true
+        }
+      ],
+      "explanation": "Lực đổi vận tốc (độ lớn hoặc hướng), không phải để duy trì chuyển động. Vật đứng yên có thể chịu nhiều lực cân bằng nhau, hợp lực bằng $\\vec 0$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ô tô chạy thẳng đều trên đường nằm ngang chịu bốn lực cân bằng từng cặp. Hợp lực tác dụng lên xe bằng bao nhiêu niutơn?",
+      "answer": "0",
+      "explanation": "Thẳng đều nghĩa là vận tốc không đổi nên hợp lực bằng $\\vec 0$: lực kéo bằng lực cản và lực đỡ bằng trọng lực."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Toa tàu chạy thẳng đều $72$ km/h. Một người trong toa thả rơi quả bóng từ tay. Theo phương ngang, vận tốc của bóng ngay khi rời tay (so với mặt đường) bằng bao nhiêu km/h?",
+      "answer": "72",
+      "explanation": "Rời tay chỉ mất lực đỡ, không mất vận tốc ngang: theo phương ngang không có lực nào nên bóng giữ nguyên $72$ km/h cùng tàu và rơi ngay dưới chỗ thả."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Quả cầu treo bằng dây ở trần một toa tàu chạy thẳng đều. Góc lệch của dây so với phương thẳng đứng bằng bao nhiêu độ?",
+      "answer": "0",
+      "explanation": "Tàu thẳng đều thì quả cầu cân bằng: dây thẳng đứng, lệch $0^\\circ$. Chỉ khi tàu phanh hay tăng tốc, quả cầu giữ vận tốc cũ nên dây mới lệch."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe tải $2$ tấn chạy thẳng đều trên đường nằm ngang, lực cản bằng $0{,}05$ trọng lượng xe (lấy $g = 10$ m/s²). Lực kéo của động cơ là",
+      "options": [
+        "$1\\,000$ N",
+        "$100$ N",
+        "$20\\,000$ N",
+        "$1$ N"
+      ],
+      "answer": 0,
+      "explanation": "$P = mg = 2000 \\cdot 10 = 20\\,000$ N; $F_c = 0{,}05 P = 1000$ N; thẳng đều nên $F_k = F_c = 1000$ N. $100$ N là quên nhân với $g$; $20\\,000$ N là lấy cả trọng lượng; $1$ N là quên đổi tấn ra kg."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Xe tăng tốc từ $5$ m/s lên $20$ m/s trong $5$ s. Gia tốc của xe là",
+      "options": [
+        "$4\\ \\text{m/s}^2$",
+        "$5\\ \\text{m/s}^2$",
+        "$3\\ \\text{m/s}^2$",
+        "$0{,}33\\ \\text{m/s}^2$"
+      ],
+      "answer": 2,
+      "explanation": "$a = \\dfrac{\\Delta v}{\\Delta t} = \\dfrac{20 - 5}{5} = 3\\ \\text{m/s}^2$. $4$ là lấy $v$ sau chia $t$, $5$ là lấy $(20 + 5)/5$ (cộng thay vì trừ), $0{,}33$ là đảo tử và mẫu."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe chạy thẳng đều, lực kéo của động cơ $4000$ N và lực cản bằng $0{,}04$ trọng lượng (lấy $g = 10$ m/s²). Khối lượng của xe là",
+      "options": [
+        "$100\\,000$ kg",
+        "$10\\,000$ kg",
+        "$400$ kg",
+        "$160$ kg"
+      ],
+      "answer": 1,
+      "explanation": "Thẳng đều nên $F_k = F_c = 0{,}04\\,mg$, suy ra $m = \\dfrac{4000}{0{,}04 \\cdot 10} = 10\\,000$ kg. $100\\,000$ là quên nhân $g$; $400$ là quên hệ số $0{,}04$; $160$ là nhân $4000$ với $0{,}04$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Người $70$ kg đứng trong thang máy đang đi lên đều (lấy $g = 10$ m/s²). Lực đỡ của sàn lên người là",
+      "options": [
+        "$70$ N",
+        "$0$ N",
+        "$7\\,000$ N",
+        "$700$ N"
+      ],
+      "answer": 3,
+      "explanation": "Thẳng đều nên hợp lực bằng $\\vec 0$: $N = P = mg = 700$ N. $70$ N là lấy khối lượng làm lực; $0$ N cho rằng thẳng đều thì không có lực; $7000$ N là nhân thừa một lần $10$."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe tải $4$ tấn chạy thẳng đều trên đường nằm ngang, lực cản bằng $0{,}05$ trọng lượng, $g = 10$ m/s². Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Trọng lượng của xe là $40\\,000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Lực cản có độ lớn $2000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Lực kéo của động cơ bằng $2000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Lực đỡ của mặt đường bằng $2000$ N.",
+          "answer": false
+        }
+      ],
+      "explanation": "$P = 40\\,000$ N, $F_c = 0{,}05 \\cdot 40\\,000 = 2000$ N, thẳng đều nên $F_k = F_c = 2000$ N. Theo phương đứng $N = P = 40\\,000$ N, không phải $2000$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 14. Định luật 1 Newton",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Vật đang chạy $4$ m/s chịu hai lực $8$ N, cùng phương, ngược chiều nhau. Sau $7$ s, vận tốc của vật bằng bao nhiêu m/s?",
+      "answer": "4",
+      "explanation": "Hai lực cân bằng, hợp lực bằng $\\vec 0$ nên vận tốc không đổi: vẫn $4$ m/s."
+    }
+  ]
+}

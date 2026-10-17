@@ -1,0 +1,371 @@
+{
+  "lesson_id": 60,
+  "lesson_title": "Bài 15. Định luật 2 Newton",
+  "item_id": 114,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 14,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 8,
+      "cong_thuc": 10
+    },
+    "removed": [
+      {
+        "question": "Giữ nguyên khối lượng của xe, lực kéo tăng gấp $3$ lần. Gia tốc của xe tăng gấp mấy lần?",
+        "reason": "Đề chỉ nói \"lực kéo tăng gấp 3 lần\", không nói bỏ qua ma sát hay là hợp lực; có ma sát thì gia tốc không tăng gấp 3 (đúng cái bẫy 1 của bài), đề mơ hồ"
+      },
+      {
+        "question": "Giữ nguyên lực đẩy, đặt thêm một thùng sao cho tổng khối lượng gấp đôi. Gia tốc lúc sau bằ…",
+        "reason": "Gần như trùng ý câu a ∝ 1/m khác (khối lượng gấp 4), và \"giữ nguyên lực đẩy\" thiếu điều kiện bỏ qua ma sát (ma sát đổi khi thêm thùng); topic ghi định luật 1 nhưng nội dung là định luật 2"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào đúng với định luật 2 Newton?",
+      "options": [
+        "Gia tốc tỉ lệ thuận với cả hợp lực lẫn khối lượng",
+        "Gia tốc luôn cùng hướng với vận tốc của vật",
+        "Gia tốc cùng hướng với hợp lực, độ lớn tỉ lệ thuận với hợp lực và tỉ lệ nghịch với khối lượng",
+        "Gia tốc tỉ lệ nghịch với hợp lực và tỉ lệ thuận với khối lượng"
+      ],
+      "answer": 2,
+      "explanation": "$\\vec a = \\vec F / m$: $F$ ở tử số nên $a$ tỉ lệ thuận với $F$, $m$ ở mẫu số nên $a$ tỉ lệ nghịch với $m$. Gia tốc cùng hướng với hợp lực chứ không nhất thiết cùng hướng vận tốc."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một niutơn (1 N) là",
+      "options": [
+        "lực truyền cho vật khối lượng $1$ kg gia tốc $1\\ \\text{m/s}^2$",
+        "lực truyền cho vật khối lượng $1$ g gia tốc $1\\ \\text{m/s}^2$",
+        "lực làm vật $1$ kg chuyển động với vận tốc $1$ m/s",
+        "trọng lượng của vật khối lượng $1$ kg"
+      ],
+      "answer": 0,
+      "explanation": "$1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$. Phương án với $1$ g sai đơn vị; vận tốc không phải gia tốc; trọng lượng $1$ kg khoảng $9{,}8$ N chứ không phải $1$ N."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trong biểu thức $\\vec F = m\\vec a$, $\\vec F$ là",
+      "options": [
+        "lực kéo mà người hay động cơ tác dụng lên vật",
+        "lực có độ lớn lớn nhất trong các lực tác dụng",
+        "lực do vật khác truyền cho vật, không kể ma sát",
+        "hợp lực của mọi lực tác dụng lên vật"
+      ],
+      "answer": 3,
+      "explanation": "Định luật 2 dùng hợp lực. Lấy riêng lực kéo rồi chia cho khối lượng là quên ma sát (bẫy 1 của bài)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Quả bóng đang bay thẳng đứng lên cao, bỏ qua lực cản không khí. Gia tốc của quả bóng hướng",
+      "options": [
+        "thẳng đứng lên trên, cùng chiều vận tốc",
+        "thẳng đứng xuống dưới",
+        "nằm ngang",
+        "không có hướng, vì gia tốc bằng $0$"
+      ],
+      "answer": 1,
+      "explanation": "Bỏ qua cản thì hợp lực chỉ là trọng lực hướng xuống nên gia tốc hướng xuống, dù vận tốc hướng lên (bóng chậm dần). Gia tốc cùng hướng hợp lực chứ không cùng hướng vận tốc."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Định luật 1 Newton và quán tính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khối lượng của một vật đặc trưng cho",
+      "options": [
+        "độ lớn lực tác dụng lên vật",
+        "trọng lực tác dụng lên vật ở mọi nơi",
+        "vận tốc mà vật đạt được",
+        "mức quán tính của vật"
+      ],
+      "answer": 3,
+      "explanation": "Khối lượng càng lớn thì mức quán tính càng lớn, vận tốc càng khó thay đổi. Trọng lực $P = mg$ đổi theo nơi còn khối lượng thì không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Định luật 1 Newton và quán tính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về khối lượng của vật, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khối lượng là đại lượng vô hướng và luôn dương.",
+          "answer": true
+        },
+        {
+          "text": "Khối lượng của mỗi vật không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Xe $500$ kg chở $300$ kg hàng thì cả hệ có khối lượng $800$ kg.",
+          "answer": true
+        },
+        {
+          "text": "Khối lượng có đơn vị là niutơn.",
+          "answer": false
+        }
+      ],
+      "explanation": "Khối lượng cộng được, đo bằng kg. Niutơn là đơn vị của lực."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Xe đang chạy về phía trước thì phanh. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Gia tốc của xe luôn cùng hướng với vận tốc.",
+          "answer": false
+        },
+        {
+          "text": "Gia tốc của xe cùng hướng với hợp lực tác dụng lên xe.",
+          "answer": true
+        },
+        {
+          "text": "Trong lúc phanh, vận tốc hướng về phía trước còn gia tốc hướng ra phía sau.",
+          "answer": true
+        },
+        {
+          "text": "Trọng lượng của xe là khối lượng của xe, có đơn vị kg.",
+          "answer": false
+        }
+      ],
+      "explanation": "Phanh thì hợp lực (lực hãm) hướng ra sau nên gia tốc hướng ra sau, còn vận tốc vẫn hướng tới. Trọng lượng là một lực, đo bằng N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Giữ nguyên lực tác dụng, khối lượng của vật tăng gấp $4$ lần. Gia tốc của vật giảm đi bao nhiêu lần?",
+      "answer": "4",
+      "explanation": "$a = F/m$ với $F$ không đổi: $a$ tỉ lệ nghịch với $m$, nên $m$ gấp $4$ thì $a$ giảm $4$ lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Xe đồ chơi $250$ g chịu hợp lực $0{,}5$ N. Gia tốc của xe là",
+      "options": [
+        "$0{,}002\\ \\text{m/s}^2$",
+        "$2\\ \\text{m/s}^2$",
+        "$125\\ \\text{m/s}^2$",
+        "$500\\ \\text{m/s}^2$"
+      ],
+      "answer": 1,
+      "explanation": "Đổi $250$ g $= 0{,}25$ kg; $a = 0{,}5/0{,}25 = 2\\ \\text{m/s}^2$. $0{,}002$ là để nguyên $250$ g; $125$ là nhân $F$ với $250$; $500$ là đảo $m/F$ rồi vẫn dùng gam."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Kéo thùng $15$ kg trên sàn bằng lực nằm ngang $70$ N, lực ma sát là $25$ N. Gia tốc của thùng là",
+      "options": [
+        "$3\\ \\text{m/s}^2$",
+        "$4{,}67\\ \\text{m/s}^2$",
+        "$6{,}33\\ \\text{m/s}^2$",
+        "$1{,}67\\ \\text{m/s}^2$"
+      ],
+      "answer": 0,
+      "explanation": "Hợp lực $70 - 25 = 45$ N nên $a = 45/15 = 3\\ \\text{m/s}^2$. $4{,}67$ là quên ma sát; $6{,}33$ là cộng ma sát vào; $1{,}67$ là lấy ma sát làm hợp lực."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe $800$ kg tăng tốc đều từ nghỉ lên $12$ m/s trong $6$ s. Hợp lực tác dụng lên xe là",
+      "options": [
+        "$9\\,600$ N",
+        "$4\\,800$ N",
+        "$1\\,600$ N",
+        "$400$ N"
+      ],
+      "answer": 2,
+      "explanation": "$a = 12/6 = 2\\ \\text{m/s}^2$; $F = ma = 800 \\cdot 2 = 1600$ N. $9600$ là nhân $m$ với $v$; $4800$ là nhân $m$ với $t$; $400$ là chia $m$ cho $a$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật $4$ kg đứng yên chịu hợp lực $8$ N. Quãng đường vật đi được sau $3$ s là",
+      "options": [
+        "$18$ m",
+        "$6$ m",
+        "$36$ m",
+        "$9$ m"
+      ],
+      "answer": 3,
+      "explanation": "$a = 8/4 = 2\\ \\text{m/s}^2$; $s = \\tfrac12 a t^2 = \\tfrac12 \\cdot 2 \\cdot 9 = 9$ m. $18$ là quên hệ số $\\tfrac12$; $6$ là lấy $at$; $36$ là $\\tfrac12 F t^2$, quên chia cho khối lượng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Cùng một lực $F$ truyền cho vật $m_1$ gia tốc $6\\ \\text{m/s}^2$ và cho vật $m_2$ gia tốc $3\\ \\text{m/s}^2$. Cũng lực ấy tác dụng lên vật khối lượng $m_1 + m_2$ cho gia tốc",
+      "options": [
+        "$4{,}5\\ \\text{m/s}^2$",
+        "$2\\ \\text{m/s}^2$",
+        "$9\\ \\text{m/s}^2$",
+        "$18\\ \\text{m/s}^2$"
+      ],
+      "answer": 1,
+      "explanation": "$m_1 = F/6$, $m_2 = F/3$ nên $m_1 + m_2 = F/2$ và $a = F/(m_1 + m_2) = 2\\ \\text{m/s}^2$. $4{,}5$ là lấy trung bình, $9$ là cộng gia tốc, $18$ là nhân gia tốc."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe đẩy $50$ kg đứng yên, được đẩy bằng lực ngang $100$ N, lực ma sát $40$ N. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Hợp lực tác dụng lên xe là $60$ N.",
+          "answer": true
+        },
+        {
+          "text": "Gia tốc của xe là $2\\ \\text{m/s}^2$.",
+          "answer": false
+        },
+        {
+          "text": "Sau $5$ s xe đạt vận tốc $6$ m/s.",
+          "answer": true
+        },
+        {
+          "text": "Sau $5$ s xe đi được $15$ m.",
+          "answer": true
+        }
+      ],
+      "explanation": "$F_{hl} = 100 - 40 = 60$ N, $a = 60/50 = 1{,}2\\ \\text{m/s}^2$ (không phải $2$, là $100/50$ quên ma sát). $v = 1{,}2 \\cdot 5 = 6$ m/s và $s = \\tfrac12 \\cdot 1{,}2 \\cdot 25 = 15$ m."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Ô tô $1500$ kg đang chạy $10$ m/s thì phanh, dừng sau khi đi thêm $25$ m. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Gia tốc của xe là $-2\\ \\text{m/s}^2$.",
+          "answer": true
+        },
+        {
+          "text": "Độ lớn lực hãm là $3000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Lực hãm cùng chiều chuyển động của xe.",
+          "answer": false
+        },
+        {
+          "text": "Nếu xe nặng gấp đôi và vẫn dừng sau $25$ m thì lực hãm vẫn là $3000$ N.",
+          "answer": false
+        }
+      ],
+      "explanation": "$a = (0 - 100)/(2 \\cdot 25) = -2\\ \\text{m/s}^2$, $F = 1500 \\cdot 2 = 3000$ N, ngược chiều chuyển động. Cùng quãng dừng thì $a$ như cũ nên khối lượng gấp đôi cho lực hãm gấp đôi, $6000$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật $5$ kg đứng yên chịu hợp lực $20$ N. Sau $2$ s vận tốc của vật bằng bao nhiêu m/s?",
+      "answer": "8",
+      "explanation": "$a = 20/5 = 4\\ \\text{m/s}^2$; $v = at = 4 \\cdot 2 = 8$ m/s."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Vật có trọng lượng $30$ N chịu hợp lực $6$ N (lấy $g = 10\\ \\text{m/s}^2$). Gia tốc của vật bằng bao nhiêu $\\text{m/s}^2$?",
+      "answer": "2",
+      "explanation": "Trước hết $m = P/g = 3$ kg, rồi $a = 6/3 = 2\\ \\text{m/s}^2$. Chia thẳng $6/30$ là thế trọng lượng (N) vào chỗ khối lượng (kg)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật 2 Newton — bài toán động lực học",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Xe $600$ g chịu hợp lực $3$ N. Gia tốc của xe bằng bao nhiêu $\\text{m/s}^2$?",
+      "answer": "5",
+      "explanation": "Đổi $600$ g $= 0{,}6$ kg; $a = 3/0{,}6 = 5\\ \\text{m/s}^2$."
+    }
+  ]
+}

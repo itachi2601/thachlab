@@ -1,0 +1,386 @@
+{
+  "lesson_id": 54,
+  "lesson_title": "Bài 9. Chuyển động thẳng biến đổi đều",
+  "item_id": 102,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "kind": "dinh_nghia",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Chuyển động thẳng biến đổi đều có đặc điểm nào sau đây?",
+      "options": [
+        "Quỹ đạo thẳng, gia tốc không đổi cả về độ lớn lẫn hướng",
+        "Quỹ đạo thẳng, vận tốc không đổi theo thời gian",
+        "Quỹ đạo thẳng, quãng đường đi được trong mọi giây đều bằng nhau",
+        "Quỹ đạo bất kì, độ lớn vận tốc tăng đều"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa: quỹ đạo thẳng và gia tốc không đổi. Vận tốc không đổi hoặc quãng đường mỗi giây bằng nhau là chuyển động thẳng đều."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Chọn chiều dương theo chiều chuyển động của xe. Xe có $v = +5\\ \\text{m/s}$ và $a = -2\\ \\text{m/s}^2$. Xe đang:",
+      "options": [
+        "Chuyển động nhanh dần đều, vì độ lớn $a$ không đổi",
+        "Chuyển động chậm dần đều, vì $a$ ngược dấu $v$",
+        "Chuyển động nhanh dần đều, vì $v$ dương",
+        "Chuyển động thẳng đều, vì $a$ không đổi"
+      ],
+      "answer": 1,
+      "explanation": "Nhanh hay chậm dần do tích $a \\cdot v$: $(-2)(+5) \\lt 0$ nên chậm dần. Độ lớn $a$ không đổi hay $v$ dương không quyết định điều đó; $a$ không đổi cũng không có nghĩa $v$ không đổi."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Đồ thị vận tốc theo thời gian của chuyển động thẳng biến đổi đều có dạng nào, và độ dốc của nó cho biết đại lượng nào?",
+      "options": [
+        "Đoạn thẳng; độ dốc là vận tốc ban đầu $v_0$",
+        "Đường parabol có đỉnh tại $v_0$; độ dốc là $a$",
+        "Đoạn thẳng; độ dốc là gia tốc $a$",
+        "Đường nằm ngang, vì $a$ không đổi"
+      ],
+      "answer": 2,
+      "explanation": "Từ $v = v_0 + at$, $v$ là hàm bậc nhất của $t$ nên đồ thị là đoạn thẳng, độ dốc $\\Delta v / \\Delta t = a$. Còn $v_0$ là chỗ đồ thị cắt trục $v$. Chỉ chuyển động thẳng đều mới có đường nằm ngang."
+    },
+    {
+      "kind": "dinh_nghia",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Diện tích giữa đồ thị $v$–$t$ và trục thời gian (trong một khoảng thời gian) cho biết đại lượng nào?",
+      "options": [
+        "Gia tốc của vật",
+        "Vận tốc ban đầu của vật",
+        "Toạ độ ban đầu của vật",
+        "Độ dịch chuyển trong khoảng thời gian đó"
+      ],
+      "answer": 3,
+      "explanation": "Hình thang giữa đồ thị và trục $t$ có diện tích $\\dfrac{v_0 + v}{2}\\,t$, tức vận tốc trung bình nhân thời gian, bằng độ dịch chuyển $d$. Gia tốc là độ dốc, $v_0$ là độ cao tại $t=0$."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "type": "multiple_choice",
+      "question": "Trên đồ thị $v$–$t$, đường của hai xe cắt nhau tại thời điểm $t_1$. Điều này cho biết:",
+      "options": [
+        "Tại $t_1$ hai xe gặp nhau",
+        "Tại $t_1$ hai xe có cùng gia tốc",
+        "Tại $t_1$ hai xe có cùng vận tốc, chưa chắc đã gặp nhau",
+        "Từ $0$ đến $t_1$ hai xe đi được quãng đường bằng nhau"
+      ],
+      "answer": 2,
+      "explanation": "Độ cao của điểm trên đồ thị $v$–$t$ là vận tốc, nên giao điểm nghĩa là cùng $v$. Gặp nhau đòi hỏi cùng toạ độ $x$, mà đồ thị này không cho vị trí. Quãng đường bằng nhau chỉ khi hai diện tích dưới đồ thị bằng nhau."
+    },
+    {
+      "kind": "dieu_kien",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "type": "true_false",
+      "question": "Về dấu của gia tốc và việc xe nhanh dần hay chậm dần, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Dấu của $a$ cho biết $\\vec a$ cùng hay ngược chiều dương đã chọn.",
+          "answer": true
+        },
+        {
+          "text": "Chuyển động có $a \\lt 0$ luôn là chuyển động chậm dần đều.",
+          "answer": false
+        },
+        {
+          "text": "Nhanh dần hay chậm dần được quyết định bởi dấu của tích $a \\cdot v$.",
+          "answer": true
+        },
+        {
+          "text": "Đổi chiều dương thì tích $a \\cdot v$ đổi dấu, nên xe nhanh dần trở thành chậm dần.",
+          "answer": false
+        }
+      ],
+      "explanation": "Đổi chiều dương thì cả $a$ lẫn $v$ cùng đổi dấu nên tích $a\\cdot v$ không đổi: tính chất nhanh/chậm dần là của chuyển động, không phụ thuộc cách chọn trục. $a \\lt 0$ chỉ chậm dần khi $v \\gt 0$."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "true_false",
+      "question": "Xét đồ thị $v$–$t$ của chuyển động thẳng biến đổi đều. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đường dốc lên tương ứng với gia tốc $a \\gt 0$.",
+          "answer": true
+        },
+        {
+          "text": "Đường nằm ngang tương ứng với $a = 0$ (chuyển động thẳng đều).",
+          "answer": true
+        },
+        {
+          "text": "Độ dốc của đường cho biết vận tốc ban đầu $v_0$.",
+          "answer": false
+        },
+        {
+          "text": "Đoạn thẳng cắt trục $v$ tại điểm có tung độ bằng $v_0$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Độ dốc là $\\Delta v/\\Delta t = a$, còn $v_0$ là tung độ tại $t = 0$ (chỗ cắt trục $v$)."
+    },
+    {
+      "kind": "hien_tuong",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Với cùng gia tốc phanh, tốc độ ban đầu của xe tăng gấp $3$ lần thì quãng đường phanh tăng gấp bao nhiêu lần?",
+      "answer": "9",
+      "explanation": "Quãng phanh $d = \\dfrac{v_0^2}{2|a|}$ tỉ lệ với $v_0^2$, nên gấp $3^2 = 9$ lần."
+    },
+    {
+      "kind": "dinh_nghia",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Đơn vị của gia tốc là $\\text{m/s}^n$. Số $n$ bằng bao nhiêu?",
+      "answer": "2",
+      "explanation": "$a = \\Delta v/\\Delta t$ có đơn vị $\\text{m/s} : \\text{s} = \\text{m/s}^2$, nên $n = 2$."
+    },
+    {
+      "kind": "dinh_nghia",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "type": "short_answer",
+      "question": "Để viết phương trình chuyển động của hai xe gặp nhau, cần chọn chung cho cả hai xe mấy thứ: gốc toạ độ, chiều dương và gốc thời gian?",
+      "answer": "3",
+      "explanation": "Cần chọn cả ba (gốc toạ độ, chiều dương, gốc thời gian) và dùng chung cho hai xe; gặp nhau khi $x_1 = x_2$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Xe tăng tốc đều từ $4\\ \\text{m/s}$ lên $16\\ \\text{m/s}$ trong $6\\ \\text{s}$. Gia tốc của xe là:",
+      "options": [
+        "$12\\ \\text{m/s}^2$",
+        "$3{,}3\\ \\text{m/s}^2$",
+        "$0{,}5\\ \\text{m/s}^2$",
+        "$2\\ \\text{m/s}^2$"
+      ],
+      "answer": 3,
+      "explanation": "$a = \\dfrac{16-4}{6} = 2\\ \\text{m/s}^2$. Ra $12$ là quên chia cho $\\Delta t$; ra $3{,}3$ là cộng ($20/6$) thay vì trừ $v - v_0$; ra $0{,}5$ là đảo tử và mẫu ($6/12$)."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Xe khởi hành từ nghỉ với gia tốc $1{,}5\\ \\text{m/s}^2$. Quãng đường xe đi được sau $6\\ \\text{s}$ là:",
+      "options": [
+        "$54\\ \\text{m}$",
+        "$27\\ \\text{m}$",
+        "$9\\ \\text{m}$",
+        "$4{,}5\\ \\text{m}$"
+      ],
+      "answer": 1,
+      "explanation": "$d = \\tfrac12 a t^2 = \\tfrac12 \\cdot 1{,}5 \\cdot 36 = 27\\ \\text{m}$. Ra $54$ là quên hệ số $\\tfrac12$; ra $9$ là $at$ (vận tốc, không phải quãng đường); ra $4{,}5$ là quên bình phương $t$ ($\\tfrac12 at$)."
+    },
+    {
+      "kind": "cong_thuc",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Ô tô tăng tốc đều từ $5\\ \\text{m/s}$ lên $15\\ \\text{m/s}$ trên đoạn đường $100\\ \\text{m}$. Gia tốc của ô tô là:",
+      "options": [
+        "$1\\ \\text{m/s}^2$",
+        "$2\\ \\text{m/s}^2$",
+        "$0{,}5\\ \\text{m/s}^2$",
+        "$0{,}1\\ \\text{m/s}^2$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $v^2 - v_0^2 = 2ad$: $a = \\dfrac{225 - 25}{2 \\cdot 100} = 1\\ \\text{m/s}^2$. Ra $2$ là quên số $2$ ở mẫu; ra $0{,}5$ là bình phương hiệu $(15-5)^2$ thay vì hiệu hai bình phương; ra $0{,}1$ là dùng $(v - v_0)/d$."
+    },
+    {
+      "kind": "bien_doi",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "multiple_choice",
+      "question": "Xe phanh tới dừng với gia tốc có độ lớn $|a|$, vận tốc ban đầu $v_0$. Quãng đường phanh là:",
+      "options": [
+        "$d = \\dfrac{v_0}{2|a|}$",
+        "$d = \\dfrac{v_0^2}{|a|}$",
+        "$d = \\dfrac{v_0^2}{2|a|}$",
+        "$d = \\dfrac{|a|}{2v_0^2}$"
+      ],
+      "answer": 2,
+      "explanation": "Đặt $v = 0$ trong $v^2 - v_0^2 = 2ad$ được $d = \\dfrac{v_0^2}{2|a|}$. Các nhiễu là quên bình phương $v_0$, quên số $2$, hoặc đảo tử và mẫu."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "type": "multiple_choice",
+      "question": "Ô tô chạy $20\\ \\text{m/s}$ thì phanh, chậm dần đều với $|a| = 4\\ \\text{m/s}^2$. Quãng đường xe đi được trong $8\\ \\text{s}$ kể từ lúc phanh là:",
+      "options": [
+        "$32\\ \\text{m}$",
+        "$50\\ \\text{m}$",
+        "$160\\ \\text{m}$",
+        "$100\\ \\text{m}$"
+      ],
+      "answer": 1,
+      "explanation": "Xe dừng sau $20/4 = 5\\ \\text{s}$, nên $d = \\dfrac{20^2}{2\\cdot 4} = 50\\ \\text{m}$. Ra $32$ là thay thẳng $t = 8$ ($160 - 128$), như thể xe chạy lùi; ra $160$ là quên phanh; ra $100$ là quên số $2$ ở mẫu."
+    },
+    {
+      "kind": "cong_thuc",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "true_false",
+      "question": "Về độ dịch chuyển và phương trình chuyển động của chuyển động thẳng biến đổi đều, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Độ dịch chuyển bằng vận tốc trung bình nhân thời gian: $d = \\dfrac{v_0 + v}{2}\\,t$.",
+          "answer": true
+        },
+        {
+          "text": "Khi xuất phát từ nghỉ ($v_0 = 0$) thì $d = \\tfrac12 a t^2$.",
+          "answer": true
+        },
+        {
+          "text": "Xe phanh tới dừng thì sau khi dừng vẫn dùng $d = v_0 t + \\tfrac12 a t^2$ với mọi giá trị $t$.",
+          "answer": false
+        },
+        {
+          "text": "Quãng đường $s$ bằng độ dịch chuyển $d$ khi vật không đổi chiều chuyển động.",
+          "answer": true
+        }
+      ],
+      "explanation": "Công thức chỉ đúng khi gia tốc giữ nguyên suốt thời gian $t$. Xe phanh dừng rồi đứng yên, nên với $t$ lớn hơn thời gian dừng phải lấy $d = v_0^2/(2|a|)$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "true_false",
+      "question": "Xe có $v_0 = 12\\ \\text{m/s}$ chuyển động thẳng chậm dần đều với $|a| = 3\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Sau $2\\ \\text{s}$ vận tốc của xe là $6\\ \\text{m/s}$.",
+          "answer": true
+        },
+        {
+          "text": "Xe dừng hẳn sau $4\\ \\text{s}$.",
+          "answer": true
+        },
+        {
+          "text": "Sau $6\\ \\text{s}$ vận tốc của xe là $-6\\ \\text{m/s}$, tức xe đã chạy lùi.",
+          "answer": false
+        },
+        {
+          "text": "Quãng đường xe đi được cho tới lúc dừng là $24\\ \\text{m}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "$v = 12 - 3\\cdot 2 = 6$; dừng khi $12/3 = 4\\ \\text{s}$; $d = 12^2/(2\\cdot3) = 24\\ \\text{m}$. Sau $4\\ \\text{s}$ xe đứng yên, không chạy lùi, nên $v = -6$ (thay máy móc $t=6$) là sai."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Ô tô chạy $30\\ \\text{m/s}$ thì phanh, chậm dần đều với $|a| = 6\\ \\text{m/s}^2$. Quãng đường phanh là bao nhiêu mét?",
+      "answer": "75",
+      "explanation": "$d = \\dfrac{v_0^2}{2|a|} = \\dfrac{900}{12} = 75\\ \\text{m}$."
+    },
+    {
+      "kind": "tinh_nhanh",
+      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "type": "short_answer",
+      "question": "Xe tăng tốc đều từ $3\\ \\text{m/s}$ lên $11\\ \\text{m/s}$ trong $5\\ \\text{s}$. Quãng đường xe đi được là bao nhiêu mét?",
+      "answer": "35",
+      "explanation": "Vận tốc trung bình $\\dfrac{3 + 11}{2} = 7\\ \\text{m/s}$, nhân $5\\ \\text{s}$ được $35\\ \\text{m}$."
+    },
+    {
+      "kind": "don_vi",
+      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "type": "short_answer",
+      "question": "Đổi $108\\ \\text{km/h}$ ra $\\text{m/s}$ (chia cho $3{,}6$). Đáp số là bao nhiêu?",
+      "answer": "30",
+      "explanation": "$108 : 3{,}6 = 30\\ \\text{m/s}$. Bài nhắc luôn đổi km/h ra m/s trước khi dùng các công thức."
+    }
+  ]
+}

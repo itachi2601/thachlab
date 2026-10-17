@@ -1,0 +1,379 @@
+{
+  "lesson_id": 62,
+  "lesson_title": "Bài 17. Trọng lực và lực căng",
+  "item_id": 120,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 10
+    },
+    "removed": [
+      {
+        "question": "Trọng lực có mấy đặc điểm cần nêu (điểm đặt, phương, chiều, độ lớn)?",
+        "reason": "Đáp án 4 chỉ là số mục liệt kê ngay trong đề (đếm lại danh sách), không kiểm tra kiến thức"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đặc điểm nào đúng với trọng lực $\\vec P$ tác dụng lên một vật?",
+      "options": [
+        "Điểm đặt ở tâm Trái Đất, phương thẳng đứng, chiều hướng xuống",
+        "Điểm đặt ở trọng tâm, phương nằm ngang, chiều hướng về tâm Trái Đất",
+        "Điểm đặt ở trọng tâm, phương thẳng đứng, chiều cùng chiều chuyển động của vật",
+        "Điểm đặt ở trọng tâm, phương thẳng đứng, chiều hướng về tâm Trái Đất"
+      ],
+      "answer": 3,
+      "explanation": "Trọng lực đặt tại trọng tâm của vật, có phương thẳng đứng và chiều hướng về tâm Trái Đất, bất kể vật đang chuyển động theo hướng nào."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Chiếc nhẫn kim loại đồng chất, hình vòng tròn. Trọng tâm của nó nằm",
+      "options": [
+        "ở một điểm bất kì trên vành nhẫn",
+        "ở tâm đối xứng của vòng, ngay cả khi chỗ đó không có kim loại",
+        "ở điểm treo nhẫn lên",
+        "không tồn tại, vì nhẫn rỗng ở giữa"
+      ],
+      "answer": 1,
+      "explanation": "Với vật đồng chất đối xứng, trọng tâm ở tâm đối xứng, có thể nằm ngoài phần vật chất (như đĩa CD, chiếc nhẫn)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một tấm bìa treo bằng một sợi dây ở mép, đang đứng yên. Điều đó có nghĩa là",
+      "options": [
+        "trọng tâm của tấm bìa nằm trên đường thẳng đứng đi qua điểm treo",
+        "điểm treo trùng với trọng tâm của tấm bìa",
+        "trọng tâm của tấm bìa nằm ngoài tấm bìa",
+        "trọng lực không còn tác dụng lên tấm bìa"
+      ],
+      "answer": 0,
+      "explanation": "Vật treo đứng yên khi trọng tâm nằm ngay dưới điểm treo; đó là cơ sở của phép tìm trọng tâm bằng dây dọi. Điểm treo ở mép nên không trùng trọng tâm."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trọng lượng của vật được đo bằng dụng cụ nào và có đơn vị gì?",
+      "options": [
+        "Cân, kilôgam (kg)",
+        "Cân, niutơn (N)",
+        "Lực kế, niutơn (N)",
+        "Lực kế, kilôgam (kg)"
+      ],
+      "answer": 2,
+      "explanation": "Trọng lượng là một lực (độ lớn của trọng lực), đo bằng lực kế, đơn vị N. Khối lượng mới đo bằng cân, đơn vị kg."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đèn treo yên lặng bằng một sợi dây. Ở đầu trên, dây tác dụng lên móc ở trần lực căng $\\vec T'$ có",
+      "options": [
+        "phương dọc theo dây, chiều hướng lên, đẩy móc ra xa dây",
+        "phương nằm ngang",
+        "độ lớn bằng không, vì trần đứng yên",
+        "phương dọc theo dây, chiều hướng xuống, kéo móc về phía dây"
+      ],
+      "answer": 3,
+      "explanation": "Lực căng ở mỗi đầu dây đều hướng vào phần giữa dây: đầu dưới kéo đèn lên, đầu trên kéo móc xuống. Dây chỉ kéo, không đẩy."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Về khối lượng và trọng lượng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khối lượng đo bằng cân và không đổi khi đổi chỗ.",
+          "answer": true
+        },
+        {
+          "text": "Trọng lượng $P = mg$ thay đổi theo gia tốc rơi tự do $g$ của nơi đặt vật.",
+          "answer": true
+        },
+        {
+          "text": "Trong vật lí, trọng lượng của vật tính bằng kilôgam.",
+          "answer": false
+        },
+        {
+          "text": "Đưa vật lên Mặt Trăng thì khối lượng của vật giảm.",
+          "answer": false
+        }
+      ],
+      "explanation": "Mang vật đi nơi khác, lượng chất của nó không đổi nên $m$ không đổi, còn $g$ đổi nên $P$ đổi. kg là đơn vị khối lượng, N mới là đơn vị trọng lượng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Về lực căng của dây và ròng rọc, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Dây chỉ kéo vật, không đẩy vật.",
+          "answer": true
+        },
+        {
+          "text": "Dây nhẹ thì lực căng như nhau tại mọi điểm của đoạn dây.",
+          "answer": true
+        },
+        {
+          "text": "Ròng rọc cố định nhẹ, nhẵn làm thay đổi độ lớn lực căng.",
+          "answer": false
+        },
+        {
+          "text": "Dây không dãn thì các vật nối với nhau có cùng độ lớn gia tốc.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ròng rọc cố định chỉ đổi hướng lực căng, không đổi độ lớn. Dây không dãn nên các vật nối đi được cùng quãng đường, tức cùng độ lớn gia tốc."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Để tìm trọng tâm tấm bìa bằng dây dọi, cần treo bìa ở tối thiểu mấy vị trí khác nhau?",
+      "answer": "2",
+      "explanation": "Mỗi lần treo kẻ một đường dây dọi đi qua trọng tâm; hai đường cắt nhau tại $G$ (lần thứ ba chỉ để kiểm tra)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Treo quả nặng $3$ N ở một đầu dây vắt qua ròng rọc cố định; đầu kia móc lực kế, kéo chếch $45^\\circ$ cho quả nặng đứng yên. Lực kế chỉ bao nhiêu niutơn?",
+      "answer": "3",
+      "explanation": "Quả nặng đứng yên nên $T = P = 3$ N; ròng rọc chỉ đổi hướng dây, lực căng hai bên bằng nhau nên lực kế chỉ $3$ N dù kéo theo hướng nào."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Vật khối lượng $300$ g ở nơi có $g = 9{,}8\\ \\text{m/s}^2$. Trọng lượng của vật là",
+      "options": [
+        "$2\\,940$ N",
+        "$30{,}6$ N",
+        "$2{,}94$ N",
+        "$0{,}3$ N"
+      ],
+      "answer": 2,
+      "explanation": "Đổi $300$ g $= 0{,}3$ kg; $P = 0{,}3 \\cdot 9{,}8 = 2{,}94$ N. $2940$ là để nguyên gam; $30{,}6$ là chia $300$ cho $9{,}8$; $0{,}3$ là nhầm khối lượng với trọng lượng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Vật $12$ kg từ Trái Đất ($g = 9{,}8\\ \\text{m/s}^2$) được đưa lên Hoả tinh ($g = 3{,}7\\ \\text{m/s}^2$). Trọng lượng của vật trên Hoả tinh là",
+      "options": [
+        "$44{,}4$ N",
+        "$117{,}6$ N",
+        "$3{,}2$ N",
+        "$12$ N"
+      ],
+      "answer": 0,
+      "explanation": "Khối lượng vẫn $12$ kg; $P = 12 \\cdot 3{,}7 = 44{,}4$ N. $117{,}6$ N là dùng $g$ của Trái Đất; $3{,}2$ là chia $12$ cho $3{,}7$; $12$ N là coi trọng lượng bằng khối lượng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Thang máy chở người, tổng khối lượng $400$ kg, đi xuống nhanh dần với $a = 0{,}5\\ \\text{m/s}^2$ (lấy $g = 10\\ \\text{m/s}^2$). Lực căng của cáp là",
+      "options": [
+        "$4\\,000$ N",
+        "$3\\,800$ N",
+        "$4\\,200$ N",
+        "$200$ N"
+      ],
+      "answer": 1,
+      "explanation": "Chiều dương hướng xuống: $P - T = ma$ nên $T = m(g - a) = 400 \\cdot 9{,}5 = 3800$ N. $4000$ là coi $T = P$; $4200$ là dùng $g + a$ (đi lên nhanh dần); $200$ chỉ là $ma$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Khối $A$ $2$ kg trên bàn nhẵn nối bằng dây nhẹ, không dãn vắt qua ròng rọc ở mép bàn với vật $B$ $3$ kg treo thẳng đứng (lấy $g = 10\\ \\text{m/s}^2$). Lực căng dây khi thả cho hệ chuyển động là",
+      "options": [
+        "$30$ N",
+        "$18$ N",
+        "$20$ N",
+        "$12$ N"
+      ],
+      "answer": 3,
+      "explanation": "$a = \\dfrac{m_B g}{m_A + m_B} = \\dfrac{30}{5} = 6\\ \\text{m/s}^2$; $T = m_A a = 2 \\cdot 6 = 12$ N. $30$ N là coi $T = P_B$; $18$ N là $m_B a$ (nhầm hợp lực của B); $20$ N là $m_A g$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Hai vật $4$ kg và $1$ kg treo ở hai đầu một sợi dây nhẹ, không dãn, vắt qua ròng rọc cố định nhẹ, nhẵn (lấy $g = 10\\ \\text{m/s}^2$). Lực căng dây khi thả cho hệ chuyển động là",
+      "options": [
+        "$40$ N",
+        "$16$ N",
+        "$10$ N",
+        "$25$ N"
+      ],
+      "answer": 1,
+      "explanation": "$a = \\dfrac{(4 - 1) \\cdot 10}{5} = 6\\ \\text{m/s}^2$; với vật $1$ kg đi lên nhanh dần: $T = m(g + a) = 1 \\cdot 16 = 16$ N. $40$ N và $10$ N là trọng lượng từng vật; $25$ N là lấy trung bình hai trọng lượng."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Thang máy tổng khối lượng $500$ kg, lấy $g = 10\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Thang đứng yên: lực căng cáp là $5000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Thang đi lên nhanh dần với $a = 2\\ \\text{m/s}^2$: lực căng cáp là $6000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Thang đi xuống nhanh dần với $a = 2\\ \\text{m/s}^2$: lực căng cáp là $4000$ N.",
+          "answer": true
+        },
+        {
+          "text": "Thang đi lên đều: lực căng cáp lớn hơn $5000$ N.",
+          "answer": false
+        }
+      ],
+      "explanation": "Đứng yên hoặc thẳng đều thì $T = P = 5000$ N. Gia tốc hướng lên: $T = m(g + a) = 500 \\cdot 12 = 6000$ N. Gia tốc hướng xuống: $T = m(g - a) = 500 \\cdot 8 = 4000$ N."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Khối $A$ $4$ kg trên bàn nhẵn nối với vật $B$ $1$ kg treo thẳng đứng bằng dây nhẹ, không dãn qua ròng rọc ở mép bàn ($g = 10\\ \\text{m/s}^2$). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Gia tốc của hệ là $2\\ \\text{m/s}^2$.",
+          "answer": true
+        },
+        {
+          "text": "Lực căng dây là $8$ N.",
+          "answer": true
+        },
+        {
+          "text": "Lực căng dây là $10$ N, bằng trọng lượng của $B$.",
+          "answer": false
+        },
+        {
+          "text": "Khi hệ chuyển động, lực căng nhỏ hơn trọng lượng của $B$.",
+          "answer": true
+        }
+      ],
+      "explanation": "$a = 10/5 = 2\\ \\text{m/s}^2$; $T = m_A a = 8$ N. $B$ đi xuống nhanh dần nên $T = 8\\ \\text{N} \\lt P_B = 10$ N; $T = P_B$ chỉ đúng khi hệ không có gia tốc."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Trọng lực, trọng lượng và trọng tâm",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật khối lượng $6$ kg ở nơi $g = 9{,}8\\ \\text{m/s}^2$. Trọng lượng của vật bằng bao nhiêu niutơn?",
+      "answer": "58,8",
+      "explanation": "$P = mg = 6 \\cdot 9{,}8 = 58{,}8$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Thang máy chở người, tổng khối lượng $300$ kg, đi lên nhanh dần với $a = 0{,}5\\ \\text{m/s}^2$ (lấy $g = 10\\ \\text{m/s}^2$). Lực căng của cáp bằng bao nhiêu niutơn?",
+      "answer": "3150",
+      "explanation": "Gia tốc hướng lên: $T = m(g + a) = 300 \\cdot 10{,}5 = 3150$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Lực căng dây — hệ vật nối dây, ròng rọc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Hai vật $3$ kg và $1$ kg treo ở hai đầu dây nhẹ, không dãn, vắt qua ròng rọc cố định nhẹ, nhẵn (lấy $g = 10\\ \\text{m/s}^2$). Độ lớn gia tốc của hệ bằng bao nhiêu $\\text{m/s}^2$?",
+      "answer": "5",
+      "explanation": "$a = \\dfrac{(m_1 - m_2)g}{m_1 + m_2} = \\dfrac{2 \\cdot 10}{4} = 5\\ \\text{m/s}^2$."
+    }
+  ]
+}

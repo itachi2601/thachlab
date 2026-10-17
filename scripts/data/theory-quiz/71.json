@@ -1,0 +1,386 @@
+{
+  "lesson_id": 71,
+  "lesson_title": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+  "item_id": 240,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cơ năng của vật chuyển động trong trọng trường là",
+      "options": [
+        "tổng của động năng và thế năng trọng trường của vật",
+        "hiệu của động năng và thế năng trọng trường của vật",
+        "công của trọng lực sinh ra khi vật chuyển động",
+        "năng lượng chỉ do vị trí của vật so với mốc"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa $W = W_\\text{d} + W_\\text{t} = \\frac{1}{2}mv^2 + mgz$, đơn vị jun."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cơ năng của vật được bảo toàn khi",
+      "options": [
+        "tốc độ của vật không đổi trong suốt chuyển động",
+        "vật chỉ chịu tác dụng của trọng lực (hoặc lực đàn hồi); các lực khác nếu có thì không sinh công",
+        "vật chuyển động thẳng đều dưới tác dụng của lực kéo",
+        "vật chịu lực cản nhỏ, kể cả khi lực cản vẫn sinh công"
+      ],
+      "answer": 1,
+      "explanation": "Điều kiện là chỉ trọng lực (lực đàn hồi) sinh công. Tốc độ không đổi chưa đủ, phải xem độ cao có đổi không."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực căng dây của con lắc đơn không làm cơ năng của quả nặng thay đổi vì",
+      "options": [
+        "luôn cùng hướng đường đi nên công bằng 0",
+        "luôn có độ lớn bằng trọng lực nên các công triệt tiêu",
+        "luôn vuông góc với đường đi nên công bằng 0",
+        "chỉ xuất hiện khi con lắc đứng yên"
+      ],
+      "answer": 2,
+      "explanation": "Lực căng và phản lực của máng nhẵn vuông góc đường đi nên $A = F d \\cos 90^\\circ = 0$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Lan thả mình từ mép lòng chảo, không có ma sát và lực cản. Lượt đầu, Lan lên thành bên kia tới",
+      "options": [
+        "thấp hơn mép xuất phát vì chuyển động tự làm hao năng lượng",
+        "cao hơn mép xuất phát vì ở đáy tốc độ lớn nhất",
+        "độ cao tuỳ thành bên kia dốc hay thoải",
+        "đúng độ cao của mép xuất phát"
+      ],
+      "answer": 3,
+      "explanation": "Không có gì lấy bớt cơ năng nên thế năng ở mép thành động năng ở đáy rồi lại thành thế năng đúng bằng cũ. Độ dốc chỉ đổi đường đi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi cơ năng được bảo toàn và vật đi từ cao xuống thấp thì",
+      "options": [
+        "động năng tăng bao nhiêu, thế năng giảm bấy nhiêu",
+        "động năng giảm, thế năng giảm",
+        "động năng tăng, thế năng cũng tăng",
+        "động năng không đổi, thế năng giảm"
+      ],
+      "answer": 0,
+      "explanation": "Tổng $W_\\text{d} + W_\\text{t}$ không đổi nên phần này tăng thì phần kia giảm đúng bằng thế."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi vật chịu ma sát hoặc lực cản, cơ năng của vật",
+      "options": [
+        "vẫn không đổi vì năng lượng luôn được bảo toàn",
+        "tăng vì ma sát sinh công dương",
+        "giảm vì lực cản sinh công âm; phần mất đi thành nhiệt",
+        "giảm rồi biến mất hoàn toàn, không thành dạng nào khác"
+      ],
+      "answer": 2,
+      "explanation": "$\\Delta W = A_\\text{c} \\lt 0$ nên cơ năng giảm, phần hao hụt chuyển thành nhiệt (nội năng), âm thanh. Tổng năng lượng vẫn bảo toàn."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về việc cơ năng có được bảo toàn hay không, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Hòn đá ném xiên, bỏ qua sức cản không khí, có cơ năng bảo toàn.",
+          "answer": true
+        },
+        {
+          "text": "Người nhảy dù rơi với tốc độ không đổi thì cơ năng bảo toàn.",
+          "answer": false
+        },
+        {
+          "text": "Thùng hàng được thang máy kéo lên đều thì cơ năng tăng.",
+          "answer": true
+        },
+        {
+          "text": "Xe đạp bóp phanh lết trên đường ngang thì cơ năng chuyển thành nhiệt.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 2 sai: tốc độ không đổi nhưng độ cao giảm, lực cản của dù sinh công âm nên cơ năng giảm."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về định luật bảo toàn cơ năng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Cơ năng bảo toàn thì động năng của vật cũng không đổi.",
+          "answer": false
+        },
+        {
+          "text": "Ở chỗ thấp nhất, thế năng cực tiểu và động năng cực đại.",
+          "answer": true
+        },
+        {
+          "text": "Phản lực của máng nhẵn không sinh công nên không phá bảo toàn cơ năng.",
+          "answer": true
+        },
+        {
+          "text": "Đổi mốc thế năng thì giá trị cơ năng đổi, nhưng tốc độ tính ra không đổi.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 1 sai: bảo toàn tổng, không bảo toàn từng phần; vật ném lên có tốc độ giảm dần mà cơ năng vẫn như cũ."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Theo thí nghiệm bóng bàn trong bài, mỗi lần nảy bóng còn khoảng bao nhiêu phần trăm độ cao của lần trước?",
+      "answer": "80",
+      "explanation": "Các đỉnh là $0{,}80$; $0{,}64$; $0{,}51\\ \\text{m}$, mỗi lần còn khoảng $80\\,\\%$ độ cao trước, tức mất khoảng $20\\,\\%$ cơ năng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Con lắc đơn dao động, bỏ qua mọi lực cản. Công của lực căng dây trong suốt chuyển động bằng bao nhiêu jun?",
+      "answer": "0",
+      "explanation": "Lực căng dây luôn vuông góc đường đi nên công bằng 0."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cơ năng của vật khối lượng $m$, tốc độ $v$, ở độ cao $z$ so với mốc thế năng là",
+      "options": [
+        "$W = \\dfrac{1}{2}mv^2 - mgz$",
+        "$W = \\dfrac{1}{2}mv^2 + mgz$",
+        "$W = mv^2 + mgz$",
+        "$W = \\dfrac{1}{2}mv + mgz$"
+      ],
+      "answer": 1,
+      "explanation": "Cơ năng là tổng động năng và thế năng. Dấu trừ, thiếu hệ số $\\frac{1}{2}$ hay thiếu bình phương đều là các lỗi thường gặp."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi có ma sát, lực cản, độ biến thiên cơ năng từ vị trí 1 sang vị trí 2 được tính bằng",
+      "options": [
+        "$\\Delta W = W_1 - W_2 = A_\\text{c}$",
+        "$\\Delta W = W_1 + W_2 = A_\\text{c}$",
+        "$\\Delta W = \\Delta W_\\text{t} = A_\\text{c}$",
+        "$\\Delta W = W_2 - W_1 = A_\\text{c}$"
+      ],
+      "answer": 3,
+      "explanation": "Độ biến thiên là giá trị sau trừ giá trị đầu. Đảo thứ tự làm mất dấu của công cản."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Quả bóng $0{,}4\\ \\text{kg}$ ở độ cao $5\\ \\text{m}$ so với mặt đất, tốc độ $4\\ \\text{m/s}$. Mốc ở mặt đất, $g = 10\\ \\text{m/s}^2$. Cơ năng của bóng là",
+      "options": [
+        "$26{,}4\\ \\text{J}$",
+        "$16{,}8\\ \\text{J}$",
+        "$23{,}2\\ \\text{J}$",
+        "$20\\ \\text{J}$"
+      ],
+      "answer": 2,
+      "explanation": "$W_\\text{d} = \\frac{1}{2}\\cdot 0{,}4\\cdot 16 = 3{,}2\\ \\text{J}$; $W_\\text{t} = 0{,}4\\cdot 10\\cdot 5 = 20\\ \\text{J}$; $W = 23{,}2\\ \\text{J}$. $26{,}4\\ \\text{J}$ quên hệ số $\\frac{1}{2}$; $16{,}8\\ \\text{J}$ lấy thế năng trừ động năng; $20\\ \\text{J}$ bỏ quên động năng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thả hòn bi không vận tốc đầu ở đỉnh máng nhẵn cao $1{,}8\\ \\text{m}$ so với chân máng, $g = 10\\ \\text{m/s}^2$. Tốc độ của bi ở chân máng là",
+      "options": [
+        "$36\\ \\text{m/s}$",
+        "$6\\ \\text{m/s}$",
+        "$4{,}2\\ \\text{m/s}$",
+        "$18\\ \\text{m/s}$"
+      ],
+      "answer": 1,
+      "explanation": "$v = \\sqrt{2gh} = \\sqrt{36} = 6\\ \\text{m/s}$. $36$ quên khai căn; $4{,}2$ quên số $2$; $18$ là $g h$ chưa lấy $2$ lần và chưa khai căn."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét phương trình bảo toàn $\\frac{1}{2}mv_1^2 + mgz_1 = \\frac{1}{2}mv_2^2 + mgz_2$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Phương trình đúng khi chỉ có trọng lực sinh công.",
+          "answer": true
+        },
+        {
+          "text": "Khối lượng $m$ có ở hai vế nên triệt tiêu khi tìm tốc độ từ độ cao.",
+          "answer": true
+        },
+        {
+          "text": "Thả từ nghỉ ở độ cao $h$ trên máng nhẵn, tốc độ cuối máng $v = \\sqrt{2gh}$ phụ thuộc vào khối lượng vật.",
+          "answer": false
+        },
+        {
+          "text": "Tại điểm cao nhất của chuyển động ném thẳng đứng, $v = 0$ nên cơ năng bằng thế năng ở đó.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ý 3 sai: $v = \\sqrt{2gh}$ không chứa $m$ vì $m$ triệt tiêu."
+    },
+    {
+      "type": "true_false",
+      "kind": "bien_doi",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét công thức $\\Delta W = A_\\text{c}$ khi có lực không phải trọng lực, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Ma sát, lực cản sinh công âm nên cơ năng giảm.",
+          "answer": true
+        },
+        {
+          "text": "Tổng quát, $\\Delta W$ bằng công của mọi lực khác trọng lực và lực đàn hồi.",
+          "answer": true
+        },
+        {
+          "text": "Lực kéo cùng chiều chuyển động có công dương nên cơ năng tăng.",
+          "answer": true
+        },
+        {
+          "text": "Phần cơ năng mất đi biến mất hoàn toàn, không chuyển sang dạng năng lượng nào.",
+          "answer": false
+        }
+      ],
+      "explanation": "Ý 4 sai: phần cơ năng mất đi chuyển thành nhiệt (nội năng) và âm thanh, năng lượng vẫn bảo toàn."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thả rơi tự do một vật từ độ cao $45\\ \\text{m}$, bỏ qua cản, $g = 10\\ \\text{m/s}^2$. Tốc độ khi chạm đất bằng bao nhiêu m/s?",
+      "answer": "30",
+      "explanation": "$v = \\sqrt{2gh} = \\sqrt{2\\cdot 10\\cdot 45} = \\sqrt{900} = 30\\ \\text{m/s}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bảo toàn cơ năng khi chỉ có trọng lực",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vật thả không vận tốc đầu từ A cao $4{,}8\\ \\text{m}$ trên máng nhẵn, mốc thế năng ở chân máng. Tại độ cao bao nhiêu mét thì động năng bằng thế năng?",
+      "answer": "2,4",
+      "explanation": "Động năng bằng thế năng thì $W = 2W_\\text{t}$, mà $W = mg\\cdot 4{,}8$ nên $z = 4{,}8/2 = 2{,}4\\ \\text{m}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cơ năng của xe trượt ở đỉnh dốc là $1500\\ \\text{J}$, ở chân dốc là $1100\\ \\text{J}$. Công của ma sát và lực cản bằng bao nhiêu jun?",
+      "answer": "-400",
+      "explanation": "$A_\\text{c} = W_2 - W_1 = 1100 - 1500 = -400\\ \\text{J}$ (công âm, cơ năng giảm)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Biến thiên cơ năng khi có ma sát",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Quả bóng $0{,}5\\ \\text{kg}$ thả từ độ cao $2{,}0\\ \\text{m}$ rồi nảy lên được $1{,}5\\ \\text{m}$ (đỉnh có $v = 0$, mốc ở mặt sàn, $g = 10\\ \\text{m/s}^2$). Cơ năng bóng mất đi bao nhiêu jun?",
+      "answer": "2,5",
+      "explanation": "$W_1 = 0{,}5\\cdot 10\\cdot 2{,}0 = 10\\ \\text{J}$; $W_2 = 0{,}5\\cdot 10\\cdot 1{,}5 = 7{,}5\\ \\text{J}$; mất $2{,}5\\ \\text{J}$."
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "lesson_id": 74,
+  "lesson_title": "Bài 29. Định luật bảo toàn động lượng",
+  "item_id": 248,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ nào sau đây có thể coi là hệ kín trong khoảng thời gian va chạm ngắn?",
+      "options": [
+        "Quả bóng đang bay lên rồi rơi xuống (hệ chỉ gồm quả bóng)",
+        "Xe máy đang tăng ga trên đường (hệ chỉ gồm xe máy)",
+        "Hai viên bi va chạm nhau trên mặt bàn nhẵn nằm ngang",
+        "Thuyền buồm đang được gió thổi ra khơi"
+      ],
+      "answer": 2,
+      "explanation": "Trọng lực của hai bi cân bằng phản lực của bàn, ma sát nhỏ, lực giữa hai bi là nội lực. Ba hệ còn lại chịu ngoại lực không cân bằng (trọng lực, ma sát đường, gió)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào đúng với định luật bảo toàn động lượng?",
+      "options": [
+        "Tổng vector động lượng của một hệ kín không đổi",
+        "Động lượng của từng vật trong hệ kín không đổi",
+        "Tổng động năng của một hệ kín luôn không đổi",
+        "Tổng độ lớn động lượng của mọi hệ đều không đổi"
+      ],
+      "answer": 0,
+      "explanation": "Từng vật vẫn trao đổi động lượng cho nhau, chỉ tổng vector là không đổi, và chỉ với hệ kín. Động năng bảo toàn hay không còn tuỳ loại va chạm."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hòn đá rơi chéo cắm vào xe cát chạy trên ray ngang. Động lượng của hệ đá và xe cát bảo toàn theo phương nào?",
+      "options": [
+        "Phương thẳng đứng, vì trọng lực tác dụng theo phương này",
+        "Cả hai phương, vì va chạm xảy ra rất nhanh",
+        "Không phương nào, vì hệ có ngoại lực",
+        "Phương ngang, vì theo phương đó không có ngoại lực"
+      ],
+      "answer": 3,
+      "explanation": "Ray đỡ theo phương đứng là ngoại lực lớn nên phương đứng không bảo toàn. Theo phương ngang không có ngoại lực nên $p_x$ bảo toàn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận xét nào về va chạm mềm là đúng?",
+      "options": [
+        "Hai vật dính nhau, động lượng giảm còn động năng bảo toàn",
+        "Hai vật dính nhau, động lượng bảo toàn còn động năng giảm",
+        "Hai vật rời nhau, cả động lượng và động năng đều bảo toàn",
+        "Hai vật dính nhau, cả động lượng và động năng đều bảo toàn"
+      ],
+      "answer": 1,
+      "explanation": "Va chạm mềm: dính nhau, chung vận tốc, động lượng bảo toàn, động năng giảm (thành nhiệt, biến dạng). Phương án C mô tả va chạm đàn hồi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vì sao súng giật lùi khi bắn, trong khi trước đó cả súng và đạn đứng yên?",
+      "options": [
+        "Đạn đẩy vào không khí phía trước và không khí đẩy ngược súng lại",
+        "Tổng động lượng bằng $0$, nên súng nhận động lượng cùng độ lớn, ngược hướng với đạn",
+        "Lực của tay người bắn đẩy súng lùi",
+        "Súng nặng hơn đạn nên tốc độ giật lớn hơn tốc độ đạn"
+      ],
+      "answer": 1,
+      "explanation": "$m\\vec v + M\\vec V = \\vec 0$ nên $\\vec V = -\\frac{m}{M}\\vec v$. Không cần vật bên ngoài để đẩy; $M\\gt m$ nên $V\\lt v$, không phải lớn hơn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Va chạm mềm: vật $m_1$ có vận tốc $v_1$ va vào vật $m_2$ đang đứng yên. Vận tốc chung sau va chạm là",
+      "options": [
+        "$\\dfrac{m_1 v_1}{m_1 - m_2}$",
+        "$\\dfrac{m_1 v_1}{m_2}$",
+        "$\\dfrac{(m_1 + m_2)v_1}{m_1}$",
+        "$\\dfrac{m_1 v_1}{m_1 + m_2}$"
+      ],
+      "answer": 3,
+      "explanation": "Từ $m_1v_1 = (m_1+m_2)v$. Phương án A (hiệu khối lượng) và B (chỉ $m_2$ ở mẫu) là nhầm khối lượng sau va chạm; phương án C đảo tử mẫu."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ đứng yên, một phần khối lượng $m$ phụt ra với vận tốc $\\vec v$; phần còn lại khối lượng $M$ có vận tốc $\\vec V$ là",
+      "options": [
+        "$\\vec V = -\\dfrac{m}{M}\\vec v$",
+        "$\\vec V = -\\dfrac{M}{m}\\vec v$",
+        "$\\vec V = +\\dfrac{m}{M}\\vec v$",
+        "$\\vec V = -\\dfrac{m}{m + M}\\vec v$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $m\\vec v + M\\vec V = \\vec 0$. Đảo tỉ số khối lượng, bỏ dấu \"−\", hoặc dùng tổng khối lượng ở mẫu đều sai (phần còn lại mới có khối lượng $M$)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe $2\\ \\text{kg}$ chạy $5\\ \\text{m/s}$ va chạm mềm với xe $3\\ \\text{kg}$ chạy $1\\ \\text{m/s}$ ngược chiều. Tốc độ chung của hai xe ngay sau va chạm là",
+      "options": [
+        "$2{,}6\\ \\text{m/s}$",
+        "$7{,}0\\ \\text{m/s}$",
+        "$1{,}4\\ \\text{m/s}$",
+        "$2{,}0\\ \\text{m/s}$"
+      ],
+      "answer": 2,
+      "explanation": "Chiều dương theo xe $2\\ \\text{kg}$: $v=\\dfrac{2\\cdot5+3\\cdot(-1)}{5}=1{,}4$, cùng chiều xe $2\\ \\text{kg}$. $2{,}6$ là quên dấu của $v_2$; $7{,}0$ là quên chia tổng khối lượng; $2{,}0$ là lấy trung bình hai vận tốc."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai vật khối lượng bằng nhau va chạm đàn hồi trực diện, vật 2 đứng yên. Sau va chạm",
+      "options": [
+        "hai vật cùng chuyển động với vận tốc $\\dfrac{v_1}{2}$",
+        "vật 1 bật lùi với vận tốc $v_1$, vật 2 chuyển động với vận tốc $v_1$",
+        "vật 1 dừng lại, vật 2 chuyển động với vận tốc $v_1$",
+        "hai vật cùng chuyển động với vận tốc $v_1$"
+      ],
+      "answer": 2,
+      "explanation": "Với $m_1=m_2$: $v_1'=v_2=0$, $v_2'=v_1$, hai vật đổi vận tốc. Phương án $\\frac{v_1}{2}$ là va chạm mềm; hai phương án còn lại làm tổng động lượng bằng $0$ hoặc gấp đôi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đạn $15\\ \\text{g}$ rời nòng với vận tốc $600\\ \\text{m/s}$. Động lượng của đạn là",
+      "options": [
+        "$9\\,000\\ \\text{kg}\\cdot\\text{m/s}$",
+        "$90\\ \\text{kg}\\cdot\\text{m/s}$",
+        "$0{,}9\\ \\text{kg}\\cdot\\text{m/s}$",
+        "$9\\ \\text{kg}\\cdot\\text{m/s}$"
+      ],
+      "answer": 3,
+      "explanation": "$15\\ \\text{g}=0{,}015\\ \\text{kg}$ nên $p=0{,}015\\cdot600=9$. $9\\,000$ là không đổi gam ra kg; $90$ là đổi nhầm $15\\ \\text{g}=0{,}15\\ \\text{kg}$; $0{,}9$ là đổi nhầm $0{,}0015\\ \\text{kg}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về điều kiện để bảo toàn động lượng, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Hệ có các ngoại lực cân bằng nhau vẫn được coi là hệ kín.",
+          "answer": true
+        },
+        {
+          "text": "Trong va chạm rất nhanh, ngoại lực nhỏ so với nội lực thì coi gần đúng hệ là kín.",
+          "answer": true
+        },
+        {
+          "text": "Nội lực làm thay đổi tổng động lượng của hệ kín.",
+          "answer": false
+        },
+        {
+          "text": "Nếu ngoại lực chỉ cân bằng theo phương ngang thì động lượng bảo toàn theo mọi phương.",
+          "answer": false
+        }
+      ],
+      "explanation": "Nội lực chỉ chuyển động lượng giữa các vật trong hệ, tổng không đổi. Ngoại lực triệt tiêu theo phương nào thì bảo toàn theo phương đó."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về các loại va chạm, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Sau va chạm mềm, hai vật dính nhau và chuyển động với cùng vận tốc.",
+          "answer": true
+        },
+        {
+          "text": "Trong va chạm đàn hồi, tổng động năng của hệ được giữ nguyên.",
+          "answer": true
+        },
+        {
+          "text": "Trong va chạm mềm, một phần động lượng của hệ biến thành nhiệt.",
+          "answer": false
+        },
+        {
+          "text": "Hai vật giống nhau va chạm đàn hồi trực diện, vật 2 đứng yên: sau va chạm hai vật cùng chạy với vận tốc $\\dfrac{v_1}{2}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Thành nhiệt là động năng chứ không phải động lượng; động lượng luôn bảo toàn. Va chạm đàn hồi hai vật bằng nhau thì đổi vận tốc: vật 1 dừng, vật 2 chạy $v_1$."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về chuyển động bằng phản lực và cách thế số, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Hệ đứng yên rồi tách làm hai phần thì hai phần có động lượng cùng độ lớn, ngược hướng.",
+          "answer": true
+        },
+        {
+          "text": "Tên lửa ngoài không gian không thể tăng tốc vì không có vật nào để đẩy vào.",
+          "answer": false
+        },
+        {
+          "text": "Vận tốc ngược chiều với chiều dương đã chọn phải thế vào phương trình với dấu âm.",
+          "answer": true
+        },
+        {
+          "text": "Súng nặng hơn đạn nên tốc độ giật của súng lớn hơn tốc độ đạn.",
+          "answer": false
+        }
+      ],
+      "explanation": "Tên lửa tăng tốc nhờ phụt khí về sau, không cần đẩy vào vật ngoài. $V=\\frac{m}{M}v$ nên vật nặng hơn thì tốc độ nhỏ hơn."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe $2\\ \\text{kg}$ chạy $3\\ \\text{m/s}$ va chạm mềm vào xe $1\\ \\text{kg}$ đứng yên. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tổng động lượng của hệ ngay trước va chạm là $6\\ \\text{kg}\\cdot\\text{m/s}$.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ chung sau va chạm là $3\\ \\text{m/s}$.",
+          "answer": false
+        },
+        {
+          "text": "Động năng của hệ ngay sau va chạm là $6\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Động năng của hệ ngay sau va chạm bằng động năng ngay trước va chạm.",
+          "answer": false
+        }
+      ],
+      "explanation": "$p=2\\cdot3=6$; $v=6/3=2\\ \\text{m/s}$; $W_{\\text{đ}}$ sau $=\\frac12\\cdot3\\cdot2^2=6\\ \\text{J}$, trước $=\\frac12\\cdot2\\cdot3^2=9\\ \\text{J}$ nên động năng giảm."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bi cái $0{,}2\\ \\text{kg}$ lăn $3\\ \\text{m/s}$ va chạm đàn hồi trực diện vào bi đỏ cùng khối lượng đang đứng yên. Tốc độ bi đỏ ngay sau va chạm là bao nhiêu $\\text{m/s}$?",
+      "answer": "3",
+      "explanation": "Hai vật khối lượng bằng nhau va chạm đàn hồi thì đổi vận tốc cho nhau: bi cái dừng, bi đỏ chạy $3\\ \\text{m/s}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai người đứng yên trên băng nhẵn đẩy nhau rồi trượt ngược chiều. Tổng động lượng của hai người ngay sau khi đẩy là bao nhiêu $\\text{kg}\\cdot\\text{m/s}$?",
+      "answer": "0",
+      "explanation": "Đẩy nhau là nội lực, hệ kín; tổng động lượng ban đầu bằng $0$ nên sau cũng bằng $0$: hai động lượng bằng nhau về độ lớn, ngược hướng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Người $60\\ \\text{kg}$ chạy $5\\ \\text{m/s}$ ôm dính vào người $40\\ \\text{kg}$ chạy ngược chiều với tốc độ $2\\ \\text{m/s}$. Tốc độ chung ngay sau đó là bao nhiêu $\\text{m/s}$ (viết dạng số thập phân)?",
+      "answer": "2,2",
+      "explanation": "Chiều dương theo người $60\\ \\text{kg}$: $v=\\dfrac{60\\cdot5+40\\cdot(-2)}{100}=2{,}2\\ \\text{m/s}$. Quên dấu sẽ ra $3{,}8$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật bảo toàn động lượng cho hệ kín",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Súng $5\\ \\text{kg}$ đặt tự do bắn viên đạn $25\\ \\text{g}$ bay ngang với tốc độ $400\\ \\text{m/s}$. Tốc độ giật của súng là bao nhiêu $\\text{m/s}$?",
+      "answer": "2",
+      "explanation": "$V=\\dfrac{0{,}025\\cdot400}{5}=2\\ \\text{m/s}$, ngược chiều đạn. Đổi $25\\ \\text{g}=0{,}025\\ \\text{kg}$ trước khi thế số."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xe $1\\ \\text{kg}$ chạy $6\\ \\text{m/s}$ va chạm mềm vào xe $m_2$ đứng yên, sau đó hai xe chạy $1{,}5\\ \\text{m/s}$. Khối lượng $m_2$ là bao nhiêu kg?",
+      "answer": "3",
+      "explanation": "$1\\cdot6=(1+m_2)\\cdot1{,}5$ nên $1+m_2=4$, $m_2=3\\ \\text{kg}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Va chạm mềm, va chạm đàn hồi",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xe $3\\ \\text{kg}$ chạy $4\\ \\text{m/s}$ va chạm mềm vào xe $1\\ \\text{kg}$ đứng yên. Động năng của hệ giảm đi bao nhiêu $\\text{J}$?",
+      "answer": "6",
+      "explanation": "$v=12/4=3\\ \\text{m/s}$. Động năng trước $\\frac12\\cdot3\\cdot16=24\\ \\text{J}$, sau $\\frac12\\cdot4\\cdot9=18\\ \\text{J}$; giảm $6\\ \\text{J}$."
+    }
+  ]
+}

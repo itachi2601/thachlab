@@ -1,0 +1,365 @@
+{
+  "lesson_id": 51,
+  "lesson_title": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+  "item_id": 287,
+  "generated_at": "2026-10-17",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 14,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 9
+    },
+    "removed": [
+      {
+        "question": "Hai bạn bấm giờ cùng lượt chạy $100\\ \\text{m}$ của Minh, được $14{,}2\\ \\text{s}$ và $14{,}",
+        "reason": "Chỉ lấy hiệu hai số liệu ở phần mở bài (14,6 - 14,2), không kiểm tra kiến thức"
+      },
+      {
+        "question": "Video quay $24$ khung hình mỗi giây. Hai khung hình liền nhau cách nhau",
+        "reason": "Phương án nhiễu 0,24 s và 0,42 s không rút từ lỗi thật của học sinh (giải thích bịa: 'lấy 24/100', 'lệch một chữ số')"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi đo thời gian $n$ lần, sai số tuyệt đối $\\Delta t$ trong bài được tính là",
+      "options": [
+        "hiệu giữa lần đo lớn nhất và lần đo nhỏ nhất",
+        "chính giá trị trung bình $\\bar t$ của các lần đo",
+        "tỉ số giữa độ lệch và giá trị trung bình, đổi ra phần trăm",
+        "trung bình các độ lệch $|t_i - \\bar t|$ so với giá trị trung bình $\\bar t$"
+      ],
+      "answer": 3,
+      "explanation": "$\\Delta t$ là trung bình các độ lệch tuyệt đối. Hiệu lớn nhất – nhỏ nhất chỉ là độ rộng của dãy số; $\\bar t$ là kết quả đo, không phải sai số; tỉ số độ lệch trên giá trị trung bình là sai số tương đối $\\delta t$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Độ trễ phản xạ của người bấm đồng hồ lúc sớm lúc muộn, nên có thể coi đây là",
+      "options": [
+        "sai số luôn lệch về một phía, đo nhiều lần cũng không bù được",
+        "sai số ngẫu nhiên: lệch về hai phía, được bù bớt khi đo nhiều lần rồi lấy trung bình",
+        "nhầm lẫn của người bấm, bỏ lần đo đó đi là hết sai số",
+        "sai số của thước đo, giảm khi đổi sang thước tốt hơn"
+      ],
+      "answer": 1,
+      "explanation": "Độ trễ bấm tay lúc nhanh lúc chậm nên các số đo lệch hai phía quanh giá trị trung bình; lấy trung bình nhiều lần bù được phần lớn. Độ lệch luôn một phía mới không bù được (như tấm chắn quá rộng)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Xe đang nhanh dần qua cổng quang. Muốn $d/t$ gần tốc độ tức thời tại cổng, tấm chắn cần",
+      "options": [
+        "càng rộng càng tốt, vì thời gian che sáng dài hơn",
+        "rộng bằng cả chiều dài của xe",
+        "hẹp, miễn là thời gian che sáng vẫn dài hơn nhiều bước chia của đồng hồ",
+        "hẹp tới mức nào cũng được, vì đồng hồ hiện số luôn chính xác tuyệt đối"
+      ],
+      "answer": 2,
+      "explanation": "Tấm chắn hẹp thì khoảng thời gian ngắn, tốc độ đổi ít nên $d/t$ gần tốc độ tức thời. Hẹp quá thì $t$ chỉ cỡ vài bước chia, đồng hồ làm tròn mạnh và sai số tăng lên."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong phương án quay video, khoảng thời gian $\\Delta t$ giữa hai khung hình liền nhau bằng",
+      "options": [
+        "$1$ chia cho số khung hình mỗi giây",
+        "số khung hình mỗi giây",
+        "sai số của đồng hồ dùng để xem video",
+        "thời gian xe chạy hết cả đoạn đường"
+      ],
+      "answer": 0,
+      "explanation": "Video có $f$ khung hình mỗi giây thì hai khung liền nhau cách $\\Delta t = 1/f$. Đó là khoảng thời gian giữa hai ảnh chứ không phải sai số hay thời gian cả đoạn chạy."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhược điểm chính của phương án đo bằng cổng quang là",
+      "options": [
+        "chịu độ trễ phản xạ của người bấm đồng hồ",
+        "đắt và chỉ đo được tại chỗ đặt cổng",
+        "không cho được thời gian chính xác tới $0{,}001\\ \\text{s}$",
+        "hình mờ gây sai số và mất công xử lý từng khung hình"
+      ],
+      "answer": 1,
+      "explanation": "Cổng quang chính xác, không có độ trễ người bấm nhưng đắt và chỉ cho tốc độ ở chỗ đặt cổng. Ba nhược điểm còn lại là của bấm tay (trễ phản xạ), hoặc của phương án video (hình mờ, xử lý)."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về ba phương án đo tốc độ trong bài, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Thước và đồng hồ bấm giây rẻ nhưng chịu độ trễ phản xạ của người bấm.",
+          "answer": true
+        },
+        {
+          "text": "Với cổng quang, thời gian ghi được không phụ thuộc người bấm.",
+          "answer": true
+        },
+        {
+          "text": "Video cho vị trí vật ở từng khung hình nên vẽ được đồ thị.",
+          "answer": true
+        },
+        {
+          "text": "Cổng quang đo được tốc độ của vật tại mọi vị trí trên đường chạy.",
+          "answer": false
+        }
+      ],
+      "explanation": "Cổng quang chỉ đo được ở nơi đặt cổng. Muốn có tốc độ ở nhiều vị trí phải đặt nhiều cổng hoặc dùng video."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về sai số trong các phép đo, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đo nhiều lần giúp ước lượng được sai số ngẫu nhiên.",
+          "answer": true
+        },
+        {
+          "text": "Lấy trung bình nhiều lần cũng sửa được độ lệch do tấm chắn quá rộng.",
+          "answer": false
+        },
+        {
+          "text": "Đường chạy dài hơn thì độ trễ bấm giữ nguyên nhưng $\\delta t$ nhỏ đi.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tuyệt đối nhỏ hơn thì phép đo luôn chính xác hơn.",
+          "answer": false
+        }
+      ],
+      "explanation": "Tấm chắn rộng làm lệch cùng một phía nên trung bình không bù được. Muốn so độ chính xác phải dùng sai số tương đối: sai $1\\ \\text{cm}$ trên $10\\ \\text{m}$ tốt hơn sai $1\\ \\text{mm}$ trên $2\\ \\text{cm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thước đo $s$ chỉ đo một lần, chia tới $1\\ \\text{mm}$. Theo quy ước lấy sai số bằng một độ chia nhỏ nhất, $\\Delta s$ bằng bao nhiêu mm?",
+      "answer": "1",
+      "explanation": "Đại lượng đo một lần có sai số lấy bằng sai số dụng cụ; theo quy ước một độ chia nhỏ nhất thì $\\Delta s = 1\\ \\text{mm}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Kéo dài đường chạy gấp đôi (cùng tốc độ), độ trễ bấm giữ nguyên. Sai số tương đối $\\delta t$ giảm đi bao nhiêu lần?",
+      "answer": "2",
+      "explanation": "Đường dài gấp đôi thì $t$ dài gấp đôi, còn $\\Delta t$ không đổi, nên $\\delta t = \\Delta t/\\bar t$ giảm $2$ lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tốc độ $v = s/t$ có $\\delta s$ và $\\delta t$ là sai số tương đối của $s$ và $t$. Sai số tương đối của $v$ là",
+      "options": [
+        "$\\delta v = \\delta s - \\delta t$",
+        "$\\delta v = \\delta s \\cdot \\delta t$",
+        "$\\delta v = \\delta s + \\delta t$",
+        "$\\delta v = \\Delta s + \\Delta t$"
+      ],
+      "answer": 2,
+      "explanation": "Quy tắc \"chia thì cộng phần trăm\": $\\delta v = \\delta s + \\delta t$. Trừ hay nhân là áp dụng nhầm quy tắc; cộng sai số tuyệt đối $\\Delta s + \\Delta t$ là cộng hai đại lượng khác đơn vị."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tấm chắn rộng $6{,}0\\ \\text{cm}$ che cổng quang trong $0{,}040\\ \\text{s}$. Tốc độ của xe là",
+      "options": [
+        "$1{,}5\\ \\text{m/s}$",
+        "$150\\ \\text{m/s}$",
+        "$0{,}67\\ \\text{m/s}$",
+        "$0{,}0024\\ \\text{m/s}$"
+      ],
+      "answer": 0,
+      "explanation": "$v = d/t = 0{,}060/0{,}040 = 1{,}5\\ \\text{m/s}$ (đổi $6{,}0\\ \\text{cm} = 0{,}060\\ \\text{m}$). $150$ là quên đổi cm ra m; $0{,}67$ là chia ngược $t/d$; $0{,}0024$ là nhân $d \\cdot t$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đo thời gian được $\\bar t = 4{,}00\\ \\text{s}$ với $\\Delta t = 0{,}20\\ \\text{s}$. Sai số tương đối $\\delta t$ là",
+      "options": [
+        "$0{,}05\\ \\%$",
+        "$20\\ \\%$",
+        "$0{,}8\\ \\%$",
+        "$5\\ \\%$"
+      ],
+      "answer": 3,
+      "explanation": "$\\delta t = \\Delta t/\\bar t = 0{,}20/4{,}00 = 0{,}05 = 5\\ \\%$. $0{,}05\\ \\%$ là quên đổi ra phần trăm; $20\\ \\%$ là chia ngược; $0{,}8\\ \\%$ là nhân hai số."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bốn lần đo thời gian cho $2{,}6$; $3{,}0$; $3{,}0$; $3{,}4$ (giây). Sai số tuyệt đối $\\Delta t$ bằng",
+      "options": [
+        "$0{,}4\\ \\text{s}$",
+        "$0{,}2\\ \\text{s}$",
+        "$0{,}8\\ \\text{s}$",
+        "$0{,}08\\ \\text{s}$"
+      ],
+      "answer": 1,
+      "explanation": "$\\bar t = 3{,}0\\ \\text{s}$; các độ lệch $0{,}4;\\ 0;\\ 0;\\ 0{,}4$ nên $\\Delta t = 0{,}8/4 = 0{,}2\\ \\text{s}$. $0{,}4$ là độ lệch lớn nhất; $0{,}8$ là hiệu lớn nhất – nhỏ nhất (hoặc tổng độ lệch); $0{,}08$ là trung bình bình phương độ lệch, quên lấy căn."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đo đường ray dài $s = 1{,}50\\ \\text{m}$ ($\\Delta s = 0{,}002\\ \\text{m}$) và thời gian $\\bar t = 3{,}00\\ \\text{s}$ ($\\Delta t = 0{,}12\\ \\text{s}$). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tốc độ trung bình $\\bar v = 0{,}50\\ \\text{m/s}$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của thời gian là $\\delta t = 4{,}0\\ \\%$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của quãng đường là $\\delta s \\approx 0{,}13\\ \\%$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của tốc độ là $\\delta v = \\delta t - \\delta s \\approx 3{,}9\\ \\%$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$\\delta v = \\delta s + \\delta t \\approx 0{,}13 + 4{,}0 \\approx 4{,}1\\ \\%$ (chia thì cộng phần trăm, không trừ)."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Cổng quang: tấm chắn rộng $3{,}0\\ \\text{cm}$ ($\\Delta d = 0{,}1\\ \\text{cm}$), đồng hồ hiện $0{,}075\\ \\text{s}$ ($\\Delta t = 0{,}001\\ \\text{s}$). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Tốc độ của xe là $0{,}40\\ \\text{m/s}$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của $d$ là $\\delta d \\approx 3{,}3\\ \\%$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của tốc độ là $\\delta v \\approx 4{,}7\\ \\%$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số tương đối của tốc độ là $\\delta d - \\delta t \\approx 2{,}0\\ \\%$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$\\delta d = 0{,}1/3{,}0 \\approx 3{,}3\\ \\%$, $\\delta t = 0{,}001/0{,}075 \\approx 1{,}3\\ \\%$, nên $\\delta v = \\delta d + \\delta t \\approx 4{,}7\\ \\%$. Lấy hiệu là sai quy tắc."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xe đồ chơi chạy hết đường ray dài $1{,}80\\ \\text{m}$ trong $4{,}50\\ \\text{s}$. Tốc độ trung bình là bao nhiêu $\\text{m/s}$?",
+      "answer": "0,4",
+      "explanation": "$v = s/t = 1{,}80/4{,}50 = 0{,}40\\ \\text{m/s}$, viết gọn $0{,}4$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thước đo $s$ có $\\delta s = 1{,}5\\ \\%$, đồng hồ đo $t$ có $\\delta t = 2{,}5\\ \\%$. Sai số tương đối của $v = s/t$ là bao nhiêu phần trăm?",
+      "answer": "4",
+      "explanation": "Chia thì cộng phần trăm: $\\delta v = 1{,}5 + 2{,}5 = 4{,}0\\ \\%$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tốc độ đo được $\\bar v = 0{,}50\\ \\text{m/s}$ với sai số tương đối $\\delta v = 6\\ \\%$. Sai số tuyệt đối $\\Delta v$ là bao nhiêu $\\text{m/s}$?",
+      "answer": "0,03",
+      "explanation": "$\\Delta v = \\delta v \\cdot \\bar v = 0{,}06 \\cdot 0{,}50 = 0{,}03\\ \\text{m/s}$."
+    }
+  ]
+}
