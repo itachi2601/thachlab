@@ -158,7 +158,11 @@ export default function TeacherThptAlerts({
                         ? "Bỏ bài KT"
                         : a.kind === "exam_violation"
                           ? "Vi phạm khi thi"
-                          : "Điểm thấp liên tiếp"}
+                          : a.kind === "inactive_7d"
+                            ? "Lâu không học"
+                            : a.kind === "absent_streak"
+                              ? "Vắng liên tiếp"
+                              : "Điểm thấp liên tiếp"}
                     </span>
                   </div>
                   <p className="mt-1 text-sm text-slate-300">{a.reason}</p>

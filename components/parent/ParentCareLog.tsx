@@ -29,6 +29,8 @@ const ALERT_TEXT: Record<string, string> = {
   low_score_streak: "Thầy xem lại các bài điểm thấp liên tiếp của con và nhắc con.",
   missed_assessment: "Thầy nhắc con về bài kiểm tra con chưa làm.",
   exam_violation: "Thầy nhắc con giữ nghiêm túc khi làm bài kiểm tra.",
+  inactive_7d: "Thầy hỏi thăm con vì mấy hôm nay con ít vào học trên web.",
+  absent_streak: "Thầy hỏi thăm con vì con vắng mấy buổi gần đây.",
 };
 
 async function fetchCareEvents(studentId: string): Promise<CareEvent[]> {
@@ -46,6 +48,7 @@ async function fetchCareEvents(studentId: string): Promise<CareEvent[]> {
       .select("kind, status, handled_note, updated_at")
       .eq("student_id", studentId)
       .neq("status", "open")
+      .not("handled_note", "like", "tự đóng%") // hệ thống tự đóng, thầy chưa liên hệ: không ghi là đã chăm sóc
       .gte("updated_at", since),
     supabase
       .from("tutoring_registrations")

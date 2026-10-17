@@ -566,7 +566,7 @@ export interface StudentAlert {
   id: number;
   studentId: string;
   classId: number | null;
-  kind: "low_score_streak" | "missed_assessment" | "exam_violation";
+  kind: "low_score_streak" | "missed_assessment" | "exam_violation" | "inactive_7d" | "absent_streak";
   severity: "warning" | "urgent";
   reason: string;
   status: "open" | "contacted" | "tutoring" | "resolved" | "dismissed";
@@ -635,6 +635,9 @@ export async function fetchMyAlert(userId: string): Promise<StudentAlert | null>
       "id, student_id, class_id, kind, severity, reason, status, assigned_to, handled_note, created_at, updated_at",
     )
     .eq("student_id", userId)
+    // inactive_7d / absent_streak chỉ dành cho giáo viên (DT-07): không dán nhãn "cần chú ý" cho HS, và vì
+    // sweep_engagement_alerts cập nhật updated_at hằng ngày nên chúng sẽ che mất cảnh báo điểm thấp.
+    .in("kind", ["low_score_streak", "missed_assessment", "exam_violation"])
     .order("updated_at", { ascending: false })
     .limit(1);
   const row = (data as AlertRow[])?.[0];
