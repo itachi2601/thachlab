@@ -37,6 +37,8 @@ const LESSONS_DIR = join(OUT_DIR, "lessons");
 const ENV_FILE = join(ROOT, ".env.local");
 
 // Cột của lesson_items theo từng đợt migration — giống ITEM_COLUMNS_V3/V2/V1 ở services/lessons.ts.
+// lesson_items mang body_html + questions nên trang 1000 dòng vượt statement_timeout (57014) của anon; trang nhỏ thì qua.
+const ITEM_PAGE = 50;
 const ITEM_META_V1 = "id, lesson_id, kind, title, subtitle, video_url, pdf_url, exam_ids, sort_order";
 const ITEM_META_V2 = `${ITEM_META_V1}, due_at`;
 const ITEM_META_V3 = `${ITEM_META_V2}, required, quiz_min_correct, practice_pass_score`;
@@ -120,8 +122,7 @@ function bail(reason) {
 }
 
 /** Lấy hết dòng của 1 truy vấn, mỗi trang 1000 dòng (giới hạn mặc định của PostgREST). */
-async function fetchAll(makeQuery) {
-  const PAGE = 1000;
+async function fetchAll(makeQuery, PAGE = 1000) {
   const rows = [];
   for (let from = 0; ; from += PAGE) {
     const { data, error } = await makeQuery().range(from, from + PAGE - 1);
@@ -612,7 +613,7 @@ async function main() {
     itemRows = null;
     for (const columns of [ITEM_META_V5, ITEM_META_V4, ITEM_META_V3, ITEM_META_V2, ITEM_META_V1]) {
       try {
-        itemRows = lessonIds.length ? await fetchAll(itemSelect(columns)) : [];
+        itemRows = lessonIds.length ? await fetchAll(itemSelect(columns), ITEM_PAGE) : [];
         itemColumns = columns;
         break;
       } catch {
