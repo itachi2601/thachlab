@@ -3,8 +3,8 @@
 // Điểm chỉ là gợi ý: trang gọi hiển thị để giáo viên sửa tay trước khi lưu.
 //
 // Provider theo body.provider: "sonnet" (mặc định; ANTHROPIC_API_KEY, model HSG_GRADE_SONNET_MODEL, mặc định
-// claude-sonnet-5-5), "haiku" (HSG_GRADE_HAIKU_MODEL, claude-haiku-5-5) hoặc "deepseek" (DEEPSEEK_API_KEY,
-// HSG_GRADE_DEEPSEEK_MODEL, deepseek-flash). Deploy: supabase functions deploy hsg-ai-grade (secrets xem docs/deploy-edge-function.md).
+// claude-sonnet-5-5) hoặc "haiku" (HSG_GRADE_HAIKU_MODEL, claude-haiku-5-5). KHÔNG còn DeepSeek (17/10/2026):
+// bài làm học sinh chỉ đi qua Claude (AGENTS.md, ranh giới dữ liệu định danh). Deploy: supabase functions deploy hsg-ai-grade (secrets xem docs/deploy-edge-function.md).
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -47,29 +47,6 @@ function buildPrompt(items: Item[]): string {
     .join("\n\n");
 }
 
-async function callDeepSeek(prompt: string): Promise<string> {
-  const apiKey = Deno.env.get("DEEPSEEK_API_KEY");
-  if (!apiKey) throw new Error("Server chưa cấu hình DEEPSEEK_API_KEY.");
-  const res = await fetch("https://api.deepseek.com/chat/completions", {
-    method: "POST",
-    headers: { "content-type": "application/json", authorization: `Bearer ${apiKey}` },
-    body: JSON.stringify({
-      model: Deno.env.get("HSG_GRADE_DEEPSEEK_MODEL") || "deepseek-flash",
-      max_tokens: 4096,
-      temperature: 0,
-      thinking: { type: "disabled" },
-      response_format: { type: "json_object" },
-      messages: [
-        { role: "system", content: SYSTEM },
-        { role: "user", content: prompt + "\n\nTrả về json." },
-      ],
-    }),
-  });
-  if (!res.ok) throw new Error(`DeepSeek lỗi ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const data = await res.json();
-  return data.choices?.[0]?.message?.content ?? "";
-}
-
 async function callClaude(prompt: string, model: string): Promise<string> {
   const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
   if (!apiKey) throw new Error("Server chưa cấu hình ANTHROPIC_API_KEY.");
@@ -104,7 +81,8 @@ Deno.serve(async (req) => {
   } catch {
     return jsonResponse({ error: "Dữ liệu gửi lên không hợp lệ." }, 400);
   }
-  const provider = body.provider === "haiku" ? "haiku" : body.provider === "deepseek" ? "deepseek" : "sonnet";
+  if (body.provider === "deepseek") return jsonResponse({ error: "Không còn hỗ trợ DeepSeek; dùng Claude." }, 400);
+  const provider = body.provider === "haiku" ? "haiku" : "sonnet";
   const items: Item[] = (Array.isArray(body.items) ? body.items : [])
     .filter((it): it is Item => !!it && typeof (it as Item).n === "number" && Number((it as Item).max) > 0)
     .slice(0, MAX_ITEMS)
@@ -129,11 +107,9 @@ Deno.serve(async (req) => {
   try {
     const prompt = buildPrompt(items);
     const raw =
-      provider === "deepseek"
-        ? await callDeepSeek(prompt)
-        : provider === "haiku"
-          ? await callClaude(prompt, Deno.env.get("HSG_GRADE_HAIKU_MODEL") || "claude-haiku-5-5")
-          : await callClaude(prompt, Deno.env.get("HSG_GRADE_SONNET_MODEL") || "claude-sonnet-5-5");
+      provider === "haiku"
+        ? await callClaude(prompt, Deno.env.get("HSG_GRADE_HAIKU_MODEL") || "claude-haiku-5-5")
+        : await callClaude(prompt, Deno.env.get("HSG_GRADE_SONNET_MODEL") || "claude-sonnet-5-5");
     const start = raw.indexOf("{");
     const end = raw.lastIndexOf("}");
     if (start < 0 || end < 0) return jsonResponse({ error: "AI không trả về JSON hợp lệ." }, 502);
