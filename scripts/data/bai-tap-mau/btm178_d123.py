@@ -376,18 +376,18 @@ SOLS = [
      M(r"\dfrac{S_{\text{che}}}{S_{\text{đĩa}}}=\left(\dfrac{\alpha'_M}{\alpha_S}\right)^2=\left(\dfrac{0{,}499}{0{,}531}\right)^2"), A(r"\approx0{,}88=88\ \%")]),
   ("Khoảng cách lớn nhất để còn che kín", [P(r"Ở khoảng cách giới hạn, hai góc trông bằng nhau:"),
      M(r"\dfrac{D_M}{\ell_{\max}}=\dfrac{D_S}{1\ \text{AU}}\Rightarrow\ell_{\max}=D_M\,\dfrac{1\ \text{AU}}{D_S}"),
-     M(r"\ell_{\max}=3470\cdot\dfrac{1{,}5\cdot10^8}{1{,}39\cdot10^6}"), A(r"\ell_{\max}\approx374\,500\ \text{km}")]),
-  ("Kiểm tra", [P(r"$356\,630\ \text{km}\lt374\,500\ \text{km}\lt398\,630\ \text{km}$: khớp kết luận toàn phần lúc gần, hình khuyên lúc xa ✓."),
-     P(r"Đồng xu và Mặt Trăng cùng che vừa Mặt Trời khi khoảng cách gấp khoảng $108$ lần đường kính: $\dfrac{2{,}16\ \text{m}}{0{,}02\ \text{m}}\approx\dfrac{374\,500}{3470}\approx108$ ✓."),
+     M(r"\ell_{\max}=3470\cdot\dfrac{1{,}5\cdot10^8}{1{,}39\cdot10^6}"), A(r"\ell_{\max}\approx374\,000\ \text{km}")]),
+  ("Kiểm tra", [P(r"$356\,630\ \text{km}\lt374\,000\ \text{km}\lt398\,630\ \text{km}$: khớp kết luận toàn phần lúc gần, hình khuyên lúc xa ✓."),
+     P(r"Đồng xu và Mặt Trăng cùng che vừa Mặt Trời khi khoảng cách gấp khoảng $108$ lần đường kính: $\dfrac{2{,}16\ \text{m}}{0{,}02\ \text{m}}\approx\dfrac{374\,000}{3470}\approx108$ ✓."),
      P(r"Mặt Trời to gấp khoảng $400$ lần Mặt Trăng nhưng cũng xa gấp khoảng $400$ lần, nên hai đĩa trông gần bằng nhau.")])],
   [r"a) $\ell_x\approx2{,}16\ \text{m}$", r"b) $\alpha_S\approx0{,}531°$",
    r"c) Gần nhất $\alpha_M\approx0{,}557°$: toàn phần", r"c) Xa nhất $\alpha'_M\approx0{,}499°$: hình khuyên",
-   r"d) Khoảng $88\ \%$", r"e) $\ell_{\max}\approx374\,500\ \text{km}$"],
+   r"d) Khoảng $88\ \%$", r"e) $\ell_{\max}\approx374\,000\ \text{km}$"],
   r"Nhận dạng: thấy <strong>toàn phần hay hình khuyên, che vừa kín</strong> → so góc trông $\alpha\approx D/\ell$, khoảng cách tính từ chỗ người đứng."),
  sol(R3, [
   ("Chiều dài nón bóng tối Mặt Trăng", [P(r"Ngày nhật thực Mặt Trăng nằm giữa:"),
      M(r"a=1{,}5\cdot10^8-363\,000=1{,}49637\cdot10^8\ \text{km}"),
-     M(r"L=\dfrac{a\,D_M}{D_S-D_M}=\dfrac{1{,}49637\cdot10^8\cdot3470}{1{,}39\cdot10^6-3470}"), A(r"L\approx374\,500\ \text{km}")]),
+     M(r"L=\dfrac{a\,D_M}{D_S-D_M}=\dfrac{1{,}49637\cdot10^8\cdot3470}{1{,}39\cdot10^6-3470}"), A(r"L\approx374\,000\ \text{km}")]),
   ("Vùng tối lúc gần nhất", [P(r"Từ Mặt Trăng tới mặt đất (chỗ gần nhất):"), M(r"x=363\,000-6370=356\,630\ \text{km}"),
      P(r"$x\lt L$: chóp nón xuyên qua mặt đất, người trong vùng tối thấy <strong>nhật thực toàn phần</strong>."),
      M(r"D_{\text{tối}}=D_M\,\dfrac{L-x}{L}=3470\cdot\dfrac{374\,489-356\,630}{374\,489}"), A(r"D_{\text{tối}}\approx165\ \text{km}")]),
@@ -403,10 +403,10 @@ SOLS = [
      M(r"L_E=\dfrac{1\ \text{AU}\cdot D_E}{D_S-D_E}=\dfrac{1{,}5\cdot10^8\cdot12\,740}{1{,}39\cdot10^6-12\,740}"), A(r"L_E\approx1{,}39\cdot10^6\ \text{km}")]),
   ("Vùng tối tại quỹ đạo Mặt Trăng", [M(r"D'_{\text{tối}}=D_E\,\dfrac{L_E-d}{L_E}=12\,740\cdot\dfrac{1\,387\,538-384\,000}{1\,387\,538}"),
      A(r"D'_{\text{tối}}\approx9210\ \text{km}"), M(r"\dfrac{D'_{\text{tối}}}{D_M}=\dfrac{9214}{3470}\approx2{,}66")]),
-  ("Kiểm tra", [P(r"$L\approx374\,500\ \text{km}$ khớp khoảng cách giới hạn che kín tìm bằng góc trông ở Dạng 2 ($374\,460\ \text{km}$, cũng làm tròn thành $374\,500\ \text{km}$): hai cách cho cùng kết quả ✓."),
+  ("Kiểm tra", [P(r"$L\approx374\,000\ \text{km}$ khớp khoảng cách giới hạn che kín tìm bằng góc trông ở Dạng 2 ($374\,460\ \text{km}$, cũng làm tròn thành $374\,000\ \text{km}$): hai cách cho cùng kết quả ✓."),
      P(r"Vùng tối nhật thực chỉ khoảng $165\ \text{km}$: một nơi rất hiếm khi thấy nhật thực toàn phần ✓."),
      P(r"Bóng Trái Đất tại quỹ đạo rộng gấp $2{,}66$ lần Mặt Trăng: Mặt Trăng nằm gọn trong bóng, mọi nơi đang là đêm đều thấy nguyệt thực ✓.")])],
-  [r"a) $L\approx374\,500\ \text{km}$", r"b) Có, toàn phần; vùng tối $\approx165\ \text{km}$; vùng nửa tối $\approx6790\ \text{km}$",
+  [r"a) $L\approx374\,000\ \text{km}$", r"b) Có, toàn phần; vùng tối $\approx165\ \text{km}$; vùng nửa tối $\approx6790\ \text{km}$",
    r"c) Nhật thực hình khuyên; vùng rộng $\approx225\ \text{km}$", r"d) $L_E\approx1{,}39\cdot10^6\ \text{km}$; vùng tối $\approx9210\ \text{km}\approx2{,}66\,D_M$"],
   r"Nhận dạng: thấy <strong>bóng của Mặt Trăng, bóng Trái Đất, vùng tối rộng bao nhiêu</strong> → tam giác đồng dạng: $L=\dfrac{aD}{D_0-D}$, so $x$ với $L$."),
 ]
@@ -545,7 +545,7 @@ def kiem_so():
     assert abs(A_GAN - 0.499) > 0.003 and abs(D_M / (D_XA + R_E) * deg - 0.499) > 0.003
     assert A_GAN > A_S > A_XA
     assert round(TI_LE * 100) == 88 and abs(A_XA / A_S * 100 - 88) > 1 and abs((1 - A_XA / A_S) * 100 - 88) > 1
-    assert abs(L_MAX - 374460) < 1 and abs(L_MAX / 1000 - 374.5) < 0.6
+    assert abs(L_MAX - 374460) < 1 and round(L_MAX, -3) == 374_000
     assert abs(D_S * AU / D_M / 1000 - 374.5) > 0.6 and abs((L_GAN + L_XA) / 2000 - 374.5) > 0.6
     assert L_GAN < L_MAX < L_XA
     assert abs(L_MAX / D_M - XU / 0.02) < 0.01 and round(XU / 0.02) == 108
