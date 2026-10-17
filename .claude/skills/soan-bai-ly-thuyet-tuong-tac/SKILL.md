@@ -28,6 +28,11 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
 
 ## Quy trình
 
+**Lưu mốc sau mỗi chặng (thầy chốt 17/10/2026 — phiên có thể dừng giữa chừng vì hết hạn mức, container cloud có thể bị thu hồi):**
+- Xong mỗi chặng (viết `theory.html`, vẽ hình, kiểm, sửa, đóng gói) → `git commit -- content/lesson-samples/<thư-mục-bài>/ …` ngay; phiên cloud thì **push** luôn. Chưa ghi DB không có nghĩa là an toàn: file chưa commit mất là mất cả bài.
+- Kiểm xong (lint, kiem-code, xem ảnh) → ghi danh sách lỗi ra `content/lesson-samples/<thư-mục-bài>/ra-soat.md` dạng `- [ ] <lỗi> — <chỗ>`; sửa xong mục nào tick `[x]` rồi commit cùng bản sửa. Ghi thêm dòng đầu file: chặng hiện tại + bước kế tiếp.
+- Phiên sau (hoặc thầy nói "tiếp bài X"): đọc `ra-soat.md` + `git log -3 -- <thư-mục-bài>` thay vì kiểm lại từ đầu hay nạp lại phiên cũ.
+
 1. **Chọn bài + nguồn.** Lớp → Chương → Bài (xem `public/data/catalog.json`). **Soạn lại bài đã đăng thì đọc trước bài đang có trên web (`lesson_items` mục `ly_thuyet`) và mô tả bài/YCCĐ của nó**, liệt kê các ý bắt buộc để bản mới không bỏ sót (bài Mô tả sóng cũ thiếu hẳn phương trình sóng và trễ pha dù mô tả bài có ghi). Nội dung lấy từ chương trình/SGK làm ý tưởng và số liệu; **không chép nguyên văn, không dùng ảnh của sách có bản quyền** (Halliday, SGK...) trên trang công khai — vẽ lại bằng SVG.
 2. **Phiếu bài** (trong đầu/scratchpad): 1 ví dụ đời thường mở bài · khái niệm/định luật + phát biểu chuẩn · công thức + ký hiệu + đơn vị · 1–2 **hiểu lầm kinh điển** của học sinh · 1 ví dụ số · 3–4 ứng dụng đời sống. Hiểu lầm kinh điển là xương sống của bài — chọn đúng chỗ học sinh hay sai.
 3. **Viết `theory.html`** theo dàn ý dưới + linh kiện trong `references/linh-kien-html.md`.
@@ -356,3 +361,4 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-10-12 · WebSearch không trả được link YouTube (chỉ bài viết), tốn 7 lượt vô ích → dùng `scripts/tim-clip-youtube.py` (1 lượt cho nhiều từ khoá, đã lọc id không nhúng được).
 - 2026-10-13 · Bổ sung khối Hành trang cho 10 bài đã đăng (chương 3 L10): 5/10 bài trong DB có khối PhET mà `theory.html` trong repo KHÔNG có (sửa thẳng DB trước đó) → khi sửa bài đã đăng, kéo `body_html` từ DB làm nền (`--nen`), đối chiếu diff DB↔file chỉ còn phần mình thêm rồi mới đăng; `bundle.json` của bài 58 cũng lệch `theory.html`. Câu "Thời gian đọc khoảng" có hai kiểu viết hoa (`Đọc`/`đọc`) → regex số phút phải bắt cả hai.
 - 2026-10-16 · Thầy đưa mốc 5:15 "phản xạ" và 6:00 "sóng kết hợp" của tập Traveling Waves; phụ đề cho thấy 6:02–6:35 là chồng chất hai xung (không nói "kết hợp") → luôn đọc phụ đề đối chiếu mốc và báo chỗ lệch thuật ngữ, đừng nhúng theo tên thầy gọi. Playlist nguồn ưu tiên cho khái niệm trừu tượng: `references/video-crash-course-physics.md`.
+- 2026-10-17 · Phiên đang kiểm/sửa mà hết hạn mức thì danh sách lỗi chỉ nằm trong lịch sử chat, file chưa commit có thể mất (cloud) → thêm mục "Lưu mốc sau mỗi chặng" đầu Quy trình: commit+push mỗi chặng, lỗi ghi `ra-soat.md` có ô tick.
