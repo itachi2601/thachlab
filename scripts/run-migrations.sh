@@ -46,6 +46,7 @@ FILES=(
   "supabase/migrations/20261017230000_learning_events.sql|DT-01: bảng learning_events + log_learning_events(jsonb) + purge 12 tháng (pg_cron)|lúc nào cũng được"
   "supabase/migrations/20261017231000_feature_flags.sql|DT-12: bảng feature_flags theo lớp + feature_enabled(text)|lúc nào cũng được"
   "supabase/migrations/20261018100000_canh_bao_vang_mat_inactive_absent.sql|DT-07: student_alerts thêm inactive_7d + absent_streak, hàm sweep_engagement_alerts, pg_cron 6:00 VN hằng ngày|lúc nào cũng được; lần quét đầu có thể tạo nhiều cảnh báo"
+  "supabase/migrations/20261018110000_on_tap_1_3_7_theo_co.sql|DT-04: trigger đổi lịch ôn câu sai thành 1/3/7 ngày chỉ cho lớp có cờ on_tap_1_3_7 (chưa bật lớp nào)|lúc nào cũng được"
   "supabase/migrations/20261018120000_hsg9_dot4_muc_noi_dung.sql|Khoá HSG Vật lí: tạo mục Lý thuyết + Bài tập mẫu (rỗng) cho CĐ06 (151), CĐ07 (156), CĐ14 (158), CĐ08 (152), CĐ09 (163), bài vẫn ẩn|lúc nào cũng được (chỉ chèn)"
   "supabase/migrations/20261018123000_hsg9_yccd_guong_thien_van.sql|Khoá HSG Vật lí: thêm YCCĐ cho CĐ14 Gương phẳng (3 con) và CĐ17 Thiên văn (3 con), để bài tập mẫu gắn được topic|lúc nào cũng được (chỉ chèn)"
 )
