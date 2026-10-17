@@ -1,0 +1,407 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p>Kiến thức Ánh sáng của KHTN 7, học lại ở mức HSG. Phần ghi <strong>(Mở rộng HSG)</strong> vượt chuẩn, đề thi chuyên hay hỏi.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ và tính vùng tối, vùng nửa tối.</li>
+<li>Tính bóng người dưới đèn đường.</li>
+<li>Dùng định luật phản xạ để đặt gương.</li>
+<li>Tính góc quay của tia khi gương quay.</li>
+<li>Dựng ảnh, tính ảnh khi vật hay gương dịch chuyển.</li>
+<li>Tìm vùng nhìn thấy, chiều cao gương thấy toàn thân.</li>
+<li>Đếm ảnh và tính góc lệch qua hai gương.</li>
+<li>Quy ước: góc tới $i$ đo với <strong>pháp tuyến</strong>; khoảng cách trong bài bóng đo <strong>từ nguồn</strong>.</li>
+</ul>
+<p>Khoảng __PHUT__ phút · 7 mục · 7 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: tấm gương nửa người và cái bóng biết chạy</h3>
+<p>Phòng thử đồ chỉ treo một tấm gương cao chừng nửa người. Vậy mà ai đứng trước cũng thấy đủ từ đầu tới chân.</p>
+<p>Tối đi dưới đèn đường, cái bóng "chạy" trước mặt và dài dần. Hai chuyện này tính được bằng hình học của tia sáng.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p><strong>Câu 1.</strong> Đứng trước gương treo tường, em chỉ thấy tới thắt lưng. Lùi ra xa gương thì:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q0" id="hsg14-q0a"><label for="hsg14-q0a" class="tl-opt tl-no">A. Thấy được nhiều thân mình hơn</label>
+<input type="radio" name="hsg14-q0" id="hsg14-q0b"><label for="hsg14-q0b" class="tl-opt tl-no">B. Thấy được ít thân mình hơn</label>
+<input type="radio" name="hsg14-q0" id="hsg14-q0c"><label for="hsg14-q0c" class="tl-opt tl-ok">C. Vẫn thấy đúng phần thân như cũ</label>
+<input type="radio" name="hsg14-q0" id="hsg14-q0d"><label for="hsg14-q0d" class="tl-opt tl-no">D. Thấy toàn thân khi đủ xa</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ảnh lùi xa bao nhiêu thì mắt cũng lùi xa bấy nhiêu.</p><p>Mục V chứng minh: phần gương em dùng luôn bằng nửa phần thân, không phụ thuộc khoảng cách.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A và D nghĩ lùi xa thì "gom" được nhiều hơn, như khi chụp ảnh. Với gương, ảnh của em lùi theo em: em lùi bao nhiêu, ảnh lùi bấy nhiêu.</p><p>B nghĩ ảnh nhỏ đi thì thấy ít hơn. Ảnh trông nhỏ đi, nhưng gương cũng trông nhỏ đi đúng tỉ lệ đó.</p></div>
+</div>
+<p><strong>Câu 2.</strong> Em đi ra xa cột đèn với tốc độ không đổi. Đỉnh cái bóng trên mặt đường chạy:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q0x" id="hsg14-q0xa"><label for="hsg14-q0xa" class="tl-opt tl-ok">A. Nhanh hơn em</label>
+<input type="radio" name="hsg14-q0x" id="hsg14-q0xb"><label for="hsg14-q0xb" class="tl-opt tl-no">B. Chậm hơn em</label>
+<input type="radio" name="hsg14-q0x" id="hsg14-q0xc"><label for="hsg14-q0xc" class="tl-opt tl-no">C. Bằng tốc độ của em</label>
+<input type="radio" name="hsg14-q0x" id="hsg14-q0xd"><label for="hsg14-q0xd" class="tl-opt tl-no">D. Lúc đầu nhanh, sau chậm dần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bóng vừa đi theo em vừa dài thêm.</p><p>Đỉnh bóng chạy đều, nhanh hơn em. Mục II tính ra con số.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B, C quên rằng bóng dài thêm khi em ra xa đèn: đỉnh bóng = vị trí em + chiều dài bóng.</p><p>D nghĩ bóng dài nhanh lúc đầu. Thực ra bóng dài thêm đều theo quãng em đi, nên đỉnh bóng chạy đều.</p></div>
+</div>
+</div>
+
+<h3>II. Truyền thẳng: vùng tối và vùng nửa tối</h3>
+
+<h4>1. Nguồn điểm, nguồn rộng</h4>
+<p><strong>🔑 Tia cùng mép: vùng tối · Tia chéo mép: nửa tối</strong></p>
+<ul>
+<li>Trong không khí, ánh sáng đi thẳng.</li>
+<li>Vùng tối: không nhận ánh sáng từ nguồn.</li>
+<li>Vùng nửa tối: nhận ánh sáng từ <strong>một phần</strong> nguồn.</li>
+<li>Nguồn điểm: chỉ có vùng tối, mép bóng rõ nét.</li>
+<li>Nguồn rộng: vùng tối ở giữa, vành nửa tối bao quanh.</li>
+</ul>
+<!--FIG1-->
+<ul>
+<li>Nguồn điểm, vật đường kính $d$: bóng $d'=d\cdot\dfrac{L}{a}$ (tam giác đồng dạng, đỉnh ở nguồn).</li>
+<li>Diện tích bóng gấp $\left(\dfrac{L}{a}\right)^2$ lần diện tích vật.</li>
+</ul>
+<details class="tl-details">
+<summary>Công thức cho nguồn rộng đường kính $D_n$ <small>(tự dựng từ Hình 1 trước khi bấm)</small></summary>
+<p>Vùng tối: $d_t=D_n+(d-D_n)\dfrac{L}{a}$.</p>
+<p>Mép ngoài nửa tối: $d_n=(d+D_n)\dfrac{L}{a}-D_n$.</p>
+<p>Vật nhỏ hơn nguồn ($d\lt D_n$): vùng tối hẹp dần, mất hẳn khi $L=\dfrac{a\,D_n}{D_n-d}$.</p>
+<p>Màn xa hơn nữa: giữa vùng nửa tối có một đĩa nhỏ, đứng đó thấy nguồn thành vành sáng.</p>
+<p>Mặt Trăng chắn Mặt Trời là đúng bài toán này: chóp tối chạm Trái Đất thì có nhật thực toàn phần, không chạm tới thì có nhật thực hình khuyên (học kĩ ở CĐ17).</p>
+</details>
+<p>Đèn đĩa đường kính $10\ \text{cm}$. Đĩa chắn $24\ \text{cm}$ đồng trục, cách đèn $30\ \text{cm}$. Màn cách đèn $90\ \text{cm}$. Đường kính vùng tối trên màn:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q1" id="hsg14-q1a"><label for="hsg14-q1a" class="tl-opt tl-no">A. $72\ \text{cm}$</label>
+<input type="radio" name="hsg14-q1" id="hsg14-q1b"><label for="hsg14-q1b" class="tl-opt tl-ok">B. $52\ \text{cm}$</label>
+<input type="radio" name="hsg14-q1" id="hsg14-q1c"><label for="hsg14-q1c" class="tl-opt tl-no">C. $92\ \text{cm}$</label>
+<input type="radio" name="hsg14-q1" id="hsg14-q1d"><label for="hsg14-q1d" class="tl-opt tl-no">D. $48\ \text{cm}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{L}{a}=3$.</p><p>$d_t=10+(24-10)\cdot3=52\ \text{cm}$.</p><p>Vành nửa tối ngoài cùng: $(24+10)\cdot3-10=92\ \text{cm}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A coi đèn là nguồn điểm: $24\cdot3=72$. Đèn rộng nên vùng tối hẹp hơn.</p><p>C là mép ngoài của vùng nửa tối, không phải vùng tối.</p><p>D lấy khoảng vật–màn $60\ \text{cm}$ thay cho nguồn–màn. Tỉ số đồng dạng có đỉnh ở nguồn.</p></div>
+</div>
+
+<h4>2. Bóng nắng, bóng người dưới đèn <em>(Mở rộng HSG)</em></h4>
+<p><strong>🔑 Nắng: tia song song · Đèn: tia từ một điểm</strong></p>
+<ul>
+<li>Mặt Trời rất xa: tia nắng coi như song song.</li>
+<li>Cùng lúc, mọi vật đứng thẳng có $\dfrac{\text{chiều cao}}{\text{bóng}}$ như nhau.</li>
+<li>Đèn đường: nguồn điểm ở độ cao $H$.</li>
+<li>Người cao $h$ cách chân đèn $x$: bóng dài $\ell=\dfrac{h\,x}{H-h}$.</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Đèn đường cao $6{,}0\ \text{m}$. Một người cao $1{,}5\ \text{m}$ đi thẳng ra xa chân đèn với tốc độ $1{,}2\ \text{m/s}$. Tìm chiều dài bóng khi người cách chân đèn $6\ \text{m}$ và tốc độ của đỉnh bóng.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"đèn đường"</td><td>nguồn điểm, tia đi từ bóng đèn</td></tr>
+<tr><td>"cao $6{,}0$ m", "cao $1{,}5$ m"</td><td>$H$, $h$ → hai tam giác đồng dạng chung đỉnh bóng</td></tr>
+<tr><td>"tốc độ của đỉnh bóng"</td><td>đỉnh bóng = vị trí người + chiều dài bóng</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>Tia từ đèn qua đỉnh đầu chạm đất ở đỉnh bóng $X$.</li>
+<li>Đồng dạng: $\dfrac{\ell}{x+\ell}=\dfrac{h}{H}$, nên $\ell=\dfrac{h\,x}{H-h}=\dfrac{x}{3}$.</li>
+<li>$x=6\ \text{m}$: $\ell=2{,}0\ \text{m}$.</li>
+<li>$X=x+\ell=\dfrac{H}{H-h}\,x$: $X$ tỉ lệ với $x$.</li>
+<li>Tốc độ đỉnh bóng: $v_X=\dfrac{H}{H-h}\,v=\dfrac{6}{4{,}5}\cdot1{,}2=1{,}6\ \text{m/s}$.</li>
+<li>Kiểm tra: $1{,}6\gt1{,}2$. Bóng dài thêm $0{,}4\ \text{m}$ mỗi giây.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: cùng đèn, một em bé cao $1{,}2\ \text{m}$ đứng cách chân đèn $6\ \text{m}$.</p>
+<ol class="tl-steps">
+<li><strong>Em điền:</strong> $\ell=\dfrac{h\,x}{H-h}=\;?$</li>
+<li>Kết luận: bóng em bé dài hơn hay ngắn hơn bóng người lớn?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$\ell=\dfrac{1{,}2\cdot6}{6-1{,}2}=1{,}5\ \text{m}$.</p>
+<p>Ngắn hơn $2{,}0\ \text{m}$: người thấp hơn thì bóng ngắn hơn.</p></details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Đo $L$ từ vật tới màn</td><td>Đo từ nguồn: đỉnh tam giác ở nguồn</td></tr>
+<tr><td>Diện tích bóng gấp $\dfrac{L}{a}$</td><td>Gấp $\left(\dfrac{L}{a}\right)^2$</td></tr>
+<tr><td>Nguồn rộng: vẽ tia từ tâm</td><td>Vẽ tia từ hai mép nguồn</td></tr>
+<tr><td>Đỉnh bóng chạy bằng người</td><td>Nhanh hơn: $\dfrac{H}{H-h}\,v$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>III. Định luật phản xạ ánh sáng</h3>
+
+<h4>1. Hai ý của định luật</h4>
+<p><strong>🔑 Cùng mặt phẳng · Góc phản xạ bằng góc tới</strong></p>
+<ul>
+<li>Tia phản xạ nằm trong mặt phẳng chứa tia tới và pháp tuyến.</li>
+<li>Góc phản xạ bằng góc tới: $i'=i$.</li>
+<li>Góc đo với <strong>pháp tuyến</strong> $IN$, không với mặt gương.</li>
+<li>Tia hợp mặt gương góc $\beta$ thì $i=90^\circ-\beta$.</li>
+<li>Tia tới và tia phản xạ hợp nhau góc $2i$.</li>
+<li>Tia vuông góc gương: $i=0$, bật ngược lại.</li>
+</ul>
+<!--FIG2-->
+<details class="tl-details">
+<summary>Mặt nhám có tuân theo định luật phản xạ không?</summary>
+<p>Mặt nhẵn: chùm song song phản xạ thành chùm song song (phản xạ gương).</p>
+<p>Mặt nhám: tia hắt ra mọi phía (phản xạ khuếch tán).</p>
+<p>Định luật vẫn đúng ở từng điểm, chỉ là pháp tuyến mỗi chỗ một hướng.</p>
+</details>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: kiểm định luật phản xạ (số liệu minh hoạ)</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> gương phẳng dựng đứng trên tờ giấy có vẽ thước đo góc. Đèn chiếu một khe sáng hẹp tới tâm thước. Đổi góc tới 5 lần, đọc góc phản xạ.</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $i'=i$ trong phạm vi sai số khoảng $1^\circ$.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Góc tới $i$</th><th>Góc phản xạ $i'$</th></tr></thead>
+<tbody>
+<tr><td>$20^\circ$</td><td>$20^\circ$</td></tr>
+<tr><td>$35^\circ$</td><td>$36^\circ$</td></tr>
+<tr><td>$50^\circ$</td><td>$49^\circ$</td></tr>
+<tr><td>$65^\circ$</td><td>$66^\circ$</td></tr>
+<tr><td>$80^\circ$</td><td>$79^\circ$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>Vì sao lệch $1^\circ$ mà vẫn kết luận $i'=i$? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Thước chia tới $1^\circ$, nên đọc lệch $1^\circ$ là bình thường.</p>
+<p>Vệt sáng rộng chừng $1$–$2\ \text{mm}$, khó chọn đúng đường giữa.</p>
+<p>Lệch lúc dương lúc âm, không theo một chiều: đó là sai số ngẫu nhiên.</p>
+<p>Gương đặt lệch tâm thước một chút cũng làm lệch số đọc.</p>
+</details>
+</div>
+<h4>2. Đặt gương, gương quay</h4>
+<p><strong>🔑 Đặt gương: pháp tuyến chia đôi góc $SIR$</strong></p>
+<ul>
+<li>Biết tia tới $SI$ và hướng cần hắt $IR$: vẽ phân giác góc $SIR$ làm pháp tuyến.</li>
+<li>Gương vuông góc với phân giác đó.</li>
+</ul>
+<details class="tl-details">
+<summary>Ví dụ: tia nắng chếch xuống $40^\circ$ so với phương ngang, cần hắt thẳng đứng xuống đáy giếng. Đặt gương thế nào?</summary>
+<p>Góc $SIR=40^\circ+90^\circ=130^\circ$, nên $i=65^\circ$.</p>
+<p>Pháp tuyến hợp phương thẳng đứng $65^\circ$, tức hợp phương ngang $25^\circ$.</p>
+<p>Gương vuông góc pháp tuyến: hợp phương ngang $65^\circ$.</p>
+</details>
+<p><strong>🔑 Gương quay $\delta$ · Tia phản xạ quay $2\delta$</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Tia tới giữ nguyên, gương quay $\delta$ quanh trục qua điểm tới.</li>
+<li>Pháp tuyến quay $\delta$, góc tới đổi $\delta$.</li>
+<li>Góc giữa tia tới và tia phản xạ đổi $2\delta$, nên tia phản xạ quay $2\delta$, cùng chiều gương.</li>
+</ul>
+<p>Tia phản xạ từ bút laser đập vuông góc vào tường cách điểm tới $3{,}0\ \text{m}$. Quay gương $5^\circ$ quanh trục qua điểm tới. Vệt sáng trên tường dịch đi khoảng:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg14-q2c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg14-q2c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q2" id="hsg14-q2a"><label for="hsg14-q2a" class="tl-opt tl-no">A. $26\ \text{cm}$</label>
+<input type="radio" name="hsg14-q2" id="hsg14-q2b"><label for="hsg14-q2b" class="tl-opt tl-no">B. $5\ \text{cm}$</label>
+<input type="radio" name="hsg14-q2" id="hsg14-q2c"><label for="hsg14-q2c" class="tl-opt tl-no">C. $106\ \text{cm}$</label>
+<input type="radio" name="hsg14-q2" id="hsg14-q2d"><label for="hsg14-q2d" class="tl-opt tl-ok">D. $53\ \text{cm}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia phản xạ quay $2\cdot5^\circ=10^\circ$.</p><p>Vệt dịch $3{,}0\cdot\tan10^\circ\approx0{,}53\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A cho tia quay $5^\circ$ như gương. Tia phản xạ quay gấp đôi.</p><p>B lấy luôn số độ làm số xăng-ti-mét. Phải dùng $\tan$ của góc quay.</p><p>C nhân đôi thêm lần nữa: tia quay $2\delta$ rồi còn nhân đôi khoảng dịch.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Góc với mặt gương là góc tới</td><td>Góc tới đo với pháp tuyến</td></tr>
+<tr><td>Tia vuông góc gương: $i=90^\circ$</td><td>$i=0$</td></tr>
+<tr><td>Gương quay $\delta$, tia quay $\delta$</td><td>Tia phản xạ quay $2\delta$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Ảnh tạo bởi gương phẳng</h3>
+<p><strong>🔑 Ảnh ảo · Bằng vật · Đối xứng qua gương</strong></p>
+<ul>
+<li>Ảnh ảo (không hứng được trên màn), lớn bằng vật.</li>
+<li>Ảnh $S'$ đối xứng với $S$ qua mặt gương.</li>
+<li>Vật cách gương $d$ thì vật cách ảnh $2d$.</li>
+<li>Mọi tia phản xạ có đường kéo dài qua $S'$: nối $S'$ với điểm tới là vẽ được tia phản xạ.</li>
+</ul>
+<!--FIG3-->
+<p><strong>🔑 Vật dịch $x$ · Ảnh dịch theo · Gương dịch $x$ thì ảnh dời $2x$</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Vật lại gần gương $x$: ảnh cũng lại gần $x$, khoảng vật–ảnh giảm $2x$.</li>
+<li>Vật đứng yên, gương tịnh tiến $x$ (vuông góc mặt gương): ảnh dời $2x$ cùng chiều gương.</li>
+<li>Vật đi xiên: ảnh có cùng tốc độ.</li>
+<li>Thành phần dọc gương giữ nguyên, thành phần vuông góc đổi chiều.</li>
+</ul>
+<p>Người đứng yên cách gương $2{,}0\ \text{m}$. Dời gương ra xa thêm $0{,}5\ \text{m}$ theo phương vuông góc mặt gương. Lúc này người cách ảnh:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q3" id="hsg14-q3a"><label for="hsg14-q3a" class="tl-opt tl-ok">A. $5{,}0\ \text{m}$</label>
+<input type="radio" name="hsg14-q3" id="hsg14-q3b"><label for="hsg14-q3b" class="tl-opt tl-no">B. $4{,}5\ \text{m}$</label>
+<input type="radio" name="hsg14-q3" id="hsg14-q3c"><label for="hsg14-q3c" class="tl-opt tl-no">C. $2{,}5\ \text{m}$</label>
+<input type="radio" name="hsg14-q3" id="hsg14-q3d"><label for="hsg14-q3d" class="tl-opt tl-no">D. $4{,}0\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Người cách gương $2{,}5\ \text{m}$, nên cách ảnh $2\cdot2{,}5=5{,}0\ \text{m}$.</p><p>Ảnh đã dời $1{,}0\ \text{m}$, gấp đôi gương.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B cho ảnh dời $0{,}5\ \text{m}$ như gương. Ảnh dời gấp đôi.</p><p>C là khoảng người–gương, chưa nhân $2$.</p><p>D là khoảng người–ảnh lúc gương chưa dời.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Vẽ ảnh nét liền, trước gương</td><td>Ảnh nét đứt, sau gương</td></tr>
+<tr><td>Vật cách ảnh $d$</td><td>Vật cách ảnh $2d$</td></tr>
+<tr><td>Gương dời $x$, ảnh dời $x$</td><td>Ảnh dời $2x$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>V. Vùng nhìn thấy và gương thấy toàn thân <em>(Mở rộng HSG)</em></h3>
+<p><strong>🔑 Dựng ảnh của mắt · Nối với hai mép gương</strong></p>
+<ul>
+<li>Dựng ảnh $O'$ của mắt $O$.</li>
+<li>Nối $O'$ với hai mép gương, kéo dài ra trước gương: vùng giữa hai đường là vùng nhìn thấy.</li>
+<li>Điểm $S$ thấy được khi đoạn $O'S$ cắt gương trong hai mép.</li>
+<li>Mắt lại gần gương thì vùng nhìn thấy rộng ra.</li>
+</ul>
+<p><strong>🔑 Gương toàn thân: cao $\dfrac{h}{2}$ · Mép dưới $\dfrac{h_m}{2}$</strong></p>
+<ul>
+<li>Người cao $h$, mắt cách sàn $h_m$.</li>
+<li>Gương ngắn nhất cao $\dfrac{h}{2}$.</li>
+<li>Mép dưới $Q$ cách sàn $\dfrac{h_m}{2}$.</li>
+<li>Mép trên $P$ cách sàn $\dfrac{h_m+h}{2}$.</li>
+<li>Không phụ thuộc khoảng cách người–gương.</li>
+</ul>
+<!--FIG4-->
+<details class="tl-details">
+<summary>Chứng minh: vì sao không phụ thuộc khoảng cách? <small>(thử nói trước rồi mới bấm)</small></summary>
+<p>Gương nằm chính giữa người và ảnh.</p>
+<p>Tia từ mắt tới ảnh của chân cắt gương ở trung điểm, nên $Q$ cao bằng nửa $h_m$: đường trung bình của tam giác.</p>
+<p>Tương tự $P$ nằm giữa mắt và đỉnh đầu ảnh.</p>
+<p>$PQ$ là đường trung bình ứng với ảnh cao $h$: $PQ=\dfrac{h}{2}$. Khoảng cách không có mặt trong phép tính.</p>
+</details>
+<p>Một người cao $1{,}80\ \text{m}$, mắt cách đỉnh đầu $12\ \text{cm}$. Muốn thấy toàn thân trong gương treo thẳng đứng, mép dưới gương cách sàn nhiều nhất:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg14-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg14-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q4" id="hsg14-q4a"><label for="hsg14-q4a" class="tl-opt tl-no">A. $0{,}90\ \text{m}$</label>
+<input type="radio" name="hsg14-q4" id="hsg14-q4b"><label for="hsg14-q4b" class="tl-opt tl-no">B. $1{,}74\ \text{m}$</label>
+<input type="radio" name="hsg14-q4" id="hsg14-q4c"><label for="hsg14-q4c" class="tl-opt tl-ok">C. $0{,}84\ \text{m}$</label>
+<input type="radio" name="hsg14-q4" id="hsg14-q4d"><label for="hsg14-q4d" class="tl-opt tl-no">D. Tuỳ người đứng gần hay xa gương</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $h_m=1{,}80-0{,}12=1{,}68\ \text{m}$.</p><p>Mép dưới $\dfrac{1{,}68}{2}=0{,}84\ \text{m}$. Mép trên $1{,}74\ \text{m}$, gương cao $0{,}90\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A lấy $\dfrac{h}{2}$: đó là chiều cao gương, không phải độ cao mép dưới. Mép dưới tính theo mắt.</p><p>B là độ cao mép trên.</p><p>D sai: phần chứng minh ở trên cho thấy khoảng cách không ảnh hưởng.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+<p><strong>🔑 Tia qua điểm cho trước · Nối ảnh với đích</strong></p>
+<ul>
+<li>Muốn tia từ $S$ phản xạ rồi đi qua $R$: nối $S'R$, cắt gương tại điểm tới $I$.</li>
+<li>Đường $S\to I\to R$ cũng là đường ngắn nhất từ $S$ chạm gương rồi tới $R$.</li>
+<li>Lí do: $SI+IR=S'I+IR\ge S'R$ (bất đẳng thức tam giác).</li>
+</ul>
+
+<h3>VI. Hệ hai gương phẳng <em>(Mở rộng HSG)</em></h3>
+<p><strong>🔑 Ảnh này làm vật cho gương kia</strong></p>
+<ul>
+<li>Hai gương song song: vô số ảnh.</li>
+<li>Hai gương hợp góc $\alpha$: ảnh nằm trên đường tròn tâm $O$, bán kính $OS$.</li>
+<li>Đặt $m=\dfrac{360^\circ}{\alpha}$ nguyên.</li>
+<li>$m$ chẵn: $m-1$ ảnh, vật đặt đâu cũng vậy.</li>
+<li>$m$ lẻ: $m-1$ ảnh khi vật trên phân giác, $m$ ảnh khi lệch.</li>
+<li>$m$ không nguyên: dựng lần lượt từng ảnh để đếm.</li>
+</ul>
+<!--FIG5-->
+<p>Hai gương phẳng hợp nhau góc $20^\circ$, mặt phản xạ quay vào nhau. Đặt một ngọn nến giữa hai gương. Số ảnh của ngọn nến:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg14-q5" id="hsg14-q5a"><label for="hsg14-q5a" class="tl-opt tl-no">A. $18$</label>
+<input type="radio" name="hsg14-q5" id="hsg14-q5b"><label for="hsg14-q5b" class="tl-opt tl-ok">B. $17$</label>
+<input type="radio" name="hsg14-q5" id="hsg14-q5c"><label for="hsg14-q5c" class="tl-opt tl-no">C. Vô số</label>
+<input type="radio" name="hsg14-q5" id="hsg14-q5d"><label for="hsg14-q5d" class="tl-opt tl-no">D. $17$ hoặc $18$ tuỳ chỗ đặt</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $m=360^\circ:20^\circ=18$, chẵn.</p><p>Có $18-1=17$ ảnh, đặt nến ở đâu cũng vậy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A đếm cả ngọn nến thật. Trên đường tròn có $18$ điểm, nhưng một điểm là vật.</p><p>C chỉ đúng với hai gương song song.</p><p>D áp quy tắc của $m$ lẻ. Ở đây $m=18$ chẵn nên không phụ thuộc chỗ đặt.</p></div>
+</div>
+<p><strong>🔑 Phản xạ hai lần · $i_1+i_2=\alpha$</strong></p>
+<ul>
+<li>Tia phản xạ ở $G_1$ rồi $G_2$: $i_1+i_2=\alpha$ (khi $i_1\lt\alpha$).</li>
+<li>Góc lệch tổng sau hai lần: $D=360^\circ-2\alpha$, không phụ thuộc $i_1$.</li>
+<li>$\alpha\le90^\circ$: tia ló hợp tia tới góc $2\alpha$.</li>
+<li>$\alpha=90^\circ$: tia ló song song, ngược chiều tia tới (tấm phản quang xe đạp).</li>
+</ul>
+<details class="tl-details">
+<summary>Chứng minh hai hệ thức <small>(dựng tam giác $OIJ$ trước rồi mới bấm)</small></summary>
+<p>Tam giác $OIJ$: góc $O$ là $\alpha$, góc $I$ là $90^\circ-i_1$, góc $J$ là $90^\circ-i_2$.</p>
+<p>Tổng ba góc $180^\circ$: $i_1+i_2=\alpha$.</p>
+<p>Lần một tia lệch $180^\circ-2i_1$, lần hai lệch $180^\circ-2i_2$, cùng chiều quay.</p>
+<p>Cộng lại: $D=360^\circ-2(i_1+i_2)=360^\circ-2\alpha$.</p>
+<p>Điều kiện tia tới được $G_2$: $\alpha\lt90^\circ+i_1$. Gương góc tù lớn thì tia có thể chỉ phản xạ một lần.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Bẫy của mục này</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Số ảnh $=\dfrac{360^\circ}{\alpha}$</td><td>Trừ $1$ (đó là vật), xét chẵn lẻ</td></tr>
+<tr><td>Luôn có $m-1$ ảnh</td><td>$m$ lẻ, vật lệch phân giác: $m$ ảnh</td></tr>
+<tr><td>Luôn có $i_1+i_2=\alpha$</td><td>Chỉ khi $i_1\lt\alpha$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: cọc cao $1{,}5\ \text{m}$ có bóng nắng $1{,}2\ \text{m}$. Cùng lúc, tháp nước có bóng $16\ \text{m}$. Tháp cao bao nhiêu?</summary>
+<p>Tia nắng song song: $\dfrac{H}{16}=\dfrac{1{,}5}{1{,}2}$.</p>
+<p>$H=20\ \text{m}$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: hai gương hợp góc $80^\circ$. Tia tới $G_1$ với góc tới $30^\circ$, phản xạ tiếp trên $G_2$. Tìm góc tới ở $G_2$ và góc giữa tia ló với tia tới.</summary>
+<p>$i_2=\alpha-i_1=50^\circ$.</p>
+<p>$\alpha\le90^\circ$ nên tia ló hợp tia tới $2\alpha=160^\circ$.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: $A$ cách gương $24\ \text{cm}$, $B$ cùng phía cách gương $36\ \text{cm}$. Hai chân đường vuông góc cách nhau $25\ \text{cm}$. Tìm điểm tới $I$ để tia từ $A$ phản xạ qua $B$, và độ dài đường đi.</summary>
+<p>Dựng ảnh $A'$ cách gương $24\ \text{cm}$ phía sau. Nối $A'B$ cắt gương tại $I$.</p>
+<p>Đồng dạng: $I$ cách chân của $A$ là $25\cdot\dfrac{24}{24+36}=10\ \text{cm}$.</p>
+<p>Đường đi $=A'B=\sqrt{25^2+60^2}=65\ \text{cm}$: ngắn nhất trong mọi đường chạm gương.</p>
+<p>Góc tới: $\tan i=\dfrac{10}{24}$, $i\approx22{,}6^\circ$.</p>
+</details>
+
+<h3>VII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Vùng nửa tối là gì? Khi nào không có? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vùng nhận ánh sáng từ một phần nguồn.</p>
+<p>Nguồn điểm thì không có nửa tối.</p></details>
+<details class="tl-details"><summary>Bài toán bóng: vì sao đo khoảng cách từ nguồn?</summary>
+<p>Các tia giới hạn bóng xuất phát từ nguồn.</p>
+<p>Tam giác đồng dạng có đỉnh ở nguồn: $\dfrac{d'}{d}=\dfrac{L}{a}$.</p></details>
+<details class="tl-details"><summary>Vì sao gương quay $\delta$ thì tia phản xạ quay $2\delta$?</summary>
+<p>Pháp tuyến quay $\delta$, góc tới đổi $\delta$.</p>
+<p>Góc giữa tia tới và tia phản xạ là $2i$, đổi $2\delta$.</p>
+<p>Tia tới đứng yên nên tia phản xạ quay $2\delta$.</p></details>
+<details class="tl-details"><summary>Vì sao gương toàn thân cao $\dfrac{h}{2}$ dù đứng gần hay xa?</summary>
+<p>Gương ở giữa người và ảnh.</p>
+<p>Đường trung bình của tam giác: $PQ=\dfrac{h}{2}$, mép dưới $\dfrac{h_m}{2}$.</p></details>
+<details class="tl-details"><summary>Hai gương hợp góc $40^\circ$: bao nhiêu ảnh?</summary>
+<p>$m=9$, lẻ.</p>
+<p>Vật trên phân giác: $8$ ảnh.</p>
+<p>Vật lệch phân giác: $9$ ảnh.</p></details>
+<details class="tl-details"><summary>Vẽ tia từ $S$ phản xạ trên gương rồi đi qua $R$ thế nào?</summary>
+<p>Dựng ảnh $S'$.</p>
+<p>Nối $S'R$ cắt gương tại $I$.</p>
+<p>Vẽ $SI$ rồi $IR$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Cùng mép: vùng tối. Chéo mép: nửa tối.</li>
+<li>Bóng: đo từ nguồn, diện tích theo $\left(\dfrac{L}{a}\right)^2$.</li>
+<li>Đèn đường: $\ell=\dfrac{hx}{H-h}$, đỉnh bóng nhanh hơn người.</li>
+<li>Góc tới đo với pháp tuyến. $i'=i$.</li>
+<li>Đặt gương: pháp tuyến chia đôi góc $SIR$.</li>
+<li>Gương quay $\delta$, tia phản xạ quay $2\delta$.</li>
+<li>Ảnh ảo, bằng vật, đối xứng. Gương dời $x$, ảnh dời $2x$.</li>
+<li>Toàn thân: gương $\dfrac{h}{2}$, mép dưới $\dfrac{h_m}{2}$.</li>
+<li>Tia qua điểm cho trước: nối ảnh với đích.</li>
+<li>Hai gương: $\dfrac{360^\circ}{\alpha}$ nguyên? chẵn hay lẻ? Không đếm vật.</li>
+<li>Đọc đề: góc cho so với mặt gương hay pháp tuyến? Khoảng cách tính từ đâu?</li>
+</ul>
+</div>

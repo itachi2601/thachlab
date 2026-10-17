@@ -1,0 +1,385 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Nền KHTN 6</strong>, phần định lượng là <strong>Mở rộng HSG</strong>. Đề luôn cho số liệu.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Giải thích pha Mặt Trăng, giờ trăng mọc.</li>
+<li>Biện luận nhật thực toàn phần hay hình khuyên.</li>
+<li>Tính giờ địa phương, góc cao Mặt Trời buổi trưa.</li>
+<li>Ước lượng khoảng cách trong Hệ Mặt Trời, Ngân Hà.</li>
+</ul>
+<p><strong>Quy ước số liệu:</strong></p>
+<ul>
+<li>$c=3\cdot10^5\ \text{km/s}$, $1\ \text{AU}=1{,}5\cdot10^8\ \text{km}$</li>
+<li>$D_S=1{,}39\cdot10^6\ \text{km}$, $D_M=3470\ \text{km}$, $R_E=6370\ \text{km}$</li>
+<li>Trái Đất – Mặt Trăng: trung bình $384\,000\ \text{km}$ (gần nhất $363\,000$, xa nhất $405\,000$).</li>
+</ul>
+<p>Khoảng __PHUT__ phút · 8 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: đêm "trăng máu" 7/9/2025</h3>
+<p>Đêm 7 rạng sáng 8/9/2025, cả nước thấy Mặt Trăng đỏ như đồng hơn một giờ: nguyệt thực toàn phần (theo NASA, toàn phần kéo dài khoảng 82 phút). Còn nhật thực toàn phần thì nhiều người cả đời chưa thấy. Vì sao?</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Giữ câu trả lời của em, mục II–III sẽ trả lời:</p>
+<ul>
+<li>Nguyệt thực xảy ra vào đêm trăng gì?</li>
+<li>Tháng nào cũng có trăng non, sao không tháng nào cũng có nhật thực?</li>
+</ul>
+<p>Đường kính Mặt Trời gấp khoảng $400$ lần Mặt Trăng. Nhìn từ Trái Đất, đĩa nào trông to hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q0" id="hsg17-q0a"><label for="hsg17-q0a" class="tl-opt tl-no">A. Đĩa Mặt Trời to hơn khoảng $400$ lần</label>
+<input type="radio" name="hsg17-q0" id="hsg17-q0b"><label for="hsg17-q0b" class="tl-opt tl-ok">B. Hai đĩa trông gần bằng nhau</label>
+<input type="radio" name="hsg17-q0" id="hsg17-q0c"><label for="hsg17-q0c" class="tl-opt tl-no">C. Đĩa Mặt Trăng to hơn hẳn</label>
+<input type="radio" name="hsg17-q0" id="hsg17-q0d"><label for="hsg17-q0d" class="tl-opt tl-no">D. Đĩa Mặt Trời to hơn khoảng $20$ lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mặt Trời to gấp $\approx400$ lần nhưng cũng xa gấp $\approx390$ lần.</p><p>Hai đĩa cùng chiếm khoảng $0{,}5^\circ$ trên bầu trời. Nhờ trùng hợp này mới có nhật thực toàn phần.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A chỉ so kích thước, quên khoảng cách. Vật càng xa trông càng nhỏ.</p><p>C đúng là ta hay cảm thấy trăng to, nhưng đo ra hai đĩa gần bằng nhau.</p><p>D lấy căn bậc hai của $400$: không có lý do nào cho phép tính đó. Độ to trông thấy theo tỉ số đường kính : khoảng cách.</p></div>
+</div>
+</div>
+
+<h3>II. Pha Mặt Trăng và Tuần Trăng</h3>
+<p><strong>🔑 Luôn sáng một nửa · Thấy nhiều hay ít</strong></p>
+<ul>
+<li>Mặt Trăng không tự phát sáng, chỉ phản xạ ánh sáng Mặt Trời.</li>
+<li>Lúc nào cũng có đúng một nửa được chiếu sáng.</li>
+<li>Ta thấy bao nhiêu phần nửa sáng đó tuỳ vị trí Mặt Trời – Trái Đất – Mặt Trăng.</li>
+<li>Một vòng pha: Tuần Trăng $S\approx29{,}5$ ngày.</li>
+</ul>
+<!--FIG1-->
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: tuần trăng trong phòng tối</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> một bóng đèn ở góc phòng tối, cầm quả bóng trước mặt, xoay người một vòng.</li>
+<li><strong>Quan sát:</strong> quả bóng đi đủ 8 pha như Hình 1.</li>
+<li><strong>Rút ra:</strong> pha chỉ do góc nhìn, không cần vật nào che.</li>
+</ol>
+</div>
+<p>Vì sao có lúc ta chỉ thấy Mặt Trăng hình lưỡi liềm?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q1" id="hsg17-q1a"><label for="hsg17-q1a" class="tl-opt tl-no">A. Bóng của Trái Đất che bớt Mặt Trăng</label>
+<input type="radio" name="hsg17-q1" id="hsg17-q1b"><label for="hsg17-q1b" class="tl-opt tl-no">B. Mặt Trăng tự phát sáng yếu dần</label>
+<input type="radio" name="hsg17-q1" id="hsg17-q1c"><label for="hsg17-q1c" class="tl-opt tl-ok">C. Ta chỉ nhìn thấy một phần nhỏ của nửa được chiếu sáng</label>
+<input type="radio" name="hsg17-q1" id="hsg17-q1d"><label for="hsg17-q1d" class="tl-opt tl-no">D. Mặt Trăng ở xa Mặt Trời nên nhận ít ánh sáng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lúc trăng lưỡi liềm, Mặt Trăng gần cùng phía Mặt Trời.</p><p>Nửa sáng gần như quay đi chỗ khác, ta chỉ thấy một mép mỏng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A là nhầm pha với nguyệt thực. Bóng Trái Đất chỉ rơi lên Mặt Trăng lúc trăng tròn, và hiếm khi.</p><p>B sai: Mặt Trăng không tự phát sáng.</p><p>D sai: khoảng cách tới Mặt Trời gần như không đổi trong một tháng.</p></div>
+</div>
+
+<p><strong>🔑 Mọc trễ 49 phút mỗi ngày</strong></p>
+<ul>
+<li>Không trăng mọc $\approx6\ \text{h}$, cùng Mặt Trời.</li>
+<li>Thượng huyền mọc $\approx12\ \text{h}$, đầu hôm lên cao nhất gần kinh tuyến (ở Việt Nam thường lệch về phía Nam).</li>
+<li>Trăng tròn mọc $\approx18\ \text{h}$, hạ huyền $\approx0\ \text{h}$</li>
+<li>Mỗi ngày trăng mọc trễ $\approx\dfrac{24\ \text{h}}{29{,}5}\approx49$ phút.</li>
+</ul>
+<p>Ví dụ: rằm trăng mọc lúc chạng vạng, đêm 17 âm lịch phải chờ muộn hơn.</p>
+<p>Hôm nay trăng mọc lúc $19\ \text{h}\,00$. Ba ngày sau, trăng mọc vào khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q2" id="hsg17-q2a"><label for="hsg17-q2a" class="tl-opt tl-ok">A. $21\ \text{h}\,27$</label>
+<input type="radio" name="hsg17-q2" id="hsg17-q2b"><label for="hsg17-q2b" class="tl-opt tl-no">B. $16\ \text{h}\,33$</label>
+<input type="radio" name="hsg17-q2" id="hsg17-q2c"><label for="hsg17-q2c" class="tl-opt tl-no">C. $19\ \text{h}\,49$</label>
+<input type="radio" name="hsg17-q2" id="hsg17-q2d"><label for="hsg17-q2d" class="tl-opt tl-no">D. $22\ \text{h}\,00$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $3\cdot49=147$ phút $=2\ \text{h}\,27$</p><p>$19\ \text{h}\,00+2\ \text{h}\,27=21\ \text{h}\,27$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B trừ thay vì cộng. Mặt Trăng đi cùng chiều tự quay của Trái Đất nên mọc <em>trễ</em> dần.</p><p>C chỉ cộng $49$ phút của một ngày, quên nhân $3$</p><p>D làm tròn mỗi ngày thành $1$ giờ: sai $33$ phút sau ba ngày.</p></div>
+</div>
+<details class="tl-details">
+<summary>Mở rộng HSG: vì sao Tuần Trăng dài hơn một vòng quay của Mặt Trăng?</summary>
+<p>Tháng thiên văn $T$: Mặt Trăng về lại vị trí cũ so với các sao.</p>
+<p>Trong lúc đó Trái Đất đã đi thêm một góc quanh Mặt Trời.</p>
+<p>Mặt Trăng phải đi thêm một đoạn nữa mới về lại pha cũ, nên Tuần Trăng $S\gt T$.</p>
+<p>Giống hai kim đồng hồ đuổi nhau: $\dfrac1S=\dfrac1T-\dfrac1{\text{năm}}$ (hiệu tốc độ góc). Tự tính ở bài tập mẫu.</p>
+</details>
+
+<h3>III. Nhật thực và nguyệt thực</h3>
+
+<h4>1. Điều kiện thẳng hàng</h4>
+<p><strong>🔑 Trăng non: nhật thực · Trăng tròn: nguyệt thực</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Nhật thực</th><th>Nguyệt thực</th></tr></thead>
+<tbody>
+<tr><td>Mặt Trời – Mặt Trăng – Trái Đất</td><td>Mặt Trời – Trái Đất – Mặt Trăng</td></tr>
+<tr><td>Ngày không trăng (trăng non)</td><td>Đêm trăng tròn</td></tr>
+<tr><td>Ban ngày; toàn phần: dải hẹp, một phần: vùng rộng</td><td>Cả nửa Trái Đất đang đêm thấy</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li>Quỹ đạo Mặt Trăng nghiêng $\approx5^\circ$ so với quỹ đạo Trái Đất.</li>
+<li>Đa số tháng, trăng non, trăng tròn đi lệch lên trên hoặc xuống dưới.</li>
+<li>Chỉ gần giao tuyến hai mặt phẳng mới thẳng hàng: hai "mùa thực" mỗi năm.</li>
+<li>Mỗi năm $4$–$7$ lần thực (cả hai loại).</li>
+</ul>
+<!--FIG2-->
+
+<h4>2. Bóng Mặt Trăng: toàn phần hay hình khuyên</h4>
+<p><strong>🔑 Nón tối $\approx374\,400$ km · So với khoảng tới mặt đất</strong></p>
+<p>Dùng lại kết quả <a href="/lop-hoc/bai?id=158&amp;subject=hsg-vat-ly&amp;class=khtn-9">Chuyên đề 14: bóng tối và nửa tối</a>, chỉ thay số thiên văn:</p>
+<ul>
+<li>Nguồn $D_S$, vật chắn $D_M$, cách nhau $a=\text{AU}-d$ ($d$: Trái Đất – Mặt Trăng).</li>
+<li>Nón bóng tối dài $L=\dfrac{aD_M}{D_S-D_M}\approx374\,400\ \text{km}$</li>
+<li>Khoảng tới người quan sát ngay dưới Mặt Trăng: $x=d-R_E$</li>
+<li>$x\lt L$: chóp nón chạm đất, vùng tối rộng $D_M\dfrac{L-x}{L}$: <strong>toàn phần</strong>.</li>
+<li>$x\gt L$: chóp nón lơ lửng, thấy vành sáng: <strong>hình khuyên</strong>.</li>
+<li>Vùng nửa tối rộng $\approx7000\ \text{km}$: <strong>một phần</strong>.</li>
+</ul>
+<!--FIG3-->
+<p>Cách nhìn khác: góc trông Mặt Trời $\approx0{,}53^\circ$, Mặt Trăng $0{,}49^\circ$–$0{,}56^\circ$. Đĩa Mặt Trăng to hơn thì che kín.</p>
+<p>Một lần trăng non thẳng hàng, <strong>tâm</strong> Mặt Trăng cách <strong>tâm</strong> Trái Đất $380\,000\ \text{km}$. Người đứng ngay dưới Mặt Trăng thấy gì?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg17-q3-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg17-q3-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q3" id="hsg17-q3a"><label for="hsg17-q3a" class="tl-opt tl-no">A. Hình khuyên, vì $380\,000\gt374\,400\ \text{km}$</label>
+<input type="radio" name="hsg17-q3" id="hsg17-q3b"><label for="hsg17-q3b" class="tl-opt tl-ok">B. Toàn phần, trong một vùng tối rất hẹp</label>
+<input type="radio" name="hsg17-q3" id="hsg17-q3c"><label for="hsg17-q3c" class="tl-opt tl-no">C. Chỉ nhật thực một phần</label>
+<input type="radio" name="hsg17-q3" id="hsg17-q3d"><label for="hsg17-q3d" class="tl-opt tl-no">D. Toàn phần ở khắp nửa Trái Đất ban ngày</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $x=380\,000-6370=373\,630\ \text{km}$</p><p>Với $d=380\,000$: $L\approx374\,450\ \text{km}$, nên $x\lt L$, chóp nón vừa chạm đất.</p><p>Vùng tối chỉ rộng $\approx3470\cdot\dfrac{820}{374\,450}\approx8\ \text{km}$</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A quên trừ $R_E$: người đứng trên mặt đất, gần Mặt Trăng hơn tâm Trái Đất $6370\ \text{km}$</p><p>C chỉ đúng với người ở vùng nửa tối, không phải người ngay dưới Mặt Trăng.</p><p>D nhầm với nguyệt thực. Bóng tối Mặt Trăng trên mặt đất chỉ rộng cỡ trăm km trở xuống.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>3. Nguyệt thực và an toàn khi xem nhật thực</h4>
+<p><strong>🔑 Bóng Trái Đất rộng gấp 2,7 Mặt Trăng</strong></p>
+<ul>
+<li>Nón bóng tối Trái Đất dài $\approx1{,}39\cdot10^6\ \text{km}$</li>
+<li>Tại quỹ đạo Mặt Trăng, vùng tối rộng $\approx9200\ \text{km}\approx2{,}7D_M$</li>
+<li>Toàn phần kéo dài tới $\approx1{,}7\ \text{h}$</li>
+<li>Xem nhật thực: không nhìn bằng mắt thường hay kính râm.</li>
+<li>Dùng kính lọc chuẩn hoặc chiếu ảnh qua lỗ nhỏ (Chuyên đề 14).</li>
+</ul>
+<!--FIG4-->
+<details class="tl-details">
+<summary>Vì sao trăng lúc nguyệt thực toàn phần đỏ như đồng, không tối hẳn? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Ánh sáng Mặt Trời đi sượt qua lớp khí quyển Trái Đất bị khúc xạ, lệch vào vùng tối (nối Chuyên đề 06).</p>
+<p>Trên đường đi, ánh sáng xanh bị tán xạ gần hết, còn lại chủ yếu ánh sáng đỏ.</p>
+<p>Giống lúc hoàng hôn đỏ: Mặt Trăng đang "nhận" ánh hoàng hôn của cả Trái Đất.</p>
+</details>
+<p>Vì sao nguyệt thực thì cả nửa Trái Đất đang đêm cùng thấy, còn nhật thực toàn phần chỉ thấy ở một dải hẹp?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q4" id="hsg17-q4a"><label for="hsg17-q4a" class="tl-opt tl-no">A. Nhật thực diễn ra nhanh hơn nguyệt thực rất nhiều</label>
+<input type="radio" name="hsg17-q4" id="hsg17-q4b"><label for="hsg17-q4b" class="tl-opt tl-no">B. Ban ngày trời sáng nên khó nhận ra nhật thực</label>
+<input type="radio" name="hsg17-q4" id="hsg17-q4c"><label for="hsg17-q4c" class="tl-opt tl-no">C. Mặt Trời ở xa Trái Đất hơn Mặt Trăng rất nhiều</label>
+<input type="radio" name="hsg17-q4" id="hsg17-q4d"><label for="hsg17-q4d" class="tl-opt tl-ok">D. Mặt Trăng tối thật; vùng tối Mặt Trăng trên đất chỉ cỡ trăm km</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nguyệt thực: Mặt Trăng mất ánh sáng thật, ai nhìn thấy Mặt Trăng cũng thấy nó tối.</p><p>Nhật thực: chỉ ai đứng trong vùng tối hẹp mới bị che kín Mặt Trời.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A: thời gian không quyết định ai thấy. Nhật thực một phần vẫn kéo dài cả giờ.</p><p>B: lúc toàn phần trời tối hẳn, rất dễ thấy. Vấn đề là ít nơi được nằm trong vùng tối.</p><p>C đúng là sự thật nhưng không trả lời câu hỏi. Chỗ khác nhau là cỡ vùng tối so với Trái Đất.</p></div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Bốn cái bẫy của mục II–III</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Pha Mặt Trăng do bóng Trái Đất che</td><td>Do thấy nhiều hay ít nửa sáng</td></tr>
+<tr><td>Nhật thực vào ngày trăng tròn</td><td>Nhật thực ngày không trăng</td></tr>
+<tr><td>Tháng nào cũng có thực</td><td>Quỹ đạo nghiêng $5^\circ$: chỉ mùa thực</td></tr>
+<tr><td>So $d$ với $L$</td><td>So $d-R_E$ với $L$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>IV. Ngày và đêm, giờ địa phương</h3>
+<p><strong>🔑 Quay Tây sang Đông · 15° mỗi giờ</strong></p>
+<ul>
+<li>Trái Đất tự quay Tây sang Đông, $24\ \text{h}$ một vòng: Mặt Trời "đi" Đông sang Tây.</li>
+<li>Nửa hướng về Mặt Trời là ngày.</li>
+<li>$360^\circ:24\ \text{h}=15^\circ$ mỗi giờ, tức $1^\circ$ mỗi $4$ phút.</li>
+<li>Hai nơi lệch $\Delta\lambda$ độ kinh: giờ Mặt Trời lệch $\dfrac{\Delta\lambda}{15}$ giờ, phía Đông sớm hơn.</li>
+<li>Múi giờ rộng $15^\circ$; Việt Nam dùng chung giờ UTC$+7$</li>
+</ul>
+<p>Thử: quay quả địa cầu trước bóng đèn. Điểm dán trên địa cầu vừa ra khỏi vùng tối: đó là lúc "Mặt Trời mọc".</p>
+<p>TP.HCM ở kinh độ $106{,}7^\circ$Đ, Hà Nội $105{,}8^\circ$Đ. So với Hà Nội, giữa trưa thật (Mặt Trời cao nhất) ở TP.HCM đến:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q5" id="hsg17-q5a"><label for="hsg17-q5a" class="tl-opt tl-no">A. Muộn hơn khoảng $3{,}6$ phút</label>
+<input type="radio" name="hsg17-q5" id="hsg17-q5b"><label for="hsg17-q5b" class="tl-opt tl-no">B. Cùng lúc, vì cùng múi giờ</label>
+<input type="radio" name="hsg17-q5" id="hsg17-q5c"><label for="hsg17-q5c" class="tl-opt tl-no">C. Sớm hơn khoảng $54$ phút</label>
+<input type="radio" name="hsg17-q5" id="hsg17-q5d"><label for="hsg17-q5d" class="tl-opt tl-ok">D. Sớm hơn khoảng $3{,}6$ phút</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta\lambda=0{,}9^\circ$, mỗi độ $4$ phút: $0{,}9\cdot4=3{,}6$ phút.</p><p>TP.HCM ở phía Đông nên Mặt Trời tới trước.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A đúng số nhưng ngược chiều. Trái Đất quay về phía Đông, nơi phía Đông gặp Mặt Trời trước.</p><p>B nhầm giờ đồng hồ (múi giờ) với giờ Mặt Trời. Cùng múi giờ, đồng hồ giống nhau, nhưng Mặt Trời vẫn lên cao nhất ở hai lúc khác nhau.</p><p>C lấy $0{,}9\ \text{h}=54$ phút: quên chia cho $15^\circ$ mỗi giờ.</p></div>
+</div>
+<details class="tl-details">
+<summary>Mở rộng HSG: ngày sao ngắn hơn ngày Mặt Trời</summary>
+<p>Ngày sao: Trái Đất quay một vòng so với các sao.</p>
+<p>Trong lúc đó Trái Đất đã đi thêm một chút quanh Mặt Trời, phải quay thêm một ít mới thấy Mặt Trời về đúng chỗ cũ: ngày Mặt Trời $24\ \text{h}$.</p>
+<p>Cùng ý tưởng với tháng thiên văn và tháng giao hội ở mục II.</p>
+</details>
+
+<h3>V. Mùa và góc cao Mặt Trời</h3>
+
+<h4>1. Vì sao có mùa</h4>
+<p><strong>🔑 Trục nghiêng 23,5° · Hướng cố định</strong></p>
+<ul>
+<li>Trục Trái Đất nghiêng $23{,}5^\circ$, giữ hướng cố định khi quay quanh Mặt Trời.</li>
+<li>Tháng 6 bán cầu Bắc ngả về Mặt Trời: nắng gần thẳng, ngày dài: mùa hè.</li>
+<li>Tháng 12 ngược lại.</li>
+<li>Xuân phân (~21/3), thu phân (~23/9): ngày bằng đêm khắp nơi.</li>
+<li>Xích đạo: ngày ≈ đêm quanh năm. Từ vòng cực $66{,}5^\circ$: có ngày hoặc đêm $24\ \text{h}$</li>
+</ul>
+<p>Ví dụ: hạ chí, ngày ở Hà Nội dài $\approx13{,}3\ \text{h}$, ở TP.HCM chỉ $\approx12{,}6\ \text{h}$ (chưa kể khúc xạ khí quyển).</p>
+<details class="tl-details">
+<summary>Vì sao nắng chiếu xiên thì kém nóng? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Rọi đèn pin thẳng rồi xiên xuống bàn: vệt xiên to hơn, mờ hơn.</p>
+<p>Cùng một chùm năng lượng trải ra diện tích lớn hơn, mỗi mét vuông nhận ít hơn.</p>
+<p>Ngày ngắn còn cho ít giờ nắng hơn: hai lý do cộng lại thành mùa đông.</p>
+</details>
+
+<h4>2. Góc cao Mặt Trời buổi trưa</h4>
+<p><strong>🔑 $h=90^\circ-|\varphi-\delta|$ · Bóng ngả xa Mặt Trời</strong></p>
+<ul>
+<li>$\varphi$: vĩ độ nơi quan sát (Bắc dương).</li>
+<li>$\delta$: vĩ độ nơi Mặt Trời đứng bóng hôm đó.</li>
+<li>Xuân phân, thu phân $\delta=0^\circ$; hạ chí $+23{,}5^\circ$; đông chí $-23{,}5^\circ$</li>
+<li>$\delta\lt\varphi$: bóng ngả về Bắc; $\delta\gt\varphi$: bóng ngả về Nam.</li>
+<li>Giữa hai chí tuyến: hai ngày đứng bóng mỗi năm ($\delta=\varphi$).</li>
+<li>Cọc cao $H$ có bóng dài $\dfrac{H}{\tan h}$</li>
+</ul>
+<!--FIG5-->
+<p>Cần Thơ ở vĩ độ $10{,}0^\circ$B. Trưa ngày đông chí, góc cao Mặt Trời và hướng bóng cọc là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg17-q6-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg17-q6-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q6" id="hsg17-q6a"><label for="hsg17-q6a" class="tl-opt tl-ok">A. $56{,}5^\circ$, bóng ngả về Bắc</label>
+<input type="radio" name="hsg17-q6" id="hsg17-q6b"><label for="hsg17-q6b" class="tl-opt tl-no">B. $76{,}5^\circ$, bóng ngả về Bắc</label>
+<input type="radio" name="hsg17-q6" id="hsg17-q6c"><label for="hsg17-q6c" class="tl-opt tl-no">C. $33{,}5^\circ$, bóng ngả về Bắc</label>
+<input type="radio" name="hsg17-q6" id="hsg17-q6d"><label for="hsg17-q6d" class="tl-opt tl-no">D. $56{,}5^\circ$, bóng ngả về Nam</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $h=90^\circ-|10{,}0-(-23{,}5)|=90^\circ-33{,}5^\circ=56{,}5^\circ$</p><p>$\delta\lt\varphi$: Mặt Trời ở phía Nam, bóng về Bắc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>B dùng $|\varphi+\delta|$: quên rằng đông chí $\delta$ âm, phải lấy hiệu.</p><p>C dừng ở $|\varphi-\delta|$: đó là góc lệch so với phương thẳng đứng, chưa trừ khỏi $90^\circ$</p><p>D đúng góc, sai hướng. Bóng luôn ngả về phía ngược Mặt Trời.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>3. Eratosthenes đo Trái Đất</h4>
+<p><strong>🔑 Tia nắng song song · Góc lệch = góc ở tâm</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>Hai nơi cùng kinh tuyến, cùng lúc giữa trưa, cách nhau cung $s$</li>
+<li>Góc lệch tia nắng $\theta$ giữa hai nơi cũng là góc ở tâm (so le trong).</li>
+<li>Chu vi Trái Đất $=s\cdot\dfrac{360^\circ}{\theta}$</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Trưa ngày hạ chí, ở A (vĩ độ $23{,}5^\circ$B) cọc không có bóng. Cùng lúc ở B, cùng kinh tuyến, phía Bắc A $667\ \text{km}$, cọc cao $1{,}5\ \text{m}$ có bóng dài $0{,}158\ \text{m}$. Tính chu vi và bán kính Trái Đất.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"ở A cọc không có bóng"</td><td>tia nắng thẳng đứng ở A → Mặt Trời đứng bóng</td></tr>
+<tr><td>"cùng lúc, cùng kinh tuyến"</td><td>một chùm tia song song → góc lệch = góc ở tâm</td></tr>
+<tr><td>"cọc $1{,}5$ m, bóng $0{,}158$ m"</td><td>$\tan\theta=\dfrac{0{,}158}{1{,}5}$ → góc tia nắng với cọc</td></tr>
+<tr><td>"cách A $667$ km"</td><td>cung $s$ → cung tỉ lệ góc ở tâm</td></tr>
+</tbody>
+</table></div>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$\tan\theta=\dfrac{0{,}158}{1{,}5}\approx0{,}105$, nên $\theta\approx6{,}0^\circ$</li>
+<li>Chu vi $=667\cdot\dfrac{360^\circ}{6{,}0^\circ}\approx40\,000\ \text{km}$</li>
+<li>$R=\dfrac{40\,000}{2\pi}\approx6370\ \text{km}$</li>
+<li>Kiểm tra: B ở vĩ độ $\approx23{,}5^\circ+6{,}0^\circ=29{,}5^\circ$B; góc cao ở B là $90^\circ-6^\circ=84^\circ$, khớp $h=90^\circ-|\varphi-\delta|$</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong>: đổi số, cọc $1\ \text{m}$ có bóng $0{,}07\ \text{m}$, hai nơi cách nhau $445\ \text{km}$ cùng kinh tuyến.</p>
+<ol class="tl-steps">
+<li><strong>Em điền:</strong> $\theta\approx\;?$</li>
+<li>Chu vi $\approx\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước còn thiếu</summary>
+<p>$\tan\theta=0{,}07$, nên $\theta\approx4{,}0^\circ$</p>
+<p>Chu vi $\approx445\cdot\dfrac{360}{4{,}0}\approx40\,000\ \text{km}$</p></details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">⚠️ Ba cái bẫy của mục IV–V</p>
+<table class="tl-table">
+<thead><tr><th>Nghĩ sai</th><th>Nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Mùa hè vì Trái Đất gần Mặt Trời</td><td>Gần nhất lại là đầu tháng 1; mùa do trục nghiêng</td></tr>
+<tr><td>$h=90^\circ-(\varphi+\delta)$</td><td>$h=90^\circ-|\varphi-\delta|$, $\delta$ có dấu</td></tr>
+<tr><td>Bóng trưa luôn ngả về Bắc</td><td>$\delta\gt\varphi$ thì ngả về Nam</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>VI. Hệ Mặt Trời</h3>
+<p><strong>🔑 Một ngôi sao · Tám hành tinh · Càng xa càng chậm</strong></p>
+<ul>
+<li>Mặt Trời là một ngôi sao, tự phát sáng.</li>
+<li>Gần: Thuỷ, Kim, Trái Đất, Hoả (đất đá).</li>
+<li>Xa: Mộc, Thổ, Thiên Vương, Hải Vương (khí, băng khổng lồ).</li>
+<li>Hành tinh lùn, tiểu hành tinh, sao chổi, vệ tinh: chỉ phản xạ ánh sáng.</li>
+<li>Càng xa Mặt Trời, chu kì càng dài.</li>
+<li>Trái Đất chạy quanh Mặt Trời $\approx30\ \text{km/s}$</li>
+</ul>
+<p>Mô hình $1:10^{10}$: Mặt Trời là quả bóng $14\ \text{cm}$, Trái Đất là hạt cát $1{,}3\ \text{mm}$ cách $15\ \text{m}$, Hải Vương cách $450\ \text{m}$. Sao gần nhất cách $\approx4000\ \text{km}$</p>
+<p>Ánh sáng Mặt Trời tới Trái Đất mất $\approx8{,}3$ phút. Tới Sao Mộc ($5{,}2\ \text{AU}$) mất khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg17-q7" id="hsg17-q7a"><label for="hsg17-q7a" class="tl-opt tl-no">A. $8{,}3$ phút</label>
+<input type="radio" name="hsg17-q7" id="hsg17-q7b"><label for="hsg17-q7b" class="tl-opt tl-no">B. $1{,}6$ phút</label>
+<input type="radio" name="hsg17-q7" id="hsg17-q7c"><label for="hsg17-q7c" class="tl-opt tl-ok">C. $43$ phút</label>
+<input type="radio" name="hsg17-q7" id="hsg17-q7d"><label for="hsg17-q7d" class="tl-opt tl-no">D. $43$ giây</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t=\dfrac{5{,}2\cdot1{,}5\cdot10^8}{3\cdot10^5}=2600\ \text{s}\approx43$ phút.</p><p>Hay nhanh: $5{,}2\cdot8{,}3\approx43$ phút.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong></p><p>A quên rằng Sao Mộc xa gấp $5{,}2$ lần.</p><p>B chia cho $5{,}2$ thay vì nhân: xa hơn thì phải lâu hơn.</p><p>D đúng số, sai đơn vị: $2600\ \text{s}$ là $43$ phút.</p></div>
+</div>
+
+<h3>VII. Ngân Hà và thử thách</h3>
+<p><strong>🔑 Thiên hà xoắn ốc · Mặt Trời ở nhánh, không ở tâm</strong></p>
+<ul>
+<li>Thiên hà xoắn ốc có thanh chắn, $100$–$400$ tỉ sao.</li>
+<li>Đĩa rộng $\approx100\,000$ ly, dày $\approx1000$ ly.</li>
+<li>Mặt Trời cách tâm $\approx26\,000$ ly, $\approx230$ triệu năm một vòng.</li>
+<li>Dải sáng mờ trên trời đêm: đĩa nhìn từ bên trong.</li>
+<li>Năm ánh sáng (ly) $\approx9{,}46\cdot10^{12}\ \text{km}$: đơn vị <strong>khoảng cách</strong>.</li>
+</ul>
+<!--FIG6-->
+<p>Ví dụ: Proxima Centauri cách $4{,}24$ ly, ánh sáng của nó đi tới ta mất hơn $4$ năm.</p>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: Mặt Trăng tự quay một vòng hết bao lâu? Vì sao ta luôn thấy một mặt của nó?</summary>
+<p>Tự quay một vòng hết $\approx27{,}3$ ngày, đúng bằng một vòng quanh Trái Đất.</p>
+<p>Hai chuyển động cùng chiều, cùng chu kì nên mặt hướng về Trái Đất không đổi.</p>
+<p>Nói "Mặt Trăng không tự quay" là sai.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: xung laser bắn lên gương trên Mặt Trăng ($384\,000\ \text{km}$) sau bao lâu thì quay về?</summary>
+<p>Một chiều: $\dfrac{384\,000}{3\cdot10^5}=1{,}28\ \text{s}$</p>
+<p>Đi và về: $2{,}56\ \text{s}$</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: vùng tối rộng $120\ \text{km}$ chạy về phía Đông $0{,}90\ \text{km/s}$ (so với tâm Trái Đất). Người ở xích đạo (tự quay $0{,}46\ \text{km/s}$ cùng chiều) thấy toàn phần tối đa bao lâu?</summary>
+<p>Người cũng chạy theo bóng, tốc độ bóng so với người: $0{,}90-0{,}46=0{,}44\ \text{km/s}$</p>
+<p>$t=\dfrac{120}{0{,}44}\approx273\ \text{s}\approx4{,}5$ phút.</p>
+<p>Bỏ qua tự quay sẽ ra $\approx2{,}2$ phút: sai gần gấp đôi.</p>
+</details>
+
+<h3>VIII. Trả bài và mang về</h3>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Vì sao có pha Mặt Trăng? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Luôn sáng một nửa.</p>
+<p>Ta thấy nhiều hay ít nửa sáng tuỳ vị trí.</p>
+<p>Không phải bóng Trái Đất.</p></details>
+<details class="tl-details"><summary>Điều kiện nhật thực, nguyệt thực?</summary>
+<p>Nhật thực: Mặt Trời – Mặt Trăng – Trái Đất, trăng non, dải hẹp.</p>
+<p>Nguyệt thực: Mặt Trời – Trái Đất – Mặt Trăng, trăng tròn, nửa Trái Đất đang đêm.</p></details>
+<details class="tl-details"><summary>Vì sao không tháng nào cũng có thực?</summary>
+<p>Quỹ đạo Mặt Trăng nghiêng $5^\circ$</p>
+<p>Chỉ hai mùa thực mỗi năm.</p></details>
+<details class="tl-details"><summary>Toàn phần hay hình khuyên phụ thuộc gì?</summary>
+<p>So $x=d-R_E$ với nón tối $L\approx374\,400\ \text{km}$</p>
+<p>$x\lt L$: toàn phần; $x\gt L$: hình khuyên.</p></details>
+<details class="tl-details"><summary>Góc cao Mặt Trời buổi trưa và hướng bóng?</summary>
+<p>$h=90^\circ-|\varphi-\delta|$</p>
+<p>Bóng ngả ngược phía Mặt Trời.</p>
+<p>Mùa do trục nghiêng $23{,}5^\circ$, không do gần xa.</p></details>
+<details class="tl-details"><summary>AU, năm ánh sáng là gì? Mặt Trời ở đâu trong Ngân Hà?</summary>
+<p>AU $=1{,}5\cdot10^8\ \text{km}$; ly $\approx9{,}46\cdot10^{12}\ \text{km}$: đều là khoảng cách.</p>
+<p>Mặt Trời ở nhánh xoắn, cách tâm $\approx26\,000$ ly.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Pha: luôn sáng một nửa, thấy nhiều hay ít.</li>
+<li>Trăng non: nhật thực. Trăng tròn: nguyệt thực.</li>
+<li>Nghiêng $5^\circ$: chỉ mùa thực mới có thực.</li>
+<li>Nón tối Mặt Trăng $\approx374\,400$ km, nhớ trừ $R_E$</li>
+<li>$15^\circ$ mỗi giờ, phía Đông sớm hơn.</li>
+<li>$h=90^\circ-|\varphi-\delta|$, bóng ngược phía Mặt Trời.</li>
+<li>Mùa do trục nghiêng. Năm ánh sáng là khoảng cách.</li>
+<li>Đọc đề: khoảng cách tính từ tâm hay mặt đất? $\delta$ dương hay âm? Góc ở độ hay rad?</li>
+</ul>
+</div>

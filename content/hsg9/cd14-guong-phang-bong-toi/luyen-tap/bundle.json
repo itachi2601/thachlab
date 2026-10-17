@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Gương phẳng, bóng tối và nửa tối",
+  "topic": "Ảnh của vật tạo bởi gương phẳng",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Chiếu một tia sáng tới một gương phẳng, tia tới hợp với <em>mặt gương</em> một góc $25^\\circ$. Góc hợp bởi tia tới và tia phản xạ bằng</p>",
+    "options": [
+     "$25^\\circ$.",
+     "$50^\\circ$.",
+     "$65^\\circ$.",
+     "$130^\\circ$."
+    ],
+    "answer": 3,
+    "explanation": "<p>Góc tới đo với pháp tuyến: $i=90^\\circ-25^\\circ=65^\\circ$.</p><p>Góc phản xạ $i'=i=65^\\circ$ nên góc giữa tia tới và tia phản xạ là $i+i'=2i=130^\\circ$. Đáp án D.</p>",
+    "topic": "Định luật phản xạ ánh sáng",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lấy luôn góc với mặt gương (25°) làm đáp số.",
+     "B": "Nhân đôi góc với mặt gương (2·25°) thay vì nhân đôi góc tới 65°.",
+     "C": "65° mới chỉ là góc tới i, chưa cộng góc phản xạ i'."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai gương phẳng đủ rộng, mặt phản xạ quay vào nhau, hợp với nhau góc $36^\\circ$. Đặt một điểm sáng $S$ ở vị trí bất kì trong góc giữa hai gương. Số ảnh của $S$ tạo bởi hệ hai gương là</p>",
+    "options": [
+     "$8$.",
+     "$9$.",
+     "$10$.",
+     "vô số."
+    ],
+    "answer": 1,
+    "explanation": "<p>$\\dfrac{360^\\circ}{36^\\circ}=10$ là số nguyên chẵn nên số ảnh là $10-1=9$, không phụ thuộc vị trí của $S$ trong góc. Đáp án B.</p><p>Các ảnh nằm trên đường tròn tâm là giao tuyến hai gương, bán kính bằng khoảng cách từ $S$ tới giao tuyến.</p>",
+    "topic": "Ảnh của vật tạo bởi gương phẳng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Trừ 2 (bỏ thêm một ảnh) — chỉ có hai ảnh trùng nhau khi 360°/α lẻ và vật nằm trên phân giác.",
+     "C": "Đếm cả vật S: 360°/α = 10 điểm gồm vật và 9 ảnh.",
+     "D": "Vô số ảnh chỉ xảy ra khi hai gương song song (α = 0)."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Giữ cố định một tia sáng chiếu tới gương phẳng. Quay gương một góc $12^\\circ$ quanh một trục nằm trong mặt gương, đi qua điểm tới và vuông góc với mặt phẳng tới. Tia phản xạ quay một góc</p>",
+    "options": [
+     "$6^\\circ$.",
+     "$12^\\circ$.",
+     "$24^\\circ$.",
+     "$48^\\circ$."
+    ],
+    "answer": 2,
+    "explanation": "<p>Gương quay $\\delta$ thì pháp tuyến quay $\\delta$, góc tới thay đổi $\\delta$.</p><p>Tia tới đứng yên còn tia phản xạ đối xứng với tia tới qua pháp tuyến, nên tia phản xạ quay $2\\delta=24^\\circ$ cùng chiều quay của gương. Đáp án C.</p>",
+    "topic": "Định luật phản xạ ánh sáng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Chia đôi thay vì nhân đôi góc quay.",
+     "B": "Cho rằng tia phản xạ quay cùng góc với gương (quên 2δ).",
+     "D": "Nhân 4: nhân đôi hai lần (một lần cho góc tới, một lần cho góc giữa hai tia)."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đặt một vật chắn sáng giữa một nguồn sáng rộng (bóng đèn tròn lớn) và màn chắn. Vùng nửa tối trên màn là vùng</p>",
+    "options": [
+     "chỉ nhận được ánh sáng từ một phần của nguồn sáng.",
+     "nhận ánh sáng yếu vì nằm xa nguồn sáng.",
+     "hoàn toàn không nhận được ánh sáng từ nguồn.",
+     "chỉ xuất hiện khi nguồn sáng là nguồn điểm."
+    ],
+    "answer": 0,
+    "explanation": "<p>Từ một điểm trong vùng nửa tối nhìn về nguồn, vật chắn che mất một phần nguồn, phần còn lại vẫn chiếu tới. Đáp án A.</p><p>Vùng không nhận ánh sáng nào là vùng tối; nguồn điểm chỉ cho vùng tối, không có vùng nửa tối.</p>",
+    "topic": "Bóng tối, bóng nửa tối",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "B": "Nửa tối do bị che một phần nguồn, không phải do ở xa nguồn.",
+     "C": "Đó là vùng tối (bóng tối).",
+     "D": "Ngược lại: nguồn điểm chỉ cho vùng tối; vùng nửa tối cần nguồn rộng."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một người cao $1{,}60\\ \\text{m}$, mắt cách sàn $1{,}50\\ \\text{m}$, đứng thẳng trước một gương phẳng treo thẳng đứng trên tường, cách gương $2{,}0\\ \\text{m}$. Sàn nằm ngang.</p>",
+    "statements": [
+     {
+      "text": "Ảnh của người cách người đó $4{,}0\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Để thấy được toàn bộ ảnh của mình, gương phải cao ít nhất $0{,}80\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Khi đó mép dưới của gương phải cách sàn đúng $0{,}80\\ \\text{m}$.",
+      "answer": false
+     },
+     {
+      "text": "Nếu người lùi ra xa gương thì cần gương cao hơn mới thấy được toàn thân.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: ảnh đối xứng với người qua gương, cách gương $2{,}0\\ \\text{m}$, nên cách người $2\\cdot2{,}0=4{,}0\\ \\text{m}$.</p><p>b) Đúng: tia từ chân và từ đỉnh đầu tới mắt cắt gương tại trung điểm các đoạn tương ứng (đường trung bình), nên gương tối thiểu $\\dfrac{h}{2}=0{,}80\\ \\text{m}$.</p><p>c) Sai: mép dưới ở trung điểm của đoạn từ chân tới mắt: $\\dfrac{h_m}{2}=0{,}75\\ \\text{m}$ (mép trên $\\dfrac{1{,}50+1{,}60}{2}=1{,}55\\ \\text{m}$).</p><p>d) Sai: các kết quả $\\dfrac{h}{2}$, $\\dfrac{h_m}{2}$ không chứa khoảng cách tới gương, nên lùi xa không thấy thêm và cũng không cần gương cao hơn.</p>",
+    "topic": "Ảnh của vật tạo bởi gương phẳng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Khoảng người–ảnh bằng 2 lần khoảng người–gương.",
+     "1": "Gương tối thiểu bằng nửa chiều cao người: 1,60/2 = 0,80 m.",
+     "2": "Mép dưới = h_m/2 = 0,75 m, không phải h/2 = 0,80 m (lệch nửa khoảng mắt–đỉnh đầu).",
+     "3": "h/2 và h_m/2 không phụ thuộc khoảng cách; lùi xa không thấy nhiều hơn, cũng không cần gương cao hơn."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một bóng đèn hình đĩa đường kính $10\\ \\text{cm}$ chiếu sáng một màn đặt song song, cách đèn $100\\ \\text{cm}$. Giữa đèn và màn, cách đèn $40\\ \\text{cm}$, đặt một đĩa chắn sáng đường kính $20\\ \\text{cm}$ song song với màn; tâm đèn, tâm đĩa và tâm vùng bóng cùng nằm trên một đường thẳng vuông góc với màn.</p>",
+    "statements": [
+     {
+      "text": "Nếu coi đèn là nguồn điểm thì bóng của đĩa trên màn có đường kính $50\\ \\text{cm}$.",
+      "answer": true
+     },
+     {
+      "text": "Với đèn thật (nguồn rộng), vùng tối trên màn có đường kính $35\\ \\text{cm}$.",
+      "answer": true
+     },
+     {
+      "text": "Mép ngoài của vùng nửa tối là đường tròn đường kính $50\\ \\text{cm}$.",
+      "answer": false
+     },
+     {
+      "text": "Lùi màn ra xa đèn hơn thì vùng tối trên màn nhỏ lại.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>Mọi khoảng cách đo từ đèn: $a=40\\ \\text{cm}$, $L=100\\ \\text{cm}$, $\\dfrac{L}{a}=2{,}5$.</p><p>a) Đúng: nguồn điểm, đồng dạng đỉnh tại nguồn: $20\\cdot2{,}5=50\\ \\text{cm}$.</p><p>b) Đúng: tia cùng mép: $d_t=D_n+(d-D_n)\\dfrac{L}{a}=10+10\\cdot2{,}5=35\\ \\text{cm}$.</p><p>c) Sai: tia chéo mép: $d_n=(d+D_n)\\dfrac{L}{a}-D_n=30\\cdot2{,}5-10=65\\ \\text{cm}$; $50\\ \\text{cm}$ là bóng khi coi đèn là nguồn điểm.</p><p>d) Sai: đĩa chắn ($20\\ \\text{cm}$) lớn hơn đèn ($10\\ \\text{cm}$) nên hai tia cùng mép loe ra, $d_t$ tăng theo $L$: lùi màn thì vùng tối lớn lên.</p>",
+    "topic": "Bóng tối, bóng nửa tối",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Nguồn điểm: d' = d·L/a = 20·100/40 = 50 cm (đo từ nguồn, không phải từ đĩa).",
+     "1": "Vùng tối giới hạn bởi tia cùng mép: 10 + (20 − 10)·2,5 = 35 cm.",
+     "2": "Mép ngoài nửa tối do tia chéo mép: (20 + 10)·2,5 − 10 = 65 cm; 50 cm là bóng của nguồn điểm.",
+     "3": "Vật chắn lớn hơn nguồn thì vùng tối lớn lên khi lùi màn; chỉ khi vật nhỏ hơn nguồn vùng tối mới thu hẹp."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một bóng đèn nhỏ treo cách mặt đường nằm ngang $4{,}0\\ \\text{m}$. Một người cao $1{,}6\\ \\text{m}$ đi thẳng ra xa chân cột đèn với tốc độ không đổi $1{,}2\\ \\text{m/s}$. Đỉnh bóng của người trên mặt đường chuyển động với tốc độ bao nhiêu $\\text{m/s}$?</p>",
+    "answer": "2",
+    "explanation": "<p>Người cách chân cột $x$, bóng dài $\\ell$: $\\dfrac{\\ell}{x}=\\dfrac{h}{H-h}=\\dfrac{1{,}6}{2{,}4}=\\dfrac23$.</p><p>Đỉnh bóng cách chân cột $x+\\ell=\\dfrac{H}{H-h}\\,x=\\dfrac53x$, nên chạy nhanh gấp $\\dfrac53$ lần người: $v_{\\text{đỉnh}}=\\dfrac53\\cdot1{,}2=2{,}0\\ \\text{m/s}$.</p><p>Bẫy: trả lời $1{,}2\\ \\text{m/s}$ (bằng tốc độ người) hoặc $0{,}8\\ \\text{m/s}$ (đó là tốc độ bóng dài thêm, không phải tốc độ đỉnh bóng).</p>",
+    "topic": "Bóng tối, bóng nửa tối",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Chiếu một tia laser cố định vào một gương phẳng nhỏ; tia phản xạ đập vuông góc vào một bức tường cách điểm tới $2{,}5\\ \\text{m}$. Quay gương một góc $4^\\circ$ quanh trục đi qua điểm tới, vuông góc với mặt phẳng tới. Vệt sáng trên tường dịch đi bao nhiêu xentimét? Làm tròn đến xentimét.</p>",
+    "answer": "35",
+    "explanation": "<p>Gương quay $4^\\circ$ nên tia phản xạ quay $2\\cdot4^\\circ=8^\\circ$.</p><p>Lúc đầu tia phản xạ vuông góc tường; sau khi quay, vệt dịch $x=2{,}5\\cdot\\tan8^\\circ\\approx0{,}351\\ \\text{m}\\approx35\\ \\text{cm}$.</p><p>Bẫy: quên nhân đôi góc quay, lấy $2{,}5\\cdot\\tan4^\\circ\\approx17{,}5\\ \\text{cm}$.</p>",
+    "topic": "Định luật phản xạ ánh sáng",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

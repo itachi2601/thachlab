@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà",
+  "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Nhật thực chỉ có thể xảy ra vào ngày Mặt Trăng ở pha nào?</p>",
+    "options": [
+     "Trăng tròn.",
+     "Không trăng (trăng non).",
+     "Bất kì pha nào, miễn là vào ban ngày.",
+     "Trăng lưỡi liềm đầu tháng."
+    ],
+    "answer": 1,
+    "explanation": "<p>Nhật thực xảy ra khi Mặt Trăng nằm giữa Mặt Trời và Trái Đất (thứ tự Mặt Trời – Mặt Trăng – Trái Đất), bóng Mặt Trăng rơi xuống mặt đất.</p><p>Lúc đó nửa được chiếu sáng của Mặt Trăng quay hẳn về phía Mặt Trời, nửa tối quay về ta: đó là ngày không trăng. Đáp án B.</p><p>A là điều kiện của nguyệt thực (Mặt Trời – Trái Đất – Mặt Trăng).</p><p>C, D: Mặt Trăng không thẳng hàng giữa Mặt Trời và Trái Đất nên bóng của nó không rơi xuống Trái Đất.</p>",
+    "distractorNotes": {
+     "A": "Nhầm với nguyệt thực: trăng tròn thì Trái Đất ở giữa, bóng Trái Đất che Mặt Trăng.",
+     "C": "Quên điều kiện thẳng hàng Mặt Trời – Mặt Trăng – Trái Đất; ban ngày chưa đủ.",
+     "D": "Tưởng phần tối của trăng lưỡi liềm là do bị che; thật ra Mặt Trăng chưa ở đúng giữa Mặt Trời và Trái Đất."
+    },
+    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Tháng nào cũng có ngày không trăng và đêm trăng tròn, nhưng mỗi năm chỉ có vài lần nhật thực, nguyệt thực. Nguyên nhân chính là</p>",
+    "options": [
+     "Trái Đất tự quay quanh trục nên phần lớn thời gian ta đứng ở phía không nhìn thấy.",
+     "quỹ đạo Trái Đất quanh Mặt Trời là elip nên khoảng cách giữa chúng luôn thay đổi.",
+     "Mặt Trăng tự quay quanh trục nên có lúc quay mặt che được, có lúc không.",
+     "quỹ đạo Mặt Trăng nghiêng khoảng $5^\\circ$ so với mặt phẳng quỹ đạo Trái Đất."
+    ],
+    "answer": 3,
+    "explanation": "<p>Quỹ đạo Mặt Trăng nghiêng khoảng $5^\\circ$ nên trăng non, trăng tròn thường đi ngang phía trên hoặc phía dưới đường nối Mặt Trời – Trái Đất; bóng trượt qua mà không chạm.</p><p>Chỉ khi trăng non/tròn rơi gần giao tuyến của hai mặt phẳng quỹ đạo (hai \"mùa thực\" mỗi năm, cách nhau khoảng $6$ tháng) mới có thực. Đáp án D.</p><p>A: Trái Đất tự quay chỉ quyết định nơi nào thấy được, không quyết định có thực hay không.</p><p>B: quỹ đạo elip chỉ làm Mặt Trời trông to nhỏ một chút (ảnh hưởng toàn phần hay hình khuyên).</p><p>C: Mặt Trăng tự quay không làm thay đổi vị trí của nó so với đường Mặt Trời – Trái Đất.</p>",
+    "distractorNotes": {
+     "A": "Nhầm vai trò của sự tự quay (nơi thấy được) với điều kiện thẳng hàng (có thực hay không).",
+     "B": "Elip chỉ đổi khoảng cách, ảnh hưởng loại nhật thực chứ không làm mất thẳng hàng.",
+     "C": "Sự tự quay của Mặt Trăng không đổi vị trí tâm của nó trên quỹ đạo."
+    },
+    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đà Lạt ở vĩ độ $11{,}9^\\circ$B. Ngày đông chí, xích vĩ Mặt Trời là $\\delta=-23{,}5^\\circ$. Góc cao của Mặt Trời lúc giữa trưa ở Đà Lạt ngày đông chí xấp xỉ</p>",
+    "options": [
+     "$54{,}6^\\circ$.",
+     "$78{,}1^\\circ$.",
+     "$35{,}4^\\circ$.",
+     "$66{,}5^\\circ$."
+    ],
+    "answer": 0,
+    "explanation": "<p>$h=90^\\circ-|\\varphi-\\delta|=90^\\circ-|11{,}9^\\circ-(-23{,}5^\\circ)|=90^\\circ-35{,}4^\\circ=54{,}6^\\circ$. Đáp án A.</p><p>Mặt Trời ở phía Nam; bóng cọc ngả về Bắc.</p>",
+    "distractorNotes": {
+     "B": "Quên xích vĩ δ: 90° − 11,9° = 78,1° là góc cao ngày xuân phân/thu phân.",
+     "C": "Lấy |φ − δ| = 35,4° (góc giữa tia nắng và phương thẳng đứng) mà quên lấy 90° trừ đi.",
+     "D": "Quên vĩ độ Đà Lạt: 90° − 23,5° = 66,5° chỉ đúng ở xích đạo."
+    },
+    "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Phát biểu nào sau đây là đúng?</p>",
+    "options": [
+     "Năm ánh sáng là thời gian ánh sáng đi hết một vòng quanh tâm Ngân Hà.",
+     "Mặt Trời nằm ở tâm Ngân Hà nên ta thấy Ngân Hà như một dải sáng vắt ngang bầu trời.",
+     "Dải sáng mờ Ngân Hà trên bầu trời đêm là đĩa thiên hà của ta nhìn từ bên trong.",
+     "Năm ánh sáng là đơn vị đo thời gian, bằng $365{,}25$ ngày."
+    ],
+    "answer": 2,
+    "explanation": "<p>Ngân Hà là thiên hà dạng đĩa xoắn ốc; Hệ Mặt Trời nằm trong đĩa, ở một nhánh xoắn cách tâm khoảng $26\\,000$ năm ánh sáng.</p><p>Nhìn dọc theo mặt đĩa ta thấy rất nhiều sao chồng lên nhau thành một dải sáng mờ. Đáp án C.</p><p>A, D sai: năm ánh sáng là đơn vị đo <strong>khoảng cách</strong> — quãng đường ánh sáng đi trong một năm, khoảng $9{,}46\\cdot10^{12}\\ \\text{km}$.</p><p>B sai: Mặt Trời không ở tâm Ngân Hà.</p>",
+    "distractorNotes": {
+     "A": "Nhầm năm ánh sáng là một khoảng thời gian (lại gắn với chu kì quay của Ngân Hà).",
+     "B": "Tưởng Mặt Trời ở tâm Ngân Hà; thật ra cách tâm khoảng 26 000 năm ánh sáng.",
+     "D": "Bẫy kinh điển: chữ \"năm\" khiến tưởng là đơn vị thời gian; năm ánh sáng là quãng đường."
+    },
+    "topic": "Hệ Mặt Trời và Ngân Hà",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Xét các phát biểu sau về nhật thực.</p>",
+    "statements": [
+     {
+      "text": "Nhật thực toàn phần chỉ quan sát được trong một dải hẹp trên mặt đất, rộng không quá vài trăm kilômét.",
+      "answer": true
+     },
+     {
+      "text": "Người đứng trong vùng nửa tối của Mặt Trăng thấy nhật thực một phần.",
+      "answer": true
+     },
+     {
+      "text": "Khi Mặt Trăng ở xa Trái Đất nhất, vùng bóng tối trên mặt đất rộng nhất nên nhật thực toàn phần kéo dài nhất.",
+      "answer": false
+     },
+     {
+      "text": "Nhật thực hình khuyên xảy ra khi Mặt Trăng ở gần Trái Đất, đĩa Mặt Trăng trông to hơn đĩa Mặt Trời.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: chóp nón bóng tối của Mặt Trăng dài xấp xỉ khoảng cách tới mặt đất, nên khi chạm đất vùng tối chỉ rộng cỡ vài trăm km trở xuống.</p><p>b) Đúng: trong nửa tối, Mặt Trăng chỉ che một phần đĩa Mặt Trời.</p><p>c) Sai: Mặt Trăng ở xa nhất thì góc trông của nó nhỏ hơn Mặt Trời, chóp nón bóng tối không chạm đất — chỉ có nhật thực hình khuyên, không có toàn phần.</p><p>d) Sai: hình khuyên xảy ra khi Mặt Trăng ở xa, đĩa Mặt Trăng trông nhỏ hơn đĩa Mặt Trời nên còn hở một vành sáng.</p>",
+    "distractorNotes": {
+     "0": "Vùng tối trên mặt đất nhỏ (cỡ vài trăm km trở xuống) vì nón bóng tối dài xấp xỉ khoảng cách tới mặt đất.",
+     "1": "Nửa tối: một phần đĩa Mặt Trời bị che → nhật thực một phần.",
+     "2": "Mặt Trăng càng xa, chóp nón bóng tối càng không tới mặt đất → hình khuyên, không có toàn phần.",
+     "3": "Đảo ngược: hình khuyên khi Mặt Trăng xa, trông nhỏ hơn Mặt Trời."
+    },
+    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Xét các phát biểu sau về mùa trên Trái Đất.</p>",
+    "statements": [
+     {
+      "text": "Có mùa là do trục Trái Đất nghiêng khoảng $23{,}5^\\circ$ so với phương vuông góc mặt phẳng quỹ đạo và giữ phương không đổi khi Trái Đất quay quanh Mặt Trời.",
+      "answer": true
+     },
+     {
+      "text": "Bắc bán cầu có mùa hè vì khi đó Trái Đất ở gần Mặt Trời nhất.",
+      "answer": false
+     },
+     {
+      "text": "Trưa ngày hạ chí ở Cà Mau (vĩ độ $9{,}2^\\circ$B), bóng của cọc thẳng đứng ngả về phía Nam.",
+      "answer": true
+     },
+     {
+      "text": "Ở xích đạo, ngày và đêm dài gần bằng nhau quanh năm.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: trục nghiêng giữ phương cố định nên góc chiếu của tia nắng và độ dài ngày ở mỗi nơi thay đổi theo vị trí trên quỹ đạo.</p><p>b) Sai: Trái Đất gần Mặt Trời nhất vào đầu tháng 1, đúng lúc Bắc bán cầu đang mùa đông; khoảng cách chỉ đổi khoảng $3\\,\\%$.</p><p>c) Đúng: ngày hạ chí $\\delta=23{,}5^\\circ\\gt\\varphi=9{,}2^\\circ$, Mặt Trời lúc trưa ở phía Bắc đỉnh đầu (góc cao $90^\\circ-14{,}3^\\circ=75{,}7^\\circ$), bóng ngả về Nam.</p><p>d) Đúng: vòng tròn phân chia sáng – tối luôn chia đôi đường xích đạo, nên ở xích đạo ngày luôn xấp xỉ $12$ giờ.</p>",
+    "distractorNotes": {
+     "0": "Mùa do trục nghiêng giữ phương cố định, làm góc chiếu và độ dài ngày đổi theo năm.",
+     "1": "Mùa không do gần/xa Mặt Trời: Trái Đất gần Mặt Trời nhất đầu tháng 1 (mùa đông ở Bắc bán cầu).",
+     "2": "Khi δ > φ, Mặt Trời trưa ở phía Bắc → bóng về Nam; quen \"bóng luôn về Bắc\" là sai ở vùng nhiệt đới.",
+     "3": "Đường phân chia sáng – tối luôn chia đôi xích đạo → ngày ≈ đêm ≈ 12 h quanh năm."
+    },
+    "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+    "form": "ly_thuyet",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Sao Thổ cách Mặt Trời khoảng $9{,}5\\ \\text{AU}$, với $1\\ \\text{AU}=1{,}5\\cdot10^8\\ \\text{km}$; tốc độ ánh sáng $3\\cdot10^5\\ \\text{km/s}$. Ánh sáng từ Mặt Trời tới Sao Thổ mất bao nhiêu phút? (Làm tròn đến một chữ số thập phân.)</p>",
+    "answer": "79,2",
+    "explanation": "<p>$s=9{,}5\\cdot1{,}5\\cdot10^8=1{,}425\\cdot10^9\\ \\text{km}$.</p><p>$t=\\dfrac{s}{c}=\\dfrac{1{,}425\\cdot10^9}{3\\cdot10^5}=4750\\ \\text{s}$.</p><p>$4750\\ \\text{s}=\\dfrac{4750}{60}\\approx79{,}2$ phút.</p><p>Bẫy: quên đổi AU ra km, hoặc chia cho $3600$ (ra giờ) thay vì $60$.</p><p>Đáp số: $79{,}2$.</p>",
+    "topic": "Hệ Mặt Trời và Ngân Hà",
+    "form": "bai_tap",
+    "difficulty": "de"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Mặt Trăng quay quanh Trái Đất một vòng so với các ngôi sao xa hết $27{,}3$ ngày; Trái Đất quay quanh Mặt Trời một vòng hết $365$ ngày, cùng chiều. Hai lần trăng tròn liên tiếp (tháng giao hội) cách nhau bao nhiêu ngày? (Làm tròn đến một chữ số thập phân.)</p>",
+    "answer": "29,5",
+    "explanation": "<p>Trăng tròn lặp lại khi Mặt Trăng \"đuổi kịp\" lại hướng Mặt Trời – Trái Đất, mà hướng này cũng quay cùng chiều theo Trái Đất (giống hai kim đồng hồ đuổi nhau).</p><p>Tốc độ góc tương đối: $\\dfrac{1}{S}=\\dfrac{1}{T}-\\dfrac{1}{365}=\\dfrac{1}{27{,}3}-\\dfrac{1}{365}$.</p><p>$S\\approx29{,}5$ ngày.</p><p>Bẫy: cộng hai nghịch đảo (ra khoảng $25{,}4$ ngày) — tháng giao hội phải <strong>dài hơn</strong> tháng thiên văn vì Mặt Trăng phải đi thêm một đoạn.</p><p>Đáp số: $29{,}5$.</p>",
+    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   }
+  ]
+ }
+}

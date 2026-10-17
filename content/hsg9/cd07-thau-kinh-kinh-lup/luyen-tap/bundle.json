@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Thấu kính mỏng và kính lúp",
+  "topic": "Công thức thấu kính và số phóng đại",
+  "difficulty": "trung-binh",
+  "duration_minutes": 25,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một tia sáng tới thấu kính phân kì theo phương song song với trục chính. Tia ló</p>",
+    "options": [
+     "hội tụ tại tiêu điểm ảnh $F'$ ở phía sau thấu kính.",
+     "đi song song với trục chính.",
+     "truyền thẳng, không đổi hướng.",
+     "loe ra xa trục chính, có đường kéo dài đi qua tiêu điểm ảnh $F'$ nằm cùng phía với tia tới."
+    ],
+    "answer": 3,
+    "explanation": "<p>Thấu kính phân kì làm chùm song song loe ra; các tia ló có đường kéo dài (nét đứt) gặp nhau tại tiêu điểm ảnh $F'$, nằm cùng phía với ánh sáng tới. Đáp án D.</p><p>A là tính chất của thấu kính hội tụ. B là tia ló của tia đi qua tiêu điểm vật. C là tia đi qua quang tâm $O$.</p>",
+    "topic": "Dựng ảnh của vật qua thấu kính",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lẫn với thấu kính hội tụ; F' của TK phân kì nằm cùng phía vật, tia ló không đi qua thật.",
+     "B": "Đó là tia ló của tia có đường kéo dài đi qua tiêu điểm vật F.",
+     "C": "Chỉ tia đi qua quang tâm O mới truyền thẳng."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Vật sáng $AB$ đặt vuông góc với trục chính của một thấu kính hội tụ tiêu cự $15\\ \\text{cm}$, $A$ nằm trên trục chính và cách thấu kính $10\\ \\text{cm}$. Ảnh $A'B'$ là</p>",
+    "options": [
+     "ảnh ảo, cùng chiều vật, cách thấu kính $30\\ \\text{cm}$.",
+     "ảnh thật, ngược chiều vật, cách thấu kính $30\\ \\text{cm}$.",
+     "ảnh ảo, cùng chiều vật, cách thấu kính $6\\ \\text{cm}$.",
+     "ảnh thật, ngược chiều vật, cách thấu kính $6\\ \\text{cm}$."
+    ],
+    "answer": 0,
+    "explanation": "<p>$\\dfrac1{d'}=\\dfrac1f-\\dfrac1d=\\dfrac1{15}-\\dfrac1{10}=-\\dfrac1{30}$ nên $d'=-30\\ \\text{cm}$.</p><p>$d'\\lt0$: ảnh ảo, cùng phía và cùng chiều vật, cách thấu kính $30\\ \\text{cm}$. Đáp án A.</p><p>Kiểm nhanh: vật nằm trong khoảng tiêu cự ($d\\lt f$) nên thấu kính hội tụ cho ảnh ảo, lớn hơn vật, xa thấu kính hơn vật ($|d'|\\gt d$).</p>",
+    "topic": "Công thức thấu kính và số phóng đại",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "B": "Giải ra d' = −30 nhưng bỏ dấu trừ, kết luận ảnh thật.",
+     "C": "Viết sai 1/d' = 1/f + 1/d nên ra 6 cm; ảnh ảo của TK hội tụ phải xa TK hơn vật.",
+     "D": "Vừa cộng sai 1/f + 1/d vừa không xét dấu d'."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Vật sáng và màn ảnh đặt cố định, cách nhau $90\\ \\text{cm}$. Đặt một thấu kính hội tụ ở khoảng giữa vật và màn. Để có ít nhất một vị trí của thấu kính cho ảnh rõ nét trên màn, tiêu cự của thấu kính lớn nhất bằng</p>",
+    "options": [
+     "$20\\ \\text{cm}$.",
+     "$22{,}5\\ \\text{cm}$.",
+     "$45\\ \\text{cm}$.",
+     "$90\\ \\text{cm}$."
+    ],
+    "answer": 1,
+    "explanation": "<p>Ảnh trên màn là ảnh thật: $d+d'=L$ nên $d^2-Ld+Lf=0$.</p><p>Có nghiệm khi $\\Delta=L^2-4Lf\\ge0$, tức $L\\ge4f$, hay $f\\le\\dfrac L4=\\dfrac{90}4=22{,}5\\ \\text{cm}$. Đáp án B.</p><p>Khi $f=22{,}5\\ \\text{cm}$, chỉ có một vị trí: $d=d'=45\\ \\text{cm}=2f$, ảnh bằng vật.</p>",
+    "topic": "Công thức thấu kính và số phóng đại",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Chỉ thử một vị trí (d = 30, d' = 60 cho f = 20 cm) rồi coi là lớn nhất, không biện luận Δ ≥ 0.",
+     "C": "Nhầm điều kiện thành L ≥ 2f (tưởng vật và ảnh đều ở tiêu điểm).",
+     "D": "Coi màn đặt tại tiêu điểm nên f = L — chỉ đúng khi vật ở rất xa."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Trên vành một kính lúp có ghi $12{,}5\\times$. Một học sinh mắt tốt (điểm cực cận cách mắt $25\\ \\text{cm}$, điểm cực viễn ở vô cực) đặt kính sát mắt và ngắm chừng ở vô cực (mắt không phải điều tiết). Vật phải đặt cách kính</p>",
+    "options": [
+     "$12{,}5\\ \\text{cm}$.",
+     "$1{,}85\\ \\text{cm}$.",
+     "$2\\ \\text{cm}$.",
+     "$25\\ \\text{cm}$."
+    ],
+    "answer": 2,
+    "explanation": "<p>$G=\\dfrac{25}{f}$ nên $f=\\dfrac{25}{12{,}5}=2\\ \\text{cm}$.</p><p>Ngắm chừng ở vô cực: tia ló song song, vật đặt tại tiêu điểm, $d=f=2\\ \\text{cm}$. Đáp án C.</p>",
+    "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Lấy luôn số ghi trên kính làm tiêu cự (f = G = 12,5 cm).",
+     "B": "Tính cho ngắm chừng ở điểm cực cận (ảnh ảo tại 25 cm) thay vì ở vô cực.",
+     "D": "Đặt vật ở điểm cực cận của mắt — đó là chỗ đặt vật khi nhìn bằng mắt thường, không dùng kính."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Vật sáng $AB$ cao $5\\ \\text{cm}$ đặt vuông góc với trục chính của một thấu kính phân kì có tiêu cự $20\\ \\text{cm}$ (theo quy ước dấu $f=-20\\ \\text{cm}$), $A$ nằm trên trục chính và cách thấu kính $30\\ \\text{cm}$.</p>",
+    "statements": [
+     {
+      "text": "Ảnh $A'B'$ là ảnh ảo, cùng chiều vật.",
+      "answer": true
+     },
+     {
+      "text": "Ảnh cách thấu kính $12\\ \\text{cm}$.",
+      "answer": true
+     },
+     {
+      "text": "Ảnh cao $2{,}5\\ \\text{cm}$.",
+      "answer": false
+     },
+     {
+      "text": "Dịch vật ra xa thấu kính thì ảnh dịch lại gần thấu kính.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: vật thật qua thấu kính phân kì luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật.</p><p>b) Đúng: $\\dfrac1{d'}=-\\dfrac1{20}-\\dfrac1{30}=-\\dfrac1{12}$ nên $d'=-12\\ \\text{cm}$.</p><p>c) Sai: $h'=5\\cdot\\dfrac{12}{30}=2\\ \\text{cm}$.</p><p>d) Sai: đưa vật ra $60\\ \\text{cm}$ thì $\\dfrac1{d'}=-\\dfrac1{20}-\\dfrac1{60}=-\\dfrac1{15}$, $d'=-15\\ \\text{cm}$: ảnh dịch <em>ra xa</em> thấu kính (từ $12$ lên $15\\ \\text{cm}$), tiến dần về $F'$ nhưng không vượt quá $20\\ \\text{cm}$.</p>",
+    "topic": "Công thức thấu kính và số phóng đại",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Vật thật qua TK phân kì luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật.",
+     "1": "1/d' = −1/20 − 1/30 = −1/12, ảnh cách TK 12 cm.",
+     "2": "h' = h·|d'|/d = 5·12/30 = 2 cm; 2,5 cm là lấy h/2 do tưởng ảnh qua PK luôn bằng nửa vật.",
+     "3": "Với TK phân kì, vật ra xa thì ảnh ảo cũng ra xa TK, tiến dần về F'."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Vật sáng $AB$ và màn ảnh đặt cố định, cách nhau $100\\ \\text{cm}$. Dịch chuyển một thấu kính hội tụ tiêu cự $21\\ \\text{cm}$ trong khoảng giữa vật và màn (trục chính vuông góc màn, đi qua $A$).</p>",
+    "statements": [
+     {
+      "text": "Có hai vị trí của thấu kính cho ảnh rõ nét trên màn.",
+      "answer": true
+     },
+     {
+      "text": "Ở vị trí thấu kính gần vật hơn, ảnh trên màn nhỏ hơn vật.",
+      "answer": false
+     },
+     {
+      "text": "Hai vị trí đó cách nhau $40\\ \\text{cm}$.",
+      "answer": true
+     },
+     {
+      "text": "Đưa màn lại gần vật cho tới khi vật–màn còn $80\\ \\text{cm}$ thì vẫn tìm được vị trí thấu kính cho ảnh rõ nét.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>Ảnh thật trên màn: $d+d'=100$ và $\\dfrac1{21}=\\dfrac1d+\\dfrac1{d'}$ nên $d^2-100d+2100=0$, $\\Delta=10\\,000-8400=1600$.</p><p>a) Đúng: $\\Delta\\gt0$ nên có hai nghiệm $d=30\\ \\text{cm}$ và $d=70\\ \\text{cm}$.</p><p>b) Sai: ở $d=30\\ \\text{cm}$ thì $d'=70\\ \\text{cm}$, ảnh lớn gấp $\\dfrac{70}{30}\\approx2{,}33$ lần vật.</p><p>c) Đúng: $\\ell=70-30=40\\ \\text{cm}$ (kiểm: $\\dfrac{100^2-40^2}{400}=21$).</p><p>d) Sai: phải có $L\\ge4f=84\\ \\text{cm}$; $80\\lt84$ nên không còn vị trí nào cho ảnh rõ.</p>",
+    "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Δ = L² − 4Lf = 1600 > 0 nên có hai vị trí d = 30 cm và d = 70 cm.",
+     "1": "Thấu kính gần vật thì ảnh xa thấu kính (d' = 70 > d = 30) nên ảnh lớn hơn vật.",
+     "2": "ℓ = d₂ − d₁ = 70 − 30 = 40 cm.",
+     "3": "Điều kiện có ảnh thật trên màn là L ≥ 4f = 84 cm; 80 cm không đủ."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Vật sáng $AB$ đặt vuông góc với trục chính của một thấu kính hội tụ tiêu cự $14\\ \\text{cm}$, $A$ nằm trên trục chính và cách thấu kính $21\\ \\text{cm}$. Khoảng cách giữa vật và ảnh của nó bằng bao nhiêu cm?</p>",
+    "answer": "63",
+    "explanation": "<p>$\\dfrac1{d'}=\\dfrac1{14}-\\dfrac1{21}=\\dfrac{1}{42}$ nên $d'=42\\ \\text{cm}$: ảnh thật, khác phía vật.</p><p>Khoảng cách vật–ảnh $L=d+d'=21+42=63\\ \\text{cm}$.</p><p>Bẫy: trả lời $42$ (khoảng cách ảnh–thấu kính) thay vì khoảng cách vật–ảnh.</p>",
+    "topic": "Công thức thấu kính và số phóng đại",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Hai thấu kính hội tụ có tiêu cự $30\\ \\text{cm}$ và $20\\ \\text{cm}$ được ghép sát nhau, đồng trục (coi như một thấu kính mỏng). Vật sáng $AB$ đặt vuông góc với trục chính, $A$ nằm trên trục chính và cách hệ $18\\ \\text{cm}$. Ảnh của vật qua hệ cách hệ bao nhiêu cm?</p>",
+    "answer": "36",
+    "explanation": "<p>Ghép sát: $\\dfrac1f=\\dfrac1{30}+\\dfrac1{20}=\\dfrac5{60}=\\dfrac1{12}$ nên $f=12\\ \\text{cm}$.</p><p>$\\dfrac1{d'}=\\dfrac1{12}-\\dfrac1{18}=\\dfrac1{36}$ nên $d'=36\\ \\text{cm}$ (ảnh thật).</p><p>Bẫy: cộng tiêu cự $30+20=50\\ \\text{cm}$ — với thấu kính ghép sát, các nghịch đảo tiêu cự mới cộng được.</p>",
+    "topic": "Công thức thấu kính và số phóng đại",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   }
+  ]
+ }
+}
