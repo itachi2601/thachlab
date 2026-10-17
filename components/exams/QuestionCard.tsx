@@ -267,11 +267,14 @@ export default function QuestionCard({
             </div>
           ) : (
             <input
-              inputMode="decimal"
+              // Bàn phím số thập phân của iOS không có dấu trừ → câu có đáp án âm dùng bàn phím chữ.
+              inputMode={/^[-−–]/.test(String(q.answer ?? "").trim()) ? "text" : "decimal"}
               autoComplete="off"
+              autoCapitalize="off"
+              spellCheck={false}
               value={typeof r === "string" ? r : ""}
               onChange={(e) => {
-                const v = e.target.value.replace(/[^0-9,.\-]/g, "").slice(0, 4);
+                const v = e.target.value.replace(/[−–]/g, "-").replace(/[^0-9,.\-]/g, "").slice(0, 4);
                 onChange?.(v);
               }}
               placeholder="Đáp án (tối đa 4 ký tự)"
