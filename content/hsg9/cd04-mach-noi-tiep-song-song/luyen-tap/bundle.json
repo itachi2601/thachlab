@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+  "topic": "Mạch hỗn hợp",
+  "difficulty": "trung-binh",
+  "duration_minutes": 25,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai điện trở $R_1=14\\ \\Omega$ và $R_2=21\\ \\Omega$ được mắc song song với nhau. Điện trở tương đương của đoạn mạch là</p>",
+    "options": [
+     "$17{,}5\\ \\Omega$.",
+     "$35\\ \\Omega$.",
+     "$8{,}4\\ \\Omega$.",
+     "$294\\ \\Omega$."
+    ],
+    "answer": 2,
+    "explanation": "<p>Hai điện trở song song: $\\dfrac{1}{R_{td}}=\\dfrac{1}{14}+\\dfrac{1}{21}=\\dfrac{3+2}{42}=\\dfrac{5}{42}$, nên $R_{td}=\\dfrac{14\\cdot21}{14+21}=\\dfrac{294}{35}=8{,}4\\ \\Omega$. Đáp án C.</p><p>Kiểm tra nhanh: điện trở tương đương của đoạn song song luôn nhỏ hơn điện trở nhỏ nhất ($14\\ \\Omega$), nên $17{,}5$, $35$ và $294$ đều không thể đúng.</p>",
+    "topic": "Đoạn mạch nối tiếp và song song",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lấy trung bình cộng hai điện trở.",
+     "B": "Dùng công thức của đoạn mạch nối tiếp (cộng hai điện trở).",
+     "D": "Lấy tích $R_1R_2$ mà quên chia cho tổng $R_1+R_2$."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đoạn mạch gồm điện trở $R_1=9\\ \\Omega$ mắc nối tiếp với đoạn gồm $R_2=24\\ \\Omega$ song song $R_3=40\\ \\Omega$, đặt vào hiệu điện thế không đổi $48\\ \\text{V}$. Cường độ dòng điện qua $R_2$ là</p>",
+    "options": [
+     "$1{,}25\\ \\text{A}$.",
+     "$0{,}75\\ \\text{A}$.",
+     "$1\\ \\text{A}$.",
+     "$2\\ \\text{A}$."
+    ],
+    "answer": 0,
+    "explanation": "<p>Đoạn song song: $R_{23}=\\dfrac{24\\cdot40}{24+40}=15\\ \\Omega$. Toàn mạch: $R_{td}=9+15=24\\ \\Omega$, nên $I=\\dfrac{48}{24}=2\\ \\text{A}$.</p><p>Hiệu điện thế hai đầu đoạn song song: $U_{23}=I\\cdot R_{23}=2\\cdot15=30\\ \\text{V}$ (cũng là hiệu điện thế hai đầu $R_2$ và $R_3$).</p><p>$I_2=\\dfrac{30}{24}=1{,}25\\ \\text{A}$. Đáp án A. Kiểm tra: $I_3=\\dfrac{30}{40}=0{,}75\\ \\text{A}$ và $1{,}25+0{,}75=2\\ \\text{A}$ khớp với dòng mạch chính.</p>",
+    "topic": "Mạch hỗn hợp",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Tính ra dòng qua $R_3$ (đảo hai nhánh) chứ không phải qua $R_2$.",
+     "C": "Cho rằng dòng mạch chính chia đều cho hai nhánh song song.",
+     "D": "Lấy luôn cường độ dòng điện mạch chính làm dòng qua $R_2$."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Mạch điện gồm điện trở $R_1=10\\ \\Omega$ nối tiếp với điện trở $R_2=30\\ \\Omega$, nối với nguồn có hiệu điện thế không đổi $40\\ \\text{V}$ qua ampe kế lí tưởng. Khoá K mắc song song với $R_2$. Ban đầu K mở. Sau khi đóng K, số chỉ của ampe kế là</p>",
+    "options": [
+     "$0\\ \\text{A}$.",
+     "$1\\ \\text{A}$.",
+     "$1{,}3\\ \\text{A}$.",
+     "$4{,}0\\ \\text{A}$."
+    ],
+    "answer": 3,
+    "explanation": "<p>K mở: $I=\\dfrac{40}{10+30}=1\\ \\text{A}$.</p><p>K đóng: K có điện trở bằng $0$ và song song với $R_2$ nên $R_2$ bị nối tắt (không có dòng điện qua $R_2$). Mạch chỉ còn $R_1$: $I=\\dfrac{40}{10}=4\\ \\text{A}$. Đáp án D.</p><p>Đóng khoá làm điện trở tương đương giảm từ $40\\ \\Omega$ xuống $10\\ \\Omega$ nên dòng điện tăng gấp $4$ lần.</p>",
+    "topic": "Công tắc, biến trở và cực trị",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Cho rằng đóng khoá là làm hở mạch nên không còn dòng điện.",
+     "B": "Cho rằng đóng K không làm đổi cường độ dòng điện (vẫn là số chỉ lúc K mở).",
+     "C": "Nối tắt nhầm $R_1$ thay vì $R_2$ nên chỉ còn $R_2$ trong mạch."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Giữa hai điểm M và N có hai nhánh song song: nhánh trái gồm $R_1=9\\ \\Omega$ nối tiếp $R_3=15\\ \\Omega$ (điểm nối là P); nhánh phải gồm $R_2=6\\ \\Omega$ nối tiếp $R_4=10\\ \\Omega$ (điểm nối là Q); $R_1$ và $R_2$ cùng nối với M, $R_3$ và $R_4$ cùng nối với N. Mắc thêm điện trở $R_5=8\\ \\Omega$ vào giữa P và Q. Điện trở tương đương giữa M và N là</p>",
+    "options": [
+     "$17{,}6\\ \\Omega$.",
+     "$9{,}6\\ \\Omega$.",
+     "$40\\ \\Omega$.",
+     "$9{,}4\\ \\Omega$."
+    ],
+    "answer": 1,
+    "explanation": "<p>Kiểm tra cân bằng: $\\dfrac{R_1}{R_2}=\\dfrac{9}{6}=1{,}5$ và $\\dfrac{R_3}{R_4}=\\dfrac{15}{10}=1{,}5$, hai tỉ số bằng nhau nên hai điểm P và Q cùng điện thế.</p><p>Không có hiệu điện thế giữa P và Q nên $R_5$ không có dòng điện, có thể bỏ $R_5$ ra khỏi mạch. Còn lại hai nhánh $(9+15)=24\\ \\Omega$ và $(6+10)=16\\ \\Omega$ song song: $R_{td}=\\dfrac{24\\cdot16}{24+16}=9{,}6\\ \\Omega$. Đáp án B.</p><p>Kiểm tra bằng cách chập P với Q: $\\dfrac{9\\cdot6}{15}+\\dfrac{15\\cdot10}{25}=3{,}6+6=9{,}6\\ \\Omega$, khớp.</p>",
+    "topic": "Mạch cầu cân bằng",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "A": "Cộng thêm $R_5$ nối tiếp vào mạch, trong khi $R_5$ không nằm trên đường đi chung của dòng.",
+     "C": "Cộng cả bốn điện trở như nối tiếp, không nhìn ra hai nhánh song song.",
+     "D": "Ghép sai: lấy $(R_1+R_2)$ song song $(R_3+R_4)$ thay vì $(R_1+R_3)$ song song $(R_2+R_4)$."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Điện trở $R_1=5\\ \\Omega$ mắc nối tiếp với đoạn gồm $R_2=20\\ \\Omega$ song song $R_3=30\\ \\Omega$. Đặt vào hai đầu mạch hiệu điện thế không đổi $51\\ \\text{V}$. Ampe kế lí tưởng ở nhánh chính.</p>",
+    "statements": [
+     {
+      "text": "Điện trở tương đương của toàn mạch là $17\\ \\Omega$.",
+      "answer": true
+     },
+     {
+      "text": "Cường độ dòng điện qua $R_2$ là $1{,}2\\ \\text{A}$.",
+      "answer": false
+     },
+     {
+      "text": "Hiệu điện thế giữa hai đầu $R_3$ là $15\\ \\text{V}$.",
+      "answer": false
+     },
+     {
+      "text": "Nếu tháo bỏ $R_3$ thì số chỉ ampe kế giảm, còn dòng điện qua $R_2$ lại tăng lên.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: $R_{23}=\\dfrac{20\\cdot30}{50}=12\\ \\Omega$ nên $R_{td}=5+12=17\\ \\Omega$.</p><p>b) Sai: $I=\\dfrac{51}{17}=3\\ \\text{A}$, $U_{23}=3\\cdot12=36\\ \\text{V}$ nên $I_2=\\dfrac{36}{20}=1{,}8\\ \\text{A}$. Con số $1{,}2\\ \\text{A}$ là dòng qua $R_3$ ($36/30$).</p><p>c) Sai: $R_3$ song song $R_2$ nên chịu $U_3=U_{23}=36\\ \\text{V}$. Giá trị $15\\ \\text{V}$ là hiệu điện thế hai đầu $R_1$ ($3\\cdot5$).</p><p>d) Đúng: bỏ $R_3$ thì $R_{td}=5+20=25\\ \\Omega$, $I=\\dfrac{51}{25}=2{,}04\\ \\text{A}<3\\ \\text{A}$ nên ampe kế giảm. Lúc này toàn bộ dòng đi qua $R_2$ nên $I_2=2{,}04\\ \\text{A}>1{,}8\\ \\text{A}$: dòng qua $R_2$ tăng.</p>",
+    "topic": "Mạch hỗn hợp",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "R23 = 20·30/50 = 12 Ω; R_td = 5 + 12 = 17 Ω.",
+     "1": "I2 = U23/R2 = 36/20 = 1,8 A; 1,2 A là dòng qua R3 (nhầm nhánh).",
+     "2": "R3 song song R2 nên U3 = U23 = 36 V; 15 V là hiệu điện thế trên R1.",
+     "3": "Bỏ R3: R_td tăng lên 25 Ω nên I giảm (2,04 A), nhưng cả dòng qua R2 nên I2 tăng từ 1,8 lên 2,04 A."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Nguồn $45\\ \\text{V}$ không đổi. Điện trở $R_1=15\\ \\Omega$ mắc nối tiếp với đoạn gồm biến trở $R_b$ (điều chỉnh được từ $0$ đến $60\\ \\Omega$) song song điện trở $R_2=30\\ \\Omega$. Ampe kế lí tưởng ở nhánh chính, vôn kế lí tưởng mắc song song với đoạn song song.</p>",
+    "statements": [
+     {
+      "text": "Khi $R_b=0$ thì ampe kế chỉ $3\\ \\text{A}$.",
+      "answer": true
+     },
+     {
+      "text": "Khi $R_b=30\\ \\Omega$ thì vôn kế chỉ $15\\ \\text{V}$.",
+      "answer": false
+     },
+     {
+      "text": "Công suất toả nhiệt trên $R_1$ lớn nhất bằng $135\\ \\text{W}$.",
+      "answer": true
+     },
+     {
+      "text": "Có thể điều chỉnh $R_b$ để vôn kế chỉ $28\\ \\text{V}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $R_b=0$ làm đoạn song song bị nối tắt (điện trở bằng $0$), mạch chỉ còn $R_1$: $I=\\dfrac{45}{15}=3\\ \\text{A}$, đây cũng là giá trị lớn nhất của dòng điện.</p><p>b) Sai: $R_b=30\\ \\Omega$ song song $R_2=30\\ \\Omega$ cho $15\\ \\Omega$; $R_{td}=30\\ \\Omega$, $I=1{,}5\\ \\text{A}$, vôn kế chỉ $1{,}5\\cdot15=22{,}5\\ \\text{V}$ (giá trị $15\\ \\text{V}$ là hiệu điện thế trên $R_1$).</p><p>c) Đúng: $P_1=I^2R_1$ lớn nhất khi $I$ lớn nhất, tức $R_b=0$: $P_1=3^2\\cdot15=135\\ \\text{W}$.</p><p>d) Sai: $R_b$ càng lớn thì đoạn song song càng lớn nên vôn kế càng chỉ nhiều. Lớn nhất khi $R_b=60\\ \\Omega$: đoạn song song $20\\ \\Omega$, $R_{td}=35\\ \\Omega$, $I=\\dfrac{9}{7}\\ \\text{A}$, $U_{\\max}=\\dfrac{9}{7}\\cdot20\\approx25{,}7\\ \\text{V}<28\\ \\text{V}$ nên không thể đạt $28\\ \\text{V}$.</p>",
+    "topic": "Công tắc, biến trở và cực trị",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "R_b = 0 nối tắt đoạn song song, chỉ còn R1: I = 45/15 = 3 A.",
+     "1": "Vôn kế đo hiệu điện thế đoạn song song = 1,5·15 = 22,5 V; 15 V là hiệu điện thế trên R1.",
+     "2": "P1 = I²R1 lớn nhất khi I lớn nhất (R_b = 0): 3²·15 = 135 W.",
+     "3": "Vôn kế chỉ lớn nhất khi R_b = 60 Ω, bằng 180/7 ≈ 25,7 V < 28 V."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Điện trở $R_1$ nối tiếp với đoạn gồm $R_2=30\\ \\Omega$ song song với nhánh có khoá K nối tiếp điện trở $R_3$. Nguồn có hiệu điện thế không đổi $60\\ \\text{V}$; ampe kế lí tưởng ở nhánh chính. Khi K mở ampe kế chỉ $1{,}2\\ \\text{A}$, khi K đóng ampe kế chỉ $1{,}5\\ \\text{A}$. Tính $R_3$ (đơn vị $\\Omega$).</p>",
+    "answer": "60",
+    "explanation": "<p>K mở: nhánh chứa $R_3$ bị cắt, mạch chỉ gồm $R_1$ nối tiếp $R_2$: $R_1+R_2=\\dfrac{60}{1{,}2}=50\\ \\Omega$ nên $R_1=20\\ \\Omega$.</p><p>K đóng: $R_{td}=\\dfrac{60}{1{,}5}=40\\ \\Omega$, suy ra đoạn song song $R_{23}=40-20=20\\ \\Omega$.</p><p>$\\dfrac{1}{R_3}=\\dfrac{1}{20}-\\dfrac{1}{30}=\\dfrac{1}{60}$ nên $R_3=60\\ \\Omega$.</p><p>Kiểm tra: $\\dfrac{30\\cdot60}{90}=20\\ \\Omega$, $R_{td}=40\\ \\Omega$, $I=1{,}5\\ \\text{A}$ khớp.</p><p>Bẫy: lấy $R_{23}=20\\ \\Omega$ làm luôn $R_3$ (quên rằng $R_2$ cũng nằm trong đoạn song song).</p>",
+    "topic": "Công tắc, biến trở và cực trị",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một dây dẫn đồng chất có điện trở $120\\ \\Omega$ được cắt thành hai đoạn có điện trở $x$ và $(120-x)$ (đơn vị ôm, $0\\lt x\\lt120$). Hai đoạn mắc song song với nhau, rồi mắc nối tiếp với điện trở $R_0=25\\ \\Omega$ vào nguồn có hiệu điện thế không đổi $55\\ \\text{V}$. Khi thay đổi cách cắt (thay đổi $x$), cường độ dòng điện chạy qua nguồn có giá trị nhỏ nhất bằng bao nhiêu ampe?</p>",
+    "answer": "1",
+    "explanation": "<p>Đoạn song song: $R_p=\\dfrac{x(120-x)}{120}$. Với tổng $x+(120-x)=120$ không đổi, tích $x(120-x)\\le\\left(\\dfrac{120}{2}\\right)^2=3600$, dấu bằng khi $x=60\\ \\Omega$.</p><p>Vậy $R_{p,\\max}=\\dfrac{3600}{120}=30\\ \\Omega$.</p><p>$I=\\dfrac{55}{25+R_p}$ nhỏ nhất khi $R_p$ lớn nhất: $I_{\\min}=\\dfrac{55}{25+30}=1\\ \\text{A}$ (khi $x=60\\ \\Omega$).</p><p>Bẫy: lấy $R_p=\\dfrac{120}{2}=60\\ \\Omega$ (nhầm là điện trở một đoạn) cho $I\\approx0{,}65\\ \\text{A}$; hoặc lấy $R_p=x+(120-x)=120\\ \\Omega$ như thể hai đoạn mắc nối tiếp.</p>",
+    "topic": "Công tắc, biến trở và cực trị",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

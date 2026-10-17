@@ -6,8 +6,8 @@ Lập 16/10/2026 từ `31_lo-trinh-17-buoi-thu-7.md`. Quy trình mỗi chuyên �
 |---|---|---|---|
 | đang Hiện | CĐ00 (160), CĐ01 (161), CĐ02 (166), CĐ10 (155), CĐ11 (154), CĐ13 (162), BT tuần (167) | thiếu 6+ câu `luyen_tap` tự chấm mỗi bài (hiện chưa có) | 3–6 |
 | 14/11 | CĐ12 Nhiệt (153), CĐ16 Truyền nhiệt (164) | ĐÃ GHI DB 16/10 (lý thuyết, 6 dạng + 8 tự luận, luyện tập 8 câu: đề 932, 931), đã deploy; thầy duyệt, ĐANG HIỆN từ 17/10 | 7 (21/11) |
-| 21/11 | CĐ03 Ohm (159) | đã ghi DB, cần thầy duyệt + Hiện | 8 (28/11) |
-| 28/11 | CĐ04 (157) | đã ghi DB, cần duyệt + Hiện | 9 (05/12) |
+| 21/11 | CĐ03 Ohm (159) | ĐANG HIỆN từ 17/10, luyện tập 8 câu (đề 975) | 8 (28/11) |
+| 28/11 | CĐ04 (157) | ĐANG HIỆN từ 17/10, luyện tập 8 câu (đề 976) | 9 (05/12) |
 | 12/12 | CĐ05 (165) | đã ghi DB, cần duyệt + Hiện | 11 (19/12) |
 | 26/12 | CĐ14 (158), CĐ06 (151), CĐ17 (178) | CĐ06 ĐÃ GHI DB 17/10 (ẩn, luyện tập đề 934). CĐ14 (đề 939), CĐ17 (đề 940) ĐÃ GHI DB 17/10 (ẩn) sau dò lần 2, đã deploy; chờ thầy duyệt bật Hiện | 13 (02/01) |
 | 02/01 | CĐ07 Thấu kính (156) | ĐÃ GHI DB 17/10 (ẩn, luyện tập đề 938) sau dò lần 2, đã deploy; chờ thầy duyệt bật Hiện | 14 (09/01) |

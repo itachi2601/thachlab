@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Điện trở và định luật Ohm",
+  "topic": "Định luật Ohm và đồ thị U–I",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một sợi dây kim loại được giữ ở nhiệt độ không đổi. Đặt vào hai đầu dây hiệu điện thế $6\\ \\text{V}$ thì cường độ dòng điện là $0{,}3\\ \\text{A}$. Phát biểu nào sau đây đúng khi tăng hiệu điện thế lên $9\\ \\text{V}$?</p>",
+    "options": [
+     "Điện trở của dây tăng lên vì $R=\\dfrac{U}{I}$ và $U$ tăng.",
+     "Điện trở của dây giảm đi vì cường độ dòng điện tăng.",
+     "Cường độ dòng điện tăng lên $0{,}45\\ \\text{A}$, còn điện trở của dây vẫn là $20\\ \\Omega$.",
+     "Cường độ dòng điện vẫn là $0{,}3\\ \\text{A}$ vì điện trở của dây không đổi."
+    ],
+    "answer": 2,
+    "explanation": "<p>Điện trở $R=\\dfrac{6}{0{,}3}=20\\ \\Omega$ chỉ phụ thuộc vật liệu, kích thước và nhiệt độ của dây. Nhiệt độ không đổi nên $R$ không đổi.</p><p>Theo định luật Ohm, $I=\\dfrac{U}{R}=\\dfrac{9}{20}=0{,}45\\ \\text{A}$. Đáp án C.</p><p>A và B hiểu $R=\\dfrac{U}{I}$ như quan hệ phụ thuộc: $U$ và $I$ đổi theo cùng tỉ lệ, thương số của chúng giữ nguyên.</p><p>D sai vì $R$ không đổi thì $I$ phải tăng theo $U$.</p>",
+    "topic": "Định luật Ohm và đồ thị U–I",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Hiểu công thức R = U/I như R tỉ lệ với U; thực tế U tăng thì I tăng theo, thương số không đổi.",
+     "B": "Hiểu R tỉ lệ nghịch với I; R là đặc trưng của vật dẫn, không đổi theo I.",
+     "D": "Cho rằng R không đổi thì I không đổi; phải có I = U/R tăng theo U."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Dây constantan có điện trở suất $\\rho=0{,}5\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, dài $15\\ \\text{m}$, tiết diện tròn, đường kính $0{,}3\\ \\text{mm}$. Điện trở của dây xấp xỉ</p>",
+    "options": [
+     "$27\\ \\Omega$.",
+     "$53\\ \\Omega$.",
+     "$83\\ \\Omega$.",
+     "$106\\ \\Omega$."
+    ],
+    "answer": 3,
+    "explanation": "<p>Tiết diện: $S=\\dfrac{\\pi d^2}{4}=\\dfrac{\\pi\\,(0{,}3\\cdot10^{-3})^2}{4}\\approx7{,}07\\cdot10^{-8}\\ \\text{m}^2$.</p><p>$R=\\rho\\dfrac{l}{S}=0{,}5\\cdot10^{-6}\\cdot\\dfrac{15}{7{,}07\\cdot10^{-8}}\\approx106\\ \\Omega$. Đáp án đúng là $106\\ \\Omega$.</p><p>Đổi $0{,}3\\ \\text{mm}=0{,}3\\cdot10^{-3}\\ \\text{m}$ trước khi tính; lỗi hay gặp nằm ở công thức tiết diện.</p>",
+    "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Dùng S = πd² (quên chia 4) nên S lớn gấp 4, R nhỏ đi 4 lần.",
+     "B": "Dùng S = πd²/2 (nhầm chia 2 thay vì chia 4).",
+     "C": "Coi tiết diện là d² (hình vuông), quên hệ số π/4."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai dây dẫn cùng vật liệu, tiết diện tròn. So với dây 1, dây 2 dài gấp $3$ lần và có đường kính gấp $2$ lần. Tỉ số $\\dfrac{R_2}{R_1}$ bằng</p>",
+    "options": [
+     "$0{,}75$.",
+     "$1{,}5$.",
+     "$6$.",
+     "$12$."
+    ],
+    "answer": 0,
+    "explanation": "<p>$R=\\rho\\dfrac{l}{S}$ với $S=\\dfrac{\\pi d^2}{4}$ nên $S_2=4S_1$ (đường kính gấp $2$ thì tiết diện gấp $4$).</p><p>$\\dfrac{R_2}{R_1}=\\dfrac{l_2/l_1}{S_2/S_1}=\\dfrac{3}{4}=0{,}75$. Đáp án A.</p>",
+    "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "B": "Coi tiết diện tỉ lệ với đường kính (S2 = 2S1): 3/2 = 1,5.",
+     "C": "Nhân chiều dài với đường kính (3·2) thay vì chia cho tiết diện.",
+     "D": "Nhân chiều dài với tiết diện (3·4) thay vì chia."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đồ thị cường độ dòng điện $I$ (trục tung) theo hiệu điện thế $U$ (trục hoành) của hai vật dẫn $(1)$ và $(2)$ đều là đường thẳng qua gốc toạ độ. Khi $U=6\\ \\text{V}$, cường độ dòng điện qua vật dẫn $(1)$ là $0{,}3\\ \\text{A}$ và qua vật dẫn $(2)$ là $0{,}1\\ \\text{A}$. Mắc hai vật dẫn nối tiếp vào nguồn $12\\ \\text{V}$ (nguồn lí tưởng) thì cường độ dòng điện trong mạch là</p>",
+    "options": [
+     "$0{,}15\\ \\text{A}$.",
+     "$0{,}2\\ \\text{A}$.",
+     "$0{,}4\\ \\text{A}$.",
+     "$0{,}8\\ \\text{A}$."
+    ],
+    "answer": 0,
+    "explanation": "<p>Từ đồ thị: $R_1=\\dfrac{6}{0{,}3}=20\\ \\Omega$, $R_2=\\dfrac{6}{0{,}1}=60\\ \\Omega$.</p><p>Nối tiếp: $R=R_1+R_2=80\\ \\Omega$ nên $I=\\dfrac{12}{80}=0{,}15\\ \\text{A}$. Đáp án A.</p><p>Hệ số góc của đồ thị $I$–$U$ là $\\dfrac{1}{R}$, không phải $R$.</p>",
+    "topic": "Định luật Ohm và đồ thị U–I",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Lấy trung bình hai cường độ (0,3 + 0,1)/2 = 0,2 A; trong mạch nối tiếp dòng điện qua hai vật bằng nhau và cho bởi U/(R1+R2).",
+     "C": "Cộng hai cường độ ở 6 V (0,3 + 0,1 = 0,4 A), như thể hai vật mắc song song vào 6 V.",
+     "D": "Mắc song song vào 12 V: 12/15 = 0,8 A (nhầm cách mắc)."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một dây dẫn đồng chất, tiết diện đều có điện trở $48\\ \\Omega$ được cắt thành hai đoạn có chiều dài theo tỉ lệ $1:3$. Bỏ qua điện trở các mối nối và dây nối.</p>",
+    "statements": [
+     {
+      "text": "Đoạn dài có điện trở $36\\ \\Omega$.",
+      "answer": true
+     },
+     {
+      "text": "Ghép song song hai đoạn thì điện trở tương đương bằng $24\\ \\Omega$.",
+      "answer": false
+     },
+     {
+      "text": "Khi hai đoạn mắc song song vào cùng một nguồn, dòng điện qua đoạn dài lớn hơn dòng điện qua đoạn ngắn.",
+      "answer": false
+     },
+     {
+      "text": "Nối bộ hai đoạn song song vào nguồn $18\\ \\text{V}$ thì dòng điện qua mạch chính là $2\\ \\text{A}$, trong đó qua đoạn ngắn là $1{,}5\\ \\text{A}$.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: điện trở tỉ lệ với chiều dài (cùng vật liệu và tiết diện). Đoạn ngắn $\\dfrac{1}{4}\\cdot48=12\\ \\Omega$, đoạn dài $\\dfrac{3}{4}\\cdot48=36\\ \\Omega$.</p><p>b) Sai: $R_{\\text{td}}=\\dfrac{12\\cdot36}{12+36}=9\\ \\Omega$. Con số $24\\ \\Omega$ là trung bình cộng, không phải điện trở song song.</p><p>c) Sai: song song thì hiệu điện thế như nhau, $I=\\dfrac{U}{R}$ nên đoạn có điện trở nhỏ (đoạn ngắn) có dòng điện lớn hơn.</p><p>d) Đúng: $I_{\\text{ngắn}}=\\dfrac{18}{12}=1{,}5\\ \\text{A}$, $I_{\\text{dài}}=\\dfrac{18}{36}=0{,}5\\ \\text{A}$, tổng $2\\ \\text{A}=\\dfrac{18}{9}$.</p>",
+    "topic": "Cắt dây, kéo dãn dây",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "R tỉ lệ với chiều dài: 3/4 chiều dài ứng với 3/4·48 = 36 Ω.",
+     "1": "Điện trở tương đương song song là 12·36/48 = 9 Ω, không phải trung bình cộng.",
+     "2": "Song song cùng U: R nhỏ hơn thì I lớn hơn, đoạn ngắn có dòng lớn hơn.",
+     "3": "I = U/R: 18/12 = 1,5 A và 18/36 = 0,5 A; tổng 2 A = 18/9."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Nguồn lí tưởng có hiệu điện thế $9\\ \\text{V}$ nối tiếp với hai điện trở $R_1=200\\ \\Omega$ và $R_2=100\\ \\Omega$. Dùng vôn kế có điện trở $R_V=300\\ \\Omega$ mắc song song với $R_2$ để đo hiệu điện thế giữa hai đầu $R_2$.</p>",
+    "statements": [
+     {
+      "text": "Khi chưa mắc vôn kế, hiệu điện thế giữa hai đầu $R_2$ bằng $3\\ \\text{V}$.",
+      "answer": true
+     },
+     {
+      "text": "Khi mắc vôn kế, điện trở tương đương của $R_2$ và vôn kế bằng $75\\ \\Omega$.",
+      "answer": true
+     },
+     {
+      "text": "Số chỉ của vôn kế lớn hơn $3\\ \\text{V}$ vì có thêm một nhánh cho dòng điện đi qua.",
+      "answer": false
+     },
+     {
+      "text": "Nếu dùng vôn kế $R_V=3\\ \\text{k}\\Omega$ thì số chỉ vẫn thấp hơn giá trị thật quá $5\\,\\%$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $U_2=9\\cdot\\dfrac{100}{200+100}=3\\ \\text{V}$.</p><p>b) Đúng: $\\dfrac{100\\cdot300}{100+300}=75\\ \\Omega$.</p><p>c) Sai: thêm nhánh song song làm điện trở của đoạn chứa $R_2$ giảm, phần hiệu điện thế dồn vào $R_2$ giảm theo: $U_V=9\\cdot\\dfrac{75}{200+75}\\approx2{,}45\\ \\text{V}\\lt3\\ \\text{V}$ (thấp hơn khoảng $18\\,\\%$).</p><p>d) Sai: với $R_V=3000\\ \\Omega$, $R_{\\text{td}}\\approx96{,}8\\ \\Omega$, $U_V\\approx2{,}93\\ \\text{V}$, thấp hơn giá trị thật khoảng $2\\,\\%$, nhỏ hơn $5\\,\\%$.</p>",
+    "topic": "Ampe kế, vôn kế có điện trở",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Nguồn chia theo tỉ lệ điện trở nối tiếp: U2 = 9·100/300 = 3 V.",
+     "1": "Song song: 100·300/(100 + 300) = 75 Ω.",
+     "2": "Thêm nhánh song song làm điện trở đoạn giảm nên hiệu điện thế trên đoạn giảm, vôn kế chỉ nhỏ hơn 3 V.",
+     "3": "R_V = 3000 Ω chỉ gây lệch khoảng 2 %, không quá 5 %."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Bóng đèn ghi $6\\ \\text{V}-0{,}5\\ \\text{A}$ mắc nối tiếp với một biến trở vào nguồn lí tưởng $15\\ \\text{V}$ sao cho đèn sáng bình thường. Biến trở được quấn bằng dây nicrom có điện trở suất $1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, đường kính tiết diện $0{,}2\\ \\text{mm}$. Chiều dài dây nicrom của phần biến trở đang được dùng là bao nhiêu mét? Làm tròn đến $0{,}01\\ \\text{m}$.</p>",
+    "answer": "0,51",
+    "explanation": "<p>Đèn sáng bình thường nên $I=0{,}5\\ \\text{A}$ và hiệu điện thế giữa hai đầu đèn là $6\\ \\text{V}$.</p><p>Biến trở chịu $U_b=15-6=9\\ \\text{V}$ nên $R_b=\\dfrac{9}{0{,}5}=18\\ \\Omega$.</p><p>$S=\\dfrac{\\pi d^2}{4}=\\dfrac{\\pi\\,(0{,}2\\cdot10^{-3})^2}{4}\\approx3{,}14\\cdot10^{-8}\\ \\text{m}^2$.</p><p>$l=\\dfrac{R_bS}{\\rho}=\\dfrac{18\\cdot3{,}14\\cdot10^{-8}}{1{,}1\\cdot10^{-6}}\\approx0{,}51\\ \\text{m}$.</p><p>Bẫy: lấy $R_b=\\dfrac{15}{0{,}5}=30\\ \\Omega$ (quên phần hiệu điện thế của đèn) sẽ ra $\\approx0{,}86\\ \\text{m}$.</p>",
+    "topic": "Biến trở",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một dây đồng chất, tiết diện tròn đều có điện trở $4\\ \\Omega$. Kéo dãn dây (thể tích không đổi, vẫn có tiết diện tròn đều) sao cho đường kính tiết diện giảm đi $3$ lần. Điện trở của dây sau khi kéo bằng bao nhiêu $\\Omega$?</p>",
+    "answer": "324",
+    "explanation": "<p>Thể tích không đổi: $lS=\\text{const}$. Đường kính giảm $3$ lần thì tiết diện giảm $3^2=9$ lần, nên chiều dài tăng $9$ lần.</p><p>$R=\\rho\\dfrac{l}{S}$ tăng $9\\cdot9=81$ lần: $R'=4\\cdot81=324\\ \\Omega$.</p><p>Bẫy: chỉ tính theo chiều dài ($\\times9$, ra $36\\ \\Omega$) hoặc theo đường kính ($\\times3$, ra $12\\ \\Omega$) là quên một trong hai thay đổi.</p>",
+    "topic": "Cắt dây, kéo dãn dây",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}
