@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **Chờ chạy (viết 18/10):** `20261018100000_canh_bao_vang_mat_inactive_absent` (DT-07: cảnh báo inactive_7d + absent_streak, cron 6:00 VN). Chưa có nút "Rà lại" trên dashboard; xem trước số cảnh báo sẽ tạo bằng giao dịch rollback trước khi bật cron.
 - **Đã chạy 17/10 17:52:** `20261017230000_learning_events` (DT-01) + `20261017231000_feature_flags` (DT-12); hậu kiểm RLS/grant/cron/hàm đạt, thử hàm trong giao dịch rollback. Chưa có code client gọi `log_learning_events`/`feature_enabled`; kế hoạch ở `docs/thachlab-design-thinking-audit.md`. Còn: chạy `node scripts/gen-database-doc.mjs`.
 - **DT-01 client deploy 17/10 (563d50df6), chưa xác nhận bằng dữ liệu thật:** sau vài ngày có HS dùng, chạy `select kind, count(*), avg(duration_s) from learning_events group by 1` (qua `supabase db query --linked`); không thấy dòng nào thì kiểm `InlineLessonAccordion` + `services/learning-events.ts`. Deploy phải build từ worktree sạch khi `scripts/` có file `.mts` chưa commit làm `next build` lỗi typecheck.
 - **Đã chạy 17/10 14:28:** `20261017150000_reset_code_manh_hon` (mã reset RS+10 hex, CHECK hạn ≤7 ngày; đã hậu kiểm default + ràng buộc).
