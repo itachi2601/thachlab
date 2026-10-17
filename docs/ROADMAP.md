@@ -61,8 +61,10 @@ dữ liệu làm bài từng câu; native quiz 3 dạng; retention gộp kết q
 ## Giai đoạn 1 — Đo và chỉnh vòng lặp động lực (10/2026, hết mùa thử nghiệm 25/10)
 Nguyên tắc: **không thêm lớp động lực mới** (danh hiệu, thành tích, bảng) cho tới khi có số
 liệu mùa 1. Chỉ sửa cái đang có.
-- [ ] Test toàn bộ luồng bằng 2–3 tài khoản HS thật (mobile 375px): nhận danh hiệu, đeo, khung
-      sưu tập, bảng tuần, rơi vào phụ đạo, thoát phụ đạo.
+- [~] Test toàn bộ luồng bằng 2–3 tài khoản HS thật (mobile 375px): nhận danh hiệu, đeo, khung
+      sưu tập, bảng tuần, rơi vào phụ đạo, thoát phụ đạo. **15/10/2026:** đã thử bằng 2 tài khoản HS Test
+      (desktop, dev local): chạy đúng, 5 lỗi đã sửa (5a977bddd, chờ deploy). Còn: 375px, đường thoát phụ đạo
+      đạt ≥80%, thử bằng HS thật, TA đọc kết quả, kho bẫy, mạng nhện với dữ liệu thật.
 - [ ] Đo mùa 1 (21/09–25/10) so với 4 tuần trước 21/09: số HS làm bài mỗi tuần, số bài/HS,
       % HS nhận ≥1 danh hiệu trong 2 tuần đầu, % HS còn làm bài ở tuần 4–5 (độ rơi), số HS
       trong "cần phụ đạo" và tỉ lệ thoát bằng tự kiểm tra vs bằng buổi học.

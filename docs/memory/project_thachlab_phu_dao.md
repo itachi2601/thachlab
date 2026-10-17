@@ -101,3 +101,5 @@ Thầy chốt: hạn đăng ký 6 giờ trước giờ học, tối đa 3 chủ 
 - `20261014110000`: `attended` do TA đặt qua RPC `tutoring_mark_attendance` (chỉ khi buổi đã bắt đầu); `ta_sessions.slot_id` (phiếu chỉ gồm em đăng ký + có mặt), `tutoring_exit_windows.slot_id`; RPC `tutoring_followup_report` (thầy). Bài kiểm tra chỉ tính tới buổi kế tiếp cùng chủ đề của em.
 - UI: `SlotTopicPicker` (HS + phụ huynh qua `CatchupCard`), điểm danh + nút "Ghi phiếu cho buổi này" ở `TutoringSlotsPlanner`, phiếu điền sẵn từ `?slot=`, `TutoringFollowupReport` đầu tab Phụ đạo thầy.
 - Treo: mục 3 và 6; chưa thử UI bằng HS/TA thật; đăng ký cũ (`topic_ids` rỗng) hiện "chưa chọn chủ đề"; trang GV `text-white/slate` chưa kiểm nền sáng.
+
+**2026-10-15 — thử bằng HS Test + sửa 5 lỗi (5a977bddd, chưa deploy):** xem [[project_thachlab_hs_test_accounts]]. Phụ đạo đăng ký/huỷ và thoát phụ đạo đường chưa đạt chạy đúng; `SlotTopicPicker` → buổi đã đăng ký giờ hiện "Em đã chọn: …".

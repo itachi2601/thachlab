@@ -29,12 +29,14 @@ Bài tương tự lấy từ `question_bank` theo YCCĐ (`question_topics`). KHT
 | 05 | Công suất điện, Joule–Lenz | Điện | 91 | L11 b25 (44) | 193, 194 |
 | 06 | Khúc xạ, phản xạ toàn phần, lăng kính | Quang – TĐ | 83, 84, 85 | — | — |
 | 07 | Thấu kính, kính lúp | Quang – TĐ | 86, 87, 88 | — | — |
-| 14 | Gương phẳng; Trái Đất – bầu trời | Quang – TĐ | — | — | — |
+| 14 | Gương phẳng, bóng tối và nửa tối | Quang – TĐ | — | — | — |
+| 17 | **Thiên văn** (mới): Mặt Trăng, Hệ Mặt Trời, Ngân Hà | Quang – TĐ | — | — | — (không có) |
 | 08 | Cảm ứng điện từ, dòng xoay chiều | Điện từ – NL | 92, 93 | L12 b12–b15 (13, 14, 125, 126) | 217–220, 235–238 |
 | 09 | Năng lượng với cuộc sống | Điện từ – NL | 94, 95 | L12 b16 (17) phân hạch/nhiệt hạch | — |
 
 ## Đối chiếu với đề cương "THI HSG 9 KHTN 26-27" (mạch Năng lượng)
 Đủ: tốc độ (13), năng lượng cơ học (01, 02), khối lượng riêng – áp suất (11), năng lượng nhiệt (12), ánh sáng (06, 07, 14), điện (03–05), điện từ (08), Hệ Mặt Trời – Mặt Trăng (14), nhiên liệu hoá thạch và ấm lên toàn cầu (09).
+Phần chung ~30% (Trái Đất – bầu trời): chỉ làm phần Vật lí – thiên văn = **CĐ17** (thêm 14/10/2026, migration 20261014150000); phần Hóa – Sinh của mục này thầy chốt KHÔNG soạn.
 Thiếu (đã đặt chỗ trong khung, bài ẩn, "đang soạn"): **CĐ10 Lực** · **CĐ15 Âm thanh** · **CĐ16 Truyền nhiệt và nở vì nhiệt**. Mỏng: Ngân Hà (14), chu trình carbon (09), áp suất khí quyển (11) — thêm đoạn lý thuyết khi soạn lại.
 
 ## Quy trình mỗi chuyên đề

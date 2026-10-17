@@ -18,6 +18,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
+- **Deploy 5a977bddd (15/10):** sửa 5 lỗi UI học sinh (đếm câu `-conf` ở bước xem lại lý thuyết phụ đạo, danh hiệu đã nhận luôn hiện, chủ đề đã chọn dưới buổi phụ đạo, lời chào em mới, mô tả thành tích lặp). Đã kiểm trên dev local bằng HS Test (`scripts/tao-hs-test.mjs`, `gieo-hs-test.mjs`); chưa deploy, chưa chụp 375px, chưa thử đường đạt ≥80% của bài thoát phụ đạo. Chi tiết: `docs/memory/project_thachlab_hs_test_accounts.md`. Cây làm việc còn thay đổi chưa commit của phiên khác (đăng nhập/PublicAuthGate, AdminHomeToday) — KHÔNG deploy khi chưa hỏi.
 - Mạng nhện Theo chương / Cả khoá (HSG: Theo mảng): migration `20261014160000` đã chạy 14/10 17:41, deploy 14/10 (commit 10eed8050). Chờ thầy xem 375px với dữ liệu thật; chưa có "Theo học kì" (DB chưa có trường học kì).
 - Thử "🧰 Kiểm tra hành trang" (2 câu kiến thức nền + Nhắc nhanh) ở 10 bài chương 3 L10 (lesson 58–67), đã đăng DB 13/10, không cần deploy. Chờ đo: tỉ lệ đọc hết bài + đúng quiz giữa bài trước/sau; ổn thì làm chương khác (`scripts/chen-hanh-trang.py`, PHUONG-PHAP §4.2b).
 - Mã QR đề (`ExamQrPanel`, `/quet-ma`): chưa thử iPhone + Android thật; chưa làm QR cho CNC và `LessonImporter`.

@@ -307,3 +307,9 @@ Trang công khai `/dieu-khoan` đã cam kết với người học và chủ s�
 - Số mũ mất `^` (`x.105 Pa`, `a.109 Hz`, `3.108 m/s`): hệ số có thể là **chữ cái** chứ không chỉ chữ số; có khi mất cả dấu trừ (`10.103` = `10.10^-3`) — đối chiếu lời giải/câu anh em trước khi sửa. Script: `scripts/sua-so-mu-ngan-hang.mts --only=mu10` (dry-run → `--apply`, tự sao lưu), quét lại bằng `scripts/quet-so-mu-mo-rong.mts` tới khi chỉ còn ca nghi ngờ.
 - **Ca nghi ngờ KHÔNG tự đoán, không chỉ liệt kê trong chat**: ghi `scripts/data/duyet/<đợt>/items.json` (`id`, `ghiChu`, `deXuat`) → `npx tsx scripts/lap-duyet-html.mts <thư-mục>` dựng `duyet.html` (có KaTeX, 4 lựa chọn Sửa theo đề xuất / Sửa theo ý thầy / Bỏ / Giữ + ô yêu cầu sửa, tự lưu `phan-hoi.json` khi thầy chọn file lưu một lần) → gửi/mở cho thầy. Thầy xong thì đọc `phan-hoi.json`, chạy `scripts/ap-dung-duyet.mts <thư-mục>` ("Bỏ" = ẩn `archived=true`, có sao lưu), tự sửa các câu "Sửa" theo đề xuất/ý thầy rồi quét lại và báo.
 - Đơn vị mất `^` (`m/s2`, `cm3`) tách đợt riêng: `m2` có thể là khối lượng.
+
+# Lệnh chạy trên hosting — không bao giờ đưa dạng khối bash trần (sự cố 17/10/2026)
+Lệnh cron hosting `git fetch && git reset --hard origin/deploy && git clean -fdx` đã bị chạy nhầm trong repo trên Mac: xoá `.env.local`,
+memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB), `node_modules`. Không có Time Machine; phải dựng lại từ transcript Claude.
+- Lệnh phá huỷ (`reset --hard`, `clean -fdx`, `rm -rf`) dành cho máy khác: chỉ mô tả bằng lời hoặc kèm `cd <đường dẫn trên máy đó> &&` + cảnh báo "KHÔNG chạy trên Mac"; không đặt trong khối ```bash``` (app có nút Run).
+- Commit sớm, kể cả ghi chú/memory; file chỉ có ở Mac (`.env.local`, `feedback_*`) nên có bản sao ngoài repo.

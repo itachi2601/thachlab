@@ -28,7 +28,6 @@
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi thầy bảo
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải/đề: mỗi trường hợp một dòng
 ## Hạ tầng & tra cứu
-- [Credit $100 Anthropic API](project_thachlab_anthropic_credit.md) — hết hạn 22/10/2026, chỉ API/Batch
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f`
 - [Hosting](project_thachlab_hosting.md) — DirectAdmin, Thachlab.id.vn
@@ -69,7 +68,6 @@
 - [Mastery YCCĐ](project_thachlab_mastery_yccd.md) — chưa test UI
 - [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%, tối đa 3 lượt
 - [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ
-- [Quy chế trợ giảng](project_thachlab_ta_policy.md) — chấm tháng + hệ số lương; đã deploy
 - [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — iPhone ngang chiếu tivi; RLS exam_results cho TA; UI Xếp hạng mobile; treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
@@ -81,14 +79,11 @@
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
 - [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — thẻ HS ẩn danh + panel GV; heartbeat mới ở lý thuyết, chưa có ở đề/luyện tập
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
-- [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc đã xếp thứ tự, chờ thầy chốt mục 5 của `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan đã deploy 12/10; treo nhãn nguồn từng câu, chưa xem 375px
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn + kiểm chéo xong 12/10, chờ thầy duyệt rồi đăng; skill `phet` mới
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — chẩn đoán 3 câu/bài → mở phụ đạo + báo phụ huynh; deploy 12/10, chưa thử HS thật, thiếu nút làm lại cho GV
-- [Dashboard GV THPT](project_thachlab_dashboard_gv_thpt.md) — lọc đề theo khối + gộp tab xong 13/10 (137387c07); chưa thử trình duyệt, chưa push
 - [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo mảng); treo thử 375px thật
-- [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
+- [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 15/10: thử luồng danh hiệu/phụ đạo, 5 lỗi đã sửa (5a977bddd), chờ deploy
 ## Việc mới 30/9
-- [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — hook + đố A/B/C + khung ảnh xong 14/10; treo Gemini tìm ảnh, chưa deploy

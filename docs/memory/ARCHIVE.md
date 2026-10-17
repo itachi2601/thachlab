@@ -69,3 +69,9 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 
 - [Tối ưu tốc độ](project_thachlab_perf_optimization.md) — 5 đợt xong 27/9
 - [Hoạt động lớp học](project_thachlab_hoat_dong_lop_hoc.md) — quiz live PIN; migration đã chạy, deploy 12/10
+
+- [Credit $100 Anthropic API](project_thachlab_anthropic_credit.md) — hết hạn 22/10/2026, chỉ API/Batch
+- [Quy chế trợ giảng](project_thachlab_ta_policy.md) — chấm tháng + hệ số lương; đã deploy
+- [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
+- [Dashboard GV THPT](project_thachlab_dashboard_gv_thpt.md) — lọc đề theo khối + gộp tab xong 13/10 (137387c07); chưa thử trình duyệt, chưa push
+- [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
