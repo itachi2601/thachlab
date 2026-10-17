@@ -55,3 +55,4 @@ Mỗi bước một `<li>`. Nhãn a) b) c) cho câu hỏi thi thì dùng `<p>a) 
 ## Nhật ký rút kinh nghiệm
 Dạng: `- YYYY-MM-DD · <sự cố> → <quy tắc>`.
 - 2026-10-12 · Tạo skill sau đợt L9 cơ học (bài 129–131): 3 agent soạn bước "Thử" cho PhET theo trí nhớ, cả 3 báo "cần thầy bấm thử" → bắt buộc mở sim thật (bước 3) và ghi đã thử/chưa thử vào TIEN-DO.
+- 2026-10-18 · Đợt L12 ch1–2: `build_figs.py` sinh lại SVG khác bản trong DB nên build lại `theory.html` sẽ lẫn thay đổi hình → chèn khối PhET thẳng vào cả `theory.src.html` lẫn `theory.html` (chỉ thêm dòng), diff chỉ được là `+`. Sim `gas-properties` giữ ~300 K khi nén tường nên KHÔNG viết "nén thì nóng"; thanh Nóng–Mát nhích ~1 K mỗi lần kéo, không dùng để minh hoạ tiến sát 0 K. WebSearch không lập chỉ mục YouTube → video chuyển sang `prompts-video.md` ngay, đừng tốn lượt tìm.
