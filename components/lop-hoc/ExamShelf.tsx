@@ -56,7 +56,7 @@ export default function ExamShelf({ exams }: { exams: ExamMeta[] }) {
   if (exams.length === 0) return null;
 
   return (
-    <section className="lesson-section" aria-label="Đề thi">
+    <section id="de-thi" className="lesson-section scroll-mt-24" aria-label="Đề thi">
       <h2>Đề thi</h2>
       <div className="class-subjects" role="tablist" aria-label="Loại đề">
         <button type="button" role="tab" aria-selected={active === "all"} className={active === "all" ? "is-active" : ""} onClick={() => setActive("all")}>

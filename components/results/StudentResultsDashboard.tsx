@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, BookOpen, ChevronDown, RotateCcw, Sparkles, Target, Trophy } from "lucide-react";
+import { AlertTriangle, ArrowRight, BookOpen, ChevronDown, RotateCcw, Search, Sparkles, Target, Trophy } from "lucide-react";
 import Html from "@/components/exams/ContentHtml";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
@@ -280,6 +280,86 @@ function GapRow({
         </div>
       )}
     </div>
+  );
+}
+
+const ATTEMPTS_PAGE = 10;
+const ATTEMPT_FILTERS = [
+  { key: "all", label: "Tất cả" },
+  { key: "fail", label: "Chưa đạt" },
+  { key: "pass", label: "Đạt" },
+] as const;
+
+/** Bỏ dấu + hạ chữ thường để gõ "song co" vẫn tìm ra "Sóng cơ". */
+function foldVi(text: string): string {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase();
+}
+
+/**
+ * "Bài đã làm" của học sinh: từ 6 bài trở lên có ô tìm theo tên + lọc Đạt/Chưa đạt, mỗi lần hiện 10 bài (N3).
+ * Mỗi dòng đã dẫn tới trang xem lại bài làm + lời giải. Phụ huynh giữ danh sách phẳng như cũ (P-rules).
+ */
+function StudentAttemptList({ attempts }: { attempts: ScorePoint[] }) {
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState<(typeof ATTEMPT_FILTERS)[number]["key"]>("all");
+  const [shown, setShown] = useState(ATTEMPTS_PAGE);
+  const showTools = attempts.length > ATTEMPTS_PAGE / 2;
+  const rows = useMemo(() => {
+    const q = foldVi(query.trim());
+    return attempts.filter((p) => {
+      if (filter === "pass" && p.score < PASS) return false;
+      if (filter === "fail" && p.score >= PASS) return false;
+      return !q || foldVi(`${p.examTitle} ${p.periodic ? p.kindLabel : ""}`).includes(q);
+    });
+  }, [attempts, query, filter]);
+  return (
+    <>
+      {showTools && (
+        <div className="mb-3 space-y-2">
+          <label className="flex min-h-11 items-center gap-2 rounded-xl border border-line bg-panel px-3">
+            <Search size={16} className="shrink-0 text-muted" aria-hidden />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => { setQuery(e.target.value); setShown(ATTEMPTS_PAGE); }}
+              placeholder="Tìm bài đã làm theo tên"
+              aria-label="Tìm bài đã làm theo tên"
+              className="min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-muted"
+            />
+          </label>
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Lọc bài đã làm">
+            {ATTEMPT_FILTERS.map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                aria-pressed={filter === f.key}
+                onClick={() => { setFilter(f.key); setShown(ATTEMPTS_PAGE); }}
+                className={`min-h-11 rounded-full border px-4 text-sm font-semibold ${
+                  filter === f.key ? "border-primary bg-primary-soft text-primary" : "border-line text-ink hover:border-line-strong"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="space-y-3">
+        {rows.slice(0, shown).map((p) => (
+          <AttemptRow key={p.resultId} point={p} viewer="student" />
+        ))}
+      </div>
+      {rows.length === 0 && <p className="text-sm text-muted">Không có bài nào khớp. Thử bỏ bớt bộ lọc.</p>}
+      {rows.length > shown && (
+        <button
+          type="button"
+          onClick={() => setShown((n) => n + ATTEMPTS_PAGE)}
+          className="mt-3 min-h-11 w-full rounded-xl border border-line px-4 text-sm font-semibold text-ink hover:border-line-strong"
+        >
+          Xem thêm {Math.min(ATTEMPTS_PAGE, rows.length - shown)} bài
+        </button>
+      )}
+    </>
   );
 }
 
@@ -884,12 +964,16 @@ export default function StudentResultsDashboard({
           <h2 className="mb-3 font-display font-semibold text-ink">
             {viewer === "parent" ? "Các bài con đã làm" : "Bài đã làm"}
           </h2>
-          <div className="space-y-3">
-            {attempts.map((p, i) => (
-              // attempts mới nhất trước → bài liền trước (cũ hơn) là phần tử kế tiếp.
-              <AttemptRow key={p.resultId} point={p} viewer={viewer} prev={attempts[i + 1]} />
-            ))}
-          </div>
+          {viewer === "student" ? (
+            <StudentAttemptList attempts={attempts} />
+          ) : (
+            <div className="space-y-3">
+              {attempts.map((p, i) => (
+                // attempts mới nhất trước → bài liền trước (cũ hơn) là phần tử kế tiếp.
+                <AttemptRow key={p.resultId} point={p} viewer={viewer} prev={attempts[i + 1]} />
+              ))}
+            </div>
+          )}
         </section>
       )}
 

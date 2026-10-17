@@ -743,6 +743,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}
                         <ContentSearch variant="account" />
 
+                        {/* Ôn câu vừa sai đứng ngay dưới ô tìm (không còn nằm cuối trang sau cả danh sách chương); lối tắt tới kệ đề. */}
+                        {!isParent && <MistakeReviewPanel />}
+                        {!isParent && session && classExams.length > 0 && (
+                          <p className="class-rank-link">
+                            <a href="#de-thi" className="lesson-link">Đề kiểm tra và đề ôn ({classExams.length})</a>
+                          </p>
+                        )}
+
                         {classChapters.length > 1 && (
                           <div className="class-toc-toolbar">
                             <button type="button" className="lesson-link" onClick={toggleAllChapters}>
@@ -761,7 +769,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                             {renderChapterSection(selectedChapter, selectedChapterIndex, true)}
                           </div>
                         )}
-                        {!isParent && <MistakeReviewPanel />}
                         {!isParent && session && <LiveStudyStrip />}
                         {!isParent && rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
                           <p className="class-rank-link">
