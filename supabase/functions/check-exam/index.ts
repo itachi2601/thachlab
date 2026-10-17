@@ -1,10 +1,18 @@
-// AI (DeepSeek) kiểm đề trước khi đăng: với từng câu trắc nghiệm/đúng–sai/trả lời ngắn, tự giải rồi
-// đối chiếu với đáp án đã đánh dấu và lời giải; báo câu nghi sai đáp án, sai đơn vị/số liệu, lời giải
-// mâu thuẫn, đề thiếu dữ kiện, lỗi chính tả/ký hiệu. Kết quả chỉ là GỢI Ý — trang không tự sửa câu nào,
-// giáo viên đọc rồi quyết định (xem docs/AGENTS: lời giải do model sinh phải được đối chiếu).
+// AI (Claude, API trên console.anthropic.com) kiểm đề trước khi đăng: với từng câu trắc nghiệm/đúng–sai/
+// trả lời ngắn, tự giải rồi đối chiếu với đáp án đã đánh dấu và lời giải; báo câu nghi sai đáp án, sai
+// đơn vị/số liệu, lời giải mâu thuẫn, đề thiếu dữ kiện, lỗi chính tả/ký hiệu. Kết quả chỉ là GỢI Ý —
+// trang không tự sửa câu nào, giáo viên đọc rồi quyết định.
 //
-// Cần secret DEEPSEEK_API_KEY (dùng chung classify-questions). Đổi model không cần sửa code:
-// đặt secret CHECK_EXAM_MODEL (mặc định deepseek-flash). Deploy: supabase functions deploy check-exam.
+// Gọi thẳng REST /v1/messages (không dùng SDK) để Edge Function không kéo thêm phụ thuộc npm, giống
+// classify-questions. Thinking luôn bật trên các model 5.x (không gửi `thinking`, không gửi temperature);
+// đầu ra ép bằng structured outputs (output_config.format); bật server-side `fallbacks: "default"`
+// phòng khi bộ lọc an toàn từ chối.
+//
+// Cần secret ANTHROPIC_API_KEY (khoá tạo ở console.anthropic.com):
+//   supabase secrets set ANTHROPIC_API_KEY=sk-ant-... --project-ref jgvbdbpvjdntdgzthumv
+// Đổi model/độ sâu không cần sửa code: secret CHECK_EXAM_MODEL (mặc định claude-opus-5-5; rẻ hơn:
+// claude-sonnet-5-5) và CHECK_EXAM_EFFORT (low|medium|high, mặc định medium).
+// Deploy: supabase functions deploy check-exam --project-ref jgvbdbpvjdntdgzthumv
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -14,8 +22,8 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const API_URL = "https://api.deepseek.com/chat/completions";
-const DEFAULT_MODEL = "deepseek-flash";
+const API_URL = "https://api.anthropic.com/v1/messages";
+const DEFAULT_MODEL = "claude-opus-5-5";
 const MAX_ITEMS = 30;
 const VERDICTS = ["ok", "nghi_ngo", "loi"] as const;
 type Verdict = (typeof VERDICTS)[number];
@@ -70,9 +78,10 @@ Deno.serve(async (req) => {
   const { data: authUser, error: authError } = await callerClient.auth.getUser();
   if (authError || !authUser?.user) return jsonResponse({ error: "Phiên đăng nhập không hợp lệ." }, 401);
 
-  const apiKey = Deno.env.get("DEEPSEEK_API_KEY");
-  if (!apiKey) return jsonResponse({ error: "Server chưa cấu hình DEEPSEEK_API_KEY." }, 500);
+  const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
+  if (!apiKey) return jsonResponse({ error: "Server chưa cấu hình ANTHROPIC_API_KEY." }, 500);
   const model = Deno.env.get("CHECK_EXAM_MODEL") || DEFAULT_MODEL;
+  const effort = Deno.env.get("CHECK_EXAM_EFFORT") || "medium";
 
   const itemList = items.map((it) => `--- Câu (index=${it.index}) ---\n${it.text}`).join("\n\n");
   const prompt =
@@ -84,32 +93,55 @@ Deno.serve(async (req) => {
     "`note`: một câu tiếng Việt nêu đúng chỗ nghi và đáp án bạn tính ra (nếu khác); câu ok thì để chuỗi rỗng.\n\n" +
     itemList;
 
+  const schema = {
+    type: "object",
+    properties: {
+      results: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            index: { type: "integer" },
+            verdict: { type: "string", enum: [...VERDICTS] },
+            note: { type: "string" },
+          },
+          required: ["index", "verdict", "note"],
+          additionalProperties: false,
+        },
+      },
+    },
+    required: ["results"],
+    additionalProperties: false,
+  };
+
   try {
     const res = await fetch(API_URL, {
       method: "POST",
-      headers: { "content-type": "application/json", authorization: `Bearer ${apiKey}` },
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "anthropic-beta": "server-side-fallback-2026-07-01",
+      },
       body: JSON.stringify({
         model,
-        max_tokens: 8192,
-        temperature: 0,
-        // Bật thinking (mặc định): tự giải bài toán cần suy luận, khác việc phân loại JSON ngắn.
-        response_format: { type: "json_object" },
-        messages: [
-          {
-            role: "system",
-            content:
-              "Bạn là giáo viên Vật lý THPT kiểm đề trước khi đăng. Chỉ trả về DUY NHẤT một JSON hợp lệ dạng " +
-              '{"results":[{"index":0,"verdict":"ok","note":""}]}, không markdown code fence.',
-          },
-          { role: "user", content: prompt },
-        ],
+        max_tokens: 16000,
+        fallbacks: "default",
+        output_config: { effort, format: { type: "json_schema", schema } },
+        system:
+          "Bạn là giáo viên Vật lý THPT kiểm đề trước khi đăng. Trả về đúng JSON theo schema, mỗi câu một mục.",
+        messages: [{ role: "user", content: prompt }],
       }),
     });
     if (!res.ok) {
-      return jsonResponse({ error: `DeepSeek API lỗi ${res.status}: ${(await res.text()).slice(0, 300)}` }, 502);
+      return jsonResponse({ error: `Anthropic API lỗi ${res.status}: ${(await res.text()).slice(0, 300)}` }, 502);
     }
-    const data = (await res.json()) as { choices?: { message?: { content?: string | null } }[] };
-    const raw = data.choices?.[0]?.message?.content ?? "";
+    const data = (await res.json()) as {
+      stop_reason?: string;
+      content?: { type: string; text?: string }[];
+    };
+    if (data.stop_reason === "refusal") return jsonResponse({ error: "AI từ chối kiểm lô câu này." }, 502);
+    const raw = (data.content ?? []).filter((b) => b.type === "text").map((b) => b.text ?? "").join("");
     const start = raw.indexOf("{");
     const end = raw.lastIndexOf("}");
     if (start < 0 || end < 0) return jsonResponse({ error: "AI không trả về JSON hợp lệ." }, 502);
