@@ -9,9 +9,9 @@ Lập 16/10/2026 từ `31_lo-trinh-17-buoi-thu-7.md`. Quy trình mỗi chuyên �
 | 21/11 | CĐ03 Ohm (159) | đã ghi DB, cần thầy duyệt + Hiện | 8 (28/11) |
 | 28/11 | CĐ04 (157) | đã ghi DB, cần duyệt + Hiện | 9 (05/12) |
 | 12/12 | CĐ05 (165) | đã ghi DB, cần duyệt + Hiện | 11 (19/12) |
-| 26/12 | CĐ14 (158), CĐ06 (151), CĐ17 (178) | soạn mới trọn bộ | 13 (02/01) |
-| 02/01 | CĐ07 Thấu kính (156) | soạn mới trọn bộ | 14 (09/01) |
-| 16/01 | CĐ08 (152), CĐ09 (163), CĐ15 (150) | CĐ15 đã soạn (commit 40ad9346b), cần Hiện; CĐ08, CĐ09 soạn mới | 16 (23/01) |
+| 26/12 | CĐ14 (158), CĐ06 (151), CĐ17 (178) | CĐ06 ĐÃ GHI DB 17/10 (ẩn, luyện tập đề 934). CĐ14, CĐ17 đã soạn + kiểm chéo, đang sửa vòng 2, CHƯA ghi DB | 13 (02/01) |
+| 02/01 | CĐ07 Thấu kính (156) | đã soạn + kiểm chéo, đang sửa vòng 2, CHƯA ghi DB | 14 (09/01) |
+| 16/01 | CĐ08 (152), CĐ09 (163), CĐ15 (150) | CĐ15 đã soạn (commit 40ad9346b), cần Hiện; CĐ08 (đề 935), CĐ09 (đề 936) ĐÃ GHI DB 17/10, ẩn, chờ duyệt | 16 (23/01) |
 | 05/12 | Bộ 12 câu tự luyện CĐ04 + CĐ05 | tuần 12 (26/12) dùng | 12 |
 | 09/01 | 12 câu tự luyện CĐ07 | tuần 15 (16/01) dùng | 15 |
 
