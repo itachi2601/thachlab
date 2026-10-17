@@ -11,6 +11,8 @@ import {
   type ChapterLessonMastery,
   type TopicMastery,
 } from "@/services/mastery";
+import { expandClassIdsByGrade, fetchMyClassIds } from "@/services/classes";
+import { fetchChaptersStatic, fetchClassesStatic } from "@/services/static-content";
 import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
 
 /** Tối đa 3 YCCĐ yếu nhất của một bài (chỉ Chưa đạt / Cần luyện thêm, đủ ≥4 lượt), thấp nhất lên trước. */
@@ -841,6 +843,8 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData, viewer 
   const prev = courseData ? (hasPreloaded ? courseData.prev : null) : fetchedPrev;
   const [scope, setScope] = useState<RadarScope | null>(null);
   const [pickedChapter, setPickedChapter] = useState<number | null>(null);
+  // Chương thuộc lớp em đang học (null = chưa biết / không áp dụng) — chọn chương theo lớp, không theo bài đã làm.
+  const [ownChapters, setOwnChapters] = useState<{ id: number; title: string; sort: number }[] | null>(null);
   const onLoadedRef = useRef(onLoaded);
   useEffect(() => {
     onLoadedRef.current = onLoaded;
@@ -871,13 +875,41 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData, viewer 
     };
   }, [studentId, courseData]);
 
+  // Lớp của em: danh mục tĩnh (không thêm truy vấn) + user_classes của chính em. Phụ huynh/GV xem hộ thì bỏ qua.
+  useEffect(() => {
+    if (viewer !== "student" || courseData) return;
+    let active = true;
+    Promise.all([fetchMyClassIds(studentId), fetchClassesStatic(), fetchChaptersStatic()])
+      .then(([mine, classes, chs]) => {
+        if (!active) return;
+        const ids = expandClassIdsByGrade(mine, classes) ?? mine;
+        const own = new Set(chs.filter((c) => c.classIds.some((id) => ids.includes(id))).map((c) => c.id));
+        setOwnChapters(
+          chs
+            .filter((c) => own.has(c.id) && (c.subjectCode ?? "vat-ly") === "vat-ly")
+            .map((c) => ({ id: c.id, title: c.title, sort: c.sort_order ?? 0 })),
+        );
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [studentId, viewer, courseData]);
+
   const chapters = useMemo(() => {
-    const seen = new Map<number, { id: number; title: string; sort: number }>();
+    const seen = new Map<number, { id: number; title: string; sort: number; own: boolean }>();
+    // Chương của lớp em luôn có trong danh sách (kể cả chưa làm bài nào); RPC chỉ trả chương có hoạt động.
+    for (const c of ownChapters ?? []) seen.set(c.id, { ...c, own: true });
+    const hasData = new Set<number>();
+    for (const r of cur ?? []) if (r.pct !== null) hasData.add(r.chapterId);
     for (const r of cur ?? []) {
-      if (!seen.has(r.chapterId)) seen.set(r.chapterId, { id: r.chapterId, title: r.chapterTitle, sort: r.chapterSort ?? 0 });
+      if (seen.has(r.chapterId)) continue;
+      // Chương lớp khác chỉ hiện khi em có dữ liệu ở đó.
+      if (ownChapters && !hasData.has(r.chapterId)) continue;
+      seen.set(r.chapterId, { id: r.chapterId, title: r.chapterTitle, sort: r.chapterSort ?? 0, own: !ownChapters });
     }
-    return [...seen.values()].sort((a, b) => a.sort - b.sort || a.id - b.id);
-  }, [cur]);
+    return [...seen.values()].sort((a, b) => Number(b.own) - Number(a.own) || a.sort - b.sort || a.id - b.id);
+  }, [cur, ownChapters]);
 
   if (loading) {
     return (
@@ -891,7 +923,12 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData, viewer 
   if (!cur) return null;
 
   const hasCourse = cur.some((r) => r.chapterSort !== undefined) && chapters.length >= 2;
-  const latestChapterId = cur.find((r) => r.isLatest)?.chapterId ?? chapters[0]?.id ?? cur[0].chapterId;
+  // Mặc định: chương lớp em có bài làm gần nhất → chương lớp em đầu tiên → (khi chưa biết lớp) bài gần nhất.
+  const ownList = chapters.filter((c) => c.own);
+  const latestOwn = cur.find((r) => r.isLatest && ownList.some((c) => c.id === r.chapterId))?.chapterId;
+  const anyOwnData = cur.find((r) => r.pct !== null && ownList.some((c) => c.id === r.chapterId))?.chapterId;
+  const latestChapterId =
+    latestOwn ?? anyOwnData ?? (ownChapters ? ownList[0]?.id : undefined) ?? cur.find((r) => r.isLatest)?.chapterId ?? chapters[0]?.id ?? cur[0].chapterId;
   const isHsg = (cur[0].subjectCode ?? "").startsWith("hsg");
   const courseLabel = isHsg ? "Theo mảng" : "Cả khoá";
   const effScope: RadarScope = !hasCourse ? "chapter" : (scope ?? (isHsg ? "course" : "chapter"));
@@ -942,11 +979,20 @@ function CourseRadar({ studentId, onLoaded, compact = false, courseData, viewer 
             onChange={(e) => pickChapter(Number(e.target.value))}
             className="min-h-11 min-w-0 max-w-[14rem] rounded-xl border border-line bg-panel px-3 text-sm text-ink"
           >
-            {chapters.map((c) => (
+            {chapters.filter((c) => c.own).map((c) => (
               <option key={c.id} value={c.id}>
                 {c.title}
               </option>
             ))}
+            {chapters.some((c) => !c.own) && (
+              <optgroup label="Lớp khác">
+                {chapters.filter((c) => !c.own).map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.title}
+                  </option>
+                ))}
+              </optgroup>
+            )}
           </select>
         </label>
       )}
