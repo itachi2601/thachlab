@@ -15,6 +15,7 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { classifyQuestionTagsBatched } from "@/services/ai-classify";
+import { checkExamBatched, type AiCheckResult } from "@/services/ai-check-exam";
 import { estimateDuration } from "@/features/exams/duration";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
@@ -151,6 +152,9 @@ export default function ExamSection({
   const [edited, setEdited] = useState<LessonBundle | null>(null);
   // Câu giáo viên đã "Bỏ qua cảnh báo" lint — khoá theo nội dung đề để không lệch khi đổi thứ tự câu.
   const [lintIgnored, setLintIgnored] = useState<Set<string>>(() => new Set());
+  // Kết quả "AI kiểm đề" khoá theo nội dung đề bài (đổi chỗ/xoá câu không làm lệch); sửa câu thì kết quả cũ tự biến mất.
+  const [aiCheck, setAiCheck] = useState<Map<string, AiCheckResult>>(() => new Map());
+  const [aiChecking, setAiChecking] = useState<{ done: number; total: number } | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setDebounced(text), 250);
@@ -279,6 +283,34 @@ export default function ExamSection({
     return (html: string) =>
       map.size ? html.replace(/src="(media\/[^"]+)"/g, (m, p: string) => (map.has(p) ? `src="${map.get(p)}"` : m)) : html;
   }, [images]);
+
+  async function runAiCheck() {
+    if (aiChecking || questions.length === 0) return;
+    setAiChecking({ done: 0, total: questions.length });
+    try {
+      const results = await checkExamBatched(
+        questions.map((q, i) => ({ index: i, text: questionTextForAi(q) })),
+        (done, total) => setAiChecking({ done, total }),
+      );
+      const next = new Map<string, AiCheckResult>();
+      for (const r of results) if (questions[r.index]) next.set(questions[r.index].question, r);
+      setAiCheck(next);
+      const bad = results.filter((r) => r.verdict === "loi").length;
+      const doubt = results.filter((r) => r.verdict === "nghi_ngo").length;
+      toast(
+        bad + doubt > 0 ? "error" : "success",
+        results.length === 0
+          ? "AI không trả kết quả nào — thử lại."
+          : bad + doubt > 0
+            ? `AI báo ${bad} câu lỗi, ${doubt} câu nghi ngờ trên ${results.length} câu đã kiểm.`
+            : `AI kiểm ${results.length} câu: không thấy vấn đề.`,
+      );
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setAiChecking(null);
+    }
+  }
 
   async function handleFile(file: File) {
     if (!/\.docx$/i.test(file.name)) {
@@ -596,14 +628,44 @@ export default function ExamSection({
           </div>
         )}
 
+        {questions.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
+            <button
+              type="button"
+              onClick={runAiCheck}
+              disabled={!!aiChecking}
+              title="AI tự giải từng câu rồi đối chiếu với đáp án và lời giải đã đánh dấu"
+              className="admin-chip"
+            >
+              <Sparkles size={14} />{" "}
+              {aiChecking ? `AI đang kiểm… ${aiChecking.done}/${aiChecking.total} câu` : `AI kiểm đề (${questions.length} câu)`}
+            </button>
+            {aiCheck.size > 0 && (
+              <span>
+                {[...aiCheck.values()].filter((r) => r.verdict === "loi").length} lỗi ·{" "}
+                {[...aiCheck.values()].filter((r) => r.verdict === "nghi_ngo").length} nghi ngờ · chỉ là gợi ý, thầy quyết định
+              </span>
+            )}
+          </div>
+        )}
+
         {edited ? (
-          <ExamDraftEditor
-            bundle={bundle}
-            onChange={setEdited}
-            topicOptions={topicGroups.flatMap((g) => g.names)}
-            aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
-            grade={enableQuestionBankHandoff ? grade : null}
-          />
+          <div className="grid gap-4 lg:grid-cols-2">
+            <ExamDraftEditor
+              bundle={bundle}
+              onChange={setEdited}
+              topicOptions={topicGroups.flatMap((g) => g.names)}
+              aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
+              grade={enableQuestionBankHandoff ? grade : null}
+            />
+            {/* Xem trước bộ đề đúng như học sinh thấy (A. B. C. D., a) b) c) d)) — cập nhật ngay khi sửa bên trái. */}
+            <div className={hideRawText ? "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:self-start lg:overflow-y-auto lg:pr-1" : "space-y-3"}>
+              <p className="text-sm font-semibold text-white">Xem trước bộ đề</p>
+              {questions.map((q, i) => (
+                <PreviewCard key={i} index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} ai={aiCheck.get(q.question)} />
+              ))}
+            </div>
+          </div>
         ) : questions.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
             Chưa có câu nào. Dán đề hoặc bấm “Đề mẫu” để xem cách trình bày.
@@ -648,7 +710,7 @@ export default function ExamSection({
                       Câu học sinh báo lỗi
                     </p>
                   )}
-                  <PreviewCard index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} />
+                  <PreviewCard index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} ai={aiCheck.get(q.question)} />
                 </div>
               ))}
             </div>
@@ -989,7 +1051,7 @@ function TagGrid({
   );
 }
 
-function PreviewCard({ index, q, fix, lint = [] }: { index: number; q: ExamQuestion; fix: (html: string) => string; lint?: LintFlag[] }) {
+function PreviewCard({ index, q, fix, lint = [], ai }: { index: number; q: ExamQuestion; fix: (html: string) => string; lint?: LintFlag[]; ai?: AiCheckResult }) {
   const issues = problems(q);
   return (
     <div className={`exam-paper rounded-2xl border bg-panel p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
@@ -1011,6 +1073,15 @@ function PreviewCard({ index, q, fix, lint = [] }: { index: number; q: ExamQuest
           </span>
         ))}
       </div>
+      {ai && ai.verdict !== "ok" && (
+        <p
+          className={`mb-2 rounded-lg px-2 py-1 text-xs ${
+            ai.verdict === "loi" ? "bg-red-500/15 text-red-200" : "bg-amber-500/15 text-amber-200"
+          }`}
+        >
+          <b>AI {ai.verdict === "loi" ? "báo lỗi" : "nghi ngờ"}:</b> {ai.note || "xem lại câu này"}
+        </p>
+      )}
       <ContentHtml html={fix(q.question)} className="text-sm text-slate-200" />
       {q.type === "multiple_choice" && (
         <ul className="mt-2 grid gap-1 sm:grid-cols-2">
