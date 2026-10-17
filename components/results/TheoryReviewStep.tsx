@@ -19,7 +19,8 @@ import {
 const IDLE_MS = 20_000;
 const PING_EVERY_MS = 8_000;
 
-const isConfGroup = (name: string) => /-conf$/i.test(name);
+/** Nhóm thang mức tự tin sau mỗi câu (nhãn `tl-conf`): bài cũ đặt tên `…-conf`, bài mới `…-sure4`… — không phải câu hỏi. */
+const isConfGroup = (name: string) => /-(conf|sure)\d*$/i.test(name);
 
 /** Tên các nhóm radio (mỗi nhóm = một câu tự kiểm tra) trong HTML bài lý thuyết. */
 function quizGroupNames(html: string): string[] {
@@ -195,31 +196,33 @@ export default function TheoryReviewStep({
     };
   }, [phase, flush]);
 
-  // 4) Cuộn tới cuối mỗi mốc = đã xem mốc đó.
+  // 4) Cuộn tới cuối mỗi mốc = đã xem mốc đó. Xét theo VỊ TRÍ khi cuộn, không theo IntersectionObserver: vuốt nhanh
+  // (điện thoại) làm IO bỏ sót mốc giữa hai lần báo và không báo lại, nên học sinh kẹt mãi ở "đọc hết các mốc 2/6".
   useEffect(() => {
     const box = scrollRef.current;
     if (phase !== "viewing" || !box) return;
-    const targets = Array.from(box.querySelectorAll<HTMLElement>("[data-sec-end]"));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let changed = false;
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          const idx = Number((e.target as HTMLElement).dataset.secEnd);
-          if (Number.isInteger(idx) && !seen.current.has(idx)) {
-            seen.current.add(idx);
-            changed = true;
-          }
+    const markSeen = () => {
+      const bottom = box.getBoundingClientRect().bottom;
+      let changed = false;
+      box.querySelectorAll<HTMLElement>("[data-sec-end]").forEach((m) => {
+        const idx = Number(m.dataset.secEnd);
+        if (Number.isInteger(idx) && !seen.current.has(idx) && m.getBoundingClientRect().top <= bottom) {
+          seen.current.add(idx);
+          changed = true;
         }
-        if (changed) {
-          setSeenCount(seen.current.size);
-          lastActivity.current = Date.now();
-        }
-      },
-      { root: box, threshold: 0 },
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+      });
+      if (changed) {
+        setSeenCount(seen.current.size);
+        lastActivity.current = Date.now();
+      }
+    };
+    markSeen();
+    box.addEventListener("scroll", markSeen, { passive: true });
+    window.addEventListener("resize", markSeen);
+    return () => {
+      box.removeEventListener("scroll", markSeen);
+      window.removeEventListener("resize", markSeen);
+    };
   }, [phase, sectionHtmls.length]);
 
   // 5) Trả lời câu tự kiểm tra trong bài (radio CSS-only) = một tương tác.
