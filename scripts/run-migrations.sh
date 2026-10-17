@@ -43,6 +43,8 @@ FILES=(
   "supabase/migrations/20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql|Chuông báo em được cộng bù RP + nâng min_rp mọi bậc mùa 4, 5 lên ×1,07 rồi tính lại, báo em tụt bậc, có sao lưu rank_tiers|ngoài giờ học sinh làm bài (chạy sau 20261017190000)"
   "supabase/migrations/20261017210000_rank_giu_bac_sau_nang_nguong.sql|Bảng rank_tier_floor + rank_refresh_student giữ bậc cho 13 em tụt do nâng ngưỡng, chuông cải chính|ngoài giờ học sinh làm bài (chạy sau 20261017200000)"
   "supabase/migrations/20261017220000_chan_doan_doc_ngan_hang.sql|Policy cho em vào trễ đọc câu ngân hàng của các bài cần bù khi chưa nộp kiểm tra đầu vào (sửa lỗi \"không có câu nào\")|lúc nào cũng được"
+  "supabase/migrations/20261017230000_learning_events.sql|DT-01: bảng learning_events + log_learning_events(jsonb) + purge 12 tháng (pg_cron)|lúc nào cũng được"
+  "supabase/migrations/20261017231000_feature_flags.sql|DT-12: bảng feature_flags theo lớp + feature_enabled(text)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
