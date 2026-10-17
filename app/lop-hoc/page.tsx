@@ -68,6 +68,7 @@ import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
 import type { RankStatus } from "@/features/rank/types";
 import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
+import Hsg9WeekCard from "@/components/lop-hoc/Hsg9WeekCard";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -730,6 +731,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
                         )}
                         {renderNextCard()}
+                        {/* Khoá HSG Vật lí 9: buổi thứ Bảy tới + việc hôm nay (lộ trình 18 buổi ở /lop-hoc/lo-trinh-hsg). */}
+                        {!isParent && subjectCode === HSG_SUBJECT_CODE && (
+                          <Hsg9WeekCard
+                            userId={session?.user.id ?? null}
+                            lessons={lessons}
+                            progress={session && progressMarks ? lessonProgress : null}
+                          />
+                        )}
 
                         {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}
                         <ContentSearch variant="account" />
