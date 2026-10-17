@@ -11,7 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
-- **Chờ chạy (viết 17/10):** `20261017230000_learning_events` (DT-01, bảng sự kiện học + RPC ghi + purge 12 tháng) và `20261017231000_feature_flags` (DT-12, cờ theo lớp). Chưa có code client gọi `log_learning_events`/`feature_enabled`; kế hoạch ở `docs/thachlab-design-thinking-audit.md`.
+- **Đã chạy 17/10 17:52:** `20261017230000_learning_events` (DT-01) + `20261017231000_feature_flags` (DT-12); hậu kiểm RLS/grant/cron/hàm đạt, thử hàm trong giao dịch rollback. Chưa có code client gọi `log_learning_events`/`feature_enabled`; kế hoạch ở `docs/thachlab-design-thinking-audit.md`. Còn: chạy `node scripts/gen-database-doc.mjs`.
 - **Đã chạy 17/10 14:28:** `20261017150000_reset_code_manh_hon` (mã reset RS+10 hex, CHECK hạn ≤7 ngày; đã hậu kiểm default + ràng buộc).
 - **Đã chạy 17/10 14:22:** `20261017120000_rate_limit_hardening` (rate_hits + rl_allow, trần resolve_login_email/quiz_join, vá search_path; hậu kiểm definer thiếu = 0) + deploy lại reset-password. Còn lại của rà soát: `docs/RA-SOAT-MA-NGUON-2026-10-17.md` mục D (Đợt 4–6); chưa kiểm entropy mã reset (`scripts/sql/kiem-do-manh-ma-reset.sql`).
 - **Đã chạy 16/10 22:43:** `20261016130000_hsg9_dot3_muc_noi_dung` (mục rỗng Lý thuyết + BTM cho bài 150/153/164). CĐ15 Âm (150) đã ghi nội dung, bài ẩn, chờ deploy + thầy duyệt.
@@ -26,7 +26,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Thử "🧰 Kiểm tra hành trang" (2 câu kiến thức nền + Nhắc nhanh) ở 10 bài chương 3 L10 (lesson 58–67), đã đăng DB 13/10, không cần deploy. Chờ đo: tỉ lệ đọc hết bài + đúng quiz giữa bài trước/sau; ổn thì làm chương khác (`scripts/chen-hanh-trang.py`, PHUONG-PHAP §4.2b).
 - Mã QR đề (`ExamQrPanel`, `/quet-ma`): chưa thử iPhone + Android thật; chưa làm QR cho CNC và `LessonImporter`.
 - RP lý thuyết: UI đã gọi `rank_theory_open/submit`; **chưa có khoá** → `npx tsx scripts/sinh-khoa-quiz-ly-thuyet.mts` (xem thử) rồi `--ghi`. Chưa chụp 375px bằng tài khoản HS, chưa thử nộp thật.
-- Chấm nhanh HSG 9: Edge Function `hsg-ai-grade` chưa deploy (cần secret `DEEPSEEK_API_KEY`/`ANTHROPIC_API_KEY`).
+- Chấm nhanh HSG 9: Edge Function `hsg-ai-grade` chưa deploy (cần secret `ANTHROPIC_API_KEY`; DeepSeek đã gỡ 17/10, commit e1a9ca706). Thầy deploy lại để có hiệu lực.
+- DT-16 kiểm RLS 17/10 (chỉ đọc `pg_policies`): bảng `exam_results`, `lesson_progress`, `theory_sessions`, `theory_reviews` đều bật RLS, không có policy cho `anon`; `theory_*` chỉ cho `auth.uid()` = học sinh hoặc staff. Policy `public` còn lại là bảng nội dung công khai. Chưa kiểm grant bảng cho `anon` và `learning_events` (migration 9c50d5f0c chưa chạy).
 - Nền sáng: đã deploy `9077fbd47`; còn treo việc nhỏ ở `docs/MAU-NEN-SANG.md`.
 - Sách in Chương 2 L10 bản v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`; `public/sach-data/*.json` v6 chưa commit/deploy (xem `docs/memory/project_thachlab_sach_in_chuong2.md`).
 - Push nhắc hằng ngày: còn VAPID secrets + deploy `send-daily-push` + cron (`docs/PUSH-NHAC-HANG-NGAY.md`).
