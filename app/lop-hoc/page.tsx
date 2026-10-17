@@ -778,7 +778,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       </div>
                     )}
 
-                    {!isParent && <ExamShelf exams={classExams} />}
+                    {!isParent && <ExamShelf exams={classExams} bestScores={session ? progressMarks?.bestScores ?? null : null} />}
 
                     {!session && (
                       <p className="lesson-muted class-login-hint">

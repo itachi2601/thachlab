@@ -307,19 +307,29 @@ export interface LessonProgressSummary {
 export interface MyProgressMarks {
   completedItems: Set<number>;
   completedExams: Set<number>;
+  /** Điểm cao nhất của từng đề em đã làm — nhãn "✓ 7,5" ở danh sách đề lớp (ExamShelf). */
+  bestScores?: Map<number, number>;
 }
 
 export async function fetchMyProgressMarks(userId: string): Promise<MyProgressMarks> {
   const supabase = getSupabase();
   const [{ data: progressRows, error: progressError }, { data: resultRows, error: resultError }] = await Promise.all([
     supabase.from("lesson_progress").select("item_id").eq("user_id", userId),
-    supabase.from("exam_results").select("exam_id").eq("student_id", userId),
+    supabase.from("exam_results").select("exam_id, score").eq("student_id", userId),
   ]);
   if (progressError) throw progressError;
   if (resultError) throw resultError;
+  const bestScores = new Map<number, number>();
+  for (const row of resultRows ?? []) {
+    const id = row.exam_id as number;
+    const score = Number(row.score);
+    if (!Number.isFinite(score)) continue;
+    bestScores.set(id, Math.max(score, bestScores.get(id) ?? -Infinity));
+  }
   return {
     completedItems: new Set((progressRows ?? []).map((row) => row.item_id as number)),
     completedExams: new Set((resultRows ?? []).map((row) => row.exam_id as number)),
+    bestScores,
   };
 }
 

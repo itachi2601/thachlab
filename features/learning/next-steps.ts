@@ -1,8 +1,9 @@
 // "Bước tiếp theo" ở trang chủ học sinh (thẻ "Hôm nay em làm gì", components/dashboard/TodayCard.tsx) — rule-based, chỉ dùng dữ liệu
 // trang chủ đã tải sẵn (tutoring_needs, điểm bài làm, kỹ năng yếu, tiến độ bài). Không có RPC/migration mới. Xem docs/ROADMAP.md, Giai đoạn 2.
-// Thầy chốt 8/10/2026: trang chủ chỉ gợi việc THÍCH ỨNG theo hồ sơ em, không còn việc/bài giao chung cho cả lớp.
+// Thầy chốt 8/10/2026: trang chủ chỉ gợi việc THÍCH ỨNG theo hồ sơ em. Thầy chốt lại 17/10/2026: đề KIỂM TRA lớp đã giao mà em
+// chưa làm (class_assessments, 21 ngày gần nhất) quay lại thẻ, chung 2 suất đầu với BTVN — em bỏ lỡ chuông thì vẫn thấy.
 
-export type NextStepKind = "homework" | "unlock" | "weak" | "retry" | "lesson" | "review";
+export type NextStepKind = "homework" | "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
@@ -38,7 +39,18 @@ export interface HomeworkInput {
   note: string;
 }
 
+export interface AssignedInput {
+  examId: number;
+  examTitle: string;
+  /** ISO — ngày thầy giao đề cho lớp. */
+  publishedAt: string;
+  /** "Giữa kỳ" / "Cuối kỳ" / … (rỗng nếu không rõ). */
+  kindLabel: string;
+}
+
 export interface NextStepInput {
+  /** Đề kiểm tra lớp đã giao, em chưa làm — xếp sau BTVN, chung 2 suất đầu. */
+  assigned?: AssignedInput[];
   /** BTVN trợ giảng giao riêng cho em và em chưa nộp — việc đầu tiên (giao đích danh, có hạn). */
   homework?: HomeworkInput[];
   need: { id: number; label: string } | null;
@@ -74,7 +86,7 @@ export const MAX_STEPS = 4;
 export const ENCOURAGE = "Em đang học rất tốt, hãy tiếp tục tăng tốc. Thử sức mình với những bài thầy chưa dạy nhé.";
 
 /**
- * Thứ tự: BTVN trợ giảng giao riêng → mở khoá chủ đề phụ đạo → kỹ năng yếu (tối đa 2) → làm lại đề điểm thấp → học bài kế.
+ * Thứ tự: BTVN trợ giảng giao riêng → đề kiểm tra lớp chưa làm (chung 2 suất) → mở khoá chủ đề phụ đạo → kỹ năng yếu (tối đa 2) → làm lại đề điểm thấp → học bài kế.
  * Việc sửa lỗi đứng đầu khi có; không có thì "Học tiếp" đứng đầu kèm lời động viên. "Học tiếp" luôn có mặt khi còn bài
  * (còn trong 4 việc), để em không toàn việc sửa lỗi. Chủ đề đang chờ giãn cách bị đẩy xuống cuối.
  */
@@ -94,6 +106,23 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     });
   }
 
+  // Đề kiểm tra lớp đã giao mà em chưa làm: lấp suất còn lại trong 2 suất đầu (đề giao mới nhất trước).
+  const homeworkIds = new Set((input.homework ?? []).map((h) => h.examId));
+  const assigned = (input.assigned ?? []).filter((a) => !homeworkIds.has(a.examId));
+  for (const a of assigned.slice(0, Math.max(0, 2 - steps.length))) {
+    const d = new Date(a.publishedAt);
+    const day = `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}`;
+    steps.push({
+      kind: "assigned",
+      key: `assigned-${a.examId}`,
+      action: "Kiểm tra của lớp",
+      title: a.examTitle,
+      hint: [a.kindLabel, `Thầy giao ngày ${day}, em chưa làm`].filter(Boolean).join(". "),
+      href: `/kiem-tra/lam?id=${a.examId}`,
+    });
+  }
+  const homeworkCount = steps.length; // BTVN + đề lớp đã giao (tối đa 2)
+
   if (input.need) {
     const step: NextStep = {
       kind: "unlock",
@@ -109,7 +138,6 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
 
   const weak = input.weak ?? [];
   // Có BTVN thì chỉ 1 kỹ năng yếu, để "Học tiếp" không bị cắt khỏi 4 việc.
-  const homeworkCount = Math.min((input.homework ?? []).length, 2);
   for (const w of weak.slice(0, homeworkCount > 0 ? 1 : 2)) {
     steps.push({
       kind: "weak",
@@ -122,7 +150,7 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     });
   }
 
-  const retryIsHomework = (input.homework ?? []).some((h) => h.examId === input.retryExam?.examId);
+  const retryIsHomework = steps.some((st) => st.href === `/kiem-tra/lam?id=${input.retryExam?.examId}`);
   if (input.retryExam && !retryIsHomework && input.retryExam.score < RETRY_BELOW_SCORE) {
     steps.push({
       kind: "retry",

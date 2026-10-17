@@ -16,7 +16,7 @@ const DailyReminderCard = dynamic(() => import("@/components/pwa/DailyReminderCa
 
 const LINKS = [
   { href: "/blog/#vat-ly-quanh-ta", label: "Vật lý quanh ta · đọc cho vui", Icon: Lightbulb },
-  { href: "/lop-hoc/ket-qua", label: "Kết quả học tập chi tiết", Icon: BarChart3 },
+  { href: "/lop-hoc/ket-qua", label: "Bài đã làm & kết quả", Icon: BarChart3 },
   { href: "/quet-ma", label: "Quét mã QR vào hoạt động lớp", Icon: QrCode },
   { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },
   { href: "/bao-loi-cua-toi", label: "Báo lỗi và góp ý", Icon: Bug },

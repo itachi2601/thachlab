@@ -127,10 +127,14 @@ export default function ExamDoneView({
           </>
         )}
       </div>
-      <p className="mt-2 text-center">
-        <Link href="/lop-hoc" className="text-sm text-primary hover:underline">
+      <p className="mt-2 flex flex-wrap items-center justify-center gap-x-5 text-center">
+        <Link href="/lop-hoc" className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
           ← Về danh sách đề
         </Link>
+        {/* <a> thay Link: cùng đường dẫn /kiem-tra/lam nên cần tải lại trang để ExamRunner bắt đầu lượt mới. */}
+        <a href={`/kiem-tra/lam?id=${exam.id}`} className="inline-flex min-h-11 items-center text-sm text-primary hover:underline">
+          Làm lại đề này (không cộng thêm RP)
+        </a>
       </p>
 
       <h2

@@ -35,7 +35,18 @@ export function examShelfOf(title: string): Exclude<ShelfKey, "moi"> {
   return "chuong";
 }
 
-export default function ExamShelf({ exams }: { exams: ExamMeta[] }) {
+/** Nhãn đã làm cạnh tên đề: "✓ 7,5" (điểm cao nhất) hoặc "Chưa làm". Không có dữ liệu (khách, đang tải) thì không hiện. */
+function DoneTag({ score, known }: { score: number | undefined; known: boolean }) {
+  if (!known) return null;
+  if (score === undefined) return <span className="class-done-tag">Chưa làm</span>;
+  return (
+    <span className={`class-done-tag ${score >= 6.5 ? "is-pass" : "is-fail"}`}>
+      ✓ Đã làm · cao nhất {score.toLocaleString("vi-VN", { maximumFractionDigits: 2 })} điểm
+    </span>
+  );
+}
+
+export default function ExamShelf({ exams, bestScores }: { exams: ExamMeta[]; bestScores?: Map<number, number> | null }) {
   const [active, setActive] = useState<ShelfKey | "all">("all");
   const [shown, setShown] = useState<Record<string, number>>({});
 
@@ -89,7 +100,10 @@ export default function ExamShelf({ exams }: { exams: ExamMeta[] }) {
               {list.slice(0, s.key === "moi" ? PAGE : limit).map((exam) => (
                 <li key={`${s.key}-${exam.id}`}>
                   <Link href={`/kiem-tra/lam?id=${exam.id}`} className="class-lesson">
-                    <span className="class-lesson-title">{exam.title}</span>
+                    <span className="class-lesson-title">
+                      {exam.title}
+                      <DoneTag score={bestScores?.get(exam.id)} known={Boolean(bestScores)} />
+                    </span>
                     <span className="class-meta">
                       {exam.question_count} câu · {exam.duration_minutes} phút
                       {exam.difficulty && ` · ${DIFFICULTY_LABELS[exam.difficulty]}`}

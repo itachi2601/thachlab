@@ -37,6 +37,7 @@ import ParentScoreBars from "@/components/parent/ParentScoreBars";
 import ParentGoal, { useChildGoal } from "@/components/parent/ParentGoal";
 import { gradeBand } from "@/lib/parent-format";
 import ChapterMasteryRadar from "@/components/results/ChapterMasteryRadar";
+import { fetchChaptersStatic, fetchLessonsStatic } from "@/services/static-content";
 
 /**
  * Bảng kết quả học tập của MỘT học sinh. Dùng ở hai chỗ:
@@ -61,7 +62,7 @@ const COPY: Record<ResultsViewer, {
     subtitle: "Điểm kiểm tra và những chủ đề em cần ôn lại.",
     noExam: "Em chưa làm bài kiểm tra nào.",
     noGap: "Chưa có dữ liệu — hoặc em chưa sai câu nào. Giữ phong độ nhé!",
-    needsTitle: "Phần em đang mở khoá",
+    needsTitle: "Chủ đề phụ đạo em đang mở khoá",
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào em đã làm đúng trở lại.",
     missed: "Em còn một bài kiểm tra chưa làm — làm ngay khi có thời gian nhé.",
     low: "Trợ giảng sẽ liên hệ để sắp lịch phụ đạo. Trong lúc chờ, ôn lại chủ đề đầu tiên bên dưới rồi thử làm lại câu sai nhé.",
@@ -295,23 +296,76 @@ function foldVi(text: string): string {
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase();
 }
 
+const ATTEMPT_PERIODS = [
+  { key: "all", label: "Mọi lúc", days: 0 },
+  { key: "7", label: "7 ngày qua", days: 7 },
+  { key: "30", label: "30 ngày qua", days: 30 },
+  { key: "90", label: "3 tháng qua", days: 90 },
+] as const;
+
 /**
- * "Bài đã làm" của học sinh: từ 6 bài trở lên có ô tìm theo tên + lọc Đạt/Chưa đạt, mỗi lần hiện 10 bài (N3).
- * Mỗi dòng đã dẫn tới trang xem lại bài làm + lời giải. Phụ huynh giữ danh sách phẳng như cũ (P-rules).
+ * "Bài đã làm" của học sinh: từ 2 bài trở lên có ô tìm theo tên + lọc Chương / Thời gian / Đạt–Chưa đạt, mỗi lần hiện 10 bài (N3).
+ * Chương lấy từ catalog tĩnh (bài học → đề gắn trong mục), không thêm truy vấn Supabase. Đề không gắn bài nào (đề thi thử, đề
+ * kiểm tra lớp) rơi vào "Đề không theo chương". Mỗi dòng dẫn tới trang xem lại bài làm + lời giải. Phụ huynh giữ danh sách phẳng.
  */
 function StudentAttemptList({ attempts }: { attempts: ScorePoint[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof ATTEMPT_FILTERS)[number]["key"]>("all");
+  const [period, setPeriod] = useState<(typeof ATTEMPT_PERIODS)[number]["key"]>("all");
+  const [chapter, setChapter] = useState<string>("all");
   const [shown, setShown] = useState(ATTEMPTS_PAGE);
-  const showTools = attempts.length > ATTEMPTS_PAGE / 2;
+  const [now] = useState(() => Date.now());
+  const [examChapter, setExamChapter] = useState<Map<number, { id: number; title: string; order: number }> | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all([fetchChaptersStatic(), fetchLessonsStatic()])
+      .then(([chapters, lessons]) => {
+        if (cancelled) return;
+        const byId = new Map(chapters.map((c, i) => [c.id, { id: c.id, title: c.title, order: c.sort_order ?? i }]));
+        const map = new Map<number, { id: number; title: string; order: number }>();
+        for (const l of lessons) {
+          const ch = byId.get(l.chapter_id);
+          if (!ch) continue;
+          for (const item of l.itemRefs) for (const examId of item.exam_ids) if (!map.has(examId)) map.set(examId, ch);
+        }
+        setExamChapter(map);
+      })
+      .catch(() => !cancelled && setExamChapter(new Map()));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  const chapterOptions = useMemo(() => {
+    if (!examChapter) return [];
+    const seen = new Map<number, { id: number; title: string; order: number }>();
+    let other = false;
+    for (const p of attempts) {
+      const ch = examChapter.get(p.examId);
+      if (ch) seen.set(ch.id, ch);
+      else other = true;
+    }
+    const list = [...seen.values()].sort((a, b) => a.order - b.order).map((c) => ({ key: String(c.id), label: c.title }));
+    return other && list.length > 0 ? [...list, { key: "none", label: "Đề không theo chương" }] : list;
+  }, [attempts, examChapter]);
+  const showTools = attempts.length > 1;
   const rows = useMemo(() => {
     const q = foldVi(query.trim());
+    const days = ATTEMPT_PERIODS.find((x) => x.key === period)?.days ?? 0;
+    const since = days ? now - days * 86_400_000 : 0;
     return attempts.filter((p) => {
       if (filter === "pass" && p.score < PASS) return false;
       if (filter === "fail" && p.score >= PASS) return false;
+      if (since && new Date(p.at).getTime() < since) return false;
+      if (chapter !== "all") {
+        const ch = examChapter?.get(p.examId);
+        if (chapter === "none" ? Boolean(ch) : String(ch?.id) !== chapter) return false;
+      }
       return !q || foldVi(`${p.examTitle} ${p.periodic ? p.kindLabel : ""}`).includes(q);
     });
-  }, [attempts, query, filter]);
+  }, [attempts, query, filter, period, chapter, examChapter, now]);
+  const reset = () => setShown(ATTEMPTS_PAGE);
+  const selectCls =
+    "min-h-11 min-w-0 flex-1 rounded-xl border border-line bg-panel px-3 text-sm text-ink outline-none focus:border-primary";
   return (
     <>
       {showTools && (
@@ -321,19 +375,44 @@ function StudentAttemptList({ attempts }: { attempts: ScorePoint[] }) {
             <input
               type="search"
               value={query}
-              onChange={(e) => { setQuery(e.target.value); setShown(ATTEMPTS_PAGE); }}
+              onChange={(e) => { setQuery(e.target.value); reset(); }}
               placeholder="Tìm bài đã làm theo tên"
               aria-label="Tìm bài đã làm theo tên"
               className="min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-muted"
             />
           </label>
+          <div className="flex gap-2">
+            {chapterOptions.length > 1 && (
+              <select
+                value={chapter}
+                onChange={(e) => { setChapter(e.target.value); reset(); }}
+                aria-label="Lọc theo chương"
+                className={selectCls}
+              >
+                <option value="all">Mọi chương</option>
+                {chapterOptions.map((c) => (
+                  <option key={c.key} value={c.key}>{c.label}</option>
+                ))}
+              </select>
+            )}
+            <select
+              value={period}
+              onChange={(e) => { setPeriod(e.target.value as typeof period); reset(); }}
+              aria-label="Lọc theo thời gian"
+              className={selectCls}
+            >
+              {ATTEMPT_PERIODS.map((x) => (
+                <option key={x.key} value={x.key}>{x.label}</option>
+              ))}
+            </select>
+          </div>
           <div className="flex flex-wrap gap-2" role="group" aria-label="Lọc bài đã làm">
             {ATTEMPT_FILTERS.map((f) => (
               <button
                 key={f.key}
                 type="button"
                 aria-pressed={filter === f.key}
-                onClick={() => { setFilter(f.key); setShown(ATTEMPTS_PAGE); }}
+                onClick={() => { setFilter(f.key); reset(); }}
                 className={`min-h-11 rounded-full border px-4 text-sm font-semibold ${
                   filter === f.key ? "border-primary bg-primary-soft text-primary" : "border-line text-ink hover:border-line-strong"
                 }`}
@@ -759,7 +838,7 @@ export default function StudentResultsDashboard({
     const done = new Set(points.map((p) => p.examId));
     const seen = new Set<number>();
     return assessments.filter((a) => {
-      if (done.has(a.examId) || seen.has(a.examId)) return false;
+      if (!a.examTitleKnown || done.has(a.examId) || seen.has(a.examId)) return false;
       seen.add(a.examId);
       return true;
     }).slice(0, 5);

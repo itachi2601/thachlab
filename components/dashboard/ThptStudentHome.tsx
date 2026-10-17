@@ -4,7 +4,7 @@ import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { BookOpen, ChevronRight, Flame, Trophy } from "lucide-react";
+import { BookOpen, ChevronRight, ClipboardList, Flame, Trophy } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -31,7 +31,15 @@ import {
   type MyProgressMarks,
 } from "@/services/lessons";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
-import { fetchMyAlert, fetchMyScoreHistory, type ScorePoint, type StudentAlert } from "@/services/analytics";
+import {
+  fetchClassAssessments,
+  fetchMyAlert,
+  KIND_LABEL,
+  fetchMyScoreHistory,
+  type ClassAssessment,
+  type ScorePoint,
+  type StudentAlert,
+} from "@/services/analytics";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import WornTitle from "@/components/rank/WornTitle";
 import type { RankStatus } from "@/features/rank/types";
@@ -140,6 +148,8 @@ export default function ThptStudentHome({
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [pendingHomework, setPendingHomework] = useState<PendingHomework[]>([]);
   const [homeworkLoaded, setHomeworkLoaded] = useState(false);
+  // Đề kiểm tra lớp đã giao (17/10/2026: quay lại thẻ Hôm nay khi em chưa làm). null = đang tải.
+  const [assessments, setAssessments] = useState<ClassAssessment[] | null>(null);
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
   // Bài kiểm tra cuối buổi do trợ giảng mở: cửa sổ còn mở + các lượt em đã làm trong từng cửa sổ.
   const [openWindows, setOpenWindows] = useState<ExitWindow[]>([]);
@@ -209,6 +219,9 @@ export default function ThptStudentHome({
       .catch(() => setMyWaitlist(new Map()));
   }
   useEffect(reloadTutoring, [studentId, classId]);
+  useEffect(() => {
+    fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
+  }, [classId]);
 
   const classChapters = useMemo(() => {
     if (!classes || !chapters) return null;
@@ -298,9 +311,31 @@ export default function ThptStudentHome({
     return last ? { id: last.id, chapterId: last.chapter_id, title: last.title } : null;
   }, [classLessons, progress]);
 
+  // Đề lớp đã giao trong 21 ngày gần nhất mà em chưa làm, mới giao trước. Đề cũ hơn vẫn ở "Cần chú ý" trang Kết quả.
+  const assignedTodo = useMemo(() => {
+    if (!assessments) return [];
+    const done = new Set(scores.map((p) => p.examId));
+    const since = nowMs - 21 * 86_400_000;
+    const seen = new Set<number>();
+    return assessments
+      .filter((a) => {
+        // Đề đã xoá/ẩn với em (RLS trả exams = null → "(Đề đã xóa)") thì không bày ra.
+        if (!a.examTitleKnown || done.has(a.examId) || seen.has(a.examId) || new Date(a.publishedAt).getTime() < since) return false;
+        seen.add(a.examId);
+        return true;
+      })
+      .map((a) => ({ examId: a.examId, examTitle: a.examTitle, publishedAt: a.publishedAt, kindLabel: KIND_LABEL[a.kind] ?? "" }));
+  }, [assessments, scores, nowMs]);
+  const doneToday = useMemo(() => {
+    const start = new Date(nowMs);
+    start.setHours(0, 0, 0, 0);
+    return scores.filter((p) => new Date(p.at).getTime() >= start.getTime()).length;
+  }, [scores, nowMs]);
+
   const nextSteps = useMemo(
     () =>
       rankNextSteps({
+        assigned: assignedTodo,
         homework: pendingHomework.map((h) => ({ examId: h.examId, examTitle: h.examTitle, dueAt: h.dueAt, note: h.note })),
         need: needs[0] ? { id: needs[0].id, label: needLabel(needs[0]) } : null,
         needAvailableAt: needs[0] ? nextExitAttemptAt(lastExitAttempt.get(needs[0].id), nowMs) : null,
@@ -318,12 +353,12 @@ export default function ThptStudentHome({
         weak: weakList,
         reviewLesson,
       }),
-    [pendingHomework, needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
+    [assignedTodo, pendingHomework, needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
   );
 
   // Thẻ "Hôm nay em làm gì": chỉ việc thích ứng theo hồ sơ em (rankNextSteps). Việc đầu là nút nổi duy nhất của trang (B2, L5);
   // tối đa 3 lựa chọn khác (N2). Chờ đủ điểm + kỹ năng yếu + danh mục mới vẽ (tránh chớp "Ôn lại").
-  const attentionReady = scoresLoaded && catalogLoaded && homeworkLoaded && weakTopics !== undefined;
+  const attentionReady = scoresLoaded && catalogLoaded && homeworkLoaded && assessments !== null && weakTopics !== undefined;
   const todaySteps = attentionReady ? nextSteps : [];
   const primaryStep = todaySteps[0] ?? null;
   const secondarySteps = todaySteps.slice(1);
@@ -420,12 +455,21 @@ export default function ThptStudentHome({
           </div>
         </div>
         <HeroStats rank={rank} weekGain={weekGain} />
-        <Link
-          href="/quy-che-hoc-tap"
-          className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
-        >
-          <BookOpen size={16} aria-hidden /> Quy tắc học tập
-        </Link>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {/* Đường tắt tới bài đã làm: trên điện thoại trang Kết quả không có tab riêng (17/10/2026, N1). */}
+          <Link
+            href="/lop-hoc/ket-qua"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-line px-3 text-[13px] font-semibold text-ink transition hover:border-primary hover:text-primary sm:px-4 sm:text-sm"
+          >
+            <ClipboardList size={15} aria-hidden /> Bài đã làm
+          </Link>
+          <Link
+            href="/quy-che-hoc-tap"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-line px-3 text-[13px] font-semibold text-ink transition hover:border-primary hover:text-primary sm:px-4 sm:text-sm"
+          >
+            <BookOpen size={15} aria-hidden /> Quy tắc học tập
+          </Link>
+        </div>
       </section>
 
       {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
@@ -436,16 +480,18 @@ export default function ThptStudentHome({
           secondary={secondarySteps}
           alertText={alertText}
           days={streakDays}
+          doneToday={doneToday}
           onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
           onQuickPractice={(step) => step.practice && setPractice(step.practice)}
         />
       )}
 
-      <CuriosityCard />
-
+      {/* Màn đầu chỉ còn khung chào + Việc hôm nay (17/10/2026, N4/B2); radar rồi Góc tò mò, thẻ cài app xuống dưới. */}
       <LazyErrorBoundary>
         <ChapterMasteryRadar studentId={studentId} compact />
       </LazyErrorBoundary>
+
+      <CuriosityCard />
 
       <WelcomeBackDialog
         userId={studentId}

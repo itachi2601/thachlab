@@ -9,8 +9,8 @@ import type { StreakDay } from "@/services/rank";
 import type { NextStep } from "@/features/learning/next-steps";
 
 /**
- * Thẻ "Hôm nay em làm gì" — thẻ DUY NHẤT gợi việc ở trang chủ HS (N4, B2, L5). Từ 8/10/2026 (thầy chốt) chỉ có việc THÍCH ỨNG
- * theo hồ sơ của em, không còn việc/bài giao chung cho cả lớp (bài kiểm tra mới báo qua chuông thông báo):
+ * Thẻ "Hôm nay em làm gì" — thẻ DUY NHẤT gợi việc ở trang chủ HS (N4, B2, L5). Việc THÍCH ỨNG theo hồ sơ của em, cộng
+ * (từ 17/10/2026) đề kiểm tra lớp đã giao mà em chưa làm — chung 2 suất đầu với BTVN, xem features/learning/next-steps.ts:
  * MỘT nút nổi (việc đầu: chủ đề phụ đạo → kỹ năng yếu; không có chỗ hổng thì "Học tiếp" kèm lời động viên)
  * → tối đa 3 lựa chọn khác dạng hàng có gợi ý → chân thẻ: RP hôm nay/tuần + "Cách tăng RP" → cảnh báo là một dòng nhỏ.
  * Bước "unlock" không có href: bấm gọi onUnlock. Bước "weak": bấm mở luyện nhanh 10 câu (onQuickPractice).
@@ -22,9 +22,12 @@ export default function TodayCard({
   alertText,
   rank,
   days,
+  doneToday = 0,
   onUnlock,
   onQuickPractice,
 }: {
+  /** Số bài em đã nộp hôm nay — dòng "Hôm nay đã xong n bài" để em thấy mình tiến tới đâu (không cộng RP riêng, L3). */
+  doneToday?: number;
   primary: NextStep | null;
   secondary: NextStep[];
   alertText: string | null;
@@ -40,8 +43,11 @@ export default function TodayCard({
     <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5">
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="font-display font-bold text-ink">Việc hôm nay</h2>
-        {steps.length > 0 && <span className="text-[13px] text-muted">{steps.length} việc</span>}
+        {steps.length > 0 && <span className="text-[13px] text-muted">còn {steps.length} việc</span>}
       </div>
+      {doneToday > 0 && (
+        <p className="mt-1 text-[13px] font-semibold text-ok">✓ Hôm nay em đã xong {doneToday} bài</p>
+      )}
       {steps.length > 0 && (
         <ul className="mt-1">
           {steps.map((step, i) => (
@@ -143,6 +149,7 @@ function StepControl({ step, className, children, onUnlock, onQuickPractice }: {
 
 const KIND_TAG: Record<NextStep["kind"], { label: string; cls: string }> = {
   homework: { label: "Bài về nhà", cls: "bg-primary-soft text-primary" },
+  assigned: { label: "Kiểm tra lớp", cls: "bg-warn/10 text-warn" },
   unlock: { label: "Phụ đạo", cls: "bg-warn/10 text-warn" },
   weak: { label: "Kỹ năng yếu", cls: "bg-primary-soft text-primary" },
   retry: { label: "Làm lại", cls: "bg-primary-soft text-primary" },

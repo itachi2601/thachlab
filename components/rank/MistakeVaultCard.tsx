@@ -5,7 +5,12 @@ import { Sparkles, AlertCircle, CheckCircle2, ChevronRight } from "lucide-react"
 import Button from "@/components/ui/Button";
 import { fetchMistakeStats, type MistakeStats } from "@/services/mistakes";
 import MistakeReviewModal from "@/components/rank/MistakeReviewModal";
+import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
 
+/**
+ * Kho bẫy — MỘT chỗ cho mọi câu em từng sai (17/10/2026): ôn cách quãng (câu tới hạn) + xem lại các câu vừa sai kèm lời giải
+ * (trước đây là khối "Ôn n câu vừa sai" riêng ở trang lớp). Kho trống vẫn hiện một dòng giải thích để em biết tính năng có.
+ */
 export default function MistakeVaultCard() {
   const [stats, setStats] = useState<MistakeStats | null>(null);
   const [loading, setLoading] = useState(true);
@@ -22,20 +27,35 @@ export default function MistakeVaultCard() {
     reloadStats();
   }, []);
 
-  if (loading || !stats || (stats.total_active === 0 && stats.cleared_count === 0)) {
-    return null;
+  if (loading || !stats) return null;
+  if (stats.total_active === 0 && stats.cleared_count === 0) {
+    return (
+      <div id="kho-bay" className="scroll-mt-24 rounded-3xl border border-line bg-panel p-5">
+        <div className="flex items-center gap-3">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
+            <Sparkles className="h-5 w-5" />
+          </span>
+          <div>
+            <h3 className="text-sm font-semibold text-ink">Kho bẫy: câu em từng sai</h3>
+            <p className="text-[13px] text-muted">
+              Kho đang trống. Câu nào em làm sai trong bài kiểm tra sẽ tự vào đây, rồi tới hạn ôn cách quãng để em làm lại.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
     <>
-      <div className="rounded-3xl border border-line bg-panel p-5 shadow-sm transition hover:border-line-strong">
+      <div id="kho-bay" className="scroll-mt-24 rounded-3xl border border-line bg-panel p-5 shadow-sm transition hover:border-line-strong">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
               <Sparkles className="h-5 w-5" />
             </span>
             <div>
-              <h3 className="text-sm font-semibold text-ink">Kho bẫy câu sai & Xoá bẫy cách quãng</h3>
+              <h3 className="text-sm font-semibold text-ink">Kho bẫy: câu em từng sai</h3>
               <p className="text-xs text-muted">
                 {stats.due_count > 0
                   ? `Có ${stats.due_count} câu đã đến hạn ôn tập để nhận +RP thưởng`
@@ -85,6 +105,8 @@ export default function MistakeVaultCard() {
             ))}
           </div>
         )}
+
+        <MistakeReviewPanel variant="vault" />
       </div>
 
       {openModal && (

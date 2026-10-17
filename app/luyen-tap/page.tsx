@@ -347,7 +347,7 @@ function Content() {
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-28 pt-28 sm:px-6">
       <h1 className="font-display text-2xl font-semibold text-ink">Luyện tập</h1>
-      <p className="mt-1 text-sm text-muted">Luyện từng bài, làm thử bài kiểm tra 15 phút hoặc ôn thi học kì.</p>
+      <p className="mt-1 text-sm text-muted">Chỗ ôn tập chính: kỹ năng em yếu nhất, Kho bẫy câu em từng sai, rồi luyện theo bài, bài 15 phút hoặc ôn thi học kì.</p>
 
       {session && (
         <div className="mt-4 space-y-4">

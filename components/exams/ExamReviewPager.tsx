@@ -39,10 +39,16 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
   const firstWrong = questions.findIndex((q, i) => questionStatus(q, responses[i]) !== "correct");
   const [cur, setCur] = useState(firstWrong >= 0 ? firstWrong : 0);
   const [paletteOpen, setPaletteOpen] = useState(true);
-  const lastIndex = questions.length - 1;
+  // "Chỉ câu sai": bảng số và nút Câu trước/sau chỉ đi qua câu chưa đúng hết (sai, đúng một phần, bỏ qua).
+  const notCorrect = questions.flatMap((q, i) => (questionStatus(q, responses[i]) === "correct" ? [] : [i]));
+  const [onlyWrong, setOnlyWrong] = useState(false);
+  const order = onlyWrong && notCorrect.length > 0 ? notCorrect : questions.map((_, i) => i);
+  const pos = order.indexOf(cur);
+  const prevIdx = pos > 0 ? order[pos - 1] : pos === -1 ? [...order].reverse().find((i) => i < cur) : undefined;
+  const nextIdx = pos >= 0 ? order[pos + 1] : order.find((i) => i > cur);
 
   function goTo(idx: number) {
-    setCur(Math.min(lastIndex, Math.max(0, idx)));
+    setCur(Math.min(questions.length - 1, Math.max(0, idx)));
   }
 
   return (
@@ -52,6 +58,21 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           <span className="text-sm text-muted">
             Câu <span className="font-semibold text-ink">{cur + 1}</span>/{questions.length}
           </span>
+          {notCorrect.length > 0 && notCorrect.length < questions.length && (
+            <button
+              type="button"
+              aria-pressed={onlyWrong}
+              onClick={() => {
+                setOnlyWrong((v) => !v);
+                if (!onlyWrong && !notCorrect.includes(cur)) setCur(notCorrect[0]);
+              }}
+              className={`ml-auto min-h-9 rounded-full border px-3 py-1 text-xs font-semibold ${
+                onlyWrong ? "border-primary bg-primary-soft text-primary" : "border-line text-ink hover:border-line-strong"
+              }`}
+            >
+              Chỉ câu sai ({notCorrect.length})
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setPaletteOpen((v) => !v)}
@@ -63,13 +84,15 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
 
         {paletteOpen && (
           <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-line pt-3">
-            {groupQuestionIndexesByType(questions).map((section) => (
+            {groupQuestionIndexesByType(questions)
+              .filter((section) => !onlyWrong || section.indices.some((i) => notCorrect.includes(i)))
+              .map((section) => (
               <div key={section.type}>
                 <div className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-slate-500">
                   {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {section.indices.map((i) => {
+                  {section.indices.filter((i) => !onlyWrong || notCorrect.includes(i)).map((i) => {
                     const status = questionStatus(questions[i], responses[i]);
                     const title = `Câu ${i + 1} · ${QUESTION_STATUS_LABELS[status]}`;
                     return (
@@ -131,19 +154,19 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
       <div className="mt-6 flex flex-wrap items-center gap-2">
         <button
           type="button"
-          disabled={cur === 0}
-          onClick={() => goTo(cur - 1)}
+          disabled={prevIdx === undefined}
+          onClick={() => prevIdx !== undefined && goTo(prevIdx)}
           className="rounded-xl border border-line px-4 py-2 text-sm text-ink hover:border-line-strong disabled:opacity-40"
         >
-          ← Câu trước
+          ← {onlyWrong ? "Câu sai trước" : "Câu trước"}
         </button>
         <button
           type="button"
-          disabled={cur === lastIndex}
-          onClick={() => goTo(cur + 1)}
+          disabled={nextIdx === undefined}
+          onClick={() => nextIdx !== undefined && goTo(nextIdx)}
           className="ml-auto rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
         >
-          Câu sau →
+          {onlyWrong ? "Câu sai sau" : "Câu sau"} →
         </button>
       </div>
     </div>

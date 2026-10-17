@@ -221,7 +221,8 @@ export default function Navbar() {
                     onClick={() => setAccountMenuOpen(false)}
                     className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                   >
-                    <User size={16} /> Tài khoản của tôi
+                    {/* Cùng tên với tab "Hôm nay" trên thanh đáy điện thoại (17/10/2026, N1). */}
+                    <User size={16} /> {profile?.role === "student" && profile.track !== "cttc" ? "Hôm nay" : "Tài khoản của tôi"}
                   </Link>
                   {profile?.role === "student" && profile.track !== "cttc" && (
                     <Link
@@ -256,7 +257,7 @@ export default function Navbar() {
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
-                      <Target size={16} /> Kết quả học tập
+                      <Target size={16} /> Bài đã làm & kết quả
                     </Link>
                   )}
                   {isStaff && profile?.admin_area !== "thpt" && (

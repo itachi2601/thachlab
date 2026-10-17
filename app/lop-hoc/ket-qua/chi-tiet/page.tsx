@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ChevronLeft, Sparkles, Wrench } from "lucide-react";
+import { ChevronLeft, RotateCcw, Sparkles, Wrench } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -86,6 +86,18 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
           ) : undefined
         }
       />
+
+      {!fromParent && (
+        <p className="mt-4">
+          <Link
+            href={`/kiem-tra/lam?id=${detail.examId}`}
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-line px-4 text-sm font-semibold text-ink hover:border-primary hover:text-primary"
+          >
+            <RotateCcw size={16} aria-hidden /> Làm lại đề này
+          </Link>
+          <span className="ml-2 text-[13px] text-muted">Làm lại không cộng thêm RP bài này</span>
+        </p>
+      )}
 
       {showFix && (
         <section className="mt-8 rounded-2xl border border-line bg-panel p-4 sm:p-5">

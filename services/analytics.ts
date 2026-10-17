@@ -73,7 +73,7 @@ interface AssessmentMeta {
   published_at: string;
 }
 
-const KIND_LABEL: Record<string, string> = {
+export const KIND_LABEL: Record<string, string> = {
   giua_ki: "Giữa kỳ",
   cuoi_ki: "Cuối kỳ",
   chuong: "KT chương",
@@ -680,6 +680,8 @@ export interface ClassAssessment {
   weight: number;
   publishedAt: string;
   examTitle: string;
+  /** false khi đề đã xoá hoặc RLS giấu đề với người xem (exams = null) — không bày ra cho học sinh làm. */
+  examTitleKnown: boolean;
 }
 
 export async function fetchClassAssessments(classId: number): Promise<ClassAssessment[]> {
@@ -712,6 +714,7 @@ export async function fetchClassAssessments(classId: number): Promise<ClassAsses
     weight: Number(r.weight),
     publishedAt: r.published_at,
     examTitle: (Array.isArray(r.exams) ? r.exams[0] : r.exams)?.title ?? "(Đề đã xóa)",
+    examTitleKnown: Boolean((Array.isArray(r.exams) ? r.exams[0] : r.exams)?.title),
   }));
 }
 
