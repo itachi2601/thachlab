@@ -15,7 +15,7 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { classifyQuestionTagsBatched } from "@/services/ai-classify";
-import { checkExamBatched, type AiCheckResult } from "@/services/ai-check-exam";
+import { applyAiFix, checkExamBatched, describeAiFix, type AiCheckResult } from "@/services/ai-check-exam";
 import { estimateDuration } from "@/features/exams/duration";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
@@ -278,6 +278,13 @@ export default function ExamSection({
     document.getElementById(`exam-q-${i}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   const tagAudit = useMemo(() => auditQuestionTags(questions, catalogNames), [questions, catalogNames]);
   const gridEnabled = !edited && !!draft && draft.markerCount === questions.length && questions.length > 0;
+  // Đề đã vào chế độ sửa chi tiết (lấy từ ngân hàng, hoặc bấm "Sửa chi tiết từng câu") thì ô dán văn bản chỉ còn là
+  // bản đọc mờ, không dùng nữa: ẩn hẳn, bộ đề dùng trọn bề ngang một cột.
+  const showRaw = !hideRawText && !edited;
+  const aiFixable = [...aiCheck.entries()]
+    .map(([key, r]) => ({ i: questions.findIndex((q) => q.question === key), r }))
+    .filter(({ i, r }) => i >= 0 && r.verdict !== "ok" && describeAiFix(questions[i], r.fix).length > 0)
+    .map(({ i }) => i);
   const imageSrc = useMemo(() => {
     const map = new Map(images.map((im) => [im.placeholder, im.dataUri]));
     return (html: string) =>
@@ -310,6 +317,30 @@ export default function ExamSection({
     } finally {
       setAiChecking(null);
     }
+  }
+
+  /** Áp bản sửa AI cho các câu `indexes` (chỉ câu có đề xuất). Đang ở chế độ văn bản thì chuyển sang sửa chi tiết. */
+  function applyAiFixes(indexes: number[]) {
+    const base = edited ?? (JSON.parse(JSON.stringify(bundle)) as LessonBundle);
+    const done: string[] = [];
+    const qs = base.exam.questions.map((q, i) => {
+      const key = questions[i]?.question;
+      const r = key === undefined ? undefined : aiCheck.get(key);
+      if (!indexes.includes(i) || !r?.fix || describeAiFix(q, r.fix).length === 0) return q;
+      done.push(key as string);
+      return applyAiFix(q, r.fix);
+    });
+    if (done.length === 0) {
+      toast("error", "Không có đề xuất sửa nào để áp dụng.");
+      return;
+    }
+    setEdited({ ...base, exam: { ...base.exam, questions: qs } });
+    setAiCheck((prev) => {
+      const next = new Map(prev);
+      for (const k of done) next.delete(k);
+      return next;
+    });
+    toast("success", `Đã sửa ${done.length} câu theo đề xuất AI — xem lại thẻ trước khi Đăng.`);
   }
 
   async function handleFile(file: File) {
@@ -435,8 +466,8 @@ export default function ExamSection({
         </p>
       )}
 
-      <section className={`grid gap-4 ${hideRawText ? "" : "lg:grid-cols-2"}`}>
-      {!hideRawText && (
+      <section className={`grid gap-4 ${showRaw ? "lg:grid-cols-2" : ""}`}>
+      {showRaw && (
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset}</span>
@@ -564,11 +595,11 @@ export default function ExamSection({
       </div>
       )}
 
-      <div className={hideRawText ? "space-y-3" : "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1"}>
+      <div className={!showRaw ? "mx-auto w-full max-w-3xl space-y-3" : "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1"}>
         {!hideRawText && (
         <div className="flex flex-wrap items-center gap-2">
-          <span className="admin-badge admin-badge--accent">{numberOffset + 1}</span>
-          <span className="text-sm font-semibold text-white">Xem trước & đáp án</span>
+          <span className="admin-badge admin-badge--accent">{showRaw ? numberOffset + 1 : numberOffset}</span>
+          <span className="text-sm font-semibold text-white">{showRaw ? "Xem trước & đáp án" : "Bộ đề đã chọn"}</span>
           {questions.length > 0 && (
             <span className="text-xs text-slate-400">
               Đã chọn <b className="text-white">{questions.length}</b> câu
@@ -576,6 +607,7 @@ export default function ExamSection({
           )}
           <div className="ml-auto">
             {edited ? (
+              text.trim() && (
               <button
                 type="button"
                 onClick={stopEditing}
@@ -583,6 +615,7 @@ export default function ExamSection({
               >
                 Quay lại văn bản
               </button>
+              )
             ) : (
               <button
                 type="button"
@@ -598,18 +631,21 @@ export default function ExamSection({
         )}
 
         {lintBlocked.length > 0 && (
-          <div role="alert" className="space-y-2 rounded-xl border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
-            <div className="flex flex-wrap items-center gap-2">
+          <details open={lintBlocked.length <= 3} role="alert" className="rounded-xl border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
+            <summary className="flex cursor-pointer flex-wrap items-center gap-2">
               <b>Còn {lintBlocked.length} câu lỗi — chưa thể Lưu/Đăng:</b>
               <button
                 type="button"
-                onClick={() => jumpToQuestion(lintBlocked[0].i)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  jumpToQuestion(lintBlocked[0].i);
+                }}
                 className="rounded-lg bg-red-500/20 px-2 py-1 font-semibold hover:bg-red-500/30"
               >
                 Nhảy tới câu lỗi đầu tiên (câu {lintBlocked[0].i + 1})
               </button>
-            </div>
-            <ul className="space-y-1">
+            </summary>
+            <ul className="mt-2 space-y-1">
               {lintBlocked.map(({ i, flags }) => (
                 <li key={i} className="flex flex-wrap items-center gap-2">
                   <button type="button" onClick={() => jumpToQuestion(i)} className="font-bold underline">Câu {i + 1}</button>
@@ -625,11 +661,15 @@ export default function ExamSection({
                 </li>
               ))}
             </ul>
-          </div>
+          </details>
         )}
 
         {questions.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
+          <div
+            className={`flex flex-wrap items-center gap-2 text-xs text-slate-400 ${
+              !showRaw ? "sticky top-0 z-20 -mx-1 bg-panel/95 px-1 py-2 backdrop-blur" : ""
+            }`}
+          >
             <button
               type="button"
               onClick={runAiCheck}
@@ -640,6 +680,15 @@ export default function ExamSection({
               <Sparkles size={14} />{" "}
               {aiChecking ? `AI đang kiểm… ${aiChecking.done}/${aiChecking.total} câu` : `AI kiểm đề (${questions.length} câu)`}
             </button>
+            {aiFixable.length > 0 && (
+              <button
+                type="button"
+                onClick={() => applyAiFixes(aiFixable)}
+                className="inline-flex items-center gap-1 rounded-lg bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-200 hover:bg-emerald-500/30"
+              >
+                <Sparkles size={14} /> AI sửa {aiFixable.length} câu theo đề xuất
+              </button>
+            )}
             {aiCheck.size > 0 && (
               <span>
                 {[...aiCheck.values()].filter((r) => r.verdict === "loi").length} lỗi ·{" "}
@@ -650,22 +699,23 @@ export default function ExamSection({
         )}
 
         {edited ? (
-          <div className="grid gap-4 lg:grid-cols-2">
-            <ExamDraftEditor
-              bundle={bundle}
-              onChange={setEdited}
-              topicOptions={topicGroups.flatMap((g) => g.names)}
-              aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
-              grade={enableQuestionBankHandoff ? grade : null}
-            />
-            {/* Xem trước bộ đề đúng như học sinh thấy (A. B. C. D., a) b) c) d)) — cập nhật ngay khi sửa bên trái. */}
-            <div className={hideRawText ? "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:self-start lg:overflow-y-auto lg:pr-1" : "space-y-3"}>
-              <p className="text-sm font-semibold text-white">Xem trước bộ đề</p>
-              {questions.map((q, i) => (
-                <PreviewCard key={i} index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} ai={aiCheck.get(q.question)} />
-              ))}
-            </div>
-          </div>
+          <ExamDraftEditor
+            bundle={bundle}
+            onChange={setEdited}
+            topicOptions={topicGroups.flatMap((g) => g.names)}
+            aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
+            grade={enableQuestionBankHandoff ? grade : null}
+            renderPreview={(q, i) => (
+              <PreviewCard
+                index={i + 1}
+                q={q}
+                fix={imageSrc}
+                lint={lintByQuestion[i]}
+                ai={aiCheck.get(q.question)}
+                onApplyAiFix={() => applyAiFixes([i])}
+              />
+            )}
+          />
         ) : questions.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
             Chưa có câu nào. Dán đề hoặc bấm “Đề mẫu” để xem cách trình bày.
@@ -710,7 +760,7 @@ export default function ExamSection({
                       Câu học sinh báo lỗi
                     </p>
                   )}
-                  <PreviewCard index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} ai={aiCheck.get(q.question)} />
+                  <PreviewCard index={i + 1} q={q} fix={imageSrc} lint={lintByQuestion[i]} ai={aiCheck.get(q.question)} onApplyAiFix={() => applyAiFixes([i])} />
                 </div>
               ))}
             </div>
@@ -1051,7 +1101,7 @@ function TagGrid({
   );
 }
 
-function PreviewCard({ index, q, fix, lint = [], ai }: { index: number; q: ExamQuestion; fix: (html: string) => string; lint?: LintFlag[]; ai?: AiCheckResult }) {
+function PreviewCard({ index, q, fix, lint = [], ai, onApplyAiFix }: { index: number; q: ExamQuestion; fix: (html: string) => string; lint?: LintFlag[]; ai?: AiCheckResult; onApplyAiFix?: () => void }) {
   const issues = problems(q);
   return (
     <div className={`exam-paper rounded-2xl border bg-panel p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
@@ -1074,13 +1124,27 @@ function PreviewCard({ index, q, fix, lint = [], ai }: { index: number; q: ExamQ
         ))}
       </div>
       {ai && ai.verdict !== "ok" && (
-        <p
-          className={`mb-2 rounded-lg px-2 py-1 text-xs ${
+        <div
+          className={`mb-2 space-y-1 rounded-lg px-2 py-1.5 text-xs ${
             ai.verdict === "loi" ? "bg-red-500/15 text-red-200" : "bg-amber-500/15 text-amber-200"
           }`}
         >
-          <b>AI {ai.verdict === "loi" ? "báo lỗi" : "nghi ngờ"}:</b> {ai.note || "xem lại câu này"}
-        </p>
+          <p>
+            <b>AI {ai.verdict === "loi" ? "báo lỗi" : "nghi ngờ"}:</b> {ai.note || "xem lại câu này"}
+          </p>
+          {onApplyAiFix && describeAiFix(q, ai.fix).length > 0 && (
+            <p className="flex flex-wrap items-center gap-2">
+              <span>Đề xuất sửa: {describeAiFix(q, ai.fix).join(", ")}</span>
+              <button
+                type="button"
+                onClick={onApplyAiFix}
+                className="rounded-md bg-emerald-500/25 px-2 py-0.5 font-semibold text-emerald-100 hover:bg-emerald-500/40"
+              >
+                Sửa theo đề xuất
+              </button>
+            </p>
+          )}
+        </div>
       )}
       <ContentHtml html={fix(q.question)} className="text-sm text-slate-200" />
       {q.type === "multiple_choice" && (

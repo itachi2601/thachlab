@@ -33,10 +33,18 @@ interface Item {
   index: number;
   text: string;
 }
+interface Fix {
+  question: string;
+  options: string[];
+  answer: string;
+  statements: { text: string; answer: boolean }[];
+  explanation: string;
+}
 interface ResultRow {
   index: number;
   verdict: Verdict;
   note: string;
+  fix?: Fix;
 }
 
 // Trần lượt gọi mỗi người/giờ (bộ nhớ của instance — chặn vòng lặp/script chạy lố, không thay cho
@@ -110,7 +118,13 @@ Deno.serve(async (req) => {
     '"ok" (đáp án đúng, đề đủ dữ kiện, lời giải khớp), ' +
     '"nghi_ngo" (đề mơ hồ/thiếu dữ kiện, lời giải lệch nhẹ, đơn vị hoặc ký hiệu đáng ngờ, chính tả), ' +
     '"loi" (đáp án đánh dấu sai so với cách giải của bạn, hoặc lời giải mâu thuẫn đáp án, hoặc có hai đáp án đúng/không có đáp án đúng). ' +
-    "`note`: một câu tiếng Việt nêu đúng chỗ nghi và đáp án bạn tính ra (nếu khác); câu ok thì để chuỗi rỗng.\n\n" +
+    "`note`: một câu tiếng Việt nêu đúng chỗ nghi và đáp án bạn tính ra (nếu khác); câu ok thì để chuỗi rỗng. " +
+    "`fix`: bản sửa đề xuất cho câu không ok — CHỈ điền trường thật sự cần đổi, trường còn lại để rỗng (\"\" hoặc []). " +
+    "`question` = toàn bộ đề bài đã sửa (giữ nguyên công thức $…$, số liệu đúng, chỉ sửa chỗ sai/chính tả/đơn vị); " +
+    "`options` = đủ 4 phương án A–D đã sửa (trắc nghiệm) hoặc []; `answer` = chữ cái đáp án đúng \"A\"–\"D\" (trắc nghiệm) " +
+    "hoặc đáp án số ≤4 ký tự dùng dấu phẩy thập phân (trả lời ngắn) hoặc \"\"; `statements` = đủ 4 ý a–d với `answer` đúng/sai (đúng–sai) hoặc []; " +
+    "`explanation` = lời giải ngắn, khớp đáp án đã sửa, hoặc \"\". Câu ok thì mọi trường fix để rỗng. " +
+    "Không tự đổi ý nghĩa đề; nếu đề mơ hồ/thiếu dữ kiện mà không đoán chắc được thì để fix rỗng và nói rõ trong note.\n\n" +
     itemList;
 
   const schema = {
@@ -124,8 +138,28 @@ Deno.serve(async (req) => {
             index: { type: "integer" },
             verdict: { type: "string", enum: [...VERDICTS] },
             note: { type: "string" },
+            fix: {
+              type: "object",
+              properties: {
+                question: { type: "string" },
+                options: { type: "array", items: { type: "string" } },
+                answer: { type: "string" },
+                statements: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: { text: { type: "string" }, answer: { type: "boolean" } },
+                    required: ["text", "answer"],
+                    additionalProperties: false,
+                  },
+                },
+                explanation: { type: "string" },
+              },
+              required: ["question", "options", "answer", "statements", "explanation"],
+              additionalProperties: false,
+            },
           },
-          required: ["index", "verdict", "note"],
+          required: ["index", "verdict", "note", "fix"],
           additionalProperties: false,
         },
       },
@@ -176,7 +210,24 @@ Deno.serve(async (req) => {
       const index = Number(r.index);
       if (!validIndexes.has(index)) continue;
       if (typeof r.verdict !== "string" || !(VERDICTS as readonly string[]).includes(r.verdict)) continue;
-      results.push({ index, verdict: r.verdict as Verdict, note: typeof r.note === "string" ? r.note.slice(0, 500) : "" });
+      const f = r.fix && typeof r.fix === "object" ? (r.fix as Record<string, unknown>) : null;
+      const str = (v: unknown) => (typeof v === "string" ? v.slice(0, 4000) : "");
+      const fix: Fix | undefined =
+        f && r.verdict !== "ok"
+          ? {
+              question: str(f.question),
+              options: Array.isArray(f.options) ? f.options.slice(0, 4).map(str) : [],
+              answer: str(f.answer).slice(0, 20),
+              statements: Array.isArray(f.statements)
+                ? f.statements.slice(0, 4).map((s) => {
+                    const o = (s ?? {}) as Record<string, unknown>;
+                    return { text: str(o.text), answer: o.answer === true };
+                  })
+                : [],
+              explanation: str(f.explanation),
+            }
+          : undefined;
+      results.push({ index, verdict: r.verdict as Verdict, note: typeof r.note === "string" ? r.note.slice(0, 500) : "", fix });
     }
     return jsonResponse({ results });
   } catch (cause) {

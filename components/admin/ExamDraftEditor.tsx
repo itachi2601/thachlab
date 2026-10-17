@@ -1,8 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { ChevronDown, ChevronUp, Database, Eye, Repeat, Sparkles, Trash2 } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtmlLazy";
+import { useMemo, useState, type ReactNode } from "react";
+import { ChevronDown, ChevronUp, Database, PencilLine, Repeat, Sparkles, Trash2 } from "lucide-react";
 import QuestionBankPickerModal, { normalizeQuestionText } from "@/components/admin/QuestionBankPickerModal";
 import { useToast } from "@/components/ui/Toast";
 import type {
@@ -13,7 +12,7 @@ import type {
   TrueFalseQuestion,
 } from "@/features/exams/types";
 import { classifyQuestionTagsBatched } from "@/services/ai-classify";
-import { questionTextForAi } from "@/services/exam-question-text";
+import { editableToHtml, htmlToEditable, questionTextForAi } from "@/services/exam-question-text";
 import type { Difficulty, LessonBundle } from "@/services/lesson-import";
 
 const inputCls =
@@ -70,6 +69,7 @@ export default function ExamDraftEditor({
   topicOptions = [],
   aiTopicCandidates = [],
   grade = null,
+  renderPreview,
 }: {
   bundle: LessonBundle;
   onChange: (next: LessonBundle) => void;
@@ -79,8 +79,12 @@ export default function ExamDraftEditor({
   aiTopicCandidates?: string[];
   /** Khối để lọc Ngân hàng câu hỏi khi "Thêm câu"/"Đổi câu khác" — null thì ẩn 2 nút đó. */
   grade?: string | null;
+  /** Vẽ câu đúng như học sinh thấy (thẻ xem trước) — mỗi câu hiện thẻ này, nút "Sửa" mở ô sửa ngay dưới nó. */
+  renderPreview: (q: ExamQuestion, index: number) => ReactNode;
 }) {
   const toast = useToast();
+  // Câu đang mở ô sửa (một câu một lúc) — nằm ở đây, không ở thẻ, để đi theo câu khi đổi chỗ/xoá.
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [aiBusy, setAiBusy] = useState(false);
   const [aiProgress, setAiProgress] = useState<{ done: number; total: number } | null>(null);
   const questions = bundle.exam.questions;
@@ -106,6 +110,13 @@ export default function ExamDraftEditor({
     const next = [...questions];
     [next[index], next[target]] = [next[target], next[index]];
     setQuestions(next);
+    if (openIndex === index) setOpenIndex(target);
+    else if (openIndex === target) setOpenIndex(index);
+  }
+  function remove(index: number) {
+    setQuestions(questions.filter((_, k) => k !== index));
+    if (openIndex === index) setOpenIndex(null);
+    else if (openIndex !== null && openIndex > index) setOpenIndex(openIndex - 1);
   }
 
   const aiTargets = questions
@@ -205,16 +216,19 @@ export default function ExamDraftEditor({
         )}
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         {questions.map((q, i) => (
           <QuestionCardEditor
             key={i}
             index={i}
             total={questions.length}
             q={q}
+            preview={renderPreview(q, i)}
+            open={openIndex === i}
+            onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             onChange={(next) => update(i, next)}
             topicOptions={topicOptions}
-            onRemove={() => setQuestions(questions.filter((_, k) => k !== i))}
+            onRemove={() => remove(i)}
             onMove={(delta) => move(i, delta)}
             onSwap={grade ? () => setBankPicker({ mode: "swap", index: i }) : undefined}
           />
@@ -226,7 +240,10 @@ export default function ExamDraftEditor({
           <button
             key={type}
             type="button"
-            onClick={() => setQuestions([...questions, newQuestion(type)])}
+            onClick={() => {
+              setQuestions([...questions, newQuestion(type)]);
+              setOpenIndex(questions.length);
+            }}
             className="admin-chip"
           >
             + {TYPE_LABELS[type]}
@@ -265,6 +282,9 @@ function QuestionCardEditor({
   q,
   index,
   total,
+  preview,
+  open,
+  onToggle,
   onChange,
   topicOptions,
   onRemove,
@@ -274,6 +294,10 @@ function QuestionCardEditor({
   q: ExamQuestion;
   index: number;
   total: number;
+  /** Thẻ xem trước của câu (vẽ ở ExamSection). */
+  preview: ReactNode;
+  open: boolean;
+  onToggle: () => void;
   onChange: (next: ExamQuestion) => void;
   topicOptions: string[];
   onRemove: () => void;
@@ -281,68 +305,63 @@ function QuestionCardEditor({
   /** Mở bảng Ngân hàng câu hỏi để thay câu này bằng câu khác — undefined khi chưa rõ khối. */
   onSwap?: () => void;
 }) {
-  const [preview, setPreview] = useState(false);
   const issues = problems(q);
   const type = q.type === "essay" ? "short_answer" : q.type;
+  const btn = "inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white disabled:opacity-30";
 
   return (
-    <article
-      id={`exam-q-${index}`}
+    <article id={`exam-q-${index}`} className="space-y-2">
+      {preview}
+      <div className="flex flex-wrap items-center gap-1">
+        <button type="button" onClick={onToggle} className={`${btn} ${open ? "bg-primary/20 text-primary" : ""}`}>
+          <PencilLine size={14} /> {open ? "Xong" : "Sửa"}
+        </button>
+        {onSwap && (
+          <button type="button" onClick={onSwap} className={btn} title="Đổi câu khác từ ngân hàng câu hỏi">
+            <Repeat size={14} /> Đổi câu
+          </button>
+        )}
+        <button type="button" onClick={() => onMove(-1)} disabled={index === 0} className={btn} aria-label="Đưa lên">
+          <ChevronUp size={14} />
+        </button>
+        <button type="button" onClick={() => onMove(1)} disabled={index === total - 1} className={btn} aria-label="Đưa xuống">
+          <ChevronDown size={14} />
+        </button>
+        <button type="button" onClick={onRemove} className={`${btn} ml-auto text-red-300 hover:text-red-200`}>
+          <Trash2 size={14} /> Xóa
+        </button>
+      </div>
+
+      {open && (
+    <div
       className={`space-y-3 rounded-2xl border p-4 ${
         issues.length ? "border-amber-500/40 bg-amber-500/[.04]" : "border-white/10 bg-white/[.03]"
       }`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-bold text-blue-300">Câu {index + 1}</span>
-          <select
-            value={type}
-            onChange={(e) => onChange(changeType(q, e.target.value as EditableType))}
-            className="rounded-lg border border-white/10 bg-panel px-2 py-1 text-xs text-slate-300"
-          >
-            {(Object.keys(TYPE_LABELS) as EditableType[]).map((t) => (
-              <option key={t} value={t}>
-                {TYPE_LABELS[t]}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex items-center gap-1 text-slate-400">
-          <button type="button" onClick={() => setPreview((v) => !v)} title="Xem như học sinh thấy" className="rounded p-1 hover:text-white">
-            <Eye size={14} />
-          </button>
-          {onSwap && (
-            <button type="button" onClick={onSwap} title="Đổi câu khác từ ngân hàng câu hỏi" className="rounded p-1 hover:text-white">
-              <Repeat size={14} />
-            </button>
-          )}
-          <button type="button" onClick={() => onMove(-1)} disabled={index === 0} className="rounded p-1 hover:text-white disabled:opacity-30">
-            <ChevronUp size={14} />
-          </button>
-          <button type="button" onClick={() => onMove(1)} disabled={index === total - 1} className="rounded p-1 hover:text-white disabled:opacity-30">
-            <ChevronDown size={14} />
-          </button>
-          <button type="button" onClick={onRemove} className="rounded p-1 text-red-300 hover:text-red-200">
-            <Trash2 size={14} />
-          </button>
-        </div>
-      </div>
+      <label className="flex items-center gap-2 text-xs font-semibold text-slate-400">
+        Loại câu
+        <select
+          value={type}
+          onChange={(e) => onChange(changeType(q, e.target.value as EditableType))}
+          className="rounded-lg border border-white/10 bg-panel px-2 py-1 text-xs text-slate-300"
+        >
+          {(Object.keys(TYPE_LABELS) as EditableType[]).map((t) => (
+            <option key={t} value={t}>
+              {TYPE_LABELS[t]}
+            </option>
+          ))}
+        </select>
+      </label>
 
       {issues.length > 0 && <p className="text-[12px] text-amber-300">Còn thiếu: {issues.join(" · ")}</p>}
 
       <textarea
-        value={q.question}
-        onChange={(e) => onChange({ ...q, question: e.target.value })}
+        value={htmlToEditable(q.question)}
+        onChange={(e) => onChange({ ...q, question: editableToHtml(e.target.value) })}
         rows={2}
         placeholder="Nội dung câu hỏi — công thức viết trong $…$"
         className={`${inputCls} font-mono text-xs`}
       />
-      {preview && (
-        <div className="rounded-xl border border-white/10 bg-black/30 p-3">
-          <ContentHtml html={q.question} className="block text-sm text-slate-200" />
-        </div>
-      )}
-
       {q.type === "multiple_choice" && (
         <div className="space-y-2">
           {q.options.map((option, i) => (
@@ -358,7 +377,7 @@ function QuestionCardEditor({
                 {LETTERS[i]}
               </button>
               <input
-                value={option}
+                value={htmlToEditable(option).replace(/\n/g, " ")}
                 onChange={(e) => {
                   const options = [...q.options];
                   options[i] = e.target.value;
@@ -378,7 +397,7 @@ function QuestionCardEditor({
             <div key={i} className="grid gap-2 sm:grid-cols-[28px_minmax(0,1fr)_auto]">
               <span className="pt-2 text-sm font-bold text-slate-500">{String.fromCharCode(97 + i)})</span>
               <input
-                value={s.text}
+                value={htmlToEditable(s.text).replace(/\n/g, " ")}
                 onChange={(e) => {
                   const statements = q.statements.map((st, k) => (k === i ? { ...st, text: e.target.value } : st));
                   onChange({ ...q, statements });
@@ -416,8 +435,8 @@ function QuestionCardEditor({
       )}
 
       <textarea
-        value={q.explanation}
-        onChange={(e) => onChange({ ...q, explanation: e.target.value })}
+        value={htmlToEditable(q.explanation)}
+        onChange={(e) => onChange({ ...q, explanation: editableToHtml(e.target.value) })}
         rows={2}
         placeholder="Lời giải cho học sinh xem sau khi nộp"
         className={`${inputCls} font-mono text-xs`}
@@ -454,6 +473,8 @@ function QuestionCardEditor({
           </select>
         </label>
       </div>
+    </div>
+      )}
     </article>
   );
 }
