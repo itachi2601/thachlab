@@ -34,7 +34,7 @@ export default function ExamNextSteps({ retryHref, reviewHref }: Props) {
           Làm lại đề này
         </a>
       )}
-      {retryHref && <p className="text-[13px] text-muted sm:basis-full">Làm lại không cộng thêm RP bài này.</p>}
+      {retryHref && <p className="text-[13px] text-muted sm:basis-full">Làm lại chỉ cộng RP phần điểm vượt lần trước (nếu bài tính RP).</p>}
     </nav>
   );
 }

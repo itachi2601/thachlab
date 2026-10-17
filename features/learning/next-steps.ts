@@ -166,7 +166,7 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
       key: `retry-${input.retryExam.examId}`,
       action: "Làm lại",
       title: input.retryExam.examTitle,
-      hint: `Lần trước ${input.retryExam.score.toLocaleString("vi-VN")} điểm. Làm lại không cộng thêm RP bài này`,
+      hint: `Lần trước ${input.retryExam.score.toLocaleString("vi-VN")} điểm. Chỉ cộng RP phần điểm vượt lần trước`,
       href: `/kiem-tra/lam?id=${input.retryExam.examId}`,
     });
   }

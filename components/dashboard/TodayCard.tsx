@@ -102,7 +102,7 @@ function RpFoot({ rank }: { rank?: RankStatus | null }) {
       <details>
         <summary className="flex min-h-11 cursor-pointer items-center text-primary hover:underline">Cách tăng RP</summary>
         <ul className="space-y-1.5 pb-1 pl-4 text-ink">
-          <li className="list-disc">Làm bài lần đầu: RP tính theo điểm. Làm lại không cộng thêm RP bài đó.</li>
+          <li className="list-disc">Bài tính RP: RP theo điểm em đạt. Làm lại điểm cao hơn thì được cộng phần chênh.</li>
           <li className="list-disc">Đọc lý thuyết rồi làm đúng phần lớn câu kiểm tra nhanh cuối bài.</li>
           <li className="list-disc">Mỗi ngày làm ít nhất một bài đạt điểm tối thiểu để giữ chuỗi.</li>
           <li className="list-disc">Đủ số bài trong tuần để nhận RP mục tiêu tuần.</li>
