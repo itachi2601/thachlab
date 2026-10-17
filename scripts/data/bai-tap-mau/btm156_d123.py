@@ -208,7 +208,7 @@ def d2(kk):
         b = ""
         for oy, ht, f, h, title in ((70, True, F2A, H2A, "a) Hội tụ, f = 20 cm"), (196, False, abs(F2B), H2B, "b) Phân kì, tiêu cự 30 cm")):
             X, Y = mk(214, oy, 5, 22)
-            b += lbl(8, oy - 46, title, BLUE, 14, "start", "700") + axis(X(-40), X(40), Y(0)) + lens(X(0), Y(1.9), Y(-1.9), ht)
+            b += lbl(8, oy - (46 if ht else 62), title, BLUE, 14, "start", "700")   # b: vật cao hơn, đẩy tiêu đề lên khỏi nhãn B + axis(X(-40), X(40), Y(0)) + lens(X(0), Y(1.9), Y(-1.9), ht)
             b += tick(X(-f), Y(0), "F" if ht else "F′") + tick(X(f), Y(0), "F′" if ht else "F") + lbl(X(0) + 6, Y(0) + 17, "O", "currentColor", 14, "start", "700")
             b += vat(X(-D2A), Y(0), Y(h)) + lbl(X(-D2A) - 6, Y(h) - 2, "B", ORG, 14, "end", "700")
             b += seg(X(-D2A), Y(0) + 30, X(0), Y(0) + 30, "currentColor", 1.2) + lbl(X(-D2A / 2), Y(0) + 46, "15 cm", "currentColor", 14, "middle", "400")
