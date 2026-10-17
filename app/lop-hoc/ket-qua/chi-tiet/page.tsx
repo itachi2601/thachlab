@@ -173,7 +173,7 @@ function DetailLoader() {
   return (
     <>
       <Link href={fromParent ? "/phu-huynh/" : "/lop-hoc/ket-qua/"} className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted hover:text-primary">
-        <ChevronLeft size={16} /> {fromParent ? "Về Kết quả của con" : "Về Kết quả học tập"}
+        <ChevronLeft size={16} /> {fromParent ? "Về Kết quả của con" : "Về Bài đã làm & kết quả"}
       </Link>
       <RequireAuth>
         <AttemptDetail key={resultId} resultId={resultId} fromParent={fromParent} />

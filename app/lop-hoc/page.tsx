@@ -35,6 +35,7 @@ import {
   type MyProgressMarks,
 } from "@/services/lessons";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
+import { unassignedExamFitsGrade } from "@/features/exams/exam-grade";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
@@ -254,8 +255,29 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const classPosts = (posts ?? []).filter(
     (p) => visibleTo(p.classIds, visibleClassIds) && p.subjectCode === subjectCode,
   );
+  // Đề không gán lớp (phần lớn đề đăng hàng loạt) mặc định hiện ở mọi lớp → kệ lớp 12 bày cả đề lớp 11 (17/10/2026).
+  // Lọc thêm: đề gắn trong bài học thì theo lớp của chương chứa bài; không gắn thì đoán khối từ tiêu đề; mù thì giữ.
+  const activeGrade = active ? classGrade(active.name) : null;
+  const examGradeByLesson = (() => {
+    const map = new Map<number, string | null>();
+    if (!classes || !chapters || !lessons) return map;
+    const chapterGrade = new Map<number, string | null>();
+    for (const ch of chapters) {
+      const grades = new Set(classes.filter((c) => ch.classIds.includes(c.id)).map((c) => classGrade(c.name)).filter(Boolean));
+      chapterGrade.set(ch.id, grades.size === 1 ? [...grades][0]! : null);
+    }
+    for (const l of lessons) {
+      const g = chapterGrade.get(l.chapter_id);
+      if (g === undefined) continue;
+      for (const item of l.itemRefs) for (const id of item.exam_ids) if (!map.has(id)) map.set(id, g);
+    }
+    return map;
+  })();
   const classExams = (exams ?? []).filter(
-    (e) => visibleTo(e.classIds, visibleClassIds) && e.subjectCode === subjectCode,
+    (e) =>
+      visibleTo(e.classIds, visibleClassIds) &&
+      e.subjectCode === subjectCode &&
+      (e.classIds.length > 0 || visibleClassIds === null || unassignedExamFitsGrade(e.id, e.title, activeGrade, examGradeByLesson)),
   );
   const visibleLessonIds = new Set(classChapters.map((chapter) => chapter.id));
   const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;

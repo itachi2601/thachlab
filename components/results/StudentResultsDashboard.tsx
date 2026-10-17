@@ -59,7 +59,7 @@ const COPY: Record<ResultsViewer, {
   violation: string;
 }> = {
   student: {
-    subtitle: "Điểm kiểm tra và những chủ đề em cần ôn lại.",
+    subtitle: "Bài em đã làm, điểm từng bài và những chủ đề cần ôn lại.",
     noExam: "Em chưa làm bài kiểm tra nào.",
     noGap: "Chưa có dữ liệu — hoặc em chưa sai câu nào. Giữ phong độ nhé!",
     needsTitle: "Chủ đề phụ đạo em đang mở khoá",
@@ -748,7 +748,7 @@ function ParentSummaryPanel({
 export default function StudentResultsDashboard({
   studentId,
   viewer = "student",
-  title = "Kết quả học tập",
+  title = "Bài đã làm & kết quả",
   afterSummary,
 }: {
   studentId: string;
@@ -867,6 +867,15 @@ export default function StudentResultsDashboard({
           <p className="text-sm text-muted">{copy.subtitle}</p>
         </div>
       </div>
+
+      {/* 17/10/2026: học sinh vào trang này để tìm bài đã làm → danh sách đứng ngay dưới tiêu đề (N1, F-pattern), không phải
+          cuối trang sau 4 khối phân tích. Phụ huynh giữ thứ tự cũ (P-rules: việc cần làm trước). */}
+      {viewer === "student" && attempts !== null && attempts.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-3 font-display font-semibold text-ink">Bài đã làm</h2>
+          <StudentAttemptList attempts={attempts} />
+        </section>
+      )}
 
       {alert && (viewer !== "student" || alert.kind !== "missed_assessment" || todoExams.length === 0) && (
         <div className="mt-6">
@@ -1038,21 +1047,15 @@ export default function StudentResultsDashboard({
         </section>
       )}
 
-      {attempts !== null && attempts.length > 0 && (
+      {viewer === "parent" && attempts !== null && attempts.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-3 font-display font-semibold text-ink">
-            {viewer === "parent" ? "Các bài con đã làm" : "Bài đã làm"}
-          </h2>
-          {viewer === "student" ? (
-            <StudentAttemptList attempts={attempts} />
-          ) : (
-            <div className="space-y-3">
-              {attempts.map((p, i) => (
-                // attempts mới nhất trước → bài liền trước (cũ hơn) là phần tử kế tiếp.
-                <AttemptRow key={p.resultId} point={p} viewer={viewer} prev={attempts[i + 1]} />
-              ))}
-            </div>
-          )}
+          <h2 className="mb-3 font-display font-semibold text-ink">Các bài con đã làm</h2>
+          <div className="space-y-3">
+            {attempts.map((p, i) => (
+              // attempts mới nhất trước → bài liền trước (cũ hơn) là phần tử kế tiếp.
+              <AttemptRow key={p.resultId} point={p} viewer={viewer} prev={attempts[i + 1]} />
+            ))}
+          </div>
         </section>
       )}
 

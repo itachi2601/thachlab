@@ -35,10 +35,10 @@ export function examShelfOf(title: string): Exclude<ShelfKey, "moi"> {
   return "chuong";
 }
 
-/** Nhãn đã làm cạnh tên đề: "✓ 7,5" (điểm cao nhất) hoặc "Chưa làm". Không có dữ liệu (khách, đang tải) thì không hiện. */
+/** Nhãn đã làm cạnh tên đề: "✓ Đã làm · cao nhất 7,5 điểm". Đề chưa làm KHÔNG gắn nhãn (17/10/2026: "Chưa làm" lặp
+ *  hàng trăm lần trên kệ chỉ thêm nhiễu — N2; vắng nhãn = chưa làm). Không có dữ liệu (khách, đang tải) thì không hiện. */
 function DoneTag({ score, known }: { score: number | undefined; known: boolean }) {
-  if (!known) return null;
-  if (score === undefined) return <span className="class-done-tag">Chưa làm</span>;
+  if (!known || score === undefined) return null;
   return (
     <span className={`class-done-tag ${score >= 6.5 ? "is-pass" : "is-fail"}`}>
       ✓ Đã làm · cao nhất {score.toLocaleString("vi-VN", { maximumFractionDigits: 2 })} điểm
