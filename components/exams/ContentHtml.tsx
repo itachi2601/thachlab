@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { withQuestionTables } from "@/lib/question-table";
+import { sanitizeContentHtml } from "@/lib/sanitize-html-client";
 import imageDimensions from "@/features/lessons/image-dimensions.json";
 
 const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
@@ -281,9 +282,10 @@ export default function ContentHtml({
       ? katexResult.rendered
       : renderRawFallback(cleaned);
 
-  const renderedWithVideo = active
-    ? playVideo(rendered, active.slot, active.id, active.query, active.title)
-    : rendered;
+  // Sanitize chuỗi cuối (sau KaTeX và player video): gỡ script/on*/iframe lạ phòng nội dung DB bị ghi độc.
+  const renderedWithVideo = sanitizeContentHtml(
+    active ? playVideo(rendered, active.slot, active.id, active.query, active.title) : rendered,
+  );
 
   /** Bấm nút phát (uỷ quyền sự kiện): đổi đúng nút đó thành player, không tải player trước. */
   function handleClick(event: React.MouseEvent<HTMLSpanElement>) {
