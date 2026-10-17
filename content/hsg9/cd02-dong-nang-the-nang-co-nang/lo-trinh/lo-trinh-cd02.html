@@ -1,0 +1,341 @@
+<title>Lộ trình CĐ02 Cơ năng</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Bố cục: một cột đọc trên điện thoại; trên cùng là "hôm nay làm gì", dưới là lịch theo ngày, bản đồ 7 dạng, sổ lỗi.
+   Màu theo docs/MAU-NEN-SANG.md của thachlab: nền sáng, một màu nhấn xanh cho thứ bấm được. */
+:root{
+  --bg:#f5f7fa; --panel:#ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --line-strong:#8b93a1;
+  --primary:#1d4ed8; --primary-dark:#1e40af; --primary-soft:#eef2ff;
+  --ok:#047857; --ok-soft:#ecfdf5; --warn:#b45309; --warn-soft:#fffbeb;
+  --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-num:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#05070b; --panel:#0b1020; --ink:#f1f5f9; --muted:#94a3b8; --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.22);
+  --primary:#60a5fa; --primary-dark:#93c5fd; --primary-soft:rgba(37,99,235,.18);
+  --ok:#34d399; --ok-soft:rgba(52,211,153,.12); --warn:#fbbf24; --warn-soft:rgba(251,191,36,.12); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#05070b; --panel:#0b1020; --ink:#f1f5f9; --muted:#94a3b8; --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.22);
+  --primary:#60a5fa; --primary-dark:#93c5fd; --primary-soft:rgba(37,99,235,.18);
+  --ok:#34d399; --ok-soft:rgba(52,211,153,.12); --warn:#fbbf24; --warn-soft:rgba(251,191,36,.12); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:1.6rem;font-weight:700}
+h2{font-size:1.2rem;font-weight:700}
+h3{font-size:1rem;font-weight:600}
+p{margin:0}
+a{color:var(--primary)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,label:focus-within{outline:3px solid var(--primary);outline-offset:2px;border-radius:6px}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.num{font-family:var(--font-num);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:12px}
+
+/* Đầu trang */
+header{display:flex;flex-direction:column;gap:10px}
+.formula{display:flex;flex-wrap:wrap;gap:8px}
+.formula span{font-family:var(--font-num);font-size:.9rem;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+
+/* Thẻ hôm nay */
+.today{background:var(--panel);border:1.5px solid var(--primary);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.today .when{font-weight:600;color:var(--primary)}
+.today ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:8px;
+  background:var(--primary);color:#fff;font-weight:600;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer;align-self:flex-start}
+:root[data-theme="dark"] .btn{color:#05070b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#05070b}}
+.btn:hover{background:var(--primary-dark)}
+
+/* Tiến độ */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.stat b{font-family:var(--font-num);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted);line-height:1.35}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+
+/* Lịch theo ngày */
+.phase{font-size:.85rem;font-weight:600;color:var(--muted);padding-top:6px}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.day.is-today{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.day.is-class{background:var(--primary-soft);border-color:transparent}
+.day.is-test{background:var(--warn-soft);border-color:transparent}
+.day-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.day-head .date{font-weight:700}
+.day-head .min{font-family:var(--font-num);font-size:.85rem;color:var(--muted)}
+.tag{font-size:.75rem;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--primary);color:var(--bg)}
+.task{display:flex;gap:10px;align-items:flex-start;min-height:44px;padding:4px 0;cursor:pointer}
+.task input{width:22px;height:22px;margin:2px 0 0;flex:none;accent-color:var(--ok);cursor:pointer}
+.task span{min-width:0}
+.task.done span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line-strong)}
+.task small{display:block;color:var(--muted);font-size:.85rem;text-decoration:none}
+.note{font-size:.88rem;color:var(--muted)}
+
+/* Bản đồ dạng */
+.dang{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.dang-head{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.lvl{font-size:.75rem;font-weight:600;padding:1px 8px;border-radius:99px;border:1px solid var(--line-strong);color:var(--muted)}
+.sign{font-size:.9rem;color:var(--muted)}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.seg label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:4px 6px;border:1px solid var(--line-strong);border-radius:8px;font-size:.85rem;line-height:1.25;cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg input:checked + span{font-weight:600}
+.seg label:has(input:checked){border-color:var(--primary);background:var(--primary-soft);color:var(--ink)}
+.seg label.s3:has(input:checked){border-color:var(--ok);background:var(--ok-soft)}
+
+/* Sổ lỗi */
+form{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
+form label{display:flex;flex-direction:column;gap:4px;font-size:.88rem;font-weight:600}
+input[type=text],textarea{font:inherit;font-weight:400;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;width:100%}
+textarea{min-height:64px;resize:vertical}
+.loi-list{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.loi-list li{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;font-size:.92rem}
+.loi-list li b{font-weight:600}
+.loi-list button{align-self:flex-end;background:none;border:0;color:var(--muted);font:inherit;font-size:.82rem;min-height:36px;cursor:pointer;text-decoration:underline}
+.empty{font-size:.9rem;color:var(--muted);border:1px dashed var(--line-strong);border-radius:10px;padding:12px 14px}
+
+.why{display:flex;flex-direction:column;gap:8px;font-size:.93rem}
+.why p b{font-weight:600}
+footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">HSG Vật lí 9 · Chuyên đề 02 · Buổi 5 ngày 07/11</p>
+  <h1>Động năng, thế năng, cơ năng</h1>
+  <p class="muted">Lịch tự học 5 ngày trước buổi 5, rồi ôn lại cách quãng tới Kiểm tra 1 Cơ học ngày 14/11. Mỗi ngày không quá 60 phút, nên học xong trước 21h30.</p>
+  <div class="formula" aria-label="Ba công thức chính">
+    <span>W<sub>đ</sub> = ½mv²</span><span>W<sub>t</sub> = mgh</span><span>W = W<sub>đ</sub> + W<sub>t</sub></span>
+  </div>
+</header>
+
+<div class="today" id="today" aria-live="polite"></div>
+
+<section aria-labelledby="h-tiendo">
+  <h2 id="h-tiendo">Tiến độ của em</h2>
+  <div class="stats">
+    <div class="stat"><b id="st-task">0/0</b><span>việc trong lịch đã xong</span></div>
+    <div class="stat"><b id="st-dang">0/7</b><span>dạng tự giải được</span></div>
+    <div class="stat"><b id="st-days">0</b><span id="st-days-lbl">ngày tới Kiểm tra 1</span></div>
+  </div>
+  <div class="bar" role="progressbar" aria-label="Phần lịch đã xong" aria-valuemin="0" aria-valuemax="100" id="bar"><i id="bar-fill"></i></div>
+  <p class="note">Trang này chỉ lưu trên máy của em, không ai chấm điểm phần này. Em đánh dấu đúng như mình làm được thì lịch mới giúp được em.</p>
+</section>
+
+<section aria-labelledby="h-lich">
+  <h2 id="h-lich">Lịch từng ngày</h2>
+  <div id="schedule"></div>
+</section>
+
+<section aria-labelledby="h-dang">
+  <h2 id="h-dang">Bản đồ 7 dạng bài</h2>
+  <p class="muted">Làm xong mỗi dạng trong mục Bài tập mẫu, tự hỏi: lần sau gặp bài giống vậy, em có tự giải được mà không mở gợi ý không?</p>
+  <div id="dangs" style="display:flex;flex-direction:column;gap:10px"></div>
+  <p class="note">Dạng nào em đã tự giải được ngay từ lần đầu thì không cần đọc lại ví dụ mẫu, chuyển thẳng sang bài tự giải. Ví dụ mẫu giúp nhiều nhất ở dạng em còn lúng túng.</p>
+</section>
+
+<section aria-labelledby="h-soloi">
+  <h2 id="h-soloi">Sổ lỗi CĐ02</h2>
+  <p class="muted">Ghi mỗi lỗi một lần, ngay khi sai. Ngày 10/11 và 12/11 em sẽ giải lại đúng những bài ở đây. Nhớ chép sang sổ giấy để mang lên lớp.</p>
+  <form id="loi-form" autocomplete="off">
+    <label for="loi-bai">Bài nào, dạng nào<input type="text" id="loi-bai" placeholder="Ví dụ: Dạng 4, bài dốc có ma sát" required></label>
+    <label for="loi-sai">Em sai ở bước nào<textarea id="loi-sai" placeholder="Ví dụ: quên nhân cos α khi tính lực ma sát"></textarea></label>
+    <label for="loi-sua">Lần sau làm thế nào<textarea id="loi-sua" placeholder="Ví dụ: vẽ lực trước, phản lực trên dốc là mg·cos α"></textarea></label>
+    <button class="btn" type="submit">Thêm vào sổ lỗi</button>
+  </form>
+  <ul class="loi-list" id="loi-list"></ul>
+</section>
+
+<section aria-labelledby="h-why" class="why">
+  <h2 id="h-why">Vì sao lịch được xếp như vậy</h2>
+  <p><b>Đoán trước khi học.</b> Em ghi dự đoán cho câu mở bài từ thứ Bảy. Đoán sai rồi được giải thích thì nhớ lâu hơn là đọc đáp án ngay.</p>
+  <p><b>Gập máy rồi viết lại.</b> Cuối buổi thứ Hai và đầu buổi thứ Tư em tự viết công thức từ trí nhớ. Lấy kiến thức ra khỏi đầu là cách ôn hiệu quả nhất, hơn đọc lại nhiều lần.</p>
+  <p><b>Ôn cách quãng.</b> CĐ02 quay lại ngày 10/11, 12/11 và tuần trước Thi thử 1. Mỗi lần chỉ 15–20 phút nhưng cách nhau vài ngày, nên đến ngày thi kiến thức còn nguyên.</p>
+  <p><b>Chia nhỏ và nghỉ đúng lúc.</b> Mỗi ngày tối đa 2–3 dạng, không quá 60 phút. Ngủ đủ giấc trước ngày kiểm tra giúp em nhớ bài hơn là thức khuya học thêm.</p>
+  <p><b>Sai ở đây là được phép.</b> Bài tập mẫu và sổ lỗi là chỗ để sai. Sai ở nhà rồi sửa thì rẻ hơn nhiều so với sai trong đề thi thành phố.</p>
+</section>
+
+<footer>
+  <p>Bài trên web: <a href="https://thachlab.id.vn/lop-hoc/bai/?id=166" target="_blank" rel="noopener">thachlab.id.vn · CĐ02 Động năng, thế năng, cơ năng</a>. Thầy xem tiến độ trên web vào tối thứ Năm.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var LINK = "https://thachlab.id.vn/lop-hoc/bai/?id=166";
+  var TEST = new Date(2026,10,14);
+  // Mỗi ngày: d = ngày (yyyy, tháng 0-11, ngày), kind: self | class | test | rest
+  var DAYS = [
+    {phase:"Trước tuần học"},
+    {id:"d31", d:[2026,9,31], label:"Thứ Bảy 31/10", min:5, kind:"self", tasks:[
+      ["Đọc câu mở bài: xe chạy nhanh gấp đôi thì quãng đường phanh dài gấp mấy lần?", "Ghi dự đoán vào sổ, chưa cần đúng. Thứ Hai em sẽ kiểm tra lại."]
+    ]},
+    {phase:"Tuần tự học 2/11 – 6/11"},
+    {id:"d2", d:[2026,10,2], label:"Thứ Hai 2/11", min:40, kind:"self", tasks:[
+      ["Lý thuyết mục I–III: động năng, thế năng, mốc thế năng, bảo toàn cơ năng", "25 phút"],
+      ["Làm các câu hỏi tự chấm trong bài", "10 phút. Đọc kỹ phần phân tích ở câu sai."],
+      ["Gập máy, viết lại 3 công thức kèm điều kiện áp dụng từ trí nhớ", "5 phút. Đối chiếu, chỗ nào sai thì ghi sổ lỗi."]
+    ]},
+    {id:"d3", d:[2026,10,3], label:"Thứ Ba 3/11", min:60, kind:"self", tasks:[
+      ["Lý thuyết mục IV–VII: có ma sát, mở rộng HSG, những cái bẫy, trả bài", "25 phút"],
+      ["Bài tập mẫu Dạng 1 và Dạng 2", "20 phút. Giải ra giấy trước, nhập đáp số sau."],
+      ["Bài tập mẫu Dạng 3: trượt dốc không ma sát", "15 phút"]
+    ]},
+    {id:"d4", d:[2026,10,4], label:"Thứ Tư 4/11", min:60, kind:"self", tasks:[
+      ["Viết lại từ trí nhớ: cơ năng bảo toàn khi nào, mất đi khi nào", "3 phút, trước khi mở máy"],
+      ["Bài tập mẫu Dạng 4: dốc có ma sát", "25 phút. Vẽ lực trước khi viết phương trình."],
+      ["Bài tập mẫu Dạng 5: con lắc đơn, con lắc lò xo", "30 phút"]
+    ]},
+    {id:"d5", d:[2026,10,5], label:"Thứ Năm 5/11", min:60, kind:"self", tasks:[
+      ["Bài tập mẫu Dạng 6 (đồ thị năng lượng) và Dạng 7 (nhiều giai đoạn)", "50 phút. Em tự chọn làm dạng nào trước."],
+      ["Chép các lỗi tuần này vào sổ lỗi, mỗi lỗi một dòng", "10 phút"]
+    ], note:"Tối nay thầy xem tiến độ trên web, nên làm xong phần trên web trước 20h."},
+    {id:"d6", d:[2026,10,6], label:"Thứ Sáu 6/11", min:45, kind:"self", tasks:[
+      ["Bài tự luận Vận dụng cao trong mục Tự luận của CĐ02, giải ra giấy", "30 phút. Trình bày đủ: công thức, thay số, đơn vị, kết luận."],
+      ["Đọc trước phần đo và bảng số liệu của thí nghiệm con lắc", "10 phút"],
+      ["Chuẩn bị 1 câu hỏi muốn hỏi thầy trên lớp", "5 phút"]
+    ]},
+    {id:"d7", d:[2026,10,7], label:"Thứ Bảy 7/11 · Buổi 5", kind:"class", tasks:[
+      ["Mang sổ lỗi, giấy giải bài tự luận và câu hỏi của em", "Đầu buổi có đề mini 3 câu, 25 phút, làm giấy."]
+    ]},
+    {phase:"Ôn cách quãng tới Kiểm tra 1"},
+    {id:"d10", d:[2026,10,10], label:"Thứ Ba 10/11", min:15, kind:"self", tasks:[
+      ["Giải lại 2 bài trong sổ lỗi, không nhìn lời giải", "15 phút. Tuần này em học thêm CĐ11 Chất lưu theo lịch tuần 6."]
+    ]},
+    {id:"d12", d:[2026,10,12], label:"Thứ Năm 12/11", min:20, kind:"self", tasks:[
+      ["Mỗi dạng 4, 5, 7 lấy một bài: chỉ viết phương trình năng lượng, chưa cần ra số", "20 phút. Mục tiêu là nhận dạng nhanh."]
+    ]},
+    {id:"d13", d:[2026,10,13], label:"Thứ Sáu 13/11", kind:"rest", tasks:[
+      ["Ôn nhẹ 3 công thức, ngủ trước 22h30", "Không học bài mới tối nay."]
+    ]},
+    {id:"d14", d:[2026,10,14], label:"Thứ Bảy 14/11 · Kiểm tra 1", kind:"test", tasks:[
+      ["Kiểm tra Cơ học 60 phút: CĐ13, CĐ10, CĐ01, CĐ02, CĐ11", "Sau bài kiểm tra, câu nào sai thì chép vào sổ lỗi ngay trong ngày."]
+    ]},
+    {phase:"Nhắc lại trước Thi thử 1 (12/12)"},
+    {id:"d-tt1", d:[2026,11,8], label:"Thứ Ba 8/12", min:15, kind:"self", tasks:[
+      ["Đọc lại sổ lỗi CĐ02 và giải lại 1 bài Dạng 7", "15 phút. Lần ôn thứ ba, cách lần trước gần một tháng."]
+    ]}
+  ];
+  var DANG = [
+    ["Dạng 1","Dễ","Tính động năng, thế năng, cơ năng; đổi mốc thế năng","Có khối lượng, vận tốc, độ cao, mốc thế năng"],
+    ["Dạng 2","Dễ","Bảo toàn cơ năng khi ném thẳng đứng, rơi tự do","Ném hoặc rơi thẳng đứng, bỏ qua sức cản; ở đỉnh v = 0"],
+    ["Dạng 3","Trung bình","Vật trượt trên dốc không ma sát","Trượt dốc, bỏ qua ma sát, cho độ cao"],
+    ["Dạng 4","Trung bình","Dốc có ma sát: cơ năng giảm, phần mất đi thành nhiệt","Đề cho hệ số ma sát trên dốc"],
+    ["Dạng 5","Khó","Con lắc đơn và con lắc lò xo","Kéo lệch góc rồi thả; ở biên v = 0"],
+    ["Dạng 6","Khó","Đồ thị năng lượng theo độ cao","Đề cho bảng hoặc đồ thị năng lượng"],
+    ["Dạng 7","Nâng cao","Bài nhiều giai đoạn: dốc, mặt ngang có ma sát, dốc","Nhiều đoạn đường, chỉ một đoạn có ma sát"]
+  ];
+  var LEVELS = [["1","Chưa làm"],["2","Làm được khi xem gợi ý"],["3","Tự giải được"]];
+
+  function load(k,def){try{var v=localStorage.getItem("cd02:"+k);return v==null?def:JSON.parse(v)}catch(e){return def}}
+  function save(k,v){try{localStorage.setItem("cd02:"+k,JSON.stringify(v))}catch(e){}}
+  var done = load("done",{}), dangs = load("dang",{}), loi = load("loi",[]);
+
+  var now = new Date(); var today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  function dt(a){return new Date(a[0],a[1],a[2])}
+  function same(a,b){return a.getTime()===b.getTime()}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  // Lịch
+  var sch = document.getElementById("schedule"); var html = ""; var total = 0;
+  DAYS.forEach(function(day){
+    if(day.phase){html += '<p class="phase">'+esc(day.phase)+'</p>';return}
+    var cls = "day"+(day.kind==="class"?" is-class":"")+(day.kind==="test"?" is-test":"")+(same(dt(day.d),today)?" is-today":"");
+    html += '<article class="'+cls+'" id="'+day.id+'" style="margin-top:8px"><div class="day-head"><span class="date">'+esc(day.label)+'</span>'+
+      (same(dt(day.d),today)?'<span class="tag">Hôm nay</span>':'')+
+      (day.min?'<span class="min">'+day.min+' phút</span>':'')+'</div>';
+    day.tasks.forEach(function(t,i){
+      var key = day.id+"-"+i; total++;
+      html += '<label class="task'+(done[key]?' done':'')+'" for="t-'+key+'"><input type="checkbox" id="t-'+key+'" data-k="'+key+'"'+(done[key]?' checked':'')+'><span>'+esc(t[0])+'<small>'+esc(t[1])+'</small></span></label>';
+    });
+    if(day.note) html += '<p class="note">'+esc(day.note)+'</p>';
+    html += '</article>';
+  });
+  sch.innerHTML = html;
+  sch.addEventListener("change",function(e){
+    var k = e.target.getAttribute("data-k"); if(!k) return;
+    if(e.target.checked) done[k]=1; else delete done[k];
+    e.target.closest(".task").classList.toggle("done",e.target.checked);
+    save("done",done); stats();
+  });
+
+  // Bản đồ dạng
+  var dEl = document.getElementById("dangs"); var dh = "";
+  DANG.forEach(function(d,i){
+    var cur = dangs[i] || "1";
+    dh += '<div class="dang"><div class="dang-head"><h3>'+esc(d[0])+'</h3><span class="lvl">'+esc(d[1])+'</span></div>'+
+      '<p>'+esc(d[2])+'</p><p class="sign">Dấu hiệu: '+esc(d[3])+'</p><div class="seg" role="radiogroup" aria-label="Mức của em ở '+esc(d[0])+'">';
+    LEVELS.forEach(function(l){
+      dh += '<label class="s'+l[0]+'" for="dg-'+i+'-'+l[0]+'"><input type="radio" name="dg-'+i+'" id="dg-'+i+'-'+l[0]+'" value="'+l[0]+'"'+(cur===l[0]?' checked':'')+'><span>'+esc(l[1])+'</span></label>';
+    });
+    dh += '</div></div>';
+  });
+  dEl.innerHTML = dh;
+  dEl.addEventListener("change",function(e){
+    var m = /^dg-(\d+)$/.exec(e.target.name||""); if(!m) return;
+    dangs[m[1]] = e.target.value; save("dang",dangs); stats();
+  });
+
+  // Sổ lỗi
+  var list = document.getElementById("loi-list");
+  function renderLoi(){
+    if(!loi.length){list.innerHTML='<li class="empty" style="border-style:dashed">Chưa có lỗi nào. Lỗi đầu tiên em ghi sẽ hiện ở đây.</li>';return}
+    list.innerHTML = loi.map(function(x,i){
+      return '<li><b>'+esc(x.bai)+'</b>'+(x.sai?'<span>Sai: '+esc(x.sai)+'</span>':'')+(x.sua?'<span>Lần sau: '+esc(x.sua)+'</span>':'')+
+        '<button type="button" data-del="'+i+'">Xoá dòng này</button></li>';
+    }).join("");
+  }
+  document.getElementById("loi-form").addEventListener("submit",function(e){
+    e.preventDefault();
+    var b=document.getElementById("loi-bai"), s=document.getElementById("loi-sai"), f=document.getElementById("loi-sua");
+    if(!b.value.trim()) return;
+    loi.unshift({bai:b.value.trim(),sai:s.value.trim(),sua:f.value.trim()});
+    save("loi",loi); b.value=s.value=f.value=""; renderLoi();
+  });
+  list.addEventListener("click",function(e){
+    var i = e.target.getAttribute("data-del"); if(i==null) return;
+    loi.splice(+i,1); save("loi",loi); renderLoi();
+  });
+
+  // Thẻ hôm nay + số liệu
+  function nextDay(){
+    var real = DAYS.filter(function(d){return d.d});
+    for(var i=0;i<real.length;i++){ if(dt(real[i].d)>=today) return real[i] }
+    return null;
+  }
+  function renderToday(){
+    var el = document.getElementById("today"); var d = nextDay();
+    if(!d){el.innerHTML='<p class="when">Em đã đi hết lịch CĐ02</p><p>Giữ sổ lỗi để ôn trước các kỳ thi thử và thi thành phố ngày 24/02/2027.</p>';return}
+    var isToday = same(dt(d.d),today);
+    var diff = Math.round((dt(d.d)-today)/864e5);
+    var when = isToday ? "Hôm nay, "+d.label : "Việc tiếp theo: "+d.label+" (còn "+diff+" ngày)";
+    var items = d.tasks.map(function(t){return '<li>'+esc(t[0])+'</li>'}).join("");
+    el.innerHTML = '<p class="when">'+esc(when)+(d.min?' · '+d.min+' phút':'')+'</p><ul>'+items+'</ul>'+
+      (d.kind==="self"?'<a class="btn" href="'+LINK+'" target="_blank" rel="noopener">Mở bài CĐ02 trên thachlab</a>':'')+
+      '<a href="#'+d.id+'" style="font-size:.9rem">Xem trong lịch</a>';
+  }
+  function stats(){
+    var n = Object.keys(done).length;
+    document.getElementById("st-task").textContent = n+"/"+total;
+    var self = DANG.filter(function(_,i){return dangs[i]==="3"}).length;
+    document.getElementById("st-dang").textContent = self+"/7";
+    var pct = total?Math.round(n*100/total):0;
+    document.getElementById("bar-fill").style.width = pct+"%";
+    document.getElementById("bar").setAttribute("aria-valuenow",pct);
+    var dd = Math.round((TEST-today)/864e5);
+    document.getElementById("st-days").textContent = dd>0?dd:(dd===0?"0":"Xong");
+    document.getElementById("st-days-lbl").textContent = dd>0?"ngày tới Kiểm tra 1 (14/11)":(dd===0?"Kiểm tra 1 là hôm nay":"Kiểm tra 1 đã qua");
+  }
+  renderToday(); renderLoi(); stats();
+})();
+</script>
