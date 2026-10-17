@@ -40,6 +40,7 @@ FILES=(
   "supabase/migrations/20261017120000_rate_limit_hardening.sql|Giới hạn tần suất: bảng rate_hits + rl_allow, chặn dò resolve_login_email/quiz_join, vá search_path hàm definer|lúc nào cũng được, nhưng nên ngoài giờ HS làm bài"
   "supabase/migrations/20261017150000_reset_code_manh_hon.sql|Mã đặt lại mật khẩu RS + 10 hex (trước 6), CHECK hạn tối đa 7 ngày cho bản ghi mới|lúc nào cũng được"
   "supabase/migrations/20261017190000_rank_bat_het_de_kiem_tra.sql|Bật nguồn RP mọi đề Kiểm tra/BTVN còn thiếu + đề đã nộp (mùa 4, 5) rồi tính lại mùa, có sao lưu|ngoài giờ học sinh làm bài"
+  "supabase/migrations/20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql|Chuông báo em được cộng bù RP + nâng min_rp mọi bậc mùa 4, 5 lên ×1,07 rồi tính lại, báo em tụt bậc, có sao lưu rank_tiers|ngoài giờ học sinh làm bài (chạy sau 20261017190000)"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
