@@ -8,14 +8,14 @@ const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL"), env("SUPABASE_SERVICE_R
 const APPLY = process.argv.includes("--apply");
 const lech: any[] = JSON.parse(fs.readFileSync("scripts/data/giai-lai/lech-exams-ds.json", "utf8"));
 const tim = (exam: number, stt: number) => lech.find((x) => x.exam === exam && x.stt === stt)!;
-const viecDe = [{ exam: 35, stt: 10, mc: 0 }, { exam: 133, stt: 14, mc: 1 }];
-const viecBank = [{ exam: 140, stt: 8, mc: 3 }, { exam: 544, stt: 25, sa: "-1,2" }];
+const viecDe: any[] = [{ exam: 182, stt: 8, mc: 3 }, { exam: 564, stt: 20, sa: "-1,2" }]; // 182/564 = bản sao đề của 140#8/544#25, lộ ra sau khi sửa ngân hàng
+const viecBank: any[] = []; // đã sửa ở lượt trước (ngân hàng 429306, 1500185)
 const sao: any = { exams: [], bank: [] }; const lam: (() => Promise<void>)[] = [];
 for (const v of viecDe) {
   const { data } = await sb.from("exams").select("id,questions").eq("id", v.exam).single();
   const qs = structuredClone(data!.questions); const q = qs[v.stt - 1];
-  console.log(`đề ${v.exam}#${v.stt}: answer ${q.answer} → ${v.mc}  | ${String(q.question).replace(/<[^>]+>/g, "").slice(0, 60)}`);
-  sao.exams.push({ id: v.exam, questions: data!.questions }); q.answer = v.mc;
+  console.log(`đề ${v.exam}#${v.stt}: answer ${q.answer} → ${v.mc ?? v.sa}  | ${String(q.question).replace(/<[^>]+>/g, "").slice(0, 60)}`);
+  sao.exams.push({ id: v.exam, questions: data!.questions }); q.answer = v.mc ?? v.sa;
   lam.push(async () => { const { error } = await sb.from("exams").update({ questions: qs }).eq("id", v.exam); console.log(`  đề ${v.exam}`, error ? "LỖI " + error.message : "ok"); });
 }
 for (const v of viecBank) {
