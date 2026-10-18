@@ -1,9 +1,18 @@
 /* Đầu trang chương (/lop-hoc/<lớp>): thẻ "nên làm tiếp", một dòng tiến độ phụ huynh, dòng ôn lỗi sai. */
 .class-progress-line { margin: 0; color: #94a3b8; font-size: 14px; line-height: 1.45; }
-.class-next { display: grid; gap: 12px; border: 1px solid var(--lesson-accent-line); border-radius: 16px; background: var(--lesson-accent-soft); padding: 16px 18px; }
-.class-next p { margin: 0; }
-.class-next-why { color: #cbd5e1; font-size: 14px; line-height: 1.55; }
-.class-next .lesson-btn { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 6px; }
+/* "Tiếp theo: <bài> · <vì sao>" — một dòng bấm được (B1/G1, 18/10/2026). */
+.class-next-line { display: flex; width: 100%; min-height: 48px; align-items: center; gap: 8px; border: 1px solid var(--lesson-accent-line); border-radius: 12px; background: var(--lesson-accent-soft); padding: 8px 12px; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.class-next-line-label { flex: 0 0 auto; color: #93c5fd; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
+.class-next-line-title { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; font-weight: 600; }
+.class-next-line-why { flex: 0 0 auto; color: #cbd5e1; font-size: 13px; white-space: nowrap; }
+.class-next-line svg { flex: 0 0 auto; color: #93c5fd; }
+.class-next-line--done { cursor: default; color: #cbd5e1; font-size: 14px; }
+/* Hàng lối tắt: Kho bẫy · n / Đề thi / Xếp hạng — mỗi chip là link thẳng tới trang chính. */
+.class-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.class-chip { display: inline-flex; min-height: 36px; align-items: center; border: 1px solid var(--lesson-line); border-radius: 999px; background: var(--lesson-surface); padding: 0 14px; color: #e2e8f0; font-size: 14px; font-weight: 600; text-decoration: none; }
+.class-chip:hover { border-color: var(--lesson-accent-line); }
+.class-search-btn { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; margin-left: auto; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); color: #cbd5e1; cursor: pointer; }
+.class-search-btn:hover { border-color: var(--lesson-accent-line); color: #fff; }
 .class-mistake-toggle { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; gap: 12px; border: 0; background: none; padding: 8px 2px; color: #94a3b8; font-size: 14px; font-weight: 600; line-height: 1.4; text-align: left; cursor: pointer; }
 .class-mistake-toggle:hover { color: #e2e8f0; }
 .class-mistake-toggle svg { flex: 0 0 auto; transition: transform .2s; }
@@ -18,7 +27,13 @@
 .class-lesson--static:hover { border-color: var(--lesson-line); background: var(--lesson-surface); box-shadow: none; }
 .class-mastery--text { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; color: #94a3b8; font-size: 14px; font-weight: 500; white-space: nowrap; }
 html[data-theme="light"] .lesson-shell .class-progress-line,
-html[data-theme="light"] .lesson-shell .class-next-why { color: #334155; }
+html[data-theme="light"] .lesson-shell .class-next-line-why,
+html[data-theme="light"] .lesson-shell .class-next-line--done { color: #334155; }
+html[data-theme="light"] .lesson-shell .class-next-line-label,
+html[data-theme="light"] .lesson-shell .class-next-line svg { color: #1d4ed8; }
+html[data-theme="light"] .lesson-shell .class-chip { color: #0f172a; }
+html[data-theme="light"] .lesson-shell .class-search-btn { color: #334155; }
+html[data-theme="light"] .lesson-shell .class-search-btn:hover { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-mistake-toggle { color: #475569; }
 html[data-theme="light"] .lesson-shell .class-mistake-toggle:hover { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-parent-band { color: #065f46; }
@@ -26,7 +41,7 @@ html[data-theme="light"] .lesson-shell .class-parent-band b { color: #064e3b; }
 html[data-theme="light"] .lesson-shell .class-parent-band a { color: #047857; }
 html[data-theme="light"] .lesson-shell .class-parent-band select { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
-@media (min-width: 640px) { .class-next { grid-template-columns: 1fr auto; align-items: center; } }
+@media (max-width: 639px) { .class-next-line-why { display: none; } }
 /* Hàng phẳng (thông báo, kệ đề) không có ô số. Dưới 640px lưới 26px | 1fr | auto
    nhét tiêu đề vào cột 26px nên mỗi chữ một dòng. */
 @media (max-width: 639px) {
@@ -34,3 +49,9 @@ html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
     grid-template-columns: minmax(0, 1fr) auto;
   }
 }
+/* Tiêu đề lớp: h1 · chuỗi ngày · icon tìm bài trên cùng một hàng (mọi cỡ màn); dòng mô tả lớp (desktop) xuống hàng riêng. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+/* h1 nuốt hết chỗ trống nên icon dạt phải và dòng mô tả (có max-width) buộc phải xuống hàng. */
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { flex: 1 1 auto; }
+.lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { flex: 0 0 100%; min-width: 100%; }
+.lesson-layout--pick .lesson-main--single > .lesson-head .class-search-btn { margin-left: auto; }

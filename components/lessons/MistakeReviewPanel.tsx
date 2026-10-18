@@ -62,3 +62,24 @@ export default function MistakeReviewPanel({ variant = "class" }: { variant?: "c
     </section>
   );
 }
+
+/**
+ * Chip một dòng ở trang lớp (18/10/2026, thay khối gập tại chỗ): "Kho bẫy · 5" → /luyen-tap#kho-bay.
+ * Chưa có câu sai thì không hiện gì (N3).
+ */
+export function MistakeVaultChip() {
+  const { session } = useAuth();
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!session) return;
+    fetchMyLatestMistakes(session.user.id).then((rows) => setCount(rows.length)).catch(() => setCount(0));
+  }, [session]);
+  if (!session || count === 0) return null;
+  // Số lớn (hàng trăm) không giúp em chọn gì, chỉ gây ngợp → trần 20+.
+  const shown = count > 20 ? "20+" : String(count);
+  return (
+    <Link href="/luyen-tap#kho-bay" className="class-chip" title={`Ôn ${shown} câu vừa sai`}>
+      Kho bẫy · {shown}
+    </Link>
+  );
+}

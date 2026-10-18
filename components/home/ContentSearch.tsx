@@ -173,7 +173,7 @@ function snippetOf(text: string, at: number, span: number): { before: string; hi
   };
 }
 
-export default function ContentSearch({ variant = "public" }: { variant?: "public" | "account" }) {
+export default function ContentSearch({ variant = "public", autoFocus = false }: { variant?: "public" | "account"; autoFocus?: boolean }) {
   const [query, setQuery] = useState("");
   const [hits, setHits] = useState<Hit[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -254,6 +254,7 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
             value={query}
             placeholder="Tìm tên bài hoặc nội dung"
             onFocus={ensureLoaded}
+            autoFocus={autoFocus}
             onChange={(event) => {
               ensureLoaded();
               setQuery(event.target.value);

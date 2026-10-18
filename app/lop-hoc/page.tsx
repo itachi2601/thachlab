@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -48,20 +48,9 @@ import { supabaseConfigured } from "@/services/supabase";
 import { HSG_HREF, HSG_SUBJECT_CODE, academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
 import { fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
-import dynamic from "next/dynamic";
-import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
-import type { ComponentProps } from "react";
 // Bảng ôn lỗi sai kéo theo QuestionCard + framer-motion (~140 KB); tách chunk riêng.
 // Panel vốn trả null khi chưa có dữ liệu nên lúc chờ cũng không hiện gì — không nhảy layout.
-const MistakeReviewPanelLazy = dynamic(() => import("@/components/lessons/MistakeReviewPanel"), { ssr: false, loading: () => null });
-// Panel phụ, vốn đã trả null khi không có lỗi sai nào — lỗi render thì cũng chỉ ẩn đi.
-function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>) {
-  return (
-    <LazyErrorBoundary>
-      <MistakeReviewPanelLazy {...props} />
-    </LazyErrorBoundary>
-  );
-}
+import { MistakeVaultChip } from "@/components/lessons/MistakeReviewPanel";
 import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOverview";
 import { stripHtmlToText } from "@/lib/strip-html";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
@@ -164,6 +153,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
 
   // Học sinh THPT đã được duyệt vào lớp thì không cần bộ chọn lớp: vào thẳng lớp của em (thầy chốt 7/10/2026).
   const [classRedirect, setClassRedirect] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   useEffect(() => {
     if (classSlug || !classes || !supabaseConfigured || !session || profile?.role !== "student" || profile.track === "cttc") return;
     let cancelled = false;
@@ -280,7 +270,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       (e.classIds.length > 0 || visibleClassIds === null || unassignedExamFitsGrade(e.id, e.title, activeGrade, examGradeByLesson)),
   );
   const visibleLessonIds = new Set(classChapters.map((chapter) => chapter.id));
-  const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;
 
   // Cây chương cột trái (>= 1024): cùng quy tắc gom với courseChapters của trang bài — bài thường
   // trước, kiểm tra giữa/cuối kì cuối chương, bỏ chương không có bài. (Không useMemo: classChapters
@@ -483,22 +472,18 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     return { lesson: null, why: "Đã học xong mọi bài. Vào Luyện tập để giữ phong độ." };
   })();
 
+  /** Một dòng bấm được (B1/G1, 18/10/2026): "Tiếp theo: <bài> · <vì sao>" — thay thẻ 3 dòng + nút riêng. */
   function renderNextCard() {
     if (!nextAction) return null;
     const { lesson, why } = nextAction;
+    if (!lesson) return <p className="class-next-line class-next-line--done">{why}</p>;
     return (
-      <div className="class-next class-continue--main">
-        <div>
-          <p className="lesson-eyebrow">Nên làm tiếp</p>
-          {lesson ? <p className="lesson-block-title">{lesson.title}</p> : <p className="lesson-block-title">Hoàn thành lớp này</p>}
-          <p className="class-next-why">{why}</p>
-        </div>
-        {lesson && (
-          <button type="button" className="lesson-btn" onClick={() => continueLesson(lesson)}>
-            Tiếp tục học <ArrowRight size={15} />
-          </button>
-        )}
-      </div>
+      <button type="button" className="class-next-line" onClick={() => continueLesson(lesson)}>
+        <span className="class-next-line-label">Tiếp theo</span>
+        <span className="class-next-line-title">{lesson.title}</span>
+        <span className="class-next-line-why">{why}</span>
+        <ArrowRight size={16} aria-hidden />
+      </button>
     );
   }
 
@@ -655,12 +640,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // Trang của một lớp: mục lục chương → bài, cùng ngôn ngữ với trang bài học.
   if (effectiveSlug) {
     const grade = active ? classGrade(active.name) : null;
-    // Nút "Tiếp tục học" ở thanh đáy điện thoại: bài học gần nhất → bài đầu chưa học xong →
-    // bài đầu khoá (khách chưa đăng nhập thì mọi bài đều "chưa xong" nên ra đúng bài đầu).
-    const treeLessons = treeEntries.flatMap((entry) => entry.lessons);
-    const bottomLesson = isParent
-      ? null
-      : nextAction?.lesson ?? lastLesson ?? treeLessons.find((lesson) => !lessonIsComplete(lesson)) ?? treeLessons[0] ?? null;
     return (
       <>
         <Navbar />
@@ -704,6 +683,17 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       {!isParent && session && rank?.season && rank.daily && rank.daily.streak > 0 && (
                         <p className="class-streak-chip">🔥 Chuỗi {rank.daily.streak} ngày</p>
                       )}
+                      {/* Ô tìm bài thu thành icon (B1): bấm mới mở ô nhập ngay dưới tiêu đề. */}
+                      <button
+                        type="button"
+                        className="class-search-btn"
+                        aria-label={searchOpen ? "Đóng ô tìm bài" : "Tìm bài"}
+                        aria-expanded={searchOpen}
+                        aria-controls="class-search"
+                        onClick={() => setSearchOpen((v) => !v)}
+                      >
+                        {searchOpen ? <X size={20} aria-hidden /> : <Search size={20} aria-hidden />}
+                      </button>
                       {grade && GRADE_DESCRIPTIONS[grade] && (
                         <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
                       )}
@@ -762,15 +752,25 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           />
                         )}
 
-                        {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}
-                        <ContentSearch variant="account" />
+                        {/* Ô tìm bài chỉ hiện khi bấm icon kính lúp ở tiêu đề (B1, 18/10/2026). */}
+                        {searchOpen && (
+                          <div id="class-search">
+                            <ContentSearch variant="account" autoFocus />
+                          </div>
+                        )}
 
-                        {/* Ôn câu vừa sai đứng ngay dưới ô tìm (không còn nằm cuối trang sau cả danh sách chương); lối tắt tới kệ đề. */}
-                        {!isParent && <MistakeReviewPanel />}
-                        {!isParent && session && classExams.length > 0 && (
-                          <p className="class-rank-link">
-                            <a href="#de-thi" className="lesson-link">Đề kiểm tra và đề ôn ({classExams.length})</a>
-                          </p>
+                        {/* Một hàng chip thay 3 khối rời (Kho bẫy gập tại chỗ, link đề, link xếp hạng): mỗi chip là link
+                            thẳng tới trang chính; chip Kho bẫy tự ẩn khi chưa có câu sai (N3). */}
+                        {!isParent && session && (
+                          <div className="class-chips" aria-label="Lối tắt">
+                            <MistakeVaultChip />
+                            {classExams.length > 0 && (
+                              <a href="#de-thi" className="class-chip">Đề thi</a>
+                            )}
+                            {rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
+                              <Link href="/lop-hoc/xep-hang/" className="class-chip">Xếp hạng</Link>
+                            )}
+                          </div>
                         )}
 
                         {classChapters.length > 1 && (
@@ -792,11 +792,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           </div>
                         )}
                         {!isParent && session && <LiveStudyStrip />}
-                        {!isParent && rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
-                          <p className="class-rank-link">
-                            <Link href="/lop-hoc/xep-hang/" className="lesson-link">Xếp hạng</Link>
-                          </p>
-                        )}
                       </div>
                     )}
 
@@ -832,35 +827,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               </div>
             </div>
 
-            {/* Thanh đáy điện thoại (< 640px): 3 nút, dùng lại CSS của trang bài. Khi thanh này hiện thì
-                tabbar toàn site được ẩn đi (xem khối CSS cuối globals.css) — hai thanh fixed không thể cùng hiện. */}
-            {active && chapters && lessons && classChapters.length > 0 && (
-              <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--pick" aria-label="Điều hướng lớp học">
-                <Link href={isAvcn ? "/lop-hoc/cttc" : "/lop-hoc"} className="lesson-bottom-link">
-                  <ArrowLeft size={16} aria-hidden />
-                  <span>{isAvcn ? "CTTC" : "Lớp học"}</span>
-                </Link>
-                {bottomLesson ? (
-                  <button
-                    type="button"
-                    className="lesson-bottom-link lesson-bottom-link--next"
-                    onClick={() => continueLesson(bottomLesson)}
-                    title={bottomLesson.title}
-                  >
-                    <span>Tiếp tục học</span>
-                    <ArrowRight size={16} aria-hidden />
-                  </button>
-                ) : (
-                  <span className="lesson-bottom-link lesson-bottom-link--next is-empty" aria-hidden>
-                    <span>Tiếp tục học</span>
-                    <ArrowRight size={16} />
-                  </span>
-                )}
-                <button type="button" className="lesson-bottom-link" onClick={toggleAllChapters}>
-                  <span>{collapsedChapters.size > 0 ? "Mở tất cả" : "Thu gọn"}</span>
-                </button>
-              </nav>
-            )}
           </div>
         </main>
         <Footer variant="app" />
