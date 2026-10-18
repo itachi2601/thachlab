@@ -17,13 +17,13 @@ Học liền mỗi ngày nên "ở nhà" là **tối hôm trước, ≤ 20 phút
 | B1. Mở buổi | 15 phút | quiz nhanh, chữa chỗ sai (em chưa đạt 4/5 làm lại ở đây) |
 | B2. Giảng viên dạy | 60 phút (đến 90 nếu bài nặng) | 3 khối ≤20 phút trên máy thật, mỗi khối 2 phút hỏi đáp cặp |
 | nghỉ | 15 phút | rời máy |
-| B3. Thực hành | 55 + 70 + 55 phút | Nhiệm vụ 1 · Nhiệm vụ 2 (đổi vai) · Thử thách, nghỉ 10 phút giữa chừng |
-| B4. Kết buổi | 20 phút | phiếu thoát lớp 10 phút, dọn máy 5S và bàn giao 10 phút |
+| B3. Thực hành | 85 + 85 phút | Lượt 1 và Lượt 2 đổi trạm (máy thật ↔ WinNC); mỗi lượt: Nhiệm vụ 1 · Nhiệm vụ 2 · Thử thách; nghỉ 10 phút giữa hai lượt |
+| B4. Kết buổi | 30 phút | phiếu nhóm và phiếu thoát lớp 20 phút, dọn máy 5S và bàn giao 10 phút |
 | C. Sau buổi | ≤ 10 phút | Trả bài 3 câu bằng lời, tự đánh dấu năng lực |
 
 Tổng B = 300 phút. Bài nặng lý thuyết (lập trình) kéo B2 lên 90 phút thì bớt Thử thách.
 Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau để nhớ lâu hơn.
-Lớp ~30 em, 6 máy: **nhóm 5 người một máy, 5 vai xoay mỗi lượt** (vận hành, an toàn, đọc số, ghi, kiểm). Thực hành 3 giờ chia 5 lượt ~12 phút cho mỗi em tự bấm máy ở nhiệm vụ chính; em khác giữ vai, vẫn có việc. Nếu xưởng có phần mềm mô phỏng CNC thì thêm trạm mô phỏng cho nửa lớp để tăng giờ chạm tay (chờ thầy cho biết).
+Lớp ~30 em, 6 máy, xưởng có **WinNC 3D View** (giả định mỗi em một máy tính, cần thầy xác nhận số máy tính): chia lớp hai nửa 15 em, **một nửa máy thật (2–3 em/máy), một nửa WinNC**, giữa phần thực hành đổi trạm. Mỗi em được ~35–40 phút bấm máy thật và ~85 phút trên WinNC; thử sai (va chạm) làm trên WinNC. Lập trình: viết xong chạy WinNC 3D trước, rồi mới ra máy thật.
 
 ## Phân bố 12 buổi (2 tuần)
 Tám bài hiện có chỉ phủ 8 buổi; 4 buổi còn lại cần bài mới (đánh dấu *mới*, chưa soạn).
