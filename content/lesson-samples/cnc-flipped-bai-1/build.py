@@ -18,8 +18,8 @@ def box(x, y, w, h, c):
 def fig1():
     b = ""
     cols = [(BLUE, "A. TỐI TRƯỚC", ["Đọc 2 mục", "Quiz 5 câu", "Gửi 1 câu hỏi"], "~20 phút"),
-            (GRN, "B. TẠI LỚP", ["Chữa chỗ sai", "Thao tác máy", "Phiếu nhóm"], "~180 phút"),
-            (ORG, "C. SAU GIỜ", ["Trả bài", "Tự đánh dấu"], "~10 phút")]
+            (GRN, "B. TRONG BUỔI", ["GV dạy ~1 giờ", "Thao tác ~3,5 giờ", "Phiếu nhóm"], "5 giờ"),
+            (ORG, "C. SAU BUỔI", ["Trả bài", "Tự đánh dấu"], "~10 phút")]
     for i, (c, head, items, tm) in enumerate(cols):
         x = 10 + i * 140
         b += box(x, 20, 126, 150, c) + T(x + 63, 46, head, c, 15)
@@ -29,7 +29,7 @@ def fig1():
         if i < 2:
             b += f'<path d="M{x+128},95 l10,0" stroke="currentColor" stroke-width="2.5"/>'
     return wrap("0 0 430 190", "Ba giai đoạn của một buổi lớp đảo ngược", b,
-                "Hình 1. Lý thuyết tối hôm trước, thao tác tại lớp, củng cố sau giờ.")
+                "Hình 1. Chuẩn bị tối trước, dạy và thao tác trong buổi, củng cố sau buổi.")
 
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")

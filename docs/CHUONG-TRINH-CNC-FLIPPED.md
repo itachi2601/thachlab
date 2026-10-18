@@ -1,23 +1,29 @@
 # Chương trình CNC theo lớp đảo ngược (flipped) — đề xuất 18/10/2026
 
 Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu: `content/lesson-samples/cnc-flipped-bai-1/` (chưa ghi DB).
-Lịch (thầy chốt 18/10/2026): **buổi 3 tiếng (180 phút), 6 buổi/tuần, học liên tục 2 tuần = 12 buổi**.
+Lịch (thầy nói 18/10/2026): **buổi 5 tiếng (300 phút), giảng viên dạy lý thuyết 1–2 giờ đầu buổi, 6 buổi/tuần, học liên tục 2 tuần = 12 buổi** (60 giờ). Bản trước ghi nhầm 180 phút, đã sửa.
 
 ## Vì sao đảo ngược cho môn này
 - Môn thực hành: giờ ở xưởng quý hơn giờ ngồi nghe. Lý thuyết đã có sẵn thành 8 bài tự học (`cnc_lessons`), nên dồn nó về nhà, giờ lớp dành cho máy.
 - Bằng chứng (nhớ từ tài liệu, chưa tra lại): tổng hợp của Strelan và cộng sự (2020) cho hiệu ứng nhỏ–vừa (~0,35); hiệu quả hơn khi có quiz trước giờ học và hoạt động chủ động tại lớp. Retrieval practice (Roediger & Karpicke) và tải nhận thức (Sweller, Mayer — đã có ở `docs/QUY-TAC-THIET-KE.md`) là cơ sở chọn quiz thấp rủi ro + bài tự học ngắn.
 - Rủi ro đã biết: sinh viên không chuẩn bị ở nhà thì buổi lớp sụp. Cách chặn: **cổng an toàn** (quiz ≥4/5 mới đứng máy, làm lại không trừ điểm) và 10 phút đầu giờ chữa đúng câu nhiều bạn sai.
 
-## Nhịp một buổi (mọi bài giống nhau)
-Học liền mỗi ngày nên "ở nhà" là **tối hôm trước, ≤ 20 phút**, không giao bài dài. Ngồi máy 3 tiếng liền dễ mệt: giữa buổi nghỉ hẳn 10 phút, rời máy.
+## Nhịp một buổi 300 phút (mọi bài giống nhau)
+Học liền mỗi ngày nên "ở nhà" là **tối hôm trước, ≤ 20 phút**, không giao bài dài. Phần lý thuyết **giảng viên dạy ngay trên máy, khoảng 60 phút (tối đa 90)**, chia khối ≤20 phút có hỏi đáp theo cặp 2 phút (tải nhận thức, retrieval practice); dạy liền 2 giờ thì giữa chừng phải có nghỉ. Ngồi máy cả buổi dễ mệt: nghỉ 15 phút sau phần dạy và 10 phút giữa phần thực hành.
 
 | Giai đoạn | Thời lượng | Nội dung |
 |---|---|---|
 | A. Tối hôm trước | ≤ 20 phút | đọc/xem **2 mục** của bài, quiz 5 câu, gửi 1 câu "chỗ em chưa rõ" trước 21 giờ |
-| B. Tại lớp | 180 phút | 0–10 chữa chỗ sai · 10–20 chia vai nhóm 3 · 20–70 nhiệm vụ 1 · 70–80 nghỉ · 80–130 nhiệm vụ 2 · 130–160 thử thách · 160–170 phiếu thoát lớp · 170–180 dọn máy 5S, bàn giao |
-| C. Sau giờ | ≤ 10 phút | Trả bài 3 câu bằng lời, tự đánh dấu năng lực |
+| B1. Mở buổi | 15 phút | quiz nhanh, chữa chỗ sai (em chưa đạt 4/5 làm lại ở đây) |
+| B2. Giảng viên dạy | 60 phút (đến 90 nếu bài nặng) | 3 khối ≤20 phút trên máy thật, mỗi khối 2 phút hỏi đáp cặp |
+| nghỉ | 15 phút | rời máy |
+| B3. Thực hành | 55 + 70 + 55 phút | Nhiệm vụ 1 · Nhiệm vụ 2 (đổi vai) · Thử thách, nghỉ 10 phút giữa chừng |
+| B4. Kết buổi | 20 phút | phiếu thoát lớp 10 phút, dọn máy 5S và bàn giao 10 phút |
+| C. Sau buổi | ≤ 10 phút | Trả bài 3 câu bằng lời, tự đánh dấu năng lực |
 
-Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau (không dồn 4 buổi cùng một máy) để nhớ lâu hơn.
+Tổng B = 300 phút. Bài nặng lý thuyết (lập trình) kéo B2 lên 90 phút thì bớt Thử thách.
+Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau để nhớ lâu hơn.
+Một nhóm 3 người một máy thì mỗi em chỉ có ~1 giờ trực tiếp bấm máy: **đổi vai mỗi nhiệm vụ**. Cần thầy cho biết số máy và sĩ số để chốt cỡ nhóm.
 
 ## Phân bố 12 buổi (2 tuần)
 Tám bài hiện có chỉ phủ 8 buổi; 4 buổi còn lại cần bài mới (đánh dấu *mới*, chưa soạn).
