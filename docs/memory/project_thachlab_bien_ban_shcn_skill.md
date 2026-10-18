@@ -40,3 +40,6 @@ bỏ sót không merge). **Chưa xác nhận `docs/supabase-migration-shcn.sql` 
 `/dashboard` → môn GDĐĐ&PTNN → lớp chủ nhiệm → tab "Sinh hoạt lớp" thử lưu 1 tuần trên web; nếu lỗi
 bảng không tồn tại thì cần chạy migration đó trước (theo quy tắc ở AGENTS.md — viết file, để thầy
 chạy, không tự `db push`).
+
+## Nhật ký tuần
+- 2026-10-18 · Tuần 08 (T2 12/10/2026), CĐ CK 26C, sĩ số 82 (đổi từ 85), có mặt 76. GDĐĐ: Chủ đề 2 mục III Quản lý thời gian và tiền bạc (tuần 07 đã dạy mục II). Tuần sau dạy tiếp IV Biết yêu thương / VI Thoát hiểm. File bien-ban/{word,pdf}/BBSHCN_CĐ-CK-26C_2026-10-12. Đã nạp ThachLab bằng import-shcn-tuan.mjs trong tab terminal (bỏ --lop vì JSON có `lop`; lệnh run_in_terminal chỉ nhận ASCII → dùng glob `10*/`). Bảng homeroom_weekly_sessions đã có trên production. Chưa nộp portal.

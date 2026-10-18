@@ -12,3 +12,4 @@ metadata:
 
 **Why:** tránh cắt bài theo cảm giác; việc 1 (lint) quyết định có cắt hay không.
 **How to apply:** làm việc 1→5 trên Mac bằng `cap-nhat-ly-thuyet.sh`; việc 6 (đo cuộn) giao `kien-truc-du-lieu` khi thầy chốt. Liên quan [[project-thachlab-bai-ly-thuyet-tuong-tac]].
+- 2026-10-18 · Việc 3 (rà <details>) XONG: 4 bài còn 8 khối, đã đăng DB (bài 2–5) + deploy; commit 8d335cccb.

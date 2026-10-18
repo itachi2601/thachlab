@@ -21,3 +21,5 @@ metadata:
 Liên quan: [[project_thachlab_phu_dao]], [[project_thachlab_rank_system]], [[project_thachlab_title_showcase]]
 
 **17/10/2026:** `node --env-file=.env.local scripts/doi-mk-hs-test.mjs <email>` đặt lại mật khẩu tạm (in ra console) — không cần `--xoa` rồi tạo lại. HS Test 1 có 1 lượt làm đề 908 (result 1248, 4 điểm) + 1 mục phụ đạo sinh ra từ đó; dọn bằng `gieo-hs-test.mjs --xoa` không xoá exam_results.
+
+**2026-10-17 tối:** HS Test 1 có 2 lượt làm đề (908 lớp 11: 4 điểm, result 1248 — nay hiện "(Đề đã xóa)" vì đề đã gán lớp 11; 903 lớp 12: 2 điểm). Mục phụ đạo của em đã `dismissed` do đề luyện. Mật khẩu đổi lại lúc 23:30, không lưu — cần thì chạy lại `scripts/doi-mk-hs-test.mjs`. Phiên Sonnet đợt 3 cũng từng đổi mật khẩu em này.

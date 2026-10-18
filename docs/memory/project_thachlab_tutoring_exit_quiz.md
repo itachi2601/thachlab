@@ -62,3 +62,10 @@ rồi bước 2 bài ~20 câu: ≤8 câu dễ từ bộ Kiểm tra nhanh của b
 Migration `20261004130000_phu_dao_xem_lai_ly_thuyet.sql` ĐANG CHỜ (SQL test pglite qua); CHƯA test UI HS thật, chưa commit/deploy.
 Lớp 12 chưa đăng bộ Kiểm tra nhanh nên phần câu dễ từ quiz lý thuyết rỗng tới khi đăng. Treo: nếu lý thuyết có nhiều bài trong một
 chủ đề thì chỉ lấy mục `ly_thuyet` đầu tiên theo `sort_order`.
+
+**Cập nhật 2026-10-17 — học sinh báo không làm được bài thoát (đã đóng vai HS Test 1 trên localhost):**
+- Lỗi 1 (đã sửa, `TheoryReviewStep.tsx`): mốc "đọc hết các mốc" dựa vào IntersectionObserver; vuốt nhanh bỏ qua mốc giữa hai lần báo và không báo lại → kẹt ở 2/6. Nay xét theo vị trí cuộn (scroll + resize). Đã kiểm: cuộn nhanh → 6/6.
+- Lỗi 2 (đã sửa): nhóm thang tự tin đặt tên `…-sure4` (bài mới) không khớp regex `-conf$` nên bị đếm là câu tự kiểm tra (11 thay vì 8, cần 9 thay vì 7). Nay `/-(conf|sure)\d*$/`. Đã kiểm: "7/7 câu".
+- Còn lại, chưa đổi (chờ thầy): cổng xem lại tốn ~8 phút liên tục (40% thời gian đọc ước tính, máy chủ đòi đủ); thanh tiến độ không có số giây. Đây là nguyên nhân dễ bị hiểu là "không làm được" nhất.
+- Đã thử nộp: luồng ghi lượt + màn kết quả chạy đúng (lượt test 0% của HS Test 1 còn trong DB, chờ 24 giờ mới làm lượt khác; dọn bằng `gieo-hs-test.mjs --xoa` khi thầy đồng ý).
+- Chưa commit (file sửa: components/results/TheoryReviewStep.tsx).

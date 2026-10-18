@@ -101,3 +101,17 @@ bạn đồng hành, không chat tự do, không thách đấu 1–1. Dữ liệ
 `rank_close_season` vốn đã ghi `rank_season_results`). Migration `20261015200000_rank_ho_so_thanh_tuu_mua.sql` (chờ chạy)
 thêm cột bản chụp + `rank_snapshot_season(p_season)`. Trước khi đóng mùa 4 ngày 25/10: chụp thử, đối chiếu, rồi đóng;
 UI HS chỉ làm sau khi có số A1 (cổng quyết định ở mục 4 spec).
+
+## 2026-10-17 — Bật RP mọi đề kiểm tra, cộng bù, nâng ngưỡng ×1,07, giữ bậc 13 em (ĐÃ CHẠY, đã commit)
+Thầy chốt: điểm kiểm tra trên lớp là điểm thật, phải tính RP (trước đó không có cờ riêng "kiểm tra trên lớp", chỉ có `rank_sources.enabled` từng đề).
+- `20261017190000_rank_bat_het_de_kiem_tra.sql` (commit 5b509ae96): mùa 4 thêm 363 đề, mùa 5 thêm 1 (mọi đề BTVN/Kiểm tra của chương lớp + đề đã nộp + `class_assessments`); recompute → 141 dòng sổ RP, +1.799 RP (86/202 em mùa 4, 31/73 em mùa 5). Dòng bù cùng `created_at = 2026-10-17 07:37:01.176681+00`. Sao lưu `rank_sources_backup_20261017`.
+- `20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql` (53bf4b4a0): chuông `rp_bu_kiem_tra` cho 116 em (chỉ em, không phụ huynh); `min_rp` mọi bậc mùa 4, 5 ×1,07 (mùa 4: 0/54/128/214/300/375/449; mùa 5: 0/214/535/963/1498/2140/2782), sao lưu `rank_tiers_backup_20261017`.
+- `20261017210000_rank_giu_bac_sau_nang_nguong.sql` (f82179326): 13 em tụt bậc (5 Bạch Kim, 2 Kim Cương, 3 Vàng, 3 Bạc) được giữ bậc qua bảng `rank_tier_floor` + `rank_refresh_student` lấy max(bậc theo RP, sàn); chuông `rank_tier_keep`. Chuông cũ `rank_tier_adjust` ("đã điều chỉnh") vẫn nằm trong danh sách của các em — chưa xoá.
+- Quyết định: ×1,07 chỉ bù lạm phát (bù chỉ ~7% RP TB); thầy bỏ ×1,25 dự phòng. Nếu bài kiểm tra trên lớp sắp tới làm RP tăng nhanh trước 25/10 (hết mùa 4) thì nâng tiếp. Sàn bậc chỉ áp 13 em này, hết hiệu lực theo mùa.
+- CÒN TREO: chưa xem chuông/bậc trên máy học sinh; lớp 9 KHTN vẫn chưa thuộc mùa nào; `docs/STATE.md` chưa ghi mục này (không có migration chờ); chưa chạy `gen-database-doc` (thêm 3 bảng sao lưu/sàn).
+- Rút kinh nghiệm: (1) đổi ngưỡng bậc → `rank_recompute_season` hạ bậc ngay vì bậc tính lại từ RP; chốt cách xử lý em tụt TRƯỚC khi chạy. (2) `supabase db query -f` chỉ in kết quả câu cuối → gộp `union all`; chạy từ thư mục repo (scratchpad không có link project). (3) Lượt bù nhận diện qua `created_at` trùng một transaction.
+
+## 2026-10-17 tối — Kiểm tra nhanh 10 RP đồng loạt + rà RP ở luyện tập (ĐÃ CHẠY, đã commit)
+- `20261017235000_rank_bat_kiem_tra_nhanh_10rp.sql` (`4e213595a`): bật 10 RP cho 26 đề "Kiểm tra nhanh/Kiểm tra hiểu bài/Luyện tập" lẻ mùa 4 (mùa 5 đã đủ), tính lại mùa; đề nằm trong mục Luyện tập của bài KHÔNG bật (đã tính qua `practice_item`). Sao lưu `rank_sources_backup_20261017b`. Thầy chốt giữ 20 RP cho #206, #209 (mùa 4), #7 (mùa 5).
+- Rà: chuỗi ngày đã tính mọi bài ≥7 từ `20261011200000` (đừng tin bản `rank_on_result` trong file 20260929 — sắp theo tên migration, không theo mtime). Mục tiêu tuần chỉ đếm đề thuộc `rank_sources`, đúng ý.
+- Câu chữ "Làm lại không cộng thêm RP" đã đổi (`310fab3ca`) cho khớp `rp_first_attempt_only = 0`.
