@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, ExternalLink, LogOut, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ExternalLink, LogOut, Menu, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import {
@@ -35,6 +35,17 @@ function NavLink({ item, pathname, onNavigate }: { item: AdminNavItem; pathname:
   );
 }
 
+const COLLAPSE_KEY = "thachlab-admin-nav-collapsed";
+
+function readCollapsed(): string[] {
+  try {
+    const raw = JSON.parse(localStorage.getItem(COLLAPSE_KEY) ?? "[]");
+    return Array.isArray(raw) ? raw.filter((v): v is string => typeof v === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
 function NavGroup({
   label,
   tone,
@@ -48,15 +59,36 @@ function NavGroup({
   pathname: string;
   onNavigate: () => void;
 }) {
+  // Nhóm gập lại được, nhớ lựa chọn; nhóm đang chứa trang hiện tại luôn mở để không mất dấu đang ở đâu.
+  const [collapsed, setCollapsed] = useState(false);
+  const hasCurrent = items.some((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
+  useEffect(() => setCollapsed(readCollapsed().includes(label)), [label]);
+  const hidden = collapsed && !hasCurrent;
+
+  function toggle() {
+    const next = !collapsed;
+    setCollapsed(next);
+    try {
+      const rest = readCollapsed().filter((v) => v !== label);
+      localStorage.setItem(COLLAPSE_KEY, JSON.stringify(next ? [...rest, label] : rest));
+    } catch {
+      /* chế độ riêng tư: bỏ qua, chỉ không nhớ được */
+    }
+  }
+
   return (
     <div className="admin-side-group">
-      <p className={`admin-side-label ${tone ? `admin-side-label--${tone}` : ""}`}>
+      <button
+        type="button"
+        onClick={toggle}
+        aria-expanded={!hidden}
+        className={`admin-side-label flex w-full items-center gap-1 text-left ${tone ? `admin-side-label--${tone}` : ""}`}
+      >
         {tone && <i />}
-        {label}
-      </p>
-      {items.map((item) => (
-        <NavLink key={item.href} item={item} pathname={pathname} onNavigate={onNavigate} />
-      ))}
+        <span className="flex-1">{label}</span>
+        <ChevronDown size={13} className={`transition-transform ${hidden ? "-rotate-90" : ""}`} />
+      </button>
+      {!hidden && items.map((item) => <NavLink key={item.href} item={item} pathname={pathname} onNavigate={onNavigate} />)}
     </div>
   );
 }

@@ -942,6 +942,8 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 .lesson-toc ol { max-height: 240px; overflow-y: auto; }
 /* Dock admin "Xem thử như…" (bên trái): nằm trên thanh đáy điện thoại/máy tính bảng, không che thanh. */
 .admin-dock { bottom: 20px; }
+/* Trang quản trị máy tính: dock "Xem thử như…" dời sang cạnh nút Báo lỗi (phải), khỏi đè nút Đăng xuất ở cột menu. */
+@media (min-width: 1024px) { body:has(.admin-shell) .admin-dock { left: auto; right: 72px; align-items: flex-end; } }
 @media (max-width: 1023px) { .admin-dock { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
 /* Nút Báo lỗi nổi: trang bài có thanh đáy cố định (z 45) che mất nút → nâng lên trên thanh. */
 /* Thanh đáy MobileTabBar (56px + tai thỏ) cũng che nút — nâng lên trên thanh. */

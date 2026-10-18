@@ -103,7 +103,7 @@ export default function AdminOverviewPage() {
         <h3 className="admin-h2">Cần xử lý</h3>
         <div className="admin-grid mt-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
           <Stat icon={Bug} label="Báo lỗi mới" value={todo?.newBugs ?? null} href="/quan-tri/bao-loi" tone="warn" />
-          <Stat icon={UserCheck} label="Em chờ duyệt vào lớp" value={todo?.pendingJoins ?? null} href="/quan-tri/hoc-sinh" tone="warn" />
+          <Stat icon={UserCheck} label="Em chờ duyệt vào lớp" value={todo?.pendingJoins ?? null} href="/quan-tri/hoc-sinh?tab=pending" tone="warn" />
           <Stat icon={Wrench} label="Máy đang hư" value={counts.brokenMachines} href="/quan-tri/tinh-trang-may" tone="warn" />
         </div>
       </section>

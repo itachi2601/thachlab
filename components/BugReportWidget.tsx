@@ -21,7 +21,7 @@ const DRAG_THRESHOLD = 6;
 const STEP = 24;
 
 /** Trang đang học / đang làm bài: một thanh đáy là đủ (B2). Nút báo lỗi thu thành icon, không kéo được xuống che "Bài sau". */
-const COMPACT_PREFIXES = ["/lop-hoc/bai", "/kiem-tra/lam"];
+const COMPACT_PREFIXES = ["/lop-hoc/bai", "/kiem-tra/lam", "/quan-tri"];
 
 function isCompactPath(pathname: string) {
   return COMPACT_PREFIXES.some((prefix) => pathname.startsWith(prefix));
