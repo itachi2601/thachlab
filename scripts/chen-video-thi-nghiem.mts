@@ -161,6 +161,14 @@ function viTriMoBai(html: string): number | null {
 /** Vị trí chèn của `mo_bai` | `truoc:<data-exp>` | `sau:<data-exp>`. */
 function viTriChon(html: string, viTri: string): number | null {
   if (viTri === "mo_bai") return viTriMoBai(html);
+  // `cuoi_muc:<số La Mã>` — cuối mục h3 đánh số đó (bài HSG không có hộp data-exp): chèn ngay trước h3 kế tiếp.
+  const cm = /^cuoi_muc:([IVX]+)$/.exec(viTri);
+  if (cm) {
+    const h3 = [...html.matchAll(/<h3\b[^>]*>\s*([IVX]+)\./g)];
+    const i = h3.findIndex((x) => x[1] === cm[1]);
+    if (i === -1) return null;
+    return i + 1 < h3.length ? h3[i + 1].index : null;
+  }
   const m = /^(truoc|sau):(.+)$/.exec(viTri);
   if (!m) return null;
   const anchor = findAnchor(html, m[2]);
