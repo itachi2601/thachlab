@@ -1,11 +1,11 @@
 ---
 name: lich-tuan
-description: Lên lịch tuần cho thầy Thạch — gộp lịch dạy Vật lí trên thachlab (thpt_course_schedules), thời khoá biểu Cao Thắng (portal giảng viên), lịch cố định (dạy HSG sáng T7 ở Trần Văn Ơn, họp cán bộ + cà phê T2, duyệt đồ án), các mục trong Lịch công tác tuần của trường có trưởng/phó khoa Cơ khí hoặc giao ban, rồi xếp ≥3 buổi trượt băng và 2–3 buổi gym vào chỗ trống, báo trùng giờ. Dùng khi thầy nói "lên lịch tuần", "tuần này thầy có gì", "lịch tuần sau", "xếp lịch tập", "/lich-tuan".
+description: Lịch công tác tuần của thầy Thạch — gộp lịch dạy Vật lí trên thachlab (thpt_course_schedules, kèm mốc "đã tới bài · tiếp bài" và nhịp buổi), buổi HSG KHTN 9 theo lộ trình tuan.json, thời khoá biểu Cao Thắng (portal giảng viên), lịch cố định (dạy HSG sáng T7 ở Trần Văn Ơn, họp cán bộ + cà phê T2, duyệt đồ án), các mục trong Lịch công tác tuần của trường có trưởng/phó khoa Cơ khí hoặc giao ban, rồi xếp ≥3 buổi trượt băng và 2–3 buổi gym vào chỗ trống, báo trùng giờ. Đưa lên mục Lịch tuần ở /tai-khoan. Cũng dùng khi thầy báo tiến độ ("lớp 11 thứ 2 đã học tới bài X", "cập nhật lịch dạy") để ghi mốc bài rồi làm lại lịch. Dùng khi thầy nói "lên lịch tuần", "lịch công tác tuần", "tuần này thầy có gì", "lịch tuần sau", "xếp lịch tập", "cập nhật lịch dạy", "/lich-tuan".
 ---
 
 # Lên lịch tuần
 
-Kết quả: bảng 7 ngày, mỗi mục ghi nguồn, đánh dấu ⚠ khi trùng giờ, ghi `scripts/data/lich-tuan/<thứ Hai>.md`.
+Kết quả: bảng 7 ngày, mỗi mục ghi nguồn, đánh dấu ⚠ khi trùng giờ, ghi `scripts/data/lich-tuan/<thứ Hai>.md` và (bước 5) bảng `staff_week_plans` → mục "Lịch tuần" trang `/tai-khoan` (`components/account/StaffWeekPlan.tsx`: mobile xem từng ngày, desktop lưới 7 cột, dòng "Tiếp theo", tổng kết buổi dạy/tập).
 
 ## Nguồn
 | Nguồn | Cách lấy |
@@ -13,9 +13,17 @@ Kết quả: bảng 7 ngày, mỗi mục ghi nguồn, đánh dấu ⚠ khi trùn
 | Thachlab | Script đọc `thpt_course_schedules` + `thpt_courses` (khoá chưa đóng, còn hiệu lực trong tuần). Weekday 1=Thứ 2…7=CN. |
 | Cao Thắng TKB | **Portal cần đăng nhập** (`portal.caothang.edu.vn/giang_vien/tkb.php`, trả 302 khi chưa đăng nhập). Claude KHÔNG nhập mật khẩu. Xem bước 2. |
 | Lịch công tác | Tự tải `caothang.edu.vn/m/bai_viet/Lich-Cong-Tac-Tuan-14` → trang tuần (văn bản theo THỨ/ngày, sáng/chiều, "TP:" thành phần). Lọc theo từ khoá trong `references/lich-co-dinh.json` (`loc_lich_cong_tac`). |
-| Cố định | `references/lich-co-dinh.json` — sửa ở đó. |
+| Cố định | `references/lich-co-dinh.json` — sửa ở đó. Buổi "Dạy HSG KHTN 9" gắn mốc từ `scripts/data/btvn-hsg9/tuan.json` (khớp `ngay` dd/mm với thứ Bảy của tuần; cùng nguồn với lộ trình HS `/lop-hoc/lo-trinh-hsg`) — đổi lộ trình thì sửa tuan.json, không sửa ở đây. |
+| Mốc bài Vật lí | `thpt_courses.current_topic_id` (chủ đề tầng bài) → script tự ghi "Đã tới: … · Tiếp: …" + nhịp buổi `buoi_day.nhip`; khoá ôn thi không có mốc → `buoi_day.ghi_chu_khoa[id]`. |
 
 ## Quy trình
+0. **Thầy báo tiến độ** ("lớp 10L3 đã học tới Tổng hợp lực", "12L1 thứ 4–5 tới dòng điện xoay chiều"): đối chiếu theo TÊN khoá trong DB (thứ thầy nói có thể lệch `thpt_course_schedules` — nêu rõ cách hiểu khi báo lại), rồi chạy trong tab terminal:
+```
+npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts --khoa            # xem khoá + mốc hiện tại
+npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts --tim "sóng dừng"  # tìm id chủ đề tầng bài đúng khối
+npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts 4:46:2026-10-16    # <course_id>:<topic_id>:<ngày dạy>, nhiều bộ cách nhau bằng dấu cách
+```
+   Script gọi `teaching_set` dưới danh nghĩa thầy (ghi `thpt_teaching_progress` + đồng bộ `current_topic_id`); chỉ nhận chủ đề `parent_id null` đúng khối. Ghi xong làm tiếp bước 1–5 để web cập nhật.
 1. Xác định tuần (mặc định tuần hiện tại; "tuần sau" → `--tuan` một ngày trong tuần đó).
 2. **TKB Cao Thắng**: nếu `scripts/data/lich-tuan/tkb-caothang.json` chưa có hoặc đã sang học kỳ/tuần khác, nhờ thầy đăng nhập portal trong tab trình duyệt (built-in hoặc Chrome), rồi Claude đọc trang TKB đã mở (`get_page_text`) và ghi file JSON `[{weekday,start,end,title,where}]` (tiết → giờ theo bảng tiết của trường; ghi rõ cách đổi tiết–giờ vào file nếu suy ra). Hoặc thầy dán/chụp TKB. TKB đổi theo tuần thì lưu lại theo tuần.
 3. Chạy trong tab terminal (cần `.env.local`):

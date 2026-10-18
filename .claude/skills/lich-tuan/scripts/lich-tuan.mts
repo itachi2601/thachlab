@@ -25,8 +25,19 @@ const hhmm = (n: number) => `${String(Math.floor(n / 60)).padStart(2, "0")}:${St
 const warn: string[] = [];
 const evs: Ev[] = [];
 
-// 1. cố định
-for (const e of rules.co_dinh) evs.push({ ...e, src: "cố định" });
+// 1. cố định (+ buổi HSG KHTN 9: mốc bài theo scripts/data/btvn-hsg9/tuan.json, cùng nguồn với lộ trình HS)
+const hsgFile = path.join(root, "scripts/data/btvn-hsg9/tuan.json");
+const hsgTuan: { buoi: number; ngay: string; chu_de: string; btvn: string }[] = fs.existsSync(hsgFile) ? JSON.parse(fs.readFileSync(hsgFile, "utf8")).tuan : [];
+for (const e of rules.co_dinh) {
+  const ev: Ev = { ...e, src: "cố định" };
+  if (/HSG/i.test(e.title)) {
+    const d = dayOf(e.weekday);
+    const row = hsgTuan.find((t) => t.ngay === fmt(d));
+    ev.lesson = row ? `Buổi ${row.buoi}: ${row.chu_de}` : "Không có buổi trong lộ trình tuần này (xem tuan.json)";
+    if (row?.btvn) ev.note = `BTVN đã giao: ${row.btvn}`;
+  }
+  evs.push(ev);
+}
 
 // 2. thachlab
 const sb = createClient(envLocal("NEXT_PUBLIC_SUPABASE_URL")!, envLocal("SUPABASE_SERVICE_ROLE_KEY")!);
@@ -136,7 +147,7 @@ for (let w = 1; w <= 7; w++) {
   if (!day.length) out += "- (trống)\n";
   for (const e of day) {
     const clash = day.filter((o) => o !== e && toMin(o.start) < toMin(e.end) && toMin(o.end) > toMin(e.start));
-    out += `- ${e.start}–${e.end} · ${e.title}${e.where ? ` (${e.where})` : ""} _[${e.src}]_${e.lesson ? ` — ${e.lesson}` : ""}${e.note && e.src !== "thachlab" ? ` — ${e.note}` : ""}${clash.length ? " ⚠ TRÙNG GIỜ với " + clash.map((c) => c.title.slice(0, 30)).join("; ") : ""}\n`;
+    out += `- ${e.start}–${e.end} · ${e.title}${e.where ? ` (${e.where})` : ""} _[${e.src}]_${e.lesson ? ` — ${e.lesson}` : ""}${e.note && e.src !== "thachlab" && !e.lesson ? ` — ${e.note}` : ""}${clash.length ? " ⚠ TRÙNG GIỜ với " + clash.map((c) => c.title.slice(0, 30)).join("; ") : ""}\n`;
   }
   out += "\n";
 }
