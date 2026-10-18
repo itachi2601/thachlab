@@ -47,7 +47,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Còn 23 đề chưa gán (không suy được: 19 "Kiểm tra nhanh"/"Luyện tập" mồ côi bài học #99–101, #209, #239–257 + vài đề khác): danh sách `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`, chờ thầy chọn lớp.
 - Bài tập mẫu L12 còn soạn lại 12 bài: 9, 11, 13–19, 125–127; kế hoạch 42 bài L10/L11 chờ thầy duyệt (`docs/memory/project_thachlab_btm_quet_dang.md`).
 - Bài 11 L12 Thực hành: chưa ghi DB (`upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`); 4 bài L12 sửa đường sức chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14` — kiểm `so-file-voi-db.mts` trước vì có thể đã đăng.
-- Lỗi nội dung quiz lý thuyết L12 chưa sửa: bài 8 `summary_html` (273 K ↔ 298 K), bài 19 Xofigo Z=88, bài 10 "d gấp đôi → B còn 1/8", bài 126 mục tiêu 8 câu thực tế 7, bài 13 còn vai "Thầy". Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
+- Lỗi nội dung L12 (bài 8, 10, 13, 19, 126): ĐÃ SỬA hết (18/10/2026; bài 8 `summary_html` ghi DB, sao lưu `scripts/logs/summary-bai8-backup-*.json`). Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
 - Trùng slug lesson 126: `content/lesson-samples/l12-ung-dung-cam-ung/` là bản cũ, đăng từ đó sẽ LÙI bài; nên đổi tên/xoá khi rảnh.
 - Bài 65 L10: 3 góp ý nhỏ về Hình 3/4/5 chưa sửa; 2 bài 65/67 chưa xem 375px trên web.
 - Audit đáp án ngân hàng: chờ thầy duyệt 127 câu `_can_xac_nhan` (`scripts/data/bank-answer-fixes.json`), `scripts/logs/db-sai-can-duyet.csv` (556 + 100 câu), 8 `khong_ro` + 2 `cho_phan_xu`.
