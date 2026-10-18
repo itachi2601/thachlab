@@ -13,9 +13,10 @@ for (const d of fs.readdirSync("scripts/data/giai-lai").filter((d) => /^viet-lai
   for (const f of fs.readdirSync("scripts/data/giai-lai/" + d).filter((f) => /^lo-\d+\.json$/.test(f)))
     for (const x of JSON.parse(fs.readFileSync(`scripts/data/giai-lai/${d}/${f}`, "utf8"))) daXong.add(x.id);
 const rows: any[] = [];
-for (let from = 0; ; from += 1000) {
-  const { data, error } = await sb.from("question_bank").select("id,grade,topic_name,archived,question").eq("archived", false).range(from, from + 999);
-  if (error) throw new Error(error.message); rows.push(...data!); if (data!.length < 1000) break;
+for (let from = 0; ; from += 500) {
+  let d: any; for (let t = 0; t < 5; t++) { const r = await sb.from("question_bank").select("id,grade,topic_name,archived,question,lint_flags").eq("archived", false).order("id").range(from, from + 499);
+    if (!r.error) { d = r.data; break; } await new Promise((s) => setTimeout(s, 2000)); }
+  if (!d) throw new Error("timeout"); rows.push(...d); if (d.length < 500) break;
 }
 const plain = (h: string) => String(h ?? "").replace(/<[^>]+>/g, " ");
 const cand = rows.filter((r) => {
@@ -24,7 +25,7 @@ const cand = rows.filter((r) => {
   const blob = JSON.stringify(q); if (/<img|<svg|image_url|"image"|\.png|\.webp|\.jpg/i.test(blob)) return false;
   if (/(sai|không đúng|không khớp) vì/i.test(plain(q.explanation))) return false;
   if (opts.filter((o) => /\d/.test(plain(o)) && plain(o).replace(/\$/g, "").length < 40).length < 4) return false;
-  return !daXong.has(r.id) && (!lopF || String(r.grade) === lopF);
+  if ((r.lint_flags ?? []).length) return false; return !daXong.has(r.id) && (!lopF || String(r.grade) === lopF);
 });
 const byG: Record<string, number> = {}; cand.forEach((r) => (byG[r.grade] = (byG[r.grade] ?? 0) + 1));
 console.log("ứng viên", cand.length, byG, "mẫu khoá question:", Object.keys(rows[0].question));

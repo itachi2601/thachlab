@@ -52,6 +52,7 @@ FILES=(
   "supabase/migrations/20261018131000_sua_loc_hs_test_canh_bao.sql|Sửa DT-07: chỉ bỏ email hs.test% (HS thật cũng dùng @thachlab.local) khỏi cảnh báo inactive_7d|lúc nào cũng được; chạy TRƯỚC 6:00 sáng"
   "supabase/migrations/20261018120000_hsg9_dot4_muc_noi_dung.sql|Khoá HSG Vật lí: tạo mục Lý thuyết + Bài tập mẫu (rỗng) cho CĐ06 (151), CĐ07 (156), CĐ14 (158), CĐ08 (152), CĐ09 (163), bài vẫn ẩn|lúc nào cũng được (chỉ chèn)"
   "supabase/migrations/20261018123000_hsg9_yccd_guong_thien_van.sql|Khoá HSG Vật lí: thêm YCCĐ cho CĐ14 Gương phẳng (3 con) và CĐ17 Thiên văn (3 con), để bài tập mẫu gắn được topic|lúc nào cũng được (chỉ chèn)"
+  "supabase/migrations/20261018140000_sync_exam_to_bank_khong_sinh_trung.sql|Sửa hàm sync_exam_to_bank: sửa câu trong đề thì cập nhật dòng ngân hàng cũ, không chèn dòng trùng (chỉ thay thân hàm; hoàn tác: scripts/data/gon-ngan-hang/sync_exam_to_bank.truoc.sql)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
