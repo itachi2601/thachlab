@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Clock3, FileSpreadsheet, UserRound, UserX } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
+import { getSupabase } from "@/services/supabase";
 import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
 import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
@@ -37,11 +38,25 @@ export default function StudentsAdmin() {
     }
   }, []);
 
+  // ?student=<id> (từ ô tìm chung): mở thẳng lớp đang học và hồ sơ của em đó.
+  const wanted = useRef<{ classId: number | null; studentId: string } | null>(null);
   useEffect(() => {
-    fetchClasses().then((rows) => {
+    const studentId = new URLSearchParams(window.location.search).get("student");
+    void (async () => {
+      if (studentId) {
+        const { data } = await getSupabase().from("user_classes").select("class_id").eq("user_id", studentId).limit(1);
+        wanted.current = { classId: (data?.[0] as { class_id: number } | undefined)?.class_id ?? null, studentId };
+      }
+      const rows = await fetchClasses();
       setClasses(rows);
-      setSelectedClassId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));
-    });
+      const want = wanted.current;
+      if (want?.classId && rows.some((item) => item.id === want.classId)) {
+        setSelectedClassId(want.classId);
+        setSelectedStudentId(want.studentId);
+      } else {
+        setSelectedClassId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));
+      }
+    })();
   }, []);
 
   useEffect(() => {

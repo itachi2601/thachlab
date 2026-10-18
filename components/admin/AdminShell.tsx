@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, ExternalLink, LogOut, Menu, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import AdminSearch from "@/components/admin/AdminSearch";
 import {
   AREA_ITEMS,
   AREA_LABEL,
@@ -184,6 +185,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
             <h1 className="admin-top-title">{titleOfPath(pathname)}</h1>
           </div>
           <div className="admin-top-acts">
+            {showNav && <AdminSearch />}
             <ThemeToggle />
           </div>
         </header>
