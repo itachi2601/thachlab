@@ -1,0 +1,20 @@
+// Đề 73 câu 2 (ngân hàng id 8317): thầy chốt giữ 1304 m/s = tốc độ căn quân phương (18/10/2026). Đặt answer=1304 và thêm câu giải thích vào lời giải, ở cả ngân hàng và bản sao đề. Sao lưu trước khi ghi.
+import { createClient } from "@supabase/supabase-js";
+import fs from "node:fs";
+const L = fs.readFileSync(".env.local", "utf8").split("\n");
+const env = (k: string) => L.find((l) => l.startsWith(k + "="))!.slice(k.length + 1).trim();
+const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), { auth: { persistSession: false } });
+const GHI = '<p class="text-base leading-relaxed my-2">Lưu ý: ở chương trình này, "tốc độ trung bình" của phân tử khí được hiểu là tốc độ căn quân phương $\\sqrt{\\langle v^2\\rangle}=\\sqrt{\\dfrac{3RT}{\\mu}}$.</p>';
+const sua = (q: any) => { const n = structuredClone(q); n.answer = "1304"; if (!String(n.explanation ?? "").includes("căn quân phương")) n.explanation = (n.explanation ?? "") + GHI; return n; };
+const { data: b } = await sb.from("question_bank").select("id,question").eq("id", 8317).single();
+const { data: e } = await sb.from("exams").select("id,questions").eq("id", 73).single();
+const idx = e!.questions.findIndex((q: any) => JSON.stringify([q.type, q.question]) === JSON.stringify([b!.question.type, b!.question.question]));
+if (idx < 0) throw new Error("không thấy câu trong đề 73");
+console.log("trước:", b!.question.answer, "| đề:", e!.questions[idx].answer, "idx", idx);
+const bp = `scripts/logs/sua-de73-cau2-backup-${Date.now()}.json`;
+fs.writeFileSync(bp, JSON.stringify({ bank: b, exam: e })); console.log("sao lưu:", bp);
+const qs = structuredClone(e!.questions); qs[idx] = sua(qs[idx]);
+const r1 = await sb.from("exams").update({ questions: qs }).eq("id", 73); console.log("exams", r1.error?.message ?? "ok");
+const r2 = await sb.from("question_bank").update({ question: sua(b!.question) }).eq("id", 8317); console.log("bank", r2.error?.message ?? "ok");
+const { data: c } = await sb.from("question_bank").select("question").eq("id", 8317).single();
+console.log("sau:", c!.question.answer, String(c!.question.explanation).slice(-120));
