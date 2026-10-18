@@ -156,6 +156,25 @@ const slots = (spec: any, kind: string, n: number, avoidDays: number[]) => {
 const sk = slots(rules.the_thao.truot_bang, "Trượt băng", rules.the_thao.truot_bang.min_buoi, [1]);
 slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, []); // gym được cùng ngày với trượt băng (gym trước, trượt sau)
 
+// 5b. thời gian phát triển thachlab: sau khi xếp thể thao, lấy khoảng trống dài nhất mỗi ngày (>= tối thiểu), tối đa `toi_da_phut`
+{
+  const pt = rules.phat_trien_thachlab ?? { min_buoi: 4, toi_thieu_phut: 120, toi_da_phut: 180, tu: "08:00", den: "21:30", dem: 15 };
+  const cand: { w: number; a: number; b: number }[] = [];
+  for (let w = 1; w <= 7; w++) {
+    const ev = evs.filter((e) => e.weekday === w).map((e) => [toMin(e.start), toMin(e.end)]).sort((x, y) => x[0] - y[0]);
+    let cur = toMin(pt.tu), best: [number, number] | null = null;
+    for (const [a, b] of [...ev, [toMin(pt.den), toMin(pt.den)]]) {
+      const gs = cur + (cur === toMin(pt.tu) ? 0 : pt.dem), ge = Math.min(a, toMin(pt.den)) - pt.dem;
+      if (ge - gs >= pt.toi_thieu_phut && (!best || ge - gs > best[1] - best[0])) best = [gs, ge];
+      cur = Math.max(cur, b);
+    }
+    if (best) cand.push({ w, a: best[0], b: Math.min(best[1], best[0] + pt.toi_da_phut) });
+  }
+  cand.sort((x, y) => y.b - y.a - (x.b - x.a));
+  for (const c of cand.slice(0, pt.min_buoi)) evs.push({ weekday: c.w, start: hhmm(c.a), end: hhmm(c.b), title: "Phát triển thachlab", src: "xếp tự động" });
+  if (cand.length < pt.min_buoi) warn.push(`Phát triển thachlab: chỉ có ${cand.length}/${pt.min_buoi} khoảng trống đủ ${pt.toi_thieu_phut} phút.`);
+}
+
 // 6. xuất
 const NAME = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
 let out = `# Lịch tuần ${fmt(mon)}–${fmt(dayOf(7))}/${mon.getFullYear()}\n\n`;
