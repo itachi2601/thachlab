@@ -23,7 +23,7 @@ Học liền mỗi ngày nên "ở nhà" là **tối hôm trước, ≤ 20 phút
 
 Tổng B = 300 phút. Bài nặng lý thuyết (lập trình) kéo B2 lên 90 phút thì bớt Thử thách.
 Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau để nhớ lâu hơn.
-Một nhóm 3 người một máy thì mỗi em chỉ có ~1 giờ trực tiếp bấm máy: **đổi vai mỗi nhiệm vụ**. Cần thầy cho biết số máy và sĩ số để chốt cỡ nhóm.
+Lớp ~30 em, 6 máy: **nhóm 5 người một máy, 5 vai xoay mỗi lượt** (vận hành, an toàn, đọc số, ghi, kiểm). Thực hành 3 giờ chia 5 lượt ~12 phút cho mỗi em tự bấm máy ở nhiệm vụ chính; em khác giữ vai, vẫn có việc. Nếu xưởng có phần mềm mô phỏng CNC thì thêm trạm mô phỏng cho nửa lớp để tăng giờ chạm tay (chờ thầy cho biết).
 
 ## Phân bố 12 buổi (2 tuần)
 Tám bài hiện có chỉ phủ 8 buổi; 4 buổi còn lại cần bài mới (đánh dấu *mới*, chưa soạn).
