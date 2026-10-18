@@ -40,7 +40,7 @@ Thầy dán văn bản vào phiên (sandbox không vào được thuvienphapluat
 | WP-00 | Chốt thể lệ + chương trình thi | `the-le.md` (tóm tắt có dẫn nguồn, mục chưa rõ liệt kê) | thầy dán công văn | chờ thầy |
 | WP-01 | GĐ1: sổ tay fx-580VN X cho Vật lí | 8 trang: SOLVE · CALC · TABLE · số phức (RLC, tổng hợp dao động) · vectơ · thống kê/hồi quy · hằng số & đổi đơn vị · biến nhớ; 20 bài luyện thao tác | không | nháp xong 18/10, đã kiểm 2 lần; chờ thầy bấm thử máy |
 | WP-02 | GĐ1: quy tắc ghi kết quả + làm tròn | 1 trang + 10 cặp "làm tròn sai / đúng" có số thật | WP-00 (quy tắc làm tròn) | chưa soạn |
-| WP-03 | CĐ1 Dao động cơ | theo mục 2 | WP-00, WP-01 | chưa soạn |
+| WP-03 | CĐ1 Dao động cơ | theo mục 2 | WP-00, WP-01 | nháp xong 18/10 (thể lệ tạm), đã kiểm 2 lần; chờ thầy duyệt + rà theo thể lệ |
 | WP-04 | CĐ2 Sóng cơ, giao thoa, sóng dừng | theo mục 2 | WP-03 | chưa soạn |
 | WP-05 | CĐ3 Điện xoay chiều (RLC, cực trị, công suất) | theo mục 2 | WP-01 (số phức) | chưa soạn |
 | WP-06 | CĐ4 Dao động–sóng điện từ, sóng ánh sáng | theo mục 2 | — | chưa soạn |
@@ -67,4 +67,5 @@ Bài tập tự chấm có đáp số → qua `docs/DANG-DE-TU-WORD.md` hoặc s
 
 ## Nhật ký rút kinh nghiệm
 - 2026-10-18 · WP-01: tên phím/menu soạn khi chưa có máy thật → để cờ "chưa thử trên máy" trong README, nhờ thầy bấm thử 4 bài đại diện; đáp số sinh từ `tinh.py` rồi giao `kiem-code` giải từ đề đã tách đáp án (grep dòng Đề) — rẻ và đủ.
+- 2026-10-18 · WP-03: kiem-code bắt lỗi ở CÔNG THỨC trong lời giải (arctan sai, thiếu điều kiện A≥0, S tắt dần chỉ đúng khi dừng ở O) dù mọi đáp số đúng → khi soạn kỹ thuật/lời giải, luôn ghi điều kiện áp dụng của từng công thức; đáp số khớp chưa đủ để coi lời giải đúng.
 - 2026-10-18 · Không đọc được thể lệ gốc (sandbox chặn thuvienphapluat.com) → xin thầy dán công văn ngay từ đầu, đừng soạn bài tập khi chưa chốt quy tắc làm tròn.
