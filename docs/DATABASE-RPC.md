@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 369 hàm, sinh tự động 2026-10-17
+# Hàm SQL / RPC (schema public) — 371 hàm, sinh tự động 2026-10-18
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -210,17 +210,18 @@ repo — xem trên Supabase Dashboard).
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_parent_link_request(p_id bigint, p_student uuid, p_approve boolean)` → void
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rl_allow(p_key text, p_max integer, p_window interval)` → boolean
 - `rl_client_ip()` → text
+- `rollup_lesson_read_depth(p_before date, p_dry boolean)` → jsonb
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
 - `search_students_for_link(p_query text)` → TABLE(id uuid, full_name text, class_name text, birth_date date)
 - `seed_absent_attendance_for_enrollment()` → trigger
@@ -239,8 +240,8 @@ repo — xem trên Supabase Dashboard).
 - `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -280,6 +281,7 @@ repo — xem trên Supabase Dashboard).
 - `ta_video_admin_summary(p_month date)` → TABLE(month date, videos_published integer, total_views numeric, total_saves numeric, total_comments numeric, leads_count integer, production_spend numeric, view_bonus_spend numeric, lead_bonus_spend numeric, total_spend numeric, budget_cap integer, over_budget boolean, cost_per_lead numeric)
 - `ta_video_ledger(p_assistant_id uuid)` → TABLE(session_id uuid, assistant_id uuid, work_date date, video_tier text, video_url text, published_at timestamp with time zone, status text, reject_reason text, topic_source_id uuid, latest_checked_at date, latest_views integer, latest_saves integer, latest_comments integer, view_bonus numeric, production_pay numeric, lead_count integer, lead_bonus numeric, total_pay numeric)
 - `ta_video_topic_suggestions(p_days integer)` → TABLE(session_id uuid, work_date date, class_label text, error_note text)
+- `teacher_lesson_read_depth(p_class_id bigint, p_lesson_id bigint)` → TABLE(item_id bigint, item_title text, sort_order integer, h3_total integer, quiz_total integer, class_students integer, students_read integer, reached_end integer, avg_depth_ratio numeric, depth_hist jsonb, students_quiz integer, avg_quiz_ratio numeric, last_read_at timestamp with time zone)
 - `teaches_student(p_student uuid)` → boolean
 - `teaching_courses(p_class bigint)` → jsonb
 - `teaching_get(p_course bigint)` → jsonb
