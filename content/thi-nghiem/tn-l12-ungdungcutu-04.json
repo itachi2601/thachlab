@@ -14,12 +14,32 @@
   ],
   "muc_tieu": "Đo số dao động và thời gian tắt dao động của một tấm kim loại giữa hai cực nam châm để thấy lực hãm điện từ do dòng Foucault gây ra, và thấy rãnh xẻ làm dòng Foucault nhỏ đi nên lực hãm yếu hẳn.",
   "dung_cu": [
-    { "ten": "Tấm nhôm 100 × 60 × 3 mm", "so_luong": 1 },
-    { "ten": "Tấm nhôm cùng kích thước nhưng có 3 rãnh xẻ rộng 3 mm", "so_luong": 1 },
-    { "ten": "Nam châm điện chữ U có hai cực phẳng, khe 25 mm", "so_luong": 1, "ghi_chu": "hoặc hai nam châm vĩnh cửu mạnh kẹp hai bên" },
-    { "ten": "Giá treo có thanh ngang và hai sợi dây mảnh dài 40 cm", "so_luong": 1 },
-    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "sai số ±0,2 s" },
-    { "ten": "Nguồn một chiều nuôi nam châm điện", "so_luong": 1 }
+    {
+      "ten": "Tấm nhôm 100 × 60 × 3 mm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Tấm nhôm cùng kích thước nhưng có 3 rãnh xẻ rộng 3 mm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nam châm điện chữ U có hai cực phẳng, khe 25 mm",
+      "so_luong": 1,
+      "ghi_chu": "hoặc hai nam châm vĩnh cửu mạnh kẹp hai bên"
+    },
+    {
+      "ten": "Giá treo có thanh ngang và hai sợi dây mảnh dài 40 cm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Đồng hồ bấm giây",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,2 s"
+    },
+    {
+      "ten": "Nguồn một chiều nuôi nam châm điện",
+      "so_luong": 1
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -40,14 +60,73 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "n", "ten": "Số rãnh xẻ trên tấm", "don_vi": "rãnh", "kieu": "dieu_chinh", "min": 0, "max": 6, "mac_dinh": 0, "buoc": 1 },
-    { "ky_hieu": "e", "ten": "Chiều dày tấm kim loại", "don_vi": "mm", "kieu": "dieu_chinh", "min": 1, "max": 6, "mac_dinh": 3, "buoc": 0.5 },
-    { "ky_hieu": "B", "ten": "Cảm ứng từ ở khe giữa hai cực", "don_vi": "T", "kieu": "dieu_chinh", "min": 0.05, "max": 0.6, "mac_dinh": 0.3, "buoc": 0.05 },
-    { "ky_hieu": "theta0", "ten": "Biên độ góc ban đầu của con lắc", "don_vi": "độ", "kieu": "dieu_chinh", "min": 10, "max": 30, "mac_dinh": 20, "buoc": 1 },
-    { "ky_hieu": "rho", "ten": "Điện trở suất của nhôm", "don_vi": "Ω·m", "kieu": "co_dinh", "gia_tri": 2.8e-8 },
-    { "ky_hieu": "N_dd", "ten": "Số lần tấm qua vị trí thấp nhất (mỗi lần tính là một dao động) tới khi tắt hẳn", "don_vi": "dao động", "kieu": "do_duoc", "sai_so_do": 1 },
-    { "ky_hieu": "tau", "ten": "Thời gian tắt dao động", "don_vi": "s", "kieu": "do_duoc", "sai_so_do": 0.2 },
-    { "ky_hieu": "F_ham", "ten": "Lực hãm điện từ trung bình", "don_vi": "N", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "n",
+      "ten": "Số rãnh xẻ trên tấm",
+      "don_vi": "rãnh",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 6,
+      "mac_dinh": 0,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "e",
+      "ten": "Chiều dày tấm kim loại",
+      "don_vi": "mm",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 6,
+      "mac_dinh": 3,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ ở khe giữa hai cực",
+      "don_vi": "T",
+      "kieu": "dieu_chinh",
+      "min": 0.05,
+      "max": 0.6,
+      "mac_dinh": 0.3,
+      "buoc": 0.05
+    },
+    {
+      "ky_hieu": "theta0",
+      "ten": "Biên độ góc ban đầu của con lắc",
+      "don_vi": "độ",
+      "kieu": "dieu_chinh",
+      "min": 10,
+      "max": 30,
+      "mac_dinh": 20,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "rho",
+      "ten": "Điện trở suất của nhôm",
+      "don_vi": "Ω·m",
+      "kieu": "co_dinh",
+      "gia_tri": 2.8e-8
+    },
+    {
+      "ky_hieu": "N_dd",
+      "ten": "Số lần tấm qua vị trí thấp nhất (mỗi lần tính là một dao động) tới khi tắt hẳn",
+      "don_vi": "dao động",
+      "kieu": "do_duoc",
+      "sai_so_do": 1
+    },
+    {
+      "ky_hieu": "tau",
+      "ten": "Thời gian tắt dao động",
+      "don_vi": "s",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.2
+    },
+    {
+      "ky_hieu": "F_ham",
+      "ten": "Lực hãm điện từ trung bình",
+      "don_vi": "N",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -65,11 +144,27 @@
     "ghi_chu": "Mô phỏng nên cho kéo thanh trượt số rãnh: đường dòng Foucault khép kín trong tấm bị cắt thành các vòng nhỏ, lực hãm tụt xuống và số dao động tăng lên ngay trên màn hình."
   },
   "so_lieu_mau": {
-    "cot": ["Trường hợp", "Số dao động", "Thời gian tắt (s)"],
+    "cot": [
+      "Trường hợp",
+      "Số dao động",
+      "Thời gian tắt (s)"
+    ],
     "hang": [
-      ["Không có nam châm (đối chứng)", 42, 26.6],
-      ["Tấm liền khối giữa hai cực", 6, 3.8],
-      ["Tấm có 3 rãnh xẻ giữa hai cực", 21, 13.3]
+      [
+        "Không có nam châm (đối chứng)",
+        42,
+        26.6
+      ],
+      [
+        "Tấm liền khối giữa hai cực",
+        6,
+        3.8
+      ],
+      [
+        "Tấm có 3 rãnh xẻ giữa hai cực",
+        21,
+        13.3
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ với tấm nhôm 100 × 60 × 3 mm, chiều dài dây treo 40 cm, biên độ góc ban đầu 20°, B ≈ 0,3 T, đồng hồ sai số ±0,2 s. Một \"dao động\" tính là một lần tấm qua vị trí thấp nhất; con lắc dài 0,40 m có chu kì T = 2π√(0,40/9,8) ≈ 1,27 s nên mỗi dao động ≈ 0,63 s. Cả ba trường hợp lấy cùng giá trị thời gian/dao động (26,6/42 ≈ 3,8/6 ≈ 13,3/21 ≈ 0,63 s), vì chu kì con lắc không đổi khi dao động tắt dần — chỉ biên độ giảm. Số đo thực phụ thuộc lực căng dây và cách đặt tấm giữa hai cực."
   },
@@ -96,14 +191,14 @@
     "Nam châm điện và tấm kim loại có thể nóng lên: tắt nguồn và chờ nguội trước khi tháo.",
     "Không để nam châm mạnh gần điện thoại, thẻ nhớ và đồng hồ cơ."
   ],
- "video": {
-  "youtube_id": "MglUIiBy2lQ",
-  "nhan": "tấm liền khối, tấm có rãnh và tấm rãnh tới đáy",
-  "nhin_vao": "Tấm nào tắt dao động trước: tấm liền khối hay tấm có rãnh xẻ?",
-  "giay_bat_dau": 51,
-  "giay_ket_thuc": 111,
-  "ten": "Eddy Currents and Magnetic Braking of a Pendulum Caused by Electromagnetic Induction",
-  "kenh": "Electric and Magnetic Fields",
-  "da_kiem": "2026-10-07"
- }
+  "video": {
+    "youtube_id": "MglUIiBy2lQ",
+    "nhan": "tấm liền khối, tấm có rãnh và tấm rãnh tới đáy",
+    "nhin_vao": "Tấm nào tắt dao động trước: tấm liền khối hay tấm có rãnh xẻ?",
+    "giay_bat_dau": 51,
+    "giay_ket_thuc": 111,
+    "ten": "Eddy Currents and Magnetic Braking of a Pendulum Caused by Electromagnetic Induction",
+    "kenh": "Electric and Magnetic Fields",
+    "da_kiem": "2026-10-18"
+  }
 }

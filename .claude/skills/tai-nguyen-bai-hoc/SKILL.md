@@ -143,6 +143,12 @@ mốc thời gian (mm:ss) của đoạn cần xem và nội dung đoạn đó | 
 Nếu không chắc link còn sống hoặc không nhớ mốc, ghi "không chắc" thay vì đoán.
 ```
 
+### Gemini trả link hàng loạt → nhập thẳng, không chờ duyệt (thầy chốt 18/10/2026)
+Thầy dán nguyên khối trả lời của Gemini vào chat (không cần mẫu cố định). Claude: (1) tách từng dòng, ghép với mục V# trong `prompts-video.md`;
+(2) oEmbed kiểm link, bỏ link chết/không nhúng và dòng "không chắc"; (3) viết `nhin_vao`, đổi mốc mm:ss sang giây (≤120 s, mốc nào Gemini không chắc thì bỏ `start`);
+(4) ghi bảng `content/thi-nghiem/video-de-xuat-*.md` với `Duyệt? = x` ngay (thầy tự xem mỗi bài trước khi lên lớp);
+(5) `nhap-video-de-xuat` → `chen-video-thi-nghiem --kiem --apply` → `--bai <slug> --apply` → `cap-nhat-ly-thuyet-hang-loat.sh <slug>:<id> --chi-video --yes` trong tab terminal. Báo thầy danh sách bài + clip + mốc để xem lại.
+
 ## Checklist kiểm tra ảnh Gemini (bước 5)
 
 Mở từng ảnh, kiểm tra:

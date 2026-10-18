@@ -14,14 +14,40 @@
   ],
   "muc_tieu": "Đo nhiệt độ nước theo thời gian khi đun bằng bếp từ để thấy nhiệt sinh ra ngay trong đáy nồi nhiễm từ (dòng Foucault toả nhiệt), đồng thời đo nhiệt độ mặt kính để loại bỏ cách giải thích \"truyền nhiệt từ mặt bếp sang nồi\"; từ bảng số liệu tính được công suất hữu ích và hiệu suất của bếp.",
   "dung_cu": [
-    { "ten": "Bếp từ gia dụng ghi công suất 2 000 W", "so_luong": 1 },
-    { "ten": "Nồi gang hoặc nồi thép không gỉ có đáy nhiễm từ", "so_luong": 1 },
-    { "ten": "Nồi nhôm cùng cỡ", "so_luong": 1 },
-    { "ten": "Nước, đong đúng 1,0 lít", "so_luong": 1 },
-    { "ten": "Nhiệt kế que đo được tới 100 °C", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
-    { "ten": "Nhiệt kế hồng ngoại", "so_luong": 1, "ghi_chu": "đo mặt kính, sai số ±1 °C" },
-    { "ten": "Đồng hồ bấm giây", "so_luong": 1 },
-    { "ten": "Nam châm nhỏ để thử đáy nồi", "so_luong": 1 }
+    {
+      "ten": "Bếp từ gia dụng ghi công suất 2 000 W",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nồi gang hoặc nồi thép không gỉ có đáy nhiễm từ",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nồi nhôm cùng cỡ",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nước, đong đúng 1,0 lít",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nhiệt kế que đo được tới 100 °C",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,5 °C"
+    },
+    {
+      "ten": "Nhiệt kế hồng ngoại",
+      "so_luong": 1,
+      "ghi_chu": "đo mặt kính, sai số ±1 °C"
+    },
+    {
+      "ten": "Đồng hồ bấm giây",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nam châm nhỏ để thử đáy nồi",
+      "so_luong": 1
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -42,14 +68,69 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "P", "ten": "Công suất điện của bếp (mức đặt)", "don_vi": "W", "kieu": "dieu_chinh", "min": 800, "max": 2200, "mac_dinh": 2000, "buoc": 100 },
-    { "ky_hieu": "m", "ten": "Khối lượng nước", "don_vi": "kg", "kieu": "dieu_chinh", "min": 0.5, "max": 2, "mac_dinh": 1, "buoc": 0.1 },
-    { "ky_hieu": "t0", "ten": "Nhiệt độ nước ban đầu", "don_vi": "°C", "kieu": "dieu_chinh", "min": 15, "max": 40, "mac_dinh": 25, "buoc": 1 },
-    { "ky_hieu": "c", "ten": "Nhiệt dung riêng của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4200 },
-    { "ky_hieu": "T", "ten": "Nhiệt độ nước đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 },
-    { "ky_hieu": "T_kinh", "ten": "Nhiệt độ mặt kính cạnh nồi", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 1 },
-    { "ky_hieu": "Q", "ten": "Nhiệt nước nhận trong một khoảng thời gian", "don_vi": "J", "kieu": "tinh_ra" },
-    { "ky_hieu": "H", "ten": "Hiệu suất của bếp", "don_vi": "%", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "P",
+      "ten": "Công suất điện của bếp (mức đặt)",
+      "don_vi": "W",
+      "kieu": "dieu_chinh",
+      "min": 800,
+      "max": 2200,
+      "mac_dinh": 2000,
+      "buoc": 100
+    },
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng nước",
+      "don_vi": "kg",
+      "kieu": "dieu_chinh",
+      "min": 0.5,
+      "max": 2,
+      "mac_dinh": 1,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "t0",
+      "ten": "Nhiệt độ nước ban đầu",
+      "don_vi": "°C",
+      "kieu": "dieu_chinh",
+      "min": 15,
+      "max": 40,
+      "mac_dinh": 25,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "c",
+      "ten": "Nhiệt dung riêng của nước",
+      "don_vi": "J/(kg.K)",
+      "kieu": "co_dinh",
+      "gia_tri": 4200
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Nhiệt độ nước đọc trên nhiệt kế",
+      "don_vi": "°C",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.5
+    },
+    {
+      "ky_hieu": "T_kinh",
+      "ten": "Nhiệt độ mặt kính cạnh nồi",
+      "don_vi": "°C",
+      "kieu": "do_duoc",
+      "sai_so_do": 1
+    },
+    {
+      "ky_hieu": "Q",
+      "ten": "Nhiệt nước nhận trong một khoảng thời gian",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "H",
+      "ten": "Hiệu suất của bếp",
+      "don_vi": "%",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -68,14 +149,35 @@
     "ghi_chu": "Mô phỏng nên vẽ mặt cắt bếp: cuộn dây phát từ trường biến thiên, dòng xoáy khép kín trong đáy nồi, nhiệt toả ra; thanh trượt công suất và khối lượng nước làm đường T(t) dốc lên nhanh hay chậm."
   },
   "so_lieu_mau": {
-    "cot": ["Thời gian (phút)", "Nhiệt độ nước (°C)"],
+    "cot": [
+      "Thời gian (phút)",
+      "Nhiệt độ nước (°C)"
+    ],
     "hang": [
-      [0, 25.0],
-      [1, 46.0],
-      [2, 66.6],
-      [3, 86.4],
-      [4, 100.0],
-      [5, 100.0]
+      [
+        0,
+        25
+      ],
+      [
+        1,
+        46
+      ],
+      [
+        2,
+        66.6
+      ],
+      [
+        3,
+        86.4
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        5,
+        100
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ cho P = 2 000 W, m = 1,0 kg, t0 = 25,0 °C, nồi gang 0,8 kg, nhiệt kế sai số ±0,5 °C. Số đo thực có thể lệch 1–2 °C vì bếp tự ngắt theo chu kì và nhiệt kế chưa khuấy đều."
   },
@@ -102,14 +204,14 @@
     "Không đặt thìa, nắp kim loại hay hộp giấy lên mặt bếp đang bật.",
     "Lau khô đáy nồi và mặt bếp trước khi đun để tránh trượt."
   ],
- "video": {
-  "youtube_id": "IaQTpaY40fA",
-  "nhan": "đun nước trên tờ giấy đặt giữa nồi và mặt bếp",
-  "nhin_vao": "Nước sôi mà tờ giấy dưới đáy nồi vẫn nguyên — nhiệt sinh ra ở đâu?",
-  "giay_bat_dau": 8,
-  "giay_ket_thuc": 62,
-  "ten": "Bếp từ nhập khẩu vì sao không nóng mặt khi đun nấu? Bếp Cường Thịnh.VN",
-  "kenh": "Bếp Cường Thịnh",
-  "da_kiem": "2026-10-07"
- }
+  "video": {
+    "youtube_id": "IaQTpaY40fA",
+    "nhan": "đun nước trên tờ giấy đặt giữa nồi và mặt bếp",
+    "nhin_vao": "Nước sôi mà tờ giấy dưới đáy nồi vẫn nguyên — nhiệt sinh ra ở đâu?",
+    "giay_bat_dau": 8,
+    "giay_ket_thuc": 62,
+    "ten": "Bếp từ nhập khẩu vì sao không nóng mặt khi đun nấu ? Bếp Cường Thịnh.VN",
+    "kenh": "Bếp Cường Thịnh",
+    "da_kiem": "2026-10-18"
+  }
 }

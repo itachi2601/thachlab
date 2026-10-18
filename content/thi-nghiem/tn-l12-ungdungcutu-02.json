@@ -14,12 +14,34 @@
   ],
   "muc_tieu": "Đo được sự phụ thuộc của điện áp cuộn thứ cấp vào khoảng cách giữa hai cuộn dây (máy biến áp không có lõi sắt chung), từ đó giải thích vì sao sạc không dây phải áp sát và vì sao hiệu suất thấp hơn sạc có dây.",
   "dung_cu": [
-    { "ten": "Ống nhựa đường kính 40 mm, dài 60 mm", "so_luong": 2 },
-    { "ten": "Dây đồng emay 0,5 mm", "so_luong": 1, "ghi_chu": "quấn cuộn sơ cấp 200 vòng, cuộn thứ cấp 150 vòng" },
-    { "ten": "Máy phát điện áp xoay chiều tần số 10–20 kHz", "so_luong": 1, "ghi_chu": "đặt 12 V hiệu dụng; có thể dùng máy phát âm tần của phòng thí nghiệm" },
-    { "ten": "Vôn kế xoay chiều", "so_luong": 1, "ghi_chu": "sai số ±0,1 V" },
-    { "ten": "Tấm bìa cứng dày 1 cm", "so_luong": 4 },
-    { "ten": "Thước kẹp hoặc thước thẳng", "so_luong": 1, "ghi_chu": "sai số ±1 mm" }
+    {
+      "ten": "Ống nhựa đường kính 40 mm, dài 60 mm",
+      "so_luong": 2
+    },
+    {
+      "ten": "Dây đồng emay 0,5 mm",
+      "so_luong": 1,
+      "ghi_chu": "quấn cuộn sơ cấp 200 vòng, cuộn thứ cấp 150 vòng"
+    },
+    {
+      "ten": "Máy phát điện áp xoay chiều tần số 10–20 kHz",
+      "so_luong": 1,
+      "ghi_chu": "đặt 12 V hiệu dụng; có thể dùng máy phát âm tần của phòng thí nghiệm"
+    },
+    {
+      "ten": "Vôn kế xoay chiều",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,1 V"
+    },
+    {
+      "ten": "Tấm bìa cứng dày 1 cm",
+      "so_luong": 4
+    },
+    {
+      "ten": "Thước kẹp hoặc thước thẳng",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±1 mm"
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -39,13 +61,66 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "U1", "ten": "Điện áp hiệu dụng trên cuộn sơ cấp", "don_vi": "V", "kieu": "dieu_chinh", "min": 6, "max": 24, "mac_dinh": 12, "buoc": 1 },
-    { "ky_hieu": "N1", "ten": "Số vòng cuộn sơ cấp", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 100, "max": 400, "mac_dinh": 200, "buoc": 20 },
-    { "ky_hieu": "N2", "ten": "Số vòng cuộn thứ cấp", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 50, "max": 400, "mac_dinh": 150, "buoc": 10 },
-    { "ky_hieu": "d", "ten": "Khoảng cách giữa hai cuộn dây", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 4, "mac_dinh": 0, "buoc": 1 },
-    { "ky_hieu": "f", "ten": "Tần số dòng điện xoay chiều", "don_vi": "kHz", "kieu": "co_dinh", "gia_tri": 20 },
-    { "ky_hieu": "U2_lt", "ten": "Điện áp thứ cấp theo mô hình lí tưởng", "don_vi": "V", "kieu": "tinh_ra" },
-    { "ky_hieu": "U2_do", "ten": "Điện áp thứ cấp đo trên vôn kế", "don_vi": "V", "kieu": "do_duoc", "sai_so_do": 0.1 }
+    {
+      "ky_hieu": "U1",
+      "ten": "Điện áp hiệu dụng trên cuộn sơ cấp",
+      "don_vi": "V",
+      "kieu": "dieu_chinh",
+      "min": 6,
+      "max": 24,
+      "mac_dinh": 12,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "N1",
+      "ten": "Số vòng cuộn sơ cấp",
+      "don_vi": "vòng",
+      "kieu": "dieu_chinh",
+      "min": 100,
+      "max": 400,
+      "mac_dinh": 200,
+      "buoc": 20
+    },
+    {
+      "ky_hieu": "N2",
+      "ten": "Số vòng cuộn thứ cấp",
+      "don_vi": "vòng",
+      "kieu": "dieu_chinh",
+      "min": 50,
+      "max": 400,
+      "mac_dinh": 150,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "d",
+      "ten": "Khoảng cách giữa hai cuộn dây",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 4,
+      "mac_dinh": 0,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "f",
+      "ten": "Tần số dòng điện xoay chiều",
+      "don_vi": "kHz",
+      "kieu": "co_dinh",
+      "gia_tri": 20
+    },
+    {
+      "ky_hieu": "U2_lt",
+      "ten": "Điện áp thứ cấp theo mô hình lí tưởng",
+      "don_vi": "V",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "U2_do",
+      "ten": "Điện áp thứ cấp đo trên vôn kế",
+      "don_vi": "V",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -63,13 +138,37 @@
     "ghi_chu": "Mô phỏng nên có thanh trượt khoảng cách d và số vòng N2; cho hiện chồng đường lí tưởng (nằm ngang ở U1·N2/N1) với đường số đo để học sinh thấy phần mất do rò từ thông."
   },
   "so_lieu_mau": {
-    "cot": ["Khoảng cách d (cm)", "Điện áp thứ cấp đo được (V)", "Điện áp lí tưởng (V)"],
+    "cot": [
+      "Khoảng cách d (cm)",
+      "Điện áp thứ cấp đo được (V)",
+      "Điện áp lí tưởng (V)"
+    ],
     "hang": [
-      [0, 8.4, 9.0],
-      [1, 7.1, 9.0],
-      [2, 5.9, 9.0],
-      [3, 4.8, 9.0],
-      [4, 3.9, 9.0]
+      [
+        0,
+        8.4,
+        9
+      ],
+      [
+        1,
+        7.1,
+        9
+      ],
+      [
+        2,
+        5.9,
+        9
+      ],
+      [
+        3,
+        4.8,
+        9
+      ],
+      [
+        4,
+        3.9,
+        9
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ cho U1 = 12 V, N1 = 200 vòng, N2 = 150 vòng, f = 20 kHz, vôn kế sai số ±0,1 V. Giá trị lí tưởng 9,0 V cao hơn mọi số đo vì luôn có từ thông rò."
   },
@@ -95,14 +194,14 @@
     "Máy phát tần số cao có thể gây bỏng nhẹ khi chạm vào cuộn dây đang làm việc: chỉ chạm sau khi tắt nguồn.",
     "Không để cuộn dây nóng chạm vào vật liệu dễ cháy; không đặt gần máy trợ tim."
   ],
- "video": {
-  "youtube_id": "J45EjAyInPU",
-  "nhan": "cuộn dây này sáng bóng đèn kia, không dây nối",
-  "nhin_vao": "Hai cuộn dây không nối nhau bằng dây nào, vì sao bóng đèn vẫn sáng?",
-  "giay_bat_dau": 141,
-  "giay_ket_thuc": 191,
-  "ten": "Truyền điện không dây",
-  "kenh": "Khám Phá Khoa Học",
-  "da_kiem": "2026-10-07"
- }
+  "video": {
+    "youtube_id": "J45EjAyInPU",
+    "nhan": "cuộn dây này sáng bóng đèn kia, không dây nối",
+    "nhin_vao": "Hai cuộn dây không nối nhau bằng dây nào, vì sao bóng đèn vẫn sáng?",
+    "giay_bat_dau": 141,
+    "giay_ket_thuc": 191,
+    "ten": "Truyền điện không dây",
+    "kenh": "Khám Phá Khoa Học",
+    "da_kiem": "2026-10-18"
+  }
 }
