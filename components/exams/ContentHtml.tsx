@@ -380,13 +380,18 @@ export default function ContentHtml({
     }
   }, [renderedWithVideo, cleaned]);
 
+  // React 19 so sánh prop theo object, không theo chuỗi __html: object mới mỗi lần render ⇒ innerHTML bị ghi lại,
+  // mất đáp án vừa chọn và phần đúng/sai vừa hiện mỗi khi cha render lại (bước xem lại lý thuyết ở bài thoát phụ đạo
+  // render mỗi giây theo đồng hồ). Giữ nguyên object khi chuỗi không đổi.
+  const innerHtml = useMemo(() => ({ __html: renderedWithVideo }), [renderedWithVideo]);
+
   return (
     <span
       ref={rootRef}
       className={`exam-content ${className}`}
       onClick={handleClick}
       onChange={handleChange}
-      dangerouslySetInnerHTML={{ __html: renderedWithVideo }}
+      dangerouslySetInnerHTML={innerHtml}
     />
   );
 }
