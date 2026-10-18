@@ -28,8 +28,8 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 
 ## Quy ước (thầy chốt 18/10/2026)
 - Sáng T7 8h–11h dạy HSG KHTN 9 ở THCS Trần Văn Ơn.
-- T2: họp cán bộ 7h15–8h15, sau đó cà phê cùng cán bộ bộ môn; duyệt đồ án 10h–11h.
-- Duyệt đồ án 8h30–9h30 các ngày T4, T6. **Thầy viết "thứ 46" và nói riêng T2 lúc 10h → hiểu là T2, T4, T6; xác nhận lại với thầy lần đầu.** Thời lượng T2 giả định 1 giờ.
+- T2: họp cán bộ 7h15–8h15, sau đó cà phê cùng cán bộ bộ môn; 10h có việc khác (nội dung chưa rõ, giả định 1 giờ — hỏi thầy tên việc).
+- Duyệt đồ án 8h30–9h30 vào T4 và T6 (thầy xác nhận 18/10/2026; T2 không có duyệt đồ án).
 - Lịch công tác tuần: thầy phải dự khi thành phần có **trưởng/phó khoa, Bộ Cơ khí, hoặc giao ban**.
 - Trượt băng ≥3 buổi/tuần (giả định 2 giờ, chiều tối), gym 2–3 buổi (1,5 giờ, không hai ngày liền). Giờ ưu tiên sửa ở `the_thao`. Né T2 cho trượt băng. Tuần kín thì báo thiếu, không ép.
 - Giờ hợp lý cho thể thao: không xếp sát giờ ngủ; đừng gym nặng ngay trước buổi trượt băng (xếp xen kẽ).
