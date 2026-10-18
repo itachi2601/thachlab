@@ -18,6 +18,7 @@ const noteKey = (classId: number) => `thachlab.gv.ghichu-vao-lop.${classId}`;
 export default function TeacherThptClassroomMode({ classId, students }: { classId: number; students: ClassStudent[] }) {
   const { profile } = useAuth();
   const reviewBase = profile?.role === "tro_giang" ? "/tro-giang/chua-bai" : "/dashboard-thpt/chua-bai";
+  const [showMissing, setShowMissing] = useState(false);
   const studentIds = useMemo(() => students.map((s) => s.id), [students]);
   const nameOf = useMemo(() => new Map(students.map((s) => [s.id, s.full_name])), [students]);
 
@@ -123,7 +124,19 @@ export default function TeacherThptClassroomMode({ classId, students }: { classI
                     ))}
                   </ul>
                 )}
-                <p className="mt-2">Chưa nộp ({notSubmitted.length}): {notSubmitted.length ? notSubmitted.join(", ") : "đủ cả lớp"}</p>
+                <p className="mt-2">
+                  {notSubmitted.length === 0 ? (
+                    "Đủ cả lớp đã nộp"
+                  ) : (
+                    <>
+                      <strong>{notSubmitted.length}</strong> em chưa nộp{" "}
+                      <button type="button" onClick={() => setShowMissing((v) => !v)} className="font-semibold text-blue-300 underline">
+                        {showMissing ? "Ẩn danh sách" : "Xem danh sách"}
+                      </button>
+                      {showMissing && <span className="mt-1 block text-slate-400">{notSubmitted.join(", ")}</span>}
+                    </>
+                  )}
+                </p>
               </>
             )}
           </div>

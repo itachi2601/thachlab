@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, Bell, ChevronDown, RefreshCw } from "lucide-react";
+import { getSupabase } from "@/services/supabase";
 import type { ClassStudent } from "@/services/classes";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
@@ -75,6 +76,42 @@ export default function TeacherThptAlerts({
       toast("error", e instanceof Error ? e.message : "Không gán được.");
     }
   }
+  const [openGroups, setOpenGroups] = useState<Set<string>>(new Set());
+  const [reminding, setReminding] = useState<string | null>(null);
+  function toggleGroup(key: string) {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }
+  async function remindGroup(key: string, group: StudentAlert[]) {
+    setReminding(key);
+    const results = await Promise.all(
+      group.map((a) =>
+        getSupabase().rpc("notify_user", {
+          p_user: a.studentId,
+          p_kind: "assessment_reminder",
+          p_title: "Nhắc làm bài kiểm tra",
+          p_body: a.reason,
+          p_href: "/kiem-tra",
+        }),
+      ),
+    );
+    setReminding(null);
+    const failed = results.filter((r) => r.error).length;
+    if (failed === results.length) toast("error", "Không gửi được lời nhắc.");
+    else toast("success", `Đã nhắc ${results.length - failed} em${failed ? `, lỗi ${failed}` : ""}.`);
+  }
+  async function dismissGroup(group: StudentAlert[]) {
+    try {
+      await Promise.all(group.map((a) => updateAlert(a.id, { status: "dismissed", handledBy: profile?.id })));
+      load();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Không cập nhật được.");
+    }
+  }
   async function runSweep() {
     setSweeping(true);
     const n = await sweepMissedAssessments(classId, 3);
@@ -89,6 +126,17 @@ export default function TeacherThptAlerts({
     filter === "all" ? true : a.status !== "resolved" && a.status !== "dismissed",
   );
   const openCount = alerts.filter((a) => a.status === "open").length;
+
+  // Gom cảnh báo "Bỏ bài KT" cùng nguyên nhân (cùng danh sách đề chưa làm) thành một dòng.
+  const missedGroups = new Map<string, StudentAlert[]>();
+  for (const a of shown) {
+    if (a.kind !== "missed_assessment") continue;
+    const list = missedGroups.get(a.reason) ?? [];
+    list.push(a);
+    missedGroups.set(a.reason, list);
+  }
+  const groupedReasons = new Set([...missedGroups].filter(([, l]) => l.length >= 2).map(([k]) => k));
+  const singles = shown.filter((a) => !(a.kind === "missed_assessment" && groupedReasons.has(a.reason)));
 
   return (
     <div className="space-y-4">
@@ -132,7 +180,64 @@ export default function TeacherThptAlerts({
         </p>
       ) : (
         <div className="max-h-[32rem] space-y-2 overflow-y-auto pr-1">
-          {shown.map((a) => (
+          {[...groupedReasons].map((reason) => {
+            const group = missedGroups.get(reason)!;
+            const open = openGroups.has(reason);
+            const urgent = group.some((a) => a.severity === "urgent");
+            const label = reason.replace(/^Chưa làm \d+ bài kiểm tra: /, "");
+            return (
+              <div key={`g-${reason}`} className="rounded-2xl border border-white/10 bg-panel p-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <strong className="text-white">{group.length} em chưa làm {label}</strong>
+                      {urgent && (
+                        <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[12px] font-bold text-red-300">KHẨN</span>
+                      )}
+                      <span className="text-[12px] text-slate-500">Bỏ bài KT</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    <button
+                      onClick={() => toggleGroup(reason)}
+                      className="inline-flex items-center gap-1 rounded-lg border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                    >
+                      Danh sách <ChevronDown size={13} className={open ? "rotate-180" : ""} />
+                    </button>
+                    <button
+                      onClick={() => remindGroup(reason, group)}
+                      disabled={reminding === reason}
+                      className="inline-flex items-center gap-1 rounded-lg border border-blue-500/40 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-300 disabled:opacity-50"
+                    >
+                      <Bell size={13} /> Nhắc cả nhóm
+                    </button>
+                    <button
+                      onClick={() => dismissGroup(group)}
+                      className="rounded-lg border border-white/15 px-3 py-1 text-xs text-slate-400 hover:border-white/30"
+                    >
+                      Bỏ qua cả nhóm
+                    </button>
+                  </div>
+                </div>
+                {open && (
+                  <div className="mt-3 max-h-64 space-y-1 overflow-y-auto border-t border-white/10 pt-3 text-sm text-slate-300">
+                    {group.map((a) => (
+                      <div key={a.id} className="flex items-center gap-2">
+                        <span className="flex-1">{nameById.get(a.studentId) ?? "(đã rời lớp)"}</span>
+                        <button onClick={() => setStatus(a, "contacted")} className="rounded border border-white/15 px-2 py-0.5 text-[12px] text-slate-400">
+                          Đã liên hệ
+                        </button>
+                        <button onClick={() => setStatus(a, "dismissed")} className="rounded border border-white/15 px-2 py-0.5 text-[12px] text-slate-400">
+                          Bỏ qua
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          {singles.map((a) => (
             <div
               key={a.id}
               className="rounded-2xl border border-white/10 bg-panel p-4"

@@ -64,7 +64,7 @@ export default function StudentsAdmin() {
     void (async () => {
       if (!selectedClassId) { if (!cancelled) setStudents([]); return; }
       try {
-        const rows = await fetchClassStudents(selectedClassId);
+        const rows = await fetchClassStudents(selectedClassId, { includeNonStudents: true });
         if (cancelled) return;
         setStudents(rows);
         setSelectedStudentId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));

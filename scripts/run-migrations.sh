@@ -54,6 +54,7 @@ FILES=(
   "supabase/migrations/20261018123000_hsg9_yccd_guong_thien_van.sql|Khoá HSG Vật lí: thêm YCCĐ cho CĐ14 Gương phẳng (3 con) và CĐ17 Thiên văn (3 con), để bài tập mẫu gắn được topic|lúc nào cũng được (chỉ chèn)"
   "supabase/migrations/20261018140000_sync_exam_to_bank_khong_sinh_trung.sql|Sửa hàm sync_exam_to_bank: sửa câu trong đề thì cập nhật dòng ngân hàng cũ, không chèn dòng trùng (chỉ thay thân hàm; hoàn tác: scripts/data/gon-ngan-hang/sync_exam_to_bank.truoc.sql)|lúc nào cũng được"
   "supabase/migrations/20261018150000_read_depth_quiz.sql|Độ sâu đọc lý thuyết + quiz đã bấm: bảng lesson_read_depth (1 dòng/HS×mục×ngày) + rollup >90 ngày (pg_cron thứ Hai), nhánh read_depth trong log_learning_events, RPC teacher_lesson_read_depth|lúc nào cũng được"
+  "supabase/migrations/20261018170000_canh_bao_bo_bai_kt_dung_han_va_is_test.sql|Cảnh báo Bỏ bài KT chỉ khi quá hạn (class_assessments.due_at) hoặc >=50% lớp đã nộp; thêm profiles.is_test (gắn cờ hs.test%/tên Test/Anonymus); sweep chỉ tính HS thật|lúc nào cũng được; sau đó chạy scripts/don-canh-bao-gia.mts"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
