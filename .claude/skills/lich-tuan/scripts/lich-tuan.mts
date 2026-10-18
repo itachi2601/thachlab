@@ -1,6 +1,7 @@
 // Gộp lịch tuần: thachlab (dạy vật lí) + TKB Cao Thắng (cache JSON) + lịch cố định + lịch công tác khoa/giao ban, rồi xếp trượt băng/gym vào chỗ trống.
 // CHẠY TRÊN MAC (cần .env.local). Chỉ đọc DB.
-//   npx tsx .claude/skills/lich-tuan/scripts/lich-tuan.mts [--tuan YYYY-MM-DD] [--tkb file.json] [--cong-tac file.txt]
+//   npx tsx .claude/skills/lich-tuan/scripts/lich-tuan.mts [--tuan YYYY-MM-DD] [--tkb file.json] [--cong-tac file.txt] [--ghi email]
+//   --ghi <email>  ghi tuần này vào staff_week_plans của tài khoản đó (hiện ở /tai-khoan); không có cờ = chỉ in ra
 // TKB Cao Thắng: file JSON [{weekday,start,end,title,where}] (mặc định scripts/data/lich-tuan/tkb-caothang.json).
 // Lịch công tác: mặc định tự tải từ caothang.edu.vn; --cong-tac nhận văn bản dán tay nếu tải lỗi.
 import { createClient } from "@supabase/supabase-js";
@@ -85,7 +86,11 @@ for (const b of blocks) {
   const p2 = (h: string, m: string) => `${h.padStart(2, "0")}:${(m || "00").padStart(2, "0")}`;
   const start = t ? p2(t[1], t[2]) : "08:00";
   const end = r ? p2(r[3], r[4]) : hhmm(toMin(start) + 90);
-  evs.push({ weekday: b.day, start, end, title: b.text.slice(0, 400), src: "lịch công tác", note: `khớp "${hit}"; ` + (!t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút") });
+  const parts = b.text.split(" | ");
+  const where = parts[0].match(/tại\s+(.+)$/i)?.[1];
+  const title = parts.length > 1 ? parts[1] : parts[0];
+  const tp = parts.slice(2).join(" | ");
+  evs.push({ weekday: b.day, start, end, title: title.slice(0, 200), where, src: "lịch công tác", note: [tp.slice(0, 300), `khớp "${hit}"`, !t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút"].filter(Boolean).join(" · ") });
 }
 if (ct && !blocks.length) warn.push("Tải được trang công tác nhưng không tách được mục — dán nội dung vào file rồi dùng --cong-tac.");
 
@@ -124,6 +129,21 @@ for (let w = 1; w <= 7; w++) {
   out += "\n";
 }
 if (warn.length) out += `## Cần chú ý\n${warn.map((w) => `- ${w}`).join("\n")}\n`;
+if (arg("--ghi")) {
+  const email = arg("--ghi")!.toLowerCase();
+  let uid: string | undefined;
+  for (let page = 1; page <= 10 && !uid; page++) {
+    const { data, error: ue } = await sb.auth.admin.listUsers({ page, perPage: 200 });
+    if (ue) throw ue;
+    uid = (data.users as { id: string; email?: string }[]).find((u) => u.email?.toLowerCase() === email)?.id;
+    if (data.users.length < 200) break;
+  }
+  if (!uid) throw new Error(`Không tìm thấy tài khoản ${email}`);
+  const events = evs.map((e) => ({ ...e, clash: evs.some((o) => o !== e && o.weekday === e.weekday && toMin(o.start) < toMin(e.end) && toMin(o.end) > toMin(e.start)) }));
+  const { error: we } = await sb.from("staff_week_plans").upsert({ user_id: uid, week_start: iso(mon), events, warnings: warn, updated_at: new Date().toISOString() });
+  if (we) throw we;
+  console.log(`Đã ghi ${events.length} mục vào staff_week_plans (${email}, tuần ${iso(mon)}).`);
+}
 const file = path.join(root, `scripts/data/lich-tuan/${iso(mon)}.md`);
 fs.writeFileSync(file, out);
 console.log(out + `\n→ ${file}`);

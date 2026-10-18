@@ -8,6 +8,7 @@ import Link from "next/link";
 import { ArrowRight, Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollments,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import CttcStreakCard from "@/components/rank/CttcStreakCard";import {getSubject,HOMEROOM_SUBJECT_CODE,learningHrefOf} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
+const StaffWeekPlan=dynamic(()=>import("@/components/account/StaffWeekPlan"),{ssr:false});
 const DailyReminderCard=dynamic(()=>import("@/components/pwa/DailyReminderCard"),{ssr:false});
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollments>>[number];
@@ -206,7 +207,7 @@ function Account(){
 
   if(!session)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Đang tải không gian học tập…</p>;
   const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name} loginKey={v==="welcome_back"?session.user.last_sign_in_at:undefined}/>;
-  if(isStaff)return <>{welcome(profile?.role==="admin"?"admin":"instructor")}<StaffAccountCard/></>;
+  if(isStaff)return <>{welcome(profile?.role==="admin"?"admin":"instructor")}<StaffAccountCard/><LazyErrorBoundary><StaffWeekPlan/></LazyErrorBoundary></>;
   if(isParent)return <>{welcome("parent")}<ParentAccountCard/></>;
   // Admin bấm "Xem như học sinh": chỉ đường THPT, chọn lớp giả lập — không đọc/ghi user_classes hay course_enrollments của admin (trước đây lẫn nhánh CTTC).
   if(previewMode==="student")return <PreviewThptHome studentId={session.user.id} profile={profile} onSignOut={async()=>{await signOut();router.push("/")}}/>;

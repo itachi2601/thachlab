@@ -24,7 +24,8 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 ```
    Thêm `--tuan YYYY-MM-DD`, `--tkb <file>`, `--cong-tac <file.txt>` (dán tay nếu tải lỗi).
 4. **Đọc lại bằng mắt**: mục "lịch công tác" lọc theo từ khoá nên có thể lọt/thừa — đối chiếu bản gốc, loại mục không liên quan, nêu mục không rõ giờ. Trùng giờ ⚠ → hỏi thầy ưu tiên, không tự bỏ mục nào.
-5. Báo thầy bản cuối ngắn: mỗi ngày một khối, kèm số buổi trượt băng/gym đã xếp. Chỉ thêm vào Google Calendar khi thầy bảo.
+5. **Đưa lên web**: chạy lại cùng lệnh thêm `--ghi itachi2601@gmail.com` (ghi bảng `staff_week_plans`, hiện ở mục "Lịch tuần" trang `/tai-khoan`, `components/account/StaffWeekPlan.tsx`). Chỉ ghi sau khi thầy xem bản nháp ổn. Chạy lại cùng tuần thì ghi đè.
+6. Báo thầy bản cuối ngắn: mỗi ngày một khối, kèm số buổi trượt băng/gym đã xếp. Chỉ thêm vào Google Calendar khi thầy bảo.
 
 ## Cách đọc TKB portal (đã chạy thật 18/10/2026)
 - Sau khi thầy đăng nhập: điều hướng `tkb.php`, bấm nút mũi tên phải để sang tuần cần (mặc định hiện tuần hiện tại), rồi `javascript_tool` lấy các hàng bảng. Ô "Buổi" (Sáng/Chiều/Tối) có rowspan nên hàng đầu mỗi buổi có thêm 1 ô — đếm cột từ phải, đừng dùng `get_page_text` (mất ô trống, lệch ngày).
