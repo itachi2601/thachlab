@@ -1,5 +1,5 @@
 // Ghi lời giải VIẾT LẠI (data/giai-lai/viet-lai/kq-NN.json: thêm "Sai vì…") vào question_bank, ghi đè explanation cũ. Chỉ khi đáp án agent KHỚP DB, không ghi chú, có đoạn "Sai vì". Không đụng exams.
-//   npx tsx scripts/ap-dung-viet-lai.mts [--apply]
+//   npx tsx scripts/ap-dung-viet-lai.mts [viet-lai|viet-lai2] [--apply]
 // (gốc: ghi lời giải do agent giải mù (xuat-giai-truc-tiep.mts → kq-NN.json) vào question_bank. CHỈ ghi câu đáp án agent KHỚP đáp án DB;
 // câu lệch → <thư-mục>/lech.json để thầy xem. KHÔNG đụng exams (trigger từng ghi đè đáp án).
 //   npx tsx scripts/ap-dung-giai-truc-tiep.mts [truc-tiep|truc-tiep-anh] [--apply]
@@ -10,7 +10,7 @@ const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const env = (k: string) => L.find((l) => l.startsWith(k + "="))!.slice(k.length + 1).trim();
 const sb = createClient(env("NEXT_PUBLIC_SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), { auth: { persistSession: false } });
 const APPLY = process.argv.includes("--apply");
-const DIR = "scripts/data/giai-lai/viet-lai/";
+const DIR = "scripts/data/giai-lai/" + (process.argv.find((a) => /^viet-lai\d*$/.test(a)) ?? "viet-lai") + "/";
 const kq = new Map<number, any>();
 for (const f of fs.readdirSync(DIR).filter((f) => /^kq-\d+\.json$/.test(f))) for (const x of JSON.parse(fs.readFileSync(DIR + f, "utf8"))) kq.set(x.id, x);
 const lamSach = (h: string) => h.replace(/(?<!\\)\$(.+?)(?<!\\)\$/gs, (_m, t: string) => "$" + t.replace(/</g, "\\lt ").replace(/>/g, "\\gt ") + "$");
@@ -27,7 +27,7 @@ for (const k of kq.values()) {
   if (k.ghi_chu && String(k.ghi_chu).trim()) { lech.push({ id: k.id, db: dbAnswer(r.question), agent: k.answer, ghi_chu: k.ghi_chu, khop: true }); bo.ghiChu++; continue; }
   const ex = tachMuiTen(lamSach(String(k.explanation ?? "")));
   if (plain(ex).length < 80) { bo.ngan++; continue; }
-  if (!/Sai vì/i.test(plain(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu Sai vì" }); continue; }
+  if (!/(sai|không đúng|không khớp) vì/i.test(plain(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu Sai vì" }); continue; }
   if (katexLoi(ex) > 0 || loiMuiTen(ex) > 0) { bo.katex++; lech.push({ id: k.id, loi: "katex/mui_ten", ex }); continue; }
   plan.push({ id: k.id, truoc: r.question, sau: { ...r.question, explanation: ex } });
 }
