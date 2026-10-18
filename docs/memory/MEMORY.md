@@ -95,3 +95,4 @@
 ## Việc mới 30/9
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — hook + đố A/B/C + khung ảnh xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Giải lại ngân hàng bằng Haiku/Sonnet](project_thachlab_giai_lai_ngan_hang.md) — 17/10: 349 câu lệch đã ghi; ~6.700 câu khớp ĐANG ghi (Terminal), còn 1.070 ghi chú + 1.922 câu ảnh
+- [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10, đợt A–G + prompt/agent, chưa sửa bài nào, chờ thầy chốt
