@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CalendarDays } from "lucide-react";
 import { getSupabase } from "@/services/supabase";
 
-type PlanEvent = { weekday: number; start: string; end: string; title: string; where?: string; src: string; note?: string; clash?: boolean };
+type PlanEvent = { weekday: number; start: string; end: string; title: string; where?: string; src: string; note?: string; lesson?: string; clash?: boolean };
 type Plan = { week_start: string; events: PlanEvent[]; warnings: string[]; updated_at: string };
 
 const DAY = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
@@ -67,6 +67,7 @@ function EventItem({ e, compact }: { e: PlanEvent; compact?: boolean }) {
           {e.where && <span className="font-normal text-muted"> · {e.where}</span>}
         </p>
       )}
+      {e.lesson && <p className={`mt-0.5 text-xs text-ink ${compact ? "line-clamp-3" : ""}`} title={e.lesson}>{e.lesson}</p>}
       {e.clash && <p className="text-xs font-semibold text-warn">⚠ Trùng giờ với mục khác</p>}
       {(note || e.title.length > 60) && (
         <details className="mt-0.5">

@@ -13,7 +13,7 @@ const arg = (k: string) => (process.argv.includes(k) ? process.argv[process.argv
 const envLocal = (k: string) => fs.readFileSync(path.join(root, ".env.local"), "utf8").split("\n").find((l) => l.startsWith(`${k}=`))?.slice(k.length + 1).trim();
 const rules = JSON.parse(fs.readFileSync(path.join(root, ".claude/skills/lich-tuan/references/lich-co-dinh.json"), "utf8"));
 
-type Ev = { weekday: number; start: string; end: string; title: string; where?: string; src: string; note?: string };
+type Ev = { weekday: number; start: string; end: string; title: string; where?: string; src: string; note?: string; lesson?: string };
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 const vnNow = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh" }));
 const base = arg("--tuan") ? new Date(`${arg("--tuan")}T00:00:00`) : vnNow;
@@ -31,13 +31,24 @@ for (const e of rules.co_dinh) evs.push({ ...e, src: "cố định" });
 // 2. thachlab
 const sb = createClient(envLocal("NEXT_PUBLIC_SUPABASE_URL")!, envLocal("SUPABASE_SERVICE_ROLE_KEY")!);
 const today = iso(mon);
-const { data: courses, error } = await sb.from("thpt_courses").select("id,name,status,starts_at,ends_at,classes(name)").neq("status", "closed");
+const { data: courses, error } = await sb.from("thpt_courses").select("id,name,status,starts_at,ends_at,current_topic_id,classes(name)").neq("status", "closed");
 if (error) throw error;
 const live = (courses ?? []).filter((c: any) => (!c.starts_at || c.starts_at <= iso(dayOf(7))) && (!c.ends_at || c.ends_at >= today));
 const { data: sch } = await sb.from("thpt_course_schedules").select("course_id,weekday,start_time,end_time,location").in("course_id", live.map((c: any) => c.id));
+// Mốc bài: chủ đề tầng bài (parent_id null) theo khối, sắp theo sort_order → "Đã tới … · Tiếp …"
+const { data: topics } = await sb.from("question_topics").select("id,name,grade,sort_order").is("parent_id", null).order("sort_order");
+const lessonOf = (c: any): string => {
+  const over = rules.buoi_day?.ghi_chu_khoa?.[String(c.id)];
+  if (over) return over;
+  if (!c.current_topic_id) return "Chưa đặt mốc bài (dashboard giáo viên → tiến trình)";
+  const cur = (topics ?? []).find((t: any) => t.id === c.current_topic_id);
+  if (!cur) return "Chưa đặt mốc bài";
+  const next = (topics ?? []).find((t: any) => t.grade === cur.grade && t.sort_order > cur.sort_order);
+  return `Đã tới: ${cur.name} · Tiếp: ${next ? next.name : "hết chương trình"}`;
+};
 for (const s of sch ?? []) {
   const c: any = live.find((x: any) => x.id === s.course_id);
-  evs.push({ weekday: s.weekday, start: s.start_time.slice(0, 5), end: s.end_time.slice(0, 5), title: `Dạy ${c.name}`, where: s.location ?? "", src: "thachlab" });
+  evs.push({ weekday: s.weekday, start: s.start_time.slice(0, 5), end: s.end_time.slice(0, 5), title: `Dạy ${c.name}`, where: s.location ?? "", src: "thachlab", lesson: lessonOf(c), note: rules.buoi_day?.nhip });
 }
 
 // 3. TKB Cao Thắng (cache)
@@ -125,7 +136,7 @@ for (let w = 1; w <= 7; w++) {
   if (!day.length) out += "- (trống)\n";
   for (const e of day) {
     const clash = day.filter((o) => o !== e && toMin(o.start) < toMin(e.end) && toMin(o.end) > toMin(e.start));
-    out += `- ${e.start}–${e.end} · ${e.title}${e.where ? ` (${e.where})` : ""} _[${e.src}]_${e.note ? ` — ${e.note}` : ""}${clash.length ? " ⚠ TRÙNG GIỜ với " + clash.map((c) => c.title.slice(0, 30)).join("; ") : ""}\n`;
+    out += `- ${e.start}–${e.end} · ${e.title}${e.where ? ` (${e.where})` : ""} _[${e.src}]_${e.lesson ? ` — ${e.lesson}` : ""}${e.note && e.src !== "thachlab" ? ` — ${e.note}` : ""}${clash.length ? " ⚠ TRÙNG GIỜ với " + clash.map((c) => c.title.slice(0, 30)).join("; ") : ""}\n`;
   }
   out += "\n";
 }

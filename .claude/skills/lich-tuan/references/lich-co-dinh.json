@@ -1,17 +1,89 @@
 {
   "_ghi_chu": "Lịch cố định hằng tuần. weekday: 1=Thứ 2 … 7=Chủ nhật. Sửa ở đây, không sửa trong script.",
   "co_dinh": [
-    { "weekday": 6, "start": "08:00", "end": "11:00", "title": "Dạy HSG KHTN 9", "where": "THCS Trần Văn Ơn" },
-    { "weekday": 1, "start": "07:15", "end": "08:15", "title": "Họp cán bộ", "where": "Cao Thắng" },
-    { "weekday": 1, "start": "08:15", "end": "09:15", "title": "Cà phê cùng cán bộ bộ môn", "where": "" },
-    { "weekday": 1, "start": "10:00", "end": "11:00", "title": "Việc khác lúc 10h (chưa rõ nội dung)", "where": "" },
-    { "weekday": 3, "start": "08:30", "end": "09:30", "title": "Duyệt đồ án", "where": "Cao Thắng" },
-    { "weekday": 5, "start": "08:30", "end": "09:30", "title": "Duyệt đồ án", "where": "Cao Thắng" }
+    {
+      "weekday": 6,
+      "start": "08:00",
+      "end": "11:00",
+      "title": "Dạy HSG KHTN 9",
+      "where": "THCS Trần Văn Ơn"
+    },
+    {
+      "weekday": 1,
+      "start": "07:15",
+      "end": "08:15",
+      "title": "Họp cán bộ",
+      "where": "Cao Thắng"
+    },
+    {
+      "weekday": 1,
+      "start": "08:15",
+      "end": "09:15",
+      "title": "Cà phê cùng cán bộ bộ môn",
+      "where": ""
+    },
+    {
+      "weekday": 1,
+      "start": "10:00",
+      "end": "11:00",
+      "title": "Việc khác lúc 10h (chưa rõ nội dung)",
+      "where": ""
+    },
+    {
+      "weekday": 3,
+      "start": "08:30",
+      "end": "09:30",
+      "title": "Duyệt đồ án",
+      "where": "Cao Thắng"
+    },
+    {
+      "weekday": 5,
+      "start": "08:30",
+      "end": "09:30",
+      "title": "Duyệt đồ án",
+      "where": "Cao Thắng"
+    }
   ],
-  "loc_lich_cong_tac": ["trưởng khoa", "phó khoa", "khoa cơ khí", "bộ cơ khí", "cơ khí", "giao ban", "trưởng phó khoa", "trưởng, phó"],
+  "loc_lich_cong_tac": [
+    "trưởng khoa",
+    "phó khoa",
+    "khoa cơ khí",
+    "bộ cơ khí",
+    "cơ khí",
+    "giao ban",
+    "trưởng phó khoa",
+    "trưởng, phó"
+  ],
   "the_thao": {
-    "truot_bang": { "min_buoi": 3, "gio_uu_tien": ["17:30-19:30", "14:30-16:30", "15:00-17:00", "13:30-15:30"], "thoi_luong_phut": 120 },
-    "gym": { "min_buoi": 2, "max_buoi": 3, "gio_uu_tien": ["16:30-18:00", "15:00-16:30", "12:00-13:30", "17:30-19:00"], "thoi_luong_phut": 90 },
+    "truot_bang": {
+      "min_buoi": 3,
+      "gio_uu_tien": [
+        "17:30-19:30",
+        "14:30-16:30",
+        "15:00-17:00",
+        "13:30-15:30"
+      ],
+      "thoi_luong_phut": 120
+    },
+    "gym": {
+      "min_buoi": 2,
+      "max_buoi": 3,
+      "gio_uu_tien": [
+        "16:30-18:00",
+        "15:00-16:30",
+        "12:00-13:30",
+        "17:30-19:00"
+      ],
+      "thoi_luong_phut": 90
+    },
     "khong_xep_lien_ke_gym": true
+  },
+  "buoi_day": {
+    "_ghi_chu": "Nhịp một buổi dạy Vật lí (thầy chốt 18/10/2026) + ghi chú riêng theo id khoá (thpt_courses.id) khi khoá không theo mốc bài.",
+    "nhip": "Tự ôn 10–15′ → kiểm tra bài cũ 20–25′ → sửa bài & ôn 30′ → bài mới + bài tập",
+    "ghi_chu_khoa": {
+      "7": "Ôn thi học kì 1",
+      "8": "Ôn thi học kì 1"
+    }
   }
 }

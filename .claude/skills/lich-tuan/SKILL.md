@@ -39,6 +39,7 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - Duyệt đồ án 8h30–9h30 vào T4 và T6 (thầy xác nhận 18/10/2026; T2 không có duyệt đồ án).
 - Lịch công tác tuần: thầy phải dự khi thành phần có **trưởng/phó khoa, Bộ Cơ khí, hoặc giao ban**.
 - Trượt băng ≥3 buổi/tuần (giả định 2 giờ, chiều tối), gym 2–3 buổi (1,5 giờ, không hai ngày liền). Giờ ưu tiên sửa ở `the_thao`. Né T2 cho trượt băng. Tuần kín thì báo thiếu, không ép.
+- Mỗi mục Dạy Vật lí ghi `lesson` = "Đã tới: <mốc thpt_courses.current_topic_id> · Tiếp: <chủ đề tầng bài kế tiếp cùng khối>" (khoá không theo mốc, vd ôn thi HK: `buoi_day.ghi_chu_khoa[id]` trong `lich-co-dinh.json`) và `note` = nhịp buổi `buoi_day.nhip` (tự ôn 10–15′ → kiểm tra bài cũ 20–25′ → sửa bài & ôn 30′ → bài mới + bài tập). Thầy báo "lớp X đã học tới bài Y" → gọi `teaching_set(course, topic, true, ngày)` qua `supabase db query --linked` với `set_config('request.jwt.claims', …sub = uid thầy…)`; mốc chỉ nhận chủ đề tầng bài (`parent_id null`, đúng khối).
 - Giờ hợp lý cho thể thao: không xếp sát giờ ngủ; đừng gym nặng ngay trước buổi trượt băng (xếp xen kẽ).
 
 ## Chưa làm / giả định
@@ -47,3 +48,4 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 
 ## Nhật ký rút kinh nghiệm
 - 2026-10-18 · tạo skill · portal giảng viên trả 302 khi chưa đăng nhập → luôn xin thầy tự đăng nhập, không tự nhập mật khẩu; trang công tác chỉ là văn bản theo THỨ/ngày, không phải `<table>` chuẩn nên script tách theo dòng "THỨ …" và giờ "09h00".
+- 2026-10-18 · thầy nêu lớp theo "thứ" nhưng lệch với `thpt_course_schedules` (nói "lớp 10 thứ 2" trong khi 10L3 là thứ 3) → đối chiếu theo TÊN lớp trong DB, ghi rõ cách hiểu khi báo lại; 12L1 B7/B8 ôn thi nên không có mốc bài → dùng `ghi_chu_khoa`.
