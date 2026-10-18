@@ -1,7 +1,7 @@
 # Chương trình CNC theo lớp đảo ngược (flipped) — đề xuất 18/10/2026
 
 Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu: `content/lesson-samples/cnc-flipped-bai-1/` (chưa ghi DB).
-Giả định cần thầy xác nhận: **một buổi ≈ 3 tiết (135 phút)**; sinh viên có điện thoại để làm quiz ở nhà.
+Lịch (thầy chốt 18/10/2026): **buổi 3 tiếng (180 phút), 6 buổi/tuần, học liên tục 2 tuần = 12 buổi**.
 
 ## Vì sao đảo ngược cho môn này
 - Môn thực hành: giờ ở xưởng quý hơn giờ ngồi nghe. Lý thuyết đã có sẵn thành 8 bài tự học (`cnc_lessons`), nên dồn nó về nhà, giờ lớp dành cho máy.
@@ -9,30 +9,38 @@ Giả định cần thầy xác nhận: **một buổi ≈ 3 tiết (135 phút)*
 - Rủi ro đã biết: sinh viên không chuẩn bị ở nhà thì buổi lớp sụp. Cách chặn: **cổng an toàn** (quiz ≥4/5 mới đứng máy, làm lại không trừ điểm) và 10 phút đầu giờ chữa đúng câu nhiều bạn sai.
 
 ## Nhịp một buổi (mọi bài giống nhau)
+Học liền mỗi ngày nên "ở nhà" là **tối hôm trước, ≤ 20 phút**, không giao bài dài. Ngồi máy 3 tiếng liền dễ mệt: giữa buổi nghỉ hẳn 10 phút, rời máy.
+
 | Giai đoạn | Thời lượng | Nội dung |
 |---|---|---|
-| A. Ở nhà | ≤ 25 phút | đọc/xem **2 mục** của bài, quiz 5 câu, gửi 1 câu "chỗ em chưa rõ" trước ≥12 giờ |
-| B. Tại lớp | 135 phút | 10' chữa chỗ sai · nhóm 3 người, chia vai · 2 nhiệm vụ trên máy · thử thách · phiếu thoát lớp |
-| C. Sau giờ | ≤ 15 phút | Trả bài 3 câu bằng lời, tự đánh dấu năng lực |
+| A. Tối hôm trước | ≤ 20 phút | đọc/xem **2 mục** của bài, quiz 5 câu, gửi 1 câu "chỗ em chưa rõ" trước 21 giờ |
+| B. Tại lớp | 180 phút | 0–10 chữa chỗ sai · 10–20 chia vai nhóm 3 · 20–70 nhiệm vụ 1 · 70–80 nghỉ · 80–130 nhiệm vụ 2 · 130–160 thử thách · 160–170 phiếu thoát lớp · 170–180 dọn máy 5S, bàn giao |
+| C. Sau giờ | ≤ 10 phút | Trả bài 3 câu bằng lời, tự đánh dấu năng lực |
 
-Quy tắc chung: quiz đặt cuối phần A chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên.
+Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau (không dồn 4 buổi cùng một máy) để nhớ lâu hơn.
 
-## Bản đồ 8 bài hiện có → nhiệm vụ trên máy
-| Bài | Phần A (ở nhà) | Việc chính tại lớp |
-|---|---|---|
-| Mở đầu: an toàn, 5S | quy tắc trước khi bật máy | đi vòng xưởng tìm 6 điểm nguy hiểm, dừng khẩn thật |
-| 1 Giới thiệu, trục, điểm chuẩn | II.5, II.6 | tìm M, R; đặt W (**bản mẫu**) |
-| 2 Lập trình tiện | G00/G01, tọa độ tuyệt đối/tương đối | viết và mô phỏng chương trình trục bậc |
-| 3 Lập trình phay | G00/G01/G02/G03, bù dao | viết và mô phỏng contour tấm phôi |
-| 4 Vận hành tiện | quy trình nhận máy | gá phôi, gá dao, đo dao, chạy không tải |
-| 5 Vận hành phay | quy trình nhận máy | tương tự trên phay, đặt W bằng đầu dò/dao chạm |
-| 6 Gia công tiện | đọc bản vẽ trục bậc | cắt chi tiết thật, đo, ghi sai lệch |
-| 7 Gia công phay | đọc bản vẽ tấm đế | cắt chi tiết thật, đo, ghi sai lệch |
+## Phân bố 12 buổi (2 tuần)
+Tám bài hiện có chỉ phủ 8 buổi; 4 buổi còn lại cần bài mới (đánh dấu *mới*, chưa soạn).
 
-Đề xuất bổ sung sau khi thầy duyệt khung: bài 8 "Sửa lỗi chương trình và cảnh báo máy", bài 9 "Chọn chế độ cắt (S, F) và tuổi bền dao", bài 10 "Dự án nhóm" (từ bản vẽ đến chi tiết).
+| Buổi | Chủ đề | Phần A tối trước | Việc chính tại lớp |
+|---|---|---|---|
+| 1 | An toàn, 5S (bài Mở đầu) | quy tắc trước khi bật máy | đi vòng xưởng tìm điểm nguy hiểm, dừng khẩn thật |
+| 2 | Bài 1: trục, điểm chuẩn (**bản mẫu**) | II.5, II.6 | tìm M, R; đặt W trên tiện và phay |
+| 3 | Bài 4: vận hành tiện | quy trình nhận máy | gá phôi, gá dao, đo dao, chạy không tải |
+| 4 | Bài 5: vận hành phay | quy trình nhận máy | đặt W bằng dao chạm, đo dao, chạy không tải |
+| 5 | Bài 2: lập trình tiện (1) | G00/G01, tuyệt đối/tương đối | viết, mô phỏng, chạy trục bậc đơn giản |
+| 6 | Bài 3: lập trình phay (1) | G00/G01, mặt phẳng, bù chiều dài | viết, mô phỏng, chạy rãnh và bậc |
+| 7 | *Mới* Lập trình tiện (2) | G02/G03, côn, chu trình thô | trục có côn và bo cung |
+| 8 | *Mới* Lập trình phay (2) | G02/G03, bù bán kính, chu trình khoan | contour và 4 lỗ |
+| 9 | Bài 6: gia công tiện | bản vẽ trục bậc | cắt chi tiết thật, đo, ghi sai lệch |
+| 10 | Bài 7: gia công phay | bản vẽ tấm đế | cắt chi tiết thật, đo, ghi sai lệch |
+| 11 | *Mới* Sửa lỗi, chế độ cắt (S, F), tuổi bền dao | ca lỗi mẫu | sửa chương trình lỗi, so chi tiết trước/sau |
+| 12 | *Mới* Dự án nhóm + kiểm tra thực hành | đề bài dự án | từ bản vẽ đến chi tiết, chấm theo checklist |
+
+Thứ tự bài 4, 5 trước bài 2, 3: sinh viên đã chạm máy trước khi viết lệnh, nên lập trình có chỗ gắn. Nếu thầy muốn lập trình trước thì đảo buổi 3–4 với 5–6, bài mẫu không đổi.
 
 ## Việc cần thầy quyết
-1. Khung 3 giai đoạn, thời lượng buổi 135 phút có đúng lịch của lớp không.
+1. Thứ tự 12 buổi ở trên, nhất là bài vận hành (3–4) đặt trước lập trình (5–6).
 2. Cổng 4/5 trước khi vào xưởng: bắt buộc hay chỉ khuyến khích.
 3. Video: thầy tự quay (6–8 phút/bài) hay chỉ dùng bài đọc có sẵn. Bản mẫu mới dùng bài đọc, chưa có video.
 4. Có bật trên web `/lop-hoc/cnc/` không: bài mẫu sẽ thành một mục mới hoặc thay phần mở đầu của `lesson-1` (mục ghi DB do thầy duyệt).
