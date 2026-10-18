@@ -313,3 +313,6 @@ Lệnh cron hosting `git fetch && git reset --hard origin/deploy && git clean -f
 memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB), `node_modules`. Không có Time Machine; phải dựng lại từ transcript Claude.
 - Lệnh phá huỷ (`reset --hard`, `clean -fdx`, `rm -rf`) dành cho máy khác: chỉ mô tả bằng lời hoặc kèm `cd <đường dẫn trên máy đó> &&` + cảnh báo "KHÔNG chạy trên Mac"; không đặt trong khối ```bash``` (app có nút Run).
 - Commit sớm, kể cả ghi chú/memory; file chỉ có ở Mac (`.env.local`, `feedback_*`) nên có bản sao ngoài repo.
+
+# Lời giải trắc nghiệm trong ngân hàng (18/10/2026)
+Viết/viết lại lời giải câu hỏi: theo `docs/QUY-TAC-LOI-GIAI.md` (có đoạn "vì sao phương án khác sai", chỉ nêu lỗi tư duy thật, HS ảo kiểm mẫu 16 câu trước khi ghi). Ghi hàng loạt chỉ vào `question_bank`, không đụng `exams`.
