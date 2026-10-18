@@ -8,7 +8,7 @@
 
 **M3.** Con lắc lò xo treo thẳng đứng dao động điều hoà với chu kì $0{,}4$ s tại nơi $g = 9{,}8$ m/s². Tỉ số giữa lực đàn hồi cực đại và cực tiểu là $3$. Tính độ biến dạng ở vị trí cân bằng, biên độ và tốc độ cực đại.
 
-**M4.** $x_1 = 4\cos\left(2\pi t + \dfrac{\pi}{6}\right)$ và $x_2 = 3\cos\left(2\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tìm biên độ, pha ban đầu của dao động tổng hợp và thời điểm đầu tiên $t > 0$ vật có li độ $2{,}5$ cm.
+**M4.** $x_1 = 4\cos\left(2\pi t + \dfrac{\pi}{6}\right)$ và $x_2 = 3\cos\left(2\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tìm biên độ, pha ban đầu của dao động tổng hợp và thời điểm đầu tiên $t > 0$ vật có li độ $2{,}5$ cm (chấp nhận sai số $\pm 0{,}0001$ s do làm tròn pha).
 
 ---
 

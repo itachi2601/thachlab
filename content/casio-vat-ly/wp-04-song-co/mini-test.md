@@ -4,7 +4,7 @@
 
 **M1.** Sóng ngang có phương trình $u = 6\cos(4\pi t - 0{,}02\pi x)$ (cm; $x$ tính bằng cm, $t$ bằng s). Tìm tần số, bước sóng, tốc độ truyền sóng và tốc độ dao động cực đại của phần tử môi trường.
 
-**M2.** Hai nguồn $A, B$ cùng pha, $AB = 12$ cm, bước sóng $1{,}5$ cm. Có bao nhiêu điểm dao động cực đại và cực tiểu trên đoạn $AB$?
+**M2.** Hai nguồn $A, B$ cùng pha, $AB = 12$ cm, bước sóng $1{,}5$ cm. Có bao nhiêu điểm dao động cực đại và cực tiểu trên đoạn $AB$ (không kể hai nguồn $A, B$)?
 
 **M3.** Dây dài $0{,}6$ m, một đầu cố định, một đầu tự do, có sóng dừng với $4$ bụng (kể cả bụng ở đầu tự do), tần số $70$ Hz. Tính bước sóng và tốc độ truyền sóng.
 
